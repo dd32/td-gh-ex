@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package anno
  * This file is part of the Annotum theme for WordPress
@@ -175,14 +176,16 @@ class Anno_Template {
 	public function get_contributors_list($post_id = null) {
 		$out = '';
 		$post_id = $this->utils->post_id_for_sure($post_id);
+		global $anno_user_meta;
 
 		$authors = get_post_meta($post_id, '_anno_author_snapshot', true);
 		$author_is_id = false;
 		if (empty($authors) || !is_array($authors)) {
 			$authors = $this->get_author_ids($post_id);
+			// Legacy data support
 			$author_is_id = true;
 		}
-		
+		$authors_data_arr = array();
 		foreach ($authors as $author) {
 			$author_data = array(
 				'first_name' => '',
@@ -190,7 +193,7 @@ class Anno_Template {
 				'prefix' => '',
 				'suffix' => '',
 				'degrees' => '',
-				'affiliation' => '',
+				'institution' => '',
 			 	'bio' => '',
 				// Stored in snapshot but not used here			
 				// 'email' => '',
@@ -206,12 +209,17 @@ class Anno_Template {
 				$author_data['display_name'] = $author_wp_data->display_name;
 				$author_data['link'] = $author_wp_data->user_url;
 				$author_data['bio'] = $author_wp_data->user_description;
-				// @TODO probably worth while to store all this data in a single meta entry
-				$author_data['prefix'] = get_user_meta($author_id, '_anno_prefix', true);
-				$author_data['suffix'] = get_user_meta($author_id, '_anno_suffix', true);
-				$author_data['degrees'] = get_user_meta($author_id, '_anno_degrees', true);
-				$author_data['affiliation'] = get_user_meta($author_id, '_anno_affiliation', true);
-				// Lookup user meta here
+				
+				// Load in additional Annotum User Meta
+				if (is_array($anno_user_meta) && !empty($anno_user_meta)) {
+					foreach ($anno_user_meta as $key => $label) {
+						if (strpos($key, '_anno_') === 0) {
+							$sanitized_key = substr($key, 6);
+						}
+						// Sanitized key for legacy data support
+						$author_data[$sanitized_key] = get_user_meta($author_id, $key, true);						
+					}
+				}
 			}
 			else {
 				$author_id = $author['id'];
@@ -222,21 +230,28 @@ class Anno_Template {
 					$author_wp_data = false;
 				}
 				
-				$author_data['first_name'] = $author['given_names'];
-				$author_data['last_name'] = $author['surname'];
-				$author_data['prefix'] = $author['prefix'];
-				$author_data['suffix'] = $author['suffix'];
-				$author_data['degrees'] = $author['degrees'];
-				$author_data['affiliation'] = $author['affiliation'];
-				$author_data['bio'] = $author['bio'];
-				$author_data['link'] = $author['link'];
+				$author_data['first_name'] = isset($author['given_names']) ? $author['given_names'] : '';
+				$author_data['last_name'] = isset($author['surname']) ? $author['surname'] : '';
+				$author_data['bio'] = isset($author['bio']) ? $author['bio'] : '';
+				$author_data['link'] = isset($author['link']) ? $author['link'] : '';
 				// $author_data['email'] = $author['email'];
 				// We may have an imported user here, in which case, they don't necessarily have a WP user ID and author_wp_data == false
 				$author_data['display_name'] = empty($author_wp_data) ? '' : $author_wp_data->display_name;
+				
+				if (is_array($anno_user_meta) && !empty($anno_user_meta)) {
+					$sanitized_key_meta = anno_sanitize_user_meta_keys($anno_user_meta);
+					foreach ($sanitized_key_meta as $sanitized_key => $label) {
+							if (!empty($author[$sanitized_key])) {
+							$author_data[$sanitized_key] = $author[$sanitized_key];
+						}
+					}
+				}				
 			}
+
+			$author_data['id'] = $author_id;
 			
-			// We use a user's website if there isn't a user with associated id (imported user snapshots)
-			// We also check to see if this is a string ID or int val id, knol_id vs wp_id
+			// Use a user's website if there isn't a user object with associated id (imported user snapshots)
+			// Also check to see if this is a string ID or int val id, knol_id vs wp_id
 			if ($author_id == (string) intval($author_id)) {
 				$posts_url = get_author_posts_url($author_id);
 				$posts_url = $posts_url == home_url('/author/') ? $author_data['link'] : $posts_url;
@@ -246,59 +261,87 @@ class Anno_Template {
 			}
 			$prefix_markup = empty($author_data['prefix']) ? '' : '<span class="name-prefix">'.esc_html($author_data['prefix']).'</span> ';
 			$suffix_markup = empty($author_data['suffix']) ? '' : ' <span class="name-suffix">'.esc_html($author_data['suffix']).'</span>';
-			$degree_markup = empty($author_data['degrees']) ? '' : ' <span class="name-degress">'.esc_html($author_data['degrees']).'</span>';			
+	
 			
 			if ($author_data['first_name'] && $author_data['last_name']) {
 				$fn = empty($posts_url) ? '<span class="name">' : '<a href="'.esc_url($posts_url).'" class="url name">';				
 
-				$fn .= $prefix_markup.'<span class="given-name">'.esc_html($author_data['first_name']).'</span> <span class="family-name">'.esc_html($author_data['last_name']).'</span>'.$suffix_markup.$degree_markup;
+				$fn .= $prefix_markup.'<span class="given-name">'.esc_html($author_data['first_name']).'</span> <span class="family-name">'.esc_html($author_data['last_name']).'</span>'.$suffix_markup;
 
 				$fn .= empty($posts_url) ? '</span>' : '</a>';
 			}
 			else {
 				$fn = $posts_url ? '<a href="'.esc_url($posts_url).'" class="url fn">' : '<span class="fn">';
 
-				$fn .= $prefix_markup.esc_html($author_data['display_name']).$suffix_markup.$degree_markup;
+				$fn .= $prefix_markup.esc_html($author_data['display_name']).$suffix_markup;
 
 				$fn .= $posts_url ? '</a>' : '</span>';
 			}
+	
+			// Which (additional) user meta to display, and in what order, some fields are not filterable
+			// Must match keys in $anno_user_meta global in order to properly pull the label
+			$extra_meta_display = apply_filters('anno_user_meta_display', array(
+				'_anno_institution',
+				'_anno_department',
+				'_anno_state',
+				'_anno_city',
+				'_anno_country',
+			));
 
-			// Website
-			$trimmed_url = substr($author_data['link'], 0, 20);
-			$trimmed_url = $trimmed_url != $author_data['link'] ? esc_html($trimmed_url) . '&hellip;' : esc_html($author_data['link']);
+			$extra = '';
+			foreach ($extra_meta_display as $key) {
+				if (strpos($key, '_anno_') === 0) {
+					$sanitized_key = substr($key, 6);
+				}
+				
+				if (!empty($author_data[$sanitized_key])) {
+					$label = isset($anno_user_meta[$key]) ? $anno_user_meta[$key].': ' : ucwords($sanitized_key).': ';	
+					$extra .= '<span class="'.esc_attr('group '.$sanitized_key).'">'.esc_html($label.$author_data[$sanitized_key]).'</span>';
+				}								
+			}
 
-			$website = $author_data['link'] ? '<span class="group">'.__('Website:', 'anno').' <a class="url" href="'.esc_url($author_data['link']).'">'.$trimmed_url.'</a></span>' : '';
-
-			// Note
-			$note = $author_data['bio'] ? '<span class="group note">' . esc_html($author_data['bio']) . '</span>' : '';
-			
-			// Affiliation
-			$affiliation = $author_data['affiliation'] ? '<span class="group affiliation">'.__('Affiliation:', 'anno').' '. esc_html($author_data['affiliation']).'</span>' : '';
+			$extra = array();
+			if (!empty($author_data['department'])) {
+				$extra[] = esc_html($author_data['department']);
+			}
+			if (!empty($author_data['institution'])) {
+				$extra[] = esc_html($author_data['institution']);
+			}
+			if (!empty($author_data['city'])) {
+				$extra[] = esc_html($author_data['city']);
+			}
+			if (!empty($author_data['state'])) {
+				$extra[] = esc_html($author_data['state']);
+			}
+			if (!empty($author_data['country'])) {
+				$extra[] = esc_html($author_data['country']);
+			}
+			$extra = implode(', ', $extra);
+			$extra .= !empty($extra) ? '.' : '';
 
 			$card = '
 	<li>
 		<div class="author vcard">
 			'.$fn;
 
-		if ($website || $note || $affiliation) {
-			$card .= '
+			if (!empty($extra)) {
+				$card .= '
 			<span class="extra">
 				<span class="extra-in">
-					'.$affiliation.'
-					'.$website.'
-					'.$note.'
+					'.$extra.'
 				</span>
 			</span>';
-		}
+			}
 
-		$card .= '
+			$card .= '
 		</div>
 	</li>';
 
 			$out .= $card;
+			$authors_data_arr[] = $author_data;
 		}
 
-		return $out;
+		return apply_filters('anno_author_html', $out, $authors_data_arr);
 	}
 	
 	/**
@@ -315,11 +358,12 @@ class Anno_Template {
 		if ($cache !== false && $this->enable_caches !== false) {
 			return $cache;
 		}
-		
+	
 		/* Otherwise, let's build a cache and return it */
 
 		$site = strip_tags(get_bloginfo('name'));
 		$permalink = get_permalink();
+		$post_date = get_the_date('Y M j');
 		$last_modified = get_the_modified_date('Y M j');
 
 		$title = get_the_title($post_id);
@@ -333,7 +377,7 @@ class Anno_Template {
 		if (empty($contributors) || !is_array($contributors)) {
 			$contributors = $this->get_author_ids($post_id);
 			$contributor_is_id = true;
-		}		
+		}
 
 		$names = array();
 		foreach ($contributors as $contributor) {
@@ -360,7 +404,16 @@ class Anno_Template {
 			}
 			
 			if ($first && $last) {
-				$name = sprintf(_x('%1$s %2$s', 'First and last name as a textarea-safe string', 'anno'), $first, $last);
+
+				$first_formatted = '';
+				$first_words = explode(' ', $first);
+				foreach ($first_words as $word) {
+					if (is_string($word)) {
+						$first_formatted .= $word{0};
+					}
+				}
+
+				$name = sprintf(_x('%2$s %1$s', 'last name and first letter of firstname(s) as a textarea-safe string', 'anno'), $first_formatted, $last);
 			}
 			else {
 				$name = $display_name;
@@ -371,20 +424,55 @@ class Anno_Template {
 			}
 		}
 		$authors = implode(', ', $names);
+		
+		if (function_exists('annowf_clone_get_family')) {
+			$family_ids = annowf_clone_get_family($post_id);
+		}
+		else {
+			$family_ids = array();
+		}
 
-		$version = count(wp_get_post_revisions($post_id));
-		if ($version === 0) {
-			$version = 1;
+		$edition = 1;
+		if (!empty($family_ids) && is_array($family_ids)) {
+			// Only add this id if there are other revisions
+			$family_ids[] = $post_id;
+			// Only get articles that are published in the set of family ids
+			$query = new WP_Query(array(
+				'post__in' => $family_ids,
+				'post_status' => 'publish',
+				'posts_per_page' => -1,
+				'post_type' => 'article',
+				'fields' => 'ids',
+				'cache' => false,
+				'order' => 'ASC'
+			));
+			if (!empty($query->posts)) {
+				$i = 1;
+				foreach ($query->posts as $query_post_id) {
+					if ($query_post_id == $post_id) {
+						$edition = $i;
+					}
+					$i++;
+				}
+			}
+		}
+
+		$doi = get_post_meta($post_id, '_anno_doi', true);
+		$doi_str = '';
+		if (!empty($doi)) {
+			// Intentionally not i18n, doi is not translatable and inserted into another i18n
+			$doi_str = 'doi: '.$doi.'.';
 		}
 
 		$citation = sprintf(
-			_x('%1$s. %2$s [Internet]. Version %3$s. %4$s. %5$s. Available from: %6$s.', 'Citation format', 'anno'),
-			$authors,
-			$title,
-			$version,
-			$site,
-			$last_modified,
-			$permalink
+			_x('%1$s. %2$s. %4$s. %5$s [last modified: %6$s]. Edition %3$s. %7$s', 'Citation format', 'anno'),
+			$authors, // 1
+			$title, // 2
+			$edition, // 3
+			$site, // 4
+			$post_date, // 5
+			$last_modified, // 6
+			$doi_str // 7 note this already has the trailing .
 		);
 		
 		set_transient($cache_key, $citation, 60*60); // Cache for 1 hour.
@@ -480,7 +568,7 @@ class Anno_Template {
 			'allowTransparency' => true,
 			'style' => 'width:90px;height:21px'
 		);
-		return $this->utils->to_tag('iframe', '', $default_attr, $attr);
+		return $this->utils->to_tag('iframe', '&nbsp;', $default_attr, $attr);
 	}
 	
 	public function get_email_link($text = null, $attr = array()) {
@@ -550,30 +638,22 @@ class Anno_Header_Image {
 	 * make the current WP header image implementation simpler to work with.
 	 */
 	public function add_custom_image_header() {
-		/* All four of these constants are required for WordPress to activate the
-		custom header functionality.*/
-		// This constant is optional. If you get rid of it, be sure to set the one below.
-		define('NO_HEADER_TEXT', true);
-		// define('HEADER_TEXTCOLOR', '');
-		
-		// Make sure the header textcolor is defined, or WP Core complains
-		if (!defined('HEADER_TEXTCOLOR')) {
-			define('HEADER_TEXTCOLOR', '');
-		}
-		
-		// These constants are required
-		define('HEADER_IMAGE', $this->default_image_path); // %s is the template dir uri
-		define('HEADER_IMAGE_WIDTH', $this->dimensions[0]); // use width and height appropriate for your theme
-		define('HEADER_IMAGE_HEIGHT', $this->dimensions[1]);
-		
-		/* The callbacks are non-optional but may be empty. They both execute at wp_head and are
-		useful for adding ad-hoc styles */
-		add_custom_image_header(array($this, 'head_callback'), array($this, 'admin_head_callback'));
+
+		add_theme_support( 'custom-header', array(
+			'header-text' => false,
+			'width' => $this->dimensions[0],
+			'height' => $this->dimensions[1],
+			'default-text-color' => '',
+			'default-image' => '',
+			'random-default' => false,
+			'wp-head-callback' => array($this, 'head_callback'),
+			'admin-head-callback' => array($this, 'admin_head_callback'),
+			'admin-preview-callback' => '',
+		));
 	}
 	
-	public function head_callback() {
+	public function head_callback() {}
 		
-	}
 	public function admin_head_callback() {
 		echo '<style type="text/css" media="screen">
 	.appearance_page_custom-header #headimg {

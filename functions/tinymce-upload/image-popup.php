@@ -1,5 +1,13 @@
 <?php
-
+/**
+ * @package anno
+ * This file is part of the Annotum theme for WordPress
+ * Built on the Carrington theme framework <http://carringtontheme.com>
+ *
+ * Copyright 2008-2011 Crowd Favorite, Ltd. All rights reserved. <http://crowdfavorite.com>
+ * Released under the GPL license
+ * http://www.opensource.org/licenses/gpl-license.php
+ */
 function anno_image_popup_head_js() {
 	if (isset($_GET['anno_action']) && $_GET['anno_action'] == 'image_popup') {
 ?>
@@ -21,7 +29,7 @@ add_action('admin_head', 'anno_image_popup_request_handler');
 
 
 function anno_image_popup_enqueue_scripts() {
-	wp_enqueue_script('img-popup', get_bloginfo('template_directory').'/js/tinymce/plugins/annoimages/popup.js', array('jquery'));	
+	wp_enqueue_script('img-popup', trailingslashit(get_template_directory_uri()).'js/tinymce/plugins/annoimages/popup.js', array('jquery'));	
 }
 if (isset($_GET['anno_action']) && $_GET['anno_action'] == 'image_popup') {
 	add_action('admin_enqueue_scripts', 'anno_image_popup_enqueue_scripts');
@@ -142,20 +150,16 @@ function anno_popup_images_row_edit($attachment) {
 								<textarea name="description" id="<?php echo esc_attr('img-description-'.$attachment->ID); ?>"><?php echo esc_textarea($description); ?></textarea>
 							</label>
 						</div>
-<?php 
-/*						@TODO Find a way to maintain wrapping URL data while adhering to DTD
 						<div class="img-url-input">
 							<label for="<?php echo esc_attr('img-url-'.$attachment->ID); ?>">
-								<input id="<?php echo esc_attr('img-url-'.$attachment->ID); ?>" type="text" name="url" value="<?php echo esc_attr($url); ?>" /><span><?php _e('URL', 'anno'); ?></span>
+								<input id="<?php echo esc_attr('img-url-'.$attachment->ID); ?>" type="text" name="url" value="<?php echo esc_attr($file_url); ?>" /><span><?php _e('URL', 'anno'); ?></span>
 							</label>
 							<div id="<?php echo esc_attr('img-url-buttons-'.$attachment->ID); ?>" class="img-url-buttons">
 								<button type="button" class="button" title=""><?php _e('None', 'anno'); ?></button>
 								<button type="button" class="button" title="<?php echo esc_attr($file_url); ?>"> <?php _e('File URL', 'anno'); ?></button>
-								<button type="button" class="button" title="<?php echo esc_attr($link); ?>"><?php _e('Attachment Post URL', 'anno'); ?></button>
 							</div>
 						</div>
-*/
-?>
+
 						<fieldset class="img-display">
 							<legend><?php _ex('Display', 'legend', 'anno'); ?></legend>
 							<label for="<?php echo esc_attr('img-display-figure-'.$attachment->ID); ?>" class="radio">
@@ -199,6 +203,7 @@ function anno_popup_images_row_edit($attachment) {
 									'thumbnail' => _x('Thumbnail', 'size label for images', 'anno'),
 									'medium' => _x('Medium', 'size label for images', 'anno'),
 									'large' => _x('Large', 'size label for images', 'anno'),
+									'full' => _x('Full Size', 'size label for images', 'anno'), 
 								);
 							
 								// For small images, we won't have any image sizes displayed.
@@ -206,7 +211,7 @@ function anno_popup_images_row_edit($attachment) {
 								foreach ($sizes as $size_key => $size_label) {
 									$downsize = image_downsize($attachment->ID, $size_key);
 									$enabled = $downsize[3];
-									if ($enabled) {
+									if ($enabled || $size_key == 'full') {
 										$img_size_url = wp_get_attachment_image_src($attachment->ID, $size_key);
 										$img_size_url = $img_size_url[0];
 										$size_displayed = true;

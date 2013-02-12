@@ -1,30 +1,24 @@
 jQuery(document).ready( function($) {
-	// Type-ahead
-	$('.user-input').suggest( 'admin-ajax.php?action=anno-user-search', { delay: 200, minchars: 2, multiple: false} );
-	
 	$('input[type="submit"], a.submitdelete, #submitpost').click(function() {
 		$(this).siblings('.ajax-loading').css('visibility', 'visible');
 	});
 
-	
     // Register our add functions so we can call them with a generated string.
     var anno_manage_user = {};
 
-
-
- 	// @param string user (login or email expected) 
+	// @param string user (login or email expected)
 	anno_manage_user.add_co_author = function anno_add_co_author(user) {
+
 		if (user == '') {
 			return false;
 		}
-		
 		var status_div = $('#co_author-add-status');
 		var data = {action: 'anno-add-co-author', user: user, post_id: ANNO_POST_ID};
 		data['_ajax_nonce-manage-co_author'] = $('#_ajax_nonce-manage-co_author').val();
 		
 		// Clear status div and hide.
 		status_div.html('').hide();
-		
+	
 		$.post(ajaxurl, data, function(d) {
 			if (d.message == 'success') {
 				$('ul#co-author-list').prepend(d.html);
@@ -37,11 +31,11 @@ jQuery(document).ready( function($) {
 				status_div.html(d.html).removeClass('anno-success').addClass('anno-error').show();
 			}
 		}, 'json');
-	}
+	};
 	
-	$('input[type="text"]#co_author-input').keydown(function(e) {
+	$(document).on('keydown','input[type="text"]#co_author-input', function(e) {
 		if (e.keyCode && e.keyCode == 13) {
-			var user = $('input[type="text"]#co-author-input').val();
+			var user = $('input[type="text"]#co_author-input').val();
 			anno_manage_user.add_co_author(user);
 			return false;
 		}
@@ -54,7 +48,7 @@ jQuery(document).ready( function($) {
 	});
 	
 	
-	// @param string user (login or email expected) 
+	// @param string user (login or email expected)
 	anno_manage_user.add_reviewer = function anno_add_reviewer(user) {
 		if (user == '') {
 			return false;
@@ -89,9 +83,9 @@ jQuery(document).ready( function($) {
 				status_div.html(d.html).removeClass('anno-success').addClass('anno-error').show();
 			}
 		}, 'json');
-	}
+	};
 	
-	$('input[type="text"]#reviewer-input').keydown(function(e) {
+	$(document).on('keydown','input[type="text"]#reviewer-input', function(e) {
 		if (e.keyCode && e.keyCode == 13) {
 			var user = $('input[type="text"]#reviewer-input').val();
 			anno_manage_user.add_reviewer(user);
@@ -102,7 +96,7 @@ jQuery(document).ready( function($) {
 	$('input[type="button"]#reviewer-add').click(function() {
 		var user = $('input[type="text"]#reviewer-input').val();
 		anno_manage_user.add_reviewer(user);
-	});	
+	});
 	
 	// Create form and submit to avoid embedding a form within a form in the markup
 	$('.anno-user-remove').live('click', function() {
@@ -158,7 +152,7 @@ jQuery(document).ready( function($) {
 				// co_author or reviewer.
 				var fn = 'add_' + type;
 				if (fn in anno_manage_user) {
-				    anno_manage_user[fn](d.user);
+					anno_manage_user[fn](d.user);
 				}
 
 				// Reset the fields
@@ -172,10 +166,10 @@ jQuery(document).ready( function($) {
 			}
 			else {
 				status_div.html(d.message).removeClass('anno-success').addClass('anno-error').show();
-			}			
+			}
 			
 		}, 'json');
-		return false; 	
+		return false;
 	});
 		
 	$('.anno-show-search-co_author').live('click', function() {

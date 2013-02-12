@@ -10,7 +10,7 @@
  */
 if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die(); }
 
-$main =  trailingslashit(get_bloginfo('template_directory')) . 'assets/main/';
+$main =  trailingslashit(get_template_directory_uri()) . 'assets/main/';
 $v = ANNO_VER;
 
 // Styles
@@ -38,12 +38,16 @@ if ( is_singular() ) {
 	wp_enqueue_script( 'comment-reply' );
 }
 
+if (is_admin()) {
+	wp_enqueue_script('jquery-ui-sortable');
+}
+
 /**
  * Enqueue and add CSS and JS assets.
  * Hook into 'wp' action when conditional checks like is_single() are available.
  */
 function anno_css3_pie() {
-	$assets_root = get_bloginfo('template_url') . '/assets/main/';
+	$assets_root = trailingslashit(get_template_directory_uri()) . 'assets/main/';
 	?>
 	<!--[if lte IE 8]>
 	<style type="text/css" media="screen">
@@ -58,4 +62,3 @@ function anno_css3_pie() {
 <?php
 }
 add_action('wp_head', 'anno_css3_pie', 8);
-?>

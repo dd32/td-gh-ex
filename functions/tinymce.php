@@ -1,6 +1,16 @@
 <?php
 
 /**
+ * @package anno
+ * This file is part of the Annotum theme for WordPress
+ * Built on the Carrington theme framework <http://carringtontheme.com>
+ *
+ * Copyright 2008-2011 Crowd Favorite, Ltd. All rights reserved. <http://crowdfavorite.com>
+ * Released under the GPL license
+ * http://www.opensource.org/licenses/gpl-license.php
+ */
+
+/**
  * Set acceptable custom tags for wp_kses
  */ 
 $allowedposttags = array_merge($allowedposttags, array(
@@ -43,6 +53,9 @@ $allowedposttags = array_merge($allowedposttags, array(
 	'title' => array(),
 	'table-wrap' => array(),
 	'underline' => array(),
+	'uri' => array(
+		'xlink:href' => array(),
+	),
 	'xref' => array(
 		'ref-type' => array(),
 		'rid' => array(),
@@ -89,6 +102,7 @@ function anno_load_editor($content, $editor_id, $settings = array()) {
 		'preformat',
 		'sec',
 		'table-wrap',
+		'uri[xlink::href]',
 		'xref[ref-type|rid]',
 		'paste',
 	), $formats);
@@ -126,6 +140,14 @@ function anno_load_editor($content, $editor_id, $settings = array()) {
 		'disp-quote',
 		'para',
 		'paste',
+		'uri',
+		// Support for isBlock being case sensitive and nodeName returning capitalized version
+		// tinymce 5.x+ no longer supports tinymce.html.Schema modifiction in plugin init (old way)
+		'PARA',
+		'CAP',
+		'LABEL',
+		'LIST',
+		'LIST-ITEM',
 	);
 	
 	$formats_as_children = implode('|', $formats);
@@ -139,11 +161,11 @@ function anno_load_editor($content, $editor_id, $settings = array()) {
 		'copyright-statement['.$formats_as_children.'|br]',
 		'license-p['.$formats_as_children.'|xref|ext-link|br]',
 		'heading['.$formats_as_children.'|div|span|br]',
-		'media[alt-text|long-desc|permissions|div|span|br]',
+		'media[uri|alt-text|long-desc|permissions|div|span|br]',
 		'permissions[copyright-statement|copyright-holder|license|div|span|br]',
 		'license[license-p|xref|div|span|br]',
 		'license-p[preformat|br|'.$formats_as_children.']',
-	'list[title|list-item|div|span|br]',
+		'list[title|list-item|div|span|br]',
 		'list-item[para|xref|list|div|span|br]',
 		'disp-formula[lbl|tex-math|div|span|preformat|br]',
 		'disp-quote[para|attrib|permissions|div|span|preformat|br]',
@@ -162,7 +184,6 @@ function anno_load_editor($content, $editor_id, $settings = array()) {
 		'media_buttons' => false,
 		'tinymce' => array(
 			'remove_linebreaks' => false,
-			'content_css' => trailingslashit(get_bloginfo('template_directory')).'css/tinymce.css',
 			'extended_valid_elements' => implode(',', $extended_valid_elements),
 			'custom_elements' => implode(',', $custom_elements),
 			'valid_children' => implode(',', $valid_children),
@@ -180,7 +201,8 @@ function anno_load_editor($content, $editor_id, $settings = array()) {
 			'verify_html' => true,
 			'force_p_newlines' => true,
 			'force_br_newlines' => false,
-			'content_css' => trailingslashit(get_bloginfo('template_directory')).'css/tinymce.css',
+			'content_css' => trailingslashit(get_template_directory_uri()).'assets/main/css/tinymce.css',
+			'object_resizing' => false
 		),
 	);
 	// Remove WP specific tinyMCE edit image plugin.
@@ -225,6 +247,7 @@ class Anno_tinyMCE {
 		add_filter("mce_external_plugins", array(&$this, 'plugins'));
 		add_filter('mce_buttons', array(&$this, 'mce_buttons'));
 		add_filter('mce_buttons_2', array(&$this, 'mce_buttons_2'));
+		add_filter('mce_external_languages', array(&$this, 'external_languages'));
 	}
 	
 	function mce_buttons($buttons) {
@@ -236,43 +259,54 @@ class Anno_tinyMCE {
 	
 	function mce_buttons_2($buttons) {
 		if ($this->is_article()) {
-			$buttons = array('annoformatselect', '|', 'table', 'row_before', 'row_after', 'delete_row', 'col_before', 'col_after', 'delete_col', 'split_cells', 'merge_cells', '|', 'annopastetext', 'annopasteword', 'annolist', '|', 'annoreferences', '|', 'annomonospace', 'annopreformat', '|', 'annoequations');
+			$buttons = array('table', 'row_before', 'row_after', 'delete_row', 'col_before', 'col_after', 'delete_col', 'split_cells', 'merge_cells', '|', 'annopastetext', 'annopasteword', 'annolist', '|', 'annoreferences', '|', 'annosection', 'annomonospace', 'annopreformat', '|', 'annoequations', '|', 'spellchecker');
 		}
 		return $buttons;
 	}
 	
 	function plugins($plugins) {
 		if ($this->is_article()) {
-			$plugins['annoLink_base'] = trailingslashit(get_bloginfo('template_directory')).'js/tinymce/plugins/annolink/annolink.js';
-			$plugins['annoLink']  =  trailingslashit(get_bloginfo('template_directory')).'js/tinymce/plugins/annolink/editor_plugin.js';
+			$plugins_dir = trailingslashit(get_template_directory_uri()).'js/tinymce/plugins/';
+
+			$plugins['annoLink_base'] = $plugins_dir.'annolink/annolink.js';
+			$plugins['annoLink']  =  $plugins_dir.'annolink/editor_plugin.js';
 				
-			$plugins['annoReferences_base'] = trailingslashit(get_bloginfo('template_directory')).'js/tinymce/plugins/annoreferences/annoreferences.js';
-			$plugins['annoReferences']  =  trailingslashit(get_bloginfo('template_directory')).'js/tinymce/plugins/annoreferences/editor_plugin.js';
+			$plugins['annoReferences_base'] = $plugins_dir.'annoreferences/annoreferences.js';
+			$plugins['annoReferences']  =  $plugins_dir.'annoreferences/editor_plugin.js';
 
-			$plugins['annoImages_base'] = trailingslashit(get_bloginfo('template_directory')).'js/tinymce/plugins/annoimages/annoimages.js';
-			$plugins['annoImages']  =  trailingslashit(get_bloginfo('template_directory')).'js/tinymce/plugins/annoimages/editor_plugin.js';
+			$plugins['annoImages_base'] = $plugins_dir.'annoimages/annoimages.js';
+			$plugins['annoImages']  =  $plugins_dir.'annoimages/editor_plugin.js';
 		
-			$plugins['annoTable'] = trailingslashit(get_bloginfo('template_directory')).'js/tinymce/plugins/annotable/editor_plugin.js';
-			$plugins['annoTable_base'] = trailingslashit(get_bloginfo('template_directory')).'js/tinymce/plugins/annotable/annotable.js';
+			$plugins['annoTable'] = $plugins_dir.'annotable/editor_plugin.js';
+			$plugins['annoTable_base'] = $plugins_dir.'annotable/annotable.js';
 			
-			$plugins['annoQuote'] = trailingslashit(get_bloginfo('template_directory')).'js/tinymce/plugins/annoquote/editor_plugin.js';
-			$plugins['annoQuote_base'] = trailingslashit(get_bloginfo('template_directory')).'js/tinymce/plugins/annoquote/annoquote.js';
+			$plugins['annoQuote'] = $plugins_dir.'annoquote/editor_plugin.js';
+			$plugins['annoQuote_base'] = $plugins_dir.'annoquote/annoquote.js';
 		
-			$plugins['annoLists'] = trailingslashit(get_bloginfo('template_directory')).'js/tinymce/plugins/annolists/editor_plugin.js';
+			$plugins['annoLists'] = $plugins_dir.'annolists/editor_plugin.js';
 		
-			$plugins['annoParagraphs'] = trailingslashit(get_bloginfo('template_directory')).'js/tinymce/plugins/annoparagraphs/editor_plugin.js';
+			$plugins['annoParagraphs'] = $plugins_dir.'annoparagraphs/editor_plugin.js';
 	
-			$plugins['annoTips'] = trailingslashit(get_bloginfo('template_directory')).'js/tinymce/plugins/annotips/editor_plugin.js';
+			$plugins['annoTips'] = $plugins_dir.'annotips/editor_plugin.js';
 			
-			$plugins['annoFormats'] = trailingslashit(get_bloginfo('template_directory')).'js/tinymce/plugins/annoformats/editor_plugin.js';
+			$plugins['annoFormats'] = $plugins_dir.'annoformats/editor_plugin.js';
 			
-			$plugins['annoEquations'] = trailingslashit(get_bloginfo('template_directory')).'js/tinymce/plugins/annoequations/editor_plugin.js';
+			$plugins['annoEquations'] = $plugins_dir.'annoequations/editor_plugin.js';
 			
-			$plugins['fullscreen'] = trailingslashit(get_bloginfo('template_directory')).'js/tinymce/plugins/fullscreen/editor_plugin.js';
+			$plugins['fullscreen'] = $plugins_dir.'fullscreen/editor_plugin.js';
 
-			$plugins['annoPaste'] = trailingslashit(get_bloginfo('template_directory')).'js/tinymce/plugins/annopaste/editor_plugin.js';		
+			$plugins['annoPaste'] = $plugins_dir.'annopaste/editor_plugin.js';
+
+			$plugins['annoequationedit'] = $plugins_dir.'annoequationedit/editor_plugin.js';	
 		}
 		return $plugins;
+	}
+
+	function external_languages($langs) {
+		$plugins_dir = trailingslashit(get_template_directory()).'js/tinymce/plugins/';
+		return array_merge($langs, array(
+			'annoequationedit' => $plugins_dir.'annoequationedit/langs/lang.php',
+		));
 	}
 	
 	/**
@@ -290,7 +324,11 @@ function anno_tiny_mce_before_init($init_array) {
 	if (isset($init_array['plugins'])) {
 		$init_array['plugins'] = str_replace('wpeditimage,', '', $init_array['plugins']);
 		$init_array['plugins'] = str_replace('wpeditimage', '', $init_array['plugins']);
-	}
+	};
+	
+	//show Kitchen Sink by default
+	$init_array['wordpress_adv_hidden'] = false;
+	
 	return $init_array;
 }
 
@@ -965,6 +1003,7 @@ function anno_get_dtd_valid_elements() {
 		
 		// Paragraph-level
 		'<media>',
+			'<uri>',
 			'<alt-text>',
 			'<long-desc>',
 			'<permissions>',
@@ -999,6 +1038,7 @@ function anno_get_dtd_valid_elements() {
 				'<p>',
 					'<xref>',
 			'<media>',
+				'<uri>',
 				'<alt-text>',
 				'<long-desc>',
 				'<permissions>',
@@ -1080,25 +1120,13 @@ function anno_insert_post_data($data, $postarr) {
 	if (isset($_POST['action']) && $_POST['action']  == 'inline-save') {
 		return $data;
 	}
-	
-	$is_article_type = false;
-	// Both published and drafts (before article ever saved) get caught here
+
 	if ($postarr['post_type'] == 'article') {
-		$is_article_type = true;
-	}
-	// If we're a revision, we need to do one more check to ensure our parent is an article
-	if ($postarr['post_type'] == 'revision') {
-		if (!empty($data['post_parent']) && get_post_type($data['post_parent']) == 'article') {
-			$is_article_type = true;
-		}
-	}
-	
-	if ($is_article_type) {
 		// Get our XML content for the revision
 		$content = stripslashes($data['post_content']);
 		
 		// Remove non-ascii gremlins
-		$content = preg_replace('/(\xa0|\xc2)/','', $content);
+		$content = preg_replace('/(\xc2\xa0)/',' ', $content);
 		$content = str_replace(array("\r", "\r\n", "\n"), '', $content);
 		// Set XML as backup content. Filter markup and strip out tags not on whitelist.
 		$xml = anno_validate_xml_content_on_save($content);
@@ -1110,6 +1138,23 @@ function anno_insert_post_data($data, $postarr) {
 	return $data;
 }
 add_filter('wp_insert_post_data', 'anno_insert_post_data', null, 2);
+
+/**
+ * Don't process incoming content from revisions, its already in the forms expected
+ */ 
+function anno_remove_insert_filter_for_restore() {
+	remove_filter('wp_insert_post_data', 'anno_insert_post_data', null, 2);
+}
+add_action('admin_action_restore', 'anno_remove_insert_filter_for_restore');
+
+/**
+ * Allow post_content_filtered to be managed by revisions
+ */ 
+function anno_post_revision_fields($fields) {
+	$fields['post_content_filtered'] = _x('Post Content Filtered', 'Title for revision management', 'anno');  	
+	return $fields;	  	
+}
+add_filter( '_wp_post_revision_fields', 'anno_post_revision_fields');
 
 /**
  * Only maintain line breaks on certain tags (title, td, th)
@@ -1394,7 +1439,9 @@ function anno_xml_to_html_replace_figures($orig_xml) {
 			}
 			$alt = $media->children('alt-text')->html();
 			$title = $media->children('long-desc')->html();
-		
+			$uri = pq($media->children('uri'));
+			$uri_href = $uri->attr('xlink:href');
+			
 			// Build our img tag
 			$img_tag = $tpl->to_tag('img', null, array(
 				'src' => $img_src,
@@ -1402,6 +1449,16 @@ function anno_xml_to_html_replace_figures($orig_xml) {
 				'alt' => $alt,
 				'class' => 'photo'
 			));
+			
+			// add start and end a tags if we have a uri to which to link the image
+			if (!empty($uri_href)) {
+				$linked_img_tag_start = '<a href="'.$uri_href.'">';
+				$linked_img_tag_end = '</a>';
+			}
+			else {
+				$linked_img_tag_start = '';
+				$linked_img_tag_end = '';
+			}
 			
 			$label = $fig->children('label')->html();
 			$label = ($label ? sprintf(__('Fig. %d', 'anno'), ++$count).': '.strip_tags($label) : '');
@@ -1418,7 +1475,7 @@ function anno_xml_to_html_replace_figures($orig_xml) {
 		
 			$html = '
 				<figure class="figure hmedia clearfix">
-					'.$img_tag.'
+					'.$linked_img_tag_start.$img_tag.$linked_img_tag_end.'
 					'.$figcaption.'
 				</figure>';
 			
@@ -1482,9 +1539,33 @@ function anno_xml_to_html_replace_lists($orig_xml) {
 	
 	*/
 	$lists = pq('list');
-	foreach ($lists as $list) {
-		$pq_list = pq($list);
+	while(count($lists)) {
+		// Get the first list encountered, this is a top level list
+		$pq_list = pq('list:first');
+		// Process the children
 		anno_xml_to_html_iterate_list($pq_list);
+
+		$list_type = $pq_list->attr('list-type');
+		$list_type = ($list_type == 'order') ? 'ol' : 'ul';
+
+		// Get list title if there is one
+		$figcaption = $pq_list->find('title:first')->html();
+
+		// Now that we have the title, get rid of the element
+		$pq_list->find('title:first')->remove();
+		
+		// Replace our list with our built-out HTML
+		$html = '';
+		$html .= '<figure class="list">';
+		$html .= empty($figcaption) ? '' : '<figcaption>'.$figcaption.'</figcaption>';
+		$html .= '<'.$list_type.'>'.$pq_list->html().'</'.$list_type.'>';
+		$html .= '</figure>';
+		// Remove wrapping p tags that are maintained in XML
+		$html = str_replace(array('<p>', '</p>'), '', $html);
+		$pq_list->replaceWith($html);
+		
+		// Update lists to double check for remaining lists in the document
+		$lists = pq('list');
 	}
 }
 add_action('anno_xml_to_html', 'anno_xml_to_html_replace_lists');
@@ -1494,18 +1575,13 @@ add_action('anno_xml_to_html', 'anno_xml_to_html_replace_lists');
  * Do stuff to the list elements
  * 
  * @param pq obj $list
+ * @param bool $child Whether or not this list is a child of another list (replace now vs with wrapping 'figure')
  * @return void
  */
-function anno_xml_to_html_iterate_list($list) {
+function anno_xml_to_html_iterate_list($list, $child = false) {
 	// Get list type
 	$list_type = $list->attr('list-type');
 	$list_type = ($list_type == 'order') ? 'ol' : 'ul';
-
-	// Get list title if there is one
-	$figcaption = $list->find('title:first')->html();
-	
-	// Now that we have the title, get rid of the element
-	$list->find('title:first')->remove();
 
 	// Loop over our items
 	$items = $list->children('list-item');
@@ -1516,34 +1592,28 @@ function anno_xml_to_html_iterate_list($list) {
 		}
 	}
 	
-	// Replace our list with our built-out HTML
-	$html = '';
-	$html .= '<figure class="list">';
-	$html .= empty($figcaption) ? '' : '<figcaption>'.$figcaption.'</figcaption>';
-	$html .= '<'.$list_type.'>'.$list->html().'</'.$list_type.'>';
-	$html .= '</figure>';
-	$list->replaceWith($html);
+	if ($child) {
+		$list->replaceWith('<'.$list_type.'>'.$list->html().'</'.$list_type.'>');
+	}
 }
-
 
 /**
  * Set the list items' HTML wrapper
- *
- * @param pqObj $item 
+  * @param pqObj $item 
  * @return void
  */
 function anno_xml_to_html_iterate_list_item($item) {
 	$child_list = $item->find('list');
 	if (!empty($child_list->elements)) {
 		foreach ($child_list->elements as $list) {
-			anno_xml_to_html_iterate_list(pq($list));
+			anno_xml_to_html_iterate_list(pq($list), true);
+			$item->replaceWith('<li>'.$item->html().'</li>');
 		}
 	}
 	else {
 		$item->replaceWith('<li>'.$item->html().'</li>');
 	}
 }
-
 
 /**
  * Replace the XML tables with proper HTML
@@ -1612,7 +1682,7 @@ add_action('anno_xml_to_html', 'anno_xml_to_html_replace_tables');
  */
 function anno_xml_to_html_iterate_table($table) {
 	// Get table title & caption'
-	$figcaption = $table->children('lbl:first')->html();
+	$figcaption = $table->children('label:first')->html();
 	$table_caption = $table->children('caption:first')->html();
 	
 	// Now that we have the title and caption, get rid of the elements
@@ -1640,7 +1710,8 @@ function anno_xml_to_html_iterate_table($table) {
 	
 	// Replace our table-wrap with our built-out HTML
 	$html = '<figure class="table">';
-	$html .= empty($figcaption) ? '' : '<figcaption>'.$figcaption.'</figcaption>';
+	// PDF generation requires a figcaption element, even if its empty! Doesnt change html view.
+	$html .= '<figcaption>'.$figcaption.'</figcaption>';
 	$html .= '<table>';
 	$html .= empty($table_caption) ? '' : '<caption>'.$table_caption.'</caption>';
 	$html .= $table->children('table:first')->html();
@@ -1718,7 +1789,7 @@ function anno_xml_to_html_replace_references($orig_xml) {
 	foreach ($references as $ref) {
 		$ref = pq($ref);
 		$ref_id = $ref->attr('rid');
-		$ref->replaceWith('<sup><a class="reflink" href="#ref'.esc_attr($ref_id).'">'.esc_html($ref_id).'</a></sup>');
+		$ref->replaceWith('<sup><a class="reflink" href="#'.esc_attr($ref_id).'">'.esc_html(preg_replace("/[^0-9]+/","",$ref_id)).'</a></sup>');
 	}
 }
 add_action('anno_xml_to_html', 'anno_xml_to_html_replace_references');
@@ -1851,16 +1922,22 @@ function anno_convert_permissions_to_html($permissions_pq_obj) {
  * 
  * @param string $old_tag Old tag to convert from
  * @param string $new_tag New tag to convert to 
+ * @param phpQueryObj $context context to search for tag within
  * @return void.
  */ 
-function anno_convert_tag($old_tag, $new_tag) {
+function anno_convert_tag($old_tag, $new_tag, $context = null) {
 	$tags = pq($old_tag);
-	foreach ($tags as $tag) {
-		$tag = pq($tag);
-		$tag_html = $tag->html();
-		$tag->replaceWith('<'.$new_tag.'>'.$tag_html.'</'.$new_tag.'>');
+	// Not the most efficient, phpQuery has no way to return elements that are inserted
+	while(count($tags)) {
+		foreach ($tags as $tag) {
+			$tag = $tag_before = pq($tag);					
+			$tag_html = $tag->html();
+			// $tag in memory is still tag from above, replaceWith created a new element, inserted into the document and then removed $tag from the document. 
+			$tag->replaceWith('<'.$new_tag.'>'.$tag_html.'</'.$new_tag.'>');
+		}
+		$tags = pq($old_tag);
 	}
-}
+}	
 
 /**
  * Utilize RegEx to find the values of attributes given a specific element.
@@ -2017,17 +2094,15 @@ function anno_remove_p_from_disp_quote_items($xml) {
  * @param string $tag_name Tag name to remove the p tags from
  * @return void 
  */ 
-function anno_remove_p_from_items($tag_name) {
-	$tags = pq($tag_name);
-	foreach ($tags as $tag) {
-		$tag = pq($tag);
-		$p_tags = $tag->children('p');
-		// Replace p tag with its content
+function anno_remove_p_from_items($tag_name, $context = null) {	
+	$p_tags = pq($tag_name.' > para');
+	while(count($p_tags)) {
 		foreach ($p_tags as $p_tag) {
 			$p_tag = pq($p_tag);
 			$p_inner = $p_tag->html();
 			$p_tag->replaceWith($p_inner);
 		}
+		$p_tags = pq($tag_name.' > para');
 	}
 }
 
@@ -2092,7 +2167,7 @@ function anno_doi_lookup_enabled() {
 function anno_tinymce_css($hook) {
 	global $post_type;
 	if ($post_type == 'article') {
-		$main = trailingslashit(get_bloginfo('template_directory'));
+		$main = trailingslashit(get_template_directory_uri());
 		wp_enqueue_style('eqeditor', $main.'js/tinymce/plugins/annoequations/equationeditor.css');
 	}
 }
@@ -2102,7 +2177,7 @@ add_action('admin_print_styles-post-new.php', 'anno_tinymce_css');
 function anno_tinymce_js() {
 	global $post_type;
 	if ($post_type == 'article') {
-		$main = trailingslashit(get_bloginfo('template_directory'));
+		$main = trailingslashit(get_template_directory_uri());
 		
 		wp_enqueue_script('closure-goog', $main.'js/tinymce/plugins/annoequations/equation-editor-compiled.js');
 	}

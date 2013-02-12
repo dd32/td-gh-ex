@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * @package anno
+ * This file is part of the Annotum theme for WordPress
+ * Built on the Carrington theme framework <http://carringtontheme.com>
+ *
+ * Copyright 2008-2011 Crowd Favorite, Ltd. All rights reserved. <http://crowdfavorite.com>
+ * Released under the GPL license
+ * http://www.opensource.org/licenses/gpl-license.php
+ */
+
 // Translateable workflow states
 global $annowf_states;
 $annowf_states = array(
@@ -48,7 +58,6 @@ function annowf_meta_boxes() {
 		remove_meta_box('commentstatusdiv', 'article', 'normal');
 	}
 
-	
 	// Custom author select box. Only displays co-authors in the dropdown.
 
 	add_meta_box('authordiv', _x('Author', 'Meta box title', 'anno'), 'annowf_author_meta_box', 'article', 'side', 'low');
@@ -57,17 +66,12 @@ function annowf_meta_boxes() {
 	global $annowf_states;
 	add_meta_box('submitdiv', _x('Status:', 'Meta box title', 'anno').' '. esc_html($annowf_states[$post_state]), 'annowf_status_meta_box', 'article', 'side', 'high');
 
-	// Clone data meta box. Only display if something has been cloned from this post, or it is a clone itself.
-	$posts_cloned = get_post_meta($post->ID, '_anno_posts_cloned', true);
-	$cloned_from = get_post_meta($post->ID, '_anno_cloned_from', true);
-	if (!empty($posts_cloned) || !empty($cloned_from)) {
-		add_meta_box('anno-cloned', _x('Versions', 'Meta box title', 'anno'), 'annowf_cloned_meta_box', 'article', 'side', 'low');
-	}
-
 	if (anno_user_can('view_reviewers')) {
 		add_meta_box('anno-reviewers', _x('Reviewers', 'Meta box title', 'anno'), 'annowf_reviewers_meta_box', 'article', 'side', 'low');
 	}
-	add_meta_box('anno-co-authors', _x('Co-Authors', 'Meta box title', 'anno'), 'annowf_co_authors_meta_box', 'article', 'side', 'low');
+	if ($post->post_status != 'publish') {
+		add_meta_box('anno-co-authors', _x('Co-Authors', 'Meta box title', 'anno'), 'annowf_co_authors_meta_box', 'article', 'side', 'low');
+	}
 }
 add_action('add_meta_boxes_article', 'annowf_meta_boxes');
 
@@ -75,7 +79,7 @@ add_action('add_meta_boxes_article', 'annowf_meta_boxes');
  * Enqueue css for workflow
  */
 function annowf_css() {
-	wp_enqueue_style('anno-workflow', trailingslashit(get_bloginfo('template_directory')).'plugins/workflow/css/workflow.css');
+	wp_enqueue_style('anno-workflow', trailingslashit(get_template_directory_uri()).'plugins/workflow/css/workflow.css');
 }
 add_action('admin_print_styles-post-new.php', 'annowf_css');
 add_action('admin_print_styles-post.php', 'annowf_css');
@@ -85,7 +89,7 @@ add_action('admin_print_styles-post.php', 'annowf_css');
  */
 function annowf_js() {
 	wp_enqueue_script('suggest');
-	wp_enqueue_script('anno-workflow', trailingslashit(get_bloginfo('template_directory')).'plugins/workflow/js/workflow.js', array('jquery', 'suggest'));
+	wp_enqueue_script('anno-workflow', trailingslashit(get_template_directory_uri()).'plugins/workflow/js/workflow.js', array('jquery', 'suggest'));
 	
 	// Remove Auto-Save feature if a user cannot edit a post. *Note this prevents previewing inputted markup
 	if (!anno_user_can('edit_post')) {
@@ -211,20 +215,36 @@ function annowf_transistion_state($post_id, $post, $post_before) {
 			// Send notifications, but not for published to draft state
 			if (anno_workflow_enabled('notifications') && !($old_state == 'published' && $new_state == 'draft')) {
 				annowf_send_notification($notification_type, $post);
-			}
-		}
-		
-		// Author has changed, add original author as co-author, remove new author from co-authors
-		if ($post->post_author !== $post_before->post_author) {
-			annowf_add_user_to_post('author', $post_before->post_author, $post->ID);
-			annowf_remove_user_from_post('author', $post->post_author, $post->ID);
-			if (anno_workflow_enabled('notifications')) {
-				annowf_send_notification('primary_author', $post, null, array(anno_user_email($post->post_author)));
+				// Dont send notification if re-review,
+				// reviwers get personalized email
+				if ($notification_type != 're_review') {
+					$reviewer_ids = anno_get_reviewers($post->ID);
+					if (!empty($reviewer_ids)) {
+						foreach ($reviewer_ids as $reviewer_id) {
+							$reviewer = get_user_by('id', $reviewer_id);
+							if (!empty($reviewer) && !is_wp_error($reviewer)) {
+								annowf_send_notification('reviewer_update', $post, null, array($reviewer->user_email), $reviewer, array('status' => $notification_type));
+							}
+						}
+					}
+				}
 			}
 		}
 	}
 }
 add_action('post_updated', 'annowf_transistion_state', 10, 3);
+
+function annowf_switch_authors($post_id, $post, $post_before) {
+	// Author has changed, add original author as co-author, remove new author from co-authors
+	if ($post->post_author !== $post_before->post_author && in_array($post_before->post_author, anno_get_authors($post->ID))) {
+		anno_add_user_to_post('author', $post_before->post_author, $post->ID);
+		anno_remove_user_from_post('author', $post->post_author, $post->ID);
+		if (anno_workflow_enabled('notifications')) {
+			annowf_send_notification('primary_author', $post, null, array(anno_user_email($post->post_author)));
+		}
+	}
+}
+add_action('post_updated', 'annowf_switch_authors', 10, 3);
 
 /**
  * Store revisions in the audit log.
@@ -547,7 +567,7 @@ function annowf_add_user($type) {
 			else if (in_array($user->ID, $reviewers)) {
 				$html = sprintf(_x('Cannot add %s as %s. User is already a reviewer', 'Adding user error message for article meta box', 'anno'), $user->user_login, $type_string);
 			}
-			else if (annowf_add_user_to_post($type, $user->ID, absint($_POST['post_id']))) {
+			else if (anno_add_user_to_post($type, $user->ID, absint($_POST['post_id']))) {
 				$message = 'success';
 				ob_start();
 					annowf_user_li_markup($user, $type);
@@ -624,7 +644,7 @@ function annowf_remove_user($type) {
 	check_ajax_referer('anno_manage_'.$type, '_ajax_nonce-manage-'.$type);
 	$response['message'] = 'error';
 	if (isset($_POST['user_id']) && isset($_POST['post_id'])) {
-		if (annowf_remove_user_from_post($type, absint($_POST['user_id']), absint($_POST['post_id']))) {
+		if (anno_remove_user_from_post($type, absint($_POST['user_id']), absint($_POST['post_id']))) {
 			$response['message'] = 'success';
 		}
 	}
@@ -675,111 +695,6 @@ function annowf_get_round($post_id) {
 }
 
 /**
- * Typeahead user search AJAX handler. Based on code in WP Core 3.1.2
- */ 
-function annowf_user_search() {
-	global $wpdb;
-	$s = stripslashes($_GET['q']);
-
-	$s = trim( $s );
-	if ( strlen( $s ) < 2 )
-		die; // require 2 chars for matching
-
-	$results = $wpdb->get_col($wpdb->prepare("
-		SELECT user_login
-		FROM $wpdb->users
-		WHERE user_login LIKE %s",
-		'%'.like_escape($s).'%'
-	));
-
-	echo join($results, "\n");
-	die;
-}
-add_action('wp_ajax_anno-user-search', 'annowf_user_search');
-
-/**
- * Metabox for posts that have been cloned from this post
- * @todo check for trash/deleted
- */ 
-function annowf_cloned_meta_box($post) {
-	$cloned_from = get_post_meta($post->ID, '_anno_cloned_from', true);
-	$cloned_from_post = get_post($cloned_from_post);
-	if (!$cloned_from_post) {
-		return;
-	}
-?>
-	<dl class="anno-versions">
-<?php
-	if (!empty($cloned_from)) {
-		$cloned_post = get_post($cloned_from);
-?>
-		<dt><?php echo _x('Cloned From', 'Cloned meta box text', 'anno'); ?></dt>
-		<dd><?php echo '<a href="'.esc_url(get_edit_post_link($cloned_from)).'">'.esc_html($cloned_post->post_title).'</a>'; ?></dd>
-<?php	
-	}
-	
-	$posts_cloned = get_post_meta($post->ID, '_anno_posts_cloned', true);
-	if (!empty($posts_cloned) && is_array($posts_cloned)) {
-?>
-		<dt><?php echo _x('Clones', 'Cloned meta box text', 'anno'); ?></dt>
-<?php
-		foreach ($posts_cloned as $cloned_post_id) {
-			$cloned_post = get_post($cloned_post_id);
-			if (!empty($cloned_post)) {
-				echo '<dd><a href="'.esc_url(get_edit_post_link($cloned_post_id)).'">'.esc_html($cloned_post->post_title).'</a></dd>';
-			}
-		}
-	}
-?>
-	</dl>
-<?php
-}
-
-/**
- * Clones a post and inserts it into the DB. Maintains all post properties (no post_meta). Also
- * saves the association on both posts.
- *
- * @param int $orig_id The original ID of the post to clone from
- * @return int|bool The newly created (clone) post ID. false if post failed to insert.
- * @todo Clone post-meta
- */
-function annowf_clone_post($orig_id) {
-	global $current_user;
-
-	$post = get_post($orig_id);	
-	if (empty($post)) {
-		return false;
-	}
-	
-	// Form the new cloned post
-	$new_post = array(
-		'post_author' => $current_user->ID,
-		'post_status' => 'draft',
-		'post_title' => sprintf(_x('Cloned: %s', 'Cloned article title prepend', 'anno'), $post->post_title),
-		'post_content' => $post->post_content,
-		'post_excerpt' => $post->post_excerpt,
-		'post_type' => $post->post_type,
-		'post_parent' => $post->post_parent,
-	);
-	
-	$new_id = wp_insert_post($new_post);
-
-	// Add to clone/cloned post meta
-	if ($new_id) {
-		$posts_cloned = get_post_meta($orig_id, '_anno_posts_cloned', true);
-		if (!is_array($posts_cloned)) {
-			$posts_cloned = array($new_id);
-		}
-		else {
-			$posts_cloned[] = $new_id;
-		}
-		update_post_meta($orig_id, '_anno_posts_cloned', $posts_cloned);
-		update_post_meta($new_id, '_anno_cloned_from', $orig_id);
-	}
-	return $new_id;
-}
-
-/**
  * Custom meta Box For Author select.
  */
 function annowf_author_meta_box($post) {
@@ -795,7 +710,7 @@ function annowf_author_meta_box($post) {
 		wp_dropdown_users(array(
 			'include' => implode(',', $authors),
 			'name' => 'post_author_override',
-			'selected' => empty($post->ID) ? $user_ID : $post->post_author,
+			'selected' => $post->post_author,
 			'include_selected' => true
 		));
 	}
@@ -805,14 +720,14 @@ function annowf_author_meta_box($post) {
  * Admin request handler. Handles backend permission enforcement, cloning.
  */ 
 function annowf_admin_request_handler() {
-	global $anno_post_save;
+	global $anno_post_save, $post;
 	
 	// Cloning. This must come before the enforcing of capabilities below.
 	if (isset($_POST['publish']) && $_POST['publish'] == $anno_post_save['clone']) {
-		if (!anno_user_can('clone_post')) {
+		$post_id = anno_get_post_id();
+		if (!anno_user_can('clone_post') || annowf_has_clone($post_id)) {
 			wp_die(_x('You are not allowed to clone this post.', 'Cloned article error message', 'anno'));
 		}
-		$post_id = anno_get_post_id();
 		$new_id = annowf_clone_post($post_id);
 		if (!empty($new_id)) {
 			$url = add_query_arg('message', 11, get_edit_post_link($new_id, 'url'));
@@ -895,6 +810,29 @@ function annowf_admin_request_handler() {
 	}
 }
 add_action('admin_init', 'annowf_admin_request_handler', 0);
+
+/**
+ * Prevent preview of posts that a user cannot edit
+ */
+function annowf_prevent_preview($posts, $query) {
+	if ($query->is_single && $query->is_preview() && !empty($posts)) {
+		$post = $posts[0];
+		if ($post->post_type == 'article') {
+		 	if (!anno_user_can('view_post', null, $post->ID)) {
+				$posts = array();
+				$query->is_404 = 1;
+				$query->is_single = 0;
+				$query->set('error', '404');
+				$query->is_singular = 0;
+				$query->is_preview = 0;
+				$query->post = null;
+			}
+		}
+	}
+	return $posts;
+}
+// Could run similar at pre_get_posts, but this is more reliable at the cost of a slight performance decrease.
+add_filter('the_posts', 'annowf_prevent_preview', 10, 2);
 
 /**
  * Filter to remove WP caps from a user for a given action if they do not have the workflow caps

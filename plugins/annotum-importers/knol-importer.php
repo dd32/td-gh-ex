@@ -1,5 +1,17 @@
 <?php
 
+/**
+ * @package anno
+ * This file is part of the Annotum theme for WordPress
+ * Built on the Carrington theme framework <http://carringtontheme.com>
+ *
+ * Copyright 2008-2011 Crowd Favorite, Ltd. All rights reserved. <http://crowdfavorite.com>
+ * Released under the GPL license
+ * http://www.opensource.org/licenses/gpl-license.php
+ * 
+ * Based on code found in WordPress Importer plugin
+ */
+
 if (!defined('WP_LOAD_IMPORTERS'))
 	return;
 	
@@ -112,9 +124,9 @@ class Knol_Import extends WP_Importer {
 	 * Loads data from $_POST variable.
 	 */ 
 	function load_data_from_post() {
-		$this->id = (int) $_POST['import_id'];
-		$this->version = (string) $_POST['version'];
-		$this->authors = $_POST['authors'];
+		$this->id = isset($_POST['import_id']) ? (int) $_POST['import_id'] : 0;
+		$this->version = isset($_POST['version']) ? (string) $_POST['version'] : '1.1' ;
+		$this->authors = isset($_POST['authors']) ? $_POST['authors'] : array();
 	}
 
 	/**
@@ -255,10 +267,18 @@ class Knol_Import extends WP_Importer {
 					$preview_url = add_query_arg('preview', 'true', $preview_url);
 				}
 
-				printf( __('[ %sEdit%s | %sPreview%s ]', 'anno'),
-					'<a href="'.esc_url(get_edit_post_link($the_imported_post->ID)).'">','</a>',
-					'<a href="'.esc_url($preview_url).'">','</a>.');
-	
+				// Only provide preview link for attachments or knol articles 
+				// Kipling DTD articles must be edited and saved at least once to preview correctly
+				if ($GLOBALS['importer'] == 'google_knol_wxr' or $the_imported_post->post_type == 'attachment') {
+					printf( __('[ %sEdit%s | %sPreview%s ]', 'anno'),
+						'<a href="'.esc_url(get_edit_post_link($the_imported_post->ID)).'">','</a>',
+						'<a href="'.esc_url($preview_url).'">','</a>.');
+				}
+				else {
+					printf( __('[ %sEdit%s ]', 'anno'),
+						'<a href="'.esc_url(get_edit_post_link($the_imported_post->ID)).'">','</a>');
+				}
+				
 				echo '<br />';				
 			}
 			echo '</p>';
@@ -789,7 +809,7 @@ foreach ($this->authors as $author_key => $author_data) {
 			'prefix' => '',
 			'suffix' => '',
 			'degrees' => '',
-			'affiliation' => '',
+			'institution' => '',
 	    	'bio' => '',
 	        'email' => '',
 	        'link' => '',
@@ -841,9 +861,15 @@ foreach ($this->authors as $author_key => $author_data) {
 				}
 
 				// map the post author
-				$author = sanitize_user( $post['post_author'], true );
-				if ( isset( $this->author_mapping[$author] ) )
-					$author = $this->author_mapping[$author];
+				if (isset($post['post_author'])) {
+					$author = sanitize_user($post['post_author'], true);
+					if ( isset( $this->author_mapping[$author] ) ) {
+						$author = $this->author_mapping[$author];
+					}
+					else {
+						$author = (int) get_current_user_id();
+					}
+				}
 				else
 					$author = (int) get_current_user_id();
 				
@@ -977,11 +1003,13 @@ foreach ($this->authors as $author_key => $author_data) {
 				$author_snapshot = array();
 				// Save the primary author in the author snapshot first
 				$snapshot = $snapshot_template;
-				$snapshot['id'] = $this->authors[$post['post_author']]['author_id'];
-				$snapshot['email'] = $this->authors[$post['post_author']]['author_email'];
-				$snapshot['surname'] = $this->authors[$post['post_author']]['author_first_name'];
-				$snapshot['given_names'] = $this->authors[$post['post_author']]['author_last_name'];
-				$author_snapshot[$post['post_author']] = $snapshot;
+				if (isset($post['post_author'])) {
+					$snapshot['id'] = $this->authors[$post['post_author']]['author_id'];
+					$snapshot['email'] = $this->authors[$post['post_author']]['author_email'];
+					$snapshot['surname'] = $this->authors[$post['post_author']]['author_last_name'];
+					$snapshot['given_names'] = $this->authors[$post['post_author']]['author_first_name'];
+					$author_snapshot[$post['post_author']] = $snapshot;
+				}
 				
 				if ( isset( $post['postmeta'] ) && is_array($post['postmeta']) ) {
 					foreach ( $post['postmeta'] as $meta ) {
@@ -1003,8 +1031,8 @@ foreach ($this->authors as $author_key => $author_data) {
 								$snapshot = $snapshot_template;
 								$snapshot['id'] = $this->authors[$knol_author_id]['author_id'];
 								$snapshot['email'] = $this->authors[$knol_author_id]['author_email'];
-								$snapshot['surname'] = $this->authors[$knol_author_id]['author_first_name'];
-								$snapshot['given_names'] = $this->authors[$knol_author_id]['author_last_name'];
+								$snapshot['surname'] = $this->authors[$knol_author_id]['author_last_name'];
+								$snapshot['given_names'] = $this->authors[$knol_author_id]['author_first_name'];
 								$author_snapshot[$snapshot['id']] = $snapshot;
 							}
 						}
@@ -1062,9 +1090,13 @@ foreach ($this->authors as $author_key => $author_data) {
 						update_post_meta($post_id, '_anno_author_snapshot', $author_snapshot);
 					}
 				}
-			
-				// Add a key to the post. Posts with this key are alerted that the XML structure may change on save. Meta is deleted on save.x2
-				add_post_meta($post_id, '_anno_knol_import', 1);
+				if ($GLOBALS['importer'] == 'google_knol_wxr') {
+					// Add a key to the post. Posts from google knol with this key are alerted 
+					// that the XML structure may change on save. Meta is deleted on save.
+					// Kipling (non-knol xml) imports don't need the extra parsing on save
+					// Fixes https://github.com/Annotum/Annotum/issues/40
+					add_post_meta($post_id, '_anno_knol_import', 1);
+				}
 			}
 		}
 
@@ -1170,10 +1202,14 @@ foreach ($this->authors as $author_key => $author_data) {
 		if ( ! $this->fetch_attachments )
 			return new WP_Error( 'attachment_processing_error',
 				__( 'Fetching attachments is not enabled', 'anno' ) );
+
+		// Keep track of the original URL for remapping purposes
+		$original_url = $url;
+
 		// if the URL is absolute, but does not contain address, then upload it assuming base_site_url
 		if ( preg_match( '|^/[\w\W]+$|', $url ) )
 			$url = rtrim( $this->base_url, '/' ) . $url;
-		$upload = $this->fetch_remote_file( $url, $post );
+		$upload = $this->fetch_remote_file( $url, $post, $original_url );
 		if ( is_wp_error( $upload ) )
 			return $upload;
 		if ( $info = wp_check_filetype( $upload['file'] ) )
@@ -1203,11 +1239,13 @@ foreach ($this->authors as $author_key => $author_data) {
 	 *
 	 * @param string $url URL of item to fetch
 	 * @param array $post Attachment details
+	 * @param string $original_url Original that can in from the content, un processed. Used in remapping
 	 * @return array|WP_Error Local file location details on success, WP_Error otherwise
 	 */
-	function fetch_remote_file( $url, $post ) {
+	function fetch_remote_file( $url, $post, $original_url) {
 		// extract the file name and extension from the url
-		$file_name = basename( $url );
+		// Decode and remove spaces, so WP can recognize the filename
+		$file_name = str_replace(' ', '', urldecode( basename( $url ) ) );
 
 		// get placeholder file in the upload dir with a unique, sanitized filename
 		$upload = wp_upload_bits( $file_name, 0, '', $post['upload_date'] );
@@ -1248,7 +1286,7 @@ foreach ($this->authors as $author_key => $author_data) {
 		}
 
 		// keep track of the old and new urls so we can substitute them later
-		$this->url_remap[$url] = $upload['url'];
+		$this->url_remap[$original_url] = $upload['url'];
 		$this->url_remap[$post['guid']] = $upload['url']; // r13735, really needed?
 
 		// keep track of the destination if the remote url is redirected somewhere else

@@ -1,6 +1,16 @@
 <?php
 
 /**
+ * @package anno
+ * This file is part of the Annotum theme for WordPress
+ * Built on the Carrington theme framework <http://carringtontheme.com>
+ *
+ * Copyright 2008-2011 Crowd Favorite, Ltd. All rights reserved. <http://crowdfavorite.com>
+ * Released under the GPL license
+ * http://www.opensource.org/licenses/gpl-license.php
+ */
+
+/**
  * 
  * @param string $key option name to get
  * @param mixed $default What to return if the given option is not set
@@ -9,7 +19,7 @@
 function annowf_get_option($key, $default = false) {
 	$option = cfct_get_option('workflow_settings');
 
-	if (is_null($option[$key])) {
+	if (!isset($option[$key])) {
 		return $default;
 	}
 	else {
@@ -51,6 +61,11 @@ function annowf_setup() {
 		include_once(ANNO_PLUGIN_PATH.'/workflow/internal-comments/internal-comments.php');
 		include_once(ANNO_PLUGIN_PATH.'/workflow/publishing-meta-box.php');
 		include_once(ANNO_PLUGIN_PATH.'/workflow/notification.php');
+		include_once(ANNO_PLUGIN_PATH.'/workflow/clone.php');
+		
+		if (annowf_get_option('listing_filter')) {
+			include_once(ANNO_PLUGIN_PATH.'/workflow/viewable.php');
+		}
 	}
 }
 add_action('after_setup_theme', 'annowf_setup');

@@ -1,5 +1,15 @@
 <?php 
 
+/**
+ * @package anno
+ * This file is part of the Annotum theme for WordPress
+ * Built on the Carrington theme framework <http://carringtontheme.com>
+ *
+ * Copyright 2008-2011 Crowd Favorite, Ltd. All rights reserved. <http://crowdfavorite.com>
+ * Released under the GPL license
+ * http://www.opensource.org/licenses/gpl-license.php
+ */
+
 class Anno_XML_Download {
 	
 	static $instance;
@@ -8,7 +18,6 @@ class Anno_XML_Download {
 		/* Define what our "action" is that we'll 
 		listen for in our request handlers */
 		$this->action = 'anno_xml_download_action';
-		$this->i18n = 'anno';
 	}
 	
 	public function i() {
@@ -65,13 +74,12 @@ class Anno_XML_Download {
 	 */
 	public function request_handler() {
 		if (get_query_var('xml')) {
-			
 			// Sanitize our article ID
 			$id = get_the_ID();
 			
 			// If we don't have an Article, get out
 			if (empty($id)) {
-				wp_die(__('No article found.', $this->i18n));
+				wp_die(__('No article found.', 'anno'));
 			}
 			
 			// If we're not debugging, turn off errors
@@ -101,7 +109,7 @@ class Anno_XML_Download {
 			
 			// Ensure we have an article
 			if (empty($article)) {
-				wp_die(__('Required article first.', $this->i18n));
+				wp_die(__('Required article first.', 'anno'));
 			}
 			
 			// Get our XML ready and stored
@@ -185,7 +193,7 @@ class Anno_XML_Download {
 		// Publisher ISSN
 		$pub_issn = cfct_get_option('publisher_issn');
 		if (!empty($pub_issn)) {
-			$pub_issn_xml = '<issn pub-type="ppub">'.esc_html($pub_issn).'</issn>';
+			$pub_issn_xml = '<issn pub-type="epub">'.esc_html($pub_issn).'</issn>';
 		}
 		else {
 			$pub_issn_xml = '';
@@ -194,10 +202,10 @@ class Anno_XML_Download {
 		// Abstract
 		$abstract = $article->post_excerpt;
 		if (!empty($abstract)) {
-			$abstract_xml = '<abstract>
-					<title>'._x('Abstract', 'xml abstract title', 'anno').'</title>
-					<p>'.esc_html($abstract).'</p>
-				</abstract>';
+			$abstract_xml = '
+			<abstract>
+				<p>'.esc_html($abstract).'</p>
+			</abstract>';
 		}
 		else {
 			$abstract_xml = '';
@@ -207,8 +215,8 @@ class Anno_XML_Download {
 		$funding = get_post_meta($article->ID, '_anno_funding', true);
 		if (!empty($funding)) {
 			$funding_xml = '<funding-group>
-					<funding-statement><bold>'.esc_html($funding).'</bold></funding-statement>
-				</funding-group>';
+					<funding-statement>'.esc_html($funding).'</funding-statement>
+			</funding-group>';
 		}
 		else {
 			$funding_xml = '';
@@ -230,7 +238,7 @@ class Anno_XML_Download {
 			if (!empty($category)) {
 				$category_xml = '<article-categories>
 				<subj-group>
-					<subject><bold>'.esc_html($category->name).'</bold></subject>
+					<subject>'.esc_html($category->name).'</subject>
 				</subj-group>
 			</article-categories>';
 			}
@@ -248,7 +256,7 @@ class Anno_XML_Download {
 			$tag_xml = '<kwd-group kwd-group-type="simple">';
 			foreach ($tags as $tag) {
 				$tag = get_term($tag, 'article_tag');
-				$tag_xml .= '<kwd><bold>'.esc_html($tag->name).'</bold></kwd>';
+				$tag_xml .= '<kwd>'.esc_html($tag->name).'</kwd>';
 			}
 			$tag_xml .= '
 			</kwd-group>';
@@ -264,7 +272,7 @@ class Anno_XML_Download {
 			$title_xml = '<title-group>';
 			if (!empty($article->post_title)) {
 				$title_xml .= '
-				<article-title><bold>'.esc_html($article->post_title).'</bold></article-title>';
+				<article-title>'.esc_html($article->post_title).'</article-title>';
 			}
 			else {
 				$title_xml .= '
@@ -272,7 +280,7 @@ class Anno_XML_Download {
 			}
 			if (!empty($subtitle)) {
 				$title_xml .= '
-				<subtitle><bold>'.esc_html($subtitle).'</bold></subtitle>';
+				<subtitle>'.esc_html($subtitle).'</subtitle>';
 			}
 		}
 		$title_xml .= '
@@ -303,8 +311,10 @@ class Anno_XML_Download {
 		
 		// Authors	
 		$authors = get_post_meta($article->ID, '_anno_author_snapshot', true);
-		$author_xml = '<contrib-group>';
 		if (!empty($authors) && is_array($authors)) {
+		
+			$author_xml = '<contrib-group>';
+		
 			foreach ($authors as $author) {
 				$author_xml .= '
 				<contrib>';
@@ -341,15 +351,18 @@ class Anno_XML_Download {
 //						$author_xml .= '
 //						<email>'.esc_html($author['email']).'</email>';
 //					}
-
-					if (isset($author['degrees']) && !empty($author['degrees'])) {
+				
+					// Affiliation legacy support
+					if (!empty($author['affiliation']) || !empty($author['institution'])) {
 						$author_xml .= '
-						<degrees>'.esc_html($author['degrees']).'</degrees>';
-					}
-					
-					if (isset($author['affiliation']) && !empty($author['affitliation'])) {
-						$author_xml .= '
-						<affiliation>'.esc_html($author['affiliation']).'</affiliation>';
+							<aff>';
+							if (!empty($author['affiliation'])) {
+								$author_xml .= esc_html($author['affiliation']);
+							}
+							if (!empty($author['institution'])) {
+								$author_xml .= '<institution>'.esc_html($author['institution']).'</institution>';
+							}
+						$author_xml .= '</aff>';
 					}
 					
 					if (isset($author['bio']) && !empty($author['bio'])) {
@@ -366,14 +379,47 @@ class Anno_XML_Download {
 				</contrib>';
 			}
 		
+			$author_xml .= '
+			</contrib-group>';
 		}
-		$author_xml .= '
-		</contrib-group>';
+		
+		// Related Articles
+		$related_xml = '';
+		if(anno_workflow_enabled()){
+			$related_articles = annowf_clone_get_ancestors($article->ID);
+		}
+		if (!empty($related_articles) && is_array($related_articles)) {
+			foreach ($related_articles as $related_article_id) {
+				$related_article = get_post($related_article_id);
+				if (!empty($related_article) && $related_article->post_status == 'publish') {
+					$related_xml .= '<related-article id="'.esc_attr('a'.$related_article->ID).'" related-article-type="companion" ext-link-type="uri" xlink:href="'.esc_attr(get_permalink($related_article_id)).'" ';
+					
+					$related_doi = get_post_meta($related_article_id, '_anno_doi', true);
+
+					if (!empty($related_doi)) {
+						$related_xml .= 'elocation-id="'.esc_attr($related_doi).'" ';
+					}
+					
+					// Queried for above
+					if (!empty($journal_id)) {
+						$related_xml .= 'journal_id="'.esc_attr($journal_id).'" ';
+					}
+
+					// Queried for above					
+					if (!empty($journal_id_type)) {
+						$related_xml .= 'journal_id_type="'.esc_attr($journal_id_type).'" ';
+					}
+					
+					$related_xml .= ' />';
+				}
+			}
+		}	
 		
 			return 
 '<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE article SYSTEM "http://dtd.nlm.nih.gov/ncbi/kipling/kipling-jp3.dtd">
-<article xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" xml:lang="en">
+<!DOCTYPE article PUBLIC "-//NLM//DTD Journal Publishing DTD v3.0 20080202//EN" "journalpublishing3.dtd">
+<article article-type="research-article" xml:lang="en" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<?origin annotum?>
 	<front>
 		<journal-meta>
 			'.$journal_id_xml.'
@@ -402,6 +448,7 @@ class Anno_XML_Download {
 '			'.$abstract_xml.'
 			'.$tag_xml.'
 			'.$funding_xml.'
+			'.$related_xml.'
 		</article-meta>
 	</front>';
 	}
@@ -439,7 +486,7 @@ class Anno_XML_Download {
 				if (!empty($appendix)) {
 					$xml .='
 				<app id="app'.($appendix_key + 1).'">
-					<title>'.sprintf(_x('Appendix %s', 'xml appendix title', 'anno'), anno_index_alpha($appendix_key)).'</title>'
+					<title>'.sprintf(_x('Appendix %s', 'xml appendix title', 'anno'), $appendix_key + 1).'</title>'
 					.$appendix.'
 				</app>';
 				}
@@ -461,7 +508,7 @@ class Anno_XML_Download {
 				<title>'._x('References', 'xml reference title', 'anno').'</title>';
 		
 			foreach ($references as $ref_key => $reference) {
-				$ref_key_display = $ref_key + 1;
+				$ref_key_display = esc_attr('ref'.($ref_key + 1));
 				if (isset($reference['doi']) && !empty($reference['doi'])) {
 					$doi = '
 						<pub-id pub-id-type="doi">'.esc_html($reference['doi']).'</pub-id>';
@@ -495,7 +542,7 @@ class Anno_XML_Download {
 				$xml .='
 			<ref id="'.$ref_key_display.'">
 				<label>'.$ref_key_display.'</label>
-				<mixed-citation'.$link.'>'.$text.'
+				<mixed-citation'.$link.'>'.trim($text).'
 					'.$doi.$pmid.'
 				</mixed-citation>
 			</ref>';
@@ -510,17 +557,23 @@ class Anno_XML_Download {
 		
 	}
 	
-	private function xml_back($article) {
-		return 
-'	<back>
-'.$this->xml_acknoledgements($article).'
-'.$this->xml_appendices($article).'
-'.$this->xml_references($article).'
-	</back>
-'.$this->xml_responses($article).'
-</article>';	
-	}
-	
+private function xml_back($article) {
+	if($this->xml_acknoledgements($article) || $this->xml_appendices($article) || $this->xml_references($article)) {
+	$xml_back = '	<back>
+		'.$this->xml_acknoledgements($article).'
+		'.$this->xml_appendices($article).'
+		'.$this->xml_references($article).'
+		</back>
+		'.$this->xml_responses($article).'
+		</article>';	
+		}
+	else { 
+		$xml_back =$this->xml_responses($article).'
+	</article>';
+	} 
+	return $xml_back; 
+}
+
 	private function xml_responses($article) {
 		$comments = get_comments(array('post_id' => $article->ID));
 		$comment_xml = '';
@@ -584,18 +637,21 @@ class Anno_XML_Download {
 //				<email>'.esc_html($user->user_email).'</email>';
 //			}
 			
-			$degrees = get_user_meta($user->ID, '_anno_degrees', true);
-			if (!empty($degrees)) {
-				$author_xml .= '
-					<degrees>'.esc_html($degrees).'</degrees>';
-			}
-
+			// Affiliation legacy support
 			$affiliation = get_user_meta($user->ID, '_anno_affiliation', true);
-			if (!empty($affilitation)) {
+			$institution = get_user_meta($user->ID, '_anno_institution', true);
+			if (!empty($affiliation) || !empty($institution)) {
 				$author_xml .= '
-					<aff>'.esc_html($user->last_name).'</aff>';
+					<aff>';
+					if (!empty($affiliation)) {
+						$author_xml .= esc_html($affiliation);
+					}
+					if (!empty($institution)) {
+						$author_xml .= '<institution>'.esc_html($institution).'</institution>';
+					}
+				$author_xml .= '</aff>';
 			}
-
+			
 			$bio = $user->user_description;
 			if (!empty($bio)) {
 				$author_xml .= '
@@ -633,11 +689,11 @@ class Anno_XML_Download {
 		if (!empty($pub_date)) {
 			$pub_date = strtotime($pub_date);
 			$pub_date_xml = '
-				<pub-date pub-type="ppub">
-					<day>'.date('j', $pub_date).'</day>
-					<month>'.date('n', $pub_date).'</month>
-					<year>'.date('Y', $pub_date).'</year>
-				</pub-date>';
+			<pub-date pub-type="epub">
+				<day>'.date('j', $pub_date).'</day>
+				<month>'.date('n', $pub_date).'</month>
+				<year>'.date('Y', $pub_date).'</year>
+			</pub-date>';
 		}
 		else {
 			$pub_date_xml = '';

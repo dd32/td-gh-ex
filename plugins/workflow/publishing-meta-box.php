@@ -1,13 +1,23 @@
 <?php
 
 /**
+ * @package anno
+ * This file is part of the Annotum theme for WordPress
+ * Built on the Carrington theme framework <http://carringtontheme.com>
+ *
+ * Copyright 2008-2011 Crowd Favorite, Ltd. All rights reserved. <http://crowdfavorite.com>
+ * Released under the GPL license
+ * http://www.opensource.org/licenses/gpl-license.php
+ */
+
+/**
  * Callback for publish meta box. Heavily based on code from the WP Core 3.1.2
  */ 
 function annowf_status_meta_box($post) {
 	$post_state = annowf_get_post_state($post->ID);
 ?>
 <div class="submitbox" id="submitpost">
-	<input name="post_state" type="hidden" value="<?php esc_attr_e($post_state); ?>" />
+	<input name="post_state" type="hidden" value="<?php echo esc_attr($post_state); ?>" />
 	<div id="minor-publishing">
 		<div id="minor-publishing-actions">
 			<?php 
@@ -22,7 +32,7 @@ function annowf_status_meta_box($post) {
 			annowf_misc_action_approved_markup();
  		} 
 	?>
-	</div> <!-- #minor-publising -->
+	</div> <!-- #minor-publishing -->
 	<input type="hidden" name="hidden_post_status" id="hidden_post_status" value="<?php echo esc_attr( ('auto-draft' == $post->post_status ) ? 'draft' : $post->post_status); ?>" />
 	<div id="major-publishing-actions">
 		<?php
@@ -67,8 +77,7 @@ function annowf_major_action_draft_markup() {
 ?>
 		<div id="publishing-action"<?php echo $wrap_class; ?>>
 			<img src="<?php echo esc_url( admin_url( 'images/wpspin_light.gif' ) ); ?>" class="ajax-loading" id="ajax-loading" alt="" />
-			<input name="original_publish" type="hidden" id="original_publish" value="<?php esc_attr_e($anno_post_save['review']); ?>" />
-
+			<input name="original_publish" type="hidden" id="original_publish" value="<?php echo esc_attr($anno_post_save['review']); ?>" />
 			<?php submit_button($anno_post_save['review'], 'primary', 'publish', false, array( 'tabindex' => '5', 'accesskey' => 'p' )); ?>
 		</div>
 		<div class="clear"></div>
@@ -98,7 +107,7 @@ function annowf_major_action_submitted_markup() {
 		global $anno_post_save;
 ?>
 	<div id="publishing-action-approve" class="center-wrap">
-		<input name="original_publish" type="hidden" id="original_publish" value="<?php esc_attr_e($anno_post_save['approve']) ?>" />	
+		<input name="original_publish" type="hidden" id="original_publish" value="<?php echo esc_attr($anno_post_save['approve']) ?>" />	
 		<?php submit_button($anno_post_save['approve'], 'primary', 'publish', false, array( 'tabindex' => '5')); ?>
 		<img src="<?php echo esc_url( admin_url( 'images/wpspin_light.gif' ) ); ?>" class="ajax-loading" alt="" />
 	</div>
@@ -160,7 +169,7 @@ function annowf_major_action_in_review_markup() {
 		global $anno_post_save;
 ?>
 	<div id="publishing-action-approve" class="center-wrap">
-		<input name="original_publish" type="hidden" id="original_publish" value="<?php esc_attr_e($anno_post_save['approve']) ?>" />	
+		<input name="original_publish" type="hidden" id="original_publish" value="<?php echo esc_attr($anno_post_save['approve']) ?>" />	
 		<?php submit_button($anno_post_save['approve'], 'primary', 'publish', false, array( 'tabindex' => '5')); ?>
 		<img src="<?php echo esc_url( admin_url( 'images/wpspin_light.gif' ) ); ?>" class="ajax-loading" alt="" />
 	</div>
@@ -251,7 +260,7 @@ function annowf_misc_action_approved_markup() {
 
 	echo esc_html( $visibility_trans ); ?></span>
 	<?php if ( $can_publish ) { ?>
-		<a href="#visibility" class="edit-visibility hide-if-no-js"><?php _ex('Edit', 'verb, publising box edit visibility text', 'anno'); ?></a>
+		<a href="#visibility" class="edit-visibility hide-if-no-js"><?php _ex('Edit', 'verb, publishing box edit visibility text', 'anno'); ?></a>
 
 		<div id="post-visibility-select" class="hide-if-js">
 			<input type="hidden" name="hidden_post_password" id="hidden-post-password" value="<?php echo esc_attr($post->post_password); ?>" />
@@ -429,8 +438,8 @@ function annowf_minor_action_save_markup() {
 		<div style="display:none;">
 			<?php submit_button( _x('Save', 'Publishing box save button text', 'anno'), 'button', 'save' ); ?>
 		</div>
-		<div id="save-action">			
-			<input <?php if ( 'private' == $post->post_status ) { ?>style="display:none"<?php } ?> type="submit" name="save" id="save-post" value="<?php esc_attr_e('Save', 'anno'); ?>" tabindex="4" class="button button-highlighted" />
+		<div id="save-action" class="left">			
+			<input <?php if ( 'private' == $post->post_status ) { ?>style="display:none"<?php } ?> type="submit" name="save" id="save-post" value="<?php echo esc_attr('Save', 'anno'); ?>" tabindex="4" class="button button-highlighted" />
 			<img src="<?php echo esc_url( admin_url( 'images/wpspin_light.gif' ) ); ?>" class="ajax-loading" id="draft-ajax-loading" alt="" />
 		</div>
 <?php 
@@ -440,22 +449,23 @@ function annowf_minor_action_save_markup() {
  * Clone button markup used in many major actions for various states
  */
 function annowf_major_action_clone_markup($position = 'center') {
-	global $anno_post_save;
-	if ($position == 'center') {
-		$class = 'center-wrap';
-	}
-	else {
-		$class = 'float-right';
-	}
+	global $anno_post_save, $post;
+	if (!annowf_has_clone($post->ID)) {
+		if ($position == 'center') {
+			$class = 'center-wrap';
+		}
+		else {
+			$class = 'float-right';
+		}
 ?>
-	<div id="clone-action" class="major <?php echo $class ?>">
-		<?php submit_button($anno_post_save['clone'], 'primary', 'publish', false, array( 'tabindex' => '5', 'accesskey' => 'p' )); ?>
-	</div>
-
+		<div id="clone-action" class="major <?php echo $class ?>">
+			<?php submit_button($anno_post_save['clone'], 'primary', 'publish', false, array( 'tabindex' => '5', 'accesskey' => 'p' )); ?>
+		</div>
 <?php 
+	}
 	if ($position != 'center') {		
 ?>	
-		<div class="clear"></div>
+			<div class="clear"></div>
 <?php 
 	}
 }
@@ -482,5 +492,3 @@ function annowf_major_action_revert($position = 'left') {
 <?php 
 	}
 }
-
-?>

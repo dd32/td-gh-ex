@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * @package anno
+ * This file is part of the Annotum theme for WordPress
+ * Built on the Carrington theme framework <http://carringtontheme.com>
+ *
+ * Copyright 2008-2011 Crowd Favorite, Ltd. All rights reserved. <http://crowdfavorite.com>
+ * Released under the GPL license
+ * http://www.opensource.org/licenses/gpl-license.php
+ */
+
 global $anno_review_options;
 $anno_review_options = array(
 	0 => '',
@@ -83,7 +93,7 @@ function anno_internal_comment_table_row($cur_comment) {
 		set_current_screen('article');
 	}
 	
-	$comment_list_table = _get_list_table('WP_Comments_List_Table');
+	$comment_list_table = _get_list_table('WP_Comments_List_Table', array('screen'=>'article'));
 ?>
 	<tr id="comment-<?php echo $comment->comment_ID; ?>" class="approved">
 		<td class="author column-author">
@@ -124,7 +134,7 @@ function anno_internal_comment_table_row($cur_comment) {
 			echo '
 			</div>
 			<p class="comment-content">'.
-				$comment->comment_content
+				wpautop($comment->comment_content, 1)
 			.'</p>';
 			
 			$actions = array();
@@ -186,6 +196,7 @@ function anno_internal_comments_reviewer_comments() {
 		} 
 	?>
 	</select>
+	<input id="reviewer-review-submit" type="button" class="button-secondary" value="<?php _ex('Submit', 'button label', 'anno'); ?>" />
 	<span class="review-notice"></span>
 </div>
 
@@ -224,8 +235,7 @@ function anno_internal_comments_form($type) {
  * Enqueue js for internal comments
  */
 function anno_internal_comments_print_scripts() {
-global $post;
-	wp_enqueue_script('anno-internal-comments', trailingslashit(get_bloginfo('template_directory')).'plugins/workflow/internal-comments/js/internal-comments.js', array('jquery'));
+	wp_enqueue_script('anno-internal-comments', trailingslashit(get_template_directory_uri()).'plugins/workflow/internal-comments/js/internal-comments.js', array('jquery'));
 }
 add_action('admin_print_scripts-post.php', 'anno_internal_comments_print_scripts');
 add_action('admin_print_scripts-post-new.php', 'anno_internal_comments_print_scripts');
@@ -234,7 +244,7 @@ add_action('admin_print_scripts-post-new.php', 'anno_internal_comments_print_scr
  * Enqueue css for internal comments
  */
 function anno_internal_comments_print_styles() {
-	wp_enqueue_style('anno-internal-comments', trailingslashit(get_bloginfo('template_directory')).'plugins/workflow/internal-comments/css/internal-comments.css');
+	wp_enqueue_style('anno-internal-comments', trailingslashit(get_template_directory_uri()).'plugins/workflow/internal-comments/css/internal-comments.css');
 }
 add_action('admin_print_styles-post.php', 'anno_internal_comments_print_styles');
 add_action('admin_print_styles-post-new.php', 'anno_internal_comments_print_styles');
@@ -442,7 +452,7 @@ function anno_internal_comments_get_comment_root($comment) {
 	if (is_numeric($comment)) {
 		$comment = get_comment($comment);
 	}
-	if ($commment !== false) {
+	if ($comment !== false) {
 		while($comment->comment_parent != 0) {
 			$comment = get_comment($comment->comment_parent);
 		}

@@ -13,7 +13,6 @@ if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { die(); }
 if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 ?>
 <?php //cfct_misc('tools-nav'); ?>
-
 <article <?php post_class('article-full'); ?>>
 	<header class="header">
 		<div class="entry-title">
@@ -26,9 +25,24 @@ if (CFCT_DEBUG) { cfct_banner(__FILE__); }
 			<time class="published" pubdate datetime="<?php the_time('c'); ?>"><?php the_time('F j, Y'); ?></time>
 			<?php anno_the_terms('article_category', '<span class="article-categories"> <span class="sep">&middot;</span> ', ',', '</span>'); ?>
 		</div>
-		<?php cfct_misc('tools-bar'); ?>
+		<?php
+			cfct_misc('tools-bar');
+ 			if (function_exists('annowf_get_clone_dropdown')) {
+				$markup = annowf_get_clone_dropdown(get_the_ID());
+				if (!empty($markup)) {
+		?>
+			<div class="sec sec-revisions">
+				<span class="title"><span><?php _e('Revisions', 'anno'); ?></span></span>
+				<?php _e('This article is either a revised version or has previous revisions', 'anno'); ?>
+				<?php echo $markup; ?>
+			</div>
+		<?php
+				}
+			}
+		
+		?>
 		<div class="sec sec-authors">
-			<span class="title"><span><?php _e('Authors', 'anno'); ?></span></span>
+			<span class="title"><span><?php echo _n( 'Author', 'Authors', anno_num_authors(get_the_ID()), 'anno' ) ?></span></span>
 			<ul class="authors nav">
 				<?php anno_the_authors(); ?>
 			</ul>

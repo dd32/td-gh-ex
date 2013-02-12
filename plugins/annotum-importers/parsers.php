@@ -1,6 +1,18 @@
 <?php
 
 /**
+ * @package anno
+ * This file is part of the Annotum theme for WordPress
+ * Built on the Carrington theme framework <http://carringtontheme.com>
+ *
+ * Copyright 2008-2011 Crowd Favorite, Ltd. All rights reserved. <http://crowdfavorite.com>
+ * Released under the GPL license
+ * http://www.opensource.org/licenses/gpl-license.php
+ * 
+ * Based on code found in WordPress Importer plugin
+ */
+
+/**
  * WordPress Importer class for managing parsing of WXR files.
  */
 class Knol_WXR_Parser {
@@ -76,7 +88,9 @@ class Knol_WXR_Parser {
 /**
  * WXR Parser that makes use of the SimpleXML PHP extension.
  */
-class Knol_WXR_Parser_SimpleXML {
+class Knol_WXR_Parser_SimpleXML {	
+	var $img_id_modifier = 0;
+	
 	function parse( $file ) {
 		$authors = $posts = $categories = $tags = $terms = array();
 
@@ -226,8 +240,8 @@ class Knol_WXR_Parser_SimpleXML {
 						'comment_author_email' => (string) $comment->comment_author_email,
 						'comment_author_IP' => (string) $comment->comment_author_IP,
 						'comment_author_url' => (string) $comment->comment_author_url,
-						'comment_date' => (string) $comment->comment_date,
-						'comment_date_gmt' => (string) $comment->comment_date_gmt,
+						'comment_date' => ( isset( $comment->comment_gmt ) ) ? (string) $comment->comment_gmt : (string) $comment->comment_date,
+                        'comment_date_gmt' => ( isset( $comment->comment_gmt ) ) ? (string) $comment->comment_gmt : (string) $comment->comment_date_gmt,
 						'comment_content' => (string) $comment->comment_content,
 						'comment_approved' => (string) $comment->comment_approved,
 						'comment_type' => (string) $comment->comment_type,
@@ -236,7 +250,6 @@ class Knol_WXR_Parser_SimpleXML {
 						'commentmeta' => $meta,
 					);
 				}
-				
 				
 				$attachment_template = array(
 					'upload_date' => $post['post_date_gmt'],
@@ -316,8 +329,8 @@ class Knol_WXR_Parser_SimpleXML {
 					if (
 						(strpos($attrs['src'], 'http://') === false &&
 						 strpos($attrs['src'], 'https://') === false ) 
-						|| strpos($attrs['src'], '://knol.google.com' !== false)
-					) {
+						|| strpos($attrs['src'], '://knol.google.com') !== false
+					 ) {
 						$url_explode = explode('/', (string) $attrs['src']);
 						$attachment['post_title'] = end($url_explode);
 
@@ -338,6 +351,8 @@ class Knol_WXR_Parser_SimpleXML {
 				}
 				
 				if (!empty($attachment['attachment_url'])) {
+					$attachment['post_id'] = $attachment['post_parent'].'_img_'.$this->img_id_modifier;
+					$this->img_id_modifier++;
 					$attachments[] = $attachment;
 				}		
 			}		
@@ -1119,6 +1134,7 @@ class Kipling_DTD_Parser {
 			$default_author_id = $first_author_id = 1;
 			
 			// Grab the author(s). 
+			$authors = array();
 			foreach (pq('contrib', $article_meta) as $contributor) {
 				$contributor = pq($contributor);
 			
@@ -1208,16 +1224,42 @@ class Kipling_DTD_Parser {
 			foreach ($references as $reference) {
 				$reference = pq($reference);
 				// For now, just support mixed-citations as text.
-				$ref_id = $reference->attr('id');
-				$ref_data['text'] = trim($reference->text());
+				$ref_id = str_replace('ref', '', $reference->attr('id'));
+				
+				// Only store numeric values
+				if (is_numeric($ref_id)) {
+					$ref_id = intval($ref_id) - 1;
+				}
+				else {
+					$ref_id = null;
+				}
+				
+				$ref_text = pq('mixed-citation', $reference);
+				
+				$ref_data['text'] = trim($ref_text->text());
 			
 				if (empty($ref_id)) {
 					$ref_array[] = $ref_data;
 				}
 				else {
-					$ref_array[$ref_id] = $ref_data;
+					// Possibility that this key was already set programmatically, replace it and add old ref to end.
+					if (isset($ref_array[$ref_id])) {
+						$old_ref = $ref_array[$ref_id];
+						$ref_array[$ref_id] = $ref_data;
+						$ref_array[] = $old_ref;
+					}
+					else {
+						$ref_array[$ref_id] = $ref_data;
+					}
 				}
 			}
+			if (!empty($ref_array)) {
+				$post['postmeta'][] = array(
+					'key' => '_anno_references',
+					'value' => serialize($ref_array),
+				);
+			}
+			
 
 			// Attachments
 			
@@ -1258,7 +1300,7 @@ class Kipling_DTD_Parser {
 				$img_url = $img->attr('xlink:href');
 				
 				// Dont save chart api images (most likely formulas)
-				if (!empty($img_url) && strpos($img_url, 'google.com/chart') === false) {
+				if (!empty($img_url) && strpos($img_url, 'googleapis.com/chart') === false) {
 					$post_meta = array();
 					
 					$alt_text = pq('alt-text', $img)->html();
@@ -1392,6 +1434,7 @@ class Kipling_DTD_Parser {
 			'suffix' => isset($author_meta['suffix']) ? $author_meta['suffix'] : '',
 			'degrees' => isset($author_meta['degrees']) ? $author_meta['degrees'] : '',
 			'affiliation' => isset($author_meta['affiliation']) ? $author_meta['affiliation'] : '',
+			'institution' => isset($author_meta['institution']) ? $author_meta['institution'] : '',
 			'bio' => isset($author_meta['bio']) ? $author_meta['bio'] : '',
 			'email' => $author['author_email'],
 			'link' => $author['author_url'],
@@ -1428,6 +1471,7 @@ class Kipling_DTD_Parser {
 			$email = pq('> email', $contributor)->text();
 
 			$author_meta['affiliation'] = $affiliation = pq('> aff', $contributor)->text();
+			$author_meta['institution'] = $institution = pq('> aff > institution', $contributor)->text();
 			$author_meta['bio'] = pq('> bio', $contributor)->text();
 			$author_meta['ext-link'] = pq('> ext-link', $contributor)->attr('xlink::href');								
 			$author_meta['uri'] = pq('> uri', $contributor)->text();
@@ -1473,7 +1517,7 @@ class Kipling_DTD_Parser {
 				// Use three most likely items to generate ID
 				$contrib_group = pq('contrib-group', $collab)->text();
 				$affiliation = pq('> aff', $collab)->text();
-				$institution = pq('> institution', $collab)->text();
+				$institution = pq('> aff > institution', $collab)->text();
 				
 				$author['author_id'] = sanitize_title($contrib_group.$affiliation.$institution);
 				$author['author_display_name'] = !empty($contrib_group) ? $contrib_group : $institution;
@@ -1481,6 +1525,7 @@ class Kipling_DTD_Parser {
 				// Meta info - Bio, email etc.. gathered later
 				$collab_meta = array();
 				$collab_meta['affiliation'] = $affiliation;
+				$collab_meta['institution'] = $institution;
 				$collab_meta['bio'] = pq('> bio', $collab)->text();
 				$collab_meta['ext-link'] = pq('> ext-link', $collab)->text();								
 				$collab_meta['uri'] = pq('> uri', $collab)->text();
@@ -1579,7 +1624,7 @@ class Kipling_DTD_Parser {
 	function parse_media($media) {		
 		$img_url = $media->attr('xlink:href');
 		
-		if (!empty($img_url) && strpos($img_url, 'google.com/chart') === false) {
+		if (!empty($img_url) && strpos($img_url, 'googleapis.com/chart') === false) {
 			$post_meta = array();
 			
 			$alt_text = pq('alt-text', $media)->text();

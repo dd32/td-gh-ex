@@ -1,6 +1,16 @@
 <?php 
 
 /**
+ * @package anno
+ * This file is part of the Annotum theme for WordPress
+ * Built on the Carrington theme framework <http://carringtontheme.com>
+ *
+ * Copyright 2008-2011 Crowd Favorite, Ltd. All rights reserved. <http://crowdfavorite.com>
+ * Released under the GPL license
+ * http://www.opensource.org/licenses/gpl-license.php
+ */
+
+/**
  * Register article post type
  */
 function anno_register_post_types() {
@@ -35,7 +45,7 @@ function anno_register_post_types() {
 			'taxonomies' => array(),
 			'menu_position' => 5,
 			'capability_type' => $capability_type,
-			'menu_icon' => get_bloginfo('template_url').'/assets/main/img/admin-menu-icon.png',
+			'menu_icon' => trailingslashit(get_template_directory_uri()).'assets/main/img/admin-menu-icon.png',
 	);
 	register_post_type('article', $args);
 }
@@ -88,11 +98,11 @@ add_filter('post_updated_messages', 'anno_post_updated_messages');
 /**
  * Add DTD Meta Boxes
  */ 
-function anno_article_meta_boxes() {
+function anno_article_meta_boxes($article) {
 	add_meta_box('subtitle', _x('Subtitle', 'Meta box title', 'anno'), 'anno_subtitle_meta_box', 'article', 'normal', 'high');
+	add_meta_box('abstract', _x('Abstract', 'Meta box title', 'anno'), 'anno_abstract_meta_box', 'article', 'normal', 'high');
 	add_meta_box('body', _x('Body', 'Meta box title', 'anno'), 'anno_body_meta_box', 'article', 'normal', 'high');
 	add_meta_box('references', _x('References', 'Meta box title', 'anno'), 'anno_references_meta_box', 'article', 'normal', 'high');
-	add_meta_box('abstract', _x('Abstract', 'Meta box title', 'anno'), 'anno_abstract_meta_box', 'article', 'normal', 'high');
 	add_meta_box('funding', _x('Funding Statement', 'Meta box title', 'anno'), 'anno_funding_meta_box', 'article', 'normal', 'high');
 	add_meta_box('acknowledgements', _x('Acknowledgements', 'Meta box title', 'anno'), 'anno_acknowledgements_meta_box', 'article', 'normal', 'high');
 	add_meta_box('appendices', _x('Appendices', 'Meta box title', 'anno'), 'anno_appendices_meta_box', 'article', 'normal', 'high');
@@ -100,6 +110,10 @@ function anno_article_meta_boxes() {
 
 	if (current_user_can('editor') || current_user_can('administrator')) {
 		add_meta_box('convert', _x('Convert To Post', 'Meta box title', 'anno'), 'anno_convert_meta_box', 'article', 'side', 'low');
+		// Dont load the DOI meta box on brand new articles, guid has not been generated yet to generate the DOI
+		if ($article->post_status != 'auto-draft') {
+			add_meta_box('doi-deposit', _x('DOI Deposit', 'Meta box title', 'anno'), 'anno_deposit_doi_meta_box', 'article', 'side', 'low');
+		}
 	}
 }
 add_action('add_meta_boxes_article', 'anno_article_meta_boxes');
@@ -127,7 +141,7 @@ function anno_body_meta_box($post) {
 		$content = anno_process_editor_content($post->post_content);
 	}
 	if (function_exists('wp_editor')) {
-		anno_load_editor($content, 'anno-body', array('textarea_name' => 'content'));
+		anno_load_editor($content, 'content', array('textarea_name' => 'content'));
 	}
 	else {
 		echo '<p style="padding:0 10px;">'.sprintf(_x('The Annotum editor requires at least WordPress 3.3. It appears you are using WordPress %s. ', 'WordPress version error message', 'anno'), get_bloginfo('version')).'</p>';
@@ -157,7 +171,7 @@ function anno_references_meta_box($post) {
  */
 function anno_abstract_meta_box($post) {
 ?>
-	<textarea class="anno-meta" name="excerpt"><?php echo esc_html($post->post_excerpt); ?></textarea>
+	<textarea class="anno-meta anno-meta-abstract" rows="8" name="excerpt"><?php echo esc_html($post->post_excerpt); ?></textarea>
 <?php
 }
 
@@ -167,7 +181,7 @@ function anno_abstract_meta_box($post) {
 function anno_funding_meta_box($post) {
 	$html = get_post_meta($post->ID, '_anno_funding', true);
 ?>
-	<textarea class="anno-meta" name="anno_funding"><?php echo esc_textarea($html); ?></textarea>
+	<textarea class="anno-meta anno-meta-funding" name="anno_funding"><?php echo esc_textarea($html); ?></textarea>
 <?php
 }
 
@@ -177,7 +191,7 @@ function anno_funding_meta_box($post) {
 function anno_acknowledgements_meta_box($post) {
 	$html = get_post_meta($post->ID, '_anno_acknowledgements', true);
 ?>
-	<textarea id="guy" class="anno-meta" name="anno_acknowledgements"><?php echo esc_textarea($html); ?></textarea>
+	<textarea id="guy" class="anno-meta anno-meta-acknowledgements" name="anno_acknowledgements"><?php echo esc_textarea($html); ?></textarea>
 <?php
 }
 
@@ -204,32 +218,34 @@ function anno_article_save_post($post_id, $post) {
 			'anno_featured'
 		);
 		foreach ($anno_meta as $key) {
-			switch ($key) {			
-				case 'anno_featured':
-					if (isset($_POST['anno_featured']) && $_POST['anno_featured'] == 'on') {
-						$value = 'on';
-					}
-					else {
-						$value = 'off';
-					}
-					// Reset the transient if this is a published article
-					if ($post->post_status == 'publish') {
-						delete_transient('anno_featured');
-					}
-					break;
-				case 'anno_subtitle':
-				case 'anno_funding':
-				case 'anno_acknowledgements':
-				default:	
-					if (isset($_POST[$key])) {
-						$value = force_balance_tags($_POST[$key]);
-					}
-					else {
-						$value = '';
-					}		
-					break;
+			if (isset($_POST[$key])) {
+				switch ($key) {			
+					case 'anno_featured':
+						if (isset($_POST['anno_featured']) && $_POST['anno_featured'] == 'on') {
+							$value = 'on';
+						}
+						else {
+							$value = 'off';
+						}
+						// Reset the transient if this is a published article
+						if ($post->post_status == 'publish') {
+							delete_transient('anno_featured');
+						}
+						break;
+					case 'anno_subtitle':
+					case 'anno_funding':
+					case 'anno_acknowledgements':
+					default:	
+						if (isset($_POST[$key])) {
+							$value = force_balance_tags($_POST[$key]);
+						}
+						else {
+							$value = '';
+						}		
+						break;
+				}
+				update_post_meta($post_id, '_'.$key, $value);
 			}
-			update_post_meta($post_id, '_'.$key, $value);
 		}
 		
 		$appendices = array();
@@ -239,8 +255,8 @@ function anno_article_save_post($post_id, $post) {
 					$appendices[] = addslashes(anno_validate_xml_content_on_save(stripslashes($appendix)));
 				}
 			}
+			update_post_meta($post_id, '_anno_appendices', $appendices);		
 		}
-		update_post_meta($post_id, '_anno_appendices', $appendices);		
 	}
 }
 add_action('wp_insert_post', 'anno_article_save_post', 10, 2);
@@ -262,25 +278,13 @@ function anno_is_appendix_empty($appendix_content) {
 }
 
 /**
- * Print styles for article post type.
- */ 
-function anno_article_admin_print_styles() {
-	global $post;
-	if ((isset($post->post_type) && $post->post_type == 'article') || (isset($_GET['anno_action']) && $_GET['anno_action'] == 'image_popup')) {
-		wp_enqueue_style('article-admin', trailingslashit(get_bloginfo('template_directory')).'/css/article-admin.css');
-		wp_enqueue_style('article-admin-tinymce-ui', trailingslashit(get_bloginfo('template_directory')).'/css/tinymce-ui.css');
-	}
-}
-add_action('admin_print_styles', 'anno_article_admin_print_styles');
-
-/**
  * Converts a post with the article post-type to the post post-type
  * 
  * @param int $post_id The ID of the post to convert
  * @return void
  */ 
 function anno_article_to_post($post_id) {
-	$post = wp_get_single_post(absint($post_id), ARRAY_A);
+	$post = get_post(absint($post_id), ARRAY_A);
 	if ($post['post_type'] != 'article') {
 		return;
 	}
@@ -382,7 +386,7 @@ function anno_deposit_doi_meta_box($post) {
 	if (empty($crossref_login) || empty($crossref_password) || empty($crossref_registrant)) {
 		$deposit_enabled = false;
 		$deposit_value = _x('CrossRef Credentials Required', 'disabled DOI lookup message', 'anno');
-		$depost_id = 'doi-deposit-disabled';
+		$deposit_id = 'doi-deposit-disabled';
 	}
 	else {
 		$deposit_enabled = true;
@@ -394,7 +398,7 @@ function anno_deposit_doi_meta_box($post) {
 	<div id="doi-status"></div>
 	<input id="doi" type="text" name="doi-deposit" class="meta-doi-input" value="<?php echo $deposit_value; ?>"<?php disabled(true, true, true); ?> />
 	<?php wp_nonce_field('anno_doi_deposit', '_ajax_nonce-doi-deposit', false); ?>
-	<input id="<?php echo $deposit_id; ?>" type="button" value="<?php _ex('Deposit', 'doi deposit button label', 'anno'); ?>"<?php disabled($deposit_enabled, false, true); ?> />
+	<!-- <input id="<?php echo $deposit_id; ?>" type="button" value="<?php _ex('Deposit', 'doi deposit button label', 'anno'); ?>"<?php disabled($deposit_enabled, false, true); ?> /> -->
 <?php
 }
 ?>

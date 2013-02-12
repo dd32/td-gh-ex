@@ -1,7 +1,5 @@
 /**
- * editor_plugin_src.js
- *
- * Copyright 2011, Moxiecode Systems AB
+ * Based on the lists plugin for tinyMCE developed by Moxiecode Systems AB
  * Released under LGPL License.
  *
  * License: http://tinymce.moxiecode.com/license
@@ -154,8 +152,6 @@
 	tinymce.create('tinymce.plugins.annoLists', {
 		init: function(ed, url) {
 
-			tinymce.html.Schema.blockElementsMap['LIST-ITEM'] = {};
-			
 			var enterDownInEmptyList = false;
 
 			function isTriggerKey(e) {

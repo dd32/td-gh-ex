@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package anno
  * This file is part of the Annotum theme for WordPress
@@ -18,7 +19,7 @@ class Anno_Widget_Recently extends WP_Widget {
 	public $timeout = 3600; // 1 hour
 	public $enable_cache = true;
 	public $html_uid;
-	public $number = 5;
+	public $number;
 	
 	protected static $script_initiated = false;
 	
@@ -41,6 +42,7 @@ class Anno_Widget_Recently extends WP_Widget {
 	
 	public function widget($args, $instance) {
 		extract($args);
+		$this->number = 5;
 		$cache = get_transient($this->key);
 		if ($cache === false || $this->enable_cache === false) {
 			ob_start();
@@ -53,7 +55,7 @@ class Anno_Widget_Recently extends WP_Widget {
 		echo $after_widget;
 	}
 
-	public function cached($args, $instance) { ?>
+	public function cached($args, $instance) { 	?>
 	<div class="recently-container">
 		<div class="tabs">
 			<ul class="nav">

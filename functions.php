@@ -30,6 +30,8 @@ include_once(CFCT_PATH.'functions/tinymce-upload/tinymce-uploader.php');
 include_once(CFCT_PATH.'functions/tinymce-upload/image-popup.php');
 include_once(CFCT_PATH.'functions/phpquery/phpquery.php');
 include_once(CFCT_PATH.'functions/anno-xml-download.php');
+include_once(CFCT_PATH.'functions/subscribe.php');
+include_once(CFCT_PATH.'functions/snapshot.php');
 
 function anno_setup() {
 	$path = trailingslashit(TEMPLATEPATH);
@@ -113,26 +115,10 @@ function anno_admin_settings_menu_form_title() {
  * Run at 'wp' hook so we have access to conditional functions, like is_single(), etc.
  */
 function anno_assets() {
-	cfct_template_file('assets', 'load');
+	// Do not load with cfct_template as it will use the child them only if load.php exists there
+	include_once(CFCT_PATH.'assets/load.php');
 }
 add_action('wp_enqueue_scripts', 'anno_assets');
-
-/**
- * Enqueue our custom JS on the edit post page (currently used
- * for TinyMCE trigger usage during article save)
- *
- * @return void
- */
-function anno_edit_post_assets($hook_suffix) {
-	if ($hook_suffix == 'post.php' || $hook_suffix == 'post-new.php') {
-		global $post_type;
-		if ($post_type == 'article') {
-			wp_enqueue_script('anno-article-admin', get_template_directory_uri().'/js/article-admin.js');
-		}
-	}
-}
-add_action('admin_enqueue_scripts', 'anno_edit_post_assets');
-
 
 /**
  * Bring in our main.css on the dashboard page.  Should be cached
@@ -143,7 +129,7 @@ add_action('admin_enqueue_scripts', 'anno_edit_post_assets');
  */
 function anno_dashboard_assets($hook_suffix) {
 	if ($hook_suffix == 'index.php') {
-		wp_enqueue_style('anno', trailingslashit(get_bloginfo('template_directory')) .'assets/main/css/main.css', array(), ANNO_VER);
+		wp_enqueue_style('anno', trailingslashit(get_template_directory_uri()) .'assets/main/css/main.css', array(), ANNO_VER);
 	}
 }
 add_action('load-index.php', 'anno_dashboard_assets');
@@ -279,8 +265,8 @@ function anno_settings($settings) {
 	unset($settings['cfct']['fields']['about']);
 	
 	$yn_options = array(
-		'1' => __('Yes', 'carrington'),
-		'0' => __('No', 'carrington')
+		'1' => __('Yes', 'anno'),
+		'0' => __('No', 'anno')
 	);
 	
 	$anno_settings_top = array(
@@ -375,6 +361,12 @@ function anno_settings($settings) {
 					'type' => 'radio',
 					'options' => $yn_options,
 				),
+				'listing_filter' => array(
+					'label' => _x('Enable article and media list page filter', 'options label', 'anno'),
+					'name' => 'workflow_settings[listing_filter]',
+					'type' => 'radio',
+					'options' => $yn_options,
+				),
 			),
 		),
 		'anno_journal' => array(
@@ -440,6 +432,11 @@ function anno_settings($settings) {
 					'name' => 'registrant_code',
 					'type' => 'text',
 				),
+				'doi_prefix' => array(
+					'label' => _x('DOI Prefix', 'options label', 'anno'),
+					'name' => 'doi_prefix',
+					'type' => 'text',
+				),
 			),
 		),
 	);
@@ -494,6 +491,7 @@ function anno_defaults($defaults) {
 		'workflow' => 0,
 		'author_reviewer' => 0,
 		'notifications' => 0,
+		'listing_filter' => 0,
 	);
 	return $defaults;
 }
@@ -617,7 +615,6 @@ function anno_get_post_users($post_id, $type) {
 	if ($type == 'reviewer' || $type == 'author') {
 		$type = '_anno_'.$type.'_order';
 	}
-
 	$users = get_post_meta($post_id, $type, true);
 
 	if (!is_array($users)) {
@@ -790,6 +787,145 @@ Password: %s
 }
 
 /**
+ * Get published post ids for a given post type
+ *
+ * @param array $posts_types 
+ * @return array of post ids that are published for the posts types defined
+ */
+function anno_get_published_posts($post_types = array('article')) {
+	$posts = array();
+		
+	// author will always be stored in post_meta
+	$query = new WP_Query(array(
+		'fields' => 'ids',
+		'post_type' => $post_types,
+		'post_status' => array('publish'),
+		'cache_results' => false,
+		'posts_per_page' => -1,
+	));
+	
+	if (isset($query->posts) && is_array($query->posts)) {
+		$posts = $query->posts;
+	}
+	
+	wp_reset_query();
+	
+	return $posts;
+}
+
+/**
+ * Get a list of posts a user is the author or co-author on
+ *
+ * @param int $user_id User id to look up, else uses current user id
+ * @param array $post_type Post types to find posts for, defaults to article
+ * @param array $post_stati Post statuses to look up 
+ * @return array Empty array or array of post ids
+ * @author Evan Anderson
+ */
+function anno_get_owned_posts($user_id = false, $post_types = array('article'), $post_statuses = array('draft', 'pending', 'private', 'future')) {
+	$posts = array();
+	
+	if (empty($user_id)) {
+		$user_id = get_current_user_id();
+	}
+	
+	// author will always be stored in post_meta
+	$query = new WP_Query(array(
+		'fields' => 'ids',
+		'post_type' => $post_types,
+		'post_status' => $post_statuses,
+		'cache_results' => false,
+		'posts_per_page' => -1,
+		'author' => $user_id,
+	));
+	
+	if (isset($query->posts) && is_array($query->posts)) {
+		$posts = $query->posts;
+	}
+	
+	wp_reset_query();
+	
+	return $posts;
+}
+
+
+/**
+ * Get a list of posts a user is the author or co-author on
+ *
+ * @param int $user_id User id to look up, else uses current user id
+ * @param array $post_type Post types to find posts for, defaults to article
+ * @param array $post_stati Post statuses to look up 
+ * @return array Empty array or array of post ids
+ * @author Evan Anderson
+ */
+function anno_get_authored_posts($user_id = false, $post_types = array('article'), $post_statuses = array('draft', 'pending', 'private', 'publish', 'future')) {
+	$posts = array();
+	
+	if (empty($user_id)) {
+		$user_id = get_current_user_id();
+	}
+	
+	// author will always be stored in post_meta
+	$query = new WP_Query(array(
+		'fields' => 'ids',
+		'post_type' => $post_types,
+		'post_status' => $post_statuses,
+		'cache_results' => false,
+		'posts_per_page' => -1,
+		'meta_query' => array(
+			'relation' => 'OR',
+			array(
+				'key' => '_anno_author_'.$user_id,
+			),
+			array(
+				'key' => '_anno_reviewer_'.$user_id,
+			),
+		),
+	));
+	
+	if (isset($query->posts) && is_array($query->posts)) {
+		$posts = $query->posts;
+	}
+	
+	wp_reset_query();
+	
+	return $posts;
+}
+
+/**
+ * Get count of available articles that a user can see/edit
+ * 
+ * @param int $user_id ID of the user to count for, otherwise uses current user
+ * @return object|int Object if user is admin or editor of all the states and counts. Single int count otherwise
+ */
+function anno_viewable_article_count($user_id = false) {	
+	$count = 0;
+	
+	if (empty($user_id)) {
+		$user = wp_get_current_user();
+	}
+	else{
+		$user = get_user_by('id', (int) $user_id);
+	}
+	
+	if ($user) {
+		if ($user->has_cap('editor') || $user->has_cap('administrator')) {
+			return wp_count_posts('article', 'readable');
+		}
+		// The user is not an editor, nor an admin, so only count published posts and ones they are an author/co-author on.
+		else {
+			$author_posts = anno_get_authored_posts($user->ID);
+						
+			$count += count($author_posts);
+			
+			wp_reset_query();
+		}
+	}
+	
+	return $count;
+}
+
+/**
  * Output general stats in dashboard widget
  *
  * @return void
@@ -816,14 +952,20 @@ function anno_activity_information() {
 		),
 	);
 	
-	$num_posts = wp_count_posts( $article_post_type, 'readable' );
+	$num_posts = anno_viewable_article_count();
 	
-	// Get the absolute total of $num_posts
-	$total_records = array_sum( (array) $num_posts );
-
-	// Subtract post types that are not included in the admin all list.
-	foreach (get_post_stati(array('show_in_admin_all_list' => false)) as $state) {
-		$total_records -= $num_posts->$state;
+	if (!is_int($num_posts)) {
+	
+		// Get the absolute total of $num_posts
+		$total_records = array_sum( (array) $num_posts );
+		
+		// Subtract post types that are not included in the admin all list.
+		foreach (get_post_stati(array('show_in_admin_all_list' => false)) as $state) {
+			$total_records -= $num_posts->$state;
+		}
+	}
+	else {
+		$total_records = $num_posts;
 	}
 	
 	// Default
@@ -898,7 +1040,7 @@ function anno_update_nav_menu_location_add_action() {
 	$theme = get_option( 'stylesheet' );
 	add_action('update_option_theme_mods_'.$theme, 'anno_update_nav_menu_location');
 }
-add_action('admin_head-nav-menus.php', 'anno_init');
+add_action('admin_head-nav-menus.php', 'anno_update_nav_menu_location_add_action');
 
 function anno_update_nav_menu_location() {
 	delete_transient('anno_footer_menu');
@@ -996,6 +1138,9 @@ function anno_js_post_id($hook_suffix) {
 ?>
 <script type="text/javascript">var ANNO_POST_ID = <?php echo esc_js($post->ID); ?>;</script>
 <?php 
+		// Popups don't load in iframes, so this needs to be loaded on every edit page
+		// This was previously done in  < WP 3.5 but now 3.5 conditionally loads it for the media popup
+		wp_enqueue_script( 'media-upload' );
 	}
 }
 add_action('admin_enqueue_scripts', 'anno_js_post_id', 0);
@@ -1026,6 +1171,155 @@ function anno_current_user_can_edit() {
 }
 
 // Remove autop, inserts unnecessary br tags in the nicely formatted HTML
-remove_filter('the_content','wpautop');
+// Carlthewebmaster 15-Dec-11 - but only for Articles
+		global $post_type;
+		if ($post_type == 'article') {
+			remove_filter('the_content','wpautop');
+		}
 
-?>
+// Remove this filter which strips links from articles.
+remove_filter( 'content_save_pre', 'balanceTags', 50 );
+
+/**
+ * Get the number of authors for an article via the snapshot.
+ * @param int post_id ID of the post to get the number from 
+ * @return Number of authors, 1 if no snapshot found (default WP)
+ **/
+function anno_num_authors($post_id) {
+	$authors = get_post_meta($post_id, '_anno_author_snapshot', true);
+	if (is_array($authors)) {
+		return count($authors);
+	}
+
+	// Default WP, only one author
+	return 1;
+}
+
+ /**
+ * Typeahead user search AJAX handler. Based on code in WP Core 3.1.2
+ * note this searches the entire users table - on multisite you can add existing users from other blogs to this one.
+ */ 
+function anno_user_search() {
+	global $wpdb;
+	$s = stripslashes($_GET['q']);
+
+	$s = trim( $s );
+	if ( strlen( $s ) < 2 )
+		die; // require 2 chars for matching
+
+	$results = $wpdb->get_col($wpdb->prepare("
+		SELECT user_login
+		FROM $wpdb->users
+		WHERE user_login LIKE %s",
+		'%'.like_escape($s).'%'
+	));
+
+	echo join($results, "\n");
+	die;
+}
+add_action('wp_ajax_anno-user-search', 'anno_user_search');
+
+/**
+ * Enqueue the custom JS on the edit post page (currently used
+ * for TinyMCE trigger usage during article save)
+ *
+ * @return void
+ */
+function anno_edit_post_assets($hook_suffix) {
+	if ($hook_suffix == 'post.php' || $hook_suffix == 'post-new.php') {
+		global $post;
+		$main =  trailingslashit(get_template_directory_uri()) . 'assets/main/';
+		if ($post->post_type == 'article') {
+			wp_enqueue_script('anno-article-admin', $main.'js/article-admin.js', array('jquery-ui-sortable'), ANNO_VER);
+			if ($post->post_status == 'publish') {
+				wp_enqueue_script('anno-article-admin-snapshot', $main.'js/article-admin-snapshot.js', array('jquery', 'jquery-ui-sortable'), ANNO_VER);
+			}
+		}
+	}
+}
+add_action('admin_enqueue_scripts', 'anno_edit_post_assets');
+
+/**
+ * Print styles for article post type.
+ */ 
+function anno_article_admin_print_styles() {
+	global $post;
+	if ((isset($post->post_type) && $post->post_type == 'article') || (isset($_GET['anno_action']) && $_GET['anno_action'] == 'image_popup')) {
+		$main =  trailingslashit(get_template_directory_uri()) . 'assets/main/';
+		wp_enqueue_style('article-admin', $main.'css/article-admin.css', array(), ANNO_VER);
+		wp_enqueue_style('article-admin-tinymce-ui', $main.'css/tinymce-ui.css', array(), ANNO_VER);
+	}
+}
+add_action('admin_print_styles', 'anno_article_admin_print_styles');
+
+
+/**
+ * Adds a user to a given post with a given role
+ *
+ * @param string $type Type of user to add. Can be the meta_key.
+ * @param int $user_id ID of the user being added to the post
+ * @param int $post_id ID of the post to add the user to. Loads from global if nothing is passed.
+ * @return bool True if successfully added or already a user associated with the post, false otherwise
+ */
+function anno_add_user_to_post($type, $user_id, $post_id) {
+	$type = str_replace('-', '_', $type);
+	if ($type == 'co_author') {
+		$type = 'author';
+	}
+
+	if ($type == 'reviewer' || $type == 'author') {
+		$order = '_anno_'.$type.'_order';
+		$type = '_anno_'.$type.'_'.$user_id;
+	}
+	else {
+		return false;
+	}
+
+	$users = get_post_meta($post_id, $order, true);
+	if (!is_array($users)) {
+		update_post_meta($post_id, $order, array($user_id));
+		return add_post_meta($post_id, $type, $user_id, true);
+	}
+	else if (!in_array($user_id, $users)) {
+		$users[] = $user_id;
+		update_post_meta($post_id, $order, array_unique($users));
+		return add_post_meta($post_id, $type, $user_id, true);
+	}
+
+	return true;
+}
+
+/**
+ * Removes a user from a given post with a given role
+ *
+ * @param string $type Type of user to remove. Can be the meta_key.
+ * @param int $user_id ID of the user being removed to the post
+ * @param int $post_id ID of the post to remove the user from. Loads from global if nothing is passed.
+ * @return bool True if successfully removed, false otherwise
+ */
+function anno_remove_user_from_post($type, $user_id, $post_id) {
+	$type = str_replace('-', '_', $type);
+	if ($type == 'co_author') {
+		$type = 'author';
+	}
+
+	if ($type == 'reviewer' || $type == 'author') {
+		$order = '_anno_'.$type.'_order';
+		$type = '_anno_'.$type.'_'.$user_id;
+	}
+	else {
+		return false;
+	}
+
+	$users = get_post_meta($post_id, $order, true);
+	if (is_array($users)) {
+		$key = array_search($user_id, $users);
+		if ($key !== false) {
+			unset($users[$key]);
+			update_post_meta($post_id, $order, array_unique($users));
+		}
+	}
+
+	return delete_post_meta($post_id, $type, $user_id);
+}
+
