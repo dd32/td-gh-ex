@@ -40,7 +40,7 @@
 <p>Your search for "<?php echo get_search_query(); ?>" has returned exactly <?php echo $wp_query->found_posts; ?> results, no more and no less. Hopefully what you're looking for will be found just below on this page, but if you're unable find what you are looking for you may need to use the links "Older Search Results" or "Newer Search Results" to navigate through more pages of results for "<?php echo get_search_query(); ?>." Please keep in mind that if not enough results return, the links for "Older Search Results" and "Newer Search Results" may not appear becuase there is nothing more to show.</p>
 <ul>
 <?php while (have_posts()) : the_post(); ?>
-    <li id="post-<?php the_ID(); ?>" <?php post_class(); ?>><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
+    <li id="post-<?php the_ID(); ?>" <?php post_class(); ?>><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
     <span><?php the_time('M') ?><br/><?php the_time('jS') ?></span><?php if ( get_the_title() ) { the_title();} else { echo '(No Title)';} ?>
     </a></li>
 <?php endwhile; ?>
@@ -67,7 +67,7 @@
 <!-- The Posts or Page -->   
 <?php while (have_posts()) : the_post(); ?>
 <li id="post-<?php the_ID(); ?>" <?php post_class('content'); ?>>
-	<h4><?php if ( is_page()) : else : ?><span><?php the_time('M') ?> <?php the_time('jS') ?></span><?php endif; ?><?php if (is_home() || is_404() || is_category() || is_day() || is_month() || is_year() || is_paged() || is_tag()) : ?><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php endif; ?><?php if ( get_the_title() ) { the_title();} else { echo '(No Title)';} ?><?php if (is_home() || is_404() || is_category() || is_day() || is_month() || is_year() || is_paged() || is_tag()) : ?></a><?php endif; ?></h4>
+	<h4><?php if ( is_page()) : else : ?><span><?php the_time('M') ?> <?php the_time('jS') ?></span><?php endif; ?><?php if (is_home() || is_404() || is_category() || is_day() || is_month() || is_year() || is_paged() || is_tag()) : ?><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php endif; ?><?php if ( get_the_title() ) { the_title();} else { echo '(No Title)';} ?><?php if (is_home() || is_404() || is_category() || is_day() || is_month() || is_year() || is_paged() || is_tag()) : ?></a><?php endif; ?></h4>
 	<?php the_content(); ?>
 	
     <span class="tag"><?php wp_link_pages(); ?></br><?php if (is_single()) : ?>This entry was posted in <?php the_category(', '); the_tags(' and tagged ', ', ', ''); endif;?> by <?php the_author_posts_link(); ?><?php if ( ( is_page() && !comments_open() ) || is_single() ) : ?> and comments are closed.<?php endif; ?></span>
@@ -93,14 +93,14 @@
 	<span class="right"><?php next_image_link( false, 'Next Image &#8250;'); ?></span>
     </h3>
 </li>
-<?php elseif (is_home() || is_404() || is_category() || is_day() || is_month() || is_year() || is_paged() || is_tag()) : ?>
+<?php elseif ( is_home() || is_404() || is_category() || is_day() || is_month() || is_year() || is_paged() || is_tag() ) : ?>
 <li>
 	<h3>
 	<span class="left"><?php next_posts_link('&#8249; Older Posts'); ?></span>
 	<span class="right"><?php previous_posts_link('Newer Posts &#8250;'); ?></span>
     </h3>
 </li>
-<?php else : ?>
+<?php elseif ( ( is_page() && get_theme_mod('previousnext_setting') == 'pages' ) || ( is_single() && get_theme_mod('previousnext_setting') == 'posts' ) || ( get_theme_mod('previousnext_setting') == 'both' ) ) : ?>
 <li>
 	<h3>
     <span class="left"><?php previous_post_link('%link', '&#8249; Older Post'); ?></span>

@@ -103,18 +103,7 @@ function adventure_enqueue_comment_reply() {
     if ( is_singular() && comments_open() && get_option('thread_comments')) 
             wp_enqueue_script('comment-reply'); }
 
-add_action( 'wp_enqueue_scripts', 'adventure_enqueue_comment_reply' );
-
-//	A safe way of adding javascripts to a WordPress generated page
-if (!function_exists('adventure_js')) {
-	function adventure_js() {
-			// JS at the bottom for fast page loading
-			wp_enqueue_script('adventure-jquery-easing', get_template_directory_uri() . '/js/jquery.easing.js', array('jquery'), '1.3', true);
-            wp_enqueue_script('adventure-menu-scrolling', get_template_directory_uri() . '/js/jquery.menu.scrolling.js', array('jquery'), '1', true);
-			wp_enqueue_script('adventure-scripts', get_template_directory_uri() . '/js/jquery.fittext.js', array('jquery'), '1.0', true);
-			wp_enqueue_script('adventure-fittext', get_template_directory_uri() . '/js/jquery.fittext.sizing.js', array('jquery'), '1', true);  } }
-
-if (!is_admin()) add_action('wp_enqueue_scripts', 'adventure_js');		
+add_action( 'wp_enqueue_scripts', 'adventure_enqueue_comment_reply' );	
 
 // Wrap Video with a DIV for a CSS Resposive Video
 function wrap_embed_with_div($html, $url, $attr) { 
@@ -178,99 +167,39 @@ function adventure_customize($wp_customize) {
 			<textarea rows="1" style="width:100%;" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
 			</label> <?php } }
 
-	// Add the option to use the CSS3 property Background-size
-	$wp_customize->add_setting( 'backgroundsize_setting', array(
-		'default'           => 'auto',
-		'control'           => 'select',));
+	// The Standard Sections for Theme Custimizer
+	$wp_customize->add_section( 'header_section', array(
+        'title'				=> 'Header',
+		'priority'			=> 26, ));
 
-	$wp_customize->add_control( 'backgroundsize_control', array(
-		'label'				=> 'Background Size',
-		'section'			=> 'background_image',
-		'settings'			=> 'backgroundsize_setting',
-		'priority'			=> 5,
-		'type'				=> 'radio',
-		'choices'			=> array(
-			'auto'			=> 'Auto (Default)',
-			'contain'		=> 'Contain',
-			'cover'			=> 'Cover',), ));
-			
-	// Change the color of the Content Background
-	$wp_customize->add_setting( 'backgroundcolor_setting', array(
-		'default'           => '#b4b09d',
-		'control'           => 'select',));
-		
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'backgroundcolor_control', array(
-		'label'				=> 'Content Background Color',
-		'section'			=> 'background_image',
-		'settings'			=> 'backgroundcolor_setting', )));
+	$wp_customize->add_section( 'nav', array(
+        'title'				=> 'Menu',
+		'priority'			=> 27, ));
 
-	// Change the opacity of the Content Background
-	$wp_customize->add_setting( 'contentbackground_setting', array(
-		'default'           => '.80',
-		'control'           => 'select',));
+	$wp_customize->add_section( 'background_image', array(
+        'title'				=> 'Background',
+		'priority'			=> 28, ));
 
-	$wp_customize->add_control( 'contentbackground_control', array(
-		'label'				=> 'Content Background',
-		'section'			=> 'background_image',
-		'settings'			=> 'contentbackground_setting',
-		'type'				=> 'radio',
-		'choices'			=> array(
-			'1'				=> '100',
-			'.95'			=> '95',
-			'.90'			=> '90',
-			'.85'			=> '85',
-			'.80'			=> '80 (Default)',
-			'.75'			=> '75',
-			'.70'			=> '70',
-			'.65'			=> '65',
-			'.60'			=> '60',), ));
-			
-	// Change the opacity of the Sidebar Background
-	$wp_customize->add_setting( 'sidebarbackground_setting', array(
-		'default'           => '.50',
-		'control'           => 'select',));
+	$wp_customize->add_section( 'content_section', array(
+        'title'				=> 'Content',
+        'priority'			=> 29, ));
 
-	$wp_customize->add_control( 'sidebarbackground_control', array(
-		'label'				=> 'Sidebar Background',
-		'section'			=> 'background_image',
-		'settings'			=> 'sidebarbackground_setting',
-		'type'				=> 'radio',
-		'choices'			=> array(
-			'1'				=> '100',
-			'.95'			=> '95',
-			'.90'			=> '90',
-			'.85'			=> '85',
-			'.75'			=> '75',
-			'.70'			=> '70',
-			'.65'			=> '65',
-			'.65'			=> '60',
-			'.70'			=> '55',
-			'.50'			=> '50 (Default)',
-			'.65'			=> '40',
-			'.65'			=> '35',
-			'.60'			=> '30',), ));
-	
-	// Choose the Different Images for the Banner
-	$wp_customize->add_section( 'bannerimage_section', array(
-        'title'				=> 'Banner Image',
-		'priority'			=> 2, ));
+	$wp_customize->add_section( 'sidebar_section', array(
+        'title'				=> 'Sidebar',
+        'priority'			=> 30, ));
 
-	$wp_customize->add_setting('bannerimage_setting', array(
-		'default'			=> 'purple.png',
-		'capability'		=> 'edit_theme_options',
-		'type'				=> 'option', ));
+	$wp_customize->add_section( 'links_section', array(
+        'title'				=> 'Links',
+        'priority'			=> 32, ));
 
-	$wp_customize->add_control('themename_color_scheme', array(
-		'label'				=> 'Choose one of the choices below...',
-		'section'			=> 'bannerimage_section',
-		'settings'			=> 'bannerimage_setting',
-		'type'				=> 'radio',
-		'choices'			=> array(
-			'purple.png'	=> 'Purple (Default)',
-			'blue.png'		=> 'Blue',
-			'marble.png'	=> 'Marble',
-			'green.png'		=> 'Green', ), ));
-		
+	// Remove the Section Colors for the Sake of making Sense
+	$wp_customize->remove_section( 'colors');
+
+	// Background needed to be moved to to the Background Section
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'background_color', array(
+		'label'				=> 'Background Color',
+		'section'			=> 'background_image', )));
+
 	// Change Site Title Color
 	$wp_customize->add_setting( 'titlecolor_setting', array(
 		'default'			=> '#eee2d6', ));
@@ -287,19 +216,198 @@ function adventure_customize($wp_customize) {
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'taglinecolor_control', array(
 		'label'				=> 'Site Title Color - #066ba0',
 		'section'			=> 'title_tagline',
-		'settings'			=> 'taglinecolor_setting', ))); }		
-	
+		'settings'			=> 'taglinecolor_setting', )));
+
+	// Choose the Different Images for the Banner
+	$wp_customize->add_setting('bannerimage_setting', array(
+		'default'			=> 'purple.png',
+		'capability'		=> 'edit_theme_options',
+		'type'				=> 'option', ));
+
+	$wp_customize->add_control('themename_color_scheme', array(
+		'label'				=> 'Banner Background',
+		'priority'			=> 1,
+		'section'			=> 'header_section',
+		'settings'			=> 'bannerimage_setting',
+		'type'				=> 'radio',
+		'choices'			=> array(
+			'purple.png'	=> 'Purple (Default)',
+			'blue.png'		=> 'Blue',
+			'marble.png'	=> 'Marble',
+			'green.png'		=> 'Green', ), ));
+
+	// Upload and Customization for the Banner and Header Options
+	$wp_customize->add_setting('menu_setting', array(
+		'default'			=> 'standard',
+		'capability'		=> 'edit_theme_options',
+		'type'				=> 'option', ));
+
+	$wp_customize->add_control('menu_control', array(
+		'label'				=> 'Menu Display Options',
+		'priority'			=> 6,
+		'section'			=> 'header_section',
+		'settings'			=> 'menu_setting',
+		'type'				=> 'radio',
+		'choices'			=> array(
+			'standard'		=> 'Standard (Default)',
+			'notitle'		=> 'No Title',
+			'bottom'		=> 'Moves Menu To Bottom', ), ));
+
+	// Adjust the Space Between the Top of the Page and Content
+	$wp_customize->add_setting( 'headerspacing_setting', array(
+		'default'           => '35%',
+		'control'           => 'select',));
+
+	$wp_customize->add_control( 'headerspacing_control', array(
+		'label'				=> 'Adjust the Spacing Between Top and Content',
+		'priority'			=> 90,
+		'section'			=> 'header_section',
+		'settings'			=> 'headerspacing_setting',
+		'type'				=> 'radio',
+		'choices'			=> array(
+			'65'			=> '65%',
+			'60'			=> '60%',
+			'55'			=> '55%',
+			'50'			=> '50%',
+			'45'			=> '45%',
+			'40'			=> '40%',
+			'35'			=> '35% Default',
+			'30'			=> '30%',
+			'25'			=> '25%',
+			'20'			=> '20%',
+			'15'			=> '15%',
+			'10'			=> '10%',
+			'5'				=> '5%',), ));
+
+	// Add the option to use the CSS3 property Background-size
+	$wp_customize->add_setting( 'backgroundsize_setting', array(
+		'default'           => 'auto',
+		'control'           => 'select',));
+
+	$wp_customize->add_control( 'backgroundsize_control', array(
+		'label'				=> 'Background Size',
+		'section'			=> 'background_image',
+		'settings'			=> 'backgroundsize_setting',
+		'priority'			=> 10,
+		'type'				=> 'radio',
+		'choices'			=> array(
+			'auto'			=> 'Auto (Default)',
+			'contain'		=> 'Contain',
+			'cover'			=> 'Cover',), ));
+
+	// Change the color of the Content Background
+	$wp_customize->add_setting( 'backgroundcolor_setting', array(
+		'default'           => '#b4b09d',
+		'control'           => 'select',));
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'backgroundcolor_control', array(
+		'label'				=> 'Color of the Content Background',
+		'section'			=> 'content_section',
+		'settings'			=> 'backgroundcolor_setting', )));
+
+	// Change the opacity of the Content Background
+	$wp_customize->add_setting( 'contentbackground_setting', array(
+		'default'           => '.80',
+		'control'           => 'select',));
+
+	$wp_customize->add_control( 'contentbackground_control', array(
+		'label'				=> 'Transparency of Content Background',
+		'section'			=> 'content_section',
+		'settings'			=> 'contentbackground_setting',
+		'type'				=> 'radio',
+		'choices'			=> array(
+			'1'				=> '100',
+			'.95'			=> '95',
+			'.90'			=> '90',
+			'.85'			=> '85',
+			'.80'			=> '80 (Default)',
+			'.75'			=> '75',
+			'.70'			=> '70',
+			'.65'			=> '65',
+			'.60'			=> '60',
+			'.55'			=> '55',
+			'.50'			=> '50',
+			'.45'			=> '45',
+			'.40'			=> '40',
+			'.35'			=> '35',
+			'.30'			=> '30',
+			'.25'			=> '25',
+			'.20'			=> '20',
+			'.15'			=> '15',
+			'.10'			=> '10',
+			'.05'			=> '5',
+			'.00'			=> '0',), ));
+
+	// Settings for the Previous & Next Post Link
+	$wp_customize->add_setting( 'previousnext_setting', array(
+		'default'           => 'both',
+		'control'           => 'select',));
+
+	$wp_customize->add_control( 'previousnext_control', array(
+		'label'				=> 'Previous & Next Links After Content',
+		'section'			=> 'content_section',
+		'settings'			=> 'previousnext_setting',
+		'type'				=> 'radio',
+		'choices'			=> array(
+			'both'			=> 'Both Pages & Posts',
+			'posts'			=> 'Only Posts',
+			'pages'			=> 'Only Pages',
+			'neither'		=> 'Neither', ), ));
+
+	// Change the color of the Sidebar Background
+	$wp_customize->add_setting( 'sidebarcolor_setting', array(
+		'default'           => '#000000',
+		'control'           => 'select',));
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'sidebarcolor_control', array(
+		'label'				=> 'Color of the Sidebar Background',
+		'section'			=> 'sidebar_section',
+		'settings'			=> 'sidebarcolor_setting', )));
+
+	// Change the opacity of the Sidebar Background
+	$wp_customize->add_setting( 'sidebarbackground_setting', array(
+		'default'           => '.50',
+		'control'           => 'select',));
+
+	$wp_customize->add_control( 'sidebarbackground_control', array(
+		'label'				=> 'Transparency of Sidebar Background',
+		'section'			=> 'sidebar_section',
+		'settings'			=> 'sidebarbackground_setting',
+		'type'				=> 'radio',
+		'choices'			=> array(
+			'1'				=> '100',
+			'.95'			=> '95',
+			'.90'			=> '90',
+			'.85'			=> '85',
+			'.75'			=> '75',
+			'.70'			=> '70',
+			'.65'			=> '65',
+			'.60'			=> '60',
+			'.55'			=> '55',
+			'.50'			=> '50 (Default)',
+			'.45'			=> '45',
+			'.40'			=> '40',
+			'.35'			=> '35',
+			'.30'			=> '30',
+			'.25'			=> '25',
+			'.20'			=> '20',
+			'.15'			=> '15',
+			'.10'			=> '10',
+			'.05'			=> '5',
+			'.00'			=> '0',), )); }
+
 add_action('customize_register', 'adventure_customize');
 
 // Preview CSS3 Property Background-size in Customizer
 function adventure_customizer_preview() {
 	wp_enqueue_script('adventure-customizer', get_template_directory_uri() . '/js/customizer.js', array('jquery'), '1.3', true);}
 
-add_action( 'customize_controls_print_footer_scripts', 'adventure_customizer_preview', 10 );	
-		
+add_action( 'customize_controls_print_footer_scripts', 'adventure_customizer_preview', 10 );
+	
 // Inject the Customizer Choices into the Theme
 function adventure_inline_css() {
-	
+		
+		// Convert Content from Hex to RGB
 		$hex = str_replace("#", "", get_theme_mod('backgroundcolor_setting'));
 
 		if(strlen($hex) == 3) {
@@ -311,22 +419,56 @@ function adventure_inline_css() {
 			$g = hexdec(substr($hex,2,2));
 			$b = hexdec(substr($hex,4,2)); }
 
+		// Convert Sidebar from Hex to RGB
+		$hexs = str_replace("#", "", get_theme_mod('sidebarcolor_setting'));
+
+		if(strlen($hexs) == 3) {
+			$rs = hexdec(substr($hexs,0,1).substr($hexs,0,1));
+			$gs = hexdec(substr($hexs,1,1).substr($hexs,1,1));
+			$bs = hexdec(substr($hexs,2,1).substr($hexs,2,1)); }
+		else {
+			$rs = hexdec(substr($hexs,0,2));
+			$gs = hexdec(substr($hexs,2,2));
+			$bs = hexdec(substr($hexs,4,2)); }
+
 		echo '<!-- Custom CSS Styles -->' . "\n";
         echo '<style type="text/css" media="screen">' . "\n";
 		if ( get_theme_mod('backgroundsize_setting') != 'auto' ) echo '	body {background-size:' . get_theme_mod('backgroundsize_setting') . ';}' . "\n";
-		echo '	#content>li {background: rgba(' . $r .',' . $g .', ' . $b . ', ' .  get_theme_mod('contentbackground_setting') .  ');}' . "\n";
-		echo '	li#sidebar {background: rgba(0, 0, 0, ' .  get_theme_mod('sidebarbackground_setting') .  ');}' . "\n";
-		echo '	#navi h1 a {color:' . get_theme_mod('titlecolor_setting') . ';}' . "\n";
-		echo '	#navi h1 i {color:' . get_theme_mod('taglinecolor_setting') . ';}' . "\n";
-		echo '	#navi {' . "\n" . '		background: bottom url(' . get_template_directory_uri() . '/images/' . get_option('bannerimage_setting') .  ');';
-		if ( get_option('bannerimage_setting') == 'marble.png') echo "\n" . '		border-top:solid 1px #010101; ' . "\n" . '		border-bottom:solid 1px #010101;}' . "\n";
-		if ( get_option('bannerimage_setting') == 'green.png') echo "\n" . '		border-top:solid 1px #0e0e02; ' . "\n" . '		border-bottom:solid 1px #0e0e02;}' . "\n";
-		echo '	}';
+		if ( get_theme_mod('fontcolor_setting') != '#000' ) echo '	body {color:'  . get_theme_mod('fontcolor_setting') . ';}' . "\n";
+		echo '	#content>li {background: rgba(' . $r . ',' . $g . ', ' . $b . ', ' .  get_theme_mod('contentbackground_setting') .  ');}' . "\n";
+		echo '	li#sidebar {background: rgba(' . $rs . ',' . $gs . ', ' . $bs . ', ' .  get_theme_mod('sidebarbackground_setting') .  ');}' . "\n";
+		if ( get_theme_mod('titlecolor_setting') != '#eee2d6' ) echo '	#navi h1 a {color:' . get_theme_mod('titlecolor_setting') . ';}' . "\n";
+		if ( get_theme_mod('taglinecolor_setting') != '#066ba0' ) echo '	#navi h1 i {color:' . get_theme_mod('taglinecolor_setting') . ';}' . "\n";
+		if ( get_option('bannerimage_setting') != 'purple.png' ) echo '	#navi {background: bottom url(' . get_template_directory_uri() . '/images/' . get_option('bannerimage_setting') .  ');}'. "\n";
+		if ( get_theme_mod('backgroundsize_setting') != '35' ) echo '	#spacing {height:' . get_theme_mod('headerspacing_setting') . '%;}'. "\n";
+		if ( get_option('menu_setting') == 'notitle' ) { echo '	#navi {position: fixed;margin-top:0px;}' . "\n" . '	.admin-bar #navi {margin-top:28px;}' . "\n" . '#navi h1:first-child, #navi h1:first-child i,  #navi img:first-child {display: none;}' . "\n"; }
+		if ( get_option('menu_setting') == 'bottom' ) { echo '	#navi {position: fixed; bottom:0; top:auto;}' . "\n" . '	#navi h1:first-child, #navi h1:first-child i,  #navi img:first-child {display: none;}' . "\n" . '#navi li ul {bottom:2.78em; top:auto;}' . "\n";}
 		echo '</style>' . "\n";
 		echo '<!-- End Custom CSS -->' . "\n";
-		echo "\n";}
+		echo "\n";
 
-add_action('wp_head', 'adventure_inline_css'); 
+	if (get_option('favicon_setting') != '') {
+		echo '<!-- Favicon Code -->' . "\n";
+		echo '<link rel="icon" href="' . get_option('favicon_setting') . '" />' . "\n\n";} 
+		
+	$options = get_theme_mod('typekit_setting');
+    if (get_theme_mod( 'typekit_setting' ) != 'For example mine is "jgu6yjc"') {
+		echo '<!-- Typekit Kit ID -->' . "\n";
+		echo '<script type="text/javascript" src="//use.typekit.net/' . get_theme_mod( 'typekit_setting' ) . '.js"></script>' . "\n";
+		echo '<script type="text/javascript">try{Typekit.load();}catch(e){}</script>' . "\n\n";} }
+
+add_action('wp_head', 'adventure_inline_css');
+
+//	A safe way of adding javascripts to a WordPress generated page
+if (!function_exists('adventure_js')) {
+	function adventure_js() {
+			// JS at the bottom for fast page loading
+			wp_enqueue_script('adventure-jquery-easing', get_template_directory_uri() . '/js/jquery.easing.js', array('jquery'), '1.3', true);
+            wp_enqueue_script('adventure-menu-scrolling', get_template_directory_uri() . '/js/jquery.menu.scrolling.js', array('jquery'), '1', true);
+			wp_enqueue_script('adventure-scripts', get_template_directory_uri() . '/js/jquery.fittext.js', array('jquery'), '1.0', true);
+			wp_enqueue_script('adventure-fittext', get_template_directory_uri() . '/js/jquery.fittext.sizing.js', array('jquery'), '1', true);  } }
+
+if (!is_admin()) add_action('wp_enqueue_scripts', 'adventure_js');
 
 // Add some CSS so I can Style the Theme Options Page
 function adventure_admin_enqueue_scripts( $hook_suffix ) {
@@ -351,7 +493,8 @@ function adventure_theme_options_do_page() { ?>
     
     <li>
     <h4>Customizing Adventure</h4>
-    <p><span class='embed-youtube' style='text-align:center; display: block;'><iframe class='youtube-player' type='text/html' width='671' height='396' src='http://www.youtube.com/embed/IU__-ipUxxc?version=3&#038;rel=1&#038;fs=1&#038;showsearch=0&#038;showinfo=1&#038;iv_load_policy=1&#038;wmode=transparent' frameborder='0'></iframe></span></p>
+    <p><span class='embed-youtube' style='text-align:center; display: block;'><iframe class='youtube-player' type='text/html' width='671' height='396' src='http://www.youtube.com/embed/IU__-ipUxxc?version=3&#038;rel=1&#038;fs=1&#038;showsearch=0&#038;showinfo=1&#038;iv_load_policy=1&#038;wmode=transparent' frameborder='0'></iframe></span>
+    This video is out of date only because it doesn't show all the features</p>
     <h3 class="title">Features</h3>
     <table>
         <tbody>
@@ -381,7 +524,34 @@ function adventure_theme_options_do_page() { ?>
         <td>&#9733;</td>
         </tr>
         <tr>
-        <td class="justify">Choose from 9 different opacity setting for the Background</td>
+        <td class="justify">Adjust the opacity of the Content from 0 to 100% in 5% intervails</td>
+        <td>&#9733;</td>
+        <td>&#9733;</td>
+        </tr>
+        <tr>
+        <td class="justify">Adjust the opacity of the Sidebar from 0 to 100% in 5% intervails</td>
+        <td>&#9733;</td>
+        <td>&#9733;</td>
+        </tr>
+        <td class="justify">Adjust Color of the Background for Content</td>
+        <td>&#9733;</td>
+        <td>&#9733;</td>
+        </tr>
+        <td class="justify">Adjust Color of the Background for Sidebar</td>
+        <td>&#9733;</td>
+        <td>&#9733;</td>
+        </tr>
+        <tr>
+        <td class="justify">Multiple Menu Banner Images to Choose</td>
+        <td>&#9733;</td>
+        <td>&#9733;</td>
+        </tr>
+        <tr>
+        <td class="justify">Control wether or not the "Previous" & "Next" shows</td>
+        <td>&#9733;</td>
+        <td>&#9733;</td>
+        </tr>
+        <td class="justify">Adjust the spacing between the top of the page and content</td>
         <td>&#9733;</td>
         <td>&#9733;</td>
         </tr>
@@ -391,17 +561,17 @@ function adventure_theme_options_do_page() { ?>
         <td>&#9733;</td>
         </tr>
         <tr>
-        <td class="justify">Multiple Menu Banner Images to Choose</td>
-        <td>&#9733;</td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
         <td class="justify">Upload Your Own Custom Banner Image</td>
         <td></td>
         <td>&#9733;</td>
         </tr>
         <tr>
-        <td class="justify">Upload Your Own Logo (To be Implemented in Future Update)</td>
+        <td class="justify">Upload Your Own Logo in either the Header or above Content</td>
+        <td></td>
+        <td>&#9733;</td>
+        </tr>
+        <tr>
+        <td class="justify">Change the Font Color in the Content</td>
         <td></td>
         <td>&#9733;</td>
         </tr>
@@ -416,7 +586,7 @@ function adventure_theme_options_do_page() { ?>
         <td>&#9733;</td>
         </tr>
         <tr>
-        <td class="justify">Favicon to be Easily Implemented on Your Website</td>
+        <td class="justify">Favicon on Your Website</td>
         <td></td>
         <td>&#9733;</td>
         </tr>
@@ -448,11 +618,15 @@ function adventure_theme_options_do_page() { ?>
         <th>Version</th>
         <th class="justify"></th>
         </tr>
+        <tr>
+        <th>2.2</th>
+        <td class="justify">The update this time around was mainly for Adventure+ but in the process I added in a few more features. I included the option to have the menu lock to the top of the screen or the bottom similar to how the theme use to look. A lot of people asked for the ability to remove the “previous” & “next” links that come after content and I you guys one better. You now have the choice to remove the “previous” & “next” from just posts, just page, or both and you still can have it display the same. The slider and the content portion can now change to any color and adjust the opacity from 0% to 100% in 5% intervals. I also spent some time cleaning and organizing the customizer page, which means it is laid out a bit differently now but it works just the same. You now have the option to adjust the the amount of space fromt he top of the page to the where the content begins. I might have missed a thing or two but future updates should come much sooner with this hurdle cleared.</td>
         </tr>
+        <tr>
         <th>2.1</th>
         <td class="justify">This is main an update to fix issues that I and others (like you) have found and fixed for the theme. The content no longer shifts to the right after the sidebar and embed video from YouTube and Vimeo are now responsive when embedded, plus some other minor stuff. I have also introduced the ablity change the color of the content of the background of content. In the next update I will include the ablity to change the sidebar.</td>
         </tr>
-        </tr>
+        <tr>
         <th>1.8</th>
         <td class="justify">The entire code for the WordPress theme "Adventure" has been completely rewritten in Version 1.8 and is a complete re-release of the theme. Not a single shred of code survived, and for good reason. The code was written over 3 years ago, before the HTML5 / CSS3 revolution, and had to be compatible with IE6 back then. Now that its three years later, I'm much better at coding and coupled with the progress made with HTML standards, the theme is back. While "Adventure" looks for the most part the same, there is a lot more happening in the code.</td>
         </tr>
@@ -467,6 +641,10 @@ function adventure_theme_options_do_page() { ?>
         <tr>
         <th>Version</th>
         <th class="justify"></th>
+        </tr>
+        <tr>
+        <th>4</th>
+        <td class="justify">Major backend update which is mainly for Adventure+ to implement a bunch of features, in particular the Logo that I have received so many emails for. If you have any trouble using the logo for your website send me an email about it and I’ll take a look, this isn’t exact science  and I might need to adjust the code some. I included the option to have the menu lock to the top of the screen or the bottom similar to how the theme use to look. I add in the ability to adjust the spacing from the top of the page to where the content and sidebar begins. You can also change the color of the font in the content, but it will receive more work in a future update. A lot of people asked for the ability to remove the “previous” & “next” links that come after content and I you guys one better. You now have the choice to remove the “previous” & “next” from just posts, just page, or both and you still can have it display the same. The slider and the content portion can now change to any color and adjust the opacity from 0% to 100% in 5% intervals. I also spent some time cleaning and organizing the customizer page, which means it is laid out a bit differently now but it works just the same. You now have the option to adjust the the amount of space fromt he top of the page to the where the content begins. I might have missed a thing or two but future updates should come much sooner with this hurdle cleared.</td>
         </tr>
         <tr>
         <th>3</th>
