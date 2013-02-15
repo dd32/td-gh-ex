@@ -15,15 +15,16 @@
  * @link     http://www.cyberchimps.com/
  */
 
+
 // Load style for elements
 function cyberchimps_add_elements_style() {
 
 	// Set directory uri
 	$directory_uri = get_template_directory_uri();
-
+	
 	wp_register_style( 'elements_style', $directory_uri . '/elements/lib/css/elements.css' );
-	wp_enqueue_style( 'elements_style' );
-
+	wp_enqueue_style('elements_style');
+	
 	wp_register_script( 'elements_js', $directory_uri . '/elements/lib/js/elements.js' );
 	wp_enqueue_script( 'elements_js', array( 'jquery' ) );
 }
@@ -31,38 +32,37 @@ function cyberchimps_add_elements_style() {
 add_action( 'wp_enqueue_scripts', 'cyberchimps_add_elements_style', 30 );
 
 // Load elements
-// Set directory path
-$directory_path = get_template_directory();
-
-require_once( $directory_path . '/elements/portfolio-lite.php' );
-require_once( $directory_path . '/elements/slider-lite.php' );
-require_once( $directory_path . '/elements/boxes.php' );
+	// Set directory path
+	$directory_path = get_template_directory();
+	
+	require_once( $directory_path . '/elements/portfolio-lite.php' );
+	require_once( $directory_path . '/elements/slider-lite.php' );
+	require_once( $directory_path . '/elements/boxes.php' );
+	require_once( $directory_path . '/elements/twitter-bar.php' );
 
 // main blog drag and drop options
 function cyberchimps_selected_elements() {
 	$options = array(
-		'boxes_lite'     => __( 'Boxes Lite', 'cyberchimps_elements' ),
-		"portfolio_lite" => __( 'Portfolio Lite', 'cyberchimps_elements' ),
-		"blog_post_page" => __( 'Post Page', 'cyberchimps_elements' ),
-		"slider_lite"    => __( 'Slider Lite', 'cyberchimps_elements' )
-	);
-
+			'boxes_lite'				 => __( 'Boxes Lite', 'cyberchimps' ),
+			"portfolio_lite"	 => __( 'Portfolio Lite', 'cyberchimps' ),	
+			"blog_post_page"	 => __( 'Post Page', 'cyberchimps' ),
+			"slider_lite"		 => __( 'Slider Lite', 'cyberchimps' ),
+			"twitterbar_section" => __( 'Twitter Bar', 'cyberchimps' )
+		);
 	return $options;
 }
-
 add_filter( 'cyberchimps_elements_draganddrop_options', 'cyberchimps_selected_elements' );
 
 function cyberchimps_selected_page_elements() {
 	$options = array(
-		'boxes_lite'     => __( 'Boxes Lite', 'cyberchimps_elements' ),
-		"portfolio_lite" => __( 'Portfolio Lite', 'cyberchimps_elements' ),
-		"page_section"   => __( 'Page', 'cyberchimps_elements' ),
-		"slider_lite"    => __( 'Slider Lite', 'cyberchimps_elements' )
-	);
-
+			'boxes_lite'				 => __( 'Boxes Lite', 'cyberchimps' ),
+			"portfolio_lite"	 => __( 'Portfolio Lite', 'cyberchimps' ),	
+			"page_section"	 => __( 'Page', 'cyberchimps' ),
+			"slider_lite"		 => __( 'Slider Lite', 'cyberchimps' ),
+			"twitterbar_section" => __( 'Twitter Bar', 'cyberchimps' )
+		);
 	return $options;
 }
-
 add_filter( 'cyberchimps_elements_draganddrop_page_options', 'cyberchimps_selected_page_elements' );
 
 // drop breadcrumb fields
@@ -73,8 +73,6 @@ function cyberchimps_element_drop_fields( $fields ) {
 			unset( $fields[$key] );
 		}
 	}
-
 	return $fields;
 }
-
 add_filter( 'cyberchimps_field_filter', 'cyberchimps_element_drop_fields', 2 );
