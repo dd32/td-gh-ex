@@ -1,4 +1,30 @@
 Changelog -----------------------------------
+version:1.009
+Fixed
+    Fixed IE + color type 'light' display improperly.
+        Thanks @Gonta
+    Fixed Can not remove custom header image.
+    Fixed Less than 640px width browser style issue.
+        Posted in display improperly where without home.
+    Fixed Extra Sidebar space issue when hide extra sidebar on loop pages( ex: index.php )
+Modified
+    From Comma separated values to only space where Posted in tags list and categoris list
+    Static Page support featured image.
+
+Add
+    Recent Raindrops support responsive blog for modern browsers.
+    Raindrops not support responsive for IE browser.
+    Raindrops can display fluid layout for IE.
+    Add to conditional $raindrops_fluid_minimum_width value.
+
+        functions.php line:191
+
+        if( $is_IE ){
+            $raindrops_fluid_minimum_width = '640';
+        }
+
+----------------------------------------------
+Changelog -----------------------------------
 version:1.008
 Fixed
     Fixed NOTICE: wp-content/themes/raindrops/functions.php:3033 - Undefined variable: uri

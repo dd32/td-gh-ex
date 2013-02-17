@@ -181,6 +181,18 @@ load_theme_textdomain( 'Raindrops', get_template_directory() . '/languages' );
         $raindrops_fluid_minimum_width = '320';
     }
 /**
+ * $raindrops_fluid_minimum_width for IE
+ *
+ * IE browser not support responsive
+ *
+ *
+ *
+ */
+    if( $is_IE ){
+        $raindrops_fluid_minimum_width = '640';
+    }
+
+/**
  * fluid page  main column maximum width px
  *
  *
@@ -581,18 +593,18 @@ load_theme_textdomain( 'Raindrops', get_template_directory() . '/languages' );
     if (!function_exists('raindrops_posted_in')) {
         function raindrops_posted_in() {
             // Retrieves tag list of current post, separated by commas.
-            $tag_list = get_the_tag_list( '', ', ' );
+            $tag_list = get_the_tag_list( '', ' ' );
             if ( $tag_list ) {
-                $posted_in = __( 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'Raindrops' );
+                $posted_in = __( '<span class="this-posted-in">This entry was posted in</span> %1$s <span class="tagged">and tagged</span> %2$s <span class="bookmark-the">Bookmark the </span><a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>', 'Raindrops' );
             } elseif ( is_object_in_taxonomy( get_post_type(), 'category' ) ) {
-                $posted_in = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'Raindrops' );
+                $posted_in = __( '<span class="this-posted-in">This entry was posted in </span>%1$s <span class="bookmark-the">Bookmark the </span><a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>', 'Raindrops' );
             } else {
-                $posted_in = __( 'Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'Raindrops' );
+                $posted_in = __( '<span class="bookmark-the">Bookmark the </span><a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>', 'Raindrops' );
             }
             // Prints the string, replacing the placeholders.
             $result = sprintf(
                 $posted_in,
-                get_the_category_list( ', ' ),
+                get_the_category_list( ' ' ),
                 $tag_list,
                 get_permalink(),
                 the_title_attribute( 'echo=0' )
@@ -1316,11 +1328,12 @@ if(!function_exists("raindrops_custom_link_color")){
     .lsidebar a:hover{
     color:{$color};
     }
-
+/*  .footer-widget .widgettitle,
     .lsidebar .widgettitle,
-    .rsidebar .h2{
+    .rsidebar .widgettitle{
     color:{$color};
-    }
+    }*/
+
     #wp-calendar{
     color:{$color};
     }
@@ -1482,24 +1495,29 @@ LINK_COLOR_CSS;
  */
     if(!function_exists("raindrops_prev_next_post")){
         function raindrops_prev_next_post($position = "nav-above"){
-            $raindrops_max_length       = 40;
-            $raindrops_prev_length      = $raindrops_max_length + 1;
-            if(!is_attachment()){
-                $raindrops_max_length   = 40;
-                $raindrops_prev_post_id = get_adjacent_post(true,'',true) ;
-                $raindrops_prev_length  = strlen(get_the_title($raindrops_prev_post_id));
-                $raindrops_next_post_id = get_adjacent_post(false,'',false) ;
-                $raindrops_next_length  = strlen(get_the_title($raindrops_next_post_id));
+
+            if( is_category() ){
+                $filter = true; //display same category.
+            }else{
+                $filter = false;
             }
+            //exclude separate 'and'
+            $exclude_category = apply_filters( 'raindrops_next_prev_excluded_categories','');
+
             $html = '<div id="%1$s" class="%2$s"><span class="%3$s">';
 
             printf($html,$position,"clearfix","nav-previous");
-            previous_post_link('%link','<span class="button"><span class="meta-nav">&laquo;</span> %title</span>');
+
+            previous_post_link('%link','<span class="button"><span class="meta-nav">&laquo;</span> %title</span>', $filter , $exclude_category );
+
             $html = '</span><div class="%1$s">';
+
             printf($html,"nav-next");
-            next_post_link('%link','<span class="button"> %title <span class="meta-nav">&raquo;</span></span>');
+            next_post_link('%link','<span class="button"> %title <span class="meta-nav">&raquo;</span></span>', $filter , $exclude_category );
+
             $html = '</div></div>';
             echo apply_filters("raindrops_prev_next_post",$html);
+
         }
     }
 
@@ -2568,14 +2586,17 @@ span#site-title,
             $raindrops_header_image_uri         = $raindrops_header_image -> url;
             $raindrops_header_image_width       = $raindrops_header_image -> width;
             $raindrops_header_image_height      = $raindrops_header_image -> height;
+            $raindrops_restore_check            = get_theme_mod( 'header_image', get_theme_support( 'custom-header', 'default-image' ) );
 
-
-            if( $raindrops_header_image_uri == 'remove-header'){
+            if( $raindrops_restore_check == 'remove-header'){
                 return;
             }
 
-            $ratio = $raindrops_header_image_height / $raindrops_header_image_width;
+            if( empty( $raindrops_header_image_uri ) ){
+                $raindrops_header_image_uri = $raindrops_restore_check;
+            }
 
+            $ratio = $raindrops_header_image_height / $raindrops_header_image_width;
             $raindrops_page_width = raindrops_warehouse_clone('raindrops_page_width');
         switch( true ){
 
@@ -3008,7 +3029,6 @@ if(!function_exists("fallback_user_interface_view") ){
         add_action('wp_footer','raindrops_small_device_helper');
     }
 
-
     if ( ! function_exists( 'raindrops_small_device_helper' ) ) {
         function raindrops_small_device_helper(){
             global $is_IE, $raindrops_fluid_maximum_width;
@@ -3016,6 +3036,10 @@ if(!function_exists("fallback_user_interface_view") ){
            // $raindrops_header_image_uri   = get_header_image();
             $raindrops_header_image             = get_custom_header();
             $raindrops_header_image_uri         = $raindrops_header_image -> url;
+            if( empty( $raindrops_header_image_uri ) ){
+            /* when restore image $raindrops_header_image -> url is empty */
+                $raindrops_header_image_uri     = get_header_image();
+            }
             $raindrops_header_image_width       = $raindrops_header_image -> width;
             $raindrops_header_image_height      = $raindrops_header_image -> height;
         ?>
@@ -3027,19 +3051,18 @@ if(!function_exists("fallback_user_interface_view") ){
                     var image_exists = '<?php echo $raindrops_header_image_uri;?>';
                 var width = jQuery('div#header-image').width();
                 var window_width = jQuery(window).width();
-
-                    if( image_exists !== '' ){
-        <?php
-            if( $raindrops_header_image_uri !== 'remove-header' ){
-                    $ratio = $raindrops_header_image_height / $raindrops_header_image_width;
+            <?php
+            $raindrops_restore_check = get_theme_mod( 'header_image', get_theme_support( 'custom-header', 'default-image' ) );
+            if(  $raindrops_restore_check !== 'remove-header'  ){
+                  $ratio = $raindrops_header_image_height / $raindrops_header_image_width;
             ?>
                 var ratio = <?php echo $ratio;?>;
                 var height = width * ratio;
 
                 jQuery('#header-image').removeAttr('style').css({'background-image':'url('+ image_exists + ')','height': height, 'background-size': 'cover'});
-    <?php }//remove header ?>
-                    }
-        <?php
+    <?php //remove header
+
+             }
         /**
          * Check window size and mouse position
          * Controll childlen menu show right or left side.
@@ -3122,7 +3145,11 @@ if(!function_exists("fallback_user_interface_view") ){
                 $main_column_width_fluid = 100;
             }
 
-            $fluid_width = '/* raindrops is fluid start */'.
+            if( raindrops_warehouse_clone('raindrops_show_right_sidebar') !== 'show' ){
+                $main_column_width_fluid = 100;
+            }
+
+            $fluid_width = '/* raindrops is fluid start  */'.
                             "\n#doc3{min-width:".
                             $raindrops_fluid_minimum_width.
                             'px;max-width:'.$raindrops_fluid_maximum_width.'px;}'.
@@ -3647,7 +3674,7 @@ if( ! function_exists( 'raindrops_entry_title' ) ){
         global $post;
         $thumbnail = '';
 
-        if( has_post_thumbnail($post->ID) and ! is_single() ){
+        if( has_post_thumbnail($post->ID) and ! is_singular() ){
             $thumbnail .= '<span class="h2-thumb">';
             $thumbnail .= get_the_post_thumbnail($post->ID, array(48,48),array("style"=>"vertical-align:text-bottom;"));
             $thumbnail .= '</span>';
