@@ -2,8 +2,8 @@
 # This file is distributed under the GNU General Public License 2.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: origami 1.4.4\n"
-"POT-Creation-Date: 2013-02-09T15:07:49+02:00\n"
+"Project-Id-Version: origami 1.4.5\n"
+"POT-Creation-Date: 2013-02-18T14:22:31+02:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -69,6 +69,9 @@ msgstr ""
 msgid "Comments are Disabled"
 msgstr ""
 
+msgid "SiteOrigin Themes"
+msgstr ""
+
 msgid "dismiss"
 msgstr ""
 
@@ -100,6 +103,9 @@ msgid "Save Settings"
 msgstr ""
 
 msgid "%s is displaying demo content. <a href=\"%s\">Disable demo mode</a> to start creating and displaying your own content."
+msgstr ""
+
+msgid "Custom Home Page"
 msgstr ""
 
 msgid "Home Page"
