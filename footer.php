@@ -20,7 +20,11 @@
 		<div id="footer-links"><?php do_action( 'ast_hook_footer_links' ); ?></div>
 		
 		<?php if (! asteroid_option('ast_remove_theme_link') == 1 ) : ?>
-			<a id="theme-page" href="http://ronangelo.com/asteroid/" target="_blank">Asteroid Theme</a>
+			<span id="theme-page">
+			<?php echo ( apply_filters( 'asteroid_filter_theme_credits', 
+				__('<a href="http://ronangelo.com/asteroid/" target="_blank">Asteroid Theme</a>', 'asteroid') ) ); 
+			?>
+			</span>
 		<?php endif; ?>
 	</div>
 

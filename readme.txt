@@ -7,8 +7,12 @@ Asteroid WordPress Theme, Copyright 2012 ronangelo
 Asteroid is distributed under the terms of the GNU GPL version 3
 
 == Description ==
-Asteroid is a simple, clean and responsive theme. It incorporates various widget areas that 
-make management of banners and ads a lot easier, especially for ad-supported sites.
+Asteroid is a simple, clean and responsive WordPress theme. It incorporates various widget areas 
+that make management of banners and ads a lot easier, especially for ad-supported sites. 
+The theme is ideal for use on a blog, a static website or both. It has an intuitively designed 
+options panel to help customize your site. The theme’s development focuses on user customization 
+and minimizing HTTP requests to help conserve server resource. Asteroid supports custom 
+header images, backgrounds, menus, full-width page templates and more.
 
 == Image Credits ==
 Credits go to www.subtlepatterns.com for the following textures which are 
@@ -21,6 +25,12 @@ JSColor - A lightweight Javascript color-picker maintained by Jan Odvárko.
 jscolor is released under a GNU Lesser General Public License. jscolor.com
 
 == CHANGELOG ==
+Version 1.0.7
+     * Ready for translation.
+	 * CSS Tweaks to blend with bbPress.
+	 * Added Comment info on Blog.
+	 * Added custom filters.
+
 Version 1.0.6
      * Changed some functions to work with a child-theme.
 	 * Merged theme-setup.php & theme-functions.php with functions.php

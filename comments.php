@@ -1,7 +1,7 @@
 <?php if ( $comments ) : ?>
 
 	<div id="comments-wrap">
-		<h3>Comments</h3>
+		<h3><?php _e('Comments', 'asteroid'); ?></h3>
 		<?php wp_list_comments( 'avatar_size=48' ); ?>
 		<div class="pagination"><?php paginate_comments_links(); ?></div>
 	</div>
@@ -15,6 +15,6 @@
 
 <?php elseif ( $comments ) : ?>
 
-	<div id="respond"><p id="closed">Comments Closed</p></div>
+	<div id="respond"><p id="closed"><?php _e('Comments Closed', 'asteroid'); ?></p></div>
   
 <?php endif; ?>

@@ -20,11 +20,10 @@ h5 {font-size:14px;}
 h6 {font-size:12px;}
 
 h1, h2, h3, h4, h5, h6 {
-	font-weight:normal;
+	font-weight: bold;
 	line-height: 1.2; 
 	text-shadow: 0 1px 1px #999;
-	margin-bottom: 4px;
-    margin-top: 16px;
+	margin: 14px 0 4px 0;
 }
 
 p { 
@@ -32,7 +31,7 @@ p {
 	margin-bottom: 14px; 
 }
 
-ul li {margin-top: 4px; margin-bottom: 4px;}
+ul li {margin-top: 4px; margin-bottom: 6px;}
 
 blockquote {
 	background: #E0E0E0;
@@ -48,6 +47,6 @@ blockquote p {
 }
 
 img.alignnone {margin: 8px;}
-img.aligncenter {margin: 8px auto;}
 img.alignleft {margin: 8px 8px 8px 0;}
 img.alignright {margin: 8px 0 8px 8px;}
+img.aligncenter {margin: 8px auto;}

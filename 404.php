@@ -3,9 +3,9 @@
 <div id="content">
 
 	<div class="wrap-404-box">
-		<h2>Error 404 !</h2>
+		<h2><?php _e('Error 404', 'asteroid'); ?></h2>
 		
-		<p>Sorry. The Page or File you were looking for was not found.</p>
+		<p><?php _e('Sorry. The Page or File you were looking for was not found.', 'asteroid'); ?></p>
 		<?php get_search_form(); ?>
 	</div>
 

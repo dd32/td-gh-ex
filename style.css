@@ -1,11 +1,11 @@
 ﻿/*
 Theme Name: Asteroid
 Theme URI: http://ronangelo.com/asteroid/
-Description: Asteroid is a simple, clean and responsive theme. It incorporates various widget areas that make management of banners and ads a lot easier, especially for ad-supported sites.
+Description: Asteroid is a simple, clean and responsive theme. It incorporates various widget areas that make management of banners and ads a lot easier, especially for ad-supported sites. The theme is ideal for use on a blog, a static website or both. The theme’s development focuses on user customization and minimizing HTTP requests to help conserve server resource. Asteroid supports custom header images, backgrounds, menus, full-width page templates and more.
 Author: ronangelo
 Author URI: http://ronangelo.com/
-Version: 1.0.6
-Tags: black, white, gray, two-columns, right-sidebar, fixed-width, custom-header, custom-background, featured-images, custom-menu, custom-colors, theme-options, threaded-comments, sticky-post, editor-style, full-width-template, threaded-comments
+Version: 1.0.7
+Tags: black, white, gray, two-columns, right-sidebar, fixed-width, custom-header, custom-background, featured-images, custom-menu, custom-colors, theme-options, threaded-comments, sticky-post, editor-style, full-width-template, threaded-comments, translation-ready
 
 License: GNU General Public License, Version 3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -27,13 +27,13 @@ body {
 	width: 100%;
 }
 
-h1 {font-size:28px;}
-h2 {font-size:24px;}
-h3 {font-size:20px;}
-h4 {font-size:18px;}
-h5 {font-size:16px;}
-h6 {font-size:14px;}
-h1,h2,h3,h4,h5,h6{clear: both;}
+h1 {font-size: 28px;}
+h2 {font-size: 24px;}
+h3 {font-size: 20px;}
+h4 {font-size: 18px;}
+h5 {font-size: 16px;}
+h6 {font-size: 14px;}
+h1,h2,h3,h4,h5,h6 {clear: both;}
 
 a {color: #0E4D7A; text-decoration: none;}
 a:hover {color: #f00;}
@@ -46,8 +46,8 @@ a:hover {color: #f00;}
    Main Containers
 --------------------------------------*/
 #container {
+	background-color: #FFF;
 	width: 960px;
-	background: #FFF; 
 	border: 8px solid #000;
 	margin: 20px auto;
 	max-width: 96%;
@@ -59,6 +59,7 @@ a:hover {color: #f00;}
 	overflow: hidden;
 }
 	#header-info-wrap {float: left;}
+		#header-logo img {display: block;}
 		#header-info-wrap hgroup {
 			margin-top: 20px;
 			margin-left: 18px;
@@ -95,11 +96,7 @@ a:hover {color: #f00;}
 			padding-bottom: 10px;
 			margin-top: 20px;
 		}
-
-	#content-nosidebar {
-		padding: 0 10px 20px;
-	}
-
+		
 	#sidebar {
 		display: table-cell; 
 		vertical-align: top;
@@ -132,11 +129,11 @@ a:hover {color: #f00;}
 		
 		#theme-page {
 			float: right;
-			font: normal 12px verdana, tahoma, sans-serif;
-			margin-top: 4px;
+			padding-top: 4px;
+			font: 12px verdana, sans-serif;
 		}
 
-		
+
 /*-------------------------------------
    The Main Menu
 --------------------------------------*/
@@ -149,17 +146,11 @@ a:hover {color: #f00;}
 	z-index: 20;
 }
 
-#nav .menu {
-	float: left;
-	border-right: 1px solid #555;
-}
+#nav .menu {float: left; border-right: 1px solid #555;}
 
-#nav li {
-	float: left;
-	position: relative;
-}
+#nav .menu li {float: left; position: relative;}
 
-#nav li a {
+#nav .menu li a {
 	display: block;
 	padding: 8px 14px;
 	font: bold 16px arial, sans-serif;
@@ -167,7 +158,7 @@ a:hover {color: #f00;}
 	text-shadow: 0 2px 2px #000;
 }
 
-#nav li a:hover {
+#nav .menu li a:hover {
 	background-color: #FFF;
 	color: #000;
 	text-shadow: none;
@@ -190,7 +181,7 @@ a:hover {color: #f00;}
 /* Root-Menu Parent Arrows */
 #nav .menu > .parent-menu-item > a:after {
 	content: "";
-	padding-left: 16px;
+	padding-left: 18px;
 	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAJCAQAAAChr3WYAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABSSURBVHjajM6xEUBQFETR+42EftTyU5GUCgQa0IXy5MyYK+CNgMBGuyfaJO8U/MWShoWKDQCpWcmInU92syBif9NhK4E4qjpcKxBnp+jp6+c5ACEGPYQx6rvMAAAAAElFTkSuQmCC");
 	background-repeat: no-repeat;
 	background-position: right 60%;
@@ -199,7 +190,7 @@ a:hover {color: #f00;}
 	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAJCAQAAAChr3WYAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABOSURBVHjajM6xDUBgGITh59exj1m0Ki0TKCxgC+PpSeRTEBEU7rq3eO9SeCfzFyalSW4BoTCroBFX1wNBe6JNfdf0Quie9tFwDX393AcAPOIVqZz6wD8AAAAASUVORK5CYII=");
 }
 
-#nav .sub-menu {
+#nav .menu .sub-menu {
 	width: 180px;
 	background-color: #292929;
 	border: 1px solid #000;
@@ -209,14 +200,14 @@ a:hover {color: #f00;}
 	box-shadow: 0 1px 4px #000;
 }
 
-#nav .sub-menu li {
+#nav .menu .sub-menu li {
 	border-top: 1px solid #3C3C3C;
 	border-bottom: 1px solid #000; 
 }
-#nav .sub-menu li:first-child {border-top: none;}
-#nav .sub-menu li:last-child {border-bottom: none;}
+#nav .menu .sub-menu li:first-child {border-top: none;}
+#nav .menu .sub-menu li:last-child {border-bottom: none;}
 
-#nav .sub-menu li a {
+#nav .menu .sub-menu li a {
 	float: left;
 	width: 152px;
 	padding: 10px 14px;
@@ -225,25 +216,26 @@ a:hover {color: #f00;}
 	color: #FFF;
 }
 
-#nav .sub-menu li a:hover {
+#nav .menu .sub-menu li a:hover {
 	text-shadow: none;
 	color: #000;
 }
 
-#nav .sub-menu li .sub-menu {margin-top: -1px;}
+#nav .menu .sub-menu li .sub-menu {margin-top: -1px;}
 
 /* Sub-Menu Parent Arrows */
-#nav .sub-menu > .parent-menu-item > a {
+#nav .menu .sub-menu > .parent-menu-item > a {
 	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAKCAQAAADMDLw1AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABSSURBVHjaYvjP8J/hP8N/bSjN8J8BxrjyPxxd6Nn/X/8TUIXu/P///+//AmShu/8hoOk/AxMDKuBlQFNVh6zxyf////NRjb/9Pw3dEaYIpwIGAFJfYxqarDBZAAAAAElFTkSuQmCC");
 	background-repeat: no-repeat;
 	background-position: 98% center;
 }
-#nav .sub-menu > .parent-menu-item > a:hover {
+#nav .menu .sub-menu > .parent-menu-item > a:hover {
 	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAKCAQAAADMDLw1AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABRSURBVHjaYvjP8J/hPwODNgMU/GdggApdYQhHF3rG8IshAVXoDsN/hr8MBchCd6GMpv8MTAyogJcBTVUdssYnDP8Z8lGNv82Qhu4IU4RTAQMAwv82R52l8+0AAAAASUVORK5CYII=");	
 }
 
 /* Display Sub-Menus */
-#nav li:hover > ul { display: inline;}
+#nav .menu li:hover > ul { display: inline;}
+
 
 /* Highlight Selected Items */
 #nav .current-menu-item > a,
@@ -279,6 +271,20 @@ a:hover {color: #f00;}
 	width: 140px;
 	padding: 9px 10px;
 }
+
+
+/*-------------------------------------
+   Page Templates
+--------------------------------------*/
+#content-nosidebar {
+	padding: 0 10px 20px;
+}
+	
+.sitemap-template {padding: 20px 0 30px 30px;}
+.sitemap-template > h3 {margin: 16px 0 6px;}
+.sitemap-template > ul {margin-left: 10px;}
+.sitemap-template > ul li {list-style: square inside;}
+.sitemap-template > ul .children {padding-left: 14px;}
 
 
 /*-------------------------------------
@@ -418,6 +424,8 @@ a:hover {color: #f00;}
 /*-------------------------------------
    Specific Widget Stylings
 --------------------------------------*/
+.widget_nav_menu .sub-menu li {border-bottom: none;}
+
 #wp-calendar {
     border-collapse: collapse;
 	text-align: center;
@@ -427,6 +435,11 @@ a:hover {color: #f00;}
 #wp-calendar caption {padding: 6px;}
 #wp-calendar th {
 	background: #DDD;
+	background: -moz-linear-gradient(top, #EEE 0%, #BBB 100%);
+	background: -webkit-linear-gradient(top,  #EEE 0%,#BBB 100%);
+	background: -o-linear-gradient(top, #EEE 0%,#BBB 100%);
+	background: -ms-linear-gradient(top, #EEE 0%,#BBB 100%);
+	background: linear-gradient(to bottom, #EEE 0%,#BBB 100%);
     border: 1px solid #666;
     padding: 4px;
 }
@@ -497,7 +510,7 @@ a:hover {color: #f00;}
 .blog-view .entry-thumbnail img { float: left; }
 
 .blog-view .entry-excerpt p {
-	margin-bottom: 0 !important;
+	margin-bottom: 8px !important;
 	margin-top: 0 !important;
 }
 
@@ -519,7 +532,8 @@ a:hover {color: #f00;}
 	box-shadow: 0px 0px 3px #000; 
 	text-shadow: 0 1px 1px #333;
 }
-
+.blog-comment-links {padding: 4px 4px 0;}
+.blog-comment-links .reply-link {float: right;}
 
 /*-------------------------------------
    Shared
@@ -551,6 +565,8 @@ a:hover {color: #f00;}
 	margin-top: 10px; 
 	padding: 6px 0 0;
 }
+
+.single-view .entry-title a {letter-spacing: -1px;}
 
 .edit-post a {   
     background: #226FFF;
@@ -595,31 +611,27 @@ a:hover {color: #f00;}
 	margin-top: 10px;
 }
 
-.entry-meta-bottom {border-bottom: 1px solid #999;}
-
-.sitemap-template {padding: 20px 0 30px 30px;}
-.sitemap-template > h3 {margin: 16px 0 6px;}
-.sitemap-template > ul {margin-left: 10px;}
-.sitemap-template > ul li {list-style: square inside;}
-.sitemap-template > ul .children {padding-left: 14px;}
+.entry-meta-bottom {
+	border-bottom: 1px solid #999;
+	margin-bottom: 10px;
+}
 
 
 /*-------------------------------------
    Content Elements
 --------------------------------------*/
-.entry-content p, .comment-body p { 
-	margin-top: 4px; 
-	margin-bottom: 14px; 
-}
-
 .entry-content h1, .entry-content h2, .entry-content h3, 
 .entry-content h4, .entry-content h5, .entry-content h6, 
 .comment-body h1, .comment-body h2, .comment-body h3, 
 .comment-body h4, .comment-body h5, .comment-body h6 {
 	line-height: 1.2; 
 	text-shadow: 0 1px 1px #999;
-	margin-bottom: 4px;
-    margin-top: 10px;
+	margin: 14px 0 4px 0;
+}
+
+.entry-content p, .comment-body p { 
+	margin-top: 4px; 
+	margin-bottom: 14px; 
 }
 
 blockquote {
@@ -639,12 +651,12 @@ blockquote cite {float: right; margin: 6px auto 2px;}
 blockquote cite:before {
     content: "- ";
 }
+
 address {margin-bottom: 10px;}
 
 pre {
     background: #EEE;
     border: 1px solid #CCC;
-    overflow: auto;
     padding: 10px;
 }
 
@@ -663,12 +675,13 @@ pre {
 	font-size: 12px !important; 
 	margin: 0 !important;
 	color: #555;
+	padding: 0 6px;
 }
 
+.alignnone {margin-top: 8px; margin-bottom: 8px;}
 .alignleft {display:inline; float:left; margin: 4px 10px 12px 0 !important;}
 .alignright {display:inline; float:right; margin: 4px 0 12px 10px !important;}
 .aligncenter {display:block; margin:8px auto !important;}
-.alignnone {margin-top: 8px; margin-bottom: 8px;}
 
 .entry-content dl, .comment-body dl {margin-left: 20px;}
 .entry-content dt, .comment-body dt {margin-top: 10px; font-weight: bold;} 
@@ -697,11 +710,18 @@ pre {
 	background: #DDD;
 }
 
-.entry-content ul, .comment-body ul {margin:8px 0px 8px 28px;}
-.entry-content ul li, .comment-body ul li {list-style-type: disc; list-style-position: inside; margin: 4px 0;}
+.entry-content li h1, .entry-content li h2, .entry-content li h3,
+.entry-content li h4, .entry-content li h5, .entry-content li h6 {
+	display: inline;
+}
 
-.entry-content ol, .comment-body ol {margin:8px 0px 8px 28px;}
-.entry-content ol li, .comment-body ol li {list-style-type: decimal; list-style-position: inside;}
+.entry-content li {margin: 4px 0 6px 6px; list-style-position: inside; list-style-type: disc;}
+
+.entry-content ul, .comment-body ul {margin: 8px 0px 8px 20px;}
+.entry-content ul li, .comment-body ul li {list-style-type: disc;}
+
+.entry-content ol, .comment-body ol {margin: 8px 0px 8px 20px;}
+.entry-content ol li, .comment-body ol li {list-style-type: decimal;}
 .entry-content ol li ol li, .comment-body ol li ol li {list-style-type: lower-alpha;}
 .entry-content ol li ol li ol li, .comment-body ol li ol li ol li{list-style-type: lower-roman;}
 
@@ -711,7 +731,7 @@ pre {
 /*-------------------------------------
    Comments
 --------------------------------------*/
-#comments-wrap {margin-top: 20px; margin-bottom:20px; padding-top: 10px;}
+#comments-wrap {margin-bottom:20px; padding-top: 10px;}
 
 #comments-wrap .bypostauthor > .comment-body, #comments-wrap .comment-author-admin > .comment-body {
 	border-color: #034196 #666 #666;
@@ -832,7 +852,7 @@ pre {
 	width: 150px;
 	padding: 2px;
 	margin-top: 1px;
-	color: #333;
+	color: #555;
 }
 #nav-search #searchsubmit {
 	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAQkSURBVHjahNR7SJV3HMfxtx5tx0sWqFRmDlRai2mtGhITNthGoAQTmuYidolBi/pnsWBbzWhIFIvVPzkTIke1DWGDLWpmNW8nnZeTecvTOZrrdDkeWzPF27HjZ388P+Ngyn7whR/P8/B6vs+X5/fhJSANeB3YDXwKbAb2A+8DO2DBAUh9GTasg9fegvTDYM8GjgFvAkdMfQwkAXEAs+FdwCZgHyTuhZwiKK6Gi39A6xVwXoXKn+HIR7D5MCzLAo7+H7wH+MDqOqcMLreBXKAOUI/Ze0B3QA9Bv0L9Lth6ACKPzgdnWzciv4IvHPCkC9QE+gvUDGoBtYLazItcID/IC1MlcKQIonfMhtOBdWD7Gr68DsEmUB3IYeAW85IWUGdEhLpsNnWAukH3TJXBt4UQtXwGXgWsAHIhrx7GGkHVBr0OajR1KytLg+fOabimRsPXrunRiRPypKSoB3Qf5IOpffBJ/Awcb3W7rBQamkHXQLUhcAPodl6eJv1+BSVNmwpKGnM69Xdmpm6DHlljcmdAWjRGz4F8h0H/DIEdoNaUFI16PJqWNO73a7C8XI8rKvR0bEzTkkYuXJDHZlMfaAS0A/ZkQBhJsOgbKK0HXZkDduXl6amkydFR9RUUqBV0E+QvKlJQUuDBA93LzpYH9A/oN/g9DmJZDevLoKF2Flxv4N6dO63OWlrUnpSkG6B2kCc9XVPBoKaePNHD/Hy5QQPWn+NNgGQyIPcMeGvmgOtAPTk5VsePH6tv+3Y5DTxw8KDVsc/3rOMB62tGEmA1GfDuGXg4G64DOWw23S8pUWB6WlOSxvr75Tt+XIOnTikwPm59SVWVPFFR6jVwuwVnshreKIOO0FFUg+rCwuQ9eVKTkiYmJxUIBp//K1wu9a9ZI7c5jQMgJwwmwEqWw4pi+MVh4Kug2shIeUtLNSFpIhBQQNKo16vB8+f1b2Wlhmpq5C8uVm9qqlygPgMPgi5B0yJIJA7Cc+CzBoNeCQ9X37FjmggGNR4IaELSqM8n95YtarXb1RETo67YWHVHROiWyY4+UD9oGLQXvrPBAsKtk5f5E/jqQfXJyRpyuawRSBodGJC7oEBNoBsmJ7pAt0xeuOHZfLthch28EwsQAURC5HtwyAFy2O3ynj2rsZERDff2qic/X43W7J4FUCh8G3QXNAT6HE4vhthYQlYMLN0Pl52gpsREdW7bppsbN+r6HMk2A/eY2Q6BfoC2eCt6nl/xsPIQVDebqKwLSbdQuNPAd01GlEP7i7BxxgkLRcPNhYWQsg2+vwTjXQZqNzWTw3dAD6xr0/ugIhEyYwD7fHCM2b8C0Wsh90M4fRrcVRCY6bwOAhVwZzf8uBYKbbAYYCnwwnxwtNlnmThdD1ELIW0JvP0qbN0AhUmwKQ5WZUNMlHneDiyZBf83AOdz6zRw4uZiAAAAAElFTkSuQmCC");
@@ -871,6 +891,83 @@ pre {
 	color: #333;
 	font-size: 14px;
 }
+
+
+/*-------------------------------------
+   bbPress Styling
+--------------------------------------*/
+.bbp-login-form {margin-left: 10px;}
+.bbp-login-form fieldset {display: inline-block;}
+.bbp-login-form fieldset input {
+	background-color: #F0F0F0;
+    border: 1px solid #333;
+    box-shadow: 1px 1px 2px #888 inset;
+}
+.bbp-login-form .bbp-template-notice {margin-left: -10px;}
+.bbp-login-form .bbp-username label,
+.bbp-login-form .bbp-password label, 
+.bbp-login-form .bbp-email label {width: 70px;}
+.bbp-login-form .bbp-username label.hide {width: 134px;}
+
+.bbp-email + .bbp-submit-wrapper {
+	float: none !important;
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.bbp-login-form .bbp-remember-me {display: inline-block; margin-top: 12px;}
+.bbp-login-form .bbp-remember-me label,
+#sidebar .bbp-login-form .bbp-remember-me label {width: 128px;}
+
+.bbp-login-form .bbp-submit-wrapper {float: right;}
+.bbp-login-form .bbp-submit-wrapper button {padding: 2px 12px;}
+
+.bbp-logged-in {padding: 10px;}
+.bbp-logged-in h4 {margin-bottom: 2px;}
+
+#bbpress-forums .bbp-body .topic {border-top: 1px solid #BBB !important;}
+#bbpress-forums .bbp-forum-info, #bbpress-forums .bbp-topic-title {width: 52%;}
+#bbpress-forums .bbp-forum-freshness, #bbpress-forums .bbp-topic-freshness {width: 28%;}
+
+.bbp-topic-title, #bbpress-forums .bbp-topic-permalink {font-size: 14px;}
+
+#bbpress-forums .sticky {
+    background-color: #FFF78F !important;
+    border-color: #BBB;
+    border-style: solid;
+    border-width: 0 1px;
+}
+#bbpress-forums .super-sticky {
+    background-color: #FFF070 !important;
+    border-color: #BBB;
+    border-style: solid;
+    border-width: 0 1px;
+}
+#bbpress-forums .super-sticky .bbp-topic-permalink {font-weight: bold;}
+
+.bbp-pagination-links > * {
+    background-color: #333;
+    border: 1px solid #000;
+    color: #FFF;
+    padding: 4px 8px;
+}
+.bbp-pagination-links .page-numbers.current {background-color: #202020;}
+.bbp-pagination-links > a:hover {
+    background-color: #E0E0E0;
+    color: #000;
+    font-weight: bold;
+}
+
+.bbp-login-form .bbp-login-links {margin: 8px 4px;}
+.bbp-login-form .bbp-login-links a {
+    clear: none;
+    float: left;
+    margin-right: 10px;
+    text-decoration: underline;
+}
+
+.widget_bbpress_search #searchform label {display: inline-block;}
 
 
 /*-------------------------------------

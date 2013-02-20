@@ -25,7 +25,7 @@ function asteroid_admin_bar_menu() {
 add_action( 'wp_before_admin_bar_render', 'asteroid_admin_bar_menu' );
 
 
-class My_Theme_Options {
+class Asteroid_Theme_Options {
 	
 	private $sections;
 	private $checkboxes;
@@ -38,13 +38,13 @@ class My_Theme_Options {
 		$this->settings = array();
 		$this->get_option();
 		
-		$this->sections['general']     	 	= ( 'General' );
-		$this->sections['appearance']  	 	= ( 'Appearance' );
-		$this->sections['post-page']   		= ( 'Posts & Pages' );
-		$this->sections['widget-areas']		= ( 'Widget Areas' );
-		$this->sections['custom-css']  	 	= ( 'Custom CSS' );
-		$this->sections['misc']   			= ( 'Misc' );
-		$this->sections['reset']        	= ( 'Reset' );
+		$this->sections['general']     	 	= __( 'General', 'asteroid' );
+		$this->sections['appearance']  	 	= __( 'Appearance', 'asteroid' );
+		$this->sections['post-page']   		= __( 'Posts & Pages', 'asteroid' );
+		$this->sections['widget-areas']		= __( 'Widget Areas', 'asteroid' );
+		$this->sections['custom-css']  	 	= __( 'Custom CSS', 'asteroid' );
+		$this->sections['misc']   			= __( 'Misc', 'asteroid' );
+		$this->sections['reset']        	= __( 'Reset', 'asteroid' );
 		
 		add_action( 'admin_menu', array( &$this, 'ast_add_pages' ) );
 		add_action( 'admin_init', array( &$this, 'register_settings' ) );
@@ -56,7 +56,7 @@ class My_Theme_Options {
 	
 	/* Add page(s) to the admin menu */
 	public function ast_add_pages() {
-		$admin_menu = add_theme_page( 'Asteroid Options', 'Asteroid Options', 'edit_theme_options', 'asteroid-options', array( &$this, 'display_page' ) );
+		$admin_menu = add_theme_page( __('Asteroid Options', 'asteroid'), __('Asteroid Options', 'asteroid'), 'edit_theme_options', 'asteroid-options', array( &$this, 'display_page' ) );
 		
 		add_action( 'admin_print_scripts-' . $admin_menu, array( &$this, 'scripts' ) );
 		add_action( 'admin_print_styles-' . $admin_menu, array( &$this, 'styles' ) );	
@@ -67,8 +67,8 @@ class My_Theme_Options {
 		
 		$defaults = array(
 			'id'      => 'default_field',
-			'title'   => ( 'Default Field' ),
-			'desc'    => ( 'This is a default description.' ),
+			'title'   => 'Default Field',
+			'desc'    => 'This is a default description.',
 			'std'     => '',
 			'type'    => 'text',
 			'section' => 'general',
@@ -118,10 +118,10 @@ class My_Theme_Options {
 		</div>
 		
 	<div class="icon32" id="icon-themes"></div>
-	<h2>' . ( 'Asteroid Options' ) . '</h2>';
+	<h2>' . __( 'Asteroid Options', 'asteroid' ) . '</h2>';
 	
 		if ( isset( $_GET['settings-updated'] ) && $_GET['settings-updated'] == true )
-			echo '<div class="updated fade"><p>' . ( 'Theme options updated.' ) . '</p></div>';
+			echo '<div class="updated fade"><p>' . __( 'Theme options updated.', 'asteroid' ) . '</p></div>';
 		
 		echo '<form action="options.php" method="post" enctype="multipart/form-data">';
 	
@@ -132,7 +132,7 @@ class My_Theme_Options {
 		foreach ( $this->sections as $section_slug => $section )
 			echo '<li><a href="#' . $section_slug . '">' . $section . '</a></li>';
 		
-		echo '</ul><p id="submit-top"><input name="Submit" type="submit" class="button-save" value="' . ( 'SAVE' ) . '" /></p>';
+		echo '</ul><p id="submit-top"><input name="Submit" type="submit" class="button-save" value="' . __( 'SAVE', 'asteroid' ) . '" /></p>';
 		do_settings_sections( $_GET['page'] );
 		echo '</div>
 	</form>';
@@ -334,35 +334,35 @@ class My_Theme_Options {
 		
 		$this->settings['ast_menu_search'] = array(
 			'section' => 'general',
-			'title'   => ( 'Search Box on Menu' ),
-			'desc'    => ( 'Display a Search box on the Main Menu.' ),
+			'title'   => __( 'Search Box on Menu', 'asteroid' ),
+			'desc'    => __( 'Display a Search box on the Main Menu.', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 1 // Set to 1 to be checked by default, 0 to be unchecked by default.
 		);
 		
 		$this->settings['ast_post_display_type'] = array(
 			'section' => 'general',
-			'title'   => ( 'Post Display on Blog View' ),
-			'desc'    => ( 'Show excerpts or full posts on non-singular pages.' ),
+			'title'   => __( 'Display on Blog View', 'asteroid' ),
+			'desc'    => __( 'Show excerpts or full posts on non-singular pages.', 'asteroid' ),
 			'type'    => 'radio',
 			'std'     => '1',
 			'choices' => array(
-				'1' => 'Excerpt',
-				'2' => 'Full Post'
+				'1' => __( 'Excerpt', 'asteroid' ),
+				'2' => __( 'Full Post', 'asteroid' )
 				)
 		);
 		
 		$this->settings['ast_head_codes'] = array(
-			'title'   => ( 'Custom &lt;Head&gt; Codes' ),
-			'desc'    => ( 'Insert &lt;Head&gt; codes here. &nbsp;&nbsp; e.g. Google Analytics, Metas, Fonts, Scripts and what not.' ),
+			'title'   => __( 'Custom &lt;Head&gt; Codes', 'asteroid' ),
+			'desc'    => __( 'Insert &lt;Head&gt; codes here. &nbsp;&nbsp; e.g. Google Analytics, Metas, Fonts, Scripts and what not.', 'asteroid' ),
 			'std'     => '',
 			'type'    => 'textarea',
 			'section' => 'general'
 		);
 		
 		$this->settings['ast_hook_footer_links'] = array(
-			'title'   => ( 'Footer Links' ),
-			'desc'    => ( 'Insert your footer links here. &nbsp;&nbsp; Accepts html codes.' ),
+			'title'   => __( 'Footer Links', 'asteroid' ),
+			'desc'    => __( 'Insert your footer links here. &nbsp;&nbsp; Accepts html codes.', 'asteroid' ),
 			'std'     => '',
 			'type'    => 'textarea',
 			'section' => 'general'
@@ -372,62 +372,62 @@ class My_Theme_Options {
 		===========================================*/
 		$this->settings['ast_header_logo'] = array(
 			'section' => 'appearance',
-			'title'   => ( 'Header Logo' ),
-			'desc'    => ( 'The URL of your logo. This replaces the Title & Tagline.' ),
+			'title'   => __( 'Header Logo', 'asteroid' ),
+			'desc'    => __( 'The URL of your logo. This replaces the Title & Tagline.', 'asteroid' ),
 			'type'    => 'upload',
 			'std'     => ''
 		);
 		
 		$this->settings['ast_favicon'] = array(
 			'section' => 'appearance',
-			'title'   => ( 'Favicon' ),
-			'desc'    => ( 'The URL of your favicon. It should be 16x16 pixels.' ),
+			'title'   => __( 'Favicon', 'asteroid' ),
+			'desc'    => __( 'The URL of your favicon. It should be 16x16 pixels.', 'asteroid' ),
 			'type'    => 'upload',
 			'std'     => ''
 		);
 		
 		$this->settings['ast_header_height'] = array(
-			'title'   => ( 'Height of Header' ),
-			'desc'    => ( 'px. Set the height of the Header.' ),
+			'title'   => __( 'Height of Header', 'asteroid' ),
+			'desc'    => 'px. ' . __( 'Set the height of the Header.', 'asteroid' ),
 			'std'     => '120',
 			'type'    => 'text-int',
 			'section' => 'appearance'
 		);
 		$this->settings['ast_content_width'] = array(
-			'title'   => ( 'Width of Content' ),
-			'desc'    => ( 'px. Set the width of the content/post area.' ),
+			'title'   => __( 'Width of Content', 'asteroid' ),
+			'desc'    => 'px. ' . __( 'Set the width of the Content or Post Area.', 'asteroid' ),
 			'std'     => '620',
 			'type'    => 'text-int',
 			'section' => 'appearance'
 		);
 		
 		$this->settings['ast_sidebar_width'] = array(
-			'title'   => ( 'Width of Sidebar' ),
-			'desc'    => ( 'px. Set the width of the Sidebar.' ),
+			'title'   => __( 'Width of Sidebar', 'asteroid' ),
+			'desc'    => 'px. ' . __( 'Set the width of the Sidebar.', 'asteroid' ),
 			'std'     => '310',
 			'type'    => 'text-int',
 			'section' => 'appearance'
 		);
 		
 		$this->settings['ast_header_bgcolor'] = array(
-			'title'   => ( 'Color of Header' ),
-			'desc'    => ( 'Choose a background color for the #header container.' ),
+			'title'   => __( 'Color of Header', 'asteroid' ),
+			'desc'    => __( 'Choose a background color for the #header container.', 'asteroid' ),
 			'std'     => 'FFFFFF',
 			'type'    => 'color',
 			'section' => 'appearance'
 		);
 				
 		$this->settings['ast_content_bgcolor'] = array(
-			'title'   => ( 'Color of Content' ),
-			'desc'    => ( 'Choose a background color for the #content container.' ),
+			'title'   => __( 'Color of Content', 'asteroid' ),
+			'desc'    => __( 'Choose a background color for the #content container.', 'asteroid' ),
 			'std'     => 'FFFFFF',
 			'type'    => 'color',
 			'section' => 'appearance'
 		);
 		
 		$this->settings['ast_sidebar_bgcolor'] = array(
-			'title'   => ( 'Color of Sidebar' ),
-			'desc'    => ( 'Choose a background color for the #sidebar container.' ),
+			'title'   => __( 'Color of Sidebar', 'asteroid' ),
+			'desc'    => __( 'Choose a background color for the #sidebar container.', 'asteroid' ),
 			'std'     => 'FFFFFF',
 			'type'    => 'color',
 			'section' => 'appearance'
@@ -437,80 +437,88 @@ class My_Theme_Options {
 		===========================================*/
 		$this->settings['ast_excerpt_thumbnails'] = array(
 			'section' => 'post-page',
-			'title'   => ( 'Excerpt Thumbnails' ),
-			'desc'    => ( 'Show Thumbnails on excerpts. Featured image will be used.' ),
+			'title'   => __( 'Excerpt Thumbnails', 'asteroid' ),
+			'desc'    => __( 'Show Thumbnails on excerpts. Featured image will be used.', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 1
 		);
 		
 		$this->settings['ast_blog_date'] = array(
 			'section' => 'post-page',
-			'title'   => ( 'Blog View Publish Date' ),
-			'desc'    => ( 'Show Publish Date on Blog, Archives, Searches and Excerpts.' ),
+			'title'   => __( 'Blog View Publish Date', 'asteroid' ),
+			'desc'    => __( 'Show Publish Date on Blog, Archives, and Searches.', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 1
 		);
 		
 		$this->settings['ast_post_date'] = array(
 			'section' => 'post-page',
-			'title'   => ( 'Post Publish Date' ),
-			'desc'    => ( 'Show Publish Date on Single Posts.' ),
+			'title'   => __( 'Post Publish Date', 'asteroid' ),
+			'desc'    => __( 'Show Publish Date on Single Posts.', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 1
 		);
 		
 		$this->settings['ast_post_author'] = array(
 			'section' => 'post-page',
-			'title'   => ( 'Post Author' ),
-			'desc'    => ( 'Show the Author&rsquo;s name on Posts.' ),
+			'title'   => __( 'Post Author', 'asteroid' ),
+			'desc'    => __( 'Show the Author&rsquo;s name on Posts.', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 1
 		);
 		
 		$this->settings['ast_page_date'] = array(
 			'section' => 'post-page',
-			'title'   => ( 'Page Publish Date' ),
-			'desc'    => ( 'Show Publish Date on Single Pages' ),
+			'title'   => __( 'Page Publish Date', 'asteroid' ),
+			'desc'    => __( 'Show Publish Date on Single Pages', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
 		
 		$this->settings['ast_page_author'] = array(
 			'section' => 'post-page',
-			'title'   => ( 'Page Author' ),
-			'desc'    => ( 'Show the Author&rsquo;s name on Pages.' ),
+			'title'   => __( 'Page Author', 'asteroid' ),
+			'desc'    => __( 'Show the Author&rsquo;s name on Pages.', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
 		
 		$this->settings['ast_date_modified'] = array(
 			'section' => 'post-page',
-			'title'   => ( 'Show Date Modified' ),
-			'desc'    => ( 'Show the date when the Post or Page was modified.' ),
+			'title'   => __( 'Show Date Modified', 'asteroid' ),
+			'desc'    => __( 'Show the date when the Post or Page was modified.', 'asteroid' ),
 			'type'    => 'select',
 			'std'     => 1,
 			'choices' => array(
-				0	=> 'Hidden',
-				1	=> 'On Posts',
-				2	=> 'On Pages',
-				3	=> 'Both Posts & Pages'
+				0	=> __('Hidden', 'asteroid'),
+				1	=> __('On Posts', 'asteroid'),
+				2	=> __('On Pages', 'asteroid'),
+				3	=> __('Both Posts & Pages', 'asteroid')
 				)
 		);
 		
 		$this->settings['ast_post_comments'] = array(
 			'section' => 'post-page',
-			'title'   => ( 'Post Comments' ),
-			'desc'    => ( 'Show the comments and comment form on Posts.' ),
+			'title'   => __( 'Post Comments', 'asteroid' ),
+			'desc'    => __( 'Show the comments and comment form on Posts.', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 1
 		);
 		
 		$this->settings['ast_page_comments'] = array(
 			'section' => 'post-page',
-			'title'   => ( 'Page Comments' ),
-			'desc'    => ( 'Show the comments and comment form on Pages.' ),
+			'title'   => __( 'Page Comments', 'asteroid' ),
+			'desc'    => __( 'Show the comments and comment form on Pages.', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 1
+		);
+		
+		$this->settings['ast_blog_comment_links'] = array(
+			'section' => 'post-page',
+			'title'   => __( 'Blog Comment Info', 'asteroid' ),
+			'desc'    => __( 'Show comment count and comment link on Blog View.', 'asteroid' ),
+			'type'    => 'checkbox',
+			'std'     => 0
 		);
 		
 		/* Custom Widgets
@@ -518,104 +526,104 @@ class My_Theme_Options {
 		
 		$this->settings['ast_widget_body'] = array(
 			'section' => 'widget-areas',
-			'title'   => ( 'Body' ),
-			'desc'    => ( 'Allow widgets on the Body' ),
+			'title'   => __( 'Body', 'asteroid' ),
+			'desc'    => __( 'Allow widgets on the Body', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
 		
 		$this->settings['ast_widget_header'] = array(
 			'section' => 'widget-areas',
-			'title'   => ( 'Header' ),
-			'desc'    => ( 'Allow widgets on the Header' ),
+			'title'   => __( 'Header', 'asteroid' ),
+			'desc'    => __( 'Allow widgets on the Header', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
 		
 		$this->settings['ast_widget_below_menu'] = array(
 			'section' => 'widget-areas',
-			'title'   => ( 'Below Menu' ),
-			'desc'    => ( 'Allow widgets below the main menu.' ),
+			'title'   => __( 'Below Menu', 'asteroid' ),
+			'desc'    => __( 'Allow widgets below the main menu.', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
 		
 		$this->settings['ast_widget_before_content'] = array(
 			'section' => 'widget-areas',
-			'title'   => ( 'Before Content' ),
-			'desc'    => ( 'Allow widgets on top of the content.' ),
+			'title'   => __( 'Before Content', 'asteroid' ),
+			'desc'    => __( 'Allow widgets on top of the content.', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
 		
 		$this->settings['ast_widget_below_excerpts'] = array(
 			'section' => 'widget-areas',
-			'title'   => ( 'Below Excerpts' ),
-			'desc'    => ( 'Allow widgets below the excerpts.' ),
+			'title'   => __( 'Below Excerpts', 'asteroid' ),
+			'desc'    => __( 'Allow widgets below the excerpts.', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
 		
 		$this->settings['ast_widget_before_post'] = array(
 			'section' => 'widget-areas',
-			'title'   => ( 'Before Post' ),
-			'desc'    => ( 'Allow widgets to show after the post-title.' ),
+			'title'   => __( 'Before Post', 'asteroid' ),
+			'desc'    => __( 'Allow widgets to show after the post-title.', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 0
 		);	
 		
 		$this->settings['ast_widget_before_post_content'] = array(
 			'section' => 'widget-areas',
-			'title'   => ( 'Before Post - Content' ),
-			'desc'    => ( 'Allow widgets to show before the post-content.' ),
+			'title'   => __( 'Before Post - Content', 'asteroid' ),
+			'desc'    => __( 'Allow widgets to show before the post-content.', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
 		
 		$this->settings['ast_widget_after_post_content'] = array(
 			'section' => 'widget-areas',
-			'title'   => ( 'After Post - Content' ),
-			'desc'    => ( 'Allow widgets to show after the post-content.' ),
+			'title'   => __( 'After Post - Content', 'asteroid' ),
+			'desc'    => __( 'Allow widgets to show after the post-content.', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 0 
 		);
 		
 		$this->settings['ast_widget_after_post'] = array(
 			'section' => 'widget-areas',
-			'title'   => ( 'After Post' ),
-			'desc'    => ( 'Allow widgets to show at the post-footer.' ),
+			'title'   => __( 'After Post', 'asteroid' ),
+			'desc'    => __( 'Allow widgets to show at the post-footer.', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
 		
 		$this->settings['ast_widget_before_page'] = array(
 			'section' => 'widget-areas',
-			'title'   => ( 'Before Page' ),
-			'desc'    => ( 'Allow widgets to show after the page-title.' ),
+			'title'   => __( 'Before Page', 'asteroid' ),
+			'desc'    => __( 'Allow widgets to show after the page-title.', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 0
 		);	
 		
 		$this->settings['ast_widget_before_page_content'] = array(
 			'section' => 'widget-areas',
-			'title'   => ( 'Before Page - Content' ),
-			'desc'    => ( 'Allow widgets to show before the page-content.' ),
+			'title'   => __( 'Before Page - Content', 'asteroid' ),
+			'desc'    => __( 'Allow widgets to show before the page-content.', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
 		
 		$this->settings['ast_widget_after_page_content'] = array(
 			'section' => 'widget-areas',
-			'title'   => ( 'After Page - Content' ),
-			'desc'    => ( 'Allow widgets to show after the page-content.' ),
+			'title'   => __( 'After Page - Content', 'asteroid' ),
+			'desc'    => __( 'Allow widgets to show after the page-content.', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 0 
 		);
 		
 		$this->settings['ast_widget_after_page'] = array(
 			'section' => 'widget-areas',
-			'title'   => ( 'After Page' ),
-			'desc'    => ( 'Allow widgets to show at the page-footer.' ),
+			'title'   => __( 'After Page', 'asteroid' ),
+			'desc'    => __( 'Allow widgets to show at the page-footer.', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
@@ -623,8 +631,8 @@ class My_Theme_Options {
 		/* Custom CSS
 		===========================================*/	
 		$this->settings['ast_custom_css'] = array(
-			'title'   => ( 'Custom CSS Codes' ),
-			'desc'    => ( 'Enter custom CSS here to apply to the theme. This should override any other stylings.' ),
+			'title'   => __( 'Custom CSS Codes', 'asteroid' ),
+			'desc'    => __( 'Enter custom CSS here to apply to the theme. This should override any other stylings.', 'asteroid' ),
 			'std'     => '',
 			'type'    => 'textarea-css',
 			'section' => 'custom-css',
@@ -636,16 +644,24 @@ class My_Theme_Options {
 		
 		$this->settings['ast_remove_wp_version'] = array(
 			'section' => 'misc',
-			'title'   => ( 'Remove WordPress Version' ),
-			'desc'    => ( 'Prevent WP Version from being displayed in the &lt;Head&gt;' ),
+			'title'   => __( 'Remove WordPress Version', 'asteroid' ),
+			'desc'    => __( 'Prevent WP Version from being displayed in the &lt;Head&gt;', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 0 
 		);
 		
 		$this->settings['ast_remove_theme_link'] = array(
 			'section' => 'misc',
-			'title'   => ( 'Remove Theme URL' ),
-			'desc'    => ( 'Remove the Asteroid Theme URL in the footer.' ),
+			'title'   => __( 'Remove Theme URL', 'asteroid' ),
+			'desc'    => __( 'Remove the Asteroid Theme URL on the footer.', 'asteroid' ),
+			'type'    => 'checkbox',
+			'std'     => 0
+		);
+		
+		$this->settings['ast_post_editor_style'] = array(
+			'section' => 'misc',
+			'title'   => __( 'Disable Post Editor Style', 'asteroid' ),
+			'desc'    => __( 'Disable custom stylings on the Post Editor.', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
@@ -655,11 +671,11 @@ class My_Theme_Options {
 		
 		$this->settings['ast_reset_theme'] = array(
 			'section' => 'reset',
-			'title'   => ( 'Reset theme' ),
+			'title'   => __( 'Reset theme', 'asteroid' ),
+			'desc'    => __( 'Check and click "Save" to reset theme options. This deletes customizations!', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 0,
-			'class'   => 'warning', // Custom class for CSS
-			'desc'    => ( 'Check and click "Save" to reset theme options. This deletes customizations!' )
+			'class'   => 'warning' // Custom class for CSS
 		);
 		
 	}
@@ -754,7 +770,7 @@ class My_Theme_Options {
 	
 }
 
-$theme_options = new My_Theme_Options();
+$asteroid_options = new Asteroid_Theme_Options();
 
 function asteroid_option( $option ) {
 	$options = get_option( 'asteroid_options' );

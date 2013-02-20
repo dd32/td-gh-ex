@@ -25,7 +25,9 @@
 		<div id="header-info-wrap">
 		
 			<?php if ( asteroid_option('ast_header_logo') != '' ) : ?>
-				<div id="header-logo"><a href="<?php echo home_url(); ?>"><img src="<?php echo asteroid_option('ast_header_logo'); ?>" alt="" /></a></div>
+				<div id="header-logo"><a href="<?php echo home_url(); ?>">
+					<img src="<?php echo asteroid_option('ast_header_logo'); ?>" <?php echo (apply_filters( 'asteroid_filter_logo_alt', 'alt=""')); ?> /></a>
+				</div>
 			<?php else : ?>
 				<?php if (! ('blank' == get_header_textcolor() )) : ?>
 					<hgroup>
@@ -62,7 +64,7 @@
 					<input id="searchsubmit" type="submit" value="" />
 				</form>
 			</div>
-		<?php endif; ?>	
+		<?php endif; ?>
 	</nav>
 
 	<?php if ( is_active_sidebar( 'widgets_below_menu' ) ) : ?>

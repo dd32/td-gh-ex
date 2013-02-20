@@ -4,20 +4,27 @@
  *
  * @package Asteroid
  *
+ *
  */
- 
+
 /*-------------------------------------
-	Get Theme Settings
+	Theme Localization
+--------------------------------------*/
+load_theme_textdomain( 'asteroid', get_template_directory() . '/languages' );
+
+
+/*-------------------------------------
+	Setup Theme Options
 --------------------------------------*/
 require( get_template_directory() . '/library/theme-options.php' );
 
 
 /*-------------------------------------
-	Register & Print the stylesheet
+	Register Main Stylesheet
 --------------------------------------*/
 function asteroid_enqueue_styles(){
 	if ( ! is_admin() ) {
-		wp_register_style('asteroid-main-style', get_stylesheet_uri(), array(), '1.0.6', 'screen'); 
+		wp_register_style( 'asteroid-main-style', get_stylesheet_uri(), array(), '1.0.7', 'screen' ); 
 		wp_enqueue_style( 'asteroid-main-style' );
 	}
 }
@@ -61,15 +68,19 @@ if ( function_exists( 'register_nav_menu' ) ) register_nav_menu( 'ast-menu-prima
 
 
 /*----------------------------------------
-	Add class to Menu item with child
+	Add Parent Menu Class
 -----------------------------------------*/
-function asteroid_add_parent_menu_class($classes, $item) {
-    global $wpdb;
-    $has_children = $wpdb->get_var("SELECT COUNT(meta_id) FROM wp_postmeta WHERE meta_key='_menu_item_menu_item_parent' AND meta_value='".$item->ID."'");
-    if ($has_children > 0) array_push($classes,'parent-menu-item');
-    return $classes;
+function asteroid_add_parent_menu_class( $items ) {
+	$parents = array();
+	foreach ( $items as $item ) {
+		if ( $item->menu_item_parent && $item->menu_item_parent > 0 ) $parents[] = $item->menu_item_parent; 
+	}
+	foreach ( $items as $item ) {
+		if ( in_array( $item->ID, $parents ) ) $item->classes[] = 'parent-menu-item';
+	}
+	return $items;    
 }
-add_filter( 'nav_menu_css_class', 'asteroid_add_parent_menu_class', 10, 2);
+add_filter( 'wp_nav_menu_objects', 'asteroid_add_parent_menu_class' );
 
 
 /*----------------------------------------
@@ -78,7 +89,7 @@ add_filter( 'nav_menu_css_class', 'asteroid_add_parent_menu_class', 10, 2);
 if (function_exists( 'register_sidebar' ) ) {
 	// sidebar widgets
 	register_sidebar(array(
-		'name' 			=> 'Sidebar',
+		'name' 			=> __('Sidebar', 'asteroid'),
 		'id' 			=> 'widgets_sidebar',
 		'before_widget' => '<div id="%1$s" class="widget-sidebar %2$s">',
 		'after_widget' 	=> '</div>',
@@ -86,18 +97,18 @@ if (function_exists( 'register_sidebar' ) ) {
 		'after_title' 	=> '</h4>',) );
 	// footer widget full
 	register_sidebar(array(
-		'name' 			=> 'Footer: Full Width',
+		'name' 			=> __('Footer: Full Width', 'asteroid'),
 		'id' 			=> 'widgets_footer_full',
-		'description'	=> 'Widget spans the entire width of the footer. Ideal for horizontal banners & 728x90 ads.',
+		'description'	=> __('Widget spans the entire width of the footer. Ideal for horizontal banners & 728x90 ads.', 'asteroid'),
 		'before_widget' => '<div id="%1$s" class="widget-footer-full %2$s">',
 		'after_widget' 	=> '</div>',
 		'before_title' 	=> '<h4 class="widget-title">',
 		'after_title' 	=> '</h4>',) );
 	// footer widgets
 	register_sidebar(array(
-		'name' 			=> 'Footer: 3 Column',
+		'name' 			=> __('Footer: 3 Column', 'asteroid'),
 		'id' 			=> 'widgets_footer_3',
-		'description'	=> 'Widgets are arranged into 3 columns.',
+		'description'	=> __('Widgets are arranged into 3 columns.', 'asteroid'),
 		'before_widget' => '<div id="%1$s" class="widget-footer-3 %2$s">',
 		'after_widget' 	=> '</div>',
 		'before_title' 	=> '<h4 class="widget-title">',
@@ -106,7 +117,7 @@ if (function_exists( 'register_sidebar' ) ) {
 	// Body Widget
 	if ( asteroid_option('ast_widget_body') == 1 ) {
 		register_sidebar(array(
-			'name' 			=> 'Body',
+			'name' 			=> __('Body', 'asteroid'),
 			'id' 			=> 'widgets_body',
 			'before_widget' => '<div id="%1$s" class="widget-body %2$s">',
 			'after_widget' 	=> '</div>',
@@ -116,7 +127,7 @@ if (function_exists( 'register_sidebar' ) ) {
 	// Header Widget
 	if ( asteroid_option('ast_widget_header') == 1 ) {
 		register_sidebar(array(
-			'name' 			=> 'Header',
+			'name' 			=> __('Header', 'asteroid'),
 			'id' 			=> 'widgets_header',
 			'before_widget' => '<div id="%1$s" class="widget-header %2$s">',
 			'after_widget' 	=> '</div>',
@@ -126,9 +137,9 @@ if (function_exists( 'register_sidebar' ) ) {
 	// Below Menu
 	if ( asteroid_option('ast_widget_below_menu') == 1 ) {
 		register_sidebar(array(
-			'name' 			=> 'Below Menu',
+			'name' 			=> __('Below Menu', 'asteroid'),
 			'id' 			=> 'widgets_below_menu',
-			'description'	=> 'Widget spans the entire width of the container. Ideal for horizontal banners & 728x90 ads.',
+			'description'	=> __('Widget spans the entire width of the container. Ideal for horizontal banners & 728x90 ads.', 'asteroid'),
 			'before_widget' => '<div id="%1$s" class="widget-below-menu %2$s">',
 			'after_widget' 	=> '</div>',
 			'before_title' 	=> '<h4 class="widget-title">',
@@ -137,7 +148,7 @@ if (function_exists( 'register_sidebar' ) ) {
 	// Before Content
 	if ( asteroid_option('ast_widget_before_content') == 1 ) {
 		register_sidebar(array(
-			'name' 			=> 'Before Content',
+			'name' 			=> __('Before Content', 'asteroid'),
 			'id' 			=> 'widgets_before_content',
 			'before_widget' => '<div id="%1$s" class="widget-before-content %2$s">',
 			'after_widget' 	=> '</div>',
@@ -147,7 +158,7 @@ if (function_exists( 'register_sidebar' ) ) {
 	// Below Excerpts
 	if ( asteroid_option('ast_widget_below_excerpts') == 1 ) {
 		register_sidebar(array(
-			'name' 			=> 'Below Excerpts',
+			'name' 			=> __('Below Excerpts', 'asteroid'),
 			'id' 			=> 'widgets_below_excerpts',
 			'before_widget' => '<div id="%1$s" class="widget-below-excerpts %2$s">',
 			'after_widget' 	=> '</div>',
@@ -158,7 +169,7 @@ if (function_exists( 'register_sidebar' ) ) {
 	// Before Post
 	if ( asteroid_option('ast_widget_before_post') == 1 ) {
 		register_sidebar(array(
-			'name' 			=> 'Before Post',
+			'name' 			=> __('Before Post', 'asteroid'),
 			'id' 			=> 'widgets_before_post',
 			'before_widget' => '<div id="%1$s" class="widget-before-post %2$s">',
 			'after_widget' 	=> '</div>',
@@ -168,7 +179,7 @@ if (function_exists( 'register_sidebar' ) ) {
 	// Before Post Content
 	if ( asteroid_option('ast_widget_before_post_content') == 1 ) {
 		register_sidebar(array(
-			'name' 			=> 'Before Post - Content',
+			'name' 			=> __('Before Post - Content', 'asteroid'),
 			'id' 			=> 'widgets_before_post_content',
 			'before_widget' => '<div id="%1$s" class="widget-before-post-content %2$s">',
 			'after_widget' 	=> '</div>',
@@ -178,7 +189,7 @@ if (function_exists( 'register_sidebar' ) ) {
 	// After Post Content
 	if ( asteroid_option('ast_widget_after_post_content') == 1 ) {
 		register_sidebar(array(
-			'name' 			=> 'After Post - Content',
+			'name' 			=> __('After Post - Content', 'asteroid'),
 			'id' 			=> 'widgets_after_post_content',
 			'before_widget' => '<div id="%1$s" class="widget-after-post-content %2$s">',
 			'after_widget' 	=> '</div>',
@@ -188,7 +199,7 @@ if (function_exists( 'register_sidebar' ) ) {
 	// After Post
 	if ( asteroid_option('ast_widget_after_post') == 1 ) {
 		register_sidebar(array(
-			'name' 			=> 'After Post',
+			'name' 			=> __('After Post', 'asteroid'),
 			'id' 			=> 'widgets_after_post',
 			'before_widget' => '<div id="%1$s" class="widget-after-post %2$s">',
 			'after_widget' 	=> '</div>',
@@ -199,7 +210,7 @@ if (function_exists( 'register_sidebar' ) ) {
 	// Before Page
 	if ( asteroid_option('ast_widget_before_page') == 1 ) {
 		register_sidebar(array(
-			'name' 			=> 'Before Page',
+			'name' 			=> __('Before Page', 'asteroid'),
 			'id' 			=> 'widgets_before_page',
 			'before_widget' => '<div id="%1$s" class="widget-before-page %2$s">',
 			'after_widget' 	=> '</div>',
@@ -209,7 +220,7 @@ if (function_exists( 'register_sidebar' ) ) {
 	// Before Page Content
 	if ( asteroid_option('ast_widget_before_page_content') == 1 ) {
 		register_sidebar(array(
-			'name' 			=> 'Before Page - Content',
+			'name' 			=> __('Before Page - Content', 'asteroid'),
 			'id' 			=> 'widgets_before_page_content',
 			'before_widget' => '<div id="%1$s" class="widget-before-page-content %2$s">',
 			'after_widget' 	=> '</div>',
@@ -219,7 +230,7 @@ if (function_exists( 'register_sidebar' ) ) {
 	// After Page Content
 	if ( asteroid_option('ast_widget_after_page_content') == 1 ) {
 		register_sidebar(array(
-			'name' 			=> 'After Page - Content',
+			'name' 			=> __('After Page - Content', 'asteroid'),
 			'id' 			=> 'widgets_after_page_content',
 			'before_widget' => '<div id="%1$s" class="widget-after-page-content %2$s">',
 			'after_widget' 	=> '</div>',
@@ -229,7 +240,7 @@ if (function_exists( 'register_sidebar' ) ) {
 	// After Page
 	if ( asteroid_option('ast_widget_after_page') == 1 ) {
 		register_sidebar(array(
-			'name' 			=> 'After Page',
+			'name' 			=> __('After Page', 'asteroid'),
 			'id' 			=> 'widgets_after_page',
 			'before_widget' => '<div id="%1$s" class="widget-after-page %2$s">',
 			'after_widget' 	=> '</div>',
@@ -240,39 +251,15 @@ if (function_exists( 'register_sidebar' ) ) {
 
 
 /*----------------------------------------
-	Set $Content_Width
+	Set $content_width
 -----------------------------------------*/
 if ( ! isset( $content_width ) ) {
 	$content_width = asteroid_option('ast_content_width');
 }
 
 
-/*----------------------------------------
-	Enables RSS feed links to the head
------------------------------------------*/
-add_theme_support( 'automatic-feed-links' );
-
-
-/*----------------------------------------
-	Add support for thumbnails
------------------------------------------*/
-add_theme_support( 'post-thumbnails' );
-
-
-/*----------------------------------------
-	Add Custom CSS to Post Editor
------------------------------------------*/
-add_editor_style('library/editor-style.css');
-
-
-/*----------------------------------------
-	Shortcodes on Text Widget
------------------------------------------*/
-add_filter( 'widget_text', 'do_shortcode');
-
-
 /*-------------------------------------
-	Favicon + <HEAD> Contents
+	Head Codes
 --------------------------------------*/
 function asteroid_print_head_codes() {
 	echo "\n\n" . '<!-- Asteroid Head -->' . "\n";
@@ -317,7 +304,7 @@ add_action( 'wp_head', 'asteroid_header_text_color' );
 
 
 /*-------------------------------------
-	Container Widths and BG Colors
+	Container Layout
 --------------------------------------*/
 function asteroid_print_layout() {
 	$content_x = asteroid_option('ast_content_width');
@@ -345,6 +332,40 @@ add_action( 'wp_head', 'asteroid_print_custom_css', 990 );
 
 
 /*-------------------------------------
+	Footer Codes
+--------------------------------------*/
+function asteroid_do_hook_footer_links() {
+	if (!( asteroid_option('ast_hook_footer_links') == '' )) echo asteroid_option('ast_hook_footer_links');
+}
+add_action( 'ast_hook_footer_links', 'asteroid_do_hook_footer_links' );
+
+
+/*----------------------------------------
+	RSS feed links on Head
+-----------------------------------------*/
+add_theme_support( 'automatic-feed-links' );
+
+
+/*----------------------------------------
+	Add support for Thumbnails
+-----------------------------------------*/
+add_theme_support( 'post-thumbnails' );
+
+
+/*----------------------------------------
+	Add Custom CSS to Post Editor
+-----------------------------------------*/
+if ( asteroid_option('ast_post_editor_style') == 0 ) add_editor_style('library/editor-style.css');
+
+
+
+/*----------------------------------------
+	Shortcodes on Text Widget
+-----------------------------------------*/
+add_filter( 'widget_text', 'do_shortcode');
+
+
+/*-------------------------------------
 	Remove WordPress Generator
 --------------------------------------*/
 if ( asteroid_option('ast_remove_wp_version') == 1 ) {
@@ -353,30 +374,12 @@ if ( asteroid_option('ast_remove_wp_version') == 1 ) {
 
 
 /*-------------------------------------
-	Excerpt Length
---------------------------------------*/
-function asteroid_excerpt_length( $length ) {
-	return 55;
-}
-add_filter( 'excerpt_length', 'asteroid_excerpt_length' );
-
-
-/*-------------------------------------
-	Footer Links
---------------------------------------*/
-function asteroid_do_hook_footer_links() {
-	if (!( asteroid_option('ast_hook_footer_links') == '' )) echo asteroid_option('ast_hook_footer_links');
-}
-add_action( 'ast_hook_footer_links', 'asteroid_do_hook_footer_links' );
-
-
-/*-------------------------------------
-	Remove rel attr from category
+	Remove rel from Categories
 	HTML5 Validation
 --------------------------------------*/
 function asteroid_remove_category_rel($output){
 	$output = str_replace(' rel="category tag"', '', $output);
-	return $output;}
-
+	return $output;
+}
 add_filter('wp_list_categories', 'asteroid_remove_category_rel');
 add_filter('the_category', 'asteroid_remove_category_rel');

@@ -22,8 +22,8 @@
 	
 		<!-- Post Not Found --> 
 		<div class="wrap-404-box">
-			<h2>Search Results: Nothing Found</h2>
-			<p>Try a new keyword.</p>
+			<h2><?php _e('Search Results: Nothing Found', 'asteroid'); ?></h2>
+			<p><?php _e('Try a new keyword.', 'asteroid'); ?></p>
 			<?php get_search_form(); ?>
 		</div>
 
@@ -31,15 +31,17 @@
 	<?php endif; ?>
 	
 	<!-- Bottom Post Navigation -->
-	<?php if (!( is_singular() || is_404() )) : ?>
+	<?php if ( ( !is_singular() ) && ( (get_post_type() == 'post') || (get_post_type() == 'page') ) ) : ?>
+
 		<div id="bottom-navi">
 			<?php if ( function_exists('wp_pagenavi') ):?>
 				<?php wp_pagenavi(); ?><!-- wp-pagenavi support -->
 			<?php else : ?>
-				<div class="left"><?php next_posts_link( '&laquo; Older posts' ); ?></div>
-				<div class="right"><?php previous_posts_link( 'Newer posts &raquo;' ); ?></div>
+				<div class="left"><?php next_posts_link( __( '&laquo; Older posts', 'asteroid' ) ); ?></div>
+				<div class="right"><?php previous_posts_link( __( 'Newer posts &raquo;', 'asteroid' ) ); ?></div>
 			<?php endif; ?>
 		</div>
+
 	<?php endif; ?>
 
 </div> <!-- #Content End -->
