@@ -21,9 +21,8 @@
 		
 		<?php if (! asteroid_option('ast_remove_theme_link') == 1 ) : ?>
 			<span id="theme-page">
-			<?php echo ( apply_filters( 'asteroid_filter_theme_credits', 
-				__('<a href="http://ronangelo.com/asteroid/" target="_blank">Asteroid Theme</a>', 'asteroid') ) ); 
-			?>
+				<?php echo ( apply_filters( 'asteroid_filter_theme_credits', 
+				'<a href="http://ronangelo.com/asteroid/" target="_blank" >Asteroid Theme</a>' ) ); ?>
 			</span>
 		<?php endif; ?>
 	</div>

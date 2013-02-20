@@ -11,6 +11,8 @@
 
 	<div class="single-wrap sitemap-template">	
 	
+	<?php the_post(); the_content(); ?>
+	
 		<h3><?php _e('Pages', 'asteroid'); ?></h3>
 			<ul><?php wp_list_pages('title_li='); ?></ul>
 		

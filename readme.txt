@@ -3,7 +3,7 @@ Author: ronangelo
 Author URI: http://ronangelo.com
 Theme URI:  http://ronangelo.com/asteroid/
 
-Asteroid WordPress Theme, Copyright 2012 ronangelo
+Asteroid WordPress Theme, Copyright 2013 ronangelo
 Asteroid is distributed under the terms of the GNU GPL version 3
 
 == Description ==
@@ -25,12 +25,19 @@ JSColor - A lightweight Javascript color-picker maintained by Jan Odvárko.
 jscolor is released under a GNU Lesser General Public License. jscolor.com
 
 == CHANGELOG ==
+Version 1.0.8
+	 * New author template.
+	 * New bbPress forum template.
+	 * Width options for bbPress forums and topics.
+	 * Added Descriptions on Category and Tag Archives.
+	 * Option for "Author info box" below posts.
+	 
 Version 1.0.7
-     * Ready for translation.
-	 * CSS Tweaks to blend with bbPress.
-	 * Added Comment info on Blog.
-	 * Added custom filters.
-
+	 * Ready for translation.
+     * CSS Tweaks to blend with bbPress.
+     * Added Comment info on Blog.
+     * Added custom filters.
+	 
 Version 1.0.6
      * Changed some functions to work with a child-theme.
 	 * Merged theme-setup.php & theme-functions.php with functions.php

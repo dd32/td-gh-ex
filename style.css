@@ -4,7 +4,7 @@ Theme URI: http://ronangelo.com/asteroid/
 Description: Asteroid is a simple, clean and responsive theme. It incorporates various widget areas that make management of banners and ads a lot easier, especially for ad-supported sites. The theme is ideal for use on a blog, a static website or both. The theme’s development focuses on user customization and minimizing HTTP requests to help conserve server resource. Asteroid supports custom header images, backgrounds, menus, full-width page templates and more.
 Author: ronangelo
 Author URI: http://ronangelo.com/
-Version: 1.0.7
+Version: 1.0.8
 Tags: black, white, gray, two-columns, right-sidebar, fixed-width, custom-header, custom-background, featured-images, custom-menu, custom-colors, theme-options, threaded-comments, sticky-post, editor-style, full-width-template, threaded-comments, translation-ready
 
 License: GNU General Public License, Version 3 or later
@@ -306,8 +306,8 @@ a:hover {color: #f00;}
     padding: 3px 5px;
     width: 100%;
 }
-.widget-sidebar .widget-title:before {content: ""; padding-left: 6px;}
-.widget-sidebar .widget-title:after {content: ""; padding-right: 6px;}
+/* .widget-sidebar .widget-title:before {content: ""; padding-left: 6px;} */
+/* .widget-sidebar .widget-title:after {content: ""; padding-right: 6px;} */
 .widget-sidebar a {color: #0E4D7A;}
 .widget-sidebar a:hover {color: #F00;}
 .widget-sidebar ul {padding: 0 4px;}
@@ -329,8 +329,8 @@ a:hover {color: #f00;}
 	padding: 3px 5px;
 	width: 100%;
 }
-.widget-footer-full .widget-title:before {content: ""; padding-left: 6px;}
-.widget-footer-full .widget-title:after {content: ""; padding-right: 6px;}
+/* .widget-footer-full .widget-title:before {content: ""; padding-left: 6px;} */
+/* .widget-footer-full .widget-title:after {content: ""; padding-right: 6px;} */
 
 #widgets-wrap-footer-3 {overflow: hidden; padding-bottom: 8px;}
 .widget-footer-3 {	
@@ -349,8 +349,8 @@ a:hover {color: #f00;}
 	padding: 3px 5px;
 	width: 100%;
 }
-.widget-footer-3 .widget-title:before {content: ""; padding-left: 6px;}
-.widget-footer-3 .widget-title:after {content: ""; padding-right: 6px;}
+/* .widget-footer-3 .widget-title:before {content: ""; padding-left: 6px;} */
+/* .widget-footer-3 .widget-title:after {content: ""; padding-right: 6px;} */
 .widget-footer-3 ul {padding: 0 4px;}
 .widget-footer-3 ul li ul {padding-left: 10px;}
 .widget-footer-3 li {padding: 4px 0 2px;}
@@ -455,6 +455,25 @@ a:hover {color: #f00;}
 /*-------------------------------------
    Blog-View
 --------------------------------------*/
+.taxonomy-info {
+    border: 1px solid #666;
+    box-shadow: 0 0 3px #333;
+    margin-top: 16px;
+}
+.taxonomy-title {
+	background: url("images/bg-honeycomb.png") #FFA900;
+	color: #222;
+	padding: 4px 8px;
+	text-align: center;
+	text-shadow: 0 1px 1px #666;
+	text-transform: uppercase;
+}
+.taxonomy-description {
+	background: url("images/bg-honeycomb.png") #FFCB66;
+	border-top: 1px solid #666;
+    padding: 8px;
+}
+
 .blog-view {
 	background: #DDD;
     border: 1px solid #666;
@@ -464,7 +483,7 @@ a:hover {color: #f00;}
     padding: 8px;
 }
 
-.sticky {background: #FCFF82; border: 1px solid #101010;}
+article.sticky {background: url("images/bg-honeycomb.png") #FFCB66; border: 1px solid #101010;}
 
 .blog-view .entry-title a {font-weight: normal;}
 
@@ -518,7 +537,7 @@ a:hover {color: #f00;}
 .read-more-button {	
 	background: #444;
     border: 1px solid #111;
-    border-radius: 4px;
+    border-radius: 3px;
     box-shadow: 0 0 2px #000;
     color: #FFF;
     float: right;
@@ -532,8 +551,10 @@ a:hover {color: #f00;}
 	box-shadow: 0px 0px 3px #000; 
 	text-shadow: 0 1px 1px #333;
 }
-.blog-comment-links {padding: 4px 4px 0;}
+.blog-comment-links {overflow: hidden; padding: 4px 6px 0;}
 .blog-comment-links .reply-link {float: right;}
+.blog-comment-links .comment-count {float: left;}
+.blog-comment-links a {color: #222;}
 
 /*-------------------------------------
    Shared
@@ -627,6 +648,7 @@ a:hover {color: #f00;}
 	line-height: 1.2; 
 	text-shadow: 0 1px 1px #999;
 	margin: 14px 0 4px 0;
+	clear: none;
 }
 
 .entry-content p, .comment-body p { 
@@ -690,7 +712,7 @@ pre {
 .entry-content table, .comment-body table {
     border: 1px solid #333;
     border-collapse: collapse;
-	margin: 10px;
+	margin: 10px 0; /* NEW EDIT */
 }
 .entry-content table th, .comment-body table th {border: 1px solid #666; padding: 4px 8px; background: #DDD;}
 .entry-content table td, .comment-body table td {border: 1px solid #666; padding: 4px 8px;}
@@ -838,7 +860,7 @@ pre {
 #nav-search {
 	display: inline-block;
 	float: right;
-	margin: 6px 20px 4px 10px;
+	margin: 6px 20px 3px 10px;
 }
 #nav-search #searchform {
 	background: none;
@@ -869,10 +891,51 @@ pre {
 
 
 /*-------------------------------------
+   Author Info
+--------------------------------------*/
+.author-info-box {
+	overflow: hidden;
+	border: 1px solid #666;
+	box-shadow: 0 0 3px #333;
+	margin: 16px 0;
+}
+.author-info-box-title {
+    background: url("images/bg-honeycomb.png") #FFA900;
+    color: #222;
+    padding: 4px 8px;
+    text-align: center;
+    text-shadow: 0 1px 1px #666;
+    text-transform: uppercase;
+}
+.author-info {
+	background: url("images/bg-honeycomb.png") #FFCB66;
+	overflow: hidden;
+	padding: 8px;
+}
+.author-avatar {float: left; margin-right: 10px;}
+.author-avatar img {display: block;}
+.author-description {float: left;}
+
+.author-latest-posts {
+	background: url("images/bg-honeycomb.png") #FFCB66;
+	border: 1px solid #666; 
+	box-shadow: 0 0 3px #333;
+}
+.author-latest-posts-title {
+    color: #222;
+    font-weight: normal;
+	padding: 4px 8px; 
+	text-shadow: 0 1px 1px #666;
+}
+.author-latest-posts-list {padding: 8px 10px 12px 16px;}
+.author-latest-posts-list li {list-style: decimal-leading-zero inside none;}
+
+
+/*-------------------------------------
    404 Page
 --------------------------------------*/
 .wrap-404-box {
-	background: #FFFE74;
+	background: url("images/bg-honeycomb.png") #FFCB66;
 	margin: 40px auto; 
 	width: 420px;
 	padding-bottom: 20px;
@@ -896,6 +959,56 @@ pre {
 /*-------------------------------------
    bbPress Styling
 --------------------------------------*/
+#bbpress-forums .bbp-body .topic {border-top: 1px solid #BBB !important;}
+#bbpress-forums .bbp-forum-info, #bbpress-forums .bbp-topic-title {width: 52%;}
+#bbpress-forums .bbp-forum-freshness, #bbpress-forums .bbp-topic-freshness {width: 28%;}
+
+.bbp-topic-title, #bbpress-forums .bbp-topic-permalink {font-size: 14px;}
+
+#bbpress-forums .sticky {background-color: #FFF78F !important;}
+#bbpress-forums .super-sticky {background-color: #FFF070 !important;}
+#bbpress-forums .super-sticky .bbp-topic-permalink {font-weight: bold;}
+
+#bbpress-forums .bbp-body .forum, #bbpress-forums .bbp-body .topic {
+    padding: 6px 10px !important;
+}
+#bbpress-forums .bbp-topic-meta {margin: 0 !important;}
+#bbpress-forums .bbp-author-avatar img {margin: 4px 4px -7px;}
+.bbp-body {border-bottom: 1px solid #BBB;}
+
+#bbpress-forums blockquote {clear: none;}
+#bbpress-forums .bbp-topic-content ul, #bbpress-forums .bbp-reply-content ul,
+#bbpress-forums .bbp-topic-content ol, #bbpress-forums .bbp-reply-content ol {
+	padding-top: 6px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	margin: 0;
+}
+#bbpress-forums .bbp-topic-content ul li, #bbpress-forums .bbp-reply-content ul li  {list-style: disc inside none;}
+#bbpress-forums .bbp-topic-content ol li, #bbpress-forums .bbp-reply-content ol li  {list-style: decimal inside none;}
+
+
+.bbp-pagination-links > * {
+    background-color: #222;
+    border: 1px solid #000;
+    color: #FFF;
+    padding: 4px 8px;
+}
+.bbp-pagination-links .page-numbers.current {background-color: #444;}
+.bbp-pagination-links > a:hover {
+    background-color: #E0E0E0;
+    color: #000;
+    font-weight: bold;
+}
+
+.bbp-login-form .bbp-login-links {margin: 8px 4px;}
+.bbp-login-form .bbp-login-links a {
+    clear: none;
+    float: left;
+    margin-right: 10px;
+    text-decoration: underline;
+}
+
 .bbp-login-form {margin-left: 10px;}
 .bbp-login-form fieldset {display: inline-block;}
 .bbp-login-form fieldset input {
@@ -926,46 +1039,7 @@ pre {
 .bbp-logged-in {padding: 10px;}
 .bbp-logged-in h4 {margin-bottom: 2px;}
 
-#bbpress-forums .bbp-body .topic {border-top: 1px solid #BBB !important;}
-#bbpress-forums .bbp-forum-info, #bbpress-forums .bbp-topic-title {width: 52%;}
-#bbpress-forums .bbp-forum-freshness, #bbpress-forums .bbp-topic-freshness {width: 28%;}
-
-.bbp-topic-title, #bbpress-forums .bbp-topic-permalink {font-size: 14px;}
-
-#bbpress-forums .sticky {
-    background-color: #FFF78F !important;
-    border-color: #BBB;
-    border-style: solid;
-    border-width: 0 1px;
-}
-#bbpress-forums .super-sticky {
-    background-color: #FFF070 !important;
-    border-color: #BBB;
-    border-style: solid;
-    border-width: 0 1px;
-}
-#bbpress-forums .super-sticky .bbp-topic-permalink {font-weight: bold;}
-
-.bbp-pagination-links > * {
-    background-color: #333;
-    border: 1px solid #000;
-    color: #FFF;
-    padding: 4px 8px;
-}
-.bbp-pagination-links .page-numbers.current {background-color: #202020;}
-.bbp-pagination-links > a:hover {
-    background-color: #E0E0E0;
-    color: #000;
-    font-weight: bold;
-}
-
-.bbp-login-form .bbp-login-links {margin: 8px 4px;}
-.bbp-login-form .bbp-login-links a {
-    clear: none;
-    float: left;
-    margin-right: 10px;
-    text-decoration: underline;
-}
+.bbp_widget_login .bbp-logged-in {min-width: 160px;}
 
 .widget_bbpress_search #searchform label {display: inline-block;}
 

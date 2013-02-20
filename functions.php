@@ -6,7 +6,7 @@
  *
  *
  */
-
+$ast_version = "1.0.8";
 /*-------------------------------------
 	Theme Localization
 --------------------------------------*/
@@ -23,8 +23,9 @@ require( get_template_directory() . '/library/theme-options.php' );
 	Register Main Stylesheet
 --------------------------------------*/
 function asteroid_enqueue_styles(){
+	global $ast_version;
 	if ( ! is_admin() ) {
-		wp_register_style( 'asteroid-main-style', get_stylesheet_uri(), array(), '1.0.7', 'screen' ); 
+		wp_register_style( 'asteroid-main-style', get_stylesheet_uri(), array(), $ast_version, 'screen' ); 
 		wp_enqueue_style( 'asteroid-main-style' );
 	}
 }
@@ -262,7 +263,8 @@ if ( ! isset( $content_width ) ) {
 	Head Codes
 --------------------------------------*/
 function asteroid_print_head_codes() {
-	echo "\n\n" . '<!-- Asteroid Head -->' . "\n";
+	global $ast_version;
+	echo "\n\n" . '<!-- Asteroid Head -->' . "\n" . '<meta property="Asteroid Theme" content="' . $ast_version . '" />' . "\n";
 	
 	if (! ( asteroid_option('ast_favicon') == '' ) ) {
 		echo '<link rel="icon" href="' . asteroid_option('ast_favicon') . '" type="image/x-icon" />' . "\n";
@@ -356,7 +358,6 @@ add_theme_support( 'post-thumbnails' );
 	Add Custom CSS to Post Editor
 -----------------------------------------*/
 if ( asteroid_option('ast_post_editor_style') == 0 ) add_editor_style('library/editor-style.css');
-
 
 
 /*----------------------------------------

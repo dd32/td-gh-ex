@@ -97,7 +97,7 @@
 		( asteroid_option('ast_date_modified') == 3 && is_singular(array( 'post', 'page' )) ) 
 		) :
 	?>
-		<div class="updated"><?php _e('Updated:', 'asteroid'); ?> <?php the_modified_date(); ?> at <?php the_modified_time(); ?></div>
+		<div class="updated"><?php _e('Updated:', 'asteroid'); ?>&nbsp;<?php the_modified_date(); ?>&nbsp;<?php _e('at', 'asteroid'); ?>&nbsp;<?php the_modified_time(); ?></div>
 	<?php endif; ?>
 	
 	<div class="entry-tags"><?php the_tags(); ?></div>
@@ -126,6 +126,18 @@
 	<?php endif; ?>
 </div>
 
+<?php if ( is_singular('post') && ( asteroid_option('ast_post_author_info_box') == 1 ) ) : ?>
+	<div class="author-info-box">
+		<h4 class="author-info-box-title"><?php _e('About the Author', 'asteroid'); ?></h4>
+		<div class="author-info">
+			<div class="author-avatar"><?php echo get_avatar( get_the_author_meta('ID'), 64 ); ?></div>
+			<div class="author-description">
+				<h4><?php echo get_the_author_link(); ?></h4>
+				<?php echo get_the_author_meta('description') ; ?>
+			</div>
+		</div>
+	</div>
+<?php endif; ?>
 
 <?php if ( 
 	( asteroid_option('ast_post_comments') == 1 && is_singular('post') ) ||

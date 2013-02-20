@@ -9,6 +9,15 @@
 		</div>
 	<?php endif ; ?>
 
+	<?php if ( is_category() || is_tag() ) : ?>
+		<div class="taxonomy-info">
+			<h4 class="taxonomy-title"><?php single_cat_title(); ?></h4>
+			<?php if ( category_description() != '' ) : ?>
+				<div class="taxonomy-description"><?php echo category_description(); ?> </div>
+			<?php endif; ?>
+		</div>
+	<?php endif; ?>
+	
 	<!-- Start the Loop -->
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>  
 		

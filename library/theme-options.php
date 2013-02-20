@@ -515,8 +515,16 @@ class Asteroid_Theme_Options {
 		
 		$this->settings['ast_blog_comment_links'] = array(
 			'section' => 'post-page',
-			'title'   => __( 'Blog Comment Info', 'asteroid' ),
-			'desc'    => __( 'Show comment count and comment link on Blog View.', 'asteroid' ),
+			'title'   => __( 'Blog View Comment Info', 'asteroid' ),
+			'desc'    => __( 'Show comment count and comment link below excerpts on Blog View.', 'asteroid' ),
+			'type'    => 'checkbox',
+			'std'     => 0
+		);
+		
+		$this->settings['ast_post_author_info_box'] = array(
+			'section' => 'post-page',
+			'title'   => __( 'Show Author Info Box', 'asteroid' ),
+			'desc'    => __( 'Show "About the Author" box below each post.', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
@@ -662,6 +670,22 @@ class Asteroid_Theme_Options {
 			'section' => 'misc',
 			'title'   => __( 'Disable Post Editor Style', 'asteroid' ),
 			'desc'    => __( 'Disable custom stylings on the Post Editor.', 'asteroid' ),
+			'type'    => 'checkbox',
+			'std'     => 0
+		);
+		
+		$this->settings['ast_bbpress_forum_full_width'] = array(
+			'section' => 'misc',
+			'title'   => __( 'bbPress Forum Width', 'asteroid' ),
+			'desc'    => __( 'Make default forum full-width with no sidebar.', 'asteroid' ),
+			'type'    => 'checkbox',
+			'std'     => 0
+		);
+		
+		$this->settings['ast_bbpress_topic_full_width'] = array(
+			'section' => 'misc',
+			'title'   => __( 'bbPress Topic Width', 'asteroid' ),
+			'desc'    => __( 'Make topics full-width with no sidebar.', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
