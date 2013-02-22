@@ -391,7 +391,6 @@ div.horbar2 {
 	position: relative;
 	padding: 0; 
 	margin: 0;
-	width: 100%; 
 	}
 
 div.horbar1 {

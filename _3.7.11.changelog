@@ -1,3 +1,11 @@
+Changelog 3.7.11:
+
+- fix export issue when WordPress Address and Site Address are different
+- fix small extension of %bar1 and %bar2 
+- removed depreciated code checking for multisites
+- added an option to change the default directory header images are stored in. 
+  You can now have separate header image folders for multisites.
+
 Changelog 3.7.10:
 
 - changed access to globals $templateURI and $homeURL to support https 

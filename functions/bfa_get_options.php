@@ -280,6 +280,7 @@
 			"allow_debug",
 			
 			"IEDocType",
+            "header_images_dir",
 			"overlay_header_image"
 			);
 

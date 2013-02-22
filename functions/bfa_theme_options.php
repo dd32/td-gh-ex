@@ -676,6 +676,13 @@ $options1 = array(
 			common today, so the images should be that wide or wider. The next common screen widths are 1440, 1600, 1680 and 
 			1920 pixels. </li></ul>" . $header_image_text),
 
+     array(    "name" => "Header Images Directory",
+            "category" => "header-image",
+            "id" => "header_images_dir",
+            "std" => "images/header",
+            "type" => "text",
+            "info" => "Directory for header image(s), relative to Atahualpa theme directory. No leading or trailing slashes."),
+
     array(    "name" => "Rotate header images with Javascript?",
     	    "category" => "header-image",
             "id" => "header_image_javascript",
