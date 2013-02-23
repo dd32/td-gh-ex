@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ascetica\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-23 11:07+0200\n"
-"PO-Revision-Date: 2012-07-23 11:11+0200\n"
+"POT-Creation-Date: 2013-02-23 22:04+0200\n"
+"PO-Revision-Date: 2013-02-23 22:04+0200\n"
 "Last-Translator: Galin Simeonov <galin@alienwp.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -12,336 +12,238 @@ msgstr ""
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;esc_attr__;esc_attr_e;esc_html__;esc_html_e;_n;_x;_x:1,2c\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-Language: English\n"
+"X-Poedit-SearchPath-0: .\n"
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/404.php:25
+#: 404.php:25
 msgid "Not Found"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/404.php:30
+#: 404.php:30
 #, php-format
 msgid "You tried going to %1$s, and it doesn't exist. All is not lost! You can search for what you're looking for."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/attachment.php:44
+#: attachment.php:44
 #, php-format
 msgid "Download &quot;%1$s&quot;"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/attachment.php:49
+#: attachment.php:49
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/attachment.php:50
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/content-gallery.php:42
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/content-gallery.php:56
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/content.php:27
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/content.php:60
+#: attachment.php:50
+#: content-gallery.php:42
+#: content-gallery.php:56
+#: content.php:27
+#: content.php:60
 msgid "Pages:"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/comment.php:34
+#: comment.php:34
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/comments.php:25
+#: comments.php:25
 msgid "No Responses"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/comments.php:25
+#: comments.php:25
 msgid "One Response"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/comments.php:25
+#: comments.php:25
 msgid "% Responses"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/comments.php:46
+#: comments.php:46
 #, php-format
 msgid "Comments are closed, but <a href=\"%1$s\" title=\"Trackback URL for this post\">trackbacks</a> and pingbacks are open."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/comments.php:52
+#: comments.php:52
 msgid "Comments are closed."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/content-gallery.php:28
+#: content-gallery.php:28
 msgid "[entry-author before=\"Author: \"]"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/content-gallery.php:30
+#: content-gallery.php:30
 msgid "[entry-terms taxonomy=\"category\" before=\"Category: \"]"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/content-gallery.php:32
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/content.php:31
+#: content-gallery.php:32
+#: content.php:31
 msgid "[entry-terms taxonomy=\"post_tag\" before=\"Tags: \"]"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/content-gallery.php:54
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/content.php:21
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/content.php:56
+#: content-gallery.php:54
+#: content.php:21
+#: content.php:56
 msgid "[entry-published] &middot; by [entry-author] &middot; in [entry-terms taxonomy=\"category\" before=\"\"] [entry-edit-link before=\" &middot; \"]"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/functions.php:167
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/loop-nav.php:28
+#: functions.php:179
+#: loop-nav.php:28
 msgid "&laquo; Previous"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/functions.php:168
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/loop-nav.php:28
+#: functions.php:180
+#: loop-nav.php:28
 msgid "Next &raquo;"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/functions.php:215
+#: functions.php:227
 msgid "*"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/functions.php:220
+#: functions.php:232
 msgid "Name"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/functions.php:221
+#: functions.php:233
 msgid "Email"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/functions.php:222
+#: functions.php:234
 msgid "Website"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/functions.php:227
+#: functions.php:239
 msgid "Comment"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/functions.php:228
+#: functions.php:240
 #, php-format
 msgid "You must be <a href=\"%1$s\" title=\"Log in\">logged in</a> to post a comment."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/functions.php:229
+#: functions.php:241
 #, php-format
 msgid "Logged in as <a href=\"%1$s\" title=\"%2$s\">%2$s</a>."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/functions.php:229
+#: functions.php:241
 msgid "Log out of this account"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/functions.php:229
+#: functions.php:241
 msgid "Log out &raquo;"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/functions.php:234
+#: functions.php:246
 msgid "Leave a Reply"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/functions.php:235
+#: functions.php:247
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/functions.php:236
+#: functions.php:248
 msgid "Click here to cancel reply."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/functions.php:237
+#: functions.php:249
 msgid "Post Comment"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/functions.php:249
+#: functions.php:261
 msgid "Copyright &#169; [the-year] [site-link]"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/functions.php:249
+#: functions.php:261
 msgid "Powered by [wp-link] and [theme-link]"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/loop-error.php:15
+#: loop-error.php:15
 msgid "Apologies, but no entries were found."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/loop-nav.php:16
+#: loop-nav.php:16
 msgid "&laquo; Return to entry"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/loop-nav.php:22
+#: loop-nav.php:22
 msgid "<span class=\"meta-nav\">&laquo;</span> Previous"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/loop-nav.php:23
+#: loop-nav.php:23
 msgid "Next <span class=\"meta-nav\">&raquo;</span>"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/searchform.php:17
+#: menu-primary.php:17
+msgid "Menu"
+msgstr ""
+
+#: searchform.php:17
 msgid "Search this site..."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/searchform.php:19
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/sidebar-secondary.php:22
+#: searchform.php:19
+#: sidebar-secondary.php:22
 msgid "Search"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/sidebar-primary.php:22
+#: sidebar-primary.php:22
 msgid "Meta"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/sidebar-primary.php:33
+#: sidebar-primary.php:33
 msgid "Archives"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/admin/functions-admin.php:38
-msgid "General settings"
+#: admin/customize.php:30
+msgid "Typography"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/admin/functions-admin.php:55
-msgid "Favicon:"
+#: admin/customize.php:36
+#: admin/customize.php:123
+msgid "Custom CSS"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/admin/functions-admin.php:61
-msgid "Upload favicon image (recommended max size: 32x32)."
+#: admin/customize.php:76
+msgid "Font Family"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/admin/functions-admin.php:73
-msgid "Logo:"
+#: admin/customize.php:97
+msgid "Font Size"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/admin/functions-admin.php:79
-msgid "Upload logo image."
+#: admin/customize.php:115
+msgid "Link Color"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/admin/functions-admin.php:91
-msgid "Font family:"
-msgstr ""
-
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/admin/functions-admin.php:95
-msgid "Georgia"
-msgstr ""
-
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/admin/functions-admin.php:96
-msgid "PT Serif"
-msgstr ""
-
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/admin/functions-admin.php:97
-msgid "Bitter"
-msgstr ""
-
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/admin/functions-admin.php:98
-msgid "Droid Serif"
-msgstr ""
-
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/admin/functions-admin.php:99
-msgid "Helvetica"
-msgstr ""
-
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/admin/functions-admin.php:100
-msgid "Istok Web"
-msgstr ""
-
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/admin/functions-admin.php:101
-msgid "Arial"
-msgstr ""
-
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/admin/functions-admin.php:102
-msgid "Verdana"
-msgstr ""
-
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/admin/functions-admin.php:103
-msgid "Lucida Sans Unicode"
-msgstr ""
-
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/admin/functions-admin.php:104
-msgid "Droid Sans"
-msgstr ""
-
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/admin/functions-admin.php:112
-msgid "Font size:"
-msgstr ""
-
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/admin/functions-admin.php:116
-msgid "default"
-msgstr ""
-
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/admin/functions-admin.php:117
-msgid "18"
-msgstr ""
-
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/admin/functions-admin.php:118
-msgid "17"
-msgstr ""
-
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/admin/functions-admin.php:119
-msgid "16"
-msgstr ""
-
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/admin/functions-admin.php:120
-msgid "15"
-msgstr ""
-
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/admin/functions-admin.php:121
-msgid "14"
-msgstr ""
-
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/admin/functions-admin.php:122
-msgid "13"
-msgstr ""
-
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/admin/functions-admin.php:123
-msgid "12"
-msgstr ""
-
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/admin/functions-admin.php:125
-msgid "The base font size in pixels."
-msgstr ""
-
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/admin/functions-admin.php:132
-msgid "Link color:"
-msgstr ""
-
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/admin/functions-admin.php:137
-msgid "Set the theme link color."
-msgstr ""
-
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/admin/functions-admin.php:144
-msgid "Custom CSS:"
-msgstr ""
-
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/admin/functions-admin.php:148
-msgid "Add your custom CSS here. If it's more than a few lines, it's recommended to separate your modifications in a child theme."
-msgstr ""
-
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/admin/functions-admin.php:182
-msgid "Use this Image"
-msgstr ""
-
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/includes/widget-thumbnails.php:25
+#: includes/widget-thumbnails.php:25
 msgid "Display post images from selected category."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/includes/widget-thumbnails.php:37
+#: includes/widget-thumbnails.php:37
 msgid "Ascetica - Thumbnails"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/includes/widget-thumbnails.php:59
+#: includes/widget-thumbnails.php:59
 msgid "No images."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/includes/widget-thumbnails.php:116
+#: includes/widget-thumbnails.php:118
 msgid "Thumbnails"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/includes/widget-thumbnails.php:126
+#: includes/widget-thumbnails.php:128
 msgid "Title"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/includes/widget-thumbnails.php:133
+#: includes/widget-thumbnails.php:135
 msgid "Select Category"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/includes/widget-thumbnails.php:143
+#: includes/widget-thumbnails.php:145
 msgid "Number of thumbnails"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/includes/widget-thumbnails.php:149
+#: includes/widget-thumbnails.php:151
 msgid "Display in random order"
 msgstr ""
 

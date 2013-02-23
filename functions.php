@@ -2,7 +2,7 @@
 /**
  * @package Ascetica
  * @subpackage Functions
- * @version 0.2.1
+ * @version 0.3
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
@@ -24,13 +24,15 @@ function ascetica_theme_setup() {
 	$prefix = hybrid_get_prefix();
 
 	/* Add theme support for core framework features. */
+	add_theme_support( 'hybrid-core-styles', array( 'style' ) );
 	add_theme_support( 'hybrid-core-menus', array( 'primary' ) );
 	add_theme_support( 'hybrid-core-sidebars', array( 'primary', 'secondary', 'subsidiary', 'after-singular' ) );
 	add_theme_support( 'hybrid-core-widgets' );
-	add_theme_support( 'hybrid-core-theme-settings', array( 'footer', 'about' ) );
+	add_theme_support( 'hybrid-core-theme-settings', array( 'footer' ) );
 	add_theme_support( 'hybrid-core-meta-box-footer' );
 	add_theme_support( 'hybrid-core-shortcodes' );
 	add_theme_support( 'hybrid-core-template-hierarchy' );
+	add_theme_support( 'hybrid-core-scripts', array( 'comment-reply' ) );
 
 	/* Add theme support for framework extensions. */
 	add_theme_support( 'loop-pagination' );
@@ -67,18 +69,25 @@ function ascetica_theme_setup() {
 	/* Enqueue scripts (and related stylesheets) */
 	add_action( 'wp_enqueue_scripts', 'ascetica_scripts' );
 	
-	/* Enqueue Google fonts */
-	add_action( 'wp_enqueue_scripts', 'ascetica_google_fonts' );
-	
 	/* Style settings */
 	add_action( 'wp_head', 'ascetica_style_settings' );
+
+	/* Add support for custom headers. */
+	$args = array(
+		'width'         => 250,
+		'height'        => 70,
+		'flex-height'   => true,
+		'flex-width'    => true,		
+		'header-text'   => false,
+		'uploads'       => true,
+	);
+	add_theme_support( 'custom-header', $args );	
 	
 	/* Add support for custom backgrounds */
 	add_theme_support( 'custom-background' );
-	
-	/* Add theme settings */
-	if ( is_admin() )
-	    require_once( trailingslashit( TEMPLATEPATH ) . 'admin/functions-admin.php' );
+
+	/* Add theme settings to the customizer. */
+	require_once( trailingslashit( get_template_directory() ) . 'admin/customize.php' );	
 	    
 	/* Default footer settings */
 	add_filter( "{$prefix}_default_theme_settings", 'ascetica_default_footer_settings' );
@@ -88,6 +97,9 @@ function ascetica_theme_setup() {
 	
 	/* Add support for Post Formats */
 	add_theme_support( 'post-formats', array( 'gallery' ) );	
+
+	/* Remove the "Theme Settings" submenu. */
+	add_action( 'admin_menu', 'ascetica_remove_theme_settings_submenu', 11 );		
 	
 }
 
@@ -149,8 +161,9 @@ function ascetica_scripts() {
 		/* Enqueue Scripts */	
 		wp_enqueue_script( 'ascetica_fancybox', get_template_directory_uri() . '/js/fancybox/jquery.fancybox-1.3.4.pack.js', array( 'jquery' ), '1.0', true );		
 		wp_enqueue_script( 'ascetica_fitvids', get_template_directory_uri() . '/js/fitvids/jquery.fitvids.js', array( 'jquery' ), '1.0', true );	
-		wp_enqueue_script( 'ascetica_flexslider', get_template_directory_uri() . '/js/flex-slider/jquery.flexslider-min.js', array( 'jquery' ), '1.0', true );	
-		wp_enqueue_script( 'ascetica_footer-scripts', get_template_directory_uri() . '/js/footer-scripts.js', array( 'jquery', 'ascetica_fitvids', 'ascetica_fancybox', 'ascetica_flexslider' ), '1.0', true );
+		wp_enqueue_script( 'ascetica_flexslider', get_template_directory_uri() . '/js/flex-slider/jquery.flexslider-min.js', array( 'jquery' ), '1.0', true );
+		wp_enqueue_script( 'ascetica_navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20130223', true );		
+		wp_enqueue_script( 'ascetica_footer-scripts', get_template_directory_uri() . '/js/footer-scripts.js', array( 'jquery', 'ascetica_fitvids', 'ascetica_fancybox', 'ascetica_flexslider' ), '1.0', true );	
 
 		/* Enqueue Styles */
 		wp_enqueue_style( 'ascetica_fancybox-stylesheet', get_template_directory_uri() . '/js/fancybox/jquery.fancybox-1.3.4.css', false, 1.0, 'screen' );
@@ -252,60 +265,6 @@ function ascetica_default_footer_settings( $settings ) {
 }
 
 /**
- * Google fonts
- *
- */
-function ascetica_google_fonts() {
-	
-	if ( hybrid_get_setting( 'ascetica_font_family' ) ) {
-		
-		switch ( hybrid_get_setting( 'ascetica_font_family' ) ) {
-			case 'PT Serif':
-				wp_enqueue_style( 'font-pt-serif', 'http://fonts.googleapis.com/css?family=PT+Serif:400,400italic', false, 1.0, 'screen' );
-				break;				
-			case 'Droid Serif':
-				wp_enqueue_style( 'font-droid-serif', 'http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic', false, 1.0, 'screen' );
-				break;			
-			case 'Istok Web':
-				wp_enqueue_style( 'font-istok-web', 'http://fonts.googleapis.com/css?family=Istok+Web', false, 1.0, 'screen' );
-				break;
-			case 'Droid Sans':
-				wp_enqueue_style( 'font-droid-sans', 'http://fonts.googleapis.com/css?family=Droid+Sans', false, 1.0, 'screen' );
-				break;				
-			case 'Bitter':
-				wp_enqueue_style( 'font-bitter', 'http://fonts.googleapis.com/css?family=Bitter', false, 1.0, 'screen' );
-				break;
-		}
-	}	
-}
-
-/**
- * Style settings
- *
- */
-function ascetica_style_settings() {
-	
-	echo "\n<!-- Style settings -->\n";
-	echo "<style type=\"text/css\" media=\"all\">\n";
-	
-	if ( hybrid_get_setting( 'ascetica_font_size' ) )
-		echo 'html { font-size: ' . esc_html( hybrid_get_setting( 'ascetica_font_size' ) ) . "px; }\n";
-	
-	if ( hybrid_get_setting( 'ascetica_font_family' ) )
-		echo 'body, #respond #submit, .button, a.button, .wpcf7-submit, #loginform .button-primary, .pagination a.page-numbers, .comment-navigation a.page-numbers, input[type="text"], input[type="password"], input[type="email"], .input-text, textarea, select { font-family: ' . esc_html( hybrid_get_setting( 'ascetica_font_family' ) ) . ", serif; }\n";
-	
-	if ( hybrid_get_setting( 'ascetica_link_color' ) ) {
-		echo 'a, #footer a:hover, .entry-title a:hover { color: ' . esc_html( hybrid_get_setting( 'ascetica_link_color' ) ) . "; }\n";
-		echo "a:hover, a:focus { color: #000; }\n";
-	}	
-	if ( hybrid_get_setting( 'ascetica_custom_css' ) )
-		echo esc_html( hybrid_get_setting( 'ascetica_custom_css' ) ) . "\n";
-	
-	echo "</style>\n";
-
-}
-
-/**
  *  Widgets
  *
  */
@@ -324,10 +283,18 @@ function ascetica_register_widgets() {
  * 
  */
 function ascetica_site_title() {
+
+	$tag = ( is_front_page() ) ? 'h1' : 'div';
 	
-	if ( hybrid_get_setting( 'ascetica_logo_url' ) ) {	
+	if ( get_header_image() ) {
+
+		echo '<' . $tag . ' id="site-title">' . "\n";
+			echo '<a href="' . get_home_url() . '" title="' . get_bloginfo( 'name' ) . '" rel="Home">' . "\n";
+				echo '<img class="logo" src="' . get_header_image() . '" alt="' . get_bloginfo( 'name' ) . '" />' . "\n";
+			echo '</a>' . "\n";
+		echo '</' . $tag . '>' . "\n";
 	
-		$tag = ( is_front_page() ) ? 'h1' : 'div';	
+	} elseif ( hybrid_get_setting( 'ascetica_logo_url' ) ) { // check for legacy setting
 			
 		echo '<' . $tag . ' id="site-title">' . "\n";
 			echo '<a href="' . get_home_url() . '" title="' . get_bloginfo( 'name' ) . '" rel="Home">' . "\n";
@@ -339,8 +306,17 @@ function ascetica_site_title() {
 	
 		hybrid_site_title();
 	
-	}
+	}	
+}
 
+/**
+ * Remove the "Theme Settings" submenu.
+ *
+ */
+function ascetica_remove_theme_settings_submenu() {
+
+	/* Remove the Theme Settings settings page. */
+	remove_submenu_page( 'themes.php', 'theme-settings' );
 }
 
 ?>

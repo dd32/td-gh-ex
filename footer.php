@@ -11,15 +11,15 @@
  * @subpackage Template
  */
 ?>
-				<?php get_sidebar( 'secondary' ); // Loads the sidebar-secondary.php template. ?>
+					<?php get_sidebar( 'secondary' ); // Loads the sidebar-secondary.php template. ?>
+
+				</div><!-- #primary -->	
 
 				<?php do_atomic( 'close_main' ); // ascetica_close_main ?>
 
 		</div><!-- #main -->
 
 		<?php do_atomic( 'after_main' ); // ascetica_after_main ?>
-		
-		<?php get_template_part( 'menu', 'primary' ); // Loads the menu-primary.php template. ?>
 		
 		<?php get_sidebar( 'primary' ); // Loads the sidebar-primary.php template. ?>
 

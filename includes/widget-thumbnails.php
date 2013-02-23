@@ -89,7 +89,9 @@ class Ascetica_Thumbnails_Widget extends WP_Widget {
 					
 					</ul>
 					
-				<?php endif;							
+				<?php endif;
+				
+				wp_reset_query();							
 			}			
 	
 		/* Output the theme's $after_widget wrapper. */
@@ -100,9 +102,9 @@ class Ascetica_Thumbnails_Widget extends WP_Widget {
 	function update( $new_instance, $old_instance ) {
 		
 		$instance = $old_instance;
-		$instance['title'] = strip_tags( $new_instance['title'] );
-		$instance['thumbnails_cat'] = strip_tags( $new_instance['thumbnails_cat'] );
-		$instance['thumbnails_count'] = strip_tags( intval( $new_instance['thumbnails_count'] ) );
+		$instance['title'] = wp_kses( $new_instance['title'] );
+		$instance['thumbnails_cat'] = wp_kses( $new_instance['thumbnails_cat'] );
+		$instance['thumbnails_count'] = wp_kses( intval( $new_instance['thumbnails_count'] ) );
 		$instance['thumbnails_randomize'] = ( isset( $new_instance['thumbnails_randomize'] ) ? 1 : 0 );
 		
 		return $instance;
@@ -130,7 +132,7 @@ class Ascetica_Thumbnails_Widget extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id( 'thumbnails_cat' ); ?>">Category</label><br />
 			<select class="widefat" id="<?php echo $this->get_field_id( 'thumbnails_cat' ); ?>" name="<?php echo $this->get_field_name( 'thumbnails_cat' ); ?>"> 
-			 <option value="1"><?php echo esc_attr(__('Select Category', 'ascetica')); ?></option>	 
+			 <option value="1"><?php echo esc_attr( __( 'Select Category', 'ascetica' ) ); ?></option>	 
 			 <?php 
 			  $categories=  get_categories(); 
 			  foreach ( $categories as $category ) { ?>

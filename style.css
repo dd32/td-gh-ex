@@ -1,8 +1,8 @@
 /**
  * Theme Name: Ascetica
  * Theme URI: http://themehybrid.com/themes/ascetica
- * Description: Simple portfolio and blog theme with responsive layout, sticky posts slider, and a widget for presenting your work. The theme settings include options for uploading favicon and logo images, color picker, typography settings, and a nice selection of Google fonts.
- * Version: 0.2.1
+ * Description: NOTE: 0.3 is a major update. Please backup your theme before updating and read the changelog.txt file for details. Ascetica is a simple portfolio and blog theme with responsive layout, sticky posts slider, and a widget for presenting your work. The theme supports custom header and background, with theme settings integrated into the WordPress Customizer: color picker, typography settings, and a nice selection of Google fonts.
+ * Version: 0.3
  * Author: Galin Simeonov
  * Author URI: http://alienwp.com
  * Tags: flexible-width, theme-options, threaded-comments, microformats, translation-ready, rtl-language-support, two-columns, three-columns, right-sidebar, sticky-post, custom-background, featured-images
@@ -521,11 +521,9 @@ input[type="submit"]:hover { cursor: pointer }
 
 /* Layout
 -------------------------------------------------------------- */
-#main {
+#primary {
 	float: left;
 	width: 70.21276595744681%;
-	margin: 0 auto;
-	position: relative;
 }
 #content {
 	float: left;
@@ -574,12 +572,12 @@ input[type="submit"]:hover { cursor: pointer }
 /* Header 
 -------------------------------------------------------------- */
 #header {
-	clear: both;
-	width: 100%;
+/*	clear: both;
+	width: 100%;*/
 }
 #branding {
 	float: left;
-	width: 100%;
+	width: 71.21212121212121%;
 	overflow: hidden;
 	margin-top: 30px;
 }
@@ -658,6 +656,27 @@ input[type="submit"]:hover { cursor: pointer }
 	padding: .9em 60px;
 }
 #menu-primary ul li a:hover, #menu-primary li ul li a:hover { color: #000; }
+
+/* Responsive menu
+-------------------------------------------------------------- */
+.site-navigation .nav-menu { display: none; }
+.site-navigation .nav-menu.toggled-on { display: block; }
+.menu-toggle {
+	clear: both;
+	display: none;
+	float: left;
+	width: 100%;
+	height: 50px;
+	margin: 0 0 0 0;
+	font-size: 20px;
+	font-weight: normal;
+	line-height: 47px;
+	text-align: center;
+	color: #eee;
+	background: #111;
+	cursor: pointer;
+}
+.menu-toggle:hover { color: #fff; }
 
 /* Posts 
 -------------------------------------------------------------- */
@@ -941,6 +960,7 @@ input[type="submit"]:hover { cursor: pointer }
 	color: #aaa;
 }
 #sidebar-secondary .widget .search-form input[type="text"] { width: 85.4%; }
+#sidebar-subsidiary .widget .search-form input[type="text"] { width: 89%; }
 .search-form .search-submit, .widget.search .widget-title { display: none; }
 
 /* Thumbnails (widget)
@@ -1238,6 +1258,10 @@ input[type="submit"]:hover { cursor: pointer }
 /*  Media Queries
 ----------------------------------------------------- */
 
+/* Menu toggles */
+@media only screen and (min-width: 768px) { .site-navigation .nav-menu { display: block; } }
+@media only screen and (max-width: 767px) { .menu-toggle { display: block; } }
+
 /* Tablet (portrait) */
 @media only screen and (min-width: 768px) and (max-width: 959px) {
 	.wrap { max-width: 728px; }	
@@ -1259,7 +1283,7 @@ input[type="submit"]:hover { cursor: pointer }
 		width: 100%;
 		position: relative;
 	}
-	#main {
+	#main, #primary {
 		width: 100%;
 		margin-bottom: 0;
 	}
@@ -1267,14 +1291,21 @@ input[type="submit"]:hover { cursor: pointer }
 	.sticky .entry-summary, .sticky .entry-title a { display: none; }
 	.singular .hentry { padding-bottom: 0; }
 	.hentry.format-gallery .singular-gallery-thumbnail, .hentry.format-gallery .gallery-info, #sidebar-subsidiary .widget, #respond { width: 100%; }
+	#menu-primary .menu-toggle { width: 100%; }
+	.menu-toggle { display: block; }
 	#menu-primary {
 		float: left;
 		clear: both;
 		width: 100%;
 		margin-top: 10px;
 	}
-	#menu-primary .menu { float: left; }
+	#menu-primary .menu { 
+		float: left; 
+		width: 100%;
+		margin-bottom: 30px;
+	}
 	#menu-primary ul li { clear: left; }
+	#menu-primary li a, #menu-primary li li a { font-size: 13px; }
 	#menu-primary ul li a { margin-left: 0; }
 	#menu-primary { margin-top: 0; }
 	#content, #sidebar-secondary  {

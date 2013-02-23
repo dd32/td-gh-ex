@@ -21,14 +21,11 @@
 
 <?php if ( hybrid_get_setting( 'ascetica_favicon_url' ) ) { ?>
 <!-- Favicon -->
-<link rel="shortcut icon" href="<?php echo esc_url( hybrid_get_setting( 'ascetica_favicon_url' ) ); ?>" />
+	<link rel="shortcut icon" href="<?php echo esc_url( hybrid_get_setting( 'ascetica_favicon_url' ) ); ?>" />
 <?php } ?>
 
 <!-- Title -->
 <title><?php hybrid_document_title(); ?></title>
-
-<!-- Stylesheet -->	
-<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" />
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -45,6 +42,30 @@
 	<div id="container">
 		
 		<div class="wrap">
+
+			<?php do_atomic( 'before_header' ); // ascetica_before_header ?>
+
+			<div id="header">
+		
+				<?php do_atomic( 'open_header' ); // ascetica_open_header ?>
+	
+					<div id="branding">
+						
+						<?php ascetica_site_title(); ?>
+
+						<?php hybrid_site_description(); ?>
+						
+					</div><!-- #branding -->
+
+					<?php get_template_part( 'menu', 'primary' ); // Loads the menu-primary.php template. ?>					
+	
+					<?php do_atomic( 'header' ); // ascetica_header ?>						
+	
+				<?php do_atomic( 'close_header' ); // ascetica_close_header ?>
+		
+			</div><!-- #header -->
+
+			<?php do_atomic( 'after_header' ); // ascetica_after_header ?>
 			
 			<?php do_atomic( 'before_main' ); // ascetica_before_main ?>
 			
@@ -52,26 +73,6 @@
 				
 				<?php do_atomic( 'open_main' ); // ascetica_open_main ?>
 
-				<?php do_atomic( 'before_header' ); // ascetica_before_header ?>
-		
-				<div id="header">
-		
-					<?php do_atomic( 'open_header' ); // ascetica_open_header ?>
-		
-						<div id="branding">
-							
-							<?php ascetica_site_title(); ?>
-							
-						</div><!-- #branding -->
-						
-						<?php hybrid_site_description(); ?>						
-		
-						<?php do_atomic( 'header' ); // ascetica_header ?>
-						
-						<?php if ( is_home() && !is_paged() ) get_template_part( 'featured-content' ); // Loads the featured-content.php template. ?>						
-		
-					<?php do_atomic( 'close_header' ); // ascetica_close_header ?>
-		
-				</div><!-- #header -->
-		
-				<?php do_atomic( 'after_header' ); // ascetica_after_header ?>				
+				<div id="primary" class="site-content">
+
+					<?php if ( is_home() && !is_paged() ) get_template_part( 'featured-content' ); // Loads the featured-content.php template. ?>		

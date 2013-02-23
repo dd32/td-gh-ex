@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Hybrid Core\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-23 11:09+0200\n"
-"PO-Revision-Date: 2012-07-23 11:10+0200\n"
+"POT-Creation-Date: 2013-02-23 22:02+0200\n"
+"PO-Revision-Date: 2013-02-23 22:02+0200\n"
 "Last-Translator: Galin Simeonov <galin@alienwp.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -12,911 +12,969 @@ msgstr ""
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;esc_attr__;esc_attr_e;esc_html__;esc_html_e;_n;_x;_x:1,2c\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-Language: English\n"
+"X-Poedit-SearchPath-0: .\n"
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/admin/meta-box-post-seo.php:37
+#: library/admin/admin.php:37
+#: library/admin/admin.php:38
+#: library/admin/theme-settings.php:172
+msgid "Customize"
+msgstr ""
+
+#: library/admin/meta-box-post-seo.php:39
 msgid "SEO"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/admin/meta-box-post-seo.php:70
+#: library/admin/meta-box-post-seo.php:72
 msgid "Document Title:"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/admin/meta-box-post-seo.php:76
+#: library/admin/meta-box-post-seo.php:78
 msgid "Meta Description:"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/admin/meta-box-post-seo.php:82
+#: library/admin/meta-box-post-seo.php:84
 msgid "Meta Keywords:"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/admin/meta-box-post-template.php:36
+#: library/admin/meta-box-post-template.php:38
 msgid "Template"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/admin/meta-box-post-template.php:87
+#: library/admin/meta-box-post-template.php:89
 msgid "No templates exist for this post type."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/admin/meta-box-theme-about.php:31
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/admin/meta-box-theme-about.php:36
+#: library/admin/meta-box-theme-about.php:31
+#: library/admin/meta-box-theme-about.php:36
 #, php-format
 msgid "About %s"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/admin/meta-box-theme-about.php:61
+#: library/admin/meta-box-theme-about.php:61
 msgid "Theme:"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/admin/meta-box-theme-about.php:69
+#: library/admin/meta-box-theme-about.php:69
 msgid "Version:"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/admin/meta-box-theme-about.php:77
+#: library/admin/meta-box-theme-about.php:77
 msgid "Author:"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/admin/meta-box-theme-about.php:85
+#: library/admin/meta-box-theme-about.php:85
 msgid "Description:"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/admin/meta-box-theme-footer.php:29
+#: library/admin/meta-box-theme-footer.php:29
 msgid "Footer settings"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/admin/meta-box-theme-footer.php:52
+#: library/admin/meta-box-theme-footer.php:52
 msgid "You can add custom <acronym title=\"Hypertext Markup Language\">HTML</acronym> and/or shortcodes, which will be automatically inserted into your theme."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/admin/theme-settings.php:47
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/admin/theme-settings.php:171
+#: library/admin/theme-settings.php:47
+#: library/admin/theme-settings.php:171
 #, php-format
 msgid "%s Theme Settings"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/admin/theme-settings.php:48
+#: library/admin/theme-settings.php:48
 msgid "Theme Settings"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/admin/theme-settings.php:172
-msgid "Customize"
-msgstr ""
-
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/admin/theme-settings.php:198
+#: library/admin/theme-settings.php:198
 msgid "Update Settings"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/admin/theme-settings.php:255
+#: library/admin/theme-settings.php:255
 msgid "Documentation"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/admin/theme-settings.php:259
+#: library/admin/theme-settings.php:259
 msgid "Support"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-archives.php:32
+#: library/classes/widget-archives.php:32
 msgid "An advanced widget that gives you total control over the output of your archives."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-archives.php:44
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-archives.php:141
+#: library/classes/widget-archives.php:44
+#: library/classes/widget-archives.php:142
 msgid "Archives"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-archives.php:79
+#: library/classes/widget-archives.php:79
 msgid "Select Year"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-archives.php:82
+#: library/classes/widget-archives.php:82
 msgid "Select Month"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-archives.php:85
+#: library/classes/widget-archives.php:85
 msgid "Select Week"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-archives.php:88
+#: library/classes/widget-archives.php:88
 msgid "Select Day"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-archives.php:91
+#: library/classes/widget-archives.php:91
 msgid "Select Post"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-archives.php:154
+#: library/classes/widget-archives.php:157
 msgid "Alphabetical"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-archives.php:154
+#: library/classes/widget-archives.php:158
 msgid "Daily"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-archives.php:154
+#: library/classes/widget-archives.php:159
 msgid "Monthly"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-archives.php:154
+#: library/classes/widget-archives.php:160
 msgid "Post By Post"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-archives.php:154
+#: library/classes/widget-archives.php:161
 msgid "Weekly"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-archives.php:154
+#: library/classes/widget-archives.php:162
 msgid "Yearly"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-archives.php:157
-msgid "Custom"
-msgstr ""
-
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-archives.php:157
-msgid "HTML"
-msgstr ""
-
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-archives.php:157
-msgid "Option"
-msgstr ""
-
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-archives.php:162
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-authors.php:143
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-bookmarks.php:187
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-calendar.php:108
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-categories.php:170
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-nav-menu.php:133
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-pages.php:157
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-search.php:143
-msgid "Title:"
-msgstr ""
-
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-archives.php:198
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-authors.php:191
-msgid "Show post count?"
-msgstr ""
-
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-authors.php:32
-msgid "An advanced widget that gives you total control over the output of your author lists."
-msgstr ""
-
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-authors.php:44
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-authors.php:119
-msgid "Authors"
-msgstr ""
-
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-authors.php:136
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-bookmarks.php:178
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-bookmarks.php:180
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-categories.php:162
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-pages.php:148
+#: library/classes/widget-archives.php:167
+#: library/classes/widget-authors.php:141
+#: library/classes/widget-bookmarks.php:182
+#: library/classes/widget-bookmarks.php:194
+#: library/classes/widget-categories.php:171
+#: library/classes/widget-pages.php:152
 msgid "Ascending"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-authors.php:136
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-bookmarks.php:178
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-bookmarks.php:180
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-categories.php:162
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-pages.php:148
+#: library/classes/widget-archives.php:168
+#: library/classes/widget-authors.php:142
+#: library/classes/widget-bookmarks.php:183
+#: library/classes/widget-bookmarks.php:195
+#: library/classes/widget-categories.php:172
+#: library/classes/widget-pages.php:153
 msgid "Descending"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-authors.php:137
+#: library/classes/widget-archives.php:173
+msgid "Custom"
+msgstr ""
+
+#: library/classes/widget-archives.php:174
+msgid "HTML"
+msgstr ""
+
+#: library/classes/widget-archives.php:175
+msgid "Option"
+msgstr ""
+
+#: library/classes/widget-archives.php:181
+#: library/classes/widget-authors.php:160
+#: library/classes/widget-bookmarks.php:217
+#: library/classes/widget-calendar.php:108
+#: library/classes/widget-categories.php:195
+#: library/classes/widget-nav-menu.php:131
+#: library/classes/widget-pages.php:178
+#: library/classes/widget-search.php:144
+msgid "Title:"
+msgstr ""
+
+#: library/classes/widget-archives.php:225
+#: library/classes/widget-authors.php:208
+msgid "Show post count?"
+msgstr ""
+
+#: library/classes/widget-authors.php:32
+msgid "An advanced widget that gives you total control over the output of your author lists."
+msgstr ""
+
+#: library/classes/widget-authors.php:44
+#: library/classes/widget-authors.php:123
+msgid "Authors"
+msgstr ""
+
+#: library/classes/widget-authors.php:146
 msgid "Display Name"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-authors.php:137
+#: library/classes/widget-authors.php:147
 msgid "Email"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-authors.php:137
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-bookmarks.php:179
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-bookmarks.php:181
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-categories.php:163
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-pages.php:149
+#: library/classes/widget-authors.php:148
+#: library/classes/widget-bookmarks.php:188
+#: library/classes/widget-bookmarks.php:199
+#: library/classes/widget-categories.php:177
+#: library/classes/widget-pages.php:159
 msgid "ID"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-authors.php:137
+#: library/classes/widget-authors.php:149
 msgid "Nice Name"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-authors.php:137
+#: library/classes/widget-authors.php:150
 msgid "Post Count"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-authors.php:137
+#: library/classes/widget-authors.php:151
 msgid "Registered"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-authors.php:137
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-bookmarks.php:181
+#: library/classes/widget-authors.php:152
+#: library/classes/widget-bookmarks.php:211
 msgid "URL"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-authors.php:137
+#: library/classes/widget-authors.php:153
 msgid "Login"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-authors.php:169
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-categories.php:161
+#: library/classes/widget-authors.php:186
+#: library/classes/widget-categories.php:166
 msgid "List"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-authors.php:169
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-categories.php:161
+#: library/classes/widget-authors.php:186
+#: library/classes/widget-categories.php:167
 msgid "None"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-authors.php:187
+#: library/classes/widget-authors.php:204
 msgid "<acronym title=\"Hypertext Markup Language\">HTML</acronym>?"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-authors.php:195
+#: library/classes/widget-authors.php:212
 msgid "Exclude admin?"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-authors.php:199
+#: library/classes/widget-authors.php:216
 msgid "Show full name?"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-authors.php:203
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-categories.php:273
+#: library/classes/widget-authors.php:220
+#: library/classes/widget-categories.php:298
 msgid "Hide empty?"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-bookmarks.php:32
+#: library/classes/widget-bookmarks.php:32
 msgid "An advanced widget that gives you total control over the output of your bookmarks (links)."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-bookmarks.php:44
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-bookmarks.php:85
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-bookmarks.php:148
+#: library/classes/widget-bookmarks.php:44
+#: library/classes/widget-bookmarks.php:86
+#: library/classes/widget-bookmarks.php:150
 msgid "Bookmarks"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-bookmarks.php:179
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-categories.php:163
+#: library/classes/widget-bookmarks.php:187
+#: library/classes/widget-categories.php:176
 msgid "Count"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-bookmarks.php:179
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-bookmarks.php:181
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-categories.php:163
+#: library/classes/widget-bookmarks.php:189
+#: library/classes/widget-bookmarks.php:202
+#: library/classes/widget-categories.php:178
 msgid "Name"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-bookmarks.php:179
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-categories.php:163
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-pages.php:149
+#: library/classes/widget-bookmarks.php:190
+#: library/classes/widget-categories.php:179
+#: library/classes/widget-pages.php:162
 msgid "Slug"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-bookmarks.php:181
+#: library/classes/widget-bookmarks.php:200
 msgid "Description"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-bookmarks.php:181
+#: library/classes/widget-bookmarks.php:201
 msgid "Length"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-bookmarks.php:181
+#: library/classes/widget-bookmarks.php:203
 msgid "Notes"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-bookmarks.php:181
+#: library/classes/widget-bookmarks.php:204
 msgid "Owner"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-bookmarks.php:181
+#: library/classes/widget-bookmarks.php:205
 msgid "Random"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-bookmarks.php:181
+#: library/classes/widget-bookmarks.php:206
 msgid "Rating"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-bookmarks.php:181
+#: library/classes/widget-bookmarks.php:207
 msgid "Rel"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-bookmarks.php:181
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-categories.php:164
+#: library/classes/widget-bookmarks.php:208
+#: library/classes/widget-categories.php:187
 msgid "RSS"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-bookmarks.php:181
+#: library/classes/widget-bookmarks.php:209
 msgid "Target"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-bookmarks.php:181
+#: library/classes/widget-bookmarks.php:210
 msgid "Updated"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-bookmarks.php:289
+#: library/classes/widget-bookmarks.php:319
 msgid "Categorize?"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-bookmarks.php:293
+#: library/classes/widget-bookmarks.php:323
 msgid "Show description?"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-bookmarks.php:297
+#: library/classes/widget-bookmarks.php:327
 msgid "Hide invisible?"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-bookmarks.php:301
+#: library/classes/widget-bookmarks.php:331
 msgid "Show rating?"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-bookmarks.php:305
+#: library/classes/widget-bookmarks.php:335
 msgid "Show updated?"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-bookmarks.php:309
+#: library/classes/widget-bookmarks.php:339
 msgid "Show images?"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-bookmarks.php:313
+#: library/classes/widget-bookmarks.php:343
 msgid "Show name?"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-bookmarks.php:317
+#: library/classes/widget-bookmarks.php:347
 msgid "Show private?"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-calendar.php:32
+#: library/classes/widget-calendar.php:32
 msgid "An advanced widget that gives you total control over the output of your calendar."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-calendar.php:44
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-calendar.php:99
+#: library/classes/widget-calendar.php:44
+#: library/classes/widget-calendar.php:99
 msgid "Calendar"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-calendar.php:113
+#: library/classes/widget-calendar.php:113
 msgid "One-letter abbreviation?"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-categories.php:32
+#: library/classes/widget-categories.php:32
 msgid "An advanced widget that gives you total control over the output of your category links."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-categories.php:44
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-categories.php:133
+#: library/classes/widget-categories.php:44
+#: library/classes/widget-categories.php:136
 msgid "Categories"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-categories.php:163
+#: library/classes/widget-categories.php:180
 msgid "Term Group"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-categories.php:164
+#: library/classes/widget-categories.php:185
 msgid "Atom"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-categories.php:164
+#: library/classes/widget-categories.php:186
 msgid "RDF"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-categories.php:164
+#: library/classes/widget-categories.php:188
 msgid "RSS 2.0"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-categories.php:261
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-pages.php:256
+#: library/classes/widget-categories.php:286
+#: library/classes/widget-pages.php:277
 msgid "Hierarchical?"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-categories.php:265
+#: library/classes/widget-categories.php:290
 msgid "Use description?"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-categories.php:269
+#: library/classes/widget-categories.php:294
 msgid "Show count?"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-nav-menu.php:32
+#: library/classes/widget-nav-menu.php:32
 msgid "An advanced widget that gives you total control over the output of your menus."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-nav-menu.php:44
+#: library/classes/widget-nav-menu.php:44
 msgid "Navigation Menu"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-nav-menu.php:109
+#: library/classes/widget-nav-menu.php:108
 msgid "Navigation"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-pages.php:32
+#: library/classes/widget-pages.php:32
 msgid "An advanced widget that gives you total control over the output of your page links."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-pages.php:44
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-pages.php:123
+#: library/classes/widget-pages.php:44
+#: library/classes/widget-pages.php:125
 msgid "Pages"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-pages.php:149
+#: library/classes/widget-pages.php:157
 msgid "Author"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-pages.php:149
+#: library/classes/widget-pages.php:158
 msgid "Date"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-pages.php:149
+#: library/classes/widget-pages.php:160
 msgid "Menu Order"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-pages.php:149
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-pages.php:150
+#: library/classes/widget-pages.php:161
+#: library/classes/widget-pages.php:169
 msgid "Modified"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-pages.php:149
+#: library/classes/widget-pages.php:163
 msgid "Title"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-pages.php:150
+#: library/classes/widget-pages.php:168
 msgid "Created"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-search.php:33
+#: library/classes/widget-search.php:33
 msgid "An advanced widget that gives you total control over the output of your search form."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-search.php:45
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-search.php:131
+#: library/classes/widget-search.php:45
+#: library/classes/widget-search.php:132
 msgid "Search"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-search.php:147
+#: library/classes/widget-search.php:148
 msgid "Search Label:"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-search.php:151
+#: library/classes/widget-search.php:152
 msgid "Search Text:"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-search.php:158
+#: library/classes/widget-search.php:159
 msgid "Search Submit:"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-search.php:163
+#: library/classes/widget-search.php:164
 msgid "Use theme's <code>searchform.php</code>?"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-tags.php:32
+#: library/classes/widget-tags.php:32
 msgid "An advanced widget that gives you total control over the output of your tags."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-tags.php:44
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-tags.php:143
+#: library/classes/widget-tags.php:44
+#: library/classes/widget-tags.php:146
 msgid "Tags"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-tags.php:171
+#: library/classes/widget-tags.php:176
 msgid "View"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-tags.php:171
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/breadcrumb-trail.php:389
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/breadcrumb-trail.php:422
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/breadcrumb-trail.php:437
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/breadcrumb-trail.php:465
+#: library/classes/widget-tags.php:177
+#: library/extensions/breadcrumb-trail.php:540
+#: library/extensions/breadcrumb-trail.php:573
+#: library/extensions/breadcrumb-trail.php:588
+#: library/extensions/breadcrumb-trail.php:616
 msgid "Edit"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-tags.php:172
+#: library/classes/widget-tags.php:181
 msgid "Flat"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/classes/widget-tags.php:288
+#: library/classes/widget-tags.php:314
 msgid "Pad counts?"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/breadcrumb-trail.php:44
+#: library/extensions/breadcrumb-trail.php:44
 msgid "Browse:"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/breadcrumb-trail.php:47
+#: library/extensions/breadcrumb-trail.php:47
 msgid "Home"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/breadcrumb-trail.php:301
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/context.php:423
+#: library/extensions/breadcrumb-trail.php:424
+#: library/functions/context.php:429
 msgid "g:i a"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/breadcrumb-trail.php:304
+#: library/extensions/breadcrumb-trail.php:427
 #, php-format
 msgid "Minute %1$s"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/breadcrumb-trail.php:304
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/context.php:426
+#: library/extensions/breadcrumb-trail.php:427
+#: library/functions/context.php:432
 msgid "i"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/breadcrumb-trail.php:307
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/context.php:429
+#: library/extensions/breadcrumb-trail.php:430
+#: library/functions/context.php:435
 msgid "g a"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/breadcrumb-trail.php:318
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/breadcrumb-trail.php:324
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/breadcrumb-trail.php:329
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/breadcrumb-trail.php:334
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/breadcrumb-trail.php:521
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/context.php:435
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/context.php:441
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/core-seo.php:90
+#: library/extensions/breadcrumb-trail.php:441
+#: library/extensions/breadcrumb-trail.php:451
+#: library/extensions/breadcrumb-trail.php:460
+#: library/extensions/breadcrumb-trail.php:471
+#: library/extensions/breadcrumb-trail.php:473
+#: library/extensions/breadcrumb-trail.php:672
+#: library/functions/context.php:441
+#: library/functions/context.php:447
+#: library/functions/core-seo.php:94
 msgid "Y"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/breadcrumb-trail.php:319
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/breadcrumb-trail.php:330
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/breadcrumb-trail.php:525
+#: library/extensions/breadcrumb-trail.php:442
+#: library/extensions/breadcrumb-trail.php:463
+#: library/extensions/breadcrumb-trail.php:465
+#: library/extensions/breadcrumb-trail.php:676
 msgid "F"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/breadcrumb-trail.php:320
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/breadcrumb-trail.php:529
+#: library/extensions/breadcrumb-trail.php:445
+#: library/extensions/breadcrumb-trail.php:447
+#: library/extensions/breadcrumb-trail.php:680
 msgid "d"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/breadcrumb-trail.php:325
+#: library/extensions/breadcrumb-trail.php:454
+#: library/extensions/breadcrumb-trail.php:456
 #, php-format
 msgid "Week %1$s"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/breadcrumb-trail.php:325
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/context.php:435
+#: library/extensions/breadcrumb-trail.php:454
+#: library/extensions/breadcrumb-trail.php:456
+#: library/functions/context.php:441
 msgid "W"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/breadcrumb-trail.php:341
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/context.php:452
+#: library/extensions/breadcrumb-trail.php:482
+#: library/extensions/breadcrumb-trail.php:484
+#: library/functions/context.php:458
 #, php-format
 msgid "Search results for &quot;%1$s&quot;"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/breadcrumb-trail.php:345
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/context.php:456
+#: library/extensions/breadcrumb-trail.php:489
+#: library/functions/context.php:462
 msgid "404 Not Found"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/breadcrumb-trail.php:414
+#: library/extensions/breadcrumb-trail.php:494
+#: library/extensions/breadcrumb-trail.php:496
+#, php-format
+msgid "Page %d"
+msgstr ""
+
+#: library/extensions/breadcrumb-trail.php:565
 msgid "Split"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/breadcrumb-trail.php:418
+#: library/extensions/breadcrumb-trail.php:569
 msgid "Merge"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/breadcrumb-trail.php:525
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/core-seo.php:86
+#: library/extensions/breadcrumb-trail.php:676
+#: library/functions/core-seo.php:90
 msgid "F Y"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/breadcrumb-trail.php:529
+#: library/extensions/breadcrumb-trail.php:680
 msgid "F j, Y"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/custom-field-series.php:86
+#: library/extensions/custom-field-series.php:86
 msgid "Articles in this series"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/custom-field-series.php:212
+#: library/extensions/custom-field-series.php:212
 msgid "Series"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/post-stylesheets.php:255
+#: library/extensions/post-format-tools.php:96
+msgid "Asides"
+msgstr ""
+
+#: library/extensions/post-format-tools.php:97
+msgid "Audio"
+msgstr ""
+
+#: library/extensions/post-format-tools.php:98
+msgid "Chats"
+msgstr ""
+
+#: library/extensions/post-format-tools.php:99
+msgid "Images"
+msgstr ""
+
+#: library/extensions/post-format-tools.php:100
+msgid "Galleries"
+msgstr ""
+
+#: library/extensions/post-format-tools.php:101
+msgid "Links"
+msgstr ""
+
+#: library/extensions/post-format-tools.php:102
+msgid "Quotes"
+msgstr ""
+
+#: library/extensions/post-format-tools.php:103
+msgid "Status Updates"
+msgstr ""
+
+#: library/extensions/post-format-tools.php:104
+msgid "Videos"
+msgstr ""
+
+#: library/extensions/post-stylesheets.php:279
 msgid "Stylesheet"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/theme-layouts.php:295
+#: library/extensions/theme-layouts.php:337
 msgid "Default"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/theme-layouts.php:296
+#: library/extensions/theme-layouts.php:338
 msgid "One Column"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/theme-layouts.php:297
+#: library/extensions/theme-layouts.php:339
 msgid "Two Columns, Left"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/theme-layouts.php:298
+#: library/extensions/theme-layouts.php:340
 msgid "Two Columns, Right"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/theme-layouts.php:299
+#: library/extensions/theme-layouts.php:341
 msgid "Three Columns, Left"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/theme-layouts.php:300
+#: library/extensions/theme-layouts.php:342
 msgid "Three Columns, Right"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/theme-layouts.php:301
+#: library/extensions/theme-layouts.php:343
 msgid "Three Columns, Center"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/theme-layouts.php:377
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/theme-layouts.php:485
+#: library/extensions/theme-layouts.php:421
+#: library/extensions/theme-layouts.php:531
+#: library/extensions/theme-layouts.php:616
 msgid "Layout"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/extensions/theme-layouts.php:404
+#: library/extensions/theme-layouts.php:447
 msgid "Layout is a theme-specific structure for the single view of the post."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/comments.php:182
+#: library/extensions/theme-layouts.php:649
+msgid "Global Layout"
+msgstr ""
+
+#: library/functions/comments.php:182
 msgid "*"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/comments.php:189
+#: library/functions/comments.php:189
 msgid "Website"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/comments.php:195
+#: library/functions/comments.php:195
 msgid "Comment"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/comments.php:196
+#: library/functions/comments.php:196
 #, php-format
 msgid "You must be <a href=\"%1$s\" title=\"Log in\">logged in</a> to post a comment."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/comments.php:197
+#: library/functions/comments.php:197
 #, php-format
 msgid "Logged in as <a href=\"%1$s\" title=\"%2$s\">%2$s</a>."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/comments.php:197
+#: library/functions/comments.php:197
 msgid "Log out of this account"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/comments.php:197
+#: library/functions/comments.php:197
 msgid "Log out &raquo;"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/comments.php:202
+#: library/functions/comments.php:202
 msgid "Leave a Reply"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/comments.php:203
+#: library/functions/comments.php:203
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/comments.php:204
+#: library/functions/comments.php:204
 msgid "Click here to cancel reply."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/comments.php:205
+#: library/functions/comments.php:205
 msgid "Post Comment"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/context.php:423
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/context.php:429
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/context.php:432
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/context.php:438
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/context.php:441
+#: library/functions/context.php:429
+#: library/functions/context.php:435
+#: library/functions/context.php:438
+#: library/functions/context.php:444
+#: library/functions/context.php:447
 #, php-format
 msgid "Archive for %1$s"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/context.php:426
+#: library/functions/context.php:432
 #, php-format
 msgid "Archive for minute %1$s"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/context.php:432
+#: library/functions/context.php:438
 msgid "F jS, Y"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/context.php:435
+#: library/functions/context.php:441
 #, php-format
 msgid "Archive for week %1$s of %2$s"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/context.php:460
+#: library/functions/context.php:466
 #, php-format
 msgid "%1$s Page %2$s"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/core-seo.php:93
+#: library/functions/core-seo.php:97
 #, php-format
 msgid "Copyright (c) %1$s"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/core-seo.php:112
+#: library/functions/core-seo.php:116
 msgid "l, F jS, Y, g:i a"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/customize.php:63
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/customize.php:88
+#: library/functions/customize.php:63
+#: library/functions/customize.php:88
 msgid "Footer"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/deprecated.php:572
+#: library/functions/deprecated.php:587
 #, php-format
 msgid "<code>%1$s</code> &mdash; This function has been removed or replaced by another function."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/menus.php:38
+#: library/functions/menus.php:38
 msgctxt "nav menu location"
 msgid "Primary"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/menus.php:42
+#: library/functions/menus.php:42
 msgctxt "nav menu location"
 msgid "Secondary"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/menus.php:46
+#: library/functions/menus.php:46
 msgctxt "nav menu location"
 msgid "Subsidiary"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/settings.php:76
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/settings.php:80
+#: library/functions/settings.php:76
+#: library/functions/settings.php:80
 msgid "Copyright &#169; [the-year] [site-link]."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/settings.php:76
+#: library/functions/settings.php:76
 msgid "Powered by [wp-link], [theme-link], and [child-link]."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/settings.php:80
+#: library/functions/settings.php:80
 msgid "Powered by [wp-link] and [theme-link]."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/shortcodes.php:93
+#: library/functions/shortcodes.php:93
 msgid "State-of-the-art semantic personal publishing platform"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/shortcodes.php:93
+#: library/functions/shortcodes.php:93
 msgid "WordPress"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/shortcodes.php:106
+#: library/functions/shortcodes.php:106
 #, php-format
 msgid "%s WordPress Theme"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/shortcodes.php:134
+#: library/functions/shortcodes.php:134
 msgid "Log out"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/shortcodes.php:136
+#: library/functions/shortcodes.php:136
 msgid "Log in"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/shortcodes.php:151
+#: library/functions/shortcodes.php:151
 #, php-format
 msgid "This page loaded in %1$s seconds with %2$s database queries."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/shortcodes.php:204
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/shortcodes.php:443
+#: library/functions/shortcodes.php:204
+#: library/functions/shortcodes.php:448
 #, php-format
 msgid "Edit %1$s"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/shortcodes.php:234
+#: library/functions/shortcodes.php:234
 msgid "Leave a response"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/shortcodes.php:234
+#: library/functions/shortcodes.php:234
 #, php-format
 msgid "%1$s Response"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/shortcodes.php:234
+#: library/functions/shortcodes.php:234
 #, php-format
 msgid "%1$s Responses"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/shortcodes.php:241
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/shortcodes.php:243
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/shortcodes.php:245
+#: library/functions/shortcodes.php:241
+#: library/functions/shortcodes.php:243
+#: library/functions/shortcodes.php:245
 #, php-format
 msgid "Comment on %1$s"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/shortcodes.php:305
+#: library/functions/shortcodes.php:310
 msgid "(Untitled)"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/shortcodes.php:321
+#: library/functions/shortcodes.php:326
 msgid "Shortlink"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/shortcodes.php:345
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/shortcodes.php:422
+#: library/functions/shortcodes.php:350
+#: library/functions/shortcodes.php:427
 msgid "Permalink"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/shortcodes.php:373
+#: library/functions/shortcodes.php:378
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/shortcodes.php:422
+#: library/functions/shortcodes.php:427
 #, php-format
 msgid "Permalink to comment %1$s"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/shortcodes.php:462
+#: library/functions/shortcodes.php:467
 msgid "Reply"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/shortcodes.php:463
+#: library/functions/shortcodes.php:468
 msgid "Log in to reply."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/sidebars.php:87
+#: library/functions/sidebars.php:87
 msgctxt "sidebar"
 msgid "Primary"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/sidebars.php:88
+#: library/functions/sidebars.php:88
 msgid "The main (primary) widget area, most often used as a sidebar."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/sidebars.php:91
+#: library/functions/sidebars.php:91
 msgctxt "sidebar"
 msgid "Secondary"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/sidebars.php:92
+#: library/functions/sidebars.php:92
 msgid "The second most important widget area, most often used as a secondary sidebar."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/sidebars.php:95
+#: library/functions/sidebars.php:95
 msgctxt "sidebar"
 msgid "Subsidiary"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/sidebars.php:96
+#: library/functions/sidebars.php:96
 msgid "A widget area loaded in the footer of the site."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/sidebars.php:99
+#: library/functions/sidebars.php:99
 msgctxt "sidebar"
 msgid "Header"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/sidebars.php:100
+#: library/functions/sidebars.php:100
 msgid "Displayed within the site's header area."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/sidebars.php:103
+#: library/functions/sidebars.php:103
 msgctxt "sidebar"
 msgid "Before Content"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/sidebars.php:104
+#: library/functions/sidebars.php:104
 msgid "Loaded before the page's main content area."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/sidebars.php:107
+#: library/functions/sidebars.php:107
 msgctxt "sidebar"
 msgid "After Content"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/sidebars.php:108
+#: library/functions/sidebars.php:108
 msgid "Loaded after the page's main content area."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/sidebars.php:111
+#: library/functions/sidebars.php:111
 msgctxt "sidebar"
 msgid "After Singular"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/cell/wp-content/themes/ascetica/library/functions/sidebars.php:112
+#: library/functions/sidebars.php:112
 msgid "Loaded on singular post (page, attachment, etc.) views before the comments area."
 msgstr ""
 
