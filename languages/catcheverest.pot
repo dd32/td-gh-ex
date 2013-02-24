@@ -1,0 +1,1073 @@
+# Copyright (C) 2012 the Catch Themes Team
+# This file is distributed under the  GNU General Public License.
+msgid ""
+msgstr ""
+"Project-Id-Version: Catch Everest\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-25 00:38+0530\n"
+"PO-Revision-Date: 2013-02-25 00:39+0530\n"
+"Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
+"Language-Team: Catch Themes <suppor@catchthemes.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1.2c\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:18
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: ../404.php:22
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr ""
+
+#: ../404.php:29
+msgid "Most Used Categories"
+msgstr ""
+
+#: ../404.php:37
+#, php-format
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#: ../archive.php:22
+#, php-format
+msgid "Category Archives: %s"
+msgstr ""
+
+#: ../archive.php:25
+#, php-format
+msgid "Tag Archives: %s"
+msgstr ""
+
+#: ../archive.php:32
+#, php-format
+msgid "Author Archives: %s"
+msgstr ""
+
+#: ../archive.php:40
+#, php-format
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: ../archive.php:43
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: ../archive.php:46
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: ../archive.php:49
+msgid "Archives"
+msgstr ""
+
+#: ../comments.php:32
+#, php-format
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../comments.php:39
+#: ../comments.php:59
+msgid "Comment navigation"
+msgstr ""
+
+#: ../comments.php:40
+#: ../comments.php:60
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: ../comments.php:41
+#: ../comments.php:61
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: ../comments.php:71
+msgid "Comments are closed."
+msgstr ""
+
+#: ../content-aside.php:17
+#: ../content-audio.php:16
+#: ../content-chat.php:16
+#: ../content-gallery.php:16
+#: ../content-gallery.php:28
+#: ../content-image.php:16
+#: ../content-video.php:16
+#: ../content.php:19
+#: ../content.php:28
+#, php-format
+msgid "Permalink to %s"
+msgstr ""
+
+#: ../content-aside.php:21
+#: ../content-audio.php:26
+#: ../content-gallery.php:36
+#: ../content-image.php:26
+#: ../content-link.php:20
+#: ../content-quote.php:16
+#: ../content-status.php:24
+#: ../content-video.php:26
+#: ../content.php:49
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: ../content-aside.php:29
+#: ../content-audio.php:35
+#: ../content-chat.php:34
+#: ../content-gallery.php:44
+#: ../content-image.php:35
+#: ../content-link.php:27
+#: ../content-quote.php:23
+#: ../content-status.php:31
+#: ../content-video.php:35
+#: ../content.php:59
+msgid "Leave a reply"
+msgstr ""
+
+#: ../content-aside.php:29
+#: ../content-audio.php:35
+#: ../content-chat.php:34
+#: ../content-gallery.php:44
+#: ../content-image.php:35
+#: ../content-link.php:27
+#: ../content-quote.php:23
+#: ../content-status.php:31
+#: ../content-video.php:35
+#: ../content.php:59
+msgid "1 Reply"
+msgstr ""
+
+#: ../content-aside.php:29
+#: ../content-audio.php:35
+#: ../content-chat.php:34
+#: ../content-gallery.php:44
+#: ../content-image.php:35
+#: ../content-link.php:27
+#: ../content-quote.php:23
+#: ../content-status.php:31
+#: ../content-video.php:35
+msgid "% Replies;"
+msgstr ""
+
+#: ../content-aside.php:31
+#: ../content-audio.php:37
+#: ../content-chat.php:36
+#: ../content-gallery.php:46
+#: ../content-image.php:37
+#: ../content-link.php:29
+#: ../content-page.php:18
+#: ../content-quote.php:25
+#: ../content-status.php:33
+#: ../content-video.php:37
+#: ../content.php:62
+msgid "Edit"
+msgstr ""
+
+#: ../content-audio.php:17
+msgid "All Audio Posts"
+msgstr ""
+
+#: ../content-audio.php:17
+msgid "Audio"
+msgstr ""
+
+#: ../content-audio.php:27
+#: ../content-gallery.php:37
+#: ../content-image.php:27
+#: ../content-page.php:17
+#: ../content-video.php:27
+#: ../content.php:50
+msgid "Pages:"
+msgstr ""
+
+#: ../content-chat.php:17
+msgid "All Chat Posts"
+msgstr ""
+
+#: ../content-chat.php:17
+msgid "Chat"
+msgstr ""
+
+#: ../content-gallery.php:17
+msgid "All Gallery Posts"
+msgstr ""
+
+#: ../content-gallery.php:17
+msgid "Gallery"
+msgstr ""
+
+#: ../content-gallery.php:31
+#, php-format
+msgid "This gallery contains <a %1$s>%2$s photo</a>."
+msgid_plural "This gallery contains <a %1$s>%2$s photos</a>."
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../content-image.php:17
+msgid "All Image Posts"
+msgstr ""
+
+#: ../content-image.php:17
+msgid "Image"
+msgstr ""
+
+#: ../content-link.php:16
+msgid "All Link Posts"
+msgstr ""
+
+#: ../content-link.php:16
+msgid "Link"
+msgstr ""
+
+#: ../content-status.php:20
+msgid "All Status Posts"
+msgstr ""
+
+#: ../content-status.php:20
+msgid "Status"
+msgstr ""
+
+#: ../content-video.php:17
+msgid "All Video Posts"
+msgstr ""
+
+#: ../content-video.php:17
+msgid "Video"
+msgstr ""
+
+#: ../content.php:14
+msgid "Featured post"
+msgstr ""
+
+#: ../content.php:59
+msgid "% Replies"
+msgstr ""
+
+#: ../content.php:69
+#, php-format
+msgid "About %s"
+msgstr ""
+
+#: ../content.php:73
+#, php-format
+msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: ../functions.php:91
+msgid "Primary Menu"
+msgstr ""
+
+#: ../image.php:24
+#, php-format
+msgid "Published <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\" pubdate>%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%7$s</a>"
+msgstr ""
+
+#: ../image.php:38
+msgid "&larr; Previous"
+msgstr ""
+
+#: ../image.php:39
+msgid "Next &rarr;"
+msgstr ""
+
+#: ../image.php:92
+#, php-format
+msgid "<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr ""
+
+#: ../image.php:94
+#, php-format
+msgid "Comments are closed, but you can leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr ""
+
+#: ../image.php:96
+msgid "Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">post a comment</a>."
+msgstr ""
+
+#: ../image.php:98
+msgid "Both comments and trackbacks are currently closed."
+msgstr ""
+
+#: ../no-results.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: ../no-results.php:20
+#, php-format
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: ../no-results.php:24
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: ../no-results.php:29
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: ../search.php:17
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: ../searchform.php:16
+msgid "Search"
+msgstr ""
+
+#: ../inc/catcheverest-functions.php:167
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: ../inc/catcheverest-functions.php:430
+msgid "Skip to content"
+msgstr ""
+
+#: ../inc/catcheverest-metabox.php:14
+#: ../inc/catcheverest-metabox.php:20
+msgid "Select Sidebar layout"
+msgstr ""
+
+#: ../inc/catcheverest-metabox.php:33
+msgid "Default Layout Set in"
+msgstr ""
+
+#: ../inc/catcheverest-metabox.php:33
+msgid "Theme Settings"
+msgstr ""
+
+#: ../inc/catcheverest-metabox.php:39
+msgid "Right sidebar"
+msgstr ""
+
+#: ../inc/catcheverest-metabox.php:45
+msgid "Left sidebar"
+msgstr ""
+
+#: ../inc/catcheverest-metabox.php:51
+msgid "No sidebar"
+msgstr ""
+
+#: ../inc/template-tags.php:39
+msgid "Post navigation"
+msgstr ""
+
+#: ../inc/template-tags.php:43
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr ""
+
+#: ../inc/template-tags.php:44
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr ""
+
+#: ../inc/template-tags.php:49
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr ""
+
+#: ../inc/template-tags.php:53
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: ../inc/template-tags.php:82
+msgid "Pingback:"
+msgstr ""
+
+#: ../inc/template-tags.php:82
+msgid "(Edit)"
+msgstr ""
+
+#: ../inc/template-tags.php:97
+msgid "Post author"
+msgstr ""
+
+#: ../inc/template-tags.php:103
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: ../inc/template-tags.php:109
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: ../inc/template-tags.php:118
+msgid "Reply"
+msgstr ""
+
+#: ../inc/template-tags.php:147
+#: ../inc/template-tags.php:220
+#, php-format
+msgid "View all posts by %s"
+msgstr ""
+
+#: ../inc/template-tags.php:152
+#, php-format
+msgid "<span class=\"on-date\">Posted on %1$s</span><span class=\"by-author\"> by %2$s</span>"
+msgstr ""
+
+#: ../inc/template-tags.php:174
+#: ../inc/template-tags.php:177
+#: ../inc/template-tags.php:206
+#: ../inc/template-tags.php:209
+msgid ", "
+msgstr ""
+
+#: ../inc/template-tags.php:182
+#, php-format
+msgid "<span class=\"in-category\">Posted in %1$s</span><span class=\"sep\"> | </span><span class=\"in-tag\">Tagged %2$s</span>"
+msgstr ""
+
+#: ../inc/template-tags.php:184
+#, php-format
+msgid "<span class=\"in-category\">Posted in %1$s<span>"
+msgstr ""
+
+#: ../inc/template-tags.php:226
+#, php-format
+msgid "<span class=\"on-date\">Posted on %3$s</span><span class=\"in-category\"> under %1$s</span><span class=\"sep\"> | </span><span class=\"in-tag\">Tagged %2$s</span><span class=\"sep\"> | </span><span class=\"by-author\"> By %4$s</span>"
+msgstr ""
+
+#: ../inc/template-tags.php:228
+#, php-format
+msgid "<span class=\"on-date\">Posted on %3$s</span><span class=\"in-category\"> under in %1$s<span><span class=\"sep\"> | </span><span class=\"by-author\"> By %4$s</span>."
+msgstr ""
+
+#: ../inc/template-tags.php:230
+#, php-format
+msgid "<span class=\"on-date\">Posted on %3$s</span><span class=\"sep\"> | </span><span class=\"by-author\"> By %4$s</span>."
+msgstr ""
+
+#: ../inc/widgets.php:13
+msgid "Main Sidebar"
+msgstr ""
+
+#: ../inc/widgets.php:15
+msgid "Shows the Widgets at the side of Content"
+msgstr ""
+
+#: ../inc/widgets.php:24
+msgid "Footer Area One"
+msgstr ""
+
+#: ../inc/widgets.php:26
+#: ../inc/widgets.php:37
+#: ../inc/widgets.php:48
+msgid "An optional widget area for your site footer"
+msgstr ""
+
+#: ../inc/widgets.php:35
+msgid "Footer Area Two"
+msgstr ""
+
+#: ../inc/widgets.php:46
+msgid "Footer Area Three"
+msgstr ""
+
+#: ../inc/widgets.php:75
+msgid "Use this widget to add Social Icons from Social Icons Settings as a widget. "
+msgstr ""
+
+#: ../inc/widgets.php:76
+msgid "Catch Everest Social Widget"
+msgstr ""
+
+#: ../inc/widgets.php:89
+msgid "Title (optional):"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:40
+#: ../inc/panel/theme-options.php:41
+#: ../inc/panel/theme-options.php:140
+msgid "Theme Options"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:102
+msgid "Options Saved"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:109
+msgid "http://facebook.com/catchthemes"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:111
+msgid "https://twitter.com/catchthemes"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:117
+msgid "Theme Options By"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:119
+msgid "http://catchthemes.com/"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:120
+msgid "Catch Themes"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:127
+msgid "http://catchthemes.com/support-forum/forum/catch-everest-public/"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:127
+msgid "Support Forum"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:128
+msgid "http://catchthemes.com/theme-instructions/catch-everest/"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:128
+msgid "Theme Instruction"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:129
+msgid "https://www.facebook.com/catchthemes/"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:129
+#: ../inc/panel/theme-options.php:623
+msgid "Facebook"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:130
+msgid "https://twitter.com/catchthemes/"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:130
+#: ../inc/panel/theme-options.php:628
+msgid "Twitter"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:131
+msgid "http://wordpress.org/support/view/theme-reviews/catch-everest"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:131
+msgid "5 Star Rating"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:141
+msgid "Homepage Settings"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:142
+msgid "Featured Post Slider"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:143
+msgid "Social Links"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:144
+msgid "Webmaster Tools"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:152
+msgid "Responsive Design"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:157
+msgid "Disable Responsive Design?"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:159
+#: ../inc/panel/theme-options.php:182
+#: ../inc/panel/theme-options.php:221
+#: ../inc/panel/theme-options.php:392
+#: ../inc/panel/theme-options.php:397
+#: ../inc/panel/theme-options.php:413
+msgid "Check to disable"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:168
+msgid "Upload Logo"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:170
+msgid "Custom Header. Need to Add or Remove Logo?"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:170
+#: ../inc/panel/theme-options.php:232
+#, php-format
+msgid "<a class=\"button\" href=\"%s\">Click here</a>"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:175
+msgid "Favicon"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:180
+msgid "Disable Favicon?"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:185
+msgid "Fav Icon URL:"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:196
+msgid "Preview: "
+msgstr ""
+
+#: ../inc/panel/theme-options.php:214
+msgid "Header Right Section"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:219
+msgid "Disable Header Right Section?"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:230
+msgid "Background"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:232
+msgid "Custom Background. Need to replace or remove background?"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:237
+msgid "Search Text Settings"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:242
+msgid "Default Display Text in Search"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:253
+msgid "Excerpt / More Tag Settings"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:258
+msgid "More Tag Text"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:263
+msgid "Excerpt length(words)"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:273
+msgid "Feed Redirect"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:278
+msgid "Feed Redirect URL"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:279
+msgid "Add in the Feedburner URL"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:289
+msgid "Layout Options"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:294
+msgid "Sidebar Layout Options"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:298
+msgid "Right Sidebar"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:303
+msgid "Left Sidebar"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:308
+msgid "No Sidebar"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:314
+msgid "Content Layout"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:317
+msgid "Full Content Display"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:321
+msgid "Excerpt/Blog Display"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:327
+msgid "Reset Layout?"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:330
+msgid "Check to reset"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:340
+msgid "Custom CSS"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:345
+msgid "Enter your custom CSS styles."
+msgstr ""
+
+#: ../inc/panel/theme-options.php:352
+msgid "CSS Tutorial from W3Schools."
+msgstr ""
+
+#: ../inc/panel/theme-options.php:354
+msgid "http://www.w3schools.com/css/default.asp"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:354
+msgid "Click Here to Read"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:369
+msgid "Homepage Headline Options"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:374
+msgid "Homepage Headline"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:375
+#: ../inc/panel/theme-options.php:383
+msgid "The appropriate length for Headine is around 10 words."
+msgstr ""
+
+#: ../inc/panel/theme-options.php:382
+msgid "Homepage Subheadline Headline"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:390
+msgid "Disable Homepage Headline?"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:395
+msgid "Disable Homepage Subheadline?"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:406
+msgid "Homepage Featured Content Options"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:411
+msgid "Disable Homepage Featured Content?"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:417
+msgid "Headline"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:420
+msgid "Leave empty if you want to remove headline"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:424
+msgid "Number of Featured Content"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:445
+msgid "Link URL"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:446
+msgid "Add in the Target URL for the content"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:450
+msgid "Target. Open Link in New Window?"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:452
+msgid "Check to open in new window"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:457
+msgid "Title"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:460
+msgid "Leave empty if you want to remove title"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:464
+msgid "Content"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:465
+msgid "The appropriate length for Content is around 10 words."
+msgstr ""
+
+#: ../inc/panel/theme-options.php:479
+msgid "Homepage / Frontpage Settings"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:484
+msgid "Enable Latest Posts or Page?"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:486
+msgid "Check to Enable"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:489
+msgid "Add Page instead of Latest Posts"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:490
+msgid "Click Here to Set Static Front Page Instead of Latest Posts"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:494
+msgid "Homepage posts categories:"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:496
+msgid "Only posts that belong to the categories selected here will be displayed on the front page."
+msgstr ""
+
+#: ../inc/panel/theme-options.php:501
+msgid "--Disabled--"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:512
+msgid "You may select multiple categories by holding down the CTRL key."
+msgstr ""
+
+#: ../inc/panel/theme-options.php:525
+msgid "Slider Options"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:529
+msgid "Enable Sidebar"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:533
+msgid "Homepage / Frontpage"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:537
+msgid "Entire Site"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:541
+msgid "Disable"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:546
+msgid "Number of Slides"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:551
+msgid "Transition Effect:"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:555
+msgid "fade"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:556
+msgid "wipe"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:557
+msgid "scrollUp"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:558
+msgid "scrollDown"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:559
+msgid "scrollLeft"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:560
+msgid "scrollRight"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:561
+msgid "blindX"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:562
+msgid "blindY"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:563
+msgid "blindZ"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:564
+msgid "cover"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:565
+msgid "shuffle"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:570
+msgid "Transition Delay"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:573
+#: ../inc/panel/theme-options.php:580
+msgid "second(s)"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:577
+msgid "Transition Length"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:591
+msgid "Featured Post Slider Options"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:595
+msgid "Exclude Slider post from Homepage posts?"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:597
+msgid "Check to exclude"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:602
+msgid "Featured Slider Post #"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:604
+msgid "Click Here To Edit"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:610
+msgid "Note: Here You can put your Post IDs which displays on Homepage as slider."
+msgstr ""
+
+#: ../inc/panel/theme-options.php:633
+msgid "Google+"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:638
+msgid "Pinterest"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:643
+msgid "Youtube"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:648
+msgid "Vimeo"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:654
+msgid "Linkedin"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:659
+msgid "Slideshare"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:664
+msgid "Foursquare"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:669
+msgid "Flickr"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:674
+msgid "Tumblr"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:679
+msgid "deviantART"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:684
+msgid "Dribbble"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:689
+msgid "MySpace"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:694
+#: ../inc/panel/theme-options.php:1161
+msgid "WordPress"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:699
+msgid "RSS"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:704
+msgid "Delicious"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:709
+msgid "Last.fm"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:723
+msgid "Site Verification"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:728
+msgid "Google Site Verification ID"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:729
+msgid "Enter your Google ID number only"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:734
+msgid "Yahoo Site Verification ID"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:735
+msgid "Enter your Yahoo ID number only"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:740
+msgid "Bing Site Verification ID"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:741
+msgid "Enter your Bing ID number only"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:751
+msgid "Header and Footer Codes"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:756
+msgid "Code to display on Header"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:762
+msgid "Note: Note: Here you can put scripts from Google, Facebook, Twitter, Add This etc. which will load on Header"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:765
+msgid "Code to display on Footer"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:772
+msgid "Note: Here you can put scripts from Google, Facebook, Twitter, Add This etc. which will load on footer"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:1140
+msgid "Y"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:1171
+msgid "Catch Everest"
+msgstr ""
+
