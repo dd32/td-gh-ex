@@ -4,7 +4,7 @@ Theme URI: http://www.tenman.info/wp3/raindrops/
 Description: This theme file has the automatic arrangement of color function in specifying the layout customizing function and the reference color by Yahoo User Interface. The color can specify the tradition color and the American tradition color of Japan by the name. An automatic arrangement of color and the layout can be changed to the expression who you further seem by your instruction. 
 Author: Tenman
 Author URI: http://www.tenman.info/wp3/
-Version: 1.009
+Version: 1.102
 Tags:black, blue, gray, brown, green, orange, pink, purple, red, silver, tan, white, yellow,dark,light,one-column,two-columns,three-columns,four-columns,left-sidebar,right-sidebar ,fixed-width ,flexible-width, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, post-formats, featured-images
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -2413,7 +2413,7 @@ clear:both;
 	max-width:none;
 }
 #access .current_page_item{
-	height:3em;
+	/*height:3em;*/
 }
 .page-template-page-templatesfull-width-php .widget-wrapper li{
 	text-align:left;
@@ -2600,7 +2600,14 @@ clear:both;
 	#doc3 .page .hentry .entry-title a{
 		padding:0;
 	}
-		
+	#doc3 #ft .widget_categories ul li a,
+	#doc3 #ft .widget_categories ul li a,
+	#doc3 .rsidebar .widget_categories ul li a,
+	#doc3 .lsidebar .widget_categories ul li a
+	#doc3 #ft .widget_archive ul li a,
+	#doc3 #ft .widget_archive ul li a,
+	#doc3 .rsidebar .widget_archive ul li a,
+	#doc3 .lsidebar .widget_archive ul li a,		
 	#doc3 #ft .categories ul li a,
 	#doc3 #ft .categories ul li a,
 	#doc3 .rsidebar .categories ul li a,
@@ -2675,7 +2682,9 @@ clear:both;
 		font-weight:bold;
 		font-family:sans-serif;
 	}
-
+	#doc3 .category-blog-publish-date{
+		margin:.3em 0 1em!important;
+	}
 }
 @media screen and (max-width : 480px){
 

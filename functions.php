@@ -189,9 +189,12 @@ load_theme_textdomain( 'Raindrops', get_template_directory() . '/languages' );
  *
  */
     if( $is_IE ){
-        $raindrops_fluid_minimum_width = '640';
-    }
+        preg_match(" |(MSIE )([0-9])(\.)|si",$_SERVER['HTTP_USER_AGENT'],$regs);
+        if( $regs[2] < 9 ){
+            $raindrops_fluid_minimum_width = '640';
 
+        }
+    }
 /**
  * fluid page  main column maximum width px
  *
@@ -335,8 +338,8 @@ load_theme_textdomain( 'Raindrops', get_template_directory() . '/languages' );
               'before_widget' => '<li  id="%1$s" class="%2$s widget default">',
               'after_widget' => '</li>
             ',
-              'before_title' => '<h2 class="widgettitle default h2">',
-              'after_title' => '</h2>
+              'before_title' => '<h2 class="widgettitle default h2"><span>',
+              'after_title' => '</span></h2>
             ',
               'widget_id' => 'default',
               'widget_name' => 'default',
@@ -348,8 +351,8 @@ load_theme_textdomain( 'Raindrops', get_template_directory() . '/languages' );
               'before_widget' => '<li  id="%1$s" class="%2$s widget extra">',
               'after_widget' => '</li>
             ',
-              'before_title' => '<h2 class="widgettitle extra h2">',
-              'after_title' => '</h2>
+              'before_title' => '<h2 class="widgettitle extra h2"><span>',
+              'after_title' => '</span></h2>
             ',
               'widget_id' => 'extra',
               'widget_name' => 'extra',
@@ -360,8 +363,8 @@ load_theme_textdomain( 'Raindrops', get_template_directory() . '/languages' );
               'id' => 'sidebar-3',
               'before_widget' => '<li  id="%1$s" class="%2$s widget sticky-widget">',
               'after_widget' => '</li>',
-              'before_title' => '<h2 class="widgettitle home-top-content h2">',
-              'after_title' => '</h2>',
+              'before_title' => '<h2 class="widgettitle home-top-content h2"><span>',
+              'after_title' => '</span></h2>',
               'widget_id' => 'toppage2',
               'widget_name' => 'toppage2',
               'text' => "3"));
@@ -371,8 +374,8 @@ load_theme_textdomain( 'Raindrops', get_template_directory() . '/languages' );
               'id' => 'sidebar-4',
               'before_widget' => '<li  id="%1$s" class="%2$s widget footer-widget">',
               'after_widget' => '</li>',
-              'before_title' => '<h2 class="widgettitle footer-widget h2">',
-              'after_title' => '</h2>',
+              'before_title' => '<h2 class="widgettitle footer-widget h2"><span>',
+              'after_title' => '</span></h2>',
               'widget_id' => 'footer',
               'widget_name' => 'footer',
               'text' => "4"));
@@ -1087,12 +1090,13 @@ if(!function_exists("add_raindrops_stylesheet") and $wp_version >= 3.4 ){
         function raindrops_ie_height_expand_issue($content){
             global $is_IE,$content_width;
             if($is_IE){
-                preg_match_all('#(<img)([^>]+)(height|width)(=")([0-9]+)"([^>]+)(height|width)(=")([0-9]+)"([^>]+)>#',$content,$images,PREG_SET_ORDER);
+                preg_match_all('#(<img)([^>]+)(height|width)(=")([0-9]+)"([^>]+)(height|width)(=")([0-9]+)"([^>]*)>#',$content,$images,PREG_SET_ORDER);
                 foreach($images as $image){
                     if(($image[3] == "width" and $image[5] > $content_width) or ($image[7] == "width" and $image[9] > $content_width)){
                         $content = str_replace($image[0],$image[1].$image[2].$image[6].$image[10].'>',$content);
                     }
                 }
+
                 return $content;
             }else{
                 return $content;
@@ -2711,6 +2715,14 @@ span#site-title,
                             $width
                             );
                 return apply_filters("raindrops_header_image_elements",$elements);
+            }elseif($type == 'home_url'){
+                $elements = '<a href="%3$s"><div id="%1$s"><p>%2$s</p></div></a>';
+                $elements = sprintf($elements,
+                            'header-image',
+                            esc_html($description),
+                            esc_url( home_url() )
+                            );
+                return apply_filters("raindrops_header_image_home_url",$elements);
             }
         }
     }
