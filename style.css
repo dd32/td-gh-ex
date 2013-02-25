@@ -1,0 +1,509 @@
+/*
+Theme Name: Redesign
+Theme URI: http://redesign.toth-illustration.com
+Description: Redesign is a clean highly visible theme suitable for businesses, small businesses – or blogging. There are two navigation menus, custom header, custom background, transparent graphic elements and four widget areas: header widget, two sidebar widgets, and a footer widget.
+
+The transparent graphic elements makes your custom background image visible through the layers. Or by choosing a background color, the hole site will have this color, in different shades. An easy and fast way to create smooth graphic design.
+
+The theme is responsive, and easy to read in handheld units. The Redesign theme is not based on any other WP theme.
+Author: Robert Toth
+Author URI: http://toth-illustration.com
+Version: 1.0
+License: GNU General Public License
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: gray, white, black, right-sidebar, two-columns, fixed-width, custom-background, custom-header, custom-menu, sticky-post, threaded-comments
+*/
+
+
+/*-----REDESIGN, WORD PRESS STYLESHEET------*/
+
+/*RESET*/
+
+html, body, ol, ul, li{
+	margin:0;
+        padding:0;
+	border:0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/*BASIC*/
+
+
+#custom-header{
+	margin:0px;
+	padding:0px;
+}
+
+body{
+	font-family: Lucida grande, Lucida Sans Unicode, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-size: 1rem;
+        line-height:150%;
+	color: #333;
+        letter-spacing:-1px;
+}
+
+#wrapper{
+	max-width: 960px;
+	min-width: 480px;
+	margin: auto;
+	text-align: left;
+	padding:0px;
+	background-image:url('img/tbg50.png');
+}
+
+table{
+	padding: 0px;
+	margin: 10px;
+	width: 95%;
+	background-image:url('img/btbg10.png');
+}
+
+table th{
+	padding: 10px;
+	margin: 0px;
+
+}
+
+table tr{
+	padding: 10px;
+	margin: 0px;
+}
+
+table td{
+	padding: 10px;
+	margin: 0px;
+	background-image:url('img/tbg50.png');
+}
+
+
+blockquote{
+	font-style:italic;
+	margin:10px 10px 10px 40px;
+}
+
+address{
+	font-style:normal;
+	margin:10px 10px 10px 40px;
+	padding:10px;
+    	background-image:url('img/tbg50.png');
+}
+
+/*LINKS*/
+ 
+a:link, a:visited{
+	color:#333;
+	font-weight:bold;
+	text-decoration: none; 
+}
+ 
+a:hover{
+	text-decoration: underline; 
+}
+
+/*HEADINGS*/
+ 
+h1{
+	font-size: 140%;
+	margin: 10px 0px;
+	letter-spacing:normal;
+}
+
+h2{
+	font-size: 100%;
+	margin: 10px 0px;
+	text-transform:uppercase;
+	font-weight:bold;
+	letter-spacing:normal;
+}
+
+/*IMAGES*/
+
+/* Responsive images */
+
+#header img,
+.post img,
+.comment img,
+.widgetclass img 
+.wp-caption img{
+	max-width: 100%; /* Fluid images for posts, comments, and widgets */
+	height: auto;
+}
+img[class*="align"],
+img[class*="wp-image-"],
+img[class*="attachment-"] {
+	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+}
+img.size-full,
+img.size-large,
+img.header-image,
+img.wp-post-image {
+	max-width: 100%;
+	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+}
+
+/* Make sure videos and embeds fit their containers */
+embed,
+iframe,
+object,
+video {
+	max-width: 100%;
+	height: auto;
+}
+.entry-content .twitter-tweet-rendered {
+	max-width: 100% !important; /* Override the Twitter embed fixed width */
+	height: auto;
+}
+
+a img{
+	border: 0;
+}
+
+img.alignleft, 
+img.aligncenter, 
+img.alignright {
+	padding: 3px;
+	border: none;
+	margin-top: 10px;
+}
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 10px;	
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 10px;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 10px auto;
+}
+
+.wp-caption {
+	padding: 0px;
+	text-align: left;
+}
+.wp-caption img {
+	margin: 0px;
+}
+.wp-caption .wp-caption-text {
+	margin: 0px 0px 0px 10px;
+	font-size:90%;
+}
+
+.gallery-caption {
+	margin: 0px 0px 0px 10px;
+	font-size:90%;
+	text-align: left;
+}
+
+
+
+/*TOP NAVIGATION MENU*/
+
+#top-menu{
+	width:100%;
+	font-size:90%;
+	display:block;
+	float:right;
+	position:relative;
+	text-transform:uppercase;
+        letter-spacing:normal;
+}
+ 
+#top-menu ul{
+	list-style:none;
+}
+ 
+#top-menu li{
+	float:right;
+	position:relative;
+}
+
+#top-menu a{
+    	display:block;
+    	padding:5px 20px 5px 0px;
+    	font-weight:bold;
+}
+
+/*MAIN NAVIGATION MENU*/
+
+#primary-menu{
+	font-size:90%;
+	width:100%;
+	background-image:url('img/btbg50.png');
+	display:block;
+	float:left;
+	position:relative;
+	text-transform:uppercase;
+        letter-spacing:normal;
+}
+ 
+#primary-menu ul{
+	list-style:none;
+}
+ 
+#primary-menu li{
+	float:left;
+	position:relative;
+}
+
+#primary-menu a{
+    display:block;
+    text-decoration:none;
+    color:#fff;
+    padding:5px 20px;
+    font-weight:bold;
+}
+
+#primary-menu ul ul{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    float:left;
+    z-index:99999;
+    background-image:url('img/btbg70.png');
+}
+ 
+#primary-menu ul ul ul{
+    top:0%;
+    left:100%;
+    background-image:url('img/btbg70.png');
+}
+ 
+#primary-menu ul ul a{
+    height:auto;
+    padding:5px 20px;
+    width:200px;
+}
+ 
+#primary-menu li:hover > a,.nav ul ul:hover > a{
+	background-image:url('img/btbg50.png');
+}
+ 
+#primary-menu ul li:hover > ul{
+    display:block;
+}
+
+/*MAIN CONTENT*/
+
+#content{
+        width:460px;
+	float: left;
+	position: relative;
+        margin:0px;
+        padding:10px;
+	background-image:url('img/tbg50.png');
+}
+
+.post{
+	overflow: hidden;
+        padding:0px;
+}
+
+.post ul li{
+	list-style: square;
+	margin-left:40px;
+}
+
+.post ol li{
+	list-style: decimal;
+	margin-left:40px;
+}
+
+.sticky h1 a{
+	text-transform:uppercase;
+}
+
+.comment ul li{
+	list-style: square;
+	margin-left:40px;
+}
+
+.comment ol li{
+	list-style: decimal;
+	margin-left:40px;
+}
+
+.postmetadata{
+	clear:both;
+	font-style:italic;
+	font-size:90%;
+	margin-bottom:40px;
+}
+
+.date{	
+	font-style:italic;
+	font-size:90%;
+}
+	
+
+.navigation{
+        padding-bottom:20px;
+}
+
+/*SIDEBAR*/
+
+.sidebar{
+	float: left;
+	min-width:240px;
+	max-width:480;
+	margin: 0px;
+	padding:0px;
+}
+
+.sidebar li{
+	list-style:none;
+}
+
+.sidebar2{
+	float: left;
+	width:240px;
+	margin: 0px;
+	padding:0px;
+}
+
+.sidebar4{
+        width:100%;
+        float:left;
+        padding:10px 10px 10px 0px;
+}
+
+
+ /*WIDGETS*/
+
+.widgetclass{
+	list-style:none;
+	padding: 10px;
+        margin:0px;
+}
+
+.widgetclass li{
+	list-style:none;
+}
+
+#widget1{
+	width:220px;
+        background-image:url('img/tbg30.png');
+
+}
+
+#widget2{
+	width:220px;
+        float:left;
+}
+
+#widget3{
+	margin: 30px 0px 0px 0px;
+}
+
+#widget4{
+	float:left;
+	width: 220px;
+        margin: 0px;
+}
+
+
+/*COMMENTS*/
+
+
+ol.commentlist li{
+	padding-bottom:20px;
+	list-style: none;
+	margin-left:20px;
+}
+
+.commentform{
+        width: 100%;
+	padding: 20px 0px;
+	overflow: hidden;
+	position: relative;
+}
+
+.commentform p{
+	margin-bottom: 10px;
+}
+
+ol.commentlist li.comment{ 
+	padding:10px 20px; 
+}
+
+ol.commentlist li.odd{ 
+	background-image:url('img/tbg30.png');
+}
+
+.commentlist li.bypostauthor {
+	background-image:url('img/btbg10.png');
+}
+
+/*FOOTER*/
+
+#footer{
+	clear:both;
+	text-align: left;
+	padding: 10px;
+	background-image:url('img/btbg50.png');
+	color:#FFF; 	
+}
+
+#footer a{
+	list-style:none;
+	color:#FFF; 
+}
+
+#footer li{
+    	list-style:none;
+}
+
+#credits{
+	font-size:90%;
+	margin-left:10px;
+}
+
+/*BUTTONS & FORMS*/
+
+
+
+#author, #email, #url, #comment{
+	font-size: 100%;
+	font-family: inherit;
+        width:430px;
+	overflow: auto;
+	vertical-align: top;
+	border:1px solid #DDD;
+        background-image:url('img/tbg50.png');
+}
+
+#searchtextarea {
+        font-size:100%;
+	background-image:url('img/tbg50.png');
+	border:1px solid #DDD;
+	padding:6px;
+	width:145px;
+}
+
+input[type="submit"] {
+        font-size:100%;
+	background-image:url('img/btbg30.png');
+	border:none;
+	padding: 6px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+input[type="submit"]:hover {
+        font-size:100%;
+   	background-image:url('img/btbg50.png');
+        color:#FFF;
+}
+
+input[type="submit"]:active {
+        font-size:100%;
+   	background-image:url('img/btbg70.png');
+}
