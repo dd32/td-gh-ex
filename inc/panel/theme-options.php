@@ -23,7 +23,7 @@ function catcheverest_admin_scripts() {
 	wp_enqueue_script( 'catcheverest_admin', get_template_directory_uri().'/inc/panel/js/admin.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable' ) );
 	wp_enqueue_script( 'catcheverest_upload', get_template_directory_uri().'/inc/panel/js/add_image_scripts.js', array( 'jquery','media-upload','thickbox' ) );
 	
-	wp_enqueue_style( 'catcheverest_admin_style',get_template_directory_uri().'/inc/panel/admin.css', array( 'farbtastic'), '1.0', 'screen' );
+	wp_enqueue_style( 'catcheverest_admin_style',get_template_directory_uri().'/inc/panel/admin.css', array( 'thickbox'), '1.0', 'screen' );
 }
 add_action('admin_print_styles-appearance_page_theme_options', 'catcheverest_admin_scripts');
 
