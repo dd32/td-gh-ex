@@ -2,7 +2,7 @@
 /**
  * @package Ascetica
  * @subpackage Functions
- * @version 0.3
+ * @version 0.3.1
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
@@ -68,9 +68,6 @@ function ascetica_theme_setup() {
 	
 	/* Enqueue scripts (and related stylesheets) */
 	add_action( 'wp_enqueue_scripts', 'ascetica_scripts' );
-	
-	/* Style settings */
-	add_action( 'wp_head', 'ascetica_style_settings' );
 
 	/* Add support for custom headers. */
 	$args = array(

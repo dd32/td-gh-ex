@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 0.3.1 =
+Fixed a warning for non-existing function.
+
 = 0.3 =
 * Migrated theme settings to the theme Customizer. The old settings entries will be used as a fallback, but please re-save all settings in the Customizer and/or Header as support for legacy settings will be dropped in the future.
 * Removed the favicon upload option. Simply place a favicon.ico file in the theme folder instead.
