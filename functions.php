@@ -1,15 +1,14 @@
 <?php
 
 if ( ! isset( $content_width ) ){
-	$content_width = 940;
+	$content_width = 600;
 }
 
 
-$activetab_version = '0.2.2';
+$activetab_version = '0.2.3';
 
 
 if ( ! function_exists( 'activetab_enqueue_scripts_and_styles' ) ) :
-	add_action( 'wp_enqueue_scripts', 'activetab_enqueue_scripts_and_styles' );
 	function activetab_enqueue_scripts_and_styles() {
 		global $activetab_version;
 		
@@ -28,12 +27,12 @@ if ( ! function_exists( 'activetab_enqueue_scripts_and_styles' ) ) :
 		wp_register_style( 'activetab-style', get_stylesheet_directory_uri() . '/style.css', array( 'activetab-bootstrap' ), $activetab_version, 'all' );
 	    wp_enqueue_style( 'activetab-style' );
 	}
+	add_action( 'wp_enqueue_scripts', 'activetab_enqueue_scripts_and_styles' );
 endif;
 
 
 
 if ( ! function_exists( 'activetab_setup' ) ) :
-	add_action( 'after_setup_theme', 'activetab_setup' );
 	function activetab_setup() {
 
 		add_filter( 'widget_text', 'do_shortcode' ); // execute shortcodes in sidebar widgets
@@ -83,6 +82,11 @@ if ( ! function_exists( 'activetab_setup' ) ) :
 				'thumbnail_url' => '%s/img/headers/borabora-thumbnail.jpg',
 				'description' => __( 'Bora Bora', 'activetab' )
 			),
+			'tropicalresort' => array(
+				'url' => '%s/img/headers/tropicalresort.jpg',
+				'thumbnail_url' => '%s/img/headers/tropicalresort-thumbnail.jpg',
+				'description' => __( 'Tropical resort', 'activetab' )
+			),
 			'coloredfeathers' => array(
 				'url' => '%s/img/headers/coloredfeathers.jpg',
 				'thumbnail_url' => '%s/img/headers/coloredfeathers-thumbnail.jpg',
@@ -120,12 +124,12 @@ if ( ! function_exists( 'activetab_setup' ) ) :
 		}
 
 	}
+	add_action( 'after_setup_theme', 'activetab_setup' );
 endif;
 
 
 // register sidebars & footer widgets
 if ( ! function_exists( 'activetab_register_widgets' ) ) :
-	add_action( 'widgets_init', 'activetab_register_widgets' );
 	function activetab_register_widgets() {
 		register_sidebar( array(
 			'name' => __( 'Sidebar', 'activetab' ),
@@ -146,15 +150,16 @@ if ( ! function_exists( 'activetab_register_widgets' ) ) :
 			'after_title' => '</h4>',
 		) );
 	}
+	add_action( 'widgets_init', 'activetab_register_widgets' );
 endif;
 
 
 if ( ! function_exists( 'activetab_favicon' ) ) :
-	add_action( 'wp_head', 'activetab_favicon' ); // add favicon to frontend
-	add_action( 'admin_head', 'activetab_favicon' ); // add favicon to backend
 	function activetab_favicon() {
 		echo "\n".'<link rel="shortcut icon" type="image/x-icon" href="'.get_template_directory_uri().'/img/favicon.ico" />'."\n";
 	}
+	add_action( 'wp_head', 'activetab_favicon' ); // add favicon to frontend
+	add_action( 'admin_head', 'activetab_favicon' ); // add favicon to backend
 endif;
 
 
@@ -168,7 +173,6 @@ endif;
 
 
 if ( ! function_exists( 'activetab_title' ) ) :
-	add_filter('wp_title', 'activetab_title', 10, 2);
 	function activetab_title($title, $sep) {
 		global $post, $page, $paged;
 
@@ -191,6 +195,7 @@ if ( ! function_exists( 'activetab_title' ) ) :
 
 		return $title;
 	}
+	add_filter( 'wp_title', 'activetab_title', 10, 2 );
 endif;
 
 
@@ -298,6 +303,7 @@ if ( ! function_exists( 'activetab_post_categories' ) ) :
 	}
 endif; // activetab_post_categories
 
+
 if ( ! function_exists( 'activetab_post_tags' ) ) :
 	function activetab_post_tags() { // list of tags
 		$post_tags = get_the_tag_list( '', ', ', '' );
@@ -308,6 +314,7 @@ if ( ! function_exists( 'activetab_post_tags' ) ) :
 		}
 	}
 endif; // activetab_post_tags
+
 
 if ( ! function_exists( 'activetab_post_meta' ) ) :
 	function activetab_post_meta() { // post meta
@@ -342,24 +349,25 @@ endif; // activetab_nav
 
 
 if ( ! function_exists( 'activetab_excerpt_more' ) ):
-	function activetab_excerpt_more($more) { // do not use "more-link" http://web-profile.com.ua/web/web-principles/more-link/
+	function activetab_excerpt_more( $more ) { // "more-link" is bad for seo and for usability - http://web-profile.com.ua/web/web-principles/more-link/
 		return '...';
 	}
 	add_filter('excerpt_more', 'activetab_excerpt_more');
 endif; // activetab_excerpt_more
 
+
 if ( ! function_exists( 'activetab_is_homepage' ) ):
 	function activetab_is_homepage(){ // does not used, simple way was chosen
-		//if( is_home() || is_front_page() ){} // simple way
+		// if( is_home() || is_front_page() ){} // simple way
 		$show_on_front = get_option('show_on_front'); // page or posts
 		$page_on_front = get_option('page_on_front'); // 0 or page_id
 		$page_for_posts = get_option('page_for_posts'); // 0 or page_id
 		if ( ($show_on_front == 'page') || ($page_on_front != 0) ){
-			if(is_front_page()){
+			if( is_front_page() ){
 				return true;
 			}
-		} elseif ( ($show_on_front == 'posts') || ($page_for_posts == 0) ) {
-			if(is_home()){
+		} elseif ( ( $show_on_front == 'posts' ) || ( $page_for_posts == 0 ) ) {
+			if( is_home() ){
 				return true;
 			}
 		} else {
@@ -369,11 +377,7 @@ if ( ! function_exists( 'activetab_is_homepage' ) ):
 endif; // activetab_is_homepage
 
 
-
-
-
-// enable shortcodes in widgets
-add_filter('widget_text', 'do_shortcode');
+add_filter('widget_text', 'do_shortcode'); // enable shortcodes in widgets
 
 
 // ===== filtered code up here ============================================================
@@ -419,23 +423,3 @@ if ( ! function_exists( 'activetab_remove_thumbnail_dimensions' ) ):
 		return $html;
 	}
 endif; // activetab_remove_thumbnail_dimensions
-
-
-if ( ! function_exists( 'is_activetab_homepage' ) ):
-function is_activetab_homepage() { // check for real homepage
-	$show_on_front = get_option('show_on_front'); // page or posts
-	$page_on_front = get_option('page_on_front'); // 0 or page_id
-	$page_for_posts = get_option('page_for_posts'); // 0 or page_id
-	if ( ($show_on_front == 'page') || ($page_on_front != 0) ){
-		if(is_front_page()){
-			return true;
-		}
-	} elseif ( ($show_on_front == 'posts') || ($page_for_posts == 0) ) {
-		if(is_home()){
-			return true;
-		}
-	} else {
-		return false;
-	}
-}
-endif; // is_activetab_homepage

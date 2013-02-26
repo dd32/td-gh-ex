@@ -31,8 +31,9 @@
 				it is the best way to support the free open source development
                 */ ?>
 				<?php _e( 'powered by', 'activetab' ); ?>
-				<a href="http://wordpress.org/" title="WordPress CMS" rel="generator">WordPress</a>
-				&amp; <a href="http://web-profile.com.ua/wordpress/themes/activetab/" title="activetab WordPress theme" rel="designer">activetab</a>
+				<a href="http://wordpress.org/" title="WordPress CMS" rel="generator"><?php _e( 'WordPress', 'activetab' ); ?></a>
+				<?php _e( '&', 'activetab' ); ?>
+				<a href="http://web-profile.com.ua/wordpress/themes/activetab/" title="activetab WordPress theme" rel="designer"><?php _e( 'activetab', 'activetab' ); ?></a>
 			<?php endif; ?>
 			</div> <!-- /.site-footer-right -->
 		</div> <!-- /.span4 -->

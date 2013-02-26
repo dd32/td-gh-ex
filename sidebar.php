@@ -13,7 +13,7 @@
 								}
 								?>
 								<h4 class="site-title">
-									<?php if( is_activetab_homepage() ): ?>
+									<?php if( activetab_is_homepage() ): ?>
 										<?php bloginfo( 'name' ); ?>
 									<?php else: ?>
 										<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
@@ -30,7 +30,7 @@
 
 							<?php $header_image = get_header_image();
 							if ( ! empty( $header_image ) ) : ?>
-								<?php if( ! is_activetab_homepage() ): ?>
+								<?php if( ! activetab_is_homepage() ): ?>
 									<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
 									   title="<?php echo $title_desc ?>"
 									   rel="home">
@@ -39,7 +39,7 @@
 					                   height="<?php echo get_custom_header()->height; ?>"
 					                   width="<?php echo get_custom_header()->width; ?>"
 					                   alt="<?php echo $title_desc ?>" />
-								<?php if( ! is_activetab_homepage() ): ?>
+								<?php if( ! activetab_is_homepage() ): ?>
 									</a>
 								<?php endif; ?>
 							<?php endif; ?>
