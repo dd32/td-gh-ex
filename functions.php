@@ -50,6 +50,13 @@ function babylog_setup() {
 	 */
 	load_theme_textdomain( 'babylog', get_template_directory() . '/languages' );
 
+	/* Jetpack Infinite Scroll */
+	add_theme_support( 'infinite-scroll', array(
+		'container'  => 'content',
+		'footer'     => 'primary',
+		'footer_widgets' => 'infinite_scroll_has_footer_widgets',
+	) );
+
 	/**
 	 * Add default posts and comments RSS feed links to head
 	 */
@@ -114,6 +121,19 @@ function babylog_setup() {
 }
 endif; // babylog_setup
 add_action( 'after_setup_theme', 'babylog_setup' );
+
+/* Filter to add author credit to Infinite Scroll footer */
+function babylog_footer_credits( $credit ) {
+	$credit = sprintf( __( '%3$s | Theme: %1$s by %2$s.', 'babylog' ), 'Babylog', '<a href="http://carolinemoore.net/" rel="designer">Caroline Moore</a>', '<a href="http://wordpress.org/" title="' . esc_attr( __( 'A Semantic Personal Publishing Platform', 'babylog' ) ) . '" rel="generator">Proudly powered by WordPress</a>' );
+	return $credit;
+}
+add_filter( 'infinite_scroll_credit', 'babylog_footer_credits' );
+
+function infinite_scroll_has_footer_widgets() {
+	if ( jetpack_is_mobile( '', true ) && is_active_sidebar( 'sidebar-1' ) )
+		return true;
+	return false;
+}
 
 /**
  * Register widgetized area and update sidebar with default widgets

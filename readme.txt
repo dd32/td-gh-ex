@@ -4,6 +4,8 @@ Awesome Google Web Font: Vidaloka by Cyreal - https://profiles.google.com/alexei
 
 Version history:
 
+v2.1 - Add support for Jetpack infinite scroll
+
 v2.0.1 -
 * Improve appearance of title-less widgets
 * Display byline properly on multi-author blogs and on single post view

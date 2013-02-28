@@ -4,7 +4,7 @@ Theme URI: http://carolinethemes.com/2011/11/27/wordpress-theme-babylog/
 Author: Caroline Moore
 Author URI: http://carolinemoore.net/
 Description: PLEASE NOTE: 2.0 is a major update. Please check the included readme for details before upgrading. Babylog is a sweet, illustrated theme for baby blogs featuring four color palettes and a customizable baby header graphic.
-Version: 2.0.1
+Version: 2.1
 License: GNU General Public License
 License URI: license.txt
 Tags: light, blue, pink, green, purple, brown, two-columns, right-sidebar, fixed-width, custom-background, custom-header, custom-menu, rtl-language-support, theme-options, translation-ready
@@ -1125,6 +1125,19 @@ ul.children .reply {
 }
 .widget_authors img {
 	margin-bottom: 10px;
+}
+
+
+/* =Jetpack
+------------------------------------------------*/
+
+.sharedaddy:before,
+.sharedaddy:after {
+	content: "";
+	display: table;
+}
+.sharedaddy:after {
+	clear: both;
 }
 
 
