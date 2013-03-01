@@ -35,12 +35,13 @@
 		 <?php 
 		 	$options = catchbox_get_theme_options();
 			$current_content_layout = $options['content_layout'];
-			?>
-		<?php if ( is_search() ) : // Only display Excerpts for Search ?>
+			$catchbox_excerpt = get_the_excerpt();
+			
+		if ( is_search() ) : // Only display Excerpts for Search ?>
             <div class="entry-summary">
                 <?php the_excerpt(); ?>
             </div><!-- .entry-summary -->
-        <?php elseif ($current_content_layout=='excerpt'  ) : // Only display Featured Image and Excerpts if checked in Theme Option ?>
+        <?php elseif ( $current_content_layout=='excerpt' && !empty( $catchbox_excerpt ) ) : // Only display Featured Image and Excerpts if checked in Theme Option ?>
             <div class="entry-summary">
                 <?php if( has_post_thumbnail() ):?>
                		<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'catchbox' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">

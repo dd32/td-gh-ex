@@ -217,3 +217,7 @@ Version 1.9
 
 Version 2.0
 * Added Italian translation it_IT.po and it_IT.mo
+
+Version 2.0.1
+* Added content layout excerpt to show full content if found excerpt empty
+* Added Separator  for Header Image and Site Details   
