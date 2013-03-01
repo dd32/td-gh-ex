@@ -800,6 +800,8 @@ function attitude_display_gallery_four_column_content() { ?>
 			// The Query
 			$the_query = new WP_Query( 'post_type=gallery' );
 
+			$i = 1;
+
 			// The Loop
 			while ( $the_query->have_posts() ) :
 				$the_query->the_post();
@@ -812,6 +814,10 @@ function attitude_display_gallery_four_column_content() { ?>
 				   }
 				echo '<h3 class="custom-gallery-title"><a href="'. get_permalink() .'" title="'.the_title( '', '', false ).'">'. the_title( '', '', false ).'</a></h3>';
 				echo"</div>";
+				if( ( $i%4 ) == 0 ){
+					echo '<div class="clearfix"></div>';
+				}
+				$i++;
 			endwhile;
 
 			/* Restore original Post Data 
@@ -913,4 +919,21 @@ function attitude_display_404_page_content() {
 
 /****************************************************************************************/
 
+add_action( 'attitude_business_template_content', 'attitude_business_template_widgetized_content', 10 );
+/**
+ * Displays the widget as contents
+ */
+function attitude_business_template_widgetized_content() { ?>
+	<div id="content">
+		<?php if( is_active_sidebar( 'attitude_business_page_sidebar' ) ) {
+
+			// Calling the footer sidebar if it exists.
+			if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar( 'attitude_business_page_sidebar' ) ):
+			endif;
+		}
+		?>
+	</div><!-- #content -->
+<?php
+}
+/****************************************************************************************/
 ?>

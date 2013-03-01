@@ -1,8 +1,10 @@
+# Attitude WordPress Theme. Translation template file.
+# This file is distributed under the same license as the Attitude Theme.
 msgid ""
 msgstr ""
 "Project-Id-Version: Attitude\n"
-"POT-Creation-Date: 2013-02-05 19:26+0545\n"
-"PO-Revision-Date: 2013-02-05 19:26+0545\n"
+"POT-Creation-Date: 2013-03-01 20:21+0545\n"
+"PO-Revision-Date: 2013-03-01 20:21+0545\n"
 "Last-Translator: \n"
 "Language-Team: Team Horse <support@themehorse.com>\n"
 "Language: English\n"
@@ -373,11 +375,8 @@ msgstr ""
 
 #: library/admin/theme-options.php:325
 msgid ""
-"Note: The custom background change will be reflected in content part not the "
-"header and footer part. If you want to reflect change in the footer and "
-"header part as well, please add your custom css from below to hide the "
-"header and footer pattern. You will then see the changes in header and "
-"footer as well."
+"Note: The custom background change will be reflected in the background if "
+"the site layout is set to be narrow layout instead of the wide layout."
 msgstr ""
 
 #: library/admin/theme-options.php:334
@@ -652,6 +651,7 @@ msgstr ""
 #: library/structure/content-extensions.php:558
 #: library/structure/content-extensions.php:618
 #: library/structure/content-extensions.php:647
+#: library/widgets/attitude_widgets.php:232
 msgid "Read more"
 msgstr ""
 
@@ -662,14 +662,14 @@ msgstr ""
 #: library/structure/content-extensions.php:482
 #: library/structure/content-extensions.php:573
 #: library/structure/content-extensions.php:662
-#: library/structure/content-extensions.php:878
+#: library/structure/content-extensions.php:884
 msgid "No Posts Found."
 msgstr ""
 
 #: library/structure/content-extensions.php:212
 #: library/structure/content-extensions.php:296
 #: library/structure/content-extensions.php:621
-#: library/structure/content-extensions.php:852
+#: library/structure/content-extensions.php:858
 msgid "Pages:"
 msgstr ""
 
@@ -726,29 +726,29 @@ msgstr ""
 msgid "Reply <span>&darr;</span>"
 msgstr ""
 
-#: library/structure/content-extensions.php:901
+#: library/structure/content-extensions.php:907
 msgid "Error 404-Page NOT Found"
 msgstr ""
 
-#: library/structure/content-extensions.php:904
+#: library/structure/content-extensions.php:910
 msgid "It seems we can't find what you're looking for."
 msgstr ""
 
-#: library/structure/content-extensions.php:905
+#: library/structure/content-extensions.php:911
 msgid "This might be because:"
 msgstr ""
 
-#: library/structure/content-extensions.php:906
+#: library/structure/content-extensions.php:912
 msgid ""
 "You have typed the web address incorrectly, or the page you were looking for "
 "may have been moved, updated or deleted."
 msgstr ""
 
-#: library/structure/content-extensions.php:907
+#: library/structure/content-extensions.php:913
 msgid "Please try the following instead:"
 msgstr ""
 
-#: library/structure/content-extensions.php:908
+#: library/structure/content-extensions.php:914
 msgid ""
 "Check for a mis-typed URL error, then press the refresh button on your "
 "browser."
@@ -775,16 +775,16 @@ msgstr ""
 msgid "Page %s"
 msgstr ""
 
-#: library/structure/header-extensions.php:336
+#: library/structure/header-extensions.php:339
 #, php-format
 msgid "%1$s on %2$s"
 msgstr ""
 
-#: library/structure/header-extensions.php:482
+#: library/structure/header-extensions.php:492
 msgid "Page NOT Found"
 msgstr ""
 
-#: library/structure/header-extensions.php:485
+#: library/structure/header-extensions.php:495
 msgid "Search Results"
 msgstr ""
 
@@ -802,29 +802,88 @@ msgid "Shows widgets at Right side."
 msgstr ""
 
 #: library/widgets/attitude_widgets.php:40
-msgid "Contact Page Sidebar"
+msgid "Business Page Sidebar"
 msgstr ""
 
 #: library/widgets/attitude_widgets.php:42
-msgid "Shows widgets on Contact Page Template."
+msgid ""
+"Shows widgets on Business Page Template. Sutiable widget: Theme Horse: "
+"Featured widget, Theme Horse: Testimonial, Theme Horse: Services"
 msgstr ""
 
 #: library/widgets/attitude_widgets.php:51
-msgid "Footer Sidebar"
+msgid "Contact Page Sidebar"
 msgstr ""
 
 #: library/widgets/attitude_widgets.php:53
+msgid "Shows widgets on Contact Page Template."
+msgstr ""
+
+#: library/widgets/attitude_widgets.php:62
+msgid "Footer Sidebar"
+msgstr ""
+
+#: library/widgets/attitude_widgets.php:64
 msgid "Shows widgets at footer."
 msgstr ""
 
-#: library/widgets/attitude_widgets.php:76
+#: library/widgets/attitude_widgets.php:91
 msgid "Displays Custom Tag Cloud"
 msgstr ""
 
-#: library/widgets/attitude_widgets.php:78
+#: library/widgets/attitude_widgets.php:93
 msgid "Theme Horse: Custom Tag Cloud"
 msgstr ""
 
-#: library/widgets/attitude_widgets.php:130
+#: library/widgets/attitude_widgets.php:145
+#: library/widgets/attitude_widgets.php:275
+#: library/widgets/attitude_widgets.php:406
 msgid "Title:"
+msgstr ""
+
+#: library/widgets/attitude_widgets.php:159
+msgid "Display Services( Business Layout )"
+msgstr ""
+
+#: library/widgets/attitude_widgets.php:161
+msgid "Theme Horse: Services"
+msgstr ""
+
+#: library/widgets/attitude_widgets.php:177
+#: library/widgets/attitude_widgets.php:284
+msgid "Page"
+msgstr ""
+
+#: library/widgets/attitude_widgets.php:252
+msgid ""
+"Use this widget to show recent work, portfolio or any pages as your wish "
+"( Business Layout )"
+msgstr ""
+
+#: library/widgets/attitude_widgets.php:254
+msgid "Theme Horse: Featured Widget"
+msgstr ""
+
+#: library/widgets/attitude_widgets.php:278
+msgid "Description"
+msgstr ""
+
+#: library/widgets/attitude_widgets.php:362
+msgid "Display Testimonial( Business Layout )"
+msgstr ""
+
+#: library/widgets/attitude_widgets.php:364
+msgid "Theme Horse: Testimonial"
+msgstr ""
+
+#: library/widgets/attitude_widgets.php:408
+msgid "Testimonial Description"
+msgstr ""
+
+#: library/widgets/attitude_widgets.php:411
+msgid "Name:"
+msgstr ""
+
+#: library/widgets/attitude_widgets.php:414
+msgid "Byline:"
 msgstr ""

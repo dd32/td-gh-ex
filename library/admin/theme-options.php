@@ -322,7 +322,7 @@ function attitude_theme_options_do_page() {
 											<?php printf(__('<a class="button" href="%s">Click here</a>', 'attitude'), admin_url('themes.php?page=custom-background')); ?>
 										</td>
 										<td style="padding-bottom: 20px;">
-											<p><small><?php _e( 'Note: The custom background change will be reflected in content part not the header and footer part. If you want to reflect change in the footer and header part as well, please add your custom css from below to hide the header and footer pattern. You will then see the changes in header and footer as well.', 'attitude' ); ?></small></p>
+											<p><small><?php _e( 'Note: The custom background change will be reflected in the background if the site layout is set to be narrow layout instead of the wide layout.', 'attitude' ); ?></small></p>
 										</td>
 									</tr>
 								</tbody>

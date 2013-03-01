@@ -130,10 +130,12 @@ function attitude_core_functionality() {
 	register_nav_menu( 'primary', __( 'Primary Menu', 'attitude' ) );
 
 	// Add Attitude custom image sizes
-	add_image_size( 'featured', 670, 300, true);
-	add_image_size( 'featured-medium', 230, 230, true);
-	add_image_size( 'slider', 1400, 570, true); 		// used on Featured Slider on Homepage Header
-	add_image_size( 'gallery', 472, 332, true); 		// used to show gallery all images
+	add_image_size( 'featured', 670, 300, true );
+	add_image_size( 'featured-medium', 230, 230, true );
+	add_image_size( 'slider-narrow', 1038, 460, true ); 		// used on Featured Slider on Homepage Header for narrow layout
+	add_image_size( 'slider-wide', 1400, 460, true ); 			// used on Featured Slider on Homepage Header for wide layout
+	add_image_size( 'gallery', 474, 342, true ); 				// used to show gallery all images
+	add_image_size( 'icon', 80, 80, true );						//used for icon on business layout
 
 	/**
 	 * This theme supports custom background color and image

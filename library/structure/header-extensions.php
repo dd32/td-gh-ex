@@ -278,7 +278,9 @@ function attitude_headerdetails() {
    				attitude_featured_post_slider();
    		}
 		}
-		else { ?>
+		else { 
+			if( ( '' != attitude_header_title() ) || function_exists( 'bcn_display_list' ) ) { 
+		?>
 			<div class="page-title-wrap">
 	    		<div class="container clearfix">
 	    			<?php
@@ -289,6 +291,7 @@ function attitude_headerdetails() {
 				</div>
 	    	</div>
 	   <?php
+	   	}
 		} 
 		if( 'below-slider' == $options[ 'slogan_position' ] && ( is_home() || is_front_page() ) ) 
 			if( function_exists( 'attitude_home_slogan' ) )
@@ -398,6 +401,13 @@ function attitude_featured_post_slider() {
 	
 	$attitude_featured_post_slider = '';
 	if( ( !$attitude_featured_post_slider = get_transient( 'attitude_featured_post_slider' ) ) && !empty( $options[ 'featured_post_slider' ] ) ) {
+
+		if( 'wide-layout' == $options[ 'site_layout' ] ) {
+			$slider_size = 'slider-wide';
+		}
+		else {
+			$slider_size = 'slider-narrow';
+		}
 		
 		$attitude_featured_post_slider .= '
 		<section class="featured-slider"><div class="slider-cycle">';
@@ -418,7 +428,7 @@ function attitude_featured_post_slider() {
 	
 							$attitude_featured_post_slider .= '<figure><a href="' . get_permalink() . '" title="'.the_title('','',false).'">';
 	
-							$attitude_featured_post_slider .= get_the_post_thumbnail( $post->ID, 'slider', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class'	=> 'pngfix' ) ).'</a></figure>';
+							$attitude_featured_post_slider .= get_the_post_thumbnail( $post->ID, $slider_size, array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class'	=> 'pngfix' ) ).'</a></figure>';
 						}
 						if( $title_attribute != '' || $excerpt !='' ) {
 						$attitude_featured_post_slider .= '
@@ -476,7 +486,7 @@ if ( ! function_exists( 'attitude_header_title' ) ) :
  */
 function attitude_header_title() {
 	if( is_archive() ) {
-		$attitude_header_title = single_cat_title();
+		$attitude_header_title = single_cat_title( '', FALSE );
 	}
 	elseif( is_404() ) {
 		$attitude_header_title = __( 'Page NOT Found', 'attitude' );

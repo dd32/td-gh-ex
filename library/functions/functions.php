@@ -174,7 +174,7 @@ function attitude_body_class( $classes ) {
 			$classes[] = 'no-sidebar-template';
 		}
 	}
-	elseif( 'left-sidebar' ) {
+	elseif( 'left-sidebar' == $layout ) {
       $classes[] = 'left-sidebar-template';
    }
    elseif( 'right-sidebar' == $layout ) {
@@ -334,5 +334,29 @@ function attitude_alter_home( $query ){
 		}
 	}
 }
+
+/*************************************************************************************/
+
+/**
+ * Checking if background color is empty
+ * If the background color is not empty background-image should be set to none 
+ * else background color will be not displayed in the site.
+ */
+function attitude_check_background_color() {
+
+	$background_color = esc_attr(get_background_color());
+			if ( $background_color != "" ) {
+				$attitude_css  = '<!-- '.get_bloginfo('name').' Custom CSS Styles -->' . "\n";
+		      $attitude_css .= '<style type="text/css" media="screen">' . "\n";
+				$attitude_css .= 'body { background-image: none; }' . "\n";
+				$attitude_css .= '</style>' . "\n";
+			}
+	if( isset( $attitude_css ) ) {
+		echo $attitude_css;
+	}
+}
+add_action('wp_head', 'attitude_check_background_color');
+
+/**************************************************************************************/
 
 ?>
