@@ -86,7 +86,6 @@ function attitude_load_files() {
 	require_once( ATTITUDE_ADMIN_DIR . '/attitude-themeoptions-defaults.php' );
 	require_once( ATTITUDE_ADMIN_DIR . '/theme-options.php' );
 	require_once( ATTITUDE_ADMIN_DIR . '/attitude-metaboxes.php' );
-	require_once( ATTITUDE_ADMIN_DIR . '/attitude-custom-post-types.php' );
 	require_once( ATTITUDE_ADMIN_DIR . '/attitude-show-post-id.php' );
 
 	/** Load Shortcodes */

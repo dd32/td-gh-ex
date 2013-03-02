@@ -701,12 +701,22 @@ add_action( 'attitude_after_post_content', 'attitude_next_previous_post_link', 1
  */
 function attitude_next_previous_post_link() {
 	if ( is_single() ) {
+		if( is_attachment() ) {
 		?>
-		<ul class="default-wp-page clearfix">
-			<li class="previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'attitude' ) . '</span> %title' ); ?></li>
-			<li class="next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'attitude' ) . '</span>' ); ?></li>
-		</ul>
+			<ul class="default-wp-page clearfix">
+				<li class="previous"><?php previous_image_link( false, __( '&larr; Previous', 'attitude' ) ); ?></li>
+				<li class="next"><?php next_image_link( false, __( 'Next &rarr;', 'attitude' ) ); ?></li>
+			</ul>
 		<?php
+		}
+		else {
+		?>
+			<ul class="default-wp-page clearfix">
+				<li class="previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'attitude' ) . '</span> %title' ); ?></li>
+				<li class="next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'attitude' ) . '</span>' ); ?></li>
+			</ul>
+		<?php
+		}	
 	}
 }
 
@@ -785,51 +795,6 @@ function attitude_comment( $comment, $args, $depth ) {
 	endswitch; // end comment_type check
 }
 endif;
-
-/****************************************************************************************/
-
-add_action( 'attitude_gallery_four_column_template_content', 'attitude_display_gallery_four_column_content', 10 );
-/**
- * Displays the four column gallery content
- */
-function attitude_display_gallery_four_column_content() { ?>
-	<div id="content">
-		<div class="column clearfix">
-			<?php
-			global $post;
-			// The Query
-			$the_query = new WP_Query( 'post_type=gallery' );
-
-			$i = 1;
-
-			// The Loop
-			while ( $the_query->have_posts() ) :
-				$the_query->the_post();
-				echo '<div class="one-fourth">';
-					if ( has_post_thumbnail() ) {
-						$large = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
-				      echo '<a rel="portfolio" class="gallery-fancybox" href="' .$large[0]. '" title="' .the_title( '', '', false ). '">';
-				      echo get_the_post_thumbnail( $post->ID,'gallery' );
-				      echo '</a>';
-				   }
-				echo '<h3 class="custom-gallery-title"><a href="'. get_permalink() .'" title="'.the_title( '', '', false ).'">'. the_title( '', '', false ).'</a></h3>';
-				echo"</div>";
-				if( ( $i%4 ) == 0 ){
-					echo '<div class="clearfix"></div>';
-				}
-				$i++;
-			endwhile;
-
-			/* Restore original Post Data 
-			* NB: Because we are using new WP_Query we aren't stomping on the 
-			* original $wp_query and it does not need to be reset.
-			*/
-			wp_reset_postdata();
-			?>
-		</div>
-	</div><!-- #content -->
-<?php
-}
 
 /****************************************************************************************/
 

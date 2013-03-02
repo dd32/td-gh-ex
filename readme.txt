@@ -3,8 +3,8 @@ Theme Name: Attitude
 Theme URI: http://themehorse.com/themes/attitude
 Author: Team Horse
 Author URI: http://themehorse.com
-Description: Attitude is a Simple, Clean and Responsive Retina Ready WordPress Theme which adapts automatically to your tablets and mobile devices. Along with the elegant design the theme is easily customizable with numerous theme options. Some of the highlighted options are two site layout( Narrow and Wide ), 5 layouts for every post/page, 5 Page Templates, 4 widget areas, featured slider to highlight your post/page, custom post type to show gallery, 11 social icons, webmaster tools, custom background, custom Header, custom menu, custom favicon, custom CSS, custom webclip icon, custom logo and many more. Also supports some of the popular plugins like Breadcrumb NavXT, WP-PageNavi and Contact Form 7.It is also translation ready.
-Version: 1.1
+Description: Attitude is a Simple, Clean and Responsive Retina Ready WordPress Theme which adapts automatically to your tablets and mobile devices. Along with the elegant design the theme is easily customizable with numerous theme options. Some of the highlighted options are two site layout (Narrow and Wide), 5 layouts for every post/page, 5 Page Templates, 5 widget areas, 4 custom widgets, featured slider to highlight your post/page, 11 social icons, webmaster tools, custom background, custom Header, custom menu, custom favicon, custom CSS, custom webclip icon, custom logo and many more. Also supports some of the popular plugins like Breadcrumb NavXT, WP-PageNavi and Contact Form 7. It is also translation ready.
+Version: 1.1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, light, blue, one-column, two-columns, three-columns, left-sidebar, right-sidebar, flexible-width, custom-menu, custom-background, custom-header, featured-images, full-width-template, theme-options, threaded-comments, translation-ready, sticky-post
@@ -52,10 +52,37 @@ The theme is offered free of charge. If someone asked money for it, someone just
 Mozilla, Chrome, Safari, IE 9,8,7
 
 == How to use featured Post Slider? ==
-To use the slider. 
+Following are the steps on how to use the featured slider.
 * Create Post, Add featured image to the Post.
 * Add all the Post ID that you want to use in the featured slider.
+ (You can now see the Posts' respective ID in the All Posts' table in last column.)
 * Featured Slider will show featured images, Title and excerpt of the respected added post's IDs.
+Note: You can now add Pages ID too. (You can now see the Pages' respective ID in the All Pages' table in last column.)
+
+== Post ID shown in the All Pages/Posts Table==
+This theme shows the post id of the pages/posts in the all pages/posts table in the dashboard.
+This is added to help the users to use those ids in the slider option as mentioned above.
+
+== Custom Logo ==
+This theme supports custom logo for the header part. 
+It is disabled by default and supports user defined images for logo if enabled.
+You can edit this from Appearance->Theme Options->Design Options->Header Options.
+
+== Home Page Slogan Option ==
+This theme supports additional home page slogan option which is displayed either displayed above or below the slider.
+It is disabled by default and supports user defined text if enabled.
+
+NOTE: 
+For more instruction you can visit the theme-instruction page of attitude at http://www.themehorse.com/theme-instruction/attitude/
+If you have still any other questions about the theme you can email at support@themehorse.com for free support.
+
+== Change Log ==
+= 1.1.1 =
+* Previous/Next Navigation added for the Gallery Post Format.
+* Custom Post type for Gallery removed (along with all related files).
+* CSS update to remove the extra margin below the site description.
+* Changed screenshot image.
+* Changed theme description.
 
 = 1.1 =
 * Fixed layout per post/page.

@@ -38,9 +38,7 @@ function attitude_scripts_styles_method() {
 	 * Register Jquery fancybox js and css file for fancybox effect.
 	 */
 	wp_register_script( 'jquery_cycle', ATTITUDE_JS_URL . '/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
-	wp_register_script( 'jquery_fancybox', ATTITUDE_JS_URL . '/jquery.fancybox-1.3.4.pack.js', array('jquery'), '1.3.4', true );
 
-   wp_register_style( 'jquery_fancybox_style', ATTITUDE_CSS_URL . '/jquery.fancybox-1.3.4.css', true );
    wp_register_style( 'google_font_pt_sans', 'http://fonts.googleapis.com/css?family=PT+Sans' );
    wp_register_style( 'google_font_philoshopher', 'http://fonts.googleapis.com/css?family=Philosopher' );
     
@@ -52,11 +50,9 @@ function attitude_scripts_styles_method() {
 	if( ( is_home() || is_front_page() ) && "0" == $options[ 'disable_slider' ] ) {
 		wp_enqueue_script( 'attitude_slider', ATTITUDE_JS_URL . '/attitude-slider-setting.js', array( 'jquery_cycle' ), false, true );
 	}
-	wp_enqueue_script( 'attitude_fancybox_setup', ATTITUDE_JS_URL . '/attitude-custom-fancybox-script.js', array('jquery_fancybox'), false , true);
    wp_enqueue_script( 'tinynav', ATTITUDE_JS_URL . '/tinynav.js' );
    wp_enqueue_script( 'backtotop', ATTITUDE_JS_URL. '/backtotop.js' );
 
-   wp_enqueue_style( 'jquery_fancybox_style' );
    wp_enqueue_style( 'google_font_pt_sans' );
    wp_enqueue_style( 'google_font_philoshopher' );
 
