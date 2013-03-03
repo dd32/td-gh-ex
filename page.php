@@ -17,6 +17,7 @@
 	<?php comments_popup_link( __( 'Leave a comment', 'baris' ), __( '1 comment', 'baris' ), __( '% comments', 'baris' ) ); ?>
 	<?php edit_post_link( __( 'Edit &rarr;', 'baris' ), '<span class="separator">|</span>', '' ); ?>
 	</p>
+	<?php comments_template( '', true ); ?>
 </article>
 </div>
 <?php endwhile; ?>	

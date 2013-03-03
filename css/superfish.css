@@ -4,6 +4,7 @@
 	margin:			0;
 	padding:		0;
 	list-style:		none;
+	
 }
 .sf-menu {
 	line-height:	1.0;
@@ -12,6 +13,7 @@
 	position:		absolute;
 	top:			-999em;
 	width:			8em; /* left offset of submenus need to match (see below) */
+	
 }
 .sf-menu ul li {
 	width:			100%;
@@ -53,14 +55,29 @@ ul.sf-menu li li li.sfHover ul {
 	top:			0;
 }
 
+/* Centre the Menu */
+.sf-menu {
+    float: left;
+    position: relative;
+    left: 50%;
+}
+.sf-menu ul li {
+    left: 0%;
+}
+.sf-menu li {
+    left: -50%;
+}
+
 /*** DEMO SKIN ***/
 .sf-menu {
 	float:			left;
 	margin-bottom:	1em;
 }
+
 .sf-menu li a {
 	padding: 		1em 2em;
 	text-decoration:none;
+	
 }
 .sf-menu a, .sf-menu a:visited  { /* visited pseudo selector so IE6 applies text colour*/
 	
@@ -137,3 +154,4 @@ li.sfHover > a > .sf-sub-indicator {
 .sf-shadow ul.sf-shadow-off {
 	background: transparent;
 }
+
