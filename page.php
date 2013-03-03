@@ -6,11 +6,7 @@
 
 		<?php get_template_part( 'content', 'page' ); ?>
 
-		<?php
-		if ( comments_open() || get_comments_number() != '0' ) { // load up the comment template if comments are open or we have at least 1 comment
-			comments_template( '', true );
-		}
-		?>
+		<?php comments_template( '', true ); ?>
 
 	<?php endwhile; // end of the loop ?>
 

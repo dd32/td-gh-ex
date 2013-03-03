@@ -2,8 +2,8 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 	<header class="entry-header page-header">
 		<?php
-		if( is_sticky() ){ // add '(sticky)' to sticky post
-			$sticky = ' '.__( '(sticky)', 'activetab' );
+		if( is_sticky() ){ // add 'sticky' label to sticky post
+			$sticky = ' <span class="label label-info">'.__( 'sticky', 'activetab' ).'</span>';
 		}else{
 			$sticky = '';
 		}

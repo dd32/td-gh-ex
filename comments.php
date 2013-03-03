@@ -5,8 +5,8 @@
 
 	if ( post_password_required() ) {
 ?>
-		<div class="alert-message info">
-			<p class="nocomments"><?php _e( 'This post is password protected. Enter the password to view comments.', 'activetab' ); ?></p>
+		<div class="alert alert-message info">
+			<?php _e( 'This post is password protected. Enter the password to view comments.', 'activetab' ); ?>
 		</div>
 <?php
 		return;
@@ -65,21 +65,7 @@
 	</nav> <!-- /.site-comments-navigation -->
 	<?php endif; ?>
 
-
-
-	<?php else : // this is displayed if there are no comments so far ?>
-
-	<?php if ( comments_open() ) : ?>
-    	<!-- if comments are open, but there are no comments. -->
-
-	<?php else : // comments are closed ?>
-
-			<!-- if comments are closed. -->
-			<p class="alert-message info"><?php _e( 'Comments are closed.', 'activetab' ); ?></p>
-
-	<?php endif; ?>
-
-<?php endif; ?>
+<?php endif; // end of if( have_comments() ) ?>
 
 
 <?php if ( comments_open() ) : ?>
@@ -107,11 +93,11 @@
 			$aria_req = ( $req ? " required='required'" : '' );
 			$comment_form_args = array(
 				'fields' => array(
-					'author' => '<div class="control-group comment-form-author"> <label for="author">'.__( 'name', 'activetab' ).'</label> <div class="input-prepend"><span class="add-on"><i class="icon-user"></i></span><input id="author" class="span3" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" ' . $aria_req . ( $req ? ' required ' : '' ) . ' /></div></div>',
-					'email'  => '<div class="control-group comment-form-email"> <label for="email">'.__( 'email', 'activetab' ).'</label> <div class="input-prepend"><span class="add-on"><i class="icon-envelope"></i></span><input id="email" class="span3" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) . '" ' . $aria_req . ( $req ? ' required ' : '' ) . ' /></div> <span class="help-inline"><span class="muted smaller-text">'.__( 'email will not be published', 'activetab' ).'</span></span> </div>',
-					'url'    => '<div class="control-group comment-form-url"> <label for="url">'.__( 'website', 'activetab' ).'</label> <div class="input-prepend"><span class="add-on"><i class="icon-globe"></i></span><input id="url" class="span3" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" /></div> <span class="help-inline"><span class="muted smaller-text">'.__( 'example: http://google.com', 'activetab' ).'</span></span> </div>',
+					'author' => '<div class="control-group comment-form-author"> <label for="author"><strong>'.__( 'name', 'activetab' ).'</strong></label> <div class="input-prepend"><span class="add-on"><i class="icon-user"></i></span><input id="author" class="span3" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" ' . $aria_req . ( $req ? ' required ' : '' ) . ' /></div></div>',
+					'email'  => '<div class="control-group comment-form-email"> <label for="email"><strong>'.__( 'email', 'activetab' ).'</strong></label> <div class="input-prepend"><span class="add-on"><i class="icon-envelope"></i></span><input id="email" class="span3" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) . '" ' . $aria_req . ( $req ? ' required ' : '' ) . ' /></div> <span class="help-inline"><span class="muted smaller-text">'.__( 'email will not be published', 'activetab' ).'</span></span> </div>',
+					'url'    => '<div class="control-group comment-form-url"> <label for="url"><strong>'.__( 'website', 'activetab' ).'</strong></label> <div class="input-prepend"><span class="add-on"><i class="icon-globe"></i></span><input id="url" class="span3" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" /></div> <span class="help-inline"><span class="muted smaller-text">'.__( 'example: http://google.com', 'activetab' ).'</span></span> </div>',
 				),
-				'comment_field'        => '<div class="control-group comment-form-comment"> <label for="comment">'.__( 'comment', 'activetab' ).'</label> <div class="input-prepend"><span class="add-on"><i class="icon-comment"></i></span><textarea id="comment" class="span4" name="comment" cols="45" rows="8" required="required"></textarea></div></div>',
+				'comment_field'        => '<div class="control-group comment-form-comment"> <label for="comment"><strong>'.__( 'comment', 'activetab' ).'</strong></label> <div class="input-prepend"><span class="add-on"><i class="icon-comment"></i></span><textarea id="comment" class="span4" name="comment" cols="45" rows="8" required="required"></textarea></div></div>',
 				'must_log_in'          => '<div class="control-group must-log-in"><span class="help-block muted smaller-text">' . sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'activetab' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</span></div>',
 				'logged_in_as'         => '<div class="control-group logged-in-as"><span class="help-block muted smaller-text">' . sprintf( __( 'You logged in as <a href="%1$s" title="account profile">%2$s</a> | <a href="%3$s" title="log out of this account">log out</a>', 'activetab' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</span></div>',
 				'comment_notes_before' => '',
@@ -130,6 +116,10 @@
 		<?php endif; // if registration required and not logged in ?>
 	</section> <!-- /#respond -->
 
-<?php endif; ?>
+<?php else: ?>
+
+	<div class="alert alert-message info"><?php _e( 'Comments are closed.', 'activetab' ); ?></div>
+
+<?php endif; // end of if( comments_open() ) ?>
 
 </div> <!-- /#comments /.comments-area -->

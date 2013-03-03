@@ -5,7 +5,7 @@ if ( ! isset( $content_width ) ){
 }
 
 
-$activetab_version = '0.2.3';
+$activetab_version = '0.2.4';
 
 
 if ( ! function_exists( 'activetab_enqueue_scripts_and_styles' ) ) :
@@ -39,7 +39,7 @@ if ( ! function_exists( 'activetab_setup' ) ) :
 
 		require( get_template_directory() . '/inc/shortcodes.php' ); // register shortcodes
 	
-		load_theme_textdomain( 'activetab', get_template_directory_uri() . '/languages' ); // i18n
+		load_theme_textdomain( 'activetab', get_template_directory() . '/languages' ); // make theme available for translation
 
 		add_editor_style(); // visual editor style match the theme style (add editor-style.css)
 
@@ -230,10 +230,16 @@ if ( ! function_exists( 'activetab_comments' ) ) :
 									$comment_avatar_url_after = '</span>';
 								}
 
+								global $post;
+								if( $comment->user_id === $post->post_author ) {
+									$post_author_label = ' <span class="label label-info">'.__( 'Post author', 'activetab' ).'</span>';
+								} else {
+									$post_author_label = '';
+								}
 								echo '<div class="comment-avatar">'.$comment_avatar_url_before.get_avatar( $comment, $avatar_size ).$comment_avatar_url_after.'</div>';
 
 								echo '<div class="comment-meta">';
-								echo '<span class="comment-meta-item comment-meta-item-author fn"><i class="icon-user" title="'.__( 'author', 'activetab' ).'"></i> '.get_comment_author_link().'</span> ';
+								echo '<span class="comment-meta-item comment-meta-item-author fn"><i class="icon-user" title="'.__( 'author', 'activetab' ).'"></i> '.get_comment_author_link().$post_author_label.'</span> ';
 								echo '<span class="comment-meta-item comment-meta-item-date"><i class="icon-calendar" title="'.__( 'published', 'activetab' ).'"></i> <a href="'.esc_url( get_comment_link( $comment->comment_ID ) ).'"><time pubdate datetime="'.get_comment_time( 'c' ).'" title="'.get_comment_time().'">'.get_comment_date().'</time></a></span>';
 
 								edit_comment_link( __( 'edit', 'activetab' ), '<span class="edit-link comment-edit-link"><i class="icon-pencil"></i> ', '</span>' );
@@ -264,7 +270,7 @@ endif; // activetab_comments
 
 if ( ! function_exists( 'activetab_post_date' ) ) :
 	function activetab_post_date() {
-		$post_date = '<span class="entry-meta-item entry-meta-date"><i class="icon-calendar" title="'.__( 'published', 'activetab' ).'"></i> '.'<time class="entry-date" datetime="'.get_the_date( 'c' ).'" pubdate title="'.get_the_time().'">'.get_the_date().'</time></span>';
+		$post_date = '<span class="entry-meta-item entry-meta-date"><i class="icon-calendar" title="'.__( 'published', 'activetab' ).'"></i> '.'<a href="'.get_permalink().'" title="'.get_the_time().'" rel="bookmark"><time class="entry-date" datetime="'.get_the_date( 'c' ).'" pubdate title="'.get_the_time().'">'.get_the_date().'</time></a></span>'."\n";
 		return $post_date;
 	}
 endif; // activetab_post_date
@@ -275,7 +281,7 @@ if ( ! function_exists( 'activetab_post_author' ) ) :
 		global $authordata;
 		if ( !is_object( $authordata ) )
 			return false;
-		$post_author = '<span class="entry-meta-item entry-meta-author"><i class="icon-user" title="'.__( 'author', 'activetab' ).'"></i> <a href="'.get_author_posts_url( $authordata->ID, $authordata->user_nicename ).'" title="'.esc_attr( sprintf( __( 'posts by %s', 'activetab' ), get_the_author() ) ).'" rel="author">'.get_the_author().'</a></span>';
+		$post_author = '<span class="entry-meta-item entry-meta-author"><i class="icon-user" title="'.__( 'author', 'activetab' ).'"></i> <a href="'.get_author_posts_url( $authordata->ID, $authordata->user_nicename ).'" title="'.esc_attr( sprintf( __( 'posts by %s', 'activetab' ), get_the_author() ) ).'" rel="author">'.get_the_author().'</a></span>'."\n";
 		return $post_author;
 	}
 endif; // activetab_post_author
@@ -285,7 +291,7 @@ if ( ! function_exists( 'activetab_comments_count' ) ) :
 	function activetab_comments_count() {
 		$post_comments_count = '';
 		if( get_comments_number() != '0' ) {
-			$post_comments_count = '<span class="entry-meta-item entry-meta-comments-count"><i class="icon-comment" title="'.__( 'comments', 'activetab' ).'"></i> <a href="'.get_permalink() . '#comments" title="'.__( 'comments', 'activetab' ).'">'.get_comments_number().'</a></span>';
+			$post_comments_count = '<span class="entry-meta-item entry-meta-comments-count"><i class="icon-comment" title="'.__( 'comments', 'activetab' ).'"></i> <a href="'.get_permalink() . '#comments" title="'.__( 'comments', 'activetab' ).'">'.get_comments_number().'</a></span>'."\n";
 		}
 		return $post_comments_count;
 	}
@@ -296,7 +302,7 @@ if ( ! function_exists( 'activetab_post_categories' ) ) :
 	function activetab_post_categories() { // list of categories
 		$post_categories = get_the_category_list( ', ' );
 		if( !empty( $post_categories ) ){
-			return '<span class="entry-meta-item entry-meta-categories"><i class="icon-folder-open" title="'.__( 'categories', 'activetab' ).'"></i> '.$post_categories.'</span>';
+			return '<span class="entry-meta-item entry-meta-categories"><i class="icon-folder-open" title="'.__( 'categories', 'activetab' ).'"></i> '.$post_categories.'</span>'."\n";
 		}else{
 			return ''; // no categories
 		}
@@ -308,7 +314,7 @@ if ( ! function_exists( 'activetab_post_tags' ) ) :
 	function activetab_post_tags() { // list of tags
 		$post_tags = get_the_tag_list( '', ', ', '' );
 		if( !empty( $post_tags ) ){
-			return '<span class="entry-meta-item entry-meta-tags"><i class="icon-tag" title="'.__( 'tags', 'activetab' ).'"></i> '.$post_tags.'</span>';
+			return '<span class="entry-meta-item entry-meta-tags"><i class="icon-tag" title="'.__( 'tags', 'activetab' ).'"></i> '.$post_tags.'</span>'."\n";
 		}else{
 			return ''; // no tags
 		}
@@ -318,17 +324,17 @@ endif; // activetab_post_tags
 
 if ( ! function_exists( 'activetab_post_meta' ) ) :
 	function activetab_post_meta() { // post meta
-		$post_meta = '<div class="entry-meta-row">' . activetab_post_date() . activetab_post_author() . activetab_comments_count() . activetab_post_categories() . '</div>';
+		$post_meta = '<div class="entry-meta-row">'."\n" . activetab_post_date() . activetab_post_author() . activetab_comments_count() . activetab_post_categories() . '</div>'."\n";
 		$post_tags = activetab_post_tags();
 		if( !empty( $post_tags ) && is_single() ){
-			$post_meta .= '<div class="entry-meta-row">' . $post_tags . '</div>';
+			$post_meta .= '<div class="entry-meta-row">'."\n" . $post_tags . '</div>'."\n";
 		}
-		return "\n".'<div class="entry-meta">'."\n".$post_meta."\n".'</div> <!-- /.entry-meta -->'."\n";
+		return "\n".'<div class="entry-meta">'."\n".$post_meta.'</div> <!-- /.entry-meta -->'."\n";
 	}
 endif; // activetab_post_meta
 
 
-if ( ! function_exists( 'activetab_nav' ) ):
+if ( ! function_exists( 'activetab_nav' ) ) :
 	function activetab_nav( $class='top' ) { // show next/prev navigation links when needed
 		global $wp_query;
 		$nav = '';
@@ -348,7 +354,7 @@ if ( ! function_exists( 'activetab_nav' ) ):
 endif; // activetab_nav
 
 
-if ( ! function_exists( 'activetab_excerpt_more' ) ):
+if ( ! function_exists( 'activetab_excerpt_more' ) ) :
 	function activetab_excerpt_more( $more ) { // "more-link" is bad for seo and for usability - http://web-profile.com.ua/web/web-principles/more-link/
 		return '...';
 	}
@@ -356,7 +362,7 @@ if ( ! function_exists( 'activetab_excerpt_more' ) ):
 endif; // activetab_excerpt_more
 
 
-if ( ! function_exists( 'activetab_is_homepage' ) ):
+if ( ! function_exists( 'activetab_is_homepage' ) ) :
 	function activetab_is_homepage(){ // does not used, simple way was chosen
 		// if( is_home() || is_front_page() ){} // simple way
 		$show_on_front = get_option('show_on_front'); // page or posts
@@ -385,7 +391,7 @@ add_filter('widget_text', 'do_shortcode'); // enable shortcodes in widgets
 
 
 /****************** password protected post form *****/
-if ( ! function_exists( 'activetab_custom_password_form' ) ):
+if ( ! function_exists( 'activetab_custom_password_form' ) ) :
 	add_filter( 'the_password_form', 'activetab_custom_password_form' );
 	function activetab_custom_password_form() {
 		global $post;
@@ -400,7 +406,7 @@ if ( ! function_exists( 'activetab_custom_password_form' ) ):
 endif; // activetab_custom_password_form
 
 
-if ( ! function_exists( 'activetab_remove_more_jump_link' ) ):
+if ( ! function_exists( 'activetab_remove_more_jump_link' ) ) :
 	add_filter('the_content_more_link', 'activetab_remove_more_jump_link');
 	function activetab_remove_more_jump_link($link) { // disable jump in 'read more' link
 		$offset = strpos($link, '#more-');
@@ -415,7 +421,7 @@ if ( ! function_exists( 'activetab_remove_more_jump_link' ) ):
 endif; // activetab_remove_more_jump_link
 
 
-if ( ! function_exists( 'activetab_remove_thumbnail_dimensions' ) ):
+if ( ! function_exists( 'activetab_remove_thumbnail_dimensions' ) ) :
 	add_filter( 'post_thumbnail_html', 'activetab_remove_thumbnail_dimensions', 10 );
 	add_filter( 'image_send_to_editor', 'activetab_remove_thumbnail_dimensions', 10 );
 	function activetab_remove_thumbnail_dimensions( $html ) { // Remove height/width attributes on images so they can be responsive

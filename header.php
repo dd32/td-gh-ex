@@ -5,12 +5,13 @@
 <meta name="viewport" content="width=device-width" />
 
 
-<title><?php wp_title('|', true, 'right'); ?></title>
+<title><?php wp_title( '|', true, 'right' ); ?></title>
 
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
+<?php // loads HTML5 JavaScript file to add support for HTML5 elements in older IE versions. ?>
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->

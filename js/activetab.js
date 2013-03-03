@@ -14,4 +14,6 @@ jQuery(function($){ // wait while jQuery loads and document-ready
 
 	$('input[type=submit], input[type=image], input[type=button], input[type=reset], button').addClass('btn');
 
+	$('.protected-post-form').addClass('form-inline');
+
 });
