@@ -15,7 +15,12 @@
 				<?php if ( ! dynamic_sidebar( 'footer' ) ) : // footer widgetized area ?>
 
 					<?php
-						echo do_shortcode( '[c] [year] [homelink]' ); // show by default if there are no footer widgets
+						$description = '';
+						if ( get_bloginfo( 'description' ) ){
+							$description .= ' | '.esc_attr( get_bloginfo( 'description', 'display' ) );
+						}
+						echo '&copy; '.date( 'Y' ).' ';
+						echo '<a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).$description.'" rel="home">'.get_bloginfo( 'name' ).'</a>';
 					?>
 
 				<?php endif; // end of the footer widgetized area ?>
@@ -25,10 +30,10 @@
 
 		<div class="span4">
 			<div class="site-footer-right text-right">
-			<?php if( is_home() || is_front_page() ): ?>
+			<?php if( is_home() || is_front_page() ) : ?>
 				<?php /*
-				please do not remove this block with links, it will be shown only on homepage
-				it is the best way to support the free open source development
+				it is completely optional, but if you like the theme I would appreciate it if you keep the credit link at the bottom
+				it will be shown only on the homepage
                 */ ?>
 				<?php _e( 'powered by', 'activetab' ); ?>
 				<a href="http://wordpress.org/" title="WordPress CMS" rel="generator"><?php _e( 'WordPress', 'activetab' ); ?></a>

@@ -5,7 +5,7 @@ if ( ! isset( $content_width ) ){
 }
 
 
-$activetab_version = '0.2.4';
+$activetab_version = '0.2.5';
 
 
 if ( ! function_exists( 'activetab_enqueue_scripts_and_styles' ) ) :
@@ -37,13 +37,9 @@ if ( ! function_exists( 'activetab_setup' ) ) :
 
 		add_filter( 'widget_text', 'do_shortcode' ); // execute shortcodes in sidebar widgets
 
-		require( get_template_directory() . '/inc/shortcodes.php' ); // register shortcodes
-	
 		load_theme_textdomain( 'activetab', get_template_directory() . '/languages' ); // make theme available for translation
 
 		add_editor_style(); // visual editor style match the theme style (add editor-style.css)
-
-		//require( get_stylesheet_directory_uri() . '/inc/theme-options.php' ); // options for future
 
 		add_theme_support( 'automatic-feed-links' ); // add RSS feed links to <head> for posts and comments
 
@@ -75,53 +71,42 @@ if ( ! function_exists( 'activetab_setup' ) ) :
 
 		add_theme_support( 'custom-header', $custom_header_args ); // custom header See http://codex.wordpress.org/Custom_Headers
 
-		// Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI.
+		// default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI
 		register_default_headers( array(
-			'borabora' => array(
-				'url' => '%s/img/headers/borabora.jpg',
-				'thumbnail_url' => '%s/img/headers/borabora-thumbnail.jpg',
-				'description' => __( 'Bora Bora', 'activetab' )
+			'field' => array(
+				'url' => '%s/img/headers/field.jpg',
+				'thumbnail_url' => '%s/img/headers/field-thumbnail.jpg',
+				'description' => __( 'Field', 'activetab' )
 			),
-			'tropicalresort' => array(
-				'url' => '%s/img/headers/tropicalresort.jpg',
-				'thumbnail_url' => '%s/img/headers/tropicalresort-thumbnail.jpg',
-				'description' => __( 'Tropical resort', 'activetab' )
+			'beach' => array(
+				'url' => '%s/img/headers/beach.jpg',
+				'thumbnail_url' => '%s/img/headers/beach-thumbnail.jpg',
+				'description' => __( 'Beach', 'activetab' )
 			),
-			'coloredfeathers' => array(
-				'url' => '%s/img/headers/coloredfeathers.jpg',
-				'thumbnail_url' => '%s/img/headers/coloredfeathers-thumbnail.jpg',
-				'description' => __( 'Colored feathers', 'activetab' )
-			),
-			'starrynight' => array(
-				'url' => '%s/img/headers/starrynight.jpg',
-				'thumbnail_url' => '%s/img/headers/starrynight-thumbnail.jpg',
-				'description' => __( 'Starry Night', 'activetab' )
-			),
+			'sun' => array(
+				'url' => '%s/img/headers/sun.jpg',
+				'thumbnail_url' => '%s/img/headers/sun-thumbnail.jpg',
+				'description' => __( 'Sun', 'activetab' )
+			)
 		) );
 
 
-
 		/* ========== thumbnail size options ========== */
-
-
 		//add_image_size( 'thumb-400', 400, 999, false );
 		//add_image_size( 'thumb-200', 200, 999, false );
 		//add_image_size( 'thumb-100', 100, 999, false );
 		/*
-		to add more sizes, simply copy a line from above
-		and change the dimensions & name. As long as you
-		upload a "featured image" as large as the biggest
-		set width or height, all the other sizes will be
-		auto-cropped.
-
+		to add more sizes, simply copy a line from above and change the dimensions & name.
+		As long as you upload a "featured image" as large as the biggest
+		set width or height, all the other sizes will be auto-cropped.
 		<?php the_post_thumbnail( 'thumb-200' ); ?> - shows the 200x200 sized image
 		*/
 
 
-		add_action( 'admin_menu', 'cozy_add_customize_to_admin_menu' );
-		function cozy_add_customize_to_admin_menu() { // add the 'Customize' link to the admin menu
+		function activetab_add_customize_to_admin_menu() { // add the 'Customize' link to the admin menu
 			add_theme_page( 'Customize', 'Customize', 'edit_theme_options', 'customize.php' );
 		}
+		add_action( 'admin_menu', 'activetab_add_customize_to_admin_menu' );
 
 	}
 	add_action( 'after_setup_theme', 'activetab_setup' );
@@ -143,7 +128,7 @@ if ( ! function_exists( 'activetab_register_widgets' ) ) :
 		register_sidebar( array(
 			'name' => __( 'Footer', 'activetab' ),
 			'id' => 'footer',
-			'description' => 'You can use shortcodes: [c] [year] [homelink]',
+			//'description' => 'description',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h4 class="widget-title">',
@@ -151,15 +136,6 @@ if ( ! function_exists( 'activetab_register_widgets' ) ) :
 		) );
 	}
 	add_action( 'widgets_init', 'activetab_register_widgets' );
-endif;
-
-
-if ( ! function_exists( 'activetab_favicon' ) ) :
-	function activetab_favicon() {
-		echo "\n".'<link rel="shortcut icon" type="image/x-icon" href="'.get_template_directory_uri().'/img/favicon.ico" />'."\n";
-	}
-	add_action( 'wp_head', 'activetab_favicon' ); // add favicon to frontend
-	add_action( 'admin_head', 'activetab_favicon' ); // add favicon to backend
 endif;
 
 
@@ -383,49 +359,11 @@ if ( ! function_exists( 'activetab_is_homepage' ) ) :
 endif; // activetab_is_homepage
 
 
-add_filter('widget_text', 'do_shortcode'); // enable shortcodes in widgets
-
-
-// ===== filtered code up here ============================================================
-
-
-
-/****************** password protected post form *****/
-if ( ! function_exists( 'activetab_custom_password_form' ) ) :
-	add_filter( 'the_password_form', 'activetab_custom_password_form' );
-	function activetab_custom_password_form() {
-		global $post;
-		$label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
-		$o = '<div class="clearfix"><form class="protected-post-form" action="' . get_option('siteurl') . '/wp-pass.php" method="post">
-		' . __( "<p>This post is password protected. To view it please enter your password below:</p>", 'activetab' ) . '
-		<label for="' . $label . '">' . __( 'Password:', 'activetab' ) . ' </label><div class="input"><input name="post_password" id="' . $label . '" type="password" size="20" /><input type="submit" name="Submit" class="btn primary" value="' . esc_attr__( "Submit" ) . '" /></div>
-		</form></div>
-		';
-		return $o;
-	}
-endif; // activetab_custom_password_form
-
-
-if ( ! function_exists( 'activetab_remove_more_jump_link' ) ) :
-	add_filter('the_content_more_link', 'activetab_remove_more_jump_link');
-	function activetab_remove_more_jump_link($link) { // disable jump in 'read more' link
-		$offset = strpos($link, '#more-');
-		if ($offset) {
-			$end = strpos($link, '"',$offset);
-		}
-		if ($end) {
-			$link = substr_replace($link, '', $offset, $end-$offset);
-		}
-		return $link;
-	}
-endif; // activetab_remove_more_jump_link
-
-
 if ( ! function_exists( 'activetab_remove_thumbnail_dimensions' ) ) :
-	add_filter( 'post_thumbnail_html', 'activetab_remove_thumbnail_dimensions', 10 );
-	add_filter( 'image_send_to_editor', 'activetab_remove_thumbnail_dimensions', 10 );
 	function activetab_remove_thumbnail_dimensions( $html ) { // Remove height/width attributes on images so they can be responsive
 		$html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
 		return $html;
 	}
+	add_filter( 'post_thumbnail_html', 'activetab_remove_thumbnail_dimensions', 10 );
+	add_filter( 'image_send_to_editor', 'activetab_remove_thumbnail_dimensions', 10 );
 endif; // activetab_remove_thumbnail_dimensions
