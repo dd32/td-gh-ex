@@ -32,6 +32,8 @@
 <div id="centered">
 <div id="margin">
 
+<?php if (get_option('banner_image_setting') != '') { echo '<img class="logo" src="' . get_option('banner_image_setting') . '" />' . "\n\n";} ?>
+
 <?php $semperfi_404 = false;/* A 404 Error check */?> 
 <?php if (is_search()) : ?>
 
