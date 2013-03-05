@@ -20,7 +20,7 @@
 <!-- The Website Title and Slogan -->
 <h1 id="fittext3"><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a><i><?php bloginfo('description');?></i></h1>
 <!-- End Website Title and Slogan -->
-    
+
 <?php if ( has_nav_menu( 'bar' ) ) :  wp_nav_menu( array( 'theme_location' => 'bar', 'depth' => 2 ) ); else : ?>
 <?php wp_list_pages( 'title_li=&depth=2' ); ?>
 <?php endif; ?>
@@ -44,8 +44,8 @@
     </li>
 <?php while (have_posts()) : the_post(); ?>
 
-	<li id="post-<?php the_ID(); ?>" <?php post_class(); ?>><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
-		<h2><span><?php the_time('M') ?><br/><?php the_time('jS') ?></span><?php if ( get_the_title() ) { the_title();} else { echo '(No Title)';} ?></h2>
+	<li id="post-<?php the_ID(); ?>" <?php post_class(); ?>><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+		<h2><span <?php the_time('c') ?>><?php the_time('M') ?><br/><?php the_time('jS') ?></span><?php if ( get_the_title() ) { the_title();} else { echo '(No Title)';} ?></h2>
         <?php if ( has_post_thumbnail()) : ?><div class="under"><?php the_post_thumbnail('page-thumbnail'); ?><div class="over"></div></div><?php endif; ?>
         <?php the_excerpt(); ?>
 	</a></li>
@@ -68,7 +68,7 @@
 <ul id="paged">
 
 <?php while (have_posts()) : the_post(); ?>
-	<li id="post-<?php the_ID(); ?>" <?php post_class(); ?>><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
+	<li id="post-<?php the_ID(); ?>" <?php post_class(); ?>><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
 		<h2><span><?php the_time('M') ?><br/><?php the_time('jS') ?></span><?php if ( get_the_title() ) { the_title();} else { echo '(No Title)';} ?></h2>
         <?php if ( has_post_thumbnail()) : ?><div class="under"><?php the_post_thumbnail('page-thumbnail'); ?><div class="over"></div></div><?php endif; ?>
         <?php the_excerpt(); ?>
