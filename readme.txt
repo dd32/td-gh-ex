@@ -5,7 +5,7 @@ Theme URI: http://www.sampression.com/sampression-lite/
 Author: Sampression
 Author URI: http://www.sampression.com
 
-Version: 1.3
+Version: 1.3.1
 License: GNU General Public License v2
 License URI: license.txt
 */
@@ -76,3 +76,33 @@ Version 1.3
  = Supports WP-Pagenavi plugin.
  = Supports dropdown menu.
  = Theme Options layout enchance.
+ 
+ 
+Version 1.3.1
+ == Fixed CSS related bugs, especially on the IE browsers < version 9.x
+= Fixed "Featured Image Height" issue
+= Fixed "Featured Image Alignment" related issues on various view-port sizes
+
+= Fixed "Notice" issue: Notice doesn't appear when there are no sticky posts
+= Fixed "Tags Alignment" issue: Before the fix, tags didn't align when there were many tags and categories
+= Fixed “Image Alignment” issue: Image inserted from editor are automatically aligned
+= Fixed "Default About Me Widget" issue: Default "About Me Widget" on the bottom of the page can now be removed 
+= Fixed "Responsive Design" related issues
+
+= Fixed "Tick Mark" issue: The "Tick Mark" icon that appeared while hovering over categories filter in the primary navigation bar doesn't appear anymore when unchecked
+= Added: "Filter By" bar shows all categories by default along with a sliding animation
+= Added: Sneak-peek of all existing categories
+= Fixed "Filter By" bar click issue
+= The page now scrolls to the top when category is changed
+
+= Different image thumbnail sizes have been used for featured image on homepage and interior pages
+= Improved multiple level menus for large screen sizes and added support for small screen sizes
+= Changed previous social media icons (Facebook, Twitter, Google Plus) and added YouTube as an option
+= The design of "Sticky Post" has been made more prominent
+= A slightly darker color has been used for links
+= Meta links now redirect to their respective archive pages
+= Users can now use any name for apple touch icons, favicons and logos
+= Users now have the option of not using the default logos and favicons
+ 
+ == Child Theme Support ===
+ Sampresson Lite supports child themes. Please use child themes for customization of "Sampression Lite". For further reading: http://codex.wordpress.org/Child_Themes.

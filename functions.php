@@ -11,3 +11,20 @@ if ( !defined('ABSPATH')) exit;
  */
 require ( get_template_directory() . '/includes/functions.php' );
 require ( get_template_directory() . '/includes/theme-options/theme-options.php' );
+
+/* function to echo number of class  depending on number of social media link set */
+function getnoofclass(){
+		$noofclass=0;
+		$class = 'socialzero';
+		 if( get_option( 'opt_get_facebook' ) !=''){ $noofclass++; }
+		 if( get_option( 'opt_get_twitter' ) !=''){ $noofclass++; }
+		 if( get_option( 'opt_get_gplus' ) !=''){ $noofclass++; }
+		 if( get_option( 'opt_get_youtube' ) !=''){ $noofclass++; }
+		 switch($noofclass){
+			case 1: $class='socialone'; break;
+			case 2: $class='socialtwo'; break;
+			case 3: $class='socialthree'; break;
+			case 4: $class='socialfour'; break;
+		 }
+		return $class;
+	  }

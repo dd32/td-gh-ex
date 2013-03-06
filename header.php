@@ -62,7 +62,7 @@
   <div class="container">
     <div class="columns nine">
       <div id="logo-wrapper">
-      <a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" id="logo-area">
+      <a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( ucwords(get_bloginfo( 'name', 'display' )) ); ?>" rel="home" id="logo-area">
       	<?php
 		if(!get_option('opt_sam_use_logo') || get_option('opt_sam_use_logo') == 'no') {
 		?>
@@ -88,7 +88,7 @@
 			wp_nav_menu( array (
 				'theme_location'    => 'top-menu',
 				'container'         => '',
-				'menu_class'           => 'top-menu clearfix',
+				'menu_class'        => 'top-menu clearfix',
 				'depth'             => 0, // set to 1 to disable dropdowns
 				'fallback_cb'       => false
 			));
@@ -101,8 +101,26 @@
 			<?php
 		} ?>
       </nav>
+	  <div id="top-nav-mobile">
+		<div class="nav-label">Menu:</div>
+		<?php if ( has_nav_menu('top-menu') ) { 
+		
+		}else{
+			$args = array(
+				'depth'            => 0,
+				'child_of'         => 0,
+				'selected'         => 0,
+				'echo'             => 1,
+				'name'             => 'page_id'); 
+				
+			 wp_dropdown_pages( $args ); 
+		}?>
+			
+			 
+	  
+	  </div> 
       <!-- #top-nav -->
-      <div id="interaction-sec">
+      <div id="interaction-sec" class="clearfix <?php echo getnoofclass(); ?>">
         <?php get_search_form(); ?>
      
        <ul class="sm-top">
@@ -111,13 +129,17 @@
 	    if( get_option( 'opt_get_facebook' ) !=''){ ?>
           <li class="sm-top-fb"><a href="http://www.facebook.com/<?php echo get_option( 'opt_get_facebook' ); ?>" target="_blank">Facebook</a></li>
        <?php }
-	   if( get_option( 'opt_get_twitter' ) ) {
+	   if( get_option( 'opt_get_twitter' ) !='') {
 	    ?>
           <li class="sm-top-tw"><a href="http://www.twitter.com/<?php echo get_option( 'opt_get_twitter' ); ?>" target="_blank">Twitter</a></li>
          <?php }
-	   if( get_option( 'opt_get_gplus' ) ) {
+	   if( get_option( 'opt_get_gplus' ) !='') {
 	    ?>
           <li class="sm-top-gplus"><a href="<?php echo get_option( 'opt_get_gplus' ); ?>" target="_blank">Google Plus</a></li>
+          <?php } 
+		if( get_option( 'opt_get_youtube' ) !='' ) {
+	    ?>
+          <li class="sm-top-youtube"><a href="http://www.youtube.com/user/<?php echo get_option( 'opt_get_youtube' ); ?>" target="_blank">YouTube</a></li>
           <?php } ?>
        </ul>
         <!-- .sm-top --> 
@@ -129,6 +151,7 @@
 <!-- #header -->
 <!-- Filter the Post by Category: We are using Isotop (http://isotope.metafizzy.co/) for Filtering: An exquisite jQuery plugin for magical layouts -->
 <?php if(is_home()): ?>
+<span id="primary-nav-scroll"></span>
 <nav id="primary-nav">
   <div class="container">
   <a href="#" id="btn-nav-opt">show/hide</a>

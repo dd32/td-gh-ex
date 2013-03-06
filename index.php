@@ -30,7 +30,7 @@ get_header(); ?>
 		'ignore_sticky_posts' => 1
 	);
 	query_posts( $args );
-	if ( $sticky[0] ) {
+	if ( count($sticky)>0 ) {
 	while (have_posts()) : the_post();
 		get_template_part( 'loop', 'index' ); 
 	endwhile;

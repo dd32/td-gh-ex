@@ -224,3 +224,10 @@ h2#site-description {
 	position:relative;
 	font-weight:bold;
 	}
+.note{
+	font-style:italic;
+	font-size:12px;
+}
+.upload_image.text-box {
+    width: 173px;
+}

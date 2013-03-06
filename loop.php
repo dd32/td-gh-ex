@@ -23,11 +23,11 @@ if ( !defined('ABSPATH')) exit;
       
       <?php if ( has_post_thumbnail() ) { ?>
         <div class="featured-img">
-        <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( the_title_attribute( 'echo=0' ) ); ?>" ><?php the_post_thumbnail( 'large' ); ?></a>
+        <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( the_title_attribute( 'echo=0' ) ); ?>" >
+			<?php the_post_thumbnail( 'featured-thumbnail','',true ); ?></a>
         </div>
 		<!-- .featured-img -->
       <?php } ?>
-      
       <div class="entry clearfix">
         <?php the_excerpt(); ?>
         <?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'sampression' ) . '</span>', 'after' => '</div>' ) ); ?>
@@ -37,10 +37,11 @@ if ( !defined('ABSPATH')) exit;
       <div class="meta clearfix">
 			<?php 
                 printf( __( '%3$s <time class="col" datetime="2011-09-28"><span class="ico">Published on</span>%2$s</time> ', 'sampression' ),'meta-prep meta-prep-author',
-					sprintf( '<a href="%1$s" title="%2$s" rel="bookmark">%3$s</a>',
+					sprintf( '<a href="%4$s" title="%2$s" rel="bookmark">%3$s</a>',
 						get_permalink(),
 						esc_attr( get_the_time() ),
-						get_the_date('d M Y')
+						get_the_date('d M Y'),
+						get_month_link( get_the_time('Y'), get_the_time('m'))
 					),
 					sprintf( '<div class="post-author col"><span class="ico hello">Author</span><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></div>',
 						get_author_posts_url( get_the_author_meta( 'ID' ) ),

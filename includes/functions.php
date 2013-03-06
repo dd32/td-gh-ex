@@ -38,7 +38,7 @@ if (!function_exists('sampression_setup')):
         /**
          * Sampression is now available for translations.
          */
-	    load_theme_textdomain('sampression');
+		load_theme_textdomain('sampression', get_template_directory() . '/languages');
 				
         /**
          * Add callback for custom TinyMCE editor stylesheets. (editor-style.css)
@@ -59,6 +59,7 @@ if (!function_exists('sampression_setup')):
         add_theme_support('post-thumbnails');
 		// Custom image sizes
 		add_image_size( 'featured', 700, 400, true); // Set the size of Featured Image
+		add_image_size( 'featured-thumbnail', 220); // Set the size of Featured Image Thumbnail
 	
         /**
          * This feature enables custom-menus support for a theme.
@@ -256,7 +257,8 @@ function sampression_widget_reset() {
 /*=======================================================================
  * WordPress Widgets start right here.
  *=======================================================================*/
-function sampression_widgets_init() {
+ 
+ function sampression_widgets_init() {
 	
 	register_sidebar(array(
 		'name' => __('Bottom Widget 1', 'sampression'),
@@ -297,9 +299,42 @@ function sampression_widgets_init() {
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div></section>'
 	));
-		
+	
+	$sidebar_id = 'bottom-widget-3';
+    $sidebars_widgets = get_option( 'sidebars_widgets' );
+    $id = count( $sidebars_widgets ) + 1;
+    $sidebars_widgets[$sidebar_id] = array( "text-" . $id );
+	
+		$ops = get_option( 'widget_text' );
+		$ops[$id] = array(
+			'title' => 'About me automatic widget',
+			'text' => 'This is an automatic widget added on Third Bottom Widget box (Bottom Widget 3). 
+			To edit please go to Appearance > Widgets and choose 3rd widget from the top in area second called Bottom Widget 3. Title is also manageable from widgets as well.', 
+		);
+		update_option( 'widget_text', $ops ); 
+		update_option( 'sidebars_widgets', $sidebars_widgets );
+   
+	
 }
-add_action('widgets_init', 'sampression_widgets_init');
+add_action('widgets_init', 'sampression_widgets_init'); /**/
+
+/* function sampression_default_widgets() {
+	$sidebar_id = 'bottom-widget-3';
+    $sidebars_widgets = get_option( 'sidebars_widgets' );
+    $id = count( $sidebars_widgets ) + 1;
+    $sidebars_widgets[$sidebar_id] = array( "text-" . $id );
+
+    $ops = get_option( 'widget_text' );
+    $ops[$id] = array(
+        'title' => 'About me automatic widget',
+        'text' => 'This is an automatic widget added on Third Bottom Widget box (Bottom Widget 3). 
+		To edit please go to Appearance > Widgets and choose 3rd widget from the top in area second called Bottom Widget 3. Title is also manageable from widgets as well.', 
+    );
+    update_option( 'widget_text', $ops ); 
+    update_option( 'sidebars_widgets', $sidebars_widgets );
+}
+
+add_action('widgets_init', 'sampression_default_widgets', 11); */
 
 /*=======================================================================
  * Template for comments and pingbacks.
@@ -396,44 +431,58 @@ endif; // ends check for sampression_comment()
  *=======================================================================*/
  
 function sampression_favicon() {
-	if(get_option('opt_sam_favicons')) {
-	?>
-    	<link rel="shortcut icon" href="<?php echo get_option('opt_sam_favicons'); ?>">
-    <?php
-	} else {
-	?>
-    	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico">
-    <?php
+
+	if(!get_option('opt_sam_use_favicon16x16') || get_option('opt_sam_use_favicon16x16') == 'no') {
+		if(get_option('opt_sam_favicons')) {
+		?>
+			<link rel="shortcut icon" href="<?php echo get_option('opt_sam_favicons'); ?>">
+		<?php
+		} else {
+		?>
+			<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico">
+		<?php
+		}
 	}
-	if(get_option('opt_sam_apple_icons_57')) {
-	?>
-    	<link rel="shortcut icon" href="<?php echo get_option('opt_sam_apple_icons_57'); ?>">
-    <?php
-	} else {
-	?>
-    	<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png">
-    <?php
+	
+	
+	if(!get_option('opt_sam_use_favicon16x16') || get_option('opt_sam_use_favicon16x16') == 'no') {
+		if(get_option('opt_sam_apple_icons_57')) {
+		?>
+			<link rel="shortcut icon" href="<?php echo get_option('opt_sam_apple_icons_57'); ?>">
+		<?php
+		} else {
+		?>
+			<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png">
+		<?php
+		}
 	}
-	if(get_option('opt_sam_apple_icons_72')) {
-	?>
-    	<link rel="shortcut icon" href="<?php echo get_option('opt_sam_apple_icons_72'); ?>">
-    <?php
-	} else {
-	?>
-    	<link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon-72x72.png">
-    <?php
+	
+	
+	if(!get_option('opt_sam_use_favicon16x16') || get_option('opt_sam_use_favicon16x16') == 'no') {
+		if(get_option('opt_sam_apple_icons_72')) {
+		?>
+			<link rel="shortcut icon" href="<?php echo get_option('opt_sam_apple_icons_72'); ?>">
+		<?php
+		} else {
+		?>
+			<link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon-72x72.png">
+		<?php
+		}
 	}
-	if(get_option('opt_sam_apple_icons_114')) {
-	?>
-    	<link rel="shortcut icon" href="<?php echo get_option('opt_sam_apple_icons_114'); ?>">
-    <?php
-	} else {
-	?>
-    	<link rel="apple-touch-icon" sizes="114x114" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon-114x114.png">
-    <?php
+	
+	
+	if(!get_option('opt_sam_use_favicon16x16') || get_option('opt_sam_use_favicon16x16') == 'no') {	
+		if(get_option('opt_sam_apple_icons_114')) {
+		?>
+			<link rel="shortcut icon" href="<?php echo get_option('opt_sam_apple_icons_114'); ?>">
+		<?php
+		} else {
+		?>
+			<link rel="apple-touch-icon" sizes="114x114" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon-114x114.png">
+		<?php
+		}
 	}
 }
-
 /*=======================================================================
  * Function to get default logo by Sampression theme
  *=======================================================================*/
@@ -579,4 +628,16 @@ function showNotices() {
 	}
 }
 add_action('admin_notices', 'showNotices');
+
+/*=======================================================================
+* Improve Search - Search tags and categories
+*=======================================================================*/
+ add_filter('posts_join', 'sampression_search_join' );
+function sampression_search_join( $join ){
+  global $wp_query, $wpdb;
+  if( is_search() ) {
+    $join .= " LEFT JOIN $wpdb->postmeta ON " . $wpdb->posts .".ID = ".$wpdb->postmeta .".post_id ";
+  }
+  return $join;
+}
 ?>

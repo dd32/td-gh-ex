@@ -47,7 +47,17 @@ jQuery('.upload_image_button').click(function() {
 		jQuery.cookie("active-tab", activeTab, { expires: 1 });
 		return false;
 	});
-
+	
+	jQuery(".tab_container input[type='checkbox']").click(function(){
+	console.log('clicked')
+		var $chkbox = jQuery(this),
+			$hiddenbox = $chkbox.next("input[type='hidden']");
+		if($chkbox.is(':checked')){
+			jQuery($hiddenbox).val('yes');
+		}else{
+			jQuery($hiddenbox).val('no');
+		}
+	});
 });
 
 function trigger(obj){
