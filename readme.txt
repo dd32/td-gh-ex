@@ -1,6 +1,6 @@
 === discover ===
 Author: Manishg
-Tags: orange,black,translation-ready,threaded-comments,light,two-columns,theme-options,white
+Tags: orange,black,threaded-comments,light,two-columns,theme-options,white
 Requires at least: WP 3.0
 
 == Description ==

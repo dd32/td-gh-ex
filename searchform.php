@@ -1,6 +1,6 @@
 <!--search form-->
 				
-				    <form method="get" id="search" action="<?php echo home_url(); ?>">
+				    <form method="get" id="search" action="<?php echo esc_url(home_url()); ?>">
 
 					<div>
 					<?php $req=''; ?>

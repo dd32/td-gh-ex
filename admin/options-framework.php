@@ -212,7 +212,7 @@ function optionsframework_page() {
 	
 	 <div id="go_pro">
             <h1>Go for Pro Version!</h1>
-            <p>This is a free version of discover. Get your own copy of professional version if you need Unlimited Sliders , No Credit link required, Forum support and much more. <a href="http://antthemes.com/?page_id=1963" target="blank">Click Here to Learn More Now</a> </p>
+            <p>This is a free version of discover. Get your own copy of professional version if you need Unlimited Sliders , Forum support and much more. <a href="http://antthemes.com/?page_id=1963" target="blank">Click Here to Learn More Now</a> </p>
 
         </div>
     
