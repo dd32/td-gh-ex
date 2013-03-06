@@ -11,7 +11,11 @@ light, gray, white, one-column, two-columns, left-sidebar, right-sidebar, fixed-
 Catch Everest theme is translation ready. 
 
 == License ==
-Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
+Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 2, see file license.txt
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Catch Everest WordPress Theme, Copyright 2013 Catchthemes.org
+Catch Everest is distributed under the terms of the GNU General Public License v2 
 
 == Theme Instruction ==
 Check out the theme instruction at http://catchthemes.com/theme-instructions/catch-everest/
@@ -37,4 +41,7 @@ Version 0.1.1
 Version 0.1.2
 * Added Missing Translation for Footer Texts
 * Improved Cache with Transient API
+
+Version 0.1.2.1
+* Fixed Custom Background link in Theme Options panel
 

@@ -229,7 +229,7 @@ function catcheverest_theme_options_do_page() {
                     <div class="option-container">
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Background', 'catcheverest' ); ?></a></h3>
                         <div class="option-content inside">
-                        	<p><?php printf(__('Custom Background. Need to replace or remove background?','catcheverest')); ?> <?php printf(__('<a class="button" href="%s">Click here</a>', 'catcheverest'), admin_url('themes.php?page=custom-header')); ?></p>	                                 
+                        	<p><?php printf(__('Custom Background. Need to replace or remove background?','catcheverest')); ?> <?php printf(__('<a class="button" href="%s">Click here</a>', 'catcheverest'), admin_url('themes.php?page=custom-background')); ?></p>	                                 
                     	</div><!-- .option-content -->
                  	</div><!-- .option-container -->                     
  
