@@ -32,7 +32,7 @@
 <div id="centered">
 <div id="margin">
 
-<?php if (get_option('banner_image_setting') != '') { echo '<img class="logo" src="' . get_option('banner_image_setting') . '" />' . "\n\n";} ?>
+<?php $header_image = get_header_image(); if ( ! empty( $header_image ) ) : ?> <img src="<?php header_image(); ?>" class="logo" alt="" /><?php endif; ?>
 
 <?php $semperfi_404 = false;/* A 404 Error check */?> 
 <?php if (is_search()) : ?>

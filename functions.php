@@ -37,6 +37,16 @@ if (!function_exists('semperfi_setup')):
 		if ( function_exists('get_custom_header')) {
         	add_theme_support('custom-background'); }
 		
+		// Custom-Header
+		$args = array(
+			'flex-width'    => true,
+			'width'         => 1000,
+			'flex-height'    => true,
+			'height'        => 300,
+			'default-image' => get_template_directory_uri() . '/images/header.jpg',
+		);
+		add_theme_support( 'custom-header', $args );
+		
 	}
 
 endif;
@@ -1868,18 +1878,7 @@ function semperfi_customize($wp_customize) {
 			'Didact+Gothic'			=> 'Didact+Gothic',
 			'Modern+Antiqua'		=> 'Modern+Antiqua',
 			'VT323'					=> 'VT323',
-			'Annie+Use+Your+Telescope' => 'Annie+Use+Your+Telescope',), ));
-
-	// Upload your own Banner Image
-	$wp_customize->add_setting('banner_image_setting', array(
-		'default'		=> '',
-		'capability'	=> 'edit_theme_options',
-		'type'			=> 'option', ));
-
-	$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'banner_image_control', array(
-		'label'			=> 'or upload your own image for the banner.', 'semperfi',
-		'section'		=> 'content_section',
-		'settings'		=> 'banner_image_setting', ))); }
+			'Annie+Use+Your+Telescope' => 'Annie+Use+Your+Telescope',), )); }
 	
 add_action('customize_register', 'semperfi_customize');
 		
@@ -2077,7 +2076,7 @@ function semperfi_theme_options_do_page() { ?>
         <th class="justify"></th>
         </tr>
         <tr>
-        <th>1.2</th>
+        <th>1.3</th>
         <td class="justify">Included Google Web Fonts for the Title, Slogan, Menu, Post Title, and Content. I also cleaned up the "Theme Customizer" menu so that it makes more sense.</td>
         </tr>
         <tr>
