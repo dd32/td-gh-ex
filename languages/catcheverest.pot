@@ -4,14 +4,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Everest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-25 00:38+0530\n"
-"PO-Revision-Date: 2013-02-25 00:39+0530\n"
+"POT-Creation-Date: 2013-03-06 13:49+0530\n"
+"PO-Revision-Date: 2013-03-06 13:49+0530\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Catch Themes <suppor@catchthemes.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1.2c\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1.2c;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-Language: English\n"
@@ -100,6 +100,7 @@ msgstr ""
 #: ../content-chat.php:16
 #: ../content-gallery.php:16
 #: ../content-gallery.php:28
+#: ../content-gallery.php:32
 #: ../content-image.php:16
 #: ../content-video.php:16
 #: ../content.php:19
@@ -320,6 +321,7 @@ msgid "Search Results for: %s"
 msgstr ""
 
 #: ../searchform.php:16
+#: ../searchform.php:18
 msgid "Search"
 msgstr ""
 
@@ -330,6 +332,112 @@ msgstr ""
 
 #: ../inc/catcheverest-functions.php:430
 msgid "Skip to content"
+msgstr ""
+
+#: ../inc/catcheverest-functions.php:913
+msgid "Copyright"
+msgstr ""
+
+#: ../inc/catcheverest-functions.php:913
+msgid "All Rights Reserved"
+msgstr ""
+
+#: ../inc/catcheverest-functions.php:913
+msgid "Powered by"
+msgstr ""
+
+#: ../inc/catcheverest-functions.php:913
+msgid "Theme"
+msgstr ""
+
+#: ../inc/catcheverest-functions.php:1005
+#, php-format
+msgid "%s in Facebook"
+msgstr ""
+
+#: ../inc/catcheverest-functions.php:1010
+#, php-format
+msgid "%s in Twitter"
+msgstr ""
+
+#: ../inc/catcheverest-functions.php:1015
+#, php-format
+msgid "%s in Google+"
+msgstr ""
+
+#: ../inc/catcheverest-functions.php:1020
+#, php-format
+msgid "%s in Linkedin"
+msgstr ""
+
+#: ../inc/catcheverest-functions.php:1025
+#, php-format
+msgid "%s in Pinterest"
+msgstr ""
+
+#: ../inc/catcheverest-functions.php:1030
+#, php-format
+msgid "%s in YouTube"
+msgstr ""
+
+#: ../inc/catcheverest-functions.php:1035
+#, php-format
+msgid "%s in Vimeo"
+msgstr ""
+
+#: ../inc/catcheverest-functions.php:1040
+#, php-format
+msgid "%s in Slideshare"
+msgstr ""
+
+#: ../inc/catcheverest-functions.php:1045
+#, php-format
+msgid "%s in Foursquare"
+msgstr ""
+
+#: ../inc/catcheverest-functions.php:1050
+#, php-format
+msgid "%s in Flickr"
+msgstr ""
+
+#: ../inc/catcheverest-functions.php:1055
+#, php-format
+msgid "%s in Tumblr"
+msgstr ""
+
+#: ../inc/catcheverest-functions.php:1060
+#, php-format
+msgid "%s in deviantART"
+msgstr ""
+
+#: ../inc/catcheverest-functions.php:1065
+#, php-format
+msgid "%s in Dribbble"
+msgstr ""
+
+#: ../inc/catcheverest-functions.php:1070
+#, php-format
+msgid "%s in MySpace"
+msgstr ""
+
+#: ../inc/catcheverest-functions.php:1075
+#, php-format
+msgid "%s in WordPress"
+msgstr ""
+
+#: ../inc/catcheverest-functions.php:1080
+#, php-format
+msgid "%s in RSS"
+msgstr ""
+
+#: ../inc/catcheverest-functions.php:1085
+#, php-format
+msgid "%s in Delicious"
+msgstr ""
+
+#: ../inc/catcheverest-functions.php:1090
+#, php-format
+msgid "%s in Last.fm"
 msgstr ""
 
 #: ../inc/catcheverest-metabox.php:14
@@ -511,6 +619,7 @@ msgstr ""
 msgid "http://catchthemes.com/"
 msgstr ""
 
+#: ../inc/panel/theme-options.php:119
 #: ../inc/panel/theme-options.php:120
 msgid "Catch Themes"
 msgstr ""
@@ -536,6 +645,10 @@ msgid "https://www.facebook.com/catchthemes/"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:129
+msgid "Like Catch Themes on Facebook"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:129
 #: ../inc/panel/theme-options.php:623
 msgid "Facebook"
 msgstr ""
@@ -545,12 +658,20 @@ msgid "https://twitter.com/catchthemes/"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:130
+msgid "Follow Catch Themes on Twitter"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:130
 #: ../inc/panel/theme-options.php:628
 msgid "Twitter"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:131
 msgid "http://wordpress.org/support/view/theme-reviews/catch-everest"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:131
+msgid "Rate us 5 Star on WordPress"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:131
@@ -590,6 +711,25 @@ msgstr ""
 msgid "Check to disable"
 msgstr ""
 
+#: ../inc/panel/theme-options.php:163
+#: ../inc/panel/theme-options.php:209
+#: ../inc/panel/theme-options.php:225
+#: ../inc/panel/theme-options.php:248
+#: ../inc/panel/theme-options.php:268
+#: ../inc/panel/theme-options.php:284
+#: ../inc/panel/theme-options.php:335
+#: ../inc/panel/theme-options.php:359
+#: ../inc/panel/theme-options.php:401
+#: ../inc/panel/theme-options.php:474
+#: ../inc/panel/theme-options.php:517
+#: ../inc/panel/theme-options.php:585
+#: ../inc/panel/theme-options.php:611
+#: ../inc/panel/theme-options.php:715
+#: ../inc/panel/theme-options.php:746
+#: ../inc/panel/theme-options.php:777
+msgid "Save"
+msgstr ""
+
 #: ../inc/panel/theme-options.php:168
 msgid "Upload Logo"
 msgstr ""
@@ -614,6 +754,10 @@ msgstr ""
 
 #: ../inc/panel/theme-options.php:185
 msgid "Fav Icon URL:"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:191
+msgid "Change Fav Icon"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:196
@@ -725,6 +869,10 @@ msgid "http://www.w3schools.com/css/default.asp"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:354
+msgid "CSS Tutorial"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:354
 msgid "Click Here to Read"
 msgstr ""
 
@@ -773,6 +921,19 @@ msgstr ""
 msgid "Number of Featured Content"
 msgstr ""
 
+#: ../inc/panel/theme-options.php:432
+#, php-format
+msgid "Featured Content #%s"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:441
+msgid "Change Image"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:441
+msgid "Add Image"
+msgstr ""
+
 #: ../inc/panel/theme-options.php:445
 msgid "Link URL"
 msgstr ""
@@ -819,6 +980,10 @@ msgstr ""
 
 #: ../inc/panel/theme-options.php:489
 msgid "Add Page instead of Latest Posts"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:490
+msgid "Widgets"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:490

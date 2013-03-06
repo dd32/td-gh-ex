@@ -540,7 +540,7 @@ function catcheverest_post_sliders() {
  * Shows Default Slider Demo if there is not iteam in Featured Post Slider
  */
 function catcheverest_default_sliders() { 
-	delete_transient( 'catcheverest_default_sliders' );
+	//delete_transient( 'catcheverest_default_sliders' );
 	
 	if ( !$catcheverest_default_sliders = get_transient( 'catcheverest_default_sliders' ) ) {
 		echo '<!-- refreshing cache -->';	
@@ -627,7 +627,7 @@ add_action( 'catcheverest_before_main', 'catcheverest_slider_display', 10 );
  * @uses catcheverest_before_main action to add it in the header
  */
 function catcheverest_homepage_headline() { 
-	delete_transient( 'catcheverest_homepage_headline' );
+	//delete_transient( 'catcheverest_homepage_headline' );
 	
 	// Getting data from Theme Options
 	global $catcheverest_options_settings;
@@ -666,7 +666,7 @@ add_action( 'catcheverest_before_main', 'catcheverest_homepage_headline', 10 );
  * @uses catcheverest_before_main action to add it in the header
  */
 function catcheverest_default_featured_content() { 
-	delete_transient( 'catcheverest_default_featured_content' );
+	//delete_transient( 'catcheverest_default_featured_content' );
 	
 	// Getting data from Theme Options
 	global $catcheverest_options_settings;
@@ -743,7 +743,7 @@ function catcheverest_default_featured_content() {
  * @uses catcheverest_before_main action to add it in the header
  */
 function catcheverest_homepage_featured_content() { 
-	delete_transient( 'catcheverest_homepage_featured_content' );
+	//delete_transient( 'catcheverest_homepage_featured_content' );
 	
 	// Getting data from Theme Options
 	global $catcheverest_options_settings;
@@ -900,7 +900,7 @@ function catcheverest_footer_sidebar_class() {
  * shows footer content
  */
 function catcheverest_footer_content() { 
-	delete_transient( 'catcheverest_footer_content' );	
+	//delete_transient( 'catcheverest_footer_content' );	
 	
 	if ( ( !$catcheverest_footer_content = get_transient( 'catcheverest_footer_content' ) ) ) {
 		echo '<!-- refreshing cache -->';
@@ -910,7 +910,7 @@ function catcheverest_footer_content() {
    	 	$options = $catcheverest_options_settings;
 		
        // $catcheverest_footer_content = $options[ 'footer_code' ];
-		$catcheverest_footer_content = '<div class="copyright">Copyright &copy; [the-year] <span>[site-link]</span>. All Rights Reserved.</div><div class="powered">Powered by: [wp-link] | Theme: [theme-link]</div>';
+		$catcheverest_footer_content = '<div class="copyright">'. esc_attr__( 'Copyright', 'catcheverest' ) . ' &copy; [the-year] <span>[site-link]</span>. '. esc_attr__( 'All Rights Reserved', 'catcheverest' ) . '.</div><div class="powered">'. esc_attr__( 'Powered by', 'catcheverest' ) . ': [wp-link] | '. esc_attr__( 'Theme', 'catcheverest' ) . ': [theme-link]</div>';
 		
     	set_transient( 'catcheverest_footer_content', $catcheverest_footer_content, 86940 );
     }
@@ -951,7 +951,7 @@ add_action( 'pre_get_posts','catcheverest_alter_home' );
  * @social links, Facebook, Twitter and RSS
   */
 function catcheverest_social_networks() {
-	delete_transient( 'catcheverest_social_networks' );
+	//delete_transient( 'catcheverest_social_networks' );
 	
 	// get the data value from theme options
 	global $catcheverest_options_settings;
