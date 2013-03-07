@@ -28,6 +28,16 @@
 if ( ! isset( $content_width ) )
   $content_width = 600; /* pixels */
 
+/**
+ * Set a default theme color array for WP.com.
+ */
+$themecolors = array(
+  'bg' => 'f0f0f0',
+  'border' => 'cccccc',
+  'text' => '555555',
+  'shadow' => 'ffffff'
+);
+
 if ( ! function_exists( 'sempress_setup' ) ):
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -40,6 +50,8 @@ if ( ! function_exists( 'sempress_setup' ) ):
  * functions.php file.
  */
 function sempress_setup() {
+  global $themecolors;
+
   /**
    * Make theme available for translation
    * Translations can be filed in the /languages/ directory
@@ -72,10 +84,40 @@ function sempress_setup() {
   ) );
 
   /**
-   * Add support for the Aside and Gallery Post Formats
+   * Add support for the Aside, Gallery Post Formats...
    */
   add_theme_support( 'post-formats', array( 'aside', 'image', 'gallery', 'quote', 'link', 'audio', 'video', 'status' ) );
+  //add_theme_support( 'structured-post-formats', array( 'image', 'quote', 'link' ) );
 
+  /**
+   * This theme supports jetpacks "infinite-scroll"
+   *
+   * @see http://jetpack.me/support/infinite-scroll/
+   */
+  add_theme_support( 'infinite-scroll', array('container' => 'content', 'footer' => 'colophon') );
+  
+  /**
+   * This theme supports a custom header
+   */
+  $custom_header_args = array(
+    'width'         => 950,
+    'height'        => 200,
+    'header-text'   => false
+  );
+  add_theme_support( 'custom-header', $custom_header_args );
+  
+  /**
+   * This theme supports custom backgrounds
+   */
+  $custom_background_args = array(
+    'default-color' => $themecolors['bg'],
+    'default-image' => get_template_directory_uri() . '/img/noise.png',
+  );
+  add_theme_support( 'custom-background', $custom_background_args );
+  
+  /**
+   * Nicer WYSIWYG editor
+   */
   add_editor_style( 'editor-style.css' );
 }
 endif; // sempress_setup
@@ -85,14 +127,78 @@ endif; // sempress_setup
  */
 add_action( 'after_setup_theme', 'sempress_setup' );
 
+
 /**
- * Set a default theme color array for WP.com.
+ * Adds "custom-color" support
+ *
+ * @since 1.3.0
  */
-$themecolors = array(
-  'bg' => 'ffffff',
-  'border' => 'eeeeee',
-  'text' => '444444',
-);
+function sempress_customize_register( $wp_customize ) {
+  global $themecolors;
+
+  $wp_customize->add_setting( 'sempress_textcolor' , array(
+    'default'     => '#'.$themecolors['text'],
+    'transport'   => 'refresh',
+  ) );
+  
+  $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'sempress_textcolor', array(
+    'label'      => __( 'Text Color', 'sempress' ),
+    'section'    => 'colors',
+    'settings'   => 'sempress_textcolor',
+  ) ) );
+  
+  $wp_customize->add_setting( 'sempress_shadowcolor' , array(
+    'default'     => '#'.$themecolors['shadow'],
+    'transport'   => 'refresh',
+  ) );
+
+  $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'sempress_shadowcolor', array(
+    'label'      => __( 'Shadow Color', 'sempress' ),
+    'section'    => 'colors',
+    'settings'   => 'sempress_shadowcolor',
+  ) ) );
+  
+  $wp_customize->add_setting( 'sempress_bordercolor' , array(
+    'default'     => '#'.$themecolors['border'],
+    'transport'   => 'refresh',
+  ) );
+
+  $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'sempress_bordercolor', array(
+    'label'      => __( 'Border Color', 'sempress' ),
+    'section'    => 'colors',
+    'settings'   => 'sempress_bordercolor',
+  ) ) );
+}
+add_action( 'customize_register', 'sempress_customize_register' );
+
+
+/**
+ * Adds the custom CSS to the theme-header
+ *
+ * @since 1.3.0
+ */
+function sempress_customize_css() {
+  global $themecolors;
+?>
+  <style type="text/css" id="sempress-custom-colors">
+    body { text-shadow: 0 1px 0 <?php echo get_theme_mod('sempress_shadowcolor', "#".$themecolors["shadow"]); ?>; }
+    body, a { color: <?php echo get_theme_mod('sempress_textcolor', "#".$themecolors["text"]); ?>; }
+    .widget, #access {
+      border-bottom: 1px solid <?php echo get_theme_mod('sempress_bordercolor', 'inherit'); ?>;
+      -moz-box-shadow: <?php echo get_theme_mod('sempress_shadowcolor', 'inherit'); ?> 0 1px 0 0;
+      -webkit-box-shadow: <?php echo get_theme_mod('sempress_shadowcolor', 'inherit'); ?> 0 1px 0 0;
+      box-shadow: <?php echo get_theme_mod('sempress_shadowcolor', 'inherit'); ?> 0 1px 0 0;
+    }
+    article.comment {
+      border-top: 1px solid <?php echo get_theme_mod('sempress_shadowcolor', 'inherit'); ?>;
+      -moz-box-shadow: <?php echo get_theme_mod('sempress_bordercolor', 'inherit'); ?> 0 -1px 0 0;
+      -webkit-box-shadow: <?php echo get_theme_mod('sempress_bordercolor', 'inherit'); ?> 0 -1px 0 0;
+      box-shadow: <?php echo get_theme_mod('sempress_bordercolor', 'inherit'); ?> 0 -1px 0 0;
+    }
+  </style>
+<?php
+}
+add_action( 'wp_head', 'sempress_customize_css');
 
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
@@ -110,8 +216,8 @@ function sempress_widgets_init() {
   register_sidebar( array(
     'name' => __( 'Sidebar 1', 'sempress' ),
     'id' => 'sidebar-1',
-    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-    'after_widget' => "</aside>",
+    'before_widget' => '<section id="%1$s" class="widget %2$s">',
+    'after_widget' => "</section>",
     'before_title' => '<h1 class="widget-title">',
     'after_title' => '</h1>',
   ) );
@@ -120,8 +226,8 @@ function sempress_widgets_init() {
     'name' => __( 'Sidebar 2', 'sempress' ),
     'id' => 'sidebar-2',
     'description' => __( 'An optional second sidebar area', 'sempress' ),
-    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-    'after_widget' => "</aside>",
+    'before_widget' => '<section id="%1$s" class="widget %2$s">',
+    'after_widget' => "</section>",
     'before_title' => '<h1 class="widget-title">',
     'after_title' => '</h1>',
   ) );
@@ -137,13 +243,13 @@ if ( ! function_exists( 'sempress_enqueue_scripts' ) ) :
  * @since SemPress 1.1.1
  */
 function sempress_enqueue_scripts() {
-	// Add HTML5 support to older versions of IE
-	if ( isset( $_SERVER['HTTP_USER_AGENT'] ) &&
-		 ( false !== strpos( $_SERVER['HTTP_USER_AGENT'], 'MSIE' ) ) &&
-		 ( false === strpos( $_SERVER['HTTP_USER_AGENT'], 'MSIE 9' ) ) ) {
+  // Add HTML5 support to older versions of IE
+  if ( isset( $_SERVER['HTTP_USER_AGENT'] ) &&
+     ( false !== strpos( $_SERVER['HTTP_USER_AGENT'], 'MSIE' ) ) &&
+     ( false === strpos( $_SERVER['HTTP_USER_AGENT'], 'MSIE 9' ) ) ) {
     
     wp_enqueue_script('html5', get_template_directory_uri() . '/js/html5.js', false, '3.6');
-	}
+  }
 }
 endif;
 
@@ -202,10 +308,10 @@ function sempress_comment( $comment, $args, $depth ) {
   <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
     <article id="comment-<?php comment_ID(); ?>" class="comment <?php $comment->comment_type; ?>">
       <footer>
-        <div class="comment-author vcard hcard h-card">
-          <?php echo get_avatar( $comment, 40 ); ?>
+        <address class="comment-author vcard hcard h-card">
+          <?php echo get_avatar( $comment, 50 ); ?>
           <?php printf( __( '%s <span class="says">says:</span>', 'sempress' ), sprintf( '<cite class="fn p-name">%s</cite>', get_comment_author_link() ) ); ?>
-        </div><!-- .comment-author .vcard -->
+        </address><!-- .comment-author .vcard -->
         <?php if ( $comment->comment_approved == '0' ) : ?>
           <em><?php _e( 'Your comment is awaiting moderation.', 'sempress' ); ?></em>
           <br />
@@ -240,7 +346,7 @@ if ( ! function_exists( 'sempress_posted_on' ) ) :
  * @since SemPress 1.0.0
  */
 function sempress_posted_on() {
-  printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date updated dt-updated" datetime="%3$s" itemprop="dateModified">%4$s</time></a><span class="byline"> <span class="sep"> by </span> <span class="author p-author vcard hcard h-card" itemprop="author" itemscope itemtype="http://schema.org/Person"><a class="url uid u-url u-uid fn p-name" href="%5$s" title="%6$s" rel="author" itemprop="url"><span itemprop="name">%7$s</span></a></span></span>', 'sempress' ),
+  printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date updated dt-updated" datetime="%3$s" itemprop="dateModified">%4$s</time></a><address class="byline"> <span class="sep"> by </span> <span class="author p-author vcard hcard h-card" itemprop="author" itemscope itemtype="http://schema.org/Person"><a class="url uid u-url u-uid fn p-name" href="%5$s" title="%6$s" rel="author" itemprop="url"><span itemprop="name">%7$s</span></a></span></address>', 'sempress' ),
     esc_url( get_permalink() ),
     esc_attr( get_the_time() ),
     esc_attr( get_the_date( 'c' ) ),
@@ -258,7 +364,7 @@ endif;
  * @since SemPress 1.0.0
  */
 function sempress_post_thumbnail($content) {
-  if ( has_post_thumbnail() ) {
+  if ( has_post_thumbnail() && get_the_post_thumbnail() ) {
     $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-thumbnail');
     $class = "aligncenter";
     if ($image['1'] < "480")
@@ -274,6 +380,20 @@ function sempress_post_thumbnail($content) {
 add_action('the_content', 'sempress_post_thumbnail', 1);
 
 /**
+ * Adjusts content_width value for full-width and single image attachment
+ * templates, and when there are no active widgets in the sidebar.
+ *
+ * @since SemPress 1.3.0
+ */
+function sempress_content_width() {
+  if ( is_page_template( 'full-width-page.php' ) || is_attachment() || ! is_active_sidebar( 'sidebar-1' ) ) {
+    global $content_width;
+    $content_width = 880;
+  }
+}
+add_action( 'template_redirect', 'sempress_content_width' );
+
+/**
  * Adds custom classes to the array of body classes.
  *
  * @since SemPress 1.0.0
@@ -282,6 +402,10 @@ function sempress_body_classes( $classes ) {
   // Adds a class of single-author to blogs with only 1 published author
   if ( ! is_multi_author() ) {
     $classes[] = 'single-author';
+  }
+  
+  if ( get_header_image() ) {
+    $classes[] = 'custom-header';
   }
 
   return $classes;
@@ -490,18 +614,6 @@ function sempress_blog_itemprop($prop) {
     echo ' itemprop="'.$prop.'"';
   }
 }
-
-/**
- * add .attachement to the imported media-objects
- */
-function sempress_oembed_dataparse($return, $data, $url) {
-  if ($return) {
-    $return = '<div class="media-attachment oembed">' . $return . '</div>';
-  }
-  
-  return $return;
-}
-add_filter( 'oembed_dataparse', 'sempress_oembed_dataparse', 3 );
 
 /**
  * This theme was built with PHP, Semantic HTML, CSS, love, and a SemPress.

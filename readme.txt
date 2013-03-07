@@ -1,5 +1,12 @@
 == Changelog ==
 
+= 1.3.0 =
+* added custom-header support
+* added custom-background support
+* added support for jetpacks "infinite-scroll"
+* some css changes
+* fixed menu bug in ie7
+
 = 1.2.1 =
 * some css and html fixes
 * added micro formats v2 activity extension
@@ -11,7 +18,7 @@
 
 = 1.1.0 =
 * complete redesign
-* some macrodata/schema.org improvements
+* some microdata/schema.org improvements
 
 = 1.0.0 =
 * initial release

@@ -8,14 +8,14 @@
 
 get_header(); ?>
 
-    <div id="primary">
-      <div id="content" role="main">
+    <section id="primary">
+      <main id="content" role="main">
 
       <?php while ( have_posts() ) : the_post(); ?>
 
         <?php sempress_content_nav( 'nav-above' ); ?>
 
-        <?php get_template_part( 'content', 'single' ); ?>
+        <?php get_template_part( 'content', get_post_format() ); ?>
 
         <?php sempress_content_nav( 'nav-below' ); ?>
 
@@ -27,8 +27,8 @@ get_header(); ?>
 
       <?php endwhile; // end of the loop. ?>
 
-      </div><!-- #content -->
-    </div><!-- #primary -->
+      </main><!-- #content -->
+    </section><!-- #primary -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
