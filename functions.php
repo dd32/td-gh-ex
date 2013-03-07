@@ -1,6 +1,6 @@
 <?php
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.4.5' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.4.6' );
 define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://siteorigin.com' );
 
 // Include premium functions if it exists
@@ -17,12 +17,11 @@ include get_template_directory().'/extras/premium/premium.php';
 include get_template_directory().'/extras/settings/settings.php';
 include get_template_directory().'/extras/update/update.php';
 include get_template_directory().'/extras/adminbar/adminbar.php';
-include get_template_directory().'/extras/panels/panels.php';
 include get_template_directory().'/extras/widgets/widgets.php';
 
 include get_template_directory().'/functions/settings.php';
 include get_template_directory().'/functions/gallery.php';
-include get_template_directory().'/functions/layouts.php';
+include get_template_directory().'/functions/panels.php';
 
 
 if(!function_exists('origami_setup')) :
@@ -81,6 +80,9 @@ function origami_setup(){
 		'home-page' => true,
 		'home-page-default' => false,
 	) );
+	
+	// Only include the bundled version of panels if the plugin does not exist
+	if(!defined('SITEORIGIN_PANELS_VERSION')) include get_template_directory().'/extras/panels/panels.php';
 }
 endif;
 add_action('after_setup_theme', 'origami_setup');

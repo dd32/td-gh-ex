@@ -85,3 +85,7 @@ Minor fixes to Panels.
 Added blog page archive.
 Fixed conflict with home page and columns.
 Fixes bugs in panels page builder.
+
+**1.4.6**
+Small fix to the blog page template.
+Fixed conflict with page builder plugin.
