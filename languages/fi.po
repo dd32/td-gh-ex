@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-01 21:57+0530\n"
-"PO-Revision-Date: 2013-02-01 21:57+0530\n"
+"POT-Creation-Date: 2013-03-07 22:53+0530\n"
+"PO-Revision-Date: 2013-03-07 22:53+0530\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Catch Themes <charni@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -248,54 +248,59 @@ msgstr "%s Delicious:ssä"
 msgid "%s in Last.fm"
 msgstr "%s Last.fm:ssä"
 
-#: ../functions/simplecatch_functions.php:670
+#: ../functions/simplecatch_functions.php:522
+#, php-format
+msgid "%s in Instagram"
+msgstr "%s Instagramissa"
+
+#: ../functions/simplecatch_functions.php:675
 msgid "Powered By:"
 msgstr "Alustana toimii:"
 
-#: ../functions/simplecatch_functions.php:670
+#: ../functions/simplecatch_functions.php:675
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: ../functions/simplecatch_functions.php:670
+#: ../functions/simplecatch_functions.php:675
 msgid "Powered By WordPress"
 msgstr "Alustana toimii WordPress"
 
-#: ../functions/simplecatch_functions.php:670
+#: ../functions/simplecatch_functions.php:675
 #: ../functions/panel/theme_options.php:663
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../functions/simplecatch_functions.php:670
+#: ../functions/simplecatch_functions.php:675
 msgid "Theme:"
 msgstr "Teema:"
 
-#: ../functions/simplecatch_functions.php:670
+#: ../functions/simplecatch_functions.php:675
 #: ../functions/panel/theme_options.php:118
 msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
-#: ../functions/simplecatch_functions.php:670
+#: ../functions/simplecatch_functions.php:675
 msgid "Simple Catch"
 msgstr "Simple Catch"
 
-#: ../functions/simplecatch_functions.php:843
+#: ../functions/simplecatch_functions.php:848
 msgid "Categories: "
 msgstr "Kategoriat:"
 
-#: ../functions/simplecatch_functions.php:905
+#: ../functions/simplecatch_functions.php:910
 msgid "Name"
 msgstr "Nimi"
 
-#: ../functions/simplecatch_functions.php:905
-#: ../functions/simplecatch_functions.php:906
+#: ../functions/simplecatch_functions.php:910
+#: ../functions/simplecatch_functions.php:911
 msgid "( required )"
 msgstr "( pakollinen )"
 
-#: ../functions/simplecatch_functions.php:906
+#: ../functions/simplecatch_functions.php:911
 msgid "Email"
 msgstr "Sähköposti"
 
-#: ../functions/simplecatch_functions.php:907
+#: ../functions/simplecatch_functions.php:912
 msgid "Website"
 msgstr "Kotisivu"
 
@@ -326,23 +331,20 @@ msgid "Right sidebar"
 msgstr "Oikean sivupalkki"
 
 #: ../functions/widgets.php:18
-#, fuzzy
 msgid "Displays Custom Tag Cloud designed for Simple Catch Theme."
-msgstr "Näyttää mukautetun Tagipilven"
+msgstr "Displays Custom Tag Cloud designed for Simple Catch Theme."
 
 #: ../functions/widgets.php:19
-#, fuzzy
 msgid "Simple Catch Tag Clouds"
-msgstr "Simple Catch"
+msgstr "Simple Catch Tag Clouds"
 
 #: ../functions/widgets.php:101
 msgid "Displays Social Icons added from Theme Options Panel."
-msgstr ""
+msgstr "Displays Social Icons added from Theme Options Panel."
 
 #: ../functions/widgets.php:102
-#, fuzzy
 msgid "Simple Catch Social Icons"
-msgstr "Simple Catch"
+msgstr "Simple Catch Social Icons"
 
 #: ../functions/panel/theme_options.php:39
 #: ../functions/panel/theme_options.php:40
@@ -514,9 +516,9 @@ msgstr "Poista alatunnisteen logo käytöstä?"
 #: ../functions/panel/theme_options.php:500
 #: ../functions/panel/theme_options.php:531
 #: ../functions/panel/theme_options.php:582
-#: ../functions/panel/theme_options.php:683
-#: ../functions/panel/theme_options.php:712
-#: ../functions/panel/theme_options.php:742
+#: ../functions/panel/theme_options.php:688
+#: ../functions/panel/theme_options.php:717
+#: ../functions/panel/theme_options.php:747
 msgid "Save"
 msgstr "Tallenna"
 
@@ -831,51 +833,55 @@ msgstr "Delicious"
 msgid "Last.fm"
 msgstr "Last.fm"
 
-#: ../functions/panel/theme_options.php:689
+#: ../functions/panel/theme_options.php:683
+msgid "Instagram"
+msgstr "Instagram"
+
+#: ../functions/panel/theme_options.php:694
 msgid "Site Verification"
 msgstr "Sivuston varmennus"
 
-#: ../functions/panel/theme_options.php:694
+#: ../functions/panel/theme_options.php:699
 msgid "Google Site Verification ID"
 msgstr "Googlen sivuston varmennus-ID"
 
-#: ../functions/panel/theme_options.php:695
+#: ../functions/panel/theme_options.php:700
 msgid "Enter your Google ID number only"
 msgstr "Syötä ainoastaan Google ID -numerosi"
 
-#: ../functions/panel/theme_options.php:700
+#: ../functions/panel/theme_options.php:705
 msgid "Yahoo Site Verification ID"
 msgstr "Yahoon sivuston varmennus-ID"
 
-#: ../functions/panel/theme_options.php:701
+#: ../functions/panel/theme_options.php:706
 msgid "Enter your Yahoo ID number only"
 msgstr "Syötä ainoastaan Yahoo ID -numerosi"
 
-#: ../functions/panel/theme_options.php:706
+#: ../functions/panel/theme_options.php:711
 msgid "Bing Site Verification ID"
 msgstr "Bingin sivuston varmennus-ID"
 
-#: ../functions/panel/theme_options.php:707
+#: ../functions/panel/theme_options.php:712
 msgid "Enter your Bing ID number only"
 msgstr "Syötä ainostaan Bing ID -numerosi"
 
-#: ../functions/panel/theme_options.php:717
+#: ../functions/panel/theme_options.php:722
 msgid "Analytics/ Header / Footer Codes"
 msgstr "Analytics/ Otsake / alatunniste koodit"
 
-#: ../functions/panel/theme_options.php:722
+#: ../functions/panel/theme_options.php:727
 msgid "Code to display on Header"
 msgstr "Otsakkeessa käytettävä koodi"
 
-#: ../functions/panel/theme_options.php:728
+#: ../functions/panel/theme_options.php:733
 msgid "Note: Here you can put scripts from Google, Facebook etc. which will load on Header"
 msgstr "Huom. Tähän voit asettaa Google-, Facebook jne. -skriptisi, jotka ladataan otsakkeessa."
 
-#: ../functions/panel/theme_options.php:731
+#: ../functions/panel/theme_options.php:736
 msgid "Code to display on Footer"
 msgstr "Alatunnisteessa käytettävä koodi"
 
-#: ../functions/panel/theme_options.php:738
+#: ../functions/panel/theme_options.php:743
 msgid "Note: Here you can put scripts from Google, Facebook, Add This etc. which will load on footer"
 msgstr "Huom. Tähän voit laittaa Google-, Facebook-, Add This jne. skriptisi, jotka ladataan alatunnisteessa."
 

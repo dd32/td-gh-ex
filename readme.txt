@@ -261,3 +261,6 @@ Version 2.1
 
 Version 2.2
 * Added Chinese translation zh_CN.po and zh_CN.mo
+
+Version 2.2.1
+* Added Instagram Social Icon

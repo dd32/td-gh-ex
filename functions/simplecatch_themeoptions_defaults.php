@@ -58,6 +58,7 @@ $simplecatch_options_defaults = array(
  	'social_rss'					=> '',
  	'social_delicious'				=> '',
  	'social_lastfm'					=> '',
+	'social_instagram'				=> '',
  	'custom_css'					=> '',
  	'google_verification'			=> '',
  	'yahoo_verification'			=> '',

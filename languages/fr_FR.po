@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-01 21:57+0530\n"
-"PO-Revision-Date: 2013-02-01 21:57+0530\n"
+"POT-Creation-Date: 2013-03-07 22:46+0530\n"
+"PO-Revision-Date: 2013-03-07 22:46+0530\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Wolforg <contact@wolforg.eu>\n"
 "MIME-Version: 1.0\n"
@@ -249,54 +249,59 @@ msgstr "%s sur Delicious"
 msgid "%s in Last.fm"
 msgstr "%s sur Last.fm"
 
-#: ../functions/simplecatch_functions.php:670
+#: ../functions/simplecatch_functions.php:522
+#, php-format
+msgid "%s in Instagram"
+msgstr "%s sur Instagram"
+
+#: ../functions/simplecatch_functions.php:675
 msgid "Powered By:"
 msgstr " Propulsé par : "
 
-#: ../functions/simplecatch_functions.php:670
+#: ../functions/simplecatch_functions.php:675
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: ../functions/simplecatch_functions.php:670
+#: ../functions/simplecatch_functions.php:675
 msgid "Powered By WordPress"
 msgstr "Propulsé par WordPress"
 
-#: ../functions/simplecatch_functions.php:670
+#: ../functions/simplecatch_functions.php:675
 #: ../functions/panel/theme_options.php:663
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../functions/simplecatch_functions.php:670
+#: ../functions/simplecatch_functions.php:675
 msgid "Theme:"
 msgstr "Thème : "
 
-#: ../functions/simplecatch_functions.php:670
+#: ../functions/simplecatch_functions.php:675
 #: ../functions/panel/theme_options.php:118
 msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
-#: ../functions/simplecatch_functions.php:670
+#: ../functions/simplecatch_functions.php:675
 msgid "Simple Catch"
 msgstr "Simple Catch"
 
-#: ../functions/simplecatch_functions.php:843
+#: ../functions/simplecatch_functions.php:848
 msgid "Categories: "
 msgstr "Catégories : "
 
-#: ../functions/simplecatch_functions.php:905
+#: ../functions/simplecatch_functions.php:910
 msgid "Name"
 msgstr "Nom"
 
-#: ../functions/simplecatch_functions.php:905
-#: ../functions/simplecatch_functions.php:906
+#: ../functions/simplecatch_functions.php:910
+#: ../functions/simplecatch_functions.php:911
 msgid "( required )"
 msgstr "(requis)"
 
-#: ../functions/simplecatch_functions.php:906
+#: ../functions/simplecatch_functions.php:911
 msgid "Email"
 msgstr "Email"
 
-#: ../functions/simplecatch_functions.php:907
+#: ../functions/simplecatch_functions.php:912
 msgid "Website"
 msgstr "Site Web"
 
@@ -327,23 +332,20 @@ msgid "Right sidebar"
 msgstr "Barre à droite"
 
 #: ../functions/widgets.php:18
-#, fuzzy
 msgid "Displays Custom Tag Cloud designed for Simple Catch Theme."
-msgstr "Afficher le nuage de mots-clef"
+msgstr "Displays Custom Tag Cloud designed for Simple Catch Theme."
 
 #: ../functions/widgets.php:19
-#, fuzzy
 msgid "Simple Catch Tag Clouds"
-msgstr "Simple Catch"
+msgstr "Simple Catch Tag Clouds"
 
 #: ../functions/widgets.php:101
 msgid "Displays Social Icons added from Theme Options Panel."
-msgstr ""
+msgstr "Displays Social Icons added from Theme Options Panel."
 
 #: ../functions/widgets.php:102
-#, fuzzy
 msgid "Simple Catch Social Icons"
-msgstr "Simple Catch"
+msgstr "Simple Catch Social Icons"
 
 #: ../functions/panel/theme_options.php:39
 #: ../functions/panel/theme_options.php:40
@@ -351,7 +353,6 @@ msgid "Theme Options"
 msgstr "Options du thème"
 
 #: ../functions/panel/theme_options.php:101
-#, fuzzy
 msgid "Options Saved"
 msgstr "Paramètres enregistrés."
 
@@ -364,9 +365,8 @@ msgid "https://twitter.com/catchthemes"
 msgstr "https://twitter.com/catchthemes"
 
 #: ../functions/panel/theme_options.php:116
-#, fuzzy
 msgid "Theme Options By"
-msgstr "Options du thème"
+msgstr "Theme Options By"
 
 #: ../functions/panel/theme_options.php:118
 #: ../functions/panel/theme_options.php:119
@@ -374,42 +374,36 @@ msgid "Catch Themes"
 msgstr "Catch Themes"
 
 #: ../functions/panel/theme_options.php:124
-#, fuzzy
 msgid "http://catchthemes.com/themes/simple-catch-pro/"
-msgstr "http://catchthemes.com/themes/simple-catch-pro"
+msgstr "http://catchthemes.com/themes/simple-catch-pro/"
 
 #: ../functions/panel/theme_options.php:124
 msgid "Upgrade to Simple Catch Pro"
 msgstr "Mettez à jour vers Simple Catch Pro"
 
 #: ../functions/panel/theme_options.php:129
-#, fuzzy
 msgid "http://catchthemes.com/support-forum/forum/simple-catch-public/"
-msgstr "http://catchthemes.com/themes/simple-catch-pro"
+msgstr "http://catchthemes.com/support-forum/forum/simple-catch-public/"
 
 #: ../functions/panel/theme_options.php:129
 msgid "Support Forum"
-msgstr ""
+msgstr "Support Forum"
 
 #: ../functions/panel/theme_options.php:130
-#, fuzzy
 msgid "http://catchthemes.com/theme-instructions/simple-catch/"
-msgstr "http://catchthemes.com/themes/simple-catch-pro"
+msgstr "http://catchthemes.com/theme-instructions/simple-catch/"
 
 #: ../functions/panel/theme_options.php:130
-#, fuzzy
 msgid "Theme Instruction"
-msgstr "Options du thème"
+msgstr "Theme Instruction"
 
 #: ../functions/panel/theme_options.php:131
-#, fuzzy
 msgid "https://www.facebook.com/catchthemes/"
-msgstr "http://facebook.com/catchthemes"
+msgstr "https://www.facebook.com/catchthemes/"
 
 #: ../functions/panel/theme_options.php:131
-#, fuzzy
 msgid "Like Catch Themes on Facebook"
-msgstr "Equipe Catch Themes"
+msgstr "Like Catch Themes on Facebook"
 
 #: ../functions/panel/theme_options.php:131
 #: ../functions/panel/theme_options.php:592
@@ -417,14 +411,12 @@ msgid "Facebook"
 msgstr "Facebook"
 
 #: ../functions/panel/theme_options.php:132
-#, fuzzy
 msgid "https://twitter.com/catchthemes/"
-msgstr "https://twitter.com/catchthemes"
+msgstr "https://twitter.com/catchthemes/"
 
 #: ../functions/panel/theme_options.php:132
-#, fuzzy
 msgid "Follow Catch Themes on Twitter"
-msgstr "Equipe Catch Themes"
+msgstr "Follow Catch Themes on Twitter"
 
 #: ../functions/panel/theme_options.php:132
 #: ../functions/panel/theme_options.php:597
@@ -432,27 +424,24 @@ msgid "Twitter"
 msgstr "Twitter"
 
 #: ../functions/panel/theme_options.php:133
-#, fuzzy
 msgid "http://wordpress.org/support/view/theme-reviews/simple-catch"
-msgstr "http://wordpress.org/extend/themes/simple-catch"
+msgstr "http://wordpress.org/support/view/theme-reviews/simple-catch"
 
 #: ../functions/panel/theme_options.php:133
-#, fuzzy
 msgid "Rate us 5 Star on WordPress"
-msgstr "%s sur WordPress"
+msgstr "Rate us 5 Star on WordPress"
 
 #: ../functions/panel/theme_options.php:133
 msgid "5 Star Rating"
-msgstr ""
+msgstr "5 Star Rating"
 
 #: ../functions/panel/theme_options.php:142
 msgid "Design Settings"
 msgstr "Paramètres du design"
 
 #: ../functions/panel/theme_options.php:144
-#, fuzzy
 msgid "Featured Post Slider"
-msgstr "Diaporama d'images à la une"
+msgstr "Featured Post Slider"
 
 #: ../functions/panel/theme_options.php:145
 msgid "Social Links"
@@ -471,13 +460,12 @@ msgid "Header logo url:"
 msgstr "URL du logo d'en-tête : "
 
 #: ../functions/panel/theme_options.php:161
-#, fuzzy
 msgid "Change Logo"
-msgstr "Modifier le logo d'en-tête"
+msgstr "Change Logo"
 
 #: ../functions/panel/theme_options.php:164
 msgid "Upload Logo"
-msgstr ""
+msgstr "Upload Logo"
 
 #: ../functions/panel/theme_options.php:171
 msgid "Preview:"
@@ -485,10 +473,9 @@ msgstr "Aperçu : "
 
 #: ../functions/panel/theme_options.php:177
 msgid "No Header Image Found. Upload Header Image."
-msgstr ""
+msgstr "No Header Image Found. Upload Header Image."
 
 #: ../functions/panel/theme_options.php:184
-#, fuzzy
 msgid "Disable Site Title?"
 msgstr "Désactiver le titre du site : "
 
@@ -496,16 +483,15 @@ msgstr "Désactiver le titre du site : "
 #: ../functions/panel/theme_options.php:191
 #: ../functions/panel/theme_options.php:219
 msgid "Check to Disable."
-msgstr ""
+msgstr "Check to Disable."
 
 #: ../functions/panel/theme_options.php:189
-#, fuzzy
 msgid "Disable Site Description?"
-msgstr "Désactiver la description du site : "
+msgstr "Désactiver la description du site?"
 
 #: ../functions/panel/theme_options.php:194
 msgid "Footer logo url: "
-msgstr "URL du logo de pied-de-page : "
+msgstr "URL du logo de pied-de-page: "
 
 #: ../functions/panel/theme_options.php:201
 msgid "Change Footer Logo"
@@ -514,12 +500,11 @@ msgstr "Modifier le logo de pied-de-page"
 #: ../functions/panel/theme_options.php:205
 #: ../functions/panel/theme_options.php:246
 msgid "Preview: "
-msgstr "Aperçu : "
+msgstr "Aperçu: "
 
 #: ../functions/panel/theme_options.php:217
-#, fuzzy
 msgid "Disable Footer Logo?"
-msgstr "Désactiver le logo de pied-de-page : "
+msgstr "Désactiver le logo de pied-de-page? "
 
 #: ../functions/panel/theme_options.php:223
 #: ../functions/panel/theme_options.php:260
@@ -532,9 +517,9 @@ msgstr "Désactiver le logo de pied-de-page : "
 #: ../functions/panel/theme_options.php:500
 #: ../functions/panel/theme_options.php:531
 #: ../functions/panel/theme_options.php:582
-#: ../functions/panel/theme_options.php:683
-#: ../functions/panel/theme_options.php:712
-#: ../functions/panel/theme_options.php:742
+#: ../functions/panel/theme_options.php:688
+#: ../functions/panel/theme_options.php:717
+#: ../functions/panel/theme_options.php:747
 msgid "Save"
 msgstr "Enregister"
 
@@ -543,23 +528,20 @@ msgid "Fav Icon Options"
 msgstr "Options de Favicon"
 
 #: ../functions/panel/theme_options.php:233
-#, fuzzy
 msgid "Favicon URL:"
-msgstr "URL du Favicon : "
+msgstr "URL du Favicon:"
 
 #: ../functions/panel/theme_options.php:236
-#, fuzzy
 msgid "Change Favicon"
-msgstr "Modifier le Favicon"
+msgstr "Change Favicon"
 
 #: ../functions/panel/theme_options.php:239
-#, fuzzy
 msgid "Upload Favicon"
-msgstr "Désactiver le Favicon : "
+msgstr "Désactiver le Favicon"
 
 #: ../functions/panel/theme_options.php:252
 msgid "No Favicon Found. Upload Favicon."
-msgstr ""
+msgstr "No Favicon Found. Upload Favicon."
 
 #: ../functions/panel/theme_options.php:265
 msgid "Content Background"
@@ -852,51 +834,55 @@ msgstr "Delicious"
 msgid "Last.fm"
 msgstr "Last.fm"
 
-#: ../functions/panel/theme_options.php:689
+#: ../functions/panel/theme_options.php:683
+msgid "Instagram"
+msgstr "Instagram"
+
+#: ../functions/panel/theme_options.php:694
 msgid "Site Verification"
 msgstr "Vérification de site"
 
-#: ../functions/panel/theme_options.php:694
+#: ../functions/panel/theme_options.php:699
 msgid "Google Site Verification ID"
 msgstr "ID de vérification Google Site"
 
-#: ../functions/panel/theme_options.php:695
+#: ../functions/panel/theme_options.php:700
 msgid "Enter your Google ID number only"
 msgstr "Entrez seulement votre ID Google"
 
-#: ../functions/panel/theme_options.php:700
+#: ../functions/panel/theme_options.php:705
 msgid "Yahoo Site Verification ID"
 msgstr "ID de vérification Yahoo Site"
 
-#: ../functions/panel/theme_options.php:701
+#: ../functions/panel/theme_options.php:706
 msgid "Enter your Yahoo ID number only"
 msgstr "Entrez seulement votre ID Yahoo"
 
-#: ../functions/panel/theme_options.php:706
+#: ../functions/panel/theme_options.php:711
 msgid "Bing Site Verification ID"
 msgstr "ID de vérification Bing"
 
-#: ../functions/panel/theme_options.php:707
+#: ../functions/panel/theme_options.php:712
 msgid "Enter your Bing ID number only"
 msgstr "Entrez seulement votre ID Bing"
 
-#: ../functions/panel/theme_options.php:717
-msgid "Analytics/ Header / Footer Codes"
-msgstr ""
-
 #: ../functions/panel/theme_options.php:722
+msgid "Analytics/ Header / Footer Codes"
+msgstr "Analytics/ Header / Footer Codes"
+
+#: ../functions/panel/theme_options.php:727
 msgid "Code to display on Header"
 msgstr "Code à afficher dans l'en-tête"
 
-#: ../functions/panel/theme_options.php:728
+#: ../functions/panel/theme_options.php:733
 msgid "Note: Here you can put scripts from Google, Facebook etc. which will load on Header"
 msgstr "Note : collez ici les codes de Google, Facebook, etc, qui se chargeront dans l'en-tête"
 
-#: ../functions/panel/theme_options.php:731
+#: ../functions/panel/theme_options.php:736
 msgid "Code to display on Footer"
 msgstr "Code à afficher dans le pied-de-page"
 
-#: ../functions/panel/theme_options.php:738
+#: ../functions/panel/theme_options.php:743
 msgid "Note: Here you can put scripts from Google, Facebook, Add This etc. which will load on footer"
 msgstr "Note : collez ici les codes de Google, Facebook, AddThis, etc, qui se chargeront dans le pied-de-page"
 

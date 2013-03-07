@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-01 21:58+0530\n"
-"PO-Revision-Date: 2013-02-01 21:58+0530\n"
+"POT-Creation-Date: 2013-03-07 23:01+0530\n"
+"PO-Revision-Date: 2013-03-07 23:01+0530\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Piotrekkk\n"
 "MIME-Version: 1.0\n"
@@ -250,54 +250,59 @@ msgstr "%s na Delicious"
 msgid "%s in Last.fm"
 msgstr "%s na Last.fm"
 
-#: ../functions/simplecatch_functions.php:670
+#: ../functions/simplecatch_functions.php:522
+#, php-format
+msgid "%s in Instagram"
+msgstr "%s na Instagram"
+
+#: ../functions/simplecatch_functions.php:675
 msgid "Powered By:"
 msgstr "Wspierane przez:"
 
-#: ../functions/simplecatch_functions.php:670
+#: ../functions/simplecatch_functions.php:675
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: ../functions/simplecatch_functions.php:670
+#: ../functions/simplecatch_functions.php:675
 msgid "Powered By WordPress"
 msgstr "Dumnie wspierane przez WordPressa"
 
-#: ../functions/simplecatch_functions.php:670
+#: ../functions/simplecatch_functions.php:675
 #: ../functions/panel/theme_options.php:663
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../functions/simplecatch_functions.php:670
+#: ../functions/simplecatch_functions.php:675
 msgid "Theme:"
 msgstr "Motyw:"
 
-#: ../functions/simplecatch_functions.php:670
+#: ../functions/simplecatch_functions.php:675
 #: ../functions/panel/theme_options.php:118
 msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
-#: ../functions/simplecatch_functions.php:670
+#: ../functions/simplecatch_functions.php:675
 msgid "Simple Catch"
 msgstr "Simple Catch"
 
-#: ../functions/simplecatch_functions.php:843
+#: ../functions/simplecatch_functions.php:848
 msgid "Categories: "
 msgstr "Kategorie:"
 
-#: ../functions/simplecatch_functions.php:905
+#: ../functions/simplecatch_functions.php:910
 msgid "Name"
 msgstr "Podpis"
 
-#: ../functions/simplecatch_functions.php:905
-#: ../functions/simplecatch_functions.php:906
+#: ../functions/simplecatch_functions.php:910
+#: ../functions/simplecatch_functions.php:911
 msgid "( required )"
 msgstr "( wymagany )"
 
-#: ../functions/simplecatch_functions.php:906
+#: ../functions/simplecatch_functions.php:911
 msgid "Email"
 msgstr "Email"
 
-#: ../functions/simplecatch_functions.php:907
+#: ../functions/simplecatch_functions.php:912
 msgid "Website"
 msgstr "WWW"
 
@@ -328,23 +333,20 @@ msgid "Right sidebar"
 msgstr "Prawy pasek boczny"
 
 #: ../functions/widgets.php:18
-#, fuzzy
 msgid "Displays Custom Tag Cloud designed for Simple Catch Theme."
-msgstr "Wyświetla własną chmurę tagów"
+msgstr "Displays Custom Tag Cloud designed for Simple Catch Theme."
 
 #: ../functions/widgets.php:19
-#, fuzzy
 msgid "Simple Catch Tag Clouds"
-msgstr "Simple Catch"
+msgstr "Simple Catch Tag Clouds"
 
 #: ../functions/widgets.php:101
 msgid "Displays Social Icons added from Theme Options Panel."
-msgstr ""
+msgstr "Displays Social Icons added from Theme Options Panel."
 
 #: ../functions/widgets.php:102
-#, fuzzy
 msgid "Simple Catch Social Icons"
-msgstr "Simple Catch"
+msgstr "Simple Catch Social Icons"
 
 #: ../functions/panel/theme_options.php:39
 #: ../functions/panel/theme_options.php:40
@@ -516,9 +518,9 @@ msgstr "Wyłączyć logo w stopce?"
 #: ../functions/panel/theme_options.php:500
 #: ../functions/panel/theme_options.php:531
 #: ../functions/panel/theme_options.php:582
-#: ../functions/panel/theme_options.php:683
-#: ../functions/panel/theme_options.php:712
-#: ../functions/panel/theme_options.php:742
+#: ../functions/panel/theme_options.php:688
+#: ../functions/panel/theme_options.php:717
+#: ../functions/panel/theme_options.php:747
 msgid "Save"
 msgstr "Zapisz"
 
@@ -833,51 +835,55 @@ msgstr "Delicious"
 msgid "Last.fm"
 msgstr "Last.fm"
 
-#: ../functions/panel/theme_options.php:689
+#: ../functions/panel/theme_options.php:683
+msgid "Instagram"
+msgstr "Instagram"
+
+#: ../functions/panel/theme_options.php:694
 msgid "Site Verification"
 msgstr "Weryfikacja strony"
 
-#: ../functions/panel/theme_options.php:694
+#: ../functions/panel/theme_options.php:699
 msgid "Google Site Verification ID"
 msgstr "Kod weryfikacyjny Google"
 
-#: ../functions/panel/theme_options.php:695
+#: ../functions/panel/theme_options.php:700
 msgid "Enter your Google ID number only"
 msgstr "Wpisz tylko Twój identyfikator Google"
 
-#: ../functions/panel/theme_options.php:700
+#: ../functions/panel/theme_options.php:705
 msgid "Yahoo Site Verification ID"
 msgstr "Kod weryfikacyjny Yahoo"
 
-#: ../functions/panel/theme_options.php:701
+#: ../functions/panel/theme_options.php:706
 msgid "Enter your Yahoo ID number only"
 msgstr "Wpisz tylko Twój indetyfikator Yahoo"
 
-#: ../functions/panel/theme_options.php:706
+#: ../functions/panel/theme_options.php:711
 msgid "Bing Site Verification ID"
 msgstr "Kod weryfikacyjny Binga"
 
-#: ../functions/panel/theme_options.php:707
+#: ../functions/panel/theme_options.php:712
 msgid "Enter your Bing ID number only"
 msgstr "Wpisz tylko Twój identyfikator Binga"
 
-#: ../functions/panel/theme_options.php:717
+#: ../functions/panel/theme_options.php:722
 msgid "Analytics/ Header / Footer Codes"
 msgstr "Analityka - kody w nagłówku i w stopce"
 
-#: ../functions/panel/theme_options.php:722
+#: ../functions/panel/theme_options.php:727
 msgid "Code to display on Header"
 msgstr "Kod do wyświetlenia w nagłówku"
 
-#: ../functions/panel/theme_options.php:728
+#: ../functions/panel/theme_options.php:733
 msgid "Note: Here you can put scripts from Google, Facebook etc. which will load on Header"
 msgstr "Rada: Tutaj możesz wpisać kod skryptu od Google, Facebooka, itp. który będzie załadowany w nagłówku"
 
-#: ../functions/panel/theme_options.php:731
+#: ../functions/panel/theme_options.php:736
 msgid "Code to display on Footer"
 msgstr "Kod do wyświetlenia w stopce"
 
-#: ../functions/panel/theme_options.php:738
+#: ../functions/panel/theme_options.php:743
 msgid "Note: Here you can put scripts from Google, Facebook, Add This etc. which will load on footer"
 msgstr "Rada: Tutaj możesz wpisać kod skryptu od Google, Facebooka, Add This itp. który będzie załadowany w stopce"
 

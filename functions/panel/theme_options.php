@@ -679,6 +679,11 @@ function simplecatch_theme_options_do_page() {
                                     <td><input type="text" size="45" name="simplecatch_options[social_lastfm]" value="<?php echo esc_url( $options[ 'social_lastfm' ] ); ?>" />
                                     </td>
                                 </tr>
+                                <tr>
+                                    <th scope="row"><h4><?php _e( 'Instagram', 'simplecatch' ); ?> </h4></th>
+                                    <td><input type="text" size="45" name="simplecatch_options[social_instagram]" value="<?php echo esc_url( $options[ 'social_instagram' ] ); ?>" />
+                                    </td>
+                                </tr>
                             </tbody>
                         </table><p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p>      
                 	</div><!-- .option-container -->                       
@@ -930,6 +935,9 @@ function simplecatch_theme_options_validate( $options ) {
 	if( isset( $input[ 'social_lastfm' ] ) ) {
 		$input_validated[ 'social_lastfm' ] = esc_url_raw( $input[ 'social_lastfm' ] );
 	}	
+	if( isset( $input[ 'social_instagram' ] ) ) {
+		$input_validated[ 'social_instagram' ] = esc_url_raw( $input[ 'social_instagram' ] );
+	}		
 	
 	//Custom CSS Style Validation
 	if ( isset( $input['custom_css'] ) ) {
