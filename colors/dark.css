@@ -222,13 +222,9 @@ a:active img[class*="wp-image-"] {
 
 /* Comments link */
 .entry-header .comments-link a {
-	background: #282828 url(../images/comment-bubble-dark.png) no-repeat;
+	background-color: #282828;
 	border-color: #222;
 	color: #888;
-}
-
-.rtl .entry-header .comments-link a {
-	background-image: url(../images/comment-bubble-dark-rtl.png);
 }
 /* Singular content styles for Posts and Pages */
 .singular .entry-title {
@@ -498,25 +494,12 @@ li.bypostauthor a.comment-reply-link:active {
 	background: #999;
 	color: #000;
 }
-.commentlist > li:before {
-	content: url(../images/comment-arrow-dark.png);
-}
-.rtl .commentlist > li:before {
-	content: url(../images/comment-arrow-dark-rtl.png);
-}
 
 /* Post author highlighting */
 .commentlist > li.bypostauthor {
 	background: #222;
 	border-color: #2c2c2c;
 }
-.commentlist > li.bypostauthor:before {
-	content: url(../images/comment-arrow-bypostauthor-dark.png);
-}
-.rtl .commentlist > li.bypostauthor:before {
-	content: url(../images/comment-arrow-bypostauthor-dark-rtl.png);
-}
-
 /* Post Author threaded comments */
 .commentlist .children > li.bypostauthor {
 	background: #222;

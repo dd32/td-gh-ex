@@ -221,3 +221,6 @@ Version 2.0
 Version 2.0.1
 * Added content layout excerpt to show full content if found excerpt empty
 * Added Separator  for Header Image and Site Details   
+
+Version 2.0.2
+* Deleted the extra css in dark.css and fixed chrome issue
