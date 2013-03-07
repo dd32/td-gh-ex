@@ -154,7 +154,6 @@ float:left;
 
 <?php } } ?>
 </style>
-
 <div id="frontpage">
 <?php  
 
@@ -280,7 +279,6 @@ $i=0;	$j=0;?>
 
  ?>
 </div> <!-- frontpage -->
-
  <?php  } // End of mantra_frontpage_generator
 endif;
 ?>

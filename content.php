@@ -61,7 +61,6 @@ foreach ($options as $key => $value) {
 						</div><!-- .entry-summary --> 
 						<?php } else { ?>
 						<div class="entry-content">
-						<?php mantra_set_featured_thumb(); ?>
 						<?php the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'mantra' ) . '</span>', 'after' => '</div>' ) ); ?>
 						</div><!-- .entry-content --> 

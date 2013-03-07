@@ -10,6 +10,7 @@
  * @since mantra 0.5
  */
 ?>	<div style="clear:both;"></div>
+
 	</div> <!-- #forbottom -->
 	</div><!-- #main -->
 

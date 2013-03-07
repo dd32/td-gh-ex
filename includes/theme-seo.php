@@ -28,7 +28,12 @@ function mantra_filter_wp_title( $title ) {
     // Return the modified title
     return $filtered_title;
 }
+
+function mantra_filter_wp_title_rss($title) {
+return ' ';
+}
 add_filter( 'wp_title', 'mantra_filter_wp_title' );
+add_filter('wp_title_rss','mantra_filter_wp_title_rss');
 
  /**
  * Meta description

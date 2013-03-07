@@ -146,4 +146,14 @@ function cryout_post_after_content_hook() {
 function cryout_post_footer_hook() {
     do_action('cryout_post_footer_hook');
 }
+
+//Content hooks
+
+function cryout_before_content_hook() {
+    do_action('cryout_before_content_hook');
+}
+
+function cryout_after_content_hook() {
+    do_action('cryout_after_content_hook');
+}
 ?>

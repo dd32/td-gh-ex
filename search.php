@@ -11,7 +11,8 @@ get_header(); ?>
 
 		<section id="container">
 			<div id="content" role="main">
-
+	<?php cryout_before_content_hook(); ?>
+	
 			<?php if ( have_posts() ) : ?>
 
 				
@@ -45,8 +46,7 @@ get_header(); ?>
 				<?php endif; ?>
 
 
-		
-
+			<?php cryout_after_content_hook(); ?>
 			</div><!-- #content -->
 		<?php get_sidebar(); ?>
 		</section><!-- #primary -->

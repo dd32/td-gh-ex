@@ -193,6 +193,7 @@ $mantra_defaults = array(
 "mantra_breadcrumbs" => "Disable",
 "mantra_pagination" => "Enable",
 "mantra_mobile" => "Enable",
+"mantra_hcontain" => "",
 "mantra_favicon" => "",
 "mantra_customcss" => "/* Mantra Custom CSS */  ",
 "mantra_customjs" => "",

@@ -238,7 +238,7 @@ function echo_first_image ($postID)
 	
 	if ($attachments) {
 		foreach($attachments as $attachment) {
-			$image_attributes = wp_get_attachment_image_src( $attachment->ID, 'full' )  ? wp_get_attachment_image_src( $attachment->ID, 'full' ) : wp_get_attachment_image_src( $attachment->ID, 'full' );
+			$image_attributes = wp_get_attachment_image_src( $attachment->ID, 'custom' )  ? wp_get_attachment_image_src( $attachment->ID, 'custom' ) : wp_get_attachment_image_src( $attachment->ID, 'custom' );
 				
 			return $image_attributes[0];
 			
@@ -246,7 +246,7 @@ function echo_first_image ($postID)
 	}
 }
 
-
+if ( ! function_exists( 'mantra_set_featured_thumb' ) ) :
 /**
  * Adds a post thumbnail and if one doesn't exist the first image from the post is used.
  */
@@ -263,9 +263,12 @@ $image_src = echo_first_image($post->ID);
 			the_post_thumbnail( 'custom', array("class" => "align".strtolower($mantra_falign)." post_thumbnail" ) ); 
 
 	else if ($mantra_fpost=='Enable' && $mantra_fauto=="Enable" && $image_src && ($mantra_excerptarchive != "Full Post" || $mantra_excerpthome != "Full Post")) 
-			echo '<a title="'.the_title_attribute('echo=0').'" href="'.get_permalink().'" ><img   width='.$mantra_fwidth.' height='.$mantra_fheight.' title="" alt="" class="align'.strtolower($mantra_falign).' post_thumbnail" src="'.$image_src.'"></a>' ;
+			echo '<a title="'.the_title_attribute('echo=0').'" href="'.get_permalink().'" ><img title="" alt="" class="align'.strtolower($mantra_falign).' post_thumbnail" src="'.$image_src.'"></a>' ;
 							
 	}
+endif; // mantra_set_featured_thumb
+
+
 
 if ($mantra_fpost=='Enable' && $mantra_fpostlink) add_filter( 'post_thumbnail_html', 'mantra_thumbnail_link', 10, 3 );	
 

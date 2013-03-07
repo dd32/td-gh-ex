@@ -17,8 +17,19 @@
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
 	background-size:cover;
-	//height:auto ;
-}
+	height:100% ;
+	}
+	#smenul, #smenur {
+	margin-top:0;
+	}
+
+	.socials a {
+	margin:0;
+	left:10px;
+	}
+	.socials a img {
+	width:65%;
+	}	
 	#wrapper {
 		margin:10px !important;
 	}
@@ -65,6 +76,22 @@
 	-webkit-border-radius:0;
 	border-radius:0;
 	}
+	#site-title  {
+		font-size:30px;
+		line-height: 30px;
+		padding-left:0;
+		margin-top:0px;
+	}
+	#site-description {
+		margin-top:5px;
+		font-size:15px;
+		line-height: 15px;
+	}
+	
+	article.sticky {
+	padding:0;
+	}
+
 
 }
 
@@ -73,15 +100,9 @@
 	body, #content p, #content ul, #content ol,#content code, #content pre, #content blockquote {
 		font-size: 13px !important;
 	}
-	#site-title  {
-		line-height:30px;
-	}
-	#site-title a {
-		font-size: 24px;
-	}
-	#site-description {
-		font-size: 12px;
-		line-height:40px;
+	#front-text1 h1, #front-text2 h1 {
+	font-size:2em;
+	line-height:2em;
 	}
 	#access ul {
 		font-size: 12px;
@@ -98,6 +119,7 @@
 	.singular .entry-title {
 		font-size: 28px;
 	}
+	.entry-meta {border:none;}
 	.entry-meta a , .entry-meta, .comments-link{
 		font-size: 10px !important;
 		background:none !important;
@@ -136,11 +158,13 @@
 body, #content p, #content ul, #content ol,#content code, #content pre, #content blockquote {
 		font-size: 12px !important;
 	}
-	#site-title a {
+	#site-title a{
 		font-size: 18px;
+		line-height:18px;
 	}
 	#site-description {
-		font-size: 10px;
+		font-size: 11px;
+		line-height:10px;
 	}
 	#front-columns > div {
 		width:90% ;

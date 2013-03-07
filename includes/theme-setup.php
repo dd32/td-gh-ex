@@ -309,6 +309,28 @@ function mantra_widgets_init() {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
+	
+		// Area 9, located above the content area. Empty by default.
+	register_sidebar( array(
+		'name' => __( 'Above content Widget Area', 'mantra' ),
+		'id' => 'above-content-widget-area',
+		'description' => __( 'Above content Widget Area', 'mantra' ),
+		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</li>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+	
+		// Area 10, located below the content area. Empty by default.
+	register_sidebar( array(
+		'name' => __( 'Below Content Widget Area', 'mantra' ),
+		'id' => 'below-content-widget-area',
+		'description' => __( 'Below Content Widget Area', 'mantra' ),
+		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</li>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
 }
 /** Register sidebars by running mantra_widgets_init() on the widgets_init hook. */
 add_action( 'widgets_init', 'mantra_widgets_init' );
@@ -355,4 +377,20 @@ function mantra_footer_sidebar_class() {
 		echo 'class="footer' . $class . '"';
 }
 
-?>
+
+ function mantra_above_widget() {
+ if ( is_active_sidebar( 'above-content-widget-area' )) { ?>
+			<ul class="yoyo">
+				<?php dynamic_sidebar( 'above-content-widget-area' ); ?>
+			</ul>
+		<?php } } 
+		
+function mantra_below_widget() {
+ if ( is_active_sidebar( 'below-content-widget-area' )) { ?>
+			<ul class="yoyo">
+				<?php dynamic_sidebar( 'below-content-widget-area' ); ?>
+			</ul>
+		<?php } } 
+		
+add_action ('cryout_before_content_hook','mantra_above_widget');
+add_action ('cryout_after_content_hook','mantra_below_widget'); ?>

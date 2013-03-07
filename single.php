@@ -11,7 +11,8 @@ get_header(); ?>
 
 		<section id="container">
 			<div id="content" role="main">
-
+			<?php cryout_before_content_hook(); ?>
+			
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
 				<div id="nav-above" class="navigation">
@@ -63,6 +64,7 @@ get_header(); ?>
 
 <?php endwhile; // end of the loop. ?>
 
+			<?php cryout_after_content_hook(); ?>
 			</div><!-- #content -->
 	<?php get_sidebar(); ?>
 		</section><!-- #container -->

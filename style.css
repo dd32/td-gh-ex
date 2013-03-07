@@ -4,7 +4,7 @@
  * Description: Mantra is a do-it-yourself WordPress theme, featuring a pack of over 100 customization options and easy to use tweaks capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (1,2 or 3 columns), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 35 font-families plus all Google Fonts), text and header sizes, post metas, post excerpts, post formats, header and background images, custom menus, 27 social media links and icons, pins, bullets and much much more. With a fully responsive layout,a customizable showcase presentation page, animated slider, magazine and blog layouts, 8 widget areas, modern graphics and an easy and intuitive admin section, you can start creating your dream site right now.
  * Author: Cryout Creations
  * Author URI: http://www.cryoutcreations.eu
- * Version: 1.9.9.6
+ * Version: 1.9.9.7
  * License: GNU General Public License v2.0
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Tags: black, red, blue, white, silver, light, dark, one-column, two-columns, three-columns, right-sidebar, left-sidebar, flexible-width, fixed-width, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, front-page-post-form, full-width-template,  microformats, post-formats, rtl-language-support,  sticky-post, theme-options, threaded-comments, translation-ready
@@ -110,7 +110,7 @@ DESCRIPTION: Two-column fixed layout with one sidebar right of content
 	overflow: hidden;
 	width:125px;
 	border-left:1px dashed #EAEAEA;
-	padding-left:12px;
+	padding-left:20px;
 	padding-top:10px;
 }
 #primary {
@@ -225,9 +225,7 @@ display:block;
 float:none;
 clear:both;
 height:75px;
-padding-top:0;
-padding-top:0px;
-padding-bottom:0px;
+padding:0;
 }
 
 #forbottom {
@@ -818,9 +816,6 @@ overflow:hidden;
 }
 
 .entry-meta {
-	border-radius: 6px 6px 6px 6px;
-    -moz-border-radius: 6px 6px 6px 6px;
-    -webkit-border-radius: 6px 6px 6px 6px;
     background-color: #F5F5F5;
     border: 2px solid #FFF;
     color: #666666;
@@ -828,9 +823,9 @@ overflow:hidden;
     font-size: 12px;
     margin: 0px 1px;
     padding: 0 6px;
-    box-shadow:1px 1px 3px #CCC;
-	-moz-box-shadow:1px 1px 3px #CCC;
-    -webkit-box-shadow:1px 1px 3px #CCC;
+    box-shadow:1px 1px 3px #DDD;
+	-moz-box-shadow:1px 1px 3px #DDD;
+    -webkit-box-shadow:1px 1px 3px #DDD;
 	clear:both;
 }
 
@@ -848,12 +843,11 @@ overflow:hidden;
 	padding:0px 10px;
 	padding-bottom:0px;
 	font-size:12px;
-	border-radius: 10px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-   	box-shadow: inset 1px 1px 2px #CCC;
-	-moz-box-shadow: inset 1px 1px 2px  #CCC;
-	-webkit-box-shadow: inset 1px 1px 2px   #CCC;
+   	box-shadow: inset 1px 1px 1px #DDD;
+	-moz-box-shadow: inset 1px 1px 1px  #DDD;
+	-webkit-box-shadow: inset 1px 1px 1px #DDD; 
+	line-height:1.8em;
+	margin-top:1px;
 }
 
 #content h3.entry-format {
@@ -1284,15 +1278,15 @@ article.format-chat h3.entry-format, article.format-aside h3.entry-format { disp
 }
 .nav-previous {
 	float: left;
-	max-width: 50%;
-	padding:0 10px;
+	max-width: 47%;
+	padding:0 1%;
 	border-bottom:1px dashed #DDD;
 }
 .nav-next {
 	float: right;
 	text-align: right;
-	max-width: 50%;
-	padding:0 10px;
+	max-width: 47%;
+	padding:0 1%;
 	border-bottom:1px dashed #DDD;
 }
 
@@ -1622,7 +1616,7 @@ display:block;
 }
 .widget-area ul ul {
 	list-style: none !important;
-	margin-left: 1.3em;
+	margin-left: 0;
 }
 
 .widget-area ul li{
@@ -1706,7 +1700,9 @@ color:#0D85CC;
 	text-align:left;
 	margin-bottom:10px;
 	background-color:#333;
-	width:105%;
+	margin-left:-10px;
+	padding-right:10px;
+	width:100%;
 	-moz-border-radius:10px 0 0 0;
 	-webkit-border-radius:10px 0 0 0;
 	border-radius:10px 0 0 0;
@@ -1840,18 +1836,25 @@ color:#0D85CC;
 /* Main sidebars */
 #main .widget-area ul {
 	margin-left: 0;
-	padding: 0 10px 0 0;
+	padding: 0;
 }
 #main .widget-area ul ul {
 	border: none;
-	margin-left: 1.3em;
+	margin-left: 0px;
 	padding: 0;
 }
-#primary {
+#main .widget-area ul.xoxo{
+padding-right:10px;
+}
 
+/* Before and after content widgets */
+
+.yoyo .widget-title {
+background:none;
+padding:0;
+margin:0;
 }
-#secondary {
-}
+
 
 /* Footer widget areas */
 #footer-widget-area {
@@ -1897,7 +1900,7 @@ overflow:visible;
 	font-weight: normal;
 	text-align:center;
 	clear:both;
-	padding-top:5px;
+	padding-top:4px;
 }
 #site-info a {
 	color:#0D85CC;
@@ -1912,11 +1915,11 @@ overflow:visible;
 #site-copyright {
 	display:block;
 	float:none;
-	margin-top:15px;
 	font-style: italic;
 	clear:both;
 	margin:0 auto;
 	text-align:center;
+	padding-top:4px;
 }
 
 #site-copyright a{
@@ -2258,14 +2261,14 @@ background:#FAFAFA;
 	margin:20px auto;
 	text-align:center;
 	clear:both;
-	font-size:11px;
-	line-height:13px;
+	font-size:12px;
+	line-height:12px;
 }
 .pagination span, .pagination a {
 	display:block;
 	float:left;
 	margin: 2px 2px 2px 0;
-	padding:6px 9px 5px 9px;
+	padding:12px 16px 10px;
 	text-decoration:none;
 	width:auto;
 	color:#fff;
@@ -2276,7 +2279,6 @@ background:#FAFAFA;
 	background: #999;
 }
 .pagination .current{
-	padding:6px 9px 5px 9px;
 	background: #777;
 	color:#fff;
 }

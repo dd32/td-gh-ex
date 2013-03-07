@@ -7,7 +7,7 @@ Template Name: Blog Template ( Posts Page)
 
 		<div id="container">
 			<div id="content" role="main">
-
+			<?php cryout_before_content_hook(); ?>
 	
 
 
@@ -46,7 +46,7 @@ query_posts('post_status=publish&orderby=date&order=desc&posts_per_page='.get_op
 
 
 
-
+			<?php cryout_after_content_hook(); ?>
 			</div><!-- #content -->
 	<?php get_sidebar(); ?>
 		</div><!-- #container -->

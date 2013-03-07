@@ -16,8 +16,17 @@ The Mantra Theme uses:
 - FitVids by Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com
 - CSS3 PIE / Dual-licensed  Apache License 2.0 or GPLv2 / http://css3pie.com/
 
-Mantra is available in these languages:
+Translations credits:
 English - default
-French - by lcapronnier@yahoo.com & erpiu@alinto.com 
-Italian - by antonio.mercurio@gmail.com 
-Persian - by sajjad.designing@gmail.com 
+Chinese Simplified - Lín Xuan Li 
+Danish - IT-Fidusen 
+Dutch - Tim De Keyser 
+French - Luc Capronnier 
+Greek - tomakrypodari 
+Hebrew - Ahrale 
+Hungarian - GeriSoft 
+Italian - Antonio Mercurio 
+German - Thomas Baillivet, Jan Schulte 
+Norwegian - kandasa 
+Persian (Farsi) - Sajjad 
+Turkish - Emre Dalkiliç

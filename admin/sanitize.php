@@ -10,7 +10,7 @@
 
 	$fontSans = array("Segoe UI, Arial, sans-serif",
 					 "Verdana, Geneva, sans-serif " ,
-					 "Geneva, sans-serif ", 
+					 "Geneva, sans-serif ",
 					 "Helvetica Neue, Arial, Helvetica, sans-serif",
 					 "Helvetica, sans-serif" ,
 					 "Century Gothic, AppleGothic, sans-serif",
@@ -27,7 +27,7 @@
 
 	$fontSerif = array("Georgia, Times New Roman, Times, serif" ,
 					  "Times New Roman, Times, serif",
-					  "Cambria, Georgia, Times, Times New Roman, serif",	
+					  "Cambria, Georgia, Times, Times New Roman, serif",
 					  "Palatino Linotype, Book Antiqua, Palatino, serif",
 					  "Book Antiqua, Palatino, serif",
 					  "Palatino, serif",
@@ -50,7 +50,7 @@
 /* Social media links */
 
 	$socialNetworks = array ("Delicious","DeviantArt", "Digg","Etsy", "Facebook", "Flickr", "Google", "GoodReads",
-							"GooglePlus" ,"LastFM", "LinkedIn", "Mail", "MySpace", "Picasa","Pinterest", "Reddit",
+							"GooglePlus" , "Instagram", "LastFM", "LinkedIn", "Mail", "MySpace", "Picasa","Pinterest", "Reddit",
 							"RSS", "Skype", "SoundCloud", "StumbleUpon", "Technorati","Tumblr", "Twitter", "Vimeo",
 							"WordPress", "Yahoo", "YouTube" );
 
@@ -62,9 +62,9 @@
 function ma_options_validate($input) {
 global $mantra_defaults;
 	// Sanitize the texbox input
-	
+
 	$input['mantra_hheight'] =  intval(wp_kses_data($input['mantra_hheight']));
-	
+
 	$input['mantra_copyright'] =  trim(wp_kses_post($input['mantra_copyright']));
 
 	$input['mantra_backcolor'] =  wp_kses_data($input['mantra_backcolor']);
@@ -136,7 +136,7 @@ global $mantra_defaults;
 	$input['mantra_googlefonttitle2'] = $mantra_googlefonttitle2;
 	$input['mantra_googlefontside2'] = $mantra_googlefontside2;
 	$input['mantra_googlefontsubheader2'] = $mantra_googlefontsubheader2;
-	
+
 	$input['mantra_fpsliderborderwidth'] =  intval(wp_kses_data($input['mantra_fpsliderborderwidth']));
 
 	$input['mantra_slideNumber'] =  intval(wp_kses_data($input['mantra_slideNumber']));

@@ -238,7 +238,7 @@ $checkedClass = ($mantra_options['mantra_hcenter']=='1') ? ' checkedClass' : '';
 
 echo " <label id='hcenter' for='mantra_hcenter' class='socialsdisplay $checkedClass'><input  ";
 		 checked($mantra_options['mantra_hcenter'],'1');
-echo "value='1' id='mantra_hcenter'  name='ma_options[mantra_hcenter]' type='checkbox' style='margin-left:20px;'/> Center the header image horizontally </label>";
+echo "value='1' id='mantra_hcenter'  name='ma_options[mantra_hcenter]' type='checkbox' style='margin-left:20px;'/> ".__('Center the header image horizontally','mantra')." </label>";
 
 
 echo "<div><small>".__("Select the header's height. After saving the settings go and upload your new header image. The header's width will be = ","mantra").$totally."px.</small></div>";
@@ -1940,6 +1940,15 @@ foreach($items as $id=>$item) {
 	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
+	
+	$checkedClass = ($mantra_options['mantra_hcontain']=='1') ? ' checkedClass' : '';
+	
+	
+	echo "<div style='display:inline-block;width:300px;'> <label id='hcontain' for='mantra_hcontain' class='socialsdisplay $checkedClass'><input  ";
+		 checked($mantra_options['mantra_hcontain'],'1');
+echo "value='1' id='mantra_hcontain'  name='ma_options[mantra_hcontain]' type='checkbox' style='margin-left:20px;'/> ".__('Make the header image totally responsive. It will scale while keeping aspect ratio.','mantra')." </label></div>";
+
+	
 	echo "<div><small>".__("Enable the mobile view and make Mantra responsive. The layout and look of your blog will change depending on what device and what resolution it is viewed in. ","mantra")."</small></div>";
 }
 

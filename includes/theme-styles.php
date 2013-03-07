@@ -116,8 +116,7 @@ function mantra_ie_pie() {
    
 #access  ul  li.current_page_item,  #access ul li.current-menu-item ,
 #access ul  li ,#access ul ul ,#access ul ul li, .commentlist li.comment	,.commentlist .avatar,
- .contentsearch #searchsubmit , .widget_search #s, #search #s  ,  .widget_search #searchsubmit ,
-.nivo-caption, .theme-default .nivoSlider {
+ .nivo-caption, .theme-default .nivoSlider {
      behavior: url('.get_template_directory_uri().'/js/PIE/PIE.php);
    }
 </style>

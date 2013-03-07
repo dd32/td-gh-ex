@@ -93,4 +93,3 @@ if ($mantra_side != "1c") { ?>
 		</div><!-- #secondary .widget-area -->
 	<?php }}
  }?> <!-- 1c -->
-

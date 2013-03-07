@@ -1,11 +1,11 @@
-<?php 
+<?php
 /**
  * Misc functions breadcrumbs / pagination / transient data /back to top button
  *
  * @package mantra
  * @subpackage Functions
  */
- 
+
 
  /**
  * Loads necessary scripts
@@ -14,7 +14,7 @@
 */
  function mantra_header_scripts() {
  $mantra_options= mantra_get_theme_options();
-foreach ($mantra_options as $key => $value) {	
+foreach ($mantra_options as $key => $value) {
      ${"$key"} = $value ;
 }
 ?>
@@ -30,32 +30,36 @@ document.createElement('hgroup');
 </script>
 <![endif]-->
 <script type="text/javascript">
-    window.onload = function () {
-	// Add custom borders to images
-    jQuery("img.alignnone, img.alignleft, img.aligncenter,  img.alignright").addClass("<?php echo 'image'.$mantra_image;?>");
+function makeDoubleDelegate(function1, function2) {
+// concatenate functions
+    return function() { if (function1) function1(); if (function2) function2(); }
+}
 
-	
- <?php if ($mantra_mobile=="Enable") { // If mobile view is enabled ?> 	
+function mantra_onload() {
+     // Add custom borders to images
+     jQuery("img.alignnone, img.alignleft, img.aligncenter,  img.alignright").addClass("<?php echo 'image'.$mantra_image;?>");
+<?php if ($mantra_mobile=="Enable") { // If mobile view is enabled ?>
 	jQuery(function () {
 	// Add select navigation to small screens
-    jQuery("#access .menu ul:first-child").tinyNav({
-	header: false // Show header instead of the active item
-					});
+     jQuery("#access .menu ul:first-child").tinyNav({
+          	header: false // Show header instead of the active item
+			});
 	});
-    // Add responsive videos
-  if (jQuery(window).width() < 800) jQuery(".entry-content").fitVids(); 
-  <?php } 
-   // Check if sidebars have user colors and if so equalize their heights
-   if (($mantra_s1bg || $mantra_s2bg) ) { ?>
-		equalizeHeights();
-<?php } ?>  
-    }; // window onload
+     // Add responsive videos
+     if (jQuery(window).width() < 800) jQuery(".entry-content").fitVids();
+<?php }
+if (($mantra_s1bg || $mantra_s2bg) ) { ?>
+     // Check if sidebars have user colors and if so equalize their heights
+     equalizeHeights();<?php } ?>
+}; // mantra_onload
 
+// make sure not to lose previous onload events
+window.onload = makeDoubleDelegate(window.onload, mantra_onload );
 </script>
 <?php
 }
 
-add_action('wp_footer','mantra_header_scripts',100);
+add_action('wp_head','mantra_header_scripts',100);
 
 
 /**
@@ -69,8 +73,8 @@ echo '<a href="'.home_url( '/' ).'" id="linky"> </a>' ;
 
 
 if ($mantra_options['mantra_linkheader']=="Enable") add_action('cryout_branding_hook','mantra_link_header');
- 
- 
+
+
 
  /**
  * Adds title and description to heaer
@@ -78,12 +82,12 @@ if ($mantra_options['mantra_linkheader']=="Enable") add_action('cryout_branding_
 */
  function mantra_title_and_description() {
  // Site Title
-  $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; 
+  $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div';
   echo '<'.$heading_tag.' id="site-title">';
   echo '<span> <a href="'.home_url( '/' ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a> </span>';
-  echo '</'.$heading_tag.'>'; 
+  echo '</'.$heading_tag.'>';
   // Site Description
-  echo '<div id="site-description" >'.get_bloginfo( 'description' ).'</div>';			
+  echo '<div id="site-description" >'.get_bloginfo( 'description' ).'</div>';
 }
 
 
@@ -96,15 +100,15 @@ add_action ('cryout_branding_hook','mantra_title_and_description');
  function mantra_header_socials() {
  mantra_set_social_icons('sheader');
  }
- 
+
   function mantra_smenul_socials() {
  mantra_set_social_icons('smenul');
  }
- 
+
   function mantra_smenur_socials() {
  mantra_set_social_icons('smenur');
  }
- 
+
    function mantra_footer_socials() {
  mantra_set_social_icons('sfooter');
  }
@@ -128,8 +132,8 @@ echo '<div class="socials" id="'.$id.'">';
 for ($i=1; $i<=9; $i+=2) {
 	$j=$i+1;
 	if ( ${"mantra_social$j"} ) {?>
-		<a target="_blank" rel="nofollow" href="<?php echo esc_url(${"mantra_social$j"}); ?>" class="socialicons social-<?php echo esc_attr(${"mantra_social$i"}); ?>" title="<?php echo esc_attr(${"mantra_social$i"}); ?>"><img alt="<?php echo esc_attr(${"mantra_social$i"}); ?>" src="<?php echo get_template_directory_uri().'/images/socials/'.${"mantra_social$i"}.'.png'; ?>" /></a><?php 
-				} 
+		<a target="_blank" rel="nofollow" href="<?php echo esc_url(${"mantra_social$j"}); ?>" class="socialicons social-<?php echo esc_attr(${"mantra_social$i"}); ?>" title="<?php echo esc_attr(${"mantra_social$i"}); ?>"><img alt="<?php echo esc_attr(${"mantra_social$i"}); ?>" src="<?php echo get_template_directory_uri().'/images/socials/'.${"mantra_social$i"}.'.png'; ?>" /></a><?php
+				}
 		}
 echo '</div>';
 }
@@ -151,23 +155,23 @@ else { $mantra_theme_info = wp_get_theme( );}
  * Used in header.php
 */
 function mantra_header_featured_image() {
-global $post;	
+global $post;
 global $mantra_options;
 foreach ($mantra_options as $key => $value) {
 ${"$key"} = $value ;
-}		
+}
 // Check if this is a post or page, if it has a thumbnail, and if it's a big one
 if ( is_singular() && has_post_thumbnail( $post->ID ) && $mantra_fheader == "Enable" &&
 	(  $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&
 	$image[1] >= HEADER_IMAGE_WIDTH ) :
 	// Houston, we have a new header image!
-	//echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' ); 
-	$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), array(HEADER_IMAGE_WIDTH,HEADER_IMAGE_HEIGHT) ); 
-endif; 
+	//echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
+	$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), array(HEADER_IMAGE_WIDTH,HEADER_IMAGE_HEIGHT) );
+endif;
 }
 
 
-add_action ('cryout_branding_hook','mantra_header_featured_image');	 
+add_action ('cryout_branding_hook','mantra_header_featured_image');
 
 
 /**
@@ -195,32 +199,32 @@ global $post;
 echo '<div class="breadcrumbs">';
 if (is_page() && !is_front_page() || is_single() || is_category() || is_archive()) {
         echo '<a href="'.get_bloginfo('url').'">'.get_bloginfo('name').' &raquo; </a>';
- 
+
         if (is_page()) {
             $ancestors = get_post_ancestors($post);
- 
+
             if ($ancestors) {
                 $ancestors = array_reverse($ancestors);
- 
+
                 foreach ($ancestors as $crumb) {
                     echo '<a href="'.get_permalink($crumb).'">'.get_the_title($crumb).' &raquo; </a>';
                 }
             }
         }
- 
+
         if (is_single()) {
        if(has_category())    { $category = get_the_category();
             echo '<a href="'.get_category_link($category[0]->cat_ID).'">'.$category[0]->cat_name.' &raquo; </a>';
 								}
         }
- 
+
         if (is_category()) {
             $category = get_the_category();
             echo ''.$category[0]->cat_name.'';
         }
 
 
- 
+
         // Current page
         if (is_page() || is_single()) {
             echo ''.get_the_title().'';
@@ -245,8 +249,8 @@ if ( ! function_exists( 'mantra_pagination' ) ) :
  * Creates pagination for blog pages.
  */
 function mantra_pagination($pages = '', $range = 2, $prefix ='')
-{  
-     $showitems = ($range * 2)+1;  
+{
+     $showitems = ($range * 2)+1;
 
      global $paged;
      if(empty($paged)) $paged = 1;
@@ -259,7 +263,7 @@ function mantra_pagination($pages = '', $range = 2, $prefix ='')
          {
              $pages = 1;
          }
-     }   
+     }
 
      if(1 != $pages)
      {
@@ -276,7 +280,7 @@ function mantra_pagination($pages = '', $range = 2, $prefix ='')
              }
          }
 
-         if ($paged < $pages && $showitems < $pages) echo "<a href='".get_pagenum_link($paged + 1)."'>&rsaquo;</a>";  
+         if ($paged < $pages && $showitems < $pages) echo "<a href='".get_pagenum_link($paged + 1)."'>&rsaquo;</a>";
          if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo "<a href='".get_pagenum_link($pages)."'>&raquo;</a>";
          echo "</nav></div>\n";
      }
@@ -289,19 +293,19 @@ endif;
  */
 function mantra_site_info() {
 $mantra_options= mantra_get_theme_options();
-foreach ($mantra_options as $key => $value) {	
+foreach ($mantra_options as $key => $value) {
      ${"$key"} = $value ;
 }	?>
 	<div id="site-info" >
 		<a href="<?php echo home_url( '/' ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 			<?php bloginfo( 'name' ); ?></a> | <?php _e('Powered by','mantra')?> <a href="<?php echo 'http://www.cryoutcreations.eu';?>" title="<?php echo 'Mantra Theme by '.
-			'Cryout Creations';?>"><?php echo 'Mantra' ?></a> &amp; <a href="<?php echo esc_url('http://wordpress.org/' ); ?>" 
+			'Cryout Creations';?>"><?php echo 'Mantra' ?></a> &amp; <a href="<?php echo esc_url('http://wordpress.org/' ); ?>"
 			title="<?php esc_attr_e('Semantic Personal Publishing Platform', 'mantra'); ?>"> <?php printf(' %s.', 'WordPress' ); ?>
 		</a>
 	</div><!-- #site-info -->
 <?php }
 
-add_action('cryout_footer_hook','mantra_site_info',11);
+add_action('cryout_footer_hook','mantra_site_info',12);
 
 
 /**
@@ -309,15 +313,15 @@ add_action('cryout_footer_hook','mantra_site_info',11);
  */
 function mantra_copyright() {
 $mantra_options= mantra_get_theme_options();
-foreach ($mantra_options as $key => $value) {	
+foreach ($mantra_options as $key => $value) {
      ${"$key"} = $value ;
 	 }
 	echo '<div id="site-copyright">'.$mantra_copyright.'</div>';
 }
 
 
-if ($mantra_copyright != '') add_action('cryout_footer_hook','mantra_copyright',12);
-	
+if ($mantra_copyright != '') add_action('cryout_footer_hook','mantra_copyright',11);
+
 add_action('wp_ajax_nopriv_do_ajax', 'mantra_ajax_function');
 add_action('wp_ajax_do_ajax', 'mantra_ajax_function');
 
@@ -325,10 +329,10 @@ if ( ! function_exists( 'mantra_ajax_function' ) ) :
 
 function mantra_ajax_function(){
 ob_clean();
- 
+
    // the first part is a SWTICHBOARD that fires specific functions
    // according to the value of Query Var 'fn'
- 
+
      switch($_REQUEST['fn']){
           case 'get_latest_posts':
                $output = mantra_ajax_get_latest_posts($_REQUEST['count'],$_REQUEST['categName']);
@@ -336,13 +340,13 @@ ob_clean();
           default:
               $output = 'No function specified, check your jQuery.ajax() call';
           break;
- 
+
      }
- 
+
    // at this point, $output contains some sort of valuable data!
    // Now, convert $output to JSON and echo it to the browser
    // That way, we can recapture it with jQuery and run our success function
- 
+
           $output=json_encode($output);
          if(is_array($output)){
         print_r($output);
@@ -350,7 +354,7 @@ ob_clean();
          else{
         echo $output;
          }
-         die; 
+         die;
 }
 endif;
 
