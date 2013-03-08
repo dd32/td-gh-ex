@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
+
+
+	<head profile="http://gmpg.org/xfn/11">
+		<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+
+	<title><?php wp_title('-', true); ?></title>
+			
+<link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_uri(); ?>" />
+
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+
+	
+<?php wp_head(); ?>
+
+</head>
+
+<body <?php body_class(); ?>>
+
+	<!--wrapper-->
+	<div id="wrapper">
+	
+	<!--headercontainer-->
+	<div id="header_container">
+	
+		<!--header-->
+		<div id="header2">
+
+				<?php if ( ( of_get_option('logo_image') ) != '' ) { ?>
+		<div id="logo"><a href="<?php echo esc_url(home_url()); ?>" title="<?php bloginfo('description'); ?>"><img src="<?php echo of_get_option('logo_image'); ?>" alt="<?php echo of_get_option('footer_cr'); ?>" /></a></div><!--logo end-->
+	<?php } else { ?>
+			<div id="logo2"><a href="<?php echo esc_url(home_url()); ?>" title="<?php bloginfo('description'); ?>"><?php bloginfo( 'name' ); ?></a></div><!--logo end-->
+	<?php } ?>
+			
+			<!--menu-->
+			
+		<div id="menubar">
+	
+	<?php $navcheck = wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary', 'menu_class' => 'nav' ,'fallback_cb' => '', 'echo' => false ) );  ?>
+	
+	 <?php  if ($navcheck == '') { ?>
+	
+	<ul class="nav">
+		<li class="page_item"><a href="<?php echo esc_url(home_url()); ?>" title="Home"><?php _e( 'Home', 'agency' ); ?></a></li>				
+		<?php wp_list_pages('title_li=&sort_column=menu_order'); ?>
+
+	</ul>
+<?php } else echo($navcheck); ?> 
+
+	</div>
+		
+	
+	<!--menu end-->
+			
+			<div class="clear"></div>			
+			
+		</div><!-- header end-->
+		
+<?php if(is_front_page()) { 
+
+require_once ( get_template_directory() . '/element-slider.php' );
+ } ?>
+
+<?php if(!is_front_page()) { ?>
+
+		<div id="subhead">
+		
+		<h1><?php if ( is_category() ) {
+		single_cat_title();
+		} elseif (is_tag() ) {
+		echo (__( 'Archives for ', 'agency' )); single_tag_title();
+	} elseif (is_archive() ) {
+		echo (__( 'Archives for ', 'agency' )); single_month_title();
+	} elseif (is_search() ) {
+		printf( __( 'Search Results for: %s', 'agency' ), '' . get_search_query() . '' );
+	} else {
+		the_title();
+	} ?></h1>
+			
+			</div>
+			
+		<div class="clear"></div>			
+	
+<?php } ?>	
+		
+	</div><!--header container end-->	
+		
