@@ -5,9 +5,9 @@ Theme URI: http://www.sampression.com/sampression-lite/
 Author: Sampression
 Author URI: http://www.sampression.com
 
-Version: 1.3.1
-License: GNU General Public License v2
-License URI: license.txt
+Version: 1.3.2
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 == Theme Description ==
@@ -78,8 +78,8 @@ Version 1.3
  = Theme Options layout enchance.
  
  
-Version 1.3.1
- == Fixed CSS related bugs, especially on the IE browsers < version 9.x
+Version 1.3.2
+= Fixed CSS related bugs, especially on the IE browsers < version 9.x
 = Fixed "Featured Image Height" issue
 = Fixed "Featured Image Alignment" related issues on various view-port sizes
 
@@ -100,9 +100,14 @@ Version 1.3.1
 = Changed previous social media icons (Facebook, Twitter, Google Plus) and added YouTube as an option
 = The design of "Sticky Post" has been made more prominent
 = A slightly darker color has been used for links
-= Meta links now redirect to their respective archive pages
+= Fixed Meta links now redirect to their respective archive pages
+
 = Users can now use any name for apple touch icons, favicons and logos
-= Users now have the option of not using the default logos and favicons
+= Added Options to not use the default logos and favicons
+= Removed Site verification, analytics, etc.
+= Removed default logo, favicons and apple touch icons
+
+= Few sampression hooks ( sampression_meta, sampression_title, sampression_favicon, sampression_styles, sampression_links, sampression_logo, etc. ) are introduced.
  
  == Child Theme Support ===
  Sampresson Lite supports child themes. Please use child themes for customization of "Sampression Lite". For further reading: http://codex.wordpress.org/Child_Themes.

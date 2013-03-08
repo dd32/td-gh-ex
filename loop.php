@@ -10,7 +10,7 @@ if ( !defined('ABSPATH')) exit;
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" class="post columns four <?php echo sampression_cat_slug(); ?> <?php if ( is_sticky() && is_home() ) { echo 'corner-stamp'; } else { echo 'item'; } ?> ">
+<article id="post-<?php the_ID(); ?>" class="post columns four <?php echo sampression_cat_slug(); ?> <?php if ( is_sticky() && is_home() ) { echo 'sticky corner-stamp'; } else { echo 'item'; } ?> ">
 
       <h3 class="post-title"><a href="<?php the_permalink() ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="bookmark" ><?php the_title(); ?></a></h3>
       

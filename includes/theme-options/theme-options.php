@@ -17,7 +17,7 @@ if ( is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" ) {
  *=======================================================================*/
 add_action('admin_menu', 'sampression_theme_options');
 function sampression_theme_options() {
-	add_theme_page('Sampression Theme Option', 'Theme Options', 'manage_options', 'sampression-options', 'build_sampression_options');
+	add_theme_page('Sampression Theme Option', 'Theme Options', 'manage_options', 'sampression-options', 'sampression_build_options');
 }
 
 /*=======================================================================
@@ -37,24 +37,23 @@ add_action( 'admin_print_styles-appearance_page_sampression-options', 'sampressi
 /*=======================================================================
  * Building tabs for Theme Options
  *=======================================================================*/
-function build_sampression_options() {
+function sampression_build_options() {
 	?>
 	<div id="icon-themes" class="icon32"></div>
 	<div class="container">
 	<h1><?php _e('Sampression Lite Options','sampression'); ?></h1>
 	<?php
 	if ( isset($_POST['sampression_theme_action']) && $_POST['sampression_theme_action'] == 'submit' ) {
-		$options = array ( 'sam_logo', 'sam_use_logo', 'sam_favicons', 'sam_use_favicon16x16',  'sam_apple_icons_57', 'sam_use_appletouch57x57', 'sam_apple_icons_72', 'sam_use_appletouch72x72', 'sam_apple_icons_114', 'sam_use_appletouch114x114', 'sam_header', 'sam_footer', 'get_facebook', 'get_twitter', 'get_gplus','get_youtube', 'google_site_verification', 'bing_site_verification', 'yahoo_site_verification' );
+		$options = array ( 'sam_logo', 'sam_use_logo', 'sam_favicons', 'sam_use_favicon16x16',  'sam_apple_icons_57', 'sam_use_appletouch57x57', 'sam_apple_icons_72', 'sam_use_appletouch72x72', 'sam_apple_icons_114', 'sam_use_appletouch114x114', 'sam_header', 'sam_footer', 'get_facebook', 'get_twitter', 'get_gplus','get_youtube' );
 		foreach ( $options as $opt ) {
 			if(isset($_POST[$opt])) {
 				delete_option ( 'opt_'.$opt, $_POST[$opt] );
-				add_option ( 'opt_'.$opt, $_POST[$opt] );
+				add_option ( 'opt_'.$opt, trim($_POST[$opt]) );
 			}
 		}
 		// Theme Options setting message
-		showMessage('Theme options have been successfully updated.', $errormsg = false);
+		sampression_showMessage('Theme options have been successfully updated.', $errormsg = false);
 	} else if ( isset($_POST['sampression_theme_action']) && $_POST['sampression_theme_action'] == 'restore' ) {
-		//$options = array ( 'sam_logo', 'sam_use_logo', 'sam_favicons', 'sam_apple_icons_57', 'sam_apple_icons_72', 'sam_apple_icons_114' );
 		$options = array ('sam_logo', 'sam_use_logo', 'sam_favicons', 'sam_use_favicon16x16',  'sam_apple_icons_57', 'sam_use_appletouch57x57', 'sam_apple_icons_72', 'sam_use_appletouch72x72', 'sam_apple_icons_114', 'sam_use_appletouch114x114');
 		foreach ( $options as $opt ) {
 			if(isset($_POST[$opt])) {
@@ -62,7 +61,7 @@ function build_sampression_options() {
 			}
 		}
 		// Theme Options setting message: successfully restored.
-		showMessage('Theme options have been successfully restored.', $errormsg = false);
+		sampression_showMessage('Theme options have been successfully restored.', $errormsg = false);
 		// Getting support form
 	} else if ( isset($_POST['sampression_theme_action']) && $_POST['sampression_theme_action'] == 'support' ) {
 		$fullname = $_POST['fullname'];
@@ -77,39 +76,17 @@ function build_sampression_options() {
 		$headers.='From: '.$fullname.' <'.$emailadd.'>' . "\r\n";
 		
 		if(wp_mail($toemail, $emailsubj, $text_message, $headers)) {
-			showMessage('Your message have been successfully sent to Sampression Support Team.', $errormsg = false);
+			sampression_showMessage('Your message have been successfully sent to Sampression Support Team.', $errormsg = false);
 		} else {
-			showMessage('Your message could not be sent at the moment. Please try again later.', $errormsg = true);
+			sampression_showMessage('Your message could not be sent at the moment. Please try again later.', $errormsg = true);
 		}
 	}
 	sampression_options_tabs();
 }
 
 /*=======================================================================
- * Site Verification and Webmaster Tools
- * If user sets the code we're going to display meta verification
- * And if left blank let's not display anything at all in case there is a plugin that does this
+ * Display extra codes on header and footer
  *=======================================================================*/
-function sampression_google_verification() {
-    if (get_option('opt_google_site_verification')) {
-		echo '<meta name="google-site-verification" content="' . get_option('opt_google_site_verification') . '" />' . "\n";
-	}
-}
-add_action('wp_head', 'sampression_google_verification');
-
-function sampression_bing_verification() {
-    if (get_option('opt_bing_site_verification')) {
-		echo '<meta name="msvalidate.01" content="' . get_option('opt_bing_site_verification') . '" />' . "\n";
-	}
-}
-add_action('wp_head', 'sampression_bing_verification');
-
-function sampression_yahoo_verification() {
-    if (get_option('opt_yahoo_site_verification')) {
-		echo '<meta name="y_key" content="' . get_option('opt_yahoo_site_verification') . '" />' . "\n";
-	}
-}
-add_action('wp_head', 'sampression_yahoo_verification');
 
 // Display Extra codes in Header
 function sampression_header_code() {
@@ -144,13 +121,7 @@ function sampression_options_tabs() { ?>
         <div class="tab_container">
         <!-- Tab: Logo & Icons -->
         <div style="display: none;" id="tab1" class="tab_content">
-        <?php
-			$use_logo = get_option('opt_sam_use_logo');
-			$use_check = '';
-			if($use_logo == 'yes') {
-				$use_check = ' checked="checked" ';
-			}
-		?>
+        
         <fieldset class="fieldset-1">
         	<legend><?php echo _e('Site Logo','sampression'); ?></legend>
             <div class="group logo-section">
@@ -160,16 +131,14 @@ function sampression_options_tabs() { ?>
                 <input class= "upload_image_button button" type="button" value="Browse" />
                 
                 <p>
-                	<input type="checkbox" id="logo_front_end" value="yes" <?php echo (get_option('opt_sam_use_logo')=='yes')?'checked="checked"':''; ?> onclick="check_frontend_logo()"/>
+                	<input type="checkbox" id="logo_front_end" value="yes" <?php echo sampression_check('opt_sam_use_logo'); ?> onclick="check_frontend_logo()"/>
                     <input type="hidden" name="sam_use_logo" id="sam_use_logo" value="<?php if(get_option('opt_sam_use_logo')) { echo get_option('opt_sam_use_logo'); } else { echo _e('no','sampression'); } ?>" />
                     <label for="logo_front_end" class="inline"><?php echo _e('I dont want to use Logo.','sampression'); ?></label>
                 </p>
                 <div class="image-block image-holder">
                 	<?php if(get_option('opt_sam_logo')) { ?>
                     <img src="<?php echo get_option('opt_sam_logo'); ?>" alt="<?php echo _e('Logo','sampression'); ?>" />
-                    <?php } else { ?>
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" alt="<?php echo _e('Favicon','sampression'); ?>" />
-                    <?php } ?>
+                    <?php }?>
                 </div>
             </div>
             <div class="col col-2">
@@ -179,9 +148,7 @@ function sampression_options_tabs() { ?>
                 	
                 	<?php if(get_option('opt_sam_logo')) { ?>
                     <img src="<?php echo get_option('opt_sam_logo'); ?>" alt="Logo" />
-                    <?php } else { ?>
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/sampression-logo.png" alt="Logo" />
-                    <?php }?>
+                    <?php } ?>
                 </div>
                 <?php }  ?>
 				
@@ -204,15 +171,13 @@ function sampression_options_tabs() { ?>
                 	<input type="checkbox" id="sam_favicon16x16" value="yes" <?php echo (get_option('opt_sam_use_favicon16x16')=='yes')? 'checked="checked"':' '; ?> onclick="check_frontend_logo()"/>
                     <input type="hidden" name="sam_use_favicon16x16" id="sam_use_favicon16x16" value="
 					<?php if(get_option('opt_sam_use_favicon16x16')) { echo get_option('opt_sam_use_favicon16x16'); } else { echo _e('no','sampression'); } ?>" />
-                    <label for="sam_favicon16x16" class="inline"><?php echo _e('I dont want to use Favicon.','sampression'); ?></label>
+                    <label for="sam_favicon16x16" class="inline"><?php echo _e('I dont want to use favicon.','sampression'); ?></label>
                 </p>
                 <div class="image-block image-holder">
                 	<?php if(get_option('opt_sam_favicons')) { ?>
                     <img src="<?php echo get_option('opt_sam_favicons'); ?>" alt="<?php echo _e('Favicon','sampression'); ?>" width="16" />
-                    <?php } else { ?>
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" alt="<?php echo _e('Favicon','sampression'); ?>" width="16" />
                     <?php } ?>
-                    <p class="note"><?php _e('file name should be "favicon.ico" and dimension should be 16x16', 'sampression'); ?></p>
+                    <p class="note"><?php _e('File dimension should be 16x16.', 'sampression'); ?></p>
                 </div>
             </div>
             <div class="group">
@@ -224,16 +189,13 @@ function sampression_options_tabs() { ?>
                 	<input type="checkbox" id="sam_appletouch57x57" value="yes" <?php echo (get_option('opt_sam_use_appletouch57x57')=='yes')? 'checked="checked"':' '; ?> onclick="check_frontend_logo()"/>
                     <input type="hidden" name="sam_use_appletouch57x57" id="sam_use_appletouch57x57" value="
 					<?php if(get_option('opt_sam_use_appletouch57x57')) { echo get_option('opt_sam_use_appletouch57x57'); } else { echo _e('no','sampression'); } ?>" />
-                    <label for="sam_appletouch57x57" class="inline"><?php echo _e('I dont want to use.','sampression'); ?></label>
+                    <label for="sam_appletouch57x57" class="inline"><?php echo _e('I dont want to use apple touch icon.','sampression'); ?></label>
                 </p>
 				
                 <div class="image-block image-holder">
                 	<?php if(get_option('opt_sam_apple_icons_57')) { ?>
                     <img src="<?php echo get_option('opt_sam_apple_icons_57'); ?>" alt="Apple Icon 57 x 57" width="57" />
-                    <?php } else { ?>
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png" alt="Apple Icon 57 x 57" width="57" />
                     <?php } ?>
-                    <p class="note"><?php _e('file name should be "apple-touch-icon.png"', 'sampression'); ?></p>
                 </div>
             </div>
             <div class="group">
@@ -245,16 +207,13 @@ function sampression_options_tabs() { ?>
                 	<input type="checkbox" id="sam_appletouch72x72" value="yes" <?php echo (get_option('opt_sam_use_appletouch72x72')=='yes')? 'checked="checked"':' '; ?> onclick="check_frontend_logo()"/>
                     <input type="hidden" name="sam_use_appletouch72x72" id="sam_use_appletouch57x57" value="
 					<?php if(get_option('opt_sam_use_appletouch72x72')) { echo get_option('opt_sam_use_appletouch72x72'); } else { echo _e('no','sampression'); } ?>" />
-                    <label for="sam_appletouch72x72" class="inline"><?php echo _e('I dont want to use.','sampression'); ?></label>
+                    <label for="sam_appletouch72x72" class="inline"><?php echo _e('I dont want to use apple touch icon.','sampression'); ?></label>
                 </p>
 				
                 <div class="image-block image-holder">
                 	<?php if(get_option('opt_sam_apple_icons_72')) { ?>
                     <img src="<?php echo get_option('opt_sam_apple_icons_72'); ?>" alt="Apple Icon 72 x 72" width="72" />
-                    <?php } else { ?>
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon-72x72.png" alt="Apple Icon 72 x 72" width="72" />
                     <?php } ?>
-                    <p class="note"><?php _e('file name should be "apple-touch-icon-72x72.png"', 'sampression'); ?></p>
                 </div>
             </div>
             <div class="group">
@@ -266,16 +225,13 @@ function sampression_options_tabs() { ?>
                 	<input type="checkbox" id="sam_appletouch114x114" value="yes" <?php echo (get_option('opt_sam_use_appletouch114x114')=='yes')? 'checked="checked"':' '; ?> onclick="check_frontend_logo()"/>
                     <input type="hidden" name="sam_use_appletouch114x114" id="sam_use_appletouch114x114" value="
 					<?php if(get_option('opt_sam_use_appletouch114x114')) { echo get_option('opt_sam_use_appletouch114x114'); } else { echo _e('no','sampression'); } ?>" />
-                    <label for="sam_appletouch114x114" class="inline"><?php echo _e('I dont want to use.','sampression'); ?></label>
+                    <label for="sam_appletouch114x114" class="inline"><?php echo _e('I dont want to use apple touch icon.','sampression'); ?></label>
                 </p>
 				
                 <div class="image-block image-holder">
                 	<?php if(get_option('opt_sam_apple_icons_114')) { ?>
                     <img src="<?php echo get_option('opt_sam_apple_icons_114'); ?>" alt="Apple Icon 114 x 114" width="114" />
-                    <?php } else { ?>
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon-114x114.png" alt="Apple Icon 114 x 114" width="114" />
                     <?php } ?>
-                    <p class="note"><?php _e('file name should be "apple-touch-icon-114x114.png"', 'sampression'); ?></p>
                 </div>
             </div>
         </fieldset>
@@ -317,25 +273,8 @@ function sampression_options_tabs() { ?>
         </div>
         <!-- Tab: Advanced -->
         <div style="display: none;" id="tab3" class="tab_content">
-         <fieldset class="fieldset-1">
-        	<legend><?php _e('Webmaster Tools','sampression'); ?></legend>
-            <ul class="admin-style-1 support-form webmaster-tool-form">
-            <li class="group">
-            <label class="description" for="google_site_verification"><?php _e('Google Site Verification', 'sampression'); ?></label>
-            <input type="text" name="google_site_verification" id="google_site_verification" class="input-text" value="<?php echo get_option('opt_google_site_verification'); ?>" />               <p class="note"><?php _e('Enter your Google ID number only', 'sampression'); ?></p>
-            </li>
-            <li class="group">
-            <label class="description" for="bing_site_verification"><?php _e('Bing Site Verification', 'sampression'); ?></label>
-            <input type="text" name="bing_site_verification" id="bing_site_verification" class="input-text" value="<?php echo get_option('opt_bing_site_verification'); ?>" />               <p class="note"><?php _e('Enter your Bing ID number only', 'sampression'); ?></p>
-            </li>
-            <li class="group">
-            <label class="description" for="yahoo_site_verification"><?php _e('Yahoo Site Verification', 'sampression'); ?></label>
-            <input type="text" name="yahoo_site_verification" id="yahoo_site_verification" class="input-text" value="<?php echo get_option('opt_yahoo_site_verification'); ?>" />               <p class="note"><?php _e('Enter your Yahoo ID number only', 'sampression'); ?></p>
-            </li>
-		</ul>
-		</fieldset>                               
         <fieldset class="fieldset-1">
-        	<legend><?php _e('Codes to insert in Header','sampression'); ?></legend>
+        	<legend><?php _e('Custom code to insert into Header','sampression'); ?></legend>
             <textarea name="sam_header" class="text-area" rows="10" cols="100"><?php echo get_option('opt_sam_header'); ?></textarea>
             <p class="note">
 			<?php _e('Write/Paste the codes which you want to insert in Header.','sampression'); ?> 
@@ -343,10 +282,10 @@ function sampression_options_tabs() { ?>
 			</p>
         </fieldset>
         <fieldset class="fieldset-1">
-        	<legend><?php _e('Codes to insert in Footer','sampression'); ?></legend>
+        	<legend><?php _e('Custom code to insert into Footer','sampression'); ?></legend>
             <textarea name="sam_footer" class="text-area" rows="10" cols="100"><?php echo get_option('opt_sam_footer'); ?></textarea>
 			<p class="note">
-			<?php _e('Write/Paste the codes which you want to insert in Footer. For eg. Google Analytics Codes.','sampression'); ?>
+			<?php _e('Write/Paste the codes which you want to insert in Footer. For eg. custom styles, scripts, etc.','sampression'); ?>
 			<?php _e('This will be inserted before the  &#060;/body&#062; tag in the footer of the document.','sampression'); ?>
 			</p>
         </fieldset>
@@ -359,7 +298,7 @@ function sampression_options_tabs() { ?>
         <p><?php _e('Get support from Sampression Support Team!','sampression'); ?></p>
         </div>
         <!-- .support-note -->
-        <ul class="admin-style-1 support-form">
+			<ul class="admin-style-1 support-form">
                 <li class="group">
                     <label for="fullname"><?php _e('Name','sampression'); ?></label>
                     <input type="text" name="fullname" id="fullname" class="input-text" />
@@ -377,7 +316,7 @@ function sampression_options_tabs() { ?>
                     <textarea cols="100" rows="10" id="emailmsg" name="emailmsg" class="text-area"></textarea>
                 </li>
                 <li class="group">
-                <input type="hidden" name="userip" value="<?php echo get_ip(); ?>" />
+                <input type="hidden" name="userip" value="<?php echo sampression_get_ip(); ?>" />
                 	<input class="button-primary btn-send-support" type="button" onclick="load_theme_action('support')" value="<?php _e('Send Message','sampression'); ?>" />
                     <span id="support_error_msg"></span>
                 </li>

@@ -13,48 +13,25 @@
 <!--[if IE 7 ]> <html <?php language_attributes(); ?> class="no-js ie7"> <![endif]-->
 <!--[if IE 8 ]> <html <?php language_attributes(); ?> class="no-js ie8"> <![endif]-->
 <!--[if IE 9 ]> <html <?php language_attributes(); ?> class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!-->
-<html <?php language_attributes(); ?> class="no-js"> <!--<![endif]--><head>
-
-	<meta charset="<?php bloginfo('charset'); ?>">
-	<!-- Mobile Specific Metas
-  	================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2">
-
-	<title>
-	<?php
-	/*
-	 * Print the <title> tag based on what is being viewed.
-	 */
-	global $page, $paged;
-
-	wp_title( '|', true, 'right' );
-
-	// Add the blog name.
-	bloginfo( 'name' );
-
-	// Add the blog description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		echo " | $site_description";
+<!--[if (gt IE 9)|!(IE)]><!--><html <?php language_attributes(); ?> class="no-js"> <!--<![endif]-->
+<head>
+	<?php		
+		/** sampression hooks **/
+		// Metas
+		do_action( 'sampression_meta' );
+		// Title
+		do_action( 'sampression_title' );
+		// Favicons
+		do_action( 'sampression_favicon' );
+		// CSS
+		do_action( 'sampression_styles' );
+		// Links
+		do_action( 'sampression_links' );
+		
+		wp_head();
 	?>
-    </title>
-    
-    <!-- Favicons
-    ================================================== -->
-	<?php sampression_favicon(); ?>
-	
-    <!-- CSS
-    ================================================== -->
-    <?php wp_enqueue_style('sampression-style', get_stylesheet_uri(), false, '1.3');?>
-    
-     <!-- Getting Google Fonts
-    ================================================== -->
-    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:700,400,400italic,700italic' rel='stylesheet' type='text/css'>
-	
-	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
-<?php wp_head(); ?>
+	
 </head>
 
 <body <?php body_class('top'); ?>>
@@ -66,7 +43,7 @@
       	<?php
 		if(!get_option('opt_sam_use_logo') || get_option('opt_sam_use_logo') == 'no') {
 		?>
-        <div class="logo-img"><?php sampression_logo(); ?></div>
+        <div class="logo-img"><?php do_action('sampression_logo'); ?></div>
         <?php
 		}
 		?>

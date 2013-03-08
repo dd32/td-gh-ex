@@ -123,13 +123,13 @@ add_action( 'wp_enqueue_scripts', 'sampression_enqueue_comment_reply' );
 /*=======================================================================
  * Remove rel attribute from the category list
  *=======================================================================*/
-function remove_category_list_rel($output)
+function sampression_remove_category_list_rel($output)
 {
   $output = str_replace(' rel="category"', '', $output);
   return $output;
 }
-add_filter('wp_list_categories', 'remove_category_list_rel');
-add_filter('the_category', 'remove_category_list_rel');
+add_filter('wp_list_categories', 'sampression_remove_category_list_rel');
+add_filter('the_category', 'sampression_remove_category_list_rel');
 
 
 /*=======================================================================
@@ -299,26 +299,10 @@ function sampression_widget_reset() {
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div></section>'
 	));
-	
-	$sidebar_id = 'bottom-widget-3';
-    $sidebars_widgets = get_option( 'sidebars_widgets' );
-    $id = count( $sidebars_widgets ) + 1;
-    $sidebars_widgets[$sidebar_id] = array( "text-" . $id );
-	
-		$ops = get_option( 'widget_text' );
-		$ops[$id] = array(
-			'title' => 'About me automatic widget',
-			'text' => 'This is an automatic widget added on Third Bottom Widget box (Bottom Widget 3). 
-			To edit please go to Appearance > Widgets and choose 3rd widget from the top in area second called Bottom Widget 3. Title is also manageable from widgets as well.', 
-		);
-		update_option( 'widget_text', $ops ); 
-		update_option( 'sidebars_widgets', $sidebars_widgets );
-   
-	
 }
-add_action('widgets_init', 'sampression_widgets_init'); /**/
+add_action('widgets_init', 'sampression_widgets_init'); 
 
-/* function sampression_default_widgets() {
+ function sampression_default_widgets() {
 	$sidebar_id = 'bottom-widget-3';
     $sidebars_widgets = get_option( 'sidebars_widgets' );
     $id = count( $sidebars_widgets ) + 1;
@@ -334,7 +318,7 @@ add_action('widgets_init', 'sampression_widgets_init'); /**/
     update_option( 'sidebars_widgets', $sidebars_widgets );
 }
 
-add_action('widgets_init', 'sampression_default_widgets', 11); */
+add_action('widgets_init', 'sampression_default_widgets', 11);
 
 /*=======================================================================
  * Template for comments and pingbacks.
@@ -432,53 +416,38 @@ endif; // ends check for sampression_comment()
  
 function sampression_favicon() {
 
-	if(!get_option('opt_sam_use_favicon16x16') || get_option('opt_sam_use_favicon16x16') == 'no') {
-		if(get_option('opt_sam_favicons')) {
+	if(!get_option('opt_sam_use_favicon16x16') || trim(get_option('opt_sam_use_favicon16x16')) == 'no') {
+		if(get_option('opt_sam_favicons')) { 
 		?>
 			<link rel="shortcut icon" href="<?php echo get_option('opt_sam_favicons'); ?>">
 		<?php
-		} else {
-		?>
-			<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico">
-		<?php
 		}
 	}
 	
 	
-	if(!get_option('opt_sam_use_favicon16x16') || get_option('opt_sam_use_favicon16x16') == 'no') {
+	if(!get_option('opt_sam_use_appletouch57x57') || trim(get_option('opt_sam_use_appletouch57x57')) == 'no') {
 		if(get_option('opt_sam_apple_icons_57')) {
 		?>
-			<link rel="shortcut icon" href="<?php echo get_option('opt_sam_apple_icons_57'); ?>">
+			<link rel="apple-touch-icon" sizes="57x57" href="<?php echo get_option('opt_sam_apple_icons_57'); ?>">
 		<?php
-		} else {
-		?>
-			<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png">
-		<?php
-		}
+		} 
 	}
 	
 	
-	if(!get_option('opt_sam_use_favicon16x16') || get_option('opt_sam_use_favicon16x16') == 'no') {
+	if(!get_option('opt_sam_use_appletouch72x72') || trim(get_option('opt_sam_use_appletouch72x72')) == 'no') {
 		if(get_option('opt_sam_apple_icons_72')) {
 		?>
-			<link rel="shortcut icon" href="<?php echo get_option('opt_sam_apple_icons_72'); ?>">
+			<link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_option('opt_sam_apple_icons_72'); ?>">
 		<?php
-		} else {
-		?>
-			<link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon-72x72.png">
-		<?php
-		}
+		} 
 	}
 	
 	
-	if(!get_option('opt_sam_use_favicon16x16') || get_option('opt_sam_use_favicon16x16') == 'no') {	
+	if(!get_option('opt_sam_use_appletouch114x114') || trim(get_option('opt_sam_use_appletouch114x114')) == 'no') {	
 		if(get_option('opt_sam_apple_icons_114')) {
 		?>
-			<link rel="shortcut icon" href="<?php echo get_option('opt_sam_apple_icons_114'); ?>">
-		<?php
-		} else {
-		?>
-			<link rel="apple-touch-icon" sizes="114x114" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon-114x114.png">
+			
+			<link rel="apple-touch-icon" sizes="114x114" href="<?php echo get_option('opt_sam_apple_icons_114'); ?>">
 		<?php
 		}
 	}
@@ -486,15 +455,11 @@ function sampression_favicon() {
 /*=======================================================================
  * Function to get default logo by Sampression theme
  *=======================================================================*/
- 
-function sampression_logo() {
+ add_action('sampression_logo', 'sampression_show_logo');
+function sampression_show_logo() {
 	if(get_option('opt_sam_logo')) {
 	?>
     	<img src="<?php echo get_option('opt_sam_logo'); ?>" alt="<?php bloginfo('name'); ?>">
-    <?php
-	} else {
-	?>
-    	<img src="<?php echo get_template_directory_uri(); ?>/images/sampression-logo.png" width="46" height="56" alt="Sampression">
     <?php
 	}
 }
@@ -523,10 +488,10 @@ if (!function_exists('sampression_ajax')) {
 * declare the URL to the file that handles the AJAX request (wp-admin/admin-ajax.php)
 *=======================================================================*/
 
-add_action( 'wp_ajax_nopriv_filter-cat-data', 'filter_cat_callback' );
-add_action( 'wp_ajax_filter-cat-data', 'filter_cat_callback' );
+add_action( 'wp_ajax_nopriv_filter-cat-data', 'sampression_filter_cat_callback' );
+add_action( 'wp_ajax_filter-cat-data', 'sampression_filter_cat_callback' );
  
-function filter_cat_callback() {
+function sampression_filter_cat_callback() {
    $slug = $_POST['category'];
    $exc = $_POST['exclude'];
    $exclude = explode('~', $exc);
@@ -587,7 +552,7 @@ function filter_cat_callback() {
 * Get an IP of USER
 *=======================================================================*/
 
-function get_ip() {
+function sampression_get_ip() {
 	if (getenv('HTTP_CLIENT_IP')) {
 		$ip = getenv('HTTP_CLIENT_IP');
 	}
@@ -612,7 +577,7 @@ function get_ip() {
 /*=======================================================================
 * Display notification/message in admin.
 *=======================================================================*/
-function showMessage($message='', $errormsg = false) {
+function sampression_showMessage($message='', $errormsg = false) {
 	if($message!='') {
 		if ($errormsg) {
 			echo '<div id="message" class="error">';
@@ -622,22 +587,111 @@ function showMessage($message='', $errormsg = false) {
 		echo "<p><strong>$message</strong></p></div>";
 	}
 }
-function showNotices() {
+function sampression_showNotices() {
     if(function_exists('showMessage')) {
 		showMessage();
 	}
 }
-add_action('admin_notices', 'showNotices');
+add_action('admin_notices', 'sampression_showNotices');
 
-/*=======================================================================
-* Improve Search - Search tags and categories
-*=======================================================================*/
- add_filter('posts_join', 'sampression_search_join' );
-function sampression_search_join( $join ){
-  global $wp_query, $wpdb;
-  if( is_search() ) {
-    $join .= " LEFT JOIN $wpdb->postmeta ON " . $wpdb->posts .".ID = ".$wpdb->postmeta .".post_id ";
-  }
-  return $join;
+function sampression_check($opt_field){
+	$use_logo = get_option($opt_field);
+		if($use_logo == 'yes') 
+			return ' checked="checked" ';
+}
+
+/* function to echo number of class  depending on number of social media link set */
+function getnoofclass(){
+		$noofclass=0;
+		$class = 'socialzero';
+		 if( get_option( 'opt_get_facebook' ) !=''){ $noofclass++; }
+		 if( get_option( 'opt_get_twitter' ) !=''){ $noofclass++; }
+		 if( get_option( 'opt_get_gplus' ) !=''){ $noofclass++; }
+		 if( get_option( 'opt_get_youtube' ) !=''){ $noofclass++; }
+		 switch($noofclass){
+			case 1: $class='socialone'; break;
+			case 2: $class='socialtwo'; break;
+			case 3: $class='socialthree'; break;
+			case 4: $class='socialfour'; break;
+		 }
+		return $class;
+	  }
+/**
+ * Add meta tags.
+ */ 
+add_action( 'sampression_meta', 'sampression_add_meta' );
+
+function sampression_add_meta() {
+	?>
+	<!-- Charset -->
+	<meta charset="<?php bloginfo('charset'); ?>">
+	<!-- Mobile Specific Metas  -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2">
+	<?php
+}
+
+/**
+ * Add google fonts, pingback url, etc.
+ */ 
+add_action( 'sampression_links', 'sampression_add_links' );
+
+function sampression_add_links() {
+	?>
+	<!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:700,400,400italic,700italic' rel='stylesheet' type='text/css'>
+	<!-- Pingback Url -->
+	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+	<?php
+}
+/**
+ * Displays title. @uses wp_title() 
+ */
+add_action( 'sampression_title', 'sampression_title' );
+
+function sampression_title() {
+	?>
+	<title>
+		<?php wp_title( '|', true, 'right' ); ?>
+	</title>
+	<?php
+}
+
+add_filter( 'wp_title', 'sampression_filter_wp_title' );
+
+function sampression_filter_wp_title() {
+	
+	// Print the <title> tag based on what is being viewed.
+	global $page, $paged;
+	
+	// Add the blog name.
+	 bloginfo( 'name' ); 
+
+	// Add the blog description for the home/front page.
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) ){
+		echo " | $site_description"; 
+	}
+}
+add_action('sampression_favicon','sampression_favicon');
+
+add_action( 'wp_enqueue_scripts', 'sampression_enqueue_styles' );
+
+function sampression_enqueue_styles(){
+	wp_enqueue_style('sampression-style', get_stylesheet_uri(), false, '1.3.2');
+}
+
+add_action('sampression_footer', 'sampression_enqueue_conditional_scripts');
+
+function sampression_enqueue_conditional_scripts(){
+	?>
+	<!-- Enables advanced css selectors in IE, must be used with a JavaScript library (jQuery Enabled in functions.php) -->
+	<!--[if lt IE 9]>
+		<script src="<?php echo get_template_directory_uri(); ?>/lib/js/selectivizr.js"></script>
+	<![endif]-->
+	<!--[if lt IE 7 ]>
+		<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+		<script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
+	<![endif]-->
+	<?php
 }
 ?>

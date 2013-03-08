@@ -6,11 +6,14 @@ Author URI: http://www.sampression.com
 
 Description: Sampression Lite is a fully responsive theme, perfect for blogging. It's lightweight responsive design allows this theme to adapt across a range of screen sizes. Besides an elegant design, Sampression Lite features customizable menus and widgets, along with a threaded comments section. It supports sticky notes with special effects and allows for the best placement of feature images on posts.
 
-Version: 1.3.1
-License: GNU General Public License v2
-License URI: license.txt
-
+Version: 1.3.2
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, orange, green, one-column, two-columns, flexible-width, custom-menu, featured-image-header, featured-images, post-formats, sticky-post, theme-options, threaded-comments, right-sidebar
+Text Domain: sampression
+
+This theme is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
 */
 
 /* Table of Content
@@ -419,7 +422,7 @@ pre {
 #site-title {
 	color:#FE6E41;
 	}
-article.post, .sm-top li a, .btn-top, .cancel-comment-reply a, .corner-stamp, .post-navigation .wp-pagenavi a, .post-navigation .wp-pagenavi span {
+article.post, .sm-top li a, .btn-top, .cancel-comment-reply a, .sticky.corner-stamp, .post-navigation .wp-pagenavi a, .post-navigation .wp-pagenavi span {
 	-moz-border-radius: 5px;
 	  -webkit-border-radius: 5px;
 	  border-radius: 5px;
@@ -470,7 +473,6 @@ a#logo-area:link {
 	overflow:hidden;
 	}
 #site-title {
-	/* font-size:27px; */
 	line-height:1;
 	margin:10px 0 0 0;
 	font-weight:bold;
@@ -493,10 +495,6 @@ a#logo-area:link {
 	text-align:right;
 	}
 #top-nav ul li {
-/* 	display:inline-block; 
-	background:url(images/bullet-1.gif) no-repeat right 8px;
-	padding:2px 10px 2px 0;
-	margin:0 10px 0 0;*/
 	display:inline;
 	position:relative;
 	background: none;
@@ -595,17 +593,18 @@ a#logo-area:link {
 #top-nav .sub-menu li:last-child > .sub-menu li:last-child a{
 	border-bottom:none;
 }
-/* #top-nav ul li li:last a, 
-#top-nav ul li.current-menu-item li:last a, 
-#top-nav ul li.current-menu-parent li:last a, 
-#top-nav ul li.current-menu-ancestor li:last a, 
-#top-nav ul li li.current-menu-item li:last a, 
-#top-nav ul li li.current-menu-parent li:last a, 
-#top-nav ul li li.current-menu-parent li:last.current-menu-item a{
-	background:none;
-	border-bottom:1px solid #d2dfdc;
-	color:#333;
-} */
+#top-nav ul li li:last-child a:hover, 
+#top-nav ul li.current-menu-item li:last-child a:hover, 
+#top-nav ul li.current-menu-parent li:last-child a:hover, 
+#top-nav ul li.current-menu-ancestor li:last-child a:hover, 
+#top-nav ul li li.current-menu-item li:last-child a:hover, 
+#top-nav ul li li.current-menu-parent li:last-child a:hover, 
+#top-nav ul li li.current-menu-parent li.current-menu-item:last-child a:hover,
+#top-nav .sub-menu .sub-menu li a:hover,
+#top-nav .sub-menu li > .sub-menu li a:hover,
+#top-nav .sub-menu li a:hover{
+	color:#666;
+}
 
 /* Third Level */
 #top-nav ul ul ul {
@@ -641,7 +640,7 @@ a#logo-area:link {
 #top-nav-mobile select{ 
 	float: none;
 	display: inline;
-	} /* do not show mobile navigation on large screen */
+	}
 /* Search Form */
 #searchform {
 	margin:0 5px 0 0;
@@ -733,8 +732,6 @@ a#logo-area:link {
 	margin:0;
 	padding:0;
 	list-style:none;
-	/* bug fix - extra space between social links and search form */
-	/* float:right; */
 	float:left;
 	}
 .sm-top li {
@@ -881,9 +878,9 @@ body.admin-bar #primary-nav.fixed {
 	background-color:#8AB7AD;
 	background-position:2px -104px;
 	}
-	/* bug fix - removing tick oh hover which creates confusion when unchecked */
+
 #primary-nav ul.nav-listing li a:hover span{
-	/* 	background-position:2px -104px; */
+	
 	}
 
 /*** Content ***/
@@ -928,14 +925,6 @@ article.post {
 	margin-bottom:30px !important;
 	position:relative;
 	}
-/* article.post.corner-stamp, .sticky {
-	background-color:#EAF8F6;
-	}
-article.post.corner-stamp .entry {
-	border:none;
-	} */
-
-
 article.post:after {
 	content:".";
 	background:url(images/box-shadows.png) no-repeat 0 -11px;
@@ -975,7 +964,6 @@ article.post .post-title a:hover {
 	color:#666;
 	}
 article.post .featured-img {
-	/* height:120px; */
 	height:100%;
 	overflow:hidden;
 	margin-bottom:10px;
@@ -1049,13 +1037,6 @@ body.single .entry.clearfix form input[type="submit"]{
 	text-indent: -9999px;
 	}
 .single .meta .ico{
-	/*width:10px;
-	height:11px;
-	display:block;
-	float:left;
-	text-indent:-9999px;
-	margin:5px 2px 5px 5px;
-	text-indent: -9999px;*/
 	float:none;
 	width: 10px;
 	height: 11px;
@@ -1445,101 +1426,101 @@ ol.commentlist article.comment {
 	}
 
 /* Corner Stamp */
-.corner-stamp {
+.sticky.corner-stamp {
 	background-color:#8AB7AD;
 	float:right;
 	margin-bottom:20px;
 	}
-.corner-stamp.columns.four {
+.sticky.corner-stamp.columns.four {
 	float:right;
 	margin-bottom:20px;
 	background-color: #8AB7AD;
     color: #FFFFFF;
 	}
-.post.corner-stamp .post-title a,
-.corner-stamp  .entry  .read-more a{
+.post.sticky.corner-stamp .post-title a,
+.sticky.corner-stamp  .entry  .read-more a{
 	color:#ffffff;
 }
-.corner-stamp  .entry  .read-more a{
+.sticky.corner-stamp  .entry  .read-more a{
 	color:#eee;
 }
-.corner-stamp  .entry  .page-link a {
+.sticky.corner-stamp  .entry  .page-link a {
 	color:#eee;
 }
 
-.corner-stamp  .entry  .page-link a:hover,
+.sticky.corner-stamp  .entry  .page-link a:hover,
 .post  .entry  .page-link a:hover,
-.corner-stamp  .entry  .read-more a :hover,
-.corner-stamp  .ico a:hover{
+.sticky.corner-stamp  .entry  .read-more a :hover,
+.sticky.corner-stamp  .ico a:hover{
 	color:#666;
 }
 .overflow-hidden.cat-listing > a:hover,
-.post.corner-stamp .meta a:hover,
+.post.sticky.corner-stamp .meta a:hover,
 .url.fn.n:hover,
 .col > a:hover{
     color: #666;
 }
-.post.corner-stamp .post-title {
+.post.sticky.corner-stamp .post-title {
 	padding:12;
 	border-bottom: 1px solid #75AB9F;
 }
-.corner-stamp header {
+.sticky.corner-stamp header {
 	border-bottom:1px solid #75AB9F;
 	padding:10px 20px;
 	}
-.corner-stamp header h3 {
+.sticky.corner-stamp header h3 {
 	font-size:16px;
 	line-height:20px;
 	font-weight:bold;
 	color:#fff;
 	margin:0;
 	}
-.post.corner-stamp .entry{
+.post.sticky.corner-stamp .entry{
 	padding:20px;
 	border-top:1px solid #9BC2B9;
 }
-.post.corner-stamp .meta, 
-.post.corner-stamp .meta a{
+.post.sticky.corner-stamp .meta, 
+.post.sticky.corner-stamp .meta a{
 	color:#fff;
 }
-.post.corner-stamp .meta .post-author .ico{
+.post.sticky.corner-stamp .meta .post-author .ico{
 	background-position: -20px -236px;
 }
-.post.corner-stamp .meta time .ico{
+.post.sticky.corner-stamp .meta time .ico{
 	background-position: -18px -225px;
 }
-.post.corner-stamp .meta .cats .ico{
+.post.sticky.corner-stamp .meta .cats .ico{
 	background-position: -18px -248px;
 }
-.post.corner-stamp .meta .tags .ico{
+.post.sticky.corner-stamp .meta .tags .ico{
 	background-position: -18px -261px;
 }
-.post.corner-stamp .meta .edit .ico{
+.post.sticky.corner-stamp .meta .edit .ico{
 	background-position: -18px -274px;
 }
-.corner-stamp .categories, .corner-stamp .categories ul, .corner-stamp .categories ol {
+.sticky.corner-stamp .categories, .sticky.corner-stamp .categories ul, .sticky.corner-stamp .categories ol {
 	margin:0;
 	padding:0;
 	list-style:none;
 	}
-.corner-stamp .categories li {
+.sticky.corner-stamp .categories li {
 	margin:0;
 	}
-.corner-stamp .categories ul {
+.sticky.corner-stamp .categories ul {
 	margin:0 0 0 15px;
 	}
-.corner-stamp .categories a {
+.sticky.corner-stamp .categories a {
 	display:block;
 	margin-bottom:5px;
 	text-decoration:none;
 	}
-.corner-stamp .categories a,
-.corner-stamp .categories li.current-cat li a {
+.sticky.corner-stamp .categories a,
+.sticky.corner-stamp .categories li.current-cat li a {
 	color:#CDEBE6;
 	}
-.corner-stamp .categories a:hover,
-.corner-stamp .categories li.current-cat a,
-.corner-stamp .categories li.current-cat li a:hover {
+.sticky.corner-stamp .categories a:hover,
+.sticky.corner-stamp .categories li.current-cat a,
+.sticky.corner-stamp .categories li.current-cat li a:hover {
 	color:#fff;
 	font-weight:bold;
 	}
@@ -1604,12 +1585,6 @@ body.error404 #content {
 
 	/* All Mobile Sizes (devices and browser) */
 	@media only screen and (max-width: 767px) {
-		/* body.single article.post .entry, body.page article.post .entry,
-		body.single article.post .post-title, body.page article.post .post-title,
-		{
-		padding-left: 25px;
-		padding-right:25px;
-		} */
 		#logo-wrapper .logo-img, #logo-wrapper .logo-txt {
 			display:block;
 			float:none;
