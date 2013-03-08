@@ -504,7 +504,7 @@ function catcheverest_post_sliders() {
 					$catcheverest_post_sliders .= '
 					<article class="'.$classes.'">
 						<figure class="slider-image">
-							<a title="Permalink to '.the_title('','',false).'" href=' . get_permalink() . '">
+							<a title="Permalink to '.the_title('','',false).'" href="' . get_permalink() . '">
 								'. get_the_post_thumbnail( $post->ID, 'slider', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class'	=> 'pngfix' ) ).'
 							</a>	
 						</figure>
