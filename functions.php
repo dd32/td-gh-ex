@@ -16,7 +16,14 @@ if ( ! isset( $content_width ) )
 	add_theme_support( 'post-thumbnails' );
 	
 	// Add default posts and comments RSS feed links to head
-	add_theme_support( 'automatic-feed-links' );	
+	add_theme_support( 'automatic-feed-links' );
+	
+	// Add support for custom backgrounds
+	$args = array(
+	'default-color' => 'fffff',
+	'wp-head-callback' => '_custom_background_cb'
+);
+add_theme_support( 'custom-background', $args );		
 
 	// Make theme available for translation
 	// Translations can be filed in the /languages/ directory

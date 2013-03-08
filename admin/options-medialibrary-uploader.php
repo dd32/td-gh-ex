@@ -250,7 +250,7 @@ if ( ! function_exists( 'optionsframework_mlu_js_popup' ) ) {
 		// Change the title of each tab to use the custom title text instead of "Media File".
 		$( 'h3.media-title' ).each ( function () {
 			var current_title = $( this ).html();
-			var new_title = current_title.replace( 'media file', '<?php echo esc_attr($_of_title); ?>' );
+			var new_title = current_title.replace( 'media file', '<?php echo $_of_title; ?>' );
 			$( this ).html( new_title );
 		
 		} );

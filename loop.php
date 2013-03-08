@@ -21,7 +21,7 @@
 			
 			<div class="meta-data">
 			
-			<span class="meta-info"><?php application_posted_on(); ?> <?php _e('in', 'application'); ?> <?php the_category(', '); ?> | <?php comments_popup_link( __( 'Leave a comment', 'application' ), __( '1 Comment', 'application' ), __( '% Comments', 'application' ) ); ?></span>
+			<span class="meta-info"><?php application_posted_on(); ?> in <?php the_category(', '); ?> | <?php comments_popup_link( __( 'Leave a comment', 'application' ), __( '1 Comment', 'application' ), __( '% Comments', 'application' ) ); ?></span>
 			
 			</div><!--meta data end-->
 
@@ -29,16 +29,16 @@
 
 	<?php if ( is_archive() || is_search() ) :  ?>
 		
-			<?php the_content( '<span class="read-more">'.__('Read More', 'application').'</span>' ); ?>
+			<?php the_content( __( '', 'application' ) ); ?>
 			<div class="clear"></div>
 			<?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'application' ), 'after' => '' ) ); ?>
 			
 	<?php else : ?>
 	
- 	<?php if ( has_post_thumbnail() ) { ?> <div class="entry-thumbnail"> <?php the_post_thumbnail(array(620,240)); ?> </div> <?php } ?>
+ 	<?php if ( function_exists("has_post_thumbnail") && has_post_thumbnail() ) { the_post_thumbnail(array(620,240), array("class" => "alignleft post_thumbnail")); } ?>
 	
 	
-			<?php the_content( '<span class="read-more">'.__('Read More', 'application').'</span>' ); ?>
+			<?php the_content( __( '', 'application' ) ); ?>
 			<div class="clear"></div>
 			<?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'application' ), 'after' => '' ) ); ?>
 	<?php endif; ?>

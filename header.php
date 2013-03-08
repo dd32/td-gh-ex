@@ -4,9 +4,14 @@
 
 	<head profile="http://gmpg.org/xfn/11">
 		<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
-		<title>
+		<title><?php 	
 		
-		<?php wp_title(); ?>
+		wp_title( '|' );
+
+	// Add the blog description for the home/front page.
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) )
+		echo " | $site_description"; ?>
 		
 		</title>
 		

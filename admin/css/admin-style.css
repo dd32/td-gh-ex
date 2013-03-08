@@ -2,16 +2,15 @@
 /* OptionsFramework Admin Styles */
 /*-------------------------------------------------------------------------------------------*/
 #go_pro {
-    width: 730px;
+    width: 770px;
     border-radius: 6px;
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
-    padding: 5px;
-    background:#ffffff;
-    color: #000000;
+    padding: 10px;
+    background:#1b1b1b;
+    color: #fff;
 	margin: 15px;
     margin-left: 0;
-	line-height: 21px;
 }
 #go_pro a{
     color: #0084FF;
@@ -174,10 +173,10 @@
 }
 #optionsframework .controls input.upload_button {
 	float:right;
-	width:60px;
+	width:45px;
 	border-color:#BBBBBB;
 	cursor:pointer;
-	height:26px;
+	height:16px;
 }
 #optionsframework .controls input.upload_button:hover {
 	border-color:#666666;
