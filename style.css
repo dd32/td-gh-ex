@@ -1,10 +1,10 @@
 /*
 Theme Name: Rockers
 Author: Alberto Ramacciotti
-Author URI: http://ramacciotti.altervista.org
+Author URI: http://www.arwebdevstudio.it
 Theme URI: http://ramacciotti.altervista.org/archivio/articolo/rockers-theme
 Description: Rockers is a responsive theme for bloggers with a clean design.
-Version: 2.0
+Version: 2.0.1
 License: GNU General Public License v2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, left-sidebar, light, flexible-width, custom-menu, editor-style, threaded-comments, featured-images, sticky-post, translation-ready, post-formats, rtl-language-support, threaded-comments
@@ -351,6 +351,7 @@ article.format-status footer.post-meta {
 #s {
     color: #000000;
     background-color: #e3debb;
+    width: 45%;
 }
 
 .menu-toggle,
@@ -361,7 +362,7 @@ li.bypostauthor cite span {
     line-height: 1;
     color: #f9f8f0;
     background-color: #5e1900;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#5e1900), to(transparent));
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#5e1900), to(transparent) );
     background-image: -webkit-linear-gradient(top, #5e1900, transparent);
     background-image: -moz-linear-gradient(top, #5e1900, transparent);
     background-image: -o-linear-gradient(top, #5e1900, transparent);
@@ -383,7 +384,7 @@ li.bypostauthor cite span {
 input[type="submit"]:hover {
     color: #e2dda9;
     background-color: #5e1900;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#5e1900), to(#aa5e11));
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#5e1900), to(#aa5e11) );
     background-image: -webkit-linear-gradient(top, #5e1900, #aa5e11);
     background-image: -moz-linear-gradient(top, #5e1900, #aa5e11);
     background-image: -o-linear-gradient(top, #5e1900, #aa5e11);
@@ -395,7 +396,7 @@ article.post-password-required input[type=submit]:active,
 input[type="submit"].toggled-on {
     color: #e8e2c6;
     background-color: transparent;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent));
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent) );
     background-image: -webkit-linear-gradient(top, transparent, transparent);
     background-image: -moz-linear-gradient(top, transparent, transparent);
     background-image: -o-linear-gradient(top, transparent, transparent);
@@ -602,12 +603,12 @@ body {
     line-height: 1.5;
     text-rendering: optimizeLegibility;
     color: #000000;
-    background-color: #f3f1e2;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#f3f1e2), to(#fbfaf4));
-    background-image: -webkit-linear-gradient(top, #f3f1e2, #fbfaf4);
-    background-image: -moz-linear-gradient(top, #f3f1e2, #fbfaf4);
-    background-image: -o-linear-gradient(top, #f3f1e2, #fbfaf4);
-    background-image: linear-gradient(to bottom, #f3f1e2, #fbfaf4);
+    background-color: #f1efdc;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f1efdc), to(#fbfaf4) );
+    background-image: -webkit-linear-gradient(top, #f1efdc, #fbfaf4);
+    background-image: -moz-linear-gradient(top, #f1efdc, #fbfaf4);
+    background-image: -o-linear-gradient(top, #f1efdc, #fbfaf4);
+    background-image: linear-gradient(to bottom, #f1efdc, #fbfaf4);
 }
 
 body, 
@@ -618,7 +619,7 @@ body.custom-font-enabled {
 a {
     outline: none;
     padding-bottom: 2px;
-    border-bottom: 1px solid #517df4;
+    border-bottom: 1px solid #bee1eb;
     color: #0c45de;
     background-color: transparent;
 }
@@ -632,7 +633,7 @@ a:visited {
 
 a:hover {
     color: #09319b;
-    border-bottom: 1px solid #c5d3fc;
+    border-bottom: 1px solid #517df4;
 }
 
 .site {
@@ -704,7 +705,7 @@ a:hover {
 
 #rss:hover {
     background-color: #FBFAF4;
-    color: #818181;
+    color: #f1ba08;
 }
 
 .header-image {
@@ -724,7 +725,7 @@ a:hover {
 .menu a {
     color: #727d31;
     background-color: #f3f1e2;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#f3f1e2), to(#e7e3c2));
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f3f1e2), to(#e7e3c2) );
     background-image: -webkit-linear-gradient(top, #f3f1e2, #e7e3c2);
     background-image: -moz-linear-gradient(top, #f3f1e2, #e7e3c2);
     background-image: -o-linear-gradient(top, #f3f1e2, #e7e3c2);
@@ -735,7 +736,7 @@ a:hover {
 .menu a:visited {
     color: #666666;
     background-color: #f3f1e2;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#f3f1e2), to(#d3cb92));
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f3f1e2), to(#d3cb92) );
     background-image: -webkit-linear-gradient(top, #f3f1e2, #d3cb92);
     background-image: -moz-linear-gradient(top, #f3f1e2, #d3cb92);
     background-image: -o-linear-gradient(top, #f3f1e2, #d3cb92);
@@ -746,7 +747,7 @@ a:hover {
 .menu a:hover {
     color: #000000;
     background-color: #f3f1e2;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#f3f1e2), to(#edebd3));
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f3f1e2), to(#edebd3) );
     background-image: -webkit-linear-gradient(top, #f3f1e2, #edebd3);
     background-image: -moz-linear-gradient(top, #f3f1e2, #edebd3);
     background-image: -o-linear-gradient(top, #f3f1e2, #edebd3);
@@ -754,12 +755,19 @@ a:hover {
 }
 
 #content article {
-    margin-bottom: 100px;
+    margin-bottom: 6em;
+    padding-bottom: 1em;
+    border-bottom: 2px solid #e9e4cd;
+}
+
+.sticky {
+    padding: 0 2em;
+    margin: 0 0 6em 0;
 }
 
 .sticky .post-content p {
     font-size: 1.4em;
-    line-height: 1.6;
+    line-height: 1.5;
     margin-bottom: .5em;
 }
 
@@ -843,7 +851,7 @@ footer#footer a:hover {
 .post-header .post-title {
     font-size: 1.5em;
     line-height: 1.5;
-    margin-top: 0.75em;
+    margin-top: 1em;
 }
 
 .post-header .post-format {
@@ -1063,14 +1071,14 @@ img.aligncenter {
 #numbered-pagination {
     line-height: 1.5;
     text-transform: uppercase;
-    margin-top: 1em;
+    margin-top: 2.5em;
 }
 
 #numbered-pagination a {
     padding-top: .2em;
     border-bottom: 0;
     background-color: #e0dbb6;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#e0dbb6), to(#f3f1e2));
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#e0dbb6), to(#f3f1e2) );
     background-image: -webkit-linear-gradient(top, #e0dbb6, #f3f1e2);
     background-image: -moz-linear-gradient(top, #e0dbb6, #f3f1e2);
     background-image: -o-linear-gradient(top, #e0dbb6, #f3f1e2);
@@ -1081,7 +1089,7 @@ img.aligncenter {
     padding-top: .2em;
     border-bottom: 0;
     background-color: #d9d2a4;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#d9d2a4), to(#e0dbb6));
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#d9d2a4), to(#e0dbb6) );
     background-image: -webkit-linear-gradient(top, #d9d2a4, #e0dbb6);
     background-image: -moz-linear-gradient(top, #d9d2a4, #e0dbb6);
     background-image: -o-linear-gradient(top, #d9d2a4, #e0dbb6);
@@ -1090,7 +1098,7 @@ img.aligncenter {
 
 #numbered-pagination a:hover {
     background-color: #f3f1e2;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#f3f1e2), to(#e0dbb6));
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f3f1e2), to(#e0dbb6) );
     background-image: -webkit-linear-gradient(top, #f3f1e2, #e0dbb6);
     background-image: -moz-linear-gradient(top, #f3f1e2, #e0dbb6);
     background-image: -o-linear-gradient(top, #f3f1e2, #e0dbb6);
@@ -1146,11 +1154,12 @@ article.format-aside h1 a:hover {
 
 article.format-aside .aside {
     padding: 24px;
-    background-color: #f1edda;
-    border-top: 1px solid #c2b15f;
-    border-right: 2px solid #c2b15f;
-    border-bottom: 2px solid #c2b15f;
-    border-left: 1px solid #c2b15f;
+    background-color: #f5f3e7;
+    color: #000000;
+    border-top: 1px solid #d9d2a8;
+    border-right: 2px solid #d9d2a8;
+    border-bottom: 2px solid #f2f0e1;
+    border-left: 1px solid #f2f0e1;
 }
 
 article.format-aside p {
