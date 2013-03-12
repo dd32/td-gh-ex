@@ -126,6 +126,7 @@ function catcheverest_header_style() {
 		// Has the text been hidden?
 		if ( 'blank' == get_header_textcolor() ) :
 	?>
+		hgroup.with-logo { padding: 0; }
 		#site-title,
 		#site-description {
 			position: absolute !important;

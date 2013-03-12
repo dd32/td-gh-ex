@@ -48,3 +48,6 @@ Version 0.1.2.1
 Version 0.1.2.2
 * Fixed Link issue in Featured Post Slider Image
 
+Version 0.1.2.3
+* Fixed header css when Show header text with your image is disable in Custom Header
+* Fixed More Tag to be kept empty as well. This fixed the problem in the server where Theme Option was not being saved.

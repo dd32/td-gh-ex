@@ -1019,8 +1019,9 @@ function catcheverest_theme_options_validate( $options ) {
 	}
 	
     if( isset( $input[ 'more_tag_text' ] ) ) {
-        $input_validated[ 'more_tag_text' ] = htmlentities( sanitize_text_field ( $input[ 'more_tag_text' ] ), ENT_QUOTES, 'UTF-8' ) ? $input [ 'more_tag_text' ] : $defaults[ 'more_tag_text' ];
+        $input_validated[ 'more_tag_text' ] = htmlentities( sanitize_text_field ( $input[ 'more_tag_text' ] ), ENT_QUOTES, 'UTF-8' );
     }   
+
     if( isset( $input[ 'search_display_text' ] ) ) {
         $input_validated[ 'search_display_text' ] = sanitize_text_field( $input[ 'search_display_text' ] ) ? $input [ 'search_display_text' ] : $defaults[ 'search_display_text' ];
     }
