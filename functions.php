@@ -34,7 +34,6 @@ function rockers_scripts_styles() {
             $subsets .= ',greek,greek-ext';
         elseif ( 'vietnamese' == $subset )
             $subsets .= ',vietnamese';
-
         $protocol = is_ssl() ? 'https' : 'http';
         $query_args = array(
             'family' => 'Source+Sans+Pro:400italic,700italic,400,700',
@@ -46,15 +45,15 @@ function rockers_scripts_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'rockers_scripts_styles' );
 
-function rockers_wp_title($title, $sep) {
+function rockers_wp_title( $title, $sep ) {
     global $paged, $page;
-    if (is_feed() )
+    if( is_feed() )
         return $title;
     $title .= get_bloginfo( 'name' );
     $site_description = get_bloginfo( 'description', 'display' );
-    if ( $site_description && (is_home() || is_front_page() ) )
+    if( $site_description && ( is_home() || is_front_page() ) )
         $title = "$title $sep $site_description";
-    if ( $paged >= 2 || $page >= 2 )
+    if( $paged >= 2 || $page >= 2 )
         $title = "$title $sep " . sprintf( __( 'Page %s', 'rockers' ), max( $paged, $page ) );
     return $title;
 }
