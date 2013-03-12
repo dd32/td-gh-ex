@@ -15,7 +15,7 @@ a {color: #dc1111;outline: none; text-decoration: none; }
 a:hover {color: #555;text-decoration: none;}
 .red {color: #dc1111;}
 #header {
-	background: url(images/title.png);
+	background: url(images/blue.png);
 	border-top:solid 1px #222;
 	border-bottom:solid 1px #222;
 	left: 0;
@@ -38,7 +38,7 @@ a:hover {color: #555;text-decoration: none;}
 #floatfix {
 	float:left;box-shadow:0 0 15px #111;
 	text-align: justify;
-	background-image: url(images/white3.png);
+	background-image: url(images/clean.png);
 	margin:0; padding:0 0 2em;}
 #center ul {float:left;}
 .browsing {margin:.75em 1.5% 0;line-height:1.25em;}

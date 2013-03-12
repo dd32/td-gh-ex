@@ -43,7 +43,6 @@ if (!function_exists('semperfi_setup')):
 			'width'         => 1000,
 			'flex-height'    => true,
 			'height'        => 300,
-			'default-image' => get_template_directory_uri() . '/images/header.jpg',
 		);
 		add_theme_support( 'custom-header', $args );
 		
@@ -1886,42 +1885,42 @@ add_action('customize_register', 'semperfi_customize');
 function semperfi_inline_css() {
 		
 		echo '<!-- Custom Font Styles -->' . "\n";
-		if ( get_theme_mod('titlefontstyle_setting') != 'Default' ) {	echo "<link href='http://fonts.googleapis.com/css?family=" . get_theme_mod('titlefontstyle_setting') . "' rel='stylesheet' type='text/css'>"  . "\n"; }
-		if ( get_theme_mod('taglinefontstyle_setting') != 'Default' ) {	echo "<link href='http://fonts.googleapis.com/css?family=" . get_theme_mod('taglinefontstyle_setting') . "' rel='stylesheet' type='text/css'>"  . "\n"; }
-		if ( get_theme_mod('menufontstyle_setting') != 'Default' ) {	echo "<link href='http://fonts.googleapis.com/css?family=" . get_theme_mod('menufontstyle_setting') . "' rel='stylesheet' type='text/css'>"  . "\n"; }
-		if ( get_theme_mod('posttitlefontstyle_setting') != 'Default' ) {	echo "<link href='http://fonts.googleapis.com/css?family=" . get_theme_mod('posttitlefontstyle_setting') . "' rel='stylesheet' type='text/css'>"  . "\n"; }
-		if ( get_theme_mod('contentfontstyle_setting') != 'Default' ) {	echo "<link href='http://fonts.googleapis.com/css?family=" . get_theme_mod('contentfontstyle_setting') . "' rel='stylesheet' type='text/css'>"  . "\n"; }
+		if ( (get_theme_mod('titlefontstyle_setting') != 'Default') && (get_theme_mod('titlefontstyle_setting') != '') ) {	echo "<link href='http://fonts.googleapis.com/css?family=" . get_theme_mod('titlefontstyle_setting') . "' rel='stylesheet' type='text/css'>"  . "\n"; }
+		if ( (get_theme_mod('taglinefontstyle_setting') != 'Default') && (get_theme_mod('taglinefontstyle_setting') != '')  ) {	echo "<link href='http://fonts.googleapis.com/css?family=" . get_theme_mod('taglinefontstyle_setting') . "' rel='stylesheet' type='text/css'>"  . "\n"; }
+		if ( (get_theme_mod('menufontstyle_setting') != 'Default') && (get_theme_mod('menufontstyle_setting') != '')  ) {	echo "<link href='http://fonts.googleapis.com/css?family=" . get_theme_mod('menufontstyle_setting') . "' rel='stylesheet' type='text/css'>"  . "\n"; }
+		if ( (get_theme_mod('posttitlefontstyle_setting') != 'Default') && (get_theme_mod('posttitlefontstyle_setting') != '')  ) {	echo "<link href='http://fonts.googleapis.com/css?family=" . get_theme_mod('posttitlefontstyle_setting') . "' rel='stylesheet' type='text/css'>"  . "\n"; }
+		if ( (get_theme_mod('contentfontstyle_setting') != 'Default') && (get_theme_mod('contentfontstyle_setting') != '')  ) {	echo "<link href='http://fonts.googleapis.com/css?family=" . get_theme_mod('contentfontstyle_setting') . "' rel='stylesheet' type='text/css'>"  . "\n"; }
 		echo '<!-- End Custom Fonts -->' . "\n\n";
 		
 // Inject the Customizer Choices into the Theme
 		echo '<!-- Custom CSS Styles -->' . "\n";
         echo '<style type="text/css" media="screen">' . "\n";
-		if ( get_theme_mod('backgroundsize_setting') != 'auto' ) echo '	body.custom-background {background-size:' . get_theme_mod('backgroundsize_setting') . ';}' . "\n";
-		echo '	#margin {background-image:url(' . get_template_directory_uri() . '/images/' . get_theme_mod('backgroundpaper_setting') . '.png);}' . "\n";
-		if ( get_option('bannerimage_setting') != 'blue.png' ) echo '	#header {background: bottom url(' . get_template_directory_uri() . '/images/' . get_option('bannerimage_setting') .  ');}'. "\n";
-		if ( get_theme_mod('headerspacing_setting') != '35' ) echo '	#margin {margin:' . get_theme_mod('headerspacing_setting') . '% 2% 0%;}'. "\n";
-		if ( get_theme_mod('titlecolor_setting') != '#e0dbce' ) echo '	#header h1 a {color:' . get_theme_mod('titlecolor_setting') . ';}' . "\n";
-		if ( get_theme_mod('taglinecolor_setting') != '#3e5a21' ) echo '	#header h1 i {color:' . get_theme_mod('taglinecolor_setting') . ';}' . "\n";
+		if ( (get_theme_mod('backgroundsize_setting') != 'auto') && (get_theme_mod('backgroundsize_setting') != '') ) echo '	body.custom-background {background-size:' . get_theme_mod('backgroundsize_setting') . ';}' . "\n";
+		if ( (get_theme_mod('backgroundpaper_setting') != 'auto') && (get_theme_mod('backgroundpaper_setting') != '') )echo '	#margin {background-image:url(' . get_template_directory_uri() . '/images/' . get_theme_mod('backgroundpaper_setting') . '.png);}' . "\n";
+		if ( (get_option('bannerimage_setting') != 'blue.png') && (get_option('bannerimage_setting') != '') ) echo '	#header {background: bottom url(' . get_template_directory_uri() . '/images/' . get_option('bannerimage_setting') .  ');}'. "\n";
+		if ( (get_theme_mod('headerspacing_setting') != '35') && (get_theme_mod('headerspacing_setting') != '') ) echo '	#margin {margin:' . get_theme_mod('headerspacing_setting') . '% 2% 0%;}'. "\n";
+		if ( (get_theme_mod('titlecolor_setting') != '#e0dbce') && (get_theme_mod('titlecolor_setting') != '') ) echo '	#header h1 a {color:' . get_theme_mod('titlecolor_setting') . ';}' . "\n";
+		if ( (get_theme_mod('taglinecolor_setting') != '#3e5a21') && (get_theme_mod('taglinecolor_setting') != '') ) echo '	#header h1 i {color:' . get_theme_mod('taglinecolor_setting') . ';}' . "\n";
 		if ( get_option('menu_setting') == 'notitle' ) { echo '	#header {position: fixed;margin-top:0px;}' . "\n" . '	.admin-bar #header {margin-top:28px;}' . "\n" . '#header h1:first-child, #header h1:first-child i,  #header img:first-child {display: none;}' . "\n"; }
 		if ( get_option('menu_setting') == 'bottom' ) { echo '	#header {position: fixed; bottom:0; top:auto;}' . "\n" . '	#header h1:first-child, #header h1:first-child i,  #header img:first-child {display: none;}' . "\n" . '#header li ul {bottom:2.78em; top:auto;}' . "\n";}
 		
-		if ( get_theme_mod('titlefontstyle_setting') != 'Default' ) {
+		if ( (get_theme_mod('titlefontstyle_setting') != 'Default') && (get_theme_mod('titlefontstyle_setting') != '') ) {
 			$q = get_theme_mod('titlefontstyle_setting');
 			$q = preg_replace('/[^a-zA-Z0-9]+/', ' ', $q);
 		 	echo	"#header h1 {font-family: '" . $q . "';}" . "\n"; }
-		if ( get_theme_mod('taglinefontstyle_setting') != 'Default' ) {
+		if ( (get_theme_mod('taglinefontstyle_setting') != 'Default') && (get_theme_mod('taglinefontstyle_setting') != '') ) {
 			$x = get_theme_mod('taglinefontstyle_setting');
 			$x = preg_replace('/[^a-zA-Z0-9]+/', ' ', $x);
 			echo	"#header h1 i {font-family: '" . $x . "';}" . "\n"; }		
-		if ( get_theme_mod('menufontstyle_setting') != 'Default' ) {
+		if ( (get_theme_mod('menufontstyle_setting') != 'Default') && (get_theme_mod('menufontstyle_setting') != '') ) {
 			$b = get_theme_mod('menufontstyle_setting');
 			$b = preg_replace('/[^a-zA-Z0-9]+/', ' ', $b);
 			echo	"#header li {font-family: '" . $b . "';}" . "\n"; }
-		if ( get_theme_mod('posttitlefontstyle_setting') != 'Default' ) {
+		if ( (get_theme_mod('posttitlefontstyle_setting') != 'Default') && (get_theme_mod('posttitlefontstyle_setting') != '') ) {
 			$z = get_theme_mod('posttitlefontstyle_setting');
 			$z = preg_replace('/[^a-zA-Z0-9]+/', ' ', $z);
 			echo	"h1, h2, h3, h4, h5, h6 {font-family: '" . $z . "';}" . "\n"; }
-		if ( get_theme_mod('contentfontstyle_setting') != 'Default' ) {
+		if ( (get_theme_mod('contentfontstyle_setting') != 'Default') && (get_theme_mod('contentfontstyle_setting') != '') ) {
 			$d = get_theme_mod('contentfontstyle_setting');
 			$d = preg_replace('/[^a-zA-Z0-9]+/', ' ', $d);
 			echo	"body {font-family: '" . $d . "';}" . "\n"; }
@@ -2074,6 +2073,10 @@ function semperfi_theme_options_do_page() { ?>
         <tr>
         <th>Version</th>
         <th class="justify"></th>
+        </tr>
+        <tr>
+        <th>1.4</th>
+        <td class="justify">Minor fixes that show up in the header the theme options are blank.</td>
         </tr>
         <tr>
         <th>1.3</th>
