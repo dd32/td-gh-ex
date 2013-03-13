@@ -6,13 +6,13 @@
  -webkit-box-shadow: 0 1px 0 #fff;
  -moz-box-shadow: 0 1px 0 #fff;
  box-shadow: 0 1px 0 #fff;
- padding: 10px 10px 0;
+ padding: 10px 0 0;
  clear: right;
 }
 #themehorse #attitude_tabs ul.tab-navigation li {
  display: inline-block;
  border-right: 1px solid #aaa;
- padding-right: 8px;
+ padding-right: 0 8px;
  margin-right: 8px;
  margin-bottom: 10px;
  color: #555;
@@ -62,7 +62,7 @@
 	margin-top: 10px;
 }
 .option-container {
-	width: 90%;
+	width: 100%;
 }
 h3.option-toggle {
 	-webkit-border-top-left-radius: 3px;
@@ -87,7 +87,7 @@ h3.option-toggle {
 	font-weight: normal;
 	float: left;
 	padding: 0;
-	width: 98%;
+	width: 100%;
 }
 h3.option-toggle a {
 	background:url(../images/arrow-light.png) 99% 50% no-repeat;
@@ -118,7 +118,7 @@ h3.option-toggle a:hover, h3.option-active a {
 	font-size: 12px;
 	clear: both;
 	color: #333;
-	width: 98%;
+	width: 100%;
 }
 .option-content p {
 	padding-left: 10px;
@@ -167,4 +167,19 @@ a.review {
    border: 1px solid #9DC251;
    color: #6A892A;
    text-shadow: 0 1px #EAF5D3;    
+}
+a.demo {
+	color: #46A314;
+}
+#social-share  {
+	float: right;
+	margin-top: 4px;
+}
+#social-share .fb-like {
+	float: left;
+	vertical-align: top;
+	margin-right: 10px;
+}
+#social-share .tw-follow {
+	float: left;
 }

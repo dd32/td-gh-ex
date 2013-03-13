@@ -54,6 +54,35 @@ function attitude_admin_styles() {
 
 /****************************************************************************************/
 
+add_action( 'admin_print_styles-appearance_page_theme_options', 'attitude_social_script', 100);
+/**
+ * Facebook, twitter script hooked at head
+ * 
+ * @useage for Facebook, Twitter and Print Script 
+ * @Use add_action to display the Script on header
+ */
+function attitude_social_script() 
+{ ?>
+	<!-- Facebook script --> 
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=284802028306078";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    
+    <!-- Twitter script -->   
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    
+    <!-- Print Script -->
+	<script src="http://cdn.printfriendly.com/printfriendly.js" type="text/javascript"></script>
+<?php     
+}
+
+/****************************************************************************************/
+
 add_action( 'admin_menu', 'attitude_options_menu' );
 /**
  * Create sub-menu page.
@@ -94,12 +123,16 @@ function attitude_theme_options_do_page() {
 	   
 	<div class="them_option_block clearfix">
 		<div class="theme_option_title"><h2><?php _e( 'Theme Options by', 'attitude' ); ?></h2></div><div class="theme_option_link"><a href="<?php echo esc_url( __( 'http://themehorse.com/', 'attitude' ) ); ?>" title="<?php esc_attr_e( 'Theme Horse', 'attitude' ); ?>" target="_blank"><img src="<?php echo ATTITUDE_ADMIN_IMAGES_URL . '/theme-horse.png'; ?>" alt="'<?php _e( 'Theme Horse', 'attitude' ); ?>" /></a> </div>
-		<div style="margin: 20px 150px 20px 0px; float:right; font-size: 13px; font-weight: bold;"><?php _e( 'Confused about something? See', 'attitude' ); ?> <a href="<?php echo esc_url( 'http://themehorse.com/theme-instruction/attitude/' ); ?>" title="<?php esc_attr_e( 'Attitude Theme Instructions', 'attitude' ); ?>" target="_blank"><?php _e( 'Theme Instructions', 'attitude' ); ?></a></div>
+		<div style="margin: 20px 20px 20px 0px; float:right; font-size: 13px; font-weight: bold;"><?php _e( 'Confused about something? See', 'attitude' ); ?> <a href="<?php echo esc_url( 'http://themehorse.com/theme-instruction/attitude/' ); ?>" title="<?php esc_attr_e( 'Attitude Theme Instructions', 'attitude' ); ?>" target="_blank"><?php _e( 'Theme Instructions', 'attitude' ); ?></a> &nbsp; | &nbsp; <a class="demo" href="<?php echo esc_url( 'http://themehorse.com/preview/attitude/' ); ?>" title="<?php esc_attr_e( 'Attitude Demo', 'attitude' ); ?>" target="_blank"><?php _e( 'View Demo', 'attitude' ); ?></a></div>
 	</div><br/><br/><br/>
 	<div class="donate-info">
 		<strong><?php _e( 'Support theme development', 'attitude' ); ?></strong>
 		<a title="Donate" href="<?php echo esc_url( 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BRLCCUGP2ACYN' ); ?>" target="_blank" class="donate"><?php _e( 'Donate', 'attitude' ); ?></a> <strong><?php _e( 'OR Review our theme', 'attitude' ); ?></strong>
-		<a title="Review" href="<?php echo esc_url( 'http://wordpress.org/support/view/theme-reviews/attitude' ); ?>" target="_blank" class="review"><?php _e( 'Review Attitude', 'attitude' ); ?></a> <strong><?php _e( 'at WordPress.org', 'attitude' ); ?></strong>		
+		<a title="Review" href="<?php echo esc_url( 'http://wordpress.org/support/view/theme-reviews/attitude' ); ?>" target="_blank" class="review"><?php _e( 'Review Attitude', 'attitude' ); ?></a> <strong><?php _e( 'at WordPress.org', 'attitude' ); ?></strong>	
+		<div id="social-share">
+	    	<div class="fb-like" data-href="https://www.facebook.com/themehorse" data-send="false" data-layout="button_count" data-width="90" data-show-faces="true"></div>
+	    	<div class="tw-follow" ><a href="<?php echo esc_url( 'http://twitter.com/Theme_Horse' ); ?>" class="twitter-follow-button" data-button="grey" data-text-color="#FFFFFF" data-link-color="#00AEFF" data-width="150px" data-show-screen-name="true" data-show-count="false"></a></div>
+		</div>	
 	</div>
    <div id="themehorse" class="wrap">
         

@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Attitude\n"
-"POT-Creation-Date: 2013-03-01 20:21+0545\n"
-"PO-Revision-Date: 2013-03-01 20:21+0545\n"
+"POT-Creation-Date: 2013-03-13 18:35+0545\n"
+"PO-Revision-Date: 2013-03-13 18:35+0545\n"
 "Last-Translator: \n"
 "Language-Team: Team Horse <support@themehorse.com>\n"
 "Language: English\n"
@@ -40,65 +40,8 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: functions.php:130
+#: functions.php:129
 msgid "Primary Menu"
-msgstr ""
-
-#: library/admin/attitude-custom-post-types.php:19
-#: library/admin/attitude-custom-post-types.php:20
-msgid "Gallery"
-msgstr ""
-
-#: library/admin/attitude-custom-post-types.php:21
-msgid "All Galleries"
-msgstr ""
-
-#: library/admin/attitude-custom-post-types.php:22
-msgid "Add New Item"
-msgstr ""
-
-#: library/admin/attitude-custom-post-types.php:23
-msgid "Add New Gallery Item"
-msgstr ""
-
-#: library/admin/attitude-custom-post-types.php:24
-msgid "Edit Gallery"
-msgstr ""
-
-#: library/admin/attitude-custom-post-types.php:25
-msgid "New Gallery"
-msgstr ""
-
-#: library/admin/attitude-custom-post-types.php:26
-msgid "View Gallery"
-msgstr ""
-
-#: library/admin/attitude-custom-post-types.php:27
-msgid "search Gallery"
-msgstr ""
-
-#: library/admin/attitude-custom-post-types.php:28
-msgid "No Gallery Found"
-msgstr ""
-
-#: library/admin/attitude-custom-post-types.php:29
-msgid "No Gallery found in Trash"
-msgstr ""
-
-#: library/admin/attitude-custom-post-types.php:30
-msgid "Parent Gallery:"
-msgstr ""
-
-#: library/admin/attitude-custom-post-types.php:31
-msgid "Galleries"
-msgstr ""
-
-#: library/admin/attitude-custom-post-types.php:36
-msgid "Custom Gallery Posts"
-msgstr ""
-
-#: library/admin/attitude-custom-post-types.php:64
-msgid "Thumbnail"
 msgstr ""
 
 #: library/admin/attitude-metaboxes.php:19
@@ -127,7 +70,7 @@ msgstr ""
 msgid "No sidebar, Full Width"
 msgstr ""
 
-#: library/admin/attitude-metaboxes.php:56 library/admin/theme-options.php:286
+#: library/admin/attitude-metaboxes.php:56 library/admin/theme-options.php:319
 msgid "No Sidebar, One Column"
 msgstr ""
 
@@ -139,406 +82,414 @@ msgstr ""
 msgid "Right sidebar"
 msgstr ""
 
-#: library/admin/theme-options.php:66 library/admin/theme-options.php:67
+#: library/admin/theme-options.php:95 library/admin/theme-options.php:96
 msgid "Theme Options"
 msgstr ""
 
-#: library/admin/theme-options.php:96
+#: library/admin/theme-options.php:125
 msgid "Theme Options by"
 msgstr ""
 
-#: library/admin/theme-options.php:96
+#: library/admin/theme-options.php:125
 msgid "http://themehorse.com/"
 msgstr ""
 
-#: library/admin/theme-options.php:96
+#: library/admin/theme-options.php:125
 #: library/shortcodes/attitude-shortcodes.php:61
 msgid "Theme Horse"
 msgstr ""
 
-#: library/admin/theme-options.php:97
+#: library/admin/theme-options.php:126
 msgid "Confused about something? See"
 msgstr ""
 
-#: library/admin/theme-options.php:97
+#: library/admin/theme-options.php:126
 msgid "Attitude Theme Instructions"
 msgstr ""
 
-#: library/admin/theme-options.php:97
+#: library/admin/theme-options.php:126
 msgid "Theme Instructions"
 msgstr ""
 
-#: library/admin/theme-options.php:100
+#: library/admin/theme-options.php:126
+msgid "Attitude Demo"
+msgstr ""
+
+#: library/admin/theme-options.php:126
+msgid "View Demo"
+msgstr ""
+
+#: library/admin/theme-options.php:129
 msgid "Support theme development"
 msgstr ""
 
-#: library/admin/theme-options.php:101
+#: library/admin/theme-options.php:130
 msgid "Donate"
 msgstr ""
 
-#: library/admin/theme-options.php:101
+#: library/admin/theme-options.php:130
 msgid "OR Review our theme"
 msgstr ""
 
-#: library/admin/theme-options.php:102
+#: library/admin/theme-options.php:131
 msgid "Review Attitude"
 msgstr ""
 
-#: library/admin/theme-options.php:102
+#: library/admin/theme-options.php:131
 msgid "at WordPress.org"
 msgstr ""
 
-#: library/admin/theme-options.php:115
+#: library/admin/theme-options.php:148
 msgid "Settings saved."
 msgstr ""
 
-#: library/admin/theme-options.php:121
+#: library/admin/theme-options.php:154
 msgid "Design Options"
 msgstr ""
 
-#: library/admin/theme-options.php:122
+#: library/admin/theme-options.php:155
 msgid "Advance Options"
 msgstr ""
 
-#: library/admin/theme-options.php:123
+#: library/admin/theme-options.php:156
 msgid "Featured Post/Page Slider"
 msgstr ""
 
-#: library/admin/theme-options.php:124
+#: library/admin/theme-options.php:157
 msgid "Social Links"
 msgstr ""
 
-#: library/admin/theme-options.php:125
+#: library/admin/theme-options.php:158
 msgid "Webmaster Tools"
 msgstr ""
 
-#: library/admin/theme-options.php:131
+#: library/admin/theme-options.php:164
 msgid "Custom Header"
 msgstr ""
 
-#: library/admin/theme-options.php:136 library/admin/theme-options.php:146
+#: library/admin/theme-options.php:169 library/admin/theme-options.php:179
 msgid "Header Logo"
 msgstr ""
 
-#: library/admin/theme-options.php:139
+#: library/admin/theme-options.php:172
 msgid "Change Header Logo"
 msgstr ""
 
-#: library/admin/theme-options.php:143 library/admin/theme-options.php:197
-#: library/admin/theme-options.php:228
+#: library/admin/theme-options.php:176 library/admin/theme-options.php:230
+#: library/admin/theme-options.php:261
 msgid "Preview"
 msgstr ""
 
-#: library/admin/theme-options.php:151
+#: library/admin/theme-options.php:184
 msgid "Show"
 msgstr ""
 
-#: library/admin/theme-options.php:154
+#: library/admin/theme-options.php:187
 msgid "Header Logo Only"
 msgstr ""
 
-#: library/admin/theme-options.php:157
+#: library/admin/theme-options.php:190
 msgid "Header Text Only"
 msgstr ""
 
-#: library/admin/theme-options.php:162
+#: library/admin/theme-options.php:195
 msgid "Need to replace Header Image?"
 msgstr ""
 
-#: library/admin/theme-options.php:165 library/admin/theme-options.php:322
+#: library/admin/theme-options.php:198 library/admin/theme-options.php:355
 #, php-format
 msgid "<a class=\"button\" href=\"%s\">Click here</a>"
 msgstr ""
 
-#: library/admin/theme-options.php:169
+#: library/admin/theme-options.php:202
 msgid "Hide Searchform from Header"
 msgstr ""
 
-#: library/admin/theme-options.php:171
+#: library/admin/theme-options.php:204
 msgid "Check to hide"
 msgstr ""
 
-#: library/admin/theme-options.php:175 library/admin/theme-options.php:206
-#: library/admin/theme-options.php:237 library/admin/theme-options.php:264
-#: library/admin/theme-options.php:308 library/admin/theme-options.php:355
-#: library/admin/theme-options.php:421 library/admin/theme-options.php:439
-#: library/admin/theme-options.php:472 library/admin/theme-options.php:538
-#: library/admin/theme-options.php:564 library/admin/theme-options.php:602
-#: library/admin/theme-options.php:633 library/admin/theme-options.php:663
+#: library/admin/theme-options.php:208 library/admin/theme-options.php:239
+#: library/admin/theme-options.php:270 library/admin/theme-options.php:297
+#: library/admin/theme-options.php:341 library/admin/theme-options.php:388
+#: library/admin/theme-options.php:454 library/admin/theme-options.php:472
+#: library/admin/theme-options.php:505 library/admin/theme-options.php:571
+#: library/admin/theme-options.php:597 library/admin/theme-options.php:635
+#: library/admin/theme-options.php:666 library/admin/theme-options.php:696
 msgid "Save All Changes"
 msgstr ""
 
-#: library/admin/theme-options.php:180
+#: library/admin/theme-options.php:213
 msgid "Fav Icon Options"
 msgstr ""
 
-#: library/admin/theme-options.php:185
+#: library/admin/theme-options.php:218
 msgid "Disable Favicon"
 msgstr ""
 
-#: library/admin/theme-options.php:187 library/admin/theme-options.php:218
-#: library/admin/theme-options.php:374 library/admin/theme-options.php:488
+#: library/admin/theme-options.php:220 library/admin/theme-options.php:251
+#: library/admin/theme-options.php:407 library/admin/theme-options.php:521
 msgid "Check to disable"
 msgstr ""
 
-#: library/admin/theme-options.php:190
+#: library/admin/theme-options.php:223
 msgid "Fav Icon URL"
 msgstr ""
 
-#: library/admin/theme-options.php:193
+#: library/admin/theme-options.php:226
 msgid "Change Fav Icon"
 msgstr ""
 
-#: library/admin/theme-options.php:200
+#: library/admin/theme-options.php:233
 msgid "favicon"
 msgstr ""
 
-#: library/admin/theme-options.php:211
+#: library/admin/theme-options.php:244
 msgid "Web Clip Icon Options"
 msgstr ""
 
-#: library/admin/theme-options.php:216
+#: library/admin/theme-options.php:249
 msgid "Disable Web Clip Icon"
 msgstr ""
 
-#: library/admin/theme-options.php:221
+#: library/admin/theme-options.php:254
 msgid "Web Clip Icon URL"
 msgstr ""
 
-#: library/admin/theme-options.php:224
+#: library/admin/theme-options.php:257
 msgid "Change Web Clip Icon"
 msgstr ""
 
-#: library/admin/theme-options.php:231
+#: library/admin/theme-options.php:264
 msgid "webpage icon"
 msgstr ""
 
-#: library/admin/theme-options.php:242
+#: library/admin/theme-options.php:275
 msgid "Site Layout Options"
 msgstr ""
 
-#: library/admin/theme-options.php:247
+#: library/admin/theme-options.php:280
 msgid "Site Layout"
 msgstr ""
 
-#: library/admin/theme-options.php:248
+#: library/admin/theme-options.php:281
 msgid "This change is reflected in whole website"
 msgstr ""
 
-#: library/admin/theme-options.php:253
+#: library/admin/theme-options.php:286
 msgid "Narrow Layout"
 msgstr ""
 
-#: library/admin/theme-options.php:258
+#: library/admin/theme-options.php:291
 msgid "Wide Layout"
 msgstr ""
 
-#: library/admin/theme-options.php:269
+#: library/admin/theme-options.php:302
 msgid "Default Layout Options"
 msgstr ""
 
-#: library/admin/theme-options.php:274
+#: library/admin/theme-options.php:307
 msgid "Default Layout"
 msgstr ""
 
-#: library/admin/theme-options.php:278
+#: library/admin/theme-options.php:311
 msgid "No Sidebar"
 msgstr ""
 
-#: library/admin/theme-options.php:282
+#: library/admin/theme-options.php:315
 msgid "No Sidebar, Full Width"
 msgstr ""
 
-#: library/admin/theme-options.php:290 library/widgets/attitude_widgets.php:18
+#: library/admin/theme-options.php:323 library/widgets/attitude_widgets.php:18
 msgid "Left Sidebar"
 msgstr ""
 
-#: library/admin/theme-options.php:294 library/widgets/attitude_widgets.php:29
+#: library/admin/theme-options.php:327 library/widgets/attitude_widgets.php:29
 msgid "Right Sidebar"
 msgstr ""
 
-#: library/admin/theme-options.php:300
+#: library/admin/theme-options.php:333
 msgid "Reset Layout"
 msgstr ""
 
-#: library/admin/theme-options.php:303
+#: library/admin/theme-options.php:336
 msgid "Check to reset"
 msgstr ""
 
-#: library/admin/theme-options.php:313
+#: library/admin/theme-options.php:346
 msgid "Custom Background"
 msgstr ""
 
-#: library/admin/theme-options.php:319
+#: library/admin/theme-options.php:352
 msgid "Need to replace default background?"
 msgstr ""
 
-#: library/admin/theme-options.php:325
+#: library/admin/theme-options.php:358
 msgid ""
 "Note: The custom background change will be reflected in the background if "
 "the site layout is set to be narrow layout instead of the wide layout."
 msgstr ""
 
-#: library/admin/theme-options.php:334
+#: library/admin/theme-options.php:367
 msgid "Custom CSS"
 msgstr ""
 
-#: library/admin/theme-options.php:339
+#: library/admin/theme-options.php:372
 msgid "Enter your custom CSS styles."
 msgstr ""
 
-#: library/admin/theme-options.php:340
+#: library/admin/theme-options.php:373
 msgid "This CSS will overwrite the CSS of style.css file."
 msgstr ""
 
-#: library/admin/theme-options.php:348
+#: library/admin/theme-options.php:381
 msgid "CSS Tutorial from W3Schools."
 msgstr ""
 
-#: library/admin/theme-options.php:350
+#: library/admin/theme-options.php:383
 msgid "http://www.w3schools.com/css/default.asp"
 msgstr ""
 
-#: library/admin/theme-options.php:350
+#: library/admin/theme-options.php:383
 msgid "CSS Tutorial"
 msgstr ""
 
-#: library/admin/theme-options.php:350
+#: library/admin/theme-options.php:383
 msgid "Click Here to Read"
 msgstr ""
 
-#: library/admin/theme-options.php:365
+#: library/admin/theme-options.php:398
 msgid "Home Slogan Options"
 msgstr ""
 
-#: library/admin/theme-options.php:371
+#: library/admin/theme-options.php:404
 msgid "Disable Slogan Part"
 msgstr ""
 
-#: library/admin/theme-options.php:377
+#: library/admin/theme-options.php:410
 msgid "Slogan Position"
 msgstr ""
 
-#: library/admin/theme-options.php:381
+#: library/admin/theme-options.php:414
 msgid "Above Slider"
 msgstr ""
 
-#: library/admin/theme-options.php:385
+#: library/admin/theme-options.php:418
 msgid "Below Slider"
 msgstr ""
 
-#: library/admin/theme-options.php:390
+#: library/admin/theme-options.php:423
 msgid "Home Page Slogan1"
 msgstr ""
 
-#: library/admin/theme-options.php:391 library/admin/theme-options.php:399
+#: library/admin/theme-options.php:424 library/admin/theme-options.php:432
 msgid "The appropriate length of the slogan is around 10 words."
 msgstr ""
 
-#: library/admin/theme-options.php:398
+#: library/admin/theme-options.php:431
 msgid "Home Page Slogan2"
 msgstr ""
 
-#: library/admin/theme-options.php:406
+#: library/admin/theme-options.php:439
 msgid "Redirect Button Text"
 msgstr ""
 
-#: library/admin/theme-options.php:407
+#: library/admin/theme-options.php:440
 msgid "Text to show in Button"
 msgstr ""
 
-#: library/admin/theme-options.php:413
+#: library/admin/theme-options.php:446
 msgid "Redirect Button Link"
 msgstr ""
 
-#: library/admin/theme-options.php:414
+#: library/admin/theme-options.php:447
 msgid "Link this button to show your special work, portfolio"
 msgstr ""
 
-#: library/admin/theme-options.php:426
+#: library/admin/theme-options.php:459
 msgid "Feed Redirect"
 msgstr ""
 
-#: library/admin/theme-options.php:432
+#: library/admin/theme-options.php:465
 msgid "Feed Redirect URL"
 msgstr ""
 
-#: library/admin/theme-options.php:444
+#: library/admin/theme-options.php:477
 msgid "Homepage / Frontpage Category Setting"
 msgstr ""
 
-#: library/admin/theme-options.php:450
+#: library/admin/theme-options.php:483
 msgid "Front page posts categories:"
 msgstr ""
 
-#: library/admin/theme-options.php:452
+#: library/admin/theme-options.php:485
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on "
 "the front page."
 msgstr ""
 
-#: library/admin/theme-options.php:457
+#: library/admin/theme-options.php:490
 msgid "--Disabled--"
 msgstr ""
 
-#: library/admin/theme-options.php:467
+#: library/admin/theme-options.php:500
 msgid "You may select multiple categories by holding down the CTRL key."
 msgstr ""
 
-#: library/admin/theme-options.php:482
+#: library/admin/theme-options.php:515
 msgid "Slider Options"
 msgstr ""
 
-#: library/admin/theme-options.php:486
+#: library/admin/theme-options.php:519
 msgid "Disable Slider"
 msgstr ""
 
-#: library/admin/theme-options.php:491
+#: library/admin/theme-options.php:524
 msgid "Number of Slides"
 msgstr ""
 
-#: library/admin/theme-options.php:496
+#: library/admin/theme-options.php:529
 msgid "Transition Effect:"
 msgstr ""
 
-#: library/admin/theme-options.php:516 library/admin/theme-options.php:593
+#: library/admin/theme-options.php:549 library/admin/theme-options.php:626
 #, php-format
 msgid "%s"
 msgstr ""
 
-#: library/admin/theme-options.php:524
+#: library/admin/theme-options.php:557
 msgid "Transition Delay"
 msgstr ""
 
-#: library/admin/theme-options.php:527 library/admin/theme-options.php:534
+#: library/admin/theme-options.php:560 library/admin/theme-options.php:567
 msgid "second(s)"
 msgstr ""
 
-#: library/admin/theme-options.php:531
+#: library/admin/theme-options.php:564
 msgid "Transition Length"
 msgstr ""
 
-#: library/admin/theme-options.php:543
+#: library/admin/theme-options.php:576
 msgid "Featured Post/Page Slider Options"
 msgstr ""
 
-#: library/admin/theme-options.php:547
+#: library/admin/theme-options.php:580
 msgid "Exclude Slider post from Homepage posts?"
 msgstr ""
 
-#: library/admin/theme-options.php:549
+#: library/admin/theme-options.php:582
 msgid "Check to exclude"
 msgstr ""
 
-#: library/admin/theme-options.php:554
+#: library/admin/theme-options.php:587
 msgid "Featured Slider Post/Page #"
 msgstr ""
 
-#: library/admin/theme-options.php:556
+#: library/admin/theme-options.php:589
 msgid "Click Here To Edit"
 msgstr ""
 
-#: library/admin/theme-options.php:562
+#: library/admin/theme-options.php:595
 msgid ""
 "<strong>Following are the steps on how to use the featured slider.</"
 "strong><br />* Create Post, Add featured image to the Post.<br />* Add all "
@@ -548,57 +499,57 @@ msgid ""
 "respected added post's IDs."
 msgstr ""
 
-#: library/admin/theme-options.php:563
+#: library/admin/theme-options.php:596
 msgid ""
 "<strong>Note:</strong> You can now add Pages ID too. (You can now see the "
 "Pages' respective ID in the All Pages' table in last column.) ."
 msgstr ""
 
-#: library/admin/theme-options.php:610
+#: library/admin/theme-options.php:643
 msgid "Site Verification"
 msgstr ""
 
-#: library/admin/theme-options.php:615
+#: library/admin/theme-options.php:648
 msgid "Google Site Verification ID"
 msgstr ""
 
-#: library/admin/theme-options.php:616
+#: library/admin/theme-options.php:649
 msgid "Enter your Google ID number only"
 msgstr ""
 
-#: library/admin/theme-options.php:621
+#: library/admin/theme-options.php:654
 msgid "Yahoo Site Verification ID"
 msgstr ""
 
-#: library/admin/theme-options.php:622
+#: library/admin/theme-options.php:655
 msgid "Enter your Yahoo ID number only"
 msgstr ""
 
-#: library/admin/theme-options.php:627
+#: library/admin/theme-options.php:660
 msgid "Bing Site Verification ID"
 msgstr ""
 
-#: library/admin/theme-options.php:628
+#: library/admin/theme-options.php:661
 msgid "Enter your Bing ID number only"
 msgstr ""
 
-#: library/admin/theme-options.php:638
+#: library/admin/theme-options.php:671
 msgid "Analytics"
 msgstr ""
 
-#: library/admin/theme-options.php:643
+#: library/admin/theme-options.php:676
 msgid "Code to display on Header"
 msgstr ""
 
-#: library/admin/theme-options.php:649
+#: library/admin/theme-options.php:682
 msgid "Note: Enter your custom header script."
 msgstr ""
 
-#: library/admin/theme-options.php:652
+#: library/admin/theme-options.php:685
 msgid "Code to display on Footer"
 msgstr ""
 
-#: library/admin/theme-options.php:659
+#: library/admin/theme-options.php:692
 msgid "Note: Enter your custom footer script."
 msgstr ""
 
@@ -662,14 +613,14 @@ msgstr ""
 #: library/structure/content-extensions.php:482
 #: library/structure/content-extensions.php:573
 #: library/structure/content-extensions.php:662
-#: library/structure/content-extensions.php:884
+#: library/structure/content-extensions.php:849
 msgid "No Posts Found."
 msgstr ""
 
 #: library/structure/content-extensions.php:212
 #: library/structure/content-extensions.php:296
 #: library/structure/content-extensions.php:621
-#: library/structure/content-extensions.php:858
+#: library/structure/content-extensions.php:823
 msgid "Pages:"
 msgstr ""
 
@@ -689,66 +640,74 @@ msgstr ""
 msgid "Next &raquo;"
 msgstr ""
 
-#: library/structure/content-extensions.php:706
+#: library/structure/content-extensions.php:707
+msgid "&larr; Previous"
+msgstr ""
+
+#: library/structure/content-extensions.php:708
+msgid "Next &rarr;"
+msgstr ""
+
+#: library/structure/content-extensions.php:715
 msgid "&larr;"
 msgstr ""
 
-#: library/structure/content-extensions.php:707
+#: library/structure/content-extensions.php:716
 msgid "&rarr;"
 msgstr ""
 
-#: library/structure/content-extensions.php:744
+#: library/structure/content-extensions.php:754
 msgid "Pingback:"
 msgstr ""
 
-#: library/structure/content-extensions.php:744
+#: library/structure/content-extensions.php:754
 msgid "(Edit)"
 msgstr ""
 
-#: library/structure/content-extensions.php:759
+#: library/structure/content-extensions.php:769
 msgid "Post author"
 msgstr ""
 
-#: library/structure/content-extensions.php:765
+#: library/structure/content-extensions.php:775
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: library/structure/content-extensions.php:771
+#: library/structure/content-extensions.php:781
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: library/structure/content-extensions.php:776
+#: library/structure/content-extensions.php:786
 msgid "Edit"
 msgstr ""
 
-#: library/structure/content-extensions.php:780
+#: library/structure/content-extensions.php:790
 msgid "Reply <span>&darr;</span>"
 msgstr ""
 
-#: library/structure/content-extensions.php:907
+#: library/structure/content-extensions.php:872
 msgid "Error 404-Page NOT Found"
 msgstr ""
 
-#: library/structure/content-extensions.php:910
+#: library/structure/content-extensions.php:875
 msgid "It seems we can't find what you're looking for."
 msgstr ""
 
-#: library/structure/content-extensions.php:911
+#: library/structure/content-extensions.php:876
 msgid "This might be because:"
 msgstr ""
 
-#: library/structure/content-extensions.php:912
+#: library/structure/content-extensions.php:877
 msgid ""
 "You have typed the web address incorrectly, or the page you were looking for "
 "may have been moved, updated or deleted."
 msgstr ""
 
-#: library/structure/content-extensions.php:913
+#: library/structure/content-extensions.php:878
 msgid "Please try the following instead:"
 msgstr ""
 
-#: library/structure/content-extensions.php:914
+#: library/structure/content-extensions.php:879
 msgid ""
 "Check for a mis-typed URL error, then press the refresh button on your "
 "browser."

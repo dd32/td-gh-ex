@@ -4,7 +4,7 @@ Theme URI: http://themehorse.com/themes/attitude
 Author: Theme Horse
 Author URI: http://themehorse.com
 Description: Attitude is a Simple, Clean and Responsive Retina Ready WordPress Theme which adapts automatically to your tablets and mobile devices. Along with the elegant design the theme is easily customizable with numerous theme options. Some of the highlighted options are two site layout (Narrow and Wide), 5 layouts for every post/page, 5 Page Templates, 5 widget areas, 4 custom widgets, featured slider to highlight your post/page, 11 social icons, webmaster tools, custom background, custom Header, custom menu, custom favicon, custom CSS, custom webclip icon, custom logo and many more. Also supports some of the popular plugins like Breadcrumb NavXT, WP-PageNavi and Contact Form 7. It is also translation ready.
-Version: 1.1.1
+Version: 1.1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, light, blue, one-column, two-columns, three-columns, left-sidebar, right-sidebar, flexible-width, custom-menu, custom-background, custom-header, featured-images, full-width-template, theme-options, threaded-comments, translation-ready, sticky-post
@@ -578,6 +578,11 @@ a.readmore:active, a.more-link:active {
 	text-indent: -99999px;
 	background-image: url("images/social-icons.png");
 	background-position: right bottom;
+	-moz-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+	-ms-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+	-webkit-transition: all 0.2s linear;
 }
 .social-profiles ul li.facebook a {
 	background-position: 0 0;		
@@ -772,7 +777,7 @@ a.readmore:active, a.more-link:active {
 	font-size: 24px;	
 	line-height: 30px;
 	color: #fff;
-	width: 82.82%;
+	width: 80%;
 	float: left;
 }
 .slogan-wrap .slogan span {
@@ -783,14 +788,13 @@ a.readmore:active, a.more-link:active {
 }
 .slogan-wrap .view-work {
 	color: #494949;
-	font-size: 18px;
-	width: 13.70%;	
+	font-size: 18px;	
 	float: right;
 	display: block;
 	border: 2px solid #fff;
 	text-align: center;
 	height: 28px;
-	padding-top: 8px;
+	padding: 8px 15px 0;
 	margin-top: 8px;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -982,7 +986,7 @@ a.readmore:active, a.more-link:active {
 	margin-right: 20px;
 	text-align: center;
 }
-.services-item .service-icon img {
+.service-item .service-icon img {
 	height: 40px;
 	width: 40px;
 	-webkit-border-radius: 25px;
@@ -1971,6 +1975,9 @@ ul.default-wp-page li a:active {
 	   margin-left: 0;
 	   width: 100%;
 	}
+	.slogan-wrap .slogan {
+		width: 77.5%;
+	}
 	.no-sidebar-template #content {
 		margin: 0 ;
 		width: 100%;
@@ -2093,7 +2100,9 @@ ul.default-wp-page li a:active {
 	.slogan-wrap .slogan, 
 	.slogan-wrap .view-work {
 		float: none;
-    	width: 100%;
+		width: 100%;
+		padding-right: 0;
+		padding-left: 0;
 	}
 	.slogan-wrap .view-work {
 		width: 98%;
@@ -2347,4 +2356,4 @@ ul.default-wp-page li a:active {
 		background-image: url('images/rss@2x-hover.png');
 		background-position: 0 0;
 	} 
-}  	
+}   	
