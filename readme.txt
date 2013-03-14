@@ -17,6 +17,7 @@ Added Translation for Dutch by Thomas Gerard (beldin2000@gmail.com)
 Added Translation for Greek by Dimitris Antonakis (dimantonak@gmail.com)
 Added Translation for Croatian by Sanjin Barac (rapid24income@gmail.com)
 Added Translation for Chinese by yiranboke ( yiranboke@hotmail.com )
+Added Translation for Spanish by Jorge Lorente ( chaguanco@ofdp.com )
 
 == Features ==  
 Featured Image Slider, Custom Drop-down Menu, Theme Options, Custom Widgets, flexible position of sidebar and Support for popular plugins.
@@ -264,3 +265,6 @@ Version 2.2
 
 Version 2.2.1
 * Added Instagram Social Icon
+
+Version 2.3
+* Added Spanish translation es_ES.po and es_ES.mo
