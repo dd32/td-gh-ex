@@ -882,3 +882,35 @@ function catchbox_comment_form_fields( $fields ) {
     return $fields;
 }
 add_filter( 'comment_form_default_fields', 'catchbox_comment_form_fields' );
+
+
+/**
+ * Get the Web Click Icon from theme options
+ *
+ * @uses web clip 
+ * @get the data value of image from theme options
+ * @display web clip
+ *
+ * @uses set_transient and delete_transient 
+ */
+function catchbox_webclip() {
+	//delete_transient( 'catchbox_webclip' );	
+	
+	if ( !$catchbox_webclip = get_transient( 'catchbox_webclip' ) ) {
+		
+		$options = catchbox_get_theme_options();
+		
+		if ( !empty( $options['fav_icon'] ) )  {
+			$catchbox_webclip = '<link rel="apple-touch-icon-precomposed" href="'.esc_url( $options[ 'web_clip' ] ).'" />';	
+		}
+		
+		set_transient( 'catchbox_webclip', $catchbox_webclip, 86940 );
+		
+	}
+	
+	echo $catchbox_webclip ;	
+	
+}
+
+//Load webclip in Header Section
+add_action('wp_head', 'catchbox_webclip');

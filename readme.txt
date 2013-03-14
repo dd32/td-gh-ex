@@ -224,3 +224,6 @@ Version 2.0.1
 
 Version 2.0.2
 * Deleted the extra css in dark.css and fixed chrome issue
+
+Version 2.0.3
+* Added webclip icon url option
