@@ -2,13 +2,14 @@
 Catch Everest Theme by Catch Themes team, http://catchthemes.com/
 
 == ABOUT Catch Everest ==
-Catch Everest is Simple, Clean and Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel which makes this theme highly customizable and flexible. Make your beautiful yet professional website in no time. Active community at http://catchthemes.com/support-forum/
+Catch Everest is Simple, Clean and Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel which makes this theme highly customizable and flexible. Make your beautiful yet professional website in no time. Multilingual Ready (WPML) and also currently translated in Polish. Active community at http://catchthemes.com/support-forum/
 
 == Tags ==
 light, gray, white, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-header, custom-menu, featured-images, flexible-header, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 
 == Translation ==
 Catch Everest theme is translation ready. 
+Added Translation for Polish by Piotrek Jas (fansitejustgames@gmail.com)
 
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 2, see file license.txt
@@ -51,3 +52,7 @@ Version 0.1.2.2
 Version 0.1.2.3
 * Fixed header css when Show header text with your image is disable in Custom Header
 * Fixed More Tag to be kept empty as well. This fixed the problem in the server where Theme Option was not being saved.
+
+Version 0.1.3
+* Added Homepage Featured Content Headline
+* Added Polish translation pl_PL.po and pl_PL.mo

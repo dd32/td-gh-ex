@@ -124,6 +124,7 @@ function catcheverest_theme_options_do_page() {
             
                 <div id="theme-support">
                     <ul>
+                    	<li><a class="button donate" href="<?php echo esc_url(__('http://catchthemes.com/donate/','catcheverest')); ?>" title="<?php esc_attr_e('Donate to Catch Everest', 'catcheverest'); ?>" target="_blank"><?php printf(__('Donate Now','catcheverest')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/support-forum/forum/catch-everest-public/','catcheverest')); ?>" title="<?php esc_attr_e('Support Forum', 'catcheverest'); ?>" target="_blank"><?php printf(__('Support Forum','catcheverest')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/theme-instructions/catch-everest/','catcheverest')); ?>" title="<?php esc_attr_e('Theme Instruction', 'catcheverest'); ?>" target="_blank"><?php printf(__('Theme Instruction','catcheverest')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('https://www.facebook.com/catchthemes/','catcheverest')); ?>" title="<?php esc_attr_e('Like Catch Themes on Facebook', 'catcheverest'); ?>" target="_blank"><?php printf(__('Facebook','catcheverest')); ?></a></li>

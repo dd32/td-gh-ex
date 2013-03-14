@@ -676,7 +676,7 @@ function catcheverest_default_featured_content() {
 	if ( $disable_homepage_featured == "0" ) { 
 		if ( !$catcheverest_default_featured_content = get_transient( 'catcheverest_default_featured_content' ) ) {
 			$catcheverest_default_featured_content = '
-			<div id="featured-post">
+			<section id="featured-post">
 				<article class="post hentry first">
 					<figure class="featured-homepage-image">
 						<a href="#" title="Nepal Prayer Wheels">
@@ -730,7 +730,7 @@ function catcheverest_default_featured_content() {
 						</div>
 					</div><!-- .entry-container -->			
 				</article>
-			</div>';
+			</section><!-- #featured-post -->';
 		}
 		echo $catcheverest_default_featured_content;
 	}
@@ -750,6 +750,7 @@ function catcheverest_homepage_featured_content() {
    	$options = $catcheverest_options_settings;
 	$disable_homepage_featured = $options[ 'disable_homepage_featured' ];
 	$quantity = $options [ 'homepage_featured_qty' ];
+	$headline = $options [ 'homepage_featured_headline' ];
 	
 	if ( $disable_homepage_featured == "0" ) { 
 		
@@ -757,7 +758,11 @@ function catcheverest_homepage_featured_content() {
 			
 			echo '<!-- refreshing cache -->';	
 			
-			$catcheverest_homepage_featured_content = '<div id="featured-post">';
+			$catcheverest_homepage_featured_content = '<section id="featured-post">';
+			
+			if ( !empty( $headline ) ) {
+				$catcheverest_homepage_featured_content .= '<h1 class="entry-title">' . $headline .' </h1>';
+			}
 			
 			for ( $i = 1; $i <= $quantity; $i++ ) {
 				
@@ -829,7 +834,7 @@ function catcheverest_homepage_featured_content() {
 			
 			}
 			
-			$catcheverest_homepage_featured_content .= '</div><!-- #featured-post -->';	
+			$catcheverest_homepage_featured_content .= '</section><!-- #featured-post -->';	
 			
 		}
 		

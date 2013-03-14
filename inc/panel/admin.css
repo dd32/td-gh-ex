@@ -26,6 +26,12 @@
     background-color: #3A3D41;
 	padding: 10px 20px 20px;
 }
+#catchthemes .button.donate { 
+	background: none #5E8C10;
+	color: #fff;
+	font-weight: bold;
+    text-shadow: none;
+}
 #theme-social {
     float: right;
     width: 330px;
