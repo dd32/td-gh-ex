@@ -1,4 +1,4 @@
-== Sampression Lite ==
+﻿== Sampression Lite ==
 
 Theme Name: Sampression Lite
 Theme URI: http://www.sampression.com/sampression-lite/
@@ -108,6 +108,10 @@ Version 1.3.2
 = Removed default logo, favicons and apple touch icons
 
 = Few sampression hooks ( sampression_meta, sampression_title, sampression_favicon, sampression_styles, sampression_links, sampression_logo, etc. ) are introduced.
- 
+
+
+Version 1.3.2.1
+= Fixed: automatic widget glitch on 'bottom-widget-3'
+
  == Child Theme Support ===
  Sampresson Lite supports child themes. Please use child themes for customization of "Sampression Lite". For further reading: http://codex.wordpress.org/Child_Themes.

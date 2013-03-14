@@ -302,22 +302,27 @@ function sampression_widget_reset() {
 }
 add_action('widgets_init', 'sampression_widgets_init'); 
 
- function sampression_default_widgets() {
-	$sidebar_id = 'bottom-widget-3';
-    $sidebars_widgets = get_option( 'sidebars_widgets' );
-    $id = count( $sidebars_widgets ) + 1;
-    $sidebars_widgets[$sidebar_id] = array( "text-" . $id );
+function sampression_default_widgets() {
+	 $sidebars_widgets = get_option( 'sidebars_widgets' );
+	 if(!get_option('samp_auto_widget_installed',false)){
+		 
+		if( empty($sidebars_widgets['bottom-widget-3']) ){	//if there are no widgets on the 'bottom-widget-3'
+		 
+				$id = count( $sidebars_widgets ) + 1;
+				$sidebars_widgets['bottom-widget-3'] = array( "text-" . $id );
 
-    $ops = get_option( 'widget_text' );
-    $ops[$id] = array(
-        'title' => 'About me automatic widget',
-        'text' => 'This is an automatic widget added on Third Bottom Widget box (Bottom Widget 3). 
-		To edit please go to Appearance > Widgets and choose 3rd widget from the top in area second called Bottom Widget 3. Title is also manageable from widgets as well.', 
-    );
-    update_option( 'widget_text', $ops ); 
-    update_option( 'sidebars_widgets', $sidebars_widgets );
+				$ops = get_option( 'widget_text' );
+				$ops[$id] = array(
+					'title' => 'About me automatic widget',
+					'text' => 'This is an automatic widget added on Third Bottom Widget box (Bottom Widget 3). To edit please go to Appearance > Widgets and choose 3rd widget from the top in area second called Bottom Widget 3. Title is also manageable from widgets as well.', 
+				);
+				update_option( 'widget_text', $ops ); 
+				update_option( 'sidebars_widgets', $sidebars_widgets );	
+		}
+		update_option('samp_auto_widget_installed', true);
+		
+	 } 
 }
-
 add_action('widgets_init', 'sampression_default_widgets', 11);
 
 /*=======================================================================
