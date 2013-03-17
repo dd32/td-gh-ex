@@ -19,7 +19,7 @@
  <?php the_content(); ?>
  </div><div class="clear"> </div>
  <?php edit_post_link('Edit This Entry', '<p>', '</p>'); ?>
-<?php comments_template('', true); ?>
+<?php comments_template(); ?>
  <?php endwhile; endif; ?>
  
 

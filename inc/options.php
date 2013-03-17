@@ -31,7 +31,7 @@ function optionsframework_options() {
 		'type' => 'heading');
 		
 	$options[] = array(
-		'desc' => '<span class="donation">If you like this FREEE Theme You can consider for a small Donation to us. Your Donation will be spent for the Disadvantaged Children and Students. You can visit our <a href="http://d5creation.com/donate/" target="_blank"><strong>DONATION PAGE</strong></a> and Take your decision.</span><br /><br /><span class="donation">Need More Features and Options? Try <a href="http://d5creation.com/theme/design" target="_blank"><strong>Design Extend</strong></a>. Design Extend has more than 100 Theme Options and Features. You can control almost everything within a box. Please visit to see the working of Design Theme <a href="http://demo.d5creation.com/wp/themes/design/" target="_blank"><strong>HERE (Demo)</strong></a>.</span>',
+		'desc' => '<span class="donation">If you like this FREEE Theme You can consider for a small Donation to us. Your Donation will be spent for the Disadvantaged Children and Students. You can visit our <a href="http://d5creation.com/donate/" target="_blank"><strong>DONATION PAGE</strong></a> and Take your decision.</span><br /><br /><span class="donation">Need More Features and Options? Try <a href="http://d5creation.com/theme/design" target="_blank"><strong>Design Extend</strong></a>. Design Extend has more than 100 Theme Options and Features including Exciting Slide Images or Video. You can control almost everything within WordPress Dashboard. Please visit to see the working of Design Theme <a href="http://demo.d5creation.com/wp/themes/design/" target="_blank"><strong>HERE (Demo)</strong></a>.</span>',
 		'type' => 'info');
 		
 	$options[] = array(
@@ -45,7 +45,7 @@ function optionsframework_options() {
 		'name' => 'Front Page Heading',
 		'desc' => 'Input your heading text here. Plese limit it within 100 Letters.',
 		'id' => 'heading_text',
-		'std' => 'You can go with Pro Version for more Features and Functionalities. Visit www.d5creation.com for details',
+		'std' => 'WordPress is web software you can use to create a beautiful website or blog',
 		'type' => 'text');
 	
 // Quotation	
@@ -130,6 +130,21 @@ function optionsframework_options() {
 		'type' => 'text');
 
 	}
+	
+	$options[] = array(
+		'name' => 'Do not show any Posts or Page in the Front Page ', 
+		'desc' => 'Check the Box if you do not want to show any Posts or Page in the Front Page', 
+		'id' => 'fpost',
+		'std' => '0',
+		'type' => 'checkbox');
+		
+	$options[] = array(
+		'name' => 'Featured Image Background with Posts/Pages', 
+		'desc' => 'Upload an image for the Featured Image Background.600px X 200px image is recommended.', 
+		'id' => 'feat-image',
+		'std' => get_template_directory_uri() . '/images/thumb-back.jpg',
+		'type' => 'upload');
+	
 	return $options;
 }
 

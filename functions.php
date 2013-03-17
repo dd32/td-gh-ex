@@ -61,7 +61,9 @@
 
 
 // 	Functions for adding script
-	function design_enqueue_scripts() { ?>
+	function design_enqueue_scripts() { 
+	wp_enqueue_style('design-style', get_stylesheet_uri(), false);	?>
+    
 	<!--[if lt IE 9]>
 	<?php wp_enqueue_script( 'html5forie', get_template_directory_uri(). '/js/html5.js'); ?>
 	<![endif]-->
@@ -83,6 +85,14 @@
 	}
 	}
 	add_action( 'wp_enqueue_scripts', 'design_enqueue_comment_reply' );
+
+// 	Functions for adding some custom code within the head tag of site
+	function design_custom_code() {
+	if ( of_get_option ( 'feat-image' , get_template_directory_uri() . '/images/slide-image/thumb-back.jpg') != '' ) : 
+	echo '<style>#container .thumb { background: url("' . of_get_option ( 'feat-image' , get_template_directory_uri() . '/images/thumb-back.jpg') . '") no-repeat scroll 0 0 #CCCCCC; }</style>' ;
+	endif;
+	}	
+	add_action('wp_head', 'design_custom_code');
 
 
 //	function tied to the excerpt_more filter hook.
@@ -119,7 +129,7 @@
 	function design_widgets_init() {
 
 	register_sidebar( array(
-		'name' => __( 'Primary Sidebar', 'design' ),
+		'name' => 'Primary Sidebar', 
 		'id' => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -128,7 +138,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Area One', 'design' ),
+		'name' => 'Footer Area One', 
 		'id' => 'sidebar-2',
 		'description' => __( 'An optional widget area for your site footer', 'design' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -138,9 +148,9 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Area Two', 'design' ),
+		'name' => 'Footer Area Two', 
 		'id' => 'sidebar-3',
-		'description' => __( 'An optional widget area for your site footer', 'design' ),
+		'description' => 'An optional widget area for your site footer', 
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -148,7 +158,7 @@
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Area Three', 'design' ),
+		'name' => 'Footer Area Three', 
 		'id' => 'sidebar-4',
 		'description' => __( 'An optional widget area for your site footer', 'design' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -158,7 +168,7 @@
 	) );
 	
 	register_sidebar( array(
-		'name' => __( 'Footer Area Four', 'design' ),
+		'name' =>  'Footer Area Four', 
 		'id' => 'sidebar-5',
 		'description' => __( 'An optional widget area for your site footer', 'design' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
