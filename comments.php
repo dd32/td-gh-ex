@@ -118,7 +118,7 @@
 
 <?php else: ?>
 
-	<div class="alert alert-message info"><?php _e( 'Comments are closed.', 'activetab' ); ?></div>
+	<?php // comments are closed ?>
 
 <?php endif; // end of if( comments_open() ) ?>
 

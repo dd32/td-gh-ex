@@ -2,7 +2,7 @@
 Theme Name: activetab
 Theme URI: http://web-profile.com.ua/wordpress/themes/activetab/
 Description: light theme, which makes site easy to use
-Version: 0.2.5
+Version: 0.2.6
 Author: webvitaly
 Author URI: http://web-profile.com.ua/wordpress/
 Tags: gray, white, light, one-column, two-columns, right-sidebar, fixed-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, threaded-comments, translation-ready
@@ -235,18 +235,24 @@ body {-webkit-tap-highlight-color: #3297fd;}
 
 
 /* images */
+img.alignnone {
+	margin: 10px 20px 10px 0;
+}
 img.alignleft{
 	margin-right: 20px;
 	margin-bottom: 20px;
 	float: left;
+	clear: left;
 }
 img.alignright{
 	margin-left: 20px;
 	margin-bottom: 20px;
 	float: right;
+	clear: right;
 }
 img.aligncenter{
 	display: block;
+	clear: both;
 	margin: 0 auto;
 	margin-bottom: 20px;
 }
@@ -305,7 +311,6 @@ p img,
 .wp-caption .wp-caption-text,
 .gallery-caption {
 	color: #666;
-	font-family: Georgia, serif;
 	font-size: 12px;
 }
 .wp-caption .wp-caption-text {
@@ -326,9 +331,10 @@ p img,
 }
 #content .gallery {
 	margin: 0 auto 1.625em;
+	clear: both;
 }
 #content .gallery a img {
-	border: none;
+	/*border: none;*/
 }
 img#wpstats {
 	display: block;
@@ -355,11 +361,11 @@ img#wpstats {
 .site-main .wrap-thumbnail img {
 	box-sizing: content-box;
 }
-.site-main a img {
+.site-main a img, #content .gallery a img {
 	padding: 4px;
 	border: 1px solid #ccc;
 }
-.site-main a:hover img {
+.site-main a:hover img, #content .gallery a:hover img {
 	/*border-color: #08c;*/
 	padding: 3px;
 	border: 2px solid #08c;
@@ -377,6 +383,9 @@ a img[class*="wp-image-"],
 #content .gallery .gallery-icon a img {/* Add fancy borders to all WordPress-added images but not things like badges and icons and the like */
 	/*border: 2px solid #ccc;
 	padding: 2px;*/
+}
+.wp-caption.aligncenter {
+	clear: both;
 }
 .wp-caption img {
 	border-color: #eee;
@@ -412,6 +421,7 @@ iframe {
 div[id*='attachment_']{
 	max-width: 100%;
 	height: 100%;
+	box-sizing: border-box;
 }
 
 video {
@@ -560,11 +570,23 @@ video {
 
 
 /* wp_link_pages styles */
-.wp_link_pages {}
-.wp_link_pages .wp_link_pages-item-empty {display: inline-block; padding: 5px 0 5px 0;}
-.wp_link_pages .wp_link_pages-item {padding: 5px; font-weight: bold;}
-.wp_link_pages a .wp_link_pages-item {font-weight: normal;}
-.wp_link_pages a:hover {background-color: #eee;}
+.wp_link_pages {
+	clear: both;
+}
+.wp_link_pages .wp_link_pages-item-empty {
+	display: inline-block;
+	padding: 5px 0 5px 0;
+}
+.wp_link_pages .wp_link_pages-item {
+	padding: 5px;
+	font-weight: bold;
+}
+.wp_link_pages a .wp_link_pages-item {
+	font-weight: normal;
+}
+.wp_link_pages a:hover {
+	background-color: #eee;
+}
 
 
 /* ========== .entry-meta ========== */

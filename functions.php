@@ -5,7 +5,7 @@ if ( ! isset( $content_width ) ){
 }
 
 
-$activetab_version = '0.2.5';
+$activetab_version = '0.2.6';
 
 
 if ( ! function_exists( 'activetab_enqueue_scripts_and_styles' ) ) :
@@ -54,7 +54,7 @@ if ( ! function_exists( 'activetab_setup' ) ) :
 
 
 		$custom_header_args = array(
-			'default-image'          => get_template_directory_uri() . '/img/headers/borabora.jpg',
+			'default-image'          => get_template_directory_uri() . '/img/headers/nature.jpg',
 			'random-default'         => true, // random image rotation
 			'header-text'            => false, // disable editing styles for text in header
 
@@ -71,22 +71,21 @@ if ( ! function_exists( 'activetab_setup' ) ) :
 
 		add_theme_support( 'custom-header', $custom_header_args ); // custom header See http://codex.wordpress.org/Custom_Headers
 
-		// default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI
-		register_default_headers( array(
-			'field' => array(
-				'url' => '%s/img/headers/field.jpg',
-				'thumbnail_url' => '%s/img/headers/field-thumbnail.jpg',
-				'description' => __( 'Field', 'activetab' )
+		register_default_headers( array( // default custom headers packaged with the theme (%s is a placeholder for the theme template directory URI)
+			'nature' => array(
+				'url' => '%s/img/headers/nature.jpg',
+				'thumbnail_url' => '%s/img/headers/nature-thumbnail.jpg',
+				'description' => __( 'Nature', 'activetab' )
 			),
-			'beach' => array(
-				'url' => '%s/img/headers/beach.jpg',
-				'thumbnail_url' => '%s/img/headers/beach-thumbnail.jpg',
-				'description' => __( 'Beach', 'activetab' )
+			'relax' => array(
+				'url' => '%s/img/headers/relax.jpg',
+				'thumbnail_url' => '%s/img/headers/relax-thumbnail.jpg',
+				'description' => __( 'Relax', 'activetab' )
 			),
-			'sun' => array(
-				'url' => '%s/img/headers/sun.jpg',
-				'thumbnail_url' => '%s/img/headers/sun-thumbnail.jpg',
-				'description' => __( 'Sun', 'activetab' )
+			'space' => array(
+				'url' => '%s/img/headers/space.jpg',
+				'thumbnail_url' => '%s/img/headers/space-thumbnail.jpg',
+				'description' => __( 'Space', 'activetab' )
 			)
 		) );
 
