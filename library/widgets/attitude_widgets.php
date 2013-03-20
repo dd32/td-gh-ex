@@ -229,7 +229,7 @@ class attitude_custom_tag_widget extends WP_Widget {
 						<article>
 							<?php the_excerpt(); ?>
 						</article>
-						<a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>" class="cool-button green small-button"><?php _e( 'Read more','attitude' ); ?></a>
+						<a class="more-link" title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php _e( 'Read more','attitude' ); ?></a>
 					</div><!-- .one-third --> 					
 				<?php endwhile;
 		 		// Reset Post Data

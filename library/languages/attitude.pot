@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Attitude\n"
-"POT-Creation-Date: 2013-03-13 18:35+0545\n"
-"PO-Revision-Date: 2013-03-13 18:35+0545\n"
+"POT-Creation-Date: 2013-03-20 12:30+0545\n"
+"PO-Revision-Date: 2013-03-20 12:30+0545\n"
 "Last-Translator: \n"
 "Language-Team: Team Horse <support@themehorse.com>\n"
 "Language: English\n"
@@ -19,24 +19,29 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: comments.php:31
+#: comments.php:32
 #, php-format
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgstr ""
 
-#: comments.php:42
+#: comments.php:35
+#, php-format
+msgid "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr ""
+
+#: comments.php:46
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:43
+#: comments.php:47
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: comments.php:44
+#: comments.php:48
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: comments.php:51
+#: comments.php:55
 msgid "Comments are closed."
 msgstr ""
 
@@ -561,7 +566,7 @@ msgstr ""
 #: library/structure/content-extensions.php:308
 #: library/structure/content-extensions.php:457
 #: library/structure/content-extensions.php:548
-#: library/structure/content-extensions.php:637
+#: library/structure/content-extensions.php:641
 msgid "By"
 msgstr ""
 
@@ -569,7 +574,7 @@ msgstr ""
 #: library/structure/content-extensions.php:314
 #: library/structure/content-extensions.php:463
 #: library/structure/content-extensions.php:554
-#: library/structure/content-extensions.php:643
+#: library/structure/content-extensions.php:647
 msgid "No Comments"
 msgstr ""
 
@@ -577,7 +582,7 @@ msgstr ""
 #: library/structure/content-extensions.php:314
 #: library/structure/content-extensions.php:463
 #: library/structure/content-extensions.php:554
-#: library/structure/content-extensions.php:643
+#: library/structure/content-extensions.php:647
 msgid "1 Comment"
 msgstr ""
 
@@ -585,7 +590,7 @@ msgstr ""
 #: library/structure/content-extensions.php:314
 #: library/structure/content-extensions.php:463
 #: library/structure/content-extensions.php:554
-#: library/structure/content-extensions.php:643
+#: library/structure/content-extensions.php:647
 msgid "% Comments"
 msgstr ""
 
@@ -593,15 +598,14 @@ msgstr ""
 #: library/structure/content-extensions.php:314
 #: library/structure/content-extensions.php:463
 #: library/structure/content-extensions.php:554
-#: library/structure/content-extensions.php:643
+#: library/structure/content-extensions.php:647
 msgid "Comments Off"
 msgstr ""
 
 #: library/structure/content-extensions.php:157
 #: library/structure/content-extensions.php:467
 #: library/structure/content-extensions.php:558
-#: library/structure/content-extensions.php:618
-#: library/structure/content-extensions.php:647
+#: library/structure/content-extensions.php:622
 #: library/widgets/attitude_widgets.php:232
 msgid "Read more"
 msgstr ""
@@ -612,15 +616,15 @@ msgstr ""
 #: library/structure/content-extensions.php:391
 #: library/structure/content-extensions.php:482
 #: library/structure/content-extensions.php:573
-#: library/structure/content-extensions.php:662
-#: library/structure/content-extensions.php:849
+#: library/structure/content-extensions.php:663
+#: library/structure/content-extensions.php:850
 msgid "No Posts Found."
 msgstr ""
 
 #: library/structure/content-extensions.php:212
 #: library/structure/content-extensions.php:296
-#: library/structure/content-extensions.php:621
-#: library/structure/content-extensions.php:823
+#: library/structure/content-extensions.php:625
+#: library/structure/content-extensions.php:824
 msgid "Pages:"
 msgstr ""
 
@@ -632,82 +636,82 @@ msgstr ""
 msgid "Tagged on: "
 msgstr ""
 
-#: library/structure/content-extensions.php:687
+#: library/structure/content-extensions.php:688
 msgid "&laquo; Previous"
 msgstr ""
 
-#: library/structure/content-extensions.php:688
+#: library/structure/content-extensions.php:689
 msgid "Next &raquo;"
 msgstr ""
 
-#: library/structure/content-extensions.php:707
+#: library/structure/content-extensions.php:708
 msgid "&larr; Previous"
 msgstr ""
 
-#: library/structure/content-extensions.php:708
+#: library/structure/content-extensions.php:709
 msgid "Next &rarr;"
 msgstr ""
 
-#: library/structure/content-extensions.php:715
+#: library/structure/content-extensions.php:716
 msgid "&larr;"
 msgstr ""
 
-#: library/structure/content-extensions.php:716
+#: library/structure/content-extensions.php:717
 msgid "&rarr;"
 msgstr ""
 
-#: library/structure/content-extensions.php:754
+#: library/structure/content-extensions.php:755
 msgid "Pingback:"
 msgstr ""
 
-#: library/structure/content-extensions.php:754
+#: library/structure/content-extensions.php:755
 msgid "(Edit)"
 msgstr ""
 
-#: library/structure/content-extensions.php:769
+#: library/structure/content-extensions.php:770
 msgid "Post author"
 msgstr ""
 
-#: library/structure/content-extensions.php:775
+#: library/structure/content-extensions.php:776
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: library/structure/content-extensions.php:781
+#: library/structure/content-extensions.php:782
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: library/structure/content-extensions.php:786
+#: library/structure/content-extensions.php:787
 msgid "Edit"
 msgstr ""
 
-#: library/structure/content-extensions.php:790
+#: library/structure/content-extensions.php:791
 msgid "Reply <span>&darr;</span>"
 msgstr ""
 
-#: library/structure/content-extensions.php:872
+#: library/structure/content-extensions.php:873
 msgid "Error 404-Page NOT Found"
 msgstr ""
 
-#: library/structure/content-extensions.php:875
+#: library/structure/content-extensions.php:876
 msgid "It seems we can't find what you're looking for."
 msgstr ""
 
-#: library/structure/content-extensions.php:876
+#: library/structure/content-extensions.php:877
 msgid "This might be because:"
 msgstr ""
 
-#: library/structure/content-extensions.php:877
+#: library/structure/content-extensions.php:878
 msgid ""
 "You have typed the web address incorrectly, or the page you were looking for "
 "may have been moved, updated or deleted."
 msgstr ""
 
-#: library/structure/content-extensions.php:878
+#: library/structure/content-extensions.php:879
 msgid "Please try the following instead:"
 msgstr ""
 
-#: library/structure/content-extensions.php:879
+#: library/structure/content-extensions.php:880
 msgid ""
 "Check for a mis-typed URL error, then press the refresh button on your "
 "browser."
@@ -739,11 +743,11 @@ msgstr ""
 msgid "%1$s on %2$s"
 msgstr ""
 
-#: library/structure/header-extensions.php:492
+#: library/structure/header-extensions.php:493
 msgid "Page NOT Found"
 msgstr ""
 
-#: library/structure/header-extensions.php:495
+#: library/structure/header-extensions.php:496
 msgid "Search Results"
 msgstr ""
 

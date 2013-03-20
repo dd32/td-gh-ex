@@ -12,8 +12,8 @@
 #themehorse #attitude_tabs ul.tab-navigation li {
  display: inline-block;
  border-right: 1px solid #aaa;
- padding-right: 0 8px;
- margin-right: 8px;
+ padding: 0 8px;
+ margin-right: -3px;
  margin-bottom: 10px;
  color: #555;
 }

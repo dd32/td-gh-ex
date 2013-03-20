@@ -592,6 +592,8 @@ function attitude_theloop_for_template_blog_full_content() {
 		$paged = 1;
 	query_posts( "post_type=post&paged=$paged" ); 
 
+	global $more;    // Declare global $more (before the loop).
+
 	if( have_posts() ) {
 		while( have_posts() ) {
 			the_post();
@@ -615,6 +617,8 @@ function attitude_theloop_for_template_blog_full_content() {
 
   			<div class="entry-content clearfix">
     			<?php
+    				$more = 0;       // Set (inside the loop) to display content above the more tag.
+
     				the_content( __( 'Read more', 'attitude' ) );
 
     				wp_link_pages( array( 
@@ -643,9 +647,6 @@ function attitude_theloop_for_template_blog_full_content() {
              		<span class="comments"><?php comments_popup_link( __( 'No Comments', 'attitude' ), __( '1 Comment', 'attitude' ), __( '% Comments', 'attitude' ), '', __( 'Comments Off', 'attitude' ) ); ?></span> |
              	<?php } ?> 		          				
     			</div><!-- .entry-meta -->
-    			<?php
-    			echo '<a class="readmore" href="' . get_permalink() . '" title="'.the_title( '', '', false ).'">'.__( 'Read more', 'attitude' ).'</a>';
-    			?>
     		</div>
 
     		<?php do_action( 'attitude_before_post_meta' ); ?>

@@ -368,15 +368,16 @@ function attitude_home_slogan() {
 		if ( "0" == $options[ 'disable_slogan' ] ) {
 			$attitude_home_slogan .= '<section class="slogan-wrap clearfix"><div class="container"><div class="slogan">';
 			if ( !empty( $options[ 'home_slogan1' ] ) ) {
-				$attitude_home_slogan .= $options[ 'home_slogan1' ];
+				$attitude_home_slogan .= esc_html( $options[ 'home_slogan1' ] );
 			}
 			if ( !empty( $options[ 'home_slogan2' ] ) ) {
-				$attitude_home_slogan .= '<span>'.$options[ 'home_slogan2' ].'</span>';
+				$attitude_home_slogan .= '<span>'.esc_html( $options[ 'home_slogan2' ] ).'</span>';
 			}
 			$attitude_home_slogan .= '</div><!-- .slogan -->';
 			if ( !empty( $options[ 'button_text' ] ) && !empty( $options[ 'redirect_button_link' ] ) ) {
-				$attitude_home_slogan .= '<a class="view-work" href="'.$options[ 'redirect_button_link' ].'" title="View Work">'.$options[ 'button_text' ].'</a><!-- .view-work -->';
+				$attitude_home_slogan .= '<a class="view-work" href="'.esc_url( $options[ 'redirect_button_link' ] ).'" title="'.esc_attr( $options[ 'button_text' ] ).'">'.esc_html( $options[ 'button_text' ] ).'</a><!-- .view-work -->';
 			}
+			$attitude_home_slogan .= '</div><!-- .container --></section><!-- .slogan-wrap -->';
 		}
 		
 	set_transient( 'attitude_home_slogan', $attitude_home_slogan, 86940 );	
