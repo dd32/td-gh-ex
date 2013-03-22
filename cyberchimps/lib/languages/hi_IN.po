@@ -3,36 +3,35 @@ msgstr ""
 "Project-Id-Version: CyberChimps Core\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-13 17:08:33 UTC\n"
-"PO-Revision-Date: 2014-08-22 08:07:19 UTC\n"
-"Last-Translator: Web Translate It <support@webtranslateit.com>\n"
+"PO-Revision-Date: 2013-03-19 13:51-0000\n"
+"Last-Translator: \n"
 "Language-Team: Hindi, India\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: WebTranslateIt.com\n"
+"X-Generator: Poedit 1.5.4\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 
 #: ../../functions.php
-msgid "Posted on %s"
-msgstr "पर पोस्ट किया गया %s"
+msgid "View all posts by"
+msgstr "सभी पोस्ट देखें"
 
 #: ../../functions.php
-msgid "View all posts by %s"
-msgstr "%S द्वारा सभी प्रविष्टियाँ देखें"
+msgid "Posted on "
+msgstr "पर पोस्ट किया गया "
 
 #: ../../functions.php
-msgid "by %s"
-msgstr "%s द्वारा"
+msgid " by "
+msgstr " द्वारा "
 
 #: ../../functions.php
-msgid "Posted in %s"
-msgstr "प्रेषित किया गया %s"
+msgid "Posted in"
+msgstr "में तैनात"
 
 #: ../../functions.php
-msgid "Tags: %s"
-msgstr "टैग: %s"
+msgid "Tags:"
+msgstr "टैग:"
 
-#: ../../functions.php
 #: ../../functions.php
 msgid "Leave a comment"
 msgstr "एक टिप्पणी छोड़ दो"
@@ -41,165 +40,139 @@ msgstr "एक टिप्पणी छोड़ दो"
 msgid "1 Comment"
 msgstr "1 टिप्पणी"
 
-#: ../../functions.php
-#: ../../options/options-core.php
+#: ../../options/options-core.php ../../functions.php
 msgid "Comments"
-msgstr "टिप्पणियाँ"
+msgstr "बीच में"
 
 #: ../../functions.php
 msgid "Permalink to %s"
-msgstr "%S के लिए Permalink"
+msgstr "Permalink %s"
 
 #: ../../functions.php
-msgid "Category Archives: %s"
-msgstr "श्रेणी अभिलेखागार: %s"
+msgid "Category Archives:"
+msgstr "श्रेणी अभिलेखागार:"
 
 #: ../../functions.php
-msgid "Tag Archives: %s"
-msgstr "टैग अभिलेखागार: %s"
+msgid "Tag Archives:"
+msgstr "टैग अभिलेखागार:"
 
 #: ../../functions.php
 msgid "Author Archives"
 msgstr "लेखक अभिलेखागार"
 
 #: ../../functions.php
-msgid "Daily Archives: %s"
-msgstr "नित्य संग्रह: %s"
+msgid "Daily Archives:"
+msgstr "दैनिक अभिलेखागार:"
 
 #: ../../functions.php
-msgid "Monthly Archives: %s"
-msgstr "मासिक संग्रह: %s"
+msgid "Monthly Archives:"
+msgstr "मासिक अभिलेखागार:"
 
 #: ../../functions.php
-msgid "Yearly Archives: %s"
-msgstr "वार्षिक संग्रह: %s"
-
-#: ../../functions.php
-msgid "Shop"
-msgstr "की दुकान"
+msgid "Yearly Archives:"
+msgstr "वार्षिक अभिलेखागार:"
 
 #: ../../functions.php
 msgid "Archives"
-msgstr "अभिलेखागार"
+msgstr "अभिलेख"
+
+#: ../../inc/meta-box.php ../../functions.php
+msgid "Page"
+msgstr "पृष्ठ"
 
 #: ../../functions.php
-msgid "Search for &quot; %s &quot;"
-msgstr "\"%S\" के लिए खोज"
+msgid "Continue Reading"
+msgstr "पढ़ना जारी रखें"
 
 #: ../../functions.php
-msgid "Not Found"
-msgstr "नहीं मिला"
+msgid "Welcome"
+msgstr "स्वागत है"
 
 #: ../../functions.php
-msgid "Page %s"
-msgstr "पृष्ठ %s"
+msgid "Congratulations you have successfully installed"
+msgstr "बधाई हो, आप सफलतापूर्वक स्थापित किया है"
 
 #: ../../functions.php
-#: ../../functions.php
-msgid "Read More..."
-msgstr "और अधिक पढ़ें..."
+msgid "Your website is important to us, so please read the"
+msgstr "आपकी वेबसाइट हमारे लिए महत्वपूर्ण है, तो पढ़ कृपया"
 
 #: ../../functions.php
-#: ../../options/options-init.php
-msgid "Instructions"
+msgid "instructions"
 msgstr "निर्देश"
 
 #: ../../functions.php
-#: ../../options/options-init.php
+msgid "to learn how to use"
+msgstr "जानने के लिए कैसे उपयोग करने के लिए"
+
+#: ../../functions.php
+msgid "If you have any questions please post in our"
+msgstr "यदि आप कोई प्रश्न हैं हमारे में पोस्ट कृपया"
+
+#: ../../functions.php
+msgid "support forum"
+msgstr "मंच का समर्थन"
+
+#: ../../functions.php
+msgid "and we will get back to you as soon as we can"
+msgstr "और हम तुम्हें वापस करने के रूप में हम कर सकते हैं जल्द ही मिल जाएगा"
+
+#: ../../functions.php
+msgid "Thank you for choosing CyberChimps Professional WordPress Themes"
+msgstr "CyberChimps व्यावसायिक WordPress थीम्स चुनने के लिए धन्यवाद"
+
+#: ../../options/options-core.php ../../functions.php
+msgid "Pro"
+msgstr "Sushi.Pro"
+
+#: ../../functions.php
+msgid "Complete Installation"
+msgstr "स्थापना पूर्ण"
+
+#: ../../options/options-init.php ../../functions.php
+msgid "Instructions"
+msgstr "निर्देश"
+
+#: ../../options/options-init.php ../../functions.php
 msgid "Support"
 msgstr "समर्थन"
 
 #: ../../functions.php
-msgid "Upgrade to %1$s"
-msgstr "%1$ S के लिए उन्नत"
+msgid "Upgrade to"
+msgstr "पर अपग्रेड करें"
 
 #: ../../functions.php
-msgid "For even more amazing new features, upgrade to %1$s which includes a slider with customizable features, an image carousel, widgetized boxes, a callout section, expanded typography (including Google Fonts), additional color skins, and many more powerful new features. Visit %2$s to learn more!"
-msgstr "और भी अधिक अद्भुत नई सुविधाओं के लिए, %1$ s जो अनुकूलन योग्य सुविधाओं, एक छवि हिंडोला, widgetized बक्से, किसी कॉलआउट अनुभाग, विस्तारित typography (गूगल फ़ॉन्ट्स सहित), अतिरिक्त रंग खाल और कई और अधिक शक्तिशाली नई सुविधाओं के साथ एक स्लाइडर शामिल करने के लिए उन्नयन। अधिक जानकारी के लिए %2$ s पर जाएँ!"
+msgid "If you want even more amazing new features upgrade to"
+msgstr "यदि आप चाहते हैं और भी अधिक आश्चर्यजनक नई सुविधाओं के लिए उन्नयन"
 
 #: ../../functions.php
-msgid "Welcome to %1$s! Learn more now about upgrading to %2$s today."
-msgstr "%1$ s के लिए आपका स्वागत है! अधिक जानें अब बारे में %2$ s के लिए आज नवीनीकृत करना।"
+msgid ""
+"which includes a Custom Features Slider, Image Carousel, Widgetized Boxes, "
+"Callout Section, expanded typography including Google Fonts, more color "
+"skins, and many more powerful new features. Please visit"
+msgstr ""
+"जो एक कस्टम सुविधाएँ स्लाइडर, छवि हिंडोला, पृष्ठों पाए बक्से, कॉलआउट धारा, गूगल फ़ॉन्ट्स, "
+"और अधिक रंग, खाल और कई और अधिक शक्तिशाली नई सुविधाओं सहित विस्तार टाइपोग्राफी "
+"शामिल हैं. कृपया पर जाएँ"
 
 #: ../../functions.php
-#: ../../options/options-init.php
+msgid "to learn more!"
+msgstr "अधिक जानने के लिए!"
+
+#: ../../functions.php
+msgid "Welcome to %1$s! Learn more now about upgrading to"
+msgstr "करने के लिए %1$s आपका स्वागत है ! उन्नयन के बारे में और अधिक जानें अब"
+
+#: ../../functions.php
+msgid "today."
+msgstr "आज।"
+
+#: ../../options/options-init.php ../../functions.php
 msgid "Options"
 msgstr "विकल्प"
 
 #: ../../functions.php
-msgid "Add Ons"
-msgstr "Ons जोड़ें"
-
-#: ../../functions.php
-msgid "The Events Calendar"
-msgstr "घटनाओं कैलेंडर"
-
-#: ../../functions.php
-#: ../../functions.php
-msgid "Digital Downloads"
-msgstr "डिजिटल डाउनलोड"
-
-#: ../../functions.php
-msgid "Events"
-msgstr "घटनाक्रम"
-
-#: ../../functions.php
-msgid "Events Plugin Options"
-msgstr "घटनाक्रम प्लगइन विकल्प"
-
-#: ../../functions.php
-msgid "Please activate The Events Calendar plugin"
-msgstr "कृपया घटनाओं कैलेंडर प्लगइन को सक्रिय करें"
-
-#: ../../functions.php
-msgid "Install Events Calendar Plugin"
-msgstr "घटनाओं कैलेंडर प्लगइन स्थापित करें"
-
-#: ../../functions.php
-msgid "Digital Downloads Settings"
-msgstr "डिजिटल डाउनलोड सेटिंग्स"
-
-#: ../../functions.php
-msgid "Please activate Easy Digital Downloads plugin"
-msgstr "कृपया घटनाओं कैलेंडर प्लगइन को सक्रिय करें"
-
-#: ../../functions.php
-msgid "Install Easy Digital Downloads Plugin"
-msgstr "घटनाओं कैलेंडर प्लगइन स्थापित करें"
-
-#: ../../hooks/blog-hooks.php
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-#: ../../options/meta-box-class/meta-box.php
-msgid "Slider Lite"
-msgstr "स्लाइडर लाइट"
-
-#: ../../hooks/blog-hooks.php
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-#: ../../options/meta-box-class/meta-box.php
-msgid "Boxes"
-msgstr "बक्से"
-
-#: ../../hooks/blog-hooks.php
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-msgid "Post Page"
-msgstr "पोस्ट पेज"
-
-#: ../../hooks/blog-hooks.php
-msgid "Our Blog"
-msgstr "ब्लॉग"
-
-#: ../../hooks/header-hooks.php
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-msgid "Logo + Icons"
-msgstr "लोगो + माउस को आइकनों"
-
-#: ../../inc/cc-custom-background.php
-msgid "Or choose one of CyberChimps background images"
-msgstr "या CyberChimps पृष्ठभूमि छवियों में से एक का चयन"
+msgid " Options"
+msgstr "विकल्प"
 
 #: ../../init.php
 msgid "Primary Menu"
@@ -207,104 +180,418 @@ msgstr "प्राथमिक मेनू"
 
 #: ../../init.php
 msgid "Sidebar Left"
-msgstr "वाम साइडबार"
+msgstr "साइडबार वाम"
 
 #: ../../init.php
 msgid "Sidebar Right"
-msgstr "सही साइडबार"
+msgstr "साइडबार सही"
 
-#: ../../init.php
-#: ../../options/options-core.php
+#: ../../options/options-core.php ../../init.php
 msgid "Footer Widgets"
 msgstr "पाद लेख विजेट"
 
-#: ../../options/options-core.php
-#: ../../options/meta-box-class/meta-box.php
-msgid "Select Page Layout"
-msgstr "पेज लेआउट का चयन करें"
+#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../hooks/blog-hooks.php
+msgid "Slider Lite"
+msgstr "स्लाइडर लाइट"
 
-#: ../../options/meta-box-class/meta-box.php
-msgid "Page Title"
-msgstr "पृष्ठ शीर्षक"
+#: ../../options/options-core.php ../../inc/meta-box.php
+#: ../../hooks/blog-hooks.php
+msgid "Boxes"
+msgstr "बक्से"
 
-#: ../../options/meta-box-class/meta-box.php
-msgid "Page Elements"
-msgstr "पृष्ठ तत्वों"
+#: ../../options/options-core.php ../../hooks/blog-hooks.php
+msgid "Post Page"
+msgstr "पोस्ट पेज"
 
-#: ../../options/meta-box-class/meta-box.php
-msgid "Page"
-msgstr "पृष्ठ"
+#: ../../options/options-core.php ../../hooks/header-hooks.php
+msgid "Logo + Icons"
+msgstr "लोगो + प्रतीक"
 
-#: ../../options/options-core.php
-#: ../../options/meta-box-class/meta-box.php
-msgid "Portfolio Lite"
-msgstr "पोर्टफोलियो लाइट"
+#: ../../inc/cc-custom-background.php
+msgid "Or choose one of CyberChimps background images"
+msgstr "या एक CyberChimps पृष्ठभूमि छवियों का चयन"
 
-#: ../../options/meta-box-class/meta-box.php
-msgid "Twitter Bar"
-msgstr "चहचहाना पट्टी"
+#: ../../inc/meta-box-class.php
+msgid "Uploaded files"
+msgstr "अपलोड फ़ाइलें"
 
-#: ../../options/meta-box-class/meta-box.php
-msgid "Need Help?"
-msgstr "मदद की ज़रूरत है?"
+#: ../../inc/meta-box-class.php
+msgid "Upload new files"
+msgstr "नई फ़ाइलें अपलोड करें"
 
-#: ../../options/meta-box-class/meta-box.php
-msgid "Visit the %s page options guide"
-msgstr "%S पृष्ठ विकल्प गाइड पर जाएँ"
+#: ../../inc/meta-box-class.php
+msgid "Add more file"
+msgstr "अधिक फ़ाइल जोड़ें"
 
-#: ../../options/meta-box-class/meta-box.php
-msgid "Page Options"
-msgstr "सहेजें विकल्प"
+#: ../../inc/meta-box-class.php
+msgid "Uploaded images"
+msgstr "छवियाँ अपलोड करें"
 
-#: ../../options/meta-box-class/meta-box.php
+#: ../../inc/meta-box-class.php
+msgid "Upload new images (Make sure to publish the post to save)"
+msgstr "नए छवियों अपलोड करें (पोस्ट प्रकाशित बचाने के लिए सुनिश्चित करें)"
+
+#: ../../inc/meta-box-class.php
+msgid "Select a color"
+msgstr "कोई रंग चुनें"
+
+#: ../../options/options-medialibrary-uploader.php
+#: ../../inc/meta-box-class.php
+msgid "Upload"
+msgstr "अपलोड"
+
+#: ../../inc/meta-box-class.php
+msgid "or enter URL"
+msgstr "या URL दर्ज करें"
+
+#: ../../inc/meta-box.php
+msgid "Slider Options"
+msgstr "स्लाइडर विकल्प"
+
+#: ../../inc/meta-box.php
 msgid "Slider Image"
-msgstr "छवि स्लाइडर"
+msgstr "स्लाइडर छवि"
 
-#: ../../options/meta-box-class/meta-box.php
+#: ../../inc/meta-box.php
 msgid "Slider Caption"
 msgstr "स्लाइडर कैप्शन"
 
-#: ../../options/meta-box-class/meta-box.php
+#: ../../inc/meta-box.php
 msgid "Custom Slide Link"
 msgstr "कस्टम स्लाइड लिंक"
 
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-#: ../../options/meta-box-class/meta-box.php
+#: ../../options/options-core.php ../../inc/meta-box.php
 msgid "Title"
+msgstr "फैल"
+
+#: ../../inc/meta-box.php
+msgid "Caption"
 msgstr "शीर्षक"
 
-#: ../../options/meta-box-class/meta-box.php
-msgid "Caption"
-msgstr "कैप्शन"
+#: ../../inc/meta-box.php
+msgid "Need Help?"
+msgstr "मदद चाहिए?"
 
-#: ../../options/meta-box-class/meta-box.php
-msgid "Custom Feature Slides"
-msgstr "कस्टम श्रेणियों"
+#: ../../inc/meta-box.php
+msgid "Select Page Layout"
+msgstr "पेज लेआउट का चयन करें"
 
-#: ../../options/meta-box-class/my-meta-box-class.php
-#: ../../options/meta-box-class/my-meta-box-class.php
-msgid "Remove"
-msgstr "हटाना"
+#: ../../inc/meta-box.php
+msgid "Page Title"
+msgstr "पृष्ठ शीर्षक"
 
-#: ../../options/meta-box-class/my-meta-box-class.php
-msgid "Add"
-msgstr "Ons जोड़ें"
+#: ../../inc/meta-box.php
+msgid "Page Elements"
+msgstr "पृष्ठ तत्व"
 
-#: ../../options/meta-box-class/my-meta-box-class.php
-#: ../../options/meta-box-class/my-meta-box-class.php
-msgid "Sorry, you cannot upload this file type for this field."
-msgstr "क्षमा करें, आप इस फ़ील्ड के लिए इस प्रकार की फ़ाइल को अपलोड नहीं कर सकते।"
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Portfolio Lite"
+msgstr "Not Ranked पोर्टफोलियो लाइट"
 
-#: ../../options/options-medialibrary-uploader.php
-#: ../../options/meta-box-class/my-meta-box-class.php
-msgid "Upload"
-msgstr "अपलोड करें"
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Twitter Bar"
+msgstr "चहचहाना बार"
 
-#: ../../options/meta-box-class/my-meta-box-class.php
-msgid "or enter URL"
-msgstr "या URL दर्ज करें"
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Meta Data"
+msgstr "मेटा डेटा"
+
+#: ../../inc/meta-box.php ../../options/options-core.php
+msgid "Featured Image"
+msgstr "विशेष रुप से प्रदर्शित छवि"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Category"
+msgstr "श्रेणी"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "You need to create a Category"
+msgstr "आप के लिए एक श्रेणी बनाने की जरूरत है"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Number of Columns"
+msgstr "ऑडियो चैनल्स"
+
+#: ../../inc/meta-box.php
+msgid "Number of Posts"
+msgstr "पदों की संख्या"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Wide Posts Below Magazine"
+msgstr "पत्रिका नीचे विस्तृत पोस्ट"
+
+#: ../../inc/meta-box.php
+msgid "Number of Wide Posts "
+msgstr "विस्तृत पदों की संख्या "
+
+#: ../../inc/meta-box.php
+msgid "Slide One Image"
+msgstr "एक छवि स्लाइड"
+
+#: ../../inc/meta-box.php
+msgid "Slide One Link"
+msgstr "स्लाइड एक लिंक"
+
+#: ../../inc/meta-box.php
+msgid "Slide Two Image"
+msgstr "स्लाइड दो छवि"
+
+#: ../../inc/meta-box.php
+msgid "Slide Two Link"
+msgstr "दो लिंक स्लाइड"
+
+#: ../../inc/meta-box.php
+msgid "Slide Three Image"
+msgstr "तीन छवि स्लाइड"
+
+#: ../../inc/meta-box.php
+msgid "Slide Three Link"
+msgstr "स्लाइड तीन लिंक"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Slider Size"
+msgstr "स्लाइडर आकार"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Full"
+msgstr "पूरा"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Half"
+msgstr "आधा "
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Slider Type"
+msgstr "स्लाइडर प्रकार"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Custom"
+msgstr "आवाज़"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Posts"
+msgstr "पोस्ट"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Post Categories"
+msgstr "श्रेणियाँ पोस्ट"
+
+#: ../../inc/meta-box.php
+msgid "All"
+msgstr "सब"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Custom Categories"
+msgstr "कस्टम श्रेणियाँ"
+
+#: ../../inc/meta-box.php
+msgid "Number of Featured Posts"
+msgstr "विशेष रुप से प्रदर्शित पोस्ट की संख्या"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Slider Height"
+msgstr "स्लाइडर लंबाई"
+
+#: ../../inc/meta-box.php
+msgid "Slider Speed"
+msgstr "स्लाइडर स्पीड"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Slider Arrows"
+msgstr "स्लाइडर तीर"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Callout Title"
+msgstr "शीर्षक कॉलआउट"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "%1$s's Call Out Element"
+msgstr "%1$s तत्व बाहर कॉल"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Callout Text"
+msgstr "पाठ कॉलआउट"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid ""
+"Use %1$s's Call Out section on any page where you want to deliver an "
+"important message to your customer or client."
+msgstr ""
+"का प्रयोग करें %1$s अनुभाग बाहर किसी भी पृष्ठ जहाँ आप अपने ग्राहक या ग्राहक के लिए एक "
+"महत्वपूर्ण संदेश देने के लिए करना चाहते हैं पर कॉल."
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Callout Button"
+msgstr "बटन कॉलआउट"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Callout Button Text"
+msgstr "कॉलआउट बटन पाठ"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Callout Button URL"
+msgstr "कॉलआउट बटन URL"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Custom Callout Options"
+msgstr "कस्टम विकल्प कॉलआउट"
+
+#: ../../inc/meta-box.php
+msgid "Custom Button Image"
+msgstr "कस्टम बटन छवि"
+
+#: ../../inc/meta-box.php
+msgid "Custom Background Color"
+msgstr "पृष्ठभूमि रंग अनुकूलित करें:"
+
+#: ../../inc/meta-box.php
+msgid "Custom Title Color"
+msgstr "कस्टम शीर्षक का रंग"
+
+#: ../../inc/meta-box.php
+msgid "Custom Text Color"
+msgstr "कस्टम पाठ का रंग"
+
+#: ../../inc/meta-box.php
+msgid "Custom Button Color"
+msgstr "कस्टम बटन का रंग"
+
+#: ../../inc/meta-box.php
+msgid "Custom Button Text Color"
+msgstr "कस्टम बटन पाठ रंग"
+
+#: ../../inc/meta-box.php
+msgid "Need help?"
+msgstr "मदद चाहिए?"
+
+#: ../../inc/meta-box.php
+msgid "Custom HTML"
+msgstr "कस्टम HTML"
+
+#: ../../inc/meta-box.php
+msgid "Enter your custom html here"
+msgstr "यहाँ अपने कस्टम HTML दर्ज"
+
+#: ../../inc/meta-box.php
+msgid "Images per row"
+msgstr "प्रति पंक्ति छवियाँ"
+
+#: ../../inc/meta-box.php
+msgid "Two"
+msgstr "दो"
+
+#: ../../inc/meta-box.php
+msgid "Three"
+msgstr "तीन"
+
+#: ../../inc/meta-box.php
+msgid "Four"
+msgstr "चार"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Portfolio Category"
+msgstr "पोर्टफोलियो श्रेणी"
+
+#: ../../inc/meta-box.php ../../options/options-core.php
+msgid "Portfolio Title"
+msgstr "पोर्टफोलियो शीर्षक"
+
+#: ../../inc/meta-box.php
+msgid "Portfolio"
+msgstr "ग. पोर्टफोलियो"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "First Portfolio Image"
+msgstr "प्रथम पोर्टफोलियो छवि"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "First Portfolio Image Caption"
+msgstr "पहले पोर्टफोलियो छवि कैप्शन"
+
+#: ../../inc/meta-box.php
+msgid "Image 1"
+msgstr "छवि 1"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "First Porfolio Link"
+msgstr "प्रथम porfolio लिंक"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Link URL"
+msgstr "यूआरएल लिंक "
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Second Portfolio Image"
+msgstr "द्वितीय पोर्टफोलियो छवि के"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Second Portfolio Image Caption"
+msgstr "दूसरा पोर्टफोलियो छवि कैप्शन"
+
+#: ../../inc/meta-box.php
+msgid "Image 2"
+msgstr "छवि 2"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Second Porfolio Link"
+msgstr "दूसरा porfolio लिंक"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Third Portfolio Image"
+msgstr "तीसरी पोर्टफोलियो छवि"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Third Portfolio Image Caption"
+msgstr "तीसरा पोर्टफोलियो छवि कैप्शन"
+
+#: ../../inc/meta-box.php
+msgid "Image 3"
+msgstr "छवि 3"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Third Porfolio Link"
+msgstr "तीसरा porfolio लिंक"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Fourth Portfolio Image"
+msgstr "चौथा पोर्टफोलियो छवि"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Fourth Portfolio Image Caption"
+msgstr "चौथा पोर्टफोलियो छवि कैप्शन"
+
+#: ../../inc/meta-box.php
+msgid "Image 4"
+msgstr "छवि 4"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Fourth Porfolio Link"
+msgstr "चौथा porfolio लिंक"
+
+#: ../../inc/meta-box.php
+msgid "Post Category"
+msgstr "श्रेणी पोस्ट"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Images"
+msgstr "छवियाँ"
+
+#: ../../inc/meta-box.php
+msgid "Carousel Category"
+msgstr "हिंडोला श्रेणी"
+
+#: ../../options/options-core.php ../../inc/meta-box.php
+msgid "Twitter Handle"
+msgstr "चहचहाना हैंडल"
+
+#: ../../inc/meta-box.php
+msgid "Enter your Twitter handle if using the Twitter bar"
+msgstr "अगर चहचहाना पट्टी का उपयोग कर अपने कलरव संभाल दर्ज"
+
+#: ../../inc/meta-box.php
+msgid "Boxes Category"
+msgstr "बक्से श्रेणी"
 
 #: ../../options/options-core.php
 msgid "Help"
@@ -312,11 +599,11 @@ msgstr "मदद"
 
 #: ../../options/options-core.php
 msgid "Design"
-msgstr "डिजाइन"
+msgstr "डिज़ाइन"
 
 #: ../../options/options-core.php
 msgid "Header"
-msgstr "शीर्ष लेख"
+msgstr "हेडर"
 
 #: ../../options/options-core.php
 msgid "Blog"
@@ -324,11 +611,11 @@ msgstr "ब्लॉग"
 
 #: ../../options/options-core.php
 msgid "Templates"
-msgstr "टेम्पलेट्स"
+msgstr "टेम्पलेट"
 
 #: ../../options/options-core.php
 msgid "Footer"
-msgstr "पाद लेख"
+msgstr "फुटर"
 
 #: ../../options/options-core.php
 msgid "Layout Options"
@@ -340,15 +627,15 @@ msgstr "कस्टम रंग"
 
 #: ../../options/options-core.php
 msgid "Typography"
-msgstr "Typography"
+msgstr "मुद्रण कला"
 
 #: ../../options/options-core.php
 msgid "Header Drag &#38; Drop"
-msgstr "शीर्ष लेख खींचें & ड्रॉप"
+msgstr "हैडर खींचें और ड्रॉप"
 
 #: ../../options/options-core.php
 msgid "Header Options"
-msgstr "शीर्ष लेख विकल्प"
+msgstr "हैडर विकल्प"
 
 #: ../../options/options-core.php
 msgid "Social Icons"
@@ -356,7 +643,7 @@ msgstr "सामाजिक प्रतीक"
 
 #: ../../options/options-core.php
 msgid "Drag & Drop"
-msgstr "खींचें & गिरा"
+msgstr "खींचें और ड्रॉप"
 
 #: ../../options/options-core.php
 msgid "Blog Options"
@@ -368,11 +655,11 @@ msgstr "ब्लॉग स्लाइडर लाइट"
 
 #: ../../options/options-core.php
 msgid "Portfolio Lite Options"
-msgstr "पोर्टफोलियो लाइट विकल्प"
+msgstr "Not Ranked पोर्टफोलियो लाइट विकल्प"
 
 #: ../../options/options-core.php
 msgid "Boxes Lite"
-msgstr "लाइट बक्से"
+msgstr "बक्से लाइट"
 
 #: ../../options/options-core.php
 msgid "Blog Slider"
@@ -380,7 +667,7 @@ msgstr "ब्लॉग स्लाइडर"
 
 #: ../../options/options-core.php
 msgid "Callout Options"
-msgstr "कॉलआउट विकल्प"
+msgstr "विकल्प कॉलआउट"
 
 #: ../../options/options-core.php
 msgid "HTML Box Options"
@@ -391,12 +678,20 @@ msgid "Carousel Options"
 msgstr "हिंडोला विकल्प"
 
 #: ../../options/options-core.php
+msgid "Magazine Options"
+msgstr "पत्रिका विकल्प"
+
+#: ../../options/options-core.php
 msgid "Portfolio Pro Options"
 msgstr "पोर्टफोलियो प्रो विकल्प"
 
 #: ../../options/options-core.php
 msgid "Recent Posts Options"
-msgstr "हाल ही में पोस्ट विकल्प"
+msgstr "हाल के पोस्ट विकल्प"
+
+#: ../../options/options-core.php
+msgid "Twitterbar Options"
+msgstr "Twitterbar विकल्प"
 
 #: ../../options/options-core.php
 msgid "Boxes Options"
@@ -404,11 +699,11 @@ msgstr "बक्से विकल्प"
 
 #: ../../options/options-core.php
 msgid "Single Post"
-msgstr "एक पोस्ट"
+msgstr "एकल पोस्ट"
 
 #: ../../options/options-core.php
 msgid "Archive"
-msgstr "पुरालेख"
+msgstr "अभिलेखागार"
 
 #: ../../options/options-core.php
 msgid "Search"
@@ -424,19 +719,23 @@ msgstr "लेखक"
 
 #: ../../options/options-core.php
 msgid "Categories"
-msgstr "श्रेणियाँ"
+msgstr "श्रेणी"
 
 #: ../../options/options-core.php
 msgid "Date"
-msgstr "दिनांक"
+msgstr "डेट"
 
 #: ../../options/options-core.php
 msgid "Tags"
 msgstr "टैग"
 
 #: ../../options/options-core.php
-msgid "CyberChimps Help"
+msgid "Cyberchimps Help"
 msgstr "Cyberchimps मदद"
+
+#: ../../options/options-core.php
+msgid "Welcome Note"
+msgstr "नोट में आपका स्वागत है"
 
 #: ../../options/options-core.php
 msgid "Responsive Design"
@@ -447,10 +746,6 @@ msgid "Responsive Videos"
 msgstr "उत्तरदायी वीडियो"
 
 #: ../../options/options-core.php
-msgid "Gallery Lightbox"
-msgstr "गैलरी Lightbox"
-
-#: ../../options/options-core.php
 msgid "Wide Sidebar"
 msgstr "चौड़ी साइडबार"
 
@@ -458,78 +753,61 @@ msgstr "चौड़ी साइडबार"
 msgid "Only works on layouts with 1 sidebar"
 msgstr "केवल 1 साइडबार के साथ लेआउट्स पर काम करता है"
 
-#: ../../options/options-core.php
-#: ../../options/options-customizer.php
+#: ../../options/options-customizer.php ../../options/options-core.php
 msgid "Max Width"
 msgstr "अधिकतम चौड़ाई"
 
 #: ../../options/options-core.php
 msgid "enter the width of your site in pixels"
-msgstr "पिक्सल में आपकी साइट की चौड़ाई दर्ज करें"
+msgstr "पिक्सल में अपनी साइट की चौड़ाई दर्ज करें"
 
 #: ../../options/options-core.php
 msgid "Select a Skin Color"
-msgstr "एक त्वचा का रंग का चयन करें"
+msgstr "त्वचा का रंग का चयन करें"
 
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-#: ../../options/options-customizer.php
+#: ../../options/options-customizer.php ../../options/options-core.php
 msgid "Text Color"
-msgstr "पाठ का रंग"
+msgstr "पाठ का रंग "
 
 #: ../../options/options-core.php
 msgid "Select text color"
-msgstr "पाठ का रंग का चयन करें"
+msgstr "पाठ रंग चुने"
 
-#: ../../options/options-core.php
-#: ../../options/options-customizer.php
+#: ../../options/options-customizer.php ../../options/options-core.php
 msgid "Link Color"
-msgstr "लिंक रंग"
+msgstr "लिंक का रंग"
 
 #: ../../options/options-core.php
 msgid "Select link color"
-msgstr "लिंक रंग का चयन करें"
+msgstr "लिंक का रंग का चयन करें"
 
-#: ../../options/options-core.php
-#: ../../options/options-customizer.php
+#: ../../options/options-customizer.php ../../options/options-core.php
 msgid "Link Hover Color"
-msgstr "कड़ी हॉवर रंग"
+msgstr "लिंक हॉवर रंग"
 
 #: ../../options/options-core.php
 msgid "Select link hover color"
-msgstr "कड़ी हॉवर रंग का चयन करें"
+msgstr "लिंक हॉवर रंग का चयन करें"
 
 #: ../../options/options-core.php
 msgid "Typography Options"
-msgstr "मुद्रण-कला विकल्प"
+msgstr "टाइपोग्राफी विकल्प"
 
 #: ../../options/options-core.php
-#: ../../options/options-customizer.php
+msgid "Google fonts"
+msgstr "गूगल फोंट"
+
+#: ../../options/options-core.php
 msgid "Enter Google font"
 msgstr "गूगल फ़ॉन्ट दर्ज करें"
 
 #: ../../options/options-core.php
-#: ../../options/options-core.php
-msgid "Google font names are case sensitive"
-msgstr "गूगल फ़ॉन्ट नाम केस संवेदी होते हैं"
-
-#: ../../options/options-core.php
 msgid "Demo Text"
-msgstr "प्रदर्शन पाठ"
-
-#: ../../options/options-core.php
-#: ../../options/options-customizer.php
-msgid "Font Family for headings"
-msgstr "शीर्षकों के लिए फ़ॉन्ट परिवार"
-
-#: ../../options/options-core.php
-#: ../../options/options-customizer.php
-msgid "Google font for headings"
-msgstr "गूगल फ़ॉन्ट्स"
+msgstr "डेमो पाठ"
 
 #: ../../options/options-core.php
 msgid "Header Drag/Drop"
-msgstr "शीर्ष लेख खींचें/ड्रॉप"
+msgstr "हैडर खींचें / ड्रॉप"
 
 #: ../../options/options-core.php
 msgid "Logo + Search"
@@ -537,7 +815,7 @@ msgstr "लोगो + खोज"
 
 #: ../../options/options-core.php
 msgid "Logo"
-msgstr "लोगो"
+msgstr "फैल"
 
 #: ../../options/options-core.php
 msgid "Custom Logo URL"
@@ -545,7 +823,7 @@ msgstr "कस्टम लोगो URL"
 
 #: ../../options/options-core.php
 msgid "URL"
-msgstr "URL"
+msgstr "यूआरएल"
 
 #: ../../options/options-core.php
 msgid "Enter URL"
@@ -560,24 +838,12 @@ msgid "Logo Image"
 msgstr "लोगो छवि"
 
 #: ../../options/options-core.php
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-#: ../../options/options-core.php
 msgid "Enter URL or upload file"
-msgstr "URL दर्ज करें या फ़ाइल अपलोड करें"
+msgstr "URL दर्ज करें या फाइल अपलोड करें"
 
 #: ../../options/options-core.php
 msgid "Custom Favicon"
-msgstr "कस्टम Favicon"
+msgstr "कस्टम फ़ेविकॉन"
 
 #: ../../options/options-core.php
 msgid "Favicon URL"
@@ -585,51 +851,43 @@ msgstr "Favicon यूआरएल"
 
 #: ../../options/options-core.php
 msgid "Custom Apple touch icon"
-msgstr "कस्टम एप्पल टच चिह्न"
+msgstr "कस्टम एप्पल स्पर्श चिह्न"
 
 #: ../../options/options-core.php
 msgid "Apple Touch URL"
-msgstr "एप्पल टच यूआरएल"
+msgstr "एप्पल टच URL"
 
 #: ../../options/options-core.php
 msgid "Google Analytics"
-msgstr "गूगल विश्लेषिकी"
+msgstr "गूगल एनालिटिक्स"
 
 #: ../../options/options-core.php
 msgid "Copy and paste your Google Analytics code here"
-msgstr "कॉपी और पेस्ट अपने गूगल विश्लेषिकी कोड यहाँ"
+msgstr "कॉपी और अपने गूगल विश्लेषिकी कोड यहाँ पेस्ट"
 
 #: ../../options/options-core.php
 msgid "Searchbar"
 msgstr "Searchbar"
 
 #: ../../options/options-core.php
-msgid "Header Scripts"
-msgstr "हैडर विकल्प"
-
-#: ../../options/options-core.php
-msgid "Please add script tags"
-msgstr "कृपया स्क्रिप्ट टैग जोड़ें"
-
-#: ../../options/options-core.php
 msgid "Choose your icon style"
 msgstr "अपने आइकन शैली चुनें"
 
 #: ../../options/options-core.php
+msgid "Twitter"
+msgstr "ट्विटर "
+
+#: ../../options/options-core.php
+msgid "Twitter URL"
+msgstr "चहचहाना यूआरएल"
+
+#: ../../options/options-core.php
 msgid "Facebook"
-msgstr "फेसबुक"
+msgstr "फ़ेसबुक "
 
 #: ../../options/options-core.php
 msgid "Facebook URL"
 msgstr "Facebook यूआरएल"
-
-#: ../../options/options-core.php
-msgid "Twitter"
-msgstr "चहचहाना"
-
-#: ../../options/options-core.php
-msgid "Twitter URL"
-msgstr "चहचहाना URL"
 
 #: ../../options/options-core.php
 msgid "Google+"
@@ -637,23 +895,7 @@ msgstr "गूगल +"
 
 #: ../../options/options-core.php
 msgid "Google+ URL"
-msgstr "यूआरएल गूगल +"
-
-#: ../../options/options-core.php
-msgid "LinkedIn"
-msgstr "LinkedIn"
-
-#: ../../options/options-core.php
-msgid "LinkedIn URL"
-msgstr "LinkedIn यूआरएल"
-
-#: ../../options/options-core.php
-msgid "YouTube"
-msgstr "यूट्यूब"
-
-#: ../../options/options-core.php
-msgid "YouTube URL"
-msgstr "यूट्यूब यूआरएल"
+msgstr "Google+ यूआरएल"
 
 #: ../../options/options-core.php
 msgid "Flickr"
@@ -661,7 +903,7 @@ msgstr "फ़्लिकर"
 
 #: ../../options/options-core.php
 msgid "Flickr URL"
-msgstr "Flickr URL"
+msgstr "फ़्लिकर यूआरएल"
 
 #: ../../options/options-core.php
 msgid "Pinterest"
@@ -672,20 +914,20 @@ msgid "Pinterest URL"
 msgstr "Pinterest यूआरएल"
 
 #: ../../options/options-core.php
-msgid "Google Maps"
-msgstr "गूगल मैप्स"
+msgid "LinkedIn"
+msgstr "लिंक्डइन (LinkedIn)"
 
 #: ../../options/options-core.php
-msgid "Google Maps URL"
-msgstr "Google Maps यूआरएल"
+msgid "LinkedIn URL"
+msgstr "LinkedIn यूआरएल"
 
 #: ../../options/options-core.php
-msgid "Email"
-msgstr "ईमेल"
+msgid "YouTube"
+msgstr "YouTube (यूट्यूब)"
 
 #: ../../options/options-core.php
-msgid "Email Address"
-msgstr "ईमेल पता"
+msgid "YouTube URL"
+msgstr "यूट्यूब यूआरएल"
 
 #: ../../options/options-core.php
 msgid "RSS"
@@ -696,197 +938,110 @@ msgid "RSS URL"
 msgstr "आरएसएस यूआरएल"
 
 #: ../../options/options-core.php
-msgid "Instagram"
-msgstr "Instagram"
+msgid "Email"
+msgstr "ईमेल"
 
 #: ../../options/options-core.php
-msgid "Instagram URL"
-msgstr "Instagram यूआरएल"
+msgid "Email Address"
+msgstr "ईमेल पता"
+
+#: ../../options/options-core.php
+msgid "Google Maps"
+msgstr "गूगल मैप्स"
+
+#: ../../options/options-core.php
+msgid "Google Maps URL"
+msgstr "Google Maps यूआरएल"
 
 #: ../../options/options-core.php
 msgid "Drag & Drop Blog Elements"
-msgstr "खींचें & ड्रॉप ब्लॉग तत्वों"
+msgstr "खींचें और ब्लॉग ड्रॉप तत्वों"
 
 #: ../../options/options-core.php
-msgid "Blog Title"
-msgstr "पृष्ठ शीर्षक"
-
-#: ../../options/options-core.php
-msgid "Blog Title Text"
-msgstr "ब्लॉग का शीर्षक पाठ"
+msgid "Sidebar Options"
+msgstr "साइडबार विकल्प"
 
 #: ../../options/options-core.php
 msgid "Post Formats Icons"
-msgstr "पद चिह्न स्वरूपित करता है"
+msgstr "पोस्ट प्रारूप प्रतीक"
 
-#: ../../options/options-core.php
-#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Post Excerpts"
-msgstr "पोस्ट कुछ अंशः"
+msgstr "कुछ अंशः पोस्ट"
 
-#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Read More Text"
 msgstr "अधिक पाठ पढ़ें"
 
 #: ../../options/options-core.php
-#: ../../options/options-core.php
 msgid "Excerpt Length"
-msgstr "अंश लंबाई"
+msgstr "अंश की लंबाई"
 
-#: ../../options/options-core.php
-#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Featured Images"
-msgstr "विशेष रुप से प्रदर्शित चित्र"
+msgstr "फीचर्ड छवियाँ"
 
-#: ../../options/options-core.php
-#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Post Byline Author"
-msgstr "पोस्ट Byline लेखक"
+msgstr "Byline लेखक"
 
-#: ../../options/options-core.php
-#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Post Byline Categories"
 msgstr "पोस्ट Byline श्रेणियाँ"
 
 #: ../../options/options-core.php
-#: ../../options/options-core.php
-#: ../../options/options-core.php
 msgid "Post Byline Date"
-msgstr "पोस्ट Byline दिनांक"
+msgstr "Byline तिथि"
 
-#: ../../options/options-core.php
-#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Post Byline Comments"
-msgstr "Byline टिप्पणी पोस्ट"
+msgstr "Byline टिप्पणियाँ"
 
 #: ../../options/options-core.php
-#: ../../options/options-core.php
-#: ../../options/options-core.php
 msgid "Post Byline Tags"
-msgstr "Byline टैग पोस्ट"
+msgstr "पोस्ट Byline टैग"
 
 #: ../../options/options-core.php
 msgid "Boxes Upgrade"
-msgstr "बक्से के उन्नयन"
+msgstr "बक्से अपग्रेड"
 
 #: ../../options/options-core.php
-msgid "Boxes Lite limits you to a total of 3 boxes throughout your whole site. Upgrade to %1$s to be able to create as many boxes as you like. Categorize them and display each category on a different page."
-msgstr "बक्से लाइट आप अपने पूरे साइट भर में 3 बक्से की कुल करने के लिए सीमित करता है। नवीनीकरण करने के लिए %1$ s के रूप में तुम्हें पसंद के रूप में कई बक्से बनाने के लिए सक्षम होना करने के लिए। उन्हें वर्गीकृत करने और प्रत्येक वर्ग एक अलग पृष्ठ पर प्रदर्शित करें।"
-
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-msgid "Pro"
-msgstr "प्रो"
-
-#: ../../options/options-core.php
-msgid "First Box Image"
-msgstr "प्रथम बॉक्स छवि"
-
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-msgid "Link URL"
-msgstr "लिंक यूआरएल"
-
-#: ../../options/options-core.php
-msgid "First Box Text"
-msgstr "प्रथम बॉक्स पाठ"
-
-#: ../../options/options-core.php
-msgid "Second Box Image"
-msgstr "दूसरी बॉक्स छवि"
-
-#: ../../options/options-core.php
-msgid "Second Box Text"
-msgstr "दूसरी बॉक्स पाठ"
-
-#: ../../options/options-core.php
-msgid "Third Box Image"
-msgstr "तीसरे बॉक्स छवि"
-
-#: ../../options/options-core.php
-msgid "Third Box Text"
-msgstr "तीसरे बॉक्स पाठ"
+msgid ""
+"Boxes Lite limits you to a total of 3 boxes throughout your whole site. "
+"Upgrade to %1$s to be able to create as many boxes as you like. Categorize "
+"them and display each category on a different page."
+msgstr ""
+"बक्से लाइट अपने पूरे साइट भर में 3 बक्से के एक कुल करने के लिए आप को सीमित करता है. पर "
+"अपग्रेड करें %1$s के रूप में कई बक्से बनाने के रूप में आप की तरह करने में सक्षम हो. उन्हें वर्गीकृत "
+"कर सकते हैं और एक अलग पृष्ठ पर प्रत्येक श्रेणी प्रदर्शित."
 
 #: ../../options/options-core.php
 msgid "Portfolio Upgrade"
-msgstr "पोर्टफोलियो का उन्नयन"
+msgstr "पोर्टफोलियो अपग्रेड"
 
 #: ../../options/options-core.php
-msgid "Portfolio Lite limits you to a total of 4 items throughout your whole site. Upgrade to %1$s to be able to create as many portfolio items as you like. Categorize them and display each category on a different page."
-msgstr "पोर्टफोलियो लाइट आप अपने पूरे साइट भर में 4 आइटम की कुल करने के लिए सीमित करता है। नवीनीकरण करने के लिए %1$ s के रूप में तुम्हें पसंद के रूप में कई पोर्टफोलियो आइटम बनाने के लिए सक्षम होना करने के लिए। उन्हें वर्गीकृत करने और प्रत्येक वर्ग एक अलग पृष्ठ पर प्रदर्शित करें।"
-
-#: ../../options/options-core.php
-msgid "First Portfolio Image"
-msgstr "पहली पोर्टफोलियो छवि"
-
-#: ../../options/options-core.php
-msgid "First Portfolio Image Caption"
-msgstr "पहली पोर्टफोलियो छवि कैप्शन"
-
-#: ../../options/options-core.php
-msgid "First Porfolio Link"
-msgstr "पहली Porfolio लिंक"
-
-#: ../../options/options-core.php
-msgid "Second Portfolio Image"
-msgstr "दूसरा पोर्टफोलियो छवि"
-
-#: ../../options/options-core.php
-msgid "Second Portfolio Image Caption"
-msgstr "दूसरा पोर्टफोलियो छवि कैप्शन"
-
-#: ../../options/options-core.php
-msgid "Second Porfolio Link"
-msgstr "दूसरा Porfolio लिंक"
-
-#: ../../options/options-core.php
-msgid "Third Portfolio Image"
-msgstr "तीसरे पोर्टफोलियो छवि"
-
-#: ../../options/options-core.php
-msgid "Third Portfolio Image Caption"
-msgstr "तीसरे पोर्टफोलियो छवि कैप्शन"
-
-#: ../../options/options-core.php
-msgid "Third Porfolio Link"
-msgstr "तीसरा Porfolio लिंक"
-
-#: ../../options/options-core.php
-msgid "Fourth Portfolio Image"
-msgstr "चौथे पोर्टफोलियो छवि"
-
-#: ../../options/options-core.php
-msgid "Fourth Portfolio Image Caption"
-msgstr "चौथे पोर्टफोलियो छवि कैप्शन"
-
-#: ../../options/options-core.php
-msgid "Fourth Porfolio Link"
-msgstr "चौथे Porfolio लिंक"
-
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-msgid "Portfolio Title"
-msgstr "पोर्टफोलियो शीर्षक"
+msgid ""
+"Portfolio Lite limits you to a total of 4 items throughout your whole site. "
+"Upgrade to %1$s to be able to create as many portfolio items as you like. "
+"Categorize them and display each category on a different page."
+msgstr ""
+"Not Ranked पोर्टफोलियो लाइट अपने पूरे साइट भर में 4 मदों की कुल करने के लिए आप को "
+"सीमित करता है. पर अपग्रेड करें %1$s कई पोर्टफोलियो आइटम के रूप में बनाने के रूप में आप की "
+"तरह करने में सक्षम हो. उन्हें वर्गीकृत कर सकते हैं और एक अलग पृष्ठ पर प्रत्येक श्रेणी प्रदर्शित."
 
 #: ../../options/options-core.php
 msgid "Slider Upgrade"
-msgstr "स्लाइडर के उन्नयन"
+msgstr "स्लाइडर अपग्रेड"
 
 #: ../../options/options-core.php
-msgid "Slider Lite limits you to a total of 3 images throughout your whole site. Upgrade to %1$s to be able to create more images. Categorize them and display each category on a different page."
-msgstr "स्लाइडर लाइट आप अपने पूरे साइट भर में 3 छवियों की कुल करने के लिए सीमित करता है। नवीनीकरण करने के लिए %1$ s अधिक छवियाँ बनाने के लिए सक्षम होना करने के लिए। उन्हें वर्गीकृत करने और प्रत्येक वर्ग एक अलग पृष्ठ पर प्रदर्शित करें।"
+msgid ""
+"Slider Lite limits you to a total of 3 images throughout your whole site. "
+"Upgrade to %1$s to be able to create more images. Categorize them and "
+"display each category on a different page."
+msgstr ""
+"स्लाइडर लाइट अपने पूरे साइट भर में 3 छवियों के एक कुल करने के लिए आप को सीमित करता है. "
+"पर अपग्रेड करें %1$s अधिक छवियों बनाने में सक्षम हो. उन्हें वर्गीकृत कर सकते हैं और एक अलग "
+"पृष्ठ पर प्रत्येक श्रेणी प्रदर्शित."
 
 #: ../../options/options-core.php
 msgid "Slider Image 1"
@@ -894,7 +1049,7 @@ msgstr "स्लाइडर छवि 1"
 
 #: ../../options/options-core.php
 msgid "Slide 1 URL"
-msgstr "स्लाइड 1 URL"
+msgstr "स्लाइड 1 यूआरएल"
 
 #: ../../options/options-core.php
 msgid "Slider Image 2"
@@ -902,7 +1057,7 @@ msgstr "स्लाइडर छवि 2"
 
 #: ../../options/options-core.php
 msgid "Slide 2 URL"
-msgstr "स्लाइड 2 URL"
+msgstr "स्लाइड 2 यूआरएल"
 
 #: ../../options/options-core.php
 msgid "Slider Image 3"
@@ -910,129 +1065,63 @@ msgstr "स्लाइडर छवि 3"
 
 #: ../../options/options-core.php
 msgid "Slide 3 URL"
-msgstr "स्लाइड 3 यूआरएल"
+msgstr "3 से यूआरएल स्लाइड"
 
 #: ../../options/options-core.php
 msgid "Images per Row"
-msgstr "प्रत्येक पंक्ति छवियाँ"
+msgstr "प्रति पंक्ति छवियाँ"
 
 #: ../../options/options-core.php
-#: ../../options/options-core.php
-msgid "Portfolio Category"
-msgstr "पोर्टफोलियो श्रेणी"
+msgid "Featured Excerpt Length"
+msgstr "विशेष रुप से प्रदर्शित अंश लंबाई"
 
 #: ../../options/options-core.php
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-msgid "You need to create a Category"
-msgstr "आप एक श्रेणी बनाने की आवश्यकता है"
+msgid "Number of Rows"
+msgstr "ऑडियो चैनल्स"
 
 #: ../../options/options-core.php
-msgid "Slider Size"
-msgstr "स्लाइडर आकार"
+msgid "Wide Post Excerpt Length"
+msgstr "विस्तृत पोस्ट अंश लंबाई"
 
 #: ../../options/options-core.php
-msgid "Full"
-msgstr "पूर्ण"
-
-#: ../../options/options-core.php
-msgid "Half"
-msgstr "आधा"
-
-#: ../../options/options-core.php
-msgid "Slider Type"
-msgstr "स्लाइडर प्रकार"
-
-#: ../../options/options-core.php
-msgid "Posts"
-msgstr "डाक"
-
-#: ../../options/options-core.php
-msgid "Custom"
-msgstr "कस्टम"
-
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-msgid "Post Categories"
-msgstr "पोस्ट श्रेणियाँ"
-
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-msgid "Custom Categories"
-msgstr "कस्टम श्रेणियों"
+msgid "Number of Wide Posts"
+msgstr "विस्तृत पदों की संख्या"
 
 #: ../../options/options-core.php
 msgid "Number of Featured Blog Posts"
-msgstr "विशेष रुप से प्रदर्शित ब्लॉग पदों की संख्या"
-
-#: ../../options/options-core.php
-msgid "Slider Height"
-msgstr "स्लाइडर ऊँचाई"
+msgstr "फीचर्ड ब्लॉग पदों की संख्या"
 
 #: ../../options/options-core.php
 msgid "Slider Speed "
-msgstr "स्लाइडर गति "
-
-#: ../../options/options-core.php
-msgid "Slider Arrows"
-msgstr "स्लाइडर तीर"
-
-#: ../../options/options-core.php
-msgid "Callout Title"
-msgstr "कॉलआउट शीर्षक"
-
-#: ../../options/options-core.php
-msgid "%1$s's Call Out Element"
-msgstr "%1$ s's तत्व बाहर कॉल"
-
-#: ../../options/options-core.php
-msgid "Callout Text"
-msgstr "कॉलआउट पाठ"
-
-#: ../../options/options-core.php
-msgid "Use %1$s's Call Out section on any page where you want to deliver an important message to your customer or client."
-msgstr "%1$ S's अनुभाग फोन बाहर किसी भी पृष्ठ पर जहाँ आप अपने ग्राहक या ग्राहक के लिए एक महत्वपूर्ण संदेश देने के लिए चाहते हैं का उपयोग करें।"
-
-#: ../../options/options-core.php
-msgid "Callout Button"
-msgstr "कॉलआउट बटन"
-
-#: ../../options/options-core.php
-msgid "Callout Button Text"
-msgstr "कॉलआउट बटन पाठ"
+msgstr "स्लाइडर स्पीड"
 
 #: ../../options/options-core.php
 msgid "Click Here"
-msgstr "यहाँ क्लिक करें"
+msgstr "यहाँ क्लिक करें "
 
 #: ../../options/options-core.php
-msgid "Callout Button URL"
-msgstr "कॉलआउट बटन URL"
+msgid "Custom Callout Button"
+msgstr "कस्टम बटन कॉलआउट"
 
 #: ../../options/options-core.php
-msgid "Custom Callout Options"
-msgstr "कस्टम कॉलआउट विकल्प"
+msgid "Custom Callout Background Color"
+msgstr "कस्टम पृष्ठभूमि रंग कॉलआउट"
 
 #: ../../options/options-core.php
-msgid "Button"
-msgstr "कस्टम कॉलआउट बटन"
+msgid "Custom Callout Title Color"
+msgstr "कस्टम शीर्षक रंग कॉलआउट"
 
 #: ../../options/options-core.php
-msgid "Background Color"
-msgstr "कस्टम कॉलआउट पृष्ठभूमि रंग"
+msgid "Custom Callout Text Color"
+msgstr "कस्टम पाठ रंग कॉलआउट"
 
 #: ../../options/options-core.php
-msgid "Title Color"
-msgstr "कस्टम कॉलआउट शीर्षक रंग"
+msgid "Custom Callout Button Color"
+msgstr "कस्टम बटन रंग कॉलआउट"
 
 #: ../../options/options-core.php
-msgid "Button Color"
-msgstr "कस्टम कॉलआउट बटन रंग"
-
-#: ../../options/options-core.php
-msgid "Button Text Color"
-msgstr "कस्टम कॉलआउट बटन पाठ रंग"
+msgid "Custom Callout Button Text Color"
+msgstr "कस्टम बटन पाठ रंग कॉलआउट"
 
 #: ../../options/options-core.php
 msgid "HTML Box"
@@ -1047,39 +1136,17 @@ msgid "Custom Title"
 msgstr "कस्टम शीर्षक"
 
 #: ../../options/options-core.php
-msgid "Images"
-msgstr "छवियाँ"
-
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-#: ../../options/options-core.php
 msgid "Select a Category"
-msgstr "एक श्रेणी का चयन करें"
+msgstr "एक श्रेणी चुनें"
 
-#: ../../options/options-core.php
-msgid "Number of boxes per row"
-msgstr "प्रत्येक पंक्ति बक्से की संख्या"
-
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-msgid "Sidebar Options"
-msgstr "साइडबार विकल्प"
-
-#: ../../options/options-core.php
-#: ../../options/options-core.php
-#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Images for layout."
-msgstr "लेआउट के लिए छवियाँ।"
+msgstr "लेआउट के लिए छवियाँ."
 
 #: ../../options/options-core.php
 msgid "Post title"
-msgstr "पद शीर्षक"
+msgstr "शीर्षक पोस्ट"
 
-#: ../../options/options-core.php
 #: ../../options/options-core.php
 msgid "Post Format Icons"
 msgstr "पोस्ट स्वरूप प्रतीक"
@@ -1098,11 +1165,14 @@ msgstr "पाद लेख कॉपीराइट पाठ"
 
 #: ../../options/options-customizer.php
 msgid "Customize"
-msgstr "अनुकूलित करें"
+msgstr "फ़रमाइशें"
 
 #: ../../options/options-customizer.php
-msgid "make sure you have removed the image above before selecting one of these"
-msgstr "सुनिश्चित करें कि आप इन में से एक के चयन से पहले छवि के ऊपर निकाल दिया है"
+msgid ""
+"make sure you have removed the image above before selecting one of these"
+msgstr ""
+"सुनिश्चित करें कि आप इनमें से किसी एक का चयन करने से पहले इसके बाद के संस्करण की छवि को "
+"हटा दिया है"
 
 #: ../../options/options-customizer.php
 msgid "Skin Color"
@@ -1110,25 +1180,24 @@ msgstr "त्वचा का रंग"
 
 #: ../../options/options-customizer.php
 msgid "Typography Size"
-msgstr "Typography आकार"
+msgstr "टाइपोग्राफी साइज"
+
+#: ../../options/options-customizer.php
+msgid "Typography Face"
+msgstr "टाइपोग्राफी अंकित"
 
 #: ../../options/options-customizer.php
 msgid "Typography Style"
 msgstr "Typography शैली"
 
 #: ../../options/options-customizer.php
-msgid "Typography Face"
-msgstr "Typography चेहरा"
-
-#: ../../options/options-customizer.php
 msgid "Background Image"
-msgstr "पृष्ठभूमि छवि"
+msgstr "पृष्ठभूमि छवि "
 
 #: ../../options/options-init.php
 msgid "Theme Options Page"
 msgstr "थीम विकल्प पृष्ठ"
 
-#: ../../options/options-init.php
 #: ../../options/options-init.php
 msgid "Theme Options"
 msgstr "थीम विकल्प"
@@ -1138,63 +1207,72 @@ msgid "Buy Themes"
 msgstr "थीम्स खरीदें"
 
 #: ../../options/options-init.php
-#: ../../options/options-init.php
-#: ../../options/options-init.php
-msgid "Save Options"
-msgstr "सहेजने के विकल्प"
+msgid "Open All"
+msgstr "सबको खोलें..."
 
 #: ../../options/options-init.php
-#: ../../options/options-init.php
-msgid "Click OK to reset. Any theme settings will be lost!"
-msgstr "रीसेट करने के लिए ठीक क्लिक करें। किसी भी विषयवस्तु सेटिंग्स खो जाएँगे!"
+msgid "Collapse All"
+msgstr "सभी को संकुचित करें"
 
-#: ../../options/options-init.php
 #: ../../options/options-init.php
 msgid "Restore Defaults"
-msgstr "डिफ़ॉल्ट पुनर्स्थापित करें"
+msgstr "डिफ़ॉल्ट रूप पुनर्स्थापित करें "
 
 #: ../../options/options-init.php
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr "क्लिक करें, OK पर रीसेट हों. किसी भी विषय सेटिंग्स खो जाएगा!"
+
 #: ../../options/options-init.php
-msgid "CyberChimps WordPress Themes"
+msgid "Save Options"
+msgstr "सहेजें विकल्प"
+
+#: ../../options/options-init.php
+msgid "CyberChimps Wordpress Themes"
 msgstr "CyberChimps Wordpress थीम्स"
 
 #: ../../options/options-init.php
-msgid "Default Field"
-msgstr "डिफ़ॉल्ट फ़ील्ड"
+msgid "Link to Events plugin settings"
+msgstr "घटनाक्रम प्लगइन सेटिंग्स के लिए लिंक"
 
 #: ../../options/options-init.php
+msgid "Insert custom events info and insert install link"
+msgstr "कस्टम घटनाओं की जानकारी डालें और स्थापित लिंक डालने"
+
+#: ../../options/options-init.php
+msgid "Default Field"
+msgstr "डिफ़ॉल्ट क्षेत्र"
+
 #: ../../options/options-init.php
 msgid "Options Imported"
-msgstr "आयात विकल्प"
+msgstr "आयातित विकल्प"
 
-#: ../../options/options-init.php
 #: ../../options/options-init.php
 msgid "Invalid Data for Import"
 msgstr "आयात के लिए अमान्य डेटा"
 
 #: ../../options/options-init.php
 msgid "Default options restored."
-msgstr "डिफ़ॉल्ट विकल्प पुनर्स्थापित किया जाता है।"
+msgstr "मूलभूत विकल्पों को बहाल."
 
 #: ../../options/options-init.php
 msgid "Options saved."
-msgstr "विकल्प बचा लिया।"
+msgstr "विकल्प बचाया."
 
 #: ../../options/options-medialibrary-uploader.php
 msgid "Theme Options Media"
-msgstr "थीम मीडिया विकल्प"
+msgstr "थीम विकल्प मीडिया"
 
 #: ../../options/options-medialibrary-uploader.php
 msgid "View File"
-msgstr "दृश्य फ़ाइल"
+msgstr "फ़ाइल देखें"
 
 #: ../../options/options-medialibrary-uploader.php
 msgid "Gallery"
-msgstr "गैलरी"
+msgstr "दीर्घा"
 
 #: ../../options/options-medialibrary-uploader.php
 msgid "Previously Uploaded"
-msgstr "पहले अपलोड"
+msgstr "पहले अपलोड की गई"
 
 #: ../../options/options-sanitize.php
 msgid "No Repeat"
@@ -1202,31 +1280,31 @@ msgstr "नहीं दोहराने"
 
 #: ../../options/options-sanitize.php
 msgid "Repeat Horizontally"
-msgstr "क्षैतिज रूप से दोहराएँ"
+msgstr "क्षैतिज दोहराएँ"
 
 #: ../../options/options-sanitize.php
 msgid "Repeat Vertically"
-msgstr "ऊर्ध्व दोहराएँ"
+msgstr "लंबबत दोहराएँ"
 
 #: ../../options/options-sanitize.php
 msgid "Repeat All"
-msgstr "सभी को दोहराएँ"
+msgstr "सब दोहराने"
 
 #: ../../options/options-sanitize.php
 msgid "Top Left"
-msgstr "ऊपर छोड़ दिया"
+msgstr "बांया शीर्ष"
 
 #: ../../options/options-sanitize.php
 msgid "Top Center"
-msgstr "शीर्ष केंद्रीय"
+msgstr "शीर्ष केन्द्र"
 
 #: ../../options/options-sanitize.php
 msgid "Top Right"
-msgstr "ऊपर दाएँ"
+msgstr "दांया शीर्ष"
 
 #: ../../options/options-sanitize.php
 msgid "Middle Left"
-msgstr "बाईं मध्य"
+msgstr "मध्य वाम"
 
 #: ../../options/options-sanitize.php
 msgid "Middle Center"
@@ -1234,27 +1312,27 @@ msgstr "मध्य केंद्र"
 
 #: ../../options/options-sanitize.php
 msgid "Middle Right"
-msgstr "मध्य दाईं"
+msgstr "मध्य दाएं"
 
 #: ../../options/options-sanitize.php
 msgid "Bottom Left"
-msgstr "नीचे छोड़ दिया"
+msgstr "बांया तल"
 
 #: ../../options/options-sanitize.php
 msgid "Bottom Center"
-msgstr "नीचे मध्य"
+msgstr "नीचे केंद्र"
 
 #: ../../options/options-sanitize.php
 msgid "Bottom Right"
-msgstr "नीचे दाएँ"
+msgstr "दांया तल"
 
 #: ../../options/options-sanitize.php
 msgid "Scroll Normally"
-msgstr "सामान्य रूप से स्क्रॉल करें"
+msgstr "आम तौर पर स्क्रॉल"
 
 #: ../../options/options-sanitize.php
 msgid "Fixed in Place"
-msgstr "में निश्चित स्थान"
+msgstr "जगह में तय"
 
 #: ../../options/options-sanitize.php
 msgid "Normal"
@@ -1262,17 +1340,12 @@ msgstr "सामान्य"
 
 #: ../../options/options-sanitize.php
 msgid "Italic"
-msgstr "इटैलिक"
+msgstr "टेढा"
 
 #: ../../options/options-sanitize.php
 msgid "Bold"
-msgstr "बोल्ड"
+msgstr "मोटा"
 
 #: ../../options/options-sanitize.php
 msgid "Bold Italic"
 msgstr "बोल्ड इटैलिक"
-
-#: ../../options/theme-upsell.php
-msgid "Themes You Can Trust"
-msgstr "तुम पर भरोसा कर सकते हैं विषयों"
-

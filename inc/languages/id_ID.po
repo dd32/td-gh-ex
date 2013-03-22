@@ -3,13 +3,13 @@ msgstr ""
 "Project-Id-Version: iFeature 5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-20 09:19:47 UTC\n"
-"PO-Revision-Date: 2014-03-26 16:44+0530\n"
-"Last-Translator: Surya <surya@cyberchimps.com>\n"
+"PO-Revision-Date: 2013-03-20 18:08+0530\n"
+"Last-Translator: Web Translate It <support@webtranslateit.com>\n"
 "Language-Team: Indonesian, Indonesia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.5.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../../404.php
@@ -47,8 +47,8 @@ msgstr "Arsip Bulanan: %s"
 msgid "Yearly Archives: %s"
 msgstr "Arsip Tahunan: %s"
 
-#: ../../archive.php ../../footer.php ../../sidebar-left.php
-#: ../../sidebar-right.php ../../sidebar.php
+#: ../../sidebar.php ../../sidebar-right.php ../../sidebar-left.php
+#: ../../footer.php ../../archive.php
 msgid "Archives"
 msgstr "Arsip"
 
@@ -89,31 +89,31 @@ msgstr "Tautkan ke %s"
 msgid "Continue reading"
 msgstr "Lanjutkan membaca"
 
-#: ../../content.php ../../image.php
+#: ../../image.php ../../content.php
 msgid "Edit"
 msgstr "Ubah"
 
-#: ../../content.php ../../image.php
+#: ../../image.php ../../content.php
 msgid "Pages:"
 msgstr "Halaman:"
 
-#: ../../footer.php ../../sidebar-left.php ../../sidebar-right.php
-#: ../../sidebar.php
+#: ../../sidebar.php ../../sidebar-right.php ../../sidebar-left.php
+#: ../../footer.php
 msgid "Pages"
 msgstr "Halaman"
 
-#: ../../footer.php ../../sidebar-left.php ../../sidebar-right.php
-#: ../../sidebar.php
+#: ../../sidebar.php ../../sidebar-right.php ../../sidebar-left.php
+#: ../../footer.php
 msgid "Categories"
 msgstr "Kategori"
 
-#: ../../footer.php ../../sidebar-left.php ../../sidebar-right.php
-#: ../../sidebar.php
+#: ../../sidebar.php ../../sidebar-right.php ../../sidebar-left.php
+#: ../../footer.php
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../../footer.php ../../sidebar-left.php ../../sidebar-right.php
-#: ../../sidebar.php
+#: ../../sidebar.php ../../sidebar-right.php ../../sidebar-left.php
+#: ../../footer.php
 msgid ""
 "Powered by WordPress, state-of-the-art semantic personal publishing platform."
 msgstr ""
@@ -235,14 +235,14 @@ msgstr "Hasil pencarian untuk: %s"
 msgid "Search"
 msgstr "cari"
 
-#: ../../sidebar-right.php ../../sidebar.php ../../sidebar-left.php
+#: ../../sidebar-left.php ../../sidebar.php ../../sidebar-right.php
 msgid "Subscribe"
 msgstr "Berlangganan"
 
-#: ../../sidebar-left.php ../../sidebar-right.php ../../sidebar.php
+#: ../../sidebar.php ../../sidebar-right.php ../../sidebar-left.php
 msgid "Entries (RSS)"
 msgstr "Entri (RSS)"
 
-#: ../../sidebar-left.php ../../sidebar-right.php ../../sidebar.php
+#: ../../sidebar.php ../../sidebar-right.php ../../sidebar-left.php
 msgid "Comments (RSS)"
 msgstr "Komentar (RSS)"
