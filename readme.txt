@@ -15,6 +15,7 @@ Added Translation for Polish by Piotr (fansitepoprostugry@gmail.com)
 Added Translation for Czech by Marek Přidal (m.pridal29@gmail.com)
 Added Translation for Croatian by Sanjin Barac (rapid24income@gmail.com)
 Added Translation for Italian by Lorenzo Bossi (lorenzobossi83@gmail.com)
+Added Translation for Swedish by Johnny Eriksson (info@johnnysblogg.se)
 
 == Menus ===
 There are 3 Menus registered in this theme. Primary, Secondary and Footer menu. 
@@ -227,3 +228,6 @@ Version 2.0.2
 
 Version 2.0.3
 * Added webclip icon url option
+
+Version 2.1
+* Added Swedish translation sv_SE.po and sv_SE.mo 
