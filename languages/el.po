@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-07 22:51+0530\n"
-"PO-Revision-Date: 2013-03-07 22:52+0530\n"
+"POT-Creation-Date: 2013-03-18 16:36+0530\n"
+"PO-Revision-Date: 2013-03-18 16:37+0530\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Catch Themes <fansitejustgames@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -161,97 +161,97 @@ msgstr "Σελίδα %s"
 
 #: ../functions/simplecatch_functions.php:432
 #, php-format
-msgid "%s in Facebook"
+msgid "%s on Facebook"
 msgstr "%s στο Facebook"
 
 #: ../functions/simplecatch_functions.php:437
 #, php-format
-msgid "%s in Twitter"
+msgid "%s on Twitter"
 msgstr "%s στο Twitter"
 
 #: ../functions/simplecatch_functions.php:442
 #, php-format
-msgid "%s in Google+"
+msgid "%s on Google+"
 msgstr "%s στο Google+"
 
 #: ../functions/simplecatch_functions.php:447
 #, php-format
-msgid "%s in Linkedin"
+msgid "%s on Linkedin"
 msgstr "%s στο Linkedin"
 
 #: ../functions/simplecatch_functions.php:452
 #, php-format
-msgid "%s in Pinterest"
+msgid "%s on Pinterest"
 msgstr "%s στο Pinterest"
 
 #: ../functions/simplecatch_functions.php:457
 #, php-format
-msgid "%s in YouTube"
+msgid "%s on YouTube"
 msgstr "%s στο YouTube"
 
 #: ../functions/simplecatch_functions.php:462
 #, php-format
-msgid "%s in Vimeo"
+msgid "%s on Vimeo"
 msgstr "%s στο Vimeo"
 
 #: ../functions/simplecatch_functions.php:467
 #, php-format
-msgid "%s in Slideshare"
+msgid "%s on Slideshare"
 msgstr "%s στο Slideshare"
 
 #: ../functions/simplecatch_functions.php:472
 #, php-format
-msgid "%s in Foursquare"
+msgid "%s on Foursquare"
 msgstr "%s στο Foursquare"
 
 #: ../functions/simplecatch_functions.php:477
 #, php-format
-msgid "%s in Flickr"
+msgid "%s on Flickr"
 msgstr "%s στο Flickr"
 
 #: ../functions/simplecatch_functions.php:482
 #, php-format
-msgid "%s in Tumblr"
+msgid "%s on Tumblr"
 msgstr "%s στο Tumblr"
 
 #: ../functions/simplecatch_functions.php:487
 #, php-format
-msgid "%s in deviantART"
+msgid "%s on deviantART"
 msgstr "%s στο deviantART"
 
 #: ../functions/simplecatch_functions.php:492
 #, php-format
-msgid "%s in Dribbble"
+msgid "%s on Dribbble"
 msgstr "%s στο Dribbble"
 
 #: ../functions/simplecatch_functions.php:497
 #, php-format
-msgid "%s in MySpace"
+msgid "%s on MySpace"
 msgstr "%s στο MySpace"
 
 #: ../functions/simplecatch_functions.php:502
 #, php-format
-msgid "%s in WordPress"
+msgid "%s on WordPress"
 msgstr "%s στο WordPress"
 
 #: ../functions/simplecatch_functions.php:507
 #, php-format
-msgid "%s in RSS"
+msgid "%s on RSS"
 msgstr "%s σε RSS"
 
 #: ../functions/simplecatch_functions.php:512
 #, php-format
-msgid "%s in Delicious"
+msgid "%s on Delicious"
 msgstr "%s στο Delicious"
 
 #: ../functions/simplecatch_functions.php:517
 #, php-format
-msgid "%s in Last.fm"
+msgid "%s on Last.fm"
 msgstr "%s στο Last.fm"
 
 #: ../functions/simplecatch_functions.php:522
 #, php-format
-msgid "%s in Instagram"
+msgid "%s on Instagram"
 msgstr "%s στο Instagram"
 
 #: ../functions/simplecatch_functions.php:675

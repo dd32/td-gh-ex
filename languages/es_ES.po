@@ -4,9 +4,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-14 20:18+0530\n"
-"PO-Revision-Date: 2013-03-14 20:19+0530\n"
-"Last-Translator: Chaguanco <chaguanco47@hotmail.com>\n"
+"POT-Creation-Date: 2013-03-18 16:38+0530\n"
+"PO-Revision-Date: 2013-03-18 16:38+0530\n"
+"Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Operaciones Formales D&P <info@ofdp.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -161,97 +161,97 @@ msgstr "Página %s"
 
 #: ../functions/simplecatch_functions.php:432
 #, php-format
-msgid "%s in Facebook"
+msgid "%s on Facebook"
 msgstr "%s en Facebook"
 
 #: ../functions/simplecatch_functions.php:437
 #, php-format
-msgid "%s in Twitter"
+msgid "%s on Twitter"
 msgstr "%s en Twitter"
 
 #: ../functions/simplecatch_functions.php:442
 #, php-format
-msgid "%s in Google+"
+msgid "%s on Google+"
 msgstr "%s en Google+"
 
 #: ../functions/simplecatch_functions.php:447
 #, php-format
-msgid "%s in Linkedin"
+msgid "%s on Linkedin"
 msgstr "%s en Linkedin"
 
 #: ../functions/simplecatch_functions.php:452
 #, php-format
-msgid "%s in Pinterest"
+msgid "%s on Pinterest"
 msgstr "%s en Pinterest"
 
 #: ../functions/simplecatch_functions.php:457
 #, php-format
-msgid "%s in YouTube"
+msgid "%s on YouTube"
 msgstr "%s en YouTube"
 
 #: ../functions/simplecatch_functions.php:462
 #, php-format
-msgid "%s in Vimeo"
+msgid "%s on Vimeo"
 msgstr "%s en Vimeo"
 
 #: ../functions/simplecatch_functions.php:467
 #, php-format
-msgid "%s in Slideshare"
+msgid "%s on Slideshare"
 msgstr "%s en Slideshare"
 
 #: ../functions/simplecatch_functions.php:472
 #, php-format
-msgid "%s in Foursquare"
+msgid "%s on Foursquare"
 msgstr "%s en Foursquare"
 
 #: ../functions/simplecatch_functions.php:477
 #, php-format
-msgid "%s in Flickr"
+msgid "%s on Flickr"
 msgstr "%s en Flickr"
 
 #: ../functions/simplecatch_functions.php:482
 #, php-format
-msgid "%s in Tumblr"
+msgid "%s on Tumblr"
 msgstr "%s en Tumblr"
 
 #: ../functions/simplecatch_functions.php:487
 #, php-format
-msgid "%s in deviantART"
+msgid "%s on deviantART"
 msgstr "%s en deviantART"
 
 #: ../functions/simplecatch_functions.php:492
 #, php-format
-msgid "%s in Dribbble"
+msgid "%s on Dribbble"
 msgstr "%s en Dribbble"
 
 #: ../functions/simplecatch_functions.php:497
 #, php-format
-msgid "%s in MySpace"
+msgid "%s on MySpace"
 msgstr "%s en MySpace"
 
 #: ../functions/simplecatch_functions.php:502
 #, php-format
-msgid "%s in WordPress"
+msgid "%s on WordPress"
 msgstr "%s en WordPress"
 
 #: ../functions/simplecatch_functions.php:507
 #, php-format
-msgid "%s in RSS"
+msgid "%s on RSS"
 msgstr "%s en RSS"
 
 #: ../functions/simplecatch_functions.php:512
 #, php-format
-msgid "%s in Delicious"
+msgid "%s on Delicious"
 msgstr "%s en Delicious"
 
 #: ../functions/simplecatch_functions.php:517
 #, php-format
-msgid "%s in Last.fm"
+msgid "%s on Last.fm"
 msgstr "%s en Last.fm"
 
 #: ../functions/simplecatch_functions.php:522
 #, php-format
-msgid "%s in Instagram"
+msgid "%s on Instagram"
 msgstr "%s en Instagram"
 
 #: ../functions/simplecatch_functions.php:675

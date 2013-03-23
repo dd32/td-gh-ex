@@ -268,3 +268,7 @@ Version 2.2.1
 
 Version 2.3
 * Added Spanish translation es_ES.po and es_ES.mo
+
+Version 2.3.1
+* Fixed the grammatical in Social Icons title tags
+* Fixed Search Form Title not changing as per Theme Options
