@@ -65,7 +65,7 @@ function catcheverest_admin_social() { ?>
 <!-- End Social scripts -->
 <?php
 }
-add_action('adminmenu','catcheverest_admin_social');
+add_action('admin_print_styles-appearance_page_theme_options','catcheverest_admin_social');
 
 
 /*
@@ -1050,23 +1050,6 @@ function catcheverest_theme_options_validate( $options ) {
 	if ( isset( $input[ 'feed_url' ] ) ) {
 		$input_validated['feed_url'] = esc_url_raw($input['feed_url']);
 	}
-	
-	//footer text	
-	if( isset( $input[ 'footer_code' ] ) ) {
-		$input_validated['footer_code'] =  stripslashes( wp_filter_post_kses( addslashes ( $input['footer_code'] ) ) );	
-	}
-	if ( isset( $input['reset_footer'] ) ) {
-		// Our checkbox value is either 0 or 1 
-		$input_validated[ 'reset_footer' ] = $input[ 'reset_footer' ];
-	}	
-	
-	//Reset Color Options
-	if( $input[ 'reset_footer' ] == 1 ) {
-		global $catcheverest_options_defaults;
-		$defaults = $catcheverest_options_defaults;
-
-		$input_validated[ 'footer_code' ] = $defaults[ 'footer_code' ];
-	}	
 	
 	//Clearing the theme option cache
 	if( function_exists( 'catcheverest_themeoption_invalidate_caches' ) ) catcheverest_themeoption_invalidate_caches();

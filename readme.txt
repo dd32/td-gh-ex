@@ -56,3 +56,10 @@ Version 0.1.2.3
 Version 0.1.3
 * Added Homepage Featured Content Headline
 * Added Polish translation pl_PL.po and pl_PL.mo
+
+Version 0.1.3.1
+* Fixed Header Code which was displaying in Footer
+* Fixed grammatical in Social Icons title
+* Removing extra datas in theme options page
+* Fixed header search width css
+* Fixed font

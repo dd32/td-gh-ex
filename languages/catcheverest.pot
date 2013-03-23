@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Everest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-14 20:05+0530\n"
-"PO-Revision-Date: 2013-03-14 20:05+0530\n"
+"POT-Creation-Date: 2013-03-23 16:07+0530\n"
+"PO-Revision-Date: 2013-03-23 16:07+0530\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Catch Themes <support@catchthemes.com>\n"
 "MIME-Version: 1.0\n"
@@ -352,92 +352,92 @@ msgstr ""
 
 #: ../inc/catcheverest-functions.php:1010
 #, php-format
-msgid "%s in Facebook"
+msgid "%s on Facebook"
 msgstr ""
 
 #: ../inc/catcheverest-functions.php:1015
 #, php-format
-msgid "%s in Twitter"
+msgid "%s on Twitter"
 msgstr ""
 
 #: ../inc/catcheverest-functions.php:1020
 #, php-format
-msgid "%s in Google+"
+msgid "%s on Google+"
 msgstr ""
 
 #: ../inc/catcheverest-functions.php:1025
 #, php-format
-msgid "%s in Linkedin"
+msgid "%s on Linkedin"
 msgstr ""
 
 #: ../inc/catcheverest-functions.php:1030
 #, php-format
-msgid "%s in Pinterest"
+msgid "%s on Pinterest"
 msgstr ""
 
 #: ../inc/catcheverest-functions.php:1035
 #, php-format
-msgid "%s in YouTube"
+msgid "%s on YouTube"
 msgstr ""
 
 #: ../inc/catcheverest-functions.php:1040
 #, php-format
-msgid "%s in Vimeo"
+msgid "%s on Vimeo"
 msgstr ""
 
 #: ../inc/catcheverest-functions.php:1045
 #, php-format
-msgid "%s in Slideshare"
+msgid "%s on Slideshare"
 msgstr ""
 
 #: ../inc/catcheverest-functions.php:1050
 #, php-format
-msgid "%s in Foursquare"
+msgid "%s on Foursquare"
 msgstr ""
 
 #: ../inc/catcheverest-functions.php:1055
 #, php-format
-msgid "%s in Flickr"
+msgid "%s on Flickr"
 msgstr ""
 
 #: ../inc/catcheverest-functions.php:1060
 #, php-format
-msgid "%s in Tumblr"
+msgid "%s on Tumblr"
 msgstr ""
 
 #: ../inc/catcheverest-functions.php:1065
 #, php-format
-msgid "%s in deviantART"
+msgid "%s on deviantART"
 msgstr ""
 
 #: ../inc/catcheverest-functions.php:1070
 #, php-format
-msgid "%s in Dribbble"
+msgid "%s on Dribbble"
 msgstr ""
 
 #: ../inc/catcheverest-functions.php:1075
 #, php-format
-msgid "%s in MySpace"
+msgid "%s on MySpace"
 msgstr ""
 
 #: ../inc/catcheverest-functions.php:1080
 #, php-format
-msgid "%s in WordPress"
+msgid "%s on WordPress"
 msgstr ""
 
 #: ../inc/catcheverest-functions.php:1085
 #, php-format
-msgid "%s in RSS"
+msgid "%s on RSS"
 msgstr ""
 
 #: ../inc/catcheverest-functions.php:1090
 #, php-format
-msgid "%s in Delicious"
+msgid "%s on Delicious"
 msgstr ""
 
 #: ../inc/catcheverest-functions.php:1095
 #, php-format
-msgid "%s in Last.fm"
+msgid "%s on Last.fm"
 msgstr ""
 
 #: ../inc/catcheverest-metabox.php:14
@@ -1176,7 +1176,7 @@ msgid "MySpace"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:695
-#: ../inc/panel/theme-options.php:1163
+#: ../inc/panel/theme-options.php:1146
 msgid "WordPress"
 msgstr ""
 
@@ -1240,11 +1240,11 @@ msgstr ""
 msgid "Note: Here you can put scripts from Google, Facebook, Twitter, Add This etc. which will load on footer"
 msgstr ""
 
-#: ../inc/panel/theme-options.php:1142
+#: ../inc/panel/theme-options.php:1125
 msgid "Y"
 msgstr ""
 
-#: ../inc/panel/theme-options.php:1173
+#: ../inc/panel/theme-options.php:1156
 msgid "Catch Everest"
 msgstr ""
 

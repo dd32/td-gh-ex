@@ -14,14 +14,14 @@
     
 		<div class="entry-header">
             <header>
-                <?php echo get_avatar( get_the_author_meta( 'ID' ), apply_filters( 'twentytwelve_status_avatar', '60' ) ); ?>
+                <?php echo get_avatar( get_the_author_meta( 'ID' ), apply_filters( 'catcheverest_status_avatar', '60' ) ); ?>
                 <h1 class="entry-title"><?php the_author(); ?></h1>
             </header>
             <h2 class="entry-format"><a href="<?php echo get_post_format_link( 'status' ); ?>" title="<?php _e( 'All Status Posts', 'catcheverest' ); ?>"><?php _e( 'Status', 'catcheverest' ); ?></a></h2>
 		</div><!-- .entry-header -->
 
 		<div class="entry-content">
-			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentytwelve' ) ); ?>
+			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'catcheverest' ) ); ?>
 		</div><!-- .entry-content -->
 
         <footer class="entry-meta">
