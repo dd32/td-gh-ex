@@ -403,17 +403,16 @@ if ( ! function_exists( 'attitude_theloop_for_template_blog_image_large' ) ) :
 function attitude_theloop_for_template_blog_image_large() {
 	global $post;
 
-   if ( get_query_var( 'paged' ) )
-	   $paged = get_query_var( 'paged' );
-	elseif ( get_query_var( 'page' ) ) 
-	   $paged = get_query_var( 'page' );
-	else 
-		$paged = 1;
-	query_posts( "post_type=post&paged=$paged" ); 
+   global $wp_query, $paged;
+	$paged = ( get_query_var( 'page' ) ? get_query_var( 'page' ) : 1 );
+	$blog_query = new WP_Query( array( 'post_type' => 'post', 'paged' => $paged ) );
+	$temp_query = $wp_query;
+	$wp_query = null;
+	$wp_query = $blog_query;
 
-	if( have_posts() ) {
-		while( have_posts() ) {
-			the_post();
+	if( $blog_query->have_posts() ) {
+		while( $blog_query->have_posts() ) {
+			$blog_query->the_post();
 
 			do_action( 'attitude_before_post' );
 ?>
@@ -482,6 +481,8 @@ function attitude_theloop_for_template_blog_image_large() {
 		<h1 class="entry-title"><?php _e( 'No Posts Found.', 'attitude' ); ?></h1>
       <?php
    }
+   $wp_query = $temp_query;
+	wp_reset_postdata();
 }
 endif;
 
@@ -494,17 +495,16 @@ if ( ! function_exists( 'attitude_theloop_for_template_blog_image_medium' ) ) :
 function attitude_theloop_for_template_blog_image_medium() {
 	global $post;
 
-	if ( get_query_var( 'paged' ) )
-	   $paged = get_query_var( 'paged' );
-	elseif ( get_query_var( 'page' ) ) 
-	   $paged = get_query_var( 'page' );
-	else 
-		$paged = 1;
-	query_posts( "post_type=post&paged=$paged" ); 
+	global $wp_query, $paged;
+	$paged = ( get_query_var( 'page' ) ? get_query_var( 'page' ) : 1 );
+	$blog_query = new WP_Query( array( 'post_type' => 'post', 'paged' => $paged ) );
+	$temp_query = $wp_query;
+	$wp_query = null;
+	$wp_query = $blog_query;
 
-	if( have_posts() ) {
-		while( have_posts() ) {
-			the_post();
+	if( $blog_query->have_posts() ) {
+		while( $blog_query->have_posts() ) {
+			$blog_query->the_post();
 
 			do_action( 'attitude_before_post' );
 ?>
@@ -573,6 +573,8 @@ function attitude_theloop_for_template_blog_image_medium() {
 		<h1 class="entry-title"><?php _e( 'No Posts Found.', 'attitude' ); ?></h1>
       <?php
    }
+   $wp_query = $temp_query;
+	wp_reset_postdata();
 }
 endif;
 /****************************************************************************************/
@@ -584,19 +586,18 @@ if ( ! function_exists( 'attitude_theloop_for_template_blog_full_content' ) ) :
 function attitude_theloop_for_template_blog_full_content() {
 	global $post;
 
-	if ( get_query_var( 'paged' ) )
-	   $paged = get_query_var( 'paged' );
-	elseif ( get_query_var( 'page' ) ) 
-	   $paged = get_query_var( 'page' );
-	else 
-		$paged = 1;
-	query_posts( "post_type=post&paged=$paged" ); 
+	global $wp_query, $paged;
+	$paged = ( get_query_var( 'page' ) ? get_query_var( 'page' ) : 1 );
+	$blog_query = new WP_Query( array( 'post_type' => 'post', 'paged' => $paged ) );
+	$temp_query = $wp_query;
+	$wp_query = null;
+	$wp_query = $blog_query; 
 
 	global $more;    // Declare global $more (before the loop).
 
-	if( have_posts() ) {
-		while( have_posts() ) {
-			the_post();
+	if( $blog_query->have_posts() ) {
+		while( $blog_query->have_posts() ) {
+			$blog_query->the_post();
 
 			do_action( 'attitude_before_post' );
 ?>
@@ -663,6 +664,8 @@ function attitude_theloop_for_template_blog_full_content() {
 		<h1 class="entry-title"><?php _e( 'No Posts Found.', 'attitude' ); ?></h1>
       <?php
    }
+   $wp_query = $temp_query;
+	wp_reset_postdata();
 }
 endif;
 
