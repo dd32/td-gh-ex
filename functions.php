@@ -276,37 +276,12 @@ function agency_head_css() {
 		$custom_css = of_get_option('custom_css');
 		if ($custom_css <> '') {
 			$output .= $custom_css . "\n";
-		}
-		
-		$main_body_typography = of_get_option('main_body_typography');
-		if ($main_body_typography) {
-			$theme_options_styles = '
-			body{ 
-				font-family: ' . $main_body_typography['face'] . '; 
-				font-weight: ' . $main_body_typography['style'] . '; 
-				color: ' . $main_body_typography['color'] . '; 
-			}';
-		}
-		
-		$link_color = of_get_option('link_color');
-		if ($link_color) {
-			$theme_options_styles .= '
-			a{ 
-				color: ' . $link_color . '; 
-			}';
-		}		
-		
-		
+		}	
+			
 		// Output styles
 		if ($output <> '') {
 			$output = "<!-- Custom Styling -->\n<style type=\"text/css\">\n" . $output . "</style>\n";
 			echo $output;
-		}
-		
-		if($theme_options_styles){
-			echo '<style>' 
-			. $theme_options_styles . '
-			</style>';
 		}
 	
 }

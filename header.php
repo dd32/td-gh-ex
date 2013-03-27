@@ -5,7 +5,7 @@
 	<head profile="http://gmpg.org/xfn/11">
 		<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 
-	<title><?php wp_title('-', true); ?></title>
+	<title><?php wp_title(); ?></title>
 			
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_uri(); ?>" />
 

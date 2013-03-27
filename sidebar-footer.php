@@ -27,7 +27,7 @@
 					</ul>
 <?php } else { ?>
 		<ul class="xoxo">
-	<li class="widget-container"><h3 class="widget-title">About us</h3><div class="textwidget">This is a text widget. Put your own widget by going to appeareance widget area. Nullam posuere felis a lacus tempor eget dignissim arcu adipiscing. Donec est est, rutrum vitae bibendum vel, suscipit non metus. Nullam posuere felis a lacus tempor eget dignissim arcu adipiscing. Donec est est, rutrum vitae bibendum vel, suscipit non metus</div>
+	<li class="widget-container"><h3 class="widget-title">About us</h3><div class="textwidget">This is a text widget. Put your own widget by going to appeareance widget area. Nullam posuere felis a lacus tempor eget dignissim arcu adipiscing. </div>
 		</li></ul>
 				
 <?php } ?>
@@ -42,7 +42,7 @@
 					
 	<?php } else { ?>
 		<ul class="xoxo">
-	<li class="widget-container"><h3 class="widget-title">Our Services</h3><div class="textwidget">This is a text widget. Put your own widget by going to appeareance widget area. Nullam posuere felis a lacus tempor eget dignissim arcu adipiscing. Donec est est, rutrum vitae bibendum vel, suscipit non metus. Nullam posuere felis a lacus tempor eget dignissim arcu adipiscing. Donec est est, rutrum vitae bibendum vel, suscipit non metus</div>
+	<li class="widget-container"><h3 class="widget-title">Our Services</h3><div class="textwidget">This is a text widget. Put your own widget by going to appeareance widget area.</div>
 		</li></ul>
 				
 <?php } ?>
@@ -56,7 +56,7 @@
 					
 	<?php } else { ?>
 		<ul class="xoxo">
-	<li class="widget-container"><h3 class="widget-title">Contact us</h3><div class="textwidget">This is a text widget. Put your own widget by going to appeareance widget area. Nullam posuere felis a lacus tempor eget dignissim arcu adipiscing. Donec est est, rutrum vitae bibendum vel, suscipit non metus. Nullam posuere felis a lacus tempor eget dignissim arcu adipiscing. Donec est est, rutrum vitae bibendum vel, suscipit non metus</div>
+	<li class="widget-container"><h3 class="widget-title">Contact us</h3><div class="textwidget">Phone no: 12345678</div>
 		</li></ul>
 				
 <?php } ?>
