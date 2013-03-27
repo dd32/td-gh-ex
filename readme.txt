@@ -1,7 +1,7 @@
 ----------------------------------
 Design Theme
 ----------------------------------
-Version: 	1.7
+Version: 	1.7.1
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
