@@ -1,4 +1,15 @@
 Changelog -----------------------------------
+version:1.108
+fixed
+    Fixed Invalid argument supplied error.
+    function raindrops_loop_title()
+        add $page_title_c  = "";
+modified
+    Post Format Status Add  publish day link
+    Widget category archive ,monthly archive
+        background color change when color type dark.
+----------------------------------------------
+Changelog -----------------------------------
 version:1.107
 fixed
     Fixed full size editor width display improperly when page width fluid.
