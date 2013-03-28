@@ -32,11 +32,6 @@ Make sure your site title is not long enough and if you are using logo as image,
 
 
 == Credits ==
-Superfish: Dual licensed under the MIT and GPL licenses.
-jQuery Easing: Open source under the BSD License.
-jQuery Cycle: Dual licensed under the MIT and GPL licenses.
-Images: By http://www.premiumpixels.com
 jQuery http://jquery.com/
 
 Thanks for downloading the application theme.
-
