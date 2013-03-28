@@ -1,7 +1,9 @@
 
 Tagline under logo can only support one line of text.
 
-Menu styling best supports one line of links. 
+Menu styling best supports one line of links.
+
+If you select a skin and then want to revert back to default design, simply click on "Restore Defaults" button at the bottom.
 
 -----------------------------------------
 
