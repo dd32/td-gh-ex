@@ -451,42 +451,54 @@ class Asteroid_Theme_Options {
 			'std'     => 1
 		);
 		
-		$this->settings['ast_post_date'] = array(
+		$this->settings['ast_blog_author'] = array(
 			'section' => 'post-page',
-			'title'   => __( 'Post Publish Date', 'asteroid' ),
-			'desc'    => __( 'Show Publish Date on Single Posts.', 'asteroid' ),
-			'type'    => 'checkbox',
-			'std'     => 1
-		);
-		
-		$this->settings['ast_post_author'] = array(
-			'section' => 'post-page',
-			'title'   => __( 'Post Author', 'asteroid' ),
-			'desc'    => __( 'Show the Author&rsquo;s name on Posts.', 'asteroid' ),
-			'type'    => 'checkbox',
-			'std'     => 1
-		);
-		
-		$this->settings['ast_page_date'] = array(
-			'section' => 'post-page',
-			'title'   => __( 'Page Publish Date', 'asteroid' ),
-			'desc'    => __( 'Show Publish Date on Single Pages', 'asteroid' ),
+			'title'   => __( 'Blog View Author', 'asteroid' ),
+			'desc'    => __( 'Show Post Author on Blog, Archives, and Searches.', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
 		
-		$this->settings['ast_page_author'] = array(
+		$this->settings['ast_blog_comment_links'] = array(
 			'section' => 'post-page',
-			'title'   => __( 'Page Author', 'asteroid' ),
-			'desc'    => __( 'Show the Author&rsquo;s name on Pages.', 'asteroid' ),
+			'title'   => __( 'Blog View Comments', 'asteroid' ),
+			'desc'    => __( 'Show comment count and comment link below excerpts.', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 0
+		);
+		
+		$this->settings['ast_single_date'] = array(
+			'section' => 'post-page',
+			'title'   => __( 'Single View Publish Date', 'asteroid' ),
+			'desc'    => __( 'Display the publish date on Posts and Pages.', 'asteroid' ),
+			'type'    => 'select',
+			'std'     => 1,
+			'choices' => array(
+				0	=> __('Hidden', 'asteroid'),
+				1	=> __('On Posts', 'asteroid'),
+				2	=> __('On Pages', 'asteroid'),
+				3	=> __('Both Posts & Pages', 'asteroid')
+				)
+		);
+		
+		$this->settings['ast_single_author'] = array(
+			'section' => 'post-page',
+			'title'   => __( 'Single View Author', 'asteroid' ),
+			'desc'    => __( 'Display the author on Posts and Pages.', 'asteroid' ),
+			'type'    => 'select',
+			'std'     => 1,
+			'choices' => array(
+				0	=> __('Hidden', 'asteroid'),
+				1	=> __('On Posts', 'asteroid'),
+				2	=> __('On Pages', 'asteroid'),
+				3	=> __('Both Posts & Pages', 'asteroid')
+				)
 		);
 		
 		$this->settings['ast_date_modified'] = array(
 			'section' => 'post-page',
 			'title'   => __( 'Show Date Modified', 'asteroid' ),
-			'desc'    => __( 'Show the date when the Post or Page was modified.', 'asteroid' ),
+			'desc'    => __( 'Display date when the Post or Page was modified.', 'asteroid' ),
 			'type'    => 'select',
 			'std'     => 1,
 			'choices' => array(
@@ -511,14 +523,6 @@ class Asteroid_Theme_Options {
 			'desc'    => __( 'Show the comments and comment form on Pages.', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 1
-		);
-		
-		$this->settings['ast_blog_comment_links'] = array(
-			'section' => 'post-page',
-			'title'   => __( 'Blog View Comment Info', 'asteroid' ),
-			'desc'    => __( 'Show comment count and comment link below excerpts on Blog View.', 'asteroid' ),
-			'type'    => 'checkbox',
-			'std'     => 0
 		);
 		
 		$this->settings['ast_post_author_info_box'] = array(
@@ -600,38 +604,6 @@ class Asteroid_Theme_Options {
 			'section' => 'widget-areas',
 			'title'   => __( 'After Post', 'asteroid' ),
 			'desc'    => __( 'Allow widgets to show at the post-footer.', 'asteroid' ),
-			'type'    => 'checkbox',
-			'std'     => 0
-		);
-		
-		$this->settings['ast_widget_before_page'] = array(
-			'section' => 'widget-areas',
-			'title'   => __( 'Before Page', 'asteroid' ),
-			'desc'    => __( 'Allow widgets to show after the page-title.', 'asteroid' ),
-			'type'    => 'checkbox',
-			'std'     => 0
-		);	
-		
-		$this->settings['ast_widget_before_page_content'] = array(
-			'section' => 'widget-areas',
-			'title'   => __( 'Before Page - Content', 'asteroid' ),
-			'desc'    => __( 'Allow widgets to show before the page-content.', 'asteroid' ),
-			'type'    => 'checkbox',
-			'std'     => 0
-		);
-		
-		$this->settings['ast_widget_after_page_content'] = array(
-			'section' => 'widget-areas',
-			'title'   => __( 'After Page - Content', 'asteroid' ),
-			'desc'    => __( 'Allow widgets to show after the page-content.', 'asteroid' ),
-			'type'    => 'checkbox',
-			'std'     => 0 
-		);
-		
-		$this->settings['ast_widget_after_page'] = array(
-			'section' => 'widget-areas',
-			'title'   => __( 'After Page', 'asteroid' ),
-			'desc'    => __( 'Allow widgets to show at the page-footer.', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 0
 		);

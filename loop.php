@@ -15,10 +15,16 @@
 </div>
 
 <?php if ( ( asteroid_option('ast_blog_date') == 1 ) && ( get_post_type() == 'post' ) ) : ?>
-	<div class="entry-date"><?php the_date(); ?></div>
+	<div class="entry-date"><?php the_time(get_option('date_format')); ?></div>
 <?php endif; ?>
 
-<div class="entry-categories"><?php the_category(' '); ?></div>
+<div class="entry-meta-top">
+	<span class="entry-categories"><?php the_category(' '); ?></span>
+
+	<?php if ( asteroid_option('ast_blog_author') == 1 ) : ?>
+		<span class="entry-author"><?php _e('Posted by', 'asteroid'); ?>&nbsp;<?php the_author_posts_link(); ?></span>
+	<?php endif; ?>
+</div>
 
 <div class="entry-content">
 					

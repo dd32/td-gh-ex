@@ -4,7 +4,7 @@ Theme URI: http://ronangelo.com/asteroid/
 Description: Asteroid is a simple, clean and responsive theme. It incorporates various widget areas that make management of banners and ads a lot easier, especially for ad-supported sites. The theme is ideal for use on a blog, a static website or both. The theme’s development focuses on user customization and minimizing HTTP requests to help conserve server resource. Asteroid supports custom header images, backgrounds, menus, full-width page templates and more.
 Author: ronangelo
 Author URI: http://ronangelo.com/
-Version: 1.0.8
+Version: 1.0.9
 Tags: black, white, gray, two-columns, right-sidebar, fixed-width, custom-header, custom-background, featured-images, custom-menu, custom-colors, theme-options, threaded-comments, sticky-post, editor-style, full-width-template, threaded-comments, translation-ready
 
 License: GNU General Public License, Version 3 or later
@@ -400,24 +400,25 @@ a:hover {color: #f00;}
     margin-top: 2px;
 }
 
-#widgets-wrap-before-post, #widgets-wrap-before-page {
+#widgets-wrap-before-post {
 	overflow: hidden;
 	border-top: 1px solid #999;
 	margin: 10px auto 0;
     padding-top: 10px;
 }
-#widgets-wrap-before-post-content, #widgets-wrap-before-page-content {
+#widgets-wrap-before-post-content {
 	overflow: hidden;
 	margin: 0 6px 6px;
 }
-#widgets-wrap-after-post-content, #widgets-wrap-after-page-content {
+#widgets-wrap-after-post-content {
 	overflow: hidden;
 	margin: 6px;
 }
-#widgets-wrap-after-post, #widgets-wrap-after-page {
+#widgets-wrap-after-post {
 	overflow: hidden;
 	border-top: 1px solid #999;
     padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 
@@ -495,7 +496,12 @@ article.sticky {background: url("images/bg-honeycomb.png") #FFCB66; border: 1px 
     padding: 1px 6px;
 }
 
-.blog-view .entry-categories {margin: 6px auto;}
+.blog-view .entry-meta-top {overflow: hidden;}
+
+.blog-view .entry-categories {
+	display: inline-block;
+	margin-top: 6px; 
+}
 .blog-view .entry-categories a {
 	background: rgba(0, 0, 0, 0.15);
 	border: 1px solid #999;
@@ -510,6 +516,16 @@ article.sticky {background: url("images/bg-honeycomb.png") #FFCB66; border: 1px 
 	background: rgba(0, 0, 0, 0.75);
 	color: #FFF;
 	border-color: #000;
+}
+
+.blog-view .entry-author {
+	display: inline-block;
+	float: right; 
+	margin-top: 6px; 
+	background: rgba(0, 0, 0, 0.15);
+	border: 1px solid #999;
+	padding: 0 4px;
+	border-radius: 3px;
 }
 
 .blog-view .entry-content {
@@ -629,7 +645,6 @@ article.sticky {background: url("images/bg-honeycomb.png") #FFCB66; border: 1px 
 	overflow: hidden;
 	border-top: 1px solid #999;
 	padding: 16px 10px 14px;
-	margin-top: 10px;
 }
 
 .entry-meta-bottom {
@@ -914,7 +929,8 @@ pre {
 }
 .author-avatar {float: left; margin-right: 10px;}
 .author-avatar img {display: block;}
-.author-description {float: left;}
+.author-description {float: left; max-width: 86%;}
+.author .author-description {max-width: 82%;}
 
 .author-latest-posts {
 	background: url("images/bg-honeycomb.png") #FFCB66;
@@ -937,7 +953,7 @@ pre {
 .wrap-404-box {
 	background: url("images/bg-honeycomb.png") #FFCB66;
 	margin: 40px auto; 
-	width: 420px;
+	width: 80%;
 	padding-bottom: 20px;
 	border: 1px solid #222;
 	box-shadow: 0 0 2px #000;
@@ -1087,7 +1103,6 @@ pre {
 	#nav-search #s {width: 84% !important;}
 	#nav-search #searchsubmit {float: left !important;}
 	#comments-wrap {max-width: 98% !important;}
-	.wrap-404-box {width: auto !important; max-width: 96% !important;}
 }
 
 @media screen and (max-width:320px){

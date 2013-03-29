@@ -19,59 +19,43 @@
 </div>
 
 <!-- Widgets: Before Post -->
-<?php if ( ( is_active_sidebar( 'widgets_before_post' ) ) && is_singular('post') ) : ?>
+<?php if ( ( is_active_sidebar( 'widgets_before_post' ) ) && is_singular() ) : ?>
 	<div id="widgets-wrap-before-post"><?php dynamic_sidebar( 'widgets_before_post' ); ?></div>
-<?php endif ; ?>
-<!-- Widgets: Before Page -->
-<?php if ( ( is_active_sidebar( 'widgets_before_page' ) ) && is_page() ) : ?>
-	<div id="widgets-wrap-before-page"><?php dynamic_sidebar( 'widgets_before_page' ); ?></div>
 <?php endif ; ?>
 
 <!-- Date & Author -->
 <div class="entry-meta-top">
-	<?php if ( is_singular('post') ) : ?> 
-
-			<?php if ( asteroid_option('ast_post_date') == 1 ) : ?>
-				<div class="entry-date"><?php the_date(); ?></div>
-			<?php endif ; ?>
-			
-			<?php if ( asteroid_option('ast_post_author') == 1 ) : ?>
-				<div class="entry-author"><?php _e('Posted by', 'asteroid'); ?> <?php the_author_posts_link(); ?></a></div>
-			<?php endif ; ?>
-		
-	<?php elseif ( is_page() ) : ?>
+	<?php if (
+		( asteroid_option('ast_single_date') == 1 && is_singular('post') ) ||
+		( asteroid_option('ast_single_date') == 2 && is_page() ) ||
+		( asteroid_option('ast_single_date') == 3 && is_singular(array( 'post', 'page' )) ) 
+		) :
+	?>
+		<div class="entry-date"><?php the_date(); ?></div>
+	<?php endif; ?>
 	
-			<?php if ( asteroid_option('ast_page_date') == 1 ) : ?>
-				<div class="entry-date"><?php the_date(); ?></div>
-			<?php endif ; ?>
-			
-			<?php if ( asteroid_option('ast_page_author') == 1 ) : ?>
-				<div class="entry-author"><?php _e('Posted by', 'asteroid'); ?> <?php the_author_posts_link(); ?></a></div>
-			<?php endif ; ?>
-
-	<?php endif ; ?>
+	<?php if (
+		( asteroid_option('ast_single_author') == 1 && is_singular('post') ) ||
+		( asteroid_option('ast_single_author') == 2 && is_page() ) ||
+		( asteroid_option('ast_single_author') == 3 && is_singular(array( 'post', 'page' )) ) 
+		) :
+	?>
+		<div class="entry-author"><?php _e('Posted by', 'asteroid'); ?>&nbsp;<?php the_author_posts_link(); ?></div>
+	<?php endif; ?>
 </div>
 
 <div class="entry-content">
 
 	<!-- Widgets: Before Post Content -->
-	<?php if ( ( is_active_sidebar( 'widgets_before_post_content' ) ) && is_singular('post') ) : ?>
+	<?php if ( ( is_active_sidebar( 'widgets_before_post_content' ) ) && is_singular() ) : ?>
 		<div id="widgets-wrap-before-post-content"><?php dynamic_sidebar( 'widgets_before_post_content' ); ?></div>
-	<?php endif ; ?>
-	<!-- Widgets: Before Page Content -->
-	<?php if ( ( is_active_sidebar( 'widgets_before_page_content' ) ) && is_page() ) : ?>
-		<div id="widgets-wrap-before-page-content"><?php dynamic_sidebar( 'widgets_before_page_content' ); ?></div>
 	<?php endif ; ?>
 	
 	<?php the_content(); ?>
 	
 	<!-- Widgets: After Post Content -->
-	<?php if ( ( is_active_sidebar( 'widgets_after_post_content' ) ) && is_singular('post') ) : ?>
+	<?php if ( ( is_active_sidebar( 'widgets_after_post_content' ) ) && is_singular() ) : ?>
 		<div id="widgets-wrap-after-post-content"><?php dynamic_sidebar( 'widgets_after_post_content' ); ?></div>
-	<?php endif ; ?>
-	<!-- Widgets: After Page Content -->
-	<?php if ( ( is_active_sidebar( 'widgets_after_page_content' ) ) && is_page() ) : ?>
-		<div id="widgets-wrap-after-page-content"><?php dynamic_sidebar( 'widgets_after_page_content' ); ?></div>
 	<?php endif ; ?>
 
 	<?php wp_link_pages( array(
@@ -110,12 +94,8 @@
 	<?php endif; ?>
 
 	<!-- Widgets: After Post -->
-	<?php if ( ( is_active_sidebar( 'widgets_after_post' ) ) && is_singular('post') ) : ?>
+	<?php if ( ( is_active_sidebar( 'widgets_after_post' ) ) && is_singular() ) : ?>
 		<div id="widgets-wrap-after-post"><?php dynamic_sidebar( 'widgets_after_post' ); ?></div>
-	<?php endif ; ?>
-	<!-- Widgets: After Page -->
-	<?php if ( ( is_active_sidebar( 'widgets_after_page' ) ) && is_page() ) : ?>
-		<div id="widgets-wrap-after-page"><?php dynamic_sidebar( 'widgets_after_page' ); ?></div>
 	<?php endif ; ?>
 	
 	<?php if ( is_singular('post') || is_attachment() ) : ?>

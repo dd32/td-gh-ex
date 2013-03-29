@@ -6,7 +6,7 @@
  *
  *
  */
-$ast_version = "1.0.8";
+$ast_version = "1.0.9";
 /*-------------------------------------
 	Theme Localization
 --------------------------------------*/
@@ -207,47 +207,6 @@ if (function_exists( 'register_sidebar' ) ) {
 			'before_title' 	=> '<h4 class="widget-title">',
 			'after_title' 	=> '</h4>',) );
 	}
-		
-	// Before Page
-	if ( asteroid_option('ast_widget_before_page') == 1 ) {
-		register_sidebar(array(
-			'name' 			=> __('Before Page', 'asteroid'),
-			'id' 			=> 'widgets_before_page',
-			'before_widget' => '<div id="%1$s" class="widget-before-page %2$s">',
-			'after_widget' 	=> '</div>',
-			'before_title' 	=> '<h4 class="widget-title">',
-			'after_title' 	=> '</h4>',) );
-	}
-	// Before Page Content
-	if ( asteroid_option('ast_widget_before_page_content') == 1 ) {
-		register_sidebar(array(
-			'name' 			=> __('Before Page - Content', 'asteroid'),
-			'id' 			=> 'widgets_before_page_content',
-			'before_widget' => '<div id="%1$s" class="widget-before-page-content %2$s">',
-			'after_widget' 	=> '</div>',
-			'before_title' 	=> '<h4 class="widget-title">',
-			'after_title' 	=> '</h4>',) );
-	}
-	// After Page Content
-	if ( asteroid_option('ast_widget_after_page_content') == 1 ) {
-		register_sidebar(array(
-			'name' 			=> __('After Page - Content', 'asteroid'),
-			'id' 			=> 'widgets_after_page_content',
-			'before_widget' => '<div id="%1$s" class="widget-after-page-content %2$s">',
-			'after_widget' 	=> '</div>',
-			'before_title' 	=> '<h4 class="widget-title">',
-			'after_title' 	=> '</h4>',) );
-	}
-	// After Page
-	if ( asteroid_option('ast_widget_after_page') == 1 ) {
-		register_sidebar(array(
-			'name' 			=> __('After Page', 'asteroid'),
-			'id' 			=> 'widgets_after_page',
-			'before_widget' => '<div id="%1$s" class="widget-after-page %2$s">',
-			'after_widget' 	=> '</div>',
-			'before_title' 	=> '<h4 class="widget-title">',
-			'after_title' 	=> '</h4>',) );
-	}
 }
 
 
@@ -257,6 +216,32 @@ if (function_exists( 'register_sidebar' ) ) {
 if ( ! isset( $content_width ) ) {
 	$content_width = asteroid_option('ast_content_width');
 }
+
+
+/*-------------------------------------
+	Site Title
+--------------------------------------*/
+function asteroid_wp_title( $title, $sep ) {
+	global $paged, $page;
+
+	if ( is_feed() )
+		return $title;
+
+	// Add the site name.
+	$title .= get_bloginfo( 'name' );
+
+	// Add the site description for the home/front page.
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) )
+		$title = "$title $sep $site_description";
+
+	// Add a page number if necessary.
+	if ( $paged >= 2 || $page >= 2 )
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'asteroid' ), max( $paged, $page ) );
+
+	return $title;
+}
+add_filter( 'wp_title', 'asteroid_wp_title', 10, 2 );
 
 
 /*-------------------------------------

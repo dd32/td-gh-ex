@@ -25,6 +25,11 @@ JSColor - A lightweight Javascript color-picker maintained by Jan Odvárko.
 jscolor is released under a GNU Lesser General Public License. jscolor.com
 
 == CHANGELOG ==
+Version 1.0.9
+	 * CSS Fix.
+	 * New Options.
+	 * Merged Optional Page Widget Areas with Post Widget Areas.
+
 Version 1.0.8
 	 * New author template.
 	 * New bbPress forum template.
