@@ -61,33 +61,68 @@ window.onload = makeDoubleDelegate(window.onload, mantra_onload );
 
 add_action('wp_head','mantra_header_scripts',100);
 
-
-/**
- * Creates invisible div over header making it link to home page
- * Used in header.php
-*/
- function mantra_link_header() {
-echo '<a href="'.home_url( '/' ).'" id="linky"> </a>' ;
-
-}
-
-
-if ($mantra_options['mantra_linkheader']=="Enable") add_action('cryout_branding_hook','mantra_link_header');
-
-
-
  /**
  * Adds title and description to heaer
  * Used in header.php
 */
  function mantra_title_and_description() {
- // Site Title
-  $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div';
-  echo '<'.$heading_tag.' id="site-title">';
-  echo '<span> <a href="'.home_url( '/' ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a> </span>';
-  echo '</'.$heading_tag.'>';
-  // Site Description
-  echo '<div id="site-description" >'.get_bloginfo( 'description' ).'</div>';
+  $mantra_options= mantra_get_theme_options();
+foreach ($mantra_options as $key => $value) {
+     ${"$key"} = $value ;
+}
+// Header styling and image loading
+// Check if this is a post or page, if it has a thumbnail, and if it's a big one
+global $post;
+
+	if (get_header_image() != '') { $himgsrc=get_header_image(); }
+	if ( is_singular() && has_post_thumbnail( $post->ID ) && $mantra_fheader == "Enable" &&
+		( $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ) ) &&
+		$image[1] >= HEADER_IMAGE_WIDTH ) : $himgsrc= $image[0];
+	endif;
+ 
+ 
+ if (isset($himgsrc)) : echo '<img id="bg_image" alt="" title="" src="'.$himgsrc.'"  />';  endif;
+
+?>
+
+ <div id="header-container">
+
+ 
+ <?php
+ $mantra_options= mantra_get_theme_options();
+foreach ($mantra_options as $key => $value) {
+     ${"$key"} = $value ;
+}
+ 
+ switch ($mantra_siteheader) {
+ 
+	case 'Site Title and Description':
+		echo '<div>';
+		$heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div';
+		echo '<'.$heading_tag.' id="site-title">';
+		echo '<span> <a href="'.home_url( '/' ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a> </span>';
+		echo '</'.$heading_tag.'>';
+		echo '<div id="site-description" >'.get_bloginfo( 'description' ).'</div></div>'; 
+	break;
+	
+	case 'Clickable header image' :
+	
+		echo '<a style="display:block;width:100%;height:100%;" href="'.home_url( '/' ).'" id="linky"> </a>' ;
+	break;
+	
+	case 'Custom Logo' :
+	echo '<div><a id="logo" href="/" ><img title="" alt="" src="'.$mantra_logoupload.'" /></a></div>';
+	
+	break;
+	
+	case 'Empty' :
+	
+	break;
+	
+}
+  
+  
+  echo '</div>';
 }
 
 
@@ -154,6 +189,9 @@ else { $mantra_theme_info = wp_get_theme( );}
  * Replaces header image with featured image if there is one for single pages
  * Used in header.php
 */
+
+/* // Moved to custom-styles.php
+
 function mantra_header_featured_image() {
 global $post;
 global $mantra_options;
@@ -171,8 +209,8 @@ endif;
 }
 
 
-add_action ('cryout_branding_hook','mantra_header_featured_image');
 
+*/
 
 /**
  * Mantra back to top button
