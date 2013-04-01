@@ -231,3 +231,10 @@ Version 2.0.3
 
 Version 2.1
 * Added Swedish translation sv_SE.po and sv_SE.mo 
+
+Version 2.1.1
+* Fixed author info color in Dark color scheme
+* Fixed Social Icon title for Vimeo and Flickr
+* Added Responsive menu support for default wp_page_menu 
+* Fixed Arrow on Responsive Menu
+* Removed simplecatch_sort_query_by_post_in function as post orderby is already implement in WordPress Version 3.5 by default

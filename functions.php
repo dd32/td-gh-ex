@@ -409,6 +409,25 @@ function catchbox_page_menu_args( $args ) {
 }
 add_filter( 'wp_page_menu_args', 'catchbox_page_menu_args' );
 
+
+/**
+ * Replacing classes in default wp_page_menu
+ *
+ * REPLACE "current_page_item" WITH CLASS "current-menu-item"
+ * REPLACE "current_page_ancestor" WITH CLASS "current-menu-ancestor"
+ */
+function catchbox_page_menu_active($text){
+	$replace = array(
+		// List of classes to replace with "active"
+		'current_page_item' => 'current-menu-item',
+		'current_page_ancestor' => 'current-menu-ancestor',
+	);
+	$text = str_replace(array_keys($replace), $replace, $text);
+		return $text;
+	}
+add_filter ( 'wp_page_menu', 'catchbox_page_menu_active' );
+
+
 /**
  * Register our sidebars and widgetized areas. Also register the default Epherma widget.
  *
@@ -681,22 +700,6 @@ function catchbox_posts_id_column_css() {
 	echo '<style type="text/css">#postid { width: 50px; }</style>';
 }
 add_action( 'admin_head-edit.php', 'catchbox_posts_id_column_css' );
-
-/**
- * Allows post queries to sort the results by the order specified in the <em>post__in</em> parameter. Just set the <em>orderby</em> parameter to <em>post__in</em>! 
- * uses filter posts_orderby
- */
-if ( !function_exists('catchbox_sort_query_by_post_in') ) : 
-
-	add_filter('posts_orderby', 'catchbox_sort_query_by_post_in', 10, 2);
-	
-	function catchbox_sort_query_by_post_in($sortby, $thequery) {
-		if ( isset($thequery->query['post__in']) && !empty($thequery->query['post__in']) && isset($thequery->query['orderby']) && $thequery->query['orderby'] == 'post__in' )
-			$sortby = "find_in_set(ID, '" . implode( ',', $thequery->query['post__in'] ) . "')";
-		return $sortby;
-	}
-
-endif;
 
 
 /**

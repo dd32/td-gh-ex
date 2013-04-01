@@ -849,7 +849,7 @@ function catchbox_options_social_links() {
                     </tr>
                     
                     <tr>
-                        <th scope="row"><label><?php _e( 'Viemo', 'catchbox' ); ?></label></th>
+                        <th scope="row"><label><?php _e( 'Vimeo', 'catchbox' ); ?></label></th>
                         <td><input type="text" size="45" name="catchbox_options_social_links[social_viemo]" value="<?php if ( isset( $options[ 'social_viemo' ] ) ) echo esc_url( $options[ 'social_viemo' ] ); ?>" />
                         </td>
                     </tr>
@@ -873,7 +873,7 @@ function catchbox_options_social_links() {
                     </tr>
                     
                     <tr>
-                        <th scope="row"><label><?php _e( 'Flicker', 'catchbox' ); ?></label></th>
+                        <th scope="row"><label><?php _e( 'Flickr', 'catchbox' ); ?></label></th>
                         <td><input type="text" size="45" name="catchbox_options_social_links[social_flickr]" value="<?php if ( isset( $options[ 'social_flickr' ] ) ) echo esc_url( $options[ 'social_flickr' ] ); ?>" />
                         </td>
                     </tr>
@@ -1402,9 +1402,9 @@ function catchbox_socialprofile() {
 						$catchbox_socialprofile .= '<li class="tumblr"><a href="'.$options['social_tumblr'].'" title="Tumblr" target="_blank">Tumblr</a></li>';
 					}	
 					
-					//Viemo
+					//Vimeo
 					if ($options['social_viemo']) {
-						$catchbox_socialprofile .= '<li class="viemo"><a href="'.$options['social_viemo'].'" title="Viemo" target="_blank">Viemo</a></li>';
+						$catchbox_socialprofile .= '<li class="vimeo"><a href="'.$options['social_viemo'].'" title="Vimeo" target="_blank">Vimeo</a></li>';
 					}	
 					
 					//Dribbble
@@ -1422,9 +1422,9 @@ function catchbox_socialprofile() {
 						$catchbox_socialprofile .= '<li class="aim"><a href="'.$options['social_aim'].'" title="Aim" target="_blank">Aim</a></li>';
 					}	
 					
-					//Flicker
+					//Flickr
 					if ($options['social_flickr']) {
-						$catchbox_socialprofile .= '<li class="flickr"><a href="'.$options['social_flickr'].'" title="Flicker" target="_blank">Flicker</a></li>';
+						$catchbox_socialprofile .= '<li class="flickr"><a href="'.$options['social_flickr'].'" title="Flickr" target="_blank">Flickr</a></li>';
 					}	
 					
 					$catchbox_socialprofile .= '
