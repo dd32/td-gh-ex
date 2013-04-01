@@ -10,6 +10,7 @@ light, gray, white, one-column, two-columns, left-sidebar, right-sidebar, fixed-
 == Translation ==
 Catch Everest theme is translation ready. 
 Added Translation for Polish by Piotrek Jas (fansitejustgames@gmail.com)
+Added Translation for Chinese by ZCW ( conanla@qq.com)
 
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 2, see file license.txt
@@ -17,6 +18,9 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Catch Everest WordPress Theme, Copyright 2013 Catchthemes.com
 Catch Everest is distributed under the terms of the GNU General Public License v2 
+
+== Post ID shown in the ALl Posts Table ==
+This theme shows the Post ID of the posts in the All Posts table in the WordPress Dashboard. This is added to help the users to use those ids in the featured Post Slider Options in Theme Options Panel.
 
 == Theme Instruction ==
 Check out the theme instruction at http://catchthemes.com/theme-instructions/catch-everest/
@@ -63,3 +67,11 @@ Version 0.1.3.1
 * Removing extra datas in theme options page
 * Fixed header search width css
 * Fixed font
+
+version 0.1.4
+* Added Post ID shown in the All Posts Table in admin section 
+* Fixed Homepage featured content loop for more than 6 items
+* Adding function_exists() condition to support child theme easy editing
+* Fixed IE8 issue of Header Image and placeholder
+* Added active menu support for default page menu
+* Added Chinese translation zh_CN.po and zh_CN.mo

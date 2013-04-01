@@ -1,26 +1,16 @@
-/*! http://tinynav.viljamis.com v1.03 by @viljamis */
-function abc(e) {
-var count = 0;
-if (!e.hasClass('menu'))
-{
-if (e.is('ul'))
-count++;
-return count + abc(e.parent());
-}
-return count;
-}
+/*! http://tinynav.viljamis.com v1.1 by @viljamis */
 (function ($, window, i) {
   $.fn.tinyNav = function (options) {
 
     // Default settings
     var settings = $.extend({
-      'active' : 'current-menu-item', // String: Set the "active" class
-      'header' : false // Boolean: Show header instead of the active item
+      'active' : 'selected', // String: Set the "active" class
+      'header' : '', // String: Specify text for "header" and show header instead of the active item
+      'label'  : '' // String: sets the <label> text for the <select> (if not set, no label will be added)
     }, options);
-    
-    var counter = -1;
 
     return this.each(function () {
+
       // Used for namespacing
       i++;
 
@@ -29,32 +19,29 @@ return count;
         namespace = 'tinynav',
         namespace_i = namespace + i,
         l_namespace_i = '.l_' + namespace_i,
-        $select = $('<select/>').addClass(namespace + ' ' + namespace_i);
+        $select = $('<select/>').attr("id", namespace_i).addClass(namespace + ' ' + namespace_i);
 
       if ($nav.is('ul,ol')) {
-      
-        if (settings.header) {
+
+        if (settings.header !== '') {
           $select.append(
-            $('<option/>').text('Navigation')
+            $('<option/>').text(settings.header)
           );
         }
 
         // Build options
         var options = '';
-    
+
         $nav
           .addClass('l_' + namespace_i)
           .find('a')
           .each(function () {
-            var y = abc($(this));
-            var space = "";
-            for (var x=0; x<y; x++)
-              space += "--";
-              
-            options +=
-              '<option value="' + $(this).attr('href') + '">' + space +
-              $(this).text() +
-              '</option>';
+            options += '<option value="' + $(this).attr('href') + '">';
+            var j;
+            for (j = 0; j < $(this).parents('ul, ol').length - 1; j++) {
+              options += '- ';
+            }
+            options += $(this).text() + '</option>';
           });
 
         // Append options into a select
@@ -76,23 +63,22 @@ return count;
         // Inject select
         $(l_namespace_i).after($select);
 
+        // Inject label
+        if (settings.label) {
+          $select.before(
+            $("<label/>")
+              .attr("for", namespace_i)
+              .addClass(namespace + '_label ' + namespace_i + '_label')
+              .append(settings.label)
+          );
+        }
+
       }
 
     });
 
   };
 })(jQuery, this, 0);
-
-// Tinynav
-jQuery(function () {
-
-  // TinyNav.js 1
-  jQuery('#access .menu').tinyNav({
-	active: 'current-menu-item'
-  });
-  
-});
-
 
 
 /*!
@@ -432,6 +418,7 @@ jQuery(function () {
 			if (inst) {
 				onChange = this._get(inst, 'onChange');
 				$("#sbSelector_" + inst.uid).text(text);
+
 			}
 			value = value.replace(/\'/g, "\\'");
 			$(target).find("option[value='" + value + "']").attr("selected", TRUE);
@@ -609,6 +596,11 @@ jQuery(function () {
 	$.selectbox.version = "0.2";
 })(jQuery);
 
+// Responsive Menu (TinyNav)
+jQuery(".menu").tinyNav({
+	'active' : 'current_page_item, current-menu-item', // String: Set the "active" class
+    header: '' // String: Specify text for "header" and show header instead of the active item
+});
 
 // Responsive Menu (Selectbox)
 jQuery(function () {

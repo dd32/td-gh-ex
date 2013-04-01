@@ -60,6 +60,7 @@ function catcheverest_content_nav( $nav_id ) {
 }
 endif; // catcheverest_content_nav
 
+
 if ( ! function_exists( 'catcheverest_comment' ) ) :
 /**
  * Template for comments and pingbacks.
@@ -267,6 +268,7 @@ function catcheverest_categorized_blog() {
 		return false;
 	}
 }
+
 
 /**
  * Flush out the transients used in catcheverest_categorized_blog

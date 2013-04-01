@@ -63,7 +63,8 @@ function catcheverest_scripts() {
 	 */		
 	$catcheverest_ua = strtolower($_SERVER['HTTP_USER_AGENT']);
 	if(preg_match('/(?i)msie [1-8]/',$catcheverest_ua)) {
-	 	wp_enqueue_script( 'html5', get_template_directory_uri() . '/js/html5.js', true );	
+	 	wp_enqueue_script( 'catcheverest-ieltc8', get_template_directory_uri() . '/js/catcheverest-ielte8.min.js', array( 'jquery' ), '20130114', false );	
+		wp_enqueue_style( 'catcheverest-iecss', get_template_directory_uri() . '/css/ie.css' );
 	}
 	
 }
@@ -373,12 +374,13 @@ add_action('wp_head', 'catcheverest_favicon');
 add_action( 'admin_head', 'catcheverest_favicon' );
 
 
+if ( ! function_exists( 'catcheverest_header_left' ) ) :
 /**
  * Shows Header Left content
  *
  * Shows the site logo, title and description
  * @uses catcheverest_header action to add it in the header
- */
+ */ 
 function catcheverest_header_left() { ?>
     
         <div id="header-left">
@@ -401,6 +403,8 @@ function catcheverest_header_left() { ?>
 
 <?php 
 }
+endif; // catcheverest_header_left
+
 add_action( 'catcheverest_hgroup_wrap', 'catcheverest_header_left', 10 );
 
 
@@ -472,6 +476,7 @@ function catcheverest_pass_slider_value() {
 }// catcheverest_pass_slider_value
 
 
+if ( ! function_exists( 'catcheverest_post_sliders' ) ) :
 /**
  * Shows Featued Post Slider
  *
@@ -533,7 +538,8 @@ function catcheverest_post_sliders() {
 	set_transient( 'catcheverest_post_sliders', $catcheverest_post_sliders, 86940 );
 	}
 	echo $catcheverest_post_sliders;	
-} // catcheverest_post_sliders	
+} 
+endif; // catcheverest_post_sliders	
 
 
 /**
@@ -621,6 +627,7 @@ function catcheverest_slider_display() {
 add_action( 'catcheverest_before_main', 'catcheverest_slider_display', 10 );
 
 
+if ( ! function_exists( 'catcheverest_homepage_headline' ) ) :
 /**
  * Shows Homepage Headline Message
  *
@@ -656,7 +663,9 @@ function catcheverest_homepage_headline() {
 		}
 		echo $catcheverest_homepage_headline;	
 	 }
-} // catcheverest_homepage_headline	
+} 
+endif; // catcheverest_homepage_headline	
+
 add_action( 'catcheverest_before_main', 'catcheverest_homepage_headline', 10 );
 
 
@@ -737,6 +746,7 @@ function catcheverest_default_featured_content() {
 }
 
 
+if ( ! function_exists( 'catcheverest_homepage_featured_content' ) ) :
 /**
  * Homepage Featured Content
  *
@@ -761,78 +771,82 @@ function catcheverest_homepage_featured_content() {
 			$catcheverest_homepage_featured_content = '<section id="featured-post">';
 			
 			if ( !empty( $headline ) ) {
-				$catcheverest_homepage_featured_content .= '<h1 class="entry-title">' . $headline .' </h1>';
+				$catcheverest_homepage_featured_content .= '<h1 id="feature-heading" class="entry-title">' . $headline .' </h1>';
 			}
 			
-			for ( $i = 1; $i <= $quantity; $i++ ) {
-				
-
-				if ( !empty ( $options[ 'homepage_featured_base' ][ $i ] ) ) {
-					$target = '_blank';
-				} else {
-					$target = '_self';
-				}
-						
-				//Adding in Classes for Display blok and none
-				if ( $i % 4 == 0  || $i == 1 ) {
-					$classes = "post hentry first"; 
-				} 
-				else { 
-					$classes = "post hentry"; 
-				}
-						
-				//Checking Link
-				if ( !empty ( $options[ 'homepage_featured_url' ][ $i ] ) ) {
-					$link = $options[ 'homepage_featured_url' ][ $i ];
-				} else {
-					$link = '#';
-				}
-				
-				//Checking Title
-				if ( !empty ( $options[ 'homepage_featured_title' ][ $i ] ) ) {
-					$title = $options[ 'homepage_featured_title' ][ $i ];
-				} else {
-					$title = '';
-				}			
-				
-
-				if ( !empty ( $options[ 'homepage_featured_title' ][ $i ] ) || !empty ( $options[ 'homepage_featured_content' ][ $i ] ) || !empty ( $options[ 'homepage_featured_image' ][ $i ] ) ) {
-					$catcheverest_homepage_featured_content .= '
-					<article class="'.$classes.'">';
-						if ( !empty ( $options[ 'homepage_featured_image' ][ $i ] ) ) {
-							$catcheverest_homepage_featured_content .= '
-							<figure class="featured-homepage-image">
-								<a title="'.$title.'" href="'.$link.'" target="'.$target.'">
-									<img src="'.$options[ 'homepage_featured_image' ][ $i ].'" class="wp-post-image" alt="'.$title.'" title="'.$title.'">
-								</a>
-							</figure>';  
-						}
-						if ( !empty ( $options[ 'homepage_featured_title' ][ $i ] ) || !empty ( $options[ 'homepage_featured_content' ][ $i ] ) ) {
-							$catcheverest_homepage_featured_content .= '
-							<div class="entry-container">';
+			$catcheverest_homepage_featured_content .= '<div class="featued-content-wrap">';
+			
+				for ( $i = 1; $i <= $quantity; $i++ ) {
+					
+	
+					if ( !empty ( $options[ 'homepage_featured_base' ][ $i ] ) ) {
+						$target = '_blank';
+					} else {
+						$target = '_self';
+					}
 							
-								if ( !empty ( $options[ 'homepage_featured_title' ][ $i ] ) ) { 
-									$catcheverest_homepage_featured_content .= '
-									<header class="entry-header">
-										<h1 class="entry-title">
-											<a href="'.$link.'" title="'.$title.'" target="'.$target.'">'.$title.'</a>
-										</h1>
-									</header>';
-								}
-								if ( !empty ( $options[ 'homepage_featured_content' ][ $i ] ) ) { 
-									$catcheverest_homepage_featured_content .= '
-									<div class="entry-content">
-										'.$options[ 'homepage_featured_content' ][ $i ] .'
-									</div>';
-								}
-							$catcheverest_homepage_featured_content .= '
-							</div><!-- .entry-container -->';	
-						}
-					$catcheverest_homepage_featured_content .= '			
-					</article><!-- .slides -->'; 	
-																																														  				}
+					//Adding in Classes for Display blok and none
+					if ( $i % 3 == 1  || $i == 1 ) {
+						$classes = "post hentry first"; 
+					} 
+					else { 
+						$classes = "post hentry"; 
+					}
+							
+					//Checking Link
+					if ( !empty ( $options[ 'homepage_featured_url' ][ $i ] ) ) {
+						$link = $options[ 'homepage_featured_url' ][ $i ];
+					} else {
+						$link = '#';
+					}
+					
+					//Checking Title
+					if ( !empty ( $options[ 'homepage_featured_title' ][ $i ] ) ) {
+						$title = $options[ 'homepage_featured_title' ][ $i ];
+					} else {
+						$title = '';
+					}			
+					
+	
+					if ( !empty ( $options[ 'homepage_featured_title' ][ $i ] ) || !empty ( $options[ 'homepage_featured_content' ][ $i ] ) || !empty ( $options[ 'homepage_featured_image' ][ $i ] ) ) {
+						$catcheverest_homepage_featured_content .= '
+						<article class="'.$classes.'">';
+							if ( !empty ( $options[ 'homepage_featured_image' ][ $i ] ) ) {
+								$catcheverest_homepage_featured_content .= '
+								<figure class="featured-homepage-image">
+									<a title="'.$title.'" href="'.$link.'" target="'.$target.'">
+										<img src="'.$options[ 'homepage_featured_image' ][ $i ].'" class="wp-post-image" alt="'.$title.'" title="'.$title.'">
+									</a>
+								</figure>';  
+							}
+							if ( !empty ( $options[ 'homepage_featured_title' ][ $i ] ) || !empty ( $options[ 'homepage_featured_content' ][ $i ] ) ) {
+								$catcheverest_homepage_featured_content .= '
+								<div class="entry-container">';
+								
+									if ( !empty ( $options[ 'homepage_featured_title' ][ $i ] ) ) { 
+										$catcheverest_homepage_featured_content .= '
+										<header class="entry-header">
+											<h1 class="entry-title">
+												<a href="'.$link.'" title="'.$title.'" target="'.$target.'">'.$title.'</a>
+											</h1>
+										</header>';
+									}
+									if ( !empty ( $options[ 'homepage_featured_content' ][ $i ] ) ) { 
+										$catcheverest_homepage_featured_content .= '
+										<div class="entry-content">
+											'.$options[ 'homepage_featured_content' ][ $i ] .'
+										</div>';
+									}
+								$catcheverest_homepage_featured_content .= '
+								</div><!-- .entry-container -->';	
+							}
+						$catcheverest_homepage_featured_content .= '			
+						</article><!-- .slides -->';	
+					}
 			
-			}
+				}
+			
+			$catcheverest_homepage_featured_content .= '</div><!-- .featued-content-wrap -->';
 			
 			$catcheverest_homepage_featured_content .= '</section><!-- #featured-post -->';	
 			
@@ -842,7 +856,8 @@ function catcheverest_homepage_featured_content() {
 		
 	}
  
-} // catcheverest_homepage_featured_content	
+} 
+endif; // catcheverest_homepage_featured_content	
 
 
 /**
@@ -865,7 +880,9 @@ function catcheverest_homepage_featured_display() {
 	}
 	
 } // catcheverest_homepage_featured_content	
+
 add_action( 'catcheverest_main', 'catcheverest_homepage_featured_display', 10 );
+
 
 /**
  * Count the number of footer sidebars to enable dynamic classes for the footer
@@ -948,6 +965,7 @@ function catcheverest_alter_home( $query ){
 add_action( 'pre_get_posts','catcheverest_alter_home' );
 
 
+if ( ! function_exists( 'catcheverest_social_networks' ) ) :
 /**
  * This function for Social Icons
  *
@@ -1101,7 +1119,8 @@ function catcheverest_social_networks() {
 		set_transient( 'catcheverest_social_networks', $catcheverest_social_networks, 86940 );	 
 	}
 	echo $catcheverest_social_networks;
-} // catcheverest_social_networks
+}
+endif; // catcheverest_social_networks
 
 
 /**
@@ -1175,3 +1194,30 @@ function catcheverest_footercode() {
 	echo $catcheverest_footercode;
 }
 add_action('wp_footer', 'catcheverest_footercode');
+
+
+/**
+ * Adds in post ID when viewing lists of posts 
+ * This will help the admin to add the post ID in featured slider
+ * 
+ * @param mixed $post_columns
+ * @return post columns
+ */
+function catcheverest_post_id_column( $post_columns ) {
+	$beginning = array_slice( $post_columns, 0 ,1 );
+	$beginning[ 'postid' ] = __( 'ID', 'catcheverest'  );
+	$ending = array_slice( $post_columns, 1 );
+	$post_columns = array_merge( $beginning, $ending );
+	return $post_columns;
+}
+add_filter( 'manage_posts_columns', 'catcheverest_post_id_column' );
+
+function catcheverest_posts_id_column( $col, $val ) {
+	if( $col == 'postid' ) echo $val;
+}
+add_action( 'manage_posts_custom_column', 'catcheverest_posts_id_column', 10, 2 );
+
+function catcheverest_posts_id_column_css() {
+	echo '<style type="text/css">#postid { width: 40px; }</style>';
+}
+add_action( 'admin_head-edit.php', 'catcheverest_posts_id_column_css' );

@@ -79,6 +79,7 @@ function catcheverest_custom_header_setup() {
 }
 add_action( 'after_setup_theme', 'catcheverest_custom_header_setup' );
 
+
 /**
  * Shiv for get_custom_header().
  *
@@ -104,6 +105,7 @@ if ( ! function_exists( 'get_custom_header' ) ) {
 		);
 	}
 }
+
 
 if ( ! function_exists( 'catcheverest_header_style' ) ) :
 /**
@@ -147,6 +149,7 @@ function catcheverest_header_style() {
 }
 endif; // catcheverest_header_style
 
+
 if ( ! function_exists( 'catcheverest_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
@@ -176,6 +179,7 @@ function catcheverest_admin_header_style() {
 <?php
 }
 endif; // catcheverest_admin_header_style
+
 
 if ( ! function_exists( 'catcheverest_admin_header_image' ) ) :
 /**

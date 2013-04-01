@@ -121,6 +121,10 @@ function catcheverest_theme_options_do_page() {
                         </a>
                     </h2>
                 </div><!-- #theme-option-title -->
+                
+                <div id="upgradepro">
+                	<a class="button" href="<?php echo esc_url(__('http://catchthemes.com/themes/catch-everest-pro/','catcheverest')); ?>" title="<?php esc_attr_e('Upgrade to Catch Everest Pro', 'catcheverest'); ?>" target="_blank"><?php printf(__('Upgrade to Catch Everest Pro','catcheverest')); ?></a>
+               	</div><!-- #upgradepro -->
             
                 <div id="theme-support">
                     <ul>
