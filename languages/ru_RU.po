@@ -4,18 +4,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-18 16:46+0530\n"
-"PO-Revision-Date: 2013-03-18 16:46+0530\n"
+"POT-Creation-Date: 2013-04-01 16:31+0545\n"
+"PO-Revision-Date: 2013-04-01 16:31+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team:  <kurpachev@gmail.com>\n"
+"Language: Russian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: Russian\n"
-"X-Generator: Poedit 1.5.4\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_x;_ex;_n;esc_attr_e;esc_attr__\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_x;_ex;_n;esc_attr_e;"
+"esc_attr__\n"
 "X-Poedit-Basepath: .\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
@@ -32,36 +34,42 @@ msgid "This might be because:"
 msgstr "Это могло произойти, потому что:"
 
 #: ../404.php:16
-msgid "You have typed the web address incorrectly, or the page you were looking for may have been moved, updated or deleted."
-msgstr "Вы напечатали веб-адрес неправильно, или страница, которую Вы искали, возможно, была перемещена, обновлена или удалена."
+msgid ""
+"You have typed the web address incorrectly, or the page you were looking for "
+"may have been moved, updated or deleted."
+msgstr ""
+"Вы напечатали веб-адрес неправильно, или страница, которую Вы искали, "
+"возможно, была перемещена, обновлена или удалена."
 
 #: ../404.php:17
 msgid "Please try the following options instead:"
 msgstr "Пожалуйста, попробуйте следующие варианты вместо этого:"
 
 #: ../404.php:18
-msgid "Check for a mis-typed URL error, then press the refresh button on your browser or Use the search box at the Header."
-msgstr "Проверьте URL на наличие ошибок, затем нажмите кнопку \"Обновить\" своем браузере или используйте окно поиска в шапке."
+msgid ""
+"Check for a mis-typed URL error, then press the refresh button on your "
+"browser or Use the search box at the Header."
+msgstr ""
+"Проверьте URL на наличие ошибок, затем нажмите кнопку \"Обновить\" своем "
+"браузере или используйте окно поиска в шапке."
 
 #: ../comments.php:21
 msgid "This post is password protected. Enter the password to view comments."
-msgstr "Это сообщение защищено паролем. Введите пароль, чтобы увидеть комментарии."
+msgstr ""
+"Это сообщение защищено паролем. Введите пароль, чтобы увидеть комментарии."
 
-#: ../comments.php:29
-#: ../content.php:30
-#: ../image.php:48
+#: ../comments.php:29 ../content.php:30 ../image.php:48
+#: ../functions/simplecatch_functions.php:815
 msgid "No Comments"
 msgstr "Без комментариев"
 
-#: ../comments.php:29
-#: ../content.php:30
-#: ../image.php:48
+#: ../comments.php:29 ../content.php:30 ../image.php:48
+#: ../functions/simplecatch_functions.php:815
 msgid "1 Comment"
 msgstr "1 Комментарий"
 
-#: ../comments.php:29
-#: ../content.php:30
-#: ../image.php:48
+#: ../comments.php:29 ../content.php:30 ../image.php:48
+#: ../functions/simplecatch_functions.php:815
 msgid "% Comments"
 msgstr "% Комментари(я,ев)"
 
@@ -69,24 +77,21 @@ msgstr "% Комментари(я,ев)"
 msgid "Comments are closed."
 msgstr "Комментарии закрыты."
 
-#: ../content.php:18
-#: ../content.php:25
+#: ../content.php:18 ../content.php:25
 #, php-format
 msgid "Permalink to %s"
 msgstr "Постоянная ссылка на %s"
 
-#: ../content.php:28
-#: ../image.php:46
+#: ../content.php:28 ../image.php:46
+#: ../functions/simplecatch_functions.php:813
 msgid "By"
 msgstr "на"
 
-#: ../content.php:54
-#: ../search.php:39
+#: ../content.php:54 ../search.php:39
 msgid "Previous"
 msgstr "Пред."
 
-#: ../content.php:55
-#: ../search.php:40
+#: ../content.php:55 ../search.php:40
 msgid "Next"
 msgstr "След."
 
@@ -95,8 +100,12 @@ msgid "Not found"
 msgstr "Не найдено"
 
 #: ../content.php:65
-msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
-msgstr "Извините, но для запрашиваемого архива, поиск не дал никаких результатов . Возможно, поиск поможет найти связанное сообщение."
+msgid ""
+"Apologies, but no results were found for the requested archive. Perhaps "
+"searching will help find a related post."
+msgstr ""
+"Извините, но для запрашиваемого архива, поиск не дал никаких результатов . "
+"Возможно, поиск поможет найти связанное сообщение."
 
 #: ../footer.php:17
 msgid "Copyright"
@@ -110,8 +119,7 @@ msgstr "Все права защищены."
 msgid "Primary Menu"
 msgstr "Основное меню."
 
-#: ../functions.php:122
-#: ../functions.php:124
+#: ../functions.php:122 ../functions.php:124
 msgid "sidebar"
 msgstr "боковая панель"
 
@@ -131,7 +139,9 @@ msgstr "Показ результатов для: <span class=\"img-title\">%s</
 #: ../search.php:46
 #, php-format
 msgid "Your search <span> \"%s\" </span> did not match any documents"
-msgstr "По вашему поисковому запросу <span> \"%s\" </span> не найдено ни одного документа"
+msgstr ""
+"По вашему поисковому запросу <span> \"%s\" </span> не найдено ни одного "
+"документа"
 
 #: ../search.php:48
 msgid "A few suggestions"
@@ -149,7 +159,7 @@ msgstr "Попробуйте различные ключевые слова"
 msgid "Try more general keywords"
 msgstr "Попробуйте более общие ключевые слова"
 
-#: ../searchform.php:17
+#: ../searchform.php:17 ../functions/simplecatch_functions.php:130
 #, php-format
 msgid "%s"
 msgstr "%s"
@@ -159,149 +169,149 @@ msgstr "%s"
 msgid "Page %s"
 msgstr "Страница %s"
 
-#: ../functions/simplecatch_functions.php:432
+#: ../functions/simplecatch_functions.php:413
 #, php-format
 msgid "%s on Facebook"
 msgstr "%s в Facebook"
 
-#: ../functions/simplecatch_functions.php:437
+#: ../functions/simplecatch_functions.php:418
 #, php-format
 msgid "%s on Twitter"
 msgstr "%s в Twitter"
 
-#: ../functions/simplecatch_functions.php:442
+#: ../functions/simplecatch_functions.php:423
 #, php-format
 msgid "%s on Google+"
 msgstr "%s в Google+"
 
-#: ../functions/simplecatch_functions.php:447
+#: ../functions/simplecatch_functions.php:428
 #, php-format
 msgid "%s on Linkedin"
 msgstr "%s в Linkedin"
 
-#: ../functions/simplecatch_functions.php:452
+#: ../functions/simplecatch_functions.php:433
 #, php-format
 msgid "%s on Pinterest"
 msgstr "%s в Pinterest"
 
-#: ../functions/simplecatch_functions.php:457
+#: ../functions/simplecatch_functions.php:438
 #, php-format
 msgid "%s on YouTube"
 msgstr "%s в Youtube"
 
-#: ../functions/simplecatch_functions.php:462
+#: ../functions/simplecatch_functions.php:443
 #, php-format
 msgid "%s on Vimeo"
 msgstr "%s в Vimeo"
 
-#: ../functions/simplecatch_functions.php:467
+#: ../functions/simplecatch_functions.php:448
 #, php-format
 msgid "%s on Slideshare"
 msgstr "%s в Slideshare"
 
-#: ../functions/simplecatch_functions.php:472
+#: ../functions/simplecatch_functions.php:453
 #, php-format
 msgid "%s on Foursquare"
 msgstr "%s в Foursquare"
 
-#: ../functions/simplecatch_functions.php:477
+#: ../functions/simplecatch_functions.php:458
 #, php-format
 msgid "%s on Flickr"
 msgstr "%s в Flickr"
 
-#: ../functions/simplecatch_functions.php:482
+#: ../functions/simplecatch_functions.php:463
 #, php-format
 msgid "%s on Tumblr"
 msgstr "%s в Tumblr"
 
-#: ../functions/simplecatch_functions.php:487
+#: ../functions/simplecatch_functions.php:468
 #, php-format
 msgid "%s on deviantART"
 msgstr "%s в deviantART"
 
-#: ../functions/simplecatch_functions.php:492
+#: ../functions/simplecatch_functions.php:473
 #, php-format
 msgid "%s on Dribbble"
 msgstr "%s в Dribbble"
 
-#: ../functions/simplecatch_functions.php:497
+#: ../functions/simplecatch_functions.php:478
 #, php-format
 msgid "%s on MySpace"
 msgstr "%s в MySpace"
 
-#: ../functions/simplecatch_functions.php:502
+#: ../functions/simplecatch_functions.php:483
 #, php-format
 msgid "%s on WordPress"
 msgstr "%s в WordPress"
 
-#: ../functions/simplecatch_functions.php:507
+#: ../functions/simplecatch_functions.php:488
 #, php-format
 msgid "%s on RSS"
 msgstr "%s в RSS"
 
-#: ../functions/simplecatch_functions.php:512
+#: ../functions/simplecatch_functions.php:493
 #, php-format
 msgid "%s on Delicious"
 msgstr "%s в Delicious"
 
-#: ../functions/simplecatch_functions.php:517
+#: ../functions/simplecatch_functions.php:498
 #, php-format
 msgid "%s on Last.fm"
 msgstr "%s в Last.fm"
 
-#: ../functions/simplecatch_functions.php:522
+#: ../functions/simplecatch_functions.php:503
 #, php-format
 msgid "%s on Instagram"
 msgstr "%s в Instagram"
 
-#: ../functions/simplecatch_functions.php:675
+#: ../functions/simplecatch_functions.php:656
 msgid "Powered By:"
 msgstr "Работает на:"
 
-#: ../functions/simplecatch_functions.php:675
+#: ../functions/simplecatch_functions.php:656
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: ../functions/simplecatch_functions.php:675
+#: ../functions/simplecatch_functions.php:656
 msgid "Powered By WordPress"
 msgstr "Работатет на WordPress"
 
-#: ../functions/simplecatch_functions.php:675
+#: ../functions/simplecatch_functions.php:656
 #: ../functions/panel/theme_options.php:663
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../functions/simplecatch_functions.php:675
+#: ../functions/simplecatch_functions.php:656
 msgid "Theme:"
 msgstr "Тема:"
 
-#: ../functions/simplecatch_functions.php:675
+#: ../functions/simplecatch_functions.php:656
 #: ../functions/panel/theme_options.php:118
 msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
-#: ../functions/simplecatch_functions.php:675
+#: ../functions/simplecatch_functions.php:656
 msgid "Simple Catch"
 msgstr "Simple Catch"
 
-#: ../functions/simplecatch_functions.php:848
+#: ../functions/simplecatch_functions.php:829
 msgid "Categories: "
 msgstr "Категории:"
 
-#: ../functions/simplecatch_functions.php:910
+#: ../functions/simplecatch_functions.php:891
 msgid "Name"
 msgstr "Имя"
 
-#: ../functions/simplecatch_functions.php:910
-#: ../functions/simplecatch_functions.php:911
+#: ../functions/simplecatch_functions.php:891
+#: ../functions/simplecatch_functions.php:892
 msgid "( required )"
 msgstr "( обязательно )"
 
-#: ../functions/simplecatch_functions.php:911
+#: ../functions/simplecatch_functions.php:892
 msgid "Email"
 msgstr "Email"
 
-#: ../functions/simplecatch_functions.php:912
+#: ../functions/simplecatch_functions.php:893
 msgid "Website"
 msgstr "Веб-сайт"
 
@@ -638,8 +648,12 @@ msgid "Front page posts categories:"
 msgstr "Категории на Главной странице:"
 
 #: ../functions/panel/theme_options.php:422
-msgid "Only posts that belong to the categories selected here will be displayed on the front page."
-msgstr "Только те сообщения, которые относятся к категориям, выбранным здесь будут отображаться на Главной странице."
+msgid ""
+"Only posts that belong to the categories selected here will be displayed on "
+"the front page."
+msgstr ""
+"Только те сообщения, которые относятся к категориям, выбранным здесь будут "
+"отображаться на Главной странице."
 
 #: ../functions/panel/theme_options.php:427
 msgid "--Disabled--"
@@ -702,8 +716,11 @@ msgid "Click Here To Edit"
 msgstr "Нажмите для редактирования"
 
 #: ../functions/panel/theme_options.php:530
-msgid "Note: Here You can put your Post IDs which displays on Homepage as slider."
-msgstr "Примечание: Здесь Вы можете добавить ID своих сообщений, которые будут выводиться на Домашнюю страницу в виде слайдера."
+msgid ""
+"Note: Here You can put your Post IDs which displays on Homepage as slider."
+msgstr ""
+"Примечание: Здесь Вы можете добавить ID своих сообщений, которые будут "
+"выводиться на Домашнюю страницу в виде слайдера."
 
 #: ../functions/panel/theme_options.php:537
 msgid "Slider Effect Options"
@@ -875,16 +892,24 @@ msgid "Code to display on Header"
 msgstr "Код для отображения в шапке сайта"
 
 #: ../functions/panel/theme_options.php:733
-msgid "Note: Here you can put scripts from Google, Facebook etc. which will load on Header"
-msgstr "Примечание: Здесь вы можете добавить скрипты от Google, Facebook и т.п., которые будут загружаться в шапке сайта"
+msgid ""
+"Note: Here you can put scripts from Google, Facebook etc. which will load on "
+"Header"
+msgstr ""
+"Примечание: Здесь вы можете добавить скрипты от Google, Facebook и т.п., "
+"которые будут загружаться в шапке сайта"
 
 #: ../functions/panel/theme_options.php:736
 msgid "Code to display on Footer"
 msgstr "Код для отображения в нижнем колонтитуле"
 
 #: ../functions/panel/theme_options.php:743
-msgid "Note: Here you can put scripts from Google, Facebook, Add This etc. which will load on footer"
-msgstr "Примечание: Здесь вы можете добавить скрипты от Google, Facebook, Add This и т.п., которые будут загружаться в нижнем колонтитуле"
+msgid ""
+"Note: Here you can put scripts from Google, Facebook, Add This etc. which "
+"will load on footer"
+msgstr ""
+"Примечание: Здесь вы можете добавить скрипты от Google, Facebook, Add This и "
+"т.п., которые будут загружаться в нижнем колонтитуле"
 
 #~ msgid "Slider Options"
 #~ msgstr "Настройки слайдера"

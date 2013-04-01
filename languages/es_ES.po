@@ -4,19 +4,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-18 16:38+0530\n"
-"PO-Revision-Date: 2013-03-18 16:38+0530\n"
+"POT-Creation-Date: 2013-04-01 16:30+0545\n"
+"PO-Revision-Date: 2013-04-01 16:30+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Operaciones Formales D&P <info@ofdp.com>\n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e;_x;_ex;_n;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Poedit-Language: Spanish\n"
-"X-Poedit-Country: SPAIN\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.5\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:13
@@ -32,36 +32,43 @@ msgid "This might be because:"
 msgstr "Esto podría deberse a que:"
 
 #: ../404.php:16
-msgid "You have typed the web address incorrectly, or the page you were looking for may have been moved, updated or deleted."
-msgstr "Ha escrito incorrectamente la dirección web o la página que estabas buscando puede haber sido movido, actualizados o borrados."
+msgid ""
+"You have typed the web address incorrectly, or the page you were looking for "
+"may have been moved, updated or deleted."
+msgstr ""
+"Ha escrito incorrectamente la dirección web o la página que estabas buscando "
+"puede haber sido movido, actualizados o borrados."
 
 #: ../404.php:17
 msgid "Please try the following options instead:"
 msgstr "Por favor, intente las siguientes opciones en su lugar:"
 
 #: ../404.php:18
-msgid "Check for a mis-typed URL error, then press the refresh button on your browser or Use the search box at the Header."
-msgstr "Compruebe si hay un error URL mal escrita, a continuación, pulse el botón Actualizar de su navegador o utilizar el cuadro de búsqueda en el encabezado."
+msgid ""
+"Check for a mis-typed URL error, then press the refresh button on your "
+"browser or Use the search box at the Header."
+msgstr ""
+"Compruebe si hay un error URL mal escrita, a continuación, pulse el botón "
+"Actualizar de su navegador o utilizar el cuadro de búsqueda en el encabezado."
 
 #: ../comments.php:21
 msgid "This post is password protected. Enter the password to view comments."
-msgstr "Esta entrada está protegida. Introduzca la contraseña para ver los comentarios."
+msgstr ""
+"Esta entrada está protegida. Introduzca la contraseña para ver los "
+"comentarios."
 
-#: ../comments.php:29
-#: ../content.php:30
-#: ../image.php:48
+#: ../comments.php:29 ../content.php:30 ../image.php:48
+#: ../functions/simplecatch_functions.php:815
 msgid "No Comments"
 msgstr "Sin comentarios"
 
-#: ../comments.php:29
-#: ../content.php:30
-#: ../image.php:48
+#: ../comments.php:29 ../content.php:30 ../image.php:48
+#: ../functions/simplecatch_functions.php:815
 msgid "1 Comment"
 msgstr "1 comentario"
 
-#: ../comments.php:29
-#: ../content.php:30
-#: ../image.php:48
+#: ../comments.php:29 ../content.php:30 ../image.php:48
+#: ../functions/simplecatch_functions.php:815
 msgid "% Comments"
 msgstr "% comentarios"
 
@@ -69,24 +76,21 @@ msgstr "% comentarios"
 msgid "Comments are closed."
 msgstr "Los comentarios están cerrados."
 
-#: ../content.php:18
-#: ../content.php:25
+#: ../content.php:18 ../content.php:25
 #, php-format
 msgid "Permalink to %s"
 msgstr "Enlace permanente a %s"
 
-#: ../content.php:28
-#: ../image.php:46
+#: ../content.php:28 ../image.php:46
+#: ../functions/simplecatch_functions.php:813
 msgid "By"
 msgstr "De"
 
-#: ../content.php:54
-#: ../search.php:39
+#: ../content.php:54 ../search.php:39
 msgid "Previous"
 msgstr "Anterior"
 
-#: ../content.php:55
-#: ../search.php:40
+#: ../content.php:55 ../search.php:40
 msgid "Next"
 msgstr "Próximo"
 
@@ -95,8 +99,13 @@ msgid "Not found"
 msgstr "No se ha encontrado"
 
 #: ../content.php:65
-msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
-msgstr "Mis disculpas, pero no hemos encontrado resultados para el archivo solicitado. Tal vez la búsqueda le ayudará a encontrar una entrada relacionada."
+msgid ""
+"Apologies, but no results were found for the requested archive. Perhaps "
+"searching will help find a related post."
+msgstr ""
+"Mis disculpas, pero no hemos encontrado resultados para el archivo "
+"solicitado. Tal vez la búsqueda le ayudará a encontrar una entrada "
+"relacionada."
 
 #: ../footer.php:17
 msgid "Copyright"
@@ -110,8 +119,7 @@ msgstr "Todos los derechos reservados."
 msgid "Primary Menu"
 msgstr "Menú Principal"
 
-#: ../functions.php:122
-#: ../functions.php:124
+#: ../functions.php:122 ../functions.php:124
 msgid "sidebar"
 msgstr "barra lateral"
 
@@ -149,7 +157,7 @@ msgstr "Intenta usar otras palabras"
 msgid "Try more general keywords"
 msgstr "Intenta usar palabras más generales"
 
-#: ../searchform.php:17
+#: ../searchform.php:17 ../functions/simplecatch_functions.php:130
 #, php-format
 msgid "%s"
 msgstr "%s"
@@ -159,149 +167,149 @@ msgstr "%s"
 msgid "Page %s"
 msgstr "Página %s"
 
-#: ../functions/simplecatch_functions.php:432
+#: ../functions/simplecatch_functions.php:413
 #, php-format
 msgid "%s on Facebook"
 msgstr "%s en Facebook"
 
-#: ../functions/simplecatch_functions.php:437
+#: ../functions/simplecatch_functions.php:418
 #, php-format
 msgid "%s on Twitter"
 msgstr "%s en Twitter"
 
-#: ../functions/simplecatch_functions.php:442
+#: ../functions/simplecatch_functions.php:423
 #, php-format
 msgid "%s on Google+"
 msgstr "%s en Google+"
 
-#: ../functions/simplecatch_functions.php:447
+#: ../functions/simplecatch_functions.php:428
 #, php-format
 msgid "%s on Linkedin"
 msgstr "%s en Linkedin"
 
-#: ../functions/simplecatch_functions.php:452
+#: ../functions/simplecatch_functions.php:433
 #, php-format
 msgid "%s on Pinterest"
 msgstr "%s en Pinterest"
 
-#: ../functions/simplecatch_functions.php:457
+#: ../functions/simplecatch_functions.php:438
 #, php-format
 msgid "%s on YouTube"
 msgstr "%s en YouTube"
 
-#: ../functions/simplecatch_functions.php:462
+#: ../functions/simplecatch_functions.php:443
 #, php-format
 msgid "%s on Vimeo"
 msgstr "%s en Vimeo"
 
-#: ../functions/simplecatch_functions.php:467
+#: ../functions/simplecatch_functions.php:448
 #, php-format
 msgid "%s on Slideshare"
 msgstr "%s en Slideshare"
 
-#: ../functions/simplecatch_functions.php:472
+#: ../functions/simplecatch_functions.php:453
 #, php-format
 msgid "%s on Foursquare"
 msgstr "%s en Foursquare"
 
-#: ../functions/simplecatch_functions.php:477
+#: ../functions/simplecatch_functions.php:458
 #, php-format
 msgid "%s on Flickr"
 msgstr "%s en Flickr"
 
-#: ../functions/simplecatch_functions.php:482
+#: ../functions/simplecatch_functions.php:463
 #, php-format
 msgid "%s on Tumblr"
 msgstr "%s en Tumblr"
 
-#: ../functions/simplecatch_functions.php:487
+#: ../functions/simplecatch_functions.php:468
 #, php-format
 msgid "%s on deviantART"
 msgstr "%s en deviantART"
 
-#: ../functions/simplecatch_functions.php:492
+#: ../functions/simplecatch_functions.php:473
 #, php-format
 msgid "%s on Dribbble"
 msgstr "%s en Dribbble"
 
-#: ../functions/simplecatch_functions.php:497
+#: ../functions/simplecatch_functions.php:478
 #, php-format
 msgid "%s on MySpace"
 msgstr "%s en MySpace"
 
-#: ../functions/simplecatch_functions.php:502
+#: ../functions/simplecatch_functions.php:483
 #, php-format
 msgid "%s on WordPress"
 msgstr "%s en WordPress"
 
-#: ../functions/simplecatch_functions.php:507
+#: ../functions/simplecatch_functions.php:488
 #, php-format
 msgid "%s on RSS"
 msgstr "%s en RSS"
 
-#: ../functions/simplecatch_functions.php:512
+#: ../functions/simplecatch_functions.php:493
 #, php-format
 msgid "%s on Delicious"
 msgstr "%s en Delicious"
 
-#: ../functions/simplecatch_functions.php:517
+#: ../functions/simplecatch_functions.php:498
 #, php-format
 msgid "%s on Last.fm"
 msgstr "%s en Last.fm"
 
-#: ../functions/simplecatch_functions.php:522
+#: ../functions/simplecatch_functions.php:503
 #, php-format
 msgid "%s on Instagram"
 msgstr "%s en Instagram"
 
-#: ../functions/simplecatch_functions.php:675
+#: ../functions/simplecatch_functions.php:656
 msgid "Powered By:"
 msgstr "Desarrollado por:"
 
-#: ../functions/simplecatch_functions.php:675
+#: ../functions/simplecatch_functions.php:656
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: ../functions/simplecatch_functions.php:675
+#: ../functions/simplecatch_functions.php:656
 msgid "Powered By WordPress"
 msgstr "Desarrollado por WordPress"
 
-#: ../functions/simplecatch_functions.php:675
+#: ../functions/simplecatch_functions.php:656
 #: ../functions/panel/theme_options.php:663
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../functions/simplecatch_functions.php:675
+#: ../functions/simplecatch_functions.php:656
 msgid "Theme:"
 msgstr "Tema:"
 
-#: ../functions/simplecatch_functions.php:675
+#: ../functions/simplecatch_functions.php:656
 #: ../functions/panel/theme_options.php:118
 msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
-#: ../functions/simplecatch_functions.php:675
+#: ../functions/simplecatch_functions.php:656
 msgid "Simple Catch"
 msgstr "Simple Catch"
 
-#: ../functions/simplecatch_functions.php:848
+#: ../functions/simplecatch_functions.php:829
 msgid "Categories: "
 msgstr "Categorías:"
 
-#: ../functions/simplecatch_functions.php:910
+#: ../functions/simplecatch_functions.php:891
 msgid "Name"
 msgstr "Nombre"
 
-#: ../functions/simplecatch_functions.php:910
-#: ../functions/simplecatch_functions.php:911
+#: ../functions/simplecatch_functions.php:891
+#: ../functions/simplecatch_functions.php:892
 msgid "( required )"
 msgstr "(requerido)"
 
-#: ../functions/simplecatch_functions.php:911
+#: ../functions/simplecatch_functions.php:892
 msgid "Email"
 msgstr "Correo Electrónico"
 
-#: ../functions/simplecatch_functions.php:912
+#: ../functions/simplecatch_functions.php:893
 msgid "Website"
 msgstr "Página web"
 
@@ -638,8 +646,12 @@ msgid "Front page posts categories:"
 msgstr "Categorías en primera página:"
 
 #: ../functions/panel/theme_options.php:422
-msgid "Only posts that belong to the categories selected here will be displayed on the front page."
-msgstr "Sólo los mensajes que pertenecen a las categorías seleccionadas se mostrará en la página principal."
+msgid ""
+"Only posts that belong to the categories selected here will be displayed on "
+"the front page."
+msgstr ""
+"Sólo los mensajes que pertenecen a las categorías seleccionadas se mostrará "
+"en la página principal."
 
 #: ../functions/panel/theme_options.php:427
 msgid "--Disabled--"
@@ -702,8 +714,11 @@ msgid "Click Here To Edit"
 msgstr "Haga clic aquí para editar"
 
 #: ../functions/panel/theme_options.php:530
-msgid "Note: Here You can put your Post IDs which displays on Homepage as slider."
-msgstr "Nota: Aquí puede poner sus ID de mensaje que se muestran en la página principal como deslizante."
+msgid ""
+"Note: Here You can put your Post IDs which displays on Homepage as slider."
+msgstr ""
+"Nota: Aquí puede poner sus ID de mensaje que se muestran en la página "
+"principal como deslizante."
 
 #: ../functions/panel/theme_options.php:537
 msgid "Slider Effect Options"
@@ -875,14 +890,21 @@ msgid "Code to display on Header"
 msgstr "Código para mostrar en Cabecera"
 
 #: ../functions/panel/theme_options.php:733
-msgid "Note: Here you can put scripts from Google, Facebook etc. which will load on Header"
-msgstr "Nota: Aquí pueden poner scripts de Google, Facebook, etc, que se cargan en Cabecera"
+msgid ""
+"Note: Here you can put scripts from Google, Facebook etc. which will load on "
+"Header"
+msgstr ""
+"Nota: Aquí pueden poner scripts de Google, Facebook, etc, que se cargan en "
+"Cabecera"
 
 #: ../functions/panel/theme_options.php:736
 msgid "Code to display on Footer"
 msgstr "Código para mostrar en pie de página"
 
 #: ../functions/panel/theme_options.php:743
-msgid "Note: Here you can put scripts from Google, Facebook, Add This etc. which will load on footer"
-msgstr "Nota: Aquí pueden poner scripts de Google, Facebook, etc, que se cargan a pie de página."
-
+msgid ""
+"Note: Here you can put scripts from Google, Facebook, Add This etc. which "
+"will load on footer"
+msgstr ""
+"Nota: Aquí pueden poner scripts de Google, Facebook, etc, que se cargan a "
+"pie de página."

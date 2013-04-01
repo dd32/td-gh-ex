@@ -18,6 +18,7 @@ Added Translation for Greek by Dimitris Antonakis (dimantonak@gmail.com)
 Added Translation for Croatian by Sanjin Barac (rapid24income@gmail.com)
 Added Translation for Chinese by yiranboke ( yiranboke@hotmail.com )
 Added Translation for Spanish by Jorge Lorente ( chaguanco@ofdp.com )
+Added Translation for German by Manuel Salmann ( manuel.salmann@gmail.com )
 
 == Features ==  
 Featured Image Slider, Custom Drop-down Menu, Theme Options, Custom Widgets, flexible position of sidebar and Support for popular plugins.
@@ -272,3 +273,7 @@ Version 2.3
 Version 2.3.1
 * Fixed the grammatical in Social Icons title tags
 * Fixed Search Form Title not changing as per Theme Options
+
+Version 2.3.2
+* Removed simplecatch_sort_query_by_post_in function as post orderby is already implement in WordPress Version 3.5 by default
+* Added German translation de_DE.po and de_DE.mo

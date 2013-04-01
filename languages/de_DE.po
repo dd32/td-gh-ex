@@ -7,8 +7,8 @@ msgstr ""
 "POT-Creation-Date: 2013-04-01 16:31+0545\n"
 "PO-Revision-Date: 2013-04-01 16:31+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
-"Language-Team: Thomas Gerard <beldin2000@gmail.com>\n"
-"Language: nl_NL\n"
+"Language-Team: \n"
+"Language: German\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,90 +21,90 @@ msgstr ""
 
 #: ../404.php:13
 msgid "Error 404 - Page Not Found."
-msgstr "Error 404 - Pagina niet gevonden."
+msgstr "Fehler 404 - Seite nicht gefunden."
 
 #: ../404.php:14
 msgid "We&rsquo;re sorry! This page is not available."
-msgstr "Het spijt ons! Deze pagina is niet beschikbaar."
+msgstr "Entschuldigung! Diese Seite ist nicht verfügbar."
 
 #: ../404.php:15
 msgid "This might be because:"
-msgstr "Mogelijke oorzaken zijn:"
+msgstr "Der Grund hierfür könnte sein:"
 
 #: ../404.php:16
 msgid ""
 "You have typed the web address incorrectly, or the page you were looking for "
 "may have been moved, updated or deleted."
 msgstr ""
-"Je hebt het webadres verkeerd getypt, ofwel is de pagina waarnaar je op zoek "
-"bent verplaatst, bijgewerkt of verwijderd."
+"Du hast eine falsche URL eingegeben oder die Seite wurde verschoben, "
+"erneuert oder gelöscht."
 
 #: ../404.php:17
 msgid "Please try the following options instead:"
-msgstr "Probeer de volgende zaken:"
+msgstr "Bitte versuche stattdessen Folgendes:"
 
 #: ../404.php:18
 msgid ""
 "Check for a mis-typed URL error, then press the refresh button on your "
 "browser or Use the search box at the Header."
 msgstr ""
-"Controleer de URL op typfouten, corrigeer deze en duw op enter; je kan ook "
-"gebruikmaken van de zoekfunctie in de hoofding."
+"Überprüfe die URL auf Tippfehler, dann klicke auf den Aktualisieren-Button "
+"deines Browsers oder benutze die Suchfunktion oben."
 
 #: ../comments.php:21
 msgid "This post is password protected. Enter the password to view comments."
 msgstr ""
-"Dit bericht is beveiligd met een paswoord. Vul het paswoord in om reacties "
-"te zien."
+"Dieser Beitrag ist passwortgeschützt. Gib das Passwort ein um Kommentare zu "
+"sehen."
 
 #: ../comments.php:29 ../content.php:30 ../image.php:48
 #: ../functions/simplecatch_functions.php:815
 msgid "No Comments"
-msgstr "Geen reacties"
+msgstr "Keine Kommentare"
 
 #: ../comments.php:29 ../content.php:30 ../image.php:48
 #: ../functions/simplecatch_functions.php:815
 msgid "1 Comment"
-msgstr "Eén reactie"
+msgstr "1 Kommentar"
 
 #: ../comments.php:29 ../content.php:30 ../image.php:48
 #: ../functions/simplecatch_functions.php:815
 msgid "% Comments"
-msgstr "% reacties"
+msgstr "% Kommentare"
 
 #: ../comments.php:60
 msgid "Comments are closed."
-msgstr "Reacties zijn afgesloten."
+msgstr "Kommentare sind deaktiviert."
 
 #: ../content.php:18 ../content.php:25
 #, php-format
 msgid "Permalink to %s"
-msgstr "Permalink naar %s"
+msgstr "Permalink zu %s"
 
 #: ../content.php:28 ../image.php:46
 #: ../functions/simplecatch_functions.php:813
 msgid "By"
-msgstr "Door"
+msgstr "Von"
 
 #: ../content.php:54 ../search.php:39
 msgid "Previous"
-msgstr "Vorige"
+msgstr "Vorherige Beiträge"
 
 #: ../content.php:55 ../search.php:40
 msgid "Next"
-msgstr "Volgende"
+msgstr "Spätere Beiträge"
 
 #: ../content.php:64
 msgid "Not found"
-msgstr "Niet gevonden"
+msgstr "Nicht gefunden"
 
 #: ../content.php:65
 msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
 "searching will help find a related post."
 msgstr ""
-"Onze excuses, maar er werden geen resultaten gevonden. Misschien kan de "
-"zoekfunctie een gerelateerde post helpen vinden."
+"Entschuldigung, für das gewünschte Archiv wurde nichts gefunden. Vielleicht "
+"findest du einen entsprechenden Beitrag über die Suchfunktion."
 
 #: ../footer.php:17
 msgid "Copyright"
@@ -112,49 +112,49 @@ msgstr "Copyright"
 
 #: ../footer.php:17
 msgid "All Rights Reserved."
-msgstr "Alle rechten voorbehouden."
+msgstr "Alle Rechte vorbehalten."
 
 #: ../functions.php:92
 msgid "Primary Menu"
-msgstr "Hoofmenu"
+msgstr "Hauptmenü"
 
 #: ../functions.php:122 ../functions.php:124
 msgid "sidebar"
-msgstr "zijbalk"
+msgstr "Seitenleiste"
 
 #: ../image.php:106
 msgid "Previous Image"
-msgstr "Vorige afbeelding"
+msgstr "Vorheriges Bild"
 
 #: ../image.php:107
 msgid "Next Image"
-msgstr "Volgende afbeelding"
+msgstr "Nächstes Bild"
 
 #: ../search.php:17
 #, php-format
 msgid "Showing results for: <span class=\"img-title\">%s</span>"
-msgstr "Dit zijn de resultaten voor <span class=\"img-title\">%s</span>"
+msgstr "Suchergebnisse für: <span class=\"img-title\">%s</span>"
 
 #: ../search.php:46
 #, php-format
 msgid "Your search <span> \"%s\" </span> did not match any documents"
-msgstr "Er zijn geen items gevonden voor uw zoekopdracht <span> \"%s\" </span>"
+msgstr "Keine Suchergebnisse für: <span> \"%s\" </span>"
 
 #: ../search.php:48
 msgid "A few suggestions"
-msgstr "Een paar suggesties"
+msgstr "Einige Vorschläge"
 
 #: ../search.php:50
 msgid "Make sure all words are spelled correctly"
-msgstr "Zorg dat alle woorden correct gespeld zijn"
+msgstr "Überprüfe die Rechtschreibung aller Begriffe"
 
 #: ../search.php:51
 msgid "Try different keywords"
-msgstr "Probeer andere zoektermen"
+msgstr "Versuche es mit unterschiedlichen Begriffen"
 
 #: ../search.php:52
 msgid "Try more general keywords"
-msgstr "Probeer meer algemene zoektermen"
+msgstr "Versuche es mit generelleren Begriffen"
 
 #: ../searchform.php:17 ../functions/simplecatch_functions.php:130
 #, php-format
@@ -164,106 +164,106 @@ msgstr "%s"
 #: ../functions/simplecatch_functions.php:100
 #, php-format
 msgid "Page %s"
-msgstr "Pagina %s"
+msgstr "Seite %s"
 
 #: ../functions/simplecatch_functions.php:413
 #, php-format
 msgid "%s on Facebook"
-msgstr "%s on Facebook"
+msgstr "%s auf Facebook"
 
 #: ../functions/simplecatch_functions.php:418
 #, php-format
 msgid "%s on Twitter"
-msgstr "%s on Twitter"
+msgstr "%s bei Twitter"
 
 #: ../functions/simplecatch_functions.php:423
 #, php-format
 msgid "%s on Google+"
-msgstr "%s on Google+"
+msgstr "%s auf Google+"
 
 #: ../functions/simplecatch_functions.php:428
 #, php-format
 msgid "%s on Linkedin"
-msgstr "%s on Linkedin"
+msgstr "%s bei Linkedin"
 
 #: ../functions/simplecatch_functions.php:433
 #, php-format
 msgid "%s on Pinterest"
-msgstr "%s on Pinterest"
+msgstr "%s bei Pinterest"
 
 #: ../functions/simplecatch_functions.php:438
 #, php-format
 msgid "%s on YouTube"
-msgstr "%s on YouTube"
+msgstr "%s auf YouTube"
 
 #: ../functions/simplecatch_functions.php:443
 #, php-format
 msgid "%s on Vimeo"
-msgstr "%s on Vimeo"
+msgstr "%s auf Vimeo"
 
 #: ../functions/simplecatch_functions.php:448
 #, php-format
 msgid "%s on Slideshare"
-msgstr "%s on Slideshare"
+msgstr "%s bei Slideshare"
 
 #: ../functions/simplecatch_functions.php:453
 #, php-format
 msgid "%s on Foursquare"
-msgstr "%s on Foursquare"
+msgstr "%s bei Foursquare"
 
 #: ../functions/simplecatch_functions.php:458
 #, php-format
 msgid "%s on Flickr"
-msgstr "%s on Flickr"
+msgstr "%s auf Flickr"
 
 #: ../functions/simplecatch_functions.php:463
 #, php-format
 msgid "%s on Tumblr"
-msgstr "%s on Tumblr"
+msgstr "%s auf Tumblr"
 
 #: ../functions/simplecatch_functions.php:468
 #, php-format
 msgid "%s on deviantART"
-msgstr "%s on deviantART"
+msgstr "%s bei deviantART"
 
 #: ../functions/simplecatch_functions.php:473
 #, php-format
 msgid "%s on Dribbble"
-msgstr "%s on Dribbble"
+msgstr "%s bei Dribbble"
 
 #: ../functions/simplecatch_functions.php:478
 #, php-format
 msgid "%s on MySpace"
-msgstr "%s on MySpace"
+msgstr "%s bei MySpace"
 
 #: ../functions/simplecatch_functions.php:483
 #, php-format
 msgid "%s on WordPress"
-msgstr "%s on WordPress"
+msgstr "%s bei WordPress"
 
 #: ../functions/simplecatch_functions.php:488
 #, php-format
 msgid "%s on RSS"
-msgstr "%s on RSS"
+msgstr "%s per RSS"
 
 #: ../functions/simplecatch_functions.php:493
 #, php-format
 msgid "%s on Delicious"
-msgstr "%s on Delicious"
+msgstr "%s bei Delicious"
 
 #: ../functions/simplecatch_functions.php:498
 #, php-format
 msgid "%s on Last.fm"
-msgstr "%s on Last.fm"
+msgstr "%s bei Last.fm"
 
 #: ../functions/simplecatch_functions.php:503
 #, php-format
 msgid "%s on Instagram"
-msgstr "%s on Instagram"
+msgstr "%s bei Instagram"
 
 #: ../functions/simplecatch_functions.php:656
 msgid "Powered By:"
-msgstr "Met de hulp van: "
+msgstr "Powered by:"
 
 #: ../functions/simplecatch_functions.php:656
 msgid "http://wordpress.org/"
@@ -271,7 +271,7 @@ msgstr "http://wordpress.org/"
 
 #: ../functions/simplecatch_functions.php:656
 msgid "Powered By WordPress"
-msgstr "Met dank aan Wordpress"
+msgstr "Powered by WordPress"
 
 #: ../functions/simplecatch_functions.php:656
 #: ../functions/panel/theme_options.php:663
@@ -280,7 +280,7 @@ msgstr "WordPress"
 
 #: ../functions/simplecatch_functions.php:656
 msgid "Theme:"
-msgstr "Thema:"
+msgstr "Theme:"
 
 #: ../functions/simplecatch_functions.php:656
 #: ../functions/panel/theme_options.php:118
@@ -293,20 +293,20 @@ msgstr "Simple Catch"
 
 #: ../functions/simplecatch_functions.php:829
 msgid "Categories: "
-msgstr "Categorieën: "
+msgstr "Kategorien:"
 
 #: ../functions/simplecatch_functions.php:891
 msgid "Name"
-msgstr "Naam"
+msgstr "Name"
 
 #: ../functions/simplecatch_functions.php:891
 #: ../functions/simplecatch_functions.php:892
 msgid "( required )"
-msgstr "nodig"
+msgstr "( Pflicht )"
 
 #: ../functions/simplecatch_functions.php:892
 msgid "Email"
-msgstr "E-mail"
+msgstr "E-Mail"
 
 #: ../functions/simplecatch_functions.php:893
 msgid "Website"
@@ -315,32 +315,32 @@ msgstr "Website"
 #: ../functions/simplecatch_metabox.php:14
 #: ../functions/simplecatch_metabox.php:20
 msgid "Select Sidebar layout"
-msgstr "Selecteer de layout voor de zijbalk"
+msgstr "Wähle das Seitenleisten-Layout"
 
 #: ../functions/simplecatch_metabox.php:33
 msgid "Default Layout Set in"
-msgstr "Standaard layoutweergave in"
+msgstr "Standard Layout Set in"
 
 #: ../functions/simplecatch_metabox.php:33
 #: ../functions/panel/theme_options.php:143
 msgid "Theme Settings"
-msgstr "Thema-instellingen"
+msgstr "Theme Einstellungen"
 
 #: ../functions/simplecatch_metabox.php:39
 msgid "No sidebar"
-msgstr "Geen zijbalk"
+msgstr "Keine Seitenleiste"
 
 #: ../functions/simplecatch_metabox.php:45
 msgid "Left sidebar"
-msgstr "Linkerzijbalk"
+msgstr "Seitenleiste Links"
 
 #: ../functions/simplecatch_metabox.php:51
 msgid "Right sidebar"
-msgstr "Rechterzijbalk"
+msgstr "Seitenleiste Rechts"
 
 #: ../functions/widgets.php:18
 msgid "Displays Custom Tag Cloud designed for Simple Catch Theme."
-msgstr "Displays Custom Tag Cloud designed for Simple Catch Theme."
+msgstr "Zeit eine spezielle Tag Cloud für das Simple Catch Theme an."
 
 #: ../functions/widgets.php:19
 msgid "Simple Catch Tag Clouds"
@@ -348,7 +348,7 @@ msgstr "Simple Catch Tag Clouds"
 
 #: ../functions/widgets.php:101
 msgid "Displays Social Icons added from Theme Options Panel."
-msgstr "Displays Social Icons added from Theme Options Panel."
+msgstr "Zeigt Social Icons die unter Theme Optionen aktiviert wurden."
 
 #: ../functions/widgets.php:102
 msgid "Simple Catch Social Icons"
@@ -357,11 +357,11 @@ msgstr "Simple Catch Social Icons"
 #: ../functions/panel/theme_options.php:39
 #: ../functions/panel/theme_options.php:40
 msgid "Theme Options"
-msgstr "Thema opties"
+msgstr "Theme Optionen"
 
 #: ../functions/panel/theme_options.php:101
 msgid "Options Saved"
-msgstr "Options Saved"
+msgstr "Optionen gespeichert"
 
 #: ../functions/panel/theme_options.php:108
 msgid "http://facebook.com/catchthemes"
@@ -373,12 +373,12 @@ msgstr "https://twitter.com/catchthemes"
 
 #: ../functions/panel/theme_options.php:116
 msgid "Theme Options By"
-msgstr "Theme Options By"
+msgstr "Theme Optionen von"
 
 #: ../functions/panel/theme_options.php:118
 #: ../functions/panel/theme_options.php:119
 msgid "Catch Themes"
-msgstr "Catch thema's"
+msgstr "Catch Themes"
 
 #: ../functions/panel/theme_options.php:124
 msgid "http://catchthemes.com/themes/simple-catch-pro/"
@@ -386,7 +386,7 @@ msgstr "http://catchthemes.com/themes/simple-catch-pro/"
 
 #: ../functions/panel/theme_options.php:124
 msgid "Upgrade to Simple Catch Pro"
-msgstr "Upgrade naar Simple Catch Pro"
+msgstr "Upgrade auf Simple Catch Pro"
 
 #: ../functions/panel/theme_options.php:129
 msgid "http://catchthemes.com/support-forum/forum/simple-catch-public/"
@@ -402,7 +402,7 @@ msgstr "http://catchthemes.com/theme-instructions/simple-catch/"
 
 #: ../functions/panel/theme_options.php:130
 msgid "Theme Instruction"
-msgstr "Theme Instruction"
+msgstr "Theme Anleitung"
 
 #: ../functions/panel/theme_options.php:131
 msgid "https://www.facebook.com/catchthemes/"
@@ -423,7 +423,7 @@ msgstr "https://twitter.com/catchthemes/"
 
 #: ../functions/panel/theme_options.php:132
 msgid "Follow Catch Themes on Twitter"
-msgstr "Follow Catch Themes on Twitter"
+msgstr "Folge Catch Themes auf Twitter"
 
 #: ../functions/panel/theme_options.php:132
 #: ../functions/panel/theme_options.php:597
@@ -436,15 +436,15 @@ msgstr "http://wordpress.org/support/view/theme-reviews/simple-catch"
 
 #: ../functions/panel/theme_options.php:133
 msgid "Rate us 5 Star on WordPress"
-msgstr "Rate us 5 Star on WordPress"
+msgstr "Gib uns 5 Sterne auf WordPress"
 
 #: ../functions/panel/theme_options.php:133
 msgid "5 Star Rating"
-msgstr "5 Star Rating"
+msgstr "5-Sterne-Bewertung"
 
 #: ../functions/panel/theme_options.php:142
 msgid "Design Settings"
-msgstr "Ontwerpinstellingen"
+msgstr "Design Einstellungen"
 
 #: ../functions/panel/theme_options.php:144
 msgid "Featured Post Slider"
@@ -452,66 +452,66 @@ msgstr "Featured Post Slider"
 
 #: ../functions/panel/theme_options.php:145
 msgid "Social Links"
-msgstr "Links naar sociale netwerksites"
+msgstr "Social Links"
 
 #: ../functions/panel/theme_options.php:146
 msgid "Webmaster Tools"
-msgstr "Webmaster tools"
+msgstr "Webmaster Werkzeuge"
 
 #: ../functions/panel/theme_options.php:152
 msgid "Logo Options"
-msgstr "Logo-opties"
+msgstr "Logo Optionen"
 
 #: ../functions/panel/theme_options.php:157
 msgid "Header logo url:"
-msgstr "URL van het logo in de hoofding:"
+msgstr "Header logo url:"
 
 #: ../functions/panel/theme_options.php:161
 msgid "Change Logo"
-msgstr "Change Logo"
+msgstr "Logo ändern"
 
 #: ../functions/panel/theme_options.php:164
 msgid "Upload Logo"
-msgstr "Upload Logo"
+msgstr "Logo hochladen"
 
 #: ../functions/panel/theme_options.php:171
 msgid "Preview:"
-msgstr "Voorbeeld:"
+msgstr "Vorschau:"
 
 #: ../functions/panel/theme_options.php:177
 msgid "No Header Image Found. Upload Header Image."
-msgstr "No Header Image Found. Upload Header Image."
+msgstr "Kein Header-Bild gefunden. Header-Bild hochladen."
 
 #: ../functions/panel/theme_options.php:184
 msgid "Disable Site Title?"
-msgstr "Disable Site Title?"
+msgstr "Seitentitel deaktivieren?"
 
 #: ../functions/panel/theme_options.php:186
 #: ../functions/panel/theme_options.php:191
 #: ../functions/panel/theme_options.php:219
 msgid "Check to Disable."
-msgstr "Check to Disable."
+msgstr "Anhaken zum Deaktivieren."
 
 #: ../functions/panel/theme_options.php:189
 msgid "Disable Site Description?"
-msgstr "Disable Site Description?"
+msgstr "Website-Beschreibung deaktivieren?"
 
 #: ../functions/panel/theme_options.php:194
 msgid "Footer logo url: "
-msgstr "URL van het logo in de voettekst:"
+msgstr "Footer logo url: "
 
 #: ../functions/panel/theme_options.php:201
 msgid "Change Footer Logo"
-msgstr "Verander het logo in de voettekst"
+msgstr "Footer Logo ändern"
 
 #: ../functions/panel/theme_options.php:205
 #: ../functions/panel/theme_options.php:246
 msgid "Preview: "
-msgstr "Voorbeeld:"
+msgstr "Vorschau:"
 
 #: ../functions/panel/theme_options.php:217
 msgid "Disable Footer Logo?"
-msgstr "Disable Footer Logo?"
+msgstr "Footer Logo deaktivieren?"
 
 #: ../functions/panel/theme_options.php:223
 #: ../functions/panel/theme_options.php:260
@@ -528,11 +528,11 @@ msgstr "Disable Footer Logo?"
 #: ../functions/panel/theme_options.php:717
 #: ../functions/panel/theme_options.php:747
 msgid "Save"
-msgstr "Bewaar"
+msgstr "Sichern"
 
 #: ../functions/panel/theme_options.php:228
 msgid "Fav Icon Options"
-msgstr "Fav Icon opties"
+msgstr "Fav Icon Optionen"
 
 #: ../functions/panel/theme_options.php:233
 msgid "Favicon URL:"
@@ -540,72 +540,72 @@ msgstr "Favicon URL:"
 
 #: ../functions/panel/theme_options.php:236
 msgid "Change Favicon"
-msgstr "Change Favicon"
+msgstr "Favicon ändern"
 
 #: ../functions/panel/theme_options.php:239
 msgid "Upload Favicon"
-msgstr "Upload Favicon"
+msgstr "Favicon hochladen"
 
 #: ../functions/panel/theme_options.php:252
 msgid "No Favicon Found. Upload Favicon."
-msgstr "No Favicon Found. Upload Favicon."
+msgstr "Kein Favicon gefunden. Favicon hochladen."
 
 #: ../functions/panel/theme_options.php:265
 msgid "Content Background"
-msgstr "Achtergrond van de inhoud"
+msgstr "Hintergrund für Inhalt"
 
 #: ../functions/panel/theme_options.php:267
 msgid "Need to replace default background?"
-msgstr "Wens je de standaard achtergrond te wijzigen?"
+msgstr "Den Standard-Hintergrund ändern?"
 
 #: ../functions/panel/theme_options.php:267
 #, php-format
 msgid "<a class=\"button\" href=\"%s\">Click here</a>"
-msgstr "<a class=\"button\" href=\"%s\">Klik hier</a>"
+msgstr "<a class=\"button\" href=\"%s\">Hier klicken</a>"
 
 #: ../functions/panel/theme_options.php:273
 msgid "Content Color Options"
-msgstr "Kleurmogelijkheden van de inhoud"
+msgstr "Inhalt Farb-Optionen"
 
 #: ../functions/panel/theme_options.php:280
 msgid "Heading Color:"
-msgstr "Kleur van de hoofding:"
+msgstr "Heading Farbe:"
 
 #: ../functions/panel/theme_options.php:291
 msgid "Meta Description Color:"
-msgstr "Kleur van de meta-omschrijving:"
+msgstr "Meta Beschreibung Farbe:"
 
 #: ../functions/panel/theme_options.php:302
 msgid "Text Color:"
-msgstr "Tekstkleur:"
+msgstr "Text Farbe:"
 
 #: ../functions/panel/theme_options.php:313
 msgid "Link Color:"
-msgstr "Linkkleur:"
+msgstr "Link Farbe:"
 
 #: ../functions/panel/theme_options.php:324
 msgid "Sidebar Widget Heading Color:"
-msgstr "Kleur van de hoofding van een widget in de zijbalk:"
+msgstr "Seitenleiste Widget Heading Farbe:"
 
 #: ../functions/panel/theme_options.php:335
 msgid "Sidebar Widget Text Color:"
-msgstr "Tekstkleur van een widget in de zijbalk:"
+msgstr "Seitenleiste Widget Text Farbe:"
 
 #: ../functions/panel/theme_options.php:345
 msgid "Reset Color:"
-msgstr "Kleuren resetten:"
+msgstr "Farben zurücksetzen:"
 
 #: ../functions/panel/theme_options.php:359
 msgid "Custom CSS"
-msgstr "Aangepaste CSS"
+msgstr "Eigenes CSS"
 
 #: ../functions/panel/theme_options.php:364
 msgid "Enter your custom CSS styles."
-msgstr "Vul hier je eigen CSS stijlen in."
+msgstr "Gib deine eigenen CSS-Stile ein."
 
 #: ../functions/panel/theme_options.php:371
 msgid "CSS Tutorial from W3Schools."
-msgstr "CSS handleiding op W3Schools."
+msgstr "CSS Tutorial from W3Schools."
 
 #: ../functions/panel/theme_options.php:373
 msgid "http://www.w3schools.com/css/default.asp"
@@ -613,185 +613,186 @@ msgstr "http://www.w3schools.com/css/default.asp"
 
 #: ../functions/panel/theme_options.php:373
 msgid "CSS Tutorial"
-msgstr "CSS handleiding"
+msgstr "CSS Tutorial"
 
 #: ../functions/panel/theme_options.php:373
 msgid "Click Here to Read"
-msgstr "Lees deze hier"
+msgstr "Hier klicken zum Lesen"
 
 #: ../functions/panel/theme_options.php:383
 #: ../functions/panel/theme_options.php:388
 msgid "Default Layout"
-msgstr "Standaard layout"
+msgstr "Standard-Layout"
 
 #: ../functions/panel/theme_options.php:392
 msgid "No Sidebar, One Column"
-msgstr "No Sidebar, One Column"
+msgstr "Keine Seitenleiste, eine Spalte"
 
 #: ../functions/panel/theme_options.php:396
 msgid "Content on Right"
-msgstr "Content on Right"
+msgstr "Inhalt rechts"
 
 #: ../functions/panel/theme_options.php:400
 msgid "Content on Left"
-msgstr "Kleurmogelijkheden van de inhoud"
+msgstr "Inhalt links"
 
 #: ../functions/panel/theme_options.php:414
 msgid "Homepage / Frontpage Category Setting"
-msgstr "Categorie-instelling van de homepagina/startpagina"
+msgstr "Homepage / Startseite Kategorie Einstellung"
 
 #: ../functions/panel/theme_options.php:420
 msgid "Front page posts categories:"
-msgstr "Berichtcategorieën op de homepagina:"
+msgstr "Kategorien für Beiträge auf der Startseite:"
 
 #: ../functions/panel/theme_options.php:422
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on "
 "the front page."
 msgstr ""
-"Enkel berichten die tot de geselecteerde categorieën behoren, zullen worden "
-"weergegeven op de homepagina."
+"Nur Beiträge, die zu den gewählten Kategorien gehören, werden auf der "
+"Startseite angezeigt."
 
 #: ../functions/panel/theme_options.php:427
 msgid "--Disabled--"
-msgstr "--Uitgeschakeld--"
+msgstr "--Deaktiviert––"
 
 #: ../functions/panel/theme_options.php:438
 msgid "You may select multiple categories by holding down the CTRL key."
 msgstr ""
-"Je kan meerdere categorieën selecteren door de CTRL-knop ingedrukt te houden."
+"Du kannst mehrere Kategorien auswählen, indem du CTRL bzw. CMD gedrückt "
+"hältst."
 
 #: ../functions/panel/theme_options.php:448
 msgid "Search Text Settings"
-msgstr "Zoekinstellingen"
+msgstr "Suchfeld Einstellungen"
 
 #: ../functions/panel/theme_options.php:453
 msgid "Default Display Text in Search"
-msgstr "Standaard weer te geven tekst in de zoekfunctie"
+msgstr "Standard-Text der im Suchfeld angezeigt wird"
 
 #: ../functions/panel/theme_options.php:458
 msgid "Search Button's text"
-msgstr "Tekst van de zoekknop"
+msgstr "Text auf dem Suchen-Button"
 
 #: ../functions/panel/theme_options.php:469
 msgid "Excerpt / More Tag Settings"
-msgstr "Uitgelichte tekst / \"Lees meer\" instellingen"
+msgstr "Excerpt / More Tag Einstellungen"
 
 #: ../functions/panel/theme_options.php:474
 msgid "More Tag Text"
-msgstr "Tekst weer te geven als \"Lees meer\""
+msgstr "Weiterlesen Tag Text"
 
 #: ../functions/panel/theme_options.php:479
 msgid "Excerpt length(words)"
-msgstr "Lengte van de uitgelichte tekst (in aantal woorden)"
+msgstr "Länge des Excerpts (Wörter)"
 
 #: ../functions/panel/theme_options.php:489
 msgid "Feed Redirect"
-msgstr "Feed redirect"
+msgstr "Feed Weiterleitung"
 
 #: ../functions/panel/theme_options.php:494
 msgid "Feed Redirect URL"
-msgstr "URL voor de redirect feed"
+msgstr "Feed Weiterleitung URL"
 
 #: ../functions/panel/theme_options.php:507
 msgid "Add Slider Options"
-msgstr "Opties voor tekstglijder"
+msgstr "Slider hinzufügen Optionen"
 
 #: ../functions/panel/theme_options.php:511
 msgid "Exclude Slider post from Home page posts:"
-msgstr "Bericht in glijder niet meer weergeven op de homepagina:"
+msgstr "Slider Beiträge von Startseiten-Beiträgen ausnehmen:"
 
 #: ../functions/panel/theme_options.php:516
 msgid "Number of Slides"
-msgstr "Aantal slides"
+msgstr "Zahl der Slides"
 
 #: ../functions/panel/theme_options.php:522
 msgid "Featured Slider Post #"
-msgstr "Uitgelichte tekst #"
+msgstr "Featured Slider Post #"
 
 #: ../functions/panel/theme_options.php:524
 msgid "Click Here To Edit"
-msgstr "Klik hier om naar de berichten te gaan"
+msgstr "Hier klicken zum Bearbeiten"
 
 #: ../functions/panel/theme_options.php:530
 msgid ""
 "Note: Here You can put your Post IDs which displays on Homepage as slider."
 msgstr ""
-"Tip: vul hier het berichtID in van de tekst die je wenst te gebruiken in de "
-"glijder."
+"Hinweis: Hier kannst du die IDs für die Beiträge eintragen, die im Slider "
+"auf der Startseite angezeigt werden sollen."
 
 #: ../functions/panel/theme_options.php:537
 msgid "Slider Effect Options"
-msgstr "Glijder effectmogelijkheden"
+msgstr "Slider Effekte Optionen"
 
 #: ../functions/panel/theme_options.php:541
 msgid "Disable Slider Background Effect:"
-msgstr "Verberg het achtergrondeffect van de glijder:"
+msgstr "Slider Hintergrund Effekt deaktivieren:"
 
 #: ../functions/panel/theme_options.php:548
 msgid "Transition Effect:"
-msgstr "Overgangseffect:"
+msgstr "Übergang Effekt:"
 
 #: ../functions/panel/theme_options.php:552
 msgid "fade"
-msgstr "vervagen"
+msgstr "fade"
 
 #: ../functions/panel/theme_options.php:553
 msgid "wipe"
-msgstr "vegen"
+msgstr "wipe"
 
 #: ../functions/panel/theme_options.php:554
 msgid "scrollUp"
-msgstr "naar boven"
+msgstr "scrollUp"
 
 #: ../functions/panel/theme_options.php:555
 msgid "scrollDown"
-msgstr "naar beneden"
+msgstr "scrollDown"
 
 #: ../functions/panel/theme_options.php:556
 msgid "scrollLeft"
-msgstr "naar links"
+msgstr "scrollLeft"
 
 #: ../functions/panel/theme_options.php:557
 msgid "scrollRight"
-msgstr "naar rechts"
+msgstr "scrollRight"
 
 #: ../functions/panel/theme_options.php:558
 msgid "blindX"
-msgstr "lamellenX"
+msgstr "blindX"
 
 #: ../functions/panel/theme_options.php:559
 msgid "blindY"
-msgstr "lamellenY"
+msgstr "blindY"
 
 #: ../functions/panel/theme_options.php:560
 msgid "blindZ"
-msgstr "lamellenZ"
+msgstr "blindZ"
 
 #: ../functions/panel/theme_options.php:561
 msgid "cover"
-msgstr "bedekken"
+msgstr "cover"
 
 #: ../functions/panel/theme_options.php:562
 msgid "shuffle"
-msgstr "schudden"
+msgstr "shuffle"
 
 #: ../functions/panel/theme_options.php:567
 msgid "Transition Delay"
-msgstr "Overgangsvertraging"
+msgstr "Zeit bis zum Übergang"
 
 #: ../functions/panel/theme_options.php:570
 #: ../functions/panel/theme_options.php:577
 msgid "second(s)"
-msgstr "second(en)"
+msgstr "Sekunde(n)"
 
 #: ../functions/panel/theme_options.php:574
 msgid "Transition Length"
-msgstr "Duur van een overgang"
+msgstr "Dauer des Übergangs"
 
 #: ../functions/panel/theme_options.php:602
 msgid "Google+"
-msgstr "Google"
+msgstr "Google+"
 
 #: ../functions/panel/theme_options.php:607
 msgid "Pinterest"
@@ -855,93 +856,56 @@ msgstr "Instagram"
 
 #: ../functions/panel/theme_options.php:694
 msgid "Site Verification"
-msgstr "Website verificatie"
+msgstr "Site Verification"
 
 #: ../functions/panel/theme_options.php:699
 msgid "Google Site Verification ID"
-msgstr "Google Site verificatie-ID"
+msgstr "Google Site Verification ID"
 
 #: ../functions/panel/theme_options.php:700
 msgid "Enter your Google ID number only"
-msgstr "Vul hier (alleen) uw Google ID nummer in"
+msgstr "Gib nur deine Google ID Nummer ein"
 
 #: ../functions/panel/theme_options.php:705
 msgid "Yahoo Site Verification ID"
-msgstr "Yahoo Site verificatie-ID"
+msgstr "Yahoo Site Verification ID"
 
 #: ../functions/panel/theme_options.php:706
 msgid "Enter your Yahoo ID number only"
-msgstr "Vul hier (alleen) uwYahoo-nummer in"
+msgstr "Gib nur deine Yahoo ID Nummer ein"
 
 #: ../functions/panel/theme_options.php:711
 msgid "Bing Site Verification ID"
-msgstr "Bing site verificatie-ID"
+msgstr "Bing Site Verification ID"
 
 #: ../functions/panel/theme_options.php:712
 msgid "Enter your Bing ID number only"
-msgstr "Vul hier (alleen) uwYahoo-nummer in"
+msgstr "Gib nur deine Bing ID Nummer ein"
 
 #: ../functions/panel/theme_options.php:722
 msgid "Analytics/ Header / Footer Codes"
-msgstr "Analytics/ Header / Footer Codes"
+msgstr "Analytics / Header / Footer Codes"
 
 #: ../functions/panel/theme_options.php:727
 msgid "Code to display on Header"
-msgstr "Code weergegeven in de hoofding"
+msgstr "Code, der im Header eingefügt werden soll"
 
 #: ../functions/panel/theme_options.php:733
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
 msgstr ""
-"Tip: hier kan je scripts van Google, Facebook etc gaan invullen, die dan "
-"zullen geladen worden in de hoofding"
+"Hinweis: Hier kannst du Skripte von Google, Facebook etc. einfügen, die im "
+"Header geladen werden"
 
 #: ../functions/panel/theme_options.php:736
 msgid "Code to display on Footer"
-msgstr "Code weergegeven in de voettekst"
+msgstr "Code, der im Footer eingefügt werden soll"
 
 #: ../functions/panel/theme_options.php:743
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"
 msgstr ""
-"Tip: hier kan je scripts van Google, Facebook etc gaan invullen, die dan "
-"zullen geladen worden in de voettekst"
-
-#~ msgid "Slider Options"
-#~ msgstr "Glijderopties"
-
-#~ msgid "Disable Header Logo:"
-#~ msgstr "Geen logo in de hoofding:"
-
-#~ msgid "Featured Slider Options"
-#~ msgstr "Instellingen tekstglijder"
-
-#~ msgid "Social Links Option"
-#~ msgstr "Links sociale sites"
-
-#~ msgid "Webmaster Tools Option"
-#~ msgstr "Instellingen webmaster tools"
-
-#~ msgid "Analytics"
-#~ msgstr "Analytics"
-
-#~ msgid ""
-#~ "Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy "
-#~ "Customizethrough Theme Options and Custom Widgets. Features: Custom Menu, "
-#~ "Custom Widgets, "
-#~ msgstr ""
-#~ "Simple Catch is een eenvoudige en handige template voor Wordpress, vlot "
-#~ "aanpasbaar dankzij de verschillende thema-opties en widgets. "
-#~ "Mogelijkheden: aanpasbaar menu, widgets,"
-
-#~ msgid ""
-#~ "black, gray, silver, white, light, one-column, two-columns, left-sidebar, "
-#~ "right-sidebar, fixed-width, custom-menu, featured-images, full-width-"
-#~ "template, theme-options, threaded-comments, translation-ready"
-#~ msgstr ""
-#~ "zwart, grijs, zilver, wit, licht, enkele kolom, twee kolommen, linker "
-#~ "zijbalk, rechter zijbalk, vaste breedte, eigen menu mogelijk, uitgelichte "
-#~ "afbeeldingen, een template op volledige breedte, thema-opties, reacties "
-#~ "in threads, vertaald"
+"Hinweis: Hier kannst du Skripte von Google, Facebook, Add This etc. "
+"einfügen, die im Footer geladen werden."

@@ -4,19 +4,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-18 16:47+0530\n"
-"PO-Revision-Date: 2013-03-18 16:47+0530\n"
+"POT-Creation-Date: 2013-04-01 16:31+0545\n"
+"PO-Revision-Date: 2013-04-01 16:31+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Catch Themes <info@catchinternet.com>\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en\n"
 "X-Poedit-KeywordsList: __;_e;_x;_ex;_n;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.5.5\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:13
@@ -32,7 +32,9 @@ msgid "This might be because:"
 msgstr "这或许是因为"
 
 #: ../404.php:16
-msgid "You have typed the web address incorrectly, or the page you were looking for may have been moved, updated or deleted."
+msgid ""
+"You have typed the web address incorrectly, or the page you were looking for "
+"may have been moved, updated or deleted."
 msgstr "你输入的网址错误，或者你找的页面已经被移动，升级或者删除。"
 
 #: ../404.php:17
@@ -40,28 +42,27 @@ msgid "Please try the following options instead:"
 msgstr "建议"
 
 #: ../404.php:18
-msgid "Check for a mis-typed URL error, then press the refresh button on your browser or Use the search box at the Header."
+msgid ""
+"Check for a mis-typed URL error, then press the refresh button on your "
+"browser or Use the search box at the Header."
 msgstr "检查URL是否正确，然后刷新或者使用顶部搜索框。"
 
 #: ../comments.php:21
 msgid "This post is password protected. Enter the password to view comments."
 msgstr "本文受密码保护。请输入密码以查看评论"
 
-#: ../comments.php:29
-#: ../content.php:30
-#: ../image.php:48
+#: ../comments.php:29 ../content.php:30 ../image.php:48
+#: ../functions/simplecatch_functions.php:815
 msgid "No Comments"
 msgstr "暂无评论"
 
-#: ../comments.php:29
-#: ../content.php:30
-#: ../image.php:48
+#: ../comments.php:29 ../content.php:30 ../image.php:48
+#: ../functions/simplecatch_functions.php:815
 msgid "1 Comment"
 msgstr "1条评论"
 
-#: ../comments.php:29
-#: ../content.php:30
-#: ../image.php:48
+#: ../comments.php:29 ../content.php:30 ../image.php:48
+#: ../functions/simplecatch_functions.php:815
 msgid "% Comments"
 msgstr "% 条评论"
 
@@ -69,24 +70,21 @@ msgstr "% 条评论"
 msgid "Comments are closed."
 msgstr "评论被关闭"
 
-#: ../content.php:18
-#: ../content.php:25
+#: ../content.php:18 ../content.php:25
 #, php-format
 msgid "Permalink to %s"
 msgstr "固定链接到 %s"
 
-#: ../content.php:28
-#: ../image.php:46
+#: ../content.php:28 ../image.php:46
+#: ../functions/simplecatch_functions.php:813
 msgid "By"
 msgstr "作者"
 
-#: ../content.php:54
-#: ../search.php:39
+#: ../content.php:54 ../search.php:39
 msgid "Previous"
 msgstr "上一页"
 
-#: ../content.php:55
-#: ../search.php:40
+#: ../content.php:55 ../search.php:40
 msgid "Next"
 msgstr "下一页"
 
@@ -95,7 +93,9 @@ msgid "Not found"
 msgstr "找不到"
 
 #: ../content.php:65
-msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
+msgid ""
+"Apologies, but no results were found for the requested archive. Perhaps "
+"searching will help find a related post."
 msgstr "对不起，找不到你想找的归档文章。或许，你可以在最近文章中搜索一下。"
 
 #: ../footer.php:17
@@ -110,8 +110,7 @@ msgstr "All Rights Reserved."
 msgid "Primary Menu"
 msgstr "一级菜单"
 
-#: ../functions.php:122
-#: ../functions.php:124
+#: ../functions.php:122 ../functions.php:124
 msgid "sidebar"
 msgstr "工具栏"
 
@@ -149,7 +148,7 @@ msgstr "尝试不同的关键词"
 msgid "Try more general keywords"
 msgstr "尝试更普遍的关键词"
 
-#: ../searchform.php:17
+#: ../searchform.php:17 ../functions/simplecatch_functions.php:130
 #, php-format
 msgid "%s"
 msgstr "%s"
@@ -159,149 +158,149 @@ msgstr "%s"
 msgid "Page %s"
 msgstr "第%s页"
 
-#: ../functions/simplecatch_functions.php:432
+#: ../functions/simplecatch_functions.php:413
 #, php-format
 msgid "%s on Facebook"
 msgstr "%s on Facebook"
 
-#: ../functions/simplecatch_functions.php:437
+#: ../functions/simplecatch_functions.php:418
 #, php-format
 msgid "%s on Twitter"
 msgstr "%s on Twitter"
 
-#: ../functions/simplecatch_functions.php:442
+#: ../functions/simplecatch_functions.php:423
 #, php-format
 msgid "%s on Google+"
 msgstr "%s on Google+"
 
-#: ../functions/simplecatch_functions.php:447
+#: ../functions/simplecatch_functions.php:428
 #, php-format
 msgid "%s on Linkedin"
 msgstr "%s on Linkedin"
 
-#: ../functions/simplecatch_functions.php:452
+#: ../functions/simplecatch_functions.php:433
 #, php-format
 msgid "%s on Pinterest"
 msgstr "%s on Pinterest"
 
-#: ../functions/simplecatch_functions.php:457
+#: ../functions/simplecatch_functions.php:438
 #, php-format
 msgid "%s on YouTube"
 msgstr "%s on YouTube"
 
-#: ../functions/simplecatch_functions.php:462
+#: ../functions/simplecatch_functions.php:443
 #, php-format
 msgid "%s on Vimeo"
 msgstr "%s on Vimeo"
 
-#: ../functions/simplecatch_functions.php:467
+#: ../functions/simplecatch_functions.php:448
 #, php-format
 msgid "%s on Slideshare"
 msgstr "%s on Slideshare"
 
-#: ../functions/simplecatch_functions.php:472
+#: ../functions/simplecatch_functions.php:453
 #, php-format
 msgid "%s on Foursquare"
 msgstr "%s on Foursquare"
 
-#: ../functions/simplecatch_functions.php:477
+#: ../functions/simplecatch_functions.php:458
 #, php-format
 msgid "%s on Flickr"
 msgstr "%s on Flickr"
 
-#: ../functions/simplecatch_functions.php:482
+#: ../functions/simplecatch_functions.php:463
 #, php-format
 msgid "%s on Tumblr"
 msgstr "%s on Tumblr"
 
-#: ../functions/simplecatch_functions.php:487
+#: ../functions/simplecatch_functions.php:468
 #, php-format
 msgid "%s on deviantART"
 msgstr "%s on deviantART"
 
-#: ../functions/simplecatch_functions.php:492
+#: ../functions/simplecatch_functions.php:473
 #, php-format
 msgid "%s on Dribbble"
 msgstr "%s on Dribbble"
 
-#: ../functions/simplecatch_functions.php:497
+#: ../functions/simplecatch_functions.php:478
 #, php-format
 msgid "%s on MySpace"
 msgstr "%s on MySpace"
 
-#: ../functions/simplecatch_functions.php:502
+#: ../functions/simplecatch_functions.php:483
 #, php-format
 msgid "%s on WordPress"
 msgstr "%s on WordPress"
 
-#: ../functions/simplecatch_functions.php:507
+#: ../functions/simplecatch_functions.php:488
 #, php-format
 msgid "%s on RSS"
 msgstr "%s on RSS"
 
-#: ../functions/simplecatch_functions.php:512
+#: ../functions/simplecatch_functions.php:493
 #, php-format
 msgid "%s on Delicious"
 msgstr "%s on Delicious"
 
-#: ../functions/simplecatch_functions.php:517
+#: ../functions/simplecatch_functions.php:498
 #, php-format
 msgid "%s on Last.fm"
 msgstr "%s on Last.fm"
 
-#: ../functions/simplecatch_functions.php:522
+#: ../functions/simplecatch_functions.php:503
 #, php-format
 msgid "%s on Instagram"
 msgstr "%s on Instagram"
 
-#: ../functions/simplecatch_functions.php:675
+#: ../functions/simplecatch_functions.php:656
 msgid "Powered By:"
 msgstr "Powered By:"
 
-#: ../functions/simplecatch_functions.php:675
+#: ../functions/simplecatch_functions.php:656
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: ../functions/simplecatch_functions.php:675
+#: ../functions/simplecatch_functions.php:656
 msgid "Powered By WordPress"
 msgstr "Powered By WordPress"
 
-#: ../functions/simplecatch_functions.php:675
+#: ../functions/simplecatch_functions.php:656
 #: ../functions/panel/theme_options.php:663
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../functions/simplecatch_functions.php:675
+#: ../functions/simplecatch_functions.php:656
 msgid "Theme:"
 msgstr "主题："
 
-#: ../functions/simplecatch_functions.php:675
+#: ../functions/simplecatch_functions.php:656
 #: ../functions/panel/theme_options.php:118
 msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
-#: ../functions/simplecatch_functions.php:675
+#: ../functions/simplecatch_functions.php:656
 msgid "Simple Catch"
 msgstr "Simple Catch"
 
-#: ../functions/simplecatch_functions.php:848
+#: ../functions/simplecatch_functions.php:829
 msgid "Categories: "
 msgstr "分类"
 
-#: ../functions/simplecatch_functions.php:910
+#: ../functions/simplecatch_functions.php:891
 msgid "Name"
 msgstr "名称"
 
-#: ../functions/simplecatch_functions.php:910
-#: ../functions/simplecatch_functions.php:911
+#: ../functions/simplecatch_functions.php:891
+#: ../functions/simplecatch_functions.php:892
 msgid "( required )"
 msgstr "( 必要的 )"
 
-#: ../functions/simplecatch_functions.php:911
+#: ../functions/simplecatch_functions.php:892
 msgid "Email"
 msgstr "Email"
 
-#: ../functions/simplecatch_functions.php:912
+#: ../functions/simplecatch_functions.php:893
 msgid "Website"
 msgstr "网址"
 
@@ -638,7 +637,9 @@ msgid "Front page posts categories:"
 msgstr "首页文章分类"
 
 #: ../functions/panel/theme_options.php:422
-msgid "Only posts that belong to the categories selected here will be displayed on the front page."
+msgid ""
+"Only posts that belong to the categories selected here will be displayed on "
+"the front page."
 msgstr "只有属于以下被选择的分类的文章才会在首页显示。"
 
 #: ../functions/panel/theme_options.php:427
@@ -702,7 +703,8 @@ msgid "Click Here To Edit"
 msgstr "点击这里编辑"
 
 #: ../functions/panel/theme_options.php:530
-msgid "Note: Here You can put your Post IDs which displays on Homepage as slider."
+msgid ""
+"Note: Here You can put your Post IDs which displays on Homepage as slider."
 msgstr "注意：请输入你想显示在首页幻灯片上的文章的ID。"
 
 #: ../functions/panel/theme_options.php:537
@@ -875,7 +877,9 @@ msgid "Code to display on Header"
 msgstr "显示在顶部代码"
 
 #: ../functions/panel/theme_options.php:733
-msgid "Note: Here you can put scripts from Google, Facebook etc. which will load on Header"
+msgid ""
+"Note: Here you can put scripts from Google, Facebook etc. which will load on "
+"Header"
 msgstr "注意：你能够将Google,Facebook等script放到这里，其将会载入到Header"
 
 #: ../functions/panel/theme_options.php:736
@@ -883,6 +887,7 @@ msgid "Code to display on Footer"
 msgstr "显示在底部代码"
 
 #: ../functions/panel/theme_options.php:743
-msgid "Note: Here you can put scripts from Google, Facebook, Add This etc. which will load on footer"
+msgid ""
+"Note: Here you can put scripts from Google, Facebook, Add This etc. which "
+"will load on footer"
 msgstr "注意：你能够将Google,Facebook等script放到这里，其将会载入到footer"
-

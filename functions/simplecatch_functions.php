@@ -155,25 +155,6 @@ function simplecatch_custom_excerpt( $output ) {
 add_filter( 'get_the_excerpt', 'simplecatch_custom_excerpt' );
 
 
-/** 
- * Allows post queries to sort the results by the order specified in the post__in parameter. 
- * Just set the orderby parameter to post__in
- *
- * uses action filter posts_orderby
- */
-if ( !function_exists('simplecatch_sort_query_by_post_in') ) : //simple WordPress 3.0+ version, now across VIP
-
-	add_filter('posts_orderby', 'simplecatch_sort_query_by_post_in', 10, 2);
-	
-	function simplecatch_sort_query_by_post_in($sortby, $thequery) {
-		if ( isset($thequery->query['post__in']) && !empty($thequery->query['post__in']) && isset($thequery->query['orderby']) && $thequery->query['orderby'] == 'post__in' )
-			$sortby = "find_in_set(ID, '" . implode( ',', $thequery->query['post__in'] ) . "')";
-		return $sortby;
-	}
-
-endif;
-
-
 /**
  * Get the header logo Image from theme options
  *
