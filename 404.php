@@ -1,11 +1,33 @@
-<?php 
-/** Remove Default Taxonomy Title */
-remove_action( 'chip_life_content', 'chip_life_taxonomy_title_init' );
-/** Remove Default Loop */
-remove_action( 'chip_life_content', 'chip_life_loop_init' );
-/** Chip Life 404 Page */
-add_action( 'chip_life_content', 'chip_life_404_init' );
+<?php get_header();	?>
 
-/** Chip Life Framework */
-do_action( 'chip_life' );
-?>
+<?php get_template_part( 'loop-meta' ); ?>
+  
+<div class="container_16 clearfix">
+  
+  <div class="grid_10">
+    <div id="content">	  
+	  
+	  <div id="post-0" class="post-0 post type-post error404 not-found">
+      
+        <div class="entry-content">
+    
+          <p><?php printf( __( "Just kidding! You tried going to %s, which doesn't exist, so that means I probably broke something.", 'chiplife' ), '<code>' . esc_url( home_url( $_SERVER['REQUEST_URI'] ) ) . '</code>' ); ?></p>
+          
+          <p><?php _e( "The following is a list of the latest posts from the blog. Maybe it will help you find what you're looking for.", 'chiplife' ); ?></p>
+    
+          <ul>
+            <?php wp_get_archives( array( 'limit' => 20, 'type' => 'postbypost' ) ); ?>
+          </ul>                   
+    
+        </div>
+    
+      </div>
+    
+    </div>
+  </div>
+  
+  <?php get_sidebar(); ?>
+
+</div>
+  
+<?php get_footer(); ?>

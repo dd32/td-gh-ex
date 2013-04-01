@@ -1,50 +1,48 @@
-= Chip Life Setup Guide =
+=== Chiplife ===
 
-For a detailed Chip Life Documentation, Tutorials and FAQs, Please visit the Chip Life Guide.
-- http://www.tutorialchip.com/chip-life-guide-book/
-- You can also access these tutorials via Chip Life Reference in the WordPress Admin Panel.
+Contributors: Life.Object
+Tags: white, light, two-columns, right-sidebar, fixed-width, custom-background, custom-header, custom-menu, featured-images, flexible-header, sticky-post, theme-options, threaded-comments, translation-ready
+Requires at least: 3.5
+Tested up to: 3.5.1
 
-= Chip Life Framework =
-Here are useful links about Chip Life Framework.
+== IMPORTANT NOTE ==
 
-- Chip Life Official Page: http://www.tutorialchip.com/chip-life/
-- Chip Life Support Forum: http://forums.tutorialchip.com/forums/6-Chip-Life
-- Chip Life Demo: http://chip-life.tutorialchip.com/
+Chip Life 1.5 is a major update so i will strongly recommend to backup the old version of Chip Life before testing the new one.
+Several new features have been added and many of old one are obsolete now.
+Code Architecture and Design of Chip Life has been changed in order to make it more professional and for the regular future updates.
 
-= Chip Life Quick Setup =
+== Description ==
 
-Chip Life supports 8 Sidebars. Here is a quick idea about the placement and setup of these sidebars.
+Chip Life is an elegant theme powered by an advanced code architeture and grid system. Along with the elegant design the theme is easily customizable with numerous theme options. Make it yours with a custom menu, logo, and background.
 
-- Header Left
-Header Left sidebar is a place for "Site Logo". Ideal dimension of Site Logo is "195px x 125px". An example
-of Text Widget in the Header Left sidebar can be,
+== Design Notes ==
 
-<a href="SITE URL">
-  <img src="LOGO URL" alt="" />
-</a>
+Short "Site Title/ Description" is best and Image Logo of suggested dimenstions (280x60) is ideal for design.
+"Primary Menu" will work best for six to eight menu items.
+"Nested Menu" with two levels is ideal.
 
-- Header Right
-- Header Right sidebar is a place for some Sponsor Ads. Ideal dimension of Sponsor Ad is "728px x 90px". An example
-can be of Google Adsense, YPN, CPX etc ad code.
+== License ==
 
-*** You should select "yes" for "Display Sidebars Header" at the "Blog Options" tab in the Chip Life Options. ***
+See the "Help" tab in the "Chip Life Options" admin page for license, changelog and other informations.
 
-- Primary Sidebar
-Primary Sidebar is a widgetized area for Chip Life Sidebar.
+== Installation ==
 
-*** You can change the sidebar postion "Left, Right OR None" at the "Layout Options" tab in the Chip Life Options. ***
+Manual installation:
 
-- Footer Left, Footer Middle, Footer Right
-You can use these sidebars to make the Chip Life Framework footer widgetized.
+1. Upload the `chip-life` folder to the `/wp-content/themes/` directory
 
-- Sponsor 1
-Sponsor 1 sidebar is a place for your Sponsor Ads "Under the Secondary Menu". These ads will be visible "Site-Wide".
+Installation using "Add New Theme"
 
-- Sponsor 2
-Sponsor 2 sidebar is a place for your Sponsor Ads "Under the Post Title". These ads will be visible on the Post Single
-Page only.
+1. From your Admin UI (Dashboard), use the menu to select Themes -> Add New
+2. Search for 'chip life'
+3. Click the 'Install' button to open the theme's repository listing
+4. Click the 'Install' button
 
-Enjoy 
+Activiation and Use
 
-TutorialChip.com
-http://www.tutorialchip.com/
+1. Activate the Theme through the 'Themes' menu in WordPress
+2. See Appearance -> Chip Life Options for Theme Options
+
+== Screenshots ==
+
+1. Standard Theme Screenshot

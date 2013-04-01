@@ -1,1 +1,0 @@
-<?php do_action( 'chip_life' ); ?>

@@ -1,22 +1,61 @@
-<?php
-/** Chip Life Comments Template */
-
-/** Password Protected */
-if ( post_password_required() ) {
-	printf( '<p class="nopassword">%s</p>', 'This post is password protected. Enter the password to view comments.' );
+<div id="comments">
+  
+  <?php if ( post_password_required() ) : ?>
+  <p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'chiplife' ); ?></p>
+  </div><!-- #comments -->
+  <?php
+  /**
+    * Stop the rest of comments.php from being processed,
+    * but don't kill the script entirely -- we still have
+    * to fully load the template.
+    */
 	return;
-}
+	endif;
+  ?>
 
-/** Comments Template */
-do_action( 'chip_life_comments_before' );
-do_action( 'chip_life_comments' );
-do_action( 'chip_life_comments_after' );
+  <?php if ( have_comments() ) : ?>
+  
+  <h3 id="comments-title">
+    <?php printf( _n( 'One Thought on &ldquo;%2$s&rdquo;', '%1$s Thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'chiplife' ), get_comments_number(), '<span>' . get_the_title() . '</span>' ); ?>
+  </h3>
 
-do_action( 'chip_life_pings_before' );
-do_action( 'chip_life_pings' );
-do_action( 'chip_life_pings_after' );
+  <ol class="commentlist">
+    <?php wp_list_comments( apply_filters ( 'chiplife_list_comments', array( 'callback' => 'chiplife_comment' ) ) ); ?>
+  </ol>
 
-do_action( 'chip_life_comment_form_before' );
-do_action( 'chip_life_comment_form' );
-do_action( 'chip_life_comment_form_after' );
-?>
+  <?php if ( get_comment_pages_count() > 1 ) : ?>
+  
+  <div id="comments-nav-below" class="clearfix">
+	
+    <?php
+    ob_start();
+	previous_comments_link( __( '&larr; Older Comments', 'chiplife' ) );
+	$previous_comments_link = ob_get_clean();
+	
+	ob_start();
+	next_comments_link( __( 'Newer Comments &rarr;', 'chiplife' ) );
+	$next_comments_link = ob_get_clean();
+	
+	$previous_comments_link = ( empty( $previous_comments_link ) )? '&nbsp;' : $previous_comments_link;	
+	$next_comments_link = ( empty( $next_comments_link ) )? '&nbsp;' : $next_comments_link;	
+	?>
+    
+    <h3 class="assistive-text"><?php _e( 'Comment navigation', 'chiplife' ); ?></h3>
+    <div class="loop-nav-previous grid_5 alpha"><?php echo $previous_comments_link; ?></div>
+    <div class="loop-nav-next grid_5 omega"><?php echo $next_comments_link; ?></div>
+  </div>
+  <?php endif; ?>
+
+  <?php
+  /**
+    * If there are no comments and comments are closed, let's leave a little note, shall we?
+	* But we don't want the note on pages or post types that do not support comments.
+	*/
+  elseif ( !comments_open() && !is_page() && post_type_supports( get_post_type(), 'comments' ) ) :
+  ?>
+  <p class="nocomments"><?php _e( 'Comments are closed.', 'chiplife' ); ?></p>
+  <?php endif; ?>
+
+  <?php comment_form(); ?>
+
+</div><!-- #comments -->

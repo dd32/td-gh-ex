@@ -1,7 +1,5 @@
 <?php get_header();	?>
 
-<?php get_template_part( 'loop-meta' ); ?>
-  
 <div class="container_16 clearfix">
   
   <div class="grid_10">
@@ -11,7 +9,7 @@
       
         <?php while ( have_posts() ) : the_post(); ?>
         
-          <?php get_template_part( 'content', 'search' ); ?>
+          <?php get_template_part( 'content', 'attachment' ); ?>
         
         <?php endwhile; ?>
       
@@ -21,8 +19,6 @@
       
       <?php endif; ?>
       
-      <?php chiplife_loop_nav(); ?>
-    
     </div>
   </div>
   
