@@ -80,6 +80,10 @@ For more instruction you can visit the theme-instruction page of attitude at htt
 If you have still any other questions about the theme you can email at support@themehorse.com for free support.
 
 == Change Log ==
+= 1.1.5 =
+* Hook naming fixed.
+* JQuery issue fixed for dependency.
+
 = 1.1.4 =
 * Site title logo image responsiveness fix for all devices.
 * Display issue fixed for featured slider content for IE8.

@@ -50,8 +50,8 @@ function attitude_scripts_styles_method() {
 	if( ( is_home() || is_front_page() ) && "0" == $options[ 'disable_slider' ] ) {
 		wp_enqueue_script( 'attitude_slider', ATTITUDE_JS_URL . '/attitude-slider-setting.js', array( 'jquery_cycle' ), false, true );
 	}
-   wp_enqueue_script( 'tinynav', ATTITUDE_JS_URL . '/tinynav.js' );
-   wp_enqueue_script( 'backtotop', ATTITUDE_JS_URL. '/backtotop.js' );
+   wp_enqueue_script( 'tinynav', ATTITUDE_JS_URL . '/tinynav.js', array( 'jquery' ) );
+   wp_enqueue_script( 'backtotop', ATTITUDE_JS_URL. '/backtotop.js', array( 'jquery' ) );
 
    wp_enqueue_style( 'google_font_pt_sans' );
    wp_enqueue_style( 'google_font_philoshopher' );
@@ -333,6 +333,7 @@ function attitude_alter_home( $query ){
 
 /*************************************************************************************/
 
+add_action('wp_head', 'attitude_check_background_color');
 /**
  * Checking if background color is empty
  * If the background color is not empty background-image should be set to none 
@@ -351,7 +352,6 @@ function attitude_check_background_color() {
 		echo $attitude_css;
 	}
 }
-add_action('wp_head', 'attitude_check_background_color');
 
 /**************************************************************************************/
 

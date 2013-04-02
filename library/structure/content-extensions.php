@@ -158,7 +158,7 @@ function attitude_theloop_for_archive() {
     			?>
     		</div>
 
-    		<?php do_action( 'attitude_before_post_meta' ); ?>
+    		<?php do_action( 'attitude_after_post_meta' ); ?>
 
 		</article>
 	</section>
@@ -467,7 +467,7 @@ function attitude_theloop_for_template_blog_image_large() {
     			?>
     		</div>
 
-    		<?php do_action( 'attitude_before_post_meta' ); ?>
+    		<?php do_action( 'attitude_after_post_meta' ); ?>
 
 		</article>
 	</section>
@@ -559,7 +559,7 @@ function attitude_theloop_for_template_blog_image_medium() {
     			?>
     		</div>
 
-    		<?php do_action( 'attitude_before_post_meta' ); ?>
+    		<?php do_action( 'attitude_after_post_meta' ); ?>
 
 		</article>
 	</section>
@@ -650,7 +650,7 @@ function attitude_theloop_for_template_blog_full_content() {
     			</div><!-- .entry-meta -->
     		</div>
 
-    		<?php do_action( 'attitude_before_post_meta' ); ?>
+    		<?php do_action( 'attitude_after_post_meta' ); ?>
 
 		</article>
 	</section>
