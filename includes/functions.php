@@ -34,7 +34,6 @@ if (!function_exists('sampression_setup')):
          */
         if (!isset($content_width))
             $content_width = 650;
-
         /**
          * Sampression is now available for translations.
          */
@@ -60,7 +59,37 @@ if (!function_exists('sampression_setup')):
 		// Custom image sizes
 		add_image_size( 'featured', 700, 400, true); // Set the size of Featured Image
 		add_image_size( 'featured-thumbnail', 220); // Set the size of Featured Image Thumbnail
-	
+		
+		/**
+		 * This feature enables custom background color and image support for a theme
+		 */
+		add_theme_support( 'custom-background', array(
+			'default-color' => '',
+		) );
+		
+		/**
+		 * This feature enables custom header color and image support for a theme
+		 */
+		add_theme_support( 'custom-header', array(
+			// Text color and image (empty to use none).
+			'default-text-color'     => 'FE6E41',
+			'default-image'          => '',
+
+			// Set height and width, with a maximum value for the width.
+			'height'                 => 152,
+			'width'                  => 960,
+			'max-width'              => 2000,
+
+			// Support flexible height and width.
+			'flex-height'            => true,
+			'flex-width'             => true
+		) ); 
+		
+		/**
+		 * remove wordpress version from header 
+		 */
+		remove_action( 'wp_head', 'wp_generator' );
+		
         /**
          * This feature enables custom-menus support for a theme.
          * @see http://codex.wordpress.org/Function_Reference/register_nav_menus
@@ -421,6 +450,7 @@ endif; // ends check for sampression_comment()
  
 function sampression_favicon() {
 
+	//apple touch icon 16x16
 	if(!get_option('opt_sam_use_favicon16x16') || trim(get_option('opt_sam_use_favicon16x16')) == 'no') {
 		if(get_option('opt_sam_favicons')) { 
 		?>
@@ -429,7 +459,7 @@ function sampression_favicon() {
 		}
 	}
 	
-	
+	//apple touch icon 57x57
 	if(!get_option('opt_sam_use_appletouch57x57') || trim(get_option('opt_sam_use_appletouch57x57')) == 'no') {
 		if(get_option('opt_sam_apple_icons_57')) {
 		?>
@@ -438,7 +468,7 @@ function sampression_favicon() {
 		} 
 	}
 	
-	
+	//apple touch icon 72x72
 	if(!get_option('opt_sam_use_appletouch72x72') || trim(get_option('opt_sam_use_appletouch72x72')) == 'no') {
 		if(get_option('opt_sam_apple_icons_72')) {
 		?>
@@ -447,7 +477,7 @@ function sampression_favicon() {
 		} 
 	}
 	
-	
+	//apple touch icon 114x114
 	if(!get_option('opt_sam_use_appletouch114x114') || trim(get_option('opt_sam_use_appletouch114x114')) == 'no') {	
 		if(get_option('opt_sam_apple_icons_114')) {
 		?>
@@ -456,15 +486,27 @@ function sampression_favicon() {
 		<?php
 		}
 	}
+	
+	// apple touch icon 144x144
+	if(!get_option('opt_sam_use_appletouch144x144') || trim(get_option('opt_sam_use_appletouch144x144')) == 'no') {	
+		if(get_option('opt_sam_apple_icons_144')) {
+		?>
+			
+			<link rel="apple-touch-icon" sizes="144x144" href="<?php echo get_option('opt_sam_apple_icons_144'); ?>">
+		<?php
+		}
+	}
 }
 /*=======================================================================
  * Function to get default logo by Sampression theme
  *=======================================================================*/
- add_action('sampression_logo', 'sampression_show_logo');
+add_action('sampression_logo', 'sampression_show_logo');
 function sampression_show_logo() {
 	if(get_option('opt_sam_logo')) {
 	?>
-    	<img src="<?php echo get_option('opt_sam_logo'); ?>" alt="<?php bloginfo('name'); ?>">
+		<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( ucwords(get_bloginfo( 'name', 'display' )) ); ?>" rel="home" id="logo-area">
+			<img class="logo-img" src="<?php echo get_option('opt_sam_logo'); ?>" alt="<?php bloginfo('name'); ?>">
+		</a>
     <?php
 	}
 }
@@ -631,7 +673,8 @@ function sampression_add_meta() {
 	<!-- Charset -->
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<!-- Mobile Specific Metas  -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<!-- <meta name="viewport" content="width=1024" />-->
 	<?php
 }
 
@@ -682,7 +725,45 @@ add_action('sampression_favicon','sampression_favicon');
 add_action( 'wp_enqueue_scripts', 'sampression_enqueue_styles' );
 
 function sampression_enqueue_styles(){
-	wp_enqueue_style('sampression-style', get_stylesheet_uri(), false, '1.3.2');
+	global $wp_styles;
+    // other style sheets...
+	wp_enqueue_style('sampression-style', get_stylesheet_uri(), false, '1.4');
+	wp_enqueue_style('fontello', get_template_directory_uri() . '/lib/css/fontello.css', false, false, 'screen');
+    // ie-specific style sheets
+    wp_register_style('ie7-only', get_template_directory_uri() . '/lib/css/fontello-ie7.css');
+    $wp_styles->add_data('ie7-only', 'conditional', 'IE 7');
+    wp_enqueue_style('ie7-only');
+}
+
+add_action('sampression_custom_header_style','sampression_custom_header_style');
+
+function sampression_custom_header_style() {
+	$text_color = get_header_textcolor();
+	// If no custom options for text are set, do nothing
+	if ( $text_color == get_theme_support( 'custom-header', 'default-text-color' ) )
+		return;
+	// Else, we have custom styles.
+	?>
+	<style type="text/css">
+		<?php	// Is the text hidden?
+			if ( ! display_header_text() ) :
+		?>
+			.site-title,
+			.site-description {
+				position: absolute !important;
+				clip: rect(1px 1px 1px 1px); /* IE7 */
+				clip: rect(1px, 1px, 1px, 1px);
+			}
+		<?php	// If the user has set a custom color for the text, lets use that.
+			else : 
+		?>
+			.site-title a,
+			.site-description {
+				color: #<?php echo $text_color; ?> !important;
+			}
+		<?php endif; ?>
+	</style>
+	<?php
 }
 
 add_action('sampression_footer', 'sampression_enqueue_conditional_scripts');

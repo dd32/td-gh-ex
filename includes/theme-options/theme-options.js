@@ -25,7 +25,6 @@ jQuery('.upload_image_button').click(function() {
 /* Simple Tabination */	
 //Default Action
 	jQuery(".tab_content").hide(); //Hide all content
-	 //jQuery.cookie("active-tab",null);
 	
 	if( jQuery.cookie("active-tab")!=null){		
 		var lastActiveTab = jQuery.cookie("active-tab"); //retriving cookie value
@@ -49,7 +48,6 @@ jQuery('.upload_image_button').click(function() {
 	});
 	
 	jQuery(".tab_container input[type='checkbox']").click(function(){
-	console.log('clicked')
 		var $chkbox = jQuery(this),
 			$hiddenbox = $chkbox.next("input[type='hidden']");
 		if($chkbox.is(':checked')){

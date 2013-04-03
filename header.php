@@ -25,6 +25,8 @@
 		do_action( 'sampression_favicon' );
 		// CSS
 		do_action( 'sampression_styles' );
+		// Custom header styles
+		do_action('sampression_custom_header_style');
 		// Links
 		do_action( 'sampression_links' );
 		
@@ -38,30 +40,27 @@
 <header id="header">
   <div class="container">
     <div class="columns nine">
-      <div id="logo-wrapper">
-      <a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( ucwords(get_bloginfo( 'name', 'display' )) ); ?>" rel="home" id="logo-area">
-      	<?php
-		if(!get_option('opt_sam_use_logo') || get_option('opt_sam_use_logo') == 'no') {
-		?>
-        <div class="logo-img"><?php do_action('sampression_logo'); ?></div>
-        <?php
-		}
-		?>
-        <div class="logo-txt">
-          <h1 id="site-title"><?php bloginfo( 'name' ); ?></h1>
-          <h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
-        </div>
-        </a> 
-        <!-- #logo-area --> 
-        
-      </div>
-      <!-- #logo-wrapper --> 
+	
+			<?php 
+				if(!get_option('opt_sam_use_logo') || get_option('opt_sam_use_logo') == 'no') { 
+						do_action('sampression_logo');
+				} 
+			?>
+			
+			<div class="logo-txt">
+			  <h1 class="site-title" id="site-title">
+			  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+			  <?php bloginfo( 'name' ); ?>
+			  </a>
+			  </h1>
+			  <h2 id="site-description" class="site-description"><?php bloginfo( 'description' ); ?></h2>
+			</div>
     </div>
     <div class="columns seven">
       <nav id="top-nav">
         <?php
 		//Check if the Custom Navigation is available
-		 if ( has_nav_menu('top-menu') ) {
+		if ( has_nav_menu('top-menu') ) {
 			wp_nav_menu( array (
 				'theme_location'    => 'top-menu',
 				'container'         => '',
@@ -70,7 +69,7 @@
 				'fallback_cb'       => false
 			));
 		} else {
-			// Otherwise list the Pages
+		// Otherwise list the Pages
 			 ?>
 			<ul class="top-menu clearfix">
 				<?php wp_list_pages('title_li=&depth=0'); ?>
@@ -79,50 +78,52 @@
 		} ?>
       </nav>
 	  <div id="top-nav-mobile">
-		<div class="nav-label">Menu:</div>
-		<?php if ( has_nav_menu('top-menu') ) { 
 		
-		}else{
-			$args = array(
-				'depth'            => 0,
-				'child_of'         => 0,
-				'selected'         => 0,
-				'echo'             => 1,
-				'name'             => 'page_id'); 
+			<?php	/* $args = array(
+							'depth'            => 0,
+							'child_of'         => 0,
+							'selected'         => 0,
+							'echo'             => 1,
+							'name'             => 'page_id'); 
+							
+						 wp_dropdown_pages( $args ); */ 
+			?>
 				
-			 wp_dropdown_pages( $args ); 
-		}?>
-			
-			 
-	  
 	  </div> 
       <!-- #top-nav -->
       <div id="interaction-sec" class="clearfix <?php echo getnoofclass(); ?>">
         <?php get_search_form(); ?>
      
        <ul class="sm-top">
-       <?php
-	   // Being Social: Check Facebook and Twitter urls
+       <?php // Being Social 
+	   //Facebook
 	    if( get_option( 'opt_get_facebook' ) !=''){ ?>
-          <li class="sm-top-fb"><a href="http://www.facebook.com/<?php echo get_option( 'opt_get_facebook' ); ?>" target="_blank">Facebook</a></li>
+          <li class="sm-top-fb"><a href="<?php echo stripslashes(get_option( 'opt_get_facebook' )); ?>" target="_blank">Facebook</a></li>
        <?php }
+		// Twitter
 	   if( get_option( 'opt_get_twitter' ) !='') {
 	    ?>
-          <li class="sm-top-tw"><a href="http://www.twitter.com/<?php echo get_option( 'opt_get_twitter' ); ?>" target="_blank">Twitter</a></li>
+          <li class="sm-top-tw"><a href="<?php echo stripslashes(get_option( 'opt_get_twitter') ); ?>" target="_blank">Twitter</a></li>
          <?php }
+		// Google plus 
 	   if( get_option( 'opt_get_gplus' ) !='') {
 	    ?>
-          <li class="sm-top-gplus"><a href="<?php echo get_option( 'opt_get_gplus' ); ?>" target="_blank">Google Plus</a></li>
+          <li class="sm-top-gplus"><a href="<?php echo stripslashes(get_option( 'opt_get_gplus') ); ?>" target="_blank">Google Plus</a></li>
           <?php } 
+		// Youtube
 		if( get_option( 'opt_get_youtube' ) !='' ) {
 	    ?>
-          <li class="sm-top-youtube"><a href="http://www.youtube.com/user/<?php echo get_option( 'opt_get_youtube' ); ?>" target="_blank">YouTube</a></li>
-          <?php } ?>
+          <li class="sm-top-youtube"><a href="<?php echo stripslashes(get_option( 'opt_get_youtube') ); ?>" target="_blank">YouTube</a></li>
+          <?php } ?> 
        </ul>
         <!-- .sm-top --> 
       </div>
-      <!-- #interaction-sec --> 
+      <!-- #interaction-sec -->
     </div>
+	<?php $header_image = get_header_image();
+		if ( ! empty( $header_image ) ) : ?>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( $header_image ); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" /></a>
+		<?php endif; ?>
   </div>
 </header>
 <!-- #header -->
@@ -134,10 +135,18 @@
   <a href="#" id="btn-nav-opt">show/hide</a>
   <div class="columns sixteen">
     <div class="nav-label"><?php _e('Filter By:','sampression'); ?></div>
-    
+	
     <ul class="nav-listing clearfix">
         <li><a href="#" data-filter="*" class="selected"><span></span><?php _e('Show All','sampression'); ?></a></li>
         <?php
+		/*to exclude some categories */ 
+		$args = array();
+		/* $args = array(
+		'exclude'=>  array( get_cat_ID('aciform'), get_cat_ID('alignment'), get_cat_ID('antiquarianism'))  // exclude by category slug
+		'exclude'=>  array( 1, 2, 3) //exclude by category id
+		); */
+		$categories = get_categories($args);
+		
         $categories = get_categories();
         foreach($categories as $category):
         ?>

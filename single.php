@@ -37,39 +37,39 @@ get_header(); ?>
             
             <div class="meta clearfix">
             
-            <div class="col count-comment">
-			<?php if ( comments_open() ) : ?>
-            <span class="pointer"></span>
-            <?php comments_popup_link(__('0', 'sampression'), __('1', 'sampression'), __('%', 'sampression')); ?>
-            <?php endif; ?>
-        	</div>
-            <?php 
-                printf( __( '%3$s <time class="" datetime="2011-09-28"><span class="ico">&nbsp;</span>%2$s</time> ', 'sampression' ),'meta-prep meta-prep-author',
-					sprintf( '<a href="%4$s" title="%2$s" rel="bookmark">%3$s</a>',
-						get_permalink(),
-						esc_attr( get_the_time() ),
-						get_the_date(),
-						get_month_link( get_the_time('Y'), get_the_time('m'))
-					),
-					sprintf( '<span class="post-author"><span class="ico hello">&nbsp;</span><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>',
-						get_author_posts_url( get_the_author_meta( 'ID' ) ),
-					sprintf( esc_attr__( 'View all posts by %s', 'sampression' ), get_the_author() ),
-						get_the_author()
-						)
-                );
-            ?>
-            
-            <span class="cats"><?php printf(__('<span class="ico">&nbsp;</span> %s', 'sampression'), get_the_category_list(', ')); ?></span>
-            
-			<?php if(has_tag()) {?>
-                    <span class="tags"><span class="ico">&nbsp;</span><?php the_tags(' ', ', '); ?> </span>
-            <?php } ?>
-        
-        <?php if(is_user_logged_in()){ ?>
-      
-      	<span class="edit"><span class="ico">&nbsp;</span> <?php edit_post_link( __( 'Edit', 'sampression' ) ); ?> </span>
-      
-	  <?php } ?>
+				<div class="col count-comment">
+				<?php if ( comments_open() ) : ?>
+				<span class="pointer"></span>
+				<?php comments_popup_link(__('0', 'sampression'), __('1', 'sampression'), __('%', 'sampression')); ?>
+				<?php endif; ?>
+				</div>
+				<?php 
+					printf( __( '%3$s <time class="" datetime="2011-09-28"><span class="ico">&nbsp;</span>%2$s</time> ', 'sampression' ),'meta-prep meta-prep-author',
+						sprintf( '<a href="%4$s" title="%2$s" rel="bookmark">%3$s</a>',
+							get_permalink(),
+							esc_attr( get_the_time() ),
+							get_the_date(),
+							get_month_link( get_the_time('Y'), get_the_time('m'))
+						),
+						sprintf( '<div class="post-author"><span class="ico hello">&nbsp;</span><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></div>',
+							get_author_posts_url( get_the_author_meta( 'ID' ) ),
+						sprintf( esc_attr__( 'View all posts by %s', 'sampression' ), get_the_author() ),
+							get_the_author()
+							)
+					);
+				?>
+				
+				<div class="cats"><?php printf(__('<span class="ico">&nbsp;</span> %s', 'sampression'), get_the_category_list(', ')); ?></div>
+				
+				<?php if(has_tag()) {?>
+						<div class="tags"><span class="ico">&nbsp;</span><?php the_tags(' ', ', '); ?> </div>
+				<?php } ?>
+			
+				<?php if(is_user_logged_in()){ ?>
+			  
+				<div class="edit"><span class="ico">&nbsp;</span> <?php edit_post_link( __( 'Edit', 'sampression' ) ); ?> </div>
+			  
+				<?php } ?>
             
             </div>
             <!-- .meta -->

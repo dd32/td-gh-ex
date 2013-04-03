@@ -1,4 +1,4 @@
-﻿== Sampression Lite ==
+== Sampression Lite ==
 
 Theme Name: Sampression Lite
 Theme URI: http://www.sampression.com/sampression-lite/
@@ -11,7 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 == Theme Description ==
-Sampression Lite is a fully responsive theme, perfect for blogging. It's lightweight responsive design allows this theme to adapt across a range of screen sizes. Besides an elegant design, Sampression Lite features customizable menus and widgets, along with a threaded comments section. It supports sticky notes with special effects and allows for the best placement of feature images on posts. Easy to setup Webmaster Tools.
+Sampression Lite is a minimal, fully responsive, retina ready, translation ready, clean theme, perfect for blogging. It's lightweight responsive design allows this theme to adapt across a range of screen sizes. Besides an elegant design, Sampression Lite features customizable menus and widgets, supports custom header color and image, custom background color and image, along with a threaded comments section. It supports sticky notes with special effects and allows for the best placement of feature images on posts. It is a full fledged theme with easily customizable theme option page.
 
 == Features ==
 Responsive design, Theme Options, Custom Logo/Fav Icons/Apple Touch Icons, Custom Widgets, Custom Menu, iSotope jQuery, Sticky Post, W3C validated, supports social media, supports webmaster tools.
@@ -108,10 +108,24 @@ Version 1.3.2
 = Removed default logo, favicons and apple touch icons
 
 = Few sampression hooks ( sampression_meta, sampression_title, sampression_favicon, sampression_styles, sampression_links, sampression_logo, etc. ) are introduced.
-
-
+ 
+ 
 Version 1.3.2.1
 = Fixed: automatic widget glitch on 'bottom-widget-3'
+ 
+Version 1.4
+= Added: Sampression Lite is now retina ready
+= Added: Added rtl.css for RTL(right-to-left) support 
+= Added: Sampresson Lite now supports custom background image and color
+= Added: Sampresson Lite now supports custom header image and color
+= Added: Apple touch icon of size 144x144 for high resolution ipads with option on admin panel
+
+= Fixed: Top Nav resizing problem
+= Fixed: Custom code not working
+= Fixed: Categories overlap on archive page
+
+= Improved: Various code optimizations
+
 
  == Child Theme Support ===
  Sampresson Lite supports child themes. Please use child themes for customization of "Sampression Lite". For further reading: http://codex.wordpress.org/Child_Themes.

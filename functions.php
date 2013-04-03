@@ -11,5 +11,4 @@ if ( !defined('ABSPATH')) exit;
  */
 require ( get_template_directory() . '/includes/functions.php' );
 require ( get_template_directory() . '/includes/theme-options/theme-options.php' );
-
 ?>
