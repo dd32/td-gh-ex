@@ -91,10 +91,11 @@ if ( defined( 'WPSEO_VERSION' ) ) {
     <?php endif; // header image was removed (again) ?>
     
     <?php get_sidebar('top'); ?>
-			    
 				<?php wp_nav_menu(array(
-				    'container'       => '',
-					'theme_location'  => 'header-menu')
+				    'container'       => 'div',
+						'container_class'	=> 'main-nav',
+						'fallback_cb'	  =>  'responsive_fallback_menu',
+						'theme_location'  => 'header-menu')
 					); 
 				?>
                 

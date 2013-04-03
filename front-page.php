@@ -34,13 +34,15 @@ $responsive_options = responsive_get_options();
  * otherwise, display static front page
  * content
  */
-if ( 'posts' == get_option( 'show_on_front' ) ) {
+if ( 'posts' == get_option( 'show_on_front' ) && $responsive_options['front_page'] != 1 ) {
 	get_template_part( 'home' );
-} else if ( 'default' != get_post_meta( get_option( 'page_on_front' ), '_wp_page_template', true ) ) {
-	locate_template( get_post_meta( get_option( 'page_on_front' ), '_wp_page_template', true ), true );
+} elseif ( 'page' == get_option( 'show_on_front' ) && $responsive_options['front_page'] != 1 ) {
+	$template = get_post_meta( get_option( 'page_on_front' ), '_wp_page_template', true );
+	$template = ( $template == 'default' ) ? 'index.php' : $template;
+	locate_template( $template, true );
 } else { 
 
-	get_header(); 
+	get_header();
 	?>
 
 	<div id="featured" class="grid col-940">
@@ -51,7 +53,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 			
 			<h2 class="featured-subtitle"><?php echo $responsive_options['home_subheadline']; ?></h2>
 			
-			<p><?php echo $responsive_options['home_content_area']; ?></p>
+			<p><?php echo do_shortcode( $responsive_options['home_content_area'] ); ?></p>
 			
 			<?php if ($responsive_options['cta_button'] == 0): ?>  
    

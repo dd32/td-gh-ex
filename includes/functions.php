@@ -161,18 +161,53 @@ if (!function_exists('responsive_setup')):
 		 add_custom_image_header('', 'responsive_admin_header_style');
 		
 	    }
+			
+		// While upgrading set theme option front page toggle not to affect old setup.
+		$responsive_options = get_option( 'responsive_theme_options' );
+		if( $responsive_options && isset( $_GET['activated'] ) ) {
+		
+			// If front_page is not in theme option previously then set it.
+			if( !isset( $responsive_options['front_page'] )) {
+			
+				// Get template of page which is set as static front page
+				$template = get_post_meta( get_option( 'page_on_front' ), '_wp_page_template', true );
+				
+				// If static front page template is set to default then set front page toggle of theme option to 1
+				if( 'page' == get_option( 'show_on_front' ) && $template == 'default' ) {
+					$responsive_options['front_page'] = 1;
+				}
+				else {
+					$responsive_options['front_page'] = 0;
+				}
+				update_option( 'responsive_theme_options', $responsive_options );
+			}
+		}
     }
 
 endif;
 
 /**
- * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
+ * Set a fallback menu that will show a home link.
  */
-function responsive_page_menu_args( $args ) {
-	$args['show_home'] = true;
-	return $args;
+ 
+function responsive_fallback_menu() {
+	$args = array(
+		'depth'       => 0,
+		'sort_column' => 'menu_order, post_title',
+		'menu_class'  => 'menu',
+		'include'     => '',
+		'exclude'     => '',
+		'echo'        => false,
+		'show_home'   => true,
+		'link_before' => '',
+		'link_after'  => ''
+	);
+	$pages = wp_page_menu( $args );
+	$prepend = '<div class="main-nav">';
+	$append = '</div>';
+	$output = $prepend.$pages.$append;
+	echo $output;
 }
-add_filter( 'wp_page_menu_args', 'responsive_page_menu_args' );
 
 /**
  * This function removes .menu class from custom menus
@@ -402,7 +437,7 @@ function responsive_breadcrumb_lists() {
 	/* === END OF OPTIONS === */
 
 	global $post, $paged, $page;
-	$homeLink = get_bloginfo('url') . '/';
+	$homeLink = home_url('/');
 	$linkBefore = '<span typeof="v:Breadcrumb">';
 	$linkAfter = '</span>';
 	$linkAttr = ' rel="v:url" property="v:title"';
@@ -528,8 +563,8 @@ endif;
 			// JS at the bottom for fast page loading. 
 			// except for Modernizr which enables HTML5 elements & feature detects.
 			wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/responsive-modernizr.js', array('jquery'), '2.6.1', false);
-            wp_enqueue_script('responsive-scripts', get_template_directory_uri() . '/js/responsive-scripts.js', array('jquery'), '1.2.2', true);
-			wp_enqueue_script('responsive-plugins', get_template_directory_uri() . '/js/responsive-plugins.js', array('jquery'), '1.2.2', true);
+      wp_enqueue_script('responsive-scripts', get_template_directory_uri() . '/js/responsive-scripts.js', array('jquery'), '1.2.3', true);
+			wp_enqueue_script('responsive-plugins', get_template_directory_uri() . '/js/responsive-plugins.js', array('jquery'), '1.2.3', true);
         }
 
     }
@@ -689,4 +724,36 @@ endif;
     }
 	
     add_action('widgets_init', 'responsive_widgets_init');
+		
+/**
+* Front Page function starts here. The Front page overides WP's show_on_front option. So when show_on_front option changes it sets the themes front_page to 0 therefore displaying the new option
+*/
+		
+function responsive_front_page_override( $new, $orig ) {
+	global $responsive_options;
+	
+	if( $orig !== $new ) {
+		$responsive_options['front_page'] = 0;
+		
+		update_option( 'responsive_theme_options', $responsive_options );
+	}
+	return $new;
+}
+add_filter( 'pre_update_option_show_on_front', 'responsive_front_page_override', 10, 2 );
+
+/**
+* Funtion to add CSS class to body
+*/
+function responsive_add_class( $classes ) {
+	
+	// Get Responsive theme option.
+	global $responsive_options;
+	if( $responsive_options['front_page'] == 1 && is_front_page() ) {
+		$classes[] = 'front-page';
+	}
+	
+	return $classes;
+}
+
+add_filter( 'body_class','responsive_add_class' );
 ?>
