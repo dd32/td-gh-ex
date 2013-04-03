@@ -186,6 +186,12 @@ function ifeature_default_background_color() {
 }
 add_filter( 'default_background_color', 'ifeature_default_background_color' );
 
+// Default for twitter bar handle
+function cyberchimps_twitter_handle_filter() {
+	return 'WordPress';
+}
+add_filter( 'cyberchimps_twitter_handle_filter', 'cyberchimps_twitter_handle_filter' );
+
 // default header option
 function ifeature_header_drag_and_drop_default() {
 	$option =  array(
@@ -326,3 +332,17 @@ function ifeature_add_home_menu( $menu, $args ) {
 	return $menu;
 }
 add_filter( 'wp_nav_menu_items', 'ifeature_add_home_menu', 10, 2 );
+
+/* fix full width container that disappears on horizontal scroll */
+function cyberchimps_full_width_fix() {
+	$responsive_design = cyberchimps_get_option( 'responsive_design' );
+	$min_width = cyberchimps_get_option( 'max_width' );
+	if( ! $responsive_design ) {
+		$style = '<style rel="stylesheet" type="text/css" media="all">';
+		$style .= '.container-full, #footer-widgets-wrapper { min-width: '. $min_width . 'px;}';
+		$style .= '</style>';
+		
+		echo $style;
+	}
+}
+add_action( 'wp_head', 'cyberchimps_full_width_fix' );

@@ -56,6 +56,8 @@ function cyberchimps_core_setup_theme() {
 	}
 
 	// Core Translations can be filed in the /inc/languages/ directory
+	load_theme_textdomain( 'cyberchimps_core', $directory . '/cyberchimps/lib/languages' );
+	load_theme_textdomain( 'cyberchimps_elements', $directory . '/elements/lib/languages' );
 	load_theme_textdomain( 'cyberchimps', $directory . '/inc/languages' );
 	
 	// Add support for the Aside Post Formats
@@ -76,7 +78,7 @@ function cyberchimps_core_setup_theme() {
 	
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'cyberchimps' ),
+		'primary' => __( 'Primary Menu', 'cyberchimps_core' ),
 	) );
 	
 	//set up defaults
@@ -88,6 +90,8 @@ function cyberchimps_core_setup_theme() {
 	elseif( get_option( 'cyberchimps_options' ) && isset( $_GET['activated'] ) ) {
 		$options = get_option( 'cyberchimps_options' );
 		$options['modal_welcome_note_display'] = true;
+		$options['header_section_order'] = $option_defaults['header_section_order'];
+		$options['theme_backgrounds'] = $option_defaults['theme_backgrounds'];
 		update_option( 'cyberchimps_options', $options );
 	}
 }
@@ -151,7 +155,7 @@ function cyberchimps_custom_background_cb() {
 // Register our sidebars and widgetized areas.
 function cyberchimps_widgets_init() {
 	register_sidebar( array(
-		'name' => __( 'Sidebar Left', 'cyberchimps' ),
+		'name' => __( 'Sidebar Left', 'cyberchimps_core' ),
 		'id' => 'sidebar-left',
 		'before_widget' => '<aside id="%1$s" class="widget-container %2$s">',
 		'after_widget' => "</aside>",
@@ -160,7 +164,7 @@ function cyberchimps_widgets_init() {
 	));
 	
 	register_sidebar( array(
-		'name' => __( 'Sidebar Right', 'cyberchimps' ),
+		'name' => __( 'Sidebar Right', 'cyberchimps_core' ),
 		'id' => 'sidebar-right',
 		'before_widget' => '<aside id="%1$s" class="widget-container %2$s">',
 		'after_widget' => "</aside>",
@@ -169,7 +173,7 @@ function cyberchimps_widgets_init() {
 	));
 	
 	register_sidebar( array(
-		'name' => __( 'Footer Widgets', 'cyberchimps' ),
+		'name' => __( 'Footer Widgets', 'cyberchimps_core' ),
 		'id' => 'cyberchimps-footer-widgets',
 		'before_widget' => '<aside id="%1$s" class="widget-container span3 %2$s">',
 		'after_widget' => "</aside>",

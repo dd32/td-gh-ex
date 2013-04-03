@@ -19,7 +19,7 @@
 add_action('admin_menu', 'cyberchimps_admin_add_customizer_page');
 function cyberchimps_admin_add_customizer_page() {
 	// add the Customize link to the admin menu
-	add_theme_page( __('Customize', 'cyberchimps'), __('Customize', 'cyberchimps'), 'edit_theme_options', 'customize.php' );
+	add_theme_page( __('Customize', 'cyberchimps_core' ), __('Customize', 'cyberchimps_core' ), 'edit_theme_options', 'customize.php' );
 }
 
 add_action('customize_register', 'cyberchimps_customize');
@@ -77,7 +77,7 @@ function cyberchimps_customize( $wp_customize ) {
 			</script>
 			
 			<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-			<em><small><?php _e( 'make sure you have removed the image above before selecting one of these', 'cyberchimps' ); ?></small></em>
+			<em><small><?php _e( 'make sure you have removed the image above before selecting one of these', 'cyberchimps_core' ); ?></small></em>
 			<?php
 			foreach( $this->choices as $value => $label ) :
 			
@@ -164,7 +164,7 @@ function cyberchimps_customize( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'max_width', array(
-		'label'   => __( 'Max Width', 'cyberchimps' ),
+		'label'   => __( 'Max Width', 'cyberchimps_core' ),
 		'section' => 'cyberchimps_design_section',
 		'type'    => 'text',
 		'settings'   => 'cyberchimps_options[max_width]',
@@ -177,7 +177,7 @@ function cyberchimps_customize( $wp_customize ) {
 		) );
 	
 	$wp_customize	-> add_control( new Cyberchimps_skin_selector( $wp_customize, 'skin_color', array(
-		'label'		=>  __( 'Skin Color', 'cyberchimps' ),
+		'label'		=>  __( 'Skin Color', 'cyberchimps_core' ),
 		'section'	=> 'cyberchimps_design_section',
 		'settings'	=> 'cyberchimps_options[cyberchimps_skin_color]',
 		'choices'	=> apply_filters( 'cyberchimps_skin_color', array( 'default' => get_template_directory_uri(). '/inc/css/skins/images/default.png' ) ),
@@ -191,7 +191,7 @@ function cyberchimps_customize( $wp_customize ) {
 		) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'text_colorpicker', array(
-    'label'   => __( 'Text Color', 'cyberchimps' ),
+    'label'   => __( 'Text Color', 'cyberchimps_core' ),
     'section' => 'cyberchimps_design_section',
     'settings'   => 'cyberchimps_options[text_colorpicker]',
 	) ) );
@@ -203,7 +203,7 @@ function cyberchimps_customize( $wp_customize ) {
 		) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_colorpicker', array(
-    'label'   => __( 'Link Color', 'cyberchimps' ),
+    'label'   => __( 'Link Color', 'cyberchimps_core' ),
     'section' => 'cyberchimps_design_section',
     'settings'   => 'cyberchimps_options[link_colorpicker]',
 	) ) );
@@ -215,7 +215,7 @@ function cyberchimps_customize( $wp_customize ) {
 		) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_hover_colorpicker', array(
-    'label'   => __( 'Link Hover Color', 'cyberchimps' ),
+    'label'   => __( 'Link Hover Color', 'cyberchimps_core' ),
     'section' => 'cyberchimps_design_section',
     'settings'   => 'cyberchimps_options[link_hover_colorpicker]',
 	) ) );
@@ -233,7 +233,7 @@ function cyberchimps_customize( $wp_customize ) {
 		) );
 	
 	$wp_customize->add_control( new Cyberchimps_Typography_Size( $wp_customize, 'typography_size', array(
-		'label'   => __( 'Typography Size', 'cyberchimps' ),
+		'label'   => __( 'Typography Size', 'cyberchimps_core' ),
     'section' => 'cyberchimps_typography_section',
     'type'    => 'select',
 		'settings'   => 'cyberchimps_options[typography_options][size]',
@@ -241,18 +241,43 @@ function cyberchimps_customize( $wp_customize ) {
   ) ) );
 	
  	// typography face
+	/* Default font faces */
+	$faces = array(
+				'Arial, Helvetica, sans-serif'							=> 'Arial',
+				'Arial Black, Gadget, sans-serif'					 	=> 'Arial Black',
+				'Comic Sans MS, cursive'							 	=> 'Comic Sans MS',
+				'Courier New, monospace'							 	=> 'Courier New',
+				'Georgia, serif'									 	=> 'Georgia',
+				'"HelveticaNeue-Light", "Helvetica Neue Light",
+				"Helvetica Neue",Helvetica, Arial, "Lucida Grande",
+				sans-serif' 											=> 'Helvetica Neue',
+				'Impact, Charcoal, sans-serif'						 	=> 'Impact',
+				'Lucida Console, Monaco, monospace'					 	=> 'Lucida Console',
+				'Lucida Sans Unicode, Lucida Grande, sans-serif'	 	=> 'Lucida Sans Unicode',
+				'"Open Sans", sans-serif'								=> 'Open Sans',
+				'Palatino Linotype, Book Antiqua, Palatino, serif'	 	=> 'Palatino Linotype',
+				'Tahoma, Geneva, sans-serif'						 	=> 'Tahoma',
+				'Times New Roman, Times, serif'						 	=> 'Times New Roman',
+				'Trebuchet MS, sans-serif'							 	=> 'Trebuchet MS',
+				'Verdana, Geneva, sans-serif'						 	=> 'Verdana',
+				'Symbol'											 	=> 'Symbol',
+				'Webdings'											 	=> 'Webdings',
+				'Wingdings, Zapf Dingbats'							 	=> 'Wingdings',
+				'MS Sans Serif, Geneva, sans-serif'					 	=> 'MS Sans Serif',
+				'MS Serif, New York, serif'							 	=> 'MS Serif',
+			);
 	$wp_customize->add_setting( 'cyberchimps_options[typography_options][face]', array(
 			'default'        => 'Arial',
 			'type'           => 'option',
 		) );
 	
 	$wp_customize->add_control( 'typography_face', array(
-		'label'   => __( 'Typography Face', 'cyberchimps' ),
-    'section' => 'cyberchimps_typography_section',
-    'type'    => 'select',
-		'settings'   => 'cyberchimps_options[typography_options][face]',
-    'choices'    => apply_filters( 'cyberchimps_typography_faces', '' )
-  ) );
+		'label'		=> __( 'Typography Face', 'cyberchimps_core' ),
+		'section' 	=> 'cyberchimps_typography_section',
+		'type'		=> 'select',
+		'settings'	=> 'cyberchimps_options[typography_options][face]',
+		'choices'	=> apply_filters( 'cyberchimps_typography_faces', $faces )
+	  ) );
 	// typography style
 	$wp_customize->add_setting( 'cyberchimps_options[typography_options][style]', array(
 			'default'        => 'normal',
@@ -260,7 +285,7 @@ function cyberchimps_customize( $wp_customize ) {
 		) );
 	
 	$wp_customize->add_control( 'typography_style', array(
-		'label'   => __( 'Typography Style', 'cyberchimps' ),
+		'label'   => __( 'Typography Style', 'cyberchimps_core' ),
     'section' => 'cyberchimps_typography_section',
     'type'    => 'select',
 		'settings'   => 'cyberchimps_options[typography_options][style]',
@@ -274,7 +299,7 @@ function cyberchimps_customize( $wp_customize ) {
 		) );
 	
 	$wp_customize->add_control( new Cyberchimps_Background_Image( $wp_customize, 'cyberchimps_background', array(
-    'label'   => 'CyberChimps '. __( 'Background Image', 'cyberchimps' ),
+    'label'   => 'CyberChimps '. __( 'Background Image', 'cyberchimps_core' ),
     'section' => 'background_image',
     'settings'   => 'cyberchimps_background',
 		'choices' => apply_filters( 'cyberchimps_background_image', '' ),

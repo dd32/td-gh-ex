@@ -133,8 +133,9 @@ jQuery(document).ready(function($) {
 
 	jQuery('.heading').hide();
 	jQuery('.metabox-tabs').show();
-
+	
 	jQuery(".subsection-items").hide();
+	jQuery("#subsection-Boxes-Element .subsection-items").show();
 	$(".subsection > h4").click(function() {
 		var $this = $(this);
 		$this.find("span.minus").removeClass('minus');
@@ -164,7 +165,7 @@ jQuery(document).ready(function($) {
 		custom_html_element	: "subsection-Custom-HTML",
 		product_element		: "subsection-Product-Options",
 		twitterbar_section	: "subsection-Twitter-Options",
-		//magazine			: "subsection-Magazine-Layout-Options",
+		magazine			: "subsection-Magazine-Layout-Options",
 		slider_lite			: "subsection-Slider-Lite-Options",
 		portfolio_lite		: "subsection-Portfolio-Lite-Options",
 		recent_posts		: "subsection-Recent-Posts-Options",

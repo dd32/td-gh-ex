@@ -22,8 +22,8 @@ function cyberchimps_init_boxes_post_type() {
 	register_post_type( 'boxes_lite',
 		array(
 			'labels' => array(
-				'name' => __('Boxes Lite', 'cyberchimps'),
-				'singular_name' => __('Boxes Lite', 'cyberchimps'),
+				'name' => __('Boxes Lite', 'cyberchimps_elements' ),
+				'singular_name' => __('Boxes Lite', 'cyberchimps_elements' ),
 			),
 			'public' => true,
 			'show_ui' => true, 
@@ -36,12 +36,12 @@ function cyberchimps_init_boxes_post_type() {
 	
 	$meta_boxes = array();
 	
-	$mb = new Chimps_Metabox('boxes_lite', __( 'Boxes Lite Element', 'cyberchimps' ), array('pages' => array('boxes_lite')));
+	$mb = new Chimps_Metabox('boxes_lite', __( 'Boxes Lite Element', 'cyberchimps_elements' ), array('pages' => array('boxes_lite')));
 	$mb
-		->tab( __( 'Boxes Lite Element', 'cyberchimps' ) )
-			->single_image('cyberchimps_box_image', __( 'Box Image', 'cyberchimps' ), '')
-			->text('cyberchimps_box_url', __( 'Box URL', 'cyberchimps' ), '')
-			->textarea('cyberchimps_box_text', __( 'Box Text', 'cyberchimps' ), '')
+		->tab( __( 'Boxes Lite Element', 'cyberchimps_elements' ) )
+			->single_image('cyberchimps_box_image', __( 'Box Image', 'cyberchimps_elements' ), '')
+			->text('cyberchimps_box_url', __( 'Box URL', 'cyberchimps_elements' ), '')
+			->textarea('cyberchimps_box_text', __( 'Box Text', 'cyberchimps_elements' ), '')
 		->end();
 		
 	foreach ($meta_boxes as $meta_box) {
@@ -125,14 +125,16 @@ function cyberchimps_boxes_render_display() {
 				$box_text = get_post_meta( $box->ID, 'cyberchimps_box_text', true );
 		?>	
 				<div id="box<?php echo $box_counter; ?>" class="box span4">
-        <?php if( $box_url != '' ): ?>
+        <?php if( $box_url != '' && $box_image != '' ): ?>
 					<a href="<?php echo esc_url( $box_url ); ?>" class="box-link">
 						<img class="box-image" src="<?php echo esc_url( $box_image ); ?>" />
           </a>
         <?php else: ?>
-        	<a class="box-no-url">
-						<img class="box-image" src="<?php echo esc_url( $box_image ); ?>" />
-          </a>
+			 <?php if( $box_image != '' ): ?>
+				<a class="box-no-url">
+					<img class="box-image" src="<?php echo esc_url( $box_image ); ?>" />
+				</a>
+			<?php endif; ?>
         <?php endif; ?>
 					<h2 class="box-widget-title"><?php echo $box->post_title; ?></h2>
 					<p><?php echo wp_kses( $box_text, array( 'br' => array(),'em' => array(),'strong' => array() ) ); ?></p>
@@ -145,24 +147,24 @@ function cyberchimps_boxes_render_display() {
 					<a href="#" class="box-link">
 						<img class="box-image" src="<?php echo $directory_uri; ?><?php echo apply_filters( 'cyberchimps_box1_image', '/elements/lib/images/boxes/slidericon.png' ); ?>" alt="CyberChimps Slider" />
           </a>
-					<h2 class="box-widget-title"><?php _e( 'Responsive iFeature Slider', 'cyberchimps' ); ?></h2>
-					<p><?php _e( 'The New Touch Friendly iFeature 5 Slider now responds to any mobile touch device.', 'cyberchimps' ); ?></p>
+					<h2 class="box-widget-title"><?php _e( 'Responsive iFeature Slider', 'cyberchimps_elements' ); ?></h2>
+					<p><?php _e( 'The New Touch Friendly iFeature 5 Slider now responds to any mobile touch device.', 'cyberchimps_elements' ); ?></p>
 				</div><!--end box1-->
         
         <div class="box span4">
 					<a href="#" class="box-link">
 						<img class="box-image" src="<?php echo $directory_uri; ?><?php echo apply_filters( 'cyberchimps_box2_image', '/elements/lib/images/boxes/blueprint.png' ); ?>" alt="CyberChimps Blueprint" />
           </a>
-					<h2 class="box-widget-title"><?php _e( 'Responsive Design', 'cyberchimps' ); ?></h2>
-					<p><?php _e( 'With iFeature Pro 5 and touch friendly responsive design you can now control your website on any device.', 'cyberchimps' ); ?></p>
+					<h2 class="box-widget-title"><?php _e( 'Responsive Design', 'cyberchimps_elements' ); ?></h2>
+					<p><?php _e( 'With iFeature Pro 5 and touch friendly responsive design you can now control your website on any device.', 'cyberchimps_elements' ); ?></p>
 				</div><!--end box3-->
         
         <div class="box span4">
 					<a href="#" class="box-link">
 						<img class="box-image" src="<?php echo $directory_uri; ?><?php echo apply_filters( 'cyberchimps_box3_image', '/elements/lib/images/boxes/docs.png' ); ?>" alt="CyberChimps Help" />
           </a>
-					<h2 class="box-widget-title"><?php _e( 'Excellent Support', 'cyberchimps' ); ?></h2>
-					<p><?php _e( 'Need help? Read the instructions and please visit our dedicated Pro Support Forum', 'cyberchimps' ); ?></p>
+					<h2 class="box-widget-title"><?php _e( 'Excellent Support', 'cyberchimps_elements' ); ?></h2>
+					<p><?php _e( 'Need help? Read the instructions and please visit our dedicated Pro Support Forum', 'cyberchimps_elements' ); ?></p>
 				</div><!--end box4-->
 			
 		<?php	endif;
