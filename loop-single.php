@@ -87,7 +87,7 @@ if ( function_exists( 'get_post_format' ) ) {
 				<?php
 				/* translators: this is for the author byline, such as 'by John Doe' */
 				$author_url = '<a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" class="url">' . get_the_author_meta( 'display_name' ) . '</a>';
-				printf( __( 'by %s', 'graphene' ), '<span class="fn nickname">' . $author_url . '</span>' );
+				printf( __( 'by %s', 'graphene' ), '<span class="fn nickname">' . apply_filters( 'graphene_author_url', $author_url ) . '</span>' );
 				?>
 			</p>
 			<?php endif; ?>

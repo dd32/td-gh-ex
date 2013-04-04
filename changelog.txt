@@ -4,6 +4,15 @@ http://www.khairul-syahir.com
 
 CHANGELOG
 
+Version 1.8.4
+	* Implemented multilingual-aware object ID retrieval for better WPML compatibility
+	* Added CodeMirror code editor for the theme's Custom CSS and Custom <head> tags options
+	* Added graphene_author_url filter
+	* Added Austrian German (de_AT) informal "Du" translation by Webagentur Lederstatter
+	* Fixed comments link being displayed on posts that have comments disabled
+	* Fixed news feed in options page not displaying excerpts less than 20 words
+	* Fixed comment form going behind sidebar when replying to comments
+	
 Version 1.8.3
 	* Added option to fine tune date display setting for individual posts
 	* Added Filipino (fil) translation by Mikael Rieck

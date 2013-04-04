@@ -584,7 +584,7 @@ function graphene_filter_posts_category( $query ){
 	if ( empty( $graphene_settings['frontpage_posts_cats'] ) || in_array( 'disabled', $graphene_settings['frontpage_posts_cats'] ) ) return;
 	
 	$cats = $graphene_settings['frontpage_posts_cats'];
-	$query->set( 'category__in', $cats );
+	$query->set( 'category__in', graphene_object_id( $cats, 'category' ) );
 }
 add_action( 'pre_get_posts', 'graphene_filter_posts_category', 5 );
 

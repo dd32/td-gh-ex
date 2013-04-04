@@ -93,7 +93,7 @@ if ( function_exists( 'get_post_format' ) && $post_type->name != 'page' ) {
 				<?php
 				/* translators: this is for the author byline, such as 'by John Doe' */
 				$author_url = '<a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" class="url" rel="author">' . get_the_author_meta( 'display_name' ) . '</a>';
-				printf( __( 'by %s', 'graphene' ), '<span class="fn nickname">' . $author_url . '</span>' );
+				printf( __( 'by %s', 'graphene' ), '<span class="fn nickname">' . apply_filters( 'graphene_author_url', $author_url ) . '</span>' );
 				?>
 			</p>
 			<?php endif; ?>
@@ -161,7 +161,7 @@ if ( function_exists( 'get_post_format' ) && $post_type->name != 'page' ) {
 			<p class="comment-link">
 				<?php 
 				$comments_num = get_comments_number();
-				comments_popup_link( __( 'Leave comment', 'graphene' ), __( '1 comment', 'graphene' ), sprintf( _n( '%d comment', "%d comments", $comments_num, 'graphene' ), $comments_num ), 'comments-link', __( "Comments off", 'graphene' ) ); 
+				comments_popup_link( __( 'Leave comment', 'graphene' ), __( '1 comment', 'graphene' ), sprintf( _n( '%d comment', "%d comments", $comments_num, 'graphene' ), $comments_num ), 'comments-link' ); 
 				?>
             </p>
             <?php endif; ?>

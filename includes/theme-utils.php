@@ -218,7 +218,8 @@ if ( ! function_exists( 'graphene_truncate_word' ) ) :
 
 function graphene_truncate_words( $string, $word_count, $suffix = '...' ){
    $string_array = explode( ' ', $string );
-   if( count ( $string_array ) > $word_count && $word_count > 0 )
+   $trunc_string = $string;
+   if ( count ( $string_array ) > $word_count && $word_count > 0 )
       $trunc_string = implode( ' ', array_slice( $string_array, 0, $word_count ) ) . $suffix;
 	  
    return apply_filters( 'graphene_truncate_words', $trunc_string, $string, $word_count, $suffix );

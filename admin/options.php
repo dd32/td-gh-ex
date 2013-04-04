@@ -74,7 +74,7 @@ function graphene_options(){
         
         <p><?php _e( 'These are the global settings for the theme. You may override some of the settings in individual posts and pages.', 'graphene' ); ?></p>
         
-		<?php settings_errors(); ?>        
+		<?php settings_errors( 'graphene_options' ); ?>        
         
         <?php /* Print the options tabs */ ?>
         <?php 
@@ -121,7 +121,7 @@ function graphene_options(){
             <div class="panel-wrap inside">
                 <ul>
                 	<li><a href="http://docs.graphene-theme.com/"><?php _e( 'Documentation Wiki', 'graphene' ); ?></a></li>
-                    <li><a href="http://forum.graphene-theme.com/"><?php _e( 'Support Forum', 'graphene' ); ?></a></li>
+                    <li><a href="http://www.graphene-theme.com/graphene-theme/help-and-support/"><?php _e( 'Support Forum', 'graphene' ); ?></a></li>
                 </ul>
                 <p><?php printf( __( 'Also, find out how you can %s.', 'graphene' ), '<a href="http://docs.graphene-theme.com/Ways_to_contribute">' . __( 'support the Graphene theme', 'graphene' ) . '</a>' ); ?></p>
             </div>

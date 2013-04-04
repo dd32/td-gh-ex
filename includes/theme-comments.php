@@ -238,7 +238,7 @@ function graphene_should_show_comments() {
 	if ( ! is_singular() && $graphene_settings['hide_post_commentcount'] )
 		return false;
 	
-	if ( ! comments_open() && have_comments() && ! is_singular() )
+	if ( ! comments_open() && ! is_singular() )
 		return false;
 	
     return true;
