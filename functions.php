@@ -266,6 +266,22 @@ function semperfi_customize($wp_customize) {
 			'peppered'			=> 'Peppered',
 			'vintage'			=> 'Vintage',
 			'canvas'			=> 'Heavy Canvas',), ));
+			
+	// Comments Choice
+	$wp_customize->add_setting( 'comments_setting', array(
+		'default'           	=> 'pages_and_posts',
+		'control'           	=> 'select',));
+
+	$wp_customize->add_control( 'comments_control', array(
+		'section'				=> 'content_section',
+		'label'					=> 'Options for Displaying Comments',
+		'settings'				=> 'comments_setting',
+		'type'					=> 'select',
+		'choices'				=> array(
+			'pages_and_posts'	=> 'Comments on both Pages & Posts',
+			'posts'				=> 'Comments only on Posts',
+			'pages'				=> 'Comments only on Pages',
+			'none'				=> 'Comments completely Off',), ));
 
 	// Upload and Customization for the Banner and Header Options
 	$wp_customize->add_setting('menu_setting', array(
@@ -2022,6 +2038,12 @@ function semperfi_theme_options_do_page() { ?>
         <td>&#9733;</td>
         <td>&#9733;</td>
         </tr>
+        </tr>
+        <tr>
+        <td class="justify">Comments on Pages only, Posts only, Both, or Nones</td>
+        <td>&#9733;</td>
+        <td>&#9733;</td>
+        </tr>
         <tr>
         <td class="justify">Upload Your Header Image</td>
         <td></td>
@@ -2075,6 +2097,10 @@ function semperfi_theme_options_do_page() { ?>
         <th class="justify"></th>
         </tr>
         <tr>
+        <th>1.5</th>
+        <td class="justify">Fixed an issue with comments, SEO plugins, and add complete control over commenting.</td>
+        </tr>
+        <tr>
         <th>1.4</th>
         <td class="justify">Minor fixes that show up in the header the theme options are blank.</td>
         </tr>
@@ -2110,6 +2136,10 @@ function semperfi_theme_options_do_page() { ?>
         <tr>
         <th>Version</th>
         <td class="justify"></td>
+        </tr>
+        <tr>
+        <th>6</th>
+        <td class="justify">Same stuff as in 1.5 Semper Fi Lite.</td>
         </tr>
         <tr>
         <th>5</th>

@@ -2,7 +2,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-<title><?php wp_title('&#124;', true, 'right'); ?><?php bloginfo('name'); ?></title>
+<title><?php wp_title(); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_uri(); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -212,10 +212,7 @@
 
 <!-- The Comments -->
 <?php if (is_search()) : ?>
-<?php elseif($semperfi_404) : ?>
-<?php elseif ( comments_open() ) : ?>
-<?php comments_template( '', true ); ?>
-<?php elseif ( ( is_page() && comments_open() ) || is_single() ) : ?>
+<?php elseif ( ( is_page() && comments_open() && $semperfi_404 && (get_theme_mod('comments_setting') == 'pages') ) ||  ( is_single() && $semperfi_404 && (get_theme_mod('comments_setting') == 'posts') ) || ( $semperfi_404 && comments_open() && (get_theme_mod('comments_setting') == 'pages_and_posts') ) ) : ?>
 <?php comments_template( '', true ); ?>
 <?php endif; ?>
 <!-- End Comments -->
