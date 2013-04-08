@@ -171,6 +171,10 @@ a.review {
 a.demo {
 	color: #46A314;
 }
+
+a.support {
+    color: #E1980F;
+}
 #social-share  {
 	float: right;
 	margin-top: 4px;

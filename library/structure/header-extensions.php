@@ -215,7 +215,7 @@ function attitude_headerdetails() {
 			?>
 				<hgroup id="site-logo" class="clearfix">
 					<?php 
-						if( $options[ 'header_show' ] == 'header-text' ) {
+						if( $options[ 'header_show' ] != 'disable-both' && $options[ 'header_show' ] == 'header-text' ) {
 						?>
 							<h1 id="site-title"> 
 								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
@@ -225,7 +225,7 @@ function attitude_headerdetails() {
 							<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
 						<?php
 						}
-						elseif( $options[ 'header_show' ] == 'header-logo' ) {
+						elseif( $options[ 'header_show' ] != 'disable-both' && $options[ 'header_show' ] == 'header-logo' ) {
 						?>
 							<h1 id="site-title"> 
 								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
