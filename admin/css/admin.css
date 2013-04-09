@@ -335,9 +335,11 @@ background:#FFF !important;
 margin-bottom:10px !important;
 border:1px solid #DDD !important;
 border-top:none !important;
-overflow:visible !important;
+overflow: hidden;
 padding:1em !important;
 }
+.ui-accordion .ui-accordion-content { overflow: hidden !important; }
+.ui-accordion .ui-accordion-content-overflow { overflow: visible !important; }
 
 .ui-state-active {
 	background:#EEE !important;

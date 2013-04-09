@@ -63,7 +63,7 @@ $mantra_defaults = array(
 "mantra_columnlink1" => "",
 "mantra_columnimg2" => get_template_directory_uri()."/images/slider/mantra-column.jpg",
 "mantra_columntitle2" => " HTML tags",
-"mantra_columntext2" => "You can also have <a href='http://www.riotreactions.com'>links</a> here as well as all other <strong>HTML tags</strong>.",
+"mantra_columntext2" => "You can also have <a href='http://www.riotreactions.com'>links</a> here as well as some <strong>HTML tags</strong>.",
 "mantra_columnlink2" => "",
 "mantra_columnimg3" => get_template_directory_uri()."/images/slider/mantra-column.jpg",
 "mantra_columntitle3" => "",
@@ -77,7 +77,7 @@ $mantra_defaults = array(
 "mantra_fronttext1" => "This could be a title",
 "mantra_fronttext2" => "And this is a second title",
 "mantra_fronttitlecolor" => "#333333",
-"mantra_fronttext3" => "And here you could have a whole lot of text. Or not. It's all up to you. Deleting all text inside the appropriate input in the Mantra Settings will remove this whole text zone. It can also contain all HTML tags.<br /> Just try everything out and see what suits you. Have fun and good luck! ",
+"mantra_fronttext3" => "And here you could have a whole lot of text. Or not. It's all up to you. Deleting all text inside the appropriate input in the Mantra Settings will remove this whole text zone. It can also contain some HTML tags.<br /> Just try everything out and see what suits you. Have fun and good luck! ",
 "mantra_fronttext4" => "",
 
 "mantra_fronthideheader" => "",

@@ -5,8 +5,8 @@
 @media (max-width: 800px) {
 	#content {
 		float:none ;
-		margin:0 20px ;
-		width:98% ;
+		margin:0 2%;
+		width:96%;
 		height:auto ;
 	}
 	#access, #branding {width:100%;}

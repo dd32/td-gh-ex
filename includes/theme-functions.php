@@ -36,15 +36,9 @@ function makeDoubleDelegate(function1, function2) {
 }
 
 function mantra_onload() {
-     // Add custom borders to images
-     jQuery("img.alignnone, img.alignleft, img.aligncenter,  img.alignright").addClass("<?php echo 'image'.$mantra_image;?>");
+    
 <?php if ($mantra_mobile=="Enable") { // If mobile view is enabled ?>
-	jQuery(function () {
-	// Add select navigation to small screens
-     jQuery("#access .menu ul:first-child").tinyNav({
-          	header: false // Show header instead of the active item
-			});
-	});
+
      // Add responsive videos
      if (jQuery(window).width() < 800) jQuery(".entry-content").fitVids();
 <?php }
@@ -52,6 +46,19 @@ if (($mantra_s1bg || $mantra_s2bg) ) { ?>
      // Check if sidebars have user colors and if so equalize their heights
      equalizeHeights();<?php } ?>
 }; // mantra_onload
+
+
+jQuery(document).ready(function(){
+     // Add custom borders to images
+     jQuery("img.alignnone, img.alignleft, img.aligncenter,  img.alignright").addClass("<?php echo 'image'.$mantra_image;?>");
+<?php if ($mantra_mobile=="Enable") { // If mobile view is enabled ?>
+
+	// Add select navigation to small screens
+     jQuery("#access .menu ul:first-child").tinyNav({
+          	header: false // Show header instead of the active item
+			});
+<?php } ?>
+});
 
 // make sure not to lose previous onload events
 window.onload = makeDoubleDelegate(window.onload, mantra_onload );
@@ -121,7 +128,7 @@ foreach ($mantra_options as $key => $value) {
 	
 }
   
-  
+  if($mantra_socialsdisplay0) mantra_header_socials();
   echo '</div>';
 }
 
@@ -148,7 +155,7 @@ add_action ('cryout_branding_hook','mantra_title_and_description');
  mantra_set_social_icons('sfooter');
  }
 
-if($mantra_socialsdisplay0) add_action('cryout_branding_hook', 'mantra_header_socials');
+//if($mantra_socialsdisplay0) add_action('cryout_branding_hook', 'mantra_header_socials');
 if($mantra_socialsdisplay1) add_action('cryout_forbottom_hook', 'mantra_smenul_socials');
 if($mantra_socialsdisplay2) add_action('cryout_forbottom_hook', 'mantra_smenur_socials');
 if($mantra_socialsdisplay3) add_action('cryout_footer_hook', 'mantra_footer_socials',13);
