@@ -1,3 +1,5 @@
+// CSS3mediaqueries.js ( https://code.google.com/p/css3-mediaqueries-js/ ) 
+// is released under MIT License ( http://opensource.org/licenses/mit-license.php )
 if(typeof Object.create!=="function"){
 Object.create=function(o){
 function F(){

@@ -4,7 +4,7 @@ Theme URI: http://ramacciotti.altervista.org/archivio/articolo/arzine-theme
 Author: Alberto Ramacciotti
 Author URI: http://www.arwebdevstudio.it
 Description: AR Zine is a theme designed like magazine.
-Version: 1.1
+Version: 1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: light, black, white, one-column, two-columns, three-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready 
@@ -487,7 +487,7 @@ img.wp-smiley,
 
 .author-description p {
     color: #666666;
-    font-size: 13px;
+    font-size: 16px;
     line-height: 1.8;
 }
 

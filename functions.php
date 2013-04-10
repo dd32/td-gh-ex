@@ -1,6 +1,6 @@
 <?php 
 if ( ! isset( $content_width ) )
-    $content_width = 625;
+    $content_width = 550;
 
 function arzine_setup() {
     load_theme_textdomain( 'arzine', get_template_directory() . '/langs' );
@@ -12,7 +12,7 @@ function arzine_setup() {
         'default-color' => '040606',
     ) );
     add_theme_support( 'post-thumbnails' );
-    set_post_thumbnail_size( 624, 9999 );
+    set_post_thumbnail_size( 550, 9999 );
 }
 add_action( 'after_setup_theme', 'arzine_setup' );
 require( get_template_directory() . '/inc/custom-header.php' );
