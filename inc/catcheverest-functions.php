@@ -612,7 +612,7 @@ function catcheverest_slider_display() {
 	$enableslider = $options[ 'enable_slider' ];
 	$featuredslider = $options[ 'featured_slider' ];
 	
-	if ( ( $enableslider == 'enable-slider-allpage' ) || ( ( is_home() || is_front_page() ) && $enableslider == 'enable-slider-homepage' ) ) :
+	if ( ( $enableslider == 'enable-slider-allpage' ) || ( is_front_page() && $enableslider == 'enable-slider-homepage' ) ) :
 		// This function passes the value of slider effect to js file 
 		if ( function_exists( 'catcheverest_pass_slider_value' ) ) : catcheverest_pass_slider_value(); endif;
 		// Select Slider
@@ -642,7 +642,7 @@ function catcheverest_homepage_headline() {
 	$disable_headline = $options[ 'disable_homepage_headline' ];
 	$disable_subheadline = $options[ 'disable_homepage_subheadline' ];
     
-	 if ( ( is_home() || is_front_page() ) && ( $disable_headline == "0" || $disable_subheadline == "0" ) ) { 
+	 if ( is_front_page() && ( $disable_headline == "0" || $disable_subheadline == "0" ) ) { 
 		
 		if ( !$catcheverest_homepage_headline = get_transient( 'catcheverest_homepage_headline' ) ) {
 			
@@ -871,7 +871,7 @@ function catcheverest_homepage_featured_display() {
    	$options = $catcheverest_options_settings;
 	$disable_homepage_featured = $options[ 'disable_homepage_featured' ];
 	
-	if ( is_home() || is_front_page() ) {
+	if ( is_front_page() ) {
 		if  ( !empty( $options[ 'homepage_featured_image' ] ) || !empty( $options[ 'homepage_featured_title' ] ) || !empty( $options[ 'homepage_featured_content' ] ) ) {
 			catcheverest_homepage_featured_content();
 		} else {

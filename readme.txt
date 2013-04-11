@@ -2,7 +2,7 @@
 Catch Everest Theme by Catch Themes team, http://catchthemes.com/
 
 == ABOUT Catch Everest ==
-Catch Everest is Simple, Clean and Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel which makes this theme highly customizable and flexible. Make your beautiful yet professional website in no time. Multilingual Ready (WPML) and also currently translated in Polish. Active community at http://catchthemes.com/support-forum/
+Catch Everest is Simple, Clean and Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel which makes this theme highly customizable and flexible. Make your beautiful yet professional website in no time. Multilingual Ready (WPML) and also currently translated in Polish, Chinese, and Spanish. Active community at http://catchthemes.com/support-forum/
 
 == Tags ==
 light, gray, white, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-header, custom-menu, featured-images, flexible-header, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
@@ -11,6 +11,7 @@ light, gray, white, one-column, two-columns, left-sidebar, right-sidebar, fixed-
 Catch Everest theme is translation ready. 
 Added Translation for Polish by Piotrek Jas (fansitejustgames@gmail.com)
 Added Translation for Chinese by ZCW ( conanla@qq.com)
+Added Translation for Spanish by Ruben Ramos Fernandez ( batmovil69@hotmail.com )
 
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 2, see file license.txt
@@ -71,7 +72,11 @@ Version 0.1.3.1
 version 0.1.4
 * Added Post ID shown in the All Posts Table in admin section 
 * Fixed Homepage featured content loop for more than 6 items
-* Adding function_exists() condition to support child theme easy editing
+* Added function_exists() condition to support child theme easy editing
 * Fixed IE8 issue of Header Image and placeholder
 * Added active menu support for default page menu
 * Added Chinese translation zh_CN.po and zh_CN.mo
+
+version 0.1.5
+* Fixed the homepage condition by removing is_home()
+* Added Spanish translation es_ES.po and es_ES.mo
