@@ -13,6 +13,14 @@ function simplecatch_scripts_method() {
 	if ( is_home() || is_front_page() ) {
 		wp_enqueue_script( 'simplecatch_slider', get_template_directory_uri() . '/js/simplecatch_slider.js', array( 'jquery-cycle' ), '1.0', true );
 	}
+	
+	/**
+	 * Adds JavaScript to pages with the comment form to support
+	 * sites with threaded comments (when in use).
+	 */
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
 
 	//Enqueue Search Script
 	wp_enqueue_script ( 'simplecatch_search', get_template_directory_uri() . '/js/simplecatch_search.js', array( 'jquery' ), '1.0', true );
@@ -56,21 +64,6 @@ function simplecatch_register_js() {
 	wp_register_script( 'jquery-cookie', get_template_directory_uri() . '/js/jquery.cookie.min.js', array( 'jquery' ), '1.0', true );
 }
 add_action( 'admin_enqueue_scripts', 'simplecatch_register_js' );
-
-
-/**
- * Enqueue Comment Reply Script
- *
- * We add some JavaScript to pages with the comment form
- * to support sites with threaded comments (when in use).
- * @used comment_form_before action hook 
- */	 
-function simplecatch_enqueue_comment_reply_script() {
-	if ( comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-}
-add_action( 'comment_form_before', 'simplecatch_enqueue_comment_reply_script' );
 
 
 /**
@@ -155,6 +148,7 @@ function simplecatch_custom_excerpt( $output ) {
 add_filter( 'get_the_excerpt', 'simplecatch_custom_excerpt' );
 
 
+if ( ! function_exists( 'simplecatch_headerdetails' ) ) :
 /**
  * Get the header logo Image from theme options
  *
@@ -167,7 +161,7 @@ add_filter( 'get_the_excerpt', 'simplecatch_custom_excerpt' );
  * @uses set_transient and delete_transient 
  */
 function simplecatch_headerdetails() {
-	delete_transient( 'simplecatch_headerdetails' );	
+	//delete_transient( 'simplecatch_headerdetails' );	
 
 	global $simplecatch_options_settings;
     $options = $simplecatch_options_settings;	
@@ -206,9 +200,11 @@ function simplecatch_headerdetails() {
 	set_transient( 'simplecatch_headerdetails', $simplecatch_headerdetails, 86940 );
 	}
 	echo $simplecatch_headerdetails;	
-} // simplecatch_headerdetails
+}
+endif; // simplecatch_headerdetails
 
 
+if ( ! function_exists( 'simplecatch_footerlogo' ) ) :
 /**
  * Get the footer logo Image from theme options
  *
@@ -245,7 +241,8 @@ function simplecatch_footerlogo() {
 	set_transient( 'simplecatch_footerlogo', $simplecatch_footerlogo, 86940 );										  
 	}
 	echo $simplecatch_footerlogo;
-} // simplecatch_footerlogo
+}
+endif; // simplecatch_footerlogo
 
 
 /**
@@ -285,6 +282,7 @@ add_action('wp_head', 'simplecatch_favicon');
 add_action( 'admin_head', 'simplecatch_favicon' );
 
 
+if ( ! function_exists( 'simplecatch_sliders' ) ) :
 /**
  * This function to display featured posts on homepage header
  *
@@ -355,9 +353,11 @@ function simplecatch_sliders() {
 	set_transient( 'simplecatch_sliders', $simplecatch_sliders, 86940 );
 	}
 	echo $simplecatch_sliders;	
-} // simplecatch_sliders
+}
+endif; // simplecatch_sliders
 
 
+if ( ! function_exists( 'simplecatch_sliderbreadcrumb' ) ) :
 /**
  * Display slider or breadcrumb on header
  *
@@ -384,9 +384,11 @@ function simplecatch_sliderbreadcrumb() {
 		endif; 
 		
   	endif;
-} // simplecatch_sliderbreadcrumb
+}
+endif; // simplecatch_sliderbreadcrumb
 
 
+if ( ! function_exists( 'simplecatch_headersocialnetworks' ) ) :
 /**
  * This function for social links display on header
  *
@@ -510,7 +512,8 @@ function simplecatch_headersocialnetworks() {
 		set_transient( 'simplecatch_headersocialnetworks', $simplecatch_headersocialnetworks, 86940 );	 
 	}
 	echo $simplecatch_headersocialnetworks;
-} // simplecatch_headersocialnetworks
+}
+endif; // simplecatch_headersocialnetworks 
 
 
 /**
@@ -740,6 +743,7 @@ function simplecatch_class_names($classes) {
 add_filter('body_class','simplecatch_class_names');
 
 
+if ( ! function_exists( 'simplecatch_content' ) ) :
 /**
  * Display the page/post content
  * @since Simple Catch 1.3.2
@@ -780,8 +784,10 @@ function simplecatch_content() {
 	
 	get_footer(); 
 }
+endif; // simplecatch_content
 
 
+if ( ! function_exists( 'simplecatch_loop' ) ) :
 /**
  * Display the page/post loop part
  * @since Simple Catch 1.3.2
@@ -833,8 +839,10 @@ function simplecatch_loop() {
 		</div> <!-- .post -->
 	<?php endif;
 }
+endif; // simplecatch_loop
 
 
+if ( ! function_exists( 'simplecatch_display_div' ) ) :
 /**
  * Display the header div
  * @since Simple Catch 1.3.2
@@ -859,6 +867,7 @@ function simplecatch_display_div() {
 	}
 	return $themeoption_layout;
 }
+endif;  // simplecatch_display_div 
 
 
 /**
@@ -910,3 +919,30 @@ function simplecatch_comment_form_defaults( $defaults ) {
 	return $defaults;
 }
 add_filter( 'comment_form_defaults', 'simplecatch_comment_form_defaults' );
+
+
+/**
+ * Adds in post ID when viewing lists of posts 
+ * This will help the admin to add the post ID in featured slider
+ * 
+ * @param mixed $post_columns
+ * @return post columns
+ */
+function simplecatch_post_id_column( $post_columns ) {
+	$beginning = array_slice( $post_columns, 0 ,1 );
+	$beginning[ 'postid' ] = __( 'ID', 'simplecatch'  );
+	$ending = array_slice( $post_columns, 1 );
+	$post_columns = array_merge( $beginning, $ending );
+	return $post_columns;
+}
+add_filter( 'manage_posts_columns', 'simplecatch_post_id_column' );
+
+function simplecatch_posts_id_column( $col, $val ) {
+	if( $col == 'postid' ) echo $val;
+}
+add_action( 'manage_posts_custom_column', 'simplecatch_posts_id_column', 10, 2 );
+
+function simplecatch_posts_id_column_css() {
+	echo '<style type="text/css">#postid { width: 40px; }</style>';
+}
+add_action( 'admin_head-edit.php', 'simplecatch_posts_id_column_css' );

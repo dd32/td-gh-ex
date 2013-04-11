@@ -2,10 +2,10 @@
 * by the Catch Themes team, http://catchthemes.com/
 
 == ABOUT Simple Catch==
-Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework. Multilingual Ready (WPML) and also currently translated in Polish, Russian, Finnish, French, Dutch, Croatian and Chinese. Free Support Forum at http://catchthemes.com/support-forum/forum/simple-catch-public/
+Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework. Multilingual Ready (WPML) and also currently translated in Polish, Russian, Finnish, French, Dutch, Croatian, Chinese, and German. Free Support Forum at http://catchthemes.com/support-forum/forum/simple-catch-public/
 
 == UPGRADE to Simple Catch Pro ==
-Simple Catch Pro is an advance version of our popular theme Simple Catch. It is based on HTML5, CSS3 and Responsive Web Design to view in various devices. Some of the additional features includes: Featured Image Slider, Responsive Design, Additional Layout Options, Custom Footer Editor, and Adspace Widget for Advertisement.
+Simple Catch Pro is an advance version of our popular theme Simple Catch. It is based on HTML5, CSS3 and Responsive Web Design to view in various devices. Some of the additional features includes: Featured Image Slider, Responsive Design, Additional Layout Options, Custom Footer Editor, and Adspace Widget for Advertisement. For more details of Simple Catch Pro theme see this http://catchthemes.com/theme-instructions/simple-catch-pro/
 
 == Translation ==
 Simple Catch theme is translation ready. 
@@ -24,8 +24,23 @@ Added Translation for German by Manuel Salmann ( manuel.salmann@gmail.com )
 Featured Image Slider, Custom Drop-down Menu, Theme Options, Custom Widgets, flexible position of sidebar and Support for popular plugins.
 
 == Tags ==
-
 Tags Used: black, gray, silver, white, light, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, custom-menu, featured-images, full-width-template, theme-options, threaded-comments, translation-ready
+
+== License ==
+Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 2, see file license.txt
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Simple Catch WordPress Theme, Copyright 2013 Catchthemes.com
+Simple Catch is distributed under the terms of the GNU General Public License v2 
+
+== Post ID shown in the ALl Posts Table ==
+This theme shows the Post ID of the posts in the All Posts table in the WordPress Dashboard. This is added to help the users to use those ids in the featured Post Slider Options in Theme Options Panel.
+
+== Theme Instruction ==
+Check out the theme instruction at http://catchthemes.com/theme-instructions/simple-catch/
+
+== Free Support Forum ==
+Access to free support forum at http://catchthemes.com/support-forum/forum/simple-catch-public/
 
 == Installation ==
 
@@ -277,3 +292,9 @@ Version 2.3.1
 Version 2.3.2
 * Removed simplecatch_sort_query_by_post_in function as post orderby is already implement in WordPress Version 3.5 by default
 * Added German translation de_DE.po and de_DE.mo
+
+Version 2.3.3
+* Moved comment-reply script to wp_enqueue_scripts
+* Added Post ID shown in the All Posts Table in admin section 
+* Added !function_exists() condition to support child theme easy editing
+* Fixed the css for wp-caption img

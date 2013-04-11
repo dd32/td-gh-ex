@@ -1,4 +1,26 @@
 <?php
+/**
+ * Register sidebars and widget areas.
+ */
+function simplecatch_widgets_init() {
+	
+	register_widget( 'CustomTagWidget' );
+	register_widget( 'simplecatch_social_widget' );
+	
+	register_sidebar( array( 
+		'name'          => __( 'sidebar', 'simplecatch' ),
+		'id'            => 'sidebar',
+		'description'   => __( 'sidebar', 'simplecatch' ),
+		'before_widget' => '<div class="widget">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3><hr/>' 
+	) ); 
+	
+ }
+add_action( 'widgets_init', 'simplecatch_widgets_init' );
+
+
 /** 
  * Extends class wp_widget
  * 

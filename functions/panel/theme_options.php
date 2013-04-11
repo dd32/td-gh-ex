@@ -64,7 +64,7 @@ function simplecatch_admin_social() { ?>
 <!-- End Social scripts -->
 <?php
 }
-add_action('adminmenu','simplecatch_admin_social');
+add_action('admin_print_styles-appearance_page_theme_options','simplecatch_admin_social');
 
 
 /*
