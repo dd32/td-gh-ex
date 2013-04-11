@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box v1.7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-01 16:11+0545\n"
-"PO-Revision-Date: 2013-04-01 16:11+0545\n"
+"POT-Creation-Date: 2013-04-11 17:35+0545\n"
+"PO-Revision-Date: 2013-04-11 17:35+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: H.P. Brinkmann\n"
 "Language: de_DE\n"
@@ -167,7 +167,7 @@ msgstr "Kommentare sind abgeschaltet."
 #: ../content-aside.php:16 ../content-featured.php:14
 #: ../content-gallery.php:16 ../content-gallery.php:48 ../content-image.php:15
 #: ../content-link.php:16 ../content-quote.php:14 ../content-status.php:15
-#: ../content.php:15 ../content.php:19 ../content.php:47 ../functions.php:774
+#: ../content.php:15 ../content.php:19 ../content.php:47 ../functions.php:793
 #, php-format
 msgid "Permalink to %s"
 msgstr "Permanenter Link zu %s"
@@ -200,7 +200,7 @@ msgstr "%"
 # @ catchbox
 #: ../content-aside.php:33 ../content-gallery.php:32 ../content-image.php:27
 #: ../content-link.php:33 ../content-quote.php:35 ../content-status.php:34
-#: ../content.php:55 ../functions.php:375
+#: ../content.php:55 ../functions.php:386
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "weiterlesen <span class=\"meta-nav\">&rarr;</span>"
 
@@ -237,8 +237,8 @@ msgstr "<b>%</b> Antworten"
 #: ../content-aside.php:50 ../content-featured.php:51
 #: ../content-gallery.php:96 ../content-image.php:74 ../content-link.php:50
 #: ../content-page.php:27 ../content-quote.php:78 ../content-single.php:64
-#: ../content-status.php:51 ../content.php:100 ../functions.php:572
-#: ../functions.php:600 ../image.php:97
+#: ../content-status.php:51 ../content.php:100 ../functions.php:590
+#: ../functions.php:618 ../image.php:97
 msgid "Edit"
 msgstr "Bearbeiten"
 
@@ -318,7 +318,7 @@ msgstr ""
 "title=\"%5$s\" rel=\"author\">%6$s</a></span></span>"
 
 # @ catchbox
-#: ../content-image.php:45 ../functions.php:638
+#: ../content-image.php:45 ../functions.php:656
 #, php-format
 msgid "View all posts by %s"
 msgstr "Alle Beiträge von %s ansehen"
@@ -475,58 +475,58 @@ msgid "Mountain"
 msgstr "Berg"
 
 # @ catchbox
-#: ../functions.php:347
+#: ../functions.php:357
 #, php-format
 msgid "Page %s"
 msgstr "Seite %s"
 
 # @ catchbox
-#: ../functions.php:441
+#: ../functions.php:455
 msgid "Main Sidebar"
 msgstr "Haupt-Seitenleiste"
 
 # @ catchbox
-#: ../functions.php:450
+#: ../functions.php:464
 msgid "Footer Area One"
 msgstr "Seitenfuß-Bereich Eins"
 
 # @ catchbox
-#: ../functions.php:452 ../functions.php:462 ../functions.php:472
+#: ../functions.php:466 ../functions.php:476 ../functions.php:486
 msgid "An optional widget area for your site footer"
 msgstr "Ein optionaler Widget-Bereich für den Seitenfuß"
 
 # @ catchbox
-#: ../functions.php:460
+#: ../functions.php:474
 msgid "Footer Area Two"
 msgstr "Seitenfuß-Bereich Zwei"
 
 # @ catchbox
-#: ../functions.php:470
+#: ../functions.php:484
 msgid "Footer Area Three"
 msgstr "Seitenfuß-Bereich Drei"
 
 # @ catchbox
-#: ../functions.php:490 ../single.php:15
+#: ../functions.php:505 ../single.php:15
 msgid "Post navigation"
 msgstr "Beitragsnavigation"
 
 # @ catchbox
-#: ../functions.php:498
+#: ../functions.php:513
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> Ältere Beiträge"
 
 # @ catchbox
-#: ../functions.php:499
+#: ../functions.php:514
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Neuere Beiträge <span class=\"meta-nav\">&rarr;</span>"
 
 # @ catchbox
-#: ../functions.php:572
+#: ../functions.php:590
 msgid "Pingback:"
 msgstr "Pingback:"
 
 # @ catchbox
-#: ../functions.php:589
+#: ../functions.php:607
 #, php-format
 msgid "%1$s on %2$s <span class=\"says\">said:</span>"
 msgstr ""
@@ -534,23 +534,23 @@ msgstr ""
 "span>"
 
 # @ catchbox
-#: ../functions.php:595
+#: ../functions.php:613
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s um %2$s"
 
 # @ catchbox
-#: ../functions.php:604
+#: ../functions.php:622
 msgid "Your comment is awaiting moderation."
 msgstr "Ihr Kommentar wartet auf Freischaltung."
 
 # @ catchbox
-#: ../functions.php:613
+#: ../functions.php:631
 msgid "Reply <span>&darr;</span>"
 msgstr "Antworten <span>&darr;</span>"
 
 # @ catchbox
-#: ../functions.php:632
+#: ../functions.php:650
 #, php-format
 msgid ""
 "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel="
@@ -566,17 +566,17 @@ msgstr ""
 "rel=\"author\">%7$s</a></span></span>"
 
 # @ catchbox
-#: ../functions.php:687
+#: ../functions.php:705
 msgid "ID"
 msgstr "ID"
 
 # @ default
-#: ../functions.php:881
+#: ../functions.php:899
 msgid "Name"
 msgstr "Name"
 
 # @ default
-#: ../functions.php:883
+#: ../functions.php:901
 msgid "Email"
 msgstr "E-Mail"
 

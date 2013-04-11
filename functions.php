@@ -200,8 +200,16 @@ function catchbox_setup() {
 			'description' => __( 'Mountain', 'catchbox' )
 		),
 	) );
+	
+	//Redirect to Theme Options Page on Activation
+	global $pagenow;
+	if ( is_admin() && isset($_GET['activated'] ) && $pagenow =="themes.php" ) {
+		wp_redirect( 'themes.php?page=theme_options' );
+	}	
+
 }
 endif; // catchbox_setup
+
 
 if ( ! function_exists( 'catchbox_header_style' ) ) :
 /**
@@ -244,6 +252,7 @@ function catchbox_header_style() {
 	<?php
 }
 endif; // catchbox_header_style
+
 
 if ( ! function_exists( 'catchbox_admin_header_style' ) ) :
 /**
@@ -292,6 +301,7 @@ function catchbox_admin_header_style() {
 <?php
 }
 endif; // catchbox_admin_header_style
+
 
 if ( ! function_exists( 'catchbox_admin_header_image' ) ) :
 /**
@@ -368,12 +378,14 @@ function catchbox_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'catchbox_excerpt_length' );
 
+
 /**
  * Returns a "Continue Reading" link for excerpts
  */
 function catchbox_continue_reading_link() {
 	return ' <a class="more-link" href="'. esc_url( get_permalink() ) . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'catchbox' ) . '</a>';
 }
+
 
 /**
  * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and catchbox_continue_reading_link().
@@ -385,6 +397,7 @@ function catchbox_auto_excerpt_more( $more ) {
 	return catchbox_continue_reading_link();
 }
 add_filter( 'excerpt_more', 'catchbox_auto_excerpt_more' );
+
 
 /**
  * Adds a pretty "Continue Reading" link to custom post excerpts.
@@ -399,6 +412,7 @@ function catchbox_custom_excerpt_more( $output ) {
 	return $output;
 }
 add_filter( 'get_the_excerpt', 'catchbox_custom_excerpt_more' );
+
 
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
@@ -478,6 +492,7 @@ function catchbox_widgets_init() {
 }
 add_action( 'widgets_init', 'catchbox_widgets_init' );
 
+
 if ( ! function_exists( 'catchbox_content_nav' ) ) :
 /**
  * Display navigation to next/previous pages when applicable
@@ -505,6 +520,7 @@ function catchbox_content_nav( $nav_id ) {
 }
 endif; // catchbox_content_nav
 
+
 /**
  * Return the URL for the first link found in the post content.
  *
@@ -517,6 +533,7 @@ function catchbox_url_grabber() {
 
 	return esc_url_raw( $matches[1] );
 }
+
 
 /**
  * Count the number of footer sidebars to enable dynamic classes for the footer
@@ -550,6 +567,7 @@ function catchbox_footer_sidebar_class() {
 	if ( $class )
 		echo 'class="' . $class . '"';
 }
+
 
 if ( ! function_exists( 'catchbox_comment' ) ) :
 /**
@@ -706,7 +724,6 @@ add_action( 'admin_head-edit.php', 'catchbox_posts_id_column_css' );
  * Function to pass the variables for php to js file.
  * This funcition passes the slider effect variables.
  */
-
 function catchbox_pass_slider_value() {
 	$options = get_option( 'catchbox_options_slider' );
 	if( !isset( $options[ 'transition_effect' ] ) ) {
@@ -732,6 +749,8 @@ function catchbox_pass_slider_value() {
 	);
 }//catchbox_pass_slider_value
 
+
+if ( ! function_exists( 'catchbox_sliders' ) ) :
 /**
  * This function to display featured posts on index.php
  *
@@ -790,7 +809,9 @@ function catchbox_sliders() {
 		set_transient( 'catchbox_sliders', $catchbox_sliders, 86940 );
 	}
 	echo $catchbox_sliders;	
-} // catchbox_sliders		
+}
+endif;  // catchbox_sliders 
+
 
 /**
  * Register jquery scripts
@@ -807,7 +828,16 @@ function catchbox_scripts_method() {
 		wp_enqueue_script( 'catchbox_slider', get_template_directory_uri() . '/js/catchbox_slider.js', array( 'jquery-cycle' ), '1.0', true );
 	}
 	
+	//Responsive Menu
 	wp_enqueue_script('catchbox-menu', get_template_directory_uri() . '/js/catchbox-menu.min.js', array('jquery'), '1.1.0', true);
+	
+	/**
+	 * Adds JavaScript to pages with the comment form to support
+	 * sites with threaded comments (when in use).
+	 */
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}	
 
 	//Browser Specific Enqueue Script i.e. for IE 1-6
 	$catchbox_ua = strtolower($_SERVER['HTTP_USER_AGENT']);
@@ -821,20 +851,6 @@ function catchbox_scripts_method() {
 	
 } // catchbox_scripts_method
 add_action( 'wp_enqueue_scripts', 'catchbox_scripts_method' );
-
-
-/**
- * Enqueue Comment Reply Script
- *
- * @used wp_enqueue_script
- * hooks action comment_form_before
- */
-function catchbox_enqueue_comment_reply_script() {
-	if ( comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-}
-add_action( 'comment_form_before', 'catchbox_enqueue_comment_reply_script' );
 
 
 /**
@@ -870,6 +886,8 @@ function catchbox_wp_page_menu( $page_markup ) {
 
 add_filter( 'wp_page_menu', 'catchbox_wp_page_menu' );
 
+
+if ( ! function_exists( 'catchbox_comment_form_fields' ) ) :
 /**
  * Altering Comment Form Fields
  * @uses comment_form_default_fields filter
@@ -884,6 +902,8 @@ function catchbox_comment_form_fields( $fields ) {
         '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>'; 
     return $fields;
 }
+endif; // catchbox_comment_form_fields
+
 add_filter( 'comment_form_default_fields', 'catchbox_comment_form_fields' );
 
 
