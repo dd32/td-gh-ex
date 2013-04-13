@@ -114,10 +114,6 @@ function wrap_embed_with_div($html, $url, $attr) {
 
 add_filter('embed_oembed_html', 'wrap_embed_with_div', 10, 3);
 
-// Redirect to the theme options Page after theme is activated
-if ( is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" )
-	wp_redirect( 'themes.php?page=theme_options' ); 
-
 // WordPress Widgets start right here.
 function adventure_widgets_init() {
 
@@ -252,6 +248,616 @@ function adventure_customize($wp_customize) {
 			'standard'		=> 'Standard (Default)',
 			'notitle'		=> 'No Title',
 			'bottom'		=> 'Moves Menu To Bottom', ), ));
+			
+	// Adjust the Space Between the Top of the Page and Content
+	$wp_customize->add_setting( 'titlefontstyle_setting', array(
+		'Default'           => 'Default',
+		'control'           => 'select',));
+
+	$wp_customize->add_control( 'titlefontstyle_control', array(
+		'label'					=> 'Google Webfonts Site Title',
+		'priority'				=> 10,
+		'section'				=> 'title_tagline',
+		'settings'				=> 'titlefontstyle_setting',
+		'type'					=> 'select',
+		'choices'				=> array(
+			'Default'				=> 'Default',
+			'Questrial'				=> 'Questrial',
+			'Astloch'				=> 'Astloch',
+			'IM+Fell+English+SC'	=> 'IM+Fell+English+SC',
+			'Lekton'				=> 'Lekton',
+			'Nova+Round'			=> 'Nova+Round',
+			'Nova+Oval'				=> 'Nova+Oval',
+			'League+Script'			=> 'League+Script',
+			'Caudex'				=> 'Caudex',
+			'IM+Fell+DW+Pica'		=> 'IM+Fell+DW+Pica',
+			'Nova+Script'			=> 'Nova+Script',
+			'Nixie+One'				=> 'Nixie+One',
+			'IM+Fell+DW+Pica+SC'	=> 'IM+Fell+DW+Pica+SC',
+			'Puritan'				=> 'Puritan',
+			'Prociono'				=> 'Prociono',
+			'Abel'					=> 'Abel',
+			'Snippet'				=> 'Snippet',
+			'Kristi'				=> 'Kristi',
+			'Mako'					=> 'Mako',
+			'Ubuntu+Mono'			=> 'Ubuntu+Mono',
+			'Nova+Slim'				=> 'Nova+Slim',
+			'Patrick+Hand'			=> 'Patrick+Hand',
+			'Crafty+Girls'			=> 'Crafty+Girls',
+			'Brawler'				=> 'Brawler',
+			'Droid+Sans'			=> 'Droid+Sans',
+			'Geostar'				=> 'Geostar',
+			'Yellowtail'			=> 'Yellowtail',
+			'Permanent+Marker'		=> 'Permanent+Marker',
+			'Just+Another+Hand'		=> 'Just+Another+Hand',
+			'Unkempt'				=> 'Unkempt',
+			'Jockey+One'			=> 'Jockey+One',
+			'Lato'					=> 'Lato',
+			'Arvo'					=> 'Arvo',
+			'Cabin'					=> 'Cabin',
+			'Playfair+Display'		=> 'Playfair+Display',
+			'Crushed'				=> 'Crushed',
+			'Asset'					=> 'Asset',
+			'Sue+Ellen+Francisco'	=> 'Sue+Ellen+Francisco',
+			'Julee'					=> 'Julee',
+			'Judson'				=> 'Judson',
+			'Neuton'				=> 'Neuton',
+			'Sorts+Mill+Goudy'		=> 'Sorts+Mill+Goudy',
+			'Mate'					=> 'Mate',
+			'News+Cycle'			=> 'News+Cycle',
+			'Michroma'				=> 'Michroma',
+			'Lora'					=> 'Lora',
+			'Give+You+Glory'		=> 'Give+You+Glory',
+			'Rammetto+One'			=> 'Rammetto+One',
+			'Pompiere'				=> 'Pompiere',
+			'PT+Sans'				=> 'PT+Sans',
+			'Andika'				=> 'Andika',
+			'Cabin+Sketch'			=> 'Cabin+Sketch',
+			'Delius+Swash+Caps'		=> 'Delius+Swash+Caps',
+			'Coustard'				=> 'Coustard',
+			'Cherry+Cream+Soda'		=> 'Cherry+Cream+Soda',
+			'Maiden+Orange'			=> 'Maiden+Orange',
+			'Syncopate'				=> 'Syncopate',
+			'PT+Sans+Narrow'		=> 'PT+Sans+Narrow',
+			'Montez'				=> 'Montez',
+			'Short+Stack'			=> 'Short+Stack',
+			'Poller+One'			=> 'Poller+One',
+			'Tinos'					=> 'Tinos',
+			'Philosopher'			=> 'Philosopher',
+			'Neucha'				=> 'Neucha',
+			'Gravitas+One'			=> 'Gravitas+One',
+			'Corben'				=> 'Corben',
+			'Istok+Web'				=> 'Istok+Web',
+			'Federo'				=> 'Federo',
+			'Yeseva+One'			=> 'Yeseva+One',
+			'Petrona'				=> 'Petrona',
+			'Arimo'					=> 'Arimo',
+			'Irish+Grover'			=> 'Irish+Grover',
+			'Quicksand'				=> 'Quicksand',
+			'Paytone+One'			=> 'Paytone+One',
+			'Kelly+Slab'			=> 'Kelly+Slab',
+			'Nova+Flat'				=> 'Nova+Flat',
+			'Vast+Shadow'			=> 'Vast+Shadow',
+			'Ubuntu'				=> 'Ubuntu',
+			'Smokum'				=> 'Smokum',
+			'Ruslan+Display'		=> 'Ruslan+Display',
+			'La+Belle+Aurore'		=> 'La+Belle+Aurore',
+			'Federant'				=> 'Federant',
+			'Podkova'				=> 'Podkova',
+			'IM+Fell+French+Canon'	=> 'IM+Fell+French+Canon',
+			'PT+Serif+Caption'		=> 'PT+Serif+Caption',
+			'The+Girl+Next+Door'	=> 'The+Girl+Next+Door',
+			'Artifika'				=> 'Artifika',
+			'Marck+Script'			=> 'Marck+Script',
+			'Droid+Sans+Mono'		=> 'Droid+Sans+Mono',
+			'Contrail+One'			=> 'Contrail+One',
+			'Swanky+and+Moo+Moo'	=> 'Swanky+and+Moo+Moo',
+			'Wire+One'				=> 'Wire+One',
+			'Tenor+Sans'			=> 'Tenor+Sans',
+			'Nova+Mono'				=> 'Nova+Mono',
+			'Josefin+Sans'			=> 'Josefin+Sans',
+			'Bitter'				=> 'Bitter',
+			'Supermercado+One'		=> 'Supermercado+One',
+			'PT+Serif'				=> 'PT+Serif',
+			'Limelight'				=> 'Limelight',
+			'Coda+Caption:800'		=> 'Coda+Caption:800',
+			'Lobster'				=> 'Lobster',
+			'Gentium+Basic'			=> 'Gentium+Basic',
+			'Atomic+Age'			=> 'Atomic+Age',
+			'Mate+SC'				=> 'Mate+SC',
+			'Eater+Caps'			=> 'Eater+Caps',
+			'Bigshot+One'			=> 'Bigshot+One',
+			'Kreon'					=> 'Kreon',
+			'Rationale'				=> 'Rationale',
+			'Sniglet:800'			=> 'Sniglet:800',
+			'Smythe'				=> 'Smythe',
+			'Waiting+for+the+Sunrise' => 'Waiting+for+the+Sunrise',
+			'Gochi+Hand'			=> 'Gochi+Hand',
+			'Reenie+Beanie'			=> 'Reenie+Beanie',
+			'Kameron'				=> 'Kameron',
+			'Anton'					=> 'Anton',
+			'Holtwood+One+SC'		=> 'Holtwood+One+SC',
+			'Schoolbell'			=> 'Schoolbell',
+			'Tulpen+One'			=> 'Tulpen+One',
+			'Redressed'				=> 'Redressed',
+			'Ovo'					=> 'Ovo',
+			'Shadows+Into+Light'	=> 'Shadows+Into+Light',
+			'Rokkitt'				=> 'Rokkitt',
+			'Josefin+Slab'			=> 'Josefin+Slab',
+			'Passero+One'			=> 'Passero+One',
+			'Copse'					=> 'Copse',
+			'Walter+Turncoat'		=> 'Walter+Turncoat',
+			'Sigmar+One'			=> 'Sigmar+One',
+			'Convergence'			=> 'Convergence',
+			'Gloria+Hallelujah'		=> 'Gloria+Hallelujah',
+			'Fontdiner+Swanky'		=> 'Fontdiner+Swanky',
+			'Tienne'				=> 'Tienne',
+			'Calligraffitti'		=> 'Calligraffitti',
+			'UnifrakturCook:700'	=> 'UnifrakturCook:700',
+			'Tangerine'				=> 'Tangerine',
+			'Days+One'				=> 'Days+One',
+			'Cantarell'				=> 'Cantarell',
+			'IM+Fell+Great+Primer'	=> 'IM+Fell+Great+Primer',
+			'Antic'					=> 'Antic',
+			'Muli'					=> 'Muli',
+			'Monofett'				=> 'Monofett',
+			'Just+Me+Again+Down+Here' => 'Just+Me+Again+Down+Here',
+			'Geostar+Fill'			=> 'Geostar+Fill',
+			'Candal'				=> 'Candal',
+			'Cousine'				=> 'Cousine',
+			'Merienda+One'			=> 'Merienda+One',
+			'Goblin+One'			=> 'Goblin+One',
+			'Monoton'				=> 'Monoton',
+			'Ubuntu+Condensed'		=> 'Ubuntu+Condensed',
+			'EB+Garamond'			=> 'EB+Garamond',
+			'Droid+Serif'			=> 'Droid+Serif',
+			'Lancelot'				=> 'Lancelot',
+			'Cookie'				=> 'Cookie',
+			'Fjord+One'				=> 'Fjord+One',
+			'Arapey'				=> 'Arapey',
+			'Rancho'				=> 'Rancho',
+			'Sancreek'				=> 'Sancreek',
+			'Butcherman+Caps'		=> 'Butcherman+Caps',
+			'Salsa'					=> 'Salsa',
+			'Amatic+SC'				=> 'Amatic+SC',
+			'Creepster+Caps'		=> 'Creepster+Caps',
+			'Chivo'					=> 'Chivo',
+			'Linden+Hill'			=> 'Linden+Hill',
+			'Nosifer+Caps'			=> 'Nosifer+Caps',
+			'Marvel'				=> 'Marvel',
+			'Alice'					=> 'Alice',
+			'Love+Ya+Like+A+Sister' => 'Love+Ya+Like+A+Sister',
+			'Pinyon+Script'			=> 'Pinyon+Script',
+			'Stardos+Stencil'		=> 'Stardos+Stencil',
+			'Leckerli+One'			=> 'Leckerli+One',
+			'Nothing+You+Could+Do'	=> 'Nothing+You+Could+Do',
+			'Sansita+One'			=> 'Sansita+One',
+			'Poly'					=> 'Poly',
+			'Alike'					=> 'Alike',
+			'Fanwood+Text'			=> 'Fanwood+Text',
+			'Bowlby+One+SC'			=> 'Bowlby+One+SC',
+			'Actor'					=> 'Actor',
+			'Terminal+Dosis'		=> 'Terminal+Dosis',
+			'Aclonica'				=> 'Aclonica',
+			'Gentium+Book+Basic'	=> 'Gentium+Book+Basic',
+			'Rosario'				=> 'Rosario',
+			'Satisfy'				=> 'Satisfy',
+			'Sunshiney'				=> 'Sunshiney',
+			'Aubrey'				=> 'Aubrey',
+			'Jura'					=> 'Jura',
+			'Ultra'					=> 'Ultra',
+			'Zeyada'				=> 'Zeyada',
+			'Changa+One'			=> 'Changa+One',
+			'Varela'				=> 'Varela',
+			'Black+Ops+One'			=> 'Black+Ops+One',
+			'Open+Sans'				=> 'Open+Sans',
+			'Alike+Angular'			=> 'Alike+Angular',
+			'Prata'					=> 'Prata',
+			'Bowlby+One'			=> 'Bowlby+One',
+			'Megrim'				=> 'Megrim',
+			'Damion'				=> 'Damion',
+			'Coda'					=> 'Coda',
+			'Vidaloka'				=> 'Vidaloka',
+			'Radley'				=> 'Radley',
+			'Indie+Flower'			=> 'Indie+Flower',
+			'Over+the+Rainbow'		=> 'Over+the+Rainbow',
+			'Open+Sans+Condensed:300' => 'Open+Sans+Condensed:300',
+			'Abril+Fatface'			=> 'Abril+Fatface',
+			'Miltonian'				=> 'Miltonian',
+			'Delius'				=> 'Delius',
+			'Six+Caps'				=> 'Six+Caps',
+			'Francois+One'			=> 'Francois+One',
+			'Dorsa'					=> 'Dorsa',
+			'Aldrich'				=> 'Aldrich',
+			'Buda:300'				=> 'Buda:300',
+			'Rochester'				=> 'Rochester',
+			'Allerta'				=> 'Allerta',
+			'Bevan'					=> 'Bevan',
+			'Wallpoet'				=> 'Wallpoet',
+			'Quattrocento'			=> 'Quattrocento',
+			'Dancing+Script'		=> 'Dancing+Script',
+			'Amaranth'				=> 'Amaranth',
+			'Unna'					=> 'Unna',
+			'PT+Sans+Caption'		=> 'PT+Sans+Caption',
+			'Geo'					=> 'Geo',
+			'Quattrocento+Sans'		=> 'Quattrocento+Sans',
+			'Oswald'				=> 'Oswald',
+			'Carme'					=> 'Carme',
+			'Spinnaker'				=> 'Spinnaker',
+			'MedievalSharp'			=> 'MedievalSharp',
+			'Nova+Square'			=> 'Nova+Square',
+			'IM+Fell+French+Canon+SC' => 'IM+Fell+French+Canon+SC',
+			'Voltaire'				=> 'Voltaire',
+			'Raleway:100'			=> 'Raleway:100',
+			'Delius+Unicase'		=> 'Delius+Unicase',
+			'Shanti'				=> 'Shanti',
+			'Expletus+Sans'			=> 'Expletus+Sans',
+			'Crimson+Text'			=> 'Crimson+Text',
+			'Nunito'				=> 'Nunito',
+			'Numans'				=> 'Numans',
+			'Hammersmith+One'		=> 'Hammersmith+One',
+			'Miltonian+Tattoo'		=> 'Miltonian+Tattoo',
+			'Allerta+Stencil'		=> 'Allerta+Stencil',
+			'Vollkorn'				=> 'Vollkorn',
+			'Pacifico'				=> 'Pacifico',
+			'Cedarville+Cursive'	=> 'Cedarville+Cursive',
+			'Cardo'					=> 'Cardo',
+			'Merriweather'			=> 'Merriweather',
+			'Loved+by+the+King'		=> 'Loved+by+the+King',
+			'Slackey'				=> 'Slackey',
+			'Nova+Cut'				=> 'Nova+Cut',
+			'Rock+Salt'				=> 'Rock+Salt',
+			'Yanone+Kaffeesatz'		=> 'Yanone+Kaffeesatz',
+			'Molengo'				=> 'Molengo',
+			'Nobile'				=> 'Nobile',
+			'Goudy+Bookletter+1911' => 'Goudy+Bookletter+1911',
+			'Bangers'				=> 'Bangers',
+			'Old+Standard+TT'		=> 'Old+Standard+TT',
+			'Orbitron'				=> 'Orbitron',
+			'Comfortaa'				=> 'Comfortaa',
+			'Varela+Round'			=> 'Varela+Round',
+			'Forum'					=> 'Forum',
+			'Maven+Pro'				=> 'Maven+Pro',
+			'Volkhov'				=> 'Volkhov',
+			'Allan:700'				=> 'Allan:700',
+			'Luckiest+Guy'			=> 'Luckiest+Guy',
+			'Gruppo'				=> 'Gruppo',
+			'Cuprum'				=> 'Cuprum',
+			'Anonymous+Pro'			=> 'Anonymous+Pro',
+			'UnifrakturMaguntia'	=> 'UnifrakturMaguntia',
+			'Covered+By+Your+Grace' => 'Covered+By+Your+Grace',
+			'Homemade+Apple'		=> 'Homemade+Apple',
+			'Lobster+Two'			=> 'Lobster+Two',
+			'Coming+Soon'			=> 'Coming+Soon',
+			'Mountains+of+Christmas' => 'Mountains+of+Christmas',
+			'Architects+Daughter'	=> 'Architects+Daughter',
+			'Dawning+of+a+New+Day'	=> 'Dawning+of+a+New+Day',
+			'Kranky'				=> 'Kranky',
+			'Adamina'				=> 'Adamina',
+			'Carter+One'			=> 'Carter+One',
+			'Bentham'				=> 'Bentham',
+			'IM+Fell+Great+Primer+SC' => 'IM+Fell+Great+Primer+SC',
+			'Chewy'					=> 'Chewy',
+			'IM+Fell+English'		=> 'IM+Fell+English',
+			'Inconsolata'			=> 'Inconsolata',
+			'Vibur'					=> 'Inconsolata',
+			'Andada'				=> 'Andada',
+			'IM+Fell+Double+Pica'	=> 'IM+Fell+Double+Pica',
+			'Kenia'					=> 'Kenia',
+			'Meddon'				=> 'Meddon',
+			'Metrophobic'			=> 'Metrophobic',
+			'Play'					=> 'Play',
+			'Special+Elite'			=> 'Special+Elite',
+			'IM+Fell+Double+Pica+SC' => 'IM+Fell+Double+Pica+SC',
+			'Didact+Gothic'			=> 'Didact+Gothic',
+			'Modern+Antiqua'		=> 'Modern+Antiqua',
+			'VT323'					=> 'VT323',
+			'Annie+Use+Your+Telescope' => 'Annie+Use+Your+Telescope',), ));
+			
+	// Adjust the Space Between the Top of the Page and Content
+	$wp_customize->add_setting( 'taglinefontstyle_setting', array(
+		'Default'           => 'Default',
+		'control'           => 'select',));
+
+	$wp_customize->add_control( 'taglinefontstyle_control', array(
+		'label'					=> 'Google Webfonts Tagline',
+		'priority'				=> 11,
+		'section'				=> 'title_tagline',
+		'settings'				=> 'taglinefontstyle_setting',
+		'type'					=> 'select',
+		'choices'				=> array(
+			'Default'				=> 'Default',
+			'Questrial'				=> 'Questrial',
+			'Astloch'				=> 'Astloch',
+			'IM+Fell+English+SC'	=> 'IM+Fell+English+SC',
+			'Lekton'				=> 'Lekton',
+			'Nova+Round'			=> 'Nova+Round',
+			'Nova+Oval'				=> 'Nova+Oval',
+			'League+Script'			=> 'League+Script',
+			'Caudex'				=> 'Caudex',
+			'IM+Fell+DW+Pica'		=> 'IM+Fell+DW+Pica',
+			'Nova+Script'			=> 'Nova+Script',
+			'Nixie+One'				=> 'Nixie+One',
+			'IM+Fell+DW+Pica+SC'	=> 'IM+Fell+DW+Pica+SC',
+			'Puritan'				=> 'Puritan',
+			'Prociono'				=> 'Prociono',
+			'Abel'					=> 'Abel',
+			'Snippet'				=> 'Snippet',
+			'Kristi'				=> 'Kristi',
+			'Mako'					=> 'Mako',
+			'Ubuntu+Mono'			=> 'Ubuntu+Mono',
+			'Nova+Slim'				=> 'Nova+Slim',
+			'Patrick+Hand'			=> 'Patrick+Hand',
+			'Crafty+Girls'			=> 'Crafty+Girls',
+			'Brawler'				=> 'Brawler',
+			'Droid+Sans'			=> 'Droid+Sans',
+			'Geostar'				=> 'Geostar',
+			'Yellowtail'			=> 'Yellowtail',
+			'Permanent+Marker'		=> 'Permanent+Marker',
+			'Just+Another+Hand'		=> 'Just+Another+Hand',
+			'Unkempt'				=> 'Unkempt',
+			'Jockey+One'			=> 'Jockey+One',
+			'Lato'					=> 'Lato',
+			'Arvo'					=> 'Arvo',
+			'Cabin'					=> 'Cabin',
+			'Playfair+Display'		=> 'Playfair+Display',
+			'Crushed'				=> 'Crushed',
+			'Asset'					=> 'Asset',
+			'Sue+Ellen+Francisco'	=> 'Sue+Ellen+Francisco',
+			'Julee'					=> 'Julee',
+			'Judson'				=> 'Judson',
+			'Neuton'				=> 'Neuton',
+			'Sorts+Mill+Goudy'		=> 'Sorts+Mill+Goudy',
+			'Mate'					=> 'Mate',
+			'News+Cycle'			=> 'News+Cycle',
+			'Michroma'				=> 'Michroma',
+			'Lora'					=> 'Lora',
+			'Give+You+Glory'		=> 'Give+You+Glory',
+			'Rammetto+One'			=> 'Rammetto+One',
+			'Pompiere'				=> 'Pompiere',
+			'PT+Sans'				=> 'PT+Sans',
+			'Andika'				=> 'Andika',
+			'Cabin+Sketch'			=> 'Cabin+Sketch',
+			'Delius+Swash+Caps'		=> 'Delius+Swash+Caps',
+			'Coustard'				=> 'Coustard',
+			'Cherry+Cream+Soda'		=> 'Cherry+Cream+Soda',
+			'Maiden+Orange'			=> 'Maiden+Orange',
+			'Syncopate'				=> 'Syncopate',
+			'PT+Sans+Narrow'		=> 'PT+Sans+Narrow',
+			'Montez'				=> 'Montez',
+			'Short+Stack'			=> 'Short+Stack',
+			'Poller+One'			=> 'Poller+One',
+			'Tinos'					=> 'Tinos',
+			'Philosopher'			=> 'Philosopher',
+			'Neucha'				=> 'Neucha',
+			'Gravitas+One'			=> 'Gravitas+One',
+			'Corben'				=> 'Corben',
+			'Istok+Web'				=> 'Istok+Web',
+			'Federo'				=> 'Federo',
+			'Yeseva+One'			=> 'Yeseva+One',
+			'Petrona'				=> 'Petrona',
+			'Arimo'					=> 'Arimo',
+			'Irish+Grover'			=> 'Irish+Grover',
+			'Quicksand'				=> 'Quicksand',
+			'Paytone+One'			=> 'Paytone+One',
+			'Kelly+Slab'			=> 'Kelly+Slab',
+			'Nova+Flat'				=> 'Nova+Flat',
+			'Vast+Shadow'			=> 'Vast+Shadow',
+			'Ubuntu'				=> 'Ubuntu',
+			'Smokum'				=> 'Smokum',
+			'Ruslan+Display'		=> 'Ruslan+Display',
+			'La+Belle+Aurore'		=> 'La+Belle+Aurore',
+			'Federant'				=> 'Federant',
+			'Podkova'				=> 'Podkova',
+			'IM+Fell+French+Canon'	=> 'IM+Fell+French+Canon',
+			'PT+Serif+Caption'		=> 'PT+Serif+Caption',
+			'The+Girl+Next+Door'	=> 'The+Girl+Next+Door',
+			'Artifika'				=> 'Artifika',
+			'Marck+Script'			=> 'Marck+Script',
+			'Droid+Sans+Mono'		=> 'Droid+Sans+Mono',
+			'Contrail+One'			=> 'Contrail+One',
+			'Swanky+and+Moo+Moo'	=> 'Swanky+and+Moo+Moo',
+			'Wire+One'				=> 'Wire+One',
+			'Tenor+Sans'			=> 'Tenor+Sans',
+			'Nova+Mono'				=> 'Nova+Mono',
+			'Josefin+Sans'			=> 'Josefin+Sans',
+			'Bitter'				=> 'Bitter',
+			'Supermercado+One'		=> 'Supermercado+One',
+			'PT+Serif'				=> 'PT+Serif',
+			'Limelight'				=> 'Limelight',
+			'Coda+Caption:800'		=> 'Coda+Caption:800',
+			'Lobster'				=> 'Lobster',
+			'Gentium+Basic'			=> 'Gentium+Basic',
+			'Atomic+Age'			=> 'Atomic+Age',
+			'Mate+SC'				=> 'Mate+SC',
+			'Eater+Caps'			=> 'Eater+Caps',
+			'Bigshot+One'			=> 'Bigshot+One',
+			'Kreon'					=> 'Kreon',
+			'Rationale'				=> 'Rationale',
+			'Sniglet:800'			=> 'Sniglet:800',
+			'Smythe'				=> 'Smythe',
+			'Waiting+for+the+Sunrise' => 'Waiting+for+the+Sunrise',
+			'Gochi+Hand'			=> 'Gochi+Hand',
+			'Reenie+Beanie'			=> 'Reenie+Beanie',
+			'Kameron'				=> 'Kameron',
+			'Anton'					=> 'Anton',
+			'Holtwood+One+SC'		=> 'Holtwood+One+SC',
+			'Schoolbell'			=> 'Schoolbell',
+			'Tulpen+One'			=> 'Tulpen+One',
+			'Redressed'				=> 'Redressed',
+			'Ovo'					=> 'Ovo',
+			'Shadows+Into+Light'	=> 'Shadows+Into+Light',
+			'Rokkitt'				=> 'Rokkitt',
+			'Josefin+Slab'			=> 'Josefin+Slab',
+			'Passero+One'			=> 'Passero+One',
+			'Copse'					=> 'Copse',
+			'Walter+Turncoat'		=> 'Walter+Turncoat',
+			'Sigmar+One'			=> 'Sigmar+One',
+			'Convergence'			=> 'Convergence',
+			'Gloria+Hallelujah'		=> 'Gloria+Hallelujah',
+			'Fontdiner+Swanky'		=> 'Fontdiner+Swanky',
+			'Tienne'				=> 'Tienne',
+			'Calligraffitti'		=> 'Calligraffitti',
+			'UnifrakturCook:700'	=> 'UnifrakturCook:700',
+			'Tangerine'				=> 'Tangerine',
+			'Days+One'				=> 'Days+One',
+			'Cantarell'				=> 'Cantarell',
+			'IM+Fell+Great+Primer'	=> 'IM+Fell+Great+Primer',
+			'Antic'					=> 'Antic',
+			'Muli'					=> 'Muli',
+			'Monofett'				=> 'Monofett',
+			'Just+Me+Again+Down+Here' => 'Just+Me+Again+Down+Here',
+			'Geostar+Fill'			=> 'Geostar+Fill',
+			'Candal'				=> 'Candal',
+			'Cousine'				=> 'Cousine',
+			'Merienda+One'			=> 'Merienda+One',
+			'Goblin+One'			=> 'Goblin+One',
+			'Monoton'				=> 'Monoton',
+			'Ubuntu+Condensed'		=> 'Ubuntu+Condensed',
+			'EB+Garamond'			=> 'EB+Garamond',
+			'Droid+Serif'			=> 'Droid+Serif',
+			'Lancelot'				=> 'Lancelot',
+			'Cookie'				=> 'Cookie',
+			'Fjord+One'				=> 'Fjord+One',
+			'Arapey'				=> 'Arapey',
+			'Rancho'				=> 'Rancho',
+			'Sancreek'				=> 'Sancreek',
+			'Butcherman+Caps'		=> 'Butcherman+Caps',
+			'Salsa'					=> 'Salsa',
+			'Amatic+SC'				=> 'Amatic+SC',
+			'Creepster+Caps'		=> 'Creepster+Caps',
+			'Chivo'					=> 'Chivo',
+			'Linden+Hill'			=> 'Linden+Hill',
+			'Nosifer+Caps'			=> 'Nosifer+Caps',
+			'Marvel'				=> 'Marvel',
+			'Alice'					=> 'Alice',
+			'Love+Ya+Like+A+Sister' => 'Love+Ya+Like+A+Sister',
+			'Pinyon+Script'			=> 'Pinyon+Script',
+			'Stardos+Stencil'		=> 'Stardos+Stencil',
+			'Leckerli+One'			=> 'Leckerli+One',
+			'Nothing+You+Could+Do'	=> 'Nothing+You+Could+Do',
+			'Sansita+One'			=> 'Sansita+One',
+			'Poly'					=> 'Poly',
+			'Alike'					=> 'Alike',
+			'Fanwood+Text'			=> 'Fanwood+Text',
+			'Bowlby+One+SC'			=> 'Bowlby+One+SC',
+			'Actor'					=> 'Actor',
+			'Terminal+Dosis'		=> 'Terminal+Dosis',
+			'Aclonica'				=> 'Aclonica',
+			'Gentium+Book+Basic'	=> 'Gentium+Book+Basic',
+			'Rosario'				=> 'Rosario',
+			'Satisfy'				=> 'Satisfy',
+			'Sunshiney'				=> 'Sunshiney',
+			'Aubrey'				=> 'Aubrey',
+			'Jura'					=> 'Jura',
+			'Ultra'					=> 'Ultra',
+			'Zeyada'				=> 'Zeyada',
+			'Changa+One'			=> 'Changa+One',
+			'Varela'				=> 'Varela',
+			'Black+Ops+One'			=> 'Black+Ops+One',
+			'Open+Sans'				=> 'Open+Sans',
+			'Alike+Angular'			=> 'Alike+Angular',
+			'Prata'					=> 'Prata',
+			'Bowlby+One'			=> 'Bowlby+One',
+			'Megrim'				=> 'Megrim',
+			'Damion'				=> 'Damion',
+			'Coda'					=> 'Coda',
+			'Vidaloka'				=> 'Vidaloka',
+			'Radley'				=> 'Radley',
+			'Indie+Flower'			=> 'Indie+Flower',
+			'Over+the+Rainbow'		=> 'Over+the+Rainbow',
+			'Open+Sans+Condensed:300' => 'Open+Sans+Condensed:300',
+			'Abril+Fatface'			=> 'Abril+Fatface',
+			'Miltonian'				=> 'Miltonian',
+			'Delius'				=> 'Delius',
+			'Six+Caps'				=> 'Six+Caps',
+			'Francois+One'			=> 'Francois+One',
+			'Dorsa'					=> 'Dorsa',
+			'Aldrich'				=> 'Aldrich',
+			'Buda:300'				=> 'Buda:300',
+			'Rochester'				=> 'Rochester',
+			'Allerta'				=> 'Allerta',
+			'Bevan'					=> 'Bevan',
+			'Wallpoet'				=> 'Wallpoet',
+			'Quattrocento'			=> 'Quattrocento',
+			'Dancing+Script'		=> 'Dancing+Script',
+			'Amaranth'				=> 'Amaranth',
+			'Unna'					=> 'Unna',
+			'PT+Sans+Caption'		=> 'PT+Sans+Caption',
+			'Geo'					=> 'Geo',
+			'Quattrocento+Sans'		=> 'Quattrocento+Sans',
+			'Oswald'				=> 'Oswald',
+			'Carme'					=> 'Carme',
+			'Spinnaker'				=> 'Spinnaker',
+			'MedievalSharp'			=> 'MedievalSharp',
+			'Nova+Square'			=> 'Nova+Square',
+			'IM+Fell+French+Canon+SC' => 'IM+Fell+French+Canon+SC',
+			'Voltaire'				=> 'Voltaire',
+			'Raleway:100'			=> 'Raleway:100',
+			'Delius+Unicase'		=> 'Delius+Unicase',
+			'Shanti'				=> 'Shanti',
+			'Expletus+Sans'			=> 'Expletus+Sans',
+			'Crimson+Text'			=> 'Crimson+Text',
+			'Nunito'				=> 'Nunito',
+			'Numans'				=> 'Numans',
+			'Hammersmith+One'		=> 'Hammersmith+One',
+			'Miltonian+Tattoo'		=> 'Miltonian+Tattoo',
+			'Allerta+Stencil'		=> 'Allerta+Stencil',
+			'Vollkorn'				=> 'Vollkorn',
+			'Pacifico'				=> 'Pacifico',
+			'Cedarville+Cursive'	=> 'Cedarville+Cursive',
+			'Cardo'					=> 'Cardo',
+			'Merriweather'			=> 'Merriweather',
+			'Loved+by+the+King'		=> 'Loved+by+the+King',
+			'Slackey'				=> 'Slackey',
+			'Nova+Cut'				=> 'Nova+Cut',
+			'Rock+Salt'				=> 'Rock+Salt',
+			'Yanone+Kaffeesatz'		=> 'Yanone+Kaffeesatz',
+			'Molengo'				=> 'Molengo',
+			'Nobile'				=> 'Nobile',
+			'Goudy+Bookletter+1911' => 'Goudy+Bookletter+1911',
+			'Bangers'				=> 'Bangers',
+			'Old+Standard+TT'		=> 'Old+Standard+TT',
+			'Orbitron'				=> 'Orbitron',
+			'Comfortaa'				=> 'Comfortaa',
+			'Varela+Round'			=> 'Varela+Round',
+			'Forum'					=> 'Forum',
+			'Maven+Pro'				=> 'Maven+Pro',
+			'Volkhov'				=> 'Volkhov',
+			'Allan:700'				=> 'Allan:700',
+			'Luckiest+Guy'			=> 'Luckiest+Guy',
+			'Gruppo'				=> 'Gruppo',
+			'Cuprum'				=> 'Cuprum',
+			'Anonymous+Pro'			=> 'Anonymous+Pro',
+			'UnifrakturMaguntia'	=> 'UnifrakturMaguntia',
+			'Covered+By+Your+Grace' => 'Covered+By+Your+Grace',
+			'Homemade+Apple'		=> 'Homemade+Apple',
+			'Lobster+Two'			=> 'Lobster+Two',
+			'Coming+Soon'			=> 'Coming+Soon',
+			'Mountains+of+Christmas' => 'Mountains+of+Christmas',
+			'Architects+Daughter'	=> 'Architects+Daughter',
+			'Dawning+of+a+New+Day'	=> 'Dawning+of+a+New+Day',
+			'Kranky'				=> 'Kranky',
+			'Adamina'				=> 'Adamina',
+			'Carter+One'			=> 'Carter+One',
+			'Bentham'				=> 'Bentham',
+			'IM+Fell+Great+Primer+SC' => 'IM+Fell+Great+Primer+SC',
+			'Chewy'					=> 'Chewy',
+			'IM+Fell+English'		=> 'IM+Fell+English',
+			'Inconsolata'			=> 'Inconsolata',
+			'Vibur'					=> 'Inconsolata',
+			'Andada'				=> 'Andada',
+			'IM+Fell+Double+Pica'	=> 'IM+Fell+Double+Pica',
+			'Kenia'					=> 'Kenia',
+			'Meddon'				=> 'Meddon',
+			'Metrophobic'			=> 'Metrophobic',
+			'Play'					=> 'Play',
+			'Special+Elite'			=> 'Special+Elite',
+			'IM+Fell+Double+Pica+SC' => 'IM+Fell+Double+Pica+SC',
+			'Didact+Gothic'			=> 'Didact+Gothic',
+			'Modern+Antiqua'		=> 'Modern+Antiqua',
+			'VT323'					=> 'VT323',
+			'Annie+Use+Your+Telescope' => 'Annie+Use+Your+Telescope',), ));
 
 	// Adjust the Space Between the Top of the Page and Content
 	$wp_customize->add_setting( 'headerspacing_setting', array(
@@ -263,7 +869,7 @@ function adventure_customize($wp_customize) {
 		'priority'			=> 90,
 		'section'			=> 'header_section',
 		'settings'			=> 'headerspacing_setting',
-		'type'				=> 'radio',
+		'type'				=> 'select',
 		'choices'			=> array(
 			'65'			=> '65%',
 			'60'			=> '60%',
@@ -314,7 +920,7 @@ function adventure_customize($wp_customize) {
 		'label'				=> 'Transparency of Content Background',
 		'section'			=> 'content_section',
 		'settings'			=> 'contentbackground_setting',
-		'type'				=> 'radio',
+		'type'				=> 'select',
 		'choices'			=> array(
 			'1'				=> '100',
 			'.95'			=> '95',
@@ -353,6 +959,22 @@ function adventure_customize($wp_customize) {
 			'posts'			=> 'Only Posts',
 			'pages'			=> 'Only Pages',
 			'neither'		=> 'Neither', ), ));
+			
+	// Comments Choice
+	$wp_customize->add_setting( 'comments_setting', array(
+		'default'           	=> 'pages_and_posts',
+		'control'           	=> 'select',));
+
+	$wp_customize->add_control( 'comments_control', array(
+		'section'				=> 'content_section',
+		'label'					=> 'Options for Displaying Comments',
+		'settings'				=> 'comments_setting',
+		'type'					=> 'radio',
+		'choices'				=> array(
+			'pages_and_posts'	=> 'Comments on both Pages & Posts',
+			'posts'				=> 'Comments only on Posts',
+			'pages'				=> 'Comments only on Pages',
+			'none'				=> 'Comments completely Off',), ));
 
 	// Change the color of the Sidebar Background
 	$wp_customize->add_setting( 'sidebarcolor_setting', array(
@@ -373,7 +995,7 @@ function adventure_customize($wp_customize) {
 		'label'				=> 'Transparency of Sidebar Background',
 		'section'			=> 'sidebar_section',
 		'settings'			=> 'sidebarbackground_setting',
-		'type'				=> 'radio',
+		'type'				=> 'select',
 		'choices'			=> array(
 			'1'				=> '100',
 			'.95'			=> '95',
@@ -408,18 +1030,19 @@ add_action( 'customize_controls_print_footer_scripts', 'adventure_customizer_pre
 function adventure_inline_css() {
 		
 		// Convert Content from Hex to RGB
-		$hex = str_replace("#", "", get_theme_mod('backgroundcolor_setting'));
-
-		if(strlen($hex) == 3) {
-			$r = hexdec(substr($hex,0,1).substr($hex,0,1));
-			$g = hexdec(substr($hex,1,1).substr($hex,1,1));
-			$b = hexdec(substr($hex,2,1).substr($hex,2,1)); }
-		else {
-			$r = hexdec(substr($hex,0,2));
-			$g = hexdec(substr($hex,2,2));
-			$b = hexdec(substr($hex,4,2)); }
+		if ( get_theme_mod('backgroundcolor_setting') != '#b4b09d' ) {
+			$hex = str_replace("#", "", get_theme_mod('backgroundcolor_setting'));
+			if(strlen($hex) == 3) {
+				$r = hexdec(substr($hex,0,1).substr($hex,0,1));
+				$g = hexdec(substr($hex,1,1).substr($hex,1,1));
+				$b = hexdec(substr($hex,2,1).substr($hex,2,1)); }
+			else {
+				$r = hexdec(substr($hex,0,2));
+				$g = hexdec(substr($hex,2,2));
+				$b = hexdec(substr($hex,4,2)); } }
 
 		// Convert Sidebar from Hex to RGB
+		if ( ( get_theme_mod('sidebarcolor_setting') != '#000000' ) || ( get_theme_mod('backgroundcolor_setting') != '#b4b09d' ) ) {
 		$hexs = str_replace("#", "", get_theme_mod('sidebarcolor_setting'));
 
 		if(strlen($hexs) == 3) {
@@ -429,33 +1052,47 @@ function adventure_inline_css() {
 		else {
 			$rs = hexdec(substr($hexs,0,2));
 			$gs = hexdec(substr($hexs,2,2));
-			$bs = hexdec(substr($hexs,4,2)); }
+			$bs = hexdec(substr($hexs,4,2)); } }
+		
+		echo '<!-- Custom Font Styles -->' . "\n";
+		if ( get_theme_mod('titlefontstyle_setting') != 'Default' ) {	echo "<link href='http://fonts.googleapis.com/css?family=" . get_theme_mod('titlefontstyle_setting') . "' rel='stylesheet' type='text/css'>"  . "\n"; }
+		if ( get_theme_mod('taglinefontstyle_setting') != 'Default' ) {	echo "<link href='http://fonts.googleapis.com/css?family=" . get_theme_mod('taglinefontstyle_setting') . "' rel='stylesheet' type='text/css'>"  . "\n"; }
+		echo '<!-- End Custom Fonts -->' . "\n\n";
 
 		echo '<!-- Custom CSS Styles -->' . "\n";
         echo '<style type="text/css" media="screen">' . "\n";
-		if ( get_theme_mod('backgroundsize_setting') != 'auto' ) echo '	body {background-size:' . get_theme_mod('backgroundsize_setting') . ';}' . "\n";
-		if ( get_theme_mod('fontcolor_setting') != '#000' ) echo '	body {color:'  . get_theme_mod('fontcolor_setting') . ';}' . "\n";
-		echo '	#content>li {background: rgba(' . $r . ',' . $g . ', ' . $b . ', ' .  get_theme_mod('contentbackground_setting') .  ');}' . "\n";
-		echo '	li#sidebar {background: rgba(' . $rs . ',' . $gs . ', ' . $bs . ', ' .  get_theme_mod('sidebarbackground_setting') .  ');}' . "\n";
+		if ( get_theme_mod('backgroundsize_setting') != 'auto' ) echo '	body.custom-background {background-size:' . get_theme_mod('backgroundsize_setting') . ';}' . "\n";
+		if ( get_theme_mod('backgroundcolor_setting') != '#b4b09d' ) echo '	#content>li {background: rgba(' . $r . ',' . $g . ', ' . $b . ', ' .  get_theme_mod('contentbackground_setting') .  ');}' . "\n";
+		if ( ( get_theme_mod('sidebarcolor_setting') != '#000000'  ) || ( get_theme_mod('backgroundcolor_setting') != '#b4b09d' ) ) echo '	li#sidebar {background: rgba(' . $rs . ',' . $gs . ', ' . $bs . ', ' .  get_theme_mod('sidebarbackground_setting') .  ');}' . "\n";
 		if ( get_theme_mod('titlecolor_setting') != '#eee2d6' ) echo '	#navi h1 a {color:' . get_theme_mod('titlecolor_setting') . ';}' . "\n";
 		if ( get_theme_mod('taglinecolor_setting') != '#066ba0' ) echo '	#navi h1 i {color:' . get_theme_mod('taglinecolor_setting') . ';}' . "\n";
 		if ( get_option('bannerimage_setting') != 'purple.png' ) echo '	#navi {background: bottom url(' . get_template_directory_uri() . '/images/' . get_option('bannerimage_setting') .  ');}'. "\n";
-		if ( get_theme_mod('backgroundsize_setting') != '35' ) echo '	#spacing {height:' . get_theme_mod('headerspacing_setting') . '%;}'. "\n";
+		if ( get_theme_mod('headerspacing_setting') != '35' ) echo '	#spacing {height:' . get_theme_mod('headerspacing_setting') . '%;}'. "\n";
 		if ( get_option('menu_setting') == 'notitle' ) { echo '	#navi {position: fixed;margin-top:0px;}' . "\n" . '	.admin-bar #navi {margin-top:28px;}' . "\n" . '#navi h1:first-child, #navi h1:first-child i,  #navi img:first-child {display: none;}' . "\n"; }
 		if ( get_option('menu_setting') == 'bottom' ) { echo '	#navi {position: fixed; bottom:0; top:auto;}' . "\n" . '	#navi h1:first-child, #navi h1:first-child i,  #navi img:first-child {display: none;}' . "\n" . '#navi li ul {bottom:2.78em; top:auto;}' . "\n";}
+		
+		if ( ( get_theme_mod('titlefontstyle_setting') != 'Default' ) && ( get_theme_mod('titlefontstyle_setting') != '' )  ) {
+			$q = get_theme_mod('titlefontstyle_setting');
+			$q = preg_replace('/[^a-zA-Z0-9]+/', ' ', $q);
+		 	echo	"#navi h1 {font-family: '" . $q . "';}" . "\n"; }
+		if ( (get_theme_mod('taglinefontstyle_setting') != 'Default') && ( get_theme_mod('taglinefontstyle_setting') != '' )   ) {
+			$x = get_theme_mod('taglinefontstyle_setting');
+			$x = preg_replace('/[^a-zA-Z0-9]+/', ' ', $x);
+			echo	"#navi h1 i {font-family: '" . $x . "';}" . "\n"; }
+
 		echo '</style>' . "\n";
 		echo '<!-- End Custom CSS -->' . "\n";
 		echo "\n";
 
-	if (get_option('favicon_setting') != '') {
-		echo '<!-- Favicon Code -->' . "\n";
-		echo '<link rel="icon" href="' . get_option('favicon_setting') . '" />' . "\n\n";} 
+		if (get_option('favicon_setting') != '') {
+			echo '<!-- Favicon Code -->' . "\n";
+			echo '<link rel="icon" href="' . get_option('favicon_setting') . '" />' . "\n\n";} 
 		
-	$options = get_theme_mod('typekit_setting');
-    if (get_theme_mod( 'typekit_setting' ) != 'For example mine is "jgu6yjc"') {
-		echo '<!-- Typekit Kit ID -->' . "\n";
-		echo '<script type="text/javascript" src="//use.typekit.net/' . get_theme_mod( 'typekit_setting' ) . '.js"></script>' . "\n";
-		echo '<script type="text/javascript">try{Typekit.load();}catch(e){}</script>' . "\n\n";} }
+		$options = get_theme_mod('typekit_setting');
+		if (get_theme_mod( 'typekit_setting' ) != 'For example mine is "jgu6yjc"') {
+			echo '<!-- Typekit Kit ID -->' . "\n";
+			echo '<script type="text/javascript" src="//use.typekit.net/' . get_theme_mod( 'typekit_setting' ) . '.js"></script>' . "\n";
+			echo '<script type="text/javascript">try{Typekit.load();}catch(e){}</script>' . "\n\n";} }
 
 add_action('wp_head', 'adventure_inline_css');
 
@@ -533,6 +1170,7 @@ function adventure_theme_options_do_page() { ?>
         <td>&#9733;</td>
         <td>&#9733;</td>
         </tr>
+        <tr>
         <td class="justify">Adjust Color of the Background for Content</td>
         <td>&#9733;</td>
         <td>&#9733;</td>
@@ -552,6 +1190,11 @@ function adventure_theme_options_do_page() { ?>
         <td>&#9733;</td>
         </tr>
         <td class="justify">Adjust the spacing between the top of the page and content</td>
+        <td>&#9733;</td>
+        <td>&#9733;</td>
+        </tr>
+        <tr>
+        <td class="justify">Comments on Pages only, Posts only, Both, or Nones</td>
         <td>&#9733;</td>
         <td>&#9733;</td>
         </tr>
@@ -619,6 +1262,10 @@ function adventure_theme_options_do_page() { ?>
         <th class="justify"></th>
         </tr>
         <tr>
+        <th>2.3</th>
+        <td class="justify">Minor update to add few things to the theme along with fixes. The custom CSS generated from the theme customizer should only show if you have changed something in the features. Static pages now will not show the pagination or comments. Include the option to do anything you want with the comments. Added Google Fonts to the Header for the Title and Slogan.</td>
+        </tr>
+        <tr>
         <th>2.2</th>
         <td class="justify">The update this time around was mainly for Adventure+ but in the process I added in a few more features. I included the option to have the menu lock to the top of the screen or the bottom similar to how the theme use to look. A lot of people asked for the ability to remove the “previous” & “next” links that come after content and I you guys one better. You now have the choice to remove the “previous” & “next” from just posts, just page, or both and you still can have it display the same. The slider and the content portion can now change to any color and adjust the opacity from 0% to 100% in 5% intervals. I also spent some time cleaning and organizing the customizer page, which means it is laid out a bit differently now but it works just the same. You now have the option to adjust the the amount of space fromt he top of the page to the where the content begins. I might have missed a thing or two but future updates should come much sooner with this hurdle cleared.</td>
         </tr>
@@ -643,12 +1290,16 @@ function adventure_theme_options_do_page() { ?>
         <th class="justify"></th>
         </tr>
         <tr>
+        <th>5</th>
+        <td class="justify">Same as "Adventure 2.3" but more.</td>
+        </tr>
+        <tr>
         <th>4</th>
         <td class="justify">Major backend update which is mainly for Adventure+ to implement a bunch of features, in particular the Logo that I have received so many emails for. If you have any trouble using the logo for your website send me an email about it and I’ll take a look, this isn’t exact science  and I might need to adjust the code some. I included the option to have the menu lock to the top of the screen or the bottom similar to how the theme use to look. I add in the ability to adjust the spacing from the top of the page to where the content and sidebar begins. You can also change the color of the font in the content, but it will receive more work in a future update. A lot of people asked for the ability to remove the “previous” & “next” links that come after content and I you guys one better. You now have the choice to remove the “previous” & “next” from just posts, just page, or both and you still can have it display the same. The slider and the content portion can now change to any color and adjust the opacity from 0% to 100% in 5% intervals. I also spent some time cleaning and organizing the customizer page, which means it is laid out a bit differently now but it works just the same. You now have the option to adjust the the amount of space fromt he top of the page to the where the content begins. I might have missed a thing or two but future updates should come much sooner with this hurdle cleared.</td>
         </tr>
         <tr>
         <th>3</th>
-        <td class="justify">Nothing extra, just the same great code that Adventure 1.9 recieved in the latest update to the themes.</td>
+        <td class="justify">Nothing extra, just the same great code that Adventure 2.1 recieved in the latest update to the themes.</td>
         </tr>
         <tr>
         <th>2</th>
@@ -668,4 +1319,8 @@ function adventure_theme_options_do_page() { ?>
     
     </div>
 <?php }
-add_action('admin_menu', 'adventure_theme_options_add_page'); ?>
+add_action('admin_menu', 'adventure_theme_options_add_page');
+
+// Redirect to the theme options Page after theme is activated
+if ( is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" )
+	wp_redirect( 'themes.php?page=theme_options' ); ?>

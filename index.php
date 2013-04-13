@@ -74,11 +74,8 @@
 </li>
 
 <!-- The Comments -->
-<?php if (is_search()) : ?>
-<?php elseif($semperfi_404) : ?>
-<?php elseif ( comments_open() ) : ?>
-<?php comments_template( '', true ); ?>
-<?php elseif ( ( is_page() && comments_open() ) || is_single() ) : ?>
+<?php if (is_search() || $semperfi_404 || is_front_page() ) : ?>
+<?php elseif ( ( comments_open() && (get_theme_mod('comments_setting') == '' ) ) || ( is_page() && comments_open() && ( get_theme_mod('comments_setting') == 'pages' ) ) ||  ( is_single() && ( get_theme_mod('comments_setting') == 'posts' ) ) || ( comments_open() && ( get_theme_mod('comments_setting') == 'pages_and_posts' ) ) ) : ?>
 <?php comments_template( '', true ); ?>
 <?php endif; ?>
 <!-- End Comments -->
@@ -100,7 +97,7 @@
 	<span class="right"><?php previous_posts_link('Newer Posts &#8250;'); ?></span>
     </h3>
 </li>
-<?php elseif ( ( is_page() && get_theme_mod('previousnext_setting') == 'pages' ) || ( is_single() && get_theme_mod('previousnext_setting') == 'posts' ) || ( get_theme_mod('previousnext_setting') == 'both' ) ) : ?>
+<?php elseif ( ( ( is_page() && get_theme_mod('previousnext_setting') == 'pages' ) || ( is_single() && get_theme_mod('previousnext_setting') == 'posts' ) || ( get_theme_mod('previousnext_setting') == 'both' ) ) && !is_front_page() ) : ?>
 <li>
 	<h3>
     <span class="left"><?php previous_post_link('%link', '&#8249; Older Post'); ?></span>
