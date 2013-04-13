@@ -485,8 +485,7 @@ if ( ! function_exists( 'catcheverest_post_sliders' ) ) :
 function catcheverest_post_sliders() { 
 	//delete_transient( 'catcheverest_post_sliders' );
 	
-	global $post;
-	global $catcheverest_options_settings;
+	global $post, $catcheverest_options_settings;
    	$options = $catcheverest_options_settings;
 
 	
@@ -606,7 +605,7 @@ function catcheverest_default_sliders() {
  * Shows Slider
  */
 function catcheverest_slider_display() {
-	global $catcheverest_options_settings;
+	global $post, $catcheverest_options_settings;
    	$options = $catcheverest_options_settings;
 
 	$enableslider = $options[ 'enable_slider' ];

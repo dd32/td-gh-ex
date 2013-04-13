@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Everest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-11 18:08+0545\n"
-"PO-Revision-Date: 2013-04-11 18:08+0545\n"
+"POT-Creation-Date: 2013-04-13 11:20+0545\n"
+"PO-Revision-Date: 2013-04-13 11:20+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: \n"
 "Language: zh-cn\n"
@@ -322,113 +322,113 @@ msgstr "第 %s 页"
 msgid "Skip to content"
 msgstr "跳到内容部分"
 
-#: ../inc/catcheverest-functions.php:935
+#: ../inc/catcheverest-functions.php:934
 msgid "Copyright"
 msgstr "Copyright"
 
-#: ../inc/catcheverest-functions.php:935
+#: ../inc/catcheverest-functions.php:934
 msgid "All Rights Reserved"
 msgstr "All Rights Reserved"
 
-#: ../inc/catcheverest-functions.php:935
+#: ../inc/catcheverest-functions.php:934
 msgid "Powered by"
 msgstr "Powered by"
 
-#: ../inc/catcheverest-functions.php:935
+#: ../inc/catcheverest-functions.php:934
 msgid "Theme"
 msgstr "Theme"
 
-#: ../inc/catcheverest-functions.php:1028
+#: ../inc/catcheverest-functions.php:1027
 #, php-format
 msgid "%s on Facebook"
 msgstr "%s on Facebook"
 
-#: ../inc/catcheverest-functions.php:1033
+#: ../inc/catcheverest-functions.php:1032
 #, php-format
 msgid "%s on Twitter"
 msgstr "%s on Twitter"
 
-#: ../inc/catcheverest-functions.php:1038
+#: ../inc/catcheverest-functions.php:1037
 #, php-format
 msgid "%s on Google+"
 msgstr "%s on Google+"
 
-#: ../inc/catcheverest-functions.php:1043
+#: ../inc/catcheverest-functions.php:1042
 #, php-format
 msgid "%s on Linkedin"
 msgstr "%s on Google+"
 
-#: ../inc/catcheverest-functions.php:1048
+#: ../inc/catcheverest-functions.php:1047
 #, php-format
 msgid "%s on Pinterest"
 msgstr "%s on Pinterest"
 
-#: ../inc/catcheverest-functions.php:1053
+#: ../inc/catcheverest-functions.php:1052
 #, php-format
 msgid "%s on YouTube"
 msgstr "%s on YouTube"
 
-#: ../inc/catcheverest-functions.php:1058
+#: ../inc/catcheverest-functions.php:1057
 #, php-format
 msgid "%s on Vimeo"
 msgstr "%s on Vimeo"
 
-#: ../inc/catcheverest-functions.php:1063
+#: ../inc/catcheverest-functions.php:1062
 #, php-format
 msgid "%s on Slideshare"
 msgstr "%s on Slideshare"
 
-#: ../inc/catcheverest-functions.php:1068
+#: ../inc/catcheverest-functions.php:1067
 #, php-format
 msgid "%s on Foursquare"
 msgstr "%s on Foursquare"
 
-#: ../inc/catcheverest-functions.php:1073
+#: ../inc/catcheverest-functions.php:1072
 #, php-format
 msgid "%s on Flickr"
 msgstr "%s on Flickr"
 
-#: ../inc/catcheverest-functions.php:1078
+#: ../inc/catcheverest-functions.php:1077
 #, php-format
 msgid "%s on Tumblr"
 msgstr "%s on Tumblr"
 
-#: ../inc/catcheverest-functions.php:1083
+#: ../inc/catcheverest-functions.php:1082
 #, php-format
 msgid "%s on deviantART"
 msgstr "%s on deviantART"
 
-#: ../inc/catcheverest-functions.php:1088
+#: ../inc/catcheverest-functions.php:1087
 #, php-format
 msgid "%s on Dribbble"
 msgstr "%s on Dribbble"
 
-#: ../inc/catcheverest-functions.php:1093
+#: ../inc/catcheverest-functions.php:1092
 #, php-format
 msgid "%s on MySpace"
 msgstr "%s on MySpace"
 
-#: ../inc/catcheverest-functions.php:1098
+#: ../inc/catcheverest-functions.php:1097
 #, php-format
 msgid "%s on WordPress"
 msgstr "%s on WordPress"
 
-#: ../inc/catcheverest-functions.php:1103
+#: ../inc/catcheverest-functions.php:1102
 #, php-format
 msgid "%s on RSS"
 msgstr "%s on RSS"
 
-#: ../inc/catcheverest-functions.php:1108
+#: ../inc/catcheverest-functions.php:1107
 #, php-format
 msgid "%s on Delicious"
 msgstr "%s on Delicious"
 
-#: ../inc/catcheverest-functions.php:1113
+#: ../inc/catcheverest-functions.php:1112
 #, php-format
 msgid "%s on Last.fm"
 msgstr "%s on Last.fm"
 
-#: ../inc/catcheverest-functions.php:1208
+#: ../inc/catcheverest-functions.php:1207
 msgid "ID"
 msgstr "ID"
 

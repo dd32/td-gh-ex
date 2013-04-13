@@ -80,3 +80,6 @@ version 0.1.4
 version 0.1.5
 * Fixed the homepage condition by removing is_home()
 * Added Spanish translation es_ES.po and es_ES.mo
+
+version 0.1.5.1
+* Fixed featured post slider option issue on homepage only
