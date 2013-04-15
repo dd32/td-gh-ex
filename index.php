@@ -211,8 +211,8 @@
 <?php endif; ?><!-- End of Post / Page Stuff -->
 
 <!-- The Comments -->
-<?php if (is_search()) : ?>
-<?php elseif ( ( is_page() && comments_open() && $semperfi_404 && (get_theme_mod('comments_setting') == 'pages') ) ||  ( is_single() && $semperfi_404 && (get_theme_mod('comments_setting') == 'posts') ) || ( $semperfi_404 && comments_open() && (get_theme_mod('comments_setting') == 'pages_and_posts') ) ) : ?>
+<?php if (is_search() || $semperfi_404 || is_front_page() ) : ?> 
+<?php elseif ( comments_open() && ( (get_theme_mod('comments_setting') == '' ) || ( is_page() && ( get_theme_mod('comments_setting') == 'pages' ) ) || ( is_single() && ( get_theme_mod('comments_setting') == 'posts' ) ) || ( get_theme_mod('comments_setting') == 'pages_and_posts' ) ) ) : ?>
 <?php comments_template( '', true ); ?>
 <?php endif; ?>
 <!-- End Comments -->

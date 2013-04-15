@@ -2097,6 +2097,10 @@ function semperfi_theme_options_do_page() { ?>
         <th class="justify"></th>
         </tr>
         <tr>
+        <th>1.6</th>
+        <td class="justify">Fixed the issue where comments wouldn't display.</td>
+        </tr>
+        <tr>
         <th>1.5</th>
         <td class="justify">Fixed an issue with comments, SEO plugins, and add complete control over commenting.</td>
         </tr>
