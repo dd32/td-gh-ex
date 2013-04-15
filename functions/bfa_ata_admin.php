@@ -30,6 +30,9 @@ echo $bfa_ata_version; ?>" width="98%" height="40" scrolling="no" frameborder="0
 	<strong>Overall Style & Config.</strong>
 	<li><a href="#" rel="body-font-links">Body, Text &amp; Links</a></li>
 	<li><a href="#" rel="layout">Style & configure LAYOUT</a></li>
+	
+	<strong><span style="background:white;color:red">NEW</span> Image Location</strong>
+	<li><a href="#" rel="image-location"><span style="background:white;color:red">NEW</span> Image Locations</a></li>
 	<li><a href="#" rel="favicon">Add a FAVICON</a></li>
 	
 	<strong>Header Area</strong>
@@ -40,7 +43,7 @@ echo $bfa_ata_version; ?>" width="98%" height="40" scrolling="no" frameborder="0
 	<li><a href="#" rel="cat-menu-bar">MENU 2 (Category Menu)</a></li>
 	
 	<strong>Center Column</strong>
-	<li><a href="#" rel="center">Style & edit CENTER COLUMN</a></li>
+	<li><a href="#" rel="center"><span style="background:white;color:red">NEW</span> Style & edit CENTER COLUMN</a></li>
 	<li><a href="#" rel="next-prev-nav">Next/Previous Navigation</a></li>
 	
 	<strong>Sidebars & Widgets</strong>

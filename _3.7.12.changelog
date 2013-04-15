@@ -1,3 +1,14 @@
+Changelog 3.7.12:
+
+- added new 'Center Top area widget' option code
+- added new 'Center Bottom area widget' option code
+- added option to specify folder to use for the logo, favicon and header images
+- fixed issue in 'multi column/custom query' template when using '0' 
+- bfa_rotating_header_images.php, line 5: $files = '' -> $files = array();
+- bfa_rotating_header_images.php, line 12: if($bfa_ata['images_root'] == "atahualpa") -> if($bfa_ata['images_root'] != "wp-content") 
+- bfa_custom_comments, line 10 (Undefined Notice): if ( $post = get_post($post_id) ) -> removed
+- bfa_custom_comments, line 4: global $bfa_ata -> global $bfa_ata, $post
+
 Changelog 3.7.11:
 
 - fix export issue when WordPress Address and Site Address are different

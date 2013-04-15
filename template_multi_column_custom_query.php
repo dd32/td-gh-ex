@@ -1,8 +1,10 @@
 <?php
 /*
 Template Name: JUGGLEDAD's multi column/custom query
-Version: 1.4
+Version: 1.5
 
+= 1.5 = 
+* added code for center widget area from Atahualpa 3.7.12
 = 1.4 = 
 * added option to control the number of full posts vrs excerpts to show
 = 1.3 = 
@@ -120,7 +122,7 @@ extract($bfa_ata);
 		foreach ( $my_custom_field as $key => $value ) {
 			if ($key == 'posts_above_the_column') {
 				$posts_above_the_column = $value;
-				if ((!is_numeric($posts_above_the_column)) OR ($posts_above_the_column < 1)) { ?>
+				if ((!is_numeric($posts_above_the_column)) OR ($posts_above_the_column < 0)) { ?>
 <br><strong><font color="Crimson">Warning:</font> your value for 'posts_above_the_column' on page '<?php the_title(); ?>' is not numeric or is a negative number - please edit the page and set the value correctly</strong><br>
 				<?php }
 			} 
@@ -182,11 +184,14 @@ extract($bfa_ata);
 <?php /* If there are any posts: */
 if (have_posts()) : $bfa_ata_postcount = 0; /* Postcount needed for option "XX first posts full posts, rest excerpts" */ ?>
 
+    <?php  if ($bfa_ata['widget_center_top'] <> '') { 
+          echo bfa_parse_widget_areas($bfa_ata['widget_center_top']); 
+	} ?>
+
 	<?php // Deactivated since 3.6.5
 	# include 'bfa://content_above_loop'; 
 	// Uses the following static code instead: ?>
 	<?php bfa_next_previous_page_links('Top'); // For MULTI post pages if activated at ATO -> Next/Previous Navigation:  ?>
-	<?php if( is_category() AND function_exists('page2cat_output')) { page2cat_output($cat); } // For the plugin Page2Cat http://wordpress.org/extend/plugins/page2cat/ ?>
 
     <table cellpadding="0" cellspacing="0" border="0">
     <?php $column_cnt = 1; ?>
@@ -243,6 +248,10 @@ if (have_posts()) : $bfa_ata_postcount = 0; /* Postcount needed for option "XX f
 	<?php bfa_next_previous_post_links('Bottom'); // Displayed on SINGLE post pages if activated at ATO -> Next/Previous Navigation: ?>
 	<?php bfa_archives_page('<div class="archives-page">','</div>'); // Archives Pages. Displayed on a specific static page, if configured at ATO -> Archives Pages: ?>
 	<?php bfa_next_previous_page_links('Bottom'); // Displayed on MULTI post pages if activated at ATO -> Next/Previous Navigation: ?>
+
+    <?php if ($bfa_ata['widget_center_bottom'] <> '') { 
+          echo bfa_parse_widget_areas($bfa_ata['widget_center_bottom']); 
+    } ?>
 
 <?php /* END of: If there are any posts */
 else : /* If there are no posts: */ ?>

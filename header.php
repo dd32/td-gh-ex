@@ -36,7 +36,21 @@ switch ( $bfa_ata['IEDocType'] ) {
 	default:
 		break;
 }} ?><?php bfa_meta_tags(); ?>
-<?php if ($bfa_ata['favicon_file'] != "") { ?><link rel="shortcut icon" href="<?php echo $templateURI; ?>/images/favicon/<?php echo $bfa_ata['favicon_file']; ?>" />
+<?php 
+
+if ($bfa_ata['favicon_file'] != "") { 
+    if($bfa_ata['images_root'] == "atahualpa") {
+           $imgdir  = get_template_directory_uri() . '/images/favicon/';
+        } else {
+// at this point the images_root is 'wp-content'
+    		if(!isset($bfa_ata['ata_images_dir']) 
+    		OR ($bfa_ata['ata_images_dir'] == '') ) {	
+           		$imgdir  = content_url() . '/ata-images/';
+			} else {
+				$imgdir  = content_url() . '/' . $bfa_ata['ata_images_dir'] . '/';
+        	}
+    	}
+?><link rel="shortcut icon" href="<?php echo $imgdir. $bfa_ata['favicon_file']; ?>" />
 <?php } ?>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />

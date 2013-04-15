@@ -459,15 +459,43 @@ $options1 = array(
             "lastoption" => "yes", 
             "info" => "Set this option to force Internet Explorer to use a particular rendering mode (supported by Internet Explorer 8 and newer)"),
             
+// New category: Images location
+
+    array(    "name" => "Image Locations",
+    	    "category" => "image-location",
+			"switch" => "yes",
+            "id" => "image_location_info",
+            "type" => "info",
+            "info" => "By default, the <ul><li><strong>logo</strong> is stored in the <code>atahualpa/images</code> folder</li><li><strong>favicon</strong> is stored in the <code>atahualpa/images/favicon</code> folder</li><li><strong>header images</strong> are stored in the <code>atahualpa/images/header</code> folder</li></ul>If you do an automatic WordPress upgrade of the theme, these folders (and any images you put in them) are erased and replaced with the default images provided with the theme. This option allows you to put those images in a new location that will not be effected by theme upgrades. 
+<br /><br />By creating a folder in the 'wp-content' folder with a name like 'ata-images' and adding a second folder in it called 'header', you would put your <ul><li><strong>logo</strong> in the <code>wp-content/ata-images</code> folder</li><li><strong>favicon</strong> in the <code>wp-content/ata-images</code> folder</li><li><strong>header images</strong> in the <code>wp-content/ata-images/header</code> folder</li></ul> then setting the <code>Relative location of images</code> to 'wp-content', your images will still exist when you do the next theme upgrade.
+              "),
+
+    array(    "name" => "Relative location of images?",
+    	    "category" => "image-location",
+            "id" => "images_root",
+            "type" => "select",
+            "std" => "atahualpa",
+            "options" => array("atahualpa", "wp-content"),
+            "info" => "This is the relative location of the logo, favicon and header images. (see above)"),
+
+     array(    "name" => "Images Directory",
+    	    "category" => "image-location",
+            "id" => "ata_images_dir",
+            "std" => "ata-images",
+            "type" => "text",
+			"lastoption" => "yes", 
+            "info" => "Base directory for images. No leading or trailing slashes. If the 'Relative location of header images?' is set to 'atahualpa' this option is ignored and the default Ataualpa folders will be used.<br /><br />
+For <strong>MULTI SITES</strong>, you should choose the 'wp-content' option and give each multisite a unique folder name like <code>multi-01</code> and <code>multi-02</code>"),
+
 // New category: favicon
 
 	array(    "name" => "Favicon",
     	    "category" => "favicon",
-			"switch" => "yes",
             "id" => "favicon_file",
             "std" => "new-favicon.ico",
             "type" => "text",
 			"size" => "30",
+			"switch" => "yes",
 			"lastoption" => "yes", 
             "info" =>  "<img src=\"" . $templateURI .
             "/options/images/favicon-locations.gif\" style=\"float: right;
@@ -490,6 +518,8 @@ $options1 = array(
             <a href=\"http://www.towofu.net/soft-e/\">@Icon Sushi</a></em>
             <img src=\"" . $templateURI . "/options/images/favicons.gif\"
             style=\"display: block; margin: 10px;\">"),
+
+
 
 // New category: header
 
@@ -548,9 +578,9 @@ $options1 = array(
             "id" => "logo",
             "type" => "text",
             "std" => "logo.png",
-            "info" => "Show a logo in the logo area? Leave blank to show no logo. To test this, put <code>huge-logo.gif</code> 
-			here and set both \"Show Blog Title\" and \"Show Blog Tagline\" to \"No\" below. <br /><br />" . $logo_icon_text . 
-			" Upload custom logo images to /atahualpa/images/."),
+            "info" => "Show a logo in the logo area? Leave blank to show no logo image. To test this, put <code>huge-logo.gif</code> 
+			here and set both \"Show Blog Title\" and \"Show Blog Tagline\" to \"No\" below. <br /><br />
+			To show your own graphic, upload an image to the directory you defined in the <code>Images Location</code>."),
 
 	array(    "name" => "Logo Image: Styling",
     	    "category" => "header",
@@ -668,20 +698,13 @@ $options1 = array(
 			"switch" => "yes",
             "id" => "header_image_info",
             "type" => "info",
-            "info" => "<br />All header images are located in <code>". $css_img_path ."images/header/</code>. All images in that directory will
+            "info" => "<br />All header images are located in the <code>Header Images Directory</code>. All images in that directory will
 			be rotated. If you don't want rotating header images, leave only one image in that directory. <ul><li>If you 
 			chose a fixed width layout, the image(s) should be as wide as your <a href=\"javascript: myflowers.expandit('layout-tab')\">layout width</a>.</li><li>If you chose a fluid layout, 
 			the images should be as wide as your \"max width\" setting.</li><li>If you chose no \"max-width\" setting, your 
 			images should be as wide as the widest screen resolution (of your visitors) you want to cater for. 1280 pixels is 
 			common today, so the images should be that wide or wider. The next common screen widths are 1440, 1600, 1680 and 
 			1920 pixels. </li></ul>" . $header_image_text),
-
-     array(    "name" => "Header Images Directory",
-            "category" => "header-image",
-            "id" => "header_images_dir",
-            "std" => "images/header",
-            "type" => "text",
-            "info" => "Directory for header image(s), relative to Atahualpa theme directory. No leading or trailing slashes."),
 
     array(    "name" => "Rotate header images with Javascript?",
     	    "category" => "header-image",
@@ -690,7 +713,7 @@ $options1 = array(
             "std" => "0",
             "options" => array(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30),
             "info" => "Select amount of seconds between rotation. Set to 0 to not use Javascript for rotation. In this case  
-			a new random image from <code>". $css_img_path ."images/header/</code> will be used on each page view, but the images won't rotate while the page is being viewed."),
+			a new random image from the <code>Header Images Directory</code> will be used on each page view, but the images won't rotate while the page is being viewed."),
 
     array(    "name" => "Sort or Shuffle header images?",
     	    "category" => "header-image",
@@ -1354,13 +1377,36 @@ $options1 = array(
 
 	array(    "name" => "Center column style",
     	    "category" => "center",
-			"switch" => "yes",
             "id" => "center_column_style",
-            "std" => "padding: 10px 15px;",
             "type" => "textarea-large",
-
+			"switch" => "yes",
+            "std" => "padding: 10px 15px;",
             "info" => "Style the center column here. The center column is the container for everything in the middle: 
 			All posts (including \"page\" posts) and the next/prev navigation."),
+
+// ---------------------------------
+	array(    "name" => "Center Column Top - widget area",
+    	    "category" => "center",
+            "id" => "widget_center_top",
+            "type" => "textarea-large",
+			"switch" => "yes",
+            "std" => "",
+            "info" => "You can add a new Widget Area here that will appear at the top of the center area. This widget area will display in posts and pages. <br />To control when it displays, use a plugin like 'Widget Logic'. See the <span style='color:red'>Add new Widget Areas</span> for the available options.<br /><br />
+            example 1: <code>&lt;?php bfa_widget_area('name=Center Top widget area'); ?&gt;</code> - shortest and most basic way you can create a widget area<br />
+            example 2: <code>&lt;?php bfa_widget_area('name=Center top widget area&cells=3'); ?&gt;</code> - This will create three widget areas<br />
+            example 3: <code>&lt;?php bfa_widget_area('name=Center top widget area&cells=2&width_1=400'); ?&gt;</code> - This will create a two widget area and the first one will be 400 px wide
+            "),
+
+
+	array(    "name" => "Center Column Bottom - widget area",
+    	    "category" => "center",
+			"switch" => "yes",
+            "id" => "widget_center_bottom",
+            "std" => "",
+            "type" => "textarea-large",
+            "info" => "You can add a new Widget Area here that will appear at the bottom of the center area. See the <span style='color:red'>Add new Widget Areas</span> for the available options."),
+
+// ---------------------------------
 
     array(    "name" => "Where are the 'Content ABOVE Loop', 'The LOOP' etc. options?",
     	    	"category" => "center",
@@ -1370,7 +1416,6 @@ $options1 = array(
             "info" => "<strong>They are now 'hardcoded' into Atahualpa's &lt;code&gt;index.php&lt;/code&gt;. To edit the loop or to add custom code before/after the loop, manually edit &lt;code&gt;index.php&lt;/code&gt;.</strong><br /><br />Since 3.6.5 custom PHP code isn't possible anymore in the Atahualpa Theme Options. Atahualpa was one of few themes, if not the only theme, to allow custom PHP code to be inserted through theme options. 
 			The philosophy as to what themes should or should not be able to do (i.e. which PHP functions they can use) has been tightened up quite a bit lately by WordPress, so in order to stay listed on wordpress.org we 
 			had to remove this 'custom PHP' feature. Check wordpress.bytesforall.com and forum.bytesforall.com for possible workarounds or even alternative theme versions, if you cannot live without custom PHP."),
-
 			
 // new category: center
 /*
@@ -2028,7 +2073,7 @@ $options3 = array(
 area, the center column or the footer area. This page here only explains how to use this feature. To actually add a new widget area 
 you'll have to go to one of the following menu tabs:
 <ul><li><a href=\"javascript: myflowers.expandit('header-tab')\">Style & edit HEADER AREA</a>: Put the code into the text area named \"Configure Header Area\".</li>
-<li><a href=\"javascript: myflowers.expandit('center-tab')\">Style & edit CENTER COLUMN</a>: If you want to add a widget area to the Center Column, you must edit \"index.php\" in the theme folder and add the widget area code there.</li>
+<li><a href=\"javascript: myflowers.expandit('center-tab')\">Style & edit CENTER COLUMN</a>: If you want to add a widget area to the Center Column, see the options there.</li>
 <li><a href=\"javascript: myflowers.expandit('footer-style-tab')\">Style & edit FOOTER</a>: Put the code into the text area named \"Footer: Content\".</li>
 <li>Technically, you could also hard code widget areas into one of the Atahualpa files such as index.php, header.php or footer.php (by using the code as shown below). 
 You should avoid this though, because you'd have to re-do these file edits whenever you upgrade to a new version of Atahualpa. Most of the time it will be unnecessary anyway as there 

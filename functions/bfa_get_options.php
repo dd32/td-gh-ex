@@ -277,11 +277,13 @@
 			"javascript_external",
 			"pngfix_selectors",
 			"css_compress",
-			"allow_debug",
-			
+			"allow_debug",			
 			"IEDocType",
-            "header_images_dir",
-			"overlay_header_image"
+            "ata_images_dir",
+			"overlay_header_image",
+			"widget_center_top",
+			"widget_center_bottom",
+			"images_root"
 			);
 
 			// If no old settings exit, use the new 'default' style
