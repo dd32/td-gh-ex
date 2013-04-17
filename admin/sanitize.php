@@ -67,6 +67,14 @@ function ma_options_validate($input) {
 global $mantra_defaults;
 	// Sanitize the texbox input
 
+/*** 1 ***/
+	if(isset($input['mantra_sidewidth']) && is_numeric($input['mantra_sidewidth']) && $input['mantra_sidewidth']>=500 && $input['mantra_sidewidth'] <=1760) {} else {$input['mantra_sidewidth']=$mantra_defaults['mantra_sidewidth']; }
+	if(isset($input['mantra_sidebar']) && is_numeric($input['mantra_sidebar']) && $input['mantra_sidebar']>=220 && $input['mantra_sidebar'] <=800) {} else {$input['mantra_sidebar']=$mantra_defaults['mantra_sidebar']; }
+	
+	if(isset($input['mantra_sidewidthRel']) && is_numeric($input['mantra_sidewidthRel']) && $input['mantra_sidewidthRel']>=40 && $input['mantra_sidewidthRel'] <=80) {} else {$input['mantra_sidewidthRel']=$mantra_defaults['mantra_sidewidthRel']; }
+	if(isset($input['mantra_sidebarRel']) && is_numeric($input['mantra_sidebarRel']) && $input['mantra_sidebarRel']>=20 && $input['mantra_sidebarRel'] <=50) {} else {$input['mantra_sidebarRel']=$mantra_defaults['mantra_sidebarRel']; }
+
+	
 	$input['mantra_hheight'] =  intval(wp_kses_data($input['mantra_hheight']));
 
 	$input['mantra_copyright'] =  trim(wp_kses_post($input['mantra_copyright']));
@@ -98,7 +106,8 @@ global $mantra_defaults;
 
 	$input['mantra_fwidth'] =  intval(wp_kses_data($input['mantra_fwidth']));
 	$input['mantra_fheight'] =  intval(wp_kses_data($input['mantra_fheight']));
-	
+
+/*** 2 ***/	
 	for ($i=1;$i<10;$i+=2) {
 		$j=$i+1;
 		$input['mantra_social'.$j] =  esc_url_raw(($input['mantra_social'.$i]=='Mail'?'mailto:':'').$input['mantra_social'.$j]);
@@ -151,6 +160,7 @@ global $mantra_defaults;
 	$input['mantra_fpsliderwidth'] =  intval(wp_kses_data($input['mantra_fpsliderwidth']));
 	$input['mantra_fpsliderheight'] = intval(wp_kses_data($input['mantra_fpsliderheight']));
 
+/** 3 ***/
 	$input['mantra_sliderimg1'] =  wp_kses_data($input['mantra_sliderimg1']);
 	$input['mantra_slidertitle1'] =  wp_kses_data($input['mantra_slidertitle1']);
 	$input['mantra_slidertext1'] =  wp_kses_post($input['mantra_slidertext1']);
@@ -174,6 +184,7 @@ global $mantra_defaults;
 
 	$input['mantra_colimageheight'] = intval(wp_kses_data($input['mantra_colimageheight']));
 
+/** 4 **/
 	$input['mantra_columnimg1'] =  wp_kses_data($input['mantra_columnimg1']);
 	$input['mantra_columntitle1'] =  wp_kses_data($input['mantra_columntitle1']);
 	$input['mantra_columntext1'] =  wp_kses_post($input['mantra_columntext1']);

@@ -88,7 +88,7 @@ global $post;
 	endif;
  
  
- if (isset($himgsrc)) : echo '<img id="bg_image" alt="" title="" src="'.$himgsrc.'"  />';  endif;
+ if (isset($himgsrc) && ($himgsrc != '')) : echo '<img id="bg_image" alt="" title="" src="'.$himgsrc.'"  />';  endif;
 
 ?>
 
@@ -114,11 +114,11 @@ foreach ($mantra_options as $key => $value) {
 	
 	case 'Clickable header image' :
 	
-		echo '<a style="display:block;width:100%;height:100%;" href="'.home_url( '/' ).'" id="linky"> </a>' ;
+		echo '<a href="'.home_url( '/' ).'" id="linky"></a>' ;
 	break;
 	
 	case 'Custom Logo' :
-	echo '<div><a id="logo" href="/" ><img title="" alt="" src="'.$mantra_logoupload.'" /></a></div>';
+	if (isset($mantra_logoupload) && ($mantra_logoupload != '')) : echo '<div><a id="logo" href="/" ><img title="" alt="" src="'.$mantra_logoupload.'" /></a></div>'; endif;
 	
 	break;
 	

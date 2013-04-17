@@ -92,7 +92,7 @@ function cryout_setting_sidewidth_fn()
    {
 global $mantra_options;
 	$items = array ("Absolute" , "Relative");
-	$itemsare = array( __("Absolute","mantra"), __("Relative","mantra"));
+	$itemsare = array( __("Absolute","mantra"), __("Relative *DEPRECATED","mantra"));
 	echo __("Dimensions to use: ","mantra")." <select id='mantra_dimselect' name='ma_options[mantra_dimselect]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";

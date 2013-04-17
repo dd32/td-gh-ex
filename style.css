@@ -4,13 +4,13 @@
  * Description: Mantra is a do-it-yourself WordPress theme, featuring a pack of over 100 customization options and easy to use tweaks capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (1,2 or 3 columns), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 35 font-families plus all Google Fonts), text and header sizes, post metas, post excerpts, post formats, header and background images, custom menus, 27 social media links and icons, pins, bullets and much much more. With a fully responsive layout,a customizable showcase presentation page, animated slider, magazine and blog layouts, 8 widget areas, modern graphics and an easy and intuitive admin section, you can start creating your dream site right now.
  * Author: Cryout Creations
  * Author URI: http://www.cryoutcreations.eu
- * Version: 2.0.1
+ * Version: 2.0.2
  * License: GNU General Public License v2.0
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Tags: black, red, blue, white, silver, light, dark, one-column, two-columns, three-columns, right-sidebar, left-sidebar, flexible-width, fixed-width, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, front-page-post-form, full-width-template,  microformats, post-formats, rtl-language-support,  sticky-post, theme-options, threaded-comments, translation-ready
  *
- * Copyright (c) 2011-2012 Cryout Creations
- * http://www.cryoutcreations.com
+ * Copyright (c) 2011-2013 Cryout Creations
+ * http://www.cryoutcreations.eu
 */
 
 
@@ -83,6 +83,8 @@ table {
 a img {
 	border: none;
 }
+
+
 
 /* =Layout
 -------------------------------------------------------------- */
@@ -234,6 +236,13 @@ a#logo {
 display:inline;
 height:100%;
 margin-left:20px;
+}
+
+#linky {
+background-image: url('data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICR‌​AEAOw==');
+display:block;
+width:100%;
+height:100%;
 }
 
 #forbottom {
@@ -2382,7 +2391,7 @@ background:#FAFAFA;
 	overflow: hidden;
 	display: none;
 	-moz-opacity: 0.8;
-	filter:alpha(opacity=8);
+	filter:alpha(opacity=80);
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	box-sizing: border-box;         /* Opera/IE 8+ */
@@ -2585,15 +2594,15 @@ margin-bottom:8px;
 
 /* Multi-column short code */
 .multi-column {display: block; width: 100%; float: left; margin: 10px 0;}
-.short-columns {display: inline-block; float: left; margin: 0px; padding: 4px; }
+.short-columns {display: inline-block; float: left; margin: 0px; padding: 1%; }
 .column-12 {width: 48%;}
 .column-13 {width: 31%;}
 .column-14 {width: 23%;}
 .column-16 {width: 14.5%;}
-.column-23 {width: 64%;}
-.column-34 {width: 73%;}
+.column-23 {width: 62%;}
+.column-34 {width: 72%;}
 .column-56 {width: 80%;}
-.column-1 {width: 100%; margin: 0}
+.column-1 {width: 98%; margin: 0}
 .multi-column .short-columns:first-child {padding-left: 0; margin-left: 0}
 .multi-column .short-columns:last-child {padding-right: 0; margin-right: 0}
 

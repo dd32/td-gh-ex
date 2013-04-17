@@ -566,3 +566,7 @@ text-transform:uppercase;
 color:#C47D09;
 }
 
+.wrap div.updated, .wrap div.error {
+margin-left: 15px; margin-right: 15px; 
+margin-top: 20px; }
+

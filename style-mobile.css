@@ -4,10 +4,10 @@
 
 @media (max-width: 800px) {
 	#content {
-		float:none ;
+		float:none;
 		margin:0 2%;
 		width:96%;
-		height:auto ;
+		height:auto;
 	}
 	#access, #branding {width:100%;}
 	#wrapper, #colophon,  #main, article.post, #container, #linky {
@@ -54,16 +54,16 @@
 	width:65%;
 	}	
 	#wrapper {
-		margin:10px ;
+		margin:10px;
 	}
 	#access .menu-header, div.menu {
-		width:95% ;
+		width:95%;
 	}
 	article.post {
-   		width:98% ;
+   		width:98%;
  	}
 	#primary, #secondary {
-		width:100% ;
+		width:100%;
 		height:auto !important;
 	}
 	.slider-wrapper { 
@@ -88,8 +88,8 @@
 	clear:left;
 	}
 	#slider {
-	width:auto ;
-	height:auto ;
+	width:auto;
+	height:auto;
 	}
 	#footer-widget-area .widget-title {
 	background:none !important;

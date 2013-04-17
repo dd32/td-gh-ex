@@ -92,6 +92,11 @@ function mantra_init_fn(){
 
 
 	register_setting('ma_options', 'ma_options', 'ma_options_validate' );
+
+/**************
+   sections
+**************/
+
 	add_settings_section('layout_section', __('Layout Settings','mantra'), 'cryout_section_layout_fn', __FILE__);
 	add_settings_section('header_section', __('Header Settings','mantra'), 'cryout_section_header_fn', __FILE__);
 	add_settings_section('presentation_section', __('Presentation Page','mantra'), 'cryout_section_presentation_fn', __FILE__);
@@ -104,9 +109,11 @@ function mantra_init_fn(){
 	add_settings_section('socials_section', __('Social Media Settings','mantra') , 'cryout_section_social_fn', __FILE__);
 	add_settings_section('misc_section', __('Miscellaneous Settings','mantra') , 'cryout_section_misc_fn', __FILE__);
 
+/*** layout ***/
 	add_settings_field('mantra_side', __('Main Layout','mantra') , 'cryout_setting_side_fn', __FILE__, 'layout_section');
 	add_settings_field('mantra_sidewidth', __('Content / Sidebar Width','mantra') , 'cryout_setting_sidewidth_fn', __FILE__, 'layout_section');
 	add_settings_field('mantra_mobile', __('Mobile view','mantra') , 'cryout_setting_mobile_fn', __FILE__, 'layout_section');
+/*** presentation ***/
 
 	add_settings_field('mantra_frontpage', __('Enable Presentation Page','mantra') , 'cryout_setting_frontpage_fn', __FILE__, 'presentation_section');
 	add_settings_field('mantra_frontslider', __('Slider Settings','mantra') , 'cryout_setting_frontslider_fn', __FILE__, 'presentation_section');
@@ -114,13 +121,14 @@ function mantra_init_fn(){
 	add_settings_field('mantra_frontcolumns', __('Presentation Page Columns','mantra') , 'cryout_setting_frontcolumns_fn', __FILE__, 'presentation_section');
 	add_settings_field('mantra_fronttext', __('Extras','mantra') , 'cryout_setting_fronttext_fn', __FILE__, 'presentation_section');
 
+/*** header ***/
 	add_settings_field('mantra_hheight', __('Header Height','mantra') , 'cryout_setting_hheight_fn', __FILE__, 'header_section');
 	add_settings_field('mantra_siteheader', __('Site Header','mantra') , 'cryout_setting_siteheader_fn', __FILE__, 'header_section');
 	add_settings_field('mantra_logoupload', __('Custom Logo Upload','mantra') , 'cryout_setting_logoupload_fn', __FILE__, 'header_section');
 	add_settings_field('mantra_headermargin', __('Header Top Spacing','mantra') , 'cryout_setting_headermargin_fn', __FILE__, 'header_section');
 	add_settings_field('mantra_menurounded', __('Rounded Menu Corners','mantra') , 'cryout_setting_menurounded_fn', __FILE__, 'header_section');
 	add_settings_field('mantra_favicon', __('FavIcon Upload','mantra') , 'cryout_setting_favicon_fn', __FILE__, 'header_section');
-
+/*** text ***/
 	add_settings_field('mantra_fontfamily', __('General Font','mantra') , 'cryout_setting_fontfamily_fn', __FILE__, 'text_section');
 	add_settings_field('mantra_fontsize', __('General Font Size','mantra') , 'cryout_setting_fontsize_fn', __FILE__, 'text_section');
 	add_settings_field('mantra_fonttitle', __('Post Title Font ','mantra') , 'cryout_setting_fonttitle_fn', __FILE__, 'text_section');
@@ -135,7 +143,7 @@ function mantra_init_fn(){
 	add_settings_field('mantra_wordspace', __('Word spacing','mantra') , 'cryout_setting_wordspace_fn', __FILE__, 'text_section');
 	add_settings_field('mantra_letterspace', __('Letter spacing','mantra') , 'cryout_setting_letterspace_fn', __FILE__, 'text_section');
 	add_settings_field('mantra_textshadow', __('Text shadow','mantra') , 'cryout_setting_textshadow_fn', __FILE__, 'text_section');
-
+/*** appereance ***/
 	add_settings_field('mantra_backcolor', __('Background Color','mantra') , 'cryout_setting_backcolor_fn', __FILE__, 'appereance_section');
 	add_settings_field('mantra_headercolor', __('Header (Banner and Menu) Background Color','mantra') , 'cryout_setting_headercolor_fn', __FILE__, 'appereance_section');
 	add_settings_field('mantra_contentbg', __('Content Background Color','mantra') , 'cryout_setting_contentbg_fn', __FILE__, 'appereance_section');
@@ -158,7 +166,7 @@ function mantra_init_fn(){
 	add_settings_field('mantra_footerheader', __('Footer Widget Header Text Color','mantra') , 'cryout_setting_footerheader_fn', __FILE__, 'appereance_section');
 	add_settings_field('mantra_footertext', __('Footer Widget Link Color','mantra') , 'cryout_setting_footertext_fn', __FILE__, 'appereance_section');
 	add_settings_field('mantra_footerhover', __('Footer Widget Hover Color','mantra') , 'cryout_setting_footerhover_fn', __FILE__, 'appereance_section');
-
+/*** graphics ***/
 	add_settings_field('mantra_breadcrumbs', __('Breadcrumbs','mantra') , 'cryout_setting_breadcrumbs_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_pagination', __('Pagination','mantra') , 'cryout_setting_pagination_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_image', __('Post Images Border','mantra') , 'cryout_setting_image_fn', __FILE__, 'graphics_section');
@@ -175,7 +183,7 @@ function mantra_init_fn(){
 	add_settings_field('mantra_comtext', __('Text Under Comments','mantra') , 'cryout_setting_comtext_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_comclosed', __('Comments are closed text','mantra') , 'cryout_setting_comclosed_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_comoff', __('Comments off','mantra') , 'cryout_setting_comoff_fn', __FILE__, 'graphics_section');
-
+/*** post ***/
 	add_settings_field('mantra_postcomlink', __('Post Comments Link','mantra') , 'cryout_setting_postcomlink_fn', __FILE__, 'post_section');
 	add_settings_field('mantra_postdate', __('Post Date','mantra') , 'cryout_setting_postdate_fn', __FILE__, 'post_section');
 	add_settings_field('mantra_posttime', __('Post Time','mantra') , 'cryout_setting_posttime_fn', __FILE__, 'post_section');
@@ -193,20 +201,20 @@ function mantra_init_fn(){
 	add_settings_field('mantra_excerptdots', __('Excerpt suffix','mantra') , 'cryout_setting_excerptdots_fn', __FILE__, 'excerpt_section');
 	add_settings_field('mantra_excerptcont', __('Continue reading link text ','mantra') , 'cryout_setting_excerptcont_fn', __FILE__, 'excerpt_section');
 	add_settings_field('mantra_excerpttags', __('HTML tags in Excerpts','mantra') , 'cryout_setting_excerpttags_fn', __FILE__, 'excerpt_section');
-
+/*** featured ***/
 	add_settings_field('mantra_fpost', __('Featured Images as POST Thumbnails ','mantra') , 'cryout_setting_fpost_fn', __FILE__, 'featured_section');
 	add_settings_field('mantra_fauto', __('Auto Select Images From Posts ','mantra') , 'cryout_setting_fauto_fn', __FILE__, 'featured_section');
 	add_settings_field('mantra_falign', __('Thumbnails Alignment ','mantra') , 'cryout_setting_falign_fn', __FILE__, 'featured_section');
 	add_settings_field('mantra_fsize', __('Thumbnails Size ','mantra') , 'cryout_setting_fsize_fn', __FILE__, 'featured_section');
 	add_settings_field('mantra_fheader', __('Featured Images as HEADER Images ','mantra') , 'cryout_setting_fheader_fn', __FILE__, 'featured_section');
-
+/*** socials ***/
 	add_settings_field('mantra_socials1', __('Link nr. 1','mantra') , 'cryout_setting_socials1_fn', __FILE__, 'socials_section');
 	add_settings_field('mantra_socials2', __('Link nr. 2','mantra') , 'cryout_setting_socials2_fn', __FILE__, 'socials_section');
 	add_settings_field('mantra_socials3', __('Link nr. 3','mantra') , 'cryout_setting_socials3_fn', __FILE__, 'socials_section');
 	add_settings_field('mantra_socials4', __('Link nr. 4','mantra') , 'cryout_setting_socials4_fn', __FILE__, 'socials_section');
 	add_settings_field('mantra_socials5', __('Link nr. 5','mantra') , 'cryout_setting_socials5_fn', __FILE__, 'socials_section');
 	add_settings_field('mantra_socialshow', __('Socials display','mantra') , 'cryout_setting_socialsdisplay_fn', __FILE__, 'socials_section');
-
+/*** misc ***/
 	add_settings_field('mantra_seo', __('SEO Settings','mantra') , 'cryout_setting_seo_fn', __FILE__, 'misc_section');
 	add_settings_field('mantra_copyright', __('Custom Footer Text','mantra') , 'cryout_setting_copyright_fn', __FILE__, 'misc_section');
 	add_settings_field('mantra_customcss', __('Custom CSS','mantra') , 'cryout_setting_customcss_fn', __FILE__, 'misc_section');
@@ -234,6 +242,7 @@ function mantra_page_fn() {
 <div class="wrap"><!-- Admin wrap page -->
 
 <div id="lefty"><!-- Left side of page - the options area -->
+	<div>
 <div id="admin_header"><img src="<?php echo get_template_directory_uri() . '/admin/images/mantra-logo.png' ?>" /> </div>
 
 <div id="admin_links">
@@ -241,7 +250,9 @@ function mantra_page_fn() {
 	<a target="_blank" href="http://www.cryoutcreations.eu/forum">Support</a>
 	<a target="_blank" href="http://www.cryoutcreations.eu">Cryout Creations</a>
 </div>
-<div id="jsAlert" class="error" style="padding:5px 10px;">There's a probelm with your WordPress jQuery library. This can have several causes, including
+	<div style="clear: both;"></div>
+</div>
+<div id="jsAlert" class="error" style="padding:5px 10px;">There's a problem with your WordPress jQuery library. This can have several causes, including
 incompatible plugins.<br> The Mantra Settings page cannot function without jQuery. You need to fix this issue before you can configure Mantra.</div>
 <script> jQuery('#jsAlert').hide();</script>
 <?php if ( isset( $_GET['settings-updated'] ) ) {
@@ -264,7 +275,7 @@ incompatible plugins.<br> The Mantra Settings page cannot function without jQuer
 		</form>
 		<?php   $mantra_theme_data = get_transient( 'mantra_theme_info');  ?>
 		<span id="version">
-		Mantra v <?php echo _VERSION; ?> by <a href="http://www.cryoutcreations.eu" target="_blank">Cryout Creations</a>
+		Mantra v <?php echo MANTRA_VERSION; ?> by <a href="http://www.cryoutcreations.eu" target="_blank">Cryout Creations</a>
 		</span>
 	</div><!-- main-options -->
 </div><!--lefty -->
@@ -313,7 +324,7 @@ uGoJV/7kErByS98U5Gze/kUo5OvpezDjckdR0TJfoNFDKiAit+Qf9+ToViM/CmY2cONArejftWlnEKik
             </div>
             <div class="panel-wrap inside" style="height:200px;overflow:auto;">
                 <?php
-				$mantra_news = fetch_feed( array( 'http://www.riotreactions.eu/tag/mantra-2/feed/') );
+				$mantra_news = fetch_feed( array( 'http://www.cryoutcreations.eu/cat/mantra/feed') );
 				if ( ! is_wp_error( $mantra_news ) ) {
 					$maxitems = $mantra_news->get_item_quantity( 10 );
 					$news_items = $mantra_news->get_items( 0, $maxitems );

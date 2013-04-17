@@ -5,7 +5,7 @@ Mantra is a do-it-yourself WordPress theme, featuring a pack of over 100 customi
 
 Theme created by Cryout Creations - www.cryoutcreations.eu
 
-Theme support  - www.riotreactions.eu/mantra
+Theme support: www.cryoutcreations.eu/mantra
 
 
 The theme and all included binaries (all images, patterns and icons) are released under the GPLv2 licence, which means that you are free to use, modify, and redistribute the theme and all included binaries however you like, as long as you keep the licence together with the theme. This also means that you are free to use it for commercial purposes without any charges. Please read the included license.txt for the full licence.

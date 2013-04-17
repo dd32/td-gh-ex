@@ -251,22 +251,22 @@ $i=0;	$j=0;?>
   if($mantra_nrcolumns) { ?>
 <div id="front-columns"> 
 	<div id="column1">
-	<a  href="<?php echo esc_url($mantra_columnlink1) ?>">	<div class="column-image" ><img  src="<?php echo esc_url($mantra_columnimg1) ?>" id="columnImage1" alt="" /> </div> <h3><?php echo $mantra_columntitle1 ?></h3> </a><div class="column-text"><?php echo $mantra_columntext1 ?></div>
+	<a  href="<?php echo esc_url($mantra_columnlink1) ?>">	<div class="column-image" ><img  src="<?php echo esc_url($mantra_columnimg1) ?>" id="columnImage1" alt="" /> </div> <h3><?php echo $mantra_columntitle1 ?></h3> </a><div class="column-text"><?php echo do_shortcode ($mantra_columntext1 ); ?></div>
 	<?php if($mantra_columnreadmore) {?>	<div class="columnmore"> <a href="<?php echo esc_url($mantra_columnlink1) ?>"><?php echo esc_attr($mantra_columnreadmore) ?> &raquo;</a> </div><?php } ?>
 	</div>
 <?php  if($mantra_nrcolumns != '1') { ?>
 	<div id="column2">
-		<a  href="<?php echo esc_url($mantra_columnlink2) ?>">	<div class="column-image" ><img  src="<?php echo esc_url($mantra_columnimg2) ?>" id="columnImage2" alt="" /> </div> <h3><?php echo $mantra_columntitle2 ?></h3> </a><div class="column-text"><?php echo $mantra_columntext2 ?></div>
+		<a  href="<?php echo esc_url($mantra_columnlink2) ?>">	<div class="column-image" ><img  src="<?php echo esc_url($mantra_columnimg2) ?>" id="columnImage2" alt="" /> </div> <h3><?php echo $mantra_columntitle2 ?></h3> </a><div class="column-text"><?php echo do_shortcode ( $mantra_columntext2 );?></div>
 	<?php if($mantra_columnreadmore) {?>	<div class="columnmore"> <a href="<?php echo esc_url($mantra_columnlink2) ?>"><?php echo esc_attr($mantra_columnreadmore) ?> &raquo;</a> </div><?php } ?>
 	</div>
 <?php  if($mantra_nrcolumns != '2') { ?>
 	<div id="column3">
-		<a  href="<?php echo esc_url($mantra_columnlink3) ?>">	<div class="column-image" ><img  src="<?php echo esc_url($mantra_columnimg3) ?>" id="columnImage3" alt="" /> </div> <h3><?php echo $mantra_columntitle3 ?></h3> </a><div class="column-text"><?php echo $mantra_columntext3 ?></div>
+		<a  href="<?php echo esc_url($mantra_columnlink3) ?>">	<div class="column-image" ><img  src="<?php echo esc_url($mantra_columnimg3) ?>" id="columnImage3" alt="" /> </div> <h3><?php echo $mantra_columntitle3 ?></h3> </a><div class="column-text"><?php echo do_shortcode ( $mantra_columntext3 );?></div>
 	<?php if($mantra_columnreadmore) {?>	<div class="columnmore"> <a href="<?php echo esc_url($mantra_columnlink3) ?>"><?php echo esc_attr($mantra_columnreadmore) ?> &raquo;</a> </div><?php } ?>
 	</div>
 <?php  if($mantra_nrcolumns == '4') { ?>
 	<div id="column4">
-		<a  href="<?php echo esc_url($mantra_columnlink4) ?>">	<div class="column-image" ><img  src="<?php echo esc_url($mantra_columnimg4) ?>" id="columnImage4" alt="" /> </div> <h3><?php echo $mantra_columntitle4 ?></h3> </a><div class="column-text"><?php echo $mantra_columntext4 ?></div>
+		<a  href="<?php echo esc_url($mantra_columnlink4) ?>">	<div class="column-image" ><img  src="<?php echo esc_url($mantra_columnimg4) ?>" id="columnImage4" alt="" /> </div> <h3><?php echo $mantra_columntitle4 ?></h3> </a><div class="column-text"><?php echo do_shortcode ( $mantra_columntext4 ); ?></div>
 	<?php if($mantra_columnreadmore) {?>	<div class="columnmore"> <a href="<?php echo esc_url($mantra_columnlink4) ?>"><?php echo esc_attr($mantra_columnreadmore) ?> &raquo;</a> </div><?php } ?>
 	</div>
 <?php } } }?>
@@ -274,8 +274,8 @@ $i=0;	$j=0;?>
 <?php } 
 
  // Frontpage text areas
-  if($mantra_fronttext3) {?><div id="front-text3"> <blockquote><?php echo $mantra_fronttext3 ?> </blockquote></div><?php } 
-  if($mantra_fronttext4) {?><div id="front-text4"> <blockquote><?php echo $mantra_fronttext4 ?> </blockquote></div><?php } 
+  if($mantra_fronttext3) {?><div id="front-text3"> <blockquote><?php echo do_shortcode( $mantra_fronttext3 ) ?> </blockquote></div><?php } 
+  if($mantra_fronttext4) {?><div id="front-text4"> <blockquote><?php echo do_shortcode( $mantra_fronttext4 ) ?> </blockquote></div><?php } 
 
  ?>
 </div> <!-- frontpage -->
