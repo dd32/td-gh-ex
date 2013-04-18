@@ -14,7 +14,7 @@
 
 
 <?php 	// Check if slider is activated for blog index
-	if ( icefit_get_option('blog_slider') ):
+	if ( icefit_get_option('blog_slider') == "On" ):
 		// Prepare arguments for WP_query: query slides
 		$args = array( 'post_type' => 'icf_slides' );
 		// Check slides category selection
@@ -136,8 +136,13 @@
 					<?php if ( 'post' == get_post_type() ):  // Do not display this for pages ?>
 					<div class="post-category"><?php _e('Posted in', 'icefit'); ?> <?php the_category(', '); ?></div>
 					<?php endif; ?>
-					<div class="post-excerpt">
-					<?php the_excerpt() ?>
+					<div class="post-content">
+					<?php $blog_index_content = icefit_get_option('blog_index_content');
+					if ($blog_index_content == "Default Excerpt" || $blog_index_content == "Icefit Improved Excerpt") {
+						the_excerpt();
+						} else {
+						the_content();
+						} ?>
 					</div>
 				</div>
 				<br class="clear" />

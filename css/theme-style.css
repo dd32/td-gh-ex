@@ -8,17 +8,7 @@
 *
 */
 
-/*
-* {
-	transition: all .5s;
-	-moz-transition: all .5s;
-	-webkit-transition: all .5s;
-	-o-transition: all .5s;
-}
-*/
-
 /* Dynamic */
-
 
 /* =WordPress Core
 -------------------------------------------------------------- */
@@ -412,7 +402,6 @@ h3.entry-title {
 }
 
 .post-category {
-	font-family: 'Oswald';
 	text-transform: uppercase;
 	color: #707070;
 	font-size: 13px;
@@ -990,7 +979,6 @@ p.comment-form-url
 }
 
 #footer .container ul li ul li {
-	font-family: 'Oswald';
 	font-size: 15px;
 	line-height: 20px;
 	text-transform: uppercase;
@@ -1365,7 +1353,6 @@ textarea {
 	border-radius: 0;
 	box-shadow: none;
 	display: block;
-	font-family: 'Oswald';
 	font-size: 15px;
 	margin: 0 0 10px 0;
 	padding: 0 5px;

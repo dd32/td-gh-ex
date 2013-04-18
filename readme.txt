@@ -4,7 +4,7 @@ Contributors: Iceable
 Tags: black, blue, brown, gray, green, orange, pink, purple, red, silver, tan, white, yellow, dark, light, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.5
 Tested up to: 3.5.1
-Stable tag: 1.0
+Stable tag: 1.0.1
 
 == ABOUT BOLDR LITE ==
 
@@ -49,6 +49,14 @@ This theme bundles some third party javascript and jQuery plugins, released unde
 All other files are copyright 2013 Iceable Media.
 
 == CHANGELOG ==
+
+= 1.0.1 =
+April 18th, 2013
+* Fixed: Icefit Improved Excerpt enhanced to preserve some styling tags without breaking the markup
+* Fixed: Option to enable/disable slider on blog index pages
+* Added: Option to choose what content to display on blog index pages (Full content, WP default excerpt or Icefit improved excerpt)
+* Added: /languages folder with default po and mo files and POT file for localization
+* Changed: Updated Theme URI to BoldR Lite demo site
 
 = 1.0 =
 April 1st, 2013

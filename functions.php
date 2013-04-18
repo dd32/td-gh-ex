@@ -150,22 +150,30 @@ function icefit_improved_trim_excerpt($text) {
 		$text = preg_replace('@<style[^>]*?>.*?</style>@si', '', $text);
 		$text = preg_replace('@<p class="wp-caption-text"[^>]*?>.*?</p>@si', '', $text);
     	$text = str_replace('\]\]\>', ']]&gt;', $text);
-    	$text = strip_tags($text, '<p><i><em><b><a><strong>');
     	$excerpt_length = 50;
     	$words = explode(' ', $text, $excerpt_length + 1);
     	if (count($words)> $excerpt_length) {
 			array_pop($words);
-			array_push($words, '... <div class="read-more"><a href="'.get_permalink($post->ID).'">'.'Read More'.'</a></div>');
-			$text = implode(' ', $words);
-		} else {
-			$text .= '<div class="read-more"><a href="'.get_permalink($post->ID).'">'.'Read More'.'</a></div>';
+			$text = implode(' ', $words)."...";
 		}
+    	$text = strip_tags($text, '<br><p><i><em><b><a><strong>');
+
+    	if ( extension_loaded('tidy') ) {
+	    	$tidy = new tidy();
+	    	$tidy->parseString($text,array('show-body-only'=>true,'wrap'=>'0'),'utf8');
+	    	$tidy->cleanRepair();
+	    	$text = $tidy;
+    	}
+    	
+		$text .= '<div class="read-more"><a href="'.get_permalink($post->ID).'">'.__('Read More', 'icefit').'</a></div>';
 	}
 	return $text;
 }
 
-remove_filter('get_the_excerpt', 'wp_trim_excerpt');
-add_filter('get_the_excerpt', 'icefit_improved_trim_excerpt');
+if ( icefit_get_option('blog_index_content') == "Icefit Improved Excerpt" ) {
+	remove_filter('get_the_excerpt', 'wp_trim_excerpt');
+	add_filter('get_the_excerpt', 'icefit_improved_trim_excerpt');
+}
 
 /*--------------------- Rewrite Gallery Shortcode ---------------------*/
 
@@ -431,7 +439,7 @@ function icefit_dynamiccss_output() {
 	}
 
 	// Headings font
-	$custom_css .= 'h1, h2, h3, h4, h5, h6, h1.page-title, h1.entry-title, #page-container h1, #page-container h2, #page-container h3, #page-container h4, #page-container h5, #page-container h6, #page-container h1 a, #page-container h2 a, #page-container h3 a, #page-container h4 a, #page-container h5 a, #page-container h6 a, #page-container h1 a:visited, #page-container h2 a:visited, #page-container h3 a:visited, #page-container h4 a:visited, #page-container h5 a:visited, #page-container h6 a:visited, #navbar, .flex-caption, .meta-date, .meta-comments, .editlink, .read-more, .page_nav div, .paged_nav, .article_nav div, .commentlist .comment-author, .commentlist .commentmetadata, .commentlist .comment .comment-body .reply, .comments_nav div, label, input[type="submit"], input[type="reset"], input[type="button"], #sidebar, #sidebar .widget-title, #sidebar > li > *, #footer, #footer .widget-title, #footer li > *, .single-post .tags, .dropcap, .button, ul.tabs li a, .toggle p.trigger, .accordions .accordion p.trigger, .slide-title, #page-container.portfolio-page .filter li a, .meta-client, .meta-category, .testimonial-author {font-family: '.icefit_get_option('headings_font').', Helvetica, Arial, Verdana, sans-serif;}';
+	$custom_css .= 'h1, h2, h3, h4, h5, h6, h1.page-title, h1.entry-title, #page-container h1, #page-container h2, #page-container h3, #page-container h4, #page-container h5, #page-container h6, #page-container h1 a, #page-container h2 a, #page-container h3 a, #page-container h4 a, #page-container h5 a, #page-container h6 a, #page-container h1 a:visited, #page-container h2 a:visited, #page-container h3 a:visited, #page-container h4 a:visited, #page-container h5 a:visited, #page-container h6 a:visited, #navbar, .flex-caption, .meta-date, .meta-comments, .editlink, .read-more, .page_nav div, .paged_nav, .article_nav div, .commentlist .comment-author, .commentlist .commentmetadata, .commentlist .comment .comment-body .reply, .comments_nav div, label, input[type="text"], input[type="password"], input[type="email"], textarea, input[type="submit"], input[type="reset"], input[type="button"], #sidebar, #sidebar .widget-title, #sidebar > li > *, #footer, #footer .widget-title, #footer li > *, .single-post .tags, .dropcap, .button, ul.tabs li a, .toggle p.trigger, .accordions .accordion p.trigger, .slide-title, #page-container.portfolio-page .filter li a, .meta-client, .meta-category, .testimonial-author, .post-category, #footer .container ul li ul li {font-family: '.icefit_get_option('headings_font').', Helvetica, Arial, Verdana, sans-serif;}';
 
 	// Main color
 	$custom_css .= '#navbar .current-menu-item, #navbar ul li:hover, #navbar ul li:focus, .flex-caption, .meta-date, .read-more, .page_nav div, .paged_nav a, .article_nav div, .commentlist .comment .comment-body .reply, .comments_nav div, input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, textarea:focus, input[type="submit"], input[type="reset"], input[type="button"], #footer .tagcloud a:hover, #footer .tagcloud a:focus, .single-post .tags a:hover, .single-post .tags a:focus, .button, ul.tabs li a.active, ul.tabs li a:hover, .toggle p.trigger:hover, .accordions .accordion p.trigger:hover, #page-container.portfolio-page .filter li.current a, #page-container.portfolio-page .filter li:hover a, .caroufredsel-wrap .prev:hover, .caroufredsel-wrap .next:hover, ul.contactinfo-widget li.contactinfo-widget-form a, .flex-direction-nav li a:hover {background-color:'.icefit_get_option('main_color').";}";
