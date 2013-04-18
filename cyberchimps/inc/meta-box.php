@@ -41,10 +41,15 @@ function cyberchimps_init_meta_boxes() {
 	$portfolio_image = $image_path . "portfolio.jpg";
 	
 	// get default image for slider lite.
-	$slider_image1	 = $directory_uri .  apply_filters( 'cyberchimps_slider_lite_img1' ,'/elements/lib/images/slider/slide1.jpg' );
-	$slider_image2	 = $directory_uri .  apply_filters( 'cyberchimps_slider_lite_img2' ,'/elements/lib/images/slider/slide1.jpg' );
-	$slider_image3	 = $directory_uri .  apply_filters( 'cyberchimps_slider_lite_img3' ,'/elements/lib/images/slider/slide1.jpg' );
-
+	$slider_image1 = $directory_uri .  apply_filters( 'cyberchimps_slider_lite_img1' ,'/elements/lib/images/slider/slide1.jpg' );
+	$slider_image2 = $directory_uri .  apply_filters( 'cyberchimps_slider_lite_img2' ,'/elements/lib/images/slider/slide1.jpg' );
+	$slider_image3 = $directory_uri .  apply_filters( 'cyberchimps_slider_lite_img3' ,'/elements/lib/images/slider/slide1.jpg' );
+	
+	// get default image for Boxes lite.
+	$boxes_lite_image1 = $directory_uri . apply_filters( 'cyberchimps_boxes_lite_img1', '/elements/lib/images/boxes/slidericon.png' );
+	$boxes_lite_image2 = $directory_uri . apply_filters( 'cyberchimps_boxes_lite_img2', '/elements/lib/images/boxes/blueprint.png' );
+	$boxes_lite_image3 = $directory_uri . apply_filters( 'cyberchimps_boxes_lite_img3', '/elements/lib/images/boxes/docs.png' );
+	
 	// add gravatar image as default
 	$email = get_option( 'admin_email' );
 	if( $email ) {
