@@ -404,7 +404,15 @@ function attitude_theloop_for_template_blog_image_large() {
 	global $post;
 
    global $wp_query, $paged;
-	$paged = ( get_query_var( 'page' ) ? get_query_var( 'page' ) : 1 );
+	if( get_query_var( 'paged' ) ) {
+		$paged = get_query_var( 'paged' );
+	}
+	elseif( get_query_var( 'page' ) ) {
+		$paged = get_query_var( 'page' );
+	}
+	else {
+		$paged = 1;
+	}
 	$blog_query = new WP_Query( array( 'post_type' => 'post', 'paged' => $paged ) );
 	$temp_query = $wp_query;
 	$wp_query = null;
@@ -475,6 +483,19 @@ function attitude_theloop_for_template_blog_image_large() {
 			do_action( 'attitude_after_post' );
 
 		}
+		if ( function_exists('wp_pagenavi' ) ) { 
+			wp_pagenavi();
+		}
+		else {
+			if ( $wp_query->max_num_pages > 1 ) {
+			?>
+				<ul class="default-wp-page clearfix">
+					<li class="previous"><?php next_posts_link( __( '&laquo; Previous', 'attitude' ), $wp_query->max_num_pages ); ?></li>
+					<li class="next"><?php previous_posts_link( __( 'Next &raquo;', 'attitude' ), $wp_query->max_num_pages ); ?></li>
+				</ul>
+				<?php 
+			}
+		}
 	}
 	else {
 		?>
@@ -496,7 +517,15 @@ function attitude_theloop_for_template_blog_image_medium() {
 	global $post;
 
 	global $wp_query, $paged;
-	$paged = ( get_query_var( 'page' ) ? get_query_var( 'page' ) : 1 );
+	if( get_query_var( 'paged' ) ) {
+		$paged = get_query_var( 'paged' );
+	}
+	elseif( get_query_var( 'page' ) ) {
+		$paged = get_query_var( 'page' );
+	}
+	else {
+		$paged = 1;
+	}
 	$blog_query = new WP_Query( array( 'post_type' => 'post', 'paged' => $paged ) );
 	$temp_query = $wp_query;
 	$wp_query = null;
@@ -567,6 +596,19 @@ function attitude_theloop_for_template_blog_image_medium() {
 			do_action( 'attitude_after_post' );
 
 		}
+		if ( function_exists('wp_pagenavi' ) ) { 
+			wp_pagenavi();
+		}
+		else {
+			if ( $wp_query->max_num_pages > 1 ) {
+			?>
+				<ul class="default-wp-page clearfix">
+					<li class="previous"><?php next_posts_link( __( '&laquo; Previous', 'attitude' ), $wp_query->max_num_pages ); ?></li>
+					<li class="next"><?php previous_posts_link( __( 'Next &raquo;', 'attitude' ), $wp_query->max_num_pages ); ?></li>
+				</ul>
+				<?php 
+			}
+		}
 	}
 	else {
 		?>
@@ -587,7 +629,15 @@ function attitude_theloop_for_template_blog_full_content() {
 	global $post;
 
 	global $wp_query, $paged;
-	$paged = ( get_query_var( 'page' ) ? get_query_var( 'page' ) : 1 );
+	if( get_query_var( 'paged' ) ) {
+		$paged = get_query_var( 'paged' );
+	}
+	elseif( get_query_var( 'page' ) ) {
+		$paged = get_query_var( 'page' );
+	}
+	else {
+		$paged = 1;
+	}
 	$blog_query = new WP_Query( array( 'post_type' => 'post', 'paged' => $paged ) );
 	$temp_query = $wp_query;
 	$wp_query = null;
@@ -658,6 +708,19 @@ function attitude_theloop_for_template_blog_full_content() {
 			do_action( 'attitude_after_post' );
 
 		}
+		if ( function_exists('wp_pagenavi' ) ) { 
+			wp_pagenavi();
+		}
+		else {
+			if ( $wp_query->max_num_pages > 1 ) {
+			?>
+				<ul class="default-wp-page clearfix">
+					<li class="previous"><?php next_posts_link( __( '&laquo; Previous', 'attitude' ), $wp_query->max_num_pages ); ?></li>
+					<li class="next"><?php previous_posts_link( __( 'Next &raquo;', 'attitude' ), $wp_query->max_num_pages ); ?></li>
+				</ul>
+				<?php 
+			}
+		}
 	}
 	else {
 		?>
@@ -676,7 +739,7 @@ add_action( 'attitude_after_loop_content', 'attitude_next_previous', 5 );
  * Shows the next or previous posts
  */
 function attitude_next_previous() {
-	if( is_archive() || is_page_template( 'page-template-blog-image-large.php' ) || is_page_template( 'page-template-blog-image-medium.php' ) || is_page_template( 'page-template-blog-full-content.php' ) || is_home() || is_search() ) {
+	if( is_archive() || is_home() || is_search() ) {
 		/**
 		 * Checking WP-PageNaviplugin exist
 		 */

@@ -355,4 +355,49 @@ function attitude_check_background_color() {
 
 /**************************************************************************************/
 
+add_filter( 'wp_nav_menu_items', 'attitude_nav_menu_alter', 10, 2 );
+/**
+* Add default navigation menu to nav menu
+* Used while viewing on smaller screen
+*/
+if ( !function_exists('attitude_nav_menu_alter') ) {
+	function attitude_nav_menu_alter( $items, $args ) {
+		$items .= '<li class="default-menu"><a href="'.get_bloginfo('url').'" title="Navigation">'.__( 'Navigation','attitude' ).'</a></li>';
+		return $items;
+	}
+}
+
+/****************************************************************************************/
+
+add_filter( 'wp_list_pages', 'attitude_page_menu_alter' );
+/**
+ * Add default navigation menu to page menu
+ * Used while viewing on smaller screen
+ */
+if ( !function_exists('attitude_page_menu_alter') ) {
+	function attitude_page_menu_alter( $output ) {
+		$output .= '<li class="default-menu"><a href="'.get_bloginfo('url').'" title="Navigation">'.__( 'Navigation','attitude' ).'</a></li>';
+		return $output;
+	}
+}
+
+/****************************************************************************************/
+
+add_filter('wp_page_menu', 'attitude_wp_page_menu_filter');
+/**
+ * @uses wp_page_menu filter hook
+ */
+if ( !function_exists('attitude_wp_page_menu_filter') ) {
+	function attitude_wp_page_menu_filter( $text ) {
+		$replace = array(
+			'current_page_item'     => 'current-menu-item'
+	 	);
+
+	  $text = str_replace(array_keys($replace), $replace, $text);
+	  return $text;
+	}
+}
+
+/**************************************************************************************/
+
 ?>
