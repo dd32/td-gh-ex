@@ -241,7 +241,11 @@ Version 2.1.1
 * Removed simplecatch_sort_query_by_post_in function as post orderby is already implement in WordPress Version 3.5 by default
 
 Version 2.2
+* Moved comment-reply script to wp_enqueue_scripts
 * Added Russian translation ru_RU.po and ru_RU.mo
 * Added missing !function_exists() condition to support child theme easy editing
 * Added redirect to Theme Options upon theme activation
 
+Version 2.2.1
+* Fixed the web clip icon not showing up
+* Added missing !function_exists() condition to support child theme easy editing

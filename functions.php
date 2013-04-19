@@ -430,7 +430,7 @@ add_filter( 'wp_page_menu_args', 'catchbox_page_menu_args' );
  * REPLACE "current_page_item" WITH CLASS "current-menu-item"
  * REPLACE "current_page_ancestor" WITH CLASS "current-menu-ancestor"
  */
-function catchbox_page_menu_active($text){
+function catchbox_page_menu_active( $text ) {
 	$replace = array(
 		// List of classes to replace with "active"
 		'current_page_item' => 'current-menu-item',
@@ -438,12 +438,13 @@ function catchbox_page_menu_active($text){
 	);
 	$text = str_replace(array_keys($replace), $replace, $text);
 		return $text;
-	}
+}
 add_filter ( 'wp_page_menu', 'catchbox_page_menu_active' );
 
 
+if ( ! function_exists( 'catchbox_widgets_init' ) ):
 /**
- * Register our sidebars and widgetized areas. Also register the default Epherma widget.
+ * Register our sidebars and widgetized areas.
  *
  * @since Catch Box 1.0
  */
@@ -490,6 +491,8 @@ function catchbox_widgets_init() {
 		'after_title' => '</h3>',
 	) );
 }
+endif; // catchbox_widgets_init
+
 add_action( 'widgets_init', 'catchbox_widgets_init' );
 
 
@@ -535,6 +538,7 @@ function catchbox_url_grabber() {
 }
 
 
+if ( ! function_exists( 'catchbox_footer_sidebar_class' ) ):
 /**
  * Count the number of footer sidebars to enable dynamic classes for the footer
  */
@@ -567,6 +571,7 @@ function catchbox_footer_sidebar_class() {
 	if ( $class )
 		echo 'class="' . $class . '"';
 }
+endif; // catchbox_footer_sidebar_class
 
 
 if ( ! function_exists( 'catchbox_comment' ) ) :
@@ -908,6 +913,41 @@ add_filter( 'comment_form_default_fields', 'catchbox_comment_form_fields' );
 
 
 /**
+ * Get the favicon Image from theme options
+ *
+ * @uses favicon 
+ * @get the data value of image from theme options
+ * @display favicon
+ *
+ * @uses set_transient and delete_transient 
+ */
+function catchbox_favicon() {
+	//delete_transient( 'catchbox_favicon' );	
+	
+	if ( !$catchbox_favicon = get_transient( 'catchbox_favicon' ) ) {
+		
+		$options = catchbox_get_theme_options();
+		
+		if ( !empty( $options['fav_icon'] ) )  {
+			$catchbox_favicon = '<link rel="shortcut icon" href="'.esc_url( $options[ 'fav_icon' ] ).'" type="image/x-icon" />'; 	
+		}
+		
+		set_transient( 'catchbox_favicon', $catchbox_favicon, 86940 );
+		
+	}
+	
+	echo $catchbox_favicon ;	
+	
+}
+
+//Load Favicon in Header Section
+add_action('wp_head', 'catchbox_favicon');
+
+//Load Favicon in Admin Section
+add_action( 'admin_head', 'catchbox_favicon' );
+
+
+/**
  * Get the Web Click Icon from theme options
  *
  * @uses web clip 
@@ -923,7 +963,7 @@ function catchbox_webclip() {
 		
 		$options = catchbox_get_theme_options();
 		
-		if ( !empty( $options['fav_icon'] ) )  {
+		if ( !empty( $options['web_clip'] ) )  {
 			$catchbox_webclip = '<link rel="apple-touch-icon-precomposed" href="'.esc_url( $options[ 'web_clip' ] ).'" />';	
 		}
 		
@@ -937,3 +977,135 @@ function catchbox_webclip() {
 
 //Load webclip in Header Section
 add_action('wp_head', 'catchbox_webclip');
+
+
+/**
+ * Redirect WordPress Feeds To FeedBurner
+ */
+function catchbox_rss_redirect() {
+	$options = catchbox_get_theme_options();
+	if ( !empty( $options['feed_url'] ) ) {	
+		$url = 'Location: '.$options['feed_url'];
+		if ( is_feed() && !preg_match('/feedburner|feedvalidator/i', $_SERVER['HTTP_USER_AGENT']))
+		{
+			header($url);
+			header('HTTP/1.1 302 Temporary Redirect');
+		}
+	}
+}
+add_action('template_redirect', 'catchbox_rss_redirect');
+
+
+if ( ! function_exists( 'catchbox_socialprofile' ) ):
+/**
+ * Social Profles
+ *
+ * @since Catch Box 1.0
+ */
+function catchbox_socialprofile() {
+
+	//delete_transient( 'catchbox_socialprofile' );
+
+    $options = get_option('catchbox_options_social_links');
+	$flag = 0;	
+	if( !empty( $options ) ) {
+		foreach( $options as $option ) {
+			if( $option ) {
+				$flag = 1;
+			}
+			else { 
+				$flag = 0;
+			}
+			if( $flag == 1) {
+				break;
+			}
+		}
+	}
+			
+	if( ( !$catchbox_socialprofile = get_transient( 'catchbox_socialprofile' ) ) && ($flag == 1) ) {
+		echo '<!-- refreshing cache -->';
+		
+		$catchbox_socialprofile = '
+			<div class="social-profile">
+ 		 		<ul>';
+					//Facebook
+					if ($options['social_facebook']) {
+						$catchbox_socialprofile .= '<li class="facebook"><a href="'.$options['social_facebook'].'" title="Facebook" target="_blank">Facebook</a></li>';
+					}
+				
+					//Twitter
+					if ($options['social_twitter']) {
+						$catchbox_socialprofile .= '<li class="twitter"><a href="'.$options['social_twitter'].'" title="Twitter" target="_blank">Twitter</a></li>';
+					}
+					
+					//Google+
+					if ($options['social_google']) {
+						$catchbox_socialprofile .= '<li class="google-plus"><a href="'.$options['social_google'].'" title="Google Plus" target="_blank">Google Plus</a></li>';
+					}
+				
+					//Linkedin
+					if ($options['social_linkedin']) {
+						$catchbox_socialprofile .= '<li class="linkedin"><a href="'.$options['social_linkedin'].'" title="Linkedin" target="_blank">Linkedin</a></li>';
+					}
+					
+					//Pinterest
+					if ($options['social_pinterest']) {
+						$catchbox_socialprofile .= '<li class="pinterest"><a href="'.$options['social_pinterest'].'" title="Pinterest" target="_blank">Pinterest</a></li>';
+					}
+					
+					//Youtube
+					if ($options['social_youtube']) {
+						$catchbox_socialprofile .= '<li class="you-tube"><a href="'.$options['social_youtube'].'" title="YouTube" target="_blank">YouTube</a></li>';
+					}
+					
+					//RSS Feed
+					if ($options['social_rss']) {
+						$catchbox_socialprofile .= '<li class="rss"><a href="'.$options['social_rss'].'" title="RSS Feed" target="_blank">RSS Feed</a></li>';
+					}
+					
+					//Deviantart
+					if ($options['social_deviantart']) {
+						$catchbox_socialprofile .= '<li class="deviantart"><a href="'.$options['social_deviantart'].'" title="Deviantart" target="_blank">Deviantart</a></li>';
+					}		
+					
+					//Tumblr
+					if ($options['social_tumblr']) {
+						$catchbox_socialprofile .= '<li class="tumblr"><a href="'.$options['social_tumblr'].'" title="Tumblr" target="_blank">Tumblr</a></li>';
+					}	
+					
+					//Vimeo
+					if ($options['social_viemo']) {
+						$catchbox_socialprofile .= '<li class="vimeo"><a href="'.$options['social_viemo'].'" title="Vimeo" target="_blank">Vimeo</a></li>';
+					}	
+					
+					//Dribbble
+					if ($options['social_dribbble']) {
+						$catchbox_socialprofile .= '<li class="dribbble"><a href="'.$options['social_dribbble'].'" title="Dribbble" target="_blank">Dribbble</a></li>';
+					}	
+					
+					//MySpace
+					if ($options['social_myspace']) {
+						$catchbox_socialprofile .= '<li class="my-space"><a href="'.$options['social_myspace'].'" title="MySpace" target="_blank">MySpace</a></li>';
+					}	
+					
+					//Aim
+					if ($options['social_aim']) {
+						$catchbox_socialprofile .= '<li class="aim"><a href="'.$options['social_aim'].'" title="Aim" target="_blank">Aim</a></li>';
+					}	
+					
+					//Flickr
+					if ($options['social_flickr']) {
+						$catchbox_socialprofile .= '<li class="flickr"><a href="'.$options['social_flickr'].'" title="Flickr" target="_blank">Flickr</a></li>';
+					}	
+					
+					$catchbox_socialprofile .= '
+				</ul>
+			</div>';
+		set_transient( 'catchbox_socialprofile', $catchbox_socialprofile, 604800 );		
+	}
+	echo $catchbox_socialprofile;	
+}
+endif; // catchbox_socialprofile	
+
+// Load Social Profile catchbox_startgenerator_open hook 
+add_action('catchbox_startgenerator_open', 'catchbox_socialprofile');

@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-11 17:35+0545\n"
-"PO-Revision-Date: 2013-04-11 17:35+0545\n"
+"POT-Creation-Date: 2013-04-20 00:04+0545\n"
+"PO-Revision-Date: 2013-04-20 00:04+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language: pt_BR\n"
@@ -147,7 +147,7 @@ msgstr "Os comentários estão fechados."
 #: ../content-aside.php:16 ../content-featured.php:14
 #: ../content-gallery.php:16 ../content-gallery.php:48 ../content-image.php:15
 #: ../content-link.php:16 ../content-quote.php:14 ../content-status.php:15
-#: ../content.php:15 ../content.php:19 ../content.php:47 ../functions.php:793
+#: ../content.php:15 ../content.php:19 ../content.php:47 ../functions.php:798
 #, php-format
 msgid "Permalink to %s"
 msgstr "Link permanente para: %s"
@@ -207,8 +207,8 @@ msgstr "<b>%</b> Comentários"
 #: ../content-aside.php:50 ../content-featured.php:51
 #: ../content-gallery.php:96 ../content-image.php:74 ../content-link.php:50
 #: ../content-page.php:27 ../content-quote.php:78 ../content-single.php:64
-#: ../content-status.php:51 ../content.php:100 ../functions.php:590
-#: ../functions.php:618 ../image.php:97
+#: ../content-status.php:51 ../content.php:100 ../functions.php:595
+#: ../functions.php:623 ../image.php:97
 msgid "Edit"
 msgstr "Editar"
 
@@ -279,7 +279,7 @@ msgstr ""
 "por: </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%4$s"
 "\" title=\"%5$s\" rel=\"author\">%6$s</a></span></span>"
 
-#: ../content-image.php:45 ../functions.php:656
+#: ../content-image.php:45 ../functions.php:661
 #, php-format
 msgid "View all posts by %s"
 msgstr "Ver todas as postagens de: %s"
@@ -416,63 +416,63 @@ msgstr "Montanha"
 msgid "Page %s"
 msgstr "Página %s"
 
-#: ../functions.php:455
+#: ../functions.php:456
 msgid "Main Sidebar"
 msgstr "Barra Lateral Principal"
 
-#: ../functions.php:464
+#: ../functions.php:465
 msgid "Footer Area One"
 msgstr "Área do Rodapé - Um"
 
-#: ../functions.php:466 ../functions.php:476 ../functions.php:486
+#: ../functions.php:467 ../functions.php:477 ../functions.php:487
 msgid "An optional widget area for your site footer"
 msgstr "Uma área Widget opcional para o rodapé do site"
 
-#: ../functions.php:474
+#: ../functions.php:475
 msgid "Footer Area Two"
 msgstr "Área do Rodapé - Dois"
 
-#: ../functions.php:484
+#: ../functions.php:485
 msgid "Footer Area Three"
 msgstr "Área do Rodapé - Três"
 
-#: ../functions.php:505 ../single.php:15
+#: ../functions.php:508 ../single.php:15
 msgid "Post navigation"
 msgstr "Navegação das Postagens"
 
-#: ../functions.php:513
+#: ../functions.php:516
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> Postagens Anteriores"
 
-#: ../functions.php:514
+#: ../functions.php:517
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Postagens Recentes <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../functions.php:590
+#: ../functions.php:595
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: ../functions.php:607
+#: ../functions.php:612
 #, php-format
 msgid "%1$s on %2$s <span class=\"says\">said:</span>"
 msgstr "%1$s no dia %2$s <span class=\"says\">disse:</span>"
 
-#: ../functions.php:613
+#: ../functions.php:618
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s às %2$s"
 
-#: ../functions.php:622
+#: ../functions.php:627
 msgid "Your comment is awaiting moderation."
 msgstr ""
 "<strong>Seu Comentário está aguardando a nossa moderação. Obrigado por "
 "Comentar!</strong>"
 
-#: ../functions.php:631
+#: ../functions.php:636
 msgid "Reply <span>&darr;</span>"
 msgstr "Responder <span>&darr;</span>"
 
-#: ../functions.php:650
+#: ../functions.php:655
 #, php-format
 msgid ""
 "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel="
@@ -487,15 +487,15 @@ msgstr ""
 "class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" "
 "rel=\"author\">%7$s</a></span></span>"
 
-#: ../functions.php:705
+#: ../functions.php:710
 msgid "ID"
 msgstr "ID"
 
-#: ../functions.php:899
+#: ../functions.php:904
 msgid "Name"
 msgstr "Nome"
 
-#: ../functions.php:901
+#: ../functions.php:906
 msgid "Email"
 msgstr "Email"
 

@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-11 17:34+0545\n"
-"PO-Revision-Date: 2013-04-11 17:34+0545\n"
+"POT-Creation-Date: 2013-04-20 00:03+0545\n"
+"PO-Revision-Date: 2013-04-20 00:03+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: en\n"
@@ -134,7 +134,7 @@ msgstr ""
 #: ../content-aside.php:16 ../content-featured.php:14
 #: ../content-gallery.php:16 ../content-gallery.php:48 ../content-image.php:15
 #: ../content-link.php:16 ../content-quote.php:14 ../content-status.php:15
-#: ../content.php:15 ../content.php:19 ../content.php:47 ../functions.php:793
+#: ../content.php:15 ../content.php:19 ../content.php:47 ../functions.php:798
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
@@ -194,8 +194,8 @@ msgstr ""
 #: ../content-aside.php:50 ../content-featured.php:51
 #: ../content-gallery.php:96 ../content-image.php:74 ../content-link.php:50
 #: ../content-page.php:27 ../content-quote.php:78 ../content-single.php:64
-#: ../content-status.php:51 ../content.php:100 ../functions.php:590
-#: ../functions.php:618 ../image.php:97
+#: ../content-status.php:51 ../content.php:100 ../functions.php:595
+#: ../functions.php:623 ../image.php:97
 msgid "Edit"
 msgstr ""
 
@@ -257,7 +257,7 @@ msgid ""
 "title=\"%5$s\" rel=\"author\">%6$s</a></span></span>"
 msgstr ""
 
-#: ../content-image.php:45 ../functions.php:656
+#: ../content-image.php:45 ../functions.php:661
 #, php-format
 msgid "View all posts by %s"
 msgstr ""
@@ -385,61 +385,61 @@ msgstr ""
 msgid "Page %s"
 msgstr ""
 
-#: ../functions.php:455
+#: ../functions.php:456
 msgid "Main Sidebar"
 msgstr ""
 
-#: ../functions.php:464
+#: ../functions.php:465
 msgid "Footer Area One"
 msgstr ""
 
-#: ../functions.php:466 ../functions.php:476 ../functions.php:486
+#: ../functions.php:467 ../functions.php:477 ../functions.php:487
 msgid "An optional widget area for your site footer"
 msgstr ""
 
-#: ../functions.php:474
+#: ../functions.php:475
 msgid "Footer Area Two"
 msgstr ""
 
-#: ../functions.php:484
+#: ../functions.php:485
 msgid "Footer Area Three"
 msgstr ""
 
-#: ../functions.php:505 ../single.php:15
+#: ../functions.php:508 ../single.php:15
 msgid "Post navigation"
 msgstr ""
 
-#: ../functions.php:513
+#: ../functions.php:516
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
 
-#: ../functions.php:514
+#: ../functions.php:517
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: ../functions.php:590
+#: ../functions.php:595
 msgid "Pingback:"
 msgstr ""
 
-#: ../functions.php:607
+#: ../functions.php:612
 #, php-format
 msgid "%1$s on %2$s <span class=\"says\">said:</span>"
 msgstr ""
 
-#: ../functions.php:613
+#: ../functions.php:618
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: ../functions.php:622
+#: ../functions.php:627
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../functions.php:631
+#: ../functions.php:636
 msgid "Reply <span>&darr;</span>"
 msgstr ""
 
-#: ../functions.php:650
+#: ../functions.php:655
 #, php-format
 msgid ""
 "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel="
@@ -449,15 +449,15 @@ msgid ""
 "\" rel=\"author\">%7$s</a></span></span>"
 msgstr ""
 
-#: ../functions.php:705
+#: ../functions.php:710
 msgid "ID"
 msgstr ""
 
-#: ../functions.php:899
+#: ../functions.php:904
 msgid "Name"
 msgstr ""
 
-#: ../functions.php:901
+#: ../functions.php:906
 msgid "Email"
 msgstr ""
 
