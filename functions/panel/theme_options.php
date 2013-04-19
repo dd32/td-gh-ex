@@ -225,20 +225,15 @@ function simplecatch_theme_options_do_page() {
                     </div><!-- .option-container -->  
 
                     <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Fav Icon Options', 'simplecatch' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Fav Icon Option', 'simplecatch' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table">
                                 <tbody>
                                     <tr>                            
                                         <th scope="row"><?php _e( 'Favicon URL:', 'simplecatch' ); ?></th>
-                                        <td><?php if ( !empty ( $options[ 'fav_icon' ] ) ) { ?>
-                                                <input class="upload-url" size="65" type="text" name="simplecatch_options[fav_icon]" value="<?php echo esc_url( $options [ 'fav_icon' ] ); ?>" class="upload" />
-                                                <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Favicon','simplecatch' );?>" />
-                                            <?php } else { ?>
-                                                <input size="65" type="text" name="simplecatch_options[fav_icon]" value="" alt="fav" />
-                                                <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Upload Favicon','simplecatch' );?>" />
-                                            <?php }  ?> 
-                                            
+                                        <td>
+                                        	<input class="upload-url" size="65" type="text" name="simplecatch_options[fav_icon]" value="<?php echo esc_url( $options [ 'fav_icon' ] ); ?>" class="upload" />
+                                            <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Upload/Change Favicon','simplecatch' );?>" />
                                         </td>
                                     </tr>
                                     
@@ -260,6 +255,38 @@ function simplecatch_theme_options_do_page() {
                             <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
                         </div><!-- .option-content -->
                     </div><!-- .option-container --> 
+                    
+                    <div class="option-container">
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Web Clip Icon Option', 'simplecatch' ); ?></a></h3>
+                        <div class="option-content inside">
+                            <table class="form-table">
+                                <tbody>
+                                    <tr>                            
+                                        <th scope="row"><?php _e( 'Web Clip Icon URL:', 'simplecatch' ); ?></th>
+                                        <td>
+                                        	<input class="upload-url" size="65" type="text" name="simplecatch_options[web_clip]" value="<?php echo esc_url( $options [ 'web_clip' ] ); ?>" class="upload" />
+                                            <input id="web-clip-image" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Upload/Change Web Clip Icon','simplecatch' );?>" />
+                                     	</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <th scope="row"><?php _e( 'Preview: ', 'simplecatch' ); ?></th>
+                                        <td> 
+                                            <?php 
+                                                if ( !empty( $options[ 'web_clip' ] ) ) { 
+                                                    echo '<img src="'.esc_url( $options[ 'web_clip' ] ).'" alt="fav" />';
+                                                } else { ?>
+                                                    <p><?php _e( 'No Web Clip Icon Found. Upload Web Clip Icon.', 'simplecatch' ); ?></p>
+                                               <?php
+											   }
+                                            ?>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
+                        </div><!-- .option-content -->
+                    </div><!-- .option-container -->                    
 
                     <div class="option-container">
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Content Background', 'simplecatch' ); ?></a></h3>
@@ -354,30 +381,6 @@ function simplecatch_theme_options_do_page() {
                      		<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p>	
                     	</div><!-- .option-content -->
                  	</div><!-- .option-container --> 
-            
-                    <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Custom CSS', 'simplecatch' ); ?></a></h3>
-                        <div class="option-content inside"> 
-                            <table class="form-table">  
-                                <tbody>       
-                                    <tr>
-                                        <th scope="row"><?php _e( 'Enter your custom CSS styles.', 'simplecatch' ); ?></th>
-                                        <td>
-                                            <textarea name="simplecatch_options[custom_css]" id="custom-css" cols="90" rows="12"><?php echo esc_attr( $options[ 'custom_css' ] ); ?></textarea>
-                                        </td>
-                                    </tr>
-                                   
-                                    <tr>
-                                        <th scope="row"><?php _e( 'CSS Tutorial from W3Schools.', 'simplecatch' ); ?></th>
-                                        <td>
-                                            <a class="button" href="<?php echo esc_url( __( 'http://www.w3schools.com/css/default.asp','simplecatch' ) ); ?>" title="<?php esc_attr_e( 'CSS Tutorial', 'simplecatch' ); ?>" target="_blank"><?php _e( 'Click Here to Read', 'simplecatch' );?></a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
-                        </div><!-- .option-content -->
-                    </div><!-- .option-container --> 
 
                     <div class="option-container">
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Default Layout', 'simplecatch' ); ?></a></h3>
@@ -405,7 +408,32 @@ function simplecatch_theme_options_do_page() {
                             </table>
                             <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
                         </div><!-- .option-content -->
-                    </div><!-- .option-container -->   
+                    </div><!-- .option-container --> 
+                    
+                    <div class="option-container">
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Custom CSS', 'simplecatch' ); ?></a></h3>
+                        <div class="option-content inside"> 
+                            <table class="form-table">  
+                                <tbody>       
+                                    <tr>
+                                        <th scope="row"><?php _e( 'Enter your custom CSS styles.', 'simplecatch' ); ?></th>
+                                        <td>
+                                            <textarea name="simplecatch_options[custom_css]" id="custom-css" cols="90" rows="12"><?php echo esc_attr( $options[ 'custom_css' ] ); ?></textarea>
+                                        </td>
+                                    </tr>
+                                   
+                                    <tr>
+                                        <th scope="row"><?php _e( 'CSS Tutorial from W3Schools.', 'simplecatch' ); ?></th>
+                                        <td>
+                                            <a class="button" href="<?php echo esc_url( __( 'http://www.w3schools.com/css/default.asp','simplecatch' ) ); ?>" title="<?php esc_attr_e( 'CSS Tutorial', 'simplecatch' ); ?>" target="_blank"><?php _e( 'Click Here to Read', 'simplecatch' );?></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
+                        </div><!-- .option-content -->
+                    </div><!-- .option-container --> 
+                                          
                 </div> <!-- #designsettings -->  
 
                 <!-- Options for Theme Settings -->
@@ -789,10 +817,16 @@ function simplecatch_theme_options_validate( $options ) {
 		// Our checkbox value is either 0 or 1 
 		$input_validated[ 'remove_footer_logo' ] = $input[ 'remove_footer_logo' ];
 	}
-		
+	
+	//Fav Icon URL
 	if ( isset( $input[ 'fav_icon' ] ) ) {
 		$input_validated[ 'fav_icon' ] = esc_url_raw( $input[ 'fav_icon' ] );
 	}
+	
+	//Web Clip Icon URL
+	if ( isset( $input[ 'web_clip' ] ) ) {
+		$input_validated[ 'web_clip' ] = esc_url_raw( $input[ 'web_clip' ] );
+	}	
 	
 	//Color Options
 	if( isset( $input[ 'heading_color' ] ) ) {
@@ -998,6 +1032,7 @@ function simplecatch_themeoption_invalidate_caches(){
 	delete_transient( 'simplecatch_headerdetails' ); 	// header logo on header
 	delete_transient( 'simplecatch_footerlogo' );  // footer logo on footer
 	delete_transient( 'simplecatch_favicon' );	  // favicon on cpanel/ backend and frontend
+	delete_transient( 'simplecatch_webclip' ); // Web Clip Ioon
 	delete_transient( 'simplecatch_sliders' ); // featured slider
 	delete_transient( 'simplecatch_headersocialnetworks' );  // Social links on header
 	delete_transient( 'simplecatch_site_verification' ); // scripts which loads on header	

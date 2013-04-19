@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-11 17:53+0545\n"
-"PO-Revision-Date: 2013-04-11 17:53+0545\n"
+"POT-Creation-Date: 2013-04-20 00:38+0545\n"
+"PO-Revision-Date: 2013-04-20 00:38+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: \n"
 "Language: German\n"
@@ -270,7 +270,7 @@ msgid "Powered By WordPress"
 msgstr "Powered by WordPress"
 
 #: ../functions/simplecatch_functions.php:659
-#: ../functions/panel/theme_options.php:663
+#: ../functions/panel/theme_options.php:691
 msgid "WordPress"
 msgstr "WordPress"
 
@@ -417,7 +417,7 @@ msgid "Like Catch Themes on Facebook"
 msgstr "Like Catch Themes on Facebook"
 
 #: ../functions/panel/theme_options.php:131
-#: ../functions/panel/theme_options.php:592
+#: ../functions/panel/theme_options.php:620
 msgid "Facebook"
 msgstr "Facebook"
 
@@ -430,7 +430,7 @@ msgid "Follow Catch Themes on Twitter"
 msgstr "Folge Catch Themes auf Twitter"
 
 #: ../functions/panel/theme_options.php:132
-#: ../functions/panel/theme_options.php:597
+#: ../functions/panel/theme_options.php:625
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -509,7 +509,8 @@ msgid "Change Footer Logo"
 msgstr "Footer Logo ändern"
 
 #: ../functions/panel/theme_options.php:205
-#: ../functions/panel/theme_options.php:246
+#: ../functions/panel/theme_options.php:241
+#: ../functions/panel/theme_options.php:273
 msgid "Preview: "
 msgstr "Vorschau:"
 
@@ -518,137 +519,150 @@ msgid "Disable Footer Logo?"
 msgstr "Footer Logo deaktivieren?"
 
 #: ../functions/panel/theme_options.php:223
-#: ../functions/panel/theme_options.php:260
-#: ../functions/panel/theme_options.php:354
-#: ../functions/panel/theme_options.php:378
-#: ../functions/panel/theme_options.php:406
-#: ../functions/panel/theme_options.php:443
-#: ../functions/panel/theme_options.php:464
-#: ../functions/panel/theme_options.php:484
-#: ../functions/panel/theme_options.php:500
-#: ../functions/panel/theme_options.php:531
-#: ../functions/panel/theme_options.php:582
-#: ../functions/panel/theme_options.php:688
-#: ../functions/panel/theme_options.php:717
-#: ../functions/panel/theme_options.php:747
+#: ../functions/panel/theme_options.php:255
+#: ../functions/panel/theme_options.php:287
+#: ../functions/panel/theme_options.php:381
+#: ../functions/panel/theme_options.php:409
+#: ../functions/panel/theme_options.php:433
+#: ../functions/panel/theme_options.php:471
+#: ../functions/panel/theme_options.php:492
+#: ../functions/panel/theme_options.php:512
+#: ../functions/panel/theme_options.php:528
+#: ../functions/panel/theme_options.php:559
+#: ../functions/panel/theme_options.php:610
+#: ../functions/panel/theme_options.php:716
+#: ../functions/panel/theme_options.php:745
+#: ../functions/panel/theme_options.php:775
 msgid "Save"
 msgstr "Sichern"
 
 #: ../functions/panel/theme_options.php:228
-msgid "Fav Icon Options"
-msgstr "Fav Icon Optionen"
+msgid "Fav Icon Option"
+msgstr "Fav Icon Option"
 
 #: ../functions/panel/theme_options.php:233
 msgid "Favicon URL:"
 msgstr "Favicon URL:"
 
 #: ../functions/panel/theme_options.php:236
-msgid "Change Favicon"
-msgstr "Favicon ändern"
+msgid "Upload/Change Favicon"
+msgstr "Upload/Change Favicon"
 
-#: ../functions/panel/theme_options.php:239
-msgid "Upload Favicon"
-msgstr "Favicon hochladen"
-
-#: ../functions/panel/theme_options.php:252
+#: ../functions/panel/theme_options.php:247
 msgid "No Favicon Found. Upload Favicon."
 msgstr "Kein Favicon gefunden. Favicon hochladen."
 
+#: ../functions/panel/theme_options.php:260
+msgid "Web Clip Icon Option"
+msgstr "Web Clip Icon Option"
+
 #: ../functions/panel/theme_options.php:265
+msgid "Web Clip Icon URL:"
+msgstr "Web Clip Icon URL:"
+
+#: ../functions/panel/theme_options.php:268
+msgid "Upload/Change Web Clip Icon"
+msgstr "Upload/Change Web Clip Icon"
+
+#: ../functions/panel/theme_options.php:279
+msgid "No Web Clip Icon Found. Upload Web Clip Icon."
+msgstr "No Web Clip Icon Found. Upload Web Clip Icon."
+
+#: ../functions/panel/theme_options.php:292
 msgid "Content Background"
 msgstr "Hintergrund für Inhalt"
 
-#: ../functions/panel/theme_options.php:267
+#: ../functions/panel/theme_options.php:294
 msgid "Need to replace default background?"
 msgstr "Den Standard-Hintergrund ändern?"
 
-#: ../functions/panel/theme_options.php:267
+#: ../functions/panel/theme_options.php:294
 #, php-format
 msgid "<a class=\"button\" href=\"%s\">Click here</a>"
 msgstr "<a class=\"button\" href=\"%s\">Hier klicken</a>"
 
-#: ../functions/panel/theme_options.php:273
+#: ../functions/panel/theme_options.php:300
 msgid "Content Color Options"
 msgstr "Inhalt Farb-Optionen"
 
-#: ../functions/panel/theme_options.php:280
+#: ../functions/panel/theme_options.php:307
 msgid "Heading Color:"
 msgstr "Heading Farbe:"
 
-#: ../functions/panel/theme_options.php:291
+#: ../functions/panel/theme_options.php:318
 msgid "Meta Description Color:"
 msgstr "Meta Beschreibung Farbe:"
 
-#: ../functions/panel/theme_options.php:302
+#: ../functions/panel/theme_options.php:329
 msgid "Text Color:"
 msgstr "Text Farbe:"
 
-#: ../functions/panel/theme_options.php:313
+#: ../functions/panel/theme_options.php:340
 msgid "Link Color:"
 msgstr "Link Farbe:"
 
-#: ../functions/panel/theme_options.php:324
+#: ../functions/panel/theme_options.php:351
 msgid "Sidebar Widget Heading Color:"
 msgstr "Seitenleiste Widget Heading Farbe:"
 
-#: ../functions/panel/theme_options.php:335
+#: ../functions/panel/theme_options.php:362
 msgid "Sidebar Widget Text Color:"
 msgstr "Seitenleiste Widget Text Farbe:"
 
-#: ../functions/panel/theme_options.php:345
+#: ../functions/panel/theme_options.php:372
 msgid "Reset Color:"
 msgstr "Farben zurücksetzen:"
 
-#: ../functions/panel/theme_options.php:359
-msgid "Custom CSS"
-msgstr "Eigenes CSS"
-
-#: ../functions/panel/theme_options.php:364
-msgid "Enter your custom CSS styles."
-msgstr "Gib deine eigenen CSS-Stile ein."
-
-#: ../functions/panel/theme_options.php:371
-msgid "CSS Tutorial from W3Schools."
-msgstr "CSS Tutorial from W3Schools."
-
-#: ../functions/panel/theme_options.php:373
-msgid "http://www.w3schools.com/css/default.asp"
-msgstr "http://www.w3schools.com/css/default.asp"
-
-#: ../functions/panel/theme_options.php:373
-msgid "CSS Tutorial"
-msgstr "CSS Tutorial"
-
-#: ../functions/panel/theme_options.php:373
-msgid "Click Here to Read"
-msgstr "Hier klicken zum Lesen"
-
-#: ../functions/panel/theme_options.php:383
-#: ../functions/panel/theme_options.php:388
+#: ../functions/panel/theme_options.php:386
+#: ../functions/panel/theme_options.php:391
 msgid "Default Layout"
 msgstr "Standard-Layout"
 
-#: ../functions/panel/theme_options.php:392
+#: ../functions/panel/theme_options.php:395
 msgid "No Sidebar, One Column"
 msgstr "Keine Seitenleiste, eine Spalte"
 
-#: ../functions/panel/theme_options.php:396
+#: ../functions/panel/theme_options.php:399
 msgid "Content on Right"
 msgstr "Inhalt rechts"
 
-#: ../functions/panel/theme_options.php:400
+#: ../functions/panel/theme_options.php:403
 msgid "Content on Left"
 msgstr "Inhalt links"
 
 #: ../functions/panel/theme_options.php:414
+msgid "Custom CSS"
+msgstr "Eigenes CSS"
+
+#: ../functions/panel/theme_options.php:419
+msgid "Enter your custom CSS styles."
+msgstr "Gib deine eigenen CSS-Stile ein."
+
+#: ../functions/panel/theme_options.php:426
+msgid "CSS Tutorial from W3Schools."
+msgstr "CSS Tutorial from W3Schools."
+
+#: ../functions/panel/theme_options.php:428
+msgid "http://www.w3schools.com/css/default.asp"
+msgstr "http://www.w3schools.com/css/default.asp"
+
+#: ../functions/panel/theme_options.php:428
+msgid "CSS Tutorial"
+msgstr "CSS Tutorial"
+
+#: ../functions/panel/theme_options.php:428
+msgid "Click Here to Read"
+msgstr "Hier klicken zum Lesen"
+
+#: ../functions/panel/theme_options.php:442
 msgid "Homepage / Frontpage Category Setting"
 msgstr "Homepage / Startseite Kategorie Einstellung"
 
-#: ../functions/panel/theme_options.php:420
+#: ../functions/panel/theme_options.php:448
 msgid "Front page posts categories:"
 msgstr "Kategorien für Beiträge auf der Startseite:"
 
-#: ../functions/panel/theme_options.php:422
+#: ../functions/panel/theme_options.php:450
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on "
 "the front page."
@@ -656,245 +670,245 @@ msgstr ""
 "Nur Beiträge, die zu den gewählten Kategorien gehören, werden auf der "
 "Startseite angezeigt."
 
-#: ../functions/panel/theme_options.php:427
+#: ../functions/panel/theme_options.php:455
 msgid "--Disabled--"
 msgstr "--Deaktiviert––"
 
-#: ../functions/panel/theme_options.php:438
+#: ../functions/panel/theme_options.php:466
 msgid "You may select multiple categories by holding down the CTRL key."
 msgstr ""
 "Du kannst mehrere Kategorien auswählen, indem du CTRL bzw. CMD gedrückt "
 "hältst."
 
-#: ../functions/panel/theme_options.php:448
+#: ../functions/panel/theme_options.php:476
 msgid "Search Text Settings"
 msgstr "Suchfeld Einstellungen"
 
-#: ../functions/panel/theme_options.php:453
+#: ../functions/panel/theme_options.php:481
 msgid "Default Display Text in Search"
 msgstr "Standard-Text der im Suchfeld angezeigt wird"
 
-#: ../functions/panel/theme_options.php:458
+#: ../functions/panel/theme_options.php:486
 msgid "Search Button's text"
 msgstr "Text auf dem Suchen-Button"
 
-#: ../functions/panel/theme_options.php:469
+#: ../functions/panel/theme_options.php:497
 msgid "Excerpt / More Tag Settings"
 msgstr "Excerpt / More Tag Einstellungen"
 
-#: ../functions/panel/theme_options.php:474
+#: ../functions/panel/theme_options.php:502
 msgid "More Tag Text"
 msgstr "Weiterlesen Tag Text"
 
-#: ../functions/panel/theme_options.php:479
+#: ../functions/panel/theme_options.php:507
 msgid "Excerpt length(words)"
 msgstr "Länge des Excerpts (Wörter)"
 
-#: ../functions/panel/theme_options.php:489
+#: ../functions/panel/theme_options.php:517
 msgid "Feed Redirect"
 msgstr "Feed Weiterleitung"
 
-#: ../functions/panel/theme_options.php:494
+#: ../functions/panel/theme_options.php:522
 msgid "Feed Redirect URL"
 msgstr "Feed Weiterleitung URL"
 
-#: ../functions/panel/theme_options.php:507
+#: ../functions/panel/theme_options.php:535
 msgid "Add Slider Options"
 msgstr "Slider hinzufügen Optionen"
 
-#: ../functions/panel/theme_options.php:511
+#: ../functions/panel/theme_options.php:539
 msgid "Exclude Slider post from Home page posts:"
 msgstr "Slider Beiträge von Startseiten-Beiträgen ausnehmen:"
 
-#: ../functions/panel/theme_options.php:516
+#: ../functions/panel/theme_options.php:544
 msgid "Number of Slides"
 msgstr "Zahl der Slides"
 
-#: ../functions/panel/theme_options.php:522
+#: ../functions/panel/theme_options.php:550
 msgid "Featured Slider Post #"
 msgstr "Featured Slider Post #"
 
-#: ../functions/panel/theme_options.php:524
+#: ../functions/panel/theme_options.php:552
 msgid "Click Here To Edit"
 msgstr "Hier klicken zum Bearbeiten"
 
-#: ../functions/panel/theme_options.php:530
+#: ../functions/panel/theme_options.php:558
 msgid ""
 "Note: Here You can put your Post IDs which displays on Homepage as slider."
 msgstr ""
 "Hinweis: Hier kannst du die IDs für die Beiträge eintragen, die im Slider "
 "auf der Startseite angezeigt werden sollen."
 
-#: ../functions/panel/theme_options.php:537
+#: ../functions/panel/theme_options.php:565
 msgid "Slider Effect Options"
 msgstr "Slider Effekte Optionen"
 
-#: ../functions/panel/theme_options.php:541
+#: ../functions/panel/theme_options.php:569
 msgid "Disable Slider Background Effect:"
 msgstr "Slider Hintergrund Effekt deaktivieren:"
 
-#: ../functions/panel/theme_options.php:548
+#: ../functions/panel/theme_options.php:576
 msgid "Transition Effect:"
 msgstr "Übergang Effekt:"
 
-#: ../functions/panel/theme_options.php:552
+#: ../functions/panel/theme_options.php:580
 msgid "fade"
 msgstr "fade"
 
-#: ../functions/panel/theme_options.php:553
+#: ../functions/panel/theme_options.php:581
 msgid "wipe"
 msgstr "wipe"
 
-#: ../functions/panel/theme_options.php:554
+#: ../functions/panel/theme_options.php:582
 msgid "scrollUp"
 msgstr "scrollUp"
 
-#: ../functions/panel/theme_options.php:555
+#: ../functions/panel/theme_options.php:583
 msgid "scrollDown"
 msgstr "scrollDown"
 
-#: ../functions/panel/theme_options.php:556
+#: ../functions/panel/theme_options.php:584
 msgid "scrollLeft"
 msgstr "scrollLeft"
 
-#: ../functions/panel/theme_options.php:557
+#: ../functions/panel/theme_options.php:585
 msgid "scrollRight"
 msgstr "scrollRight"
 
-#: ../functions/panel/theme_options.php:558
+#: ../functions/panel/theme_options.php:586
 msgid "blindX"
 msgstr "blindX"
 
-#: ../functions/panel/theme_options.php:559
+#: ../functions/panel/theme_options.php:587
 msgid "blindY"
 msgstr "blindY"
 
-#: ../functions/panel/theme_options.php:560
+#: ../functions/panel/theme_options.php:588
 msgid "blindZ"
 msgstr "blindZ"
 
-#: ../functions/panel/theme_options.php:561
+#: ../functions/panel/theme_options.php:589
 msgid "cover"
 msgstr "cover"
 
-#: ../functions/panel/theme_options.php:562
+#: ../functions/panel/theme_options.php:590
 msgid "shuffle"
 msgstr "shuffle"
 
-#: ../functions/panel/theme_options.php:567
+#: ../functions/panel/theme_options.php:595
 msgid "Transition Delay"
 msgstr "Zeit bis zum Übergang"
 
-#: ../functions/panel/theme_options.php:570
-#: ../functions/panel/theme_options.php:577
+#: ../functions/panel/theme_options.php:598
+#: ../functions/panel/theme_options.php:605
 msgid "second(s)"
 msgstr "Sekunde(n)"
 
-#: ../functions/panel/theme_options.php:574
+#: ../functions/panel/theme_options.php:602
 msgid "Transition Length"
 msgstr "Dauer des Übergangs"
 
-#: ../functions/panel/theme_options.php:602
+#: ../functions/panel/theme_options.php:630
 msgid "Google+"
 msgstr "Google+"
 
-#: ../functions/panel/theme_options.php:607
+#: ../functions/panel/theme_options.php:635
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../functions/panel/theme_options.php:612
+#: ../functions/panel/theme_options.php:640
 msgid "Youtube"
 msgstr "Youtube"
 
-#: ../functions/panel/theme_options.php:617
+#: ../functions/panel/theme_options.php:645
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../functions/panel/theme_options.php:623
+#: ../functions/panel/theme_options.php:651
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: ../functions/panel/theme_options.php:628
+#: ../functions/panel/theme_options.php:656
 msgid "Slideshare"
 msgstr "Slideshare"
 
-#: ../functions/panel/theme_options.php:633
+#: ../functions/panel/theme_options.php:661
 msgid "Foursquare"
 msgstr "Foursquare"
 
-#: ../functions/panel/theme_options.php:638
+#: ../functions/panel/theme_options.php:666
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../functions/panel/theme_options.php:643
+#: ../functions/panel/theme_options.php:671
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../functions/panel/theme_options.php:648
+#: ../functions/panel/theme_options.php:676
 msgid "deviantART"
 msgstr "deviantART"
 
-#: ../functions/panel/theme_options.php:653
+#: ../functions/panel/theme_options.php:681
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../functions/panel/theme_options.php:658
+#: ../functions/panel/theme_options.php:686
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../functions/panel/theme_options.php:668
+#: ../functions/panel/theme_options.php:696
 msgid "RSS"
 msgstr "RSS"
 
-#: ../functions/panel/theme_options.php:673
+#: ../functions/panel/theme_options.php:701
 msgid "Delicious"
 msgstr "Delicious"
 
-#: ../functions/panel/theme_options.php:678
+#: ../functions/panel/theme_options.php:706
 msgid "Last.fm"
 msgstr "Last.fm"
 
-#: ../functions/panel/theme_options.php:683
+#: ../functions/panel/theme_options.php:711
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../functions/panel/theme_options.php:694
+#: ../functions/panel/theme_options.php:722
 msgid "Site Verification"
 msgstr "Site Verification"
 
-#: ../functions/panel/theme_options.php:699
+#: ../functions/panel/theme_options.php:727
 msgid "Google Site Verification ID"
 msgstr "Google Site Verification ID"
 
-#: ../functions/panel/theme_options.php:700
+#: ../functions/panel/theme_options.php:728
 msgid "Enter your Google ID number only"
 msgstr "Gib nur deine Google ID Nummer ein"
 
-#: ../functions/panel/theme_options.php:705
+#: ../functions/panel/theme_options.php:733
 msgid "Yahoo Site Verification ID"
 msgstr "Yahoo Site Verification ID"
 
-#: ../functions/panel/theme_options.php:706
+#: ../functions/panel/theme_options.php:734
 msgid "Enter your Yahoo ID number only"
 msgstr "Gib nur deine Yahoo ID Nummer ein"
 
-#: ../functions/panel/theme_options.php:711
+#: ../functions/panel/theme_options.php:739
 msgid "Bing Site Verification ID"
 msgstr "Bing Site Verification ID"
 
-#: ../functions/panel/theme_options.php:712
+#: ../functions/panel/theme_options.php:740
 msgid "Enter your Bing ID number only"
 msgstr "Gib nur deine Bing ID Nummer ein"
 
-#: ../functions/panel/theme_options.php:722
+#: ../functions/panel/theme_options.php:750
 msgid "Analytics/ Header / Footer Codes"
 msgstr "Analytics / Header / Footer Codes"
 
-#: ../functions/panel/theme_options.php:727
+#: ../functions/panel/theme_options.php:755
 msgid "Code to display on Header"
 msgstr "Code, der im Header eingefügt werden soll"
 
-#: ../functions/panel/theme_options.php:733
+#: ../functions/panel/theme_options.php:761
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
@@ -902,14 +916,17 @@ msgstr ""
 "Hinweis: Hier kannst du Skripte von Google, Facebook etc. einfügen, die im "
 "Header geladen werden"
 
-#: ../functions/panel/theme_options.php:736
+#: ../functions/panel/theme_options.php:764
 msgid "Code to display on Footer"
 msgstr "Code, der im Footer eingefügt werden soll"
 
-#: ../functions/panel/theme_options.php:743
+#: ../functions/panel/theme_options.php:771
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"
 msgstr ""
 "Hinweis: Hier kannst du Skripte von Google, Facebook, Add This etc. "
 "einfügen, die im Footer geladen werden."
+
+#~ msgid "Upload Favicon"
+#~ msgstr "Favicon hochladen"

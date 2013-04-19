@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-11 17:54+0545\n"
-"PO-Revision-Date: 2013-04-11 17:54+0545\n"
+"POT-Creation-Date: 2013-04-20 00:42+0545\n"
+"PO-Revision-Date: 2013-04-20 00:42+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Catch Themes <info@catchinternet.com>\n"
 "Language: Croatian\n"
@@ -272,7 +272,7 @@ msgid "Powered By WordPress"
 msgstr "Pokretano od WordPress"
 
 #: ../functions/simplecatch_functions.php:659
-#: ../functions/panel/theme_options.php:663
+#: ../functions/panel/theme_options.php:691
 msgid "WordPress"
 msgstr "WordPress"
 
@@ -420,7 +420,7 @@ msgid "Like Catch Themes on Facebook"
 msgstr "Lajkaj Catch Teme na Facebook"
 
 #: ../functions/panel/theme_options.php:131
-#: ../functions/panel/theme_options.php:592
+#: ../functions/panel/theme_options.php:620
 msgid "Facebook"
 msgstr "Facebook"
 
@@ -433,7 +433,7 @@ msgid "Follow Catch Themes on Twitter"
 msgstr "Slijedi Catch Teme na Twitter"
 
 #: ../functions/panel/theme_options.php:132
-#: ../functions/panel/theme_options.php:597
+#: ../functions/panel/theme_options.php:625
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -512,7 +512,8 @@ msgid "Change Footer Logo"
 msgstr "Promjeni logo u podnožju"
 
 #: ../functions/panel/theme_options.php:205
-#: ../functions/panel/theme_options.php:246
+#: ../functions/panel/theme_options.php:241
+#: ../functions/panel/theme_options.php:273
 msgid "Preview: "
 msgstr "Pregled:"
 
@@ -521,137 +522,150 @@ msgid "Disable Footer Logo?"
 msgstr "Onemogućiti logo u podnožju?"
 
 #: ../functions/panel/theme_options.php:223
-#: ../functions/panel/theme_options.php:260
-#: ../functions/panel/theme_options.php:354
-#: ../functions/panel/theme_options.php:378
-#: ../functions/panel/theme_options.php:406
-#: ../functions/panel/theme_options.php:443
-#: ../functions/panel/theme_options.php:464
-#: ../functions/panel/theme_options.php:484
-#: ../functions/panel/theme_options.php:500
-#: ../functions/panel/theme_options.php:531
-#: ../functions/panel/theme_options.php:582
-#: ../functions/panel/theme_options.php:688
-#: ../functions/panel/theme_options.php:717
-#: ../functions/panel/theme_options.php:747
+#: ../functions/panel/theme_options.php:255
+#: ../functions/panel/theme_options.php:287
+#: ../functions/panel/theme_options.php:381
+#: ../functions/panel/theme_options.php:409
+#: ../functions/panel/theme_options.php:433
+#: ../functions/panel/theme_options.php:471
+#: ../functions/panel/theme_options.php:492
+#: ../functions/panel/theme_options.php:512
+#: ../functions/panel/theme_options.php:528
+#: ../functions/panel/theme_options.php:559
+#: ../functions/panel/theme_options.php:610
+#: ../functions/panel/theme_options.php:716
+#: ../functions/panel/theme_options.php:745
+#: ../functions/panel/theme_options.php:775
 msgid "Save"
 msgstr "Spremi"
 
 #: ../functions/panel/theme_options.php:228
-msgid "Fav Icon Options"
-msgstr "Fav Icon opcije"
+msgid "Fav Icon Option"
+msgstr "Fav Icon Option"
 
 #: ../functions/panel/theme_options.php:233
 msgid "Favicon URL:"
 msgstr "Favicon URL:"
 
 #: ../functions/panel/theme_options.php:236
-msgid "Change Favicon"
-msgstr "Promjeni Favicon"
+msgid "Upload/Change Favicon"
+msgstr "Upload/Change Favicon"
 
-#: ../functions/panel/theme_options.php:239
-msgid "Upload Favicon"
-msgstr "Učitaj Favicon"
-
-#: ../functions/panel/theme_options.php:252
+#: ../functions/panel/theme_options.php:247
 msgid "No Favicon Found. Upload Favicon."
 msgstr "Favicon nije pronađen. Učitaj Favicon."
 
+#: ../functions/panel/theme_options.php:260
+msgid "Web Clip Icon Option"
+msgstr "Web Clip Icon Option"
+
 #: ../functions/panel/theme_options.php:265
+msgid "Web Clip Icon URL:"
+msgstr "Web Clip Icon URL:"
+
+#: ../functions/panel/theme_options.php:268
+msgid "Upload/Change Web Clip Icon"
+msgstr "Upload/Change Web Clip Icon"
+
+#: ../functions/panel/theme_options.php:279
+msgid "No Web Clip Icon Found. Upload Web Clip Icon."
+msgstr "No Web Clip Icon Found. Upload Web Clip Icon."
+
+#: ../functions/panel/theme_options.php:292
 msgid "Content Background"
 msgstr "Pozadina sadržaja"
 
-#: ../functions/panel/theme_options.php:267
+#: ../functions/panel/theme_options.php:294
 msgid "Need to replace default background?"
 msgstr "Trebate zamijeniti zadanu pozadinu?"
 
-#: ../functions/panel/theme_options.php:267
+#: ../functions/panel/theme_options.php:294
 #, php-format
 msgid "<a class=\"button\" href=\"%s\">Click here</a>"
 msgstr "<a class=\"button\" href=\"%s\">Kliknite ovdje</a>"
 
-#: ../functions/panel/theme_options.php:273
+#: ../functions/panel/theme_options.php:300
 msgid "Content Color Options"
 msgstr "Boje sadržaja opcije"
 
-#: ../functions/panel/theme_options.php:280
+#: ../functions/panel/theme_options.php:307
 msgid "Heading Color:"
 msgstr "Poja naslova:"
 
-#: ../functions/panel/theme_options.php:291
+#: ../functions/panel/theme_options.php:318
 msgid "Meta Description Color:"
 msgstr "Boja meta opisa:"
 
-#: ../functions/panel/theme_options.php:302
+#: ../functions/panel/theme_options.php:329
 msgid "Text Color:"
 msgstr "Boja teksta:"
 
-#: ../functions/panel/theme_options.php:313
+#: ../functions/panel/theme_options.php:340
 msgid "Link Color:"
 msgstr "Boja linka:"
 
-#: ../functions/panel/theme_options.php:324
+#: ../functions/panel/theme_options.php:351
 msgid "Sidebar Widget Heading Color:"
 msgstr "Boja naslova widgeta u bočnoj traci:"
 
-#: ../functions/panel/theme_options.php:335
+#: ../functions/panel/theme_options.php:362
 msgid "Sidebar Widget Text Color:"
 msgstr "Boja teksta widgeta u bočnoj traci:"
 
-#: ../functions/panel/theme_options.php:345
+#: ../functions/panel/theme_options.php:372
 msgid "Reset Color:"
 msgstr "Resetiraj boje:"
 
-#: ../functions/panel/theme_options.php:359
-msgid "Custom CSS"
-msgstr "Prilagođeni CSS"
-
-#: ../functions/panel/theme_options.php:364
-msgid "Enter your custom CSS styles."
-msgstr "Unesite vaše prilagođene CSS stilove."
-
-#: ../functions/panel/theme_options.php:371
-msgid "CSS Tutorial from W3Schools."
-msgstr "CSS Tutorijal od W3Schools."
-
-#: ../functions/panel/theme_options.php:373
-msgid "http://www.w3schools.com/css/default.asp"
-msgstr "http://www.w3schools.com/css/default.asp"
-
-#: ../functions/panel/theme_options.php:373
-msgid "CSS Tutorial"
-msgstr "CSS Tutorijal"
-
-#: ../functions/panel/theme_options.php:373
-msgid "Click Here to Read"
-msgstr "Klikni ovdje za pročitati"
-
-#: ../functions/panel/theme_options.php:383
-#: ../functions/panel/theme_options.php:388
+#: ../functions/panel/theme_options.php:386
+#: ../functions/panel/theme_options.php:391
 msgid "Default Layout"
 msgstr "Zadani izgled"
 
-#: ../functions/panel/theme_options.php:392
+#: ../functions/panel/theme_options.php:395
 msgid "No Sidebar, One Column"
 msgstr "Bez bočne trake, jedan stupac"
 
-#: ../functions/panel/theme_options.php:396
+#: ../functions/panel/theme_options.php:399
 msgid "Content on Right"
 msgstr "Sadržaj desno"
 
-#: ../functions/panel/theme_options.php:400
+#: ../functions/panel/theme_options.php:403
 msgid "Content on Left"
 msgstr "Sadržaj lijevo"
 
 #: ../functions/panel/theme_options.php:414
+msgid "Custom CSS"
+msgstr "Prilagođeni CSS"
+
+#: ../functions/panel/theme_options.php:419
+msgid "Enter your custom CSS styles."
+msgstr "Unesite vaše prilagođene CSS stilove."
+
+#: ../functions/panel/theme_options.php:426
+msgid "CSS Tutorial from W3Schools."
+msgstr "CSS Tutorijal od W3Schools."
+
+#: ../functions/panel/theme_options.php:428
+msgid "http://www.w3schools.com/css/default.asp"
+msgstr "http://www.w3schools.com/css/default.asp"
+
+#: ../functions/panel/theme_options.php:428
+msgid "CSS Tutorial"
+msgstr "CSS Tutorijal"
+
+#: ../functions/panel/theme_options.php:428
+msgid "Click Here to Read"
+msgstr "Klikni ovdje za pročitati"
+
+#: ../functions/panel/theme_options.php:442
 msgid "Homepage / Frontpage Category Setting"
 msgstr "Naslovnica / Početna stranica Postavke kategorija"
 
-#: ../functions/panel/theme_options.php:420
+#: ../functions/panel/theme_options.php:448
 msgid "Front page posts categories:"
 msgstr "Početna stranica kategorije objava:"
 
-#: ../functions/panel/theme_options.php:422
+#: ../functions/panel/theme_options.php:450
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on "
 "the front page."
@@ -659,243 +673,243 @@ msgstr ""
 "Na naslovnoj stranici će se prikazati samo objave koje pripadaju "
 "kategorijama koje ovdje odaberete."
 
-#: ../functions/panel/theme_options.php:427
+#: ../functions/panel/theme_options.php:455
 msgid "--Disabled--"
 msgstr "--Onemogućeno--"
 
-#: ../functions/panel/theme_options.php:438
+#: ../functions/panel/theme_options.php:466
 msgid "You may select multiple categories by holding down the CTRL key."
 msgstr "Možete odabrati više kategorija držeći tipku CTRL."
 
-#: ../functions/panel/theme_options.php:448
+#: ../functions/panel/theme_options.php:476
 msgid "Search Text Settings"
 msgstr "Postavke teksta pretraživanja"
 
-#: ../functions/panel/theme_options.php:453
+#: ../functions/panel/theme_options.php:481
 msgid "Default Display Text in Search"
 msgstr "Prikaži zadani tekst za pretraživanje"
 
-#: ../functions/panel/theme_options.php:458
+#: ../functions/panel/theme_options.php:486
 msgid "Search Button's text"
 msgstr "Dugme za traženje tekst"
 
-#: ../functions/panel/theme_options.php:469
+#: ../functions/panel/theme_options.php:497
 msgid "Excerpt / More Tag Settings"
 msgstr "Izvod / Više tag postavke"
 
-#: ../functions/panel/theme_options.php:474
+#: ../functions/panel/theme_options.php:502
 msgid "More Tag Text"
 msgstr "Tekst više tag"
 
-#: ../functions/panel/theme_options.php:479
+#: ../functions/panel/theme_options.php:507
 msgid "Excerpt length(words)"
 msgstr "Izvadak dužina (riječi)"
 
-#: ../functions/panel/theme_options.php:489
+#: ../functions/panel/theme_options.php:517
 msgid "Feed Redirect"
 msgstr "Feed preusmjeravanje"
 
-#: ../functions/panel/theme_options.php:494
+#: ../functions/panel/theme_options.php:522
 msgid "Feed Redirect URL"
 msgstr "Feed redirekcija URL"
 
-#: ../functions/panel/theme_options.php:507
+#: ../functions/panel/theme_options.php:535
 msgid "Add Slider Options"
 msgstr "Dodaj slajder opcije"
 
-#: ../functions/panel/theme_options.php:511
+#: ../functions/panel/theme_options.php:539
 msgid "Exclude Slider post from Home page posts:"
 msgstr "Izuzmi slajder objave iz objava na Naslovnoj stranici:"
 
-#: ../functions/panel/theme_options.php:516
+#: ../functions/panel/theme_options.php:544
 msgid "Number of Slides"
 msgstr "Broj slajdova"
 
-#: ../functions/panel/theme_options.php:522
+#: ../functions/panel/theme_options.php:550
 msgid "Featured Slider Post #"
 msgstr "Istakni slajder objavu #"
 
-#: ../functions/panel/theme_options.php:524
+#: ../functions/panel/theme_options.php:552
 msgid "Click Here To Edit"
 msgstr "Klikni ovdje za uređivanje"
 
-#: ../functions/panel/theme_options.php:530
+#: ../functions/panel/theme_options.php:558
 msgid ""
 "Note: Here You can put your Post IDs which displays on Homepage as slider."
 msgstr ""
 "Napomena: Ovdje možete staviti ID objava koje se prikazuje na početnoj "
 "stranici kao slajder."
 
-#: ../functions/panel/theme_options.php:537
+#: ../functions/panel/theme_options.php:565
 msgid "Slider Effect Options"
 msgstr "Slajder efekt opcije"
 
-#: ../functions/panel/theme_options.php:541
+#: ../functions/panel/theme_options.php:569
 msgid "Disable Slider Background Effect:"
 msgstr "Onemogući efekt pozadine slajdera:"
 
-#: ../functions/panel/theme_options.php:548
+#: ../functions/panel/theme_options.php:576
 msgid "Transition Effect:"
 msgstr "Efekt prijelaza:"
 
-#: ../functions/panel/theme_options.php:552
+#: ../functions/panel/theme_options.php:580
 msgid "fade"
 msgstr "izblijediti"
 
-#: ../functions/panel/theme_options.php:553
+#: ../functions/panel/theme_options.php:581
 msgid "wipe"
 msgstr "brisanje"
 
-#: ../functions/panel/theme_options.php:554
+#: ../functions/panel/theme_options.php:582
 msgid "scrollUp"
 msgstr "naviše"
 
-#: ../functions/panel/theme_options.php:555
+#: ../functions/panel/theme_options.php:583
 msgid "scrollDown"
 msgstr "naniže"
 
-#: ../functions/panel/theme_options.php:556
+#: ../functions/panel/theme_options.php:584
 msgid "scrollLeft"
 msgstr "nalijevo"
 
-#: ../functions/panel/theme_options.php:557
+#: ../functions/panel/theme_options.php:585
 msgid "scrollRight"
 msgstr "nadesno"
 
-#: ../functions/panel/theme_options.php:558
+#: ../functions/panel/theme_options.php:586
 msgid "blindX"
 msgstr "sjenaX"
 
-#: ../functions/panel/theme_options.php:559
+#: ../functions/panel/theme_options.php:587
 msgid "blindY"
 msgstr "sjenaY"
 
-#: ../functions/panel/theme_options.php:560
+#: ../functions/panel/theme_options.php:588
 msgid "blindZ"
 msgstr "sjenaZ"
 
-#: ../functions/panel/theme_options.php:561
+#: ../functions/panel/theme_options.php:589
 msgid "cover"
 msgstr "prekriti"
 
-#: ../functions/panel/theme_options.php:562
+#: ../functions/panel/theme_options.php:590
 msgid "shuffle"
 msgstr "miješanje"
 
-#: ../functions/panel/theme_options.php:567
+#: ../functions/panel/theme_options.php:595
 msgid "Transition Delay"
 msgstr "Kašnjenje prijelaza"
 
-#: ../functions/panel/theme_options.php:570
-#: ../functions/panel/theme_options.php:577
+#: ../functions/panel/theme_options.php:598
+#: ../functions/panel/theme_options.php:605
 msgid "second(s)"
 msgstr "sekundi"
 
-#: ../functions/panel/theme_options.php:574
+#: ../functions/panel/theme_options.php:602
 msgid "Transition Length"
 msgstr "Kašnjenje prijelaza"
 
-#: ../functions/panel/theme_options.php:602
+#: ../functions/panel/theme_options.php:630
 msgid "Google+"
 msgstr "Google+"
 
-#: ../functions/panel/theme_options.php:607
+#: ../functions/panel/theme_options.php:635
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../functions/panel/theme_options.php:612
+#: ../functions/panel/theme_options.php:640
 msgid "Youtube"
 msgstr "Youtube"
 
-#: ../functions/panel/theme_options.php:617
+#: ../functions/panel/theme_options.php:645
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../functions/panel/theme_options.php:623
+#: ../functions/panel/theme_options.php:651
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: ../functions/panel/theme_options.php:628
+#: ../functions/panel/theme_options.php:656
 msgid "Slideshare"
 msgstr "Slideshare"
 
-#: ../functions/panel/theme_options.php:633
+#: ../functions/panel/theme_options.php:661
 msgid "Foursquare"
 msgstr "Foursquare"
 
-#: ../functions/panel/theme_options.php:638
+#: ../functions/panel/theme_options.php:666
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../functions/panel/theme_options.php:643
+#: ../functions/panel/theme_options.php:671
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../functions/panel/theme_options.php:648
+#: ../functions/panel/theme_options.php:676
 msgid "deviantART"
 msgstr "deviantART"
 
-#: ../functions/panel/theme_options.php:653
+#: ../functions/panel/theme_options.php:681
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../functions/panel/theme_options.php:658
+#: ../functions/panel/theme_options.php:686
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../functions/panel/theme_options.php:668
+#: ../functions/panel/theme_options.php:696
 msgid "RSS"
 msgstr "RSS"
 
-#: ../functions/panel/theme_options.php:673
+#: ../functions/panel/theme_options.php:701
 msgid "Delicious"
 msgstr "Delicious"
 
-#: ../functions/panel/theme_options.php:678
+#: ../functions/panel/theme_options.php:706
 msgid "Last.fm"
 msgstr "Last.fm"
 
-#: ../functions/panel/theme_options.php:683
+#: ../functions/panel/theme_options.php:711
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../functions/panel/theme_options.php:694
+#: ../functions/panel/theme_options.php:722
 msgid "Site Verification"
 msgstr "Verifikacija stranice"
 
-#: ../functions/panel/theme_options.php:699
+#: ../functions/panel/theme_options.php:727
 msgid "Google Site Verification ID"
 msgstr "Google Site verifikacijski ID"
 
-#: ../functions/panel/theme_options.php:700
+#: ../functions/panel/theme_options.php:728
 msgid "Enter your Google ID number only"
 msgstr "Unesite samo vaš Google ID broj"
 
-#: ../functions/panel/theme_options.php:705
+#: ../functions/panel/theme_options.php:733
 msgid "Yahoo Site Verification ID"
 msgstr "Yahoo Site verifikacijski ID"
 
-#: ../functions/panel/theme_options.php:706
+#: ../functions/panel/theme_options.php:734
 msgid "Enter your Yahoo ID number only"
 msgstr "Unesite samo vaš Yahoo ID broj"
 
-#: ../functions/panel/theme_options.php:711
+#: ../functions/panel/theme_options.php:739
 msgid "Bing Site Verification ID"
 msgstr "Bing Site verifikacijski ID"
 
-#: ../functions/panel/theme_options.php:712
+#: ../functions/panel/theme_options.php:740
 msgid "Enter your Bing ID number only"
 msgstr "Unesite samo vaš Bing ID broj"
 
-#: ../functions/panel/theme_options.php:722
+#: ../functions/panel/theme_options.php:750
 msgid "Analytics/ Header / Footer Codes"
 msgstr "Analytics/ Zaglavlje / Podnožje kodovi"
 
-#: ../functions/panel/theme_options.php:727
+#: ../functions/panel/theme_options.php:755
 msgid "Code to display on Header"
 msgstr "Kod za prikazati u zaglavlju"
 
-#: ../functions/panel/theme_options.php:733
+#: ../functions/panel/theme_options.php:761
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
@@ -903,14 +917,17 @@ msgstr ""
 "Napomena: Ovdje možete staviti skripte iz Google, Facebook i sl. koje će se "
 "učitati na zaglavlju"
 
-#: ../functions/panel/theme_options.php:736
+#: ../functions/panel/theme_options.php:764
 msgid "Code to display on Footer"
 msgstr "Kod za prikazati u podnožju"
 
-#: ../functions/panel/theme_options.php:743
+#: ../functions/panel/theme_options.php:771
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"
 msgstr ""
 "Napomena: Ovdje možete staviti skripte iz Google, Facebook, Add This i sl. "
 "koje će se učitati u podnožju"
+
+#~ msgid "Upload Favicon"
+#~ msgstr "Učitaj Favicon"

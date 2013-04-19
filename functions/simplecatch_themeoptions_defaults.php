@@ -17,6 +17,7 @@ $simplecatch_options_defaults = array(
  	'featured_logo_footer' 			=> get_template_directory_uri().'/images/logo-foot.png',
  	'remove_footer_logo'			=> '0',
  	'fav_icon'						=> '',
+	'web_clip'						=> '',
 	'heading_color'					=> '#444444',
  	'meta_color'					=> '#999999',
  	'text_color'					=> '#555555',

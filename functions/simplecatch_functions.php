@@ -946,3 +946,35 @@ function simplecatch_posts_id_column_css() {
 	echo '<style type="text/css">#postid { width: 40px; }</style>';
 }
 add_action( 'admin_head-edit.php', 'simplecatch_posts_id_column_css' );
+
+
+/**
+ * Get the Web Clip Icon from theme options
+ *
+ * @uses web clip 
+ * @get the data value of image from theme options
+ * @display web clip
+ *
+ * @uses set_transient and delete_transient 
+ */
+function simplecatch_webclip() {
+	//delete_transient( 'simplecatch_webclip' );	
+	
+	if( ( !$simplecatch_webclip = get_transient( 'simplecatch_webclip' ) ) ) {
+		global $simplecatch_options_settings;
+        $options = $simplecatch_options_settings;
+		
+		echo '<!-- refreshing cache -->';
+		
+		// if not empty fav_icon on theme options
+		if ( !empty( $options[ 'web_clip' ] ) ) :
+			$simplecatch_webclip = '<link rel="apple-touch-icon-precomposed" href="'.esc_url( $options[ 'web_clip' ] ).'" />'; 	
+		endif;
+		
+		set_transient( 'simplecatch_webclip', $simplecatch_webclip, 86940 );	
+	}	
+	echo $simplecatch_webclip ;	
+} // simplecatch_webclip
+
+//Load Web Clip Icon in Header Section
+add_action('wp_head', 'simplecatch_webclip');

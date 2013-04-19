@@ -298,3 +298,6 @@ Version 2.3.3
 * Added Post ID shown in the All Posts Table in admin section 
 * Added !function_exists() condition to support child theme easy editing
 * Fixed the css for wp-caption img
+
+Version 2.3.4
+* Added Web Clip Icon Option 
