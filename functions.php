@@ -1,11 +1,11 @@
 <?php
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.4.6' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.4.8' );
 define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://siteorigin.com' );
 
 // Include premium functions if it exists
 if(file_exists(get_template_directory().'/premium/functions.php')){
-	include get_template_directory().'/premium/functions.php';
+	// include get_template_directory().'/premium/functions.php';
 }
 
 // Include all the SiteOrigin extras
@@ -105,10 +105,7 @@ function origami_widgets_init(){
 	register_widget( 'SiteOrigin_Widgets_CTA' );
 	register_widget( 'SiteOrigin_Widgets_Button' );
 	register_widget( 'SiteOrigin_Widgets_Headline' );
-	register_widget( 'SiteOrigin_Widgets_Gallery' );
 	register_widget( 'SiteOrigin_Widgets_IconText' );
-	register_widget( 'SiteOrigin_Widgets_Image' );
-	register_widget( 'SiteOrigin_Widgets_PostContent' );
 }
 endif;
 add_action('widgets_init', 'origami_widgets_init');
@@ -160,8 +157,8 @@ function origami_enqueue_scripts(){
 	wp_enqueue_script('fitvids', get_template_directory_uri() . '/js/jquery.fitvids.min.js', array('jquery'), '1.0');
 	wp_enqueue_script('origami', get_template_directory_uri() . '/js/origami.min.js', array('jquery', 'modernizr'), SITEORIGIN_THEME_VERSION);
 	
-	wp_enqueue_script('flexslider', get_template_directory_uri() . '/js/jquery.flexslider.min.js', array('jquery'), '1.8');
-	wp_enqueue_style('flexslider', get_template_directory_uri().'/css/flexslider.css', array(), '1.8');
+	wp_enqueue_script('flexslider', get_template_directory_uri() . '/js/jquery.flexslider.min.js', array('jquery'), '2.1');
+	wp_enqueue_style('flexslider', get_template_directory_uri().'/css/flexslider.css', array(), '2.0');
 
 	if ( is_singular() ) wp_enqueue_script( "comment-reply" );
 
@@ -397,3 +394,61 @@ function origami_post_class_columns($classes, $class, $post_id){
 	return $classes;
 }
 add_filter('post_class', 'origami_post_class_columns', 10, 3);
+
+/**
+ * Update widget classes to use panels built in widgets.
+ * 
+ * @param $data
+ * @return mixed
+ */
+function origami_siteorigin_panels_data($data){
+	if(empty($data['widgets'])) return $data;
+	
+	foreach($data['widgets'] as $i => $d){
+		if(!empty($d['info']['class'])){
+			switch($d['info']['class']){
+				case 'SiteOrigin_Widgets_Gallery':
+					$data['widgets'][$i]['info']['class'] = 'SiteOrigin_Panels_Widgets_Gallery';
+					break;
+
+				case 'SiteOrigin_Widgets_Image':
+					$data['widgets'][$i]['info']['class'] = 'SiteOrigin_Panels_Widgets_Image';
+					break;
+				
+				case 'SiteOrigin_Widgets_PostContent':
+					$data['widgets'][$i]['info']['class'] = 'SiteOrigin_Panels_Widgets_PostContent';
+					break;
+			}
+		}
+	}
+	return $data;
+}
+add_filter('siteorigin_panels_data', 'origami_siteorigin_panels_data');
+
+/**
+ * This overwrites the show on front setting when we're displaying the blog archive page.
+ *
+ * @param $r
+ * @return bool
+ */
+function origami_filter_show_on_front($r){
+	/**
+	 * @var WP_Query
+	 */
+	global $origami_is_blog_archive;
+	if(!empty($origami_is_blog_archive)) {
+		return false;
+	}
+	else return $r;
+}
+add_filter('option_show_on_front', 'origami_filter_show_on_front');
+
+/**
+ * Sets when we're displaying the blog archive page.
+ *
+ * @param $new
+ */
+function origami_set_is_blog_archive($new) {
+	global $origami_is_blog_archive;
+	$origami_is_blog_archive = $new;
+}

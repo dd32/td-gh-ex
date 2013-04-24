@@ -2,8 +2,8 @@
 # This file is distributed under the GNU General Public License 2.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: origami 1.4.6\n"
-"POT-Creation-Date: 2013-03-07T11:15:12+02:00\n"
+"Project-Id-Version: origami 1.4.8\n"
+"POT-Creation-Date: 2013-04-24T14:25:18+02:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -75,6 +75,9 @@ msgstr ""
 msgid "dismiss"
 msgstr ""
 
+msgid "SiteOrigin Theme News"
+msgstr ""
+
 msgid "Create custom tileable background images using our free <a href='%s' target='_blank'>background image generator</a>."
 msgstr ""
 
@@ -103,6 +106,96 @@ msgid "Save Settings"
 msgstr ""
 
 msgid "%s is displaying demo content. <a href=\"%s\">Disable demo mode</a> to start creating and displaying your own content."
+msgstr ""
+
+msgid "Gallery"
+msgstr ""
+
+msgid "Displays a gallery."
+msgstr ""
+
+msgid "Gallery Images"
+msgstr ""
+
+msgid "edit gallery"
+msgstr ""
+
+msgid "Comma separated attachment IDs. Defaults to all current page's attachments."
+msgstr ""
+
+msgid "Image Size"
+msgstr ""
+
+msgid "Gallery Type"
+msgstr ""
+
+msgid "Post Content"
+msgstr ""
+
+msgid "Displays some form of post content form the current post."
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "Content"
+msgstr ""
+
+msgid "Featured Image"
+msgstr ""
+
+msgid "Post Tags"
+msgstr ""
+
+msgid "Post Categories"
+msgstr ""
+
+msgid "Display Content"
+msgstr ""
+
+msgid "Image"
+msgstr ""
+
+msgid "Displays a simple image."
+msgstr ""
+
+msgid "Image URL"
+msgstr ""
+
+msgid "Destination URL"
+msgstr ""
+
+msgid "Post Loop"
+msgstr ""
+
+msgid "Displays a post loop."
+msgstr ""
+
+msgid "Unfortunately your theme doesn't have any post loops."
+msgstr ""
+
+msgid "Template"
+msgstr ""
+
+msgid "Post Type"
+msgstr ""
+
+msgid "Posts Per Page"
+msgstr ""
+
+msgid "Order By"
+msgstr ""
+
+msgid "Order"
+msgstr ""
+
+msgid "Sticky Posts"
+msgstr ""
+
+msgid "Additional "
+msgstr ""
+
+msgid "Additional query arguments. See <a href=\"%s\" target=\"_blank\">query_posts</a>."
 msgstr ""
 
 msgid "Custom Home Page"
@@ -177,7 +270,7 @@ msgstr ""
 msgid "The page layouts are responsive and completely customizable."
 msgstr ""
 
-msgid "Read the <a href='%s' target='_blank'>full documentation</a> on SiteOrigin's support site."
+msgid "Read the <a href='%s' target='_blank'>full documentation</a> on SiteOrigin."
 msgstr ""
 
 msgid "Add Widget"
@@ -202,6 +295,27 @@ msgid "Page Layout"
 msgstr ""
 
 msgid "Untitled Layout"
+msgstr ""
+
+msgid "Custom Home Page Builder"
+msgstr ""
+
+msgid "This theme is compatible with SiteOrigin's powerful drag and drop page builder."
+msgstr ""
+
+msgid "It allows you to build responsive columnized pages, populated with the widgets you know and love."
+msgstr ""
+
+msgid "Best of all it's a <strong>free plugin</strong> that works well with most SiteOrigin themes."
+msgstr ""
+
+msgid "Install SiteOrigin Page Builder"
+msgstr ""
+
+msgid "Install Theme Plugin"
+msgstr ""
+
+msgid "Installing %s"
 msgstr ""
 
 msgid "Premium Upgrade"
@@ -234,6 +348,60 @@ msgstr ""
 msgid "Some of our User Comments"
 msgstr ""
 
+msgid "What Level of Support Do You Need?"
+msgstr ""
+
+msgid "Premium theme with lifetime updates"
+msgstr ""
+
+msgid "Standard email support"
+msgstr ""
+
+msgid "1-2 day response time"
+msgstr ""
+
+msgid "Theme setup support"
+msgstr ""
+
+msgid "Help from SiteOrigin support staff"
+msgstr ""
+
+msgid "90 days of support"
+msgstr ""
+
+msgid "Standard Support"
+msgstr ""
+
+msgid "Recommended"
+msgstr ""
+
+msgid "<strong>Fast</strong> email support"
+msgstr ""
+
+msgid "<strong>4hr response</strong> during <abbr title=\"9am-6pm, Monday-Friday GMT 2+\">office hours</a>"
+msgstr ""
+
+msgid "<strong>Basic customization</strong> and setup support"
+msgstr ""
+
+msgid "Help from our <strong>WordPress developers</strong>"
+msgstr ""
+
+msgid "A <strong>full year</strong> of theme support"
+msgstr ""
+
+msgid "Priority Support"
+msgstr ""
+
+msgid "%1$s Premium includes email support."
+msgstr ""
+
+msgid "For an extra <strong>%s</strong>, you get faster replies and more detailed answers. Perfect if you're on a deadline."
+msgstr ""
+
+msgid "You're free to use our premium themes on as many sites as you like."
+msgstr ""
+
 msgid "Your Order Number Is [%s]"
 msgstr ""
 
@@ -249,10 +417,10 @@ msgstr ""
 msgid "You can update now, or later on your <a href=\"%s\">Themes page</a>."
 msgstr ""
 
-msgid "This update will unlock all the premium features."
+msgid "This update will add all the premium features."
 msgstr ""
 
-msgid "Updating this theme will lose any customizations you have made. 'Cancel' to stop, 'OK' to update."
+msgid "Updating this theme will lose any code customizations (CSS, PHP, Javascript, etc) you have made to the free version. You will not lose your content, images or settings. 'Cancel' to stop, 'OK' to update."
 msgstr ""
 
 msgid "Update Theme"
@@ -264,13 +432,22 @@ msgstr ""
 msgid "There might be a problem with our validation server."
 msgstr ""
 
+msgid "Get Additional Templates"
+msgstr ""
+
+msgid "%s Premium includes additional templates"
+msgstr ""
+
 msgid "Only available in <strong>%s Premium</strong> - <strong class=\"upgrade\">Upgrade Now</strong>"
 msgstr ""
 
-msgid "Check out the <a href='%s'>documentation</a> for %s. "
+msgid "Get Additional Customizations"
 msgstr ""
 
-msgid "Please like and follow SiteOrigin to hear about my new WordPress freebies."
+msgid "Check out the <a href='%s'>documentation</a> for %s if you're lost. "
+msgstr ""
+
+msgid "Feel free to <a href='%s'>contact support</a> or post on the <a href='%s'>WordPress forums</a> if you need help. "
 msgstr ""
 
 msgid "%s Theme Settings"
@@ -280,6 +457,12 @@ msgid "Theme Settings"
 msgstr ""
 
 msgid "Calling undefined setting [%s]"
+msgstr ""
+
+msgid "Display Hover Edit Icon"
+msgstr ""
+
+msgid "Display a small icon that makes quickly editing fields easy. This is only shown to admin users."
 msgstr ""
 
 msgid "Enabled"
@@ -364,9 +547,6 @@ msgstr ""
 msgid "Please select a slider."
 msgstr ""
 
-msgid "Image Size"
-msgstr ""
-
 msgid "New Item"
 msgstr ""
 
@@ -374,9 +554,6 @@ msgid "Title Text"
 msgstr ""
 
 msgid "Extra Text"
-msgstr ""
-
-msgid "Image"
 msgstr ""
 
 msgid "None"
@@ -445,24 +622,6 @@ msgstr ""
 msgid "Upload icon images to your <a href=\"%s\" target=\"_blank\">media library</a>. Find <a href=\"%s\" target=\"_blank\">free icon packs</a>."
 msgstr ""
 
-msgid "Post List"
-msgstr ""
-
-msgid "Displays a list of posts."
-msgstr ""
-
-msgid "Post Type"
-msgstr ""
-
-msgid "Post Count"
-msgstr ""
-
-msgid "Order By"
-msgstr ""
-
-msgid "Show Post Title"
-msgstr ""
-
 msgid "Displays a simple headline."
 msgstr ""
 
@@ -470,57 +629,6 @@ msgid "Headline Text"
 msgstr ""
 
 msgid "Size"
-msgstr ""
-
-msgid "Gallery"
-msgstr ""
-
-msgid "Displays a gallery."
-msgstr ""
-
-msgid "Gallery Images"
-msgstr ""
-
-msgid "edit gallery"
-msgstr ""
-
-msgid "Comma separated attachment IDs. Defaults to all current page's attachments."
-msgstr ""
-
-msgid "Gallery Type"
-msgstr ""
-
-msgid "Post Content"
-msgstr ""
-
-msgid "Displays some form of post content form the current post."
-msgstr ""
-
-msgid "Title"
-msgstr ""
-
-msgid "Content"
-msgstr ""
-
-msgid "Featured Image"
-msgstr ""
-
-msgid "Post Tags"
-msgstr ""
-
-msgid "Post Categories"
-msgstr ""
-
-msgid "Display Content"
-msgstr ""
-
-msgid "Displays a simple image."
-msgstr ""
-
-msgid "Image URL"
-msgstr ""
-
-msgid "Destination URL"
 msgstr ""
 
 msgid "This is a default gallery."
@@ -856,16 +964,16 @@ msgstr ""
 msgid "A simple CSS editor that lets you easily add code that changes the look of Origami. You can count on our support staff to help you with CSS snippets to get the look you're after. Best of all, your changes will persist across updates."
 msgstr ""
 
-msgid "Premium Support"
-msgstr ""
-
-msgid "Need help setting up Origami? Upgrading to Origami Premium gives you prioritized support on our support forums."
-msgstr ""
-
 msgid "Continued Updates"
 msgstr ""
 
 msgid "You'll get continued updates, ensuring that your Origami powered site keeps on working with the latest version of WordPress for years to come."
+msgstr ""
+
+msgid "Premium Support"
+msgstr ""
+
+msgid "Need help setting up Origami? Upgrading to Origami Premium gives you prioritized support on our support forums."
 msgstr ""
 
 msgid "I love this theme very much."

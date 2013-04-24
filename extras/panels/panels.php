@@ -1,5 +1,7 @@
 <?php
 
+include get_template_directory().'/extras/panels/inc/widgets.php';
+
 /**
  * Initialize the panels extra
  */
@@ -193,12 +195,14 @@ function siteorigin_panels_admin_enqueue_scripts($prefix) {
 				// Load the default layout
 				$panels_data = !empty($layouts['home']) ? $layouts['home'] : current($layouts);
 			}
+			$panels_data = apply_filters( 'siteorigin_panels_data', $panels_data, 'home');
 		}
 		else{
 			global $post;
 			$panels_data = get_post_meta( $post->ID, 'panels_data', true );
+			$panels_data = apply_filters( 'siteorigin_panels_data', $panels_data, $post->ID);
 		}
-		
+
 		if ( empty( $panels_data ) ) $panels_data = array();
 
 		// Remove any panels that no longer exist.

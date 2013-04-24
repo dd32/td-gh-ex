@@ -37,7 +37,7 @@ jQuery( function ( $ ) {
         // If the media frame already exists, reopen it.
         if ( frame ) {
             frame.open();
-            return;
+            return false;
         }
 
         // Create the media frame.
@@ -59,6 +59,9 @@ jQuery( function ( $ ) {
                 close: false
             }
         });
+        
+        // Store the frame
+        $$.data('frame', frame);
 
         // When an image is selected, run a callback.
         frame.on( 'select', function() {
@@ -119,6 +122,7 @@ jQuery( function ( $ ) {
     // We're going to use jQuery to transform the settings page into a tabbed interface
     var $$ = $( 'form[action="options.php"]' );
     var tabs = $( '<h2></h2>' ).attr('id', 'siteorigin-settings-tab-wrapper').addClass( 'nav-tab-wrapper' ).prependTo( $$ );
+    
     $$.find( 'h3' ).each( function ( i, el ) {
         var h = $( el ).hide();
         var a = $( '<a href="#"></a>' ).addClass( 'nav-tab' ).html( h.html() ).appendTo( tabs );
@@ -139,7 +143,7 @@ jQuery( function ( $ ) {
             return false;
         } );
 
-        if ( i == getUserSetting('siteorigin_settings_tab', 0) ) a.click();
+        if ( i == getUserSetting('siteorigin_settings_tab', 0) || (i == 0 && getUserSetting('siteorigin_settings_tab', 0) > $$.find( 'h3' ).length) ) a.click();
     } );
     
     // Autofill
@@ -149,7 +153,26 @@ jQuery( function ( $ ) {
             c.val($(this ).val());
             $(this ).val('')
         });
-    
+
+    // Highlight the correct setting
+    if(window.location.hash != ''){
+        // Through a simple twist of fate, has is hash == the ID
+        $(window.location.hash).each(function(){
+            var $$ = $(this);
+
+            var tr = $$.closest('tr');
+            var table = $$.closest('table');
+            if(!table.hasClass('form-table')) return;
+
+            $('#siteorigin-settings-tab-wrapper > a').eq($('table.form-table').index(table)).click();
+            tr.addClass('highlight');
+            setTimeout(function(){
+                tr.find('input,select').focus();
+            }, 250);
+        })
+
+    }
+
     setTimeout( function () {
         $( '#setting-updated' ).slideUp();
     }, 5000 );
