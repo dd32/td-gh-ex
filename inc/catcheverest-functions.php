@@ -601,6 +601,7 @@ function catcheverest_default_sliders() {
 } // catcheverest_default_sliders	
 
 
+if ( ! function_exists( 'catcheverest_slider_display' ) ) :
 /**
  * Shows Slider
  */
@@ -614,6 +615,7 @@ function catcheverest_slider_display() {
 	if ( ( $enableslider == 'enable-slider-allpage' ) || ( is_front_page() && $enableslider == 'enable-slider-homepage' ) ) :
 		// This function passes the value of slider effect to js file 
 		if ( function_exists( 'catcheverest_pass_slider_value' ) ) : catcheverest_pass_slider_value(); endif;
+		
 		// Select Slider
 		if ( !empty( $featuredslider ) ) {
 			catcheverest_post_sliders();
@@ -623,6 +625,8 @@ function catcheverest_slider_display() {
 		}
 	endif;	
 }
+endif; // catcheverest_slider_display
+
 add_action( 'catcheverest_before_main', 'catcheverest_slider_display', 10 );
 
 
@@ -633,15 +637,15 @@ if ( ! function_exists( 'catcheverest_homepage_headline' ) ) :
  * @uses catcheverest_before_main action to add it in the header
  */
 function catcheverest_homepage_headline() { 
-	//delete_transient( 'catcheverest_homepage_headline' );
-	
 	// Getting data from Theme Options
-	global $catcheverest_options_settings;
+	global $post, $catcheverest_options_settings;
    	$options = $catcheverest_options_settings;
 	$disable_headline = $options[ 'disable_homepage_headline' ];
 	$disable_subheadline = $options[ 'disable_homepage_subheadline' ];
     
 	 if ( is_front_page() && ( $disable_headline == "0" || $disable_subheadline == "0" ) ) { 
+		
+		//delete_transient( 'catcheverest_homepage_headline' );
 		
 		if ( !$catcheverest_homepage_headline = get_transient( 'catcheverest_homepage_headline' ) ) {
 			
@@ -866,7 +870,7 @@ endif; // catcheverest_homepage_featured_content
  */
 function catcheverest_homepage_featured_display() { 	
 	// Getting data from Theme Options
-	global $catcheverest_options_settings;
+	global $post, $catcheverest_options_settings;
    	$options = $catcheverest_options_settings;
 	$disable_homepage_featured = $options[ 'disable_homepage_featured' ];
 	
@@ -998,7 +1002,8 @@ function catcheverest_social_networks() {
 						$options[ 'social_wordpress' ],
 						$options[ 'social_rss' ],
 						$options[ 'social_delicious' ],
-						$options[ 'social_lastfm' ]
+						$options[ 'social_lastfm' ],
+						$options[ 'social_instagram' ]
 					);
 	$flag = 0;
 	if( !empty( $elements ) ) {
@@ -1110,6 +1115,11 @@ function catcheverest_social_networks() {
 			if ( !empty( $options[ 'social_lastfm' ] ) ) {
 				$catcheverest_social_networks .=
 					'<li class="lastfm"><a href="'.esc_url( $options[ 'social_lastfm' ] ).'" title="'.sprintf( esc_attr__( '%s on Last.fm', 'catcheverest' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Last.fm </a></li>';
+			}	
+			//Instagram
+			if ( !empty( $options[ 'social_instagram' ] ) ) {
+				$catcheverest_social_networks .=
+					'<li class="instagram"><a href="'.esc_url( $options[ 'social_instagram' ] ).'" title="'.sprintf( esc_attr__( '%s on Instagram', 'catcheverest' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Instagram </a></li>';
 			}				
 	
 			$catcheverest_social_networks .='

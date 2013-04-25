@@ -486,7 +486,7 @@ function catcheverest_theme_options_do_page() {
                             <table class="form-table">
                                 <tbody>
                                     <tr>                            
-                                        <th scope="row"><?php _e( 'Enable Latest Posts or Page?', 'catcheverest' ); ?></th>
+                                        <th scope="row"><?php _e( 'Enable Latest Posts?', 'catcheverest' ); ?></th>
                                         <input type='hidden' value='0' name='catcheverest_options[enable_posts_home]'>
                                         <td><input type="checkbox" id="headerlogo" name="catcheverest_options[enable_posts_home]" value="1" <?php checked( '1', $options['enable_posts_home'] ); ?> /> <?php _e( 'Check to Enable', 'catcheverest'); ?></td>
                                     </tr>
@@ -531,7 +531,7 @@ function catcheverest_theme_options_do_page() {
                         <div class="option-content inside">
                             <table class="form-table">  
                                 <tr>
-                                    <th scope="row"><label><?php _e( 'Enable Sidebar', 'catcheverest' ); ?></label></th>
+                                    <th scope="row"><label><?php _e( 'Enable Slider', 'catcheverest' ); ?></label></th>
                                     <td>
                                         <label title="enable-slider-homepager" class="box">
                                         <input type="radio" name="catcheverest_options[enable_slider]" id="enable-slider-homepage" <?php checked($options['enable_slider'], 'enable-slider-homepage') ?> value="enable-slider-homepage"  />
@@ -713,6 +713,11 @@ function catcheverest_theme_options_do_page() {
                                 <tr>
                                     <th scope="row"><h4><?php _e( 'Last.fm', 'catcheverest' ); ?> </h4></th>
                                     <td><input type="text" size="45" name="catcheverest_options[social_lastfm]" value="<?php echo esc_url( $options[ 'social_lastfm' ] ); ?>" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><h4><?php _e( 'Instagram', 'catcheverest' ); ?></h4></th>
+                                    <td><input type="text" size="45" name="catcheverest_options[social_instagram]" value="<?php echo esc_url( $options[ 'social_instagram' ] ); ?>" />
                                     </td>
                                 </tr>
                             </tbody>
@@ -996,6 +1001,9 @@ function catcheverest_theme_options_validate( $options ) {
 	}	
 	if( isset( $input[ 'social_lastfm' ] ) ) {
 		$input_validated[ 'social_lastfm' ] = esc_url_raw( $input[ 'social_lastfm' ] );
+	}	
+	if( isset( $input[ 'social_instagram' ] ) ) {
+		$input_validated[ 'social_instagram' ] = esc_url_raw( $input[ 'social_instagram' ] );
 	}	
 		
 	//Webmaster Tool Verification

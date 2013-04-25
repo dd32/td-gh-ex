@@ -56,9 +56,7 @@ Version 0.1.2.2
 
 Version 0.1.2.3
 * Fixed header css when Show header text with your image is disable in Custom Header
-* Fixed More Tag to be kept empty as well. This fixed the problem in the server where Theme Option was not being saved.
-
-Version 0.1.3
+* Fixed More Tag to be kept empty as well. This fixed the problem in the server where Theme Option was not being saved.FeaVersion 0.1.3
 * Added Homepage Featured Content Headline
 * Added Polish translation pl_PL.po and pl_PL.mo
 
@@ -83,3 +81,8 @@ version 0.1.5
 
 version 0.1.5.1
 * Fixed featured post slider option issue on homepage only
+
+version 0.1.5.2
+* Fixed typo error in Theme Options => Featured Post Slider
+* Deleted unused catchbox-menu.js and catchbox-menu.min.js
+* Added Instagram Social Icon
