@@ -16,14 +16,6 @@
 // include plugin.php to use is_plugin_active() condition
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
-// Set options function
-function cyberchimps_option( $name = false, $subname = false ){
-	$options = get_option( 'cyberchimps_options' );
-	if( $name ) {
-		$value = $options[$name];
-		return $value;
-	}
-}
 if ( ! function_exists( 'cyberchimps_get_option' ) ) {
 
 	/**
@@ -119,26 +111,38 @@ add_action('woocommerce_after_main_content', 'cyberchimps_wrapper_end', 10);
 if( ! function_exists( 'cyberchimps_wrapper_start' ) ) {
  
 	function cyberchimps_wrapper_start() { ?>
-	  <div id="container" <?php cyberchimps_filter_container_class(); ?>>
+	  <div id="cc_woocommerce" class="container-full-width">
+	    
+	    <div class="container">
+	      
+	      <div class="container-fluid">
+	        
+	         <div id="container" <?php cyberchimps_filter_container_class(); ?>>
 		
-			<?php do_action( 'cyberchimps_before_content_container'); ?>
-		
-				<div id="content" <?php cyberchimps_filter_content_class(); ?>>
-			
-					<?php do_action( 'cyberchimps_before_content');
+      			<?php do_action( 'cyberchimps_before_content_container'); ?>
+      		
+      				<div id="content" <?php cyberchimps_filter_content_class(); ?>>
+      			
+      					<?php do_action( 'cyberchimps_before_content');
 	}
 }
 
 if( ! function_exists( 'cyberchimps_wrapper_end' ) ) {
  
 	function cyberchimps_wrapper_end() { ?>
-	  			<?php do_action( 'cyberchimps_after_content'); ?>
-			
-				</div><!-- #content -->
-		
-			<?php do_action( 'cyberchimps_after_content_container'); ?>
-			
-		</div><!-- #container .row-fluid-->
+      	  			<?php do_action( 'cyberchimps_after_content'); ?>
+      			
+      				</div><!-- #content -->
+      		
+      			<?php do_action( 'cyberchimps_after_content_container'); ?>
+      			
+      		</div><!-- #container .row-fluid-->
+      		
+    		</div><!-- container fluid -->
+    		
+  		</div><!-- conatiner -->
+  		
+		</div><!-- container full width -->
 	<?php
 	}
 }
@@ -405,7 +409,7 @@ function cyberchimps_posted_on() {
 	if( is_single() ) {
 		$show_date = ( cyberchimps_get_option( 'single_post_byline_date', 1 ) ) ? cyberchimps_get_option( 'single_post_byline_date', 1 ) : false;
 		$show_author = ( cyberchimps_get_option( 'single_post_byline_author', 1 ) ) ? cyberchimps_get_option( 'single_post_byline_author', 1 ) : false; 
-		$show_categories = ( cyberchimps_get_option( 'single_post_byline_categories', 1 ) ) ? cyberchimps_option( 'single_post_byline_categories', 1 ) : false; 
+		$show_categories = ( cyberchimps_get_option( 'single_post_byline_categories', 1 ) ) ? cyberchimps_get_option( 'single_post_byline_categories', 1 ) : false; 
 	}
 	elseif( is_archive() ) {
 		$show_date = ( cyberchimps_get_option( 'archive_post_byline_date', 1 ) ) ? cyberchimps_get_option( 'archive_post_byline_date', 1 ) : false;  
@@ -424,7 +428,7 @@ function cyberchimps_posted_on() {
 		esc_attr( get_the_date( 'c' ) ),
 		( $show_date ) ? esc_html( get_the_date() ) : '',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by', 'cyberchimps_core' ) . ' %s', get_the_author() ) ),
+		esc_attr( sprintf( __( 'View all posts by %s', 'cyberchimps_core' ), get_the_author() ) ),
 		( $show_author ) ? esc_html( get_the_author() ) : '',
 		( $show_date ) ? __( 'Posted on ', 'cyberchimps_core' ) : '',
 		( $show_author ) ? __( ' by ', 'cyberchimps_core' ) : '',
@@ -796,8 +800,8 @@ function cyberchimps_magazine_post_wide( $length ) {
 // more text for search results excerpt
 function cyberchimps_search_excerpt_more( $more ){
 	global $post;
-	if( cyberchimps_option( 'search_post_read_more' ) != '' ){
-		$more = '<p><a href="'. get_permalink($post->ID) . '">'.cyberchimps_option( 'search_post_read_more' ).'</a></p>';
+	if( cyberchimps_get_option( 'search_post_read_more' ) != '' ){
+		$more = '<p><a href="'. get_permalink($post->ID) . '">'.cyberchimps_get_option( 'search_post_read_more' ).'</a></p>';
 		return $more;
 	}
 	else {
@@ -809,8 +813,8 @@ function cyberchimps_search_excerpt_more( $more ){
 // excerpt length for search results
 function cyberchimps_search_excerpt_length( $length ){
 	global $post;
-	if( cyberchimps_option( 'search_post_excerpt_length' ) != '' ) {
-		$length = cyberchimps_option( 'search_post_excerpt_length' );
+	if( cyberchimps_get_option( 'search_post_excerpt_length' ) != '' ) {
+		$length = cyberchimps_get_option( 'search_post_excerpt_length' );
 		return $length;
 	}
 	else {
@@ -822,8 +826,8 @@ function cyberchimps_search_excerpt_length( $length ){
 //For archive posts
 function cyberchimps_archive_excerpt_more( $more ){
 	global $post;
-	if( cyberchimps_option( 'blog_read_more_text' ) != '' ){
-		$more = '<p><a class="excerpt-more archive-excerpt" href="'. get_permalink($post->ID) . '">'.cyberchimps_option( 'blog_read_more_text' ).'</a></p>';
+	if( cyberchimps_get_option( 'blog_read_more_text' ) != '' ){
+		$more = '<p><a class="excerpt-more archive-excerpt" href="'. get_permalink($post->ID) . '">'.cyberchimps_get_option( 'blog_read_more_text' ).'</a></p>';
 		return $more;
 	}
 	else {
@@ -838,8 +842,8 @@ if( cyberchimps_get_option( 'archive_post_excerpts', 0 ) != 0 ){
 //For blog posts
 function cyberchimps_blog_excerpt_more( $more ){
 	global $post;
-	if( cyberchimps_option( 'blog_read_more_text' ) != '' ){
-		$more = '<p><a class="excerpt-more blog-excerpt" href="'. get_permalink($post->ID) . '">'.cyberchimps_option( 'blog_read_more_text' ).'</a></p>';
+	if( cyberchimps_get_option( 'blog_read_more_text' ) != '' ){
+		$more = '<p><a class="excerpt-more blog-excerpt" href="'. get_permalink($post->ID) . '">'.cyberchimps_get_option( 'blog_read_more_text' ).'</a></p>';
 		return $more;
 	}
 	else {
@@ -858,7 +862,7 @@ function manual_excerpt_read_more_link($output) {
 
 	global $post;
 
-	$linktext = cyberchimps_option( 'blog_read_more_text' );
+	$linktext = cyberchimps_get_option( 'blog_read_more_text' );
 	$linktext = $linktext == '' ? 'Read More' : $linktext;
 	
 	if(!empty($post->post_excerpt))
@@ -870,8 +874,8 @@ add_filter('the_excerpt', 'manual_excerpt_read_more_link');
 
 function cyberchimps_blog_excerpt_length( $length ) {
 	global $post;
-	if( cyberchimps_option( 'blog_excerpt_length' ) != '' ) {
-		$length = cyberchimps_option( 'blog_excerpt_length' );
+	if( cyberchimps_get_option( 'blog_excerpt_length' ) != '' ) {
+		$length = cyberchimps_get_option( 'blog_excerpt_length' );
 		return $length;
 	}
 	else {
@@ -997,7 +1001,7 @@ function cyberchimps_options_help_text() {
 	$text .= 	'<div class="row-fluid">
 						<div class="span6">
 						<a href="'. apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' ). '" title="'. apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' ). '">
-						<div class="cc_help_upgrade_bar">'. sprintf( __( 'Upgrade to', 'cyberchimps_core' ) . ' %1$s', apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' ) ) .'</div>
+						<div class="cc_help_upgrade_bar">'. sprintf( __( 'Upgrade to %1$s', 'cyberchimps_core' ), apply_filters( 'cyberchimps_upgrade_pro_title', 'CyberChimps Pro' ) ) .'</div>
 						</a>
 						</div>
 						</div>
