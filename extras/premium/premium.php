@@ -19,6 +19,7 @@ add_action( 'admin_menu', 'siteorigin_premium_admin_menu' );
  */
 function siteorigin_premium_page_render() {
 	$theme = basename( get_template_directory() );
+	define('SITEORIGIN_PREMIUM_SUPPORTED_COST', 10);
 
 	if ( isset( $_GET['action'] ) ) $action = $_GET['action'];
 	else $action = 'view';
@@ -32,13 +33,7 @@ function siteorigin_premium_page_render() {
 				<div class="wrap" id="theme-upgrade">
 					<h2><?php _e( 'Premium Upgrade', 'siteorigin' ) ?></h2>
 					<p>
-						<?php
-						printf(
-							__( "There's a premium version of %s available, <a href='%s'>find out more</a>.", 'siteorigin' ),
-							ucfirst( $theme ),
-							'http://siteorigin.com/premium/' . $theme . '/'
-						);
-						?>
+						<?php printf(__( "There's a premium version of %s coming soon.", 'siteorigin' ),ucfirst( $theme )); ?>
 					</p>
 				</div>
 				<?php
@@ -75,8 +70,8 @@ function siteorigin_premium_page_render() {
 				<?php if ( isset( $premium['buy_url'] ) ) : ?>
 				<p class="download">
 					<span class="buy-button-wrapper">
-						<a href="<?php echo esc_url( $premium['buy_url'] ) ?>" class="buy-button">
-							<span><?php _e('Buy Upgrade', 'siteorigin') ?></span><em><?php echo $premium['buy_price'] ?></em>
+						<a href="<?php echo esc_url( $premium['buy_url'] ) ?>" class="buy-button <?php echo !empty($premium['buy_url_supported']) ? 'has-support-choices' : '' ?>">
+							<span><?php _e('Buy Upgrade', 'siteorigin') ?></span><em><?php echo '$'.$premium['buy_price'] ?></em>
 						</a>
 					</span>
 					<?php if ( isset( $premium['buy_message_1'] ) ) : ?><span class="info"><?php echo $premium['buy_message_1'] ?></span><?php endif; ?>
@@ -96,12 +91,12 @@ function siteorigin_premium_page_render() {
 						<div class="clear"></div>
 					<?php endforeach; endif; ?>
 				</div>
-
+				
 				<?php if ( isset( $premium['buy_url'] ) ) : ?>
 				<p class="download">
 					<span class="buy-button-wrapper">
-						<a href="<?php echo esc_url( $premium['buy_url'] ) ?>" class="buy-button">
-							<span><?php _e('Buy Upgrade', 'siteorigin') ?></span><em><?php echo $premium['buy_price'] ?></em>
+						<a href="<?php echo esc_url( $premium['buy_url'] ) ?>" class="buy-button <?php echo !empty($premium['buy_url_supported']) ? 'has-support-choices' : '' ?>">
+							<span><?php _e('Buy Upgrade', 'siteorigin') ?></span><em><?php echo '$'.$premium['buy_price'] ?></em>
 						</a>
 					</span>
 					<?php if ( isset( $premium['buy_message_2'] ) ) : ?><span class="info"><?php echo $premium['buy_message_2'] ?></span><?php endif; ?>
@@ -123,10 +118,67 @@ function siteorigin_premium_page_render() {
 						<?php endforeach; ?>
 					</ul>
 				<?php endif; ?>
+
+				<?php if(!empty($premium['buy_url_supported'])) : ?>
+					<div id="support-choice">
+						<h2><?php _e('What Level of Support Do You Need?', 'siteorigin') ?></h2>
+
+						<div class="support-price-table">
+							<div class="column column-standard">
+								<div class="title-wrapper">
+									<div class="title">
+										<h3><?php echo '$' . ( $premium['buy_price'] ) ?></h3>
+									</div>
+								</div>
+
+								<div class="feature"><strong><?php _e('Premium theme with lifetime updates', 'siteorigin') ?></strong></div>
+								<div class="feature"><?php _e('Standard email support', 'siteorigin') ?></div>
+								<div class="feature"><?php _e('1-2 day response time', 'siteorigin') ?></div>
+								<div class="feature"><?php _e('Theme setup support', 'siteorigin') ?></div>
+								<div class="feature"><?php _e('Help from SiteOrigin support staff', 'siteorigin') ?></div>
+								<div class="feature"><?php _e('90 days of support', 'siteorigin') ?></div>
+
+
+								<div class="buy-wrapper">
+									<a href="<?php echo esc_url($premium['buy_url']) ?>" class="buy-button"><?php _e('Standard Support', 'siteorigin') ?></a>
+								</div>
+							</div>
+
+							<div class="column column-recommended">
+								<div class="recommended"><?php _e('Recommended', 'siteorigin') ?></div>
+								<div class="title-wrapper">
+									<div class="title">
+										<h3><?php echo '$' . ( SITEORIGIN_PREMIUM_SUPPORTED_COST + $premium['buy_price'] ) ?></h3>
+									</div>
+								</div>
+
+								<div class="feature"><strong><?php _e('Premium theme with lifetime updates', 'siteorigin') ?></strong></div>
+								<div class="feature"><?php _e('<strong>Fast</strong> email support', 'siteorigin') ?></div>
+								<div class="feature"><?php _e('<strong>4hr response</strong> during <abbr title="9am-6pm, Monday-Friday GMT 2+">office hours</a>', 'siteorigin') ?></div>
+								<div class="feature"><?php _e('<strong>Basic customization</strong> and setup support', 'siteorigin') ?></div>
+								<div class="feature"><?php _e('Help from our <strong>WordPress developers</strong>', 'siteorigin') ?></div>
+								<div class="feature"><?php _e('A <strong>full year</strong> of theme support', 'siteorigin') ?></div>
+
+								<div class="buy-wrapper">
+									<a href="<?php echo esc_url($premium['buy_url_supported']) ?>" class="buy-button"><?php _e('Priority Support', 'siteorigin') ?></a>
+								</div>
+							</div>
+						</div>
+
+						<p class="extra-info">
+							<?php printf(__('%1$s Premium includes email support.', 'siteorigin'), ucfirst($theme)) ?>
+							<?php printf(__("For an extra <strong>%s</strong>, you get faster replies and more detailed answers. Perfect if you're on a deadline.", 'siteorigin'), '$'.(SITEORIGIN_PREMIUM_SUPPORTED_COST)) ?>
+							<?php _e("You're free to use our premium themes on as many sites as you like.", 'siteorigin') ?>
+						</p>
+
+					</div>
+					<div id="support-choice-overlay"></div>
+				<?php endif; ?>
 			</div>
 			<div id="magnifier">
 				<div class="image"></div>
 			</div>
+			
 			<?php
 			break;
 
@@ -153,7 +205,6 @@ function siteorigin_premium_page_render() {
 				}
 			}
 
-
 			?>
 			<div class="wrap" id="theme-upgrade">
 				<h2><?php printf(__('Your Order Number Is [%s]', 'siteorigin'), get_option( $option_name )) ?></h2>
@@ -172,12 +223,12 @@ function siteorigin_premium_page_render() {
 						admin_url( 'themes.php' )
 					);
 					?>
-					<?php _e( 'This update will unlock all the premium features.', 'siteorigin' ) ?>
+					<?php _e( 'This update will add all the premium features.', 'siteorigin' ) ?>
 				</p>
 				<p class="submit">
 					<?php
 					$update_url = wp_nonce_url( admin_url( 'update.php?action=upgrade-theme&amp;theme=' . urlencode( $theme ) ), 'upgrade-theme_' . $theme );
-					$update_onclick = 'onclick="if ( confirm(\'' . esc_js( __( "Updating this theme will lose any customizations you have made. 'Cancel' to stop, 'OK' to update.", 'siteorigin' ) ) . '\') ) {return true;}return false;"';
+					$update_onclick = 'onclick="if ( confirm(\'' . esc_js( __( "Updating this theme will lose any code customizations (CSS, PHP, Javascript, etc) you have made to the free version. You will not lose your content, images or settings. 'Cancel' to stop, 'OK' to update.", 'siteorigin' ) ) . '\') ) {return true;}return false;"';
 					?>
 					<a href="<?php echo esc_url( $update_url ) ?>" <?php echo $update_onclick ?> class="button-primary">
 						<?php _e( 'Update Theme', 'siteorigin' ) ?>
@@ -205,29 +256,42 @@ function siteorigin_premium_page_render() {
  * @action admin_enqueue_scripts
  */
 function siteorigin_premium_admin_enqueue( $prefix ) {
-	$screen = get_current_screen();
+	// Ignore this for premium themes
+	if(defined( 'SITEORIGIN_IS_PREMIUM' )) return;
+	
 	if ( $prefix == 'appearance_page_premium_upgrade' ) {
 		wp_enqueue_script( 'siteorigin-magnifier', get_template_directory_uri() . '/extras/premium/js/magnifier.min.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
 		wp_enqueue_script( 'siteorigin-cycle', get_template_directory_uri() . '/extras/premium/js/cycle.min.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
 		wp_enqueue_script( 'siteorigin-premium-upgrade', get_template_directory_uri() . '/extras/premium/js/premium.min.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
+		
 		wp_enqueue_style( 'siteorigin-premium-upgrade', get_template_directory_uri() . '/extras/premium/css/premium.css', array(), SITEORIGIN_THEME_VERSION );
 	}
-	elseif ( ( $prefix == 'post.php' || $prefix == 'post-new.php' ) && !defined( 'SITEORIGIN_IS_PREMIUM' ) && !empty( $GLOBALS[ 'siteorigin_premium_teaser_post_types' ] ) ) {
-		// Enqueue if we're on a post page that has requested premium teasers.
-		$screen = get_current_screen();
-		if ( is_array( $GLOBALS[ 'siteorigin_premium_teaser_post_types' ] ) && in_array( $screen->id, $GLOBALS[ 'siteorigin_premium_teaser_post_types' ] ) ) {
-			wp_enqueue_style( 'siteorigin-premium-teaser', get_template_directory_uri() . '/extras/premium/css/premium-teaser.css', array(), SITEORIGIN_THEME_VERSION );
-			wp_enqueue_script( 'siteorigin-premium-teaser', get_template_directory_uri() . '/extras/premium/js/premium-teaser.min.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
-		}
-	}
-	elseif ( $screen->id == 'page' && get_theme_support( 'siteorigin-panels' ) !== false && !defined( 'SITEORIGIN_IS_PREMIUM' ) ) {
+
+	$screen = get_current_screen();
+	$teaser_required = false;
+	
+	// Check if this is a required post type
+	if( ( $prefix == 'post.php' || $prefix == 'post-new.php' ) && siteorigin_premium_teaser_get_support('post-type', $screen->id) ) $teaser_required = true;
+	if( siteorigin_premium_teaser_get_support('page', $prefix) || $prefix == 'appearance_page_theme_settings_page') $teaser_required = true;
+	
+	if($teaser_required){
 		wp_enqueue_style( 'siteorigin-premium-teaser', get_template_directory_uri() . '/extras/premium/css/premium-teaser.css', array(), SITEORIGIN_THEME_VERSION );
 		wp_enqueue_script( 'siteorigin-premium-teaser', get_template_directory_uri() . '/extras/premium/js/premium-teaser.min.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
 	}
-	elseif ( in_array( $prefix, apply_filters( 'siteorigin_premium_teaser_pages', array( 'appearance_page_theme_settings_page' ) ) ) ) {
-		// Enqueue the premium teasers if we're on the theme settings page
-		wp_enqueue_style( 'siteorigin-premium-teaser', get_template_directory_uri() . '/extras/premium/css/premium-teaser.css', array(), SITEORIGIN_THEME_VERSION );
-		wp_enqueue_script( 'siteorigin-premium-teaser', get_template_directory_uri() . '/extras/premium/js/premium-teaser.min.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
+
+	// Enqueue the page templates teaser, which works slightly differently
+	if( siteorigin_premium_teaser_get_support('page-templates') ){
+		wp_enqueue_script( 'siteorigin-premium-teaser-templates', get_template_directory_uri() . '/extras/premium/js/premium-teaser-templates.min.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
+		
+		wp_localize_script( 'siteorigin-premium-teaser-templates', 'siteoriginTeaserTemplates' , array(
+			'code' => '<p>'.siteorigin_premium_teaser(
+				__('Get Additional Templates', 'siteorigin'),
+				array(
+					'description' => sprintf(__('%s Premium includes additional templates', 'siteorigin'), ucfirst(get_option('stylesheet')))
+				),
+				true
+			).'</p>'
+		) );
 	}
 }
 
@@ -250,7 +314,7 @@ function siteorigin_premium_teaser_post_types( $post_types ) {
 }
 
 function siteorigin_premium_call_function($callback, $param_array, $args = array()){
-	if(function_exists($callback)){
+	if(function_exists($callback) && defined('SITEORIGIN_IS_PREMIUM')){
 		call_user_func_array($callback, $param_array);
 	}
 	else{
@@ -272,9 +336,11 @@ function siteorigin_premium_call_function($callback, $param_array, $args = array
 	}
 }
 
-function siteorigin_premium_teaser($text, $args = null){
+function siteorigin_premium_teaser($text, $args = null, $return = false){
 	if(defined('SITEORIGIN_IS_PREMIUM')) return;
-
+	
+	if($return) ob_start();
+	
 	?>
 	<a class="siteorigin-premium-teaser" href="<?php echo admin_url( 'themes.php?page=premium_upgrade' ) ?>" target="_blank">
 		<em></em>
@@ -287,4 +353,67 @@ function siteorigin_premium_teaser($text, $args = null){
 		<div class="siteorigin-premium-teaser-description"><?php echo $args['description'] ?></div>
 	<?php
 	endif;
+	
+	if($return) return ob_get_clean();
 }
+
+/**
+ * Check if we support a specific type of teaser
+ * 
+ * @param $type
+ * @param $sub
+ * @return bool
+ */
+function siteorigin_premium_teaser_get_support($type, $sub = false){
+	if(defined('SITEORIGIN_IS_PREMIUM')) return false;
+
+	$teaser = get_theme_support( 'siteorigin-premium-teaser' );
+	if(empty($teaser)) return false;
+	$teaser = $teaser[0];
+	
+	// If we're teasing page templates, then include the page post type
+	if(empty($teaser['post-type'])) $teaser['post-type'] = array();
+	if(!empty($teaser['page-templates'])) $teaser['post-type'][] = 'page';
+	$teaser['post-type'] = array_unique($teaser['post-type']);
+
+	// Return the result
+	if(!empty($teaser[$type]) && is_array($teaser[$type]) && !empty($sub)){
+		return in_array($sub, $teaser[$type]);
+	}
+	else{
+		return !empty($teaser[$type]);
+	}
+}
+
+/**
+ * Enqueue scripts for the customizer
+ */
+function siteorigin_premium_teaser_customizer_enqueue(){
+	if(!siteorigin_premium_teaser_get_support('customizer')) return;
+	
+	wp_enqueue_style( 'siteorigin-premium-teaser', get_template_directory_uri() . '/extras/premium/css/premium-teaser.css', array(), SITEORIGIN_THEME_VERSION );
+	wp_enqueue_script( 'siteorigin-premium-teaser', get_template_directory_uri() . '/extras/premium/js/premium-teaser.min.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
+}
+add_action('customize_controls_enqueue_scripts', 'siteorigin_premium_teaser_customizer_enqueue');
+
+function siteorigin_premium_teaser_customizer(){
+	if(!siteorigin_premium_teaser_get_support('customizer')) return;
+	
+	/**
+	 * @var WP_Customize_Manager
+	 */
+	global $wp_customize;
+	$teaser_customizer = new SiteOrigin_Premium_Teaser_Customizer($wp_customize, 'siteorigin-premium-teaser');
+	$wp_customize->add_section($teaser_customizer);
+}
+add_action('customize_controls_init', 'siteorigin_premium_teaser_customizer', 100);
+
+if(class_exists('WP_Customize_Section')) :
+class SiteOrigin_Premium_Teaser_Customizer extends WP_Customize_Section{
+	function render() {
+		?><div class="siteorigin-premium-teaser-customizer-wrapper"><?php
+		siteorigin_premium_teaser(__('Get Additional Customizations', 'siteorigin'));
+		?></div><?php
+	}
+}
+endif;

@@ -1,16 +1,11 @@
 /*
-Http: //wpdev.dynalias.com/origami/wp-content/themes/origami/style.css?ver=trunk
-Version: 1.4.1
-*/
-
-/*
 Theme Name: Origami
 Theme URI: http://siteorigin.com/theme/origami
-Description: Origami is a simple, responsive media blogging theme that places strong emphasis on your content. It looks great on mobile devices, even the videos and galleries scale to fit small screens. The options panel is easy to understand with a minimal set of options. Origami includes a powerful drag and drop page builder for creating unlimited page layouts. So you can use Origami as a simple blog or a complete business website. 
+Description: Origami is a simple, responsive media blogging theme that places strong emphasis on your content. It looks great on mobile devices, even the videos and galleries scale to fit small screens. The options panel is easy to understand with a minimal set of options. Origami includes a powerful drag and drop page builder for creating unlimited page layouts. So you can use Origami as a simple blog or a complete business website.
 Tags: one-column, flexible-width, post-formats, custom-menu, theme-options, threaded-comments, translation-ready, photoblogging
 Author: SiteOrigin
 Author URI: http://siteorigin.com/
-Version: trunk
+Version: 1.4.10
 License: GPL v2.0
 License URI: license.txt
 */
@@ -514,7 +509,7 @@ h1.entry-title a {
 	margin-bottom: 20px;
 }
 
-.post .content.column-2 {
+.content-columns-2 .content {
 	-moz-column-count: 2;
 	-webkit-column-count: 2;
 	column-count: 2;
@@ -523,7 +518,7 @@ h1.entry-title a {
 	column-gap: 30px;
 }
 
-.post .content.column-3 {
+.content-columns-3 .content {
 	-moz-column-count: 3;
 	-webkit-column-count: 3;
 	column-count: 3;
@@ -532,7 +527,7 @@ h1.entry-title a {
 	column-gap: 30px;
 }
 
-.post .content.column-4 {
+.content-columns-4 .content {
 	-moz-column-count: 4;
 	-webkit-column-count: 4;
 	column-count: 4;
@@ -1229,7 +1224,7 @@ h1.archive-title {
 }
 
 .panel h3.widget-title {
-	font-size: 115%;
+	font-size: 125%;
 	margin-bottom: 15px;
 }
 
@@ -1330,9 +1325,9 @@ h1.archive-title {
 }
 
 .widget_icon-text .feature-icon img {
-	width: 100%;
 	height: auto;
 	
+	max-width: 100%;
 }
 
 .widget_icon-text .widget-text {

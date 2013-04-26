@@ -27,6 +27,7 @@ function siteorigin_settings_init( $theme_name = null ) {
 	add_action( 'siteorigin_adminbar', 'siteorigin_settings_adminbar' );
 
 	add_action( 'admin_enqueue_scripts', 'siteorigin_settings_enqueue_scripts' );
+	add_action( 'wp_enqueue_scripts', 'siteorigin_settings_enqueue_front_scripts' );
 }
 
 /**
@@ -64,8 +65,8 @@ function siteorigin_settings_render() {
 function siteorigin_settings_enqueue_scripts( $prefix ) {
 	if ( $prefix != 'appearance_page_theme_settings_page' ) return;
 
-	wp_enqueue_script( 'siteorigin-settings', get_template_directory_uri() . '/extras/settings/settings.min.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
-	wp_enqueue_style( 'siteorigin-settings', get_template_directory_uri() . '/extras/settings/settings.css', array(), SITEORIGIN_THEME_VERSION );
+	wp_enqueue_script( 'siteorigin-settings', get_template_directory_uri() . '/extras/settings/js/settings.min.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
+	wp_enqueue_style( 'siteorigin-settings', get_template_directory_uri() . '/extras/settings/css/settings.css', array(), SITEORIGIN_THEME_VERSION );
 
 	if(wp_script_is('wp-color-picker', 'registered')){
 		wp_enqueue_style( 'wp-color-picker' );
@@ -78,6 +79,16 @@ function siteorigin_settings_enqueue_scripts( $prefix ) {
 	
 	// This is for the media uploader
 	if ( function_exists( 'wp_enqueue_media' ) ) wp_enqueue_media();
+}
+
+function siteorigin_settings_enqueue_front_scripts(){
+	if( current_user_can('manage_options') && siteorigin_setting('general_hover_edit', true) ) {
+		wp_enqueue_style('siteorigin-settings-front', get_template_directory_uri().'/extras/settings/css/settings.front.css', array(), SITEORIGIN_THEME_VERSION);
+		wp_enqueue_script('siteorigin-settings-front', get_template_directory_uri() . '/extras/settings/js/settings.front.min.js', array('jquery'), SITEORIGIN_THEME_VERSION);
+		wp_localize_script('siteorigin-settings-front', 'siteoriginSettings', array(
+			'edit' => admin_url('themes.php?page=theme_settings_page'),
+		));
+	}
 }
 
 /**
@@ -176,14 +187,42 @@ function siteorigin_settings_add_teaser( $section, $id, $name, $args = array() )
  * @return mixed
  */
 function siteorigin_setting( $name , $default = null) {
-	if ( !is_null( $default ) && empty( $GLOBALS[ 'siteorigin_settings' ][ $name ] ) ) return $default;
-
+	$value = null;
+	
+	if ( !is_null( $default ) && ( !is_bool( $GLOBALS[ 'siteorigin_settings' ][ $name ] ) && empty( $GLOBALS[ 'siteorigin_settings' ][ $name ] ) ) ) {
+		return apply_filters('siteorigin_setting_'.$name, $default);
+	}
+	
 	if ( !isset( $GLOBALS[ 'siteorigin_settings' ][ $name ] ) ) {
 		trigger_error( sprintf( __( 'Calling undefined setting [%s]', 'siteorigin' ), $name ) );
-		return null;
+		$value = null;
 	}
-	else return $GLOBALS['siteorigin_settings'][ $name ];
+	else $value = $GLOBALS['siteorigin_settings'][ $name ];
+
+	return apply_filters('siteorigin_setting_'.$name, $value);
 }
+
+/**
+ * Adds the necessary classes to make a field editable
+ */
+function siteorigin_setting_editable($field){
+	if( current_user_can('manage_options') && siteorigin_setting('general_hover_edit', true) ) {
+		echo 'data-so-edit="'.$field.'"';
+	}
+}
+
+function siteorigin_setting_editable_option_field(){
+	siteorigin_settings_add_field('general', 'hover_edit', 'checkbox', __('Display Hover Edit Icon', 'portal'), array(
+		'description' => __('Display a small icon that makes quickly editing fields easy. This is only shown to admin users.', 'siteorigin'),
+	));
+}
+add_action('admin_init', 'siteorigin_setting_editable_option_field', 100);
+
+function siteorigin_setting_editable_option_default($defaults){
+	$defaults['general_hover_edit'] = true;
+	return $defaults;
+}
+add_filter('siteorigin_theme_default_settings', 'siteorigin_setting_editable_option_default');
 
 /**
  * Render a settings field.
@@ -263,16 +302,23 @@ function siteorigin_settings_field( $args ) {
 				$src = wp_get_attachment_image_src($current, 'thumbnail');
 				if(empty($src)) $src = wp_get_attachment_image_src($current, 'thumbnail', true);
 			}
+			else{
+				$src = array('', 0, 0);
+			}
+			
+			$choose_title = empty($args['choose']) ? __('Choose Media', 'siteorigin') : $args['choose'];
+			$update_button = empty($args['update']) ? __('Set Media', 'siteorigin') : $args['update'];
+			
 			?>
 				<div class="media-field-wrapper">
 					<div class="current">
 						<div class="thumbnail-wrapper">
 							<img src="<?php echo esc_url($src[0]) ?>" class="thumbnail" <?php if(empty($post)) echo "style='display:none'" ?> />
 						</div>
-						<div class="title"><?php echo esc_attr($post->post_title) ?></div>
+						<div class="title"><?php if(!empty($post)) echo esc_attr($post->post_title) ?></div>
 					</div>
-					<a href="#" class="media-upload-button">
-						<?php _e('Select Media', 'siteorigin') ?>
+					<a href="#" class="media-upload-button" data-choose="<?php echo esc_attr($choose_title) ?>" data-update="<?php echo esc_attr($update_button) ?>">
+						<?php echo esc_html($choose_title) ?>
 					</a>
 
 					<a href="#" class="media-remove-button"><?php _e('Remove', 'siteorigin') ?></a>
@@ -283,7 +329,7 @@ function siteorigin_settings_field( $args ) {
 			break;
 		
 		case 'teaser' :
-			$theme = basename( get_template_directory() );
+			$theme = get_option( 'template' );
 			?>
 			<a class="premium-teaser siteorigin-premium-teaser" href="<?php echo admin_url( 'themes.php?page=premium_upgrade' ) ?>" target="_blank">
 				<em></em>
@@ -321,13 +367,24 @@ function siteorigin_settings_validate( $values ) {
 	foreach ( $wp_settings_fields['theme_settings'] as $section_id => $fields ) {
 		foreach ( $fields as $field_id => $field ) {
 			$name = $section_id . '_' . $field_id;
-
-			if ( $field['args']['type'] == 'checkbox' ) {
-				$values[ $name ] = !empty( $values[ $name ] );
-			} elseif ( $field['args']['type'] == 'number' ) {
-				$values[ $name ] = isset( $values[ $name ] ) ? intval( $values[ $name ] ) : $GLOBALS['siteorigin_settings_defaults'][ $name ];
+			
+			switch($field['args']['type']){
+				case 'checkbox' :
+					// Only allow true or false values
+					$values[ $name ] = !empty( $values[ $name ] );
+					break;
+				
+				case 'number' :
+					// Only allow integers
+					$values[ $name ] = isset( $values[ $name ] ) ? intval( $values[ $name ] ) : $GLOBALS['siteorigin_settings_defaults'][ $name ];
+					break;
+				
+				case 'media' :
+					// Only allow valid attachment post ids
+					$attachment = get_post( $values[ $name ] );
+					if(empty($attachment) || $attachment->post_type != 'attachment') $values[ $name ] = '';
 			}
-
+			
 			if ( !isset( $current[ $name ] ) || ( isset( $values[ $name ] ) && isset( $current[ $name ] ) && $values[ $name ] != $current[ $name ] ) ) $changed = true;
 
 			// See if this needs any special validation
@@ -376,7 +433,7 @@ function siteorigin_settings_theme_help(){
 	$text = sprintf(
 		__( "Read %s's <a href='%s'>theme documentation</a> for help with these settings.", 'siteorigin' ),
 		ucfirst($theme_name),
-		'http://support.siteorigin.com/'.$theme_name.'/'
+		'http://siteorigin.com/theme/'.$theme_name.'/?action=docs'
 	); 
 	
 	$screen->add_help_tab( array(
@@ -398,10 +455,6 @@ function siteorigin_settings_media_view_strings($strings, $post){
 	unset($strings['insertFromUrlTitle']);
 	
 	$strings['insertIntoPost'] = __('Set Media File', 'siteorigin');
-	
-	//var_dump($strings);
-	//die();
-	
 	
 	return $strings;
 }
