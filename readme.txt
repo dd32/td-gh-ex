@@ -1,4 +1,4 @@
-=== Sutra 2.1.1 ===
+=== Sutra 2.1.2 ===
 Contributors:  maikunari
 Donate link:  http://maikunari.com
 Tags: two-columns, light, featured-images, fixed-width, custom-menu
@@ -62,6 +62,12 @@ Internet Explorer 8,9,10
 
 
 === Release Notes ===
+
+Version 2.1.2
+- added input[type="email"] for updated wpcf7
+- updated CSS for pagination, removed height fix for multiple lines
+- added transparency to menu a
+- updated demo site address to sutra.systematick.com
 
 Version 2.1.1
 - Removed .git directory
