@@ -1,11 +1,11 @@
 <?php
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.4.8' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.4.9' );
 define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://siteorigin.com' );
 
 // Include premium functions if it exists
 if(file_exists(get_template_directory().'/premium/functions.php')){
-	// include get_template_directory().'/premium/functions.php';
+	include get_template_directory().'/premium/functions.php';
 }
 
 // Include all the SiteOrigin extras
@@ -218,7 +218,7 @@ if(!function_exists('origami_google_webfonts')) :
  */
 function origami_enqueue_google_webfonts(){
 	if(!get_header_image()){
-		// Enqueue the logo font as well
+		// Enqueue the logo font as well (Terminal Dosis 200)
 		wp_enqueue_style('google-webfonts', 'http://fonts.googleapis.com/css?family=Terminal+Dosis:200,400');
 	}
 	else{
