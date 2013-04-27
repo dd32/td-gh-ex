@@ -4,7 +4,7 @@
 
 					<article id="post-0" class="post error-404 page-not-found">
 						<header class="entry-header page-header">
-							<h1 class="entry-title"><?php _e( 'Not found - error 404', 'activetab' ); ?></h1>
+							<h1 class="entry-title"><?php _e( 'Page not found. Error 404', 'activetab' ); ?></h1>
 						</header><!-- /.entry-header -->
 
 						<div class="entry-content">

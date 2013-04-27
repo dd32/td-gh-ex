@@ -19,7 +19,6 @@
 										<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
 										   title="<?php echo $title_desc ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 									<?php endif; ?>
-									<a href="<?php bloginfo('rss2_url'); ?>" class="rss-feed-link rss-feed-link-posts" title="<?php _e( 'posts rss feed', 'activetab' ); ?>"></a>
 								</h4>
 								<?php /*
                                     bloginfo('comments_rss2_url'); // all comments rss feed

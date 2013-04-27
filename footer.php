@@ -30,16 +30,25 @@
 
 		<div class="span4">
 			<div class="site-footer-right text-right">
-			<?php if( is_home() || is_front_page() ) : ?>
-				<?php /*
-				it is completely optional, but if you like the theme I would appreciate it if you keep the credit link at the bottom
-				it will be shown only on the homepage
-                */ ?>
-				<?php _e( 'powered by', 'activetab' ); ?>
-				<a href="http://wordpress.org/" title="WordPress CMS" rel="generator"><?php _e( 'WordPress', 'activetab' ); ?></a>
-				<?php _e( '&', 'activetab' ); ?>
-				<a href="http://web-profile.com.ua/wordpress/themes/activetab/" title="activetab WordPress theme" rel="designer"><?php _e( 'activetab', 'activetab' ); ?></a>
-			<?php endif; ?>
+
+				<?php if ( is_home() || is_front_page() ) : ?>
+					<?php /*
+					it is completely optional, but if you like the theme I would appreciate it if you keep the credit link at the bottom
+					it will be shown only on the homepage
+	                */ ?>
+					<?php _e( 'powered by', 'activetab' ); ?>
+					<a href="http://wordpress.org/" title="WordPress CMS" rel="generator"><?php _e( 'WordPress', 'activetab' ); ?></a>,
+					<a href="http://web-profile.com.ua/wordpress/themes/activetab/" title="activetab WordPress theme" rel="designer"><?php _e( 'activetab', 'activetab' ); ?></a>,
+					<a href="http://twitter.github.io/bootstrap/" title="web-framework"><?php _e( 'Bootstrap', 'activetab' ); ?></a>,
+					<?php //_e( '&', 'activetab' ); // there is no place for & symbol ?>
+					<a href="http://glyphicons.com/" title="icons"><?php _e( 'Glyphicons', 'activetab' ); ?></a>
+				<?php endif; ?>
+
+				<?php if ( ! is_home() && ! is_front_page() ) : // show rss links everywhere except homepage ?>
+					<a href="<?php bloginfo( 'rss2_url' ); ?>" class="rss-feed-link rss-feed-link-posts" title="<?php _e( 'posts rss feed', 'activetab' ); ?>"></a>
+					<a href="<?php bloginfo( 'comments_rss2_url' ); ?>" class="rss-feed-link rss-feed-link-comments" title="<?php _e( 'comments rss feed', 'activetab' ); ?>"></a>
+				<?php endif; ?>
+
 			</div> <!-- /.site-footer-right -->
 		</div> <!-- /.span4 -->
 

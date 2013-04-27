@@ -5,7 +5,7 @@ if ( ! isset( $content_width ) ){
 }
 
 
-$activetab_version = '0.2.6';
+$activetab_version = '0.2.7';
 
 
 if ( ! function_exists( 'activetab_enqueue_scripts_and_styles' ) ) :
@@ -24,8 +24,8 @@ if ( ! function_exists( 'activetab_enqueue_scripts_and_styles' ) ) :
 	    wp_register_style( 'activetab-bootstrap', get_template_directory_uri() . '/bootstrap/css/bootstrap.css', array(), $activetab_version, 'all' );
 	    //wp_register_style( 'activetab-bootstrap-responsive', get_template_directory_uri() . '/bootstrap/css/bootstrap-responsive.css', array( 'activetab-bootstrap' ), $activetab_version, 'all' );
 		//wp_enqueue_style( 'activetab-bootstrap-responsive' );
-		wp_register_style( 'activetab-style', get_stylesheet_directory_uri() . '/style.css', array( 'activetab-bootstrap' ), $activetab_version, 'all' );
-	    wp_enqueue_style( 'activetab-style' );
+		wp_register_style( 'activetab-style', get_stylesheet_uri(), array( 'activetab-bootstrap' ), $activetab_version, 'all' ); // activetab-bootstrap-responsive
+	    wp_enqueue_style( 'activetab-style' ); // get_stylesheet_directory_uri() . '/style.css'
 	}
 	add_action( 'wp_enqueue_scripts', 'activetab_enqueue_scripts_and_styles' );
 endif;
