@@ -1,4 +1,5 @@
-jQuery(function($){ // wait while jQuery loads and document-ready
+jQuery(function($){ // wait while jQuery loads (document-ready)
+
 	$('.nav-menu ul.sub-menu').parent('li').addClass('has-subpages'); // add class for adding arrow
 	$('.nav-menu ul.children').parent('li').addClass('has-subpages'); // add class for adding arrow
 
@@ -13,5 +14,12 @@ jQuery(function($){ // wait while jQuery loads and document-ready
 	});
 
 	$('input[type=submit], input[type=image], input[type=button], input[type=reset], button').addClass('btn');
+
+	// fix when long menus overlaps site content
+	var menu_height = $('.navbar').height();
+	if( menu_height > 50 ) { // if there are more than one row of menu items
+		var margin_top_fix = menu_height + 20;
+		$('.site-wrapper').css('margin-top', margin_top_fix+'px');
+	}
 
 });

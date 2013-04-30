@@ -61,7 +61,7 @@
 							<aside id="archives-popular" class="widget widget_popular_entries">
 								<h4 class="widget-title"><?php _e( 'Popular posts', 'activetab' ); ?></h4>
 								<ul>
-									<?php // recent posts
+									<?php // 3 most popular posts ordered by comment count
 									$args = array(
 										'numberposts' => 3,
 										'post_status' => 'publish',
@@ -70,9 +70,9 @@
 										'order' => 'desc'
 									);
 									$recent_posts = get_posts( $args );
-									foreach( $recent_posts as $recent_post ) : setup_postdata( $recent_post ); ?>
-										<li><a href="<?php echo get_page_link( $recent_post->ID ); ?>"><?php echo $recent_post->post_title; ?></a></li>
-										<?php endforeach; ?>
+									foreach( $recent_posts as $recent_post ) : setup_postdata( $recent_post );
+										echo '<li><a href="' . esc_url( get_page_link( $recent_post->ID ) ) . '">' . $recent_post->post_title . '</a></li>';
+									endforeach; ?>
 								</ul>
 							</aside>
 
@@ -80,7 +80,7 @@
 							<aside id="archives" class="widget widget_recent_entries">
 								<h4 class="widget-title"><?php _e( 'Recent posts', 'activetab' ); ?></h4>
 								<ul>
-									<?php // recent posts
+									<?php // 3 most recent posts ordered by publish date
 									$args = array(
 										'numberposts' => 3,
 										'post_status' => 'publish',
@@ -89,9 +89,9 @@
 										'order' => 'desc'
 									);
 									$recent_posts = get_posts( $args );
-									foreach( $recent_posts as $recent_post ) : setup_postdata( $recent_post ); ?>
-										<li><a href="<?php echo get_page_link( $recent_post->ID ); ?>"><?php echo $recent_post->post_title; ?></a></li>
-									<?php endforeach; ?>
+									foreach( $recent_posts as $recent_post ) : setup_postdata( $recent_post );
+										echo '<li><a href="' . esc_url( get_page_link( $recent_post->ID ) ) . '">' . $recent_post->post_title . '</a></li>';
+									endforeach; ?>
 								</ul>
 							</aside>
 
@@ -100,22 +100,22 @@
 								<h4 class="widget-title"><?php _e( 'Categories', 'activetab' ); ?></h4>
 								<ul>
 									<?php
-									// http://codex.wordpress.org/Template_Tags/wp_list_categories
 									$cat_args = array(
-										'show_option_all'    => '',
-										'orderby'            => 'name',
-										'order'              => 'ASC',
-										'style'              => 'list',
-										'show_count'         => 1,
-										'hide_empty'         => 1,
+										'show_option_all' => '',
+										'orderby' => 'name',
+										'order' => 'ASC',
+										'style' => 'list',
+										'show_count' => 1,
+										'hide_empty' => 1,
 										'use_desc_for_title' => 1,
-										'child_of'           => 0,
-										'hierarchical'       => 1,
-										'title_li'           => '',
-										'number'             => null,
-										'depth'              => 0,
+										'child_of' => 0,
+										'hierarchical' => 1,
+										'title_li' => '',
+										'number' => null,
+										'depth' => 0,
 									);
-									wp_list_categories( $cat_args ); ?>
+									wp_list_categories( $cat_args ); // http://codex.wordpress.org/Template_Tags/wp_list_categories
+									?>
 								</ul>
 							</aside>
 

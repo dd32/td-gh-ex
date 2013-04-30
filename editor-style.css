@@ -1,6 +1,6 @@
 /*
 Theme Name: activetab
-Description: Used to style the TinyMCE editor.
+Description: Used to style the TinyMCE editor
 */
 
 @import url("../activetab/style.css");
@@ -58,7 +58,7 @@ hr {
 
 
 
-/* Tables */
+/* tables */
 table {
 	border: none !important;
 	border-bottom: 1px solid #ddd !important;
@@ -83,7 +83,7 @@ td {
 	padding: 6px 10px 6px 0;
 }
 
-/* Alignment */
+/* alignment */
 .alignleft {
 	display: inline;
 	float: left;
@@ -99,69 +99,4 @@ td {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-}
-
-/* Images */
-img[class*="wp-image-"] {
-	height: auto;
-	max-width: 97.5%;
-}
-img.size-full {
-	width: auto; /* Prevent stretching of full-size images in IE8 */
-}
-img.wp-smiley {
-	border: none;
-	margin-bottom: 0;
-	margin-top: 0;
-	padding: 0;
-}
-
-.wp-caption {
-	margin-top: 0.4em;
-}
-.wp-caption {
-	background: #eee;
-	border: none;
-	margin-bottom: 1.625em;
-	max-width: 96%;
-	padding: 9px;
-}
-.wp-caption img {
-	display: block;
-	margin: 5px auto 0 !important;
-	max-width: 98%;
-	border-color: #eee;
-}
-.wp-caption .wp-caption-text,
-.wp-caption-dd {
-	color: #666;
-	font-family: Georgia, serif !important;
-	font-size: 12px;
-	margin: 0 0 0.6em 0 !important;
-	padding: 0 0 5px 40px;
-	position: relative;
-	text-align: left;
-}
-.wp-caption .wp-caption-text:before {
-	color: #666;
-	content: '\2014';
-	font-size: 14px;
-	font-style: normal;
-	font-weight: bold;
-	margin-right: 5px;
-	position: absolute;
-	left: 10px;
-	top: 7px;
-}
-a:focus img[class*="wp-image-"],
-a:hover img[class*="wp-image-"],
-a:active img[class*="wp-image-"] {
-	background: #eee;
-	border-color: #bbb;
-}
-.wp-caption a:focus img,
-.wp-caption a:active img,
-.wp-caption a:hover img {
-	background: #fff;
-	border-color: #ddd;
 }
