@@ -1,9 +1,3 @@
-<?php
-/**
- * @package WordPress
- * @subpackage Aura
- */
- $options = get_option('aura_options'); ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"  "http://www.w3.org/TR/html4/strict.dtd">
 <!--[if IE 6]>
 <html id="ie6" <?php language_attributes(); ?>>
@@ -34,7 +28,7 @@
 <div id="head">
   <div id="head-container">
      <div id="logo"><a class="blogname" href="<?php echo esc_url( home_url() ); ?>"><?php echo bloginfo('name'); ?></a>
-     <div id="slogan">A fantastic theme.</div></div>
+     <div id="slogan"><?php echo bloginfo('description'); ?></div></div>
      <div id="nav">
 	     <ul>
 	     <?php wp_nav_menu( array('theme_location' => 'header-nav', 'depth' => -1, 'menu_class' => 'nav' )); ?>

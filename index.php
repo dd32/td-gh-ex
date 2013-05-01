@@ -1,9 +1,3 @@
-<?php 
-/**
- * @package WordPress
- * @subpackage Aura
- */
-?>
 
 <?php get_header(); ?>
 

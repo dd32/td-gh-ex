@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @package WordPress
- * @subpackage Aura
- */
-
 // Basic Setup
 
 add_editor_style();
@@ -15,7 +10,6 @@ wp_enqueue_script( 'comment-reply' );
 load_theme_textdomain( 'aura', get_template_directory() . '/languages' );
 if ( ! isset( $content_width ) ) $content_width = 700;
 
-locate_template( array( '/inc/nhp-options.php' ), true );
 
 add_theme_support( 'post-formats', array( 'aside', 'link', 'quote', 'image' ) );
 
