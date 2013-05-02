@@ -172,10 +172,11 @@ function icefit_settings_machine($options) {
 							<li>(Pro Only)<strong> Partners and/or Clients\' logos</strong> carousel</li>
 							<li>(Pro Only) <strong>Clients\' testimonials</strong> carousel</li>
 							<li>(Pro Only) <strong>Unlimited sidebars</strong></li>
+							<li>(Pro Only) <strong>600+ Webfonts</strong> to choose from</li>
 							<li>(Pro Only) One click setup <strong>AJAX contact form</strong></li>
 							<li>(Pro Only) <strong>Google Maps</strong> API v3 integration</li>
 							<li>(Pro Only) <strong>Pro dedicated support forum</strong> access</li>
-							<li><a href="http://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank">GPLv3 License</a> : Buy once, use as many time as you wish!</li>
+							<li><a href="http://www.gnu.org/licenses/" target="_blank">GPL License</a> : Buy once, use as many time as you wish!</li>
 							<li><strong>Cross-browsers support</strong>, optimized for IE8+, Firefox, Chrome, Safari and Opera (note: IE7 and older are no longer supported.)</li>
 							<li>Lifetime <strong>free updates</strong> and continued support for the <strong>latest WordPress versions</strong></li>
 							</ul>';

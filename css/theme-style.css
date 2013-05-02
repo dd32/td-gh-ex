@@ -8,8 +8,6 @@
 *
 */
 
-/* Dynamic */
-
 /* =WordPress Core
 -------------------------------------------------------------- */
 .alignnone {
@@ -134,7 +132,8 @@ a img.aligncenter {
 	border-bottom: 1px solid #EEE;
 	margin-bottom: 40px;
 	text-transform: uppercase;
-	font-weight: bold;	
+	font-family: 'Oswald', Helvetica, Arial, Verdana, sans-serif;
+	font-weight: bold;
 }
 
 #navbar > .menu-container {
@@ -268,6 +267,7 @@ h1.entry-title {
 	margin: 0 20px 40px 20px;
 	text-transform: uppercase;
 	width: 905px;
+	font-family: 'Oswald', Helvetica, Arial, Verdana, sans-serif;
 }
 
 #page-container > h1:first-child,
@@ -315,6 +315,7 @@ h1.entry-title {
     width: 65px;
     color: white;
     padding: 10px 0;
+    font-family: 'Oswald', Helvetica, Arial, Verdana, sans-serif;
 }
 
 .meta-date a,
@@ -345,6 +346,7 @@ h1.entry-title {
 	color: #ccc;
 	font-size: 13px;
 	padding: 10px 0;
+	font-family: 'Oswald', Helvetica, Arial, Verdana, sans-serif;
 }
 
 .meta-comments a,
@@ -374,6 +376,7 @@ h1.entry-title {
 	background: #333;
 	padding: 5px 0;
 	font-size: 12px;
+	font-family: 'Oswald', Helvetica, Arial, Verdana, sans-serif;
 }
 
 .editlink a,
@@ -402,6 +405,7 @@ h3.entry-title {
 }
 
 .post-category {
+	font-family: 'Oswald', Helvetica, Arial, Verdana, sans-serif;
 	text-transform: uppercase;
 	color: #707070;
 	font-size: 13px;
@@ -425,6 +429,7 @@ h3.entry-title {
     height: 30px;
     line-height: 30px;
     padding: 0 40px 0 0px;
+    font-family: 'Oswald', Helvetica, Arial, Verdana, sans-serif;
 }
 
 .read-more a,
@@ -451,6 +456,7 @@ h3.entry-title {
 	height: 30px;
     line-height: 30px;
 	background-repeat: no-repeat;
+	font-family: 'Oswald', Helvetica, Arial, Verdana, sans-serif;
 }
 
 .page_nav .previous {
@@ -502,6 +508,7 @@ h3.entry-title {
 }
 
 .single-post .tags {
+	font-family: 'Oswald', Helvetica, Arial, Verdana, sans-serif;
 	margin-top: 20px;
 }
 
@@ -527,6 +534,7 @@ h3.entry-title {
 .paged_nav {
 	margin-bottom: 20px;
 	line-height: 30px;
+	font-family: 'Oswald', Helvetica, Arial, Verdana, sans-serif;
 }
 
 .paged_nav > span,
@@ -562,6 +570,7 @@ h3.entry-title {
 	height: 30px;
     line-height: 30px;
 	background-repeat: no-repeat;
+	font-family: 'Oswald', Helvetica, Arial, Verdana, sans-serif;
 }
 
 .article_nav .previous {
@@ -623,6 +632,7 @@ h3.entry-title {
 .commentlist .comment-author {
 	line-height: 25px;
 	font-size: 16px;
+	font-family: 'Oswald', Helvetica, Arial, Verdana, sans-serif;
 }
 
 .commentlist .comment .comment-body .comment-author img {
@@ -644,6 +654,7 @@ h3.entry-title {
 .commentlist .commentmetadata {
 	font-size: 12px;
 	text-transform: uppercase;
+	font-family: 'Oswald', Helvetica, Arial, Verdana, sans-serif;
 }
 
 .commentlist .comment .comment-body p {
@@ -670,6 +681,7 @@ h3.entry-title {
     height: 30px;
     line-height: 30px;
     padding: 0 40px 0 0px;
+    font-family: 'Oswald', Helvetica, Arial, Verdana, sans-serif;
 }
 
 .commentlist .comment .comment-body .reply a,
@@ -762,6 +774,7 @@ h3.entry-title {
 	height: 30px;
     line-height: 30px;
 	background-repeat: no-repeat;
+	font-family: 'Oswald', Helvetica, Arial, Verdana, sans-serif;
 }
 
 .comments_nav .previous {
@@ -824,6 +837,7 @@ p.comment-form-url
 /* #Sidebar & Widgets
 ================================================== */
 #sidebar {
+	font-family: 'Oswald', Helvetica, Arial, Verdana, sans-serif;
 	font-size: 13px;
 	text-transform: uppercase;
 }
@@ -850,6 +864,7 @@ p.comment-form-url
 #sidebar > li > * {
 	clear: both;
 	padding: 10px;
+	font-family: 'Oswald', Helvetica, Arial, Verdana, sans-serif;
 	font-size: 15px;
 }
 
@@ -868,6 +883,7 @@ p.comment-form-url
 /* Sidebar widget h3 title */
 #sidebar .widget-title {
 	float: left;
+	font-family: 'Oswald', Helvetica, Arial, Verdana, sans-serif;
 	font-size: 15px;
 	background: #333;
 	color: #eee;
@@ -924,6 +940,7 @@ p.comment-form-url
 ================================================== */
 
 #footer {
+	font-family: 'Oswald', Helvetica, Arial, Verdana, sans-serif;
 	font-size: 13px;
 	background: #222;
 	border-top: 6px solid #707070;
@@ -964,7 +981,12 @@ p.comment-form-url
 	margin-bottom: 30px;
 }
 
+#footer li > * {
+	font-family: 'Oswald', Helvetica, Arial, Verdana, sans-serif;
+}
+
 #footer .widget-title {
+	font-family: 'Oswald', Helvetica, Arial, Verdana, sans-serif;
 	font-size: 24px;
 	line-height: 30px;
 	color: #eee;
@@ -979,6 +1001,7 @@ p.comment-form-url
 }
 
 #footer .container ul li ul li {
+	font-family: 'Oswald', Helvetica, Arial, Verdana, sans-serif;
 	font-size: 15px;
 	line-height: 20px;
 	text-transform: uppercase;
@@ -1104,7 +1127,7 @@ h4,
 h5,
 h6 {
 	color: #333;
-	font-family: Helvetica, Arial, Verdana, sans-serif;
+	font-family: 'Oswald', Helvetica, Arial, Verdana, sans-serif;
 	font-weight: bold;
 	margin-top: 24px;
 	margin-bottom: 24px;
@@ -1341,6 +1364,7 @@ label {
 	color: #333;
 	font-size: 16px;
 	line-height: 30px;
+	font-family: 'Oswald', Helvetica, Arial, Verdana, sans-serif;
 }
 
 input[type="text"],
@@ -1354,6 +1378,7 @@ textarea {
 	box-shadow: none;
 	display: block;
 	font-size: 15px;
+	font-family: 'Oswald', Helvetica, Arial, Verdana, sans-serif;
 	margin: 0 0 10px 0;
 	padding: 0 5px;
 	transition: all .5s;
@@ -1389,6 +1414,7 @@ input[type="button"] {
 	border: none;
 	display: inline-block;
 	text-transform: capitalize;
+	font-family: 'Oswald', Helvetica, Arial, Verdana, sans-serif;
 	font-size: 14px;
 	text-decoration: none;
 	text-shadow: none;
@@ -1477,10 +1503,6 @@ h6 a:hover,
 
 
 /* Buttons */
-.button-small:hover,
-.button-medium:hover,
-.button-large:hover,
-.button:hover,
 button:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
@@ -1594,6 +1616,7 @@ html[xmlns] .slides {
 	bottom: 0;
 	color: #fff;
 	text-transform: uppercase;
+	font-family: 'Oswald', Helvetica, Arial, Verdana, sans-serif;
 	font-size: 15px;
 }
 
