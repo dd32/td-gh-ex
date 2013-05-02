@@ -1,9 +1,9 @@
 === rockers Theme ===
 Contributors: Alberto Ramacciotti ( http://arwebdevstudio.it )
-Tags: one-column, two-columns, left-sidebar, light, flexible-width, custom-menu, editor-style, threaded-comments, featured-images, sticky-post, translation-ready, post-formats, rtl-language-support, threaded-comments
+Tags: one-column, two-columns, left-sidebar, light, flexible-width, custom-background, custom-header, custom-menu, editor-style, threaded-comments, featured-images, sticky-post, translation-ready, post-formats, rtl-language-support, threaded-comments
 Requires at least: 3.0
 Tested up to: 3.5.1
-Version: 2.0.2
+Version: 2.0.3
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 

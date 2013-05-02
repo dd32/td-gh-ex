@@ -4,10 +4,10 @@ Author: Alberto Ramacciotti
 Author URI: http://www.arwebdevstudio.it
 Theme URI: http://ramacciotti.altervista.org/archivio/articolo/rockers-theme
 Description: Rockers is a responsive theme for bloggers with a clean design.
-Version: 2.0.2
+Version: 2.0.3
 License: GNU General Public License v2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: one-column, two-columns, left-sidebar, light, flexible-width, custom-menu, editor-style, threaded-comments, featured-images, sticky-post, translation-ready, post-formats, rtl-language-support, threaded-comments
+Tags: one-column, two-columns, left-sidebar, light, flexible-width, custom-background, custom-header, custom-menu, editor-style, threaded-comments, featured-images, sticky-post, translation-ready, post-formats, rtl-language-support, threaded-comments
 */
 
 html, 
@@ -80,7 +80,6 @@ figure,
 figcaption, 
 footer, 
 header, 
-hgroup, 
 menu, 
 nav, 
 output, 
@@ -105,7 +104,6 @@ figcaption,
 figure,
 footer,
 header,
-hgroup,
 nav,
 section,
 .aligncenter,
@@ -604,14 +602,8 @@ body {
     text-rendering: optimizeLegibility;
     color: #000000;
     background-color: #f1efdc;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#f1efdc), to(#fbfaf4) );
-    background-image: -webkit-linear-gradient(top, #f1efdc, #fbfaf4);
-    background-image: -moz-linear-gradient(top, #f1efdc, #fbfaf4);
-    background-image: -o-linear-gradient(top, #f1efdc, #fbfaf4);
-    background-image: linear-gradient(to bottom, #f1efdc, #fbfaf4);
 }
 
-body, 
 body.custom-font-enabled {
     font-family: Source Sans Pro, verdana, sans-serif;
 }
@@ -723,35 +715,33 @@ a:hover {
 }
 
 .menu a {
-    color: #727d31;
-    background-color: #f3f1e2;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#f3f1e2), to(#e7e3c2) );
-    background-image: -webkit-linear-gradient(top, #f3f1e2, #e7e3c2);
-    background-image: -moz-linear-gradient(top, #f3f1e2, #e7e3c2);
-    background-image: -o-linear-gradient(top, #f3f1e2, #e7e3c2);
-    background-image: linear-gradient(to bottom, #f3f1e2, #e7e3c2);
-    line-height: 3;
+    color: #000000;
+    background-color: #f8f7ed;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f8f7ed), to(#edebd3) );
+    background-image: -webkit-linear-gradient(top, #f8f7ed, #edebd3);
+    background-image: -moz-linear-gradient(top, #f8f7ed, #edebd3);
+    background-image: -o-linear-gradient(top, #f8f7ed, #edebd3);
+    background-image: linear-gradient(to bottom, #f8f7ed, #edebd3);
 }
 
 .menu a:visited {
     color: #666666;
-    background-color: #f3f1e2;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#f3f1e2), to(#d3cb92) );
-    background-image: -webkit-linear-gradient(top, #f3f1e2, #d3cb92);
-    background-image: -moz-linear-gradient(top, #f3f1e2, #d3cb92);
-    background-image: -o-linear-gradient(top, #f3f1e2, #d3cb92);
-    background-image: linear-gradient(to bottom, #f3f1e2, #d3cb92);
-    line-height: 3;
+    background-color: #f8f7ed;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f8f7ed), to(#d3cb92) );
+    background-image: -webkit-linear-gradient(top, #f8f7ed, #d3cb92);
+    background-image: -moz-linear-gradient(top, #f8f7ed, #d3cb92);
+    background-image: -o-linear-gradient(top, #f8f7ed, #d3cb92);
+    background-image: linear-gradient(to bottom, #f8f7ed, #d3cb92);
 }
 
 .menu a:hover {
-    color: #000000;
-    background-color: #f3f1e2;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#f3f1e2), to(#edebd3) );
-    background-image: -webkit-linear-gradient(top, #f3f1e2, #edebd3);
-    background-image: -moz-linear-gradient(top, #f3f1e2, #edebd3);
-    background-image: -o-linear-gradient(top, #f3f1e2, #edebd3);
-    background-image: linear-gradient(to bottom, #f3f1e2, #edebd3);
+    color: #727d31;
+    background-color: #f8f7ed;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f8f7ed), to(#f5f4e9) );
+    background-image: -webkit-linear-gradient(top, #f8f7ed, #f5f4e9);
+    background-image: -moz-linear-gradient(top, #f8f7ed, #f5f4e9);
+    background-image: -o-linear-gradient(top, #f8f7ed, #f5f4e9);
+    background-image: linear-gradient(to bottom, #f8f7ed, #f5f4e9);
 }
 
 #content article {
@@ -1441,7 +1431,7 @@ img#wpstats {
     margin: 0 auto 24px;
 }
 
-.page.full-width #content {
+.page.page-template-page-templatesfull-width-php #content {
     float: none;
     width: 100%;
 }
@@ -1804,7 +1794,7 @@ img#wpstats {
     width: 65%;
 }
 
-.ie .full-width #content {
+.ie .page-template-page-templatesfull-width-php #content {
     float: none;
     width: 100%;
 }

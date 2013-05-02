@@ -1,10 +1,13 @@
 <?php 
 if ( ! isset( $content_width ) )
-    $content_width = 625;
+    $content_width = 590;
 function rockers_setup() {
     load_theme_textdomain( 'rockers', get_template_directory() . '/langs' );
+
     add_editor_style();
+
     add_theme_support( 'automatic-feed-links' );
+
     add_theme_support(
         'post-formats', array(
             'aside',
@@ -14,11 +17,22 @@ function rockers_setup() {
             'status'
         )
     );
+
+    add_theme_support( 'custom-background', 
+        array(
+            'default-color' => 'f1efdd',
+        )
+    );
+
     register_nav_menu( 'menu', __( 'Navigation Menu', 'rockers' ) );
+
     add_theme_support( 'post-thumbnails' );
-    set_post_thumbnail_size(624, 9999);
+
+    set_post_thumbnail_size(590, 9999);
 }
 add_action( 'after_setup_theme', 'rockers_setup' );
+
+require( get_template_directory() . '/inc/custom-header.php' );
 
 function rockers_scripts_styles() {
     if (is_singular() && comments_open() && get_option( 'thread_comments' ) )

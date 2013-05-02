@@ -19,21 +19,23 @@
 <body <?php body_class(); ?>>
     <div id="page" class="hfeed site">
     <header id="header" class="blog-header">
-        <hgroup>
-            <h1 class="blog-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+            <h1 class="blog-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></a></h1>
             <h2 class="blog-description"><?php bloginfo( 'description' ); ?> | <a href="<?php bloginfo( 'rss2_url' ); ?>" title="<?php _e( 'Subscribe to the RSS Feed of this site', 'rockers' ); ?>" id="rss">RSS</a></h2>
-        </hgroup>
-        <nav id="blog-menu" class="menu">
-            <h3 class="menu-toggle"><?php _e( 'Menu', 'rockers' ); ?></h3>
-            <div class="skip-link accessibility"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'rockers' ); ?>"><?php _e( 'Skip to content', 'rockers' ); ?></a></div>
-            <?php wp_nav_menu(
-                array( 
-                    'container' => '',
-                    'theme_location' => 'menu', 
-                    'menu_class' => 'nav-menu',
-                    'depth' => 1
-                )
-            ); ?>
-        </nav>
+            <nav id="blog-menu" class="menu">
+                <h2 class="menu-toggle"><?php _e( 'Menu', 'inBlu' ); ?></h2>
+                <h3 class="skip-link accessibility"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'inBlu' ); ?>"><?php _e( 'Skip to content', 'inBlu' ); ?></a></h3>
+                <?php wp_nav_menu(
+                    array( 
+                        'container' => '',
+                        'theme_location' => 'menu', 
+                        'menu_class' => 'menu',
+                        'depth' => 1
+                    )
+                ); ?>
+            </nav>
+            <?php $header_image = get_header_image();
+            if( ! empty( $header_image ) ) : ?>
+                <p class="header-image"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"><img src="<?php echo esc_url( $header_image ); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"></a></p>
+            <?php endif; ?>
     </header>
     <div id="main" class="wrapper">
