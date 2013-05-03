@@ -428,13 +428,11 @@ add_filter( 'wp_page_menu_args', 'catchbox_page_menu_args' );
  * Replacing classes in default wp_page_menu
  *
  * REPLACE "current_page_item" WITH CLASS "current-menu-item"
- * REPLACE "current_page_ancestor" WITH CLASS "current-menu-ancestor"
  */
 function catchbox_page_menu_active( $text ) {
 	$replace = array(
 		// List of classes to replace with "active"
-		'current_page_item' => 'current-menu-item',
-		'current_page_ancestor' => 'current-menu-ancestor',
+		'current_page_item' => 'current-menu-item'
 	);
 	$text = str_replace(array_keys($replace), $replace, $text);
 		return $text;
@@ -834,7 +832,15 @@ function catchbox_scripts_method() {
 	}
 	
 	//Responsive Menu
-	wp_enqueue_script('catchbox-menu', get_template_directory_uri() . '/js/catchbox-menu.min.js', array('jquery'), '1.1.0', true);
+	wp_register_script('catchbox-menu', get_template_directory_uri() . '/js/catchbox-menu.min.js', array('jquery'), '1.1.0', true);
+	wp_register_script('catchbox-allmenu', get_template_directory_uri() . '/js/catchbox-allmenu-min.js', array('jquery'), '201301503', true);
+	//Check is secondayand footer menu is enable or not
+	$options = catchbox_get_theme_options();
+	if ( !empty ($options ['enable_menus'] ) ) :
+		wp_enqueue_script( 'catchbox-allmenu' );
+	else :
+		wp_enqueue_script( 'catchbox-menu' );
+	endif;
 	
 	/**
 	 * Adds JavaScript to pages with the comment form to support

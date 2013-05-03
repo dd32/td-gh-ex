@@ -79,13 +79,21 @@
                 } ?>   
 			</nav><!-- #access -->
             
-			<?php if ( has_nav_menu( 'secondary', 'catchbox' ) ) { ?>
-                <nav id="access-secondary" role="navigation">
+			<?php if ( has_nav_menu( 'secondary', 'catchbox' ) ) { 
+				// Check is seconday menu is enable or not
+				$options = catchbox_get_theme_options();
+				if ( !empty ($options ['enable_menus'] ) ) :
+					$menuclass = "mobile-enable";
+				else :
+					$menuclass = "mobile-disable";
+				endif;
+			?>
+                <nav id="access-secondary" class="<?php echo $menuclass; ?>" role="navigation">
                 	<h3 class="assistive-text"><?php _e( 'Secondary menu', 'catchbox' ); ?></h3>
 						<?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?>
 						<div class="skip-link"><a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to primary content', 'catchbox' ); ?>"><?php _e( 'Skip to primary content', 'catchbox' ); ?></a></div>
 						<div class="skip-link"><a class="assistive-text" href="#secondary" title="<?php esc_attr_e( 'Skip to secondary content', 'catchbox' ); ?>"><?php _e( 'Skip to secondary content', 'catchbox' ); ?></a></div>
-                    <?php wp_nav_menu( array( 'theme_location'  => 'secondary' ) );  ?>
+                    <?php wp_nav_menu( array( 'theme_location'  => 'secondary', 'container_class' => 'menu-secondary-container' ) );  ?>
                 </nav>
             <?php } ?>
 	</header><!-- #branding -->

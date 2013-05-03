@@ -249,3 +249,7 @@ Version 2.2
 Version 2.2.1
 * Fixed the web clip icon not showing up
 * Added missing !function_exists() condition to support child theme easy editing
+
+Version 2.2.2
+* Added option to enable Secondary and Footer Menu on Mobile Devices
+* Updated menu scripts and css

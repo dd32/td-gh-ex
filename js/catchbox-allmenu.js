@@ -83,9 +83,22 @@
 // Tinynav
 jQuery(function () {
 
-  // TinyNav.js 1
+  // Main Menu
   jQuery('#access .menu').tinyNav({
-	active: 'current-menu-item'
+	active: 'current-menu-item',
+	header: 'Menu'
   });
+  
+  // Seondary Menu
+  jQuery('#access-secondary .menu').tinyNav({
+	active: 'current-menu-item',
+	header: 'Seondary Menu'
+  });  
+  
+   // Footer Menu
+  jQuery('#access-footer .menu').tinyNav({
+	active: 'current-menu-item',
+	header: 'Footer Menu'
+  });   
   
 });

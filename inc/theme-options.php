@@ -149,11 +149,19 @@ function catchbox_theme_options_init() {
 	
 	add_settings_field(
 		'disable_header_search', // Unique identifier for the settings section
-		__( 'Disable Search in Header', 'catchbox' ), // Setting field label
+		__( 'Disable Search in Header?', 'catchbox' ), // Setting field label
 		'catchbox_settings_field_disable_header_search', // Function that renders the settings field
 		'theme_options', // Menu slug, used to uniquely identify the page; see catchbox_theme_options_add_page()
 		'general' // Settings section. Same as the first argument in the add_settings_section() above
 	);	
+	
+	add_settings_field(
+		'enable_menus', // Unique identifier for the settings section
+		__( 'Enable Secondary & Footer Menu?', 'catchbox' ), // Setting field label
+		'catchbox_settings_field_enable_menus', // Function that renders the settings field
+		'theme_options', // Menu slug, used to uniquely identify the page; see catchbox_theme_options_add_page()
+		'general' // Settings section. Same as the first argument in the add_settings_section() above
+	);		
 	
 	add_settings_field(
 		'custom_css', // Unique identifier for the settings section
@@ -410,7 +418,8 @@ function catchbox_get_default_theme_options() {
 		'link_color'			=> catchbox_get_default_link_color( 'light' ),
 		'theme_layout'			=> 'content-sidebar',
 		'content_layout'		=> 'excerpt',
-		'disable_header_search' => '0'
+		'disable_header_search' => '0',
+		'enable_menus' 			=> '0'
 	);
 
 	if ( is_rtl() )
@@ -506,7 +515,7 @@ function catchbox_settings_field_excerpt_length() {
 		$options = catchbox_get_default_theme_options();
 	?>
    
-	<input type="text" name="catchbox_theme_options[excerpt_length]" id="excerpt-length" size="3" value="<?php if ( isset( $options[ 'excerpt_length' ] ) ) echo absint( $options[ 'excerpt_length'] ); ?>" /> 
+	<input type="text" name="catchbox_theme_options[excerpt_length]" id="excerpt-length" size="3" value="<?php if ( isset( $options[ 'excerpt_length' ] ) ) echo absint( $options[ 'excerpt_length'] ); ?>" /> <?php _e( 'Words', 'catchbox' ); ?>
 	<?php
 }
 
@@ -534,7 +543,22 @@ function catchbox_settings_field_disable_header_search() {
 	if( empty( $options['disable_header_search'] ) )
 		$options = catchbox_get_default_theme_options();
 	?>
-    <input type="checkbox" id="disable-header-search" name="catchbox_theme_options[disable_header_search]" value="1" <?php checked( '1', $options['disable_header_search'] ); ?> />
+    <input type="checkbox" id="disable-header-search" name="catchbox_theme_options[disable_header_search]" value="1" <?php checked( '1', $options['disable_header_search'] ); ?> /> <?php _e( 'Check to Disable', 'catchbox' ); ?>
+	<?php
+}
+
+
+/**
+ * Enable Secondary and Footer Menu
+ *
+ * @since Catch Box 2.2.2
+ */
+function catchbox_settings_field_enable_menus() {
+	$options = catchbox_get_theme_options();
+	if( empty( $options['enable_menus'] ) )
+		$options = catchbox_get_default_theme_options();
+	?>
+    <input type="checkbox" id="disable-header-search" name="catchbox_theme_options[enable_menus]" value="1" <?php checked( '1', $options['enable_menus'] ); ?> /> <?php _e( 'Check to Enable', 'catchbox' ); ?>
 	<?php
 }
 
@@ -1158,6 +1182,11 @@ function catchbox_theme_options_validate( $input ) {
 	if ( isset( $input['disable_header_search'] ) )
 		// Our checkbox value is either 0 or 1 
 		$output[ 'disable_header_search' ] = $input[ 'disable_header_search' ];
+		
+	// Enable Seconday and Footer Menu
+	if ( isset( $input['enable_menus'] ) )
+		// Our checkbox value is either 0 or 1 
+		$output[ 'enable_menus' ] = $input[ 'enable_menus' ];		
 	
 	// Custom CSS 	
 	if ( isset( $input['custom_css'] ) )	

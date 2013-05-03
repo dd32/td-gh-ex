@@ -19,10 +19,18 @@
 				 */
 				get_sidebar( 'footer' );
 			?>
-           <?php if ( has_nav_menu( 'footer', 'catchbox' ) ) { ?>
-                <nav id="access-footer" role="navigation">
+           <?php if ( has_nav_menu( 'footer', 'catchbox' ) ) {
+				// Check is footer menu is enable or not
+				$options = catchbox_get_theme_options();
+				if ( !empty ($options ['enable_menus'] ) ) :
+					$menuclass = "mobile-enable";
+				else :
+					$menuclass = "mobile-disable";
+				endif;
+				?>
+                <nav id="access-footer" class="<?php echo $menuclass; ?>" role="navigation">
                 	<h3 class="assistive-text"><?php _e( 'Footer menu', 'catchbox' ); ?></h3>
-                    <?php wp_nav_menu( array( 'theme_location'  => 'footer', 'depth' => 1 ) );  ?>
+                    <?php wp_nav_menu( array( 'theme_location'  => 'footer', 'container_class' => 'menu-footer-container', 'depth' => 1 ) );  ?>
                 </nav>
             <?php } ?>
 			<div id="site-generator" class="clearfix">
