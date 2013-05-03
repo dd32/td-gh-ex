@@ -1,11 +1,10 @@
 Appointment Theme README.
 
-A Free Orange colored Business Blog theme that supports Primary menu's , Primary sidebar,Four widgets area at the footer region,Custom Post Types etc. 
+A Free Orange colored Business Blog theme that supports Primary menu's , Primary sidebar,Four widgets area at the footer region,Post Metaetc. 
 It has a perfect design that's great for any Business/Firms  Blogs who wants a new look for their site. Three page templates Blog, Full Widht Page and Contact Page. 
 Appointment supports featured post slider based on the concept of custom post types.
 Author: Priyanshu Mittal,Shahid Mansuri and Akhilesh Nagar.
-Author URI: http://www.appointpress.com
-Theme Homepage Url: http://www.appointment.com/demo
+Theme Homepage Url: http://www.appointpress.com/theme/appointment
 
 About:
 Appointmwnt a theme for business, consultancy firms etc  by Priyanshu Mittal (Author URI: http://www.appointpress.com). 
@@ -23,7 +22,7 @@ the following extra features:
  - Support for post thumbnails
  - Similar posts feature
  - 4 widgetized areas in the footer
- - Slideshow with featured post slider.
+ - Slideshow using Post Meta  .
  - Custom footer
  
 
@@ -48,6 +47,9 @@ All images in Appointment are licensed under the terms of the GNU GPL.
 
 ===========Front Page Added with the theme=================
 1 It has header(logo + menus),slider, services,recent comments widgets and footer.
+
+==================Featued Slider=============
+For adding your custom Images in the slider you just need to add the information to the meta box , placed just below the post editor.
 	
 Support
 -------
@@ -55,6 +57,10 @@ Support
 Do you enjoy this theme? Send your ideas - issues - wishes at http://www.appointment.com/demo/ . Thank you!
 
 ============================Change Log================================
+@version 1.1
+1. Custom Post Types removed from the Theme
+2. Services section removed as they are implamented by Custom Post Type.
+3. Front Page now showing Blog content with dynamic sidebars.
 
 @Version 1.0
 released

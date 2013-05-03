@@ -1,4 +1,83 @@
 <?php 
+
+add_action('add_meta_boxes','add_my_meta');
+add_action( 'save_post', 'myplugin_save_postdata' );
+function add_my_meta() {
+
+add_action('admin_print_styles', 'appointment_admin_enqueue_script');
+    $screens = array( 'post' );
+    foreach ($screens as $screen) {
+        add_meta_box(
+            'myplugin_sectionid',
+            __( 'HomePage Slider', 'myplugin_textdomain' ),
+            'myplugin_inner_custom_box',
+            $screen
+        );
+    }
+	}
+	function appointment_admin_enqueue_script(){
+	wp_enqueue_script('my-upload',get_bloginfo('template_directory').'/js/media-upload-script.js',array('media-upload','thickbox'));
+	}
+	function myplugin_inner_custom_box( $post ) {
+
+  // Use nonce for verification
+  wp_nonce_field( plugin_basename( __FILE__ ), 'myplugin_noncename' );
+
+  // The actual fields for data entry
+  // Use get_post_meta to retrieve an existing value from the database and use the value for the form
+  $value = get_post_meta( $post->ID, '_meta_value_key', true );?>
+ <div class="wp-media-buttons" id="wp-content-media-buttons">
+<?php 
+	$src= get_post_meta( get_the_ID(), '_meta_image', true );$cp= get_post_meta( get_the_ID(), '_meta_caption', true );
+	echo '<label for="myplugin_new_field">';
+       _e("Image Caption", 'myplugin_textdomain' );
+  echo '</label> ';?>
+  <input type="textarea" id="myplugin_new_field" name="myplugin_new_field" value="<?php if (!empty($cp)) echo $cp ?>" size="25" />
+    
+ <br />
+ Upload Image: <input  class="upload" type="text" size="36" name="upload_image" value="<?php if(!empty($src)) echo $src?>" />
+<input class="upload_image_button" type="button" value="Add File" /><br />
+	</div>
+				
+	
+	
+	
+<?php }
+function myplugin_save_postdata( $post_id ) {
+    //global $page;global $post_type;
+  // First we need to check if the current user is authorised to do this action. 
+ 
+    if ( ! current_user_can( 'edit_page', $post_id ) ){
+        return ;
+  } else {
+    if ( ! current_user_can( 'edit_post', $post_id ) )
+        return ;
+  }
+  // Secondly we need to check if the user intended to change this value.
+  if ( ! isset( $_POST['myplugin_noncename'] ) || ! wp_verify_nonce( $_POST['myplugin_noncename'], plugin_basename( __FILE__ ) ) )
+      return ;
+
+  // Thirdly we can save the value to the database
+
+  //if saving in a custom table, get post_ID
+  $post_ID = $_POST['post_ID'];
+  echo $post_ID;
+  //sanitize user input
+  $caption = sanitize_text_field( $_POST['myplugin_new_field'] );
+  $meta_image = sanitize_text_field( $_POST['upload_image'] );
+
+  // Do something with $mydata 
+  // either using 
+  add_post_meta($post_ID, '_meta_caption', $caption, true) or
+    update_post_meta($post_ID, '_meta_caption', $caption);
+		
+	add_post_meta($post_ID, '_meta_image', $meta_image, true) or
+    update_post_meta($post_ID, '_meta_image', $meta_image);
+	
+  // or a custom table (see Further Reading section below)
+}
+?>
+<?php 
    if ( ! isset( $content_width ) )
 	$content_width = 584;
 
@@ -15,13 +94,15 @@ if ( function_exists( 'add_theme_support' ) )
 //enqueue scripts
   add_action('wp_enqueue_scripts','appointpress_enqueue_script');
 function appointpress_enqueue_script() {
-   
+   wp_enqueue_script('my-upload',get_bloginfo('template_directory').'/js/media-upload-script.js',array('media-upload','thickbox'));
    if ( is_singular() ) wp_enqueue_script( "comment-reply" );
     //wp_enqueue_script('jquery-1.7.1.min',get_template_directory_uri('template_directory').'/js/jquery-1.7.1.min.js');
    wp_enqueue_script('jquery');
    wp_enqueue_script('jquery.nivo.slider.pack', get_template_directory_uri('template_directory').'/js/jquery.nivo.slider.pack.js');
    wp_enqueue_script('custom_nivo_slider',get_template_directory_uri().'/js/jquery_nivo_slider.php');
- 
+    wp_enqueue_script('redify-optionpanal-jquery',get_template_directory_uri('template_directory').'/js/redify-optionpanal-jquery.js',array('farbtastic','jquery-ui-tabs','jquery-ui-sortable'));
+
+
    wp_enqueue_style('nivo-slider', get_template_directory_uri('template_directory').'/css/nivo-slider.css');
    wp_enqueue_style('style_nivo_support', get_template_directory_uri('template_directory').'/css/style_nivo_support.css');
    wp_enqueue_style('default', get_template_directory_uri('template_directory').'/css/default.css');
@@ -37,60 +118,7 @@ function appointpress_enqueue_script() {
   );
 }
 // code for custom post type  services
-  add_action( 'init', 'create_post_type_services' );
-
-function create_post_type_services() {
-	register_post_type( 'services',
-		array(
-			'labels' => array(
-				'name' => 'Services',
-				'singular_name' => 'Services',
-				'add_new' => __('Add New Service', 'appointment'),
-                'add_new_item' => __('Enter Name with Designation','appointment'),
-				'edit_item' => __('Enter Name with Designation','appointment'),
-				'new_item' => __('New Link','appointment'),
-				'all_items' => __('All Services','appointment'),
-				'view_item' => __('View Link','appointment'),
-				'search_items' => __('Search Links','appointment'),
-				'not_found' =>  __('No Links found','appointment'),
-				'not_found_in_trash' => __('No Links found in Trash','appointment'), 
-				
-			),
-				'supports' => array('title','editor','thumbnail','comments'),
-			'public' => true,
-			'menu_position' => 11
-		
-			
-		)
-	);
-}
-add_action( 'init', 'create_post_type_featured_slider' );
-
-function create_post_type_featured_slider() {
-	register_post_type( 'featured_slider',
-		array(
-			'labels' => array(
-				'name' => 'Slider',
-				'singular_name' => 'Slider',
-				'add_new' => __('Add New Slide', 'appointment'),
-                'add_new_item' => __('Add New Slide','appointment'),
-				'edit_item' => __('Add New Slide','appointment'),
-				'new_item' => __('New Link','appointment'),
-				'all_items' => __('All Slide','appointment'),
-				'view_item' => __('View Link','appointment'),
-				'search_items' => __('Search Links','appointment'),
-				'not_found' =>  __('No Links found','appointment'),
-				'not_found_in_trash' => __('No Links found in Trash','appointment'), 
-				
-			),
-				'supports' => array('title','editor'),
-			'public' => true,
-			'menu_position' => 11
-		
-			
-		)
-	);
-}
+  
 
 function appointpres_widgets_init() {
 

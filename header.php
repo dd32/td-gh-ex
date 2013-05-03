@@ -25,8 +25,8 @@
 	?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 
-    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
-     <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/css/font/font.css" media="screen, projection" />
+    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri().'/style.css'; ?>" type="text/css" media="screen" />
+     <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/css/font/font.css" media="screen, projection" />
      <!-- Date Picker -->
 <?php wp_head(); ?>
 </head>

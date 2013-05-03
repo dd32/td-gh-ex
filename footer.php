@@ -60,7 +60,7 @@
                  </div><!--closing of the page_wi-->
             </div><!--closing of the footer_top-->
              <div class="page_wi">            
-            	<p class="footer_left"><?php _e('All Rights Reserved. Designed and Developed by');?> <a href="<?php echo esc_url( __( 'http://www.appointpress.com', 'appointment' ) ); ?>"><?php _e('AppointPress','appointment'); ?></a>.</p>
+            	<p class="footer_left"><?php _e('All Rights Reserved. Designed and Developed by','appointment');?> <a href="<?php echo esc_url( __( 'http://www.appointpress.com', 'appointment' ) ); ?>"><?php _e('AppointPress','appointment'); ?></a>.</p>
                <!--<div class="footer_right">
                 	<a href="#" class="social1">&nbsp;</a>
                     <a href="#" class="social2">&nbsp;</a>
