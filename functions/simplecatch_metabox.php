@@ -27,31 +27,37 @@ add_action( 'add_meta_boxes', 'simplecatch_add_custom_box' );
 
 global $sidebar_layout;
 $sidebar_layout = array(
-		 'default-sidebar' => array(
-            			'id'		=> 'simplecatch-sidebarlayout',
-						'value' 	=> 'default',
-						'label' 	=> __( 'Default Layout Set in', 'simplecatch' ).' <a href="'.get_bloginfo('url').'/wp-admin/themes.php?page=theme_options" target="_blank">'. __( 'Theme Settings', 'simplecatch' ).'</a>',
-						'thumbnail' => ' '
-        			),
-        'no-sidebar' => array(
-            			'id'		=> 'simplecatch-sidebarlayout',
-						'value' 	=> 'no-sidebar',
-						'label' 	=> __( 'No sidebar', 'simplecatch' ),
-						'thumbnail' => get_template_directory_uri() . '/functions/panel/images/no-sidebar.gif'
-        			),
-        'left-sidebar' => array(
-            			'id'		=> 'simplecatch-sidebarlayout',
-						'value' 	=> 'left-sidebar',
-						'label' 	=> __( 'Left sidebar', 'simplecatch' ),
-						'thumbnail' => get_template_directory_uri() . '/functions/panel/images/left-sidebar.gif'
-       				),
-        'right-sidebar' => array(
-						'id' => 'simplecatch-sidebarlayout',
-						'value' => 'right-sidebar',
-						'label' => __( 'Right sidebar', 'simplecatch' ),
-						'thumbnail' => get_template_directory_uri() . '/functions/panel/images/right-sidebar.gif'
-       				)
-    );
+	'default-sidebar' => array(
+    	'id'		=> 'simplecatch-sidebarlayout',
+		'value' 	=> 'default',
+		'label' 	=> __( 'Default Layout Set in', 'simplecatch' ).' <a href="'.get_bloginfo('url').'/wp-admin/themes.php?page=theme_options" target="_blank">'. __( 'Theme Settings', 'simplecatch' ).'</a>',
+		'thumbnail' => ' '
+ 	),
+    'right-sidebar' => array(
+		'id' => 'simplecatch-sidebarlayout',
+		'value' => 'right-sidebar',
+		'label' => __( 'Right sidebar', 'simplecatch' ),
+		'thumbnail' => get_template_directory_uri() . '/functions/panel/images/right-sidebar.gif'
+	),
+	'left-sidebar' => array(
+    	'id'		=> 'simplecatch-sidebarlayout',
+		'value' 	=> 'left-sidebar',
+		'label' 	=> __( 'Left sidebar', 'simplecatch' ),
+		'thumbnail' => get_template_directory_uri() . '/functions/panel/images/left-sidebar.gif'
+	),		
+    'no-sidebar' => array(
+    	'id'		=> 'simplecatch-sidebarlayout',
+		'value' 	=> 'no-sidebar',
+		'label' 	=> __( 'No sidebar', 'simplecatch' ),
+		'thumbnail' => get_template_directory_uri() . '/functions/panel/images/no-sidebar.png'
+	),
+    'no-sidebar-full-width' => array(
+    	'id'		=> 'simplecatch-sidebarlayout',
+		'value' 	=> 'no-sidebar-full-width',
+		'label' 	=> __( 'No sidebar, Full Width', 'simplecatch' ),
+		'thumbnail' => get_template_directory_uri() . '/functions/panel/images/no-sidebar-fullwidth.png'
+  	)
+);
 	
 /**
  * @renders metabox to for sidebar layout

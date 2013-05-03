@@ -768,6 +768,9 @@ function simplecatch_content() {
 		elseif( $themeoption_layout == 'right-sidebar' ) {
 			get_template_part( 'content-sidebar','right' );
 		}
+		elseif( $themeoption_layout == 'no-sidebar-full-width' ) {
+			get_template_part( 'content-sidebar','full' );
+		}		
 		else {
 			get_template_part( 'content-sidebar','no' );
 		}
@@ -778,6 +781,9 @@ function simplecatch_content() {
 	elseif( $layout=='right-sidebar' ) {
 		get_template_part( 'content-sidebar','right' );
 	}
+	elseif( $layout == 'no-sidebar-full-width' ) {
+		get_template_part( 'content-sidebar','full' );
+	}		
 	else{
 		get_template_part( 'content-sidebar','no' );
 	}
@@ -862,6 +868,9 @@ function simplecatch_display_div() {
 	elseif( $themeoption_layout == 'right-sidebar' ) {
 		echo '<div id="content" class="col8 no-margin-left">';
 	}
+	elseif( $themeoption_layout == 'no-sidebar-full-width' ) {
+		echo '<div id="content" class="col12">';
+	}	
 	else {
 		echo '<div id="content" class="col8">';
 	}

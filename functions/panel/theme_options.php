@@ -139,15 +139,14 @@ function simplecatch_theme_options_do_page() {
                      
             <div id="simplecatch_ad_tabs">
                 <ul class="tabNavigation" id="mainNav">
-                    <li><a href="#designsettings"><?php _e( 'Design Settings', 'simplecatch' );?></a></li>
-                    <li><a href="#themesettings"><?php _e( 'Theme Settings', 'simplecatch' );?></a></li>
+                    <li><a href="#themeoptions"><?php _e( 'Theme Options', 'simplecatch' );?></a></li>
                     <li><a href="#postslider"><?php _e( 'Featured Post Slider', 'simplecatch' );?></a></li>
                     <li><a href="#sociallinks"><?php _e( 'Social Links', 'simplecatch' );?></a></li>
                     <li><a href="#webmaster"><?php _e( 'Webmaster Tools', 'simplecatch' );?></a></li>
                 </ul><!-- .tabsNavigation #mainNav -->
                    
-                <!-- Option for Design Settings -->
-                <div id="designsettings">
+                <!-- Option for Theme Options -->
+                <div id="themeoptions">
                     <div class="option-container">
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Logo Options', 'simplecatch' ); ?></a></h3>
                         <div class="option-content inside">
@@ -274,7 +273,7 @@ function simplecatch_theme_options_do_page() {
                                         <td> 
                                             <?php 
                                                 if ( !empty( $options[ 'web_clip' ] ) ) { 
-                                                    echo '<img src="'.esc_url( $options[ 'web_clip' ] ).'" alt="fav" />';
+                                                    echo '<img src="'.esc_url( $options[ 'web_clip' ] ).'" alt="Web Clip Icon" />';
                                                 } else { ?>
                                                     <p><?php _e( 'No Web Clip Icon Found. Upload Web Clip Icon.', 'simplecatch' ); ?></p>
                                                <?php
@@ -390,17 +389,24 @@ function simplecatch_theme_options_do_page() {
                                     <tr>
                                         <th scope="row"><label><?php _e( 'Default Layout', 'simplecatch' ); ?></label></th>
                                         <td>
-                                            <label title="no-sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/functions/panel/images/no-sidebar.gif" alt="Content-Sidebar" /><br />
-                                            <input type="radio" name="simplecatch_options[sidebar_layout]" id="no-sidebar" <?php checked($options['sidebar_layout'], 'no-sidebar') ?> value="no-sidebar"  />
-                                            <?php _e( 'No Sidebar, One Column', 'simplecatch' ); ?>
+                                        	<label title="right-sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/functions/panel/images/right-sidebar.gif" alt="Content-Sidebar" /><br />
+                                            <input type="radio" name="simplecatch_options[sidebar_layout]" id="right-sidebar" <?php checked($options['sidebar_layout'], 'right-sidebar') ?> value="right-sidebar"  />
+                                            <?php _e( 'Content on Left', 'simplecatch' ); ?>
                                             </label>
+                                            
                                             <label title="left-Sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/functions/panel/images/left-sidebar.gif" alt="Content-Sidebar" /><br />
                                             <input type="radio" name="simplecatch_options[sidebar_layout]" id="left-sidebar" <?php checked($options['sidebar_layout'], 'left-sidebar') ?> value="left-sidebar"  />
                                             <?php _e( 'Content on Right', 'simplecatch' ); ?>
                                             </label>
-                                            <label title="right-sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/functions/panel/images/right-sidebar.gif" alt="Content-Sidebar" /><br />
-                                            <input type="radio" name="simplecatch_options[sidebar_layout]" id="right-sidebar" <?php checked($options['sidebar_layout'], 'right-sidebar') ?> value="right-sidebar"  />
-                                            <?php _e( 'Content on Left', 'simplecatch' ); ?>
+                                            
+                                            <label title="no-sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/functions/panel/images/no-sidebar.png" alt="No Sidebar" /><br />
+                                            <input type="radio" name="simplecatch_options[sidebar_layout]" id="no-sidebar" <?php checked($options['sidebar_layout'], 'no-sidebar') ?> value="no-sidebar"  />
+                                            <?php _e( 'No Sidebar', 'simplecatch' ); ?>
+                                            </label>
+                                            
+                                            <label title="no-sidebar-full-width" class="box"><img src="<?php echo get_template_directory_uri(); ?>/functions/panel/images/no-sidebar-fullwidth.png" alt="No Sidebar Full Width" /><br />
+                                            <input type="radio" name="simplecatch_options[sidebar_layout]" id="no-sidebar-full-width" <?php checked($options['sidebar_layout'], 'no-sidebar-full-width') ?> value="no-sidebar-full-width"  />
+                                            <?php _e( 'No Sidebar, Full Width', 'simplecatch' ); ?>
                                             </label>
                                         </td>
                                     </tr>  
@@ -410,35 +416,7 @@ function simplecatch_theme_options_do_page() {
                         </div><!-- .option-content -->
                     </div><!-- .option-container --> 
                     
-                    <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Custom CSS', 'simplecatch' ); ?></a></h3>
-                        <div class="option-content inside"> 
-                            <table class="form-table">  
-                                <tbody>       
-                                    <tr>
-                                        <th scope="row"><?php _e( 'Enter your custom CSS styles.', 'simplecatch' ); ?></th>
-                                        <td>
-                                            <textarea name="simplecatch_options[custom_css]" id="custom-css" cols="90" rows="12"><?php echo esc_attr( $options[ 'custom_css' ] ); ?></textarea>
-                                        </td>
-                                    </tr>
-                                   
-                                    <tr>
-                                        <th scope="row"><?php _e( 'CSS Tutorial from W3Schools.', 'simplecatch' ); ?></th>
-                                        <td>
-                                            <a class="button" href="<?php echo esc_url( __( 'http://www.w3schools.com/css/default.asp','simplecatch' ) ); ?>" title="<?php esc_attr_e( 'CSS Tutorial', 'simplecatch' ); ?>" target="_blank"><?php _e( 'Click Here to Read', 'simplecatch' );?></a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
-                        </div><!-- .option-content -->
-                    </div><!-- .option-container --> 
-                                          
-                </div> <!-- #designsettings -->  
-
-                <!-- Options for Theme Settings -->
-                <div id="themesettings">
-                    <div class="option-container">
+					<div class="option-container">
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Homepage / Frontpage Category Setting', 'simplecatch' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table">
@@ -527,8 +505,34 @@ function simplecatch_theme_options_do_page() {
                             </table>
                             <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
                         </div><!-- .option-content -->
-                    </div><!-- .option-container -->                                                           
-                </div> <!-- #themesettings -->  
+                    </div><!-- .option-container -->   
+                   
+                    <div class="option-container">
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Custom CSS', 'simplecatch' ); ?></a></h3>
+                        <div class="option-content inside"> 
+                            <table class="form-table">  
+                                <tbody>       
+                                    <tr>
+                                        <th scope="row"><?php _e( 'Enter your custom CSS styles.', 'simplecatch' ); ?></th>
+                                        <td>
+                                            <textarea name="simplecatch_options[custom_css]" id="custom-css" cols="90" rows="12"><?php echo esc_attr( $options[ 'custom_css' ] ); ?></textarea>
+                                        </td>
+                                    </tr>
+                                   
+                                    <tr>
+                                        <th scope="row"><?php _e( 'CSS Tutorial from W3Schools.', 'simplecatch' ); ?></th>
+                                        <td>
+                                            <a class="button" href="<?php echo esc_url( __( 'http://www.w3schools.com/css/default.asp','simplecatch' ) ); ?>" title="<?php esc_attr_e( 'CSS Tutorial', 'simplecatch' ); ?>" target="_blank"><?php _e( 'Click Here to Read', 'simplecatch' );?></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
+                        </div><!-- .option-content -->
+                    </div><!-- .option-container --> 
+                                          
+                </div> <!-- #themeoptions -->  
+
                 
                 <div id="postslider">
                     <div class="option-container">

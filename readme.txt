@@ -301,3 +301,7 @@ Version 2.3.3
 
 Version 2.3.4
 * Added Web Clip Icon Option 
+
+Version 2.4
+* Added css of bold to html <b>code</b>
+* Added layout 'No Sidebar, Full Width'
