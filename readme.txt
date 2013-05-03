@@ -86,3 +86,12 @@ version 0.1.5.2
 * Fixed typo error in Theme Options => Featured Post Slider
 * Deleted unused catchbox-menu.js and catchbox-menu.min.js
 * Added Instagram Social Icon
+
+version 0.2
+* Added page template Blog to show blog on any page.
+* Added support for WordPress SEO Plugin
+* Added IE version specific div ID in header
+* Fixed Responsive Menu to set default as Menu when there is no current menu such as for search, 404 and other non menu items.
+* Fixed minor css for mobile devices font sizes and menu widgets
+* Fixed Header image height and width issue
+* Fixed IE7 and IE8 minor issues to make it compatible

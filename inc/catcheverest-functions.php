@@ -386,6 +386,7 @@ function catcheverest_header_left() { ?>
         <div id="header-left">
             <?php
             // Check to see if the header image has been removed
+			global $_wp_default_headers;
             $header_image = get_header_image();
             if ( ! empty( $header_image ) ) : ?>
                 <h1 id="site-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
@@ -1230,3 +1231,46 @@ function catcheverest_posts_id_column_css() {
 	echo '<style type="text/css">#postid { width: 40px; }</style>';
 }
 add_action( 'admin_head-edit.php', 'catcheverest_posts_id_column_css' );
+
+
+if ( ! function_exists( 'catcheverest_menu_alter' ) ) :
+/**
+* Add default navigation menu to nav menu
+* Used while viewing on smaller screen
+*/
+function catcheverest_menu_alter( $items, $args ) {
+	$items .= '<li class="default-menu"><a href="' . get_bloginfo( 'url' ) . '" title="Menu">'.__( 'Menu', 'catcheverest' ).'</a></li>';
+	return $items;
+}
+endif; // catcheverest_menu_alter
+add_filter( 'wp_nav_menu_items', 'catcheverest_menu_alter', 10, 2 );
+
+
+if ( ! function_exists( 'catcheverest_pagemenu_alter' ) ) :
+/**
+ * Add default navigation menu to page menu
+ * Used while viewing on smaller screen
+ */
+function catcheverest_pagemenu_alter( $output ) {
+	$output .= '<li class="default-menu"><a href="' . get_bloginfo( 'url' ) . '" title="Menu">'.__( 'Menu', 'catcheverest' ).'</a></li>';
+	return $output;
+}
+endif; // catcheverest_pagemenu_alter
+add_filter( 'wp_list_pages', 'catcheverest_pagemenu_alter' );
+
+
+if ( ! function_exists( 'catcheverest_pagemenu_filter' ) ) :
+/**
+ * @uses wp_page_menu filter hook
+ */
+function catcheverest_pagemenu_filter( $text ) {
+	$replace = array(
+		'current_page_item'     => 'current-menu-item'
+	);
+
+	$text = str_replace(array_keys($replace), $replace, $text);
+  	return $text;
+	
+}
+endif; // catcheverest_pagemenu_filter
+add_filter('wp_page_menu', 'catcheverest_pagemenu_filter');

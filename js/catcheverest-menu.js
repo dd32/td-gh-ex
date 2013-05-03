@@ -598,7 +598,7 @@
 
 // Responsive Menu (TinyNav)
 jQuery(".menu").tinyNav({
-	'active' : 'current_page_item, current-menu-item', // String: Set the "active" class
+	'active' : 'current-menu-item', // String: Set the "active" class
     header: '' // String: Specify text for "header" and show header instead of the active item
 });
 

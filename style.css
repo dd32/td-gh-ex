@@ -4,7 +4,7 @@ Theme URI: http://catchthemes.com/themes/catch-everest
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
 Description: Catch Everest is Simple, Clean and Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel which makes this theme highly customizable and flexible. Make your beautiful yet professional website in no time. Multilingual Ready (WPML) and also currently translated in Polish, Chinese, and Spanish. Active community at http://catchthemes.com/support-forum/
-Version: 0.1.5.2
+Version: 0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: light, gray, white, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-header, custom-menu, featured-images, flexible-header, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
@@ -524,8 +524,7 @@ img#wpstats {
     line-height: 0;
 }
 hgroup {
-	float: left;
-    max-width: 100%;
+    display: block;
 }
 hgroup.with-logo {
     clear: both;
@@ -723,6 +722,12 @@ hgroup.with-logo {
 
 /* =Responsive Menu (Tinynav.js)
 -------------------------------------------------------------- */
+.default-menu {
+	display: none !important;
+}
+.sb-options li:last-child {
+	display: none;
+}
 .tinynav { 
     display: none;
 	font-size: 16px;
@@ -1781,10 +1786,12 @@ ul.social-profile li.instagram a:hover {
 	color: #fff;
 	text-decoration: none;
 }
-#supplementary {
-	
+#colophon {
+	clear: both;
 }
-#colophon { }
+#supplementary {
+	overflow: hidden;
+}
 #supplementary .widget-area {
 	float: left;
 }

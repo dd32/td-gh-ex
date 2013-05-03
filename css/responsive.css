@@ -108,6 +108,7 @@ textarea {
 .site {
 	margin: 20px auto;
 	margin: 2rem auto;
+    width: 900px;	
     width: 90rem;
 }
 #primary {
@@ -233,7 +234,8 @@ textarea {
 @media screen and (max-width: 960px) {
 /* iPhone Landscape */	
 .site {
-    width: 70rem;
+    width: 700px;
+	width: 70rem;
 }
 #primary, 
 #secondary {
@@ -268,7 +270,7 @@ textarea {
 and (min-device-width : 768px) 
 and (max-device-width : 1024px) 
 and (orientation : portrait) {
-/* iPhone Portrait */	
+/* Pad Portrait */	
 .site {
 	margin: 5px auto;
 	margin: 0.5rem auto;
@@ -277,11 +279,20 @@ and (orientation : portrait) {
 }
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 767px) {
 /* Larger Smart Devices */		
 .site {
 	width: 380px;
     width: 38rem;
+}
+#site-title {
+	font-size: 30px;
+    font-size: 3rem;
+}
+#site-description {
+	font-size: 13px;
+    font-size: 1.3rem;
+    line-height: 1.4;
 }
 #header-right {
     max-width: 100%;
@@ -340,7 +351,18 @@ and (orientation : portrait) {
 }
 .commentlist .children {
     margin-left: 0;
-}	
+}
+.widget.widget_nav_menu .sb-holder {
+    background-color: #3A3D41;
+	color: #fff;
+    clear: both;
+    display: block;
+    width: 100%;
+}
+.widget.widget_nav_menu a,
+.widget.widget_nav_menu a:hover {
+	color: #fff;
+}
 	
 }
 @media only screen and (min-width: 480px) and (max-width: 767px) {
@@ -380,16 +402,6 @@ hgroup,
 	margin-top: 20px;
 	margin-top: 2rem;
 }
-#site-title {
-	font-size: 25px;
-    font-size: 2.5rem;
-}
-#site-description {
-	font-size: 12px;
-    font-size: 1.2rem;
-    line-height: 1.4;
-}
-
 
 /* Font Sizes */
 body,
@@ -399,6 +411,15 @@ select,
 textarea {
 	font-size: 12px;
 	font-size: 1.2rem;
+}
+#site-title {
+	font-size: 25px;
+    font-size: 2.5rem;
+}
+#site-description {
+	font-size: 12px;
+    font-size: 1.2rem;
+    line-height: 1.4;
 }
 .entry-meta,
 #site-generator {
@@ -417,5 +438,13 @@ textarea {
 	margin: 0;
 	width: 100%;
 }	
+#site-title {
+	font-size: 20px;
+    font-size: 2rem;
+}
+#site-description {
+	font-size: 12px;
+    font-size: 1.1rem;
+}
 }
 
