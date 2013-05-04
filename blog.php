@@ -7,6 +7,8 @@
 
 ?>
  <br />
+ <div id="f-post-page" > <<< Show Posts >>> </div>
+<div id="f-post-page-container" >
  <div id="content">
  <?php if (have_posts()) : while (have_posts()) : the_post();?>
  <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
@@ -30,4 +32,4 @@
  
 </div>
 <?php get_sidebar(); ?>
-<div class="clear"></div><div class="lsep"></div>
+<div class="clear"></div><div class="lsep"></div></div>

@@ -13,7 +13,7 @@
 // Load the D5 Framework Optios Page
 	if ( !function_exists( 'optionsframework_init' ) ) {
 	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
-	require_once dirname( __FILE__ ) . '/inc/options-framework.php';
+	require_once get_template_directory() . '/inc/options-framework.php';
 	}
 
 // 	Tell WordPress for wp_title in order to modify document title content
@@ -74,7 +74,7 @@
 	
 	wp_enqueue_script( 'jquery');
 	wp_enqueue_script( 'design-menu-style', get_template_directory_uri(). '/js/menu.js' );
-	wp_enqueue_style('design-gfonts1', 'http://fonts.googleapis.com/css?family=Marvel:400', false );
+	wp_enqueue_style('design-gfonts1', '//fonts.googleapis.com/css?family=Marvel:400', false );
 	}
 	add_action( 'wp_enqueue_scripts', 'design_enqueue_scripts' );
 		
