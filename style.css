@@ -4,10 +4,14 @@ Theme URI: http://ramacciotti.altervista.org/archivio/articolo/arzine-theme
 Author: Alberto Ramacciotti
 Author URI: http://www.arwebdevstudio.it
 Description: AR Zine is a theme designed like magazine.
-Version: 1.2
+Version: 1.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: light, black, white, one-column, two-columns, three-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready 
+
+AR zine WordPress theme, Copyright (C) 2013 Alberto Ramacciotti, AR Web Dev Studio
+AR zine theme is licensed under the GPL.
+
+Tags: light, black, white, three-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready 
 */
 
 html, 
@@ -79,7 +83,6 @@ figure,
 figcaption, 
 footer, 
 header, 
-hgroup, 
 menu, 
 nav, 
 output, 
@@ -158,7 +161,6 @@ figcaption,
 figure,
 footer,
 header,
-hgroup,
 nav,
 section,
 .aligncenter,
@@ -176,7 +178,6 @@ article.format-quote .entry-content blockquote,
 .comments-area article header time,
 label ~ span.required,
 .widget_search label,
-.widget_twitter .timesince,
 img#wpstats {
     display: block;
 }
@@ -372,10 +373,6 @@ video {
     max-width: 100%;
 }
 
-.entry-content .twitter-tweet-rendered {
-    max-width: 100% !important;
-}
-
 .alignleft {
     float: left;
 }
@@ -500,10 +497,6 @@ img.wp-smiley,
     margin-top: 0;
 }
 
-html {
-    font-size: 87.5%;
-}
-
 body {
     font-size: 16px;
     font-family: verdana, arial, sans-serif;
@@ -554,8 +547,7 @@ a:hover {
 }
 
 #header,
-#container,
-#footer {
+#container {
     padding: 0 48px;
 }
 
@@ -564,11 +556,15 @@ a:hover {
     background-color: #fafafa;
 }
 
-#container,
-#footer {
+#container {
     padding-top: 1em;
     padding-bottom: 1em;
 }
+
+#footer {
+    padding: 3em 1em 0 3em;
+}
+
 .blog-content {
     margin: 24px 0 0;
 }
@@ -642,6 +638,7 @@ a:hover {
 .container-navigation a {
     color: #5e5e5e;
 }
+
 .container-navigation a:hover {
     color: #21759b;
 }
@@ -1395,14 +1392,6 @@ label ~ span.required {
 .widget_search label {
     font-size: 13px;
     line-height: 1.8;
-}
-
-.widget_twitter li {
-    list-style-type: none;
-}
-
-.widget_twitter .timesince {
-    text-align: right;
 }
 
 img#wpstats {
