@@ -1,5 +1,5 @@
   <!-- Footer -->
-  
+  <?php global $bartleby_options; $bartleby_settings = get_option( 'bartleby_options', $bartleby_options ); ?>
   <footer>
 <div class="row">
 	<div class="sixteen columns">
@@ -16,12 +16,24 @@
 	  </div>
 	</div>
 </div>
+
+<?php if( $bartleby_settings['footer_link']) : ?>
 <div class="row">
 <div id="credit" class="sixteen columns">
-<?php esc_attr_e( 'Bartleby Theme by Edward R. Jenkins' , '' ); ?>
+<a href="http://www.edwardrjenkins.com/" rel="nofollow">
+<?php esc_attr_e( 'Bartleby Theme by Edward R. Jenkins' , 'bartleby' ); ?>
+</a>
 </div>
 </div>
+<?php else: ?>
+<div class="row">
+<div id="credit" class="sixteen columns">
+<?php esc_attr_e( 'Bartleby Theme by Edward R. Jenkins' , 'bartleby' ); ?>
+</div>
+</div>
+<?php endif; ?>
+</footer>
 <?php wp_footer(); ?>
-  </footer>
+
 </body>
 </html>

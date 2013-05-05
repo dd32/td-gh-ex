@@ -1,10 +1,9 @@
 <?php
+
 if ( ! isset( $content_width ) ) $content_width = 900;
-function bartleby_theme_option_page() {
-require_once ( get_stylesheet_directory() . '/theme-options.php' );
-}
-add_action( 'admin_init', 'bartleby_theme_option_page' );
+
 function bartleby_theme_setup() {
+require_once ( get_stylesheet_directory() . '/theme-options.php' );
 register_nav_menu( 'main-menu', __( 'Main Menu', 'bartleby' ) );
 register_nav_menu( 'bottom-menu', __( 'Footer Menu', 'bartleby' ) );
 add_theme_support( 'automatic-feed-links' );
@@ -21,28 +20,17 @@ return $text;
 }
 add_filter( 'the_category', 'add_nofollow_cat' );
 add_editor_style('/inc/custom-editor-style.css');
-// Puts link in excerpts more tag
+
 function new_excerpt_more($more) {
 global $post;
 return '...';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 function custom_excerpt_length( $length ) {
-return 30;
+return 20;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
-/* Thanks to bavotasan */
-function short_title($after = '', $length) {
-   $mytitle = explode(' ', get_the_title(), $length);
-   if (count($mytitle)>=$length) {
-       array_pop($mytitle);
-       $mytitle = implode(" ",$mytitle). $after;
-   } else {
-       $mytitle = implode(" ",$mytitle);
-   }
-       return $mytitle;
-}
-add_filter('the_title', 'blank_slate_title');
+
 function blank_slate_title($title) {
 if ($title == '') {
 return 'Untitled Post';
@@ -51,13 +39,7 @@ return $title;
 }
 }
 add_filter('short_title', 'home_short_title');
-function home_short_title($title) {
-if ($title == '') {
-return 'Untitled Post';
-} else {
-return $title;
-}
-}
+
 /* Thanks to One Trick Pony, StackExchange */
 add_filter('post_class', 'my_post_class');
 function my_post_class($classes){
@@ -107,19 +89,20 @@ $title = "$title $sep " . sprintf( __( 'Page %s', 'bartleby' ), max( $paged, $pa
 return $title;
 }
 add_filter( 'wp_title', 'bartleby_wp_title', 10, 2 );
+
 add_action( 'after_setup_theme', 'bartleby_theme_setup' );
+
 /* Scripts, Fonts & Styles */
 /**
  * Enqueue Google Fonts
  */
-function bartleby_ucfont() {
-		wp_register_style( 'ubuntu-bartleby', "//fonts.googleapis.com/css?family=Ubuntu+Condensed" );
+function bartleby_font() {
+	$protocol = is_ssl() ? 'https' : 'http';
+		wp_register_style( 'bartleby-slab', "$protocol://fonts.googleapis.com/css?family=Josefin+Slab" );
+		wp_register_style( 'bartleby-ubuntu', "$protocol://fonts.googleapis.com/css?family=Ubuntu+Condensed" );
 }
-add_action( 'init', 'bartleby_ucfont' );
-function bartleby_jsfont() {
-		wp_register_style( 'josefin-bartleby', "//fonts.googleapis.com/css?family=Josefin+Slab" );
-}
-add_action( 'init', 'bartleby_jsfont' );
+add_action( 'init', 'bartleby_font' );
+
 function bartleby_scripts_styles() {
 	global $wp_styles;
 	wp_register_style( 'bartleby-foundation-style', get_template_directory_uri() . '/stylesheets/foundation.min.css', 
@@ -129,12 +112,13 @@ function bartleby_scripts_styles() {
 		// enqueing:
 	wp_enqueue_style( 'bartleby-foundation-style' );
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
-	wp_enqueue_style( 'ubuntu-bartleby' );
-	wp_enqueue_style( 'josefin-bartleby' );
+	wp_enqueue_style( 'bartleby-slab' );
+	wp_enqueue_style( 'bartleby-ubuntu' );
 	wp_enqueue_script( 'bartleby-navigation', get_template_directory_uri() . '/javascripts/navigation.js', array(), '1.0', true );
 	wp_enqueue_script( 'foundation-modernizr', get_template_directory_uri() . '/javascripts/modernizr.foundation.js', array(), '1.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'bartleby_scripts_styles' );
+
 function bartleby_sidebars() {
 register_sidebar(array(
 'name' => __( 'Right Sidebar', 'bartleby' ),
@@ -155,8 +139,10 @@ register_sidebar(array(
 'after_widget' => '</div>',
 ));
 }
-add_action ( 'bartleby_sidebars', 'widgets_init' );
+add_action ( 'widgets_init', 'bartleby_sidebars' );
+
 /* Twenty Twelve Comments */
+
 function bartleby_comment( $comment, $args, $depth ) {
 $GLOBALS['comment'] = $comment;
 switch ( $comment->comment_type ) :

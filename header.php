@@ -1,40 +1,34 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>	  <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>	  <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]-->
 <head>
-<meta charset="utf-8" />
+<meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
 <title><?php wp_title( '|', true, 'right' ); ?></title>
-<?php if ( is_singular() ) wp_enqueue_script( "comment-reply" ); ?>
-<?php wp_head(); ?>
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?><?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
   <!-- Header and Nav -->
   <div class="row">
-	<div class="six columns">
-<?php global $bartleby_options; $bartleby_settings = get_option( 'bartleby_options', $bartleby_options ); ?>
-<?php if ( $bartleby_settings['bartleby_logo'] !='' ) { ?>
-				<div id="logo">
-<a href="<?php esc_url_e( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-<img src="<?php echo $bartleby_settings['bartleby_logo']; ?>" /></a>
-				</div>
-<?php } ?>
-<?php if ( $bartleby_settings['bartleby_logo'] == '' ) { ?>
-				<div id="logo">
+<div class="sixteen columns">
+	<div class="ten columns">
+<div id="logo">
 <a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-<h3><?php echo bloginfo ('name'); ?></h3></a>
-				</div>
-<?php } ?>
+	<?php get_template_part ('logo'); ?>
+	</a>
 	</div>
+</div>
 <?php global $bartleby_options; $bartleby_settings = get_option( 'bartleby_options', $bartleby_options ); ?>
 <?php if( $bartleby_settings['social_bar'] ) : ?>
-	<div class="ten columns">
+	<div class="six columns">
 <?php get_template_part( 'social' , 'block' ); ?>
 	</div>
 <?php endif; ?>
   </div>
+</div>
   <!-- End Header and Nav -->
 <div class="row">
 <div class="sixteen columns">

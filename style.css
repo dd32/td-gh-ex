@@ -1,10 +1,10 @@
 /*
 Theme Name: Bartleby
-Theme URI: http://www.cardiganmedia.com/themes/bartleby/
+Theme URI: http://www.edwardrjenkins.com/themes/bartleby/
 Author: Edward R. Jenkins
 Author URI: http://www.edwardrjenkins.com
 Description: Bartleby, the Scrivener, inspired by the Great American short story by Herman Melville, features a theme options panel, modern social icon fonts, and a two-column post display. Bartleby plays well with mobile devices and is fully responsive to adapt to mobile devices. It's based on the Foundation Grid by Zurb.
-Version: 1.1
+Version: 1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: dark, threaded-comments, one-column, two-columns, right-sidebar, flexible-width, custom-menu, editor-style, full-width-template, sticky-post, theme-options, translation-ready
@@ -12,21 +12,28 @@ Text Domain: bartleby
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
+
 /* =Notes
-/*Newsframe WordPress Theme, Copyright (C) 2013 Edward R. Jenkins, Cardigan Media
-This theme was framed with Zurb's Foundation Grid, released under the MIT license. You can learn
-more about Zurb and Foundation at http://foundation.zurb.com.
+/*Bartleby WordPress Theme, Copyright (C) 2013 Edward R. Jenkins.
+
+This theme was framed with Zurb's Foundation Grid, released under
+the MIT license. You can learn more about Zurb and Foundation at http://foundation.zurb.com.
+
 Credits and major props to Automattic and the Twenty Twelve theme's
 handy responsive navigation menu, which is used in this theme, as well as the comment form.
+
 Thanks to WPTuts for a quick and painless custom logo uploader.
+
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
+
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
+
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	
@@ -106,6 +113,8 @@ a img.aligncenter {
 	padding: 0 4px 5px;
 }
 .sticky {
+	background: #dedede;
+	padding: 0 10px;
 }
 .bypostauthor {
 }
@@ -153,6 +162,7 @@ p {
 }
 code {
 	background: #fff;
+	font-size: 80%;
 }
 pre {
 	overflow: auto;
@@ -182,7 +192,6 @@ h1, h2, h3, h4, h5, h6 {
 Post Navigation ================ */
 #post-nav {
 	font-size: 1.2em;
-	font-weight: bold;
 	text-align: right;
 	margin-bottom: 10px;
 	font-family: "Ubuntu Condensed", serif;
@@ -238,7 +247,7 @@ h4.belowposts {
 	text-align: center;
 }
 .column-post {
-	overflow: hidden;
+	max-height: 140px;
 }
 #social-bar {
 	text-align: right;
@@ -253,7 +262,9 @@ h4.belowposts {
 /* Home Page */
 .readmore {
 	display: block;
-	margin: 20px 0 20px 0;
+	margin: 5px 0 5px 0;
+	font-family: "Ubuntu Condensed", sans-serif;
+	text-align: center;
 }
 .homethumb {
 	min-height: 210px;
@@ -272,6 +283,10 @@ h4.belowposts {
 	padding: 9px 20px 0 19px;
 	border-left: 1px solid #ddd;
 	font-size: 60px;
+}
+
+.bartleby-excerpt {
+	min-height: 100px;
 }
 /* Icon Fonts */
 /*!
@@ -956,7 +971,7 @@ p.featured-home-excerpt {
 		color: #333;
 	}
 	.main-navigation li {
-		margin: 0 10px 0 0;
+		margin: 0 20px 0 0;
 		position: relative;
 	}
 	.main-navigation li ul {
