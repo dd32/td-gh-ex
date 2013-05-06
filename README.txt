@@ -4,7 +4,7 @@ Landscape WordPress Theme, Copyright 2013 BlankThemes.com
 Landscape is a responsive, single column, WordPress theme for personal blogs.
 
 Landscape,  like WordPress, is licensed under the GPL.
-Landscape is built off the _S theme by automattic.com.
+Landscape is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
 
 Header image by Ansel Adams and is licensed under the Public Domain:
 http://commons.wikimedia.org/wiki/File:Adams_The_Tetons_and_the_Snake_River.jpg
@@ -18,7 +18,7 @@ Q: MY SITE TITLE OR DESCRIPTION DOES NOT APPEAR ON SINGLE POSTS WITH FEATURED IM
 
 A: If a post has a featured image, the site title and description will not be displayed. If this is unacceptable for your project, you can adjust this by doing the following:
 
-PLEASE NOTE: Always make a backup of your theme before you make any changes.
+NOTE: Always make a backup of your theme before you make any changes.
 
 Find the custom-header.php file located in the 'inc' directory. Open the custom-header.php file using a text editor of your choice. Around line 205, find the following and delete it.
 
@@ -43,12 +43,19 @@ Then go to Appearance > Widgets and add widgets to your homepage widgets. We use
 
 ===
 Need further support? Visit:
-http://blankthemes.com/premium-theme-support/
+http://blankthemes.com/contact/
 
 
 
 Changelog:
 ===
+
+V.1.0.3
+===
+*Fixed Google Chrome menu issue, where last menu item spacing would be off.
+*Added support for Infinite Scroll provided by the JetPack plugin.
+*Removed fixed custom header image.
+*Removed Google Web Font: Droid Serif. 
 
 V.1.0.1
 ===

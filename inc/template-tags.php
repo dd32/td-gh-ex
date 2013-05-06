@@ -5,7 +5,6 @@
  * Eventually, some of the functionality here could be replaced by core features
  *
  * @package landscape
- * @since landscape 1.0
  */
 
 if ( ! function_exists( 'landscape_content_nav' ) ) :
@@ -173,17 +172,3 @@ function landscape_category_transient_flusher() {
 }
 add_action( 'edit_category', 'landscape_category_transient_flusher' );
 add_action( 'save_post', 'landscape_category_transient_flusher' );
-
-
-/**
- * Enqueue landscape Fonts
- *
- * @since landscape 1.0.1
- */
-function landscape_fonts() {
-	wp_enqueue_style( 'open-sans', 'http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Serif');
-}
-add_action( 'wp_enqueue_scripts', 'landscape_fonts' );
-add_action( 'admin_print_styles-appearance_page_custom-header', 'landscape_fonts' );
-
-

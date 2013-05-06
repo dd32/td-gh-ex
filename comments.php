@@ -8,7 +8,6 @@
  * located in the functions.php file.
  *
  * @package landscape
- * @since landscape 1.0
  */
 ?>
 

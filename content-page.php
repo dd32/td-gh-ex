@@ -3,7 +3,6 @@
  * The template used for displaying page content in page.php
  *
  * @package landscape
- * @since landscape 1.0
  */
 ?>
 
@@ -17,7 +16,5 @@
 		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'landscape' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
 	
-	<footer class="entry-meta">
-	<?php edit_post_link( __( 'Edit', 'landscape' ), '<span class="edit-link">', '</span>' ); ?>
-	</footer>
+	<?php edit_post_link( __( 'Edit', 'landscape' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
 </article><!-- #post-<?php the_ID(); ?> -->

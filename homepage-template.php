@@ -3,11 +3,9 @@
  * Template Name: Homepage Template
  *
  * @package landscape
- * @since landscape 1.0
 */
 
 get_header(); ?>
-
 
 		<div id="homepage-primary" class="content-area">
 			<div id="intro" class="home-site-content" role="main">
@@ -18,7 +16,7 @@ $more = 0; ?>
 						<div class="home-entry-content">
 							<?php the_content('<a href="'. get_permalink($post->ID) . '">' . 'Read More' . '</a>.'); ?>
 							
-							<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'blankfolio' ), 'after' => '</div>' ) ); ?>
+							<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'landscape' ), 'after' => '</div>' ) ); ?>
 
 						</div><!-- .entry-content -->
 

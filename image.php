@@ -3,7 +3,6 @@
  * The template for displaying image attachments.
  *
  * @package landscape
- * @since landscape 1.0
  */
 
 get_header();

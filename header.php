@@ -5,7 +5,6 @@
  * Displays all of the <head> section and everything up till <div id="main">
  *
  * @package landscape
- * @since landscape 1.0
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -29,10 +28,10 @@
 
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- .site-navigation .main-navigation -->
-		<hgroup>
+		<div id="logo">
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-		</hgroup>
+		</div>
 	</header><!-- #masthead .site-header -->
 
 <div id="main" class="site-main">

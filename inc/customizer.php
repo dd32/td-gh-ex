@@ -3,7 +3,6 @@
  * landscape Theme Customizer
  *
  * @package landscape
- * @since landscape 1.2
  */
 
 /**

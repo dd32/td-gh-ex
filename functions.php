@@ -3,16 +3,20 @@
  * landscape functions and definitions
  *
  * @package landscape
- * @since landscape 1.0
  */
 
 /**
  * Set the content width based on the theme's design and stylesheet.
  *
- * @since landscape 1.0
  */
 if ( ! isset( $content_width ) )
-	$content_width = 640; /* pixels */
+	$content_width = 1000; /* pixels */
+
+/*
+ * Load Jetpack compatibility file.
+ */
+require( get_template_directory() . '/inc/jetpack.php' );
+
 
 if ( ! function_exists( 'landscape_setup' ) ) :
 /**
@@ -22,7 +26,6 @@ if ( ! function_exists( 'landscape_setup' ) ) :
  * before the init hook. The init hook is too late for some features, such as indicating
  * support post thumbnails.
  *
- * @since landscape 1.0
  */
 function landscape_setup() {
 
@@ -81,7 +84,6 @@ add_action( 'after_setup_theme', 'landscape_setup' );
 /**
  * Register widgetized area and update sidebar with default widgets
  *
- * @since landscape 1.0
  */
 function landscape_widgets_init() {
 	register_sidebar( array(

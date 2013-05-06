@@ -1,7 +1,6 @@
 <?php
 /**
  * @package landscape
- * @since landscape 1.0
  */
 ?>
 

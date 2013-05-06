@@ -5,7 +5,6 @@
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
  * @package landscape
- * @since landscape 1.0
  */
 ?>
 

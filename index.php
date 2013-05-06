@@ -9,7 +9,6 @@
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
  * @package landscape
- * @since landscape 1.0
  */
 
 get_header(); ?>
@@ -18,8 +17,6 @@ get_header(); ?>
 			<div id="content" class="site-content" role="main">
 
 			<?php if ( have_posts() ) : ?>
-
-				<?php landscape_content_nav( 'nav-above' ); ?>
 
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>

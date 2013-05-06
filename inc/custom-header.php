@@ -5,7 +5,6 @@
  *
  * 
  * @package landscape
- * @since landscape 1.0
  */
 
 /**
@@ -74,16 +73,11 @@ function landscape_custom_header_image() {
 		$background = "rgba(0,0,0,.7)"; ?>
 
 		#masthead {
-			background: url( <?php echo esc_url( $header_image ); ?> ) center 0 no-repeat;
+			background: #111 url( <?php echo esc_url( $header_image ); ?> ) center 0 no-repeat;
 			margin-top: 0;
 			padding-bottom: 0;
 			max-width: 100%;
 			height: <?php echo get_custom_header()->height; ?>px;
-			position: relative;
-			background-attachment: fixed;
-		}
-		.admin-bar #masthead {
-			background-position: center 28px;
 		}
 
 	<?php endif; // !empty header_image()
@@ -93,7 +87,7 @@ function landscape_custom_header_image() {
 		if ( '' != get_the_post_thumbnail() ) :
 
 			$featured_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'featured-thumbnail' );
-			$header_image = "background: url(" . $featured_image_url[0] . ") center 0 no-repeat; background-attachment: fixed;";
+			$header_image = "background: #111 url(" . $featured_image_url[0] . ") center 0 no-repeat;";
 			$menubackground = "rgba(0,0,0,.7)";
 			$mastheadbackground = "#111";
 			$mastheadheight = "500px";
@@ -104,14 +98,9 @@ function landscape_custom_header_image() {
 				<?php echo $header_image; ?>
 				margin-top: 0;
 				padding-bottom: <?php echo $paddingbottom; ?>;
-				max-width: 100%;
-				height: <?php echo $mastheadheight; ?>;
+				max-width: 100%;theadheight; ?>;
 				position: relative;
 				background-color: <?php echo $mastheadbackground; ?>;
-			}
-
-			.admin-bar #masthead {
-				background-position: center 28px;
 			}
 			#masthead hgroup{
 				display:none;
