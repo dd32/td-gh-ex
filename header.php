@@ -28,12 +28,16 @@
 		<!--header-->
 	<div class="row">	
 		<div class="three columns">
-
-				<?php if ( ( of_get_option('logo_image') ) != '' ) { ?>
-		<div id="logo"><a href="<?php echo esc_url(home_url()); ?>" title="<?php bloginfo('description'); ?>"><img src="<?php echo of_get_option('logo_image'); ?>" alt="<?php echo of_get_option('footer_cr'); ?>" /></a></div><!--logo end-->
+	
+<?php $header_image = get_header_image();
+	if ( ! empty( $header_image ) ) { ?>
+		<div id="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+			<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" />
+		</a></div><!--logo end-->
 	<?php } else { ?>
 			<div id="logo2"><a href="<?php echo esc_url(home_url()); ?>" title="<?php bloginfo('description'); ?>"><?php bloginfo( 'name' ); ?></a></div><!--logo end-->
 	<?php } ?>
+	
 			
 	</div>
 	

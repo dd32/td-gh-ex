@@ -212,7 +212,7 @@ function optionsframework_page() {
 	
 	 <div id="go_pro">
             <h1>Go for Pro Version!</h1>
-            <p>This is a free version of discover. Get your own copy of professional version if you need Unlimited Sliders , Forum support and much more. <a href="http://antthemes.com/?page_id=1963" target="blank">Click Here to Learn More Now</a> </p>
+            <p>This is a free version of discover. Get your own copy of professional version if you need Unlimited Sliders , Full Width page template, Forum support and much more. <a href="http://antthemes.com/?page_id=1963" target="blank">Click Here to Learn More Now</a> </p>
 
         </div>
     
@@ -301,7 +301,7 @@ function optionsframework_validate( $input ) {
 			// For a value to be submitted to database it must pass through a sanitization filter
 			if ( has_filter( 'of_sanitize_' . $option['type'] ) ) {
 				$clean[$id] = apply_filters( 'of_sanitize_' . $option['type'], $input[$id], $option );
-				$clean['favicon_image'] = esc_url_raw( $input['favicon_image'] );
+				if(isset($clean['favicon_image'])){$clean['favicon_image'] = esc_url_raw( $input['favicon_image'] );}
 			}
 		}
 

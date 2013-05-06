@@ -58,7 +58,7 @@ if (have_posts()) : while (have_posts()) : the_post();
 	
 	<div class="post-head">
 	
-			<h1><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'discover' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php if ( get_the_title() == '' ) { _e( '(No title)', 'discover' ); } else { the_title(); } ?></a></h1>
+			<h1><a href="<?php esc_url(the_permalink()); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'discover' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php if ( get_the_title() == '' ) { _e( '(No title)', 'discover' ); } else { the_title(); } ?></a></h1>
 			
 			</div><!--post-heading end-->
 			
@@ -73,7 +73,7 @@ if (have_posts()) : while (have_posts()) : the_post();
 	
 				<?php if($thumb_small<>'') { ?>
 		
-		<a href="<?php the_permalink() ?>"><img src="<?php echo $thumb_small[0]; ?>" alt="<?php the_title(); ?>" /></a>
+		<a href="<?php esc_url(the_permalink()); ?>"><img src="<?php echo $thumb_small[0]; ?>" alt="<?php the_title(); ?>" /></a>
 		
 		<?php } ?>
 		

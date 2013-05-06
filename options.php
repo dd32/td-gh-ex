@@ -29,14 +29,8 @@ function optionsframework_option_name() {
 
 function optionsframework_options() {
 	
-	// Test data
+	// Multicheck array
 	$blog_home_array = array("on" => "on","off" => "off");
-	
-	// Multicheck Array
-	$multicheck_array = array("one" => "French Toast", "two" => "Pancake", "three" => "Omelette", "four" => "Crepe", "five" => "Waffle");
-	
-	// Multicheck Defaults
-	$multicheck_defaults = array("one" => "1","five" => "1");
 	
 	
 	// Pull all the categories into an array
@@ -60,7 +54,15 @@ function optionsframework_options() {
 	$options = array();
 		
 	$options[] = array( "name" => "Homepage Settings",
-						"type" => "heading");																									
+						"type" => "heading");					
+						
+	$options[] = array( "name" => "Blog Display",
+						"desc" => "Select option to display blog post on homepage.",
+						"id" => "blog_home",
+						"std" => "off",
+						"type" => "select",
+						"class" => "mini", //mini, tiny, small
+						"options" => $blog_home_array);																												
 						
 	$options[] = array( "name" => "Homepage Box 1 heading",
 						"desc" => "Heading for homepage box1.",
@@ -152,15 +154,7 @@ function optionsframework_options() {
 						"desc" => "Paste here the link of the page or post.",
 						"id" => "box_link4",
 						"std" => "",
-						"type" => "text");
-						
-	$options[] = array( "name" => "Blog Display",
-						"desc" => "Select option to display blog post on homepage.",
-						"id" => "blog_home",
-						"std" => "off",
-						"type" => "select",
-						"class" => "mini", //mini, tiny, small
-						"options" => $blog_home_array);																																																																																																													
+						"type" => "text");																																																																																																											
 						
 	$options[] = array( "name" => "Slider Settings",
 						"type" => "heading");
@@ -222,14 +216,6 @@ function optionsframework_options() {
 						"id" => "slider_link2",
 						"std" => "",
 						"type" => "text");						
-
-	$options[] = array( "name" => "Logo Settings",
-						"type" => "heading");
-						
-	$options[] = array( "name" => "Logo image",
-						"desc" => "Upload your logo image over here.",
-						"id" => "logo_image",
-						"type" => "upload");
 						
 	$options[] = array( "name" => "Footer Settings",
 						"type" => "heading");

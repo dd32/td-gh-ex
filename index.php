@@ -8,12 +8,20 @@
 
 		<div class="twelve columns">
 		
+		
+ <?php
+
+    ?>
+			
 <h1><?php if ( is_category() ) {
 		single_cat_title();
 		} elseif (is_tag() ) {
 		echo (__( 'Archives for ', 'discover' )); single_tag_title();
+		} elseif (is_author() ) {
+    $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));		
+		echo (__( 'Archives for ', 'discover' )); echo $curauth->nickname;		
 	} elseif (is_archive() ) {
-		echo (__( 'Archives for ', 'discover' )); single_month_title();
+		echo (__( 'Archives for ', 'discover' )); single_month_title(' ', true);
 	} else {
 		wp_title('',true);
 	} ?></h1>
@@ -34,19 +42,17 @@
 	
 		<div class="four columns">
 		
-			<h1><?php if(of_get_option('welcome_head') != NULL){ echo of_get_option('welcome_head');} else echo "Write your welcome headline here." ?></h1>
-		<p><?php if(of_get_option('welcome_text') != NULL){ echo of_get_option('welcome_text');} else echo "Nullam posuere felis a lacus tempor eget dignissim arcu adipiscing. Donec est est, rutrum vitae bibendum vel, suscipit non metus." ?></p>
+			<h1><?php if(esc_html(of_get_option('welcome_head')) != NULL){ echo esc_html(of_get_option('welcome_head'));} else echo "Write your welcome headline here." ?></h1>
+		<p><?php if(esc_textarea(of_get_option('welcome_text')) != NULL){ echo esc_textarea(of_get_option('welcome_text'));} else echo "Nullam posuere felis a lacus tempor eget dignissim arcu adipiscing. Donec est est, rutrum vitae bibendum vel, suscipit non metus." ?></p>
 		
-		<?php if(of_get_option('welcome_button') != NULL){ ?> 
-	<a class="button large" href="<?php if(of_get_option('welcome_button_link') != NULL){ echo of_get_option('welcome_button_link');} ?>"><?php echo of_get_option('welcome_button'); ?></a> 
-	<?php } else { ?> <a class="button large" href="<?php if(of_get_option('welcome_button_link') != NULL){ echo of_get_option('welcome_button_link');} ?>"> <?php echo "Download Now!" ?></a> <?php } ?>
+		<?php if(esc_html(of_get_option('welcome_button')) != NULL){ ?> 
+	<a class="button large" href="<?php if(esc_url(of_get_option('welcome_button_link')) != NULL){ echo esc_url(of_get_option('welcome_button_link'));} ?>"><?php echo esc_html(of_get_option('welcome_button')); ?></a>
+	<?php } else { ?> <a class="button large" href="<?php if(esc_url(of_get_option('welcome_button_link')) != NULL){ echo esc_url(of_get_option('welcome_button_link'));} ?>"> <?php echo "Download Now!" ?></a> <?php } ?>
 		
 		</div>	
 
 		<div class="eight columns">
-	
-<?php require_once ( get_template_directory() . '/element-slider.php' ); ?>
-
+			<?php get_template_part( 'element-slider', 'index' ); ?>
 		</div>
 		
 	</div>
@@ -60,7 +66,7 @@
 	
 	<div class="row" id="box_container">
 
-<?php require_once ( get_template_directory() . '/element-boxes.php' ); ?>
+		<?php get_template_part( 'element-boxes', 'index' ); ?>
 
 	</div>
 	
