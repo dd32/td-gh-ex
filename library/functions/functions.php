@@ -39,9 +39,7 @@ function attitude_scripts_styles_method() {
 	 */
 	wp_register_script( 'jquery_cycle', ATTITUDE_JS_URL . '/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
 
-   wp_register_style( 'google_font_pt_sans', 'http://fonts.googleapis.com/css?family=PT+Sans' );
-   wp_register_style( 'google_font_philoshopher', 'http://fonts.googleapis.com/css?family=Philosopher' );
-    
+   wp_register_style( 'google_fonts', 'http://fonts.googleapis.com/css?family=PT+Sans|Philosopher' );    
 	
 	/**
 	 * Enqueue Slider setup js file.
@@ -53,8 +51,7 @@ function attitude_scripts_styles_method() {
    wp_enqueue_script( 'tinynav', ATTITUDE_JS_URL . '/tinynav.js', array( 'jquery' ) );
    wp_enqueue_script( 'backtotop', ATTITUDE_JS_URL. '/backtotop.js', array( 'jquery' ) );
 
-   wp_enqueue_style( 'google_font_pt_sans' );
-   wp_enqueue_style( 'google_font_philoshopher' );
+   wp_enqueue_style( 'google_fonts' );
 
    /**
     * Browser specific queuing i.e

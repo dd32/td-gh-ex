@@ -466,14 +466,11 @@ if ( ! function_exists( 'attitude_breadcrumb' ) ) :
  * In other pages, breadcrumb will display if breadcrumb NavXT plugin exists.
  */
 function attitude_breadcrumb() {
-	if( function_exists( 'bcn_display_list' ) ) {
-		echo '<div class="breadcrumb">
-		<ul>';                
-		bcn_display_list();               
-		echo '</ul>
-		</div> <!-- .breadcrumb -->'; 
-	}     
-       
+	if( function_exists( 'bcn_display' ) ) {
+		echo '<div class="breadcrumb">';                
+		bcn_display();               
+		echo '</div> <!-- .breadcrumb -->'; 
+	}   
 }
 endif;
 
