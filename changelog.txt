@@ -1,0 +1,5 @@
+*** discover Changelog ***
+
+10-05-2013 - version 1.5
+* Warning: Cannot modify header information - headers already sent by fixed.
+* esc_url added on line 53 in template-blog.php

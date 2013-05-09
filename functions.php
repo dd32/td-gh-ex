@@ -42,7 +42,6 @@ add_theme_support( 'custom-background', $args );
 }
 endif;
 ?>
-
 <?php
 /**
  * Setup the WordPress core custom header feature.
@@ -205,8 +204,6 @@ function discover_s_admin_header_image() { ?>
 endif; // discover_s_admin_header_image
 
 ?>
-
-
 <?php
 function discover_list_pings($comment, $args, $depth) { 
 	$GLOBALS['comment'] = $comment; ?>
