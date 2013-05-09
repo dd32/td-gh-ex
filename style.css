@@ -4,7 +4,7 @@ Theme URI: http://www.malvouz.com/omega/2012/12/16/baris-theme/
 Description: Baris is a responsive and minimalist. Build on HTML5 and CSS3. Support for custom menu and also you can put your widget at 4 different place. This theme is for you who love simplicty and make you should to touch your reader's heart because your reader focus on content.
 Author: Malvouz
 Author URI: http://www.malvouz.com/omega/about/
-Version: 1.6
+Version: 1.7
 Tags: white, light, one-column, custom-menu, custom-background, left-sidebar, right-sidebar, flexible-width, threaded-comments, sticky-post
 License: GNU/GPL Version 2 or later
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -43,13 +43,13 @@ body {
 	font-family:'Droid Sans', arial, sans-serif;
 	color: #4C4C4C;
 	background-color:#fff;
-	
 }
 
 #container{
-	max-width:620px;
+	width:620px;
 	margin:50px auto 0 auto;
 	z-index:0;
+	overflow:hidden;
 }
 
 /* Header
@@ -754,6 +754,27 @@ ul.sidebar a, p.meta-date a, .comment-meta a, p.logged-in-as a, aarticle-edit-li
 	background:#4A4A4A;
 }
 
+/* FLOATS CLEARING
+--------------------------------------------- */
+.clear {
+	clear:both;
+	display:block;
+	overflow:hidden;
+	visibility:hidden;
+	width:0;
+	height:0;
+}
+.clearfix:after {
+	clear:both;
+	content:' ';
+	display:block;
+	font-size:0;
+	line-height:0;
+	visibility:hidden;
+	width:0;
+	height:0
+}
+
 /* Responsiveness
 --------------------------------------------- */
 
@@ -761,19 +782,32 @@ ul.sidebar a, p.meta-date a, .comment-meta a, p.logged-in-as a, aarticle-edit-li
    Tablet Landscape
 -------------------------------------------- */		
 @media screen and (max-width: 870px){
-	#container { width: 620px; }
-		#content { width: 620px; }
-#content img { float: none; margin: 0 0 10px 0; width: 100%; }
-#content img.alignleft {
-	margin: 0px 0px 0px 0px;
-}
-#content img.alignright {
-	margin: 0px 0px 0px 0px;
-}
-#content img.alignnone {
-	margin: 0px 0px 0px 0px;
+	
+
 }
 
+
+
+/* --------------------------------------------
+   Tablet Portrait
+-------------------------------------------- */
+@media screen and (max-width: 770px){
+	#content { float: none;  margin: 0 0 12px 0; }
+	
+	
+}
+
+/* --------------------------------------------
+  Mobile
+-------------------------------------------- */
+
+@media screen and (max-width: 620px) {
+
+	#container, #content { float: none; width: auto; }
+		#content { margin: 0 15px 0 15px; }
+		
+		
+	
 	.gallery .gallery-item {
 	margin: 0px 0px 0px 0px;
 	padding:0px 0px 0px 0px;
@@ -797,32 +831,7 @@ ul.sidebar a, p.meta-date a, .comment-meta a, p.logged-in-as a, aarticle-edit-li
 	line-height: 10px;
 	letter-spacing:0.1em;
 }
-}
-
-
-
-/* --------------------------------------------
-   Tablet Portrait
--------------------------------------------- */
-@media screen and (max-width: 770px){
-	#container { width: 620px; }
-		#content { float: none; width: 620px; margin: 0 0 12px 0; }
 	
-	#content img { float: none; margin: 0 0 10px 0; width: 100%; }
-	
-}
-
-/* --------------------------------------------
-  Mobile
--------------------------------------------- */
-
-@media screen and (max-width: 620px) {
-
-	#container, #content { float: none; width: inherit; }
-		#content { margin: 0 15px 0 15px; }
-		
-		#content img { float: none; margin: 0 0 10px 0; width: 100%; }
-		
 	#container .sidebar-left, #container .sidebar-foot-left{
 	float:none;
 	width:100%;
@@ -844,24 +853,4 @@ ul.sidebar a, p.meta-date a, .comment-meta a, p.logged-in-as a, aarticle-edit-li
 	margin-bottom:50px;
 }
 	
-}
-/* FLOATS CLEARING
---------------------------------------------- */
-.clear {
-	clear:both;
-	display:block;
-	overflow:hidden;
-	visibility:hidden;
-	width:0;
-	height:0;
-}
-.clearfix:after {
-	clear:both;
-	content:' ';
-	display:block;
-	font-size:0;
-	line-height:0;
-	visibility:hidden;
-	width:0;
-	height:0
 }

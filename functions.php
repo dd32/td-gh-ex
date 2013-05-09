@@ -101,7 +101,7 @@ function baris_search_form( $form ) {
 
     $form = '<form role="search" method="get" id="searchform" action="'.get_bloginfo('url').'" >
     <input type="text" class="search-input" value="' . get_search_query() . '" name="s" id="s" />
-    <input type="submit" id="searchsubmit" value="'. esc_attr__('Search', 'ari') .'" />
+    <input type="submit" id="searchsubmit" value="'. esc_attr__('Search', 'baris') .'" />
     </form>';
 
     return $form;

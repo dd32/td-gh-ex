@@ -58,8 +58,8 @@
 	
 	<?php endwhile; ?>
 	
-	<p class="previous"><?php previous_post_link( '%link',  __( '&larr;  Previous Post', 'Previous post link', 'ari' ) ); ?></p>
-	<p class="next"><?php next_post_link( '%link', __( 'Next Post &rarr;', 'Next post link', 'ari' ) ); ?></p>
+	<p class="previous"><?php previous_post_link( '%link',  __( '&larr;  Previous Post', 'Previous post link', 'baris' ) ); ?></p>
+	<p class="next"><?php next_post_link( '%link', __( 'Next Post &rarr;', 'Next post link', 'baris' ) ); ?></p>
 	 
 	
 </div>

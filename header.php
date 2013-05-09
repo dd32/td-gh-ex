@@ -2,6 +2,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>
 		<?php global $page, $paged;
 		wp_title('|', true, 'right');
@@ -15,7 +16,7 @@
 		
 	</title>
 	<link rel="profile" href="http://gmpg.org/xfn/11"/>
-	<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" media="all"/>
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/superfish.css" type="text/css" media="all">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>"/>
 	<?php if( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
