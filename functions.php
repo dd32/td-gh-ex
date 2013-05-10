@@ -999,21 +999,6 @@ function semperfi_theme_options_do_page() { ?>
         <td>&#9733;</td>
         </tr>
         <tr>
-        <td class="justify">Option to have dates on posts to not display.</td>
-        <td>&#9733;</td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Option for Social Icons in the menu.</td>
-        <td>&#9733;</td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Option for search bar in menu.</td>
-        <td>&#9733;</td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
         <td class="justify">Upload Your Header Image</td>
         <td></td>
         <td>&#9733;</td>
@@ -1066,8 +1051,12 @@ function semperfi_theme_options_do_page() { ?>
         <th class="justify"></th>
         </tr>
         <tr>
+        <td>1.8</td>
+        <td class="justify">Forgot a bit of code in the CSS that would just waste bandwidth.</td>
+        </tr>
+        <tr>
         <td>1.7</td>
-        <td class="justify">Added code to the theme so that search engines can understand when a post was published. Brought back featured images into individual posts and pages, but you have to enable from the theme customizer. Finally I fixed the google analytics, not sure what happened, but it is back. Added the ability for social icons and search in the menu. You can turn dates off now, and few other things.</td>
+        <td class="justify">Added code to the theme so that search engines can understand when a post was published. Brought back featured images into individual posts and pages, but you have to enable from the theme customizer. Dropped some code I thought I would use but never got around to it. Finally I fixed the google analytics, not sure what happened, but it is back along with adding site verification.</td>
         </tr>
         <tr>
         <td>1.6</td>
@@ -1113,10 +1102,6 @@ function semperfi_theme_options_do_page() { ?>
         <tr>
         <th>Version</th>
         <td class="justify"></td>
-        </tr>
-        <tr>
-        <td>7</td>
-        <td class="justify">Same stuff as in 1.7 Semper Fi Lite, but special stuff for you guys soon.</td>
         </tr>
         <tr>
         <td>6</td>

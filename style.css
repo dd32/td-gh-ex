@@ -5,7 +5,7 @@ Theme URI: http://schwarttzy.com/shop/semper-fi/
 
 Description: Dedicate to my Grandfather's Bravery in WWII, Semper Fi has a high quality newspaper feeling to it. From hidden luxurious floral patterns, to images that create the nostalgia of finely crafted paper, incredibly detailed shadowing, but most importantly, Semper Fi has the ability to respond to any width screen. From 300 pixels wide, all the way to 1920 and beyond, images, galleries, quotes, text, and titles all move fluidly to respond to any thing you throw at it.
 
-Version: 1.7
+Version: 1.8
 
 Author: Eric Schwarz
 
@@ -34,15 +34,6 @@ h1, h2, h3, h4, h5, h6 {clear: both;}
 html {overflow-y:scroll; font-size:100%; -webkit-text-size-adjust:100%; -ms-text-size-adjust: 100%;}
 a:focus {outline:thin dotted;}
 img {border:0; -ms-interpolation-mode:bicubic;}
-
-/* Import Social Icons Zocial
--------------------------------------------------------------- */
-@import url(http://weloveiconfonts.com/api/?family=zocial);
-
-/* zocial */
-[class*="zocial-"]:before {
-  font-family: 'zocial', sans-serif;
-}
 
 /* Ready, Set? Begin!
 -------------------------------------------------------------- */
