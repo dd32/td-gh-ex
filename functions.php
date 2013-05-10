@@ -164,6 +164,10 @@ function adventure_customize($wp_customize) {
 			</label> <?php } }
 
 	// The Standard Sections for Theme Custimizer
+	$wp_customize->add_section( 'meta_section', array(
+        'title'					=> 'Meta',
+        'priority'				=> 1, ));
+
 	$wp_customize->add_section( 'header_section', array(
         'title'				=> 'Header',
 		'priority'			=> 26, ));
@@ -190,6 +194,24 @@ function adventure_customize($wp_customize) {
 
 	// Remove the Section Colors for the Sake of making Sense
 	$wp_customize->remove_section( 'colors');
+
+	// Adding Google Analytics to the Theme
+	$wp_customize->add_setting( 'google_analytics_setting', array(
+		'default'			=> 'For example mine is "UA-9335180-X"', ));
+
+	$wp_customize->add_control( new adventure_Customize_Textarea_Control( $wp_customize, 'analytics_control', array(
+		'label'				=> 'Enter Your Google Analytics Code',
+		'section'			=> 'meta_section',
+		'settings'			=> 'google_analytics_setting', )));
+			
+	// Adding Webmaster Tools to the Theme
+	$wp_customize->add_setting( 'google_webmaster_tool_setting', array(
+		'default'			=> 'For example "gN9drVvyyDUFQzMSBL8Y8-EttW1pUDtnUypP-331Kqh"', ));
+
+	$wp_customize->add_control( new adventure_Customize_Textarea_Control( $wp_customize, 'google_webmaster_tool_control', array(
+		'label'				=> 'Enter Your Google Webmaster Verification Code',
+		'section'			=> 'meta_section',
+		'settings'			=> 'google_webmaster_tool_setting', )));
 
 	// Background needed to be moved to to the Background Section
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'background_color', array(
@@ -249,18 +271,110 @@ function adventure_customize($wp_customize) {
 			'notitle'		=> 'No Title',
 			'bottom'		=> 'Moves Menu To Bottom', ), ));
 			
-	// Adjust the Space Between the Top of the Page and Content
-	$wp_customize->add_setting( 'titlefontstyle_setting', array(
-		'Default'           => 'Default',
-		'control'           => 'select',));
+	// Turn the Search bar in the navigation on or off
+	$wp_customize->add_setting( 'navi_search_setting', array(
+		'default'           	=> 'off',
+		'control'           	=> 'select',));
 
-	$wp_customize->add_control( 'titlefontstyle_control', array(
-		'label'					=> 'Google Webfonts Site Title',
-		'priority'				=> 10,
-		'section'				=> 'title_tagline',
-		'settings'				=> 'titlefontstyle_setting',
+	$wp_customize->add_control( 'navi_search_control', array(
+		'label'					=> 'Search bar in navigaton',
+		'section'				=> 'nav',
+		'settings'				=> 'navi_search_setting',
 		'type'					=> 'select',
 		'choices'				=> array(
+			'off'				=> 'Do not display search',
+			'on'				=> 'Display the search',), ));
+			
+	// Turn the date / time on post on or off
+	$wp_customize->add_setting( 'display_date_setting', array(
+		'default'           	=> 'on',
+		'control'           	=> 'select',));
+
+	$wp_customize->add_control( 'display_date_control', array(
+		'section'				=> 'content_section',
+		'label'					=> 'Display the date',
+		'settings'				=> 'display_date_setting',
+		'type'					=> 'select',
+		'choices'				=> array(
+			'on'				=> 'Display the dates',
+			'off'				=> 'Do not display dates',), ));
+			
+	// Display an excerpt on the landing page
+	$wp_customize->add_setting( 'display_excerpt_setting', array(
+		'default'           	=> 'off',
+		'control'           	=> 'select',));
+
+	$wp_customize->add_control( 'display_excerpt_control', array(
+		'section'				=> 'content_section',
+		'label'					=> 'Display excerpt on paged content',
+		'settings'				=> 'display_excerpt_setting',
+		'type'					=> 'select',
+		'choices'				=> array(
+			'off'				=> 'Display the content',
+			'on'				=> 'Display the excerpt',), ));
+			
+	// Add Facebook Icon to the navigation
+	$wp_customize->add_setting( 'facebook_setting', array(
+		'default'			=> 'The url link goes in here.', ));
+
+	$wp_customize->add_control( new adventure_Customize_Textarea_Control( $wp_customize, 'facebook_control', array(
+		'label'				=> 'Facebook icon in the Menu',
+		'priority'			=> 50,
+		'section'			=> 'nav',
+		'settings'			=> 'facebook_setting', )));
+			
+	// Add Twitter Icon to the navigation
+	$wp_customize->add_setting( 'twitter_setting', array(
+		'default'			=> 'The url link goes in here.', ));
+
+	$wp_customize->add_control( new adventure_Customize_Textarea_Control( $wp_customize, 'twitter_control', array(
+		'label'				=> 'Twitter icon in the Menu',
+		'priority'			=> 51,
+		'section'			=> 'nav',
+		'settings'			=> 'twitter_setting', )));
+			
+	// Add Google+ Icon to the navigation
+	$wp_customize->add_setting( 'google_plus_setting', array(
+		'default'			=> 'The url link goes in here.', ));
+
+	$wp_customize->add_control( new adventure_Customize_Textarea_Control( $wp_customize, 'google_plus_control', array(
+		'label'				=> 'Google Plus icon in the Menu',
+		'priority'			=> 52,
+		'section'			=> 'nav',
+		'settings'			=> 'google_plus_setting', )));
+			
+	// Add YouTube Icon to the navigation
+	$wp_customize->add_setting( 'youtube_setting', array(
+		'default'			=> 'The url link goes in here.', ));
+
+	$wp_customize->add_control( new adventure_Customize_Textarea_Control( $wp_customize, 'youtube_control', array(
+		'label'				=> 'Youtube icon in the Menu',
+		'priority'			=> 54,
+		'section'			=> 'nav',
+		'settings'			=> 'youtube_setting', )));
+			
+	// Add Vimeo Icon to the navigation
+	$wp_customize->add_setting( 'vimeo_setting', array(
+		'default'			=> 'The url link goes in here.', ));
+
+	$wp_customize->add_control( new adventure_Customize_Textarea_Control( $wp_customize, 'vimeo_control', array(
+		'label'				=> 'Vimeo icon in the Menu',
+		'priority'			=> 55,
+		'section'			=> 'nav',
+		'settings'			=> 'vimeo_setting', )));
+			
+	// Add Soundcloud Icon to the navigation
+	$wp_customize->add_setting( 'soundcloud_setting', array(
+		'default'			=> 'The url link goes in here.', ));
+
+	$wp_customize->add_control( new adventure_Customize_Textarea_Control( $wp_customize, 'soundcloud_control', array(
+		'label'				=> 'Soundcloud icon in the Menu',
+		'priority'			=> 56,
+		'section'			=> 'nav',
+		'settings'			=> 'soundcloud_setting', )));
+
+	// Create an Array with a ton of google fonts	
+	$google_font_array = array(
 			'Default'				=> 'Default',
 			'Questrial'				=> 'Questrial',
 			'Astloch'				=> 'Astloch',
@@ -552,7 +666,20 @@ function adventure_customize($wp_customize) {
 			'Didact+Gothic'			=> 'Didact+Gothic',
 			'Modern+Antiqua'		=> 'Modern+Antiqua',
 			'VT323'					=> 'VT323',
-			'Annie+Use+Your+Telescope' => 'Annie+Use+Your+Telescope',), ));
+			'Annie+Use+Your+Telescope' => 'Annie+Use+Your+Telescope');			
+			
+	// Adjust the Space Between the Top of the Page and Content
+	$wp_customize->add_setting( 'titlefontstyle_setting', array(
+		'Default'           => 'Default',
+		'control'           => 'select',));
+
+	$wp_customize->add_control( 'titlefontstyle_control', array(
+		'label'					=> 'Google Webfonts Site Title',
+		'priority'				=> 10,
+		'section'				=> 'title_tagline',
+		'settings'				=> 'titlefontstyle_setting',
+		'type'					=> 'select',
+		'choices'				=> $google_font_array, ));
 			
 	// Adjust the Space Between the Top of the Page and Content
 	$wp_customize->add_setting( 'taglinefontstyle_setting', array(
@@ -565,299 +692,7 @@ function adventure_customize($wp_customize) {
 		'section'				=> 'title_tagline',
 		'settings'				=> 'taglinefontstyle_setting',
 		'type'					=> 'select',
-		'choices'				=> array(
-			'Default'				=> 'Default',
-			'Questrial'				=> 'Questrial',
-			'Astloch'				=> 'Astloch',
-			'IM+Fell+English+SC'	=> 'IM+Fell+English+SC',
-			'Lekton'				=> 'Lekton',
-			'Nova+Round'			=> 'Nova+Round',
-			'Nova+Oval'				=> 'Nova+Oval',
-			'League+Script'			=> 'League+Script',
-			'Caudex'				=> 'Caudex',
-			'IM+Fell+DW+Pica'		=> 'IM+Fell+DW+Pica',
-			'Nova+Script'			=> 'Nova+Script',
-			'Nixie+One'				=> 'Nixie+One',
-			'IM+Fell+DW+Pica+SC'	=> 'IM+Fell+DW+Pica+SC',
-			'Puritan'				=> 'Puritan',
-			'Prociono'				=> 'Prociono',
-			'Abel'					=> 'Abel',
-			'Snippet'				=> 'Snippet',
-			'Kristi'				=> 'Kristi',
-			'Mako'					=> 'Mako',
-			'Ubuntu+Mono'			=> 'Ubuntu+Mono',
-			'Nova+Slim'				=> 'Nova+Slim',
-			'Patrick+Hand'			=> 'Patrick+Hand',
-			'Crafty+Girls'			=> 'Crafty+Girls',
-			'Brawler'				=> 'Brawler',
-			'Droid+Sans'			=> 'Droid+Sans',
-			'Geostar'				=> 'Geostar',
-			'Yellowtail'			=> 'Yellowtail',
-			'Permanent+Marker'		=> 'Permanent+Marker',
-			'Just+Another+Hand'		=> 'Just+Another+Hand',
-			'Unkempt'				=> 'Unkempt',
-			'Jockey+One'			=> 'Jockey+One',
-			'Lato'					=> 'Lato',
-			'Arvo'					=> 'Arvo',
-			'Cabin'					=> 'Cabin',
-			'Playfair+Display'		=> 'Playfair+Display',
-			'Crushed'				=> 'Crushed',
-			'Asset'					=> 'Asset',
-			'Sue+Ellen+Francisco'	=> 'Sue+Ellen+Francisco',
-			'Julee'					=> 'Julee',
-			'Judson'				=> 'Judson',
-			'Neuton'				=> 'Neuton',
-			'Sorts+Mill+Goudy'		=> 'Sorts+Mill+Goudy',
-			'Mate'					=> 'Mate',
-			'News+Cycle'			=> 'News+Cycle',
-			'Michroma'				=> 'Michroma',
-			'Lora'					=> 'Lora',
-			'Give+You+Glory'		=> 'Give+You+Glory',
-			'Rammetto+One'			=> 'Rammetto+One',
-			'Pompiere'				=> 'Pompiere',
-			'PT+Sans'				=> 'PT+Sans',
-			'Andika'				=> 'Andika',
-			'Cabin+Sketch'			=> 'Cabin+Sketch',
-			'Delius+Swash+Caps'		=> 'Delius+Swash+Caps',
-			'Coustard'				=> 'Coustard',
-			'Cherry+Cream+Soda'		=> 'Cherry+Cream+Soda',
-			'Maiden+Orange'			=> 'Maiden+Orange',
-			'Syncopate'				=> 'Syncopate',
-			'PT+Sans+Narrow'		=> 'PT+Sans+Narrow',
-			'Montez'				=> 'Montez',
-			'Short+Stack'			=> 'Short+Stack',
-			'Poller+One'			=> 'Poller+One',
-			'Tinos'					=> 'Tinos',
-			'Philosopher'			=> 'Philosopher',
-			'Neucha'				=> 'Neucha',
-			'Gravitas+One'			=> 'Gravitas+One',
-			'Corben'				=> 'Corben',
-			'Istok+Web'				=> 'Istok+Web',
-			'Federo'				=> 'Federo',
-			'Yeseva+One'			=> 'Yeseva+One',
-			'Petrona'				=> 'Petrona',
-			'Arimo'					=> 'Arimo',
-			'Irish+Grover'			=> 'Irish+Grover',
-			'Quicksand'				=> 'Quicksand',
-			'Paytone+One'			=> 'Paytone+One',
-			'Kelly+Slab'			=> 'Kelly+Slab',
-			'Nova+Flat'				=> 'Nova+Flat',
-			'Vast+Shadow'			=> 'Vast+Shadow',
-			'Ubuntu'				=> 'Ubuntu',
-			'Smokum'				=> 'Smokum',
-			'Ruslan+Display'		=> 'Ruslan+Display',
-			'La+Belle+Aurore'		=> 'La+Belle+Aurore',
-			'Federant'				=> 'Federant',
-			'Podkova'				=> 'Podkova',
-			'IM+Fell+French+Canon'	=> 'IM+Fell+French+Canon',
-			'PT+Serif+Caption'		=> 'PT+Serif+Caption',
-			'The+Girl+Next+Door'	=> 'The+Girl+Next+Door',
-			'Artifika'				=> 'Artifika',
-			'Marck+Script'			=> 'Marck+Script',
-			'Droid+Sans+Mono'		=> 'Droid+Sans+Mono',
-			'Contrail+One'			=> 'Contrail+One',
-			'Swanky+and+Moo+Moo'	=> 'Swanky+and+Moo+Moo',
-			'Wire+One'				=> 'Wire+One',
-			'Tenor+Sans'			=> 'Tenor+Sans',
-			'Nova+Mono'				=> 'Nova+Mono',
-			'Josefin+Sans'			=> 'Josefin+Sans',
-			'Bitter'				=> 'Bitter',
-			'Supermercado+One'		=> 'Supermercado+One',
-			'PT+Serif'				=> 'PT+Serif',
-			'Limelight'				=> 'Limelight',
-			'Coda+Caption:800'		=> 'Coda+Caption:800',
-			'Lobster'				=> 'Lobster',
-			'Gentium+Basic'			=> 'Gentium+Basic',
-			'Atomic+Age'			=> 'Atomic+Age',
-			'Mate+SC'				=> 'Mate+SC',
-			'Eater+Caps'			=> 'Eater+Caps',
-			'Bigshot+One'			=> 'Bigshot+One',
-			'Kreon'					=> 'Kreon',
-			'Rationale'				=> 'Rationale',
-			'Sniglet:800'			=> 'Sniglet:800',
-			'Smythe'				=> 'Smythe',
-			'Waiting+for+the+Sunrise' => 'Waiting+for+the+Sunrise',
-			'Gochi+Hand'			=> 'Gochi+Hand',
-			'Reenie+Beanie'			=> 'Reenie+Beanie',
-			'Kameron'				=> 'Kameron',
-			'Anton'					=> 'Anton',
-			'Holtwood+One+SC'		=> 'Holtwood+One+SC',
-			'Schoolbell'			=> 'Schoolbell',
-			'Tulpen+One'			=> 'Tulpen+One',
-			'Redressed'				=> 'Redressed',
-			'Ovo'					=> 'Ovo',
-			'Shadows+Into+Light'	=> 'Shadows+Into+Light',
-			'Rokkitt'				=> 'Rokkitt',
-			'Josefin+Slab'			=> 'Josefin+Slab',
-			'Passero+One'			=> 'Passero+One',
-			'Copse'					=> 'Copse',
-			'Walter+Turncoat'		=> 'Walter+Turncoat',
-			'Sigmar+One'			=> 'Sigmar+One',
-			'Convergence'			=> 'Convergence',
-			'Gloria+Hallelujah'		=> 'Gloria+Hallelujah',
-			'Fontdiner+Swanky'		=> 'Fontdiner+Swanky',
-			'Tienne'				=> 'Tienne',
-			'Calligraffitti'		=> 'Calligraffitti',
-			'UnifrakturCook:700'	=> 'UnifrakturCook:700',
-			'Tangerine'				=> 'Tangerine',
-			'Days+One'				=> 'Days+One',
-			'Cantarell'				=> 'Cantarell',
-			'IM+Fell+Great+Primer'	=> 'IM+Fell+Great+Primer',
-			'Antic'					=> 'Antic',
-			'Muli'					=> 'Muli',
-			'Monofett'				=> 'Monofett',
-			'Just+Me+Again+Down+Here' => 'Just+Me+Again+Down+Here',
-			'Geostar+Fill'			=> 'Geostar+Fill',
-			'Candal'				=> 'Candal',
-			'Cousine'				=> 'Cousine',
-			'Merienda+One'			=> 'Merienda+One',
-			'Goblin+One'			=> 'Goblin+One',
-			'Monoton'				=> 'Monoton',
-			'Ubuntu+Condensed'		=> 'Ubuntu+Condensed',
-			'EB+Garamond'			=> 'EB+Garamond',
-			'Droid+Serif'			=> 'Droid+Serif',
-			'Lancelot'				=> 'Lancelot',
-			'Cookie'				=> 'Cookie',
-			'Fjord+One'				=> 'Fjord+One',
-			'Arapey'				=> 'Arapey',
-			'Rancho'				=> 'Rancho',
-			'Sancreek'				=> 'Sancreek',
-			'Butcherman+Caps'		=> 'Butcherman+Caps',
-			'Salsa'					=> 'Salsa',
-			'Amatic+SC'				=> 'Amatic+SC',
-			'Creepster+Caps'		=> 'Creepster+Caps',
-			'Chivo'					=> 'Chivo',
-			'Linden+Hill'			=> 'Linden+Hill',
-			'Nosifer+Caps'			=> 'Nosifer+Caps',
-			'Marvel'				=> 'Marvel',
-			'Alice'					=> 'Alice',
-			'Love+Ya+Like+A+Sister' => 'Love+Ya+Like+A+Sister',
-			'Pinyon+Script'			=> 'Pinyon+Script',
-			'Stardos+Stencil'		=> 'Stardos+Stencil',
-			'Leckerli+One'			=> 'Leckerli+One',
-			'Nothing+You+Could+Do'	=> 'Nothing+You+Could+Do',
-			'Sansita+One'			=> 'Sansita+One',
-			'Poly'					=> 'Poly',
-			'Alike'					=> 'Alike',
-			'Fanwood+Text'			=> 'Fanwood+Text',
-			'Bowlby+One+SC'			=> 'Bowlby+One+SC',
-			'Actor'					=> 'Actor',
-			'Terminal+Dosis'		=> 'Terminal+Dosis',
-			'Aclonica'				=> 'Aclonica',
-			'Gentium+Book+Basic'	=> 'Gentium+Book+Basic',
-			'Rosario'				=> 'Rosario',
-			'Satisfy'				=> 'Satisfy',
-			'Sunshiney'				=> 'Sunshiney',
-			'Aubrey'				=> 'Aubrey',
-			'Jura'					=> 'Jura',
-			'Ultra'					=> 'Ultra',
-			'Zeyada'				=> 'Zeyada',
-			'Changa+One'			=> 'Changa+One',
-			'Varela'				=> 'Varela',
-			'Black+Ops+One'			=> 'Black+Ops+One',
-			'Open+Sans'				=> 'Open+Sans',
-			'Alike+Angular'			=> 'Alike+Angular',
-			'Prata'					=> 'Prata',
-			'Bowlby+One'			=> 'Bowlby+One',
-			'Megrim'				=> 'Megrim',
-			'Damion'				=> 'Damion',
-			'Coda'					=> 'Coda',
-			'Vidaloka'				=> 'Vidaloka',
-			'Radley'				=> 'Radley',
-			'Indie+Flower'			=> 'Indie+Flower',
-			'Over+the+Rainbow'		=> 'Over+the+Rainbow',
-			'Open+Sans+Condensed:300' => 'Open+Sans+Condensed:300',
-			'Abril+Fatface'			=> 'Abril+Fatface',
-			'Miltonian'				=> 'Miltonian',
-			'Delius'				=> 'Delius',
-			'Six+Caps'				=> 'Six+Caps',
-			'Francois+One'			=> 'Francois+One',
-			'Dorsa'					=> 'Dorsa',
-			'Aldrich'				=> 'Aldrich',
-			'Buda:300'				=> 'Buda:300',
-			'Rochester'				=> 'Rochester',
-			'Allerta'				=> 'Allerta',
-			'Bevan'					=> 'Bevan',
-			'Wallpoet'				=> 'Wallpoet',
-			'Quattrocento'			=> 'Quattrocento',
-			'Dancing+Script'		=> 'Dancing+Script',
-			'Amaranth'				=> 'Amaranth',
-			'Unna'					=> 'Unna',
-			'PT+Sans+Caption'		=> 'PT+Sans+Caption',
-			'Geo'					=> 'Geo',
-			'Quattrocento+Sans'		=> 'Quattrocento+Sans',
-			'Oswald'				=> 'Oswald',
-			'Carme'					=> 'Carme',
-			'Spinnaker'				=> 'Spinnaker',
-			'MedievalSharp'			=> 'MedievalSharp',
-			'Nova+Square'			=> 'Nova+Square',
-			'IM+Fell+French+Canon+SC' => 'IM+Fell+French+Canon+SC',
-			'Voltaire'				=> 'Voltaire',
-			'Raleway:100'			=> 'Raleway:100',
-			'Delius+Unicase'		=> 'Delius+Unicase',
-			'Shanti'				=> 'Shanti',
-			'Expletus+Sans'			=> 'Expletus+Sans',
-			'Crimson+Text'			=> 'Crimson+Text',
-			'Nunito'				=> 'Nunito',
-			'Numans'				=> 'Numans',
-			'Hammersmith+One'		=> 'Hammersmith+One',
-			'Miltonian+Tattoo'		=> 'Miltonian+Tattoo',
-			'Allerta+Stencil'		=> 'Allerta+Stencil',
-			'Vollkorn'				=> 'Vollkorn',
-			'Pacifico'				=> 'Pacifico',
-			'Cedarville+Cursive'	=> 'Cedarville+Cursive',
-			'Cardo'					=> 'Cardo',
-			'Merriweather'			=> 'Merriweather',
-			'Loved+by+the+King'		=> 'Loved+by+the+King',
-			'Slackey'				=> 'Slackey',
-			'Nova+Cut'				=> 'Nova+Cut',
-			'Rock+Salt'				=> 'Rock+Salt',
-			'Yanone+Kaffeesatz'		=> 'Yanone+Kaffeesatz',
-			'Molengo'				=> 'Molengo',
-			'Nobile'				=> 'Nobile',
-			'Goudy+Bookletter+1911' => 'Goudy+Bookletter+1911',
-			'Bangers'				=> 'Bangers',
-			'Old+Standard+TT'		=> 'Old+Standard+TT',
-			'Orbitron'				=> 'Orbitron',
-			'Comfortaa'				=> 'Comfortaa',
-			'Varela+Round'			=> 'Varela+Round',
-			'Forum'					=> 'Forum',
-			'Maven+Pro'				=> 'Maven+Pro',
-			'Volkhov'				=> 'Volkhov',
-			'Allan:700'				=> 'Allan:700',
-			'Luckiest+Guy'			=> 'Luckiest+Guy',
-			'Gruppo'				=> 'Gruppo',
-			'Cuprum'				=> 'Cuprum',
-			'Anonymous+Pro'			=> 'Anonymous+Pro',
-			'UnifrakturMaguntia'	=> 'UnifrakturMaguntia',
-			'Covered+By+Your+Grace' => 'Covered+By+Your+Grace',
-			'Homemade+Apple'		=> 'Homemade+Apple',
-			'Lobster+Two'			=> 'Lobster+Two',
-			'Coming+Soon'			=> 'Coming+Soon',
-			'Mountains+of+Christmas' => 'Mountains+of+Christmas',
-			'Architects+Daughter'	=> 'Architects+Daughter',
-			'Dawning+of+a+New+Day'	=> 'Dawning+of+a+New+Day',
-			'Kranky'				=> 'Kranky',
-			'Adamina'				=> 'Adamina',
-			'Carter+One'			=> 'Carter+One',
-			'Bentham'				=> 'Bentham',
-			'IM+Fell+Great+Primer+SC' => 'IM+Fell+Great+Primer+SC',
-			'Chewy'					=> 'Chewy',
-			'IM+Fell+English'		=> 'IM+Fell+English',
-			'Inconsolata'			=> 'Inconsolata',
-			'Vibur'					=> 'Inconsolata',
-			'Andada'				=> 'Andada',
-			'IM+Fell+Double+Pica'	=> 'IM+Fell+Double+Pica',
-			'Kenia'					=> 'Kenia',
-			'Meddon'				=> 'Meddon',
-			'Metrophobic'			=> 'Metrophobic',
-			'Play'					=> 'Play',
-			'Special+Elite'			=> 'Special+Elite',
-			'IM+Fell+Double+Pica+SC' => 'IM+Fell+Double+Pica+SC',
-			'Didact+Gothic'			=> 'Didact+Gothic',
-			'Modern+Antiqua'		=> 'Modern+Antiqua',
-			'VT323'					=> 'VT323',
-			'Annie+Use+Your+Telescope' => 'Annie+Use+Your+Telescope',), ));
+		'choices'				=> $google_font_array, ));
 
 	// Adjust the Space Between the Top of the Page and Content
 	$wp_customize->add_setting( 'headerspacing_setting', array(
@@ -871,6 +706,12 @@ function adventure_customize($wp_customize) {
 		'settings'			=> 'headerspacing_setting',
 		'type'				=> 'select',
 		'choices'			=> array(
+			'95'			=> '95%',
+			'90'			=> '90%',
+			'85'			=> '85%',
+			'80'			=> '80%',
+			'75'			=> '75%',
+			'70'			=> '70%',
 			'65'			=> '65%',
 			'60'			=> '60%',
 			'55'			=> '55%',
@@ -1055,18 +896,18 @@ function adventure_inline_css() {
 			$bs = hexdec(substr($hexs,4,2)); } }
 		
 		echo '<!-- Custom Font Styles -->' . "\n";
-		if ( get_theme_mod('titlefontstyle_setting') != 'Default' ) {	echo "<link href='http://fonts.googleapis.com/css?family=" . get_theme_mod('titlefontstyle_setting') . "' rel='stylesheet' type='text/css'>"  . "\n"; }
-		if ( get_theme_mod('taglinefontstyle_setting') != 'Default' ) {	echo "<link href='http://fonts.googleapis.com/css?family=" . get_theme_mod('taglinefontstyle_setting') . "' rel='stylesheet' type='text/css'>"  . "\n"; }
+		if ( ( get_theme_mod('titlefontstyle_setting') != 'Default' ) && ( get_theme_mod('titlefontstyle_setting') != '' ) ) {	echo "<link href='http://fonts.googleapis.com/css?family=" . get_theme_mod('titlefontstyle_setting') . "' rel='stylesheet' type='text/css'>"  . "\n"; }
+		if ( ( get_theme_mod('taglinefontstyle_setting') != 'Default' ) && ( get_theme_mod('taglinefontstyle_setting') != 'Default' ) ) {	echo "<link href='http://fonts.googleapis.com/css?family=" . get_theme_mod('taglinefontstyle_setting') . "' rel='stylesheet' type='text/css'>"  . "\n"; }
 		echo '<!-- End Custom Fonts -->' . "\n\n";
 
 		echo '<!-- Custom CSS Styles -->' . "\n";
         echo '<style type="text/css" media="screen">' . "\n";
-		if ( get_theme_mod('backgroundsize_setting') != 'auto' ) echo '	body.custom-background {background-size:' . get_theme_mod('backgroundsize_setting') . ';}' . "\n";
-		if ( get_theme_mod('backgroundcolor_setting') != '#b4b09d' ) echo '	#content>li {background: rgba(' . $r . ',' . $g . ', ' . $b . ', ' .  get_theme_mod('contentbackground_setting') .  ');}' . "\n";
+		if ( ( get_theme_mod('backgroundsize_setting') != 'auto' ) && ( get_theme_mod('backgroundsize_setting') != '' ) ) echo '	body.custom-background {background-size:' . get_theme_mod('backgroundsize_setting') . ';}' . "\n";
+		if ( ( get_theme_mod('backgroundcolor_setting') != '#b4b09d' ) && ( get_theme_mod('backgroundcolor_setting') != '' ) ) echo '	#content>li {background: rgba(' . $r . ',' . $g . ', ' . $b . ', ' .  get_theme_mod('contentbackground_setting') .  ');}' . "\n";
 		if ( ( get_theme_mod('sidebarcolor_setting') != '#000000'  ) || ( get_theme_mod('backgroundcolor_setting') != '#b4b09d' ) ) echo '	li#sidebar {background: rgba(' . $rs . ',' . $gs . ', ' . $bs . ', ' .  get_theme_mod('sidebarbackground_setting') .  ');}' . "\n";
-		if ( get_theme_mod('titlecolor_setting') != '#eee2d6' ) echo '	#navi h1 a {color:' . get_theme_mod('titlecolor_setting') . ';}' . "\n";
-		if ( get_theme_mod('taglinecolor_setting') != '#066ba0' ) echo '	#navi h1 i {color:' . get_theme_mod('taglinecolor_setting') . ';}' . "\n";
-		if ( get_option('bannerimage_setting') != 'purple.png' ) echo '	#navi {background: bottom url(' . get_template_directory_uri() . '/images/' . get_option('bannerimage_setting') .  ');}'. "\n";
+		if ( ( get_theme_mod('titlecolor_setting') != '#eee2d6' ) && ( get_theme_mod('titlecolor_setting') != '' ) ) echo '	#navi h1 a {color:' . get_theme_mod('titlecolor_setting') . ';}' . "\n";
+		if ( ( get_theme_mod('taglinecolor_setting') != '#066ba0' ) && ( get_theme_mod('taglinecolor_setting') != '' ) ) echo '	#navi h1 i {color:' . get_theme_mod('taglinecolor_setting') . ';}' . "\n";
+		if ( ( get_option('bannerimage_setting') != 'purple.png' ) && ( get_option('bannerimage_setting') != '' ) ) echo '	#navi {background: bottom url(' . get_template_directory_uri() . '/images/' . get_option('bannerimage_setting') .  ');}'. "\n";
 		if ( get_theme_mod('headerspacing_setting') != '35' ) echo '	#spacing {height:' . get_theme_mod('headerspacing_setting') . '%;}'. "\n";
 		if ( get_option('menu_setting') == 'notitle' ) { echo '	#navi {position: fixed;margin-top:0px;}' . "\n" . '	.admin-bar #navi {margin-top:28px;}' . "\n" . '#navi h1:first-child, #navi h1:first-child i,  #navi img:first-child {display: none;}' . "\n"; }
 		if ( get_option('menu_setting') == 'bottom' ) { echo '	#navi {position: fixed; bottom:0; top:auto;}' . "\n" . '	#navi h1:first-child, #navi h1:first-child i,  #navi img:first-child {display: none;}' . "\n" . '#navi li ul {bottom:2.78em; top:auto;}' . "\n";}
@@ -1083,16 +924,23 @@ function adventure_inline_css() {
 		echo '</style>' . "\n";
 		echo '<!-- End Custom CSS -->' . "\n";
 		echo "\n";
-
-		if (get_option('favicon_setting') != '') {
-			echo '<!-- Favicon Code -->' . "\n";
-			echo '<link rel="icon" href="' . get_option('favicon_setting') . '" />' . "\n\n";} 
 		
-		$options = get_theme_mod('typekit_setting');
-		if (get_theme_mod( 'typekit_setting' ) != 'For example mine is "jgu6yjc"') {
-			echo '<!-- Typekit Kit ID -->' . "\n";
-			echo '<script type="text/javascript" src="//use.typekit.net/' . get_theme_mod( 'typekit_setting' ) . '.js"></script>' . "\n";
-			echo '<script type="text/javascript">try{Typekit.load();}catch(e){}</script>' . "\n\n";} }
+		if ( ( ( get_theme_mod('google_webmaster_tool_setting') != '' ) && ( get_theme_mod('google_webmaster_tool_setting') != 'For example mine is "gN9drVvyyDUFQzMSBL8Y8-EttW1pUDtnUypP-331Kqh"' ) ) || ( ( get_theme_mod('google_analytics_setting') != '' ) && ( get_theme_mod('google_analytics_setting') != 'For example mine is "UA-9335180-X"' ) ) ) {
+			echo '<!-- Google Analytics & Webtool -->' . "\n";
+			if ( ( get_theme_mod('google_webmaster_tool_setting') != '' ) && ( get_theme_mod('google_webmaster_tool_setting') != 'For example mine is "gN9drVvyyDUFQzMSBL8Y8-EttW1pUDtnUypP-331Kqh"' ) ) echo '<meta name="google-site-verification" content="' .  get_theme_mod('google_webmaster_tool_setting') . '" />' . "\n";
+			if ( ( get_theme_mod('google_analytics_setting') != '' ) && ( get_theme_mod('google_analytics_setting') != 'For example mine is "UA-9335180-X"' ) ) {
+			echo '<script type="text/javascript">' . "\n"; 
+			echo '	var _gaq = _gaq || [];' . "\n"; 
+			echo "	_gaq.push(['_setAccount', '" .  get_theme_mod('google_analytics_setting') . "']);" . "\n"; 
+			echo "	_gaq.push(['_trackPageview']);" . "\n\n"; 
+			echo "	(function() {" . "\n"; 
+			echo "	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;" . "\n"; 
+			echo "	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';" . "\n"; 
+			echo "	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);" . "\n"; 
+			echo "	})();" . "\n\n"; 
+			echo "</script>" . "\n";  }
+			echo '<!-- End Google Analytics & Webtool -->' . "\n";
+			echo "\n"; } }
 
 add_action('wp_head', 'adventure_inline_css');
 
@@ -1262,6 +1110,10 @@ function adventure_theme_options_do_page() { ?>
         <th class="justify"></th>
         </tr>
         <tr>
+        <th>2.4</th>
+        <td class="justify">Added the ablitity to put soical icon and/or a search bar into the menu.  Fixed the issue with the theme display "and comments are closed." Added Google Analytics and Web Master Tool option because everyone should have it and more control of over the comments display too. The option to choose either display excerpts or the entire content of a post or page. You can choose to display dates on posts.</td>
+        </tr>
+        <tr>
         <th>2.3</th>
         <td class="justify">Minor update to add few things to the theme along with fixes. The custom CSS generated from the theme customizer should only show if you have changed something in the features. Static pages now will not show the pagination or comments. Include the option to do anything you want with the comments. Added Google Fonts to the Header for the Title and Slogan.</td>
         </tr>
@@ -1288,6 +1140,10 @@ function adventure_theme_options_do_page() { ?>
         <tr>
         <th>Version</th>
         <th class="justify"></th>
+        </tr>
+        <tr>
+        <th>6</th>
+        <td class="justify">Same as "Adventure 2.4" but I got some stuff special to you guys for next release.</td>
         </tr>
         <tr>
         <th>5</th>

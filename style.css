@@ -1,13 +1,25 @@
 /*  
-Theme Name:Adventure
-Theme URI:http://schwarttzy.com/shop/adventureplus/
-Author:Eric Schwarz
-Author URI:http://schwarttzy.com/about-2/
-Description:Inspired by a certain GPS Manufacture, I designed this theme to feel like you're looking through a window out into the wilderness and hopefully inspire you to explore. I'm constantly adding new features to this theme to allow you to personalize it to your own needs. If you want a new feature or just want to be able to change something just ask me and I would be happy to add it for you. I would like to thank you for your support, visit the Theme URI for the update history, and Enjoy!
-Version:2.3
-License:GNU General Public License
-License URI:license.txt
-Tags:white, purple, one-column, two-columns, fixed-width, custom-menu, custom-background, custom-colors, featured-images, theme-options, custom-header, editor-style, flexible-header, flexible-width, full-width-template, theme-options, sticky-post, threaded-comments
+
+Theme Name: Adventure
+
+Theme URI: http://schwarttzy.com/shop/adventureplus/
+
+Description: Inspired by a certain GPS Manufacture, I designed this theme to feel like you're looking through a window out into the wilderness and hopefully inspire you to explore. I'm constantly adding new features to this theme to allow you to personalize it to your own needs. If you want a new feature or just want to be able to change something just ask me and I would be happy to add it for you. I would like to thank you for your support, visit the Theme URI for the update history, and Enjoy!
+
+Version: 2.4
+
+Author: Eric Schwarz
+
+Author URI: http://schwarttzy.com/about-2/
+
+Tags: white, purple, one-column, two-columns, fixed-width, custom-menu, custom-background, custom-colors, featured-images, theme-options, custom-header, editor-style, flexible-header, flexible-width, full-width-template, theme-options, sticky-post, threaded-comments
+
+Copyright (C) 2003-2012 Eric Schwarz - Schwarttzy
+
+License: GNU General Public License, version 3 (AGPLv3)
+
+License URI: http://opensource.org/licenses/AGPL-3.0
+
 */
 
 /*------------------------------------------------------------------
@@ -131,7 +143,7 @@ ul, li {display:inline-block;}
 
 #content>li h4:first-child a:hover {color:#444;}
 
-#content>li h4:first-child span {font-size:.6em; line-height:.9em;float:right; padding:.20em; text-align:center;}
+#content>li h4:first-child time {font-size:.6em; line-height:.9em;float:right; padding:.20em; text-align:center;}
 
 #content>li ul, #content>li ol {float:none; list-style-type:decimal; margin:.1em 0 0 5%; width:95%;}
 
@@ -542,10 +554,75 @@ sub {top:.3em;}
 @media only screen and (max-width:82em) { body {font:normal 101%} }
 @media only screen and (max-width:70em) { body {font:normal 98%} }
 @media only screen and (max-width:50em) { body {font:normal 95%} }
-@media only screen and (max-width:35em) { body {font:normal 91%}
+@media only screen and (max-width:35em) { body {font:normal 91%} }
+
+/* Social Icons
+-------------------------------------------------------------- */	
+@font-face {
+  font-family: 'fontello';
+  src: url('fonts/fontello.eot?44704590');
+  src: url('fonts/fontello.eot?44704590#iefix') format('embedded-opentype'),
+       url('fonts/fontello.woff?44704590') format('woff'),
+       url('fonts/fontello.ttf?44704590') format('truetype'),
+       url('fonts/fontello.svg?44704590#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?44704590#fontello') format('svg');
+  }
+}
+*/
+ 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello" !important;
+  font-size:.85em;
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+     
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - magrins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.icon-flickr:before { content: '\46' ; } /* 'F' */
+.icon-linkedin:before { content: '\4c'; } /* 'L' */
+.icon-twitter:before { content: '\54'; } /* 'T' */
+.icon-youtube:before { content: '\55'; } /* 'U' */
+.icon-vimeo:before { content: '\56'; } /* 'V' */
+.icon-soundcloud:before { content: '\73'; } /* 's' */
+.icon-facebook-rect:before { content: '\f301'; } /* '' */
+.icon-github:before { content: '\f308'; } /* '' */
+.icon-googleplus-rect:before { content: '\f309'; } /* '' */
+.icon-instagram-filled:before { content: '\f31f'; } /* '' */
+
+rect:before { content:"Email address: "; }
 			        
-/*------------------------------------------------------------------
-
-                   Fortitudo Et Honos 
-
+/* Fortitudo Et Honos
 ------------------------------------------------------------------*/
