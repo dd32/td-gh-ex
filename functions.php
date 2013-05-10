@@ -288,7 +288,7 @@
  *
  */
     if ( $is_IE ) {
-        preg_match( "|(MSIE )([0-9])(\.)|si", $_SERVER['HTTP_USER_AGENT'], $regs );
+        preg_match( "|(MSIE )([0-9]{1,2})(\.)|si", $_SERVER['HTTP_USER_AGENT'], $regs );
         if ( $regs[2] < 9 ) {
             $raindrops_fluid_minimum_width = '640';
 
@@ -615,7 +615,7 @@
                     $classes[]  = 'gecko';
                 break;
                 case( $is_IE ):
-                    preg_match( " |(MSIE )([0-9])(\.)|si", $_SERVER['HTTP_USER_AGENT'], $regs );
+                    preg_match( " |(MSIE )([0-9]{1,2})(\.)|si", $_SERVER['HTTP_USER_AGENT'], $regs );
                     $classes[]      = 'ie'.$regs[2];
                 break;
                 case( $is_opera ):
@@ -1371,18 +1371,59 @@
  *
  *
  *
- *
+ * ver 1.114 Theme data automatic change is supported at the time of site change. 
  */
+			
     if ( ! function_exists( "raindrops_install_navigation" ) ) {
-
+ 
         function raindrops_install_navigation( ) {
-            $install = get_option( 'raindrops_theme_settings' );
+            	$install	= get_option( 'raindrops_theme_settings' );
+		$upload_dir	= wp_upload_dir();
+			
             if ( $install == false or !array_key_exists( 'install', $install ) ) {
-                add_action( 'admin_notices', create_function(null, 'echo raindrops_first_only_msg( 1 );' ) );
+		$install['current_stylesheet_dir_url']		= get_stylesheet_directory_uri();
+		$install['current_upload_base_url']		= $upload_dir['baseurl'];
+ 
+                //add_action( 'admin_notices', create_function(null, 'echo raindrops_first_only_msg( 1 );' ) );
                 $install['install'] = true;
+				
                 update_option( 'raindrops_theme_settings', $install );
             } else {
-                add_action( 'switch_theme', create_function(null, 'delete_option( "raindrops_theme_settings" );' ) );
+							
+				if( isset( $install['current_stylesheet_dir_url'] ) and get_stylesheet_directory_uri() !== $install['current_stylesheet_dir_url'] ){
+				
+					$install['_raindrops_indv_css'] = str_replace( $install['current_stylesheet_dir_url'],
+																	get_stylesheet_directory_uri(),						   	
+																	$install['_raindrops_indv_css']
+																);
+					$install['old_stylesheet_dir_url']	= $install['current_stylesheet_dir_url'];
+					$install['current_stylesheet_dir_url']	= get_stylesheet_directory_uri();
+							
+					update_option( 'raindrops_theme_settings', $install );
+				}elseif( ! isset( $install['current_stylesheet_dir_url'] ) ){
+						
+					$install['current_stylesheet_dir_url']	= get_stylesheet_directory_uri();
+					update_option( 'raindrops_theme_settings', $install );
+				}
+				
+				if( isset( $install['current_upload_base_url'] ) and $upload_dir !== $install['current_upload_base_url'] ){
+						
+					$install['_raindrops_indv_css'] = str_replace( $install['current_upload_base_url'],
+											$upload_dir['baseurl'],
+											$install['_raindrops_indv_css']
+										);
+					$install['old_upload_base_url']	= $install['current_upload_base_url'];
+					$install['current_upload_base_url'] = $upload_dir['baseurl'];
+							
+					update_option( 'raindrops_theme_settings', $install );
+				}elseif(  ! isset( $install['current_upload_base_url'] ) ){
+						
+					$install['current_upload_base_url']		= $upload_dir['baseurl'];
+					
+					update_option( 'raindrops_theme_settings', $install );
+				}
+			
+			add_action( 'switch_theme', create_function(null, 'delete_option( "raindrops_theme_settings" );' ) );
             }
         }
     }
@@ -3348,20 +3389,20 @@ span#site-title,
             <script type="text/javascript">
             (function( ) {
             jQuery(function( ) {
-                var width = jQuery( 'div#header-image' ).width( );
+                var raindrops_width = jQuery( 'div#header-image' ).width( );
                 function raindrops_resizes( ) {
                     var image_exists = '<?php echo $raindrops_header_image_uri;?>';
-                var width = jQuery( 'div#header-image' ).width( );
-                var window_width = jQuery(window).width( );
+                var raindrops_width = jQuery( 'div#header-image' ).width( );
+                var raindrops_window_width = jQuery(window).width( );
             <?php
             $raindrops_restore_check = get_theme_mod( 'header_image', get_theme_support( 'custom-header', 'default-image' ) );
             if (  $raindrops_restore_check !== 'remove-header'  ) {
                   $ratio = $raindrops_header_image_height / $raindrops_header_image_width;
             ?>
-                var ratio = <?php echo $ratio;?>;
-                var height = width * ratio;
+                var raindrops_ratio = <?php echo $ratio;?>;
+                var raindrops_height = raindrops_width * raindrops_ratio;
 
-                jQuery( '#header-image' ).removeAttr( 'style' ).css({'background-image':'url( '+ image_exists + ' )','height': height, 'background-size': 'cover'});
+                jQuery( '#header-image' ).removeAttr( 'style' ).css({'background-image':'url( '+ image_exists + ' )','height': raindrops_height, 'background-size': 'cover'});
     <?php //remove header
 
              }
@@ -3375,15 +3416,15 @@ span#site-title,
          ?>
                  if ( jQuery( 'body > div' ).is( '#doc3' ) ) {
                         jQuery( "#access" ).mousemove(function(e) {
-                            var menu_item_position = e.pageX ;
+                            var raindrops_menu_item_position = e.pageX ;
 
-                        if ( window_width - 200 < menu_item_position) {
+                        if ( raindrops_window_width - 200 < raindrops_menu_item_position) {
                                 jQuery( '#access ul ul ul' ).addClass( 'left' );
-                            }else if ( window_width / 2 >  menu_item_position) {
+                            }else if ( raindrops_window_width / 2 >  raindrops_menu_item_position) {
                                 jQuery( '#access ul ul ul' ).removeClass( 'left' );
                             }
                         });
-                        if ( window_width > <?php echo $raindrops_fluid_maximum_width;?>) {
+                        if ( raindrops_window_width > <?php echo $raindrops_fluid_maximum_width;?>) {
                             //centering page when browser width > $raindrops_fluid_maximun_width
                             jQuery( '#doc3' ).css({'margin':'auto'});
                         }
