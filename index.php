@@ -2,7 +2,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-<title><?php wp_title(); ?></title>
+<title><?php wp_title("",true); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_uri(); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -24,6 +24,13 @@
 <?php if ( has_nav_menu( 'bar' ) ) :  wp_nav_menu( array( 'theme_location' => 'bar', 'depth' => 2 ) ); else : ?>
 <?php wp_list_pages( 'title_li=&depth=2' ); ?>
 <?php endif; ?>
+<?php if ( ( get_theme_mod('facebook_setting') != 'The url link goes in here.' ) && ( get_theme_mod('facebook_setting') != '' ) ) : ?><li><a href="<?php echo get_theme_mod('facebook_setting') ;?>" class="icon-facebook-rect"></a></li><?php endif; ?>
+<?php if ( ( get_theme_mod('twitter_setting') != 'The url link goes in here.' ) && ( get_theme_mod('twitter_setting') != '' ) ) : ?><li><a href="<?php echo get_theme_mod('twitter_setting') ;?>" class="icon-twitter"></a></li><?php endif; ?>
+<?php if ( ( get_theme_mod('google_plus_setting') != 'The url link goes in here.' ) && ( get_theme_mod('google_plus_setting') != '' ) ) : ?><li><a href="<?php echo get_theme_mod('google_plus_setting') ;?>" class="icon-googleplus-rect"></a></li><?php endif; ?>
+<?php if ( ( get_theme_mod('youtube_setting') != 'The url link goes in here.' ) && ( get_theme_mod('youtube_setting') != '' ) ) : ?><li><a href="<?php echo get_theme_mod('youtube_setting') ;?>" class="icon-youtube"></a></li><?php endif; ?>
+<?php if ( ( get_theme_mod('vimeo_setting') != 'The url link goes in here.' ) && ( get_theme_mod('vimeo_setting') != '' ) ) : ?><li><a href="<?php echo get_theme_mod('vimeo_setting') ;?>" class="icon-vimeo"></a></li><?php endif; ?>
+<?php if ( ( get_theme_mod('soundcloud_setting') != 'The url link goes in here.' ) && ( get_theme_mod('soundcloud_setting') != '' ) ) : ?><li><a href="<?php echo get_theme_mod('soundcloud_setting') ;?>" class="icon-soundcloud"></a></li><?php endif; ?>
+<?php if ( get_theme_mod('navi_search_setting') == 'on' ) : ?><li><form role="search" method="get" id="navi_search" action="<?php echo home_url(); ?>/" ><input type="text" value="Search" onfocus="if(this.value == 'Search') { this.value = ''; }" onblur="if(this.value == '') { this.value = 'Search'; }"  name="s" id="s" /></form></li><?php endif; ?>
 </ul>
 <!-- End Navigation Menu -->
 
@@ -39,15 +46,16 @@
 
 <!-- Searching Code -->
 <?php if (have_posts()) : ?>
-<ul id="paged">
+<ul id="single">
     <li>
     	<h2>Your Search "<?php echo get_search_query(); ?>" Returned <?php echo $wp_query->found_posts; ?> Results</h2>
-    	<p>Your search for "<?php echo get_search_query(); ?>" has returned exactly <?php echo $wp_query->found_posts; ?> results, no more and no less. Hopefully what you're looking for will be found just below on this page, but if you're unable find what you are looking for you may need to use the links "Older Search Results" or "Newer Search Results" to navigate through more pages of results for "<?php echo get_search_query(); ?>." Please keep in mind that if not enough results return, the links for "Older Search Results" and "Newer Search Results" may not appear becuase there is nothing more to show.</p>
     </li>
+</ul>
+<ul id="paged">
 <?php while (have_posts()) : the_post(); ?>
 
 	<li id="post-<?php the_ID(); ?>" <?php post_class(); ?>><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-		<h2><span <?php the_time('c') ?>><?php the_time('M') ?><br/><?php the_time('jS') ?></span><?php if ( get_the_title() ) { the_title();} else { echo '(No Title)';} ?></h2>
+		<h2><?php if ( is_page() || ( get_theme_mod('display_date_setting') == 'off' ) ) : else : ?><time datetime="<?php the_time('Y-m-d H:i') ?>"><?php the_time('M') ?><br/><?php the_time('jS') ?></time><?php endif; ?><?php if ( get_the_title() ) { the_title();} else { echo '(No Title)';} ?></h2>
         <?php if ( has_post_thumbnail()) : ?><div class="under"><?php the_post_thumbnail('page-thumbnail'); ?><div class="over"></div></div><?php endif; ?>
         <?php the_excerpt(); ?>
 	</a></li>
@@ -55,13 +63,19 @@
 
 <?php else : ?>
 
-<ul id="paged">
+<ul id="single">
     <li>
     	<h2>Your search resulted with nothing being found.</h2>
+        <img class="featured_image" src="<?php echo get_template_directory_uri(); ?>/images/nothing_found.jpg"/>
+        <p>Sorry, your search for "<?php echo get_search_query(); ?>" returned with not find anything in the website.</p>
+        <form role="search" method="get" action="http://schwarttzy.com/">
+		<label class="screen-reader-text" for="s">Search:</label>
+		<input value="Search" onfocus="if(this.value == 'Search') { this.value = ''; }" onblur="if(this.value == '') { this.value = 'Search'; }" name="s" id="s" type="text">
+		<input value="Search" type="submit">
+		</form>
 	</li>
-</ul>
 <?php endif; ?>
-<li class="stars"><span class="left"><a href="http://test.schwarttzy.com/page/2/" >&#8249; Older Posts</a></span><span class="right"><a href="http://test.schwarttzy.com/" >Newer Posts &#8250;</a></span></li>
+<li class="stars"><span class="left"><?php next_posts_link('&#8249; Older Results'); ?></span><span class="right"><?php previous_posts_link('Newer Results &#8250;'); ?></span></li>
 </ul>
 <!-- End Search -->
 <?php elseif ( have_posts() && is_home() || is_category() || is_day() || is_month() || is_year() || is_paged() || is_tag() ) : ?>
@@ -71,7 +85,7 @@
 
 <?php while (have_posts()) : the_post(); ?>
 	<li id="post-<?php the_ID(); ?>" <?php post_class(); ?>><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-		<h2><span><?php the_time('M') ?><br/><?php the_time('jS') ?></span><?php if ( get_the_title() ) { the_title();} else { echo '(No Title)';} ?></h2>
+		<h2><?php if ( is_page() || ( get_theme_mod('display_date_setting') == 'off' ) ) : else : ?><time datetime="<?php the_time('Y-m-d H:i') ?>"><?php the_time('M') ?><br/><?php the_time('jS') ?></time><?php endif; ?><?php if ( get_the_title() ) { the_title();} else { echo '(No Title)';} ?></h2>
         <?php if ( has_post_thumbnail()) : ?><div class="under"><?php the_post_thumbnail('page-thumbnail'); ?><div class="over"></div></div><?php endif; ?>
         <?php the_excerpt(); ?>
 	</a></li>
@@ -191,11 +205,12 @@
 <!-- End 404 Error -->
 <?php $semperfi_404 = true;?>
 
-<?php /* Some of the Formating is weird below so that when the page is finished the formating looks beautiful and clean */ ?>
+<?php /* Some of the Formating is weird below so that when the page is finished the formating looks cleaner than it would otherwise. */ ?>
 <?php elseif (have_posts()) : the_post();?>
 <ul id="single">
     <li id="post-<?php the_ID(); ?>" <?php post_class('content'); ?>>
-    	<h2><?php if ( is_page()) : else : ?><span><?php the_time('M') ?><br/><?php the_time('jS') ?></span><?php endif; ?><?php if ( get_the_title() ) { the_title();} else { echo '(No Title)';} ?></h2>
+    	<h2><?php if ( is_page() || ( get_theme_mod('display_date_setting') == 'off' ) ) : else : ?><time datetime="<?php the_time('Y-m-d H:i') ?>"><?php the_time('M') ?><br/><?php the_time('jS') ?></time><?php endif; ?><?php if ( get_the_title() ) { the_title();} else { echo '(No Title)';} ?></h2>
+        <?php if ( ( get_theme_mod('featured_image_on_single_setting') == 'on' ) && ( has_post_thumbnail() ) ) the_post_thumbnail('post-thumbnail', array( 'class'	=> "featured_image")); ?>
 		<?php the_content(); ?>
     	<span class="pagesandtags"><?php wp_link_pages(); ?>
 		<?php if (is_single()) : ?>Post Categories: <?php the_category(', '); the_tags('</br>Tags: ', ', ', ''); endif;?><?php if ( is_single($post) && !comments_open() ) : ?> Commenting is closed.<?php endif; ?>
