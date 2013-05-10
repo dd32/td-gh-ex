@@ -994,7 +994,22 @@ function semperfi_theme_options_do_page() { ?>
         </tr>
         </tr>
         <tr>
-        <td class="justify">Comments on Pages only, Posts only, Both, or Nones</td>
+        <td class="justify">Comments on Pages only, Posts only, Both, or None</td>
+        <td>&#9733;</td>
+        <td>&#9733;</td>
+        </tr>
+        <tr>
+        <td class="justify">Option to have dates on posts to not display.</td>
+        <td>&#9733;</td>
+        <td>&#9733;</td>
+        </tr>
+        <tr>
+        <td class="justify">Option for Social Icons in the menu.</td>
+        <td>&#9733;</td>
+        <td>&#9733;</td>
+        </tr>
+        <tr>
+        <td class="justify">Option for search bar in menu.</td>
         <td>&#9733;</td>
         <td>&#9733;</td>
         </tr>
@@ -1051,7 +1066,7 @@ function semperfi_theme_options_do_page() { ?>
         <th class="justify"></th>
         </tr>
         <tr>
-        <td>1.8</td>
+        <td>1.9</td>
         <td class="justify">Forgot a bit of code in the CSS that would just waste bandwidth.</td>
         </tr>
         <tr>
@@ -1102,6 +1117,10 @@ function semperfi_theme_options_do_page() { ?>
         <tr>
         <th>Version</th>
         <td class="justify"></td>
+        </tr>
+        <tr>
+        <td>7</td>
+        <td class="justify">Same stuff as in 1.7 Semper Fi Lite, but special stuff for you guys soon.</td>
         </tr>
         <tr>
         <td>6</td>
