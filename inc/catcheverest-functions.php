@@ -392,14 +392,14 @@ function catcheverest_header_left() { ?>
                 <h1 id="site-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
                     <img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
                 </a></h1>
-                <hgroup class="with-logo">
+                <div id="hgroup" class="with-logo">
             <?php else :
-                echo '<hgroup>';     
+                echo '<div id="hgroup">';   
             endif; // end check for removed header image ?>
                     
                 <h1 id="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
                 <h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
-            </hgroup>
+            </div><!-- #hgroup -->
         </div><!-- #header-left -->
 
 <?php 
@@ -562,7 +562,7 @@ function catcheverest_default_sliders() {
 					<div class="entry-container">
 						<header class="entry-header">
 							<h1 class="entry-title">
-								<a title="Mount Everest" href="#">Mount Everest</a>
+								<a title="Mount Everest" href="#"><span>Mount Everest</span></a>
 							</h1>
 						</header>
 						<div class="entry-content">
@@ -580,7 +580,7 @@ function catcheverest_default_sliders() {
 					<div class="entry-container">
 						<header class="entry-header">
 							<h1 class="entry-title">
-								<a title="Nepal Prayer Wheels" href="#">Nepal Prayer Wheels</a>
+								<a title="Nepal Prayer Wheels" href="#"><span>Nepal Prayer Wheels</span></a>
 							</h1>
 						</header>
 						<div class="entry-content">
@@ -1004,7 +1004,8 @@ function catcheverest_social_networks() {
 						$options[ 'social_rss' ],
 						$options[ 'social_delicious' ],
 						$options[ 'social_lastfm' ],
-						$options[ 'social_instagram' ]
+						$options[ 'social_instagram' ],
+						$options[ 'social_github' ]
 					);
 	$flag = 0;
 	if( !empty( $elements ) ) {
@@ -1121,6 +1122,11 @@ function catcheverest_social_networks() {
 			if ( !empty( $options[ 'social_instagram' ] ) ) {
 				$catcheverest_social_networks .=
 					'<li class="instagram"><a href="'.esc_url( $options[ 'social_instagram' ] ).'" title="'.sprintf( esc_attr__( '%s on Instagram', 'catcheverest' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Instagram </a></li>';
+			}	
+			//GitHub
+			if ( !empty( $options[ 'social_github' ] ) ) {
+				$catcheverest_social_networks .=
+					'<li class="github"><a href="'.esc_url( $options[ 'social_github' ] ).'" title="'.sprintf( esc_attr__( '%s on GitHub', 'catcheverest' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' GitHub </a></li>';
 			}				
 	
 			$catcheverest_social_networks .='
@@ -1239,7 +1245,7 @@ if ( ! function_exists( 'catcheverest_menu_alter' ) ) :
 * Used while viewing on smaller screen
 */
 function catcheverest_menu_alter( $items, $args ) {
-	$items .= '<li class="default-menu"><a href="' . get_bloginfo( 'url' ) . '" title="Menu">'.__( 'Menu', 'catcheverest' ).'</a></li>';
+	$items .= '<li class="default-menu"><a href="' . esc_url( home_url( '/' ) ) . '" title="Menu">'.__( 'Menu', 'catcheverest' ).'</a></li>';
 	return $items;
 }
 endif; // catcheverest_menu_alter
@@ -1252,7 +1258,7 @@ if ( ! function_exists( 'catcheverest_pagemenu_alter' ) ) :
  * Used while viewing on smaller screen
  */
 function catcheverest_pagemenu_alter( $output ) {
-	$output .= '<li class="default-menu"><a href="' . get_bloginfo( 'url' ) . '" title="Menu">'.__( 'Menu', 'catcheverest' ).'</a></li>';
+	$output .= '<li class="default-menu"><a href="' . esc_url( home_url( '/' ) ) . '" title="Menu">'.__( 'Menu', 'catcheverest' ).'</a></li>';
 	return $output;
 }
 endif; // catcheverest_pagemenu_alter

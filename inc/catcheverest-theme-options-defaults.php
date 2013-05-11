@@ -63,6 +63,7 @@ $catcheverest_options_defaults = array(
  	'social_delicious'						=> '',
  	'social_lastfm'							=> '',
 	'social_instagram'						=> '',
+	'social_github'						=> '',
  	'google_verification'					=> '',
  	'yahoo_verification'					=> '',
  	'bing_verification'						=> '',

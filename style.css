@@ -4,7 +4,7 @@ Theme URI: http://catchthemes.com/themes/catch-everest
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
 Description: Catch Everest is Simple, Clean and Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel which makes this theme highly customizable and flexible. Make your beautiful yet professional website in no time. Multilingual Ready (WPML) and also currently translated in Polish, Chinese, and Spanish. Active community at http://catchthemes.com/support-forum/
-Version: 0.2
+Version: 0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: light, gray, white, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-header, custom-menu, featured-images, flexible-header, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
@@ -52,7 +52,7 @@ figcaption,
 figure,
 footer,
 header,
-hgroup,
+#hgroup,
 nav,
 section {
 	display: block;
@@ -194,7 +194,7 @@ article.format-aside .entry-title,
 	padding: 0 4rem;
 }
 #site-logo,
-hgroup,
+#hgroup,
 #header-right,
 #supplementary,
 #main {
@@ -523,10 +523,10 @@ img#wpstats {
     display: block;
     line-height: 0;
 }
-hgroup {
+#hgroup {
     display: block;
 }
-hgroup.with-logo {
+#hgroup.with-logo {
     clear: both;
 }
 #site-title {
@@ -1762,10 +1762,16 @@ ul.social-profile li.lastfm a:hover {
 	background-position: -732px -43px;
 }
 ul.social-profile li.instagram a {
-	background-position: -776px 0;
+	background-position: -775px 0;
 }
 ul.social-profile li.instagram a:hover {
-	background-position: -776px -43px;
+	background-position: -775px -43px;
+}
+ul.social-profile li.github a {
+	background-position: -818px 0;
+}
+ul.social-profile li.github a:hover {
+	background-position: -818px -43px;
 }
 
 

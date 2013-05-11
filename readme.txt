@@ -95,3 +95,9 @@ version 0.2
 * Fixed minor css for mobile devices font sizes and menu widgets
 * Fixed Header image height and width issue
 * Fixed IE7 and IE8 minor issues to make it compatible
+
+version 0.3
+* Added GitHub Social Icon
+* Added span in default slider title
+* Replaced get_bloginfo( 'url' ) to esc_url( home_url( '/' ) )
+

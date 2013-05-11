@@ -58,7 +58,7 @@ article.format-aside .entry-title,
 	padding: 0 5rem;
 }
 #site-logo,
-hgroup,
+#hgroup,
 #header-right,
 #supplementary,
 #main {
@@ -157,7 +157,7 @@ article.format-aside .entry-title,
 	padding: 0 3rem;
 }
 #site-logo,
-hgroup,
+#hgroup,
 #header-right,
 #supplementary,
 #main {
@@ -391,7 +391,7 @@ and (orientation : portrait) {
 	padding-bottom: 2rem;
 }
 #site-logo,
-hgroup,
+#hgroup,
 #header-right,
 #supplementary,
 #main {

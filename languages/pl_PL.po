@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Everest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-03 10:58+0545\n"
-"PO-Revision-Date: 2013-05-03 10:58+0545\n"
+"POT-Creation-Date: 2013-05-11 23:56+0545\n"
+"PO-Revision-Date: 2013-05-11 23:56+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Piotrekkk\n"
 "Language: pl\n"
@@ -350,107 +350,112 @@ msgstr "Wspierane przez"
 msgid "Theme"
 msgstr "Motyw"
 
-#: ../inc/catcheverest-functions.php:1033
+#: ../inc/catcheverest-functions.php:1034
 #, php-format
 msgid "%s on Facebook"
 msgstr "%s na Facebooku"
 
-#: ../inc/catcheverest-functions.php:1038
+#: ../inc/catcheverest-functions.php:1039
 #, php-format
 msgid "%s on Twitter"
 msgstr "%s na Twitterze"
 
-#: ../inc/catcheverest-functions.php:1043
+#: ../inc/catcheverest-functions.php:1044
 #, php-format
 msgid "%s on Google+"
 msgstr "%s w Google+"
 
-#: ../inc/catcheverest-functions.php:1048
+#: ../inc/catcheverest-functions.php:1049
 #, php-format
 msgid "%s on Linkedin"
 msgstr "%s na Linkedin"
 
-#: ../inc/catcheverest-functions.php:1053
+#: ../inc/catcheverest-functions.php:1054
 #, php-format
 msgid "%s on Pinterest"
 msgstr "%s na Pinterest"
 
-#: ../inc/catcheverest-functions.php:1058
+#: ../inc/catcheverest-functions.php:1059
 #, php-format
 msgid "%s on YouTube"
 msgstr "%s na YouTube"
 
-#: ../inc/catcheverest-functions.php:1063
+#: ../inc/catcheverest-functions.php:1064
 #, php-format
 msgid "%s on Vimeo"
 msgstr "%s na Vimeo"
 
-#: ../inc/catcheverest-functions.php:1068
+#: ../inc/catcheverest-functions.php:1069
 #, php-format
 msgid "%s on Slideshare"
 msgstr "%s w Slideshare"
 
-#: ../inc/catcheverest-functions.php:1073
+#: ../inc/catcheverest-functions.php:1074
 #, php-format
 msgid "%s on Foursquare"
 msgstr "%s w Foursquare"
 
-#: ../inc/catcheverest-functions.php:1078
+#: ../inc/catcheverest-functions.php:1079
 #, php-format
 msgid "%s on Flickr"
 msgstr "%s na Flickrze"
 
-#: ../inc/catcheverest-functions.php:1083
+#: ../inc/catcheverest-functions.php:1084
 #, php-format
 msgid "%s on Tumblr"
 msgstr "%s na Tumblrze"
 
-#: ../inc/catcheverest-functions.php:1088
+#: ../inc/catcheverest-functions.php:1089
 #, php-format
 msgid "%s on deviantART"
 msgstr "%s na deviantART"
 
-#: ../inc/catcheverest-functions.php:1093
+#: ../inc/catcheverest-functions.php:1094
 #, php-format
 msgid "%s on Dribbble"
 msgstr "%s na Dribbble"
 
-#: ../inc/catcheverest-functions.php:1098
+#: ../inc/catcheverest-functions.php:1099
 #, php-format
 msgid "%s on MySpace"
 msgstr "%s na MySpace"
 
-#: ../inc/catcheverest-functions.php:1103
+#: ../inc/catcheverest-functions.php:1104
 #, php-format
 msgid "%s on WordPress"
 msgstr "%s na WordPressie"
 
-#: ../inc/catcheverest-functions.php:1108
+#: ../inc/catcheverest-functions.php:1109
 #, php-format
 msgid "%s on RSS"
 msgstr "%s RSS"
 
-#: ../inc/catcheverest-functions.php:1113
+#: ../inc/catcheverest-functions.php:1114
 #, php-format
 msgid "%s on Delicious"
 msgstr "%s na Delicious"
 
-#: ../inc/catcheverest-functions.php:1118
+#: ../inc/catcheverest-functions.php:1119
 #, php-format
 msgid "%s on Last.fm"
 msgstr "%s na Last.fm"
 
-#: ../inc/catcheverest-functions.php:1123
+#: ../inc/catcheverest-functions.php:1124
 #, php-format
 msgid "%s on Instagram"
 msgstr "%s na Instagram"
 
-#: ../inc/catcheverest-functions.php:1218
+#: ../inc/catcheverest-functions.php:1129
+#, php-format
+msgid "%s on GitHub"
+msgstr "%s na GitHub"
+
+#: ../inc/catcheverest-functions.php:1224
 msgid "ID"
 msgstr "ID"
 
-#: ../inc/catcheverest-functions.php:1242
-#: ../inc/catcheverest-functions.php:1255
+#: ../inc/catcheverest-functions.php:1248
+#: ../inc/catcheverest-functions.php:1261
 msgid "Menu"
 msgstr "Menu"
 
@@ -767,8 +772,8 @@ msgstr "Zaznacz, by wyłączyć"
 #: ../inc/panel/theme-options.php:340 ../inc/panel/theme-options.php:364
 #: ../inc/panel/theme-options.php:406 ../inc/panel/theme-options.php:479
 #: ../inc/panel/theme-options.php:522 ../inc/panel/theme-options.php:590
-#: ../inc/panel/theme-options.php:616 ../inc/panel/theme-options.php:725
-#: ../inc/panel/theme-options.php:756 ../inc/panel/theme-options.php:787
+#: ../inc/panel/theme-options.php:616 ../inc/panel/theme-options.php:730
+#: ../inc/panel/theme-options.php:761 ../inc/panel/theme-options.php:792
 msgid "Save"
 msgstr "Zapisz"
 
@@ -1208,7 +1213,7 @@ msgstr "Dribbble"
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../inc/panel/theme-options.php:699 ../inc/panel/theme-options.php:1158
+#: ../inc/panel/theme-options.php:699 ../inc/panel/theme-options.php:1166
 msgid "WordPress"
 msgstr "WordPress"
 
@@ -1228,43 +1233,47 @@ msgstr "Last.fm"
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../inc/panel/theme-options.php:733
+#: ../inc/panel/theme-options.php:724
+msgid "GitHub"
+msgstr "GitHub"
+
+#: ../inc/panel/theme-options.php:738
 msgid "Site Verification"
 msgstr "Weryfikacja strony"
 
-#: ../inc/panel/theme-options.php:738
+#: ../inc/panel/theme-options.php:743
 msgid "Google Site Verification ID"
 msgstr "Kod weryfikacyjny Google"
 
-#: ../inc/panel/theme-options.php:739
+#: ../inc/panel/theme-options.php:744
 msgid "Enter your Google ID number only"
 msgstr "Wpisz tylko Twój identyfikator Google"
 
-#: ../inc/panel/theme-options.php:744
+#: ../inc/panel/theme-options.php:749
 msgid "Yahoo Site Verification ID"
 msgstr "Kod weryfikacyjny Yahoo"
 
-#: ../inc/panel/theme-options.php:745
+#: ../inc/panel/theme-options.php:750
 msgid "Enter your Yahoo ID number only"
 msgstr "Wpisz tylko Twój identyfikator Yahoo"
 
-#: ../inc/panel/theme-options.php:750
+#: ../inc/panel/theme-options.php:755
 msgid "Bing Site Verification ID"
 msgstr "Kod weryfikacyjny Binga"
 
-#: ../inc/panel/theme-options.php:751
+#: ../inc/panel/theme-options.php:756
 msgid "Enter your Bing ID number only"
 msgstr "Wpisz tylko Twój identyfikator Binga"
 
-#: ../inc/panel/theme-options.php:761
+#: ../inc/panel/theme-options.php:766
 msgid "Header and Footer Codes"
 msgstr "Kody w nagłówku i w stopce"
 
-#: ../inc/panel/theme-options.php:766
+#: ../inc/panel/theme-options.php:771
 msgid "Code to display on Header"
 msgstr "Kod do wyświetlenia w nagłówku"
 
-#: ../inc/panel/theme-options.php:772
+#: ../inc/panel/theme-options.php:777
 msgid ""
 "Note: Note: Here you can put scripts from Google, Facebook, Twitter, Add "
 "This etc. which will load on Header"
@@ -1272,11 +1281,11 @@ msgstr ""
 "Rada: Tutaj możesz wpisać kod skryptu od Google, Facebooka, itp. który "
 "będzie załadowany w nagłówku"
 
-#: ../inc/panel/theme-options.php:775
+#: ../inc/panel/theme-options.php:780
 msgid "Code to display on Footer"
 msgstr "Kod do wyświetlenia w stopce"
 
-#: ../inc/panel/theme-options.php:782
+#: ../inc/panel/theme-options.php:787
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Twitter, Add This etc. "
 "which will load on footer"
@@ -1284,10 +1293,10 @@ msgstr ""
 "Rada: Tutaj możesz wpisać kod skryptu od Google, Facebooka, Add This itp. "
 "który będzie załadowany w stopce"
 
-#: ../inc/panel/theme-options.php:1137
+#: ../inc/panel/theme-options.php:1145
 msgid "Y"
 msgstr "Y"
 
-#: ../inc/panel/theme-options.php:1168
+#: ../inc/panel/theme-options.php:1176
 msgid "Catch Everest"
 msgstr "Catch Everest"
