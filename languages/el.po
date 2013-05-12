@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-03 21:54+0545\n"
-"PO-Revision-Date: 2013-05-03 21:54+0545\n"
+"POT-Creation-Date: 2013-05-12 23:53+0545\n"
+"PO-Revision-Date: 2013-05-12 23:53+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Catch Themes <fansitejustgames@gmail.com>\n"
 "Language: en\n"
@@ -57,18 +57,18 @@ msgstr ""
 "Η δημοσίευση προστατεύεται απο κωδικό. Πληκτρολογήστε τον κωδικό για να "
 "δείτε τα σχόλια."
 
-#: ../comments.php:29 ../content.php:46 ../image.php:48
-#: ../functions/simplecatch_functions.php:827
+#: ../comments.php:29 ../content.php:46 ../image.php:48 ../page-blog.php:69
+#: ../functions/simplecatch_functions.php:831
 msgid "No Comments"
 msgstr "Χωρίς Σχόλια"
 
-#: ../comments.php:29 ../content.php:46 ../image.php:48
-#: ../functions/simplecatch_functions.php:827
+#: ../comments.php:29 ../content.php:46 ../image.php:48 ../page-blog.php:69
+#: ../functions/simplecatch_functions.php:831
 msgid "1 Comment"
 msgstr "1 Σχόλιο"
 
-#: ../comments.php:29 ../content.php:46 ../image.php:48
-#: ../functions/simplecatch_functions.php:827
+#: ../comments.php:29 ../content.php:46 ../image.php:48 ../page-blog.php:69
+#: ../functions/simplecatch_functions.php:831
 msgid "% Comments"
 msgstr "% Σχόλια"
 
@@ -76,29 +76,29 @@ msgstr "% Σχόλια"
 msgid "Comments are closed."
 msgstr "Τα σχόλια έχουν κλείσει."
 
-#: ../content.php:23 ../content.php:41
+#: ../content.php:23 ../content.php:41 ../page-blog.php:47 ../page-blog.php:64
 #, php-format
 msgid "Permalink to %s"
 msgstr "Μόνιμη διεύθυνση για %s"
 
-#: ../content.php:44 ../image.php:46
-#: ../functions/simplecatch_functions.php:825
+#: ../content.php:44 ../image.php:46 ../page-blog.php:67
+#: ../functions/simplecatch_functions.php:829
 msgid "By"
 msgstr "Από :"
 
-#: ../content.php:74 ../search.php:39
+#: ../content.php:74 ../page-blog.php:97 ../search.php:39
 msgid "Previous"
 msgstr "Προηγούμενο"
 
-#: ../content.php:75 ../search.php:40
+#: ../content.php:75 ../page-blog.php:98 ../search.php:40
 msgid "Next"
 msgstr "Επόμενο"
 
-#: ../content.php:84
+#: ../content.php:84 ../page-blog.php:107
 msgid "Not found"
 msgstr "Δεν βρέθηκε"
 
-#: ../content.php:85
+#: ../content.php:85 ../page-blog.php:108
 msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
 "searching will help find a related post."
@@ -287,28 +287,28 @@ msgstr "http://catchthemes.com"
 msgid "Simple Catch"
 msgstr "Simple Catch"
 
-#: ../functions/simplecatch_functions.php:841
+#: ../functions/simplecatch_functions.php:845
 msgid "Categories: "
 msgstr "Κατηγορίες:"
 
-#: ../functions/simplecatch_functions.php:909
+#: ../functions/simplecatch_functions.php:913
 msgid "Name"
 msgstr "Όνομα"
 
-#: ../functions/simplecatch_functions.php:909
-#: ../functions/simplecatch_functions.php:910
+#: ../functions/simplecatch_functions.php:913
+#: ../functions/simplecatch_functions.php:914
 msgid "( required )"
 msgstr "( Απαιτείται )"
 
-#: ../functions/simplecatch_functions.php:910
+#: ../functions/simplecatch_functions.php:914
 msgid "Email"
 msgstr "Email"
 
-#: ../functions/simplecatch_functions.php:911
+#: ../functions/simplecatch_functions.php:915
 msgid "Website"
 msgstr "Website"
 
-#: ../functions/simplecatch_functions.php:942
+#: ../functions/simplecatch_functions.php:946
 msgid "ID"
 msgstr "ID"
 

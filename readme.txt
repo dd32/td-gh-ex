@@ -305,3 +305,6 @@ Version 2.3.4
 Version 2.4
 * Added css of bold to html <b>code</b>
 * Added layout 'No Sidebar, Full Width'
+
+Version 2.4.1
+* Added page template blog

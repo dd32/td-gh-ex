@@ -716,6 +716,10 @@ add_action( 'pre_get_posts','simple_catch_alter_home' );
 function simplecatch_class_names($classes) { 
 	global $post;
 
+	if ( is_page_template( 'page-blog.php') ) {
+		$classes[] = 'page-blog';
+	}
+	
 	if( $post ) {
 		if ( is_attachment() ) { 
 			$parent = $post->post_parent;
