@@ -17,6 +17,7 @@ Added Translation for Croatian by Sanjin Barac (rapid24income@gmail.com)
 Added Translation for Italian by Lorenzo Bossi (lorenzobossi83@gmail.com)
 Added Translation for Swedish by Johnny Eriksson (info@johnnysblogg.se)
 Added Translation for Russian by XakRu (calvinxakru@gmail.com)
+Added Translation for Arabic by ed3s (master@ed3s.com)
 
 == Menus ===
 There are 3 Menus registered in this theme. Primary, Secondary and Footer menu. 
@@ -253,3 +254,6 @@ Version 2.2.1
 Version 2.2.2
 * Added option to enable Secondary and Footer Menu on Mobile Devices
 * Updated menu scripts and css
+
+Version 2.3
+* Added Arabic translation ar.po and ar.mo 
