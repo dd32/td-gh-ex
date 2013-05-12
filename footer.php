@@ -2,12 +2,12 @@
 
 </div> <!-- /#main /.site-main -->
 
-</div> <!-- /.row -->
+</div> <!-- /.row-fluid -->
 
 
 <footer id="colophon" class="site-footer clearfix" role="contentinfo">
 
-	<div class="row">
+	<div class="row-fluid">
 
 		<div class="span8">
 			<div class="site-footer-left">
@@ -48,14 +48,15 @@
 			</div> <!-- /.site-footer-right -->
 		</div> <!-- /.span4 -->
 
-	</div> <!-- /.row -->
+	</div> <!-- /.row-fluid -->
 
 
 </footer> <!-- /#colophon /.site-footer -->
 
-</div> <!-- /.span12 /.global-wrapper -->
-</div> <!-- /.row -->
-</div> <!-- /.container -->
+</div> <!-- /.span12 -->
+</div> <!-- /.row-fluid -->
+</div> <!-- /.container-fluid -->
+</div> <!-- /.site-wrapper -->
 
 </div> <!-- /#page /.hfeed -->
 

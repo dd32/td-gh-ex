@@ -16,10 +16,34 @@ jQuery(function($){ // wait while jQuery loads (document-ready)
 	$('input[type=submit], input[type=image], input[type=button], input[type=reset], button').addClass('btn');
 
 	// fix when long menus overlaps site content
-	var menu_height = $('.navbar').height();
-	if( menu_height > 50 ) { // if there are more than one row of menu items
-		var margin_top_fix = menu_height + 20;
-		$('.site-wrapper').css('margin-top', margin_top_fix+'px');
+	var window_width = $(window).width();
+	if( window_width > 979 ) {
+		var menu_height = $('.navbar').height();
+		if( menu_height > 50 ) { // if there are more than one row of menu items
+			var margin_top_fix = menu_height + 20;
+			$('.site-wrapper').css( 'margin-top', margin_top_fix+'px' );
+		}
+	} else {
+		jQuery('.site-wrapper').css( 'margin-top', '' ); // remove css property because top menu is not fixed when less then 979px
 	}
 
+
+
+});
+
+
+
+jQuery(window).bind("resize", function(){
+	var window_width = jQuery(window).width();
+	if( window_width > 979 ) {
+		var menu_height = jQuery('.navbar').height();
+		if( menu_height > 50 ) { // if there are more than one row of menu items
+			var margin_top_fix = menu_height + 20;
+			jQuery('.site-wrapper').css( 'margin-top', margin_top_fix+'px' );
+		} else {
+			jQuery('.site-wrapper').css( 'margin-top', '' ); // remove css property when menu has only 1 row
+		}
+	} else {
+		jQuery('.site-wrapper').css( 'margin-top', '' ); // remove css property because top menu is not fixed when less then 979px
+	}
 });
