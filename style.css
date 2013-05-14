@@ -4,7 +4,7 @@
  * Description: Mantra is a do-it-yourself WordPress theme, featuring a pack of over 100 customization options and easy to use tweaks capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (1,2 or 3 columns), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 35 font-families plus all Google Fonts), text and header sizes, post metas, post excerpts, post formats, header and background images, custom menus, 27 social media links and icons, pins, bullets and much much more. With a fully responsive layout,a customizable showcase presentation page, animated slider, magazine and blog layouts, 8 widget areas, modern graphics and an easy and intuitive admin section, you can start creating your dream site right now.
  * Author: Cryout Creations
  * Author URI: http://www.cryoutcreations.eu
- * Version: 2.0.2
+ * Version: 2.0.3
  * License: GNU General Public License v2.0
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Tags: black, red, blue, white, silver, light, dark, one-column, two-columns, three-columns, right-sidebar, left-sidebar, flexible-width, fixed-width, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, front-page-post-form, full-width-template,  microformats, post-formats, rtl-language-support,  sticky-post, theme-options, threaded-comments, translation-ready
@@ -750,7 +750,7 @@ overflow:hidden;
 .entry-content h6 {
 	color: #0E85CD;
 	line-height: 1.5em;
-	margin:0px 0 10px 0px;
+	margin:0px 0px 5px 0px;
 	-moz-text-shadow:2px 2px 0px #FFF,-2px -2px 0px #FFF,3px 3px 1px #ccc;
 	-webkit-text-shadow:2px 2px 0px #FFF,-2px -2px 0px #FFF,3px 3px 1px #ccc;
 	text-shadow:2px 2px 0px #FFF,-2px -2px 0px #FFF,3px 3px 1px #ccc;
@@ -822,7 +822,6 @@ overflow:hidden;
 	font-size: 30px;
 	font-weight: normal;
 	line-height: 1.3em;
-	padding-left:10px;
 	margin-bottom: 0;
 	-moz-text-shadow:2px 2px 0px #FFF,-2px -2px 0px #FFF,3px 3px 1px #ccc;
 	-webkit-text-shadow:2px 2px 0px #FFF,-2px -2px 0px #FFF,3px 3px 1px #ccc;
@@ -860,7 +859,7 @@ overflow:hidden;
 #content .entry-meta2, 
 #content .entry-meta3 {
 	font-size:12px ;
-	padding: 0 10px;
+	padding: 0;
 	clear:both;
 	display:block;
 }
@@ -912,7 +911,7 @@ overflow:hidden;
 .entry-content,
 .entry-summary {
 	clear: both;
-	padding: 8px 10px 10px;
+	padding: 8px 0px 10px;
 }
 #content .entry-summary p:last-child {
 	margin-bottom: 12px;
@@ -1039,7 +1038,7 @@ body.page .edit-link {
 /* POST FORMATS */
 
 article.format-link, article.format-quote, article.format-image, article.format-chat, article.format-aside {
- background-position: 10px 10px;  
+ background-position: 0px 10px;  
   background-repeat: no-repeat; }
 article.format-aside { background-position: 10px -7px; }
 article.format-link { background-image: url(images/post-formats/link.png); }
@@ -1694,13 +1693,26 @@ text-shadow:0px -1px 0px #000;
 font-family:Arial !important;
 }
 
+#searchform {
+display:block;
+position:relative;
+height:20px;
+margin-bottom:20px;
+max-width:300px;
+}
+
+#main #searchform, #footer #searchform {
+margin-right:10px;
+}
+
 .widget_search #s, #search #s  {/* This keeps the search inputs in line This is the Sidebar Search*/
-	width: 70%;display:block;float:left;
-	margin-bottom:20px;
+	position:absolute;
+	right:0;top:0;
+	width: 90%;
+	display:block;
 	padding-top:6px;
 	padding-bottom:4px;
 	padding-left:10px;
-	margin-left:10%;
 	border-radius:10px 0 0 0 ;
 	-moz-border-radius:10px 0 0 0 ;
 	-webkit-border-radius:10px 0 0 0 ;
@@ -1710,6 +1722,26 @@ font-family:Arial !important;
 
 #searchform #s:hover , #container #s:hover {
 color:#0D85CC;
+}
+
+.widget_search #searchsubmit {
+display:block;
+padding:0;margin:0;
+position:absolute;
+top:0px;right:0px;
+width:27px;height:29px;
+border:none;cursor:pointer;
+color:#EEE;background: #777;
+text-shadow:0px -1px 0px #000;-moz-text-shadow:0px -1px 0px #000;-webkit-text-shadow:0px -1px 0px #000;
+font-size:12px;font-family:Arial !important;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+				  .contentsearch #searchsubmit , .widget_search #searchsubmit{margin-top:3px;}
+}
+
+#searchsubmit:hover {
+background:#888;
 }
 
 .widget_search label {
@@ -1963,41 +1995,6 @@ img#wpstats {
 }
 
 /*  Extras                                    */
-
-
-.widget_search #searchsubmit {
-display:block;
-float:left;
-padding:0;
-margin:0;
-position:relative;
-left:-26px; top:0px;
-background: #777;
-width:25px;
-height:26px;
-border:none;
-cursor:pointer;
-font-size:12px;
-color:#EEE;
-text-shadow:0px -1px 0px #000;
--moz-text-shadow:0px -1px 0px #000;
--webkit-text-shadow:0px -1px 0px #000;
-font-family:Arial !important;
-left:-28px;
-top:0px;
-width:27px;
-height:28px;
-font-size:12px;
-font-family:Arial;
-}
-
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-				  .contentsearch #searchsubmit , .widget_search #searchsubmit{margin-top:3px;}
-}
-
-#searchsubmit:hover {
-background:#888;
-}
 
 #forbottom {
 	clear:both;
@@ -2694,20 +2691,25 @@ margin-bottom:8px;
 	border: 1px solid #878787;
 	-moz-box-shadow:
 		0px 0px 1px rgba(000,000,000,0.5),
-		inset 0px 0px 0px rgba(255,255,255,0.7);
+		0 3px 10px rgba(255,255,255,0.7) inset;
 	-webkit-box-shadow:
 		0px 0px 1px rgba(000,000,000,0.5),
-		inset 0px 0px 0px rgba(255,255,255,0.7);
+		0 3px 10px rgba(255,255,255,0.7) inset;
 	box-shadow:
 		0px 0px 1px rgba(000,000,000,0.5),
-		inset 0px 0px 0px rgba(255,255,255,0.7);
+		0 3px 10px rgba(255,255,255,0.7) inset;
 	text-shadow:
 		-1px -1px 0px rgba(000,000,000,0.4),
 		0px 0px 0px rgba(255,255,255,0.3);
 }
 
-.short-button-color:hover, .short-button-light:hover, .short-button-dark:hover {
-text-decoration:underline;
+
+a.short-button-light:hover { box-shadow: 0 0 1px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.8) inset; }
+a.short-button-dark:hover { box-shadow: 0 0 10px rgba(255,255,255,0.5) inset; }
+a.short-button-color:hover { box-shadow: 0 3px 10px rgba(255,255,255,0.9) inset; }
+
+a.short-button-color:hover, a.short-button-light:hover, a.short-button-dark:hover {
+text-decoration:none;
 }
 
 /* shareaddy fix */ .sharedaddy ul > li { background: none !important; text-indent: 0 !important; }

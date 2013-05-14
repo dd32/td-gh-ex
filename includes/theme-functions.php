@@ -107,14 +107,14 @@ foreach ($mantra_options as $key => $value) {
 		echo '<div>';
 		$heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div';
 		echo '<'.$heading_tag.' id="site-title">';
-		echo '<span> <a href="'.home_url( '/' ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a> </span>';
+		echo '<span> <a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a> </span>';
 		echo '</'.$heading_tag.'>';
 		echo '<div id="site-description" >'.get_bloginfo( 'description' ).'</div></div>'; 
 	break;
 	
 	case 'Clickable header image' :
 	
-		echo '<a href="'.home_url( '/' ).'" id="linky"></a>' ;
+		echo '<a href="'.esc_url( home_url( '/' ) ).'" id="linky"></a>' ;
 	break;
 	
 	case 'Custom Logo' :
@@ -166,18 +166,25 @@ if ( ! function_exists( 'mantra_set_social_icons' ) ) :
  * Social icons function
  */
 function mantra_set_social_icons($id) {
+	$cryout_special_keys = array('Mail', 'Skype');
 	global $mantra_options;
-		foreach ($mantra_options as $key => $value) {
+	foreach ($mantra_options as $key => $value) {
 		${"$key"} = $value ;
-					}
-echo '<div class="socials" id="'.$id.'">';
-for ($i=1; $i<=9; $i+=2) {
-	$j=$i+1;
-	if ( ${"mantra_social$j"} ) {?>
-		<a target="_blank" rel="nofollow" href="<?php echo esc_url(${"mantra_social$j"}); ?>" class="socialicons social-<?php echo esc_attr(${"mantra_social$i"}); ?>" title="<?php echo esc_attr(${"mantra_social$i"}); ?>"><img alt="<?php echo esc_attr(${"mantra_social$i"}); ?>" src="<?php echo get_template_directory_uri().'/images/socials/'.${"mantra_social$i"}.'.png'; ?>" /></a><?php
-				}
+	}
+	echo '<div class="socials" id="'.$id.'">';
+	for ($i=1; $i<=9; $i+=2) {
+		$j=$i+1;
+		if ( ${"mantra_social$j"} ) {	
+			if (in_array(${"mantra_social$i"},$cryout_special_keys)) :
+				$cryout_current_social = esc_html( ${"mantra_social$j"} );
+			else : 
+				$cryout_current_social = esc_url( ${"mantra_social$j"} );
+			endif;	?>
+			
+			<a target="_blank" rel="nofollow" href="<?php echo $cryout_current_social; ?>" class="socialicons social-<?php echo esc_attr(${"mantra_social$i"}); ?>" title="<?php echo esc_attr(${"mantra_social$i"}); ?>"><img alt="<?php echo esc_attr(${"mantra_social$i"}); ?>" src="<?php echo get_template_directory_uri().'/images/socials/'.${"mantra_social$i"}.'.png'; ?>" /></a><?php
 		}
-echo '</div>';
+	}
+	echo '</div>';
 }
 endif;
 
@@ -342,7 +349,7 @@ foreach ($mantra_options as $key => $value) {
      ${"$key"} = $value ;
 }	?>
 	<div id="site-info" >
-		<a href="<?php echo home_url( '/' ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+		<a href="<?php echo esc_url( home_url( '/' ) ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 			<?php bloginfo( 'name' ); ?></a> | <?php _e('Powered by','mantra')?> <a href="<?php echo 'http://www.cryoutcreations.eu';?>" title="<?php echo 'Mantra Theme by '.
 			'Cryout Creations';?>"><?php echo 'Mantra' ?></a> &amp; <a href="<?php echo esc_url('http://wordpress.org/' ); ?>"
 			title="<?php esc_attr_e('Semantic Personal Publishing Platform', 'mantra'); ?>"> <?php printf(' %s.', 'WordPress' ); ?>

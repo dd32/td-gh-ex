@@ -183,16 +183,16 @@ function mantra_init_fn(){
 	add_settings_field('mantra_comtext', __('Text Under Comments','mantra') , 'cryout_setting_comtext_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_comclosed', __('Comments are closed text','mantra') , 'cryout_setting_comclosed_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_comoff', __('Comments off','mantra') , 'cryout_setting_comoff_fn', __FILE__, 'graphics_section');
-/*** post ***/
+/*** post metas***/
 	add_settings_field('mantra_postcomlink', __('Post Comments Link','mantra') , 'cryout_setting_postcomlink_fn', __FILE__, 'post_section');
 	add_settings_field('mantra_postdate', __('Post Date','mantra') , 'cryout_setting_postdate_fn', __FILE__, 'post_section');
 	add_settings_field('mantra_posttime', __('Post Time','mantra') , 'cryout_setting_posttime_fn', __FILE__, 'post_section');
 	add_settings_field('mantra_postauthor', __('Post Author','mantra') , 'cryout_setting_postauthor_fn', __FILE__, 'post_section');
 	add_settings_field('mantra_postcateg', __('Post Category','mantra') , 'cryout_setting_postcateg_fn', __FILE__, 'post_section');
+	add_settings_field('mantra_postmetas', __('Meta Bar','mantra') , 'cryout_setting_postmetas_fn', __FILE__, 'post_section');
 	add_settings_field('mantra_posttag', __('Post Tags','mantra') , 'cryout_setting_posttag_fn', __FILE__, 'post_section');
 	add_settings_field('mantra_postbook', __('Post Permalink','mantra') , 'cryout_setting_postbook_fn', __FILE__, 'post_section');
-	add_settings_field('mantra_postmetas', __('All Post Metas','mantra') , 'cryout_setting_postmetas_fn', __FILE__, 'post_section');
-
+/*** post exceprts***/
 	add_settings_field('mantra_excerpthome', __('Post Excerpts on Home Page','mantra') , 'cryout_setting_excerpthome_fn', __FILE__, 'excerpt_section');
 	add_settings_field('mantra_excerptsticky', __('Affect Sticky Posts','mantra') , 'cryout_setting_excerptsticky_fn', __FILE__, 'excerpt_section');
 	add_settings_field('mantra_excerptarchive', __('Post Excerpts on Archive and Category Pages','mantra') , 'cryout_setting_excerptarchive_fn', __FILE__, 'excerpt_section');

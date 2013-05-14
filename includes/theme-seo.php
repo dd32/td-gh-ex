@@ -43,7 +43,7 @@ function mantra_seo_description() {
 	foreach ($mantra_options as $key => $value) {
      ${"$key"} = $value ;}
 
-		if (is_home() && $mantra_seo_home_desc) {
+		if ( (is_home() && $mantra_seo_home_desc) || (is_page_template('template-blog.php') && $mantra_seo_home_desc) ) {
 			echo PHP_EOL.'<meta name="description" content="';
 			echo $mantra_seo_home_desc;
 			echo '" />'; }
@@ -85,14 +85,14 @@ echo '<meta name="author" content="'.$mantra_seo_author.'" />';
  * Meta Theme 
  */
 function mantra_seo_template() {
- $mantra_theme_data = get_transient( 'cryout_theme_info'); 
-echo PHP_EOL.'<meta name="template" content="'.$mantra_theme_data['Name'].'" />'.PHP_EOL;
+echo PHP_EOL.'<meta property="template" content="mantra" />'.PHP_EOL;
 }
 /**
  * Meta Title 
  */
 function mantra_seo_title() {
-echo "<title>".wp_title( '', false, 'right' )."</title>";
+echo "<title>".wp_title( '', false, 'right' )."</title>".PHP_EOL;
+echo '<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />';
 }
 
 

@@ -241,20 +241,23 @@ function mantra_pullquote_fn( $atts, $content = NULL, $code = '' ) {
   */
 
 function mantra_button_light_fn($attr ,$content) {
-	if (!isset($attr['url']))  $attr['url'] = '#'; 
-	 return '<a class="short-button-light" href="'.$attr['url'].'" title="'.$content.'" >'.$content.'</a>';
+	if (!isset($attr['url']))  $attr['url'] = '#';
+	if (!isset($attr['target'])) $attr['target'] = "_blank";
+	 return '<a class="short-button-light" target="'.$attr['target'].'" href="'.$attr['url'].'" title="'.$content.'" >'.$content.'</a>';
 }
 
 function mantra_button_dark_fn($attr ,$content) {
-	if (!isset($attr['url']))  $attr['url'] = '#'; 
-	 return '<a class="short-button-dark" href="'.$attr['url'].'" title="'.$content.'" >'.$content.'</a>';
+	if (!isset($attr['url']))  $attr['url'] = '#';
+	if (!isset($attr['target'])) $attr['target'] = "_blank";
+	 return '<a class="short-button-dark" target="'.$attr['target'].'" href="'.$attr['url'].'" title="'.$content.'" >'.$content.'</a>';
 }
 
 function mantra_button_color_fn($attr ,$content) {
-	if (!isset($attr['url']))  $attr['url'] = '#'; 
+	if (!isset($attr['url']))  $attr['url'] = '#';
+	if (!isset($attr['target'])) $attr['target'] = "_blank";
 	$style="";
-	if (isset($attr["color"])) { $style='style="background-color:'.$attr["color"].'"'; }
-	 return '<a class="short-button-color"'.$style.' href="'.$attr['url'].'" title="'.$content.'" >'.$content.'</a>';
+	if (isset($attr["color"])) { $style=' style="background-color:'.$attr["color"].'"'; }
+	 return '<a class="short-button-color" target="'.$attr['target'].'"'.$style.' href="'.$attr['url'].'" title="'.$content.'" >'.$content.'</a>';
 }
 
 /**

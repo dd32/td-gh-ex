@@ -775,7 +775,7 @@ function cryout_setting_favicon_fn() {
 	global $mantra_options;
 	echo '<div>';
 ?>
- <img src='<?php echo  ($mantra_options['mantra_logoupload']!='')? esc_url($mantra_options['mantra_logoupload']):get_template_directory_uri().'/admin/images/placeholder.gif'; ?>' class="imagebox" width="64" height="64"/><br>
+ <img src='<?php echo  ($mantra_options['mantra_favicon']!='')? esc_url($mantra_options['mantra_favicon']):get_template_directory_uri().'/admin/images/placeholder.gif'; ?>' class="imagebox" width="64" height="64"/><br>
 <input type="text" size='60' value="<?php echo  esc_url($mantra_options['mantra_favicon']); ?>" name="ma_options[mantra_favicon]" id="mantra_favicon" class="header_upload_inputs slideimages" />
 <?php echo "<div><small>".__("Limitations: It has to be an image. It should be max 64x64 pixels in dimensions. Recommended file extensions .ico and .png . ","mantra")."</small></div>"; ?>
 <span class="description"><br><a href="#" class="upload_image_button button"><?php _e( 'Select / Upload Image', 'mantra' );?></a> </span> 
@@ -1638,21 +1638,6 @@ foreach($items as $id=>$item) {
 	echo "<div><small>".__("Hide the post category.","mantra")."</small></div>";
 }
 
-//CHECKBOX - Name: ma_options[posttag]
-function cryout_setting_posttag_fn() {
-	global $mantra_options;
-	$items = array ("Show" , "Hide");
-	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
-	echo "<select id='mantra_posttag' name='ma_options[mantra_posttag]'>";
-foreach($items as $id=>$item) {
-	echo "<option value='$item'";
-	selected($mantra_options['mantra_posttag'],$item);
-	echo ">$itemsare[$id]</option>";
-}
-	echo "</select>";
-	echo "<div><small>".__("Hide the post tags.","mantra")."</small></div>";
-}
-
 //CHECKBOX - Name: ma_options[postbook]
 function cryout_setting_postbook_fn() {
 	global $mantra_options;
@@ -1680,7 +1665,22 @@ foreach($items as $id=>$item) {
 	echo ">$itemsare[$id]</option>";
 }
 	echo "</select>";
-	echo "<div><small>".__("Hide all the post metas. All meta info and meta areas will be hidden.","mantra")."</small></div>";
+	echo "<div><small>".__("Hide the meta bar. All meta info in it will be hidden.","mantra")."</small></div>";
+}
+
+//CHECKBOX - Name: ma_options[posttag]
+function cryout_setting_posttag_fn() {
+	global $mantra_options;
+	$items = array ("Show" , "Hide");
+	$itemsare = array( __("Show","mantra"), __("Hide","mantra"));
+	echo "<select id='mantra_posttag' name='ma_options[mantra_posttag]'>";
+foreach($items as $id=>$item) {
+	echo "<option value='$item'";
+	selected($mantra_options['mantra_posttag'],$item);
+	echo ">$itemsare[$id]</option>";
+}
+	echo "</select>";
+	echo "<div><small>".__("Hide the post tags.","mantra")."</small></div>";
 }
 
 
@@ -1890,74 +1890,61 @@ foreach($items as $id=>$item) {
 ////////////////////////
 
 // TEXTBOX - Name: ma_options[social1]
+
+
+
+function cryout_setting_social_master($i) {
+	$cryout_special_keys = array('Mail', 'Skype');
+	$cryout_social_small = array (
+		'',__('Select your desired Social network from the left dropdown menu and insert your corresponding address in the right input field. (ex: <i>http://www.facebook.com/yourname</i> )','mantra'),	
+		'',__("You can insert up to 5 different social sites and addresses.",'mantra'),
+		'',__("There are a total of 27 social networks to choose from. ",'mantra'),
+		'',__("You can leave any number of inputs empty. "	,'mantra'),	
+		'',__("You can choose the same social media any number of times.  ",'mantra')
+		);
+	$j=$i+1;
+	global $mantra_options, $socialNetworks;
+	echo "<select id='mantra_social$i' name='ma_options[mantra_social$i]'>";
+	foreach($socialNetworks as $item) {
+		echo "<option value='$item'";
+		selected($mantra_options['mantra_social'.$i],$item);
+		echo ">$item</option>";
+	}
+	echo "</select><span class='address_span'> &raquo; </span>";
+	
+	if (in_array($mantra_options['mantra_social'.$i],$cryout_special_keys)) :
+		$cryout_current_social = esc_html( $mantra_options['mantra_social'.$j] );
+	else : 
+		$cryout_current_social = esc_url( $mantra_options['mantra_social'.$j] );
+	endif;
+	
+	echo "<input id='mantra_social$j' name='ma_options[mantra_social$j]' size='32' type='text'  value='$cryout_current_social'  />";
+	echo "<div><small>".$cryout_social_small[$i]."</small></div>";
+}
+
+
+
 function cryout_setting_socials1_fn() {
-	global $mantra_options, $socialNetworks;
-	echo "<select id='mantra_social1' name='ma_options[mantra_social1]'>";
-foreach($socialNetworks as $item) {
-	echo "<option value='$item'";
-	selected($mantra_options['mantra_social1'],$item);
-	echo ">$item</option>";
-}
-	echo "</select><span class='address_span'> &raquo; </span>";
-
-	echo "<input id='mantra_social2' name='ma_options[mantra_social2]' size='32' type='text'  value='".esc_url( $mantra_options['mantra_social2'] )."'  />";
-	echo "<div><small>".__("Select your desired Social network from the left dropdown menu and insert your corresponding address in the right input field. (ex: <i>http://www.facebook.com/yourname</i> )","mantra")."</small></div>";
+	cryout_setting_social_master(1);
 }
 
-// TEXTBOX - Name: ma_options[social2]
 function cryout_setting_socials2_fn() {
-	global $mantra_options, $socialNetworks;
-	echo "<select id='mantra_social3' name='ma_options[mantra_social3]'>";
-foreach($socialNetworks as $item) {
-	echo "<option value='$item'";
-	selected($mantra_options['mantra_social3'],$item);
-	echo ">$item</option>";
-}
-	echo "</select><span class='address_span'> &raquo; </span>";
-	echo "<input id='mantra_tweeter' name='ma_options[mantra_social4]' size='32' type='text'  value='".esc_url( $mantra_options['mantra_social4'] )."'  />";
-	echo "<div><small>".__("You can insert up to 5 different social sites and addresses.","mantra")."</small></div> ";
+	cryout_setting_social_master(3);
 }
 
 // TEXTBOX - Name: ma_options[social3]
 function cryout_setting_socials3_fn() {
-	global $mantra_options, $socialNetworks;
-	echo "<select id='mantra_social5' name='ma_options[mantra_social5]'>";
-	foreach($socialNetworks as $item) {
-	echo "<option value='$item'";
-	selected($mantra_options['mantra_social5'],$item);
-	echo ">$item</option>";
-}
-	echo "</select><span class='address_span'> &raquo; </span>";
-	echo "<input id='mantra_rss' name='ma_options[mantra_social6]' size='32' type='text'  value='".esc_url( $mantra_options['mantra_social6'] )."'  />";
-	echo "<div><small>".__("There are a total of 27 social networks to choose from. ","mantra")."</small></div>";
+cryout_setting_social_master(5);
 }
 
 // TEXTBOX - Name: ma_options[social4]
 function cryout_setting_socials4_fn() {
-	global $mantra_options, $socialNetworks;
-	echo "<select id='mantra_social7' name='ma_options[mantra_social7]'>";
-	foreach($socialNetworks as $item) {
-	echo "<option value='$item'";
-	selected($mantra_options['mantra_social7'],$item);
-	echo ">$item</option>";
-}
-	echo "</select><span class='address_span'> &raquo; </span>";
-	echo "<input id='mantra_rss' name='ma_options[mantra_social8]' size='32' type='text'  value='".esc_url( $mantra_options['mantra_social8'] )."'  />";
-	echo "<div><small>".__("You can leave any number of inputs empty. ","mantra")."</small></div>";
+cryout_setting_social_master(7);
 }
 
 // TEXTBOX - Name: ma_options[social5]
 function cryout_setting_socials5_fn() {
-	global $mantra_options, $socialNetworks;
-	echo "<select id='mantra_social9' name='ma_options[mantra_social9]'>";
-	foreach($socialNetworks as $item) {
-	echo "<option value='$item'";
-	selected($mantra_options['mantra_social9'],$item);
-	echo ">$item</option>";
-}
-	echo "</select><span class='address_span'> &raquo; </span>";
-	echo "<input id='mantra_rss' name='ma_options[mantra_social10]' size='32' type='text'  value='".esc_url( $mantra_options['mantra_social10'] )."'  />";
-	echo "<div><small>".__("You can choose the same social media any number of times.  ","mantra")."</small></div>";
+cryout_setting_social_master(9);
 }
 
 // TEXTBOX - Name: ma_options[socialsdisplay]

@@ -34,6 +34,7 @@
 	
 	a#logo {
 	height:100%;
+	display: block !important;
 	}
 
 	a#logo img {
@@ -42,16 +43,19 @@
 	max-width:90%;
 	}
 	
+	.safari a#logo img { max-height: 90px; }
+	
 		#smenul, #smenur {
 	margin-top:0;
 	}
 
 	.socials a {
 	margin:0;
-	left:10px;
+	padding-left:5px;
+	display: block;
 	}
 	.socials a img {
-	width:65%;
+	width:22px;
 	}	
 	#wrapper {
 		margin:10px;
@@ -177,7 +181,9 @@
     #access .menu ul:first-child { 
 	display: none;
 	}
-
+	.theme-default .nivo-caption {
+	font-size:9px;
+	}
 	
 
 }
@@ -191,6 +197,7 @@
 body, #content p, #content ul, #content ol,#content code, #content pre, #content blockquote {
 		font-size: 12px !important;
 	}
+	
 	#site-title a{
 		font-size: 18px;
 		line-height:18px;

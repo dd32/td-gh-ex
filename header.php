@@ -12,7 +12,6 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=<?php bloginfo( 'charset' ); ?>" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <?php  	cryout_seo_hook(); ?>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -28,7 +27,7 @@
 
 <?php cryout_wrapper_hook(); ?>
 
-<header id="header">
+<div id="header">
 
 		<div id="masthead">
 
@@ -49,7 +48,7 @@
 
 	<div style="clear:both;"> </div>
 
-</header><!-- #header -->
+</div><!-- #header -->
 <div id="main">
 	<div  id="forbottom" >
 		<?php cryout_forbottom_hook(); ?>

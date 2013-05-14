@@ -1,78 +1,68 @@
+/******************************
+    Mantra Theme
+    custom scripting
+    (c) Cryout Creations
+	www.cryoutcreations.eu
+*******************************/
+
+
 jQuery(document).ready(function() {
+
+// standard menu touch support for tablets
+	var isTouch = ('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch; // check touch support
+	jQuery('#access .menu > ul > li a').click(function(e){
+		var $link_id = jQuery(this).attr('href');
+		if (jQuery(this).parent().data('clicked') == $link_id) { // second touch
+			jQuery(this).parent().data('clicked', null);
+			return true;
+		}
+		else { // first touch
+			if (isTouch && (jQuery(this).parent().children('.sub-menu').length >0)) e.preventDefault();
+			jQuery(this).parent().data('clicked', $link_id);
+		}
+    });
 
 // Back to top button animation
 jQuery(function() {
 	jQuery(window).scroll(function() {
-
 		var x=jQuery(this).scrollTop();
-		
 		 var ver = getInternetExplorerVersion();
-		 
 		// no fade animation (transparency) if IE8 or below
 		if ( ver > -1 && ver <= 8 ) {
 			if(x != 0) {
-					jQuery('#toTop').show();	
+					jQuery('#toTop').show();
 					} else {
 					jQuery('#toTop').hide();
-						}		
+						}
 		}
-		
 		// fade animation if not IE8 or below
 		else {
 		if(x != 0) {
-				jQuery('#toTop').fadeIn(3000);	
+				jQuery('#toTop').fadeIn(3000);
 			} else {
 				jQuery('#toTop').fadeOut();
 			}
 	}
-		
 	});
-	
- 
-	jQuery('#toTop').click(function() {
-		jQuery('body,html').animate({scrollTop:0},800);
-	});	
-
-
+	jQuery('#toTop').click(function() { jQuery('body,html').animate({scrollTop:0},800); });
 });
 
+
 // Menu animation
-
 jQuery("#access ul ul").css({display: "none"}); // Opera Fix
+jQuery("#access li").hover(
+	function(){	jQuery(this).find('ul:first').css({visibility: "visible",display: "none"}).show(400); },
+	function(){ jQuery(this).find('ul:first').css({visibility: "hidden"}); 
+});
 
-jQuery("#access li").hover(function(){
-	jQuery(this).find('ul:first').css({visibility: "visible",display: "none"}).show(400);
-	},function(){
-	jQuery(this).find('ul:first').css({visibility: "hidden"});
-								});
+
 // Social Icons Animation
-
 jQuery(".socialicons").hover(
-function(){
-	jQuery(this).animate({"top": "-5px" },{ queue: false, duration:200});
-/*	 jQuery(this).css({
-                        '-webkit-transform': 'rotate(5deg)',
-                        '-moz-transform': 'rotate(5deg)',
-                        '-ms-transform': 'rotate(5deg)',
-                        '-o-transform': 'rotate(5deg)',
-                        'transform': 'rotate(5deg)',
-                        'zoom': 1
-            });*/
+	function(){  jQuery(this).animate({"top": "-5px" },{ queue: false, duration:200}); },
+	function(){  jQuery(this).animate({ "top": "0px" }, { queue: false, duration:200 });  
+});
 
-					},
-function(){
-	jQuery(this).animate({ "top": "0px" }, { queue: false, duration:200 });
-/* jQuery(this).css({
-                        '-webkit-transform': 'rotate(0deg)',
-                        '-moz-transform': 'rotate(0deg)',
-                        '-ms-transform': 'rotate(0deg)',
-                        '-o-transform': 'rotate(0deg)',
-                        'transform': 'rotate(0deg)',
-                        'zoom': 1
-            });*/
-
-					});							
-
+					
 /*! http://tinynav.viljamis.com v1.03 by @viljamis */
 (function ($, window, i) {
   $.fn.tinyNav = function (options) {
@@ -85,8 +75,7 @@ function(){
 
     return this.each(function () {
 
-      // Used for namespacing
-      i++;
+      i++; // Used for namespacing
 
       var $nav = $(this),
         // Namespacing
@@ -98,29 +87,22 @@ function(){
       if ($nav.is('ul,ol')) {
 
         if (settings.header) {
-          $select.append(
-            $('<option/>').text('Navigation')
-          );
+          $select.append( $('<option/>').text('Navigation') );
         }
 
         // Build options
         var options = '';
 		var indent = 0;
 		var indented = ["&nbsp;"];
-		for ( var i = 0; i < 10; i++) {
-			indented.push(indented[indented.length-1]+indented[indented.length-1]);
-		}
+		for ( var i = 0; i < 10; i++) { indented.push(indented[indented.length-1]+'-&nbsp;'); }
 		indented[0] = "";
         $nav
           .addClass('l_' + namespace_i)
           .children('li')
           .each(buildNavTree=function () {
             var a = $(this).children('a').first();
-            
-            options +=
-              '<option value="' + a.attr('href') + '">' +
-              indented[indent] + a.text() +
-              '</option>';
+
+            options += '<option value="' + a.attr('href') + '">' + indented[indent] + a.text() + '</option>';
               indent++;
               $(this).children('ul,ol').children('li').each(buildNavTree);
               indent--;
@@ -153,15 +135,20 @@ function(){
 
   };
 })(jQuery, this, 0);
+// end tinynav
 
 
+// detect and apply custom class for safari
+if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
+	jQuery('body').addClass('safari');
+}
 
 
+}); 
+// end documetn.ready
 
-}); // ready 
 
-// Columns equalizer
-// Function called in header.php if at least one sidebar has a bg color
+// Columns equalizer, used if at least one sidebar has a bg color
 function equalizeHeights(){
     var h1 = jQuery("#primary").height();
 	var h2 = jQuery("#secondary").height();
@@ -169,7 +156,7 @@ function equalizeHeights(){
     var max = Math.max(h1,h2,h3);
 	if (h1<max) { jQuery("#primary").height(max); };
 	if (h2<max) { jQuery("#secondary").height(max); };
-	
+
 }
 
 /*!
@@ -188,35 +175,19 @@ function equalizeHeights(){
     var settings = {
       customSelector: null
     }
-    
+
     var div = document.createElement('div'),
         ref = document.getElementsByTagName('base')[0] || document.getElementsByTagName('script')[0];
-        
+
    div.className = 'fit-vids-style';
-    div.innerHTML = '&shy;<style> \
-.fluid-width-video-wrapper { \
-width: 100%; \
-position: relative; \
-padding: 0; \
-} \
-\
-.fluid-width-video-wrapper iframe, \
-.fluid-width-video-wrapper object, \
-.fluid-width-video-wrapper embed { \
-position: absolute; \
-top: 0; \
-left: 0; \
-width: 100%; \
-height: 100%; \
-} \
-</style>';
-                      
+    div.innerHTML = '&shy;<style> .fluid-width-video-wrapper { width: 100%; position: relative; padding: 0; } .fluid-width-video-wrapper iframe, .fluid-width-video-wrapper object, .fluid-width-video-wrapper embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; } </style>';
+
     ref.parentNode.insertBefore(div,ref);
-    
+
     if ( options ) {
       $.extend( settings, options );
     }
-    
+
     return this.each(function(){
       var selectors = [
         "iframe[src*='player.vimeo.com']",
@@ -225,11 +196,11 @@ height: 100%; \
         "object",
         "embed"
       ];
-      
+
       if (settings.customSelector) {
         selectors.push(settings.customSelector);
       }
-      
+
       var $allVideos = $(this).find(selectors.join(','));
 
       $allVideos.each(function(){
@@ -237,18 +208,17 @@ height: 100%; \
         if (this.tagName.toLowerCase() == 'embed' && $this.parent('object').length || $this.parent('.fluid-width-video-wrapper').length) { return; }
         var height = this.tagName.toLowerCase() == 'object' ? $this.attr('height') : $this.height(),
             aspectRatio = height / $this.width();
-if(!$this.attr('id')){
-var videoID = 'fitvid' + Math.floor(Math.random()*999999);
-$this.attr('id', videoID);
-}
+			if(!$this.attr('id')){
+				var videoID = 'fitvid' + Math.floor(Math.random()*999999);
+				$this.attr('id', videoID);
+			}
         $this.wrap('<div class="fluid-width-video-wrapper"></div>').parent('.fluid-width-video-wrapper').css('padding-top', (aspectRatio * 100)+"%");
         $this.removeAttr('height').removeAttr('width');
       });
     });
-  
+
   }
 })( jQuery );
-
 
 // Returns the version of Internet Explorer or a -1
 // (indicating the use of another browser).
