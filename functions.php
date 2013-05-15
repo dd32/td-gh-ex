@@ -26,11 +26,6 @@ add_theme_support( 'custom-background', $args );
 	// Make theme available for translation
 	// Translations can be filed in the /languages/ directory
 	load_theme_textdomain( 'agency', get_template_directory() . '/languages' );
-
-	$locale = get_locale();
-	$locale_file = get_template_directory() . "/languages/$locale.php";
-	if ( is_readable( $locale_file ) )
-		require_once( $locale_file );
 		
 			// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -39,6 +34,168 @@ add_theme_support( 'custom-background', $args );
 
 }
 endif;
+?>
+<?php
+/**
+ * Setup the WordPress core custom header feature.
+ *
+ * Use add_theme_support to register support for WordPress 3.4+
+ * as well as provide backward compatibility for previous versions.
+ * Use feature detection of wp_get_theme() which was introduced
+ * in WordPress 3.4.
+ *
+ * @todo Rework this function to remove WordPress 3.4 support when WordPress 3.6 is released.
+ *
+ * @uses agency_s_header_style()
+ * @uses agency_s_admin_header_style()
+ * @uses agency_s_admin_header_image()
+ *
+ * @package agency_s
+ */
+function agency_s_custom_header_setup() {
+	$args = array(
+		'default-image'          => '',
+		'default-text-color'     => '000000',
+		'width'                  => 220,
+		'height'                 => 75,
+		'flex-height'            => true,
+		'wp-head-callback'       => 'agency_s_header_style',
+		'admin-head-callback'    => 'agency_s_admin_header_style',
+		'admin-preview-callback' => 'agency_s_admin_header_image',
+	);
+
+	$args = apply_filters( 'agency_s_custom_header_args', $args );
+
+	if ( function_exists( 'wp_get_theme' ) ) {
+		add_theme_support( 'custom-header', $args );
+	} else {
+		// Compat: Versions of WordPress prior to 3.4.
+		define( 'HEADER_TEXTCOLOR',    $args['default-text-color'] );
+		define( 'HEADER_IMAGE',        $args['default-image'] );
+		define( 'HEADER_IMAGE_WIDTH',  $args['width'] );
+		define( 'HEADER_IMAGE_HEIGHT', $args['height'] );
+		add_custom_image_header( $args['wp-head-callback'], $args['admin-head-callback'], $args['admin-preview-callback'] );
+	}
+}
+add_action( 'after_setup_theme', 'agency_s_custom_header_setup' );
+
+
+/**
+ * Shiv for get_custom_header().
+ *
+ * get_custom_header() was introduced to WordPress
+ * in version 3.4. To provide backward compatibility
+ * with previous versions, we will define our own version
+ * of this function.
+ *
+ * @todo Remove this function when WordPress 3.6 is released.
+ * @return stdClass All properties represent attributes of the curent header image.
+ *
+ * @package agency_s
+ */
+
+if ( ! function_exists( 'get_custom_header' ) ) {
+	function get_custom_header() {
+		return (object) array(
+			'url'           => get_header_image(),
+			'thumbnail_url' => get_header_image(),
+			'width'         => HEADER_IMAGE_WIDTH,
+			'height'        => HEADER_IMAGE_HEIGHT,
+		);
+	}
+}
+
+if ( ! function_exists( 'agency_s_header_style' ) ) :
+/**
+ * Styles the header image and text displayed on the blog
+ *
+ * @see _s_custom_header_setup().
+ */
+function agency_s_header_style() {
+
+	// If no custom options for text are set, let's bail
+	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
+	if ( HEADER_TEXTCOLOR == get_header_textcolor() )
+		return;
+	// If we get this far, we have custom styles. Let's do this.
+	?>
+	<style type="text/css">
+	<?php
+		// Has the text been hidden?
+		if ( 'blank' == get_header_textcolor() ) :
+	?>
+		.site-title,
+		.site-description {
+			position: absolute !important;
+			clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+			clip: rect(1px, 1px, 1px, 1px);
+		}
+	<?php
+		// If the user has set a custom color for the text use that
+		else :
+	?>
+		.site-title a,
+		.site-description {
+			color: #<?php echo get_header_textcolor(); ?>;
+		}
+	<?php endif; ?>
+	</style>
+	<?php
+}
+endif; // _s_header_style
+
+if ( ! function_exists( 'agency_s_admin_header_style' ) ) :
+/**
+ * Styles the header image displayed on the Appearance > Header admin panel.
+ *
+ * @see _s_custom_header_setup().
+ */
+function agency_s_admin_header_style() {
+?>
+	<style type="text/css">
+	.appearance_page_custom-header #headimg {
+		border: none;
+	}
+	#headimg h1,
+	#desc {
+	}
+	#headimg h1 {
+	}
+	#headimg h1 a {
+	}
+	#desc {
+	}
+	#headimg img {
+	}
+	</style>
+<?php
+}
+endif; // _s_admin_header_style
+
+if ( ! function_exists( 'agency_s_admin_header_image' ) ) :
+/**
+ * Custom header image markup displayed on the Appearance > Header admin panel.
+ *
+ * @see agency_s_custom_header_setup().
+ */
+function agency_s_admin_header_image() { ?>
+	<div id="headimg">
+		<?php
+		if ( 'blank' == get_header_textcolor() || '' == get_header_textcolor() )
+			$style = ' style="display:none;"';
+		else
+			$style = ' style="color:#' . get_header_textcolor() . ';"';
+		?>
+		<h1 class="displaying-header-text"><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+		<div class="displaying-header-text" id="desc"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></div>
+		<?php $header_image = get_header_image();
+		if ( ! empty( $header_image ) ) : ?>
+			<img src="<?php echo esc_url( $header_image ); ?>" alt="" />
+		<?php endif; ?>
+	</div>
+<?php }
+endif; // agency_s_admin_header_image
+
 ?>
 <?php
 function agency_list_pings($comment, $args, $depth) { 
@@ -288,20 +445,6 @@ function agency_head_css() {
 
 add_action('wp_head', 'agency_head_css');
 
-function agency_of_analytics(){
-$googleanalytics= of_get_option('go_code');
-echo stripslashes($googleanalytics);
-}
-add_action( 'wp_footer', 'agency_of_analytics' );
-
-function agency_favicon() {
-	if (of_get_option('favicon_image') != '') {
-	echo '<link rel="shortcut icon" href="'. of_get_option('favicon_image') .'"/>'."\n";
-	}
-}
-
-add_action('wp_head', 'agency_favicon');
-
 function agency_date_on() {
 	printf( __( '<span class="%1$s">Posted on</span> %2$s', 'agency' ),
 		'meta-prep meta-prep-author',
@@ -348,11 +491,11 @@ function agency_of_register_js() {
 	if (!is_admin()) {
 	
 		wp_register_script('superfish', get_template_directory_uri() . '/js/superfish.js', 'jquery', '1.0', TRUE);
-		wp_register_script('custom', get_template_directory_uri() . '/js/jquery.custom.js', 'jquery', '1.0', TRUE);
+		wp_register_script('agency_custom', get_template_directory_uri() . '/js/jquery.custom.js', 'jquery', '1.0', TRUE);
 	
 		wp_enqueue_script('jquery');
 		wp_enqueue_script('superfish');
-		wp_enqueue_script('custom');
+		wp_enqueue_script('agency_custom');
 	}
 }
 add_action('wp_enqueue_scripts', 'agency_of_register_js');
@@ -367,7 +510,7 @@ function agency_of_styles() {
 		
 		wp_enqueue_style( 'superfish' );
 }
-add_action('wp_print_styles', 'agency_of_styles');
+add_action('wp_enqueue_scripts', 'agency_of_styles');
 
 /** redirect */
 if ( is_admin() && isset($_GET['activated'] ) && $pagenow ==	"themes.php" )

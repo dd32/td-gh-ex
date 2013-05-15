@@ -33,7 +33,7 @@ if (have_posts()) : while (have_posts()) : the_post();
 	if(has_post_thumbnail(get_the_ID(), 'large'))
 	{
 	    $image_id = get_post_thumbnail_id(get_the_ID());
-	    $thumb_small = wp_get_attachment_image_src($image_id, 'large', true);
+	    $thumb_small = esc_url(wp_get_attachment_image_src($image_id, 'large', true));
 
 	}
 ?>

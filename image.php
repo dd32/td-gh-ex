@@ -13,7 +13,7 @@
           
             <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-                <p><?php _e('&#8249; Return to', 'agency'); ?> <a href="<?php echo get_permalink($post->post_parent); ?>" rel="gallery"><?php echo get_the_title($post->post_parent); ?></a></p>
+                <p><?php _e('&#8249; Return to', 'agency'); ?> <a href="<?php echo esc_url(get_permalink($post->post_parent)); ?>" rel="gallery"><?php echo get_the_title($post->post_parent); ?></a></p>
 
 			<div class="meta-data">
 			
@@ -23,7 +23,7 @@
 			<div class="clear"></div>
                                 
                 <div class="attachment-entry">
-                    <a href="<?php echo wp_get_attachment_url($post->ID); ?>"><?php echo wp_get_attachment_image( $post->ID, 'large' ); ?></a>
+                    <a href="<?php echo esc_url(wp_get_attachment_url($post->ID)); ?>"><?php echo esc_url(wp_get_attachment_image( $post->ID, 'large' )); ?></a>
 					<?php if ( !empty($post->post_excerpt) ) the_excerpt(); ?>
                     <?php the_content(__('Read more &#8250;;', 'agency')); ?>
                     <?php wp_link_pages(array('before' => '<div class="pagination">' . __('Pages:', 'agency'), 'after' => '</div>')); ?>

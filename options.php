@@ -29,14 +29,8 @@ function optionsframework_option_name() {
 
 function optionsframework_options() {
 	
-	// Test data
-	$comment_page_array = array("on" => "on","off" => "off");
-	
 	// Multicheck Array
-	$multicheck_array = array("one" => "French Toast", "two" => "Pancake", "three" => "Omelette", "four" => "Crepe", "five" => "Waffle");
-	
-	// Multicheck Defaults
-	$multicheck_defaults = array("one" => "1","five" => "1");
+	$comment_page_array = array("on" => "on","off" => "off");
 	
 	// Background Defaults
 	
@@ -87,17 +81,6 @@ function optionsframework_options() {
 	$options[] = array( "name" => "Quote Author Name",
 						"desc" => "Name of author text.",
 						"id" => "author_text",
-						"std" => "",
-						"type" => "text");						
-						
-	$options[] = array( "name" => "Slider image",
-						"desc" => "963px x 350px exact. Upload your image for homepage slider.",
-						"id" => "slider_image",
-						"type" => "upload");
-						
-	$options[] = array( "name" => "Slider image link",
-						"desc" => "Paste here the link of the page or post.",
-						"id" => "slider_link",
 						"std" => "",
 						"type" => "text");												 
 
@@ -194,18 +177,19 @@ function optionsframework_options() {
 						"type" => "text");																											
 															
 						
-	$options[] = array( "name" => "Logo Settings",
+	$options[] = array( "name" => "Slider Settings",
 						"type" => "heading");
 						
-	$options[] = array( "name" => "Logo image",
-						"desc" => "Upload your logo image over here.",
-						"id" => "logo_image",
+	$options[] = array( "name" => "Slider image",
+						"desc" => "963px x 350px exact. Upload your image for homepage slider.",
+						"id" => "slider_image",
 						"type" => "upload");
 						
-	$options[] = array( "name" => "Favicon image",
-						"desc" => "Upload your favicon image over here or enter url.",
-						"id" => "favicon_image",
-						"type" => "upload");						
+	$options[] = array( "name" => "Slider image link",
+						"desc" => "Paste here the link of the page or post.",
+						"id" => "slider_link",
+						"std" => "",
+						"type" => "text");					
 						
 	$options[] = array( "name" => "Blog Settings",
 						"type" => "heading");
@@ -223,13 +207,7 @@ function optionsframework_options() {
 						"desc" => "Enter your company name here.",
 						"id" => "footer_cr",
 						"std" => "",
-						"type" => "text");	
-						
-	$options[] = array( "name" => "Google Analytics Code",
-						"desc" => "You can paste your Google Analytics or other tracking code in this box.",
-						"id" => "go_code",
-						"std" => "",
-						"type" => "textarea");						
+						"type" => "text");
 						
 	$options[] = array( "name" => "Style Settings",
 						"type" => "heading");

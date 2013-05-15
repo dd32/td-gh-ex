@@ -20,6 +20,7 @@
 					</div><!--head end-->
 					
 					<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'agency' ); ?></p>
+												<div id="search-header"><?php get_search_form(); ?></div><!--search header end-->
 					
 <?php endif; ?>
 

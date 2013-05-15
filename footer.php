@@ -24,7 +24,7 @@
 			
 			<!--footer container--><div id="footer-container2">
 			
-			<div id="copyright"><?php _e( 'Copyright', 'agency' ); ?> <?php echo date( 'Y' ); ?> <?php echo of_get_option('footer_cr'); ?> | <?php _e( 'Powered by', 'agency' ); ?> <a href="http://www.wordpress.org">WordPress</a> | agency theme by <a href="http://www.antthemes.com">antthemes</a></div>
+			<div id="copyright"><?php _e( 'Copyright', 'agency' ); ?> <?php echo date( 'Y' ); ?> <?php echo esc_html(of_get_option('footer_cr')); ?> | <?php _e( 'Powered by', 'agency' ); ?> <a href="http://www.wordpress.org"><?php _e( 'WordPress', 'agency' ); ?></a> | <?php _e( 'agency theme by', 'agency' ); ?> <a href="http://www.antthemes.com"><?php _e( 'antthemes', 'agency' ); ?></a></div>
 					
 			</div><!--footer info end-->		
 		</div><!-- footer container2-->				

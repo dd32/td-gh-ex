@@ -27,8 +27,11 @@
 		<!--header-->
 		<div id="header2">
 
-				<?php if ( ( of_get_option('logo_image') ) != '' ) { ?>
-		<div id="logo"><a href="<?php echo esc_url(home_url()); ?>" title="<?php bloginfo('description'); ?>"><img src="<?php echo of_get_option('logo_image'); ?>" alt="<?php echo of_get_option('footer_cr'); ?>" /></a></div><!--logo end-->
+<?php $header_image = get_header_image();
+	if ( ! empty( $header_image ) ) { ?>
+		<div id="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+			<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" />
+		</a></div><!--logo end-->
 	<?php } else { ?>
 			<div id="logo2"><a href="<?php echo esc_url(home_url()); ?>" title="<?php bloginfo('description'); ?>"><?php bloginfo( 'name' ); ?></a></div><!--logo end-->
 	<?php } ?>
@@ -58,8 +61,7 @@
 		</div><!-- header end-->
 		
 <?php if(is_front_page()) { 
-
-require_once ( get_template_directory() . '/element-slider.php' );
+	get_template_part( 'element-slider', 'header' );
  } ?>
 
 <?php if(!is_front_page()) { ?>
@@ -70,8 +72,11 @@ require_once ( get_template_directory() . '/element-slider.php' );
 		single_cat_title();
 		} elseif (is_tag() ) {
 		echo (__( 'Archives for ', 'agency' )); single_tag_title();
+		} elseif (is_author() ) {
+    $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));		
+		echo (__( 'Archives for ', 'agency' )); echo $curauth->nickname;		
 	} elseif (is_archive() ) {
-		echo (__( 'Archives for ', 'agency' )); single_month_title();
+		echo (__( 'Archives for ', 'agency' )); single_month_title(' ', true);
 	} elseif (is_search() ) {
 		printf( __( 'Search Results for: %s', 'agency' ), '' . get_search_query() . '' );
 	} else {

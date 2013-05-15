@@ -2,7 +2,7 @@
 Theme Name: agency
 Theme URI: http://antthemes.com/?page_id=2019
 Description: A very neat and clean black and white business theme. The theme supports widgets. And features theme-options, threaded-comments and multi-level dropdown menu. A simple and neat typography.
-Version: 1.1
+Version: 1.2
 Author: Manishg
 Author URI: http://antthemes.com/
 Tags: black,threaded-comments,light,two-columns,theme-options,white
@@ -1271,7 +1271,7 @@ background: rgba(0, 0, 0, 0.6);
 
 .widget-container ul li {
 	border-bottom: 1px solid #ebebeb;
-	padding: 7px 0px 7px 16px;
+	padding: 7px 0px 0px 16px;
 	margin-left: 12px;
 	margin-right: 15px;
 }
