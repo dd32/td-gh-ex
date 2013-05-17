@@ -1,16 +1,7 @@
 <?php
 /**
- * @package WordPress
- * @subpackage Beach
+ * @package Beach
  */
-
-/**
- * Make theme available for translation
- * Translations can be filed in the /languages/ directory
- * If you're building a theme based on beach, use a find and replace
- * to change 'beach' to the name of your theme in all the template files
- */
-load_theme_textdomain( 'beach', get_template_directory() . '/languages' );
 
 /**
  * Set the content width based on the theme's design and stylesheet.
@@ -18,41 +9,55 @@ load_theme_textdomain( 'beach', get_template_directory() . '/languages' );
 if ( ! isset( $content_width ) )
 	$content_width = 530;
 
+if ( ! function_exists( 'beach_setup' ) ) :
 /**
- * Load Jetpack compatibility file.
+ * Sets up theme defaults and registers support for various WordPress features.
+ *
+ * Note that this function is hooked into the after_setup_theme hook, which runs
+ * before the init hook. The init hook is too late for some features, such as indicating
+ * support post thumbnails.
  */
-require( get_template_directory() . '/inc/jetpack.compat.php' );
+function beach_setup() {
+
+	/**
+	 * Make theme available for translation
+	 * Translations can be filed in the /languages/ directory
+	 * If you're building a theme based on Beach, use a find and replace
+	 * to change 'beach' to the name of your theme in all the template files
+	 */
+	load_theme_textdomain( 'beach', get_template_directory() . '/languages' );
+
+	/**
+	 * Add default posts and comments RSS feed links to head
+	 */
+	add_theme_support( 'automatic-feed-links' );
+
+	/**
+	 * This theme uses wp_nav_menu() in two locations.
+	 */
+	register_nav_menus( array(
+		'primary'   => __( 'Primary Menu',   'beach' ),
+		'secondary' => __( 'Secondary Menu', 'beach' ),
+	) );
+
+	/**
+	 * Enable support for Post Formats
+	 */
+	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'quote', 'status' ) );
+}
+endif; // beach_setup
+add_action( 'after_setup_theme', 'beach_setup' );
 
 /**
- * Set $themecolors array.
+ * Enqueue scripts and styles
  */
-$themecolors = array(
-	'bg' => 'F1F6F9',
-	'text' => '333333',
-	'link' => 'EE6633',
-	'border' => '296684',
-	'url' => '4499BB',
-);
+function beach_scripts() {
+	wp_enqueue_style( 'beach', get_stylesheet_uri() );
 
-/**
- * This theme uses wp_nav_menu() in one location.
- */
-register_nav_menus( array(
-	'primary' => __( 'Primary Menu', 'beach' ),
-	'secondary' => __( 'Secondary Menu', 'beach' ),
-) );
-
-/**
- * Add default posts and comments RSS feed links to head
- */
-add_theme_support( 'automatic-feed-links' );
-
-/**
- * Add Post Format support
- */
-add_theme_support( 'post-formats', array( 'aside', 'gallery', 'quote', 'status' ) );
-
-add_theme_support( 'print-style' );
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
+		wp_enqueue_script( 'comment-reply' );
+}
+add_action( 'wp_enqueue_scripts', 'beach_scripts' );
 
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
@@ -68,12 +73,12 @@ add_filter( 'wp_page_menu_args', 'beach_page_menu_args' );
  */
 function beach_widgets_init() {
 	register_sidebar( array (
-		'name' => __( 'Sidebar', 'beach' ),
-		'id' => 'sidebar-1',
+		'name'          => __( 'Sidebar', 'beach' ),
+		'id'            => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
-		'before_title' => '<h1 class="widget-title">',
-		'after_title' => '</h1>',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
 	) );
 
 }
@@ -82,7 +87,7 @@ add_action( 'init', 'beach_widgets_init' );
 /**
  * Display navigation to next/previous pages when applicable
  */
-function beach_content_nav($nav_id) {
+function beach_content_nav( $nav_id ) {
 	global $wp_query;
 
 	if ( $wp_query->max_num_pages > 1 ) : ?>
@@ -169,6 +174,39 @@ function beach_comment( $comment, $args, $depth ) {
 			break;
 	endswitch;
 }
+
+/**
+ * Filters wp_title to print a neat <title> tag based on what is being viewed.
+ *
+ * @since Beach 1.1
+ */
+function beach_wp_title( $title, $sep ) {
+	global $page, $paged;
+
+	if ( is_feed() )
+		return $title;
+
+	// Add the blog name
+	$title .= get_bloginfo( 'name' );
+
+	// Add the blog description for the home/front page.
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) )
+		$title .= " $sep $site_description";
+
+	// Add a page number if necessary:
+	if ( $paged >= 2 || $page >= 2 )
+		$title .= " $sep " . sprintf( __( 'Page %s', 'beach' ), max( $paged, $page ) );
+
+	return $title;
+}
+add_filter( 'wp_title', 'beach_wp_title', 10, 2 );
+
+/**
+ * Load Jetpack compatibility file.
+ */
+require( get_template_directory() . '/inc/jetpack.compat.php' );
+
 /**
  * This theme was built with PHP, Semantic HTML, CSS, love, and a Toolbox.
  */

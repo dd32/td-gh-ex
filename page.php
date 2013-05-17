@@ -1,25 +1,24 @@
 <?php
 /**
- * @package WordPress
- * @subpackage Beach
+ * @package Beach
  */
 
 get_header(); ?>
 
-		<div id="primary">
-			<div id="content" role="main">
+<div id="primary">
+	<div id="content" role="main">
 
-				<?php while ( have_posts() ) : the_post(); ?>
+		<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php get_template_part( 'content', 'page' ); ?>
+			<?php get_template_part( 'content', 'page' ); ?>
 
-					<?php comments_template( '', true ); ?>
+			<?php comments_template(); ?>
 
-				<?php endwhile; // end of the loop. ?>
+		<?php endwhile; // end of the loop. ?>
 
-			</div><!-- #content -->
+	</div><!-- #content -->
 
-			<?php get_sidebar(); ?>
-		</div><!-- #primary -->
+	<?php get_sidebar(); ?>
+</div><!-- #primary -->
 
 <?php get_footer(); ?>
