@@ -1,4 +1,64 @@
 Changelog -----------------------------------
+version:1.117
+    Remove tag accessibility-ready
+
+The following theme tags are not allowed:
+- accessibility-ready
+See http://wordpress.org/themes/about/ for a complete list of approved theme tags.
+----------------------------------------------
+Changelog -----------------------------------
+version:1.116
+    modified
+        html meta element from charset attribute to http-equiv
+
+        page-templates/front-portfolio.php
+            Change,Display only has featured image post.
+            Add Pagenation.
+        searchform
+            Add label <label class="screen-reader-text" for="s">Search for:</label>
+        style.css
+            Try accessibility add accessibility-ready tag
+
+    add
+        function raindrops_link_unique( )
+        function raindrops_doc_type_settings_validate( )
+        function raindrops_accessibility_settings_validate( )
+        images/raindrops-nav-menu-expand.png
+        images/raindrops-nav-menu-shrunk.png
+        Add searchform default sidebar.
+
+        theme option
+            Accessibility Settings
+            Document Type Settings
+
+Note:
+    This version trying theme accessibility.
+
+    How to activate Accessibility mode.
+        Open Raindrops option page.
+        Accessibility Settings value set to yes.( default no ).
+
+    accessibility checking tool
+        Functional Accessibility Evaluator 1.1
+        http://fae.cita.uiuc.edu/
+
+    How to use NVDA reader.
+        english version
+        http://www.nvaccess.org/
+        japanese version
+        http://sourceforge.jp/projects/nvdajp/
+
+        1. nvda start
+        2. Show WordPress blog with Raindrops.
+        3. accesskey alt + s (chrome win) alt + shift + s (firefox) then searchform active.
+        4. enter tab key Please press the tab key several times.
+        5. focus entry then nvda read a content
+
+                enter then move to single.php ( nvda ) or
+                press tab key then move to current entry title ( for not nvda )                 and more press tab key move to next content ( back to shift + tab )
+
+----------------------------------------------
+Changelog -----------------------------------
 version:1.115
     modified
         function raindrops_install_navigation()
@@ -324,7 +384,7 @@ fixed
     Fixed Custom Header Image works improperly when 'Organize my uploads into month- and year-based folders'.
 Add
     Add function raindrops_featured_image().
-    Add USE_FEATURED_IMAGE_LIGHT_BOX
+    Add RAINDROPS_USE_FEATURED_IMAGE_LIGHT_BOX
         The featured image light box  not shown by default.
     New Template file for front page.
         page-templates/front-portfolio.php
@@ -887,7 +947,7 @@ added
         Added with each edit_post_link where template files.
             Note:
             This function default no echo.
-            Need SHOW_DELETE_POST_LINK set true where functions.php
+            Need RAINDROPS_SHOW_DELETE_POST_LINK set true where functions.php
      Add apply filters
         raindrops_custom_width, raindrops_is_fluid, raindrops_is_fixed, raindrops_posted_in, raindrops_posted_on, raindrops_warehouse, raindrops_gradient_single, raindrops_gradient, raindrops_comment_form, raindrops_prev_next_post
 
