@@ -1,7 +1,7 @@
 <!-- Start the Loop. -->
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 				<!--Start post-->
-                <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<?php if ((function_exists('has_post_thumbnail')) && (has_post_thumbnail())) { ?>
 					<div class="postimg">
                     <?php the_post_thumbnail(); ?>
@@ -23,7 +23,7 @@
              </div>
 			 <?php endwhile;
 else: ?>
-    <div class="post">
+    <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <p>
             <?php _e('Sorry, no posts matched your criteria.', 'appointway'); ?>
         </p>

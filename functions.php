@@ -63,5 +63,4 @@ function appointway_enqueue_scripts() {
         wp_print_scripts('comment-reply');
     }
 }
-add_action('wp_enqueue_scripts', 'appointway_enqueue_scripts');
 ?>

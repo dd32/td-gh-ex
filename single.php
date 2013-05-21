@@ -31,7 +31,8 @@
 <!-- Start the Loop. -->
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 				<!--Start post-->
-                 <div class="post">
+                 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                    <div class="post_thumbnail"><?php the_post_thumbnail(); ?></div>
                     <h1 class="post_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
                   <div class="post_content"> 
                 <ul class="post_meta">
@@ -41,7 +42,8 @@
                   <li class="postc_comment"><span>&nbsp;<?php comments_popup_link('No Comments.', '1 Comment.', '% Comments.'); ?></span></li>
                 </ul>
              <?php the_content(); ?>
-						<div class="clear"></div>
+            <div class="clear"></div>
+                <?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'appointway' ) . '</span>', 'after' => '</div>' ) ); ?>
                 <?php if (has_tag()) { ?>
                     <div class="tag">
                         <?php the_tags(__('Post Tagged with ', ', ', '')); ?>
@@ -51,7 +53,7 @@
              </div>
 			 <?php endwhile;
 else: ?>
-    <div class="post">
+    <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <p>
             <?php _e('Sorry, no posts matched your criteria.', 'appointway'); ?>
         </p>

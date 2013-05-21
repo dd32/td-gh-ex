@@ -3,8 +3,7 @@
 = Theme Name: Appointway Theme Pro=
 
 = Version: 1.0.1 =
-1. License Text Added in Style.css
-2. post class added
+1. Theme Style Improve
 
 = Version: 1.0 =
-* * Appointway Theme is created on 26/04/2013.
+* * Appointway Theme is created on 15/04/2013.

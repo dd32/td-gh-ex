@@ -4,7 +4,7 @@
 /* Options Framework Admin Interface - optionsframework_add_admin */
 /*-----------------------------------------------------------------------------------*/
 // Load static framework options pages 
-$functions_path = TEMPLATEPATH . '/functions/';
+$functions_path = get_template_directory() . '/functions/';
 ?>
 <?php
 function inkthemes_optionsframework_add_admin() {

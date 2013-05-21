@@ -3,7 +3,7 @@ add_action('init', 'of_options');
 if (!function_exists('of_options')) {
     function of_options() {
         // VARIABLES
-        $themename = 'Appointway Theme Pro';
+        $themename = 'Appointway Theme';
         $shortname = "of";
         // Populate OptionsFramework option in array for use in theme
         global $of_options;

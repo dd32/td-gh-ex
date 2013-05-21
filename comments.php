@@ -30,7 +30,9 @@ if (post_password_required()) {
             <!-- If comments are open, but there are no comments. -->
         <?php else : // comments are closed  ?>
             <!-- If comments are closed. -->
-            <p class="nocomments">Comments are closed.</p>
+            <?php if ( ! is_page() ) : ?>
+              <p class="nocomments">Comments are closed.</p>
+            <?php endif; ?>
         <?php endif; ?>
     <?php endif; ?>
     <?php if (comments_open()) : ?>

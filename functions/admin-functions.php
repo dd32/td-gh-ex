@@ -35,7 +35,9 @@ function of_option_setup(){
 	$std = '';
 	foreach($template as $option) {
 		if($option['type'] != 'heading'){
+			if(isset($option['id'])){
 			$id = $option['id'];
+			}	
 			if (isset($option['std'])) {
 			$std = $option['std'];
 			}

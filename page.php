@@ -30,9 +30,14 @@
 <div class="content_bar">
 <h1><?php the_title(); ?></h1>
 <?php if (have_posts()) : the_post(); ?>
-         <?php the_content(); ?>	
-         <?php endif; ?>	
+       <?php the_content(); ?>
+       <div class="clear"></div>
+       <?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'appointway' ) . '</span>', 'after' => '</div>' ) ); ?>
+<?php endif; ?>
 </div>
+	<!--Start Comment box-->
+	<?php comments_template(); ?>
+	<!--End Comment box-->
 </div>
 <div class="grid_7 omega">
 <!--Start Sidebar-->
