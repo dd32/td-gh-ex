@@ -145,7 +145,7 @@ if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('
 
 
 }); 
-// end documetn.ready
+// end document.ready
 
 
 // Columns equalizer, used if at least one sidebar has a bg color

@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Frontpage generation functions
  * Creates the slider, the columns, the titles and the extra text
@@ -6,7 +6,7 @@
  * @package mantra
  * @subpackage Functions
  */
- 
+
 
  if ( ! function_exists( 'mantra_frontpage_generator' ) ) :
 // Front page generator
@@ -31,22 +31,22 @@ foreach ($mantra_options as $key => $value) {
 			<?php	if($mantra_fpsliderarrows=="Hidden") { ?> directionNav: false, <?php }
    			if($mantra_fpsliderarrows=="Always Visible") { ?>  directionNavHide: false, <?php } ?>
 			pauseTime: <?php echo $mantra_fpsliderpause ?>
-	
+
 						});
 
-    jQuery('#front-columns > div img').hover( function() { 
+    jQuery('#front-columns > div img').hover( function() {
 	      jQuery(this)
 			 .stop()
-             .animate({opacity: 0.5}, 100) 
+             .animate({opacity: 0.5}, 100)
              .fadeOut(100)
 			 .fadeIn(100)
              .animate({opacity: 1}, 100) ;
 	}, function() {jQuery(this).stop();} )
 
-		});	
+		});
 	</script>
 
-<style>
+<style type="text/css">
 
 <?php if ($mantra_fronthideheader) {?> #branding {display:none;} <?php }
 	  if ($mantra_fronthidemenu) {?> #access {display:none;} <?php }
@@ -54,14 +54,14 @@ foreach ($mantra_options as $key => $value) {
 	  if ($mantra_fronthidefooter) {?> #footer2 {display:none;} <?php }
       if ($mantra_fronthideback) {?> #main {background:none;} <?php } ?>
 
-.slider-wrapper { 
+.slider-wrapper {
 display:block;
 float:none;
 width:100%;
 margin:0 auto;
 }
-	  
-#slider{ 
+
+#slider{
 	max-width:<?php echo $mantra_fpsliderwidth ?>px ;
 	height:<?php echo $mantra_fpsliderheight ?>px ;
 	margin:30px auto 20px;
@@ -140,7 +140,7 @@ float:left;
 
 .theme-default .nivo-controlNav {margin-left:0;}
 
-<?php if ($mantra_fpslidernav!="Bullets") { 
+<?php if ($mantra_fpslidernav!="Bullets") {
 	if ($mantra_fpslidernav=="Numbers") {?>
 
 .theme-default .nivo-controlNav {bottom:-40px;}
@@ -155,13 +155,13 @@ float:left;
 <?php } } ?>
 </style>
 <div id="frontpage">
-<?php  
+<?php
 
 // First FrontPage Title
 if($mantra_fronttext1) {?><div id="front-text1"> <h1><?php echo esc_attr($mantra_fronttext1) ?> </h1></div><?php }
 
 // When a post query has been selected from the Slider type in the admin area
-if ($mantra_slideType != 'Custom Slides') { 
+if ($mantra_slideType != 'Custom Slides') {
 global $post;
 // Initiating query
 $custom_query = new WP_query();
@@ -202,31 +202,31 @@ $i=0;	$j=0;?>
             <div class="ribbon"></div>
   <div id="slider" class="nivoSlider">
 
-	<?php 
+	<?php
 	 // Loop for creating the slides
-	if ( $custom_query->have_posts() ) while ( $custom_query->have_posts()) : $custom_query->the_post();  
+	if ( $custom_query->have_posts() ) while ( $custom_query->have_posts()) : $custom_query->the_post();
 
- 		 $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ),'slider'); 
+ 		 $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ),'slider');
 		 $i++; ?>
-         <a href="<?php the_permalink(); ?>"><img src="<?php echo $image[0]; ?>"  alt=""  title="#caption<?php echo $i;?>"  /></a> 
+         <a href="<?php the_permalink(); ?>"><img src="<?php echo $image[0]; ?>"  alt=""  title="#caption<?php echo $i;?>"  /></a>
 
-	<?php endwhile; // end of the loop.   
-?> 
+	<?php endwhile; // end of the loop.
+?>
 </div>
-	<?php 
+	<?php
 	// Loop for creating the captions
-	if ($custom_query->have_posts() ) while ( $custom_query->have_posts() ) : $custom_query->the_post();  
+	if ($custom_query->have_posts() ) while ( $custom_query->have_posts() ) : $custom_query->the_post();
 					$j++; ?>
-					
+
             <div id="caption<?php echo $j;?>" class="nivo-html-caption">
                 <?php the_title("<h2>","</h2>");the_excerpt(); ?>
             </div>
- 
-	<?php endwhile; // end of the loop. ?>        
-            
+
+	<?php endwhile; // end of the loop. ?>
+
         </div>
 
-<?php } else { 
+<?php } else {
 
 // If Custom Slides have been selected
 ?>
@@ -234,22 +234,22 @@ $i=0;	$j=0;?>
             <div class="ribbon"></div>
             <div id="slider" class="nivoSlider">
 				<?php  for ($i=1;$i<=5;$i++)
-					if(${"mantra_sliderimg$i"}) {?>    <a href='<?php echo esc_url(${"mantra_sliderlink$i"}) ?>'><img  src='<?php echo esc_url(${"mantra_sliderimg$i"}) ?>'  alt="" <?php if (${"mantra_slidertitle$i"} || ${"mantra_slidertext$i"} ) { ?>title="#caption<?php echo $i;?>" <?php }?> /></a><?php }  ?> 
-            </div> 
+					if(${"mantra_sliderimg$i"}) {?>    <a href='<?php echo esc_url(${"mantra_sliderlink$i"}) ?>'><img  src='<?php echo esc_url(${"mantra_sliderimg$i"}) ?>'  alt="" <?php if (${"mantra_slidertitle$i"} || ${"mantra_slidertext$i"} ) { ?>title="#caption<?php echo $i;?>" <?php }?> /></a><?php }  ?>
+            </div>
 			<?php for ($i=1;$i<=5;$i++) { ?>
             <div id="caption<?php echo $i;?>" class="nivo-html-caption">
                 <?php echo '<h2>'.${"mantra_slidertitle$i"}.'</h2>'.${"mantra_slidertext$i"} ?>
             </div>
 			<?php } ?>
 </div>
-<?php } 
+<?php }
 
 // Second FrontPage title
- if($mantra_fronttext2) {?><div id="front-text2"> <h1><?php echo esc_attr($mantra_fronttext2) ?> </h1></div><?php } 
- 
+ if($mantra_fronttext2) {?><div id="front-text2"> <h1><?php echo esc_attr($mantra_fronttext2) ?> </h1></div><?php }
+
 // Frontpage columns
   if($mantra_nrcolumns) { ?>
-<div id="front-columns"> 
+<div id="front-columns">
 	<div id="column1">
 	<a  href="<?php echo esc_url($mantra_columnlink1) ?>">	<div class="column-image" ><img  src="<?php echo esc_url($mantra_columnimg1) ?>" id="columnImage1" alt="" /> </div> <h3><?php echo $mantra_columntitle1 ?></h3> </a><div class="column-text"><?php echo do_shortcode ($mantra_columntext1 ); ?></div>
 	<?php if($mantra_columnreadmore) {?>	<div class="columnmore"> <a href="<?php echo esc_url($mantra_columnlink1) ?>"><?php echo esc_attr($mantra_columnreadmore) ?> &raquo;</a> </div><?php } ?>
@@ -271,11 +271,11 @@ $i=0;	$j=0;?>
 	</div>
 <?php } } }?>
 </div>
-<?php } 
+<?php }
 
  // Frontpage text areas
-  if($mantra_fronttext3) {?><div id="front-text3"> <blockquote><?php echo do_shortcode( $mantra_fronttext3 ) ?> </blockquote></div><?php } 
-  if($mantra_fronttext4) {?><div id="front-text4"> <blockquote><?php echo do_shortcode( $mantra_fronttext4 ) ?> </blockquote></div><?php } 
+  if($mantra_fronttext3) {?><div id="front-text3"> <blockquote><?php echo do_shortcode( $mantra_fronttext3 ) ?> </blockquote></div><?php }
+  if($mantra_fronttext4) {?><div id="front-text4"> <blockquote><?php echo do_shortcode( $mantra_fronttext4 ) ?> </blockquote></div><?php }
 
  ?>
 </div> <!-- frontpage -->

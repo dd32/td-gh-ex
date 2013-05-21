@@ -4,7 +4,7 @@
  * Description: Mantra is a do-it-yourself WordPress theme, featuring a pack of over 100 customization options and easy to use tweaks capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (1,2 or 3 columns), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 35 font-families plus all Google Fonts), text and header sizes, post metas, post excerpts, post formats, header and background images, custom menus, 27 social media links and icons, pins, bullets and much much more. With a fully responsive layout,a customizable showcase presentation page, animated slider, magazine and blog layouts, 8 widget areas, modern graphics and an easy and intuitive admin section, you can start creating your dream site right now.
  * Author: Cryout Creations
  * Author URI: http://www.cryoutcreations.eu
- * Version: 2.0.3
+ * Version: 2.0.3.1
  * License: GNU General Public License v2.0
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Tags: black, red, blue, white, silver, light, dark, one-column, two-columns, three-columns, right-sidebar, left-sidebar, flexible-width, fixed-width, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, front-page-post-form, full-width-template,  microformats, post-formats, rtl-language-support,  sticky-post, theme-options, threaded-comments, translation-ready
@@ -250,7 +250,7 @@ min-height:200px;
 }
 
 #wrapper {
-	padding: 10px 0 0;	
+	padding: 10px 0 0;
 }
 
 /* Structure the footer area */
@@ -332,7 +332,7 @@ hr {
 	margin: 0 0 18px 1.5em;
 }
 
-.entry-content ul li, 
+.entry-content ul li,
 .entry-content ol li {
 	padding:2px 0;
 }
@@ -856,7 +856,7 @@ overflow:hidden;
 	clear:both;
 }
 
-#content .entry-meta2, 
+#content .entry-meta2,
 #content .entry-meta3 {
 	font-size:12px ;
 	padding: 0;
@@ -872,7 +872,7 @@ overflow:hidden;
 	font-size:12px;
    	box-shadow: inset 1px 1px 1px #DDD;
 	-moz-box-shadow: inset 1px 1px 1px  #DDD;
-	-webkit-box-shadow: inset 1px 1px 1px #DDD; 
+	-webkit-box-shadow: inset 1px 1px 1px #DDD;
 	line-height:1.8em;
 	margin-top:1px;
 }
@@ -1038,7 +1038,7 @@ body.page .edit-link {
 /* POST FORMATS */
 
 article.format-link, article.format-quote, article.format-image, article.format-chat, article.format-aside {
- background-position: 0px 10px;  
+ background-position: 0px 10px;
   background-repeat: no-repeat; }
 article.format-aside { background-position: 10px -7px; }
 article.format-link { background-image: url(images/post-formats/link.png); }
@@ -1051,7 +1051,7 @@ article.format-link header, article.format-quote header, article.format-image he
 article.format-chat header, article.format-aside header {
   padding-left: 60px; }
 article.format-aside header { margin-top: 7px; }
-article.format-link h3.entry-format, article.format-quote h3.entry-format, article.format-image h3.entry-format, 
+article.format-link h3.entry-format, article.format-quote h3.entry-format, article.format-image h3.entry-format,
 article.format-chat h3.entry-format, article.format-aside h3.entry-format { display: none !important; }
 
 
@@ -1176,7 +1176,7 @@ article.format-chat h3.entry-format, article.format-aside h3.entry-format { disp
 }
 
 #content img:hover {
-	
+
 }
 
 #content p {
@@ -1407,7 +1407,7 @@ h3#comments-title {
 	-webkit-border-radius:0 !important;
 	border-radius:0 !important;
 	background:#FFF !important;
-	padding-bottom:5px !important;	
+	padding-bottom:5px !important;
 }
 .comment-author {
 	padding-top:4px;
@@ -1549,7 +1549,7 @@ h3#reply-title {
 
 #respond label {
 	color: #666;
-	font-size: 12px;	
+	font-size: 12px;
 }
 
 #respond input {
@@ -2322,11 +2322,11 @@ background:#FAFAFA;
  * Copyright 2011, Gilbert Pellegrom
  * Free to use and abuse under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
- * 
+ *
  * March 2010
  */
- 
- 
+
+
 /* The Nivo Slider styles */
 .nivoSlider {
 	position:relative;
@@ -2341,7 +2341,7 @@ background:#FAFAFA;
 }
 .nivo-main-image {
 	display: block !important;
-	position: relative !important; 
+	position: relative !important;
 	width: 100% !important;
 }
 
@@ -2523,7 +2523,7 @@ a.nivo-imageLink  {
  -webkit-opacity:0;
  -moz-opacity:0;
 -khtml-opacity:0;
-} 
+}
 
 
 /* Front page columns */
@@ -2569,8 +2569,8 @@ header
 ,article
 ,aside
 ,footer
-,hgroup 
-{ 
+,hgroup
+{
 display: block;
 }
 
@@ -2629,7 +2629,7 @@ margin-bottom:8px;
 		#fcfcfc 0%,
 		#d6d5d3);
 	background: -webkit-gradient(
-		linear, left top, left bottom, 
+		linear, left top, left bottom,
 		from(#fcfcfc),
 		to(#d6d5d3));
 	-moz-border-radius: 5px;
@@ -2659,7 +2659,7 @@ margin-bottom:8px;
 		#6b6b6b 0%,
 		#000000);
 	background: -webkit-gradient(
-		linear, left top, left bottom, 
+		linear, left top, left bottom,
 		from(#6b6b6b),
 		to(#000000));
 	-moz-border-radius: 5px;

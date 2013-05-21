@@ -27,7 +27,7 @@
 
 <?php cryout_wrapper_hook(); ?>
 
-<div id="header">
+<header id="header">
 
 		<div id="masthead">
 
@@ -48,7 +48,7 @@
 
 	<div style="clear:both;"> </div>
 
-</div><!-- #header -->
+</header><!-- #header -->
 <div id="main">
 	<div  id="forbottom" >
 		<?php cryout_forbottom_hook(); ?>
