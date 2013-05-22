@@ -22,9 +22,14 @@ of your WordPress installation. You will then be able to activate the theme.
 Support is available at the http://antthemes.com/forum/.
 
 = How to use menus =
-For Menus: Use wordpress Menu system under Appearance tab. 
+For Menus: Use wordpress Menu system under Appearance tab.
 
-Note: Also, make sure menu titles are not long as they might overlap.
+= How to use image as Logo =
+Use wordpress Header system under Appearance tab.
+Appearance/Header
+
+= How to setup Blog page =
+Create a new page by going to pages - Add New. Then on right side, in page attributes - Template, select Blog as the page template. And publish the page.
 
 
 Thanks for downloading the discover theme.

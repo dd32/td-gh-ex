@@ -53,7 +53,7 @@ function optionsframework_options() {
 		
 	$options = array();
 		
-	$options[] = array( "name" => "Homepage Settings",
+	$options[] = array( "name" => "Homepage",
 						"type" => "heading");					
 						
 	$options[] = array( "name" => "Blog Display",
@@ -154,9 +154,66 @@ function optionsframework_options() {
 						"desc" => "Paste here the link of the page or post.",
 						"id" => "box_link4",
 						"std" => "",
-						"type" => "text");																																																																																																											
+						"type" => "text");
 						
-	$options[] = array( "name" => "Slider Settings",
+	$options[] = array( "name" => "Color",
+						"type" => "heading");
+						
+	$options[] = array( "name" => "Theme Border Top Color",
+						"desc" => "Default used if no color is selected.",
+						"id" => "tb_color",
+						"std" => "#fd7800",
+						"type" => "color");
+						
+	$options[] = array( "name" => "Homepage Button Color",
+						"desc" => "Default used if no color is selected.",
+						"id" => "hbut_color",
+						"std" => "#fd7800",
+						"type" => "color");												
+						
+	$options[] = array( "name" => "Homepage Button Hover Color",
+						"desc" => "Default used if no color is selected.",
+						"id" => "hbuthov_color",
+						"std" => "#ce6200",
+						"type" => "color");
+						
+	$options[] = array( "name" => "Menu li Hover Color",
+						"desc" => "Default used if no color is selected.",
+						"id" => "mli_color",
+						"std" => "#444444",
+						"type" => "color");																								
+						
+	$options[] = array( "name" => "Menu li ul li Hover Color",
+						"desc" => "Default used if no color is selected.",
+						"id" => "mliul_color",
+						"std" => "#fd7800",
+						"type" => "color");																														
+						
+	$options[] = array( "name" => "Link Color",
+						"desc" => "Default used if no color is selected.",
+						"id" => "link_color",
+						"std" => "#fd7800",
+						"type" => "color");
+						
+	$options[] = array( "name" => "Sidebar Widget li link Color",
+						"desc" => "Default used if no color is selected.",
+						"id" => "side_link_color",
+						"std" => "#fd7800",
+						"type" => "color");
+						
+	$options[] = array( "name" => "Footer Widget li link Color",
+						"desc" => "Default used if no color is selected.",
+						"id" => "footer_link_color",
+						"std" => "#fd7800",
+						"type" => "color");
+						
+	$options[] = array( "name" => "Blog Metadata link Color",
+						"desc" => "Default used if no color is selected.",
+						"id" => "bmeta_link_color",
+						"std" => "#fd7800",
+						"type" => "color");																																																																																																																																	
+						
+	$options[] = array( "name" => "Slider",
 						"type" => "heading");
 						
 	$options[] = array( "name" => "Welcome headline",
@@ -217,7 +274,7 @@ function optionsframework_options() {
 						"std" => "",
 						"type" => "text");						
 						
-	$options[] = array( "name" => "Footer Settings",
+	$options[] = array( "name" => "Footer",
 						"type" => "heading");
 						
 	$options[] = array( "name" => "Footer copyright text",
@@ -231,7 +288,15 @@ function optionsframework_options() {
 						"id" => "go_code",
 						"std" => "",
 						"type" => "textarea");
+
+	$options[] = array( "name" => "Custom Style",
+						"type" => "heading");
 						
+	$options[] = array( "name" => "Custom CSS",
+						"desc" => "Add css to modify the theme here instead of adding it to style.css file.",
+						"id" => "custom_css",
+						"std" => "",
+						"type" => "textarea");						
 															
 	return $options;
 }

@@ -209,10 +209,9 @@ function optionsframework_page() {
 	$return = optionsframework_fields();
 	settings_errors();
 	?>
-	
-	 <div id="go_pro">
-            <h1>Go for Pro Version!</h1>
-            <p>This is a free version of discover. Get your own copy of professional version if you need Unlimited Sliders , Full Width page template, Forum support and much more. <a href="http://antthemes.com/?page_id=1963" target="blank">Click Here to Learn More Now</a> </p>
+
+	 <div id="go_help">
+            <p><b>Need Help:</b> <a href="http://antthemes.com/?page_id=56" target="blank">Support Forum</a></p>
 
         </div>
     
@@ -233,6 +232,11 @@ function optionsframework_page() {
 			<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options' ); ?>" />
             <input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!' , 'discover' ) ); ?>' );" />
             <div class="clear"></div>
+	 <div id="go_pro">
+            <h1>Go for Pro Version!</h1>
+            <p>This is a free version of discover. Get your own copy of professional version if you need Unlimited Sliders , Full Width page template, Forum support and much more. <a href="http://antthemes.com/?page_id=1963" target="blank">Click Here to Learn More Now</a> </p>
+
+        </div>			
 		</div>
 	</form>
 </div> <!-- / #container -->
