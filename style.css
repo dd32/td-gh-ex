@@ -1,8 +1,8 @@
 /*
 Theme Name: activetab
 Theme URI: http://web-profile.com.ua/wordpress/themes/activetab/
-Description: Responsive light theme, which makes site easy to use.
-Version: 0.2.9
+Description: Responsive light theme, which makes site easy to use. More info at http://web-profile.com.ua/wordpress/themes/activetab/
+Version: 0.3.0
 Author: webvitaly
 Author URI: http://web-profile.com.ua/wordpress/
 Tags: gray, white, light, one-column, two-columns, right-sidebar, fixed-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, threaded-comments, translation-ready
@@ -619,13 +619,11 @@ video {
 }
 
 
-
 article.hentry {
 	border-bottom: 1px solid #aaa;
 	margin-right: 0;
 	padding-bottom: 20px;
 	margin-bottom: 20px;
-
 }
 
 
@@ -637,8 +635,6 @@ article.sticky {
 	margin-right: -10px;
 	padding-right: 10px;
 }
-
-
 
 
 /* responsive styles */

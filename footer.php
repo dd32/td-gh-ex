@@ -36,7 +36,6 @@
 					<?php _e( 'powered by', 'activetab' ); ?>
 					<a href="http://wordpress.org/" title="WordPress CMS" rel="generator"><?php _e( 'WordPress', 'activetab' ); ?></a>,
 					<a href="http://web-profile.com.ua/wordpress/themes/activetab/" title="activetab WordPress theme" rel="designer"><?php _e( 'activetab', 'activetab' ); ?></a>,
-					<a href="http://twitter.github.io/bootstrap/" title="web-framework"><?php _e( 'Bootstrap', 'activetab' ); ?></a>,
 					<a href="http://glyphicons.com/" title="icons"><?php _e( 'Glyphicons', 'activetab' ); ?></a>
 				<?php endif; ?>
 

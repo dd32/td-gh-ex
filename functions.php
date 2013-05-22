@@ -5,8 +5,7 @@ if ( ! isset( $content_width ) ) {
 }
 
 
-$activetab_version = '0.2.9';
-
+$activetab_version = '0.3.0';
 
 
 if ( ! function_exists( 'activetab_enqueue_scripts_and_styles' ) ) :
@@ -24,7 +23,7 @@ if ( ! function_exists( 'activetab_enqueue_scripts_and_styles' ) ) :
 		wp_enqueue_style( 'activetab-style', get_stylesheet_uri(), array( 'activetab-bootstrap' ), $activetab_version, 'all' ); // get_stylesheet_directory_uri() . '/style.css'
 	}
 	add_action( 'wp_enqueue_scripts', 'activetab_enqueue_scripts_and_styles' );
-endif;
+endif; // activetab_enqueue_scripts_and_styles()
 
 
 
@@ -99,7 +98,7 @@ if ( ! function_exists( 'activetab_setup' ) ) :
 
 	}
 	add_action( 'after_setup_theme', 'activetab_setup' );
-endif;
+endif; // activetab_setup()
 
 
 // register sidebars & footer widgets
@@ -125,7 +124,7 @@ if ( ! function_exists( 'activetab_register_widgets' ) ) :
 		) );
 	}
 	add_action( 'widgets_init', 'activetab_register_widgets' );
-endif;
+endif; // activetab_register_widgets()
 
 
 if ( ! function_exists( 'activetab_list_pages' ) ) :
@@ -134,34 +133,32 @@ if ( ! function_exists( 'activetab_list_pages' ) ) :
 		<nav class="nav-menu nav clearfix" role="navigation"><ul class="nav"><?php wp_list_pages( 'title_li=' ); ?></ul></nav>
 		<?php
 	}
-endif;
+endif; // activetab_list_pages()
 
 
 if ( ! function_exists( 'activetab_title' ) ) :
-	function activetab_title($title, $sep) {
-		global $post, $page, $paged;
+	function activetab_title( $title, $sep ) {
+		global $page, $paged;
 
-		if ( is_feed() )
+		if ( is_feed() ) {
 			return $title;
+		}
 
-		// Add the blog name
-		$title .= get_bloginfo( 'name' );
+		$title .= get_bloginfo( 'name' ); // add the blog name
 
-		// Add the blog description for the home/front page.
 		$site_description = get_bloginfo( 'description', 'display' );
-		if ( $site_description && ( is_home() || is_front_page() ) )
+		if ( $site_description && ( is_home() || is_front_page() ) ) { // add the blog description for the home/front page
 			$title .= ' ' . $sep . ' ' . $site_description;
+		}
 
-		// Add a page number if necessary:
-		if ( $paged >= 2 || $page >= 2 )
+		if ( $paged >= 2 || $page >= 2 ) { // add a page number if necessary
 			$title .= ' ' . $sep . ' ' . sprintf( __( 'page %s', 'activetab' ), max( $paged, $page ) );
-
-		$title = wptexturize( $title );
+		}
 
 		return $title;
 	}
 	add_filter( 'wp_title', 'activetab_title', 10, 2 );
-endif;
+endif; // activetab_title()
 
 
 if ( ! function_exists( 'activetab_comments' ) ) :
@@ -230,7 +227,7 @@ if ( ! function_exists( 'activetab_comments' ) ) :
 				break;
 		endswitch;
 	}
-endif; // activetab_comments
+endif; // activetab_comments()
 
 
 if ( ! function_exists( 'activetab_post_date' ) ) :
@@ -238,7 +235,7 @@ if ( ! function_exists( 'activetab_post_date' ) ) :
 		$post_date = '<span class="entry-meta-item entry-meta-date"><i class="icon-calendar" title="'.__( 'published', 'activetab' ).'"></i> '.'<a href="'.esc_url( get_permalink() ).'" title="'.get_the_time().'" rel="bookmark"><time class="entry-date" datetime="'.get_the_date( 'c' ).'" pubdate title="'.get_the_time().'">'.get_the_date().'</time></a></span>'."\n";
 		return $post_date;
 	}
-endif; // activetab_post_date
+endif; // activetab_post_date()
 
 
 if ( ! function_exists( 'activetab_post_author' ) ) :
@@ -249,7 +246,7 @@ if ( ! function_exists( 'activetab_post_author' ) ) :
 		$post_author = '<span class="entry-meta-item entry-meta-author"><i class="icon-user" title="'.__( 'author', 'activetab' ).'"></i> <a href="'.esc_url( get_author_posts_url( $authordata->ID, $authordata->user_nicename ) ).'" title="'.esc_attr( sprintf( __( 'posts by %s', 'activetab' ), get_the_author() ) ).'" rel="author">'.get_the_author().'</a></span>'."\n";
 		return $post_author;
 	}
-endif; // activetab_post_author
+endif; // activetab_post_author()
 
 
 if ( ! function_exists( 'activetab_comments_count' ) ) :
@@ -260,7 +257,7 @@ if ( ! function_exists( 'activetab_comments_count' ) ) :
 		}
 		return $post_comments_count;
 	}
-endif; // activetab_comments_count
+endif; // activetab_comments_count()
 
 
 if ( ! function_exists( 'activetab_post_categories' ) ) :
@@ -272,7 +269,7 @@ if ( ! function_exists( 'activetab_post_categories' ) ) :
 			return ''; // no categories
 		}
 	}
-endif; // activetab_post_categories
+endif; // activetab_post_categories()
 
 
 if ( ! function_exists( 'activetab_post_tags' ) ) :
@@ -284,7 +281,7 @@ if ( ! function_exists( 'activetab_post_tags' ) ) :
 			return ''; // no tags
 		}
 	}
-endif; // activetab_post_tags
+endif; // activetab_post_tags()
 
 
 if ( ! function_exists( 'activetab_post_meta' ) ) :
@@ -296,7 +293,7 @@ if ( ! function_exists( 'activetab_post_meta' ) ) :
 		}
 		return "\n".'<div class="entry-meta">'."\n".$post_meta.'</div> <!-- /.entry-meta -->'."\n";
 	}
-endif; // activetab_post_meta
+endif; // activetab_post_meta()
 
 
 if ( ! function_exists( 'activetab_nav' ) ) :
@@ -316,7 +313,7 @@ if ( ! function_exists( 'activetab_nav' ) ) :
 		}
 		return $nav;
 	}
-endif; // activetab_nav
+endif; // activetab_nav()
 
 
 if ( ! function_exists( 'activetab_excerpt_more' ) ) :
@@ -324,7 +321,7 @@ if ( ! function_exists( 'activetab_excerpt_more' ) ) :
 		return '...';
 	}
 	add_filter('excerpt_more', 'activetab_excerpt_more');
-endif; // activetab_excerpt_more
+endif; // activetab_excerpt_more()
 
 
 if ( ! function_exists( 'activetab_is_homepage' ) ) :
@@ -345,4 +342,4 @@ if ( ! function_exists( 'activetab_is_homepage' ) ) :
 			return false;
 		}
 	}
-endif; // activetab_is_homepage
+endif; // activetab_is_homepage()
