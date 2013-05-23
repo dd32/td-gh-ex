@@ -2,10 +2,10 @@
 Theme Name: activetab
 Theme URI: http://web-profile.com.ua/wordpress/themes/activetab/
 Description: Responsive light theme, which makes site easy to use. More info at http://web-profile.com.ua/wordpress/themes/activetab/
-Version: 0.3.0
+Version: 0.3.1
 Author: webvitaly
 Author URI: http://web-profile.com.ua/wordpress/
-Tags: gray, white, light, one-column, two-columns, right-sidebar, fixed-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, threaded-comments, translation-ready
+Tags: gray, white, light, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, threaded-comments, translation-ready
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -371,11 +371,10 @@ img#wpstats {
 .site-main a img, #content .gallery a img {
 	padding: 4px;
 	border: 1px solid #ccc;
+	transition: all 0.3s ease;
 }
 .site-main a:hover img, #content .gallery a:hover img {
-	/*border-color: #08c;*/
-	padding: 3px;
-	border: 2px solid #08c;
+	border-color: #08c;
 }
 
 /* ========== image borders ========== */
@@ -675,8 +674,8 @@ body.admin-bar .navbar-fixed-top { /* move menu below admin-bar */
 }
 .site-navigation .nav-menu li a {
 	padding: 12px 12px;
-	font-weight: normal; /* width of menu items was the same even if the menu item is active */
 	line-height: 1.2em;
+	transition: all 0.3s ease;
 }
 .site-navigation .nav-menu li li a {
 	padding: 8px 12px;

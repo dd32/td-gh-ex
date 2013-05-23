@@ -5,7 +5,7 @@ if ( ! isset( $content_width ) ) {
 }
 
 
-$activetab_version = '0.3.0';
+$activetab_version = '0.3.1';
 
 
 if ( ! function_exists( 'activetab_enqueue_scripts_and_styles' ) ) :
@@ -168,8 +168,8 @@ if ( ! function_exists( 'activetab_comments' ) ) :
 			case 'pingback' :
 			case 'trackback' :
 				?>
-	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'activetab' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( '<i class="icon-pencil"></i>'.__( 'edit', 'activetab' ), '<span class="edit-link comment-edit-link">', '</span>' ); ?></p>
+				<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+					<p><?php _e( 'Pingback:', 'activetab' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( '<i class="icon-pencil"></i>'.__( 'edit', 'activetab' ), '<span class="edit-link comment-edit-link">', '</span>' ); ?></p>
 					<?php
 				break;
 			default :
