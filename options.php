@@ -59,7 +59,7 @@ function optionsframework_options() {
 	$options[] = array( "name" => "Blog Display",
 						"desc" => "Select option to display blog post on homepage.",
 						"id" => "blog_home",
-						"std" => "off",
+						"std" => "on",
 						"type" => "select",
 						"class" => "mini", //mini, tiny, small
 						"options" => $blog_home_array);																												

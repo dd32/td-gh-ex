@@ -1,5 +1,9 @@
 *** discover Changelog ***
 
+24-05-2013 - version 1.7
+* License file updated
+* Blog posts shown on home by default.
+
 23-05-2013 - version 1.6
 * Box images not shown in IE(Internet explorer) Fixed.
 * New settings color and custom style added in theme options.
