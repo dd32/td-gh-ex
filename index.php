@@ -14,16 +14,16 @@
 
 get_header(); 
 	
-	if( function_exists( 'simplecatch_display_div' ) ) {
+	if ( function_exists( 'simplecatch_display_div' ) ) {
 		$themeoption_layout = simplecatch_display_div();
 	}
 		
-    get_template_part('content'); ?>
+    get_template_part( 'content' ); ?>
         
 	</div><!-- #content -->
             
 	<?php 
-    if( $themeoption_layout == 'right-sidebar' ) {
+    if ( $themeoption_layout == 'right-sidebar' ) {
         get_sidebar(); 
     }?>
             

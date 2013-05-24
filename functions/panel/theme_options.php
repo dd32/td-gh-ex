@@ -430,15 +430,14 @@ function simplecatch_theme_options_do_page() {
                                         </th>
                                         <td>
                                             <select name="simplecatch_options[front_page_category][]" id="frontpage_posts_cats" multiple="multiple" class="select-multiple">
-                                                <option value="" <?php if ( empty( $options['front_page_category'] ) ) { echo 'selected="selected"'; } ?>><?php _e( '--Disabled--', 'simplecatch' ); ?></option>
+                                                <option value="0" <?php if ( empty( $options['front_page_category'] ) ) { selected( true, true ); } ?>><?php _e( '--Disabled--', 'simplecatch' ); ?></option>
                                                 <?php /* Get the list of categories */ 
                                                     if( empty( $options[ 'front_page_category' ] ) ) {
                                                         $options[ 'front_page_category' ] = array();
                                                     }
                                                     $categories = get_categories();
-                                                    foreach ( $categories as $category) :
-                                                ?>
-                                                <option value="<?php echo $category->cat_ID; ?>" <?php if ( in_array( $category->cat_ID, $options['front_page_category'] ) ) {echo 'selected="selected"';}?>><?php echo $category->cat_name; ?></option>
+                                                    foreach ( $categories as $category) : ?>
+                                                		<option value="<?php echo $category->cat_ID; ?>" <?php if ( in_array( $category->cat_ID, $options['front_page_category'] ) ) {echo 'selected="selected"';}?>><?php echo $category->cat_name; ?></option>
                                                 <?php endforeach; ?>
                                             </select><br />
                                             <span class="description"><?php _e( 'You may select multiple categories by holding down the CTRL key.', 'simplecatch' ); ?></span>
@@ -875,14 +874,10 @@ function simplecatch_theme_options_validate( $options ) {
    		$input_validated[ 'exclude_slider_post' ] = $input[ 'exclude_slider_post' ];	
 	}
 	
-	// Front page posts categories
-	if ( ! in_array ( '', (array) isset( $input['front_page_category'] ) ) ) {
-		if ( in_array ( false, array_map( 'ctype_digit', (array) $input['front_page_category'] ) ) ) {
-			unset($input['front_page_category']);
-		} else {
-			$input_validated['front_page_category'] = $input['front_page_category'];
-		}
-	}
+   // Front page posts categories
+	if( isset( $input['front_page_category' ] ) ) {
+		$input_validated['front_page_category'] = $input['front_page_category'];
+	}	
 	
 	//data validation for Featured Slider
 	if ( isset( $input[ 'slider_qty' ] ) ) {

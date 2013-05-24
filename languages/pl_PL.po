@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-12 23:54+0545\n"
-"PO-Revision-Date: 2013-05-12 23:54+0545\n"
+"POT-Creation-Date: 2013-05-24 16:59+0545\n"
+"PO-Revision-Date: 2013-05-24 16:59+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Piotrekkk\n"
 "Language: pl\n"
@@ -59,17 +59,17 @@ msgstr ""
 "Ten wpis jest zabezpieczony hasłem. Wpisz hasło, by zobaczyć komentarze."
 
 #: ../comments.php:29 ../content.php:46 ../image.php:48 ../page-blog.php:69
-#: ../functions/simplecatch_functions.php:831
+#: ../functions/simplecatch_functions.php:843
 msgid "No Comments"
 msgstr "Brak komentarzy"
 
 #: ../comments.php:29 ../content.php:46 ../image.php:48 ../page-blog.php:69
-#: ../functions/simplecatch_functions.php:831
+#: ../functions/simplecatch_functions.php:843
 msgid "1 Comment"
 msgstr "1 Komentarz"
 
 #: ../comments.php:29 ../content.php:46 ../image.php:48 ../page-blog.php:69
-#: ../functions/simplecatch_functions.php:831
+#: ../functions/simplecatch_functions.php:843
 msgid "% Comments"
 msgstr "Komentarzy: %"
 
@@ -83,7 +83,7 @@ msgid "Permalink to %s"
 msgstr "Odnośnik do %s"
 
 #: ../content.php:44 ../image.php:46 ../page-blog.php:67
-#: ../functions/simplecatch_functions.php:829
+#: ../functions/simplecatch_functions.php:841
 msgid "By"
 msgstr "Autor:"
 
@@ -153,163 +153,163 @@ msgstr "Spróbuj wyszukać inne słowo"
 msgid "Try more general keywords"
 msgstr "Spróbuj wyszukać bardziej ogólne słowa"
 
-#: ../searchform.php:17 ../functions/simplecatch_functions.php:123
+#: ../searchform.php:17 ../functions/simplecatch_functions.php:125
 #, php-format
 msgid "%s"
 msgstr "%s"
 
-#: ../functions/simplecatch_functions.php:93
+#: ../functions/simplecatch_functions.php:95
 #, php-format
 msgid "Page %s"
 msgstr "Strona %s"
 
-#: ../functions/simplecatch_functions.php:415
+#: ../functions/simplecatch_functions.php:426
 #, php-format
 msgid "%s on Facebook"
 msgstr "%s na Facebooku"
 
-#: ../functions/simplecatch_functions.php:420
+#: ../functions/simplecatch_functions.php:431
 #, php-format
 msgid "%s on Twitter"
 msgstr "%s na Twitterze"
 
-#: ../functions/simplecatch_functions.php:425
+#: ../functions/simplecatch_functions.php:436
 #, php-format
 msgid "%s on Google+"
 msgstr "%s w Google+"
 
-#: ../functions/simplecatch_functions.php:430
+#: ../functions/simplecatch_functions.php:441
 #, php-format
 msgid "%s on Linkedin"
 msgstr "%s na Linkedin"
 
-#: ../functions/simplecatch_functions.php:435
+#: ../functions/simplecatch_functions.php:446
 #, php-format
 msgid "%s on Pinterest"
 msgstr "%s na Pinterest"
 
-#: ../functions/simplecatch_functions.php:440
+#: ../functions/simplecatch_functions.php:451
 #, php-format
 msgid "%s on YouTube"
 msgstr "%s na YouTube"
 
-#: ../functions/simplecatch_functions.php:445
+#: ../functions/simplecatch_functions.php:456
 #, php-format
 msgid "%s on Vimeo"
 msgstr "%s na Vimeo"
 
-#: ../functions/simplecatch_functions.php:450
+#: ../functions/simplecatch_functions.php:461
 #, php-format
 msgid "%s on Slideshare"
 msgstr "%s w Slideshare"
 
-#: ../functions/simplecatch_functions.php:455
+#: ../functions/simplecatch_functions.php:466
 #, php-format
 msgid "%s on Foursquare"
 msgstr "%s w Foursquare"
 
-#: ../functions/simplecatch_functions.php:460
+#: ../functions/simplecatch_functions.php:471
 #, php-format
 msgid "%s on Flickr"
 msgstr "%s na Flickrze"
 
-#: ../functions/simplecatch_functions.php:465
+#: ../functions/simplecatch_functions.php:476
 #, php-format
 msgid "%s on Tumblr"
 msgstr "%s na Tumblrze"
 
-#: ../functions/simplecatch_functions.php:470
+#: ../functions/simplecatch_functions.php:481
 #, php-format
 msgid "%s on deviantART"
 msgstr "%s na deviantART"
 
-#: ../functions/simplecatch_functions.php:475
+#: ../functions/simplecatch_functions.php:486
 #, php-format
 msgid "%s on Dribbble"
 msgstr "%s na Dribbble"
 
-#: ../functions/simplecatch_functions.php:480
+#: ../functions/simplecatch_functions.php:491
 #, php-format
 msgid "%s on MySpace"
 msgstr "%s na MySpace"
 
-#: ../functions/simplecatch_functions.php:485
+#: ../functions/simplecatch_functions.php:496
 #, php-format
 msgid "%s on WordPress"
 msgstr "%s na WordPressie"
 
-#: ../functions/simplecatch_functions.php:490
+#: ../functions/simplecatch_functions.php:501
 #, php-format
 msgid "%s on RSS"
 msgstr "%s RSS"
 
-#: ../functions/simplecatch_functions.php:495
+#: ../functions/simplecatch_functions.php:506
 #, php-format
 msgid "%s on Delicious"
 msgstr "%s na Delicious"
 
-#: ../functions/simplecatch_functions.php:500
+#: ../functions/simplecatch_functions.php:511
 #, php-format
 msgid "%s on Last.fm"
 msgstr "%s na Last.fm"
 
-#: ../functions/simplecatch_functions.php:505
+#: ../functions/simplecatch_functions.php:516
 #, php-format
 msgid "%s on Instagram"
 msgstr "%s na Instagram"
 
-#: ../functions/simplecatch_functions.php:659
+#: ../functions/simplecatch_functions.php:670
 msgid "Powered By:"
 msgstr "Wspierane przez:"
 
-#: ../functions/simplecatch_functions.php:659
+#: ../functions/simplecatch_functions.php:670
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: ../functions/simplecatch_functions.php:659
+#: ../functions/simplecatch_functions.php:670
 msgid "Powered By WordPress"
 msgstr "Dumnie wspierane przez WordPressa"
 
-#: ../functions/simplecatch_functions.php:659
-#: ../functions/panel/theme_options.php:695
+#: ../functions/simplecatch_functions.php:670
+#: ../functions/panel/theme_options.php:694
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../functions/simplecatch_functions.php:659
+#: ../functions/simplecatch_functions.php:670
 msgid "Theme:"
 msgstr "Motyw:"
 
-#: ../functions/simplecatch_functions.php:659
+#: ../functions/simplecatch_functions.php:670
 #: ../functions/panel/theme_options.php:118
 msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
-#: ../functions/simplecatch_functions.php:659
+#: ../functions/simplecatch_functions.php:670
 msgid "Simple Catch"
 msgstr "Simple Catch"
 
-#: ../functions/simplecatch_functions.php:845
+#: ../functions/simplecatch_functions.php:857
 msgid "Categories: "
 msgstr "Kategorie:"
 
-#: ../functions/simplecatch_functions.php:913
+#: ../functions/simplecatch_functions.php:925
 msgid "Name"
 msgstr "Podpis"
 
-#: ../functions/simplecatch_functions.php:913
-#: ../functions/simplecatch_functions.php:914
+#: ../functions/simplecatch_functions.php:925
+#: ../functions/simplecatch_functions.php:926
 msgid "( required )"
 msgstr "( wymagany )"
 
-#: ../functions/simplecatch_functions.php:914
+#: ../functions/simplecatch_functions.php:926
 msgid "Email"
 msgstr "Email"
 
-#: ../functions/simplecatch_functions.php:915
+#: ../functions/simplecatch_functions.php:927
 msgid "Website"
 msgstr "WWW"
 
-#: ../functions/simplecatch_functions.php:946
+#: ../functions/simplecatch_functions.php:958
 msgid "ID"
 msgstr "ID"
 
@@ -422,7 +422,7 @@ msgid "Like Catch Themes on Facebook"
 msgstr "Polub Catch Themes na Facebooku"
 
 #: ../functions/panel/theme_options.php:131
-#: ../functions/panel/theme_options.php:624
+#: ../functions/panel/theme_options.php:623
 msgid "Facebook"
 msgstr "Facebook"
 
@@ -435,7 +435,7 @@ msgid "Follow Catch Themes on Twitter"
 msgstr "Obserwuj Catch Themes na Twitterze"
 
 #: ../functions/panel/theme_options.php:132
-#: ../functions/panel/theme_options.php:629
+#: ../functions/panel/theme_options.php:628
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -524,16 +524,16 @@ msgstr "Wyłączyć logo w stopce?"
 #: ../functions/panel/theme_options.php:286
 #: ../functions/panel/theme_options.php:380
 #: ../functions/panel/theme_options.php:415
-#: ../functions/panel/theme_options.php:449
-#: ../functions/panel/theme_options.php:470
-#: ../functions/panel/theme_options.php:490
-#: ../functions/panel/theme_options.php:506
-#: ../functions/panel/theme_options.php:530
-#: ../functions/panel/theme_options.php:563
-#: ../functions/panel/theme_options.php:614
-#: ../functions/panel/theme_options.php:720
-#: ../functions/panel/theme_options.php:749
-#: ../functions/panel/theme_options.php:779
+#: ../functions/panel/theme_options.php:448
+#: ../functions/panel/theme_options.php:469
+#: ../functions/panel/theme_options.php:489
+#: ../functions/panel/theme_options.php:505
+#: ../functions/panel/theme_options.php:529
+#: ../functions/panel/theme_options.php:562
+#: ../functions/panel/theme_options.php:613
+#: ../functions/panel/theme_options.php:719
+#: ../functions/panel/theme_options.php:748
+#: ../functions/panel/theme_options.php:778
 msgid "Save"
 msgstr "Zapisz"
 
@@ -653,263 +653,263 @@ msgstr "Tylko wpisy z wybranych kategorii będą wyświetlane na stronie główn
 msgid "--Disabled--"
 msgstr "--Wyłączone--"
 
-#: ../functions/panel/theme_options.php:444
+#: ../functions/panel/theme_options.php:443
 msgid "You may select multiple categories by holding down the CTRL key."
 msgstr "Możesz wybrać kilka kategorii naraz przytrzymująć klawisz CTRL."
 
-#: ../functions/panel/theme_options.php:454
+#: ../functions/panel/theme_options.php:453
 msgid "Search Text Settings"
 msgstr "Ustawienia wyszukiwarki"
 
-#: ../functions/panel/theme_options.php:459
+#: ../functions/panel/theme_options.php:458
 msgid "Default Display Text in Search"
 msgstr "Domyślny tekst w wyszukiwarce"
 
-#: ../functions/panel/theme_options.php:464
+#: ../functions/panel/theme_options.php:463
 msgid "Search Button's text"
 msgstr "Napis na przycisku szukania"
 
-#: ../functions/panel/theme_options.php:475
+#: ../functions/panel/theme_options.php:474
 msgid "Excerpt / More Tag Settings"
 msgstr "Ustawienia zalążka wpisu"
 
-#: ../functions/panel/theme_options.php:480
+#: ../functions/panel/theme_options.php:479
 msgid "More Tag Text"
 msgstr "Napis na odnośniku do pełnego wpisu:"
 
-#: ../functions/panel/theme_options.php:485
+#: ../functions/panel/theme_options.php:484
 msgid "Excerpt length(words)"
 msgstr "Ilość słów w zalążku wpisu:"
 
-#: ../functions/panel/theme_options.php:495
+#: ../functions/panel/theme_options.php:494
 msgid "Feed Redirect"
 msgstr "Przekierowanie kanału wpisów"
 
-#: ../functions/panel/theme_options.php:500
+#: ../functions/panel/theme_options.php:499
 msgid "Feed Redirect URL"
 msgstr "Adres przekierowania kanału wpisów"
 
-#: ../functions/panel/theme_options.php:511
+#: ../functions/panel/theme_options.php:510
 msgid "Custom CSS"
 msgstr "Własny CSS"
 
-#: ../functions/panel/theme_options.php:516
+#: ../functions/panel/theme_options.php:515
 msgid "Enter your custom CSS styles."
 msgstr "Wpisz własny styl CSS."
 
-#: ../functions/panel/theme_options.php:523
+#: ../functions/panel/theme_options.php:522
 msgid "CSS Tutorial from W3Schools."
 msgstr "CSS Tutorial od W3Schools."
 
-#: ../functions/panel/theme_options.php:525
+#: ../functions/panel/theme_options.php:524
 msgid "http://www.w3schools.com/css/default.asp"
 msgstr "http://www.w3schools.com/css/default.asp"
 
-#: ../functions/panel/theme_options.php:525
+#: ../functions/panel/theme_options.php:524
 msgid "CSS Tutorial"
 msgstr "CSS Tutorial"
 
-#: ../functions/panel/theme_options.php:525
+#: ../functions/panel/theme_options.php:524
 msgid "Click Here to Read"
 msgstr "Kliknij tutaj, by przeczytać"
 
-#: ../functions/panel/theme_options.php:539
+#: ../functions/panel/theme_options.php:538
 msgid "Add Slider Options"
 msgstr "Opcje dodawania pokazu slajdów"
 
-#: ../functions/panel/theme_options.php:543
+#: ../functions/panel/theme_options.php:542
 msgid "Exclude Slider post from Home page posts:"
 msgstr "Nie duplikuj wpisów z pokazu slajdów na stronie głównej:"
 
-#: ../functions/panel/theme_options.php:548
+#: ../functions/panel/theme_options.php:547
 msgid "Number of Slides"
 msgstr "Liczba slajdów:"
 
-#: ../functions/panel/theme_options.php:554
+#: ../functions/panel/theme_options.php:553
 msgid "Featured Slider Post #"
 msgstr "Wyróżniowy wpis w pokazie slajdów #"
 
-#: ../functions/panel/theme_options.php:556
+#: ../functions/panel/theme_options.php:555
 msgid "Click Here To Edit"
 msgstr "Kliknij tutaj, by edytować"
 
-#: ../functions/panel/theme_options.php:562
+#: ../functions/panel/theme_options.php:561
 msgid ""
 "Note: Here You can put your Post IDs which displays on Homepage as slider."
 msgstr ""
 "Rada: Wpisz tutaj ID wpisów, które mają być wyświetlone na stronie głównej "
 "jako pokaz slajdów."
 
-#: ../functions/panel/theme_options.php:569
+#: ../functions/panel/theme_options.php:568
 msgid "Slider Effect Options"
 msgstr "Efekt pokazu slajdów:"
 
-#: ../functions/panel/theme_options.php:573
+#: ../functions/panel/theme_options.php:572
 msgid "Disable Slider Background Effect:"
 msgstr "Wyłącz efekt tła:"
 
-#: ../functions/panel/theme_options.php:580
+#: ../functions/panel/theme_options.php:579
 msgid "Transition Effect:"
 msgstr "Efekt przejścia:"
 
-#: ../functions/panel/theme_options.php:584
+#: ../functions/panel/theme_options.php:583
 msgid "fade"
 msgstr "fade"
 
-#: ../functions/panel/theme_options.php:585
+#: ../functions/panel/theme_options.php:584
 msgid "wipe"
 msgstr "wipe"
 
-#: ../functions/panel/theme_options.php:586
+#: ../functions/panel/theme_options.php:585
 msgid "scrollUp"
 msgstr "scrollUp"
 
-#: ../functions/panel/theme_options.php:587
+#: ../functions/panel/theme_options.php:586
 msgid "scrollDown"
 msgstr "scrollDown"
 
-#: ../functions/panel/theme_options.php:588
+#: ../functions/panel/theme_options.php:587
 msgid "scrollLeft"
 msgstr "scrollLeft"
 
-#: ../functions/panel/theme_options.php:589
+#: ../functions/panel/theme_options.php:588
 msgid "scrollRight"
 msgstr "scrollRight"
 
-#: ../functions/panel/theme_options.php:590
+#: ../functions/panel/theme_options.php:589
 msgid "blindX"
 msgstr "blindX"
 
-#: ../functions/panel/theme_options.php:591
+#: ../functions/panel/theme_options.php:590
 msgid "blindY"
 msgstr "blindY"
 
-#: ../functions/panel/theme_options.php:592
+#: ../functions/panel/theme_options.php:591
 msgid "blindZ"
 msgstr "blindZ"
 
-#: ../functions/panel/theme_options.php:593
+#: ../functions/panel/theme_options.php:592
 msgid "cover"
 msgstr "cover"
 
-#: ../functions/panel/theme_options.php:594
+#: ../functions/panel/theme_options.php:593
 msgid "shuffle"
 msgstr "shuffle"
 
-#: ../functions/panel/theme_options.php:599
+#: ../functions/panel/theme_options.php:598
 msgid "Transition Delay"
 msgstr "Opóźnienie przejścia:"
 
-#: ../functions/panel/theme_options.php:602
-#: ../functions/panel/theme_options.php:609
+#: ../functions/panel/theme_options.php:601
+#: ../functions/panel/theme_options.php:608
 msgid "second(s)"
 msgstr "sekund(y)"
 
-#: ../functions/panel/theme_options.php:606
+#: ../functions/panel/theme_options.php:605
 msgid "Transition Length"
 msgstr "Długość przejścia:"
 
-#: ../functions/panel/theme_options.php:634
+#: ../functions/panel/theme_options.php:633
 msgid "Google+"
 msgstr "Google+"
 
-#: ../functions/panel/theme_options.php:639
+#: ../functions/panel/theme_options.php:638
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../functions/panel/theme_options.php:644
+#: ../functions/panel/theme_options.php:643
 msgid "Youtube"
 msgstr "Youtube"
 
-#: ../functions/panel/theme_options.php:649
+#: ../functions/panel/theme_options.php:648
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../functions/panel/theme_options.php:655
+#: ../functions/panel/theme_options.php:654
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: ../functions/panel/theme_options.php:660
+#: ../functions/panel/theme_options.php:659
 msgid "Slideshare"
 msgstr "Slideshare"
 
-#: ../functions/panel/theme_options.php:665
+#: ../functions/panel/theme_options.php:664
 msgid "Foursquare"
 msgstr "Foursquare"
 
-#: ../functions/panel/theme_options.php:670
+#: ../functions/panel/theme_options.php:669
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../functions/panel/theme_options.php:675
+#: ../functions/panel/theme_options.php:674
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../functions/panel/theme_options.php:680
+#: ../functions/panel/theme_options.php:679
 msgid "deviantART"
 msgstr "deviantART"
 
-#: ../functions/panel/theme_options.php:685
+#: ../functions/panel/theme_options.php:684
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../functions/panel/theme_options.php:690
+#: ../functions/panel/theme_options.php:689
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../functions/panel/theme_options.php:700
+#: ../functions/panel/theme_options.php:699
 msgid "RSS"
 msgstr "RSS"
 
-#: ../functions/panel/theme_options.php:705
+#: ../functions/panel/theme_options.php:704
 msgid "Delicious"
 msgstr "Delicious"
 
-#: ../functions/panel/theme_options.php:710
+#: ../functions/panel/theme_options.php:709
 msgid "Last.fm"
 msgstr "Last.fm"
 
-#: ../functions/panel/theme_options.php:715
+#: ../functions/panel/theme_options.php:714
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../functions/panel/theme_options.php:726
+#: ../functions/panel/theme_options.php:725
 msgid "Site Verification"
 msgstr "Weryfikacja strony"
 
-#: ../functions/panel/theme_options.php:731
+#: ../functions/panel/theme_options.php:730
 msgid "Google Site Verification ID"
 msgstr "Kod weryfikacyjny Google"
 
-#: ../functions/panel/theme_options.php:732
+#: ../functions/panel/theme_options.php:731
 msgid "Enter your Google ID number only"
 msgstr "Wpisz tylko Twój identyfikator Google"
 
-#: ../functions/panel/theme_options.php:737
+#: ../functions/panel/theme_options.php:736
 msgid "Yahoo Site Verification ID"
 msgstr "Kod weryfikacyjny Yahoo"
 
-#: ../functions/panel/theme_options.php:738
+#: ../functions/panel/theme_options.php:737
 msgid "Enter your Yahoo ID number only"
 msgstr "Wpisz tylko Twój indetyfikator Yahoo"
 
-#: ../functions/panel/theme_options.php:743
+#: ../functions/panel/theme_options.php:742
 msgid "Bing Site Verification ID"
 msgstr "Kod weryfikacyjny Binga"
 
-#: ../functions/panel/theme_options.php:744
+#: ../functions/panel/theme_options.php:743
 msgid "Enter your Bing ID number only"
 msgstr "Wpisz tylko Twój identyfikator Binga"
 
-#: ../functions/panel/theme_options.php:754
+#: ../functions/panel/theme_options.php:753
 msgid "Analytics/ Header / Footer Codes"
 msgstr "Analityka - kody w nagłówku i w stopce"
 
-#: ../functions/panel/theme_options.php:759
+#: ../functions/panel/theme_options.php:758
 msgid "Code to display on Header"
 msgstr "Kod do wyświetlenia w nagłówku"
 
-#: ../functions/panel/theme_options.php:765
+#: ../functions/panel/theme_options.php:764
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
@@ -917,11 +917,11 @@ msgstr ""
 "Rada: Tutaj możesz wpisać kod skryptu od Google, Facebooka, itp. który "
 "będzie załadowany w nagłówku"
 
-#: ../functions/panel/theme_options.php:768
+#: ../functions/panel/theme_options.php:767
 msgid "Code to display on Footer"
 msgstr "Kod do wyświetlenia w stopce"
 
-#: ../functions/panel/theme_options.php:775
+#: ../functions/panel/theme_options.php:774
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"

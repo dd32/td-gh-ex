@@ -54,10 +54,6 @@
             <div class="row-end"></div>
                
 			<?php 
-                // This function passes the value of slider effect to js file 
-                if( function_exists( 'simplecatch_pass_slider_value' ) ) {
-                    simplecatch_pass_slider_value();
-                }
                 // Display slider in home page and breadcrumb in other pages 
                 if ( function_exists( 'simplecatch_sliderbreadcrumb' ) ) :
                     simplecatch_sliderbreadcrumb(); 

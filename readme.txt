@@ -308,3 +308,8 @@ Version 2.4
 
 Version 2.4.1
 * Added page template blog
+
+Version 2.4.2
+* Moved function simplecatch_pass_slider_value() from header.php to simplecatch_functions.php under function simplecatch_sliderbreadcrumb()
+* Fixed the slider homepage condition while setting static Posts Page
+* Fixed Front page posts categories setting
