@@ -607,13 +607,19 @@ if ( ! function_exists( 'catcheverest_slider_display' ) ) :
  * Shows Slider
  */
 function catcheverest_slider_display() {
-	global $post, $catcheverest_options_settings;
+	global $post, $page_id, $catcheverest_options_settings;;
    	$options = $catcheverest_options_settings;
 
+	// get data value from theme options
 	$enableslider = $options[ 'enable_slider' ];
 	$featuredslider = $options[ 'featured_slider' ];
 	
-	if ( ( $enableslider == 'enable-slider-allpage' ) || ( is_front_page() && $enableslider == 'enable-slider-homepage' ) ) :
+	// Front page displays in Reading Settings
+	$page_on_front = get_option('page_on_front') ;
+	$page_for_posts = get_option('page_for_posts'); 	
+	
+	if ( ( $enableslider == 'enable-slider-allpage' ) || ( ( is_front_page() || ( is_home() && $page_id != $page_for_posts ) ) && $enableslider == 'enable-slider-homepage' ) ) :
+	
 		// This function passes the value of slider effect to js file 
 		if ( function_exists( 'catcheverest_pass_slider_value' ) ) : catcheverest_pass_slider_value(); endif;
 		
@@ -638,15 +644,20 @@ if ( ! function_exists( 'catcheverest_homepage_headline' ) ) :
  * @uses catcheverest_before_main action to add it in the header
  */
 function catcheverest_homepage_headline() { 
-	// Getting data from Theme Options
-	global $post, $catcheverest_options_settings;
+	//delete_transient( 'catcheverest_homepage_headline' );
+	
+	global $post, $page_id, $catcheverest_options_settings;
    	$options = $catcheverest_options_settings;
+	
+	// Getting data from Theme Options
 	$disable_headline = $options[ 'disable_homepage_headline' ];
 	$disable_subheadline = $options[ 'disable_homepage_subheadline' ];
+	
+	// Front page displays in Reading Settings
+	$page_on_front = get_option('page_on_front') ;
+	$page_for_posts = get_option('page_for_posts'); 
     
-	 if ( is_front_page() && ( $disable_headline == "0" || $disable_subheadline == "0" ) ) { 
-		
-		//delete_transient( 'catcheverest_homepage_headline' );
+	 if ( ( is_front_page() || ( is_home() && $page_id != $page_for_posts ) ) && ( $disable_headline == "0" || $disable_subheadline == "0" ) ) { 
 		
 		if ( !$catcheverest_homepage_headline = get_transient( 'catcheverest_homepage_headline' ) ) {
 			
@@ -870,12 +881,17 @@ endif; // catcheverest_homepage_featured_content
  * @uses catcheverest_before_main action to add it in the header
  */
 function catcheverest_homepage_featured_display() { 	
+	global $post, $page_id, $catcheverest_options_settings;
+	
 	// Getting data from Theme Options
-	global $post, $catcheverest_options_settings;
    	$options = $catcheverest_options_settings;
 	$disable_homepage_featured = $options[ 'disable_homepage_featured' ];
 	
-	if ( is_front_page() ) {
+	// Front page displays in Reading Settings
+	$page_on_front = get_option('page_on_front') ;
+	$page_for_posts = get_option('page_for_posts'); 	
+	
+	if ( is_front_page() || ( is_home() && $page_id != $page_for_posts ) ) {
 		if  ( !empty( $options[ 'homepage_featured_image' ] ) || !empty( $options[ 'homepage_featured_title' ] ) || !empty( $options[ 'homepage_featured_content' ] ) ) {
 			catcheverest_homepage_featured_content();
 		} else {

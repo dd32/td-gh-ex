@@ -2,97 +2,98 @@
 # This file is distributed under the  GNU General Public License.
 msgid ""
 msgstr ""
-"Project-Id-Version: Catch Everest\n"
+"Project-Id-Version: Catch Box Pro\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-05-24 11:51+0545\n"
 "PO-Revision-Date: 2013-05-24 11:51+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
-"Language-Team: \n"
-"Language: zh-cn\n"
+"Language-Team: Catch Themes <info@catchinternet.com>\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__\n"
+"X-Poedit-KeywordsList: __;_e;_x;_ex;_n;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.5.5\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:18
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "哟，没找到。"
+msgstr "Ops! La pagina non può essere trovata."
 
 #: ../404.php:22
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
-msgstr "这个地址好像什么都没有。试试下边的链接或者搜一下？"
+msgstr ""
+"Non è strato trovato nulla in questo posto. Puoi provare a seguire uno dei "
+"link qua sotto o fare una ricerca."
 
 #: ../404.php:29
 msgid "Most Used Categories"
-msgstr "常用分类"
+msgstr "Categorie più usate"
 
 #: ../404.php:37
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
-msgstr "试试找找每月存档。%1$s"
+msgstr "Prova a guardare gli archivi mensili. %1$s"
 
 #: ../archive.php:22
 #, php-format
 msgid "Category Archives: %s"
-msgstr "分类： %s"
+msgstr "Archivio di categoria: %s"
 
 #: ../archive.php:25
 #, php-format
 msgid "Tag Archives: %s"
-msgstr "标签： %s"
+msgstr "Archivio tag: %s"
 
 #: ../archive.php:32
 #, php-format
 msgid "Author Archives: %s"
-msgstr "作者： %s"
+msgstr "Archivio autore: %s"
 
 #: ../archive.php:40
 #, php-format
 msgid "Daily Archives: %s"
-msgstr "每日： %s"
+msgstr "Archivio giornaliero: %s"
 
 #: ../archive.php:43
 #, php-format
 msgid "Monthly Archives: %s"
-msgstr "每月： %s"
+msgstr "Archivio mensile: %s"
 
 #: ../archive.php:46
 #, php-format
 msgid "Yearly Archives: %s"
-msgstr "每年： %s"
+msgstr "Archivio annuale: %s"
 
 #: ../archive.php:49 ../sidebar.php:48
 msgid "Archives"
-msgstr "文章存档"
+msgstr "Archivi"
 
 #: ../comments.php:32
 #, php-format
 msgid "One thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] ""
-msgstr[1] ""
+msgstr "Un commento riguardo &ldquo;%2$s&rdquo;"
 
 #: ../comments.php:39 ../comments.php:59
 msgid "Comment navigation"
-msgstr "评论导航"
+msgstr "Navigazione dei commenti"
 
 #: ../comments.php:40 ../comments.php:60
 msgid "&larr; Older Comments"
-msgstr "早些的评论"
+msgstr "&larr; Commenti più vecchi"
 
 #: ../comments.php:41 ../comments.php:61
 msgid "Newer Comments &rarr;"
-msgstr "近来的评论"
+msgstr "Commenti più nuovi &rarr;"
 
 #: ../comments.php:71
 msgid "Comments are closed."
-msgstr "不允许评论"
+msgstr "I commenti sono chiusi"
 
 #: ../content-aside.php:17 ../content-audio.php:16 ../content-chat.php:16
 #: ../content-gallery.php:16 ../content-gallery.php:28
@@ -100,33 +101,33 @@ msgstr "不允许评论"
 #: ../content.php:19 ../content.php:28
 #, php-format
 msgid "Permalink to %s"
-msgstr "%s的固定链接"
+msgstr "Collegamento permanente a %s"
 
 #: ../content-aside.php:21 ../content-audio.php:26 ../content-gallery.php:36
 #: ../content-image.php:26 ../content-link.php:20 ../content-quote.php:16
 #: ../content-status.php:24 ../content-video.php:26 ../content.php:49
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr "查看全文<span class=\"meta-nav\">&rarr;</span>"
+msgstr "Continua a leggere <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../content-aside.php:29 ../content-audio.php:35 ../content-chat.php:34
 #: ../content-gallery.php:44 ../content-image.php:35 ../content-link.php:27
 #: ../content-quote.php:23 ../content-status.php:31 ../content-video.php:35
 #: ../content.php:59
 msgid "Leave a reply"
-msgstr "评论"
+msgstr "Lascia un commento"
 
 #: ../content-aside.php:29 ../content-audio.php:35 ../content-chat.php:34
 #: ../content-gallery.php:44 ../content-image.php:35 ../content-link.php:27
 #: ../content-quote.php:23 ../content-status.php:31 ../content-video.php:35
 #: ../content.php:59
 msgid "1 Reply"
-msgstr "1 条评论"
+msgstr "1 risposta"
 
 #: ../content-aside.php:29 ../content-audio.php:35 ../content-chat.php:34
 #: ../content-gallery.php:44 ../content-image.php:35 ../content-link.php:27
 #: ../content-quote.php:23 ../content-status.php:31 ../content-video.php:35
 msgid "% Replies;"
-msgstr "% 条评论"
+msgstr "% risposte;"
 
 #: ../content-aside.php:31 ../content-audio.php:37 ../content-chat.php:36
 #: ../content-gallery.php:46 ../content-image.php:37 ../content-link.php:29
@@ -134,98 +135,96 @@ msgstr "% 条评论"
 #: ../content-video.php:37 ../content.php:62 ../image.php:34 ../image.php:100
 #: ../inc/template-tags.php:115
 msgid "Edit"
-msgstr "编辑"
+msgstr "Modifica"
 
 #: ../content-audio.php:17
 msgid "All Audio Posts"
-msgstr "所有音频文章"
+msgstr "Tutti gli articoli &ldquo;Audio&ldquo;"
 
 #: ../content-audio.php:17
 msgid "Audio"
-msgstr "音频"
+msgstr "Audio"
 
 #: ../content-audio.php:27 ../content-gallery.php:37 ../content-image.php:27
 #: ../content-page.php:17 ../content-video.php:27 ../content.php:50
 #: ../image.php:86
 msgid "Pages:"
-msgstr "页码："
+msgstr "Pagine:"
 
 #: ../content-chat.php:17
 msgid "All Chat Posts"
-msgstr "所有聊天文章"
+msgstr "Tutti gli articoli &ldquo;Chat&ldquo;"
 
 #: ../content-chat.php:17
 msgid "Chat"
-msgstr "聊天"
+msgstr "Chat"
 
 #: ../content-gallery.php:17
 msgid "All Gallery Posts"
-msgstr "所有图片集文章"
+msgstr "Tutti gli articoli &ldquo;Galleria&ldquo;"
 
 #: ../content-gallery.php:17
 msgid "Gallery"
-msgstr "图片集"
+msgstr "Galleria"
 
 #: ../content-gallery.php:31
 #, php-format
 msgid "This gallery contains <a %1$s>%2$s photo</a>."
-msgid_plural "This gallery contains <a %1$s>%2$s photos</a>."
-msgstr[0] "这个照片集有<a %1$s>%2$s张照片</a>."
-msgstr[1] "这个照片集有<a %1$s>%2$s张照片</a>."
+msgstr "Questa galleria contiene <a %1$s>%2$s foto</a>."
 
 #: ../content-image.php:17
 msgid "All Image Posts"
-msgstr "所有图片文章"
+msgstr "Tutti gli articoli &ldquo;Immagine&ldquo;"
 
 #: ../content-image.php:17 ../inc/panel/theme-options.php:442
 msgid "Image"
-msgstr "图片"
+msgstr "Immagine"
 
 #: ../content-link.php:16
 msgid "All Link Posts"
-msgstr "所有链接文章"
+msgstr "Tutti gli articoli &ldquo;Link&ldquo;"
 
 #: ../content-link.php:16
 msgid "Link"
-msgstr "链接"
+msgstr "Collegamento"
 
 #: ../content-status.php:20
 msgid "All Status Posts"
-msgstr "所有状态文章"
+msgstr "Tutti gli articoli &ldquo;Stato&ldquo;"
 
 #: ../content-status.php:20
 msgid "Status"
-msgstr "状态"
+msgstr "Stato"
 
 #: ../content-video.php:17
 msgid "All Video Posts"
-msgstr "所有视频文章"
+msgstr "Tutti gli articoli &ldquo;Video&ldquo;"
 
 #: ../content-video.php:17
 msgid "Video"
-msgstr "视频"
+msgstr "Video"
 
 #: ../content.php:14
 msgid "Featured post"
-msgstr "精选文章"
+msgstr "Articoli in evidenza"
 
 #: ../content.php:59
 msgid "% Replies"
-msgstr "% 条评论"
+msgstr "% risposte"
 
 #: ../content.php:69
 #, php-format
 msgid "About %s"
-msgstr "关于 %s"
+msgstr "A proposito di %s"
 
 #: ../content.php:73
 #, php-format
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr "查看 %s 的所有文章 <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Guarda tutti gli articoli di %s <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../functions.php:91 ../inc/catcheverest-functions.php:434
 msgid "Primary Menu"
-msgstr "主菜单"
+msgstr "Menu principale"
 
 #: ../image.php:24
 #, php-format
@@ -235,18 +234,18 @@ msgid ""
 "size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s"
 "\" rel=\"gallery\">%7$s</a>"
 msgstr ""
-"<span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\" "
-"pubdate>%2$s</time></span> <a href=\"%3$s\" title=\"Link to full-size image"
-"\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel="
-"\"gallery\">%7$s</a>发表"
+"Pubblicato il <span class=\"entry-date\"><time class=\"entry-date\" datetime="
+"\"%1$s\" pubdate>%2$s</time></span> su <a href=\"%3$s\" title=\"Immagine a "
+"dimensione intera\">%4$s &times; %5$s</a> nell'articolo <a href=\"%6$s\" "
+"title=\"Torna a %7$s\" rel=\"gallery\">%7$s</a>"
 
 #: ../image.php:38
 msgid "&larr; Previous"
-msgstr "&larr; 前一篇"
+msgstr "&larr; Precedente"
 
 #: ../image.php:39
 msgid "Next &rarr;"
-msgstr "下一篇 &rarr;"
+msgstr "Successiva &rarr;"
 
 #: ../image.php:92
 #, php-format
@@ -255,9 +254,10 @@ msgid ""
 "comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" "
 "title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
 msgstr ""
-"<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">评论</"
-"a> 或传百[trackback]: <a class=\"trackback-link\" href=\"%s\" title="
-"\"Trackback URL for your post\" rel=\"trackback\">传百[trackback]地址</a>."
+"<a class=\"comment-link\" href=\"#respond\" title=\"Lascia un commento"
+"\">Lascia un commento</a> o un trackback: <a class=\"trackback-link\" href="
+"\"%s\" title=\"URL di Trackback dell'articolo\" rel=\"trackback\">URL per il "
+"Trackback</a>."
 
 #: ../image.php:94
 #, php-format
@@ -266,61 +266,67 @@ msgid ""
 "\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback"
 "\">Trackback URL</a>."
 msgstr ""
-"评论已经关闭，不过你可以传百[trackback]: <a class=\"trackback-link\" href="
-"\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback 地址"
-"</a>."
+"I commenti sono chiusi, ma puoi lasciare un trackback: <a class=\"trackback-"
+"link\" href=\"%s\" title=\"URL di Trackback per l'articolo\" rel=\"trackback"
+"\">URL per il Trackback</a>."
 
 #: ../image.php:96
 msgid ""
 "Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond"
 "\" title=\"Post a comment\">post a comment</a>."
 msgstr ""
-"传百[trackback]已经关闭，不过你可以 <a class=\"comment-link\" href=\"#respond"
-"\" title=\"Post a comment\">评论</a>."
+"I trackback sono chiusi, ma puoi <a class=\"comment-link\" href=\"#respond\" "
+"title=\"Pubblica un commento\">pubblicare un commento</a>."
 
 #: ../image.php:98
 msgid "Both comments and trackbacks are currently closed."
-msgstr "评论和传百[trackback]都已关闭。"
+msgstr "Sia i commenti che i trackback sono chiusi."
 
 #: ../no-results.php:14
 msgid "Nothing Found"
-msgstr "啥都没找到"
+msgstr "Nessun risultato trovato"
 
 #: ../no-results.php:20
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr "准备好写你的第一篇文章了？<a href=\"%1$s\">那就点这里</a>."
+msgstr ""
+"Pronto a pubblicare il tuo primo articolo? <a href=\"%1$s\">Inizia da qui</"
+"a>."
 
 #: ../no-results.php:24
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
-msgstr "抱歉，你的关键词没找到东西，试试别的关键词。"
+msgstr ""
+"Spiacente, ma non abbiamo trovato risultato per la tua ricerca. Prova usando "
+"diverse parole chiave."
 
 #: ../no-results.php:29
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
-msgstr "你想要的系统没找到，试试搜索吧。"
+msgstr ""
+"Sembra che non possiamo trovare quello che stai cercando. Probabilmente una "
+"nuova ricerca può aiutare."
 
 #: ../search.php:17
 #, php-format
 msgid "Search Results for: %s"
-msgstr "%s 的搜索结果："
+msgstr "Risultati di ricerca per: %s"
 
 #: ../searchform.php:16 ../searchform.php:18
 msgid "Search"
-msgstr "搜索"
+msgstr "Cerca"
 
 #: ../inc/catcheverest-functions.php:168
 #, php-format
 msgid "Page %s"
-msgstr "第 %s 页"
+msgstr "Pagina %s"
 
 #: ../inc/catcheverest-functions.php:435
 msgid "Skip to content"
-msgstr "跳到内容部分"
+msgstr "Salta al contenuto"
 
 #: ../inc/catcheverest-functions.php:955
 msgid "Copyright"
@@ -328,115 +334,115 @@ msgstr "Copyright"
 
 #: ../inc/catcheverest-functions.php:955
 msgid "All Rights Reserved"
-msgstr "All Rights Reserved"
+msgstr "Tutti i diritti riservati"
 
 #: ../inc/catcheverest-functions.php:955
 msgid "Powered by"
-msgstr "Powered by"
+msgstr "Fornito da"
 
 #: ../inc/catcheverest-functions.php:955
 msgid "Theme"
-msgstr "Theme"
+msgstr "Tema"
 
 #: ../inc/catcheverest-functions.php:1050
 #, php-format
 msgid "%s on Facebook"
-msgstr "%s on Facebook"
+msgstr "%s su Facebook"
 
 #: ../inc/catcheverest-functions.php:1055
 #, php-format
 msgid "%s on Twitter"
-msgstr "%s on Twitter"
+msgstr "%s su Twitter"
 
 #: ../inc/catcheverest-functions.php:1060
 #, php-format
 msgid "%s on Google+"
-msgstr "%s on Google+"
+msgstr "%s su Google+"
 
 #: ../inc/catcheverest-functions.php:1065
 #, php-format
 msgid "%s on Linkedin"
-msgstr "%s on Google+"
+msgstr "%s su Linkedin"
 
 #: ../inc/catcheverest-functions.php:1070
 #, php-format
 msgid "%s on Pinterest"
-msgstr "%s on Pinterest"
+msgstr "%s su Pinterest"
 
 #: ../inc/catcheverest-functions.php:1075
 #, php-format
 msgid "%s on YouTube"
-msgstr "%s on YouTube"
+msgstr "%s su YouTube"
 
 #: ../inc/catcheverest-functions.php:1080
 #, php-format
 msgid "%s on Vimeo"
-msgstr "%s on Vimeo"
+msgstr "%s su Vimeo"
 
 #: ../inc/catcheverest-functions.php:1085
 #, php-format
 msgid "%s on Slideshare"
-msgstr "%s on Slideshare"
+msgstr "%s su Slideshare"
 
 #: ../inc/catcheverest-functions.php:1090
 #, php-format
 msgid "%s on Foursquare"
-msgstr "%s on Foursquare"
+msgstr "%s su Foursquare"
 
 #: ../inc/catcheverest-functions.php:1095
 #, php-format
 msgid "%s on Flickr"
-msgstr "%s on Flickr"
+msgstr "%s su Flickr"
 
 #: ../inc/catcheverest-functions.php:1100
 #, php-format
 msgid "%s on Tumblr"
-msgstr "%s on Tumblr"
+msgstr "%s su Tumblr"
 
 #: ../inc/catcheverest-functions.php:1105
 #, php-format
 msgid "%s on deviantART"
-msgstr "%s on deviantART"
+msgstr "%s su deviantART"
 
 #: ../inc/catcheverest-functions.php:1110
 #, php-format
 msgid "%s on Dribbble"
-msgstr "%s on Dribbble"
+msgstr "%s su Dribbble"
 
 #: ../inc/catcheverest-functions.php:1115
 #, php-format
 msgid "%s on MySpace"
-msgstr "%s on MySpace"
+msgstr "%s su MySpace"
 
 #: ../inc/catcheverest-functions.php:1120
 #, php-format
 msgid "%s on WordPress"
-msgstr "%s on WordPress"
+msgstr "%s su WordPress"
 
 #: ../inc/catcheverest-functions.php:1125
 #, php-format
 msgid "%s on RSS"
-msgstr "%s on RSS"
+msgstr "%s su RSS"
 
 #: ../inc/catcheverest-functions.php:1130
 #, php-format
 msgid "%s on Delicious"
-msgstr "%s on Delicious"
+msgstr "%s su Delicious"
 
 #: ../inc/catcheverest-functions.php:1135
 #, php-format
 msgid "%s on Last.fm"
-msgstr "%s on Last.fm"
+msgstr "%s su Last.fm"
 
 #: ../inc/catcheverest-functions.php:1140
 #, php-format
 msgid "%s on Instagram"
-msgstr "%s on Instagram"
+msgstr "%s su Instagram"
 
 #: ../inc/catcheverest-functions.php:1145
 #, php-format
 msgid "%s on GitHub"
-msgstr "%s on GitHub"
+msgstr "%s su GitHub"
 
 #: ../inc/catcheverest-functions.php:1240
 msgid "ID"
@@ -445,83 +451,81 @@ msgstr "ID"
 #: ../inc/catcheverest-functions.php:1264
 #: ../inc/catcheverest-functions.php:1277
 msgid "Menu"
-msgstr "菜單"
+msgstr "Menu"
 
 #: ../inc/catcheverest-metabox.php:14 ../inc/catcheverest-metabox.php:20
 msgid "Select Sidebar layout"
-msgstr "选择边栏布局"
+msgstr "Seleziona il layout della barra laterale"
 
 #: ../inc/catcheverest-metabox.php:33
 msgid "Default Layout Set in"
-msgstr "默认布局设置"
+msgstr "Layout di default impostato a"
 
 #: ../inc/catcheverest-metabox.php:33
 msgid "Theme Settings"
-msgstr "主题选项"
+msgstr "Impostazioni del tema"
 
 #: ../inc/catcheverest-metabox.php:39
 msgid "Right sidebar"
-msgstr "右边栏"
+msgstr "Barra laterale a destra"
 
 #: ../inc/catcheverest-metabox.php:45
 msgid "Left sidebar"
-msgstr "左边栏"
+msgstr "Barra laterale a sinistra"
 
 #: ../inc/catcheverest-metabox.php:51
 msgid "No sidebar"
-msgstr "无边栏"
+msgstr "Nessuna barra laterale"
 
 #: ../inc/template-tags.php:39
 msgid "Post navigation"
-msgstr "文章导航"
+msgstr "Navigazione articoli"
 
 #: ../inc/template-tags.php:43
-msgctxt "Previous post link"
 msgid "&larr;"
 msgstr "&larr;"
 
 #: ../inc/template-tags.php:44
-msgctxt "Next post link"
 msgid "&rarr;"
 msgstr "&rarr;"
 
 #: ../inc/template-tags.php:49
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr "<span class=\"meta-nav\">&larr;</span> 早些的文章"
+msgstr "<span class=\"meta-nav\">&larr;</span> Articoli più vecchi"
 
 #: ../inc/template-tags.php:53
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr "较新的文章 <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Articoli più nuovi <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../inc/template-tags.php:83
 msgid "Pingback:"
-msgstr "引用通告："
+msgstr "Pingback:"
 
 #: ../inc/template-tags.php:83
 msgid "(Edit)"
-msgstr "(编辑)"
+msgstr "(Modifica)"
 
 #: ../inc/template-tags.php:98
 msgid "Post author"
-msgstr "文章作者"
+msgstr "Autore dell'articolo"
 
 #: ../inc/template-tags.php:104
 #, php-format
 msgid "%1$s at %2$s"
-msgstr "%1$s 在 %2$s"
+msgstr "%1$s alle %2$s"
 
 #: ../inc/template-tags.php:110
 msgid "Your comment is awaiting moderation."
-msgstr "您的评论正在等待审核。"
+msgstr "Il tuo commento è in attesa della moderazione."
 
 #: ../inc/template-tags.php:119
 msgid "Reply"
-msgstr "评论"
+msgstr "Rispondi"
 
 #: ../inc/template-tags.php:148 ../inc/template-tags.php:221
 #, php-format
 msgid "View all posts by %s"
-msgstr "看 %s 发的所有文章"
+msgstr "Guarda tutti gli articoli di %s"
 
 #: ../inc/template-tags.php:153
 #, php-format
@@ -529,13 +533,13 @@ msgid ""
 "<span class=\"on-date\">Posted on %1$s</span><span class=\"by-author\"> by "
 "%2$s</span>"
 msgstr ""
-"<span class=\"on-date\">%1$s</span><span class=\"by-author\"> 由 %2$s 发表</"
-"span>"
+"<span class=\"on-date\">Pubblicato il %1$s</span><span class=\"by-author\"> "
+"da %2$s</span>"
 
 #: ../inc/template-tags.php:175 ../inc/template-tags.php:178
 #: ../inc/template-tags.php:207 ../inc/template-tags.php:210
 msgid ", "
-msgstr ","
+msgstr ", "
 
 #: ../inc/template-tags.php:183
 #, php-format
@@ -543,13 +547,13 @@ msgid ""
 "<span class=\"in-category\">Posted in %1$s</span><span class=\"sep\"> | </"
 "span><span class=\"in-tag\">Tagged %2$s</span>"
 msgstr ""
-"<span class=\"in-category\">发表在 %1$s</span><span class=\"sep\"> | </"
-"span><span class=\"in-tag\">标签： %2$s</span>"
+"<span class=\"in-category\">Pubblicato il %1$s</span><span class=\"sep\"> | "
+"</span><span class=\"in-tag\">Taggato %2$s</span>"
 
 #: ../inc/template-tags.php:185
 #, php-format
 msgid "<span class=\"in-category\">Posted in %1$s<span>"
-msgstr "<span class=\"in-category\">发表在 %1$s<span>"
+msgstr "<span class=\"in-category\">Pubblicato nella categoria %1$s<span>"
 
 #: ../inc/template-tags.php:227
 #, php-format
@@ -559,10 +563,10 @@ msgid ""
 "%2$s</span><span class=\"sep\"> | </span><span class=\"by-author\"> By %4$s</"
 "span>"
 msgstr ""
-"<span class=\"on-date\">发表在 %3$s</span><span class=\"in-category\">  %1$s "
-"下面</span><span class=\"sep\"> | </span><span class=\"in-tag\">标签： %2$s</"
-"span><span class=\"sep\"> | </span><span class=\"by-author\"> 作者： %4$s</"
-"span>"
+"<span class=\"on-date\">Pubblicato il %3$s</span><span class=\"in-category"
+"\"> nella categoria %1$s</span><span class=\"sep\"> | </span><span class="
+"\"in-tag\">Taggato %2$s</span><span class=\"sep\"> | </span><span class=\"by-"
+"author\"> Da %4$s</span>"
 
 #: ../inc/template-tags.php:229
 #, php-format
@@ -571,9 +575,9 @@ msgid ""
 "under in %1$s<span><span class=\"sep\"> | </span><span class=\"by-author\"> "
 "By %4$s</span>."
 msgstr ""
-"<span class=\"on-date\">发表在： %3$s</span><span class=\"in-category\"> "
-"%1$s 下面<span><span class=\"sep\"> | </span><span class=\"by-author\"> 作"
-"者： %4$s</span>."
+"<span class=\"on-date\">Pubblicato il %3$s</span><span class=\"in-category"
+"\"> nella categoria %1$s<span><span class=\"sep\"> | </span><span class=\"by-"
+"author\"> Da %4$s</span>."
 
 #: ../inc/template-tags.php:231
 #, php-format
@@ -581,55 +585,54 @@ msgid ""
 "<span class=\"on-date\">Posted on %3$s</span><span class=\"sep\"> | </"
 "span><span class=\"by-author\"> By %4$s</span>."
 msgstr ""
-"<span class=\"on-date\">发表在 %3$s</span><span class=\"sep\"> | </"
-"span><span class=\"by-author\"> 作者： %4$s</span>."
+"<span class=\"on-date\">Pubblicato il %3$s</span><span class=\"sep\"> | </"
+"span><span class=\"by-author\"> Da %4$s</span>."
 
 #: ../inc/widgets.php:13
 msgid "Main Sidebar"
-msgstr "主侧边栏"
+msgstr "Barra laterale principale"
 
 #: ../inc/widgets.php:15
 msgid "Shows the Widgets at the side of Content"
-msgstr "把小工具显示在文章边上"
+msgstr "Mostra i widget a lato del contenuto"
 
 #: ../inc/widgets.php:24
 msgid "Footer Area One"
-msgstr "页面底部1"
+msgstr "Prima area a piè di pagina"
 
 #: ../inc/widgets.php:26 ../inc/widgets.php:37 ../inc/widgets.php:48
 msgid "An optional widget area for your site footer"
-msgstr "页面底部可选的小工具区域"
+msgstr "Un'area opzionale per dei widget a piè pagina"
 
 #: ../inc/widgets.php:35
 msgid "Footer Area Two"
-msgstr "页面底部2"
+msgstr "Seconda area a piè di pagina"
 
 #: ../inc/widgets.php:46
 msgid "Footer Area Three"
-msgstr "页面底部3"
+msgstr "Terza area a piè di pagina"
 
 #: ../inc/widgets.php:75
 msgid ""
 "Use this widget to add Social Icons from Social Icons Settings as a widget. "
-msgstr ""
-"Use this widget to add Social Icons from Social Icons Settings as a widget. "
+msgstr "Usa questo widget per aggiungere le icone sociali"
 
 #: ../inc/widgets.php:76
 msgid "Catch Everest Social Widget"
-msgstr "Catch Everest 社交小工具"
+msgstr "Widget sociale di Catch Everest"
 
 #: ../inc/widgets.php:89
 msgid "Title (optional):"
-msgstr "标题（可选）："
+msgstr "Titolo (opzionale):"
 
 #: ../inc/panel/theme-options.php:40 ../inc/panel/theme-options.php:41
 #: ../inc/panel/theme-options.php:145
 msgid "Theme Options"
-msgstr "主题设置"
+msgstr "Opzioni del tema"
 
 #: ../inc/panel/theme-options.php:102
 msgid "Options Saved"
-msgstr "设置已保存"
+msgstr "Opzioni salvate"
 
 #: ../inc/panel/theme-options.php:109
 msgid "http://facebook.com/catchthemes"
@@ -641,7 +644,7 @@ msgstr "https://twitter.com/catchthemes"
 
 #: ../inc/panel/theme-options.php:117
 msgid "Theme Options By"
-msgstr "Theme Options By"
+msgstr "Opzioni del tema da"
 
 #: ../inc/panel/theme-options.php:119
 msgid "http://catchthemes.com/"
@@ -657,7 +660,7 @@ msgstr "http://catchthemes.com/themes/catch-everest-pro/"
 
 #: ../inc/panel/theme-options.php:126
 msgid "Upgrade to Catch Everest Pro"
-msgstr "Upgrade to Catch Everest Pro"
+msgstr "Aggiorna a Catch Everest Pro"
 
 #: ../inc/panel/theme-options.php:131
 msgid "http://catchthemes.com/donate/"
@@ -665,11 +668,11 @@ msgstr "http://catchthemes.com/donate/"
 
 #: ../inc/panel/theme-options.php:131
 msgid "Donate to Catch Everest"
-msgstr "Donate to Catch Everest"
+msgstr "Dona a Catch Everest"
 
 #: ../inc/panel/theme-options.php:131
 msgid "Donate Now"
-msgstr "Donate Now"
+msgstr "Dona ora"
 
 #: ../inc/panel/theme-options.php:132
 msgid "http://catchthemes.com/support-forum/forum/catch-everest-public/"
@@ -677,7 +680,7 @@ msgstr "http://catchthemes.com/support-forum/forum/catch-everest-public/"
 
 #: ../inc/panel/theme-options.php:132
 msgid "Support Forum"
-msgstr "技术支持论坛"
+msgstr "Forum di supporto"
 
 #: ../inc/panel/theme-options.php:133
 msgid "http://catchthemes.com/theme-instructions/catch-everest/"
@@ -685,7 +688,7 @@ msgstr "http://catchthemes.com/theme-instructions/catch-everest/"
 
 #: ../inc/panel/theme-options.php:133
 msgid "Theme Instruction"
-msgstr "主题使用指导"
+msgstr "Istruzioni del tema"
 
 #: ../inc/panel/theme-options.php:134
 msgid "https://www.facebook.com/catchthemes/"
@@ -693,7 +696,7 @@ msgstr "https://www.facebook.com/catchthemes/"
 
 #: ../inc/panel/theme-options.php:134
 msgid "Like Catch Themes on Facebook"
-msgstr "Like Catch Themes on Facebook"
+msgstr "Metti il like a Catch Themes su Facebook"
 
 #: ../inc/panel/theme-options.php:134 ../inc/panel/theme-options.php:628
 msgid "Facebook"
@@ -705,7 +708,7 @@ msgstr "https://twitter.com/catchthemes/"
 
 #: ../inc/panel/theme-options.php:135
 msgid "Follow Catch Themes on Twitter"
-msgstr "Follow Catch Themes on Twitter"
+msgstr "Segui Catch Themes su Twitter"
 
 #: ../inc/panel/theme-options.php:135 ../inc/panel/theme-options.php:633
 msgid "Twitter"
@@ -717,41 +720,41 @@ msgstr "http://wordpress.org/support/view/theme-reviews/catch-everest"
 
 #: ../inc/panel/theme-options.php:136
 msgid "Rate us 5 Star on WordPress"
-msgstr "Rate us 5 Star on WordPress"
+msgstr "Votaci 5 stelle su WordPress"
 
 #: ../inc/panel/theme-options.php:136
 msgid "5 Star Rating"
-msgstr "五星评价"
+msgstr "Vota su WordPress"
 
 #: ../inc/panel/theme-options.php:146
 msgid "Homepage Settings"
-msgstr "主页设置"
+msgstr "Impostazioni della homepage"
 
 #: ../inc/panel/theme-options.php:147
 msgid "Featured Post Slider"
-msgstr "精选图片秀"
+msgstr "Slider degli articoli in evidenza"
 
 #: ../inc/panel/theme-options.php:148
 msgid "Social Links"
-msgstr "社交链接"
+msgstr "Link sociali"
 
 #: ../inc/panel/theme-options.php:149
 msgid "Webmaster Tools"
-msgstr "站长工具"
+msgstr "Webmaster Tools"
 
 #: ../inc/panel/theme-options.php:157
 msgid "Responsive Design"
-msgstr "自适应设计"
+msgstr "Responsive Design"
 
 #: ../inc/panel/theme-options.php:162
 msgid "Disable Responsive Design?"
-msgstr "禁用自适应？"
+msgstr "Disabilita il Responsive Design"
 
 #: ../inc/panel/theme-options.php:164 ../inc/panel/theme-options.php:187
 #: ../inc/panel/theme-options.php:226 ../inc/panel/theme-options.php:397
 #: ../inc/panel/theme-options.php:402 ../inc/panel/theme-options.php:418
 msgid "Check to disable"
-msgstr "选上以禁用"
+msgstr "Seleziona per disabilitare"
 
 #: ../inc/panel/theme-options.php:168 ../inc/panel/theme-options.php:214
 #: ../inc/panel/theme-options.php:230 ../inc/panel/theme-options.php:253
@@ -762,140 +765,140 @@ msgstr "选上以禁用"
 #: ../inc/panel/theme-options.php:616 ../inc/panel/theme-options.php:730
 #: ../inc/panel/theme-options.php:761 ../inc/panel/theme-options.php:792
 msgid "Save"
-msgstr "Save"
+msgstr "Salva"
 
 #: ../inc/panel/theme-options.php:173
 msgid "Upload Logo"
-msgstr "上传logo"
+msgstr "Carica un logo"
 
 #: ../inc/panel/theme-options.php:175
 msgid "Custom Header. Need to Add or Remove Logo?"
-msgstr "自定义页头。需要增删logo吗？"
+msgstr "Intestazione personalizzata. Vuoi modificare o rimuovere il logo?"
 
 #: ../inc/panel/theme-options.php:175 ../inc/panel/theme-options.php:237
 #, php-format
 msgid "<a class=\"button\" href=\"%s\">Click here</a>"
-msgstr "<a class=\"button\" href=\"%s\">点击这里</a>"
+msgstr "<a class=\"button\" href=\"%s\">Clicca qui</a>"
 
 #: ../inc/panel/theme-options.php:180
 msgid "Favicon"
-msgstr "站点图标"
+msgstr "Favicon"
 
 #: ../inc/panel/theme-options.php:185
 msgid "Disable Favicon?"
-msgstr "禁用站点图标？"
+msgstr "Disabilita Favicon"
 
 #: ../inc/panel/theme-options.php:190
 msgid "Fav Icon URL:"
-msgstr "站点图标地址："
+msgstr "URL della Favicon:"
 
 #: ../inc/panel/theme-options.php:196
 msgid "Change Fav Icon"
-msgstr "Change Fav Icon"
+msgstr "Cambia la Favicon"
 
 #: ../inc/panel/theme-options.php:201
 msgid "Preview: "
-msgstr "预览："
+msgstr "Anteprima:"
 
 #: ../inc/panel/theme-options.php:219
 msgid "Header Right Section"
-msgstr "页头右侧部分"
+msgstr "Barra destra dell'intestazione"
 
 #: ../inc/panel/theme-options.php:224
 msgid "Disable Header Right Section?"
-msgstr "禁用页头右侧部分（搜索）？"
+msgstr "Disabilita la barra a destra nell'intestazione"
 
 #: ../inc/panel/theme-options.php:235
 msgid "Background"
-msgstr "背景"
+msgstr "Sfondo"
 
 #: ../inc/panel/theme-options.php:237
 msgid "Custom Background. Need to replace or remove background?"
-msgstr "自定义背景。需要改或者删除背景？"
+msgstr "Sfondo personalizzato. Vuoi cambiare o rimuovere lo sfondo?"
 
 #: ../inc/panel/theme-options.php:242
 msgid "Search Text Settings"
-msgstr "搜索占位符设定"
+msgstr "Impostazioni della casella di ricerca"
 
 #: ../inc/panel/theme-options.php:247
 msgid "Default Display Text in Search"
-msgstr "搜索占位符"
+msgstr "Testo di default nella casella di ricerca"
 
 #: ../inc/panel/theme-options.php:258
 msgid "Excerpt / More Tag Settings"
-msgstr "摘录/标记设置"
+msgstr "Link \"Continua a leggere\" ed estratto del testo"
 
 #: ../inc/panel/theme-options.php:263
 msgid "More Tag Text"
-msgstr "更多标记"
+msgstr "Testo del link \"Continua a leggere\""
 
 #: ../inc/panel/theme-options.php:268
 msgid "Excerpt length(words)"
-msgstr "摘要长度（英文词为单位）"
+msgstr "Lunghezza dell'estratto (in parole)"
 
 #: ../inc/panel/theme-options.php:278
 msgid "Feed Redirect"
-msgstr "Feed重定向"
+msgstr "Redirezione dei feed"
 
 #: ../inc/panel/theme-options.php:283
 msgid "Feed Redirect URL"
-msgstr "Feed重定向地址"
+msgstr "URL di redirezione dei feed"
 
 #: ../inc/panel/theme-options.php:284
 msgid "Add in the Feedburner URL"
-msgstr "Add in the Feedburner URL"
+msgstr "Aggiungi l'URL di Feedburner"
 
 #: ../inc/panel/theme-options.php:294
 msgid "Layout Options"
-msgstr "布局设定"
+msgstr "Opzioni del layout"
 
 #: ../inc/panel/theme-options.php:299
 msgid "Sidebar Layout Options"
-msgstr "侧边栏布局设置"
+msgstr "Opzioni del Layout della barra laterale"
 
 #: ../inc/panel/theme-options.php:303
 msgid "Right Sidebar"
-msgstr "右侧边栏"
+msgstr "Barra laterale destra"
 
 #: ../inc/panel/theme-options.php:308
 msgid "Left Sidebar"
-msgstr "左侧边栏"
+msgstr "Barra laterale sinistra"
 
 #: ../inc/panel/theme-options.php:313
 msgid "No Sidebar"
-msgstr "不要侧边栏"
+msgstr "Nessuna barra laterale"
 
 #: ../inc/panel/theme-options.php:319
 msgid "Content Layout"
-msgstr "内容布局"
+msgstr "Layout del contenuto"
 
 #: ../inc/panel/theme-options.php:322
 msgid "Full Content Display"
-msgstr "完整内容显示"
+msgstr "Mostra l'articolo intero"
 
 #: ../inc/panel/theme-options.php:326
 msgid "Excerpt/Blog Display"
-msgstr "摘要/文章 展示"
+msgstr "Mostra l'estratto dell'articolo"
 
 #: ../inc/panel/theme-options.php:332
 msgid "Reset Layout?"
-msgstr "重置布局？"
+msgstr "Ripristina il layout di default"
 
 #: ../inc/panel/theme-options.php:335
 msgid "Check to reset"
-msgstr "点这里重置"
+msgstr "Spunta per resettare"
 
 #: ../inc/panel/theme-options.php:345
 msgid "Custom CSS"
-msgstr "自定义CSS"
+msgstr "CSS personalizzato"
 
 #: ../inc/panel/theme-options.php:350
 msgid "Enter your custom CSS styles."
-msgstr "输入你自定义的CSS"
+msgstr "Inserisci il tuo stile CSS personalizzato."
 
 #: ../inc/panel/theme-options.php:357
 msgid "CSS Tutorial from W3Schools."
-msgstr "来自W3School的CSS教程"
+msgstr "Tutorial CSS su W3Schools."
 
 #: ../inc/panel/theme-options.php:359
 msgid "http://www.w3schools.com/css/default.asp"
@@ -903,251 +906,257 @@ msgstr "http://www.w3schools.com/css/default.asp"
 
 #: ../inc/panel/theme-options.php:359
 msgid "CSS Tutorial"
-msgstr "CSS Tutorial"
+msgstr "Utorial CSS"
 
 #: ../inc/panel/theme-options.php:359
 msgid "Click Here to Read"
-msgstr "点这去看"
+msgstr "Clicca qua per leggere"
 
 #: ../inc/panel/theme-options.php:374
 msgid "Homepage Headline Options"
-msgstr "主页头条设置"
+msgstr "Opzioni della testata in homepage"
 
 #: ../inc/panel/theme-options.php:379
 msgid "Homepage Headline"
-msgstr "主页头条"
+msgstr "Testata in homepage"
 
 #: ../inc/panel/theme-options.php:380 ../inc/panel/theme-options.php:388
 msgid "The appropriate length for Headine is around 10 words."
-msgstr "合适的头条长度，大约是10个词（20个字）。"
+msgstr "La lunghezza ottimale per la testata è di circa 10 parole."
 
 #: ../inc/panel/theme-options.php:387
 msgid "Homepage Subheadline Headline"
-msgstr "主页头条副标题"
+msgstr "Sottotitolo della testata in homepage"
 
 #: ../inc/panel/theme-options.php:395
 msgid "Disable Homepage Headline?"
-msgstr "禁用主页头条？"
+msgstr "Disabilita la testata in homepage"
 
 #: ../inc/panel/theme-options.php:400
 msgid "Disable Homepage Subheadline?"
-msgstr "禁用主页头条副标题？"
+msgstr "Disabilita il sottotitolo della testata in homepage"
 
 #: ../inc/panel/theme-options.php:411
 msgid "Homepage Featured Content Options"
-msgstr "主页精选内容展示设置"
+msgstr "Opzioni dei contenuti in evidenza in homepage"
 
 #: ../inc/panel/theme-options.php:416
 msgid "Disable Homepage Featured Content?"
-msgstr "禁用主页精选内容？"
+msgstr "Disabilita i contenuti in evidenza nell'homepage"
 
 #: ../inc/panel/theme-options.php:422
 msgid "Headline"
-msgstr "头条"
+msgstr "Testata"
 
 #: ../inc/panel/theme-options.php:425
 msgid "Leave empty if you want to remove headline"
-msgstr "留空即可禁用头条"
+msgstr "Lascia vuoto se vuoi rimuovere la testata"
 
 #: ../inc/panel/theme-options.php:429
 msgid "Number of Featured Content"
-msgstr "精选内容数量"
+msgstr "Numero di contenuti in evidenza"
 
 #: ../inc/panel/theme-options.php:437
 #, php-format
 msgid "Featured Content #%s"
-msgstr "Featured Content #%s"
+msgstr "Contenuto in evidenza #%s"
 
 #: ../inc/panel/theme-options.php:446
 msgid "Change Image"
-msgstr "Change Image"
+msgstr "Cambia l'immagine"
 
 #: ../inc/panel/theme-options.php:446
 msgid "Add Image"
-msgstr "Add Image"
+msgstr "Aggiungi un'immagine"
 
 #: ../inc/panel/theme-options.php:450
 msgid "Link URL"
-msgstr "链接地址"
+msgstr "URL del link"
 
 #: ../inc/panel/theme-options.php:451
 msgid "Add in the Target URL for the content"
-msgstr "给内容添加目标地址"
+msgstr "URL di destinazione del collegamento"
 
 #: ../inc/panel/theme-options.php:455
 msgid "Target. Open Link in New Window?"
-msgstr "要在新窗口打开？"
+msgstr "Apri il link in una nuova finestra?"
 
 #: ../inc/panel/theme-options.php:457
 msgid "Check to open in new window"
-msgstr "选上就在新窗口打开"
+msgstr "Seleziona per aprire in una nuova finestra"
 
 #: ../inc/panel/theme-options.php:462
 msgid "Title"
-msgstr "题目"
+msgstr "Titolo"
 
 #: ../inc/panel/theme-options.php:465
 msgid "Leave empty if you want to remove title"
-msgstr "留空即可禁用题目"
+msgstr "Lascia vuoto se vuoi rimuovere il titolo"
 
 #: ../inc/panel/theme-options.php:469
 msgid "Content"
-msgstr "内容"
+msgstr "Contenuto"
 
 #: ../inc/panel/theme-options.php:470
 msgid "The appropriate length for Content is around 10 words."
-msgstr "内容的长度在10~20个字比较合适"
+msgstr "La lunghezza ottimale per il contenuto è di circa 10 parole."
 
 #: ../inc/panel/theme-options.php:484
 msgid "Homepage / Frontpage Settings"
-msgstr "主页设置"
+msgstr "Impostazione dell'homepage / pagina iniziale"
 
 #: ../inc/panel/theme-options.php:489
 msgid "Enable Latest Posts?"
-msgstr "显示最近的文章?"
+msgstr "Abilita gli ultimi articoli"
 
 #: ../inc/panel/theme-options.php:491
 msgid "Check to Enable"
-msgstr "选上即可显示"
+msgstr "Seleziona per abilitare"
 
 #: ../inc/panel/theme-options.php:494
 msgid "Add Page instead of Latest Posts"
-msgstr "添加替代最近文章的页面"
+msgstr "Metti una pagina statica al posto della lista degli ultimi articoli"
 
 #: ../inc/panel/theme-options.php:495
 msgid "Widgets"
-msgstr "Widgets"
+msgstr "Widget"
 
 #: ../inc/panel/theme-options.php:495
 msgid "Click Here to Set Static Front Page Instead of Latest Posts"
-msgstr "用特定的首页替代最近文章"
+msgstr ""
+"Clicca qua per usare una pagina statica al posto della lista degli ultimi "
+"articoli"
 
 #: ../inc/panel/theme-options.php:499
 msgid "Homepage posts categories:"
-msgstr "首页文章类别："
+msgstr "Articoli delle categorie visualizzati in homepage"
 
 #: ../inc/panel/theme-options.php:501
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on "
 "the front page."
-msgstr "只有选中的类别文章才会在主页显示。"
+msgstr ""
+"Solo gli articoli che appartengono alle categorie selezionate  qui verranno "
+"mostrati nella pagina principale."
 
 #: ../inc/panel/theme-options.php:506
 msgid "--Disabled--"
-msgstr "--已禁用--"
+msgstr "--Disabilitato--"
 
 #: ../inc/panel/theme-options.php:517
 msgid "You may select multiple categories by holding down the CTRL key."
-msgstr "你可以按住CTRL键选择多个"
+msgstr "Puoi selezionare più categorie tenendo premuto il tasto CTRL"
 
 #: ../inc/panel/theme-options.php:530
 msgid "Slider Options"
-msgstr "图片秀选项"
+msgstr "Opzioni dello slider"
 
 #: ../inc/panel/theme-options.php:534
 msgid "Enable Slider"
-msgstr "图片秀选项"
+msgstr "Abilita lo slider"
 
 #: ../inc/panel/theme-options.php:538
 msgid "Homepage / Frontpage"
-msgstr "主页"
+msgstr "Pagina principale"
 
 #: ../inc/panel/theme-options.php:542
 msgid "Entire Site"
-msgstr "全站"
+msgstr "Intero sito"
 
 #: ../inc/panel/theme-options.php:546
 msgid "Disable"
-msgstr "禁用"
+msgstr "Disabilita"
 
 #: ../inc/panel/theme-options.php:551
 msgid "Number of Slides"
-msgstr "图片秀数量"
+msgstr "Numero di slide"
 
 #: ../inc/panel/theme-options.php:556
 msgid "Transition Effect:"
-msgstr "变换效果："
+msgstr "Effetto di transizione"
 
 #: ../inc/panel/theme-options.php:560
 msgid "fade"
-msgstr "渐隐"
+msgstr "dissolvenza"
 
 #: ../inc/panel/theme-options.php:561
 msgid "wipe"
-msgstr "滑入"
+msgstr "wipe"
 
 #: ../inc/panel/theme-options.php:562
 msgid "scrollUp"
-msgstr "往上滑"
+msgstr "scorri in alto"
 
 #: ../inc/panel/theme-options.php:563
 msgid "scrollDown"
-msgstr "往下滑"
+msgstr "scorri in basso"
 
 #: ../inc/panel/theme-options.php:564
 msgid "scrollLeft"
-msgstr "往左滑"
+msgstr "scorri a sinistra"
 
 #: ../inc/panel/theme-options.php:565
 msgid "scrollRight"
-msgstr "往右划"
+msgstr "scorri a destra"
 
 #: ../inc/panel/theme-options.php:566
 msgid "blindX"
-msgstr "blindX"
+msgstr "sostituisci orizzontale"
 
 #: ../inc/panel/theme-options.php:567
 msgid "blindY"
-msgstr "blindY"
+msgstr "sostituisci verticale"
 
 #: ../inc/panel/theme-options.php:568
 msgid "blindZ"
-msgstr "blindZ"
+msgstr "sostituisci diagonale"
 
 #: ../inc/panel/theme-options.php:569
 msgid "cover"
-msgstr "cover"
+msgstr "copri"
 
 #: ../inc/panel/theme-options.php:570
 msgid "shuffle"
-msgstr "shuffle"
+msgstr "a caso"
 
 #: ../inc/panel/theme-options.php:575
 msgid "Transition Delay"
-msgstr "渐变停顿时间"
+msgstr "Attesa tra le transizioni"
 
 #: ../inc/panel/theme-options.php:578 ../inc/panel/theme-options.php:585
 msgid "second(s)"
-msgstr "秒"
+msgstr "secondi"
 
 #: ../inc/panel/theme-options.php:582
 msgid "Transition Length"
-msgstr "渐变时长"
+msgstr "Durata della transizione"
 
 #: ../inc/panel/theme-options.php:596
 msgid "Featured Post Slider Options"
-msgstr "精选图片秀选项"
+msgstr "Opzioni per lo slider degli articoli in evidenza"
 
 #: ../inc/panel/theme-options.php:600
 msgid "Exclude Slider post from Homepage posts?"
-msgstr "把精选图片秀从主页去掉？"
+msgstr "Escludi gli articoli dello slider dagli articoli in home page"
 
 #: ../inc/panel/theme-options.php:602
 msgid "Check to exclude"
-msgstr "点这里去掉"
+msgstr "Seleziona per escludere"
 
 #: ../inc/panel/theme-options.php:607
 msgid "Featured Slider Post #"
-msgstr "精选图片秀第"
+msgstr "Articolo in evidenza n°"
 
 #: ../inc/panel/theme-options.php:609
 msgid "Click Here To Edit"
-msgstr "点这编辑"
+msgstr "Clicca qua per modificare"
 
 #: ../inc/panel/theme-options.php:615
 msgid ""
 "Note: Here You can put your Post IDs which displays on Homepage as slider."
-msgstr "你可以把主页显示的文章id号们，作为图片秀来源。"
+msgstr ""
+"Nota: qua puoi inserire gli ID degli articoli che verranno mostrati nello "
+"slider nella pagina principale."
 
 #: ../inc/panel/theme-options.php:638
 msgid "Google+"
@@ -1223,59 +1232,59 @@ msgstr "GitHub"
 
 #: ../inc/panel/theme-options.php:738
 msgid "Site Verification"
-msgstr "站点验证"
+msgstr "Verifica del sito"
 
 #: ../inc/panel/theme-options.php:743
 msgid "Google Site Verification ID"
-msgstr "Google Site Verification ID"
+msgstr "ID di verifica di Google"
 
 #: ../inc/panel/theme-options.php:744
 msgid "Enter your Google ID number only"
-msgstr "Enter your Google ID number only"
+msgstr "Inserisci solo il numero ID di Google"
 
 #: ../inc/panel/theme-options.php:749
 msgid "Yahoo Site Verification ID"
-msgstr "Yahoo Site Verification ID"
+msgstr "ID di verifica di Yahoo"
 
 #: ../inc/panel/theme-options.php:750
 msgid "Enter your Yahoo ID number only"
-msgstr "Enter your Yahoo ID number only"
+msgstr "Inserisci solo il numero ID di Yahoo"
 
 #: ../inc/panel/theme-options.php:755
 msgid "Bing Site Verification ID"
-msgstr "Bing Site Verification ID"
+msgstr "ID di verifica di Bing"
 
 #: ../inc/panel/theme-options.php:756
 msgid "Enter your Bing ID number only"
-msgstr "Enter your Bing ID number only"
+msgstr "Inserisci solo il numero ID di Bing"
 
 #: ../inc/panel/theme-options.php:766
 msgid "Header and Footer Codes"
-msgstr "页头页尾代码"
+msgstr "Codice nell'Header e a piè di pagina"
 
 #: ../inc/panel/theme-options.php:771
 msgid "Code to display on Header"
-msgstr "页头代码"
+msgstr "Codice da inserire nel tag header"
 
 #: ../inc/panel/theme-options.php:777
 msgid ""
 "Note: Note: Here you can put scripts from Google, Facebook, Twitter, Add "
 "This etc. which will load on Header"
 msgstr ""
-"Note: Note: Here you can put scripts from Google, Facebook, Twitter, Add "
-"This etc. which will load on Header"
+"Nota: qui puoi inserire gli script di Google, Facebook, Add This ecc. che "
+"verrano caricati nell'header"
 
 #: ../inc/panel/theme-options.php:780
 msgid "Code to display on Footer"
-msgstr "页尾代码"
+msgstr "Codice da mostrare a piè pagina"
 
 #: ../inc/panel/theme-options.php:787
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Twitter, Add This etc. "
 "which will load on footer"
 msgstr ""
-"Note: Here you can put scripts from Google, Facebook, Twitter, Add This etc. "
-"which will load on footer"
+"Nota: qui puoi inserire gli script di Google, Facebook, Add This ecc. che "
+"verrano caricati a piè pagina"
 
 #: ../inc/panel/theme-options.php:1145
 msgid "Y"

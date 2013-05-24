@@ -9,12 +9,17 @@
 
 get_header(); 
 
-// Getting data from Theme Options
-global $catcheverest_options_settings;
-$options = $catcheverest_options_settings;
-$enable_post = $options[ 'enable_posts_home' ];
+	global $post, $page_id, $catcheverest_options_settings;
 
-if ( $enable_post != "0" ) { 
+	// Getting data from Theme Options
+	$options = $catcheverest_options_settings;
+	$enable_post = $options[ 'enable_posts_home' ];
+
+	// Front page displays in Reading Settings
+	$page_on_front = get_option('page_on_front') ;
+	$page_for_posts = get_option('page_for_posts');
+
+if ( $enable_post != "0" || $page_id == $page_for_posts ) { 
 ?>
 
     <div id="primary" class="content-area">
