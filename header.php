@@ -102,9 +102,10 @@
 
 		<div id="primary">
 			<div id="content" role="main">
-    			<?php 
-				// Passing The Slider Value and Running the slider in the Homepage or Front Page only
-				if ( is_home() || is_front_page() )  {
-					if ( function_exists( 'catchbox_pass_slider_value' ) ) { catchbox_pass_slider_value(); }
-            		if ( function_exists( 'catchbox_sliders' ) ) { catchbox_sliders(); } 
-				} ?>
+				<?php 
+                /** 
+                 * catchbox_content hook
+                 *
+                 * @hooked catchbox_slider_display - 10
+                 */
+                do_action( 'catchbox_content' ); ?>

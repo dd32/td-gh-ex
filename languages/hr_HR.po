@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-03 17:20+0545\n"
-"PO-Revision-Date: 2013-05-03 17:20+0545\n"
+"POT-Creation-Date: 2013-05-24 16:27+0545\n"
+"PO-Revision-Date: 2013-05-24 16:27+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Catch Themes <info@catchinternet.com>\n"
 "Language: Croatian\n"
@@ -81,12 +81,12 @@ msgid "Blog Archives"
 msgstr "Blog arhiva"
 
 #: ../archive.php:52 ../author.php:69 ../category.php:45 ../index.php:32
-#: ../search.php:39 ../tag.php:45
+#: ../page-blog.php:65 ../search.php:39 ../tag.php:45
 msgid "Nothing Found"
 msgstr "Ništa nije pronađeno"
 
 #: ../archive.php:56 ../author.php:73 ../category.php:49 ../index.php:36
-#: ../tag.php:49
+#: ../page-blog.php:69 ../tag.php:49
 msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
 "searching will help find a related post."
@@ -480,11 +480,11 @@ msgstr ""
 msgid "ID"
 msgstr "ID"
 
-#: ../functions.php:910
+#: ../functions.php:916
 msgid "Name"
 msgstr "Ime"
 
-#: ../functions.php:912
+#: ../functions.php:918
 msgid "Email"
 msgstr "Email"
 

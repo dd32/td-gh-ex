@@ -822,12 +822,18 @@ endif;  // catchbox_sliders
  * @register jquery cycle and custom-script
  * hooks action wp_enqueue_scripts
  */
-function catchbox_scripts_method() {	
+function catchbox_scripts_method() {
+	global $post, $page_id;
+	
+	// Front page displays in Reading Settings
+	$page_on_front = get_option('page_on_front') ;
+	$page_for_posts = get_option('page_for_posts'); 	
+	
 	//Register JQuery circle all and JQuery set up as dependent on Jquery-cycle
 	wp_register_script( 'jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
 	
 	//Enqueue Slider Script only in Front Page
-	if(is_home() || is_front_page()) {
+	if ( is_front_page() || ( is_home() && $page_id != $page_for_posts ) )  {
 		wp_enqueue_script( 'catchbox_slider', get_template_directory_uri() . '/js/catchbox_slider.js', array( 'jquery-cycle' ), '1.0', true );
 	}
 	
@@ -1115,3 +1121,25 @@ endif; // catchbox_socialprofile
 
 // Load Social Profile catchbox_startgenerator_open hook 
 add_action('catchbox_startgenerator_open', 'catchbox_socialprofile');
+
+
+if ( ! function_exists( 'catchbox_slider_display' ) ) :
+/**
+ * Display slider
+ */
+function catchbox_slider_display() {
+	global $post, $page_id;
+	
+	// Front page displays in Reading Settings
+	$page_on_front = get_option('page_on_front') ;
+	$page_for_posts = get_option('page_for_posts'); 	
+		
+	if (  is_front_page() || ( is_home() && $page_id != $page_for_posts ) )  {
+		if ( function_exists( 'catchbox_pass_slider_value' ) ) { catchbox_pass_slider_value(); }
+		if ( function_exists( 'catchbox_sliders' ) ) { catchbox_sliders(); } 
+	} 
+}
+endif; //catchbox_slider_display
+
+// Load slider in  catchbox_content hook 
+add_action('catchbox_content', 'catchbox_slider_display');
