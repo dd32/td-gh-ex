@@ -77,7 +77,7 @@
 <!--content-->
 
 
-<?php if ( (!get_option('show_on_front') || 'posts' == get_option('show_on_front')) && is_home() && of_get_option('blog_home') != "off") { ?>
+<?php if ( (!get_option('show_on_front') || 'page' == get_option('show_on_front') || 'posts' == get_option('show_on_front')) && is_home() && of_get_option('blog_home') != "off") { ?>
 
 		<div class="row" id="content_container">
 				

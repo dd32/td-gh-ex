@@ -1,8 +1,8 @@
 /*
 Theme Name: discover
 Theme URI: http://antthemes.com/?page_id=1963
-Description: A very neat and clean orange and white business theme. The theme supports widgets. And features theme-options, threaded-comments and multi-level dropdown menu. A simple and neat typography.
-Version: 1.7
+Description: A very neat and clean orange and white business theme. The theme is fully responsive that looks great on any device. The theme supports widgets. And features theme-options, threaded-comments and multi-level dropdown menu. A simple and neat typography. Uses WordPress custom menu, header image, and background. Get free support on http://antthemes.com/forum/
+Version: 1.7.1
 Author: Manishg
 Author URI: http://antthemes.com/
 Tags: orange,threaded-comments,light,two-columns,theme-options,white
@@ -1200,7 +1200,7 @@ padding: 7px;
 }
 
 #footer-widget #wp-calendar a{
-	color: white;
+	color: #fd7800;
 }
 
 #footer-widget #wp-calendar a:hover{
@@ -1218,10 +1218,10 @@ padding: 7px;
 }
 
 #wp-calendar #today{
-	font-weight: bold; color: #FFF;
+	font-weight: bold; color: #000;
 }
 #wp-calendar th{
-	color: #fff;
+	color: #000;
 }
 
 .widget_tag_cloud a{
