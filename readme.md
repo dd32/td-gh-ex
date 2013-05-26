@@ -100,6 +100,7 @@ The exceptions to this license are as follows:
 * The script holder.js v1.9 is licensed under the Apache License
 * The script modernizr.js is dual licensed under the BSD and MIT licenses
 * The script jquery.iphonecheck.js is copyrighted by Thomas Reynolds, licensed GPL & MIT
+* The script jquery.fancybox.js licensed under Creative Commons Attribution-NonCommercial 3.0 license
 * Icon Set:	IcoMoon - Free -- http://keyamoon.com/icomoon/ License:	CC BY-SA 3.0 -- http://creativecommons.org/licenses/by-sa/3.0/
 * Icon Set:	Broccolidry -- http://dribbble.com/shots/587469-Free-16px-Broccolidryiconsaniconsetitisfullof-icons License: Aribitrary -- http://licence.visualidiot.com/
 * Icon Set:	Iconic -- http://somerandomdude.com/work/iconic/ License:	CC BY-SA 3.0 -- http://creativecommons.org/licenses/by-sa/3.0/us/
@@ -110,6 +111,9 @@ The exceptions to this license are as follows:
 
 
 # Changelog
+= 2.0.8 =
+* removed : minor issue, the function tc_write_custom_css() was written twice in header.php
+
 = 2.0.7 =
 * fixed : custom featured text (for featured pages) on front page was not updated when updated from customizer screen
 * fixed : title of page was displayed when selected as static page for front page

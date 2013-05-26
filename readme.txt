@@ -117,6 +117,9 @@ The exceptions to this license are as follows:
 
 
 #######################  Changelog ######################
+= 2.0.8 =
+* removed : minor issue, the function tc_write_custom_css() was written twice in header.php
+
 = 2.0.7 =
 * fixed : custom featured text (for featured pages) on front page was not updated when updated from customizer screen
 * fixed : title of page was displayed when selected as static page for front page
