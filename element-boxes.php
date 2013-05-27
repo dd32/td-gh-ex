@@ -18,7 +18,7 @@
 				<?php if(esc_textarea(of_get_option('box_text' . $i)) != NULL){ echo esc_textarea(of_get_option('box_text' . $i));} else echo "Nullam posuere felis a lacus tempor eget dignissim arcu adipiscing. Donec est est, rutrum vitae bibendum vel, suscipit non metus." ?>
 					
 					</div> <!--box-content close-->
-					<div class="clear"></div>
+					
 				<span class="read-more"><a href="<?php echo esc_url(of_get_option('box_link' . $i)); ?>"><?php _e('Read More' , 'discover'); ?></a></span>
 			
 				</div><!--boxes  end-->

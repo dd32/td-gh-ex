@@ -28,16 +28,16 @@ add_theme_support( 'custom-background', $args );
 	// Make theme available for translation
 	// Translations can be filed in the /languages/ directory
 	load_theme_textdomain( 'discover', get_template_directory() . '/languages' );
+
+	$locale = get_locale();
+	$locale_file = get_template_directory() . "/languages/$locale.php";
+	if ( is_readable( $locale_file ) )
+		require_once( $locale_file );
 		
 	// This theme uses wp_nav_menu() in two location.	
 	register_nav_menus( array(
 		'primary' => __( 'Primary Navigation', 'discover' ),
 	) );
-	
-	// Add support for woocommerce
-	$template = get_option( 'template' );
-	update_option( 'woocommerce_theme_support_check', $template );
-	add_theme_support( 'woocommerce' );	
 
 }
 endif;
@@ -72,10 +72,45 @@ function discover_s_custom_header_setup() {
 	);
 
 	$args = apply_filters( 'discover_s_custom_header_args', $args );
-	add_theme_support( 'custom-header', $args );
 
+	if ( function_exists( 'wp_get_theme' ) ) {
+		add_theme_support( 'custom-header', $args );
+	} else {
+		// Compat: Versions of WordPress prior to 3.4.
+		define( 'HEADER_TEXTCOLOR',    $args['default-text-color'] );
+		define( 'HEADER_IMAGE',        $args['default-image'] );
+		define( 'HEADER_IMAGE_WIDTH',  $args['width'] );
+		define( 'HEADER_IMAGE_HEIGHT', $args['height'] );
+		add_custom_image_header( $args['wp-head-callback'], $args['admin-head-callback'], $args['admin-preview-callback'] );
+	}
 }
 add_action( 'after_setup_theme', 'discover_s_custom_header_setup' );
+
+
+/**
+ * Shiv for get_custom_header().
+ *
+ * get_custom_header() was introduced to WordPress
+ * in version 3.4. To provide backward compatibility
+ * with previous versions, we will define our own version
+ * of this function.
+ *
+ * @todo Remove this function when WordPress 3.6 is released.
+ * @return stdClass All properties represent attributes of the curent header image.
+ *
+ * @package discover_s
+ */
+
+if ( ! function_exists( 'get_custom_header' ) ) {
+	function get_custom_header() {
+		return (object) array(
+			'url'           => get_header_image(),
+			'thumbnail_url' => get_header_image(),
+			'width'         => HEADER_IMAGE_WIDTH,
+			'height'        => HEADER_IMAGE_HEIGHT,
+		);
+	}
+}
 
 if ( ! function_exists( 'discover_s_header_style' ) ) :
 /**
@@ -179,8 +214,7 @@ add_filter('get_comments_number', 'discover_comment_count', 0);
 function discover_comment_count( $count ) {
 	if ( ! is_admin() ) {
 	global $id;
-	$get_comments_status= get_comments('status=approve&post_id=' . $id);
-	$comments_by_type = separate_comments($get_comments_status);
+	$comments_by_type = &separate_comments(get_comments('status=approve&post_id=' . $id));
 	return count($comments_by_type['comment']);
 } else {
 return $count;
@@ -285,20 +319,21 @@ function discover_widgets_init() {
 }
 if ( ! function_exists( 'discover_posted_on' ) ) :
 /**
- * Prints HTML with meta information for the current post-date/time and author.
- * Create your own discover_posted_on to override in a child theme
- *
- * @since Twenty Eleven 1.0
+ * Prints HTML with meta information for the current post—date/time and author.
  */
 function discover_posted_on() {
-	printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'discover' ),
-		esc_url( get_permalink() ),
-		esc_attr( get_the_time() ),
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'discover' ), get_the_author() ) ),
-		get_the_author()
+	printf( __( '%2$s <span class="meta-sep">by</span> %3$s', 'discover' ),
+		'meta-prep meta-prep-author',
+		sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
+			get_permalink(),
+			esc_attr( get_the_time() ),
+			get_the_date()
+		),
+		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>',
+			get_author_posts_url( get_the_author_meta( 'ID' ) ),
+			sprintf( esc_attr__( 'View all posts by %s', 'discover' ), get_the_author() ),
+			get_the_author()
+		)
 	);
 }
 endif;
@@ -350,19 +385,11 @@ add_filter( 'wp_title', 'discover_filter_wp_title', 10, 3 );
 
 // custom function
 
-function discover_page_menu_args( $args ) {
+function home_page_menu_args( $args ) {
 $args['show_home'] = true;
 return $args;
 }
-add_filter( 'wp_page_menu_args', 'discover_page_menu_args' );
-
-function discover_favicon() {
-	if (of_get_option('favicon_image') != '') {
-	echo '<link rel="shortcut icon" href="'. of_get_option('favicon_image') .'"/>'."\n";
-	}
-}
-
-add_action('wp_head', 'discover_favicon');
+add_filter( 'wp_page_menu_args', 'home_page_menu_args' );
 
 // custom function
 function discover_head_css() {
@@ -596,46 +623,9 @@ function discover_of_styles() {
 }
 add_action('wp_print_styles', 'discover_of_styles');
 
-// WooCommerce
-
-remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
-
-add_action('woocommerce_before_main_content', 'discover_wrapper_start', 10);
-add_action('woocommerce_after_main_content', 'discover_wrapper_end', 10);
-
-function discover_wrapper_start() {
-  echo '	<div id="subhead_container">
-		<div class="row">
-		<div class="twelve columns">
-		<h1><?php the_title(); ?>
-  </h1>
-  </div>
-  </div>
-  </div>
-  <!--content-->
-  <div class="row" id="content_container"> 
-    <!--left col-->
-    <div class="eight columns">
-      <div id="left-col">
-        <div class="post-entry">';
-}
-          
-function discover_wrapper_end() {
-          echo '
-          <div class="clear"></div>
-          ';
-          wp_link_pages( array( 'before' => '' . __( 'Pages:', 'discover' ), 'after' => '' ) );
-          echo ' </div>
-        <!--post-entry end--> 
-      </div>
-      <!--left-col end--> 
-    </div>
-    <!--column end-->';
-    get_sidebar();
-    echo '</div>
-  <!--content end-->';
-}
+/** redirect */
+if ( is_admin() && isset($_GET['activated'] ) && $pagenow ==	"themes.php" )
+	wp_redirect( 'themes.php?page=options-framework');
 
 // include panel file.
 if ( !function_exists( 'optionsframework_init' ) ) {

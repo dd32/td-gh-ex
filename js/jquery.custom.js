@@ -14,12 +14,26 @@ jQuery(document).ready(function() {
   jQuery('ul#nav').superfish({ 
             delay:       0,                            // one second delay on mouseout 
             animation:   {opacity:'show'},  // fade-in and slide-down animation 
-			disableHI: true,
             speed:       'fast'                          // faster animation speed 
         }); 
-}
+} 
+
+ if (jQuery().superfish) {	
+ 
+  jQuery('ul#nav2').superfish({ 
+            delay:       0,                            // one second delay on mouseout 
+            animation:   {opacity:'show'},  // fade-in and slide-down animation 
+            speed:       'medium'                          // faster animation speed 
+        }); 
+} 
 
 selectnav('nav', {
+    nested: true,
+	indent: '-',
+    label: false
+});
+
+selectnav('nav2', {
     nested: true,
 	indent: '-',
     label: false
