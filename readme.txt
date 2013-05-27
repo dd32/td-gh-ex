@@ -106,17 +106,24 @@ The exceptions to this license are as follows:
 * The script holder.js v1.9 is licensed under the Apache License
 * The script modernizr.js is dual licensed under the BSD and MIT licenses
 * The script jquery.iphonecheck.js is copyrighted by Thomas Reynolds, licensed GPL & MIT
-* The script jquery.fancybox.js licensed under Creative Commons Attribution-NonCommercial 3.0 license
-* Icon Set:	IcoMoon - Free -- http://keyamoon.com/icomoon/ License:	CC BY-SA 3.0 -- http://creativecommons.org/licenses/by-sa/3.0/
-* Icon Set:	Broccolidry -- http://dribbble.com/shots/587469-Free-16px-Broccolidryiconsaniconsetitisfullof-icons License: Aribitrary -- http://licence.visualidiot.com/
-* Icon Set:	Iconic -- http://somerandomdude.com/work/iconic/ License:	CC BY-SA 3.0 -- http://creativecommons.org/licenses/by-sa/3.0/us/
-* The image architecture.jpg is free for personal and commercial use. http://www.sxc.hu/photo/1415205
-* The image columns.jpg is free for personal and commercial use. Reference: http://www.sxc.hu/photo/1400012
-* The image laverie.jpg is free for personal and commercial use. Reference: http://www.sxc.hu/photo/1370161
+* The script jquery.fancybox-1.3.4.js is dual licensed under the MIT and GPL licenses
+* Icon Set:	Entypo is licensed under SIL Open-Font License
 
+
+#####################  Image credits #####################
+The image architecture.jpg is free for personal and commercial use. credits : Anita Berghoef, www.anitaberghoef.nl
+The image columns.jpg is free for personal and commercial use. credits : Miguel Saavedra
+The image laverie.jpg is free for personal and commercial use. credits : Philip MacKenzie, http://www.phillmackenzie.co.uk
 
 
 #######################  Changelog ######################
+= 2.0.9 =
+* replaced : jquery fancybox with a GPL compatible version
+* removed : icon set non GPL compatible
+* added : icon sets Genericons and Entypo GPL compatible
+* fixed : image in full width slider are now displayed with CSS properties height:100% et width: auto
+* added : function hooked on wp_head to render the custom CSS
+
 = 2.0.8 =
 * removed : minor issue, the function tc_write_custom_css() was written twice in header.php
 

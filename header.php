@@ -58,9 +58,6 @@
        */
       wp_head();
      global $tc_theme_options ;
-
-     //write the custom css if any
-     tc_write_custom_css();
      
     ?>
   <!-- Favicon -->
