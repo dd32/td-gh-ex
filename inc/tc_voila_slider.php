@@ -46,7 +46,7 @@ if ( ! function_exists( 'tc_get_slider' ) ) :
             <div class="carousel-inner">
                 <div class="item active">
                    <div class="carousel-image">
-                      <img width="1200" height="500" src="<?php echo TC_BASE_URL ?>inc/img/railway.jpg" class="slide wp-post-image" alt="<?php _e( 'Customizr is a clean responsive theme','customizr') ?>">
+                      <img width="1200" height="500" src="<?php echo TC_BASE_URL ?>inc/img/phare.jpg" class="slide wp-post-image" alt="<?php _e( 'Customizr is a clean responsive theme','customizr') ?>">
                     </div>
                     <div class="carousel-caption">
                         <h1><?php _e( 'Customizr is a clean responsive theme','customizr') ?></h1>
@@ -56,7 +56,7 @@ if ( ! function_exists( 'tc_get_slider' ) ) :
                 </div>
               <div class="item">
                  <div class="carousel-image">
-                      <img width="1200" height="500" src="<?php echo TC_BASE_URL ?>inc/img/plane.jpg" class="slide wp-post-image" alt="<?php _e( 'Style your WordPress site live!','customizr') ?>">
+                      <img width="1200" height="500" src="<?php echo TC_BASE_URL ?>inc/img/chevrolet.jpg" class="slide wp-post-image" alt="<?php _e( 'Style your WordPress site live!','customizr') ?>">
                   </div>
                   <div class="carousel-caption">
                       <h1><?php _e( 'Style your WordPress site live!','customizr') ?></h1>
@@ -66,7 +66,7 @@ if ( ! function_exists( 'tc_get_slider' ) ) :
                 </div>
               <div class="item">
                  <div class="carousel-image">
-                  <img width="1200" height="500" src="<?php echo TC_BASE_URL ?>inc/img/lake.jpg" class="slide wp-post-image" alt="<?php _e( 'Create beautiful sliders','customizr') ?>">
+                  <img width="1200" height="500" src="<?php echo TC_BASE_URL ?>inc/img/ampoules.jpg" class="slide wp-post-image" alt="<?php _e( 'Create beautiful sliders','customizr') ?>">
                 </div>
                 <div class="carousel-caption">
                   <h1><?php _e( 'Create beautiful sliders','customizr') ?></h1>

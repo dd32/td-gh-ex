@@ -108,21 +108,19 @@ The exceptions to this license are as follows:
 * The script jquery.iphonecheck.js is copyrighted by Thomas Reynolds, licensed GPL & MIT
 * The script jquery.fancybox-1.3.4.js is dual licensed under the MIT and GPL licenses
 * Icon Set:	Entypo is licensed under SIL Open-Font License
-* The image plane.jpg is a free public picture from Wikimedia, copyright 2010 Stefan Krause (http://commons.wikimedia.org/wiki/File:Ju52_100831.jpg) , and distributed under the terms of the GNU Free Documentation License (http://en.wikipedia.org/wiki/en:GNU_Free_Documentation_License)
-* The image lake.jpg is a free public picture from Wikimedia, copyright 2010 Roland zh (http://commons.wikimedia.org/wiki/File:Ju52_100831.jpg) , and distributed under the terms of the Creative Commons Attribution-Share Alike 3.0 Unported license (http://creativecommons.org/licenses/by-sa/3.0/deed.en)
-* The image railway.jpg is a free public picture from Wikimedia, copyright 2010 Silvio Tanaka (http://commons.wikimedia.org/wiki/File:Ju52_100831.jpg) , and distributed under the terms of the Creative Commons Attribution 2.0 Generic license (http://en.wikipedia.org/wiki/en:Creative_Commons)
+* The image phare.jpg is a free public picture from Wikimedia, copyright 2013 Alf van Beem (http://commons.wikimedia.org/wiki/File:Ca_1941_DAF_%27Rijdende_regenjas%27_pic7.JPG) , and distributed under the terms of the Creative Commons CC0 1.0 Universal Public Domain Dedication (http://creativecommons.org/publicdomain/zero/1.0/deed.en)
+* The image chevrolet.jpg is a free public picture from Wikimedia, copyright 2013 Alf van Beem (http://commons.wikimedia.org/wiki/File:%2755_Chevrolet_ornament.JPG) , and distributed under the terms of the Creative Commons CC0 1.0 Universal Public Domain Dedication (http://creativecommons.org/publicdomain/zero/1.0/deed.en)
+* The image ampoules.jpg is a free public picture from Wikimedia, copyright 2010 Medvedev (http://commons.wikimedia.org/wiki/File:E24_E14_E10.jpg) , and distributed under the terms of the Creative Commons CC0 1.0 Universal Public Domain Dedication (http://creativecommons.org/publicdomain/zero/1.0/deed.en)
 
-
-#####################  Image credits #####################
-The image architecture.jpg is free for personal and commercial use. credits : Anita Berghoef, www.anitaberghoef.nl
-The image columns.jpg is free for personal and commercial use. credits : Miguel Saavedra
-The image laverie.jpg is free for personal and commercial use. credits : Philip MacKenzie, http://www.phillmackenzie.co.uk
 
 
 #######################  Changelog ######################
+= 2.1.1 =
+* fixed : new set of images licensed under Creative Commons CC0 1.0 Universal Public Domain Dedication (GPL Compatible)
+
 = 2.1.0 =
 * fixed : slide was still showing up when 'add to a slider' button was unchecked and a slider selected
-* fixed : new image set GPL compatible
+* fixed : new set of images with compliant licenses
 
 = 2.0.9 =
 * replaced : jquery fancybox with a GPL compatible version
