@@ -108,6 +108,9 @@ The exceptions to this license are as follows:
 * The script jquery.iphonecheck.js is copyrighted by Thomas Reynolds, licensed GPL & MIT
 * The script jquery.fancybox-1.3.4.js is dual licensed under the MIT and GPL licenses
 * Icon Set:	Entypo is licensed under SIL Open-Font License
+* The image plane.jpg is a free public picture from Wikimedia, copyright 2010 Stefan Krause (http://commons.wikimedia.org/wiki/File:Ju52_100831.jpg) , and distributed under the terms of the GNU Free Documentation License (http://en.wikipedia.org/wiki/en:GNU_Free_Documentation_License)
+* The image lake.jpg is a free public picture from Wikimedia, copyright 2010 Roland zh (http://commons.wikimedia.org/wiki/File:Ju52_100831.jpg) , and distributed under the terms of the Creative Commons Attribution-Share Alike 3.0 Unported license (http://creativecommons.org/licenses/by-sa/3.0/deed.en)
+* The image railway.jpg is a free public picture from Wikimedia, copyright 2010 Silvio Tanaka (http://commons.wikimedia.org/wiki/File:Ju52_100831.jpg) , and distributed under the terms of the Creative Commons Attribution 2.0 Generic license (http://en.wikipedia.org/wiki/en:Creative_Commons)
 
 
 #####################  Image credits #####################
@@ -117,6 +120,10 @@ The image laverie.jpg is free for personal and commercial use. credits : Philip 
 
 
 #######################  Changelog ######################
+= 2.1.0 =
+* fixed : slide was still showing up when 'add to a slider' button was unchecked and a slider selected
+* fixed : new image set GPL compatible
+
 = 2.0.9 =
 * replaced : jquery fancybox with a GPL compatible version
 * removed : icon set non GPL compatible

@@ -46,7 +46,7 @@ if ( ! function_exists( 'tc_get_slider' ) ) :
             <div class="carousel-inner">
                 <div class="item active">
                    <div class="carousel-image">
-                      <img width="1170" height="500" src="<?php echo TC_BASE_URL ?>inc/img/laverie.jpg" class="slide wp-post-image" alt="<?php _e( 'Customizr is a clean responsive theme','customizr') ?>">
+                      <img width="1200" height="500" src="<?php echo TC_BASE_URL ?>inc/img/railway.jpg" class="slide wp-post-image" alt="<?php _e( 'Customizr is a clean responsive theme','customizr') ?>">
                     </div>
                     <div class="carousel-caption">
                         <h1><?php _e( 'Customizr is a clean responsive theme','customizr') ?></h1>
@@ -56,7 +56,7 @@ if ( ! function_exists( 'tc_get_slider' ) ) :
                 </div>
               <div class="item">
                  <div class="carousel-image">
-                      <img width="1170" height="500" src="<?php echo TC_BASE_URL ?>inc/img/architecture.jpg" class="slide wp-post-image" alt="<?php _e( 'Style your WordPress site live!','customizr') ?>">
+                      <img width="1200" height="500" src="<?php echo TC_BASE_URL ?>inc/img/plane.jpg" class="slide wp-post-image" alt="<?php _e( 'Style your WordPress site live!','customizr') ?>">
                   </div>
                   <div class="carousel-caption">
                       <h1><?php _e( 'Style your WordPress site live!','customizr') ?></h1>
@@ -66,7 +66,7 @@ if ( ! function_exists( 'tc_get_slider' ) ) :
                 </div>
               <div class="item">
                  <div class="carousel-image">
-                  <img width="1170" height="500" src="<?php echo TC_BASE_URL ?>inc/img/colonnes.jpg" class="slide wp-post-image" alt="<?php _e( 'Create beautiful sliders','customizr') ?>">
+                  <img width="1200" height="500" src="<?php echo TC_BASE_URL ?>inc/img/lake.jpg" class="slide wp-post-image" alt="<?php _e( 'Create beautiful sliders','customizr') ?>">
                 </div>
                 <div class="carousel-caption">
                   <h1><?php _e( 'Create beautiful sliders','customizr') ?></h1>
@@ -106,18 +106,20 @@ if ( ! function_exists( 'tc_get_slider' ) ) :
               <div id="customizr-slider" class="<?php echo $layout_class ?> carousel slide">
                   <div class="carousel-inner">
                     <?php foreach ($slides as $s) { 
-                        $slide_object = get_post($s);
+                        $slide_object   = get_post($s);
+                    
                         //set up variables
-                        $id           = $slide_object -> ID;
-                        $alt          = trim(strip_tags(get_post_meta($id, '_wp_attachment_image_alt', true)));
-                        $title        = esc_attr(get_post_meta( $id, $key = 'slide_title_key', $single = true ));
-                        $text         = esc_textarea(get_post_meta( $id, $key = 'slide_text_key', $single = true ));
-                        $text_color   = esc_attr(get_post_meta( $id, $key = 'slide_color_key', $single = true ));
-                        $button_text  = esc_attr(get_post_meta( $id, $key = 'slide_button_key', $single = true ));
-                        $button_link  = esc_attr(get_post_meta( $id, $key = 'slide_link_key', $single = true ));
+                        $id             = $slide_object -> ID;
+                        $slider_checked = esc_attr(get_post_meta( $id, $key = 'slider_check_key', $single = true ));
+                        $alt            = trim(strip_tags(get_post_meta($id, '_wp_attachment_image_alt', true)));
+                        $title          = esc_attr(get_post_meta( $id, $key = 'slide_title_key', $single = true ));
+                        $text           = esc_textarea(get_post_meta( $id, $key = 'slide_text_key', $single = true ));
+                        $text_color     = esc_attr(get_post_meta( $id, $key = 'slide_color_key', $single = true ));
+                        $button_text    = esc_attr(get_post_meta( $id, $key = 'slide_button_key', $single = true ));
+                        $button_link    = esc_attr(get_post_meta( $id, $key = 'slide_link_key', $single = true ));
 
                         //set the first slide active
-                        $active       = '';
+                        $active         = '';
                         if ($i==0) {$active ='active';}
 
                         //check if $text_color is set and create an html style attribute
@@ -127,26 +129,30 @@ if ( ! function_exists( 'tc_get_slider' ) ) :
                         }
 
                       ?>
-                    <div class="item <?php echo $active; ?>">
-                       <div class="carousel-image <?php echo $img_size ?>">
-                        <?php echo wp_get_attachment_image( $id, $img_size, array('class' => 'slide', 'alt' => $alt ) ); ?>
-                       </div>
-                        <?php if ($title != null || $text != null || $button_text != null ) : ?>
-                          <div class="carousel-caption">
-                            <?php if($title != null) : ?>
-                              <h1 <?php echo $color_style ?>><?php echo $title ?></h1>
+
+                      <?php if (isset($slider_checked) && $slider_checked == 1) : ?>
+                        <div class="item <?php echo $active; ?>">
+                           <div class="carousel-image <?php echo $img_size ?>">
+                            <?php echo wp_get_attachment_image( $id, $img_size, array('class' => 'slide', 'alt' => $alt ) ); ?>
+                           </div>
+                            <?php if ($title != null || $text != null || $button_text != null ) : ?>
+                              <div class="carousel-caption">
+                                <?php if($title != null) : ?>
+                                  <h1 <?php echo $color_style ?>><?php echo $title ?></h1>
+                                <?php endif; ?>
+                                <?php if($text != null) : ?>
+                                  <p <?php echo $color_style ?> class="lead"><?php echo $text ?></p>
+                                <?php endif; ?>
+                                <?php if($button_text != null && $button_link != null) : ?>
+                                  <a class="btn btn-large btn-primary" href="<?php echo get_permalink($button_link); ?>"><?php echo $button_text; ?></a>
+                                <?php elseif($button_text != null ) : ?>
+                                 <a class="btn btn-large btn-primary" href="#"><?php echo $button_text;?></a>
+                               <?php endif; ?>
+                              </div>
                             <?php endif; ?>
-                            <?php if($text != null) : ?>
-                              <p <?php echo $color_style ?> class="lead"><?php echo $text ?></p>
-                            <?php endif; ?>
-                            <?php if($button_text != null && $button_link != null) : ?>
-                              <a class="btn btn-large btn-primary" href="<?php echo get_permalink($button_link); ?>"><?php echo $button_text; ?></a>
-                            <?php elseif($button_text != null ) : ?>
-                             <a class="btn btn-large btn-primary" href="#"><?php echo $button_text;?></a>
-                           <?php endif; ?>
-                          </div>
-                        <?php endif; ?>
-                    </div>
+                        </div>
+                      <?php endif; //check if $slider_checked ?>
+
                     <?php
                      $i++;
                      }//end slides loop
