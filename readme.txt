@@ -115,6 +115,9 @@ The exceptions to this license are as follows:
 
 
 #######################  Changelog ######################
+= 2.1.2 =
+* fixed : new screenshot.png
+
 = 2.1.1 =
 * fixed : new set of images licensed under Creative Commons CC0 1.0 Universal Public Domain Dedication (GPL Compatible)
 
