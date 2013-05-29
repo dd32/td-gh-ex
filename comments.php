@@ -14,7 +14,7 @@
 		die ('Please do not load this page directly. Thanks!');
 
 	if ( post_password_required() ) { ?>
-		<p class="nocomments"><?php _e('This post is password protected. Enter the password to view comments.', 'icefit'); ?></p>
+		<p class="nocomments"><?php _e('This post is password protected. Enter the password to view comments.', 'boldr'); ?></p>
 	<?php
 		return;
 	}
@@ -25,16 +25,20 @@
 									number_format_i18n( get_comments_number() ),  get_the_title() ); ?></h3>
 
 	<ol class="commentlist">
-	<?php wp_list_comments( array('avatar_size' => 64 ) );?>
+	<?php wp_list_comments( array(
+							'avatar_size' => 64,
+							'reply_text'=>'<div class="reply-button"><span>'.__('Reply', 'boldr').'</span></div>',
+							)
+						);?>
 	</ol>
 
-	<?php if (icefit_page_has_comments_nav() ): ?>
+	<?php if (boldr_page_has_comments_nav() ): ?>
 	<div class="comments_nav">
-		<?php if ( icefit_page_has_previous_comments_link() ) : ?>
-		<div class="previous"><?php previous_comments_link( __('Older comments', 'icefit') ) ?></div>
+		<?php if ( boldr_page_has_previous_comments_link() ) : ?>
+		<div class="previous"><?php previous_comments_link( __('Older comments', 'boldr') ) ?></div>
 		<?php endif; ?>
-		<?php if ( icefit_page_has_next_comments_link() ) : ?>
-		<div class="next"><?php next_comments_link( __('Newer comments', 'icefit') ) ?></div>
+		<?php if ( boldr_page_has_next_comments_link() ) : ?>
+		<div class="next"><?php next_comments_link( __('Newer comments', 'boldr') ) ?></div>
 		<?php endif; ?>
 	</div>
 	<?php endif; ?>
@@ -46,7 +50,7 @@
 
 	 <?php else : // comments are closed ?>
 		<!-- If comments are closed. -->
-		<p class="nocomments"><?php _e('Comments are closed.', 'icefit'); ?></p>
+		<p class="nocomments"><?php _e('Comments are closed.', 'boldr'); ?></p>
 
 	<?php endif; ?>
 <?php endif; ?>

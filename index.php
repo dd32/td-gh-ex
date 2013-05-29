@@ -10,83 +10,36 @@
  */
 ?>
 
-<?php get_header(); ?>
+<?php get_header();
 
+	if ( get_custom_header()->url ) :
+		if (	( is_front_page() && boldr_get_option('home_header_image') == 'On' ) ||
+				( !is_front_page() && boldr_get_option('blog_header_image') == 'On' )	):
 
-<?php 	// Check if slider is activated for blog index
-	if ( icefit_get_option('blog_slider') == "On" ):
-		// Prepare arguments for WP_query: query slides
-		$args = array( 'post_type' => 'icf_slides' );
-		// Check slides category selection
-		$slides_cat = icefit_get_option('blog_slides_cat');
-		// If a category is selected, filter the slides 
-		if ($slides_cat != 'All Slides') $args['icf-slides-category'] = $slides_cat;		
-		// Begin slider loop
-		$loop = new WP_Query( $args );
-		if($loop->have_posts()):
-		?>
-	<div id="slider-wrap" class="flexslider-container container">
-		<div class="flexslider">
-			<ul class="slides">
-		
-			<?php while( $loop->have_posts() ) : $loop->the_post(); ?>
-			<?php if ( has_post_thumbnail() ): ?>
-		
-				<li>
-				<?php
-					$slide = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
-					$caption = get_post_meta($post->ID, 'icf_slides_caption', true);
-					$link = get_post_meta($post->ID, 'icf_slides_link', true);
-					if ($link) {
-						?><a href="<?php echo $link; ?>">
-						<img class="scale-with-grid" src="<?php echo $slide; ?>" alt="" /></a><?php				
-					} else {
-						?><img class="scale-with-grid" src="<?php echo $slide; ?>" alt="" /><?php
-					}
-				?>
-				<?php if($caption): ?>
-				<div class="flex-caption"><?php echo $caption; ?></div>
-				<?php endif; ?>
-				</li>
-
-			<?php endif; ?>
-			<?php endwhile; ?>
-
-			</ul>
-		</div>
+?>
+	<div id="header-image" class="container">
+		<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
 	</div>
-	<!-- End Slider -->
 	
-<?php
-	endif; // End slider loop
-	wp_reset_postdata(); 
-	endif; // End slider code
+<?php endif;
+	endif;
 ?>
 
 	<div id="main-content" class="container">
 
-		<?php $blog_sidebar_side = strtolower( icefit_get_option('blog_sidebar_side') );
-		if ($blog_sidebar_side == 'right' || $blog_sidebar_side == '') {
-			$blog_sidebar_side = 'right';
-			$page_container_side = 'left';
-		} else {
-			$page_container_side = 'right';
-		}
-		?>
-
 		<?php /* SEARCH CONDITIONAL TITLE */ ?>
 		<?php if ( is_search() ) :	?>
-		<h1 class="page-title"><?php _e('Search Results for ', 'icefit'); ?>"<?php the_search_query() ?>"</h1>
+		<h1 class="page-title"><?php _e('Search Results for ', 'boldr'); ?>"<?php the_search_query() ?>"</h1>
 		<?php endif; ?>
 		
 		<?php /* TAG CONDITIONAL TITLE */ ?>
 		<?php if ( is_tag() ) :	?>			
-		<h1 class="page-title"><?php _e('Tag: ', 'icefit'); single_tag_title(); ?></h1>
+		<h1 class="page-title"><?php _e('Tag: ', 'boldr'); single_tag_title(); ?></h1>
 		<?php endif; ?>
 					
 		<?php /* CATEGORY CONDITIONAL TITLE */ ?>
 		<?php if ( is_category() ) : ?>			
-		<h1 class="page-title"><?php _e('Category: ', 'icefit'); single_cat_title(); ?></h1>
+		<h1 class="page-title"><?php _e('Category: ', 'boldr'); single_cat_title(); ?></h1>
 		<?php endif; ?>	
 
 		<?php /* DEFAULT CONDITIONAL TITLE */ ?>
@@ -94,7 +47,7 @@
 		<h1 class="page-title"><?php echo get_the_title(get_option('page_for_posts')); ?></h1>
 		<?php }	/* is_front_page endif */ ?>
 
-		<div id="page-container" class="<?php echo $page_container_side; ?> with-sidebar">
+		<div id="page-container" class="left with-sidebar">
 
 		<?php if(have_posts()) : ?>
 		<?php while(have_posts()) : the_post(); ?>
@@ -109,17 +62,16 @@
 					</a></span>
 					
 					
-					<?php if (comments_open() || get_comments_number()!=0 ): ?>
+					<?php if ( ( comments_open() || get_comments_number()!=0 ) && !post_password_required() ): ?>
 					<span class="meta-comments">
-						<?php comments_popup_link( __( 'No', 'icefit' ), __( '1', 'icefit' ), __( '%', 'icefit' ), 'comments-count', '' ); ?>
-						<?php comments_popup_link( __( 'Comment', 'icefit' ), __( 'Comment', 'icefit' ), __( 'Comments', 'icefit' ), '', __('Comments Off', 'icefit') ); ?>
+						<?php comments_popup_link( __( 'No', 'boldr' ), __( '1', 'boldr' ), __( '%', 'boldr' ), 'comments-count', '' ); ?>
+						<?php comments_popup_link( __( 'Comment', 'boldr' ), __( 'Comment', 'boldr' ), __( 'Comments', 'boldr' ), '', __('Comments Off', 'boldr') ); ?>
 					</span>
 					<?php endif; ?>
-					
-						
-					<span class="meta-author"><span><?php _e('by ', 'icefit'); the_author(); ?></span></span>
 
-					<?php edit_post_link(__('Edit', 'icefit'), '<span class="editlink">', '</span>'); ?>
+					<span class="meta-author"><span><?php _e('by ', 'boldr'); the_author(); ?></span></span>
+
+					<?php edit_post_link(__('Edit', 'boldr'), '<span class="editlink">', '</span>'); ?>
 				</div>
 
 				<div class="post-contents">
@@ -134,15 +86,13 @@
 					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a>
 					</h3>
 					<?php if ( 'post' == get_post_type() ):  // Do not display this for pages ?>
-					<div class="post-category"><?php _e('Posted in', 'icefit'); ?> <?php the_category(', '); ?></div>
+					<div class="post-category"><?php _e('Posted in', 'boldr'); ?> <?php the_category(', '); ?></div>
 					<?php endif; ?>
 					<div class="post-content">
-					<?php $blog_index_content = icefit_get_option('blog_index_content');
-					if ($blog_index_content == "Default Excerpt" || $blog_index_content == "Icefit Improved Excerpt") {
-						the_excerpt();
-						} else {
-						the_content();
-						} ?>
+					<?php if ( get_post_format() || post_password_required() ) the_content();
+						else the_excerpt();
+					if (has_tag()) { the_tags('<br class="clear" /><div class="tags"><span class="the-tags">Tags:</span>', '', '</div>'); } ?>
+
 					</div>
 				</div>
 				<br class="clear" />
@@ -154,8 +104,8 @@
 		<?php endwhile; ?>
 		<?php else : ?>
 
-			<h2><?php _e('Not Found', 'icefit'); ?></h2>
-			<p><?php _e('What you are looking for isn\'t here...', 'icefit'); ?></p>
+			<h2><?php _e('Not Found', 'boldr'); ?></h2>
+			<p><?php _e('What you are looking for isn\'t here...', 'boldr'); ?></p>
 
 		<?php endif; ?>
 
@@ -171,7 +121,7 @@
 		</div>
 		<!-- End page container -->
 
-		<div id="sidebar-container" class="<?php echo $blog_sidebar_side; ?>">
+		<div id="sidebar-container" class="right">
 			<?php get_sidebar(); ?>
 		</div>		
 		<!-- End sidebar -->

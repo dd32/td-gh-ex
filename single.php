@@ -10,20 +10,22 @@
  */
 ?>
 
-<?php get_header(); ?>
+<?php get_header();
+
+	if ( get_custom_header()->url ) :
+		if ( boldr_get_option('single_header_image') == 'On' ):
+
+?>
+	<div id="header-image" class="container">
+		<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
+	</div>
+	
+<?php endif;
+	endif; ?>
 
 	<div class="container" id="main-content">
 
-		<?php $blog_sidebar_side = strtolower( icefit_get_option('blog_sidebar_side') );
-		if ($blog_sidebar_side == 'right' || $blog_sidebar_side == '') {
-			$blog_sidebar_side = 'right';
-			$page_container_side = 'left';
-		} else {
-			$page_container_side = 'right';
-		}
-		?>
-
-		<div id="page-container" class="<?php echo $page_container_side; ?> with-sidebar">
+		<div id="page-container" class="left with-sidebar">
 
 			<?php if(have_posts()) : ?>
 			<?php while(have_posts()) : the_post(); ?>
@@ -37,24 +39,22 @@
 						<span class="year"><?php the_time('Y'); ?></span>
 					</a></span>
 
-					<?php if (comments_open() || get_comments_number()!=0 ): ?>
+					<?php if ( ( comments_open() || get_comments_number()!=0 ) && !post_password_required() ): ?>
 					<span class="meta-comments">
-						<?php comments_popup_link( __( 'No', 'icefit' ), __( '1', 'icefit' ), __( '%', 'icefit' ), 'comments-count', '' ); ?>
-						<?php comments_popup_link( __( 'Comment', 'icefit' ), __( 'Comment', 'icefit' ), __( 'Comments', 'icefit' ), '', __('Comments Off', 'icefit') ); ?>
+						<?php comments_popup_link( __( 'No', 'boldr' ), __( '1', 'boldr' ), __( '%', 'boldr' ), 'comments-count', '' ); ?>
+						<?php comments_popup_link( __( 'Comment', 'boldr' ), __( 'Comment', 'boldr' ), __( 'Comments', 'boldr' ), '', __('Comments Off', 'boldr') ); ?>
 					</span>
 					<?php endif; ?>
 						
-					<span class="meta-author"><span><?php _e('by ', 'icefit'); the_author(); ?></span></span>
+					<span class="meta-author"><span><?php _e('by ', 'boldr'); the_author(); ?></span></span>
 
-					<?php edit_post_link(__('Edit', 'icefit'), '<span class="editlink">', '</span>'); ?>
+					<?php edit_post_link(__('Edit', 'boldr'), '<span class="editlink">', '</span>'); ?>
 					
 				</div>
 
 				<?php if (has_post_thumbnail()) : ?>
 				<div class="thumbnail">
-					<a rel="prettyPhoto" href="<?php	$image_id = get_post_thumbnail_id();
-									$image_url = wp_get_attachment_image_src($image_id,'large', true);
-									echo $image_url[0];  ?>">
+					<a href="<?php get_permalink() ?>">
 					<?php the_post_thumbnail('large', array('class' => 'scale-with-grid')); ?>
 					</a>
 				</div>
@@ -64,18 +64,18 @@
 					<h3 class="entry-title">
 					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a>
 					</h3>
-					<div class="post-category"><?php _e('Posted in', 'icefit'); ?> <?php the_category(', '); ?></div>
+					<div class="post-category"><?php _e('Posted in', 'boldr'); ?> <?php the_category(', '); ?></div>
 					<?php the_content() ?>
 					
 					<div class="clear"></div>
 					<?php $args = array(
-						'before'           => '<br class="clear" /><div class="paged_nav">' . __('Pages:', 'icefit'),
+						'before'           => '<br class="clear" /><div class="paged_nav">' . __('Pages:', 'boldr'),
 						'after'            => '</div>',
 						'link_before'      => '<span>',
 						'link_after'       => '</span>',
 						'next_or_number'   => 'number',
-						'nextpagelink'     => __('Next page', 'icefit'),
-						'previouspagelink' => __('Previous page', 'icefit'),
+						'nextpagelink'     => __('Next page', 'boldr'),
+						'previouspagelink' => __('Previous page', 'boldr'),
 						'pagelink'         => '%',
 						'echo'             => 1
 					);
@@ -125,15 +125,15 @@
 
 			<?php else : ?>
 		
-			<h2><?php _e('Not Found', 'icefit'); ?></h2>
-			<p><?php _e('What you are looking for isn\'t here...', 'icefit'); ?></p>
+			<h2><?php _e('Not Found', 'boldr'); ?></h2>
+			<p><?php _e('What you are looking for isn\'t here...', 'boldr'); ?></p>
 
 			<?php endif; ?>
 
 		</div>
 		<!-- End page container -->
 		
-		<div id="sidebar-container" class="<?php echo $blog_sidebar_side; ?>">
+		<div id="sidebar-container" class="right">
 			<?php get_sidebar(); ?>
 		</div>		
 		<!-- End sidebar column -->
