@@ -39,8 +39,7 @@ add_action('admin_menu', 'boldr_settings_add_admin');
 function boldr_settings_admin_scripts() {
 	wp_register_style( 'boldr_admin_css', get_template_directory_uri() .'/functions/icefit-options/style.css');
 	wp_enqueue_style( 'boldr_admin_css' );
-	wp_enqueue_style( 'wp-color-picker' );
-	wp_enqueue_script( 'boldr_admin_js', get_template_directory_uri() . '/functions/icefit-options/functions.js', array( 'wp-color-picker' ), false, true );
+	wp_enqueue_script( 'boldr_admin_js', get_template_directory_uri() . '/functions/icefit-options/functions.js', array( 'jquery' ), false, true );
 }
 
 // Generates the settings panel's menu
@@ -48,10 +47,6 @@ function boldr_settings_machine_menu($options) {
 	$output = "";
 	foreach ($options as $arg) {
 	
-		$ids = array ('custom_css', 'page2', 'unlimited_sidebar', 'endpage2', 'headings_font', 'socialmedia', 'facebook_url', 'twitter_url', 'googleplus_url', 'linkedin_url', 'instagram_url', 'pinterest_url', 'tumblr_url', 'stumbleupon_url', 'dribbble_url', 'behance_url', 'deviantart_url', 'flickr_url', 'youtube_url', 'vimeo_url', 'yelp_url', 'rss_url', 'endpage4' );
-		if (isset($arg['id'])) {
-			if (in_array($arg['id'], $ids)) continue;
-		}
 		if ( $arg['type'] == "start_menu" )
 		{
 			$output .= '<li class="icefit-admin-panel-menu-li '.$arg['id'].'"><a class="icefit-admin-panel-menu-link '.$arg['icon'].'" href="#'.$arg['name'].'" id="icefit-admin-panel-menu-'.$arg['id'].'"><span></span>'.$arg['name'].'</a></li>'."\n";
@@ -67,10 +62,6 @@ function boldr_settings_machine($options) {
 	$output = "";
 	foreach ($options as $arg) {
 
-		$ids = array ('custom_css', 'page2', 'unlimited_sidebar', 'endpage2', 'headings_font', 'socialmedia', 'facebook_url', 'twitter_url', 'googleplus_url', 'linkedin_url', 'instagram_url', 'pinterest_url', 'tumblr_url', 'stumbleupon_url', 'dribbble_url', 'behance_url', 'deviantart_url', 'flickr_url', 'youtube_url', 'vimeo_url', 'yelp_url', 'rss_url', 'endpage4' );
-		if (isset($arg['id'])) {
-			if (in_array($arg['id'], $ids)) continue;
-		}
 		if ( is_array($arg) && is_array($boldr_settings) ) {
 			if ( array_key_exists('id', $arg) ) {
 				if ( array_key_exists($arg['id'], $boldr_settings) ) $val = stripslashes($boldr_settings[$arg['id']]);
