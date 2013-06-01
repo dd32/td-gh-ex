@@ -1,13 +1,20 @@
-<?php
+<?php 
 /**
- * The template for displaying image attachments.
+ * Image Template
  *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package WordPress
- * @subpackage Twenty_Twelve
- * @since Twenty Twelve 1.0
+ * @file           image.php
+ * @package        Appointment
+ * @author         Priyanshu Mittal,Shahid Mansuri and Akhilesh Nagar
+ * @copyright      2013 Appointpress
+ * @license        license.txt
+ * @version        Release: 1.1
+ * @filesource     wp-content/themes/appoinment/image.php
  */
+
+
+?>
+
 
 get_header(); ?>
 

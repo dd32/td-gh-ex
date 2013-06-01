@@ -3,14 +3,15 @@
  * Theme URI: http://www.appointpress.com/theme/appointment
  * Description: A theme for all type of business that uses multiple nav menus, several sidebars,Featured Slider and Custom post layouts. 
  It has a pixel-perfect design that's great for any blogger who wants a new look for their site.
- * Version: 1.1
- * Author: Priyanshu Mittal,Shahid Mansuri and Akhilesh Nagar
- * Tags: orange,white,full-width-template, threaded-comments, microformats, translation-ready, rtl-language-support, two-columns,  right-sidebar, fixed-width, sticky-post, custom-background,custom-menu,post-formats
+ * Version: 1.2
+ * Author: Priyanshu Mittal,Shahid Mansuri,Vibhore Purande and Akhilesh Nagar
+ * Tags: orange,white,full-width-template, threaded-comments, microformats, translation-ready, two-columns,  right-sidebar, fixed-width, sticky-post, custom-background,custom-menu
  * License: GNU General Public License v2.0
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
- *
- * Copyright (c) 2013 appointpress.  All rights reserved.
+ * Appointment is distributed under the terms of the GNU GPL
+ * Copyright (c) 2013 appointpress.
  * http://www.appointpress.com
+ * Text Domain: appointment
  */
 
 html
@@ -298,6 +299,7 @@ box-shadow:         2px 2px 3px rgba(50, 50, 50, 0.5);
 	background-image:      -o-linear-gradient(top, #fcfcfd, #f7f8f9);		 
 	-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;
 }
+
 .search_box input
 {	width:228px; float:left; border:0px; background:none; padding-left:10px; line-height:33px; height:33px; font-family: 'montserratregular'; color:#878686; font-size:11px;
 	text-transform:uppercase; 

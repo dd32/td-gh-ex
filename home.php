@@ -1,33 +1,19 @@
-<?php  
+<?php
 /**
  * Blog Template
- * @file           blog.php
+ *
+	@file             home.php
  * @package        Appointment
  * @author         Priyanshu Mittal,Shahid Mansuri and Akhilesh Nagar
  * @copyright      2013 Appointpress
  * @license        license.txt
  * @version        Release: 1.1
- * @filesource     wp-content/themes/appoinment/blog.php
- */
-
+ * @filesource     wp-content/themes/appoinment/home.php
+*/ 
 ?>
-<?php get_header(); ?>
-
-	
-    <div class="inner_top_mn">
-		<div class="page_wi">			
-			<h2>
-				<?php bloginfo('title')?><br>
-				<span><?php bloginfo('description')?></span>	
-			</h2>
-			<div class="search_box">			 
-               <form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-                <input type="text"  name="s"  placeholder="<?php esc_attr_e( 'Search', 'appointment' ); ?>" />
-		        <input type="submit" class="search_btn" name="submit"  value="" />
-			   </form>          
-		   </div>
-		</div>
-	</div>
+<?php get_header();
+ ?>
+<?php get_template_part('index','slider'); ?>
     </header>
     
     <section>

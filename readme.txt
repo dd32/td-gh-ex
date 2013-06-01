@@ -57,6 +57,14 @@ Support
 Do you enjoy this theme? Send your ideas - issues - wishes at http://www.appointment.com/demo/ . Thank you!
 
 ============================Change Log================================
+@version 1.2
+1. 404.php tempalte added
+2. Front Page issue resolved
+3.Removed Theme URI
+4. All scripts enqueued thru wp_enqueue_styles/wp_enqueue_scripts
+5. Support for translation-ready.
+6.Added basic child theme support.
+
 @version 1.1
 1. Custom Post Types removed from the Theme
 2. Services section removed as they are implamented by Custom Post Type.

@@ -1,3 +1,22 @@
+<?php 
+/**
+ * Archive Template
+ *
+ *
+ * @file           archive.php
+ * @package        Appointment
+ * @author         Priyanshu Mittal,Shahid Mansuri and Akhilesh Nagar
+ * @copyright      2013 Appointpress
+ * @license        license.txt
+ * @version        Release: 1.1
+ * @filesource     wp-content/themes/appoinment/archive.php
+ */
+
+
+?>
+
+
+
 <?php get_header();?>
   <div class="inner_top_mn">
 		<div class="page_wi">			

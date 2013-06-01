@@ -1,11 +1,15 @@
 <?php
 /**
- * The template for displaying Search Results pages.
+ * Search Template
  *
- * @package WordPress
- * @subpackage Twenty_Eleven
- * @since Twenty Eleven 1.0
- */
+ @file             search.php
+ * @package        Appointment
+ * @author         Priyanshu Mittal,Shahid Mansuri and Akhilesh Nagar
+ * @copyright      2013 Appointpress
+ * @license        license.txt
+ * @version        Release: 1.1
+ * @filesource     wp-content/themes/appoinment/search.php
+*/ 
 
 get_header(); ?>
 
@@ -17,7 +21,7 @@ get_header(); ?>
 			</h2>
 			<div class="search_box">			 
                <form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-                <input type="text"  name="s"  placeholder="<?php esc_attr_e( 'Search', 'appointment' ); ?>" />
+                <input type="text"  name="s"  placeholder="<?php _e( 'Search', 'appointment' ); ?>" />
 		        <input type="submit" class="search_btn" name="submit"  value="" />
 			   </form>          
 		   </div>
@@ -34,7 +38,7 @@ get_header(); ?>
 
 			
                 
-					<h2><?php printf( __( 'Search Results for: %s', 'appointment' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
+					<h2><?php printf( __( 'Search Results for:%s', 'appointment' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
 			
                   <?php if(wp_link_pages(array('echo'=>0))):?>
                     <div class="pagination_blog"><ul class="page-numbers"><?php 

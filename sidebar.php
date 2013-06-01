@@ -1,4 +1,16 @@
-
+<?php
+/**
+ * Sidebar Template
+ *
+ @file            sidebar.php
+ * @package        Appointment
+ * @author         Priyanshu Mittal,Shahid Mansuri and Akhilesh Nagar
+ * @copyright      2013 Appointpress
+ * @license        license.txt
+ * @version        Release: 1.1
+ * @filesource     wp-content/themes/appoinment/sidebar.php
+*/ 
+?>
  
   <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar-primary') ) : ?>     
 						

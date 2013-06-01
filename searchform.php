@@ -1,11 +1,16 @@
 <?php
 /**
- * The template for displaying search forms in appointment
+ * Search-form Template
  *
- * @package WordPress
- * @subpackage Twenty_Eleven
- * @since Twenty Eleven 1.0
- */
+ @file             searchform.php
+ * @package        Appointment
+ * @author         Priyanshu Mittal,Shahid Mansuri and Akhilesh Nagar
+ * @copyright      2013 Appointpress
+ * @license        license.txt
+ * @version        Release: 1.1
+ * @filesource     wp-content/themes/appoinment/searchform.php
+*/ 
+
 ?>
 	<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 		

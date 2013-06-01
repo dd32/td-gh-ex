@@ -1,4 +1,17 @@
 <?php 
+/**
+ * Theme's Functions and Definitions
+ *
+ *
+ * @file           functions.php
+ * @package        Appointment
+ * @author         Priyanshu Mittal,Shahid Mansuri and Akhilesh Nagar
+ * @copyright      2013 Appointpress
+ * @license        license.txt
+ * @version        Release: 1.1
+ * @filesource     wp-content/themes/appoinment/functions.php
+ */
+
 
 add_action('add_meta_boxes','add_my_meta');
 add_action( 'save_post', 'myplugin_save_postdata' );
@@ -87,6 +100,7 @@ if ( function_exists( 'add_theme_support' ) )
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'custom-background' );
+		add_theme_support('custom-header');
 		// Add support for a variety of post formats
 	    add_theme_support( 'post-formats', array( 'aside', 'link', 'gallery', 'status', 'quote', 'image','chat','audio','video' ) );
 }
@@ -100,15 +114,22 @@ function appointpress_enqueue_script() {
    wp_enqueue_script('jquery');
    wp_enqueue_script('jquery.nivo.slider.pack', get_template_directory_uri('template_directory').'/js/jquery.nivo.slider.pack.js');
    wp_enqueue_script('custom_nivo_slider',get_template_directory_uri().'/js/jquery_nivo_slider.php');
-    wp_enqueue_script('redify-optionpanal-jquery',get_template_directory_uri('template_directory').'/js/redify-optionpanal-jquery.js',array('farbtastic','jquery-ui-tabs','jquery-ui-sortable'));
-
+    
 
    wp_enqueue_style('nivo-slider', get_template_directory_uri('template_directory').'/css/nivo-slider.css');
    wp_enqueue_style('style_nivo_support', get_template_directory_uri('template_directory').'/css/style_nivo_support.css');
    wp_enqueue_style('default', get_template_directory_uri('template_directory').'/css/default.css');
- 
+	wp_enqueue_style('font',get_template_directory_uri('template_directory').'/css/font/font.css');
 
 }
+ 
+ add_action('after_setup_theme', 'my_theme_setup');
+function my_theme_setup(){
+    load_theme_textdomain('appointment', get_template_directory() . '/languages');
+}
+ 
+ 
+ 
  
  //code for the custom menus....
  add_action( 'init', 'register_my_menus' );
@@ -176,6 +197,9 @@ register_sidebar( array(
 }	                     
 add_action( 'widgets_init', 'appointpres_widgets_init' );
 
+/* Make redify available for translation.*/
+	load_theme_textdomain( 'appointment', get_template_directory() . '/languages' );
+
 /*Post date show*/
 if ( ! function_exists( 'appointment_posted_on' ) ) :
 function appointment_posted_on() {
@@ -242,4 +266,55 @@ $leave_reply = $data['translation_reply_to_coment'] ? $data['translation_reply_t
 }
 endif;
 
+/* Static Front Page Settings*/
+
+$appointment_options = appointment_get_options();
+
+/**
+ * Appoinment Theme option defaults */
+
+function appointment_get_options() {
+  // Globalize the variable that holds the Theme options
+  global $appointment_options;
+  // Parse array of option defaults against user-configured Theme options
+  $appointment_options = wp_parse_args( get_option( 'appointment_theme_options', array() ), appointment_get_option_defaults() );
+  // Return parsed args array
+  return $appointment_options;
+}
+function appointment_get_option_defaults() {
+  $defaults = array(
+    'front_page' => 0,
+  );
+  return apply_filters( 'appointment_option_defaults', $defaults );
+}
+ 
+ add_action('after_setup_theme', 'appointment_setup');
+
+if (!function_exists('appointment_setup')):
+
+    function appointment_setup() {
+	   $appointment_options = get_option( 'appointment_theme_options' );
+		//print_r($appointment_options);
+		if( $appointment_options && isset( $_GET['activated'] ) ) {
+		
+			// If front_page is not in theme option previously then set it.
+			if( !isset( $appointment_options['front_page'] )) {
+			
+				// Get template of page which is set as static front page
+				$template = get_post_meta( get_option( 'page_on_front' ), '_wp_page_template', true );
+				
+				// If static front page template is set to default then set front page toggle of theme option to 1
+				if( 'page' == get_option( 'show_on_front' ) && $template == 'default' ) {
+					$appointment_options['front_page'] = 0;
+				}
+				else {
+					$appointment_options['front_page'] = 1;
+				}
+				update_option( 'appointment_theme_options', $appointment_options );
+			}
+		}
+    }
+
+ endif;
+ 
 ?>

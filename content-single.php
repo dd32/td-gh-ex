@@ -1,11 +1,18 @@
-<?php
+<?php 
 /**
- * The template for displaying content in the single.php template
+ * Content-Single  Template
  *
- * @package WordPress
- * @subpackage Twenty_Eleven
- * @since Twenty Eleven 1.0
+ *
+ * @file           content-single .php
+ * @package        Appointment
+ * @author         Priyanshu Mittal,Shahid Mansuri and Akhilesh Nagar
+ * @copyright      2013 Appointpress
+ * @license        license.txt
+ * @version        Release: 1.1
+ * @filesource     wp-content/themes/appoinment/content-single.php
  */
+
+
 ?>
  <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>> </div>
 		           <div class="blog_row_mn">

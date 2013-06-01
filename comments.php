@@ -1,16 +1,19 @@
-<?php
+
+<?php 
 /**
- * The template for displaying Comments.
+ * Comments Template
  *
- * The area of the page that contains both current comments
- * and the comment form. The actual display of comments is
- * handled by a callback to appointpress_comment which is
- * located in the functions.php file.
  *
- * @package WordPress
- * @subpackage appointment
- * @since appointment
+ * @file           comments.php
+ * @package        Appointment
+ * @author         Priyanshu Mittal,Shahid Mansuri and Akhilesh Nagar
+ * @copyright      2013 Appointpress
+ * @license        license.txt
+ * @version        Release: 1.1
+ * @filesource     wp-content/themes/appoinment/comments.php
  */
+
+
 ?>
 		
 	<?php if ( post_password_required() ) : ?>
@@ -83,7 +86,7 @@
      
 		 
         
-        'comment_field' => '<p class="comment-form-comment"> <h2><label for="comment">' . _x( 'Leave a Comment', 'noune','appointment' ) . '</label></h2><br /><textarea id="comment" name="comment" aria-required="true" placeholder="Love to Hear from you."></textarea></p>',
+        'comment_field' => '<p class="comment-form-comment"> <h2><label for="comment">' . _e( 'Leave a Comment','appointment' ) . '</label></h2><br /><textarea id="comment" name="comment" aria-required="true" placeholder="Love to Hear from you."></textarea></p>',
 		'logged_in_as' => '<p class="logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( get_permalink() ) ) . '</p>',
 		
 );

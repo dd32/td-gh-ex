@@ -1,3 +1,20 @@
+<?php 
+/**
+ * Content-Image  Template
+ *
+ *
+ * @file           content-image.php
+ * @package        Appointment
+ * @author         Priyanshu Mittal,Shahid Mansuri and Akhilesh Nagar
+ * @copyright      2013 Appointpress
+ * @license        license.txt
+ * @version        Release: 1.1
+ * @filesource     wp-content/themes/appoinment/content-image.php
+ */
+
+
+?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 <div class="blog_row_mn">
          	
@@ -29,7 +46,7 @@
  <div class="blog_bot_mn">
 						
 						<span> <?php the_tags('<b>Tags:</b>','');?> </span>
-						<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'appointment' ), the_title_attribute( 'echo=0' ) ); ?>">Read More</a>
+						<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'appointment' ), the_title_attribute( 'echo=0' ) ); ?>"><?php  __('Read More','appointment'); ?></a>
 					</div><!--blog_bot_mn-->
 </div>
 </article><!-- #post-<?php the_ID(); ?> -->

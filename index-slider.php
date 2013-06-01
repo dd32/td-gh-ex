@@ -1,3 +1,21 @@
+<?php 
+/**
+ * Index Template
+ *
+ *
+ * @file           index-slider.php
+ * @package        Appointment
+ * @author         Priyanshu Mittal,Shahid Mansuri and Akhilesh Nagar
+ * @copyright      2013 Appointpress
+ * @license        license.txt
+ * @version        Release: 1.1
+ * @filesource     wp-content/themes/appoinment/index-slider.php
+ */
+
+
+?>
+
+
 <div class="banner">		
 		<div class="ind_slider_newbg">
 			<div class="slider-wrapper theme-default">
@@ -10,12 +28,14 @@
 					
 					
 				$query = new WP_Query( array( 'post_type' => 'post') ); 
+						/*echo "<pre>";
+						print_r ($query);*/
 						$c=0;
 					while($query->have_posts() ){
 							$query->the_post();
 								$meta_image= get_post_meta( get_the_ID(), '_meta_image', true );
 								$meta_caption= get_post_meta( get_the_ID(), '_meta_caption', true );
-								
+							
 								if($meta_image != '' || $meta_caption != ''){
 								$images[$c]=$meta_image;
 								$captions[$c]=$meta_caption;
@@ -23,7 +43,7 @@
 								 else {
 									//echo 'Enter Image Plz';
 								}
-						} 
+						} 	
 						
 			if($images != '' || $captions != '' ){ $i=1; 								
 						?>

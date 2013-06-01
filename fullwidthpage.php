@@ -1,8 +1,18 @@
  <?php
-								/*
-								Template Name:Full width page
-								*/
-						?>
+/*
+ * Full Content Template
+ * Template Name:Full width page
+ * @file           fullwidthpage.php
+ * @package        Appointment
+ * @author         Priyanshu Mittal,Shahid Mansuri and Akhilesh Nagar
+ * @copyright      2013 Appointpress
+ * @license        license.txt
+ * @version        Release: 1.1
+ * @filesource     wp-content/themes/appoinment/fullwidthpage.php
+				
+								
+*/
+?>
 <?php get_header(); ?>
     <div class="inner_top_mn">
 		<div class="page_wi">
