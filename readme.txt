@@ -108,3 +108,7 @@ version 1.0
 * Fixed Homepage conditions while setting static Posts Page
 * Fixed Posts page issue to display blog
 
+version 1.1
+* Added white-space property control in Menu to fixed the text wrap in mobile devices
+* Fixed the conditions for Slider, Homepage Headline and Homepage Featured Content 
+

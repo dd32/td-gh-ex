@@ -19,7 +19,7 @@ get_header();
 	$page_on_front = get_option('page_on_front') ;
 	$page_for_posts = get_option('page_for_posts');
 
-if ( $enable_post != "0" || $page_id == $page_for_posts ) { 
+if ( !empty( $enable_post ) || ( !empty( $page_id ) && $page_id == $page_for_posts ) ) { 
 ?>
 
     <div id="primary" class="content-area">
