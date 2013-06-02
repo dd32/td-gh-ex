@@ -107,7 +107,12 @@ if ( ! function_exists( 'tc_get_slider' ) ) :
                   <div class="carousel-inner">
                     <?php foreach ($slides as $s) { 
                         $slide_object   = get_post($s);
-                    
+                        
+                        //next loop if attachment does not exist anymore
+                        if (!isset($slide_object)) {
+                          continue;
+                        }
+
                         //set up variables
                         $id             = $slide_object -> ID;
                         $slider_checked = esc_attr(get_post_meta( $id, $key = 'slider_check_key', $single = true ));

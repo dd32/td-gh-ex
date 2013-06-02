@@ -115,6 +115,10 @@ The exceptions to this license are as follows:
 
 
 #######################  Changelog ######################
+= 2.1.3 =
+* fixed : in tc_voila_slider, jump to next loop if attachment has been deleted
+* removed : title text in footer credit
+
 = 2.1.2 =
 * fixed : new screenshot.png
 

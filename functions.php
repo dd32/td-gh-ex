@@ -10,7 +10,7 @@
  * @link    http://themesandco.com
  */
 /* CUSTOMIZR_VER is the Version */
-if( ! defined('CUSTOMIZR_VER' ) )    {  define( 'CUSTOMIZR_VER', '2.1.2' ); }
+if( ! defined('CUSTOMIZR_VER' ) )    {  define( 'CUSTOMIZR_VER', '2.1.3' ); }
 
 
 
@@ -230,11 +230,6 @@ add_action( 'after_setup_theme', 'tc_customizr_setup' );
           add_action ('admin_init','tc_theme_activation_fallback');
       }
       require_once( TC_BASE.'inc/admin/tc_meta_boxes.php');
-
-      /* LOADS PRO FEATURES */
-      /*if (file_exists(TC_BASE.'inc/pro')) {
-        require_once( TC_BASE.'inc/pro/tc_pro.php');
-      }*/
 
     }
 endif;

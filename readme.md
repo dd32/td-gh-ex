@@ -108,6 +108,11 @@ The exceptions to this license are as follows:
 
 
 # Changelog
+= 2.1.3 =
+* fixed : in tc_voila_slider, jump to next loop if attachment has been deleted
+* removed : title text in footer credit
+* fixed : image in full width slider are displayed with CSS properties max-width: 100%, like before v2.0.9
+
 = 2.1.2 =
 * fixed : new screenshot.png
 
