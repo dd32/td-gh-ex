@@ -11,47 +11,51 @@ Asteroid is a simple, clean and responsive WordPress theme. It incorporates vari
 that make management of banners and ads a lot easier, especially for ad-supported sites. 
 The theme is ideal for use on a blog, a static website or both. It has an intuitively designed 
 options panel to help customize your site. The theme’s development focuses on user customization 
-and minimizing HTTP requests to help conserve server resource. Asteroid supports custom 
-header images, backgrounds, menus, full-width page templates and more.
+and minimizing HTTP requests to help conserve server resource. Asteroid supports RTL Languages,
+custom header images, backgrounds, menus, full-width page templates and more.
 
-== Image Credits ==
-Credits go to www.subtlepatterns.com for the following textures which are 
-licensed under Creative Commons Attribution-ShareAlike 3.0 Unported.
-- random_grey_variations.png 
-- classy_fabric.png
-
-== Script Credits ==
+== Credits ==
 JSColor - A lightweight Javascript color-picker maintained by Jan Odvárko.
-jscolor is released under a GNU Lesser General Public License. jscolor.com
 
 == CHANGELOG ==
+Version 1.1.0
+    * Added RTL Language Support.
+    * Fixed Menu for Google Chrome.
+    * New action hooks added.
+    * JSColor update.
+    * Responsive tweaks for images and videos.
+	Note: 
+	  Theme users may need to reset width options.
+	  Go to Asteroid Options -> Appearance.
+	  Change "Width of Content" & "Width of Sidebar"
+
 Version 1.0.9
-	 * CSS Fix.
-	 * New Options.
-	 * Merged Optional Page Widget Areas with Post Widget Areas.
+	* CSS Fix.
+	* New Options.
+	* Merged Optional Page Widget Areas with Post Widget Areas.
 
 Version 1.0.8
-	 * New author template.
-	 * New bbPress forum template.
-	 * Width options for bbPress forums and topics.
-	 * Added Descriptions on Category and Tag Archives.
-	 * Option for "Author info box" below posts.
-	 
+	* New author template.
+	* New bbPress forum template.
+	* Width options for bbPress forums and topics.
+	* Added Descriptions on Category and Tag Archives.
+	* Option for "Author info box" below posts.
+	
 Version 1.0.7
-	 * Ready for translation.
-     * CSS Tweaks to blend with bbPress.
-     * Added Comment info on Blog.
-     * Added custom filters.
-	 
+	* Ready for translation.
+	* CSS Tweaks to blend with bbPress.
+	* Added Comment info on Blog.
+	* Added custom filters.
+	
 Version 1.0.6
-     * Changed some functions to work with a child-theme.
-	 * Merged theme-setup.php & theme-functions.php with functions.php
-	 * Minor CSS Tweaks.
-	 
+	* Changed some functions to work with a child-theme.
+	* Merged theme-setup.php & theme-functions.php with functions.php
+	* Minor CSS Tweaks.
+	
 Version 1.0.5
-     * New full-width footer widget area.
-     * Changed widgets below menu from float-left to full-width.
-     * Post elements' Ids and Classes renamed.
+	* New full-width footer widget area.
+	* Changed widgets below menu from float-left to full-width.
+	* Post elements' Ids and Classes renamed.
 
 Version 1.0.4
 	* Added New Widget Areas.

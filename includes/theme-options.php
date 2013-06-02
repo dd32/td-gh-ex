@@ -22,7 +22,7 @@ function asteroid_admin_bar_menu() {
 		));
 	}
 }
-add_action( 'wp_before_admin_bar_render', 'asteroid_admin_bar_menu' );
+add_action( 'admin_bar_menu', 'asteroid_admin_bar_menu', 88 );
 
 
 class Asteroid_Theme_Options {
@@ -32,8 +32,7 @@ class Asteroid_Theme_Options {
 	private $settings;
 
 	public function __construct() {
-		
-		// keep track of checkbox options for the validate_settings function.
+
 		$this->checkboxes = array();
 		$this->settings = array();
 		$this->get_option();
@@ -64,7 +63,7 @@ class Asteroid_Theme_Options {
 	
 	/* Create settings field */
 	public function create_setting( $args = array() ) {
-		
+
 		$defaults = array(
 			'id'      => 'default_field',
 			'title'   => 'Default Field',
@@ -75,9 +74,9 @@ class Asteroid_Theme_Options {
 			'choices' => array(),
 			'class'   => ''
 		);
-			
+
 		extract( wp_parse_args( $args, $defaults ) );
-		
+
 		$field_args = array(
 			'type'      => $type,
 			'id'        => $id,
@@ -87,52 +86,55 @@ class Asteroid_Theme_Options {
 			'label_for' => $id,
 			'class'     => $class
 		);
-		
+
 		if ( $type == 'checkbox' )
 			$this->checkboxes[] = $id;
-			
+
 		add_settings_field( $id, $title, array( $this, 'display_setting' ), 'asteroid-options', $section, $field_args );
-	
+
 	}
-	
+
 	/*-------------------------------------
 	   HTML to display the options page
 	--------------------------------------*/
 	public function display_page() {
-		
+
 		echo '<div class="wrap">
-		
 		<div id="donate">
 			<div id="donate-title">
 				<h4>Support the Developer</h4>
 			</div>
 			<div id="donate-content">
 				<p>If you liked this theme, please consider donating a small amount.</p>
-				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-				<input type="hidden" name="cmd" value="_s-xclick">
-				<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
-				<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-				<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-				</form>			
+				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+					<input type="hidden" name="cmd" value="_donations">
+					<input type="hidden" name="business" value="U92LEYCWW973S">
+					<input type="hidden" name="lc" value="PH">
+					<input type="hidden" name="item_name" value="Asteroid Theme">
+					<input type="hidden" name="currency_code" value="USD">
+					<input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHosted">
+					<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+					<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+				</form>	
 			</div>
 		</div>
-		
+
 	<div class="icon32" id="icon-themes"></div>
 	<h2>' . __( 'Asteroid Options', 'asteroid' ) . '</h2>';
-	
+
 		if ( isset( $_GET['settings-updated'] ) && $_GET['settings-updated'] == true )
 			echo '<div class="updated fade"><p>' . __( 'Theme options updated.', 'asteroid' ) . '</p></div>';
-		
+
 		echo '<form action="options.php" method="post" enctype="multipart/form-data">';
-	
+
 		settings_fields( 'asteroid_options' );
 		echo '<div class="ui-tabs">
 			<ul class="ui-tabs-nav">';
-		
+
 		foreach ( $this->sections as $section_slug => $section )
 			echo '<li><a href="#' . $section_slug . '">' . $section . '</a></li>';
-		
-		echo '</ul><p id="submit-top"><input name="Submit" type="submit" class="button-save" value="' . __( 'SAVE', 'asteroid' ) . '" /></p>';
+
+		echo '</ul><div id="submit-top"><input name="Submit" type="submit" class="button-save" value="' . __( 'SAVE', 'asteroid' ) . '" /></div>';
 		do_settings_sections( $_GET['page'] );
 		echo '</div>
 	</form>';
@@ -152,15 +154,15 @@ class Asteroid_Theme_Options {
     }
 	});
 	</script>
-	<script type="text/javascript" src="' . get_template_directory_uri() . '/library/js/jscolor/jscolor.js"></script>';
+	<script type="text/javascript" src="' . get_template_directory_uri() . '/includes/js/jscolor/jscolor.js"></script>';
 
 	echo '<script type="text/javascript">
 		jQuery(document).ready(function($) {
 			var sections = [];';
-			
+
 			foreach ( $this->sections as $section_slug => $section )
 				echo "sections['$section'] = '$section_slug';";
-			
+
 			echo 'var wrapped = $(".wrap h3").wrap("<div class=\"ui-tabs-panel\">");
 			wrapped.each(function() {
 				$(this).parent().append($(this).parent().nextUntil("div.ui-tabs-panel"));
@@ -173,12 +175,12 @@ class Asteroid_Theme_Options {
 			$(".ui-tabs").tabs({
 				fx: { opacity: "toggle", duration: "fast" }
 			});
-			
+
 			$("input[type=text], textarea").each(function() {
 				if ($(this).val() == $(this).attr("placeholder") || $(this).val() == "")
 					$(this).css("color", "#999");
 			});
-			
+
 			$("input[type=text], textarea").focus(function() {
 				if ($(this).val() == $(this).attr("placeholder") || $(this).val() == "") {
 					$(this).val("");
@@ -190,9 +192,9 @@ class Asteroid_Theme_Options {
 					$(this).css("color", "#999");
 				}
 			});
-			
+
 			$(".wrap h3, .wrap table").show();
-			
+
 			// This will make the "warning" checkbox class really stand out when checked.
 			// I use it here for the Reset checkbox.
 			$(".warning").change(function() {
@@ -201,59 +203,59 @@ class Asteroid_Theme_Options {
 				else
 					$(this).parent().css("background", "none").css("color", "inherit").css("fontWeight", "normal");
 			});
-			
+
 			// Browser compatibility
 			if ($.browser.mozilla) 
 			         $("form").attr("autocomplete", "off");
 			});
 		</script>
 	</div>';
-		
+
 	}
 
-	
+
 	/*-------------------------------------
 	   HTML Output
 	--------------------------------------*/
 	public function display_setting( $args = array() ) {
-		
+
 		extract( $args );
-		
+
 		$options = get_option( 'asteroid_options' );
-		
+
 		if ( ! isset( $options[$id] ) && $type != 'checkbox' )
 			$options[$id] = $std;
 		elseif ( ! isset( $options[$id] ) )
 			$options[$id] = 0;
-		
+
 		$field_class = '';
 		if ( $class != '' )
 			$field_class = ' ' . $class;
-			
-		
+
+
 		switch ( $type ) {
-			
+
 			case 'heading':
 				echo '<h4 class="opt-heading">' . $desc . '</h4>';
 				break;
-				
+
 			case 'checkbox':
 				echo '<input class="checkbox' . $field_class . '" type="checkbox" id="' . $id . '" name="asteroid_options[' . $id . ']" value="1" ' . checked( $options[$id], 1, false ) . ' /> <label for="' . $id . '"> &nbsp;' . $desc . '</label>';
 				break;
-			
+
 			case 'select':
 				echo '<select class="select' . $field_class . '" name="asteroid_options[' . $id . ']">';
-				
+
 				foreach ( $choices as $value => $label )
 					echo '<option value="' . esc_attr( $value ) . '"' . selected( $options[$id], $value, false ) . '>' . $label . '</option>';
-				
+
 				echo '</select>';
-				
+
 				if ( $desc != '' )
 					echo '<br /><span class="description">' . $desc . '</span>';
-				
+
 				break;
-			
+
 			case 'radio':
 				$i = 0;
 				foreach ( $choices as $value => $label ) {
@@ -262,34 +264,34 @@ class Asteroid_Theme_Options {
 						echo '<br />';
 					$i++;
 				}
-				
+
 				if ( $desc != '' )
 					echo '<span class="description">' . $desc . '</span>';
-	
+
 				break;
-			
+
 			case 'textarea':
 				echo '<textarea class="' . $field_class . '" id="' . $id . '" name="asteroid_options[' . $id . ']" placeholder="' . $std . '" rows="8" cols="88" wrap="off">' . wp_htmledit_pre( $options[$id] ) . '</textarea>';
 				
 				if ( $desc != '' )
 					echo '<br /><span class="description">' . $desc . '</span>';
-				
+
 				break;
-				
+
 			case 'textarea-css':
 				echo '<textarea class="' . $field_class . '" id="' . $id . '" name="asteroid_options[' . $id . ']" placeholder="' . $std . '" rows="18" cols="95" wrap="off">' . wp_htmledit_pre( $options[$id] ) . '</textarea>';
 				
 				if ( $desc != '' )
 					echo '<br /><span class="description">' . $desc . '</span>';
 				break;
-				
+
 			case 'password':
 				echo '<input class="regular-text' . $field_class . '" type="password" id="' . $id . '" name="asteroid_options[' . $id . ']" value="' . esc_attr( $options[$id] ) . '" />';
 				
 				if ( $desc != '' )
 					echo '<br /><span class="description">' . $desc . '</span>';
 				break;
-			
+
 			case 'text':
 			default:
 		 		echo '<input class="regular-text' . $field_class . '" type="text" id="' . $id . '" name="asteroid_options[' . $id . ']" placeholder="' . $std . '" value="' . esc_attr( $options[$id] ) . '" />';
@@ -297,7 +299,7 @@ class Asteroid_Theme_Options {
 		 		if ( $desc != '' )
 		 			echo '<br /><span class="description">' . $desc . '</span>';
 		 		break;
-				
+
 			case 'text-int':
 			default:
 		 		echo '<input class="text-int' . $field_class . '" type="text" id="' . $id . '" name="asteroid_options[' . $id . ']" placeholder="' . $std . '" value="' . esc_attr( $options[$id] ) . '" />';
@@ -305,7 +307,7 @@ class Asteroid_Theme_Options {
 		 		if ( $desc != '' )
 		 			echo '&nbsp;<span class="description">' . $desc . '</span>';
 		 		break;
-				
+
 			case 'upload':
 			default:
 				echo '<input id="' . $id . '" class="upload-url' . $field_class . '" type="text" name="asteroid_options[' . $id . ']" value="' . esc_attr( $options[$id] ) . '" />
@@ -313,7 +315,7 @@ class Asteroid_Theme_Options {
 				if ( $desc != '' )
 					echo '<br /><span class="description">' . $desc . '</span>';
 				break;
-				
+
 			case 'color':
 			default:
 		 		echo '<input class="color' . $field_class . '" type="text" id="' . $id . '" name="asteroid_options[' . $id . ']" placeholder="' . $std . '" value="' . esc_attr( $options[$id] ) . '" />';
@@ -323,15 +325,14 @@ class Asteroid_Theme_Options {
 		 		break;	
 		}
 	}
-	
+
 	/*-------------------------------------
 	   Define settings and their defaults
 	--------------------------------------*/
 	public function get_option() {
-		
+
 		/* General Settings
 		===========================================*/
-		
 		$this->settings['ast_menu_search'] = array(
 			'section' => 'general',
 			'title'   => __( 'Search Box on Menu', 'asteroid' ),
@@ -339,7 +340,7 @@ class Asteroid_Theme_Options {
 			'type'    => 'checkbox',
 			'std'     => 1 // Set to 1 to be checked by default, 0 to be unchecked by default.
 		);
-		
+
 		$this->settings['ast_post_display_type'] = array(
 			'section' => 'general',
 			'title'   => __( 'Display on Blog View', 'asteroid' ),
@@ -351,7 +352,7 @@ class Asteroid_Theme_Options {
 				'2' => __( 'Full Post', 'asteroid' )
 				)
 		);
-		
+
 		$this->settings['ast_head_codes'] = array(
 			'title'   => __( 'Custom &lt;Head&gt; Codes', 'asteroid' ),
 			'desc'    => __( 'Insert &lt;Head&gt; codes here. &nbsp;&nbsp; e.g. Google Analytics, Metas, Fonts, Scripts and what not.', 'asteroid' ),
@@ -359,7 +360,7 @@ class Asteroid_Theme_Options {
 			'type'    => 'textarea',
 			'section' => 'general'
 		);
-		
+
 		$this->settings['ast_hook_footer_links'] = array(
 			'title'   => __( 'Footer Links', 'asteroid' ),
 			'desc'    => __( 'Insert your footer links here. &nbsp;&nbsp; Accepts html codes.', 'asteroid' ),
@@ -367,7 +368,7 @@ class Asteroid_Theme_Options {
 			'type'    => 'textarea',
 			'section' => 'general'
 		);
-		
+
 		/* Appearance
 		===========================================*/
 		$this->settings['ast_header_logo'] = array(
@@ -377,7 +378,7 @@ class Asteroid_Theme_Options {
 			'type'    => 'upload',
 			'std'     => ''
 		);
-		
+
 		$this->settings['ast_favicon'] = array(
 			'section' => 'appearance',
 			'title'   => __( 'Favicon', 'asteroid' ),
@@ -385,7 +386,7 @@ class Asteroid_Theme_Options {
 			'type'    => 'upload',
 			'std'     => ''
 		);
-		
+
 		$this->settings['ast_header_height'] = array(
 			'title'   => __( 'Height of Header', 'asteroid' ),
 			'desc'    => 'px. ' . __( 'Set the height of the Header.', 'asteroid' ),
@@ -393,22 +394,23 @@ class Asteroid_Theme_Options {
 			'type'    => 'text-int',
 			'section' => 'appearance'
 		);
+
 		$this->settings['ast_content_width'] = array(
 			'title'   => __( 'Width of Content', 'asteroid' ),
 			'desc'    => 'px. ' . __( 'Set the width of the Content or Post Area.', 'asteroid' ),
-			'std'     => '620',
+			'std'     => '640',
 			'type'    => 'text-int',
 			'section' => 'appearance'
 		);
-		
+
 		$this->settings['ast_sidebar_width'] = array(
 			'title'   => __( 'Width of Sidebar', 'asteroid' ),
 			'desc'    => 'px. ' . __( 'Set the width of the Sidebar.', 'asteroid' ),
-			'std'     => '310',
+			'std'     => '320',
 			'type'    => 'text-int',
 			'section' => 'appearance'
 		);
-		
+
 		$this->settings['ast_header_bgcolor'] = array(
 			'title'   => __( 'Color of Header', 'asteroid' ),
 			'desc'    => __( 'Choose a background color for the #header container.', 'asteroid' ),
@@ -416,7 +418,7 @@ class Asteroid_Theme_Options {
 			'type'    => 'color',
 			'section' => 'appearance'
 		);
-				
+
 		$this->settings['ast_content_bgcolor'] = array(
 			'title'   => __( 'Color of Content', 'asteroid' ),
 			'desc'    => __( 'Choose a background color for the #content container.', 'asteroid' ),
@@ -424,7 +426,7 @@ class Asteroid_Theme_Options {
 			'type'    => 'color',
 			'section' => 'appearance'
 		);
-		
+
 		$this->settings['ast_sidebar_bgcolor'] = array(
 			'title'   => __( 'Color of Sidebar', 'asteroid' ),
 			'desc'    => __( 'Choose a background color for the #sidebar container.', 'asteroid' ),
@@ -432,7 +434,7 @@ class Asteroid_Theme_Options {
 			'type'    => 'color',
 			'section' => 'appearance'
 		);
-	
+
 		/* Posts & Pages
 		===========================================*/
 		$this->settings['ast_excerpt_thumbnails'] = array(
@@ -442,7 +444,7 @@ class Asteroid_Theme_Options {
 			'type'    => 'checkbox',
 			'std'     => 1
 		);
-		
+
 		$this->settings['ast_blog_date'] = array(
 			'section' => 'post-page',
 			'title'   => __( 'Blog View Publish Date', 'asteroid' ),
@@ -450,7 +452,7 @@ class Asteroid_Theme_Options {
 			'type'    => 'checkbox',
 			'std'     => 1
 		);
-		
+
 		$this->settings['ast_blog_author'] = array(
 			'section' => 'post-page',
 			'title'   => __( 'Blog View Author', 'asteroid' ),
@@ -458,7 +460,7 @@ class Asteroid_Theme_Options {
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
-		
+
 		$this->settings['ast_blog_comment_links'] = array(
 			'section' => 'post-page',
 			'title'   => __( 'Blog View Comments', 'asteroid' ),
@@ -466,7 +468,7 @@ class Asteroid_Theme_Options {
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
-		
+
 		$this->settings['ast_single_date'] = array(
 			'section' => 'post-page',
 			'title'   => __( 'Single View Publish Date', 'asteroid' ),
@@ -480,7 +482,7 @@ class Asteroid_Theme_Options {
 				3	=> __('Both Posts & Pages', 'asteroid')
 				)
 		);
-		
+
 		$this->settings['ast_single_author'] = array(
 			'section' => 'post-page',
 			'title'   => __( 'Single View Author', 'asteroid' ),
@@ -494,7 +496,7 @@ class Asteroid_Theme_Options {
 				3	=> __('Both Posts & Pages', 'asteroid')
 				)
 		);
-		
+
 		$this->settings['ast_date_modified'] = array(
 			'section' => 'post-page',
 			'title'   => __( 'Show Date Modified', 'asteroid' ),
@@ -508,7 +510,7 @@ class Asteroid_Theme_Options {
 				3	=> __('Both Posts & Pages', 'asteroid')
 				)
 		);
-		
+
 		$this->settings['ast_post_comments'] = array(
 			'section' => 'post-page',
 			'title'   => __( 'Post Comments', 'asteroid' ),
@@ -516,7 +518,7 @@ class Asteroid_Theme_Options {
 			'type'    => 'checkbox',
 			'std'     => 1
 		);
-		
+
 		$this->settings['ast_page_comments'] = array(
 			'section' => 'post-page',
 			'title'   => __( 'Page Comments', 'asteroid' ),
@@ -524,7 +526,7 @@ class Asteroid_Theme_Options {
 			'type'    => 'checkbox',
 			'std'     => 1
 		);
-		
+
 		$this->settings['ast_post_author_info_box'] = array(
 			'section' => 'post-page',
 			'title'   => __( 'Show Author Info Box', 'asteroid' ),
@@ -532,10 +534,9 @@ class Asteroid_Theme_Options {
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
-		
+
 		/* Custom Widgets
 		===========================================*/
-		
 		$this->settings['ast_widget_body'] = array(
 			'section' => 'widget-areas',
 			'title'   => __( 'Body', 'asteroid' ),
@@ -543,7 +544,7 @@ class Asteroid_Theme_Options {
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
-		
+
 		$this->settings['ast_widget_header'] = array(
 			'section' => 'widget-areas',
 			'title'   => __( 'Header', 'asteroid' ),
@@ -551,7 +552,7 @@ class Asteroid_Theme_Options {
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
-		
+
 		$this->settings['ast_widget_below_menu'] = array(
 			'section' => 'widget-areas',
 			'title'   => __( 'Below Menu', 'asteroid' ),
@@ -559,7 +560,7 @@ class Asteroid_Theme_Options {
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
-		
+
 		$this->settings['ast_widget_before_content'] = array(
 			'section' => 'widget-areas',
 			'title'   => __( 'Before Content', 'asteroid' ),
@@ -567,7 +568,7 @@ class Asteroid_Theme_Options {
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
-		
+
 		$this->settings['ast_widget_below_excerpts'] = array(
 			'section' => 'widget-areas',
 			'title'   => __( 'Below Excerpts', 'asteroid' ),
@@ -575,7 +576,7 @@ class Asteroid_Theme_Options {
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
-		
+
 		$this->settings['ast_widget_before_post'] = array(
 			'section' => 'widget-areas',
 			'title'   => __( 'Before Post', 'asteroid' ),
@@ -583,7 +584,7 @@ class Asteroid_Theme_Options {
 			'type'    => 'checkbox',
 			'std'     => 0
 		);	
-		
+
 		$this->settings['ast_widget_before_post_content'] = array(
 			'section' => 'widget-areas',
 			'title'   => __( 'Before Post - Content', 'asteroid' ),
@@ -591,7 +592,7 @@ class Asteroid_Theme_Options {
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
-		
+
 		$this->settings['ast_widget_after_post_content'] = array(
 			'section' => 'widget-areas',
 			'title'   => __( 'After Post - Content', 'asteroid' ),
@@ -599,7 +600,7 @@ class Asteroid_Theme_Options {
 			'type'    => 'checkbox',
 			'std'     => 0 
 		);
-		
+
 		$this->settings['ast_widget_after_post'] = array(
 			'section' => 'widget-areas',
 			'title'   => __( 'After Post', 'asteroid' ),
@@ -607,7 +608,7 @@ class Asteroid_Theme_Options {
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
-				
+
 		/* Custom CSS
 		===========================================*/	
 		$this->settings['ast_custom_css'] = array(
@@ -618,10 +619,17 @@ class Asteroid_Theme_Options {
 			'section' => 'custom-css',
 			'class'   => 'textarea-css'
 		);
-		
+
 		/* Miscellaneous
-		===========================================*/	
-		
+		===========================================*/		
+		$this->settings['ast_post_editor_style'] = array(
+			'section' => 'misc',
+			'title'   => __( 'Disable Post Editor Style', 'asteroid' ),
+			'desc'    => __( 'Disable theme styles on the visual editor. Disables resizing of editor width.', 'asteroid' ),
+			'type'    => 'checkbox',
+			'std'     => 0
+		);
+
 		$this->settings['ast_remove_wp_version'] = array(
 			'section' => 'misc',
 			'title'   => __( 'Remove WordPress Version', 'asteroid' ),
@@ -629,7 +637,7 @@ class Asteroid_Theme_Options {
 			'type'    => 'checkbox',
 			'std'     => 0 
 		);
-		
+
 		$this->settings['ast_remove_theme_link'] = array(
 			'section' => 'misc',
 			'title'   => __( 'Remove Theme URL', 'asteroid' ),
@@ -637,34 +645,25 @@ class Asteroid_Theme_Options {
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
-		
-		$this->settings['ast_post_editor_style'] = array(
-			'section' => 'misc',
-			'title'   => __( 'Disable Post Editor Style', 'asteroid' ),
-			'desc'    => __( 'Disable custom stylings on the Post Editor.', 'asteroid' ),
-			'type'    => 'checkbox',
-			'std'     => 0
-		);
-		
+
 		$this->settings['ast_bbpress_forum_full_width'] = array(
 			'section' => 'misc',
 			'title'   => __( 'bbPress Forum Width', 'asteroid' ),
-			'desc'    => __( 'Make default forum full-width with no sidebar.', 'asteroid' ),
+			'desc'    => __( 'Make bbPress forum full-width with no sidebar.', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
-		
+
 		$this->settings['ast_bbpress_topic_full_width'] = array(
 			'section' => 'misc',
 			'title'   => __( 'bbPress Topic Width', 'asteroid' ),
-			'desc'    => __( 'Make topics full-width with no sidebar.', 'asteroid' ),
+			'desc'    => __( 'Make bbPress topics full-width with no sidebar.', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
-			
+
 		/* Reset
 		===========================================*/
-		
 		$this->settings['ast_reset_theme'] = array(
 			'section' => 'reset',
 			'title'   => __( 'Reset theme', 'asteroid' ),
@@ -673,20 +672,20 @@ class Asteroid_Theme_Options {
 			'std'     => 0,
 			'class'   => 'warning' // Custom class for CSS
 		);
-		
+
 	}
-	
+
 	/*-------------------------------------
 	   Description for pages
 	--------------------------------------*/
 	public function display_section() {
 		// No Description
 	}
-	
+
 	public function display_about_section() {
 		// No Description	
 	}
-	
+
 	/*-------------------------------------
 	   Initialize Settings to Defaults
 	--------------------------------------*/
@@ -697,32 +696,32 @@ class Asteroid_Theme_Options {
 			if ( $setting['type'] != 'heading' )
 				$default_settings[$id] = $setting['std'];
 		}
-		
+
 		update_option( 'asteroid_options', $default_settings );
-		
+
 	}
-	
+
 	/*-------------------------------------
 	   Register Settings
 	--------------------------------------*/
 	public function register_settings() {
-		
+
 		register_setting( 'asteroid_options', 'asteroid_options', array ( &$this, 'validate_settings' ) );
-		
+
 		foreach ( $this->sections as $slug => $title ) {
 			if ( $slug == 'about' )
 				add_settings_section( $slug, $title, array( &$this, 'display_about_section' ), 'asteroid-options' );
 			else
 				add_settings_section( $slug, $title, array( &$this, 'display_section' ), 'asteroid-options' );
 		}
-		
+
 		$this->get_option();
-		
+
 		foreach ( $this->settings as $id => $setting ) {
 			$setting['id'] = $id;
 			$this->create_setting( $setting );
 		}
-		
+
 	}
 
 	/*-------------------------------------
@@ -730,40 +729,39 @@ class Asteroid_Theme_Options {
 	--------------------------------------*/
 	public function scripts() {
 		wp_print_scripts( 'jquery-ui-tabs' );
-		
+
 		wp_enqueue_script('my-upload');
 		wp_enqueue_script('media-upload');
 		wp_enqueue_script('thickbox');
 		wp_register_script('my-upload', get_template_directory_uri() . '/js/uploader.js', array('jquery','media-upload','thickbox'));
 	}
-	
+
 	/*-------------------------------------
 	   Styling for the theme options page
 	--------------------------------------*/
 	public function styles() {	
-		wp_register_style( 'mytheme-admin', get_template_directory_uri() . '/library/theme-options.css' );
+		wp_register_style( 'mytheme-admin', get_template_directory_uri() . '/includes/theme-options.css' );
 		wp_enqueue_style( 'mytheme-admin' );
 		wp_enqueue_style('thickbox');
 	}
-	
+
 	/*-------------------------------------
 	   Validate Settings
 	--------------------------------------*/
 	public function validate_settings( $input ) {
-		
+
 		if ( ! isset( $input['ast_reset_theme'] ) ) {
 			$options = get_option( 'asteroid_options' );
-			
+
 			foreach ( $this->checkboxes as $id ) {
 				if ( isset( $options[$id] ) && ! isset( $input[$id] ) )
 					unset( $options[$id] );
 			}
-			
 			return $input;
 		}
 		return false;		
 	}
-	
+
 }
 
 $asteroid_options = new Asteroid_Theme_Options();

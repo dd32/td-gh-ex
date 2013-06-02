@@ -1,4 +1,4 @@
-html {background: #E4E4E4;}
+html {background: #EEE;}
 
 .mceContentBody {
     background: #fff;
@@ -9,7 +9,6 @@ html {background: #E4E4E4;}
 	font-weight: normal;
 	line-height: 21px;
 	box-shadow: 0px 0px 3px black;
-	width: 640px;
 }
 
 h1 {font-size:28px;}
@@ -24,6 +23,13 @@ h1, h2, h3, h4, h5, h6 {
 	line-height: 1.2; 
 	text-shadow: 0 1px 1px #999;
 	margin: 14px 0 4px 0;
+	clear: none;
+}
+
+.mceContentBody h1:first-child, .mceContentBody h2:first-child,
+.mceContentBody h3:first-child, .mceContentBody h4:first-child,
+.mceContentBody h5:first-child, .mceContentBody h6:first-child {
+    margin-top: 0;
 }
 
 p { 
@@ -44,6 +50,14 @@ blockquote {
 blockquote p {
 	font-style: italic;
 	margin: 0;
+}
+blockquote cite {float: right; margin: 6px auto 2px;}
+
+pre {
+    background: #EEE;
+    border: 1px solid #CCC;
+    padding: 8px;
+	overflow: auto;
 }
 
 img.alignnone {margin: 8px;}

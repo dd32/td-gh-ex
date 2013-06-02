@@ -1,84 +1,52 @@
 .ui-tabs-nav {
+	margin: 16px 0 14px;
 	border-bottom: 1px solid #666;
-	height: 26px;
-	margin: 18px 0 12px;
-	padding: 0;
+	overflow: hidden;
 }
 .ui-tabs-nav li {
-	display: block;
-	float: left;
-	margin: 0;
-}
-.ui-tabs-nav li a {
-	padding: 4px 20px 6px;
-	font-weight: bold;
-}
-.ui-tabs-nav li a {
 	background: #FBD275;
+	float: left;
+    margin: 0 6px 0 0;
+	border-radius: 6px 6px 0 0;
 	border-style: solid;
-	border-color: #666 #666 #FFBB22;
 	border-width: 1px 1px 0;
-	color: #555;
+	border-color: #555;
+	box-shadow: 1px 2px 2px #333;
+	overflow: hidden;
+}
+.ui-tabs-nav li a {
+	float: left;
 	font-size: 13px;
-	display: inline-block;
-	padding: 4px 12px;
-	text-decoration: none;
-	margin: 0 6px -1px 0;
-	-moz-border-radius: 6px 6px 0 0;
-	-webkit-border-top-left-radius: 6px;
-	-webkit-border-top-right-radius: 6px;
-	-khtml-border-top-left-radius: 6px;
-	-khtml-border-top-right-radius: 6px;
-	border-top-left-radius: 6px;
-	border-top-right-radius: 6px;
-}
-
-.ui-tabs-nav li.ui-tabs-selected a,
-.ui-tabs-nav li.ui-state-active a {
-	background: #FFBB22;
 	color: #333;
+	text-decoration: none;
+	padding: 4px 10px;
+}
+.ui-tabs-nav .ui-tabs-selected a,
+.ui-tabs-nav .ui-state-active a {
+	background: #FFBB22;
+	color: #222;
 }
 
-
-/* Options Content */
 .ui-tabs-panel {
 	float: left !important;
 	clear: none !important;
 }
-
 .ui-tabs-panel h3 {
-	font: normal 22px/28px Tahoma, sans-serif;
+	font: normal 22px/35px Tahoma, sans-serif;
 	margin: 0;
-	padding: 0 0 5px;
-	line-height: 35px;
-	text-shadow: 0 1px 0 #fff;
+	padding-bottom: 5px;
 }
-
-.ui-tabs-panel h4 {
-	font-size: 15px;
-	font-weight: bold;
-	margin: 1em 0;
-}
-
-.wrap h2 {line-height: 28px;}
-
-.wrap h3, .wrap table {
-	display: none;
-}
-
 
 .form-table {
 	width: 700px !important;
-	background: url("../images/bg-honeycomb.png") #CCC;
+	background: url("../images/honeycomb.png") #CCC;
 	border: 1px double #666;
 	margin-top: 10px;
 	box-shadow: 0px 0px 2px #222;
 }
 
 .form-table tr {border-bottom: 1px solid #BBB;}
-
 .form-table th {width: 170px !important;}
-
 .form-table th label {
     background: #F0F0F0;
 	padding: 3px 6px;
@@ -92,6 +60,7 @@
 	left: 544px;
 	margin: 0;
 }
+.rtl #submit-top {left: 2%;}
 
 .button-save {
 	padding: 8px 55px !important;
@@ -113,22 +82,18 @@
 
 textarea, input[type="text"]{border: 1px solid #999;}
 textarea:hover, input[type="text"]:hover{border: 1px solid #0A2F89;}
-
 textarea {resize: none;}
 
 input.regular-text, input.upload-url {width: 350px;}
 input.text-int {text-align: right; width: 60px;}
 input.color {width: 100px;}
-.select {
-    height: 22px;
-    padding: 2px;
-    width: 180px;
-}
+
+.select {width: 180px;}
 
 #donate {
 	background: #EEE;
     text-align: center;
-    left: 750px;
+    left: 735px;
     margin-top: 150px;
 	display: inline-block;
 	position: absolute;
@@ -136,14 +101,9 @@ input.color {width: 100px;}
 	border-radius: 4px;
 	box-shadow: 0px 0px 2px #222;
 }
-
 #donate-title {
-	background: #CCC; /* Old browsers */
-	background: -moz-linear-gradient(top, #EEE 0%, #BBB 100%); /* FF3.6+ */
-	background: -webkit-linear-gradient(top,  #EEE 0%,#BBB 100%); /* Chrome10+ */
-	background: -o-linear-gradient(top, #EEE 0%,#BBB 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, #EEE 0%,#BBB 100%); /* IE10+ */
-	background: linear-gradient(to bottom, #EEE 0%,#BBB 100%); /* W3C */
+	background: #CCC;
+	background: linear-gradient(to bottom, #EEE 0%,#BBB 100%);
     border-radius: 4px 4px 0 0;
 	border-bottom: 1px solid #CCC;
 }

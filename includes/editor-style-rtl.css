@@ -1,0 +1,11 @@
+blockquote {
+	border-left: none;
+	border-right: 6px solid #666;
+}
+blockquote cite {
+    float: left;
+}
+
+caption, th, td {
+	text-align: right;
+}
