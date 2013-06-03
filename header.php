@@ -35,23 +35,9 @@ if ($favicon): ?><link rel="shortcut icon" href="<?php echo esc_url($favicon); ?
 			<div class="container">
 				<div id="logo">
 				<a href="<?php echo esc_url( home_url() ); ?>">
-				
-				<?php $logo_url = boldr_get_option('logo');
-			if ( boldr_get_option('header_title') == 'Display Title' || $logo_url == "" ): ?>
-				<span class="site-title"><?php bloginfo('name') ?></span>
-			<?php else: ?>
-				<img src="<?php echo esc_url( $logo_url ); ?>" alt="<?php bloginfo('name') ?>">
-			<?php endif; ?>
-				
+				<img src="<?php echo esc_url( boldr_get_option('logo') ); ?>" alt="<?php bloginfo('name') ?>">
 				</a>
 				</div>
-				
-				<?php if ( "On" == boldr_get_option('header_tagline') ): ?>
-				<div id="tagline">
-				<?php bloginfo('description'); ?>
-				</div>
-				<?php endif; ?>
-				
 			</div>
 		</div><!-- End header -->
 	
@@ -64,18 +50,3 @@ if ($favicon): ?><link rel="shortcut icon" href="<?php echo esc_url($favicon); ?
 				<?php get_search_form(); ?>
 			</div>
 		</div><!-- End navbar -->
-		
-<?php	if ( get_custom_header()->url ) :
-			if ( ( is_front_page() && boldr_get_option('home_header_image') != 'Off' )
-				|| ( is_page() && !is_front_page() && boldr_get_option('pages_header_image') != 'Off' )
-				|| ( is_single() && boldr_get_option('single_header_image') != 'Off' )
-				|| ( !is_front_page() && !is_singular() && boldr_get_option('blog_header_image') != 'Off' )
-				|| ( is_404() ) ):
-?>
-
-	<div id="header-image" class="container">
-		<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
-	</div>
-
-<?php	endif;
-	endif; ?>
