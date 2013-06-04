@@ -58,6 +58,8 @@ pre {
     border: 1px solid #CCC;
     padding: 8px;
 	overflow: auto;
+	-ms-word-wrap: normal;
+	word-wrap: normal;
 }
 
 img.alignnone {margin: 8px;}

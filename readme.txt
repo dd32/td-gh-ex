@@ -18,6 +18,9 @@ custom header images, backgrounds, menus, full-width page templates and more.
 JSColor - A lightweight Javascript color-picker maintained by Jan Odvárko.
 
 == CHANGELOG ==
+Version 1.1.1
+	* Added meta viewport for mobile devices.
+
 Version 1.1.0
     * Added RTL Language Support.
     * Fixed Menu for Google Chrome.
