@@ -6,6 +6,7 @@ add_editor_style();
 add_theme_support('post-thumbnails');
 add_theme_support( 'automatic-feed-links' );
 set_post_thumbnail_size( 900, 300, true );
+wp_enqueue_script( 'comment-reply' );
 load_theme_textdomain( 'aura', get_template_directory() . '/languages' );
 if ( ! isset( $content_width ) ) $content_width = 700;
 
@@ -41,10 +42,12 @@ function aura_title($title) {
 // Stylesheets
 
 function aura_style() {
- wp_register_style('aura_style', get_stylesheet_uri(), array(), 1.0, 'all'); 	 
- wp_enqueue_style('aura_style');
- wp_enqueue_script( 'comment-reply' );
+ wp_register_style('aura_style', get_stylesheet_uri(), array(), 1.0, 'all'); 
+ wp_enqueue_style('aura_style');	 
+
 }
+
+add_action('wp_enqueue_scripts', 'aura_style');
 
 
 add_filter( 'use_default_gallery_style', '__return_false' );
@@ -141,9 +144,11 @@ if ( 'div' == $args['style'] ) {
 endif;
 
 
-// Sidebar
+// Comment Reply
 
-function aura_widgets_init() {
+wp_enqueue_script( 'comment-reply' );
+
+// Sidebar
 
 register_sidebar(array(
 'name' => __('Sidebar', 'aura'),
@@ -153,10 +158,6 @@ register_sidebar(array(
 'before_title' => '<div class="sidebar-headline">',
 'after_title' => '</div></p>',
 ));
-
-}
-
-add_action( 'widgets_init', 'aura_widgets_init' );
 
 add_action('admin_menu', 'aura_create_menu');
 
@@ -175,8 +176,5 @@ function aura_admin_enqueue() {
 }
 
 add_action( 'admin_enqueue_scripts', 'aura_admin_enqueue' );
-add_action('wp_enqueue_scripts', 'aura_style');
-
-
 
  ?>
