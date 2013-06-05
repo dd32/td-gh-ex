@@ -46,9 +46,9 @@ class SiteOrigin_Widgets_CTA extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'call-to-action',
-			__( 'SiteOrigin Call To Action', 'origami' ),
+			__( 'SiteOrigin Call To Action', 'siteorigin' ),
 			array(
-				'description' => __( 'A call to action block, generally for your home page.', 'origami' ),
+				'description' => __( 'A call to action block, generally for your home page.', 'siteorigin' ),
 			)
 		);
 	}
@@ -105,28 +105,28 @@ class SiteOrigin_Widgets_CTA extends WP_Widget {
 
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'headline' ) ?>"><?php _e( 'Headline', 'origami' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'headline' ) ?>"><?php _e( 'Headline', 'siteorigin' ) ?></label>
 			<input type="text" class="widefat" name="<?php echo $this->get_field_name( 'headline' ) ?>" for="<?php echo $this->get_field_id( 'headline' ) ?>" value="<?php echo esc_attr( $instance['headline'] ) ?>">
 		</p>
 	
 		<p>
-			<label for="<?php echo $this->get_field_id( 'text' ) ?>"><?php _e( 'Text', 'origami' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'text' ) ?>"><?php _e( 'Text', 'siteorigin' ) ?></label>
 			<input type="text" class="widefat" name="<?php echo $this->get_field_name( 'text' ) ?>" id="<?php echo $this->get_field_id( 'text' ) ?>" value="<?php echo esc_attr( $instance['text'] ) ?>">
 		</p>
 	
 		<p>
-			<label for="<?php echo $this->get_field_id( 'button' ) ?>"><?php _e( 'Button Text', 'origami' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'button' ) ?>"><?php _e( 'Button Text', 'siteorigin' ) ?></label>
 			<input type="text" class="widefat" name="<?php echo $this->get_field_name( 'button' ) ?>" for="<?php echo $this->get_field_id( 'button' ) ?>" value="<?php echo esc_attr( $instance['button'] ) ?>">
 		</p>
 	
 		<p>
-			<label for="<?php echo $this->get_field_id( 'url' ) ?>"><?php _e( 'Button URL', 'origami' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'url' ) ?>"><?php _e( 'Button URL', 'siteorigin' ) ?></label>
 			<input type="text" class="widefat" name="<?php echo $this->get_field_name( 'url' ) ?>" for="<?php echo $this->get_field_id( 'url' ) ?>" value="<?php echo esc_attr( $instance['url'] ) ?>">
 		</p>
 	
 		<?php if ( !empty( $button_styles ) ) : ?>
 			<p>
-				<label for="<?php echo $this->get_field_id( 'button_style' ) ?>"><?php _e( 'Button Style', 'origami' ) ?></label>
+				<label for="<?php echo $this->get_field_id( 'button_style' ) ?>"><?php _e( 'Button Style', 'siteorigin' ) ?></label>
 				<select name="<?php echo $this->get_field_name( 'button_style' ) ?>" for="<?php echo $this->get_field_id( 'button_style' ) ?>">
 					<?php foreach ( $button_styles as $style => $name ) : ?>
 					<option value="<?php echo esc_attr( $style ) ?>"><?php echo esc_html( $name ) ?></option>
@@ -145,9 +145,9 @@ class SiteOrigin_Widgets_Button extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'button',
-			__( 'SiteOrigin Button', 'origami' ),
+			__( 'SiteOrigin Button', 'siteorigin' ),
 			array(
-				'description' => __( 'Display a button.', 'origami' ),
+				'description' => __( 'Display a button.', 'siteorigin' ),
 			)
 		);
 	}
@@ -160,7 +160,7 @@ class SiteOrigin_Widgets_Button extends WP_Widget {
 
 		$instance = wp_parse_args( $instance, array(
 			'url' => '#',
-			'button' => __( 'Click Me', 'origami' ),
+			'button' => __( 'Click Me', 'siteorigin' ),
 			'align' => 'center',
 		) );
 
@@ -207,28 +207,28 @@ class SiteOrigin_Widgets_Button extends WP_Widget {
 
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'button' ) ?>"><?php _e( 'Button Text', 'origami' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'button' ) ?>"><?php _e( 'Button Text', 'siteorigin' ) ?></label>
 			<input type="text" class="widefat" name="<?php echo $this->get_field_name( 'button' ) ?>" for="<?php echo $this->get_field_id( 'button' ) ?>" value="<?php echo esc_attr( $instance['button'] ) ?>">
 		</p>
 	
 		<p>
-			<label for="<?php echo $this->get_field_id( 'url' ) ?>"><?php _e( 'Button URL', 'origami' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'url' ) ?>"><?php _e( 'Button URL', 'siteorigin' ) ?></label>
 			<input type="text" class="widefat" name="<?php echo $this->get_field_name( 'url' ) ?>" for="<?php echo $this->get_field_id( 'url' ) ?>" value="<?php echo esc_attr( $instance['url'] ) ?>">
 		</p>
 	
 		<p>
-			<label for="<?php echo $this->get_field_id( 'align' ) ?>"><?php _e( 'Alignment', 'origami' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'align' ) ?>"><?php _e( 'Alignment', 'siteorigin' ) ?></label>
 			<select name="<?php echo $this->get_field_name( 'align' ) ?>" id="<?php echo $this->get_field_id( 'align' ) ?>">
-				<option value="left" <?php selected( 'left', $instance['align'] ) ?>><?php esc_html_e( 'Left', 'origami' ) ?></option>
-				<option value="center" <?php selected( 'center', $instance['align'] ) ?>><?php esc_html_e( 'Center', 'origami' ) ?></option>
-				<option value="right" <?php selected( 'right', $instance['align'] ) ?>><?php esc_html_e( 'Right', 'origami' ) ?></option>
-				<option value="full" <?php selected( 'full', $instance['align'] ) ?>><?php esc_html_e( 'Full Width', 'origami' ) ?></option>
+				<option value="left" <?php selected( 'left', $instance['align'] ) ?>><?php esc_html_e( 'Left', 'siteorigin' ) ?></option>
+				<option value="center" <?php selected( 'center', $instance['align'] ) ?>><?php esc_html_e( 'Center', 'siteorigin' ) ?></option>
+				<option value="right" <?php selected( 'right', $instance['align'] ) ?>><?php esc_html_e( 'Right', 'siteorigin' ) ?></option>
+				<option value="full" <?php selected( 'full', $instance['align'] ) ?>><?php esc_html_e( 'Full Width', 'siteorigin' ) ?></option>
 			</select>
 		</p>
 	
 		<?php if ( !empty( $button_styles ) ) : ?>
 			<p>
-				<label for="<?php echo $this->get_field_id( 'button_style' ) ?>"><?php _e( 'Button Style', 'origami' ) ?></label>
+				<label for="<?php echo $this->get_field_id( 'button_style' ) ?>"><?php _e( 'Button Style', 'siteorigin' ) ?></label>
 				<select name="<?php echo $this->get_field_name( 'button_style' ) ?>" for="<?php echo $this->get_field_id( 'button_style' ) ?>">
 					<?php foreach ( $button_styles as $style => $name ) : ?>
 					<option value="<?php echo esc_attr( $style ) ?>"><?php echo esc_html( $name ) ?></option>
@@ -247,9 +247,9 @@ class SiteOrigin_Widgets_IconText extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'icon-text',
-			__( 'SiteOrigin Icon and Text', 'origami' ),
+			__( 'SiteOrigin Icon and Text', 'siteorigin' ),
 			array(
-				'description' => __( 'A block of text with an icon.', 'origami' ),
+				'description' => __( 'A block of text with an icon.', 'siteorigin' ),
 			)
 		);
 	}
@@ -265,11 +265,7 @@ class SiteOrigin_Widgets_IconText extends WP_Widget {
 		}
 		
 		if ( !empty( $instance['headline'] ) ) {
-			echo $args['before_title'];
-			if(!empty($instance['url'])) echo '<a href="'.esc_url($instance['url']).'">';
-			echo $instance['headline'];
-			if(!empty($instance['url'])) echo '</a>';
-			echo $args['after_title'];
+			echo $args['before_title'] . $instance['headline'] . $args['after_title'];
 		}
 
 		if ( !empty( $instance['text'] ) ) {
@@ -318,22 +314,22 @@ class SiteOrigin_Widgets_IconText extends WP_Widget {
 		
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'headline' ) ?>"><?php _e( 'Headline', 'origami' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'headline' ) ?>"><?php _e( 'Headline', 'siteorigin' ) ?></label>
 			<input type="text" class="widefat" name="<?php echo $this->get_field_name( 'headline' ) ?>" id="<?php echo $this->get_field_id( 'headline' ) ?>" value="<?php echo esc_attr( $instance['headline'] ) ?>">
 		</p>
 	
 		<p>
-			<label for="<?php echo $this->get_field_id( 'text' ) ?>"><?php _e( 'Text', 'origami' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'text' ) ?>"><?php _e( 'Text', 'siteorigin' ) ?></label>
 			<textarea class="widefat" rows="3" name="<?php echo $this->get_field_name( 'text' ) ?>" id="<?php echo $this->get_field_id( 'headline' ) ?>"><?php echo esc_textarea( $instance['text'] ) ?></textarea>
 		</p>
 	
 		<p>
-			<label for="<?php echo $this->get_field_id( 'url' ) ?>"><?php _e( 'URL', 'origami' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'url' ) ?>"><?php _e( 'URL', 'siteorigin' ) ?></label>
 			<input type="text" class="widefat" name="<?php echo $this->get_field_name( 'url' ) ?>" id="<?php echo $this->get_field_id( 'url' ) ?>" value="<?php echo esc_attr( $instance['url'] ) ?>">
 		</p>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'icon' ) ?>"><?php _e( 'Icon', 'origami' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'icon' ) ?>"><?php _e( 'Icon', 'siteorigin' ) ?></label>
 			<select name="<?php echo $this->get_field_name( 'icon' ) ?>" id="<?php echo $this->get_field_id( 'icon' ) ?>">
 				<option value="0" <?php selected( !empty($instance['icon']) ) ?>><?php echo esc_html_e('None') ?></option>
 				<?php foreach ( $attachments as $attachment ) : ?>
@@ -344,7 +340,7 @@ class SiteOrigin_Widgets_IconText extends WP_Widget {
 		<p class="description">
 			<?php
 			printf(
-				__('Upload icon images to your <a href="%s" target="_blank">media library</a>. Find <a href="%s" target="_blank">free icon packs</a>.', 'origami'),
+				__('Upload icon images to your <a href="%s" target="_blank">media library</a>. Find <a href="%s" target="_blank">free icon packs</a>.', 'siteorigin'),
 				admin_url('upload.php'),
 				'http://siteorigin.com/icon-sets/'
 			);
@@ -362,9 +358,9 @@ class SiteOrigin_Widgets_Headline extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'headline',
-			__( 'SiteOrigin Headline', 'origami' ),
+			__( 'SiteOrigin Headline', 'siteorigin' ),
 			array(
-				'description' => __( 'Displays a simple headline.', 'origami' ),
+				'description' => __( 'Displays a simple headline.', 'siteorigin' ),
 			)
 		);
 	}
@@ -386,26 +382,26 @@ class SiteOrigin_Widgets_Headline extends WP_Widget {
 
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'headline' ) ?>"><?php _e( 'Headline Text', 'origami' ) ?>
+			<label for="<?php echo $this->get_field_id( 'headline' ) ?>"><?php _e( 'Headline Text', 'siteorigin' ) ?>
 			<input type="text" class="widefat" name="<?php echo $this->get_field_name( 'headline' ) ?>" id="<?php echo $this->get_field_id( 'headline' ) ?>" value="<?php echo esc_attr( $instance['headline'] ) ?>" />
 		</p>
 	
 		<p>
-			<label for="<?php echo $this->get_field_id( 'size' ) ?>"><?php _e( 'Size', 'origami' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'size' ) ?>"><?php _e( 'Size', 'siteorigin' ) ?></label>
 			<select name="<?php echo $this->get_field_name( 'size' ) ?>" id="<?php echo $this->get_field_id( 'size' ) ?>">
-				<option value="small" <?php selected( 'small', $instance['size'] ) ?>><?php esc_html_e( 'Small', 'origami' ) ?></option>
-				<option value="medium" <?php selected( 'medium', $instance['size'] ) ?>><?php esc_html_e( 'Medium', 'origami' ) ?></option>
-				<option value="large" <?php selected( 'large', $instance['size'] ) ?>><?php esc_html_e( 'Large', 'origami' ) ?></option>
-				<option value="extra-large" <?php selected( 'extra-large', $instance['size'] ) ?>><?php esc_html_e( 'Extra Large', 'origami' ) ?></option>
+				<option value="small" <?php selected( 'small', $instance['size'] ) ?>><?php esc_html_e( 'Small', 'siteorigin' ) ?></option>
+				<option value="medium" <?php selected( 'medium', $instance['size'] ) ?>><?php esc_html_e( 'Medium', 'siteorigin' ) ?></option>
+				<option value="large" <?php selected( 'large', $instance['size'] ) ?>><?php esc_html_e( 'Large', 'siteorigin' ) ?></option>
+				<option value="extra-large" <?php selected( 'extra-large', $instance['size'] ) ?>><?php esc_html_e( 'Extra Large', 'siteorigin' ) ?></option>
 			</select>
 		</p>
 	
 		<p>
-			<label for="<?php echo $this->get_field_id( 'align' ) ?>"><?php _e( 'Alignment', 'origami' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'align' ) ?>"><?php _e( 'Alignment', 'siteorigin' ) ?></label>
 			<select name="<?php echo $this->get_field_name( 'align' ) ?>" id="<?php echo $this->get_field_id( 'align' ) ?>">
-				<option value="left" <?php selected( 'left', $instance['align'] ) ?>><?php esc_html_e( 'Left', 'origami' ) ?></option>
-				<option value="center" <?php selected( 'center', $instance['align'] ) ?>><?php esc_html_e( 'Center', 'origami' ) ?></option>
-				<option value="right" <?php selected( 'right', $instance['align'] ) ?>><?php esc_html_e( 'Right', 'origami' ) ?></option>
+				<option value="left" <?php selected( 'left', $instance['align'] ) ?>><?php esc_html_e( 'Left', 'siteorigin' ) ?></option>
+				<option value="center" <?php selected( 'center', $instance['align'] ) ?>><?php esc_html_e( 'Center', 'siteorigin' ) ?></option>
+				<option value="right" <?php selected( 'right', $instance['align'] ) ?>><?php esc_html_e( 'Right', 'siteorigin' ) ?></option>
 			</select>
 		</p>
 		<?php

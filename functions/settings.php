@@ -43,10 +43,6 @@ function origami_settings_init(){
 
 	siteorigin_settings_add_section('responsive', __('Responsive', 'origami'));
 
-	siteorigin_settings_add_field( 'responsive', 'enabled', 'checkbox', __('Responsive', 'origami'), array(
-		'description' => __('Should Origami use responsive mode.', 'origami'),
-	) );
-
 	siteorigin_settings_add_teaser('responsive', 'nav', __('Responsive Navigation', 'origami'), array(
 		'description' => __('Gorgeous mobile navigation menu for your main menu.', 'origami'),
 		'teaser-image' => get_template_directory_uri().'/upgrade/teaser/nav.png',
@@ -126,7 +122,6 @@ function origami_settings_defaults($defaults){
 
 	$defaults['comments_ajax'] = true;
 
-	$defaults['responsive_enabled'] = true;
 	$defaults['responsive_nav'] = true;
 
 	$defaults['social_share'] = true;
@@ -135,13 +130,3 @@ function origami_settings_defaults($defaults){
 	return $defaults;
 }
 add_filter('siteorigin_theme_default_settings', 'origami_settings_defaults');
-
-/**
- * Feature suggestions URL.
- *
- * @return string
- */
-function origami_feature_suggestion_url(){
-	return 'http://sorig.in/origami-suggestions';
-}
-add_filter('siteorigin_settings_suggest_features_url', 'origami_feature_suggestion_url');

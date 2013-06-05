@@ -7,33 +7,16 @@
 
 jQuery(function ($) {
     // We use FitVids to scale videos to mobile devices 
-    $('.featured-video, .content, .content p').fitVids();
+    $('.featured-video, .content').fitVids();
 
     // FlexSlider is a great responsive slider
     $('.flexslider').flexslider();
 
     // Test and load polyfills
-    if(!Modernizr.inlinesvg) {
-        // No support for SVG, so replace with images where possible
-        $('svg').each(function(){
-            var $$ = $(this);
-
-            if( typeof $$.data('replacement') != 'undefined' ) {
-
-                $$.replaceWith(
-                    $('<img>')
-                        .attr( {
-                            'src' : $$.data('replacement')
-                        } )
-                        .css( {
-                            'width' : $$.attr('width'),
-                            'height' : $$.attr('height')
-                        } )
-                );
-
-            }
-        })
-    }
+    Modernizr.load({
+        test : Modernizr.inlinesvg,
+        nope : origami.polyfills + '/sie-mini.js'
+    });
 
     // Init the placeholder
     Modernizr.load({

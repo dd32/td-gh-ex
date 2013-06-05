@@ -475,8 +475,6 @@ html {
 	margin-left: -125px;
 	text-align: center;
 	z-index: 100;
-	-moz-border-radius-topleft: 0px;
-	-moz-border-radius-topright: 0px;
 }
 
 #panels-home-page #post-body {

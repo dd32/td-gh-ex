@@ -43,6 +43,9 @@ add_action( 'current_screen', 'siteorigin_adminbar_init' );
 function siteorigin_adminbar_defaults( $bar ) {
 	$screen = get_current_screen();
 
+	if ( $screen->id == 'themes' && defined( 'SITEORIGIN_FIRST_RUN_ACTIVE' ) )
+		$bar = (object)array( 'id' => 'firstrun', 'message' => array( 'extras/adminbar/messages/message', 'firstrun' ) );
+	
 	if($screen->id == 'appearance_page_custom-background')
 		$bar = (object)array( 'id' => 'custom-background', 'message' => array( 'extras/adminbar/messages/message', 'background' ) );
 	
@@ -59,6 +62,15 @@ add_filter( 'siteorigin_adminbar', 'siteorigin_adminbar_defaults' );
  */
 function siteorigin_adminbar_enqueue( $suffix ) {
 
+	// This adds an extra tab to the theme pages
+	if($suffix == 'theme-install.php' || $suffix == 'themes.php' && !wp_script_is('siteorigin-admin-tab')){
+		wp_enqueue_script('siteorigin-admin-tab', get_template_directory_uri() . '/extras/adminbar/assets/tab.min.js', array('jquery'), SITEORIGIN_THEME_VERSION);
+		wp_localize_script('siteorigin-admin-tab', 'siteoriginAdminTab', array(
+			'text' => __('SiteOrigin Themes', 'siteorigin'),
+			'url' => admin_url('theme-install.php?tab=search&type=author&s=gpriday')
+		));
+	}
+	
 	// Only enqueue these if there's an active admin bar
 	if ( !empty( $GLOBALS['siteorigin_adminbar_active'] ) ) {
 		wp_enqueue_script( 'siteorigin-admin-bar', get_template_directory_uri() . '/extras/adminbar/assets/bar.min.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
@@ -80,7 +92,7 @@ function siteorigin_adminbar_render() {
 	<div id="siteorigin-admin-bar" data-type="<?php echo esc_attr( $GLOBALS['siteorigin_adminbar_active']->id ) ?>">
 		<div class="inner">
 			<img src="<?php echo esc_url( $GLOBALS['siteorigin_adminbar_active']->icon ) ?>" class="icon" width="44" height="44" />
-			<a href="#dismiss" class="dismiss"><?php _e( 'dismiss', 'origami' ) ?></a>
+			<a href="#dismiss" class="dismiss"><?php _e( 'dismiss', 'siteorigin' ) ?></a>
 			<strong><?php call_user_func_array( 'get_template_part', $GLOBALS['siteorigin_adminbar_active']->message ) ?></strong>
 		</div>
 	</div>

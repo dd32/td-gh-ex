@@ -5,16 +5,13 @@ function origami_premium_upgrade_content($content){
 	$content['premium_summary'] = __("If you've enjoyed using Origami, you're going to love Origami Premium. It's a robust upgrade to Origami that gives you loads of cool features. You choose the price, so you can decide what it's worth to give your site a professional edge.", 'origami');
 
 	$content['buy_url'] = 'http://siteorigin.fetchapp.com/sell/aqueifoo';
-	$content['premium_video_poster'] = get_template_directory_uri().'/upgrade/poster.jpg';
-	$content['premium_video_id'] = '52853957';
-	// $content['roadmap'] = 'http://siteorigin.com/origami-documentation/origami-roadmap/';
+	// $content['buy_price'] = 9;
+	$content['buy_message_1'] = __("You choose how much you want to pay for Origami Premium.", 'origami');
+	$content['buy_message_2'] = __("Pay what you want with a full money back guarantee", 'origami');
+	
+	$content['featured'] = array(get_template_directory_uri().'/upgrade/promo.jpg', 1259, 1073);
 
 	$content['features'] = array();
-
-	$content['features'][] = array(
-		'heading' => __('Premium Email Support', 'origami'),
-		'content' => __("Need help setting up Origami? Upgrading to Origami Premium gives you email support.", 'origami'),
-	);
 
 	$content['features'][] = array(
 		'heading' => __('Name The Price', 'origami'),
@@ -22,8 +19,13 @@ function origami_premium_upgrade_content($content){
 	);
 
 	$content['features'][] = array(
+		'heading' => __('Email Support', 'origami'),
+		'content' => __("Need help setting up Origami? Upgrading to Origami Premium gives you prioritized email support, no matter what you pay.", 'origami'),
+	);
+
+	$content['features'][] = array(
 		'heading' => __("Responsive Features", 'origami'),
-		'content' => __("The final puzzle pieces in making Origami fully responsive. Origami Premium has footer widgets that collapse below each other on small screen devices. Its menu collapses into a single navigate button which activates an intuitive nested menu system and site search.", 'origami'),
+		'content' => __("The final puzzle pieces in making Origami truly responsive. Origami Premium has footer widgets that collapse below each other on small screen devices. Its menu collapses into a single navigate button which activates an intuitive nested menu system and site search.", 'origami'),
 		'image' => get_template_directory_uri() . '/upgrade/teaser/nav.png',
 	);
 
@@ -63,16 +65,11 @@ function origami_premium_upgrade_content($content){
 
 	$content['features'][] = array(
 		'heading' => __("Continued Updates", 'origami'),
-		'content' => __("You'll help support the continued development of Origami - ensuring it works with future versions of WordPress for years to come.", 'origami'),
+		'content' => __("You'll get continued updates, ensuring that your Origami powered site keeps on working with the latest version of WordPress for years to come.", 'origami'),
 		'image' => get_template_directory_uri() . '/upgrade/teaser/updates.png',
 	);
 
 	$content['testimonials'] = array(
-		array(
-			'gravatar' => 'db55e27434eed0f7a93f908de85b0c3c',
-			'name' => 'Sunira',
-			'content' => __("This is an overlooked WordPress theme! It's flexible, FAST, and clean. Love it!", 'origami'),
-		),
 		array(
 			'gravatar' => '0dacd16ef5a3d669700d4ec9fffd9e0d',
 			'name' => 'Elii',

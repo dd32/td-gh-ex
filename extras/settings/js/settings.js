@@ -1,7 +1,3 @@
-/**
- * Handles settings in the admin - (c) Greg Priday, freely distributable under the terms of the GPL 2.0 license.
- */
-
 jQuery( function ( $ ) {
     
     if( typeof $.fn.wpColorPicker != 'undefined'){
@@ -179,9 +175,7 @@ jQuery( function ( $ ) {
 
     // When the user clicks on the select button, we need to display the gallery editing
     $('.so-settings-gallery-edit').on({
-        click: function(e){
-            e.preventDefault();
-
+        click: function(){
             // Make sure the media gallery API exists
             if ( typeof wp === 'undefined' || ! wp.media || ! wp.media.gallery ) return false;
             event.preventDefault();
@@ -203,17 +197,6 @@ jQuery( function ( $ ) {
             return false;
         }
     });
-
-    // Handle the widget edit button
-    $('.so-settings-widget-edit').on('click', function(e){
-        e.preventDefault();
-
-        var $$ = $(this);
-        var widget_form = $$.closest('td').find('.so-settings-widget-form');
-        widget_form.html( $$.data('form') );
-
-        return false;
-    }).click();
 
     // Hide the updated message
     setTimeout( function () {

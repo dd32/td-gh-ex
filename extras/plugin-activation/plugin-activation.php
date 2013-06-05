@@ -4,8 +4,8 @@ function siteorigin_plugin_activation_page(){
 	if(!isset( $_GET[sanitize_key( 'siteorigin-pa-install' )])) return;
 	
 	add_theme_page(
-		__('Install Theme Plugin', 'origami'),
-		__('Install Theme Plugin', 'origami'),
+		__('Install Theme Plugin', 'siteorigin'),
+		__('Install Theme Plugin', 'siteorigin'),
 		'install_plugins',
 		'siteorigin_plugin_activation',
 		'siteorigin_plugin_activation_render_page'
@@ -32,15 +32,9 @@ function siteorigin_plugin_activation_do_plugin_install(){
 	if ( isset( $_GET[sanitize_key( 'plugin' )] ) && ( isset( $_GET[sanitize_key( 'siteorigin-pa-install' )] ) && 'install-plugin' == $_GET[sanitize_key( 'siteorigin-pa-install' )] ) && current_user_can('install_plugins') ) {
 		check_admin_referer( 'siteorigin-pa-install' );
 
-		$plugin['name']   = $_GET['plugin_name']; // Plugin name
-		$plugin['slug']   = $_GET['plugin']; // Plugin slug
-
-		if(!empty($_GET['plugin_source'])) {
-			$plugin['source'] = $_GET['plugin_source'];
-		}
-		else {
-			$plugin['source'] = false;
-		}
+		$plugin['name']   = $_GET[sanitize_key( 'plugin_name' )]; // Plugin name
+		$plugin['slug']   = $_GET[sanitize_key( 'plugin' )]; // Plugin slug
+		$plugin['source'] = $_GET[sanitize_key( 'plugin_source' )]; // Plugin source
 
 		/** Pass all necessary information via URL if WP_Filesystem is needed */
 		$url = wp_nonce_url(
@@ -71,15 +65,15 @@ function siteorigin_plugin_activation_do_plugin_install(){
 		require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php'; // Need for upgrade classes
 
 		/** Prep variables for Plugin_Installer_Skin class */
-		$title = sprintf( __('Installing %s', 'origami'), $plugin['name'] );
+		$title = sprintf( __('Installing %s', 'siteorigin'), $plugin['name'] );
 		$url   = add_query_arg( array( 'action' => 'install-plugin', 'plugin' => $plugin['slug'] ), 'update.php' );
 		if ( isset( $_GET['from'] ) )
 			$url .= add_query_arg( 'from', urlencode( stripslashes( $_GET['from'] ) ), $url );
 
 		$nonce = 'install-plugin_' . $plugin['slug'];
 
-		// Find the source of the plugin
-		$source = !empty( $plugin['source'] ) ? $plugin['source'] : 'http://downloads.wordpress.org/plugin/'.urlencode($plugin['slug']).'.zip';
+		/** Prefix a default path to pre-packaged plugins */
+		$source = $plugin['source'];
 		
 		/** Create a new instance of Plugin_Upgrader */
 		$upgrader = new Plugin_Upgrader( $skin = new Plugin_Installer_Skin( compact( 'type', 'title', 'url', 'nonce', 'plugin', 'api' ) ) );
@@ -92,7 +86,7 @@ function siteorigin_plugin_activation_do_plugin_install(){
 	}
 }
 
-function siteorigin_plugin_activation_install_url($plugin, $plugin_name, $source = false){
+function siteorigin_plugin_activation_install_url($plugin, $plugin_name, $source){
 	$plugins = get_plugins();
 	$plugins = array_keys($plugins);
 	
@@ -117,7 +111,7 @@ function siteorigin_plugin_activation_install_url($plugin, $plugin_name, $source
 					'page'          => 'siteorigin_plugin_activation',
 					'plugin'        => $plugin,
 					'plugin_name'   => $plugin_name,
-					'plugin_source' => !empty($source) ? urlencode($source) : false,
+					'plugin_source' => $source,
 					'siteorigin-pa-install' => 'install-plugin',
 				),
 				admin_url( 'themes.php' )
@@ -130,9 +124,9 @@ function siteorigin_plugin_activation_install_url($plugin, $plugin_name, $source
 function siteorigin_plugin_activation_is_activating($plugin){
 	if(!is_admin()) return false;
 	return (
-		(basename($_SERVER['PHP_SELF']) == 'plugins.php' || basename($_SERVER['PHP_SELF']) == 'update.php')
+		basename($_SERVER['PHP_SELF']) == 'plugins.php'
 		&& isset($_GET['action'])
-		&& ($_GET['action'] == 'activate' || $_GET['action'] == 'upgrade-plugin' || $_GET['action'] == 'activate-plugin')
+		&& $_GET['action'] == 'activate'
 		&& isset($_GET['plugin'])
 		&& $_GET['plugin'] == $plugin.'/'.$plugin.'.php'
 	);

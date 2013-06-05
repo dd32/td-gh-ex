@@ -1,12 +1,14 @@
 <?php
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.5.17' );
-define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://updates.siteorigin.com' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.5.2' );
+define('SITEORIGIN_THEME_UPDATE_ID', 269);
+define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://siteorigin.com' );
 
 include get_template_directory() . '/extras/premium/premium.php';
 include get_template_directory() . '/extras/settings/settings.php';
 include get_template_directory() . '/extras/adminbar/adminbar.php';
 include get_template_directory() . '/extras/widgets/widgets.php';
+
 include get_template_directory() . '/extras/update/update.php';
 include get_template_directory() . '/extras/plugin-activation/plugin-activation.php';
 
@@ -15,10 +17,11 @@ include get_template_directory() . '/functions/gallery.php';
 include get_template_directory() . '/functions/panels.php';
 
 if( file_exists(get_template_directory().'/premium/functions.php') ) {
-	// Include the premium file if it exists.
+	// If this is the premium version
 	include get_template_directory().'/premium/functions.php';
 }
-else{
+
+if(!defined('SITEORIGIN_IS_PREMIUM')){
 	include get_template_directory() . '/upgrade/upgrade.php';
 }
 
@@ -29,6 +32,8 @@ if(!function_exists('origami_setup')) :
  * @action after_setup_theme
  */
 function origami_setup(){
+	siteorigin_settings_init();
+
 	global $content_width;
 	if ( ! isset( $content_width ) ) $content_width = 904;
 	
@@ -47,13 +52,11 @@ function origami_setup(){
 	register_nav_menu( 'primary', __( 'Primary Menu', 'origami' ) );
 
 	// Add support for custom backgrounds.
-	$background = array(
+	add_theme_support( 'custom-background' , array(
 		'default-color' => 'f0eeeb',
 		'default-image' => get_template_directory_uri().'/images/bg.png'
-	);
-	$background = apply_filters('origami_custom_background', $background);
-	add_theme_support( 'custom-background', $background);
-
+	));
+	
 	// Use custom headers for site logo
 	add_theme_support( 'custom-header' , array(
 		'flex-height' => true,
@@ -63,7 +66,6 @@ function origami_setup(){
 
 	add_theme_support('siteorigin-premium-teaser', array(
 		'customizer' => true,
-		'settings' => true,
 	));
 	
 	add_editor_style();
@@ -128,8 +130,6 @@ if(!function_exists('origami_title')) :
  */
 function origami_title($title, $sep, $seplocation){
 	global $page, $paged;
-
-	if ( is_feed() ) return $title;
 
 	// Add the blog name.
 	$title = $title.get_bloginfo( 'name' );
@@ -218,12 +218,11 @@ endif;
 add_action('save_post', 'origami_save_post');
 
 
-if(!function_exists('origami_enqueue_google_webfonts')) :
+if(!function_exists('origami_google_webfonts')) :
 /**
  * This just displays the Google web fonts
  */
 function origami_enqueue_google_webfonts(){
-
 	if(!get_header_image()){
 		// Enqueue the logo font as well (Terminal Dosis 200)
 		wp_enqueue_style('google-webfonts', 'http://fonts.googleapis.com/css?family=Terminal+Dosis:200,400');
@@ -232,7 +231,6 @@ function origami_enqueue_google_webfonts(){
 		// Enqueue only the text fonts that we need
 		wp_enqueue_style('google-webfonts', 'http://fonts.googleapis.com/css?family=Terminal+Dosis:400');
 	}
-
 }
 endif;
 add_action('wp_enqueue_scripts', 'origami_enqueue_google_webfonts');
@@ -414,35 +412,3 @@ function origami_set_is_blog_archive($new) {
 	global $origami_is_blog_archive;
 	$origami_is_blog_archive = $new;
 }
-
-if( !function_exists('origami_header_image') ) :
-function origami_header_image(){
-
-	$header = get_custom_header();
-
-	echo '<img src="' . esc_url( $header->url ) .  '"';
-	if(!empty($header->height)) {
-		echo ' height="' . $header->height . '"';
-	}
-	if(!empty($header->width)) {
-		echo ' width="' . $header->width . '"';
-	}
-
-	echo ' alt="' . esc_attr( get_bloginfo('name') ) . '" />';
-
-}
-endif;
-
-function origami_wp_header(){
-	if( siteorigin_setting('responsive_enabled') ) {
-		?><meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0' /><?php
-	}
-	else {
-		?><meta name='viewport' content='width=1100' /><?php
-	}
-
-	// Make sure we don't use compatibility mode
-	?><meta http-equiv="X-UA-Compatible" content="IE=edge" /><?php
-
-}
-add_action('wp_head', 'origami_wp_header');
