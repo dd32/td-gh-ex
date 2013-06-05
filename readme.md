@@ -108,6 +108,17 @@ The exceptions to this license are as follows:
 
 
 # Changelog
+= 2.1.4 =
+* fixed : in tc_meta_boxes.php, line 766, a check on the existence of $slide object has been added
+* fixed : iframe content was dissapearing when reordering divs on resize. Now  handled properly in tc_scripts.js
+* fixed : breadcrumb menu was getting covered (not clickable) in pages. fixed in css with z-index.
+* fixed : thumbnails whith no-effect class are now having property min-height:initial => prevents stretching effect
+* fixed : revelead images of featured page were stretched when displayed with @media (max-width: 979px) query
+* fixed : better vertical alignment of the responsive menu
+* changed : color of slider arrows on hover
+* changed : text shadow of titles
+* changed : color and shadow of site description
+
 = 2.1.3 =
 * fixed : in tc_voila_slider, jump to next loop if attachment has been deleted
 * removed : title text in footer credit

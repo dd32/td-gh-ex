@@ -763,6 +763,10 @@ if ( ! function_exists( 'tc_show_slides' ) ) :
                       //get the attachment object
                       $tc_slide = get_post( $slide );
                       
+                      //check if $tc_slide object exists otherwise go to the next iteration
+                      if (!isset($tc_slide))
+                        continue;
+
                       //check if slider is checked for this attachment => otherwise go to the next iteration
                       $slider_check_value     = esc_attr(get_post_meta( $tc_slide -> ID, $key = 'slider_check_key', $single = true ));
                       if ($slider_check_value == false)
