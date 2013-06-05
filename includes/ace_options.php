@@ -172,7 +172,7 @@ function mytheme_admin() {
 
   <div id="options-header">
     <h1>Ace<span>Panel</span></h1>
-    <div class="meta"><a href="<?php echo esc_url('https://twitter.com/hibluchic'); ?>">Twitter</a> | <a href="<?php echo esc_url('http://www.facebook.com/hibluchic'); ?></a>">Facebook</a></div>
+    <div class="meta"><a href="<?php echo esc_url('https://twitter.com/hibluchic'); ?>">Twitter</a> | <a href="<?php echo esc_url('http://www.facebook.com/hibluchic'); ?>">Facebook</a></div>
   </div>
 
 <form method="post">

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Adelle Theme\n"
-"POT-Creation-Date: 2013-03-28 11:49+0800\n"
-"PO-Revision-Date: 2013-03-28 11:49+0800\n"
+"POT-Creation-Date: 2013-06-05 17:19+0800\n"
+"PO-Revision-Date: 2013-06-05 17:19+0800\n"
 "Last-Translator: Andrew Wong <hello@bluchic.com>\n"
 "Language-Team: BluChic <hello@bluchic.com>\n"
 "Language: English\n"
@@ -60,15 +60,15 @@ msgstr ""
 msgid "This post is password protected. Enter the password to view comments"
 msgstr ""
 
-#: comments.php:18 content.php:21 single.php:32
+#: comments.php:18 content-list.php:30 content.php:21 single.php:32
 msgid "0 comment"
 msgstr ""
 
-#: comments.php:18 content.php:21 single.php:32
+#: comments.php:18 content-list.php:30 content.php:21 single.php:32
 msgid "1 Comment"
 msgstr ""
 
-#: comments.php:18 content.php:21 single.php:32
+#: comments.php:18 content-list.php:30 content.php:21 single.php:32
 msgid "% Comments"
 msgstr ""
 
@@ -113,6 +113,14 @@ msgstr ""
 msgid "Website"
 msgstr ""
 
+#: content-list.php:6 content.php:6 single.php:12
+msgid "bookmark"
+msgstr ""
+
+#: content-list.php:7 content.php:7 single.php:13
+msgid "categories"
+msgstr ""
+
 #: content-none.php:3
 msgid "Not Found"
 msgstr ""
@@ -120,14 +128,6 @@ msgstr ""
 #: content-none.php:5
 msgid ""
 "You have come to a page that is either not existing or already been removed"
-msgstr ""
-
-#: content.php:6 single.php:12
-msgid "bookmark"
-msgstr ""
-
-#: content.php:7 single.php:13
-msgid "categories"
 msgstr ""
 
 #: footer.php:4
@@ -146,7 +146,7 @@ msgstr ""
 msgid "Designed by"
 msgstr ""
 
-#: header.php:47 header.php:48 searchform.php:3 searchform.php:4
+#: header.php:43 header.php:44 searchform.php:3 searchform.php:4
 msgid "Search"
 msgstr ""
 
@@ -254,54 +254,58 @@ msgstr ""
 msgid "Top Menu"
 msgstr ""
 
-#: includes/modules.php:159
+#: includes/modules.php:155
 msgid "Please enable referrers in your browser."
 msgstr ""
 
-#: includes/modules.php:169
+#: includes/modules.php:165
 msgid "ago"
 msgstr ""
 
-#: includes/modules.php:181
+#: includes/modules.php:177
 #, php-format
 msgid "<h6>%s</h6>"
 msgstr ""
 
-#: includes/modules.php:182
+#: includes/modules.php:178
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: includes/modules.php:182
+#: includes/modules.php:178
 #, php-format
 msgid "%s"
 msgstr ""
 
-#: includes/modules.php:184
+#: includes/modules.php:180
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: includes/modules.php:209
+#: includes/modules.php:205
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: includes/modules.php:285
+#: includes/modules.php:281
 msgid "Pages:"
 msgstr ""
 
-#: includes/modules.php:290
+#: includes/modules.php:286
 msgid "Next page"
 msgstr ""
 
-#: includes/modules.php:291
+#: includes/modules.php:287
 msgid "Previous page"
 msgstr ""
 
-#: includes/modules.php:312
+#: includes/modules.php:308
 msgid "Previous"
 msgstr ""
 
-#: includes/modules.php:313
+#: includes/modules.php:309
 msgid "Next"
+msgstr ""
+
+#: includes/widgets.php:6
+msgid "Right Widget 1"
 msgstr ""

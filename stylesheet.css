@@ -45,7 +45,7 @@
   /* .nav */
   .mobile-nav {display: none;}
   .nav {position: relative; width: 100%; display: inline-block; background: #000; padding: 0; margin-top: 40px; clear: both; line-height: 1em; text-transform: uppercase;}
-  .nav ul {list-style: none;}
+  .nav ul {list-style: none; width: 70%;}
   .nav a {display: block; padding: 14px 10px; color: #fff;}
   .nav a:hover {text-decoration: underline; color: #fff;}
   .nav ul ul a {display: block; padding: 14px; position: relative;}
@@ -79,8 +79,8 @@
 
   /* .nav */
   .mobile-nav {display: none;}
-  .nav {position: relative; width: 980px; display: inline-block; background: url('images/nav_bg.gif') no-repeat center; padding: 0 20px; margin-top: 40px; clear: both; line-height: 1em; text-transform: uppercase;}
-  .nav ul {list-style: none;}
+  .nav {position: relative; width: 980px; display: inline-block; background: #000 url('images/nav_bg.gif') no-repeat center; padding: 0 20px; margin-top: 40px; clear: both; line-height: 1em; text-transform: uppercase;}
+  .nav ul {list-style: none; width: 780px;}
   .nav a {display: block; padding: 14px; color: #fff;}
   .nav a:hover {text-decoration: underline; color: #fff;}
   .nav ul ul a {display: block; padding: 14px; position: relative;}

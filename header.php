@@ -15,10 +15,6 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <link rel="shortcut icon" href="<?php if( get_option("adelle_theme_favicon") ) { echo esc_url( get_option("adelle_theme_favicon") ); } else { echo get_stylesheet_directory_uri(); echo "/images/favicon.gif"; } ?>" type="image/x-icon" />
 
-<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css" media="screen" type="text/css" />
-<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/stylesheet.css" media="all" type="text/css" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lora:400,400italic|Muli:400,400italic|Montserrat" media="all" type="text/css" />
-
 <!--[if lt IE 7]><script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js"></script><![endif]-->
 <!--[if lt IE 8]><script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"></script><![endif]-->
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
