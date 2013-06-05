@@ -7,7 +7,7 @@ jQuery(document).ready(function($) {
 	// Custom CSS validation
 	function validate_custom_css() {
 		var custom_css = jQuery('#custom_css').val();
-		var allowed = /[a-zA-Z0-9 \:\{\}\;\<\>\-\.\,\#\!\%\"\'\@\_\[\]\*\/]$/;
+		var allowed = /^[a-zA-Z0-9\s\:\{\}\;\<\>\-\.\,\#\=\!\%\"\'\@_\(\)\[\]\*\+\/]+$/i;
 
 		if( custom_css.length == 0 ) {
 			return true;
@@ -76,6 +76,7 @@ jQuery(document).ready(function($) {
 		magazine			: "cyberchimps_blog_magazine_section",
 		portfolio_lite		: "cyberchimps_blog_portfolio_lite_section",
 		portfolio_pro		: "cyberchimps_blog_portfolio_pro_section",
+        product_element     : "cyberchimps_product_section",
 		recent_posts		: "cyberchimps_blog_recent_posts_section",
 		html_box			: "cyberchimps_html_box_section",
 		boxes				: "cyberchimps_boxes_section",
@@ -403,6 +404,43 @@ jQuery(document).ready(function($) {
 					}
 				}).change();
 	});
+
+    /**
+     * Select toggle function watches select inputs and hides/shows relevant sections
+     *
+     * select option must have class select-toggle
+     *
+     * any elements to hide/show must have a class like option-select-toggle
+     *
+     */
+    function select_toggle() {
+        // Loop through all options
+        $('.select-toggle option').each(function(){
+            // Get option name
+            var value = $(this).val();
+            // Create class name for elements
+            var classes = '.' + value + '-select-toggle';
+            // If the option is selected show that element
+            if(this.selected){
+                $(classes).parent('.field-container').show();
+            }
+            // Otherwise hide it
+            else {
+                $(classes).parent('.field-container').hide();
+            }
+        })
+    }
+    // Run the function once on page load
+    $('.select-toggle').each(function(){
+        select_toggle();
+    })
+    // Run the function on select change
+    $('.select-toggle').change(function(){
+        select_toggle();
+    });
+    /**
+     * End of select hide/show function
+     */
 
 /* add controls for modal welcome note */
 	$('#welcomeModal').modal();

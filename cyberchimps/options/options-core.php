@@ -388,15 +388,6 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'section' => 'cyberchimps_help_section',
 		'heading' => 'cyberchimps_help_heading');
 		
-	//hidden field to set whether to show modal window or not
-	$fields_list[] = array(
-		'name' => __( 'Welcome Note', 'cyberchimps_core' ),
-		'id' => 'modal_welcome_note_display',
-		'type' => 'toggle',
-		'std' => 'checked',
-		'section' => 'cyberchimps_help_section',
-		'heading' => 'cyberchimps_help_heading'); 
-		
 /*************************** DESIGN ***************************************************/
 	
 /* LAYOUT OPTIONS */
@@ -1982,7 +1973,7 @@ if( $theme_check == 'pro' ):
 							3 => '3',
 							4 => '4'
 						),
-		'std'		=> '3',
+		'std'		=> apply_filters( 'cyberchimps_boxes_default_number', 3 ),
 		'section'	=> 'cyberchimps_boxes_section',
 		'heading'	=> 'cyberchimps_blog_heading'
 	);
