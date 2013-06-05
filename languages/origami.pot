@@ -2,8 +2,8 @@
 # This file is distributed under the GNU General Public License 2.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: origami 1.5.2\n"
-"POT-Creation-Date: 2013-06-05T14:32:12+02:00\n"
+"Project-Id-Version: origami 1.5.3\n"
+"POT-Creation-Date: 2013-06-05T22:21:21+02:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -225,87 +225,6 @@ msgstr ""
 msgid "There's a premium version of %s coming soon."
 msgstr ""
 
-msgid "After you pay for %s Premium, we'll email you a download link and an order number to your <strong>PayPal email address</strong>. "
-msgstr ""
-
-msgid "Use <a href='%s' target='_blank'>this form</a> if you don't receive your order number in the next 15 minutes. "
-msgstr ""
-
-msgid "Be sure to check your spam folder."
-msgstr ""
-
-msgid "Order Number"
-msgstr ""
-
-msgid "Enable Upgrade"
-msgstr ""
-
-msgid "Already Paid?"
-msgstr ""
-
-msgid "Upgrade Now"
-msgstr ""
-
-msgid "Any Price"
-msgstr ""
-
-msgid "Some of our User Comments"
-msgstr ""
-
-msgid "What Level of Support Do You Need?"
-msgstr ""
-
-msgid "Premium theme with lifetime updates"
-msgstr ""
-
-msgid "Standard email support"
-msgstr ""
-
-msgid "1-2 day response time"
-msgstr ""
-
-msgid "Theme setup support"
-msgstr ""
-
-msgid "Help from SiteOrigin support staff"
-msgstr ""
-
-msgid "90 days of support"
-msgstr ""
-
-msgid "Standard Support"
-msgstr ""
-
-msgid "Recommended"
-msgstr ""
-
-msgid "<strong>Fast</strong> email support"
-msgstr ""
-
-msgid "<strong>4hr response</strong> during <abbr title=\"9am-6pm, Monday-Friday GMT 2+\">office hours</a>"
-msgstr ""
-
-msgid "<strong>Basic customization</strong> and setup support"
-msgstr ""
-
-msgid "Help from our <strong>WordPress developers</strong>"
-msgstr ""
-
-msgid "A <strong>full year</strong> of theme support"
-msgstr ""
-
-msgid "Priority Support"
-msgstr ""
-
-msgid "%1$s Premium includes email support."
-msgstr ""
-
-msgid "For an extra <strong>%s</strong>, you get faster replies and more detailed answers. Perfect if you're on a deadline."
-msgstr ""
-
-msgid "You're free to use our premium themes on as many sites as you like."
-msgstr ""
-
 msgid "Your Order Number Is [%s]"
 msgstr ""
 
@@ -346,6 +265,39 @@ msgid "Available in <strong>%s Premium</strong> - <strong class=\"upgrade\">Upgr
 msgstr ""
 
 msgid "Get Additional Customizations"
+msgstr ""
+
+msgid "After you pay for %s Premium, we'll email you a download link and an order number to your <strong>PayPal email address</strong>. "
+msgstr ""
+
+msgid "Use <a href='%s' target='_blank'>this form</a> if you don't receive your order number in the next 15 minutes. "
+msgstr ""
+
+msgid "Be sure to check your spam folder."
+msgstr ""
+
+msgid "Order Number"
+msgstr ""
+
+msgid "Enable Upgrade"
+msgstr ""
+
+msgid "Already Paid?"
+msgstr ""
+
+msgid "Upgrade Now"
+msgstr ""
+
+msgid "Purchase"
+msgstr ""
+
+msgid "Choose Your Price"
+msgstr ""
+
+msgid "Please enable Javascript to change pricing"
+msgstr ""
+
+msgid "Some of our User Comments"
 msgstr ""
 
 msgid "%s Addons"
@@ -922,7 +874,16 @@ msgstr ""
 msgid "If you've enjoyed using Origami, you're going to love Origami Premium. It's a robust upgrade to Origami that gives you loads of cool features. You choose the price, so you can decide what it's worth to give your site a professional edge."
 msgstr ""
 
-msgid "You choose how much you want to pay for Origami Premium."
+msgid "If you're creating your site on a budget"
+msgstr ""
+
+msgid "The standard amount"
+msgstr ""
+
+msgid "We'll love and support you forever"
+msgstr ""
+
+msgid "You choose how much you want to pay for Origami Premium"
 msgstr ""
 
 msgid "Pay what you want with a full money back guarantee"

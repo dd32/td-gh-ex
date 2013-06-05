@@ -1,14 +1,12 @@
 <?php
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.5.2' );
-define('SITEORIGIN_THEME_UPDATE_ID', 269);
+define( 'SITEORIGIN_THEME_VERSION' , '1.5.3' );
 define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://siteorigin.com' );
 
 include get_template_directory() . '/extras/premium/premium.php';
 include get_template_directory() . '/extras/settings/settings.php';
 include get_template_directory() . '/extras/adminbar/adminbar.php';
 include get_template_directory() . '/extras/widgets/widgets.php';
-
 include get_template_directory() . '/extras/update/update.php';
 include get_template_directory() . '/extras/plugin-activation/plugin-activation.php';
 
