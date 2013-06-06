@@ -5,7 +5,7 @@ if ( ! isset( $content_width ) ) {
 }
 
 
-$activetab_version = '0.3.1';
+$activetab_version = '0.3.2';
 
 
 if ( ! function_exists( 'activetab_enqueue_scripts_and_styles' ) ) :
@@ -19,7 +19,8 @@ if ( ! function_exists( 'activetab_enqueue_scripts_and_styles' ) ) :
 	    }
 
 		wp_enqueue_style( 'activetab-bootstrap', get_template_directory_uri() . '/bootstrap/css/bootstrap.css', array(), $activetab_version, 'all' );
-	    wp_enqueue_style( 'activetab-bootstrap-responsive', get_template_directory_uri() . '/bootstrap/css/bootstrap-responsive.css', array( 'activetab-bootstrap' ), $activetab_version, 'all' );
+		wp_enqueue_style( 'activetab-bootstrap-responsive', get_template_directory_uri() . '/bootstrap/css/bootstrap-responsive.css', array( 'activetab-bootstrap' ), $activetab_version, 'all' );
+		wp_enqueue_style( 'activetab-font-awesome', get_template_directory_uri() . '/font-awesome/css/font-awesome.css', array( 'activetab-bootstrap' ), $activetab_version, 'all' );
 		wp_enqueue_style( 'activetab-style', get_stylesheet_uri(), array( 'activetab-bootstrap' ), $activetab_version, 'all' ); // get_stylesheet_directory_uri() . '/style.css'
 	}
 	add_action( 'wp_enqueue_scripts', 'activetab_enqueue_scripts_and_styles' );
@@ -325,17 +326,18 @@ endif; // activetab_excerpt_more()
 
 
 if ( ! function_exists( 'activetab_is_homepage' ) ) :
-	function activetab_is_homepage(){ // does not used, simple way was chosen
+	function activetab_is_homepage() {
+		global $paged;
 		// if( is_home() || is_front_page() ){} // simple way
-		$show_on_front = get_option('show_on_front'); // page or posts
-		$page_on_front = get_option('page_on_front'); // 0 or page_id
-		$page_for_posts = get_option('page_for_posts'); // 0 or page_id
-		if ( ($show_on_front == 'page') || ($page_on_front != 0) ){
+		$show_on_front = get_option( 'show_on_front' ); // page or posts
+		$page_on_front = get_option( 'page_on_front' ); // 0 or page_id
+		$page_for_posts = get_option( 'page_for_posts' ); // 0 or page_id
+		if ( ( $show_on_front == 'page' ) || ( $page_on_front != 0 ) ){
 			if( is_front_page() ){
 				return true;
 			}
 		} elseif ( ( $show_on_front == 'posts' ) || ( $page_for_posts == 0 ) ) {
-			if( is_home() ){
+			if( is_home() && $paged < 2 ) { // show link to homepage from paged pages
 				return true;
 			}
 		} else {
