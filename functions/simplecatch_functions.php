@@ -6,13 +6,13 @@
  * hooks action wp_enqueue_scripts
  */
 function simplecatch_scripts_method() {	
-	global $post, $page_id;
+	global $post;
 	
 	//Register JQuery circle all and JQuery set up as dependent on Jquery-cycle
 	wp_register_script( 'jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
 	
 	//Enqueue Slider Script only in Front Page
-	if ( is_front_page() || ( is_home() && $page_id != $page_for_posts ) ) {
+	if ( is_front_page() || is_home() ) {
 		wp_enqueue_script( 'simplecatch_slider', get_template_directory_uri() . '/js/simplecatch_slider.js', array( 'jquery-cycle' ), '1.0', true );
 	}
 	
@@ -367,14 +367,17 @@ if ( ! function_exists( 'simplecatch_sliderbreadcrumb' ) ) :
  * In other pages, breadcrumb will display if exist bread
  */
 function simplecatch_sliderbreadcrumb() {
-	global $post, $page_id;
+	global $post, $wp_query;
 	
 	// Front page displays in Reading Settings
 	$page_on_front = get_option('page_on_front') ;
 	$page_for_posts = get_option('page_for_posts'); 
 	
+	// Get Page ID outside Loop
+	$page_id = $wp_query->get_queried_object_id();	
+	
 	// If the page is home or front page  
-	if ( is_front_page() || ( is_home() && $page_id != $page_for_posts ) ) :
+	if ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) :
 		// This function passes the value of slider effect to js file 
 		if( function_exists( 'simplecatch_pass_slider_value' ) ) {
 			simplecatch_pass_slider_value();
@@ -711,7 +714,7 @@ function simple_catch_alter_home( $query ){
 			$query->query_vars['post__not_in'] = $options[ 'featured_slider' ];
 		}
 	}
-	if ( !in_array( '0', $cats ) ) {
+	if ( !in_array( '0', (array) $cats ) ) {
 		if( $query->is_main_query() && $query->is_home() ) {
 			$query->query_vars['category__in'] = $options[ 'front_page_category' ];
 		}
