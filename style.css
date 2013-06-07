@@ -4,7 +4,7 @@ Theme URI: http://fimply.de/?page_id=559
 Author URI: http://fimply.de
 Description: Also with Aura, our newest WordPress theme, we will convince a lot of people all over the world of our strategy of minimalism. Aura comes with a lot of phenomenal features.
 Author: Fimply
-Version: 1.0.2
+Version: 1.0.3
 Tags: green, one-column, fixed-width, featured-images, threaded-comments, post-formats, sticky-post, custom-menu
 License: GNU/GPL Version 2 or later
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -766,6 +766,8 @@ img {
 	font-family: 'PT Sans', sans-serif;
 	color: #555;
 	-webkit-hyphens: auto;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
     -moz-hyphens: auto;
     hyphens: auto;
 	line-height: 31px;
@@ -973,6 +975,9 @@ span.tags {
 	width: intrinsic;
 	font-family: 'Doppio One', sans-serif;
 	color:#444;
+	-ms-word-wrap: break-word;
+word-wrap: break-word;
+max-width: 48%;
 }
 
 .post-button-right {
@@ -985,6 +990,9 @@ span.tags {
 	width: intrinsic;
 	font-family: 'Doppio One', sans-serif;
 	color:#444;
+	-ms-word-wrap: break-word;
+word-wrap: break-word;
+max-width: 48%;
 }
 
 
