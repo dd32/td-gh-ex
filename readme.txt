@@ -266,3 +266,6 @@ Version 2.3.1
 * Moved Featured Slider Code from header.php to function.php and hooked with catchbox_content
 * Update Italian translation it_IT.po and it_IT.mo
 
+Version 2.3.2
+* Fixed the Slider
+

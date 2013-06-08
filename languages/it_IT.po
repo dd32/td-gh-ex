@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box Pro\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-24 16:28+0545\n"
-"PO-Revision-Date: 2013-05-24 16:28+0545\n"
+"POT-Creation-Date: 2013-06-08 20:32+0545\n"
+"PO-Revision-Date: 2013-06-08 20:32+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Catch Themes <info@catchinternet.com>\n"
 "Language: it\n"
@@ -138,7 +138,7 @@ msgstr "I commenti sono chiusi"
 #: ../content-aside.php:16 ../content-featured.php:14
 #: ../content-gallery.php:16 ../content-gallery.php:48 ../content-image.php:15
 #: ../content-link.php:16 ../content-quote.php:14 ../content-status.php:15
-#: ../content.php:15 ../content.php:19 ../content.php:47 ../functions.php:796
+#: ../content.php:15 ../content.php:19 ../content.php:47 ../functions.php:802
 #, php-format
 msgid "Permalink to %s"
 msgstr "Collegamento permanente a %s"
@@ -165,7 +165,7 @@ msgstr "%"
 
 #: ../content-aside.php:33 ../content-gallery.php:32 ../content-image.php:27
 #: ../content-link.php:33 ../content-quote.php:35 ../content-status.php:34
-#: ../content.php:55 ../functions.php:386
+#: ../content.php:55 ../functions.php:389
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Continua a leggere <span class=\"meta-nav\">&rarr;</span>"
 
@@ -197,8 +197,8 @@ msgstr "<b>%</b> Risposte"
 #: ../content-aside.php:50 ../content-featured.php:51
 #: ../content-gallery.php:96 ../content-image.php:74 ../content-link.php:50
 #: ../content-page.php:27 ../content-quote.php:78 ../content-single.php:64
-#: ../content-status.php:51 ../content.php:100 ../functions.php:593
-#: ../functions.php:621 ../image.php:97
+#: ../content-status.php:51 ../content.php:100 ../functions.php:596
+#: ../functions.php:624 ../image.php:97
 msgid "Edit"
 msgstr "Modifica"
 
@@ -266,7 +266,7 @@ msgstr ""
 "</span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%4$s\" "
 "title=\"%5$s\" rel=\"author\">%6$s</a></span></span>"
 
-#: ../content-image.php:45 ../functions.php:659
+#: ../content-image.php:45 ../functions.php:662
 #, php-format
 msgid "View all posts by %s"
 msgstr "Guarda tutti gli articoli di %s"
@@ -398,66 +398,66 @@ msgstr "Fiori"
 msgid "Mountain"
 msgstr "Montagne"
 
-#: ../functions.php:357
+#: ../functions.php:358
 #, php-format
 msgid "Page %s"
 msgstr "Pagina %s"
 
-#: ../functions.php:454
+#: ../functions.php:457
 msgid "Main Sidebar"
 msgstr "Barra laterale principale"
 
-#: ../functions.php:463
+#: ../functions.php:466
 msgid "Footer Area One"
 msgstr "Prima area a piè di pagina"
 
-#: ../functions.php:465 ../functions.php:475 ../functions.php:485
+#: ../functions.php:468 ../functions.php:478 ../functions.php:488
 msgid "An optional widget area for your site footer"
 msgstr "Un'area opzionale per dei widget a piè pagina"
 
-#: ../functions.php:473
+#: ../functions.php:476
 msgid "Footer Area Two"
 msgstr "Seconda area a piè di pagina"
 
-#: ../functions.php:483
+#: ../functions.php:486
 msgid "Footer Area Three"
 msgstr "Terza area a piè di pagina"
 
-#: ../functions.php:506 ../single.php:15
+#: ../functions.php:509 ../single.php:15
 msgid "Post navigation"
 msgstr "Navigazione articoli"
 
-#: ../functions.php:514
+#: ../functions.php:517
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> Articoli più vecchi"
 
-#: ../functions.php:515
+#: ../functions.php:518
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Articoli più nuovi <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../functions.php:593
+#: ../functions.php:596
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: ../functions.php:610
+#: ../functions.php:613
 #, php-format
 msgid "%1$s on %2$s <span class=\"says\">said:</span>"
 msgstr "%1$s il %2$s <span class=\"says\">ha scritto:</span>"
 
-#: ../functions.php:616
+#: ../functions.php:619
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s alle %2$s"
 
-#: ../functions.php:625
+#: ../functions.php:628
 msgid "Your comment is awaiting moderation."
 msgstr "Il tuo commento è in attesa della moderazione."
 
-#: ../functions.php:634
+#: ../functions.php:637
 msgid "Reply <span>&darr;</span>"
 msgstr "Rispondi <span>&darr;</span>"
 
-#: ../functions.php:653
+#: ../functions.php:656
 #, php-format
 msgid ""
 "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel="
@@ -472,15 +472,15 @@ msgstr ""
 "<span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s"
 "\" rel=\"author\">%7$s</a></span></span>"
 
-#: ../functions.php:708
+#: ../functions.php:714
 msgid "ID"
 msgstr "ID"
 
-#: ../functions.php:916
+#: ../functions.php:924
 msgid "Name"
 msgstr "Nome"
 
-#: ../functions.php:918
+#: ../functions.php:926
 msgid "Email"
 msgstr "Email"
 

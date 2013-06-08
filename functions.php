@@ -44,7 +44,7 @@
  */
 add_action( 'after_setup_theme', 'catchbox_setup' );
 
-if ( ! function_exists( 'catchbox_setup' ) ):
+if ( ! function_exists( 'catchbox_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -330,6 +330,7 @@ function catchbox_admin_header_image() { ?>
 endif; // catchbox_admin_header_image
 
 
+if ( ! function_exists( 'catchbox_filter_wp_title' ) ) :
 /**
  * Creates a nicely formatted and more specific title element text
  * for output in head of document, based on current view.
@@ -359,6 +360,8 @@ function catchbox_filter_wp_title( $title, $sep ) {
 	return $title;	
 
 }
+endif; // catchbox_filter_wp_title
+
 add_filter( 'wp_title', 'catchbox_filter_wp_title', 10, 2 );
 
 
@@ -639,7 +642,7 @@ function catchbox_comment( $comment, $args, $depth ) {
 			break;
 	endswitch;
 }
-endif; // ends check for catchbox_comment()
+endif; // catchbox_comment
 
 
 if ( ! function_exists( 'catchbox_posted_on' ) ) : 
@@ -660,9 +663,10 @@ function catchbox_posted_on() {
 		get_the_author()
 	);
 }
-endif;
+endif; // catchbox_posted_on
 
 
+if ( ! function_exists( 'catchbox_body_classes' ) ) : 
 /**
  * Adds two classes to the array of body classes.
  * The first is if the site has only had one author with published posts.
@@ -693,6 +697,8 @@ function catchbox_body_classes( $classes ) {
 	}	
 	return $classes;
 }
+endif; // catchbox_body_classes
+
 add_filter( 'body_class', 'catchbox_body_classes' );
 
 
@@ -816,6 +822,7 @@ function catchbox_sliders() {
 endif;  // catchbox_sliders 
 
 
+if ( ! function_exists( 'catchbox_scripts_method' ) ):
 /**
  * Register jquery scripts
  *
@@ -823,23 +830,20 @@ endif;  // catchbox_sliders
  * hooks action wp_enqueue_scripts
  */
 function catchbox_scripts_method() {
-	global $post, $page_id;
-	
-	// Front page displays in Reading Settings
-	$page_on_front = get_option('page_on_front') ;
-	$page_for_posts = get_option('page_for_posts'); 	
+	global $post;	
 	
 	//Register JQuery circle all and JQuery set up as dependent on Jquery-cycle
 	wp_register_script( 'jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
 	
 	//Enqueue Slider Script only in Front Page
-	if ( is_front_page() || ( is_home() && $page_id != $page_for_posts ) )  {
+	if ( is_front_page() || is_home() ) {
 		wp_enqueue_script( 'catchbox_slider', get_template_directory_uri() . '/js/catchbox_slider.js', array( 'jquery-cycle' ), '1.0', true );
 	}
 	
 	//Responsive Menu
 	wp_register_script('catchbox-menu', get_template_directory_uri() . '/js/catchbox-menu.min.js', array('jquery'), '1.1.0', true);
 	wp_register_script('catchbox-allmenu', get_template_directory_uri() . '/js/catchbox-allmenu-min.js', array('jquery'), '201301503', true);
+	
 	//Check is secondayand footer menu is enable or not
 	$options = catchbox_get_theme_options();
 	if ( !empty ($options ['enable_menus'] ) ) :
@@ -866,10 +870,13 @@ function catchbox_scripts_method() {
 	 	wp_enqueue_script( 'catchbox-html5', get_template_directory_uri() . '/js/html5.js' );
 	}
 	
-} // catchbox_scripts_method
+}
+endif; // catchbox_scripts_method
+
 add_action( 'wp_enqueue_scripts', 'catchbox_scripts_method' );
 
 
+if ( ! function_exists( 'catchbox_alter_home' ) ):
 /**
  * Alter the query for the main loop in home page
  * @uses pre_get_posts hook
@@ -886,6 +893,7 @@ function catchbox_alter_home( $query ) {
 		}
 	}
 }
+endif; // catchbox_alter_home
 add_action( 'pre_get_posts','catchbox_alter_home' );
 
 
@@ -1128,13 +1136,16 @@ if ( ! function_exists( 'catchbox_slider_display' ) ) :
  * Display slider
  */
 function catchbox_slider_display() {
-	global $post, $page_id;
+	global $post, $wp_query;
 	
 	// Front page displays in Reading Settings
 	$page_on_front = get_option('page_on_front') ;
-	$page_for_posts = get_option('page_for_posts'); 	
+	$page_for_posts = get_option('page_for_posts'); 
+	
+	// Get Page ID outside Loop
+	$page_id = $wp_query->get_queried_object_id();	
 		
-	if (  is_front_page() || ( is_home() && $page_id != $page_for_posts ) )  {
+	if ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) {
 		if ( function_exists( 'catchbox_pass_slider_value' ) ) { catchbox_pass_slider_value(); }
 		if ( function_exists( 'catchbox_sliders' ) ) { catchbox_sliders(); } 
 	} 
