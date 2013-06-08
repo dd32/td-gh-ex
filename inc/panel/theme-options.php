@@ -216,6 +216,46 @@ function catcheverest_theme_options_do_page() {
                     </div><!-- .option-container -->
                     
                     <div class="option-container">
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Web Clip Icon Options', 'catcheverest' ); ?></a></h3>
+                        <div class="option-content inside">
+                            <table class="form-table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"><?php _e( 'Disable Web Clip Icon?', 'catcheverest' ); ?></th>
+                                         <input type='hidden' value='0' name='catcheverest_options[remove_web_clip]'>
+                                        <td><input type="checkbox" id="favicon" name="catcheverest_options[remove_web_clip]" value="1" <?php checked( '1', $options['remove_web_clip'] ); ?> /> <?php _e('Check to disable', 'catcheverest'); ?></td>
+                                    </tr>
+                                    <tr>                            
+                                        <th scope="row"><?php _e( 'Web Clip Icon URL:', 'catcheverest' ); ?></th>
+                                        <td><?php if ( !empty ( $options[ 'web_clip' ] ) ) { ?>
+                                                <input class="upload-url" size="65" type="text" name="catcheverest_options[web_clip]" value="<?php echo esc_url( $options [ 'web_clip' ] ); ?>" class="upload" />
+                                            <?php } else { ?>
+                                                <input size="65" type="text" name="catcheverest_options[web_clip]" value="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png" alt="fav" />
+                                            <?php }  ?> 
+                                            <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Web Clip Icon','catcheverest' );?>" />
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <th scope="row"><?php _e( 'Preview: ', 'catcheverest' ); ?></th>
+                                        <td> 
+                                            <?php 
+                                                if ( !empty( $options[ 'web_clip' ] ) ) { 
+                                                    echo '<img src="'.esc_url( $options[ 'web_clip' ] ).'" alt="fav" />';
+                                                } else {
+                                                    echo '<img src="'. get_template_directory_uri().'/images/favicon.ico" alt="fav" />';
+                                                }
+                                            ?>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p><?php esc_attr_e( 'Note: Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px height, which will support High Resolution Devices like iPad Retina.', 'catcheverest' ); ?></p>
+                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catcheverest' ); ?>" /></p> 
+                        </div><!-- .option-content -->
+                    </div><!-- .option-container -->                    
+                    
+                    <div class="option-container">
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Header Right Section', 'catcheverest' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table">
@@ -832,6 +872,15 @@ function catcheverest_theme_options_validate( $options ) {
 		$input_validated[ 'remove_favicon' ] = $input[ 'remove_favicon' ];
 	}
 	
+	// Data Validation for web clip icon
+	if ( isset( $input[ 'web_clip' ] ) ) {
+		$input_validated[ 'web_clip' ] = esc_url_raw( $input[ 'web_clip' ] );
+	}
+	if ( isset( $input['remove_web_clip'] ) ) {
+		// Our checkbox value is either 0 or 1 
+		$input_validated[ 'remove_web_clip' ] = $input[ 'remove_web_clip' ];
+	}	
+	
 	// Data Validation for Header Sidebar	
 	if ( isset( $input[ 'disable_header_right_sidebar' ] ) ) {
 		$input_validated[ 'disable_header_right_sidebar' ] = $input[ 'disable_header_right_sidebar' ];
@@ -1083,6 +1132,7 @@ function catcheverest_theme_options_validate( $options ) {
  */
 function catcheverest_themeoption_invalidate_caches(){
 	delete_transient( 'catcheverest_favicon' );	  // favicon on cpanel/ backend and frontend
+	delete_transient( 'catcheverest_web_clip' ); // web clip icons
 	delete_transient( 'catcheverest_post_sliders' ); // featured post slider
 	delete_transient( 'catcheverest_homepage_headline' ); // Homepage Headline Message
 	delete_transient( 'catcheverest_homepage_featured_content' ); // Homepage Featured Content

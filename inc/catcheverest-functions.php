@@ -607,7 +607,7 @@ if ( ! function_exists( 'catcheverest_slider_display' ) ) :
  * Shows Slider
  */
 function catcheverest_slider_display() {
-	global $post, $wp_query, $catcheverest_options_settings;;
+	global $post, $wp_query, $catcheverest_options_settings;
    	$options = $catcheverest_options_settings;
 
 	// get data value from theme options
@@ -1258,16 +1258,19 @@ function catcheverest_post_id_column( $post_columns ) {
 	$post_columns = array_merge( $beginning, $ending );
 	return $post_columns;
 }
+
 add_filter( 'manage_posts_columns', 'catcheverest_post_id_column' );
 
 function catcheverest_posts_id_column( $col, $val ) {
 	if( $col == 'postid' ) echo $val;
 }
+
 add_action( 'manage_posts_custom_column', 'catcheverest_posts_id_column', 10, 2 );
 
 function catcheverest_posts_id_column_css() {
 	echo '<style type="text/css">#postid { width: 40px; }</style>';
 }
+
 add_action( 'admin_head-edit.php', 'catcheverest_posts_id_column_css' );
 
 
@@ -1281,6 +1284,7 @@ function catcheverest_menu_alter( $items, $args ) {
 	return $items;
 }
 endif; // catcheverest_menu_alter
+
 add_filter( 'wp_nav_menu_items', 'catcheverest_menu_alter', 10, 2 );
 
 
@@ -1294,6 +1298,7 @@ function catcheverest_pagemenu_alter( $output ) {
 	return $output;
 }
 endif; // catcheverest_pagemenu_alter
+
 add_filter( 'wp_list_pages', 'catcheverest_pagemenu_alter' );
 
 
@@ -1311,4 +1316,45 @@ function catcheverest_pagemenu_filter( $text ) {
 	
 }
 endif; // catcheverest_pagemenu_filter
+
 add_filter('wp_page_menu', 'catcheverest_pagemenu_filter');
+
+
+/**
+ * Get the Web Clip Icon Image from theme options
+ *
+ * @uses web_clip and remove_web_clip 
+ * @get the data value of image from theme options
+ * @display favicon
+ *
+ * @uses default Web Click Icon if web_clip field on theme options is empty
+ *
+ * @uses set_transient and delete_transient 
+ */
+function catcheverest_web_clip() {
+	//delete_transient( 'catcheverest_web_clip' );	
+	
+	if( ( !$catcheverest_web_clip = get_transient( 'catcheverest_web_clip' ) ) ) {
+		
+		// get the data value from theme options
+		global $catcheverest_options_settings;
+   		$options = $catcheverest_options_settings;
+		
+		echo '<!-- refreshing cache -->';
+		if ( empty( $options[ 'remove_web_clip' ] ) ) :
+			// if not empty fav_icon on theme options
+			if ( empty( $options[ 'web_clip' ] ) ) :
+				$catcheverest_web_clip = '<link rel="apple-touch-icon-precomposed" href="'.esc_url( $options[ 'web_clip' ] ).'" />'; 	
+			else:
+				// if empty fav_icon on theme options, display default fav icon
+				$catcheverest_web_clip = '<link rel="apple-touch-icon-precomposed" href="'. get_template_directory_uri() .'/images/apple-touch-icon.png" />';
+			endif;
+		endif;
+		
+		set_transient( 'catcheverest_web_clip', $catcheverest_web_clip, 86940 );	
+	}	
+	echo $catcheverest_web_clip ;	
+} // catcheverest_web_clip
+
+//Load Favicon in Header Section
+add_action( 'wp_head', 'catcheverest_web_clip' );

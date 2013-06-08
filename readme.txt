@@ -112,3 +112,5 @@ version 1.1
 * Added white-space property control in Menu to fixed the text wrap in mobile devices
 * Fixed the conditions for Slider, Homepage Headline and Homepage Featured Content 
 
+version 1.1.1
+* Added Web Clip Icon image
