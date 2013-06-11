@@ -1,6 +1,8 @@
-<?php if ( 'posts' == get_option( 'show_on_front' ) ) {
-    include( get_home_template() );
-} else { ?>
+<?php
+/*
+Template Name: Home
+*/
+?>
 
 <?php get_header(); ?>
 
@@ -14,14 +16,10 @@
 		
 			<h1><?php if(esc_html(of_get_option('welcome_head')) != NULL){ echo esc_html(of_get_option('welcome_head'));} else echo "Write your welcome headline here." ?></h1>
 		<p><?php if(esc_textarea(of_get_option('welcome_text')) != NULL){ echo esc_textarea(of_get_option('welcome_text'));} else echo "Nullam posuere felis a lacus tempor eget dignissim arcu adipiscing. Donec est est, rutrum vitae bibendum vel, suscipit non metus." ?></p>
-
-			<?php if(of_get_option('wel_button') != "off") { ?>
 		
 		<?php if(esc_html(of_get_option('welcome_button')) != NULL){ ?> 
 	<a class="button large" href="<?php if(esc_url(of_get_option('welcome_button_link')) != NULL){ echo esc_url(of_get_option('welcome_button_link'));} ?>"><?php echo esc_html(of_get_option('welcome_button')); ?></a>
 	<?php } else { ?> <a class="button large" href="<?php if(esc_url(of_get_option('welcome_button_link')) != NULL){ echo esc_url(of_get_option('welcome_button_link'));} ?>"> <?php echo "Download Now!" ?></a> <?php } ?>
-	
-			<?php } ?>
 		
 		</div>	
 
@@ -49,5 +47,3 @@
 		
 
 <?php get_footer(); ?>
-
-<?php } ?>

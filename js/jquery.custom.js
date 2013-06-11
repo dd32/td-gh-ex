@@ -13,7 +13,7 @@ jQuery(document).ready(function() {
  
   jQuery('ul#nav').superfish({ 
             delay:       0,                            // one second delay on mouseout 
-            animation:   {opacity:'show',height:'show'},  // fade-in and slide-down animation 
+            animation:   {opacity:'show'},  // fade-in and slide-down animation 
 			disableHI: true,
             speed:       'fast'                          // faster animation speed 
         }); 
