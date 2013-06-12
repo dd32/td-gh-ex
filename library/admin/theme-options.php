@@ -131,9 +131,10 @@ function attitude_theme_options_do_page() {
 		</div>
 	</div><br/><br/><br/>
 	<div class="donate-info">
-		<strong><?php _e( 'Support theme development', 'attitude' ); ?></strong>
-		<a title="Donate" href="<?php echo esc_url( 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BRLCCUGP2ACYN' ); ?>" target="_blank" class="donate"><?php _e( 'Donate', 'attitude' ); ?></a> <strong><?php _e( 'OR Review our theme', 'attitude' ); ?></strong>
-		<a title="Review" href="<?php echo esc_url( 'http://wordpress.org/support/view/theme-reviews/attitude' ); ?>" target="_blank" class="review"><?php _e( 'Review Attitude', 'attitude' ); ?></a> <strong><?php _e( 'at WordPress.org', 'attitude' ); ?></strong>	
+		<strong><?php _e( 'Want to add bunch of additional features? Upgrade to Pro version!', 'attitude' ); ?></strong><br/>
+		<a title="<?php esc_attr_e( 'Upgrade to Pro', 'attitude' ); ?>" href="<?php echo esc_url( 'http://themehorse.com/themes/attitude-pro' ); ?>" target="_blank" class="upgrade"><?php _e( 'Upgrade to Pro', 'attitude' ); ?></a>
+		<a title="<?php esc_attr_e( 'Donate', 'attitude' ); ?>" href="<?php echo esc_url( 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BRLCCUGP2ACYN' ); ?>" target="_blank" class="donate"><?php _e( 'Donate', 'attitude' ); ?></a>
+		<a title="<?php esc_attr_e( 'Review Clean Retina', 'attitude' ); ?>" href="<?php echo esc_url( 'http://wordpress.org/support/view/theme-reviews/attitude' ); ?>" target="_blank" class="review"><?php _e( 'Rate Attitude', 'attitude' ); ?></a>
 		<div id="social-share">
 	    	<div class="fb-like" data-href="https://www.facebook.com/themehorse" data-send="false" data-layout="button_count" data-width="90" data-show-faces="true"></div>
 	    	<div class="tw-follow" ><a href="<?php echo esc_url( 'http://twitter.com/Theme_Horse' ); ?>" class="twitter-follow-button" data-button="grey" data-text-color="#FFFFFF" data-link-color="#00AEFF" data-width="150px" data-show-screen-name="true" data-show-count="false"></a></div>

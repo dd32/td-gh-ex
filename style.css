@@ -4,7 +4,7 @@ Theme URI: http://themehorse.com/themes/attitude
 Author: Theme Horse
 Author URI: http://themehorse.com
 Description: Attitude is a Simple, Clean and Responsive Retina Ready WordPress Theme which adapts automatically to your tablets and mobile devices. Along with the elegant design the theme is easily customizable with numerous theme options. Some of the highlighted options are two site layout (Narrow and Wide), 5 layouts for every post/page, 5 Page Templates, 5 widget areas, 4 custom widgets, featured slider to highlight your post/page, 11 social icons, webmaster tools, custom background, custom Header, custom menu, custom favicon, custom CSS, custom webclip icon, custom logo and many more. Also supports some of the popular plugins like Breadcrumb NavXT, WP-PageNavi and Contact Form 7. It is also translation ready. Get free support on http://themehorse.com/support-forum/
-Version: 1.1.8
+Version: 1.1.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, light, blue, one-column, two-columns, three-columns, left-sidebar, right-sidebar, flexible-width, custom-menu, custom-background, custom-header, featured-images, full-width-template, theme-options, threaded-comments, translation-ready, sticky-post
@@ -442,6 +442,9 @@ img#wpstats {
 	display: block;
 }
 /* close commented backslash hack */
+.clearfix-third {
+	clear: both;
+}
 
 /* Readmore */
 a.readmore {
@@ -715,11 +718,19 @@ li.default-menu {
 }
 
 /* Dropdown */
-#access ul li ul, #access ul li:hover ul li ul {
-	display: none;
+#access ul li ul, 
+#access ul li:hover ul ul, 
+#access ul ul li:hover ul ul, 
+#access ul ul ul li:hover ul ul, 
+#access ul ul ul ul li:hover ul ul {
+	display:none;
 	z-index: 9999;
 }
-#access ul li:hover ul, #access ul li ul li:hover ul {
+#access ul li:hover ul, 
+#access ul ul li:hover ul, 
+#access ul ul ul li:hover ul, 
+#access ul ul ul ul li:hover ul,
+#access ul ul ul ul ul li:hover ul {
 	display:block;
 }
 #access ul li ul {
@@ -733,8 +744,6 @@ li.default-menu {
 #access ul li ul li {
 	float: none;
 	border-bottom: 1px solid #EAEAEA;
-	border-left: 1px solid #EAEAEA;
-	border-right: 1px solid #EAEAEA;
 	padding: 0;
 }
 #access ul li ul li a, 
@@ -932,6 +941,17 @@ li.default-menu {
 ----------------------------------------------- */
 #main {
 	padding: 50px 0 10px;
+}
+#main select {
+	background-color: #F9F9F9;
+	border: 1px solid #EAEAEA;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	height: 40px;
+	padding: 10px 8px;
+	width: 100%;
+	color: #777777;
 }
 #main form input, #main form textarea {	
 	-moz-box-sizing: border-box; 
@@ -1850,6 +1870,17 @@ ul.default-wp-page li a:active {
 #colophon {
 	margin-bottom: 30px;
 }
+#colophon select {
+	background-color: #F9F9F9;
+	border: 1px solid #EAEAEA;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	height: 40px;
+	padding: 10px 8px;
+	width: 100%;
+	color: #777777;
+}
 #colophon form input, #colophon form textarea {	
 	-moz-box-sizing: border-box; 
 	-webkit-box-sizing: border-box;
@@ -1961,6 +1992,12 @@ ul.default-wp-page li a:active {
 	}
 	.container {
 		width: 668px;
+	}
+	.clearfix-half {
+		clear: both;
+	}
+	.clearfix-third {
+		clear: none;
 	}
 	#site-title a img {
 		max-width: 668px;	

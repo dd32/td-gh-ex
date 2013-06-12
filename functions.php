@@ -140,6 +140,9 @@ function attitude_core_functionality() {
 	 * This theme supports custom background color and image
 	 */
 	add_theme_support( 'custom-background' );
+
+	// Adding excerpt option box for pages as well
+	add_post_type_support( 'page', 'excerpt' );
 }
 
 /** 

@@ -214,10 +214,20 @@ class attitude_custom_tag_widget extends WP_Widget {
 		echo $before_widget; ?>
 			<div class="column clearfix">
 				<?php 
+				$j = 1;
 	 			while( $get_featured_pages->have_posts() ):$get_featured_pages->the_post();
 					$page_title = get_the_title();
+					if( $j % 2 == 1 && $j > 1 ) {
+						$service_class = "one-third clearfix-half";
+					}
+					elseif ( $j % 3 == 1 && $j > 1 ) {
+						$service_class = "one-third clearfix-third";
+					}	
+					else {
+						$service_class = "one-third";
+					}				
 					?>
-					<div class="one-third">
+					<div class="<?php echo $service_class; ?>">
 						<div class="service-item clearfix">
 							<?php 
 							if ( has_post_thumbnail() ) {
@@ -230,7 +240,8 @@ class attitude_custom_tag_widget extends WP_Widget {
 							<?php the_excerpt(); ?>
 						</article>
 						<a class="more-link" title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php _e( 'Read more','attitude' ); ?></a>
-					</div><!-- .one-third --> 					
+					</div><!-- .one-third --> 
+					<?php $j++; ?>					
 				<?php endwhile;
 		 		// Reset Post Data
 	 			wp_reset_query(); 

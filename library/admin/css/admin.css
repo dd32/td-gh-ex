@@ -125,31 +125,34 @@ h3.option-toggle a:hover, h3.option-active a {
 }
 
 .donate-info { 
-	background-color: #eee; 
+	background: url('../images/horse-bg.png') right bottom no-repeat #8cc558; 
 	margin: 0 15px 20px 0; 
-	border: 1px dashed #ccc; 
+	border: 1px dashed rgba(0, 0, 0, 0.2); 
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 	position: relative; 
 	padding: 20px; 
-	font-size: 13px;  
+	font-size: 18px;
+	color: #fff;  
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px; 
 }
 .donate-info a {
-	font-size: 16px;
-   padding: 5px 12px;
+	font-size: 15px;
+	font-weight: bold;
+   padding: 10px 25px;
+   margin: 15px 10px 0 0;
    opacity:0.9;
 	-moz-opacity: 0.9;
 	filter:alpha(opacity=90);
    text-align: center;
    -webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
-	border-radius: 5px; 
-	-webkit-box-shadow: 0 1px 2px #c8c8c8;
-	-moz-box-shadow: 0 1px 2px #c8c8c8;
-	box-shadow: 0 1px 2px #c8c8c8;
+	border-radius: 5px;
 	text-decoration: none;	
    display: inline-block;
+   border: 1px solid rgba(0, 0, 0, 0.2);
+   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 .donate-info a:hover {   
    opacity: 10;
@@ -158,26 +161,27 @@ h3.option-toggle a:hover, h3.option-active a {
 }
 a.donate {
    background: url("../images/donate.jpg") repeat-x center top #F3B643;
-   border: 1px solid #C18B25;
    color: #825600;
-   text-shadow: 0 1px #EAF5D3;
+   
 }
 a.review {
    background: url("../images/review.jpg") repeat-x center top #B1D85F;
-   border: 1px solid #9DC251;
-   color: #6A892A;
-   text-shadow: 0 1px #EAF5D3;    
+   color: #6A892A; 
+}
+a.upgrade { 
+	background: url("../images/blue-button-bg.jpg") repeat-x center top #46BDF4;
+   color: #005964;
 }
 a.demo {
 	color: #46A314;
 }
-
 a.support {
     color: #E1980F;
 }
 #social-share  {
-	float: right;
-	margin-top: 4px;
+	bottom: 45px;
+   position: absolute;
+   right: 82px;
 }
 #social-share .fb-like {
 	float: left;
