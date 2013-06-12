@@ -75,10 +75,13 @@
 	
 	wp_enqueue_script( 'jquery');
 	wp_enqueue_style('easy-gfonts', '//fonts.googleapis.com/css?family=Economica', false );
-	echo '<!--[if lt IE 9]>';
-	wp_enqueue_script('ie7style', get_template_directory_uri() . '/js/html5.js');
-    echo '<![endif]-->';
-    if (is_front_page()):
+	
+	global $is_IE;
+	if ( $is_IE ) {
+    wp_enqueue_script('ie7style', get_template_directory_uri() . '/js/html5.js');
+	}
+    
+	if (is_front_page()):
 	wp_enqueue_script( 'easy-slider', get_template_directory_uri() . '/js/slider.js' );
 	endif;
 	
