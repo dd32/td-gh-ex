@@ -46,16 +46,15 @@
 						</header> <!-- /#masthead /.site-header -->
 
 
-
-						<aside id="search" class="widget widget_search">
-							<?php get_search_form(); ?>
-						</aside>
-
-
 						<?php if ( ! dynamic_sidebar( 'sidebar' ) ) : // sidebar widgetized area ?>
 							<?php
 								// show something if there is no widgets in main sidebar
 							?>
+
+
+							<aside id="search" class="widget widget_search">
+								<?php get_search_form(); ?>
+							</aside>
 
 
 							<aside id="archives-popular" class="widget widget_popular_entries">

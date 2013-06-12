@@ -1,8 +1,8 @@
 /*
 Theme Name: activetab
 Theme URI: http://web-profile.com.ua/wordpress/themes/activetab/
-Description: Responsive light theme, which makes site easy to use. More info at http://web-profile.com.ua/wordpress/themes/activetab/
-Version: 0.3.2
+Description: Responsive light theme. More info at http://web-profile.com.ua/wordpress/themes/activetab/
+Version: 0.3.3
 Author: webvitaly
 Author URI: http://web-profile.com.ua/wordpress/
 Tags: gray, white, light, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, threaded-comments, translation-ready
@@ -87,7 +87,7 @@ blockquote, q {
 }
 
 
-/* ========== text styles ========== */
+/* ========== text ========== */
 body, html {
 	font-size: 16px; /* 16px = 100% */
 	line-height: 1.6em;
@@ -356,7 +356,7 @@ img#wpstats {
 	height: auto;
 }
 
-/* ========== image styles ========== */
+/* ========== images ========== */
 .wrap-thumbnail {
 	float: left;
 	margin: 0 15px 10px 0;
@@ -484,7 +484,7 @@ video {
 /* ========== comments ========== */
 .comment-meta {
 	color: #343434;
-	font-size: 75%;
+	font-size: 14px; /* 14px is the font size where FontAwesome is pixel perfect */
 	opacity: 0.7;
 	transition: all .3s ease;
 }
@@ -525,10 +525,6 @@ video {
 }
 
 .comment-reply-link {
-	/*position: absolute;
-	right: 5px;
-	top: 0;*/
-	/* bottom: 0; */
 	color: #808080;
 	opacity: 0.6;
 	transition: all 0.3s ease;
@@ -569,7 +565,6 @@ video {
 
 
 
-/* wp_link_pages styles */
 .wp_link_pages {
 	clear: both;
 }
@@ -591,7 +586,7 @@ video {
 
 /* ========== .entry-meta ========== */
 .page-header {
-	padding-bottom: 0px;
+	padding-bottom: 0;
 	border-bottom: 0;
 	margin-bottom: 20px;
 }
@@ -599,7 +594,7 @@ video {
 	/*color: #808080;*/
 	color: #343434;
 	margin: 5px 0;
-	font-size: 75%;
+	font-size: 14px; /* 14px is the font size where FontAwesome is pixel perfect */
 	opacity: 0.6;
 	transition: all .3s ease;
 }
@@ -614,7 +609,7 @@ video {
 	margin-right: 20px;
 }
 #content .entry-meta .entry-meta-categories, #content .entry-meta .entry-meta-tags {
-	margin-right: 0px;
+	margin-right: 0;
 }
 
 
@@ -636,7 +631,7 @@ article.sticky {
 }
 
 
-/* responsive styles */
+/* ========== responsive ========== */
 @media (max-width: 979px) {
 	.navbar-fixed-top {
 		margin-bottom: -40px;
@@ -645,7 +640,6 @@ article.sticky {
 
 
 /* ========== menu ========== */
-
 .navbar {}
 .navbar-inner {
 	min-height: inherit;
@@ -804,7 +798,6 @@ body.admin-bar .navbar-fixed-top { /* move menu below admin-bar */
 
 
 /* ========== site-header ========== */
-
 .site-header {
 	margin: 0 0 30px 0;
 }
@@ -856,7 +849,7 @@ table#wp-calendar td, table#wp-calendar th {
 	white-space: nowrap;
 }
 
-/* ========== print styles ========== */
+/* ========== print ========== */
 @media print {
 	* { /* make everything without fancy features */
 		box-shadow: none !important;
@@ -886,7 +879,7 @@ table#wp-calendar td, table#wp-calendar th {
 }
 
 
-/* ========== link styles ========== */
+/* ========== link extended ========== */
 /* Add " (pdf)" or other text after links that go to files, commented because it could looks bad if link to file is wrapping the image */
 /*a[href$=".pdf"]:after { content: " [pdf document]"; }
 a[href$=".doc"]:after { content: " [doc document]"; }
@@ -928,7 +921,7 @@ a[href$=".tif"]:after { content: " [tif image]"; }*/
 }
 
 
-/* ========== placeholder text style ========== */
+/* ========== placeholder text ========== */
 ::-webkit-input-placeholder {
 	color: #bbb;
 }
@@ -936,6 +929,10 @@ a[href$=".tif"]:after { content: " [tif image]"; }*/
 	color: #bbb;
 }
 
+/* ========== pager ========== */
+.pager li > a {
+	text-decoration: none;
+}
 
 /* ========== rss feed ========== */
 .rss-feed-link {
