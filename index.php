@@ -8,21 +8,23 @@
  */
 get_header();
 
-	//no content if previewing a slide
-      /*$object = get_queried_object(); 
-      if(is_single() && $object->post_type == 'slide')
-        return;*/
-
       //get layout options
       global $tc_theme_options;
       
       $tc_type =  get_post_type( tc_get_the_ID());
+
+      //hook here to execute action before the featured pages
+      do_action('tc_before_featured_pages');
+
       tc_get_sidebar('front');
+
       tc_get_breadcrumb();
+
       ?>
             <div class="container" role="main">
                 <div class="row">
-                    <?php 
+                    <?php
+
                         tc_get_sidebar('left');
 
 				         //initialize the thumbnail class alternative index
@@ -60,6 +62,7 @@ get_header();
 				        echo '</div>';//end of current post layout class
 
                         tc_get_sidebar('right');
+
                     ?>
                 </div><!--#row -->
             </div><!-- #container -->

@@ -17,7 +17,7 @@
     <h1 class="page-title">
       <?php 
         printf( __( '%1sSearch Results for: %2s', 'customizr' ), 
-        have_posts() ? '' : 'No ',
+        have_posts() ? '' :  __( 'No', 'customizr' ).'&nbsp;',
         '<span>' . get_search_query() . '</span>' );
       ?>
     </h1>

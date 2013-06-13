@@ -15,24 +15,26 @@ jQuery(document).ready(function($) {
 
     function checkWidthonload() {
     var windowsize = $window.width();
-    if (windowsize < 767 && $("#main-wrapper .container .span3").length > 0) {
+    var target = $("#main-wrapper .container .span3.tc-sidebar");
+    if (windowsize < 767 && $(target).length > 0) {
         //if the window is smaller than 767px wide then turn
-        $("#main-wrapper .container .article-container").insertBefore("#main-wrapper .container .span3");
+        $("#main-wrapper .container .article-container").insertBefore(target);
       }
     }
 
     function checkWidth() {
     var windowsize = $window.width();
+    var target = $("#main-wrapper .container .article-container")
     if (windowsize < 767) {
         //if the window is smaller than 767px wide then turn
-        $("#main-wrapper .container .span3").insertAfter("#main-wrapper .container .article-container");
+        $("#main-wrapper .container .span3").insertAfter(target);
       }
     else {
       if ($("#main-wrapper .container .span3.left").length > 0) {
-        $("#main-wrapper .container .span3.left").insertBefore("#main-wrapper .container .article-container");
+        $("#main-wrapper .container .span3.left").insertBefore(target);
         }
       if ($("#main-wrapper .container .span3.right").length > 0) {
-        $("#main-wrapper .container .span3.right").insertAfter("#main-wrapper .container .article-container");
+        $("#main-wrapper .container .span3.right").insertAfter(target);
         }
       }
     }

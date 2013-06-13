@@ -880,7 +880,7 @@ function tc_slider_ajax_save( $post_id ) {
       if (isset($_POST['new_slider_name']))
         $new_slider_name          = esc_attr( $_POST['new_slider_name'] );
 
-      //sanitize user input by looping on the fields
+      //Save user input by looping on the fields
       foreach ($_POST as $tckey => $tcvalue) {
           switch ($tckey) {
             //delete slider
@@ -1079,6 +1079,27 @@ function tc_slider_ajax_save( $post_id ) {
                        //write in DB
                         add_post_meta($post_ID, $tckey, $mydata, true) or
                           update_post_meta($post_ID, $tckey , $mydata);
+
+                       //check if we are in the attachment screen AND slider unchecked
+                        if($tckey == 'slider_check_key' && esc_attr( $_POST[$tcid] ) == 0) {
+
+                            //if we uncheck the attachement slider, looks for a previous entry and delete it.
+                            //Important : we check if the slider has slides first!
+                            foreach ($tc_options['tc_sliders'] as $slider_name => $slider) {
+                              foreach ($slider as $key => $tc_post) {
+                                 //clean empty values if necessary
+                                 if(is_null($tc_options['tc_sliders'][$slider_name][$key]))
+                                    unset($tc_options['tc_sliders'][$slider_name][$key]);
+                                 //delete previous slider entries for this post
+                                 if ($tc_post == $post_ID )
+                                    unset($tc_options['tc_sliders'][$slider_name][$key]);
+                              }
+                            }
+                            //update DB with clean option table
+                            update_option( 'tc_theme_options', $tc_options );
+
+                        }//endif;
+
                     break;
 
                     case 'slide_text_key':

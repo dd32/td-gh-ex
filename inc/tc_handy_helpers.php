@@ -316,8 +316,10 @@ if(!function_exists('tc_get_featured_pages')) :
   *
   * @package Customizr
   * @since Customizr 1.0
+  * @param area are defined in featured-pages templates,show_img is a customizer option
+  * @todo better area definition : dynamic
   */
-  function tc_get_featured_pages($area) {
+  function tc_get_featured_pages($area,$show_img) {
     switch ($area) {
       case 'not-set':
           //admin link if user logged in
@@ -343,7 +345,7 @@ if(!function_exists('tc_get_featured_pages')) :
       default://for areas one, two, three
           //get saved options
           global $tc_theme_options;
-          $featured_page_id     = $tc_theme_options['tc_featured_page_'.$area];
+          $featured_page_id     = esc_attr($tc_theme_options['tc_featured_page_'.$area]);
           $featured_page_link   = get_permalink( $featured_page_id );
           $featured_page_title  = get_the_title( $featured_page_id );
           $featured_text        = esc_attr( $tc_theme_options['tc_featured_text_'.$area] );
@@ -412,14 +414,16 @@ if(!function_exists('tc_get_featured_pages')) :
       //Rendering
       ?>
         <div class="widget-front">
-          <div class="thumb-wrapper <?php if(!has_post_thumbnail( $featured_page_id )) {echo 'tc-holder';} ?>">
+          <?php if(isset($show_img) && $show_img == 1) : //check if image option is checked ?>
+              <div class="thumb-wrapper <?php if(!has_post_thumbnail( $featured_page_id )) {echo 'tc-holder';} ?>">
                   <a class="round-div" href="<?php echo $featured_page_link ?>" title="<?php echo $featured_page_title ?>"></a>
-              <?php echo $tc_thumb; ?>
-            </div>
-              <h2><?php echo $featured_page_title ?></h2>
+                    <?php echo $tc_thumb; ?>
+              </div>
+          <?php endif; ?>
+            <h2><?php echo $featured_page_title ?></h2>
             <p><?php echo $text;  ?></p>
-              <p><a class="btn btn-primary" href="<?php echo $featured_page_link ?>" title="<?php echo $featured_page_title ?>"><?php _e( 'Read more &raquo;', 'customizr' ) ?></a></p>
-        </div><!-- /.span4 -->
+            <p><a class="btn btn-primary" href="<?php echo $featured_page_link ?>" title="<?php echo $featured_page_title ?>"><?php _e( 'Read more &raquo;', 'customizr' ) ?></a></p>
+        </div><!-- /.widget-front -->
       <?php
   }
 endif;
@@ -452,7 +456,7 @@ if(!function_exists('tc_get_sidebar')) :
 
         case 'left':
           if($sidebar == 'l' || $sidebar == 'b' ) {
-            echo '<div class="span3 left">';
+            echo '<div class="span3 left tc-sidebar">';
               get_sidebar($name);
             echo '</div>';
           }
@@ -460,7 +464,7 @@ if(!function_exists('tc_get_sidebar')) :
 
           case 'right':
           if($sidebar == 'r' || $sidebar == 'b' ) {
-            echo '<div class="span3 right">';
+            echo '<div class="span3 right tc-sidebar">';
               get_sidebar($name);
             echo '</div>';
           }

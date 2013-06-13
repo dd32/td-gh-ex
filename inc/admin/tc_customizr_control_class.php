@@ -8,6 +8,7 @@ class TC_Controls extends WP_Customize_Control
 	{
 	    public $tc;
 	    public $link;
+	    public $title;
 	    public $label;
 	    public $type;
 	    public $buttontext;
@@ -24,12 +25,52 @@ class TC_Controls extends WP_Customize_Control
 	        	case 'hr':
 	        		echo '<hr style="border-color: white;margin-top:15px" />';
 	        		break;
+
 	        	
+	        	case 'title' :
+	        		?>
+
+	        		<?php if (isset($this->title)) : ?>
+						<h3 style="color: #21759B;font-family: Georgia, Times, 'Times New Roman', serif;text-transform: uppercase;text-shadow: 0 1px 0 #FFF;margin: 1em 0em 0em 0em;"><?php echo esc_html($this->title); ?></h3>
+					<?php endif; ?>
+					<?php if (isset($this->notice)) : ?>
+						<i><?php echo esc_html( $this-> notice ) ?></i>
+					<?php endif; ?>
+
+					<?php
+					break;
+
+
 	        	case 'button':
 	        		echo '<a class="button-primary" href="'.admin_url($this -> link ).'" target="_blank">'.$this -> buttontext.'</a>';
 	        		if ($this -> hr_after == true)
 	        			echo '<hr style="border-color: white;margin-top:15px">';
 	        		break;
+
+
+	        	case 'select':
+					if ( empty( $this->choices ) )
+						return;
+
+					?>
+					<?php if (isset($this->title)) : ?>
+						<h3 style="color: #21759B;font-family: Georgia, Times, 'Times New Roman', serif;text-transform: uppercase;text-shadow: 0 1px 0 #FFF;margin: 1em 0em 0em 0em;"><?php echo esc_html($this->title); ?></h3>
+					<?php endif; ?>
+					<?php if (isset($this->notice)) : ?>
+						<i><?php echo esc_html( $this-> notice ) ?></i>
+					<?php endif; ?>
+					<label>
+						<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+						<select <?php $this->link(); ?>>
+							<?php
+							foreach ( $this->choices as $value => $label )
+								echo '<option value="' . esc_attr( $value ) . '"' . selected( $this->value(), $value, false ) . '>' . $label . '</option>';
+							?>
+						</select>
+					</label>
+					<?php
+				break;
+
 
 	        	case 'number':
 	        		?>
@@ -47,7 +88,7 @@ class TC_Controls extends WP_Customize_Control
 				?>
 				<label>
 					<input type="checkbox" value="<?php echo esc_attr( $this->value() ); ?>" <?php $this->link(); checked( $this->value() ); ?> />
-					<?php echo esc_html( $this->label ); ?>
+					<strong><?php echo esc_html( $this->label ); ?></strong>
 				</label><br />
 				<?php if(!empty($this -> notice)) : ?>
 			        	<i><?php echo esc_html( $this-> notice ) ?></i>

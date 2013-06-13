@@ -10,7 +10,7 @@
  * @link    http://themesandco.com
  */
 /* CUSTOMIZR_VER is the Version */
-if( ! defined('CUSTOMIZR_VER' ) )    {  define( 'CUSTOMIZR_VER', '2.1.4' ); }
+if( ! defined('CUSTOMIZR_VER' ) )    {  define( 'CUSTOMIZR_VER', '2.1.5' ); }
 
 
 
@@ -83,6 +83,7 @@ if(!function_exists('tc_get_default_options')) :
           'tc_sliders'                    => array(),
           //skin
           'tc_skin'                       => 'blue.css',
+          'tc_top_border'                 => 1,
           //logo and favicon
           'tc_logo_upload'                => null,
           'tc_logo_resize'                => 1,
@@ -93,6 +94,7 @@ if(!function_exists('tc_get_default_options')) :
           'tc_slider_delay'               => 5000,
           'tc_front_layout'               => 'f',
           'tc_show_featured_pages'        => 1,
+          'tc_show_featured_pages_img'    => 1,
           'tc_featured_page_one'          => null,
           'tc_featured_page_two'          => null,
           'tc_featured_page_three'        => null,
@@ -380,9 +382,15 @@ if(!function_exists('tc_write_custom_css')) :
 add_action( 'wp_head', 'tc_write_custom_css', 20 );
 function tc_write_custom_css() {
     $tc_custom_css      = esc_textarea(tc_get_options('tc_custom_css'));
+    $tc_top_border      = esc_attr(tc_get_options('tc_top_border'));
     
     if(isset($tc_custom_css) && !empty($tc_custom_css)) {
       $tc_custom_style  = '<style type="text/css">'.$tc_custom_css.'</style>';
+      echo $tc_custom_style;
+    }
+    //disable top border in customizer skin options
+    if(isset($tc_top_border) && $tc_top_border == 0) {
+      $tc_custom_style  = '<style type="text/css">header.tc-header {border-top: none;}</style>';
       echo $tc_custom_style;
     }
 

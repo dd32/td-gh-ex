@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Customizr 1.1.5\n"
-"POT-Creation-Date: 2013-05-25 21:02+0100\n"
-"PO-Revision-Date: 2013-05-25 21:02+0100\n"
+"POT-Creation-Date: 2013-06-13 19:54+0100\n"
+"PO-Revision-Date: 2013-06-13 19:55+0100\n"
 "Last-Translator: Nicolas G. <contact@themesandco.com>\n"
 "Language-Team: Nicolas G. <contact@themesandco.com>\n"
 "Language: Français\n"
@@ -45,28 +45,28 @@ msgstr ""
 msgid "Back to top"
 msgstr ""
 
-#: ../functions.php:190
+#: ../functions.php:192
 msgid "Main Menu"
 msgstr ""
 
-#: ../functions.php:267 ../functions.php:268
+#: ../functions.php:275 ../functions.php:276
 msgid "Upgrade WP"
 msgstr ""
 
-#: ../functions.php:289
+#: ../functions.php:297
 msgid "This theme requires WordPress 3.4+"
 msgstr ""
 
-#: ../functions.php:292 ../functions.php:293
+#: ../functions.php:300 ../functions.php:301
 msgid "Upgrade Wordpress Now"
 msgstr ""
 
-#: ../header.php:42
+#: ../header.php:43
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: ../header.php:97
+#: ../header.php:95
 msgid "Back Home"
 msgstr ""
 
@@ -99,120 +99,120 @@ msgstr ""
 msgid "Footer Widget Area Three"
 msgstr ""
 
-#: ../inc/tc_handy_helpers.php:328
+#: ../inc/tc_handy_helpers.php:330
 msgid "Customizer screen"
 msgstr ""
 
-#: ../inc/tc_handy_helpers.php:328
+#: ../inc/tc_handy_helpers.php:330
 msgid " here"
 msgstr ""
 
-#: ../inc/tc_handy_helpers.php:333
+#: ../inc/tc_handy_helpers.php:335
 msgid "Featured page"
 msgstr ""
 
-#: ../inc/tc_handy_helpers.php:334
+#: ../inc/tc_handy_helpers.php:336
 #, php-format
 msgid ""
 "Featured page description text : use the page excerpt or set your own custom "
 "text in the Customizr screen%s."
 msgstr ""
 
-#: ../inc/tc_handy_helpers.php:421
+#: ../inc/tc_handy_helpers.php:425
 msgid "Read more &raquo;"
 msgstr ""
 
-#: ../inc/tc_handy_helpers.php:485 ../parts/post-header.php:42
+#: ../inc/tc_handy_helpers.php:489 ../parts/post-header.php:42
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
 
-#: ../inc/tc_handy_helpers.php:519
+#: ../inc/tc_handy_helpers.php:523
 msgid "Pingback:"
 msgstr ""
 
-#: ../inc/tc_handy_helpers.php:519
+#: ../inc/tc_handy_helpers.php:523
 msgid "(Edit)"
 msgstr ""
 
-#: ../inc/tc_handy_helpers.php:536
+#: ../inc/tc_handy_helpers.php:540
 msgid "Reply"
 msgstr ""
 
-#: ../inc/tc_handy_helpers.php:544
+#: ../inc/tc_handy_helpers.php:548
 msgid "Post author"
 msgstr ""
 
-#: ../inc/tc_handy_helpers.php:545 ../inc/tc_hot_crumble.php:534
+#: ../inc/tc_handy_helpers.php:549 ../inc/tc_hot_crumble.php:534
 #: ../inc/tc_hot_crumble.php:567 ../inc/tc_hot_crumble.php:582
 #: ../inc/tc_hot_crumble.php:610 ../inc/admin/tc_meta_boxes.php:756
 #: ../parts/content-attachment.php:27 ../parts/post-header.php:56
 msgid "Edit"
 msgstr ""
 
-#: ../inc/tc_handy_helpers.php:551
+#: ../inc/tc_handy_helpers.php:555
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: ../inc/tc_handy_helpers.php:557
+#: ../inc/tc_handy_helpers.php:561
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../inc/tc_handy_helpers.php:589 ../inc/tc_handy_helpers.php:617
+#: ../inc/tc_handy_helpers.php:593 ../inc/tc_handy_helpers.php:621
 #, php-format
 msgid "View all posts in %s"
 msgstr ""
 
-#: ../inc/tc_handy_helpers.php:647 ../inc/tc_hot_crumble.php:41
+#: ../inc/tc_handy_helpers.php:651 ../inc/tc_hot_crumble.php:41
 msgid "Home"
 msgstr ""
 
-#: ../inc/tc_handy_helpers.php:684
+#: ../inc/tc_handy_helpers.php:688
 msgid "feed"
 msgstr ""
 
-#: ../inc/tc_handy_helpers.php:685
+#: ../inc/tc_handy_helpers.php:689
 msgid "twitter"
 msgstr ""
 
-#: ../inc/tc_handy_helpers.php:686
+#: ../inc/tc_handy_helpers.php:690
 msgid "facebook"
 msgstr ""
 
-#: ../inc/tc_handy_helpers.php:687
+#: ../inc/tc_handy_helpers.php:691
 msgid "google"
 msgstr ""
 
-#: ../inc/tc_handy_helpers.php:688
+#: ../inc/tc_handy_helpers.php:692
 msgid "youtube"
 msgstr ""
 
-#: ../inc/tc_handy_helpers.php:689
+#: ../inc/tc_handy_helpers.php:693
 msgid "pinterest"
 msgstr ""
 
-#: ../inc/tc_handy_helpers.php:690
+#: ../inc/tc_handy_helpers.php:694
 msgid "github"
 msgstr ""
 
-#: ../inc/tc_handy_helpers.php:691
+#: ../inc/tc_handy_helpers.php:695
 msgid "dribbble"
 msgstr ""
 
-#: ../inc/tc_handy_helpers.php:692
+#: ../inc/tc_handy_helpers.php:696
 msgid "linkedin"
 msgstr ""
 
-#: ../inc/tc_handy_helpers.php:698 ../inc/admin/tc_customize.php:553
+#: ../inc/tc_handy_helpers.php:702 ../inc/admin/tc_customize.php:592
 msgid "Social links"
 msgstr ""
 
-#: ../inc/tc_handy_helpers.php:703
+#: ../inc/tc_handy_helpers.php:707
 msgid "Follow me on "
 msgstr ""
 
-#: ../inc/tc_handy_helpers.php:707
+#: ../inc/tc_handy_helpers.php:711
 msgid "Suscribe to my rss feed"
 msgstr ""
 
@@ -369,299 +369,338 @@ msgstr ""
 msgid "Grey"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:122
+#: ../inc/admin/tc_customize.php:116
+msgid "Black"
+msgstr ""
+
+#: ../inc/admin/tc_customize.php:131
+msgid "Display top border"
+msgstr ""
+
+#: ../inc/admin/tc_customize.php:134
+msgid "Uncheck this option to remove the colored top border."
+msgstr ""
+
+#: ../inc/admin/tc_customize.php:142
 msgid "Logo &amp; Favicon"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:124
+#: ../inc/admin/tc_customize.php:144
 msgid "Set up logo and favicon options"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:136
+#: ../inc/admin/tc_customize.php:156
 msgid "Logo Upload"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:149
+#: ../inc/admin/tc_customize.php:169
 msgid "Force logo dimensions to max-width:250px and max-height:100px"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:174
+#: ../inc/admin/tc_customize.php:194
 msgid "Favicon Upload"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:183
+#: ../inc/admin/tc_customize.php:203
 msgid "Front Page"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:185
+#: ../inc/admin/tc_customize.php:205
 msgid "Set up front page options"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:197
+#: ../inc/admin/tc_customize.php:215
+msgid "Choose content and layout"
+msgstr ""
+
+#: ../inc/admin/tc_customize.php:230
 msgid "Front page displays"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:202
+#: ../inc/admin/tc_customize.php:235
 msgid "Your latest posts"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:203
+#: ../inc/admin/tc_customize.php:236
 msgid "A static page"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:214
+#: ../inc/admin/tc_customize.php:247
 msgid "Front page"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:227
+#: ../inc/admin/tc_customize.php:260
 msgid "Posts page"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:241
+#: ../inc/admin/tc_customize.php:274
 msgid "Set up the front page layout"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:245 ../inc/admin/tc_customize.php:446
-#: ../inc/admin/tc_customize.php:482 ../inc/admin/tc_customize.php:520
+#: ../inc/admin/tc_customize.php:278 ../inc/admin/tc_customize.php:485
+#: ../inc/admin/tc_customize.php:521 ../inc/admin/tc_customize.php:559
 #: ../inc/admin/tc_meta_boxes.php:61
 msgid "Right sidebar"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:246 ../inc/admin/tc_customize.php:447
-#: ../inc/admin/tc_customize.php:483 ../inc/admin/tc_customize.php:521
+#: ../inc/admin/tc_customize.php:279 ../inc/admin/tc_customize.php:486
+#: ../inc/admin/tc_customize.php:522 ../inc/admin/tc_customize.php:560
 #: ../inc/admin/tc_meta_boxes.php:62
 msgid "Left sidebar"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:247 ../inc/admin/tc_customize.php:448
-#: ../inc/admin/tc_customize.php:484 ../inc/admin/tc_customize.php:522
+#: ../inc/admin/tc_customize.php:280 ../inc/admin/tc_customize.php:487
+#: ../inc/admin/tc_customize.php:523 ../inc/admin/tc_customize.php:561
 msgid "2 sidebars : Right and Left"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:248 ../inc/admin/tc_customize.php:449
-#: ../inc/admin/tc_customize.php:485 ../inc/admin/tc_customize.php:523
+#: ../inc/admin/tc_customize.php:281 ../inc/admin/tc_customize.php:488
+#: ../inc/admin/tc_customize.php:524 ../inc/admin/tc_customize.php:562
 msgid "No sidebars : full width layout"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:258
+#: ../inc/admin/tc_customize.php:291
 msgid "&mdash; No slider &mdash;"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:259
+#: ../inc/admin/tc_customize.php:292
 msgid "&mdash; Demo Slider &mdash;"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:287
+#: ../inc/admin/tc_customize.php:308
+#, fuzzy
+msgid "Slider options"
+msgstr "Diaporamas"
+
+#: ../inc/admin/tc_customize.php:309
 msgid "Select front page slider"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:303
+#: ../inc/admin/tc_customize.php:325
 msgid "Full width slider"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:329
+#: ../inc/admin/tc_customize.php:351
 msgid "Delay between each slides"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:334
+#: ../inc/admin/tc_customize.php:356
 msgid "in ms : 1000ms = 1s"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:347
+#: ../inc/admin/tc_customize.php:369
+msgid "Featured pages options"
+msgstr ""
+
+#: ../inc/admin/tc_customize.php:370
 msgid "Display home featured pages area"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:351
-msgid "Show"
+#: ../inc/admin/tc_customize.php:374
+msgid "Enable"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:352
-msgid "Hide"
+#: ../inc/admin/tc_customize.php:375
+msgid "Disable"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:360
+#: ../inc/admin/tc_customize.php:388
+msgid "Show images"
+msgstr ""
+
+#: ../inc/admin/tc_customize.php:391
+msgid ""
+"The images are set with the \"featured image\" of each pages (in the page "
+"edit screen). Uncheck the option above to disable the featured page images."
+msgstr ""
+
+#: ../inc/admin/tc_customize.php:399
 msgid "one"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:361
+#: ../inc/admin/tc_customize.php:400
 msgid "two"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:362
+#: ../inc/admin/tc_customize.php:401
 msgid "three"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:376
+#: ../inc/admin/tc_customize.php:415
 #, php-format
 msgid "Home featured page %s"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:399
+#: ../inc/admin/tc_customize.php:438
 #, php-format
 msgid "Featured text %s (200 car. max)"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:402
+#: ../inc/admin/tc_customize.php:441
 msgid "Leave this field empty if you want to use the selected page excerpt."
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:411
+#: ../inc/admin/tc_customize.php:450
 msgid "Pages & Posts Layout"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:413
+#: ../inc/admin/tc_customize.php:452
 msgid "Set up layout options"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:426
+#: ../inc/admin/tc_customize.php:465
 msgid "Display Breadcrumb"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:442
+#: ../inc/admin/tc_customize.php:481
 msgid "Choose the global default layout"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:462
+#: ../inc/admin/tc_customize.php:501
 msgid "Force default layout everywhere"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:465
+#: ../inc/admin/tc_customize.php:504
 msgid ""
 "This option will override the specific layouts on all posts/pages, including "
 "the front page."
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:478
+#: ../inc/admin/tc_customize.php:517
 msgid "Choose the posts default layout"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:499
+#: ../inc/admin/tc_customize.php:538
 msgid "Maximum number of posts per page"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:516
+#: ../inc/admin/tc_customize.php:555
 msgid "Choose the pages default layout"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:531
+#: ../inc/admin/tc_customize.php:570
 msgid "Comments"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:533
+#: ../inc/admin/tc_customize.php:572
 msgid "Set up comments options"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:543
+#: ../inc/admin/tc_customize.php:582
 msgid "Enable comments on pages"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:546
+#: ../inc/admin/tc_customize.php:585
 msgid ""
 "This option will enable comments on pages. You can disable comments for a "
 "single page in the quick edit mode of the page list screen."
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:555
+#: ../inc/admin/tc_customize.php:594
 msgid "Set up your social links"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:560
+#: ../inc/admin/tc_customize.php:599
 msgid "header"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:561
+#: ../inc/admin/tc_customize.php:600
 msgid "right-sidebar"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:562
+#: ../inc/admin/tc_customize.php:601
 msgid "left-sidebar"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:563
+#: ../inc/admin/tc_customize.php:602
 msgid "footer"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:577
+#: ../inc/admin/tc_customize.php:616
 #, php-format
 msgid "Social links in %s"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:587
+#: ../inc/admin/tc_customize.php:626
 msgid "RSS feed (default is the wordpress feed)"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:588
+#: ../inc/admin/tc_customize.php:627
 msgid "Twitter profile url"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:589
+#: ../inc/admin/tc_customize.php:628
 msgid "Facebook profile url"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:590
+#: ../inc/admin/tc_customize.php:629
 msgid "Google+ profile url"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:591
+#: ../inc/admin/tc_customize.php:630
 msgid "Youtube profile url"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:592
+#: ../inc/admin/tc_customize.php:631
 msgid "Pinterest profile url"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:593
+#: ../inc/admin/tc_customize.php:632
 msgid "Github profile url"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:594
+#: ../inc/admin/tc_customize.php:633
 msgid "Dribbble profile url"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:595
+#: ../inc/admin/tc_customize.php:634
 msgid "LinkedIn profile url"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:619
+#: ../inc/admin/tc_customize.php:658
 msgid "Images"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:621 ../inc/admin/tc_customize.php:631
+#: ../inc/admin/tc_customize.php:660 ../inc/admin/tc_customize.php:670
 msgid "Enable/disable lightbox effect on images"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:634
+#: ../inc/admin/tc_customize.php:673
 msgid ""
 "If enabled, this option activate a popin window whith a zoom effect when an "
 "image is clicked. This will not apply to image gallery."
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:640
+#: ../inc/admin/tc_customize.php:679
 msgid "Custom CSS"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:642
+#: ../inc/admin/tc_customize.php:681
 msgid "Add your own CSS"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:654
+#: ../inc/admin/tc_customize.php:693
 msgid "Add your custom css here and design live! (for advanced users)"
 msgstr ""
 
-#: ../inc/admin/tc_customize.php:657
+#: ../inc/admin/tc_customize.php:696
 msgid ""
 "Always use this field to add your custom css instead of editing directly the "
-"style.css file : it will not be deleted during theme updates."
+"style.css file : it will not be deleted during theme updates. Special "
+"characters like quotes or inferior/superior signs will not be accepted in "
+"this field as they might be used for malicious purposes. If your custom css "
+"includes some of these characters, just create a child theme and write it "
+"down in the style.css file."
 msgstr ""
 
-#: ../inc/admin/tc_customizr_control_class.php:87
+#: ../inc/admin/tc_customizr_control_class.php:128
 #: ../inc/admin/tc_meta_boxes.php:252
 msgid ""
 "You haven't create any slider yet. Go to the media library, edit your images "
 "and add them to your sliders."
 msgstr ""
 
-#: ../inc/admin/tc_customizr_control_class.php:87
+#: ../inc/admin/tc_customizr_control_class.php:128
 msgid "Create a slider"
 msgstr ""
 
@@ -834,16 +873,28 @@ msgstr ""
 msgid "Button Link"
 msgstr ""
 
-#: ../inc/admin/tc_meta_boxes.php:793
+#: ../inc/admin/tc_meta_boxes.php:797
 msgid "No Image Selected"
 msgstr ""
 
-#: ../inc/admin/tc_meta_boxes.php:819
+#: ../inc/admin/tc_meta_boxes.php:823
 msgid "Edit this slide"
 msgstr ""
 
-#: ../inc/admin/tc_meta_boxes.php:821
+#: ../inc/admin/tc_meta_boxes.php:825
 msgid "Current slide"
+msgstr ""
+
+#: ../inc/pro/tc_pro.php:90
+msgid "Choose a font for your website title"
+msgstr ""
+
+#: ../inc/pro/tc_pro.php:107
+msgid "Ajust the title size"
+msgstr ""
+
+#: ../inc/pro/tc_pro.php:125
+msgid "Color"
 msgstr ""
 
 #: ../parts/content-404.php:14
@@ -971,6 +1022,10 @@ msgstr ""
 msgid "%1sSearch Results for: %2s"
 msgstr ""
 
+#: ../parts/post-list-header.php:20
+msgid "No"
+msgstr ""
+
 #: ../parts/post-list-header.php:32
 #, php-format
 msgid "Author Archives: %s"
@@ -1013,9 +1068,6 @@ msgstr ""
 
 #~ msgid "Search Slide Entries"
 #~ msgstr "Rechercher dans les diapositives"
-
-#~ msgid "Slider Names"
-#~ msgstr "Diaporamas"
 
 #~ msgid "Edit Slider Name"
 #~ msgstr "Modifier le nom du diporama"

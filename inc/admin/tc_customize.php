@@ -112,10 +112,30 @@ function tc_customize_register( $wp_customize ) {
 					'orange.css' 	=> 	__( 'Orange','customizr' ),
 					'red.css'		=> 	__( 'Red','customizr' ),
 					'purple.css'	=> 	__( 'Purple','customizr' ),
-					'grey.css'		=>	__( 'Grey','customizr' )
+					'grey.css'		=>	__( 'Grey','customizr' ),
+					'black.css' 	=> 	__( 'Black','customizr' )
 			),
 			//'priority'       => 2,
 		) );
+
+
+ 		//enable/disable top border
+		$wp_customize->add_setting( 'tc_theme_options[tc_top_border]', array(
+			'default'        	=> 1,//top border on by default
+			'capability'     	=> 'manage_options',
+			'type'           	=> 'option',
+		) );
+
+		$wp_customize->add_control( new TC_Controls($wp_customize, 'tc_theme_options[tc_top_border]', array(
+			'settings' 			=> 'tc_theme_options[tc_top_border]',
+			'label'    			=> __( 'Display top border','customizr' ),
+			'section'  			=> 'tc_skins_settings',
+			'tc'     			=> 'checkbox',
+			'notice'    		=> __( 'Uncheck this option to remove the colored top border.','customizr' ),
+			//'priority'       	=> 30,
+		)));
+
+
 
 	//LOGO & Favicon
  	$wp_customize->add_section( 'tc_logo_settings', array(
@@ -186,6 +206,19 @@ function tc_customize_register( $wp_customize ) {
 	) );
 
 	
+		//title
+		$wp_customize->add_setting( 'homecontent_title', array(
+			'capability'  		=> 'manage_options',
+		) );
+	 
+		$wp_customize->add_control( new TC_Controls($wp_customize, 'homecontent_title', array(
+			'title'   			=> __( 'Choose content and layout','customizr' ),
+			'section' 			=> 'tc_frontpage_settings',
+			'tc'				=> 'title',
+			'priority'       	=> 0,
+		)));
+
+
 		$wp_customize->add_setting( 'show_on_front', array(
 				'default'        => get_option( 'show_on_front' ),
 				'capability'     => 'manage_options',
@@ -264,32 +297,21 @@ function tc_customize_register( $wp_customize ) {
 			}
 		}
 
-		//hr
-	 	$wp_customize->add_setting( 'hr_slider', array(
-			'capability'  	=> 'manage_options',
-		) );
-	 
-		$wp_customize->add_control( new TC_Controls($wp_customize, 'hr_slider', array(
-			'section' 		=> 'tc_frontpage_settings',
-			'tc'			=> 'hr',
-			'priority'       => 5,
-		)));
-
-
 		//select slider
 		$wp_customize->add_setting( 'tc_theme_options[tc_front_slider]', array(
-			'default'        => 'demo',
-			'capability'     => 'manage_options',
-			'type'           => 'option',
+			'default'        	=> 'demo',
+			'capability'     	=> 'manage_options',
+			'type'           	=> 'option',
 		) );
 
-		$wp_customize->add_control( 'tc_theme_options[tc_front_slider]', array(
-			'label'   => __( 'Select front page slider','customizr' ),
-			'section' => 'tc_frontpage_settings',
-			'type'    => 'select',
-			'choices' => $choices,
-			//'priority'       => 6,
-		)) ;
+		$wp_customize->add_control( new TC_Controls($wp_customize, 'tc_theme_options[tc_front_slider]', array(
+			'title'   			=> __( 'Slider options','customizr' ),
+			'label'   			=> __( 'Select front page slider','customizr' ),
+			'section' 			=> 'tc_frontpage_settings',
+			'tc'    			=> 'select',
+			'choices' 			=> $choices,
+			'priority'       	=> 20,
+		)));
 
 		//Slider width checkbox
 		$wp_customize->add_setting( 'tc_theme_options[tc_slider_width]', array(
@@ -298,23 +320,23 @@ function tc_customize_register( $wp_customize ) {
 			'type'           	=> 'option',
 		) );
 
-		$wp_customize->add_control( 'tc_theme_options[tc_slider_width]', array(
+		$wp_customize->add_control( new TC_Controls($wp_customize, 'tc_theme_options[tc_slider_width]', array(
 			'settings' 			=> 'tc_theme_options[tc_slider_width]',
 			'label'    			=> __( 'Full width slider','customizr' ),
 			'section'  			=> 'tc_frontpage_settings',
-			'type'     			=> 'checkbox',
-			//'priority'       	=> 1,
-		) );
+			'tc'     			=> 'checkbox',
+			'priority'       	=> 30,
+		)));
 
 		//Slider Check message
 		$wp_customize->add_setting( 'slider_check', array(
-			'capability'  	=> 'manage_options',
+			'capability'  		=> 'manage_options',
 		) );
 	 
 		$wp_customize->add_control( new TC_Controls($wp_customize, 'slider_check', array(
-			'section' 		=> 'tc_frontpage_settings',
-			'tc'			=> 'slider-check',
-			//'priority'       => 6,
+			'section' 			=> 'tc_frontpage_settings',
+			'tc'				=> 'slider-check',
+			'priority'       	=> 40,
 		)));
 
 		//Delay between each slides
@@ -326,33 +348,50 @@ function tc_customize_register( $wp_customize ) {
 		) );
 
 		$wp_customize->add_control( new TC_Controls($wp_customize, 'tc_theme_options[tc_slider_delay]', array(
-			'label'   		=> __( 'Delay between each slides','customizr' ),
-			'section' 		=> 'tc_frontpage_settings',
-			'tc'    		=> 'number',
-			'step'			=> 500,
-			'min'			=> 1000,
-			'notice'		=> __( 'in ms : 1000ms = 1s','customizr' ),
-			//'priority'       => 8,
+			'label'   			=> __( 'Delay between each slides','customizr' ),
+			'section' 			=> 'tc_frontpage_settings',
+			'tc'    			=> 'number',
+			'step'				=> 500,
+			'min'				=> 1000,
+			'notice'			=> __( 'in ms : 1000ms = 1s','customizr' ),
+			'priority'       	=> 50,
 		)));
 
 
 		//Front page widget area
 		$wp_customize->add_setting( 'tc_theme_options[tc_show_featured_pages]', array(
-			'default'        => 1,
-			'capability'     => 'manage_options',
-			'type'           => 'option',
+			'default'        	=> 1,
+			'capability'     	=> 'manage_options',
+			'type'           	=> 'option',
 		) );
 
-		$wp_customize->add_control( 'tc_theme_options[tc_show_featured_pages]', array(
-			'label'   => __( 'Display home featured pages area','customizr' ),
-			'section' => 'tc_frontpage_settings',
-			'type'    => 'select',
-			'choices' => array(
-				1 => __( 'Show','customizr' ),
-				0 => __( 'Hide','customizr' ),
+		$wp_customize->add_control( new TC_Controls($wp_customize, 'tc_theme_options[tc_show_featured_pages]', array(
+			'title'   			=> __( 'Featured pages options','customizr' ),
+			'label'   			=> __( 'Display home featured pages area','customizr' ),
+			'section' 			=> 'tc_frontpage_settings',
+			'tc'    			=> 'select',	
+			'choices' 			=> array(
+				1 => __( 'Enable','customizr' ),
+				0 => __( 'Disable','customizr' ),
 			),
-			'priority'       => 50,
+			'priority'      	=> 50,
+		)));
+
+		//display featured page images
+		$wp_customize->add_setting( 'tc_theme_options[tc_show_featured_pages_img]', array(
+			'default'        	=> 1,
+			'capability'     	=> 'manage_options',
+			'type'           	=> 'option',
 		) );
+		$wp_customize->add_control( new TC_Controls($wp_customize, 'tc_theme_options[tc_show_featured_pages_img]', array(
+			'settings' 			=> 'tc_theme_options[tc_show_featured_pages_img]',
+			'label'    			=> __( 'Show images','customizr' ),
+			'section'  			=> 'tc_frontpage_settings',
+			'tc'     			=> 'checkbox',
+			'notice'			=> __('The images are set with the "featured image" of each pages (in the page edit screen). Uncheck the option above to disable the featured page images.','customizr'),
+			'priority'       	=> 60,
+		) ));
+
 
 		//WIDGETS
 			//Home featured page generator
@@ -654,7 +693,7 @@ function tc_customize_register( $wp_customize ) {
 				'label'    		=> __( 'Add your custom css here and design live! (for advanced users)','customizr' ),
 				'section'  		=> 'tc_custom_css',
 				'tc'     		=> 'textarea',
-				'notice'		=> __('Always use this field to add your custom css instead of editing directly the style.css file : it will not be deleted during theme updates.','customizr')
+				'notice'		=> __('Always use this field to add your custom css instead of editing directly the style.css file : it will not be deleted during theme updates. Special characters like quotes or inferior/superior signs will not be accepted in this field as they might be used for malicious purposes. If your custom css includes some of these characters, just create a child theme and write it down in the style.css file.','customizr')
 			)));
 
 	}

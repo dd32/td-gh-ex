@@ -108,6 +108,19 @@ The exceptions to this license are as follows:
 
 
 # Changelog
+= 2.1.5 =
+* fixed 	: When deleted from a slider, the first slide was not cleared out from option array
+* added 	: Titles in customizer sections
+* added 	: checkbox to enable/disable featured pages images
+* added 	: Optional colored top border in customizer options
+* added 	: new black skin
+* removed 	: text-rendering: optimizelegibility for hx, in conflict with icon fonts in chrome version 27.0.1453.94
+* improved 	: blockquote styling
+* fixed 	: in tc_script.js insertbefore() target is more precise
+* improved 	: font icons are now coded in CSS Value (Hex)
+* added 	: add_action hooks in the templates index and sidebars
+
+
 = 2.1.4 =
 * fixed : in tc_meta_boxes.php, line 766, a check on the existence of $slide object has been added
 * fixed : iframe content was dissapearing when reordering divs on resize. Now  handled properly in tc_scripts.js
