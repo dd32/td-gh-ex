@@ -114,3 +114,6 @@ version 1.1
 
 version 1.1.1
 * Added Web Clip Icon image
+
+version 1.1.2
+* Disable Web Clip Icon and Favcion by default

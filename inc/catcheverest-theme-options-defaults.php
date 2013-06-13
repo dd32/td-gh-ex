@@ -13,7 +13,7 @@ global $catcheverest_options_defaults;
 $catcheverest_options_defaults = array(
 	'disable_responsive'					=> '0',
  	'fav_icon'								=> get_template_directory_uri().'/images/favicon.ico',
- 	'remove_favicon'						=> '0',
+ 	'remove_favicon'						=> '1',
 	'web_clip'								=> get_template_directory_uri().'/images/apple-touch-icon.png',
  	'remove_web_clip'						=> '1',	
 	'disable_header_right_sidebar'			=> '0',

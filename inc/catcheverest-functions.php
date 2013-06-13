@@ -352,7 +352,7 @@ function catcheverest_favicon() {
    		$options = $catcheverest_options_settings;
 		
 		echo '<!-- refreshing cache -->';
-		if ( $options[ 'remove_favicon' ] == "0" ) :
+		if ( empty( $options[ 'remove_favicon' ] ) ) :
 			// if not empty fav_icon on theme options
 			if ( !empty( $options[ 'fav_icon' ] ) ) :
 				$catcheverest_favicon = '<link rel="shortcut icon" href="'.esc_url( $options[ 'fav_icon' ] ).'" type="image/x-icon" />'; 	
