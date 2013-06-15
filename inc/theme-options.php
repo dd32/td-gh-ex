@@ -157,7 +157,7 @@ function catchbox_theme_options_init() {
 	
 	add_settings_field(
 		'enable_menus', // Unique identifier for the settings section
-		__( 'Enable Secondary & Footer Menu?', 'catchbox' ), // Setting field label
+		__( 'Enable Secondary & Footer Menu in Mobile Devices?', 'catchbox' ), // Setting field label
 		'catchbox_settings_field_enable_menus', // Function that renders the settings field
 		'theme_options', // Menu slug, used to uniquely identify the page; see catchbox_theme_options_add_page()
 		'general' // Settings section. Same as the first argument in the add_settings_section() above

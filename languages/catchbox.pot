@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-08 20:31+0545\n"
-"PO-Revision-Date: 2013-06-08 20:31+0545\n"
+"POT-Creation-Date: 2013-06-15 21:29+0545\n"
+"PO-Revision-Date: 2013-06-15 21:29+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: en\n"
@@ -571,7 +571,7 @@ msgid "Disable Search in Header?"
 msgstr ""
 
 #: ../inc/theme-options.php:160
-msgid "Enable Secondary & Footer Menu?"
+msgid "Enable Secondary & Footer Menu in Mobile Devices?"
 msgstr ""
 
 #: ../inc/theme-options.php:168

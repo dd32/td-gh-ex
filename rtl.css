@@ -546,6 +546,11 @@ section.recent-posts .other-recent-posts .comments-link > span {
 		margin-left: 0;
 	}
 }
+@media (max-device-width: 767px) {	
+	.tinynav {
+		background-position: left center;
+	}
+}
 @media (max-width: 650px) {
 	/* @media (max-width: 650px) Reduce font-sizes for better readability on smaller devices */
 	#site-title,

@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box Pro\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-08 20:32+0545\n"
-"PO-Revision-Date: 2013-06-08 20:32+0545\n"
+"POT-Creation-Date: 2013-06-15 21:31+0545\n"
+"PO-Revision-Date: 2013-06-15 21:31+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Catch Themes <info@catchinternet.com>\n"
 "Language: it\n"
@@ -154,7 +154,6 @@ msgstr "Rispondi"
 
 #: ../content-aside.php:22 ../content-image.php:21 ../content-link.php:22
 #: ../content-quote.php:24 ../content-status.php:21
-#, fuzzy
 msgid "1"
 msgstr "1"
 
@@ -602,7 +601,7 @@ msgid "Disable Search in Header?"
 msgstr "Disabilitare la ricerca nell'intestazione?"
 
 #: ../inc/theme-options.php:160
-msgid "Enable Secondary & Footer Menu?"
+msgid "Enable Secondary & Footer Menu in Mobile Devices?"
 msgstr "Abilitare il menu secondario e nel piè di pagina?"
 
 #: ../inc/theme-options.php:168

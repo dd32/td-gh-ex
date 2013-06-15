@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-08 20:31+0545\n"
+"POT-Creation-Date: 2013-06-15 21:29+0545\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: www.ed3s.com <master@ed3s.com>\n"
@@ -60,7 +60,7 @@ msgstr "ارشيف شهر : %s"
 #: ../archive.php:24
 msgctxt "monthly archives date format"
 msgid "F Y"
-msgstr ""
+msgstr "F Y"
 
 #: ../archive.php:26
 #, php-format
@@ -70,7 +70,7 @@ msgstr "ارشيف عام : %s"
 #: ../archive.php:26
 msgctxt "yearly archives date format"
 msgid "Y"
-msgstr ""
+msgstr "Y"
 
 #: ../archive.php:28
 msgid "Blog Archives"
@@ -153,13 +153,13 @@ msgstr "رد"
 #: ../content-quote.php:24 ../content-status.php:21
 msgctxt "comments number"
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: ../content-aside.php:22 ../content-image.php:21 ../content-link.php:22
 #: ../content-quote.php:24 ../content-status.php:21
 msgctxt "comments number"
 msgid "%"
-msgstr ""
+msgstr "%"
 
 #: ../content-aside.php:33 ../content-gallery.php:32 ../content-image.php:27
 #: ../content-link.php:33 ../content-quote.php:35 ../content-status.php:34
@@ -206,7 +206,7 @@ msgstr "تحرير"
 #: ../content-single.php:42 ../content-single.php:45 ../content.php:71
 #: ../content.php:81
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: ../content-featured.php:37
 #, php-format
@@ -346,7 +346,7 @@ msgstr " "
 
 #: ../footer.php:46
 msgid "http://wordpress.org/"
-msgstr ""
+msgstr "http://wordpress.org/"
 
 #: ../footer.php:46
 msgid "Powered by WordPress"
@@ -355,21 +355,21 @@ msgstr "مدعوم من"
 #: ../footer.php:46
 #, php-format
 msgid "Powered by %s"
-msgstr ""
+msgstr "Powered by %s"
 
 #: ../footer.php:48 ../inc/theme-options.php:645 ../inc/theme-options.php:696
 #: ../inc/theme-options.php:808 ../inc/theme-options.php:932
 msgid "http://catchthemes.com/"
-msgstr ""
+msgstr "http://catchthemes.com/"
 
 #: ../footer.php:48
 msgid "Theme Catch Box by Catch Themes"
-msgstr ""
+msgstr "Theme Catch Box by Catch Themes"
 
 #: ../footer.php:48
 #, php-format
 msgid "Theme: %s"
-msgstr ""
+msgstr "Theme: %s"
 
 #: ../functions.php:109
 msgid "Primary Menu"
@@ -444,7 +444,7 @@ msgstr "%1$s on %2$s <span class=\"says\">قال:</span>"
 #: ../functions.php:619
 #, php-format
 msgid "%1$s at %2$s"
-msgstr ""
+msgstr "%1$s at %2$s"
 
 #: ../functions.php:628
 msgid "Your comment is awaiting moderation."
@@ -471,7 +471,7 @@ msgstr ""
 
 #: ../functions.php:714
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: ../functions.php:924
 msgid "Name"
@@ -566,7 +566,7 @@ msgstr "رابط الايقونة"
 
 #: ../inc/theme-options.php:95
 msgid "Web Clip Icon URL"
-msgstr ""
+msgstr "Web Clip Icon URL"
 
 #: ../inc/theme-options.php:104
 msgid "Color Scheme"
@@ -590,17 +590,15 @@ msgstr "طول المقتطف"
 
 #: ../inc/theme-options.php:144
 msgid "Feed Redirect URL"
-msgstr ""
+msgstr "Feed Redirect URL"
 
 #: ../inc/theme-options.php:152
-#, fuzzy
 msgid "Disable Search in Header?"
-msgstr "تعطيل محرك البحث في رأس القالب"
+msgstr "Disable Search in Header?"
 
 #: ../inc/theme-options.php:160
-#, fuzzy
-msgid "Enable Secondary & Footer Menu?"
-msgstr "القائمة الثانية"
+msgid "Enable Secondary & Footer Menu in Mobile Devices?"
+msgstr "Enable Secondary & Footer Menu in Mobile Devices?"
 
 #: ../inc/theme-options.php:168
 msgid "Custom CSS Styles"
@@ -680,12 +678,16 @@ msgid ""
 "<a href=\"http://codex.wordpress.org/Appearance_Theme_Options_Screen\" "
 "target=\"_blank\">Documentation on Theme Options</a>"
 msgstr ""
+"<a href=\"http://codex.wordpress.org/Appearance_Theme_Options_Screen\" "
+"target=\"_blank\">Documentation on Theme Options</a>"
 
 #: ../inc/theme-options.php:257
 msgid ""
 "<a href=\"http://wordpress.org/support/\" target=\"_blank\">Support Forums</"
 "a>"
 msgstr ""
+"<a href=\"http://wordpress.org/support/\" target=\"_blank\">Support Forums</"
+"a>"
 
 #: ../inc/theme-options.php:264 ../inc/theme-options.php:290
 msgid "Overview"
@@ -698,6 +700,10 @@ msgid ""
 "disappear, as they are theme-specific. Your current theme, Catch Box, "
 "provides the following Theme Options:"
 msgstr ""
+"Slider Some themes provide customization options that are grouped together "
+"on a Theme Options screen. If you change themes, options may change or "
+"disappear, as they are theme-specific. Your current theme, Catch Box, "
+"provides the following Theme Options:"
 
 #: ../inc/theme-options.php:308
 msgid "Add/Change Favicon"
@@ -705,7 +711,7 @@ msgstr "اضافة/تغيير الايقونة"
 
 #: ../inc/theme-options.php:322
 msgid "Add/Change Web Clip Icon"
-msgstr ""
+msgstr "Add/Change Web Clip Icon"
 
 #: ../inc/theme-options.php:336
 msgid "Light"
@@ -750,29 +756,27 @@ msgstr "اللون الافتراضي : %s"
 
 #: ../inc/theme-options.php:518
 msgid "Words"
-msgstr ""
+msgstr "Words"
 
 #: ../inc/theme-options.php:546
-#, fuzzy
 msgid "Check to Disable"
-msgstr "تعطيل السلايدر"
+msgstr "Check to Disable"
 
 #: ../inc/theme-options.php:561
-#, fuzzy
 msgid "Check to Enable"
-msgstr "تعطيل السلايدر"
+msgstr "Check to Disable"
 
 #: ../inc/theme-options.php:575
 msgid "CSS Tutorial from W3Schools."
-msgstr ""
+msgstr "CSS Tutorial from W3Schools."
 
 #: ../inc/theme-options.php:575
 msgid "http://www.w3schools.com/css/default.asp"
-msgstr ""
+msgstr "http://www.w3schools.com/css/default.asp"
 
 #: ../inc/theme-options.php:575
 msgid "CSS Tutorial"
-msgstr ""
+msgstr "CSS Tutorial"
 
 #: ../inc/theme-options.php:575
 msgid "Click Here to Read"
@@ -784,16 +788,16 @@ msgstr "انقر هنا للقراءة"
 #: ../inc/theme-options.php:927 ../inc/theme-options.php:929
 #, php-format
 msgid "%s Theme Options By"
-msgstr ""
+msgstr "%s Theme Options By"
 
 #: ../inc/theme-options.php:645 ../inc/theme-options.php:696
 #: ../inc/theme-options.php:808 ../inc/theme-options.php:932
 msgid "Catch Themes"
-msgstr ""
+msgstr "Catch Themes"
 
 #: ../inc/theme-options.php:649
 msgid "http://catchthemes.com/support/"
-msgstr ""
+msgstr "http://catchthemes.com/support/"
 
 #: ../inc/theme-options.php:649 ../inc/theme-options.php:650
 msgid "Theme Support"
@@ -801,7 +805,7 @@ msgstr "الدعم"
 
 #: ../inc/theme-options.php:652
 msgid "http://catchthemes.com/themes/catch-box-pro/"
-msgstr ""
+msgstr "http://catchthemes.com/themes/catch-box-pro/"
 
 #: ../inc/theme-options.php:652 ../inc/theme-options.php:653
 msgid "Upgrade to Catch Box Pro"
@@ -809,25 +813,25 @@ msgstr "الترقية الى المدفوع"
 
 #: ../inc/theme-options.php:655
 msgid "http://facebook.com/catchthemes"
-msgstr ""
+msgstr "http://facebook.com/catchthemes"
 
 #: ../inc/theme-options.php:655 ../inc/theme-options.php:656
 #: ../inc/theme-options.php:823
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: ../inc/theme-options.php:658
 msgid "http://twitter.com/#!/catchthemes"
-msgstr ""
+msgstr "http://twitter.com/#!/catchthemes"
 
 #: ../inc/theme-options.php:658 ../inc/theme-options.php:659
 #: ../inc/theme-options.php:828
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: ../inc/theme-options.php:661
 msgid "http://catchthemes.com/donate/"
-msgstr ""
+msgstr "http://catchthemes.com/donate/"
 
 #: ../inc/theme-options.php:661 ../inc/theme-options.php:662
 msgid "Donate Now"
@@ -942,51 +946,51 @@ msgstr "طول الانتظار"
 
 #: ../inc/theme-options.php:834
 msgid "Google +"
-msgstr ""
+msgstr "Google +"
 
 #: ../inc/theme-options.php:840
 msgid "LinkedIn"
-msgstr ""
+msgstr "LinkedIn"
 
 #: ../inc/theme-options.php:846
 msgid "Pinterest"
-msgstr ""
+msgstr "Pinterest"
 
 #: ../inc/theme-options.php:852
 msgid "Youtube"
-msgstr ""
+msgstr "Youtube"
 
 #: ../inc/theme-options.php:858
 msgid "RSS Feed"
-msgstr ""
+msgstr "RSS Feed"
 
 #: ../inc/theme-options.php:864
 msgid "Deviantart"
-msgstr ""
+msgstr "Deviantart"
 
 #: ../inc/theme-options.php:870
 msgid "Tumblr"
-msgstr ""
+msgstr "Tumblr"
 
 #: ../inc/theme-options.php:876
 msgid "Vimeo"
-msgstr ""
+msgstr "Vimeo"
 
 #: ../inc/theme-options.php:882
 msgid "Dribbble"
-msgstr ""
+msgstr "Dribbble"
 
 #: ../inc/theme-options.php:888
 msgid "MySpace"
-msgstr ""
+msgstr "MySpace"
 
 #: ../inc/theme-options.php:894
 msgid "Aim"
-msgstr ""
+msgstr "Aim"
 
 #: ../inc/theme-options.php:900
 msgid "Flickr"
-msgstr ""
+msgstr "Flickr"
 
 #: ../inc/theme-options.php:907
 msgid ""

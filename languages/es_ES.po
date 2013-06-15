@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-08 20:32+0545\n"
-"PO-Revision-Date: 2013-06-08 20:32+0545\n"
+"POT-Creation-Date: 2013-06-15 21:30+0545\n"
+"PO-Revision-Date: 2013-06-15 21:30+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: César Gómez <cesar@temperatio.com>\n"
 "Language: es_ES\n"
@@ -606,8 +606,8 @@ msgid "Disable Search in Header?"
 msgstr "Desactivar la búsqueda en la Cabecera?"
 
 #: ../inc/theme-options.php:160
-msgid "Enable Secondary & Footer Menu?"
-msgstr "Enable Secondary & Footer Menu?"
+msgid "Enable Secondary & Footer Menu in Mobile Devices?"
+msgstr "Enable Secondary & Footer Menu in Mobile Devices?"
 
 #: ../inc/theme-options.php:168
 msgid "Custom CSS Styles"
