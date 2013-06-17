@@ -1,11 +1,14 @@
 === rockers Theme ===
 Contributors: Alberto Ramacciotti ( http://arwebdevstudio.it )
-Tags: one-column, two-columns, left-sidebar, light, flexible-width, custom-background, custom-header, custom-menu, editor-style, threaded-comments, featured-images, sticky-post, translation-ready, post-formats, rtl-language-support, threaded-comments
+Tags: two-columns, left-sidebar, light, flexible-width, custom-background, custom-header, custom-menu, editor-style, threaded-comments, featured-images, sticky-post, translation-ready, post-formats, rtl-language-support, threaded-comments
 Requires at least: 3.0
 Tested up to: 3.5.1
-Version: 2.0.3
+Version: 2.0.4
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+Rockers WordPress theme, Copyright (C) 2013 Alberto Ramacciotti, AR Web Dev Studio
+Rockers theme is licensed under the GPL.
 
 Rockers is a responsive HTML5 WordPress theme.
 
@@ -15,6 +18,8 @@ Rockers is a responsive HTML5 WordPress theme;
 it has some optional features to customize the look of your blog 
 and it is planned to keep your blog as fast as possible by using a minimalist design without lots of images.
 Font used is Source Sans Pro free font ( http://www.google.com/webfonts/specimen/Source+Sans+Pro ).
+Rockers is using a free JavaScript script to cover CSS3 Media Queries on browsers which are not supported yet: the JavaScript is CSS3mediaqueries.js ( https://code.google.com/p/css3-mediaqueries-js/ ) and is released under MIT License  ( http://opensource.org/licenses/mit-license.php )
+Rockers is using a free JavaScript script to enable rendering of HTML5 elements on Internet Exlorer browser: the JavaScript is HTML5.js ( https://code.google.com/p/html5shiv/ ) and is released under MIT License  ( http://opensource.org/licenses/mit-license.php ).
 
 #### Notes
 * Rockers theme is a free WordPress theme, always remember to setup a backup of your whole site before install and try it: 
@@ -46,3 +51,9 @@ http://ramacciotti.altervista.org/magazzino/404-600.png
 
 = 2.0.1 =
 * Fixed review issues
+
+= 2.0.3 =
+* Fixed bugs and added Custom background and custom header
+
+= 2.0.4 =
+* Fixed bugs

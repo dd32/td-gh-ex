@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Rockers v.2.0.3\n"
+"Project-Id-Version: inBlu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-02 09:52+0100\n"
-"PO-Revision-Date: 2013-05-02 09:52+0100\n"
+"POT-Creation-Date: 2013-05-06 20:05+0100\n"
+"PO-Revision-Date: 2013-05-06 20:09+0100\n"
 "Last-Translator: AR <ramacciotti.alberto@gmail.com>\n"
 "Language-Team: AR <ramacciotti.alberto@gmail.com>\n"
 "Language: it_IT\n"
@@ -11,306 +11,317 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
-"X-Poedit-Basepath: C:\\xampp\\htdocs\\wordpress\\wp-content\\themes"
-"\\rockers\n"
+"X-Poedit-Basepath: C:\\xampp\\htdocs\\wordpress\\wp-content\\themes\\inBlu\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 1.5.5\n"
 "X-Poedit-SearchPath-0: C:\\xampp\\htdocs\\wordpress\\wp-content\\themes"
-"\\rockers\n"
+"\\inBlu\n"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/404.php:6
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/404.php:25
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/header.php:26
+msgid "Subscribe to the RSS Feed of this site"
+msgstr "Abbonati agli RSS di questo sito"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/404.php:31
 msgid "Error: page not found."
 msgstr "Errore: pagina non trovata."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/404.php:9
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/search.php:18
-msgid ""
-"Sorry, but nothing is found. Please try again using a different search term."
-msgstr ""
-"Spiacente, ma non è stato trovato niente. Si prega di riprovare con un "
-"termine di ricerca differente."
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/404.php:34
+msgid "Please come back and search again."
+msgstr "Si prega di tornare indietro e cercare di nuovo."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/archive.php:8
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/404.php:39
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/footer.php:25
+msgid "is based on"
+msgstr "basato su"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/404.php:39
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/footer.php:25
+msgid "http://wordpress.org/"
+msgstr "http://wordpress.org/"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/404.php:39
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/footer.php:25
+#, php-format
+msgid "%s"
+msgstr "%s"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/archive.php:8
 #, php-format
 msgid "Daily Archives: %s"
 msgstr "Archivio giornaliero: %s"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/archive.php:10
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/archive.php:10
 #, php-format
 msgid "Monthly Archives: %s"
 msgstr "Archivii mensili: %s"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/archive.php:12
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/archive.php:12
 #, php-format
 msgid "Yearly Archives: %s"
 msgstr "Archivi annuali: %s"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/archive.php:14
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/archive.php:14
 msgid "Archives"
 msgstr "Archivi"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/author.php:6
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/author.php:6
 #, php-format
 msgid "Author Archives: %s"
 msgstr "Archivi per autore: %s"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/author.php:16
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/content.php:43
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/author.php:16
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content.php:48
 #, php-format
 msgid "About %s"
 msgstr "Riguardo %s"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/category.php:5
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/category.php:6
 #, php-format
 msgid "Category Archives: %s"
 msgstr "Archivii per categoria: %s"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/comments.php:11
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/comments.php:12
 msgid "Comment navigation"
 msgstr "Navigazione dei commenti"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/comments.php:13
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/comments.php:13
 msgid "&larr; Older Comments"
 msgstr "&larr; Vecchi Commenti"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/comments.php:14
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/comments.php:14
 msgid "Newer Comments &rarr;"
 msgstr "Nuovi Commenti &rarr;"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/comments.php:19
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/comments.php:19
 msgid "Comments are closed."
 msgstr "I commenti sono chiusi."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/content-aside.php:3
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/content-aside.php:9
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/content-image.php:6
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/content-link.php:7
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/content-quote.php:6
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/content-status.php:5
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/content.php:4
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/content.php:9
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-aside.php:3
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-aside.php:9
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-image.php:6
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-link.php:7
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-quote.php:6
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-status.php:5
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content.php:9
 #, php-format
 msgid "Permalink to %s"
 msgstr "Collegamento permanente a %s"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/content-aside.php:5
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/content-image.php:3
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/content-link.php:4
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/content-quote.php:3
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/content-status.php:10
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/functions.php:88
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/image.php:58
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-aside.php:5
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-image.php:3
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-link.php:4
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-quote.php:3
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-status.php:10
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content.php:28
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/image.php:57
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Continua a leggere <span class=\"meta-nav\">&rarr;</span>"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/content-aside.php:10
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/content-image.php:9
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/content-link.php:8
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/content-page.php:18
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/content-quote.php:7
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/content-status.php:13
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/content.php:36
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/functions.php:180
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/image.php:20
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-aside.php:12
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-image.php:12
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-link.php:10
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-quote.php:8
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-status.php:15
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content.php:13
+msgid "Leave a reply"
+msgstr "Lascia una risposta"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-aside.php:12
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-image.php:12
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-link.php:10
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-quote.php:8
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-status.php:15
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content.php:13
+msgid "1 Reply"
+msgstr "1 Risposta"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-aside.php:12
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-image.php:12
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-link.php:10
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-quote.php:8
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-status.php:15
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content.php:13
+msgid "% Replies"
+msgstr "% Risposte"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-aside.php:15
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-image.php:15
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-link.php:13
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-page.php:10
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-quote.php:10
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-status.php:18
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content.php:41
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/functions.php:190
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/functions.php:213
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/image.php:19
 msgid "Edit"
 msgstr "Modifica"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/content-link.php:2
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-link.php:2
 msgid "Link"
 msgstr "Collegamento"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/content-none.php:3
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/index.php:36
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/search.php:15
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-none.php:3
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/index.php:19
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/search.php:16
 msgid "Nothing Found"
 msgstr "Non è stato trovato niente"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/content-none.php:6
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/index.php:39
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-none.php:6
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/index.php:22
 msgid ""
 "No contents are found, try to do another research using a different term."
 msgstr ""
 "Spiacente, ma non è stato trovato niente. Si prega di provare ancora "
 "utilizzando un termine di ricerca differente."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/content-page.php:7
-msgid " <p>Continue reading <span class=\"meta-nav\">&rarr;</span></p>"
-msgstr " <p>Continua a leggere <span class=\"meta-nav\">&rarr;</span></p>"
-
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/content-page.php:10
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/content.php:21
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/image.php:61
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content-page.php:7
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/image.php:60
 msgid "Pages:"
 msgstr "Pagine:"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/content.php:18
-msgid "<p>Continue reading <span class=\"meta-nav\">&rarr;</span></p>"
-msgstr "<p>Continua a leggere <span class=\"meta-nav\">&rarr;</span></p>"
-
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/content.php:29
-msgid "Leave a reply"
-msgstr "Lascia una risposta"
-
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/content.php:29
-msgid "1 Reply"
-msgstr "1 Risposta"
-
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/content.php:29
-msgid "% Replies"
-msgstr "% Risposte"
-
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/content.php:45
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/content.php:50
 #, php-format
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 "Visualizza tutti gli articoli di %s <span class=\"meta-nav\">&rarr;</span>"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/footer.php:3
-msgid "is based on"
-msgstr "basato su"
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/functions.php:22
+msgid "Main Menu"
+msgstr "Menu Principale"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/footer.php:3
-msgid "http://wordpress.org/"
-msgstr "http://wordpress.org/"
-
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/footer.php:3
-#, php-format
-msgid "%s"
-msgstr "%s"
-
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/functions.php:27
-msgid "Navigation Menu"
-msgstr "Menu di Navigazione"
-
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/functions.php:71
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/functions.php:74
 #, php-format
 msgid "Page %s"
 msgstr "Pagina %s"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/functions.php:106
-msgid "Main Sidebar"
-msgstr "Barra Laterale Principale"
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/functions.php:89
+msgid "Meta widget"
+msgstr "Area widget dei Meta"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/functions.php:108
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/functions.php:91
 msgid ""
-"This widget will appears on posts and pages except on our optional Front "
-"page template."
+"Appears on posts and pages except the optional Front Page template, which "
+"has its own widgets"
 msgstr ""
-"Questa area apparirà negli articoli e pagine eccetto che nel nostro template "
-"opzionale della Pagina Frontale."
+"Questa area appare negli articoli e nelle pagine eccetto che nel nostro "
+"template opzionale della Pagina Frontale, che ha i propri widgets"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/functions.php:116
-msgid "First Front Page Widget Area"
-msgstr "Prima pagina frontale della area dei widget"
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/functions.php:100
+msgid "Tag Cloud widget"
+msgstr "Widget del Tag Cloud"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/functions.php:118
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/functions.php:102
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/functions.php:113
 msgid ""
-"This widget will appears when using the optional Front page template with a "
-"page set as Static Front page."
-msgstr ""
-"Questo widget apparirà quando si sta utilizzando il nostro template "
-"opzionale della Pagina Frontale con una pagina impostata come Pagina "
-"Frontale Statica."
-
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/functions.php:126
-msgid "Second Front Page Widget Area"
-msgstr "Seconda pagina frontale della area dei widget"
-
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/functions.php:128
-msgid ""
-"This widget will appears when using the optional Front Page template with a "
-"page set as Static Front Page."
+"Appears when using the optional Front Page template with a page set as "
+"Static Front Page"
 msgstr ""
 "Questo widget apparirà quando si sta utilizzando il nostro template "
 "opzionale della Pagina Frontale con una pagina impostata come Pagina "
 "Frontale Statica."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/functions.php:142
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/single.php:6
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/functions.php:111
+msgid "Various widgets"
+msgstr "Vari widgets"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/functions.php:122
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/functions.php:124
+msgid "Search Form Widget Area"
+msgstr "Area del Widget del Modulo di Ricerca"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/functions.php:133
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/functions.php:135
+msgid "First Widget area in the footer"
+msgstr "Prima sezione widget a pie di pagina del sito"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/functions.php:144
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/functions.php:146
+msgid "Second Widget area in the footer"
+msgstr "Seconda sezione widget a pie di pagina del sito"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/functions.php:155
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/functions.php:157
+msgid "Third Widget area in the footer"
+msgstr "Terza sezione widget a pie di pagina del sito"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/functions.php:173
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/single.php:8
 msgid "Post navigation"
 msgstr "Navigazione articolo"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/functions.php:143
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/functions.php:175
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> Vecchi articoli"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/functions.php:144
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/functions.php:176
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Nuovi articoli <span class=\"meta-nav\">&rarr;</span>"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/functions.php:157
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/functions.php:190
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/functions.php:157
-msgid "(Edit)"
-msgstr "(Modifica)"
-
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/functions.php:167
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/functions.php:200
 msgid "Post author"
 msgstr "Autore dell' articolo"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/functions.php:172
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/functions.php:205
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s alle %2$s"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/functions.php:176
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/functions.php:209
 msgid "Your comment is awaiting moderation."
 msgstr "Il vostro commento è in attesa di approvazione."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/functions.php:183
-msgid "Reply <span>&darr;</span>"
-msgstr "Rispondi <span>&darr;</span>"
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/functions.php:216
+msgid "Reply"
+msgstr "Risposta"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/functions.php:193
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/functions.php:194
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/functions.php:226
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/functions.php:227
 msgid ", "
 msgstr ", "
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/functions.php:203
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/functions.php:236
 #, php-format
 msgid "View all posts by %s"
 msgstr "Visualizza tutti gli articoli di %s"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/functions.php:207
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/functions.php:240
 #, php-format
 msgid ""
-"This entry was posted in %1$s and tagged %2$s on %3$s<span class=\"by-author"
-"\"> by %4$s</span>."
+"<p class=\"cats\">Categories: %1$s</p><p class=\"tags\">Tags: %2$s</p><p "
+"class=\"date\">%3$s</p> <p class=\"by-author\">Author %4$s</p>"
 msgstr ""
-"Questo articolo è stato pubblicato nella categoria %1$s e taggato %2$s il "
-"%3$s<span class=\"by-author\"> da %4$s</span>."
+"<p class=\"cats\">Categorie: %1$s</p><p class=\"tags\">Tags: %2$s</p><p "
+"class=\"date\">%3$s</p> <p class=\"by-author\">Autore %4$s</p>"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/functions.php:209
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/functions.php:242
 #, php-format
 msgid ""
-"This entry was posted in %1$s on %3$s<span class=\"by-author\"> by %4$s</"
-"span>."
+"<p class=\"cats\">Categories: %1$s</p><p class=\"tags\">%3$s</p><p class="
+"\"by-author\">Author: %4$s</p>"
 msgstr ""
-"Questo articolo è stato pubblicato nella categoria %1$s il %3$s<span class="
-"\"by-author\"> da %4$s</span>."
+"<p class=\"cats\">Categorie: %1$s</p><p class=\"tags\">%3$s</p><p class=\"by-"
+"author\">Autore: %4$s</p>"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/functions.php:211
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/functions.php:244
 #, php-format
-msgid "This entry was posted on %3$s<span class=\"by-author\"> by %4$s</span>."
-msgstr ""
-"Questo articolo è stato pubblicato il %3$s<span class=\"by-author\"> da "
-"%4$s</span>."
+msgid "%3$s <p class=\"by-author\">Author: %4$s</p>"
+msgstr "%3$s <p class=\"by-author\">Autore: %4$s</p>"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/header.php:23
-msgid "Subscribe to the RSS Feed of this site"
-msgstr "Abbonati agli RSS di questo sito"
-
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/header.php:25
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/header.php:28
 msgid "Menu"
 msgstr "Menu"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/header.php:26
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/header.php:29
 msgid "Skip to content"
 msgstr "Salta ai contenuti principali"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/image.php:10
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/image.php:9
 #, php-format
 msgid ""
 "<span class=\"meta-prep meta-prep-post-date\">Published </span> <span class="
@@ -325,19 +336,19 @@ msgstr ""
 "immagine a dimensione intera\">%4$s &times; %5$s</a> in <a href=\"%6$s\" "
 "title=\"Return to %7$s\" rel=\"gallery\">%8$s</a>."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/image.php:24
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/image.php:23
 msgid "&larr; Previous"
 msgstr "&larr; Precedente"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/image.php:25
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/image.php:24
 msgid "Next &rarr;"
 msgstr "Prossima &rarr;"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/index.php:29
-msgid "There are not articles."
-msgstr "Non sono stati trovati articoli."
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/index.php:12
+msgid "No posts to display"
+msgstr "Nessun articolo da visualizzare"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/index.php:32
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/index.php:15
 #, php-format
 msgid ""
 "<a href=\"%s\" title=\"publish your first article\">Publish your first "
@@ -346,15 +357,77 @@ msgstr ""
 "<a href=\"%s\" title=\"pubblica il vostro primo articolo\">Pubblica il "
 "vostro primo articolo</a>."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/search.php:5
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/search.php:6
 #, php-format
 msgid "Search Results for: %s"
 msgstr "Risultati della ricerca per: %s"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/tag.php:5
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/search.php:19
+msgid ""
+"Sorry, but nothing matched your search criteria. Please try again with some "
+"different keywords."
+msgstr ""
+"Spiacenti, ma non è stato trovato niente. Si prega di riprovare con un "
+"termine di ricerca differente."
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\inBlu/tag.php:6
 #, php-format
 msgid "Tag Archives: %s"
 msgstr "Archivi delle etichette: %s"
+
+#~ msgid " <p>Continue reading <span class=\"meta-nav\">&rarr;</span></p>"
+#~ msgstr " <p>Continua a leggere <span class=\"meta-nav\">&rarr;</span></p>"
+
+#~ msgid "<p>Continue reading <span class=\"meta-nav\">&rarr;</span></p>"
+#~ msgstr "<p>Continua a leggere <span class=\"meta-nav\">&rarr;</span></p>"
+
+#~ msgid "Navigation Menu"
+#~ msgstr "Menu di Navigazione"
+
+#~ msgid "Main Sidebar"
+#~ msgstr "Barra Laterale Principale"
+
+#~ msgid "First Front Page Widget Area"
+#~ msgstr "Prima pagina frontale della area dei widget"
+
+#~ msgid ""
+#~ "This widget will appears when using the optional Front page template with "
+#~ "a page set as Static Front page."
+#~ msgstr ""
+#~ "Questo widget apparirà quando si sta utilizzando il nostro template "
+#~ "opzionale della Pagina Frontale con una pagina impostata come Pagina "
+#~ "Frontale Statica."
+
+#~ msgid ""
+#~ "This widget will appears when using the optional Front Page template with "
+#~ "a page set as Static Front Page."
+#~ msgstr ""
+#~ "Questo widget apparirà quando si sta utilizzando il nostro template "
+#~ "opzionale della Pagina Frontale con una pagina impostata come Pagina "
+#~ "Frontale Statica."
+
+#~ msgid "(Edit)"
+#~ msgstr "(Modifica)"
+
+#~ msgid "Reply <span>&darr;</span>"
+#~ msgstr "Rispondi <span>&darr;</span>"
+
+#~ msgid ""
+#~ "This entry was posted in %1$s and tagged %2$s on %3$s<span class=\"by-"
+#~ "author\"> by %4$s</span>."
+#~ msgstr ""
+#~ "Questo articolo è stato pubblicato nella categoria %1$s e taggato %2$s il "
+#~ "%3$s<span class=\"by-author\"> da %4$s</span>."
+
+#~ msgid ""
+#~ "This entry was posted in %1$s on %3$s<span class=\"by-author\"> by %4$s</"
+#~ "span>."
+#~ msgstr ""
+#~ "Questo articolo è stato pubblicato nella categoria %1$s il %3$s<span "
+#~ "class=\"by-author\"> da %4$s</span>."
+
+#~ msgid "There are not articles."
+#~ msgstr "Non sono stati trovati articoli."
 
 #~ msgid "Oops: nothing is found."
 #~ msgstr "Oops: non è trovato niente."
@@ -379,14 +452,6 @@ msgstr "Archivi delle etichette: %s"
 
 #~ msgid "wrapper Menu"
 #~ msgstr "Menu prin"
-
-#~ msgid ""
-#~ "Appears when using the optional Front Page template with a page set as "
-#~ "Static Front Page"
-#~ msgstr ""
-#~ "Questo widget apparirà quando si sta utilizzando il nostro template "
-#~ "opzionale della Pagina Frontale con una pagina impostata come Pagina "
-#~ "Frontale Statica."
 
 #~ msgid "This is somewhat embarrassing, is it not?"
 #~ msgstr "This is somewhat embarrassing, is it not?"
@@ -474,9 +539,6 @@ msgstr "Archivi delle etichette: %s"
 
 #~ msgid "This theme was developed by"
 #~ msgstr "Questo tema è stato sviluppato da"
-
-#~ msgid "Footer first widget"
-#~ msgstr "Prima area widget a pie di pagina"
 
 #~ msgid "Footer second widget"
 #~ msgstr "Seconda area widget a pie di pagina"
@@ -639,15 +701,6 @@ msgstr "Archivi delle etichette: %s"
 #~ "Opzionale: un posto riservato dove inserire un menu per la scelta della "
 #~ "lingua posto nella testata del sito."
 
-#~ msgid "First widget section in the footer of the site."
-#~ msgstr "Prima sezione widget a pie di pagina del sito."
-
-#~ msgid "Second widget section in the footer of the site."
-#~ msgstr "Seconda sezione widget a pie di pagina del sito."
-
-#~ msgid "Third widget section in the footer of the site."
-#~ msgstr "Terza sezione widget a pie di pagina del sito."
-
 #~ msgid "Fourth widget section in the footer of the site."
 #~ msgstr "Quarta sezione widget a pie di pagina del sito."
 
@@ -674,9 +727,6 @@ msgstr "Archivi delle etichette: %s"
 
 #~ msgid "Copyright (C)"
 #~ msgstr "Copyright (C)"
-
-#~ msgid "Tag Cloud"
-#~ msgstr "Etichette:"
 
 #~ msgid "Blogroll"
 #~ msgstr "Preferiti"
@@ -763,9 +813,6 @@ msgstr "Archivi delle etichette: %s"
 #~ msgid "Image"
 #~ msgstr "Immagine"
 
-#~ msgid "Main menu"
-#~ msgstr "Menu principale"
-
 #~ msgid "Skip to secondary content"
 #~ msgstr "Salta ai contenuti secondari"
 
@@ -799,9 +846,6 @@ msgstr "Archivi delle etichette: %s"
 
 #~ msgid "Title:"
 #~ msgstr "Titolo:"
-
-#~ msgid "Number of posts to show:"
-#~ msgstr "Numero di articoli da visualizzare:"
 
 #~ msgid "1 Comment"
 #~ msgstr "1 Commento"
