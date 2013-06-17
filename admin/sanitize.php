@@ -49,12 +49,12 @@
 
 /* Social media links */
 
-	$socialNetworks = array ("Delicious","DeviantArt", "Digg","Etsy", "Facebook", "Flickr", "Google", "GoodReads",
-							"GooglePlus" , "Instagram", "LastFM", "LinkedIn", "Mail", "MySpace", "Picasa","Pinterest", "Reddit",
-							"RSS", "Skype", "SoundCloud", "StumbleUpon", "Technorati","Tumblr", "Twitter", "Vimeo",
-							"WordPress", "Yahoo", "YouTube" );
-							
-							
+	$socialNetworks = array ("Delicious", "DeviantArt", "Digg", "Etsy", "Facebook", "Flickr", "Google", "GoodReads", "GooglePlus",
+                              "Instagram", "LastFM", "LinkedIn", "Mail", "MySpace", "Picasa", "Pinterest", "Reddit", "RSS", "Skype",
+                              "SoundCloud", "StumbleUpon", "Technorati", "Tumblr", "Twitch", "Twitter", "Vimeo", "VK", "WordPress",
+                              "Xing", "Yahoo", "YouTube" );
+
+
 
 
 if (!function_exists ('ma_options_validate') ) :
@@ -70,11 +70,11 @@ global $mantra_defaults;
 /*** 1 ***/
 	if(isset($input['mantra_sidewidth']) && is_numeric($input['mantra_sidewidth']) && $input['mantra_sidewidth']>=500 && $input['mantra_sidewidth'] <=1760) {} else {$input['mantra_sidewidth']=$mantra_defaults['mantra_sidewidth']; }
 	if(isset($input['mantra_sidebar']) && is_numeric($input['mantra_sidebar']) && $input['mantra_sidebar']>=220 && $input['mantra_sidebar'] <=800) {} else {$input['mantra_sidebar']=$mantra_defaults['mantra_sidebar']; }
-	
+
 	if(isset($input['mantra_sidewidthRel']) && is_numeric($input['mantra_sidewidthRel']) && $input['mantra_sidewidthRel']>=40 && $input['mantra_sidewidthRel'] <=80) {} else {$input['mantra_sidewidthRel']=$mantra_defaults['mantra_sidewidthRel']; }
 	if(isset($input['mantra_sidebarRel']) && is_numeric($input['mantra_sidebarRel']) && $input['mantra_sidebarRel']>=20 && $input['mantra_sidebarRel'] <=50) {} else {$input['mantra_sidebarRel']=$mantra_defaults['mantra_sidebarRel']; }
 
-	
+
 	$input['mantra_hheight'] =  intval(wp_kses_data($input['mantra_hheight']));
 
 	$input['mantra_copyright'] =  trim(wp_kses_post($input['mantra_copyright']));
@@ -107,14 +107,14 @@ global $mantra_defaults;
 	$input['mantra_fwidth'] =  intval(wp_kses_data($input['mantra_fwidth']));
 	$input['mantra_fheight'] =  intval(wp_kses_data($input['mantra_fheight']));
 
-/*** 2 ***/	
+/*** 2 ***/
 
 	$cryout_special_terms = array('mailto:','callto://');
 	$cryout_special_keys = array('Mail', 'Skype');
 	for ($i=1;$i<10;$i+=2) {
 		$j=$i+1;
-		
-		if (in_array($input['mantra_social'.$i],$cryout_special_keys)) : 
+
+		if (in_array($input['mantra_social'.$i],$cryout_special_keys)) :
 			$input['mantra_social'.$j]	= wp_kses_data(str_replace($cryout_special_terms,'',$input['mantra_social'.$j]));
 			if ($input['mantra_social'.$i]=='Mail') {$input['mantra_social'.$j]='mailto:'.$input['mantra_social'.$j];};
 			if ($input['mantra_social'.$i]=='Skype') {$input['mantra_social'.$j]='callto://'.$input['mantra_social'.$j];};
@@ -126,8 +126,9 @@ global $mantra_defaults;
 
 	$input['mantra_favicon'] =  esc_url_raw($input['mantra_favicon']);
 	$input['mantra_headerupload'] =  esc_url_raw($input['mantra_headerupload']);
-	$input['mantra_headermargin'] =  intval(wp_kses_data($input['mantra_headermargin']));
-	
+	$input['mantra_headermargintop'] =  intval(wp_kses_data($input['mantra_headermargintop']));
+	$input['mantra_headermarginleft'] =  intval(wp_kses_data($input['mantra_headermarginleft']));
+
 	$input['mantra_customcss'] =  wp_kses_post(trim($input['mantra_customcss']));
 	$input['mantra_customjs'] =  wp_kses_post(trim($input['mantra_customjs']));
 	$input['mantra_seo_home_desc'] =  wp_kses_post(trim($input['mantra_seo_home_desc']));

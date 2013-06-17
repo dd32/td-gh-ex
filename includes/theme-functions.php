@@ -188,15 +188,6 @@ function mantra_set_social_icons($id) {
 }
 endif;
 
-// Get any existing copy of our transient data
-if ( false === ( $mantra_theme_info = get_transient( 'mantra_theme_info' ) ) ) {
-    // It wasn't there, so regenerate the data and save the transient
- if ( ! function_exists( 'get_custom_header' ) ) {  $mantra_theme_info = get_theme_data( get_theme_root() . '/mantra/style.css' ); }
-else { $mantra_theme_info = wp_get_theme( );}
-
-     set_transient( 'mantra_theme_info',  $mantra_theme_info ,60*60);
-}
-
 
 
   /**

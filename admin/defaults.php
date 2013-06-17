@@ -93,7 +93,8 @@ $mantra_defaults = array(
 "mantra_logoupload" => "",
 "mantra_favicon" => "", 
 "mantra_siteheader" => "Site Title and Description",
-"mantra_headermargin" => "20",
+"mantra_headermargintop" => "20",
+"mantra_headermarginleft" => "40",
 
 "mantra_fontfamily" => 'Segoe UI, Arial, sans-serif',
 "mantra_googlefont" => '',

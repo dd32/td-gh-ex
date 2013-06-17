@@ -118,28 +118,14 @@ $locale_file = get_template_directory() . "/languages/$locale.php";
 
 // Backwards compatibility with pre 3.4 versions for custom background and header 
 
-	if ( ! function_exists( 'get_custom_header' ) ) {
-		define( 'HEADER_TEXTCOLOR', '' );
-		define( 'HEADER_IMAGE', '' );
-		add_custom_image_header( '', 'mantra_admin_header_style' );
-		add_custom_background();
-	}
-
-
-
-
 	// Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI.
 	register_default_headers( array(
-
-
 		'mantra' => array(
 			'url' => '%s/images/headers/mantra.png',
 			'thumbnail_url' => '%s/images/headers/mantra-thumbnail.png',
 			// translators: header image description
 			'description' => __( 'mantra', 'mantra' )
 		),
-
-
 	) );
 }
 endif;

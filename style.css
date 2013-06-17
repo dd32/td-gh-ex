@@ -4,7 +4,7 @@
  * Description: Mantra is a do-it-yourself WordPress theme, featuring a pack of over 100 customization options and easy to use tweaks capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (1,2 or 3 columns), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 35 font-families plus all Google Fonts), text and header sizes, post metas, post excerpts, post formats, header and background images, custom menus, 27 social media links and icons, pins, bullets and much much more. With a fully responsive layout,a customizable showcase presentation page, animated slider, magazine and blog layouts, 8 widget areas, modern graphics and an easy and intuitive admin section, you can start creating your dream site right now.
  * Author: Cryout Creations
  * Author URI: http://www.cryoutcreations.eu
- * Version: 2.0.3.1
+ * Version: 2.0.4
  * License: GNU General Public License v2.0
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Tags: black, red, blue, white, silver, light, dark, one-column, two-columns, three-columns, right-sidebar, left-sidebar, flexible-width, fixed-width, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, front-page-post-form, full-width-template,  microformats, post-formats, rtl-language-support,  sticky-post, theme-options, threaded-comments, translation-ready
@@ -235,7 +235,6 @@ overflow:hidden;
 a#logo {
 display:inline;
 height:100%;
-margin-left:20px;
 }
 
 #linky {
@@ -325,8 +324,13 @@ hr {
 }
 
 /* Text elements */
+.entry-content, .entry-content p {
+	font-size:15px;
+	line-height:1.7em;
+}
+
 .entry-content p {
-	margin-bottom: 18px;
+	margin-bottom: 10px;
 }
 .entry-content ul {
 	margin: 0 0 18px 1.5em;
@@ -468,8 +472,6 @@ a:hover {
 	float: left;
 	font-size: 36px;
 	line-height: 60px;
-	margin-left:20px;
-	padding-left:20px;
 }
 #site-title a {
 	color: #EEE;
@@ -506,7 +508,8 @@ height:100%;
 }
 
 #header-container > div {
-margin-top:20px;
+margin-top: 20px;
+margin-left: 40px;
 }
 
 /* =Menu -PRIMARY
@@ -705,41 +708,41 @@ overflow:hidden;
 #content {
 	margin-bottom: 0px;
 }
-#content,
-#content input,
-#content textarea {
+
+.entry-content input,
+.entry-content textarea {
 	color: #333;
 	font-size: 16px;
 	line-height: 24px;
 }
-#content p,
-#content ul,
-#content ol,
-#content dd,
-#content pre,
-#content hr {
+
+.entry-content ul,
+.entry-content ol,
+.entry-content dd,
+.entry-content pre,
+.entry-content hr {
 	margin-bottom: 8px;
 }
-#content ul ul,
-#content ol ol,
-#content ul ol,
-#content ol ul {
+.entry-content ul ul,
+.entry-content ol ol,
+.entry-content ul ol,
+.entry-content ol ul {
 	margin-bottom: 0;
 }
-#content pre,
-#content kbd,
-#content tt,
-#content var {
+.entry-content pre,
+.entry-content kbd,
+.entry-contenttt,
+.entry-content var {
 	font-size: 15px;
 	line-height: 21px;
 	overflow:auto;
 	font-family: "Courier New",Courier,monospace !important;
 }
-#content code {
+.entry-content code {
 	font-size: 13px;
 }
-#content dt,
-#content th {
+.entry-content dt,
+.entry-content th {
 	color: #000;
 }
 .entry-content h1,
@@ -756,25 +759,29 @@ overflow:hidden;
 	text-shadow:2px 2px 0px #FFF,-2px -2px 0px #FFF,3px 3px 1px #ccc;
 }
 
-#content table {
+.entry-content h1 {
+font-size:1.9em;
+}
+
+.entry-content table {
 	border: 1px solid #e7e7e7;
 	margin: 0 -1px 24px 0;
 	text-align: left;
 	width: 100%;
 }
-#content tr {
+.entry-content tr {
 	background-color:#FFF;
 
 }
-#content .alternate {
+.entry-content .alternate {
 	background-color:#fff;
 }
 
-#content tr:hover {
+.entry-content tr:hover {
 	background:none;
 }
-#content tr th,
-#content thead th {
+.entry-content tr th,
+.entry-content thead th {
 	color: #000;
 	font-size: 12px;
 	font-weight: bold;
@@ -782,11 +789,11 @@ overflow:hidden;
 	padding: 9px 24px;
 	background-color:#f8f8f8;
 }
-#content tr td {
+.entry-content tr td {
 	border-top: 1px solid #e7e7e7;
 	padding: 6px 24px;
 }
-#content tr.odd td {
+.entry-content tr.odd td {
 	background: #f2f7fc;
 }
 .hentry {
@@ -1177,11 +1184,6 @@ article.format-chat h3.entry-format, article.format-aside h3.entry-format { disp
 
 #content img:hover {
 
-}
-
-#content p {
-	font-size:15px;
-	line-height:1.7em;
 }
 
 #content .alignleft,
@@ -1664,15 +1666,14 @@ float:none;
 overflow:hidden;
 }
 
-.contentsearch  #s  {/* This keeps the search inputs in line This is the on page Search */
-	width: 50%;display:block;float:left;
+.contentsearch  #s  {
+	display:block;float:left;
 	margin-bottom:20px;
-	padding-top:5px;
+	padding-top: 5px 10px;
 	padding-bottom:5px;
 	padding-left:10px;
-	margin-left:20px;
-	font-family:Arial !important;
-	font-size:22px;
+	font-size:18px;
+	height:29px;
 }
 .contentsearch #searchsubmit {
 display:block;
@@ -2026,96 +2027,6 @@ code {
 #site-description {
 	-webkit-text-size-adjust: none;
 }
-
-/* =Print Style
--------------------------------------------------------------- */
-
-@media print {
-	body {
-		background: none !important;
-	}
-	#wrapper {
-		clear: both !important;
-		display: block !important;
-		float: none !important;
-		position: relative !important;
-	}
-	#header {
-		border-bottom: 2pt solid #000;
-		padding-bottom: 18pt;
-	}
-	#colophon {
-		border-top: 2pt solid #000;
-	}
-	#site-title,
-	#site-description {
-		float: none;
-		line-height: 1.4em;
-		margin: 0;
-		padding: 0;
-	}
-	#site-title {
-		font-size: 13pt;
-	}
-	.entry-content {
-		font-size: 14pt;
-		line-height: 1.6em;
-	}
-	.entry-title {
-		font-size: 21pt;
-	}
-	#access,
-	#branding img,
-	#respond,
-	.comment-edit-link,
-	.edit-link,
-	.navigation,
-	.page-link,
-	.widget-area {
-		display: none !important;
-	}
-
-	#container,
-	#header,
-	#footer {
-		margin: 0;
-		width: 100%;
-	}
-	#content,
-	.one-column #content {
-		margin: 24pt 0 0;
-		width: 100%;
-	}
-	.wp-caption p {
-		font-size: 11pt;
-	}
-	#site-info{
-		float: none;
-		width: auto;
-	}
-
-#site-generator {
-float:right;
-}
-	#colophon {
-		width: auto;
-	}
-	img#wpstats {
-		display: none;
-	}
-	#site-generator a {
-		margin: 0;
-		padding: 0;
-	}
-	#entry-author-info {
-		border: 1px solid #e7e7e7;
-	}
-	#main {
-		display: inline;
-	}
-}
-
-.access ul.sub-menu { visibility:hidden;}
 
 /* SOCIALS */
 

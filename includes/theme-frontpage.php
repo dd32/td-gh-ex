@@ -40,7 +40,7 @@ foreach ($mantra_options as $key => $value) {
              .animate({opacity: 0.5}, 100)
              .fadeOut(100)
 			 .fadeIn(100)
-             .animate({opacity: 1}, 100) ;
+             .animate({opacity: 0.999}, 100) ;
 	}, function() {jQuery(this).stop();} )
 
 		});

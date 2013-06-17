@@ -112,7 +112,7 @@ function mantra_init_fn(){
 /*** layout ***/
 	add_settings_field('mantra_side', __('Main Layout','mantra') , 'cryout_setting_side_fn', __FILE__, 'layout_section');
 	add_settings_field('mantra_sidewidth', __('Content / Sidebar Width','mantra') , 'cryout_setting_sidewidth_fn', __FILE__, 'layout_section');
-	add_settings_field('mantra_mobile', __('Mobile view','mantra') , 'cryout_setting_mobile_fn', __FILE__, 'layout_section');
+	add_settings_field('mantra_mobile', __('Responsiveness','mantra') , 'cryout_setting_mobile_fn', __FILE__, 'layout_section');
 /*** presentation ***/
 
 	add_settings_field('mantra_frontpage', __('Enable Presentation Page','mantra') , 'cryout_setting_frontpage_fn', __FILE__, 'presentation_section');
@@ -123,9 +123,10 @@ function mantra_init_fn(){
 
 /*** header ***/
 	add_settings_field('mantra_hheight', __('Header Height','mantra') , 'cryout_setting_hheight_fn', __FILE__, 'header_section');
+	add_settings_field('mantra_himage', __('Header Image','mantra') , 'cryout_setting_himage_fn', __FILE__, 'header_section');
 	add_settings_field('mantra_siteheader', __('Site Header','mantra') , 'cryout_setting_siteheader_fn', __FILE__, 'header_section');
 	add_settings_field('mantra_logoupload', __('Custom Logo Upload','mantra') , 'cryout_setting_logoupload_fn', __FILE__, 'header_section');
-	add_settings_field('mantra_headermargin', __('Header Top Spacing','mantra') , 'cryout_setting_headermargin_fn', __FILE__, 'header_section');
+	add_settings_field('mantra_headermargin', __('Header Spacing','mantra') , 'cryout_setting_headermargin_fn', __FILE__, 'header_section');
 	add_settings_field('mantra_menurounded', __('Rounded Menu Corners','mantra') , 'cryout_setting_menurounded_fn', __FILE__, 'header_section');
 	add_settings_field('mantra_favicon', __('FavIcon Upload','mantra') , 'cryout_setting_favicon_fn', __FILE__, 'header_section');
 /*** text ***/
@@ -144,6 +145,7 @@ function mantra_init_fn(){
 	add_settings_field('mantra_letterspace', __('Letter spacing','mantra') , 'cryout_setting_letterspace_fn', __FILE__, 'text_section');
 	add_settings_field('mantra_textshadow', __('Text shadow','mantra') , 'cryout_setting_textshadow_fn', __FILE__, 'text_section');
 /*** appereance ***/
+	add_settings_field('mantra_sitebackground', __('Background Image','mantra') , 'cryout_setting_sitebackground_fn', __FILE__, 'appereance_section');
 	add_settings_field('mantra_backcolor', __('Background Color','mantra') , 'cryout_setting_backcolor_fn', __FILE__, 'appereance_section');
 	add_settings_field('mantra_headercolor', __('Header (Banner and Menu) Background Color','mantra') , 'cryout_setting_headercolor_fn', __FILE__, 'appereance_section');
 	add_settings_field('mantra_contentbg', __('Content Background Color','mantra') , 'cryout_setting_contentbg_fn', __FILE__, 'appereance_section');
@@ -284,14 +286,17 @@ incompatible plugins.<br> The Mantra Settings page cannot function without jQuer
 <div id="righty" ><!-- Right side of page - Coffee, RSS tips and others -->
 	<div class="postbox donate">
 		<h3 class="hndle"> Coffee Break </h3>
-		<div class="inside"><?php _e("<p>Here at Cryout Creations (the developers of yours truly Mantra Theme), we spend night after night improving the Mantra Theme. We fix a lot of bugs (that we previously created); we add more and more customization options while also trying to keep things as simple as possible; then... we might play a game or two but rest assured that we return to read and (in most cases) reply to your late night emails and comments, take notes and draw dashboards of things to implement in future versions.</p>
-			<p>So you might ask yourselves: <i>How do they do it? How can they keep so fresh after all that hard labor for that darned theme? </i> Well folks, it's simple. We drink coffee. Industrial quantities of hot boiling coffee. We love it! So if you want to help with the further development of the Mantra Theme...</p> ","mantra"); ?>
+		<div class="inside"><?php echo "<p>Here at Cryout Creations (the developers of yours truly Mantra Theme), we spend night after night improving the Mantra Theme. We fix a lot of bugs (that we previously created); we add more and more customization options while also trying to keep things as simple as possible; then... we might play a game or two but rest assured that we return to read and (in most cases) reply to your late night emails and comments, take notes and draw dashboards of things to implement in future versions.</p>
+			<p>So you might ask yourselves: <i>How do they do it? How can they keep so fresh after all that hard labor for that darned theme? </i> Well folks, it's simple. We drink coffee. Industrial quantities of hot boiling coffee. We love it! So if you want to help with the further development of the Mantra Theme...</p>"; ?>
 			<div style="display:block;float:none;margin:0 auto;text-align:center;">
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----"><input type="image" src="<?php echo get_template_directory_uri() . '/admin/images/coffee.png' ?>" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"><img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"></form>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+">
+<input type="image" src="<?php echo get_template_directory_uri() . '/admin/images/coffee.png' ?>" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
 			</div>
 		</div><!-- inside -->
 	</div><!-- donate -->
@@ -374,7 +379,7 @@ jQuery('#accordion small').parent('div').append('<a class="tooltip"><img src="<?
 	//jQuery(this).children('a.tooltip').attr('title',jQuery(this).children('small').html() );
 	var tooltip_info = jQuery(this).children('small').html();
 	jQuery(this).children('.tooltip').tooltip({content : tooltip_info});
-    jQuery(this).children('.tooltip').tooltip( "option", "items", "a" );
+     jQuery(this).children('.tooltip').tooltip( "option", "items", "a" );
 	//jQuery(this).children('.tooltip').tooltip( "option", "show", "false");
 	jQuery(this).children('.tooltip').tooltip( "option", "hide", "false");
 	jQuery(this).children('small').remove();
@@ -386,33 +391,40 @@ jQuery('#accordion small').parent('div').append('<a class="tooltip"><img src="<?
 
 
 jQuery(document).ready(function(){
-tooltip_terain();
+	var _jQueryVer = parseFloat('.'+jQuery().jquery.replace(/\./g, ''));  // jQuery version as float, eg: 0.183
+	var _jQueryUIVer = parseFloat('.'+jQuery.ui.version.replace(/\./g, '')); // jQuery UI version as float, eg: 0.192
+	if (_jQueryUIVer >= 0.190) {
+		// tooltip function is included since jQuery UI 1.9.0
+		tooltip_terain();
+	} else {
+		// inform the user about the old partially unsupported version
+		jQuery("#jsAlert").after("<div class='updated fade' style='clear:left; font-size: 16px;'><p>Mantra has detected you are running an old version of Wordpress (jQuery) and will be running in compatibility mode. Some features may not work correctly. Consider updating your Wordpress to the latest version.</p></div>");
+	}
 
 
-startfarb("#mantra_backcolor","#mantra_backcolor2");
-startfarb("#mantra_headercolor","#mantra_headercolor2");
-startfarb("#mantra_contentbg","#mantra_contentbg2");
-startfarb("#mantra_menubg","#mantra_menubg2");
-startfarb("#mantra_s1bg","#mantra_s1bg2");
-startfarb("#mantra_s2bg","#mantra_s2bg2");
-startfarb("#mantra_prefootercolor","#mantra_prefootercolor2");
-startfarb("#mantra_footercolor","#mantra_footercolor2");
-startfarb("#mantra_titlecolor","#mantra_titlecolor2");
-startfarb("#mantra_descriptioncolor","#mantra_descriptioncolor2");
-startfarb("#mantra_contentcolor","#mantra_contentcolor2");
-startfarb("#mantra_linkscolor","#mantra_linkscolor2");
-startfarb("#mantra_hovercolor","#mantra_hovercolor2");
-startfarb("#mantra_headtextcolor","#mantra_headtextcolor2");
-startfarb("#mantra_headtexthover","#mantra_headtexthover2");
-startfarb("#mantra_sideheadbackcolor","#mantra_sideheadbackcolor2");
-startfarb("#mantra_sideheadtextcolor","#mantra_sideheadtextcolor2");
-startfarb("#mantra_footerheader","#mantra_footerheader2");
-startfarb("#mantra_footertext","#mantra_footertext2");
-startfarb("#mantra_footerhover","#mantra_footerhover2");
+     startfarb("#mantra_backcolor","#mantra_backcolor2");
+     startfarb("#mantra_headercolor","#mantra_headercolor2");
+     startfarb("#mantra_contentbg","#mantra_contentbg2");
+     startfarb("#mantra_menubg","#mantra_menubg2");
+     startfarb("#mantra_s1bg","#mantra_s1bg2");
+     startfarb("#mantra_s2bg","#mantra_s2bg2");
+     startfarb("#mantra_prefootercolor","#mantra_prefootercolor2");
+     startfarb("#mantra_footercolor","#mantra_footercolor2");
+     startfarb("#mantra_titlecolor","#mantra_titlecolor2");
+     startfarb("#mantra_descriptioncolor","#mantra_descriptioncolor2");
+     startfarb("#mantra_contentcolor","#mantra_contentcolor2");
+     startfarb("#mantra_linkscolor","#mantra_linkscolor2");
+     startfarb("#mantra_hovercolor","#mantra_hovercolor2");
+     startfarb("#mantra_headtextcolor","#mantra_headtextcolor2");
+     startfarb("#mantra_headtexthover","#mantra_headtexthover2");
+     startfarb("#mantra_sideheadbackcolor","#mantra_sideheadbackcolor2");
+     startfarb("#mantra_sideheadtextcolor","#mantra_sideheadtextcolor2");
+     startfarb("#mantra_footerheader","#mantra_footerheader2");
+     startfarb("#mantra_footertext","#mantra_footertext2");
+     startfarb("#mantra_footerhover","#mantra_footerhover2");
 
-startfarb("#mantra_fpsliderbordercolor","#mantra_fpsliderbordercolor2");
-startfarb("#mantra_fronttitlecolor","#mantra_fronttitlecolor2");
-
+     startfarb("#mantra_fpsliderbordercolor","#mantra_fpsliderbordercolor2");
+     startfarb("#mantra_fronttitlecolor","#mantra_fronttitlecolor2");
 
 });
 

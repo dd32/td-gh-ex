@@ -100,10 +100,10 @@ foreach($items as $id=>$item) {
 	echo ">$itemsare[$id]</option>";
 }
 echo "</select>";
+?>
+<script>
 
-   ?><script>
-
-	jQuery(document).ready(function() {
+jQuery(document).ready(function() {
 
 		jQuery( "#slider-range" ).slider({
 			range: true,
@@ -114,37 +114,36 @@ echo "</select>";
 			slide: function( event, ui ) {}
 		});
 
-			jQuery( "#mantra_sidewidth" ).val( <?php echo $mantra_options['mantra_sidewidth'];?> );
-			jQuery( "#mantra_sidebar" ).val( <?php echo $mantra_options['mantra_sidebar'];?> );
+		jQuery( "#mantra_sidewidth" ).val( <?php echo $mantra_options['mantra_sidewidth'];?> );
+		jQuery( "#mantra_sidebar" ).val( <?php echo $mantra_options['mantra_sidebar'];?> );
 
-			var percentage =  <?php echo ($mantra_options['mantra_sidebar']/1980)*100;?> ;
-			var leftwidth =  <?php echo ($mantra_options['mantra_sidewidth']/1980)*100;?> ;
+		var percentage =  <?php echo ($mantra_options['mantra_sidebar']/1980)*100;?> ;
+		var leftwidth =  <?php echo ($mantra_options['mantra_sidewidth']/1980)*100;?> ;
 
-			jQuery( "#barb" ).css('left',-18+leftwidth+percentage/2+"%");
-			jQuery( "#contentb" ).css('left',-8+leftwidth/2+"%");
-			jQuery( "#totalb" ).css('left',-20+(percentage+leftwidth)/2+"%");
-	});
+		jQuery( "#barb" ).css('left',-18+leftwidth+percentage/2+"%");
+		jQuery( "#contentb" ).css('left',-8+leftwidth/2+"%");
+		jQuery( "#totalb" ).css('left',-20+(percentage+leftwidth)/2+"%");
 
-		jQuery( "#slider-range" ).bind( "slide", function(event, ui) {
-			range=ui.values[ 1 ] - ui.values[ 0 ];
+});
 
- 			if (ui.values[ 0 ]<500) {ui.values[ 0 ]=500; return false;};
-			if(	range<220 || range>800 ){ ui.values[ 1 ] =  <?php echo $mantra_options['mantra_sidebar']+$mantra_options['mantra_sidewidth'];?>; return false;  };
+jQuery( "#slider-range" ).bind( "slide", function(event, ui) {
+		range=ui.values[ 1 ] - ui.values[ 0 ];
 
-			jQuery( "#mantra_sidewidth" ).val( ui.values[ 0 ] );
-			jQuery( "#mantra_sidebar" ).val( ui.values[ 1 ] - ui.values[ 0 ] );
-			jQuery( "#totalsize" ).html( ui.values[ 1 ]);
-			jQuery( "#contentsize" ).html( ui.values[ 0 ]);jQuery( "#barsize" ).html( ui.values[ 1 ]-ui.values[ 0 ]);
+		if (ui.values[ 0 ]<500) {ui.values[ 0 ]=500; return false;};
+		if(	range<220 || range>800 ){ ui.values[ 1 ] =  <?php echo $mantra_options['mantra_sidebar']+$mantra_options['mantra_sidewidth'];?>; return false;  };
 
-			var	percentage =parseInt(	jQuery( "#slider-range .ui-slider-range" ).css('width'));
-			var leftwidth =	parseInt(jQuery( "#slider-range .ui-slider-range" ).position().left);
-			jQuery( "#barb" ).css('left',-80+leftwidth+percentage/2+"px");
-			jQuery( "#contentb" ).css('left',-50+leftwidth/2+"px");
-			jQuery( "#totalb" ).css('left',-100+(percentage+leftwidth)/2+"px");
-																	});
+		jQuery( "#mantra_sidewidth" ).val( ui.values[ 0 ] );
+		jQuery( "#mantra_sidebar" ).val( ui.values[ 1 ] - ui.values[ 0 ] );
+		jQuery( "#totalsize" ).html( ui.values[ 1 ]);
+		jQuery( "#contentsize" ).html( ui.values[ 0 ]);jQuery( "#barsize" ).html( ui.values[ 1 ]-ui.values[ 0 ]);
 
+		var	percentage =parseInt(	jQuery( "#slider-range .ui-slider-range" ).css('width'));
+		var leftwidth =	parseInt(jQuery( "#slider-range .ui-slider-range" ).position().left);
+		jQuery( "#barb" ).css('left',-80+leftwidth+percentage/2+"px");
+		jQuery( "#contentb" ).css('left',-50+leftwidth/2+"px");
+		jQuery( "#totalb" ).css('left',-100+(percentage+leftwidth)/2+"px");
 
-
+});
 
 jQuery(function() {
 
@@ -154,22 +153,19 @@ jQuery(function() {
 			min: 0,
 			max: 100,
 			values: [ <?php echo $mantra_options['mantra_sidewidthRel'] ?>, <?php echo ($mantra_options['mantra_sidewidthRel']+$mantra_options['mantra_sidebarRel']); ?> ],
-			slide: function( event, ui ) {
+			slide: function( event, ui ) {}
+		});
 
-											}
+		jQuery( "#mantra_sidewidthRel" ).val( <?php echo $mantra_options['mantra_sidewidthRel'];?> );
+		jQuery( "#mantra_sidebarRel" ).val( <?php echo $mantra_options['mantra_sidebarRel'];?> );
+		var percentageRel =  <?php echo $mantra_options['mantra_sidebarRel'];?> ;
+		var leftwidthRel =  <?php echo $mantra_options['mantra_sidewidthRel'];?> ;
+		jQuery( "#barbRel" ).css('left',-18+leftwidthRel+percentageRel/2+"%");
+		jQuery( "#contentbRel" ).css('left',-8+leftwidthRel/2+"%");
+		jQuery( "#totalbRel" ).css('left',-20+(percentageRel+leftwidthRel)/2+"%");
+});
 
-										});
-
-			jQuery( "#mantra_sidewidthRel" ).val( <?php echo $mantra_options['mantra_sidewidthRel'];?> );
-			jQuery( "#mantra_sidebarRel" ).val( <?php echo $mantra_options['mantra_sidebarRel'];?> );
-			var percentageRel =  <?php echo $mantra_options['mantra_sidebarRel'];?> ;
-			var leftwidthRel =  <?php echo $mantra_options['mantra_sidewidthRel'];?> ;
-			jQuery( "#barbRel" ).css('left',-18+leftwidthRel+percentageRel/2+"%");
-			jQuery( "#contentbRel" ).css('left',-8+leftwidthRel/2+"%");
-			jQuery( "#totalbRel" ).css('left',-20+(percentageRel+leftwidthRel)/2+"%");
-							});
-
-		jQuery( "#slider-rangeRel" ).bind( "slide", function(event, ui) {
+jQuery( "#slider-rangeRel" ).bind( "slide", function(event, ui) {
 			range=ui.values[ 1 ] - ui.values[ 0 ];
 
  			if (ui.values[ 0 ]<40) {ui.values[ 0 ]=40; return false;};
@@ -180,14 +176,14 @@ jQuery(function() {
 			jQuery( "#totalsizeRel" ).html( ui.values[ 1 ]);
 			jQuery( "#contentsizeRel" ).html( ui.values[ 0 ]);jQuery( "#barsizeRel" ).html( ui.values[ 1 ]-ui.values[ 0 ]);
 
-	var	percentageRel =parseInt(	jQuery( "#slider-rangeRel .ui-slider-range" ).css('width'));
-	var leftwidthRel =	parseInt(jQuery( "#slider-rangeRel .ui-slider-range" ).position().left);
+			var	percentageRel =parseInt(	jQuery( "#slider-rangeRel .ui-slider-range" ).css('width'));
+			var leftwidthRel =	parseInt(jQuery( "#slider-rangeRel .ui-slider-range" ).position().left);
 			jQuery( "#barbRel" ).css('left',-80+leftwidthRel+percentageRel/2+"px");
 			jQuery( "#contentbRel" ).css('left',-50+leftwidthRel/2+"px");
 			jQuery( "#totalbRel" ).css('left',-100+(percentageRel+leftwidthRel)/2+"px");
-																	});
+});
 
-	</script>
+</script>
 
 <div id="absolutedim">
 
@@ -238,16 +234,14 @@ function cryout_setting_mobile_fn() {
 	$items = array ("Enable" , "Disable");
 	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
 	echo "<select id='mantra_mobile' name='ma_options[mantra_mobile]'>";
-foreach($items as $id=>$item) {
-	echo "<option value='$item'";
-	selected($mantra_options['mantra_mobile'],$item);
-	echo ">$itemsare[$id]</option>";
-}
+	foreach($items as $id=>$item) {
+		echo "<option value='$item'";
+		selected($mantra_options['mantra_mobile'],$item);
+		echo ">$itemsare[$id]</option>";
+	}
 	echo "</select>";
-
 	$checkedClass = ($mantra_options['mantra_hcontain']=='1') ? ' checkedClass' : '';
-
-	echo "<div><small>".__("Enable the mobile view and make Mantra responsive. The layout and look of your blog will change depending on what device and what resolution it is viewed in.","mantra")."</small></div>";
+	echo "<div><small>".__("Enable to make Mantra fully responsive. The layout and general sizes of your blog will adjust depending on what device and what resolution it is viewed in.<br> Do not disable unless you have a good reason to.","mantra")."</small></div>";
 }
 
 
@@ -709,12 +703,18 @@ $totally = $mantra_options['mantra_sidebar']+$mantra_options['mantra_sidewidth']
 
 $checkedClass = ($mantra_options['mantra_hcenter']=='1') ? ' checkedClass' : '';
 
-echo " <label id='hcenter' for='mantra_hcenter' class='socialsdisplay $checkedClass'><input  ";
-		 checked($mantra_options['mantra_hcenter'],'1');
-echo "value='1' id='mantra_hcenter'  name='ma_options[mantra_hcenter]' type='checkbox' style='margin-left:20px;'/> ".__('Center the header image horizontally','mantra')." </label>";
-
-
+//echo " <label id='hcenter' for='mantra_hcenter' class='socialsdisplay $checkedClass'><input  "; checked($mantra_options['mantra_hcenter'],'1');
+//echo "value='1' id='mantra_hcenter'  name='ma_options[mantra_hcenter]' type='checkbox' style='margin-left:20px;'/> ".__('Center the header image horizontally','mantra')." </label>";
 echo "<div><small>".__("Select the header's height. After saving the settings make sure you reupload a new header image (if you're using one). The header's width will be = ","mantra").$totally."px.</small></div>";
+}
+
+function cryout_setting_himage_fn() {
+	global $mantra_options;
+	$checkedClass = ($mantra_options['mantra_hcenter']=='1') ? ' checkedClass' : '';
+	echo "<a href=\"?page=custom-header\" class=\"button\" target=\"_blank\">".__('Define header image')."</a>";
+	echo " <label id='hcenter' for='mantra_hcenter' class='socialsdisplay $checkedClass'><input ";
+		 checked($mantra_options['mantra_hcenter'],'1');
+	echo " value='1' id='mantra_hcenter' name='ma_options[mantra_hcenter]' type='checkbox' style='margin-left:20px;'/> Center the header image horizontally </label>";
 }
 
 //CHECKBOX - Name: ma_options[menurounded]
@@ -764,7 +764,8 @@ function cryout_setting_logoupload_fn() {
 
 function  cryout_setting_headermargin_fn() {
 	global $mantra_options;?>
-<input id='mantra_headermargin' name='ma_options[mantra_headermargin]' size='4' type='text' value='<?php echo esc_attr( intval($mantra_options['mantra_headermargin'] )) ?>'  />  px
+<input id='mantra_headermargintop' name='ma_options[mantra_headermargintop]' size='4' type='text' value='<?php echo esc_attr( intval($mantra_options['mantra_headermargintop'] )) ?>'  />  px <?php echo __("top","mantra");?> &nbsp; &nbsp;
+<input id='mantra_headermarginleft' name='ma_options[mantra_headermarginleft]' size='4' type='text' value='<?php echo esc_attr( intval($mantra_options['mantra_headermarginleft'] )) ?>'  />  px <?php echo __("left","mantra");?>
 <?php
 
 echo "<div><small>".__("Select the top spacing for the header. Use it to better position your site title and description or custom logo inside the header. ","mantra")."</small></div>";
@@ -777,7 +778,7 @@ function cryout_setting_favicon_fn() {
 ?>
  <img src='<?php echo  ($mantra_options['mantra_favicon']!='')? esc_url($mantra_options['mantra_favicon']):get_template_directory_uri().'/admin/images/placeholder.gif'; ?>' class="imagebox" width="64" height="64"/><br>
 <input type="text" size='60' value="<?php echo  esc_url($mantra_options['mantra_favicon']); ?>" name="ma_options[mantra_favicon]" id="mantra_favicon" class="header_upload_inputs slideimages" />
-<?php echo "<div><small>".__("Limitations: It has to be an image. It should be max 64x64 pixels in dimensions. Recommended file extensions .ico and .png . ","mantra")."</small></div>"; ?>
+<?php echo "<div><small>".__("Limitations: It has to be an image. It should be max 64x64 pixels in dimensions. Recommended file extensions .ico and .png. <br/><b>Note that some browsers do not display the changed favicon instantly.</b>","mantra")."</small></div>"; ?>
 <span class="description"><br><a href="#" class="upload_image_button button"><?php _e( 'Select / Upload Image', 'mantra' );?></a> </span>
 </div>
 
@@ -1144,6 +1145,11 @@ foreach($items as $id=>$item) {
 ////////////////////////////////
 //// APPEREANCE SETTINGS ///////
 ////////////////////////////////
+
+function cryout_setting_sitebackground_fn() {
+     echo "<a href=\"?page=custom-background\" class=\"button\" target=\"_blank\">".__('Define background image')."</a>";
+} // cryout_setting_sitebackground_fn()
+
 
 //TEXT - Name: ma_options[backcolor]
 function  cryout_setting_backcolor_fn() {
