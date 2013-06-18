@@ -7,6 +7,9 @@ if( is_page_template ( 'template-full-width-no-sidebar.php' ) ){ // show wide co
 }
 ?>
 			<div class="<?php echo $col_class; ?> clearfix">
+
+				<?php get_template_part( 'template-part', 'logo-title-description' ); ?>
+
 				<div id="primary" class="content-area">
 					<div id="content" class="site-content" role="main">
 

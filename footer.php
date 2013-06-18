@@ -35,7 +35,7 @@
 					// it is completely optional, but if you like the theme I would appreciate it if you keep the credit link at the bottom ?>
 					<?php _e( 'powered by', 'activetab' ); ?>
 					<a href="http://wordpress.org/" title="WordPress CMS" rel="generator"><?php _e( 'WordPress', 'activetab' ); ?></a>,
-					<a href="http://web-profile.com.ua/wordpress/themes/activetab/" title="activetab responsive light WordPress theme" rel="designer"><?php _e( 'activetab', 'activetab' ); ?></a>
+					<a href="http://web-profile.com.ua/wordpress/themes/activetab/" title="activetab theme" rel="designer"><?php _e( 'activetab', 'activetab' ); ?></a>
 				<?php endif; ?>
 
 				<?php if ( ! is_home() && ! is_front_page() ) : // show rss links everywhere except homepage ?>

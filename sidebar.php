@@ -5,42 +5,46 @@
 
 						<header id="masthead" class="site-header clearfix" role="banner">
 
-							<div class="site-title-description">
+							<div class="site-sidebar-title-description">
 								<?php
+								$show_sidebar_site_title = of_get_option( 'show_sidebar_site_title', '0' );
+								$show_sidebar_site_description = of_get_option( 'show_sidebar_site_description', '0' );
+
 								$title_desc = esc_attr( get_bloginfo( 'name', 'display' ) );
-								if ( get_bloginfo( 'description' ) ){
+								if ( get_bloginfo( 'description' ) ) { // add desc to title attr
 									$title_desc .= ' | '.esc_attr( get_bloginfo( 'description', 'display' ) );
 								}
+
+								if ( activetab_is_homepage() ) {
+									$link_before = '';
+									$link_after = '';
+								} else {
+									$link_before = '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . $title_desc . '" rel="home">';
+									$link_after = '</a>';
+								}
 								?>
-								<h4 class="site-title">
-									<?php if( activetab_is_homepage() ): ?>
-										<?php bloginfo( 'name' ); ?>
-									<?php else: ?>
-										<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-										   title="<?php echo $title_desc ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+
+								<?php if ( ! empty( $show_sidebar_site_title ) ) : ?>
+								<h3 class="site-sidebar-title">
+									<?php echo $link_before; ?><?php bloginfo( 'name' ); ?><?php echo $link_after; ?>
+								</h3>
+								<?php endif; ?>
+
+								<?php if ( ! empty( $show_sidebar_site_description ) ) : ?>
+									<?php if ( get_bloginfo( 'description' ) ) : ?>
+									<h4 class="site-sidebar-description muted"><?php bloginfo( 'description' ); ?></h4>
 									<?php endif; ?>
-								</h4>
-								<?php /*
-                                    bloginfo('comments_rss2_url'); // all comments rss feed
-                                    if ( get_bloginfo( 'description' ) ): ?>
-									<h4 class="site-description"><?php bloginfo( 'description' ); ?></h4>
-								<?php endif; */ ?>
+								<?php endif; ?>
 							</div>
 
 							<?php $header_image = get_header_image();
 							if ( ! empty( $header_image ) ) : ?>
-								<?php if( ! activetab_is_homepage() ): ?>
-									<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-									   title="<?php echo $title_desc ?>"
-									   rel="home">
-								<?php endif; ?>
+								<?php echo $link_before; ?>
 									<img class="border-radius" src="<?php echo esc_url( $header_image ); ?>"
 					                   height="<?php echo get_custom_header()->height; ?>"
 					                   width="<?php echo get_custom_header()->width; ?>"
 					                   alt="<?php echo $title_desc ?>" />
-								<?php if( ! activetab_is_homepage() ): ?>
-									</a>
-								<?php endif; ?>
+								<?php echo $link_after; ?>
 							<?php endif; ?>
 
 						</header> <!-- /#masthead /.site-header -->

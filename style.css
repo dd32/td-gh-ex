@@ -2,10 +2,10 @@
 Theme Name: activetab
 Theme URI: http://web-profile.com.ua/wordpress/themes/activetab/
 Description: Responsive light theme. More info at http://web-profile.com.ua/wordpress/themes/activetab/
-Version: 0.3.3
+Version: 0.3.4
 Author: webvitaly
 Author URI: http://web-profile.com.ua/wordpress/
-Tags: gray, white, light, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, threaded-comments, translation-ready
+Tags: gray, white, light, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -624,10 +624,11 @@ article.hentry {
 article.sticky {
 	background: #f2f7fc;
 	border: 0;
-	margin-left: -20px;
-	padding-left: 20px;
+	margin-left: -10px;
+	padding-left: 10px;
 	margin-right: -10px;
 	padding-right: 10px;
+	border-radius: 2px;
 }
 
 
@@ -801,9 +802,27 @@ body.admin-bar .navbar-fixed-top { /* move menu below admin-bar */
 .site-header {
 	margin: 0 0 30px 0;
 }
-.site-title-description {}
-.site-title-description .site-title {}
-
+.site-sidebar-title-description {}
+.site-sidebar-title-description .site-sidebar-title {}
+.site-logo-title {
+	border-bottom: 1px solid #aaa;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+}
+.site-logo {
+	float: left;
+	margin: 0 30px 0 0;
+}
+.site-logo img {
+	max-width: 250px;
+	max-height: 200px;
+}
+.site-logo a img {
+	padding: 0;
+	border: 0;
+}
+.site-title {}
+.site-title h3 {}
 
 
 /* ========== sidebar ========== */

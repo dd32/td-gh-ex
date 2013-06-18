@@ -5,7 +5,7 @@ if ( ! isset( $content_width ) ) {
 }
 
 
-$activetab_version = '0.3.3';
+$activetab_version = '0.3.4';
 
 
 if ( ! function_exists( 'activetab_enqueue_scripts_and_styles' ) ) :
@@ -345,3 +345,38 @@ if ( ! function_exists( 'activetab_is_homepage' ) ) :
 		}
 	}
 endif; // activetab_is_homepage()
+
+
+
+// ========== options framework ==========
+
+/*
+ * Loads the Options Panel
+ *
+ * If you're loading from a child theme use stylesheet_directory
+ * instead of template_directory
+ */
+
+if ( ! function_exists( 'optionsframework_init' ) ) {
+	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/options-framework/' );
+	require_once dirname( __FILE__ ) . '/options-framework/options-framework.php';
+}
+
+
+/**
+ * A unique identifier is defined to store the options in the database and reference them from the theme.
+ * By default it uses the theme name, in lowercase and without spaces, but this can be changed if needed.
+ * If the identifier changes, it'll appear as if the options have been reset.
+ */
+
+function optionsframework_option_name() { // set theme option name to 'activetab_options' and save all options there
+
+	// This gets the theme name from the stylesheet
+	$themename = wp_get_theme();
+	$themename = preg_replace( "/\W/", "_", strtolower( $themename ) );
+
+	$optionsframework_settings = get_option( 'optionsframework' );
+	$optionsframework_settings['id'] = $themename . '_options';
+	update_option( 'optionsframework', $optionsframework_settings );
+
+}
