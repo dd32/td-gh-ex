@@ -248,7 +248,16 @@
 
 #variable-pricing-form {
 	background: #F9F9F9;
+	margin: 20px 0;
 	padding: 15px;
+	-moz-transition: background 2s;
+	-webkit-transition: background 2s;
+	-o-transition: background 2s;
+	transition: background 2s;
+}
+
+#variable-pricing-form.highlight-form {
+	background: #deeef2;
 }
 
 #variable-pricing-form .options {

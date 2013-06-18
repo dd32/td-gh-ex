@@ -1,6 +1,6 @@
 <?php
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.5.3' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.5.4' );
 define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://siteorigin.com' );
 
 include get_template_directory() . '/extras/premium/premium.php';
@@ -128,6 +128,8 @@ if(!function_exists('origami_title')) :
  */
 function origami_title($title, $sep, $seplocation){
 	global $page, $paged;
+
+	if ( is_feed() ) return $title;
 
 	// Add the blog name.
 	$title = $title.get_bloginfo( 'name' );
