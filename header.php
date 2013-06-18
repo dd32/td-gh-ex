@@ -22,8 +22,8 @@
             <h1 class="blog-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></a></h1>
             <h2 class="blog-description"><?php bloginfo( 'description' ); ?> | <a href="<?php bloginfo( 'rss2_url' ); ?>" title="<?php _e( 'Subscribe to the RSS Feed of this site', 'rockers' ); ?>" id="rss">RSS</a></h2>
             <nav id="blog-menu" class="menu">
-                <h2 class="menu-toggle"><?php _e( 'Menu', 'inBlu' ); ?></h2>
-                <h3 class="skip-link accessibility"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'inBlu' ); ?>"><?php _e( 'Skip to content', 'inBlu' ); ?></a></h3>
+                <h2 class="menu-toggle"><?php _e( 'Menu', 'rockers' ); ?></h2>
+                <h3 class="skip-link accessibility"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'rockers' ); ?>"><?php _e( 'Skip to content', 'rockers' ); ?></a></h3>
                 <?php wp_nav_menu(
                     array( 
                         'container' => '',

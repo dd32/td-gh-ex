@@ -1,17 +1,17 @@
-/*
+/* 
 Theme Name: Rockers
 Author: Alberto Ramacciotti
 Author URI: http://www.arwebdevstudio.it
 Theme URI: http://ramacciotti.altervista.org/archivio/articolo/rockers-theme
 Description: Rockers is a responsive theme for bloggers with a clean design.
-Version: 2.0.4
+Version: 2.0.5
 License: GNU General Public License v2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Rockers WordPress theme, Copyright (C) 2013 Alberto Ramacciotti, AR Web Dev Studio
 Rockers theme is licensed under the GPL.
 
-Tags: two-columns, left-sidebar, light, flexible-width, custom-background, custom-header, custom-menu, editor-style, threaded-comments, featured-images, sticky-post, translation-ready, post-formats, rtl-language-support, threaded-comments
+Tags: two-columns, left-sidebar, light, flexible-width, custom-background, custom-header, custom-menu, editor-style, threaded-comments, featured-images, sticky-post, translation-ready, post-formats, rtl-language-support, threaded-comments 
 */
 
 html, 
@@ -346,7 +346,7 @@ img {
 article.format-quote footer.post-meta,
 article.format-link footer.post-meta,
 article.format-status footer.post-meta {
-    font-size: 14px;
+    font-size: .9em;
     line-height: 2;
 }
 
@@ -583,7 +583,7 @@ img.wp-smiley,
 
 .author-description p {
     color: #5e1900;
-    font-size: 14px;
+    font-size: .9em;
     line-height: 1.8;
 }
 
@@ -686,7 +686,7 @@ a:hover {
 }
 
 .blog-header h2 {
-    font-size: 14px;
+    font-size: .9em;
     line-height: 1.5;
     letter-spacing: 1px;
     margin-bottom: 48px;
@@ -868,14 +868,14 @@ footer#footer a:hover {
 
 .post-content h1,
 .comment-content h1 {
-    font-size: 1.3em;
+    font-size: 1.4em;
     line-height: 1.6;
     margin-top: 1em;
 }
 
 .post-content h2,
 .comment-content h2 {
-    font-size: 1.25em;
+    font-size: 1.3em;
     line-height: 1.8;
     margin-top: .9em;
     color: #111111;
@@ -884,7 +884,7 @@ footer#footer a:hover {
 
 .post-content h3,
 .comment-content h3 {
-    font-size: 1.125em;
+    font-size: 1.1em;
     line-height: 1;
     margin-top: 1em;
     margin-bottom: .5em;
@@ -895,8 +895,8 @@ footer#footer a:hover {
 .post-content h4,
 .comment-content h4 {
     font-size: 1em;
-    line-height: 1.125;
-    margin-top: 1.125em;
+    line-height: 1.5;
+    margin-top: 1.1em;
 }
 
 .post-content h5,
@@ -908,7 +908,7 @@ footer#footer a:hover {
 
 .post-content h6,
 .comment-content h6 {
-    font-size: .875em;
+    font-size: .8em;
     line-height: 1.4;
     margin-top: 1.4em;
 }
@@ -1053,7 +1053,7 @@ img.aligncenter {
 
 .post-content table caption,
 .comment-content table caption {
-    font-size: 16px;
+    font-size: 1em;
     margin: 24px 0;
 }
 
@@ -1119,7 +1119,7 @@ footer.post-meta {
 
 .archive-meta {
     color: #5e1900;
-    font-size: 14px;
+    font-size: .9em;
     line-height: 2;
     margin-top: 22px;
 }
@@ -1157,8 +1157,8 @@ article.format-aside .aside {
 }
 
 article.format-aside p {
-    font-size: 14px;
-    line-height: 1.8;
+    font-size: .9em;
+    line-height: 1.5;
     color: #4a5466;
 }
 
@@ -1168,18 +1168,18 @@ article.format-aside p:last-child {
 }
 
 article.format-image footer h1 {
-    font-size: 14px;
+    font-size: .9em;
     line-height: 1.8;
 }
 
 article.format-image footer h2 {
-    font-size: 14px;
+    font-size: .9em;
     line-height: 2;
 }
 
 article.format-link header {
     padding: 0 10px;
-    font-size: 14px;
+    font-size: .9em;
     line-height: 2;
     font-weight: bold;
     font-style: italic;
@@ -1194,7 +1194,7 @@ article.format-link .post-content {
 
 article.format-link .post-content a {
     font-size: 22px;
-    line-height: 1.090909091;
+    line-height: 1;
 }
 
 article.format-quote .post-content p {
@@ -1233,7 +1233,7 @@ article.format-quote .post-content blockquote {
 
 .comments-title {
     margin-bottom: 48px;
-    font-size: 16px;
+    font-size: 1em;
     line-height: 1.5;
 }
 
@@ -1255,7 +1255,7 @@ article.format-quote .post-content blockquote {
 .comments-area article header cite {
     font-style: normal;
     font-size: 15px;
-    line-height: 1.42857143;
+    line-height: 1.4;
 }
 
 .comments-area article header time {
@@ -1269,7 +1269,7 @@ article.format-quote .post-content blockquote {
     top: 0;
     right: 0;
     padding: 6px 12px;
-    font-size: 14px;
+    font-size: .9em;
     color: #fafafa;
     background-color: #0088d0;
     background-repeat: repeat-x;
@@ -1286,11 +1286,11 @@ article.format-quote .post-content blockquote {
     position: absolute;
     margin-left: 5px;
     padding: 2px 5px;
-    font-size: 14px;
+    font-size: .9em;
 }
 
 a.comment-reply-link {
-    font-size: 14px;
+    font-size: .9em;
     line-height: 1.8;
     color: #111111;
 }
@@ -1319,7 +1319,7 @@ a.comment-reply-link:hover {
 
 #respond h3#reply-title #cancel-comment-reply-link {
     margin-left: 10px;
-    font-size: 14px;
+    font-size: .9em;
 }
 
 #respond form {
@@ -1342,7 +1342,7 @@ a.comment-reply-link:hover {
 #respond form textarea {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    font-size: 14px;
+    font-size: .9em;
     line-height: 1.7;
     padding: 10px;
     width: 100%;
@@ -1380,7 +1380,7 @@ label ~ span.required {
 
 .template-front-page .aside .widget li {
     margin: 8px 0 0;
-    font-size: 14px;
+    font-size: .9em;
     line-height: 1.7;
     list-style-type: square;
     list-style-position: inside;
@@ -1401,14 +1401,14 @@ label ~ span.required {
 .widget-recent-entries .post-date,
 .widget-rss .rss-date {
     color: #818181;
-    font-size: 14px;
+    font-size: .9em;
     margin-left: 12px;
 }
 
 #wp-calendar {
     margin: 0;
     width: 100%;
-    font-size: 14px;
+    font-size: .9em;
     line-height: 1.8;
     color: #111111;
 }
@@ -1419,7 +1419,7 @@ label ~ span.required {
 }
 
 .widget-search label {
-    font-size: 14px;
+    font-size: .9em;
     line-height: 1.8;
 }
 
@@ -1580,11 +1580,11 @@ img#wpstats {
     }
 
     #respond form input[type="text"] {
-        width: 46.333333333%;
+        width: 46%;
     }
 
     #respond form textarea.blog-textarea {
-        width: 79.666666667%;
+        width: 79%;
     }
 
     .template-front-page article {

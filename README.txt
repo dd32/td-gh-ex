@@ -3,7 +3,7 @@ Contributors: Alberto Ramacciotti ( http://arwebdevstudio.it )
 Tags: two-columns, left-sidebar, light, flexible-width, custom-background, custom-header, custom-menu, editor-style, threaded-comments, featured-images, sticky-post, translation-ready, post-formats, rtl-language-support, threaded-comments
 Requires at least: 3.0
 Tested up to: 3.5.1
-Version: 2.0.4
+Version: 2.0.5
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,4 +56,7 @@ http://ramacciotti.altervista.org/magazzino/404-600.png
 * Fixed bugs and added Custom background and custom header
 
 = 2.0.4 =
+* Fixed bugs
+
+= 2.0.5 =
 * Fixed bugs
