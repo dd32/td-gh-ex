@@ -222,7 +222,7 @@ else
 add_image_size( 'custom', $mantra_fwidth, $mantra_fheight ); 
 
 
-function echo_first_image ($postID)
+function cryout_echo_first_image ($postID)
 {				
 	$args = array(
 	'numberposts' => 1,
@@ -257,7 +257,7 @@ function mantra_set_featured_thumb() {
      ${"$key"} = $value ;
 }
 global $post;
-$image_src = echo_first_image($post->ID);
+$image_src = cryout_echo_first_image($post->ID);
 
 	 if ( function_exists("has_post_thumbnail") && has_post_thumbnail() && $mantra_fpost=='Enable') 
 			the_post_thumbnail( 'custom', array("class" => "align".strtolower($mantra_falign)." post_thumbnail" ) ); 

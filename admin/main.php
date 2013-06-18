@@ -340,7 +340,7 @@ incompatible plugins.<br> The Mantra Settings page cannot function without jQuer
                 	foreach( $news_items as $news_item ) : ?>
                     	<li>
                         	<a class="news-header" href='<?php echo esc_url( $news_item->get_permalink() ); ?>'><?php echo esc_html( $news_item->get_title() ); ?></a><br />
-                   <span class="news-item-date"><?php echo 'Posted on '. $news_item->get_date('j F Y, g:i a'); ?></span><br />
+                   <span class="news-item-date"><?php _e('Posted on','mantra');echo $news_item->get_date(' j F Y, H:i'); ?></span><br />
                             <?php echo mantra_truncate_words(strip_tags( $news_item->get_description() ),40,'...') ; ?>
 					<br><a class="news-read" href='<?php echo esc_url( $news_item->get_permalink() ); ?>'>Read more &raquo;</a>
                         </li>

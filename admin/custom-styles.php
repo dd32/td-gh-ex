@@ -1,6 +1,6 @@
 <?php
 
-function optset($var,$val1,$val2='',$val3='',$val4=''){
+function cryout_optset($var,$val1,$val2='',$val3='',$val4=''){
 $vals = array($val1,$val2,$val3,$val4);
 if (in_array($var,$vals)): return false; else: return true; endif;
 }
@@ -188,8 +188,8 @@ font-size:<?php echo $mantra_fontsize ?>;
 <?php if ($mantra_hcenter != "") { ?> #bg_image { display:block;margin:0 auto;} <?php }
 ?><?php if ($mantra_contentbg != "#FFFFFF") { ?> #main,  #access  ul  li.current_page_item,  #access ul li.current-menu-item ,#access ul ul li  { background-color:<?php echo $mantra_contentbg; ?>} <?php }
 ?><?php if ($mantra_menubg != "#FAFAFA") { ?> #access ul li { background-color:<?php echo $mantra_menubg; ?>} <?php }
-?><?php if (optset($mantra_s1bg, "")) { ?> #primary { background-color:<?php echo $mantra_s1bg; ?>} <?php }
-?><?php if (optset($mantra_s2bg ,"" )){ ?> #secondary { background-color:<?php echo $mantra_s2bg; ?>} <?php }
+?><?php if (cryout_optset($mantra_s1bg, "")) { ?> #primary { background-color:<?php echo $mantra_s1bg; ?>} <?php }
+?><?php if (cryout_optset($mantra_s2bg ,"" )){ ?> #secondary { background-color:<?php echo $mantra_s2bg; ?>} <?php }
 
 $mantra_googlefont = str_replace('+',' ',preg_replace('/:.*/i','',$mantra_googlefont));
 $mantra_googlefonttitle = str_replace('+',' ',preg_replace('/:.*/i','',$mantra_googlefonttitle));
