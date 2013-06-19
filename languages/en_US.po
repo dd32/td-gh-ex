@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BoldR Lite 1.1\n"
-"POT-Creation-Date: 2014-05-05 08:28+0100\n"
-"PO-Revision-Date: 2014-05-05 08:28+0100\n"
+"POT-Creation-Date: 2013-06-03 10:54+0100\n"
+"PO-Revision-Date: 2013-06-03 10:54+0100\n"
 "Last-Translator: \n"
 "Language-Team: Iceable Themes <contact@iceablethemes.com>\n"
 "Language: en_US\n"
@@ -15,20 +15,20 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../404.php:16
+#: ../404.php:25
 msgid "404"
 msgstr ""
 
-#: ../404.php:20
+#: ../404.php:29
 msgid "Page Not Found"
 msgstr ""
 
-#: ../404.php:21 ../index.php:115 ../page-full-width.php:55 ../page.php:54
-#: ../single.php:121
+#: ../404.php:30 ../index.php:108 ../page-full-width.php:55 ../page.php:55
+#: ../single.php:147
 msgid "What you are looking for isn't here..."
 msgstr ""
 
-#: ../404.php:22
+#: ../404.php:31
 msgid "Maybe a search will help ?"
 msgstr ""
 
@@ -36,28 +36,28 @@ msgstr ""
 msgid "This post is password protected. Enter the password to view comments."
 msgstr ""
 
-#: ../comments.php:23
+#: ../comments.php:24
 #, php-format
 msgid "One Response to %2$s"
 msgstr ""
 
-#: ../comments.php:29
+#: ../comments.php:30
 msgid "Reply"
 msgstr ""
 
-#: ../comments.php:37
+#: ../comments.php:38
 msgid "Older comments"
 msgstr ""
 
-#: ../comments.php:40
+#: ../comments.php:41
 msgid "Newer comments"
 msgstr ""
 
-#: ../comments.php:49
+#: ../comments.php:53
 msgid "Comments are closed."
 msgstr ""
 
-#: ../footer.php:25
+#: ../footer.php:27
 msgid "Proudly powered by"
 msgstr ""
 
@@ -66,153 +66,114 @@ msgstr ""
 msgid "Page %s"
 msgstr ""
 
-#: ../functions.php:136
-#, php-format
-msgid "<a href=\"%1$s\" style=\"float:right\">Dismiss</a>"
-msgstr ""
-
-#: ../functions.php:157
+#: ../functions.php:130
 msgid "Default Sidebar"
 msgstr ""
 
-#: ../functions.php:169
+#: ../functions.php:142
 msgid "Footer"
 msgstr ""
 
-#: ../functions.php:290
+#: ../functions.php:233
 msgid "Read More"
 msgstr ""
 
-#: ../index.php:18
+#: ../index.php:32
 msgid "Search Results for "
 msgstr ""
 
-#: ../index.php:23
+#: ../index.php:37
 msgid "Tag: "
 msgstr ""
 
-#: ../index.php:28
+#: ../index.php:42
 msgid "Category: "
 msgstr ""
 
-#: ../index.php:33
-msgid "Daily archives: "
-msgstr ""
-
-#: ../index.php:36
-msgid "Monthly archives: "
-msgstr ""
-
-#: ../index.php:39
-msgid "Yearly archives: "
-msgstr ""
-
-#: ../index.php:63 ../single.php:32
+#: ../index.php:67 ../single.php:44
 msgid "No"
 msgstr ""
 
-#: ../index.php:63 ../single.php:32
+#: ../index.php:67 ../single.php:44
 msgid "1"
 msgstr ""
 
-#: ../index.php:63 ../single.php:32
+#: ../index.php:67 ../single.php:44
 msgid "%"
 msgstr ""
 
-#: ../index.php:64 ../single.php:33
+#: ../index.php:68 ../single.php:45
 msgid "Comment"
 msgstr ""
 
-#: ../index.php:64 ../single.php:33
+#: ../index.php:68 ../single.php:45
 msgid "Comments"
 msgstr ""
 
-#: ../index.php:64 ../single.php:33
+#: ../index.php:68 ../single.php:45
 msgid "Comments Off"
 msgstr ""
 
-#: ../index.php:68 ../single.php:37
+#: ../index.php:72 ../single.php:49
 msgid "by "
 msgstr ""
 
-#: ../index.php:70 ../page-full-width.php:37 ../page.php:37 ../single.php:39
+#: ../index.php:74 ../page-full-width.php:40 ../page.php:40 ../single.php:51
 msgid "Edit"
 msgstr ""
 
-#: ../index.php:85 ../single.php:54
+#: ../index.php:89 ../single.php:68
 msgid "Posted in"
 msgstr ""
 
-#: ../index.php:92 ../single.php:73
-msgid "Tags"
-msgstr ""
-
-#: ../index.php:107 ../index.php:114 ../page-full-width.php:54 ../page.php:53
-#: ../single.php:120
+#: ../index.php:107 ../page-full-width.php:54 ../page.php:54 ../single.php:146
 msgid "Not Found"
 msgstr ""
 
-#: ../index.php:108
-#, php-format
-msgid "Your search for \"%s\" did not return any result."
-msgstr ""
-
-#: ../index.php:109
-msgid "Would you like to try another search ?"
-msgstr ""
-
-#: ../index.php:123
+#: ../index.php:114
 msgid "Previous Posts"
 msgstr ""
 
-#: ../index.php:127
+#: ../index.php:117
 msgid "Next Posts"
 msgstr ""
 
-#: ../page-full-width.php:25 ../page.php:25 ../single.php:61
-msgid "Pages:"
-msgstr ""
-
-#: ../page-full-width.php:30 ../page.php:30 ../single.php:66
-msgid "Next page"
-msgstr ""
-
-#: ../page-full-width.php:31 ../page.php:31 ../single.php:67
-msgid "Previous page"
-msgstr ""
-
-#: ../sidebar.php:15
+#: ../sidebar.php:16
 msgid "Recent Posts"
 msgstr ""
 
-#: ../sidebar.php:20
+#: ../sidebar.php:22
 msgid "Archives"
 msgstr ""
 
-#: ../sidebar.php:25
+#: ../sidebar.php:28
 msgid "Meta"
 msgstr ""
 
-#: ../single.php:83
+#: ../single.php:75
+msgid "Pages:"
+msgstr ""
+
+#: ../single.php:80
+msgid "Next page"
+msgstr ""
+
+#: ../single.php:81
+msgid "Previous page"
+msgstr ""
+
+#: ../single.php:100
 msgid "Previous Image"
 msgstr ""
 
-#: ../single.php:86
+#: ../single.php:103
 msgid "Next Image"
 msgstr ""
 
-#: ../single.php:90 ../single.php:107
+#: ../single.php:109 ../single.php:132
 msgid "Previous Post"
 msgstr ""
 
-#: ../single.php:93 ../single.php:110
+#: ../single.php:112 ../single.php:135
 msgid "Next Post"
-msgstr ""
-
-#: ../functions/icefit-options/settings.php:98
-msgid "Responsive mode"
-msgstr ""
-
-#: ../functions/icefit-options/settings.php:99
-msgid "Turn this setting off if you want your site to be unresponsive."
 msgstr ""
