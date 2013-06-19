@@ -22,8 +22,10 @@ if ( !defined('ABSPATH')) exit;
  * A safe way of adding JavaScripts to a WordPress generated page.
  */
 function responsive_admin_enqueue_scripts( $hook_suffix ) {
-	wp_enqueue_style('responsive-theme-options', get_template_directory_uri() . '/includes/theme-options.css', false, '1.0');
-	wp_enqueue_script('responsive-theme-options', get_template_directory_uri() . '/includes/theme-options.js', array('jquery'), '1.0');
+	$template_directory_uri = get_template_directory_uri();
+	
+	wp_enqueue_style('responsive-theme-options', $template_directory_uri . '/core/includes/theme-options.css', false, '1.0');
+	wp_enqueue_script('responsive-theme-options', $template_directory_uri . '/core/includes/theme-options.js', array('jquery'), '1.0');
 }
 add_action('admin_print_styles-appearance_page_theme_options', 'responsive_admin_enqueue_scripts');
 
@@ -175,6 +177,7 @@ function responsive_theme_options_do_page() {
                         <p class="submit">
 						<?php submit_button( __( 'Save Options', 'responsive' ), 'primary', 'responsive_theme_options[submit]', false ); ?>
 						<?php submit_button( __( 'Restore Defaults', 'responsive' ), 'secondary', 'responsive_theme_options[reset]', false ); ?>
+						<a href="http://cyberchimps.com/store/responsivepro/" class="button">Upgrade</a>
                         </p>
                     </div><!-- end of .grid col-620 -->
                                     
@@ -278,12 +281,13 @@ function responsive_theme_options_do_page() {
                     <?php printf(__('See Docs','responsive')); ?></a>
                 </div><!-- end of .grid col-300 -->
                     <div class="grid col-620 fit">
-                        <textarea id="responsive_theme_options[featured_content]" class="large-text" cols="50" rows="10" name="responsive_theme_options[featured_content]" placeholder="<img class='aligncenter' src='<?php get_template_directory_uri(); ?>/images/featured-image.png' width='440' height='300' alt='' />"><?php if (!empty($responsive_options['featured_content'])) echo esc_html($responsive_options['featured_content']); ?></textarea>
+                        <textarea id="responsive_theme_options[featured_content]" class="large-text" cols="50" rows="10" name="responsive_theme_options[featured_content]" placeholder="<img class='aligncenter' src='<?php get_template_directory_uri(); ?>/core/images/featured-image.png' width='440' height='300' alt='' />"><?php if (!empty($responsive_options['featured_content'])) echo esc_html($responsive_options['featured_content']); ?></textarea>
                         <label class="description" for="responsive_theme_options[featured_content]"><?php _e('Paste your shortcode, video or image source', 'responsive'); ?></label>
                         <p class="submit">
 						<?php submit_button( __( 'Save Options', 'responsive' ), 'primary', 'responsive_theme_options[submit]', false ); ?>
 						<?php submit_button( __( 'Restore Defaults', 'responsive' ), 'secondary', 'responsive_theme_options[reset]', false ); ?>
-                        </p>
+                        <a href="http://cyberchimps.com/store/responsivepro/" class="button">Upgrade</a>
+						</p>
                     </div><!-- end of .grid col-620 -->
                     
                 </div><!-- end of .rwd-block -->
@@ -351,7 +355,8 @@ function responsive_theme_options_do_page() {
                         <p class="submit">
 						<?php submit_button( __( 'Save Options', 'responsive' ), 'primary', 'responsive_theme_options[submit]', false ); ?>
 						<?php submit_button( __( 'Restore Defaults', 'responsive' ), 'secondary', 'responsive_theme_options[reset]', false ); ?>
-                        </p>
+                        <a href="http://cyberchimps.com/store/responsivepro/" class="button">Upgrade</a>
+						</p>
 				</div><!-- end of .grid col-620 -->
                                     
                 </div><!-- end of .rwd-block -->
@@ -410,7 +415,8 @@ function responsive_theme_options_do_page() {
                         <p class="submit">
 						<?php submit_button( __( 'Save Options', 'responsive' ), 'primary', 'responsive_theme_options[submit]', false ); ?>
 						<?php submit_button( __( 'Restore Defaults', 'responsive' ), 'secondary', 'responsive_theme_options[reset]', false ); ?>
-                        </p>
+                        <a href="http://cyberchimps.com/store/responsivepro/" class="button">Upgrade</a>
+						</p>
                     </div><!-- end of .grid col-620 -->
                 
                 </div><!-- end of .rwd-block -->
@@ -498,7 +504,8 @@ function responsive_theme_options_do_page() {
                         <p class="submit">
 						<?php submit_button( __( 'Save Options', 'responsive' ), 'primary', 'responsive_theme_options[submit]', false ); ?>
 						<?php submit_button( __( 'Restore Defaults', 'responsive' ), 'secondary', 'responsive_theme_options[reset]', false ); ?>
-                        </p>
+                        <a href="http://cyberchimps.com/store/responsivepro/" class="button">Upgrade</a>
+						</p>
                     </div><!-- end of .grid col-620 -->
 
                 </div><!-- end of .rwd-block -->
@@ -525,7 +532,8 @@ function responsive_theme_options_do_page() {
                         <p class="submit">
 						<?php submit_button( __( 'Save Options', 'responsive' ), 'primary', 'responsive_theme_options[submit]', false ); ?>
 						<?php submit_button( __( 'Restore Defaults', 'responsive' ), 'secondary', 'responsive_theme_options[reset]', false ); ?>
-                        </p>
+                        <a href="http://cyberchimps.com/store/responsivepro/" class="button">Upgrade</a>
+						</p>
                     </div><!-- end of .grid col-620 -->
                                     
                 </div><!-- end of .rwd-block -->
@@ -542,7 +550,7 @@ function responsive_theme_options_do_page() {
                 ?>
                 <div class="grid col-300">
 				    <?php _e('Custom Scripts for Header and Footer', 'responsive'); ?>
-                    <a class="help-links" href="<?php echo esc_url(__('http://codex.wordpress.org/Using_Javascript','responsive')); ?>" title="<?php esc_attr_e('Quick Tutorial', 'responsive'); ?>" target="_blank">
+                    <a class="help-links" href="<?php echo esc_url('http://codex.wordpress.org/Using_Javascript','responsive'); ?>" title="<?php esc_attr_e('Quick Tutorial', 'responsive'); ?>" target="_blank">
                     <?php printf(__('Quick Tutorial','responsive')); ?></a>
                 </div><!-- end of .grid col-300 -->
                 
@@ -557,11 +565,17 @@ function responsive_theme_options_do_page() {
                         <p class="submit">
 						<?php submit_button( __( 'Save Options', 'responsive' ), 'primary', 'responsive_theme_options[submit]', false ); ?>
 						<?php submit_button( __( 'Restore Defaults', 'responsive' ), 'secondary', 'responsive_theme_options[reset]', false ); ?>
-                        </p>
+                        <a href="http://cyberchimps.com/store/responsivepro/" class="button">Upgrade</a>
+						</p>
                     </div><!-- end of .grid col-620 -->
                                     
                 </div><!-- end of .rwd-block -->
             </div><!-- end of .rwd-container -->
+			
+			<?php
+			// Call action to add pro theme options.
+			do_action( 'responsive_pro_options' );
+			?>
 
             </div><!-- end of .grid col-940 -->
         </form>

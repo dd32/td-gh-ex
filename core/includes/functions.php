@@ -47,37 +47,37 @@ function responsive_get_options() {
  */
 function responsive_get_option_defaults() {
   $defaults = array(
-    'breadcrumb' => false,
-    'cta_button' => false,
-    'front_page' => 1,
-    'home_headline' => false,
-    'home_subheadline' => false,
-    'home_content_area' => false,
-    'cta_text' => false,
-    'cta_url' => false,
-    'featured_content' => false,
-    'google_site_verification' => '',
-    'bing_site_verification' => '',
-    'yahoo_site_verification' => '',
-    'site_statistics_tracker' => '',
-    'twitter_uid' => '',
-    'facebook_uid' => '',
-    'linkedin_uid' => '',
-    'youtube_uid' => '',
-    'stumble_uid' => '',
-    'rss_uid' => '',
-    'google_plus_uid' => '',
-    'instagram_uid' => '',
-    'pinterest_uid' => '',
-    'yelp_uid' => '',
-    'vimeo_uid' => '',
-    'foursquare_uid' => '',
-    'responsive_inline_css' => '',
-    'responsive_inline_js_head' => '',
-    'responsive_inline_css_js_footer' => '',
-    'static_page_layout_default' => 'content-sidebar-page',
-    'single_post_layout_default' => 'content-sidebar-page',
-    'blog_posts_index_layout_default' => 'content-sidebar-page',
+    'breadcrumb'						=> false,
+    'cta_button'						=> false,
+    'front_page'						=> 1,
+    'home_headline'						=> null,
+    'home_subheadline'					=> null,
+    'home_content_area'					=> null,
+    'cta_text'							=> null,
+    'cta_url'							=> null,
+    'featured_content'					=> null,
+    'google_site_verification'			=> '',
+    'bing_site_verification'			=> '',
+    'yahoo_site_verification'			=> '',
+    'site_statistics_tracker'			=> '',
+    'twitter_uid'						=> '',
+    'facebook_uid'						=> '',
+    'linkedin_uid'						=> '',
+    'youtube_uid'						=> '',
+    'stumble_uid'						=> '',
+    'rss_uid'							=> '',
+    'google_plus_uid'					=> '',
+    'instagram_uid'						=> '',
+    'pinterest_uid'						=> '',
+    'yelp_uid'							=> '',
+    'vimeo_uid'							=> '',
+    'foursquare_uid'					=> '',
+    'responsive_inline_css'				=> '',
+    'responsive_inline_js_head'			=> '',
+    'responsive_inline_css_js_footer'	=> '',
+    'static_page_layout_default'		=> 'content-sidebar-page',
+    'single_post_layout_default'		=> 'content-sidebar-page',
+    'blog_posts_index_layout_default'	=> 'content-sidebar-page',
   );
   return apply_filters( 'responsive_option_defaults', $defaults );
 }
@@ -93,6 +93,8 @@ if (!function_exists('responsive_setup')):
 
         global $content_width;
 
+		$template_directory = get_template_directory();
+		
         /**
          * Global content width.
          */
@@ -104,10 +106,10 @@ if (!function_exists('responsive_setup')):
          * Add your files into /languages/ directory.
 		 * @see http://codex.wordpress.org/Function_Reference/load_theme_textdomain
          */
-	    load_theme_textdomain('responsive', get_template_directory().'/languages');
+	    load_theme_textdomain('responsive', $template_directory . '/languages');
 
             $locale = get_locale();
-            $locale_file = get_template_directory().'/languages/$locale.php';
+            $locale_file = $template_directory . '/languages/$locale.php';
             if (is_readable( $locale_file))
 	            require_once( $locale_file);
 						
@@ -169,7 +171,7 @@ if (!function_exists('responsive_setup')):
 			
 		add_theme_support('custom-header', array (
 	        // Header image default
-	       'default-image'			=> get_template_directory_uri() . '/images/default-logo.png',
+	       'default-image'			=> get_template_directory_uri() . '/core/images/default-logo.png',
 	        // Header text display default
 	       'header-text'			=> false,
 	        // Header image flex width
@@ -203,7 +205,7 @@ if (!function_exists('responsive_setup')):
          * @see http://codex.wordpress.org/Function_Reference/add_custom_image_header
          */
         define('HEADER_TEXTCOLOR', '');
-        define('HEADER_IMAGE', '%s/images/default-logo.png'); // %s is the template dir uri
+        define('HEADER_IMAGE', '%s/core/images/default-logo.png'); // %s is the template dir uri
         define('HEADER_IMAGE_WIDTH', 300); // use width and height appropriate for your theme
         define('HEADER_IMAGE_HEIGHT', 100);
         define('NO_HEADER_TEXT', true);
@@ -323,10 +325,10 @@ add_filter('wp_page_menu', 'responsive_wp_page_menu');
  * @see http://codex.wordpress.org/Plugin_API/Filter_Reference/wp_title
  *
  */
-if (!function_exists('responsive_post_meta_data') && ! defined( 'AIOSEOP_VERSION' ) ) :
+if ( !function_exists('responsive_wp_title') && !defined( 'AIOSEOP_VERSION' ) ) :
 
 	function responsive_wp_title( $title, $sep ) {
-		global $paged, $page;
+		global $page, $paged;
 
 		if ( is_feed() )
 			return $title;
@@ -337,11 +339,11 @@ if (!function_exists('responsive_post_meta_data') && ! defined( 'AIOSEOP_VERSION
 		// Add the site description for the home/front page.
 		$site_description = get_bloginfo( 'description', 'display' );
 		if ( $site_description && ( is_home() || is_front_page() ) )
-			$title = "$title $sep $site_description";
+			$title .= " $sep $site_description";
 
 		// Add a page number if necessary.
 		if ( $paged >= 2 || $page >= 2 )
-			$title = "$title $sep " . sprintf( __( 'Page %s', 'responsive' ), max( $paged, $page ) );
+			$title .= " $sep " . sprintf( __( 'Page %s', 'responsive' ), max( $paged, $page ) );
 
 		return $title;
 	}
@@ -506,7 +508,7 @@ function responsive_breadcrumb_lists() {
 
 	global $post, $paged, $page;
 	$homeLink = home_url('/');
-	$linkBefore = '<span typeof="v:Breadcrumb">';
+	$linkBefore = '<span class="breadcrumb" typeof="v:Breadcrumb">';
 	$linkAfter = '</span>';
 	$linkAttr = ' rel="v:url" property="v:title"';
 	$link = $linkBefore . '<a' . $linkAttr . ' href="%1$s">%2$s</a>' . $linkAfter;
@@ -525,7 +527,7 @@ function responsive_breadcrumb_lists() {
 		} elseif ( is_category() ) {
 			$thisCat = get_category(get_query_var('cat'), false);
 			if ($thisCat->parent != 0) {
-				$cats = get_category_parents($thisCat->parent, TRUE, $delimiter);
+				$cats = get_category_parents($thisCat->parent, true, $delimiter);
 				$cats = str_replace('<a', $linkBefore . '<a' . $linkAttr, $cats);
 				$cats = str_replace('</a>', '</a>' . $linkAfter, $cats);
 				echo $cats;
@@ -555,7 +557,7 @@ function responsive_breadcrumb_lists() {
 				if ($showCurrent == 1) echo $delimiter . $before . get_the_title() . $after;
 			} else {
 				$cat = get_the_category(); $cat = $cat[0];
-				$cats = get_category_parents($cat, TRUE, $delimiter);
+				$cats = get_category_parents($cat, true, $delimiter);
 				if ($showCurrent == 0) $cats = preg_replace("#^(.+)$delimiter$#", "$1", $cats);
 				$cats = str_replace('<a', $linkBefore . '<a' . $linkAttr, $cats);
 				$cats = str_replace('</a>', '</a>' . $linkAfter, $cats);
@@ -570,7 +572,7 @@ function responsive_breadcrumb_lists() {
 		} elseif ( is_attachment() ) {
 			$parent = get_post($post->post_parent);
 			$cat = get_the_category($parent->ID); $cat = $cat[0];
-			$cats = get_category_parents($cat, TRUE, $delimiter);
+			$cats = get_category_parents($cat, true, $delimiter);
 			$cats = str_replace('<a', $linkBefore . '<a' . $linkAttr, $cats);
 			$cats = str_replace('</a>', '</a>' . $linkAfter, $cats);
 			echo $cats;
@@ -619,6 +621,21 @@ function responsive_breadcrumb_lists() {
 
 endif;
 
+	/**
+	 * A safe way of adding stylesheets to a WordPress generated page.
+	 */
+	if (!is_admin())
+		add_action('wp_enqueue_scripts', 'responsive_css');
+
+	if (!function_exists('responsive_css')) {
+
+		function responsive_css() {
+		wp_enqueue_style('responsive-style', get_stylesheet_uri(), false, '1.9.3.2');
+		wp_enqueue_style('responsive-media-queries', get_template_directory_uri() . '/core/css/style.css', false, '1.9.3.2');
+		}
+
+	}
+
     /**
      * A safe way of adding JavaScripts to a WordPress generated page.
      */
@@ -628,11 +645,12 @@ endif;
     if (!function_exists('responsive_js')) {
 
         function responsive_js() {
+			$template_directory_uri = get_template_directory_uri();
+			
 			// JS at the bottom for fast page loading. 
 			// except for Modernizr which enables HTML5 elements & feature detects.
-			wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/responsive-modernizr.js', array('jquery'), '2.6.1', false);
-      wp_enqueue_script('responsive-scripts', get_template_directory_uri() . '/js/responsive-scripts.js', array('jquery'), '1.2.3', true);
-			wp_enqueue_script('responsive-plugins', get_template_directory_uri() . '/js/responsive-plugins.js', array('jquery'), '1.2.3', true);
+			wp_enqueue_script('modernizr', $template_directory_uri . '/core/js/responsive-modernizr.js', array('jquery'), '2.6.1', false);
+            wp_enqueue_script('responsive-scripts', $template_directory_uri . '/core/js/responsive-scripts.js', array('jquery'), '1.2.4', true);
         }
 
     }
@@ -649,55 +667,73 @@ endif;
     add_action( 'wp_enqueue_scripts', 'responsive_enqueue_comment_reply' );
 
     /**
+     * Theme options upgrade bar
+     */
+    function responsive_upgrade_bar() {
+        ?>
+
+        <div class="upgrade-callout">
+            <p><img src="<?php echo get_template_directory_uri(); ?>/core/includes/images/chimp.png" alt="CyberChimps"/>
+                <?php printf( __( 'Welcome to %1$s! Upgrade to %2$s today.', 'responsive' ),
+                              'Responsive',
+                              ' <a href="http://cyberchimps.com/store/responsivepro/" target="_blank" title="Responsive Pro">Responsive Pro</a> '
+                ); ?>
+            </p>
+
+            <div class="social-container">
+                <div class="social">
+                    <a href="https://twitter.com/cyberchimps" class="twitter-follow-button" data-show-count="false" data-size="small">Follow @cyberchimps</a>
+                    <script>!function (d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0];
+                            if (!d.getElementById(id)) {
+                                js = d.createElement(s);
+                                js.id = id;
+                                js.src = "//platform.twitter.com/widgets.js";
+                                fjs.parentNode.insertBefore(js, fjs);
+                            }
+                        }(document, "script", "twitter-wjs");</script>
+                </div>
+                <div class="social">
+                    <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fcyberchimps.com%2F&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0"
+                            style="border:none; overflow:hidden; width:200px; height:21px;" allowTransparency="true"></iframe>
+                </div>
+            </div>
+        </div>
+
+    <?php
+    }
+    add_action( 'responsive_theme_options','responsive_upgrade_bar', 1 );
+
+    /**
      * Theme Options Support and Information
      */	
     function responsive_theme_support () {
     ?>
 	
-	<div class="upgrade-callout">
-		<p><img src="<?php echo get_template_directory_uri() ;?>/includes/images/chimp.png" alt="CyberChimps" />
-			<?php printf( __( 'Welcome to %1$s! Learn more about our other', 'responsive' ) . ' <a href="%2$s" target="_blank" title="%3$s">%3$s</a> ' . __( 'today.', 'responsive' ),
-			apply_filters( 'cyberchimps_current_theme_name', 'Responsive' ),
-			apply_filters( 'cyberchimps_upgrade_link', 'http://cyberchimps.com' ),
-			apply_filters( 'cyberchimps_upgrade_pro_title', 'Responsive Themes' )
-			); ?>	
-		</p>
-		<div class="social-container">
-			<div class="social">
-				<a href="https://twitter.com/cyberchimps" class="twitter-follow-button" data-show-count="false" data-size="small">Follow @cyberchimps</a>
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-			</div>
-			<div class="social">
-				<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fcyberchimps.com%2F&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:200px; height:21px;" allowTransparency="true"></iframe>
-			</div>
-		</div>
-	</div>
-	
 	<div id="info-box-wrapper" class="grid col-940">
 		<div class="info-box notice">
 
-			<a class="button" href="<?php echo esc_url(__('http://themeid.com/docs/','responsive')); ?>" title="<?php esc_attr_e('Documentation', 'responsive'); ?>" target="_blank">
-			<?php printf(__('Documentation','responsive')); ?></a>
+			<a class="button" href="<?php echo esc_url('http://themeid.com/docs/','responsive'); ?>" title="<?php esc_attr_e('Instructions', 'responsive'); ?>" target="_blank">
+			<?php _e('Instructions','responsive'); ?></a>
 
-			<a class="button button-primary" href="<?php echo esc_url(__('http://themeid.com/support/','responsive')); ?>" title="<?php esc_attr_e('Theme Support', 'responsive'); ?>" target="_blank">
-			<?php printf(__('Theme Support','responsive')); ?></a>
+			<a class="button button-primary" href="<?php echo esc_url('http://themeid.com/support/','responsive'); ?>" title="<?php esc_attr_e('Help', 'responsive'); ?>" target="_blank">
+			<?php _e('Help','responsive'); ?></a>
 
-			<a class="button" href="<?php echo esc_url(__('https://webtranslateit.com/en/projects/3598-Responsive-Theme','responsive')); ?>" title="<?php esc_attr_e('Translate', 'responsive'); ?>" target="_blank">
-			<?php printf(__('Translate','responsive')); ?></a>
+			<a class="button" href="<?php echo esc_url('https://webtranslateit.com/en/projects/3598-Responsive-Theme','responsive'); ?>" title="<?php esc_attr_e('Translate', 'responsive'); ?>" target="_blank">
+			<?php _e('Translate','responsive'); ?></a>
 
-			<a class="button" href="<?php echo esc_url(__('http://themeid.com/showcase/','responsive')); ?>" title="<?php esc_attr_e('Showcase', 'responsive'); ?>" target="_blank">
-			<?php printf(__('Showcase','responsive')); ?></a>
+			<a class="button" href="<?php echo esc_url('http://themeid.com/showcase/','responsive'); ?>" title="<?php esc_attr_e('Showcase', 'responsive'); ?>" target="_blank">
+			<?php _e('Showcase','responsive'); ?></a>
 
-			<a class="button" href="<?php echo esc_url(__('http://themeid.com/themes/','responsive')); ?>" title="<?php esc_attr_e('More Themes', 'responsive'); ?>" target="_blank">
-			<?php printf(__('More Themes','responsive')); ?></a>
+			<a class="button" href="<?php echo esc_url('http://themeid.com/themes/','responsive'); ?>" title="<?php esc_attr_e('More Themes', 'responsive'); ?>" target="_blank">
+			<?php _e('More Themes','responsive'); ?></a>
 
 		</div>
 	</div>
 
     <?php }
  
-    add_action('responsive_theme_options','responsive_theme_support');
-
+    add_action( 'responsive_theme_options','responsive_theme_support', 2 );
 	 
     /**
      * WordPress Widgets start right here.

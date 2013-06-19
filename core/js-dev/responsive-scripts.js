@@ -540,8 +540,11 @@ jQuery(document).ready(function ($) {
 /* Mobile Menu
 */
 (function($) {
-	var current = $('.main-nav li.current_page_item a').html();
-	if( typeof current == 'undefined' ) {
+	var current = $('.main-nav li.current-menu-item a').html();
+	if( $('span').hasClass('custom-mobile-menu-title') ) {
+		current = $('span.custom-mobile-menu-title').html();
+	}
+	else if( typeof current == 'undefined' || current === null ) {
 		if( $('body').hasClass('home') ) {
 			if( $('#logo span').hasClass('site-name') ) {
 				current = $('#logo .site-name a').html();
@@ -560,6 +563,12 @@ jQuery(document).ready(function ($) {
 			else if( $('body').hasClass('search-results') ) {
 				current = $('h6.title-search-results').html();
 			}
+            else if( $('body').hasClass('page-template-blog-excerpt-php') ) {
+                current = $('.current_page_item').text();
+            }
+            else if( $('body').hasClass('page-template-blog-php') ) {
+                current = $('.current_page_item').text();
+            }
 			else {
 				current = $('h1.post-title').html();
 			}
@@ -579,3 +588,18 @@ jQuery(document).ready(function ($) {
 		});
 });
 })(jQuery);
+
+// Placeholder
+jQuery(function(){
+    jQuery('input[placeholder], textarea[placeholder]').placeholder();
+});
+// FitVids
+jQuery(document).ready(function(){
+// Target your #container, #wrapper etc.
+    jQuery("#wrapper").fitVids();
+});
+
+// Have a custom video player? We now have a customSelector option where you can add your own specific video vendor selector (mileage may vary depending on vendor and fluidity of player):
+// jQuery("#thing-with-videos").fitVids({ customSelector: "iframe[src^='http://example.com'], iframe[src^='http://example.org']"});
+// Selectors are comma separated, just like CSS
+// Note: This will be the quickest way to add your own custom vendor as well as test your player's compatibility with FitVids.
