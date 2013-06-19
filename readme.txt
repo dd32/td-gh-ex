@@ -115,6 +115,11 @@ The exceptions to this license are as follows:
 
 
 #######################  Changelog ######################
+= 2.1.7 =
+* fixed : home page slider was checking a $slider_active variable not correctly defined
+* fixed : slider name for page and post was only ajax saved. Now also regular save on post update.
+
+
 = 2.1.6 =
 * improved : Menu title padding
 * fixed : front office : page and post sliders could not be disable once created

@@ -332,6 +332,7 @@ add_action( 'save_post', 'tc_post_fields_save' );
           'post_slider_check_field'   => 'post_slider_check_key',
           'slider_delay_field'        => 'slider_delay_key',
           'slider_layout_field'       => 'slider_layout_key',
+          'post_slider_field'         => 'post_slider_key',
           );
 
       //if saving in a custom table, get post_ID

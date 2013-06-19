@@ -14,11 +14,15 @@ if ( ! function_exists( 'tc_get_slider' ) ) :
 
       //get the current slider id
       $slider_name_id = $tc_theme_options['tc_current_screen_slider'];
-        if(is_front_page() && $tc_theme_options['tc_front_slider'] !=null)
+        if(is_front_page() && $tc_theme_options['tc_front_slider'] !=null) {
           $slider_name_id = $tc_theme_options['tc_front_slider'];
+        }
 
       //is the slider on?
       $slider_active = esc_attr(get_post_meta( get_the_ID(), $key = 'post_slider_check_key', $single = true ));
+        if(is_front_page() && $tc_theme_options['tc_front_slider'] !=null) {
+          $slider_active = true;
+      }
 
       //get slider options if any
       $layout_value   = esc_attr(get_post_meta( get_the_ID(), $key = 'slider_layout_key', $single = true ));
@@ -95,15 +99,17 @@ if ( ! function_exists( 'tc_get_slider' ) ) :
             *'true' value if we test it with is_home(). Even if it is not the home page of the website!
             *to solve this problem, we check with is_front_page().
             */
-            
+
             //do we have a slider?
-            if(empty($tc_theme_options['tc_sliders'][$slider_name_id]))
+            if(empty($tc_theme_options['tc_sliders'][$slider_name_id])) {
               return;
+            }
 
             //slider active?
-            if (isset($slider_active) && !$slider_active)
+            if (isset($slider_active) && !$slider_active) {
               return;
-
+            }
+            
             $slides = $tc_theme_options['tc_sliders'][$slider_name_id];
 
             //init slide index
