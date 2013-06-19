@@ -138,9 +138,8 @@ if ( ! function_exists( 'tc_post_slider_box' ) ) :
 
           ?>
          <div class="meta-box-item-title">
-              <h4><?php _e('Add to a slider', 'customizr' ); ?></h4>
+              <h4><?php _e('Add a slider to this post/page', 'customizr' ); ?></h4>
                 <label for="<?php echo $post_slider_check_id; ?>">
-              </i><?php _e('Add to a slider (create one if needed)','customizr') ?></i>
             </label>
           </div>
           <div class="meta-box-item-content">
@@ -183,7 +182,7 @@ if ( ! function_exists( 'tc_get_post_slider_infos' ) ) :
         
         //get current post slider
         $current_post_slider       = esc_attr(get_post_meta( $postid, $key = 'post_slider_key', $single = true ));
-        if(!empty($current_post_slider)) {
+        if(isset($sliders[$current_post_slider])) {
           $current_post_slides     = $sliders[$current_post_slider];
         }
 
@@ -214,6 +213,7 @@ if ( ! function_exists( 'tc_get_post_slider_infos' ) ) :
                           <option value="<?php echo esc_attr($slider_name) ?>" <?php selected( $slider_name, $current = $current_post_slider, $echo = true ) ?>><?php echo esc_attr($slider_name) ?></option>
                      <?php endforeach; ?>
                 </select>
+                 <i><?php _e('To create a new slider : open the media library, edit your images and add them to your new slider.','customizr') ?></i>
               </div>
 
               <div class="meta-box-item-title">
@@ -1071,6 +1071,8 @@ function tc_slider_ajax_save( $post_id ) {
                        //write in DB
                         add_post_meta($post_ID, $tckey, $mydata, true) or
                           update_post_meta($post_ID, $tckey , $mydata);
+                    break;
+
 
                     //inserted/updated in all cases
                     case 'post_slider_check_key':

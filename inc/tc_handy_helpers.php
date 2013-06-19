@@ -190,7 +190,7 @@ if(!function_exists('tc_post_thumbnail')) :
 
     //render the thumbnail
     if(isset($tc_thumb) && !is_single()) {
-          $html = '<div class="'.$thumb_class.'">';
+          $html = '<div class="tc-thumbnail '.$thumb_class.'">';
              $html .= '<div class="thumb-wrapper '.$no_effect_class.'">';
                 $html .=  '<a class="round-div '.$no_effect_class.'" href="'.get_permalink( get_the_ID() ).'" title="'.get_the_title( get_the_ID()).'"></a>';
                 //$html .= '<div class="round-div"></div>';

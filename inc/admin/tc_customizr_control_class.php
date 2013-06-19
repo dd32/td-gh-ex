@@ -86,13 +86,16 @@ class TC_Controls extends WP_Customize_Control
 
 	        	case 'checkbox':
 				?>
-				<label>
-					<input type="checkbox" value="<?php echo esc_attr( $this->value() ); ?>" <?php $this->link(); checked( $this->value() ); ?> />
-					<strong><?php echo esc_html( $this->label ); ?></strong>
-				</label><br />
-				<?php if(!empty($this -> notice)) : ?>
-			        	<i><?php echo esc_html( $this-> notice ) ?></i>
-			        <?php endif; ?>
+					<div class="tc-check-label">
+						<label>	
+							<strong style="line-height: 1em;"><?php echo esc_html( $this->label ); ?></strong>
+						</label>
+					</div>
+					<input type="checkbox" class="iphonecheck" value="<?php echo esc_attr( $this->value() ); ?>" <?php $this->link(); checked( $this->value() ); ?> />
+					
+					<?php if(!empty($this -> notice)) : ?>
+				       <i style="display: block;clear: both;"><?php echo esc_html( $this-> notice ) ?></i>
+				     <?php endif; ?>
 				<?php
 				break;
 

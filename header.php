@@ -22,27 +22,7 @@
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
     <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
-    <title><?php
-      /*
-       * Print the <title> tag based on what is being viewed.
-       */
-      global $page, $paged;
-
-      wp_title( '|', true, 'right' );
-
-      // Add the blog name.
-      bloginfo( 'name' );
-
-      // Add the blog description for the home/front page.
-      $site_description = get_bloginfo( 'description', 'display' );
-      if ( $site_description && ( is_home() || is_front_page() ) )
-        echo " | $site_description";
-
-      // Add a page number if necessary:
-      if ( $paged >= 2 || $page >= 2 )
-        echo ' | ' . sprintf( __( 'Page %s', 'customizr' ), max( $paged, $page ) );
-
-      ?></title>
+    <title><?php wp_title( '|', true, 'right' ); ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="profile" href="http://gmpg.org/xfn/11" />
     <?php
@@ -51,16 +31,8 @@
        */
       if ( is_singular() && get_option( 'thread_comments' ) )
         wp_enqueue_script( 'comment-reply' );
-
-      /* Always have wp_head() just before the closing </head>
-       * tag of your theme, or you will break many plugins, which
-       * generally use this hook to add elements to <head> such
-       * as styles, scripts, and meta tags.
-       */
-      wp_head();
-     global $tc_theme_options ;
-     
     ?>
+
   <!-- Favicon -->
     <?php tc_get_favicon(); ?>
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -69,19 +41,21 @@
     <!--[if lt IE 8]>
       <script src="<?php echo TC_BASE_URL ?>inc/css/fonts/lte-ie7.js"></script>
     <![endif]-->
-
-    <!-- Fav and touch icons -->
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo TC_BASE_URL ?>inc/ico/apple-touch-icon-144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo TC_BASE_URL ?>inc/ico/apple-touch-icon-114-precomposed.png">
-          <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo TC_BASE_URL ?>inc/ico/apple-touch-icon-72-precomposed.png">
-                        <link rel="apple-touch-icon-precomposed" href="<?php echo TC_BASE_URL ?>inc/ico/apple-touch-icon-57-precomposed.png">
+    <?php
+      /* Always have wp_head() just before the closing </head>
+       * tag of your theme, or you will break many plugins, which
+       * generally use this hook to add elements to <head> such
+       * as styles, scripts, and meta tags.
+       */
+      wp_head();
+    ?>
 </head>
 
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 	<header class="tc-header clearfix" role="banner">
     	<?php
-           $logo_src    = esc_url( $tc_theme_options['tc_logo_upload'] ) ;
-           $logo_resize = $tc_theme_options['tc_logo_resize']
+           $logo_src    = esc_url( tc_get_options('tc_logo_upload')) ;
+           $logo_resize = esc_attr(tc_get_options('tc_logo_resize'));
         ?>
         <div class="navbar-wrapper clearfix row-fluid">
           <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->

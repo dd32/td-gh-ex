@@ -16,7 +16,7 @@
 	global $tc_theme_options;
 	//initialize the content class
 	global $content_class;
-	$thumb_class = '';
+/*	
 
 	if ($tc_theme_options['tc_current_screen_layout']['class'] != 'span12') {
 		$content_class  = 'span12';
@@ -25,8 +25,13 @@
 	else {
 		$content_class  = (tc_post_thumbnail($thumb_class) != false && !is_single()) ? 'span8' : 'span12';
 		$thumb_class  = 'span4';
-	}
+	}*/
+	//classes for content and thumbnail
+	$thumb_class  = 'span4';
+	$content_class  = (tc_post_thumbnail($thumb_class) != false && !is_single()) ? 'span8' : 'span12';
+
 ?>
+
 <?php if(is_page()) : //pages ?>
 	
 	<article id="page-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -54,7 +59,20 @@
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class('row-fluid'); ?>>
 		<?php
-		  if ($tc_theme_options['tc_current_screen_layout']['class'] == 'span12') {
+		  if($tc_i%2 == 0) {
+		      if (tc_post_thumbnail($thumb_class)) {
+		        	echo tc_post_thumbnail($thumb_class);
+		    	}
+		      get_template_part( 'parts/content', get_post_format() );
+		    }
+		    else {
+		      get_template_part( 'parts/content', get_post_format() );
+		      if (tc_post_thumbnail($thumb_class)) {
+		        	echo tc_post_thumbnail($thumb_class);
+		    	}
+		    }
+
+		  /*if ($tc_theme_options['tc_current_screen_layout']['class'] == 'span12') {
 		    if($tc_i%2 == 0) {
 		      if (tc_post_thumbnail($thumb_class))
 		        echo tc_post_thumbnail($thumb_class);
@@ -70,7 +88,7 @@
 		      get_template_part( 'parts/content', get_post_format() );
 		      if (tc_post_thumbnail($thumb_class))
 		        echo tc_post_thumbnail($thumb_class);
-		  }
+		  }*/
 		?>
 	</article><!-- #post -->
 

@@ -17,8 +17,11 @@ if ( ! function_exists( 'tc_get_slider' ) ) :
         if(is_front_page() && $tc_theme_options['tc_front_slider'] !=null)
           $slider_name_id = $tc_theme_options['tc_front_slider'];
 
+      //is the slider on?
+      $slider_active = esc_attr(get_post_meta( get_the_ID(), $key = 'post_slider_check_key', $single = true ));
+
       //get slider options if any
-      $layout_value   = get_post_meta( get_the_ID(), $key = 'slider_layout_key', $single = true );
+      $layout_value   = esc_attr(get_post_meta( get_the_ID(), $key = 'slider_layout_key', $single = true ));
       if (is_home() || is_front_page()) {
         $layout_value = tc_get_options('tc_slider_width');
       }
@@ -94,7 +97,11 @@ if ( ! function_exists( 'tc_get_slider' ) ) :
             */
             
             //do we have a slider?
-            if(empty($slider_name_id))
+            if(empty($tc_theme_options['tc_sliders'][$slider_name_id]))
+              return;
+
+            //slider active?
+            if (isset($slider_active) && !$slider_active)
               return;
 
             $slides = $tc_theme_options['tc_sliders'][$slider_name_id];

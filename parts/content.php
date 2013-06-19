@@ -1,6 +1,6 @@
 <?php
 /**
- * The default template for displaying content. Used for both single and index/archive/search.
+ * The default template for displaying post content. Used for both single and index/archive/search.
  *
  * @package Customizr
  * @since Customizr 1.0
@@ -8,7 +8,7 @@
 ?>
 <?php global $content_class ?>
 
-<div class="<?php echo $content_class; ?>">
+<div class="tc-content <?php echo $content_class; ?>">
 	
 	<?php get_template_part( 'parts/post-header'); ?>
 	

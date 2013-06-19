@@ -9,7 +9,7 @@
 
 <?php global $content_class ?>
 
-<div class="<?php echo $content_class; ?> format-quote">
+<div class="tc-content <?php echo $content_class; ?> format-quote">
 	<div class="entry-content format-icon">
 	 	<blockquote><p><?php _e('Speaking the Truth in times of universal deceit is a revolutionary act.','customizr') ?></p>
 	 	<cite><?php _e('George Orwell','customizr') ?></cite>

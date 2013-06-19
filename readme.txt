@@ -115,6 +115,16 @@ The exceptions to this license are as follows:
 
 
 #######################  Changelog ######################
+= 2.1.6 =
+* improved : Menu title padding
+* fixed : front office : page and post sliders could not be disable once created
+* removed : some unnecessary favicon settings
+* fixed : function wp_head() moved just before the closing <head> tag
+* added : filter on wp_filter function
+* added : russion translation, thanks to Evgeny Sudakov!
+* improved : thumbnail and content layout for posts lists
+* fixed : ajax saving was not working properly for page/page slider, a switch case was not breaked.
+
 = 2.1.5 =
 * fixed 	: When deleted from a slider, the first slide was not cleared out from option array
 * added 	: Titles in customizer sections

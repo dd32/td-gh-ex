@@ -39,9 +39,18 @@ jQuery(document).ready(function($) {
       }
     }
 
-     // Bind event listener on resize
-    $(window).resize(checkWidth);
-
+     // Bind event listener after resize event
+    var rtime = new Date(1, 1, 2000, 12,00,00);
+    var timeout = false;
+    var delta = 200;
+    $(window).resize(function() {
+      rtime = new Date();
+      if (timeout === false) {
+        timeout = true;
+        setTimeout(checkWidth, delta);
+      }
+    });
+    
     // Check width on load and reorders block if necessary
     checkWidthonload();
 

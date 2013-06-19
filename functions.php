@@ -10,7 +10,7 @@
  * @link    http://themesandco.com
  */
 /* CUSTOMIZR_VER is the Version */
-if( ! defined('CUSTOMIZR_VER' ) )    {  define( 'CUSTOMIZR_VER', '2.1.5' ); }
+if( ! defined('CUSTOMIZR_VER' ) )    {  define( 'CUSTOMIZR_VER', '2.1.6' ); }
 
 
 
@@ -418,6 +418,38 @@ function tc_fancybox($content) {
     
     return $content;
 }
+endif;
+
+
+
+if(!function_exists('tc_wp_title')) :
+/**
+ * Title element formating
+ *
+ * @since Customizr 2.1.6
+ *
+ */
+add_filter( 'wp_title', 'tc_wp_title', 10, 2 );
+  function tc_wp_title( $title, $sep ) {
+    global $paged, $page;
+
+    if ( is_feed() )
+      return $title;
+
+    // Add the site name.
+    $title .= get_bloginfo( 'name' );
+
+    // Add the site description for the home/front page.
+    $site_description = get_bloginfo( 'description', 'display' );
+    if ( $site_description && ( is_home() || is_front_page() ) )
+      $title = "$title $sep $site_description";
+
+    // Add a page number if necessary.
+    if ( $paged >= 2 || $page >= 2 )
+      $title = "$title $sep " . sprintf( __( 'Page %s', 'customizr' ), max( $paged, $page ) );
+
+    return $title;
+  }
 endif;
 
 

@@ -1,6 +1,6 @@
 ![Customizr - Free Wordpress Theme](/screenshot.png)  
 
-*Design your website live from the WP customizer screen : choose your favorite color skin, upload a logo, set up your social profiles, select your front page slider and blocks, set up the layout options (you can even play with the CSS live). Done! The clean and fully responsive design can be used for any type of website: corporate, portfolio, business, blog, landing page, etc. The theme also includes a responsive slider generator (with call to action text and button) to make your pages or posts look beautiful. Customizr is built with HTML5 and CSS3 upon the Twitter Bootstrap framework.*
+*Just enjoy designing your website live from the WP customizer screen. Choose your options  : skin, logo, social profiles, slider, layout, featured blocks... you can even customize your css live. And this is it! The clean and fully responsive design can be used for any type of website: corporate, portfolio, business, blog, landing page, etc. The theme also includes a responsive slider generator (with call to action text and button) to make your pages or posts look beautiful. Customizr is built with HTML5 and CSS3 upon the Twitter Bootstrap framework.*
 
 
 # Installation
@@ -108,6 +108,18 @@ The exceptions to this license are as follows:
 
 
 # Changelog
+= 2.1.6 =
+* improved : Menu title padding
+* fixed : front office : page and post sliders could not be disable once created
+* removed : some unnecessary favicon settings
+* fixed : function wp_head() moved just before the closing <head> tag
+* added : filter on wp_filter function
+* added : russion translation, thanks to Evgeny Sudakov!
+* improved : thumbnail and content layout for posts lists
+* fixed : ajax saving was not working properly for page/page slider, a switch case was not breaked.
+
+
+
 = 2.1.5 =
 * fixed 	: When deleted from a slider, the first slide was not cleared out from option array
 * added 	: Titles in customizer sections

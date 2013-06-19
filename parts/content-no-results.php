@@ -9,7 +9,7 @@
 
 <?php global $content_class ?>
 
-<div class="<?php echo $content_class; ?> format-quote">
+<div class="tc-content <?php echo $content_class; ?> format-quote">
 	<div class="entry-content format-icon">
 	 	<blockquote><p><?php _e('Success is the ability to go from one failure to another with no loss of enthusiasm...','customizr') ?></p>
 	 	<cite><?php _e('Sir Winston Churchill','customizr') ?></cite>
