@@ -3,7 +3,7 @@
  *
  * BoldR Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
  *
- * Copyright 2013-2014 Mathieu Sarrasin - Iceable Media
+ * Copyright 2013 Mathieu Sarrasin - Iceable Media
  *
  * Template Name: Full-width Page Template, No Sidebar
  *
@@ -11,6 +11,18 @@
 ?>
 
 <?php get_header();
+
+	if ( get_custom_header()->url ) :
+		if (	( is_front_page() && boldr_get_option('home_header_image') != 'Off' ) ||
+				( !is_front_page() && boldr_get_option('pages_header_image') != 'Off' ) ):
+
+?>
+	<div id="header-image" class="container">
+		<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
+	</div>
+	
+<?php endif;
+	endif;
 
 	if(have_posts()) :
 	while(have_posts()) : the_post();
@@ -23,20 +35,8 @@
 
 		<div id="page-container" <?php post_class(); ?>>
 
-				<?php the_content();
-					$boldr_link_pages_args = array(
-						'before'           => '<br class="clear" /><div class="paged_nav">' . __('Pages:', 'boldr'),
-						'after'            => '</div>',
-						'link_before'      => '<span>',
-						'link_after'       => '</span>',
-						'next_or_number'   => 'number',
-						'nextpagelink'     => __('Next page', 'boldr'),
-						'previouspagelink' => __('Previous page', 'boldr'),
-						'pagelink'         => '%',
-						'echo'             => 1
-					);
-					wp_link_pages( $boldr_link_pages_args );
-				?><br class="clear" />
+				<?php the_content(); ?>
+				<br class="clear" />
 				<?php edit_post_link(__('Edit', 'boldr'), '<span class="editlink">', '</span><br class="clear" />'); ?>
 				<br class="clear" />
 			<?php	// Display comments section only if comments are open or if there are comments already.

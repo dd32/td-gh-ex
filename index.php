@@ -3,14 +3,27 @@
  *
  * BoldR Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
  *
- * Copyright 2013-2014 Mathieu Sarrasin - Iceable Media
+ * Copyright 2013 Mathieu Sarrasin - Iceable Media
  *
  * Main Index
  *
  */
 ?>
 
-<?php get_header(); ?>
+<?php get_header();
+
+	if ( get_custom_header()->url ) :
+		if (	( is_front_page() && boldr_get_option('home_header_image') != 'Off' ) ||
+				( !is_front_page() && boldr_get_option('blog_header_image') != 'Off' )	):
+
+?>
+	<div id="header-image" class="container">
+		<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
+	</div>
+	
+<?php endif;
+	endif;
+?>
 
 	<div id="main-content" class="container">
 
@@ -27,21 +40,10 @@
 		<?php /* CATEGORY CONDITIONAL TITLE */ ?>
 		<?php if ( is_category() ) : ?>			
 		<h1 class="page-title"><?php _e('Category: ', 'boldr'); single_cat_title(); ?></h1>
-		<?php endif; ?>
-
-		<?php /* ARCHIVES CONDITIONAL TITLE */ ?>
-		<?php if ( is_day() ) : ?>			
-		<h1 class="page-title"><?php _e('Daily archives: ', 'boldr'); echo get_the_time('F jS, Y'); ?></h1>
-		<?php endif; ?>	
-		<?php if ( is_month() ) : ?>			
-		<h1 class="page-title"><?php _e('Monthly archives: ', 'boldr'); echo get_the_time('F, Y'); ?></h1>
-		<?php endif; ?>	
-		<?php if ( is_year() ) : ?>			
-		<h1 class="page-title"><?php _e('Yearly archives: ', 'boldr'); echo get_the_time('Y'); ?></h1>
 		<?php endif; ?>	
 
 		<?php /* DEFAULT CONDITIONAL TITLE */ ?>
-		<?php if (!is_front_page() && !is_search() && !is_tag() && !is_category() && !is_year() && !is_month() && !is_day() ) { ?>
+		<?php if (!is_front_page() && !is_search() && !is_tag() && !is_category()) { ?>
 		<h1 class="page-title"><?php echo get_the_title(get_option('page_for_posts')); ?></h1>
 		<?php }	/* is_front_page endif */ ?>
 
@@ -87,9 +89,9 @@
 					<div class="post-category"><?php _e('Posted in', 'boldr'); ?> <?php the_category(', '); ?></div>
 					<?php endif; ?>
 					<div class="post-content">
-					<?php if ( get_post_format() || post_password_required() || "Full content" == boldr_get_option('blog_index_shows') ) the_content();
+					<?php if ( get_post_format() || post_password_required() ) the_content();
 						else the_excerpt();
-					if (has_tag()) { the_tags('<br class="clear" /><div class="tags"><span class="the-tags">'.__('Tags', 'boldr').':</span>', '', '</div>'); } ?>
+					if (has_tag()) { the_tags('<br class="clear" /><div class="tags"><span class="the-tags">Tags:</span>', '', '</div>'); } ?>
 
 					</div>
 				</div>
@@ -99,24 +101,13 @@
 
 			<hr />
 
-		<?php endwhile;
-			else :
+		<?php endwhile; ?>
+		<?php else : ?>
 
-				if ( is_search() ): // Empty search results
-	
-				?><h2><?php _e('Not Found', 'boldr'); ?></h2>
-				<p><?php echo sprintf( __('Your search for "%s" did not return any result.', 'boldr'), get_search_query() ); ?><br />
-				<?php _e('Would you like to try another search ?', 'boldr'); ?></p>
-				<?php get_search_form();
-	
-				else: // Empty loop (this should never happen!)
-	
-				?><h2><?php _e('Not Found', 'boldr'); ?></h2>
-				<p><?php _e('What you are looking for isn\'t here...', 'boldr'); ?></p>
-	
-			<?php endif;
-		
-		endif; ?>
+			<h2><?php _e('Not Found', 'boldr'); ?></h2>
+			<p><?php _e('What you are looking for isn\'t here...', 'boldr'); ?></p>
+
+		<?php endif; ?>
 
 			<div class="page_nav">
 				<?php if ( null != get_next_posts_link() ): ?>

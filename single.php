@@ -3,14 +3,25 @@
  *
  * BoldR Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
  *
- * Copyright 2013-2014 Mathieu Sarrasin - Iceable Media
+ * Copyright 2013 Mathieu Sarrasin - Iceable Media
  *
  * Single Post Template
  *
  */
 ?>
 
-<?php get_header(); ?>
+<?php get_header();
+
+	if ( get_custom_header()->url ) :
+		if ( boldr_get_option('single_header_image') != 'Off' ):
+
+?>
+	<div id="header-image" class="container">
+		<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
+	</div>
+	
+<?php endif;
+	endif; ?>
 
 	<div class="container" id="main-content">
 
@@ -73,7 +84,7 @@
 					);
 					wp_link_pages( $args ); ?>
 
-					<?php if (has_tag()) { the_tags('<div class="tags"><span class="the-tags">'.__('Tags', 'boldr').':</span>', '', '</div>'); } ?>
+					<?php if (has_tag()) { the_tags('<div class="tags"><span class="the-tags">Tags:</span>', '', '</div>'); } ?>
 
 
 				</div>
