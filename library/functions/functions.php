@@ -222,9 +222,8 @@ function attitude_internal_css() {
 
 add_action('wp_head', 'attitude_verification');
 /**
- * Site Verification and Header Analytic Tools
+ * Header Script Option
  *
- * If user sets the code we're going to display meta verification
  */ 
 function attitude_verification() {;    
     
@@ -234,20 +233,6 @@ function attitude_verification() {;
 		$options = $attitude_theme_options_settings;
 
 		$attitude_verification = '';
-		// google verification
-		if ( !empty( $options['google_verification'] ) ) {
-		$attitude_verification .= '<meta name="google-site-verification" content="' . $options['google_verification']. '" />' . "\n";
-		}
-
-		// bing verification
-		if ( !empty( $options['bing_verification'] ) ) {
-		$attitude_verification .= '<meta name="msvalidate.01" content="' .  $options['bing_verification']  . '" />' . "\n";
-		}
-
-		// yahoo verification
-		if ( !empty( $options['yahoo_verification'] ) ) {
-		$attitude_verification .= '<meta name="y_key" content="' .  $options['yahoo_verification'] . '" />' . "\n";
-		}
 
 		// site stats, analytics header code
 		if ( !empty( $options['analytic_header'] ) ) {

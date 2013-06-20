@@ -647,35 +647,7 @@ function attitude_theme_options_do_page() {
 				</div> <!-- #sociallinks --> 
 
 				<!-- Option for Design Settings -->
-				<div id="webmastertools">
-					<div class="option-container">
-						<h3 class="option-toggle"><a href="#"><?php _e( 'Site Verification', 'attitude' ); ?></a></h3>
-						<div class="option-content inside">
-							<table class="form-table">  
-								<tbody>    
-									<tr>
-										<th scope="row"><label><?php _e( 'Google Site Verification ID', 'attitude' ); ?></label></th>
-										<td><input type="text" size="45" name="attitude_theme_options[google_verification]" value="<?php echo esc_attr( $options[ 'google_verification' ] ); ?>" /> <?php _e('Enter your Google ID number only', 'attitude'); ?>
-										</td>
-									</tr>
-
-									<tr> 
-										<th scope="row"><label><?php _e( 'Yahoo Site Verification ID', 'attitude' ); ?></label></th>
-										<td><input type="text" size="45" name="attitude_theme_options[yahoo_verification]" value="<?php echo esc_attr( $options[ 'yahoo_verification'] ); ?>" /> <?php _e('Enter your Yahoo ID number only', 'attitude'); ?>
-										</td>
-									</tr>
-
-									<tr>
-										<th scope="row"><label><?php _e( 'Bing Site Verification ID', 'attitude' ); ?></label></th>
-										<td><input type="text" size="45" name="attitude_theme_options[bing_verification]" value="<?php echo esc_attr( $options[ 'bing_verification' ] ); ?>" /> <?php _e('Enter your Bing ID number only', 'attitude'); ?>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-							<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'attitude' ); ?>" /></p> 
-						</div><!-- .option-content -->
-					</div><!-- .option-container --> 
-        
+				<div id="webmastertools">        
 					<div class="option-container">
 						<h3 class="option-toggle"><a href="#"><?php _e( 'Analytics', 'attitude' ); ?></a></h3>
 						<div class="option-content inside">
@@ -867,17 +839,7 @@ function attitude_theme_options_validate( $options ) {
 	if ( isset( $input['custom_css'] ) ) {
 		$input_validated['custom_css'] = wp_kses_stripslashes($input['custom_css']);
 	}
-        
-	//Webmaster Tool Verification
-	if( isset( $input[ 'google_verification' ] ) ) {
-		$input_validated[ 'google_verification' ] = wp_filter_post_kses( $input[ 'google_verification' ] );
-	}
-	if( isset( $input[ 'yahoo_verification' ] ) ) {
-		$input_validated[ 'yahoo_verification' ] = wp_filter_post_kses( $input[ 'yahoo_verification' ] );
-	}
-	if( isset( $input[ 'bing_verification' ] ) ) {
-		$input_validated[ 'bing_verification' ] = wp_filter_post_kses( $input[ 'bing_verification' ] );
-	}   
+	   
 	if( isset( $input[ 'analytic_header' ] ) ) {
 		$input_validated[ 'analytic_header' ] = wp_kses_stripslashes( $input[ 'analytic_header' ] );
 	}
