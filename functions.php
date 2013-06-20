@@ -10,7 +10,7 @@
  * @link    http://themesandco.com
  */
 /* CUSTOMIZR_VER is the Version */
-if( ! defined('CUSTOMIZR_VER' ) )    {  define( 'CUSTOMIZR_VER', '2.1.7' ); }
+if( ! defined('CUSTOMIZR_VER' ) )    {  define( 'CUSTOMIZR_VER', '2.1.8' ); }
 
 
 
@@ -242,7 +242,7 @@ endif;
 if(!function_exists('tc_theme_activation_fallback')) :
 
 /**
-*  On activation, redirect on the customization page, set the frontpage option to "posts" with 10 posts per page
+*  On activation, redirect on an upgrade WordPress page if version < 3.4
 * @package Customizr
 * @since Customizr 1.1
 */

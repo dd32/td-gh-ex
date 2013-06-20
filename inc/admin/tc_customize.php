@@ -721,7 +721,7 @@ endif;
 if(!function_exists('tc_theme_activation')) :
 add_action('admin_init','tc_theme_activation');
 /**
-*  On activation, redirect on the customization page, set the frontpage option to "posts" with 10 posts per page
+*  On the first activation, redirect on the customization page, set the frontpage option to "posts" with 10 posts per page
 * @package Customizr
 * @since Customizr 1.0 
 */
@@ -731,13 +731,17 @@ add_action('admin_init','tc_theme_activation');
 		if ( is_admin() && 'themes.php' == $pagenow && isset( $_GET['activated'] ) ) 
 		{
 			#set frontpage to display_posts
-			update_option('show_on_front', 'posts');
+			//update_option('show_on_front', 'posts');
 
 			#set max number of posts to 10
-			update_option('posts_per_page', 10);
+			//update_option('posts_per_page', 10);
 
-			#redirect to options page
-			//header( 'Location: '.admin_url().'customize.php' ) ;
+			#redirect to Customizer page
+			//do we activate customizr for the first time? => tc_theme_options is not set in options table
+			$tc_theme_options = get_option('tc_theme_options');//return false if not defined
+			if (!$tc_theme_options) {
+				header( 'Location: '.admin_url().'customize.php' ) ;
+			}
 		}
 	}
 endif;

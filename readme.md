@@ -108,6 +108,11 @@ The exceptions to this license are as follows:
 
 
 # Changelog
+= 2.1.8 =
+* changed : activation options are disable for posts_per_page and show_on_front
+* changed : redirect to customizr screen on first theme activation only
+
+
 = 2.1.7 =
 * fixed : home page slider was checking a $slider_active variable not correctly defined
 * fixed : slider name for page and post was only ajax saved. Now also regular save on post update.
