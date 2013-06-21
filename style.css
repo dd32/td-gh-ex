@@ -2,7 +2,7 @@
 Theme Name: activetab
 Theme URI: http://web-profile.com.ua/wordpress/themes/activetab/
 Description: Responsive light theme. More info at http://web-profile.com.ua/wordpress/themes/activetab/
-Version: 0.3.4
+Version: 0.3.5
 Author: webvitaly
 Author URI: http://web-profile.com.ua/wordpress/
 Tags: gray, white, light, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -799,7 +799,7 @@ body.admin-bar .navbar-fixed-top { /* move menu below admin-bar */
 
 
 /* ========== site-header ========== */
-.site-header {
+.site-sidebar-header {
 	margin: 0 0 30px 0;
 }
 .site-sidebar-title-description {}

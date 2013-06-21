@@ -58,5 +58,26 @@ function optionsframework_options() {
 	);
 
 
+	$options[] = array(
+		'name' => __( 'Code', 'activetab' ),
+		'type' => 'heading'
+	);
+
+	$options[] = array(
+		'name' => __( 'CSS head code', 'activetab' ),
+		'desc' => __( 'Code will be added to head section and wrapped with [style] tags', 'activetab' ),
+		'id' => 'code_head_css',
+		'std' => '',
+		'type' => 'textarea'
+	);
+
+	$options[] = array(
+		'name' => __( 'JavaScript head code', 'activetab' ),
+		'desc' => __( 'Code will be added to head section and wrapped with [script] tags', 'activetab' ),
+		'id' => 'code_head_js',
+		'std' => '',
+		'type' => 'textarea'
+	);
+
 	return $options;
 }

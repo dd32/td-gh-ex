@@ -3,7 +3,7 @@
 					<div id="secondary" class="widget-area" role="complementary">
 
 
-						<header id="masthead" class="site-header clearfix" role="banner">
+						<header id="masthead-sidebar" class="site-sidebar-header clearfix" role="banner">
 
 							<div class="site-sidebar-title-description">
 								<?php
@@ -47,7 +47,7 @@
 								<?php echo $link_after; ?>
 							<?php endif; ?>
 
-						</header> <!-- /#masthead /.site-header -->
+						</header> <!-- /#masthead-sidebar /.site-sidebar-header -->
 
 
 						<?php if ( ! dynamic_sidebar( 'sidebar' ) ) : // sidebar widgetized area ?>
@@ -61,42 +61,50 @@
 							</aside>
 
 
+							<?php
+							$args = array( // 3 most popular posts ordered by comment count
+								'numberposts' => 3,
+								'post_status' => 'publish',
+								'post_type' => 'post',
+								'orderby' => 'comment_count',
+								'order' => 'desc'
+							);
+							$popular_posts = get_posts( $args );
+							if( ! empty( $popular_posts ) ) : // show only if we have posts
+							?>
 							<aside id="archives-popular" class="widget widget_popular_entries">
 								<h4 class="widget-title"><?php _e( 'Popular posts', 'activetab' ); ?></h4>
 								<ul>
-									<?php // 3 most popular posts ordered by comment count
-									$args = array(
-										'numberposts' => 3,
-										'post_status' => 'publish',
-										'post_type' => 'post',
-										'orderby' => 'comment_count',
-										'order' => 'desc'
-									);
-									$recent_posts = get_posts( $args );
-									foreach( $recent_posts as $recent_post ) : setup_postdata( $recent_post );
-										echo '<li><a href="' . esc_url( get_page_link( $recent_post->ID ) ) . '">' . $recent_post->post_title . '</a></li>';
+									<?php
+									foreach( $popular_posts as $popular_post ) : setup_postdata( $popular_post );
+										echo '<li><a href="' . esc_url( get_page_link( $popular_post->ID ) ) . '">' . $popular_post->post_title . '</a></li>';
 									endforeach; ?>
 								</ul>
 							</aside>
+							<?php endif; ?>
 
 
+							<?php
+							$args = array( // 3 most recent posts ordered by publish date
+								'numberposts' => 3,
+								'post_status' => 'publish',
+								'post_type' => 'post',
+								'orderby' => 'post_date',
+								'order' => 'desc'
+							);
+							$recent_posts = get_posts( $args );
+							if( ! empty( $recent_posts ) ) : // show only if we have posts
+							?>
 							<aside id="archives" class="widget widget_recent_entries">
 								<h4 class="widget-title"><?php _e( 'Recent posts', 'activetab' ); ?></h4>
 								<ul>
-									<?php // 3 most recent posts ordered by publish date
-									$args = array(
-										'numberposts' => 3,
-										'post_status' => 'publish',
-										'post_type' => 'post',
-										'orderby' => 'post_date',
-										'order' => 'desc'
-									);
-									$recent_posts = get_posts( $args );
+									<?php
 									foreach( $recent_posts as $recent_post ) : setup_postdata( $recent_post );
 										echo '<li><a href="' . esc_url( get_page_link( $recent_post->ID ) ) . '">' . $recent_post->post_title . '</a></li>';
 									endforeach; ?>
 								</ul>
 							</aside>
+							<?php endif; ?>
 
 
 							<aside id="categories" class="widget widget_categories">

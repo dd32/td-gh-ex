@@ -5,7 +5,7 @@ if ( ! isset( $content_width ) ) {
 }
 
 
-$activetab_version = '0.3.4';
+$activetab_version = '0.3.5';
 
 
 if ( ! function_exists( 'activetab_enqueue_scripts_and_styles' ) ) :
@@ -346,6 +346,29 @@ if ( ! function_exists( 'activetab_is_homepage' ) ) :
 	}
 endif; // activetab_is_homepage()
 
+
+if ( ! function_exists( 'activetab_wp_head' ) ) :
+function activetab_wp_head() { // output content to the head section
+
+	$code_head_css = of_get_option( 'code_head_css', '' );
+	if ( ! empty( $code_head_css ) ) { // output css head code
+		echo "\n".'<!-- activetab css head code -->';
+		echo "\n".'<style type="text/css">'."\n";
+		echo $code_head_css;
+		echo "\n".'</style>'."\n";
+	}
+
+	$code_head_js = of_get_option( 'code_head_js', '' );
+	if ( ! empty( $code_head_js ) ) { // output js head code
+		echo "\n".'<!-- activetab js head code -->';
+		echo "\n".'<script type="text/javascript">'."\n";
+		echo $code_head_js;
+		echo "\n".'</script>'."\n";
+	}
+
+}
+add_action( 'wp_head', 'activetab_wp_head' );
+endif; // activetab_wp_head()
 
 
 // ========== options framework ==========
