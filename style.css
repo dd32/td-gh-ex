@@ -4,7 +4,7 @@ Theme URI: http://wpattorney.org/
 Author: WPThemes NZ
 Author URI: http://wpthemes.co.nz/
 Description: Attorney is an elegant and responsive theme designed with Attorneys and law firms in mind, though anyone who wants a theme with a corporate look and feel might like it too. It comes with a couple of alternative home page templates, one for static content and one with a latest posts slider. You can also add your own logo, adjust the slider behaviour, base theme colors and control the social media links from the theme customization screen.
-Version: 1.0
+Version: 1.0.1
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-menu, sticky-post, microformats, rtl-language-support, translation-ready, full-width-template, post-formats
@@ -1065,6 +1065,14 @@ POSTS & CONTENT STYLES
 			border-bottom: 1px dotted #ccc;
 			margin: 0 10px;
 		}
+			article[id*=post-].alt_home {
+				padding: 0;
+				margin-bottom: 0;
+				border: 0;
+			}
+				article[id*=post-].alt_home .post_content {
+					margin-bottom: 0;
+				}
 		
 		/* archive title */
 		.archive_title { 
@@ -2468,8 +2476,8 @@ jQuery SLIDER STYLES
 		font-size: 20px;
 		font-weight: 900;
 		position: absolute;
-		left: 30px;
-		top: 30px;
+		right: 30px;
+		bottom: 30px;
 		text-transform: uppercase;
 		color: #d0d0d0;
 	}

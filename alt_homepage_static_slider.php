@@ -1,6 +1,6 @@
 <?php 
 /**
- * Template Name: Alt_Homepage, with Static Slider
+ * Template Name: Alt_HomePage, with Static Slider
  * Description: An alternative homepage that displays a static content on top of image slider
  */
 get_header(); ?>
