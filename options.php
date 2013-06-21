@@ -26,32 +26,32 @@ function optionsframework_options() {
 	);
 
 	$options[] = array(
-		'name' => __( 'Show site title', 'activetab' ),
-		'desc' => sprintf( __( '<a href="%s">Edit site title</a>', 'activetab' ), admin_url( 'options-general.php' ) ),
+		'name' => __( 'Show site title in the header', 'activetab' ),
+		'desc' => sprintf( __( '<a href="%s">edit site title</a>', 'activetab' ), admin_url( 'options-general.php' ) ),
 		'id' => 'show_site_title',
 		'std' => '1',
 		'type' => 'checkbox'
 	);
 
 	$options[] = array(
-		'name' => __( 'Show site description', 'activetab' ),
-		'desc' => sprintf( __( '<a href="%s">Edit site description</a>', 'activetab' ), admin_url( 'options-general.php' ) ),
+		'name' => __( 'Show site description in the header', 'activetab' ),
+		'desc' => sprintf( __( '<a href="%s">edit site description</a>', 'activetab' ), admin_url( 'options-general.php' ) ),
 		'id' => 'show_site_description',
 		'std' => '1',
 		'type' => 'checkbox'
 	);
 
 	$options[] = array(
-		'name' => __( 'Show sidebar site title', 'activetab' ),
-		//'desc' => sprintf( __( '<a href="%s">Edit site title</a>', 'activetab' ), admin_url( 'options-general.php' ) ),
+		'name' => __( 'Show site title in the sidebar', 'activetab' ),
+		//'desc' => sprintf( __( '<a href="%s">edit site title</a>', 'activetab' ), admin_url( 'options-general.php' ) ),
 		'id' => 'show_sidebar_site_title',
 		'std' => '0',
 		'type' => 'checkbox'
 	);
 
 	$options[] = array(
-		'name' => __( 'Show sidebar site description', 'activetab' ),
-		//'desc' => sprintf( __( '<a href="%s">Edit site description</a>', 'activetab' ), admin_url( 'options-general.php' ) ),
+		'name' => __( 'Show site description in the sidebar', 'activetab' ),
+		//'desc' => sprintf( __( '<a href="%s">edit site description</a>', 'activetab' ), admin_url( 'options-general.php' ) ),
 		'id' => 'show_sidebar_site_description',
 		'std' => '0',
 		'type' => 'checkbox'
@@ -64,17 +64,17 @@ function optionsframework_options() {
 	);
 
 	$options[] = array(
-		'name' => __( 'CSS head code', 'activetab' ),
-		'desc' => __( 'Code will be added to head section and wrapped with [style] tags', 'activetab' ),
-		'id' => 'code_head_css',
+		'name' => __( 'Head code', 'activetab' ),
+		'desc' => __( 'Code will be added to head section just before closing [head] tag', 'activetab' ),
+		'id' => 'code_head',
 		'std' => '',
 		'type' => 'textarea'
 	);
 
 	$options[] = array(
-		'name' => __( 'JavaScript head code', 'activetab' ),
-		'desc' => __( 'Code will be added to head section and wrapped with [script] tags', 'activetab' ),
-		'id' => 'code_head_js',
+		'name' => __( 'Footer code', 'activetab' ),
+		'desc' => __( 'Code will be added to body section just before closing [body] tag', 'activetab' ),
+		'id' => 'code_footer',
 		'std' => '',
 		'type' => 'textarea'
 	);

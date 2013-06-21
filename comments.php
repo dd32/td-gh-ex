@@ -73,7 +73,7 @@
 	<section id="respond" class="respond-form">
 
 		<div id="cancel-comment-reply">
-			<p><?php cancel_comment_reply_link( '<i class="icon-remove"></i>'.__( 'cancel reply', 'activetab' ) ); ?></p>
+			<p><?php cancel_comment_reply_link( '<span class="btn btn-small"><i class="icon-remove"></i> '.__( 'cancel reply', 'activetab' ).'</span>' ); ?></p>
 		</div>
 
 		<?php if ( get_option('comment_registration') && !is_user_logged_in() ) : ?>

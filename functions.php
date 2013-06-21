@@ -5,7 +5,7 @@ if ( ! isset( $content_width ) ) {
 }
 
 
-$activetab_version = '0.3.5';
+$activetab_version = '0.3.6';
 
 
 if ( ! function_exists( 'activetab_enqueue_scripts_and_styles' ) ) :
@@ -170,7 +170,17 @@ if ( ! function_exists( 'activetab_comments' ) ) :
 			case 'trackback' :
 				?>
 				<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-					<p><?php _e( 'Pingback:', 'activetab' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( '<i class="icon-pencil"></i>'.__( 'edit', 'activetab' ), '<span class="edit-link comment-edit-link">', '</span>' ); ?></p>
+					<p>
+						<?php
+							if( $comment->comment_type == 'pingback' ) {
+								_e( 'Pingback:', 'activetab' );
+							} else {
+								_e( 'Trackback:', 'activetab' );
+							}
+						?>
+						<?php comment_author_link(); ?>
+						<?php edit_comment_link( '<span class="btn btn-small"><i class="icon-pencil"></i> '.__( 'edit', 'activetab' ).'</span>', '<span class="edit-link '.$comment->comment_type.'-edit-link">', '</span>' ); ?>
+					</p>
 					<?php
 				break;
 			default :
@@ -205,7 +215,7 @@ if ( ! function_exists( 'activetab_comments' ) ) :
 								echo '<span class="comment-meta-item comment-meta-item-author fn"><i class="icon-user" title="'.__( 'author', 'activetab' ).'"></i> '.get_comment_author_link().$post_author_label.'</span> ';
 								echo '<span class="comment-meta-item comment-meta-item-date"><i class="icon-calendar" title="'.__( 'published', 'activetab' ).'"></i> <a href="'.esc_url( get_comment_link( $comment->comment_ID ) ).'"><time pubdate datetime="'.get_comment_time( 'c' ).'" title="'.get_comment_time().'">'.get_comment_date().'</time></a></span>';
 
-								edit_comment_link( __( 'edit', 'activetab' ), '<span class="edit-link comment-edit-link"><i class="icon-pencil"></i> ', '</span>' );
+								edit_comment_link( '<span class="btn btn-small"><i class="icon-pencil"></i> '.__( 'edit', 'activetab' ).'</span>', '<span class="edit-link comment-edit-link">', '</span>' );
 
 								echo '</div> <!-- /.comment-meta -->';
 								?>
@@ -220,7 +230,7 @@ if ( ! function_exists( 'activetab_comments' ) ) :
 						<div class="comment-content"><?php comment_text(); ?></div>
 
 						<div class="reply">
-							<?php comment_reply_link( array_merge( $args, array( 'reply_text' => '<i class="icon-comment"></i>'.__( 'reply', 'activetab' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+							<?php comment_reply_link( array_merge( $args, array( 'reply_text' => '<span class="btn btn-small"><i class="icon-comment"></i> '.__( 'reply', 'activetab' ).'</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 						</div> <!-- /.reply -->
 					</article> <!-- /#comment-<?php comment_ID(); ?> -->
 
@@ -350,20 +360,11 @@ endif; // activetab_is_homepage()
 if ( ! function_exists( 'activetab_wp_head' ) ) :
 function activetab_wp_head() { // output content to the head section
 
-	$code_head_css = of_get_option( 'code_head_css', '' );
-	if ( ! empty( $code_head_css ) ) { // output css head code
-		echo "\n".'<!-- activetab css head code -->';
-		echo "\n".'<style type="text/css">'."\n";
-		echo $code_head_css;
-		echo "\n".'</style>'."\n";
-	}
-
-	$code_head_js = of_get_option( 'code_head_js', '' );
-	if ( ! empty( $code_head_js ) ) { // output js head code
-		echo "\n".'<!-- activetab js head code -->';
-		echo "\n".'<script type="text/javascript">'."\n";
-		echo $code_head_js;
-		echo "\n".'</script>'."\n";
+	$code_head = of_get_option( 'code_head', '' );
+	if ( ! empty( $code_head ) ) { // output js head code
+		echo "\n".'<!-- activetab head code -->'."\n";
+		echo $code_head;
+		echo "\n".'<!-- /end of activetab head code -->'."\n";
 	}
 
 }
@@ -371,13 +372,26 @@ add_action( 'wp_head', 'activetab_wp_head' );
 endif; // activetab_wp_head()
 
 
+if ( ! function_exists( 'activetab_wp_footer' ) ) :
+	function activetab_wp_footer() { // output content to the footer section
+
+		$code_footer = of_get_option( 'code_footer', '' );
+		if ( ! empty( $code_footer ) ) { // output js head code
+			echo "\n".'<!-- activetab footer code -->'."\n";
+			echo $code_footer;
+			echo "\n".'<!-- /end of activetab footer code -->'."\n";
+		}
+
+	}
+	add_action( 'wp_footer', 'activetab_wp_footer' );
+endif; // activetab_wp_footer()
+
+
 // ========== options framework ==========
 
 /*
  * Loads the Options Panel
- *
- * If you're loading from a child theme use stylesheet_directory
- * instead of template_directory
+ * If you're loading from a child theme use stylesheet_directory instead of template_directory
  */
 
 if ( ! function_exists( 'optionsframework_init' ) ) {
@@ -402,4 +416,42 @@ function optionsframework_option_name() { // set theme option name to 'activetab
 	$optionsframework_settings['id'] = $themename . '_options';
 	update_option( 'optionsframework', $optionsframework_settings );
 
+}
+
+
+function activetab_optionscheck_change_santiziation() { // remove default and add custom filter for textarea in options framework
+	remove_filter( 'of_sanitize_textarea', 'of_sanitize_textarea' );
+	add_filter( 'of_sanitize_textarea', 'activetab_custom_sanitize_textarea' );
+}
+add_action( 'admin_init', 'activetab_optionscheck_change_santiziation', 100 );
+
+function activetab_custom_sanitize_textarea( $input ) { // allow script and style tags for textarea
+	global $allowedposttags;
+	$custom_allowedtags['script'] = array(
+		'type' => array(),
+		'src' => array(),
+		'title' => array(),
+		'media' => array(),
+		'rel' => array(),
+		'id' => array()
+	);
+	$custom_allowedtags['style'] = array(
+		'type' => array(),
+		'href' => array(),
+		'title' => array(),
+		'media' => array(),
+		'rel' => array(),
+		'id' => array()
+	);
+	$custom_allowedtags['link'] = array(
+		'type' => array(),
+		'href' => array(),
+		'title' => array(),
+		'media' => array(),
+		'rel' => array(),
+		'id' => array()
+	);
+	$custom_allowedtags = array_merge( $custom_allowedtags, $allowedposttags );
+	$output = wp_kses( $input, $custom_allowedtags );
+	return $output;
 }
