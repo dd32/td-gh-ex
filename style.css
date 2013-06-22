@@ -3,8 +3,8 @@ Theme Name: iFeature
 Theme URI: http://cyberchimps.com/ifeature-free/
 Author: CyberChimps
 Author URI: http://www.cyberchimps.com/
-Description: iFeature 5 is the World's first Touch Friendly Responsive Drag & Drop Wordpress Theme. It lets you create amazing responsive websites that you can control on any touch friendly device including the iPad, iPhone, and Android devices. iFeature 5 allows you to setup an entire website in minutes with touch friendly Drag and Drop Options on a per-page basis allowing you control the look and feel of every page. WARNING: iFeature 5 is a completely new code base. Please backup iFeature 4.5 before upgrading!
-Version: 5.1.2
+Description: iFeature 5 is the World's first Touch Friendly Responsive Drag & Drop Wordpress Theme developed by CyberChimps WordPress Themes. It lets you create amazing responsive websites that you can control on any touch friendly device including the iPad, iPhone, and Android devices. iFeature 5 allows you to setup an entire website in minutes with touch friendly Drag and Drop Options on a per-page basis allowing you control the look and feel of every page.
+Version: 5.1.21
 Tags: white, black, silver, light, gray, green, orange, pink, red, two-columns, right-sidebar, flexible-width, fixed-width, custom-background, custom-colors, custom-menu, featured-images, post-formats, theme-options, threaded-comments, sticky-post, full-width-template
 License: GNU General Public License
 License URI: http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
@@ -77,33 +77,31 @@ header#cc-header {
 
 /*======================================= TOP BAR =============================================*/
 
-.container-full {
-	width: 100%;
+#top_header {
 	background-image: url('images/topbarbg.jpg');
 	margin-bottom: 15px;
 }
 
-.container-full .top-head-description {
+#top_header  .top-head-description {
 	color: #bababa;
-	margin: 8px 0 6px 20px;
+	margin: 8px 0 6px 0;
 	font-size: 14px;
 }
 
-.container-full .top-head-social .icons {
+#top_header  .top-head-social .icons {
 	float: right;
 	margin-top: 5px;
-	margin-right: 20px;
 	margin-bottom: 6px;
 }
 
-.container-full .top-head-social .icons a {
+#top_header  .top-head-social .icons a {
 	float: right;
 	height: 20px;
 	width: 20px;
 	margin-left: 5px;
 }
 
-.container-full .top-head-social .icons a img {
+#top_header  .top-head-social .icons a img {
 	height: 20px;
 	width: 20px;
 }
@@ -119,7 +117,7 @@ header #social .icons a {
 
 /*======================================= DETAILS =============================================*/
 
-header#cc-header h1.site-title {
+header#cc-header h2.site-title {
 	margin-bottom: 15px;
 	font-size: 32px;
 	font-weight: 600;
@@ -315,6 +313,17 @@ header #search #searchform {
 	content: '';
 }
 @media (max-width: 979px) {
+	.main-navigation .nav > li > ul > li > ul::after, .main-navigation .nav > li > ul > li > ul::before {
+		border: none;
+	}
+	.main-navigation .nav > li > ul > li > ul {
+		display: block;
+		position: static;
+		border: none;
+	}
+	.nav-collapse .dropdown-menu li + li a {
+		margin-bottom: 0px;
+	}
 	.nav-collapse.in {
 		background-image: none;
 		background-color: #747474;
@@ -461,16 +470,17 @@ blockquote cite:before {
 
 /*==================================== TAXONOMY ========================================================*/
 
-h2.entry-title {
+.entry-title {
   font-weight: 400;
   line-height: 1.2em;
   margin-bottom: 2px;
+  font-size: 31.5px;
 }
-h2.entry-title a {
+.entry-title a {
   color: #333333;
 }
-h2.entry-title a:hover {
-  color: #0088CC;
+.entry-title a:hover {
+	color: #0088CC;
 	text-decoration: none;
 }
 article.post p, article.page p {
@@ -842,7 +852,9 @@ table#wp-calendar td {
 /******************************************** FOOTER ****************************************************************/
 /********************************************************************************************************************/
 
-#footer-widgets-wrapper {
+#footer_widgets_wrapper {
+	margin-top: 20px;
+	padding-top: 20px;
 	background-color: #303030;
 }
 #footer-widgets {
@@ -872,7 +884,7 @@ table#wp-calendar td {
 #footer-widgets .widget-container p {
 	color: #ccc;
 }
-#footer-main-wrapper {
+#after_footer {
 	background-color: #171717;
 }
 .site-footer {
@@ -1050,4 +1062,20 @@ h2.box-widget-title {
 	.container-full .top-head-social .icons {
 		margin-bottom: 10px;
 	}
+}
+
+/********************************************************************************************************************/
+/****************************************** ADD ONS *****************************************************************/
+/********************************************************************************************************************/
+
+/*==================================== The Events Calendar ====================================================*/
+.tribe-events-meta-group dt {
+  margin-left: 0;
+}
+.tribe-event-notices {
+    background: #b6b6b6;
+    border: 1px solid;
+    border-color: #888 #666 #666 #666;
+    color: #FFF;
+    text-shadow: 0 1px 0 #000;
 }

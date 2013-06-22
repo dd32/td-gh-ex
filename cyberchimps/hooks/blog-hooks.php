@@ -20,10 +20,10 @@ function cyberchimps_blog_section_order_action() {
 	
 	$defaults = array();
 	$default = apply_filters( 'cyberchimps_elements_draganddrop_defaults', array(
-																																								'slider_lite'		 => __( 'Slider Lite', 'cyberchimps' ),
-																																								'boxes_lite'				 => __( 'Boxes', 'cyberchimps' ),
-																																								'blog_post_page' => __( 'Post Page', 'cyberchimps' )
-																																							) );
+								'slider_lite'		 => __( 'Slider Lite', 'cyberchimps_core' ),
+								'boxes_lite'				 => __( 'Boxes', 'cyberchimps_core' ),
+								'blog_post_page' => __( 'Post Page', 'cyberchimps_core' )
+							) );
 	foreach( $default as $key => $val ) {
 		$defaults[] = $key;
 	}
@@ -35,10 +35,22 @@ function cyberchimps_blog_section_order_action() {
 	if ( is_array($blog_section_order) ) {
 		foreach ( $blog_section_order as $func) {
 			// checks if slider is selected at half size, if it is it removes it so we can display it above blog content
-			if( $func == 'page_slider' && cyberchimps_get_option( 'blog_slider_size' ) == 'half' ) {
+			if( $func == 'page_slider' && $slider_size == 'half' ) {
 				$func = '';
 			}
-			do_action($func);
+			else {
+			?>
+				<div class="container-full-width" id="<?php echo $func; ?>_section">
+					<div class="container">	
+						<div class="container-fluid">
+							<?php
+							do_action($func);
+							?>
+						</div> 	<!-- .container-fluid-->
+					</div> 	<!-- .container -->
+				</div> 	<!-- .container-full-width -->
+			<?php
+			}
 		}
 	}
 }

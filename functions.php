@@ -41,9 +41,9 @@ function cyberchimps_comment( $comment, $args, $depth ) {
 		default :
 	?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-		<article id="comment-<?php comment_ID(); ?>" class="comment">
+		<article id="comment-<?php comment_ID(); ?>" class="comment hreview">
 			<footer>
-				<div class="comment-author vcard">
+				<div class="comment-author reviewer vcard">
 					<?php echo get_avatar( $comment, 40 ); ?>
 					<?php printf( '%1$s <span class="says">%2$s</span>', sprintf( '<cite class="fn">%1$s</cite>',
 												get_comment_author_link() ),
@@ -55,7 +55,7 @@ function cyberchimps_comment( $comment, $args, $depth ) {
 				<?php endif; ?>
 
 				<div class="comment-meta commentmetadata">
-					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time pubdate datetime="<?php comment_time( 'c' ); ?>">
+					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>" class="dtreviewed"><time pubdate datetime="<?php comment_time( 'c' ); ?>">
 					<?php
 						/* translators: 1: date, 2: time */
 						printf( __( '%1$s at %2$s', 'cyberchimps' ), get_comment_date(), get_comment_time() ); ?>
@@ -185,6 +185,12 @@ function ifeature_default_background_color() {
 	return $color;
 }
 add_filter( 'default_background_color', 'ifeature_default_background_color' );
+
+// Default for twitter bar handle
+function cyberchimps_twitter_handle_filter() {
+	return 'WordPress';
+}
+add_filter( 'cyberchimps_twitter_handle_filter', 'cyberchimps_twitter_handle_filter' );
 
 // default header option
 function ifeature_header_drag_and_drop_default() {
@@ -326,3 +332,17 @@ function ifeature_add_home_menu( $menu, $args ) {
 	return $menu;
 }
 add_filter( 'wp_nav_menu_items', 'ifeature_add_home_menu', 10, 2 );
+
+/* fix full width container that disappears on horizontal scroll */
+function cyberchimps_full_width_fix() {
+	$responsive_design = cyberchimps_get_option( 'responsive_design' );
+	$min_width = cyberchimps_get_option( 'max_width' );
+	if( ! $responsive_design ) {
+		$style = '<style rel="stylesheet" type="text/css" media="all">';
+		$style .= '.container-full, #footer-widgets-wrapper, #footer-main-wrapper { min-width: '. $min_width . 'px;}';
+		$style .= '</style>';
+		
+		echo $style;
+	}
+}
+add_action( 'wp_head', 'cyberchimps_full_width_fix' );

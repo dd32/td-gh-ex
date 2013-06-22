@@ -52,14 +52,14 @@ if ( !class_exists( 'CyberChimpsTwitterBar' ) ) {
 	
 			if( is_page() ) {
 				$user_details = array();
-				$user_details['screen_name'] = (get_post_meta($post->ID, 'cyberchimps_twitter_handle', true)) ? get_post_meta($post->ID, 'cyberchimps_twitter_handle', true) : 'CyberChimps';
+				$user_details['screen_name'] = (get_post_meta($post->ID, 'cyberchimps_twitter_handle', true)) ? get_post_meta($post->ID, 'cyberchimps_twitter_handle', true) : apply_filters( 'cyberchimps_twitter_handle_filter', 'cyberchimps_elements' );
 				$user_details['count'] = '1';
 				$user_details['published_when'] = '1';
 				$user_details['exclude_replies'] =  '1';
 			}
 			else {
 				$user_details = array();
-				$user_details['screen_name'] = ( $this->options['twitter_handle'] != '' ) ? $this->options['twitter_handle'] : 'CyberChimps';
+				$user_details['screen_name'] = ( $this->options['twitter_handle'] != '' ) ? $this->options['twitter_handle'] : apply_filters( 'cyberchimps_twitter_handle_filter', 'cyberchimps_elements' );
 				$user_details['count'] = '1';
 				$user_details['published_when'] = '1';
 				$user_details['exclude_replies'] = '1';				
@@ -87,7 +87,7 @@ if ( !class_exists( 'CyberChimpsTwitterBar' ) ) {
               echo esc_html( $screen_name ) .'</a> - '.wp_kses( $tweet_text, array( 'a' => array( 'href' => array() ) ) ).' <small><a href="'.esc_url( $tweet_permalink ).'">' .human_time_diff(strtotime( esc_html( $latest_tweet[0]->created_at ) ), current_time( 'timestamp' ) ).' ago</a></small></p>';
             } else {
               echo '<img src="' . $directory_uri . '/elements/lib/images/twitter/twitterbird.png" /> ';
-              echo wp_kses( apply_filters( 'cyberchimps_tweets_empty_message', '<p>'.__('No tweets to display', 'cyberchimps' ).'</p>' ), array( 'p' => array() ) );
+              echo wp_kses( apply_filters( 'cyberchimps_tweets_empty_message', '<p>'.__('No tweets to display', 'cyberchimps_elements' ).'</p>' ), array( 'p' => array() ) );
             }
             ?>
 					</div><!-- #twitter-text .span12 -->
@@ -164,7 +164,7 @@ if ( !class_exists( 'CyberChimpsTwitterBar' ) ) {
 					return new WP_Error($code, $response->error);
 		
 				default:
-					return new WP_Error($code, __('Invalid Response','cyberchimps') );
+					return new WP_Error($code, __('Invalid Response', 'cyberchimps_elements' ) );
 			endswitch;
 		}
 		
