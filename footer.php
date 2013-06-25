@@ -33,14 +33,14 @@
 
 				<?php if ( is_home() || is_front_page() ) : // show credit links only on homepage
 					// it is completely optional, but if you like the theme I would appreciate it if you keep the credit link at the bottom ?>
-					<?php _e( 'powered by', 'activetab' ); ?>
-					<a href="http://wordpress.org/" title="WordPress CMS" rel="generator"><?php _e( 'WordPress', 'activetab' ); ?></a>,
-					<a href="http://web-profile.com.ua/wordpress/themes/activetab/" title="activetab theme" rel="designer"><?php _e( 'activetab', 'activetab' ); ?></a>
+					<?php _e( 'Powered by', 'activetab' ); ?>
+					<a href="http://wordpress.org/" title="<?php _e( 'WordPress CMS', 'activetab' ); ?>" rel="generator"><?php _e( 'WordPress', 'activetab' ); ?></a><?php _e( ', ', 'activetab' ); ?>
+					<a href="http://web-profile.com.ua/wordpress/themes/activetab/" title="<?php _e( 'activetab theme', 'activetab' ); ?>" rel="designer"><?php _e( 'activetab', 'activetab' ); ?></a>
 				<?php endif; ?>
 
 				<?php if ( ! is_home() && ! is_front_page() ) : // show rss links everywhere except homepage ?>
-					<a href="<?php echo esc_url( get_bloginfo( 'rss2_url' ) ); ?>" class="rss-feed-link rss-feed-link-posts" title="<?php esc_attr_e( 'posts rss feed', 'activetab' ); ?>"></a>
-					<a href="<?php echo esc_url( get_bloginfo( 'comments_rss2_url' ) ); ?>" class="rss-feed-link rss-feed-link-comments" title="<?php esc_attr_e( 'comments rss feed', 'activetab' ); ?>"></a>
+					<a href="<?php echo esc_url( get_bloginfo( 'rss2_url' ) ); ?>" class="rss-feed-link rss-feed-link-posts" title="<?php echo esc_attr( __( 'Posts RSS feed', 'activetab' ) ); ?>"></a>
+					<a href="<?php echo esc_url( get_bloginfo( 'comments_rss2_url' ) ); ?>" class="rss-feed-link rss-feed-link-comments" title="<?php echo esc_attr( __( 'Comments RSS feed', 'activetab' ) ); ?>"></a>
 				<?php endif; ?>
 
 			</div> <!-- /.site-footer-right -->

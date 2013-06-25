@@ -3,7 +3,7 @@
 	<header class="entry-header page-header">
 		<?php
 		if( is_sticky() ){ // add 'sticky' label to sticky post
-			$sticky = ' <span class="label label-info">'.__( 'sticky', 'activetab' ).'</span>';
+			$sticky = ' <span class="label label-info">'.__( 'Sticky', 'activetab' ).'</span>';
 		}else{
 			$sticky = '';
 		}

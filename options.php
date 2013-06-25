@@ -27,7 +27,7 @@ function optionsframework_options() {
 
 	$options[] = array(
 		'name' => __( 'Show site title in the header', 'activetab' ),
-		'desc' => sprintf( __( '<a href="%s">edit site title</a>', 'activetab' ), admin_url( 'options-general.php' ) ),
+		'desc' => sprintf( __( '<a href="%s">Edit site title</a>', 'activetab' ), admin_url( 'options-general.php' ) ),
 		'id' => 'show_site_title',
 		'std' => '1',
 		'type' => 'checkbox'
@@ -35,7 +35,7 @@ function optionsframework_options() {
 
 	$options[] = array(
 		'name' => __( 'Show site description in the header', 'activetab' ),
-		'desc' => sprintf( __( '<a href="%s">edit site description</a>', 'activetab' ), admin_url( 'options-general.php' ) ),
+		'desc' => sprintf( __( '<a href="%s">Edit site description</a>', 'activetab' ), admin_url( 'options-general.php' ) ),
 		'id' => 'show_site_description',
 		'std' => '1',
 		'type' => 'checkbox'
