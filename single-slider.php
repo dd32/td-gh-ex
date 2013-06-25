@@ -1,7 +1,10 @@
 <?php get_header(); ?>
 		<div id="container">
 			<div id="content" role="main">
-			<?php if ( have_posts() ) : the_post();
+			<?php //if ( have_posts() ) : the_post();
+			
+			if ( have_posts() ) while ( have_posts() ) : the_post();
+			
 					$query = query_posts("$query_string . '&posts_per_page=-1&post_type=slider'");
 			?>
 					<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -87,7 +90,7 @@
 					?>
 				</div><!-- #post-## -->
 				<?php comments_template( '', true ); ?>
-<?php endif; // end of the loop. ?>
+<?php endwhile; // end of the loop. ?>
 			</div><!-- #content -->
 			<?php get_sidebar(); ?>
 		</div><!-- #container -->

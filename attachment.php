@@ -61,7 +61,7 @@
 							<div class="nav-next"><?php next_image_link( false ); ?></div>
 						</div><!-- #nav -->
 <?php else : ?>
-						<a href="<?php echo wp_get_attachment_url(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="attachment"><?php echo basename( get_permalink() ); ?></a>
+			<a href="<?php echo wp_get_attachment_url(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="attachment"><?php echo basename( get_permalink() ); ?></a>
 <?php endif; ?>
 				<div class="entry-caption"><?php if ( !empty( $post->post_excerpt ) ) the_excerpt(); ?></div>
 					<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'star' ) ); ?>

@@ -1,32 +1,45 @@
 <?php
-/*switch on jquery to make the slider work          starta jquery till slidern...*/
-wp_enqueue_script('jquery');
-
-/* add slider javascript              ladda javascripten till slidern*/
-if ( !is_admin() ){
-	wp_register_script('custom_script', get_template_directory_uri() . '/scripts/jquery.cycle.all.js');
-	wp_enqueue_script('custom_script');
-}
-
 add_action( 'after_setup_theme', 'star_setup' );
 function star_setup() {
 	/* width     bredd */
 	if ( ! isset( $content_width ) ) $content_width = 400;
-	add_custom_background();
+
+	$star_ch = array( //custom header settings
+	'default-image'          => get_template_directory_uri() . '/images/star-header.png',
+	'random-default'         => false,
+	'width'                  => 1600,
+	'height'                 => 380,
+	'flex-height'            => false,
+	'flex-width'             => false,
+	'uploads'                => true,
+	'header-text'            => false
+	);
+	add_theme_support( 'custom-header', $star_ch );
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'automatic-feed-links' );
+	
 	/* translate */
-	load_theme_textdomain( 'star', TEMPLATEPATH . '/languages' );
-	$locale = get_locale();
-	$locale_file = TEMPLATEPATH . "/languages/$locale.php";
-	if ( is_readable( $locale_file ) )
-		require_once( $locale_file );
-	/* add menu */
+	load_theme_textdomain( 'star', get_template_directory() . '/languages' );
+	
 	register_nav_menus( array(
 		'primary' => __( 'Primary Navigation', 'star' ),
 		'footer' => __( 'Footer Navigation', 'star' ),
 	) );
 }
+
+/*switch on jquery to make the slider work          starta jquery till slidern...*/
+/* add slider javascript              ladda javascripten till slidern*/
+
+function star_enqueue_scripts() {
+    wp_enqueue_script('jquery');
+	if ( !is_admin() ){
+		wp_register_script('custom_script', get_template_directory_uri() . '/scripts/jquery.cycle.all.js');
+		wp_enqueue_script('custom_script');
+	}
+}
+add_action('wp_enqueue_scripts', 'star_enqueue_scripts');
+
+
 
 /* add 'home' button to menu            'hem' knapp i menyn*/
 function star_page_menu_args( $args ) {
@@ -34,33 +47,17 @@ function star_page_menu_args( $args ) {
 		return $args;
 	}
 add_filter( 'wp_page_menu_args', 'star_page_menu_args' );
-	
+
+ function star_fonts() {
+	if ( !is_admin() ) {
+            wp_register_style('star_Font','http://fonts.googleapis.com/css?family=Arvo');
+			wp_enqueue_style('star_Font2');
+	}
+}
+ add_action('wp_print_styles', 'star_fonts');	
 
 /*Headers    Sidhuvud*/
-if ( ! defined( 'HEADER_TEXTCOLOR' ) )
-	define( 'HEADER_TEXTCOLOR', '' );
-		
-if ( ! defined( 'HEADER_IMAGE' ) )
-	define( 'HEADER_IMAGE', '%s/images/star-header.png' );
 
-// The height and width of your custom header.
-define( 'HEADER_IMAGE_WIDTH', apply_filters( 'star_header_image_width', 1600 ) );
-define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'star_header_image_height', 380 ) );
-
-// We'll be using post thumbnails for custom header images on posts and pages.
-// We want them to be 1600 pixels wide by 380 pixels tall.
-// Larger images will be auto-cropped to fit, smaller ones will be ignored. See header.php.
-set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );
-	
-// Don't support text inside the header image.
-//if ( ! defined( 'NO_HEADER_TEXT' ) )
-//define( 'NO_HEADER_TEXT', true );
-
-// Add a way for the custom header to be styled in the admin panel that controls
-// custom headers. See twentyten_admin_header_style(), below.
-add_custom_image_header( '', 'star_admin_header_style' );
-	
-// Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI.
 register_default_headers( array(
 	'light-blue' => array(
 		'url' => '%s/images/star-header-light-blue.png',
@@ -79,34 +76,14 @@ register_default_headers( array(
 		'thumbnail_url' => '%s/images/star-header-black-thumb.png',
 		/* translators: header image description */
 		'description' => __( 'Black', 'star' )
+	),
+	'blue' => array(
+		'url' => '%s/images/star-header.png',
+		'thumbnail_url' => '%s/images/star-header-thumb.png',
+		/* translators: header image description */
+		'description' => __( 'Blue', 'star' )
 	)
 ) );
-	
-if ( ! function_exists( 'star_admin_header_style' ) ) :
-function star_admin_header_style() {
-?>
-<style type="text/css">
-#headimg #name {
-	padding-top:40px;
-	padding-left:30px; 
-	padding-right:30px; 
-	float:left; 
-	font-size:30px; 
-}
-#headimg #desc {
-	margin-top:-27px;
-	padding-left:30px; 
-	padding-right:30px; 
-	float:right; 
-	font-size:16px; 
-	font-style:italic;
-}
-</style>
-<?php
-}
-endif;
-
-	
 	
 /* Post excerpt        utdrag*/
 function star_excerpt_length( $length ) {
@@ -183,6 +160,8 @@ if ( ! function_exists( 'star_comment' ) ) :
 }
 endif;
 
+
+
 /* Register widget areas (Sidebars)        Skapa sidebars*/
 register_sidebar(array('name'=>'Right_Widgetarea'));
 
@@ -190,7 +169,7 @@ register_sidebar(array('name'=>'Right_Widgetarea'));
 /* Create a new post type for the frontpage slider         Nytt postformat till slidern*/
 function star_post_type_slider() {
     register_post_type( 'slider',
-	array( 'label' => __('Slider'),
+	array( 'label' => __('Slider','star'),
 	'public' => true, 
 	'show_ui' => true, 
     'menu_position' => 5,
@@ -261,14 +240,4 @@ add_action('widgets_init', 'star_remove_widget');
 function star_remove_widget(){
 	unregister_widget('WP_Widget_Recent_Posts' ); /*remove the standard widget           tabort den gamla widgeten*/
 	}
-
-
-/* Remove the default gallery style as it does not validate.       tabort default galleri style*/
-/* Style is added to style.css instead.                            finns nu i style.css*/
-add_filter('gallery_style',
-	create_function(
-		'$css',
-		'return preg_replace("#<style type=\'text/css\'>(.*?)</style>#s", "", $css);'
-		)
-	);
 ?>

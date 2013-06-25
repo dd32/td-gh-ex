@@ -2,11 +2,11 @@
 Theme Name: Star
 Description: A two column theme with a custom post type that lets you add posts to a slideshow. Comes with 4 diffrent headers, psd files and Swedish translation.
 Author: Poena
-Author URI: http://layout.nu
-Theme URI: http://star.layout.nu
-Version: 1.2
-Tags: black, blue, white, threaded-comments, sticky-post, translation-ready, one-column, custom-menu, custom-header
-Updated: 2011-05-12.
+Author URI: http://layout.nu/about/
+Theme URI: http://wordpress.org/themes/star
+Version: 1.3
+Tags: black, blue, white, threaded-comments, sticky-post, translation-ready, two-columns, custom-menu, custom-header
+Updated: 2013-06-25.
  * License: GNU General Public License (GPL), v3 (or newer)
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  (License is also included)
@@ -401,6 +401,7 @@ a:link, a:visited, a:active, a:hover{color:#032936;}
 
 .post, .slider{
 width:97%;
+	margin-top:20px; 
 margin-left:3%;
 min-height:210px;
 padding-bottom:3%;
@@ -410,7 +411,7 @@ padding-bottom:3%;
 
 /*sticky post*/
 .sticky{
-	margin-top:0px; 
+	margin-top:20px; 
 	margin-left:130px;
 	margin-bottom:15px;
 	padding:0;
@@ -438,6 +439,7 @@ padding-bottom:3%;
 	position:relative;
 	top:0px;
 	left:0px;
+	padding-top:24px;
 	padding-left:0px;
 	color:#032936;
 	font-weight:bold;
@@ -476,7 +478,7 @@ padding-bottom:3%;
 	width:82%;
 	margin-left:130px;
 	margin-bottom:24px;
-	font-size:14px;
+	font-size:16px;
 	overflow:hidden;
 }
 
@@ -600,7 +602,7 @@ width:142px;
 
 .type-attachment{margin-top:220px;}
 .attachment .entry-content .entry-caption {
-	font-size: 140%;
+	font-size: 16px;
 	margin-top: 24px;
 }
 .attachment .entry-content .nav-previous a:before {
