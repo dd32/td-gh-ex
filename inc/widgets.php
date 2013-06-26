@@ -69,7 +69,7 @@ class advantage_Recent_Post extends WP_Widget {
 				echo $after_title;			
 				if ( ! empty( $category_link ) && $category ) {
 			
-					printf( '<a href="%1$s" title="%2$s" class="advantage_recent_post_link btn btn-small btn-transparent">%3$s</a>',
+					printf( '<a href="%1$s" title="%2$s" class="recent_post_link btn btn-small btn-transparent">%3$s</a>',
 						get_category_link( $category ) ,
 						get_the_category_by_ID( $category ),
 						$category_link );					
@@ -84,21 +84,21 @@ class advantage_Recent_Post extends WP_Widget {
 				$recent_posts->the_post();
 				$div_class = '';
 				if ( $column > 1 && $col == 0 )
-					echo '<div class="row">';
+					echo '<div class="row-fluid">';
 				if ($column == 2) {
-					$div_class = "large-6 columns";
+					$div_class = "span6";
 					$col = $col + 1;
 					if ($col == 2)
 						$col = 0;
 				}
 				elseif ($column == 3) {
-					$div_class = "large-4 columns";
+					$div_class = "span4";
 					$col = $col + 1;
 					if ($col == 3)
 						$col = 0;
 				}
 				elseif ($column == 4) {
-					$div_class = "large-3 columns";
+					$div_class = "span3";
 					$col = $col + 1;
 					if ($col == 4)
 						$col = 0;
@@ -206,9 +206,9 @@ class advantage_Navigation extends WP_Widget {
 	function __construct() {
 		WP_Widget::__construct(
 			'widget_advantage_navigation',
-			__( '(advantage) Navigation Tabs', 'advantage' ),
+			__( '(Advantage) Navigation Tabs', 'advantage' ),
 			array(
-				'classname'   => 'advantage_navigation',
+				'classname'   => 'tab_navigation',
 				'description' => __( 'Tabbed navigation.', 'advantage' ),
 			)
 		);
@@ -256,34 +256,52 @@ class advantage_Navigation extends WP_Widget {
 			echo $after_title;
 		}
 
-		echo '<div class="section-container tabs" data-section="tabs">';
+        echo '<ul id="vntTab" class="nav nav-tabs">';
+		$active = ' class="active"';
+		foreach ($tabs as $tab) {
+			if ($tab['order'] > 0) {
+				echo '<li' . $active . '><a href="#';
+				echo $tab['type'] . $id .'" data-toggle="tab">';
+				echo $tab['name'] . '</a></li>';
+				$active = '';
+			}
+		}	
+		echo '</ul>';
+		echo '<div id="vntTabContent" class="tab-content">';
+		$active = " in active";
 		foreach ($tabs as $tab) {
 		  if ($tab['order'] > 0) {
-		  	echo '<section>';
-			echo '<p class="title" data-section-title><a href="#">' . $tab['name'] .'</a></p>';
-    
 			switch ($tab['type']) {
 			  case 'category':
-				echo '<div class="content widget_categories" data-section-content><ul>';				
+				echo '<div class="widget_categories tab-pane fade' . $active;
+				echo '" id="' . $tab['type'] . $id . '">';
+				echo '<ul>';
+				
 				$cat_args = array();
 				$cat_args['show_count'] = $showcount;
 				$cat_args['title_li'] = '';
 				$cat_args['exclude'] = 1;
-				wp_list_categories( $cat_args );		
+				wp_list_categories( $cat_args );	
+							
 				echo '</ul></div>';		
 				break;
 			  case 'archive':
-				echo '<div class="content widget_archive" data-section-content><ul>';
+				echo '<div class="widget_archive tab-pane fade' . $active;
+				echo '" id="' . $tab['type'] . $id . '">';
+				echo '<ul>';
+				
 				$arc_args = array();
 				$arc_args['type'] = 'monthly';
 				$arc_args['show_post_count'] = $showcount;	
 				$arc_args['limit'] = $limits;
 				wp_get_archives( $arc_args ); 	
 							
-				echo '</ul></div>';
+				echo '</ul></div>';		
 				break;
 			  case 'recent':
-				echo '<div class="content widget_recent_entries" data-section-content><ul>';
+				echo '<div class="widget_recent_entries tab-pane fade' . $active;
+				echo '" id="' . $tab['type'] . $id . '">';
+				echo '<ul>';
 				
 				$rec_args = array();
 				$rec_args['numberposts'] = $limits;
@@ -292,29 +310,34 @@ class advantage_Navigation extends WP_Widget {
 				foreach( $recent_posts as $recent_post ){
 					echo '<li><a href="' . get_permalink($recent_post["ID"]) . '" title="Look '.esc_attr($recent_post["post_title"]).'" >' . $recent_post["post_title"].'</a> </li> ';
 				}			
-				echo '</ul></div>';
+				echo '</ul></div>';		
 				break;
 			  case 'tag':
-				echo '<div class="content widget_tag_cloud" data-section-content><ul>';
+				echo '<div class="widget_tag_cloud tab-pane fade' . $active;
+				echo '" id="' . $tab['type'] . $id . '">';
+				echo '<ul>';
 				
 				$tag_args = array();
 				wp_tag_cloud( $tag_args ); 			
-				echo '</ul></div>';
+				echo '</ul></div>';		
 				break;
 			  case 'menu':
-				echo '<div class="content widget_nav_menu" data-section-content>';				
+				echo '<div class="widget_nav_menu tab-pane fade' . $active;
+				echo '" id="' . $tab['type'] . $id . '">';
+				
 				$menu_args = array();
 				$menu_args['menu'] = $menu_id;
 				wp_nav_menu( $menu_args);		
-				echo '</div>';	
+				echo '</div>';		
 				break;
 			  case 'text':
-				echo '<div class="content widget_text" data-section-content>';
+				echo '<div class="widget_nav_text tab-pane fade' . $active;
+				echo '" id="' . $tab['type'] . $id . '">';
 				echo do_shortcode( $textcontent );	
 				echo '</div>';		
 				break;
 			}
-		  	echo '</section>';
+			$active = '';
 		  }
 		}		
         echo '</div>';
@@ -503,102 +526,6 @@ class advantage_Navigation extends WP_Widget {
 	}
 }
 
-class advantage_Social extends WP_Widget {
-	function __construct() {
-		WP_Widget::__construct(
-			'widget_advantage_social',
-			__( '(advantage) Social', 'advantage' ),
-			array(
-				'classname'   => 'advantage_social',
-				'description' => __( 'Display social links as widget', 'advantage' ),
-			)
-		);
-	}
-	// Widget outputs
-	function widget( $args, $instance ) {
-		global $advantage_options;
-		extract( $args, EXTR_SKIP );
-		$instance = wp_parse_args($instance, $this->widget_defaults());
-		extract( $instance, EXTR_SKIP );
-		$title = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base);		
-		echo $before_widget; 
-		if ( ! empty( $title ) ) {
-			echo $before_title;
-			echo $title;
-			echo $after_title;
-		} 		
-				
-		$socials = advantage_social_links();
-		$items = array();
-		parse_str($instance['data'], $items);
-		if ( ! empty( $items['url'] ) ) {
-			echo '<div class="social-links large-icon"><ul>';
-			foreach ( $items['url'] as $item ) {
-				echo '<li><a class="' . $socials[ $item ]['name'];
-				echo '" href="' . esc_url( $advantage_options[ $socials[ $item ]['name'] ] );
-				echo '" title="' . esc_attr(  $socials[ $item ]['label'] );
-				echo '" target="_blank">' . esc_attr( $socials[ $item ]['label'] ) . '</a></li>';
-			}
-			echo '</ul></div>';
-		}		
-		echo $after_widget;
-//		wp_reset_postdata();
-	}
-
-	// Update options
-	function update( $new, $old ) {
-		$instance = $old;
-		$instance['title'] = strip_tags( $new['title'] );
-		$instance['data'] = wp_kses_stripslashes( $new['data'] );
-
-//		$instance['category_label'] =  wp_kses_stripslashes($new['category_label']);
-		return $instance;
-	}
-
-	function widget_defaults() {
-		return array(
-			'title' => '',
-			'data' => '',
-		);
-	}
-
-	// Display options
-	function form( $instance ) {
-		$instance = wp_parse_args( $instance, $this->widget_defaults() );
-		
-		advantage_widget_field( $this, array ( 'field' => 'title', 'label' => __( 'Title:', 'advantage' ) ), $instance['title'] );
-		echo '<p>' . __( 'Drag available Socials to the right', 'advantage' ) . '</p>';
-		?>
-		<ul id="sl-available" class="widget-sortable connected">
-<?php 	
-		global $advantage_options;
-		$socials = advantage_social_links();
-		$items = array();
-		parse_str( $instance['data'], $items );
-		
-		foreach ( $socials as $social ) {	
-			if ( ! empty( $advantage_options[ $social['name'] ] ) ) {
-				$item = substr( $social['name'], 4 );
-				if ( empty( $items ) || ! in_array( $item,  $items['url']) )
-					echo '<li id="' . $social['name'] . '" class="' . $social['name'] . '">' . $social['label'] . '</li>';				
-			}
-		}
-?>
-		</ul>
-		<ul id="sl-active" class="widget-sortable connected">
-<?php 	
-		if ( ! empty( $items ) )
-			foreach ( $items['url'] as $item ) {
-				echo '<li id="' . $socials[$item]['name'] . '" class="' . $socials[$item]['name'] . '">' . $socials[$item]['label'] . '</li>';
-			}
-?>		
-		</ul>
-		<div class="clear"></div>
-<?php
-		advantage_widget_field( $this, array ( 'field' => 'data', 'type' => 'hidden', 'class' => 'widefat advantagedata', 'ptag' => false ), $instance['data'] );
-	}
-}
-
 function advantage_widget_field( $widget, $args = array(), $value ) {
 	$args = wp_parse_args($args, array ( 
 		'field' => 'title',
@@ -622,11 +549,25 @@ function advantage_widget_field( $widget, $args = array(), $value ) {
 		echo $label . '</label>';
 	}
 	switch ( $type ) {
+		case 'media':
+			echo '<input class="media-upload-url" id="' . $field_id;
+			echo '" name="' . $field_name . '" type="hidden" value="';
+			echo esc_attr( $value ) . '" />';
+			echo '<input class="media-upload-btn" id="' . $field_id;
+			echo '_btn" name="' . $field_name . '_btn" type="button" value="'. __( 'Choose', 'advantage' ) . '">';
+			echo '<input class="media-upload-del" id="' . $field_id;
+			echo '_del" name="' . $field_name . '_del" type="button" value="'. __( 'Remove', 'advantage' ) . '">';
+			break;
 		case 'text':
 		case 'hidden':
 			echo '<input class="' . $class . '" id="' . $field_id;
 			echo '" name="' . $field_name . '" type="' . $type .'" value="';
 			echo esc_attr( $value ) . '" />';
+			break;
+		case 'url':
+			echo '<input class="' . $class . '" id="' . $field_id;
+			echo '" name="' . $field_name . '" type="' . $type .'" value="';
+			echo esc_url( $value ) . '" />';
 			break;
 		case 'textarea':
 			echo '<textarea class="' . $class . '" id="' . $field_id;
@@ -647,11 +588,19 @@ function advantage_widget_field( $widget, $args = array(), $value ) {
 		case 'category':
 			echo '<select id="' . $field_id . '" name="' . $field_name . '">';
 			if ( ! empty( $label_all ) ) {
-			 	echo '<option value="0" ' . selected( $value, '0', false );
+				if ( 0 == $value )
+					$selected = 'selected="selected"';				
+			 	else
+				 	$selected = '';
+			 	echo '<option value="0" ' . $selected;
 			 	echo '>' . $label_all . '</option>';				
 			}
 			foreach ( $options as $option ) {
-				echo '<option value="' . $option->term_id . '" ' . selected( $value, $option->term_id, false );
+				if ( $option->term_id == $value )
+					$selected = 'selected="selected"';
+				else
+					$selected = '';	
+				echo '<option value="' . $option->term_id . '" ' . $selected;
 				echo '>' . $option->name . '</option>';
 			}
 			echo '</select>';
@@ -659,7 +608,11 @@ function advantage_widget_field( $widget, $args = array(), $value ) {
 		case 'select':
 			echo '<select id="' . $field_id . '" name="' . $field_name . '">';
 			foreach ( $options as $option ) {
-				echo '<option value="' . $option['key'] . '" ' . selected( $option['key'], $value, false );
+				if ( $option['key'] == $value )
+					$selected = 'selected="selected"';
+				else
+					$selected = '';	
+				echo '<option value="' . $option['key'] . '" ' . $selected;
 				echo '>' . $option['name'] . '</option>';
 			}
 			echo '</select>';
@@ -667,4 +620,112 @@ function advantage_widget_field( $widget, $args = array(), $value ) {
 	}
 	if ( $ptag )
 		echo '</p>';
+}
+
+class advantage_Marketing extends WP_Widget {
+	function __construct() {
+		WP_Widget::__construct(
+			'widget_advantage_marketing',
+			__( '(advantage) Marketing', 'advantage' ),
+			array(
+				'classname'   => 'marketing',
+				'description' => __( 'Display image, headline and action button', 'advantage' ),
+			)
+		);
+	}
+	// Widget outputs
+	function widget( $args, $instance ) {
+		extract( $args, EXTR_SKIP );
+		$instance = wp_parse_args($instance, $this->widget_defaults());
+		extract( $instance, EXTR_SKIP );
+		$title = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base);		
+
+		echo $before_widget; 
+		if ( ! empty( $title ) ) {
+			echo $before_title;
+			echo $title;
+			echo $after_title;
+		} 
+		
+		if ( ! empty( $image ) ) {
+			if ( ! empty( $action_url ) )
+				echo '<a href="' . esc_url( $action_url ) . '">';
+			echo wp_get_attachment_image( $image, advantage_thumbnail_size( $thumbnail ) );
+			if ( ! empty( $action_url ) )
+				echo '</a>';			
+		}
+		
+		if ( ! empty( $headline ) )
+			echo '<h2>' . esc_attr( $headline ) . '</h2>';
+		if ( ! empty( $tagline ) )
+			echo do_shortcode( $tagline );
+		if ( ! empty( $action_url ) && ! empty( $action_label ) ) {
+			echo '<p><a href="' . esc_url( $action_url );
+			echo '" class="action-label btn btn-' . esc_attr( $action_color ) . '">';
+			echo esc_attr( $action_label ) . '</a></p>';
+		}
+
+		echo $after_widget;
+	}
+
+	// Update options
+	function update( $new, $old ) {
+		$instance = $old;
+		$instance['title'] = strip_tags( $new['title'] );
+		$instance['headline'] = wp_kses_stripslashes($new['headline']);
+		$instance['tagline'] = wp_kses_stripslashes($new['tagline']);
+		$instance['image'] =  $new['image'];
+		$instance['thumbnail'] = $new['thumbnail'];
+		$instance['action_url'] = esc_url_raw($new['action_url']);
+		$instance['action_label'] = wp_kses_stripslashes($new['action_label']);
+					
+		$instance['action_color'] = wp_kses_stripslashes( $new['action_color'] );
+
+		return $instance;
+	}
+
+	function widget_defaults() {
+		return array(
+			'title' => '',
+			'headline' => '',
+			'tagline' => '',
+			'image' => '',
+			'action_url' => '',
+			'action_label' => 'Learn More',
+			'action_color' => 'primary',
+			'thumbnail' => 'large',
+		);
+	}
+
+	// Display options
+	function form( $instance ) {
+		$instance = wp_parse_args( $instance, $this->widget_defaults() );
+		advantage_widget_field( $this, array ( 'field' => 'title', 'label' => __( 'Title:', 'advantage' ) ), $instance['title'] );
+		advantage_widget_field( $this, array ( 'field' => 'image', 'label' => __( 'Image:', 'advantage' ), 'type' => 'media' ), $instance['image'] );
+		advantage_widget_field( $this, array ( 'field' => 'thumbnail', 'type' => 'select', 'label' => __( 'Image Size:', 'advantage' ), 'options' => advantage_thumbnail_array(), 'class' => '' ), $instance['thumbnail'] );
+		if ( $instance['image'] )
+			echo wp_get_attachment_image( $instance['image'], advantage_thumbnail_size( $instance['thumbnail'] ), false, array( 'class' => 'widget-image' ) );
+		advantage_widget_field( $this, array ( 'field' => 'headline', 'label' => __( 'Headline:', 'advantage' ) ), $instance['headline'] );
+		advantage_widget_field( $this, array ( 'field' => 'tagline', 'label' => __( 'Tagline:', 'advantage' ), 'type' => 'textarea' ), $instance['tagline'] );
+		advantage_widget_field( $this, array ( 'field' => 'action_url', 'label' => __( 'Action URL:', 'advantage' ), 'type' => 'url' ), $instance['action_url'] );
+		advantage_widget_field( $this, array ( 'field' => 'action_label', 'label' => __( 'Action Label:', 'advantage' ) ), $instance['action_label'] );
+		advantage_widget_field( $this, array ( 'field' => 'action_color', 'type' => 'select', 'label' => __( 'Action Button: ', 'advantage' ),
+	'options' => array (
+		array(	'key' => 'primary',
+				'name' => __( 'Primary', 'advantage' ) ),
+		array(	'key' => 'info',
+				'name' => __( 'Info', 'advantage' ) ),
+		array(	'key' => 'warning',
+				'name' => __( 'Warning', 'advantage' ) ),
+		array(	'key' => 'danger',
+				'name' => __( 'Danger', 'advantage' ) ),
+		array(	'key' => 'success',
+				'name' => __( 'Success', 'advantage' ) ),
+		array(	'key' => 'custom1',
+				'name' => __( 'Custom 1', 'advantage' ) ),
+		array(	'key' => 'custom2',
+				'name' => __( 'Custom 2', 'advantage' ) ),
+				 ),
+	'class' => '' ), $instance['action_color'] );
+	}
 }

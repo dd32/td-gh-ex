@@ -12,6 +12,8 @@ get_header(); ?>
 	<?php while ( have_posts() ) : the_post(); ?>
 		<article id="post-<?php the_ID(); ?>" <?php post_class( 'image-attachment' ); ?>>
 			<header class="entry-header">
+						<h2 class="entry-title"><?php the_title(); ?></h2>
+
 						<footer class="entry-meta entry-meta-attachment">
 							<?php
 								$metadata = wp_get_attachment_metadata();

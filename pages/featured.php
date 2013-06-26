@@ -29,139 +29,66 @@ get_header();
           			'compare' => 'IN' ) );
 	}
 
+
 	$featured = new WP_Query( $featured_args );
-?>
-<div id="featured-home" class="carousel slide">
-      <div class="carousel-inner">
-        <div class="item active">
-          <img src="http://localhost/wordpress/wp-content/uploads/2013/06/header_bg.png" alt="">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Example headline.</h1>
-              <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <a class="btn btn-large btn-primary" href="#">Sign up today</a>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img src="http://localhost/wordpress/wp-content/uploads/2013/05/GreatWall1920x1080.jpg" alt="">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <a class="btn btn-large btn-primary" href="#">Learn more</a>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img src="http://localhost/wordpress/wp-content/uploads/2013/05/GreatWall1920x1080.jpg" alt="">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <a class="btn btn-large btn-primary" href="#">Browse gallery</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a class="left carousel-control" href="#featured-home" data-slide="prev">&lsaquo;</a>
-      <a class="right carousel-control" href="#featured-home" data-slide="next">&rsaquo;</a>
-    </div><!-- /.carousel -->
-<?php
-/*	$count = 0;
+
+	$count = 0;
 	if ( $featured->have_posts() ) {
-		$thumbs = array();
-		
-		echo '<div id="featured-column" class="large-12 columns"><div class="flexslider">';
-		echo '<ul id="featured" class="slides">';
+		echo '<div id="featured-home" class="carousel slide';
+		if ( 'fade' == $advantage_options['fp_effect'] )
+			echo ' fading';
+		echo '"><div class="carousel-inner">';
 		while ( $featured->have_posts() ) {
 			$featured->the_post();
 			$readmore = get_post_meta( $post->ID, '_advantage_readmore', true );
 			if ( empty( $readmore ) )
 				$readmore = __( 'Learn More', 'advantage' );
-
-			$thumbs[] = array( 'title' => trim(strip_tags(get_the_title())), 'thumb' => '' );
-			$count += 1;		
-			echo '<li>';
-			if ( has_post_thumbnail() ) { // Featured
-				$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
-				$thumbs[$count - 1]['thumb'] = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumbnail' );
-				if ( $image[1] >= $content_width * 0.70 ) { // Large Featured
-					echo '<a href="' . get_permalink() . '">';
-					the_post_thumbnail( 'full', array(  'title' => get_the_title() ) );
-					echo '</a><div class="slider-caption">';
-					the_excerpt();
-					echo '</div>';
-				} else { // Small Featured
-					echo '<div class="row">';
-					echo '<div class="large-6 columns">';
-					echo '<a href="' . get_permalink() . '">';
-					the_post_thumbnail( 'large', array(  'title' => get_the_title() ) );
-					echo '</a></div><div class="large-6 columns small-featured">';
-					echo '<h2><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
-					the_excerpt(); 
-					echo '<a class="btn btn-primary btn-large" href="' . get_permalink() . '">';
-					echo $readmore . '</a>';
-					echo '</div></div>';
-				}
-
-			} else { // No Featured Images
-				echo '<div class="no-featured-image">';
-				echo '<h2><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
-				the_excerpt(''); 
-				echo '<a class="btn btn-primary btn-large" href="' . get_permalink() . '">';
-				echo $readmore . '</a>';
-				echo '</div>';			
-			}
-			echo '</li>';
+			echo '<div class="item';
+			if ( 0 == $count)
+				echo ' active';
+			echo '">';
+			if ( has_post_thumbnail() )
+				the_post_thumbnail( 'full', array(  'title' => get_the_title() ) );
+			else
+				echo '<img src="' . get_template_directory_uri() . '/images/header_bg.png" alt="" />';
+			echo '<div class="container">';
+			echo '<div class="carousel-caption">';
+			echo '<h2><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
+			the_excerpt();
+			echo '<a class="btn btn-primary btn-large" href="' . get_permalink() . '">';
+			echo $readmore . '</a>';
+			echo '</div></div></div>';
+			$count++;
 		}
-		echo '</ul></div></div></div>';
-		echo '<input id="slider-animation" type="hidden" value="' . $advantage_options['fp_effect'] . '">';
-		if ($count > 1) {
-			echo '<div id="featured-row" class="row hide-for-small row-container"><div class="small-12 columns">';
-			echo '<ul id="featured-list">';
-
-			for ( $i = 1 ; $i <= $count; $i++ ) {
-				echo '<li>';
-				if ( ! empty( $thumbs[ $i - 1 ]['thumb'] ) ) {
-					echo '<img src="' . $thumbs[ $i - 1 ]['thumb'][0] . '" />';
-				}
-				else {
-					echo '<img src="' . get_template_directory_uri() . '/images/default.png' . '" />';
-				}
-				echo '<span class="thumb-title">' . $thumbs[ $i - 1 ]['title'] .'</span>';
-				echo '</li>';
-			}
-			echo '</ul></div></div>';
+		echo '</div>';
+      	echo '<a class="left carousel-control" href="#featured-home" data-slide="prev">&lsaquo;</a>';
+      	echo '<a class="right carousel-control" href="#featured-home" data-slide="next">&rsaquo;</a>';
+		echo '<ol class="carousel-indicators">';
+		for ( $i = 0; $i < $count; $i++ ) {
+			echo '<li data-target=".carousel" data-slide-to="';
+			if ( 0 == $i )
+				echo '0" class="active"></li>';
+			else
+				echo $i . '"></li>';
 		}
-		echo '</div>'; //Featured Wrapper
-	} else {
-		echo "</div></div>";
-	}  */
+		echo '</ol></div>';
+	}
 	wp_reset_postdata();
 	advantage_nav_menu();
-?>
-<div class="container-fluid content-area">
-<div class="row-fluid">	
-        <div class="span4">
-          <img class="img-circle" data-src="holder.js/140x140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
-        </div><!-- /.span4 -->
-        <div class="span4">
-          <img class="img-circle" data-src="holder.js/140x140">
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
-        </div><!-- /.span4 -->
-        <div class="span4">
-          <img class="img-circle" data-src="holder.js/140x140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
-        </div><!-- /.span4 -->
-      </div><!-- /.row -->
+	if ( ! empty( $advantage_options['headline'] ) || ! empty( $advantage_options['tagline'] ) ) { ?>
+<div class="headline">
+<div class="container-fluid">
+<div class="row-fluid">
 <?php
+		if ( ! empty( $advantage_options['headline'] ) )
+			echo '<h1>' . esc_attr( $advantage_options['headline'] ) . '</h1>';
+		if ( ! empty( $advantage_options['tagline'] ) )
+			echo '<div class="lead">' . esc_attr( $advantage_options['tagline'] ) . '</div>';
+?>
+</div>
+</div>
+</div>
+<?php
+	}
 	get_sidebar('home');
 	get_footer();

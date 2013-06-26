@@ -18,11 +18,11 @@
 <div id="footer">
 	<div class="container-fluid">
 		<div id="site-info" class="pull-left">
-		<?php esc_attr_e('&copy;', 'advantage'); ?> <?php _e(date('Y')); ?><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+		<?php esc_attr_e('&copy;', 'advantage'); ?> <?php _e(date('Y')); ?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 			<?php bloginfo( 'name' ); ?></a>
 		</div>
 		<div id="site-generator" class="pull-right">
-			<a href="<?php echo esc_url( __('http://www.xinthemes.com/','advantage')); ?>" title="<?php esc_attr_e('Designed by Stephen Cui', 'advantage'); ?>" rel="designer"><?php esc_attr_e('Xin Magazine Theme', 'advantage'); ?></a>
+			<a href="<?php echo esc_url( __('http://www.xinthemes.com/','advantage')); ?>" title="<?php esc_attr_e('Designed by Stephen Cui', 'advantage'); ?>" rel="designer"><?php esc_attr_e('Advantage Theme', 'advantage'); ?></a>
 		</div>
 <?php
 	if ( has_nav_menu( 'footer' ) ) {

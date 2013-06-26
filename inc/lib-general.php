@@ -79,38 +79,6 @@ function advantage_gallery_image_ids( $content ) {
 	return $image_ids;
 }
 
-function advantage_skitter_content( $images, $size = 'full' ) {
-	$slider = '<div class="border_box">';
-	$slider .= '<div class="box_skitter box_skitter_inline box_skitter_custom">';
-	$slider .= '<ul>';
-	foreach ( $images as $id ) {
-		$slider .= '<li>';
-		$image = wp_get_attachment_image_src( $id, $size );
-		$slider .=  '<img src="' . $image[0] . '" class="random">';
-		$alt_text = get_post_meta($id, '_wp_attachment_image_alt', true);
-		$slider .=  '<div class="label_text"><p>' .  $alt_text . '</p></div>';
-		$slider .=  '</li>';		
-	}
-	$slider .= '</ul></div></div>';
-	return apply_filters( 'advantage_skitter_content', $slider );
-}
-
-function advantage_skitter_inline( $images, $size = 'full' ) {
-	$height = 99999;
-
-	foreach ( $images as $id ) {
-		$image = wp_get_attachment_image_src( $id, $size );
-		if ( $image[2] < $height )
-			$height = $image[2];
-	}
-	$css = "<!-- advantage Skitter Inline CSS -->\n";
-	$css .= "<style>\n";
-	$css .= '.box_skitter_inline {' . "\n";
-	$css .= '  height: ' . $height . 'px;' . "\n";
-	$css .= "}\n";
-	$css .= "</style>\n<!-- advantage Skitter Inline CSS -->\n";
-	echo apply_filters( 'advantage_skitter_inline', $css );
-}
 //Sorting array by key
 function advantage_sort_array( &$array, $key ) {
     $sorter = array();

@@ -1,6 +1,6 @@
 <?php
 /**
- * Default Home Page
+ * Default Home Page / Blog Index
  * 
  * @package advantage
  * @since 1.0
@@ -8,7 +8,7 @@
 	global $advantage_options;
 	get_header();
 	
-	if ( 'page' == get_option( 'show_on_front' ) || 2 == $advantage_options['homepage'] ) {
+	if ( 'page' == get_option( 'show_on_front' ) || 2 == $advantage_options['homepage'] ) { // Blog Index 
 ?>  
 	<div id="content" class="<?php echo advantage_content_class(); ?>" role="main">
 <?php

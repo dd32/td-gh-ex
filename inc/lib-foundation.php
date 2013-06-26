@@ -169,13 +169,3 @@ function advantage_grid_full() {
 	return "span12";
 }
 endif;
-
-function advantage_add_search_box($items, $args) {
-	ob_start();
-    get_search_form();
-	$searchform = ob_get_contents();
-	ob_end_clean();
-
-	$items .= '<li class="has-form">' . $searchform . '</li>';
-    return $items;
-}

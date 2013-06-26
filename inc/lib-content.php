@@ -56,11 +56,6 @@ function advantage_branding() {
   </div>
 </div>
 <?php
-	global $advantage_options;
-	
-	if ( !is_page_template( 'pages/featured.php' )
-		&& ! ( is_home() && 1 == $advantage_options['homepage'] ) )
-		advantage_nav_menu();
 }
 endif;
 
@@ -70,16 +65,15 @@ function advantage_nav_menu() {
 	
 	advantage_header_before_navbar();	
 ?>
-<div id="mainmenu" class="navbar">
+<div id="mainmenu" class="navbar navbar-inverse">
   <div class="container-fluid">
   	<div class="navbar-inner">
 	  <nav id="section-menu" class="section-menu">	
-        <a class="brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-		<?php echo '<i class="icon-home"></i>'; ?>
-		</a>
+        <a class="brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo '<i class="icon-home"></i>'; ?></a>
 		<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a>
 		<div class="nav-collapse">
-<?php		wp_nav_menu( array(
+<?php		advantage_top_search_form();
+			wp_nav_menu( array(
 				'container' => false,
 				'menu_class' => 'nav',
 				'theme_location' => 'section-menu', 
@@ -96,6 +90,16 @@ function advantage_nav_menu() {
 }
 endif;
 
+if ( ! function_exists( 'advantage_top_search_form' ) ) :	
+function advantage_top_search_form() {
+?>
+    <form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="navbar-search pull-right">
+    	<input type="text" class="search-query" name="s" id="s1" placeholder="<?php esc_attr_e( 'Search', 'advantage' ); ?>">
+		<input type="submit" class="submit" name="submit" id="searchsubmit" value="<?php esc_attr_e( 'Search', 'advantage' ); ?>" />
+    </form>
+<?php
+}
+endif;
 if ( ! function_exists( 'advantage_post_title' ) ) :
 // Display Post Title
 function advantage_post_title() {
@@ -107,8 +111,47 @@ function advantage_post_title() {
 			get_the_title()	);
 	}
 	else {
-		printf('<h1 class="entry-title">%1$s</h1>',
-			get_the_title()	);		
+/*		printf('<h1 class="entry-title">%1$s</h1>',
+			get_the_title()	);	*/
+	}
+}
+endif;
+
+
+if ( ! function_exists( 'advantage_single_post_link' ) ) :
+/* This function echo the link to single post view for the following:
+- Aside Post
+- Post without title
+------------------------------------------------------------------ */
+function advantage_single_post_link() {
+	if ( ! is_single() ) {
+		if ( has_post_format( 'aside' ) || has_post_format( 'quote' ) || '' == the_title_attribute( 'echo=0' ) ) { 
+			printf ('<a class="single-post-link" href="%1$s" title="%1$s"><i class="icon-chevron-right"></i></a>',
+				get_permalink(),
+				get_the_title()	);
+		} 
+	}
+}
+endif;
+
+if ( ! function_exists( 'advantage_display_post_thumbnail' ) ) :
+// Display Large Post Thumbnail on top of the post
+function advantage_display_post_thumbnail( $post_id ) {
+	global $advantage_layout;
+	if ( has_post_thumbnail() ) {
+		if ( ! is_single() ) {
+			printf ('<a href="%1$s" title="%2$s">', 
+				get_permalink(),
+				get_the_title()	);	
+			the_post_thumbnail( 'large', array( 'class'	=> 'img-polaroid featured-image', 'title' => get_the_title() ) );
+			echo '</a>';
+		}
+		else {
+			if ( 2 == $advantage_layout )			
+				the_post_thumbnail( 'full', array( 'class'	=> 'fullscreen-image' ) );	
+			else
+				the_post_thumbnail( 'large', array( 'class'	=> 'img-polaroid featured-image', 'title' => get_the_title() ) );	
+		}
 	}
 }
 endif;
@@ -119,15 +162,13 @@ function advantage_title_bar() { ?>
 <?php
 	if ( ! is_home() || function_exists( 'bcn_display' ) ) {
 ?>
-	  <div class="row">
-		<div class="large-12 columns">
+	  <div class="container-fluid">
 <?php		advantage_page_title(); ?>
 <?php	if ( function_exists( 'bcn_display' ) ) { ?>
 		<div class="breadcrumbs">	
 <?php        bcn_display(); ?>
 		</div>
 <?php 	} ?>
-	  	</div>
 	  </div>	  
 <?php } ?>
 	</div>
@@ -182,44 +223,6 @@ function advantage_page_title() {
 		else
 			the_title(); 
 		echo '</h1>';	
-	}
-}
-endif;
-
-if ( ! function_exists( 'advantage_single_post_link' ) ) :
-/* This function echo the link to single post view for the following:
-- Aside Post
-- Post without title
-------------------------------------------------------------------------- */
-function advantage_single_post_link() {
-	if ( ! is_single() ) {
-		if ( has_post_format( 'aside' ) || has_post_format( 'quote' ) || '' == the_title_attribute( 'echo=0' ) ) { 
-			printf ('<a class="single-post-link" href="%1$s" title="%1$s"><i class="icon-chevron-right"></i></a>',
-				get_permalink(),
-				get_the_title()	);
-		} 
-	}
-}
-endif;
-
-if ( ! function_exists( 'advantage_display_post_thumbnail' ) ) :
-// Display Large Post Thumbnail on top of the post
-function advantage_display_post_thumbnail( $post_id ) {
-	global $advantage_layout;
-	if ( has_post_thumbnail() ) {
-		if ( ! is_single() ) {
-			printf ('<a href="%1$s" title="%2$s">', 
-				get_permalink(),
-				get_the_title()	);	
-			the_post_thumbnail( 'large', array( 'class'	=> 'img-polaroid featured-image', 'title' => get_the_title() ) );
-			echo '</a>';
-		}
-		else {
-			if ( 2 == $advantage_layout )			
-				the_post_thumbnail( 'full', array( 'class'	=> 'fullscreen-image' ) );	
-			else
-				the_post_thumbnail( 'large', array( 'class'	=> 'img-polaroid featured-image', 'title' => get_the_title() ) );	
-		}
 	}
 }
 endif;

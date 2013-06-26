@@ -175,29 +175,18 @@ function advantage_theme_options_array() {
 			'name'	=> 'fp_category',
 			'label'	=> __( 'Featured Category', 'advantage' ),
 			'type'	=> 'category',	
-		),		
-// Top Bar
-		'brandname'	=> array(
-			'name'	=> 'brandname',
-			'label'	=> __( 'Brand Name', 'advantage' ),
+		),	
+		'headline'	=> array(
+			'name'	=> 'headline',
+			'label'	=> __( 'H1 Headline', 'advantage' ),
 			'type'	=> 'text',
-		),
-		'brandlogo'	=> array(
-			'name'	=> 'brandlogo',
-			'label'	=> __( 'Brand Logo URL', 'advantage' ),
-			'type'	=> 'url',
-		),
-		'menupos'	=> array(
-			'name'	=> 'menupos',
-			'label'	=> __( 'Top Menu Position', 'advantage' ),
-			'type'	=> 'radio',
-			'values' => array(
-				array( 'key' => 'left',
-							   'label' => __( 'Left', 'advantage' ) ),
-				array( 'key' => 'right',
-							   'label' => __( 'Right', 'advantage' ) ),
-						),		
-		),
+		),		
+		'tagline'	=> array(
+			'name'	=> 'tagline',
+			'label'	=> __( 'Tag lines', 'advantage' ),
+			'type'	=> 'textarea',
+			'row'   => 3,
+		),	
 // Skins
 		'colorscheme'	=> array(
 			'name'	=> 'colorscheme',
@@ -306,28 +295,6 @@ function advantage_theme_options_array() {
 			'type'	=> 'text',
 			'helptext' => 'Enter Font Name only, e.g. Open Sans',	
 		),
-// bbPress and BuddyPress
-		'bbp_column1'	=> array(
-			'name'	=> 'bbp_column1',
-			'label'	=> __( 'Content Width', 'advantage' ),
-			'type'	=> 'number',
-			'desc' => __( 'Columns', 'advantage' ),
-		),
-		'bbp_column2'	=> array(
-			'name'	=> 'bbp_column2',
-			'label'	=> __( 'Sidebar Width', 'advantage' ),
-			'type'	=> 'number',
-			'desc' => __( 'Columns', 'advantage' ),	
-		),
-		'bbp_position'	=> array(
-			'name'	=> 'bbp_position',
-			'label'	=> __( 'Sidebar Position', 'advantage' ),
-			'type'	=> 'radio',		
-			'values' => array(
-						array( 'key' => 1, 'label' => __( 'Left ', 'advantage' ) ),
-						array( 'key' => 2, 'label' => __( 'Right ', 'advantage' ) ),
-						),
-		),
 // Custom CSS
 		'advantage_inline_css'	=> array(
 			'name'	=> 'advantage_inline_css',
@@ -353,7 +320,7 @@ function advantage_theme_options_display_page() {
 		if ( false !== $_REQUEST['settings-updated'] ) { ?>
 			<div class="updated fade"><p><strong><?php _e('Options Saved', 'advantage'); ?></strong></p></div>
 <?php	} ?>
-		<p><a class="btn btn-primary" href="<?php _e('http://xinthemes.com/documentation/','advantage'); ?>" target="_blank"><strong><?php _e('Documentation','advantage'); ?></strong></a>&nbsp;&nbsp;
+		<p><a class="btn btn-primary" href="<?php _e('http://xinthemes.com/docs/','advantage'); ?>" target="_blank"><strong><?php _e('Documentation','advantage'); ?></strong></a>&nbsp;&nbsp;
 		<a class="btn btn-warning" href="<?php _e('http://xinthemes.com/advantage-change-log/','advantage'); ?>" target="_blank"><strong><?php _e('Change Log','advantage'); ?></strong></a>&nbsp;&nbsp;
 		<a class="btn btn-success" href="<?php _e('http://xinthemes.com/support/','advantage'); ?>" target="_blank"><strong><?php _e('Support Forum','advantage'); ?></strong></a>&nbsp;&nbsp;
 		<a class="btn btn-info" href="<?php _e('http://xinthemes.com/donate/','advantage'); ?>" target="_blank"><strong><?php _e('Donate','advantage'); ?></strong></a></p>
@@ -371,7 +338,6 @@ function advantage_theme_options_display_page() {
 				<a <?php if ( $tab_index == $options['currenttab'] ) echo 'class="advantage-current"'; $tab_index++; ?>><?php _e('Scheme','advantage'); ?></a>
 				<a <?php if ( $tab_index == $options['currenttab'] ) echo 'class="advantage-current"'; $tab_index++; ?>><?php _e('Fonts','advantage'); ?></a>
 				<a <?php if ( $tab_index == $options['currenttab'] ) echo 'class="advantage-current"'; $tab_index++; ?>><?php _e('Social','advantage'); ?></a>
-				<a <?php if ( $tab_index == $options['currenttab'] ) echo 'class="advantage-current"'; $tab_index++; ?>><?php _e('Addons','advantage'); ?></a>
 				<a <?php if ( $tab_index == $options['currenttab'] ) echo 'class="advantage-current"'; $tab_index++; ?>><?php _e('Custom CSS','advantage'); ?></a>
 <?php //Allow child them to add options.
 				do_action( 'advantage_options_tab_link' ); ?>
@@ -427,13 +393,10 @@ function advantage_theme_options_display_page() {
 		advantage_option_display( $theme_options['fp_option'], $options );
 		advantage_option_display( $theme_options['fp_category'], $options );
 		advantage_option_display( $theme_options['fp_effect'], $options );
-?>
-			<h3><?php _e('Top Bar','advantage'); ?></h3>
-<?php			advantage_option_display( $theme_options['brandname'], $options );
-				advantage_option_display( $theme_options['brandlogo'], $options );				
-				advantage_option_display( $theme_options['menupos'], $options );	
-				do_action( 'advantage_options_tab_layout' ); ?>			
-			</div></div>
+		advantage_option_display( $theme_options['headline'], $options );
+		advantage_option_display( $theme_options['tagline'], $options );		
+		do_action( 'advantage_options_tab_layout' ); ?>			
+	</div></div>
 <?php
 /*********************************************************************************
 *  Theme Options: Scheme
@@ -508,24 +471,9 @@ function advantage_theme_options_display_page() {
 <?php			do_action('advantage_options_tab_social'); ?>
 			</div></div><!-- Sharing -->
 <?php
-/*********************************************************************************
-*  Addon Options
-**********************************************************************************/
-?>
-		<div class="advantage-pane clearfix"><div class="grid_12"><!-- Addons -->
-		<h3><?php _e('bbPress/BuddyPress Options','advantage') ?></h3>
-<?php
-		advantage_option_display( $theme_options['bbp_column1'], $options );
-		advantage_option_display( $theme_options['bbp_column2'], $options );
-		advantage_option_display( $theme_options['bbp_position'], $options );
-//Allow child them to add options.
-		do_action( 'advantage_options_tab_addon' ); 
-?>
-		</div></div><!-- Addons -->
-<?php
-/*********************************************************************************
+/********************************************************************
 *  Custom CSS
-**********************************************************************************/
+********************************************************************/
 ?>
 		<div class="advantage-pane clearfix"><div class="grid_12"><!-- Custom CSS -->
 <?php
@@ -572,7 +520,7 @@ function advantage_theme_options_validate( $input ) {
 				$input[ $theme_option['name'] ] = esc_url_raw( $input[$theme_option['name'] ] );	
 				break;
 			case 'color':
-				$input[ $theme_option['name'] ] = preg_replace( '|^#([A-Fa-f0-9]{3}){1,2}$|', '',  $input[ $theme_option['name'] ] );	
+				$input[ $theme_option['name'] ] = sanitize_text_field( $input[ $theme_option['name'] ] );	
 				break;
 		}
 	}
@@ -646,7 +594,7 @@ function advantage_scheme_css($input) {
 	if ( ! empty( $input['titlebarbg'] ) )
 		$css .= '.custom-background .titlebar,.titlebar {background:' .  $input['titlebarbg'] . ';}' . "\n";
 	if ( ! empty( $input['contentbg'] ) )
-		$css .= '.custom-background .row-container,.row-container {background:' .  $input['contentbg'] . ';}' . "\n";
+		$css .= '.custom-background .content-area,.content-area {background:' .  $input['contentbg'] . ';}' . "\n";
 	if ( ! empty( $input['footerbg'] ) )
 		$css .= '.custom-background #footer,#footer {background:' .  $input['footerbg'] . ';}' . "\n";
 	return apply_filters( 'advantage_scheme_css', $css );

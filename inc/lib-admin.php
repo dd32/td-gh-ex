@@ -317,6 +317,8 @@ function advantage_load_template_scripts( $hooks ) {
 		wp_enqueue_script( 'advantage-template', $tmp_path . '/js/template.js', array( 'jquery') );	
 	}
 	if ( 'widgets.php' == $hooks ) {
+		wp_enqueue_media();
+		
 		wp_enqueue_style( 'advantage-widgets', $tmp_path . '/css/widgets.css', null, '1.0' );	
 		wp_enqueue_script( 'advantage-widgets', $tmp_path . '/js/widgets.js', array( 'jquery-ui-sortable' ) );			
 	}

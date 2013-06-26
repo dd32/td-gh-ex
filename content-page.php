@@ -7,9 +7,6 @@
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-<?php
-	//advantage_posted_on();
-	?> 
 	<div class="entry-content clearfix">
 <?php	the_content();
 		wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'advantage' ) . '</span>', 'after' => '</div>' ) ); ?>

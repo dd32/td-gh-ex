@@ -22,15 +22,17 @@
 		<?php advantage_branding(); ?>
     </div>
   </header>
-<div id="main">
 <?php 
 	global $advantage_options;
 	
 	if ( ! is_page_template( 'pages/featured.php' )
 		&& ! ( is_home() && 1 == $advantage_options['homepage'] ) ) {
+		advantage_nav_menu();
 ?>
-<div class="container-fluid content-area">
-<div class="row-fluid">			
+<div id="main">
+<?php advantage_title_bar(); ?>
+	<div class="container-fluid content-area">
+	<div class="row-fluid">
 <?php
 	}
 

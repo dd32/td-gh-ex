@@ -8,7 +8,7 @@ if ( ! function_exists( 'advantage_setup' ) ):
 function advantage_setup() {
 	global $content_width;
 	if ( ! isset( $content_width ) ) 
-		$content_width = 940;
+		$content_width = 700;
 
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'automatic-feed-links' );
@@ -55,8 +55,8 @@ endif;
 function advantage_widgets_init() {
 	register_widget( 'advantage_Recent_Post' );
 	register_widget( 'advantage_Navigation' );
-	register_widget( 'advantage_Social' );
-
+	register_widget( 'advantage_Marketing' );
+	
 	// Full Sidebar 
 	register_sidebar( array(
 		'name' => __( 'Blog Widget Area (Full)', 'advantage' ),
@@ -313,9 +313,7 @@ function advantage_custom_excerpt_more( $output ) {
 add_filter( 'get_the_excerpt', 'advantage_custom_excerpt_more' );
 
 if ( ! function_exists( 'advantage_content_nav' ) ) :
-/**
-Pagination for main loop
- */
+/** Pagination for main loop */
 function advantage_content_nav( $nav_id ) {
 	global $wp_query;
 	advantage_content_nav_link( $wp_query->max_num_pages, $nav_id );
@@ -323,13 +321,11 @@ function advantage_content_nav( $nav_id ) {
 endif;
 
 if ( ! function_exists( 'advantage_content_nav_link' ) ) :
-/**
-Pagination 
- */
+/** Pagination */
 function advantage_content_nav_link( $num_of_pages, $nav_id ) {
 	if ( $num_of_pages > 1 ) {
-		echo '<nav id="' . $nav_id . '" class="pagination-centered">';
-		echo '<ul class="pagination">';
+		echo '<nav id="' . $nav_id . '">';
+		echo '<div class="pagination pagination-centered">';
 
 		$big = 999999999;
     	if ( get_query_var( 'paged' ) )
@@ -347,11 +343,10 @@ function advantage_content_nav_link( $num_of_pages, $nav_id ) {
 			'prev_text'    => '<i class="icon-chevron-left"></i>' ,
 			'next_text'    => '<i class="icon-chevron-right"></i>' ,
 			'type' => 'array' ) );
-			
-		echo '<li><span>' . __( 'Page ', 'advantage' ) . '</span></li>';
+		echo '<ul><li><span>' . __( 'Page', 'voyage' ) . '</span></li>';
 		foreach ( $links as $link )
 			printf( '<li>%1$s</li>', $link );
-		echo '</ul></nav>';					
+		echo '</ul></div></nav>';
 	}
 }
 endif;
@@ -369,7 +364,7 @@ add_filter('the_category', 'advantage_replace_rel_category');
 
 if ( ! function_exists( 'advantage_meta_category' ) ) :
 // Prints Post Categories
-function advantage_meta_category() {
+function advantage_meta_category( $meta_icon = 0 ) {
 	$categories = wp_get_post_categories( get_the_ID() , array('fields' => 'ids'));
 	if( $categories ) {
  		$sep = ' &bull; ';
@@ -377,7 +372,10 @@ function advantage_meta_category() {
  		$cats = wp_list_categories( 'title_li=&style=none&echo=0&include='.$cat_ids);
  		$cats = rtrim( trim( str_replace( '<br />',  $sep, $cats) ), $sep);
 		echo '<span class="entry-category">';
-		echo '<span class="meta-prep"><i class="icon-folder-open meta-icon"> </i></span>';	
+		if ( 1 == $meta_icon )
+			echo '<i class="icon-folder-open meta-icon"></i>';
+		else
+		echo '<span class="meta-prep">' . __( 'Filed in ', 'advantage') . '</span>';	
  		echo  $cats;
 		echo '</span>';
 	}
@@ -385,24 +383,23 @@ function advantage_meta_category() {
 endif;
 
 if ( ! function_exists( 'advantage_meta_author' ) ) :
-function advantage_meta_author() {
-	printf( '<span class="by-author"><a class="url fn n" href="%1$s" title="%2$s" rel="author"><span class="meta-prep">%4$s</span> %3$s</a></span>',
+function advantage_meta_author( $meta_icon = 0 ) {
+	printf( '<span class="by-author"><span class="meta-prep">%4$s</span><a class="url fn n" href="%1$s" title="%2$s" rel="author"> %3$s</a></span>',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 		esc_attr( sprintf( __( 'View all posts by %s', 'advantage' ), get_the_author() ) ),
 		get_the_author(),
-		'<i class="icon-user meta-icon"> </i>' );
-	
+		$meta_icon ? '<i class="icon-user meta-icon"></i>' : 'By' );
 }
 endif;
 
 
 if ( ! function_exists( 'advantage_meta_comment' ) ) :
 // Prints Comments Link
-function advantage_meta_comment() {
+function advantage_meta_comment( $meta_icon = 0 ) {
 	if ( comments_open() && ! post_password_required() ) {
-		$comment_icon = '<i class="icon-comment meta-icon"> </i>';
+		$comment_icon = '<i class="icon-comment meta-icon"></i>';
 		printf( '<span class="meta-comment">' );
-		comments_popup_link( $comment_icon, $comment_icon . __( '1 Comment', 'advantage' ) , $comment_icon . __( '% Comments', 'advantage' ) );		
+		comments_popup_link( $comment_icon . __( 'Comment', 'advantage' ), $comment_icon . __( '1 Comment', 'advantage' ) , $comment_icon . __( '% Comments', 'advantage' ) );		
 		printf( '</span>' );
 	}
 }
@@ -410,42 +407,51 @@ endif;
 
 if ( ! function_exists( 'advantage_meta_date' ) ) :
 // Prints Post Date
-function advantage_meta_date( $style = 1) {
-	if ( 1 == $style ) {
-		echo '<p class="post-date-2">';
-		echo '<span class="month">' . get_the_date('M') . '</span>';
-		echo '<span class="day">' . get_the_date('j') . '</span>';
-		echo '<span class="year">' . get_the_date('Y') . '</span></p>';
-	} elseif ( 2 == $style ) {
-		echo '<i class="icon-calendar meta-icon"> </i>';
-		printf( __( '<time class="entry-date" datetime="%1$s">%2$s</time>', 'advantage' ),
-			esc_attr( get_the_date( 'c' ) ),
-			esc_html( get_the_date() ) );				
-	} 
+function advantage_meta_date( $meta_icon = 0 ) {
+	if ( $meta_icon )
+		echo '<i class="icon-calendar meta-icon"></i>';
+	printf( __( '<time class="entry-date" datetime="%1$s">%2$s</time>', 'advantage' ),
+		esc_attr( get_the_date( 'c' ) ),
+		esc_html( get_the_date() ) );				
+
 }
 endif;
 
 if ( ! function_exists( 'advantage_meta_tag' ) ) :
 // Prints Post Tags
-function advantage_meta_tag() {
+function advantage_meta_tag( $meta_icon = 0 ) {
 	$tags_list = get_the_tag_list( '', __( ' &bull; ', 'advantage' ) );
 	if ( $tags_list ) {
-		echo '<i class="icon-tags meta-icon"> </i>';
+		echo '<span class="entry-tags"><i class="icon-tags meta-icon"> </i>';
 		printf( '<span class="entry-tag">%1$s</span>',
 		$tags_list );
+		echo '</span>';
 	} 
+}
+endif;
+
+if ( ! function_exists( 'advantage_post_meta_top' ) ) :
+function advantage_post_meta_top() {
+	if ( 'post' == get_post_type() && ! is_single() ) {
+		echo '<span class="entry-meta entry-meta-top">';		
+		if ( is_sticky() ) {
+			printf( '<span class="entry-featured">%1$s &bull;</span>', __( 'Featured ', 'advantage') );
+		}
+		advantage_meta_category();		
+		echo '</span>';	
+	}
 }
 endif;
 
 if ( ! function_exists( 'advantage_post_meta' ) ) :
 function advantage_post_meta() {
 	if ( 'post' == get_post_type() ) {
-		echo '<span class="entry-meta">';		
-		if ( is_sticky() ) {
-			printf( '<span class="entry-featured">%1$s </span>', __( 'Featured ', 'advantage') );
-		}
+		echo '<span class="entry-meta">';
+		advantage_meta_date();
 		advantage_meta_author();
-		advantage_meta_category();
+		if ( is_single() ) {
+			advantage_meta_category();				
+		}
 		advantage_meta_comment();			
 		echo '</span>';	
 	}
@@ -475,11 +481,11 @@ function advantage_post_summary_meta( $meta_flag = 0 ) {
 	
 	echo '<div class="entry-meta entry-meta-summary clearfix">';
 	if ( ( $advantage_entry_meta || $meta_flag ) && 'post' == get_post_type() ) {
-		advantage_meta_date( 2 );
-		advantage_meta_author();
-		advantage_meta_category();
-		advantage_meta_tag();
-		advantage_meta_comment();
+		advantage_meta_date( $meta_flag );
+		advantage_meta_author( $meta_flag );
+		advantage_meta_category( $meta_flag );
+		advantage_meta_tag( $meta_flag );
+		advantage_meta_comment( $meta_flag );
 	}
 	edit_post_link( '<i class="icon-pencil"></i> ' . __( '[Edit]', 'advantage' ), '<span class="edit-link">', '</span>' );	
 	echo '</div>';	
@@ -493,6 +499,11 @@ function advantage_body_classes( $classes ) {
 		$classes[] = 'multi';
 	elseif ( 2 == $advantage_layout )
 		$classes[] = 'fullscreen';
+
+	if ( is_page_template( 'pages/featured.php' )
+		|| ( is_home() && 1 == $advantage_options['homepage'] ) )
+		$classes[] = 'featured-home';
+
 	return $classes;
 }
 add_filter( 'body_class', 'advantage_body_classes' );
