@@ -118,7 +118,7 @@ foreach ($mantra_options as $key => $value) {
 	break;
 	
 	case 'Custom Logo' :
-	if (isset($mantra_logoupload) && ($mantra_logoupload != '')) : echo '<div><a id="logo" href="/" ><img title="" alt="" src="'.$mantra_logoupload.'" /></a></div>'; endif;
+	if (isset($mantra_logoupload) && ($mantra_logoupload != '')) : echo '<div><a id="logo" href="'.esc_url( home_url( '/' ) ).'" ><img title="" alt="" src="'.$mantra_logoupload.'" /></a></div>'; endif;
 	
 	break;
 	

@@ -43,10 +43,12 @@
 	width:auto;
 	max-width:90%;
 	}
+	#site-title {margin-top:22px;}
+	#site-description {clear:both;margin-left:0;}
 	
 	.safari a#logo img { max-height: 90px; }
 	
-		#smenul, #smenur {
+	#smenul, #smenur {
 	margin-top:0;
 	}
 
@@ -124,7 +126,7 @@
 	padding:0;
 	}
 	
-	#content .widget-area ul.xoxo {
+	#main .widget-area ul.xoxo {
 	padding-left:10px;
 	}
 	
@@ -133,6 +135,7 @@
 	margin-left:2.5%;
 	}
 	
+	#sfooter {display:table;float:none;text-align:center;margin:0 auto;padding:0;top:0;margin-top:10px;}
 }
 
 @media (max-width: 650px) {
