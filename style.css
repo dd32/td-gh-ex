@@ -4,7 +4,7 @@ Theme URI: http://wpattorney.org/
 Author: WPThemes NZ
 Author URI: http://wpthemes.co.nz/
 Description: Attorney is an elegant and responsive theme designed with Attorneys and law firms in mind, though anyone who wants a theme with a corporate look and feel might like it too. It comes with a couple of alternative home page templates, one for static content and one with a latest posts slider. You can also add your own logo, adjust the slider behaviour, base theme colors and control the social media links from the theme customization screen.
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-menu, sticky-post, microformats, rtl-language-support, translation-ready, full-width-template, post-formats
@@ -1355,7 +1355,23 @@ POSTS & CONTENT STYLES
 				background: #fafafa;
 				border: 1px solid #e2e2e2;
 				box-shadow: 0 0 5px #e7e7e7;
+				min-width: 100%;
+				height: auto;
+				min-height: 340px;
 			}
+			
+			.commentlist li.comment article[id*=comment-] iframe, .post_content iframe { 
+				box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+			}
+			
+				.full-width-content .commentlist li.comment article[id*=comment-] video, .full-width-content .post_content video,
+				.full-width-content .commentlist li.comment article[id*=comment-] object, .full-width-content .post_content object,
+				.full-width-content .commentlist li.comment article[id*=comment-] embed, .full-width-content .post_content embed,
+				.full-width-content .commentlist li.comment article[id*=comment-] iframe, .full-width-content .post_content iframe { 
+					min-height: 520px;
+				}
 			
 			.commentlist li.comment article[id*=comment-] pre,
 			.post_content pre { 
@@ -2734,6 +2750,13 @@ URL: http://stuffandnonsense.co.uk/projects/320andup/
 		text-align: center;
 		margin: auto;
 	}
+	
+	.commentlist li.comment article[id*=comment-] video, .post_content video, .full-width-content .post_content video, 
+	.commentlist li.comment article[id*=comment-] object, .post_content object, .full-width-content .post_content object,
+	.commentlist li.comment article[id*=comment-] embed, .post_content embed, .full-width-content .post_content embed,
+	.commentlist li.comment article[id*=comment-] iframe, .post_content iframe, .full-width-content .post_content iframe { 
+		min-height: 400px;
+	}
 }
 
 @media only screen and (min-width: 824px) {
@@ -2805,6 +2828,50 @@ URL: http://stuffandnonsense.co.uk/projects/320andup/
 			padding-left: 25px;
 			background-position: 5px 10px;
 		}
+}
+
+@media only screen and (max-width: 640px) {
+
+	.commentlist li.comment article[id*=comment-] video, .post_content video, .full-width-content .post_content video, 
+	.commentlist li.comment article[id*=comment-] object, .post_content object, .full-width-content .post_content object,
+	.commentlist li.comment article[id*=comment-] embed, .post_content embed, .full-width-content .post_content embed,
+	.commentlist li.comment article[id*=comment-] iframe, .post_content iframe, .full-width-content .post_content iframe { 
+		min-height: 340px;
+	}
+
+}
+
+@media only screen and (max-width: 480px) {
+	
+	.commentlist li.comment article[id*=comment-] video, .post_content video, .full-width-content .post_content video, 
+	.commentlist li.comment article[id*=comment-] object, .post_content object, .full-width-content .post_content object,
+	.commentlist li.comment article[id*=comment-] embed, .post_content embed, .full-width-content .post_content embed,
+	.commentlist li.comment article[id*=comment-] iframe, .post_content iframe, .full-width-content .post_content iframe { 
+		min-height: 290px;
+	}
+
+}
+
+@media only screen and (max-width: 320px) {
+	
+	.commentlist li.comment article[id*=comment-] video, .post_content video, .full-width-content .post_content video, 
+	.commentlist li.comment article[id*=comment-] object, .post_content object, .full-width-content .post_content object,
+	.commentlist li.comment article[id*=comment-] embed, .post_content embed, .full-width-content .post_content embed,
+	.commentlist li.comment article[id*=comment-] iframe, .post_content iframe, .full-width-content .post_content iframe { 
+		min-height: 220px;
+	}
+
+}
+
+@media only screen and (max-width: 240px) {
+	
+	.commentlist li.comment article[id*=comment-] video, .post_content video, .full-width-content .post_content video, 
+	.commentlist li.comment article[id*=comment-] object, .post_content object, .full-width-content .post_content object,
+	.commentlist li.comment article[id*=comment-] embed, .post_content embed, .full-width-content .post_content embed,
+	.commentlist li.comment article[id*=comment-] iframe, .post_content iframe, .full-width-content .post_content iframe { 
+		min-height: 180px;
+	}
+	
 }
 
 /******************************************************************

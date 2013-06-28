@@ -315,8 +315,8 @@ if ( ! function_exists( 'attorney_apply_color' ) ) :
 		<style>
 			a, a:visited,
 			nav[role=navigation] .menu ul li a:hover,
-			.slides .slide-title,
-			.slides .slide-title a,
+			.slide-content .slide-title,
+			.slide-content .slide-title a,
 			.entry-title a:hover,
 			.commentlist .vcard cite.fn a,
 			.commentlist .comment-meta a:hover,
@@ -350,6 +350,7 @@ if ( ! function_exists( 'attorney_apply_color' ) ) :
 			nav[role=navigation],
 			#sidebar .widget-title,
 			#sidebar-home .widget-title,
+			#sidebar-full .widget-title,
 			#reply-title {
 				border-top: 5px solid <?php echo get_theme_mod('attorney_color_settings'); ?>;
 			}

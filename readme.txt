@@ -50,3 +50,16 @@ This theme is bundled with Cycle2
  * Cycle2 is a versatile slideshow plugin for jQuery built around ease-of-use. It supports a declarative initialization style that allows full customization without any scripting.
  * Copyright © 2012 M. Alsup (https://github.com/malsup)
  * The Cycle2 plugin is dual licensed under the MIT (http://malsup.github.com/mit-license.txt) and GPL (http://malsup.github.com/gpl-license-v2.txt) licenses.
+
+ 
+=================================
+CHANGELOG
+=================================
+Version 1.0.2
+ * Fixed color picker issue on full-width template
+
+Version 1.0.1
+ * Minor css fixes
+
+Version 1.0
+ * First public release

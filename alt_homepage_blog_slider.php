@@ -5,7 +5,7 @@
  */
 get_header(); ?>
 
-    <div id="content" class="clearfix">
+    <div id="content" class="clearfix full-width-content">
         
         <div id="main" class="clearfix sldr" role="main">
 
