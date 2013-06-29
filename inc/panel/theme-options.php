@@ -646,7 +646,7 @@ function catcheverest_theme_options_do_page() {
                                     <tr>
                                         <th scope="row"><label class="handle"><?php _e( 'Featured Slider Post #', 'catcheverest' ); ?><span class="count"><?php echo absint( $i ); ?></span></label></th>
                                         <td><input type="text" name="catcheverest_options[featured_slider][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'featured_slider', $options ) && array_key_exists( $i, $options[ 'featured_slider' ] ) ) echo absint( $options[ 'featured_slider' ][ $i ] ); ?>" />
-                                        <a href="<?php bloginfo ( 'url' );?>/wp-admin/post.php?post=<?php if( array_key_exists ( 'featured_slider', $options ) && array_key_exists ( $i, $options[ 'featured_slider' ] ) ) echo absint( $options[ 'featured_slider' ][ $i ] ); ?>&action=edit" class="button" title="<?php esc_attr_e('Click Here To Edit'); ?>" target="_blank"><?php _e( 'Click Here To Edit', 'catcheverest' ); ?></a>
+                                        <a href="<?php bloginfo ( 'wpurl' );?>/wp-admin/post.php?post=<?php if( array_key_exists ( 'featured_slider', $options ) && array_key_exists ( $i, $options[ 'featured_slider' ] ) ) echo absint( $options[ 'featured_slider' ][ $i ] ); ?>&action=edit" class="button" title="<?php esc_attr_e('Click Here To Edit'); ?>" target="_blank"><?php _e( 'Click Here To Edit', 'catcheverest' ); ?></a>
                                         </td>
                                     </tr>                           
                                     <?php endfor; ?>
@@ -774,34 +774,7 @@ function catcheverest_theme_options_do_page() {
                 
                 <!-- Options for Webmaster Tools -->
                 <div id="webmaster">
-                    <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Site Verification', 'catcheverest' ); ?></a></h3>
-                        <div class="option-content inside">
-                            <table class="form-table">  
-                                <tbody>    
-                                    <tr>
-                                        <th scope="row"><label><?php _e( 'Google Site Verification ID', 'catcheverest' ); ?></label></th>
-                                        <td><input type="text" size="45" name="catcheverest_options[google_verification]" value="<?php echo esc_attr( $options[ 'google_verification' ] ); ?>" /> <?php _e('Enter your Google ID number only', 'catcheverest'); ?>
-                                        </td>
-                                    </tr>
-                                    
-                                    <tr> 
-                                        <th scope="row"><label><?php _e( 'Yahoo Site Verification ID', 'catcheverest' ); ?></label></th>
-                                        <td><input type="text" size="45" name="catcheverest_options[yahoo_verification]" value="<?php echo esc_attr( $options[ 'yahoo_verification'] ); ?>" /> <?php _e('Enter your Yahoo ID number only', 'catcheverest'); ?>
-                                        </td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <th scope="row"><label><?php _e( 'Bing Site Verification ID', 'catcheverest' ); ?></label></th>
-                                        <td><input type="text" size="45" name="catcheverest_options[bing_verification]" value="<?php echo esc_attr( $options[ 'bing_verification' ] ); ?>" /> <?php _e('Enter your Bing ID number only', 'catcheverest'); ?>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catcheverest' ); ?>" /></p> 
-                        </div><!-- .option-content -->
-                    </div><!-- .option-container --> 
-                
+                   
                     <div class="option-container">
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Header and Footer Codes', 'catcheverest' ); ?></a></h3>
                         <div class="option-content inside">

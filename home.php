@@ -9,7 +9,7 @@
 
 get_header(); 
 
-	global $post, $page_id, $catcheverest_options_settings;
+	global $post, $wp_query, $catcheverest_options_settings;
 
 	// Getting data from Theme Options
 	$options = $catcheverest_options_settings;
@@ -18,6 +18,9 @@ get_header();
 	// Front page displays in Reading Settings
 	$page_on_front = get_option('page_on_front') ;
 	$page_for_posts = get_option('page_for_posts');
+	
+	// Get Page ID outside Loop
+	$page_id = $wp_query->get_queried_object_id();	
 
 if ( !empty( $enable_post ) || ( !empty( $page_id ) && $page_id == $page_for_posts ) ) { 
 ?>

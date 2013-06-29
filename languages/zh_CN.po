@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Everest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-14 01:46+0545\n"
-"PO-Revision-Date: 2013-06-14 01:46+0545\n"
+"POT-Creation-Date: 2013-06-29 20:14+0545\n"
+"PO-Revision-Date: 2013-06-29 20:14+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: \n"
 "Language: zh-cn\n"
@@ -223,7 +223,7 @@ msgstr "关于 %s"
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "查看 %s 的所有文章 <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../functions.php:91 ../inc/catcheverest-functions.php:434
+#: ../functions.php:91 ../inc/catcheverest-functions.php:441
 msgid "Primary Menu"
 msgstr "主菜单"
 
@@ -313,137 +313,137 @@ msgstr "%s 的搜索结果："
 msgid "Search"
 msgstr "搜索"
 
-#: ../inc/catcheverest-functions.php:168
+#: ../inc/catcheverest-functions.php:175
 #, php-format
 msgid "Page %s"
 msgstr "第 %s 页"
 
-#: ../inc/catcheverest-functions.php:435
+#: ../inc/catcheverest-functions.php:442
 msgid "Skip to content"
 msgstr "跳到内容部分"
 
-#: ../inc/catcheverest-functions.php:971
+#: ../inc/catcheverest-functions.php:978
 msgid "Copyright"
 msgstr "Copyright"
 
-#: ../inc/catcheverest-functions.php:971
+#: ../inc/catcheverest-functions.php:978
 msgid "All Rights Reserved"
 msgstr "All Rights Reserved"
 
-#: ../inc/catcheverest-functions.php:971
+#: ../inc/catcheverest-functions.php:978
 msgid "Powered by"
 msgstr "Powered by"
 
-#: ../inc/catcheverest-functions.php:971
+#: ../inc/catcheverest-functions.php:978
 msgid "Theme"
 msgstr "Theme"
 
-#: ../inc/catcheverest-functions.php:1066
+#: ../inc/catcheverest-functions.php:1073
 #, php-format
 msgid "%s on Facebook"
 msgstr "%s on Facebook"
 
-#: ../inc/catcheverest-functions.php:1071
+#: ../inc/catcheverest-functions.php:1078
 #, php-format
 msgid "%s on Twitter"
 msgstr "%s on Twitter"
 
-#: ../inc/catcheverest-functions.php:1076
+#: ../inc/catcheverest-functions.php:1083
 #, php-format
 msgid "%s on Google+"
 msgstr "%s on Google+"
 
-#: ../inc/catcheverest-functions.php:1081
+#: ../inc/catcheverest-functions.php:1088
 #, php-format
 msgid "%s on Linkedin"
 msgstr "%s on Google+"
 
-#: ../inc/catcheverest-functions.php:1086
+#: ../inc/catcheverest-functions.php:1093
 #, php-format
 msgid "%s on Pinterest"
 msgstr "%s on Pinterest"
 
-#: ../inc/catcheverest-functions.php:1091
+#: ../inc/catcheverest-functions.php:1098
 #, php-format
 msgid "%s on YouTube"
 msgstr "%s on YouTube"
 
-#: ../inc/catcheverest-functions.php:1096
+#: ../inc/catcheverest-functions.php:1103
 #, php-format
 msgid "%s on Vimeo"
 msgstr "%s on Vimeo"
 
-#: ../inc/catcheverest-functions.php:1101
+#: ../inc/catcheverest-functions.php:1108
 #, php-format
 msgid "%s on Slideshare"
 msgstr "%s on Slideshare"
 
-#: ../inc/catcheverest-functions.php:1106
+#: ../inc/catcheverest-functions.php:1113
 #, php-format
 msgid "%s on Foursquare"
 msgstr "%s on Foursquare"
 
-#: ../inc/catcheverest-functions.php:1111
+#: ../inc/catcheverest-functions.php:1118
 #, php-format
 msgid "%s on Flickr"
 msgstr "%s on Flickr"
 
-#: ../inc/catcheverest-functions.php:1116
+#: ../inc/catcheverest-functions.php:1123
 #, php-format
 msgid "%s on Tumblr"
 msgstr "%s on Tumblr"
 
-#: ../inc/catcheverest-functions.php:1121
+#: ../inc/catcheverest-functions.php:1128
 #, php-format
 msgid "%s on deviantART"
 msgstr "%s on deviantART"
 
-#: ../inc/catcheverest-functions.php:1126
+#: ../inc/catcheverest-functions.php:1133
 #, php-format
 msgid "%s on Dribbble"
 msgstr "%s on Dribbble"
 
-#: ../inc/catcheverest-functions.php:1131
+#: ../inc/catcheverest-functions.php:1138
 #, php-format
 msgid "%s on MySpace"
 msgstr "%s on MySpace"
 
-#: ../inc/catcheverest-functions.php:1136
+#: ../inc/catcheverest-functions.php:1143
 #, php-format
 msgid "%s on WordPress"
 msgstr "%s on WordPress"
 
-#: ../inc/catcheverest-functions.php:1141
+#: ../inc/catcheverest-functions.php:1148
 #, php-format
 msgid "%s on RSS"
 msgstr "%s on RSS"
 
-#: ../inc/catcheverest-functions.php:1146
+#: ../inc/catcheverest-functions.php:1153
 #, php-format
 msgid "%s on Delicious"
 msgstr "%s on Delicious"
 
-#: ../inc/catcheverest-functions.php:1151
+#: ../inc/catcheverest-functions.php:1158
 #, php-format
 msgid "%s on Last.fm"
 msgstr "%s on Last.fm"
 
-#: ../inc/catcheverest-functions.php:1156
+#: ../inc/catcheverest-functions.php:1163
 #, php-format
 msgid "%s on Instagram"
 msgstr "%s on Instagram"
 
-#: ../inc/catcheverest-functions.php:1161
+#: ../inc/catcheverest-functions.php:1168
 #, php-format
 msgid "%s on GitHub"
 msgstr "%s on GitHub"
 
-#: ../inc/catcheverest-functions.php:1256
+#: ../inc/catcheverest-functions.php:1263
 msgid "ID"
 msgstr "ID"
 
-#: ../inc/catcheverest-functions.php:1283
-#: ../inc/catcheverest-functions.php:1297
+#: ../inc/catcheverest-functions.php:1290
+#: ../inc/catcheverest-functions.php:1304
 msgid "Menu"
 msgstr "菜單"
 
@@ -548,7 +548,7 @@ msgstr ""
 
 #: ../inc/template-tags.php:185
 #, php-format
-msgid "<span class=\"in-category\">Posted in %1$s<span>"
+msgid "<span class=\"in-category\">Posted in %1$s</span>"
 msgstr "<span class=\"in-category\">发表在 %1$s<span>"
 
 #: ../inc/template-tags.php:227
@@ -761,8 +761,7 @@ msgstr "选上以禁用"
 #: ../inc/panel/theme-options.php:404 ../inc/panel/theme-options.php:446
 #: ../inc/panel/theme-options.php:519 ../inc/panel/theme-options.php:562
 #: ../inc/panel/theme-options.php:630 ../inc/panel/theme-options.php:656
-#: ../inc/panel/theme-options.php:770 ../inc/panel/theme-options.php:801
-#: ../inc/panel/theme-options.php:832
+#: ../inc/panel/theme-options.php:770 ../inc/panel/theme-options.php:805
 msgid "Save"
 msgstr "Save"
 
@@ -1225,7 +1224,7 @@ msgstr "Dribbble"
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../inc/panel/theme-options.php:739 ../inc/panel/theme-options.php:1216
+#: ../inc/panel/theme-options.php:739 ../inc/panel/theme-options.php:1189
 msgid "WordPress"
 msgstr "WordPress"
 
@@ -1249,43 +1248,15 @@ msgstr "Instagram"
 msgid "GitHub"
 msgstr "GitHub"
 
-#: ../inc/panel/theme-options.php:778
-msgid "Site Verification"
-msgstr "站点验证"
-
-#: ../inc/panel/theme-options.php:783
-msgid "Google Site Verification ID"
-msgstr "Google Site Verification ID"
-
-#: ../inc/panel/theme-options.php:784
-msgid "Enter your Google ID number only"
-msgstr "Enter your Google ID number only"
-
-#: ../inc/panel/theme-options.php:789
-msgid "Yahoo Site Verification ID"
-msgstr "Yahoo Site Verification ID"
-
-#: ../inc/panel/theme-options.php:790
-msgid "Enter your Yahoo ID number only"
-msgstr "Enter your Yahoo ID number only"
-
-#: ../inc/panel/theme-options.php:795
-msgid "Bing Site Verification ID"
-msgstr "Bing Site Verification ID"
-
-#: ../inc/panel/theme-options.php:796
-msgid "Enter your Bing ID number only"
-msgstr "Enter your Bing ID number only"
-
-#: ../inc/panel/theme-options.php:806
+#: ../inc/panel/theme-options.php:779
 msgid "Header and Footer Codes"
 msgstr "页头页尾代码"
 
-#: ../inc/panel/theme-options.php:811
+#: ../inc/panel/theme-options.php:784
 msgid "Code to display on Header"
 msgstr "页头代码"
 
-#: ../inc/panel/theme-options.php:817
+#: ../inc/panel/theme-options.php:790
 msgid ""
 "Note: Note: Here you can put scripts from Google, Facebook, Twitter, Add "
 "This etc. which will load on Header"
@@ -1293,11 +1264,11 @@ msgstr ""
 "Note: Note: Here you can put scripts from Google, Facebook, Twitter, Add "
 "This etc. which will load on Header"
 
-#: ../inc/panel/theme-options.php:820
+#: ../inc/panel/theme-options.php:793
 msgid "Code to display on Footer"
 msgstr "页尾代码"
 
-#: ../inc/panel/theme-options.php:827
+#: ../inc/panel/theme-options.php:800
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Twitter, Add This etc. "
 "which will load on footer"
@@ -1305,10 +1276,31 @@ msgstr ""
 "Note: Here you can put scripts from Google, Facebook, Twitter, Add This etc. "
 "which will load on footer"
 
-#: ../inc/panel/theme-options.php:1195
+#: ../inc/panel/theme-options.php:1168
 msgid "Y"
 msgstr "Y"
 
-#: ../inc/panel/theme-options.php:1226
+#: ../inc/panel/theme-options.php:1199
 msgid "Catch Everest"
 msgstr "Catch Everest"
+
+#~ msgid "Site Verification"
+#~ msgstr "站点验证"
+
+#~ msgid "Google Site Verification ID"
+#~ msgstr "Google Site Verification ID"
+
+#~ msgid "Enter your Google ID number only"
+#~ msgstr "Enter your Google ID number only"
+
+#~ msgid "Yahoo Site Verification ID"
+#~ msgstr "Yahoo Site Verification ID"
+
+#~ msgid "Enter your Yahoo ID number only"
+#~ msgstr "Enter your Yahoo ID number only"
+
+#~ msgid "Bing Site Verification ID"
+#~ msgstr "Bing Site Verification ID"
+
+#~ msgid "Enter your Bing ID number only"
+#~ msgstr "Enter your Bing ID number only"

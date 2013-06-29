@@ -117,3 +117,10 @@ version 1.1.1
 
 version 1.1.2
 * Disable Web Clip Icon and Favcion by default
+
+version 1.1.3
+* Added CSS3 compatible JS for IE8
+* Fixed homepage template to display the blog setting
+* Fixed the slider script js_value not defined if enable slide only on homepage
+* Fixed edit post path in Theme Options panel
+* Removed Webmaster Tools as the new guideline of WordPress.org. Now, use plugin for this. 

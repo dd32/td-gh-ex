@@ -182,7 +182,7 @@ function catcheverest_footer_meta() {
 	if ( $tag_list ) {
 		$utility_text = __( '<span class="in-category">Posted in %1$s</span><span class="sep"> | </span><span class="in-tag">Tagged %2$s</span>', 'catcheverest' );
 	} elseif ( $categories_list ) {
-		$utility_text = __( '<span class="in-category">Posted in %1$s<span>', 'catcheverest' );
+		$utility_text = __( '<span class="in-category">Posted in %1$s</span>', 'catcheverest' );
 	} 
 	
 	printf(
