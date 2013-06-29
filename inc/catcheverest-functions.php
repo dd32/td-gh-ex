@@ -204,7 +204,8 @@ function catcheverest_continue_reading() {
    	$options = $catcheverest_options_settings;
     
 	$more_tag_text = $options[ 'more_tag_text' ];
-	return ' <a class="more-link" href="'. esc_url( get_permalink() ) . '">' .  esc_attr__( $more_tag_text, 'catcheverest' ) . '</a>';
+	
+	return ' <a class="more-link" href="'. esc_url( get_permalink() ) . '">' .  sprintf( __( '%s', 'catcheverest' ) , $more_tag_text ) . '</a>';
 }
 
 /**
@@ -665,6 +666,8 @@ function catcheverest_homepage_headline() {
 	// Getting data from Theme Options
 	$disable_headline = $options[ 'disable_homepage_headline' ];
 	$disable_subheadline = $options[ 'disable_homepage_subheadline' ];
+	$homepage_headline = $options[ 'homepage_headline' ];
+	$homepage_subheadline = $options[ 'homepage_subheadline' ];
 	
 	// Front page displays in Reading Settings
 	$page_on_front = get_option('page_on_front') ;
@@ -683,10 +686,10 @@ function catcheverest_homepage_headline() {
 			$catcheverest_homepage_headline = '<div id="homepage-message" class="container"><p>';
 			
 			if ( $disable_headline == "0" ) {
-				$catcheverest_homepage_headline .= __( $options[ 'homepage_headline' ], 'catcheverest' );
+				$catcheverest_homepage_headline .= sprintf( __( '%s', 'catcheverest' ) , $homepage_headline );
 			}
 			if ( $disable_subheadline == "0" ) {
-				$catcheverest_homepage_headline .= '<span>' . __( $options[ 'homepage_subheadline' ], 'catcheverest' ) . '</span>';
+				$catcheverest_homepage_headline .= '<span>' . sprintf( __( '%s', 'catcheverest' ) , $homepage_subheadline ) . '</span>';
 			}			
 			
 			$catcheverest_homepage_headline .= '</p></div>';  
@@ -803,7 +806,7 @@ function catcheverest_homepage_featured_content() {
 			$catcheverest_homepage_featured_content = '<section id="featured-post">';
 			
 			if ( !empty( $headline ) ) {
-				$catcheverest_homepage_featured_content .= '<h1 id="feature-heading" class="entry-title">' . __( $headline , 'catcheverest' ) .' </h1>';
+				$catcheverest_homepage_featured_content .= '<h1 id="feature-heading" class="entry-title">' . sprintf( __( '%s', 'catcheverest' ) , $headline ) . ' </h1>';
 			}
 			
 			$catcheverest_homepage_featured_content .= '<div class="featued-content-wrap">';
@@ -834,7 +837,7 @@ function catcheverest_homepage_featured_content() {
 					
 					//Checking Title
 					if ( !empty ( $options[ 'homepage_featured_title' ][ $i ] ) ) {
-						$title = __( $options[ 'homepage_featured_title' ][ $i ], 'catcheverest' );
+						$title = sprintf( __( '%s', 'catcheverest' ) , $options[ 'homepage_featured_title' ][ $i ] );
 					} else {
 						$title = '';
 					}			
@@ -866,7 +869,7 @@ function catcheverest_homepage_featured_content() {
 									if ( !empty ( $options[ 'homepage_featured_content' ][ $i ] ) ) { 
 										$catcheverest_homepage_featured_content .= '
 										<div class="entry-content">
-											'. __( $options[ 'homepage_featured_content' ][ $i ], 'catcheverest' ) .'
+											' . sprintf( __( '%s', 'catcheverest' ) , $options[ 'homepage_featured_content' ][ $i ] ) . '
 										</div>';
 									}
 								$catcheverest_homepage_featured_content .= '

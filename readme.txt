@@ -124,3 +124,6 @@ version 1.1.3
 * Fixed the slider script js_value not defined if enable slide only on homepage
 * Fixed edit post path in Theme Options panel
 * Removed Webmaster Tools as the new guideline of WordPress.org. Now, use plugin for this. 
+
+version 1.1.4
+* Fixed translation function for search, homepage headline and homepage featured content
