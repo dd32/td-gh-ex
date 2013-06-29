@@ -148,6 +148,14 @@ function catchbox_theme_options_init() {
 	);
 	
 	add_settings_field(
+		'site_title_above', // Unique identifier for the settings section
+		__( 'Move Site Title and Tagline?', 'catchbox' ), // Setting field label
+		'catchbox_settings_field_site_title_above', // Function that renders the settings field
+		'theme_options', // Menu slug, used to uniquely identify the page; see catchbox_theme_options_add_page()
+		'general' // Settings section. Same as the first argument in the add_settings_section() above
+	);	
+	
+	add_settings_field(
 		'disable_header_search', // Unique identifier for the settings section
 		__( 'Disable Search in Header?', 'catchbox' ), // Setting field label
 		'catchbox_settings_field_disable_header_search', // Function that renders the settings field
@@ -418,6 +426,7 @@ function catchbox_get_default_theme_options() {
 		'link_color'			=> catchbox_get_default_link_color( 'light' ),
 		'theme_layout'			=> 'content-sidebar',
 		'content_layout'		=> 'excerpt',
+		'site_title_above'		=> '0',
 		'disable_header_search' => '0',
 		'enable_menus' 			=> '0'
 	);
@@ -534,7 +543,22 @@ function catchbox_settings_field_feed_redirect() {
 
 
 /**
- * Renders the feed redirect setting field.
+ * Move Site Title and Tagline above Header Image Checkbox
+ *
+ * @since Catch Box 2.5
+ */
+function catchbox_settings_field_site_title_above() {
+	$options = catchbox_get_theme_options();
+	if( empty( $options['site_title_above'] ) )
+		$options = catchbox_get_default_theme_options();
+	?>
+    <input type="checkbox" id="disable-header-search" name="catchbox_theme_options[site_title_above]" value="1" <?php checked( '1', $options['site_title_above'] ); ?> /> <?php _e( 'Check to move above the Header/Logo Image', 'catchbox' ); ?>
+	<?php
+}
+
+
+/**
+ * Disable Header Search Checkbox
  *
  * @since Catch Box 1.3.1
  */
@@ -1177,7 +1201,12 @@ function catchbox_theme_options_validate( $input ) {
 	// feed url
 	if ( isset( $input['feed_url'] ) )	
 		$output['feed_url'] = esc_url_raw($input['feed_url']);
-	
+
+	// Move Site Title
+	if ( isset( $input['site_title_above'] ) )
+		// Our checkbox value is either 0 or 1 
+		$output[ 'site_title_above' ] = $input[ 'site_title_above' ];
+		
 	// Disable Header Search
 	if ( isset( $input['disable_header_search'] ) )
 		// Our checkbox value is either 0 or 1 

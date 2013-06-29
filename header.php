@@ -39,68 +39,85 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed">
-	<header id="branding" role="banner">
-			<hgroup>
-               	<?php
-				// Check to see if the header image has been removed
-				$header_image = get_header_image();
-				if ( ! empty( $header_image ) ) :
-				?>
-				<div id="site-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-					<img src="<?php header_image(); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
-				</a></div>
-				<?php endif; // end check for removed header image ?>
-                <div id="site-details">            
-					<h1 id="site-title"><span><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>
-					<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
-                </div>
-			</hgroup>
-			<?php 
-			// Check to see if header search has been disable
-			$options = catchbox_get_theme_options();
-			if ( $options ['disable_header_search'] == 0 ) :
-				get_search_form();
-            endif;  ?>
 
-			<nav id="access" role="navigation">
-				<h3 class="assistive-text"><?php _e( 'Primary menu', 'catchbox' ); ?></h3>
-				<?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?>
-				<div class="skip-link"><a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to primary content', 'catchbox' ); ?>"><?php _e( 'Skip to primary content', 'catchbox' ); ?></a></div>
-				<div class="skip-link"><a class="assistive-text" href="#secondary" title="<?php esc_attr_e( 'Skip to secondary content', 'catchbox' ); ?>"><?php _e( 'Skip to secondary content', 'catchbox' ); ?></a></div>
-				<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu. The menu assiged to the primary position is the one used. If none is assigned, the menu with the lowest ID is used. */ ?>
-                <?php if ( has_nav_menu( 'primary', 'catchbox' ) ) { 
-					wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'menu-header-container' ) );
-				} else { ?>
-                	<div class="menu-header-container">
-						<?php wp_page_menu( array( 'menu_class'  => 'menu' ) ); ?>
-                    </div>
-				<?php
-                } ?>   
-			</nav><!-- #access -->
+<?php 
+/** 
+ * catchbox_before hook
+ */
+do_action( 'catchbox_before' ); ?>
+
+<div id="page" class="hfeed">
+
+	<?php 
+    /** 
+     * catchbox_before_header hook
+     */
+    do_action( 'catchbox_before_header' ); 
+    ?> 
+    
+	<header id="branding" role="banner">
+
+    	<?php 
+		/** 
+		 * catchbox_before_headercontent hook
+		 */
+		do_action( 'catchbox_before_headercontent' ); ?>
             
-			<?php if ( has_nav_menu( 'secondary', 'catchbox' ) ) { 
-				// Check is seconday menu is enable or not
-				$options = catchbox_get_theme_options();
-				if ( !empty ($options ['enable_menus'] ) ) :
-					$menuclass = "mobile-enable";
-				else :
-					$menuclass = "mobile-disable";
-				endif;
-			?>
-                <nav id="access-secondary" class="<?php echo $menuclass; ?>" role="navigation">
-                	<h3 class="assistive-text"><?php _e( 'Secondary menu', 'catchbox' ); ?></h3>
-						<?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?>
-						<div class="skip-link"><a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to primary content', 'catchbox' ); ?>"><?php _e( 'Skip to primary content', 'catchbox' ); ?></a></div>
-						<div class="skip-link"><a class="assistive-text" href="#secondary" title="<?php esc_attr_e( 'Skip to secondary content', 'catchbox' ); ?>"><?php _e( 'Skip to secondary content', 'catchbox' ); ?></a></div>
-                    <?php wp_nav_menu( array( 'theme_location'  => 'secondary', 'container_class' => 'menu-secondary-container' ) );  ?>
-                </nav>
-            <?php } ?>
+    	<div id="header-content" class="clearfix">
+        
+			<?php 
+            /** 
+             * catchbox_headercontent hook
+             *
+             * @hooked catchbox_headerdetails - 10
+			 * @hooked catchbox_header_search - 15
+             */
+			do_action( 'catchbox_headercontent' ); ?>
+            
+		</div><!-- #header-content -->
+        
+    	<?php 
+		/** 
+		 * catchbox_after_headercontent hook
+		 *
+         * @hooked catchbox_header_menu - 10
+		 */
+		do_action( 'catchbox_after_headercontent' ); ?>           
+                
 	</header><!-- #branding -->
     
+	<?php 
+    /** 
+     * catchbox_after_header hook
+     */
+    do_action( 'catchbox_after_header' ); 
+    ?>    
+
+	<?php 
+    /** 
+     * catchbox_before_main hook
+     */
+    do_action( 'catchbox_before_main' ); 
+    ?>
+        
 	<div id="main" class="clearfix">
 
+		<?php 
+        /** 
+		 * catchbox_before_primary hook
+		 *
+		 */
+        do_action( 'catchbox_before_primary' ); ?>
+        
 		<div id="primary">
+        
+			<?php 
+            /** 
+             * catchbox_before_content hook
+             *
+             */
+            do_action( 'catchbox_before_content' ); ?>
+        
 			<div id="content" role="main">
 				<?php 
                 /** 

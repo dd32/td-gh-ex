@@ -274,3 +274,31 @@ Version 2.4
 * Added Serbian translation sv_SE.po and sv_SE.mo
 * Fixed RTL css for mobile devices
 
+Version 2.5
+* Added Jetpack Infinite Scroll support
+* Added option to move the Site Title and Tagline above Header Image
+* Added Action Hooks
+++ catchbox_before
+++ catchbox_before_header
+++ catchbox_before_headercontent
+++ catchbox_headercontent
+++ catchbox_after_headercontent
+++ catchbox_after_header
+++ catchbox_before_main
+++ catchbox_before_primary
+++ catchbox_before_content
+++ catchbox_above_secondary
+++ catchbox_below_secondary
+++ catchbox_after_content
+++ catchbox_after_primary
+++ catchbox_after_main
+++ catchbox_before_footer_sidebar
+++ catchbox_after_footer_sidebar
+++ catchbox_before_footer_menu
+++ catchbox_after_footer_menu
+++ catchbox_site_generator
+++ catchbox_after
+* Changed hgroup wrap with div id header-content wrap
+* Depreciated Action Hooks
+-- catchbox_startgenerator_open
+-- catchbox_startgenerator_close action hook 

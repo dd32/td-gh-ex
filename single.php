@@ -23,8 +23,24 @@ get_header(); ?>
 
 				<?php endwhile; // end of the loop. ?>
 
-			</div><!-- #content -->
-		</div><!-- #primary -->
+		</div><!-- #content -->
         
+		<?php 
+        /** 
+         * catchbox_after_content hook
+         *
+         */
+        do_action( 'catchbox_after_content' ); ?>
+            
+	</div><!-- #primary -->
+    
+	<?php 
+    /** 
+     * catchbox_after_primary hook
+     *
+     */
+    do_action( 'catchbox_after_primary' ); ?>    
+
 <?php get_sidebar(); ?>
+
 <?php get_footer(); ?>

@@ -53,3 +53,9 @@ body {
 	border-bottom: 1px solid #1B4266;
 	margin-bottom: 0;
 }
+#content #infinite-handle span {
+	background-color: #255a8c;
+}
+#content #infinite-handle span:hover {
+	background-color: #1b4266;
+}

@@ -111,6 +111,18 @@ function catchbox_setup() {
 		'footer'	=> __( 'Footer Menu', 'catchbox' )
 	) );
 
+
+	/**
+     * This feature enables Jetpack plugin Infinite Scroll
+     */		
+    add_theme_support( 'infinite-scroll', array(
+		'type'           => 'click',										
+        'container'      => 'content',
+        'footer_widgets' => array( 'sidebar-2', 'sidebar-3', 'sidebar-4' ),
+        'footer'         => 'page',
+    ) );
+	
+	
 	// Add support for custom backgrounds	
 	// WordPress 3.4+
 	if ( function_exists( 'get_custom_header') ) {
@@ -245,7 +257,7 @@ function catchbox_header_style() {
 	?>
 		#site-title a,
 		#site-description {
-			color: #<?php echo get_header_textcolor(); ?> !important;
+			color: #<?php echo get_header_textcolor(); ?>;
 		}
 	<?php endif; ?>
 	</style>
@@ -497,30 +509,42 @@ endif; // catchbox_widgets_init
 add_action( 'widgets_init', 'catchbox_widgets_init' );
 
 
-if ( ! function_exists( 'catchbox_content_nav' ) ) :
+if ( ! function_exists( 'catchbox_content_nav' ) ) : 
 /**
  * Display navigation to next/previous pages when applicable
  */
 function catchbox_content_nav( $nav_id ) {
 	global $wp_query;
-		
-	if ( $wp_query->max_num_pages > 1 ) { ?>
-		<nav id="<?php echo $nav_id; ?>">
-        	<h3 class="assistive-text"><?php _e( 'Post navigation', 'catchbox' ); ?></h3>
-			<?php if ( function_exists('wp_pagenavi' ) )  { 
-                wp_pagenavi();
-            }
-            elseif ( function_exists('wp_page_numbers' ) ) { 
-                wp_page_numbers();
-            }
-            else { ?>	
-            	<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'catchbox' ) ); ?></div>
-                <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'catchbox' ) ); ?></div>
-            <?php 
-            } ?>
-		</nav><!-- #nav -->
-	<?php 
+	
+	/**
+	 * Check Jetpack Infinite Scroll
+	 * if it's active then disable pagination
+	 */
+	if ( class_exists( 'Jetpack', false ) ) {
+		$jetpack_active_modules = get_option('jetpack_active_modules');
+		if ( $jetpack_active_modules && in_array( 'infinite-scroll', $jetpack_active_modules ) ) {
+			return false;
+		}
 	}
+
+	if ( $wp_query->max_num_pages > 1 ) {  ?>  
+		<nav id="<?php echo $nav_id; ?>">
+			<h3 class="assistive-text"><?php _e( 'Post navigation', 'catchbox' ); ?></h3>
+			<?php if ( function_exists('wp_pagenavi' ) )  { 
+				wp_pagenavi();
+			}
+			elseif ( function_exists('wp_page_numbers' ) ) { 
+				wp_page_numbers();
+			}
+			else { ?>	
+				<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'catchbox' ) ); ?></div>
+				<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'catchbox' ) ); ?></div>
+			<?php 
+			} ?>
+		</nav><!-- #nav -->
+		<?php 
+	}
+	
 }
 endif; // catchbox_content_nav
 
@@ -1127,8 +1151,8 @@ function catchbox_socialprofile() {
 }
 endif; // catchbox_socialprofile	
 
-// Load Social Profile catchbox_startgenerator_open hook 
-add_action('catchbox_startgenerator_open', 'catchbox_socialprofile');
+// Load Social Profile catchbox_site_generator hook 
+add_action('catchbox_site_generator', 'catchbox_socialprofile', 10 );
 
 
 if ( ! function_exists( 'catchbox_slider_display' ) ) :
@@ -1153,4 +1177,190 @@ function catchbox_slider_display() {
 endif; //catchbox_slider_display
 
 // Load slider in  catchbox_content hook 
-add_action('catchbox_content', 'catchbox_slider_display');
+add_action('catchbox_content', 'catchbox_slider_display', 10);
+
+
+if ( ! function_exists( 'catchbox_header_image' ) ) :
+/**
+ * Template for Header Image
+ *
+ * To override this in a child theme
+ * simply create your own catchbox_header_image(), and that function will be used instead.
+ *
+ * @since Catch Box 2.5
+ */
+function catchbox_header_image() {
+	
+	// Check to see if the header image has been removed
+	global $_wp_default_headers;
+	$header_image = get_header_image();
+	if ( ! empty( $header_image ) ) : ?>
+    
+    	<div id="site-logo">
+        	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+                <img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+            </a>
+      	</div>
+        
+	<?php endif; // end check for removed header image 	
+}
+endif;
+
+
+if ( ! function_exists( 'catchbox_header_details' ) ) :
+/**
+ * Template for Header Details
+ *
+ * @since Catch Box 2.5
+ */
+function catchbox_header_details() { 
+
+	// Check to see if the header image has been removed
+	global $_wp_default_headers;
+	$header_image = get_header_image();
+	if ( ! empty( $header_image ) ) : 
+     	echo '<div id="hgroup" class="site-details with-logo">';
+	else :
+    	echo '<div id="hgroup" class="site-details">';     
+	endif; // end check for removed header image  ?>
+ 
+   		<h1 id="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+       	<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
+   	</div><!-- #hgroup -->   
+
+<?php
+}
+endif;
+
+
+if ( ! function_exists( 'catchbox_headerdetails' ) ) :
+/**
+ * Header Details including Site Logo, Title and Description
+ *
+ * @since Catch Box 2.5
+ */
+function catchbox_headerdetails() {
+	
+	// Getting data from Theme Options
+	$options = catchbox_get_theme_options();
+	$sitedetails = $options['site_title_above'];
+	
+	echo '<div class="logo-wrap clearfix">';
+	
+	if ( $sitedetails == '0' ) {
+		echo catchbox_header_image();
+		echo catchbox_header_details();
+	} else {
+		echo catchbox_header_details();
+		echo catchbox_header_image();
+	}
+	
+	echo '</div><!-- .logo-wrap -->';
+
+} 
+endif; //catchbox_headerdetails
+
+// Loads Header Details in catchbox_headercontent hook
+add_action( 'catchbox_headercontent', 'catchbox_headerdetails', 10 ); 
+
+
+if ( ! function_exists( 'catchbox_header_search' ) ) :
+/**
+ * Header Search Box
+ *
+ * @since Catch Box 2.5
+ */
+function catchbox_header_search() { 
+
+	$options = catchbox_get_theme_options();
+    
+	if ( $options ['disable_header_search'] == 0 ) :
+    	get_search_form();
+    endif;  
+
+}        
+endif; //catchbox_header_search
+
+// Loads Header Search in catchbox_headercontent hook
+add_action( 'catchbox_headercontent', 'catchbox_header_search', 15 ); 
+
+
+if ( ! function_exists( 'catchbox_header_menu' ) ) :
+/**
+ * Header Menu
+ *
+ * @since Catch Box 2.5
+ */
+function catchbox_header_menu() { ?>
+	<nav id="access" role="navigation">
+		<h3 class="assistive-text"><?php _e( 'Primary menu', 'catchbox' ); ?></h3>
+		<?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?>
+		<div class="skip-link"><a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to primary content', 'catchbox' ); ?>"><?php _e( 'Skip to primary content', 'catchbox' ); ?></a></div>
+		<div class="skip-link"><a class="assistive-text" href="#secondary" title="<?php esc_attr_e( 'Skip to secondary content', 'catchbox' ); ?>"><?php _e( 'Skip to secondary content', 'catchbox' ); ?></a></div>
+		<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu. The menu assiged to the primary position is the one used. If none is assigned, the menu with the lowest ID is used. */ ?>
+	
+		<?php
+			if ( has_nav_menu( 'primary', 'catchbox' ) ) { 
+				$args = array(
+					'theme_location'    => 'primary',
+					'container_class' 	=> 'menu-header-container', 
+					'items_wrap'        => '<ul class="menu">%3$s</ul>' 
+				);
+				wp_nav_menu( $args );
+			}
+			else {
+				echo '<div class="menu-header-container">';
+					wp_page_menu( array( 'menu_class'  => 'menu' ) );
+				echo '</div>';
+			} ?> 		
+			   
+		</nav><!-- #access -->
+		
+	<?php if ( has_nav_menu( 'secondary', 'catchbox' ) ) {
+		// Check is footer menu is enable or not
+		$options = get_option( 'catchbox_options' );
+		if ( !empty ($options ['enable_menus'] ) ) :
+			$menuclass = "mobile-enable";
+		else :
+			$menuclass = "mobile-disable";
+		endif;
+		?>
+		<nav id="access-secondary" role="navigation">
+			<h3 class="assistive-text"><?php _e( 'Secondary menu', 'catchbox' ); ?></h3>
+				<?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?>
+				<div class="skip-link"><a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to primary content', 'catchbox' ); ?>"><?php _e( 'Skip to primary content', 'catchbox' ); ?></a></div>
+				<div class="skip-link"><a class="assistive-text" href="#secondary" title="<?php esc_attr_e( 'Skip to secondary content', 'catchbox' ); ?>"><?php _e( 'Skip to secondary content', 'catchbox' ); ?></a></div>
+			<?php wp_nav_menu( array( 'theme_location'  => 'secondary', 'container_class' => 'menu-secondary-container' ) );  ?>
+		</nav>
+	<?php }
+} 
+endif; //catchbox_header_menu
+
+// Load Header Menu in  catchbox_after_headercontent hook 
+add_action( 'catchbox_after_headercontent', 'catchbox_header_menu', 10 ); 
+
+
+if ( ! function_exists( 'catchbox_footer_content' ) ) :
+/**
+ * shows footer content
+ *
+ * @since Catch Box 2.5
+ */
+function catchbox_footer_content() { ?>
+	<div class="copyright">
+		<?php esc_attr_e('Copyright &copy;', 'catchbox'); ?> <?php _e(date('Y')); ?>
+        <a href="<?php echo home_url('/') ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>">
+            <?php bloginfo('name'); ?>
+        </a>
+        <?php esc_attr_e('. All Rights Reserved.', 'catchbox'); ?>
+    </div>
+    <div class="powered">
+        <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'catchbox' ) ); ?>" title="<?php esc_attr_e( 'Powered by WordPress', 'catchbox' ); ?>" rel="generator"><?php printf( __( 'Powered by %s', 'catchbox' ), 'WordPress' ); ?></a>
+        <span class="sep"> | </span>
+        <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catchbox' ) ); ?>" title="<?php esc_attr_e( 'Theme Catch Box by Catch Themes', 'catchbox' ); ?>" rel="designer"><?php printf( __( 'Theme: %s', 'catchbox' ), 'Catch Box' ); ?></a>
+    </div>
+<?php }
+endif; //catchbox_footer_content
+
+// Load footer content in  catchbox_site_generator hook 
+add_action( 'catchbox_site_generator', 'catchbox_footer_content', 15 );

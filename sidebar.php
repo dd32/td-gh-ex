@@ -6,6 +6,13 @@
  * @subpackage Catch_Box
  * @since Catch Box 1.0
  */
+?>
+
+<?php 
+/** 
+ * catchbox_above_secondary hook
+ */
+do_action( 'catchbox_above_secondary' );
 
 $options = catchbox_get_theme_options();
 $layout = $options['theme_layout'];
@@ -39,4 +46,9 @@ else :
 
 			<?php endif; // end sidebar widget area ?>
 		</div><!-- #secondary .widget-area -->
-<?php endif; ?>
+<?php endif;
+
+/** 
+ * catchbox_below_secondary hook
+ */
+do_action( 'catchbox_below_secondary' ); ?>

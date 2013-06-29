@@ -26,6 +26,21 @@ get_header(); ?>
 			</article><!-- #post-0 -->
 
 		</div><!-- #content -->
+        
+		<?php 
+        /** 
+         * catchbox_after_content hook
+         *
+         */
+        do_action( 'catchbox_after_content' ); ?>
+            
 	</div><!-- #primary -->
+    
+	<?php 
+    /** 
+     * catchbox_after_primary hook
+     *
+     */
+    do_action( 'catchbox_after_primary' ); ?>    
 
 <?php get_footer(); ?>
