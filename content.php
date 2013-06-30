@@ -56,27 +56,9 @@
     
     <hr />
                     
-	<?php endwhile;
-                    
-	// Checking WP Page Numbers plugin exist
-	if ( function_exists('wp_pagenavi' ) ) : 
-		wp_pagenavi();
+	<?php endwhile; ?>
 	
-	// Checking WP-PageNaviplugin exist
-	elseif ( function_exists('wp_page_numbers' ) ) : 
-		wp_page_numbers();
-		   
-	else: 
-		global $wp_query;
-		if ( $wp_query->max_num_pages > 1 ) : 
-	?>
-			<ul class="default-wp-page">
-				<li class="previous"><?php next_posts_link( __( 'Previous', 'simplecatch' ) ); ?></li>
-				<li class="next"><?php previous_posts_link( __( 'Next', 'simplecatch' ) ); ?></li>
-			</ul>
-		<?php endif;
-	endif; 
-	?>
+	<?php simplecatch_content_nav( 'nav-below' ); ?>
                  			
 <?php else : ?>
 

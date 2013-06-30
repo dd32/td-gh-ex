@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-12 15:44+0545\n"
-"PO-Revision-Date: 2013-06-12 15:44+0545\n"
+"POT-Creation-Date: 2013-06-30 11:57+0545\n"
+"PO-Revision-Date: 2013-06-30 11:57+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Catch Themes <info@catchinternet.com>\n"
 "Language: en\n"
@@ -52,17 +52,17 @@ msgid "This post is password protected. Enter the password to view comments."
 msgstr "本文受密码保护。请输入密码以查看评论"
 
 #: ../comments.php:29 ../content.php:46 ../image.php:48 ../page-blog.php:69
-#: ../functions/simplecatch_functions.php:846
+#: ../functions/simplecatch_functions.php:855
 msgid "No Comments"
 msgstr "暂无评论"
 
 #: ../comments.php:29 ../content.php:46 ../image.php:48 ../page-blog.php:69
-#: ../functions/simplecatch_functions.php:846
+#: ../functions/simplecatch_functions.php:855
 msgid "1 Comment"
 msgstr "1条评论"
 
 #: ../comments.php:29 ../content.php:46 ../image.php:48 ../page-blog.php:69
-#: ../functions/simplecatch_functions.php:846
+#: ../functions/simplecatch_functions.php:855
 msgid "% Comments"
 msgstr "% 条评论"
 
@@ -76,23 +76,15 @@ msgid "Permalink to %s"
 msgstr "固定链接到 %s"
 
 #: ../content.php:44 ../image.php:46 ../page-blog.php:67
-#: ../functions/simplecatch_functions.php:844
+#: ../functions/simplecatch_functions.php:853
 msgid "By"
 msgstr "作者"
 
-#: ../content.php:74 ../page-blog.php:97 ../search.php:39
-msgid "Previous"
-msgstr "上一页"
-
-#: ../content.php:75 ../page-blog.php:98 ../search.php:40
-msgid "Next"
-msgstr "下一页"
-
-#: ../content.php:84 ../page-blog.php:107
+#: ../content.php:66 ../page-blog.php:107
 msgid "Not found"
 msgstr "找不到"
 
-#: ../content.php:85 ../page-blog.php:108
+#: ../content.php:67 ../page-blog.php:108
 msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
 "searching will help find a related post."
@@ -106,7 +98,7 @@ msgstr "Copyright"
 msgid "All Rights Reserved."
 msgstr "All Rights Reserved."
 
-#: ../functions.php:92
+#: ../functions.php:103
 msgid "Primary Menu"
 msgstr "一级菜单"
 
@@ -118,29 +110,37 @@ msgstr "上一张图片"
 msgid "Next Image"
 msgstr "下一张图片"
 
+#: ../page-blog.php:97 ../functions/simplecatch_functions.php:1065
+msgid "Previous"
+msgstr "上一页"
+
+#: ../page-blog.php:98 ../functions/simplecatch_functions.php:1066
+msgid "Next"
+msgstr "下一页"
+
 #: ../search.php:17
 #, php-format
 msgid "Showing results for: <span class=\"img-title\">%s</span>"
 msgstr "搜索结果: <span class=\"img-title\">%s</span>"
 
-#: ../search.php:46
+#: ../search.php:33
 #, php-format
 msgid "Your search <span> \"%s\" </span> did not match any documents"
 msgstr "你搜索的 <span> \"%s\" </span> 找不到有关的文章"
 
-#: ../search.php:48
+#: ../search.php:35
 msgid "A few suggestions"
 msgstr "建议"
 
-#: ../search.php:50
+#: ../search.php:37
 msgid "Make sure all words are spelled correctly"
 msgstr "请确认所有单词拼写无误"
 
-#: ../search.php:51
+#: ../search.php:38
 msgid "Try different keywords"
 msgstr "尝试不同的关键词"
 
-#: ../search.php:52
+#: ../search.php:39
 msgid "Try more general keywords"
 msgstr "尝试更普遍的关键词"
 
@@ -154,153 +154,153 @@ msgstr "%s"
 msgid "Page %s"
 msgstr "第%s页"
 
-#: ../functions/simplecatch_functions.php:429
+#: ../functions/simplecatch_functions.php:438
 #, php-format
 msgid "%s on Facebook"
 msgstr "%s on Facebook"
 
-#: ../functions/simplecatch_functions.php:434
+#: ../functions/simplecatch_functions.php:443
 #, php-format
 msgid "%s on Twitter"
 msgstr "%s on Twitter"
 
-#: ../functions/simplecatch_functions.php:439
+#: ../functions/simplecatch_functions.php:448
 #, php-format
 msgid "%s on Google+"
 msgstr "%s on Google+"
 
-#: ../functions/simplecatch_functions.php:444
+#: ../functions/simplecatch_functions.php:453
 #, php-format
 msgid "%s on Linkedin"
 msgstr "%s on Linkedin"
 
-#: ../functions/simplecatch_functions.php:449
+#: ../functions/simplecatch_functions.php:458
 #, php-format
 msgid "%s on Pinterest"
 msgstr "%s on Pinterest"
 
-#: ../functions/simplecatch_functions.php:454
+#: ../functions/simplecatch_functions.php:463
 #, php-format
 msgid "%s on YouTube"
 msgstr "%s on YouTube"
 
-#: ../functions/simplecatch_functions.php:459
+#: ../functions/simplecatch_functions.php:468
 #, php-format
 msgid "%s on Vimeo"
 msgstr "%s on Vimeo"
 
-#: ../functions/simplecatch_functions.php:464
+#: ../functions/simplecatch_functions.php:473
 #, php-format
 msgid "%s on Slideshare"
 msgstr "%s on Slideshare"
 
-#: ../functions/simplecatch_functions.php:469
+#: ../functions/simplecatch_functions.php:478
 #, php-format
 msgid "%s on Foursquare"
 msgstr "%s on Foursquare"
 
-#: ../functions/simplecatch_functions.php:474
+#: ../functions/simplecatch_functions.php:483
 #, php-format
 msgid "%s on Flickr"
 msgstr "%s on Flickr"
 
-#: ../functions/simplecatch_functions.php:479
+#: ../functions/simplecatch_functions.php:488
 #, php-format
 msgid "%s on Tumblr"
 msgstr "%s on Tumblr"
 
-#: ../functions/simplecatch_functions.php:484
+#: ../functions/simplecatch_functions.php:493
 #, php-format
 msgid "%s on deviantART"
 msgstr "%s on deviantART"
 
-#: ../functions/simplecatch_functions.php:489
+#: ../functions/simplecatch_functions.php:498
 #, php-format
 msgid "%s on Dribbble"
 msgstr "%s on Dribbble"
 
-#: ../functions/simplecatch_functions.php:494
+#: ../functions/simplecatch_functions.php:503
 #, php-format
 msgid "%s on MySpace"
 msgstr "%s on MySpace"
 
-#: ../functions/simplecatch_functions.php:499
+#: ../functions/simplecatch_functions.php:508
 #, php-format
 msgid "%s on WordPress"
 msgstr "%s on WordPress"
 
-#: ../functions/simplecatch_functions.php:504
+#: ../functions/simplecatch_functions.php:513
 #, php-format
 msgid "%s on RSS"
 msgstr "%s on RSS"
 
-#: ../functions/simplecatch_functions.php:509
+#: ../functions/simplecatch_functions.php:518
 #, php-format
 msgid "%s on Delicious"
 msgstr "%s on Delicious"
 
-#: ../functions/simplecatch_functions.php:514
+#: ../functions/simplecatch_functions.php:523
 #, php-format
 msgid "%s on Last.fm"
 msgstr "%s on Last.fm"
 
-#: ../functions/simplecatch_functions.php:519
+#: ../functions/simplecatch_functions.php:528
 #, php-format
 msgid "%s on Instagram"
 msgstr "%s on Instagram"
 
-#: ../functions/simplecatch_functions.php:673
+#: ../functions/simplecatch_functions.php:682
 msgid "Powered By:"
 msgstr "Powered By:"
 
-#: ../functions/simplecatch_functions.php:673
+#: ../functions/simplecatch_functions.php:682
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: ../functions/simplecatch_functions.php:673
+#: ../functions/simplecatch_functions.php:682
 msgid "Powered By WordPress"
 msgstr "Powered By WordPress"
 
-#: ../functions/simplecatch_functions.php:673
-#: ../functions/panel/theme_options.php:694
+#: ../functions/simplecatch_functions.php:682
+#: ../functions/panel/theme_options.php:704
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../functions/simplecatch_functions.php:673
+#: ../functions/simplecatch_functions.php:682
 msgid "Theme:"
 msgstr "主题："
 
-#: ../functions/simplecatch_functions.php:673
+#: ../functions/simplecatch_functions.php:682
 #: ../functions/panel/theme_options.php:118
 msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
-#: ../functions/simplecatch_functions.php:673
+#: ../functions/simplecatch_functions.php:682
 msgid "Simple Catch"
 msgstr "Simple Catch"
 
-#: ../functions/simplecatch_functions.php:860
+#: ../functions/simplecatch_functions.php:869
 msgid "Categories: "
 msgstr "分类"
 
-#: ../functions/simplecatch_functions.php:928
+#: ../functions/simplecatch_functions.php:937
 msgid "Name"
 msgstr "名称"
 
-#: ../functions/simplecatch_functions.php:928
-#: ../functions/simplecatch_functions.php:929
+#: ../functions/simplecatch_functions.php:937
+#: ../functions/simplecatch_functions.php:938
 msgid "( required )"
 msgstr "( 必要的 )"
 
-#: ../functions/simplecatch_functions.php:929
+#: ../functions/simplecatch_functions.php:938
 msgid "Email"
 msgstr "Email"
 
-#: ../functions/simplecatch_functions.php:930
+#: ../functions/simplecatch_functions.php:939
 msgid "Website"
 msgstr "网址"
 
-#: ../functions/simplecatch_functions.php:961
+#: ../functions/simplecatch_functions.php:970
 msgid "ID"
 msgstr "ID"
 
@@ -413,7 +413,7 @@ msgid "Like Catch Themes on Facebook"
 msgstr "访问Catch Themes 的 Facebook"
 
 #: ../functions/panel/theme_options.php:131
-#: ../functions/panel/theme_options.php:623
+#: ../functions/panel/theme_options.php:633
 msgid "Facebook"
 msgstr "Facebook"
 
@@ -426,7 +426,7 @@ msgid "Follow Catch Themes on Twitter"
 msgstr "访问Catch Themes的Twitter"
 
 #: ../functions/panel/theme_options.php:132
-#: ../functions/panel/theme_options.php:628
+#: ../functions/panel/theme_options.php:638
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -462,457 +462,459 @@ msgstr "Logo选项"
 msgid "Header logo url:"
 msgstr "顶部logo URL"
 
-#: ../functions/panel/theme_options.php:160
-msgid "Change Logo"
-msgstr "更改logo"
-
 #: ../functions/panel/theme_options.php:163
-msgid "Upload Logo"
-msgstr "上传Logo"
-
-#: ../functions/panel/theme_options.php:170
-msgid "Preview:"
-msgstr "预览"
-
-#: ../functions/panel/theme_options.php:176
-msgid "No Header Image Found. Upload Header Image."
-msgstr "找不到顶部图片。请上传头部文件"
-
-#: ../functions/panel/theme_options.php:183
-msgid "Disable Site Title?"
-msgstr "禁用网站标题"
-
-#: ../functions/panel/theme_options.php:185
-#: ../functions/panel/theme_options.php:190
-#: ../functions/panel/theme_options.php:218
-msgid "Check to Disable."
-msgstr "禁用"
-
-#: ../functions/panel/theme_options.php:188
-msgid "Disable Site Description?"
-msgstr "禁用网站描述"
-
-#: ../functions/panel/theme_options.php:193
-msgid "Footer logo url: "
-msgstr "底部logo URL"
-
-#: ../functions/panel/theme_options.php:200
+#: ../functions/panel/theme_options.php:203
 msgid "Change Footer Logo"
 msgstr "更改底部logo"
 
-#: ../functions/panel/theme_options.php:204
-#: ../functions/panel/theme_options.php:240
-#: ../functions/panel/theme_options.php:272
+#: ../functions/panel/theme_options.php:167
+#: ../functions/panel/theme_options.php:207
+#: ../functions/panel/theme_options.php:246
+#: ../functions/panel/theme_options.php:282
 msgid "Preview: "
 msgstr "预览"
 
-#: ../functions/panel/theme_options.php:216
+#: ../functions/panel/theme_options.php:179
+msgid "Disable Header Logo?"
+msgstr "Disable Header Logo?"
+
+#: ../functions/panel/theme_options.php:181
+#: ../functions/panel/theme_options.php:188
+#: ../functions/panel/theme_options.php:193
+#: ../functions/panel/theme_options.php:221
+#: ../functions/panel/theme_options.php:260
+msgid "Check to Disable."
+msgstr "禁用"
+
+#: ../functions/panel/theme_options.php:186
+msgid "Disable Site Title?"
+msgstr "禁用网站标题"
+
+#: ../functions/panel/theme_options.php:191
+msgid "Disable Site Description?"
+msgstr "禁用网站描述"
+
+#: ../functions/panel/theme_options.php:196
+msgid "Footer logo url: "
+msgstr "底部logo URL"
+
+#: ../functions/panel/theme_options.php:219
 msgid "Disable Footer Logo?"
 msgstr "禁用底部logo"
 
-#: ../functions/panel/theme_options.php:222
-#: ../functions/panel/theme_options.php:254
-#: ../functions/panel/theme_options.php:286
-#: ../functions/panel/theme_options.php:380
-#: ../functions/panel/theme_options.php:415
-#: ../functions/panel/theme_options.php:448
-#: ../functions/panel/theme_options.php:469
-#: ../functions/panel/theme_options.php:489
-#: ../functions/panel/theme_options.php:505
-#: ../functions/panel/theme_options.php:529
-#: ../functions/panel/theme_options.php:562
-#: ../functions/panel/theme_options.php:613
-#: ../functions/panel/theme_options.php:719
-#: ../functions/panel/theme_options.php:748
-#: ../functions/panel/theme_options.php:778
+#: ../functions/panel/theme_options.php:225
+#: ../functions/panel/theme_options.php:264
+#: ../functions/panel/theme_options.php:296
+#: ../functions/panel/theme_options.php:390
+#: ../functions/panel/theme_options.php:425
+#: ../functions/panel/theme_options.php:458
+#: ../functions/panel/theme_options.php:479
+#: ../functions/panel/theme_options.php:499
+#: ../functions/panel/theme_options.php:515
+#: ../functions/panel/theme_options.php:539
+#: ../functions/panel/theme_options.php:572
+#: ../functions/panel/theme_options.php:623
+#: ../functions/panel/theme_options.php:729
+#: ../functions/panel/theme_options.php:760
 msgid "Save"
 msgstr "保存"
 
-#: ../functions/panel/theme_options.php:227
+#: ../functions/panel/theme_options.php:230
 msgid "Fav Icon Option"
 msgstr "Fav Icon Option"
 
-#: ../functions/panel/theme_options.php:232
+#: ../functions/panel/theme_options.php:235
 msgid "Favicon URL:"
 msgstr "Favicon URL:"
 
-#: ../functions/panel/theme_options.php:235
-msgid "Upload/Change Favicon"
-msgstr "Upload/Change Favicon"
+#: ../functions/panel/theme_options.php:242
+msgid "Change Fav icon Logo"
+msgstr "Change Fav icon Logo"
 
-#: ../functions/panel/theme_options.php:246
-msgid "No Favicon Found. Upload Favicon."
-msgstr "找不到Favicon，请上传Favicon"
+#: ../functions/panel/theme_options.php:258
+msgid "Disable Fav Icon?"
+msgstr "Disable Fav Icon?"
 
-#: ../functions/panel/theme_options.php:259
+#: ../functions/panel/theme_options.php:269
 msgid "Web Clip Icon Option"
 msgstr "Web Clip Icon Option"
 
-#: ../functions/panel/theme_options.php:264
+#: ../functions/panel/theme_options.php:274
 msgid "Web Clip Icon URL:"
 msgstr "Web Clip Icon Option"
 
-#: ../functions/panel/theme_options.php:267
+#: ../functions/panel/theme_options.php:277
 msgid "Upload/Change Web Clip Icon"
 msgstr "Upload/Change Web Clip Icon"
 
-#: ../functions/panel/theme_options.php:278
+#: ../functions/panel/theme_options.php:288
 msgid "No Web Clip Icon Found. Upload Web Clip Icon."
 msgstr "No Web Clip Icon Found. Upload Web Clip Icon."
 
-#: ../functions/panel/theme_options.php:291
+#: ../functions/panel/theme_options.php:301
 msgid "Content Background"
 msgstr "内容背景"
 
-#: ../functions/panel/theme_options.php:293
+#: ../functions/panel/theme_options.php:303
 msgid "Need to replace default background?"
 msgstr "需要替代默认背景？"
 
-#: ../functions/panel/theme_options.php:293
+#: ../functions/panel/theme_options.php:303
 #, php-format
 msgid "<a class=\"button\" href=\"%s\">Click here</a>"
 msgstr "<a class=\"button\" href=\"%s\">点击这里</a>"
 
-#: ../functions/panel/theme_options.php:299
+#: ../functions/panel/theme_options.php:309
 msgid "Content Color Options"
 msgstr "内容颜色选项"
 
-#: ../functions/panel/theme_options.php:306
+#: ../functions/panel/theme_options.php:316
 msgid "Heading Color:"
 msgstr "标题颜色"
 
-#: ../functions/panel/theme_options.php:317
+#: ../functions/panel/theme_options.php:327
 msgid "Meta Description Color:"
 msgstr "Meta描述颜色"
 
-#: ../functions/panel/theme_options.php:328
+#: ../functions/panel/theme_options.php:338
 msgid "Text Color:"
 msgstr "文本颜色"
 
-#: ../functions/panel/theme_options.php:339
+#: ../functions/panel/theme_options.php:349
 msgid "Link Color:"
 msgstr "链接颜色:"
 
-#: ../functions/panel/theme_options.php:350
+#: ../functions/panel/theme_options.php:360
 msgid "Sidebar Widget Heading Color:"
 msgstr "工具栏widget标题颜色"
 
-#: ../functions/panel/theme_options.php:361
+#: ../functions/panel/theme_options.php:371
 msgid "Sidebar Widget Text Color:"
 msgstr "工具栏widget文本颜色"
 
-#: ../functions/panel/theme_options.php:371
+#: ../functions/panel/theme_options.php:381
 msgid "Reset Color:"
 msgstr "重置颜色"
 
-#: ../functions/panel/theme_options.php:385
-#: ../functions/panel/theme_options.php:390
+#: ../functions/panel/theme_options.php:395
+#: ../functions/panel/theme_options.php:400
 msgid "Default Layout"
 msgstr "默认布局"
 
-#: ../functions/panel/theme_options.php:394
+#: ../functions/panel/theme_options.php:404
 msgid "Content on Left"
 msgstr "左侧内容"
 
-#: ../functions/panel/theme_options.php:399
+#: ../functions/panel/theme_options.php:409
 msgid "Content on Right"
 msgstr "右侧内容"
 
-#: ../functions/panel/theme_options.php:404
+#: ../functions/panel/theme_options.php:414
 msgid "No Sidebar"
 msgstr "无工具栏"
 
-#: ../functions/panel/theme_options.php:409
+#: ../functions/panel/theme_options.php:419
 msgid "No Sidebar, Full Width"
 msgstr "No Sidebar, Full Width"
 
-#: ../functions/panel/theme_options.php:420
+#: ../functions/panel/theme_options.php:430
 msgid "Homepage / Frontpage Category Setting"
 msgstr "首页分类设置"
 
-#: ../functions/panel/theme_options.php:426
+#: ../functions/panel/theme_options.php:436
 msgid "Front page posts categories:"
 msgstr "首页文章分类"
 
-#: ../functions/panel/theme_options.php:428
+#: ../functions/panel/theme_options.php:438
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on "
 "the front page."
 msgstr "只有属于以下被选择的分类的文章才会在首页显示。"
 
-#: ../functions/panel/theme_options.php:433
+#: ../functions/panel/theme_options.php:443
 msgid "--Disabled--"
 msgstr "--禁用--"
 
-#: ../functions/panel/theme_options.php:443
+#: ../functions/panel/theme_options.php:453
 msgid "You may select multiple categories by holding down the CTRL key."
 msgstr "你可以通过按住Ctrl建选择多个分类"
 
-#: ../functions/panel/theme_options.php:453
+#: ../functions/panel/theme_options.php:463
 msgid "Search Text Settings"
 msgstr "搜索文本设置"
 
-#: ../functions/panel/theme_options.php:458
+#: ../functions/panel/theme_options.php:468
 msgid "Default Display Text in Search"
 msgstr "默认搜索文字"
 
-#: ../functions/panel/theme_options.php:463
+#: ../functions/panel/theme_options.php:473
 msgid "Search Button's text"
 msgstr "搜索按钮文本"
 
-#: ../functions/panel/theme_options.php:474
+#: ../functions/panel/theme_options.php:484
 msgid "Excerpt / More Tag Settings"
 msgstr "摘要/阅读全文设置"
 
-#: ../functions/panel/theme_options.php:479
+#: ../functions/panel/theme_options.php:489
 msgid "More Tag Text"
 msgstr "阅读全文文本"
 
-#: ../functions/panel/theme_options.php:484
+#: ../functions/panel/theme_options.php:494
 msgid "Excerpt length(words)"
 msgstr "摘要长度"
 
-#: ../functions/panel/theme_options.php:494
+#: ../functions/panel/theme_options.php:504
 msgid "Feed Redirect"
 msgstr "Feed 链接"
 
-#: ../functions/panel/theme_options.php:499
+#: ../functions/panel/theme_options.php:509
 msgid "Feed Redirect URL"
 msgstr "Feed链接URL"
 
-#: ../functions/panel/theme_options.php:510
+#: ../functions/panel/theme_options.php:520
 msgid "Custom CSS"
 msgstr "自定义CSS"
 
-#: ../functions/panel/theme_options.php:515
+#: ../functions/panel/theme_options.php:525
 msgid "Enter your custom CSS styles."
 msgstr "输入自定义CSS样式"
 
-#: ../functions/panel/theme_options.php:522
+#: ../functions/panel/theme_options.php:532
 msgid "CSS Tutorial from W3Schools."
 msgstr "W3Schools上的CSS教程。"
 
-#: ../functions/panel/theme_options.php:524
+#: ../functions/panel/theme_options.php:534
 msgid "http://www.w3schools.com/css/default.asp"
 msgstr "http://www.w3schools.com/css/default.asp"
 
-#: ../functions/panel/theme_options.php:524
+#: ../functions/panel/theme_options.php:534
 msgid "CSS Tutorial"
 msgstr "CSS教程"
 
-#: ../functions/panel/theme_options.php:524
+#: ../functions/panel/theme_options.php:534
 msgid "Click Here to Read"
 msgstr "点击这里开始阅读"
 
-#: ../functions/panel/theme_options.php:538
+#: ../functions/panel/theme_options.php:548
 msgid "Add Slider Options"
 msgstr "添加幻灯片选项"
 
-#: ../functions/panel/theme_options.php:542
+#: ../functions/panel/theme_options.php:552
 msgid "Exclude Slider post from Home page posts:"
 msgstr "首页排除幻灯片上的文章？"
 
-#: ../functions/panel/theme_options.php:547
+#: ../functions/panel/theme_options.php:557
 msgid "Number of Slides"
 msgstr "幻灯片数量"
 
-#: ../functions/panel/theme_options.php:553
+#: ../functions/panel/theme_options.php:563
 msgid "Featured Slider Post #"
 msgstr "特色幻灯片文章"
 
-#: ../functions/panel/theme_options.php:555
+#: ../functions/panel/theme_options.php:565
 msgid "Click Here To Edit"
 msgstr "点击这里编辑"
 
-#: ../functions/panel/theme_options.php:561
+#: ../functions/panel/theme_options.php:571
 msgid ""
 "Note: Here You can put your Post IDs which displays on Homepage as slider."
 msgstr "注意：请输入你想显示在首页幻灯片上的文章的ID。"
 
-#: ../functions/panel/theme_options.php:568
+#: ../functions/panel/theme_options.php:578
 msgid "Slider Effect Options"
 msgstr "幻灯片效果选项"
 
-#: ../functions/panel/theme_options.php:572
+#: ../functions/panel/theme_options.php:582
 msgid "Disable Slider Background Effect:"
 msgstr "禁用幻灯片背景"
 
-#: ../functions/panel/theme_options.php:579
+#: ../functions/panel/theme_options.php:589
 msgid "Transition Effect:"
 msgstr "过度效果"
 
-#: ../functions/panel/theme_options.php:583
+#: ../functions/panel/theme_options.php:593
 msgid "fade"
 msgstr "淡入"
 
-#: ../functions/panel/theme_options.php:584
+#: ../functions/panel/theme_options.php:594
 msgid "wipe"
 msgstr "擦除"
 
-#: ../functions/panel/theme_options.php:585
+#: ../functions/panel/theme_options.php:595
 msgid "scrollUp"
 msgstr "滚动向上"
 
-#: ../functions/panel/theme_options.php:586
+#: ../functions/panel/theme_options.php:596
 msgid "scrollDown"
 msgstr "滚动向下"
 
-#: ../functions/panel/theme_options.php:587
+#: ../functions/panel/theme_options.php:597
 msgid "scrollLeft"
 msgstr "滚动向左"
 
-#: ../functions/panel/theme_options.php:588
+#: ../functions/panel/theme_options.php:598
 msgid "scrollRight"
 msgstr "滚动向右"
 
-#: ../functions/panel/theme_options.php:589
+#: ../functions/panel/theme_options.php:599
 msgid "blindX"
 msgstr "blindX"
 
-#: ../functions/panel/theme_options.php:590
+#: ../functions/panel/theme_options.php:600
 msgid "blindY"
 msgstr "blindY"
 
-#: ../functions/panel/theme_options.php:591
+#: ../functions/panel/theme_options.php:601
 msgid "blindZ"
 msgstr "blindZ"
 
-#: ../functions/panel/theme_options.php:592
+#: ../functions/panel/theme_options.php:602
 msgid "cover"
 msgstr "cover"
 
-#: ../functions/panel/theme_options.php:593
+#: ../functions/panel/theme_options.php:603
 msgid "shuffle"
 msgstr "shuffle"
 
-#: ../functions/panel/theme_options.php:598
+#: ../functions/panel/theme_options.php:608
 msgid "Transition Delay"
 msgstr "过度延迟"
 
-#: ../functions/panel/theme_options.php:601
-#: ../functions/panel/theme_options.php:608
+#: ../functions/panel/theme_options.php:611
+#: ../functions/panel/theme_options.php:618
 msgid "second(s)"
 msgstr "秒(s)"
 
-#: ../functions/panel/theme_options.php:605
+#: ../functions/panel/theme_options.php:615
 msgid "Transition Length"
 msgstr "过度时长"
 
-#: ../functions/panel/theme_options.php:633
+#: ../functions/panel/theme_options.php:643
 msgid "Google+"
 msgstr "Google+"
 
-#: ../functions/panel/theme_options.php:638
+#: ../functions/panel/theme_options.php:648
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../functions/panel/theme_options.php:643
+#: ../functions/panel/theme_options.php:653
 msgid "Youtube"
 msgstr "Youtube"
 
-#: ../functions/panel/theme_options.php:648
+#: ../functions/panel/theme_options.php:658
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../functions/panel/theme_options.php:654
+#: ../functions/panel/theme_options.php:664
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: ../functions/panel/theme_options.php:659
+#: ../functions/panel/theme_options.php:669
 msgid "Slideshare"
 msgstr "Slideshare"
 
-#: ../functions/panel/theme_options.php:664
+#: ../functions/panel/theme_options.php:674
 msgid "Foursquare"
 msgstr "Foursquare"
 
-#: ../functions/panel/theme_options.php:669
+#: ../functions/panel/theme_options.php:679
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../functions/panel/theme_options.php:674
+#: ../functions/panel/theme_options.php:684
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../functions/panel/theme_options.php:679
+#: ../functions/panel/theme_options.php:689
 msgid "deviantART"
 msgstr "deviantART"
 
-#: ../functions/panel/theme_options.php:684
+#: ../functions/panel/theme_options.php:694
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../functions/panel/theme_options.php:689
+#: ../functions/panel/theme_options.php:699
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../functions/panel/theme_options.php:699
+#: ../functions/panel/theme_options.php:709
 msgid "RSS"
 msgstr "RSS"
 
-#: ../functions/panel/theme_options.php:704
+#: ../functions/panel/theme_options.php:714
 msgid "Delicious"
 msgstr "Delicious"
 
-#: ../functions/panel/theme_options.php:709
+#: ../functions/panel/theme_options.php:719
 msgid "Last.fm"
 msgstr "Last.fm"
 
-#: ../functions/panel/theme_options.php:714
+#: ../functions/panel/theme_options.php:724
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../functions/panel/theme_options.php:725
-msgid "Site Verification"
-msgstr "网站认证"
+#: ../functions/panel/theme_options.php:735
+msgid "Header and Footer Codes"
+msgstr "Disable Fav Icon?"
 
-#: ../functions/panel/theme_options.php:730
-msgid "Google Site Verification ID"
-msgstr "谷歌网站认证ID"
-
-#: ../functions/panel/theme_options.php:731
-msgid "Enter your Google ID number only"
-msgstr "仅输入你的Google ID"
-
-#: ../functions/panel/theme_options.php:736
-msgid "Yahoo Site Verification ID"
-msgstr "Yahoo网站认证ID"
-
-#: ../functions/panel/theme_options.php:737
-msgid "Enter your Yahoo ID number only"
-msgstr "仅输入你的Yahoo ID"
-
-#: ../functions/panel/theme_options.php:742
-msgid "Bing Site Verification ID"
-msgstr "Bing 网站认证ID"
-
-#: ../functions/panel/theme_options.php:743
-msgid "Enter your Bing ID number only"
-msgstr "仅输入你的Bing ID"
-
-#: ../functions/panel/theme_options.php:753
-msgid "Analytics/ Header / Footer Codes"
-msgstr "统计分析/顶部/底部 代码"
-
-#: ../functions/panel/theme_options.php:758
+#: ../functions/panel/theme_options.php:740
 msgid "Code to display on Header"
 msgstr "显示在顶部代码"
 
-#: ../functions/panel/theme_options.php:764
+#: ../functions/panel/theme_options.php:746
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
 msgstr "注意：你能够将Google,Facebook等script放到这里，其将会载入到Header"
 
-#: ../functions/panel/theme_options.php:767
+#: ../functions/panel/theme_options.php:749
 msgid "Code to display on Footer"
 msgstr "显示在底部代码"
 
-#: ../functions/panel/theme_options.php:774
+#: ../functions/panel/theme_options.php:756
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"
 msgstr "注意：你能够将Google,Facebook等script放到这里，其将会载入到footer"
+
+#~ msgid "Change Logo"
+#~ msgstr "更改logo"
+
+#~ msgid "Upload Logo"
+#~ msgstr "上传Logo"
+
+#~ msgid "Preview:"
+#~ msgstr "预览"
+
+#~ msgid "No Header Image Found. Upload Header Image."
+#~ msgstr "找不到顶部图片。请上传头部文件"
+
+#~ msgid "Upload/Change Favicon"
+#~ msgstr "Upload/Change Favicon"
+
+#~ msgid "No Favicon Found. Upload Favicon."
+#~ msgstr "找不到Favicon，请上传Favicon"
+
+#~ msgid "Site Verification"
+#~ msgstr "网站认证"
+
+#~ msgid "Google Site Verification ID"
+#~ msgstr "谷歌网站认证ID"
+
+#~ msgid "Enter your Google ID number only"
+#~ msgstr "仅输入你的Google ID"
+
+#~ msgid "Yahoo Site Verification ID"
+#~ msgstr "Yahoo网站认证ID"
+
+#~ msgid "Enter your Yahoo ID number only"
+#~ msgstr "仅输入你的Yahoo ID"
+
+#~ msgid "Bing Site Verification ID"
+#~ msgstr "Bing 网站认证ID"
+
+#~ msgid "Enter your Bing ID number only"
+#~ msgstr "仅输入你的Bing ID"
 
 #~ msgid "Design Settings"
 #~ msgstr "设计设置"

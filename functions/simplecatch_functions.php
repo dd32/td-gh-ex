@@ -170,16 +170,17 @@ function simplecatch_headerdetails() {
 		
 	if ( ( !$simplecatch_headerdetails = get_transient( 'simplecatch_headerdetails' ) ) && ( !empty( $options[ 'featured_logo_header' ] ) || empty( $options[ 'remove_site_title' ] ) || empty( $options[ 'remove_site_description' ] ) ) ) {
 		echo '<!-- refreshing cache -->';
-		$simplecatch_headerdetails = '<div class="logo-wrap">';
-		if( !empty( $options[ 'featured_logo_header' ] ) ) {
+		$simplecatch_headerdetails = '<div class="logo-wrap">';		
+		if( empty ($options[ 'remove_header_logo' ] ) ) {
 			$simplecatch_headerdetails .= '<h1 id="site-logo"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'">';
 			
-			if ( !empty( $options[ 'featured_logo_header' ] ) ):
-				$simplecatch_headerdetails .= '<img src="'.esc_url( $options['featured_logo_header'] ).'" alt="'.get_bloginfo( 'name' ).'" />';
-			else:
-				// if empty featured_logo_header on theme options, display default logo
-				$simplecatch_headerdetails .='<img src="'. get_template_directory_uri().'/images/logo.png" alt="logo" />';
-			endif;
+				// if not empty featured_logo_footer on theme options
+				if ( !empty( $options[ 'featured_logo_header' ] ) ) :
+					$simplecatch_headerdetails .= '<img src="'.esc_url( $options[ 'featured_logo_header' ] ).'" alt="'.get_bloginfo( 'name' ).'" />';
+				else:
+					// if empty featured_logo_footer on theme options, display default fav icon
+					$simplecatch_headerdetails .='<img src="'. get_template_directory_uri().'/images/logo-head.png" alt="logo" />';
+				endif;
 			
 			$simplecatch_headerdetails .= '</a></h1>';
 		}			
@@ -268,8 +269,16 @@ function simplecatch_favicon() {
 		echo '<!-- refreshing cache -->';
 		
 		// if not empty fav_icon on theme options
-		if ( !empty( $options[ 'fav_icon' ] ) ) :
-			$simplecatch_favicon = '<link rel="shortcut icon" href="'.esc_url( $options[ 'fav_icon' ] ).'" type="image/x-icon" />'; 	
+		if ( empty ( $options[ 'remove_fav_icon' ] ) ) :
+			
+			// if not empty fav_icon on theme options
+			if ( !empty( $options[ 'fav_icon' ] ) ) :
+				$simplecatch_footerlogo = '<link rel="shortcut icon" href="'.esc_url( $options[ 'fav_icon' ] ).'" type="image/x-icon" />';
+			else:
+				// if empty featured_logo_footer on theme options, display default fav icon
+				$simplecatch_footerlogo ='<link rel="shortcut icon" href="'. get_template_directory_uri().'/images/favicon.ico" type="image/x-icon" />';
+			endif;
+	
 		endif;
 		
 		set_transient( 'simplecatch_favicon', $simplecatch_favicon, 86940 );	
@@ -1006,3 +1015,58 @@ function simplecatch_webclip() {
 
 //Load Web Clip Icon in Header Section
 add_action('wp_head', 'simplecatch_webclip');
+
+
+if ( !function_exists( 'simplecatch_infinite_scroll_render' ) ):
+/**
+ * Set the code to be rendered on for calling posts,
+ * hooked to template parts when possible.
+ *
+ * Note: must define a loop.
+ */
+function simplecatch_infinite_scroll_render() {
+   get_template_part( 'content' );
+} // simplecatch_infinite_scroll_render
+endif;
+
+
+if ( ! function_exists( 'simplecatch_content_nav' ) ) :
+/**
+ * Display navigation to next/previous pages when applicable
+ *
+ * @since Catch Everest 1.0
+ */
+function simplecatch_content_nav( $nav_id ) {
+	global $wp_query, $post;
+	
+	/**
+	 * Check Jetpack Infinite Scroll
+	 * if it's active then disable pagination
+	 */
+	if ( class_exists( 'Jetpack', false ) ) {
+		$jetpack_active_modules = get_option('jetpack_active_modules');
+		if ( $jetpack_active_modules && in_array( 'infinite-scroll', $jetpack_active_modules ) ) {
+			return false;
+		}
+	}	
+	
+	// Checking WP Page Numbers plugin exist
+	if ( function_exists('wp_pagenavi' ) ) : 
+		wp_pagenavi();
+	
+	// Checking WP-PageNaviplugin exist
+	elseif ( function_exists('wp_page_numbers' ) ) : 
+		wp_page_numbers();
+		   
+	else: 
+		if ( $wp_query->max_num_pages > 1 ) : 
+	?>
+			<ul class="default-wp-page">
+				<li class="previous"><?php next_posts_link( __( 'Previous', 'simplecatch' ) ); ?></li>
+				<li class="next"><?php previous_posts_link( __( 'Next', 'simplecatch' ) ); ?></li>
+			</ul>
+		<?php endif;
+	endif; 
+		
+}
+endif; // simplecatch_content_nav

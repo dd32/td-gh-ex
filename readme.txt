@@ -320,3 +320,12 @@ Version 2.4.3
 
 Version 2.5
 * Added Italian translation it_IT.po and it_IT.mo
+
+Version 2.5.1
+* Added Jetpack Infinite Scroll support
+* Added option to disable logo
+* Added option to disable fav icon
+* Change default log to WordPress Logo as required by WordPress.org Theme Review Guideline
+* Change default fav icon as disabled as required by WordPress.org Theme Review Guideline
+* Disabled favicon as default option* Fixed the layout issue when scrolling
+* Removed site verification code as required by WordPress.org Theme Review Guideline

@@ -156,29 +156,32 @@ function simplecatch_theme_options_do_page() {
                                         <th scope="row"><?php _e( 'Header logo url:', 'simplecatch' ); ?></th>
                                         <td>
                                             <?php  if ( !empty ( $options[ 'featured_logo_header' ] ) ) { ?>
-                                             		<input  class="upload-url" size="65" type="text" name="simplecatch_options[featured_logo_header]" value="<?php echo esc_url ( $options [ 'featured_logo_header' ]); ?>" />
-                                                   	<input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Logo','simplecatch' ); ?>" />
-                                                <?php } else { ?>
-                                               		<input class="upload-url" size="65" type="text" name="simplecatch_options[featured_logo_header]" value="" alt="logo" />
-                                                    <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Upload Logo','simplecatch' ); ?>" />
-                                                <?php }  ?>
-                                                
-                                               
+                                                <input class="upload-url" size="65" type="text" name="simplecatch_options[featured_logo_header]" value="<?php echo esc_url( $options[ 'featured_logo_header' ] ); ?>" class="upload" />
+                                            <?php } else { ?>
+                                                <input size="65" type="text" name="simplecatch_options[featured_logo_header]" value="<?php echo get_template_directory_uri(); ?>/images/logo-head.png" alt="logo" />
+                                            <?php }  ?>                            
+                                                <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Footer Logo','simplecatch' );?>" />  
                                         </td>
                                     </tr> 
-                                    <tr>                            
-                                        <th scope="row"><?php _e( 'Preview:', 'simplecatch' ); ?></th>
-                                        <td>              
+                                    <tr>
+                                        <th scope="row"><?php _e( 'Preview: ', 'simplecatch' ); ?></th>
+                                        <td>                     
                                             <?php 
                                                 if ( !empty( $options[ 'featured_logo_header' ] ) ) { 
                                                     echo '<img src="'.esc_url( $options[ 'featured_logo_header' ] ).'" alt="logo"/>';
-                                                } else { ?>
-                                                    <p><?php _e( 'No Header Image Found. Upload Header Image.', 'simplecatch' ); ?></p>
-                                                <?php
+                                                } else {
+                                                    echo '<img src="'. get_template_directory_uri().'/images/logo-head.png" alt="logo" />';
                                                 }
                                             ?>
-                                        </td>
+                                         </td>
                                     </tr>
+                                   	<tr>                            
+                                        <th scope="row"><?php _e( 'Disable Header Logo?', 'simplecatch' ); ?></th>
+                                         <input type='hidden' value='0' name='simplecatch_options[remove_header_logo]'>
+                                        <td><input type="checkbox" id="headerlogo" name="simplecatch_options[remove_header_logo]" value="1" <?php checked( '1', $options['remove_header_logo'] ); ?> /> <?php _e( 'Check to Disable.', 'simplecatch' ); ?></td>
+                                    </tr>
+                                    
+                                                                        
                                     <tr>                            
                                         <th scope="row"><?php _e( 'Disable Site Title?', 'simplecatch' ); ?></th>
                                         <input type='hidden' value='0' name='simplecatch_options[remove_site_title]'>
@@ -228,26 +231,33 @@ function simplecatch_theme_options_do_page() {
                         <div class="option-content inside">
                             <table class="form-table">
                                 <tbody>
-                                    <tr>                            
+                                	<tr>   
                                         <th scope="row"><?php _e( 'Favicon URL:', 'simplecatch' ); ?></th>
                                         <td>
-                                        	<input class="upload-url" size="65" type="text" name="simplecatch_options[fav_icon]" value="<?php echo esc_url( $options [ 'fav_icon' ] ); ?>" class="upload" />
-                                            <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Upload/Change Favicon','simplecatch' );?>" />
+                                            <?php  if ( !empty ( $options[ 'fav_icon' ] ) ) { ?>
+                                                <input class="upload-url" size="65" type="text" name="simplecatch_options[fav_icon]" value="<?php echo esc_url( $options[ 'fav_icon' ] ); ?>" class="upload" />
+                                            <?php } else { ?>
+                                                <input size="65" type="text" name="simplecatch_options[fav_icon]" value="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" alt="fav icon" />
+                                            <?php }  ?>                            
+                                                <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Fav icon Logo','simplecatch' );?>" />  
                                         </td>
                                     </tr>
-                                    
                                     <tr>
                                         <th scope="row"><?php _e( 'Preview: ', 'simplecatch' ); ?></th>
-                                        <td> 
+                                        <td>                     
                                             <?php 
                                                 if ( !empty( $options[ 'fav_icon' ] ) ) { 
-                                                    echo '<img src="'.esc_url( $options[ 'fav_icon' ] ).'" alt="fav" />';
-                                                } else { ?>
-                                                    <p><?php _e( 'No Favicon Found. Upload Favicon.', 'simplecatch' ); ?></p>
-                                               <?php
-											   }
+                                                    echo '<img src="'.esc_url( $options[ 'fav_icon' ] ).'" alt="logo"/>';
+                                                } else {
+                                                    echo '<img src="'. get_template_directory_uri().'/images/favicon.ico" alt="fav icon" />';
+                                                }
                                             ?>
-                                        </td>
+                                         </td>
+                                    </tr>
+                                    <tr>                            
+                                        <th scope="row"><?php _e( 'Disable Fav Icon?', 'simplecatch' ); ?></th>
+                                         <input type='hidden' value='0' name='simplecatch_options[remove_fav_icon]'>
+                                        <td><input type="checkbox" id="headerlogo" name="simplecatch_options[remove_fav_icon]" value="1" <?php checked( '1', $options['remove_fav_icon'] ); ?> /> <?php _e( 'Check to Disable.', 'simplecatch' ); ?></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -720,37 +730,9 @@ function simplecatch_theme_options_do_page() {
                 	</div><!-- .option-container -->                       
                 </div><!-- #sociallinks -->                
                 
-                <div id="webmaster">
+                <div id="webmaster">      
                     <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Site Verification', 'simplecatch' ); ?></a></h3>
-                        <div class="option-content inside">
-                            <table class="form-table">  
-                                <tbody>    
-                                    <tr>
-                                        <th scope="row"><label><?php _e( 'Google Site Verification ID', 'simplecatch' ); ?></label></th>
-                                        <td><input type="text" size="45" name="simplecatch_options[google_verification]" value="<?php echo esc_attr( $options[ 'google_verification' ] ); ?>" /> <?php _e('Enter your Google ID number only', 'simplecatch'); ?>
-                                        </td>
-                                    </tr>
-                                    
-                                    <tr> 
-                                        <th scope="row"><label><?php _e( 'Yahoo Site Verification ID', 'simplecatch' ); ?></label></th>
-                                        <td><input type="text" size="45" name="simplecatch_options[yahoo_verification]" value="<?php echo esc_attr( $options[ 'yahoo_verification'] ); ?>" /> <?php _e('Enter your Yahoo ID number only', 'simplecatch'); ?>
-                                        </td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <th scope="row"><label><?php _e( 'Bing Site Verification ID', 'simplecatch' ); ?></label></th>
-                                        <td><input type="text" size="45" name="simplecatch_options[bing_verification]" value="<?php echo esc_attr( $options[ 'bing_verification' ] ); ?>" /> <?php _e('Enter your Bing ID number only', 'simplecatch'); ?>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
-                        </div><!-- .option-content -->
-                    </div><!-- .option-container --> 
-                
-                    <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Analytics/ Header / Footer Codes', 'simplecatch' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Header and Footer Codes', 'simplecatch' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table">  
                                 <tbody>       
@@ -805,6 +787,10 @@ function simplecatch_theme_options_validate( $options ) {
 	if ( isset( $input[ 'featured_logo_header' ] ) ) {
 		$input_validated[ 'featured_logo_header' ] = esc_url_raw( $input[ 'featured_logo_header' ] );
 	}
+	if ( isset( $input['remove_header_logo'] ) ) {
+		// Our checkbox value is either 0 or 1 
+		$input_validated[ 'remove_header_logo' ] = $input[ 'remove_header_logo' ];
+	}	
 	if ( isset( $input['remove_site_title'] ) ) {
         // Our checkbox value is either 0 or 1 
         $input_validated[ 'remove_site_title' ] = $input[ 'remove_site_title' ];
@@ -825,6 +811,10 @@ function simplecatch_theme_options_validate( $options ) {
 	if ( isset( $input[ 'fav_icon' ] ) ) {
 		$input_validated[ 'fav_icon' ] = esc_url_raw( $input[ 'fav_icon' ] );
 	}
+	if ( isset( $input['remove_fav_icon'] ) ) {
+		// Our checkbox value is either 0 or 1 
+		$input_validated[ 'remove_fav_icon' ] = $input[ 'remove_fav_icon' ];
+	}	
 	
 	//Web Clip Icon URL
 	if ( isset( $input[ 'web_clip' ] ) ) {

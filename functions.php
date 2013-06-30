@@ -70,6 +70,17 @@ function simplecatch_setup() {
 	// Load up our Simple Catch's metabox
 	require( get_template_directory() . '/functions/simplecatch_metabox.php' );
 	
+	/**
+     * This feature enables Jetpack plugin Infinite Scroll
+     */		
+    add_theme_support( 'infinite-scroll', array(
+		'type'          => 'click',										
+        'container'     => 'content',
+		'render'    	=> 'simplecatch_infinite_scroll_render',
+        'footer'        => 'page'
+    ) );
+			
+	
 	// This theme uses Featured Images (also known as post thumbnails) for per-post/per-page.
 	add_theme_support( 'post-thumbnails' );
 	

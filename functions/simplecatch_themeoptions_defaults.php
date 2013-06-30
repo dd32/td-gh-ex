@@ -11,12 +11,14 @@
  */
 global $simplecatch_options_defaults;
 $simplecatch_options_defaults = array(
- 	'featured_logo_header' 			=> '',
+ 	'featured_logo_header' 			=> get_template_directory_uri().'/images/logo-head.png',
+	'remove_header_logo'			=> '0',
  	'remove_site_title'				=> '0',
  	'remove_site_description'		=> '0',
  	'featured_logo_footer' 			=> get_template_directory_uri().'/images/logo-foot.png',
  	'remove_footer_logo'			=> '0',
- 	'fav_icon'						=> '',
+ 	'fav_icon'						=> get_template_directory_uri().'/images/favicon.ico',
+	'remove_fav_icon'				=> '1',
 	'web_clip'						=> '',
 	'heading_color'					=> '#444444',
  	'meta_color'					=> '#999999',
@@ -82,5 +84,3 @@ function simplecatch_options_set_defaults( $simplecatch_options_defaults ) {
 	$simplecatch_options_settings = array_merge( $simplecatch_options_defaults, (array) get_option( 'simplecatch_options', array() ) );
 	return $simplecatch_options_settings;
 }
-
-?>

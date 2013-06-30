@@ -25,24 +25,11 @@ get_header();
 				<div class="row-end"></div>
 			</div> <!-- .post -->
 		
-		<?php endwhile; 
-			// Checking WP Page Numbers plugin exist
-			if ( function_exists('wp_pagenavi' ) ) : 
-				wp_pagenavi();
-			
-			// Checking WP-PageNaviplugin exist
-			elseif ( function_exists('wp_page_numbers' ) ) : 
-				wp_page_numbers();
-				 
-			else: ?>
-				<ul class="default-wp-page">
-					<li class="previous"><?php next_posts_link( __( 'Previous', 'simplecatch' ) ); ?></li>
-					<li class="next"><?php previous_posts_link( __( 'Next', 'simplecatch' ) ); ?></li>
-				</ul>         
+		<?php endwhile; ?>
 		
-			<?php endif; 
+        <?php simplecatch_content_nav( 'nav-below' ); ?>
 		
-	else : ?>
+	<?php else : ?>
 		<h2><?php printf( __( 'Your search <span> "%s" </span> did not match any documents', 'simplecatch' ), get_search_query() ); ?></h2>
 		<div class="post">
 			<h5><?php _e( 'A few suggestions', 'simplecatch' ); ?></h5>
