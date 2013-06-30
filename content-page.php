@@ -1,5 +1,6 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
+
 	<header class="entry-header page-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 	</header> <!-- /.entry-header -->
@@ -10,4 +11,5 @@
 		<?php the_content(); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="wp_link_pages clearfix"><span class="wp_link_pages-item-empty">' . __( 'Pages:', 'activetab' ).'</span>', 'after' => '</div>', 'link_before' => '<span class="wp_link_pages-item">', 'link_after' => '</span>', 'pagelink' => '%' ) ); ?>
 	</section> <!-- /.entry-content -->
+
 </article> <!-- /#post-<?php the_ID(); ?> -->

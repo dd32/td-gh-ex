@@ -3,7 +3,7 @@ Theme Name: activetab
 Description: Used to style the TinyMCE editor
 */
 
-@import url("../activetab/style.css");
+@import url("style.css");
 
 html .mceContentBody {
 	max-width: 600px;
@@ -14,12 +14,12 @@ html .mceContentBody {
 	color: inherit;
 	font-size: 16px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-style: inherit;
-	font-weight: inherit;
+	/*font-style: inherit;
+	font-weight: inherit;*/
 	line-height: 1.8em;
 }
 body {
-	color: #333;
+	color: #222;
 	font-size: 16px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: normal;

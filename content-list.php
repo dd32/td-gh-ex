@@ -1,10 +1,11 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
+
 	<header class="entry-header page-header">
 		<?php
-		if( is_sticky() ){ // add 'sticky' label to sticky post
+		if( is_sticky() ) { // add 'sticky' label to sticky post
 			$sticky = ' <span class="label label-info">'.__( 'Sticky', 'activetab' ).'</span>';
-		}else{
+		} else {
 			$sticky = '';
 		}
 		?>
@@ -18,8 +19,14 @@
 	<?php get_template_part( 'template-part', 'thumbnail-list' ); ?>
 
 	<section class="entry-content entry-summary">
-		<?php the_excerpt(''); ?>
+		<?php
+		$excerpt_or_full_content_in_list = of_get_option( 'excerpt_or_full_content_in_list', 'excerpt' );
+		if( $excerpt_or_full_content_in_list == 'excerpt' ) {
+			the_excerpt( '' );
+		} else {
+			the_content( '' );
+		}
+		?>
 	</section> <!-- /.entry-content -->
-
 
 </article> <!-- /#post-<?php the_ID(); ?> -->

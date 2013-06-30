@@ -1,10 +1,11 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
+
 	<header class="entry-header page-header">
 		<?php
-		if( is_sticky() ){ // add 'sticky' label to sticky post
+		if( is_sticky() ) { // add 'sticky' label to sticky post
 			$sticky = ' <span class="label label-info">'.__( 'Sticky', 'activetab' ).'</span>';
-		}else{
+		} else {
 			$sticky = '';
 		}
 		?>
@@ -18,8 +19,14 @@
 	<?php get_template_part( 'template-part', 'thumbnail-list' ); ?>
 
 	<section class="entry-content">
-		<?php the_excerpt(''); ?>
-		<?php //the_content(''); ?>
+		<?php
+		$excerpt_or_full_content_in_list = of_get_option( 'excerpt_or_full_content_in_list', 'excerpt' );
+		if( $excerpt_or_full_content_in_list == 'excerpt' ) {
+			the_excerpt( '' );
+		} else {
+			the_content( '' );
+		}
+		?>
 
 		<?php //wp_link_pages( array( 'before' => '<div class="wp_link_pages clearfix"><span class="wp_link_pages-item-empty">' . __( 'Pages:', 'activetab' ).'</span>', 'after' => '</div>', 'link_before' => '<span class="wp_link_pages-item">', 'link_after' => '</span>', 'pagelink' => '%' ) ); ?>
 	</section> <!-- /.entry-content -->

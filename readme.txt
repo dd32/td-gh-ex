@@ -4,7 +4,7 @@ Donate link: http://web-profile.com.ua/donate/
 Tags: gray, white, light, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.4
 Tested up to: 3.5.2
-Stable tag: 0.3.9
+Stable tag: 0.4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,10 @@ FAQ:
 
 
 == Changelog ==
+
+= 0.4.0 - 2013-07-01 =
+* bug fixing
+* option added: excerpt_or_full_content_in_list
 
 = 0.3.9 - 2013-06-26 =
 * Hebrew translation added (thanks to 00avi00 http://wordpress.org/support/profile/00avi00)

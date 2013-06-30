@@ -272,8 +272,8 @@ function optionsframework_page() {
 			<?php settings_fields( 'optionsframework' ); ?>
 			<?php optionsframework_fields(); /* Settings */ ?>
 			<div id="optionsframework-submit">
-				<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'activetab' ); ?>" />
-				<input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'activetab' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'activetab' ) ); ?>' );" />
+				<input type="submit" class="button-primary" name="update" value="<?php echo esc_attr( __( 'Save options', 'activetab' ) ); ?>" />
+				<input type="submit" class="reset-button button-secondary" name="reset" value="<?php echo esc_attr( __( 'Restore defaults', 'activetab' ) ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'activetab' ) ); ?>' );" />
 				<div class="clear"></div>
 			</div>
 			</form>

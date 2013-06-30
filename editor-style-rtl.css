@@ -7,10 +7,10 @@ html .mceContentBody {
 	direction: rtl;
 	unicode-bidi: embed;
 	float: right;
-	width: 584px;
+	max-width: 600px;
 }
 * {
-	font-family: Arial, Tahoma, sans-serif;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 ul, ol {
 	margin: 0 2.5em 1.625em 0;

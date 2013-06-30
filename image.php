@@ -88,7 +88,6 @@
 					<?php endwhile; // end of the loop ?>
 
 
-
 <?php get_template_part( 'template-part', 'wrap-after' ); ?>
 
 <?php get_sidebar(); ?>
