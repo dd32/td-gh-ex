@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: activetab\n"
-"POT-Creation-Date: 2013-06-26 09:22+0200\n"
-"PO-Revision-Date: 2013-06-26 09:22+0200\n"
+"POT-Creation-Date: 2013-07-02 00:16+0200\n"
+"PO-Revision-Date: 2013-07-02 00:16+0200\n"
 "Last-Translator: webvitaly <webvitaly@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -32,7 +32,7 @@ msgstr ""
 
 #: ../archive.php:12
 #, php-format
-msgid "Category archives: %s"
+msgid "Category: %s"
 msgstr ""
 
 #: ../archive.php:13
@@ -41,7 +41,7 @@ msgstr ""
 
 #: ../archive.php:16
 #, php-format
-msgid "Tag archives: %s"
+msgid "Tag: %s"
 msgstr ""
 
 #: ../archive.php:17
@@ -50,7 +50,7 @@ msgstr ""
 
 #: ../archive.php:22
 #, php-format
-msgid "Author archives: %s"
+msgid "Author: %s"
 msgstr ""
 
 #: ../archive.php:25
@@ -59,17 +59,17 @@ msgstr ""
 
 #: ../archive.php:28
 #, php-format
-msgid "Daily archives: %s"
+msgid "Day: %s"
 msgstr ""
 
 #: ../archive.php:31
 #, php-format
-msgid "Monthly archives: %s"
+msgid "Month: %s"
 msgstr ""
 
 #: ../archive.php:34
 #, php-format
-msgid "Yearly archives: %s"
+msgid "Year: %s"
 msgstr ""
 
 #: ../archive.php:37
@@ -144,11 +144,11 @@ msgstr ""
 msgid "Submit reply to %s"
 msgstr ""
 
-#: ../content-list.php:6 ../content-single.php:6 ../content.php:6
+#: ../content-list.php:7 ../content-single.php:7 ../content.php:7
 msgid "Sticky"
 msgstr ""
 
-#: ../content-page.php:11 ../content-single.php:20 ../image.php:80
+#: ../content-page.php:12 ../content-single.php:21 ../image.php:80
 msgid "Pages:"
 msgstr ""
 
@@ -330,6 +330,22 @@ msgstr ""
 msgid "Code will be added to body section just before closing [body] tag"
 msgstr ""
 
+#: ../options.php:83
+msgid "Other"
+msgstr ""
+
+#: ../options.php:88
+msgid "Excerpt"
+msgstr ""
+
+#: ../options.php:89
+msgid "Full content"
+msgstr ""
+
+#: ../options.php:92
+msgid "Show excerpt or full content in the list of posts"
+msgstr ""
+
 #: ../search.php:10
 msgid "Search results for:"
 msgstr ""
@@ -362,6 +378,14 @@ msgstr ""
 
 #: ../options-framework/options-framework.php:230
 msgid "Select Color"
+msgstr ""
+
+#: ../options-framework/options-framework.php:275
+msgid "Save options"
+msgstr ""
+
+#: ../options-framework/options-framework.php:276
+msgid "Restore defaults"
 msgstr ""
 
 #: ../options-framework/options-framework.php:276
