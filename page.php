@@ -3,64 +3,69 @@
  *
  * Silverclean WordPress Theme by Iceable Themes | http://www.iceablethemes.com
  *
- * Copyright 2013-2015 Mathieu Sarrasin - Iceable Media
+ * Copyright 2013 Mathieu Sarrasin - Iceable Media
  *
  * Page Template
  *
  */
+?>
 
-get_header();
+<?php get_header();
 
-if(have_posts()) :
-while(have_posts()) : the_post();
+	if(have_posts()) :
+	while(have_posts()) : the_post();
 
-?><div class="container" id="main-content"><?php
+	if ( get_custom_header()->url ) :
+		if (	( is_front_page() && silverclean_get_option('home_header_image') != 'Off' ) ||
+				( !is_front_page() && silverclean_get_option('pages_header_image') != 'Off' ) ):
+?>
 
-		?><div id="page-container" <?php post_class("left with-sidebar"); ?>><?php
+	<div id="header-image" class="container">
+		<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
+	</div>
+	
+<?php
+		endif;
+	endif;
+?>
 
-				?><h1 class="page-title"><?php the_title(); ?></h1><?php
+	<div class="container" id="main-content">
 
-				the_content();
-				$silverclean_link_pages_args = array(
-					'before'           => '<br class="clear" /><div class="paged_nav">' . __('Pages:', 'silverclean'),
-					'after'            => '</div>',
-					'link_before'      => '<span>',
-					'link_after'       => '</span>',
-					'next_or_number'   => 'number',
-					'nextpagelink'     => __('Next page', 'silverclean'),
-					'previouspagelink' => __('Previous page', 'silverclean'),
-					'pagelink'         => '%',
-					'echo'             => 1
-				);
-				wp_link_pages( $silverclean_link_pages_args );
-				?><br class="clear" /><?php
+		<div id="page-container" <?php post_class("left with-sidebar"); ?>>
 
-				?><p class="editlink"><?php
-					edit_post_link(__('Edit', 'silverclean'), '', '');
-				?></p><?php
+				<h1 class="page-title"><?php the_title(); ?></h1>
 
-				// Display comments section only if comments are open or if there are comments already.
-				if ( comments_open() || get_comments_number()!=0 ):
-				?><div class="comments"><?php
-					comments_template( '', true );
-					next_comments_link(); previous_comments_link();
-				?></div><?php
-				endif;
+				<?php the_content(); ?>
+				<br class="clear" />
+				<p class="editlink">
+				<?php edit_post_link(__('Edit', 'silverclean'), '', ''); ?>
+				</p>
 
-endwhile;
+			<?php	// Display comments section only if comments are open or if there are comments already.
+				if ( comments_open() || get_comments_number()!=0 ) : ?>
+				<!-- comments section -->
+				<div class="comments">
+				<?php comments_template( '', true ); ?>
+				<?php next_comments_link(); previous_comments_link(); ?>
+				</div>
+				<!-- end comments section -->
+			<?php endif; ?>
 
-else:
-	?><h2><?php _e('Not Found', 'silverclean'); ?></h2><?php
-	?><p><?php _e('What you are looking for isn\'t here...', 'silverclean'); ?></p><?php
+			<?php endwhile; ?>
+				<?php else : ?>
+				<h2><?php _e('Not Found', 'silverclean'); ?></h2>
+				<p><?php _e('What you are looking for isn\'t here...', 'silverclean'); ?></p>
 
-endif;
+			<?php endif; ?>
+		</div>
+		<!-- End page container -->
 
-?></div><?php // End page container
+		<div id="sidebar-container" class="right">
+			<ul id="sidebar">
+			   <?php dynamic_sidebar( 'sidebar' ); ?>
+			</ul>
+		</div><!-- End sidebar -->
 
-?><div id="sidebar-container" class="right"><?php
-	get_sidebar();
-?></div><?php // End sidebar
-
-?></div><?php // End main content
-
-get_footer(); ?>
+	</div>
+	<!-- End main content -->
+<?php get_footer(); ?>

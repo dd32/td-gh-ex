@@ -3,21 +3,31 @@
  *
  * Silverclean WordPress Theme by Iceable Themes | http://www.iceablethemes.com
  *
- * Copyright 2013-2015 Mathieu Sarrasin - Iceable Media
+ * Copyright 2013 Mathieu Sarrasin - Iceable Media
  *
  * Theme's Function
  *
  */
 
 /*
+ * Set default $content_width
+ */
+if ( ! isset( $content_width ) )
+	$content_width = 450;
+
+/* Adjust $content_width it depending on the page being displayed */
+function silverclean_content_width() {
+	if ( is_page_template( 'page-full-width.php' ) ) {
+		global $content_width;
+		$content_width = 920;
+	}
+}
+add_action( 'template_redirect', 'silverclean_content_width' );
+
+/*
  * Setup and registration functions
  */
 function silverclean_setup(){
-
-	/* Set default $content_width */
-	global $content_width;
-	if ( ! isset( $content_width ) ) $content_width = 450;
-
 	/* Translation support
 	 * Translations can be added to the /languages directory.
 	 * A .pot template file is included to get you started
@@ -45,16 +55,6 @@ function silverclean_setup(){
 
 }
 add_action('after_setup_theme', 'silverclean_setup');
-
-/* Adjust $content_width it depending on the page being displayed */
-function silverclean_content_width() {
-	if ( is_page_template( 'page-full-width.php' ) ) {
-		global $content_width;
-		$content_width = 920;
-	}
-}
-add_action( 'template_redirect', 'silverclean_content_width' );
-
 
 /*
  * Page title
@@ -113,7 +113,7 @@ function silverclean_widgets_init() {
 		'id'            => 'footer-sidebar',
 		'description'   => '',
 	    'class'         => '',
-		'before_widget' => '<li id="%1$s" class="widget %2$s">',
+		'before_widget' => '<li id="%1$s" class="one-fourth widget %2$s">',
 		'after_widget'  => '</li>',
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
@@ -127,56 +127,25 @@ add_action( 'widgets_init', 'silverclean_widgets_init' );
  * Enqueue CSS styles
  */
 function silverclean_styles() {
-
-	$template_directory_uri = get_template_directory_uri(); // Parent theme URI
-	$stylesheet_directory = get_stylesheet_directory(); // Current theme directory
-	$stylesheet_directory_uri = get_stylesheet_directory_uri(); // Current theme URI
-
-	$responsive_mode = silverclean_get_option('responsive_mode');
-	if ($responsive_mode != 'off'):
-		$stylesheet = '/css/silverclean.dev.css';
-	else:
-		$stylesheet = '/css/silverclean-unresponsive.min.css';
-	endif;
-
-	/* Child theme support:
-	 * Enqueue child-theme's versions of stylesheets in /css if they exist,
-	 * or the parent theme's version otherwise
-	 */
-	if ( @file_exists( $stylesheet_directory . $stylesheet ) )
-		wp_register_style( 'silverclean', $stylesheet_directory_uri . $stylesheet );
-	else
-		wp_register_style( 'silverclean', $template_directory_uri . $stylesheet );
-
-	// Always enqueue style.css from the current theme
-	wp_register_style( 'silverclean-style', $stylesheet_directory_uri . '/style.css');
-
-	wp_enqueue_style( 'silverclean' );
-	wp_enqueue_style( 'silverclean-style' );
+	wp_register_style( 'icefit', get_template_directory_uri() . '/css/icefit.css');
+	wp_register_style( 'theme-style', get_template_directory_uri() . '/css/theme-style.css');
+	wp_enqueue_style( 'icefit' );
+	wp_enqueue_style( 'theme-style' );
 }
-add_action('wp_enqueue_scripts', 'silverclean_styles');
+add_action('wp_print_styles', 'silverclean_styles');
 
 /*
  * Enqueue Javascripts
  */
 function silverclean_scripts() {
-	wp_enqueue_script('silverclean', get_template_directory_uri() . '/js/silverclean.min.js', array('jquery','hoverIntent'));
+	wp_enqueue_script('icefit-scripts', get_template_directory_uri() . '/js/icefit.js', array('jquery'));
+	wp_enqueue_script('hoverIntent', get_template_directory_uri() . '/js/hoverIntent.js', array('jquery'));	// Submenus
+	wp_enqueue_script('superfish', get_template_directory_uri() . '/js/superfish.js', array('jquery'));	// Submenus
     /* Threaded comments support */
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
 }
 add_action('wp_enqueue_scripts', 'silverclean_scripts');
-
-/*
- * Remove hentry class from static pages
- */
-function silverclean_remove_hentry( $classes ) {
-	if ( is_page() ):
-		$classes = array_diff($classes, array('hentry'));
-	endif;
-	return $classes;
-}
-add_filter('post_class','silverclean_remove_hentry');
 
 /*
  * Remove "rel" tags in category links (HTML5 invalid)
@@ -187,11 +156,46 @@ function silverclean_remove_rel_cat( $text ) {
 add_filter( 'the_category', 'silverclean_remove_rel_cat' ); 
 
 /*
+ * Fix for a known issue with enclosing shortcodes and wpautop
+ * (wpautop tends to add empty <p> or <br> tags before and/or after enclosing shortcodes)
+ * Thanks to Johann Heyne
+ */
+function silverclean_shortcode_empty_paragraph_fix($content) {
+	$array = array (
+		'<p>['    => '[', 
+		']</p>'   => ']', 
+		']<br />' => ']',
+	);
+	$content = strtr($content, $array);
+	return $content;
+}
+add_filter('the_content', 'silverclean_shortcode_empty_paragraph_fix');
+
+/*
+ * Improved version of clean_pre
+ * Based on a work by Emrah Gunduz
+ */
+function silverclean_protect_pre($pee) {
+	$pee = preg_replace_callback('!(<pre[^>]*>)(.*?)</pre>!is', 'silverclean_eg_clean_pre', $pee );
+	return $pee;
+}
+
+function silverclean_eg_clean_pre($matches) {
+	if ( is_array($matches) )
+		$text = $matches[1] . $matches[2] . "</pre>";
+	else
+		$text = $matches;
+	$text = str_replace('<br />', '', $text);
+	return $text;
+}
+add_filter( 'the_content', 'silverclean_protect_pre' );
+
+/*
  * Customize "read more" links on index view
  */
 function silverclean_excerpt_more( $more ) {
 	global $post;
-	return '... <div class="read-more"><a href="'. get_permalink( get_the_ID() ) . '">'. __("Read More", 'silverclean') .'</a></div>';
+	return '<div class="read-more"><a href="'. get_permalink( get_the_ID() ) . '">'. __("Read More", 'silverclean') .'</a></div>';
 }
 add_filter( 'excerpt_more', 'silverclean_excerpt_more' );
 
@@ -257,27 +261,6 @@ function silverclean_page_has_comments_nav() {
 	global $wp_query;
 	return ($wp_query->max_num_comment_pages > 1);
 }
-
-/*
- * Find whether attachement page needs navigation links (used in single.php)
- */
-function silverclean_adjacent_image_link($prev = true) {
-    global $post;
-    $post = get_post($post);
-    $attachments = array_values(get_children("post_parent=$post->post_parent&post_type=attachment&post_mime_type=image&orderby=\"menu_order ASC, ID ASC\""));
-
-    foreach ( $attachments as $k => $attachment )
-        if ( $attachment->ID == $post->ID )
-            break;
-
-    $k = $prev ? $k - 1 : $k + 1;
-
-    if ( isset($attachments[$k]) )
-        return true;
-	else
-		return false;
-}
-
 
 /*
  * Framework Elements
