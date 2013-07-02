@@ -11,33 +11,31 @@ timeout: 4000,
 </script>
 <div id="featured_slider">
 	<ul id="slider">
-<?php
-/*custom query to make sure the slider does not reset with the pagination.*/
-		global $wpdb;
-		$querystr = "
-			SELECT DISTINCT wposts.* 
-			FROM $wpdb->posts wposts, $wpdb->postmeta wpostmeta
-			WHERE wposts.ID = wpostmeta.post_id 
-			AND wposts.post_status = 'publish' 
-			AND wposts.post_type = 'slider'";
-		$pageposts = $wpdb->get_results($querystr, OBJECT); ?>
-		<?php if ($pageposts): ?>	
-			<?php global $post; ?>
-			<?php foreach ($pageposts as $post): ?>
-			<?php setup_postdata($post);
-				$custom = get_post_custom($post->ID);
-				?>
+	<?php 
+		while ( have_posts() ) : the_post(); 
+		?>
 		<li>
+		<?php if (is_search() ):
+			printf( __( 'Search Results for: %s', 'star' ), '<h2>' . get_search_query() . '</h2>' );
+		 else: 
+		?>
+
 			<h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
-			<?php if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-				the_post_thumbnail();
-			}
-			the_excerpt();?>
+			<?php 
+			if (!is_single()) : 
+			if (!is_page()) : 
+		
+			?>
+			<a href="<?php the_permalink();?>">
+			<?php 
+			the_excerpt();
+			?>	
+			</a>
+			<?php endif; endif; endif;?>
 		</li>
 		<?php
-		endforeach; 
-	 endif; 
-	 ?>
+		endwhile;
+			?>
 	</ul>
 	<div class="feat_next"></div>
 	<div class="feat_prev"></div>
