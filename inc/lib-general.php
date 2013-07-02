@@ -103,3 +103,9 @@ function advantage_remove_images( $content ) {
    $postOutput = preg_replace('/<img[^>]+./','', $content);
    return $postOutput;
 }
+
+function advantage_excerpt_filter( $content ) {
+	return '<p>' . $content . '</p>';
+}
+remove_filter('the_excerpt', 'wpautop');
+add_filter( 'the_excerpt', 'advantage_excerpt_filter' );

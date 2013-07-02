@@ -1,5 +1,10 @@
 // JavaScript Document
 jQuery(document).ready(function($){	
+	listsTab = $("#advantage-tabs a");
+	if ( listsTab.length > 0 ) {
+		currentTab = $('#currenttab').val();	
+		$(listsTab[currentTab]).addClass("advantage-current");
+	}
 	// Tabs
 	$('#advantage-wrapper .advantage-pane').eq($('.advantage-current').index()).show();
 		

@@ -617,6 +617,7 @@ h3#site-description {
 }
 article.comment,
 li.pingback {
+	clear: both;
 	overflow: hidden;
 	padding: 8px;
     position: relative;
@@ -643,6 +644,9 @@ a.comment-reply-link:hover {
 }
 .form-allowed-tags {
 	display: none;
+}
+#respond {
+	clear: both;
 }
 /* Widgets */
 .widget-container {

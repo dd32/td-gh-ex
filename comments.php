@@ -24,7 +24,6 @@
 <?php	if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) {
   	 	// Comments navigate ?>
 			<nav id="comment-nav-above" class="site-navigation comment-navigation">
-			<h5 class="assistive-text"><?php _e( 'Comment navigation', 'advantage' ); ?></h5>
 			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'advantage' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'advantage' ) ); ?></div>
 			</nav>
@@ -36,7 +35,6 @@
 
 <?php 	if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) { 		// Comments Navigation  ?>
 			<nav id="comment-nav-below" class="site-navigation comment-navigation">
-			<h5 class="assistive-text"><?php _e( 'Comment navigation', 'advantage' ); ?></h5>
 			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'advantage' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'advantage' ) ); ?></div>
 			</nav>

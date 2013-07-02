@@ -316,7 +316,7 @@ function advantage_theme_options_display_page() {
 ?>
     <div class="wrap">
 <?php	screen_icon();
-  		echo "<h2>" . __('advantage Theme Options', 'advantage') . "</h2>";
+  		echo "<h2>" . __('Advantage Theme Options', 'advantage') . "</h2>";
 		if ( false !== $_REQUEST['settings-updated'] ) { ?>
 			<div class="updated fade"><p><strong><?php _e('Options Saved', 'advantage'); ?></strong></p></div>
 <?php	} ?>
@@ -324,57 +324,56 @@ function advantage_theme_options_display_page() {
 		<a class="btn btn-warning" href="<?php _e('http://xinthemes.com/advantage-change-log/','advantage'); ?>" target="_blank"><strong><?php _e('Change Log','advantage'); ?></strong></a>&nbsp;&nbsp;
 		<a class="btn btn-success" href="<?php _e('http://xinthemes.com/support/','advantage'); ?>" target="_blank"><strong><?php _e('Support Forum','advantage'); ?></strong></a>&nbsp;&nbsp;
 		<a class="btn btn-info" href="<?php _e('http://xinthemes.com/donate/','advantage'); ?>" target="_blank"><strong><?php _e('Donate','advantage'); ?></strong></a></p>
-        <form method="post" action="options.php">
+	<form method="post" action="options.php">
 <?php	
-		$theme_options = advantage_theme_options_array();
-		$options = advantage_get_options();
-		settings_fields( 'advantage_options' );
-		$tab_index = 0;
+	global $advantage_theme_options, $advantage_options;
+	$advantage_theme_options = advantage_theme_options_array();
+	$advantage_options = advantage_get_options();
+	settings_fields( 'advantage_options' );
 ?>
-		<div id="advantage-wrapper" class="container_12">
-			<input id="save-button" type="submit" class="button-primary" value="<?php _e('Save Options','advantage'); ?>" />
-			<div id="advantage-tabs">
-				<a <?php if ( $tab_index == $options['currenttab'] ) echo 'class="advantage-current"'; $tab_index++; ?>><?php _e('Layout','advantage'); ?></a>
-				<a <?php if ( $tab_index == $options['currenttab'] ) echo 'class="advantage-current"'; $tab_index++; ?>><?php _e('Scheme','advantage'); ?></a>
-				<a <?php if ( $tab_index == $options['currenttab'] ) echo 'class="advantage-current"'; $tab_index++; ?>><?php _e('Fonts','advantage'); ?></a>
-				<a <?php if ( $tab_index == $options['currenttab'] ) echo 'class="advantage-current"'; $tab_index++; ?>><?php _e('Social','advantage'); ?></a>
-				<a <?php if ( $tab_index == $options['currenttab'] ) echo 'class="advantage-current"'; $tab_index++; ?>><?php _e('Custom CSS','advantage'); ?></a>
+	<div id="advantage-wrapper" class="container_12">
+		<input id="save-button" type="submit" class="button-primary" value="<?php _e('Save Options','advantage'); ?>" />
+		<div id="advantage-tabs">
+			<a><?php _e('Layout','advantage'); ?></a>
+			<a><?php _e('Scheme','advantage'); ?></a>
+			<a><?php _e('Fonts','advantage'); ?></a>
+			<a><?php _e('Custom CSS','advantage'); ?></a>
 <?php //Allow child them to add options.
-				do_action( 'advantage_options_tab_link' ); ?>
-			</div>
+			do_action( 'advantage_options_tab_link' ); ?>
+		</div>
 <?php
-/*********************************************************************************
+/******************************************************************
 *  Theme Options related to site layout
-**********************************************************************************/
+******************************************************************/
 ?>
 	<div class="advantage-pane clearfix"><div class="grid_12"><!-- Layout -->
 	<h3><?php _e('Site Layout (12 Columns)','advantage'); ?></h3>	
-<?php	advantage_option_display( $theme_options['gridwidth'], $options ); ?>
+<?php	advantage_option_display( 'gridwidth' ); ?>
 	<div class="grid_3 alpha">
 		<p><b><?php _e('Content and Sidebar Width', 'advantage'); ?></b></p>
 	</div>
 	<div class="grid_9">
 <?php
-		advantage_option_display( $theme_options['content'], $options );
-		advantage_option_display( $theme_options['sidebar1'], $options );
-		advantage_option_display( $theme_options['sidebar2'], $options );
+		advantage_option_display( 'content' );
+		advantage_option_display( 'sidebar1' );
+		advantage_option_display( 'sidebar2' );
 ?>
 	</div><div class="clear"></div>
 <?php
-		advantage_option_display( $theme_options['sidebarpos'], $options );
-		advantage_option_display( $theme_options['sidebarresp'], $options );
-		advantage_option_display( $theme_options['respbp'], $options );
+		advantage_option_display( 'sidebarpos' );
+		advantage_option_display( 'sidebarresp' );
+		advantage_option_display( 'respbp' );
 ?>
 	<div class="grid_3 alpha">
 		<p><b><?php _e('Home Widget Area Width', 'advantage'); ?></b></p>
 	</div>
 	<div class="grid_9">
 <?php
-		advantage_option_display( $theme_options['column_home1'], $options );
-		advantage_option_display( $theme_options['column_home2'], $options );
-		advantage_option_display( $theme_options['column_home3'], $options );
-		advantage_option_display( $theme_options['column_home4'], $options );
-		advantage_option_display( $theme_options['column_home5'], $options );
+		advantage_option_display( 'column_home1' );
+		advantage_option_display( 'column_home2' );
+		advantage_option_display( 'column_home3' );
+		advantage_option_display( 'column_home4' );
+		advantage_option_display( 'column_home5' );
 ?>
 	</div><div class="clear"></div>
 	<div class="grid_3 alpha">
@@ -382,34 +381,34 @@ function advantage_theme_options_display_page() {
 	</div>
 	<div class="grid_9">
 <?php
-		advantage_option_display( $theme_options['column_footer1'], $options );
-		advantage_option_display( $theme_options['column_footer2'], $options );
-		advantage_option_display( $theme_options['column_footer3'], $options );
-		advantage_option_display( $theme_options['column_footer4'], $options );
+		advantage_option_display( 'column_footer1' );
+		advantage_option_display( 'column_footer2' );
+		advantage_option_display( 'column_footer3' );
+		advantage_option_display( 'column_footer4' );
 ?>
 	</div><div class="clear"></div>
 		<h3><?php _e('Home Page','advantage'); ?></h3>
-<?php	advantage_option_display( $theme_options['homepage'], $options );
-		advantage_option_display( $theme_options['fp_option'], $options );
-		advantage_option_display( $theme_options['fp_category'], $options );
-		advantage_option_display( $theme_options['fp_effect'], $options );
-		advantage_option_display( $theme_options['headline'], $options );
-		advantage_option_display( $theme_options['tagline'], $options );		
+<?php	advantage_option_display( 'homepage' );
+		advantage_option_display( 'fp_option' );
+		advantage_option_display( 'fp_category' );
+		advantage_option_display( 'fp_effect' );
+		advantage_option_display( 'headline' );
+		advantage_option_display( 'tagline' );		
 		do_action( 'advantage_options_tab_layout' ); ?>			
 	</div></div>
 <?php
-/*********************************************************************************
+/******************************************************************
 *  Theme Options: Scheme
-**********************************************************************************/
+******************************************************************/
 ?>
 	<div class="advantage-pane clearfix"><div class="grid_12">
-<?php	advantage_option_display( $theme_options['colorscheme'], $options ); ?>
+<?php	advantage_option_display( 'colorscheme' ); ?>
 		<p><?php _e('Change Background Image or Color : ','advantage'); printf( __('<a href="%s">Click here</a>.', 'advantage'), admin_url('themes.php?page=custom-background')); ?></p>
-<?php	advantage_option_display( $theme_options['headerbg'], $options );
-		advantage_option_display( $theme_options['titlebarbg'], $options );
-		advantage_option_display( $theme_options['contentbg'], $options );
-		advantage_option_display( $theme_options['footerbg'], $options );
-		do_action( 'advantage_options_tab_skinning' );
+<?php	advantage_option_display( 'headerbg' );
+		advantage_option_display( 'titlebarbg' );
+		advantage_option_display( 'contentbg' );
+		advantage_option_display( 'footerbg' );
+		do_action( 'advantage_options_tab_scheme' );
 ?>
 	</div></div>	
 <?php
@@ -417,85 +416,57 @@ function advantage_theme_options_display_page() {
 * Theme Options - Fonts  *
 **************************************/
 ?>
-			<div class="advantage-pane clearfix"><div class="grid_12">
-			<p><?php _e( 'You do not need to select font for each element. For example. Body, paragraph and heading define the general fonts used. <span style="color:blue;font-weight:bold;">Please note that blue indicates webfonts (e.g Google Fonts) which may require additional load time.</span>', 'advantage' ); ?></p>
+	<div class="advantage-pane clearfix"><div class="grid_12">
+		<p><?php _e( 'You do not need to select font for each element. For example. Body, paragraph and heading define the general fonts used. <span style="color:blue;font-weight:bold;">Please note that blue indicates webfonts (e.g Google Fonts) which may require additional load time.</span>', 'advantage' ); ?></p>
 <?php 
-			advantage_option_display( $theme_options['bodyfont'], $options );
-			advantage_option_display( $theme_options['headingfont'], $options );
+		advantage_option_display( 'bodyfont' );
+		advantage_option_display( 'headingfont' );
 ?>
-			<hr>
+	<hr>
 <?php
-			advantage_option_display( $theme_options['sitetitlefont'], $options );
-			advantage_option_display( $theme_options['sitedescfont'], $options );
+		advantage_option_display( 'sitetitlefont' );
+		advantage_option_display( 'sitedescfont' );
 ?>
-			<hr>
+	<hr>
 <?php
-			advantage_option_display( $theme_options['entrytitlefont'], $options );
-			advantage_option_display( $theme_options['widgettitlefont'], $options );
-			advantage_option_display( $theme_options['sidebarfont'], $options );
-			advantage_option_display( $theme_options['mainmenufont'], $options );
-			advantage_option_display( $theme_options['footerfont'], $options );
+		advantage_option_display( 'entrytitlefont' );
+		advantage_option_display( 'widgettitlefont' );
+		advantage_option_display( 'sidebarfont' );
+		advantage_option_display( 'mainmenufont' );
+		advantage_option_display( 'footerfont' );
 ?>
-			<h3><?php _e( 'Additional Google Fonts', 'advantage' ); ?></h3>
+	<h3><?php _e( 'Additional Google Fonts', 'advantage' ); ?></h3>
 <?php
-			advantage_option_display( $theme_options['otherfont1'], $options );
-			advantage_option_display( $theme_options['otherfont2'], $options );
-			advantage_option_display( $theme_options['otherfont3'], $options );
-			advantage_option_display( $theme_options['otherfont4'], $options );
-			do_action( 'advantage_options_tab_fonts' );
+		advantage_option_display( 'otherfont1' );
+		advantage_option_display( 'otherfont2' );
+		advantage_option_display( 'otherfont3' );
+		advantage_option_display( 'otherfont4' );
+		do_action( 'advantage_options_tab_fonts' );
 ?>
-			</div></div>	
+	</div></div>
 <?php
-/*********************************************************************************
-*  Theme Options related to social network
-**********************************************************************************/
-?>
-			<div class="advantage-pane clearfix"><div class="grid_12"><!-- Social -->
-			
-			<div class="grid_3 alpha"><p><b><?php _e('Social URLs', 'advantage'); ?></b></p></div>
-			<div class="grid_9">
-			<?php $social_links = advantage_social_links();
-			foreach ($social_links as $link ) { ?>
-				<div class="social-links">
-				<span class="<?php echo $link['name']; ?>"></span>
-				</div>
-				<div class="grid_2">
-				<p><?php echo esc_attr($link['label']); ?></p>
-				</div>
-				<div class="grid_8">
-				<p><input type="text" size="50" name="advantage_theme_options[<?php echo $link['name']; ?>]" value="<?php echo esc_url( $options[$link['name']] ); ?>" /></p></div>
-				<div class="clear"></div>
-			<?php } ?>
-			</div>			
-			<div class="clear"></div>						
-<?php			do_action('advantage_options_tab_social'); ?>
-			</div></div><!-- Sharing -->
-<?php
-/********************************************************************
+/******************************************************************
 *  Custom CSS
-********************************************************************/
+******************************************************************/
 ?>
-		<div class="advantage-pane clearfix"><div class="grid_12"><!-- Custom CSS -->
+	<div class="advantage-pane clearfix"><div class="grid_12">
 <?php
-		advantage_option_display( $theme_options['advantage_inline_css'], $options );	
+		advantage_option_display( 'advantage_inline_css' );	
 ?>
-		</div></div><!-- Custom CSS -->
+	</div></div>
 <?php
-/*********************************************************************************
+/******************************************************************
 *  Child Theme Options
-**********************************************************************************/
-?>
-		<div class="advantage-pane clearfix"><div class="grid_12">
+******************************************************************/
+	do_action( 'advantage_options_tab_page' );
 
-<?php	do_action( 'advantage_options_tab_page' ); ?>
-		</div></div>
-<?php	advantage_option_display($theme_options['currenttab'], $options);
-      	advantage_option_display($theme_options['schemecss'], $options);
-		advantage_option_display($theme_options['advantage_scheme_css'], $options);
+	advantage_option_display( 'currenttab' );
+    advantage_option_display( 'schemecss' );
+	advantage_option_display( 'advantage_scheme_css' );
 ?>
-		<p><input id="save-button-bottom" type="submit" class="button-primary" value="<?php _e( 'Save Options', 'advantage' ); ?>" /></p>
-		</div><!-- advantage-wrapper -->
-        </form>
+	<p><input id="save-button-bottom" type="submit" class="button-primary" value="<?php _e( 'Save Options', 'advantage' ); ?>" /></p>
+	</div><!-- advantage-wrapper -->
+    </form>
     </div><!-- wrap -->
 <?php
 }
@@ -524,16 +495,6 @@ function advantage_theme_options_validate( $input ) {
 				break;
 		}
 	}
-	//URL
-	$input['url_facebook'] = esc_url_raw( $input['url_facebook'] );
-	$input['url_linkedin'] = esc_url_raw( $input['url_linkedin'] );
-	$input['url_twitter'] = esc_url_raw( $input['url_twitter'] );
-	$input['url_gplus'] = esc_url_raw( $input['url_gplus'] );
-	$input['url_vimeo'] = esc_url_raw( $input['url_vimeo'] );
-	$input['url_youtube'] = esc_url_raw( $input['url_youtube'] );
-	$input['url_flickr'] = esc_url_raw( $input['url_flickr'] );
-	$input['url_instagram'] = esc_url_raw( $input['url_instagram'] );
-	$input['url_rss'] = esc_url_raw( $input['url_rss'] );
 	if ( $input['respbp'] < 960 )
 		$input['respbp'] = 960;
 	$input['advantage_scheme_css'] = advantage_scheme_css( $input );
@@ -600,8 +561,10 @@ function advantage_scheme_css($input) {
 	return apply_filters( 'advantage_scheme_css', $css );
 }
 
-function advantage_option_display( $theme_option, $options ) {
-	global $advantage_options, $advantage_fonts;
+function advantage_option_display( $option_name ) {
+	global $advantage_options, $advantage_theme_options, $advantage_fonts;
+	$theme_option = $advantage_theme_options[ $option_name ];
+	$options = $advantage_options;
 	if ( $theme_option['type'] != 'hidden' && empty( $theme_option['fieldonly'] ) ) {
 		if ( isset( $theme_option['label'] ) ) {
 			echo '<div class="grid_3 alpha">';	

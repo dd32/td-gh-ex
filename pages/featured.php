@@ -55,8 +55,8 @@ get_header();
 			echo '<div class="carousel-caption">';
 			echo '<h2><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
 			the_excerpt();
-			echo '<a class="btn btn-primary btn-large" href="' . get_permalink() . '">';
-			echo $readmore . '</a>';
+			echo '<p><a class="btn btn-primary btn-large" href="' . get_permalink() . '">';
+			echo esc_attr( $readmore ) . '</a></p>';
 			echo '</div></div></div>';
 			$count++;
 		}
