@@ -1,5 +1,5 @@
 /*
- * Customizr v2.1.8
+ * Customizr v3.0
  *
  * Licensed under the GNU General Public License v2 or later
  * http://www.gnu.org/licenses/gpl-2.0.html
@@ -7295,7 +7295,6 @@ h2.site-description {
   margin: auto;
 }
 .thumb-wrapper img {
-  min-height: 250px;
   z-index: 90;
 }
 .thumb-wrapper.no-effect img {
@@ -7326,10 +7325,13 @@ h2.site-description {
 /* two sidebars case */
 
 .span6.article-container .round-div {
-  width: 125px;
-  height: 125px;
-  top: -42px;
-  left: -78px;
+  width: 115px;
+  height: 115px;
+  top: -75px;
+  left: -76px;
+}
+.span6.article-container .thumb-wrapper {
+  height: 180px;
 }
 .round-div.no-effect {
   border: none;
@@ -7884,8 +7886,19 @@ footer .widget_recent_entries li:after {
   .span9.article-container .round-div {
     width: 153px;
     height: 153px;
-    top: -54px;
+    top: -59px;
     left: -69px;
+  }
+  .span9.article-container .thumb-wrapper img {
+    max-width: 250px;
+  }
+  /* two sidebars case (span9) */
+  
+  .span6.article-container .round-div {
+    width: 95px;
+    height: 95px;
+    top: -84px;
+    left: -80px;
   }
 }
 @media (max-width: 979px) {
@@ -8007,8 +8020,11 @@ footer .widget_recent_entries li:after {
   .span6.article-container .round-div {
     width: 84px;
     height: 84px;
-    top: -38px;
+    top: -72px;
     left: -81px;
+  }
+  .span6.article-container .thumb-wrapper img {
+    max-width: 130px;
   }
   .thumb-wrapper img {
     min-height: initial;
@@ -8051,8 +8067,13 @@ footer .widget_recent_entries li:after {
   .span12.article-container .round-div {
     width: 125px;
     height: 125px;
-    top: -45px;
-    left: -49px;
+    top: -63px;
+    left: -65px;
+  }
+  .span6.article-container .thumb-wrapper img,
+  .span9.article-container .thumb-wrapper img,
+  .span12.article-container .thumb-wrapper img {
+    max-width: 190px;
   }
   /* hide left sidebar */
   
@@ -8100,9 +8121,9 @@ footer .widget_recent_entries li:after {
   .span6.article-container .round-div,
   .span9.article-container .round-div,
   .span12.article-container .round-div {
-    width: 90px;
-    height: 90px;
-    top: -20px;
+    width: 100px;
+    height: 100px;
+    top: -39px;
     left: -76px;
   }
   .navbar-inner .social-block {

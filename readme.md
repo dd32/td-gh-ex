@@ -78,11 +78,21 @@ Posts with the link post format will link out to the first a tag in the post.
 
 
 # Notes for developers
-## Customizr loop 
-For the development of this theme, I created only one loop for all kind of content. It is located in index.php.
-I also made the choice to use template parts instead of using the template hierarchy.
-1. The loop calls the main template : article-content.php
-2. The templates parts are then called in article-content.php, depending on the post type or context.
+## Code logic
+The theme is built on a classes framework. The classes are identified by their group and name like this : class-[group]-[name].php.
+
+The function tc__($group, $classname), where the group parameter is required :
+1) scans the theme folder to find the appropriate group / class 
+2) and then instanciates the class(es) only once through a singleton factory.
+
+A class typically includes a constructor which is mainly used to add the methods to WP actions and filters. 
+Actions are used to render HTML while filters are used to get values.
+
+For simplification purposes, the theme uses few WP templates : index.php, header.php, footer.php, comments.php, sidebar(s).php. 
+Those templates only includes some structural HTML markup, the rest is rendered with the actions defined in the classes of the parts/ folder.
+
+Customizr uses one single loop for all kind of content. It is located in class-main-loop.php.
+
 
 ## Translation
 The themes is ready for translation and already translated in french. Translation files are in /lang.
@@ -108,6 +118,12 @@ The exceptions to this license are as follows:
 
 
 # Changelog
+= 3.0 =
+* changed : global code structure has changed. Classes are instanciated by a singleton factory, html is rendered with actions, values are called through filters
+* fixed : favicon rendering, $__options was not defined in head
+* fixed : sidebars reordering on responsive display, tc_script.js file
+
+
 = 2.1.8 =
 * changed : activation options are disable for posts_per_page and show_on_front
 * changed : redirect to customizr screen on first theme activation only
