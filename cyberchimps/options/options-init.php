@@ -318,13 +318,19 @@ function cyberchimps_do_settings_sections( $page ) {
 		
 		// wrapper div of all field-container divs
 		echo '<div class="field-container-wrapper">';
+
+        //Hook before section options
+        do_action( $jquery_click_section_hook . '_before' );
 		
 		call_user_func($section['callback'], $section);
 		
 		if ( isset($wp_settings_fields) && isset($wp_settings_fields[$page]) && isset($wp_settings_fields[$page][$section['id']]) ) {
 			cyberchimps_do_settings_fields($page, $section['id']);
 		}
-		
+
+        //Hook after section options
+        do_action( $jquery_click_section_hook . '_after' );
+
 		echo '</div>'; // .field-container ends
 		echo '<div class="clear"></div></div>';
 	}
@@ -926,6 +932,7 @@ function cyberchimps_fields_callback( $value ) {
  * Validate theme options before updating to database.
  */
 function cyberchimps_options_validate( $input ) {
+
 	// Theme option import functionality
 	if( isset( $_POST['import' ] ) ) {
 		if( trim( $_POST['import' ] ) ) {
@@ -1015,7 +1022,9 @@ function cyberchimps_options_validate( $input ) {
 				$clean[$id] = apply_filters( 'cyberchimps_sanitize_' . $option['type'], $input[$id], $option );
 			}
 		}
-	
+
+        do_action( 'cyberchimps_options_before_save', $input );
+
 		add_settings_error( 'cyberchimps_options', 'save_options', __( 'Options saved.', 'cyberchimps_core' ), 'updated fade' );
 		return $clean;
 	}

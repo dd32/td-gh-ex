@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Elements Free\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-19 16:22:25 UTC\n"
-"PO-Revision-Date: 2013-03-20 16:58+0530\n"
+"PO-Revision-Date: 2013-06-24 17:46+0530\n"
 "Last-Translator: Web Translate It <support@webtranslateit.com>\n"
 "Language-Team: Croatian, Croatia\n"
 "MIME-Version: 1.0\n"
@@ -13,59 +13,9 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#: ../../init.php ../../boxes.php
+#: ../../init.php
 msgid "Boxes Lite"
 msgstr "Okviri Lite"
-
-#: ../../boxes.php
-msgid "Boxes Lite Element"
-msgstr "Kutije Lite Element"
-
-#: ../../boxes.php
-msgid "Box Image"
-msgstr "Okvir slike"
-
-#: ../../boxes.php
-msgid "Box URL"
-msgstr "Okvir URL"
-
-#: ../../boxes.php
-msgid "Box Text"
-msgstr "Okvir Tekst"
-
-#: ../../boxes.php
-msgid "Responsive iFeature Slider"
-msgstr "Brzo iFeature Slider"
-
-#: ../../boxes.php
-msgid ""
-"The New Touch Friendly iFeature 5 Slider now responds to any mobile touch "
-"device."
-msgstr ""
-"Novi Touch Prijateljski iFeature 5 Slider sada reagira na bilo koji mobilni "
-"uređaj osjetljiv na dodir."
-
-#: ../../boxes.php
-msgid "Responsive Design"
-msgstr "Brzo dizajn"
-
-#: ../../boxes.php
-msgid ""
-"With iFeature Pro 5 and touch friendly responsive design you can now control "
-"your website on any device."
-msgstr "S iFeature Pro 5 i dizajnom koje je "
-
-#: ../../boxes.php
-msgid "Excellent Support"
-msgstr "Izvrsna podrška"
-
-#: ../../boxes.php
-msgid ""
-"Need help? Read the instructions and please visit our dedicated Pro Support "
-"Forum"
-msgstr ""
-"Trebate li pomoć? Pročitajte upute i posjetite našu namjenski Pro Podrška "
-"Forum"
 
 #: ../../init.php
 msgid "Portfolio Lite"
@@ -92,5 +42,57 @@ msgid "No tweets to display"
 msgstr "Ne tweets za prikaz"
 
 #: ../../twitter-bar.php
-msgid "Invalid Response"
-msgstr "Neispravan odgovor"
+msgid "Error retrieving tweets"
+msgstr ""
+
+#: ../../twitter-bar.php
+msgid "Twitter API Options"
+msgstr ""
+
+#: ../../twitter-bar.php
+msgid "Edit Twitter API"
+msgstr ""
+
+#: ../../twitter-bar.php
+msgid "Create your Twitter App here"
+msgstr ""
+
+#: ../../twitter-bar.php
+msgid "Complete all parts of the form and create your application"
+msgstr ""
+
+#: ../../twitter-bar.php
+msgid "On the next page click on the button Create my access token"
+msgstr ""
+
+#: ../../twitter-bar.php
+msgid "Now take the details and fill out the form below"
+msgstr ""
+
+#: ../../twitter-bar.php
+msgid "Save your options"
+msgstr ""
+
+#: ../../twitter-bar.php
+msgid "Create a Twitter App"
+msgstr ""
+
+#: ../../twitter-bar.php
+msgid "Consumer Key"
+msgstr ""
+
+#: ../../twitter-bar.php
+msgid "Consumer Secret"
+msgstr ""
+
+#: ../../twitter-bar.php
+msgid "Access Token"
+msgstr ""
+
+#: ../../twitter-bar.php
+msgid "Access Token Secret"
+msgstr ""
+
+#: ../../twitter-bar.php
+msgid "Twitter Handle"
+msgstr "Twitter Drska"

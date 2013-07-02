@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Elements Free\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-19 16:22:25 UTC\n"
-"PO-Revision-Date: 2013-03-20 16:57+0530\n"
+"PO-Revision-Date: 2013-06-24 17:46+0530\n"
 "Last-Translator: Web Translate It <support@webtranslateit.com>\n"
 "Language-Team: Japanese, Japan\n"
 "MIME-Version: 1.0\n"
@@ -12,61 +12,9 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../../init.php ../../boxes.php
+#: ../../init.php
 msgid "Boxes Lite"
 msgstr "ライトボックス"
-
-#: ../../boxes.php
-msgid "Boxes Lite Element"
-msgstr "ボックスLiteの要素"
-
-#: ../../boxes.php
-msgid "Box Image"
-msgstr "ボックスイメージ"
-
-#: ../../boxes.php
-msgid "Box URL"
-msgstr "ボックスのURL"
-
-#: ../../boxes.php
-msgid "Box Text"
-msgstr "Box text: "
-
-#: ../../boxes.php
-msgid "Responsive iFeature Slider"
-msgstr "レスポンシブiFeatureスライダー"
-
-#: ../../boxes.php
-msgid ""
-"The New Touch Friendly iFeature 5 Slider now responds to any mobile touch "
-"device."
-msgstr ""
-"新しいタッチフレンドリーiFeature 5スライダーは今どんなモバイルタッチデバイス"
-"に対応しています。"
-
-#: ../../boxes.php
-msgid "Responsive Design"
-msgstr "レスポンシブ·デザイン"
-
-#: ../../boxes.php
-msgid ""
-"With iFeature Pro 5 and touch friendly responsive design you can now control "
-"your website on any device."
-msgstr ""
-"iFeature Pro 5とタッチに優しい敏感なデザインであなたは今どのデバイスでも、あ"
-"なたのウェブサイトを制御することができます。"
-
-#: ../../boxes.php
-msgid "Excellent Support"
-msgstr "優れたサポート体制"
-
-#: ../../boxes.php
-msgid ""
-"Need help? Read the instructions and please visit our dedicated Pro Support "
-"Forum"
-msgstr ""
-"ヘルプが必要ですか？指示を読み、私達の専用Proのサポートフォーラムをご覧くださ"
-"い"
 
 #: ../../init.php
 msgid "Portfolio Lite"
@@ -93,5 +41,57 @@ msgid "No tweets to display"
 msgstr "表示するつぶやきがありません"
 
 #: ../../twitter-bar.php
-msgid "Invalid Response"
-msgstr "無効な応答"
+msgid "Error retrieving tweets"
+msgstr "つぶやきの取得エラー"
+
+#: ../../twitter-bar.php
+msgid "Twitter API Options"
+msgstr "Twitter API オプション"
+
+#: ../../twitter-bar.php
+msgid "Edit Twitter API"
+msgstr "Twitter の API を編集します。"
+
+#: ../../twitter-bar.php
+msgid "Create your Twitter App here"
+msgstr "Twitter のアプリケーションをここで作成します。"
+
+#: ../../twitter-bar.php
+msgid "Complete all parts of the form and create your application"
+msgstr "フォームのすべての部分を完了し、アプリケーションを作成します。"
+
+#: ../../twitter-bar.php
+msgid "On the next page click on the button Create my access token"
+msgstr "次のページをクリックして、ボタンに私アクセス トークンを作成します。"
+
+#: ../../twitter-bar.php
+msgid "Now take the details and fill out the form below"
+msgstr "今、詳細を取るし、下記のフォームに記入"
+
+#: ../../twitter-bar.php
+msgid "Save your options"
+msgstr "オプションを保存します。"
+
+#: ../../twitter-bar.php
+msgid "Create a Twitter App"
+msgstr "Twitter アプリを作成します。"
+
+#: ../../twitter-bar.php
+msgid "Consumer Key"
+msgstr "コンシューマー キー"
+
+#: ../../twitter-bar.php
+msgid "Consumer Secret"
+msgstr "コンシューマー シークレット"
+
+#: ../../twitter-bar.php
+msgid "Access Token"
+msgstr "アクセス トークン"
+
+#: ../../twitter-bar.php
+msgid "Access Token Secret"
+msgstr "アクセス トークン シークレット"
+
+#: ../../twitter-bar.php
+msgid "Twitter Handle"
+msgstr "Twitter を処理"

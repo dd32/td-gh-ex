@@ -56,34 +56,60 @@ function cyberchimps_blog_section_order_action() {
 }
 add_action('cyberchimps_blog_content', 'cyberchimps_blog_section_order_action');
 
-function cyberchimps_post(){ ?>
-<div id="container" <?php cyberchimps_filter_container_class(); ?>>
+function cyberchimps_post(){
 
-	<?php do_action( 'cyberchimps_before_content_container'); ?>
-  
-	<div id="content" <?php cyberchimps_filter_content_class(); ?>>
-		
-		<?php do_action( 'cyberchimps_before_content'); ?>
-		
-		<?php if ( have_posts() ) : ?>
+?>
+	<div id="container" <?php cyberchimps_filter_container_class(); ?>>
+
+		<?php do_action( 'cyberchimps_before_content_container'); ?>
+	  
+		<div id="content" <?php cyberchimps_filter_content_class(); ?>>
 			
-			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php get_template_part( 'content', get_post_format() ); ?>
+			<?php do_action( 'cyberchimps_before_content'); ?>
+			
+			<?php if ( have_posts() ) : ?>
 				
-			<?php endwhile; ?>
+				<?php while ( have_posts() ) : the_post(); ?>
+
+					<?php get_template_part( 'content', get_post_format() ); ?>
+					
+				<?php endwhile; ?>
+				
+			<?php elseif ( current_user_can( 'edit_posts' ) ) : ?>
+
+				<?php get_template_part( 'no-results', 'index' ); ?>
+
+			<?php endif; ?>
 			
-		<?php elseif ( current_user_can( 'edit_posts' ) ) : ?>
-
-			<?php get_template_part( 'no-results', 'index' ); ?>
-
-		<?php endif; ?>
+			<?php do_action( 'cyberchimps_after_content'); ?>
+			
+		</div><!-- #content -->
+	<?php do_action( 'cyberchimps_after_content_container'); ?>
 		
-		<?php do_action( 'cyberchimps_after_content'); ?>
-		
-	</div><!-- #content -->
-<?php do_action( 'cyberchimps_after_content_container'); ?>
-	
-</div><!-- #container -->
-<?php }
+	</div><!-- #container -->
+<?php
+}
 add_action( 'blog_post_page', 'cyberchimps_post' );
+
+/**
+ * Create the blog page title and hook it in
+ *
+ * @hook cyberchimps_before_content
+ */
+function cyberchimps_blog_title() {
+    if( is_home() ) {
+    // Add blog title if toggle is on.
+    $title_toggle = cyberchimps_get_option( 'blog_title', false );
+    if( $title_toggle ) {
+        $title_text = cyberchimps_get_option( 'blog_title_text', __( 'Our Blog', 'cyberchimps_core' ) );
+        echo apply_filters( 'cyberchimps_blog_title_html', '
+        <div id="cyberchimps_blog_title" class="row-fluid">
+            <header class="page-header">
+                <h1 class="page-title">' . $title_text . '</h1>
+            </header>
+        </div>' );
+    }
+    }
+}
+
+add_action( 'cyberchimps_before_content', 'cyberchimps_blog_title' );

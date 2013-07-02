@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Elements Free\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-19 16:22:25 UTC\n"
-"PO-Revision-Date: 2013-03-20 16:57+0530\n"
+"PO-Revision-Date: 2013-06-24 17:46+0530\n"
 "Last-Translator: Web Translate It <support@webtranslateit.com>\n"
 "Language-Team: Hindi, India\n"
 "MIME-Version: 1.0\n"
@@ -12,58 +12,9 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 
-#: ../../init.php ../../boxes.php
+#: ../../init.php
 msgid "Boxes Lite"
 msgstr "बक्से लाइट"
-
-#: ../../boxes.php
-msgid "Boxes Lite Element"
-msgstr "बक्से लाइट तत्व"
-
-#: ../../boxes.php
-msgid "Box Image"
-msgstr "बॉक्स छवि"
-
-#: ../../boxes.php
-msgid "Box URL"
-msgstr "बॉक्स यूआरएल"
-
-#: ../../boxes.php
-msgid "Box Text"
-msgstr "पाठ बॉक्स"
-
-#: ../../boxes.php
-msgid "Responsive iFeature Slider"
-msgstr "उत्तरदायी iFeature स्लाइडर"
-
-#: ../../boxes.php
-msgid ""
-"The New Touch Friendly iFeature 5 Slider now responds to any mobile touch "
-"device."
-msgstr ""
-"नई टच के अनुकूल iFeature 5 स्लाइडर अब किसी भी मोबाइल स्पर्श डिवाइस के लिए जवाब है."
-
-#: ../../boxes.php
-msgid "Responsive Design"
-msgstr "उत्तरदायी डिजाइन"
-
-#: ../../boxes.php
-msgid ""
-"With iFeature Pro 5 and touch friendly responsive design you can now control "
-"your website on any device."
-msgstr ""
-"IFeature Pro 5 और स्पर्श अनुकूल उत्तरदायी डिजाइन के साथ अब आप किसी भी डिवाइस पर "
-"अपनी वेबसाइट पर नियंत्रण कर सकते हैं."
-
-#: ../../boxes.php
-msgid "Excellent Support"
-msgstr "उत्कृष्ट समर्थन"
-
-#: ../../boxes.php
-msgid ""
-"Need help? Read the instructions and please visit our dedicated Pro Support "
-"Forum"
-msgstr "मदद की ज़रूरत है? निर्देश पढ़ें और हमारे समर्पित प्रो समर्थन फोरम पर जाएँ"
 
 #: ../../init.php
 msgid "Portfolio Lite"
@@ -90,5 +41,57 @@ msgid "No tweets to display"
 msgstr "प्रदर्शन के लिए कोई tweets"
 
 #: ../../twitter-bar.php
-msgid "Invalid Response"
-msgstr "अमान्य प्रतिसाद"
+msgid "Error retrieving tweets"
+msgstr "त्रुटि प्राप्त कर रहा है tweets"
+
+#: ../../twitter-bar.php
+msgid "Twitter API Options"
+msgstr "चहचहाना एपीआई विकल्प"
+
+#: ../../twitter-bar.php
+msgid "Edit Twitter API"
+msgstr "चहचहाना एपीआई संपादित करें"
+
+#: ../../twitter-bar.php
+msgid "Create your Twitter App here"
+msgstr "आपके चहचहाना App यहाँ बनाते"
+
+#: ../../twitter-bar.php
+msgid "Complete all parts of the form and create your application"
+msgstr "प्रपत्र के सभी भागों को पूरा और आपके अनुप्रयोग बनाएँ"
+
+#: ../../twitter-bar.php
+msgid "On the next page click on the button Create my access token"
+msgstr "अगले पृष्ठ पर बटन पर क्लिक करें पर मेरी पहुँच टोकन बनाने"
+
+#: ../../twitter-bar.php
+msgid "Now take the details and fill out the form below"
+msgstr "अब विवरण और नीचे दिए गए फॉर्म को भरें"
+
+#: ../../twitter-bar.php
+msgid "Save your options"
+msgstr "आपके विकल्प सहेजना"
+
+#: ../../twitter-bar.php
+msgid "Create a Twitter App"
+msgstr "एक चहचहाना अनुप्रयोग बनाएँ"
+
+#: ../../twitter-bar.php
+msgid "Consumer Key"
+msgstr "उपभोक्ता कुंजी"
+
+#: ../../twitter-bar.php
+msgid "Consumer Secret"
+msgstr "उपभोक्ता रहस्य"
+
+#: ../../twitter-bar.php
+msgid "Access Token"
+msgstr "पहुँच टोकन"
+
+#: ../../twitter-bar.php
+msgid "Access Token Secret"
+msgstr "पहुँच टोकन रहस्य"
+
+#: ../../twitter-bar.php
+msgid "Twitter Handle"
+msgstr "चहचहाना संभाल"

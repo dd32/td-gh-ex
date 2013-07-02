@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Elements Free\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-19 16:22:25 UTC\n"
-"PO-Revision-Date: 2013-03-20 16:58+0530\n"
+"PO-Revision-Date: 2013-06-24 17:46+0530\n"
 "Last-Translator: Web Translate It <support@webtranslateit.com>\n"
 "Language-Team: Norwegian Bokmål, Norway\n"
 "MIME-Version: 1.0\n"
@@ -12,61 +12,9 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: ../../init.php ../../boxes.php
+#: ../../init.php
 msgid "Boxes Lite"
 msgstr "Bokser Lite"
-
-#: ../../boxes.php
-msgid "Boxes Lite Element"
-msgstr "Bokser Lite-element"
-
-#: ../../boxes.php
-msgid "Box Image"
-msgstr "Box Bilde"
-
-#: ../../boxes.php
-msgid "Box URL"
-msgstr "Boks-URL"
-
-#: ../../boxes.php
-msgid "Box Text"
-msgstr "Box Tekst"
-
-#: ../../boxes.php
-msgid "Responsive iFeature Slider"
-msgstr "Responsiv iFeature Lysbilder"
-
-#: ../../boxes.php
-msgid ""
-"The New Touch Friendly iFeature 5 Slider now responds to any mobile touch "
-"device."
-msgstr ""
-"Den nye touchvennlige iFeature 5 Lysbilder virker nå på alle mobile touch-"
-"enheter."
-
-#: ../../boxes.php
-msgid "Responsive Design"
-msgstr "Responsivt Design"
-
-#: ../../boxes.php
-msgid ""
-"With iFeature Pro 5 and touch friendly responsive design you can now control "
-"your website on any device."
-msgstr ""
-"Med iFeature Pro 5 og trykk vennlig responsive design kan du nå kontrollere "
-"ditt nettsted på enhver enhet."
-
-#: ../../boxes.php
-msgid "Excellent Support"
-msgstr "Utmerket støtte"
-
-#: ../../boxes.php
-msgid ""
-"Need help? Read the instructions and please visit our dedicated Pro Support "
-"Forum"
-msgstr ""
-"Trenger du hjelp? Les instruksjonene og besøk oss gjerne på vårt dedikerte "
-"Pro Support-forum"
 
 #: ../../init.php
 msgid "Portfolio Lite"
@@ -93,5 +41,57 @@ msgid "No tweets to display"
 msgstr "Ingen tweets å vise"
 
 #: ../../twitter-bar.php
-msgid "Invalid Response"
-msgstr "Ugyldig respons"
+msgid "Error retrieving tweets"
+msgstr "Feil under henting av tweets"
+
+#: ../../twitter-bar.php
+msgid "Twitter API Options"
+msgstr "Twitter API alternativer"
+
+#: ../../twitter-bar.php
+msgid "Edit Twitter API"
+msgstr "Redigere Twitter API"
+
+#: ../../twitter-bar.php
+msgid "Create your Twitter App here"
+msgstr "Lage din Twitter App her"
+
+#: ../../twitter-bar.php
+msgid "Complete all parts of the form and create your application"
+msgstr "Fullføre alle deler av skjemaet, og opprette programmet"
+
+#: ../../twitter-bar.php
+msgid "On the next page click on the button Create my access token"
+msgstr "På neste side klikker du på knappen Opprett min tilgangstoken"
+
+#: ../../twitter-bar.php
+msgid "Now take the details and fill out the form below"
+msgstr "Nå ta detaljene, og fyll ut skjemaet nedenfor"
+
+#: ../../twitter-bar.php
+msgid "Save your options"
+msgstr "Din lagringsalternativer"
+
+#: ../../twitter-bar.php
+msgid "Create a Twitter App"
+msgstr "Opprette en Twitter-App"
+
+#: ../../twitter-bar.php
+msgid "Consumer Key"
+msgstr "Forbrukeren nøkkel"
+
+#: ../../twitter-bar.php
+msgid "Consumer Secret"
+msgstr "Forbruker Secret"
+
+#: ../../twitter-bar.php
+msgid "Access Token"
+msgstr "Standardtokenet for brukertilgang"
+
+#: ../../twitter-bar.php
+msgid "Access Token Secret"
+msgstr "Tilgang Token Secret"
+
+#: ../../twitter-bar.php
+msgid "Twitter Handle"
+msgstr "Twitternavn"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Elements Free\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-19 16:22:25 UTC\n"
-"PO-Revision-Date: 2013-03-20 16:58+0530\n"
+"PO-Revision-Date: 2013-06-24 17:46+0530\n"
 "Last-Translator: Web Translate It <support@webtranslateit.com>\n"
 "Language-Team: Chinese, China\n"
 "MIME-Version: 1.0\n"
@@ -12,56 +12,9 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../../init.php ../../boxes.php
+#: ../../init.php
 msgid "Boxes Lite"
 msgstr "盒精简版"
-
-#: ../../boxes.php
-msgid "Boxes Lite Element"
-msgstr "盒精简版元素"
-
-#: ../../boxes.php
-msgid "Box Image"
-msgstr "盒装图片"
-
-#: ../../boxes.php
-msgid "Box URL"
-msgstr "盒URL"
-
-#: ../../boxes.php
-msgid "Box Text"
-msgstr "框文本"
-
-#: ../../boxes.php
-msgid "Responsive iFeature Slider"
-msgstr "响应iFeature的滑块"
-
-#: ../../boxes.php
-msgid ""
-"The New Touch Friendly iFeature 5 Slider now responds to any mobile touch "
-"device."
-msgstr "新的触摸友好的iFeature的5滑块任何移动触摸设备。"
-
-#: ../../boxes.php
-msgid "Responsive Design"
-msgstr "响应设计"
-
-#: ../../boxes.php
-msgid ""
-"With iFeature Pro 5 and touch friendly responsive design you can now control "
-"your website on any device."
-msgstr ""
-"iFeature的Pro 5和触摸友好的响应设计，现在你可以控制你的网站在任何设备上。"
-
-#: ../../boxes.php
-msgid "Excellent Support"
-msgstr "出色的支持"
-
-#: ../../boxes.php
-msgid ""
-"Need help? Read the instructions and please visit our dedicated Pro Support "
-"Forum"
-msgstr "需要帮助吗？阅读说明，请访问我们的专门Pro产品论坛"
 
 #: ../../init.php
 msgid "Portfolio Lite"
@@ -88,5 +41,57 @@ msgid "No tweets to display"
 msgstr "没有要显示的鸣叫"
 
 #: ../../twitter-bar.php
-msgid "Invalid Response"
-msgstr "无效的响应"
+msgid "Error retrieving tweets"
+msgstr "检索的推文时出错"
+
+#: ../../twitter-bar.php
+msgid "Twitter API Options"
+msgstr "Twitter API 选项"
+
+#: ../../twitter-bar.php
+msgid "Edit Twitter API"
+msgstr "编辑 Twitter API"
+
+#: ../../twitter-bar.php
+msgid "Create your Twitter App here"
+msgstr "创建您的 Twitter App 在这里"
+
+#: ../../twitter-bar.php
+msgid "Complete all parts of the form and create your application"
+msgstr "完成窗体的所有部分，并创建您的应用程序"
+
+#: ../../twitter-bar.php
+msgid "On the next page click on the button Create my access token"
+msgstr "在下一个页面单击按钮创建我的访问令牌"
+
+#: ../../twitter-bar.php
+msgid "Now take the details and fill out the form below"
+msgstr "现在带详细信息并填写下面的表单"
+
+#: ../../twitter-bar.php
+msgid "Save your options"
+msgstr "保存您的选项"
+
+#: ../../twitter-bar.php
+msgid "Create a Twitter App"
+msgstr "创建 Twitter 的应用程序"
+
+#: ../../twitter-bar.php
+msgid "Consumer Key"
+msgstr "消费者的关键"
+
+#: ../../twitter-bar.php
+msgid "Consumer Secret"
+msgstr "消费者的秘密"
+
+#: ../../twitter-bar.php
+msgid "Access Token"
+msgstr "访问令牌"
+
+#: ../../twitter-bar.php
+msgid "Access Token Secret"
+msgstr "访问令牌的秘密"
+
+#: ../../twitter-bar.php
+msgid "Twitter Handle"
+msgstr "Twitter的"

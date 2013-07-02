@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Elements Free\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-19 16:22:25 UTC\n"
-"PO-Revision-Date: 2013-03-20 16:58+0530\n"
+"PO-Revision-Date: 2013-06-24 17:47+0530\n"
 "Last-Translator: Web Translate It <support@webtranslateit.com>\n"
 "Language-Team: French, France\n"
 "MIME-Version: 1.0\n"
@@ -12,61 +12,9 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 
-#: ../../init.php ../../boxes.php
+#: ../../init.php
 msgid "Boxes Lite"
 msgstr "Boîtes Lite"
-
-#: ../../boxes.php
-msgid "Boxes Lite Element"
-msgstr "Boîtes Lite élément"
-
-#: ../../boxes.php
-msgid "Box Image"
-msgstr "Image de la boîte"
-
-#: ../../boxes.php
-msgid "Box URL"
-msgstr "URL Box"
-
-#: ../../boxes.php
-msgid "Box Text"
-msgstr "Zone de texte"
-
-#: ../../boxes.php
-msgid "Responsive iFeature Slider"
-msgstr "Responsive curseur iFonction"
-
-#: ../../boxes.php
-msgid ""
-"The New Touch Friendly iFeature 5 Slider now responds to any mobile touch "
-"device."
-msgstr ""
-"Le New Touch bienvenus iFonction 5 Curseur répond désormais à n'importe quel "
-"appareil mobile tactile."
-
-#: ../../boxes.php
-msgid "Responsive Design"
-msgstr "Conception répondant"
-
-#: ../../boxes.php
-msgid ""
-"With iFeature Pro 5 and touch friendly responsive design you can now control "
-"your website on any device."
-msgstr ""
-"Avec iFonction Pro 5 et touche design répond amical vous pouvez désormais "
-"contrôler votre site web sur n'importe quel appareil."
-
-#: ../../boxes.php
-msgid "Excellent Support"
-msgstr "Excellent soutien"
-
-#: ../../boxes.php
-msgid ""
-"Need help? Read the instructions and please visit our dedicated Pro Support "
-"Forum"
-msgstr ""
-"Besoin d'aide? Lisez les instructions et s'il vous plaît visitez notre Forum "
-"dédié Pro Support"
 
 #: ../../init.php
 msgid "Portfolio Lite"
@@ -93,5 +41,57 @@ msgid "No tweets to display"
 msgstr "Pas de tweets à afficher"
 
 #: ../../twitter-bar.php
-msgid "Invalid Response"
-msgstr "Réponse invalide"
+msgid "Error retrieving tweets"
+msgstr "Erreur récupérer les tweets"
+
+#: ../../twitter-bar.php
+msgid "Twitter API Options"
+msgstr "Twitter API Options"
+
+#: ../../twitter-bar.php
+msgid "Edit Twitter API"
+msgstr "Modifier les API de Twitter"
+
+#: ../../twitter-bar.php
+msgid "Create your Twitter App here"
+msgstr "Créer votre App Twitter ici"
+
+#: ../../twitter-bar.php
+msgid "Complete all parts of the form and create your application"
+msgstr "Remplir toutes les parties du formulaire et créez votre application"
+
+#: ../../twitter-bar.php
+msgid "On the next page click on the button Create my access token"
+msgstr "Sur la page suivante, cliquez sur le bouton créer mon jeton d'accès"
+
+#: ../../twitter-bar.php
+msgid "Now take the details and fill out the form below"
+msgstr "Maintenant, prenez les détails et remplir le formulaire ci-dessous"
+
+#: ../../twitter-bar.php
+msgid "Save your options"
+msgstr "Enregistrer vos options"
+
+#: ../../twitter-bar.php
+msgid "Create a Twitter App"
+msgstr "Créer une application Twitter"
+
+#: ../../twitter-bar.php
+msgid "Consumer Key"
+msgstr "Clé de la consommation"
+
+#: ../../twitter-bar.php
+msgid "Consumer Secret"
+msgstr "Secret de consommateur"
+
+#: ../../twitter-bar.php
+msgid "Access Token"
+msgstr "Jeton d'accès"
+
+#: ../../twitter-bar.php
+msgid "Access Token Secret"
+msgstr "Accès jeton Secret"
+
+#: ../../twitter-bar.php
+msgid "Twitter Handle"
+msgstr "Poignée Twitter"
