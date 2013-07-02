@@ -2,8 +2,8 @@
 # This file is distributed under the GNU General Public License 2.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: origami 1.5.4\n"
-"POT-Creation-Date: 2013-06-18T09:57:44+02:00\n"
+"Project-Id-Version: origami 1.5.5\n"
+"POT-Creation-Date: 2013-07-03T00:10:27+02:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -267,7 +267,7 @@ msgstr ""
 msgid "Get Additional Customizations"
 msgstr ""
 
-msgid "After you pay for %s Premium, we'll email you a download link and an order number to your <strong>PayPal email address</strong>. "
+msgid "After you pay for %s Premium, we'll email you an order number to your <strong>PayPal email address</strong>. "
 msgstr ""
 
 msgid "Use <a href='%s' target='_blank'>this form</a> if you don't receive your order number in the next 15 minutes. "
@@ -285,10 +285,10 @@ msgstr ""
 msgid "Already Paid?"
 msgstr ""
 
-msgid "Upgrade Now"
+msgid "Buy Now"
 msgstr ""
 
-msgid "You Choose The Price"
+msgid "We offer a full refund if you're not happy with your purchase"
 msgstr ""
 
 msgid "Custom"
@@ -297,10 +297,10 @@ msgstr ""
 msgid "Please enable Javascript to change pricing"
 msgstr ""
 
-msgid "Purchase"
+msgid "You choose the price, so you can pay what you think %s is worth."
 msgstr ""
 
-msgid "Some of our User Comments"
+msgid "Our User Comments"
 msgstr ""
 
 msgid "%s Addons"
@@ -316,6 +316,9 @@ msgid "They were all built to work perfectly with %s."
 msgstr ""
 
 msgid "<a href='%s'>Contact</a> SiteOrigin support if you need help. "
+msgstr ""
+
+msgid "<a href='%s'>Post a question</a> on the WordPress forums if you need help. "
 msgstr ""
 
 msgid "If you like %s, please <a href='%s' target='_blank'>rate it</a>. Your rating helps a lot! "
@@ -877,19 +880,19 @@ msgstr ""
 msgid "If you've enjoyed using Origami, you're going to love Origami Premium. It's a robust upgrade to Origami that gives you loads of cool features. You choose the price, so you can decide what it's worth to give your site a professional edge."
 msgstr ""
 
-msgid "If you're creating your site on a budget"
+msgid "Creating your site on a budget"
 msgstr ""
 
-msgid "The standard amount"
+msgid "A good, fair price"
 msgstr ""
 
 msgid "We'll love and support you forever"
 msgstr ""
 
-msgid "You choose how much you want to pay for Origami Premium"
+msgid "Premium Email Support"
 msgstr ""
 
-msgid "Pay what you want with a full money back guarantee"
+msgid "Need help setting up Origami? Upgrading to Origami Premium gives you email support - prioritized according to what you paid."
 msgstr ""
 
 msgid "Name The Price"
@@ -898,16 +901,10 @@ msgstr ""
 msgid "You can choose exactly how much you pay for Origami Premium. Pay what ever you think the features are worth to you. Regardless, you're supporting the continued development of Origami."
 msgstr ""
 
-msgid "Email Support"
-msgstr ""
-
-msgid "Need help setting up Origami? Upgrading to Origami Premium gives you prioritized email support, no matter what you pay."
-msgstr ""
-
 msgid "Responsive Features"
 msgstr ""
 
-msgid "The final puzzle pieces in making Origami truly responsive. Origami Premium has footer widgets that collapse below each other on small screen devices. Its menu collapses into a single navigate button which activates an intuitive nested menu system and site search."
+msgid "The final puzzle pieces in making Origami fully responsive. Origami Premium has footer widgets that collapse below each other on small screen devices. Its menu collapses into a single navigate button which activates an intuitive nested menu system and site search."
 msgstr ""
 
 msgid "Customizer Integration"
@@ -946,7 +943,10 @@ msgstr ""
 msgid "Continued Updates"
 msgstr ""
 
-msgid "You'll get continued updates, ensuring that your Origami powered site keeps on working with the latest version of WordPress for years to come."
+msgid "You'll help support the continued development of Origami - ensuring it works with future versions of WordPress for years to come."
+msgstr ""
+
+msgid "This is an overlooked WordPress theme! It's flexible, FAST, and clean. Love it!"
 msgstr ""
 
 msgid "I love this theme very much."
