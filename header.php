@@ -9,6 +9,7 @@
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
+<title><?php wp_title(); ?></title>
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
@@ -20,19 +21,13 @@
 </head>
 
 <body <?php body_class(); ?>>
-
-<?php
-if ( function_exists( 'wp_body_open' ) ) {
-	wp_body_open();
-}
-?>
 	
 	<!--headercontainer-->
 	<div id="header_container">
 	
 		<!--header-->
-	<div class="row">
-		<div class="twelve columns">
+	<div class="row">	
+		<div class="three columns">
 	
 <?php $header_image = get_header_image();
 	if ( ! empty( $header_image ) ) { ?>
@@ -44,10 +39,10 @@ if ( function_exists( 'wp_body_open' ) ) {
 	<?php } ?>
 	
 			
-
+	</div>
 	
 	<!--top menu-->
-			<div id="menu_container">
+			<div class="nine columns" id="menu_container" >
 		
 		<?php $navcheck = '' ; ?>
 	
@@ -64,7 +59,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 
 	</div>
 	
-		</div>
+	
 		</div>
 		
 	</div><!--header container end-->	

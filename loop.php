@@ -35,7 +35,7 @@
 			
 	<?php else : ?>
 	
- 	<?php if ( has_post_thumbnail() ) { ?> <div class="entry-thumbnail"> <?php the_post_thumbnail(array(620,240)); ?> </div> <?php } ?>
+ 	<?php if ( has_post_thumbnail() ) { the_post_thumbnail(array(620,240), array("class" => "alignleft post_thumbnail")); } ?>
 	
 	
 			<?php the_content( '<span class="read-more">'.__('Read More', 'discover').'</span>' ); ?>

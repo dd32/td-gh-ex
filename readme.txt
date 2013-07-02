@@ -1,6 +1,6 @@
 === discover ===
 Author: Manishg
-Tags: threaded-comments,two-columns,theme-options
+Tags: orange,black,threaded-comments,light,two-columns,theme-options,white
 Requires at least: WP 3.0
 
 == Description ==
@@ -8,7 +8,7 @@ Requires at least: WP 3.0
 A very neat and clean orange, black and white business theme. The theme supports widgets. And features theme-options, threaded-comments and multi-level dropdown menu. A simple and neat typography.
 
 == Support ==
-http://themeszen.com/?page_id=33
+Support forum at http://antthemes.com/forum/
 
 == Installation ==
 
@@ -19,13 +19,10 @@ of your WordPress installation. You will then be able to activate the theme.
 == Frequently Asked Questions ==
 
 = How to setup Home/front-page with out Blog =
-Go to settings - reading and select A static page as option for front page display. Select any page as front page and a page called say "Blog" for blog page.
-
-= Footer-sidebar.php, How to add footer widgets =
-Go to appearance - widgets. Drag widgets from left side and drop into First footer widget, second footer widget...and so on..
+Create a new page by going to pages - Add New. Then on right side, in page attributes - Template, select Home as the page template and name your page Home(or anything). And publish the page. Then go to Settings - Reading - select a static page as frontpage display option. Select Home as Front page option.
 
 = Where can I get support for the theme? =
-Support is available at http://themeszen.com/?page_id=33
+Support is available at the http://antthemes.com/forum/.
 
 = How to use menus =
 For Menus: Use wordpress Menu system under Appearance tab.
@@ -34,24 +31,9 @@ For Menus: Use wordpress Menu system under Appearance tab.
 Use wordpress Header system under Appearance tab.
 Appearance/Header
 
+= How to setup Blog page =
+Create a new page by going to pages - Add New. Then on right side, in page attributes - Template, select Blog as the page template. And publish the page.
+
 
 Thanks for downloading the discover theme.
 
-== Copyright ==
-
-discover WordPress Theme, Copyright 2018 Manish Gori
-discover is distributed under the terms of the GNU GPL
-
-The following opensource projects, graphics, fonts, API's or other files as listed have been used in developing this theme. Thanks to the author for the creative work they made. All creative works are licensed as being GPL or GPL compatible.
-
-
-[1.01] trt-customizer-pro, Copyright 2016 Justin Tadlock.
-
-	Source: https://github.com/justintadlock/trt-customizer-pro
-	License:  Licensed under the GNU GPL, version 2 or later.
-	License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
-
-
-== Changelog ==
-= 1.7.32
-- Fixed: customizer.php file

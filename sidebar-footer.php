@@ -7,12 +7,12 @@
 					<?php } else { ?>
 			
 			<ul class="xoxo">
-			<li class="widget-container"><h3 class="widget-title"><?php _e( 'Meta', 'discover' ); ?></h3>	<ul>
-			<li><?php _e( 'Site Admin', 'discover' ); ?></li>			<li><?php _e( 'Log out', 'discover' ); ?></li>
-			<li><?php _e( 'Entries ', 'discover' ); ?><abbr title="Really Simple Syndication"><?php _e( 'RSS', 'discover' ); ?></abbr></li>
-			<li><?php _e( 'Comments ', 'discover' ); ?><abbr title="Really Simple Syndication"><?php _e( 'RSS', 'discover' ); ?></abbr></li>
-			<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform."><?php _e( 'WordPress.org', 'discover' ); ?></a></li>
-						</ul>	</li>	</ul>					
+						<li class="widget-container"><h3 class="widget-title">Meta</h3>			<ul>
+			<li>Site Admin</li>			<li>Log out</li>
+			<li>Entries <abbr title="Really Simple Syndication">RSS</abbr></li>
+			<li>Comments <abbr title="Really Simple Syndication">RSS</abbr></li>
+			<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>
+						</ul>	</li>	</ul>				
 					
 <?php } ?>
 
@@ -27,8 +27,7 @@
 					</ul>
 <?php } else { ?>
 		<ul class="xoxo">
-	<li class="widget-container"><h3 class="widget-title"><?php _e( 'About us', 'discover' ); ?></h3><div class="textwidget">
-	<?php _e( 'This is a text widget. Put your own widget by going to appeareance widget area. Nullam posuere felis a lacus tempor eget dignissim arcu adipiscing. ', 'discover' ); ?></div>
+	<li class="widget-container"><h3 class="widget-title">About us</h3><div class="textwidget">This is a text widget. Put your own widget by going to appeareance widget area. Nullam posuere felis a lacus tempor eget dignissim arcu adipiscing. Donec est est, rutrum vitae bibendum vel, suscipit non metus. Nullam posuere felis a lacus tempor eget dignissim arcu adipiscing. Donec est est, rutrum vitae bibendum vel, suscipit non metus</div>
 		</li></ul>
 				
 <?php } ?>
@@ -43,7 +42,7 @@
 					
 	<?php } else { ?>
 		<ul class="xoxo">
-	<li class="widget-container"><h3 class="widget-title"><?php _e( 'Contact Us', 'discover' ); ?></h3><div class="textwidget"><?php _e( 'This is a text widget. Put your own widget by going to appeareance widget area. Nullam posuere felis a lacus tempor eget dignissim arcu adipiscing. ', 'discover' ); ?></div>
+	<li class="widget-container"><h3 class="widget-title">Contact us</h3><div class="textwidget">This is a text widget. Put your own widget by going to appeareance widget area. Nullam posuere felis a lacus tempor eget dignissim arcu adipiscing. Donec est est, rutrum vitae bibendum vel, suscipit non metus. Nullam posuere felis a lacus tempor eget dignissim arcu adipiscing. Donec est est, rutrum vitae bibendum vel, suscipit non metus</div>
 		</li></ul>
 				
 <?php } ?>

@@ -29,9 +29,8 @@
 						<?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'discover' ), 'after' => '' ) ); ?>
 						
 					</div><!--post-entry end-->
-
+					
 					<?php comments_template( '', true ); ?>
-
 
 <?php endwhile; ?>
 	</div> <!--left-col end-->
