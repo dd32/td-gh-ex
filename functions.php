@@ -18,7 +18,7 @@
 	if ( !function_exists( 'optionsframework_init' ) ) {
 	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
 	function smallbusiness_ppp() { return array( 'post_type'=> 'post', 'ignore_sticky_posts' => 1, 'posts_per_page'  => 2 ); }
-	require_once dirname( __FILE__ ) . '/inc/options-framework.php'; }
+	require_once get_template_directory() . '/inc/options-framework.php';}
 
 // 	Tell WordPress for wp_title in order to modify document title content
 	function smallbusiness_filter_wp_title( $title ) {
@@ -66,18 +66,15 @@
 
 
 // 	Functions for adding script
-	function smallbusiness_enqueue_scripts() {?>
-	<!--[if lt IE 9]>
-	<?php wp_enqueue_script( 'html5forie', get_template_directory_uri(). '/js/html5.js'); ?>
-	<![endif]-->
-	<?php
+	function smallbusiness_enqueue_scripts() {
+	wp_enqueue_style('smallbusiness-style', get_stylesheet_uri(), false, '1.7');
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) { 
 		wp_enqueue_script( 'comment-reply' ); 
 	}
 	
 	wp_enqueue_script( 'jquery');
 	wp_enqueue_script( 'smallbusiness-menu-style', get_template_directory_uri(). '/js/menu.js' );
-	wp_enqueue_style('smallbusiness-gfonts', 'http://fonts.googleapis.com/css?family=Coda:400', false );
+	wp_enqueue_style('smallbusiness-gfonts', '//fonts.googleapis.com/css?family=Coda:400', false );
 	}
 	add_action( 'wp_enqueue_scripts', 'smallbusiness_enqueue_scripts' );
 

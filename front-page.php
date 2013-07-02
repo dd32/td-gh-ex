@@ -14,7 +14,7 @@
 			<?php $sbargs = smallbusiness_ppp(); query_posts( $sbargs ); 
 			if (have_posts()) : while (have_posts()) : the_post();?>
             <li><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('slide-thumb'); ?><div class="post-slide"><h2><?php the_title(); ?></h2><?php  $sbExcerptLength=30; the_excerpt(); ?></div></a></li>
-			<?php endwhile; endif; ?>
+			<?php endwhile; endif; wp_reset_query(); ?>
             </ul></div>  
       	</div>
           
@@ -23,13 +23,22 @@
 <?php get_template_part( 'featured-box' );  ?><br />
 
 			<div id="content">
-			<?php query_posts( $sbargs ); 
-			if (have_posts()) : while (have_posts()) : the_post();?>
-            <a href="<?php the_permalink(); ?>"><h2 class="post-title"><?php the_title();?></h2><?php the_post_thumbnail('thumbnail'); ?></a><?php $sbExcerptLength=60; the_excerpt(); ?>
-            <br />
-            <div class="clear"> </div>
-			<?php endwhile; endif; wp_reset_query(); ?>
-			</div>
+ <?php if (have_posts()) : while (have_posts()) : the_post();?><div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+<a href="<?php the_permalink(); ?>"><h2 class="post-title"><?php the_title();?></h2><?php the_post_thumbnail('thumbnail'); ?></a><?php if (is_page()): the_content(); else: $sbExcerptLength=60; the_excerpt(); endif; ?>
+</div> 
+<br /><div class="clear"> </div>
+ 
+ <?php endwhile; ?>
+
+<div id="page-nav">
+<div class="alignleft"><?php previous_posts_link('&laquo; Previous Entries') ?></div>
+<div class="alignright"><?php next_posts_link('Next Entries &raquo;','') ?></div>
+</div>
+ 
+<?php endif; ?>
+ 
+
+</div>
 
 <?php get_sidebar( 'frontpage' ); ?>
 <div class="clear"> </div>
