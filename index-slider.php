@@ -37,6 +37,7 @@
 								$meta_caption= get_post_meta( get_the_ID(), '_meta_caption', true );
 							
 								if($meta_image != '' || $meta_caption != ''){
+								
 								$images[$c]=$meta_image;
 								$captions[$c]=$meta_caption;
 								$c++; }
@@ -44,8 +45,9 @@
 									//echo 'Enter Image Plz';
 								}
 						} 	
-						
-			if($images != '' || $captions != '' ){ $i=1; 								
+					 	
+			if(count($images)!=0 || count($captions)!=0 ){ $i=1;
+		
 						?>
                         
 				<div id="slider" class="nivoSlider nivoSlider-featured">
@@ -53,11 +55,11 @@
 			                     	while($query->have_posts()){
 												$query->the_post();
 										
-													
+												
 										  
 						?> <?php foreach ($images as $image)
-						      { ?>
-								<img  src="<?php echo $image ; ?>" alt="" <?php  echo "title="."#htmlcaption".$i ; ?> />
+						      { 	?>
+								<img   src="<?php echo $image ; ?>" alt="" <?php  echo "title="."#htmlcaption".$i ; ?> />
 							   <?php ++$i;}}?>
 						
 				<?php 				//print_r($image); ?>
@@ -67,30 +69,28 @@
              </div>
 			 
         <?php }  else {  ?>
-                		
+                	
 				<div id="slider" class="nivoSlider">
+					
 					<img src="<?php echo get_template_directory_uri(); ?>/images/banner1.png" data-thumb="images/banner1.png" alt="" />
 					<img src="<?php echo get_template_directory_uri(); ?>/images/banner2.png" data-thumb="images/banner2.png" alt="" data-transition="slideInLeft" />
 					<img src="<?php echo get_template_directory_uri(); ?>/images/banner4.png" data-thumb="images/banner4.png" alt="" title="#htmlcaption" />
 				</div> 
 				<div id="htmlcaption" class="nivo-html-caption">
                			<?php// echo $value;  ?>
-				<strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>. 
+				<strong><?php _e("This",'appointment'); ?></strong><?php _e(" is an example of a ",'appointment'); ?><em><?php _e("HTML",'appointment'); ?></em><?php _e(" caption with ",'appointment'); ?><a href="#"><?php _e("a link",'appointment'); ?></a>. 
 				</div> 
 				
                 
 											 
 				
                  <?php }	?>
-                 <?php 
-						$i=1;
-							//$query = new WP_Query( array( 'post_type' => 'post' ) );
-								while ( $query->have_posts() ) : $query->the_post(); 
-									//$cap=get_post_meta( get_the_ID(), '_meta_caption', true );	
-									//print_r($cap);
-				?>      
+                 <?php 	$i=1;
+						while ( $query->have_posts() ) : $query->the_post(); 
+					?>      
 				
-				<?php foreach ($captions as $caption){ ?>
+				<?php foreach ($captions as $caption){ 
+				 ?>
 						<div  <?php  echo "id="."htmlcaption".$i ; ?> class="nivo-html-caption">
 					<span><?php echo $caption ;?></span>
 						</div>	<?php $i++; }?>

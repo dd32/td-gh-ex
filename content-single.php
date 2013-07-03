@@ -25,5 +25,5 @@
 
                       </div><!--  blog_row_mn -->
 					 <div class="pagination_blog"><ul class="page-numbers"><?php 
-					 $args=array('before' => '<li>'.__('Pages:'),'after' => '</li>');
+					 $args=array('before' => '<li>'.__('Pages:','appointment'),'after' => '</li>');
 					 wp_link_pages($args); ?></ul></div>

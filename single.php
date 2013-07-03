@@ -18,8 +18,8 @@
  <div class="inner_top_mn">
 		<div class="page_wi">			
 			<h2>
-				<?php bloginfo('title')?><br>
-				<span><?php bloginfo('description')?></span>	
+				<?php bloginfo('title');?><br>
+				<span><?php bloginfo('description');?></span>	
 			</h2>
 			<div class="search_box">			 
                <form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
@@ -49,7 +49,7 @@
 
                       </div><!--  blog_row_mn -->
 					 <div class="pagination_blog"><ul class="page-numbers"><?php 
-					 $args=array('before' => '<li>'.__('Pages:'),'after' => '</li>');
+					 $args=array('before' => '<li>'.__('Pages:','appointment'),'after' => '</li>');
 					 wp_link_pages($args); ?></ul></div>
 				  <?php else:?>
                   <?php get_template_part( 'content-single', get_post_format() );   ?>

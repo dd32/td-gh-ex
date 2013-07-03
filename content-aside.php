@@ -48,14 +48,14 @@
 		 <?php endif; ?>
 		 <?php if(wp_link_pages(array('echo'=>0))):?>
 					<div class="pagination_blog"><ul class="page-numbers"><?php 
-					 $args=array('before' => '<li>'.__('Pages:'),'after' => '</li>');
+					 $args=array('before' => '<li>'.__('Pages:','appointment'),'after' => '</li>');
 					 wp_link_pages($args); ?></ul></div>
 					 <?php endif;?>
 
  <div class="blog_bot_mn">
 						
-						<span> <?php the_tags('<b>Tags:</b>','');?> </span>
-						<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'appointment' ), the_title_attribute( 'echo=0' ) ); ?>">Read More</a>
+						<span> <?php the_tags('<b>'.__('Tags:','appointment').'</b>','');?> </span>
+						<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'appointment' ), the_title_attribute( 'echo=0' ) ); ?>"><?php _e('Read More','appointment'); ?></a>
 					</div><!--blog_bot_mn-->
 </div>
 </article><!-- #post-<?php the_ID(); ?> -->

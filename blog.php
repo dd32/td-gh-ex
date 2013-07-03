@@ -17,8 +17,8 @@
     <div class="inner_top_mn">
 		<div class="page_wi">			
 			<h2>
-				<?php bloginfo('title')?><br>
-				<span><?php bloginfo('description')?></span>	
+				<?php bloginfo('title');?><br>
+				<span><?php bloginfo('description');?></span>	
 			</h2>
 			<div class="search_box">			 
                <form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
@@ -68,7 +68,7 @@
 	'add_fragment' => ''
 ); ?>
 <?php if($wp_query->max_num_pages != 1 ):?>
-   <div class="pagination_blog"><?php _e("Scroll More Posts:",'appointment') ?><?php echo paginate_links( $args ); ?> </div>
+   <div class="pagination_blog"><?php _e("Scroll More Posts:",'appointment'); ?><?php echo paginate_links( $args ); ?> </div>
    <?php endif;?>
 				
 </div><!--blog_left-->

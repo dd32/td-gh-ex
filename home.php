@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Blog Template
@@ -11,8 +12,7 @@
  * @filesource     wp-content/themes/appoinment/home.php
 */ 
 ?>
-<?php get_header();
- ?>
+<?php get_header(); ?>
 <?php get_template_part('index','slider'); ?>
     </header>
     

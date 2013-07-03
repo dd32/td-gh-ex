@@ -54,9 +54,14 @@ For adding your custom Images in the slider you just need to add the information
 Support
 -------
 
-Do you enjoy this theme? Send your ideas - issues - wishes at http://www.appointment.com/demo/ . Thank you!
+Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ============================Change Log================================
+@veriosn 1.2.1
+1. Minor slider bug fixed.. default images now display on the theme activation.
+2. All the hard coded text made transferable
+3. Script enqueing from header.php removed and liked directly
+4. Removed Theme URI in this version
 @version 1.2
 1. 404.php tempalte added
 2. Front Page issue resolved

@@ -42,12 +42,12 @@
 					<div class="blog_con_mn"><?php  the_content(); ?></div>
 					<?php if(wp_link_pages(array('echo'=>0))):?>
 					<div class="pagination_blog"><ul class="page-numbers"><?php 
-					 $args=array('before' => '<li>'.__('Pages:'),'after' => '</li>');
+					 $args=array('before' => '<li>'.__('Pages:','appointment'),'after' => '</li>');
 					 wp_link_pages($args); ?></ul></div>
 					 <?php endif;?>
 					<div class="blog_bot_mn">
 						
-						<span> <?php the_tags('<b>Tags:</b>','');?> </span>
+						<span> <?php the_tags('<b>'.__('Tags:','appointment').'</b>','');?> </span>
 						
 					</div><!--blog_bot_mn-->	
 				</div><!--blog_row_mn-->

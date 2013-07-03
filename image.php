@@ -16,13 +16,13 @@
 ?>
 
 
-get_header(); ?>
+<?php get_header();?>
 
 	<div class="inner_top_mn">
 		<div class="page_wi">			
 			<h2>
-				<?php bloginfo('title')?><br>
-				<span><?php bloginfo('description')?></span>	
+				<?php bloginfo('title'); ?><br>
+				<span><?php bloginfo('description'); ?></span>	
 			</h2>
 			<div class="search_box">
 			   <div id="searchbox">

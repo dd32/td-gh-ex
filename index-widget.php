@@ -13,7 +13,7 @@
  * @filesource     wp-content/themes/appoinment/index-widget.php
  */
 
-
+?>
 
 
 <div class="blog_right_mn">

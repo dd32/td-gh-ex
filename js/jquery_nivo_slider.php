@@ -1,12 +1,3 @@
-<script>
-/*
- * jQuery Nivo Slider v3.2
- * http://nivo.dev7studios.com
- *
- * Copyright 2012, Dev7studios
- * Free to use and abuse under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- */
 
 (function($) {
     var NivoSlider = function(element, options){
@@ -666,10 +657,10 @@
 		afterChange: function(){},
 		slideshowEnd: function(){},
         lastSlide: function(){},
-        afterLoad: function(){}
+        afterLoad: function(){},
 	};
 	
 	$.fn._reverse = [].reverse;
 	
 })(jQuery);
-</script>
+
