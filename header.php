@@ -6,16 +6,8 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_uri(); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<title>
-<?php
-global $page, $paged;
-wp_title( '|', true, 'right' );
-bloginfo( 'name' );
-?>
-</title>
-<?php
-wp_head();
-?>
+<title><?php wp_title( '|', true, 'right' );?></title>
+<?php wp_head();?>
 </head>
 <body <?php body_class();?> style="background: url(<?php header_image() ?>) no-repeat; ">
 <div class="bg"> 

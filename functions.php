@@ -53,7 +53,7 @@ add_filter( 'wp_page_menu_args', 'star_menu' );
 
  function star_fonts() {
 	if ( !is_admin() ) {
-            wp_register_style('star_Font','http://fonts.googleapis.com/css?family=Arvo');
+            wp_register_style('star_Font','//fonts.googleapis.com/css?family=Arvo');
             wp_enqueue_style('star_Font');
 	}
 }
