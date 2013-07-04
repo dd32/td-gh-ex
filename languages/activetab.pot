@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: activetab\n"
-"POT-Creation-Date: 2013-07-02 00:16+0200\n"
-"PO-Revision-Date: 2013-07-02 00:16+0200\n"
+"POT-Creation-Date: 2013-07-05 01:21+0200\n"
+"PO-Revision-Date: 2013-07-05 01:21+0200\n"
 "Last-Translator: webvitaly <webvitaly@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.5.6\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: ./\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -22,11 +22,11 @@ msgstr ""
 msgid "The URL you requested could not be found."
 msgstr ""
 
-#: ../404.php:29 ../sidebar.php:76
+#: ../404.php:29 ../sidebar.php:58
 msgid "Popular posts"
 msgstr ""
 
-#: ../404.php:50 ../sidebar.php:99
+#: ../404.php:50 ../sidebar.php:81
 msgid "Recent posts"
 msgstr ""
 
@@ -249,7 +249,7 @@ msgstr ""
 msgid "Comments"
 msgstr ""
 
-#: ../functions.php:278 ../sidebar.php:111
+#: ../functions.php:278 ../sidebar.php:93
 msgid "Categories"
 msgstr ""
 
@@ -281,68 +281,72 @@ msgid "Design"
 msgstr ""
 
 #: ../options.php:22
+msgid "Fixed"
+msgstr ""
+
+#: ../options.php:23
+msgid "Static"
+msgstr ""
+
+#: ../options.php:26
+msgid "Menu position type"
+msgstr ""
+
+#: ../options.php:35
 msgid "Logo"
 msgstr ""
 
-#: ../options.php:29
+#: ../options.php:42
 msgid "Show site title in the header"
 msgstr ""
 
-#: ../options.php:30
+#: ../options.php:43
 #, php-format
 msgid "<a href=\"%s\">Edit site title</a>"
 msgstr ""
 
-#: ../options.php:37
+#: ../options.php:50
 msgid "Show site description in the header"
 msgstr ""
 
-#: ../options.php:38
+#: ../options.php:51
 #, php-format
 msgid "<a href=\"%s\">Edit site description</a>"
 msgstr ""
 
-#: ../options.php:45
-msgid "Show site title in the sidebar"
-msgstr ""
-
-#: ../options.php:53
-msgid "Show site description in the sidebar"
-msgstr ""
-
-#: ../options.php:62
+#: ../options.php:59
 msgid "Code"
 msgstr ""
 
-#: ../options.php:67
+#: ../options.php:64
 msgid "Head code"
 msgstr ""
 
-#: ../options.php:68
+#: ../options.php:65
 msgid "Code will be added to head section just before closing [head] tag"
 msgstr ""
 
-#: ../options.php:75
+#: ../options.php:72
 msgid "Footer code"
 msgstr ""
 
-#: ../options.php:76
+#: ../options.php:73
 msgid "Code will be added to body section just before closing [body] tag"
 msgstr ""
 
-#: ../options.php:83
+#: ../options.php:81
 msgid "Other"
 msgstr ""
 
-#: ../options.php:88
+#: ../options.php:86
 msgid "Excerpt"
 msgstr ""
 
-#: ../options.php:89
+#: ../options.php:87
 msgid "Full content"
 msgstr ""
 
-#: ../options.php:92
+#: ../options.php:90
 msgid "Show excerpt or full content in the list of posts"
 msgstr ""
 
@@ -354,7 +358,7 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: ../sidebar.php:135
+#: ../sidebar.php:117
 msgid "Meta"
 msgstr ""
 

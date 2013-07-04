@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: activetab\n"
-"POT-Creation-Date: 2013-07-01 01:19+0200\n"
-"PO-Revision-Date: 2013-07-01 01:20+0200\n"
+"POT-Creation-Date: 2013-07-05 01:21+0200\n"
+"PO-Revision-Date: 2013-07-05 01:24+0200\n"
 "Last-Translator: webvitaly <webvitaly@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.5.6\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: ./\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -22,11 +22,11 @@ msgstr "Сторінку не знайдено. Помилка 404"
 msgid "The URL you requested could not be found."
 msgstr "Не можливо знайти URL-адресу, яку ви запросили."
 
-#: ../404.php:29 ../sidebar.php:76
+#: ../404.php:29 ../sidebar.php:58
 msgid "Popular posts"
 msgstr "Популярні статті"
 
-#: ../404.php:50 ../sidebar.php:99
+#: ../404.php:50 ../sidebar.php:81
 msgid "Recent posts"
 msgstr "Нові статті"
 
@@ -250,7 +250,7 @@ msgstr "Відповісти"
 msgid "Comments"
 msgstr "Коментарі"
 
-#: ../functions.php:278 ../sidebar.php:111
+#: ../functions.php:278 ../sidebar.php:93
 msgid "Categories"
 msgstr "Категорії"
 
@@ -284,70 +284,74 @@ msgid "Design"
 msgstr "Вигляд"
 
 #: ../options.php:22
+msgid "Fixed"
+msgstr "Зафіксоване"
+
+#: ../options.php:23
+msgid "Static"
+msgstr "Статичне"
+
+#: ../options.php:26
+msgid "Menu position type"
+msgstr "Тип розміщення меню"
+
+#: ../options.php:35
 msgid "Logo"
 msgstr "Логотип"
 
-#: ../options.php:29
+#: ../options.php:42
 msgid "Show site title in the header"
-msgstr "Показувати назву сайту у верхній частині частині сайту"
+msgstr "Показувати назву сайту у верхній частині сайту"
 
-#: ../options.php:30
+#: ../options.php:43
 #, php-format
 msgid "<a href=\"%s\">Edit site title</a>"
 msgstr "<a href=\"%s\">Редагувати назву сайту</a>"
 
-#: ../options.php:37
+#: ../options.php:50
 msgid "Show site description in the header"
 msgstr "Показати опис сайту у верхній частині сайту"
 
-#: ../options.php:38
+#: ../options.php:51
 #, php-format
 msgid "<a href=\"%s\">Edit site description</a>"
 msgstr "<a href=\"%s\">Редагувати опис сайту</a>"
 
-#: ../options.php:45
-msgid "Show site title in the sidebar"
-msgstr "Показати назву сайту у верхній частині сайту"
-
-#: ../options.php:53
-msgid "Show site description in the sidebar"
-msgstr "Показати опис сайту у боковій частині сайту"
-
-#: ../options.php:62
+#: ../options.php:59
 msgid "Code"
 msgstr "Код"
 
-#: ../options.php:67
+#: ../options.php:64
 msgid "Head code"
 msgstr "Код для верхньої частини сайту"
 
-#: ../options.php:68
+#: ../options.php:65
 msgid "Code will be added to head section just before closing [head] tag"
 msgstr ""
 "Код буде додано до верхньої частини сайту якраз перед закритим тегом [head]"
 
-#: ../options.php:75
+#: ../options.php:72
 msgid "Footer code"
 msgstr "Код для нижньої частини сайту"
 
-#: ../options.php:76
+#: ../options.php:73
 msgid "Code will be added to body section just before closing [body] tag"
 msgstr ""
 "Код буде додано до нижньої частини сайту якраз перед закритим тегом [body]"
 
-#: ../options.php:83
+#: ../options.php:81
 msgid "Other"
 msgstr "Інше"
 
-#: ../options.php:88
+#: ../options.php:86
 msgid "Excerpt"
 msgstr "Витяг"
 
-#: ../options.php:89
+#: ../options.php:87
 msgid "Full content"
 msgstr "Весь текст"
 
-#: ../options.php:92
+#: ../options.php:90
 msgid "Show excerpt or full content in the list of posts"
 msgstr "Показувати витяг або весь текст статті у списку статей"
 
@@ -359,7 +363,7 @@ msgstr "Результати пошуку для:"
 msgid "Search"
 msgstr "Шукати"
 
-#: ../sidebar.php:135
+#: ../sidebar.php:117
 msgid "Meta"
 msgstr "Мета"
 
@@ -504,6 +508,12 @@ msgstr "Жирний"
 #: ../options-framework/options-sanitize.php:347
 msgid "Bold Italic"
 msgstr "Жирний Курсив"
+
+#~ msgid "Show site title in the sidebar"
+#~ msgstr "Показати назву сайту у верхній частині сайту"
+
+#~ msgid "Show site description in the sidebar"
+#~ msgstr "Показати опис сайту у боковій частині сайту"
 
 #~ msgid "Author archives: %s"
 #~ msgstr "Архів автора: %s"

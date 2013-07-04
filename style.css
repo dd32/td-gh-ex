@@ -2,7 +2,7 @@
 Theme Name: activetab
 Theme URI: http://web-profile.com.ua/wordpress/themes/activetab/
 Description: Responsive light theme. More info at http://web-profile.com.ua/wordpress/themes/activetab/
-Version: 0.4.1
+Version: 0.4.2
 Author: webvitaly
 Author URI: http://web-profile.com.ua/wordpress/
 Tags: gray, white, light, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -13,7 +13,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /* do not use reset.css, use normalize.css http://necolas.github.com/normalize.css/ */
 
 body {
-	padding: 0 20px 20px 20px;
+	padding: 0 0 20px 0;
 	background-color: #fbfbfb;
     color: #222;
 }
@@ -37,7 +37,7 @@ body { /* break long url and lines without spaces */
 /* ========== main classes ========== */
 .site-wrapper {
 	max-width: 1000px; /* site width */
-	margin-top: 60px;
+	margin-top: 20px;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 20px 20px;
@@ -635,17 +635,26 @@ article.sticky {
 
 /* ========== responsive ========== */
 @media (max-width: 979px) {
-	.navbar-fixed-top {
-		margin-bottom: -40px;
+	.site-content-pusher { /* push content because of fixed menu */
+		height: 0px;
+	}
+}
+@media (max-width: 767px) {
+	.navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
+		margin-right: 0;
+		margin-left: 0;
 	}
 }
 
-
 /* ========== menu ========== */
+.site-content-pusher { /* push content because of fixed menu */
+	height: 44px;
+}
 .navbar {}
 .navbar-inner {
 	min-height: inherit;
 }
+.navbar-static-top {}
 body.admin-bar .navbar-fixed-top { /* move menu below admin-bar */
 	top: 28px;
 }
@@ -803,8 +812,6 @@ body.admin-bar .navbar-fixed-top { /* move menu below admin-bar */
 .site-sidebar-header {
 	margin: 0 0 30px 0;
 }
-.site-sidebar-title-description {}
-.site-sidebar-title-description .site-sidebar-title {}
 .site-logo-title {
 	border-bottom: 1px solid #aaa;
 	padding-bottom: 20px;

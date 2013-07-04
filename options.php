@@ -18,6 +18,19 @@ function optionsframework_options() {
 		'type' => 'heading'
 	);
 
+	$menu_position_types_array = array(
+		'fixed' => __( 'Fixed', 'activetab' ),
+		'static' => __( 'Static', 'activetab' )
+	);
+
+	$options[] = array( 'name' => __( 'Menu position type', 'activetab' ),
+		//'desc' => __( '', 'activetab' ),
+		'id' => 'menu_position_type',
+		'std' => 'fixed',
+		'type' => 'radio',
+		'options' => $menu_position_types_array
+	);
+
 	$options[] = array(
 		'name' => __( 'Logo', 'activetab' ),
 		//'desc' => __( '', 'activetab' ),
@@ -38,22 +51,6 @@ function optionsframework_options() {
 		'desc' => sprintf( __( '<a href="%s">Edit site description</a>', 'activetab' ), admin_url( 'options-general.php' ) ),
 		'id' => 'show_site_description',
 		'std' => '1',
-		'type' => 'checkbox'
-	);
-
-	$options[] = array(
-		'name' => __( 'Show site title in the sidebar', 'activetab' ),
-		//'desc' => sprintf( __( '<a href="%s">edit site title</a>', 'activetab' ), admin_url( 'options-general.php' ) ),
-		'id' => 'show_sidebar_site_title',
-		'std' => '0',
-		'type' => 'checkbox'
-	);
-
-	$options[] = array(
-		'name' => __( 'Show site description in the sidebar', 'activetab' ),
-		//'desc' => sprintf( __( '<a href="%s">edit site description</a>', 'activetab' ), admin_url( 'options-general.php' ) ),
-		'id' => 'show_sidebar_site_description',
-		'std' => '0',
 		'type' => 'checkbox'
 	);
 
@@ -78,6 +75,7 @@ function optionsframework_options() {
 		'std' => '',
 		'type' => 'textarea'
 	);
+
 
 	$options[] = array(
 		'name' => __( 'Other', 'activetab' ),

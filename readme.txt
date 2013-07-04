@@ -17,7 +17,7 @@ Responsive light theme. More info at http://web-profile.com.ua/wordpress/themes/
 * widget-ready sidebar and footer areas
 * 2 extra page templates: "full width (no sidebar)" and "redirect to first subpage"
 * support for: custom background, custom header, custom menu, editor style, post thumbnails, microformats, rtl language support, sticky post and threaded-comments
-* theme options: logo_url, show_site_title, show_site_description, show_sidebar_site_title, show_sidebar_site_description, code_head, code_footer
+* theme options: logo_url, show_site_title, show_site_description, code_head, code_footer
 * automatic rss-feeds to head section, added rss-feed links for posts, comments, categories, tags and authors
 * includes a sample WordPress Child theme for rapid development
 * all site elements are intuitive and users will use the site more easily
@@ -31,6 +31,10 @@ FAQ:
 
 
 == Changelog ==
+
+= 0.4.2 - 2013-07-05 =
+* options added: menu_position_type
+* options removed: show_sidebar_site_title, show_sidebar_site_description
 
 = 0.4.1 - 2013-07-02 =
 * update screenshot.png
