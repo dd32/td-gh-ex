@@ -2,12 +2,12 @@
  * Customizr various scripts
  * ========================================================== */
 
-jQuery(document).ready(function($) {
-!function ($) {
+jQuery(document).ready(function( $) {
+!function ( $) {
 
   //"use strict"; // jshint ;_;
 
-  $(window).on('load', function () {
+  $(window).on( 'load' , function () {
      
      /* Detect layout and reorder content divs
       * ============== */
@@ -80,15 +80,15 @@ jQuery(document).ready(function($) {
     // Add hover class on front widgets
       $(".widget-front, article").hover(
         function () {
-          $(this).addClass('hover');
+          $(this).addClass( 'hover' );
         },
         function () {
-          $(this).removeClass('hover');
+          $(this).removeClass( 'hover' );
         });
 
 
         //arrows bullet list effect
-        $('.widget li').hover(function() {
+        $( '.widget li' ).hover(function() {
           $(this).addClass("on");
         }, function() {
         $(this).removeClass("on");

@@ -81,12 +81,12 @@ Posts with the link post format will link out to the first a tag in the post.
 ## Code logic
 The theme is built on a classes framework. The classes are identified by their group and name like this : class-[group]-[name].php.
 
-The function tc__($group, $classname), where the group parameter is required :
+The function tc__( $group, $classname), where the group parameter is required :
 1) scans the theme folder to find the appropriate group / class 
 2) and then instanciates the class(es) only once through a singleton factory.
 
 A class typically includes a constructor which is mainly used to add the methods to WP actions and filters. 
-Actions are used to render HTML while filters are used to get values.
+Actions are used to render HTML or execute some code in predefined WP action, while filters are used to get values.
 
 For simplification purposes, the theme uses few WP templates : index.php, header.php, footer.php, comments.php, sidebar(s).php. 
 Those templates only includes some structural HTML markup, the rest is rendered with the actions defined in the classes of the parts/ folder.
@@ -118,6 +118,9 @@ The exceptions to this license are as follows:
 
 
 # Changelog
+= 3.0.1 =
+* fixed : "header already sent" error fixed (space before php opening markup in an admin class) was generating an error on log out  
+
 = 3.0 =
 * changed : global code structure has changed. Classes are instanciated by a singleton factory, html is rendered with actions, values are called through filters
 * fixed : favicon rendering, $__options was not defined in head

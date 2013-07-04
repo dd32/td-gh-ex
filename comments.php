@@ -19,17 +19,23 @@ if ( post_password_required() )
 	return;
 ?>
 <?php if ( have_comments() ) : ?>
+
 	<hr class="featurette-divider">
+
 <?php endif; ?>
+
 <div id="comments" class="comments-area">
 
 	<?php if ( have_comments() ) : ?>
 
 		<?php 
-			do_action ('__comment_title');
-			do_action ('__comment_list');
-			do_action ('__comment_navigation');
-			do_action ('__comment_close');
+			do_action ( '__comment_title' );
+
+			do_action ( '__comment_list' );
+
+			do_action ( '__comment_navigation' );
+			
+			do_action ( '__comment_close' );
 		?>
 
 	<?php endif; // have_comments() ?>
