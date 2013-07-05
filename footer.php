@@ -1,21 +1,12 @@
- 
 <div id="footer"> 
 	<p>
-		Copyright <?php echo date('Y'); ?>. <?php bloginfo('name'); ?>. All Rights Reserved.
-&nbsp;
-
-
-<!-- Released under GPL compatible license --> 
-Powered by <a href="http://www.quickonlinetips.com/archives/quickpress/" title="QuickPress" rel="nofollow" >QuickPress Theme</a> 
- 
+&copy; Copyright <?php echo date('Y'); ?> - <?php bloginfo('name'); ?>. All Rights Reserved
+|
+<a href="http://wordpress.org/extend/themes/quickpress" title="QuickPress">QuickPress</a> Design. 
 </p>
+
 </div>
 </div>
- 
-		<?php wp_footer(); ?>
- 
-
-</body>
-</html>
-
-
+ 		<?php wp_footer(); ?>
+ </body>
+</html>
