@@ -18,27 +18,27 @@
 <!--[if !(IE 7) | !(IE 8)  ]><!-->
 <html <?php language_attributes(); ?>>                          
 <!--<![endif]-->
-<?php tc__f('rec' , __FILE__ , __FUNCTION__ ); ?>
+	<?php do_action( '__head' ); ?>
 
-	<?php 
-		//the '__before_body' hook is used by TC_header_main::$instance->tc_head_display()
-		do_action( '__before_body' ); 
-	?>
+	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
-	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage" <?php do_action ('__body_attributes') ?>>
-		
-		<?php do_action( '__before_header' ); ?>
+	   	<header class="tc-header clearfix" role="banner">
 
-	   	<header class="<?php echo apply_filters('__header_classes', 'tc-header clearfix row-fluid') ?>" role="banner">
-			
-			<?php 
-			//the '__header' hook is used by (ordered by priorities) : TC_header_main::$instance->tc_logo_title_display(), TC_header_main::$instance->tc_tagline_display(), TC_header_main::$instance->tc_navbar_display()
-				do_action( '__header' ); 
-			?>
+	      	<div class="navbar-wrapper clearfix row-fluid">
+          	
+          	<!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+	            <?php 
+	            	do_action( '__logo_title' );
+					
+					do_action( '__tagline' );
+	            
+					do_action ( '__menu' );
+				?>
+
+        	</div><!-- /.navbar-wrapper -->
 
 		</header>
 
-		<?php 
-		 	//This hook is filtered with the slider : TC_slider::$instance->tc_slider_display()
-			do_action ( '__after_header' )
-		?>
+	  		<?php do_action ( '__slider' ) ?>
+
+		<div id="main-wrapper" class="container">
