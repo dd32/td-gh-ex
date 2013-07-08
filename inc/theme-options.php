@@ -77,6 +77,7 @@ function advantage_theme_options_array() {
 					array( 'key' => 2, 'label' => __( 'Left ', 'advantage' ) ),
 					array( 'key' => 3, 'label' => __( 'Left & Right ', 'advantage' ) ),
 						),
+			'helptext' => __( 'Note: For Left & Right layout, Blog Widget Area (Full) will not be used. The total columns must be 12.', 'advantage' ),						
 		),
 		'sidebarresp'	=> array(
 			'name'	=> 'sidebarresp',
@@ -348,32 +349,32 @@ function advantage_theme_options_display_page() {
 ?>
 	<div class="advantage-pane clearfix"><div class="grid_12"><!-- Layout -->
 	<h3><?php _e('Site Layout (12 Columns)','advantage'); ?></h3>	
-<?php	advantage_option_display( 'gridwidth' ); ?>
+<?php	xinwp_option_display( 'gridwidth' ); ?>
 	<div class="grid_3 alpha">
 		<p><b><?php _e('Content and Sidebar Width', 'advantage'); ?></b></p>
 	</div>
 	<div class="grid_9">
 <?php
-		advantage_option_display( 'content' );
-		advantage_option_display( 'sidebar1' );
-		advantage_option_display( 'sidebar2' );
+		xinwp_option_display( 'content' );
+		xinwp_option_display( 'sidebar1' );
+		xinwp_option_display( 'sidebar2' );
 ?>
 	</div><div class="clear"></div>
 <?php
-		advantage_option_display( 'sidebarpos' );
-		advantage_option_display( 'sidebarresp' );
-		advantage_option_display( 'respbp' );
+		xinwp_option_display( 'sidebarpos' );
+		xinwp_option_display( 'sidebarresp' );
+		xinwp_option_display( 'respbp' );
 ?>
 	<div class="grid_3 alpha">
 		<p><b><?php _e('Home Widget Area Width', 'advantage'); ?></b></p>
 	</div>
 	<div class="grid_9">
 <?php
-		advantage_option_display( 'column_home1' );
-		advantage_option_display( 'column_home2' );
-		advantage_option_display( 'column_home3' );
-		advantage_option_display( 'column_home4' );
-		advantage_option_display( 'column_home5' );
+		xinwp_option_display( 'column_home1' );
+		xinwp_option_display( 'column_home2' );
+		xinwp_option_display( 'column_home3' );
+		xinwp_option_display( 'column_home4' );
+		xinwp_option_display( 'column_home5' );
 ?>
 	</div><div class="clear"></div>
 	<div class="grid_3 alpha">
@@ -381,19 +382,19 @@ function advantage_theme_options_display_page() {
 	</div>
 	<div class="grid_9">
 <?php
-		advantage_option_display( 'column_footer1' );
-		advantage_option_display( 'column_footer2' );
-		advantage_option_display( 'column_footer3' );
-		advantage_option_display( 'column_footer4' );
+		xinwp_option_display( 'column_footer1' );
+		xinwp_option_display( 'column_footer2' );
+		xinwp_option_display( 'column_footer3' );
+		xinwp_option_display( 'column_footer4' );
 ?>
 	</div><div class="clear"></div>
 		<h3><?php _e('Home Page','advantage'); ?></h3>
-<?php	advantage_option_display( 'homepage' );
-		advantage_option_display( 'fp_option' );
-		advantage_option_display( 'fp_category' );
-		advantage_option_display( 'fp_effect' );
-		advantage_option_display( 'headline' );
-		advantage_option_display( 'tagline' );		
+<?php	xinwp_option_display( 'homepage' );
+		xinwp_option_display( 'fp_option' );
+		xinwp_option_display( 'fp_category' );
+		xinwp_option_display( 'fp_effect' );
+		xinwp_option_display( 'headline' );
+		xinwp_option_display( 'tagline' );		
 		do_action( 'advantage_options_tab_layout' ); ?>			
 	</div></div>
 <?php
@@ -402,12 +403,12 @@ function advantage_theme_options_display_page() {
 ******************************************************************/
 ?>
 	<div class="advantage-pane clearfix"><div class="grid_12">
-<?php	advantage_option_display( 'colorscheme' ); ?>
+<?php	xinwp_option_display( 'colorscheme' ); ?>
 		<p><?php _e('Change Background Image or Color : ','advantage'); printf( __('<a href="%s">Click here</a>.', 'advantage'), admin_url('themes.php?page=custom-background')); ?></p>
-<?php	advantage_option_display( 'headerbg' );
-		advantage_option_display( 'titlebarbg' );
-		advantage_option_display( 'contentbg' );
-		advantage_option_display( 'footerbg' );
+<?php	xinwp_option_display( 'headerbg' );
+		xinwp_option_display( 'titlebarbg' );
+		xinwp_option_display( 'contentbg' );
+		xinwp_option_display( 'footerbg' );
 		do_action( 'advantage_options_tab_scheme' );
 ?>
 	</div></div>	
@@ -419,28 +420,28 @@ function advantage_theme_options_display_page() {
 	<div class="advantage-pane clearfix"><div class="grid_12">
 		<p><?php _e( 'You do not need to select font for each element. For example. Body, paragraph and heading define the general fonts used. <span style="color:blue;font-weight:bold;">Please note that blue indicates webfonts (e.g Google Fonts) which may require additional load time.</span>', 'advantage' ); ?></p>
 <?php 
-		advantage_option_display( 'bodyfont' );
-		advantage_option_display( 'headingfont' );
+		xinwp_option_display( 'bodyfont' );
+		xinwp_option_display( 'headingfont' );
 ?>
 	<hr>
 <?php
-		advantage_option_display( 'sitetitlefont' );
-		advantage_option_display( 'sitedescfont' );
+		xinwp_option_display( 'sitetitlefont' );
+		xinwp_option_display( 'sitedescfont' );
 ?>
 	<hr>
 <?php
-		advantage_option_display( 'entrytitlefont' );
-		advantage_option_display( 'widgettitlefont' );
-		advantage_option_display( 'sidebarfont' );
-		advantage_option_display( 'mainmenufont' );
-		advantage_option_display( 'footerfont' );
+		xinwp_option_display( 'entrytitlefont' );
+		xinwp_option_display( 'widgettitlefont' );
+		xinwp_option_display( 'sidebarfont' );
+		xinwp_option_display( 'mainmenufont' );
+		xinwp_option_display( 'footerfont' );
 ?>
 	<h3><?php _e( 'Additional Google Fonts', 'advantage' ); ?></h3>
 <?php
-		advantage_option_display( 'otherfont1' );
-		advantage_option_display( 'otherfont2' );
-		advantage_option_display( 'otherfont3' );
-		advantage_option_display( 'otherfont4' );
+		xinwp_option_display( 'otherfont1' );
+		xinwp_option_display( 'otherfont2' );
+		xinwp_option_display( 'otherfont3' );
+		xinwp_option_display( 'otherfont4' );
 		do_action( 'advantage_options_tab_fonts' );
 ?>
 	</div></div>
@@ -451,7 +452,7 @@ function advantage_theme_options_display_page() {
 ?>
 	<div class="advantage-pane clearfix"><div class="grid_12">
 <?php
-		advantage_option_display( 'advantage_inline_css' );	
+		xinwp_option_display( 'advantage_inline_css' );	
 ?>
 	</div></div>
 <?php
@@ -460,9 +461,9 @@ function advantage_theme_options_display_page() {
 ******************************************************************/
 	do_action( 'advantage_options_tab_page' );
 
-	advantage_option_display( 'currenttab' );
-    advantage_option_display( 'schemecss' );
-	advantage_option_display( 'advantage_scheme_css' );
+	xinwp_option_display( 'currenttab' );
+    xinwp_option_display( 'schemecss' );
+	xinwp_option_display( 'advantage_scheme_css' );
 ?>
 	<p><input id="save-button-bottom" type="submit" class="button-primary" value="<?php _e( 'Save Options', 'advantage' ); ?>" /></p>
 	</div><!-- advantage-wrapper -->
@@ -561,7 +562,7 @@ function advantage_scheme_css($input) {
 	return apply_filters( 'advantage_scheme_css', $css );
 }
 
-function advantage_option_display( $option_name ) {
+function xinwp_option_display( $option_name ) {
 	global $advantage_options, $advantage_theme_options, $advantage_fonts;
 	$theme_option = $advantage_theme_options[ $option_name ];
 	$options = $advantage_options;
