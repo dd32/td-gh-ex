@@ -3,8 +3,8 @@ Theme Name: Untitled
 Theme URI: http://theme.wordpress.com/themes/untitled/
 Author: Automattic
 Author URI: http://automattic.com/
-Description: A nice bold theme. Features full-bleed featured posts and featured images, a fixed header, and subtle CSS3 transitions.
-Version: 1.0.3
+Description: A nice bold theme. Features full-bleed featured posts and featured images, infinite scroll, and subtle CSS3 transitions.
+Version: 1.0.4
 License: GNU General Public License
 License URI: license.txt
 Tags: black, white, one-column, right-sidebar, two-columns, flexible-width, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, full-width-template, post-formats, rtl-language-support, sticky-post, translation-ready
@@ -54,7 +54,7 @@ html {
 	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
 body {
-	background: #ffffff;
+	background: #fff;
 }
 article,
 aside,
@@ -74,15 +74,19 @@ table { /* tables still need 'cellspacing="0"' in the markup */
 	border-collapse: separate;
 	border-spacing: 0;
 }
-caption, th, td {
+caption,
+th,
+td {
 	font-weight: normal;
 	text-align: left;
 }
-blockquote:before, blockquote:after,
+blockquote:before,
+blockquote:after,
 q:before, q:after {
 	content: "";
 }
-blockquote, q {
+blockquote,
+q {
 	quotes: "" "";
 }
 a:focus {
@@ -177,7 +181,8 @@ hr {
 p {
 	margin-bottom: 30px;
 }
-ul, ol {
+ul,
+ol {
 	margin: 0 0 1.5em 3em;
 }
 ul {
@@ -186,7 +191,10 @@ ul {
 ol {
 	list-style: decimal;
 }
-ul ul, ol ol, ul ol, ol ul {
+ul ul,
+ol ol,
+ul ol,
+ol ul {
 	margin-bottom: 0;
 	margin-left: 1.5em;
 }
@@ -196,10 +204,12 @@ dt {
 dd {
 	margin: 0 1.5em 1.5em;
 }
-b, strong {
+b,
+strong {
 	font-weight: bold;
 }
-dfn, em, i {
+dfn,
+em, i {
 	font-style: italic;
 }
 blockquote {
@@ -219,14 +229,19 @@ pre {
 	overflow: auto;
 	max-width: 100%;
 }
-code, kbd, tt, var {
+code,
+kbd,
+tt,
+var {
 	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
-abbr, acronym {
+abbr,
+acronym {
 	border-bottom: 1px dotted #666;
 	cursor: help;
 }
-mark, ins {
+mark,
+ins {
 	background: #fff9c0;
 	text-decoration: none;
 }
@@ -464,7 +479,8 @@ a:active {
 .site-title a:hover {
 	color: #999;
 }
-#main, #single-main{
+#main,
+#single-main{
 	max-width: 1000px;
 	margin: 0 auto;
 }
@@ -522,7 +538,7 @@ body.page-template-page-full-width-php.widget-area .site-content{
 
 .nav-wrap{
 	float: right;
-	width: 70%;
+	width: auto;
 }
 .main-navigation {
 	float: right;
@@ -649,6 +665,7 @@ body.page-template-page-full-width-php.widget-area .site-content{
 	font-weight: bold;
 	font-size: 28px;
 	letter-spacing: 1px;
+	word-wrap: break-word;
 	}
 #featured-content h2 a, .slide-meta{
 	display: inline;
@@ -771,7 +788,8 @@ body.page-template-page-full-width-php.widget-area .site-content{
 	margin-top: 30px;
 	clear: both;
 }
-.carousel ul, .carousel ul li{
+.carousel ul,
+.carousel ul li{
 	margin: 0;
 	padding: 0;
 }
@@ -825,6 +843,7 @@ body.page-template-page-full-width-php.widget-area .site-content{
 	line-height: 1.5em;
 	margin: 0 0 30px;
 	padding: 0;
+	word-wrap: break-word;
 }
 .page .hentry{
 	border-bottom: 0;
@@ -838,6 +857,7 @@ body.page-template-page-full-width-php.widget-area .site-content{
 	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 	position:relative;
+	word-wrap: break-word;
 }
 .post-index{
 	overflow: hidden;
@@ -868,7 +888,9 @@ body.page-template-page-full-width-php.widget-area .site-content{
 	clear: both;
 	margin: 0 0 30px 0;
 }
-.format-quote blockquote, .format-aside, .format-link .entry-content p{
+.format-quote blockquote,
+.format-aside,
+.format-link .entry-content p{
 	color: #000;
 	font-style: italic;
 	padding: 0;
@@ -880,7 +902,8 @@ body.page-template-page-full-width-php.widget-area .site-content{
 .format-aside{
 	margin-top:30px;
 }
-.single .format-aside, .single .format-link{
+.single .format-aside,
+.single .format-link{
 	font-style: normal;
 }
 .entry-meta a{
@@ -1106,7 +1129,9 @@ object {
 	max-width: 100%;
 	margin: 30px 0;
 }
-
+#jp-post-flair iframe{
+	margin: 0;
+}
 
 /* =Navigation
 ----------------------------------------------- */
@@ -1156,7 +1181,8 @@ object {
 }
 .bypostauthor {
 }
-.comments-title, #reply-title {
+.comments-title,
+#reply-title {
 	font-size: 1.0em;
 	line-height: 1.3em;
 	font-family: arvo, georgia;
@@ -1165,7 +1191,9 @@ object {
 	padding: 0;
 	color: #000;
 }
-.commentlist .published, .commentlist .edit, .commentlist .reply {
+.commentlist .published,
+.commentlist .edit,
+.commentlist .reply {
 	font-size: .8em;
 	font-style: normal;
 	line-height: 1.2em;
@@ -1173,7 +1201,8 @@ object {
 .comment-navigation {
 	margin-bottom: 1.6em;
 }
-.commentlist, .commentlist li {
+.commentlist,
+.commentlist li {
 	list-style: none;
 	margin: 0 0 30px 0;
 }
@@ -1216,7 +1245,9 @@ object {
 	color: #777;
 	border-bottom: 1px solid #e5e5e5;
 }
-.comment-author a { color: #333; }
+.comment-author a { 
+	color: #333;
+}
 .comment-meta a:hover{
 	color: #000;
 	border-bottom: none;
@@ -1240,16 +1271,20 @@ object {
 	margin: 0;
 	padding: 0;
 }
-.commentlist .comment-content ul, .commentlist .comment-content ol {
+.commentlist .comment-content ul,
+.commentlist .comment-content ol {
 	margin-bottom: 1.692307em;
 }
-.commentlist .comment-content li ul, .commentlist .comment-content li ol {
+.commentlist .comment-content li ul,
+.commentlist .comment-content li ol {
 	margin-bottom: 0.3em;
 }
-.commentlist blockquote, .commentlist blockquote blockquote blockquote {
+.commentlist blockquote,
+.commentlist blockquote blockquote blockquote {
 	font-size: 1em;
 }
-#respond input[type=text], #respond textarea{
+#respond input[type=text],
+#respond textarea{
 	display: block;
 	width: 100%;
 }
@@ -1333,7 +1368,7 @@ object {
 
 /* Search widget */
 .widget #s {
-	padding: 3% 2%;
+	padding: 5% 2%;
 	width: 90%;
 }
 .widget #searchsubmit {
@@ -1656,7 +1691,8 @@ img#wpstats {
 		width: 100%;
 	}
 	.site-title {
-		text-align: center
+		text-align: center;
+		padding: 0;
 	}
 }
 /* --- Small menu --- */
