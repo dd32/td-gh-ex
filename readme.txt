@@ -4,7 +4,7 @@ Contributors: Iceable
 Tags: black, blue, white, light, two-columns, right-sidebar, flexible-width, custom-header, custom-background, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.5
 Tested up to: 3.5.2
-Stable tag: 1.1.5
+Stable tag: 1.1.6
 
 == ABOUT BOLDR LITE ==
 
@@ -38,10 +38,29 @@ Please refer to license.txt for more information.
 This theme bundles some third party javascript and jQuery plugins, released under GPL or GPL compatible licenses:
 * hoverIntent: Copyright 2007, 2013 Brian Cherne. MIT License. http://cherne.net/brian/resources/jquery.hoverIntent.html
 * superfish: Copyright 2013 Joel Birch. Dual licensed under the MIT and GPL licenses. http://users.tpg.com.au/j_birch/plugins/superfish/
+* ru_RU translation files for BoldR Lite: Copyright 2013 Dmitriy Skalubo. GPL license. http://wordpress.crimea.ua/
 
 All other files are copyright 2013 Iceable Media.
 
+== TRANSLATIONS ==
+
+Currently available translations:
+
+* French (fr_FR) translation: by Iceable Media
+* Russian (ru_RU) translation: Thanks to Dmitriy Skalubo - http://wordpress.crimea.ua/
+
+Translating this theme into you own language is quick and easy, you will find a .POT file in the /languages folder to get you started. It contains about 40 strings only.
+If you don't have a .po file editor yet, you can download Poedit from http://www.poedit.net/download.php - Poedit is free and available for Windows, Mac OS and Linux.
+
+If you have translated this theme into your own language and are willing to share your translation with the community, please feel free to do so on the forums at http://www.iceablethemes.com
+Your translation files will be added to the next update. Don't forget to leave your name, email address and/or website link so credits can be given to you!
+
 == CHANGELOG ==
+
+= 1.1.6 =
+July 9th, 2013
+* Added: fr_FR translation files
+* Added: ru_RU translation files (thanks to Dmitriy Skalubo - http://wordpress.crimea.ua/)
 
 = 1.1.5 =
 June 28th, 2013
