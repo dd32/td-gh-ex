@@ -9,12 +9,16 @@ Unless otherwise specified, all the theme files, scripts and images are licensed
 
 The exceptions to this license are as follows:
 
-* The Toolbox Theme is licensed under the GPL license
 * The Bootstrap CSS by Twitter is licensed under the GPL-compatible [http://www.apache.org/licenses/LICENSE-2.0 Apache License v2.0]
-* FontAwesome by Dave Gandy is licensed under the [http://scripts.sil.org/OFL SIL Open Font License]
 * html5shiv is licensed under the [http://opensource.org/licenses/MIT MIT license]
 
 == Changelog ==
+
+= 1.4 =
+* added genericons instead of font-awesome
+* optimized the mf2 support
+* added IndieWeb compatibility
+* optimized HTML5 markup
 
 = 1.3.3 =
 * fixed compatibility issues
@@ -47,5 +51,10 @@ The exceptions to this license are as follows:
 
 * SemPress is based on the Toolbox Theme - http://wordpress.org/extend/themes/toolbox
 * Some CSS is lend from Twitters Bootstrap - http://twitter.github.com/bootstrap/
-* Icons by Font Awesome - http://fortawesome.github.com/Font-Awesome
+* Genericons by Automattic - http://genericons.com
 * html5shiv - http://code.google.com/p/html5shiv/
+* Translator:
+** de_DE: Benjamin Hartwich - http://www.benjaminhartwich.de/
+** sv_SE: Christopher Anderton - http://deluxive.se/blog/
+** ru_RU: Oleg - http://0leg.net
+** fr_FR: Julien Pierré - http://www.jp-software.fr/en/
