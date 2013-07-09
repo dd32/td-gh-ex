@@ -21,6 +21,7 @@ body {
 	background: -o-linear-gradient(#255a8c, #1b4266);
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#255a8c), to(#1b4266)); /* older webkit syntax */
 	background: -webkit-linear-gradient(#255a8c, #1b4266);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#255a8c', endColorstr='#1b4266'); /* for IE */
 }
 #branding ul.menu ul a {
 	color: #fff;

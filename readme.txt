@@ -302,3 +302,10 @@ Version 2.5
 * Depreciated Action Hooks
 -- catchbox_startgenerator_open
 -- catchbox_startgenerator_close action hook 
+
+Version 2.5.1
+* Added default navigation for custom template page-blog.php as Jetpack Infinite Scroll doesn't support custom query
+* Fixed long select menu
+* Merge Theme Options in single page
+* Removed site verification code as required by WordPress.org Theme Review Guideline
+* Updated Polish translation pl_PL.po and pl_PL.mo

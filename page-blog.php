@@ -56,7 +56,7 @@ get_header(); ?>
 
 				<?php endwhile; ?>
                 
-                <?php catchbox_content_nav( 'nav-below' ); ?>
+                <?php catchbox_content_query_nav( 'nav-below' ); ?>
                 
 			<?php else : ?>
 

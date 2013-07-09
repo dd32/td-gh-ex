@@ -91,7 +91,7 @@ function catchbox_setup() {
      * @see http://codex.wordpress.org/Function_Reference/add_editor_style
      */
 	add_editor_style();
-
+	
 	// Load up our theme options page and related code.
 	require( get_template_directory() . '/inc/theme-options.php' );
 	
@@ -111,7 +111,6 @@ function catchbox_setup() {
 		'footer'	=> __( 'Footer Menu', 'catchbox' )
 	) );
 
-
 	/**
      * This feature enables Jetpack plugin Infinite Scroll
      */		
@@ -121,7 +120,6 @@ function catchbox_setup() {
         'footer_widgets' => array( 'sidebar-2', 'sidebar-3', 'sidebar-4' ),
         'footer'         => 'page',
     ) );
-	
 	
 	// Add support for custom backgrounds	
 	// WordPress 3.4+
@@ -545,6 +543,34 @@ function catchbox_content_nav( $nav_id ) {
 		<?php 
 	}
 	
+}
+endif; // catchbox_content_nav
+
+
+if ( ! function_exists( 'catchbox_content_query_nav' ) ) :
+/**
+ * Display navigation to next/previous pages when applicable
+ */
+function catchbox_content_query_nav( $nav_id ) {
+	global $wp_query;
+	
+	if ( $wp_query->max_num_pages > 1 ) { ?>
+		<nav id="<?php echo $nav_id; ?>">
+        	<h3 class="assistive-text"><?php _e( 'Post navigation', 'catchbox' ); ?></h3>
+			<?php if ( function_exists('wp_pagenavi' ) )  { 
+                wp_pagenavi();
+            }
+            elseif ( function_exists('wp_page_numbers' ) ) { 
+                wp_page_numbers();
+            }
+            else { ?>	
+            	<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'catchbox' ) ); ?></div>
+                <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'catchbox' ) ); ?></div>
+            <?php 
+            } ?>
+		</nav><!-- #nav -->
+	<?php 
+	}
 }
 endif; // catchbox_content_nav
 

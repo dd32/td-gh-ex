@@ -17,16 +17,14 @@
  *
  */
 function catchbox_admin_enqueue_scripts( $hook_suffix ) {
+	wp_register_script( 'jquery-cookie', get_template_directory_uri() . '/js/jquery.cookie.min.js', array( 'jquery' ), '1.0', true );
 	wp_enqueue_style( 'catchbox-theme-options', get_template_directory_uri() . '/inc/theme-options.css', false, '2011-04-28' );
-	wp_enqueue_script( 'catchbox-theme-options', get_template_directory_uri() . '/inc/theme-options.js', array( 'farbtastic' ), '2011-06-10' );
+	wp_enqueue_script( 'catchbox-theme-options', get_template_directory_uri() . '/inc/theme-options.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable', 'farbtastic' ), '2011-06-10' );
 	wp_enqueue_style( 'farbtastic' );
 	wp_enqueue_script( 'simplecatch_upload', get_template_directory_uri().'/inc/add_image_scripts.js', array( 'jquery','media-upload','thickbox' ) );
 	wp_enqueue_style( 'thickbox' );
 }
 add_action( 'admin_print_styles-appearance_page_theme_options', 'catchbox_admin_enqueue_scripts' );
-add_action( 'admin_print_styles-appearance_page_slider_options', 'catchbox_admin_enqueue_scripts' );
-add_action( 'admin_print_styles-appearance_page_social_links', 'catchbox_admin_enqueue_scripts' );
-add_action( 'admin_print_styles-appearance_page_webmaster_tools', 'catchbox_admin_enqueue_scripts' );
 
 
 /**
@@ -210,98 +208,18 @@ add_filter( 'option_page_capability_catchbox_options', 'catchbox_option_page_cap
  */
 function catchbox_theme_options_add_page() {
 	$theme_page = add_theme_page(
-		__( 'Theme Options', 'catchbox' ),   // Name of page
-		__( 'Theme Options', 'catchbox' ),   // Label in menu
-		'edit_theme_options',                    // Capability required
-		'theme_options',                         // Menu slug, used to uniquely identify the page
-		'catchbox_theme_options_render_page' // Function that renders the options page
-	);
-
-	$slider_options = add_theme_page( 
-		__( 'Featured Slider', 'catchbox' ),  // Name of page
-		__( 'Featured Slider', 'catchbox' ),  // Label in menu
-		'edit_theme_options', 						// Capability required
-		'slider_options', 							// Menu slug, used to uniquely identify the page
-		'catchbox_options_slider_page'		// Function that renders the options page
-	);
-	
-	$social_link_options = add_theme_page( 
-		__( 'Social Links', 'catchbox' ),  // Name of page
-		__( 'Social Links', 'catchbox' ),  // Label in menu
-		'edit_theme_options', 						// Capability required
-		'social_links', 							// Menu slug, used to uniquely identify the page
-		'catchbox_options_social_links'		// Function that renders the options page
-	);
-	
-	$webmaster_tool_options = add_theme_page( 
-		__( 'Webmaster Tools', 'catchbox' ),  // Name of page
-		__( 'Webmaster Tools', 'catchbox' ),  // Label in menu
-		'edit_theme_options', 				  // Capability required
-		'webmaster_tools', 					  // Menu slug, used to uniquely identify the page
-		'catchbox_options_webmaster_tools'	  // Function that renders the options page
+		__( 'Theme Options', 'catchbox' ),   	// Name of page
+		__( 'Theme Options', 'catchbox' ),   	// Label in menu
+		'edit_theme_options',              		// Capability required
+		'theme_options',                  		// Menu slug, used to uniquely identify the page
+		'catchbox_theme_options_render_page' 	// Function that renders the options page
 	);
 	
 	if ( ! $theme_page )
 		return;
 
-	add_action( "load-$theme_page", 'catchbox_theme_options_help' );
-	add_action( "load-$slider_options", 'catchbox_slider_options_help' );
 }
 add_action( 'admin_menu', 'catchbox_theme_options_add_page' );
-
-
-function catchbox_theme_options_help() {
-
-	$help = '<p>' . __( 'Some themes provide customization options that are grouped together on a Theme Options screen. If you change themes, options may change or disappear, as they are theme-specific. Your current theme, Catch Box, provides the following Theme Options:', 'catchbox' ) . '</p>' .
-			'<ol>' .
-				'<li>' . __( '<strong>Color Scheme</strong>: You can choose a color palette of "Light" (light background with dark text) or "Dark" (dark background with light text) for your site.', 'catchbox' ) . '</li>' .
-				'<li>' . __( '<strong>Link Color</strong>: You can choose the color used for text links on your site. You can enter the HTML color or hex code, or you can choose visually by clicking the "Select a Color" button to pick from a color wheel.', 'catchbox' ) . '</li>' .
-				'<li>' . __( '<strong>Default Layout</strong>: You can choose if you want your site&#8217;s default layout to have a sidebar on the left, the right, or not at all.', 'catchbox' ) . '</li>' .
-			'</ol>' .
-			'<p>' . __( 'Remember to click "Save Changes" to save any changes you have made to the theme options.', 'catchbox' ) . '</p>';
-
-	$sidebar = '<p><strong>' . __( 'For more information:', 'catchbox' ) . '</strong></p>' .
-		'<p>' . __( '<a href="http://codex.wordpress.org/Appearance_Theme_Options_Screen" target="_blank">Documentation on Theme Options</a>', 'catchbox' ) . '</p>' .
-		'<p>' . __( '<a href="http://wordpress.org/support/" target="_blank">Support Forums</a>', 'catchbox' ) . '</p>';
-
-	$screen = get_current_screen();
-
-	if ( method_exists( $screen, 'add_help_tab' ) ) {
-		// WordPress 3.3
-		$screen->add_help_tab( array(
-			'title'		=> __( 'Overview', 'catchbox' ),
-			'id'		=> 'theme-options-help',
-			'content'	=> $help,
-			)
-		);
-
-		$screen->set_help_sidebar( $sidebar );
-	} 
-}
-
-
-function catchbox_slider_options_help() {
-
-	$help = '<p>' . __( 'Slider Some themes provide customization options that are grouped together on a Theme Options screen. If you change themes, options may change or disappear, as they are theme-specific. Your current theme, Catch Box, provides the following Theme Options:', 'catchbox' ) . '</p>' .
-			'<ol>' .
-				'<li>' . __( '<strong>Color Scheme</strong>: You can choose a color palette of "Light" (light background with dark text) or "Dark" (dark background with light text) for your site.', 'catchbox' ) . '</li>' .
-				'<li>' . __( '<strong>Link Color</strong>: You can choose the color used for text links on your site. You can enter the HTML color or hex code, or you can choose visually by clicking the "Select a Color" button to pick from a color wheel.', 'catchbox' ) . '</li>' .
-				'<li>' . __( '<strong>Default Layout</strong>: You can choose if you want your site&#8217;s default layout to have a sidebar on the left, the right, or not at all.', 'catchbox' ) . '</li>' .
-			'</ol>' .
-			'<p>' . __( 'Remember to click "Save Changes" to save any changes you have made to the theme options.', 'catchbox' ) . '</p>';
-
-	$screen = get_current_screen();
-
-	if ( method_exists( $screen, 'add_help_tab' ) ) {
-		// WordPress 3.3
-		$screen->add_help_tab( array(
-			'title'		=> __( 'Overview', 'catchbox' ),
-			'id'		=> 'slider-options-help',
-			'content'	=> $help,
-			)
-		);
-	}
-}
 
 
 /**
@@ -688,339 +606,260 @@ function catchbox_theme_options_render_page() {
             
 		<?php settings_errors(); ?>
 
-		<form method="post" action="options.php">
-			<?php
-				settings_fields( 'catchbox_options' );
-				do_settings_sections( 'theme_options' );
-				submit_button();
-			?>
-		</form>
+		
+            <div id="catchbox_ad_tabs">
+                <ul class="tabNavigation" id="mainNav">
+                    <li><a href="#themeoptions"><?php _e( 'Theme Options', 'catchbox' );?></a></li>
+                    <li><a href="#slidersettings"><?php _e( 'Featured Slider', 'catchbox' );?></a></li>
+                    <li><a href="#sociallinks"><?php _e( 'Social Links', 'catchbox' );?></a></li>
+                    <li><a href="#webmaster"><?php _e( 'Webmaster Tools', 'catchbox' );?></a></li>
+                </ul><!-- .tabsNavigation #mainNav -->        
+                
+                <!-- Option for Theme Options -->
+                <div id="themeoptions">
+                	<form method="post" action="options.php">
+						<?php
+                            settings_fields( 'catchbox_options' );
+                            do_settings_sections( 'theme_options' );
+                            submit_button();
+                        ?>
+                    </form>
+             	</div> <!-- #themeoptions --> 
+                
+                <!-- Option for Featured Post Slider -->
+                <div id="slidersettings">
+               		<form method="post" action="options.php">
+						<?php
+                            settings_fields( 'catchbox_options_slider' );
+                            $options = get_option( 'catchbox_options_slider' );
+                            
+                            if( is_array( $options ) && ( !array_key_exists( 'slider_qty', $options ) || !is_numeric( $options[ 'slider_qty' ] ) ) ) $options[ 'slider_qty' ] = 4;
+                            elseif( !is_array( $options ) ) $options = array( 'slider_qty' => 4);                          
+                        ?>   
+                        <div class="option-container">
+                            <h3 class="option-toggle"><a href="#"><?php _e( 'Slider Options', 'catchbox' ); ?></a></h3>
+                            <div class="option-content inside">
+                                <table class="form-table">               
+                                    <tr>                            
+                                        <th scope="row"><?php _e( 'Exclude Slider post from Home page posts:', 'catchbox' ); ?></th>
+                                        <input type='hidden' value='0' name='catchbox_options_slider[exclude_slider_post]'>
+                                        <td><input type="checkbox" id="headerlogo" name="catchbox_options_slider[exclude_slider_post]" value="1" <?php isset($options['exclude_slider_post']) ? checked( '1', $options['exclude_slider_post'] ) : checked('0', '1'); ?> /> <?php _e( 'Check to disable', 'catchbox' ); ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><?php _e( 'Number of Slides', 'catchbox' ); ?></th>
+                                        <td><input type="text" name="catchbox_options_slider[slider_qty]" value="<?php if ( array_key_exists ( 'slider_qty', $options ) ) echo intval( $options[ 'slider_qty' ] ); ?>" /></td>
+                                    </tr>
+                                    <tbody class="sortable">
+                                        <?php for ( $i = 1; $i <= $options[ 'slider_qty' ]; $i++ ): ?>
+                                        <tr>
+                                            <th scope="row"><label class="handle"><span class="count"><?php echo '#' . absint( $i ); ?></span> <?php _e( 'Featured Post ID', 'catchbox' ); ?></label></th>
+                                            <td><input type="text" name="catchbox_options_slider[featured_slider][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'featured_slider', $options ) && array_key_exists( $i, $options[ 'featured_slider' ] ) ) echo absint( $options[ 'featured_slider' ][ $i ] ); ?>" />
+                                            <a href="<?php bloginfo ( 'url' );?>/wp-admin/post.php?post=<?php if( array_key_exists ( 'featured_slider', $options ) && array_key_exists ( $i, $options[ 'featured_slider' ] ) ) echo absint( $options[ 'featured_slider' ][ $i ] ); ?>&action=edit" class="button" title="<?php esc_attr_e('Click Here To Edit'); ?>" target="_blank"><?php _e( 'Click Here To Edit', 'catchbox' ); ?></a>
+                                            </td>
+                                        </tr> 							
+                                        <?php endfor; ?>
+                                    </tbody>
+                                </table>
+                                <p><?php _e( '<strong>Note</strong>: Here you add in Post IDs which displays on Homepage Featured Slider.', 'catchbox' ); ?> </p>
+                                <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catchbox' ); ?>" /></p> 
+                            </div><!-- .option-content -->
+                        </div><!-- .option-container -->   
+                        <div class="option-container">
+                            <h3 class="option-toggle"><a href="#"><?php _e( 'Slider Effect Options', 'catchbox' ); ?></a></h3>
+                            <div class="option-content inside">
+                                <table class="form-table">   
+                                    <tr>
+                                        <th>
+                                        <label for="catchbox_cycle_style"><?php _e( 'Transition Effect:', 'catchbox' ); ?></label>
+                                        </th>
+                                        <?php if( empty( $options['transition_effect'] ) ) { $options['transition_effect'] = "fade"; } ?>
+                                        <td>
+                                            <select id="catchbox_cycle_style" name="catchbox_options_slider[transition_effect]">
+                                                <option value="fade" <?php selected('fade', $options['transition_effect']); ?>><?php _e( 'fade', 'catchbox' ); ?></option>
+                                                <option value="wipe" <?php selected('wipe', $options['transition_effect']); ?>><?php _e( 'wipe', 'catchbox' ); ?></option>
+                                                <option value="scrollUp" <?php selected('scrollUp', $options['transition_effect']); ?>><?php _e( 'scrollUp', 'catchbox' ); ?></option>
+                                                <option value="scrollDown" <?php selected('scrollDown', $options['transition_effect']); ?>><?php _e( 'scrollDown', 'catchbox' ); ?></option>
+                                                <option value="scrollLeft" <?php selected('scrollLeft', $options['transition_effect']); ?>><?php _e( 'scrollLeft', 'catchbox' ); ?></option>
+                                                <option value="scrollRight" <?php selected('scrollRight', $options['transition_effect']); ?>><?php _e( 'scrollRight', 'catchbox' ); ?></option>
+                                                <option value="blindX" <?php selected('blindX', $options['transition_effect']); ?>><?php _e( 'blindX', 'catchbox' ); ?></option>
+                                                <option value="blindY" <?php selected('blindY', $options['transition_effect']); ?>><?php _e( 'blindY', 'catchbox' ); ?></option>
+                                                <option value="blindZ" <?php selected('blindZ', $options['transition_effect']); ?>><?php _e( 'blindZ', 'catchbox' ); ?></option>
+                                                <option value="cover" <?php selected('cover', $options['transition_effect']); ?>><?php _e( 'cover', 'catchbox' ); ?></option>
+                                                <option value="shuffle" <?php selected('shuffle', $options['transition_effect']); ?>><?php _e( 'shuffle', 'catchbox' ); ?></option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <?php if( empty( $options['transition_delay'] ) ) { $options['transition_delay'] = 4; } ?>
+                                    <tr>
+                                        <th scope="row"><?php _e( 'Transition Delay', 'catchbox' ); ?></th>
+                                        <td>
+                                            <input type="text" name="catchbox_options_slider[transition_delay]" value="<?php if( isset( $options [ 'transition_delay' ] ) ) echo $options[ 'transition_delay' ]; ?>" size="4" />
+                                       <span class="description"><?php _e( 'second(s)', 'catchbox' ); ?></span>
+                                        </td>
+                                    </tr>
+                    
+                                    <?php if( empty( $options['transition_duration'] ) ) { $options['transition_duration'] = 1; } ?>
+                                    <tr>
+                                        <th scope="row"><?php _e( 'Transition Length', 'catchbox' ); ?></th>
+                                        <td>
+                                            <input type="text" name="catchbox_options_slider[transition_duration]" value="<?php if( isset( $options [ 'transition_duration' ] ) ) echo $options[ 'transition_duration' ]; ?>" size="4" />
+                                        <span class="description"><?php _e( 'second(s)', 'catchbox' ); ?></span>
+                                        </td>
+                                    </tr>                      
+                                </table> 
+                                <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catchbox' ); ?>" /></p> 
+                            </div><!-- .option-content -->
+                        </div><!-- .option-container -->       
+                    </form>
+                
+                </div> <!-- #slidersettings --> 
+                
+                <!-- Option for Social Links -->
+                <div id="sociallinks">                
+                    <form method="post" action="options.php">
+                        <?php
+                            settings_fields( 'catchbox_options_social_links' );
+                            $options = get_option( 'catchbox_options_social_links' );           
+                        ?>
+                        <table class="form-table">
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><label><?php _e( 'Facebook', 'catchbox' ); ?></label></th>
+                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_facebook]" value="<?php if( isset( $options[ 'social_facebook' ] ) ) echo esc_url( $options[ 'social_facebook' ] ); ?>" />
+                                    </td>
+                                </tr>
+                                <tr> 
+                                    <th scope="row"><label><?php _e( 'Twitter', 'catchbox' ); ?></label></th>
+                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_twitter]" value="<?php if ( isset( $options[ 'social_twitter' ] ) ) echo esc_url( $options[ 'social_twitter'] ); ?>" />
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <th scope="row"><label><?php _e( 'Google +', 'catchbox' ); ?></label></th>
+                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_google]" value="<?php if ( isset( $options[ 'social_google' ] ) ) echo esc_url( $options[ 'social_google' ] ); ?>" />
+                                    </td>
+                                </tr>
+                                
+                                 <tr>
+                                    <th scope="row"><label><?php _e( 'LinkedIn', 'catchbox' ); ?></label></th>
+                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_linkedin]" value="<?php if ( isset( $options[ 'social_linkedin' ] ) ) echo esc_url( $options[ 'social_linkedin' ] ); ?>" />
+                                    </td>
+                                </tr>
+                                
+                                 <tr>
+                                    <th scope="row"><label><?php _e( 'Pinterest', 'catchbox' ); ?></label></th>
+                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_pinterest]" value="<?php if ( isset( $options[ 'social_pinterest' ] ) ) echo esc_url( $options[ 'social_pinterest' ] ); ?>" />
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <th scope="row"><label><?php _e( 'Youtube', 'catchbox' ); ?></label></th>
+                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_youtube]" value="<?php if ( isset( $options[ 'social_youtube' ] ) ) echo esc_url( $options[ 'social_youtube' ] ); ?>" />
+                                    </td>
+                                </tr>
+                               
+                                <tr>
+                                    <th scope="row"><label><?php _e( 'RSS Feed', 'catchbox' ); ?></label></th>
+                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_rss]" value="<?php if ( isset( $options[ 'social_rss' ] ) ) echo esc_url( $options[ 'social_rss' ] ); ?>" />
+                                    </td>
+                                </tr>
+            
+                                <tr>
+                                    <th scope="row"><label><?php _e( 'Deviantart', 'catchbox' ); ?></label></th>
+                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_deviantart]" value="<?php if ( isset( $options[ 'social_deviantart' ] ) ) echo esc_url( $options[ 'social_deviantart' ] ); ?>" />
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <th scope="row"><label><?php _e( 'Tumblr', 'catchbox' ); ?></label></th>
+                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_tumblr]" value="<?php if ( isset( $options[ 'social_tumblr' ] ) ) echo esc_url( $options[ 'social_tumblr' ] ); ?>" />
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <th scope="row"><label><?php _e( 'Vimeo', 'catchbox' ); ?></label></th>
+                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_viemo]" value="<?php if ( isset( $options[ 'social_viemo' ] ) ) echo esc_url( $options[ 'social_viemo' ] ); ?>" />
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <th scope="row"><label><?php _e( 'Dribbble', 'catchbox' ); ?></label></th>
+                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_dribbble]" value="<?php if ( isset( $options[ 'social_dribbble' ] ) ) echo esc_url( $options[ 'social_dribbble' ] ); ?>" />
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <th scope="row"><label><?php _e( 'MySpace', 'catchbox' ); ?></label></th>
+                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_myspace]" value="<?php if ( isset( $options[ 'social_myspace' ] ) ) echo esc_url( $options[ 'social_myspace' ] ); ?>" />
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <th scope="row"><label><?php _e( 'Aim', 'catchbox' ); ?></label></th>
+                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_aim]" value="<?php if ( isset( $options[ 'social_aim' ] ) ) echo esc_url( $options[ 'social_aim' ] ); ?>" />
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <th scope="row"><label><?php _e( 'Flickr', 'catchbox' ); ?></label></th>
+                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_flickr]" value="<?php if ( isset( $options[ 'social_flickr' ] ) ) echo esc_url( $options[ 'social_flickr' ] ); ?>" />
+                                    </td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                        <p><?php _e( '<strong>Note:</strong> Enter the url for correponding social networking website', 'catchbox' ); ?></p>
+                        <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catchbox' ); ?>" /></p> 
+                    </form> 
+                </div> <!-- #sociallinks --> 
+                
+                <!-- Option for Webmaster Tools -->
+                <div id="webmaster">                
+                    <form method="post" action="options.php">
+                        <?php
+                            settings_fields( 'catchbox_options_webmaster' );
+                            $options = get_option( 'catchbox_options_webmaster' );
+                                    
+                        ?>   
+                        <div class="option-container">
+                            <h3 class="option-toggle"><a href="#"><?php _e( 'Header and Footer Code', 'catchbox' ); ?></a></h3>
+                           <div class="option-content inside">
+                                <table class="form-table">
+                                    <table class="form-table">
+                                        <tr>
+                                            <th scope="row"><label><?php _e('Code to display on Header', 'catchbox' ); ?></label></th>
+                                            <td>
+                                             <textarea name="catchbox_options_webmaster[tracker_header]" rows="7" cols="80" ><?php if ( isset( $options [ 'tracker_header' ] ) )  echo esc_attr( $options[ 'tracker_header' ] ); ?></textarea>
+                                 
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                        	<td></td><td><?php _e('Note: Here you can put scripts from Google, Facebook etc. which will load on Header', 'catchbox' ); ?></td>
+                                    	</tr>
+                                        
+                                        <tr>
+                                            <th scope="row"><label><?php _e('Code to display on Footer', 'catchbox' ); ?></label></th>
+                                            <td>
+                                             <textarea name="catchbox_options_webmaster[tracker_footer]" rows="7" cols="80" ><?php if ( isset( $options [ 'tracker_footer' ] ) )  echo esc_attr( $options[ 'tracker_footer' ] ); ?></textarea>
+                                 
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                        	<td></td><td><?php _e( 'Note: Here you can put scripts from Google, Facebook, Add This etc. which will load on footer', 'simplecatch' ); ?></td>
+                                   	 	</tr>
+                                    </tbody>
+                                </table>
+                                <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catchbox' ); ?>" /></p> 
+                            </div> <!-- .option-content  -->
+                        </div> <!-- .option-container  -->
+                    </form>   
+                </div> <!-- #webmaster --> 
+                
+       		</div><!-- #catchbox_ad_tabs -->
+            
+		
 	</div>
 	<?php
-}
-
-
-/**
- * Renders the slider options for Catch Box.
- *
- * @since Catch Box 1.0
- */
-function catchbox_options_slider_page() {
-	?>
-	<div class="wrap">
-    	<?php screen_icon(); ?>
-		<h2>
-			<?php 
-            if( function_exists( 'wp_get_theme' ) ) {
-                printf( __( '%s Theme Options By', 'catchbox' ), wp_get_theme() );
-            } else {
-                printf( __( '%s Theme Options By', 'catchbox' ), get_current_theme() );
-            }
-			?>
-            <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catchbox' ) ); ?>" title="<?php echo esc_attr_e( 'Catch Themes', 'catchbox' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'catchbox' ); ?></a></h2>
-    	
-        <form method="post" action="options.php">
-			<?php
-               	settings_fields( 'catchbox_options_slider' );
-                $options = get_option( 'catchbox_options_slider' );
-                
-                if( is_array( $options ) && ( !array_key_exists( 'slider_qty', $options ) || !is_numeric( $options[ 'slider_qty' ] ) ) ) $options[ 'slider_qty' ] = 4;
-                elseif( !is_array( $options ) ) $options = array( 'slider_qty' => 4);
-				
-            ?>   
-            <?php if( isset( $_GET [ 'settings-updated' ] ) && $_GET[ 'settings-updated' ] == 'true' ): ?>
-                <div class="updated" id="message">
-                    <p><strong><?php _e( 'Settings saved.', 'catchbox' );?></strong></p>
-                </div>
-            <?php endif; ?> 
-           	<div class="option-container">
-				<h3 class="option-toggle"><a href="#"><?php _e( 'Slider Options', 'catchbox' ); ?></a></h3>
-				<div class="option-content inside">
-                    <table class="form-table">               
-                        <tr>                            
-                            <th scope="row"><?php _e( 'Exclude Slider post from Home page posts:', 'catchbox' ); ?></th>
-                            <input type='hidden' value='0' name='catchbox_options_slider[exclude_slider_post]'>
-                            <td><input type="checkbox" id="headerlogo" name="catchbox_options_slider[exclude_slider_post]" value="1" <?php isset($options['exclude_slider_post']) ? checked( '1', $options['exclude_slider_post'] ) : checked('0', '1'); ?> /> <?php _e( 'Check to disable', 'catchbox' ); ?></td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><?php _e( 'Number of Slides', 'catchbox' ); ?></th>
-                            <td><input type="text" name="catchbox_options_slider[slider_qty]" value="<?php if ( array_key_exists ( 'slider_qty', $options ) ) echo intval( $options[ 'slider_qty' ] ); ?>" /></td>
-                        </tr>
-                        <tbody class="sortable">
-                            <?php for ( $i = 1; $i <= $options[ 'slider_qty' ]; $i++ ): ?>
-                            <tr>
-                                <th scope="row"><label class="handle"><?php _e( 'Featured Col #', 'catchbox' ); ?><span class="count"><?php echo absint( $i ); ?></span></label></th>
-                                <td><input type="text" name="catchbox_options_slider[featured_slider][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'featured_slider', $options ) && array_key_exists( $i, $options[ 'featured_slider' ] ) ) echo absint( $options[ 'featured_slider' ][ $i ] ); ?>" />
-                                <a href="<?php bloginfo ( 'url' );?>/wp-admin/post.php?post=<?php if( array_key_exists ( 'featured_slider', $options ) && array_key_exists ( $i, $options[ 'featured_slider' ] ) ) echo absint( $options[ 'featured_slider' ][ $i ] ); ?>&action=edit" class="button" title="<?php esc_attr_e('Click Here To Edit'); ?>" target="_blank"><?php _e( 'Click Here To Edit', 'catchbox' ); ?></a>
-                                </td>
-                            </tr> 							
-                            <?php endfor; ?>
-                        </tbody>
-                    </table>
-                	<p><?php _e( '<strong>Note</strong>: Here you add in Post IDs which displays on Homepage Featured Slider.', 'catchbox' ); ?> </p>
-                 	<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catchbox' ); ?>" /></p> 
-            	</div><!-- .option-content -->
-			</div><!-- .option-container -->   
-			<div class="option-container">
-				<h3 class="option-toggle"><a href="#"><?php _e( 'Slider Effect Options', 'catchbox' ); ?></a></h3>
-				<div class="option-content inside">
-					<table class="form-table">   
-	                	<tr>
-	                    	<th>
-	                        <label for="catchbox_cycle_style"><?php _e( 'Transition Effect:', 'catchbox' ); ?></label>
-	                    	</th>
-	                    	<?php if( empty( $options['transition_effect'] ) ) { $options['transition_effect'] = "fade"; } ?>
-	                    	<td>
-	                            <select id="catchbox_cycle_style" name="catchbox_options_slider[transition_effect]">
-	                                <option value="fade" <?php selected('fade', $options['transition_effect']); ?>><?php _e( 'fade', 'catchbox' ); ?></option>
-	                                <option value="wipe" <?php selected('wipe', $options['transition_effect']); ?>><?php _e( 'wipe', 'catchbox' ); ?></option>
-	                                <option value="scrollUp" <?php selected('scrollUp', $options['transition_effect']); ?>><?php _e( 'scrollUp', 'catchbox' ); ?></option>
-	                                <option value="scrollDown" <?php selected('scrollDown', $options['transition_effect']); ?>><?php _e( 'scrollDown', 'catchbox' ); ?></option>
-	                                <option value="scrollLeft" <?php selected('scrollLeft', $options['transition_effect']); ?>><?php _e( 'scrollLeft', 'catchbox' ); ?></option>
-	                                <option value="scrollRight" <?php selected('scrollRight', $options['transition_effect']); ?>><?php _e( 'scrollRight', 'catchbox' ); ?></option>
-	                                <option value="blindX" <?php selected('blindX', $options['transition_effect']); ?>><?php _e( 'blindX', 'catchbox' ); ?></option>
-	                                <option value="blindY" <?php selected('blindY', $options['transition_effect']); ?>><?php _e( 'blindY', 'catchbox' ); ?></option>
-	                                <option value="blindZ" <?php selected('blindZ', $options['transition_effect']); ?>><?php _e( 'blindZ', 'catchbox' ); ?></option>
-	                                <option value="cover" <?php selected('cover', $options['transition_effect']); ?>><?php _e( 'cover', 'catchbox' ); ?></option>
-	                                <option value="shuffle" <?php selected('shuffle', $options['transition_effect']); ?>><?php _e( 'shuffle', 'catchbox' ); ?></option>
-	                            </select>
-	                    	</td>
-	                	</tr>
-	                	<?php if( empty( $options['transition_delay'] ) ) { $options['transition_delay'] = 4; } ?>
-	                	<tr>
-	                    	<th scope="row"><?php _e( 'Transition Delay', 'catchbox' ); ?></th>
-	                    	<td>
-	                       		<input type="text" name="catchbox_options_slider[transition_delay]" value="<?php if( isset( $options [ 'transition_delay' ] ) ) echo $options[ 'transition_delay' ]; ?>" size="4" />
-	                       <span class="description"><?php _e( 'second(s)', 'catchbox' ); ?></span>
-	                    	</td>
-	                	</tr>
-	    
-	                	<?php if( empty( $options['transition_duration'] ) ) { $options['transition_duration'] = 1; } ?>
-	                	<tr>
-	                    	<th scope="row"><?php _e( 'Transition Length', 'catchbox' ); ?></th>
-	                    	<td>
-	                        	<input type="text" name="catchbox_options_slider[transition_duration]" value="<?php if( isset( $options [ 'transition_duration' ] ) ) echo $options[ 'transition_duration' ]; ?>" size="4" />
-	                        <span class="description"><?php _e( 'second(s)', 'catchbox' ); ?></span>
-	                    	</td>
-	                	</tr>                      
-					</table> 
-                    <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catchbox' ); ?>" /></p> 
-				</div><!-- .option-content -->
-			</div><!-- .option-container -->       
-		</form>
-	</div><!-- .wrap -->
-<?php
-}
-
-
-/**
- * Renders the social links options for Catch Box.
- *
- * @since Catch Box 1.0
- */
-function catchbox_options_social_links() {
-	?>
-	<div class="wrap">
-    	<?php screen_icon(); ?>
-		<h2>
-			<?php 
-            if( function_exists( 'wp_get_theme' ) ) {
-                printf( __( '%s Theme Options By', 'catchbox' ), wp_get_theme() );
-            } else {
-                printf( __( '%s Theme Options By', 'catchbox' ), get_current_theme() );
-            }
-			?> <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catchbox' ) ); ?>" title="<?php echo esc_attr_e( 'Catch Themes', 'catchbox' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'catchbox' ); ?></a></h2>
-        
-		<form method="post" action="options.php">
-			<?php
-                settings_fields( 'catchbox_options_social_links' );
-                $options = get_option( 'catchbox_options_social_links' );           
-            ?>               
-            <?php if( isset( $_GET [ 'settings-updated' ] ) && $_GET[ 'settings-updated' ] == 'true' ): ?>
-                <div class="updated" id="message">
-                    <p><strong><?php _e( 'Settings saved.', 'catchbox' );?></strong></p>
-                </div>
-            <?php endif; ?>  
-            <table class="form-table">
-                <tbody>
-                    <tr>
-                        <th scope="row"><label><?php _e( 'Facebook', 'catchbox' ); ?></label></th>
-                        <td><input type="text" size="45" name="catchbox_options_social_links[social_facebook]" value="<?php if( isset( $options[ 'social_facebook' ] ) ) echo esc_url( $options[ 'social_facebook' ] ); ?>" />
-                        </td>
-                    </tr>
-                    <tr> 
-                        <th scope="row"><label><?php _e( 'Twitter', 'catchbox' ); ?></label></th>
-                        <td><input type="text" size="45" name="catchbox_options_social_links[social_twitter]" value="<?php if ( isset( $options[ 'social_twitter' ] ) ) echo esc_url( $options[ 'social_twitter'] ); ?>" />
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <th scope="row"><label><?php _e( 'Google +', 'catchbox' ); ?></label></th>
-                        <td><input type="text" size="45" name="catchbox_options_social_links[social_google]" value="<?php if ( isset( $options[ 'social_google' ] ) ) echo esc_url( $options[ 'social_google' ] ); ?>" />
-                        </td>
-                    </tr>
-                    
-                     <tr>
-                        <th scope="row"><label><?php _e( 'LinkedIn', 'catchbox' ); ?></label></th>
-                        <td><input type="text" size="45" name="catchbox_options_social_links[social_linkedin]" value="<?php if ( isset( $options[ 'social_linkedin' ] ) ) echo esc_url( $options[ 'social_linkedin' ] ); ?>" />
-                        </td>
-                    </tr>
-                    
-                     <tr>
-                        <th scope="row"><label><?php _e( 'Pinterest', 'catchbox' ); ?></label></th>
-                        <td><input type="text" size="45" name="catchbox_options_social_links[social_pinterest]" value="<?php if ( isset( $options[ 'social_pinterest' ] ) ) echo esc_url( $options[ 'social_pinterest' ] ); ?>" />
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <th scope="row"><label><?php _e( 'Youtube', 'catchbox' ); ?></label></th>
-                        <td><input type="text" size="45" name="catchbox_options_social_links[social_youtube]" value="<?php if ( isset( $options[ 'social_youtube' ] ) ) echo esc_url( $options[ 'social_youtube' ] ); ?>" />
-                        </td>
-                    </tr>
-                   
-                    <tr>
-                        <th scope="row"><label><?php _e( 'RSS Feed', 'catchbox' ); ?></label></th>
-                        <td><input type="text" size="45" name="catchbox_options_social_links[social_rss]" value="<?php if ( isset( $options[ 'social_rss' ] ) ) echo esc_url( $options[ 'social_rss' ] ); ?>" />
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row"><label><?php _e( 'Deviantart', 'catchbox' ); ?></label></th>
-                        <td><input type="text" size="45" name="catchbox_options_social_links[social_deviantart]" value="<?php if ( isset( $options[ 'social_deviantart' ] ) ) echo esc_url( $options[ 'social_deviantart' ] ); ?>" />
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <th scope="row"><label><?php _e( 'Tumblr', 'catchbox' ); ?></label></th>
-                        <td><input type="text" size="45" name="catchbox_options_social_links[social_tumblr]" value="<?php if ( isset( $options[ 'social_tumblr' ] ) ) echo esc_url( $options[ 'social_tumblr' ] ); ?>" />
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <th scope="row"><label><?php _e( 'Vimeo', 'catchbox' ); ?></label></th>
-                        <td><input type="text" size="45" name="catchbox_options_social_links[social_viemo]" value="<?php if ( isset( $options[ 'social_viemo' ] ) ) echo esc_url( $options[ 'social_viemo' ] ); ?>" />
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <th scope="row"><label><?php _e( 'Dribbble', 'catchbox' ); ?></label></th>
-                        <td><input type="text" size="45" name="catchbox_options_social_links[social_dribbble]" value="<?php if ( isset( $options[ 'social_dribbble' ] ) ) echo esc_url( $options[ 'social_dribbble' ] ); ?>" />
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <th scope="row"><label><?php _e( 'MySpace', 'catchbox' ); ?></label></th>
-                        <td><input type="text" size="45" name="catchbox_options_social_links[social_myspace]" value="<?php if ( isset( $options[ 'social_myspace' ] ) ) echo esc_url( $options[ 'social_myspace' ] ); ?>" />
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <th scope="row"><label><?php _e( 'Aim', 'catchbox' ); ?></label></th>
-                        <td><input type="text" size="45" name="catchbox_options_social_links[social_aim]" value="<?php if ( isset( $options[ 'social_aim' ] ) ) echo esc_url( $options[ 'social_aim' ] ); ?>" />
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <th scope="row"><label><?php _e( 'Flickr', 'catchbox' ); ?></label></th>
-                        <td><input type="text" size="45" name="catchbox_options_social_links[social_flickr]" value="<?php if ( isset( $options[ 'social_flickr' ] ) ) echo esc_url( $options[ 'social_flickr' ] ); ?>" />
-                        </td>
-                    </tr>
-                    
-                </tbody>
-            </table>
-            <p><?php _e( '<strong>Note:</strong> Enter the url for correponding social networking website', 'catchbox' ); ?></p>
-            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catchbox' ); ?>" /></p> 
-  		</form>
-	</div><!-- .wrap -->
-<?php
-}
-
-
-/**
-* Returns the options array for Catch Box.
-*
-* @since Catch Box 1.0
-*/
-function catchbox_options_webmaster_tools() { 
-	?>
-    <div class="wrap">
-    	<?php screen_icon(); ?>
-		<h2>
-			<?php 
-            if( function_exists( 'wp_get_theme' ) ) {
-                printf( __( '%s Theme Options By', 'catchbox' ), wp_get_theme() );
-            } else {
-                printf( __( '%s Theme Options By', 'catchbox' ), get_current_theme() );
-            }
-			?>
-            <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catchbox' ) ); ?>" title="<?php echo esc_attr_e( 'Catch Themes', 'catchbox' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'catchbox' ); ?></a></h2>
-
-		<form method="post" action="options.php">
-			<?php
-                settings_fields( 'catchbox_options_webmaster' );
-                $options = get_option( 'catchbox_options_webmaster' );
-                        
-            ?>   
-            <?php if( isset( $_GET [ 'settings-updated' ] ) && $_GET[ 'settings-updated' ] == 'true' ): ?>
-                <div class="updated" id="message">
-                    <p><strong><?php _e( 'Settings saved.', 'catchbox' );?></strong></p>
-                </div>
-            <?php endif; ?>  
-    		<div class="option-container">
-            	<h3 class="option-toggle"><a href="#"><?php _e( 'Webmaster Site Verification IDs', 'catchbox' ); ?></a></h3>
-                <div class="option-content inside">
-           	 		<table class="form-table">
-                        <tbody>
-                            <tr>
-                                <th scope="row"><label><?php _e( 'Google Site Verification ID', 'catchbox' ); ?></label></th>
-                                <td><input type="text" size="45" name="catchbox_options_webmaster[google_verification]" value="<?php if( isset( $options[ 'google_verification' ] ) ) echo esc_attr( $options[ 'google_verification' ] ); ?>" /> <?php _e('Enter your Google ID number only', 'catchbox'); ?>
-                                </td>
-                            </tr>
-                            
-                            <tr> 
-                                <th scope="row"><label><?php _e( 'Yahoo Site Verification ID', 'catchbox' ); ?> </label></th>
-                                <td><input type="text" size="45" name="catchbox_options_webmaster[yahoo_verification]" value="<?php if ( isset( $options[ 'yahoo_verification' ] ) ) echo esc_attr( $options[ 'yahoo_verification'] ); ?>" /> <?php _e('Enter your Yahoo ID number only', 'catchbox'); ?>
-                                </td>
-                            </tr>
-                            
-                            <tr>
-                                <th scope="row"><label><?php _e( 'Bing Site Verification ID', 'catchbox' ); ?></label></th>
-                                <td><input type="text" size="45" name="catchbox_options_webmaster[bing_verification]" value="<?php if ( isset( $options[ 'bing_verification' ] ) ) echo esc_attr( $options[ 'bing_verification' ] ); ?>" /> <?php _e('Enter your Bing ID number only', 'catchbox'); ?>
-                                </td>
-                            </tr>
-                   		</tbody>
-                  	</table>
-                    <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catchbox' ); ?>" /></p> 
-              	</div> <!-- .option-content  -->
-          	</div> <!-- .option-container  -->
-            <div class="option-container">
-            	<h3 class="option-toggle"><a href="#"><?php _e( 'Webmaster Site Verification Code', 'catchbox' ); ?></a></h3>
-               <div class="option-content inside">
-           	 		<table class="form-table">
-                    	<table class="form-table">
-                            <tr>
-                                <th scope="row"><label><?php _e('Analytics, site stats Header code', 'catchbox' ); ?></label></th>
-                                <td>
-                                 <textarea name="catchbox_options_webmaster[tracker_header]" rows="7" cols="80" ><?php if ( isset( $options [ 'tracker_header' ] ) )  echo esc_attr( $options[ 'tracker_header' ] ); ?></textarea>
-                     
-                                </td>
-                            </tr>
-                            
-                            <tr>
-                                <th scope="row"><label><?php _e('Analytics, site stats footer code', 'catchbox' ); ?></label></th>
-                                <td>
-                                 <textarea name="catchbox_options_webmaster[tracker_footer]" rows="7" cols="80" ><?php if ( isset( $options [ 'tracker_footer' ] ) )  echo esc_attr( $options[ 'tracker_footer' ] ); ?></textarea>
-                     
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catchbox' ); ?>" /></p> 
-            	</div> <!-- .option-content  -->
-          	</div> <!-- .option-container  -->
-    	</form>
-  	</div><!-- .wrap -->
-	<?php 
 }
 
 

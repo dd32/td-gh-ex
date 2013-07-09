@@ -35,7 +35,7 @@ body.rtl .image-radio-option label {
 }
 
 .option-container {
-	width: 90%;
+	width: 100%;
 }
 h3.option-toggle {
 	-webkit-border-top-left-radius: 3px;
@@ -138,3 +138,52 @@ h3.option-active a {
 	background:url(images/green-bg.jpg) center top repeat-x #5e8c10;
 }
 
+/* Self Clearing Goodness */
+#catchbox_ad_tabs:after,
+.ui-widget-content:after {
+	content: "\0020";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+#catchbox_ad_tabs {
+    background-color: #fff;
+	box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+	margin: 10px 20px 10px 0;
+	padding-bottom: 30px;
+}
+#catchbox_ad_tabs .ui-widget-content {
+	padding: 30px;
+}
+#catchbox_ad_tabs .tabNavigation {
+    background-color: #000;
+    margin: 0 auto 10px;
+    text-align: center;
+	font: 13px Georgia, "Times New Roman", "Bitstream Charter", Times, serif;
+	line-height: 18px;
+}
+#catchbox_ad_tabs .tabNavigation li {
+    display: inline-block;
+    margin: 0;
+}
+#catchbox_ad_tabs .tabNavigation li a {
+    color: #EEEEEE;
+    display: block;
+    font-size: 15px;
+    line-height: 38px;
+	outline: none;
+    padding: 0 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+#catchbox_ad_tabs .tabNavigation li a:hover,
+#catchbox_ad_tabs .tabNavigation li.ui-state-active a {
+	background-color: #dfdfdf;
+    color: #000;
+}
+#catchbox_ad_tabs .tabNavigation .ui-tabs-selected a {
+	background: url( '../../../../../wp-admin/images/menu-bits.gif' ) repeat-x left top #E0E0E0;
+	border-color: #aaa !important;
+	color: #000;
+}
