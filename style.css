@@ -4,7 +4,7 @@ Theme URI: http://catchthemes.com/themes/catch-everest
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
 Description: Catch Everest is Simple, Clean and Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel which makes this theme highly customizable and flexible. Make your beautiful yet professional website in no time. Multilingual Ready (WPML) and also currently translated in Polish, Chinese, Spanish and Italian. Active community at http://catchthemes.com/support-forum/
-Version: 1.1.4
+Version: 1.1.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: light, gray, white, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-header, custom-menu, featured-images, flexible-header, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
@@ -153,6 +153,7 @@ a img {
 blockquote,
 .site-content article,
 .site-content .site-navigation,
+#infinite-handle,
 .comments-title, #reply-title,
 #respond {
 	margin-bottom: 40px;
@@ -1438,7 +1439,8 @@ object {
 /* =Navigation
 ----------------------------------------------- */
 
-.site-content .site-navigation {
+.site-content .site-navigation,
+#infinite-handle {
 	overflow: hidden;
 }
 #nav-above {
@@ -1453,6 +1455,27 @@ object {
 	text-align: right;
 	width: 50%;
 }
+
+
+/* =Jetpack plugins
+----------------------------------------------- */
+/* Infinite Scroller */
+#content #infinite-handle {
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+#content #infinite-handle span {
+    background-color: #3a3d41;
+    display: block;
+    font-size: 14px;
+    padding: 10px 0;
+    width: 100%;
+}
+#content #infinite-handle span:hover {
+	background-color: #000;
+}
+
 
 /* =Comments
 ----------------------------------------------- */

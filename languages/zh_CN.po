@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Everest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-29 23:17+0545\n"
-"PO-Revision-Date: 2013-06-29 23:17+0545\n"
+"POT-Creation-Date: 2013-07-10 01:14+0545\n"
+"PO-Revision-Date: 2013-07-10 01:14+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: \n"
 "Language: zh-cn\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.5.7\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:18
@@ -132,7 +132,7 @@ msgstr "% 条评论"
 #: ../content-gallery.php:46 ../content-image.php:37 ../content-link.php:29
 #: ../content-page.php:18 ../content-quote.php:25 ../content-status.php:33
 #: ../content-video.php:37 ../content.php:62 ../image.php:34 ../image.php:100
-#: ../inc/template-tags.php:115
+#: ../inc/template-tags.php:179
 msgid "Edit"
 msgstr "编辑"
 
@@ -479,59 +479,59 @@ msgstr "左边栏"
 msgid "No sidebar"
 msgstr "无边栏"
 
-#: ../inc/template-tags.php:39
+#: ../inc/template-tags.php:50 ../inc/template-tags.php:103
 msgid "Post navigation"
 msgstr "文章导航"
 
-#: ../inc/template-tags.php:43
+#: ../inc/template-tags.php:54 ../inc/template-tags.php:107
 msgctxt "Previous post link"
 msgid "&larr;"
 msgstr "&larr;"
 
-#: ../inc/template-tags.php:44
+#: ../inc/template-tags.php:55 ../inc/template-tags.php:108
 msgctxt "Next post link"
 msgid "&rarr;"
 msgstr "&rarr;"
 
-#: ../inc/template-tags.php:49
+#: ../inc/template-tags.php:60 ../inc/template-tags.php:113
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> 早些的文章"
 
-#: ../inc/template-tags.php:53
+#: ../inc/template-tags.php:64 ../inc/template-tags.php:117
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "较新的文章 <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../inc/template-tags.php:83
+#: ../inc/template-tags.php:147
 msgid "Pingback:"
 msgstr "引用通告："
 
-#: ../inc/template-tags.php:83
+#: ../inc/template-tags.php:147
 msgid "(Edit)"
 msgstr "(编辑)"
 
-#: ../inc/template-tags.php:98
+#: ../inc/template-tags.php:162
 msgid "Post author"
 msgstr "文章作者"
 
-#: ../inc/template-tags.php:104
+#: ../inc/template-tags.php:168
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s 在 %2$s"
 
-#: ../inc/template-tags.php:110
+#: ../inc/template-tags.php:174
 msgid "Your comment is awaiting moderation."
 msgstr "您的评论正在等待审核。"
 
-#: ../inc/template-tags.php:119
+#: ../inc/template-tags.php:183
 msgid "Reply"
 msgstr "评论"
 
-#: ../inc/template-tags.php:148 ../inc/template-tags.php:221
+#: ../inc/template-tags.php:212 ../inc/template-tags.php:285
 #, php-format
 msgid "View all posts by %s"
 msgstr "看 %s 发的所有文章"
 
-#: ../inc/template-tags.php:153
+#: ../inc/template-tags.php:217
 #, php-format
 msgid ""
 "<span class=\"on-date\">Posted on %1$s</span><span class=\"by-author\"> by "
@@ -540,12 +540,12 @@ msgstr ""
 "<span class=\"on-date\">%1$s</span><span class=\"by-author\"> 由 %2$s 发表</"
 "span>"
 
-#: ../inc/template-tags.php:175 ../inc/template-tags.php:178
-#: ../inc/template-tags.php:207 ../inc/template-tags.php:210
+#: ../inc/template-tags.php:239 ../inc/template-tags.php:242
+#: ../inc/template-tags.php:271 ../inc/template-tags.php:274
 msgid ", "
 msgstr ","
 
-#: ../inc/template-tags.php:183
+#: ../inc/template-tags.php:247
 #, php-format
 msgid ""
 "<span class=\"in-category\">Posted in %1$s</span><span class=\"sep\"> | </"
@@ -554,12 +554,12 @@ msgstr ""
 "<span class=\"in-category\">发表在 %1$s</span><span class=\"sep\"> | </"
 "span><span class=\"in-tag\">标签： %2$s</span>"
 
-#: ../inc/template-tags.php:185
+#: ../inc/template-tags.php:249
 #, php-format
 msgid "<span class=\"in-category\">Posted in %1$s</span>"
 msgstr "<span class=\"in-category\">发表在 %1$s<span>"
 
-#: ../inc/template-tags.php:227
+#: ../inc/template-tags.php:291
 #, php-format
 msgid ""
 "<span class=\"on-date\">Posted on %3$s</span><span class=\"in-category\"> "
@@ -572,7 +572,7 @@ msgstr ""
 "span><span class=\"sep\"> | </span><span class=\"by-author\"> 作者： %4$s</"
 "span>"
 
-#: ../inc/template-tags.php:229
+#: ../inc/template-tags.php:293
 #, php-format
 msgid ""
 "<span class=\"on-date\">Posted on %3$s</span><span class=\"in-category\"> "
@@ -583,7 +583,7 @@ msgstr ""
 "%1$s 下面<span><span class=\"sep\"> | </span><span class=\"by-author\"> 作"
 "者： %4$s</span>."
 
-#: ../inc/template-tags.php:231
+#: ../inc/template-tags.php:295
 #, php-format
 msgid ""
 "<span class=\"on-date\">Posted on %3$s</span><span class=\"sep\"> | </"

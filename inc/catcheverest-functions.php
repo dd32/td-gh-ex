@@ -806,7 +806,7 @@ function catcheverest_homepage_featured_content() {
 			$catcheverest_homepage_featured_content = '<section id="featured-post">';
 			
 			if ( !empty( $headline ) ) {
-				$catcheverest_homepage_featured_content .= '<h1 id="feature-heading" class="entry-title">' . sprintf( __( '%s', 'catcheverest' ) , $headline ) . ' </h1>';
+				$catcheverest_homepage_featured_content .= '<h1 id="feature-heading" class="entry-title">' . sprintf( __( '%s', 'catcheverest' ) , $headline ) . '</h1>';
 			}
 			
 			$catcheverest_homepage_featured_content .= '<div class="featued-content-wrap">';

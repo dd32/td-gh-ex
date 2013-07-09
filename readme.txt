@@ -116,7 +116,7 @@ version 1.1.1
 * Added Web Clip Icon image
 
 version 1.1.2
-* Disable Web Clip Icon and Favcion by default
+* Disable Web Clip Icon and Fav icon by default
 
 version 1.1.3
 * Added CSS3 compatible JS for IE8
@@ -127,3 +127,6 @@ version 1.1.3
 
 version 1.1.4
 * Fixed translation function for search, homepage headline and homepage featured content
+
+version 1.1.5
+* Added Jetpack Infinite Scroll support

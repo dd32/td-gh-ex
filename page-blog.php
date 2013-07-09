@@ -64,7 +64,7 @@ get_header();
 
 					<?php endwhile; ?>
                         
-                    <?php catcheverest_content_nav( 'nav-below' ); ?>	
+                    <?php catcheverest_content_query_nav( 'nav-below' ); ?>	
 
 				<?php else : ?>   
 

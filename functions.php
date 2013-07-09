@@ -96,6 +96,16 @@ function catcheverest_setup() {
 	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio' ) );
 	
 	/**
+     * This feature enables Jetpack plugin Infinite Scroll
+     */		
+    add_theme_support( 'infinite-scroll', array(
+		'type'           => 'click',										
+        'container'      => 'content',
+        'footer_widgets' => array( 'sidebar-2', 'sidebar-3', 'sidebar-4' ),
+        'footer'         => 'page'
+    ) );
+		
+	/**
 	 * Enable support for Post Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );

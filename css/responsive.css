@@ -16,6 +16,7 @@
 blockquote,
 .site-content article,
 .site-content .site-navigation,
+#infinite-handle,
 .comments-title, #reply-title,
 #respond {
 	margin-bottom: 50px;
@@ -118,6 +119,7 @@ textarea {
 blockquote,
 .site-content article,
 .site-content .site-navigation,
+#infinite-handle,
 .comments-title, #reply-title,
 #respond {
 	margin-bottom: 30px;
