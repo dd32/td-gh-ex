@@ -16,7 +16,7 @@ $theme = basename( get_template_directory() );
 				__( "Use <a href='%s' target='_blank'>this form</a> if you don't receive your order number in the next 15 minutes. ", 'siteorigin' ) ,
 				'http://siteorigin.com/orders/'
 			);
-			_e( 'Be sure to check your spam folder.', 'siteorigin' );
+			_e( 'To be sure, check your spam folder.', 'siteorigin' );
 			?>
 		</p>
 
@@ -35,7 +35,11 @@ $theme = basename( get_template_directory() );
 
 		<?php if( !empty($siteorigin_premium_info['premium_video_poster']) ) : // Only load the video iFrame after the video is clicked ?>
 			<div id="video-wrapper" style="background-image: url(<?php echo esc_url($siteorigin_premium_info['premium_video_poster']) ?>)">
-				<a href="#" id="click-to-play" data-video-id="<?php echo esc_attr($siteorigin_premium_info['premium_video_id']) ?>"></a>
+				<?php if(!empty($siteorigin_premium_info['premium_video_id'])) : ?>
+					<a href="#" id="click-to-play" data-video-id="<?php echo esc_attr($siteorigin_premium_info['premium_video_id']) ?>"></a>
+				<?php else : ?>
+					<div class="placeholder"></div>
+				<?php endif; ?>
 			</div>
 		<?php endif; ?>
 
@@ -59,34 +63,38 @@ $theme = basename( get_template_directory() );
 		<form method="get" action="<?php echo esc_url( $premium['buy_url'] ) ?>" id="purchase-form" target="_blank">
 
 			<p class="download">
-				<a href="#buy_information" class="buy-button variable-pricing-submit">
-					<span><?php _e('Buy Now', 'siteorigin') ?></span><em><?php echo '$'.$premium['buy_price'] ?></em>
-					<input type="hidden" name="amount" value="<?php echo esc_attr($premium['buy_price']) ?>" >
+				<a href="<?php echo esc_url( $premium['buy_url'] ) ?>?amount=15" class="buy-button variable-pricing-submit">
+					<span><?php _e('Buy Now', 'siteorigin') ?></span><em>$15</em>
+					<input type="hidden" name="amount" value="15" >
 				</a>
 			</p>
 
+			<div class="support-message">
+				<p><?php _e("Although we support all premium users, we can't guarantee same-day support email replies for orders under $15.",'siteorigin') ?></p>
+			</div>
+
 			<p class="description">
-				<?php _e("We offer a full refund if you're not happy with your purchase", 'siteorigin') ?>
+				<?php _e("We offer a 30 day full refund if you're not happy with your purchase", 'siteorigin') ?>
 			</p>
 
 			<div class="options hide-if-no-js">
-				<?php foreach($premium['variable_pricing'] as $price) : ?>
-					<label><input type="radio" name="variable_pricing_option" value="<?php echo floatval($price[0]) ?>" <?php checked($price[0], $premium['buy_price']) ?>> <strong>$<?php echo floatval($price[0]) ?></strong> <?php echo esc_html($price[1]) ?></label>
-				<?php endforeach ?>
-				<label><input type="radio" name="variable_pricing_option" value="custom" class="custom-price" > <strong><?php _e('Custom', 'siteorigin') ?></strong> <input type="text" name="variable_pricing_custom" value="" placeholder="$5+"> </label>
+				<label><input type="radio" name="variable_pricing_option" value="10"> <strong>$10</strong> <?php _e('Building your site on a budget', 'siteorigin') ?></label>
+				<label><input type="radio" name="variable_pricing_option" value="15" <?php checked(true) ?>> <strong>$15</strong> <?php _e("A good, fair price", 'siteorigin') ?></label>
+				<label><input type="radio" name="variable_pricing_option" value="20"> <strong>$20</strong> <?php _e("We'll love and support you forever", 'siteorigin') ?></label>
+				<label><input type="radio" name="variable_pricing_option" value="custom" class="custom-price" > <strong><?php _e('Custom', 'siteorigin') ?></strong> <input type="number" name="variable_pricing_custom" value="15" placeholder="$5+" min="5"> </label>
 			</div>
 			<div class="options hide-if-js">
 				<p><?php _e('Please enable Javascript to change pricing', 'siteorigin') ?></p>
 			</div>
 
 			<p class="description choose-description">
-				<?php printf( __("You choose the price, so you can pay what you think %s is worth.", 'siteorigin'), ucfirst($theme) ) ?>
+				<?php printf( __("You choose the price, so you can pay what %s is worth to you.", 'siteorigin'), ucfirst($theme) ) ?>
 			</p>
 
 		</form>
 
 		<?php if(!empty($premium['testimonials'])): ?>
-			<h3 class="testimonials-heading"><?php _e('Our User Comments', 'siteorigin') ?></h3>
+			<h3 class="testimonials-heading"><?php _e('Our User Feedback', 'siteorigin') ?></h3>
 			<ul class="testimonials">
 				<?php foreach($premium['testimonials'] as $testimonial) : ?>
 					<li class="testimonial clearfix">

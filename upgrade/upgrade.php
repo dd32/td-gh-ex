@@ -5,13 +5,6 @@ function origami_premium_upgrade_content($content){
 	$content['premium_summary'] = __("If you've enjoyed using Origami, you're going to love Origami Premium. It's a robust upgrade to Origami that gives you loads of cool features. You choose the price, so you can decide what it's worth to give your site a professional edge.", 'origami');
 
 	$content['buy_url'] = 'http://siteorigin.fetchapp.com/sell/aqueifoo';
-	$content['buy_price'] = 10;
-	$content['variable_pricing'] = array(
-		array(10, __("Creating your site on a budget", 'origami')),
-		array(15, __("A good, fair price", 'origami')),
-		array(25, __("We'll love and support you forever", 'origami')),
-	);
-
 	$content['premium_video_poster'] = get_template_directory_uri().'/upgrade/poster.jpg';
 	$content['premium_video_id'] = '52853957';
 
@@ -19,7 +12,7 @@ function origami_premium_upgrade_content($content){
 
 	$content['features'][] = array(
 		'heading' => __('Premium Email Support', 'origami'),
-		'content' => __("Need help setting up Origami? Upgrading to Origami Premium gives you email support - prioritized according to what you paid.", 'origami'),
+		'content' => __("Need help setting up Origami? Upgrading to Origami Premium gives you email support.", 'origami'),
 	);
 
 	$content['features'][] = array(

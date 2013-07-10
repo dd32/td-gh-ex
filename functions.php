@@ -1,6 +1,6 @@
 <?php
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.5.5' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.5.6' );
 define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://siteorigin.com' );
 
 include get_template_directory() . '/extras/premium/premium.php';
@@ -18,8 +18,7 @@ if( file_exists(get_template_directory().'/premium/functions.php') ) {
 	// Include the premium file if it exists.
 	include get_template_directory().'/premium/functions.php';
 }
-
-if(!defined('SITEORIGIN_IS_PREMIUM')){
+else{
 	include get_template_directory() . '/upgrade/upgrade.php';
 }
 

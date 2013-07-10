@@ -1,5 +1,5 @@
 jQuery( function ( $ ) {
-    var minPrice = 5;
+    var minPrice = Number( $('#theme-upgrade input[name=variable_pricing_custom]').attr('min') );
 
     // Handle clicking the play button
     $('#theme-upgrade #click-to-play').click(function(){
@@ -32,6 +32,9 @@ jQuery( function ( $ ) {
 
         $('#theme-upgrade #purchase-form input[name=amount]').val(val);
         $('#theme-upgrade #purchase-form .variable-pricing-submit em').html('$'+val);
+
+        if(val >= 15) $('#theme-upgrade .support-message').slideUp();
+        else $('#theme-upgrade .support-message').slideDown();
     });
 
     $('#theme-upgrade #purchase-form .options input[name=variable_pricing_custom]').keyup(function(){
@@ -44,7 +47,10 @@ jQuery( function ( $ ) {
 
         $('#theme-upgrade #purchase-form input[name=amount]').val(val);
         $('#theme-upgrade #purchase-form .variable-pricing-submit em').html('$'+val);
-    });
+
+        if(val >= 15) $('#theme-upgrade .support-message').slideUp();
+        else $('#theme-upgrade .support-message').slideDown();
+    }).change(function(){ $(this).keyup(); });
 
 
     // Display the form

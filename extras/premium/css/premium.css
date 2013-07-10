@@ -37,14 +37,12 @@
 
 #theme-upgrade #video-wrapper {
 	background: #000000;
+	background-position: top left;
 	margin-bottom: 20px;
 }
 
-#theme-upgrade #video-wrapper {
-	background-position: top left;
-}
-
 #theme-upgrade #video-wrapper a,
+#theme-upgrade #video-wrapper .placeholder,
 #theme-upgrade #video-wrapper iframe {
 	width: 640px;
 	height: 362px;
@@ -67,7 +65,7 @@
 
 #theme-upgrade #features .feature img {
 	float: right;
-	margin-right: 20px;
+	margin-left: 20px;
 }
 
 #theme-upgrade .clearfix:after {
@@ -156,7 +154,6 @@
 
 #theme-upgrade .buy-button span {
 	border-right: 1px solid #98b55b;
-	color: inherit;
 	color: #4f6920;
 	display: inline-block;
 	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
@@ -241,6 +238,19 @@
 	display: block;
 	font-weight: bold;
 	margin-bottom: 5px;
+}
+
+#theme-upgrade .support-message {
+	background: #cbe385;
+	border-radius: 4px;
+	color: #344e02;
+	display: none;
+	margin-bottom: 10px;
+	padding: 10px;
+}
+
+#theme-upgrade .support-message p {
+	margin: 0;
 }
 
 html[xmlns] #theme-upgrade .clearfix {

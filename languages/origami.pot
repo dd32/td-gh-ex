@@ -2,8 +2,8 @@
 # This file is distributed under the GNU General Public License 2.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: origami 1.5.5\n"
-"POT-Creation-Date: 2013-07-03T00:10:27+02:00\n"
+"Project-Id-Version: origami 1.5.6\n"
+"POT-Creation-Date: 2013-07-10T13:07:00+02:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -273,7 +273,7 @@ msgstr ""
 msgid "Use <a href='%s' target='_blank'>this form</a> if you don't receive your order number in the next 15 minutes. "
 msgstr ""
 
-msgid "Be sure to check your spam folder."
+msgid "To be sure, check your spam folder."
 msgstr ""
 
 msgid "Order Number"
@@ -288,7 +288,19 @@ msgstr ""
 msgid "Buy Now"
 msgstr ""
 
-msgid "We offer a full refund if you're not happy with your purchase"
+msgid "Although we support all premium users, we can't guarantee same-day support email replies for orders under $15."
+msgstr ""
+
+msgid "We offer a 30 day full refund if you're not happy with your purchase"
+msgstr ""
+
+msgid "Building your site on a budget"
+msgstr ""
+
+msgid "A good, fair price"
+msgstr ""
+
+msgid "We'll love and support you forever"
 msgstr ""
 
 msgid "Custom"
@@ -297,10 +309,10 @@ msgstr ""
 msgid "Please enable Javascript to change pricing"
 msgstr ""
 
-msgid "You choose the price, so you can pay what you think %s is worth."
+msgid "You choose the price, so you can pay what %s is worth to you."
 msgstr ""
 
-msgid "Our User Comments"
+msgid "Our User Feedback"
 msgstr ""
 
 msgid "%s Addons"
@@ -880,19 +892,10 @@ msgstr ""
 msgid "If you've enjoyed using Origami, you're going to love Origami Premium. It's a robust upgrade to Origami that gives you loads of cool features. You choose the price, so you can decide what it's worth to give your site a professional edge."
 msgstr ""
 
-msgid "Creating your site on a budget"
-msgstr ""
-
-msgid "A good, fair price"
-msgstr ""
-
-msgid "We'll love and support you forever"
-msgstr ""
-
 msgid "Premium Email Support"
 msgstr ""
 
-msgid "Need help setting up Origami? Upgrading to Origami Premium gives you email support - prioritized according to what you paid."
+msgid "Need help setting up Origami? Upgrading to Origami Premium gives you email support."
 msgstr ""
 
 msgid "Name The Price"
