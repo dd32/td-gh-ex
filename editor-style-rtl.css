@@ -1,4 +1,4 @@
-html .mceContentBody {
+html .mcecontentBody {
     direction: rtl;
     unicode-bidi: embed;
 }

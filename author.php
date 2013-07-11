@@ -6,11 +6,11 @@
                     <h1 class="archive-title"><?php printf( __( 'Author Archives: %s', 'content' ), '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' ); ?></h1>
                 </header>
                 <?php rewind_posts();
-                Content_content_nav( 'nav-above' );
+                content_content_nav( 'nav-above' );
                 if ( get_the_author_meta( 'description' ) ) : ?>
                     <div class="author-info">
                         <div class="author-avatar">
-                            <?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'Content_author_bio_avatContent_size', 60 ) ); ?>
+                            <?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'content_author_bio_avatcontent_size', 60 ) ); ?>
                         </div>
                         <div class="author-description">
                             <h2><?php printf( __( 'About %s', 'content' ), get_the_author() ); ?></h2>
@@ -21,7 +21,7 @@
                 while ( have_posts() ) : the_post();
                     get_template_part( 'content', get_post_format() );
                 endwhile;
-                Content_content_nav( 'nav-below' );
+                content_content_nav( 'nav-below' );
                 else : 
                     get_template_part( 'content', 'none' );
             endif; ?>

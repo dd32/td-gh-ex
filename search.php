@@ -5,11 +5,11 @@
             <header class="page-header">
                 <h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'content' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
             </header>
-            <?php Content_content_nav( 'nav-above' );
+            <?php content_content_nav( 'nav-above' );
             while ( have_posts() ) : the_post();
                 get_template_part( 'content', get_post_format() );
             endwhile;
-            Content_content_nav( 'nav-below' );
+            content_content_nav( 'nav-below' );
             else : ?>
                 <article id="post-0" class="post no-results not-found">
                     <header class="post-header">

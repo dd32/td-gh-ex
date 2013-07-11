@@ -4,13 +4,13 @@ Author: Alberto Ramacciotti
 Author URI: http://www.arwebdevstudio.it
 Theme URI: http://ramacciotti.altervista.org/archivio/articolo/content-wordpress-theme
 Description: Content is a responsive theme focused on readability.
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Content WordPress theme, Copyright (C) 2013 Alberto Ramacciotti, AR Web Dev Studio
 Content WordPress theme is licensed under the GPL.
 
-Tags: one-column, dark, flexible-width, custom-menu, editor-style, threaded-comments, featured-images, translation-ready
+Tags: one-column, light, flexible-width, custom-menu, editor-style, threaded-comments, featured-images, translation-ready
 */
 
 html, 
@@ -499,7 +499,7 @@ img.wp-smiley,
 .content nav {
     font-size: 1.5em;
     line-height: 2;
-    margin-bottom: 3em;
+    margin: 1.5em 0;
 }
 
 #pagination-top {
@@ -509,14 +509,25 @@ img.wp-smiley,
 .prev-link,
 .previous-image {
     float: left;
-    width: 50%;
+    width: 45%;
 }
 
 .next-link,
 .next-image {
     float: right;
     text-align: right;
-    width: 50%;
+    width: 45%;
+    margin-right: 1em;
+}
+
+.navigation ul {
+    overflow: hidden;
+}
+
+.navigation a,
+.navigation a:visited {
+    display: block;
+    width: 100%;
 }
 
 .single-pagination + .comments-area,
@@ -561,6 +572,7 @@ a:visited {
 }
 
 :focus,
+a:focus,
 .numbered-pagination a:focus {
     color: #fafafa;
     background-color: #454546;
@@ -633,6 +645,12 @@ body.custom-font-enabled {
 .blog-header h1 {
     font-size: 5em;
     line-height: 1.5;
+}
+
+.archive-title {
+    font-size: 1.5em;
+    line-height: 1.5;
+    color: #818181;
 }
 
 .blog-header h1 a,
@@ -871,7 +889,6 @@ footer#footer {
     margin: 0 0 0 36px;
 }
 
-.post-content blockquote,
 .comment-content blockquote {
     margin-bottom: 24px;
     padding: 0 24px;
@@ -1029,13 +1046,13 @@ footer.post-meta p {
     margin-top: 8px;
 }
 
-article.format-aside h1 {
+.format-aside h1 {
     margin-bottom: 24px;
     font-size: 1.5em;
     font-style: normal;
 }
 
-article.format-aside .aside {
+.format-aside .aside {
     padding: 1em 0 0 4em;
     margin: 0 0 .875em 0;
     background: #efecde url(i/quote.png) no-repeat 0 4em;
@@ -1043,8 +1060,16 @@ article.format-aside .aside {
     font-style: italic;
 }
 
-article.format-aside blockquote:last-child,
-article.format-aside p:last-child {
+.format-quote .post-content blockquote {
+    padding: 0 0 0 4em;
+    margin: 0 0 .875em 0;
+    background: #efecde url(i/quote.png) no-repeat 0 0;
+    color: #693e36;
+    font-style: italic;
+}
+
+.format-aside blockquote:last-child,
+.format-aside p:last-child {
     margin-bottom: 0;
 }
 
@@ -1084,22 +1109,13 @@ article.format-quote .post-content p {
     padding-bottom: 24px;
 }
 
-article.format-quote .post-content blockquote {
-    padding: 24px 24px 0;
-    font-size: 15px;
-    line-height: 1.6;
-    font-style: normal;
-    color: #f1edda;
-    background: #efefef;
-}
-
 .format-status .post-header {
     margin-bottom: 24px;
 }
 
 .format-status .post-header h1 {
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 1em;
+    line-height: 1.5;
     margin: 0;
 }
 
@@ -1139,7 +1155,7 @@ article.format-quote .post-content blockquote {
 .comments-area article header cite {
     font-style: normal;
     font-size: 15px;
-    line-height: 1.42857143;
+    line-height: 1.5;
 }
 
 .comments-area article header time {

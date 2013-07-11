@@ -14,8 +14,6 @@
     <title><?php wp_title( '|', true, 'right' ); ?></title>
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-    <!--[if lt IE 9]> <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script> <![endif]-->
-    <!--[IE]> <script src="<?php echo get_template_directory_uri(); ?>/js/css3-mediaqueries.js" type="text/javascript"></script> <![endif]-->
     <?php wp_head(); ?>
 </head>
 
@@ -36,7 +34,7 @@
             </article>
         </div>
     <footer id="footer">
-        <p class="footer-notes"><?php do_action( 'Content_credits' ); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a> <?php printf( __( 'is based on', 'content' ) ); ?> <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'content' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'content' ); ?>" rel="generator"><?php printf( __( '%s', 'content' ), 'WordPress' ); ?></a>.</p>
+        <p class="footer-notes"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a> <?php printf( __( 'is based on', 'content' ) ); ?> <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'content' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'content' ); ?>" rel="generator"><?php printf( __( '%s', 'content' ), 'WordPress' ); ?></a>.</p>
     </footer>
 </div>
 <?php wp_footer(); ?>

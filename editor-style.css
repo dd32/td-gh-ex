@@ -2,7 +2,7 @@ html {
     font-size: 87.5%;
 }
 
-html .mceContentBody {
+html .mcecontentBody {
     max-width: 625px;
 }
 
@@ -122,7 +122,7 @@ big {
     font-size: 1.2em;
 }
 
-.mceContentBody blockquote {
+.mcecontentBody blockquote {
     font-weight: normal;
     margin: 0;
     padding: 24px;

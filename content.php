@@ -37,12 +37,12 @@
         </div>
         <?php endif; ?>
         <footer class="post-meta">
-            <p class="date"><?php Content_entry_meta(); ?></p>
-            <?php edit_post_link( __( 'Edit', 'content' ), '<span class="edit-link">', '</span>' );
+            <?php content_entry_meta();
+            edit_post_link( __( 'Edit', 'content' ), '<span class="edit-link">', '</span>' );
             if ( is_singular() && get_the_author_meta( 'description' ) && is_multi_author() ) : ?>
                 <div class="author-info">
                     <div class="author-avatar">
-                        <?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'Content_author_bio_avatContent_size', 68 ) ); ?>
+                        <?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'content_author_bio_avatcontent_size', 68 ) ); ?>
                     </div>
                     <div class="author-description">
                         <h2><?php printf( __( 'About %s', 'content' ), get_the_author() ); ?></h2>

@@ -27,11 +27,23 @@ function content_setup() {
 }
 add_action( 'after_setup_theme', 'content_setup' );
 
+function content_scripts() {
+    wp_enqueue_style( 'content-style', get_stylesheet_uri() );
+
+    wp_enqueue_script( 'content-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '1.0', true );
+
+    wp_enqueue_script( 'content-ie-html5', get_template_directory_uri() . '/js/html5.js', array(), '1.0', true );
+
+    wp_enqueue_script( 'content-it-css-media-queries', get_template_directory_uri() . '/js/css3-mediaqueries.js', array(), '1.0', true );
+
+    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+        wp_enqueue_script( 'comment-reply' );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'content_scripts' );
+
 function content_scripts_styles() {
     global $wp_styles;
-    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
-        wp_enqueue_script( 'comment-reply' );
-    wp_enqueue_script( 'Content-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '1.0', true );
     if ( 'off' !== _x( 'on', 'PT Sans  font: on or off', 'content' ) ) {
         $subsets = 'latin,latin-ext';
         $subset = _x( 'no-subset', 'PT Sans  font: add new subset (greek, cyrillic, vietnamese)', 'content' );
@@ -46,11 +58,10 @@ function content_scripts_styles() {
             'family' => 'PT+Sans:400italic,700italic,400,700',
             'subset' => $subsets,
         );
-        wp_enqueue_style( 'Content-fonts', add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" ), array(), null );
+        wp_enqueue_style( 'content-fonts', add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" ), array(), null );
     }
-    wp_enqueue_style( 'Content-style', get_stylesheet_uri() );
-    wp_enqueue_style( 'Content-ie', get_template_directory_uri() . '/css/ie.css', array( 'Content-style' ), '20130430' );
-    $wp_styles->add_data( 'Content-ie', 'conditional', 'lt IE 9' );
+    wp_enqueue_style( 'content-ie', get_template_directory_uri() . '/css/ie.css', array( 'content-style' ), '20130430' );
+    $wp_styles->add_data( 'content-ie', 'conditional', 'lt IE 9' );
 }
 add_action( 'wp_enqueue_scripts', 'content_scripts_styles' );
 
@@ -245,18 +256,15 @@ function content_entry_meta() {
 }
 endif;
 
-add_filter ( 'post_class' , 'alt_post_class' );
+add_filter ( 'post_class' , 'content_alt_post_class' );
 global $current_class;
 $current_class = 'current';
-function alt_post_class ( $alt_classes ) { 
+function content_alt_post_class( $alt_classes ) { 
    global $current_class;
    $alt_classes[] = $current_class;
    $current_class = ( $current_class == 'current' ) ? 'clearing' : 'current';
    return $alt_classes;
 }
-remove_filter('get_the_excerpt', 'wp_trim_excerpt');
-add_filter('get_the_excerpt', 'custom_trim_excerpt');
-
 
 function content_body_class( $classes ) {
     $background_color = get_background_color();
@@ -274,7 +282,7 @@ function content_body_class( $classes ) {
         $classes[] = 'custom-background-empty';
     elseif( in_array( $background_color, array( 'fff', 'a73511' ) ) )
         $classes[] = 'custom-background-white';
-    if( wp_style_is( 'Content-fonts', 'queue' ) )
+    if( wp_style_is( 'content-fonts', 'queue' ) )
         $classes[] = 'custom-font-enabled';
     if( ! is_multi_author() )
         $classes[] = 'single-author';
@@ -297,6 +305,6 @@ function content_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'content_customize_register' );
 
 function content_customize_preview_js() {
-    wp_enqueue_script( 'Content-customizer', get_template_directory_uri() . '/js/theme-customizer.js', array( 'customize-preview' ), '20120827', TRUE );
+    wp_enqueue_script( 'content-customizer', get_template_directory_uri() . '/js/theme-customizer.js', array( 'customize-preview' ), '20120827', TRUE );
 }
 add_action( 'customize_preview_init', 'content_customize_preview_js' );

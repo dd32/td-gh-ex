@@ -3,10 +3,10 @@
         <?php while ( have_posts() ) : the_post(); ?>
                 <article id="post-<?php the_ID(); ?>" <?php post_class( 'image-attachment' ); ?>>
                     <header class="post-header">
-                        <h1 class="post-title"><?php the_title(); ?></h1>
+                        <h2 class="post-title"><?php the_title(); ?></h2>
                         <footer class="post-meta">
                             <?php $metadata = wp_get_attachment_metadata();
-                                printf( __( '<span class="meta-prep meta-prep-post-date">Published </span> <span class="post-date"><time class="post-date" datetime="%1$s" pubdate>%2$s</time></span> at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%8$s</a>.', 'content' ),
+                                printf( __( '<span class="post-date"><time class="post-date" datetime="%1$s" pubdate>%2$s</time></span>, <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> | <a href="%6$s" title="Return to %7$s" rel="gallery">%8$s</a>.', 'content' ),
                                     esc_attr( get_the_date( 'c' ) ),
                                     esc_html( get_the_date() ),
                                     esc_url( wp_get_attachment_url() ),
@@ -44,7 +44,7 @@
                                     $next_attachment_url = wp_get_attachment_url();
                                 endif; ?>
                                 <a href="<?php echo esc_url( $next_attachment_url ); ?>" title="<?php the_title_attribute(); ?>" rel="attachment">
-                                <?php $attachment_size = apply_filters( 'Content_attachment_size', array( 960, 960 ) );
+                                <?php $attachment_size = apply_filters( 'content_attachment_size', array( 960, 960 ) );
                                 echo wp_get_attachment_image( $post->ID, $attachment_size ); ?></a>
                                 <?php if( ! empty( $post->post_excerpt ) ) : ?>
                                     <div class="post-caption">

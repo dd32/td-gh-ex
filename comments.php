@@ -4,7 +4,7 @@
     <?php if ( have_comments() ) : ?>
         <h2 class="comments-title"><?php printf( _n( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'content' ), number_format_i18n(get_comments_number() ), '<span>' . get_the_title() . '</span>' ); ?></h2>
         <ol class="commentlist">
-            <?php wp_list_comments( array( 'callback' => 'Content_comment', 'style' => 'ol' ) ); ?>
+            <?php wp_list_comments( array( 'callback' => 'content_comment', 'style' => 'ol' ) ); ?>
         </ol>
         <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
             <nav id="comment-nav-below" class="navigation" role="navigation">

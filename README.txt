@@ -2,8 +2,8 @@
 Contributors: Alberto Ramacciotti ( http://www.arwebdevstudio.it )
 Tags: one-column, dark, flexible-width, custom-menu, editor-style, threaded-comments, featured-images, translation-ready
 Requires at least: 3.0
-Tested up to: 3.5.1
-Version: 1.0.1
+Tested up to: 3.5.2
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Content WordPress theme, Copyright (C) 2013 Alberto Ramacciotti, AR Web Dev Studio
@@ -21,6 +21,9 @@ The font used is PT Sans ( http://www.google.com/fonts/specimen/PT+Sans ).
 #### Notes
 * Content theme is a free WordPress theme, always remember to do a backup of your whole site before install and try it: 
 do a backup of both filesystem and database.
+
+A note about the menu:
+Content default menu will does not show sub-levels menu items.
 
 == Installation ==
 
@@ -46,5 +49,9 @@ None
 * Initial upload
 
 = 1.0.1 =
+
+* Fix bugs
+
+= 1.0.2 =
 
 * Fix bugs

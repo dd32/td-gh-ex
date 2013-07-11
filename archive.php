@@ -17,7 +17,7 @@
             <?php while ( have_posts() ) : the_post();
                 get_template_part( 'content', get_post_format() );
             endwhile;
-            Content_content_nav( 'nav-below' );
+            content_content_nav( 'nav-below' );
             else : 
                 get_template_part( 'content', 'none' );
             endif; ?>
