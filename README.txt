@@ -3,7 +3,7 @@ Contributors: Alberto Ramacciotti ( http://www.arwebdevstudio.it )
 Tags: one-column, dark, flexible-width, custom-menu, editor-style, threaded-comments, featured-images, translation-ready
 Requires at least: 3.0
 Tested up to: 3.5.2
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Content WordPress theme, Copyright (C) 2013 Alberto Ramacciotti, AR Web Dev Studio
@@ -53,5 +53,9 @@ None
 * Fix bugs
 
 = 1.0.2 =
+
+* Fix bugs
+
+= 1.0.3 =
 
 * Fix bugs

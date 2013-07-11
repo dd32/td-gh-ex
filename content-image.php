@@ -5,7 +5,7 @@
         <footer class="post-meta">
             <p><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'content' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
                 <h1><?php the_title(); ?></h1>
-                <h2><time class="post-date" datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>"><?php echo get_the_date(); ?></time></h2>
+                <span><time class="post-date" datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>"><?php echo get_the_date(); ?></time></span>
             </a></p>
             <?php if ( comments_open() ) : ?>
             <div class="comments-link">

@@ -28,15 +28,26 @@
                     <div class="post-content">
                         <div class="post-attachment">
                             <div class="attachment">
-                                <?php $attachments = array_values( get_children( array( 'post_parent' => $post->post_parent, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'ASC', 'orderby' => 'menu_order ID' ) ) );
+                                <?php $attachments = array_values( 
+                                    get_children( 
+                                        array( 
+                                            'post_parent' => $post->post_parent, 
+                                            'post_status' => 'inherit', 
+                                            'post_type' => 'attachment', 
+                                            'post_mime_type' => 'image', 
+                                            'order' => 'ASC', 
+                                            'orderby' => 'menu_order ID' 
+                                        ) 
+                                    ) 
+                                );
                                 foreach ( $attachments as $k => $attachment ) : 
                                     if( $attachment->ID == $post->ID )
                                     break;
                                 endforeach;
                                 $k++;
                                 if( count( $attachments) > 1) : 
-                                if( isset($attachments[$k] ) ) : 
-                                    $next_attachment_url = get_attachment_link( $attachments[$k]->ID );
+                                    if( isset($attachments[$k] ) ) : 
+                                        $next_attachment_url = get_attachment_link( $attachments[$k]->ID );
                                 else : 
                                     $next_attachment_url = get_attachment_link( $attachments[0]->ID );
                                 endif;
