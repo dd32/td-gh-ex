@@ -605,14 +605,13 @@ One is a method of up-loading the image from the below up-loading form. Another 
                     global $$scheme;
                 if($ok == true){
                 $result .= '<div id="message" class="updated fade" title="'.esc_attr($raindrops_updates).'"><p>'.sprintf(__('updated %1$s  successfully.', 'Raindrops'), $raindrops_updates);
-					// comment out 1.121 next version will removed.
-                    /*if ( is_multisite() ) {
+                    if ( is_multisite() ) {
                         $result .= sprintf('<a href="%s">%s</a></p></div>',
                                             'themes.php?page=raindrops_settings',
                                             esc_html__(" MultiSite User must Click here !!","Raindrops"));
-                    }else{*/
+                    }else{
                         $result .= '</p></div>';
-                    /*}*/
+                    }
                 }
             }
 /**
@@ -912,36 +911,49 @@ $raindrops_navigation_list  .= '</ul>';
  *
  */
          function raindrops_color_selector($name,$current_val,$i){
+		 
             global $raindrops_color_ja,$raindrops_color_en_140,$raindrops_color_en,$raindrops_color_anime;
+		 
             $result = sprintf($this->line_select_element,$this->accesskey[$i],'raindrops_option_values['.$name.']',4,100);
             $scheme = raindrops_warehouse("raindrops_color_scheme");
-            $current_color = array_search($current_val,$$scheme);
-$result .= '<option value="'.$current_val.'" style="background:'.$current_val.'" '.selected(1,1,false).'>'.$current_color.'</option>';
-                foreach($$scheme as $key=>$val){
-                    $cr = hexdec(substr($val,1,2))*0.5;
-                    $cg = hexdec(substr($val,3,2))*0.5;
-                    $cb = hexdec(substr($val,5,2))*0.5;
-                    if($cr+$cg+$cb < 128 and !empty($val)){
-                        $color = "#ccc";
-                    }else{
-                        if($cr > $cg and $cg > $cb){
-                        $color = "#".dechex($cb).dechex($cg).dechex($cr);
-                        }elseif($cr > $cb and $cb > $cg){
-                            $color = "#".dechex($cg).dechex($cb).dechex($cr);
-                        }elseif( $cg > $cr and $cr > $cb){
-                            $color = "#".dechex($cb).dechex($cg).dechex($cg);
-                        }elseif( $cg > $cb and $cb > $cr ){
-                            $color = "#".dechex($cr).dechex($cb).dechex($cg);
-                        }elseif( $cb > $cg and $cg > $cr ){
-                            $color = "#".dechex($cr).dechex($cg).dechex($cb);
-                        }elseif( $cb > $cr and $cr > $cg ){
-                            $color = "#".dechex($cg).dechex($cr).dechex($cb);
-                        }else{
-                            $color = "#000";
-                        }
-                    }
-                    $result .= '<option value="'.esc_attr( $val ).'" style="background:'.esc_attr( $val ).';color:'.esc_attr( $color ).'">'. esc_html( $key ) .'</option>';
-                }
+			$scheme = $$scheme;
+			
+		//1.122
+			if( isset(  $scheme ) and is_array( $scheme ) ) {            
+			
+			$current_color = array_search($current_val,$scheme);
+			
+			$result .= '<option value="'.$current_val.'" style="background:'.$current_val.'" '.selected(1,1,false).'>'.$current_color.'</option>';
+			
+					foreach($scheme as $key=>$val){
+						$cr = hexdec(substr($val,1,2))*0.5;
+						$cg = hexdec(substr($val,3,2))*0.5;
+						$cb = hexdec(substr($val,5,2))*0.5;
+						if($cr+$cg+$cb < 128 and !empty($val)){
+							$color = "#ccc";
+						}else{
+							if($cr > $cg and $cg > $cb){
+							$color = "#".dechex($cb).dechex($cg).dechex($cr);
+							}elseif($cr > $cb and $cb > $cg){
+								$color = "#".dechex($cg).dechex($cb).dechex($cr);
+							}elseif( $cg > $cr and $cr > $cb){
+								$color = "#".dechex($cb).dechex($cg).dechex($cg);
+							}elseif( $cg > $cb and $cb > $cr ){
+								$color = "#".dechex($cr).dechex($cb).dechex($cg);
+							}elseif( $cb > $cg and $cg > $cr ){
+								$color = "#".dechex($cr).dechex($cg).dechex($cb);
+							}elseif( $cb > $cr and $cr > $cg ){
+								$color = "#".dechex($cg).dechex($cr).dechex($cb);
+							}else{
+								$color = "#000";
+							}
+						}
+						$result .= '<option value="'.esc_attr( $val ).'" style="background:'.esc_attr( $val ).';color:'.esc_attr( $color ).'">'. esc_html( $key ) .'</option>';
+					}			
+			}else{
+					$result .= '<option disabled>'.esc_html( 'Not selectable', 'Raindrops' ).'</option>';
+			}
+
             $result .='</select>';
             return $result;
         }
