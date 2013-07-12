@@ -627,28 +627,28 @@
 	
 	//Default settings
 	<?php 
-			if(get_option('redify_slider_setting_save_data')!='')
+			/*if(get_option('redify_slider_setting_save_data')!='')
 			{
 	$redify_slider_setting_show = unserialize(get_option('redify_slider_setting_save_data' , $redify_slider_setting_save_data));
 				foreach($redify_slider_setting_show as $redify_slider_setting_show)
 				{
 					$redify_slider_setting_show_data[] = $redify_slider_setting_show;
 				}
-			}
+			}*/ //block for adding slider default settings
 		?>
 	$.fn.nivoSlider.defaults = {
-		effect: "<?php //echo $redify_slider_setting_show_data[1]; ?>",
+		effect: "random<?php //echo $redify_slider_setting_show_data[1]; ?>",
 		slices: 15,
 		boxCols: 8,
 		boxRows: 4,
-		animSpeed: "<?php //echo $redify_slider_setting_show_data[3]; ?>",
-		pauseTime: "<?php //echo $redify_slider_setting_show_data[4]; ?>",
+		animSpeed: "500<?php //echo $redify_slider_setting_show_data[3]; ?>",
+		pauseTime: "3000<?php //echo $redify_slider_setting_show_data[4]; ?>",
 		startSlide: 0,
 		directionNav: true,
 		controlNav: true,
 		controlNavThumbs: true,
-		pauseOnHover: "<?php //echo $redify_slider_setting_show_data[2]; ?>",
-		manualAdvance: '<?php //echo get_option('auto_stop_slider');?>',
+		pauseOnHover: "true<?php //echo $redify_slider_setting_show_data[2]; ?>",
+		manualAdvance: "false<?php //echo get_option('auto_stop_slider');?>",
 		captionOpacity: 0.8,
 		prevText: 'Prev',
 		nextText: 'Next',

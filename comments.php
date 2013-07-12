@@ -52,7 +52,7 @@
 				 * define appointpress_comment() and that will be used instead.
 				 * See appointpress_comment() in appointment/functions.php for more.
 				 */
-				wp_list_comments( array( 'callback' => 'appointpress_comment' ) );
+				wp_list_comments( array( 'callback' => 'appointment_comment' ) );
 			?>
 	</div><!-- comment_mn -->
 

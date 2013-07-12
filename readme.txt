@@ -57,6 +57,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ============================Change Log================================
+@version 1.2.2
+1. Stylesheet url fixed
 @veriosn 1.2.1
 1. Minor slider bug fixed.. default images now display on the theme activation.
 2. All the hard coded text made transferable
