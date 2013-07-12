@@ -333,6 +333,6 @@ add_action( 'template_redirect', 'themonic_content_width' );
 if ( is_admin() && isset($_GET['activated'] ) && $pagenow ==	"themes.php" )
 	wp_redirect( 'themes.php?page=iconic_one_theme_options');
 
-require_once( get_template_directory() . '/inc/th-options.php' );
+require_once( get_template_directory() . '/inc/iconic-one-options.php' );
 
 

@@ -80,6 +80,19 @@ class Social_Textarea_Control extends WP_Customize_Control {
 <?php
 	}
 }
+
+$wp_customize->add_setting(
+    'iconic_one_social_activate'
+	);
+	$wp_customize->add_control(
+    'iconic_one_social_activate',
+    array(
+        'type' => 'checkbox',
+        'label' => 'Show social buttons',
+        'section' => 'sl_content',
+    )
+);
+
 $wp_customize->add_section('sl_content' , array(
 	'priority'    => 500,
 ));

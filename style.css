@@ -4,7 +4,7 @@ Theme URI: http://themonic.com/iconic-one/
 Author: Themonic
 Author URI: http://themonic.com
 Description: Iconic One is a premium quality theme with pixel perfect typography and responsiveness and is built for speed with pagespeed score of 95+, Iconic One implements proper SEO so that your content will rank high and is compatible with AIOSEO and Yoast SEO, It makes proper use of Live customizer that allows you to setup the theme in minutes, you can easily upload the logo, modify the background color, footer text, social media urls without touching any line of code. It utilizes latest HTML 5, CSS3 and wordpress native functions for creating the awesomeness that looks good on every browser. Support is free, access the support here http://themonic.com/support/, Report issues and feedback at http://themonic.com/feedback/.
-Version: 1.0
+Version: 1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: Blue, White, Black, one-column, two-columns, right-sidebar, custom-background, flexible-width, custom-menu, full-width-template, post-formats, rtl-language-support, theme-options, custom-colors
@@ -472,7 +472,7 @@ a:hover {
     border-right: 1px solid #E9E9E9;
     border-top: 1px solid #E9E9E9;
     height: 160px;
-    margin: 24px 0;
+    margin-bottom:24px;
     text-align: left;
 	}
 .site-header h1,
@@ -1551,7 +1551,7 @@ select.selectnav {margin:4px; padding:10px;} /* centers select */
 		background-color: #e6e6e6;
 	}
 	body .site {
-		padding: 0 24px;
+		padding: 24px 24px 0;
 		margin-bottom: 24px;
 		}
 	body.custom-background-empty {

@@ -16,6 +16,7 @@
 		<div class="site-wordpress">
 				<a href="http://themonic.com/iconic-one/">Iconic One</a> Theme | Powered by <a href="http://wordpress.org">Wordpress</a>
 				</div><!-- .site-info -->
+				<div class="clear"></div>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

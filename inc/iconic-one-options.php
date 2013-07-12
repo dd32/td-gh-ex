@@ -2,7 +2,7 @@
 
 function thoptions_theme_menu() {  
   
-add_theme_page( 'Iconic One Theme', 'Iconic One Theme', 'administrator', 'iconic_one_theme_options', 'thoptions_theme_display');  
+add_theme_page( 'Iconic One Theme', 'Iconic One Theme', 'edit_theme_options', 'iconic_one_theme_options', 'thoptions_theme_display');  
   
 } // end thoptions_theme_menu  
 add_action( 'admin_menu', 'thoptions_theme_menu' ); 
@@ -31,11 +31,11 @@ function thoptions_theme_display() {
 	</div>
 <div style="clear:both;">
 <div style="background:#F7F08F;float:right;padding:25px 40px 25px 15px;;margin:10px;max-width:320px;">
-<h3>Donation and Support Packages</h3>
+<h3>Donation and Customization</h3>
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
 <table>
-<tr><td><input type="hidden" name="on0" value="Support Packages">Support Packages</td></tr><tr><td><select name="os0">
+<tr><td><input type="hidden" name="on0" value="Support Packages">Optional</td></tr><tr><td><select name="os0">
 	<option value="Donate -">Donate - $2.00 USD</option>
 	<option value="Donate - (1 customizations)">Donate - (1 customizations) $10.00 USD</option>
 	<option value="Donate (2 customizations)">Donate (2 customizations) $17.00 USD</option>
@@ -52,7 +52,7 @@ function thoptions_theme_display() {
 </form>
 
 We will refund the full amount if you are not happy 
-with the support without asking any questions.<br .../><br .../>
+with the customization without asking any questions.<br .../><br .../>
 After payment, <a href="mailto:support@themonic.com?Subject=Iconic One Customization">send an email</a> with your customization details. Use the same Paypal email from which you made the payment else include 
 the transaction ID.<br .../>
 </div>
@@ -63,7 +63,7 @@ This is the first step: Configure the Main Navigation menu by
 going to Appearance -> Menus. Create a custom menu by the name of 'top', or simply rename your existing menu to 'top'.
 Make sure that under Primary Menu 'top' is selected, Navigation Menu responsiveness won't work otherwise.
 <h4>Using Live Customizer - for logo upload, colors etc.</h4> 
-Simply go through the Live Customizer (http://<?php bloginfo( 'name' ); ?>.com/wp-admin/customize.php) to change the logo image, social bookmarks, background color, footer copyright etc., 
+Simply go through the Live Customizer (http://yourdomain.com/wp-admin/customize.php) to change the logo image, social bookmarks, background color, footer copyright etc., 
 you don't have to touch any code or login to ftp for the most needed customizations. Sidebar is Widget ready for easy configuration. 
 <h4>Logo Size</h4>
 Logo of 187 x 54 pixel dimensions is used in the demo. You can easily try uploading logos of different sizes via live customizer.
