@@ -32,6 +32,10 @@ FAQ:
 
 == Changelog ==
 
+= 0.4.4 - 2013-07-12 =
+* bug fixing
+* update screenshot.png
+
 = 0.4.3 - 2013-07-07 =
 * added Russian translation
 

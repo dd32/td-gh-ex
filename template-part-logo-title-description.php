@@ -22,7 +22,7 @@ if ( ! empty( $logo_url ) || ! empty( $show_site_title ) || ! empty( $show_site_
 		<div class="site-logo-title clearfix">
 			<?php if ( ! empty( $logo_url ) ) : ?>
 				<div class="site-logo">
-					<?php echo $link_before; ?><img src="<?php echo $logo_url; ?>" /><?php echo $link_after; ?>
+					<?php echo $link_before; ?><img src="<?php echo $logo_url; ?>" alt="<?php echo $title_desc; ?>"><?php echo $link_after; ?>
 				</div> <!-- /.site-logo -->
 			<?php endif; ?>
 
