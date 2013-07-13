@@ -5,12 +5,17 @@ get_header();
 	<div id="content" role="main">
 		<?php
 		if(have_posts()) :
+		?>
+			<header class="page-header">
+				<h1 class="page-title"><?php printf(__('Search Results for: %s', 'rcg-forest'), '<span>' . get_search_query() . '</span>'); ?></h1>
+			</header>
+			<?php
 			while(have_posts()) :
 				the_post();
 				get_template_part('content', get_post_format());
 			endwhile;
 			// Navigation
-			if($wp_query->max_num_pages > 1) :
+			if($wp_query->max_num_pages > 1) : 
 			?>
 				<nav id="nav-below" class="navigation" role="navigation">
 					<h3 class="assistive-text"><?php _e('Post navigation', 'rcg-forest'); ?></h3>
@@ -21,12 +26,12 @@ get_header();
 			endif;
 		else :
 		?>
-			<article class="post no-results">
+			<article class="no-results">
 				<header class="entry-header">
-					<h1 class="entry-title"><?php _e('No posts to display', 'rcg-forest'); ?></h1>
+					<h1 class="entry-title"><?php _e('Nothing Found', 'rcg-forest'); ?></h1>
 				</header>
 				<div class="entry-content">
-					<p><?php _e('Sorry, but no results were found.', 'rcg-forest'); ?></p>
+					<p><?php _e('Sorry, but no entries matched your search criteria. Please try again with different keywords.', 'rcg-forest'); ?></p>
 				</div>
 			</article>
 		<?php
