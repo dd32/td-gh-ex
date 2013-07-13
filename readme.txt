@@ -4,7 +4,7 @@ Donate link: http://web-profile.com.ua/donate/
 Tags: gray, white, light, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.4
 Tested up to: 3.5.2
-Stable tag: 0.4.3
+Stable tag: 0.4.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,10 @@ FAQ:
 
 
 == Changelog ==
+
+= 0.4.5 - 2013-07-13 =
+* bug fixing
+* update Hebrew translation
 
 = 0.4.4 - 2013-07-12 =
 * bug fixing

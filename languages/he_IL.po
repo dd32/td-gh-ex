@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: activetab\n"
-"POT-Creation-Date: 2013-06-30 23:40+0200\n"
-"PO-Revision-Date: 2013-07-01 00:00+0200\n"
+"POT-Creation-Date: 2013-07-13 22:02+0200\n"
+"PO-Revision-Date: 2013-07-13 22:15+0200\n"
 "Last-Translator: webvitaly <webvitaly@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.5.7\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: ./\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -22,11 +22,11 @@ msgstr "ביקשת להגיע לדף שלא קיים. שגיאה 404"
 msgid "The URL you requested could not be found."
 msgstr "לא ניתן למצוא את כתובת האתר המבוקשת."
 
-#: ../404.php:29 ../sidebar.php:76
+#: ../404.php:29 ../sidebar.php:58
 msgid "Popular posts"
 msgstr "פוסטים פופולארים"
 
-#: ../404.php:50 ../sidebar.php:99
+#: ../404.php:50 ../sidebar.php:81
 msgid "Recent posts"
 msgstr "פוסטים אחרונים"
 
@@ -144,11 +144,11 @@ msgstr "שלח תגובה"
 msgid "Submit reply to %s"
 msgstr "שלח תשובה ל %s"
 
-#: ../content-list.php:6 ../content-single.php:6 ../content.php:6
+#: ../content-list.php:7 ../content-single.php:7 ../content.php:7
 msgid "Sticky"
 msgstr "דביק"
 
-#: ../content-page.php:11 ../content-single.php:20 ../image.php:80
+#: ../content-page.php:12 ../content-single.php:21 ../image.php:80
 msgid "Pages:"
 msgstr "עמודים:"
 
@@ -249,7 +249,7 @@ msgstr "תגובה"
 msgid "Comments"
 msgstr "תגובות"
 
-#: ../functions.php:278 ../sidebar.php:111
+#: ../functions.php:278 ../sidebar.php:93
 msgid "Categories"
 msgstr "קטגוריות"
 
@@ -283,54 +283,74 @@ msgid "Design"
 msgstr "עיצוב"
 
 #: ../options.php:22
+msgid "Fixed"
+msgstr "קבוע"
+
+#: ../options.php:23
+msgid "Static"
+msgstr "סטטי"
+
+#: ../options.php:26
+msgid "Menu position type"
+msgstr "סוג עמדת תפריט"
+
+#: ../options.php:35
 msgid "Logo"
 msgstr "לוגו"
 
-#: ../options.php:29
+#: ../options.php:42
 msgid "Show site title in the header"
 msgstr "הצג כותרת אתר בתיאור"
 
-#: ../options.php:30
+#: ../options.php:43
 #, php-format
 msgid "<a href=\"%s\">Edit site title</a>"
 msgstr "<a href=\"%s\">ערוך כותרת אתר</a>"
 
-#: ../options.php:37
+#: ../options.php:50
 msgid "Show site description in the header"
 msgstr "הצג תיאור אתר בכותרת"
 
-#: ../options.php:38
+#: ../options.php:51
 #, php-format
 msgid "<a href=\"%s\">Edit site description</a>"
 msgstr "<a href=\"%s\">ערוך תיאור אתר</a>"
 
-#: ../options.php:45
-msgid "Show site title in the sidebar"
-msgstr "הצג כותרת אתר בסרגל צידי"
-
-#: ../options.php:53
-msgid "Show site description in the sidebar"
-msgstr "הצג תיאור אתר בסרגל הצידי"
-
-#: ../options.php:62
+#: ../options.php:59
 msgid "Code"
 msgstr "קוד"
 
-#: ../options.php:67
+#: ../options.php:64
 msgid "Head code"
 msgstr "קוד מוסתר"
 
-#: ../options.php:68
+#: ../options.php:65
 msgid "Code will be added to head section just before closing [head] tag"
 msgstr "הקוד יתווסף לראש העמוד ממש לפני סגירת התג [head]"
 
-#: ../options.php:75
+#: ../options.php:72
 msgid "Footer code"
 msgstr "קוד כותרת תחתונה"
 
-#: ../options.php:76
+#: ../options.php:73
 msgid "Code will be added to body section just before closing [body] tag"
 msgstr "הקוד יתווסף לפני סגירת התג [body]"
+
+#: ../options.php:81
+msgid "Other"
+msgstr "אחר"
+
+#: ../options.php:86
+msgid "Excerpt"
+msgstr "קטע"
+
+#: ../options.php:87
+msgid "Full content"
+msgstr "תוכן מלא"
+
+#: ../options.php:90
+msgid "Show excerpt or full content in the list of posts"
+msgstr "הצג או קטע תוכן מלא ברשימת ההודעות"
 
 #: ../search.php:10
 msgid "Search results for:"
@@ -340,7 +360,7 @@ msgstr "תוצאות חיפוש של:"
 msgid "Search"
 msgstr "חיפוש"
 
-#: ../sidebar.php:135
+#: ../sidebar.php:117
 msgid "Meta"
 msgstr "כלים"
 
@@ -365,6 +385,14 @@ msgstr "ברירת מחדל"
 #: ../options-framework/options-framework.php:230
 msgid "Select Color"
 msgstr "בחר צבע"
+
+#: ../options-framework/options-framework.php:275
+msgid "Save options"
+msgstr "שמור אפשרויות"
+
+#: ../options-framework/options-framework.php:276
+msgid "Restore defaults"
+msgstr "לשחזר את ברירות מחדל"
 
 #: ../options-framework/options-framework.php:276
 msgid "Click OK to reset. Any theme settings will be lost!"
@@ -475,6 +503,12 @@ msgstr "מודגש"
 #: ../options-framework/options-sanitize.php:347
 msgid "Bold Italic"
 msgstr "מודגש נטוי"
+
+#~ msgid "Show site title in the sidebar"
+#~ msgstr "הצג כותרת אתר בסרגל צידי"
+
+#~ msgid "Show site description in the sidebar"
+#~ msgstr "הצג תיאור אתר בסרגל הצידי"
 
 #~ msgid "Author archives: %s"
 #~ msgstr "ארכיון מחבר: %s"
