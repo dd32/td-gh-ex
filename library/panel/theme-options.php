@@ -194,14 +194,6 @@ function travelify_theme_options_do_page() {
 											<?php _e( 'Disable', 'travelify' ); ?></br>
 										</td>
 									</tr>
-									<tr>
-										<th>
-											<?php _e( 'Change header image', 'travelify' ); ?>
-										</th>
-										<td>
-											<?php printf( __('<a class="button" href="%s">Click here</a>', 'travelify' ), admin_url('themes.php?page=custom-header')); ?>
-										</td>
-									</tr>
 								</tbody>
 							</table>
 							<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'travelify' ); ?>" /></p>
