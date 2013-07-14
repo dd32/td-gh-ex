@@ -21,7 +21,7 @@
 			<ul>
 				<li><?php _e( 'Check for a mis-typed URL error', 'travelify' ); ?></li>
 				<li><?php _e( 'Press the refresh button on your browser.', 'travelify' ); ?></li>
-				<li><?php _e( 'Go back to', 'travelify' ); ?> <a href="<?php get_home_url(); ?>"><?php _e( 'Homepage', 'travelify' ); ?></a></li>
+				<li><?php _e( 'Go back to', 'travelify' ); ?> <a href="<?php echo home_url() ?>/" title="<?php bloginfo( 'name' ) ?>" rel="home"><?php _e( 'Homepage', 'travelify' ); ?></a></li>
 			</ul>
 		</div><!-- .entry-content -->
 	</div><!-- #content -->

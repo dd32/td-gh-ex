@@ -424,9 +424,6 @@ function travelify_header_title() {
 	if( is_archive() ) {
 		$travelify_header_title = single_cat_title( '', FALSE );
 	}
-	elseif( is_404() ) {
-		$travelify_header_title = __( 'Page NOT Found', 'travelify' );
-	}
 	elseif( is_search() ) {
 		$travelify_header_title = __( 'Search Results', 'travelify' );
 	}

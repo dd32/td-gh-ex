@@ -559,28 +559,27 @@ function travelify_theme_options_do_page() {
 					</div><!-- .option-container --> 
         
 					<div class="option-container">
-						<h3 class="option-toggle"><a href="#"><?php _e( 'Analytics', 'travelify' ); ?></a></h3>
+						<h3 class="option-toggle"><a href="#"><?php _e( 'Custom Scripts', 'travelify' ); ?></a></h3>
 						<div class="option-content inside">
 							<table class="form-table">
 								<tbody>       
 									<tr>
 										<th scope="row"><?php _e( 'Code to display on Header', 'travelify' ); ?></th>
 										<td>
-										<textarea name="travelify_theme_options[analytic_header]" id="analytics" rows="7" cols="80" ><?php echo esc_html( $options[ 'analytic_header' ] ); ?></textarea>
+										<textarea name="travelify_theme_options[customscripts_header]" id="customscripts" rows="7" cols="80" ><?php echo esc_html( $options[ 'customscripts_header' ] ); ?></textarea>
 										</td>
 									</tr>
 									<tr>
-										<td></td><td><?php _e('Note: Enter your custom header script.', 'travelify' ); ?></td>
+										<td></td><td><?php _e('Note: Enter your custom header script (i.e., analytics, social button scripts). ', 'travelify' ); ?></td>
 									</tr>
 									<tr>
 										<th scope="row"><?php _e('Code to display on Footer', 'travelify' ); ?></th>
 										<td>
-										<textarea name="travelify_theme_options[analytic_footer]" id="analytics" rows="7" cols="80" ><?php echo esc_html( $options[ 'analytic_footer' ] ); ?></textarea>
-
+										<textarea name="travelify_theme_options[customscripts_footer]" id="customscripts" rows="7" cols="80" ><?php echo esc_html( $options[ 'customscripts_footer' ] ); ?></textarea>
 										</td>
 									</tr>
 									<tr>
-										<td></td><td><?php _e( 'Note: Enter your custom footer script.', 'travelify' ); ?></td>
+										<td></td><td><?php _e( 'Note: Enter your custom header script (i.e., analytics, social button scripts). ', 'travelify' ); ?></td>
 									</tr>
 								</tbody>
 							</table>
@@ -737,11 +736,11 @@ function travelify_theme_options_validate( $options ) {
 	if( isset( $input[ 'bing_verification' ] ) ) {
 		$input_validated[ 'bing_verification' ] = wp_filter_post_kses( $input[ 'bing_verification' ] );
 	}   
-	if( isset( $input[ 'analytic_header' ] ) ) {
-		$input_validated[ 'analytic_header' ] = wp_kses_stripslashes( $input[ 'analytic_header' ] );
+	if( isset( $input[ 'customscripts_header' ] ) ) {
+		$input_validated[ 'customscripts_header' ] = wp_kses_stripslashes( $input[ 'customscripts_header' ] );
 	}
-	if( isset( $input[ 'analytic_footer' ] ) ) {
-		$input_validated[ 'analytic_footer' ] = wp_kses_stripslashes( $input[ 'analytic_footer' ] );    
+	if( isset( $input[ 'customscripts_footer' ] ) ) {
+		$input_validated[ 'customscripts_footer' ] = wp_kses_stripslashes( $input[ 'customscripts_footer' ] );    
 	}       
     
 	// Layout settings verification

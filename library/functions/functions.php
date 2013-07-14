@@ -216,7 +216,7 @@ function travelify_internal_css() {
 
 add_action('wp_head', 'travelify_verification');
 /**
- * Site Verification and Header Analytic Tools
+ * Site Verification and Custom Scripts
  *
  * If user sets the code we're going to display meta verification
  */ 
@@ -243,9 +243,9 @@ function travelify_verification() {;
 		$travelify_verification .= '<meta name="y_key" content="' .  $options['yahoo_verification'] . '" />' . "\n";
 		}
 
-		// site stats, analytics header code
-		if ( !empty( $options['analytic_header'] ) ) {
-		$travelify_verification .=  $options[ 'analytic_header' ] ;
+		// custom scripts header code
+		if ( !empty( $options['customscripts_header'] ) ) {
+		$travelify_verification .=  $options[ 'customscripts_header' ] ;
 		}
 
 		set_transient( 'travelify_verification', $travelify_verification, 86940 );    
@@ -257,7 +257,7 @@ function travelify_verification() {;
 
 add_action('wp_footer', 'travelify_footercode');
 /**
- * Footer Analytics Code
+ * Footer custom scripts
  */
 function travelify_footercode() { 
     
@@ -267,9 +267,9 @@ function travelify_footercode() {
 		global $travelify_theme_options_settings;
 		$options = $travelify_theme_options_settings;
 
-		// site stats, analytics footer code
-		if ( !empty( $options['analytic_footer'] ) ) {  
-		$travelify_footercode .=  $options[ 'analytic_footer' ] ;
+		// custom scripts footer code
+		if ( !empty( $options['customscripts_footer'] ) ) {  
+		$travelify_footercode .=  $options[ 'customscripts_footer' ] ;
 		}
 
 		set_transient( 'travelify_footercode', $travelify_footercode, 86940 );
