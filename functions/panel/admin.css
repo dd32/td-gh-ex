@@ -262,3 +262,10 @@ h3.option-toggle a:hover, h3.option-active a {
 .clear {
 	clear: both;
 }
+#catchthemes .form-table.layout-options label.box { 
+	margin-right: 2%;
+    width: 18%;
+}
+#catchthemes .form-table.layout-options img {
+	max-width: 100%;
+}

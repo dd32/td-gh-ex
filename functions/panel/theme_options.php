@@ -160,7 +160,7 @@ function simplecatch_theme_options_do_page() {
                                             <?php } else { ?>
                                                 <input size="65" type="text" name="simplecatch_options[featured_logo_header]" value="<?php echo get_template_directory_uri(); ?>/images/logo-head.png" alt="logo" />
                                             <?php }  ?>                            
-                                                <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Footer Logo','simplecatch' );?>" />  
+                                                <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Header Logo','simplecatch' );?>" />  
                                         </td>
                                     </tr> 
                                     <tr>
@@ -399,12 +399,12 @@ function simplecatch_theme_options_do_page() {
                                     <tr>
                                         <th scope="row"><label><?php _e( 'Default Layout', 'simplecatch' ); ?></label></th>
                                         <td>
-                                        	<label title="right-sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/functions/panel/images/right-sidebar.gif" alt="Content-Sidebar" /><br />
+                                        	<label title="right-sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/functions/panel/images/right-sidebar.png" alt="Content-Sidebar" /><br />
                                             <input type="radio" name="simplecatch_options[sidebar_layout]" id="right-sidebar" <?php checked($options['sidebar_layout'], 'right-sidebar') ?> value="right-sidebar"  />
                                             <?php _e( 'Content on Left', 'simplecatch' ); ?>
                                             </label>
                                             
-                                            <label title="left-Sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/functions/panel/images/left-sidebar.gif" alt="Content-Sidebar" /><br />
+                                            <label title="left-Sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/functions/panel/images/left-sidebar.png" alt="Content-Sidebar" /><br />
                                             <input type="radio" name="simplecatch_options[sidebar_layout]" id="left-sidebar" <?php checked($options['sidebar_layout'], 'left-sidebar') ?> value="left-sidebar"  />
                                             <?php _e( 'Content on Right', 'simplecatch' ); ?>
                                             </label>
@@ -418,6 +418,7 @@ function simplecatch_theme_options_do_page() {
                                             <input type="radio" name="simplecatch_options[sidebar_layout]" id="no-sidebar-full-width" <?php checked($options['sidebar_layout'], 'no-sidebar-full-width') ?> value="no-sidebar-full-width"  />
                                             <?php _e( 'No Sidebar, Full Width', 'simplecatch' ); ?>
                                             </label>
+                                                                                        
                                         </td>
                                     </tr>  
                                 </tbody>
@@ -560,7 +561,7 @@ function simplecatch_theme_options_do_page() {
                                 <tbody class="sortable">
                                     <?php for ( $i = 1; $i <= $options[ 'slider_qty' ]; $i++ ): ?>
                                     <tr>
-                                        <th scope="row"><label class="handle"><?php _e( 'Featured Slider Post #', 'simplecatch' ); ?><span class="count"><?php echo absint( $i ); ?></span></label></th>
+                                        <th scope="row"><label class="handle"><span class="count"><?php echo '#' . absint( $i ); ?></span> <?php _e( 'Featured Post ID', 'simplecatch' ); ?></label></th>
                                         <td><input type="text" name="simplecatch_options[featured_slider][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'featured_slider', $options ) && array_key_exists( $i, $options[ 'featured_slider' ] ) ) echo absint( $options[ 'featured_slider' ][ $i ] ); ?>" />
                                         <a href="<?php bloginfo ( 'url' );?>/wp-admin/post.php?post=<?php if( array_key_exists ( 'featured_slider', $options ) && array_key_exists ( $i, $options[ 'featured_slider' ] ) ) echo absint( $options[ 'featured_slider' ][ $i ] ); ?>&action=edit" class="button" title="<?php esc_attr_e('Click Here To Edit'); ?>" target="_blank"><?php _e( 'Click Here To Edit', 'simplecatch' ); ?></a>
                                         </td>
@@ -725,6 +726,31 @@ function simplecatch_theme_options_do_page() {
                                     <td><input type="text" size="45" name="simplecatch_options[social_instagram]" value="<?php echo esc_url( $options[ 'social_instagram' ] ); ?>" />
                                     </td>
                                 </tr>
+                                <tr>
+                                    <th scope="row"><h4><?php _e( 'GitHub', 'simplecatch' ); ?></h4></th>
+                                    <td><input type="text" size="45" name="simplecatch_options[social_github]" value="<?php echo esc_url( $options[ 'social_github' ] ); ?>" />
+                                    </td>
+                                </tr> 
+                                <tr> 
+                                    <th scope="row"><h4><?php _e( 'Vkontakte', 'simplecatch' ); ?> </h4></th>
+                                    <td><input type="text" size="45" name="simplecatch_options[social_vkontakte]" value="<?php echo esc_url( $options[ 'social_vkontakte'] ); ?>" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><h4><?php _e( 'My World', 'simplecatch' ); ?></h4></th>
+                                    <td><input type="text" size="45" name="simplecatch_options[social_myworld]" value="<?php echo esc_url( $options[ 'social_myworld' ] ); ?>" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><h4><?php _e( 'Odnoklassniki', 'simplecatch' ); ?></h4></th>
+                                    <td><input type="text" size="45" name="simplecatch_options[social_odnoklassniki]" value="<?php echo esc_url( $options[ 'social_odnoklassniki' ] ); ?>" />
+                                    </td>
+                                </tr>   
+                                <tr>
+                                    <th scope="row"><h4><?php _e( 'Goodreads', 'simplecatch' ); ?> </h4></th>
+                                    <td><input type="text" size="45" name="simplecatch_options[social_goodreads]" value="<?php echo esc_url( $options[ 'social_goodreads' ] ); ?>" />
+                                    </td>
+                                </tr>                                                             
                             </tbody>
                         </table><p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p>      
                 	</div><!-- .option-container -->                       
@@ -960,7 +986,22 @@ function simplecatch_theme_options_validate( $options ) {
 	}	
 	if( isset( $input[ 'social_instagram' ] ) ) {
 		$input_validated[ 'social_instagram' ] = esc_url_raw( $input[ 'social_instagram' ] );
-	}		
+	}
+	if( isset( $input[ 'social_github' ] ) ) {
+		$input_validated[ 'social_github' ] = esc_url_raw( $input[ 'social_github' ] );
+	}
+	if( isset( $input[ 'social_vkontakte' ] ) ) {
+		$input_validated[ 'social_vkontakte' ] = esc_url_raw( $input[ 'social_vkontakte' ] );
+	}	
+	if( isset( $input[ 'social_myworld' ] ) ) {
+		$input_validated[ 'social_myworld' ] = esc_url_raw( $input[ 'social_myworld' ] );
+	}	
+	if( isset( $input[ 'social_odnoklassniki' ] ) ) {
+		$input_validated[ 'social_odnoklassniki' ] = esc_url_raw( $input[ 'social_odnoklassniki' ] );
+	}	
+	if( isset( $input[ 'social_goodreads' ] ) ) {
+		$input_validated[ 'social_goodreads' ] = esc_url_raw( $input[ 'social_goodreads' ] );
+	}	
 	
 	//Custom CSS Style Validation
 	if ( isset( $input['custom_css'] ) ) {

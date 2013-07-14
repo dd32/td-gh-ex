@@ -62,6 +62,12 @@ $simplecatch_options_defaults = array(
  	'social_delicious'				=> '',
  	'social_lastfm'					=> '',
 	'social_instagram'				=> '',
+	'social_github'					=> '',
+	'social_vkontakte'				=> '',
+	'social_myworld'				=> '',
+	'social_odnoklassniki'			=> '',
+	'social_goodreads'				=> '',
+	
  	'custom_css'					=> '',
  	'google_verification'			=> '',
  	'yahoo_verification'			=> '',

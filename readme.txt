@@ -325,7 +325,10 @@ Version 2.5.1
 * Added Jetpack Infinite Scroll support
 * Added option to disable logo
 * Added option to disable fav icon
-* Change default log to WordPress Logo as required by WordPress.org Theme Review Guideline
+* Change default logo to WordPress Logo as required by WordPress.org Theme Review Guideline
 * Change default fav icon as disabled as required by WordPress.org Theme Review Guideline
-* Disabled favicon as default option* Fixed the layout issue when scrolling
+* Fixed the layout issue when scrolling
 * Removed site verification code as required by WordPress.org Theme Review Guideline
+
+Version 2.5.2
+* Added GitHub, Vkontakte, My World, Odnoklassniki and Goodreads Social Icons

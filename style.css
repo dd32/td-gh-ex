@@ -4,7 +4,7 @@ Theme URI: http://catchthemes.com/themes/simple-catch
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
 Description: Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework. Multilingual Ready (WPML) and also currently translated in Polish, Russian, Finnish, French, Dutch, Greek, Croatian, Chinese, German, and Italian. Free Support Forum at http://catchthemes.com/support-forum/forum/simple-catch-public/
-Version: 2.5.1
+Version: 2.5.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, gray, silver, white, light, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, custom-menu, featured-images, full-width-template, theme-options, threaded-comments, translation-ready
@@ -595,6 +595,36 @@ ul.social-profile li.instagram a {
 }
 ul.social-profile li.instagram a:hover {
 	background-position: -776px -43px;
+}
+ul.social-profile li.github a {
+	background-position: -818px 0;
+}
+ul.social-profile li.github a:hover {
+	background-position: -818px -43px;
+}
+ul.social-profile li.odnoklassniki a {
+	background-position: -860px 0;
+}
+ul.social-profile li.odnoklassniki a:hover {
+	background-position: -860px -43px;
+}
+ul.social-profile li.vkontakte a {
+	background-position: -903px 0;
+}
+ul.social-profile li.vkontakte a:hover {
+	background-position: -903px -43px;
+}
+ul.social-profile li.myworld a {
+	background-position: -946px 0;
+}
+ul.social-profile li.myworld a:hover {
+	background-position: -946px -43px;
+}
+ul.social-profile li.goodreads a {
+	background-position: -989px 0;
+}
+ul.social-profile li.goodreads a:hover {
+	background-position: -989px -43px;
 }
 
 
