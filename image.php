@@ -1,8 +1,6 @@
 <?php get_header(); ?>
-
 <div class="row">
 <div class="nine columns">
-
 	<div id="single=page" role="main">
 		<?php if (have_posts()) : ?>
 		<?php while (have_posts()) : the_post(); ?>
@@ -10,7 +8,6 @@
 			<h1 id="post-<?php the_ID(); ?>" class="page-title">
 			<?php the_title(); ?>
 			</h1>
-
 	<article class="page-content">
 <div class="entry-meta">
 							<?php
@@ -28,15 +25,12 @@
 							?>
 							<?php edit_post_link( __( 'Edit', 'bartleby' ), '<span class="sep"> &bull; </span> <span class="edit-link">', '</span>' ); ?>
 						</div><!-- .entry-meta -->
-
 						<nav id="image-navigation" class="site-navigation">
 							<span class="previous-image"><?php previous_image_link( false, __( '&larr; Previous', 'bartleby' ) ); ?></span>
 							<span class="next-image"><?php next_image_link( false, __( 'Next &rarr;', 'bartleby' ) ); ?></span>
 						</nav><!-- #image-navigation -->
 					</header><!-- .entry-header -->
-
 					<div class="entry-content">
-
 						<div class="entry-attachment">
 							<div class="attachment">
 								<?php
@@ -70,40 +64,32 @@
 										$next_attachment_url = wp_get_attachment_url();
 									}
 								?>
-
 								<a href="<?php echo $next_attachment_url; ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="attachment"><?php
 									$attachment_size = apply_filters( 'chalkboard_attachment_size', array( 1200, 1200 ) ); // Filterable image size.
 									echo wp_get_attachment_image( $post->ID, $attachment_size );
 								?></a>
 							</div><!-- .attachment -->
-
 							<?php if ( ! empty( $post->post_excerpt ) ) : ?>
 							<div class="entry-caption">
 								<?php the_excerpt(); ?>
 							</div><!-- .entry-caption -->
 							<?php endif; ?>
 						</div><!-- .entry-attachment -->
-
 						<?php the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'bartleby' ), 'after' => '</div>' ) ); ?>
-
 					</div><!-- .entry-content -->
 	</article>
 <div style="clear:both;"></div>
 <!-- .page-content -->
 </div>
-
 		<?php endwhile; ?>
-
 <section id="commentbox">
 	<?php comments_template(); ?>
 </section>
-
 <?php else : ?>
 	<h2 class="center">
 		<?php _e('Nothing is Here - Page Not Found', 'bartleby'); ?>
 	</h2>
-
 	<div class="entry-content">
 	<p><?php _e( 'Sorry, but we couldn\'t find what you we\'re looking for.', 'bartleby' ); ?></p>
 	</div><!-- .entry-content -->
