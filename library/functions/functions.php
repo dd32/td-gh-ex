@@ -212,46 +212,6 @@ function travelify_internal_css() {
 	echo $travelify_internal_css;
 }
 
-/****************************************************************************************/
-
-add_action('wp_head', 'travelify_verification');
-/**
- * Site Verification and Custom Scripts
- *
- * If user sets the code we're going to display meta verification
- */ 
-function travelify_verification() {;    
-    
-	if ( ( !$travelify_verification = get_transient( 'travelify_verification' ) ) )  {
-
-		global $travelify_theme_options_settings;
-		$options = $travelify_theme_options_settings;
-
-		$travelify_verification = '';
-		// google verification
-		if ( !empty( $options['google_verification'] ) ) {
-		$travelify_verification .= '<meta name="google-site-verification" content="' . $options['google_verification']. '" />' . "\n";
-		}
-
-		// bing verification
-		if ( !empty( $options['bing_verification'] ) ) {
-		$travelify_verification .= '<meta name="msvalidate.01" content="' .  $options['bing_verification']  . '" />' . "\n";
-		}
-
-		// yahoo verification
-		if ( !empty( $options['yahoo_verification'] ) ) {
-		$travelify_verification .= '<meta name="y_key" content="' .  $options['yahoo_verification'] . '" />' . "\n";
-		}
-
-		// custom scripts header code
-		if ( !empty( $options['customscripts_header'] ) ) {
-		$travelify_verification .=  $options[ 'customscripts_header' ] ;
-		}
-
-		set_transient( 'travelify_verification', $travelify_verification, 86940 );    
-	}
-	echo $travelify_verification;
-}
 
 /****************************************************************************************/
 

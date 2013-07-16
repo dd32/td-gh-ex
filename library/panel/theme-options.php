@@ -156,7 +156,7 @@ function travelify_theme_options_do_page() {
 					<li><a href="#designoptions"><?php _e( 'Main Options', 'travelify' );?></a></li>
 					<li><a href="#featuredslider"><?php _e( 'Featured Slider', 'travelify' );?></a></li>
 					<li><a href="#sociallinks"><?php _e( 'Social Links', 'travelify' );?></a></li>
-					<li><a href="#webmastertools"><?php _e( 'Webmaster Tools', 'travelify' );?></a></li>
+					<li><a href="#other"><?php _e( 'Other', 'travelify' );?></a></li>
 				</ul><!-- .tab-navigation #main-navigation -->
                    
 				<!-- Option for Design Options -->
@@ -379,25 +379,6 @@ function travelify_theme_options_do_page() {
                      <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'travelify' ); ?>" /></p> 
                   </div><!-- .option-content -->
               	</div><!-- .option-container -->                     
-					<div class="option-container">
-						<h3 class="option-toggle"><a href="#"><?php _e( 'Custom CSS (Advanced)', 'travelify' ); ?></a></h3>
-						<div class="option-content inside"> 
-							<table class="form-table">  
-								<tbody>       
-									<tr>
-										<th scope="row"><label for="custom-css"><?php _e( 'Enter your custom CSS styles.', 'travelify' ); ?></label>										
-											<p><small><?php _e( 'This CSS will overwrite the CSS of style.css file.', 'travelify' ); ?></small></p>
-										</th>
-										<td>
-										<textarea name="travelify_theme_options[custom_css]" id="custom-css" cols="90" rows="12"><?php echo esc_attr( $options[ 'custom_css' ] ); ?></textarea>
-										<p>Make sure you know what you are doing</p>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-							<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'travelify' ); ?>" /></p> 
-						</div><!-- .option-content -->
-					</div><!-- .option-container --> 
 				</div> <!-- #designoptions -->  
 
 				<!-- Option for Featured Post Slider -->
@@ -536,28 +517,7 @@ function travelify_theme_options_do_page() {
 				</div> <!-- #sociallinks --> 
 
 				<!-- Option for Design Settings -->
-				<div id="webmastertools">
-					<div class="option-container">
-						<h3 class="option-toggle"><a href="#"><?php _e( 'Site Verification', 'travelify' ); ?></a></h3>
-						<div class="option-content inside">
-							<table class="form-table">  
-								<tbody>    
-									<tr>
-										<th scope="row"><label><?php _e( 'Google Site Verification ID', 'travelify' ); ?></label></th>
-										<td><input type="text" size="45" name="travelify_theme_options[google_verification]" value="<?php echo esc_attr( $options[ 'google_verification' ] ); ?>" /> <?php _e('Enter your Google ID number only (HTML tag verifciation)', 'travelify'); ?>
-										</td>
-									</tr>
-									<tr>
-										<th scope="row"><label><?php _e( 'Bing Site Verification ID', 'travelify' ); ?></label></th>
-										<td><input type="text" size="45" name="travelify_theme_options[bing_verification]" value="<?php echo esc_attr( $options[ 'bing_verification' ] ); ?>" /> <?php _e('Enter your Bing ID number only', 'travelify'); ?>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-							<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'travelify' ); ?>" /></p> 
-						</div><!-- .option-content -->
-					</div><!-- .option-container --> 
-        
+				<div id="other">
 					<div class="option-container">
 						<h3 class="option-toggle"><a href="#"><?php _e( 'Custom Scripts', 'travelify' ); ?></a></h3>
 						<div class="option-content inside">
@@ -586,8 +546,26 @@ function travelify_theme_options_do_page() {
 							<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'travelify' ); ?>" /></p> 
 						</div><!-- .option-content -->
 					</div><!-- .option-container -->
-
-				</div> <!-- #webmastertools -->   
+					<div class="option-container">
+						<h3 class="option-toggle"><a href="#"><?php _e( 'Custom CSS (Advanced)', 'travelify' ); ?></a></h3>
+						<div class="option-content inside"> 
+							<table class="form-table">  
+								<tbody>       
+									<tr>
+										<th scope="row"><label for="custom-css"><?php _e( 'Enter your custom CSS styles.', 'travelify' ); ?></label>										
+											<p><small><?php _e( 'This CSS will overwrite the CSS of style.css file.', 'travelify' ); ?></small></p>
+										</th>
+										<td>
+										<textarea name="travelify_theme_options[custom_css]" id="custom-css" cols="90" rows="12"><?php echo esc_attr( $options[ 'custom_css' ] ); ?></textarea>
+										<p>Make sure you know what you are doing</p>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'travelify' ); ?>" /></p> 
+						</div><!-- .option-content -->
+					</div><!-- .option-container --> 
+				</div> <!-- #other tools -->   
                         
          </div><!-- #travelify_tabs -->
             
@@ -730,12 +708,6 @@ function travelify_theme_options_validate( $options ) {
 	}
         
 	//Webmaster Tool Verification
-	if( isset( $input[ 'google_verification' ] ) ) {
-		$input_validated[ 'google_verification' ] = wp_filter_post_kses( $input[ 'google_verification' ] );
-	}
-	if( isset( $input[ 'bing_verification' ] ) ) {
-		$input_validated[ 'bing_verification' ] = wp_filter_post_kses( $input[ 'bing_verification' ] );
-	}   
 	if( isset( $input[ 'customscripts_header' ] ) ) {
 		$input_validated[ 'customscripts_header' ] = wp_kses_stripslashes( $input[ 'customscripts_header' ] );
 	}

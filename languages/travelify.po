@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Travelify\n"
-"POT-Creation-Date: 2013-07-14 17:57+0200\n"
-"PO-Revision-Date: 2013-07-14 17:57+0200\n"
+"Project-Id-Version: Travelify WordPress Theme\n"
+"POT-Creation-Date: 2013-07-16 10:41+0200\n"
+"PO-Revision-Date: 2013-07-16 10:51+0200\n"
 "Last-Translator: Aigars Silkalns <a.silkalns@gmail.com>\n"
 "Language-Team: Color Awesomeness <info@colorawesomeness.com>\n"
 "Language: English\n"
@@ -10,8 +10,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.7\n"
-"X-Poedit-KeywordsList: _e;__\n"
-"X-Poedit-Basepath: ./\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:11
@@ -112,12 +112,8 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: library/functions/functions.php:356 library/functions/functions.php:370
+#: library/functions/functions.php:316 library/functions/functions.php:330
 msgid "Navigation"
-msgstr ""
-
-#: library/functions/shortcodes.php:49
-msgid "WordPress"
 msgstr ""
 
 #: library/panel/metaboxes.php:16
@@ -191,7 +187,7 @@ msgid "Social Links"
 msgstr ""
 
 #: library/panel/theme-options.php:159
-msgid "Webmaster Tools"
+msgid "Other"
 msgstr ""
 
 #: library/panel/theme-options.php:165
@@ -232,7 +228,7 @@ msgid "Disable Favicon"
 msgstr ""
 
 #: library/panel/theme-options.php:211 library/panel/theme-options.php:243
-#: library/panel/theme-options.php:448
+#: library/panel/theme-options.php:429
 msgid "Check to disable"
 msgstr ""
 
@@ -329,127 +325,102 @@ msgid ""
 "(Mac)."
 msgstr ""
 
-#: library/panel/theme-options.php:383
-msgid "Custom CSS (Advanced)"
-msgstr ""
-
-#: library/panel/theme-options.php:388
-msgid "Enter your custom CSS styles."
-msgstr ""
-
-#: library/panel/theme-options.php:389
-msgid "This CSS will overwrite the CSS of style.css file."
-msgstr ""
-
-#: library/panel/theme-options.php:406
+#: library/panel/theme-options.php:387
 msgid "Featured Post/Page Slider Options"
 msgstr ""
 
-#: library/panel/theme-options.php:410
+#: library/panel/theme-options.php:391
 msgid "Exclude Slider post from Homepage posts?"
 msgstr ""
 
-#: library/panel/theme-options.php:412
+#: library/panel/theme-options.php:393
 msgid "Check to exclude"
 msgstr ""
 
-#: library/panel/theme-options.php:416
+#: library/panel/theme-options.php:397
 msgid "Number of Slides"
 msgstr ""
 
-#: library/panel/theme-options.php:421
+#: library/panel/theme-options.php:402
 msgid "Featured Slide #"
 msgstr ""
 
-#: library/panel/theme-options.php:423
+#: library/panel/theme-options.php:404
 msgid "Click Here To Edit"
 msgstr ""
 
-#: library/panel/theme-options.php:429
+#: library/panel/theme-options.php:410
 msgid "How to use the featured slider?"
 msgstr ""
 
-#: library/panel/theme-options.php:432
+#: library/panel/theme-options.php:413
 msgid ""
 "Add all the Post ID that you want to use in the featured slider. Post ID can "
 "be found at All Posts table in last column"
 msgstr ""
 
-#: library/panel/theme-options.php:433
+#: library/panel/theme-options.php:414
 msgid ""
 "Featured Slider will show featured images, Title and excerpt of the "
 "respected added post IDs."
 msgstr ""
 
-#: library/panel/theme-options.php:434
+#: library/panel/theme-options.php:415
 msgid "The recommended image size is"
 msgstr ""
 
-#: library/panel/theme-options.php:442
+#: library/panel/theme-options.php:423
 msgid "Slider Options"
 msgstr ""
 
-#: library/panel/theme-options.php:446
+#: library/panel/theme-options.php:427
 msgid "Disable Slider"
 msgstr ""
 
-#: library/panel/theme-options.php:452
+#: library/panel/theme-options.php:433
 msgid "Transition Effect:"
 msgstr ""
 
-#: library/panel/theme-options.php:472 library/panel/theme-options.php:524
-#, php-format
-msgid "%s"
-msgstr ""
-
-#: library/panel/theme-options.php:480
+#: library/panel/theme-options.php:461
 msgid "Transition Delay"
 msgstr ""
 
-#: library/panel/theme-options.php:483 library/panel/theme-options.php:490
+#: library/panel/theme-options.php:464 library/panel/theme-options.php:471
 msgid "second(s)"
 msgstr ""
 
-#: library/panel/theme-options.php:487
+#: library/panel/theme-options.php:468
 msgid "Transition Length"
 msgstr ""
 
-#: library/panel/theme-options.php:541
-msgid "Site Verification"
-msgstr ""
-
-#: library/panel/theme-options.php:546
-msgid "Google Site Verification ID"
-msgstr ""
-
-#: library/panel/theme-options.php:547
-msgid "Enter your Google ID number only (HTML tag verifciation)"
-msgstr ""
-
-#: library/panel/theme-options.php:551
-msgid "Bing Site Verification ID"
-msgstr ""
-
-#: library/panel/theme-options.php:552
-msgid "Enter your Bing ID number only"
-msgstr ""
-
-#: library/panel/theme-options.php:562
+#: library/panel/theme-options.php:522
 msgid "Custom Scripts"
 msgstr ""
 
-#: library/panel/theme-options.php:567
+#: library/panel/theme-options.php:527
 msgid "Code to display on Header"
 msgstr ""
 
-#: library/panel/theme-options.php:573 library/panel/theme-options.php:582
+#: library/panel/theme-options.php:533 library/panel/theme-options.php:542
 msgid ""
 "Note: Enter your custom header script (i.e., analytics, social button "
 "scripts). "
 msgstr ""
 
-#: library/panel/theme-options.php:576
+#: library/panel/theme-options.php:536
 msgid "Code to display on Footer"
+msgstr ""
+
+#: library/panel/theme-options.php:550
+msgid "Custom CSS (Advanced)"
+msgstr ""
+
+#: library/panel/theme-options.php:555
+msgid "Enter your custom CSS styles."
+msgstr ""
+
+#: library/panel/theme-options.php:556
+msgid "This CSS will overwrite the CSS of style.css file."
 msgstr ""
 
 #: library/structure/content-extensions.php:148
