@@ -320,6 +320,19 @@ function attitude_socialnetworks( $flag ) {
 				<ul>';
 
 				$social_links = array(); 
+				$social_links_name = array();
+				$social_links_name = array( __( 'Facebook', 'attitude' ),
+											__( 'Twitter', 'attitude' ),
+											__( 'Google Plus', 'attitude' ),
+											__( 'Pinterest', 'attitude' ),
+											__( 'Youtube', 'attitude' ),
+											__( 'Vimeo', 'attitude' ),
+											__( 'LinkedIn', 'attitude' ),
+											__( 'Flickr', 'attitude' ),
+											__( 'Tumblr', 'attitude' ),
+											__( 'Myspace', 'attitude' ),
+											__( 'RSS', 'attitude' )
+											);
 				$social_links = array( 	'Facebook' 		=> 'social_facebook',
 												'Twitter' 		=> 'social_twitter',
 												'Google-Plus'	=> 'social_googleplus',
@@ -333,11 +346,13 @@ function attitude_socialnetworks( $flag ) {
 												'RSS'				=> 'social_rss'  
 											);
 				
+				$i=0;
 				foreach( $social_links as $key => $value ) {
 					if ( !empty( $options[ $value ] ) ) {
 						$attitude_socialnetworks .=
-							'<li class="'.strtolower($key).'"><a href="'.esc_url( $options[ $value ] ).'" title="'.sprintf( esc_attr__( '%1$s on %2$s', 'attitude' ), get_bloginfo( 'name' ), $key ).'" target="_blank">'.get_bloginfo( 'name' ).$key.'</a></li>';
+							'<li class="'.strtolower($key).'"><a href="'.esc_url( $options[ $value ] ).'" title="'.sprintf( esc_attr__( '%1$s on %2$s', 'attitude' ), get_bloginfo( 'name' ), $social_links_name[$i] ).'" target="_blank">'.get_bloginfo( 'name' ).' '.$social_links_name[$i].'</a></li>';
 					}
+					$i++;
 				}		
 		
 				$attitude_socialnetworks .='

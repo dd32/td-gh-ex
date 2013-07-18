@@ -613,6 +613,19 @@ function attitude_theme_options_do_page() {
 				<div id="sociallinks">
 					<?php 
 						$social_links = array(); 
+						$social_links_name = array();
+						$social_links_name = array( __( 'Facebook', 'attitude' ),
+													__( 'Twitter', 'attitude' ),
+													__( 'Google Plus', 'attitude' ),
+													__( 'Pinterest', 'attitude' ),
+													__( 'Youtube', 'attitude' ),
+													__( 'Vimeo', 'attitude' ),
+													__( 'LinkedIn', 'attitude' ),
+													__( 'Flickr', 'attitude' ),
+													__( 'Tumblr', 'attitude' ),
+													__( 'Myspace', 'attitude' ),
+													__( 'RSS', 'attitude' )
+													);
 						$social_links = array( 	'Facebook' 		=> 'social_facebook',
 														'Twitter' 		=> 'social_twitter',
 														'Google-Plus'	=> 'social_googleplus',
@@ -629,14 +642,16 @@ function attitude_theme_options_do_page() {
 					<table class="form-table">
 						<tbody>
 						<?php
+						$i = 0;
 						foreach( $social_links as $key => $value ) {
 						?>
 							<tr>
-								<th scope="row" style="padding: 0px;"><h4><?php printf( __( '%s', 'attitude' ), $key ); ?></h4></th>
+								<th scope="row" style="padding: 0px;"><h4><?php printf( __( '%s', 'attitude' ), $social_links_name[ $i ] ); ?></h4></th>
 								<td><input type="text" size="45" name="attitude_theme_options[<?php echo $value; ?>]" value="<?php echo esc_url( $options[$value] ); ?>" />
 								</td>
 							</tr>
 						<?php
+						$i++;
 						}
 						?>
 						</tbody>
