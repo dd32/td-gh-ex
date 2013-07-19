@@ -2,13 +2,13 @@
 # This file is distributed under the  GNU General Public License.
 msgid ""
 msgstr ""
-"Project-Id-Version: Catch Box Pro\n"
+"Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-19 13:59+0545\n"
-"PO-Revision-Date: 2013-07-19 13:59+0545\n"
+"POT-Creation-Date: 2013-07-19 14:00+0545\n"
+"PO-Revision-Date: 2013-07-19 14:00+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
-"Language-Team: Catch Themes <info@catchinternet.com>\n"
-"Language: it\n"
+"Language-Team: \n"
+"Language: Danish\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,82 +21,81 @@ msgstr ""
 
 #: ../404.php:13
 msgid "Error 404 - Page Not Found."
-msgstr "Errore 404 - Pagina non trovata"
+msgstr "Error 404 – Siden blev ikke fundet."
 
 #: ../404.php:14
 msgid "We&rsquo;re sorry! This page is not available."
-msgstr "Siamo spiacenti, questa pagina non è disponibile."
+msgstr "Vi beklager - denne side er desværre ikke tilgængelig."
 
 #: ../404.php:15
 msgid "This might be because:"
-msgstr "Questo potrebbe essere dovuto:"
+msgstr "Det kan skyldes:"
 
 #: ../404.php:16
 msgid ""
 "You have typed the web address incorrectly, or the page you were looking for "
 "may have been moved, updated or deleted."
 msgstr ""
-"L'indirizzo che hai inserito è sbagliato; oppure la pagina che stai cercando "
-"è stata postata, aggiornata o cancellata"
+"At du har indtastet forkert web-adresse, eller at den side du leder efter er "
+"blevet flyttet, opdateret eller slettet."
 
 #: ../404.php:17
 msgid "Please try the following options instead:"
-msgstr "Per favore prova le seguenti opzioni:"
+msgstr "Prøv følgende mulighed i stedet for:"
 
 #: ../404.php:18
 msgid ""
 "Check for a mis-typed URL error, then press the refresh button on your "
 "browser or Use the search box at the Header."
 msgstr ""
-"Controlla per errori nell'URL, quindi premi il pulsante di refresh nel tuo "
-"browser oppure usa la casella di ricerca nella testata."
+"Kontrollér om du har indtastet forkert URL og tryk derefter Refresh i din "
+"browser eller brug søgeboksen i sidehovedet (Header)."
 
 #: ../comments.php:21
 msgid "This post is password protected. Enter the password to view comments."
 msgstr ""
-"Questo articolo è protetto da password. Inserisci la password per vedere i "
-"commenti"
+"Dette indlæg er password-beskyttet. Indtast password for at se kommentarer."
 
 #: ../comments.php:29 ../content.php:46 ../image.php:48 ../page-blog.php:69
 #: ../functions/simplecatch_functions.php:921
 msgid "No Comments"
-msgstr "Nessun commento"
+msgstr "Ingen kommentarer"
 
 #: ../comments.php:29 ../content.php:46 ../image.php:48 ../page-blog.php:69
 #: ../functions/simplecatch_functions.php:921
 msgid "1 Comment"
-msgstr "1 commento"
+msgstr "1 Kommentar"
 
 #: ../comments.php:29 ../content.php:46 ../image.php:48 ../page-blog.php:69
 #: ../functions/simplecatch_functions.php:921
 msgid "% Comments"
-msgstr "% commenti"
+msgstr "% Kommentarer"
 
 #: ../comments.php:60
 msgid "Comments are closed."
-msgstr "I commenti sono chiusi"
+msgstr "Lukket for kommentarer."
 
 #: ../content.php:23 ../content.php:41 ../page-blog.php:47 ../page-blog.php:64
 #, php-format
 msgid "Permalink to %s"
-msgstr "Collegamento permanente a %s"
+msgstr "Permalink til %s"
 
 #: ../content.php:44 ../image.php:46 ../page-blog.php:67
 #: ../functions/simplecatch_functions.php:919
 msgid "By"
-msgstr "By"
+msgstr "Af"
 
 #: ../content.php:66 ../page-blog.php:107
 msgid "Not found"
-msgstr "Non trovato"
+msgstr "Ikke fundet"
 
 #: ../content.php:67 ../page-blog.php:108
 msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
 "searching will help find a related post."
 msgstr ""
-"Ci scusiamo, ma non è stato trovato nessun articolo per l'archivio "
-"richiesto. Probabilmente una ricerca aiuterà a trovare articoli correlati."
+"Beklageligvis blev der intet resultat fundet. Måske vil søgning hjælpe til "
+"at finde et relevant indlæg."
 
 #: ../footer.php:17
 msgid "Copyright"
@@ -104,53 +103,53 @@ msgstr "Copyright"
 
 #: ../footer.php:17
 msgid "All Rights Reserved."
-msgstr "Tutti i diritti riservati."
+msgstr "Alle rettigheder er forbeholdt."
 
 #: ../functions.php:103
 msgid "Primary Menu"
-msgstr "Menu principale"
+msgstr "Primær menu"
 
 #: ../image.php:106
 msgid "Previous Image"
-msgstr "Immagine precedente"
+msgstr "Forrige motiv"
 
 #: ../image.php:107
 msgid "Next Image"
-msgstr "Immagine successiva"
+msgstr "Næste motiv"
 
 #: ../page-blog.php:97 ../functions/simplecatch_functions.php:1131
 msgid "Previous"
-msgstr "Precedente"
+msgstr "Forrige"
 
 #: ../page-blog.php:98 ../functions/simplecatch_functions.php:1132
 msgid "Next"
-msgstr "Successivo"
+msgstr "Næste"
 
 #: ../search.php:17
 #, php-format
 msgid "Showing results for: <span class=\"img-title\">%s</span>"
-msgstr "Risultati per: <span class=\"img-title\">%s</span>"
+msgstr "Viser resultater for: <span class=\"img-title\">%s</span>"
 
 #: ../search.php:33
 #, php-format
 msgid "Your search <span> \"%s\" </span> did not match any documents"
-msgstr "La ricerca <span> \"%s\" </span> non ha prodotto risultati"
+msgstr "Din søgning <span> \"%s\" </span> fandt ingen passende dokumenter"
 
 #: ../search.php:35
 msgid "A few suggestions"
-msgstr "Qualche suggerimento"
+msgstr "Nogle enkelte forslag"
 
 #: ../search.php:37
 msgid "Make sure all words are spelled correctly"
-msgstr "Controlla che tutte le parole siano scritte correttamente"
+msgstr "Sørg for at alle ord der stavet korrekt"
 
 #: ../search.php:38
 msgid "Try different keywords"
-msgstr "Prova parole chiave differenti"
+msgstr "Prøv at bruge forskellige søgeord"
 
 #: ../search.php:39
 msgid "Try more general keywords"
-msgstr "Prova parole chiave più generiche"
+msgstr "Prøv at bruge mere generelle søgeord"
 
 #: ../searchform.php:17 ../functions/simplecatch_functions.php:125
 #, php-format
@@ -160,139 +159,139 @@ msgstr "%s"
 #: ../functions/simplecatch_functions.php:95
 #, php-format
 msgid "Page %s"
-msgstr "Pagina %s"
+msgstr "Side %s"
 
 #: ../functions/simplecatch_functions.php:479
 #, php-format
 msgid "%s on Facebook"
-msgstr "%s su Facebook"
+msgstr "%s på Facebook"
 
 #: ../functions/simplecatch_functions.php:484
 #, php-format
 msgid "%s on Twitter"
-msgstr "%s su Twitter"
+msgstr "%s på Twitter"
 
 #: ../functions/simplecatch_functions.php:489
 #, php-format
 msgid "%s on Google+"
-msgstr "%s su Google+"
+msgstr "%s på Google+"
 
 #: ../functions/simplecatch_functions.php:494
 #, php-format
 msgid "%s on Linkedin"
-msgstr "%s su Linkedin"
+msgstr "%s på Linkedin"
 
 #: ../functions/simplecatch_functions.php:499
 #, php-format
 msgid "%s on Pinterest"
-msgstr "%s su Pinterest"
+msgstr "%s på Pinterest"
 
 #: ../functions/simplecatch_functions.php:504
 #, php-format
 msgid "%s on YouTube"
-msgstr "%s su YouTube"
+msgstr "%s på YouTube"
 
 #: ../functions/simplecatch_functions.php:509
 #, php-format
 msgid "%s on Vimeo"
-msgstr "%s su Vimeo"
+msgstr "%s på Vimeo"
 
 #: ../functions/simplecatch_functions.php:514
 #, php-format
 msgid "%s on Slideshare"
-msgstr "%s su Slideshare"
+msgstr "%s på Slideshare"
 
 #: ../functions/simplecatch_functions.php:519
 #, php-format
 msgid "%s on Foursquare"
-msgstr "%s su Foursquare"
+msgstr "%s på Foursquare"
 
 #: ../functions/simplecatch_functions.php:524
 #, php-format
 msgid "%s on Flickr"
-msgstr "%s su Flickr"
+msgstr "%s på Flickr"
 
 #: ../functions/simplecatch_functions.php:529
 #, php-format
 msgid "%s on Tumblr"
-msgstr "%s su Tumblr"
+msgstr "%s på Tumblr"
 
 #: ../functions/simplecatch_functions.php:534
 #, php-format
 msgid "%s on deviantART"
-msgstr "%s su deviantART"
+msgstr "%s på deviantART"
 
 #: ../functions/simplecatch_functions.php:539
 #, php-format
 msgid "%s on Dribbble"
-msgstr "%s su Dribbble"
+msgstr "%s på Dribbble"
 
 #: ../functions/simplecatch_functions.php:544
 #, php-format
 msgid "%s on MySpace"
-msgstr "%s su MySpace"
+msgstr "%s på MySpace"
 
 #: ../functions/simplecatch_functions.php:549
 #, php-format
 msgid "%s on WordPress"
-msgstr "%s su WordPress"
+msgstr "%s på WordPress"
 
 #: ../functions/simplecatch_functions.php:554
 #, php-format
 msgid "%s on RSS"
-msgstr "%s su RSS"
+msgstr "%s på RSS"
 
 #: ../functions/simplecatch_functions.php:559
 #, php-format
 msgid "%s on Delicious"
-msgstr "%s su Delicious"
+msgstr "%s på Delicious"
 
 #: ../functions/simplecatch_functions.php:564
 #, php-format
 msgid "%s on Last.fm"
-msgstr "%s su Last.fm"
+msgstr "%s på Last.fm"
 
 #: ../functions/simplecatch_functions.php:569
 #, php-format
 msgid "%s on Instagram"
-msgstr "%s su Instagram"
+msgstr "%s på Instagram"
 
 #: ../functions/simplecatch_functions.php:574
 #, php-format
 msgid "%s on GitHub"
-msgstr "%s su GitHub"
+msgstr "%s på GitHub"
 
 #: ../functions/simplecatch_functions.php:579
 #, php-format
 msgid "%s on Vkontakte"
-msgstr "%s su Vkontakte"
+msgstr "%s på Vkontakte"
 
 #: ../functions/simplecatch_functions.php:584
 #, php-format
 msgid "%s on My World"
-msgstr "%s su My World"
+msgstr "%s på My World"
 
 #: ../functions/simplecatch_functions.php:589
 #, php-format
 msgid "%s on Odnoklassniki"
-msgstr "%s su Odnoklassniki"
+msgstr "%s på Odnoklassniki"
 
 #: ../functions/simplecatch_functions.php:594
 #, php-format
 msgid "%s on Goodreads"
-msgstr "%s su Goodreads"
+msgstr "%s på Goodreads"
 
 #: ../functions/simplecatch_functions.php:748
 msgid "Powered By:"
-msgstr "Fornito da:"
+msgstr "Styret af:"
 
 #: ../functions/simplecatch_functions.php:748
 msgid "http://wordpress.org/"
-msgstr "http://it.wordpress.org/"
+msgstr "http://wordpress.org/"
 
 #: ../functions/simplecatch_functions.php:748
 msgid "Powered By WordPress"
-msgstr "Fornito da WordPress"
+msgstr "Styret af WordPress"
 
 #: ../functions/simplecatch_functions.php:748
 #: ../functions/panel/theme_options.php:705
@@ -314,16 +313,16 @@ msgstr "Simple Catch"
 
 #: ../functions/simplecatch_functions.php:935
 msgid "Categories: "
-msgstr "Categorie:"
+msgstr "Kategorier:"
 
 #: ../functions/simplecatch_functions.php:1003
 msgid "Name"
-msgstr "Nome"
+msgstr "Navn"
 
 #: ../functions/simplecatch_functions.php:1003
 #: ../functions/simplecatch_functions.php:1004
 msgid "( required )"
-msgstr "(richiesto)"
+msgstr "( påkrævet )"
 
 #: ../functions/simplecatch_functions.php:1004
 msgid "Email"
@@ -331,7 +330,7 @@ msgstr "Email"
 
 #: ../functions/simplecatch_functions.php:1005
 msgid "Website"
-msgstr "Sito web"
+msgstr "Website"
 
 #: ../functions/simplecatch_functions.php:1036
 msgid "ID"
@@ -340,61 +339,61 @@ msgstr "ID"
 #: ../functions/simplecatch_metabox.php:14
 #: ../functions/simplecatch_metabox.php:20
 msgid "Select Sidebar layout"
-msgstr "Seleziona il layout della barra laterale"
+msgstr "Vælg layout for Sidebar"
 
 #: ../functions/simplecatch_metabox.php:33
 msgid "Default Layout Set in"
-msgstr "Layout di default impostato a"
+msgstr "Standard Layout Set in"
 
 #: ../functions/simplecatch_metabox.php:33
 msgid "Theme Settings"
-msgstr "Impostazioni del tema"
+msgstr "Indstillinger for tema"
 
 #: ../functions/simplecatch_metabox.php:39
 msgid "Right sidebar"
-msgstr "Barra laterale a destra"
+msgstr "Højre sidebar"
 
 #: ../functions/simplecatch_metabox.php:45
 msgid "Left sidebar"
-msgstr "Barra laterale a sinistra"
+msgstr "Venstre sidebar"
 
 #: ../functions/simplecatch_metabox.php:51
 msgid "No sidebar"
-msgstr "Nessuna barra laterale"
+msgstr "Ingen sidebar"
 
 #: ../functions/simplecatch_metabox.php:57
 msgid "No sidebar, Full Width"
-msgstr "Nessuna barra laterale, larghezza piena"
+msgstr "Ingen sidebar, fuld bredde"
 
 #: ../functions/widgets.php:11 ../functions/widgets.php:13
 msgid "sidebar"
-msgstr "barra laterale"
+msgstr "sidebar"
 
 #: ../functions/widgets.php:40
 msgid "Displays Custom Tag Cloud designed for Simple Catch Theme."
-msgstr "Mostra la Tag Cloud creata appositamente per il tema Simple Catch."
+msgstr "Viser brugerdefineret Tag Cloud designet for Simple Catch tema."
 
 #: ../functions/widgets.php:41
 msgid "Simple Catch Tag Clouds"
-msgstr "Tag Clouds di Simple Catch"
+msgstr "Simple Catch Tag Clouds"
 
 #: ../functions/widgets.php:123
 msgid "Displays Social Icons added from Theme Options Panel."
-msgstr "Mostra i link sociali aggiunti nelle opzioni del tema Simple Catch"
+msgstr "Viser Social Icons tilføjet fra Tema Indstillings-panelet."
 
 #: ../functions/widgets.php:124
 msgid "Simple Catch Social Icons"
-msgstr "Icone Sociali di Simple Catch"
+msgstr "Simple Catch Social Icons"
 
 #: ../functions/panel/theme_options.php:39
 #: ../functions/panel/theme_options.php:40
 #: ../functions/panel/theme_options.php:142
 msgid "Theme Options"
-msgstr "Opzioni del tema"
+msgstr "Indstillinger for Tema"
 
 #: ../functions/panel/theme_options.php:101
 msgid "Options Saved"
-msgstr "Opzioni salvate"
+msgstr "Gemte Indstillinger"
 
 #: ../functions/panel/theme_options.php:108
 msgid "http://facebook.com/catchthemes"
@@ -406,7 +405,7 @@ msgstr "https://twitter.com/catchthemes"
 
 #: ../functions/panel/theme_options.php:116
 msgid "Theme Options By"
-msgstr "Opzioni del tema da"
+msgstr "Tema indstillinger af"
 
 #: ../functions/panel/theme_options.php:118
 #: ../functions/panel/theme_options.php:119
@@ -419,7 +418,7 @@ msgstr "http://catchthemes.com/themes/simple-catch-pro/"
 
 #: ../functions/panel/theme_options.php:124
 msgid "Upgrade to Simple Catch Pro"
-msgstr "Aggiorna a Simple Catch Pro"
+msgstr "Opgradér til Simple Catch Pro"
 
 #: ../functions/panel/theme_options.php:129
 msgid "http://catchthemes.com/support-forum/forum/simple-catch-public/"
@@ -427,7 +426,7 @@ msgstr "http://catchthemes.com/support-forum/forum/simple-catch-public/"
 
 #: ../functions/panel/theme_options.php:129
 msgid "Support Forum"
-msgstr "Forum di supporto"
+msgstr "Support Forum"
 
 #: ../functions/panel/theme_options.php:130
 msgid "http://catchthemes.com/theme-instructions/simple-catch/"
@@ -435,7 +434,7 @@ msgstr "http://catchthemes.com/theme-instructions/simple-catch/"
 
 #: ../functions/panel/theme_options.php:130
 msgid "Theme Instruction"
-msgstr "Istruzioni del tema"
+msgstr "Instruktion for Tema"
 
 #: ../functions/panel/theme_options.php:131
 msgid "https://www.facebook.com/catchthemes/"
@@ -443,7 +442,7 @@ msgstr "https://www.facebook.com/catchthemes/"
 
 #: ../functions/panel/theme_options.php:131
 msgid "Like Catch Themes on Facebook"
-msgstr "Metti il like a Catch Themes su Facebook"
+msgstr "Vælg Like Catch Themes på Facebook"
 
 #: ../functions/panel/theme_options.php:131
 #: ../functions/panel/theme_options.php:634
@@ -456,7 +455,7 @@ msgstr "https://twitter.com/catchthemes/"
 
 #: ../functions/panel/theme_options.php:132
 msgid "Follow Catch Themes on Twitter"
-msgstr "Segui Catch Themes su Twitter"
+msgstr "Følg Catch Themes på Twitter"
 
 #: ../functions/panel/theme_options.php:132
 #: ../functions/panel/theme_options.php:639
@@ -469,46 +468,46 @@ msgstr "http://wordpress.org/support/view/theme-reviews/simple-catch"
 
 #: ../functions/panel/theme_options.php:133
 msgid "Rate us 5 Star on WordPress"
-msgstr "Votaci 5 stelle su WordPress"
+msgstr "Tildel os 5 stjerner på WordPress"
 
 #: ../functions/panel/theme_options.php:133
 msgid "5 Star Rating"
-msgstr "Vota su WordPress"
+msgstr "5-stjernet bedømmelse"
 
 #: ../functions/panel/theme_options.php:143
 msgid "Featured Post Slider"
-msgstr "Slider degli articoli in evidenza"
+msgstr "Featured Post Slider"
 
 #: ../functions/panel/theme_options.php:144
 msgid "Social Links"
-msgstr "Link sociali"
+msgstr "Sociale Links"
 
 #: ../functions/panel/theme_options.php:145
 msgid "Webmaster Tools"
-msgstr "Webmaster Tools"
+msgstr "Webmaster Værktøjer"
 
 #: ../functions/panel/theme_options.php:151
 msgid "Logo Options"
-msgstr "Opzioni del logo"
+msgstr "Logo Indstillinger"
 
 #: ../functions/panel/theme_options.php:156
 msgid "Header logo url:"
-msgstr "URL del logo dell'intestazione:"
+msgstr "Sidehoved (Header) logo url:"
 
 #: ../functions/panel/theme_options.php:163
 msgid "Change Header Logo"
-msgstr "Change Header Logo"
+msgstr "Skift logo i sidehoved (Header)"
 
 #: ../functions/panel/theme_options.php:167
 #: ../functions/panel/theme_options.php:207
 #: ../functions/panel/theme_options.php:246
 #: ../functions/panel/theme_options.php:282
 msgid "Preview: "
-msgstr "Anteprima:"
+msgstr "Preview:"
 
 #: ../functions/panel/theme_options.php:179
 msgid "Disable Header Logo?"
-msgstr "Disable Header Logo?"
+msgstr "Deaktivér Logo for sidehoved (header)?"
 
 #: ../functions/panel/theme_options.php:181
 #: ../functions/panel/theme_options.php:188
@@ -516,27 +515,27 @@ msgstr "Disable Header Logo?"
 #: ../functions/panel/theme_options.php:221
 #: ../functions/panel/theme_options.php:260
 msgid "Check to Disable."
-msgstr "Seleziona per disabilitare."
+msgstr "Afmærk for at deaktivere."
 
 #: ../functions/panel/theme_options.php:186
 msgid "Disable Site Title?"
-msgstr "Disabilito il titolo del sito?"
+msgstr "Deaktivér titel på Site?"
 
 #: ../functions/panel/theme_options.php:191
 msgid "Disable Site Description?"
-msgstr "Disabilita la descrizione del sito?"
+msgstr "Deaktivér beskrivelse af Site?"
 
 #: ../functions/panel/theme_options.php:196
 msgid "Footer logo url: "
-msgstr "URL del logo a piè pagina:"
+msgstr "Sidefod (Footer) logo url: "
 
 #: ../functions/panel/theme_options.php:203
 msgid "Change Footer Logo"
-msgstr "Cambia il logo a piè pagina"
+msgstr "Skift log for sidefod (Footer)"
 
 #: ../functions/panel/theme_options.php:219
 msgid "Disable Footer Logo?"
-msgstr "Disabilita il logo a piè pagina?"
+msgstr "Deaktivér logo for sidefod (Footer)?"
 
 #: ../functions/panel/theme_options.php:225
 #: ../functions/panel/theme_options.php:264
@@ -553,173 +552,172 @@ msgstr "Disabilita il logo a piè pagina?"
 #: ../functions/panel/theme_options.php:755
 #: ../functions/panel/theme_options.php:786
 msgid "Save"
-msgstr "Salva"
+msgstr "Gem"
 
 #: ../functions/panel/theme_options.php:230
 msgid "Fav Icon Option"
-msgstr "Opzioni della Favicon"
+msgstr "Fav Icon Indstilling"
 
 #: ../functions/panel/theme_options.php:235
 msgid "Favicon URL:"
-msgstr "URL della Favicon:"
+msgstr "Favicon URL:"
 
 #: ../functions/panel/theme_options.php:242
 msgid "Change Fav icon Logo"
-msgstr "Change Fav icon Logo"
+msgstr "Skift logo på Fav icon"
 
 #: ../functions/panel/theme_options.php:258
 msgid "Disable Fav Icon?"
-msgstr "Disable Fav Icon?"
+msgstr "Deaktivér Fav Icon?"
 
 #: ../functions/panel/theme_options.php:269
 msgid "Web Clip Icon Option"
-msgstr "Opzioni dell'icona Web Clip"
+msgstr "Web Clip Icon Indstillinger"
 
 #: ../functions/panel/theme_options.php:274
 msgid "Web Clip Icon URL:"
-msgstr "URL dell'icona Web Clip"
+msgstr "Web Clip Icon URL:"
 
 #: ../functions/panel/theme_options.php:277
 msgid "Upload/Change Web Clip Icon"
-msgstr "Carica/cambia l'icona Web Clip"
+msgstr "Upload/Skift Web Clip Icon"
 
 #: ../functions/panel/theme_options.php:288
 msgid "No Web Clip Icon Found. Upload Web Clip Icon."
-msgstr "Non è stata trovata un'icona Web Clip. Carica l'icona Web Clip."
+msgstr "Intet Web Clip Icon fundet. Upload Web Clip Icon."
 
 #: ../functions/panel/theme_options.php:301
 msgid "Content Background"
-msgstr "Sfondo del sito"
+msgstr "Indhold baggrund"
 
 #: ../functions/panel/theme_options.php:303
 msgid "Need to replace default background?"
-msgstr "Vuoi sostituire lo sfondo di default?"
+msgstr "Ønsker du for at ændre standard for baggrund?"
 
 #: ../functions/panel/theme_options.php:303
 #, php-format
 msgid "<a class=\"button\" href=\"%s\">Click here</a>"
-msgstr "<a class=\"button\" href=\"%s\">Clicca qui</a>"
+msgstr "<a class=\"button\" href=\"%s\">Klik her</a>"
 
 #: ../functions/panel/theme_options.php:309
 msgid "Content Color Options"
-msgstr "Opzioni dei colori"
+msgstr "Indstillinger af farver på Indhold"
 
 #: ../functions/panel/theme_options.php:316
 msgid "Heading Color:"
-msgstr "Colore dei titoli:"
+msgstr "Farve på sidehoved (Heading):"
 
 #: ../functions/panel/theme_options.php:327
 msgid "Meta Description Color:"
-msgstr "Colore della descrizione:"
+msgstr "Meta Description farve:"
 
 #: ../functions/panel/theme_options.php:338
 msgid "Text Color:"
-msgstr "Colore del testo:"
+msgstr "Tekst-farve:"
 
 #: ../functions/panel/theme_options.php:349
 msgid "Link Color:"
-msgstr "Colore dei link:"
+msgstr "Link til farver:"
 
 #: ../functions/panel/theme_options.php:360
 msgid "Sidebar Widget Heading Color:"
-msgstr "Colore dell'intestazione dei widget della barra laterale"
+msgstr "Sidebar Widget – farve på sidehoved (Heading):"
 
 #: ../functions/panel/theme_options.php:371
 msgid "Sidebar Widget Text Color:"
-msgstr "Colore del testo dei widget nella barra laterale: "
+msgstr "Sidebar Widget – tekst-farve:"
 
 #: ../functions/panel/theme_options.php:381
 msgid "Reset Color:"
-msgstr "Ripristina i colori:"
+msgstr "Nulstil farve:"
 
 #: ../functions/panel/theme_options.php:395
 #: ../functions/panel/theme_options.php:400
 msgid "Default Layout"
-msgstr "Layout di default"
+msgstr "Standard Layout"
 
 #: ../functions/panel/theme_options.php:404
 msgid "Content on Left"
-msgstr "Contenuto a sinistra"
+msgstr "Indhold i venstre side"
 
 #: ../functions/panel/theme_options.php:409
 msgid "Content on Right"
-msgstr "Contenuto a destra"
+msgstr "ndhold i højre side"
 
 #: ../functions/panel/theme_options.php:414
 msgid "No Sidebar"
-msgstr "Nessuna barra laterale"
+msgstr "Ingen Seitenleiste"
 
 #: ../functions/panel/theme_options.php:419
 msgid "No Sidebar, Full Width"
-msgstr "Nessuna barra laterale, larghezza piena"
+msgstr "Ingen Sidebar, fuld bredde"
 
 #: ../functions/panel/theme_options.php:431
 msgid "Homepage / Frontpage Category Setting"
-msgstr "Selezione delle categorie da mostrare nella pagina principale"
+msgstr "Indstillinger for Homepage / Forside kategorier"
 
 #: ../functions/panel/theme_options.php:437
 msgid "Front page posts categories:"
-msgstr "Articoli da mostrare in home page:"
+msgstr "Forsidens indlægs- kategorier:"
 
 #: ../functions/panel/theme_options.php:439
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on "
 "the front page."
-msgstr ""
-"Solo gli articoli che appartengono alle categorie selezionate  qui verranno "
-"mostrati nella pagina principale."
+msgstr "Kun indlæg som hører til de valgte kategorier vil blive vist på"
 
 #: ../functions/panel/theme_options.php:444
 msgid "--Disabled--"
-msgstr "--Disabilitato--"
+msgstr "--Deaktiveret--"
 
 #: ../functions/panel/theme_options.php:454
 msgid "You may select multiple categories by holding down the CTRL key."
-msgstr "Puoi selezionare più categorie tenendo premuto il tasto CTRL"
+msgstr ""
+"Du kan vælge flere kategorier på én gang ved at holde CTRL-tasten nede."
 
 #: ../functions/panel/theme_options.php:464
 msgid "Search Text Settings"
-msgstr "Impostazioni della casella di ricerca"
+msgstr "Søg efter indstillinger for tekst"
 
 #: ../functions/panel/theme_options.php:469
 msgid "Default Display Text in Search"
-msgstr "Testo di default nella casella di ricerca"
+msgstr "Standardtekst i søgefelt"
 
 #: ../functions/panel/theme_options.php:474
 msgid "Search Button's text"
-msgstr "Testo del pulsante di ricerca"
+msgstr "Tekst til Søgeknap"
 
 #: ../functions/panel/theme_options.php:485
 msgid "Excerpt / More Tag Settings"
-msgstr "Link \"Continua a leggere\" ed estratto del testo"
+msgstr "Ekstrakt / flere Tag Indstillinger"
 
 #: ../functions/panel/theme_options.php:490
 msgid "More Tag Text"
-msgstr "Testo del link \"Continua a leggere\""
+msgstr "Mere Tag Tekst"
 
 #: ../functions/panel/theme_options.php:495
 msgid "Excerpt length(words)"
-msgstr "Lunghezza dell'estratto (in parole)"
+msgstr "Uddrag længde (ord)"
 
 #: ../functions/panel/theme_options.php:505
 msgid "Feed Redirect"
-msgstr "Redirezione dei feed"
+msgstr "Feed Redirect"
 
 #: ../functions/panel/theme_options.php:510
 msgid "Feed Redirect URL"
-msgstr "URL di redirezione dei feed"
+msgstr "Feed Redirect URL"
 
 #: ../functions/panel/theme_options.php:521
 msgid "Custom CSS"
-msgstr "CSS personalizzato"
+msgstr "Custom CSS"
 
 #: ../functions/panel/theme_options.php:526
 msgid "Enter your custom CSS styles."
-msgstr "Inserisci il tuo stile CSS personalizzato."
+msgstr "Indtast custom CSS styles."
 
 #: ../functions/panel/theme_options.php:533
 msgid "CSS Tutorial from W3Schools."
-msgstr "Tutorial CSS su W3Schools."
+msgstr "CSS Tutorial fra W3Schools."
 
 #: ../functions/panel/theme_options.php:535
 msgid "http://www.w3schools.com/css/default.asp"
@@ -727,23 +725,23 @@ msgstr "http://www.w3schools.com/css/default.asp"
 
 #: ../functions/panel/theme_options.php:535
 msgid "CSS Tutorial"
-msgstr "Utorial CSS"
+msgstr "CSS Tutorial"
 
 #: ../functions/panel/theme_options.php:535
 msgid "Click Here to Read"
-msgstr "Clicca qua per leggere"
+msgstr "Klik her for at læse"
 
 #: ../functions/panel/theme_options.php:549
 msgid "Add Slider Options"
-msgstr "Opzioni dello slider"
+msgstr "Tilføj valg for Slider"
 
 #: ../functions/panel/theme_options.php:553
 msgid "Exclude Slider post from Home page posts:"
-msgstr "Escludi i post dello slider dalla pagina principale"
+msgstr "Udeluk Slider indlæg fra Home page indlæg:"
 
 #: ../functions/panel/theme_options.php:558
 msgid "Number of Slides"
-msgstr "Numero di slide"
+msgstr "Antal Slides"
 
 #: ../functions/panel/theme_options.php:564
 msgid "Featured Post ID"
@@ -751,83 +749,83 @@ msgstr "Featured Post ID"
 
 #: ../functions/panel/theme_options.php:566
 msgid "Click Here To Edit"
-msgstr "Clicca qua per modificare"
+msgstr "Klik her for at redigere"
 
 #: ../functions/panel/theme_options.php:572
 msgid ""
 "Note: Here You can put your Post IDs which displays on Homepage as slider."
 msgstr ""
-"Nota: qua puoi inserire gli ID degli articoli che verranno mostrati nello "
-"slider nella pagina principale."
+"Note: Her kan du indtaste dine indlægs-ID'er, der vises på din Homepage som "
+"Slider."
 
 #: ../functions/panel/theme_options.php:579
 msgid "Slider Effect Options"
-msgstr "Effetti dello slider"
+msgstr "Effekter for Slider"
 
 #: ../functions/panel/theme_options.php:583
 msgid "Disable Slider Background Effect:"
-msgstr "Disabilita gli effetti di background dello slider"
+msgstr "Deaktivér baggrunds-effekt for Slider:"
 
 #: ../functions/panel/theme_options.php:590
 msgid "Transition Effect:"
-msgstr "Effetto di transizione"
+msgstr "Transitions-effekt:"
 
 #: ../functions/panel/theme_options.php:594
 msgid "fade"
-msgstr "dissolvenza"
+msgstr "Tone ud (fade)"
 
 #: ../functions/panel/theme_options.php:595
 msgid "wipe"
-msgstr "wipe"
+msgstr "slette (wipe)"
 
 #: ../functions/panel/theme_options.php:596
 msgid "scrollUp"
-msgstr "scorri in alto"
+msgstr "scrollUp"
 
 #: ../functions/panel/theme_options.php:597
 msgid "scrollDown"
-msgstr "scorri in basso"
+msgstr "scrollDown"
 
 #: ../functions/panel/theme_options.php:598
 msgid "scrollLeft"
-msgstr "scorri a sinistra"
+msgstr "scrollLeft"
 
 #: ../functions/panel/theme_options.php:599
 msgid "scrollRight"
-msgstr "scorri a destra"
+msgstr "scrollRight"
 
 #: ../functions/panel/theme_options.php:600
 msgid "blindX"
-msgstr "sostituisci orizzontale"
+msgstr "blindX"
 
 #: ../functions/panel/theme_options.php:601
 msgid "blindY"
-msgstr "sostituisci verticale"
+msgstr "blindY"
 
 #: ../functions/panel/theme_options.php:602
 msgid "blindZ"
-msgstr "sostituisci diagonale"
+msgstr "blindZ"
 
 #: ../functions/panel/theme_options.php:603
 msgid "cover"
-msgstr "copri"
+msgstr "cover"
 
 #: ../functions/panel/theme_options.php:604
 msgid "shuffle"
-msgstr "a caso"
+msgstr "shuffle"
 
 #: ../functions/panel/theme_options.php:609
 msgid "Transition Delay"
-msgstr "Attesa tra le transizioni"
+msgstr "Transition - forsinkelse"
 
 #: ../functions/panel/theme_options.php:612
 #: ../functions/panel/theme_options.php:619
 msgid "second(s)"
-msgstr "secondi"
+msgstr "sekund(er)"
 
 #: ../functions/panel/theme_options.php:616
 msgid "Transition Length"
-msgstr "Durata della transizione"
+msgstr "Transitions-længde"
 
 #: ../functions/panel/theme_options.php:644
 msgid "Google+"
@@ -915,72 +913,79 @@ msgstr "Goodreads"
 
 #: ../functions/panel/theme_options.php:761
 msgid "Header and Footer Codes"
-msgstr "Header and Footer Codes"
+msgstr "Koder for sidehoved og –fod (Header og Footer)"
 
 #: ../functions/panel/theme_options.php:766
 msgid "Code to display on Header"
-msgstr "Codice da inserire nel tag header"
+msgstr "Kode til visning i sidehoved (Header)"
 
 #: ../functions/panel/theme_options.php:772
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
 msgstr ""
-"Nota: qui puoi inserire gli script di Google, Facebook, Add This ecc. che "
-"verrano caricati nell'header"
+"Note: Her kan du lægge scripts fra Google, Facebook osv. som vil blive "
+"indlæst i sidehoved (Header)"
 
 #: ../functions/panel/theme_options.php:775
 msgid "Code to display on Footer"
-msgstr "Codice da mostrare a piè pagina"
+msgstr "Kode til visning i sidefod (Footer)"
 
 #: ../functions/panel/theme_options.php:782
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"
 msgstr ""
-"Nota: qui puoi inserire gli script di Google, Facebook, Add This ecc. che "
-"verrano caricati a piè pagina"
+"Note: Her kan du lægge scripts fra Google, Facebook, Add This osv. som vil "
+"blive indlæst i sidefod (Footer)"
 
 #~ msgid "Featured Slider Post #"
-#~ msgstr "Articolo in evidenza n°"
+#~ msgstr "Featured Slider Post #"
 
 #~ msgid "Change Logo"
-#~ msgstr "Cambia il logo"
+#~ msgstr "Logo ändern"
 
 #~ msgid "Upload Logo"
-#~ msgstr "Carica un logo"
+#~ msgstr "Logo hochladen"
 
 #~ msgid "Preview:"
-#~ msgstr "Anteprima"
+#~ msgstr "Vorschau:"
 
 #~ msgid "No Header Image Found. Upload Header Image."
-#~ msgstr ""
-#~ "Non è stata trovata l'immagine per l'intestazione. Carica l'immagine "
-#~ "dell'intestazione."
+#~ msgstr "Kein Header-Bild gefunden. Header-Bild hochladen."
 
 #~ msgid "Upload/Change Favicon"
-#~ msgstr "Carica/cambia la Favicon"
+#~ msgstr "Upload/Change Favicon"
 
 #~ msgid "No Favicon Found. Upload Favicon."
-#~ msgstr "Non è stata trovata una Favicon. Carica la Favicon."
+#~ msgstr "Kein Favicon gefunden. Favicon hochladen."
 
 #~ msgid "Site Verification"
-#~ msgstr "Verifica del sito"
+#~ msgstr "Site Verification"
 
 #~ msgid "Google Site Verification ID"
-#~ msgstr "ID di verifica di Google"
+#~ msgstr "Google Site Verification ID"
 
 #~ msgid "Enter your Google ID number only"
-#~ msgstr "Inserisci solo il numero ID di Google"
+#~ msgstr "Gib nur deine Google ID Nummer ein"
 
 #~ msgid "Yahoo Site Verification ID"
-#~ msgstr "ID di verifica di Yahoo"
+#~ msgstr "Yahoo Site Verification ID"
 
 #~ msgid "Enter your Yahoo ID number only"
-#~ msgstr "Inserisci solo il numero ID di Yahoo"
+#~ msgstr "Gib nur deine Yahoo ID Nummer ein"
 
 #~ msgid "Bing Site Verification ID"
-#~ msgstr "ID di verifica di Bing"
+#~ msgstr "Bing Site Verification ID"
 
 #~ msgid "Enter your Bing ID number only"
-#~ msgstr "Inserisci solo il numero ID di Bing"
+#~ msgstr "Gib nur deine Bing ID Nummer ein"
+
+#~ msgid "Design Settings"
+#~ msgstr "Design Einstellungen"
+
+#~ msgid "No Sidebar, One Column"
+#~ msgstr "Keine Seitenleiste, eine Spalte"
+
+#~ msgid "Upload Favicon"
+#~ msgstr "Favicon hochladen"
