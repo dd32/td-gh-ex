@@ -76,6 +76,15 @@ function boldr_settings_template() {
 			'default'       => '',
 		);
 
+		$settings_options[] = array(
+			'name'          => 'Display Tagline',
+			'desc'          => 'Display your site description (tagline) on the right side of the header.',
+			'id'            => 'header_tagline',
+			'type'          => 'radio',
+			'default'       => 'Off',
+			'values'		=> array ('Off', 'On'),
+		);
+
 	$settings_options[] = array('type' => 'end_menu');
 // END PAGE 1
 // START PAGE 2

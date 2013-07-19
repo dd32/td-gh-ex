@@ -45,6 +45,13 @@ if ($favicon): ?><link rel="shortcut icon" href="<?php echo esc_url($favicon); ?
 				
 				</a>
 				</div>
+				
+				<?php if ( "On" == boldr_get_option('header_tagline') ): ?>
+				<div id="tagline">
+				<?php bloginfo('description'); ?>
+				</div>
+				<?php endif; ?>
+				
 			</div>
 		</div><!-- End header -->
 	
