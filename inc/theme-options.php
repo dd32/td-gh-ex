@@ -1106,22 +1106,22 @@ add_action('wp_head', 'catchbox_inline_css');
 function catchbox_verification() {
     $options = get_option('catchbox_options_webmaster');
 	//google
-    if ($options['google_verification']) {
+    if (!empty( $options[ 'google_verification' ] ) ) {
 		echo '<meta name="google-site-verification" content="' . $options['google_verification'] . '" />' . "\n";
 	}
 	
 	//bing
-	if ($options['bing_verification']) {
+	if (!empty( $options[ 'bing_verification' ] ) ) {
         echo '<meta name="msvalidate.01" content="' . $options['bing_verification'] . '" />' . "\n";
 	}
 	
 	//yahoo
-	 if ($options['yahoo_verification']) {
+	if (!empty( $options[ 'yahoo_verification' ] ) ) {
         echo '<meta name="y_key" content="' . $options['yahoo_verification'] . '" />' . "\n";
 	}
 	
 	//site stats, analytics code
-	if ($options['tracker_header']) {
+	if (!empty( $options[ 'tracker_header' ] ) ) {
         echo $options['tracker_header'];
 	}
 }

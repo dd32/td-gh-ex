@@ -2,7 +2,7 @@
 * by the Catch Themes team, http://catchthemes.com/
 
 == ABOUT Catch Box==
-Catch Box is simple, lightweight, box shaped, and adaptable WordPress Theme for bloggers and professionals. It is based on HTML5, CSS3 and Responsive Web Design to view in various devices. 10 Best Reasons to use Catch Box Theme. 1. Responsive Web Design, 2. Custom Menus (Primary, Secondary and Footer menus), 3. Theme Options for light or dark or blue color scheme, custom link colors, three layout choices, two content choices between excerpt and content option in homepage, feed redirection, custom css styles, 4. Featured Sliders where you can define number of slides and post IDs, 5. Social Links (Facebook, Twitter, RSS, Linkedin, Pinterest, etc), 6. Webmaster Tools (Google, Yahoo and Bing site verification ID, Header and Footer codes), 7. Custom Backgrounds, 8. Custom Header, 9. Catchbox Adspace widget to add any type of Advertisements, and 10. Support popular plugins. Multilingual Ready (WPML) and also currently translated in Brazilian Portuguese, Spanish, Danish, Germany, French, Polish, Czech, Croatian, Italian, Swedish, Russian, Arabic, and Serbian. Free Support Forum at http://catchthemes.com/support-forum/forum/catch-box-public/
+Catch Box is simple, lightweight, box shaped, and adaptable WordPress Theme for bloggers and professionals. It is based on HTML5, CSS3 and Responsive Web Design to view in various devices. 10 Best Reasons to use Catch Box Theme. 1. Responsive Web Design, 2. Custom Menus (Primary, Secondary and Footer menus), 3. Theme Options for light or dark or blue color scheme, custom link colors, three layout choices, two content choices between excerpt and content option in homepage, feed redirection, custom css styles, 4. Featured Sliders where you can define number of slides and post IDs, 5. Social Links (Facebook, Twitter, RSS, Linkedin, Pinterest, etc), 6. Webmaster Tools (Google, Yahoo and Bing site verification ID, Header and Footer codes), 7. Custom Backgrounds, 8. Custom Header, 9. Catchbox Adspace widget to add any type of Advertisements, and 10. Support popular plugins. Multilingual Ready (WPML) and also currently translated in Brazilian Portuguese, Spanish, Danish, Germany, French, Polish, Czech, Croatian, Italian, Swedish, Russian, Arabic, Serbian and Dutch. Free Support Forum at http://catchthemes.com/support-forum/forum/catch-box-public/
 
 == Translation ==
 Catch Box theme is translation ready. 
@@ -10,15 +10,16 @@ Added Translation for Brazilian Portuguese by Valdir Trombini ( Email: valdir.tr
 Added Translation for Spanish by César Gómez ( Email: cesar@temperatio.com )
 Added Translation for Danish by Kris Thomsen ( Email: mail@kristhomsen.dk )
 Added Translation for Germany by Heinz Peter Brinkmann
-Added Translation for French by  D'CLIC (contact@dclic.info) and and Athéna G (webmaster@athena.georgakelos.net)
-Added Translation for Polish by Piotr (fansitepoprostugry@gmail.com)
-Added Translation for Czech by Marek Přidal (m.pridal29@gmail.com)
-Added Translation for Croatian by Sanjin Barac (rapid24income@gmail.com)
-Added Translation for Italian by Lorenzo Bossi (lorenzobossi83@gmail.com)
-Added Translation for Swedish by Johnny Eriksson (info@johnnysblogg.se)
-Added Translation for Russian by XakRu (calvinxakru@gmail.com)
-Added Translation for Arabic by ed3s (master@ed3s.com)
-Added Translation for Serbian by Tomo Popovic (tp0x45@gmail.com)
+Added Translation for French by  D'CLIC (cEmail: ontact@dclic.info) and and Athéna G (Email: webmaster@athena.georgakelos.net)
+Added Translation for Polish by Piotr (Email: fansitepoprostugry@gmail.com)
+Added Translation for Czech by Marek Přidal (Email: m.pridal29@gmail.com)
+Added Translation for Croatian by Sanjin Barac (Email: rapid24income@gmail.com)
+Added Translation for Italian by Lorenzo Bossi (Email: lorenzobossi83@gmail.com)
+Added Translation for Swedish by Johnny Eriksson (Email: info@johnnysblogg.se)
+Added Translation for Russian by XakRu (Email: calvinxakru@gmail.com)
+Added Translation for Arabic by ed3s (Email: master@ed3s.com)
+Added Translation for Serbian by Tomo Popovic (Email: tp0x45@gmail.com)
+Added Translation for Dutch by Alain Baudrez (Email: a.baudrez@gmail.com)
 
 == Menus ===
 There are 3 Menus registered in this theme. Primary, Secondary and Footer menu. 
@@ -309,3 +310,8 @@ Version 2.5.1
 * Merge Theme Options in single page
 * Removed site verification code as required by WordPress.org Theme Review Guideline
 * Updated Polish translation pl_PL.po and pl_PL.mo
+
+Version 2.6
+* Fixed z-index css for header
+* Fixed rtl css for footer widget
+* Added Dutch translation nl_NL.po and nl_NL.mo
