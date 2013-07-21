@@ -11,7 +11,7 @@
  *
  * @package WordPress
  * @subpackage atheros
- * @since atheros 1.2
+ * @since atheros 1.0
  */
 ?>
 
