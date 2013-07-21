@@ -4,25 +4,34 @@ Donate link: http://web-profile.com.ua/donate/
 Tags: gray, white, light, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.4
 Tested up to: 3.5.2
-Stable tag: 0.4.5
+Stable tag: 0.4.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Responsive light theme. More info at http://web-profile.com.ua/wordpress/themes/activetab/
+Responsive clean theme. More info at http://web-profile.com.ua/wordpress/themes/activetab/
 
 == Description ==
 
 * responsive (flexible-width)
-* two columns, right sidebar, fixed multi-level drop down menu
+* two columns, right sidebar, fixed or static multi-level drop down menu
 * widget-ready sidebar and footer areas
 * 2 extra page templates: "full width (no sidebar)" and "redirect to first subpage"
 * support for: custom background, custom header, custom menu, editor style, post thumbnails, microformats, rtl language support, sticky post and threaded-comments
-* theme options: logo_url, show_site_title, show_site_description, code_head, code_footer
-* automatic rss-feeds to head section, added rss-feed links for posts, comments, categories, tags and authors
-* includes a sample WordPress Child theme for rapid development
+* automatic rss-feeds in the head section, added rss-feed links for posts, comments, categories, tags and authors
 * all site elements are intuitive and users will use the site more easily
 * correct html5 document structure for better search engine indexing
-* translation ready
+* translation ready; Ukrainian, Russian, Hebrew and German translations included
+* includes a sample WordPress Child theme for rapid development
+
+
+= activetab theme options: =
+
+* upload custom logo
+* show or hide site title in header section
+* show or hide site description in header section
+* menu position type (fixed or static)
+* head code - could be inserted any javascript or css code into head section before closing [/head] tag
+* footer code - same as head code, but it will be inserted before closing [/body] tag
 
 
 FAQ:
@@ -31,6 +40,10 @@ FAQ:
 
 
 == Changelog ==
+
+= 0.4.6 - 2013-07-21 =
+* bug fixing
+* added German translation (thanks to 'vkr' - http://wordpress.org/support/profile/vkr)
 
 = 0.4.5 - 2013-07-13 =
 * bug fixing
@@ -56,7 +69,7 @@ FAQ:
 * option added: excerpt_or_full_content_in_list
 
 = 0.3.9 - 2013-06-26 =
-* added Hebrew translation (thanks to 00avi00 http://wordpress.org/support/profile/00avi00)
+* added Hebrew translation (thanks to '00avi00' - http://wordpress.org/support/profile/00avi00)
 
 = 0.3.8 - 2013-06-26 =
 * bug fixing
