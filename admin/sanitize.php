@@ -50,7 +50,7 @@
 /* Social media links */
 
 	$socialNetworks = array ("Delicious", "DeviantArt", "Digg", "Etsy", "Facebook", "Flickr", "Google", "GoodReads", "GooglePlus",
-                              "Instagram", "LastFM", "LinkedIn", "Mail", "MySpace", "Picasa", "Pinterest", "Reddit", "RSS", "Skype",
+                              "IMDb", "Instagram", "LastFM", "LinkedIn", "Mail", "MySpace", "Picasa", "Pinterest", "Reddit", "RSS", "Skype",
                               "SoundCloud", "StumbleUpon", "Technorati", "Tumblr", "Twitch", "Twitter", "Vimeo", "VK", "WordPress",
                               "Xing", "Yahoo", "YouTube" );
 

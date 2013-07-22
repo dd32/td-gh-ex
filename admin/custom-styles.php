@@ -68,7 +68,7 @@ if ($mantra_dimselect=="Absolute") { ?>
 	else { // IF NO PAGE TEMPLATE HAS BEEN SELECTED
 
 	 if ($mantra_side == "1c" ) { ?>
-#content {width:<?php echo ($totalwidth-50) ?>px; margin:20px;margin-top:0px;}  <?php }
+#content {width:<?php echo ($totalwidth-40) ?>px; margin:20px;margin-top:0px;}  <?php }
 
 ?><?php  if ($mantra_side == "2cSr" ) { ?>
 #content { width:<?php echo ($contentSize- 10) ?>px;}

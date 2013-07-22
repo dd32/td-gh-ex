@@ -997,7 +997,7 @@ foreach($fontCursive as $item) {
 }
 	echo "</optgroup>";
 	echo "</select>";
-	echo "<div><small>".__("Select the font family you want your subheaders to have (h2 - h6 tags will be affected). Leave 'Default' and the general font you selected will be used.","mantra")."</small></div><br>";
+	echo "<div><small>".__("Select the font family you want your headings to have (h1 - h6 tags will be affected). Leave 'Default' and the general font you selected will be used.","mantra")."</small></div><br>";
 
 	echo '<input class="googlefonts" type="text" size="45" value="'.esc_attr($mantra_options['mantra_googlefontsubheader']).'"  name="ma_options[mantra_googlefontsubheader]" id="mantra_googlefontsubheader" />';
 	echo "<div><small>".__("Or insert your Google Font below. Please only isert the <strong>name</strong> of the font.<br /> Ex: Marko One. Go to <a href='http://www.google.com/webfonts' > google fonts </a> for some font inspiration.","mantra")."</small></div>";

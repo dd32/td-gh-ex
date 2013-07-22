@@ -136,7 +136,7 @@ function mantra_init_fn(){
 	add_settings_field('mantra_headfontsize', __('Post Title Font Size','mantra') , 'cryout_setting_headfontsize_fn', __FILE__, 'text_section');
 	add_settings_field('mantra_fontside', __('Sidebar Font','mantra') , 'cryout_setting_fontside_fn', __FILE__, 'text_section');
 	add_settings_field('mantra_sidefontsize', __('SideBar Font Size','mantra') , 'cryout_setting_sidefontsize_fn', __FILE__, 'text_section');
-	add_settings_field('mantra_fontsubheader', __('Sub-Headers Font','mantra') , 'cryout_setting_fontsubheader_fn', __FILE__, 'text_section');
+	add_settings_field('mantra_fontsubheader', __('Headings Font','mantra') , 'cryout_setting_fontsubheader_fn', __FILE__, 'text_section');
 	add_settings_field('mantra_textalign', __('Force Text Align','mantra') , 'cryout_setting_textalign_fn', __FILE__, 'text_section');
 	add_settings_field('mantra_parindent', __('Paragraph indent','mantra') , 'cryout_setting_parindent_fn', __FILE__, 'text_section');
 	add_settings_field('mantra_headerindent', __('Header indent','mantra') , 'cryout_setting_headerindent_fn', __FILE__, 'text_section');
@@ -373,7 +373,6 @@ function startfarb(a,b) {
 }
 
 function tooltip_terain() {
-
 jQuery('#accordion small').parent('div').append('<a class="tooltip"><img src="<?php echo get_template_directory_uri(); ?>/images/icon-tooltip.png" /></a>').
 	each(function() {
 	//jQuery(this).children('a.tooltip').attr('title',jQuery(this).children('small').html() );
@@ -385,8 +384,14 @@ jQuery('#accordion small').parent('div').append('<a class="tooltip"><img src="<?
 	jQuery(this).children('small').remove();
 	if (!jQuery(this).hasClass('slmini') && !jQuery(this).hasClass('slidercontent') && !jQuery(this).hasClass('slideDivs')) jQuery(this).addClass('tooltip_div');
 	});
+}
 
-
+function coloursel(el){
+	var id = "#"+jQuery(el).attr('id');
+	jQuery(id+"2").hide();
+	var bgcolor = jQuery(id).val();
+	if (bgcolor <= "#666666") { jQuery(id).css('color','#ffffff'); } else { jQuery(id).css('color','#000000'); };
+	jQuery(id).css('background-color',jQuery(id).val());
 }
 
 
@@ -396,35 +401,59 @@ jQuery(document).ready(function(){
 	if (_jQueryUIVer >= 0.190) {
 		// tooltip function is included since jQuery UI 1.9.0
 		tooltip_terain();
+		startfarb("#mantra_backcolor","#mantra_backcolor2");
+		startfarb("#mantra_headercolor","#mantra_headercolor2");
+		startfarb("#mantra_contentbg","#mantra_contentbg2");
+		startfarb("#mantra_menubg","#mantra_menubg2");
+		startfarb("#mantra_s1bg","#mantra_s1bg2");
+		startfarb("#mantra_s2bg","#mantra_s2bg2");
+		startfarb("#mantra_prefootercolor","#mantra_prefootercolor2");
+		startfarb("#mantra_footercolor","#mantra_footercolor2");
+		startfarb("#mantra_titlecolor","#mantra_titlecolor2");
+		startfarb("#mantra_descriptioncolor","#mantra_descriptioncolor2");
+		startfarb("#mantra_contentcolor","#mantra_contentcolor2");
+		startfarb("#mantra_linkscolor","#mantra_linkscolor2");
+		startfarb("#mantra_hovercolor","#mantra_hovercolor2");
+		startfarb("#mantra_headtextcolor","#mantra_headtextcolor2");
+		startfarb("#mantra_headtexthover","#mantra_headtexthover2");
+		startfarb("#mantra_sideheadbackcolor","#mantra_sideheadbackcolor2");
+		startfarb("#mantra_sideheadtextcolor","#mantra_sideheadtextcolor2");
+		startfarb("#mantra_footerheader","#mantra_footerheader2");
+		startfarb("#mantra_footertext","#mantra_footertext2");
+		startfarb("#mantra_footerhover","#mantra_footerhover2");
+		startfarb("#mantra_fpsliderbordercolor","#mantra_fpsliderbordercolor2");
+		startfarb("#mantra_fronttitlecolor","#mantra_fronttitlecolor2");		
 	} else {
+		jQuery("#mantra_backcolor").addClass('colorthingy');
+		jQuery("#mantra_headercolor").addClass('colorthingy');
+		jQuery("#mantra_contentbg").addClass('colorthingy');
+		jQuery("#mantra_menubg").addClass('colorthingy');
+		jQuery("#mantra_s1bg").addClass('colorthingy');
+		jQuery("#mantra_s2bg").addClass('colorthingy');
+		jQuery("#mantra_prefootercolor").addClass('colorthingy');
+		jQuery("#mantra_footercolor").addClass('colorthingy');
+		jQuery("#mantra_titlecolor").addClass('colorthingy');
+		jQuery("#mantra_descriptioncolor").addClass('colorthingy');
+		jQuery("#mantra_contentcolor").addClass('colorthingy');
+		jQuery("#mantra_linkscolor").addClass('colorthingy');
+		jQuery("#mantra_hovercolor").addClass('colorthingy');
+		jQuery("#mantra_headtextcolor").addClass('colorthingy');
+		jQuery("#mantra_sideheadbackcolor").addClass('colorthingy');
+		jQuery("#mantra_sideheadtextcolor").addClass('colorthingy');
+		jQuery("#mantra_footerheader").addClass('colorthingy');
+		jQuery("#mantra_footertext").addClass('colorthingy');
+		jQuery("#mantra_headtexthover").addClass('colorthingy');
+		jQuery("#mantra_footerhover").addClass('colorthingy');
+		jQuery("#mantra_fpsliderbordercolor").addClass('colorthingy');
+		jQuery("#mantra_fronttitlecolor").addClass('colorthingy');
+		jQuery('.colorthingy').each(function(){
+			id = "#"+jQuery(this).attr('id');
+			jQuery(this).on('keyup',function(){coloursel(this)});
+			coloursel(this);
+		});
 		// inform the user about the old partially unsupported version
 		jQuery("#jsAlert").after("<div class='updated fade' style='clear:left; font-size: 16px;'><p>Mantra has detected you are running an old version of Wordpress (jQuery) and will be running in compatibility mode. Some features may not work correctly. Consider updating your Wordpress to the latest version.</p></div>");
 	}
-
-
-     startfarb("#mantra_backcolor","#mantra_backcolor2");
-     startfarb("#mantra_headercolor","#mantra_headercolor2");
-     startfarb("#mantra_contentbg","#mantra_contentbg2");
-     startfarb("#mantra_menubg","#mantra_menubg2");
-     startfarb("#mantra_s1bg","#mantra_s1bg2");
-     startfarb("#mantra_s2bg","#mantra_s2bg2");
-     startfarb("#mantra_prefootercolor","#mantra_prefootercolor2");
-     startfarb("#mantra_footercolor","#mantra_footercolor2");
-     startfarb("#mantra_titlecolor","#mantra_titlecolor2");
-     startfarb("#mantra_descriptioncolor","#mantra_descriptioncolor2");
-     startfarb("#mantra_contentcolor","#mantra_contentcolor2");
-     startfarb("#mantra_linkscolor","#mantra_linkscolor2");
-     startfarb("#mantra_hovercolor","#mantra_hovercolor2");
-     startfarb("#mantra_headtextcolor","#mantra_headtextcolor2");
-     startfarb("#mantra_headtexthover","#mantra_headtexthover2");
-     startfarb("#mantra_sideheadbackcolor","#mantra_sideheadbackcolor2");
-     startfarb("#mantra_sideheadtextcolor","#mantra_sideheadtextcolor2");
-     startfarb("#mantra_footerheader","#mantra_footerheader2");
-     startfarb("#mantra_footertext","#mantra_footertext2");
-     startfarb("#mantra_footerhover","#mantra_footerhover2");
-
-     startfarb("#mantra_fpsliderbordercolor","#mantra_fpsliderbordercolor2");
-     startfarb("#mantra_fronttitlecolor","#mantra_fronttitlecolor2");
 
 });
 

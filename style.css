@@ -4,7 +4,7 @@
  * Description: Mantra is a do-it-yourself WordPress theme, featuring a pack of over 100 customization options and easy to use tweaks capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (1,2 or 3 columns), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 35 font-families plus all Google Fonts), text and header sizes, post metas, post excerpts, post formats, header and background images, custom menus, 27 social media links and icons, pins, bullets and much much more. With a fully responsive layout,a customizable showcase presentation page, animated slider, magazine and blog layouts, 8 widget areas, modern graphics and an easy and intuitive admin section, you can start creating your dream site right now.
  * Author: Cryout Creations
  * Author URI: http://www.cryoutcreations.eu
- * Version: 2.0.5
+ * Version: 2.0.6
  * License: GNU General Public License v2.0
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Tags: black, red, blue, white, silver, light, dark, one-column, two-columns, three-columns, right-sidebar, left-sidebar, flexible-width, fixed-width, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, front-page-post-form, full-width-template,  microformats, post-formats, rtl-language-support,  sticky-post, theme-options, threaded-comments, translation-ready
@@ -671,11 +671,12 @@ overflow:hidden;
 .topmenu ul{
 	margin:0;
 	padding:0;
+	float:right;
 }
 
 .topmenu ul li{
 	display:block;
-	float:right;
+	float:left;
 	margin:3px 5px;
 }
 
@@ -857,6 +858,7 @@ font-size:1.9em;
 	-moz-box-shadow:1px 1px 3px #DDD;
     -webkit-box-shadow:1px 1px 3px #DDD;
 	clear:both;
+	line-height:2em;
 }
 
 #content .entry-meta2,
@@ -2062,6 +2064,7 @@ right:5px;
 	float:right;
 	padding-top:5px;
 	top:-24px;
+	overflow:visible;
 }
 #sfooter img {
 	width:25px;
@@ -2615,14 +2618,11 @@ a.short-button-light:hover { box-shadow: 0 0 1px rgba(0, 0, 0, 0.5), 0 0 10px rg
 a.short-button-dark:hover { box-shadow: 0 0 10px rgba(255,255,255,0.5) inset; }
 a.short-button-color:hover { box-shadow: 0 3px 10px rgba(255,255,255,0.9) inset; }
 
-a.short-button-color:hover, a.short-button-light:hover, a.short-button-dark:hover {
-text-decoration:none;
-}
+a.short-button-color:hover, a.short-button-light:hover, a.short-button-dark:hover { text-decoration:none; }
 
-/* shareaddy fix */ .sharedaddy ul > li { background: none !important; text-indent: 0 !important; }
-
-/*woocommerce  fix*/ .woocommerce .product .entry-summary {clear:none}
-
+/* shareaddy compat */ .sharedaddy ul > li { background: none !important; text-indent: 0 !important; }
+/* sociable compat */ .entry-content .sociable ul li { background: none; padding-left: 2px; }
+/* woocommerce compat */ .woocommerce .product .entry-summary { clear:none; }
 
 
 /* FIN! */
