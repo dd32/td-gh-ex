@@ -341,11 +341,11 @@ function sempress_comment( $comment, $args, $depth ) {
   $GLOBALS['comment'] = $comment;
   ?>
   <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-    <article id="comment-<?php comment_ID(); ?>" class="comment <?php $comment->comment_type; ?>">
+    <article id="comment-<?php comment_ID(); ?>" class="comment <?php $comment->comment_type; ?>" itemprop="comment" itemscope itemtype="http://schema.org/UserComments">
       <footer>
-        <address class="comment-author p-author author vcard hcard h-card">
+        <address class="comment-author p-author author vcard hcard h-card"  itemprop="creator" itemscope itemtype="http://schema.org/Person">
           <?php echo get_avatar( $comment, 50 ); ?>
-          <?php printf( __( '%s <span class="says">says:</span>', 'sempress' ), sprintf( '<cite class="fn p-name">%s</cite>', get_comment_author_link() ) ); ?>
+          <?php printf( __( '%s <span class="says">says:</span>', 'sempress' ), sprintf( '<cite class="fn p-name" itemprop="name">%s</cite>', get_comment_author_link() ) ); ?>
         </address><!-- .comment-author .vcard -->
         <?php if ( $comment->comment_approved == '0' ) : ?>
           <em><?php _e( 'Your comment is awaiting moderation.', 'sempress' ); ?></em>
@@ -353,7 +353,7 @@ function sempress_comment( $comment, $args, $depth ) {
         <?php endif; ?>
 
         <div class="comment-meta commentmetadata">
-          <a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time datetime="<?php comment_time( 'c' ); ?>">
+          <a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time class="updated published u-updated u-published" datetime="<?php comment_time( 'c' ); ?>" itemprop="commentTime">
           <?php
             /* translators: 1: date, 2: time */
             printf( __( '%1$s at %2$s', 'sempress' ), get_comment_date(), get_comment_time() ); ?>
@@ -362,7 +362,7 @@ function sempress_comment( $comment, $args, $depth ) {
         </div><!-- .comment-meta .commentmetadata -->
       </footer>
 
-      <div class="comment-content e-content p-summary p-name"><?php comment_text(); ?></div>
+      <div class="comment-content e-content p-summary p-name" itemprop="commentText name description"><?php comment_text(); ?></div>
 
       <div class="reply">
         <?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
@@ -447,6 +447,8 @@ function sempress_body_classes( $classes ) {
     $classes[] = "hfeed";
     $classes[] = "h-feed";
     $classes[] = "feed";
+  } else {
+    $classes = sempress_get_post_classes($classes);
   }
 
   return $classes;
@@ -476,20 +478,10 @@ function sempress_comment_classes( $classes ) {
   $classes[] = "h-as-comment";
   $classes[] = "p-comment";
   $classes[] = "h-entry";
-  $classes[] = "hentry";
 
   return $classes;
 }
 add_filter( 'comment_class', 'sempress_comment_classes' );
-
-/**
- * add mf2 post-classes to the <main /> tag to support threaded comments
- */
-function sempress_content_class() {
-  if (is_singular()) {
-    echo 'class="' . join( ' ', sempress_get_post_classes() ) . '"';
-  }
-}
 
 /**
  * encapsulates post-classes to use them on different tags
@@ -710,21 +702,74 @@ function sempress_searchform_format( $format ) {
 add_filter( 'search_form_format', 'sempress_searchform_format' );
 
 /**
- * hide blog item types on single pages and posts
+ * add semantics
+ *
+ * @param string $id the class identifier
+ * @return array
  */
-function sempress_blog_itemscope() {
-  if (!is_singular()) {
-    echo ' itemscope itemtype="http://schema.org/Blog"';
+function sempress_get_semantics($id = null) {
+  $classes = array();
+  
+  // add default values
+  switch ($id) {
+    case "body":
+      if (!is_singular()) {
+        $classes['itemscope'] = array('');
+        $classes['itemtype'] = array('http://schema.org/Blog');
+      } else {
+        $classes['itemscope'] = array('');
+        $classes['itemtype'] = array('http://schema.org/BlogPosting');
+      }
+      break;
+    case "site-title":
+      if (!is_singular()) {
+        $classes['itemprop'] = array('name');
+        $classes['class'] = array('p-title');
+      }
+      break;
+    case "site-description":
+      if (!is_singular()) {
+        $classes['itemprop'] = array('description');
+        $classes['class'] = array('p-summary', 'e-content');
+      }
+      break;
+    case "site-url":
+      if (!is_singular()) {
+        $classes['itemprop'] = array('url');
+        $classes['class'] = array('u-url', 'url');
+      }
+      break;
+    case "post":
+      if (!is_singular()) {
+        $classes['itemprop'] = array('blogPost');
+        $classes['itemscope'] = array('');
+        $classes['itemtype'] = array('http://schema.org/BlogPosting');
+      }
+      break;
   }
+  
+  $classes = apply_filters( "sempress_semantics", $classes, $id );
+  $classes = apply_filters( "sempress_semantics_{$id}", $classes, $id );
+
+  return $classes; 
 }
 
 /**
- * hide blog item properties on single pages and posts
+ * echos the semantic classes added via
+ * the "sempress_semantics" filters
+ *
+ * @param string $id the class identifier
  */
-function sempress_blog_itemprop($prop) {
-  if (!is_singular()) {
-    echo ' itemprop="'.$prop.'"';
+function sempress_semantics($id) {
+  $classes = sempress_get_semantics($id);
+  
+  if (!$classes) {
+    return;
   }
+  
+  foreach ( $classes as $key => $value ) {
+    echo ' ' . esc_attr( $key ) . '="' . esc_attr( join( ' ', $value ) ) . '"';
+  }  
 }
 
 /**
