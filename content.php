@@ -6,7 +6,7 @@
  * @file           category.php
  * @package        Appointment
  * @author         Priyanshu Mittal,Shahid Mansuri and Akhilesh Nagar
- * @copyright      2013 Appointpress
+ * @copyright      2013 Appointment
  * @license        license.txt
  * @version        Release: 1.1
  * @filesource     wp-content/themes/appoinment/content.php
@@ -29,7 +29,7 @@
 							 
 						<div class="blog_link_mn">	
 						<span><img src="<?php echo get_template_directory_uri();?>/images/blog_ic.png" alt="Icon" /> 
-						<?php the_date('M j,Y');?></span> 
+						<?php the_time('M j,Y');?></span> 
 						<a href="#"><img src="<?php echo get_template_directory_uri();?>/images/blog_ic2.png" alt="Icon" /> </a>
                  <?php  comments_popup_link( __( 'Leave a comment', 'appointment' ),__( '1 Comment', 'appointment' ), __( '% Comments', 'appointment' ),'name' ); ?>
 						<img src="<?php echo get_template_directory_uri();?>/images/blog_ic3.png" alt="Icon" />

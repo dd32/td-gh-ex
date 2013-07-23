@@ -6,13 +6,33 @@
  * @file           functions.php
  * @package        Appointment
  * @author         Priyanshu Mittal,Shahid Mansuri and Akhilesh Nagar
- * @copyright      2013 Appointpress
+ * @copyright      2013 Appointment
  * @license        license.txt
  * @version        Release: 1.1
- * @filesource     wp-content/themes/appoinment/functions.php
+ * @filesource     wp-content/themes/appointment/functions.php
  */
 
+function appointment_wp_title( $title, $sep ) {
+	global $paged, $page;
 
+	if ( is_feed() )
+		return $title;
+
+	// Add the site name.
+	$title .= get_bloginfo( 'name' );
+
+	// Add the site description for the home/front page.
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) )
+		$title = "$title $sep $site_description";
+
+	// Add a page number if necessary.
+	if ( $paged >= 2 || $page >= 2 )
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'appointment' ), max( $paged, $page ) );
+
+	return $title;
+}
+add_filter( 'wp_title', 'appointment_wp_title', 10, 2 );
 add_action('add_meta_boxes','add_my_meta');
 add_action( 'save_post', 'myplugin_save_postdata' );
 function add_my_meta() {
@@ -22,7 +42,7 @@ add_action('admin_print_styles', 'appointment_admin_enqueue_script');
     foreach ($screens as $screen) {
         add_meta_box(
             'myplugin_sectionid',
-            __( 'HomePage Slider', 'myplugin_textdomain' ),
+            __( 'Home Page Slider', 'appointment' ),
             'myplugin_inner_custom_box',
             $screen
         );
@@ -43,13 +63,13 @@ add_action('admin_print_styles', 'appointment_admin_enqueue_script');
 <?php 
 	$src= get_post_meta( get_the_ID(), '_meta_image', true );$cp= get_post_meta( get_the_ID(), '_meta_caption', true );
 	echo '<label for="myplugin_new_field">';
-       _e("Image Caption", 'myplugin_textdomain' );
+       _e("Image Caption", 'appointment' );
   echo '</label> ';?>
   <input type="textarea" id="myplugin_new_field" name="myplugin_new_field" value="<?php if (!empty($cp)) echo $cp ?>" size="25" />
     
  <br />
- Upload Image: <input  class="upload" type="text" size="36" name="upload_image" value="<?php if(!empty($src)) echo $src?>" />
-<input class="upload_image_button" type="button" value="Add File" /><br />
+ <?php _e('Upload Image','appointment');?>: <input  class="upload" type="text" size="36" name="upload_image" value="<?php if(!empty($src)) echo $src?>" />
+<input class="upload_image_button" type="button" value="<?php _e('Add File','appointment');?>" /><br />
 	</div>
 				
 	
@@ -100,14 +120,14 @@ if ( function_exists( 'add_theme_support' ) )
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'custom-background' );
-		add_theme_support('custom-header');
+		add_theme_support('custom-header',array('width'=> 200, 'height' => 40,'default-image' => get_template_directory_uri() . '/images/logo.png','header-text' => false));
 		// Add support for a variety of post formats
 	    add_theme_support( 'post-formats', array( 'aside', 'link', 'gallery', 'status', 'quote', 'image','chat','audio','video' ) );
 }
 
 //enqueue scripts
-  add_action('wp_enqueue_scripts','appointpress_enqueue_script');
-function appointpress_enqueue_script() {
+  add_action('wp_enqueue_scripts','appointment_enqueue_script');
+function appointment_enqueue_script() {
    wp_enqueue_script('my-upload',get_bloginfo('template_directory').'/js/media-upload-script.js',array('media-upload','thickbox'));
    if ( is_singular() ) wp_enqueue_script( "comment-reply" );
     //wp_enqueue_script('jquery-1.7.1.min',get_template_directory_uri('template_directory').'/js/jquery-1.7.1.min.js');
@@ -135,7 +155,7 @@ function my_theme_setup(){
  add_action( 'init', 'register_my_menus' );
    function register_my_menus() {
   register_nav_menus(
-    array( 'header-menu' => 'Header Menu' )
+    array( 'header-menu' => __('Header Menu','appointment') )
   );
 }
 // code for custom post type  services
@@ -288,33 +308,6 @@ function appointment_get_option_defaults() {
   return apply_filters( 'appointment_option_defaults', $defaults );
 }
  
- add_action('after_setup_theme', 'appointment_setup');
 
-if (!function_exists('appointment_setup')):
-
-    function appointment_setup() {
-	   $appointment_options = get_option( 'appointment_theme_options' );
-		//print_r($appointment_options);
-		if( $appointment_options && isset( $_GET['activated'] ) ) {
-		
-			// If front_page is not in theme option previously then set it.
-			if( !isset( $appointment_options['front_page'] )) {
-			
-				// Get template of page which is set as static front page
-				$template = get_post_meta( get_option( 'page_on_front' ), '_wp_page_template', true );
-				
-				// If static front page template is set to default then set front page toggle of theme option to 1
-				if( 'page' == get_option( 'show_on_front' ) && $template == 'default' ) {
-					$appointment_options['front_page'] = 0;
-				}
-				else {
-					$appointment_options['front_page'] = 1;
-				}
-				update_option( 'appointment_theme_options', $appointment_options );
-			}
-		}
-    }
-
- endif;
  
 ?>

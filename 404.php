@@ -6,7 +6,7 @@
  * @file           404.php
  * @package        Appointment
  * @author         Priyanshu Mittal,Shahid Mansuri and Akhilesh Nagar
- * @copyright      2013 Appointpress
+ * @copyright      2013 Appointment
  * @license        license.txt
  * @version        Release: 1.1
  * @filesource     wp-content/themes/appoinment/404.php
@@ -16,7 +16,7 @@
  <div class="inner_top_mn">
 		<div class="page_wi">			
 			<h2>
-				<?php _e('PAGE NOT FOUND','appointpress') ;	?>
+				<?php _e('PAGE NOT FOUND','appointment') ;	?>
 			</h2>
 			<div class="search_box">			 
                <form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
@@ -37,7 +37,7 @@
                     
 					
 				
-                    <div class="blog_con_mn"><p><?php _e( 'Apologies, but the page you requested could not be found. Perhaps searching will help.', 'appointpress' ); ?></p>
+                    <div class="blog_con_mn"><p><?php _e( 'Apologies, but the page you requested could not be found. Perhaps searching will help.', 'appointment' ); ?></p>
 					
 									
 					</div>

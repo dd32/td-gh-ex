@@ -5,7 +5,7 @@
  @file             tag.php
  * @package        Appointment
  * @author         Priyanshu Mittal,Shahid Mansuri and Akhilesh Nagar
- * @copyright      2013 Appointpress
+ * @copyright      2013 Appointment
  * @license        license.txt
  * @version        Release: 1.1
  * @filesource     wp-content/themes/appoinment/tag.php
@@ -22,13 +22,11 @@
 				<?php bloginfo('title');?><br>
 				<span><?php bloginfo('description');?></span>	
 			</h2>
-			<div class="search_box">
-			   <div id="searchbox">
-                 <form role="search" method="get" id="searchform" action=""  >
-                 <input type="text" value="Search here" name="s" id="s" onClick="if(this.value=='Search here'){this.value=''}" 
-                 onBlur="if(this.value==''){this.value='Search here'}"  />  
-                 </form>
-              </div>
+			<div class="search_box">			 
+               <form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+                <input type="text"  name="s"  placeholder="<?php esc_attr_e( 'Search', 'appointment' ); ?>" />
+		        <input type="submit" class="search_btn" name="submit"  value="" />
+			   </form>          
 		   </div>
 		</div>
 	</div>

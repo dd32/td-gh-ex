@@ -50,6 +50,9 @@ All images in Appointment are licensed under the terms of the GNU GPL.
 
 ==================Featued Slider=============
 For adding your custom Images in the slider you just need to add the information to the meta box , placed just below the post editor.
+
+======Site Title and Description=============
+Site Title and its description in not shown on home page besides this both are used above each page / post along with the search field.
 	
 Support
 -------
@@ -57,6 +60,11 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ============================Change Log================================
+@version 1.2.3
+1. Undefined variable bug in index-slider fixed.
+2. Now you can add logo with the help of custom header  image.
+3. Search form corrected in tag.php
+4. Title Issue With plugins fixed.
 @version 1.2.2
 1. Stylesheet url fixed
 @veriosn 1.2.1

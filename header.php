@@ -4,7 +4,7 @@
  * @file           header.php
  * @package        Appointment
  * @author         Priyanshu Mittal,Shahid Mansuri and Akhilesh Nagar
- * @copyright      2013 Appointpress
+ * @copyright      2013 Appointment
  * @license        license.txt
  * @version        Release: 1.1
  * @filesource     wp-content/themes/appoinment/header.php
@@ -18,26 +18,7 @@
 <head>
     <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>" charset="<?php bloginfo('charset'); ?>" />
 <meta name="generator" content="WordPress <?php bloginfo('version'); ?>"/>
- <title><?php
-	if(is_home()) {
-		echo bloginfo('name').' - Home';
-	} elseif(is_category()) {
-		echo 'Browsing the Category ';
-		wp_title(' ', true, '');
-	} elseif(is_archive()){
-		echo 'Browsing Archives of';
-		wp_title(' ', true, '');
-	} elseif(is_search()) {
-		echo 'Search Results for   "'.$s.'"';
-	} elseif(is_404()) {
-		echo '404 - Page got lost!';
-	}elseif(is_page('47')) {
-		echo 'U can contact on this';
-	} 
-	else {
-		bloginfo('name'); wp_title('-', true, '');
-	}
-	?></title>
+<title><?php wp_title('|', true, 'right'); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 
     <link rel="stylesheet" href="<?php echo get_stylesheet_uri();?>" type="text/css" media="screen" />
@@ -61,7 +42,7 @@
    <div class="header">
     	<div class="page_wi">
 			<h1 id="logo">
-    			<a href="<?php echo home_url( '/' ); ?>"><img src="<?php echo get_template_directory_uri();?>/images/logo.png" alt="appoinment" /></a>
+    			<a href="<?php echo home_url( '/' ); ?>"><img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" /></a>
     		</h1>
             <div class="menu">
              <ul>

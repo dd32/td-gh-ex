@@ -7,7 +7,7 @@
  * @file           comments.php
  * @package        Appointment
  * @author         Priyanshu Mittal,Shahid Mansuri and Akhilesh Nagar
- * @copyright      2013 Appointpress
+ * @copyright      2013 Appointment
  * @license        license.txt
  * @version        Release: 1.1
  * @filesource     wp-content/themes/appoinment/comments.php
@@ -47,10 +47,10 @@
 	
 			<?php
 				/* Loop through and list the comments. Tell wp_list_comments()
-				 * to use appointpress_comment() to format the comments.
+				 * to use appointment_comment() to format the comments.
 				 * If you want to overload this in a child theme then you can
-				 * define appointpress_comment() and that will be used instead.
-				 * See appointpress_comment() in appointment/functions.php for more.
+				 * define appointment_comment() and that will be used instead.
+				 * See appointment_comment() in appointment/functions.php for more.
 				 */
 				wp_list_comments( array( 'callback' => 'appointment_comment' ) );
 			?>

@@ -6,7 +6,7 @@
  * @file           index-slider.php
  * @package        Appointment
  * @author         Priyanshu Mittal,Shahid Mansuri and Akhilesh Nagar
- * @copyright      2013 Appointpress
+ * @copyright      2013 Appointment
  * @license        license.txt
  * @version        Release: 1.1
  * @filesource     wp-content/themes/appoinment/index-slider.php
@@ -33,13 +33,13 @@
 						$c=0;
 					while($query->have_posts() ){
 							$query->the_post();
-								$meta_image= get_post_meta( get_the_ID(), '_meta_image', true );
-								$meta_caption= get_post_meta( get_the_ID(), '_meta_caption', true );
+								//$meta_image= get_post_meta( get_the_ID(), '_meta_image', true );
+								//$meta_caption= get_post_meta( get_the_ID(), '_meta_caption', true );
 							
-								if($meta_image != '' || $meta_caption != ''){
+								if(get_post_meta( get_the_ID(), '_meta_image', true ) != '' || get_post_meta( get_the_ID(), '_meta_caption', true ) != ''){
 								
-								$images[$c]=$meta_image;
-								$captions[$c]=$meta_caption;
+								$images[$c]=get_post_meta( get_the_ID(), '_meta_image', true );
+								$captions[$c]=get_post_meta( get_the_ID(), '_meta_caption', true );
 								$c++; }
 								 else {
 									//echo 'Enter Image Plz';
@@ -78,7 +78,7 @@
 				</div> 
 				<div id="htmlcaption" class="nivo-html-caption">
                			<?php// echo $value;  ?>
-				<strong><?php _e("This",'appointment'); ?></strong><?php _e(" is an example of a ",'appointment'); ?><em><?php _e("HTML",'appointment'); ?></em><?php _e(" caption with ",'appointment'); ?><a href="#"><?php _e("a link",'appointment'); ?></a>. 
+				<?php _e("This is an example of a HTML caption",'appointment'); ?> 
 				</div> 
 				
                 
