@@ -129,8 +129,9 @@ function travelify_theme_options_do_page() {
 			</div>	
 			    <div id="theme-support">
                     <ul>
-                        <li><a class="button" href="<?php echo esc_url(__('http://ColorAwesomeness.com/themes/contact-us/','travelify')); ?>" title="<?php esc_attr_e('Support Forum', 'travelify'); ?>" target="_blank"><?php printf(__('Support','travelify')); ?></a></li>
-                        <li><a class="button" href="<?php echo esc_url(__('http://colorawesomeness.com/themes/support/travelify/','travelify')); ?>" title="<?php esc_attr_e('Theme Instruction', 'travelify'); ?>" target="_blank"><?php printf(__('Theme Instructions','travelify')); ?></a></li>
+                    	<li><a class="button" href="<?php echo esc_url(__('http://wordpress.org/support/view/theme-reviews/travelify?filter=5','travelify')); ?>" title="<?php esc_attr_e('Rate this Theme', 'travelify'); ?>" target="_blank"><?php printf(__('Rate this Theme','travelify')); ?></a></li>
+						<li><a class="button" href="<?php echo esc_url(__('http://colorawesomeness.com/themes/support/travelify/','travelify')); ?>" title="<?php esc_attr_e('Theme Instruction', 'travelify'); ?>" target="_blank"><?php printf(__('Theme Instructions','travelify')); ?></a></li>
+                                                <li><a class="button" href="<?php echo esc_url(__('http://ColorAwesomeness.com/themes/contact-us/','travelify')); ?>" title="<?php esc_attr_e('Support Forum', 'travelify'); ?>" target="_blank"><?php printf(__('Support','travelify')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('http://www.facebook.com/ColorAwesomeness','travelify')); ?>" title="<?php esc_attr_e('Like Catch Themes on Facebook', 'travelify'); ?>" target="_blank"><?php printf(__('Facebook','travelify')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('http://twitter.com/ColorAwesomenes/','travelify')); ?>" title="<?php esc_attr_e('Follow Catch Themes on Twitter', 'travelify'); ?>" target="_blank"><?php printf(__('Twitter','travelify')); ?></a></li>
                     </ul>

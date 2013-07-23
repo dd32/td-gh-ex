@@ -253,15 +253,15 @@ function travelify_headerdetails() {
 					</nav><!-- #main-nav -->';
 		}
 	?> 		
-		<?php	
-		if( is_home() || is_front_page() ) {
+		<?php
+		if( is_home() || is_front_page() ) {	
 			if( "0" == $options[ 'disable_slider' ] ) {
 				if( function_exists( 'travelify_pass_cycle_parameters' ) ) 
    				travelify_pass_cycle_parameters();
    			if( function_exists( 'travelify_featured_post_slider' ) ) 
    				travelify_featured_post_slider();
    		}
-		}
+   		}
 		else { 
 			if( ( '' != travelify_header_title() ) || function_exists( 'bcn_display_list' ) ) { 
 		?>

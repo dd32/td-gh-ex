@@ -63,13 +63,13 @@ add_action( 'travelify_loop_content', 'travelify_theloop', 10 );
  */
 function travelify_theloop() {
 	if( is_page() ) {
-		if( is_page_template( 'page-blog-large-image.php' ) ) {
+		if( is_page_template( 'templates/template-blog-large-image.php' ) ) {
 			travelify_theloop_for_template_blog_image_large();
 		}
-		elseif( is_page_template( 'page-blog-medium-image.php' ) ) {
+		elseif( is_page_template( 'templates/template-blog-medium-image.php' ) ) {
 			travelify_theloop_for_template_blog_image_medium();
 		}
-		elseif( is_page_template( 'page-blog-full-content.php' ) ) {
+		elseif( is_page_template( 'templates/template-blog-full-content.php' ) ) {
 			travelify_theloop_for_template_blog_full_content();
 		}
 		else {

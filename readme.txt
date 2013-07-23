@@ -3,8 +3,8 @@ Theme Name: Travelify
 Theme URI: http://colorawesomeness.com/themes/travelify/
 Author: Color Awesomeness
 Author URI: http://colorawesomeness.com/
-Description: Travelify is a clan, simple and fully responsive WordPress theme that looks great on any device. It adjusts automatically to any screen size including tablets and smartphones as well as HiDPI (Retina) displays. Theme is built using HTML5 / CSS3 and is SEO friendly. This WordPress theme was built with travel, adventures, languages and nature in mind but it can be used for anything so be creative and unleash its full potential. Along the awesome design this theme is customizable via a simple but yet powerful theme options. Some of the nicest features are featured post slider, social icons, custom logo and many more. This theme out-of-the-box plays nicely with Breadcrumb NavXT and WP-PageNavi. 
-Version: 1.1.2
+Description: Travelify is a clan, simple and fully responsive WordPress WooCommerce theme that looks awesome on any device. It adjusts automatically to any screen size including tablets and smartphones as well as Retina displays. Theme is built using HTML5 / CSS3 and is SEO friendly. This WordPress theme was built with travel, adventures, languages and nature in mind but it can be used for anything so be creative and unleash its full potential in blogging, eCommerce, business and other websites. Along the awesome design this theme is customizable via a simple but yet powerful theme options. Some of the nicest features are featured post slider, social icons, custom logo, translation ready and many more. This theme out-of-the-box plays nicely with WooCommerce, Breadcrumb NavXT and WP-PageNavi, Contact Form 7 and other popular plugins. 
+Version: 1.2.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, light, green , custom-background, custom-menu, flexible-width, featured-images, full-width-template, left sidebar, right sidebar, one-column, two columns, three-columns, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready 
@@ -66,14 +66,31 @@ This theme supports custom logo for the header part.
 It is disabled by default and supports user defined images for logo if enabled.
 You can edit this from Appearance->Theme Options->Main Options->Header Options.
 
+== Page Templates ==
+
+This theme features 3 different blog templates.
+- template-blog-full-content.php – Blog page template to show full post content in the blog page. 
+- template-blog-large-image.php Blog page template to show large (670px x 300px) featured image and post excerpt in the blog page.  
+- template-blog-medium-image.php Blog page template to show medium size (230px x 230px) featured image and post excerpt in the blog page.  
+
+You can select these templates via Page Attributes when creating new page inside WordPress Dashboard.
+
 == Other Options ==
 For more instruction you can visit the support page of Travelify at http://colorawesomeness.com/themes/support/travelify/
 If you have still any other questions about the theme you can email at info@colorawesomeness.com for free support.
 
 == Change Log ==
 
+= 1.2.0 = 
+	* Full WooCommerce eCommerce plugin support
+	* Added sidebar.php to support WooCommerce plugin
+	* Updated theme description
+	* Renamed blog page templates to avoid template conflicts
+	* Added documentation for blog page templates.
+	* Added rating button on Theme Options
+
 = 1.1.2 = 
-	* Removed webmaster tools from Theme Options.
+	* Removed webmaster tools from Theme Options
 	* Other small tweaks in Theme Options
 
 = 1.1.1 =

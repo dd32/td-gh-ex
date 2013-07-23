@@ -3,11 +3,11 @@ Theme Name: Travelify
 Theme URI: http://colorawesomeness.com/themes/travelify/
 Author: Color Awesomeness
 Author URI: http://colorawesomeness.com/
-Description: Travelify is a clan, simple and fully responsive WordPress theme that looks great on any device. It adjusts automatically to any screen size including tablets and smartphones as well as HiDPI (Retina) displays. Theme is built using HTML5 / CSS3 and is SEO friendly. This WordPress theme was built with travel, adventures, languages and nature in mind but it can be used for anything so be creative and unleash its full potential. Along the awesome design this theme is customizable via a simple but yet powerful theme options. Some of the nicest features are featured post slider, social icons, custom logo and many more. This theme out-of-the-box plays nicely with Breadcrumb NavXT and WP-PageNavi. 
-Version: 1.1.2
+Description: Travelify is a clan, simple and fully responsive WordPress WooCommerce theme that looks awesome on any device. It adjusts automatically to any screen size including tablets and smartphones as well as Retina displays. Theme is built using HTML5 / CSS3 and is SEO friendly. This WordPress theme was built with travel, adventures, languages and nature in mind but it can be used for anything so be creative and unleash its full potential in blogging, ecommerce, business and other websites. Along the awesome design this theme is customizable via a simple but yet powerful theme options. Some of the nicest features are featured post slider, social icons, custom logo, translation ready and many more. This theme out-of-the-box plays nicely with WooCommerce, Breadcrumb NavXT and WP-PageNavi, Contact Form 7 and other popular plugins.
+Version: 1.2.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: white, light, green , custom-background, custom-menu, flexible-width, featured-images, full-width-template, left-sidebar, right-sidebar, one-column, two-columns, three-columns, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready 
+Tags: white, light, green , custom-background, custom-menu, flexible-width, featured-images, full-width-template, left-sidebar, right-sidebar, one-column, two-columns, three-columns, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging, holiday
 Text Domain: travelify
  */
 
@@ -1099,13 +1099,13 @@ thead th,tfoot th,thead tr:hover th,tfoot tr:hover th {
 	color: #439f55;
 }
 /* Blog Medium Page */
-.blog-medium .post-featured-image {
+.medium-wrap .post-featured-image {
 	width: 38.57%;
 	float: left;
 	margin-right: 2.67%;
 	margin-bottom: 2.5%;
 }
-.blog-medium .entry-content {
+.medium-wrap .entry-content {
 	padding-bottom: 0;
 }
 /* Contact Page */
@@ -1692,14 +1692,14 @@ article {
 	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
-.page-template-page-template-blog-image-medium-php article {
+.medium-wrap article {
 	padding: 0;
 }
 .medium-wrap {
 	padding: 0 2.5%;
 }
-.page-template-page-template-blog-image-medium-php .entry-title a {
-	padding: 0;
+.medium-wrap .entry-title a {
+	padding-top: 10px;
 }
 #comments {
 	padding: 5px 2.5%;
@@ -1710,6 +1710,68 @@ article {
 }
 #main {
 	padding: 20px 2.5%;
+}
+
+/* =WooCommerce
+-------------------------------------------------------------- */
+#breadcrumb {
+	padding: 40px 0 0 0;
+}
+
+#breadcrumb a {
+	color: #0066cc;
+	font-size: 12px;
+	font-weight: 400;
+}
+
+#breadcrumb a:hover {
+	color: #444444;
+	text-decoration: none;
+}
+
+#content-woocommerce {
+	margin-bottom: 20px;
+	float: left;
+	width: 62.6%;
+	padding: 10px 1.5%;
+	background: #fff;
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+#content-woocommerce .page-title {
+	display: block;
+	float: none;
+	font-size: 32px;
+	line-height: 42px;
+	padding-bottom: 10px;
+}
+.products ul, ul.products {
+	margin-top: 40px;
+}
+
+.cart-collaterals .shipping_calculator {
+	width: 100%;
+}
+.woocommerce ul.product_list_widget li {
+	background-image: none;
+}
+
+table.shop_table {
+}
+
+table.cart td.actions .coupon .input-text,
+table.cart td.actions .coupon .input-text {
+	cursor: text;
+}
+.woocommerce ul.products li.product, 
+.woocommerce-page ul.products li.product, 
+.woocommerce ul.products li.last, 
+.woocommerce-page ul.products li.last {
+	min-width: 120px;
+}
+.woocommerce .woocommerce-result-count, 
+.woocommerce-page .woocommerce-result-count {
+	margin-bottom: 2em !important;
 }
 /* =Responsive Structure
 -----------------------------------------------*/
@@ -1728,6 +1790,9 @@ article {
 .no-sidebar-template #content {
 	margin: 0;
 	width: 100%;
+}
+#site-logo {
+	margin-left: 20px;
 }
 
 /* Column */
