@@ -10,8 +10,14 @@
  * Intialize the theme settings page
  *
  * @param $theme_name
+ * @action after_setup_theme
  */
 function siteorigin_settings_init( $theme_name = null ) {
+	// Ensure this is only run once
+	static $run;
+	if(!empty($run)) return;
+	$run = true;
+
 	if ( empty( $theme_name ) ) {
 		$theme_name = basename( get_template_directory() );
 	}
@@ -29,6 +35,7 @@ function siteorigin_settings_init( $theme_name = null ) {
 	add_action( 'admin_enqueue_scripts', 'siteorigin_settings_enqueue_scripts' );
 	add_action( 'wp_enqueue_scripts', 'siteorigin_settings_enqueue_front_scripts' );
 }
+add_action('after_setup_theme', 'siteorigin_settings_init', 5);
 
 /**
  * Initialize admin settings in the admin
@@ -439,7 +446,9 @@ function siteorigin_settings_change_message() {
 
 		?>
 		<div id="setting-updated" class="updated">
-			<p><strong><?php _e( 'Settings saved.', 'siteorigin' ) ?></strong></p>
+			<p>
+				<strong><?php _e( 'Settings saved.', 'siteorigin' ) ?></strong>
+			</p>
 		</div>
 		<?php
 

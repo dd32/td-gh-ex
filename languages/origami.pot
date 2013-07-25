@@ -2,8 +2,8 @@
 # This file is distributed under the GNU General Public License 2.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: origami 1.5.6\n"
-"POT-Creation-Date: 2013-07-10T13:07:00+02:00\n"
+"Project-Id-Version: origami 1.5.7\n"
+"POT-Creation-Date: 2013-07-25T21:27:38+02:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -288,16 +288,19 @@ msgstr ""
 msgid "Buy Now"
 msgstr ""
 
-msgid "Although we support all premium users, we can't guarantee same-day support email replies for orders under $15."
+msgid "Although we appreciate and support all our premium users, we only guarantee <strong>24 hour</strong> support replies purchases over <strong>$15</strong>. Support on this order might take longer."
 msgstr ""
 
-msgid "We offer a 30 day full refund if you're not happy with your purchase"
+msgid "You choose the price, so you can pay what %s is worth to you."
 msgstr ""
 
 msgid "Building your site on a budget"
 msgstr ""
 
 msgid "A good, fair price"
+msgstr ""
+
+msgid "Our sincere thanks"
 msgstr ""
 
 msgid "We'll love and support you forever"
@@ -309,7 +312,7 @@ msgstr ""
 msgid "Please enable Javascript to change pricing"
 msgstr ""
 
-msgid "You choose the price, so you can pay what %s is worth to you."
+msgid "We offer a 60 day full refund if you're not happy with your purchase"
 msgstr ""
 
 msgid "Our User Feedback"
