@@ -176,11 +176,17 @@ function boldr_styles() {
 	else
 		wp_register_style( 'theme-style', $template_directory_uri . '/css/theme-style.css' );	
 
+	if ( @file_exists( $stylesheet_directory . '/css/media-queries.css' ) )
+		wp_register_style( 'media-queries', $stylesheet_directory_uri . '/css/media-queries.css' );
+	else
+		wp_register_style( 'media-queries', $template_directory_uri . '/css/media-queries.css' );	
+
 	// Always enqueue style.css from the current theme
 	wp_register_style( 'style', $stylesheet_directory_uri . '/style.css');
 
 	wp_enqueue_style( 'icefit' );
 	wp_enqueue_style( 'theme-style' );
+	wp_enqueue_style( 'media-queries' );
 	wp_enqueue_style( 'style' );
 
 	// Google Webfonts
