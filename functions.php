@@ -85,6 +85,8 @@ add_action( 'after_setup_theme', 'attorney_content_width' );
  */
 if ( ! function_exists( 'attorney_filter_wp_title' ) ) :
 	function attorney_filter_wp_title( $old_title, $sep, $sep_location ) {
+		
+		if ( is_feed() ) return $old_title;
 	
 		$site_name = get_bloginfo( 'name' );
 		$site_description = get_bloginfo( 'description' );
@@ -257,13 +259,22 @@ if ( ! function_exists( 'attorney_theme_customizer' ) ) :
 			'priority'    => 110,
 		) ) );
 		
+		$wp_customize->add_setting( 'attorney_yelp' );
+		
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'attorney_yelp', array(
+			'label'    => __( 'Enter your Yelp url', 'attorney' ),
+			'section'  => 'attorney_social_section',
+			'settings' => 'attorney_yelp',
+			'priority'    => 111,
+		) ) );
+		
 		$wp_customize->add_setting( 'attorney_rss' );
 		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'attorney_rss', array(
 			'label'    => __( 'Enter your RSS url', 'attorney' ),
 			'section'  => 'attorney_social_section',
 			'settings' => 'attorney_rss',
-			'priority'    => 111,
+			'priority'    => 112,
 		) ) );
 		
 		/* slider options */
@@ -366,23 +377,6 @@ if ( ! function_exists( 'attorney_apply_color' ) ) :
 	}
 endif;
 add_action( 'wp_head', 'attorney_apply_color' );
-
-
-/**
-* Filter the RSS Feed Site Title
-*/
-if ( ! function_exists( 'attorney_blogname_rss' ) ) :
-	function attorney_blogname_rss( $val, $show ) {
-		if( 'name' == $show )
-			$out = '';
-		else
-			$out = $val;
-	
-		return $out;
-	}
-endif;
-add_filter('bloginfo_rss', 'attorney_blogname_rss', 10, 2);
-
 
 
 

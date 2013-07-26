@@ -55,6 +55,12 @@ This theme is bundled with Cycle2
 =================================
 CHANGELOG
 =================================
+Version 1.0.3
+ * Added Yelp social media icon
+ * Removed the rss feed title filter in functions.php
+ * Added styles and fixes on css media queries (for smaller screen devices)
+ * Added max-width: 100% CSS property on the select element to prevent overflow in sidebar
+ 
 Version 1.0.2
  * Fixed color picker issue on full-width template
 

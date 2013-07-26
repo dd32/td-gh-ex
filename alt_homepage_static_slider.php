@@ -13,7 +13,7 @@ get_header(); ?>
 			  
 			<?php if ( have_posts() ) : ?>
             <div id="load-cycle"></div>
-              <div class="cycle-slideshow" <?php 
+              <div class="cycle-slideshow alt-static" <?php 
 				  	if ( get_theme_mod('attorney_slider_effect') ) {
 						echo 'data-cycle-fx="' . wp_kses_post( get_theme_mod('attorney_slider_effect') ) . '" data-cycle-tile-count="10"';
 					} else {
@@ -45,7 +45,7 @@ get_header(); ?>
 					foreach ( $attachments as $attachment ) { ?>
                     <div class="slides">
                       <div id="post-<?php the_ID(); ?>" <?php post_class('post-theme'); ?>>
-                    	<div class="slide-thumb"><?php echo wp_get_attachment_image( $attachment->ID, array( 1000, 640 ), false, array( 'style' => 'position:absolute', 'onload' => 'feat_img_onload(this)') ); ?></div>
+                    	<div class="slide-thumb" style="background-image:url(<?php echo wp_get_attachment_url( $attachment->ID, array( 1000, 640 ), false, '' ); ?>)"></div>
 					   						
                       </div>
                     </div>
@@ -56,18 +56,25 @@ get_header(); ?>
                      <?php
 				 }
 				 
-				 
  			endwhile; ?>
-
-            <div class="slide-content">
+            
+			<?php $content = attorney_content(-1); ?>
+			<?php $content = preg_replace("/<img[^>]+./", "", $content); ?>
+           
+            <div class="slide-content alt-static-hide">
               <div class="slide-copy">
                 <h2 class="slide-title"><?php the_title(); ?></h2>
-                <?php $content = attorney_content(60); ?>
-				<?php $content = preg_replace("/<img[^>]+./", "", $content); ?>
 				<?php echo $content; ?>
               </div>
             </div>
             
+            </div>
+            
+            <div class="slide-content alt-static-show">
+              <div class="slide-copy">
+                <h2 class="slide-title"><?php the_title(); ?></h2>
+				<?php echo $content; ?>
+              </div>
             </div>
             
             <?php endif; ?> 

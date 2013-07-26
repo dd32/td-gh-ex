@@ -20,11 +20,11 @@
 		if ( $images ) :
 			$total_images = count( $images );
 			$image = array_shift( $images );
-			$image_img_tag = wp_get_attachment_image( $image->ID, array(640, 480), false, array( 'style' => 'position:absolute', 'onload' => 'thumb_img_onload(this)') );
+			$image_img_tag = wp_get_attachment_url( $image->ID, array(640, 480), false, array( 'style' => 'position:absolute', 'onload' => 'thumb_img_onload(this)') );
 	?>
 
-	<div class="imgthumb">
-		<a href="<?php the_permalink(); ?>"><?php echo $image_img_tag; ?></a>
+	<div class="imgthumb" style="background-image:url(<?php echo $image_img_tag; ?>)">
+		<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 	</div><!-- .gallery-thumb -->
 
 	

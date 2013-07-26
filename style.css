@@ -4,7 +4,7 @@ Theme URI: http://wpattorney.org/
 Author: WPThemes NZ
 Author URI: http://wpthemes.co.nz/
 Description: Attorney is an elegant and responsive theme designed with Attorneys and law firms in mind, though anyone who wants a theme with a corporate look and feel might like it too. It comes with a couple of alternative home page templates, one for static content and one with a latest posts slider. You can also add your own logo, adjust the slider behaviour, base theme colors and control the social media links from the theme customization screen.
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-menu, sticky-post, microformats, rtl-language-support, translation-ready, full-width-template, post-formats
@@ -116,6 +116,9 @@ textarea,
 button { 
 	font: 99% sans-serif;
 }
+	select {
+		max-width: 100%;
+	}
 
 body, 
 select, 
@@ -675,6 +678,10 @@ SOCIAL MEDIA BUTTONS STYLES
 	
 	#social-media a.social-vi {
 		background-image: url(library/images/icon-vi.png);
+	}
+	
+	#social-media a.social-ye {
+		background-image: url(library/images/icon-ye.png);
 	}
 	
 	#social-media a.social-rs {
@@ -2353,9 +2360,22 @@ img.size-medium,
 
 .imgthumb {
 	position: relative;
+	width: 100%;
 	height: 190px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
 	overflow: hidden;
+	outline: none;
 }
+
+	.imgthumb a {
+		width: 100%;
+	height: 190px;
+		display: block;
+		text-indent: -99999px;
+	
+	}
 
 .imgthumb img {
 	margin: 0;
@@ -2478,7 +2498,11 @@ jQuery SLIDER STYLES
 	border-top: 0;
 }
 	.slides .slide-thumb {
-		position: relative;	
+		width: 100%;
+		height: 290px;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
 	}
 	
 	.slides .slide-thumb img {
@@ -2511,6 +2535,10 @@ jQuery SLIDER STYLES
 		line-height: 1.5em;
 		vertical-align: text-bottom;
 	}
+		slide-content.alt-static-show {
+				display: none;
+		}
+		
 		.slide-copy {
 			font-family: "Vollkorn", Georgia, "Times New Roman", Times, serif;
 			font-size: 1rem;
@@ -2651,6 +2679,7 @@ URL: http://stuffandnonsense.co.uk/projects/320andup/
 		z-index: 9999;
 		display: none;
 		box-shadow: 1px 1px 1px #000;
+		min-width: 190px;
 	}
 	
 	nav[role=navigation] .menu #menu-icon { 
@@ -2706,6 +2735,7 @@ URL: http://stuffandnonsense.co.uk/projects/320andup/
 	
 	#sidebar-home,
 	#sidebar-full {
+		margin-top: 1.85rem;
 		margin-left: 0;
 		margin-right: 0;
 	}
@@ -2715,7 +2745,7 @@ URL: http://stuffandnonsense.co.uk/projects/320andup/
 		width: 100%; 
 		display: block; 
 		float: none;
-		margin: 0 0 2.2rem 0;
+		margin: 0 0 1.85rem 0;
 	}
 	
 	#sidebar-home .widget:last-child,
@@ -2724,18 +2754,7 @@ URL: http://stuffandnonsense.co.uk/projects/320andup/
 		margin-bottom: 0;
 	}
 	
-	.slide-content {
-		width: 100%;
-		height: auto;
-	}
 	
-	.slide-copy {
-		font-size: 0.95rem;
-		position: relative;
-		bottom: 0;
-		left: 0;
-		right: 0;
-	}
 	
 	#site-heading { 
 		width: 100%;
@@ -2757,6 +2776,76 @@ URL: http://stuffandnonsense.co.uk/projects/320andup/
 	.commentlist li.comment article[id*=comment-] iframe, .post_content iframe, .full-width-content .post_content iframe { 
 		min-height: 400px;
 	}
+	
+	.cycle-slideshow {
+		height: auto;
+		min-height: 290px;
+	}
+		.cycle-slideshow.alt-static {
+			min-height:190px;
+		}
+	
+	.slides {
+		
+		height: auto;
+	}
+		.slides .slide-thumb {
+			width: 100%;
+			height: 190px;
+		}
+		
+		.slides .slide-thumb img {
+			width: 100%;
+			height: auto;
+			min-height: none;
+		}
+		
+		.slides .slide-noimg {
+			top: 30px;
+			right: 30px;
+			bottom: auto;
+		}
+		
+		.slide-content {
+			position: relative !important;
+			width: 100%;
+			height: auto;
+			left: auto;
+			bottom: auto;
+			z-index: 0;
+			font-size: 0.75rem;
+			line-height: 1rem;
+			vertical-align: text-bottom;
+			overflow: hidden;
+
+		}
+			slide-content.alt-static-hide {
+				display: none;
+			}
+			
+			slide-content.alt-static-show {
+				display: block;
+			}
+			
+			.slide-copy {
+				position: relative !important;
+				bottom: auto;
+				left: auto;
+				right: auto;
+				
+			}
+		
+		.slide-title {
+			font-family: "Lato", Arial, Helvetica, sans-serif;
+			font-size: 1.2rem;
+			font-weight: 900;
+			color: #fff;
+			text-shadow: 1px 1px #f5f5f5;
+			text-transform: uppercase;
+			margin-bottom: 7px;
+			line-height: 1.2rem;
+			color: #c7930d;
+		}
 }
 
 @media only screen and (min-width: 824px) {
@@ -2766,7 +2855,7 @@ URL: http://stuffandnonsense.co.uk/projects/320andup/
 	}
 }
 
-@media only screen and (max-width: 600px) and (min-width: 100px) {
+@media only screen and (max-width: 660px) and (min-width: 100px) {
 	.slide-title {
 		font-size: 1rem;
 		line-height: 1rem;
@@ -2775,7 +2864,7 @@ URL: http://stuffandnonsense.co.uk/projects/320andup/
 	
 	.slide-copy {
 		font-family: Georgia, "Times New Roman", Times, serif;
-		font-size: 11px;
+		font-size: 12px;
 		line-height: 0.95rem;
 	}
 	
@@ -2849,6 +2938,30 @@ URL: http://stuffandnonsense.co.uk/projects/320andup/
 	.commentlist li.comment article[id*=comment-] iframe, .post_content iframe, .full-width-content .post_content iframe { 
 		min-height: 290px;
 	}
+	
+	#site-title {
+		font-size: 40px;
+	}
+	
+	.cycle-slideshow {
+		min-height: 250px;
+	}
+		.cycle-slideshow.alt-static {
+			min-height:160px;
+		}
+	
+	.slides .slide-thumb {
+		height: 160px;
+	}
+	
+	.slide-content {
+		padding: 8px 12px;
+	}
+	
+	.slide-copy {
+		font-size: 11px;
+	}
+
 
 }
 
@@ -2860,6 +2973,39 @@ URL: http://stuffandnonsense.co.uk/projects/320andup/
 	.commentlist li.comment article[id*=comment-] iframe, .post_content iframe, .full-width-content .post_content iframe { 
 		min-height: 220px;
 	}
+	
+	#site-title {
+		font-size: 36px;
+	}
+	
+	.cycle-slideshow {
+		min-height: 240px;
+	}
+	
+		.cycle-slideshow.alt-static {
+			min-height:140px;
+		}
+	
+	
+	.slides .slide-thumb {
+		height: 140px;
+	}
+	
+	.slide-title {
+		font-size: 0.9rem;
+	}
+	
+	header[role=banner] #s {
+		min-width: 100px;
+		width: 100px;
+	}
+		header[role=banner] #s:focus {
+			width: 140px;
+			transition-duration: 400ms;
+			transition-property: width;
+			transition-timing-function: ease;
+		}
+		
 
 }
 
@@ -2871,6 +3017,18 @@ URL: http://stuffandnonsense.co.uk/projects/320andup/
 	.commentlist li.comment article[id*=comment-] iframe, .post_content iframe, .full-width-content .post_content iframe { 
 		min-height: 180px;
 	}
+	
+	#site-title {
+		font-size: 30px;
+	}
+	
+	header[role=banner] #s {
+		min-width: 72px;
+		width: 72px;
+	}
+		header[role=banner] #s:focus {
+			width: 155px;
+		}
 	
 }
 

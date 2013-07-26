@@ -17,7 +17,7 @@
    
 	<?php if ( has_post_thumbnail()) : ?>
     
-    <div class="imgthumb"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( array(640, 480), array( 'style' => 'position:absolute', 'onload' => 'thumb_img_onload(this)' ) ); ?></a></div>
+    <div class="imgthumb" style="background-image:url(<?php $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array(640, 480), false, '' ); echo $src[0]; ?>)"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
 
     <?php endif; ?>
     
@@ -32,10 +32,10 @@
                 if ( $images ) :
                     $total_images = count( $images );
                     $image = array_shift( $images );
-                    $image_img_tag = wp_get_attachment_image( $image->ID, array(640, 480), false, array( 'style' => 'position:absolute', 'onload' => 'thumb_img_onload(this)') );
+                    $image_img_tag = wp_get_attachment_url( $image->ID, array(640, 480), false, array( 'style' => 'position:absolute', 'onload' => 'thumb_img_onload(this)') );
             ?>
-            <div class="imgthumb">
-                <a href="<?php the_permalink(); ?>"><?php echo $image_img_tag; ?></a>
+            <div class="imgthumb" style="background-image:url(<?php echo $image_img_tag; ?>)">
+                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
             </div><!-- .gallery-thumb -->
             <?php endif; ?>
             

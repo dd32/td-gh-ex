@@ -68,6 +68,10 @@
             <a href="<?php echo esc_url( get_theme_mod( 'attorney_vimeo' ) ); ?>" class="social-vi" title="<?php echo esc_url( get_theme_mod( 'attorney_vimeo' ) ); ?>"><?php _e('Vimeo', 'attorney') ?></a>
             <?php endif; ?>
             
+            <?php if ( get_theme_mod( 'attorney_yelp' ) ) : ?>
+            <a href="<?php echo esc_url( get_theme_mod( 'attorney_yelp' ) ); ?>" class="social-ye" title="<?php echo esc_url( get_theme_mod( 'attorney_yelp' ) ); ?>"><?php _e('Yelp', 'attorney') ?></a>
+            <?php endif; ?>
+            
             <?php if ( get_theme_mod( 'attorney_rss' ) ) : ?>
             <a href="<?php echo esc_url( get_theme_mod( 'attorney_rss' ) ); ?>" class="social-rs" title="<?php echo esc_url( get_theme_mod( 'attorney_rss' ) ); ?>"><?php _e('RSS', 'attorney') ?></a>
             <?php endif; ?>
