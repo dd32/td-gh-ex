@@ -28,16 +28,16 @@ add_theme_support( 'custom-background', $args );
 	// Make theme available for translation
 	// Translations can be filed in the /languages/ directory
 	load_theme_textdomain( 'discover', get_template_directory() . '/languages' );
-
-	$locale = get_locale();
-	$locale_file = get_template_directory() . "/languages/$locale.php";
-	if ( is_readable( $locale_file ) )
-		require_once( $locale_file );
 		
 	// This theme uses wp_nav_menu() in two location.	
 	register_nav_menus( array(
 		'primary' => __( 'Primary Navigation', 'discover' ),
 	) );
+	
+	// Add support for woocommerce
+	$template = get_option( 'template' );
+	update_option( 'woocommerce_theme_support_check', $template );
+	add_theme_support( 'woocommerce' );	
 
 }
 endif;
