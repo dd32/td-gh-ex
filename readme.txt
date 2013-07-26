@@ -3,8 +3,8 @@ Theme Name: Attitude
 Theme URI: http://themehorse.com/themes/attitude
 Author: Team Horse
 Author URI: http://themehorse.com
-Description: Attitude is a Simple, Clean and Responsive Retina Ready WordPress Theme which adapts automatically to your tablets and mobile devices. Theme is easily customizable with numerous theme options. Some of the highlighted options are two site layout (Narrow and Wide), 5 layouts for every post/page, 5 Page Templates, 5 widget areas, 4 custom widgets, featured slider to highlight your post/page, 11 social icons and many more. Also has custom background, header, menu, favicon, CSS, webclip icon, and logo. Supports popular plugins like Breadcrumb NavXT, WP-PageNavi and Contact Form 7. It is also translation ready. Available Translation: Traditional Chinese (Taiwan). Get free support on http://themehorse.com/support-forum/
-Version: 1.2.2
+Description: Attitude is a Simple, Clean and Responsive Retina Ready WordPress Theme which adapts automatically to your tablets and mobile devices. Theme is easily customizable with numerous theme options. Some of the highlighted options are two site layout (Narrow and Wide), 5 layouts for every post/page, 5 Page Templates, 5 widget areas, 4 custom widgets, featured slider to highlight your post/page, 11 social icons and many more. Also has custom background, header, menu, favicon, CSS, webclip icon, and logo. Supports popular plugins like Breadcrumb NavXT, WP-PageNavi and Contact Form 7. It is also translation ready. Available Translation: Traditional Chinese (Taiwan), Spanish and Norwegian (Nynorsk). Get free support on http://themehorse.com/support-forum/
+Version: 1.2.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, light, blue, one-column, two-columns, three-columns, left-sidebar, right-sidebar, flexible-width, custom-menu, custom-background, custom-header, featured-images, full-width-template, theme-options, threaded-comments, translation-ready, sticky-post
@@ -80,6 +80,9 @@ For more instruction you can visit the theme-instruction page of attitude at htt
 If you have still any other questions about the theme you can email at support@themehorse.com for free support.
 
 == Change Log ==
+= 1.2.3 =
+* Attitude now available in Norwegian (Nynorsk) Language. Thanks to Algot Kristoffer Peterson <algotp@gmail.com> for providing us with the translation files.
+
 = 1.2.2 =
 * Social links name made translation ready.
 * attitude.pot file updated.
