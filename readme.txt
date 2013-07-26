@@ -41,6 +41,9 @@ FAQ:
 
 == Changelog ==
 
+= 0.4.7 - 2013-07-26 =
+* option added: favicon upload (favicon shown in frontend and admin sections)
+
 = 0.4.6 - 2013-07-21 =
 * bug fixing
 * added German translation (thanks to 'vkr' - http://wordpress.org/support/profile/vkr)

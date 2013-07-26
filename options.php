@@ -95,5 +95,12 @@ function optionsframework_options() {
 		'options' => $content_preview_types_array
 	);
 
+	$options[] = array(
+		'name' => __( 'Favicon', 'activetab' ),
+		//'desc' => __( '', 'activetab' ),
+		'id' => 'favicon_url',
+		'type' => 'upload'
+	);
+
 	return $options;
 }

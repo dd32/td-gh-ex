@@ -5,7 +5,7 @@ if ( ! isset( $content_width ) ) {
 }
 
 
-$activetab_version = '0.4.6';
+$activetab_version = '0.4.7';
 
 
 if ( ! function_exists( 'activetab_enqueue_scripts_and_styles' ) ) :
@@ -360,6 +360,11 @@ endif; // activetab_is_homepage()
 if ( ! function_exists( 'activetab_wp_head' ) ) :
 function activetab_wp_head() { // output content to the head section
 
+	$favicon_url = of_get_option( 'favicon_url', '' );
+	if ( ! empty( $favicon_url ) ) {
+		echo "\n".'<link rel="shortcut icon" type="image/x-icon" href="'.$favicon_url.'">'."\n";
+	}
+
 	$code_head = of_get_option( 'code_head', '' );
 	if ( ! empty( $code_head ) ) { // output js head code
 		echo "\n".'<!-- activetab head code -->'."\n";
@@ -370,6 +375,19 @@ function activetab_wp_head() { // output content to the head section
 }
 add_action( 'wp_head', 'activetab_wp_head' );
 endif; // activetab_wp_head()
+
+
+if ( ! function_exists( 'activetab_admin_head' ) ) :
+	function activetab_admin_head() { // output content to the admin head section
+
+		$favicon_url = of_get_option( 'favicon_url', '' );
+		if ( ! empty( $favicon_url ) ) {
+			echo "\n".'<link rel="shortcut icon" type="image/x-icon" href="'.$favicon_url.'">'."\n";
+		}
+
+	}
+	add_action( 'admin_head', 'activetab_admin_head' );
+endif; // activetab_admin_head()
 
 
 if ( ! function_exists( 'activetab_wp_footer' ) ) :
