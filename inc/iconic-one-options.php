@@ -58,7 +58,7 @@ the transaction ID.<br .../>
 </div>
 <h2>Getting Started</h2> 
 <a style="text-decoration:none;" href="http://demo.themonic.com/io/">Official Demo</a> for reference.
-<h4>Responsive Menu - Important!</h4> 
+<h4>Responsive Menu - Important! - Update: 28th July 2013 - It will now work automagically.</h4> 
 This is the first step: Configure the Main Navigation menu by
 going to Appearance -> Menus. Create a custom menu by the name of 'top', or simply rename your existing menu to 'top'.
 Make sure that under Primary Menu 'top' is selected, Navigation Menu responsiveness won't work otherwise.

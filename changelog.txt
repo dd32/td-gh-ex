@@ -1,0 +1,19 @@
+Changelog for Iconic One WordPress Responsive Theme | Visit http://themonic.com/iconic-one/ for latest version
+
+
+
+-------------- JULY 2013 ----------------
+
+2012-01-03 - Version 1.1.2
+
+* The Responsive Menu no longer requires setup, Iconic One menu responsiveness will now work automagically.
+* Nav menu <li> improvement, removed the background color for child hover.
+* Changelog.txt is now included.
+
+07/24/13 - Version 1.1.1
+
+* Minor menu style changes.
+
+07/13/13 - Version 1.1
+
+* Initial public release!
