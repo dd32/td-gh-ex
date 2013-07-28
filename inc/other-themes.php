@@ -10,9 +10,9 @@
 <div id="theme">
 <img class="screenshot" src="http://fimply.de/dl/e-mail-screen.png" width="600">
 <div id="name">elegantWhite Pro</div>
-<div id="info">elegantWhite Pro is the Pro-version of our famous WordPress theme elegantWhite. It comes with a lot of great new features like drop-down menus, custom color schemes or layout options. It's one of the cheapest and best WordPress themes on the planet! Get it now for just 4.99 Euro!
+<div id="info">elegantWhite Pro is the Pro-version of our famous WordPress theme elegantWhite. It comes with a lot of great new features like drop-down menus, custom color schemes or layout options. It's one of the cheapest and best WordPress themes on the planet! Get it now for just 7.99$!
 
-<p><a href="http://store.fimply.de/?product=elegantwhite-pro" target="_blank">Go to the Fimply Store</a></p></div>
+<p><a href="http://fimply.de/elegantwhitepro" target="_blank">Go to the Fimply Store</a></p></div>
 
 </div>
 
