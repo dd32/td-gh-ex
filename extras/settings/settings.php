@@ -56,8 +56,8 @@ function siteorigin_settings_admin_init() {
 function siteorigin_settings_admin_menu() {
 	$theme = wp_get_theme();
 	$page = add_theme_page(
-		sprintf(__( '%s Theme Settings', 'siteorigin' ), $theme->get('Name')),
-		sprintf(__( 'Theme Settings', 'siteorigin' ), $theme->get('Name')),
+		sprintf(__( '%s Theme Settings', 'origami' ), $theme->get('Name')),
+		sprintf(__( 'Theme Settings', 'origami' ), $theme->get('Name')),
 		'edit_theme_options',
 		'theme_settings_page',
 		'siteorigin_settings_render'
@@ -230,8 +230,8 @@ function siteorigin_setting_editable($field){
 }
 
 function siteorigin_setting_editable_option_field(){
-	siteorigin_settings_add_field('general', 'hover_edit', 'checkbox', __('Display Hover Edit Icon', 'siteorigin'), array(
-		'description' => __('Display a small icon that makes quickly editing fields easy. This is only shown to admin users.', 'siteorigin'),
+	siteorigin_settings_add_field('general', 'hover_edit', 'checkbox', __('Display Hover Edit Icon', 'origami'), array(
+		'description' => __('Display a small icon that makes quickly editing fields easy. This is only shown to admin users.', 'origami'),
 	));
 }
 add_action('admin_init', 'siteorigin_setting_editable_option_field', 100);
@@ -256,7 +256,7 @@ function siteorigin_settings_field( $args ) {
 		case 'checkbox' :
 			?>
 			<input id="<?php echo esc_attr( $field_id ) ?>" name="<?php echo esc_attr( $field_name ) ?>" type="checkbox" <?php checked( $current ) ?> />
-			<label for="<?php echo esc_attr( $field_id ) ?>"><?php echo esc_attr( !empty( $args['label'] ) ? $args['label'] : __( 'Enabled', 'siteorigin' ) ) ?></label>
+			<label for="<?php echo esc_attr( $field_id ) ?>"><?php echo esc_attr( !empty( $args['label'] ) ? $args['label'] : __( 'Enabled', 'origami' ) ) ?></label>
 			<?php
 			break;
 		case 'text' :
@@ -311,7 +311,7 @@ function siteorigin_settings_field( $args ) {
 		
 		case 'media':
 			if(version_compare(get_bloginfo('version'), '3.5', '<')){
-				printf(__('You need to <a href="%s">upgrade</a> to WordPress 3.5 to use media fields', 'siteorigin'), admin_url('update-core.php'));
+				printf(__('You need to <a href="%s">upgrade</a> to WordPress 3.5 to use media fields', 'origami'), admin_url('update-core.php'));
 				break;
 			}
 			
@@ -324,8 +324,8 @@ function siteorigin_settings_field( $args ) {
 				$src = array('', 0, 0);
 			}
 			
-			$choose_title = empty($args['choose']) ? __('Choose Media', 'siteorigin') : $args['choose'];
-			$update_button = empty($args['update']) ? __('Set Media', 'siteorigin') : $args['update'];
+			$choose_title = empty($args['choose']) ? __('Choose Media', 'origami') : $args['choose'];
+			$update_button = empty($args['update']) ? __('Set Media', 'origami') : $args['update'];
 			
 			?>
 				<div class="media-field-wrapper">
@@ -339,7 +339,7 @@ function siteorigin_settings_field( $args ) {
 						<?php echo esc_html($choose_title) ?>
 					</a>
 
-					<a href="#" class="media-remove-button"><?php _e('Remove', 'siteorigin') ?></a>
+					<a href="#" class="media-remove-button"><?php _e('Remove', 'origami') ?></a>
 				</div>
 
 				<input type="hidden" id="<?php echo esc_attr( $field_id ) ?>" value="<?php echo esc_attr( $current ) ?>" name="<?php echo esc_attr( $field_name ) ?>" />
@@ -351,7 +351,7 @@ function siteorigin_settings_field( $args ) {
 			?>
 			<a class="premium-teaser siteorigin-premium-teaser" href="<?php echo admin_url( 'themes.php?page=premium_upgrade' ) ?>" target="_blank">
 				<em></em>
-				<?php printf( __( 'Only available in <strong>%s Premium</strong> - <strong class="upgrade">Upgrade Now</strong>', 'siteorigin' ), ucfirst($theme) ) ?>
+				<?php printf( __( 'Only available in <strong>%s Premium</strong> - <strong class="upgrade">Upgrade Now</strong>', 'origami' ), ucfirst($theme) ) ?>
 				<?php if(!empty($args['teaser-image'])) : ?>
 					<div class="teaser-image"><img src="<?php echo esc_url($args['teaser-image']) ?>" width="220" height="120" /><div class="pointer"></div></div>
 				<?php endif; ?>
@@ -368,12 +368,12 @@ function siteorigin_settings_field( $args ) {
 				size="25"
 				type="text"
 				value="<?php echo esc_attr( $current ) ?>" />
-			<a href="#" class="so-settings-gallery-edit"><?php _e('Select Images', 'siteorigin') ?></a>
+			<a href="#" class="so-settings-gallery-edit"><?php _e('Select Images', 'origami') ?></a>
 			<?php
 			break;
 
 		default :
-			_e( 'Unknown Field Type', 'siteorigin' );
+			_e( 'Unknown Field Type', 'origami' );
 			break;
 	}
 
@@ -447,7 +447,7 @@ function siteorigin_settings_change_message() {
 		?>
 		<div id="setting-updated" class="updated">
 			<p>
-				<strong><?php _e( 'Settings saved.', 'siteorigin' ) ?></strong>
+				<strong><?php _e( 'Settings saved.', 'origami' ) ?></strong>
 			</p>
 		</div>
 		<?php
@@ -464,14 +464,14 @@ function siteorigin_settings_theme_help(){
 	$theme_name = basename( get_template_directory() );
 	
 	$text = sprintf(
-		__( "Read %s's <a href='%s'>theme documentation</a> for help with these settings.", 'siteorigin' ),
+		__( "Read %s's <a href='%s'>theme documentation</a> for help with these settings.", 'origami' ),
 		ucfirst($theme_name),
 		'http://siteorigin.com/theme/'.$theme_name.'/?action=docs'
 	); 
 	
 	$screen->add_help_tab( array(
 		'id' => 'siteorigin_settings_help_tab',
-		'title' => __( 'Settings Help', 'siteorigin' ),
+		'title' => __( 'Settings Help', 'origami' ),
 		'content' => '<p>' . $text . '</p>',
 	) );
 }
@@ -487,7 +487,7 @@ function siteorigin_settings_media_view_strings($strings, $post){
 	unset($strings['createGalleryTitle']);
 	unset($strings['insertFromUrlTitle']);
 	
-	$strings['insertIntoPost'] = __('Set Media File', 'siteorigin');
+	$strings['insertIntoPost'] = __('Set Media File', 'origami');
 	
 	return $strings;
 }

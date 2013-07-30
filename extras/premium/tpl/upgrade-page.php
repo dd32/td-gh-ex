@@ -9,24 +9,24 @@ $theme = basename( get_template_directory() );
 		<p>
 			<?php
 			printf(
-				__( "After you pay for %s Premium, we'll email you an order number to your <strong>PayPal email address</strong>. ", 'siteorigin' ) ,
+				__( "After you pay for %s Premium, we'll email you an order number to your <strong>PayPal email address</strong>. ", 'origami' ) ,
 				ucfirst( $theme )
 			);
 			printf(
-				__( "Use <a href='%s' target='_blank'>this form</a> if you don't receive your order number in the next 15 minutes. ", 'siteorigin' ) ,
+				__( "Use <a href='%s' target='_blank'>this form</a> if you don't receive your order number in the next 15 minutes. ", 'origami' ) ,
 				'http://siteorigin.com/orders/'
 			);
-			_e( 'To be sure, check your spam folder.', 'siteorigin' );
+			_e( 'To be sure, check your spam folder.', 'origami' );
 			?>
 		</p>
 
-		<label><strong><?php _e( 'Order Number', 'siteorigin' ) ?></strong></label>
+		<label><strong><?php _e( 'Order Number', 'origami' ) ?></strong></label>
 		<input type="text" class="regular-text" name="order_number" />
-		<input type="submit" value="<?php esc_attr_e( 'Enable Upgrade', 'siteorigin' ) ?>" />
+		<input type="submit" value="<?php esc_attr_e( 'Enable Upgrade', 'origami' ) ?>" />
 		<?php wp_nonce_field( 'save_order_number', '_upgrade_nonce' ) ?>
 	</form>
 
-	<a href="#" id="theme-upgrade-already-paid" class="button"><?php _e( 'Already Paid?', 'siteorigin' ) ?></a>
+	<a href="#" id="theme-upgrade-already-paid" class="button"><?php _e( 'Already Paid?', 'origami' ) ?></a>
 
 	<div id="icon-themes" class="icon32"><br></div>
 	<h2><?php echo $siteorigin_premium_info['premium_title'] ?></h2>
@@ -64,38 +64,38 @@ $theme = basename( get_template_directory() );
 
 			<p class="download">
 				<a href="<?php echo esc_url( $premium['buy_url'] ) ?>?amount=15" class="buy-button variable-pricing-submit">
-					<span><?php _e('Buy Now', 'siteorigin') ?></span><em>$15</em>
+					<span><?php _e('Buy Now', 'origami') ?></span><em>$15</em>
 					<input type="hidden" name="amount" value="15" >
 				</a>
 			</p>
 
 			<div class="support-message">
-				<p><?php _e("Although we appreciate and support all our premium users, we only guarantee <strong>24 hour</strong> support replies purchases over <strong>$15</strong>. Support on this order might take longer.",'siteorigin') ?></p>
+				<p><?php _e("Although we appreciate and support all our premium users, we only guarantee <strong>24 hour</strong> support replies purchases <strong>$15</strong> or more. Support on this order might take longer.", 'origami') ?></p>
 			</div>
 
 			<p class="description">
-				<?php printf( __("You choose the price, so you can pay what %s is worth to you.", 'siteorigin'), ucfirst($theme) ) ?>
+				<?php printf( __("You choose the price, so you can pay what %s is worth to you.", 'origami'), ucfirst($theme) ) ?>
 			</p>
 
 			<div class="options hide-if-no-js">
-				<label><input type="radio" name="variable_pricing_option" value="10"> <strong>$10</strong> <?php _e('Building your site on a budget', 'siteorigin') ?></label>
-				<label><input type="radio" name="variable_pricing_option" value="15" <?php checked(true) ?>> <strong>$15</strong> <?php _e("A good, fair price", 'siteorigin') ?></label>
-				<label><input type="radio" name="variable_pricing_option" value="20"> <strong>$20</strong> <?php _e("Our sincere thanks", 'siteorigin') ?></label>
-				<label><input type="radio" name="variable_pricing_option" value="30"> <strong>$30</strong> <?php _e("We'll love and support you forever", 'siteorigin') ?></label>
-				<label><input type="radio" name="variable_pricing_option" value="custom" class="custom-price" > <strong><?php _e('Custom', 'siteorigin') ?></strong> <input type="number" name="variable_pricing_custom" value="15" placeholder="$4+" min="4"> </label>
+				<label><input type="radio" name="variable_pricing_option" value="10"> <strong>$10</strong> <?php _e('Building your site on a budget', 'origami') ?></label>
+				<label><input type="radio" name="variable_pricing_option" value="15" <?php checked(true) ?>> <strong>$15</strong> <?php _e("A good, fair price", 'origami') ?></label>
+				<label><input type="radio" name="variable_pricing_option" value="20"> <strong>$20</strong> <?php _e("Our sincere thanks", 'origami') ?></label>
+				<label><input type="radio" name="variable_pricing_option" value="30"> <strong>$30</strong> <?php _e("We'll love and support you forever", 'origami') ?></label>
+				<label><input type="radio" name="variable_pricing_option" value="custom" class="custom-price" > <strong><?php _e('Custom', 'origami') ?></strong> <input type="number" name="variable_pricing_custom" value="15" placeholder="$4+" min="4"> </label>
 			</div>
 			<div class="options hide-if-js">
-				<p><?php _e('Please enable Javascript to change pricing', 'siteorigin') ?></p>
+				<p><?php _e('Please enable Javascript to change pricing', 'origami') ?></p>
 			</div>
 
 			<p class="description choose-description">
-				<?php _e("We offer a 60 day full refund if you're not happy with your purchase", 'siteorigin') ?>
+				<?php _e("We offer a 60 day full refund if you're not happy with your purchase", 'origami') ?>
 			</p>
 
 		</form>
 
 		<?php if(!empty($premium['testimonials'])): ?>
-			<h3 class="testimonials-heading"><?php _e('Our User Feedback', 'siteorigin') ?></h3>
+			<h3 class="testimonials-heading"><?php _e('Our User Feedback', 'origami') ?></h3>
 			<ul class="testimonials">
 				<?php foreach($premium['testimonials'] as $testimonial) : ?>
 					<li class="testimonial clearfix">

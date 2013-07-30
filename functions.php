@@ -1,6 +1,6 @@
 <?php
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.5.7' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.5.8' );
 define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://siteorigin.com' );
 
 include get_template_directory() . '/extras/premium/premium.php';

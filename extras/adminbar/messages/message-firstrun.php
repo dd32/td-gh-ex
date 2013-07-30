@@ -1,6 +1,6 @@
-<?php _e("Hi! I'm Greg Priday from SiteOrigin.", 'siteorigin') ?> 
-<?php _e("I hope you enjoy my WordPress theme.", 'siteorigin') ?> 
-<?php _e("Please follow me on Twitter and Facebook for updates.", 'siteorigin') ?>
+<?php _e("Hi! I'm Greg Priday from SiteOrigin.", 'origami') ?> 
+<?php _e("I hope you enjoy my WordPress theme.", 'origami') ?> 
+<?php _e("Please follow me on Twitter and Facebook for updates.", 'origami') ?>
 
 <div class="social">
 	<div class="follow twitter">

@@ -9,7 +9,7 @@ function siteorigin_premium_admin_menu() {
 	// Don't display this page if the user has already upgraded to premium
 	if ( defined( 'SITEORIGIN_IS_PREMIUM' ) ) return;
 
-	add_theme_page( __( 'Premium Upgrade', 'siteorigin' ), __( 'Premium Upgrade', 'siteorigin' ), 'switch_themes', 'premium_upgrade', 'siteorigin_premium_page_render' );
+	add_theme_page( __( 'Premium Upgrade', 'origami' ), __( 'Premium Upgrade', 'origami' ), 'switch_themes', 'premium_upgrade', 'siteorigin_premium_page_render' );
 }
 
 add_action( 'admin_menu', 'siteorigin_premium_admin_menu' );
@@ -32,9 +32,9 @@ function siteorigin_premium_page_render() {
 			if ( empty( $siteorigin_premium_info ) ) {
 				?>
 				<div class="wrap" id="theme-upgrade">
-					<h2><?php _e( 'Premium Upgrade', 'siteorigin' ) ?></h2>
+					<h2><?php _e( 'Premium Upgrade', 'origami' ) ?></h2>
 					<p>
-						<?php printf(__( "There's a premium version of %s coming soon.", 'siteorigin' ),ucfirst( $theme )); ?>
+						<?php printf(__( "There's a premium version of %s coming soon.", 'origami' ),ucfirst( $theme )); ?>
 					</p>
 				</div>
 				<?php
@@ -68,38 +68,38 @@ function siteorigin_premium_page_render() {
 
 			?>
 			<div class="wrap" id="theme-upgrade">
-				<h2><?php printf(__('Your Order Number Is [%s]', 'siteorigin'), get_option( $option_name )) ?></h2>
+				<h2><?php printf(__('Your Order Number Is [%s]', 'origami'), get_option( $option_name )) ?></h2>
 
 				<?php if ( is_null( $valid ) ) : ?>
 				<p>
-					<?php _e( "There was a problem contacting our validation servers.", 'siteorigin' ) ?>
-					<?php _e( "Please try again later, or upgrade manually using the ZIP file we sent you.", 'siteorigin' ) ?>
+					<?php _e( "There was a problem contacting our validation servers.", 'origami' ) ?>
+					<?php _e( "Please try again later, or upgrade manually using the ZIP file we sent you.", 'origami' ) ?>
 				</p>
 				<?php elseif ( $valid ) : ?>
 				<p>
-					<?php _e( "We've validated your order number.", 'siteorigin' ) ?>
+					<?php _e( "We've validated your order number.", 'origami' ) ?>
 					<?php
 					printf(
-						__( 'You can update now, or later on your <a href="%s">Themes page</a>.', 'siteorigin' ),
+						__( 'You can update now, or later on your <a href="%s">Themes page</a>.', 'origami' ),
 						admin_url( 'themes.php' )
 					);
 					?>
-					<?php _e( 'This update will add all the premium features.', 'siteorigin' ) ?>
+					<?php _e( 'This update will add all the premium features.', 'origami' ) ?>
 				</p>
 				<p class="submit">
 					<?php
 					$update_url = wp_nonce_url( admin_url( 'update.php?action=upgrade-theme&amp;theme=' . urlencode( $theme ) ), 'upgrade-theme_' . $theme );
-					$update_onclick = 'onclick="if ( confirm(\'' . esc_js( __( "Updating this theme will lose any code customizations (CSS, PHP, Javascript, etc) you have made to the free version. You will not lose your content, images or settings. 'Cancel' to stop, 'OK' to update.", 'siteorigin' ) ) . '\') ) {return true;}return false;"';
+					$update_onclick = 'onclick="if ( confirm(\'' . esc_js( __( "Updating this theme will lose any code customizations (CSS, PHP, Javascript, etc) you have made to the free version. You will not lose your content, images or settings. 'Cancel' to stop, 'OK' to update.", 'origami' ) ) . '\') ) {return true;}return false;"';
 					?>
 					<a href="<?php echo esc_url( $update_url ) ?>" <?php echo $update_onclick ?> class="button-primary">
-						<?php _e( 'Update Theme', 'siteorigin' ) ?>
+						<?php _e( 'Update Theme', 'origami' ) ?>
 					</a>
 				</p>
 				<?php else : ?>
 				<p>
-					<?php _e( "We couldn't validate your order number.", 'siteorigin' ) ?>
-					<?php _e( "There might be a problem with our validation server.", 'siteorigin' ) ?>
-					<?php _e( "Please try again later, or upgrade manually using the ZIP file we sent you.", 'siteorigin' ) ?>
+					<?php _e( "We couldn't validate your order number.", 'origami' ) ?>
+					<?php _e( "There might be a problem with our validation server.", 'origami' ) ?>
+					<?php _e( "Please try again later, or upgrade manually using the ZIP file we sent you.", 'origami' ) ?>
 				</p>
 				<?php endif; ?>
 			</div>
@@ -143,9 +143,9 @@ function siteorigin_premium_admin_enqueue( $prefix ) {
 		
 		wp_localize_script( 'siteorigin-premium-teaser-templates', 'siteoriginTeaserTemplates' , array(
 			'code' => '<p>'.siteorigin_premium_teaser(
-				__('Get Additional Templates', 'siteorigin'),
+				__('Get Additional Templates', 'origami'),
 				array(
-					'description' => sprintf(__('%s Premium includes additional templates', 'siteorigin'), ucfirst(get_option('stylesheet')))
+					'description' => sprintf(__('%s Premium includes additional templates', 'origami'), ucfirst(get_option('stylesheet')))
 				),
 				true
 			).'</p>'
@@ -181,7 +181,7 @@ function siteorigin_premium_call_function($callback, $param_array, $args = array
 		?>
 		<a class="siteorigin-premium-teaser" href="<?php echo admin_url( 'themes.php?page=premium_upgrade' ) ?>" target="_blank">
 			<em></em>
-			<?php printf( __( 'Available in <strong>%s Premium</strong> - <strong class="upgrade">Upgrade Now</strong>', 'siteorigin' ), ucfirst($theme) ) ?>
+			<?php printf( __( 'Available in <strong>%s Premium</strong> - <strong class="upgrade">Upgrade Now</strong>', 'origami' ), ucfirst($theme) ) ?>
 			<?php if(!empty($args['teaser-image'])) : ?>
 				<div class="teaser-image"><img src="<?php echo esc_url($args['teaser-image']) ?>" width="220" height="120" /><div class="pointer"></div></div>
 			<?php endif; ?>
@@ -270,7 +270,7 @@ if(class_exists('WP_Customize_Section')) :
 class SiteOrigin_Premium_Teaser_Customizer extends WP_Customize_Section{
 	function render() {
 		?><div class="siteorigin-premium-teaser-customizer-wrapper"><?php
-		siteorigin_premium_teaser(__('Get Additional Customizations', 'siteorigin'));
+		siteorigin_premium_teaser(__('Get Additional Customizations', 'origami'));
 		?></div><?php
 	}
 }

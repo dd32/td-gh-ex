@@ -3,19 +3,19 @@ $theme = basename( get_template_directory() );
 
 if(defined('SITEORIGIN_IS_PREMIUM')){
 	printf(
-		__( "<a href='%s'>Contact</a> SiteOrigin support if you need help. ", 'siteorigin' ),
+		__( "<a href='%s'>Contact</a> SiteOrigin support if you need help. ", 'origami' ),
 		'http://siteorigin.com/#support'
 	);
 }
 else {
 	printf(
-		__( "<a href='%s'>Post a question</a> on the WordPress forums if you need help. ", 'siteorigin' ),
+		__( "<a href='%s'>Post a question</a> on the WordPress forums if you need help. ", 'origami' ),
 		'http://wordpress.org/support/theme/'.$theme
 	);
 }
 
 printf(
-	__( "If you like %s, please <a href='%s' target='_blank'>rate it</a>. Your rating helps a lot! ", 'siteorigin' ),
+	__( "If you like %s, please <a href='%s' target='_blank'>rate it</a>. Your rating helps a lot! ", 'origami' ),
 	ucfirst($theme),
 	'http://wordpress.org/support/view/theme-reviews/'.$theme.'#postform'
 );

@@ -66,7 +66,7 @@ function siteorigin_adminbar_enqueue( $suffix ) {
 	if($suffix == 'theme-install.php' || $suffix == 'themes.php' && !wp_script_is('siteorigin-admin-tab')){
 		wp_enqueue_script('siteorigin-admin-tab', get_template_directory_uri() . '/extras/adminbar/assets/tab.min.js', array('jquery'), SITEORIGIN_THEME_VERSION);
 		wp_localize_script('siteorigin-admin-tab', 'siteoriginAdminTab', array(
-			'text' => __('SiteOrigin Themes', 'siteorigin'),
+			'text' => __('SiteOrigin Themes', 'origami'),
 			'url' => admin_url('theme-install.php?tab=search&type=author&s=gpriday')
 		));
 	}
@@ -92,7 +92,7 @@ function siteorigin_adminbar_render() {
 	<div id="siteorigin-admin-bar" data-type="<?php echo esc_attr( $GLOBALS['siteorigin_adminbar_active']->id ) ?>">
 		<div class="inner">
 			<img src="<?php echo esc_url( $GLOBALS['siteorigin_adminbar_active']->icon ) ?>" class="icon" width="44" height="44" />
-			<a href="#dismiss" class="dismiss"><?php _e( 'dismiss', 'siteorigin' ) ?></a>
+			<a href="#dismiss" class="dismiss"><?php _e( 'dismiss', 'origami' ) ?></a>
 			<strong><?php call_user_func_array( 'get_template_part', $GLOBALS['siteorigin_adminbar_active']->message ) ?></strong>
 		</div>
 	</div>

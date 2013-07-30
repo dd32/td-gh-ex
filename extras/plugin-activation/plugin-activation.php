@@ -4,8 +4,8 @@ function siteorigin_plugin_activation_page(){
 	if(!isset( $_GET[sanitize_key( 'siteorigin-pa-install' )])) return;
 	
 	add_theme_page(
-		__('Install Theme Plugin', 'siteorigin'),
-		__('Install Theme Plugin', 'siteorigin'),
+		__('Install Theme Plugin', 'origami'),
+		__('Install Theme Plugin', 'origami'),
 		'install_plugins',
 		'siteorigin_plugin_activation',
 		'siteorigin_plugin_activation_render_page'
@@ -65,7 +65,7 @@ function siteorigin_plugin_activation_do_plugin_install(){
 		require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php'; // Need for upgrade classes
 
 		/** Prep variables for Plugin_Installer_Skin class */
-		$title = sprintf( __('Installing %s', 'siteorigin'), $plugin['name'] );
+		$title = sprintf( __('Installing %s', 'origami'), $plugin['name'] );
 		$url   = add_query_arg( array( 'action' => 'install-plugin', 'plugin' => $plugin['slug'] ), 'update.php' );
 		if ( isset( $_GET['from'] ) )
 			$url .= add_query_arg( 'from', urlencode( stripslashes( $_GET['from'] ) ), $url );

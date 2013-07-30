@@ -15,8 +15,8 @@ function siteorigin_panels_admin_menu(){
 	if ( $panels_support === false || empty($panels_support[0]['home-page']) ) return;
 	
 	add_theme_page(
-		__('Custom Home Page', 'siteorigin'),
-		__('Home Page', 'siteorigin'),
+		__('Custom Home Page', 'origami'),
+		__('Home Page', 'origami'),
 		'edit_theme_options',
 		'so_panels_home_page',
 		'siteorigin_panels_render_admin_home_page'
@@ -28,7 +28,7 @@ add_action('admin_menu', 'siteorigin_panels_admin_menu');
  * Render the page used to build the custom home page.
  */
 function siteorigin_panels_render_admin_home_page(){
-	add_meta_box( 'so-panels-panels', __( 'Page Builder', 'siteorigin' ), 'siteorigin_panels_metabox_render', 'appearance_page_so_panels_home_page', 'advanced', 'high', array( 'panels' ) );
+	add_meta_box( 'so-panels-panels', __( 'Page Builder', 'origami' ), 'siteorigin_panels_metabox_render', 'appearance_page_so_panels_home_page', 'advanced', 'high', array( 'panels' ) );
 	get_template_part('extras/panels/tpl/admin', 'home-page');
 }
 
@@ -38,7 +38,7 @@ function siteorigin_panels_render_admin_home_page(){
 function siteorigin_panels_metaboxes() {
 	if ( get_theme_support( 'siteorigin-panels' ) === false ) return;
 	
-	add_meta_box( 'so-panels-panels', __( 'Page Builder', 'siteorigin' ), 'siteorigin_panels_metabox_render', 'page', 'advanced', 'high', array( 'panels' ) );
+	add_meta_box( 'so-panels-panels', __( 'Page Builder', 'origami' ), 'siteorigin_panels_metabox_render', 'page', 'advanced', 'high', array( 'panels' ) );
 }
 
 add_action( 'add_meta_boxes', 'siteorigin_panels_metaboxes' );
@@ -125,7 +125,7 @@ function siteorigin_panels_metabox_render( $post, $args ) {
 			'siteorigin_panels_premium_settings_metabox',
 			array(),
 			array(
-				'description' => __( 'Advanced functionality like the ability to create post type and page templates', 'siteorigin' )
+				'description' => __( 'Advanced functionality like the ability to create post type and page templates', 'origami' )
 			)
 		);
 	}
@@ -167,18 +167,18 @@ function siteorigin_panels_admin_enqueue_scripts($prefix) {
 			'previewUrl' => wp_nonce_url(add_query_arg('siteorigin_panels_preview', 'true', get_home_url()), 'siteorigin-panels-preview'),
 			'i10n' => array(
 				'buttons' => array(
-					'insert' => __( 'Insert', 'siteorigin' ),
-					'cancel' => __( 'cancel', 'siteorigin' ),
-					'delete' => __( 'Delete', 'siteorigin' ),
-					'done' => __( 'Done', 'siteorigin' ),
-					'undo' => __( 'Undo', 'siteorigin' ),
-					'add' => __( 'Add', 'siteorigin' ),
+					'insert' => __( 'Insert', 'origami' ),
+					'cancel' => __( 'cancel', 'origami' ),
+					'delete' => __( 'Delete', 'origami' ),
+					'done' => __( 'Done', 'origami' ),
+					'undo' => __( 'Undo', 'origami' ),
+					'add' => __( 'Add', 'origami' ),
 				),
 				'messages' => array(
-					'deleteColumns' => __( 'Columns deleted', 'siteorigin' ),
-					'deleteWidget' => __( 'Widget deleted', 'siteorigin' ),
-					'confirmLayout' => __( 'Are you sure you want to load this layout? It will overwrite your current page.', 'siteorigin' ),
-					'editWidget' => __('Edit %s Widget', 'siteorigin')
+					'deleteColumns' => __( 'Columns deleted', 'origami' ),
+					'deleteWidget' => __( 'Widget deleted', 'origami' ),
+					'confirmLayout' => __( 'Are you sure you want to load this layout? It will overwrite your current page.', 'origami' ),
+					'editWidget' => __('Edit %s Widget', 'origami')
 				),
 			),
 		) );
@@ -259,7 +259,7 @@ function siteorigin_panels_add_help_tab($prefix) {
 	) {
 		$screen->add_help_tab( array(
 			'id' => 'panels-help-tab', //unique id for the tab
-			'title' => __( 'Page Builder', 'siteorigin' ), //unique visible title for the tab
+			'title' => __( 'Page Builder', 'origami' ), //unique visible title for the tab
 			'callback' => 'siteorigin_panels_add_help_tab_content'
 		) );
 	}
@@ -559,7 +559,7 @@ function siteorigin_panels_admin_bar_menu($admin_bar){
 		
 		$admin_bar->add_node(array(
 			'id' => 'edit-home-page',
-			'title' => __('Edit Home Page', 'siteorigin'),
+			'title' => __('Edit Home Page', 'origami'),
 			'href' => admin_url('themes.php?page=so_panels_home_page')
 		));
 	}

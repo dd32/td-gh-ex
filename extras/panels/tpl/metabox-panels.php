@@ -41,10 +41,10 @@ $layouts = apply_filters('siteorigin_panels_prebuilt_layouts', array());
 			<?php
 			$install_url = siteorigin_plugin_activation_install_url(
 				'siteorigin-panels',
-				__('Page Builder', 'siteorigin'),
+				__('Page Builder', 'origami'),
 				'downloads.wordpress.org/plugin/siteorigin-panels.zip'
 			);
-			printf(__('Please <a href="%s">update</a> to the latest version of Page Builder.', 'siteorigin'), $install_url);
+			printf(__('Please <a href="%s">update</a> to the latest version of Page Builder.', 'origami'), $install_url);
 			?>
 		</p>
 	</div>
@@ -53,17 +53,17 @@ $layouts = apply_filters('siteorigin_panels_prebuilt_layouts', array());
 	</div>
 
 	<div id="add-to-panels">
-		<button class="panels-add tooltip" data-tooltip="<?php esc_attr_e('Add Widget','siteorigin') ?>"><?php _e('Add Widget', 'siteorigin') ?></button>
-		<button class="grid-add tooltip" data-tooltip="<?php esc_attr_e('Add Columns','siteorigin') ?>"><?php _e('Add Columns', 'siteorigin') ?></button>
+		<button class="panels-add tooltip" data-tooltip="<?php esc_attr_e('Add Widget','origami') ?>"><?php _e('Add Widget', 'origami') ?></button>
+		<button class="grid-add tooltip" data-tooltip="<?php esc_attr_e('Add Columns','origami') ?>"><?php _e('Add Columns', 'origami') ?></button>
 		<?php if(!empty($layouts)) : ?>
-			<button class="prebuilt-set tooltip" data-tooltip="<?php esc_attr_e('Prebuilt Layouts','siteorigin') ?>"><?php _e('Prebuilt Layouts', 'siteorigin') ?></button>
+			<button class="prebuilt-set tooltip" data-tooltip="<?php esc_attr_e('Prebuilt Layouts','origami') ?>"><?php _e('Prebuilt Layouts', 'origami') ?></button>
 		<?php endif; ?>
 		<div class="clear"></div>
 	</div>
 
 	<!-- The dialogs -->
 
-	<div id="panels-dialog" data-title="<?php esc_attr_e('Add New Widget','siteorigin') ?>" class="panels-admin-dialog">
+	<div id="panels-dialog" data-title="<?php esc_attr_e('Add New Widget','origami') ?>" class="panels-admin-dialog">
 		<div id="panels-dialog-inner">
 			<div class="panels-text-filter">
 				<input type="search" class="widefat" placeholder="Filter" id="panels-text-filter-input" />
@@ -93,27 +93,27 @@ $layouts = apply_filters('siteorigin_panels_prebuilt_layouts', array());
 			<div id="siteorigin-widgets-link-wrapper">
 				<?php $siteorigin_url = 'http://siteorigin.com/product-tag/widget/'; ?>
 				<a href="<?php echo esc_url($siteorigin_url) ?>" data-original="<?php echo esc_url($siteorigin_url) ?>" data-search="<?php echo add_query_arg('search', '{search}', $siteorigin_url) ?>" id="siteorigin-widgets-link" target="_blank">
-					<?php _e('Find More Page Builder Widgets', 'siteorigin') ?>
+					<?php _e('Find More Page Builder Widgets', 'origami') ?>
 				</a>
 			</div>
 		</div>
 
 	</div>
 
-	<div id="grid-add-dialog" data-title="<?php esc_attr_e('Add Columns','siteorigin') ?>" class="panels-admin-dialog">
-		<p><label><strong><?php _e('Columns', 'siteorigin') ?></strong></label></p>
+	<div id="grid-add-dialog" data-title="<?php esc_attr_e('Add Columns','origami') ?>" class="panels-admin-dialog">
+		<p><label><strong><?php _e('Columns', 'origami') ?></strong></label></p>
 		<p><input type="text" id="grid-add-dialog-input" name="column_count" class="small-text" value="3" /></p>
 	</div>
 
 	<?php if(!empty($layouts)) : ?>
-		<div id="grid-prebuilt-dialog" data-title="<?php esc_attr_e('Insert Prebuilt Page Layout','siteorigin') ?>" class="panels-admin-dialog">
-			<p><label><strong><?php _e('Page Layout', 'siteorigin') ?></strong></label></p>
+		<div id="grid-prebuilt-dialog" data-title="<?php esc_attr_e('Insert Prebuilt Page Layout','origami') ?>" class="panels-admin-dialog">
+			<p><label><strong><?php _e('Page Layout', 'origami') ?></strong></label></p>
 			<p>
-				<select type="text" id="grid-prebuilt-input" name="prebuilt_layout" style="width:580px;" placeholder="<?php esc_attr_e('Select Layout', 'siteorigin') ?>" >
+				<select type="text" id="grid-prebuilt-input" name="prebuilt_layout" style="width:580px;" placeholder="<?php esc_attr_e('Select Layout', 'origami') ?>" >
 					<option class="empty" <?php selected(true) ?> value=""></option>
 					<?php foreach($layouts as $id => $data) : ?>
 						<option id="panel-prebuilt-<?php echo esc_attr($id) ?>" data-layout-id="<?php echo esc_attr($id) ?>" class="prebuilt-layout">
-							<?php echo isset($data['name']) ? $data['name'] : __('Untitled Layout', 'siteorigin') ?>
+							<?php echo isset($data['name']) ? $data['name'] : __('Untitled Layout', 'origami') ?>
 						</option>
 					<?php endforeach; ?>
 				</select>
