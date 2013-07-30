@@ -4,6 +4,24 @@ Changelog for Iconic One WordPress Responsive Theme | Visit http://themonic.com/
 
 -------------- JULY 2013 ----------------
 
+
+07/30/13  - Iconic One Version 1.2
+
+
+* Header width now Auto - Big Logos won't break the header.
+
+* Removed left-right border from sidebar elements.
+
+* Better looking sidebar search bar.
+
+* Sidebar will now show nice looking search bar, recent posts, categories and tag cloud if no widgets are defined.
+
+* Added live customizer link in the Appearance menu for ease of access.
+
+* Minor Options page style change.
+
+
+
 07/28/13  - Version 1.1.2.1
 
 * The Responsive Menu no longer requires setup, Iconic One menu responsiveness will now work automagically.

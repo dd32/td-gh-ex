@@ -2,8 +2,7 @@
 /**
  * Template Name: Full-width Page Template, No Sidebar
  *
- * Description: Themonic Blog loves the no-sidebar look as much as
- * you do. Use this page template to remove the sidebar from any page.
+ * Description: Use this page template to remove the sidebar from any page.
  *
  * Tip: to remove the sidebar from all posts and pages simply remove
  * any active widgets from the Main Sidebar area, and the sidebar will

@@ -4,7 +4,7 @@ Theme URI: http://themonic.com/iconic-one/
 Author: Themonic
 Author URI: http://themonic.com
 Description: Iconic One is a premium quality theme with pixel perfect typography and responsiveness and is built for speed with pagespeed score of 95+, Iconic One implements proper SEO so that your content will rank high and is compatible with AIOSEO and Yoast SEO, It makes proper use of Live customizer that allows you to setup the theme in minutes, you can easily upload the logo, modify the background color, footer text, social media urls without touching any line of code. It utilizes latest HTML 5, CSS3 and wordpress native functions for creating the awesomeness that looks good on every browser. Support is free, access the support here http://themonic.com/support/, Report issues and feedback at http://themonic.com/feedback/.
-Version: 1.1.2.1
+Version: 1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: Blue, White, Black, one-column, two-columns, right-sidebar, custom-background, flexible-width, custom-menu, full-width-template, post-formats, rtl-language-support, theme-options, custom-colors
@@ -207,7 +207,7 @@ textarea {
 	font-family: inherit;
 	margin-right:0%;
 	margin-bottom: 7px;
-	padding: 4px 10px;
+	padding: 8px 10px;
 }
 button,
 input {
@@ -222,6 +222,7 @@ textarea {
 #searchsubmit {
     background: #00A1E0;
     color: #FFFFFF;
+	margin-left: -4px;
 }
 /* Reset non-text input types */
 input[type="checkbox"],
@@ -471,7 +472,7 @@ a:hover {
 	border-left: 1px solid #E9E9E9;
     border-right: 1px solid #E9E9E9;
     border-top: 1px solid #E9E9E9;
-    height: 160px;
+    height: auto;
     margin-bottom:24px;
     text-align: left;
 	}
@@ -564,7 +565,7 @@ section[role="banner"] {
 }
 
 .widget.widget_search {
-    margin-bottom: 9px;
+    margin-bottom: 14px;
 }
 
 .widget-area .widget li,
@@ -577,8 +578,6 @@ section[role="banner"] {
 .widget-area .widget p {
 	margin-bottom: 12px;
 	padding: 10px;
-	border-left: 1px solid #E1E1E1;
-    border-right: 1px solid #E1E1E1;
 }
 	
 .widget-area .textwidget ul {
@@ -597,7 +596,7 @@ section[role="banner"] {
 	color: #4F5254;
 }
 .widget-area #s {
-	width: 66.66666666666%; /* define a width to avoid dropping a wider submit button */
+	width: 67.9999%; /* define a width to avoid dropping a wider submit button */
 }
 
 /* Footer box-shadow: 4px 1px 10px 1px #F1F1F1;*/
@@ -1347,6 +1346,7 @@ select.selectnav {margin:4px; padding:10px;} /* centers select */
 .wrapper {
     border: none;
 	}
+
 }
 
 @media screen and (max-width: 620px) {
@@ -1561,6 +1561,7 @@ select.selectnav {margin:4px; padding:10px;} /* centers select */
 		margin-bottom: 0;
 		box-shadow: none;
 	}
+	
 }
 /* iPad fix*/
 @media screen and (max-width: 768px) {

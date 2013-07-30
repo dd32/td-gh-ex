@@ -143,7 +143,7 @@ function themonic_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Main Sidebar', 'themonic' ),
 		'id' => 'themonic-sidebar',
-		'description' => __( 'Appears on posts and pages except the optional Front Page template, which has its own widgets', 'themonic' ),
+		'description' => __( 'This is a Sitewide sidebar which appears on posts and pages', 'themonic' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<p class="widget-title">',
@@ -296,7 +296,7 @@ endif;
 function themonic_body_class( $classes ) {
 	$background_color = get_background_color();
 
-	if ( ! is_active_sidebar( 'themonic-sidebar' ) || is_page_template( 'page-templates/full-width.php' ) )
+	if ( is_page_template( 'page-templates/full-width.php' ) )
 		$classes[] = 'full-width';
 
 	if ( empty( $background_color ) )

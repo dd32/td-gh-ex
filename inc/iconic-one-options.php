@@ -1,15 +1,30 @@
 <?php
+/** 
+ * Adding options page under Appearance menu 
+ */
+function iconic_one_options_theme_menu() {  
+  
+add_theme_page( 'Iconic One Theme', 'Iconic One Theme', 'edit_theme_options', 'iconic_one_theme_options', 'iconic_one_options_display');  
+  
+} 
+add_action( 'admin_menu', 'iconic_one_options_theme_menu' ); 
 
-function thoptions_theme_menu() {  
-  
-add_theme_page( 'Iconic One Theme', 'Iconic One Theme', 'edit_theme_options', 'iconic_one_theme_options', 'thoptions_theme_display');  
-  
-} // end thoptions_theme_menu  
-add_action( 'admin_menu', 'thoptions_theme_menu' ); 
+/** 
+ * Adding customizer link under Appearance menu
+ */ 
+	function iconic_one_customize_button() {
+	    $theme_page = add_theme_page(
+	        __( 'Iconic One' , 'themonic' ),
+	        __( 'Customize Iconic One' , 'themonic' ),  
+	        'edit_theme_options' ,       
+	        'customize.php'            
+	    );
+	} add_action('admin_menu', 'iconic_one_customize_button');
+
 /** 
  * Show Iconic One Options 
  */ 
-function thoptions_theme_display() { 
+function iconic_one_options_display() { 
 ?> 
     <!-- Create a header in the default WordPress 'wrap' container --> 
     <div class="wrap"style='border:1px solid #e1e1e1; padding:20px;min-width:750px; max-width:960px;'> 
@@ -25,7 +40,7 @@ function thoptions_theme_display() {
 					<div class="hotitle" style='background: #fff; padding:5px; margin-top:10px;'><h1>Thank You for Choosing Iconic One</h1></div>
 				
 			</div>
-			<div style="float:right;width:50%;">
+			<div style="float:right;width:41%;">
 				<img style='max-width:97%;' src="http://demo.themonic.com/io/wp-content/uploads/2013/06/superspeed2.jpeg" alt="Pagespeed">
 			</div>
 	</div>
@@ -57,16 +72,19 @@ After payment, <a href="mailto:support@themonic.com?Subject=Iconic One Customiza
 the transaction ID.<br .../>
 </div>
 <h2>Getting Started</h2> 
-<a style="text-decoration:none;" href="http://demo.themonic.com/io/">Official Demo</a> for reference.
+<h3><a style="text-decoration:none;" href="http://demo.themonic.com/io/">Official Demo</a> for reference.</h3>
 <h4>Responsive Menu - Important! - Update: 28th July 2013 - It will now work automagically.</h4> 
 This is the first step: Configure the Main Navigation menu by
 going to Appearance -> Menus. Create a custom menu by the name of 'top', or simply rename your existing menu to 'top'.
 Make sure that under Primary Menu 'top' is selected, Navigation Menu responsiveness won't work otherwise.
 <h4>Using Live Customizer - for logo upload, colors etc.</h4> 
-Simply go through the Live Customizer (http://yourdomain.com/wp-admin/customize.php) to change the logo image, social bookmarks, background color, footer copyright etc., 
+<h2>Starting from version 1.2 you can access the live customizer from the <b>Appearance menu >> Customize Iconic One.</b></h2>
+Alternatively you can go through the Live Customizer ( http://yourdomain.com/wp-admin/customize.php )
+to upload the logo image, set the social bookmarks and footer copyright texts, background color etc., 
 you don't have to touch any code or login to ftp for the most needed customizations. Sidebar is Widget ready for easy configuration. 
 <h4>Logo Size</h4>
-Logo of 187 x 54 pixel dimensions is used in the demo. You can easily try uploading logos of different sizes via live customizer.
+Logo of 187 x 54 pixel dimensions is used in the demo. 
+You can easily try uploading logos of different sizes via live customizer. Version 1.2 now comes with support for bigger logos. Refer to changelog.txt in the home directory.
 <h3>Safe Customization</h3>
 Iconic One is supplied with custom.css file, simply add your css in this file, you can access this from 
 under Appearance - > Editor -> Custom.css and it will just work, when upgrading simply 
@@ -99,11 +117,11 @@ This is just the beginning.<br .../><br .../>
 - Shashank Singh
 <br .../>Iconic One Developer<br .../><br .../>
 <br .../>
-<a href="http://themonic.com">
+<a href="http://themonic.com/iconic-one-pro/">
 <img style='margin-left:0px;' src="http://demo.themonic.com/io/wp-content/uploads/2013/06/io.jpg" alt=""></a>
 
 
 
 </div><!-- /.wrap --> 
 <?php 
-} // end thoptions_theme_display 
+} // end iconic_one_options_display 
