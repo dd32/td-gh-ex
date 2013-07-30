@@ -4,6 +4,12 @@ Changelog for Iconic One WordPress Responsive Theme | Visit http://themonic.com/
 
 -------------- JULY 2013 ----------------
 
+07/30/13  - Iconic One Version 1.2.1
+
+* Urgent update due to extra </div> in the footer from the last update 1.2, it broke the footer completely.
+
+* Replaced Category with pages in sidebar if no widgets are defined. 
+
 
 07/30/13  - Iconic One Version 1.2
 

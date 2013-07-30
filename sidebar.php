@@ -20,16 +20,14 @@
 				<p class="widget-title"><?php _e( 'Recent Posts', 'themonic' ); ?></p>
 				<ul><?php wp_get_archives('type=postbypost&limit=5'); ?></ul>
 			</div>
-			<div class="widget widget_categories">
-			<p class="widget-title"><?php _e( 'Categories', 'themonic' ); ?></p>
-          <ul><?php wp_list_categories('title_li='); ?></ul>
+			<div class="widget widget_pages">
+			<p class="widget-title"><?php _e( 'Pages', 'themonic' ); ?></p>
+          <ul><?php wp_list_pages('title_li='); ?></ul>
       </div>
 	  
 	  <div class="widget widget_tag_cloud">
        <p class="widget-title"><?php _e( 'Tag Cloud', 'themonic' ); ?></p>
         <?php wp_tag_cloud('smallest=10&largest=20&number=30&unit=px&format=flat&orderby=name'); ?>
-      </div>
-    </div>
-	
+			</div>
 		</div><!-- #secondary -->
 	<?php endif; ?>
