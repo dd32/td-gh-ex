@@ -713,6 +713,15 @@ if ( ! function_exists( 'attorney_content' ) ) :
 	}
 endif;
 
+function attorney_post_title($title) {
+	if ($title == '') {
+		return __('Untitled', 'attorney');
+	} else {
+		return $title;
+	}
+}
+add_filter('the_title', 'attorney_post_title');
+
 if ( ! function_exists( 'attorney_w3c_valid_rel' ) ) :
 	function attorney_w3c_valid_rel( $text ) {
 		$text = str_replace('rel="category tag"', 'rel="tag"', $text); return $text; 

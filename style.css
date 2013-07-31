@@ -4,7 +4,7 @@ Theme URI: http://wpattorney.org/
 Author: WPThemes NZ
 Author URI: http://wpthemes.co.nz/
 Description: Attorney is an elegant and responsive theme designed with Attorneys and law firms in mind, though anyone who wants a theme with a corporate look and feel might like it too. It comes with a couple of alternative home page templates, one for static content and one with a latest posts slider. You can also add your own logo, adjust the slider behaviour, base theme colors and control the social media links from the theme customization screen.
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-menu, sticky-post, microformats, rtl-language-support, translation-ready, full-width-template, post-formats
@@ -284,7 +284,7 @@ button {
 }
 
 /* added from 320&Up Project */
-div, 
+
 input, 
 textarea  { 
 	-webkit-box-sizing : border-box; 
@@ -437,6 +437,10 @@ body {
 	max-width: 1044px; /* remove or edit to adjust width */
 	box-shadow: 0 0 5px #dedede;
 	-webkit-font-smoothing: antialiased;
+	-webkit-box-sizing : border-box; 
+	-moz-box-sizing : border-box; 
+	-o-box-sizing : border-box; 
+	box-sizing : border-box; 
 }
 	
 	/* layout options ( all have margins right & left of 1%) */
@@ -714,6 +718,12 @@ header[role=banner] {
 	margin-left: 10px;
 	margin-right: 10px;
 }
+	header[role=banner] div {
+		-webkit-box-sizing : border-box; 
+		-moz-box-sizing : border-box; 
+		-o-box-sizing : border-box; 
+		box-sizing : border-box; 		
+	}
 
 	#site-heading { 
 		padding-top: 20px; 
@@ -853,7 +863,7 @@ div.menu {
 	position: relative; 
 }
 	
-	div.menu ul { 
+	div.menu > ul { 
 		margin-right: 190px;
 	}
 		div.menu ul li { 
@@ -871,28 +881,27 @@ div.menu {
 		div.menu ul li ul.sub-menu, 
 		div.menu ul li ul.children { 
 			position: absolute; 
-			left: -9999rem; 
 			z-index: 9999; 
 			width: 200px; 
-			word-wrap: break-word; 
+			word-wrap: break-word;
+			display: none;
 		}
 			div.menu ul li ul li a {}
 				div.menu ul li ul li a:hover {}
 			div.menu ul li ul li:last-child a {}
-			div.menu ul li:hover ul { 
-				left: auto; 
+			div.menu ul li:hover > ul { 
+				display: inline;
 			}
 				div.menu ul li ul li ul.sub-menu, 
 				div.menu ul li ul li ul.children { 
-					left: -9999rem; 
-					position: absolute; 
-					margin-left: 200px; 
+					right: -200px; 
+					position: absolute;  
 					top: auto; 
-					margin-top: -30px; 
+					display: none;
 				}
-					div.menu ul li ul li:hover ul.sub-menu, 
-					div.menu ul li ul li:hover ul.children { 
-						left: auto; 
+					div.menu ul li ul li:hover > ul.sub-menu, 
+					div.menu ul li ul li:hover > ul.children { 
+						display: inline;
 					}
 					
 		.widget_nav_menu ul li { 
@@ -935,7 +944,7 @@ nav[role=navigation] {
 	}
 	
 	nav[role=navigation] ul.menu { 
-		display: block;
+		
 	}
 		nav[role=navigation] .menu ul li {}
 			nav[role=navigation] .menu ul li a, 
@@ -1009,6 +1018,14 @@ nav[role=navigation] {
 			font-size: 0.75rem;
 			font-family: Arial, Helvetica, sans-serif;
 			font-weight: 400;
+			display: block;
+			min-height: 38px;
+			font-size: 0.75rem;
+			padding: 7px 20px;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			-o-box-sizing: border-box;
+			box-sizing: border-box;
 		}
 		
 		nav[role=navigation] .menu ul li ul.sub-menu li:first-child, 
@@ -1032,7 +1049,7 @@ nav[role=navigation] {
 			nav[role=navigation] .menu ul li:hover ul {}
 				nav[role=navigation] .menu ul li ul li ul.sub-menu, 
 				nav[role=navigation] .menu ul li ul li ul.children {
-					margin-top: -44px;
+					margin-top: -38px;
 				}
 					nav[role=navigation] .menu ul li ul li:hover ul.sub-menu,
 					nav[role=navigation] .menu ul li ul li:hover ul.children {
@@ -1048,6 +1065,13 @@ POSTS & CONTENT STYLES
 #content {
 	background: #fff;
 	padding-bottom: 1px;
+}
+
+#content div {
+	-webkit-box-sizing : border-box; 
+	-moz-box-sizing : border-box; 
+	-o-box-sizing : border-box; 
+	box-sizing : border-box; 	
 }
 
 	#main { 
@@ -1537,9 +1561,7 @@ POST FORMAT STYLES
 
 
 /* Image Posts */
-.format-image .entry-header {
-	display: none;
-}
+
 .single .format-image .entry-header {
 	display: block;
 }
@@ -2300,7 +2322,8 @@ IMAGE STYLES
 .post_content img { margin-top: .75rem }
 
 .left img, 
-img.left, 
+img.left,
+.alignleft,
 img.alignleft,
 img[align=left] {
 	margin-right: 1.5rem;
@@ -2311,7 +2334,8 @@ img[align=left] {
 }
 
 .right img, 
-img.right, 
+img.right,
+.alignright, 
 img.alignright,
 img[align=right] {
 	margin-left: 1.5rem;
@@ -2427,7 +2451,12 @@ footer[role=contentinfo] {
 	padding: 1.2rem 0;
 }
 
-			
+footer[role=contentinfo] div {
+	-webkit-box-sizing : border-box; 
+	-moz-box-sizing : border-box; 
+	-o-box-sizing : border-box; 
+	box-sizing : border-box; 
+}
 	.attribution {
 		float: none;
 		text-align: center;
@@ -2535,7 +2564,7 @@ jQuery SLIDER STYLES
 		line-height: 1.5em;
 		vertical-align: text-bottom;
 	}
-		slide-content.alt-static-show {
+		.slide-content.alt-static-show {
 				display: none;
 		}
 		
@@ -2663,55 +2692,78 @@ URL: http://stuffandnonsense.co.uk/projects/320andup/
 		margin-right: 0;
 	}
 	
-	#access, div.menu { 
+	#access, .menu.nav-mobile { 
 		position: relative; 
 	}
 	
-	div.menu ul li { 
+	.menu.nav-mobile ul li { 
 		list-style-type: none; 
 		float: none; 
 	}
 	
-	nav[role=navigation] ul.menu, div.menu ul {
+	nav[role=navigation] div.menu > ul {
 		background: #f5f5f5;
-		position: absolute;
-		top: 41px;
-		z-index: 9999;
-		display: none;
 		box-shadow: 1px 1px 1px #000;
-		min-width: 190px;
+		position: absolute;
+		z-index: 9999;
+		width: 220px;
+		word-wrap: break-word;
+		display: none;
+		overflow: visible;
 	}
+		nav[role=navigation] div.menu > ul > li {
+			position: relative;
+		}
 	
-	nav[role=navigation] .menu #menu-icon { 
+	nav[role=navigation] .menu.nav-mobile #menu-icon { 
 		display: block;
 		width: 80px; 
 	}
 	
-	.menu ul li:hover ul { 
-		left: -9999rem; 
-	}
-
-	
-	nav[role=navigation] .menu ul li {
-		border-bottom: 1px solid #eaeaea;
+	nav[role=navigation] .menu.nav-mobile ul li,
+	nav[role=navigation] .menu.nav-mobile ul.sub-menu li, 
+	nav[role=navigation] .menu.nav-mobile ul.children li {
+		border-bottom: 1px solid #e3e3e3;
+		min-width: 100%;
 	}
 	
-	nav[role=navigation] .menu ul li a  { 
-		color: #555;
+	nav[role=navigation] .menu.nav-mobile ul li a  { 
+		display: block;
+		min-height: 38px;
+		color: #555 !important;
 		background: none;
 		border-radius: 0;
 		box-shadow: none;
+		padding: 7px 20px;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-o-box-sizing: border-box;
+		box-sizing: border-box;
 	}
 	
-	nav[role=navigation] .menu ul li a:hover,	
-	nav[role=navigation] .menu ul li.current-menu-itrem a, 
-	.nav ul li.current_page_itrem a, 
-	nav[role=navigation] .menu ul li.current_page_itrem a {
-		background: #f2f2f2;
+	nav[role=navigation] .menu.nav-mobile ul li.current-menu-item a, 
+	nav[role=navigation] .menu.nav-mobile ul li.current_page_item a {
+		background: #f5f5f5;
 	}
 	
-	nav[role=navigation] ul.sub-menu li, 
-	nav[role=navigation] ul.children li {
+	nav[role=navigation] .menu.nav-mobile ul li a:hover,
+	nav[role=navigation] .menu.nav-mobile ul li.current-menu-item a:hover, 
+	nav[role=navigation] .menu.nav-mobile ul li.current_page_item a:hover {
+		background: #eaeaea;
+	}
+
+	
+	nav[role=navigation] .menu.nav-mobile > ul li ul.sub-menu, 
+	nav[role=navigation] .menu.nav-mobile > ul li ul.children {
+		z-index: 9999; 
+		right: -200px;
+		top: auto;
+		margin-top: -38px;
+		width: 200px;
+	}
+	
+	.menu.nav-mobile ul li ul li ul li:hover > ul.sub-menu, 
+	.menu.nav-mobile ul li ul li ul li:hover > ul.children { 
 		display: none;
 	}
 	
@@ -2819,11 +2871,11 @@ URL: http://stuffandnonsense.co.uk/projects/320andup/
 			overflow: hidden;
 
 		}
-			slide-content.alt-static-hide {
+			.slide-content.alt-static-hide {
 				display: none;
 			}
 			
-			slide-content.alt-static-show {
+			.slide-content.alt-static-show {
 				display: block;
 			}
 			
@@ -2849,8 +2901,8 @@ URL: http://stuffandnonsense.co.uk/projects/320andup/
 }
 
 @media only screen and (min-width: 824px) {
-	nav[role=navigation] ul.menu, 
-	div.menu ul { 
+	nav[role=navigation] > ul.menu, 
+	div.menu > ul { 
 		display:block !important;
 	}
 }
@@ -2932,6 +2984,11 @@ URL: http://stuffandnonsense.co.uk/projects/320andup/
 
 @media only screen and (max-width: 480px) {
 	
+	.menu.nav-mobile ul li ul li:hover > ul.sub-menu, 
+	.menu.nav-mobile ul li ul li:hover > ul.children { 
+		display: none;
+	}
+	
 	.commentlist li.comment article[id*=comment-] video, .post_content video, .full-width-content .post_content video, 
 	.commentlist li.comment article[id*=comment-] object, .post_content object, .full-width-content .post_content object,
 	.commentlist li.comment article[id*=comment-] embed, .post_content embed, .full-width-content .post_content embed,
@@ -2962,10 +3019,14 @@ URL: http://stuffandnonsense.co.uk/projects/320andup/
 		font-size: 11px;
 	}
 
-
 }
 
 @media only screen and (max-width: 320px) {
+	
+	.menu.nav-mobile ul li:hover > ul.sub-menu, 
+	.menu.nav-mobile ul li:hover > ul.children { 
+		display: none;
+	}
 	
 	.commentlist li.comment article[id*=comment-] video, .post_content video, .full-width-content .post_content video, 
 	.commentlist li.comment article[id*=comment-] object, .post_content object, .full-width-content .post_content object,

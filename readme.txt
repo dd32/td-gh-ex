@@ -55,6 +55,11 @@ This theme is bundled with Cycle2
 =================================
 CHANGELOG
 =================================
+Version 1.0.4
+ * Adjusted the opacity of the background for the text/copy in the slider
+ * Fixed the responsive dropdown not showing the second, third (and so on) level  submenu items 
+ * Fixed the bug related to the content filter on alt_homepage template which sometimes breaks the widget links
+ 
 Version 1.0.3
  * Added Yelp social media icon
  * Removed the rss feed title filter in functions.php

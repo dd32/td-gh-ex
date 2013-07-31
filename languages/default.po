@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: wpthemes.co.nz - framework\n"
-"POT-Creation-Date: 2013-07-25 16:19+0800\n"
-"PO-Revision-Date: 2013-07-25 16:19+0800\n"
+"POT-Creation-Date: 2013-07-31 12:18+0800\n"
+"PO-Revision-Date: 2013-07-31 12:22+0800\n"
 "Last-Translator: ed cardinal <lizardking67@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.5.7\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: C:\\xampp\\htdocs\\wordpress\\wp-content\\themes"
@@ -465,6 +465,10 @@ msgstr ""
 #: C:\xampp\htdocs\wordpress\wp-content\themes\attorney/functions.php:680
 #, php-format
 msgid "<a href=\"%1$s\">Last &raquo;</a>"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\attorney/functions.php:718
+msgid "Untitled"
 msgstr ""
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\attorney/header.php:32

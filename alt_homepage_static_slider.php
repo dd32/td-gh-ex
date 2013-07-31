@@ -59,8 +59,9 @@ get_header(); ?>
  			endwhile; ?>
             
 			<?php $content = attorney_content(-1); ?>
-			<?php $content = preg_replace("/<img[^>]+./", "", $content); ?>
-           
+			<?php $content = preg_replace(array('{<a[^>]*><img}','{/></a>}'), array('<img','/>'), $content); ?>
+            <?php $content = preg_replace('/<img[^>]+./', '', $content); ?>
+            <?php $content = preg_replace('#<p>\s*+(<br\s*/*>)?\s*</p>#i', '', $content); ?>
             <div class="slide-content alt-static-hide">
               <div class="slide-copy">
                 <h2 class="slide-title"><?php the_title(); ?></h2>
