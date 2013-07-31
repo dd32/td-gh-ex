@@ -4,7 +4,7 @@ Theme URI: http://athemes.com/theme/hiero
 Author: aThemes
 Author URI: http://athemes.com
 Description:  Hiero is an awesome magazine theme for your WordPress site feature bold colors and details to the content. Responsive layout, post thumbnails support, threaded comments and more.
-Version: 1.0
+Version: 1.1
 License: GNU General Public License v3.0
 License URI: license.txt
 Tags: black, white, red, two-columns, fixed-width, threaded-comments, full-width-template, custom-menu
@@ -156,6 +156,37 @@ input[type="reset"]:hover,
 input[type="submit"]:hover {
 	background: #ff2828;
 	border-color: #ff2828;
+	}
+
+/* Tables */
+table {
+	width: 100%;
+	margin-bottom: 20px;
+	}
+table th,
+table td {
+	padding: 8px;
+	line-height: 20px;
+	text-align: left;
+	vertical-align: top;
+	border-top: 1px solid #ddd;
+	}
+table th {
+	font-weight: bold;
+	}
+table thead th {
+	vertical-align: bottom;
+	}
+table caption + thead tr:first-child th,
+table caption + thead tr:first-child td,
+table colgroup + thead tr:first-child th,
+table colgroup + thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+	border-top: 0;
+	}
+table tbody + tbody {
+	border-top: 2px solid #ddd;
 	}
 
 /* Make sure embeds and iframes fit their containers */
@@ -824,7 +855,9 @@ body.search .page .entry-footer {
 	list-style: none;
 	}
 .widget ul ul {
-	margin: 6px 0 0 15px;
+	margin: 6px 0 -7px;
+	padding: 0 0 0 15px;
+	border-top: 1px solid #e6e6e6;
 	}
 .widget li {
 	padding: 6px 0;
@@ -1007,6 +1040,7 @@ body.search .page .entry-footer {
 .site-sidebar {
 	font-size: .9em;
 	}
+
 .site-sidebar .widget_search .search-form {
 	margin: 15px 0;
 	}
@@ -1017,6 +1051,13 @@ body.search .page .entry-footer {
 	}
 .site-sidebar .widget_search .search-submit {
 	font-size: 1.3em;
+	}
+
+.site-sidebar .widget_archive select,
+.site-sidebar .widget_categories select {
+	width: 100%;
+	height: 30px;
+	margin: 15px 0 0;
 	}
 
 /* SITE EXTRA

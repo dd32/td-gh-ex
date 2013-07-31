@@ -4,7 +4,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?>>
 	<header class="entry-header">
 		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
 		<span class="comments-link"> <?php comments_popup_link( __( '0', 'athemes' ), __( '1', 'athemes' ), __( '%', 'athemes' ) ); ?></span>
@@ -17,7 +17,7 @@
 		<!-- .entry-meta --></div>
 	<!-- .entry-header --></header>
 
-	<div class="entry-content">
+	<div class="clearfix entry-content">
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(

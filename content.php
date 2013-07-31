@@ -2,10 +2,9 @@
 /**
  * @package aThemes
  */
-$at_options = get_option('at_options');
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?>>
 	<header class="clearfix entry-header">
 		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
 		<span class="comments-link"> <?php comments_popup_link( __( '0', 'athemes' ), __( '1', 'athemes' ), __( '%', 'athemes' ) ); ?></span>
@@ -20,24 +19,21 @@ $at_options = get_option('at_options');
 		<?php endif; ?>
 	<!-- .entry-header --></header>
 
-	<?php if ( $at_options['posts_mode'] == 'posts_excerpt' ) : ?>
+	<?php if ( has_post_thumbnail() ) : ?>
 
-		<?php if ( has_post_thumbnail() ) : ?>
 		<div class="entry-thumbnail">
 			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
 				<?php the_post_thumbnail( 'thumb-featured' ); ?>
 			</a>
 		</div>
-		<?php endif; ?>
 
-		<?php $entry_class = ( has_post_thumbnail() ) ? 'summary' : 'content'; ?>
-		<div class="entry-<?php echo $entry_class; ?>">
+		<div class="entry-summary">
 			<?php echo wpautop( $post->post_excerpt ? $post->post_excerpt : athemes_limit_string(strip_tags($post->post_content), 200) ); ?>
-		<!-- .entry-<?php echo $entry_class; ?> --></div>
+		<!-- .entry-summary --></div>
 
 	<?php else : ?>
 
-		<div class="entry-content">
+		<div class="clearfix entry-content">
 			<?php the_content( __( 'Continue Reading <span class="meta-nav">&rarr;</span>', 'athemes' ) ); ?>
 			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'athemes' ), 'after' => '</div>' ) ); ?>
 		<!-- .entry-content --></div>
