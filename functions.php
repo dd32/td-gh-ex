@@ -175,23 +175,23 @@ function athemes_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'athemes_scripts' );
 
-define( 'ATHEMES_PATH', plugin_dir_path( __FILE__ ) );
+define('ATHEMES_PATH', get_template_directory() );
 /**
  * Custom functions that act independently of the theme templates.
  */
-require ATHEMES_PATH . 'inc/extras.php';
+require ATHEMES_PATH . '/inc/extras.php';
 
 /**
  * Custom template tags for this theme.
  */
-require ATHEMES_PATH . 'inc/template-tags.php';
+require ATHEMES_PATH . '/inc/template-tags.php';
 
 /**
  * Add social links on user profile page.
  */
-require ATHEMES_PATH . 'inc/user-profile.php';
+require ATHEMES_PATH . '/inc/user-profile.php';
 
 /**
  * Add custom widgets
  */
-require ATHEMES_PATH . 'inc/custom-widgets.php';
+require ATHEMES_PATH . '/inc/custom-widgets.php';
