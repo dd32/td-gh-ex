@@ -8,7 +8,7 @@
  */
 
 // Variable for theme version
-define ("MANTRA_VERSION","2.0.6");
+define ("MANTRA_VERSION","2.0.7");
 
 require_once(dirname(__FILE__) . "/admin/main.php"); // Load necessary admin files
 

@@ -125,7 +125,7 @@ global $mantra_defaults;
 	}
 
 	$input['mantra_favicon'] =  esc_url_raw($input['mantra_favicon']);
-	$input['mantra_headerupload'] =  esc_url_raw($input['mantra_headerupload']);
+	$input['mantra_logoupload'] =  esc_url_raw($input['mantra_logoupload']);
 	$input['mantra_headermargintop'] =  intval(wp_kses_data($input['mantra_headermargintop']));
 	$input['mantra_headermarginleft'] =  intval(wp_kses_data($input['mantra_headermarginleft']));
 

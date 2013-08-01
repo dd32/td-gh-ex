@@ -38,7 +38,7 @@
 
 			</div><!-- #branding -->
 
-			<nav id="access" role="navigation">
+			<nav id="access" class="jssafe" role="navigation">
 
 				<?php cryout_access_hook();?>
 

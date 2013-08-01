@@ -164,7 +164,8 @@ else 		jQuery('#slider-post-number').hide();
 	jQuery(function() {
 			jQuery( "#accordion" ).accordion({
 				header: 'h3',
-				autoHeight: false,
+				autoHeight: false, // for jQueryUI <1.10
+				heightStyle: "content", // required in jQueryUI 1.10
 				collapsible: true,
 				navigation: true,
 				active: false

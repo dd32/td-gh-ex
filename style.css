@@ -4,7 +4,7 @@
  * Description: Mantra is a do-it-yourself WordPress theme, featuring a pack of over 100 customization options and easy to use tweaks capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (1,2 or 3 columns), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 35 font-families plus all Google Fonts), text and header sizes, post metas, post excerpts, post formats, header and background images, custom menus, 27 social media links and icons, pins, bullets and much much more. With a fully responsive layout,a customizable showcase presentation page, animated slider, magazine and blog layouts, 8 widget areas, modern graphics and an easy and intuitive admin section, you can start creating your dream site right now.
  * Author: Cryout Creations
  * Author URI: http://www.cryoutcreations.eu
- * Version: 2.0.6
+ * Version: 2.0.7
  * License: GNU General Public License v2.0
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Tags: black, red, blue, white, silver, light, dark, one-column, two-columns, three-columns, right-sidebar, left-sidebar, flexible-width, fixed-width, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, front-page-post-form, full-width-template,  microformats, post-formats, rtl-language-support,  sticky-post, theme-options, threaded-comments, translation-ready
@@ -153,41 +153,10 @@ DESCRIPTION: Full width content with no sidebar; used for attachment pages
 
 /* =Fonts
 -------------------------------------------------------------- */
-body,
-input,
-textarea,
-.page-title span,
-.pingback a.url {
+body {
 	font-family:Segoe UI, Arial, sans-serif;
 }
-h3#comments-title,
-h3#reply-title,
-#access .menu,
-#access div.menu ul,
-#cancel-comment-reply-link,
-.form-allowed-tags,
-#site-info,
-#site-title,
-#wp-calendar,
-.comment-meta,
-.comment-body tr th,
-.comment-body thead th,
-.entry-content label,
-.entry-content tr th,
-.entry-content thead th,
-.entry-meta,
-.entry-title,
-.entry-utility,
-#respond label,
-.navigation,
-.page-title,
-.pingback p,
-.reply,
-.widget-title,
-.wp-caption-text,
-input[type=submit] {
-	font-family:Segoe UI, Arial, sans-serif;
-}
+
 pre {
 	font-family: "Courier 10 Pitch", Courier, monospace;
 }
@@ -324,20 +293,17 @@ hr {
 }
 
 /* Text elements */
-.entry-content, .entry-content p, .entry-summary, .entry-summary p {
+#content  {
 	font-size:15px;
 	line-height:1.7em;
+	color: #333;
 }
 
-.entry-content p, .entry-summary p {
-	margin-bottom: 10px;
+#content p{
+	margin-bottom: 1.5em;
 }
 .entry-content ul, .entry-summary ul  {
-	margin: 0 0 18px 1.5em;
-}
-
-.entry-content ul li, .entry-content ol li, .entry-summary ul li, .entry-summary ol li {
-	padding:2px 0;
+	margin-left: 1.5em;
 }
 
 .entry-content ul>li {
@@ -345,17 +311,13 @@ hr {
 	padding-left:20px;
 }
 
-.entry-content ol>li {
-	text-indent:0px;
-}
-
 .entry-content  li li {
-margin-left:15px;
+	margin-left:15px;
 }
 
 ol {
 	list-style: decimal;
-	margin: 0 0 18px 1.5em;
+	margin-left: 1.5em;
 
 }
 ol ol {
@@ -373,22 +335,8 @@ ul ol,
 ol ul {
 	margin-bottom: 0;
 }
-dl {
-	margin: 0 0 24px 0;
-}
 dt {
 	font-weight: bold;
-}
-dd {
-	margin-bottom: 18px;
-}
-strong {
-	font-weight: bold;
-}
-cite,
-em,
-i {
-	font-style: italic;
 }
 big {
 	font-size: 131.25%;
@@ -398,16 +346,9 @@ ins {
 	text-decoration: none;
 }
 
-blockquote cite,
-blockquote em,
-blockquote i {
-	font-style: normal;
-}
 pre {
 	background: #F8F8F8;
 	color: #222;
-	line-height: 18px;
-	margin-bottom: 18px;
 	padding: 1.5em;
 	border:1px dashed #ddd;
 }
@@ -421,7 +362,6 @@ sub {
 	height: 0;
 	line-height: 1;
 	position: relative;
-
 	vertical-align: baseline;
 }
 sup {
@@ -629,7 +569,11 @@ position:absolute;
 	color:#0E85CD;
 }
 
-#access ul li:hover > ul {
+#access.jssafe ul li > ul {
+	display: none;
+}
+
+#access.jssafe ul li:hover > ul {
 	display: block;
 }
 #access ul li.current_page_item > a,
@@ -709,16 +653,6 @@ overflow:hidden;
 	margin-bottom: 0px;
 }
 
-.entry-content input,
-.entry-content textarea {
-	color: #333;
-	font-size: 16px;
-	line-height: 24px;
-}
-
-.entry-content ul,
-.entry-content ol,
-.entry-content dd,
 .entry-content pre,
 .entry-content hr {
 	margin-bottom: 8px;
@@ -731,16 +665,12 @@ overflow:hidden;
 }
 .entry-content pre,
 .entry-content kbd,
-.entry-contenttt,
+.entry-content tt,
 .entry-content var {
-	font-size: 15px;
-	line-height: 21px;
 	overflow:auto;
 	font-family: "Courier New",Courier,monospace !important;
 }
-.entry-content code {
-	font-size: 13px;
-}
+
 .entry-content dt,
 .entry-content th {
 	color: #000;
@@ -752,7 +682,6 @@ overflow:hidden;
 .entry-content h5,
 .entry-content h6 {
 	color: #0E85CD;
-	line-height: 1.5em;
 	margin:20px 0px 5px 0px;
 }
 
@@ -762,27 +691,21 @@ font-size:1.9em;
 
 .entry-content table {
 	border: 1px solid #e7e7e7;
-	margin: 0 -1px 24px 0;
+	margin: 0 0 24px 0;
 	text-align: left;
 	width: 100%;
 }
 .entry-content tr {
 	background-color:#FFF;
-
 }
 .entry-content .alternate {
-	background-color:#fff;
+	background-color:#FFF;
 }
 
-.entry-content tr:hover {
-	background:none;
-}
 .entry-content tr th,
 .entry-content thead th {
 	color: #000;
-	font-size: 12px;
 	font-weight: bold;
-	line-height: 18px;
 	padding: 9px 24px;
 	background-color:#f8f8f8;
 }
@@ -802,9 +725,9 @@ font-size:1.9em;
 }
 .page-title {
 	color: #000;
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: bold;
-	margin: 0 0 36px 0;
+	margin: 0 0 10px 0;
 }
 .page-title span {
 	color: #333;
@@ -839,7 +762,6 @@ font-size:1.9em;
 .entry-title a:active,
 .entry-title a:hover {
 	color: #333;
-
 }
 
 #content > h1.entry-title {
@@ -932,21 +854,8 @@ font-size:1.9em;
 	font-weight: bold;
 	padding: 0 24px;
 }
-.entry-content input {
 
-	margin: 0 0 24px 0;
-}
-.entry-content input.file,
-.entry-content input.button {
-	margin-right: 24px;
-}
-.entry-content label {
-	color: #666;
-	font-size: 12px;
-}
-.entry-content select {
-	margin: 0 0 24px 0;
-}
+.entry-content label {}
 .entry-content sup,
 .entry-content sub {
 	font-size: 10px;
@@ -1495,7 +1404,7 @@ a.comment-edit-link:hover {
 }
 
 /* Comments form */
-input[type=submit] {
+input[type="submit"] {
 	color: #333;
 }
 #respond {
@@ -1667,7 +1576,7 @@ overflow:hidden;
 .contentsearch  #s  {
 	display:block;float:left;
 	margin-bottom:20px;
-	padding-top: 5px 10px;
+	padding-top: 5px;
 	padding-bottom:5px;
 	padding-left:10px;
 	font-size:18px;
@@ -1679,9 +1588,9 @@ float:left;
 padding:0;
 margin:0;
 position:relative;
-left:-37px; top:0px;
+left:-41px; top:0px;
 background: #777;
-width:37px;height:37px;
+width:41px;height:41px;
 border:none;
 cursor:pointer;
 font-size:12px;
@@ -1697,7 +1606,6 @@ display:block;
 position:relative;
 height:20px;
 margin-bottom:20px;
-max-width:300px;
 }
 
 #main #searchform, #footer #searchform {
@@ -2101,17 +2009,18 @@ padding:10px;
 
 #toTop {
 	width:37px;
-	height:37px;
-	background:url(images/back2top.png) no-repeat;
+	height:39px;
+	background:url(images/back2top.png) bottom center no-repeat;
 	position:fixed;
 	bottom:20px;
 	right:20px;
 	cursor:pointer;
 	display:none;
 	z-index:9999;
+	transition:background .2s;
 }
 #toTop:hover {
-	bottom:21px;
+	background-position:top center;
 }
 
 /* CUSTOM IMAGE BORDER */
@@ -2486,7 +2395,7 @@ display: block;
 
 .tinynav {
 display:block;
-float:none
+float:none;
 margin:0 auto;
 display:none;
 min-width:200px;

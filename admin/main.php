@@ -394,11 +394,24 @@ function coloursel(el){
 	jQuery(id).css('background-color',jQuery(id).val());
 }
 
+function vercomp(ver, req) {
+    var v = ver.split('.');
+    var q = req.split('.');
+    for (var i = 0; i < v.length; ++i) {
+        if (q.length == i) { return true; } // v is bigger 
+        if (parseInt(v[i]) == parseInt(q[i])) { continue; } // nothing to do here, move along
+        else if (parseInt(v[i]) > parseInt(q[i])) { return true; } // v is bigger
+        else { return false; } // q is bigger
+    }
+    if (v.length != q.length) { return false; } // q is bigger
+    return true; // v = q;
+}
 
 jQuery(document).ready(function(){
-	var _jQueryVer = parseFloat('.'+jQuery().jquery.replace(/\./g, ''));  // jQuery version as float, eg: 0.183
-	var _jQueryUIVer = parseFloat('.'+jQuery.ui.version.replace(/\./g, '')); // jQuery UI version as float, eg: 0.192
-	if (_jQueryUIVer >= 0.190) {
+	//var _jQueryVer = parseFloat('.'+jQuery().jquery.replace(/\./g, ''));  // jQuery version as float, eg: 0.183
+	//var _jQueryUIVer = parseFloat('.'+jQuery.ui.version.replace(/\./g, '')); // jQuery UI version as float, eg: 0.192
+	//if (_jQueryUIVer >= 0.190) {
+	if (vercomp(jQuery.ui.version,"1.9.0")) {
 		// tooltip function is included since jQuery UI 1.9.0
 		tooltip_terain();
 		startfarb("#mantra_backcolor","#mantra_backcolor2");
