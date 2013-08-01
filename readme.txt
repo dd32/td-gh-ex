@@ -60,6 +60,19 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ============================Change Log================================
+@version 1.2.4
+1.appoint_save_slider_data fixed.
+2.media-upload-script.js front end issue fixed.
+3.used  admin_enqueue_scripts.
+4.Wraped all script in !is_admin().
+5.Backward compatibility issue with function_exists() fixed.
+6.Dynamic Sidebar issue fixed.
+7.Changed Namespaces.
+8.super duper long texts issue fixed.
+9.Read More issue fixed.
+10.Leave a comment issue fixed.
+11.Style and spaces related issue fixed.
+12. 'Custom Header' issue fixed.
 @version 1.2.3
 1. Undefined variable bug in index-slider fixed.
 2. Now you can add logo with the help of custom header  image.

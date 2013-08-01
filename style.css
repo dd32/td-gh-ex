@@ -2,13 +2,13 @@
  * Theme Name: Appointment
  * Description: A theme for all type of business that uses multiple nav menus, several sidebars,Featured Slider and Custom post layouts. 
  It has a pixel-perfect design that's great for any blogger who wants a new look for their site.
- * Version: 1.2.3
- * Author: Priyanshu Mittal,Shahid Mansuri,Vibhore Purande and Akhilesh Nagar
+ * Version: 1.2.4
+ * Author: Priyanshu Mittal,Shahid Mansuri,Vibhor Purandare and Akhilesh Nagar
  * Tags: orange,white,full-width-template, threaded-comments, microformats, translation-ready, two-columns,  right-sidebar, fixed-width, sticky-post, custom-background,custom-menu
  * License: GNU General Public License v2.0
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Appointment is distributed under the terms of the GNU GPL
- * Copyright (c) 2013 Appointment.
+ * Copyright (c) 2013 appointpress.
  * http://www.appointpress.com
  * Text Domain: appointment
  */
@@ -274,7 +274,7 @@ box-shadow:         2px 2px 3px rgba(50, 50, 50, 0.5);
 }
 
 .inner_top_mn
-{	width:100%; min-height:60px; border-bottom:1px solid #e4e8ea; float:left;
+{	width:100%; height:60px; border-bottom:1px solid #e4e8ea; float:left;
 	background-color: #fefeff; padding:20px 0px; 
 	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ee6528), to(#c6450c));
 	background-image: -webkit-linear-gradient(top, #ee6528, #c6450c); 
@@ -695,7 +695,8 @@ text-shadow: 0px 0px 1px #226056;
 	-webkit-border-radius:4px; -moz-border-radius:4px; border-radius:4px; position:relative;
 }
 .leave_comment_mn
-{	width:600px; padding-left:30px; float:left; margin-top:30px; padding-bottom:100px; 
+{	width:600px; padding-left:30px; float:left; border-top:1px solid #E8E7E7; margin-top:30px; padding-bottom:100px; 
+padding-top:10px;
 }
 .leave_comment_mn h2
 {	font-family: 'montserratregular'; font-size:20px; color:#737f85; font-weight:normal;	
@@ -725,7 +726,7 @@ border-radius: 5px;
 
 }
 .blog_right_bg_mn_con
-{	 background:url(./images/blog_right_bg1.jpg) repeat-y right; width:100%; float:left;
+{	 background:url(../images/blog_right_bg1.jpg) repeat-y right; width:100%; float:left;
 }
 
 .services_slider_aero_mn
@@ -1744,12 +1745,12 @@ a {
 .blog_con_mn h1, h2, h3, h4, h5, h6 {
  color:#FCF6F6;
 }
-.blog_con_mn h1 {  font-size: 24px;}
+.blog_con_mn h1 {  font-size: 24px; color:#000000;}
 .blog_con_mn h2 { margin: 0 0 1em; color:#000000;}
-.blog_con_mn h3 {  font-size: 10px;}
-.blog_con_mn h4 {  font-size: 16px;}
-.blog_con_mn h5 {  font-size: 12px;}
-.blog_con_mn h6 {  font-size: 10px;}
+.blog_con_mn h3 {  font-size: 10px; color:#000000;}
+.blog_con_mn h4 {  font-size: 16px; color:#000000;}
+.blog_con_mn h5 {  font-size: 12px; color:#000000;}
+.blog_con_mn h6 {  font-size: 10px; color:#000000;}
 .blog_con_mn p {    margin-bottom: 0.800em;}
 .blog_con_mn, dl, dt, dd {
     color: #8B9194;
@@ -1806,6 +1807,9 @@ p {
 .blog_row_mn p {
     margin-bottom: 0.300em;
 	color:#8B9194;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+	
 } 
 .blog_row_mn label{
 	display: block;
@@ -1916,3 +1920,26 @@ color:#737F85;
     width: 150px;
 }
 div#footer ul li{ line-height:22px; }
+/* This css Calendar */
+#calendar_wrap table, caption, tbody, tfoot, thead, tr, th, td{
+	padding: 5px;
+}
+.blog_con_mn caption, th{
+	color: #C8470E;
+}
+.blog_con_mn caption, th, td{
+	font-weight: bold;
+}
+#wp-calendar caption{
+	font-size: 16px;
+	font-weight: bold;
+}
+
+abbr, acronym, dfn {
+    border-bottom: 1px dotted #666666;
+    cursor: help;
+}
+.blog-post-form-heading
+{
+	margin-bottom:30px;
+}

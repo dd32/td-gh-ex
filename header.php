@@ -42,7 +42,13 @@
    <div class="header">
     	<div class="page_wi">
 			<h1 id="logo">
-    			<a href="<?php echo home_url( '/' ); ?>"><img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" /></a>
+    			 <?php   $appointment_header_image = get_header_image();
+                         if ( $appointment_header_image ) :
+                    ?>
+                        <a href="<?php echo home_url( '/' ); ?>"> <img  src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>"  /> </a>
+                  <?php 
+					endif;
+					?>    		
     		</h1>
             <div class="menu">
              <ul>

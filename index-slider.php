@@ -72,9 +72,9 @@
                 	
 				<div id="slider" class="nivoSlider">
 					
-					<img src="<?php echo get_template_directory_uri(); ?>/images/banner1.png" data-thumb="images/banner1.png" alt="" />
-					<img src="<?php echo get_template_directory_uri(); ?>/images/banner2.png" data-thumb="images/banner2.png" alt="" data-transition="slideInLeft" />
-					<img src="<?php echo get_template_directory_uri(); ?>/images/banner4.png" data-thumb="images/banner4.png" alt="" title="#htmlcaption" />
+					<img src="<?php echo get_template_directory_uri(); ?>/images/slider/banner1.png" data-thumb="images/slider/banner1.png" alt="" />
+					<img src="<?php echo get_template_directory_uri(); ?>/images/slider/banner2.png" data-thumb="images/slider/banner2.png" alt="" data-transition="slideInLeft" />
+					<img src="<?php echo get_template_directory_uri(); ?>/images/slider/banner3.png" data-thumb="images/slider/banner3.png" alt="" title="#htmlcaption" />
 				</div> 
 				<div id="htmlcaption" class="nivo-html-caption">
                			<?php// echo $value;  ?>

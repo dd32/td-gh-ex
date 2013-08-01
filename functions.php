@@ -33,25 +33,29 @@ function appointment_wp_title( $title, $sep ) {
 	return $title;
 }
 add_filter( 'wp_title', 'appointment_wp_title', 10, 2 );
-add_action('add_meta_boxes','add_my_meta');
-add_action( 'save_post', 'myplugin_save_postdata' );
-function add_my_meta() {
 
-add_action('admin_print_styles', 'appointment_admin_enqueue_script');
+add_action( 'save_post', 'appointment_save_slider_data' );
+
+add_action('add_meta_boxes','appointment_slider_meta');
+function appointment_slider_meta() {
+
+ add_action('admin_enqueue_scripts', 'appointment_admin_enqueue_script'); 
+ function appointment_admin_enqueue_script(){
+	wp_enqueue_script('my-upload',get_bloginfo('template_directory').'/js/media-upload-script.js',array('media-upload','thickbox'));
+	} 
     $screens = array( 'post' );
     foreach ($screens as $screen) {
         add_meta_box(
-            'myplugin_sectionid',
-            __( 'Home Page Slider', 'appointment' ),
-            'myplugin_inner_custom_box',
+            'slider_section',
+            __( 'HomePage Slider', 'appointment' ),
+            'appointment_slider_custom_box',
             $screen
         );
     }
 	}
-	function appointment_admin_enqueue_script(){
-	wp_enqueue_script('my-upload',get_bloginfo('template_directory').'/js/media-upload-script.js',array('media-upload','thickbox'));
-	}
-	function myplugin_inner_custom_box( $post ) {
+	
+	
+	function appointment_slider_custom_box( $post ) {
 
   // Use nonce for verification
   wp_nonce_field( plugin_basename( __FILE__ ), 'myplugin_noncename' );
@@ -76,16 +80,13 @@ add_action('admin_print_styles', 'appointment_admin_enqueue_script');
 	
 	
 <?php }
-function myplugin_save_postdata( $post_id ) {
+function appointment_save_slider_data( $post_id ) {
     //global $page;global $post_type;
   // First we need to check if the current user is authorised to do this action. 
  
-    if ( ! current_user_can( 'edit_page', $post_id ) ){
+     if ( ! current_user_can( 'edit_page', $post_id ) ){
         return ;
-  } else {
-    if ( ! current_user_can( 'edit_post', $post_id ) )
-        return ;
-  }
+  } 
   // Secondly we need to check if the user intended to change this value.
   if ( ! isset( $_POST['myplugin_noncename'] ) || ! wp_verify_nonce( $_POST['myplugin_noncename'], plugin_basename( __FILE__ ) ) )
       return ;
@@ -119,8 +120,17 @@ if ( function_exists( 'add_theme_support' ) )
  {
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'automatic-feed-links' );
-		add_theme_support( 'custom-background' );
-		add_theme_support('custom-header',array('width'=> 200, 'height' => 40,'default-image' => get_template_directory_uri() . '/images/logo.png','header-text' => false));
+		//add_theme_support( 'custom-background' );
+		
+		$args = array(
+	'flex-width'    => true,
+	'width'         => 200,
+	'flex-height'    => true,
+	'height'        => 40,
+	'default-image' => get_template_directory_uri() . '/images/logo.png',
+);
+add_theme_support( 'custom-header', $args );
+		
 		// Add support for a variety of post formats
 	    add_theme_support( 'post-formats', array( 'aside', 'link', 'gallery', 'status', 'quote', 'image','chat','audio','video' ) );
 }
@@ -128,13 +138,14 @@ if ( function_exists( 'add_theme_support' ) )
 //enqueue scripts
   add_action('wp_enqueue_scripts','appointment_enqueue_script');
 function appointment_enqueue_script() {
-   wp_enqueue_script('my-upload',get_bloginfo('template_directory').'/js/media-upload-script.js',array('media-upload','thickbox'));
+  
    if ( is_singular() ) wp_enqueue_script( "comment-reply" );
-    //wp_enqueue_script('jquery-1.7.1.min',get_template_directory_uri('template_directory').'/js/jquery-1.7.1.min.js');
+  if(!is_admin())
+  {
    wp_enqueue_script('jquery');
    wp_enqueue_script('jquery.nivo.slider.pack', get_template_directory_uri('template_directory').'/js/jquery.nivo.slider.pack.js');
    wp_enqueue_script('custom_nivo_slider',get_template_directory_uri().'/js/jquery_nivo_slider.php');
-    
+    }
 
    wp_enqueue_style('nivo-slider', get_template_directory_uri('template_directory').'/css/nivo-slider.css');
    wp_enqueue_style('style_nivo_support', get_template_directory_uri('template_directory').'/css/style_nivo_support.css');
@@ -143,8 +154,8 @@ function appointment_enqueue_script() {
 
 }
  
- add_action('after_setup_theme', 'my_theme_setup');
-function my_theme_setup(){
+ add_action('after_setup_theme', 'appointment_textdomain');
+function appointment_textdomain(){
     load_theme_textdomain('appointment', get_template_directory() . '/languages');
 }
  
@@ -152,8 +163,8 @@ function my_theme_setup(){
  
  
  //code for the custom menus....
- add_action( 'init', 'register_my_menus' );
-   function register_my_menus() {
+ add_action( 'init', 'appointment_menu' );
+   function appointment_menu() {
   register_nav_menus(
     array( 'header-menu' => __('Header Menu','appointment') )
   );
@@ -161,7 +172,7 @@ function my_theme_setup(){
 // code for custom post type  services
   
 
-function appointpres_widgets_init() {
+function appointment_widgets_init() {
 
 
 /*sidebar*/
@@ -215,7 +226,7 @@ register_sidebar( array(
 		'after_title' => '</h2>',
 	) );
 }	                     
-add_action( 'widgets_init', 'appointpres_widgets_init' );
+add_action( 'widgets_init', 'appointment_widgets_init' );
 
 /* Make redify available for translation.*/
 	load_theme_textdomain( 'appointment', get_template_directory() . '/languages' );
