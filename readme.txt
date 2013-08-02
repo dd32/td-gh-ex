@@ -4,12 +4,22 @@ Theme URI: http://colorawesomeness.com/themes/travelify/
 Author: Color Awesomeness
 Author URI: http://colorawesomeness.com/
 Description: Travelify is a clan, simple and fully responsive WordPress WooCommerce theme that looks awesome on any device. It adjusts automatically to any screen size including tablets and smartphones as well as Retina displays. Theme is built using HTML5 / CSS3 and is SEO friendly. This WordPress theme was built with travel, adventures, languages and nature in mind but it can be used for anything so be creative and unleash its full potential in blogging, eCommerce, business and other websites. Along the awesome design this theme is customizable via a simple but yet powerful theme options. Some of the nicest features are featured post slider, social icons, custom logo, translation ready and many more. This theme out-of-the-box plays nicely with WooCommerce, Breadcrumb NavXT and WP-PageNavi, Contact Form 7 and other popular plugins. 
-Version: 1.2.1
+Version: 1.3.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: white, light, green , custom-background, custom-menu, flexible-width, featured-images, full-width-template, left sidebar, right sidebar, one-column, two columns, three-columns, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready 
+Tags: white, light, green , custom-background, custom-header, custom-menu, flexible-width, featured-images, full-width-template, left sidebar, right sidebar, one-column, two columns, three-columns, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready 
 Text Domain: travelify
 
+
+== Additional Notes ==
+
+This theme is based on Attitude WordPress theme by Theme Horse. More about this amazing theme you can read on http://wordpress.org/themes/attitude
+
+The theme is released for free under the terms of the GNU General Public License version 2
+and some parts under their respective licenses.
+In general words, feel free and encouraged to use, modify and redistribute this theme however you like.
+You may remove any copyright references (unless required by third party components) and crediting is not necessary.
+The theme is offered free of charge. If someone asked money for it, someone just tricked you.
 
 == Installation ==
 
@@ -27,6 +37,7 @@ Activiation and Use
 Unless otherwise specified, all the theme files, scripts and images
 are licensed under GNU General Public License version 2, see file license.txt.
 The exceptions to this license are as follows:
+* Attitude WordPress theme licensed under GPL
 * HTML5 Shiv is licensed under MIT
 * jQuery Cycle Plugin is dual licensed under GPL & MIT
 * jQuery Cookie Plugin is dual licensed under GPL & MIT
@@ -34,19 +45,11 @@ The exceptions to this license are as follows:
 * Genericons font is licensed under GPL
 
 == Theme Notes ==
-About the theme in the following link.
+More about this theme you can find in the following link.
 http://colorawesomeness.com/themes/travelify/
 
 You can drop your queries in our contact form in the following link.
 http://colorawesomeness.com/themes/contact-us/
-
-== Additional Notes ==
-
-The theme is released for free under the terms of the GNU General Public License version 2
-and some parts under their respective licenses.
-In general words, feel free and encouraged to use, modify and redistribute this theme however you like.
-You may remove any copyright references (unless required by third party components) and crediting is not necessary.
-The theme is offered free of charge. If someone asked money for it, someone just tricked you.
 
 == Supported Browser ==
 Mozilla, Chrome, Safari, IE 10,9,8,7
@@ -80,6 +83,15 @@ For more instruction you can visit the support page of Travelify at http://color
 If you have still any other questions about the theme you can email at info@colorawesomeness.com for free support.
 
 == Change Log ==
+
+= 1.3.0 = 
+	* Added French translation thanks to Christophe Rossi (http://www.naturellementvar.net/)
+	* Improved translation process via i18n.php
+	* Improved responsiveness for No Sidebar layout
+	* Fixed mobile navigation
+	* Updated license information
+	* Added custom header
+	* Cleaned functions.php file to leave it for most crucial functions.
 
 = 1.2.1 = 
 	* Fixed bug with no-sidebar and full-width page templates 

@@ -216,7 +216,7 @@ function travelify_theme_options_do_page() {
 										<td>
 										   <input class="upload" size="65" type="text" id="fav_icon_url" name="travelify_theme_options[favicon]" value="<?php echo esc_url( $options [ 'favicon' ] ); ?>" />
 										   <input class="upload-button button" name="image-add" type="button" value="<?php esc_attr_e( 'Upload Favicon', 'travelify' ); ?>" />
-											<p>Favicon is this tiny icon you see beside URL in your browser address bar.</p>
+											<p><?php _e( 'Favicon is this tiny icon you see beside URL in your browser address bar', 'travelify' ); ?></p>
 										</td>
 									</tr>
 									<tr>
@@ -248,7 +248,7 @@ function travelify_theme_options_do_page() {
 										<td>
 										   <input class="upload" size="65" type="text" id="webpageicon_icon_url" name="travelify_theme_options[webpageicon]" value="<?php echo esc_url( $options [ 'webpageicon' ] ); ?>" />
 										   <input class="upload-button button" name="image-add" type="button" value="<?php esc_attr_e( 'Upload Web Clip Icon', 'travelify' ); ?>" />
-											<p>Web Clip works as shortcut to website on iOS devices home screen.</p>
+											<p><?php _e( 'Web Clip works as shortcut to website on iOS devices home screen', 'travelify' ); ?></p>
 										</td>
 									</tr>
 									<tr>
@@ -297,7 +297,7 @@ function travelify_theme_options_do_page() {
 									</tr>  
 									<?php if( "1" == $options[ 'reset_layout' ] ) { $options[ 'reset_layout' ] = "0"; } ?>
 									<tr> 
-									<p>This will set the default layout style. However, you can choose different layout for each page via editor.</p>                           
+									<p><?php _e( 'This will set the default layout style. However, you can choose different layout for each page via editor', 'travelify' ); ?></p>                           
 									<th scope="row"><label for="reset_layout"><?php _e( 'Reset Layout', 'travelify' ); ?></th>
 									<input type='hidden' value='0' name='travelify_theme_options[reset_layout]'>
 									<td>
@@ -339,7 +339,7 @@ function travelify_theme_options_do_page() {
 											<label for="feed-redirect"><?php _e( 'Feed Redirect URL', 'travelify' ); ?></label>
 										</th>
 										<td><input type="text" id="feed-redirect" size="70" name="travelify_theme_options[feed_url]" value="<?php echo esc_attr( $options[ 'feed_url' ] ); ?>" />
-										<p>Enter your preferred RSS URL. (Feedburner or other)</p>
+										<p><?php _e( 'Enter your preferred RSS URL. (Feedburner or other)', 'travelify' ); ?></p>
 										</td>
 									</tr>  
 								</tbody>
@@ -497,7 +497,7 @@ function travelify_theme_options_do_page() {
 													);
 					?>
 					<table class="form-table">
-						<p>Enter URLs for youtr social networks e.g. https://twitter.com/ColorAwesomenes</p>
+						<p><?php _e( 'Enter URLs for your social networks e.g.', 'travelify' ); ?> https://twitter.com/ColorAwesomenes</p>
 						<tbody>
 						<?php
 						foreach( $social_links as $key => $value ) {
@@ -558,7 +558,7 @@ function travelify_theme_options_do_page() {
 										</th>
 										<td>
 										<textarea name="travelify_theme_options[custom_css]" id="custom-css" cols="90" rows="12"><?php echo esc_attr( $options[ 'custom_css' ] ); ?></textarea>
-										<p>Make sure you know what you are doing</p>
+										<p><?php _e( 'Make sure you know what you are doing.', 'travelify' ); ?></p>
 										</td>
 									</tr>
 								</tbody>

@@ -370,5 +370,116 @@ function responsive_woocommerce_wrapper_end() {
   echo '</div><!-- end of #content-woocommerce -->';
 }
 
+/**************************************************************************************/
 
+/**
+ * Function to register the widget areas(sidebar) and widgets.
+ */
+function travelify_widgets_init() {
+
+	// Registering main left sidebar
+	register_sidebar( array(
+		'name' 				=> __( 'Left Sidebar', 'travelify' ),
+		'id' 					=> 'travelify_left_sidebar',
+		'description'   	=> __( 'Shows widgets at Left side.', 'travelify' ),
+		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  	=> '</aside>',
+		'before_title'  	=> '<h3 class="widget-title">',
+		'after_title'   	=> '</h3>'
+	) );
+
+	// Registering main right sidebar
+	register_sidebar( array(
+		'name' 				=> __( 'Right Sidebar', 'travelify' ),
+		'id' 					=> 'travelify_right_sidebar',
+		'description'   	=> __( 'Shows widgets at Right side.', 'travelify' ),
+		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  	=> '</aside>',
+		'before_title'  	=> '<h3 class="widget-title">',
+		'after_title'   	=> '</h3>'
+	) );
+
+	// Registering footer widgets
+	register_sidebar( array(
+		'name' 				=> __( 'Footer', 'travelify' ),
+		'id' 					=> 'travelify_footer_widget',
+		'description'   	=> __( 'Shows widgets at footer.', 'travelify' ),
+		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  	=> '</aside>',
+		'before_title'  	=> '<h3 class="widget-title">',
+		'after_title'   	=> '</h3>'
+		) 
+	);	
+}
+add_action( 'widgets_init', 'travelify_widgets_init' );
+
+/**
+ * Sets up the WordPress core custom header arguments and settings.
+ *
+ * @uses add_theme_support() to register support for 3.4 and up.
+ * @uses travelify_header_style() to style front-end.
+ * @uses travelify_admin_header_style() to style wp-admin form.
+ * @uses travelify_admin_header_image() to add custom markup to wp-admin form.
+ *
+ */
+	$args = array(
+		// Text color and image (empty to use none).
+		'default-text-color'     => '',
+		'default-image'          => '',
+
+		// Set height and width, with a maximum value for the width.
+		'height'                 => apply_filters( 'travelify_header_image_height', 250 ),
+		'width'                  => apply_filters( 'travelify_header_image_width', 1018 ),
+		'max-width'              => 1018,
+
+		// Support flexible height and width.
+		'flex-height'            => true,
+		'flex-width'             => true,
+
+		// Random image rotation off by default.
+		'random-default'         => false,
+
+		// No Header Text Feature
+		'header-text'				 => false,
+
+		// Callbacks for styling the header and the admin preview.
+		'wp-head-callback'       => '',
+		'admin-head-callback'    => 'travelify_admin_header_style',
+		'admin-preview-callback' => 'travelify_admin_header_image',
+	);
+
+	add_theme_support( 'custom-header', $args );
+
+/**
+ * Styles the header image displayed on the Appearance > Header admin panel.
+ */
+
+function travelify_admin_header_style() {
+?>
+	<style type="text/css">
+	.appearance_page_custom-header #headimg {
+		border: none;
+	}
+	#headimg img {
+		max-width: <?php echo get_theme_support( 'custom-header', 'max-width' ); ?>px;
+	}
+	</style>
+<?php
+}
+
+/**
+ * Outputs markup to be displayed on the Appearance > Header admin panel.
+ * This callback overrides the default markup displayed there.
+ */
+
+function travelify_admin_header_image() {
+	?>
+	<div id="headimg">
+		<?php $header_image = get_header_image();
+		if ( ! empty( $header_image ) ) : ?>
+			<img src="<?php echo esc_url( $header_image ); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" />
+		<?php endif; ?>
+	</div>
+
+<?php }
 ?>
