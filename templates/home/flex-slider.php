@@ -7,7 +7,8 @@
     <div class="flexslider loading" >
         <ul class="slides">
             <?php foreach ($slides as $slide) : 
-                    $image = aq_resize($slide['url'], 1170, $slideheight, true); ?>
+                    $image = aq_resize($slide['url'], 1170, $slideheight, true);
+                    if($image == "") { $image = $slide['url']; } ?>
                       <li> 
                         <?php if($slide['link'] != '') echo '<a href="'.$slide['link'].'">'; ?>
                           <img src="<?php echo $image; ?>" alt="<?php echo $slide['description']?>" title="<?php echo $slide['title'] ?>" />

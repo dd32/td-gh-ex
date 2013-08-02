@@ -382,7 +382,7 @@ $meta_boxes[] = array(
 			
 			array(
 				'name'    => __('Feature Options', 'virtue'),
-				'desc'    => __('If image slider make sure images uploaded are at-least 1170px wide.', 'virtue'),
+				'desc'    => __('If image slider make sure images uploaded are at least 1170px wide.', 'virtue'),
 				'id'      => $prefix . 'page_head',
 				'type'    => 'select',
 				'options' => array(

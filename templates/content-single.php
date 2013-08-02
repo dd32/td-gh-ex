@@ -23,6 +23,7 @@
                 foreach ($attachments as $attachment) {
                   $attachment_url = wp_get_attachment_url($attachment->ID , 'full');
                   $image = aq_resize($attachment_url, 770, $slideheight, true);
+                  if($image == "") { $image = $attachment_url; }
                   echo '<li><img src="'.$image.'"/></li>';
                 } 
               } ?>                            
@@ -55,9 +56,8 @@
                     $img_url = wp_get_attachment_url( $thumb,'full' ); //get full URL to image (use "large" or "medium" if the images too big)
                     $image = aq_resize( $img_url, 770, $slideheight, true ); //resize & crop the image
                     ?>
-                    <?php if($image) : ?>
+                    <?php if($image == "") { $image = $img_url; } ?>
                       <div class="imghoverclass"><a href="<?php echo $img_url ?>" rel="lightbox[pp_gal]" class="lightboxhover"><img src="<?php echo $image ?>" alt="<?php the_title(); ?>" /></a></div>
-                    <?php endif; ?>
         <?php } ?>
     <div class="postmeta">
                                   <div class="postdate bg-lightgray headerfont">

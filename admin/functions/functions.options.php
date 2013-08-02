@@ -586,7 +586,7 @@ $of_options = array();
 						"type" 		=> "heading"
 				);
             $of_options[] = array( "name"             => __("Choose a Home Image Slider", 'virtue'),
-      					"desc"            => __("If you don't want an image slider on your home page choose none. NOTE if you choose the revolution slider enter alias in box below", 'virtue'),
+      					"desc"            => __("If you don't want an image slider on your home page choose none.", 'virtue'),
       					"id"              => "choose_slider",
       					"std"             => "none",
       					"type"            => "select",
@@ -599,7 +599,7 @@ $of_options = array();
 					);
 
             $of_options[] = array( 	"name" 		=> __("Slider Images", 'virtue'),
-						"desc" 		=> "",
+						"desc" 		=> __("Use images of at least 1170px wide for best results.", 'virtue'),
 						"id" 		      => "home_slider",
 						"std" 		=> "",
 						"type" 		=> "slider"
@@ -688,12 +688,6 @@ $of_options = array();
                   						'video'     => 'Video',
                   						)
 					);
-            $of_options[] = array(  "name"             => __("If Revolution Slider", 'virtue'),
-      					"desc"             => __("Paste your Slider Alias Here (example: slider2)", 'virtue'),
-      					"id"               => "mobile_rev_slider",
-      					"std"              => "",
-      					"fold"             => "mobile_slider", /* the switch hook */
-      					"type"             => "text");
 					
             $of_options[] = array( "name" => "Mobile Slider Images",
       					"desc"             => "",
@@ -901,7 +895,7 @@ $of_options = array();
       					"std"              => "",
       					"type"             => "color"
                                     );
-            $of_options[] = array(  "name"             => __("20% lighter than Primary Color", 'virtue'),
+            $of_options[] = array(  "name"             => __("30% lighter than Primary Color", 'virtue'),
       					"desc"             => "",
       					"id"               => "primary20_color",
       					"std"              => "",

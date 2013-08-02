@@ -20,48 +20,9 @@
 							 
 					while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
 
-					<div class="grid_item portfolio_item <?php echo strtolower($tax); ?> all postclass">
+					<div class="grid_item portfolio_item all postclass">
 					
-                        <?php global $post; $postsummery = get_post_meta( $post->ID, '_kad_post_summery', true );
-						     if ($postsummery == 'slider') { ?>
-                           <div class="flexslider imghoverclass clearfix">
-                       <ul class="slides ">
-                          <?php 
-						  $args = array(
-								'order'          => 'ASC',
-								'post_type'      => 'attachment',
-								'post_parent'    => $post->ID,
-								'post_mime_type' => 'image',
-								'post_status'    => null,
-								'orderby'		 => 'menu_order',
-								'numberposts'    => 4,
-							);
-							$attachments = get_posts($args);							
-							if ($attachments) {
-								foreach ($attachments as $attachment) {
-									$attachment_url = wp_get_attachment_url($attachment->ID , 'large');
-									$image = aq_resize($attachment_url, $imgwidth, $imgheight, true); ?>
-									<li><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><img src="<?php echo $image ?>" class="" /></a></li>
-								<?php } ?>	
-							<?php } ?>                            
-					</ul>
-              	</div> <!--Flex Slides-->
-              	<script type="text/javascript">
-					            jQuery(window).load(function () {
-					                jQuery('.flexslider').flexslider({
-					                    animation: "fade",
-					                    animationSpeed: 400,
-					                    slideshow: true,
-					                    slideshowSpeed: 7000,
-
-					                    before: function(slider) {
-					                      slider.removeClass('loading');
-					                    }  
-					                  });
-					                });
-					      		</script>
-              <?php } else {
-								if (has_post_thumbnail( $post->ID ) ) {
+                       <?php if (has_post_thumbnail( $post->ID ) ) {
 									$image_url = wp_get_attachment_image_src( 
 									get_post_thumbnail_id( $post->ID ), 'full' ); 
 									$thumbnailURL = $image_url[0]; 
@@ -74,7 +35,7 @@
 	                                       </a> 
 	                                </div>
                            				<?php $image = null; $thumbnailURL = null;?>
-                           <?php } } ?>
+                           <?php } ?>
               	<a href="<?php the_permalink() ?>" class="portfoliolink">
               		<div class="piteminfo">   
                           <h5><?php the_title();?></h5>

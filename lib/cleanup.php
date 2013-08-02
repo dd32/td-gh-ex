@@ -338,13 +338,3 @@ function kadence_request_filter($query_vars) {
   return $query_vars;
 }
 add_filter('request', 'kadence_request_filter');
-
-/**
- * Tell WordPress to use searchform.php from the templates/ directory
- */
-function kadence_get_search_form($argument) {
-  if ($argument === '') {
-    locate_template('/templates/searchform.php', true, false);
-  }
-}
-add_filter('get_search_form', 'kadence_get_search_form');

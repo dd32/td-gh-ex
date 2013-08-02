@@ -64,6 +64,7 @@
 								foreach ($attachments as $attachment) {
 									$attachment_url = wp_get_attachment_url($attachment->ID , 'full');
 									$image = aq_resize($attachment_url, $slidewidth, $slideheight, true);
+									if($image == "") { $image = $attachment_url; }
 									echo '<li><img src="'.$image.'"/></li>';
 								}	
 							}
@@ -86,9 +87,6 @@
 			      </script>
               </div> <!--Flex Slides-->
 				<?php }
-				else if ($ppost_type == 'rev') {
-					global $post; $revslider = get_post_meta( $post->ID, '_kad_post_rev', true ); putRevSlider( $revslider );
-				}
 				else if ($ppost_type == 'video') { ?>
 					<div class="videofit">
                   <?php global $post; $video = get_post_meta( $post->ID, '_kad_post_video', true ); echo $video; ?>
@@ -97,6 +95,7 @@
 							$post_id = get_post_thumbnail_id();
 							$img_url = wp_get_attachment_url( $post_id);
 							$image = aq_resize( $img_url, $slidewidth, $slideheight, true ); //resize & crop the image
+							if($image == "") { $image = $img_url; }
 							?>
                                 <?php if($image) : ?>
                                     <div class="imghoverclass">
