@@ -111,37 +111,29 @@ jQuery(document).ready(function() {
 			min: 0,
 			max: 1980,
 			values: [ <?php echo $mantra_options['mantra_sidewidth'] ?>, <?php echo ($mantra_options['mantra_sidewidth']+$mantra_options['mantra_sidebar']); ?> ],
-			slide: function( event, ui ) {}
+			slide: function( event, ui ) {
+          		range=ui.values[ 1 ] - ui.values[ 0 ];
+          		if (ui.values[ 0 ]<500) {ui.values[ 0 ]=500; return false;};
+          		if(	range<220 || range>800 ){ ui.values[ 1 ] =  <?php echo $mantra_options['mantra_sidebar']+$mantra_options['mantra_sidewidth'];?>; return false;  };
+               	jQuery( "#mantra_sidewidth" ).val( ui.values[ 0 ] );
+          		jQuery( "#mantra_sidebar" ).val( ui.values[ 1 ] - ui.values[ 0 ] );
+          		jQuery( "#totalsize" ).html( ui.values[ 1 ]);
+          		jQuery( "#contentsize" ).html( ui.values[ 0 ]);jQuery( "#barsize" ).html( ui.values[ 1 ]-ui.values[ 0 ]);
+          		var percentage = parseInt( jQuery( "#slider-range .ui-slider-range" ).css('width') );
+          		var leftwidth = parseInt(jQuery( "#slider-range .ui-slider-range" ).position().left );
+          		jQuery( "#barb" ).css('left',-80+leftwidth+percentage/2+"px");
+          		jQuery( "#contentb" ).css('left',-50+leftwidth/2+"px");
+          		jQuery( "#totalb" ).css('left',-100+(percentage+leftwidth)/2+"px");
+               }
 		});
 
 		jQuery( "#mantra_sidewidth" ).val( <?php echo $mantra_options['mantra_sidewidth'];?> );
 		jQuery( "#mantra_sidebar" ).val( <?php echo $mantra_options['mantra_sidebar'];?> );
-
 		var percentage =  <?php echo ($mantra_options['mantra_sidebar']/1980)*100;?> ;
 		var leftwidth =  <?php echo ($mantra_options['mantra_sidewidth']/1980)*100;?> ;
-
 		jQuery( "#barb" ).css('left',-18+leftwidth+percentage/2+"%");
 		jQuery( "#contentb" ).css('left',-8+leftwidth/2+"%");
 		jQuery( "#totalb" ).css('left',-20+(percentage+leftwidth)/2+"%");
-
-});
-
-jQuery( "#slider-range" ).bind( "slide", function(event, ui) {
-		range=ui.values[ 1 ] - ui.values[ 0 ];
-
-		if (ui.values[ 0 ]<500) {ui.values[ 0 ]=500; return false;};
-		if(	range<220 || range>800 ){ ui.values[ 1 ] =  <?php echo $mantra_options['mantra_sidebar']+$mantra_options['mantra_sidewidth'];?>; return false;  };
-
-		jQuery( "#mantra_sidewidth" ).val( ui.values[ 0 ] );
-		jQuery( "#mantra_sidebar" ).val( ui.values[ 1 ] - ui.values[ 0 ] );
-		jQuery( "#totalsize" ).html( ui.values[ 1 ]);
-		jQuery( "#contentsize" ).html( ui.values[ 0 ]);jQuery( "#barsize" ).html( ui.values[ 1 ]-ui.values[ 0 ]);
-
-		var	percentage =parseInt(	jQuery( "#slider-range .ui-slider-range" ).css('width'));
-		var leftwidth =	parseInt(jQuery( "#slider-range .ui-slider-range" ).position().left);
-		jQuery( "#barb" ).css('left',-80+leftwidth+percentage/2+"px");
-		jQuery( "#contentb" ).css('left',-50+leftwidth/2+"px");
-		jQuery( "#totalb" ).css('left',-100+(percentage+leftwidth)/2+"px");
 
 });
 
@@ -153,7 +145,20 @@ jQuery(function() {
 			min: 0,
 			max: 100,
 			values: [ <?php echo $mantra_options['mantra_sidewidthRel'] ?>, <?php echo ($mantra_options['mantra_sidewidthRel']+$mantra_options['mantra_sidebarRel']); ?> ],
-			slide: function( event, ui ) {}
+			slide: function( event, ui ) {
+     			range=ui.values[ 1 ] - ui.values[ 0 ];
+      			if (ui.values[ 0 ]<40) {ui.values[ 0 ]=40; return false;};
+     			if(	range<20 || range>50 ){ ui.values[ 1 ] =  <?php echo $mantra_options['mantra_sidebarRel']+$mantra_options['mantra_sidewidthRel'];?>; return false;  };
+               	jQuery( "#mantra_sidewidthRel" ).val( ui.values[ 0 ] );
+     			jQuery( "#mantra_sidebarRel" ).val( ui.values[ 1 ] - ui.values[ 0 ] );
+     			jQuery( "#totalsizeRel" ).html( ui.values[ 1 ]);
+     			jQuery( "#contentsizeRel" ).html( ui.values[ 0 ]);jQuery( "#barsizeRel" ).html( ui.values[ 1 ]-ui.values[ 0 ]);
+     			var percentageRel = parseInt( jQuery( "#slider-rangeRel .ui-slider-range" ).css('width') );
+     			var leftwidthRel = parseInt( jQuery( "#slider-rangeRel .ui-slider-range" ).position().left );
+     			jQuery( "#barbRel" ).css('left',-80+leftwidthRel+percentageRel/2+"px");
+     			jQuery( "#contentbRel" ).css('left',-50+leftwidthRel/2+"px");
+     			jQuery( "#totalbRel" ).css('left',-100+(percentageRel+leftwidthRel)/2+"px");
+               }
 		});
 
 		jQuery( "#mantra_sidewidthRel" ).val( <?php echo $mantra_options['mantra_sidewidthRel'];?> );
@@ -165,23 +170,6 @@ jQuery(function() {
 		jQuery( "#totalbRel" ).css('left',-20+(percentageRel+leftwidthRel)/2+"%");
 });
 
-jQuery( "#slider-rangeRel" ).bind( "slide", function(event, ui) {
-			range=ui.values[ 1 ] - ui.values[ 0 ];
-
- 			if (ui.values[ 0 ]<40) {ui.values[ 0 ]=40; return false;};
-			if(	range<20 || range>50 ){ ui.values[ 1 ] =  <?php echo $mantra_options['mantra_sidebarRel']+$mantra_options['mantra_sidewidthRel'];?>; return false;  };
-
-			jQuery( "#mantra_sidewidthRel" ).val( ui.values[ 0 ] );
-			jQuery( "#mantra_sidebarRel" ).val( ui.values[ 1 ] - ui.values[ 0 ] );
-			jQuery( "#totalsizeRel" ).html( ui.values[ 1 ]);
-			jQuery( "#contentsizeRel" ).html( ui.values[ 0 ]);jQuery( "#barsizeRel" ).html( ui.values[ 1 ]-ui.values[ 0 ]);
-
-			var	percentageRel =parseInt(	jQuery( "#slider-rangeRel .ui-slider-range" ).css('width'));
-			var leftwidthRel =	parseInt(jQuery( "#slider-rangeRel .ui-slider-range" ).position().left);
-			jQuery( "#barbRel" ).css('left',-80+leftwidthRel+percentageRel/2+"px");
-			jQuery( "#contentbRel" ).css('left',-50+leftwidthRel/2+"px");
-			jQuery( "#totalbRel" ).css('left',-100+(percentageRel+leftwidthRel)/2+"px");
-});
 
 </script>
 

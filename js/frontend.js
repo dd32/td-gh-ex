@@ -2,7 +2,7 @@
     Mantra Theme
     custom scripting
     (c) Cryout Creations
-	www.cryoutcreations.eu
+    www.cryoutcreations.eu
 *******************************/
 
 
@@ -51,20 +51,20 @@ jQuery(function() {
 // Menu animation
 jQuery("#access ul ul").css({display: "none"}); // Opera Fix
 jQuery("#access").removeClass("jssafe"); // JS failsafe
-jQuery("#access ul.menu li").hoverIntent({
+jQuery("#access .menu ul li").hoverIntent({
 	over: function(){jQuery(this).children("ul").show(400);},
 	out: function(){ jQuery(this).children('ul').hide();},
-	timeout:400}	
+	timeout:400}
 );
 
 
 // Social Icons Animation
 jQuery(".socialicons").hover(
 	function(){  jQuery(this).animate({"top": "-5px" },{ queue: false, duration:200}); },
-	function(){  jQuery(this).animate({ "top": "0px" }, { queue: false, duration:200 });  
+	function(){  jQuery(this).animate({ "top": "0px" }, { queue: false, duration:200 });
 });
 
-					
+
 /*! http://tinynav.viljamis.com v1.03 by @viljamis */
 (function ($, window, i) {
   $.fn.tinyNav = function (options) {
@@ -72,7 +72,7 @@ jQuery(".socialicons").hover(
     // Default settings
     var settings = $.extend({
       'active' : 'selected', // String: Set the "active" class
-      'header' : false // Boolean: Show header instead of the active item
+      'header' : '' // Show header instead of the active item
     }, options);
 
     return this.each(function () {
@@ -89,7 +89,7 @@ jQuery(".socialicons").hover(
       if ($nav.is('ul,ol')) {
 
         if (settings.header) {
-          $select.append( $('<option/>').text('Navigation') );
+          $select.append( $('<option/>').text(settings.header) );
         }
 
         // Build options
@@ -123,7 +123,9 @@ jQuery(".socialicons").hover(
 
         // Change window location
         $select.change(function () {
-          window.location.href = $(this).val();
+		var loc = $(this).val(); loc = loc.replace(/[\s\t]/gi,'');
+		var menu = settings.header; menu = menu.replace(/[\s\t]/gi,'');
+          if ((loc!==menu)) { window.location.href = $(this).val(); } else return false;
         });
 
         // Inject select
@@ -146,7 +148,7 @@ if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('
 }
 
 
-}); 
+});
 // end document.ready
 
 
