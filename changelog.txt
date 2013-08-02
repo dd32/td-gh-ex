@@ -1,6 +1,11 @@
 Changelog for Iconic One WordPress Responsive Theme | Visit http://themonic.com/iconic-one/ for latest version
 
+-------------- August 2013 ----------------
 
+08/02/13  - Iconic One Version 1.2.1.1
+
+* Minor Search bar responsiveness margin fix at width below 1040px.
+* Tested with WordPress version 3.6. 
 
 -------------- JULY 2013 ----------------
 

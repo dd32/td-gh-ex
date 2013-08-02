@@ -85,10 +85,11 @@ you don't have to touch any code or login to ftp for the most needed customizati
 <h4>Logo Size</h4>
 Logo of 187 x 54 pixel dimensions is used in the demo. 
 You can easily try uploading logos of different sizes via live customizer. Version 1.2 now comes with support for bigger logos. Refer to changelog.txt in the home directory.
-<h3>Safe Customization</h3>
+<h3>Safe Customization & How to Upgrade</h3>
 Iconic One is supplied with custom.css file, simply add your css in this file, you can access this from 
-under Appearance - > Editor -> Custom.css and it will just work, when upgrading simply 
-backup the content of custom.css file and you are ready to upgrade.
+under Appearance - > Editor -> Custom.css and it will just work.
+<p>Before upgrading to new versions backup the content of custom.css file 
+and all the files you have modified.</p>
 <h3>Idea Behind Iconic One</h3>
 <p>The Idea behind Iconic One is to equip the bloggers with a theme so that they don't have to look anywhere else,
 It has been designed and coded in such a way that even if you are new to Wordpress 
