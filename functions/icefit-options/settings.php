@@ -85,6 +85,16 @@ function boldr_settings_template() {
 			'values'		=> array ('Off', 'On'),
 		);
 
+		$settings_options[] = array(
+			'name'          => 'Blog Index Shows',
+			'desc'          => 'Choose what content to display on Main Blog page and archives',
+			'id'            => 'blog_index_shows',
+			'type'          => 'radio',
+			'default'       => 'Excerpt',
+			'values'		=> array ('Excerpt', 'Full content'),
+		);		
+		
+
 	$settings_options[] = array('type' => 'end_menu');
 // END PAGE 1
 // START PAGE 2

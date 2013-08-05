@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BoldR Lite 1.1\n"
-"POT-Creation-Date: 2013-06-03 10:54+0100\n"
-"PO-Revision-Date: 2013-07-09 14:50+0100\n"
+"POT-Creation-Date: 2013-08-05 11:54+0100\n"
+"PO-Revision-Date: 2013-08-05 11:55+0100\n"
 "Last-Translator: \n"
 "Language-Team: Iceable Themes <contact@iceablethemes.com>\n"
 "Language: en_US\n"
@@ -23,7 +23,7 @@ msgstr "404"
 msgid "Page Not Found"
 msgstr "Page Introuvable"
 
-#: ../404.php:30 ../index.php:108 ../page-full-width.php:55 ../page.php:55
+#: ../404.php:30 ../index.php:119 ../page-full-width.php:55 ../page.php:55
 #: ../single.php:147
 msgid "What you are looking for isn't here..."
 msgstr "Ce que vous cherchez n'est pas ici..."
@@ -76,7 +76,7 @@ msgstr "Sidebar par défaut"
 msgid "Footer"
 msgstr "Pied de page"
 
-#: ../functions.php:233
+#: ../functions.php:263
 msgid "Read More"
 msgstr "Lire la suite"
 
@@ -90,53 +90,65 @@ msgstr "Tag:"
 
 #: ../index.php:42
 msgid "Category: "
-msgstr "Catégorie:"
+msgstr "Catégorie :"
 
-#: ../index.php:67 ../single.php:44
+#: ../index.php:47
+msgid "Daily archives: "
+msgstr "Archives journalières :"
+
+#: ../index.php:50
+msgid "Monthly archives: "
+msgstr "Archives mensuelles :"
+
+#: ../index.php:53
+msgid "Yearly archives: "
+msgstr "Archives annuelles :"
+
+#: ../index.php:78 ../single.php:44
 msgid "No"
 msgstr "Pas de "
 
-#: ../index.php:67 ../single.php:44
+#: ../index.php:78 ../single.php:44
 msgid "1"
 msgstr "1"
 
-#: ../index.php:67 ../single.php:44
+#: ../index.php:78 ../single.php:44
 msgid "%"
 msgstr "%"
 
-#: ../index.php:68 ../single.php:45
+#: ../index.php:79 ../single.php:45
 msgid "Comment"
 msgstr "Commentaire"
 
-#: ../index.php:68 ../single.php:45
+#: ../index.php:79 ../single.php:45
 msgid "Comments"
 msgstr "Commentaires"
 
-#: ../index.php:68 ../single.php:45
+#: ../index.php:79 ../single.php:45
 msgid "Comments Off"
 msgstr "Commentaires Off"
 
-#: ../index.php:72 ../single.php:49
+#: ../index.php:83 ../single.php:49
 msgid "by "
 msgstr "par"
 
-#: ../index.php:74 ../page-full-width.php:40 ../page.php:40 ../single.php:51
+#: ../index.php:85 ../page-full-width.php:40 ../page.php:40 ../single.php:51
 msgid "Edit"
 msgstr "Éditer"
 
-#: ../index.php:89 ../single.php:68
+#: ../index.php:100 ../single.php:68
 msgid "Posted in"
 msgstr "Publié dans"
 
-#: ../index.php:107 ../page-full-width.php:54 ../page.php:54 ../single.php:146
+#: ../index.php:118 ../page-full-width.php:54 ../page.php:54 ../single.php:146
 msgid "Not Found"
 msgstr "Introuvable"
 
-#: ../index.php:114
+#: ../index.php:125
 msgid "Previous Posts"
 msgstr "Billets précédents"
 
-#: ../index.php:117
+#: ../index.php:128
 msgid "Next Posts"
 msgstr "Billets suivants"
 
@@ -154,7 +166,7 @@ msgstr "Meta"
 
 #: ../single.php:75
 msgid "Pages:"
-msgstr "Pages:"
+msgstr "Pages :"
 
 #: ../single.php:80
 msgid "Next page"

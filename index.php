@@ -40,10 +40,21 @@
 		<?php /* CATEGORY CONDITIONAL TITLE */ ?>
 		<?php if ( is_category() ) : ?>			
 		<h1 class="page-title"><?php _e('Category: ', 'boldr'); single_cat_title(); ?></h1>
+		<?php endif; ?>
+
+		<?php /* ARCHIVES CONDITIONAL TITLE */ ?>
+		<?php if ( is_day() ) : ?>			
+		<h1 class="page-title"><?php _e('Daily archives: ', 'boldr'); echo get_the_time('F jS, Y'); ?></h1>
+		<?php endif; ?>	
+		<?php if ( is_month() ) : ?>			
+		<h1 class="page-title"><?php _e('Monthly archives: ', 'boldr'); echo get_the_time('F, Y'); ?></h1>
+		<?php endif; ?>	
+		<?php if ( is_year() ) : ?>			
+		<h1 class="page-title"><?php _e('Yearly archives: ', 'boldr'); echo get_the_time('Y'); ?></h1>
 		<?php endif; ?>	
 
 		<?php /* DEFAULT CONDITIONAL TITLE */ ?>
-		<?php if (!is_front_page() && !is_search() && !is_tag() && !is_category()) { ?>
+		<?php if (!is_front_page() && !is_search() && !is_tag() && !is_category() && !is_year() && !is_month() && !is_day() ) { ?>
 		<h1 class="page-title"><?php echo get_the_title(get_option('page_for_posts')); ?></h1>
 		<?php }	/* is_front_page endif */ ?>
 
@@ -89,7 +100,7 @@
 					<div class="post-category"><?php _e('Posted in', 'boldr'); ?> <?php the_category(', '); ?></div>
 					<?php endif; ?>
 					<div class="post-content">
-					<?php if ( get_post_format() || post_password_required() ) the_content();
+					<?php if ( get_post_format() || post_password_required() || "Full content" == boldr_get_option('blog_index_shows') ) the_content();
 						else the_excerpt();
 					if (has_tag()) { the_tags('<br class="clear" /><div class="tags"><span class="the-tags">Tags:</span>', '', '</div>'); } ?>
 
