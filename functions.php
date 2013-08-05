@@ -5,7 +5,7 @@
  * @package Asteroid
  *
  */
-$ast_version = "1.1.1";
+$ast_version = "1.1.2";
 /*-------------------------------------
 	Theme Localization
 --------------------------------------*/
@@ -349,6 +349,27 @@ add_filter( 'mce_css', 'asteroid_wp_editor_width' );
 if ( asteroid_option('ast_post_editor_style') == 0 ) {
 	add_editor_style( array( 'includes/editor-style.css', 'includes/content-width.php' ) );
 }
+
+
+/*----------------------------------------
+	Remove extra width on wp-caption
+-----------------------------------------*/
+function asteroid_img_caption_filter($val, $attr, $content = null) {
+	extract(shortcode_atts(array(
+		'id'   	  => '',
+		'align'	  => 'alignnone',
+		'width'	  => '',
+		'caption' => ''
+	), $attr));
+	 
+	if ( 1 > (int) $width || empty($caption) )
+		return $val;
+
+	if ( $id ) $id = 'id="' . esc_attr($id) . '" ';
+
+	return '<div ' . $id . 'class="wp-caption ' . esc_attr($align) . '" style="width: ' . (int) $width . 'px">' . do_shortcode( $content ) . '<p class="wp-caption-text">' . $caption . '</p></div>';
+}
+add_filter( 'img_caption_shortcode', 'asteroid_img_caption_filter', 10, 3 );
 
 
 /*----------------------------------------

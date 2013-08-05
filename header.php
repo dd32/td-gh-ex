@@ -47,7 +47,8 @@
 		<!-- Menu -->
 		<?php wp_nav_menu( array(
 			'theme_location' 	=> 	'ast-menu-primary',
-			'container' 		=> 	false )
+			'container' 		=> 	false,
+			'fallback_cb'		=>	'wp_page_menu' )
 			); 
 		?>
 		<!-- Searchform -->

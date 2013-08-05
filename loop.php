@@ -18,11 +18,11 @@
 <?php endif; ?>
 
 <div class="entry-meta-top">
-	<span class="entry-categories"><?php the_category(' '); ?></span>
-
 	<?php if ( asteroid_option('ast_blog_author') == 1 ) : ?>
 		<span class="entry-author"><?php _e('Posted by', 'asteroid'); ?>&nbsp;<?php the_author_posts_link(); ?></span>
 	<?php endif; ?>
+
+	<span class="entry-categories"><?php the_category(' '); ?></span>
 </div>
 
 <div class="entry-content">

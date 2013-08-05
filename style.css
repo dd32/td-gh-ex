@@ -4,7 +4,7 @@ Theme URI: http://ronangelo.com/asteroid/
 Description: Asteroid is a simple, clean and responsive theme. It incorporates various widget areas that make management of banners and ads a lot easier, especially for ad-supported sites. The theme is ideal for use on a blog, a static website or both. The theme’s development focuses on user customization and minimizing HTTP requests to help conserve server resource. Asteroid supports RTL Language, custom headers, backgrounds, menus, full-width page templates and more.
 Author: ronangelo
 Author URI: http://ronangelo.com/
-Version: 1.1.1
+Version: 1.1.2
 Tags: black, white, gray, two-columns, right-sidebar, fixed-width, custom-header, custom-background, featured-images, custom-menu, custom-colors, theme-options, threaded-comments, sticky-post, editor-style, full-width-template, threaded-comments, translation-ready, rtl-language-support
 
 License: GNU General Public License, Version 3 or later
@@ -424,11 +424,12 @@ article.sticky {
 
 .blog-view .entry-meta-top {overflow: hidden;}
 
-.blog-view .entry-categories {
+.blog-view .entry-author, .blog-view .entry-categories {
 	display: inline-block;
 	margin-top: 6px; 
 }
-.blog-view .entry-categories a {
+
+.blog-view .entry-author, .blog-view .entry-categories a {
 	background: rgba(0, 0, 0, 0.15);
 	border: 1px solid #999;
 	padding: 0 4px;
@@ -438,19 +439,11 @@ article.sticky {
 	margin-bottom: 4px;
 	
 }
+
 .blog-view .entry-categories a:hover {
 	background: rgba(0, 0, 0, 0.75);
 	color: #FFF;
 	border-color: #000;
-}
-
-.blog-view .entry-author {
-	display: inline-block;
-	float: right; 
-	margin-top: 6px; 
-	background: rgba(0, 0, 0, 0.15);
-	border: 1px solid #999;
-	padding: 0 4px;
 }
 
 .blog-view .entry-content {
@@ -763,14 +756,28 @@ img[class*="align"], img[class*="wp-image-"], img[class*="attachment-"] {
 	box-shadow: 0 1px 3px #111;
 	word-wrap: break-word;
 }
-.comment-author .avatar {display: inline-block;}
-#comments-wrap .comment-body .says {display: none;}
 #comments-wrap .comment-body p {clear: both;}
 
-#comments-wrap .avatar {vertical-align:middle; margin-right:2px; border:1px solid #ddd;}
-#comments-wrap .comment-author {margin-bottom: 10px; float: left;}
-#comments-wrap .comment-author cite {font-size: 14px; font-weight:bold; font-style:normal;}
-#comments-wrap .comment-meta {margin-bottom:6px; float: right;}
+#comments-wrap .comment-author, #comments-wrap .comment-meta {
+    display: inline-block;
+    height: 50px;
+    margin-bottom: 6px;
+    width: 50%;
+}
+#comments-wrap .comment-author {float: left;}
+#comments-wrap .comment-meta {float: right; text-align: right;}
+#comments-wrap .avatar {
+	vertical-align:middle;
+	margin-right:2px;
+	border:1px solid #888;
+}
+#comments-wrap .comment-author cite {
+	font-size: 14px;
+	font-weight:bold;
+	font-style:normal;
+}
+#comments-wrap .comment-body .says {display: none;}
+
 #comments-wrap .reply {margin: 12px auto 0; overflow: hidden;}
 #comments-wrap .reply a {
 	background: #FFF;
@@ -790,11 +797,9 @@ img[class*="align"], img[class*="wp-image-"], img[class*="attachment-"] {
 	box-shadow: 0 0 2px #333;
     overflow: hidden;
 }
-#comments-wrap .pingback .comment-body .comment-author cite {font-size: 13px; font-weight: normal;}
-#comments-wrap .pingback .comment-body .comment-author,
-#comments-wrap .pingback .comment-body .comment-meta {
-    margin-bottom: 0;
-}
+#comments-wrap .pingback .comment-author cite {font-size: 13px; font-weight: normal;}
+#comments-wrap .pingback .comment-author,
+#comments-wrap .pingback .comment-meta {height: auto;}
 
 #comments-wrap .pagination {text-align: center; margin: 20px auto;}
 #comments-wrap .pagination > * {padding: 3px 8px; border: 1px solid #AAA;}
@@ -1011,9 +1016,9 @@ img[class*="align"], img[class*="wp-image-"], img[class*="attachment-"] {
 
 .bbp-pagination-links > * {
     background-color: #222;
-    border: 1px solid #000;
+    border: 1px solid #000 !important;
     color: #FFF;
-    padding: 4px 8px;
+    padding: 2px 8px !important;
 }
 .bbp-pagination-links .page-numbers.current {background-color: #444;}
 .bbp-pagination-links > a:hover {

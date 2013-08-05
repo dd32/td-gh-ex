@@ -62,7 +62,12 @@ pre {
 	word-wrap: normal;
 }
 
-img.alignnone {margin: 8px;}
-img.alignleft {margin: 8px 8px 8px 0;}
-img.alignright {margin: 8px 0 8px 8px;}
-img.aligncenter {margin: 8px auto;}
+.mceContentBody .wp-caption, .mceContentBody img {
+	max-width: 100%;
+	height: auto;
+}
+
+.alignnone {margin: 8px 0;}
+.alignleft {margin: 8px 8px 8px 0;}
+.alignright {margin: 8px 0 8px 8px;}
+.aligncenter {margin: 8px auto;}
