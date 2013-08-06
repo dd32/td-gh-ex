@@ -1,4 +1,13 @@
 Changelog -----------------------------------
+version:1.128
+Fixed
+    Fixed Wrong function name from month_list to raindrops_month_list
+        filter name change from month_list_post_count to raindrops_month_list_post_count
+    Fixed loop.php class attribute value improperly ( not spaced )Modified
+    seach result search form submit button position.
+
+----------------------------------------------
+Changelog -----------------------------------
 version:1.127
 
 Fixed
