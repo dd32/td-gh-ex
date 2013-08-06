@@ -1,5 +1,8 @@
 *** discover Changelog ***
 
+07-08-2013 - version 1.7.6
+* Favicon settings added in theme options panel.
+
 26-07-2013 - version 1.7.5
 * Support for woocommerce plugin added. Folder woocommerce and css added in style.css file.
 

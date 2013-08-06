@@ -391,6 +391,14 @@ return $args;
 }
 add_filter( 'wp_page_menu_args', 'discover_page_menu_args' );
 
+function discover_favicon() {
+	if (of_get_option('favicon_image') != '') {
+	echo '<link rel="shortcut icon" href="'. of_get_option('favicon_image') .'"/>'."\n";
+	}
+}
+
+add_action('wp_head', 'discover_favicon');
+
 // custom function
 function discover_head_css() {
 		$output = '';

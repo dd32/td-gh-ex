@@ -272,7 +272,15 @@ function optionsframework_options() {
 						"desc" => "Paste here the link of the page or post.",
 						"id" => "slider_link2",
 						"std" => "",
-						"type" => "text");						
+						"type" => "text");		
+						
+	$options[] = array( "name" => "Favicon Settings",
+						"type" => "heading");
+						
+	$options[] = array( "name" => "Favicon image",
+						"desc" => "Upload your favicon image over here or enter url.",
+						"id" => "favicon_image",
+						"type" => "upload");										
 						
 	$options[] = array( "name" => "Footer",
 						"type" => "heading");
