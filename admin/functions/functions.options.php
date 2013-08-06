@@ -473,25 +473,6 @@ $of_options = array();
 					       "std"             => "",
 					       "type"            => "media");
 
-            $of_options[] = array( 	"name" 		=> __("Specify Logo Width and Height", 'virtue'),
-						"desc" 		=> __("Width", 'virtue'),
-						"id" 		      => "logo_width",
-						"std" 		=> "260",
-						"min" 		=> "5",
-						"step"		=> "5",
-						"max" 		=> "450",
-						"type" 		=> "sliderui" 
-				);
-				
-            $of_options[] = array( 	"name" 		=> "",
-						"desc" 		=> __("Height", 'virtue'),
-						"id" 		      => "logo_height",
-						"std" 		=> "60",
-						"min" 		=> "5",
-						"step"		=> "5",
-						"max" 		=> "300",
-						"type" 		=> "sliderui" 
-				);
             $of_options[] = array(   "name"            => __("Upload Your x2 Logo for Retina Screens", 'virtue'),
 					       "desc"            => __("Should be twice the pixel size of your normal logo.", 'virtue'),
       					 "id"              => "x2logo_upload",

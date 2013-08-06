@@ -1,10 +1,5 @@
 <?php global $smof_data; 
 //Logo
-$logox1 = $smof_data['logo_upload']; 
-$logox2 = $smof_data['x2logo_upload'];
-
-$logo_width = $smof_data['logo_width']; 
-$logo_height = $smof_data['logo_height'];
 
 $logo_font = $smof_data['font_logo'];
 $font_logo = $smof_data['font_logo_style'];
@@ -77,7 +72,6 @@ $boxedbg_fixed = $smof_data['boxed_bg_fixed'];
 
 echo '<style type="text/css" media="screen">
 
-  #thelogo {width:'.$logo_width.'px; height:'.$logo_height.'px; background:url('.$logox1.') no-repeat;}
   #logo {padding-top:'.$logo_toppadding.'px; padding-bottom:'.$logo_bottompadding.'px; margin-left:'.$logo_leftpadding.'px; margin-right:'.$logo_rightpadding.'px;}
   #nav-main ul.sf-menu {margin-top:'.$menu_topmargin.'px; margin-bottom:'.$menu_bottommargin.'px;}
   .logofont {font-family:'.$logo_font.';}, #logo a.brand {font-size:' . $font_h1['size']. '; font-weight:' . $font_h1['style']. '; line-height:' . $font_h1['height']. '; color:' . $font_h1['color']. ';}
@@ -94,12 +88,12 @@ echo '<style type="text/css" media="screen">
 
   .home-message:hover {background-color:'.$primary.'; background-color: rgba('.$primaryrgb[0].', '.$primaryrgb[1].', '.$primaryrgb[2].', 0.6);}
   nav.woocommerce-pagination ul li a:hover, .wp-pagenavi a:hover, .accordion-heading .accordion-toggle.open {border-color: '.$primary.';}
-  a:hover, #nav-main ul.sf-menu ul li a:hover, .product_price ins .amount, .color_primary, .primary-color, #logo a.brand, #nav-main ul.sf-menu a:hover,
+  a, #nav-main ul.sf-menu ul li a:hover, .product_price ins .amount, .color_primary, .primary-color, #logo a.brand, #nav-main ul.sf-menu a:hover,
   .woocommerce-message:before, .woocommerce-info:before, #nav-second ul.sf-menu a:hover, .footerclass a:hover {color: '.$primary.';}
   .widget_price_filter .ui-slider .ui-slider-handle, .product_item .kad_add_to_cart:hover, .kad-btn-primary, .woocommerce-message .button, 
   #containerfooter .menu li a:hover, .bg_primary, .portfolionav a:hover, .home-iconmenu a:hover, p.demo_store, .topclass {background: '.$primary.';}
 
-  a {color: '.$primary20.';}
+  a:hover {color: '.$primary20.';}
   .kad-btn-primary:hover, .woocommerce-message .button:hover {background: '.$primary20.';}
 
   .contentclass {background:'.$content_bg_color.' '.$content_bg_img.' '.$content_bg_repeat.' '.$content_bg_x.' '.$content_bg_y.';}
@@ -111,4 +105,4 @@ echo '<style type="text/css" media="screen">
 
   '.$smof_data['custom_css'].'
 </style>';
-if($logox2 != '') { echo '<style type="text/css" media="screen"> @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) { #thelogo {background:url('.$logox2.') no-repeat; background-size:'.$logowidth.' '.$logoheight.'; }}</style>';} ?>
+?>

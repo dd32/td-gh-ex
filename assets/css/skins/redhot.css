@@ -1,14 +1,14 @@
 /* Primary color */
 .home-message:hover {background-color:#c72c00; background-color: rgba(45, 92, 136, 0.6);}
 nav.woocommerce-pagination ul li a:hover, .wp-pagenavi a:hover, .accordion-heading .accordion-toggle.open {border-color: #c72c00;}
-a:hover, #nav-main ul.sf-menu ul li a:hover, .product_price ins .amount, .color_primary, .primary-color, #logo a.brand, #nav-main ul.sf-menu a:hover,
+a, #nav-main ul.sf-menu ul li a:hover, .product_price ins .amount, .color_primary, .primary-color, #logo a.brand, #nav-main ul.sf-menu a:hover,
 .woocommerce-message:before, .woocommerce-info:before, #nav-second ul.sf-menu a:hover, .footerclass a:hover {color: #c72c00;}
 .widget_price_filter .ui-slider .ui-slider-handle, .product_item .kad_add_to_cart:hover, .kad-btn-primary, .woocommerce-message .button, 
 #containerfooter .menu li a:hover, .bg_primary, .portfolionav a:hover, .home-iconmenu a:hover, p.demo_store, .topclass {background: #c72c00;}
 
-/* 20% lighter than Primary */
-a {color: #d25633;}
-.kad-btn-primary:hover, .woocommerce-message .button:hover {background: #d25633;}
+/* 30% lighter than Primary */
+a:hover {color: #d86b4c;}
+.kad-btn-primary:hover, .woocommerce-message .button:hover {background: #d86b4c;}
 
 /* Background Skins */
 .contentclass {background: #fff;}

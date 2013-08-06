@@ -30,13 +30,12 @@ class Options_Machine {
 	 * Sanitize & returns default values if don't exist
 	 * 
 	 * Notes:
-	 *	- For further uses, you can check for the $value['type'] and performs
-	 *	  more speficic sanitization on the option
-	 *	- The ultimate objective of this function is to prevent the "undefined index"
-	 *	  errors some authors are having due to malformed options array
+	 	- For further uses, you can check for the $value['type'] and performs
+	 	  more speficic sanitization on the option
+	 	- The ultimate objective of this function is to prevent the "undefined index"
+	 	  errors some authors are having due to malformed options array
 	 */
-	function sanitize_option( $value ) {
-
+	static function sanitize_option( $value ) {
 		$defaults = array(
 			"name" 		=> "",
 			"desc" 		=> "",
@@ -64,46 +63,39 @@ class Options_Machine {
 	 * @return array
 	 */
 	public static function optionsframework_machine($options) {
-		global $smof_output, $smof_details;
+		global $smof_output, $smof_details, $smof_data;
 		if (empty($options))
 			return;
-		$smof_data = of_get_options();
-		foreach($options as $key => $option) {
-			if (!isset($option['id']) || empty($option['id']))
-				continue;
-			$option = self::sanitize_option($option);
-			$smof_details[$option['id']] = $option;
-			if (!isset($smof_data[$option['id']])) {
-				of_save_options($option['std'], $option['id']);
-				$options[$key] = $option;
-				$smof_data[$option['id']] = $option['std'];
-			}
-		}
-	    
+		if (empty($smof_data))
+			$smof_data = of_get_options();
 		$data = $smof_data;
 
 		$defaults = array();   
 	    $counter = 0;
 		$menu = '';
 		$output = '';
-
+		$update_data = false;
 
 		do_action('optionsframework_machine_before', array(
 				'options'	=> $options,
 				'smof_data'	=> $smof_data,
 			));
-		$output .= $smof_output;
+		if ($smof_output != "") {
+			$output .= $smof_output;
+			$smof_output = "";
+		}
 
 
-		
+
 		foreach ($options as $value) {
-			
+
 			// sanitize option
-			$value = self::sanitize_option($value);
+			if ($value['type'] != "heading")
+				$value = self::sanitize_option($value);
 
 			$counter++;
 			$val = '';
-			
+
 			//create array of defaults		
 			if ($value['type'] == 'multicheck'){
 				if (is_array($value['std'])){
@@ -116,15 +108,27 @@ class Options_Machine {
 			} else {
 				if (isset($value['id'])) $defaults[$value['id']] = $value['std'];
 			}
-			
+
 			/* condition start */
 			if(!empty($smof_data) || !empty($data)){
-			
+
+				if (array_key_exists('id', $value) && !isset($smof_data[$value['id']])) {
+					$smof_data[$value['id']] = $value['std'];
+					if ($value['type'] == "checkbox" && $value['std'] == 0) {
+						$smof_data[$value['id']] = 0;
+					} else {
+						$update_data = true;
+					}
+				}
+				if (array_key_exists('id', $value) && !isset($smof_details[$value['id']])) {
+					$smof_details[$value['id']] = $smof_data[$value['id']];
+				}
+
 			//Start Heading
 			 if ( $value['type'] != "heading" )
 			 {
 			 	$class = ''; if(isset( $value['class'] )) { $class = $value['class']; }
-				
+
 				//hide items in checkbox group
 				$fold='';
 				if (array_key_exists("fold",$value)) {
@@ -134,14 +138,14 @@ class Options_Machine {
 						$fold="f_".$value['fold']." temphide ";
 					}
 				}
-	
+
 				$output .= '<div id="section-'.$value['id'].'" class="'.$fold.'section section-'.$value['type'].' '. $class .'">'."\n";
-				
+
 				//only show header if 'name' value exists
 				if($value['name']) $output .= '<h3 class="heading">'. $value['name'] .'</h3>'."\n";
-				
+
 				$output .= '<div class="option">'."\n" . '<div class="controls">'."\n";
-	
+
 			 } 
 			 //End Heading
 
@@ -434,20 +438,20 @@ class Options_Machine {
 				break;
 
 				case 'sidebars':
-					$output .= '<div class="slider"><ul id="'.$value['id'].'" rel="'.$int.'">';
+					$output .= '<div class="slider"><ul id="'.$value['id'].'">';
 					$sidebars = $data[$value['id']];
 					$count = count($sidebars);
 					if ($count < 2) {
 						$oldorder = 1;
 						$order = 1;
-						$output .= Options_Machine::optionsframework_sidebars_function($value['id'],$value['std'],$oldorder,$order,$int);
+						$output .= Options_Machine::optionsframework_sidebars_function($value['id'],$value['std'],$oldorder,$order);
 					} else {
 						$i = 0;
 						foreach ($sidebars as $sidebar) {
 							$oldorder = $sidebar['order'];
 							$i++;
 							$order = $i;
-							$output .= Options_Machine::optionsframework_sidebars_function($value['id'],$value['std'],$oldorder,$order,$int);
+							$output .= Options_Machine::optionsframework_sidebars_function($value['id'],$value['std'],$oldorder,$order);
 						}
 					}			
 					$output .= '</ul>';
@@ -456,20 +460,20 @@ class Options_Machine {
 				break;
 
 				case 'icons':
-					$output .= '<div class="slider"><ul id="'.$value['id'].'" rel="'.$int.'">';
+					$output .= '<div class="slider"><ul id="'.$value['id'].'">';
 					$icons = $data[$value['id']];
 					$count = count($icons);
 					if ($count < 2) {
 						$oldorder = 1;
 						$order = 1;
-						$output .= Options_Machine::optionsframework_icons_function($value['id'],$value['std'],$oldorder,$order,$int);
+						$output .= Options_Machine::optionsframework_icons_function($value['id'],$value['std'],$oldorder,$order);
 					} else {
 						$i = 0;
 						foreach ($icons as $icon) {
 							$oldorder = $icon['order'];
 							$i++;
 							$order = $i;
-							$output .= Options_Machine::optionsframework_icons_function($value['id'],$value['std'],$oldorder,$order,$int);
+							$output .= Options_Machine::optionsframework_icons_function($value['id'],$value['std'],$oldorder,$order);
 						}
 					}			
 					$output .= '</ul>';
@@ -941,7 +945,7 @@ class Options_Machine {
 		return $sidebars;
 		
 	}
-		public static function optionsframework_icons_function($id,$std,$oldorder,$order,$int){
+		public static function optionsframework_icons_function($id,$std,$oldorder,$order){
 	
 	    $data = of_get_options();
 	    $smof_data = of_get_options();
@@ -980,22 +984,19 @@ class Options_Machine {
 		
 		$icons .= '<label>Choose a preset icon</label>';
 		
-			$icons .= '<select class="select of-input kad_icomoon" name="'. $id .'['.$order.'][icon_o] id="'. $id.'_'.$order.'_icon" value="'.$val['icon_o'].'" />';
-						$icon_option = array(''=>'Select',
+			$icons .= '<select class="select of-input kad_icomoon" name="'. $id .'['.$order.'][icon_o]" id="'. $id.'_'.$order.'_icon" value="'.$val['icon_o'].'" />';
+						$icon_option = array(
 						'icon-home'=>'icon-home','icon-pencil'=>'icon-pencil','icon-quill'=>'icon-quill','icon-images'=>'icon-images','icon-image'=>'icon-image','icon-image-2'=>'icon-image-2','icon-camera'=>'icon-camera','icon-camera-2'=>'icon-camera-2','icon-camera-3'=>'icon-camera-3','icon-music'=>'icon-music','icon-headphones'=>'icon-headphones','icon-brush'=>'icon-brush','icon-grid-view-1'=>'icon-grid-view-1','icon-users'=>'icon-users','icon-connection'=>'icon-connection','icon-megaphone'=>'icon-megaphone','icon-books'=>'icon-books','icon-book'=>'icon-book','icon-newspaper'=>'icon-newspaper','icon-certificate'=>'icon-certificate','icon-cc'=>'icon-cc','icon-tag'=>'icon-tag','icon-folder-open'=>'icon-folder-open','icon-cart'=>'icon-cart','icon-basket'=>'icon-basket','icon-tags'=>'icon-tags','icon-mail-send'=>'icon-mail-send','icon-location'=>'icon-location','icon-location-2'=>'icon-location-2','icon-envelop'=>'icon-envelop','icon-address-book'=>'icon-address-book','icon-map'=>'icon-map','icon-direction'=>'icon-direction','icon-clock'=>'icon-clock','icon-print'=>'icon-print','icon-calendar'=>'icon-calendar','icon-calendar-2'=>'icon-calendar-2','icon-screen'=>'icon-screen','icon-laptop'=>'icon-laptop','icon-mobile'=>'icon-mobile','icon-mobile-2'=>'icon-mobile-2','icon-tablet'=>'icon-tablet','icon-drawer'=>'icon-drawer','icon-cabinet'=>'icon-cabinet','icon-bubble'=>'icon-bubble','icon-bubbles'=>'icon-bubbles','icon-bubble-2'=>'icon-bubble-2','icon-user'=>'icon-user','icon-users-2'=>'icon-users-2','icon-vcard'=>'icon-vcard','icon-equalizer'=>'icon-equalizer','icon-equalizer-2'=>'icon-equalizer-2','icon-search'=>'icon-search','icon-expand'=>'icon-expand','icon-lock'=>'icon-lock','icon-cogs'=>'icon-cogs','icon-stats-up'=>'icon-stats-up','icon-rocket'=>'icon-rocket','icon-meter'=>'icon-meter','icon-fire'=>'icon-fire','icon-lamp'=>'icon-lamp','icon-remove'=>'icon-remove','icon-truck'=>'icon-truck','icon-switch'=>'icon-switch','icon-shield'=>'icon-shield','icon-menu'=>'icon-menu','icon-grid'=>'icon-grid','icon-link'=>'icon-link','icon-star'=>'icon-star','icon-star-2'=>'icon-star-2','icon-heart'=>'icon-heart','icon-heart-2'=>'icon-heart-2','icon-happy'=>'icon-happy','icon-wink'=>'icon-wink','icon-grin'=>'icon-grin','icon-cool'=>'icon-cool','icon-shocked'=>'icon-shocked','icon-checkmark'=>'icon-checkmark','icon-box'=>'icon-box','icon-minus'=>'icon-minus','icon-plus'=>'icon-plus','icon-loop'=>'icon-loop','icon-arrow-up'=>'icon-arrow-up','icon-arrow-right'=>'icon-arrow-right','icon-arrow-down'=>'icon-arrow-down','icon-arrow-left'=>'icon-arrow-left','icon-arrow-up-2'=>'icon-arrow-up-2','icon-arrow-right-2'=>'icon-arrow-right-2','icon-arrow-down-2'=>'icon-arrow-down-2','icon-arrow-left-2'=>'icon-arrow-left-2','icon-arrow-up-3'=>'icon-arrow-up-3','icon-arrow-right-3'=>'icon-arrow-right-3','icon-arrow-down-3'=>'icon-arrow-down-3','icon-arrow-left-3'=>'icon-arrow-left-3','icon-checkbox-checked'=>'icon-checkbox-checked','icon-vector'=>'icon-vector','icon-rulers'=>'icon-rulers','icon-page-break'=>'icon-page-break','icon-new-tab'=>'icon-new-tab','icon-code'=>'icon-code','icon-mail'=>'icon-mail','icon-google-plus'=>'icon-google-plus','icon-google-plus-2'=>'icon-google-plus-2','icon-facebook'=>'icon-facebook','icon-facebook-2'=>'icon-facebook-2','icon-instagram'=>'icon-instagram','icon-twitter'=>'icon-twitter','icon-twitter-2'=>'icon-twitter-2','icon-feed'=>'icon-feed','icon-feed-2'=>'icon-feed-2','icon-youtube'=>'icon-youtube','icon-vimeo'=>'icon-vimeo','icon-vimeo2'=>'icon-vimeo2','icon-flickr'=>'icon-flickr','icon-flickr-2'=>'icon-flickr-2','icon-picassa'=>'icon-picassa','icon-picassa-2'=>'icon-picassa-2','icon-dribbble'=>'icon-dribbble','icon-dribbble-2'=>'icon-dribbble-2','icon-forrst'=>'icon-forrst','icon-forrst-2'=>'icon-forrst-2','icon-deviantart'=>'icon-deviantart','icon-deviantart-2'=>'icon-deviantart-2','icon-github'=>'icon-github','icon-github-2'=>'icon-github-2','icon-blogger'=>'icon-blogger','icon-blogger-2'=>'icon-blogger-2','icon-wordpress'=>'icon-wordpress','icon-wordpress-2'=>'icon-wordpress-2','icon-tumblr'=>'icon-tumblr','icon-tumblr-2'=>'icon-tumblr-2','icon-skype'=>'icon-skype','icon-linkedin'=>'icon-linkedin','icon-stumbleupon'=>'icon-stumbleupon','icon-stumbleupon-2'=>'icon-stumbleupon-2','icon-pinterest'=>'icon-pinterest','icon-pinterest-2'=>'icon-pinterest-2','icon-battery'=>'icon-battery','icon-ruler'=>'icon-ruler','icon-cogs-2'=>'icon-cogs-2','icon-bars'=>'icon-bars','icon-bag'=>'icon-bag','icon-tshirt'=>'icon-tshirt','icon-food'=>'icon-food','icon-food-2'=>'icon-food-2','icon-glass'=>'icon-glass','icon-glass-2'=>'icon-glass-2','icon-film'=>'icon-film','icon-clock-2'=>'icon-clock-2','icon-quotes-right'=>'icon-quotes-right','icon-quotes-left'=>'icon-quotes-left','icon-earth'=>'icon-earth','icon-download'=>'icon-download','icon-upload'=>'icon-upload','icon-airplane'=>'icon-airplane','icon-flag'=>'icon-flag','icon-anchor'=>'icon-anchor','icon-weather-lightning'=>'icon-weather-lightning','icon-weather-rain'=>'icon-weather-rain','icon-weather-snow'=>'icon-weather-snow','icon-sun'=>'icon-sun','icon-link-2'=>'icon-link-2','icon-checkmark-circle'=>'icon-checkmark-circle','icon-cancel-circle'=>'icon-cancel-circle',
 						);
-										
-						foreach ($icon_option as $i=>$icon_o){
-						
-							$icons .= '<option value="'. $i .'" ' . selected($val['icon_o'], $i, false) . '>'. $icon_o .'</option>';		
-						}
+					
+						foreach ($icon_option as $ic=>$icon_v){$icons .= '<option value="'. $ic .'" ' . selected($val['icon_o'], $ic, false) . '>'. $icon_v .'</option>';}	
 						$icons .= '</select><br/>';
 		
 		
 		$icons .= '<label>Or upload your own icon.</label>';
 		$icons .= '<input class="slide of-input" name="'. $id .'['.$order.'][url]" id="'. $id .'_'.$order .'_slide_url" value="'. $val['url'] .'" />';
 		
-		$icons .= '<div class="upload_button_div"><span class="button media_upload_button" id="'.$id.'_'.$order .'" rel="' . $int . '">Upload</span>';
+		$icons .= '<div class="upload_button_div"><span class="button media_upload_button" id="'.$id.'_'.$order .'">Upload</span>';
 		
 		if(!empty($val['url'])) {$hide = '';} else { $hide = 'hide';}
 		$icons .= '<span class="button mlu_remove_button '. $hide.'" id="reset_'. $id .'_'.$order .'" title="' . $id . '_'.$order .'">Remove</span>';

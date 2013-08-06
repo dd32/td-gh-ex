@@ -36,7 +36,7 @@
           <div class="span4 clearfix">
             <div id="logo" class="logocase">
               <a class="brand logofont" href="<?php echo home_url(); ?>/">
-                      <?php global $smof_data; if ($smof_data['logo_upload']) { ?> <div id="thelogo"></div> <?php } else { bloginfo('name'); } ?>
+                       <?php global $smof_data; if ($smof_data['logo_upload']) { ?> <div id="thelogo"><img src="<?php echo $smof_data['logo_upload']; ?>" data-at2x="<?php echo $smof_data['x2logo_upload'];?>" /></div> <?php } else { bloginfo('name'); } ?>
               </a>
               <?php global $smof_data; if ($smof_data['logo_below_text']) { ?> <p class="belowlogo-text"><?php echo $smof_data['logo_below_text']; ?></p> <?php }?>
            </div> <!-- Close #logo -->
