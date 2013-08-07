@@ -2,8 +2,8 @@
 # This file is distributed under the GNU General Public License 2.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: origami 1.5.8\n"
-"POT-Creation-Date: 2013-07-30T18:29:46+02:00\n"
+"Project-Id-Version: origami 1.5.9\n"
+"POT-Creation-Date: 2013-08-07T19:14:46+02:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -303,7 +303,7 @@ msgstr ""
 msgid "Our sincere thanks"
 msgstr ""
 
-msgid "We'll love and support you forever"
+msgid "We'll go that extra mile for you"
 msgstr ""
 
 msgid "Custom"
