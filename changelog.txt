@@ -1,5 +1,8 @@
 *** discover Changelog ***
 
+10-08-2013 - version 1.7.7
+* wpml-config.xml file added to make them compatible with WPML plugin.
+
 07-08-2013 - version 1.7.6
 * Favicon settings added in theme options panel.
 
