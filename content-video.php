@@ -22,7 +22,9 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 <div class="blog_row_mn">
 				
-		<h2><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'appointment' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+		<h2><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'appointment' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
+		<?php $title = get_the_title();
+    if (strlen($title) == 0) echo '(no title)'; else echo $title; ?></a></h2>
 					<div class="blog_link_mn">
                      
 							 
