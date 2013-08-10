@@ -79,14 +79,16 @@
                    
                  </div><!--closing of the page_wi-->
             </div><!--closing of the footer_top-->
-             <div class="page_wi">            
-            	<p class="footer_left"><?php _e('&copy; All rights reserved.', 'appointment');?> <?php _e(' Powered by ', 'appointment'); ?><a href="http://www.wordpress.org/"><?php _e('WordPress', 'appointment'); ?></a></p>
-               <!--<div class="footer_right">
-                	<a href="#" class="social1">&nbsp;</a>
-                    <a href="#" class="social2">&nbsp;</a>
-                    <a href="#" class="social3">&nbsp;</a>
-                    <a href="#" class="social4">&nbsp;</a>
-                </div>-->
+             <div class="site-info">            
+            	<p class="footer_left">
+				<?php _e(' Powered by ', 'appointment'); ?>
+				<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'appointment' ) ); ?>"><?php _e('WordPress', 'appointment'); ?></a>
+				
+				<?php bloginfo(); ?> <?php echo date( 'Y' ); ?>. <?php _e( 'Designed by', 'appointment' ); ?> <a href="<?php echo esc_url( __( 'http://priyanshumittal.com/','appointment' ) ); ?>"><?php _e( 'Appointment &copy;', 'appointment' ); ?></a>
+				<?php _e( 'All Rights Reserved.', 'appointment' ); ?>
+				
+				</p>
+               
             </div>
 </div><!--closing of the footer-->
 </footer>  

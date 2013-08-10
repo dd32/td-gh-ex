@@ -26,6 +26,7 @@
                  <?php  comments_popup_link( __( 'Leave a comment', 'appointment' ),_e( '1 Comment', 'appointment' ), __( '% Comments', 'appointment' ),'name' ); ?>
 						<img src="<?php echo get_template_directory_uri();?>/images/blog_ic3.png" alt="Icon" />
                           <?php edit_post_link( _e( 'Edit', 'appointment' ), '<span class="meta-sep"></span> <span class="name">', '</span>' ); ?>
+						<img src="<?php echo get_template_directory_uri();?>/images/blog_ic4a.png" alt="Icon" />
 						<?php the_category(); ?>
 					</div>
  <?php if ( comments_open() && ! post_password_required() ) : ?>

@@ -74,7 +74,7 @@
 </div><!--blog_left-->
 			
 			<div class="blog_right_mn"><?php get_sidebar();?></div>
-			</div><!--blog_right_bg_mn_con-->
+			</div>
         </div><!--page_wi-->
     </section>
     

@@ -54,7 +54,7 @@
              <ul>
                 <?php
                              if ( has_nav_menu( 'header-menu' ) ) :
-                              wp_nav_menu( array( 'theme_location' => 'header-menu','container' => false,'menu_id'=> false,'menu_class'=> false ) );
+                              wp_nav_menu( array( 'theme_location' => 'header-menu','container' => false,'menu_id'=> false,'menu_class'=> '' ) );
 	                           else:
                                      $args = array(
 												'sort_column' => 'menu_order, post_title',

@@ -36,7 +36,7 @@
 	<?php
 		
 		elseif ( ! comments_open() /* &&  ! is_page() */  && post_type_supports( get_post_type(), 'comments' ) ) :
-		   echo "comment are closed";
+		   echo "comments are closed.";
 	?>
 		  
 	<?php endif; ?>
@@ -63,7 +63,7 @@
      
 		 
         
-        'comment_field' => '<p class="comment-form-comment"> <h2><label for="comment">' .  '</label></h2><br /><textarea id="comment" name="comment" aria-required="true" placeholder="Love to Hear from you."></textarea></p>',
+        'comment_field' => '<p class="comment-form-comment"> <br /><textarea id="comment" name="comment" aria-required="true" placeholder="Love to Hear from you."></textarea></p>',
 		'logged_in_as' => '<p class="logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( get_permalink() ) ) . '</p>',
 		
 );

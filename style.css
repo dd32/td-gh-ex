@@ -2,14 +2,13 @@
  * Theme Name: Appointment
  * Description: A theme for all type of business that uses multiple nav menus, several sidebars,Featured Slider and Custom post layouts. 
  It has a pixel-perfect design that's great for any blogger who wants a new look for their site.
- * Version: 1.2.4
+ * Version: 1.3
  * Author: Priyanshu Mittal,Shahid Mansuri,Vibhor Purandare and Akhilesh Nagar
  * Tags: orange,white,full-width-template, threaded-comments, microformats, translation-ready, two-columns,  right-sidebar, fixed-width, sticky-post, custom-background,custom-menu
- * License: GNU General Public License v2.0
- * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * License: GNU General Public License v3.0
+ * License URI: http://www.gnu.org/licenses/quick-guide-gplv3.html
  * Appointment is distributed under the terms of the GNU GPL
- * Copyright (c) 2013 appointpress.
- * http://www.appointpress.com
+ * Copyright (c) 2013 Appointment.
  * Text Domain: appointment
  */
 
@@ -65,7 +64,7 @@ ul, li{	margin:0px; padding:0px; list-style:none;}
 {	padding:18px 14px 17px 14px; margin:0px; color:#FFFFFF; 
 	background-color: #ee6528; 
 	border:1px solid #EE6528; 
-}
+} 
 .menu ul li ul
 {	display:none; position:absolute; top:55px; left:0px; z-index:99999999;
 	background:#EE6528; width:245px; padding-bottom:7px; padding-left:0px; padding-top:7px; 
@@ -73,7 +72,7 @@ ul, li{	margin:0px; padding:0px; list-style:none;}
 -moz-box-shadow:    2px 2px 3px rgba(50, 50, 50, 0.5);
 box-shadow:         2px 2px 3px rgba(50, 50, 50, 0.5);
 }
-.menu ul li:hover ul
+ .menu ul li:hover ul
 {	display:block;
 }
 .menu ul li:hover ul li
@@ -115,7 +114,7 @@ box-shadow:         2px 2px 3px rgba(50, 50, 50, 0.5);
 }
 .menu ul li:hover ul li:hover ul li:hover ul
 {	display:block;
-}
+} 
 .banner
 {	width:100%; float:left; position:relative; z-index:99;
 	background:url('images/banner_bg.png') repeat-x;
@@ -176,7 +175,7 @@ box-shadow:         2px 2px 3px rgba(50, 50, 50, 0.5);
 	background-image:     -ms-linear-gradient(top, #f9b840, #f9d871);
 	background-image:      -o-linear-gradient(top, #f9b840, #f9d871);		
 }
-.footer_left{	width:auto; float:left; margin:26px 0px; font-size:13px; color:#8b9194;}
+.footer_left{	width:auto; float:left; margin:26px 0px 20px 285px; font-size:13px; color:#8b9194;}
 .footer_left a{	color:#C8470E; font-size:13px;}
 .footer_left a:hover{	color:#000; }
 .footer_right{	width:auto; float:right; margin-top:20px;}
@@ -438,18 +437,87 @@ border: 1px solid #C8470E;
 {	width:630px; float:left; padding-top:14px;
 }
 .blog_row_mn,.page_blog_row_mn
-{	width:630px; float:left; margin:10px 0 0 0px; padding-left:0px; position:relative;   
+{	width:630px;
+	float:left;
+	margin:10px 0 0 0px;
+	padding-left:0px;
+	position:relative;
+		-ms-word-wrap: break-word;
+		word-wrap: break-word;
 }
 .page_blog_row_mn{ color:#8B9194; }
-.blog_row_mn h2,.page_blog_row_mn h2
-{	width:100%; float:left; font-weight:normal; font-family: 'montserratregular'; font-size:20px; color:#737f85;
+
+.blog_row_mn h1,
+.page_blog_row_mn h1,
+.blog_row_mn h2,
+.page_blog_row_mn h2,
+.blog_row_mn h3,
+.page_blog_row_mn h3,
+.blog_row_mn h4,
+.page_blog_row_mn h4,
+.blog_row_mn h5,
+.page_blog_row_mn h5,
+.blog_row_mn h6,
+.page_blog_row_mn h6{
+	width:100%;
+	float:left;
+	font-weight:normal;
+	font-family: 'montserratregular';
+	color:#737f85;
 }
-.blog_row_mn h2 a,.page_blog_row_mn h2 a
-{	font-size:20px; color:#737f85;
+.blog_row_mn h1,
+.page_blog_row_mn h1{
+	font-size: 24px;
 }
-.blog_row_mn h2 a:hover,.page_blog_row_mn h2 a:hover
-{	color:#c8470e;
+.blog_row_mn h2,
+.page_blog_row_mn h2{
+	font-size: 22px;
 }
+.blog_row_mn h3,
+.page_blog_row_mn h3{
+	font-size: 20px;
+}
+.blog_row_mn h4,
+.page_blog_row_mn h4{
+	font-size: 18px;
+}
+.blog_row_mn h5,
+.page_blog_row_mn h5{
+	font-size: 16px;
+}
+.blog_row_mn h6,
+.page_blog_row_mn h6{
+	font-size: 14px;
+}
+.blog_row_mn h1 a,
+.page_blog_row_mn h1 a,
+.blog_row_mn h2 a,
+.page_blog_row_mn h2 a,
+.blog_row_mn h3 a,
+.page_blog_row_mn h3 a,
+.blog_row_mn h4 a,
+.page_blog_row_mn h4 a,
+.blog_row_mn h5 a,
+.page_blog_row_mn h5 a,
+.blog_row_mn h6 a,
+.page_blog_row_mn h6 a{
+	color:#737f85;
+}
+.blog_row_mn h1 a:hover,
+.page_blog_row_mn h1 a:hover,
+.blog_row_mn h2 a:hover,
+.page_blog_row_mn h2 a:hover,
+.blog_row_mn h3 a:hover,
+.page_blog_row_mn h3 a:hover,
+.blog_row_mn h4 a:hover,
+.page_blog_row_mn h4 a:hover,
+.blog_row_mn h5 a:hover,
+.page_blog_row_mn h5 a:hover,
+.blog_row_mn h6 a:hover,
+.page_blog_row_mn h6 a:hover{
+	color:#c8470e;
+}
+
 .blog_link_mn
 {	width:100%; float:left; margin-top:10px;
 }
@@ -542,9 +610,9 @@ text-shadow: 0px 0px 1px #226056;
 .blog_right_mn .widget ul 
 {	width:100%; float:left; margin-top:10px;
 }
-.blog_right_mn .widget ul li
-{	width:268px; float:left; border-bottom:1px dotted #b4bfc5; padding-left:18px; line-height:27px;
-	background:url('images/blog_ic4.png') no-repeat left center;
+.blog_right_mn  .widget ul li 
+{	width:268px;  border-bottom:1px dotted #b4bfc5; padding-left:12px; line-height:27px;
+	/* background:url('images/bullate.png') no-repeat left  ;*/
 }
 .blog_right_mn .widget ul li.lst_bo_no
 {	border-bottom:0px;
@@ -767,9 +835,9 @@ border-radius: 5px;
 {	width:261px;
 }
 
-#footer_cols{	width:200px;}
-#footer_cols1{	width:200px; margin-left:10px;}
-#footer_cols2{	width:180px; margin-left:15px;}
+#.menu-all-pages-container{	width:200px;}
+#.menu-all-pages-container1{	width:200px; margin-left:10px;}
+#.menu-all-pages-container2{	width:180px; margin-left:15px;}
 #footer_contact{	width:200px;}
 .banner_con {	width:275px; }
 .banner_con h2{	margin-top:10px;}
@@ -1416,7 +1484,7 @@ border-radius: 5px;
 }
 .pagination { margin-bottom: 1.71429em;padding-bottom: 0.142857em;text-align: center; }
 .blog_img .wp-post-image{ width:623px;height:auto; }
-.wp-caption { 
+/* .wp-caption { 
 	border-radius: 4px 4px 4px 4px;
     box-shadow: 1px 1px 2px #D6D7D7;
  	background: none repeat scroll 0 0 #EEEEEE;
@@ -1424,6 +1492,11 @@ border-radius: 5px;
     max-width: 96%;
     padding: 8px;
     text-align: center;
+} */
+
+.wp-caption {
+	max-width: 100%; /* Keep wide captions from overflowing their container. */
+	padding: 4px;
 }
 .wp-caption .wp-caption-text,
 .gallery-caption,
@@ -1745,12 +1818,12 @@ a {
 .blog_con_mn h1, h2, h3, h4, h5, h6 {
  color:#FCF6F6;
 }
-.blog_con_mn h1 {  font-size: 24px; color:#000000;}
-.blog_con_mn h2 { margin: 0 0 1em; color:#000000;}
-.blog_con_mn h3 {  font-size: 10px; color:#000000;}
-.blog_con_mn h4 {  font-size: 16px; color:#000000;}
-.blog_con_mn h5 {  font-size: 12px; color:#000000;}
-.blog_con_mn h6 {  font-size: 10px; color:#000000;}
+.blog_con_mn h1 {  margin: 0 0 1rem; font-size: 24px;font-weight:600; color:#3E4346;}
+.blog_con_mn h2 { margin: 0 0 1rem; font-size: 22px;font-weight:500; color:#3E4346;}
+.blog_con_mn h3 { margin: 0 0 1rem;  font-size: 20px;font-weight:400; color:#3E4346;}
+.blog_con_mn h4 { margin: 0 0 1rem;  font-size: 18px;font-weight:300; color:#3E4346;}
+.blog_con_mn h5 { margin: 0 0 1rem; font-size: 16px;font-weight:200; color:#3E4346;}
+.blog_con_mn h6 { margin: 0 0 1rem;  font-size: 14px;font-weight:200; color:#3E4346;}
 .blog_con_mn p {    margin-bottom: 0.800em;}
 .blog_con_mn, dl, dt, dd {
     color: #8B9194;
@@ -1759,9 +1832,12 @@ a {
     text-align: justify;
 }
 .blog_con_mn ul li, .blog_con_mn ol {
-    margin-bottom: 1.625em;
+    margin-bottom: 0px;
 	margin-left: 50px;
 }
+.blog_con_mn ul, .blog_con_mn ol {
+    margin-bottom: 10px;
+	}
 .blog_con_mn ul li {
     font-size: 12px;
     list-style: square outside none;
@@ -1773,7 +1849,7 @@ a {
     list-style: upper-alpha outside none;
 }
 .blog_con_mn ol li ol li{
-    margin-bottom: 1.625em;
+     margin-bottom: 0px;
     margin-left: -35px;
 }
 
@@ -1790,7 +1866,6 @@ a {
 
 img[class*="align"], img[class*="wp-image-"], img[class*="attachment-"] {
     height: auto;
-	
 	padding: 5px;
 	border: solid 1px #EFEFEF;
 	-moz-box-shadow: 1px 1px 5px #999;
@@ -1808,7 +1883,7 @@ p {
     margin-bottom: 0.300em;
 	color:#8B9194;
 	-ms-word-wrap: break-word;
-	word-wrap: break-word;
+	word-wrap: break-all;
 	
 } 
 .blog_row_mn label{
@@ -1818,7 +1893,7 @@ p {
     font-size: 13px;
     font-weight: bold;
     line-height: 25px;
-    margin-right: 10px;
+    margin-right: 0px;
     margin-top: 0px;
     text-align: left;
     text-shadow: 2px 2px 2px #CCCCCC;
@@ -1871,13 +1946,6 @@ color:#cccccc;
 color:#737F85;
 }
 
-.input-small {
-  height: 23px;
-    padding: 1px 6px;
-    width: 150px;
-}
-
-
 .form-inline
 {
   display: inline-block;
@@ -1900,8 +1968,8 @@ color:#737F85;
 	border-radius: 5px;
 	cursor:pointer; 
 	
-	padding: 4px 7px 2px;
-    width: 70px;
+	padding: 5px 10px 3px;
+    /* width: 70px; */
 	border:none;
 
 }
@@ -1917,8 +1985,17 @@ color:#737F85;
     height: 20px;
     margin-right: 10px;
     padding: 1px 6px;
-    width: 150px;
+    width: 135px;
+	float: left;
 }
+
+.site-info {
+    margin: 0 auto;
+    max-width: 1040px;
+    padding: 30px 0;
+    width: 100%;
+}
+/* Css Updated with correction for post formates   */
 div#footer ul li{ line-height:22px; }
 /* This css Calendar */
 #calendar_wrap table, caption, tbody, tfoot, thead, tr, th, td{
@@ -1942,4 +2019,144 @@ abbr, acronym, dfn {
 .blog-post-form-heading
 {
 	margin-bottom:30px;
+}
+
+#pwbox-1168{
+	
+    height: 20px;
+    margin-right: 10px;
+    padding: 1px 6px;
+    width: 120px;
+}
+.blog_row_mn input[type="submit"]
+{    background-color: #EF6527;
+    background-image: -moz-linear-gradient(center top , #EF6527, #C6450C);
+    border: medium none;
+    border-radius: 5px 5px 5px 5px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 13px;
+    padding: 5px 10px 3px;
+
+}
+.blog_row_mn input[type="submit"]:hover{
+	background-color: #C6450C; 
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(C6450C), to(#EF6527));
+	background-image: -webkit-linear-gradient(top, #C6450C, #EF6527); 
+	background-image:    -moz-linear-gradient(top, #C6450C, #EF6527);
+	background-image:     -ms-linear-gradient(top, #C6450C, #EF6527);
+	background-image:      -o-linear-gradient(top, #C6450C, #EF6527);		
+}
+
+
+
+/*css for image post format*/
+img.aligncenter, .wp-caption.aligncenter {
+    clear: both;
+    margin-bottom: 0.857143rem;
+    margin-top: 0.857143rem;
+}
+
+img.alignleft, .wp-caption.alignleft {
+    margin: 0.857143rem 1.71429rem 0.857143rem 0;
+}
+
+img.alignright, .wp-caption.alignright {
+    margin: 0.857143rem 0 0.857143rem 1.71429rem;
+}
+/*Post format aside*/
+
+.aside {
+   
+    border-left: 10px solid #E0591D;
+    padding: 8px;
+}
+
+.format-status .blog_con_mn img {
+    float: left;
+    margin-right: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.format-status .blog_con_mn header {
+    display: inline-block;
+}
+/* Footer widgets menu */
+.menu-all-pages-container{
+	padding-top: 45px;
+}
+.footer_cols .menu > ul,.footer_cols   .menu > ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.footer_cols  .menu  li > ul,.footer_cols .menu  li > ol {
+    margin-left: 20px; 
+	margin-bottom: 20px;
+	display:none;
+	
+	}
+
+.footer_cols .menu ul > li {
+    border: 0px; 
+    float: left;
+    height: 25px;
+    padding: 0;
+    position: relative;
+    width: auto;
+}
+
+.footer_cols  .menu ul  li a:link,
+.footer_cols.menu ul  li a:visited,
+.footer_cols  .menu ul  li a:active
+{
+	display:block;
+	border: 0px;
+	color:#C8470E;
+	background: none;
+	transition:none;
+  
+	
+}
+.footer_cols  .menu  li a:hover {
+	text-decoration:underline;
+	transition:none;
+}
+/*sidebar custom menus*/
+.menu-all-pages-container .menu > ul,.menu-all-pages-container   .menu > ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.menu-all-pages-container  .menu  li > ul,.menu-all-pages-container .menu  li > ol {
+    margin-left: 20px; 
+	margin-bottom: 20px;
+	display:none;
+	
+	}
+
+.menu-all-pages-container.menu ul > li {
+    border: 0px; 
+    float: left;
+    height: 25px;
+    padding: 0;
+    position: relative;
+    width: auto;
+}
+
+.menu-all-pages-container  .menu ul  li a:link,
+.menu-all-pages-container.menu ul  li a:visited,
+.menu-all-pages-container  .menu ul  li a:active
+{
+	display:block;
+	border: 0px;
+	color:#C8470E;
+	background: none;
+	transition:none;
+  
+	
+}
+.menu-all-pages-container  .menu  li a:hover {
+	text-decoration:underline;
+	transition:none;
 }

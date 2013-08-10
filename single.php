@@ -41,9 +41,9 @@
 				   <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>> </div>
 		           <div class="blog_row_mn">
 					 <h2> <?php the_title(); ?></h2>
-					  <?php if(has_post_thumbnail()):?>    
+					   <?php if(has_post_thumbnail()):?>    
                               <a href="<?php the_permalink(); ?>"title="<?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
-                             <?php endif;?>
+                             <?php endif;?> 
                        <div class="blog_con_mn"> <?php the_content(); ?> </div>
 				   
 

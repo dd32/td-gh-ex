@@ -77,7 +77,7 @@
 					<img src="<?php echo get_template_directory_uri(); ?>/images/slider/banner3.png" data-thumb="images/slider/banner3.png" alt="" title="#htmlcaption" />
 				</div> 
 				<div id="htmlcaption" class="nivo-html-caption">
-               			<?php// echo $value;  ?>
+             
 				<?php _e("This is an example of a HTML caption",'appointment'); ?> 
 				</div> 
 				

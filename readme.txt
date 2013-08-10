@@ -3,11 +3,11 @@ Appointment Theme README.
 A Free Orange colored Business Blog theme that supports Primary menu's , Primary sidebar,Four widgets area at the footer region,Post Metaetc. 
 It has a perfect design that's great for any Business/Firms  Blogs who wants a new look for their site. Three page templates Blog, Full Widht Page and Contact Page. 
 Appointment supports featured post slider based on the concept of custom post types.
-Author: Priyanshu Mittal,Shahid Mansuri and Akhilesh Nagar.
+Author: Priyanshu Mittal,Shahid Mansuri,Vibhore Purandey and Akhilesh Nagar.
 Theme Homepage Url: http://www.appointpress.com/theme/appointment
 
 About:
-Appointmwnt a theme for business, consultancy firms etc  by Priyanshu Mittal (Author URI: http://www.appointpress.com). 
+Appointment a theme for business, consultancy firms etc  by Priyanshu Mittal (Author URI: http://www.appointpress.com). 
 
 The CSS, XHTML and design is released under GPL:
 http://www.opensource.org/licenses/gpl-license.php
@@ -60,6 +60,26 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ============================Change Log================================
+
+@version 1.3
+1.Copyright.txt added for fonts and images.
+2.Unused style.css in css/style.css removed.
+3.Post meta section Category icon added.
+4.Comments form issue fixed also fixed extra white space in it.
+5.Search Bar and button display in proper manner.
+6.Spacing and Alignment in Password protected post fixed.
+7.Styling is needed for attachments page title fixed. 
+8.Nested list items unnecessary white-space removed.
+9.Post Format:Image issue fixed.
+10.Long Text issue (Edge Case) fixed. 
+11.Footer URI issue fixed.
+12.Footer widgets displays properly side by side.
+13.Images spacing in post pages overlapping fixed.
+14.Heading tag in content section issue fixed.
+15.Post titles for Status, Link and Quote issue fixed.
+16.Bullets in sidebar fixed.
+17.Custom Menus in footer widget area fixed.
+
 @version 1.2.4
 1.appoint_save_slider_data fixed.
 2.media-upload-script.js front end issue fixed.
@@ -73,18 +93,22 @@ Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank y
 10.Leave a comment issue fixed.
 11.Style and spaces related issue fixed.
 12. 'Custom Header' issue fixed.
+
 @version 1.2.3
 1. Undefined variable bug in index-slider fixed.
 2. Now you can add logo with the help of custom header  image.
 3. Search form corrected in tag.php
 4. Title Issue With plugins fixed.
+
 @version 1.2.2
 1. Stylesheet url fixed
+
 @veriosn 1.2.1
 1. Minor slider bug fixed.. default images now display on the theme activation.
 2. All the hard coded text made transferable
 3. Script enqueing from header.php removed and liked directly
 4. Removed Theme URI in this version
+
 @version 1.2
 1. 404.php tempalte added
 2. Front Page issue resolved
