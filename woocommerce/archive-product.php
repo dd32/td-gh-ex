@@ -17,12 +17,6 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		<div id="content" class="container">
    		<div class="row">
       <div class="main <?php echo kadence_main_class(); ?>" role="main">
-      	<?php global $smof_data; $shop_slider = $smof_data['shop_slider']; $choose_shop_slider = $smof_data['choose_shop_slider'];
-		if (is_shop() and ($shop_slider == '1')) { 
-				 if ($choose_shop_slider == "flex") {
-					get_template_part('templates/shop/flex', 'slider');
-				}
-			 } ?>
 
       	<?php do_action( 'woocommerce_archive_description' ); ?>
 

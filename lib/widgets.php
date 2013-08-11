@@ -4,11 +4,14 @@
  */
 function virtue_sidebar_list() {
   $all_sidebars=array(array('name'=>__('Primary Sidebar', 'virtue'), 'id'=>'sidebar-primary'));
-  global $smof_data; $custom_sidebars = $smof_data['c_sidebars'];
-  if (is_array($custom_sidebars)) {
-  foreach($custom_sidebars as $sidebar){
+  global $smof_data; 
+  if(isset($smof_data['c_sidebars'])) {
+  if (is_array($smof_data['c_sidebars'])) {
+  foreach($smof_data['c_sidebars'] as $sidebar){
+    if(empty($sidebar['title'])) $sidebar['title'] = 'sidebar'.$sidebar['order'];
     $all_sidebars[]=array('name'=>$sidebar['title'], 'id'=>'sidebar'.$sidebar['order']);
   }
+ }
 }
   global $vir_sidebars;
   $vir_sidebars = $all_sidebars;
@@ -49,7 +52,7 @@ function kadence_widgets_init() {
   ));
 
   // Footer
-  global $smof_data; $footer_layout = $smof_data['footer_layout'];
+  global $smof_data; if(isset($smof_data['footer_layout'])) { $footer_layout = $smof_data['footer_layout'];} else {$footer_layout = "twoc";}
   if ($footer_layout == "fourc") {
     if ( function_exists('register_sidebar') )
       register_sidebar(array(
@@ -495,10 +498,10 @@ class Kadence_Recent_Posts_Widget extends WP_Widget {
     <?php  while ($r->have_posts()) : $r->the_post(); ?>
     <li class="clearfix postclass">
         <a href="<?php the_permalink() ?>" title="<?php echo esc_attr(get_the_title() ? get_the_title() : get_the_ID()); ?>" class="recentpost_featimg">
-          <?php if(has_post_thumbnail( $post->ID ) ) { 
+          <?php global $post; if(has_post_thumbnail( $post->ID ) ) { 
             the_post_thumbnail( 'widget-thumb' ); 
           } else { 
-            $theme_url = get_bloginfo('template_directory'); echo '<img width="80" height="50" src="'.$theme_url.'/assets/img/post_standard-80x50.jpg" class="attachment-widget-thumb wp-post-image" alt="">'; } ?></a>
+            $theme_url = get_template_directory_uri(); echo '<img width="80" height="50" src="'.$theme_url.'/assets/img/post_standard-80x50.jpg" class="attachment-widget-thumb wp-post-image" alt="">'; } ?></a>
         <a href="<?php the_permalink() ?>" title="<?php echo esc_attr(get_the_title() ? get_the_title() : get_the_ID()); ?>" class="recentpost_title"><?php if ( get_the_title() ) the_title(); else the_ID(); ?></a>
         <span class="recentpost_date"><?php echo get_the_date('F j, Y') ?></span>
         </li>
@@ -612,7 +615,7 @@ class Kadence_Image_Grid_Widget extends WP_Widget {
           <div class="imagegrid-widget">
           <?php  while ($r->have_posts()) : $r->the_post(); ?>
           
-          <?php if(has_post_thumbnail( $post->ID ) ) { ?> <a href="<?php the_permalink() ?>" title="<?php echo esc_attr(get_the_title() ? get_the_title() : get_the_ID()); ?>" class="imagegrid_item lightboxhover"><?php the_post_thumbnail( 'widget-thumb' ); ?>
+          <?php global $post; if(has_post_thumbnail( $post->ID ) ) { ?> <a href="<?php the_permalink() ?>" title="<?php echo esc_attr(get_the_title() ? get_the_title() : get_the_ID()); ?>" class="imagegrid_item lightboxhover"><?php the_post_thumbnail( 'widget-thumb' ); ?>
           </a>
                     <?php } ?>
           <?php endwhile; ?>

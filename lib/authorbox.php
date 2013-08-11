@@ -9,7 +9,7 @@ function virtue_author_box() { ?>
 <div class="tab-content postclass">
   <div class="tab-pane clearfix active" id="about">
   	<div class="author-profile vcard">
-		<?php echo get_avatar( get_the_author_id(), 80 ); ?>
+		<?php echo get_avatar( get_the_author_meta('ID'), 80 ); ?>
         <div class="author-follow"><span class="followtext"><?php _e('Follow', 'virtue'); ?> <?php the_author_meta( 'display_name' ); ?>:</span>
         <?php if ( get_the_author_meta( 'facebook' ) ) { ?>
 			<span class="facebooklink">
@@ -61,7 +61,7 @@ function virtue_author_box() { ?>
    </div><!--pane-->
   <div class="tab-pane clearfix" id="latest">
   <div class="author-latestposts">
-  <?php echo get_avatar( get_the_author_id(), 80 ); ?>
+  <?php echo get_avatar( get_the_author_meta('ID'), 80 ); ?>
   <h5><?php _e('Latest posts from', 'virtue'); ?> <?php the_author_posts_link(); ?></h5>
   			<ul>
 			<?php

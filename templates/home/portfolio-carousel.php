@@ -1,11 +1,10 @@
 
 <div class="featclass home-portfolio home-margin carousel_outerrim home-padding">
 <div class="container">
-		<?php global $smof_data; $portfolio_title = $smof_data['portfolio_title']; 
-		if($portfolio_title != '') {$porttitle = $portfolio_title; } else { $porttitle = __('Featured Projects', 'virtue'); } ?>
+		<?php global $smof_data; if(isset($smof_data['portfolio_title'])) {$porttitle = $smof_data['portfolio_title'];} else { $porttitle = __('Featured Projects', 'virtue'); } ?>
 		<div class="clearfix"><h3 class="hometitle"><?php echo $porttitle; ?></h3></div>
-		<?php global $smof_data; $portfolio_category = $smof_data['portfolio_type'];
-					$portfolio_item_types = $smof_data['porfolio_show_type'];
+		<?php  if(isset($smof_data['portfolio_type'])) { $portfolio_category = $smof_data['portfolio_type'];} else {$portfolio_category = '';}
+				if(isset($smof_data['porfolio_show_type'])) {$portfolio_item_types = $smof_data['porfolio_show_type'];} else {$portfolio_item_types = '';}
 					if($portfolio_category == "All") {$portfolio_category = '';}
 					   		$columnnum = 'threecolumn'; $imgwidth = 370; $imgheight = 370;
 					   		?>
@@ -28,7 +27,7 @@
 							 
 					while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
 
-					<div class="grid_item portfolio_item <?php echo strtolower($tax); ?> all postclass">
+					<div class="grid_item portfolio_item all postclass">
 					
                         <?php if (has_post_thumbnail( $post->ID ) ) {
 									$image_url = wp_get_attachment_image_src( 

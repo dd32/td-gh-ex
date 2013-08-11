@@ -302,10 +302,18 @@ if ( !function_exists( 'options_typography_google_fonts' ) ) {
         global $google_fonts;
         global $smof_data;
         // Define all the options that possibly have a unique Google font
-        $font_header    = $smof_data['font_header'];
-        $font_body      = $smof_data['font_body'];
-        $menu_font      = $smof_data['font_menu'];
-        $logo_font      = $smof_data['font_logo'];
+        if(isset($smof_data['font_header'])) {
+        $font_header = $smof_data['font_header'];
+            } else {$font_header = 'Lato'; }
+        if(isset($smof_data['font_body'])) {
+            $font_body = $smof_data['font_body'];
+        } else {$font_body = 'Lato';}
+        if(isset($smof_data['font_menu'])) {
+        $menu_font = $smof_data['font_menu'];
+        } else {$menu_font = 'Lato';}
+        if(isset($smof_data['font_logo'])) {
+        $logo_font = $smof_data['font_logo'];
+        } else {$logo_font = 'Pacifico';}
         // Get the font face for each option and put it in an array
         $selected_fonts = array(
             $font_header,

@@ -482,7 +482,7 @@ $of_options = array();
             $of_options[] = array(  "name"            => __("Sitename Logo Font", 'virtue'),
                                     "desc"            => __("This font will apply to your sitename if you don't upload a logo.", 'virtue'),
                                     "id"              => "font_logo",
-                                    "std"             => "Arial",
+                                    "std"             => "Pacifico",
                                     "type"            => "select_google_font",
                                     "preview"   => array(
                                                             "text" => "This is font preview text!",
@@ -569,7 +569,7 @@ $of_options = array();
             $of_options[] = array( "name"             => __("Choose a Home Image Slider", 'virtue'),
       					"desc"            => __("If you don't want an image slider on your home page choose none.", 'virtue'),
       					"id"              => "choose_slider",
-      					"std"             => "none",
+      					"std"             => "mock_flex",
       					"type"            => "select",
       					"options"         => array(
       						      'none'      => 'None',
@@ -881,6 +881,12 @@ $of_options = array();
       					"id"               => "primary20_color",
       					"std"              => "",
       					"type"             => "color"
+                                    ); 
+             $of_options[] = array(  "name"             => __("Footer Font Color", 'virtue'),
+                                    "desc"             => "",
+                                    "id"               => "footerfont_color",
+                                    "std"              => "",
+                                    "type"             => "color"
                                     ); 
 
 	     $of_options[] = array( "name" => "Advanced Styling",
@@ -1256,7 +1262,7 @@ $of_options = array();
             $of_options[] = array( 	"name" 		=> __("Header Font", 'virtue'),
 						"desc" 		=> __("This font will apply to all header tags", 'virtue'),
 						"id" 		      => "font_header",
-						"std" 		=> "Arial",
+						"std" 		=> "Lato",
 						"type" 		=> "select_google_font",
 						"preview" 	=> array(
 								"text" => "This is font preview text!", //this is the text from preview box
@@ -1291,7 +1297,7 @@ $of_options = array();
 						"id" 		      => "font_h3",
 						"std" 		=> array(
 									'size'  => '28px',
-									'style' => 'normal',
+									'style' => 'light',
 									'height' => '40px',
 									'color' => ''
 									),
@@ -1313,9 +1319,9 @@ $of_options = array();
 						"id" 		      => "font_h5",
 						"std" 		=> array(
 									'size'  => '18px',
-									'style' => 'normal',
-									'color' => '24px',
-									'height' => ''
+									'style' => 'bold',
+									'height' => '24px',
+									'color' => ''
 									),
 						"type" 		=> "typography"
 				);  
@@ -1329,7 +1335,7 @@ $of_options = array();
             $of_options[] = array( 	"name" 		=> __("Body Font", 'virtue'),
 						"desc" 		=> __("This font will apply to all body text", 'virtue'),
 						"id" 		      => "font_body",
-						"std" 		=> "Arial",
+						"std" 		=> "Verdana",
 						"type" 		=> "select_google_font",
 						"preview" 	      => array(
 									"text" => "This is font preview text!", //this is the text from preview box
@@ -1358,7 +1364,7 @@ $of_options = array();
             $of_options[] = array( 	"name" 		=> __("Menu Font", 'virtue'),
 						"desc" 		=> __("This font will apply to all page menus", 'virtue'),
 						"id" 		      => "font_menu",
-						"std" 		=> "Arial",
+						"std" 		=> "Lato",
 						"type" 		=> "select_google_font",
 						"preview" 	=> array(
 										"text" => "This is font preview text!", //this is the text from preview box

@@ -123,7 +123,7 @@ Template Name: Contact
 						<form action="<?php the_permalink(); ?>" id="contactForm" method="post">
 							<div class="contactform">
 							<p>
-								<label for="contactName"><b><?php _e('Name:', 'virtue'); ?></b></label><?php if($nameError != '') { ?>
+								<label for="contactName"><b><?php _e('Name:', 'virtue'); ?></b></label><?php if(isset($nameError)) { ?>
 									<span class="error"><?php $nameError;?></span>
 								<?php } ?>
 								
@@ -132,13 +132,13 @@ Template Name: Contact
 							</p>
 
 							<p>
-								<label for="email"><b><?php _e('Email: ', 'virtue'); ?></b></label> <?php if($emailError != '') { ?>
+								<label for="email"><b><?php _e('Email: ', 'virtue'); ?></b></label> <?php if(isset($emailError)) { ?>
 									<span class="error"><?php $emailError;?></span>
 								<?php } ?>
 								<input type="text" name="email" id="email" value="<?php if(isset($_POST['email']))  echo $_POST['email'];?>" class="required requiredField email full" />
 							</p>
 
-							<p><label for="commentsText"><b><?php _e('Message: ', 'virtue'); ?></b></label>	<?php if($commentError != '') { ?>
+							<p><label for="commentsText"><b><?php _e('Message: ', 'virtue'); ?></b></label>	<?php if(isset($commentError)) { ?>
 									<span class="error"><?php $commentError;?></span>
 								<?php } ?>
 								<textarea name="comments" id="commentsText" rows="10" class="required requiredField"><?php if(isset($_POST['comments'])) { if(function_exists('stripslashes')) { echo stripslashes($_POST['comments']); } else { echo $_POST['comments']; } } ?></textarea>

@@ -8,17 +8,18 @@
           <?php if (has_nav_menu('topbar_navigation')) :
               wp_nav_menu(array('theme_location' => 'topbar_navigation', 'menu_class' => ''));
             endif;?>
-            <?php global $smof_data; if ($smof_data['show_cartcount'] == '1') { 
-            if (class_exists('woocommerce')) {
-              global $woocommerce; ?>
-                <ul>
-                  <li>
-                  <a class="cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping cart', 'woocommerce'); ?>">
-                      <i class="icon-basket"></i> <?php _e('Your Cart', 'woocommerce');?> - <?php echo $woocommerce->cart->get_cart_total(); ?>
-                  </a>
-                </li>
-              </ul>
-            <?php } }?>
+            <?php if(isset($smof_data['show_cartcount'])) {
+               if($smof_data['show_cartcount'] == '1') { 
+                if (class_exists('woocommerce')) {
+                  global $woocommerce; ?>
+                    <ul>
+                      <li>
+                      <a class="cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping cart', 'woocommerce'); ?>">
+                          <i class="icon-basket"></i> <?php _e('Your Cart', 'woocommerce');?> - <?php echo $woocommerce->cart->get_cart_total(); ?>
+                      </a>
+                    </li>
+                  </ul>
+                <?php } } }?>
           </div>
         </div><!-- close span8 -->
         <div class="span4">
@@ -36,9 +37,9 @@
           <div class="span4 clearfix">
             <div id="logo" class="logocase">
               <a class="brand logofont" href="<?php echo home_url(); ?>/">
-                       <?php global $smof_data; if ($smof_data['logo_upload']) { ?> <div id="thelogo"><img src="<?php echo $smof_data['logo_upload']; ?>" data-at2x="<?php echo $smof_data['x2logo_upload'];?>" /></div> <?php } else { bloginfo('name'); } ?>
+                       <?php if (isset($smof_data['logo_upload'])) { ?> <div id="thelogo"><img src="<?php echo $smof_data['logo_upload']; ?>" <?php if(isset($smof_data['x2logo_upload'])) {echo 'data-at2x="'.$smof_data['x2logo_upload'].'"';} ?> /></div> <?php } else { bloginfo('name'); } ?>
               </a>
-              <?php global $smof_data; if ($smof_data['logo_below_text']) { ?> <p class="belowlogo-text"><?php echo $smof_data['logo_below_text']; ?></p> <?php }?>
+              <?php if (isset($smof_data['logo_below_text'])) { ?> <p class="belowlogo-text"><?php echo $smof_data['logo_below_text']; ?></p> <?php }?>
            </div> <!-- Close #logo -->
        </div><!-- close span5 -->
 

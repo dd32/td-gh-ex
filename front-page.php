@@ -1,5 +1,15 @@
-
-			<?php global $smof_data; if(detect_mobile() && $smof_data['mobile_slider'] == '1') {
+			<?php  global $smof_data; ?>
+			<?php if(isset($smof_data['mobile_slider'])) { 
+				$mobile_slider = $smof_data['mobile_slider'];
+			} else {
+				$mobile_slider = '';
+			}
+			if(isset($smof_data['choose_slider'])) {
+				$slider = $smof_data['choose_slider'];
+			} else {
+				$slider = 'mock_flex';
+			}
+			if(detect_mobile() && $mobile_slider == '1') {
 		 		$slider = $smof_data['choose_mobile_slider'];
 					 if ($slider == "flex") {
 					get_template_part('templates/mobile_home/mobileflex', 'slider');
@@ -8,8 +18,7 @@
 					get_template_part('templates/mobile_home/mobilevideo', 'block');
 				} 
 	} else { ?>
-    		<?php global $smof_data; $slider = $smof_data['choose_slider'];
-					 if ($slider == "flex") {
+    		<?php if ($slider == "flex") {
 					get_template_part('templates/home/flex', 'slider');
 				}
 				else if ($slider == "thumbs") {
@@ -21,13 +30,16 @@
 				else if ($slider == "video") {
 					get_template_part('templates/home/video', 'block');
 				}
+				else if ($slider == "mock_flex") {
+					get_template_part('templates/home/mock', 'flex');
+				}
 }?>
 	
     <div id="content" class="container homepagecontent">
    		<div class="row">
           <div class="main <?php echo kadence_main_class(); ?>" role="main">
 
-      	<?php $layout = $smof_data['homepage_layout']['enabled'];
+      	<?php if(isset($smof_data['homepage_layout'])) { $layout = $smof_data['homepage_layout']['enabled']; } else {$layout = array("block_one" => "block_one", "block_two" => "block_two"); }
 
 				if ($layout):
 

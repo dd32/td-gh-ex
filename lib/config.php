@@ -10,7 +10,7 @@ add_theme_support('jquery-cdn');            // Enable to load jQuery from the Go
  * Configuration values
  */
 
-global $smof_data; $g_analytics = $smof_data['google_analytics'];
+global $smof_data; if(isset($smof_data['google_analytics'])) {$g_analytics = $smof_data['google_analytics'];} else {$g_analytics = null;}
 define('GOOGLE_ANALYTICS_ID', $g_analytics); // UA-XXXXX-Y
 define('POST_EXCERPT_LENGTH', 40);
 
@@ -44,7 +44,7 @@ function kadence_sidebar_class() {
 function kadence_display_sidebar() {
 
    if ( class_exists( 'woocommerce' ) ) {
-      global $smof_data; if($smof_data['shop_layout'] == 'sidebar') {
+      global $smof_data; if(isset($smof_data['shop_layout']) && $smof_data['shop_layout'] == 'sidebar') {
         $sidebar_config = new Kadence_Sidebar(
         array('is_404','is_front_page','is_cart','is_product','is_checkout','is_account_page',array('is_singular', array('portfolio'))
         ),
@@ -69,21 +69,22 @@ function kadence_display_sidebar() {
 }
 
 function kadence_display_topbar() {
-  global $smof_data; if($smof_data['topbar'] == 1 ) 
-  {
-    $topbar = true;
-  }
-  else {
-    $topbar = false; 
-  }
+ if(isset($smof_data['topbar'])) {
+  if($smof_data['topbar'] == 1 ) {$topbar = true;} else { $topbar = false;}
+} else {$topbar = true;}
   return $topbar;
   }
 
 // Add body class for wide or boxed layout
 add_filter('body_class','layout_class_names');
 function layout_class_names($classes) {
+  global $smof_data;
   // add 'class-name' to the $classes array
-global $smof_data; $layoutstyle = $smof_data['boxed_layout'];
+  if(isset($smof_data['boxed_layout'])) {
+    $layoutstyle = $smof_data['boxed_layout'];
+  } else {
+    $layoutstyle = 'wide';
+  }
 
 if ($layoutstyle == "boxed") {
   $classes[] = 'boxed';

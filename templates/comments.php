@@ -5,7 +5,7 @@
 
  if (have_comments()) : ?>
   <section id="comments">
-    <h3><?php printf(_n('One Response ', '%1$s Responses ', get_comments_number(), 'virtue')); ?></h3>
+    <h3><?php printf(_n('One Response ', '%1$s Responses ', get_comments_number(), 'virtue'), number_format_i18n(get_comments_number()), get_the_title()); ?></h3>
 
     <ol class="media-list">
       <?php wp_list_comments(array('walker' => new Kadence_Walker_Comment)); ?>

@@ -15,9 +15,12 @@ Template Name: Blog
    			<?php global $post; if(get_post_meta( $post->ID, '_kad_blog_summery', true ) == 'full') {$summery = 'full'; $postclass = "single-article fullpost";} else {$summery = 'normal'; $postclass = 'postlist';} ?>
       <div class="main <?php echo kadence_main_class();?> <?php echo $postclass; ?>" role="main">
       		<?php  global $post; $blog_category = get_post_meta( $post->ID, '_kad_blog_cat', true ); 
-					$blog_cat= get_term_by ('id',$blog_category,'category');
-					$blog_cat_slug=$blog_cat -> slug;
-					$blog_category=$blog_cat_slug; 
+      				if($blog_category == '-1' || $blog_category == '') {
+      					$blog_cat_slug = '';
+					} else {
+					$blog_cat = get_term_by ('id',$blog_category,'category');
+					$blog_cat_slug = $blog_cat -> slug;
+					}
 
 					$blog_items = get_post_meta( $post->ID, '_kad_blog_items', true ); 
 					if($blog_items == 'all') {$blog_items = '-1';} 

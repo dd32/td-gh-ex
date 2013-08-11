@@ -9,7 +9,8 @@
                               $image_url = wp_get_attachment_image_src( 
                               get_post_thumbnail_id( $post->ID ), 'full' ); 
                               $thumbnailURL = $image_url[0]; 
-                              $image = aq_resize($thumbnailURL, 1170, $slideheight, true);?>
+                              $image = aq_resize($thumbnailURL, 1170, $slideheight, true);
+                              if($image == "") {$image = $thumbnailURL;} ?>
                           <div class="span12">
                               <div class="imghoverclass">
                                 <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
@@ -54,7 +55,8 @@
                                           if ($attachments) {
                                             foreach ($attachments as $attachment) {
                                               $attachment_url = wp_get_attachment_url($attachment->ID , 'large');
-                                              $image = aq_resize($attachment_url, 1170, $slideheight, true); ?>
+                                              $image = aq_resize($attachment_url, 1170, $slideheight, true); 
+                                              if($image == "") { $image = $attachment_url;} ?>
                                                 <li>
                                                   <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
                                                     <img src="<?php echo $image ?>" class="" />

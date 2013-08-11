@@ -4,11 +4,72 @@
 -------------------------------------------------------
     Virtue Theme Features:
 -------------------------------------------------------
-Woocommerce
-Translation-Ready
-Responsive
-Google Fonts
-Unlimited Colors
-Flex Sliders
-Retina Ready Graphics
-And Much more.
+* Woocommerce
+* Translation-Ready
+* Responsive
+* Google Fonts
+* Unlimited Colors
+* Flex Sliders
+* Retina Ready Graphics
+* And Much more.
+
+-------------------------------------------------------
+    Credits:
+-------------------------------------------------------
+Virtue Theme Uses:
+
+* Photos on example_slider by Benjamin Ritner (licensed under GNU General Public License v2.0 or later)
+* Icon Font & Icon images by Icomoon (Used with permission under purchased developer licenses:  http://icomoon.io/#icons/license)
+* FlexSlider by WooThemes under the GPLv2 license (http://www.gnu.org/licenses/gpl-2.0.html)
+* SMOF - Slightly Modded Options Framework (https://github.com/syamilmj/Options-Framework) licensed under GNU General Public License v2.0 or later
+* Google Fonts (available through Google web Fonts: http://www.google.com/fonts/), licensed under Apache License Version 2
+* Aqua Resizer (https://github.com/syamilmj/Aqua-Resizer), licensed under WTFPL http://www.wtfpl.net/
+* Twitter Bootstrap (https://github.com/twbs/bootstrap), licensed under Apache License Version 2
+* Custom Metaboxes and Fields for Wordpress (https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress), licensed under GNU General Public License v2.0 or later
+* Lightbox2 (https://github.com/lokesh/lightbox2) Licensed under the Creative Commons Attribution 2.5 License
+* carouFredSel (https://github.com/gilbitron/carouFredSel), licensed under GNU General Public License v2.0 or later 
+* Select2 (http://ivaynberg.github.io/select2/), licensed under GNU General Public License v2.0 or later
+* hoverIntent (https://github.com/briancherne/jquery-hoverIntent), licensed under MIT license, http://www.opensource.org/licenses/mit-license.php
+* Superfish (https://github.com/joeldbirch/superfish) Dual licensed under the MIT and GPL licenses: http://www.opensource.org/licenses/mit-license.php, http://www.gnu.org/licenses/gpl.html
+* retina.js (https://github.com/imulus/retinajs) licensed under MIT license, http://www.opensource.org/licenses/mit-license.php
+* Fitvids (https://github.com/davatron5000/FitVids.js/blob/master/jquery.fitvids.js), Released under the WTFPL license - http://sam.zoy.org/wtfpl/
+* touchSwipe, (https://github.com/mattbryson/TouchSwipe-Jquery-Plugin), Dual licensed under the MIT or GPL Version 2 licenses
+* jquery.customSelect (http://adam.co/lab/jquery/customselect/), Dual licensed under the MIT or GPL Version 2 licenses
+* jQuery gMap (http://github.com/marioestrada/jQuery-gMap), licensed under Creative Commons BY-SA 3.0 
+* jQuery Scroll to Top Control script (http://www.dynamicdrive.com/) Custom license: http://www.dynamicdrive.com/notice.htm
+
+-------------------------------------------------------
+    Changelog:
+-------------------------------------------------------
+
+= Theme Name: Virtue =
+
+= Version: 1.2.1 =
+
+* Fixed all undefined index notices 
+* Updated Flex Slider and added Mock Slider on activation
+* Updated screenshot.png
+
+= Version: 1.2.0 =
+
+* Updated admin-options (fixed various errors, optimized code)
+* Fixed Logo on Retina Screens (added retina.js file)
+* Updated nav.php with improvements to Mobile Menu walker.
+* Merged Bootstap and Bootstrap Responsive
+* Updated Comments.php file (fixed for various errors)
+
+
+= Version: 1.1.1 =
+
+* Update css skins
+
+
+= Version: 1.1.0 =
+
+* Move searchform.php for WP 3.6
+* Update Slider issue when images too small
+
+
+= Version: 1.0.0 =
+
+* Initial Version

@@ -17,7 +17,7 @@
 function kadence_scripts() {
   wp_enqueue_style('kadence_bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.css', false, null);
   wp_enqueue_style('kadence_theme', get_template_directory_uri() . '/assets/css/virtue.css', false, null);
-global $smof_data; if($smof_data['skin_stylesheet'] != '') {$skin = $smof_data['skin_stylesheet'];} else { $skin = 'default.css';} 
+global $smof_data; if(isset($smof_data['skin_stylesheet'])) {$skin = $smof_data['skin_stylesheet'];} else { $skin = 'default.css';} 
  wp_enqueue_style('virtue_skin', get_template_directory_uri() . '/assets/css/skins/'.$skin.'', false, null);
 
   // jQuery is loaded using the same method from HTML5 Boilerplate:

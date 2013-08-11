@@ -1,6 +1,5 @@
 <div class="home_blog home-margin clearfix home-padding">
-	<?php global $smof_data; $blog_title = $smof_data['blog_title'];
-		if($blog_title != '') {$btitle = $blog_title; } else { $btitle = __('Latest from the Blog', 'virtue'); } ?>
+	<?php global $smof_data; if(isset($smof_data['blog_title'])) { $btitle = $smof_data['blog_title'];} else { $btitle = __('Latest from the Blog', 'virtue'); } ?>
 		<div class="clearfix"><h3 class="hometitle"><?php echo $btitle; ?></h3></div>
 	<div class="row">
 				<?php $temp = $wp_query; 
