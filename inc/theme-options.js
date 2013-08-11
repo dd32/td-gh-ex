@@ -1,16 +1,16 @@
 // JavaScript Document
 jQuery( document ).ready( function() {
-	var selected = 0;
+	var active = 0;
 	if( jQuery.cookie( 'catchbox_ad_tab' ) ) {
-		selected = jQuery.cookie( 'catchbox_ad_tab' );
+		active = jQuery.cookie( 'catchbox_ad_tab' );
 		jQuery.cookie( 'catchbox_ad_tab', null );
 	}
 	
-	var tabs = jQuery( '#catchbox_ad_tabs' ).tabs( { selected: selected } );
+	var tabs = jQuery( '#catchbox_ad_tabs' ).tabs( { active: active } );
 	
 	jQuery( '#wpbody-content form' ).submit( function() {
-		var selected = tabs.tabs( 'option', 'selected' );
-		jQuery.cookie( 'catchbox_ad_tab', selected );
+		var active = tabs.tabs( 'option', 'active' );
+		jQuery.cookie( 'catchbox_ad_tab', active );
 	} );
 	
 	jQuery( '.sortable' ).sortable( {
