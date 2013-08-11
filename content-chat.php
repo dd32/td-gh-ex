@@ -22,7 +22,7 @@
 				
 		<h2><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'appointment' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php $title = get_the_title();
     if (strlen($title) == 0)  _e('no title','appointment'); 
-	else  _e($title,'appointment'); ?></a></h2>
+	else  echo $title; ?></a></h2>
 					<div class="blog_link_mn">
                      
 							 
