@@ -20,5 +20,5 @@ Install
 
 Changelog
 ---------
-0.1.0 - 2013-08-12
+0.3.1 - 2013-08-12
 - First release
