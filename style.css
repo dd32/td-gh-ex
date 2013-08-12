@@ -1,0 +1,94 @@
+/*
+Theme Name: Beta
+Theme URI: http://themehall.com/beta
+Author: themehall.com
+Author URI: http://themehall.com/about
+Description: Omega is a responsive, scalable, search-engine optimized parent theme for WordPress and HTML5, allowing you to create any type of site you want via omega child theme. Developed by themehall.com
+Version: 0.3.1
+License: GNU General Public License
+License URI: license.txt
+Tags: light, two-columns, one-column, right-sidebar, left-sidebar, flexible-width, custom-menu, threaded-comments, sticky-post, translation-ready
+
+Template: omega
+
+Beta WordPress theme, Copyright (C) 2013 themehall.com
+Beta WordPress theme is licensed under the GPL.
+
+*/
+
+@import url(../omega/style.css);
+
+.site-title {
+    font-size: 35px;
+    letter-spacing: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #333333;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: normal;
+    line-height: 1.2;
+}
+
+.site-header,
+.site-header .omega-nav-menu .sub-menu a, .omega-nav-menu .children a {
+	background: #019875;
+	border: none;
+  font-family: 'Ubuntu', sans-serif;
+  text-transform: uppercase;
+}
+
+.site-header > .wrap {
+  padding: 0.5em 0;
+}
+
+.site-header .nav-primary,
+.site-header .title-area {
+  vertical-align: middle;  
+  text-align: left;
+  display: inline-block;
+}
+
+.site-header .nav-primary {
+  float: right;
+}
+
+.site-header a,
+.site-header a:hover {
+	color: #fff;
+}
+
+.nav-primary a:hover ,
+.nav-primary .sub-menu a:hover,
+.nav-primary .children a:hover
+{
+	color: #eee;
+}
+
+.site-header .nav-primary li:last-child a {
+	padding-right: 0;
+}
+
+.entry-title {
+    font-size: 30px;
+}
+
+.footer-widgets {
+    background: none repeat scroll 0 0 #F5F5F5;
+}
+
+.omega-nav-menu .sub-menu .sub-menu,
+.omega-nav-menu .children .children {
+  margin: -53px 0 0 199px;
+}
+
+@media only screen and (max-width: 1023px) {
+
+  .site-header .nav-primary,
+  .site-header .title-area {
+    text-align: center;
+    display: block;
+    float: none;
+  }
+
+}
