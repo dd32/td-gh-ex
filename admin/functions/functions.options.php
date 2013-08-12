@@ -13,12 +13,16 @@ if (!function_exists('of_options'))
 		    $of_categories[$of_cat->cat_ID] = $of_cat->cat_name;}
 		$categories_tmp 	= array_unshift($of_categories, __("Select a category:", 'virtue'));    
 	       
+             if(taxonomy_exists('portfolio-type')) {
                $of_portfolio           = array();  
                 $of_portfolio_obj      = get_terms('portfolio-type','hide_empty=0');
                 foreach ($of_portfolio_obj as $term) {
                     $of_portfolio[$term->slug] = $term->name;
                 }
-                $of_portfolio_tmp         = array_unshift($of_portfolio, __("All", 'virtue'));    
+                $of_portfolio_tmp         = array_unshift($of_portfolio, __("All", 'virtue')); 
+            }   else {
+                  $of_portfolio = array('none' => 'none set');
+            }
                
 		//Access the WordPress Pages via an Array
                 $of_pages                       = array();
@@ -1439,32 +1443,6 @@ $of_options = array();
 
       $of_options[] = array( "name"              => "Advanced Settings",
 					"type"             => "heading"
-                              );
-	$of_options[] = array( "name"              => "SEO",
-					"desc"             => "",
-					"id"               => "info_seo",
-					"std"              => "<h3>SEO General Options</h3>
-					             Set your Sitewide SEO Options here. Each page also has it's own SEO options.",
-					"icon"             => true,
-					"type"             => "info"
-                              );
-      $of_options[] = array( "name"              => __("Google Analytics Tracking ID", 'virtue'),
-					"desc"             => __("Paste your Google Analytics Tracking ID Here. (example: UA-########-#)", 'virtue'),
-					"id"               => "google_analytics",
-					"std"              => "",
-					"type"             => "text"
-                              ); 
-      $of_options[] = array( "name"              => __("Site Title", 'virtue'),
-					"desc"             => __("<b>Optimal Format:</b> Brand Name | Primary Keyword and Secondary Keyword", 'virtue'),
-					"id"               => "seo_sitetitle",
-					"std"              => "",
-					"type"             => "text"
-                              ); 
-      $of_options[] = array( "name"              => __("Site Description", 'virtue'),
-					"desc"             => "<b>Optimal Length:</b> Roughly 155 Characters",
-					"id"               => "seo_sitedescription",
-					"std"              => "",
-					"type"             => "textarea"
                               ); 
       $of_options[] = array(  "name"             => "CSS Info",
 					"desc"             => "",

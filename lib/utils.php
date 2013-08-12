@@ -85,17 +85,6 @@ function kadence_title() {
   }
 }
 
-/**
- * Show an admin notice if .htaccess isn't writable
- */
-function kadence_htaccess_writable() {
-  if (!is_writable(get_home_path() . '.htaccess')) {
-    if (current_user_can('administrator')) {
-      add_action('admin_notices', create_function('', "echo '<div class=\"error\"><p>" . sprintf(__('Please make sure your <a href="%s">.htaccess</a> file is writable ', 'virtue'), admin_url('options-permalink.php')) . "</p></div>';"));
-    }
-  }
-}
-add_action('admin_init', 'kadence_htaccess_writable');
 
 /**
  * Return WordPress subdirectory if applicable

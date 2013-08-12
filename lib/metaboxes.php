@@ -568,28 +568,6 @@ $meta_boxes[] = array(
 				),
 				
 			));
-	$meta_boxes[] = array(
-				'id'         => 'seo_metabox',
-				'title'      => __('SEO Options', 'virtue'),
-				'pages'      => array( 'page', 'post' ), // Post type
-				'context'    => 'normal',
-				'priority'   => 'high',
-				'show_names' => true, // Show field names on the left
-				'fields' => array(
-				array(
-						'name' => __('Page Title', 'virtue'),
-						'desc' => __('Optimal Format: Brand Name | Primary Keyword and Secondary Keyword', 'virtue'),
-						'id'   => $prefix . 'seo_title',
-						'type' => 'text',
-					),
-					array(
-						'name' => __('Page Description', 'virtue'),
-						'desc' => __('Optimal Length: Roughly 155 Characters', 'virtue'),
-						'id'   => $prefix . 'seo_description',
-						'type' => 'textarea_small',
-					),
-				)
-			);
 	
 	// Add other metaboxes as needed
 

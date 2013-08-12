@@ -25,7 +25,7 @@
 											get_post_thumbnail_id( $post->ID ), 'full' ); 
 										$thumbnailURL = $image_url[0]; 
 										$image = aq_resize($thumbnailURL, 272, 272, true); 
-									}else { $theme_url = get_bloginfo('template_directory'); 
+									}else { $theme_url = get_template_directory_uri(); 
 									$image = $theme_url.'/assets/img/post_standard.jpg';
 								}?>
 								

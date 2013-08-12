@@ -2,7 +2,6 @@
 /**
  * Enable theme features
  */
-add_theme_support('h5bp-htaccess');         // Enable HTML5 Boilerplate's .htaccess
 add_theme_support('nice-search');           // Enable /?s= to /search/ redirect
 add_theme_support('jquery-cdn');            // Enable to load jQuery from the Google CDN
 
@@ -10,8 +9,6 @@ add_theme_support('jquery-cdn');            // Enable to load jQuery from the Go
  * Configuration values
  */
 
-global $smof_data; if(isset($smof_data['google_analytics'])) {$g_analytics = $smof_data['google_analytics'];} else {$g_analytics = null;}
-define('GOOGLE_ANALYTICS_ID', $g_analytics); // UA-XXXXX-Y
 define('POST_EXCERPT_LENGTH', 40);
 
 /**

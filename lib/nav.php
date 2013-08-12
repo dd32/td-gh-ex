@@ -105,7 +105,7 @@ function kadence_nav_menu_args($args = '') {
     $kadence_nav_menu_args['items_wrap'] = '<ul class="%2$s">%3$s</ul>';
   }
 
-    $kadence_nav_menu_args['depth'] = 3;
+    $kadence_nav_menu_args['depth'] = 10;
 
   if (!$args['walker']) {
     $kadence_nav_menu_args['walker'] = new kadence_Nav_Walker();

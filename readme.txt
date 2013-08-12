@@ -37,12 +37,20 @@ Virtue Theme Uses:
 * jquery.customSelect (http://adam.co/lab/jquery/customselect/), Dual licensed under the MIT or GPL Version 2 licenses
 * jQuery gMap (http://github.com/marioestrada/jQuery-gMap), licensed under Creative Commons BY-SA 3.0 
 * jQuery Scroll to Top Control script (http://www.dynamicdrive.com/) Custom license: http://www.dynamicdrive.com/notice.htm
+* TGM Plugin Activation library (https://github.com/thomasgriffin/TGM-Plugin-Activation) licensed under GNU General Public License v2.0 or later
 
 -------------------------------------------------------
     Changelog:
 -------------------------------------------------------
 
 = Theme Name: Virtue =
+
+= Version: 1.2.2 =
+
+* Moved Portfolio Post to Plugin
+* Updated Menu to allow 8 steps
+* Fixed Various errors
+* Removed all SEO options from Theme
 
 = Version: 1.2.1 =
 

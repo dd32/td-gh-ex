@@ -9,7 +9,7 @@ while (!file_exists($wp_include) && $i++ < 10) {
 require($wp_include);
 
 if ( !is_user_logged_in() || !current_user_can('edit_posts') ) 
-	wp_die(__("You are not allowed to be here"));
+	wp_die(__("You are not allowed to be here", 'virtue'));
 ?>
 <!DOCTYPE html>
 <head>

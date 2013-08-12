@@ -9,7 +9,7 @@ Template Name: Contact
 		$("#contactForm").validate();
 	});
 	</script>
-	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/assets/js/jquery.validate.js"></script>
+	<script type="text/javascript" src="<?php get_template_directory_uri(); ?>/assets/js/jquery.validate.js"></script>
 	<?php global $post; $map = get_post_meta( $post->ID, '_kad_contact_map', true ); 
 	if ($map == 'yes') { ?>
 		    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
