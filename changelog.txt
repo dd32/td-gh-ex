@@ -1,5 +1,10 @@
 *** discover Changelog ***
 
+14-08-2013 - version 1.7.8
+* Option added in theme options panel to on/off slider button(download now)
+* css changes added in style.css for pre, buttons, post, sticky
+* style added for featured image and lopp.php and template-blog.php updated with additional div.
+
 10-08-2013 - version 1.7.7
 * wpml-config.xml file added to make them compatible with WPML plugin.
 

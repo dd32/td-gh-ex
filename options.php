@@ -31,6 +31,7 @@ function optionsframework_options() {
 	
 	// Multicheck array
 	$slider_caption_array = array("on" => "on","off" => "off");
+	$wel_button_array = array("on" => "on","off" => "off");	
 	
 	
 	// Pull all the categories into an array
@@ -207,6 +208,14 @@ function optionsframework_options() {
 						
 	$options[] = array( "name" => "Slider",
 						"type" => "heading");
+						
+	$options[] = array( "name" => "Slider Button",
+						"desc" => "Select option to display welcome button of slider(download now).",
+						"id" => "wel_button",
+						"std" => "on",
+						"type" => "select",
+						"class" => "mini", //mini, tiny, small
+						"options" => $wel_button_array);							
 						
 	$options[] = array( "name" => "Slider Caption",
 						"desc" => "Select option to display caption of slider.",

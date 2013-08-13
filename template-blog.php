@@ -69,13 +69,9 @@ if (have_posts()) : while (have_posts()) : the_post();
 			</div><!--meta data end-->
 			<div class="clear"></div>
 
-<div class="post-entry <?php if ($thumb_small <> '') {echo "timbg";} ?>">
+<div class="post-entry">
 	
-				<?php if($thumb_small<>'') { ?>
-		
-		<a href="<?php esc_url(the_permalink()); ?>"><img src="<?php echo $thumb_small[0]; ?>" alt="<?php the_title(); ?>" /></a>
-		
-		<?php } ?>
+ 	<?php if ( function_exists("has_post_thumbnail") && has_post_thumbnail() ) { ?> <div class="entry-thumbnail"> <?php the_post_thumbnail(array(620,240)); ?> </div> <?php } ?>
 		
 			<?php the_content( __( '<span class="read-more">Read More</span>', 'Hero' ) ); ?>
 			<div class="clear"></div>
