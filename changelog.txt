@@ -1,5 +1,10 @@
 *** application Changelog ***
 
+14-08-2013 - version 1.3.7
+* Footer.php file updated - Bug fixes - social links and copyright text were not been updated through options panel.
+* css changes to make compatible with latest theme unit test data.
+* comments.php file updated - pingbacks error corrected.
+
 2-07-2013 - version 1.3.6
 Text made Translatable below:
 * template-blog.php: line 46

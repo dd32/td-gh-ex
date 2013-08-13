@@ -2,7 +2,7 @@
 Theme Name: application
 Theme URI: http://themeszen.com/application
 Description: A very neat and clean white business theme. The theme supports widgets. And features theme-options, threaded-comments and multi-level dropdown menu. A simple and neat typography.
-Version: 1.3.6
+Version: 1.3.7
 Author: Manish Gori
 Author URI: http://themeszen.com
 Tags: white,threaded-comments,light,one-column,theme-options
@@ -25,7 +25,7 @@ License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * license information for bundled resources, including images
 */
 
-@import "css/reset.css";
+
 
 /* general */
 /*////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -77,27 +77,22 @@ p {
 }
 ul {
 	list-style: square;
-	margin: 0 0 18px 0;
 }
 ol {
-	list-style: decimal;
-	margin: 0 0 18px 1.5em;
+	list-style: decimal outside;
 }
-ol ol {
-	list-style:upper-alpha;
+
+ol,
+ul {
+	margin: 16px 0;
+	padding: 0 0 0 20px;
 }
-ol ol ol {
-	list-style:lower-roman;
+
+li > ul,
+li > ol {
+	margin: 0;
 }
-ol ol ol ol {
-	list-style:lower-alpha;
-}
-ul ul,
-ol ol,
-ul ol,
-ol ul {
-	margin-bottom:0;
-}
+
 dl {
 	margin:0 0 24px 0;
 }
@@ -144,6 +139,10 @@ pre {
 	line-height: 18px;
 	margin-bottom: 18px;
 	padding: 1.5em;
+	overflow: auto;
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;	
 }
 abbr,
 acronym {
@@ -169,19 +168,12 @@ sub {
 }
 
 p,
-ul,
-ol,
 dd,
 pre,
 hr {
 	margin-bottom:10px;
 }
-ul ul,
-ol ol,
-ul ol,
-ol ul {
-	margin-bottom:0;
-}
+
 pre,
 kbd,
 tt,
@@ -376,7 +368,7 @@ th {
 }
 
 #search #s {
-	width:120px;
+	width:100px;
 	height:18px;
 	border:0px;
 	margin-top:6px;
@@ -546,31 +538,10 @@ th {
 	padding: 10px 0px;
 	margin-bottom: 18px;
 	border-bottom: 1px solid #dddddd;
+-ms-word-wrap: break-word;
+word-wrap: break-word;	
 }
 
-.post ol{
-	margin-left: 15px;
-}
-
-.post ul {
-	margin-left: 15px;
-}
-.post-entry ul { margin: 0 0 10px 10px; }
-.post-entry ul li {
-	display: block;
-	margin: 5px 0;
-	padding: 0 0 0 10px;
-	background: url(images/bullet.png) no-repeat 0 7px;
-}
-
-.post-entry ol {
-	margin: 5px 0 10px 20px;
-}
-.post-entry ol li { 
-	margin: 5px 0;
-	list-style: decimal;
-	padding: 0 0 0 0px;
- }
 
 .post-entry {
 	width:600px;
@@ -581,6 +552,8 @@ th {
 
 .post-head {
 	margin-bottom: 5px;
+-ms-word-wrap: break-word;
+word-wrap: break-word;	
 }
 
 .post-head h1 a, .post-head h1 {
@@ -650,7 +623,12 @@ th {
 }
 
 .sticky {
-  border-bottom: 1px solid #e7e7e7;
+  border-bottom: 1px solid #000;
+}
+
+.entry-thumbnail img {
+	display: block;
+	margin: 0 auto 10px;
 }
 
 /* content */
@@ -830,6 +808,13 @@ h3#comments-title {
 	font-style: italic;
 }
 
+/* Buttons */
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+	padding: 5px 15px;
+}
 
 /* Comments form */
 #comments input[type=submit] {
@@ -840,6 +825,7 @@ h3#comments-title {
 	display:block;
 	background-color: #ebebeb;
 	border:0;
+	padding: 10px;
 }
 #respond {
 	border-top: 1px solid #e7e7e7;
@@ -986,6 +972,10 @@ h3#reply-title {
 	font-size: 13px;
 }
 
+#sidebar .widget-container ul, #sidebar .widget-container ol {
+	padding: 0px;
+}
+
 #sidebar .widget-container ul li {
 	padding: 3px 0px 7px 12px;
 	margin-left: 3px;
@@ -1104,4 +1094,9 @@ img.aligncenter
 
 .wp-smiley {
 	margin:0;
+}
+
+.wp-caption.alignleft + ul,
+.wp-caption.alignleft + ol  {
+	list-style-position: inside;
 }

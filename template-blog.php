@@ -49,6 +49,8 @@ if (have_posts()) : while (have_posts()) : the_post();
 			<div class="clear"></div>
 
 <div class="post-entry">
+
+ 	<?php if ( function_exists("has_post_thumbnail") && has_post_thumbnail() ) { ?> <div class="entry-thumbnail"> <?php the_post_thumbnail(array(620,240)); ?> </div> <?php } ?>
 		
 			<?php the_content( '<span class="read-more">'.__('Read More', 'application').'</span>' ); ?>
 			<div class="clear"></div>
