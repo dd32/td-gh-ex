@@ -4,7 +4,7 @@ Theme URI: http://cyberchimps.com/ifeature-free/
 Author: CyberChimps
 Author URI: http://www.cyberchimps.com/
 Description: iFeature 5 is the World's first Touch Friendly Responsive Drag & Drop Wordpress Theme developed by CyberChimps WordPress Themes. It lets you create amazing responsive websites that you can control on any touch friendly device including the iPad, iPhone, and Android devices. iFeature 5 allows you to setup an entire website in minutes with touch friendly Drag and Drop Options on a per-page basis allowing you control the look and feel of every page.
-Version: 5.1.27
+Version: 5.1.29
 Tags: white, black, silver, light, gray, green, orange, pink, red, two-columns, right-sidebar, flexible-width, fixed-width, custom-background, custom-colors, custom-menu, featured-images, post-formats, theme-options, threaded-comments, sticky-post, full-width-template
 License: GNU General Public License
 License URI: http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
@@ -1037,6 +1037,13 @@ h2.box-widget-title {
 		padding-right: 20px;
 		padding-left: 20px;
 	}
+	body {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.container-full-width .container{
+		margin: 0px 20px;
+	}
 }
 /*==================================== PHONES ====================================================*/
 
@@ -1061,6 +1068,9 @@ h2.box-widget-title {
 	}
 	.container-full .top-head-social .icons {
 		margin-bottom: 10px;
+	}
+	.container-full-width .container{
+		margin: 0px 10px;
 	}
 }
 

@@ -373,6 +373,14 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'style' => 'normal',
 		'color' => '#333333'
     ) );
+
+    // Heading Typography Defaults
+    $typography_heading_defaults = apply_filters( 'cyberchimps_typography_heading_defaults', array(
+        'size' => '',
+        'face' => 'Arial, Helvetica, sans-serif',
+        'style' => '',
+        'color' => ''
+    ) );
 		
 /*************************** HELP *****************************************************/
 	
@@ -600,7 +608,13 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'styles'	=> apply_filters( 'cyberchimps_typography_styles', array( 'normal' => 'Normal','bold' => 'Bold' ) ),
 		'color'		=> false
 	);
-	
+	$typography_heading_options	= array(
+		'sizes'		=> false,
+		'faces'		=> apply_filters( 'cyberchimps_typography_faces', $faces ),
+		'styles'	=> false,
+		'color'		=> false
+	);
+
 /* Typography Section */
 	$fields_list[]	= array(
 		'id'		=> 'typography_options',
@@ -635,8 +649,9 @@ function cyberchimps_add_core_fields( $fields_list ) {
 	$fields_list[]	= array(
 		'name'		=> __('Font Family for headings', 'cyberchimps_core' ),
 		'id'		=> 'font_family_headings',
-		'type'		=> 'select',
-		'options'	=> apply_filters( 'cyberchimps_typography_faces', $faces ),
+		'type'		=> 'typography',
+        'std'       => $typography_heading_defaults,
+		'options'	=> $typography_heading_options,
 		'section'	=> 'cyberchimps_typography_section',
 		'heading'	=> 'cyberchimps_design_heading'
 	);
@@ -2572,7 +2587,7 @@ endif;// end pro option fields
 		'id'		=> 'footer_copyright_text',
 		'name'		=> __('Footer Copyright Text', 'cyberchimps_core' ),
 		'std'		=> '&copy; ' . get_bloginfo('name'),
-		'type'		=> 'text',
+		'type'		=> 'text_html',
 		'section'	=> 'cyberchimps_footer_section',
 		'heading'	=> 'cyberchimps_footer_heading'
 	);

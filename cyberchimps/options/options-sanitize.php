@@ -3,6 +3,14 @@
 /* Text */
 add_filter( 'cyberchimps_sanitize_text', 'sanitize_text_field' );
 
+/* Text that allows basic html */
+function cyberchimps_sanitize_text_html( $input ) {
+    $output = wp_kses( $input, array('a' => array('href' => array(),'title' => array()),'br' => array(),'em' => array(),'strong' => array()) );
+    return $output;
+}
+add_filter( 'cyberchimps_sanitize_text_html', 'cyberchimps_sanitize_text_html' );
+
+
 /* Unfiltered Textarea */
 function cyberchimps_sanitize_unfiltered_textarea( $input ) {
 	$output = cyberchimps_get_option( 'html_box', '' );
