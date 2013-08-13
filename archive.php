@@ -1,50 +1,78 @@
 <?php get_header(); ?>
  
     <div id="content">
-        <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
-         
-    <?php $post = $posts[0]; ?>
-      <?php /* If this is a category archive */ if (is_category()) { ?>
-        <h2>Archive for the &#8216;<?php single_cat_title(); ?>&#8217; Category:</h2>
-      <?php /* If this is a tag archive */ } elseif( is_tag() ) { ?>
-        <h2>Posts Tagged &#8216;<?php single_tag_title(); ?>&#8217;</h2>
-      <?php /* If this is a daily archive */ } elseif (is_day()) { ?>
-        <h2>Archive for <?php the_time('F jS, Y'); ?>:</h2>
-      <?php /* If this is a monthly archive */ } elseif (is_month()) { ?>
-        <h2>Archive for <?php the_time('F, Y'); ?>:</h2>
-      <?php /* If this is a yearly archive */ } elseif (is_year()) { ?>
-        <h2>Archive for <?php the_time('Y'); ?>:</h2>
-      <?php /* If this is an author archive */ } elseif (is_author()) { ?>
-        <h2>Author Archive</h2>
-      <?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
-        <h2>Blog Archives</h2>
+
+<!--Archive label-->
+
+<?php $post = $posts[0]; ?>
+
+      <?php if (is_category()) { ?>
+	<h2 class="entry">
+	<?php single_cat_title(); ?></h2>
+
+
+      <?php } elseif( is_tag()) { ?>
+	<h2 class="entry">
+	<?php single_tag_title(); ?></h2>
+
+
+      <?php } elseif (is_day()) { ?>
+	<h2 class="entry">
+	<?php the_time( get_option('date_format') ); ?></h2>
+
+
+      <?php } elseif (is_month()) { ?>
+	<h2 class="entry">
+	<?php the_time('F, Y'); ?></h2>
+
+
+      <?php } elseif (is_year()) { ?>
+	<h2 class="entry">
+	<?php the_time('Y'); ?></h2>
+
+
+      <?php } elseif (is_author()) { ?>
+	<h2 class="entry">
+	<?php the_time('Y'); ?></h2>
+
+
+      <?php } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
+
+	<h2 class="entry"><?php _e('News archives:'); ?></h2>
+
     <?php } ?>
-         
-        <div class="post">
-        <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+
+
+<!--post-->
+
+
+        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+	<div class="post" id="post-<?php the_ID(); ?>">
+
+
+	<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+
+		<div id="postmetadata"> 
+			<?php the_category(', '); ?>
+			<?php the_tags(', '); ?>
+			<a href="<?php the_permalink(', '); ?>"><?php the_time( get_option('date_format') ); ?></a>, 
+			<?php comments_popup_link(' Comment &raquo; ', '1 comment &raquo;', '% comments &raquo;'); ?>
+			<?php edit_post_link(' EDIT '); ?>
+		</div>
+      
+		<!--<?php the_excerpt(); ?>-->
+        	<?php the_content(); ?>
+
+		<div class="pagenumber"><?php wp_link_pages(); ?></div>
+
+  		</div>
+
+	<?php endwhile; endif; ?>
+
+    	<div class="navigation"><?php posts_nav_link(); ?></div>
  
-            <div class="entry">
-            <?php the_content(); ?>
- 
-                <p class="postmetadata">
-                <?php _e('Filed under&#58;'); ?> <?php the_category(', ') ?> <?php _e('by'); ?> <?php  the_author(); ?><br />
-                <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?> <?php edit_post_link('Edit', ' , ', ''); ?>
-                </p>
- 
-            </div>
- 
-        </div>
-         
-<?php endwhile; ?>
- 
-    <div class="navigation">
-        <?php posts_nav_link(); ?>
-    </div>
- 
-<?php endif; ?>
- 
-</div>
+	</div>
 
 <?php get_sidebar(); ?>
-<?php get_template_part( 'sidebar2'); ?>
 <?php get_footer(); ?>

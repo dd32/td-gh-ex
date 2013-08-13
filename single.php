@@ -1,60 +1,53 @@
 <?php get_header(); ?>
  
     <div id="content">
+
         <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
          
         <div class="post">
 
-                <div class="date">
-                <?php the_time( get_option('date_format') ); ?>
-                </div>
+        <a href="<?php the_permalink(); ?>"><h1><?php the_title(); ?></h1></a>
 
-        <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+		<div id="postmetadata"> 
+			<?php the_category(', '); ?>
+			<?php the_tags(', '); ?>
+			<a href="<?php the_permalink(', '); ?>"><?php the_time( get_option('date_format') ); ?></a>, 
+			<?php comments_popup_link(' Comment &raquo; ', '1 comment &raquo;', '% comments &raquo;'); ?>
+			<?php edit_post_link(' EDIT '); ?>
+		</div>
+
             <div class="entry">   
-                <?php the_post_thumbnail(); ?>
-                <?php the_content(); ?>
-		<?php wp_link_pages(); ?>
+            <?php the_post_thumbnail(); ?>
+            <?php the_content(); ?>
 
+		<div class="pagenumber"><?php wp_link_pages(); ?></div>
 
-                <p class="postmetadata">
-                Author: <?php the_author(); ?>, 
-		Category: <?php the_category(', ') ?>, 
-		<?php the_tags('Tags: ', ', '); ?><br/>
-                
-<?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?> <?php edit_post_link('Edit', ' , ', ''); ?>, <?php paginate_comments_links(); ?>
-                </p>
+	<!--<div class="rss"> 
+    	<a href="<?php bloginfo('rss2_url'); ?>">News RSS</a>, 
+	<a href="<?php bloginfo('comments_rss2_url'); ?>">Comments RSS</a>
+	</div>-->
 
+    </div><!--ends entry-->
 
- 
-            </div>
-
-
-
-
- 
-            <div class="comments-template">
-                <?php comments_template(); ?>
-            </div>
-    </div>
- 
 <?php endwhile; ?>
      
-    <div class="navigation">  
+<div class="comments-template"><?php comments_template(); ?>
+<?php paginate_comments_links(); ?> 
+</div>
 
-        <?php previous_post_link(' &laquo; %link &laquo; ') ?> 
 
-	 Previous - Next article
-	
-	<?php next_post_link(' &raquo; %link &raquo; ') ?>, 
 
-    <br><a href="<?php bloginfo('rss2_url'); ?>">News RSS</a>, <a href="post_comments_feed_link()">Comments RSS</a></br>
-	
-	</div>
+
+	</div><!--ends post-->
 
 <?php endif; ?>
-</div>
- 
+
+  		<div class="navigation"><?php previous_post_link(' &laquo; %link ') ?>
+		&nbsp; - &nbsp; <?php next_post_link(' %link &raquo; ') ?></div>
+
+</div><!--ends content-->
+
+
 
 <?php get_sidebar(); ?>
-<?php get_template_part( 'sidebar2'); ?>
 <?php get_footer(); ?>

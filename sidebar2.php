@@ -1,7 +1,6 @@
-<div class="sidebar2">
+<div id="sidebar-extra">
 
-
-<?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('Sidebar 2') ) : else : ?>
+<?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('Extra sidebar') ) : else : ?>
 <?php endif; ?>
 
 </div>

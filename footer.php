@@ -1,32 +1,29 @@
 <div id="footer">
 
-<div class="sidebar4">
+		
 
+		
 
-<?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('Sidebar 4') ) : else : ?>
-<?php endif; ?>
-
-</div>
-
-
-
+	<?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('Bottom') ) : else : ?>
+	<?php endif; ?>
+	
 
 
 		<div id="credits">
+		Powered by <a href="http://wordpress.org/">Wordpress</a>.
+		<a href="http://redesign.toth-illustration.com/">Redesign</a>
+		Theme by <a href="http://toth-illustration.com">Robert Toth</a>
 
-Copyright <?php echo date('Y'); ?> by <?php bloginfo('name'); ?></a>.
-
-Powered by <a href="http://wordpress.org">Wordpress</a>.
-
-Redesign by <a href="http://toth-illustration.com">Robert Toth</a></p>
 
 
 		</div>
 
 	</div>
+
+
 </div>
 
- <?php wp_footer(); ?> 
+<?php wp_footer(); ?> 
 
 </body>
 </html>

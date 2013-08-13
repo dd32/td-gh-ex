@@ -1,4 +1,12 @@
+<?php
+/*
+Template Name: Front
+*/
+?>
+
 <?php get_header(); ?>
+
+<?php get_template_part( 'stripe'); ?>
  
     <div id="content">
 
@@ -20,13 +28,6 @@
 
             </div>
  
-
-		<?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>
-
-   			<div class="comments-template"><?php comments_template(); ?>
-			<?php paginate_comments_links(); ?> 
-			</div>
-			
         </div>
 
 <?php endwhile; ?>
