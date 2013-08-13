@@ -20,14 +20,7 @@ function kadence_scripts() {
 global $smof_data; if(isset($smof_data['skin_stylesheet'])) {$skin = $smof_data['skin_stylesheet'];} else { $skin = 'default.css';} 
  wp_enqueue_style('virtue_skin', get_template_directory_uri() . '/assets/css/skins/'.$skin.'', false, null);
 
-  // jQuery is loaded using the same method from HTML5 Boilerplate:
-  // Grab Google CDN's latest jQuery with a protocol relative URL; fallback to local if offline
-  // It's kept in the header instead of footer to avoid conflicts with plugins.
-  if (!is_admin() && current_theme_supports('jquery-cdn')) {
-    wp_deregister_script('jquery');
-    wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js', false, null, false);
-    add_filter('script_loader_src', 'kadence_jquery_local_fallback', 10, 2);
-  }
+ 
 
   if (is_single() && comments_open() && get_option('thread_comments')) {
     wp_enqueue_script('comment-reply');
@@ -36,25 +29,8 @@ global $smof_data; if(isset($smof_data['skin_stylesheet'])) {$skin = $smof_data[
   wp_register_script('modernizr', get_template_directory_uri() . '/assets/js/vendor/modernizr-2.6.2.min.js', false, null, false);
   wp_register_script('kadence_plugins', get_template_directory_uri() . '/assets/js/plugins.js', false, null, true);
   wp_register_script('kadence_main', get_template_directory_uri() . '/assets/js/main.js', false, null, true);
-  wp_enqueue_script('jquery');
   wp_enqueue_script('modernizr');
   wp_enqueue_script('kadence_plugins');
   wp_enqueue_script('kadence_main');
 }
 add_action('wp_enqueue_scripts', 'kadence_scripts', 100);
-
-// http://wordpress.stackexchange.com/a/12450
-function kadence_jquery_local_fallback($src, $handle) {
-  static $add_jquery_fallback = false;
-
-  if ($add_jquery_fallback) {
-    echo '<script>window.jQuery || document.write(\'<script src="' . get_template_directory_uri() . '/assets/js/vendor/jquery-1.9.1.min.js"><\/script>\')</script>' . "\n";
-    $add_jquery_fallback = false;
-  }
-
-  if ($handle === 'jquery') {
-    $add_jquery_fallback = true;
-  }
-
-  return $src;
-}

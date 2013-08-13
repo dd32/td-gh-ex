@@ -1,3 +1,4 @@
+
 <header class="banner headerclass" role="banner">
 <?php if (kadence_display_topbar()) : ?>
   <section id="topbar" class="topclass">

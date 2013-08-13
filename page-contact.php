@@ -9,7 +9,7 @@ Template Name: Contact
 		$("#contactForm").validate();
 	});
 	</script>
-	<script type="text/javascript" src="<?php get_template_directory_uri(); ?>/assets/js/jquery.validate.js"></script>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery.validate.js"></script>
 	<?php global $post; $map = get_post_meta( $post->ID, '_kad_contact_map', true ); 
 	if ($map == 'yes') { ?>
 		    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
@@ -22,7 +22,7 @@ Template Name: Contact
 		    ?>
 		    <script type="text/javascript">
 					jQuery(window).load(function() {
-					 $('#map_address').gMap({
+					 jQuery('#map_address').gMap({
 						address: "<?php echo $address;?>",
 						zoom: <?php echo $zoom;?>,
 						maptype: '<?php echo $maptype;?>',

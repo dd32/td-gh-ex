@@ -46,7 +46,7 @@
 				                    <header>
 			                          <h5 class="entry-title"><?php the_title(); ?></h5>
 			                          <div class="subhead">
-			                          	<span class="postday"><?php echo get_the_date('j M Y'); ?></span>
+			                          	<span class="postday"><?php echo get_the_date(get_option( 'date_format' )); ?></span>
 			                        </div>
 			                          	
 			                        </header>

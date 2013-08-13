@@ -1,4 +1,11 @@
-<?php global $smof_data; 
+<?php
+function virtue_custom_style_setup() {
+  $args = array('wp-head-callback' => 'virtue_custom_style');
+  add_theme_support( 'custom-header', $args );
+}
+add_action( 'after_setup_theme', 'virtue_custom_style_setup' );
+function virtue_custom_style() {
+ global $smof_data; 
 //Logo
 if(!empty($smof_data['font_logo'])) {
   $logo_font = '.logofont {font-family:'.$smof_data['font_logo'].';}';
@@ -292,4 +299,5 @@ echo '<style type="text/css" media="screen">'.$logo_font.$font_logo.$logo_paddin
 
   '.$custom_css.'
 </style>';
+}
 ?>

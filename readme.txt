@@ -21,6 +21,7 @@ Virtue Theme Uses:
 * Photos on example_slider by Benjamin Ritner (licensed under GNU General Public License v2.0 or later)
 * Icon Font & Icon images by Icomoon (Used with permission under purchased developer licenses:  http://icomoon.io/#icons/license)
 * FlexSlider by WooThemes under the GPLv2 license (http://www.gnu.org/licenses/gpl-2.0.html)
+* Star Font and Woocommerce Templates by Woothemes for Woocommerce (licensed under GNU General Public License v2.0 or later)
 * SMOF - Slightly Modded Options Framework (https://github.com/syamilmj/Options-Framework) licensed under GNU General Public License v2.0 or later
 * Google Fonts (available through Google web Fonts: http://www.google.com/fonts/), licensed under Apache License Version 2
 * Aqua Resizer (https://github.com/syamilmj/Aqua-Resizer), licensed under WTFPL http://www.wtfpl.net/
@@ -44,6 +45,20 @@ Virtue Theme Uses:
 -------------------------------------------------------
 
 = Theme Name: Virtue =
+
+= Version: 1.2.5 =
+
+* Moved Post Shortcodes to Virtue ToolKit Plugin
+* Removed RSS links in Head.php
+* Moved <?php get_template_part('templates/css'); ?> below head tag
+* Removed jQuery from Theme
+* Fixed Admin Options Issue with sorting order
+* Added Footer Font Color to Admin Options
+* Fixed minor spelling error
+* Fixed issue with portfolio page only showing all types
+* Fixed issue with contact page map
+* Changed date-format in blog carousel and recent post widget to user specific
+
 
 = Version: 1.2.2 =
 

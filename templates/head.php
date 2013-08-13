@@ -14,9 +14,6 @@
   <script type="text/javascript">
   	var virtue_URL = "<?php echo $blog_virtue ?>";
   </script>
+  
   <?php wp_head(); ?>
-
-  <?php get_template_part('templates/css'); ?>
-
-  <link rel="alternate" type="application/rss+xml" title="<?php echo get_bloginfo('name'); ?> Feed" href="<?php echo home_url(); ?>/feed/">
 </head>

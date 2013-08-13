@@ -15,7 +15,7 @@ Template Name: Portfolio Grid
 			<?php get_template_part('templates/content', 'page'); ?>
       	<?php global $post; $portfolio_category = get_post_meta( $post->ID, '_kad_portfolio_type', true ); 
 			   				   $portfolio_items = get_post_meta( $post->ID, '_kad_portfolio_items', true ); 
-			   				   if($portfolio_category = 'All' || $portfolio_category = '') { $portfolio_cat_slug = '';} else {
+			   				   if($portfolio_category == '-1' || empty($portfolio_category)) { $portfolio_cat_slug = ''; $portfolio_cat_ID = ''; } else {
 								 $portfolio_cat = get_term_by ('id',$portfolio_category,'portfolio-type' );
 							$portfolio_cat_slug = $portfolio_cat -> slug;
 							  $portfolio_cat_ID = $portfolio_cat -> term_id;

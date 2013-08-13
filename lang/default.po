@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Lite Virtue\n"
-"POT-Creation-Date: 2013-08-11 19:45-0700\n"
-"PO-Revision-Date: 2013-08-11 19:45-0700\n"
+"POT-Creation-Date: 2013-08-13 13:55-0700\n"
+"PO-Revision-Date: 2013-08-13 13:55-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -289,7 +289,6 @@ msgid "Use images of at least 1170px wide for best results."
 msgstr ""
 
 #: ../admin/functions/functions.options.php:592
-#: ../admin/functions/functions.options.php:684
 msgid "Silder Height"
 msgstr ""
 
@@ -366,6 +365,10 @@ msgstr ""
 
 #: ../admin/functions/functions.options.php:665
 msgid "Choose which slider you would like to show for mobile viewers."
+msgstr ""
+
+#: ../admin/functions/functions.options.php:684
+msgid "Slider Height"
 msgstr ""
 
 #: ../admin/functions/functions.options.php:731
@@ -760,17 +763,17 @@ msgid "Latest posts from"
 msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:155
-#: ../lib/virtueportfolio-activate.php:37
+#: ../lib/virtuetoolkit-activate.php:37
 msgid "Install Required Plugins"
 msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:156
-#: ../lib/virtueportfolio-activate.php:38
+#: ../lib/virtuetoolkit-activate.php:38
 msgid "Install Plugins"
 msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:157
-#: ../lib/virtueportfolio-activate.php:39
+#: ../lib/virtuetoolkit-activate.php:39
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
@@ -780,7 +783,7 @@ msgid "Something went wrong."
 msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:169
-#: ../lib/virtueportfolio-activate.php:51
+#: ../lib/virtuetoolkit-activate.php:51
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
@@ -790,7 +793,7 @@ msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:171
 #: ../lib/class-tgm-plugin-activation.php:1840
-#: ../lib/virtueportfolio-activate.php:52
+#: ../lib/virtuetoolkit-activate.php:52
 msgid "Plugin activated successfully."
 msgstr ""
 
@@ -1493,11 +1496,11 @@ msgstr ""
 msgid "Not Found"
 msgstr ""
 
-#: ../lib/virtueportfolio-activate.php:40
+#: ../lib/virtuetoolkit-activate.php:40
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: ../lib/virtueportfolio-activate.php:53
+#: ../lib/virtuetoolkit-activate.php:53
 #, php-format
 msgid "All plugins installed and activated successfully. %s"
 msgstr ""
@@ -1705,16 +1708,6 @@ msgstr ""
 msgid "No oEmbed Results Found for %s. View more info at"
 msgstr ""
 
-#: ../lib/shortcodes/accordion/accordion_popup.php:12
-#: ../lib/shortcodes/btns/btns_popup.php:13
-#: ../lib/shortcodes/columns/columns_popup.php:12
-#: ../lib/shortcodes/divider/divider_popup.php:12
-#: ../lib/shortcodes/icons/icon_popup.php:13
-#: ../lib/shortcodes/pullquote/quote_popup.php:12
-#: ../lib/shortcodes/video/video_popup.php:12
-msgid "You are not allowed to be here"
-msgstr ""
-
 #: ../templates/comment.php:7
 msgid "(Edit)"
 msgstr ""
@@ -1797,15 +1790,15 @@ msgstr ""
 msgid "By"
 msgstr ""
 
-#: ../templates/header.php:17
+#: ../templates/header.php:18
 msgid "View your shopping cart"
 msgstr ""
 
-#: ../templates/header.php:18
+#: ../templates/header.php:19
 msgid "Your Cart"
 msgstr ""
 
-#: ../templates/header.php:54
+#: ../templates/header.php:55
 msgid "menu"
 msgstr ""
 

@@ -681,7 +681,7 @@ $of_options = array();
       					"fold" 		 => "mobile_slider", /* the switch hook */
       					"type"             => "slider"
                                     ); 
-            $of_options[] = array( 	"name" 		=> __("Silder Height", 'virtue'),
+            $of_options[] = array( 	"name" 		=> __("Slider Height", 'virtue'),
 						"desc" 		=> "",
 						"id" 		      => "mobile_slider_size",
 						"std" 		=> "300",

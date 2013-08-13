@@ -503,7 +503,7 @@ class Kadence_Recent_Posts_Widget extends WP_Widget {
           } else { 
             $theme_url = get_template_directory_uri(); echo '<img width="80" height="50" src="'.$theme_url.'/assets/img/post_standard-80x50.jpg" class="attachment-widget-thumb wp-post-image" alt="">'; } ?></a>
         <a href="<?php the_permalink() ?>" title="<?php echo esc_attr(get_the_title() ? get_the_title() : get_the_ID()); ?>" class="recentpost_title"><?php if ( get_the_title() ) the_title(); else the_ID(); ?></a>
-        <span class="recentpost_date"><?php echo get_the_date('F j, Y') ?></span>
+        <span class="recentpost_date"><?php echo get_the_date(get_option( 'date_format' )); ?></span>
         </li>
     <?php endwhile; ?>
     </ul>

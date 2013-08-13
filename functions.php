@@ -22,4 +22,7 @@ require_once locate_template('/lib/custom.php');          			// Custom functions
 require_once locate_template('/lib/icons/icons.php');          		// Icon functions
 require_once locate_template('/lib/authorbox.php');         		// Author box
 require_once locate_template('/lib/custom-woocommerce.php'); 		// Woocommerce functions
-require_once locate_template('/lib/virtueportfolio-activate.php'); 	// Plugin Activation
+require_once locate_template('/lib/virtuetoolkit-activate.php'); 	// Plugin Activation
+
+
+require get_template_directory() . '/lib/custom-css.php';
