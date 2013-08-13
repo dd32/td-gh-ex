@@ -410,7 +410,7 @@ function travelify_theme_options_do_page() {
 							</table>
 							<p><strong><?php _e( 'How to use the featured slider?', 'travelify' ); ?></strong><p/>
 							<ul>
-								<li>Create Post or Page and add featured image to it.</li>
+								<li><?php _e( 'Create Post or Page and add featured image to it.', 'travelify' ); ?></li>
 								<li><?php _e( 'Add all the Post ID that you want to use in the featured slider. Post ID can be found at All Posts table in last column', 'travelify' ); ?></li>
 								<li><?php _e( 'Featured Slider will show featured images, Title and excerpt of the respected added post IDs.', 'travelify' ); ?></li>
 								<li><?php _e( 'The recommended image size is', 'travelify' ); ?><strong> 1018px x 460px.</strong></li>
