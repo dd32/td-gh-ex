@@ -13,9 +13,9 @@ a:hover {color: #f99654;}
 /* Background Skins */
 .contentclass {background: #fff;}
 .featclass {background: #fff;}
-.headerclass {background: #fff;}
+.headerclass {background: #f9f9f9;}
 .footerclass {background: #f2f2f2;}
-.navclass {background: #fff;}
+.navclass {background: #f2f2f2;}
 .bg-lightgray {background: #f2f2f2; background:rgba(0, 0, 0, 0.05); }
 /* Header - Type */
 h1, h2, h3 {color:#333;}

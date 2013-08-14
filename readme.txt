@@ -46,6 +46,12 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 1.2.8 =
+
+* Updated Citris Skin to match theme preview
+* Updated Fullwith.php 
+
+
 = Version: 1.2.7 =
 
 * Updated some issues with FontAwesome throughout theme
