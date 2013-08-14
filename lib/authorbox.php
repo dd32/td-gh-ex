@@ -25,7 +25,7 @@ function virtue_author_box() { ?>
 			</span>
             <?php } if ( get_the_author_meta( 'flickr' ) ) { ?>
             <span class="flickrlink">
-				<a href="<?php the_author_meta( 'flickr' ); ?>" title="<?php _e('Follow', 'virtue'); ?>  <?php the_author_meta( 'display_name' ); ?> <?php _e('on Flickr', 'virtue');?>"><i class="icon-flickr-2"></i></a>
+				<a href="<?php the_author_meta( 'flickr' ); ?>" title="<?php _e('Follow', 'virtue'); ?>  <?php the_author_meta( 'display_name' ); ?> <?php _e('on Flickr', 'virtue');?>"><i class="icon-flickr"></i></a>
 			</span>
             <?php } if ( get_the_author_meta( 'vimeo' ) ) { ?>
             <span class="vimeolink">
@@ -68,7 +68,7 @@ function virtue_author_box() { ?>
             $args = array( 'numberposts' => '3' );
             $recent_posts = wp_get_recent_posts( $args );
             foreach( $recent_posts as $post ){
-			echo '<li><a href="' . get_permalink($post["ID"]) . '" title="'.$post["post_title"].'" ><i class="icon-arrow-right-2"></i>' .   $post["post_title"].'</a><span class="recentpost-date"> - '. get_the_time('F j, Y', $post["ID"]) .'</span> </li> ';
+			echo '<li><a href="' . get_permalink($post["ID"]) . '" title="'.$post["post_title"].'" ><i class="icon-caret-right"></i>' .   $post["post_title"].'</a><span class="recentpost-date"> - '. get_the_time('F j, Y', $post["ID"]) .'</span> </li> ';
 			} ?>
 			</ul>
 	</div><!--Latest Post -->

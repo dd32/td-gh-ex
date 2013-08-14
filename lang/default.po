@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Lite Virtue\n"
-"POT-Creation-Date: 2013-08-13 13:55-0700\n"
-"PO-Revision-Date: 2013-08-13 13:55-0700\n"
+"POT-Creation-Date: 2013-08-14 13:34-0700\n"
+"PO-Revision-Date: 2013-08-14 13:34-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -289,7 +289,8 @@ msgid "Use images of at least 1170px wide for best results."
 msgstr ""
 
 #: ../admin/functions/functions.options.php:592
-msgid "Silder Height"
+#: ../admin/functions/functions.options.php:684
+msgid "Slider Height"
 msgstr ""
 
 #: ../admin/functions/functions.options.php:601
@@ -365,10 +366,6 @@ msgstr ""
 
 #: ../admin/functions/functions.options.php:665
 msgid "Choose which slider you would like to show for mobile viewers."
-msgstr ""
-
-#: ../admin/functions/functions.options.php:684
-msgid "Slider Height"
 msgstr ""
 
 #: ../admin/functions/functions.options.php:731
@@ -1009,22 +1006,18 @@ msgid "Please enter your Flickr url. (be sure to include http://)"
 msgstr ""
 
 #: ../lib/custom.php:126
-msgid "Please enter your Vimeo url. (be sure to include http://)"
-msgstr ""
-
-#: ../lib/custom.php:133
 msgid "Please enter your Linkedin url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:140
+#: ../lib/custom.php:133
 msgid "Please enter your Dribbble url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:147
+#: ../lib/custom.php:140
 msgid "Please enter your Pinterest url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:154
+#: ../lib/custom.php:147
 msgid "Please enter your Instagram url. (be sure to include http://)"
 msgstr ""
 
@@ -1086,7 +1079,7 @@ msgid "Video"
 msgstr ""
 
 #: ../lib/metaboxes.php:101 ../lib/metaboxes.php:202 ../lib/metaboxes.php:391
-#: ../lib/widgets.php:748
+#: ../lib/widgets.php:740
 msgid "Image"
 msgstr ""
 
@@ -1102,7 +1095,7 @@ msgstr ""
 msgid "Post Summery"
 msgstr ""
 
-#: ../lib/metaboxes.php:116 ../lib/widgets.php:754
+#: ../lib/metaboxes.php:116 ../lib/widgets.php:746
 msgid "Text"
 msgstr ""
 
@@ -1537,8 +1530,8 @@ msgstr ""
 msgid "vCard"
 msgstr ""
 
-#: ../lib/widgets.php:265 ../lib/widgets.php:412 ../lib/widgets.php:553
-#: ../lib/widgets.php:691
+#: ../lib/widgets.php:265 ../lib/widgets.php:408 ../lib/widgets.php:545
+#: ../lib/widgets.php:683
 msgid "Title:"
 msgstr ""
 
@@ -1590,108 +1583,104 @@ msgstr ""
 msgid "Social"
 msgstr ""
 
-#: ../lib/widgets.php:416
+#: ../lib/widgets.php:412
 msgid "Facebook:"
 msgstr ""
 
-#: ../lib/widgets.php:420
+#: ../lib/widgets.php:416
 msgid "Twitter:"
 msgstr ""
 
-#: ../lib/widgets.php:424
+#: ../lib/widgets.php:420
 msgid "Instagram:"
 msgstr ""
 
-#: ../lib/widgets.php:428
+#: ../lib/widgets.php:424
 msgid "GooglePlus:"
 msgstr ""
 
-#: ../lib/widgets.php:432
+#: ../lib/widgets.php:428
 msgid "Flickr:"
 msgstr ""
 
-#: ../lib/widgets.php:436
-msgid "Vimeo:"
-msgstr ""
-
-#: ../lib/widgets.php:440
+#: ../lib/widgets.php:432
 msgid "Youtube:"
 msgstr ""
 
-#: ../lib/widgets.php:444
+#: ../lib/widgets.php:436
 msgid "Pinterest:"
 msgstr ""
 
-#: ../lib/widgets.php:448
+#: ../lib/widgets.php:440
 msgid "Dribbble:"
 msgstr ""
 
-#: ../lib/widgets.php:462
+#: ../lib/widgets.php:454
 msgid "This shows the most recent posts on your site with a thumbnail"
 msgstr ""
 
-#: ../lib/widgets.php:463
+#: ../lib/widgets.php:455
 msgid "Virtue: Recent Posts"
 msgstr ""
 
-#: ../lib/widgets.php:488
+#: ../lib/widgets.php:480
 msgid "Recent Posts"
 msgstr ""
 
-#: ../lib/widgets.php:556
+#: ../lib/widgets.php:548
 msgid "Number of posts to show:"
 msgstr ""
 
-#: ../lib/widgets.php:559
+#: ../lib/widgets.php:551
 msgid "Limit to Catagory (Optional):"
 msgstr ""
 
-#: ../lib/widgets.php:570
+#: ../lib/widgets.php:562
 msgid ""
 "This shows a grid of featured images from recent posts or portfolio items"
 msgstr ""
 
-#: ../lib/widgets.php:571
+#: ../lib/widgets.php:563
 msgid "Virtue: Image Grid"
 msgstr ""
 
-#: ../lib/widgets.php:596
+#: ../lib/widgets.php:588
 msgid "Post Gallery"
 msgstr ""
 
-#: ../lib/widgets.php:694
+#: ../lib/widgets.php:686
 msgid "Grid Choice:"
 msgstr ""
 
-#: ../lib/widgets.php:696
+#: ../lib/widgets.php:688
 msgid "Blog Posts"
 msgstr ""
 
-#: ../lib/widgets.php:697
+#: ../lib/widgets.php:689
 msgid "Portfolio"
 msgstr ""
 
-#: ../lib/widgets.php:700
+#: ../lib/widgets.php:692
 msgid "If Post - Choose Category (Optional):"
 msgstr ""
 
-#: ../lib/widgets.php:703
+#: ../lib/widgets.php:695
 msgid "If Portfolio - Choose Type (Optional):"
 msgstr ""
 
-#: ../lib/widgets.php:706
+#: ../lib/widgets.php:698
 msgid "Number of images to show:"
 msgstr ""
 
-#: ../lib/widgets.php:722
+#: ../lib/widgets.php:714
 msgid "This allows for an image and a simple about text."
 msgstr ""
 
-#: ../lib/widgets.php:723
+#: ../lib/widgets.php:715
 msgid "Virtue: About with Image"
 msgstr ""
 
-#: ../lib/widgets.php:751
+#: ../lib/widgets.php:743
 msgid "Upload"
 msgstr ""
 

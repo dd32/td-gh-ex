@@ -19,7 +19,7 @@
 Virtue Theme Uses:
 
 * Photos on example_slider by Benjamin Ritner (licensed under GNU General Public License v2.0 or later)
-* Icon Font & Icon images by Icomoon (Used with permission under purchased developer licenses:  http://icomoon.io/#icons/license)
+* FontAwesome by Dave Gandy (http://fontawesome.io) licensed under the SIL OFL 1.1 (http://scripts.sil.org/OFL)
 * FlexSlider by WooThemes under the GPLv2 license (http://www.gnu.org/licenses/gpl-2.0.html)
 * Star Font and Woocommerce Templates by Woothemes for Woocommerce (licensed under GNU General Public License v2.0 or later)
 * SMOF - Slightly Modded Options Framework (https://github.com/syamilmj/Options-Framework) licensed under GNU General Public License v2.0 or later
@@ -45,6 +45,12 @@ Virtue Theme Uses:
 -------------------------------------------------------
 
 = Theme Name: Virtue =
+
+= Version: 1.2.6 =
+
+* Changed Icon Font to FontAwesome
+* Updated Theme URL
+
 
 = Version: 1.2.5 =
 

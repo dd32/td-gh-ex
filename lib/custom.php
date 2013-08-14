@@ -120,13 +120,6 @@ function my_show_extra_profile_fields( $user ) { ?>
     </td>
   </tr>
     <tr>
-    <th><label for="vimeo">Vimeo</label></th>
-    <td>
-      <input type="text" name="vimeo" id="vimeo" value="<?php echo esc_attr( get_the_author_meta( 'vimeo', $user->ID ) ); ?>" class="regular-text" /><br />
-      <span class="description"><?php _e('Please enter your Vimeo url. (be sure to include http://)', 'virtue'); ?></span>
-    </td>
-  </tr>
-    <tr>
     <th><label for="linkedin">Linkedin</label></th>
     <td>
       <input type="text" name="linkedin" id="linkedin" value="<?php echo esc_attr( get_the_author_meta( 'linkedin', $user->ID ) ); ?>" class="regular-text" /><br />
@@ -167,7 +160,6 @@ function my_save_extra_profile_fields( $user_id ) {
   update_user_meta( $user_id, 'facebook', $_POST['facebook'] );
   update_user_meta( $user_id, 'google', $_POST['google'] );
   update_user_meta( $user_id, 'flickr', $_POST['flickr'] );
-  update_user_meta( $user_id, 'vimeo', $_POST['vimeo'] );
   update_user_meta( $user_id, 'linkedin', $_POST['linkedin'] );
   update_user_meta( $user_id, 'dribbble', $_POST['dribbble'] );
   update_user_meta( $user_id, 'pinterest', $_POST['pinterest'] );

@@ -589,7 +589,7 @@ $of_options = array();
 						"std" 		=> "",
 						"type" 		=> "slider"
 				);
-            $of_options[] = array( 	"name" 		=> __("Silder Height", 'virtue'),
+            $of_options[] = array( 	"name" 		=> __("Slider Height", 'virtue'),
 						"desc" 		=> "",
 						"id" 		      => "slider_size",
 						"std" 		=> "400",

@@ -3,14 +3,14 @@
 		<div class="container">
 			<div class="page-header">
 				<div class="portfolionav clearfix">
-   			<?php previous_post_link('%link', '<i class="icon-arrow-left"></i>'); ?> 
+   			<?php previous_post_link('%link', '<i class="icon-chevron-left"></i>'); ?> 
    			<?php global $smof_data; if( isset($smof_data['portfolio_link']) && $smof_data['portfolio_link'] != "Select a page:"){ ?>
    			<a href="<?php echo get_home_url().'/'.$smof_data["portfolio_link"].'/'; ?>">
 				<?php } else {?> 
 				<a href="../">
 				<?php } ?>
-   				<i class="icon-grid"></i></a> 
-   			<?php next_post_link('%link', '<i class="icon-arrow-right"></i>'); ?>
+   				<i class="icon-th"></i></a> 
+   			<?php next_post_link('%link', '<i class="icon-chevron-right" style="width:10px; display:inline-block; margin-right:6px;"></i>'); ?>
    			</div>
 			<h1 class="entry-title"><?php the_title(); ?></h1>
 		</div>

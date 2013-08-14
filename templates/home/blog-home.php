@@ -45,10 +45,10 @@
 			                          	<span class="postauthortop" rel="tooltip" data-placement="bottom" data-original-title="<?php echo get_the_author() ?>">
 			                          		<i class="icon-user"></i>
 			                          	</span>
-			                          		<?php $post_category = get_the_category($post->ID); if ( $post_category==true ) { ?> | <span class="postedintop"><i class="icon-drawer"></i> <?php _e('posted in:', 'virtue');?> <?php the_category(', ') ?></span> <?php }?>
+			                          		<?php $post_category = get_the_category($post->ID); if ( $post_category==true ) { ?> | <span class="postedintop"><i class="icon-folder-open"></i> <?php _e('posted in:', 'virtue');?> <?php the_category(', ') ?></span> <?php }?>
 			                        	|
 			                        	<span class="postcommentscount" rel="tooltip" data-placement="bottom" data-original-title="<?php comments_number( '0', '1', '%' ); ?>">
-			                        		<i class="icon-bubbles"></i>
+			                        		<i class="icon-comments-alt"></i>
 			                        	</span>
 			                        </div>
 			                        </header>

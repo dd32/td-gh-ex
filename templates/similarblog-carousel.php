@@ -69,7 +69,7 @@
 													
 			</ul>
      <div class="clearfix"></div>
-            <a id="prevport_blog" class="prev_carousel icon-arrow-left" href="#"></a>
-			<a id="nextport_blog" class="next_carousel icon-arrow-right" href="#"></a>
+            <a id="prevport_blog" class="prev_carousel icon-chevron-left" href="#"></a>
+			<a id="nextport_blog" class="next_carousel icon-chevron-right" href="#"></a>
             </div>
 </div><!-- Porfolio Container-->					

@@ -209,14 +209,14 @@ class Kadence_Contact_Widget extends WP_Widget {
   ?>
     <div class="vcard">
       
-      <?php if(!empty($instance['company'])):?><h5 class="vcard-company"><i class="icon-office"></i><?php echo $instance['company']; ?></h5><?php endif;?>
-      <?php if(!empty($instance['name'])):?><p class="vcard-name"><i class="icon-user-2"></i><?php echo $instance['name']; ?></p><?php endif;?>
+      <?php if(!empty($instance['company'])):?><h5 class="vcard-company"><i class="icon-building"></i><?php echo $instance['company']; ?></h5><?php endif;?>
+      <?php if(!empty($instance['name'])):?><p class="vcard-name"><i class="icon-user"></i><?php echo $instance['name']; ?></p><?php endif;?>
       <?php if(!empty($instance['street_address']) || !empty($instance['locality']) || !empty($instance['region']) ):?>
-        <p class="vcard-address"><i class="icon-location"></i><?php echo $instance['street_address']; ?>
+        <p class="vcard-address"><i class="icon-map-marker"></i><?php echo $instance['street_address']; ?>
        <span><?php echo $instance['locality']; ?> <?php echo $instance['region']; ?> <?php echo $instance['postal_code']; ?></span></p>
      <?php endif;?>
-      <?php if(!empty($instance['tel'])):?><p class="tel"><i class="icon-mobile"></i> <?php echo $instance['tel']; ?></p><?php endif;?>
-      <?php if(!empty($instance['email'])):?><p><a class="email" href="mailto:<?php echo $instance['email']; ?>"><i class="icon-mail"></i> <?php echo $instance['email']; ?></a></p> <?php endif;?>
+      <?php if(!empty($instance['tel'])):?><p class="tel"><i class="icon-tablet"></i> <?php echo $instance['tel']; ?></p><?php endif;?>
+      <?php if(!empty($instance['email'])):?><p><a class="email" href="mailto:<?php echo $instance['email']; ?>"><i class="icon-envelope"></i> <?php echo $instance['email']; ?></a></p> <?php endif;?>
     </div>
   <?php
     echo $after_widget;
@@ -339,7 +339,6 @@ class Kadence_Social_Widget extends WP_Widget {
     if (!isset($instance['instagram'])) { $instance['instagram'] = ''; }
     if (!isset($instance['googleplus'])) { $instance['googleplus'] = ''; }
     if (!isset($instance['flickr'])) { $instance['flickr'] = ''; }
-    if (!isset($instance['vimeo'])) { $instance['vimeo'] = ''; }
     if (!isset($instance['youtube'])) { $instance['youtube'] = ''; }
     if (!isset($instance['pinterest'])) { $instance['pinterest'] = ''; }
     if (!isset($instance['dribbble'])) { $instance['dribbble'] = ''; }
@@ -358,7 +357,6 @@ class Kadence_Social_Widget extends WP_Widget {
 <?php if(!empty($instance['instagram'])):?><a href="<?php echo esc_url($instance['instagram']); ?>" class="instagram_link" title="Instagram" target="_blank" rel="tooltip" data-placement="top" data-original-title="Instagram"><i class="icon-instagram"></i></a><?php endif;?>
 <?php if(!empty($instance['googleplus'])):?><a href="<?php echo esc_url($instance['googleplus']); ?>" class="googleplus_link" title="GooglePlus" target="_blank" rel="tooltip" data-placement="top" data-original-title="GooglePlus"><i class="icon-google-plus"></i></a><?php endif;?>
 <?php if(!empty($instance['flickr'])):?><a href="<?php echo esc_url($instance['flickr']); ?>" class="flickr_link" title="Flickr" rel="tooltip" target="_blank" data-placement="top" data-original-title="Flickr"><i class="icon-flickr"></i></a><?php endif;?>
-<?php if(!empty($instance['vimeo'])):?><a href="<?php echo esc_url($instance['vimeo']); ?>" class="vimeo_link" title="Vimeo" target="_blank" rel="tooltip" data-placement="top" data-original-title="Vimeo"><i class="icon-vimeo"></i></a><?php endif;?>
 <?php if(!empty($instance['youtube'])):?><a href="<?php echo esc_url($instance['youtube']); ?>" class="youtube_link" title="YouTube" target="_blank" rel="tooltip" data-placement="top" data-original-title="YouTube"><i class="icon-youtube"></i></a><?php endif;?>
 <?php if(!empty($instance['pinterest'])):?><a href="<?php echo esc_url($instance['pinterest']); ?>" class="pinterest_link" title="Pinterest" target="_blank" rel="tooltip" data-placement="top" data-original-title="Pinterest"><i class="icon-pinterest"></i></a><?php endif;?>
 <?php if(!empty($instance['dribbble'])):?><a href="<?php echo esc_url($instance['dribbble']); ?>" class="dribbble_link" title="Dribbble" target="_blank" rel="tooltip" data-placement="top" data-original-title="Dribbble"><i class="icon-dribbble"></i></a><?php endif;?>
@@ -378,7 +376,6 @@ class Kadence_Social_Widget extends WP_Widget {
     $instance['instagram'] = strip_tags($new_instance['instagram']);
     $instance['googleplus'] = strip_tags($new_instance['googleplus']);
     $instance['flickr'] = strip_tags($new_instance['flickr']);
-    $instance['vimeo'] = strip_tags($new_instance['vimeo']);
     $instance['youtube'] = strip_tags($new_instance['youtube']);
     $instance['pinterest'] = strip_tags($new_instance['pinterest']);
     $instance['dribbble'] = strip_tags($new_instance['dribbble']);
@@ -403,7 +400,6 @@ class Kadence_Social_Widget extends WP_Widget {
     $instagram = isset($instance['instagram']) ? esc_attr($instance['instagram']) : '';
     $googleplus = isset($instance['googleplus']) ? esc_attr($instance['googleplus']) : '';
     $flickr = isset($instance['flickr']) ? esc_attr($instance['flickr']) : '';
-    $vimeo = isset($instance['vimeo']) ? esc_attr($instance['vimeo']) : '';
     $youtube = isset($instance['youtube']) ? esc_attr($instance['youtube']) : '';
     $pinterest = isset($instance['pinterest']) ? esc_attr($instance['pinterest']) : '';
     $dribbble = isset($instance['dribbble']) ? esc_attr($instance['dribbble']) : '';
@@ -431,10 +427,6 @@ class Kadence_Social_Widget extends WP_Widget {
     <p>
       <label for="<?php echo esc_attr($this->get_field_id('flickr')); ?>"><?php _e('Flickr:', 'virtue'); ?></label>
       <input class="widefat" id="<?php echo esc_attr($this->get_field_id('flickr')); ?>" name="<?php echo esc_attr($this->get_field_name('flickr')); ?>" type="text" value="<?php echo esc_attr($flickr); ?>" />
-    </p>
-    <p>
-      <label for="<?php echo esc_attr($this->get_field_id('vimeo')); ?>"><?php _e('Vimeo:', 'virtue'); ?></label>
-      <input class="widefat" id="<?php echo esc_attr($this->get_field_id('vimeo')); ?>" name="<?php echo esc_attr($this->get_field_name('vimeo')); ?>" type="text" value="<?php echo esc_attr($vimeo); ?>" />
     </p>
     <p>
       <label for="<?php echo esc_attr($this->get_field_id('youtube')); ?>"><?php _e('Youtube:', 'virtue'); ?></label>
