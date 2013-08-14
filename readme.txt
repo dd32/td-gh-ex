@@ -46,6 +46,11 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 1.2.7 =
+
+* Updated some issues with FontAwesome throughout theme
+
+
 = Version: 1.2.6 =
 
 * Changed Icon Font to FontAwesome
