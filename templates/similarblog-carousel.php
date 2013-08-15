@@ -51,7 +51,7 @@
 			                          	
 			                        </header>
 		                        	<div class="entry-content">
-		                          		<p><?php echo excerpt(16); ?></p>
+		                          		<p><?php echo virtue_excerpt(16); ?></p>
 		                        	</div>
 		                      	
                            </a>

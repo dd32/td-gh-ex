@@ -53,7 +53,7 @@
 			                        </div>
 			                        </header>
 		                        	<div class="entry-content">
-		                          		<p><?php echo excerpt(34); ?> <a href="<?php the_permalink() ?>"><?php _e('READ MORE', 'virtue');?></a></p>
+		                          		<p><?php echo virtue_excerpt(34); ?> <a href="<?php the_permalink() ?>"><?php _e('READ MORE', 'virtue');?></a></p>
 		                        	</div>
 		                      		<footer>
                        				</footer>

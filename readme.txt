@@ -46,6 +46,12 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 1.2.9 =
+
+* Provided backup for jquery on frontend
+* Changed excerpt function to have a virtue name
+
+
 = Version: 1.2.8 =
 
 * Updated Citris Skin to match theme preview

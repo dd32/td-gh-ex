@@ -50,7 +50,7 @@ function hex2rgb($hex) {
 }
 // Ecerpt Length
 
-function excerpt($limit) {
+function virtue_excerpt($limit) {
       $excerpt = explode(' ', get_the_excerpt(), $limit);
       if (count($excerpt)>=$limit) {
         array_pop($excerpt);
@@ -62,7 +62,7 @@ function excerpt($limit) {
       return $excerpt;
     }
 
-function content($limit) {
+function virtue_content($limit) {
       $content = explode(' ', get_the_content(), $limit);
       if (count($content)>=$limit) {
         array_pop($content);
