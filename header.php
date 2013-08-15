@@ -82,14 +82,5 @@ if ( $header !== "blank" ) : ?>
 </header>
 <?php endif; ?>   
 <!-- End Header and Nav -->
-
-<?php if(of_get_option('display_ad_code_after_header')=='1'): ?>
-<div class="row top-ad" >
-	<div class="large-12 columns">
-	<?php echo of_get_option('ad_code_in_header'); ?>
-	</div>
-</div>
-<?php endif; ?>	
-
 <div class="row" id="main-row">
 

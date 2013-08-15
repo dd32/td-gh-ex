@@ -40,18 +40,11 @@
 		</hgroup>
 	</header>
 	
-	<?php if(!is_page() && of_get_option('display_ad_code_in_post_start')=='1'): ?>
-	<?php echo of_get_option('ad_code_in_post_start'); ?>
-	<?php endif; ?>	
-	
 	<div class="entry-content">
 	<?php the_content(); ?>
 	</div><!-- .entry-content -->
 	
 	<footer class="entry-meta">
-	<?php if(!is_page() && of_get_option('display_ad_code_in_post_end')=='1'): ?>
-	<?php echo of_get_option('ad_code_in_post_end'); ?>
-	<?php endif; ?>	
 	
 		<p><?php wp_link_pages(); ?></p>
 		<hr/>

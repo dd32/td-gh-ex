@@ -323,62 +323,7 @@ function optionsframework_options() {
 		'desc' => __('Your RSS url.', 'options_check'),
 		'id' => 'rss_url',
 		'std' => 'http://rss.com/your-user-name',
-		'type' => 'text');			
-		
-	//Settings for Ads and Tracking Tab		
-	$options[] = array(
-		'name' => __('Ads & Tracking', 'options_check'),
-		'type' => 'heading');			
-
-	$options[] = array(
-		'name' => __('Ads Setting', 'options_check'),
-		'desc' => __('Check to display ads after header', 'options_check'),
-		'id' => 'display_ad_code_after_header',
-		'std' => '1',
-		'type' => 'checkbox');
-		
-	$options[] = array(
-		//'name' => __('Ads Setting', 'options_check'),
-		'desc' => __('Code to display ads immediately after header on all pages/posts.', 'options_check'),
-		'id' => 'ad_code_in_header',
-		'std' => '<img src="http://placehold.it/970x90"></img>',
-		'type' => 'textarea');			
-		
-	$options[] = array(
-		//'name' => __('Ads Setting', 'options_check'),
-		'desc' => __('Check to display ads in Starting of Individual Post', 'options_check'),
-		'id' => 'display_ad_code_in_post_start',
-		'std' => '1',
-		'type' => 'checkbox');				
-		
-	$options[] = array(
-		//'name' => __('Tracking Code', 'options_check'),
-		'desc' => __('Code to display ads in single post - After title on the top start of the post', 'options_check'),
-		'id' => 'ad_code_in_post_start',
-		'std' => '<img src="http://placehold.it/250x250"></img>',
-		'type' => 'textarea');		
-
-
-	$options[] = array(
-		//'name' => __('Ads Setting', 'options_check'),
-		'desc' => __('Check to display ads in the end of Individual Post', 'options_check'),
-		'id' => 'display_ad_code_in_post_end',
-		'std' => '1',
-		'type' => 'checkbox');		
-		
-	$options[] = array(
-		//'name' => __('Tracking Code', 'options_check'),
-		'desc' => __('Code to display ads in single post - After post in the bottom', 'options_check'),
-		'id' => 'ad_code_in_post_end',
-		'std' => '<img src="http://placehold.it/468x60"></img>',
-		'type' => 'textarea');			
-		
-	$options[] = array(
-		'name' => __('Tracking Code', 'options_check'),
-		'desc' => __('Google Analytics Tracking code goes here. It will be included in to your footer', 'options_check'),
-		'id' => 'google_analytics_code',
-		'std' => '',
-		'type' => 'textarea');		
+		'type' => 'text');				
 
 	return $options;
 }
