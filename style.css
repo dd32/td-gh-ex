@@ -2,9 +2,9 @@
  * Theme Name: Appointment
  * Description: A theme for all type of business that uses multiple nav menus, several sidebars,Featured Slider and Custom post layouts. 
  It has a pixel-perfect design that's great for any blogger who wants a new look for their site.
- * Version: 1.3.2
+ * Version: 1.3.3
  * Author: Priyanshu Mittal, Shahid Mansuri, Vibhor Purandare and Akhilesh Nagar
- * Tags: orange, white, full-width-template, threaded-comments, microformats, translation-ready, two-columns,  right-sidebar, fixed-width, sticky-post, custom-background, custom-menu
+ * Tags: orange, white, full-width-template, threaded-comments, microformats,two-columns,  right-sidebar, fixed-width, sticky-post, custom-background, custom-menu,translation-ready
  * License: GNU General Public License v2.0
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Appointment is distributed under the terms of the GNU GPL
@@ -598,7 +598,7 @@ text-shadow: 0px 0px 1px #226056;
 
 .blog_right_mn
 {	width:310px; float:right;
-	background:url('images/blog_right_bg.jpg') repeat-y left;
+	/* background:url('images/blog_right_bg.jpg') repeat-y left; */
 	margin-bottom: 15px;
 	padding-top:14px;
 }
@@ -625,10 +625,11 @@ text-shadow: 0px 0px 1px #226056;
 {	color:#C8470E;
 }
 .blog_right_mn .textwidget{ color:#99a0a4; font-size:13px; }
-.bog_right_2bo
+
+/* .bog_right_2bo
 {	width:99%; float:left; height:13px; margin-top:15px;
 	background:url('images/blog_right_bo.png') no-repeat right;
-}
+} */
 
 .pagination_blog,.blog_row_mn .pagination_blog
 {	width:100%; float:left; text-align:center; padding:10px 0px; margin:10px 0px;color:#8B9194;

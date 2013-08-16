@@ -64,7 +64,7 @@
 		 
         
         'comment_field' => '<p class="comment-form-comment"> <br /><textarea id="comment" name="comment" aria-required="true" placeholder="Love to Hear from you."></textarea></p>',
-		'logged_in_as' => '<p class="logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( get_permalink() ) ) . '</p>',
+		'logged_in_as' => '<p class="logged-in-as">' . sprintf( ( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( get_permalink() ) ) . '</p>',
 		
 );
 

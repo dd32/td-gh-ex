@@ -60,7 +60,10 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ============================Change Log================================
-
+@verison 1.3.3
+1. Siderbar Background Removed.
+2. Removed seperator after widgets.
+3.Translation Ready.
 @version 1.3
 1.Copyright.txt added for fonts and images.
 2.Unused style.css in css/style.css removed.

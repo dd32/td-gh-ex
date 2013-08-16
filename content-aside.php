@@ -27,7 +27,7 @@
 					  						<span><img src="<?php echo get_template_directory_uri();?>/images/blog_ic.png" alt="Icon" /> 
 						<?php the_date('M j,Y');?></span> 
 						<a href="#"><img src="<?php echo get_template_directory_uri();?>/images/blog_ic2.png" alt="Icon" /> </a>
-                 <?php  comments_popup_link( __( 'Leave a comment', 'appointment' ),__( '1 Comment', 'appointment' ), __( '% Comments', 'appointment' ),'name' ); ?>
+                 <?php  comments_popup_link( __( 'Leave a comment', 'appointment' ),__( '1 Comment', 'appointment' ), __( ' Comments', 'appointment' ),'name' ); ?>
 						<img src="<?php echo get_template_directory_uri();?>/images/blog_ic3.png" alt="Icon" />
                           <?php edit_post_link( __( 'Edit', 'appointment' ), '<span class="meta-sep"></span> <span class="name">', '</span>' ); ?>
 						<img src="<?php echo get_template_directory_uri();?>/images/blog_ic4a.png" alt="Icon" />  
@@ -48,7 +48,7 @@
 		
               <div class="blog_con_mn">
 		
-				<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'appointment' ) ); ?>
+				<?php the_content( ( 'Continue reading <span class="meta-nav">&rarr;</span>', 'appointment' ) ); ?>
                </div>
 			
 		 <?php endif; ?>

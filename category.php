@@ -41,7 +41,7 @@
        
                   
                   <div class="page_blog_row_mn"> <h2>
-                   <?php  printf( __( 'Category Archives: %s', 'appointment' ), '<span>' . single_cat_title( '', false ) . '</span>' );?> 
+                   <?php  printf( __( 'Category Archives: ', 'appointment' ), '<span>' . single_cat_title( '', false ) . '</span>' );?> 
                             </h2>
 			
                 </div><!--page_blog_row_mn-->
@@ -55,7 +55,7 @@
                          <span><img src="<?php echo get_template_directory_uri();?>/images/blog_ic.png" alt="Icon" /> 
 						<?php the_date('M j,Y');?></span> 
 						<a href="#"><img src="<?php echo get_template_directory_uri();?>/images/blog_ic2.png" alt="Icon" /> </a>
-                 <?php  comments_popup_link( __( 'Leave a comment', 'appointment' ),__( '1 Comment', 'appointment' ), __( '% Comments', 'appointment' ),'name' ); ?>
+                 <?php  comments_popup_link( __( 'Leave a comment', 'appointment' ),__( '1 Comment', 'appointment' ), __( 'Comments', 'appointment' ),'name' ); ?>
 						<img src="<?php echo get_template_directory_uri();?>/images/blog_ic3.png" alt="Icon" />
                           <?php edit_post_link( __( 'Edit', 'appointment' ), '<span class="meta-sep"></span> <span class="name">', '</span>' ); ?>
 						<?php the_category(); ?>

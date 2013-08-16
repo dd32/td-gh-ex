@@ -41,21 +41,21 @@
                   
                   <div class="page_blog_row_mn"> <h2>
                           
-                   <?php printf( __( 'Tag Archives: %s', 'appointment' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?>
+                   <?php printf( __( 'Tag Archives:', 'appointment' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?>
                             </h2>
 			
                 </div><!--page_blog_row_mn-->
                  
                    <?php    while(have_posts()): the_post();?>
                        <div class="blog_row_mn">
-                     <h2><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'appointment' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php $title = get_the_title();
+                     <h2><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to ', 'appointment' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php $title = get_the_title();
     if (strlen($title) == 0)  _e('no title','appointment'); 
 	else  echo $title; ?></a></h2>
 					    <div class="blog_link_mn">	
                          <span><img src="<?php echo get_template_directory_uri();?>/images/blog_ic.png" alt="Icon" /> 
 						<?php the_date('M j,Y');?></span> 
 						<a href="#"><img src="<?php echo get_template_directory_uri();?>/images/blog_ic2.png" alt="Icon" /> </a>
-                 <?php  comments_popup_link( __( 'Leave a comment', 'appointment' ),__( '1 Comment', 'appointment' ), __( '% Comments', 'appointment' ),'name' ); ?>
+                 <?php  comments_popup_link( __( 'Leave a comment', 'appointment' ),__( '1 Comment', 'appointment' ), __( 'Comments', 'appointment' ),'name' ); ?>
 						<img src="<?php echo get_template_directory_uri();?>/images/blog_ic3.png" alt="Icon" />
                           <?php edit_post_link( __( 'Edit', 'appointment' ), '<span class="meta-sep"></span> <span class="name">', '</span>' ); ?>
 						<?php the_category(); ?>
