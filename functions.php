@@ -180,7 +180,7 @@ register_sidebar( array(
 		'id' => 'sidebar-primary',
 		'description' => __( 'The primary widget area', 'appointment' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
+		'after_widget' => '</div><div class="bog_right_2bo "></div>',
 		'before_title' => '<h2 class="widget-title">',
 		'after_title' => '</h2>',
 	) );
@@ -230,7 +230,7 @@ register_sidebar( array(
 /*Post date show*/
 if ( ! function_exists( 'appointment_posted_on' ) ) :
 function appointment_posted_on() {
-	printf( ( '<span class="sep">Posted by </span><a class="name" href="%5$s" title="%6$s" rel="author">%7$s</a><span class="sep">on </span><time class="entry-date" datetime="%3$s" pubdate>%4$s</time> ', 'appointment' ),
+	printf( __( '<span class="sep">Posted by </span><a class="name" href="%5$s" title="%6$s" rel="author">%7$s</a><span class="sep">on </span><time class="entry-date" datetime="%3$s" pubdate>%4$s</time> ', 'appointment' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
