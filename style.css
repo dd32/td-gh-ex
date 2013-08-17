@@ -4,65 +4,20 @@ Theme URI: http://code.google.com/p/avedon/
 Description: A simple bootstrap based Wordpress theme, minimally coded, w/ plenty of bells and whistles.
 Author: Matthew Haeck
 Author URI: http://haeckdesign.com/
-Version: 1.02
+Version: 1.03
 License: GPL3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: black, blue, gray, white, dark, light, two-columns, right-sidebar, flexible-width, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, microformats, post-formats, theme-options, threaded-comments, photoblogging
+
+Avedon is copyright 2013 by Haeck Design
+Avedon is licensed under the GPL 3.
+
+Avedon is based on Bootstrap by Twitter.
+See readme.txt for all license information.
 */
 
 
 /* FOR DISPLAY ONLY (all caps are core)*/
-
-/* Icons */
-.bigicon { color: rgba(0,0,0,0.4); font-size: 6em; display: inline-block; width: 100%; text-align: center; padding-top: 15px; padding-bottom: 10px; }
-.tab-content .bigicon { font-size: 10em; padding-bottom: 20px; padding-top: 20px; }
-.icontable i { font-size: 2.5em; padding-left: 5px; padding-right: 5px; }
-.home .tiptop div .bigicon { font-size: 6em; margin-bottom:0; margin-top: -15px; padding-bottom: 0; padding-left: 0; }
-
-/* Header Scroller */
-.carousel-inner .btn { font-weight:700; margin-top:35px; color:rgba(0,0,0,0.3); background:#4BAAD3; padding-bottom:4px; padding-left:12px; padding-right:12px; padding-top:4px; border:1px solid rgba(0,0,0,0.6); box-shadow:0 -1px 2px rgba(0,0,0,0.2);text-shadow: 0 0 0 0; }
-.carousel-inner span, .carousel-inner .btn { font-family: 'Montserrat', sans-serif; }
-.carousel-inner .item .span9 { margin-top:10px; }
-.home .tiptop .carousel { background:rgba(255,255,255,0.9); border:1px solid rgba(0,0,0,0.1);
--webkit-border-radius:4px;
--moz-border-radius:4px;
--o-border-radius:4px;
--khtml-border-radius:4px;
-border-radius:4px;
-}
-.carousel-inner span { padding-top:110px; display:inline-block; position:absolute; z-index:100; clear:both; color:rgba(255,255,255,0.8); font-size:2.5em; text-shadow:-1px -1px 4px rgba(0,0,0,0.4); line-height:1em; letter-spacing:-.03em; }
-.carousel-inner span i { float:left; font-size:6em; margin-top:-40px; padding-right:40px; text-shadow:0 0; color:rgba(255,255,255,0.3); }
-.carousel-inner .btn { float:right; box-shadow:0 0 1px rgba(0,0,0,0.2);color: rgba(255, 255, 255, 0.6);text-shadow: 0 0 0 0;border: 1px solid rgba(0, 0, 0, 0.2); }
-.fulltiptop .carousel { margin-bottom:0; }
-.tiptop .carousel { margin-top:20px; }
-#myCarousel .circled.avedonicon-chevron-left,
-#myCarousel .circled.avedonicon-chevron-right { margin-top:120px; }
-
-/* Scrolling Arrows (overrides supersized.css buttons - used for top scroller)*/
-.circled.avedonicon-chevron-left, .circled.avedonicon-chevron-right { z-index:-20; display:inline; background:rgba(0,0,0,0.8); box-shadow:0 0 3px #222; height:30px; margin-top:10%; top:0; width:15px; z-index:999; padding:10px; font-size:1.4em; line-height:1.6em; position:absolute; outline:none; }
-.circled.avedonicon-chevron-left { display:inline-block; height:30px; left:0; width:20px; }
-.circled.avedonicon-chevron-right { display:inline-block; height:30px; right:0; width:20px; }
-.circled.avedonicon-chevron-left:hover,.circled.avedonicon-chevron-right:hover { cursor:pointer; background:rgba(0,0,0,1); }
-
-/* Paypal Button */
-body a.paybutton,body #myModal button.paybutton { margin-bottom:10px; background:#4BAAD3; color:rgba(0,0,0,0.3); }
-.btn:focus, body a.paybutton:hover,body a.paybutton:active,body a.paybutton:focus { color:rgba(0,0,0,0.2); outline:none; background:#459dc3; box-shadow: 0 -1px 1px rgba(0,0,0,0.2); }
-.carousel-inner .btn:hover, .carousel-inner .btn:focus { color:rgba(255, 255, 255, 0.8); outline:none; background:#459dc3; box-shadow: 0 0 0 rgba(0,0,0,0.0);text-shadow: 0 0 0 0;border: 1px solid rgba(0, 0, 0, 0.4); }
-#side .modal-header h3 { margin:0; line-height:30px; border-bottom:0; padding-bottom:0; }
-#side .modal-header h3 { margin:0; line-height:30px; border-bottom:0; padding-bottom:0; }
-.modal-footer form { margin-bottom:0; }
-#myModal .modal-body p { padding-left:10px; padding-right:10px; font-size:1.1em; }
-
-/* Tabbed Box */
-.tab-pane .form-table { margin-bottom: 0; }
-.tab-pane div:first-child { padding: 15px; }
-.tab-pane p { padding: 5px;font-size: 1.2em; }
-#mid .tab-pane ul li { list-style: disc;margin-left: 20px; }
-
-/* Footer Signup Form */
-#bottom #mc_embed_signup form { margin-bottom:0; }
-#bottom #mc_embed_signup,#bottom #mc_embed_signup div { margin:0; }
-
 
 /* BASE */
 body {
@@ -116,9 +71,10 @@ border-radius: 0 4px 0 4px;
 .single-entry p { padding: 5px; }
 .single-entry .post { padding-top: 5px; }
 .single-entry img, .single-entry iframe { height: auto; max-width: 100%; }
+.wp-caption { max-width: 100%; }
 
 /* TYPOGRAPHY */
-.well h2 { border-bottom: 1px solid rgba(0, 0, 0, 0.2); font-size: 1.2em; line-height: 1.6em;margin: 0 0 10px; }
+.well h2 { font-size: 1.2em; line-height: 1.6em;margin: 0 0 10px; }
 .blog .row-fluid .post a h3, .archive .row-fluid .post a h3, .author .row-fluid .post a h3 { padding-left: 15px; line-height: 1.2em; font-size: 1.3em; padding-top: 5px; margin-bottom: 5px; }
 .hometoptitle { display:none; }
 .blog .row-fluid .post p.meta a, .archive .row-fluid .post p.meta a, .author .row-fluid .post p.meta a { color: #979797; }
@@ -271,7 +227,6 @@ border-radius: 4px;
 .singlet h1 { font-size: 1.4em; font-weight: 300; line-height: 1.8em; letter-spacing: -0.01em; margin: 0 0 10px; border-bottom: 1px solid #D1D1D1; }
 
 /* PAGE */
-.home #primary { margin-top: 20px; }
 #primary .post div p { padding-bottom: 10px; padding-left: 10px; padding-right: 10px; padding-top: 5px; }
 #primary .sticky { background: rgba(0, 0, 0, 0.02);border: 1px solid rgba(0, 0, 0, 0.15); }
 #primary .sticky .comment-count { background: rgba(0, 0, 0, 0.05); }
@@ -287,8 +242,8 @@ border-radius: 4px;
 .post-cat { float: right; font-size: 1em; margin-bottom: 0; padding-bottom: 5px; text-align: right; border-bottom: 1px solid rgba( 0, 0, 0, 0.1); }
 .post-tag { float: right; font-size: 1em; margin-bottom: 5px; padding-bottom: 5px; text-align: right; }
 .single-entry img { padding-top: 10px;padding-bottom: 10px; }
-.single-entry img.alignleft { padding-right: 20px; }
-.single-entry img.alignright { padding-left: 20px; }
+.single-entry .alignleft { padding-right: 20px; }
+.single-entry .alignright { padding-left: 20px; }
 
 /* COMMENT */
 #comments h3 { font-size: 1.4em; line-height: 1.6em; margin-top: 0; }
@@ -6349,7 +6304,7 @@ button.close {
     overflow: visible !important;
   }
 
-.navbar-fixed-top + #primary:before {padding-top:20px;}
+.navbar-fixed-top + #primary:before {padding-top:65px;}
 .logged-in .navbar-fixed-top + #primary:before {padding-top:55px;}
 .logged-in.single-post .navbar-fixed-top + #primary:before {padding-top:70px;}
 }

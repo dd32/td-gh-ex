@@ -2,7 +2,7 @@
 /**
  * @package WordPress
  * @subpackage Avedon
- * @since Avedon 1.02
+ * @since Avedon 1.03
  */
 
 get_header(); ?>
@@ -15,7 +15,12 @@ get_header(); ?>
 <?php endif; ?>
 
 <?php if ( ! dynamic_sidebar( 'top-content' ) ); ?>
-<?php global $post; $custom_posts = get_posts($args); foreach($custom_posts as $post) : setup_postdata($post); ?>
+
+<?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+$args = array( 'orderby' => 'post_date', 'order' => 'DESC', 'post_type' => 'post', 'post_status' => 'publish', 'paged' => $paged, );
+$postslist = get_posts( $args ); foreach ($postslist as $post) :  setup_postdata($post);
+?>
+
 <div <?php post_class(); ?>>
 
 <a href="<?php the_permalink(); ?>" title="<?php the_title();?>" class="span11"><h3><?php the_title();?></h3></a>

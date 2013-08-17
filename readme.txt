@@ -2,7 +2,7 @@
 
 Contributors: Matthew Haeck
 Tags: bootstrap, responsive, wordpress theme
-Stable tag: 1.0
+Stable tag: 1.03
 License: GPLv3
 
 Avedon Theme - http://code.google.com/p/avedon/
@@ -12,9 +12,9 @@ Copyright: Haeck Design, http://haeckdesign.com/
 
 == Description ==
 
-Avedon's framework is primarily built on a Bootstrap theme. The background image rotator is a javascript developed by Build Internet. If you like the functionality we certainly suggest tossing them a little "social support". The social buttons are based off a javascript called SocialCount - again, if you like it we suggest throwing them some support. The typographic options are provided by Google Fonts, which is an absolute must for any designer.  We have also included a decent array of OpenGraph meta options in order to keep your message syncronized throughout all the social networks out there.
+Avedon's framework is primarily built on a Bootstrap theme. The background image rotator is a javascript developed by Build Internet. If you like the functionality we certainly suggest tossing them a little "social support". The typographic options are provided by Google Fonts, which is an absolute must for any designer.
 
-Although donations are certainly welcome, the best way you can support out work is to purchase the Avedon Advanced theme. We have decided to forgo the online shops and offer it from our own website (since that'll allow us to minimize the cost to you). Once you've purchased Avedon Advanced you will recieve a download with the enhanced theme which includes...
+Although donations are certainly welcome, the best way you can support our work is to purchase the Avedon Advanced theme. Once you've purchased Avedon Advanced you will recieve a download with the enhanced theme which includes...
 
 - A built in Twitter feed
 - Additional SuperSized background images (up to 12)
