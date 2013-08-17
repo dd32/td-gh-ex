@@ -2,7 +2,7 @@
 /**
  * @package WordPress
  * @subpackage Avedon
- * @since Avedon 1.01
+ * @since Avedon 1.02
  */
 
 get_header(); ?>
@@ -43,7 +43,6 @@ if ( has_post_format( 'gallery' )) { echo '<i class="cattag avedonicon-picture">
 
 <?php if (has_tag()) { ?>
 <div class="row-fluid post-tag">Tags: <?php the_tags(', ') ?></div>
-
 
 <?php } ?>
 

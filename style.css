@@ -4,7 +4,7 @@ Theme URI: http://code.google.com/p/avedon/
 Description: A simple bootstrap based Wordpress theme, minimally coded, w/ plenty of bells and whistles.
 Author: Matthew Haeck
 Author URI: http://haeckdesign.com/
-Version: 1.01
+Version: 1.02
 License: GPL3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: black, blue, gray, white, dark, light, two-columns, right-sidebar, flexible-width, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, microformats, post-formats, theme-options, threaded-comments, photoblogging
@@ -272,10 +272,12 @@ border-radius: 4px;
 
 /* PAGE */
 .home #primary { margin-top: 20px; }
-#primary .post div p { padding: 10px; }
-#primary .sticky { background: rgba(0, 0, 0, 0.02); }
+#primary .post div p { padding-bottom: 10px; padding-left: 10px; padding-right: 10px; padding-top: 5px; }
+#primary .sticky { background: rgba(0, 0, 0, 0.02);border: 1px solid rgba(0, 0, 0, 0.15); }
+#primary .sticky .comment-count { background: rgba(0, 0, 0, 0.05); }
+#primary .sticky .meta { border-top: 1px solid rgba(0, 0, 0, 0.1);border-bottom: 1px solid rgba(0, 0, 0, 0.1);}
 #primary .post .meta { margin-bottom: 10px; }
-.teasepic {padding-right: 10px;margin-top: -10px;}
+.teasepic {margin-right: 15px;margin-top: -10px;}
 .single h1 {font-size: 1.4em;margin:0;}
 .single-entry img, .post-comment, .post-comment a, .post-date, .post-date a { color: rgba(0, 0, 0, 0.4); font-size: 0.95em; }
 .post-comment a:hover, .post-cat a:hover, .post-date a:hover { color: rgba(0, 0, 0, 0.6); }
@@ -284,9 +286,9 @@ border-radius: 4px;
 .post-comment { float: right; }
 .post-cat { float: right; font-size: 1em; margin-bottom: 0; padding-bottom: 5px; text-align: right; border-bottom: 1px solid rgba( 0, 0, 0, 0.1); }
 .post-tag { float: right; font-size: 1em; margin-bottom: 5px; padding-bottom: 5px; text-align: right; }
-.single-entry img { width: 100%; }
-.single-entry img.alignleft { padding-top: 5px; padding-right: 10px; padding-bottom: 5px; }
-.single-entry img.alignright { padding-top: 5px; padding-left: 10px; padding-bottom: 5px; }
+.single-entry img { padding-top: 10px;padding-bottom: 10px; }
+.single-entry img.alignleft { padding-right: 20px; }
+.single-entry img.alignright { padding-left: 20px; }
 
 /* COMMENT */
 #comments h3 { font-size: 1.4em; line-height: 1.6em; margin-top: 0; }
@@ -6348,7 +6350,7 @@ button.close {
   }
 
 .navbar-fixed-top + #primary:before {padding-top:20px;}
-.logged-in .navbar-fixed-top + #primary:before {padding-top:50px;}
+.logged-in .navbar-fixed-top + #primary:before {padding-top:55px;}
 .logged-in.single-post .navbar-fixed-top + #primary:before {padding-top:70px;}
 }
 

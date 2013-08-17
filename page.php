@@ -2,7 +2,7 @@
 /**
  * @package WordPress
  * @subpackage Avedon
- * @since Avedon 1.01
+ * @since Avedon 1.02
  */
 
 get_header(); ?>
@@ -21,7 +21,6 @@ get_header(); ?>
 <div class="post-date span12 sunken group">
 <span class="post-date">Posted: </span><span class="post-date-link"><?php the_time('M jS, Y') ?> <?php edit_post_link('(Edit)', '', ''); ?> | </span>
 <span class="post-author">Author: </span><span class="post-author-link"><?php the_author_posts_link(); ?></span>
-<span class="post-comment"><?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?></span>
 </div></div>
 
 <div <?php post_class('post') ?>>
