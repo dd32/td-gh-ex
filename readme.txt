@@ -22,6 +22,7 @@ Virtue Theme Uses:
 * FontAwesome by Dave Gandy (http://fontawesome.io) licensed under the SIL OFL 1.1 (http://scripts.sil.org/OFL)
 * FlexSlider by WooThemes under the GPLv2 license (http://www.gnu.org/licenses/gpl-2.0.html)
 * Star Font and Woocommerce Templates by Woothemes for Woocommerce (licensed under GNU General Public License v2.0 or later)
+* RootsTheme (http://www.rootstheme.com/) licensed under MIT license, http://www.opensource.org/licenses/mit-license.php
 * SMOF - Slightly Modded Options Framework (https://github.com/syamilmj/Options-Framework) licensed under GNU General Public License v2.0 or later
 * Google Fonts (available through Google web Fonts: http://www.google.com/fonts/), licensed under Apache License Version 2
 * Aqua Resizer (https://github.com/syamilmj/Aqua-Resizer), licensed under WTFPL http://www.wtfpl.net/
@@ -46,10 +47,11 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
-= Version: 1.2.9 =
+= Version: 1.3.0 =
 
-* Provided backup for jquery on frontend
-* Changed excerpt function to have a virtue name
+* Changed how jQuery called in font end.
+* Removed a series of things from cleanup.php
+* Added RootsTheme to Credits
 
 
 = Version: 1.2.8 =
