@@ -16,7 +16,7 @@
 
   			<p>
 
-  				&copy; <?php echo date("Y") ?> <?php bloginfo('name'); ?> | Theme by <a href="http://unitednetworksonline.com/wordpress-themes/">United Networks<br />
+  				&copy; <?php echo date("Y") ?> <?php bloginfo('name'); ?> | Theme by <a href="http://unitednetworksonline.com/wordpress-themes/">United Networks</a><br />
 
   				<a href="<?php bloginfo('rss2_url'); ?>">Entries (RSS)</a> and <a href="<?php bloginfo('comments_rss2_url'); ?>">Comments (RSS)</a>.
 

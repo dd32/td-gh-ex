@@ -7,9 +7,9 @@
 			<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
 				
 				<header>
-				  <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a><h2>
-				  <br><h3 style="padding: 0 0 0 25px; margin: -20px;"><time><?php the_time(get_option('date_format')) ?></time></h3>
-		    	</header>
+				  <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+				  <h3 style="padding: 0 0 0 25px; margin: -20px;"><?php the_time(get_option('date_format')) ?></h3><br>
+		    		</header>
 		
 		    <section>
 		
