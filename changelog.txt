@@ -2,6 +2,12 @@ Changelog for Iconic One WordPress Responsive Theme | Visit http://themonic.com/
 
 -------------- August 2013 ----------------
 
+08/18/13  - Iconic One Version 1.2.1.2
+
+* Better styling for below title meta
+* Removed current page highlight from the sidebar.
+
+
 08/02/13  - Iconic One Version 1.2.1.1
 
 * Minor Search bar responsiveness margin fix at width below 1040px.
