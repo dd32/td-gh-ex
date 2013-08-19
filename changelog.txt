@@ -1,5 +1,8 @@
 *** discover Changelog ***
 
+19-08-2013 - version 1.7.9
+* Remove function_exists() conditional wrapper from has_post_thumbnail() from loop.php and template-blog.php file.
+
 14-08-2013 - version 1.7.8
 * Option added in theme options panel to on/off slider button(download now)
 * css changes added in style.css for pre, buttons, post, sticky
