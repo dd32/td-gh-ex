@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Everest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-10 01:14+0545\n"
-"PO-Revision-Date: 2013-07-10 01:14+0545\n"
+"POT-Creation-Date: 2013-08-19 21:48+0545\n"
+"PO-Revision-Date: 2013-08-19 21:48+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Ruben Ramos Fernandez <support@catchthemes.com>\n"
 "Language: es_ES\n"
@@ -355,112 +355,137 @@ msgstr "Desarrollado por"
 msgid "Theme"
 msgstr "Theme"
 
-#: ../inc/catcheverest-functions.php:1076
+#: ../inc/catcheverest-functions.php:1081
 #, php-format
 msgid "%s on Facebook"
 msgstr "%s en Facebook"
 
-#: ../inc/catcheverest-functions.php:1081
+#: ../inc/catcheverest-functions.php:1086
 #, php-format
 msgid "%s on Twitter"
 msgstr "%s en Twitter"
 
-#: ../inc/catcheverest-functions.php:1086
+#: ../inc/catcheverest-functions.php:1091
 #, php-format
 msgid "%s on Google+"
 msgstr "%s en Google+"
 
-#: ../inc/catcheverest-functions.php:1091
+#: ../inc/catcheverest-functions.php:1096
 #, php-format
 msgid "%s on Linkedin"
 msgstr "%s en Linkedin"
 
-#: ../inc/catcheverest-functions.php:1096
+#: ../inc/catcheverest-functions.php:1101
 #, php-format
 msgid "%s on Pinterest"
 msgstr "%s en Pinterest"
 
-#: ../inc/catcheverest-functions.php:1101
+#: ../inc/catcheverest-functions.php:1106
 #, php-format
 msgid "%s on YouTube"
 msgstr "%s en YouTube"
 
-#: ../inc/catcheverest-functions.php:1106
+#: ../inc/catcheverest-functions.php:1111
 #, php-format
 msgid "%s on Vimeo"
 msgstr "%s en Vimeo"
 
-#: ../inc/catcheverest-functions.php:1111
+#: ../inc/catcheverest-functions.php:1116
 #, php-format
 msgid "%s on Slideshare"
 msgstr "%s en Slideshare"
 
-#: ../inc/catcheverest-functions.php:1116
+#: ../inc/catcheverest-functions.php:1121
 #, php-format
 msgid "%s on Foursquare"
 msgstr "%s en Foursquare"
 
-#: ../inc/catcheverest-functions.php:1121
+#: ../inc/catcheverest-functions.php:1126
 #, php-format
 msgid "%s on Flickr"
 msgstr "%s en Flickr"
 
-#: ../inc/catcheverest-functions.php:1126
+#: ../inc/catcheverest-functions.php:1131
 #, php-format
 msgid "%s on Tumblr"
 msgstr "%s en Tumblr"
 
-#: ../inc/catcheverest-functions.php:1131
+#: ../inc/catcheverest-functions.php:1136
 #, php-format
 msgid "%s on deviantART"
 msgstr "%s en deviantART"
 
-#: ../inc/catcheverest-functions.php:1136
+#: ../inc/catcheverest-functions.php:1141
 #, php-format
 msgid "%s on Dribbble"
 msgstr "%s en Dribbble"
 
-#: ../inc/catcheverest-functions.php:1141
+#: ../inc/catcheverest-functions.php:1146
 #, php-format
 msgid "%s on MySpace"
 msgstr "%s en MySpace"
 
-#: ../inc/catcheverest-functions.php:1146
+#: ../inc/catcheverest-functions.php:1151
 #, php-format
 msgid "%s on WordPress"
 msgstr "%s en WordPress"
 
-#: ../inc/catcheverest-functions.php:1151
+#: ../inc/catcheverest-functions.php:1156
 #, php-format
 msgid "%s on RSS"
 msgstr "%s en RSS"
 
-#: ../inc/catcheverest-functions.php:1156
+#: ../inc/catcheverest-functions.php:1161
 #, php-format
 msgid "%s on Delicious"
 msgstr "%s en Delicious"
 
-#: ../inc/catcheverest-functions.php:1161
+#: ../inc/catcheverest-functions.php:1166
 #, php-format
 msgid "%s on Last.fm"
 msgstr "%s en Last.fm"
 
-#: ../inc/catcheverest-functions.php:1166
+#: ../inc/catcheverest-functions.php:1171
 #, php-format
 msgid "%s on Instagram"
 msgstr "%s on Instagram"
 
-#: ../inc/catcheverest-functions.php:1171
+#: ../inc/catcheverest-functions.php:1176
 #, php-format
 msgid "%s on GitHub"
 msgstr "%s en GitHub"
 
-#: ../inc/catcheverest-functions.php:1266
+#: ../inc/catcheverest-functions.php:1181
+#, php-format
+msgid "%s on Vkontakte"
+msgstr "%s en Vkontakte"
+
+#: ../inc/catcheverest-functions.php:1186
+#, php-format
+msgid "%s on My World"
+msgstr "%s en My World"
+
+#: ../inc/catcheverest-functions.php:1191
+#, php-format
+msgid "%s on Odnoklassniki"
+msgstr "%s en Odnoklassniki"
+
+#: ../inc/catcheverest-functions.php:1196
+#, php-format
+msgid "%s on Goodreads"
+msgstr "%s en Goodreads"
+
+#: ../inc/catcheverest-functions.php:1201
+#, php-format
+msgid "%s on Skype"
+msgstr "%s en Skype"
+
+#: ../inc/catcheverest-functions.php:1296
 msgid "ID"
 msgstr "ID"
 
-#: ../inc/catcheverest-functions.php:1293
-#: ../inc/catcheverest-functions.php:1307
+#: ../inc/catcheverest-functions.php:1323
+#: ../inc/catcheverest-functions.php:1337
 msgid "Menu"
 msgstr "Menu"
 
@@ -777,7 +802,7 @@ msgstr "Marcar para deshabilitar"
 #: ../inc/panel/theme-options.php:404 ../inc/panel/theme-options.php:446
 #: ../inc/panel/theme-options.php:519 ../inc/panel/theme-options.php:562
 #: ../inc/panel/theme-options.php:630 ../inc/panel/theme-options.php:656
-#: ../inc/panel/theme-options.php:770 ../inc/panel/theme-options.php:805
+#: ../inc/panel/theme-options.php:795 ../inc/panel/theme-options.php:830
 msgid "Save"
 msgstr "Guardar"
 
@@ -1246,7 +1271,7 @@ msgstr "Dribbble"
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../inc/panel/theme-options.php:739 ../inc/panel/theme-options.php:1189
+#: ../inc/panel/theme-options.php:739 ../inc/panel/theme-options.php:1229
 msgid "WordPress"
 msgstr "WordPress"
 
@@ -1270,15 +1295,35 @@ msgstr "Instagram"
 msgid "GitHub"
 msgstr "GitHub"
 
+#: ../inc/panel/theme-options.php:769
+msgid "Vkontakte"
+msgstr "Vkontakte"
+
+#: ../inc/panel/theme-options.php:774
+msgid "My World"
+msgstr "My World"
+
 #: ../inc/panel/theme-options.php:779
+msgid "Odnoklassniki"
+msgstr "Odnoklassniki"
+
+#: ../inc/panel/theme-options.php:784
+msgid "Goodreads"
+msgstr "Goodreads"
+
+#: ../inc/panel/theme-options.php:789
+msgid "Skype"
+msgstr "Skype"
+
+#: ../inc/panel/theme-options.php:804
 msgid "Header and Footer Codes"
 msgstr "Codigos de Header y Footer"
 
-#: ../inc/panel/theme-options.php:784
+#: ../inc/panel/theme-options.php:809
 msgid "Code to display on Header"
 msgstr "Codigo para mostrar en Header"
 
-#: ../inc/panel/theme-options.php:790
+#: ../inc/panel/theme-options.php:815
 msgid ""
 "Note: Note: Here you can put scripts from Google, Facebook, Twitter, Add "
 "This etc. which will load on Header"
@@ -1286,11 +1331,11 @@ msgstr ""
 "Nota: Aquí puedes poner scripts de Google, Facebook, Twitter, Add This, "
 "etc...  que se cargaran en el Header"
 
-#: ../inc/panel/theme-options.php:793
+#: ../inc/panel/theme-options.php:818
 msgid "Code to display on Footer"
 msgstr "Codigo para mostrar en el Footer"
 
-#: ../inc/panel/theme-options.php:800
+#: ../inc/panel/theme-options.php:825
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Twitter, Add This etc. "
 "which will load on footer"
@@ -1298,11 +1343,11 @@ msgstr ""
 "Nota: Aquí puedes poner scripts de Google, Facebook, Twitter, Add This, "
 "etc...  que se cargaran en el Footer"
 
-#: ../inc/panel/theme-options.php:1168
+#: ../inc/panel/theme-options.php:1208
 msgid "Y"
 msgstr "Y"
 
-#: ../inc/panel/theme-options.php:1199
+#: ../inc/panel/theme-options.php:1239
 msgid "Catch Everest"
 msgstr "Catch Everest"
 

@@ -765,6 +765,31 @@ function catcheverest_theme_options_do_page() {
                                     <td><input type="text" size="45" name="catcheverest_options[social_github]" value="<?php echo esc_url( $options[ 'social_github' ] ); ?>" />
                                     </td>
                                 </tr> 
+                                <tr> 
+                                    <th scope="row"><h4><?php _e( 'Vkontakte', 'catcheverest' ); ?></h4></th>
+                                    <td><input type="text" size="45" name="catcheverest_options[social_vkontakte]" value="<?php echo esc_url( $options[ 'social_vkontakte'] ); ?>" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><h4><?php _e( 'My World', 'catcheverest' ); ?></h4></th>
+                                    <td><input type="text" size="45" name="catcheverest_options[social_myworld]" value="<?php echo esc_url( $options[ 'social_myworld' ] ); ?>" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><h4><?php _e( 'Odnoklassniki', 'catcheverest' ); ?></h4></th>
+                                    <td><input type="text" size="45" name="catcheverest_options[social_odnoklassniki]" value="<?php echo esc_url( $options[ 'social_odnoklassniki' ] ); ?>" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><h4><?php _e( 'Goodreads', 'catcheverest' ); ?></h4></th>
+                                    <td><input type="text" size="45" name="catcheverest_options[social_goodreads]" value="<?php echo esc_url( $options[ 'social_goodreads' ] ); ?>" />
+                                    </td>
+                                </tr>                                
+                                <tr>
+                                    <th scope="row"><h4><?php _e( 'Skype', 'catcheverest' ); ?></h4></th>
+                                    <td><input type="text" size="45" name="catcheverest_options[social_skype]" value="<?php echo esc_url( $options[ 'social_skype' ] ); ?>" />
+                                    </td>
+                                </tr>                                 
                             </tbody>
                         </table>                           
             			<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catcheverest' ); ?>" /></p>                    
@@ -1034,7 +1059,22 @@ function catcheverest_theme_options_validate( $options ) {
 	}	
 	if( isset( $input[ 'social_github' ] ) ) {
 		$input_validated[ 'social_github' ] = esc_url_raw( $input[ 'social_github' ] );
-	}		
+	}	
+	if( isset( $input[ 'social_vkontakte' ] ) ) {
+		$input_validated[ 'social_vkontakte' ] = esc_url_raw( $input[ 'social_vkontakte' ] );
+	}	
+	if( isset( $input[ 'social_myworld' ] ) ) {
+		$input_validated[ 'social_myworld' ] = esc_url_raw( $input[ 'social_myworld' ] );
+	}
+	if( isset( $input[ 'social_odnoklassniki' ] ) ) {
+		$input_validated[ 'social_odnoklassniki' ] = esc_url_raw( $input[ 'social_odnoklassniki' ] );
+	}	
+	if( isset( $input[ 'social_goodreads' ] ) ) {
+		$input_validated[ 'social_goodreads' ] = esc_url_raw( $input[ 'social_goodreads' ] );
+	}	
+	if( isset( $input[ 'social_skype' ] ) ) {
+		$input_validated[ 'social_skype' ] = esc_url_raw( $input[ 'social_skype' ] );
+	}
 		
 	//Webmaster Tool Verification
 	if( isset( $input[ 'google_verification' ] ) ) {

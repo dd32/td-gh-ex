@@ -130,3 +130,7 @@ version 1.1.4
 
 version 1.1.5
 * Added Jetpack Infinite Scroll support
+
+version 1.2
+* Added Vkontakte, My World, Odnoklassniki, Goodreads and Skype Social Icons
+* Fixed admin.js to support WordPress 3.6 jQuery UI version update

@@ -1047,7 +1047,12 @@ function catcheverest_social_networks() {
 						$options[ 'social_delicious' ],
 						$options[ 'social_lastfm' ],
 						$options[ 'social_instagram' ],
-						$options[ 'social_github' ]
+						$options[ 'social_github' ],
+						$options[ 'social_vkontakte' ],
+						$options[ 'social_myworld' ],
+						$options[ 'social_odnoklassniki' ],
+						$options[ 'social_goodreads' ],
+						$options[ 'social_skype' ]
 					);
 	$flag = 0;
 	if( !empty( $elements ) ) {
@@ -1170,7 +1175,32 @@ function catcheverest_social_networks() {
 				$catcheverest_social_networks .=
 					'<li class="github"><a href="'.esc_url( $options[ 'social_github' ] ).'" title="'.sprintf( esc_attr__( '%s on GitHub', 'catcheverest' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' GitHub </a></li>';
 			}				
-	
+			//Vkontakte
+			if ( !empty( $options[ 'social_vkontakte' ] ) ) {
+				$catcheverest_social_networks .=
+					'<li class="vkontakte"><a href="'.esc_url( $options[ 'social_vkontakte' ] ).'" title="'.sprintf( esc_attr__( '%s on Vkontakte', 'catcheverest' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Vkontakte </a></li>';
+			}				
+			//My World
+			if ( !empty( $options[ 'social_myworld' ] ) ) {
+				$catcheverest_social_networks .=
+					'<li class="myworld"><a href="'.esc_url( $options[ 'social_myworld' ] ).'" title="'.sprintf( esc_attr__( '%s on My World', 'catcheverest' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' My World </a></li>';
+			}				
+			//Odnoklassniki
+			if ( !empty( $options[ 'social_odnoklassniki' ] ) ) {
+				$catcheverest_social_networks .=
+					'<li class="odnoklassniki"><a href="'.esc_url( $options[ 'social_odnoklassniki' ] ).'" title="'.sprintf( esc_attr__( '%s on Odnoklassniki', 'catcheverest' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Odnoklassniki </a></li>';
+			}
+			//Goodreads
+			if ( !empty( $options[ 'social_goodreads' ] ) ) {
+				$catcheverest_social_networks .=
+					'<li class="goodreads"><a href="'.esc_url( $options[ 'social_goodreads' ] ).'" title="'.sprintf( esc_attr__( '%s on Goodreads', 'catcheverest' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Goodreads </a></li>';
+			}
+			//Skype
+			if ( !empty( $options[ 'social_skype' ] ) ) {
+				$catcheverest_social_networks .=
+					'<li class="skype"><a href="'.esc_url( $options[ 'social_skype' ] ).'" title="'.sprintf( esc_attr__( '%s on Skype', 'catcheverest' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Skype </a></li>';
+			}
+			
 			$catcheverest_social_networks .='
 		</ul>';
 		
