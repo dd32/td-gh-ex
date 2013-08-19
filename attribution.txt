@@ -1,0 +1,32 @@
+/**
+ * Foundation Framework - http://foundation.zurb.com/
+ * License: MIT open source license (http://opensource.org/licenses/MIT)
+ */
+ 
+/**
+ * Font Open Sans - http://www.google.com/fonts/specimen/Open+Sans
+ * License: Apache License version 2.0. (http://fontawesome.io/license/)
+ * Copyright: Steve Matteson, https://profiles.google.com/107777320916704234605/about
+ */
+ 
+/**
+ * Font Foundation Social Icons - http://foundation.zurb.com/social-icons.php
+ * License: MIT open source license (http://opensource.org/licenses/MIT)
+ */
+ 
+/**
+ * Image Icons - https://www.iconfinder.com
+ * License: Creative Commons (Attribution-Noncommercial 3.0 Unported) ( http://creativecommons.org/licenses/by-nc/3.0/)
+ */
+  
+/**
+ * WordPress 3.4 Theme Customizer (theme-customizer.js)
+ * License: GPLv2 (or later) (http://wordpress.org/about/gpl/)
+*/
+
+/**
+ * HTML5 Shiv - https://code.google.com/p/html5shiv/
+ * License: Dual licensed under the MIT or GPL Version 2 licenses
+ * Copyright: Alexander Farkas, http://protofunc.com/
+ */
+

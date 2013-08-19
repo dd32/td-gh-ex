@@ -98,14 +98,12 @@ require(get_template_directory() . '/inc/widgets/awakening-category-widget.php')
 //Archive Widget adhering to Foundation CSS
 require(get_template_directory() . '/inc/widgets/awakening-archive-widget.php');	
 
-if ( ! function_exists( 'awakening_load_custom_widgets' ) ):	
 function awakening_load_custom_widgets() {
 	register_widget( 'GoogleCSE_Widget' );	
 	register_widget( 'Feedburner_Widget' );
 	register_widget( 'Awakening_Widget_Archives' );
 	register_widget( 'Awakening_Widget_Categories' );
 }
-endif;
 add_action('widgets_init', 'awakening_load_custom_widgets');
 
 
