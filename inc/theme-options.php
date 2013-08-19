@@ -806,6 +806,24 @@ function catchbox_theme_options_render_page() {
                                     </td>
                                 </tr>
                                 
+                                <tr>
+                                    <th scope="row"><label><?php _e( 'Slideshare', 'catchbox' ); ?></label></th>
+                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_slideshare]" value="<?php if ( isset( $options[ 'social_slideshare' ] ) ) echo esc_url( $options[ 'social_slideshare' ] ); ?>" />
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <th scope="row"><label><?php _e( 'Instagram', 'catchbox' ); ?></label></th>
+                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_instagram]" value="<?php if ( isset( $options[ 'social_instagram' ] ) ) echo esc_url( $options[ 'social_instagram' ] ); ?>" />
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <th scope="row"><label><?php _e( 'Skype', 'catchbox' ); ?></label></th>
+                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_skype]" value="<?php if ( isset( $options[ 'social_skype' ] ) ) echo esc_url( $options[ 'social_skype' ] ); ?>" />
+                                    </td>
+                                </tr>
+                                
                             </tbody>
                         </table>
                         <p><?php _e( '<strong>Note:</strong> Enter the url for correponding social networking website', 'catchbox' ); ?></p>
@@ -986,7 +1004,16 @@ function catchbox_options_social_links_validation( $options ) {
 		$options_validated[ 'social_aim' ] = esc_url_raw( $options[ 'social_aim' ] );
 	//Flickr
 	if( isset( $options[ 'social_flickr' ] ) )
-		$options_validated[ 'social_flickr' ] = esc_url_raw( $options[ 'social_flickr' ] );
+		$options_validated[ 'social_flickr' ] = esc_url_raw( $options[ 'social_flickr' ] );	
+	//Slideshare
+	if( isset( $options[ 'social_slideshare' ] ) )
+		$options_validated[ 'social_slideshare' ] = esc_url_raw( $options[ 'social_slideshare' ] );
+	//Instagram
+	if( isset( $options[ 'social_instagram' ] ) )
+		$options_validated[ 'social_instagram' ] = esc_url_raw( $options[ 'social_instagram' ] );
+	//Skype
+	if( isset( $options[ 'social_skype' ] ) )
+		$options_validated[ 'social_skype' ] = esc_url_raw( $options[ 'social_skype' ] );
 	
 	//Clearing the theme option cache
 	if( function_exists( 'catchbox_themeoption_invalidate_caches' ) )  { catchbox_themeoption_invalidate_caches(); }

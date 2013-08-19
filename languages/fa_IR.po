@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-11 20:39+0545\n"
-"PO-Revision-Date: 2013-08-11 20:39+0545\n"
+"POT-Creation-Date: 2013-08-19 20:44+0545\n"
+"PO-Revision-Date: 2013-08-19 20:44+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: wiki10.net, Ali Akbar Kaviani <persian@wiki10.net>\n"
 "Language: Persian\n"
@@ -455,52 +455,52 @@ msgstr "نام"
 msgid "Email"
 msgstr "ایمیل"
 
-#: ../functions.php:1322
+#: ../functions.php:1337
 msgid "Primary menu"
 msgstr "منوی اولیه"
 
-#: ../functions.php:1324 ../functions.php:1357
+#: ../functions.php:1339 ../functions.php:1372
 msgid "Skip to primary content"
 msgstr "به متن اولیه برو"
 
-#: ../functions.php:1325 ../functions.php:1358
+#: ../functions.php:1340 ../functions.php:1373
 msgid "Skip to secondary content"
 msgstr "به متن ثانویه برو"
 
-#: ../functions.php:1355
+#: ../functions.php:1370
 msgid "Secondary menu"
 msgstr "منوی ثانویه"
 
-#: ../functions.php:1377
+#: ../functions.php:1392
 msgid "Copyright &copy;"
 msgstr "کپی‌رایت &copy;"
 
-#: ../functions.php:1381
+#: ../functions.php:1396
 msgid ". All Rights Reserved."
 msgstr "همه حقوق محفوظ است"
 
-#: ../functions.php:1384
+#: ../functions.php:1399
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: ../functions.php:1384
+#: ../functions.php:1399
 msgid "Powered by WordPress"
 msgstr "نیروگرفته از وردپرس"
 
-#: ../functions.php:1384
+#: ../functions.php:1399
 #, php-format
 msgid "Powered by %s"
 msgstr "نیروگرفته از %s"
 
-#: ../functions.php:1386 ../inc/theme-options.php:587
+#: ../functions.php:1401 ../inc/theme-options.php:587
 msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
-#: ../functions.php:1386
+#: ../functions.php:1401
 msgid "Theme Catch Box by Catch Themes"
 msgstr "پوسته کچ‌باکس از گروه کچ‌تمز"
 
-#: ../functions.php:1386
+#: ../functions.php:1401
 #, php-format
 msgid "Theme: %s"
 msgstr "پوسته: %s"
@@ -800,7 +800,7 @@ msgstr ""
 "داده شود"
 
 #: ../inc/theme-options.php:664 ../inc/theme-options.php:710
-#: ../inc/theme-options.php:812 ../inc/theme-options.php:852
+#: ../inc/theme-options.php:830 ../inc/theme-options.php:870
 msgid "Save"
 msgstr "ذخیره"
 
@@ -916,21 +916,33 @@ msgstr "Aim"
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/theme-options.php:811
+#: ../inc/theme-options.php:810
+msgid "Slideshare"
+msgstr "Slideshare"
+
+#: ../inc/theme-options.php:816
+msgid "Instagram"
+msgstr "Instagram"
+
+#: ../inc/theme-options.php:822
+msgid "Skype"
+msgstr "Skype"
+
+#: ../inc/theme-options.php:829
 msgid ""
 "<strong>Note:</strong> Enter the url for correponding social networking "
 "website"
 msgstr "<strong>توجه:</strong> نشانی مربوط به هر وبسایت را وارد کنید"
 
-#: ../inc/theme-options.php:825
+#: ../inc/theme-options.php:843
 msgid "Header and Footer Code"
 msgstr "کد سربرگ و پانویس"
 
-#: ../inc/theme-options.php:830
+#: ../inc/theme-options.php:848
 msgid "Code to display on Header"
 msgstr "کد برای نمایش در سربرگ"
 
-#: ../inc/theme-options.php:837
+#: ../inc/theme-options.php:855
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
@@ -938,11 +950,11 @@ msgstr ""
 "توجه: در اینجا میتوانید اسکریپت مربوط به گوگل، فیسبوک و ... را که میخواهید "
 "در سربرگ فراخوانی شود وارد کنید"
 
-#: ../inc/theme-options.php:841
+#: ../inc/theme-options.php:859
 msgid "Code to display on Footer"
 msgstr "کد برای نمایش در پانویس"
 
-#: ../inc/theme-options.php:848
+#: ../inc/theme-options.php:866
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"

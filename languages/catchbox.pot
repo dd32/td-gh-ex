@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-19 14:06+0545\n"
-"PO-Revision-Date: 2013-07-19 14:06+0545\n"
+"POT-Creation-Date: 2013-08-19 20:42+0545\n"
+"PO-Revision-Date: 2013-08-19 20:42+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: en\n"
@@ -426,52 +426,52 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: ../functions.php:1322
+#: ../functions.php:1337
 msgid "Primary menu"
 msgstr ""
 
-#: ../functions.php:1324 ../functions.php:1357
+#: ../functions.php:1339 ../functions.php:1372
 msgid "Skip to primary content"
 msgstr ""
 
-#: ../functions.php:1325 ../functions.php:1358
+#: ../functions.php:1340 ../functions.php:1373
 msgid "Skip to secondary content"
 msgstr ""
 
-#: ../functions.php:1355
+#: ../functions.php:1370
 msgid "Secondary menu"
 msgstr ""
 
-#: ../functions.php:1377
+#: ../functions.php:1392
 msgid "Copyright &copy;"
 msgstr ""
 
-#: ../functions.php:1381
+#: ../functions.php:1396
 msgid ". All Rights Reserved."
 msgstr ""
 
-#: ../functions.php:1384
+#: ../functions.php:1399
 msgid "http://wordpress.org/"
 msgstr ""
 
-#: ../functions.php:1384
+#: ../functions.php:1399
 msgid "Powered by WordPress"
 msgstr ""
 
-#: ../functions.php:1384
+#: ../functions.php:1399
 #, php-format
 msgid "Powered by %s"
 msgstr ""
 
-#: ../functions.php:1386 ../inc/theme-options.php:587
+#: ../functions.php:1401 ../inc/theme-options.php:587
 msgid "http://catchthemes.com/"
 msgstr ""
 
-#: ../functions.php:1386
+#: ../functions.php:1401
 msgid "Theme Catch Box by Catch Themes"
 msgstr ""
 
-#: ../functions.php:1386
+#: ../functions.php:1401
 #, php-format
 msgid "Theme: %s"
 msgstr ""
@@ -761,7 +761,7 @@ msgid ""
 msgstr ""
 
 #: ../inc/theme-options.php:664 ../inc/theme-options.php:710
-#: ../inc/theme-options.php:812 ../inc/theme-options.php:852
+#: ../inc/theme-options.php:830 ../inc/theme-options.php:870
 msgid "Save"
 msgstr ""
 
@@ -877,31 +877,43 @@ msgstr ""
 msgid "Flickr"
 msgstr ""
 
-#: ../inc/theme-options.php:811
+#: ../inc/theme-options.php:810
+msgid "Slideshare"
+msgstr ""
+
+#: ../inc/theme-options.php:816
+msgid "Instagram"
+msgstr ""
+
+#: ../inc/theme-options.php:822
+msgid "Skype"
+msgstr ""
+
+#: ../inc/theme-options.php:829
 msgid ""
 "<strong>Note:</strong> Enter the url for correponding social networking "
 "website"
 msgstr ""
 
-#: ../inc/theme-options.php:825
+#: ../inc/theme-options.php:843
 msgid "Header and Footer Code"
 msgstr ""
 
-#: ../inc/theme-options.php:830
+#: ../inc/theme-options.php:848
 msgid "Code to display on Header"
 msgstr ""
 
-#: ../inc/theme-options.php:837
+#: ../inc/theme-options.php:855
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
 msgstr ""
 
-#: ../inc/theme-options.php:841
+#: ../inc/theme-options.php:859
 msgid "Code to display on Footer"
 msgstr ""
 
-#: ../inc/theme-options.php:848
+#: ../inc/theme-options.php:866
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"

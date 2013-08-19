@@ -273,7 +273,7 @@ Version 2.3.2
 * Fixed the Slider
 
 Version 2.4
-* Added Serbian translation sv_SE.po and sv_SE.mo
+* Added Serbian translation sr_RS.po and sr_RS.mo
 * Fixed RTL css for mobile devices
 
 Version 2.5
@@ -321,3 +321,6 @@ Version 2.6.1
 * Added Persian translation fa_IR.po and fa_IR.mo
 * Fixed rtl css for Single nav
 * Fixed theme-options.js to support WordPress 3.6 jQuery UI version update
+
+Version 2.6.2
+* Added Instagram, Slideshare and Skype social icons

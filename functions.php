@@ -1168,6 +1168,21 @@ function catchbox_socialprofile() {
 						$catchbox_socialprofile .= '<li class="flickr"><a href="'.$options['social_flickr'].'" title="Flickr" target="_blank">Flickr</a></li>';
 					}	
 					
+					//Slideshare
+					if ( !empty( $options[ 'social_slideshare' ] ) ) {
+						$catchbox_socialprofile .= '<li class="slideshare"><a href="'.$options[ 'social_slideshare' ].'" title="Slideshare" target="_blank">Slideshare</a></li>';
+					}
+					
+					//Instagram
+					if ( !empty( $options[ 'social_instagram' ] ) ) {
+						$catchbox_socialprofile .= '<li class="instagram"><a href="'.$options[ 'social_instagram' ].'" title="Instagram" target="_blank">Instagram</a></li>';
+					}	
+					
+					//skype
+					if ( !empty( $options[ 'social_skype' ] ) ) {
+						$catchbox_socialprofile .= '<li class="skype"><a href="'.$options[ 'social_skype' ].'" title="Skype" target="_blank">Skype</a></li>';
+					}	
+					
 					$catchbox_socialprofile .= '
 				</ul>
 			</div>';

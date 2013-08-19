@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-19 14:07+0545\n"
-"PO-Revision-Date: 2013-07-19 14:07+0545\n"
+"POT-Creation-Date: 2013-08-19 20:44+0545\n"
+"PO-Revision-Date: 2013-08-19 20:44+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: D'CLIC <contact@dclic.info>\n"
 "Language: en\n"
@@ -455,52 +455,52 @@ msgstr "Name"
 msgid "Email"
 msgstr "E-mail"
 
-#: ../functions.php:1322
+#: ../functions.php:1337
 msgid "Primary menu"
 msgstr "Menu principal"
 
-#: ../functions.php:1324 ../functions.php:1357
+#: ../functions.php:1339 ../functions.php:1372
 msgid "Skip to primary content"
 msgstr "Aller au contenu principal"
 
-#: ../functions.php:1325 ../functions.php:1358
+#: ../functions.php:1340 ../functions.php:1373
 msgid "Skip to secondary content"
 msgstr "Aller au contenu secondaire"
 
-#: ../functions.php:1355
+#: ../functions.php:1370
 msgid "Secondary menu"
 msgstr "Menu secondaire"
 
-#: ../functions.php:1377
+#: ../functions.php:1392
 msgid "Copyright &copy;"
 msgstr "Copyright &copy;"
 
-#: ../functions.php:1381
+#: ../functions.php:1396
 msgid ". All Rights Reserved."
 msgstr ". Tous Droits Réservés."
 
-#: ../functions.php:1384
+#: ../functions.php:1399
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: ../functions.php:1384
+#: ../functions.php:1399
 msgid "Powered by WordPress"
 msgstr "Propulsé par WordPress "
 
-#: ../functions.php:1384
+#: ../functions.php:1399
 #, php-format
 msgid "Powered by %s"
 msgstr "Propulsé par %s"
 
-#: ../functions.php:1386 ../inc/theme-options.php:587
+#: ../functions.php:1401 ../inc/theme-options.php:587
 msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
-#: ../functions.php:1386
+#: ../functions.php:1401
 msgid "Theme Catch Box by Catch Themes"
 msgstr "Thème Catch Box par Catch Themes"
 
-#: ../functions.php:1386
+#: ../functions.php:1401
 #, php-format
 msgid "Theme: %s"
 msgstr "Thème: %s"
@@ -798,7 +798,7 @@ msgstr ""
 "affichés dans le diaporama de la page d'accueil."
 
 #: ../inc/theme-options.php:664 ../inc/theme-options.php:710
-#: ../inc/theme-options.php:812 ../inc/theme-options.php:852
+#: ../inc/theme-options.php:830 ../inc/theme-options.php:870
 msgid "Save"
 msgstr "Enregistrer"
 
@@ -914,7 +914,19 @@ msgstr "Aim"
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/theme-options.php:811
+#: ../inc/theme-options.php:810
+msgid "Slideshare"
+msgstr "Slideshare"
+
+#: ../inc/theme-options.php:816
+msgid "Instagram"
+msgstr "Instagram"
+
+#: ../inc/theme-options.php:822
+msgid "Skype"
+msgstr "Skype"
+
+#: ../inc/theme-options.php:829
 msgid ""
 "<strong>Note:</strong> Enter the url for correponding social networking "
 "website"
@@ -922,15 +934,15 @@ msgstr ""
 "<strong>Note:</strong> Entrer le lien URL qui correspond à votre site de "
 "reseau social"
 
-#: ../inc/theme-options.php:825
+#: ../inc/theme-options.php:843
 msgid "Header and Footer Code"
 msgstr "Header and Footer Code"
 
-#: ../inc/theme-options.php:830
+#: ../inc/theme-options.php:848
 msgid "Code to display on Header"
 msgstr "Code to display on Header"
 
-#: ../inc/theme-options.php:837
+#: ../inc/theme-options.php:855
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
@@ -938,11 +950,11 @@ msgstr ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
 
-#: ../inc/theme-options.php:841
+#: ../inc/theme-options.php:859
 msgid "Code to display on Footer"
 msgstr "Code to display on Footer"
 
-#: ../inc/theme-options.php:848
+#: ../inc/theme-options.php:866
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"
