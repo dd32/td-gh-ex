@@ -750,6 +750,11 @@ function simplecatch_theme_options_do_page() {
                                     <th scope="row"><h4><?php _e( 'Goodreads', 'simplecatch' ); ?> </h4></th>
                                     <td><input type="text" size="45" name="simplecatch_options[social_goodreads]" value="<?php echo esc_url( $options[ 'social_goodreads' ] ); ?>" />
                                     </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><h4><?php _e( 'Skype', 'simplecatch' ); ?> </h4></th>
+                                    <td><input type="text" size="45" name="simplecatch_options[social_skype]" value="<?php echo esc_url( $options[ 'social_skype' ] ); ?>" />
+                                    </td>
                                 </tr>                                                             
                             </tbody>
                         </table><p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p>      
@@ -1001,6 +1006,9 @@ function simplecatch_theme_options_validate( $options ) {
 	}	
 	if( isset( $input[ 'social_goodreads' ] ) ) {
 		$input_validated[ 'social_goodreads' ] = esc_url_raw( $input[ 'social_goodreads' ] );
+	}
+	if( isset( $input[ 'social_skype' ] ) ) {
+		$input_validated[ 'social_skype' ] = esc_url_raw( $input[ 'social_skype' ] );
 	}	
 	
 	//Custom CSS Style Validation

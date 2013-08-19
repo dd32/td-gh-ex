@@ -13,14 +13,14 @@ Added Translation for Polish by Piotrek Jas (fansitejustgames@gmail.com)
 Added Translation for Russian by  Alexey Kurpachev (kurpachev@gmail.com)
 Added Translation for Finnish by Juha Louhiranta (charni@gmail.com)
 Added Translation for French by Wolforg (contact@wolforg.eu) and Athéna G (webmaster@athena.georgakelos.net)
-Added Translation for Dutch by Thomas Gerard (beldin2000@gmail.com)
+Added Translation for Dutch by Thomas Gerard (beldin2000@gmail.com) and Alain J. Baudrez (a.baudrez@gmail.com)
 Added Translation for Greek by Dimitris Antonakis (dimantonak@gmail.com)
 Added Translation for Croatian by Sanjin Barac (rapid24income@gmail.com)
-Added Translation for Chinese by yiranboke ( yiranboke@hotmail.com )
-Added Translation for Spanish by Jorge Lorente ( chaguanco@ofdp.com )
-Added Translation for German by Manuel Salmann ( manuel.salmann@gmail.com )
-Added Translation for Italian by Lorenzo Bossi ( lorenzobossi83@gmail.com )
-Added Translation for Danish by Marianne ( marianne@gindrup.dk )
+Added Translation for Chinese by yiranboke (yiranboke@hotmail.com)
+Added Translation for Spanish by Jorge Lorente (chaguanco@ofdp.com)
+Added Translation for German by Manuel Salmann (manuel.salmann@gmail.com)
+Added Translation for Italian by Lorenzo Bossi (lorenzobossi83@gmail.com)
+Added Translation for Danish by Marianne (marianne@gindrup.dk)
 
 == Features ==  
 Featured Image Slider, Custom Drop-down Menu, Theme Options, Custom Widgets, flexible position of sidebar and Support for popular plugins.
@@ -336,3 +336,8 @@ Version 2.5.2
 
 Version 2.6
 * Added Danish translation da_DK.po and da_DK.mo
+
+Version 2.6.1
+* Added Skype Social Icon
+* Fixed admin.js to support WordPress 3.6 jQuery UI version update
+* Updated Dutch translation nl_NL.po and nl_NL.mo

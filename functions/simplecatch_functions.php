@@ -450,7 +450,8 @@ function simplecatch_headersocialnetworks() {
 						$options[ 'social_vkontakte' ],
 						$options[ 'social_myworld' ],
 						$options[ 'social_odnoklassniki' ],
-						$options[ 'social_goodreads' ]
+						$options[ 'social_goodreads' ],
+						$options[ 'social_skype' ]
 					);
 	$flag = 0;
 	if( !empty( $elements ) ) {
@@ -592,7 +593,12 @@ function simplecatch_headersocialnetworks() {
 				if ( !empty( $options[ 'social_goodreads' ] ) ) {
 					$simplecatch_headersocialnetworks .=
 						'<li class="goodreads"><a href="'.esc_url( $options[ 'social_goodreads' ] ).'" title="'.sprintf( esc_attr__( '%s on Goodreads', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Goodreads </a></li>';
-				}					
+				}
+				//Skype
+				if ( !empty( $options[ 'social_skype' ] ) ) {
+					$simplecatch_headersocialnetworks .=
+						'<li class="skype"><a href="'.esc_url( $options[ 'social_skype' ] ).'" title="'.sprintf( esc_attr__( '%s on Skype', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Skype </a></li>';
+				}
 		
 				$simplecatch_headersocialnetworks .='
 			</ul>

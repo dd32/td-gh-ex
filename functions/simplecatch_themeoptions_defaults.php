@@ -67,7 +67,7 @@ $simplecatch_options_defaults = array(
 	'social_myworld'				=> '',
 	'social_odnoklassniki'			=> '',
 	'social_goodreads'				=> '',
-	
+	'social_skype'					=> '',
  	'custom_css'					=> '',
  	'google_verification'			=> '',
  	'yahoo_verification'			=> '',
