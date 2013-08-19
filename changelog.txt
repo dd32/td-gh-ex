@@ -1,5 +1,8 @@
 *** application Changelog ***
 
+19-08-2013 - version 1.3.8
+* Remove function_exists() conditional wrapper from has_post_thumbnail() from loop.php and template-blog.php file.
+
 14-08-2013 - version 1.3.7
 * Footer.php file updated - Bug fixes - social links and copyright text were not been updated through options panel.
 * css changes to make compatible with latest theme unit test data.
