@@ -26,7 +26,8 @@
    			<div class="comments-template"><?php comments_template(); ?>
 			<?php paginate_comments_links(); ?> 
 			</div>
-			
+
+
         </div>
 
 <?php endwhile; ?>

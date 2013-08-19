@@ -1,7 +1,14 @@
 Redesign Wordpress Theme
+___
+Redesign WordPress theme, Copyright (C) 2013 Robert Toth
+Redesign WordPress theme is licensed under the GPL.
+Resource All grapcic objects, example: img/background.png, img/favicon.ico
+License: none
+Copyright: none
 ---
 Author: Robert Toth
 Author URL: http://toth-illustration.com
+Version: 1.2
 Theme URL: http://redesign.toth-illustration.com
 Requires: WordPress 3.x
 License: GNU General Public License
@@ -10,13 +17,13 @@ Tags: gray, white, black, right-sidebar, three-columns, flexible-width, custom-b
 
 Overview:
 ---
-Redesign is a simple, clean highly visible theme suitable for businesses or blogging. There are two navigation menus, a custom header, custom background, transparent graphic elements and four widget areas: header widget, two sidebar widgets, and a footer widget.
+Description: Redesign is a clean highly visible theme suitable for blogging or businesses. The theme is not based on any other WP theme. It's made from scratch.
 
-The transparent graphic elements makes your custom background image visible through the layers. Or by choosing a background color, the hole site will have this color, in different shades. An easy and fast way to create smooth graphic design.
+There are two navigation menus, custom header, custom background, header widget, two sidebar widgets, footer widget, and transparent graphic elements. The suggested measures for the custom header are 980px x 200px.
 
-Redesign combines the simplicity of the old school WordPress themes with all the new functions of WP 3.x The Redesign theme is not based on any other WP theme. It«s made from scratch.
+The transparent graphic elements makes your custom background image visible through the layers. Or by choosing a background color, the hole site will appear in this color, but in different shades. An easy and fast way to create smooth graphic design.
 
-The theme is responsive, and easy to read in handheld units. A smartphone will show one column Ð a tablet two columns Ð and a computer three columns. No information is hidden; the sidebar columns are stacked under the main column when handheld units are used. Scroll to read.
+The Redesign theme is responsive, and easy to read in handheld units. The range is from desktop size 980px to flipped iPhone 480px. 
 
 Future development:
 ---
@@ -25,8 +32,8 @@ A PREMIUM version of the Redesign theme will be launched soon.
 Configuration:
 ---
 Redesign supports:
-* Custom header (no images/logos are included).
-* Custom background (no images are included).
+* Custom header
+* Custom background
 * Three widget areas (header, two sidebar, footer) The header widget is ONLY visible when the front page template is chosen!
 * Two navigation menus (top header, low header).
 
@@ -42,5 +49,5 @@ Supported browsers and platforms:
 
 Typography:
 ---
-Lucida, easy to read, and covers more than 96% of all computers.
+Lucida which works on more than 96% of all computers.
 

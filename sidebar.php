@@ -1,13 +1,15 @@
-<div id="sidebar">
-
-<?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('Main sidebar') ) : else : ?>
+<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+	<div id="sidebar">
+		<?php dynamic_sidebar( 'sidebar-1' ); ?>
+	</div>
 <?php endif; ?>
 
-</div>
-
-<div id="sidebar-extra">
-
-<?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('Extra sidebar') ) : else : ?>
+<?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
+	<div id="sidebar2">
+		<?php dynamic_sidebar( 'sidebar-2' ); ?>
+	</div>
 <?php endif; ?>
 
-</div>
+
+
+

@@ -3,22 +3,25 @@ Theme Name: Redesign
 
 Theme URI: http://redesign.toth-illustration.com
 
-Description: Redesign is a clean highly visible theme suitable for blogging or businesses. There are two navigation menus, custom header, custom background, header widget, two sidebar widgets, footer widget, and transparent graphic elements
+Description: Redesign is a simple, clean and highly visible theme suitable for blogging or businesses. The theme is not based on any other WP theme. It's made from scratch.
+
+There are two navigation menus, custom header, custom background, header widget, two sidebar widgets, footer widget, and transparent graphic elements. The suggested measures for the custom header are 980px x 200px.
 
 The transparent graphic elements makes your custom background image visible through the layers. Or by choosing a background color, the hole site will appear in this color, but in different shades. An easy and fast way to create smooth graphic design.
 
-The Redesign theme is responsive, and easy to read in handheld units. The theme is not based on any other WP theme. It's made from scratch.
+The Redesign theme is responsive, and easy to read in handheld units. The range is from desktop size 980px to flipped iPhone 480px. 
+
+Redesign WordPress theme, Copyright (C) 2013 Robert Toth
+Redesign WordPress theme is licensed under the GPL.
+Resource All graphic objects, example: img/background.png, img/favicon.ico
 
 Author: Robert Toth
 Author URI: http://toth-illustration.com
-Version: 1.1
-License: GNU General Public License
+Version: 1.2
+Copyright: Robert Toth, http://toth-illustration.com
+License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: gray, white, black, right-sidebar, two-columns, fixed-width, custom-background, custom-header, custom-menu, sticky-post, threaded-comments
-*/
-
-/*
-I personally do NOT recommend child themes. If you modify the code please save the WHOLE Stylesheet and all the php-files.  Upgrades to Redesign WP Theme will be made in the future. Upgrades may include both the css-stylesheet and php-files. When the upgrade is done, you may decide if you want to keep the changes, or reload your modified saved files.
 */
 
 /*-----REDESIGN, WORD PRESS STYLESHEET------*/
@@ -27,7 +30,7 @@ I personally do NOT recommend child themes. If you modify the code please save t
 
 html, 
 body, 
-ol, 
+ol,
 ul, 
 li{
 	margin:0;
@@ -39,89 +42,6 @@ li{
 	list-style:none;
 }
 
-/*BASIC*/
-
-body{
-	font-family: Lucida grande, Lucida Sans Unicode, Helvetica, sans-serif;
-	font-size: 16px;
-	font-size: 1rem;
-        line-height:150%;
-	color: #444;
-        letter-spacing:-1px;
-}
-
-#header{
-	max-width:960px;
-	min-width:480px;
-	margin: 0px auto 0px;
-}
-
-#wrapper{
-	max-width:960px;
-	min-width:480px;
-	/*min-width:320px;*/
-	margin: 0px auto 0px;
-	text-align: left;
-	background-image:url('img/tbg70.png');
-	
-}
-
-#content{
-	margin:0px;
-	padding:0px;
-	float:left;
-
-}
-
-#header-text{
-	text-align:left;
-	padding:10px;
-	height:240px;
-}
-
-.site-title{
-	font-size:300%;
-       	line-height:120%;
-
-}
-
-.site-description{
-	font-size:150%;
-        font-style:italic;
-       	line-height:50%;
-}
- 
-
-/*LINKS*/
- 
-a:link, 
-a:visited{
-	color:#444;
-	font-weight:bold;
-	text-decoration: none; 
-}
- 
-a:hover{
-	text-decoration: underline; 
-
-}
-
-/*HEADINGS*/
- 
-h1{
-	font-size: 180%;
-        line-height:100%;
-	font-weight:bold;
-	margin:0px;
-}
-
-h2{
-	font-size: 130%;
-	margin:5px 0px;
-	font-weight:bold;
-}
-
-
 /* RESPONSIVE images & media */
 
 #header img,
@@ -129,7 +49,8 @@ h2{
 #footer img,
 .post img,
 .widget img,
-.comment img{
+.comment img,
+.wp-caption{
 	max-width: 100%; /* Fluid images for posts, comments, and widgets */
 	height: auto;
 }
@@ -190,23 +111,114 @@ img.alignright {
 
 .wp-caption {
 	text-align: center;
-	max-width:440px;
+	max-width:420px;
 	background-image:url('img/tbg30.png');
-	padding:5px;
+	padding:10px 5px;
 }
 
 .wp-caption-text {
 	margin:0px;
-	padding:5px;
+	max-width:420px;
+	padding:10px 5px;
 	font-size:90%;
 }
 
 .gallery-caption {
 	font-size:90%;
-	max-width:440px;
+	max-width:450px;
 	margin:0px 0px 5px 0px;
 	text-align: center;
 }
+
+
+/*BASIC*/
+
+body{
+	font-family: Lucida grande, Lucida Sans Unicode, Helvetica, sans-serif;
+	font-size: 16px;
+	font-size: 1rem;
+        line-height:150%;
+	color: #333;
+        letter-spacing:-1px;
+}
+
+#header{
+	max-width:980px;
+	min-width:480px;
+	margin: 0px auto 0px;
+	padding:0px;
+}
+
+#wrapper{
+	max-width:980px;
+	min-width:480px;
+	margin: 0px auto 0px;
+	padding:0px;
+	text-align: left;
+	background-image:url('img/tbg90.png');
+}
+
+#content{
+	max-width:490px;
+	min-width:480px;
+	margin:0px;
+	padding:0px;
+	float:left;
+}
+
+.error404 #content{
+	padding:20px;
+}
+
+.archive .entry{
+	padding:10px 10px 0px 20px;
+}
+
+#header-text{
+	text-align:left;
+	padding:10px;
+	height:100px;
+}
+
+.site-title{
+	font-size:260%;
+
+}
+
+.site-description{
+	font-size:120%;
+}
+ 
+
+/*LINKS*/
+ 
+a:link, 
+a:visited{
+	color:#333;
+	font-weight:bold;
+	text-decoration: none; 
+}
+ 
+a:hover{
+	text-decoration: underline; 
+
+}
+
+/*HEADINGS*/
+ 
+h1{
+	font-size: 180%;
+        line-height:100%;
+	font-weight:bold;
+	margin:0px 0px 5px 0px;
+}
+
+h2{
+	font-size: 130%;
+	margin:5px 0px;
+	font-weight:bold;
+}
+
 
 /*NAVIGATION MENUS*/
 
@@ -226,7 +238,7 @@ img.alignright {
 	position:relative;
 	margin:0px;
 	padding:0px;
-	background-image:url('img/tbg70.png');
+	background-image:url('img/btbg10.png');
 }
 
 #topmenu li{
@@ -242,7 +254,7 @@ img.alignright {
 .nav a{
 	display:block;
 	text-decoration:none;
-    	padding:5px 15px;
+    	padding:5px 20px;
     	font-weight:bold;
 }
 
@@ -253,7 +265,7 @@ img.alignright {
     	/*left:-10px;*/
     	float:left;
     	z-index:99999;
-	background-image:url('img/tbg70.png');
+	background-image:url('img/tbg90.png');
 }
  
 .nav ul ul ul{
@@ -268,7 +280,7 @@ img.alignright {
 }
  
 .nav li:hover > a,.nav ul ul:hover > a{
-		background-image:url('img/tbg70.png');
+		background-image:url('img/tbg50.png');
 }
  
 .nav ul li:hover > ul{
@@ -280,12 +292,17 @@ img.alignright {
 
 
 .post{
-        padding:10px 20px 10px 10px;
-	max-width:450px;
+	overflow: auto;
+	padding:20px;
 }
 
-.post ul li{
+.entry ul li{
 	list-style: square;
+	margin-left:20px;
+}
+
+.entry ol li{
+	list-style: decimal;
 	margin-left:20px;
 }
 
@@ -295,24 +312,24 @@ img.alignright {
 	clear:both;
 }
 
-.archive #content h2{
-padding-left:10px;
+#postmetadata{
+	font-size:85%;
+}
+
+#postmetadata2{
+	text-transform:uppercase;
+	font-size:85%;
 }
 
 .sticky{
-background-image:url('img/tbg30.png');
-}
-
-.sticky h1{
-	font-size: 220%;
+	background-image:url('img/tbg50.png');
 }
 
 blockquote{
-	max-width:450px;
 	margin:10px 0px;
-	padding:5px 5px 40px 5px;
+	padding:10px 10px 40px 10px;
         font-style:italic;
-    	background-image:url('img/tbg30.png');
+	background-image:url('img/btbg10.png');
 }
 
 blockquote:before{ 
@@ -331,15 +348,13 @@ blockquote:after{
 
 address{
 	display: block;
-	max-width:440px;
 	font-style:normal;
 	margin:10px 10px 20px 0px;
 	padding:10px;
-    	background-image:url('img/tbg30.png');
+    	background-image:url('img/btbg10.png');
 }
 
 pre{
-	max-width:440px;
 	padding:10px; 
 	background-image:url('img/btbg30.png');
         letter-spacing:normal;
@@ -347,176 +362,136 @@ pre{
   	overflow: auto;
 }
 
-#postmetadata{
-	padding:5px 0px 5px 0px;
-	text-transform:uppercase;
-	font-size:90%;
+.format-aside{
+	background-image:url('img/red-bg20.png');
+}
+
+.format-chat{
+	background-image:url('img/yell-bg20.png');
+}
+
+.format-audio{
+	background-image:url('img/purple-bg20.png');
+}
+
+.format-video{
+	background-image:url('img/btbg30.png');
+}
+
+.format-link{
+	background-image:url('img/blue-bg20.png');
+}
+
+.format-link .entry a{
+	color:#005886;
+}
+
+.format-image {
+	background-image:url('img/copper-bg20.png');
+}
+
+.format-quote{
+	text-align:auto;
+	background-image:url('img/orange-bg20.png');
+}
+
+.format-quote blockquote{
+        font-style:italic;
+	font-size:150%;
+	background-image: none;
+}
+
+.format-gallery{
+	background-image:url('img/green-bg20.png');
+}
+
+.format-status{
+	background-image:url('img/rose-bg20.png');
 }
 
 .pagenumber{
+	max-width:450px;
 	clear:both;
-	padding:5px 10px;
+	padding:5px 20px;
 	margin-top: 10px;
 }
 
 .pagenumber a{
 	padding:5px 10px;
 	margin: 0px 5px;
-	background-image:url('img/tbg30.png');
+	background-image:url('img/btbg10.png');
 }
 
 .pagenumber a:hover{
-	background-image:url('img/tbg70.png');
-}
-
-.rss{
-	clear:both;
-	padding:5px 10px;
-	margin-top:10px;
+	background-image:url('img/btbg30.png');
 }
 
 .navigation{
-	max-width:440px;
+	max-width:450px;
 	margin:0px;
-	padding:5px 10px;
-}
-
-.archive .post h2{
-	margin:10px 0px 0px 10px;
+	padding:5px 20px;
 }
 
 
 /*SIDEBAR & BANNER*/
 
-#banner-upper{
-	list-style:none;
-	width:100%;
-	float: left;
-	
+.widget{
+	overflow:hidden;
 }
 
-#banner-upper .widget{
-	padding:10px;
-
-}
-
-#banner-bottom{
-	list-style:none;
+#banner{
 	width:100%;
 	float: left;
     	background-image:url('img/tbg30.png');
+	padding:0px;
+	overflow:hidden;
 }
 
-#banner-bottom .widget{
+#banner .widget{
 	width:220px;
 	float:left;
-	padding:10px;
-
+	padding:20px 0px 20px 20px;
 }
 
-#sidebar{
-	float:left;	
-	width:240px;
+#sidebar, #sidebar2{
+	float:left;
+	margin:10px 0px 10px 10px;	
+	max-width:240px;
+	overflow:hidden;
 }
 
 #sidebar .widget{
-	float:left;
-	padding:10px;
+	padding:10px 0px 10px 10px;
 	margin-bottom:10px;
-	width:220px;
+	width:210px;
 }
 
-#sidebar-extra .widget{
-	float:left;
-	padding:10px;
+#sidebar2 .widget{
+	padding:10px 0px 10px 10px;
 	margin-bottom:10px;
-	width:220px;
-}
-
-
-/*COMMENT LIST*/
-
-#comments {
-	clear:both;
-}
-
-ol.commentlist li{
-	margin:0px;
-}
-
-ol.commentlist li.comment{ 
-	clear:both;
-	padding:10px; 
-	background-image:url('img/tbg30.png');
-}
-
-ol.commentlist li.odd{ 
-	background-image:url('img/tbg50.png');
-}
-
-ol.commentlist li.even{ 
-}
-
-.commentlist li.bypostauthor{
-	background-image:url('img/tbg70.png');
-}
-
-ol.commentlist li.comment ul li{ 
-	list-style-type:square;
-	margin-left:20px;
-}
-
-/*FOOTER*/
-
-
-#footer{
-    	clear: both;
-	width:100%;
-	background-image:url('img/tbg30.png');
-}
-
-#footer .widget{
-	width:200px;
-	float:left;
-	padding:10px;
-}
-
-#credits{
-	clear: both;
-	text-align:right;
-	font-size:80%;
-	padding:5px 10px;
+	width:210px;
 }
 
 /*BUTTONS & FORMS*/
 
-#author, 
-#email, 
-#url,
-#comment{
+input,
+textarea {
 	display:block;
 	font-size: 100%;
 	font-family: inherit;
         max-width:450px;
 	overflow: auto;
 	outline: none;
-	background-image:url('img/tbg30.png');
+	background-image:url('img/btbg30.png');
 	border:none;
-}
-
-#respond input[type=text]:focus, textarea:focus {
-  box-shadow: 0 0 5px #FFF;
-  border: 0px;
 }
 
 #searchtextarea{
         font-size:100%;
 	margin:0px 0px 10px 0px;
-	padding:7px;
-	width:180px;
-	background-image:url('img/tbg30.png');
-	color:#222;
-	border:none
+	padding:0px 5px;
+	width:190px;
+	color:#333;
 }
 
 #searchsubmit {
@@ -526,7 +501,7 @@ ol.commentlist li.comment ul li{
 
 input[type="submit"] {
         font-size:100%;
-	background-image:url('img/tbg30.png');
+	background-image:url('img/btbg10.png');
 	margin:5px 0px;
 	padding:7px 14px;
 	border:none
@@ -534,7 +509,7 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
         font-size:100%;
-	background-image:url('img/tbg50.png');
+	background-image:url('img/btbg30.png');
 }
 
 input[type="submit"]:active {
@@ -543,25 +518,81 @@ input[type="submit"]:active {
 }
 
 table{
-	padding: 0px;
-	margin: 0px;
-	max-width:450px;
 	background-image:url('img/tbg30.png');
+	padding:5px;
 }
 
 table th{
-	padding: 10px;
-	margin: 0px;
-
 }
 
 table tr{
-	padding: 10px;
-	margin: 0px;
 }
 
 table td{
-	padding: 10px;
-	margin: 0px;
 	background-image:url('img/tbg30.png');
+}
+
+/*COMMENTS*/
+
+#comments {
+	clear:both;
+}
+
+ol.commentlist li{
+	margin:0px;
+	overflow:hidden;
+}
+
+ol.commentlist li.comment{ 
+	clear:both;
+	padding:10px; 
+	background-image:url('img/tbg50.png');
+}
+
+ol.commentlist li.odd{ 
+	background-image:url('img/btbg10.png');
+}
+
+ol.commentlist li.even{ 
+}
+
+.commentlist li.bypostauthor{
+}
+
+ol.commentlist .pingback,
+ol.commentlist .trackback {
+	padding:10px;
+}
+
+ol.commentlist li.comment ul li{ 
+	list-style:square;
+	margin-left:20px;
+}
+
+ol.commentlist li.comment ol li{ 
+	list-style:decimal;
+	margin-left:20px;
+}
+
+/*FOOTER*/
+
+
+#footer{
+    	clear: both;
+	width:100%;
+	background-image:url('img/btbg10.png');
+	overflow:hidden;
+}
+
+#footer .widget{
+	width:220px;
+	float:left;
+	padding:20px 0px 20px 20px;
+}
+
+#credits{
+	clear: both;
+	text-align:right;
+	font-size:80%;
+	padding:5px 10px;
 }

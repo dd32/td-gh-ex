@@ -10,7 +10,7 @@
 
 <p>Broken link. Check your URL for errors, or try the search box below.</p>
 
-	<?php get_search_form( $echo ); ?>
+	<?php get_search_form(); ?>
 
 	 </div>
 

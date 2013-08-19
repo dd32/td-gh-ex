@@ -53,12 +53,15 @@
 
 	<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 
-		<div id="postmetadata"> 
-			<?php the_category(', '); ?>
-			<?php the_tags(', '); ?>
+		<div id="postmetadata">
 			<a href="<?php the_permalink(', '); ?>"><?php the_time( get_option('date_format') ); ?></a>, 
 			<?php comments_popup_link(' Comment &raquo; ', '1 comment &raquo;', '% comments &raquo;'); ?>
 			<?php edit_post_link(' EDIT '); ?>
+		</div>
+
+		<div id="postmetadata2"> 
+			<?php the_category(', '); ?>
+			<?php the_tags(', '); ?>
 		</div>
       
 		<!--<?php the_excerpt(); ?>-->

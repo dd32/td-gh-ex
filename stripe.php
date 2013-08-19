@@ -1,13 +1,5 @@
-<div id="banner-upper">
-
-<?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('Top') ) : else : ?>
+<?php if ( is_active_sidebar( 'banner-1' ) ) : ?>
+	<div id="banner">
+		<?php dynamic_sidebar( 'banner-1' ); ?>
+	</div>
 <?php endif; ?>
-
-</div>
-
-<div id="banner-bottom">
-
-<?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('Middle') ) : else : ?>
-<?php endif; ?>
-
-</div>

@@ -8,12 +8,15 @@
 
         <a href="<?php the_permalink(); ?>"><h1><?php the_title(); ?></h1></a>
 
-		<div id="postmetadata"> 
-			<?php the_category(', '); ?>
-			<?php the_tags(', '); ?>
+		<div id="postmetadata">
 			<a href="<?php the_permalink(', '); ?>"><?php the_time( get_option('date_format') ); ?></a>, 
 			<?php comments_popup_link(' Comment &raquo; ', '1 comment &raquo;', '% comments &raquo;'); ?>
 			<?php edit_post_link(' EDIT '); ?>
+		</div>
+
+		<div id="postmetadata2"> 
+			<?php the_category(', '); ?>
+			<?php the_tags(', '); ?>
 		</div>
 
             <div class="entry">   
@@ -26,6 +29,7 @@
     	<a href="<?php bloginfo('rss2_url'); ?>">News RSS</a>, 
 	<a href="<?php bloginfo('comments_rss2_url'); ?>">Comments RSS</a>
 	</div>-->
+
 
     </div><!--ends entry-->
 
