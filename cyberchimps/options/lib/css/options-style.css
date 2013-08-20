@@ -14,7 +14,7 @@ ul, ol {
 .cc-options a:hover {
   text-decoration: none!important;
 }
-.cc-options input[type="submit"] {
+.cc-options input[type="submit"], .cc-submenu-links .btn {
   border-color: #2c2c2c;
 }
 .clear {
@@ -409,9 +409,6 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
   font-weight: 100;
   cursor: pointer;
 }
-.cc-content-section h4.heading {
-	width: 90%;
-}
 
 /***************** Footer *********************/
 
@@ -530,6 +527,11 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
   float: left;
   margin-right: 10px;
 }
+.cc-main-content .field-container-wrapper {
+  width: 100%;
+  float: left;
+  clear: left;
+}
 .cc-main-content .field-container {
   float: left;
   clear: left;
@@ -602,7 +604,6 @@ ul.cc-parent > li.cc-active > .cc-menu-arrow {
 }
 /* upload screenshot */
 .screenshot img {
-  width: 100%;
   max-width: 275px;
   height: auto;
   display: block;
@@ -729,7 +730,7 @@ textarea#custom_css, textarea#html_box {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
 }
 
-.arrow {
+.options-arrow {
 	text-align: center;
 	margin-top: 60px;
 }
@@ -769,13 +770,11 @@ img.action {
     background: url("../../../lib/images/uparrow.png") repeat scroll 0 0 transparent;
 }
 
-/************** Welcome Page *****************/
+/* ==================================== Twitter API ================================================== */
 
-#modal_welcome_note {
-  display: none; 
-}
-.toggle-container#modal_welcome_note_display_container {
-	display: none;
+#twitter_help li {
+  margin-left: 20px;
+  list-style: decimal;
 }
 
 /************** Help Page ********************/
@@ -805,6 +804,11 @@ img.action {
 }
 #TB_iframeContent {
   width: 665px!important;
+}
+
+/************** Add Ons ************************/
+.plugins-icon {
+  margin-right: 10px;
 }
 
 /************** Responsive *******************/

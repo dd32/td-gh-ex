@@ -41,9 +41,9 @@ function cyberchimps_comment( $comment, $args, $depth ) {
 		default :
 	?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-		<article id="comment-<?php comment_ID(); ?>" class="comment">
+		<article id="comment-<?php comment_ID(); ?>" class="comment hreview">
 			<footer>
-				<div class="comment-author vcard">
+				<div class="comment-author reviewer vcard">
 					<?php echo get_avatar( $comment, 40 ); ?>
 					<?php printf( '%1$s <span class="says">%2$s</span>', sprintf( '<cite class="fn">%1$s</cite>',
 												get_comment_author_link() ),
@@ -55,7 +55,7 @@ function cyberchimps_comment( $comment, $args, $depth ) {
 				<?php endif; ?>
 
 				<div class="comment-meta commentmetadata">
-					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time pubdate datetime="<?php comment_time( 'c' ); ?>">
+					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>" class="dtreviewed"><time pubdate datetime="<?php comment_time( 'c' ); ?>">
 					<?php
 						/* translators: 1: date, 2: time */
 						printf( __( '%1$s at %2$s', 'cyberchimps' ), get_comment_date(), get_comment_time() ); ?>
@@ -111,40 +111,28 @@ function ifeature_options_theme_name(){
 }
 //Doc's URL
 function ifeature_options_documentation_url() {
-	$url = 'http://cyberchimps.com/help/';
+	$url = 'http://cyberchimps.com/guides/c-free/';
 	return $url;
 }
 // Support Forum URL
 function ifeature_options_support_forum() {
-	$url = 'http://cyberchimps.com/forum/pro/';
-	return $url;
-}
-//Page Options Help URL
-function ifeature_options_page_options_help() {
-	$url = 'http://cyberchimps.com/element-how-tos/';
-	return $url;
-}
-// Slider Options Help URL
-function ifeature_options_slider_options_help() {
-	$url = 'http://cyberchimps.com/faq/how-to-use-the-ifeature-pro-slider/';
+	$url = 'http://cyberchimps.com/forum/free/ifeature-free/';
 	return $url;
 }
 add_filter( 'cyberchimps_current_theme_name', 'ifeature_options_theme_name', 1 );
 add_filter( 'cyberchimps_documentation', 'ifeature_options_documentation_url' );
 add_filter( 'cyberchimps_support_forum', 'ifeature_options_support_forum' );
-add_filter( 'cyberchimps_page_options_help', 'ifeature_options_page_options_help' );
-add_filter( 'cyberchimps_slider_options_help', 'ifeature_options_slider_options_help' );
 
 //upgrade bar
-function ifeature_upgrade_title(){
+function cyberchimps_upgrade_bar_pro_title(){
 	$title = 'iFeature Pro 5';
 	return $title;
 }
 function ifeature_upgrade_link(){
-	$link = 'http://cyberchimps.com/ifeaturepro/';
+	$link = 'http://cyberchimps.com/store/ifeaturepro5/';
 	return $link;
 }
-add_filter( 'cyberchimps_upgrade_pro_title', 'ifeature_upgrade_title' );
+add_filter( 'cyberchimps_upgrade_pro_title', 'cyberchimps_upgrade_bar_pro_title' );
 add_filter( 'cyberchimps_upgrade_link', 'ifeature_upgrade_link' );
 
 // Help Section
@@ -185,6 +173,12 @@ function ifeature_default_background_color() {
 	return $color;
 }
 add_filter( 'default_background_color', 'ifeature_default_background_color' );
+
+// Default for twitter bar handle
+function cyberchimps_twitter_handle_filter() {
+	return 'WordPress';
+}
+add_filter( 'cyberchimps_twitter_handle_filter', 'cyberchimps_twitter_handle_filter' );
 
 // default header option
 function ifeature_header_drag_and_drop_default() {
@@ -326,3 +320,17 @@ function ifeature_add_home_menu( $menu, $args ) {
 	return $menu;
 }
 add_filter( 'wp_nav_menu_items', 'ifeature_add_home_menu', 10, 2 );
+
+/* fix full width container that disappears on horizontal scroll */
+function cyberchimps_full_width_fix() {
+	$responsive_design = cyberchimps_get_option( 'responsive_design' );
+	$min_width = cyberchimps_get_option( 'max_width' );
+	if( ! $responsive_design ) {
+		$style = '<style rel="stylesheet" type="text/css" media="all">';
+		$style .= '.container-full, #footer-widgets-wrapper, #footer-main-wrapper { min-width: '. $min_width . 'px;}';
+		$style .= '</style>';
+		
+		echo $style;
+	}
+}
+add_action( 'wp_head', 'cyberchimps_full_width_fix' );

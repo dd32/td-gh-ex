@@ -1,6 +1,18 @@
 /* Core Stylesheet
 ----------------------------------------------- */
 
+/* Container Full Width that everything is wrapped in */
+.container-full-width {
+	width: 100%;
+}
+.container-full-width:before, .container-full-width:after {
+	display: table;
+	line-height: 0;
+	content: "";
+}
+.container-full-width:after {
+	clear: both;
+}
 /* Text meant only for screen readers */
 .assistive-text {
 	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
@@ -31,3 +43,28 @@
     width: 100%;
 }
 /* CSS to make the video responsive ends */
+/* CSS for the site title, after removing the hgroup tag */
+.hgroup {
+	display: block;
+}
+
+/* ==================================== FOOTER ================================================== */
+
+@import url('http://fonts.googleapis.com/css?family=Bitter');
+
+#after_footer .cc-credit-logo {
+  float: left;
+}
+
+#after_footer .cc-credit-text {
+  margin-top: 5px;
+  margin-left: 5px;
+  font-family: 'Bitter', serif;
+  float: left;
+  color: #9b9c9b;
+}
+
+#after_footer .cc-credit-text span {
+  color: #22699d;
+  font-weight: 200;
+}

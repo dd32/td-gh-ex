@@ -25,16 +25,16 @@ a:visited {
 a:hover {
 	color: #6DA03A;
 }
-h2.entry-title {
+.entry-title {
 	color: #3A6D07;
 }
-h2.entry-title a {
+.entry-title a {
 	color: #3A6D07;
 }
-h2.entry-title a:visited {
+.entry-title a:visited {
 	color: #3A6D07;
 }
-h2.entry-title a:hover {
+.entry-title a:hover {
 	color: #6DA03A;
 }
 
@@ -187,4 +187,16 @@ h2.entry-title a:hover {
 }
 #callout_button a:hover .btn {
 	background-color: #3A6D07;
+}
+
+
+/********************************************************************************************************************/
+/****************************************** ADD ONS *****************************************************************/
+/********************************************************************************************************************/
+
+/*==================================== The Events Calendar ====================================================*/
+.tribe-event-notices {
+	background: #8FC15D;
+    border: 1px solid;
+    border-color: #7faa53 #487021 #487021 #487021;
 }

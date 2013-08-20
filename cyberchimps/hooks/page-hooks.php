@@ -30,20 +30,61 @@ function cyberchimps_page_section_order_action() {
 		$page_section_order = ( $page_section_order == '' ) ? array( 'page_section' ) : $page_section_order;
 		$slider_size = get_post_meta( $post->ID, 'cyberchimps_slider_size', true );
 		if ( is_array($page_section_order) ) {
+		
+			// Check if both of slider and page were active
+			if( in_array( 'page_slider', $page_section_order ) && in_array( 'page_section', $page_section_order ) ) {
+				
+				// Get position of slider and blog post page in the active elements list.
+				$position_slider = array_search( 'page_slider', $page_section_order );
+				$position_page = array_search( 'page_section', $page_section_order );
+			
+				$slider_order = $position_slider > $position_page ? 'after' : 'before';
+				cyberchimps_add_half_slider_action( $slider_order );
+			}
+		
 			foreach ( $page_section_order as $func) {
 			
 				// checks if slider is selected at half size, if it is it removes it so we can display it above page content
-				$func = ( $func == 'page_slider' && $slider_size == 'half' ) ? '' : $func;
-				do_action($func);
+				if( $func == 'page_slider' && $slider_size == 'half' ) {
+					$func = '';
+				}
+				else {
+				?>
+					<div class="container-full-width" id="<?php echo $func; ?>_section">
+						<div class="container">	
+							<div class="container-fluid">
+								<?php
+								do_action($func);
+								?>
+							</div> 	<!-- .container-fluid-->
+						</div> 	<!-- .container -->
+					</div> 	<!-- .container-full-width -->
+				<?php
+				}
 			}
 		}
 	}
 	else {
-		// Get the form to submit password
-		echo get_the_password_form();
+		// Get the form to submit password ?>
+        <div class="container-full-width" id="<?php echo $func; ?>_section">
+						<div class="container">
+							<div class="container-fluid">
+                                <div id="container" class="row-fluid">
+								    <div id="content">
+                                        <article class="post">
+                                    <?php
+								        echo get_the_password_form();
+								    ?>
+                                        </article>
+                                    </div>
+                                </div>
+							</div> 	<!-- .container-fluid-->
+						</div> 	<!-- .container -->
+					</div> 	<!-- .container-full-width -->
+	<?php
 	}	
 }
-add_action('cyberchimps_page_content', 'cyberchimps_page_section_order_action');
+add_action( 'cyberchimps_page_content', 'cyberchimps_page_section_order_action' );
 
 function cyberchimps_page(){ ?>
 <div id="container" <?php cyberchimps_filter_container_class(); ?>>
