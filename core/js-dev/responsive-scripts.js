@@ -645,7 +645,10 @@ jQuery(document).ready(function ($) {
 
 // Stop propagation on click on menu.
 jQuery('.main-nav').click(function(event){
-	event.stopPropagation();
+    var pathname = window.location.pathname;
+	if( pathname != '/wp-admin/customize.php' ){
+		event.stopPropagation();
+	}
 });
 
 // Placeholder
