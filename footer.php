@@ -2,7 +2,7 @@
 /**
  * @package WordPress
  * @subpackage Avedon
- * @since Avedon 1.03
+ * @since Avedon 1.04
  */
 
 ?>
@@ -40,10 +40,10 @@
 
 <footer id="foot" class="row-fluid"><div class="span10 offset1">
 <span class="span11"><?php echo of_get_option('footer_text', 'no entry'); ?></span>
-<span class="span1 pull-right totop"><a href="#"><i class="avedonicon-chevron-up"></i></a></span>
+<span class="span1 pull-right totop hidden-phone"><a href="#"><i class="avedonicon-chevron-up"></i></a></span>
 </div></footer>
 
-<?php if ( of_get_option('show_supersize') ) { get_template_part('helper/super'); get_template_part('helper/superfoot'); } ?>
+<?php if ( of_get_option('show_supersize') ) { get_template_part('helper/superfoot'); get_template_part('helper/super'); } ?>
 <?php wp_footer(); ?>
 </body>
 </html>

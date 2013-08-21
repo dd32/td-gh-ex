@@ -126,7 +126,7 @@ function avedontheme_options() {
 		'name' => __('Navbar Attachment', 'avedon_theme_options'),
 		'desc' => __('Select the placement of your primary menu.', 'avedon_theme_options'),
 		'id' => 'navbar_attachment',
-		'std' => 'navbar-fixed-top',
+		'std' => 'navbar-static-top',
 		'type' => 'select',
 		'options' => $navbar_attachments);
 

@@ -2,7 +2,7 @@
 /**
  * @package WordPress
  * @subpackage Avedon
- * @since Avedon 1.03
+ * @since Avedon 1.04
  */
 ?>
 
