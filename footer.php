@@ -46,7 +46,7 @@
 						  All Rights Reserved.
 						  <?php
 						  }
-						  ?> <span class="brand-note"> | Design by <a href="http://www.opencodez.com/" target="_blank">OpenCodez</a></span>
+						  ?> <span class="brand-note"> | Awakening by <a href="http://www.opencodez.com/" target="_blank">OpenCodez</a></span>
 						  </p>
 					</div>				
 				</div>				

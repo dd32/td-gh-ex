@@ -28,7 +28,6 @@
 if ( ! isset( $content_width ) )
 	$content_width = 625;
 
- if ( ! function_exists( 'awakening_setup' ) ):	
 /**
  * Sets up theme defaults and registers the various WordPress features that
  * Awakening supports.
@@ -83,7 +82,6 @@ function awakening_setup() {
 	set_post_thumbnail_size( 624, 9999 ); // Unlimited height, soft crop	
 
 }
-endif;
 add_action( 'after_setup_theme', 'awakening_setup' );
 
 //Google Custom Search Widget
@@ -361,7 +359,6 @@ function awakening_widgets_init() {
 }
 add_action( 'widgets_init', 'awakening_widgets_init' );
 
-if ( ! function_exists( 'awakening_content_nav' ) ) :
 /**
  * Displays navigation to next/previous pages when applicable.
  *
@@ -371,9 +368,8 @@ function awakening_content_nav( $html_id ) {
 	//Call Custom Pagination here instead of calling it on each and every page where its required
 	custom_pagination();	
 }
-endif;
 
-if ( ! function_exists( 'awakening_comment' ) ) :
+
 /**
  * Template for comments and pingbacks.
  *
@@ -452,9 +448,8 @@ function awakening_comment( $comment, $args, $depth ) {
 		break;
 	endswitch; // end comment_type check
 }
-endif;
 
-if ( ! function_exists( 'awakening_entry_meta' ) ) :
+
 /**
  * Prints HTML with meta information for current post: categories, tags, permalink, author, and date.
  *
@@ -499,7 +494,6 @@ function awakening_entry_meta() {
 		$author
 	);
 }
-endif;
 
 /**
  * Extends the default WordPress body class to denote:
@@ -606,8 +600,6 @@ class theme_navigation extends Walker_Nav_Menu {
 	}
 }
 
-if ( ! function_exists( 'awakening_page_menu' ) ) :
-
 // Create a graceful fallback to wp_page_menu
 function theme_page_menu() {
 
@@ -626,10 +618,6 @@ function theme_page_menu() {
 	wp_page_menu($args);
 }
 
-endif;
-
-
-if ( ! function_exists( 'custom_pagination' ) ) :
 
 function custom_pagination($pages = '', $range = 2)
 {  
@@ -669,11 +657,7 @@ function custom_pagination($pages = '', $range = 2)
          echo "</ul></div> <!-- .pagination-centered -->";
      }
 }
-endif;
-
-
 	
-if ( ! function_exists( 'awakening_wp_head' ) ) :
 function awakening_wp_head() {
 
     // write css depending up on the layout
@@ -685,9 +669,8 @@ function awakening_wp_head() {
 	}
 }
 add_action( 'wp_head', 'awakening_wp_head');
-endif;	
 
-if ( ! function_exists( 'awakening_wp_footer' ) ) :
+
 function awakening_wp_footer() {
 	$tracking_code = of_get_option('google_analytics_code'); 
 	if(isset($tracking_code)) {
@@ -700,21 +683,12 @@ function awakening_wp_footer() {
 	<?php
 }
 add_action( 'wp_footer', 'awakening_wp_footer',100);
-endif;	
-
-if ( ! function_exists( 'awakening_excerpt_read_more' ) ) :
 
 function awakening_excerpt_read_more($text) {
    return str_replace('[...]', '<span><a href="'.get_permalink().'" class="readmore">Continue reading &rarr;</a></span>', $text); }
 add_filter('the_excerpt', 'awakening_excerpt_read_more');
 
-endif;
-
-if ( ! function_exists( 'awakening_custom_excerpt_length' ) ) :
-
 function awakening_custom_excerpt_length($length) {
 	return 85;
 }
 add_filter('excerpt_length', 'awakening_custom_excerpt_length');
-
-endif;

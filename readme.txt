@@ -1,4 +1,4 @@
-Awakening 1.3.7
+Awakening 1.3.8
 ===============
 The Awakening theme for WordPress is a fully responsive theme developed on top 
 of <a href="http://foundation.zurb.com/">Foundation Framework</a> that looks great 
@@ -23,3 +23,5 @@ Revision History
 1.3.5	2013-08-20	Fixed minor bug in footer copyright text
 1.3.6	2013-08-20	Fixed minor bug in footer copyright text
 1.3.7	2013-08-21	Added CSS to fit videos in post
+1.3.8	2013-08-22	Removed function_exists wrapper
+					Changed footer credit text
