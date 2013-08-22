@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row" >
     
-    <div class="pin-article <?php echo wip_template('span') . " ". wip_template('sidebar'); ?>" >
+    <div class="pin-article <?php echo suevafree_template('span') . " ". suevafree_template('sidebar'); ?>" >
 		
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         
@@ -29,7 +29,7 @@
 					
 					wp_link_pages(); 
 					
-					if (wip_setting('wip_view_comments') == "on" ) :
+					if (suevafree_setting('suevafree_view_comments') == "on" ) :
 						comments_template();
 					endif;
 					
@@ -42,11 +42,11 @@
     </div>
     
 
-	<?php if ( ( is_active_sidebar(wip_postmeta('wip_sidebar')) ) && ( wip_template('span') == "span8" ) ) : ?>
+	<?php if ( ( is_active_sidebar(suevafree_postmeta('suevafree_sidebar')) ) && ( suevafree_template('span') == "span8" ) ) : ?>
         
         <section id="sidebar" class="pin-article span4">
             <div class="sidebar-box">
-            	<?php dynamic_sidebar(wip_postmeta('wip_sidebar')) ?>
+            	<?php dynamic_sidebar(suevafree_postmeta('suevafree_sidebar')) ?>
             </div>
         </section>
     

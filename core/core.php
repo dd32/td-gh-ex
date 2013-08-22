@@ -5,9 +5,9 @@
 /* Theme name */
 /*-----------------------------------------------------------------------------------*/ 
 
-function wip_themename() {
+function suevafree_themename() {
 	
-	$themename = "suevafree_theme_settings";
+	$themename = "sueva_theme_settings";
 	return $themename;	
 	
 }
@@ -16,11 +16,11 @@ function wip_themename() {
 /* Theme settings */
 /*-----------------------------------------------------------------------------------*/ 
 
-function wip_setting($id) {
+function suevafree_setting($id) {
 
-	$wip_setting = get_option(wip_themename());
-	if(isset($wip_setting[$id]))
-		return $wip_setting[$id];
+	$suevafree_setting = get_option(suevafree_themename());
+	if(isset($suevafree_setting[$id]))
+		return $suevafree_setting[$id];
 
 }
 
@@ -28,7 +28,7 @@ function wip_setting($id) {
 /* Post meta */
 /*-----------------------------------------------------------------------------------*/ 
 
-function wip_postmeta($id) {
+function suevafree_postmeta($id) {
 
 	global $post;
 	
@@ -42,31 +42,37 @@ function wip_postmeta($id) {
 /* Content template */
 /*-----------------------------------------------------------------------------------*/ 
 
-function wip_template($id) {
+function suevafree_template($id) {
 
-	$template = array ("full" => "span12" , "left-sidebar" => "span8" , "right-sidebar" => "span8" );
 	
-	if ( (is_category()) || (is_tag()) ):
+		$template = array ("full" => "span12" , "left-sidebar" => "span8" , "right-sidebar" => "span8" );
 	
-		$span = $template[wip_setting('wip_category_layout')];
-		$sidebar =  wip_setting('wip_category_layout');
+		if ( (is_category()) || (is_tag()) ) {
 		
-	else:
-	
-		$span = $template[wip_postmeta('wip_template')];
-		$sidebar =  wip_postmeta('wip_template');
+			$span = $template[suevafree_setting('suevafree_category_layout')];
+			$sidebar =  suevafree_setting('suevafree_category_layout');
+			
+		} else if (suevafree_postmeta('suevafree_template')) {
 		
-	endif;
+			$span = $template[suevafree_postmeta('suevafree_template')];
+			$sidebar =  suevafree_postmeta('suevafree_template');
+			
+		} else if (!suevafree_postmeta('suevafree_template')) {
+		
+			$span = $template["full"];
+			$sidebar =  "full";
+			
+		}
 	
-	return ${$id};
-	
+		return ${$id};
+
 }
 
 /*-----------------------------------------------------------------------------------*/
 /* Request */
 /*-----------------------------------------------------------------------------------*/ 
 
-function wip_request($id) {
+function suevafree_request($id) {
 	
 	if ( isset ( $_REQUEST[$id])) 
 	return $_REQUEST[$id];	
@@ -79,6 +85,28 @@ function wip_request($id) {
 
 if ( ! isset( $content_width ) )
 	$content_width = 940;
+
+/*-----------------------------------------------------------------------------------*/
+/* SCRIPTS */
+/*-----------------------------------------------------------------------------------*/ 
+
+function suevafree_enqueue_scripts_styles() {
+
+	wp_enqueue_style( "bootstrap", get_template_directory_uri()."/css/bootstrap.min.css");
+	wp_enqueue_style( "bootstrap-responsive", get_template_directory_uri()."/css/bootstrap-responsive.min.css");
+	wp_enqueue_style( "font-awesome.min", get_template_directory_uri()."/css/font-awesome.min.css");
+	wp_enqueue_style( "fonts.googleapis", "http://fonts.googleapis.com/css?family=Maven+Pro|Abel|Oxygen|Allura|Handlee");
+	wp_enqueue_style( "prettyPhoto", get_template_directory_uri()."/css/prettyPhoto.css");
+	wp_enqueue_script( 'jquery.tipsy', get_template_directory_uri().'/js/jquery.tipsy.js',array('jquery'),"1.0.0",TRUE  ); 
+	wp_enqueue_script( 'jquery.mobilemenu', get_template_directory_uri().'/js/jquery.mobilemenu.js',array('jquery'),"1.0.0",TRUE );
+	wp_enqueue_script( 'jquery.prettyPhoto', get_template_directory_uri().'/js/jquery.prettyPhoto.js',array('jquery'),"1.0.0",TRUE ); 
+	wp_enqueue_script( 'jquery.custom', get_template_directory_uri().'/js/jquery.custom.js',array('jquery') ,"1.0.0",TRUE); 
+	wp_enqueue_script( 'comment-reply' );
+	wp_enqueue_script('jquery'); 
+	
+}
+
+add_action( 'wp_enqueue_scripts', 'suevafree_enqueue_scripts_styles' );
 
 
 /*-----------------------------------------------------------------------------------*/
@@ -110,47 +138,49 @@ if ( is_admin() && isset($_GET['activated'] ) && $pagenow == 'themes.php' )
 
 {
 	
-	$wip_setting = get_option(wip_themename());
+	$suevafree_setting = get_option(suevafree_themename());
 
-	if (!$wip_setting) {	
+	if (!$suevafree_setting) {	
 	
 	$skins = array( 
 	
-    "wip_skins" => "Orange", 
-    "wip_logo_font" => "Allura", 
-    "wip_logo_font_size" => "70px", 
-    "wip_logo_description_font" => "Abel", 
-    "wip_logo_description_font_size" => "14px", 
+    "suevafree_skins" => "Orange", 
+    "suevafree_logo_font" => "Allura", 
+    "suevafree_logo_font_size" => "70px", 
+    "suevafree_logo_description_font" => "Abel", 
+    "suevafree_logo_description_font_size" => "14px", 
 	
-    "wip_menu_font" => "Abel", 
-    "wip_menu_font_size" => "18px", 
+    "suevafree_menu_font" => "Abel", 
+    "suevafree_menu_font_size" => "18px", 
 	
-    "wip_titles_font" => "Abel", 
+    "suevafree_titles_font" => "Abel", 
 	
-    "wip_text_font_color" => "#616161", 
-    "wip_copyright_font_color" => "#ffffff", 
-    "wip_link_color" => "#ff6644", 
-    "wip_link_color_hover" => "#d14a2b", 
-    "wip_border_color" => "#ff6644", 
+    "suevafree_text_font_color" => "#616161", 
+    "suevafree_copyright_font_color" => "#ffffff", 
+    "suevafree_link_color" => "#ff6644", 
+    "suevafree_link_color_hover" => "#d14a2b", 
+    "suevafree_border_color" => "#ff6644", 
 
-	"wip_body_background" => "/images/background/patterns/grid.png",
-	"wip_body_background_repeat" => "repeat",
-	"wip_body_background_color" => "#f3f3f3",
+	"suevafree_body_background" => "/images/background/patterns/grid.png",
+	"suevafree_body_background_repeat" => "repeat",
+	"suevafree_body_background_color" => "#f3f3f3",
 	
-	"wip_footer_background" => "/images/background/patterns/debut_dark.png",
-	"wip_footer_background_repeat" => "repeat",
-	"wip_footer_background_color" => "#f3f3f3",
+	"suevafree_footer_background" => "/images/background/patterns/debut_dark.png",
+	"suevafree_footer_background_repeat" => "repeat",
+	"suevafree_footer_background_color" => "#f3f3f3",
 
 	"home-default" => "default",
-	"wip_footer_facebook_button" => "http://www.facebook.com/WpInProgress",
-	"wip_footer_twitter_button" => "https://twitter.com/#!/WPinProgress",
-	"wip_footer_skype_button" => "alexvtn",
-	"wip_view_comments" => "on",
-	"wip_view_social_buttons" => "on",
-	
+	"suevafree_footer_facebook_button" => "#",
+	"suevafree_footer_twitter_button" => "#",
+	"suevafree_footer_skype_button" => "#",
+	"suevafree_view_comments" => "on",
+	"suevafree_view_social_buttons" => "on",
+	"suevafree_footer_rss_button" => "on",
+	"suevafree_category_layout" => "full",
+
 	);
 
-	update_option( wip_themename(), $skins ); 
+	update_option( suevafree_themename(), $skins ); 
 	
 }
 }
@@ -252,38 +282,26 @@ function childtheme_dropdown_options($dropdown_options) {
 
 add_filter('thematic_dropdown_options','childtheme_dropdown_options');
 
-/*-----------------------------------------------------------------------------------*/
-/* Analytics code */
-/*-----------------------------------------------------------------------------------*/ 
-
-function analytics_code() {
-
-	if(wip_setting('wip_analytics_code'))
-	echo stripslashes( wip_setting('wip_analytics_code'));
-}
-
-add_action('wp_footer', 'analytics_code');
-
 
 /*-----------------------------------------------------------------------------------*/
 /* Socials */
 /*-----------------------------------------------------------------------------------*/ 
 
-function socials() {
+function suevafree_socials() {
 	
 	$socials = array ("facebook","twitter","flickr","google","linkedin","myspace","pinterest","tumblr","youtube","vimeo","skype","email");
 	
 	foreach ( $socials as $social ) 
 	
 	{
-		if (wip_setting('wip_footer_'.$social.'_button')): 
+		if (suevafree_setting('suevafree_footer_'.$social.'_button')): 
 		if ($social == "email") $email = "mailto:"; else $email = "";
 		if ($social == "skype") $skype = "skype:"; else $skype = "";
-            echo '<a href="'.$email.$skype.wip_setting('wip_footer_'.$social.'_button').'" target="_blank" title="'.$social.'" class="social '.$social.'"> '.$social.'  </a> ';
+            echo '<a href="'.$email.$skype.suevafree_setting('suevafree_footer_'.$social.'_button').'" target="_blank" title="'.$social.'" class="social '.$social.'"> '.$social.'  </a> ';
 		endif;
 	}
 	
-	if (wip_setting('wip_footer_rss_button') == "on"): 
+	if (suevafree_setting('suevafree_footer_rss_button') == "on"): 
     	echo '<a href="'; bloginfo('rss2_url'); echo '" title="Rss" class="social rss"> Rss  </a> ';
 	endif; 
 }

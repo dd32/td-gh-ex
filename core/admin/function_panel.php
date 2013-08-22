@@ -29,21 +29,21 @@ function save_option ( $panel ) {
 	
 	global $message_action;
 	
-	$wip_setting = get_option( wip_themename() );
+	$suevafree_setting = get_option( suevafree_themename() );
 	
-	if ( $wip_setting != false ) 
+	if ( $suevafree_setting != false ) 
 						
 		{
-			$wip_setting = maybe_unserialize( $wip_setting );
+			$suevafree_setting = maybe_unserialize( $suevafree_setting );
 		} 
 						
 	else 
 						
 		{
-			$wip_setting = array();
+			$suevafree_setting = array();
 		}      
 		
-	if ( "Save" == wip_request('action') )
+	if ( "Save" == suevafree_request('action') )
 
 	{
 				
@@ -59,8 +59,8 @@ function save_option ( $panel ) {
 						if ( $_REQUEST['element-opened'] == "Skins" )
 		
 							{
-								require_once dirname(__FILE__) . '/option/skins.php';
-								update_option( wip_themename(), array_merge( $wip_setting  ,$current) );
+								require_once get_template_directory() . '/core/admin/option/skins.php';
+								update_option( suevafree_themename(), array_merge( $suevafree_setting  ,$current) );
 								break;
 							} 
 						
@@ -68,7 +68,7 @@ function save_option ( $panel ) {
 			
 							{	
 								$current[$value["id"]] = $_REQUEST[$value["id"]]; 
-								update_option( wip_themename(), array_merge( $wip_setting  ,$current) );
+								update_option( suevafree_themename(), array_merge( $suevafree_setting  ,$current) );
 							}
 							
 								
@@ -97,8 +97,8 @@ function themeoption()
 	{
 
 		$themename = "Sueva";
-		$shortname = "wip";
-		require_once dirname(__FILE__) . '/option/options.php';   
+		$shortname = "suevafree";
+		require_once get_template_directory() . '/core/admin/option/options.php';   
 
 	}
 

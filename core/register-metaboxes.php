@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname(__FILE__) . '/metaboxes-fields.php';
+require_once get_template_directory() . '/core/metaboxes-fields.php';
 
 function addmetabox()
 {
@@ -52,23 +52,6 @@ function content( $post, $post_id )
     
     
 	<?php break;
-	
-	case 'wip_gallery': ?>
-		 
- 	<p class="wip_input">
-		
-		<div class="input-left">
-            <label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label><br />
-            <em> <?php echo $value['desc']; ?> </em>
-		</div>
-		<div class="input-right">
-            <input type="button" class="button" name="_zilla_image_upload" id="wipgallery_upload" value="Upload Images">
-            <input type="hidden" name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" value="<?php if ( get_post_meta( $post->ID , $value['id'] , TRUE) != "") { echo get_post_meta( $post->ID , $value['id'] , TRUE); } else { echo $value['std']; } ?>">
-		</div>
-        <div class="clear"></div>
-	</p>
-
-	<?php break;
 		  case 'text':  
 	?>
 
@@ -83,27 +66,6 @@ function content( $post, $post_id )
 		</div>
         <div class="clear"></div>
 	</p>
-
-	<?php break;
-	case 'taxonomy-select':  
-	
-	$slideshows = get_terms("slideshows");
-	foreach ($slideshows as $slideshow)	
-		{
-        	$wp_terms[$slideshow->term_id] = $slideshow->name;
-		}
-	?>
-    
- 	<p class="wip_input">
-		<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
-		<select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" style="width:100%">
-        	<option value="all"> All </option>
-			<?php foreach ( $wp_terms as $option => $values) { ?>
-			<option <?php if (get_post_meta( $post->ID , $value['id'] , TRUE) == $option) { echo 'selected="selected"'; } ?> value="<?php echo $option; ?>"><?php echo $values; ?></option><?php } ?>
-		</select>
-        <em> <?php echo $value['desc']; ?> </em>
-	</p>
-
 
 	<?php break;
 			
@@ -122,25 +84,6 @@ function content( $post, $post_id )
 	</p>
 			
 	<?php break;
-			
-	case "upload": ?>
-		
-	<?php if (isset( $value['class'] )) { $classe = " ".$value['class']; } ?>
-		
- 	<div class="wip_inputbox wip_input">
-		
-		<div class="input-left">
-            <label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
-            <em> <?php echo $value['desc']; ?> </em>
-		</div>
-		<div class="input-right">
-            <input id="<?php echo $value['id']; ?>" type="text" name="<?php echo $value['id']; ?>" class="idattachment" value="<?php if ( get_post_meta( $post->ID , $value['id'] , TRUE) != "") { echo get_post_meta( $post->ID , $value['id'] , TRUE) ; } else { echo $value['std']; } ?>" />
-            <input type="button" name="just_button" class="button" value="<?php esc_attr_e('Upload'); ?>" />
-		</div>
-        <div class="clear"></div>
-	</div>
-        
-	<?php break; 
 		
 		}
 	}
@@ -205,27 +148,6 @@ function page( $post, $post_id )
 		</div>
         <div class="clear"></div>
 	</p>
-
-	<?php break;
-	case 'taxonomy-select':  
-	
-	$slideshows = get_terms("slideshows");
-	foreach ($slideshows as $slideshow)	
-		{
-        	$wp_terms[$slideshow->term_id] = $slideshow->name;
-		}
-	?>
-    
- 	<p class="wip_input">
-		<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
-		<select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" style="width:100%">
-        	<option value="all"> All </option>
-			<?php foreach ( $wp_terms as $option => $values) { ?>
-			<option <?php if (get_post_meta( $post->ID , $value['id'] , TRUE) == $option) { echo 'selected="selected"'; } ?> value="<?php echo $option; ?>"><?php echo $values; ?></option><?php } ?>
-		</select>
-        <em> <?php echo $value['desc']; ?> </em>
-	</p>
-
 
 	<?php break;
 			

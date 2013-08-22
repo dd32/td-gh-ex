@@ -11,18 +11,18 @@
 */
 
 /* CORE */
-require_once dirname(__FILE__) . '/core/core.php';
+require_once get_template_directory() . '/core/core.php';
 
 /* STYLE  */
-require_once dirname(__FILE__) . '/core/add-style.php';
+require_once get_template_directory() . '/core/add-style.php';
 
 /* WIDGET  */
-require_once dirname(__FILE__) . '/core/add-widgets.php';
-require_once dirname(__FILE__) . '/core/register-metaboxes.php';
-require_once dirname(__FILE__) . '/core/admin/function_panel.php';
+require_once get_template_directory() . '/core/add-widgets.php';
+require_once get_template_directory() . '/core/register-metaboxes.php';
+require_once get_template_directory() . '/core/admin/function_panel.php';
 
 /* SHORTCODE */
-require_once dirname(__FILE__) . '/core/register-shortcode.php';
+require_once get_template_directory() . '/core/register-shortcode.php';
 
 
 ?>

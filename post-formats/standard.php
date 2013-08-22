@@ -20,10 +20,10 @@
     
     <div class="line"> 
 
-        <div class="entry-info <?php if (wip_setting('wip_view_comments') == "on" ) echo "viewcomments"; ?>">
+        <div class="entry-info <?php if (suevafree_setting('suevafree_view_comments') == "on" ) echo "viewcomments"; ?>">
        
             <span class="entry-date"><?php echo get_the_date(); ?></span>
-            <?php if (wip_setting('wip_view_comments') == "on" ): ?>
+            <?php if (suevafree_setting('suevafree_view_comments') == "on" ): ?>
             <span class="entry-comments"><?php echo comments_number( '<a href="'.get_permalink($post->ID).'#respond">'.__( "No comments","wip").'</a>', '<a href="'.get_permalink($post->ID).'#comments">1 '.__( "comment","wip").'</a>', '<a href="'.get_permalink($post->ID).'#comments">% '.__( "comments","wip").'</a>' ); ?></span>
             <?php endif; ?>
             <span class="entry-standard">Article</span>
@@ -45,11 +45,11 @@
 
 		the_tags( '<footer class="line"><div class="entry-info"><span class="tags">Tags: ', ', ', '</span></div></footer>' );
 		
-		if (wip_setting('wip_view_social_buttons') == "on" ) :
+		if (suevafree_setting('suevafree_view_social_buttons') == "on" ) :
 			get_template_part('socialbuttons');
 		endif;
 		
-		if (wip_setting('wip_view_comments') == "on" ) :
+		if (suevafree_setting('suevafree_view_comments') == "on" ) :
 			comments_template();
 		endif;
 		

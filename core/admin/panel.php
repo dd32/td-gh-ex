@@ -4,7 +4,7 @@
 	
 	save_option ( $panel );
 
-	$wip_setting = get_option( wip_themename() );
+	$suevafree_setting = get_option( suevafree_themename() );
 
 	if (!isset($_GET['tab']))  { $_GET['tab'] = "General"; }
 	
@@ -26,7 +26,7 @@
 				
    				foreach ($element['item'] as $option => $name ) {
 					if (str_replace(" ", "", $option) == $_GET['tab'] ) $class = "class='ui-state-active'"; else $class = ""; 
-					echo "<li ".$class."><a href='index.php?page=themeoption&tab=".str_replace(" ", "", $option)."'>".$name."</a></li>";
+					echo "<li ".$class."><a href='themes.php?page=themeoption&tab=".str_replace(" ", "", $option)."'>".$name."</a></li>";
 				}
 				?>
                
@@ -73,7 +73,7 @@
 			
 					<?php 
 		
-						if ( ('Save' == wip_request('action'))  && ( $value['id'] == wip_request('element-opened')) ) { 
+						if ( ('Save' == suevafree_request('action'))  && ( $value['id'] == suevafree_request('element-opened')) ) { 
 							$class=" inactive"; $style='style="display:block;"'; } else { $class="";  $style=''; 
 						}  
 			
@@ -115,9 +115,9 @@
 		
 							$checked ='';
 		
-							if ( wip_setting($value['id']) != false ) {
+							if ( suevafree_setting($value['id']) != false ) {
 		
-								foreach (wip_setting($value['id']) as $check ) { 
+								foreach (suevafree_setting($value['id']) as $check ) { 
 		
 								if ($check == $val )  { $checked ='checked="checked"'; } } 
 		
@@ -140,9 +140,9 @@
 		
 							$checked ='';
 		
-							if ( wip_setting($value['id']) != false ) {
+							if ( suevafree_setting($value['id']) != false ) {
 		
-								foreach (wip_setting($value['id']) as $check ) { 
+								foreach (suevafree_setting($value['id']) as $check ) { 
 		
 								if ($check == $page->ID )  { $checked ='checked="checked"'; } } 
 		
@@ -164,7 +164,7 @@
 		
 							<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
 							
-							<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php if ( wip_setting($value['id']) != "") { echo stripslashes(wip_setting($value['id'])); } else { echo $value['std']; } ?>" />
+							<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php if ( suevafree_setting($value['id']) != "") { echo stripslashes(suevafree_setting($value['id'])); } else { echo $value['std']; } ?>" />
 							
 							<p> <?php echo $value['desc']; ?> </p>
 		
@@ -192,7 +192,7 @@
 		
 							<label for="bl_custom_style"> <?php echo $value['name']; ?> </label>
 							
-							<textarea name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" cols="" rows=""><?php if ( wip_setting($value['id']) != "") { echo stripslashes(wip_setting($value['id'])); } else { echo $value['std']; } ?></textarea>
+							<textarea name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" cols="" rows=""><?php if ( suevafree_setting($value['id']) != "") { echo stripslashes(suevafree_setting($value['id'])); } else { echo $value['std']; } ?></textarea>
 		
 							<p><?php echo $value['desc']; ?></p>
 		
@@ -206,11 +206,11 @@
 		
 							<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
 		
-                            <div class="bool-slider <?php if ( wip_setting($value['id']) != "") { echo stripslashes(wip_setting($value['id'])); } else { echo $value['std']; } ?>">
+                            <div class="bool-slider <?php if ( suevafree_setting($value['id']) != "") { echo stripslashes(suevafree_setting($value['id'])); } else { echo $value['std']; } ?>">
                                 <div class="inset">
                                     <div class="control"></div>
                                 </div>
-                                <input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" class="on-off" type="hidden" value="<?php if ( wip_setting($value['id']) != "") { echo stripslashes(wip_setting($value['id'])); } else { echo $value['std']; } ?>" />
+                                <input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" class="on-off" type="hidden" value="<?php if ( suevafree_setting($value['id']) != "") { echo stripslashes(suevafree_setting($value['id'])); } else { echo $value['std']; } ?>" />
                             </div>  
                             
                             <div class="clear"></div>      
@@ -227,7 +227,7 @@
 		
 							<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
 		
-							<select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>"><?php foreach ($value['options'] as $option) { ?><option<?php if ( wip_setting($value['id']) == get_cat_id($option)) { echo ' selected="selected"'; } elseif ($option == $value['std']) { echo ' selected="selected"'; } ?> value="<?php echo get_cat_id($option); ?>" ><?php echo $option; ?></option><?php } ?></select>
+							<select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>"><?php foreach ($value['options'] as $option) { ?><option<?php if ( suevafree_setting($value['id']) == get_cat_id($option)) { echo ' selected="selected"'; } elseif ($option == $value['std']) { echo ' selected="selected"'; } ?> value="<?php echo get_cat_id($option); ?>" ><?php echo $option; ?></option><?php } ?></select>
 		 
 							<p><?php echo $value['desc']; ?></p>
 		
@@ -245,7 +245,7 @@
 							
 							<?php foreach ( $value['options'] as $val => $option ) { ?>  
 							
-							<option <?php if (( wip_setting( $value['id'] ) == $val) || ( ( !wip_setting($value['id'])) && ( $value['std'] == $val) )) { echo 'selected="selected"'; } ?> value="<?php echo $val; ?>"><?php echo $option; ?></option><?php } ?>  
+							<option <?php if (( suevafree_setting( $value['id'] ) == $val) || ( ( !suevafree_setting($value['id'])) && ( $value['std'] == $val) )) { echo 'selected="selected"'; } ?> value="<?php echo $val; ?>"><?php echo $option; ?></option><?php } ?>  
 							</select>  
 		 
 							<p><?php echo $value['desc']; ?></p>

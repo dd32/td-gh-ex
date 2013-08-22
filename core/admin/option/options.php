@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname(__FILE__) . '/default.php';
+require_once get_template_directory() . '/core/admin/option/default.php';
 
 $panel = array (
 
@@ -216,12 +216,6 @@ array( "type" => "begintab",
 	       "type" => "on-off",
 	       "std" => "1"),
 		   
-	array( "name" => __( "Google analytics","wip"),
-	       "desc" => __( "You can paste the google analytics code.","wip"),
-	       "id" => $shortname."_analytics_code",
-	       "type" => "textarea",
-	       "std" => ""),
-		   
 	array( "type" => "save-button",
 	       "value" => "Save",
 	       "class" => "General"),
@@ -292,20 +286,6 @@ array( "type" => "begintab",
 	array( "type" => "end"),
 
 /* END MENU FONT */ 
-
-/* START TITLE FONT */ 
-	   
-	array( "type" => "start",
-	       "id" => "Title fonts",
-	       "name" => __( "Titles font","wip")),
-
-	array( "type" => "save-button",
-	       "value" => "Save",
-	       "class" => "Titles font"),
-
-	array( "type" => "end"),
-
-/* END TITLE FONT */ 
 
 /* START HEADLINE FONT SIZES */ 
 	   
@@ -581,7 +561,7 @@ array( "type" => "endpanel"),
 
 );
 
-require_once dirname(__FILE__) . '/../panel.php'; 
+require_once get_template_directory() . '/core/admin/panel.php';
 
 thepane( $panel ); 
 

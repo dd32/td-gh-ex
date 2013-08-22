@@ -5,7 +5,7 @@
 <div class="container">
 	<div class="row">
        
-    <div <?php post_class(array('pin-article', wip_template('span') , wip_template('sidebar'))); ?> >
+    <div <?php post_class(array('pin-article', suevafree_template('span') , suevafree_template('sidebar'))); ?> >
 		
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         
@@ -15,11 +15,11 @@
         
     </div>
 
-	<?php if ( ( is_active_sidebar(wip_postmeta('wip_sidebar')) ) && ( wip_template('span') == "span8" ) ) : ?>
+	<?php if ( ( is_active_sidebar(suevafree_postmeta('suevafree_sidebar')) ) && ( suevafree_template('span') == "span8" ) ) : ?>
         
         <section id="sidebar" class="pin-article span4">
             <div class="sidebar-box">
-            	<?php dynamic_sidebar(wip_postmeta('wip_sidebar')) ?>
+            	<?php dynamic_sidebar(suevafree_postmeta('suevafree_sidebar')) ?>
             </div>
         </section>
     

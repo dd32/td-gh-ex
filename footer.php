@@ -16,8 +16,8 @@
          <div class="row copyright" >
             <div class="span5" >
             <p>
-				<?php if (wip_setting('wip_copyright_text')): ?>
-                   <?php echo stripslashes(wip_setting('wip_copyright_text')); ?>
+				<?php if (suevafree_setting('suevafree_copyright_text')): ?>
+                   <?php echo stripslashes(suevafree_setting('suevafree_copyright_text')); ?>
                 <?php else: ?>
                    Copyright <?php echo get_bloginfo("name"); ?> <?php echo date("Y"); ?> 
                 <?php endif; ?>
@@ -27,7 +27,7 @@
             <div class="span7" >
                 <!-- start social -->
                 <div class="socials">
-                    <?php socials(); ?>
+                    <?php suevafree_socials(); ?>
                 </div>
                 <!-- end social -->
 
