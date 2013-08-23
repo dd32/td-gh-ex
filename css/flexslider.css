@@ -97,6 +97,7 @@ html[xmlns] .slides {
 
 .flexslider .slides {
 	list-style: none;
+	padding-left: 0 !important;
 	zoom: 1;
 }
 
@@ -118,7 +119,7 @@ html[xmlns] .slides {
 
 /* IE rgba() hack */
 
-.flexslider   .flexslider .flex-caption {
+.flexslider .flex-caption {
 	background: none;
 	-ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#80000000,endColorstr=#80000000);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#80000000,endColorstr=#80000000);

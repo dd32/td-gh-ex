@@ -1,23 +1,29 @@
 		<?php $sidebars_widgets = wp_get_sidebars_widgets(); ?>
-		
+
+
+
 		<?php if(!empty($sidebars_widgets['site-footer'])) : ?>
-			<div id="footer-widgets">
-				<div id="footer-widgets-wrapper">
-					<?php dynamic_sidebar('Footer') ?>
-					<div class="clear"></div>
-				</div>
-			</div>
-		<?php endif; ?>
-	</div>
-	
-	<div id="footer">
-		<?php if(siteorigin_setting('text_copyright') != '') : ?>
-			<div class="copyright"><?php echo wp_kses_post(siteorigin_setting('text_copyright')) ?></div>
+
+			<?php do_action('origami_before_footer_widgets') ?>
+
+			<?php get_template_part('parts/footer-widgets') ?>
+
+			<?php do_action('origami_after_footer_widgets') ?>
+
 		<?php endif; ?>
 
-		<?php origami_attribution_footer('<div class="designed">', '</div>') ?>
-		<div class="clear"></div>
+		<?php do_action('origami_bottom_page_container') ?>
+
 	</div>
+
+	<?php do_action('origami_after_page_container') ?>
+
+	<?php do_action('origami_before_footer') ?>
+
+	<?php get_template_part('parts/footer-copyright') ?>
+
+	<?php do_action('origami_after_footer') ?>
+
 </div>
 
 <?php wp_footer() ?>

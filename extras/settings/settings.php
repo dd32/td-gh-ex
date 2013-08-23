@@ -10,8 +10,14 @@
  * Intialize the theme settings page
  *
  * @param $theme_name
+ * @action after_setup_theme
  */
 function siteorigin_settings_init( $theme_name = null ) {
+	// Ensure this is only run once
+	static $run;
+	if(!empty($run)) return;
+	$run = true;
+
 	if ( empty( $theme_name ) ) {
 		$theme_name = basename( get_template_directory() );
 	}
@@ -19,7 +25,15 @@ function siteorigin_settings_init( $theme_name = null ) {
 	$GLOBALS['siteorigin_settings_theme_name'] = $theme_name;
 	$GLOBALS['siteorigin_settings_name'] = $theme_name . '_theme_settings';
 	$GLOBALS['siteorigin_settings_defaults'] = apply_filters( 'siteorigin_theme_default_settings', array() );
-	$GLOBALS['siteorigin_settings'] = wp_parse_args( get_option( $theme_name . '_theme_settings', array() ), $GLOBALS['siteorigin_settings_defaults'] );
+
+	$settings = get_option( $theme_name . '_theme_settings', array() );
+	// Remove any settings with a -1 value
+	foreach($settings as $name => $value) {
+		if (intval($value) === -1) {
+			unset($settings[$name]);
+		}
+	}
+	$GLOBALS['siteorigin_settings'] = wp_parse_args( $settings, $GLOBALS['siteorigin_settings_defaults'] );
 
 	// Register all the actions for the settings page
 	add_action( 'admin_menu', 'siteorigin_settings_admin_menu' );
@@ -29,6 +43,7 @@ function siteorigin_settings_init( $theme_name = null ) {
 	add_action( 'admin_enqueue_scripts', 'siteorigin_settings_enqueue_scripts' );
 	add_action( 'wp_enqueue_scripts', 'siteorigin_settings_enqueue_front_scripts' );
 }
+add_action('after_setup_theme', 'siteorigin_settings_init', 5);
 
 /**
  * Initialize admin settings in the admin
@@ -37,6 +52,8 @@ function siteorigin_settings_init( $theme_name = null ) {
  */
 function siteorigin_settings_admin_init() {
 	register_setting( 'theme_settings', $GLOBALS['siteorigin_settings_name'], 'siteorigin_settings_validate' );
+	if(get_theme_mod('version_activated', false) === false)
+		set_theme_mod('version_activated', SITEORIGIN_THEME_VERSION);
 }
 
 /**
@@ -45,7 +62,14 @@ function siteorigin_settings_admin_init() {
  * @action admin_menu
  */
 function siteorigin_settings_admin_menu() {
-	$page = add_theme_page( __( 'Theme Settings', 'siteorigin' ), __( 'Theme Settings', 'siteorigin' ), 'edit_theme_options', 'theme_settings_page', 'siteorigin_settings_render' );
+	$theme = wp_get_theme();
+	$page = add_theme_page(
+		sprintf(__( '%s Theme Settings', 'origami' ), $theme->get('Name')),
+		sprintf(__( 'Theme Settings', 'origami' ), $theme->get('Name')),
+		'edit_theme_options',
+		'theme_settings_page',
+		'siteorigin_settings_render'
+	);
 
 	add_action( 'load-' . $page, 'siteorigin_settings_theme_help' );
 }
@@ -54,6 +78,11 @@ function siteorigin_settings_admin_menu() {
  * Render the theme settings page
  */
 function siteorigin_settings_render() {
+	if( version_compare( get_bloginfo('version'), '3.4', '<' ) ) {
+		?><div class="wrap"><div id="setting-error-settings_updated" class="updated settings-error"> <p><strong><?php _e('Please update to the latest version of WordPress to use theme settings.', 'origami') ?></strong></p></div></div><?php
+		return;
+	}
+
 	locate_template( 'extras/settings/page.php', true, false );
 }
 
@@ -76,6 +105,9 @@ function siteorigin_settings_enqueue_scripts( $prefix ) {
 		wp_enqueue_style( 'farbtastic' );
 		wp_enqueue_script( 'farbtastic' );
 	}
+
+	// We need the media editors
+	wp_enqueue_media();
 	
 	// This is for the media uploader
 	if ( function_exists( 'wp_enqueue_media' ) ) wp_enqueue_media();
@@ -193,10 +225,7 @@ function siteorigin_setting( $name , $default = null) {
 		return apply_filters('siteorigin_setting_'.$name, $default);
 	}
 	
-	if ( !isset( $GLOBALS[ 'siteorigin_settings' ][ $name ] ) ) {
-		trigger_error( sprintf( __( 'Calling undefined setting [%s]', 'siteorigin' ), $name ) );
-		$value = null;
-	}
+	if ( !isset( $GLOBALS[ 'siteorigin_settings' ][ $name ] ) ) $value = null;
 	else $value = $GLOBALS['siteorigin_settings'][ $name ];
 
 	return apply_filters('siteorigin_setting_'.$name, $value);
@@ -212,8 +241,8 @@ function siteorigin_setting_editable($field){
 }
 
 function siteorigin_setting_editable_option_field(){
-	siteorigin_settings_add_field('general', 'hover_edit', 'checkbox', __('Display Hover Edit Icon', 'portal'), array(
-		'description' => __('Display a small icon that makes quickly editing fields easy. This is only shown to admin users.', 'siteorigin'),
+	siteorigin_settings_add_field('general', 'hover_edit', 'checkbox', __('Display Hover Edit Icon', 'origami'), array(
+		'description' => __('Display a small icon that makes quickly editing fields easy. This is only shown to admin users.', 'origami'),
 	));
 }
 add_action('admin_init', 'siteorigin_setting_editable_option_field', 100);
@@ -238,7 +267,7 @@ function siteorigin_settings_field( $args ) {
 		case 'checkbox' :
 			?>
 			<input id="<?php echo esc_attr( $field_id ) ?>" name="<?php echo esc_attr( $field_name ) ?>" type="checkbox" <?php checked( $current ) ?> />
-			<label for="<?php echo esc_attr( $field_id ) ?>"><?php echo esc_attr( !empty( $args['label'] ) ? $args['label'] : __( 'Enabled', 'siteorigin' ) ) ?></label>
+			<label for="<?php echo esc_attr( $field_id ) ?>"><?php echo esc_attr( !empty( $args['label'] ) ? $args['label'] : __( 'Enabled', 'origami' ) ) ?></label>
 			<?php
 			break;
 		case 'text' :
@@ -293,27 +322,32 @@ function siteorigin_settings_field( $args ) {
 		
 		case 'media':
 			if(version_compare(get_bloginfo('version'), '3.5', '<')){
-				printf(__('You need to <a href="%s">upgrade</a> to WordPress 3.5 to use media fields', 'siteorigin'), admin_url('update-core.php'));
+				printf(__('You need to <a href="%s">upgrade</a> to WordPress 3.5 to use media fields', 'origami'), admin_url('update-core.php'));
 				break;
 			}
-			
+
 			if(!empty($current)) {
-				$post = get_post($current);
-				$src = wp_get_attachment_image_src($current, 'thumbnail');
-				if(empty($src)) $src = wp_get_attachment_image_src($current, 'thumbnail', true);
+				if(is_array($current)) {
+					$src = $current;
+				}
+				else {
+					$post = get_post($current);
+					$src = wp_get_attachment_image_src($current, 'thumbnail');
+					if(empty($src)) $src = wp_get_attachment_image_src($current, 'thumbnail', true);
+				}
 			}
 			else{
 				$src = array('', 0, 0);
 			}
 			
-			$choose_title = empty($args['choose']) ? __('Choose Media', 'siteorigin') : $args['choose'];
-			$update_button = empty($args['update']) ? __('Set Media', 'siteorigin') : $args['update'];
+			$choose_title = empty($args['choose']) ? __('Choose Media', 'origami') : $args['choose'];
+			$update_button = empty($args['update']) ? __('Set Media', 'origami') : $args['update'];
 			
 			?>
 				<div class="media-field-wrapper">
 					<div class="current">
 						<div class="thumbnail-wrapper">
-							<img src="<?php echo esc_url($src[0]) ?>" class="thumbnail" <?php if(empty($post)) echo "style='display:none'" ?> />
+							<img src="<?php echo esc_url($src[0]) ?>" class="thumbnail" <?php if(empty($src[0])) echo "style='display:none'" ?> />
 						</div>
 						<div class="title"><?php if(!empty($post)) echo esc_attr($post->post_title) ?></div>
 					</div>
@@ -321,10 +355,10 @@ function siteorigin_settings_field( $args ) {
 						<?php echo esc_html($choose_title) ?>
 					</a>
 
-					<a href="#" class="media-remove-button"><?php _e('Remove', 'siteorigin') ?></a>
+					<a href="#" class="media-remove-button"><?php _e('Remove', 'origami') ?></a>
 				</div>
 
-				<input type="hidden" id="<?php echo esc_attr( $field_id ) ?>" value="<?php echo esc_attr( $current ) ?>" name="<?php echo esc_attr( $field_name ) ?>" />
+				<input type="hidden" id="<?php echo esc_attr( $field_id ) ?>" value="<?php echo esc_attr( is_array( $current ) ? '-1' : $current ) ?>" name="<?php echo esc_attr( $field_name ) ?>" />
 			<?php
 			break;
 		
@@ -333,7 +367,7 @@ function siteorigin_settings_field( $args ) {
 			?>
 			<a class="premium-teaser siteorigin-premium-teaser" href="<?php echo admin_url( 'themes.php?page=premium_upgrade' ) ?>" target="_blank">
 				<em></em>
-				<?php printf( __( 'Only available in <strong>%s Premium</strong> - <strong class="upgrade">Upgrade Now</strong>', 'siteorigin' ), ucfirst($theme) ) ?>
+				<?php printf( __( 'Only available in <strong>%s Premium</strong> - <strong class="upgrade">Upgrade Now</strong>', 'origami' ), ucfirst($theme) ) ?>
 				<?php if(!empty($args['teaser-image'])) : ?>
 					<div class="teaser-image"><img src="<?php echo esc_url($args['teaser-image']) ?>" width="220" height="120" /><div class="pointer"></div></div>
 				<?php endif; ?>
@@ -341,8 +375,21 @@ function siteorigin_settings_field( $args ) {
 			<?php
 			break;
 
+		case 'gallery' :
+			?>
+			<input
+				id="<?php echo esc_attr( $field_id ) ?>"
+				name="<?php echo esc_attr( $field_name ) ?>"
+				class="regular-text gallery-ids"
+				size="25"
+				type="text"
+				value="<?php echo esc_attr( $current ) ?>" />
+			<a href="#" class="so-settings-gallery-edit"><?php _e('Select Images', 'origami') ?></a>
+			<?php
+			break;
+
 		default :
-			_e( 'Unknown Field Type', 'siteorigin' );
+			_e( 'Unknown Field Type', 'origami' );
 			break;
 	}
 
@@ -381,8 +428,10 @@ function siteorigin_settings_validate( $values ) {
 				
 				case 'media' :
 					// Only allow valid attachment post ids
-					$attachment = get_post( $values[ $name ] );
-					if(empty($attachment) || $attachment->post_type != 'attachment') $values[ $name ] = '';
+					if( $values[ $name ] != -1 ) {
+						$attachment = get_post( $values[ $name ] );
+						if(empty($attachment) || $attachment->post_type != 'attachment') $values[ $name ] = '';
+					}
 			}
 			
 			if ( !isset( $current[ $name ] ) || ( isset( $values[ $name ] ) && isset( $current[ $name ] ) && $values[ $name ] != $current[ $name ] ) ) $changed = true;
@@ -396,10 +445,6 @@ function siteorigin_settings_validate( $values ) {
 
 	if ( $changed ) {
 		do_action( 'siteorigin_settings_changed' );
-
-		/**
-		 * An action triggered when the theme settings have changed.
-		 */
 		set_theme_mod( 'siteorigin_settings_changed', true );
 	}
 
@@ -415,7 +460,9 @@ function siteorigin_settings_change_message() {
 
 		?>
 		<div id="setting-updated" class="updated">
-			<p><strong><?php _e( 'Settings saved.', 'siteorigin' ) ?></strong></p>
+			<p>
+				<strong><?php _e( 'Settings saved.', 'origami' ) ?></strong>
+			</p>
 		</div>
 		<?php
 
@@ -431,14 +478,14 @@ function siteorigin_settings_theme_help(){
 	$theme_name = basename( get_template_directory() );
 	
 	$text = sprintf(
-		__( "Read %s's <a href='%s'>theme documentation</a> for help with these settings.", 'siteorigin' ),
+		__( "Read %s's <a href='%s'>theme documentation</a> for help with these settings.", 'origami' ),
 		ucfirst($theme_name),
 		'http://siteorigin.com/theme/'.$theme_name.'/?action=docs'
 	); 
 	
 	$screen->add_help_tab( array(
 		'id' => 'siteorigin_settings_help_tab',
-		'title' => __( 'Settings Help', 'siteorigin' ),
+		'title' => __( 'Settings Help', 'origami' ),
 		'content' => '<p>' . $text . '</p>',
 	) );
 }
@@ -446,7 +493,7 @@ function siteorigin_settings_theme_help(){
 function siteorigin_settings_media_view_strings($strings, $post){
 	if(!empty($post)) return $strings;
 	$screen = get_current_screen();
-	if($screen->id != 'appearance_page_theme_settings_page') return $strings;
+	if(empty($screen->id) || $screen->id != 'appearance_page_theme_settings_page') return $strings;
 	
 	// Remove these strings, to remove the tabs
 	// Luckily the JS gracefully handles these being unset
@@ -454,7 +501,7 @@ function siteorigin_settings_media_view_strings($strings, $post){
 	unset($strings['createGalleryTitle']);
 	unset($strings['insertFromUrlTitle']);
 	
-	$strings['insertIntoPost'] = __('Set Media File', 'siteorigin');
+	$strings['insertIntoPost'] = __('Set Media File', 'origami');
 	
 	return $strings;
 }

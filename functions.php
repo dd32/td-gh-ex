@@ -1,28 +1,26 @@
 <?php
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.4.9' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.5.10' );
 define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://siteorigin.com' );
 
-// Include premium functions if it exists
-if(file_exists(get_template_directory().'/premium/functions.php')){
+include get_template_directory() . '/extras/premium/premium.php';
+include get_template_directory() . '/extras/settings/settings.php';
+include get_template_directory() . '/extras/adminbar/adminbar.php';
+include get_template_directory() . '/extras/widgets/widgets.php';
+include get_template_directory() . '/extras/update/update.php';
+include get_template_directory() . '/extras/plugin-activation/plugin-activation.php';
+
+include get_template_directory() . '/functions/settings.php';
+include get_template_directory() . '/functions/gallery.php';
+include get_template_directory() . '/functions/panels.php';
+
+if( file_exists(get_template_directory().'/premium/functions.php') ) {
+	// Include the premium file if it exists.
 	include get_template_directory().'/premium/functions.php';
 }
-
-// Include all the SiteOrigin extras
-if(!defined('SITEORIGIN_IS_PREMIUM')) {
-	include get_template_directory().'/upgrade/upgrade.php';
+else{
+	include get_template_directory() . '/upgrade/upgrade.php';
 }
-
-include get_template_directory().'/extras/premium/premium.php';
-include get_template_directory().'/extras/settings/settings.php';
-include get_template_directory().'/extras/update/update.php';
-include get_template_directory().'/extras/adminbar/adminbar.php';
-include get_template_directory().'/extras/widgets/widgets.php';
-
-include get_template_directory().'/functions/settings.php';
-include get_template_directory().'/functions/gallery.php';
-include get_template_directory().'/functions/panels.php';
-
 
 if(!function_exists('origami_setup')) :
 /**
@@ -31,8 +29,6 @@ if(!function_exists('origami_setup')) :
  * @action after_setup_theme
  */
 function origami_setup(){
-	siteorigin_settings_init();
-
 	global $content_width;
 	if ( ! isset( $content_width ) ) $content_width = 904;
 	
@@ -51,16 +47,23 @@ function origami_setup(){
 	register_nav_menu( 'primary', __( 'Primary Menu', 'origami' ) );
 
 	// Add support for custom backgrounds.
-	add_theme_support( 'custom-background' , array(
+	$background = array(
 		'default-color' => 'f0eeeb',
 		'default-image' => get_template_directory_uri().'/images/bg.png'
-	));
-	
+	);
+	$background = apply_filters('origami_custom_background', $background);
+	add_theme_support( 'custom-background', $background);
+
 	// Use custom headers for site logo
 	add_theme_support( 'custom-header' , array(
 		'flex-height' => true,
 		'flex-width' => true,
 		'header-text' => false,
+	));
+
+	add_theme_support('siteorigin-premium-teaser', array(
+		'customizer' => true,
+		'settings' => true,
 	));
 	
 	add_editor_style();
@@ -80,13 +83,14 @@ function origami_setup(){
 		'home-page' => true,
 		'home-page-default' => false,
 	) );
-	
+
 	// Only include the bundled version of panels if the plugin does not exist
-	if(!defined('SITEORIGIN_PANELS_VERSION')) include get_template_directory().'/extras/panels/panels.php';
+	if(!defined('SITEORIGIN_PANELS_VERSION') && !siteorigin_plugin_activation_is_activating('siteorigin-panels')) {
+		include get_template_directory().'/extras/panels/panels.php';
+	}
 }
 endif;
 add_action('after_setup_theme', 'origami_setup');
-
 
 if(!function_exists('origami_widgets_init')) :
 /**
@@ -124,6 +128,8 @@ if(!function_exists('origami_title')) :
  */
 function origami_title($title, $sep, $seplocation){
 	global $page, $paged;
+
+	if ( is_feed() ) return $title;
 
 	// Add the blog name.
 	$title = $title.get_bloginfo( 'name' );
@@ -212,11 +218,12 @@ endif;
 add_action('save_post', 'origami_save_post');
 
 
-if(!function_exists('origami_google_webfonts')) :
+if(!function_exists('origami_enqueue_google_webfonts')) :
 /**
  * This just displays the Google web fonts
  */
 function origami_enqueue_google_webfonts(){
+
 	if(!get_header_image()){
 		// Enqueue the logo font as well (Terminal Dosis 200)
 		wp_enqueue_style('google-webfonts', 'http://fonts.googleapis.com/css?family=Terminal+Dosis:200,400');
@@ -225,31 +232,10 @@ function origami_enqueue_google_webfonts(){
 		// Enqueue only the text fonts that we need
 		wp_enqueue_style('google-webfonts', 'http://fonts.googleapis.com/css?family=Terminal+Dosis:400');
 	}
+
 }
 endif;
 add_action('wp_enqueue_scripts', 'origami_enqueue_google_webfonts');
-
-
-if(!function_exists('origami_attribution_footer')) :
-/**
- * Renders the theme attribution. This is used in your site's footer.
- *
- * You can override this in your child theme to remove the attribution, but it'd be really cool if you left it in :) If
- * you decide to remove it, please show your support in other ways. Like by telling people about our free themes.
- *
- * @param string $before Displayed before the attribution link
- * @param string $after Displayed after the attribution link
- */
-function origami_attribution_footer($before, $after){
-	if(!siteorigin_setting('display_attribution')) return false;
-	
-	print $before;
-	printf(__('Powered By %s', 'origami'), '<a href="http://wordpress.org">WordPress</a>');
-	print ' - ';
-	printf(__('Theme By %s', 'origami'), '<a href="http://siteorigin.com">SiteOrigin</a>');
-	print $after;
-}
-endif;
 
 
 if(!function_exists('origami_comment')) :
@@ -294,29 +280,6 @@ function origami_comment($comment, $args, $depth){
 endif;
 
 
-if(!function_exists('origami_footer_widget_params')) :
-/**
- * Filter the footer widgets to add widths.
- * 
- * @param $params
- * @return mixed
- */
-function origami_footer_widget_params($params){
-	return $params;
-	
-	// Check that this is the footer
-	if($params[0]['id'] != 'site-footer') return $params;
-
-	$sidebars_widgets = wp_get_sidebars_widgets();
-	$count = count($sidebars_widgets[$params[0]['id']]);
-	$params[0]['before_widget'] = preg_replace('/\>$/', ' style="width:'.round(100/$count,4).'%" >', $params[0]['before_widget']);
-
-	return $params;
-}
-endif;
-add_action('dynamic_sidebar_params', 'origami_footer_widget_params');
-
-
 if(!function_exists('origami_content_filter')):
 /**
  * Filter the content for certain post formats
@@ -338,16 +301,15 @@ add_filter('the_content', 'origami_content_filter', 8);
 function origami_print_styles(){
 	// Create the footer widget CSS
 	$sidebars_widgets = wp_get_sidebars_widgets();
-	$count = count($sidebars_widgets['site-footer']);
+	$count = isset($sidebars_widgets['site-footer']) ? count($sidebars_widgets['site-footer']) : 1;
 	$count = max($count,1);
-	
+
 	?>
 	<style type="text/css" media="screen">
-		.content a { color: <?php echo strip_tags(siteorigin_setting('colors_link_color')) ?>; }
-		#page-container { border-color: <?php echo strip_tags(siteorigin_setting('colors_page_border_color')) ?>; }
-		#footer-widgets .widget { width: <?php echo round(100/$count,5) ?>%; }
-		#footer { color: <?php echo strip_tags(siteorigin_setting('colors_footer_text')) ?>; }
-		#footer a { color: <?php echo strip_tags(siteorigin_setting('colors_footer_link')) ?>; }
+		#footer-widgets .widget { width: <?php echo round(100/$count,3) . '%' ?>; }
+		@media screen and (max-width: 640px) {
+			#footer-widgets .widget { width: auto; float: none; }
+		}
 	</style>
 	<?php
 }
@@ -386,7 +348,7 @@ endif;
 function origami_post_class_columns($classes, $class, $post_id){
 	if(!siteorigin_setting('display_use_columns')) return $classes;
 	if(is_page() && get_post_meta(get_the_ID(), 'panels_data')) return $classes;
-	if(siteorigin_panels_is_home()) return $classes;
+	if(function_exists('siteorigin_panels_is_home') && siteorigin_panels_is_home()) return $classes;
 	
 	
 	$columns = get_post_meta($post_id, 'content_columns', true);

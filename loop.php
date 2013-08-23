@@ -50,16 +50,15 @@
 			</div>
 			
 			<?php
-			wp_link_pages(array(
+			wp_link_pages( array(
 				'before' => '<p class="page-links content">' . __('Pages:', 'origami'),
 				'after' => '</p>',
-			))
+			) )
 			?>
 			
 			<?php $tags = wp_get_post_tags($post->ID); ?>
-			
 			<?php if(!empty($tags) || !is_singular()) : ?>
-				<div class="below-content">
+				<div class="below-content tagged">
 					<?php if(has_tag()) : ?>
 						<div class="tags">
 							<svg version="1.1" width="18px" height="18px" viewBox="0 0 48 48">
@@ -78,11 +77,13 @@
 								<path d="M 0 32 L 0 16 L 26 16 L 26 8 L 48 24 L 26 40 L 26 32 Z" />
 							</svg>
 						</div>
+					<?php elseif(siteorigin_setting('social_share') && function_exists('siteorigin_share_render')) : ?>
+						<?php siteorigin_share_render(array('twitter' => siteorigin_setting('social_twitter'))); ?>
 					<?php endif; ?>
+
 					<div class="clear"></div>
-					
-					<?php if(is_singular() && siteorigin_setting('social_share')) locate_template('social-share.php', true); ?>
 				</div>
+
 			<?php elseif(siteorigin_setting('social_share') && function_exists('siteorigin_share_render')) : ?>
 				<div class="below-content">
 					<?php siteorigin_share_render(array('twitter' => siteorigin_setting('social_twitter'))); ?>
@@ -97,12 +98,8 @@
 				</div>
 			<?php endif; ?>
 			
-			<?php if(is_singular()) : ?>
-				<div id="single-comments-wrapper">
-					<?php comments_template() ?>
-				</div>
-			<?php endif; ?>
-			
+			<?php comments_template() ?>
+
 		</div>
 	<?php endwhile; ?>
 <?php endif; ?>

@@ -1,7 +1,7 @@
 /* jQuery UI Button */
 
 .ui-button,
-.ui-dialog .ui-dialog-titlebar-close {
+.ui-dialog.panels-admin-dialog .ui-dialog-titlebar-close {
 	position: relative;
 	
 	background: #eee;
@@ -87,6 +87,8 @@
 	-moz-box-shadow: 0 0 5px rgba(0,0,0,0.3);
 	-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.3);
 	box-shadow: 0 0 5px rgba(0,0,0,0.3);
+	padding: 0 !important;
+	z-index: 300002;
 }
 
 .ui-dialog.panels-admin-dialog .ui-dialog-titlebar {
@@ -114,9 +116,10 @@
 
 .ui-dialog.panels-admin-dialog .ui-dialog-titlebar-close {
 	position: absolute;
-	top: 5px;
+	top: 50%;
 	right: 8px;
 	
+	margin-top: -10px;
 }
 
 .ui-dialog.panels-admin-dialog .ui-dialog-titlebar-close .ui-icon {
@@ -129,17 +132,16 @@
 
 .ui-dialog.panels-admin-dialog .ui-dialog-content,
 .ui-dialog.panels-admin-dialog .ui-dialog-buttonpane {
-	padding: 10px;
+	padding: 12px;
 }
 
 .ui-dialog.panels-admin-dialog .ui-dialog-buttonpane {
-	padding-top: 5px;
+	padding: 5px;
 }
 
 .ui-dialog.panels-admin-dialog .ui-dialog-content {
 	max-height: 600px;
 	overflow: auto;
-	padding-bottom: 5px;
 }
 
 .ui-dialog.panels-admin-dialog .ui-dialog-content *:first-child {

@@ -1,11 +1,24 @@
-<?php $theme = basename( get_template_directory() ); ?>
-<?php printf( __( "Check out the <a href='%s'>documentation</a> for %s if you're lost. ", 'siteorigin' ), 'http://siteorigin.com/theme/' . $theme . '/?action=docs', ucfirst( $theme ) ) ?>
 <?php
+$theme = basename( get_template_directory() );
+
+if(defined('SITEORIGIN_IS_PREMIUM')){
+	printf(
+		__( "<a href='%s'>Contact</a> SiteOrigin support if you need help. ", 'origami' ),
+		'http://siteorigin.com/#support'
+	);
+}
+else {
+	printf(
+		__( "<a href='%s'>Post a question</a> on the WordPress forums if you need help. ", 'origami' ),
+		'http://wordpress.org/support/theme/'.$theme
+	);
+}
+
 printf(
-	__( "Feel free to <a href='%s'>contact support</a> or post on the <a href='%s'>WordPress forums</a> if you need help. ", 'siteorigin' ),
-	'http://siteorigin.com/#support', ucfirst( $theme ),
-	'http://wordpress.org/support/'
-)
+	__( "If you like %s, please <a href='%s' target='_blank'>rate it</a>. Your rating helps a lot! ", 'origami' ),
+	ucfirst($theme),
+	'http://wordpress.org/support/view/theme-reviews/'.$theme.'#postform'
+);
 ?>
 
 <div class="social">

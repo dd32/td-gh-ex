@@ -1,7 +1,7 @@
 License
 -----------------------------------------------
 
-Origami WordPress Theme, Copyright 2012 [SiteOrigin][so]. Origami a [GPL v2.0][gpl] theme. 
+Origami WordPress Theme, Copyright 2012 [SiteOrigin][so]. Origami is a [GPL v2.0][gpl] theme.
 
 Origami includes the following external libraries
 
@@ -12,6 +12,7 @@ Origami includes the following external libraries
 * Modernizr under MIT & BSD licenses <http://modernizr.com/>
 * Selectivizr by Keith Clark under MIT license <http://selectivizr.com/>
 * Images in demo folder are from Pixabay Licensed under public domain <http://pixabay.com/>
+* Dosis font used via Google Web Fonts. Licensed under SIL font license <http://www.google.com/fonts/specimen/Dosis>
 
  [so]: http://siteorigin.com
  [gpl]: http://www.gnu.org/licenses/gpl-2.0.html
@@ -100,4 +101,39 @@ Updated to latest version of framework.
 Fixed issue with blog archive page template.
 Fixed premium maps widget.
 
-**1.4.9**
+**1.4.9 - 1.4.10**
+Small version number changes for theme uploader.
+
+**1.5.2**
+Fixed error when activating Page Builder plugin.
+Updated premium upgrade information.
+
+**1.5.4**
+CSS fixes.
+Fixed title in feeds.
+Updated to latest framework.
+
+**1.5.5**
+Updated to latest framework.
+Minor CSS fixes.
+Changed Premium upgrade page.
+
+**1.5.7**
+Improved extendability with child themes.
+Fixed centering of menu.
+
+**1.5.8**
+Added more child theme extendability.
+Added nesting to sub elements in widgets.
+Unified translation domain.
+Minor security updates.
+
+**1.5.9**
+Added multi-level menu.
+Updated to latest version of framework.
+Premium: Fixed social sharing.
+
+**1.5.10**
+Fixed blog archive template.
+Fixed issue that prevented users from updating Page Builder plugin.
+Fixed CSS issue with dropdown menu.

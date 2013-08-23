@@ -61,11 +61,12 @@ add_filter( 'siteorigin_adminbar', 'siteorigin_adminbar_defaults' );
  * @return mixed
  */
 function siteorigin_adminbar_enqueue( $suffix ) {
+
 	// This adds an extra tab to the theme pages
-	if(($suffix == 'theme-install.php' || $suffix == 'themes.php') && !wp_script_is('siteorigin-themes-tab')){
-		wp_enqueue_script('siteorigin-themes-tab', get_template_directory_uri() . '/extras/adminbar/assets/tab.min.js', array('jquery'), SITEORIGIN_THEME_VERSION);
-		wp_localize_script('siteorigin-themes-tab', 'siteoriginAdminTab', array(
-			'text' => __('SiteOrigin Themes', 'siteorigin'),
+	if($suffix == 'theme-install.php' || $suffix == 'themes.php' && !wp_script_is('siteorigin-admin-tab')){
+		wp_enqueue_script('siteorigin-admin-tab', get_template_directory_uri() . '/extras/adminbar/assets/tab.min.js', array('jquery'), SITEORIGIN_THEME_VERSION);
+		wp_localize_script('siteorigin-admin-tab', 'siteoriginAdminTab', array(
+			'text' => __('SiteOrigin Themes', 'origami'),
 			'url' => admin_url('theme-install.php?tab=search&type=author&s=gpriday')
 		));
 	}
@@ -91,7 +92,7 @@ function siteorigin_adminbar_render() {
 	<div id="siteorigin-admin-bar" data-type="<?php echo esc_attr( $GLOBALS['siteorigin_adminbar_active']->id ) ?>">
 		<div class="inner">
 			<img src="<?php echo esc_url( $GLOBALS['siteorigin_adminbar_active']->icon ) ?>" class="icon" width="44" height="44" />
-			<a href="#dismiss" class="dismiss"><?php _e( 'dismiss', 'siteorigin' ) ?></a>
+			<a href="#dismiss" class="dismiss"><?php _e( 'dismiss', 'origami' ) ?></a>
 			<strong><?php call_user_func_array( 'get_template_part', $GLOBALS['siteorigin_adminbar_active']->message ) ?></strong>
 		</div>
 	</div>
@@ -115,40 +116,3 @@ function siteorigin_adminbar_dismiss_bar() {
 	exit();
 }
 add_action( 'wp_ajax_siteorigin_admin_dismiss_bar', 'siteorigin_adminbar_dismiss_bar' );
-
-/**
- * Add the SiteOrigin news dashboard widget.
- */
-function siteorigin_adminbar_dashboard_widgets_setup() {
-	// add a custom dashboard widget
-	wp_add_dashboard_widget( 'dashboard_siteorigin_feed', __('SiteOrigin Theme News', 'siteorigin'), 'siteorigin_adminbar_dashboard_widgets_output' ); //add new RSS feed output
-
-	// We don't want the widget showing up in the core column
-	global $wp_meta_boxes;
-
-	// Save the widget
-	$my_widget = $wp_meta_boxes['dashboard']['normal']['core']['dashboard_siteorigin_feed'];
-	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_siteorigin_feed']);
-
-	$wp_meta_boxes['dashboard']['side']['core'] = array_merge(
-		array('dashboard_siteorigin_feed' => $my_widget),
-		$wp_meta_boxes['dashboard']['side']['core']
-	);
-}
-add_action('wp_dashboard_setup', 'siteorigin_adminbar_dashboard_widgets_setup');
-
-/**
- * Render the SiteOrigin news dashboard widget
- */
-function siteorigin_adminbar_dashboard_widgets_output() {
-	echo '<div class="rss-widget">';
-	wp_widget_rss_output(array(
-		'url' => 'http://siteorigin.com/feed/',
-		'title' => __('SiteOrigin Theme News', 'siteorigin'),
-		'items' => 4,
-		'show_summary' => 1,
-		'show_author' => 0,
-		'show_date' => 1
-	));
-	echo "</div>";
-}

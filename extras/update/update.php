@@ -3,6 +3,9 @@
 /**
  * Add some custom SiteOrigin update information to the update_themes transient.
  *
+ * This ONLY applies when the user enters a valid premium order number. A user should be aware that the updates will be
+ * coming from a different source after they upgrade to the premium version.
+ *
  * @param $current
  * @return mixed
  */
@@ -48,14 +51,14 @@ function siteorigin_theme_update_settings() {
 
 	add_settings_section(
 		'so-order-code',
-		sprintf( __( '%s Order Code', 'siteorigin' ), ucfirst( $theme ) ),
+		sprintf( __( '%s Order Code', 'origami' ), ucfirst( $theme ) ),
 		'__return_false',
 		'general'
 	);
 
 	add_settings_field(
 		'so-order-code-field',
-		__( 'Order Code', 'siteorigin' ),
+		__( 'Order Code', 'origami' ),
 		'siteorigin_theme_update_settings_order_field',
 		'general',
 		'so-order-code'
@@ -75,7 +78,7 @@ function siteorigin_theme_update_settings_order_field() {
 
 	?>
 	<input type="text" class="regular-text code" name="<?php echo esc_attr( $name ) ?>" value="<?php echo esc_attr( get_option( $name, false ) ) ?>" />
-	<p class="description"><?php _e( 'Find your order code in your original download email from SiteOrigin', 'siteorigin' ); ?></p>
+	<p class="description"><?php _e( 'Find your order number in your original order email from SiteOrigin', 'origami' ); ?></p>
 	<?php
 }
 

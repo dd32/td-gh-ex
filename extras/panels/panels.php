@@ -1,7 +1,5 @@
 <?php
 
-include get_template_directory().'/extras/panels/inc/widgets.php';
-
 /**
  * Initialize the panels extra
  */
@@ -17,8 +15,8 @@ function siteorigin_panels_admin_menu(){
 	if ( $panels_support === false || empty($panels_support[0]['home-page']) ) return;
 	
 	add_theme_page(
-		__('Custom Home Page', 'siteorigin'),
-		__('Home Page', 'siteorigin'),
+		__('Custom Home Page', 'origami'),
+		__('Home Page', 'origami'),
 		'edit_theme_options',
 		'so_panels_home_page',
 		'siteorigin_panels_render_admin_home_page'
@@ -30,7 +28,7 @@ add_action('admin_menu', 'siteorigin_panels_admin_menu');
  * Render the page used to build the custom home page.
  */
 function siteorigin_panels_render_admin_home_page(){
-	add_meta_box( 'so-panels-panels', __( 'Page Builder', 'siteorigin' ), 'siteorigin_panels_metabox_render', 'appearance_page_so_panels_home_page', 'advanced', 'high', array( 'panels' ) );
+	add_meta_box( 'so-panels-panels', __( 'Page Builder', 'origami' ), 'siteorigin_panels_metabox_render', 'appearance_page_so_panels_home_page', 'advanced', 'high', array( 'panels' ) );
 	get_template_part('extras/panels/tpl/admin', 'home-page');
 }
 
@@ -40,7 +38,7 @@ function siteorigin_panels_render_admin_home_page(){
 function siteorigin_panels_metaboxes() {
 	if ( get_theme_support( 'siteorigin-panels' ) === false ) return;
 	
-	add_meta_box( 'so-panels-panels', __( 'Page Builder', 'siteorigin' ), 'siteorigin_panels_metabox_render', 'page', 'advanced', 'high', array( 'panels' ) );
+	add_meta_box( 'so-panels-panels', __( 'Page Builder', 'origami' ), 'siteorigin_panels_metabox_render', 'page', 'advanced', 'high', array( 'panels' ) );
 }
 
 add_action( 'add_meta_boxes', 'siteorigin_panels_metaboxes' );
@@ -73,10 +71,8 @@ function siteorigin_panels_filter_home_template($template){
 	$panels_support = $panels_support[0];
 	
 	if(empty($panels_support['home-page'])) return $template;
+	if(empty($panels_support['home-page-default'])) $panels_support['home-page-default'] = false;
 	if(!get_theme_mod('panels_home_page_enabled', $panels_support['home-page-default'])) return $template;
-	
-	global $wp_query;
-	if($wp_query->is_home() && $wp_query->get('paged') != 0) return $template;
 	
 	$GLOBALS['siteorigin_panels_is_panels_home'] = true;
 	return locate_template(array(
@@ -84,7 +80,7 @@ function siteorigin_panels_filter_home_template($template){
 		$template
 	));
 }
-add_filter('frontpage_template', 'siteorigin_panels_filter_home_template');
+add_filter('home_template', 'siteorigin_panels_filter_home_template');
 
 function siteorigin_panels_is_home(){
 	return !empty($GLOBALS['siteorigin_panels_is_panels_home']);
@@ -129,7 +125,7 @@ function siteorigin_panels_metabox_render( $post, $args ) {
 			'siteorigin_panels_premium_settings_metabox',
 			array(),
 			array(
-				'description' => __( 'Advanced functionality like the ability to create post type and page templates', 'siteorigin' )
+				'description' => __( 'Advanced functionality like the ability to create post type and page templates', 'origami' )
 			)
 		);
 	}
@@ -165,22 +161,24 @@ function siteorigin_panels_admin_enqueue_scripts($prefix) {
 		wp_enqueue_script( 'so-panels-admin-tooltip', get_template_directory_uri() . '/extras/panels/js/panels.admin.tooltip.min.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
 		wp_enqueue_script( 'so-panels-admin-media', get_template_directory_uri() . '/extras/panels/js/panels.admin.media.min.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
 
+		wp_enqueue_script( 'so-panels-chosen', get_template_directory_uri() . '/extras/panels/js/chosen/chosen.jquery.min.min.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
+
 		wp_localize_script( 'so-panels-admin', 'panels', array(
 			'previewUrl' => wp_nonce_url(add_query_arg('siteorigin_panels_preview', 'true', get_home_url()), 'siteorigin-panels-preview'),
 			'i10n' => array(
 				'buttons' => array(
-					'insert' => __( 'Insert', 'siteorigin' ),
-					'cancel' => __( 'cancel', 'siteorigin' ),
-					'delete' => __( 'Delete', 'siteorigin' ),
-					'done' => __( 'Done', 'siteorigin' ),
-					'undo' => __( 'Undo', 'siteorigin' ),
-					'add' => __( 'Add', 'siteorigin' ),
+					'insert' => __( 'Insert', 'origami' ),
+					'cancel' => __( 'cancel', 'origami' ),
+					'delete' => __( 'Delete', 'origami' ),
+					'done' => __( 'Done', 'origami' ),
+					'undo' => __( 'Undo', 'origami' ),
+					'add' => __( 'Add', 'origami' ),
 				),
 				'messages' => array(
-					'deleteColumns' => __( 'Columns deleted', 'siteorigin' ),
-					'deleteWidget' => __( 'Widget deleted', 'siteorigin' ),
-					'confirmLayout' => __( 'Are you sure you want to load this layout? It will overwrite your current page.', 'siteorigin' ),
-					'editWidget' => __('Edit %s Widget', 'siteorigin')
+					'deleteColumns' => __( 'Columns deleted', 'origami' ),
+					'deleteWidget' => __( 'Widget deleted', 'origami' ),
+					'confirmLayout' => __( 'Are you sure you want to load this layout? It will overwrite your current page.', 'origami' ),
+					'editWidget' => __('Edit %s Widget', 'origami')
 				),
 			),
 		) );
@@ -195,14 +193,12 @@ function siteorigin_panels_admin_enqueue_scripts($prefix) {
 				// Load the default layout
 				$panels_data = !empty($layouts['home']) ? $layouts['home'] : current($layouts);
 			}
-			$panels_data = apply_filters( 'siteorigin_panels_data', $panels_data, 'home');
 		}
 		else{
 			global $post;
 			$panels_data = get_post_meta( $post->ID, 'panels_data', true );
-			$panels_data = apply_filters( 'siteorigin_panels_data', $panels_data, $post->ID);
 		}
-
+		
 		if ( empty( $panels_data ) ) $panels_data = array();
 
 		// Remove any panels that no longer exist.
@@ -241,6 +237,7 @@ function siteorigin_panels_admin_enqueue_styles() {
 	if ( $screen->id == 'page' || $screen->base == 'appearance_page_so_panels_home_page') {
 		wp_enqueue_style( 'so-panels-jquery-ui', get_template_directory_uri() . '/extras/panels/css/jquery-ui-theme.css' );
 		wp_enqueue_style( 'so-panels-admin', get_template_directory_uri() . '/extras/panels/css/panels-admin.css' );
+		wp_enqueue_style( 'so-panels-chosen', get_template_directory_uri() . '/extras/panels/js/chosen/chosen.css' );
 	
 		do_action( 'siteorigin_panel_enqueue_admin_styles' );
 	}
@@ -262,7 +259,7 @@ function siteorigin_panels_add_help_tab($prefix) {
 	) {
 		$screen->add_help_tab( array(
 			'id' => 'panels-help-tab', //unique id for the tab
-			'title' => __( 'Page Builder', 'siteorigin' ), //unique visible title for the tab
+			'title' => __( 'Page Builder', 'origami' ), //unique visible title for the tab
 			'callback' => 'siteorigin_panels_add_help_tab_content'
 		) );
 	}
@@ -555,14 +552,14 @@ function siteorigin_panels_admin_bar_menu($admin_bar){
 	 */
 	global $wp_query;
 	
-	if( ( $wp_query->is_home() && $wp_query->get('paged') == 0 && $wp_query->is_main_query() ) || siteorigin_panels_is_home() ){
+	if( ( $wp_query->is_home() && $wp_query->is_main_query() ) || siteorigin_panels_is_home() ){
 		// Check that we support the home page
 		$panels_support = get_theme_support( 'siteorigin-panels' );
 		if ( $panels_support === false || empty($panels_support[0]['home-page']) || !current_user_can('edit_theme_options') ) return $admin_bar;
 		
 		$admin_bar->add_node(array(
 			'id' => 'edit-home-page',
-			'title' => __('Edit Home Page', 'siteorigin'),
+			'title' => __('Edit Home Page', 'origami'),
 			'href' => admin_url('themes.php?page=so_panels_home_page')
 		));
 	}

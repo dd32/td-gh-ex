@@ -1,16 +1,11 @@
 /*
-Http: //wpdev.dynalias.com/origami/wp-content/themes/origami/style.css?ver=trunk
-Version: 1.4.9
-*/
-
-/*
 Theme Name: Origami
 Theme URI: http://siteorigin.com/theme/origami
-Description: Origami is a simple, responsive media blogging theme that places strong emphasis on your content. It looks great on mobile devices, even the videos and galleries scale to fit small screens. The options panel is easy to understand with a minimal set of options. Origami includes a powerful drag and drop page builder for creating unlimited page layouts. So you can use Origami as a simple blog or a complete business website. 
+Description: Origami is a simple, responsive media blogging theme that places strong emphasis on your content. It looks great on mobile devices, even the videos and galleries scale to fit small screens. The options panel is easy to understand with a minimal set of options. Origami includes a powerful drag and drop page builder for creating unlimited page layouts. So you can use Origami as a standard photography blog or a complete business website.
 Tags: one-column, flexible-width, post-formats, custom-menu, theme-options, threaded-comments, translation-ready, photoblogging
 Author: SiteOrigin
 Author URI: http://siteorigin.com/
-Version: trunk
+Version: 1.5.10
 License: GPL v2.0
 License URI: license.txt
 */
@@ -169,7 +164,6 @@ body {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	margin: 30px 0 35px 0;
-	padding: 4.5%;
 	padding: 2.25% 4.5%;
 }
 
@@ -265,7 +259,7 @@ body {
 	border-width: 1px 0;
 	display: block;
 	margin-bottom: 25px;
-	padding: 0;
+	padding: 0px;
 	text-align: center;
 }
 
@@ -285,22 +279,33 @@ body {
 #menu ul li ul {
 	position: absolute;
 	top: 100%;
-	left: 0px;
+	left: 50%;
 	width: 160px;
 	
 	background: #F5F5F5;
 	background-color: #F4F4F4;
 	border-color: #DDDDDD;
 	border-top: 1px solid #E4E4E4;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 	display: block;
+	margin-left: -80px;
 	visibility: hidden;
 	z-index: 10;
 }
 
+#menu ul li li ul {
+	top: 0;
+	left: 160px;
+	
+	margin-left: 0;
+}
+
 #menu ul li ul li a {
 	color: #606060;
+	display: block;
 	font-size: 0.9em;
-	padding: 25px 0;
 }
 
 #menu ul ul li {
@@ -310,26 +315,17 @@ body {
 	text-align: center;
 }
 
-#menu ul li:hover ul {
+#menu ul li:hover > ul {
 	display: block;
 	visibility: visible;
 }
 
-.mobilenav {
-	background: #F9F9F9;
-	border: 1px solid #EEEEEE;
-	border-width: 1px 0;
-	color: #606060;
-	display: block;
+#menu .mobilenav-main-link {
 	font-size: 14px;
 	font-weight: 500;
-	margin-bottom: 25px;
-	padding: 22px 0;
-	text-align: center;
-	text-decoration: none;
 }
 
-.mobilenav .mobilenav-icon {
+#menu .mobilenav-main-link .mobile-nav-icon {
 	width: 13px;
 	height: 15px;
 	
@@ -366,7 +362,7 @@ h1.entry-title.noinfo {
 }
 
 h1.entry-title a {
-	color: #262626;
+	color: inherit;
 	text-decoration: none;
 }
 
@@ -640,6 +636,10 @@ a img.aligncenter {
 .gallery-caption {
 }
 
+.content {
+	line-height: 1.6em;
+}
+
 .content *:first-child {
 	margin-top: 0px;
 }
@@ -691,7 +691,6 @@ a img.aligncenter {
 .content blockquote {
 	position: relative;
 	
-	background: url(images/quote.png) no-repeat 10px center;
 	color: #666;
 	font-style: italic;
 	padding: 1.5em 20px 1.5em 60px;
@@ -1110,7 +1109,7 @@ a img.aligncenter {
 
 #footer-widgets h2.widgettitle {
 	color: #333;
-	font-family: "Terminal Dosis";
+	font-family: "Dosis", Arial, Helvetica, Geneva, sans-serif;
 	font-size: 1.2em;
 	font-weight: 400;
 	margin-bottom: 20px;
@@ -1122,7 +1121,11 @@ a img.aligncenter {
 }
 
 #footer-widgets li {
-	line-height: 1.6em;
+	line-height: 1.75em;
+}
+
+#footer-widgets ul ul {
+	margin-left: 0.75em;
 }
 
 #footer {
@@ -1298,7 +1301,12 @@ h1.archive-title {
 	top: 50%;
 	right: 15px;
 	
+	color: #F3F3F3;
 	margin-top: -22px;
+}
+
+.content .widget_call-to-action .button {
+	color: #F3F3F3;
 }
 
 @media screen and (max-width:480px) {
@@ -1375,5 +1383,28 @@ h1.archive-title {
 	height: auto;
 	
 	max-width: 100%;
+}
+
+.clearfix:after {
+	height: 0;
+	
+	clear: both;
+	content: ".";
+	display: block;
+	line-height: 0;
+	visibility: hidden;
+}
+
+.clearfix {
+	display: inline-block;
+}
+
+html[xmlns] .clearfix {
+	display: block;
+}
+
+* html .clearfix {
+	height: 1%;
+	
 }
 
