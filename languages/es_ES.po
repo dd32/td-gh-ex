@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Mantra Wordpress Theme 1.9.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-19 15:55+0100\n"
-"PO-Revision-Date: 2013-02-28 16:42+0100\n"
+"PO-Revision-Date: 2013-08-03 21:03+0100\n"
 "Last-Translator: Raúl Antón Cuadrado <raulanton@gmail.com>\n"
 "Language-Team: Cryout Creations <contact@htx.ro>\n"
 "Language: fr_FR\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.5.7\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:17
@@ -130,7 +130,7 @@ msgstr "Acerca de %s"
 #: category.php:19
 #, php-format
 msgid "Category Archives: %s"
-msgstr "Archivos por categorá: %s"
+msgstr "Archivos por categoría: %s"
 
 #: comments.php:18
 msgid ""

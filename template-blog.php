@@ -22,7 +22,7 @@ query_posts('post_status=publish&orderby=date&order=desc&posts_per_page='.get_op
 
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
-
+					<?php global $more; $more=0; ?>
 					<?php get_template_part( 'content', get_post_format() ); ?>
 
 				<?php endwhile; ?>

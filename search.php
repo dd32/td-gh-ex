@@ -40,9 +40,8 @@ get_header(); ?>
 					<header class="entry-header">
 						<h1 class="entry-title"><?php _e( 'Nothing Found', 'mantra' ); ?></h1>
 					</header><!-- .entry-header -->
-
+					<br /><div class="contentsearch"><?php get_search_form(); ?></div>
 					</article><!-- #post-0 -->
-	<br /><div class="contentsearch"><?php get_search_form(); ?></div>
 				<?php endif; ?>
 
 

@@ -17,16 +17,20 @@ The Mantra Theme uses:
 - CSS3 PIE / Dual-licensed  Apache License 2.0 or GPLv2 / http://css3pie.com/
 
 Translations credits:
-English - default
-Chinese Simplified - Lín Xuan Li 
-Danish - IT-Fidusen 
-Dutch - Tim De Keyser 
-French - Luc Capronnier 
-Greek - tomakrypodari 
-Hebrew - Ahrale 
-Hungarian - GeriSoft 
-Italian - Antonio Mercurio 
-German - Thomas Baillivet, Jan Schulte 
-Norwegian - kandasa 
-Persian (Farsi) - Sajjad 
+Chinese (Simplified) - Lín Xuan Li
+Danish - IT-Fidusen
+Dutch - Tim De Keyser
+French - Luc Capronnier, Ikiu91
+German - Thomas Baillivet, Jan Schulte
+Greek - tomakrypodari
+Hebrew - Ahrale
+Hungarian - GeriSoft
+Italian - Antonio Mercurio
+Japanese - Yoshiki Osako
+Norwegian (Bokmal) - kandasa
+Persian (Farsi) - Sajjad
+Polish - Pawe³ Przytu³a
+Portuguese (Brazil) - Ivar P. Junior, Joao Lacerda
+Russian - Dmitry Kiryanov
+Spanish (Spain) - Raúl Antón Cuadrado, Sonia
 Turkish - Emre Dalkiliç

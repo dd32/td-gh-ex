@@ -103,7 +103,8 @@ $locale_file = get_template_directory() . "/languages/$locale.php";
 	global $mantra_totalSize;
 	define( 'HEADER_IMAGE_WIDTH', apply_filters( 'mantra_header_image_width', $mantra_totalSize ) );
 	define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'mantra_header_image_height', $mantra_hheight) );
-	set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );	
+	//set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );
+	add_image_size('header',HEADER_IMAGE_WIDTH,HEADER_IMAGE_HEIGHT,true);	
 
 	global $mantra_fpsliderwidth;
 	global $mantra_fpsliderheight;
@@ -175,7 +176,7 @@ add_filter( 'wp_page_menu_args', 'mantra_page_menu_args' );
  
 // TOP MENU
 function mantra_top_menu() {
- if ( has_nav_menu( 'top' ) ) wp_nav_menu( array( 'container' => 'nav', 'container_class' => 'topmenu', 'theme_location' => 'top' ) ); 
+ if ( has_nav_menu( 'top' ) ) wp_nav_menu( array( 'container' => 'nav', 'container_class' => 'topmenu', 'theme_location' => 'top', 'depth' => 1 ) ); 
  }
  
  add_action ('cryout_wrapper_hook','mantra_top_menu');
@@ -192,7 +193,7 @@ add_action ('cryout_access_hook','mantra_main_menu');
 
 // FOOTER MENU
  function mantra_footer_menu() {
-  if ( has_nav_menu( 'footer' ) ) wp_nav_menu( array( 'container' => 'nav', 'container_class' => 'footermenu', 'theme_location' => 'footer' ) ); 
+  if ( has_nav_menu( 'footer' ) ) wp_nav_menu( array( 'container' => 'nav', 'container_class' => 'footermenu', 'theme_location' => 'footer', 'depth' => 1 ) ); 
   }
   
   add_action ('cryout_footer_hook','mantra_footer_menu',10);

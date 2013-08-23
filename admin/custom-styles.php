@@ -237,7 +237,7 @@ $mantra_googlefontsubheader = str_replace('+',' ',preg_replace('/:.*/i','',$mant
 ?><?php if ($mantra_sideheadbackcolor != "444444") { ?> .widget-title,#footer-widget-area .widget-title { background-color:<?php echo $mantra_sideheadbackcolor; ?> ;}<?php }
 ?><?php if ($mantra_sideheadtextcolor != "2EA5FD") { ?> .widget-title { color:<?php echo $mantra_sideheadtextcolor; ?>  ;}<?php }
 
-?><?php if ($mantra_magazinelayout == "Enable") { ?> #content article.post{float:left;width:47%;margin-right:3%; }  #content article.sticky { margin-right:3%;padding:0; } #content article:nth-of-type(2n+1) {clear: both;}  <?php }
+?><?php if ($mantra_magazinelayout == "Enable") { ?> #content article.post{float:left;width:47%;margin-right:3%; }  #content article.sticky { margin-right:3%;padding:0; } #content article.sticky > * {margin:2%;} #content article:nth-of-type(2n+1) {clear: both;}  <?php }
 
 ?><?php if (1) { ?> #footer-widget-area .widget-title { color:<?php echo $mantra_footerheader; ?> ; ;}<?php }
 ?><?php if (1) { ?> #footer-widget-area a { color:<?php echo $mantra_footertext; ?>  ;}<?php }
@@ -255,6 +255,7 @@ $mantra_googlefontsubheader = str_replace('+',' ',preg_replace('/:.*/i','',$mant
 ?><?php if ($mantra_postcateg == "Hide") { ?>.entry-meta span.bl_categ {display:none;} <?php }
 ?><?php if ($mantra_posttag == "Hide") { ?> .entry-utility span.bl_posted, .entry-meta2 span.bl_tagg,.entry-meta3 span.bl_tagg {display:none;} <?php }
 ?><?php if ($mantra_postbook == "Hide") { ?> .entry-utility span.bl_bookmark {display:none;} <?php }
+?><?php if ($mantra_parmargin) { ?> #content p, .entry-content ul, .entry-summary ul , .entry-content ol, .entry-summary ol { margin-bottom:<?php echo $mantra_parmargin; ?>;} <?php } 
 ?><?php if ($mantra_parindent != "0px") { ?>  p {text-indent:<?php echo $mantra_parindent;?> ;} <?php }
 ?><?php if ($mantra_posttime == "Hide") { ?> .entry-meta .entry-time {display:none;} <?php }
 ?><?php if ($mantra_postmetas == "Hide") { ?> #content .entry-meta {display:none;} <?php }
@@ -287,7 +288,7 @@ global $post;
 			*/	?>
 
 #branding { height:<?php echo HEADER_IMAGE_HEIGHT; ?>px ;}
-
+<?php if ($mantra_hratio) { ?> @media (max-width: 800px) {#branding, #bg_image { min-height:inherit !important; } }	<?php } ?>
 </style>
 
 <?php  	$mantra_custom_styling = ob_get_contents();

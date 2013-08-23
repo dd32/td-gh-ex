@@ -689,20 +689,23 @@ function  cryout_setting_hheight_fn() {
 <?php
 $totally = $mantra_options['mantra_sidebar']+$mantra_options['mantra_sidewidth']+50;
 
-$checkedClass = ($mantra_options['mantra_hcenter']=='1') ? ' checkedClass' : '';
-
-//echo " <label id='hcenter' for='mantra_hcenter' class='socialsdisplay $checkedClass'><input  "; checked($mantra_options['mantra_hcenter'],'1');
-//echo "value='1' id='mantra_hcenter'  name='ma_options[mantra_hcenter]' type='checkbox' style='margin-left:20px;'/> ".__('Center the header image horizontally','mantra')." </label>";
 echo "<div><small>".__("Select the header's height. After saving the settings make sure you reupload a new header image (if you're using one). The header's width will be = ","mantra").$totally."px.</small></div>";
 }
 
 function cryout_setting_himage_fn() {
 	global $mantra_options;
 	$checkedClass = ($mantra_options['mantra_hcenter']=='1') ? ' checkedClass' : '';
+	$checkedClass2 = ($mantra_options['mantra_hratio']=='1') ? ' checkedClass' : '';
 	echo "<a href=\"?page=custom-header\" class=\"button\" target=\"_blank\">".__('Define header image')."</a>";
-	echo " <label id='hcenter' for='mantra_hcenter' class='socialsdisplay $checkedClass'><input ";
+	echo "<div><small>".__("The header image should not be used to display logos.<br> Enable ratio preservation to force the header image aspect ratio. Keep in mind that short images will become very small on mobile devices.","mantra")."</small></div>";
+	echo "<br><label id='hcenter' for='mantra_hcenter' class='socialsdisplay $checkedClass'><input ";
 		 checked($mantra_options['mantra_hcenter'],'1');
-	echo " value='1' id='mantra_hcenter' name='ma_options[mantra_hcenter]' type='checkbox' style='margin-left:20px;'/> Center the header image horizontally </label>";
+	echo " value='1' id='mantra_hcenter' name='ma_options[mantra_hcenter]' type='checkbox'/> Center the header image horizontally </label>";
+
+	echo " <label id='hratio' for='mantra_hratio' class='socialsdisplay $checkedClass2'><input ";
+		 checked($mantra_options['mantra_hratio'],'1');
+	echo " value='1' id='mantra_hratio' name='ma_options[mantra_hratio]' type='checkbox' style='margin-left:10px;'/> Keep header image aspect ratio </label>";
+	
 }
 
 //CHECKBOX - Name: ma_options[menurounded]
@@ -1037,6 +1040,21 @@ foreach($items as $id=>$item) {
 	echo "</select>";
 	echo "<div><small>".__("This overwrites the text alignment in posts and pages. Leave 'Default' for normal settings (alignment will remain as declared in posts, comments etc.).","mantra")."</small></div>";
 }
+
+//SELECT - Name: ma_options[parindent]
+function  cryout_setting_parmargin_fn() {
+	global $mantra_options;
+	$items = array ("0.0em", "0.5em", "1.0em" , "1.1em" , "1.2em" , "1.3em" , "1.4em", "1.5em", "1.6em", "1.7em");
+	echo "<select id='mantra_parmargin' name='ma_options[mantra_parmargin]'>";
+foreach($items as $item) {
+	echo "<option value='$item'";
+	selected($mantra_options['mantra_parmargin'],$item);
+	echo ">$item</option>";
+}
+	echo "</select>";
+	echo "<div><small>".__("Choose the spacing between paragraphs.","mantra")."</small></div>";
+}
+
 
 //SELECT - Name: ma_options[parindent]
 function  cryout_setting_parindent_fn() {

@@ -54,7 +54,7 @@ jQuery(document).ready(function(){
 <?php if ($mantra_mobile=="Enable") { // If mobile view is enabled ?>
 
 	// Add select navigation to small screens
-     jQuery("#access .menu ul:first-child").tinyNav({
+     jQuery("#access > .menu > ul").tinyNav({
           	header: ' = <?php _e('Menu','mantra'); ?> = '
 			});
 <?php } ?>
@@ -72,65 +72,56 @@ add_action('wp_head','mantra_header_scripts',100);
  * Adds title and description to heaer
  * Used in header.php
 */
- function mantra_title_and_description() {
-  $mantra_options= mantra_get_theme_options();
-foreach ($mantra_options as $key => $value) {
-     ${"$key"} = $value ;
-}
-// Header styling and image loading
-// Check if this is a post or page, if it has a thumbnail, and if it's a big one
-global $post;
+function mantra_title_and_description() {
+	$mantra_options = mantra_get_theme_options();
+	foreach ($mantra_options as $key => $value) { ${"$key"} = $value; }
+	
+	// Header styling and image loading
+	// Check if this is a post or page, if it has a thumbnail, and if it's a big one
+	
+	global $post;
 
-	if (get_header_image() != '') { $himgsrc=get_header_image(); }
-	if ( is_singular() && has_post_thumbnail( $post->ID ) && $mantra_fheader == "Enable" &&
-		( $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ) ) &&
-		$image[1] >= HEADER_IMAGE_WIDTH ) : $himgsrc= $image[0];
+	if (get_header_image() != '') { $himgsrc = get_header_image(); }
+	if ( is_singular() && has_post_thumbnail( $post->ID ) && ($mantra_fheader == "Enable") && ($image = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'header' ) ) && ($image[1] >= HEADER_IMAGE_WIDTH) ):
+		$himgsrc = $image[0];
 	endif;
 
-
- if (isset($himgsrc) && ($himgsrc != '')) : echo '<img id="bg_image" alt="" title="" src="'.$himgsrc.'"  />';  endif;
+	if (isset($himgsrc) && ($himgsrc != '')) : echo '<img id="bg_image" alt="" title="" src="'.$himgsrc.'"  />';  endif;
 
 ?>
 
- <div id="header-container">
+	<div id="header-container">
 
 
- <?php
- $mantra_options= mantra_get_theme_options();
-foreach ($mantra_options as $key => $value) {
-     ${"$key"} = $value ;
-}
+<?php
+	switch ($mantra_siteheader) {
 
- switch ($mantra_siteheader) {
+		case 'Site Title and Description':
+			echo '<div>';
+			$heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div';
+			echo '<'.$heading_tag.' id="site-title">';
+			echo '<span> <a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a> </span>';
+			echo '</'.$heading_tag.'>';
+			echo '<div id="site-description" >'.get_bloginfo( 'description' ).'</div></div>';
+		break;
 
-	case 'Site Title and Description':
-		echo '<div>';
-		$heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div';
-		echo '<'.$heading_tag.' id="site-title">';
-		echo '<span> <a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a> </span>';
-		echo '</'.$heading_tag.'>';
-		echo '<div id="site-description" >'.get_bloginfo( 'description' ).'</div></div>';
-	break;
+		case 'Clickable header image' :
+			echo '<a href="'.esc_url( home_url( '/' ) ).'" id="linky"></a>' ;
+		break;
 
-	case 'Clickable header image' :
+		case 'Custom Logo' :
+			if (isset($mantra_logoupload) && ($mantra_logoupload != '')) : echo '<div><a id="logo" href="'.esc_url( home_url( '/' ) ).'" ><img title="" alt="" src="'.$mantra_logoupload.'" /></a></div>'; endif;
+		break;
 
-		echo '<a href="'.esc_url( home_url( '/' ) ).'" id="linky"></a>' ;
-	break;
+		case 'Empty' :
+			// nothing to do here
+		break;
+	}
 
-	case 'Custom Logo' :
-	if (isset($mantra_logoupload) && ($mantra_logoupload != '')) : echo '<div><a id="logo" href="'.esc_url( home_url( '/' ) ).'" ><img title="" alt="" src="'.$mantra_logoupload.'" /></a></div>'; endif;
-
-	break;
-
-	case 'Empty' :
-
-	break;
-
-}
-
-  if($mantra_socialsdisplay0) mantra_header_socials();
-  echo '</div>';
-}
+	if ($mantra_socialsdisplay0): mantra_header_socials(); endif;
+	echo '</div>';
+	
+} // mantra_title_and_description()
 
 
 add_action ('cryout_branding_hook','mantra_title_and_description');
@@ -339,7 +330,7 @@ $mantra_options= mantra_get_theme_options();
 foreach ($mantra_options as $key => $value) {
      ${"$key"} = $value ;
 }	?>
-	<div id="site-info" >
+	<div style="text-align:center;clear:both;padding-top:4px;" >
 		<a href="<?php echo esc_url( home_url( '/' ) ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 			<?php bloginfo( 'name' ); ?></a> | <?php _e('Powered by','mantra')?> <a href="<?php echo 'http://www.cryoutcreations.eu';?>" title="<?php echo 'Mantra Theme by '.
 			'Cryout Creations';?>"><?php echo 'Mantra' ?></a> &amp; <a href="<?php echo esc_url('http://wordpress.org/' ); ?>"

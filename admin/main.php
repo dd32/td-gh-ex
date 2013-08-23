@@ -138,6 +138,7 @@ function mantra_init_fn(){
 	add_settings_field('mantra_sidefontsize', __('SideBar Font Size','mantra') , 'cryout_setting_sidefontsize_fn', __FILE__, 'text_section');
 	add_settings_field('mantra_fontsubheader', __('Headings Font','mantra') , 'cryout_setting_fontsubheader_fn', __FILE__, 'text_section');
 	add_settings_field('mantra_textalign', __('Force Text Align','mantra') , 'cryout_setting_textalign_fn', __FILE__, 'text_section');
+	add_settings_field('mantra_parmargin', __('Paragraph spacing','mantra') , 'cryout_setting_parmargin_fn', __FILE__, 'text_section');
 	add_settings_field('mantra_parindent', __('Paragraph indent','mantra') , 'cryout_setting_parindent_fn', __FILE__, 'text_section');
 	add_settings_field('mantra_headerindent', __('Header indent','mantra') , 'cryout_setting_headerindent_fn', __FILE__, 'text_section');
 	add_settings_field('mantra_lineheight', __('Line Height','mantra') , 'cryout_setting_lineheight_fn', __FILE__, 'text_section');
@@ -256,7 +257,6 @@ function mantra_page_fn() {
 </div>
 <div id="jsAlert" class="error" style="padding:5px 10px;">There's a problem with your WordPress jQuery library. This can have several causes, including
 incompatible plugins.<br> The Mantra Settings page cannot function without jQuery. You need to fix this issue before you can configure Mantra.</div>
-<script> jQuery('#jsAlert').hide();</script>
 <?php if ( isset( $_GET['settings-updated'] ) ) {
     echo "<div class='updated fade' style='clear:left;'><p>";
 	echo _e('Mantra settings updated successfully.','mantra');
@@ -470,6 +470,7 @@ jQuery(document).ready(function(){
 
 });
 
+jQuery('#jsAlert').hide();
 </script>
 
 <?php } // mantra_page_fn()
