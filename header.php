@@ -67,7 +67,7 @@
 			</div>
 
             <nav id="mainmenu">
-            	<?php wp_nav_menu( array('menu' => 'main-menu', 'container' => 'false','depth' => 3  )); ?>
+                <?php wp_nav_menu( array('theme_location' => 'main-menu', 'container' => 'false','depth' => 3  )); ?>
             </nav>                
         </div>
 	</div>

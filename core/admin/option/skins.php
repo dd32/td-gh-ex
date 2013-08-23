@@ -21,11 +21,11 @@ $skins = array(
     "suevafree_link_color_hover" => "#d14a2b", 
     "suevafree_border_color" => "#ff6644", 
 
-	"suevafree_body_background" => "/images/background/patterns/grid.png",
+	"suevafree_body_background" => "/images/background/patterns/pattern19.jpg",
 	"suevafree_body_background_repeat" => "repeat",
 	"suevafree_body_background_color" => "#f3f3f3",
 	
-	"suevafree_footer_background" => "/images/background/patterns/debut_dark.png",
+	"suevafree_footer_background" => "/images/background/patterns/pattern3.jpg",
 	"suevafree_footer_background_repeat" => "repeat",
 	"suevafree_footer_background_color" => "#f3f3f3",
 
@@ -52,11 +52,11 @@ $skins = array(
     "suevafree_link_color_hover" => "#3aa694", 
     "suevafree_border_color" => "#48c2ae", 
 
-	"suevafree_body_background" => "/images/background/patterns/grid.png",
+	"suevafree_body_background" => "/images/background/patterns/pattern19.jpg",
 	"suevafree_body_background_repeat" => "repeat",
 	"suevafree_body_background_color" => "#f3f3f3",
 	
-	"suevafree_footer_background" => "/images/background/patterns/debut_dark.png",
+	"suevafree_footer_background" => "/images/background/patterns/pattern3.jpg",
 	"suevafree_footer_background_repeat" => "repeat",
 	"suevafree_footer_background_color" => "#f3f3f3",
 
@@ -83,11 +83,11 @@ $skins = array(
     "suevafree_link_color_hover" => "#0074cc", 
     "suevafree_border_color" => "#0090ff", 
 
-	"suevafree_body_background" => "/images/background/patterns/grid.png",
+	"suevafree_body_background" => "/images/background/patterns/pattern19.jpg",
 	"suevafree_body_background_repeat" => "repeat",
 	"suevafree_body_background_color" => "#f3f3f3",
 	
-	"suevafree_footer_background" => "/images/background/patterns/debut_dark.png",
+	"suevafree_footer_background" => "/images/background/patterns/pattern3.jpg",
 	"suevafree_footer_background_repeat" => "repeat",
 	"suevafree_footer_background_color" => "#f3f3f3",
 
@@ -114,11 +114,11 @@ $skins = array(
     "suevafree_link_color_hover" => "#872424", 
     "suevafree_border_color" => "#b93333", 
 
-	"suevafree_body_background" => "/images/background/patterns/grid.png",
+	"suevafree_body_background" => "/images/background/patterns/pattern19.jpg",
 	"suevafree_body_background_repeat" => "repeat",
 	"suevafree_body_background_color" => "#f3f3f3",
 	
-	"suevafree_footer_background" => "/images/background/patterns/debut_dark.png",
+	"suevafree_footer_background" => "/images/background/patterns/pattern3.jpg",
 	"suevafree_footer_background_repeat" => "repeat",
 	"suevafree_footer_background_color" => "#f3f3f3",
 
@@ -145,11 +145,11 @@ $skins = array(
     "suevafree_link_color_hover" => "#941559", 
     "suevafree_border_color" => "#c71c77", 
 
-	"suevafree_body_background" => "/images/background/patterns/grid.png",
+	"suevafree_body_background" => "/images/background/patterns/pattern19.jpg",
 	"suevafree_body_background_repeat" => "repeat",
 	"suevafree_body_background_color" => "#f3f3f3",
 	
-	"suevafree_footer_background" => "/images/background/patterns/debut_dark.png",
+	"suevafree_footer_background" => "/images/background/patterns/pattern3.jpg",
 	"suevafree_footer_background_repeat" => "repeat",
 	"suevafree_footer_background_color" => "#f3f3f3",
 
@@ -176,11 +176,11 @@ $skins = array(
     "suevafree_link_color_hover" => "#bd9009", 
     "suevafree_border_color" => "#f0b70c", 
 
-	"suevafree_body_background" => "/images/background/patterns/grid.png",
+	"suevafree_body_background" => "/images/background/patterns/pattern19.jpg",
 	"suevafree_body_background_repeat" => "repeat",
 	"suevafree_body_background_color" => "#f3f3f3",
 	
-	"suevafree_footer_background" => "/images/background/patterns/debut_dark.png",
+	"suevafree_footer_background" => "/images/background/patterns/pattern3.jpg",
 	"suevafree_footer_background_repeat" => "repeat",
 	"suevafree_footer_background_color" => "#f3f3f3",
 
@@ -207,11 +207,11 @@ $skins = array(
     "suevafree_link_color_hover" => "#5d7a27", 
     "suevafree_border_color" => "#84ad37", 
 
-	"suevafree_body_background" => "/images/background/patterns/grid.png",
+	"suevafree_body_background" => "/images/background/patterns/pattern19.jpg",
 	"suevafree_body_background_repeat" => "repeat",
 	"suevafree_body_background_color" => "#f3f3f3",
 	
-	"suevafree_footer_background" => "/images/background/patterns/debut_dark.png",
+	"suevafree_footer_background" => "/images/background/patterns/pattern3.jpg",
 	"suevafree_footer_background_repeat" => "repeat",
 	"suevafree_footer_background_color" => "#f3f3f3",
 
@@ -238,11 +238,11 @@ $skins = array(
     "suevafree_link_color_hover" => "#941559", 
     "suevafree_border_color" => "#c71c77", 
 
-	"suevafree_body_background" => "/images/background/patterns/grid.png",
+	"suevafree_body_background" => "/images/background/patterns/pattern19.jpg",
 	"suevafree_body_background_repeat" => "repeat",
 	"suevafree_body_background_color" => "#f3f3f3",
 	
-	"suevafree_footer_background" => "/images/background/patterns/debut_dark.png",
+	"suevafree_footer_background" => "/images/background/patterns/pattern3.jpg",
 	"suevafree_footer_background_repeat" => "repeat",
 	"suevafree_footer_background_color" => "#f3f3f3",
 

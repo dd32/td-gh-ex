@@ -1,13 +1,12 @@
 <?php
 
-
 /*-----------------------------------------------------------------------------------*/
 /* Theme name */
 /*-----------------------------------------------------------------------------------*/ 
 
 function suevafree_themename() {
 	
-	$themename = "sueva_theme_settings";
+	$themename = "suevafree_theme_settings";
 	return $themename;	
 	
 }
@@ -125,18 +124,17 @@ add_image_size( 'small', 211,150, TRUE );
 /* Main menu */
 /*-----------------------------------------------------------------------------------*/         
 
-add_action( 'init', 'main_menu' );
-function main_menu() {
-register_nav_menu( 'main-menu', 'Menu principale' );
+function suevafree_main_menu() {
+	register_nav_menu( 'main-menu', 'Menu principale' );
 }
+add_action( 'init', 'suevafree_main_menu' );
+
 
 /*-----------------------------------------------------------------------------------*/
 /* Add default style, at theme activation */
 /*-----------------------------------------------------------------------------------*/         
 
-if ( is_admin() && isset($_GET['activated'] ) && $pagenow == 'themes.php' ) 
-
-{
+if ( is_admin() && isset($_GET['activated'] ) && $pagenow == 'themes.php' ) {
 	
 	$suevafree_setting = get_option(suevafree_themename());
 
@@ -161,11 +159,11 @@ if ( is_admin() && isset($_GET['activated'] ) && $pagenow == 'themes.php' )
     "suevafree_link_color_hover" => "#d14a2b", 
     "suevafree_border_color" => "#ff6644", 
 
-	"suevafree_body_background" => "/images/background/patterns/grid.png",
+	"suevafree_body_background" => "/images/background/patterns/pattern19.jpg",
 	"suevafree_body_background_repeat" => "repeat",
 	"suevafree_body_background_color" => "#f3f3f3",
 	
-	"suevafree_footer_background" => "/images/background/patterns/debut_dark.png",
+	"suevafree_footer_background" => "/images/background/patterns/pattern3.jpg",
 	"suevafree_footer_background_repeat" => "repeat",
 	"suevafree_footer_background_color" => "#f3f3f3",
 
@@ -189,7 +187,7 @@ if ( is_admin() && isset($_GET['activated'] ) && $pagenow == 'themes.php' )
 /* Admin menu */
 /*-----------------------------------------------------------------------------------*/   
 
-function option_panel() {
+function suevafree_option_panel() {
         global $wp_admin_bar, $wpdb;
     	
 		$wp_admin_bar->add_menu( array( 'id' => 'theme_options', 'title' => '<span> Theme Options </span>', 'href' => get_admin_url() . 'themes.php?page=themeoption' ) );
@@ -197,13 +195,13 @@ function option_panel() {
 
 }
 
-add_action( 'admin_bar_menu', 'option_panel', 1000 );
+add_action( 'admin_bar_menu', 'suevafree_option_panel', 1000 );
 
 /*-----------------------------------------------------------------------------------*/
 /* Prettyphoto at post gallery */
 /*-----------------------------------------------------------------------------------*/   
 
-function prettyPhoto( $html, $id, $size, $permalink, $icon, $text ) {
+function suevafree_prettyPhoto( $html, $id, $size, $permalink, $icon, $text ) {
 	
     if ( ! $permalink )
         return str_replace( '<a', '<a data-rel="prettyPhoto" ', $html );
@@ -211,19 +209,19 @@ function prettyPhoto( $html, $id, $size, $permalink, $icon, $text ) {
         return $html;
 }
 
-add_filter( 'wp_get_attachment_link', 'prettyPhoto', 10, 6);
+add_filter( 'wp_get_attachment_link', 'suevafree_prettyPhoto', 10, 6);
 
 /*-----------------------------------------------------------------------------------*/
 /* Custom excerpt more */
 /*-----------------------------------------------------------------------------------*/   
 
-function new_excerpt_more( $more ) {
+function suevafree_new_excerpt_more( $more ) {
 	
 	global $post;
 	return '<a class="button" href="'.get_permalink($post->ID).'" title="More">  ' . __( "Read More","wip") . ' </a>';
 }
 
-add_filter('excerpt_more', 'new_excerpt_more');
+add_filter('excerpt_more', 'suevafree_new_excerpt_more');
 
 
 /*-----------------------------------------------------------------------------------*/
@@ -242,45 +240,46 @@ add_filter('widget_text', 'do_shortcode');
 /* Remove category list rel */
 /*-----------------------------------------------------------------------------------*/   
 
-function remove_category_list_rel($output)
+function suevafree_remove_category_list_rel($output)
 {
 	$output = str_replace('rel="category"', '', $output);
 	return $output;
 }
-add_filter('wp_list_categories', 'remove_category_list_rel');
-add_filter('the_category', 'remove_category_list_rel');
+add_filter('wp_list_categories', 'suevafree_remove_category_list_rel');
+add_filter('the_category', 'suevafree_remove_category_list_rel');
 
 /*-----------------------------------------------------------------------------------*/
 /* Remove thumbnail dimensions */
 /*-----------------------------------------------------------------------------------*/ 
 
-function remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
+function suevafree_remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
     $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
     return $html;
 }
 
-add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10, 3 );
+add_filter( 'post_thumbnail_html', 'suevafree_remove_thumbnail_dimensions', 10, 3 );
   
 /*-----------------------------------------------------------------------------------*/
 /* Remove css gallery */
 /*-----------------------------------------------------------------------------------*/ 
 
-add_filter( 'gallery_style', 'my_gallery_style', 99 );
 
-function my_gallery_style() {
+function suevafree_my_gallery_style() {
     return "<div class='gallery'>";
 }
+
+add_filter( 'gallery_style', 'suevafree_my_gallery_style', 99 );
 
 /*-----------------------------------------------------------------------------------*/
 /* Thematic dropdown options */
 /*-----------------------------------------------------------------------------------*/ 
 
-function childtheme_dropdown_options($dropdown_options) {
+function suevafree_childtheme_dropdown_options($dropdown_options) {
 	$dropdown_options = '<script type="text/javascript" src="'. get_bloginfo('stylesheet_directory') .'/scripts/thematic-dropdowns.js"></script>';
 	return $dropdown_options;
 }
 
-add_filter('thematic_dropdown_options','childtheme_dropdown_options');
+add_filter('thematic_dropdown_options','suevafree_childtheme_dropdown_options');
 
 
 /*-----------------------------------------------------------------------------------*/
