@@ -1,5 +1,10 @@
+/* 
+Content theme
+Editor-style.css written by Alberto Ramacciotti ( http://ramacciotti.altervista.org ) 
+ */ 
+ 
 html {
-    font-size: 87.5%;
+    font-size: 100%;
 }
 
 html .mcecontentBody {
@@ -7,10 +12,10 @@ html .mcecontentBody {
 }
 
 body {
-    color: #444444;
-    font-family: PT Sans, verdana, sans-serif;
-    font-size: 16px;
-    line-height: 1;
+    color: #000000;
+    font-family: PT Sans, verdana, arial, sans-serif;
+    font-size: 1em;
+    line-height: 1.5;
     text-rendering: optimizeLegibility;
     vertical-align: baseline;
 }
@@ -54,20 +59,19 @@ h6 {
 
 hr {
     background-color: #cccccc;
+    color: #000000;
     border: 0;
     height: 1px;
     margin: 24px;
 }
 
 p {
-    line-height: 1.7;
     margin: 0 0 24px;
 }
 
 ul,
 ol {
     margin: 0 0 24px;
-    line-height: 1.7;
     padding: 0;
 }
 
@@ -100,7 +104,6 @@ dt {
 }
 
 dd {
-    line-height: 1.7;
     margin: 0 0 24px;
 }
 
@@ -132,8 +135,6 @@ pre {
     border: 1px solid #ededed;
     color: #666666;
     font-family: consolas, monaco, lucida console, monospace;
-    font-size: 14px;
-    line-height: 1.7;
     margin: 24px 0;
     overflow: auto;
     padding: 24px;
@@ -144,20 +145,17 @@ kbd,
 samp,
 var {
     font-family: consolas, monaco, lucida console, monospace;
-    font-size: 14px;
-    line-height: 2;
 }
 
 abbr,
 acronym,
 dfn {
-    border-bottom: 1px dotted #666;
+    border-bottom: 1px dotted #444444;
     cursor: help;
 }
 
 address {
     display: block;
-    line-height: 1.7;
     margin: 0 0 24px;
 }
 
@@ -166,7 +164,7 @@ del {
 }
 
 ins {
-    background: #fff9c0;
+    background-color: #fff9c0;
     border: none;
     color: #333333;
     text-decoration: none;
@@ -199,8 +197,6 @@ textarea {
     border: 1px solid #d5d2ca;
     border-radius: 3px;
     font-family: inherit;
-    font-size: 14px;
-    line-height: 1.7;
     padding: 10px;
     width: 96%;
 }
@@ -242,17 +238,13 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
     color: #757575;
-    font-size: 14px;
-    line-height: 2;
     margin: 0 0 24px;
     width: 100%;
 }
 
 tr th {
-    color: #636363;
-    font-size: 14px;
+    color: #000000;
     font-weight: bold;
-    line-height: 2.181818182;
     text-align: left;
     text-transform: uppercase;
 }
@@ -305,7 +297,7 @@ img.wp-smiley {
 
 .wp-caption {
     background: transparent;
-    border: none;
+    border: 0;
     margin: 0;
     padding: 4px;
     text-align: left;
@@ -319,7 +311,5 @@ img.wp-smiley {
 .wp-caption-dd {
     color: #757575;
     font-style: italic;
-    font-size: 14px;
-    line-height: 2;
     margin: 0 0 24px;
 }

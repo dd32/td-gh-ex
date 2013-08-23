@@ -1,4 +1,9 @@
-html .mcecontentBody {
+/* 
+Content theme
+Editor-style-rtl.css written by Alberto Ramacciotti ( http://ramacciotti.altervista.org ) 
+ */ 
+
+ html .mcecontentBody {
     direction: rtl;
     unicode-bidi: embed;
 }

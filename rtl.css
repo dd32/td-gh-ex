@@ -1,3 +1,8 @@
+/* 
+Content theme
+Rtl.css written by Alberto Ramacciotti ( http://ramacciotti.altervista.org ) 
+ */ 
+
 body {
     direction: rtl;
     unicode-bidi: embed;
@@ -89,17 +94,17 @@ article.format-link .post-content {
     right: auto;
 }
 
-.comments-area li.bypostauthor cite span {
+.comments-area .bypostauthor cite span {
     margin-right: 5px;
     margin-left: auto;
 }
 
-#respond h3#reply-title #cancel-comment-reply-link {
+#respond #reply-title #cancel-comment-reply-link {
     margin-right: 10px;
     margin-left: auto;
 }
 
-label ~ span.required {
+label ~ .required {
     float: right;
     margin: -18px -16px 0 0;
 }
@@ -173,8 +178,8 @@ label ~ span.required {
         margin: 0 24px 0;
     }
 
-    .main-navigation ul.menu,
-    .main-navigation div.menu > ul {
+    .main-navigation .menu,
+    .main-navigation .menu > ul {
         text-align: right;
     }
 

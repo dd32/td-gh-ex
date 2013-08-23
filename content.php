@@ -18,22 +18,22 @@
             <div class="post-summary">
                 <?php the_excerpt(); ?>
             </div>
-        <?php }
+        <?php } 
         if ( is_search() ) : ?>
             <div class="post-summary">
                 <?php the_excerpt(); ?>
             </div>
         <?php else : ?>
         <div class="post-content">
-        <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'content' ));
-         wp_link_pages( 
-            array( 
-                'before' => '<div class="numbered-pagination">', 
-                'after' => '</div>',
-                'link_before' => '<span>',
-                'link_after' => '</span>'
-            )
-        ); ?>
+            <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'content' ));
+            wp_link_pages( 
+                array( 
+                    'before' => '<div class="numbered-pagination">', 
+                    'after' => '</div>',
+                    'link_before' => '<span>',
+                    'link_after' => '</span>'
+                )
+            ); ?>
         </div>
         <?php endif; ?>
         <footer class="post-meta">

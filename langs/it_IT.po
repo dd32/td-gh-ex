@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Content\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-09 13:18+0100\n"
-"PO-Revision-Date: 2013-05-09 13:18+0100\n"
+"POT-Creation-Date: 2013-08-23 04:47+0100\n"
+"PO-Revision-Date: 2013-08-23 04:47+0100\n"
 "Last-Translator: AR <ramacciotti.alberto@gmail.com>\n"
 "Language-Team: AR Web Dev Studio <ramacciotti.alberto@gmail.com>\n"
 "Language: it_IT\n"
@@ -14,38 +14,17 @@ msgstr ""
 "X-Poedit-Basepath: C:\\xampp\\htdocs\\wordpress\\wp-content\\themes"
 "\\Content\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.5.7\n"
 "X-Poedit-SearchPath-0: C:\\xampp\\htdocs\\wordpress\\wp-content\\themes"
 "\\Content\n"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/404.php:25
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/header.php:33
-msgid "Subscribe to the RSS Feed of this site"
-msgstr "Abbonati agli RSS Feed di questo sito"
-
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/404.php:31
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/404.php:5
 msgid "Error: page not found."
 msgstr "Errore: pagina non trovata."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/404.php:34
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/404.php:8
 msgid "Please come back and search again."
 msgstr "Si prega di tornare indietro e cercare ancora."
-
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/404.php:39
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/footer.php:25
-msgid "is based on"
-msgstr "è basato su"
-
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/404.php:39
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/footer.php:25
-msgid "http://wordpress.org/"
-msgstr "http://wordpress.org/"
-
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/404.php:39
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/footer.php:25
-#, php-format
-msgid "%s"
-msgstr "%s"
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\Content/archive.php:8
 #, php-format
@@ -115,7 +94,7 @@ msgstr "Collegamento permanente a %s"
 #: C:\xampp\htdocs\wordpress\wp-content\themes\Content/content-quote.php:3
 #: C:\xampp\htdocs\wordpress\wp-content\themes\Content/content-status.php:10
 #: C:\xampp\htdocs\wordpress\wp-content\themes\Content/content.php:28
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/image.php:57
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/image.php:68
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Continua a leggere <span class=\"meta-nav\">&rarr;</span>"
 
@@ -153,8 +132,8 @@ msgstr "% Risposte"
 #: C:\xampp\htdocs\wordpress\wp-content\themes\Content/content-quote.php:10
 #: C:\xampp\htdocs\wordpress\wp-content\themes\Content/content-status.php:18
 #: C:\xampp\htdocs\wordpress\wp-content\themes\Content/content.php:41
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:182
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:205
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:194
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:217
 #: C:\xampp\htdocs\wordpress\wp-content\themes\Content/image.php:19
 msgid "Edit"
 msgstr "Modifica"
@@ -164,13 +143,13 @@ msgid "Link"
 msgstr "Collegamento"
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\Content/content-none.php:3
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/index.php:19
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/index.php:20
 #: C:\xampp\htdocs\wordpress\wp-content\themes\Content/search.php:16
 msgid "Nothing Found"
 msgstr "Non è stato trovato niente"
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\Content/content-none.php:6
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/index.php:22
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/index.php:23
 msgid ""
 "No contents are found, try to do another research using a different term."
 msgstr ""
@@ -178,7 +157,7 @@ msgstr ""
 "utilizzando un termine di ricerca differente."
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\Content/content-page.php:7
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/image.php:60
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/image.php:71
 msgid "Pages:"
 msgstr "Pagine:"
 
@@ -188,20 +167,28 @@ msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 "Visualizza tutti gli articoli di %s <span class=\"meta-nav\">&rarr;</span>"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:22
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/footer.php:25
+msgid "is designed by"
+msgstr "è progettato da"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/footer.php:25
+msgid "http://ramacciotti.altervista.org"
+msgstr "http://ramacciotti.altervista.org"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:23
 msgid "Main Menu"
 msgstr "Menu Principale"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:66
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:78
 #, php-format
 msgid "Page %s"
 msgstr "Pagina %s"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:81
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:93
 msgid "Meta widget"
 msgstr "Meta widget"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:83
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:95
 msgid ""
 "Appears on posts and pages except the optional Front Page template, which "
 "has its own widgets"
@@ -209,12 +196,12 @@ msgstr ""
 "Questa area apparire negli articoli e pagine eccetto che nel template "
 "opzionale della Pagina Frontale, che ha i propri widgets."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:92
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:104
 msgid "Tag Cloud widget"
 msgstr "Tag Cloud widget"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:94
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:105
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:106
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:117
 msgid ""
 "Appears when using the optional Front Page template with a page set as "
 "Static Front Page"
@@ -223,75 +210,75 @@ msgstr ""
 "opzionale della Pagina Frontale con una pagina impostata come Pagina "
 "Frontale Statica."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:103
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:115
 msgid "Various widgets"
 msgstr "Vari widget"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:114
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:116
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:126
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:128
 msgid "Search Form Widget Area"
 msgstr "Area del widget del modulo di ricerca"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:125
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:127
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:137
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:139
 msgid "First Widget area in the footer"
 msgstr "Prima area widget a piè di pagina"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:136
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:138
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:148
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:150
 msgid "Second Widget area in the footer"
 msgstr "Seconda area widget a pie di pagina."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:147
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:149
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:159
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:161
 msgid "Third Widget area in the footer"
 msgstr "Terza area widget a pie di pagina"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:165
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/single.php:8
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:177
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/single.php:9
 msgid "Post navigation"
 msgstr "Navigazione articolo"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:167
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:179
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> Vecchi articoli"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:168
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:180
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Nuovi articoli <span class=\"meta-nav\">&rarr;</span>"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:182
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:194
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:192
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:204
 msgid "Post author"
 msgstr "Autore dell' articolo"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:197
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:209
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s alle %2$s"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:201
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:213
 msgid "Your comment is awaiting moderation."
 msgstr "Il vostro commento è in attesa di approvazione."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:208
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:220
 msgid "Reply"
 msgstr "Rispondi"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:218
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:219
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:230
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:231
 msgid ", "
 msgstr ", "
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:228
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:240
 #, php-format
 msgid "View all posts by %s"
 msgstr "Visualizza tutti gli articoli di %s"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:232
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:244
 #, php-format
 msgid ""
 "<p class=\"cats\">Categories: %1$s</p><p class=\"tags\">Tags: %2$s</p><p "
@@ -300,7 +287,7 @@ msgstr ""
 "<p class=\"cats\">Categorie: %1$s</p><p class=\"tags\">Tags: %2$s</p><p "
 "class=\"date\">%3$s</p> <p class=\"by-author\">Autore %4$s</p>"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:234
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:246
 #, php-format
 msgid ""
 "<p class=\"cats\">Categories: %1$s</p><p class=\"tags\">%3$s</p><p class="
@@ -309,33 +296,35 @@ msgstr ""
 "<p class=\"cats\">Categorie: %1$s</p><p class=\"tags\">%3$s</p><p class=\"by-"
 "author\">Autore: %4$s</p>"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:236
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/functions.php:248
 #, php-format
 msgid "%3$s <p class=\"by-author\">Author: %4$s</p>"
 msgstr "%3$s <p class=\"by-author\">Autore: %4$s</p>"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/header.php:35
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/header.php:31
+msgid "Subscribe to the RSS Feed of this site"
+msgstr "Abbonati agli RSS Feed di questo sito"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/header.php:33
 msgid "Menu"
 msgstr "Menu"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/header.php:36
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/header.php:34
 msgid "Skip to content"
 msgstr "Salta ai contenuti principali"
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\Content/image.php:9
 #, php-format
 msgid ""
-"<span class=\"meta-prep meta-prep-post-date\">Published </span> <span class="
-"\"post-date\"><time class=\"post-date\" datetime=\"%1$s\" pubdate>%2$s</"
-"time></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s "
-"&times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery"
-"\">%8$s</a>."
+"<span class=\"post-date\"><time class=\"post-date\" datetime=\"%1$s\" "
+"pubdate>%2$s</time></span>, <a href=\"%3$s\" title=\"Link to full-size image"
+"\">%4$s &times; %5$s</a> | <a href=\"%6$s\" title=\"Return to %7$s\" rel="
+"\"gallery\">%8$s</a>."
 msgstr ""
-"<span class=\"meta-prep meta-prep-post-date\">Pubblicato </span> <span class="
-"\"post-date\"><time class=\"post-date\" datetime=\"%1$s\" pubdate>%2$s</"
-"time></span> alle <a href=\"%3$s\" title=\"Collegamento alla immagine a "
-"dimensione normale\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title="
-"\"Ritorna a %7$s\" rel=\"gallery\">%8$s</a>."
+"<span class=\"post-date\"><time class=\"post-date\" datetime=\"%1$s\" "
+"pubdate>%2$s</time></span>, <a href=\"%3$s\" title=\"Collegamento alla "
+"immagine a dimensione intera\">%4$s &times; %5$s</a> | <a href=\"%6$s\" "
+"title=\"Ritorna a %7$s\" rel=\"gallery\">%8$s</a>."
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\Content/image.php:23
 msgid "&larr; Previous"
@@ -345,11 +334,11 @@ msgstr "&larr; Precedente"
 msgid "Next &rarr;"
 msgstr "Prossima &rarr;"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/index.php:12
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/index.php:13
 msgid "No posts to display"
 msgstr "Nessun articolo da visualizzare"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/index.php:15
+#: C:\xampp\htdocs\wordpress\wp-content\themes\Content/index.php:16
 #, php-format
 msgid ""
 "<a href=\"%s\" title=\"publish your first article\">Publish your first "
@@ -375,6 +364,15 @@ msgstr ""
 #, php-format
 msgid "Tag Archives: %s"
 msgstr "Archivi delle etichette: %s"
+
+#~ msgid "is based on"
+#~ msgstr "è basato su"
+
+#~ msgid "http://wordpress.org/"
+#~ msgstr "http://wordpress.org/"
+
+#~ msgid "%s"
+#~ msgstr "%s"
 
 #~ msgid "Proudly powered by %s"
 #~ msgstr "è orgogliasamente basato su %s"

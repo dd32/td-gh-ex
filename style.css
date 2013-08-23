@@ -1,10 +1,10 @@
 /* 
 Theme Name: Content
 Author: Alberto Ramacciotti
-Author URI: http://ramacciotti.altervista.org
-Theme URI: http://ramacciotti.altervista.org/archivio/articolo/content-wordpress-theme
+Author URI: http://ramacciotti.altervist.org
+Theme URI: http://ramacciotti.altervist.org/archivio/articolo/content-theme
 Description: Content is a responsive theme focused on readability.
-Version: 1.0.4
+Version: 1.0.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Content WordPress theme, Copyright (C) 2013 Alberto Ramacciotti, AR Web Dev Studio
@@ -115,15 +115,15 @@ section,
 .comment-content pre code,
 .post-content address,
 .comment-content address,
-.image-attachment div.attachment img,
-article.format-quote .post-content blockquote,
+.image-attachment .attachment img,
+.format-quote .post-content blockquote,
 .comments-area article header cite,
 .comments-area article header time,
 #respond form label,
 label ~ span.required,
 .widget-search label,
 .widget-twitter .timesince,
-img#wpstats,
+#wpstats,
 .aside .menu li,
 .menu a,
 .menu a:visited,
@@ -147,8 +147,6 @@ video,
 .cols .widget_search,
 audio:not([controls]),
 #pagination-top,
-.menu ul.menu,
-.menu div.menu > ul,
 .single-author .post-meta .by-author {
     display: none;
 }
@@ -188,19 +186,19 @@ th,
 td,
 .blog-description,
 .menu-toggle,
-input#searchsubmit,
-article.post-password-required input[type=submit],
-li.bypostauthor cite span,
+#searchsubmit,
+.post-password-required input[type=submit],
+.bypostauthor cite span,
 .post-header .post-format,
-article.format-image footer h1,
-article.format-image footer a h2,
-article.format-image footer a:visited h2,
+.format-image footer h1,
+.format-image footer a h2,
+.format-image footer a:visited h2,
 .format-status .post-header h1,
 .format-status .post-header h2,
 .comments-area article header h4,
 .comments-title,
-#respond h3#reply-title #cancel-comment-reply-link,
-footer#footer {
+#respond #reply-title #cancel-comment-reply-link,
+#footer {
     font-weight: normal;
 }
 
@@ -220,7 +218,7 @@ td,
 .menu li,
 .blog-header h1, 
 .blog-header h2,
-footer#footer {
+#footer {
     text-align: center;
 }
 
@@ -232,7 +230,7 @@ h5,
 h6,
 .clear:after,
 .format-status .post-header:after,
-footer.post-meta,
+.post-meta,
 .widget_search,
 .content nav,
 .numbered-pagination,
@@ -245,17 +243,17 @@ footer.post-meta,
 .edit-link a, 
 .edit-link a:visited,
 .archive-title,
-article.format-link header,
+.format-link header,
 .page-title,
 .widget-title,
 .post-content th,
 .comment-content th,
 .menu-toggle,
-input#searchsubmit,
+#searchsubmit,
 #submit,
 .comment-form-comment,
-article.post-password-required input[type=submit],
-li.bypostauthor cite span,
+.post-password-required input[type=submit],
+.bypostauthor cite span,
 .menu li a,
 .post-meta a,
 .post-meta a:visited,
@@ -267,8 +265,7 @@ li.bypostauthor cite span,
 .comments-area article header,
 .content nav,
 .author-info,
-.article.attachment,
-#header,
+.attachment,
 article,
 .widget_search {
     overflow: hidden;
@@ -315,6 +312,7 @@ sub {
 }
 
 img {
+    max-width: 100%;
     border: 0;
     -ms-interpolation-mode: bicubic;
 }
@@ -348,25 +346,25 @@ img {
     font-size: 1.4em;
 }
 
-article.format-quote footer.post-meta,
-article.format-link footer.post-meta,
-article.format-status footer.post-meta {
+.format-quote .post-meta,
+.format-link .post-meta,
+.format-status .post-meta {
     font-size: 12px;
     line-height: 2;
 }
 
 .menu-toggle,
-input#searchsubmit,
-article.post-password-required input[type=submit],
-li.bypostauthor cite span {
+#searchsubmit,
+.post-password-required input[type=submit],
+.bypostauthor cite span {
     padding: 8px 10px;
     line-height: 1;
     border: 0;
 }
 
 .menu-toggle,
-input#searchsubmit,
-article.post-password-required input[type=submit] {
+#searchsubmit,
+.post-password-required input[type=submit] {
     cursor: pointer;
 }
 
@@ -374,26 +372,26 @@ article.post-password-required input[type=submit] {
     color: #dddddd;
 }
 
-input#searchsubmit {
+#searchsubmit {
     color: #f2efe4;
     background-color: #9b5a4f;
 }
 
-input#searchsubmit:hover {
+#searchsubmit:hover {
     color: #f2efe4;
     background-color: #40798c;
 }
 
 .menu-toggle:active,
 .menu-toggle.toggled-on,
-input#searchsubmit:active,
-article.post-password-required input[type=submit]:active,
-input#searchsubmit.toggled-on {
+#searchsubmit:active,
+.post-password-required input[type=submit]:active,
+#searchsubmit.toggled-on {
     color: #68834b;
     border: 0;
 }
 
-li.bypostauthor cite span {
+.bypostauthor cite span {
     padding: 0;
 }
 
@@ -405,6 +403,8 @@ textarea {
     padding: 6px;
     font-family: inherit;
     border: 1px solid #3f6774;
+    background-color: #ffffff;
+    color: #000000;
 }
 
 .post-content img,
@@ -419,9 +419,9 @@ img[class*="attachment-"] {
     height: auto;
 }
 
-img.size-full,
-img.size-large,
-img.wp-post-image {
+.size-full,
+.size-large,
+.wp-post-image {
     max-width: 100%;
     height: auto;
 }
@@ -470,7 +470,7 @@ video {
     line-height: 2;
 }
 
-img.wp-smiley,
+.wp-smiley,
 .rsswidget img {
     border: 0;
     margin-bottom: 0;
@@ -618,7 +618,7 @@ body {
     background-image: linear-gradient(to bottom, #e7e2d9, #f2efe4);
 }
 
-body.custom-font-enabled {
+.custom-font-enabled {
     font-family: PT Sans, verdana, sans-serif;
 }
 
@@ -767,7 +767,7 @@ body.custom-font-enabled {
     margin-left: 36px;
 }
 
-footer#footer {
+#footer {
     border-top: 2px solid #dddddd;
     clear: both;
     font-size: .875em;
@@ -776,11 +776,37 @@ footer#footer {
     margin: 2em 0 30px 0;
 }
 
+#footer a,
+#footer a:visited {
+    border-bottom: 1px solid #ddd67b;
+}
+
+#footer a:hover {
+    border-bottom: 1px solid #1351ad;
+}
+
+#footer .ar {
+    width: 17px;
+    height: 14px;
+}
+
+#page #footer .ar,
+#page #footer .ar:visited,
+#page #footer .ar:hover {
+    padding: 0;
+    border-bottom: 0;
+    background-color: transparent;
+}
+
+#footer .ar img {
+    vertical-align: middle;
+}
+
 .post-header {
     margin-bottom: 24px;
 }
 
-.post-header img.wp-post-image {
+.post-header .wp-post-image {
     margin-bottom: 24px;
 }
 
@@ -867,7 +893,7 @@ footer#footer {
     font-size: 1.2em;
 }
 
-.comment-content p.edit-link {
+.comment-content .edit-link {
     font-size: 1.2em;
 }
 
@@ -952,15 +978,15 @@ footer#footer {
     margin: 0 0 24px;
 }
 
-img.alignleft {
+.alignleft {
     margin: 12px 24px 12px 0;
 }
 
-img.alignright {
+.alignright {
     margin: 12px 0 12px 24px;
 }
 
-img.aligncenter {
+.aligncenter {
     margin-top: 12px;
     margin-bottom: 12px;
 }
@@ -1030,12 +1056,12 @@ img.aligncenter {
     padding: .5em;
 }
 
-footer.post-meta {
+.post-meta {
     font-size: 1em;
     line-height: 1.8;
 }
 
-footer.post-meta p {
+.post-meta p {
     margin-bottom: 1em;
 }
 
@@ -1089,17 +1115,17 @@ footer.post-meta p {
     margin-bottom: 0;
 }
 
-article.format-image footer h1 {
+.format-image footer h1 {
     font-size: 14px;
     line-height: 1.8;
 }
 
-article.format-image footer h2 {
+.format-image footer h2 {
     font-size: 14px;
     line-height: 2;
 }
 
-article.format-link header {
+.format-link header {
     padding: 0 10px;
     float: right;
     font-size: 14px;
@@ -1110,17 +1136,17 @@ article.format-link header {
     border-radius: 3px;
 }
 
-article.format-link .post-content {
+.format-link .post-content {
     max-width: 80%;
     float: left;
 }
 
-article.format-link .post-content a {
+.format-link .post-content a {
     font-size: 22px;
     line-height: 1.5;
 }
 
-article.format-quote .post-content p {
+.format-quote .post-content p {
     margin: 0;
     padding-bottom: 24px;
 }
@@ -1197,20 +1223,20 @@ article.format-quote .post-content p {
     border: 1px solid #007cbd;
 }
 
-.comments-area li.bypostauthor cite span {
+.comments-area .bypostauthor cite span {
     position: absolute;
     margin-left: 5px;
     padding: 2px 5px;
     font-size: 14px;
 }
 
-a.comment-reply-link {
+.comment-reply-link {
     font-size: 14px;
     line-height: 1.8;
     color: #9b5a4f;
 }
 
-a.comment-reply-link:hover {
+.comment-reply-link:hover {
     color: #e4edfc;
 }
 
@@ -1228,13 +1254,13 @@ a.comment-reply-link:hover {
     padding: 0 24px;
 }
 
-#respond h3#reply-title {
+#respond #reply-title {
     font-size: 1.6em;
     line-height: 1.5;
     color: #444444;
 }
 
-#respond h3#reply-title #cancel-comment-reply-link {
+#respond #reply-title #cancel-comment-reply-link {
     margin-left: 10px;
     font-size: 14px;
 }
@@ -1247,7 +1273,7 @@ a.comment-reply-link:hover {
     margin: 13px 0;
 }
 
-#respond form p.logged-in-as {
+#respond form .logged-in-as {
     margin-bottom: 24px;
 }
 
@@ -1265,7 +1291,7 @@ a.comment-reply-link:hover {
     width: 100%;
 }
 
-#respond form p.form-allowed-tags {
+#respond form .form-allowed-tags {
     margin: 0;
     font-size: 1em;
     line-height: 1.5;
@@ -1355,7 +1381,7 @@ label ~ span.required {
     text-align: right;
 }
 
-img#wpstats {
+#wpstats {
     margin: 0 auto 24px;
 }
 
@@ -1425,7 +1451,6 @@ img#wpstats {
     }
 
     .menu li {
-        overflow: hidden;
         margin: 0 0 .5em 0;
         padding-bottom: .5em;
     }
@@ -1467,19 +1492,19 @@ img#wpstats {
         width: 80%;
     }
 
-    body.template-front-page .content,
-    body.single-attachment .content,
-    body.page-template-page-templatesfull-width-php .content {
+    .template-front-page .content,
+    .single-attachment .content,
+    .page-template-page-templatesfull-width-php .content {
         width: 95%;
         padding: 24px;
         float: none;
     }
 
-    body.page-template-page-templatesfull-width-php .content article {
+    .page-template-page-templatesfull-width-php .content article {
         width: 60%;
     }
 
-    body.page-template-page-templatesfull-width-php .content article.sticky {
+    .page-template-page-templatesfull-width-php .content .sticky {
         width: 90%;
     }
 
@@ -1543,33 +1568,35 @@ img#wpstats {
         font-size: 1.8em;
     }
 
-    nav.menu {
+    .menu {
         margin-top: 3em;
         font-size: 1em;
     }
 
     .menu li {
+        position: relative;
         line-height: 1;
         width: 13em;
         float: left;
         margin: 0 0 10px 0;
-    }
-
-    .menu ul.menu,
-    .menu div.menu > ul {
-        display: block;
         text-align: left;
     }
 
+    .menu .menu,
+    .menu .menu > ul {
+        display: inline-block;
+        text-align: left;
+        width: 100%;
+    }
+
     .menu ul {
-        overflow: hidden;
         margin: 0;
         text-indent: 0;
     }
 
     .menu li a,
     .menu li {
-        display: block;
+        display: inline-block;
         text-decoration: none;
     }
 
@@ -1581,26 +1608,57 @@ img#wpstats {
     }
 
     .menu li a:visited {
-        border-bottom: 1px solid #000000;
+        border-bottom: 1px solid #40798c;
     }
 
     .menu li a:hover {
         border-bottom: 1px solid #bbbbbb;
     }
 
+    .menu li ul {
+        display: none;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 100%;
+        z-index: 1;
+    }
+
+    .menu li ul ul {
+        top: 0;
+        left: 100%;
+    }
+
+    .menu ul li:hover > ul {
+        display: block;
+    }
+
+    .menu li ul li {
+        margin: 0;
+    }
+
     .menu li ul li a {
+        width: 180px;
         text-transform: lowercase;
         line-height: 1.5;
-        border-bottom: 1px solid #f2efe4;
+        padding: .5em;
+        margin: 0;
+        border-bottom: 1px solid #40798c;
+        background-color: #40798c;
+        color: #fafafa;
     }
 
     .menu li ul li a:visited {
         text-transform: lowercase;
         border-bottom: 1px solid #023f60;
+        background-color: transparent;
+        color: #023f60;
     }
     
     .menu li ul li a:hover {
-        border-bottom: 1px solid #f2efe4;
+        border-bottom: 1px solid #40798c;
+        background-color: transparent;
+        color: #000000;
     }
 
     .menu-toggle {
@@ -1611,7 +1669,7 @@ img#wpstats {
         width: 46%;
     }
 
-    #respond form textarea.blog-textarea {
+    #respond form .blog-textarea {
         width: 79%;
     }
 
@@ -1657,7 +1715,7 @@ img#wpstats {
 }
 
 @media screen and (min-width: 960px) {
-    nav.menu {
+    .menu {
         margin-top: 0;
         font-size: 12px;
     }
@@ -1712,7 +1770,7 @@ img#wpstats {
     .post-content img,
     .comment-content img,
     .author-avatar img,
-    img.wp-post-image {
+    .wp-post-image {
         border-radius: 0;
     }
 
@@ -1765,7 +1823,7 @@ img#wpstats {
     .singular .content,
     .singular .post-header,
     .singular .post-content,
-    .singular footer.post-meta,
+    .singular .post-meta,
     .singular .comments-title {
         margin: 0;
         width: 100%;
@@ -1777,8 +1835,8 @@ img#wpstats {
         font-size: 21pt;
     }
 
-    footer.post-meta,
-    footer.post-meta a {
+    .post-meta,
+    .post-meta a {
         color: #000000;
         font-size: 10pt;
     }
@@ -1788,7 +1846,7 @@ img#wpstats {
         width: auto;
     }
 
-    .commentlist > li.comment {
+    .commentlist > .comment {
         background: none;
         position: relative;
         width: auto;
@@ -1833,8 +1891,8 @@ img#wpstats {
     width: 26%;
 }
 
-.ie img.size-full,
-.ie img.size-large,
-.ie img.wp-post-image {
+.ie .size-full,
+.ie .size-large,
+.ie .wp-post-image {
     width: auto;
 }

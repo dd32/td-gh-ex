@@ -22,7 +22,7 @@
                 endif; ?>
             </div>
         </div>
-        <p class="footer-notes"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a> <?php printf( __( 'is based on', 'content' ) ); ?> <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'content' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'content' ); ?>" rel="generator"><?php printf( __( '%s', 'content' ), 'WordPress' ); ?></a>.</p>
+        <p class="footer-notes"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a> <?php printf( __( 'is designed by', 'content' ) ); ?> <a href="<?php echo esc_url( __( 'http://ramacciotti.altervista.org', 'content' ) ); ?>" title="<?php esc_attr_e( 'alberto ramacciotti homepage', 'content' ); ?>" class="ar"><img src="<?php echo get_template_directory_uri( 'template_directory' ); ?>/i/ar-logo-icon.jpg" alt="alberto ramacciotti homepage"></a></p>
     </footer>
 </div>
 <?php wp_footer(); ?>

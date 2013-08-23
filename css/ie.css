@@ -1,13 +1,20 @@
+/* 
+Content theme
+ie.css written by Alberto Ramacciotti ( http://ramacciotti.altervista.org )
+ */ 
+
 body {
     background-color: #fafafa;
+    color: #000000;
 }
 
-body.custom-background-empty {
+.custom-background-empty {
     background-color: #fafafa;
+    color: #000000;
 }
 
-body.custom-background-empty .site,
-body.custom-background-white .site {
+.custom-background-empty .site,
+.custom-background-white .site {
     margin-bottom: 0;
     margin-top: 0;
     padding: 0;
@@ -23,10 +30,10 @@ body.custom-background-white .site {
     width: 100%;
 }
 
-img.size-full,
-img.size-large,
-img.header-image,
-img.wp-post-image,
+.size-full,
+.size-large,
+.header-image,
+.wp-post-image,
 img[class*="align"],
 img[class*="wp-image-"],
 img[class*="attachment-"] {
@@ -54,9 +61,9 @@ img[class*="attachment-"] {
     width: 65%;
 }
 
-body.template-front-page .site-content,
-body.single-attachment .site-content,
-body.full-width .site-content {
+.template-front-page .site-content,
+.single-attachment .site-content,
+.full-width .site-content {
     width: 100%;
 }
 
@@ -106,6 +113,7 @@ body.full-width .site-content {
     line-height: 3;
     text-transform: uppercase;
 }
+
 .main-navigation li a:hover {
     color: #000000;
 }
@@ -193,7 +201,7 @@ body.full-width .site-content {
 .template-front-page.two-sidebars .widget-area .front-widgets {
     float: left;
     margin-bottom: 24px;
-    width: 51.875%;
+    width: 51%;
 }
 
 .template-front-page .widget-area .widget:nth-child(odd) {

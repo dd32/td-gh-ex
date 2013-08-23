@@ -27,18 +27,17 @@
     endif; ?>
     <div id="page" class="hfeed container">
         <header id="header" class="blog-header">
-            <h1 class="blog-title"><a href="<?php echo esc_url(home_url( '/' )); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' )); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+            <h1 class="blog-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
             <h2 class="blog-description"><?php bloginfo( 'description' ); ?> | <a href="<?php get_feed_link( 'rss2_url' ); ?>" title="<?php _e( 'Subscribe to the RSS Feed of this site', 'content' ); ?>" id="rss">RSS</a></h2>
             <nav id="blog-menu" class="menu">
                 <h2 class="menu-toggle"><?php _e( 'Menu', 'content' ); ?></h2>
                 <h3 class="skip-link accessibility"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'content' ); ?>"><?php _e( 'Skip to content', 'content' ); ?></a></h3>
-                <?php wp_nav_menu(
+                <?php wp_nav_menu( 
                     array( 
                         'container' => '',
                         'theme_location' => 'menu', 
-                        'menu_class' => 'menu',
-                        'depth' => 1
-                    )
+                        'menu_class' => 'menu'
+                    ) 
                 ); ?>
             </nav>
         </header>

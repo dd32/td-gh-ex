@@ -1,6 +1,7 @@
 <?php 
-if( ! isset( $content_width ) )
+if( ! isset( $content_width ) ) 
     $content_width = 625;
+
 function content_setup() {
     load_theme_textdomain( 'content', get_template_directory() . '/langs' );
 
@@ -47,11 +48,11 @@ function content_scripts_styles() {
     if ( 'off' !== _x( 'on', 'PT Sans  font: on or off', 'content' ) ) {
         $subsets = 'latin,latin-ext';
         $subset = _x( 'no-subset', 'PT Sans  font: add new subset (greek, cyrillic, vietnamese)', 'content' );
-        if ( 'cyrillic' == $subset )
+        if ( 'cyrillic' == $subset ) 
             $subsets .= ',cyrillic,cyrillic-ext';
-        elseif ( 'greek' == $subset )
+        elseif ( 'greek' == $subset ) 
             $subsets .= ',greek,greek-ext';
-        elseif ( 'vietnamese' == $subset )
+        elseif ( 'vietnamese' == $subset ) 
             $subsets .= ',vietnamese';
         $protocol = is_ssl() ? 'https' : 'http';
         $query_args = array(
@@ -67,20 +68,20 @@ add_action( 'wp_enqueue_scripts', 'content_scripts_styles' );
 
 function content_wp_title( $title, $sep ) {
     global $paged, $page;
-    if( is_feed() )
+    if( is_feed() ) 
         return $title;
     $title .= get_bloginfo( 'name' );
     $site_description = get_bloginfo( 'description', 'display' );
-    if( $site_description && ( is_home() || is_front_page() ) )
+    if( $site_description && ( is_home() || is_front_page() ) ) 
         $title = "$title $sep $site_description";
-    if( $paged >= 2 || $page >= 2 )
+    if( $paged >= 2 || $page >= 2 ) 
         $title = "$title $sep " . sprintf( __( 'Page %s', 'content' ), max( $paged, $page ) );
     return $title;
 }
 add_filter( 'wp_title', 'content_wp_title', 10, 2 );
 
 function content_page_menu_args( $args ) {
-    if( ! isset( $args['show_home'] ) )
+    if( ! isset( $args['show_home'] ) ) 
         $args['show_home'] = true;
     return $args;
 }
@@ -186,13 +187,13 @@ endif;
 if( ! function_exists( 'content_comment' ) ) : 
 function content_comment( $comment, $args, $depth ) {
     $GLOBALS['comment'] = $comment;
-    switch ($comment->comment_type) :
-        case 'pingback' :
+    switch ($comment->comment_type) : 
+        case 'pingback' : 
         case 'trackback' : ?>
     <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
         <p><?php _e( 'Pingback:', 'content' ); comment_author_link(); edit_comment_link( __( 'Edit', 'content' ), '<span class="edit-link">', '</span>' ); ?></p>
     <?php break;
-        default :
+        default : 
         global $post; ?>
     <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
         <article id="comment-<?php comment_ID(); ?>" class="comment">
@@ -224,7 +225,7 @@ function content_comment( $comment, $args, $depth ) {
 }
 endif;
 
-if( ! function_exists( 'content_entry_meta' ) ) :
+if( ! function_exists( 'content_entry_meta' ) ) : 
 function content_entry_meta() {
     $categories_list = get_the_category_list( __( ', ', 'content' ) );
     $tag_list = get_the_tag_list( '', __( ', ', 'content' ) );
