@@ -14,6 +14,12 @@ The exceptions to this license are as follows:
 
 == Changelog ==
 
+= 1.4.4 =
+* more advanced "editor style"
+* fixed h1-style (sidebar)
+* indonesian language file
+* optimized rtl-styles
+
 = 1.4.3 =
 * fixed german language file
 * fixed h1-style
@@ -69,3 +75,4 @@ The exceptions to this license are as follows:
 ** sv_SE: Christopher Anderton - http://deluxive.se/blog/
 ** ru_RU: Oleg - http://0leg.net
 ** fr_FR: Julien Pierré - http://www.jp-software.fr/en/
+** id_ID: Sugeng TiGeFa - http://www.tigefa.org/
