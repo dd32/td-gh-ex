@@ -64,7 +64,10 @@
 					<h3 class="entry-title">
 					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a>
 					</h3>
-					<div class="post-category"><?php _e('Posted in', 'boldr'); ?> <?php the_category(', '); ?></div>
+					<?php if ( has_category() ): ?>
+						<div class="post-category"><?php _e('Posted in', 'boldr'); ?> <?php the_category(', '); ?></div>
+					<?php endif; ?>
+					
 					<?php the_content() ?>
 					
 					<div class="clear"></div>
@@ -90,12 +93,27 @@
 			</div><!-- end div post -->
 
 			<div class="article_nav">
-				<?php if ("" != get_adjacent_post( false, "", true ) ): // Is there a previous post? ?>
-				<div class="previous"><?php previous_post_link('%link', "Previous Post"); ?></div>
+
+				<?php if ( is_attachment() ):
+				// Use image navigation links on attachment pages, post navigation otherwise ?>
+					<?php if ( boldr_adjacent_image_link(false) ): // Is there a previous image ? ?>
+					<div class="previous"><?php previous_image_link(0, __("Previous Image", 'boldr') ); ?></div>
+					<?php endif; ?>
+					<?php if ( boldr_adjacent_image_link(true) ): // Is there a next image ? ?>	
+					<div class="next"><?php next_image_link(0, __("Next Image",'boldr') ); ?></div>
+					<?php endif; ?>
+				
+				<?php else: ?>
+
+					<?php if ("" != get_adjacent_post( false, "", true ) ): // Is there a previous post? ?>
+					<div class="previous"><?php previous_post_link('%link', __("Previous Post", 'boldr') ); ?></div>
+					<?php endif; ?>
+					<?php if ("" != get_adjacent_post( false, "", false ) ): // Is there a next post? ?>
+					<div class="next"><?php next_post_link('%link', __("Next Post", 'boldr') ); ?></div>
+					<?php endif; ?>
+
 				<?php endif; ?>
-				<?php if ("" != get_adjacent_post( false, "", false ) ): // Is there a next post? ?>
-				<div class="next"><?php next_post_link('%link', "Next Post"); ?></div>
-				<?php endif; ?>
+
 				<br class="clear" />
 			</div>
 
@@ -111,10 +129,10 @@
 
 			<div class="article_nav">
 				<?php if ("" != get_adjacent_post( false, "", true ) ): // Is there a previous post? ?>
-				<div class="previous"><?php previous_post_link('%link', "Previous Post"); ?></div>
+				<div class="previous"><?php previous_post_link('%link', __("Previous Post", 'boldr') ); ?></div>
 				<?php endif; ?>
 				<?php if ("" != get_adjacent_post( false, "", false ) ): // Is there a next post? ?>
-				<div class="next"><?php next_post_link('%link', "Next Post"); ?></div>
+				<div class="next"><?php next_post_link('%link', __("Next Post", 'boldr') ); ?></div>
 				<?php endif; ?>
 				<br class="clear" />
 			</div>

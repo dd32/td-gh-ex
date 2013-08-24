@@ -60,12 +60,40 @@ function boldr_settings_template() {
 		);
 
 		$settings_options[] = array(
+			'name'          => 'Site Title',
+			'desc'          => 'Choose "display title" if you want to use a text-based title instead of an uploaded logo.',
+			'id'            => 'header_title',
+			'type'          => 'radio',
+			'default'       => 'Use Logo',
+			'values'		=> array ('Use Logo', 'Display Title'),
+		);
+
+		$settings_options[] = array(
 			'name'          => 'Favicon',
 			'desc'          => 'Set your favicon. 16x16 or 32x32 pixels, either 8-bit or 24-bit colors. PNG (W3C standard), GIF, or ICO.',
 			'id'            => 'favicon',
 			'type'          => 'image',
 			'default'       => '',
 		);
+
+		$settings_options[] = array(
+			'name'          => 'Display Tagline',
+			'desc'          => 'Display your site description (tagline) on the right side of the header.',
+			'id'            => 'header_tagline',
+			'type'          => 'radio',
+			'default'       => 'Off',
+			'values'		=> array ('Off', 'On'),
+		);
+
+		$settings_options[] = array(
+			'name'          => 'Blog Index Shows',
+			'desc'          => 'Choose what content to display on Main Blog page and archives',
+			'id'            => 'blog_index_shows',
+			'type'          => 'radio',
+			'default'       => 'Excerpt',
+			'values'		=> array ('Excerpt', 'Full content'),
+		);		
+		
 
 	$settings_options[] = array('type' => 'end_menu');
 // END PAGE 1

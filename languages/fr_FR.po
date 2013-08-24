@@ -17,175 +17,177 @@ msgstr ""
 
 #: ../404.php:25
 msgid "404"
-msgstr ""
+msgstr "404"
 
 #: ../404.php:29
 msgid "Page Not Found"
-msgstr ""
+msgstr "Page Introuvable"
 
 #: ../404.php:30 ../index.php:119 ../page-full-width.php:55 ../page.php:55
 #: ../single.php:147
 msgid "What you are looking for isn't here..."
-msgstr ""
+msgstr "Ce que vous cherchez n'est pas ici..."
 
 #: ../404.php:31
 msgid "Maybe a search will help ?"
-msgstr ""
+msgstr "Peut-être qu'une recherche pourrait vous aider ?"
 
 #: ../comments.php:17
 msgid "This post is password protected. Enter the password to view comments."
 msgstr ""
+"Ce billet est protégé par un mot de passe. Veuillez entrer le mot de passe "
+"pour voir les commentaires."
 
 #: ../comments.php:24
 #, php-format
 msgid "One Response to %2$s"
-msgstr ""
+msgstr "Une réponse à %2$s"
 
 #: ../comments.php:30
 msgid "Reply"
-msgstr ""
+msgstr "Répondre"
 
 #: ../comments.php:38
 msgid "Older comments"
-msgstr ""
+msgstr "Commentaires précédents"
 
 #: ../comments.php:41
 msgid "Newer comments"
-msgstr ""
+msgstr "Commentaires suivants"
 
 #: ../comments.php:53
 msgid "Comments are closed."
-msgstr ""
+msgstr "Les commentaires sont fermés."
 
 #: ../footer.php:27
 msgid "Proudly powered by"
-msgstr ""
+msgstr "Fièrement propulsé par"
 
 #: ../functions.php:89
 #, php-format
 msgid "Page %s"
-msgstr ""
+msgstr "Page %s"
 
 #: ../functions.php:130
 msgid "Default Sidebar"
-msgstr ""
+msgstr "Sidebar par défaut"
 
 #: ../functions.php:142
 msgid "Footer"
-msgstr ""
+msgstr "Pied de page"
 
 #: ../functions.php:263
 msgid "Read More"
-msgstr ""
+msgstr "Lire la suite"
 
 #: ../index.php:32
 msgid "Search Results for "
-msgstr ""
+msgstr "Résultat de la Recherche pour"
 
 #: ../index.php:37
 msgid "Tag: "
-msgstr ""
+msgstr "Tag:"
 
 #: ../index.php:42
 msgid "Category: "
-msgstr ""
+msgstr "Catégorie :"
 
 #: ../index.php:47
 msgid "Daily archives: "
-msgstr ""
+msgstr "Archives journalières :"
 
 #: ../index.php:50
 msgid "Monthly archives: "
-msgstr ""
+msgstr "Archives mensuelles :"
 
 #: ../index.php:53
 msgid "Yearly archives: "
-msgstr ""
+msgstr "Archives annuelles :"
 
 #: ../index.php:78 ../single.php:44
 msgid "No"
-msgstr ""
+msgstr "Pas de "
 
 #: ../index.php:78 ../single.php:44
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: ../index.php:78 ../single.php:44
 msgid "%"
-msgstr ""
+msgstr "%"
 
 #: ../index.php:79 ../single.php:45
 msgid "Comment"
-msgstr ""
+msgstr "Commentaire"
 
 #: ../index.php:79 ../single.php:45
 msgid "Comments"
-msgstr ""
+msgstr "Commentaires"
 
 #: ../index.php:79 ../single.php:45
 msgid "Comments Off"
-msgstr ""
+msgstr "Commentaires Off"
 
 #: ../index.php:83 ../single.php:49
 msgid "by "
-msgstr ""
+msgstr "par"
 
 #: ../index.php:85 ../page-full-width.php:40 ../page.php:40 ../single.php:51
 msgid "Edit"
-msgstr ""
+msgstr "Éditer"
 
 #: ../index.php:100 ../single.php:68
 msgid "Posted in"
-msgstr ""
+msgstr "Publié dans"
 
 #: ../index.php:118 ../page-full-width.php:54 ../page.php:54 ../single.php:146
 msgid "Not Found"
-msgstr ""
+msgstr "Introuvable"
 
 #: ../index.php:125
 msgid "Previous Posts"
-msgstr ""
+msgstr "Billets précédents"
 
 #: ../index.php:128
 msgid "Next Posts"
-msgstr ""
+msgstr "Billets suivants"
 
 #: ../sidebar.php:16
 msgid "Recent Posts"
-msgstr ""
+msgstr "Billets récents"
 
 #: ../sidebar.php:22
 msgid "Archives"
-msgstr ""
+msgstr "Archives"
 
 #: ../sidebar.php:28
 msgid "Meta"
-msgstr ""
+msgstr "Meta"
 
 #: ../single.php:75
 msgid "Pages:"
-msgstr ""
+msgstr "Pages :"
 
 #: ../single.php:80
 msgid "Next page"
-msgstr ""
+msgstr "Page suivante"
 
 #: ../single.php:81
 msgid "Previous page"
-msgstr ""
+msgstr "Page précédente"
 
 #: ../single.php:100
 msgid "Previous Image"
-msgstr ""
+msgstr "Image précédente"
 
 #: ../single.php:103
 msgid "Next Image"
-msgstr ""
+msgstr "Image suivante"
 
 #: ../single.php:109 ../single.php:132
 msgid "Previous Post"
-msgstr ""
+msgstr "Billet précédent"
 
 #: ../single.php:112 ../single.php:135
 msgid "Next Post"
-msgstr ""
+msgstr "Billet suivant"
