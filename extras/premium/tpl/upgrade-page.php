@@ -75,7 +75,7 @@ $theme = basename( get_template_directory() );
 				</p>
 
 				<div class="support-message">
-					<p><?php _e("Although we appreciate and support all our premium users, we only guarantee <strong>24 hour</strong> support replies purchases <strong>$15</strong> or more. Support on this order might take longer.", 'origami') ?></p>
+					<p><?php _e("Although we appreciate and support all our premium users, our support staff prioritize orders of <strong>$15</strong> or more. Support on this order might take longer.", 'origami') ?></p>
 				</div>
 
 				<p class="description">
@@ -84,9 +84,12 @@ $theme = basename( get_template_directory() );
 
 				<div class="options hide-if-no-js">
 					<label><input type="radio" name="variable_pricing_option" value="10"> <strong>$10</strong> <?php _e('Building your site on a budget', 'origami') ?></label>
-					<label><input type="radio" name="variable_pricing_option" value="15" <?php checked(true) ?>> <strong>$15</strong> <?php _e("A good, fair price", 'origami') ?></label>
+					<label><input type="radio" name="variable_pricing_option" value="15" <?php checked(true) ?>> <strong>$15</strong> <?php _e("A fair price for a powerful theme", 'origami') ?></label>
 					<label><input type="radio" name="variable_pricing_option" value="20"> <strong>$20</strong> <?php _e("Our sincere thanks", 'origami') ?></label>
-					<label><input type="radio" name="variable_pricing_option" value="30"> <strong>$30</strong> <?php _e("We'll go that extra mile for you", 'origami') ?></label>
+					<label><input type="radio" name="variable_pricing_option" value="35"> <strong>$35</strong> <?php _e("We'll go that extra mile for you", 'origami') ?></label>
+					<?php if($siteorigin_premium_info['roadmap']) : ?>
+						<label><input type="radio" name="variable_pricing_option" value="50"> <strong>$50</strong> <?php _e("A huge contribution to its development", 'origami') ?></label>
+					<?php endif; ?>
 					<label><input type="radio" name="variable_pricing_option" value="custom" class="custom-price" > <strong><?php _e('Custom', 'origami') ?></strong> <input type="number" name="variable_pricing_custom" value="15" placeholder="$3+" min="3"> </label>
 				</div>
 				<div class="options hide-if-js">
@@ -98,6 +101,13 @@ $theme = basename( get_template_directory() );
 				</p>
 
 			</form>
+
+			<?php if(!empty($siteorigin_premium_info['roadmap'])) : ?>
+				<div class="contribute">
+					<?php printf( __('Your contribution will help fund new features in %s.', 'origami'), ucfirst($theme) ); ?>
+					<?php printf( __('Find out more on our <a href="%s" target="_blank">roadmap</a>.', 'origami'), $siteorigin_premium_info['roadmap'] ); ?>
+				</div>
+			<?php endif; ?>
 
 			<?php if(!empty($siteorigin_premium_info['testimonials'])): ?>
 				<h3 class="testimonials-heading"><?php _e('Our User Feedback', 'origami') ?></h3>
