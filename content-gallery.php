@@ -41,7 +41,7 @@
 		<?php else : ?>
               <div class="blog_con_mn">
 			<?php if ( post_password_required() ) : ?>
-				<?php the_content( ( 'Continue reading <span class="meta-nav">&rarr;</span>', 'appointment' ) ); ?>
+				<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'appointment' ) ); ?>
 
 			<?php else : ?>
 				<?php

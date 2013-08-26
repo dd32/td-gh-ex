@@ -11,8 +11,8 @@
  */
 
 ?>
-<?php get_header(); ?>
-
+<?php get_header();
+?>
 	
     <div class="inner_top_mn">
 		<div class="page_wi">			

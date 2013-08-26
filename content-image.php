@@ -38,7 +38,7 @@
 <?php endif; ?>
  <div class="blog_con_mn">
 		
-				<?php the_content( ( 'Continue reading <span class="meta-nav">&rarr;</span>', 'appointment' ) ); ?>
+				<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'appointment' ) ); ?>
                </div>
 <?php if(wp_link_pages(array('echo'=>0))):?>
 					<div class="pagination_blog"><ul class="page-numbers"><?php 

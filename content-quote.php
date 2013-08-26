@@ -34,7 +34,7 @@
 					</div>
 		 <div class="blog_con_mn">
 		
-			<?php the_content(( 'Continue reading <span class="meta-nav">&rarr;</span>', 'appointment' ) ); ?>
+			<?php the_content(__( 'Continue reading <span class="meta-nav">&rarr;</span>', 'appointment' ) ); ?>
 		
 		</div>
   <footer class="entry-meta">

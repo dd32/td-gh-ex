@@ -9,7 +9,8 @@
  * @version        Release: 1.1
  * @filesource     wp-content/themes/appoinment/header.php
  */
-
+ 
+  define("AdminAjaxURL", admin_url('admin-ajax.php'));
 ?>
 
 
@@ -32,8 +33,9 @@
      	* generally use this hook to add elements to <head> such
      	* as styles, scripts, and meta tags.
      	*/
-
-
+  
+  
+   
 	wp_head(); ?>
 </head>
 <body  <?php body_class(); ?>>

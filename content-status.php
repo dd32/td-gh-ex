@@ -39,7 +39,7 @@
     <div class="blog_con_mn">
 			<header>
 				<?php the_author(); ?>
-				<?php the_content( ( 'Continue reading <span class="meta-nav">&rarr;</span>', 'appointment' ) ); ?>
+				<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'appointment' ) ); ?>
 				
 			</header>
 			<?php echo get_avatar( get_the_author_meta( 'ID' ), apply_filters( 'twentytwelve_status_avatar', '48' ) ); ?>

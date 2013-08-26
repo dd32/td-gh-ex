@@ -2,7 +2,7 @@
  * Theme Name: Appointment
  * Description: A theme for all type of business that uses multiple nav menus, several sidebars,Featured Slider and Custom post layouts. 
  It has a pixel-perfect design that's great for any blogger who wants a new look for their site.
- * Version: 1.3.4
+ * Version: 1.3.5
  * Author: Priyanshu Mittal, Shahid Mansuri, Vibhor Purandare and Akhilesh Nagar
  * Tags: orange, white, full-width-template, threaded-comments, microformats,two-columns,  right-sidebar, fixed-width, sticky-post, custom-background, custom-menu,translation-ready
  * License: GNU General Public License v2.0
@@ -62,7 +62,7 @@ pre{    overflow: auto;  }
 }
 .menu ul li a:hover, .menu ul li.current_page_item a:link, .menu ul li.current_page_item a:visited,
 .menu ul li:hover a
-{	padding:18px 14px 17px 14px; margin:0px; color:#FFFFFF; 
+{	padding:17px 14px 17px 14px; margin:0px; color:#FFFFFF; 
 	background-color: #ee6528; 
 	border:1px solid #EE6528; 
 } 
@@ -1611,7 +1611,7 @@ left: -100px;
 #submit { width:130px; }	
 	
 #searchsubmit,#submit{
-margin-bottom: 0;width:80px; float:left; border:1px solid #e4e8ea; padding:0 0 0 0px; height:25px; line-height:30px;
+margin-bottom: 0;width:auto; float:left; border:1px solid #e4e8ea; padding:7px 10px; height:auto; line-height:30px;
 	color:#ffffff; font-size:13px; margin-top:20px;
 	background-color: #EF6527;
 	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#EF6527), to(#C6450C));
@@ -2161,4 +2161,116 @@ img.alignright, .wp-caption.alignright {
 .menu-all-pages-container  .menu  li a:hover {
 	text-decoration:underline;
 	transition:none;
+}
+
+
+
+/* -----Category Menus added by Shahid - 24, Aug 2013----- */
+.cat_menu {
+    width: 100%;
+    float: left;
+    z-index: 9999;
+    position: relative;
+    border-bottom: 1px solid #EEEEEE;
+    margin-top: 15px;
+	margin-bottom: 15px;
+	padding-bottom:2px;
+}
+.cat_menu ul {
+    width: auto;
+    float: left;
+    display: block;
+}
+.cat_menu ul li {
+    width: auto;
+    float: left;
+     height: 45px; 
+    padding: 0px;
+    position: relative;
+}
+.cat_menu ul li.current_page_item {
+    border-left: 0px;
+}
+.cat_menu ul li a {
+    color: #74838b;
+    font-size: 13px;
+    float: left;
+    line-height: 20px;
+    margin: 10px 20px 10px 0px;
+    padding: 0px 0px 14px;
+    -webkit-transition: all 25ms ease-out;
+    border: 1px solid #FFFFFF;
+    -moz-transition: all 25ms ease-out;
+    -o-transition: all 25ms ease-out;
+    transition: all 25ms ease-out;
+}
+.cat_menu ul li a:hover, .cat_menu ul li.current_page_item a:link, .cat_menu ul li.current_page_item a:visited,
+.cat_menu ul li:hover a {
+    padding: 0px 0px 14px;
+    margin: 10px 20px 10px 0px;
+    color: #313131;
+    border-bottom: 2px solid #ee6528;
+}
+.cat_menu ul li ul {
+    display: none;
+    position: absolute;
+    top: 55px;
+    left: 0px;
+    z-index: 99999999;
+    background: #EE6528;
+    width: 245px;
+    padding-bottom: 7px;
+    padding-left: 0px;
+    padding-top: 7px;
+    -webkit-box-shadow: 2px 2px 3px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow: 2px 2px 3px rgba(50, 50, 50, 0.5);
+    box-shadow: 2px 2px 3px rgba(50, 50, 50, 0.5);
+}
+.cat_menu ul li:hover ul {
+    display: block;
+}
+.cat_menu ul li:hover ul li {
+    line-height: normal;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    border-bottom: 1px solid #ffffff;
+    float: none;
+    display: block;
+    border-left: 0px;
+}
+.cat_menu ul li:hover ul li ul {
+    display: none;
+}
+.cat_menu ul li:hover ul li:hover ul {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 245px;
+    z-index: 99999999;
+    background: #458bc7;
+    width: 245px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-top: 0px;
+    -webkit-box-shadow: 2px 2px 3px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow: 2px 2px 3px rgba(50, 50, 50, 0.5);
+    box-shadow: 2px 2px 3px rgba(50, 50, 50, 0.5);
+}
+.cat_blog_title{
+	color: #737f85;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+#cat-container{  width:100%;}
+#ajax-script-url{visibility:hidden;height: 0px;margin: 0px; padding: 0px; width: 0px;z-index:-1}
+.cat_active {   border-bottom: 2px solid #ee6528  }
+#ajaxprogress {
+    background: url("images/ajax-progress.gif") no-repeat scroll 0 0 transparent;
+    height: 100px;
+    left: 200px;
+    position: absolute;
+    top: 366px;
+    width: 100px;
 }

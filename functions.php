@@ -128,11 +128,12 @@ function appointment_enqueue_script() {
    wp_enqueue_script('jquery.nivo.slider.pack', get_template_directory_uri('template_directory').'/js/jquery.nivo.slider.pack.js');
    wp_enqueue_script('jquery.nivo.slider',get_template_directory_uri().'/js/jquery.nivo.slider.js');
     }
-
+	if(is_page_template('categorised_blog.php')){     wp_enqueue_script('cat_ajax',get_template_directory_uri().'/js/cat_blog_ajax.js'); }
+	
     wp_enqueue_style('nivo-slider', get_template_directory_uri('template_directory').'/css/nivo-slider.css');
     wp_enqueue_style('default', get_template_directory_uri('template_directory').'/css/default.css');
 	wp_enqueue_style('font',get_template_directory_uri('template_directory').'/css/font/font.css');
-
+    
 }
  
  add_action('after_setup_theme', 'appointment_setup_theme');
@@ -313,5 +314,72 @@ function appointment_get_option_defaults() {
     'front_page' => 0,
   );
   return apply_filters( 'appointment_option_defaults', $defaults );
+}
+?>
+
+
+
+
+
+
+<?php
+
+//code for categorised blog
+add_action( 'wp_ajax_nopriv_load-filter1', 'appointment_ajax_cat_posts' );
+add_action( 'wp_ajax_load-filter1', 'appointment_ajax_cat_posts' );
+function appointment_ajax_cat_posts () {
+ob_start ();
+$cat_name = $_POST[ 'term' ];
+
+query_posts( array ( 'category_name' => $cat_name, 'posts_per_page' => -1 ) );
+ 
+// The Loop
+if(have_posts()){
+while ( have_posts() ) : the_post();?>
+ <div class="blog_row_mn">
+                      <h2><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'appointment' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php $title = get_the_title();
+    if (strlen($title) == 0)  _e('no title','appointment'); 
+	else  echo $title; ?></a></h2>
+					    <div class="blog_link_mn">	
+                         <span><img src="<?php echo get_template_directory_uri();?>/images/blog_ic.png" alt="Icon" /> 
+						<?php the_date('M j,Y');?></span> 
+						<a href="#"><img src="<?php echo get_template_directory_uri();?>/images/blog_ic2.png" alt="Icon" /> </a>
+                 <?php  comments_popup_link( __( 'Leave a comment', 'appointment' ),__( '1 Comment', 'appointment' ), __( 'Comments', 'appointment' ),'name' ); ?>
+						<img src="<?php echo get_template_directory_uri();?>/images/blog_ic3.png" alt="Icon" />
+                          <?php edit_post_link( __( 'Edit', 'appointment' ), '<span class="meta-sep"></span> <span class="name">', '</span>' ); ?>
+						<?php the_category(); ?>
+					  </div><!--blog_link_mn-->	
+                      
+                      					<?php if(has_post_thumbnail()):?>					
+					<div class="blog_img">
+						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+						<?php the_post_thumbnail('large',array('class' => 'fleft'));?>
+						</a>
+					</div>
+					<?php endif;?>					
+					<p class="blog_con_mn"><?php  the_excerpt(); ?></p>
+					<?php if(wp_link_pages(array('echo'=>0))):?>
+					<div class="pagination_blog"><ul class="page-numbers"><?php 
+					 $args=array('before' => '<li>'.__('Pages:','appointment'),'after' => '</li>');
+					 wp_link_pages($args); ?></ul>
+                     </div><!--pagination_blog-->
+					 <?php endif;?>
+					<div class="blog_bot_mn">
+						
+						<span> <?php the_tags('<b>'.__('Tags:','appointment').'</b>','');?> </span>
+						<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'appointment' ), the_title_attribute( 'echo=0' ) ); ?>"><?php _e('Read More','appointment'); ?></a>
+					</div><!--blog_bot_mn-->
+				</div><!--blog_row_mn-->
+				
+	
+	<?php
+endwhile;
+ }
+wp_reset_query();
+ wp_reset_postdata(); 
+       $response = ob_get_contents();
+       ob_end_clean();
+       echo $response;
+       die(1);
 }
 ?>
