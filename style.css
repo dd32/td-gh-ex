@@ -3,13 +3,9 @@ Theme Name: Redesign
 
 Theme URI: http://redesign.toth-illustration.com
 
-Description: Redesign is a simple, clean and highly visible theme suitable for blogging or businesses. The theme is not based on any other WP theme. It's made from scratch.
+Description: Redesign is a simple, clean and highly visible theme with transparent graphics. It's suitable for blogging or businesses. The Redesign theme is responsive, and easy to read in handheld units. The range is from desktop size to flipped iPhone. There are two navigation menus, one header widget, two sidebar widgets and a footer widget. Custom header, background image and colors. The theme is not based on any other WP theme. It's made from scratch.
 
-There are two navigation menus, custom header, custom background, header widget, two sidebar widgets, footer widget, and transparent graphic elements. The suggested measures for the custom header are 980px x 200px.
-
-The transparent graphic elements makes your custom background image visible through the layers. Or by choosing a background color, the hole site will appear in this color, but in different shades. An easy and fast way to create smooth graphic design.
-
-The Redesign theme is responsive, and easy to read in handheld units. The range is from desktop size 980px to flipped iPhone 480px. 
+Suggested measures for the custom header are 980 x 200px. The responsive range is 980px - 480px.
 
 Redesign WordPress theme, Copyright (C) 2013 Robert Toth
 Redesign WordPress theme is licensed under the GPL.
@@ -17,11 +13,11 @@ Resource All graphic objects, example: img/background.png, img/favicon.ico
 
 Author: Robert Toth
 Author URI: http://toth-illustration.com
-Version: 1.2
+Version: 1.2.1
 Copyright: Robert Toth, http://toth-illustration.com
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: gray, white, black, right-sidebar, two-columns, fixed-width, custom-background, custom-header, custom-menu, sticky-post, threaded-comments
+Tags: gray, white, black, right-sidebar, two-columns, fixed-width, custom-background, custom-colors, custom-header, custom-menu, sticky-post, threaded-comments, post-formats, featured-images
 */
 
 /*-----REDESIGN, WORD PRESS STYLESHEET------*/
@@ -155,7 +151,7 @@ body{
 	margin: 0px auto 0px;
 	padding:0px;
 	text-align: left;
-	background-image:url('img/tbg90.png');
+	background-image:url('img/tbg70.png');
 }
 
 #content{
@@ -294,6 +290,7 @@ h2{
 .post{
 	overflow: auto;
 	padding:20px;
+	background-image:url('img/tbg50.png');
 }
 
 .entry ul li{
@@ -322,7 +319,11 @@ h2{
 }
 
 .sticky{
-	background-image:url('img/tbg50.png');
+	background-image:url('img/tbg90.png');
+}
+
+.sticky h1{
+	font-size:220%;
 }
 
 blockquote{
@@ -363,11 +364,11 @@ pre{
 }
 
 .format-aside{
-	background-image:url('img/red-bg20.png');
+	background-image:url('img/yell-bg20.png');
 }
 
 .format-chat{
-	background-image:url('img/yell-bg20.png');
+	background-image:url('img/rose-bg20.png');
 }
 
 .format-audio{
@@ -406,7 +407,7 @@ pre{
 }
 
 .format-status{
-	background-image:url('img/rose-bg20.png');
+	background-image:url('img/red-bg20.png');
 }
 
 .pagenumber{
@@ -430,6 +431,7 @@ pre{
 	max-width:450px;
 	margin:0px;
 	padding:5px 20px;
+	background-image:url('img/tbg30.png');
 }
 
 
@@ -482,7 +484,7 @@ textarea {
         max-width:450px;
 	overflow: auto;
 	outline: none;
-	background-image:url('img/btbg30.png');
+	background-image:url('img/btbg50.png');
 	border:none;
 }
 
@@ -518,7 +520,7 @@ input[type="submit"]:active {
 }
 
 table{
-	background-image:url('img/tbg30.png');
+	background-image:url('img/btbg10.png');
 	padding:5px;
 }
 
@@ -526,6 +528,7 @@ table th{
 }
 
 table tr{
+
 }
 
 table td{

@@ -8,7 +8,7 @@ Copyright: none
 ---
 Author: Robert Toth
 Author URL: http://toth-illustration.com
-Version: 1.2
+Version: 1.2.1
 Theme URL: http://redesign.toth-illustration.com
 Requires: WordPress 3.x
 License: GNU General Public License
@@ -17,7 +17,7 @@ Tags: gray, white, black, right-sidebar, three-columns, flexible-width, custom-b
 
 Overview:
 ---
-Description: Redesign is a clean highly visible theme suitable for blogging or businesses. The theme is not based on any other WP theme. It's made from scratch.
+Description: Redesign is a simple, clean highly visible theme suitable for blogging or businesses. The theme is not based on any other WP theme. It's made from scratch.
 
 There are two navigation menus, custom header, custom background, header widget, two sidebar widgets, footer widget, and transparent graphic elements. The suggested measures for the custom header are 980px x 200px.
 
