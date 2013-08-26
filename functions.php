@@ -28,16 +28,16 @@ add_theme_support( 'custom-background', $args );
 	// Make theme available for translation
 	// Translations can be filed in the /languages/ directory
 	load_theme_textdomain( 'discover', get_template_directory() . '/languages' );
-
-	$locale = get_locale();
-	$locale_file = get_template_directory() . "/languages/$locale.php";
-	if ( is_readable( $locale_file ) )
-		require_once( $locale_file );
 		
 	// This theme uses wp_nav_menu() in two location.	
 	register_nav_menus( array(
 		'primary' => __( 'Primary Navigation', 'discover' ),
 	) );
+	
+	// Add support for woocommerce
+	$template = get_option( 'template' );
+	update_option( 'woocommerce_theme_support_check', $template );
+	add_theme_support( 'woocommerce' );	
 
 }
 endif;
@@ -385,11 +385,19 @@ add_filter( 'wp_title', 'discover_filter_wp_title', 10, 3 );
 
 // custom function
 
-function home_page_menu_args( $args ) {
+function discover_page_menu_args( $args ) {
 $args['show_home'] = true;
 return $args;
 }
-add_filter( 'wp_page_menu_args', 'home_page_menu_args' );
+add_filter( 'wp_page_menu_args', 'discover_page_menu_args' );
+
+function discover_favicon() {
+	if (of_get_option('favicon_image') != '') {
+	echo '<link rel="shortcut icon" href="'. of_get_option('favicon_image') .'"/>'."\n";
+	}
+}
+
+add_action('wp_head', 'discover_favicon');
 
 // custom function
 function discover_head_css() {
@@ -645,5 +653,62 @@ if ( !function_exists( 'optionsframework_init' ) ) {
 	}
 
 	require_once (OPTIONS_FRAMEWORK_URL . 'options-framework.php');
+
+}
+
+/**
+ * Include and setup custom metaboxes and fields.
+ *
+ * @category YourThemeOrPlugin
+ * @package  Metaboxes
+ * @license  http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
+ * @link     https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress
+ */
+
+add_filter( 'cmb_meta_boxes', 'discover_metaboxes' );
+/**
+ * Define the metabox and field configurations.
+ *
+ * @param  array $meta_boxes
+ * @return array
+ */
+function discover_metaboxes( array $meta_boxes ) {
+
+	// Start with an underscore to hide fields from custom fields list
+	$prefix = '_discover_';
+
+	$meta_boxes[] = array(
+		'id'         => 'link_metabox',
+		'title'      => 'Comments',
+		'pages'      => array( 'page', ), // Post type
+		'context'    => 'normal',
+		'priority'   => 'high',
+		'show_names' => true, // Show field names on the left
+		'fields'     => array(
+			array(
+				'name' => 'Leave a Reply',
+				'desc' => 'Choose whether to on/off for the page.',
+				'id'   => $prefix . 'comment_option',
+				'type' => 'select',
+				'options' => array(
+					array( 'name' => 'On', 'value' => 'on', ),
+					array( 'name' => 'Off', 'value' => 'off', ),				
+				),
+			),
+		),
+	);
+	// Add other metaboxes as needed
+
+	return $meta_boxes;
+}
+
+add_action( 'init', 'discover_initialize_cmb_meta_boxes', 9999 );
+/**
+ * Initialize the metabox class.
+ */
+function discover_initialize_cmb_meta_boxes() {
+
+	if ( ! class_exists( 'cmb_Meta_Box' ) )
+		require_once 'lib/init.php';
 
 }

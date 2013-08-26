@@ -212,7 +212,8 @@ function optionsframework_page() {
 
 	 <div id="go_help">
             <p><b>Need Help:</b> <a href="http://antthemes.com/?page_id=56" target="blank">Support Forum</a></p>
-
+<p><b>Important Update Change</b>= How to setup Home/front-page with out Blog =
+Create a new page by going to pages - Add New. Then on right side, in page attributes - Template, select Home as the page template and name your page Home(or anything). And publish the page. Then go to Settings - Reading - select a static page as frontpage display option. Select Home as Front page option.</p>
         </div>
     
 	<div class="wrap">

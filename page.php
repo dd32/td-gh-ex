@@ -30,7 +30,10 @@
 						
 					</div><!--post-entry end-->
 					
+				<?php $commentsoption= get_post_meta(get_the_ID(), '_discover_comment_option', true); ?>	
+				<?php if($commentsoption != "off") { ?>
 					<?php comments_template( '', true ); ?>
+				<?php } ?>	
 
 <?php endwhile; ?>
 	</div> <!--left-col end-->

@@ -30,7 +30,8 @@ function optionsframework_option_name() {
 function optionsframework_options() {
 	
 	// Multicheck array
-	$blog_home_array = array("on" => "on","off" => "off");
+	$slider_caption_array = array("on" => "on","off" => "off");
+	$wel_button_array = array("on" => "on","off" => "off");	
 	
 	
 	// Pull all the categories into an array
@@ -54,15 +55,7 @@ function optionsframework_options() {
 	$options = array();
 		
 	$options[] = array( "name" => "Homepage",
-						"type" => "heading");					
-						
-	$options[] = array( "name" => "Blog Display",
-						"desc" => "Select option to display blog post on homepage.",
-						"id" => "blog_home",
-						"std" => "on",
-						"type" => "select",
-						"class" => "mini", //mini, tiny, small
-						"options" => $blog_home_array);																												
+						"type" => "heading");																															
 						
 	$options[] = array( "name" => "Homepage Box 1 heading",
 						"desc" => "Heading for homepage box1.",
@@ -216,6 +209,22 @@ function optionsframework_options() {
 	$options[] = array( "name" => "Slider",
 						"type" => "heading");
 						
+	$options[] = array( "name" => "Slider Button",
+						"desc" => "Select option to display welcome button of slider(download now).",
+						"id" => "wel_button",
+						"std" => "on",
+						"type" => "select",
+						"class" => "mini", //mini, tiny, small
+						"options" => $wel_button_array);							
+						
+	$options[] = array( "name" => "Slider Caption",
+						"desc" => "Select option to display caption of slider.",
+						"id" => "slider_caption",
+						"std" => "on",
+						"type" => "select",
+						"class" => "mini", //mini, tiny, small
+						"options" => $slider_caption_array);						
+						
 	$options[] = array( "name" => "Welcome headline",
 						"desc" => "Hompage slider welcome headline content.",
 						"id" => "welcome_head",
@@ -272,7 +281,15 @@ function optionsframework_options() {
 						"desc" => "Paste here the link of the page or post.",
 						"id" => "slider_link2",
 						"std" => "",
-						"type" => "text");						
+						"type" => "text");		
+						
+	$options[] = array( "name" => "Favicon Settings",
+						"type" => "heading");
+						
+	$options[] = array( "name" => "Favicon image",
+						"desc" => "Upload your favicon image over here or enter url.",
+						"id" => "favicon_image",
+						"type" => "upload");										
 						
 	$options[] = array( "name" => "Footer",
 						"type" => "heading");

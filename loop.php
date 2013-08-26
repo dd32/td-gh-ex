@@ -20,7 +20,7 @@
 			
 			<div class="meta-data">
 			
-			<?php discover_posted_on(); ?> in <?php the_category(', '); ?> | <?php comments_popup_link( __( 'Leave a comment', 'discover' ), __( '1 Comment', 'discover' ), __( '% Comments', 'discover' ) ); ?>
+			<?php discover_posted_on(); ?> <?php _e('in', 'discover'); ?> <?php the_category(', '); ?> | <?php comments_popup_link( __( 'Leave a comment', 'discover' ), __( '1 Comment', 'discover' ), __( '% Comments', 'discover' ) ); ?>
 			
 			</div><!--meta data end-->
 			<div class="clear"></div>
@@ -29,16 +29,16 @@
 
 	<?php if ( is_archive() || is_search() ) :  ?>
 		
-			<?php the_content( __( '<span class="read-more">Read More</span>', 'discover' ) ); ?>
+			<?php the_content( '<span class="read-more">'.__('Read More', 'discover').'</span>' ); ?>
 			<div class="clear"></div>
 			<?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'discover' ), 'after' => '' ) ); ?>
 			
 	<?php else : ?>
 	
- 	<?php if ( has_post_thumbnail() ) { the_post_thumbnail(array(620,240), array("class" => "alignleft post_thumbnail")); } ?>
+ 	<?php if ( has_post_thumbnail() ) { ?> <div class="entry-thumbnail"> <?php the_post_thumbnail(array(620,240)); ?> </div> <?php } ?>
 	
 	
-			<?php the_content( __( '<span class="read-more">Read More</span>', 'discover' ) ); ?>
+			<?php the_content( '<span class="read-more">'.__('Read More', 'discover').'</span>' ); ?>
 			<div class="clear"></div>
 			<?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'discover' ), 'after' => '' ) ); ?>
 	<?php endif; ?>
