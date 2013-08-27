@@ -2,7 +2,7 @@
 /**
  * @package Ascetica
  * @subpackage Functions
- * @version 0.3.1
+ * @version 0.3.5
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
@@ -96,8 +96,10 @@ function ascetica_theme_setup() {
 	add_theme_support( 'post-formats', array( 'gallery' ) );	
 
 	/* Remove the "Theme Settings" submenu. */
-	add_action( 'admin_menu', 'ascetica_remove_theme_settings_submenu', 11 );		
-	
+	add_action( 'admin_menu', 'ascetica_remove_theme_settings_submenu', 11 );
+
+ 	/* List all but the sticky posts (they are grabbed by the slider) on the home page. */
+	add_action( 'pre_get_posts', 'ascetica_pre_get_posts' );	
 }
 
 /**
@@ -314,6 +316,16 @@ function ascetica_remove_theme_settings_submenu() {
 
 	/* Remove the Theme Settings settings page. */
 	remove_submenu_page( 'themes.php', 'theme-settings' );
+}
+
+/**
+ * List all but the sticky posts (they are grabbed by the slider) on the home page.
+ *
+ */
+function ascetica_pre_get_posts( $query ) {
+
+	if ( $query->is_home() && $query->is_main_query() )
+		$query->set( 'post__not_in', get_option( 'sticky_posts' ) );
 }
 
 ?>

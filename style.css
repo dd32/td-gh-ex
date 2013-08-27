@@ -1,8 +1,8 @@
 /**
  * Theme Name: Ascetica
  * Theme URI: http://themehybrid.com/themes/ascetica
- * Description: NOTE: 0.3 is a major update. Please backup your theme before updating and read the changelog.txt file for details. Ascetica is a simple portfolio and blog theme with responsive layout, sticky posts slider, and a widget for presenting your work. The theme supports custom header and background, with theme settings integrated into the WordPress Customizer: color picker, typography settings, and a nice selection of Google fonts.
- * Version: 0.3.1
+ * Description: Ascetica is a simple portfolio and blog theme with responsive layout, sticky posts slider, and a widget for presenting your work. The theme supports custom header and background, with theme settings integrated into the WordPress Customizer: color picker, typography settings, and a nice selection of Google fonts.
+ * Version: 0.3.5
  * Author: Galin Simeonov
  * Author URI: http://alienwp.com
  * Tags: flexible-width, theme-options, threaded-comments, microformats, translation-ready, rtl-language-support, two-columns, three-columns, right-sidebar, sticky-post, custom-background, featured-images
@@ -801,7 +801,7 @@ input[type="submit"]:hover { cursor: pointer }
 .singular .byline { margin-bottom: 2.1em; }
 .byline a { color: #999; }
 .byline a:hover { color: #000; }
-.author, .published, .category, .edit {
+.author, .published, .category, .edit, .bypostauthor {
 }
 .comment-list .published, .comment-list .edit, .comment-list .comment-reply-link {
 	font-size: 1em;

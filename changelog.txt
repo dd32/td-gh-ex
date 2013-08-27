@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 0.3.5 =
+* Updated Hybrid Core to 1.6.
+* Minor improvement in the home page loop.
+
 = 0.3.1 =
 Fixed a warning for non-existing function.
 

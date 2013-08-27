@@ -15,8 +15,6 @@ get_header(); // Loads the header.php template. ?>
 	<div id="content">
 
 		<?php do_atomic( 'open_content' ); // ascetica_open_content ?>
-			
-			<?php query_posts( array( 'post__not_in' => get_option( 'sticky_posts' ), 'paged' => get_query_var( 'paged' ) ) ); ?>
 
 			<?php if ( have_posts() ) : ?>
 
@@ -25,8 +23,6 @@ get_header(); // Loads the header.php template. ?>
 					<?php get_template_part( 'content', ( post_type_supports( get_post_type(), 'post-formats' ) ? get_post_format() : get_post_type() ) ); ?>
 
 				<?php endwhile; ?>
-				
-				<?php wp_reset_query(); ?> 
 
 			<?php else : ?>
 
