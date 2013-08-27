@@ -3,8 +3,8 @@ Theme Name: Travelify
 Theme URI: http://colorawesomeness.com/themes/travelify/
 Author: Color Awesomeness
 Author URI: http://colorawesomeness.com/
-Description: Travelify is a clan, simple and fully responsive WordPress WooCommerce theme that looks awesome on any device. It adjusts automatically to any screen size including tablets and smartphones as well as Retina displays. Theme is built using HTML5 / CSS3 and is SEO friendly. This WordPress theme was built with travel, adventures, languages and nature in mind but it can be used for anything so be creative and unleash its full potential in blogging, eCommerce, business and other websites. Along the awesome design this theme is customizable via a simple but yet powerful theme options. Some of the nicest features are featured post slider, social icons, custom logo, translation ready and many more. This theme out-of-the-box plays nicely with WooCommerce, Breadcrumb NavXT and WP-PageNavi, Contact Form 7 and other popular plugins. Theme available in English, French, German and Chinese.
-Version: 1.3.2
+Description: Travelify is a clan, simple and fully responsive WordPress WooCommerce theme that looks awesome on any device. It adjusts automatically to any screen size including tablets and smartphones as well as Retina displays. Theme is built using HTML5 / CSS3 and is SEO friendly. This WordPress theme was built with travel, adventures, languages and nature in mind but it can be used for anything so be creative and unleash its full potential in blogging, eCommerce, business and other websites. Along the awesome design this theme is customizable via a simple but yet powerful theme options. Some of the nicest features are featured post slider, social icons, custom logo, translation ready and many more. This theme out-of-the-box plays nicely with WooCommerce, Breadcrumb NavXT and WP-PageNavi, Contact Form 7 and other popular plugins. Theme available in English, French, German, Hungarian and Chinese.
+Version: 1.3.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, light, green , custom-background, custom-header, custom-menu, flexible-width, featured-images, full-width-template, left sidebar, right sidebar, one-column, two columns, three-columns, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready 
@@ -83,6 +83,10 @@ For more instruction you can visit the support page of Travelify at http://color
 If you have still any other questions about the theme you can email at info@colorawesomeness.com for free support.
 
 == Change Log ==
+
+= 1.3.3 = 
+	* Added Hungarian translation thanks to Tamás (http://a.feny.be/)
+	* Fixed issue with sub-menus.
 
 = 1.3.2 = 
 	* Added German translation
