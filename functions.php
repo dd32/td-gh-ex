@@ -23,7 +23,7 @@ if ( ! isset( $content_width ) )
 function themonic_setup() {
 	/*
 	 * Making Iconic One ready for translation.
-	 * Translations can be added to the /languages/ directory.
+	 * Translations can be added to the /languages/ directory. Sample iconic-one.pot file is included.
 	 */
 	load_theme_textdomain( 'themonic', get_template_directory() . '/languages' );
 

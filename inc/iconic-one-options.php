@@ -34,7 +34,7 @@ function iconic_one_options_display() {
 			<div id="icon-themes" class="icon32"></div> 
 				<h2>Iconic One Theme Options</h2>
 					<p>
-						<a href="http://themonic.com">
+						<a href="http://themonic.com/iconic-one-pro/">
 						<img style='margin-left:0px;' src="<?php echo get_template_directory_uri(); ?>/img/themonic.png" alt="Iconic One"></a>
 					</p>
 					<div class="hotitle" style='background: #fff; padding:5px; margin-top:10px;'><h1>Thank You for Choosing Iconic One</h1></div>

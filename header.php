@@ -47,7 +47,7 @@
 		<?php else : ?>
 		<hgroup>
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-				<br .../> <a class="site-description" style='font-size:12px; padding-left:15px;'><?php bloginfo( 'description' ); ?></a>
+				<br .../> <a class="site-description"><?php bloginfo( 'description' ); ?></a>
 		</hgroup>
 	<?php if( get_theme_mod( 'iconic_one_social_activate' ) == '1') { ?>
 		<div class="socialmedia">
