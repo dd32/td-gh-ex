@@ -17,9 +17,6 @@
 
 // Don't load directly
 if ( !defined('ABSPATH') ) { die( '-1' ); }
- 
-// Boxes Lite element action
-add_action( 'boxes_lite', 'cyberchimps_boxes_lite_content' );
 
 // Defining content of the boxes-lite element
 function cyberchimps_boxes_lite_content() {
