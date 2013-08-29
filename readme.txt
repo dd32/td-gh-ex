@@ -134,3 +134,6 @@ version 1.1.5
 version 1.2
 * Added Vkontakte, My World, Odnoklassniki, Goodreads and Skype Social Icons
 * Fixed admin.js to support WordPress 3.6 jQuery UI version update
+
+version 1.2.1
+* Fixed Web Clip Icon

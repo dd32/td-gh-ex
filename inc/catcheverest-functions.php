@@ -1383,7 +1383,7 @@ function catcheverest_web_clip() {
 		echo '<!-- refreshing cache -->';
 		if ( empty( $options[ 'remove_web_clip' ] ) ) :
 			// if not empty fav_icon on theme options
-			if ( empty( $options[ 'web_clip' ] ) ) :
+			if ( !empty( $options[ 'web_clip' ] ) ) :
 				$catcheverest_web_clip = '<link rel="apple-touch-icon-precomposed" href="'.esc_url( $options[ 'web_clip' ] ).'" />'; 	
 			else:
 				// if empty fav_icon on theme options, display default fav icon
