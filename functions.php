@@ -853,8 +853,8 @@ function catchbox_sliders() {
 							'.get_the_post_thumbnail( $post->ID, 'featured-slider', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class'	=> 'pngfix' ) ).'
 					</a>
 					<div class="featured-text">'
-						.the_title( '<span>','</span>', false ).' :
-						'.get_the_excerpt().'
+						.the_title( '<span class="slider-title">','</span>', false ).' <span class="sep">:</span>
+						<span class="slider-excerpt">'.get_the_excerpt().'</span>
 					</div><!-- .featured-text -->
 				</div> <!-- .slides -->';
 			endwhile; wp_reset_query();

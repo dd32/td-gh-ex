@@ -10,7 +10,7 @@ body {
 }
 #branding ul.menu li,
 #branding #access-secondary ul.menu li {
-    border-right: 1px solid #1b4266;
+    border-left: 1px solid #1b4266;
 }
 
 #branding #access,

@@ -324,3 +324,7 @@ Version 2.6.1
 
 Version 2.6.2
 * Added Instagram, Slideshare and Skype social icons
+
+Version 2.7
+* Added Green Color Scheme
+* Added class slider-title, sep and slider-excerpt for Featured Post Slider content to give more control though css
