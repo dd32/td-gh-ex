@@ -36,3 +36,6 @@ a:hover {text-decoration: none;}
 .footernav ul li a {color:#555;}
 
 /* Custom */
+.sidebar a {
+	color:#555;
+}

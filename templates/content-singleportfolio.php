@@ -3,14 +3,15 @@
 		<div class="container">
 			<div class="page-header">
 				<div class="portfolionav clearfix">
-   			<?php previous_post_link('%link', '<i class="icon-chevron-left"></i>'); ?> 
+   			<?php previous_post_link_plus( array('order_by' => 'menu_order', 'loop' => true, 'format' => '%link', 'link' => '<i class="icon-chevron-left"></i>') ); ?>
    			<?php global $smof_data; if( isset($smof_data['portfolio_link']) && $smof_data['portfolio_link'] != "Select a page:"){ ?>
    			<a href="<?php echo get_home_url().'/'.$smof_data["portfolio_link"].'/'; ?>">
 				<?php } else {?> 
 				<a href="../">
 				<?php } ?>
    				<i class="icon-th"></i></a> 
-   			<?php next_post_link('%link', '<i class="icon-chevron-right" style="width:10px; display:inline-block; margin-right:6px;"></i>'); ?>
+   				<?php next_post_link_plus( array('order_by' => 'menu_order', 'loop' => true, 'format' => '%link', 'link' => '<i class="icon-chevron-right"></i>') ); ?>
+   				<span>&nbsp;</span>
    			</div>
 			<h1 class="entry-title"><?php the_title(); ?></h1>
 		</div>
@@ -64,7 +65,7 @@
 								foreach ($attachments as $attachment) {
 									$attachment_url = wp_get_attachment_url($attachment->ID , 'full');
 									$image = aq_resize($attachment_url, $slidewidth, $slideheight, true);
-									if($image == "") { $image = $attachment_url; }
+										if(empty($image)) {$image = $attachment_url; }
 									echo '<li><img src="'.$image.'"/></li>';
 								}	
 							}
@@ -95,7 +96,7 @@
 							$post_id = get_post_thumbnail_id();
 							$img_url = wp_get_attachment_url( $post_id);
 							$image = aq_resize( $img_url, $slidewidth, $slideheight, true ); //resize & crop the image
-							if($image == "") { $image = $img_url; }
+							if(empty($image)) {$image = $img_url; }
 							?>
                                 <?php if($image) : ?>
                                     <div class="imghoverclass">

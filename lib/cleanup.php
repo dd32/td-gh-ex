@@ -1,50 +1,5 @@
 <?php
 /**
- * Clean up wp_head()
- *
- * Remove unnecessary <link>'s
- * Remove inline CSS used by Recent Comments widget
- * Remove inline CSS used by posts with galleries
- * Remove self-closing tag and change ''s to "'s on rel_canonical()
- */
-function kadence_head_cleanup() {
-  // Originally from http://wpengineer.com/1438/wordpress-header/
-  remove_action('wp_head', 'feed_links', 2);
-  remove_action('wp_head', 'feed_links_extra', 3);
-  remove_action('wp_head', 'rsd_link');
-  remove_action('wp_head', 'wlwmanifest_link');
-  remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
-  remove_action('wp_head', 'wp_generator');
-  remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
-
-  global $wp_widget_factory;
-  remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
-
-  add_filter('use_default_gallery_style', '__return_null');
-
-  if (!class_exists('WPSEO_Frontend')) {
-    remove_action('wp_head', 'rel_canonical');
-    add_action('wp_head', 'kadence_rel_canonical');
-  }
-}
-
-function kadence_rel_canonical() {
-  global $wp_the_query;
-
-  if (!is_singular()) {
-    return;
-  }
-
-  if (!$id = $wp_the_query->get_queried_object_id()) {
-    return;
-  }
-
-  $link = get_permalink($id);
-  echo "\t<link rel=\"canonical\" href=\"$link\">\n";
-}
-add_action('init', 'kadence_head_cleanup');
-
-/**
  * Remove the WordPress version from RSS feeds
  */
 add_filter('the_generator', '__return_false');
@@ -302,27 +257,6 @@ function kadence_widget_first_last_classes($params) {
   return $params;
 }
 add_filter('dynamic_sidebar_params', 'kadence_widget_first_last_classes');
-
-/**
- * Redirects search results from /?s=query to /search/query/, converts %20 to +
- *
- * @link http://txfx.net/wordpress-plugins/nice-search/
- */
-function kadence_nice_search_redirect() {
-  global $wp_rewrite;
-  if (!isset($wp_rewrite) || !is_object($wp_rewrite) || !$wp_rewrite->using_permalinks()) {
-    return;
-  }
-
-  $search_base = $wp_rewrite->search_base;
-  if (is_search() && !is_admin() && strpos($_SERVER['REQUEST_URI'], "/{$search_base}/") === false) {
-    wp_redirect(home_url("/{$search_base}/" . urlencode(get_query_var('s'))));
-    exit();
-  }
-}
-if (current_theme_supports('nice-search')) {
-  add_action('template_redirect', 'kadence_nice_search_redirect');
-}
 
 /**
  * Fix for empty search queries redirecting to home page

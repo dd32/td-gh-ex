@@ -32,19 +32,19 @@
     </div> <!-- Close Container -->
   </section>
 <?php endif; ?>
-
+<?php global $smof_data; if(!empty($smof_data['logo_layout']) && ($smof_data['logo_layout'] == 'logocenter')) {$logocclass = 'span12'; $menulclass = 'span12';} else {$logocclass = 'span4'; $menulclass = 'span8';} ?>
   <div class="container">
     <div class="row">
-          <div class="span4 clearfix">
+          <div class="<?php echo $logocclass; ?>  clearfix">
             <div id="logo" class="logocase">
               <a class="brand logofont" href="<?php echo home_url(); ?>/">
                        <?php global $smof_data; if (!empty($smof_data['logo_upload'])) { ?> <div id="thelogo"><img src="<?php echo $smof_data['logo_upload']; ?>" <?php if(isset($smof_data['x2logo_upload'])) {echo 'data-at2x="'.$smof_data['x2logo_upload'].'"';} ?> /></div> <?php } else { bloginfo('name'); } ?>
               </a>
               <?php if (isset($smof_data['logo_below_text'])) { ?> <p class="belowlogo-text"><?php echo $smof_data['logo_below_text']; ?></p> <?php }?>
            </div> <!-- Close #logo -->
-       </div><!-- close span5 -->
+       </div><!-- close logo span -->
 
-       <div class="span8">
+       <div class="<?php echo $menulclass; ?>">
          <nav id="nav-main" class="clearfix" role="navigation">
           <?php
             if (has_nav_menu('primary_navigation')) :
@@ -56,7 +56,7 @@
            endif;
           ?>    
           </nav>
-        </div> <!-- Close span7 -->
+        </div> <!-- Close menu span -->
     </div> <!-- Close Row -->
   </div> <!-- Close Container -->
   <?php
@@ -69,4 +69,5 @@
     </div><!--close container-->
     </section>
     <?php endif; ?> 
+     <?php global $smof_data; if (!empty($smof_data['banner_upload'])) { ?> <div class="container"><div class="virtue_banner"><img src="<?php echo $smof_data['banner_upload']; ?>" /></div></div> <?php } ?>
 </header>

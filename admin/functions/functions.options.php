@@ -11,7 +11,7 @@ if (!function_exists('of_options'))
 		$of_categories_obj 	= get_categories('hide_empty=0');
 		foreach ($of_categories_obj as $of_cat) {
 		    $of_categories[$of_cat->cat_ID] = $of_cat->cat_name;}
-		$categories_tmp 	= array_unshift($of_categories, __("Select a category:", 'virtue'));    
+		$categories_tmp 	= array_unshift($of_categories, __("All", 'virtue'));    
 	       
              if(taxonomy_exists('portfolio-type')) {
                $of_portfolio           = array();  
@@ -421,14 +421,14 @@ if (!function_exists('of_options'))
 global $of_options;
 $of_options = array();
 
-            $of_options[] = array( 	"name" 		=> "Main Settings",
+            $of_options[] = array( 	"name" 		=> __("Main Settings", 'virtue'),
 						"type" 		=> "heading"
 				);
 					
             $of_options[] = array( 	"name" 		=> "Hello there!",
 						"desc" 		=> "",
 						"id" 		      => "introduction",
-						"std" 		=> "<h3>Welcome to Virtue Theme Options</h3>
+						"std" 		=> "<h3>".__('Welcome to Virtue Theme Options', 'virtue')."</h3>
 						<p>This theme was developed by <a href=\"http://kadencethemes.com/\">Kadence Themes</a></p>
                                     <p>For theme documentation visit: <a href=\"http://docs.kadencethemes.com/virtue/\">docs.kadencethemes.com/virtue/</a>
                                     <br />
@@ -467,10 +467,20 @@ $of_options = array();
             $of_options[] = array(   "name"            => __("Logo Options", 'virtue'),
 					       "desc"            => "",
 					       "id"              => "introduction",
-					       "std"             => "<h3>Logo Options</h3>",
+					       "std"             => "<h3>".__('Logo Options', 'virtue')."</h3>",
 					       "icon"            => true,
 					       "type"            => "info"
                                      );
+            $of_options[] = array(   "name"            => __("Logo Layout", 'virtue'),
+                                     "desc"            => __("Choose how you want your logo to be laid out", 'virtue'),
+                                     "id"              => "logo_layout",
+                                     "std"             => "logoleft",
+                                    "type"            => "images",
+                                    "options"         => array(
+                                                'logoleft'  => $url . 'logo_layout_01.png',
+                                                'logocenter' => $url . 'logo_layout_02.png'
+                                                )
+                                    );
             $of_options[] = array(   "name"            => __("Logo", 'virtue'),
 					       "desc"            => __("Upload your Logo. If left blank theme will use site name.", 'virtue'),
 					       "id"              => "logo_upload",
@@ -565,6 +575,11 @@ $of_options = array();
                                     "max"             => "80",
                                     "type"            => "sliderui" 
                         );
+            $of_options[] = array(   "name"            => __("Sitewide Banner", 'virtue'),
+                                     "desc"            => __("Upload a banner for bottom of header.", 'virtue'),
+                                     "id"              => "banner_upload",
+                                     "std"             => "",
+                                     "type"            => "media");
 
 				
             $of_options[] = array( 	"name" 		=> __("Slider Settings", 'virtue'),
@@ -644,13 +659,13 @@ $of_options = array();
 						"std"             => "",
 						"type"            => "textarea"); 
 
-            $of_options[] = array( 	"name" 		=> "Mobile Slider",
+            $of_options[] = array( 	"name" 		=> __("Mobile Slider", 'virtue'),
 						"type" 		=> "heading"
 				);
             $of_options[] = array(   "name"            => "Mobile Body",
 					       "desc"            => "",
 					       "id"              => "info_mobile_slider",
-					       "std"             => "<h3>Create a more lightweight home slider for your mobile visitors.</h3>",
+					       "std"             => "<h3>".__('Create a more lightweight home slider for your mobile visitors.', 'virtue')."</h3>",
 					       "icon"            => true,
 					       "type"            => "info"
                                      );
@@ -674,7 +689,7 @@ $of_options = array();
                   						)
 					);
 					
-            $of_options[] = array( "name" => "Mobile Slider Images",
+            $of_options[] = array( "name" => __("Mobile Slider Images", 'virtue'),
       					"desc"             => "",
       					"id"               => "home_mobile_slider",
       					"std"              => "",
@@ -736,7 +751,7 @@ $of_options = array();
 						"type"            => "textarea"
                                     );
 
-            $of_options[] = array( "name"             => "Home Layout",
+            $of_options[] = array( "name"             => __("Home Layout", 'virtue'),
 					     "type"             => "heading");
 
             $of_options[] = array( 	"name" 		=> __("Homepage Layout Manager", 'virtue'),
@@ -748,7 +763,7 @@ $of_options = array();
             $of_options[] = array(  "name"            => "home_blog_settings",
                                     "desc"            => "",
                                     "id"              => "info_blog_settings",
-                                    "std"             => "<h3>Home Blog Settings</h3>",
+                                    "std"             => "<h3>".__('Home Blog Settings', 'virtue')."</h3>",
                                     "icon"            => true,
                                     "type"            => "info"
                                     );
@@ -758,10 +773,26 @@ $of_options = array();
                                     "std"             => "",
                                     "type"            => "text"
                                     );
+            $of_options[] = array(  "name"          => __("Choose How many posts on Homepage", 'virtue'),
+                                    "desc"          => "",
+                                    "id"            => "home_post_count",
+                                    "std"           => "2",
+                                    "min"           => "2",
+                                    "step"          => "2",
+                                    "max"           => "8",
+                                    "type"          => "sliderui" 
+                                );
+            $of_options[] = array(  "name"          => __("Limit posts to a Category", 'virtue'),
+                                    "desc"          => "",
+                                    "id"              => "home_post_type",
+                                    "std"             => "all",
+                                    "type"            => "select",
+                                    "options"         => $of_categories
+                                    );
             $of_options[] = array(  "name"            => "portfolio_carousel_settings",
                                     "desc"            => "",
                                     "id"              => "info_portfolio_settings",
-                                    "std"             => "<h3>Home Porfolio Settings</h3>",
+                                    "std"             => "<h3>".__('Home Porfolio Settings', 'virtue')."</h3>",
                                     "icon"            => true,
                                     "type"            => "info"
                                     );
@@ -787,7 +818,7 @@ $of_options = array();
             $of_options[] = array( "name"             => __("Home Icon Menu", 'virtue'),
                                     "desc"            => "",
                                     "id"              => "info_portfolio_settings",
-                                    "std"             => "<h3>Home Icon Menu</h3>",
+                                    "std"             => "<h3>".__('Home Icon Menu', 'virtue')."</h3>",
                                     "type"            => "info"
                                     );
             $of_options[] = array( "name"             => __("Icon Menu", 'virtue'),
@@ -797,13 +828,13 @@ $of_options = array();
                                     "type"            => "icons");
 
 
-            $of_options[] = array(  "name"            => "Shop Settings",
+            $of_options[] = array(  "name"            => __("Shop Settings", 'virtue'),
 					      "type"            => "heading"
                                     );
             $of_options[] = array(  "name"             => "shopsettings",
                                     "desc"             => "",
                                     "id"               => "info_shop_settings",
-                                    "std"              => "<h3>Shop Archive Page Settings</h3>",
+                                    "std"              => "<h3>".__('Shop Archive Page Settings', 'virtue')."</h3>",
                                     "icon"             => true,
                                     "type"             => "info"
                                     );
@@ -848,7 +879,7 @@ $of_options = array();
             $of_options[] = array( "name"             => "productsettings",
                                     "desc"            => "",
                                     "id"              => "info_product_settings",
-                                    "std"             => "<h3>Product Page Settings</h3>",
+                                    "std"             => "<h3>".__('Product Page Settings', 'virtue')."</h3>",
                                     "icon"            => true,
                                     "type"            => "info"
                                     );
@@ -864,7 +895,7 @@ $of_options = array();
                                     "std"           => 1,
                                     "type"          => "switch"
                                 ); 
-            $of_options[] = array( "name"        => "Basic Styling",
+            $of_options[] = array( "name"        => __("Basic Styling", 'virtue'),
 					     "type"        => "heading");
 
             $of_options[] = array(  "name"             => __("Theme Skin Stylesheet", 'virtue'),
@@ -893,13 +924,13 @@ $of_options = array();
                                     "type"             => "color"
                                     ); 
 
-	     $of_options[] = array( "name" => "Advanced Styling",
+	     $of_options[] = array( "name" => __("Advanced Styling", 'virtue'),
 					"type" => "heading");
 					
 		                         $of_options[] = array( "name"             => "maincontentback",
 					                              "desc"             => "",
 										"id"               => "info_main_backgroun",
-										"std"              => "<h3>Main Conent Background</h3>
+										"std"              => "<h3>".__('Main Conent Background', 'virtue')."</h3>
 										        This sets your background for page content areas.",
 										"icon"              => true,
 										"type"              => "info"
@@ -952,11 +983,68 @@ $of_options = array();
                   										'center'      => 'center',
                   										'bottom'      => 'bottom',
 										                    )
-										);  
+										);
+                                                            $of_options[] = array(  "name"              => "topbar_back",
+                                                            "desc"              => "",
+                                                            "id"                => "info_topbar_background",
+                                                            "std"               => "<h3>".__('Topbar Background', 'virtue')."</h3>
+                                                                          This sets your background for your sites topbar.",
+                                                            "icon"              => true,
+                                                            "type"              => "info"
+                                                            );
+                                    $of_options[] = array(  "name"              => __("Topbar Background", 'virtue'),
+                                                            "desc"              => __("Background Color", 'virtue'),
+                                                            "id"                => "topbar_bg_color",
+                                                            "std"               => "",
+                                                            "type"              => "color"
+                                                            ); 
+                                     $of_options[] = array( "name" => "",
+                                                            "desc" => __("Upload background image or texture", 'virtue'),
+                                                            "id" => "topbar_bg_img",
+                                                            "std" => "",
+                                                            "type" => "upload"
+                                                            ); 
+                                     $of_options[] = array( "name"              => "",
+                                                            "desc"              => __("Image repeat options", 'virtue'),
+                                                            "id"                => "topbar_bg_repeat",
+                                                            "std"               => "",
+                                                            "type"              => "select",
+                                                            "options"           => array(
+                                                                        ''            => 'select',
+                                                                        'no-repeat'   => 'no-repeat',
+                                                                        'repeat'      => 'repeat',
+                                                                        'repeat-x'    => 'repeat-x',
+                                                                        'repeat-y'    => 'repeat-y'
+                                                                          )
+                                                            );  
+                                     $of_options[] = array( "name"              => "",
+                                                            "desc"              => __("X image placement options", 'virtue'),
+                                                            "id"                => "topbar_bg_placementx",
+                                                            "std"               => "",
+                                                            "type"              => "select",
+                                                            "options"           => array(
+                                                                        ''            => 'select',
+                                                                        'top'         => 'left',
+                                                                        'center'      => 'center',
+                                                                        'bottom'      => 'right',
+                                                                        )
+                                                            );
+                                     $of_options[] = array( "name"             => "",
+                                                            "desc"              => __("Y image placement options", 'virtue'),
+                                                            "id"                => "topbar_bg_placementy",
+                                                            "std"               => "",
+                                                            "type"              => "select",
+                                                            "options"           => array(
+                                                                              ''            => 'select',
+                                                                              'top'         => 'top',
+                                                                              'center'      => 'center',
+                                                                              'bottom'      => 'bottom',
+                                                                              )
+                                                            ); 
 						$of_options[] = array(  "name"              => "headerback",
 										"desc"              => "",
 										"id"                => "info_header_background",
-										"std"               => "<h3>Header Background</h3>
+										"std"               => "<h3>".__('Header Background', 'virtue')."</h3>
 										              This sets your background for your sites header.",
 										"icon"              => true,
 										"type"              => "info"
@@ -1013,7 +1101,7 @@ $of_options = array();
 						$of_options[] = array(  "name"              => "menuback",
 										"desc"              => "",
 										"id"                => "info_menu_background",
-										"std"               => "<h3>Secondary Menu Background</h3>
+										"std"               => "<h3>".__('Secondary Menu Background', 'virtue')."</h3>
 										              This sets your background for the secondary menu.",
 										"icon"              => true,
 										"type"              => "info"
@@ -1070,7 +1158,7 @@ $of_options = array();
 				             $of_options[] = array( "name"              => "Featureback",
 										"desc"              => "",
 										"id"                => "info_feature_background",
-										"std"               => "<h3>Featured Content Background</h3>
+										"std"               => "<h3>".__('Featured Content Background', 'virtue')."</h3>
 										        This sets your background of your sites featured content areas.",
 										"icon"              => true,
 										"type"              => "info"
@@ -1128,7 +1216,7 @@ $of_options = array();
 				              $of_options[] = array( "name" => "footerback",
 										"desc" => "",
 										"id" => "info_footer_background",
-										"std" => "<h3>Footer Background</h3>
+										"std" => "<h3>".__('Footer Background', 'virtue')."</h3>
 										This sets your background for your sites footer",
 										"icon" => true,
 										"type" => "info"
@@ -1186,7 +1274,7 @@ $of_options = array();
 						$of_options[] = array( "name" => "bodyback",
 										"desc" => "",
 										"id" => "info_body_background",
-										"std" => "<h3>Body Background</h3>
+										"std" => "<h3>".__('Body Background', 'virtue')."</h3>
 										If Site is Boxed Layout, this will determine the body tags background.",
 										"icon" => true,
 										"type" => "info"
@@ -1253,13 +1341,13 @@ $of_options = array();
             										)
 										); 
 
-            $of_options[] = array(  "name"            => "Typography",
+            $of_options[] = array(  "name"            => __("Typography", 'virtue'),
                                     "type"            => "heading"
                                     );
             $of_options[] = array(  "name"             => "Header Font Options",
       					"desc"             => "",
       					"id"               => "Info_header_Font",
-      					"std"              => "<h3>Header Font Options</h3>",
+      					"std"              => "<h3>".__('Header Font Options', 'virtue')."</h3>",
       					"icon"             => true,
       					"type"             => "info"
                                     );
@@ -1332,7 +1420,7 @@ $of_options = array();
             $of_options[] = array( "name"             => "Body Font Options",
       					"desc"             => "",
       					"id"               => "Info_body_Font",
-      					"std"              => "<h3>Body Font Options</h3>",
+      					"std"              => "<h3>".__('Body Font Options', 'virtue')."</h3>",
       					"icon"             => true,
       					"type"             => "info"
                                     );
@@ -1361,7 +1449,7 @@ $of_options = array();
             $of_options[] = array(  "name"             => "Menu Font Options",
       					"desc"             => "",
       					"id"               => "Info_Menu_Font",
-      					"std"              => "<h3>Menus Font Options</h3>",
+      					"std"              => "<h3>".__('Menus Font Options', 'virtue')."</h3>",
       					"icon"             => true,
       					"type"             => "info"
                                     );
@@ -1399,7 +1487,7 @@ $of_options = array();
 						"type" 		=> "typography"
 				);  
 
-      $of_options[] = array( "name" => "Misc Settings",
+      $of_options[] = array( "name" => __("Misc Settings", 'virtue'),
 					"type" => "heading"
                               );
       $of_options[] = array(  "name"            => __("All Projects Portfolio Page", 'virtue'),
@@ -1430,7 +1518,7 @@ $of_options = array();
 	$of_options[] = array( "name"              => "Create Sidebars",
 					"desc"             => "",
 					"id"               => "info_sidebars",
-					"std"              => "<h3>Create Sidebars</h3>",
+					"std"              => "<h3>".__('Create Sidebars', 'virtue')."</h3>",
 					"icon"             => true,
 					"type"             => "info"
                               ); 
@@ -1441,13 +1529,13 @@ $of_options = array();
 					"type"             => "sidebars"
                               );
 
-      $of_options[] = array( "name"              => "Advanced Settings",
+      $of_options[] = array( "name"              => __("Advanced Settings", 'virtue'),
 					"type"             => "heading"
                               ); 
       $of_options[] = array(  "name"             => "CSS Info",
 					"desc"             => "",
 					"id"               => "info_CSS",
-					"std"              => "<h3>Custom CSS</h3>",
+					"std"              => "<h3>".__("Custom CSS", 'virtue')."</h3>",
 					"icon"             => true,
 					"type"              => "info"
                               );
@@ -1458,7 +1546,7 @@ $of_options = array();
                               "type"            => "textarea");
 				
 // Backup Options
-$of_options[] = array( 	"name" 		=> "Backup Options",
+$of_options[] = array( 	"name" 		=> __("Backup Options", 'virtue'),
 				"type" 		=> "heading"
 				);
 				

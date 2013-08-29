@@ -1,10 +1,14 @@
 <?php
-function virtue_custom_style_setup() {
-  $args = array('wp-head-callback' => 'virtue_custom_style');
-  add_theme_support( 'custom-header', $args );
+ header("Content-type: text/css; charset: UTF-8");
+$wp_include = "../wp-load.php";
+$i = 0;
+while (!file_exists($wp_include) && $i++ < 10) {
+  $wp_include = "../$wp_include";
 }
-add_action( 'after_setup_theme', 'virtue_custom_style_setup' );
-function virtue_custom_style() {
+
+// let's load WordPress
+require($wp_include);
+
  global $smof_data; 
 //Logo
 if(!empty($smof_data['font_logo'])) {
@@ -18,32 +22,32 @@ if(!empty($smof_data['font_logo_style'])) {
 } else {
   $font_logo = '#logo a.brand {font-size:38px; font-weight:normal; line-height:40px;}';
 }
-if(!empty($smof_data['logo_padding_top'])) {
+if(isset($smof_data['logo_padding_top'])) {
 $logo_padding_top = '#logo {padding-top:'.$smof_data['logo_padding_top'].'px;}';
 } else {
   $logo_padding_top = '#logo {padding-top:25px;}';
 }
-if(!empty($smof_data['logo_padding_bottom'])) {
+if(isset($smof_data['logo_padding_bottom'])) {
  $logo_padding_bottom = '#logo {padding-bottom:'.$smof_data['logo_padding_bottom'].'px;}';
  } else {
   $logo_padding_bottom = '#logo {padding-bottom:10px;}';
  } 
- if(!empty($smof_data['logo_padding_left'])) {
+ if(isset($smof_data['logo_padding_left'])) {
  $logo_padding_left = '#logo {margin-left:'.$smof_data['logo_padding_left'].'px;}';
  } else {
 $logo_padding_left = '#logo {margin-left:0px;}';
  }
- if(!empty($smof_data['logo_padding_right'])) {
+ if(isset($smof_data['logo_padding_right'])) {
   $logo_padding_right = '#logo {margin-right:'.$smof_data['logo_padding_right'].'px;}';
 } else {
   $logo_padding_right = '#logo {margin-right:0px;}';
 }
-if(!empty($smof_data['menu_margin_top'])) {
+if(isset($smof_data['menu_margin_top'])) {
  $menu_margin_top = '#nav-main ul.sf-menu {margin-top:'.$smof_data['menu_margin_top'].'px;}';
  } else {
   $menu_margin_top = '#nav-main ul.sf-menu {margin-top:40px;}';
  } 
- if(!empty($smof_data['menu_margin_bottom'])) {
+ if(isset($smof_data['menu_margin_bottom'])) {
  $menu_margin_bottom = '#nav-main ul.sf-menu {margin-bottom:'.$smof_data['menu_margin_bottom'].'px;}';
 } else {
   $menu_margin_bottom = '#nav-main ul.sf-menu {margin-bottom:10px;}';
@@ -175,6 +179,31 @@ $header_bg_y = $smof_data['header_bg_placementy'];
 } else {
   $header_bg_y = '';
 }
+if(!empty($smof_data['topbar_bg_color'])) {
+$topbar_bg_color = $smof_data['topbar_bg_color'];
+} else {
+  $topbar_bg_color = '';
+}
+if(!empty($smof_data['topbar_bg_img'])) { 
+  $topbar_bg_img = 'url('.$smof_data['topbar_bg_img'].')'; 
+} else {
+  $topbar_bg_img = '';
+}
+if(!empty($smof_data['topbar_bg_repeat'])) {
+$topbar_bg_repeat = $smof_data['topbar_bg_repeat'];
+} else {
+  $topbar_bg_repeat = '';
+}
+if(!empty($smof_data['topbar_bg_placementx'])) {
+$topbar_bg_x = $smof_data['topbar_bg_placementx'];
+} else {
+  $topbar_bg_x = '';
+}
+if(!empty($smof_data['topbar_bg_placementy'])) {
+$topbar_bg_y = $smof_data['topbar_bg_placementy'];
+} else {
+  $topbar_bg_y = '';
+}
 if(!empty($smof_data['menu_bg_color'])) {
 $menu_bg_color = $smof_data['menu_bg_color'];
 } else {
@@ -287,17 +316,15 @@ if (!empty($smof_data['custom_css'])) {
 } else {
   $custom_css = '';
 }
-
-echo '<style type="text/css" media="screen">'.$logo_font.$font_logo.$logo_padding_top.$logo_padding_bottom.$logo_padding_left.$logo_padding_right.$menu_margin_top.$menu_margin_bottom.$font_family.$font_h1.$font_h2.$font_h3.$font_h4.$font_h5.$font_p.$font_primary_menu.$font_secondary_menu.$color_primary.$color_primary30.$color_footerfont.'
+echo $logo_font.$font_logo.$logo_padding_top.$logo_padding_bottom.$logo_padding_left.$logo_padding_right.$menu_margin_top.$menu_margin_bottom.$font_family.$font_h1.$font_h2.$font_h3.$font_h4.$font_h5.$font_p.$font_primary_menu.$font_secondary_menu.$color_primary.$color_primary30.$color_footerfont.'
 
   .contentclass {background:'.$content_bg_color.' '.$content_bg_img.' '.$content_bg_repeat.' '.$content_bg_x.' '.$content_bg_y.';}
   .headerclass {background:'.$header_bg_color.' '.$header_bg_img.' '.$header_bg_repeat.' '.$header_bg_x.' '.$header_bg_y.';}
+  .topclass {background:'.$topbar_bg_color.' '.$topbar_bg_img.' '.$topbar_bg_repeat.' '.$topbar_bg_x.' '.$topbar_bg_y.';}
   .navclass {background:'.$menu_bg_color.' '.$menu_bg_img.' '.$menu_bg_repeat.' '.$menu_bg_x.' '.$menu_bg_y.';}
   .featclass {background:'.$feat_bg_color.' '.$feat_bg_img.' '.$feat_bg_repeat.' '.$feat_bg_x.' '.$feat_bg_y.';}
   .footerclass {background:'.$footer_bg_color.' '.$footer_bg_img.' '.$footer_bg_repeat.' '.$footer_bg_x.' '.$footer_bg_y.';}
   body {background:'.$boxedbg_color.' '.$boxedbg_img.' '.$boxedbg_repeat.' '.$boxedbg_x.' '.$boxedbg_y.'; background-attachment:'.$boxedbg_fixed.';}
 
-  '.$custom_css.'
-</style>';
-}
+  '.$custom_css;
 ?>

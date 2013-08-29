@@ -15,7 +15,7 @@
                 foreach ($attachments as $attachment) {
                   $attachment_url = wp_get_attachment_url($attachment->ID , 'full');
                   $image = aq_resize($attachment_url, 1170, $slideheight, true);
-                  if($image == "") { $image = $attachment_url; }
+                  if(empty($image)) {$image = $attachment_url; }
                   echo '<li><img src="'.$image.'"/></li>';
                 } 
               } ?>                            

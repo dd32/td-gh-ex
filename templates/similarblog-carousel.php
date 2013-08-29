@@ -30,7 +30,8 @@
 										$image_url = wp_get_attachment_image_src( 
 											get_post_thumbnail_id( $post->ID ), 'full' ); 
 										$thumbnailURL = $image_url[0]; 
-										$image = aq_resize($thumbnailURL, 272, 272, true); 
+										$image = aq_resize($thumbnailURL, 272, 272, true);
+											if(empty($image)) {$image = $thumbnailURL;} 
 									}else { $theme_url = get_template_directory_uri(); 
 									$image = $theme_url.'/assets/img/post_standard.jpg';
 								}?>

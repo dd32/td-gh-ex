@@ -597,7 +597,7 @@ class Kadence_Image_Grid_Widget extends WP_Widget {
         
           $r = new WP_Query( apply_filters('widget_posts_args', array( 
           'post_type' => 'portfolio', 
-          'type' => $instance['thetype'], 
+          'portfolio-type' => $instance['thetype'], 
           'no_found_rows' => true, 
           'posts_per_page' => $number, 
           'post_status' => 'publish', 
@@ -661,7 +661,7 @@ class Kadence_Image_Grid_Widget extends WP_Widget {
     $gridchoice = isset($instance['gridchoice']) ? esc_attr($instance['gridchoice']) : '';
     $number = isset($instance['number']) ? absint($instance['number']) : 6;
     if (isset($instance['thecat'])) { $thecat = esc_attr($instance['thecat']); }
-    if (isset($instance['thetype'])) { $thecat = esc_attr($instance['thetype']); }
+    if (isset($instance['thetype'])) { $thetype = esc_attr($instance['thetype']); }
      $types= get_terms('portfolio-type');
      $type_options = array();
           $type_options[] = '<option value="">All</option>';

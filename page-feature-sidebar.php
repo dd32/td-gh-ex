@@ -22,6 +22,7 @@ Template Name: Feature - Sidebar
                     $thumb = get_post_thumbnail_id();
                     $img_url = wp_get_attachment_url( $thumb,'full' ); //get full URL to image (use "large" or "medium" if the images too big)
                     $image = aq_resize( $img_url, 1170, $slideheight, true ); //resize & crop the image
+                    if(empty($image)) {$image = $img_url; }
                     ?>
                     <?php if($image) : ?>
                       <div class="imghoverclass"><a href="<?php echo $img_url ?>" rel="lightbox[pp_gal]" class="lightboxhover"><img src="<?php echo $image ?>" alt="<?php the_title(); ?>" /></a></div>

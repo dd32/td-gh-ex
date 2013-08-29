@@ -2,11 +2,16 @@
 	<?php global $smof_data; if(isset($smof_data['blog_title'])) { $btitle = $smof_data['blog_title'];} else { $btitle = __('Latest from the Blog', 'virtue'); } ?>
 		<div class="clearfix"><h3 class="hometitle"><?php echo $btitle; ?></h3></div>
 	<div class="row">
+		<?php global $smof_data; if(isset($smof_data['home_post_count'])) { $blogcount = $smof_data['home_post_count'];} else { $blogcount = '2'; } 
+				 if(isset($smof_data['home_post_type'])) { $blog_category = $smof_data['home_post_type'];}
+				 if($blog_category == "All") {$blog_category = '';}
+					?>
 				<?php $temp = $wp_query; 
 					  $wp_query = null; 
 					  $wp_query = new WP_Query();
 					  $wp_query->query(array(
-						'posts_per_page' => '2',
+						'posts_per_page' => $blogcount,
+						'category_name'=> $blog_category,
 						'post__not_in' => get_option( 'sticky_posts' )));
 					if ( $wp_query ) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
 				<div class="span6">
@@ -18,9 +23,8 @@
 										$image_url = wp_get_attachment_image_src( 
 											get_post_thumbnail_id( $post->ID ), 'full' ); 
 										$thumbnailURL = $image_url[0]; 
-								
 									$image = aq_resize($thumbnailURL, 270, 270, true);
-							 ?>
+										if(empty($image)) {$image = $thumbnailURL; } ?>
 								 <div class="span3">
 									 <div class="imghoverclass">
 		                           		<a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">

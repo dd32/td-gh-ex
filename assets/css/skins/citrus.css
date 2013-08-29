@@ -36,6 +36,9 @@ a:hover {text-decoration: none;}
 .footernav ul li a {color:#555;}
 
 /* Custom */
+.sidebar a {
+	color:#555;
+}
 #nav-main ul.sf-menu > li {
 border-right: 1px solid #eee;
 }

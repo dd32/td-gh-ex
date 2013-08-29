@@ -33,8 +33,8 @@
 									$image_url = wp_get_attachment_image_src( 
 									get_post_thumbnail_id( $post->ID ), 'full' ); 
 									$thumbnailURL = $image_url[0]; 
-									if ($crop = true) { $image = aq_resize($thumbnailURL, $imgwidth, $imgheight, true); }
-									else { $image = aq_resize($thumbnailURL, $imgwidth, $imgheight, false); }?>
+									$image = aq_resize($thumbnailURL, $imgwidth, $imgheight, true); 
+									 if(empty($image)) {$image = $thumbnailURL; } ?>
 
 									<div class="imghoverclass">
 	                                       <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">

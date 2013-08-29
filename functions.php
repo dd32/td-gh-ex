@@ -23,6 +23,3 @@ require_once locate_template('/lib/icons/icons.php');          		// Icon functio
 require_once locate_template('/lib/authorbox.php');         		// Author box
 require_once locate_template('/lib/custom-woocommerce.php'); 		// Woocommerce functions
 require_once locate_template('/lib/virtuetoolkit-activate.php'); 	// Plugin Activation
-
-
-require get_template_directory() . '/lib/custom-css.php';

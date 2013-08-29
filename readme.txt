@@ -47,6 +47,19 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 1.3.5 =
+
+* Updated CSS
+* Removed a series of things from cleanup.php
+* Fixed Issue with topbar
+* Fixed Issue with small Images
+* Added Logo Layout Options
+* Added topbar background options
+* Add banner option
+* Added increase in latest posts on home page
+* Updated language per request
+* Updated portfolio next to follow menu order
+
 = Version: 1.3.0 =
 
 * Changed how jQuery called in font end.

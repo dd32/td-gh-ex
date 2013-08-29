@@ -7,8 +7,8 @@
                       $slides = $smof_data['home_slider'];
                       ?>
                     <?php foreach ($slides as $slide) : 
-                    $image = aq_resize($slide['url'], 1170, $slideheight, true); 
-                    if($image == "") { $image = $slide['url'];} ?>
+                    $image = aq_resize($slide['url'], 1170, $slideheight, true);
+                    if(empty($image)) {$image = $slide['url'];} ?>
                       <li> 
                         <?php if($slide['link'] != '') echo '<a href="'.$slide['link'].'">'; ?>
                           <img src="<?php echo $image; ?>" alt="<?php echo $slide['description']?>" title="<?php echo $slide['title'] ?>" />

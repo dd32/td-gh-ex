@@ -1,9 +1,4 @@
 <?php
-/**
- * Enable theme features
- */
-add_theme_support('nice-search');           // Enable /?s= to /search/ redirect
-add_theme_support('jquery-cdn');            // Enable to load jQuery from the Google CDN
 
 /**
  * Configuration values
@@ -66,6 +61,7 @@ function kadence_display_sidebar() {
 }
 
 function kadence_display_topbar() {
+  global $smof_data;
  if(isset($smof_data['topbar'])) {
   if($smof_data['topbar'] == 1 ) {$topbar = true;} else { $topbar = false;}
 } else {$topbar = true;}

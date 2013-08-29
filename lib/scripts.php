@@ -19,6 +19,7 @@ function kadence_scripts() {
   wp_enqueue_style('kadence_theme', get_template_directory_uri() . '/assets/css/virtue.css', false, null);
 global $smof_data; if(isset($smof_data['skin_stylesheet'])) {$skin = $smof_data['skin_stylesheet'];} else { $skin = 'default.css';} 
  wp_enqueue_style('virtue_skin', get_template_directory_uri() . '/assets/css/skins/'.$skin.'', false, null);
+ wp_enqueue_style('virtue_custom', get_template_directory_uri() . '/lib/custom-css.php');
 
  
 

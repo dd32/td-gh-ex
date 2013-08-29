@@ -10,7 +10,7 @@
 				} 
 			
 		}
-		elseif( is_page_template('page-blog.php') || is_page_template('page-sidebar.php') || (get_post_type() == 'post')) {
+		elseif( is_page_template('page-blog.php') || is_page_template('page-sidebar.php') || is_page_template('page-feature-sidebar.php') || (get_post_type() == 'post')) {
 		global $post; $sidebar = get_post_meta( $post->ID, '_kad_sidebar_choice', true ); 
 	 		if ($sidebar != '') {
 					dynamic_sidebar($sidebar);

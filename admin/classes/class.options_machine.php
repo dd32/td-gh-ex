@@ -999,8 +999,8 @@ class Options_Machine {
 		
 		
 		$icons .= '<label>Or upload your own icon.</label>';
-		$icons .= '<input class="slide of-input" name="'. $id .'['.$order.'][url]" id="'. $id .'_'.$order .'_slide_url" value="'. $val['url'] .'" />';
-		
+		$icons .= '<input class="upload slide of-input" name="'. $id .'['.$order.'][url]" id="'. $id .'_'.$order .'_slide_url" value="'. $val['url'] .'" />';
+
 		$icons .= '<div class="upload_button_div"><span class="button media_upload_button" id="'.$id.'_'.$order .'">Upload</span>';
 		
 		if(!empty($val['url'])) {$hide = '';} else { $hide = 'hide';}
