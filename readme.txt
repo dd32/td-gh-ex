@@ -2,7 +2,8 @@ Sueva Free Wordpress Theme
 ---------------------
 Sueva is a free responsive clean and corporate Tumblelog Wordpress Theme. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10 and uses the most modern technologies like Html5 and Css3.
 
-Created by ThemeinProgress, http://www.themeinprogress.com
+Created by ThemeinProgress, http://www.themeinprogress.com 
+Demo: http://www.wpinprogress.com/demo/sueva
 
 
 License
@@ -12,14 +13,6 @@ Sueva is licensed under the GPL.
 
 Credits
 -------
-
-/** BACKGROUNDS **/
-
-- Premium Pixels
-
--- By Premium Pixels - http://www.premiumpixels.com/
-
---- License - http://www.premiumpixels.com/licensing/
 
 /** ICONS **/
 
@@ -32,12 +25,6 @@ Credits
 --- Documentation License under CC BY 3.0 - http://creativecommons.org/licenses/by/3.0
 --- Brand Icons - All brand icons are trademarks of their respective owners. The use of these trademarks does not indicate endorsement of the trademark holder by Font Awesome, nor vice versa.
 
-- 350 pixel perfect glyphs icons
-
--- By Brankic1979 - http://brankic1979.com/icons
-
---- License - Not license
-
 - Social Icons
 
 -- By Designdeck - http://www.designdeck.co.uk
@@ -45,13 +32,6 @@ Credits
 -- Pinterest Icon Set - http://www.designdeck.co.uk/a/1255
 
 --- License - Not license
-
-- Picons
-
--- By Picons - http://picons.me/#basic3
-
---- License - http://picons.me/license.php
-
 
 /** FONTS **/
 

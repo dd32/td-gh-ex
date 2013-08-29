@@ -11,19 +11,6 @@ $backgrounds = array(
 		   		"/images/background/patterns/pattern6.jpg" => "Pattern 06",
 		   		"/images/background/patterns/pattern7.jpg" => "Pattern 07",
 		   		"/images/background/patterns/pattern8.jpg" => "Pattern 08",
-		   		"/images/background/patterns/pattern9.jpg" => "Pattern 09",
-		   		"/images/background/patterns/pattern10.jpg" => "Pattern 10",
-		   		"/images/background/patterns/pattern11.jpg" => "Pattern 11",
-		   		"/images/background/patterns/pattern12.jpg" => "Pattern 12",
-		   		"/images/background/patterns/pattern13.jpg" => "Pattern 13",
-		   		"/images/background/patterns/pattern14.jpg" => "Pattern 14",
-		   		"/images/background/patterns/pattern15.jpg" => "Pattern 15",
-		   		"/images/background/patterns/pattern16.jpg" => "Pattern 16",
-		   		"/images/background/patterns/pattern17.jpg" => "Pattern 17",
-		   		"/images/background/patterns/pattern18.jpg" => "Pattern 18",
-		   		"/images/background/patterns/pattern19.jpg" => "Pattern 19",
-		   		"/images/background/patterns/pattern20.jpg" => "Pattern 20",
-		   		"/images/background/patterns/pattern21.jpg" => "Pattern 21",
 );
 
 ?>

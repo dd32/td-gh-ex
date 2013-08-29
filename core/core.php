@@ -159,11 +159,11 @@ if ( is_admin() && isset($_GET['activated'] ) && $pagenow == 'themes.php' ) {
     "suevafree_link_color_hover" => "#d14a2b", 
     "suevafree_border_color" => "#ff6644", 
 
-	"suevafree_body_background" => "/images/background/patterns/pattern19.jpg",
+	"suevafree_body_background" => "/images/background/patterns/pattern1.jpg",
 	"suevafree_body_background_repeat" => "repeat",
 	"suevafree_body_background_color" => "#f3f3f3",
 	
-	"suevafree_footer_background" => "/images/background/patterns/pattern3.jpg",
+	"suevafree_footer_background" => "/images/background/patterns/pattern2.jpg",
 	"suevafree_footer_background_repeat" => "repeat",
 	"suevafree_footer_background_color" => "#f3f3f3",
 

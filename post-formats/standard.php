@@ -22,11 +22,11 @@
 
         <div class="entry-info <?php if (suevafree_setting('suevafree_view_comments') == "on" ) echo "viewcomments"; ?>">
        
-            <span class="entry-date"><?php echo get_the_date(); ?></span>
+            <span class="entry-date"><i class="icon-time" ></i><?php echo get_the_date(); ?></span>
             <?php if (suevafree_setting('suevafree_view_comments') == "on" ): ?>
-            <span class="entry-comments"><?php echo comments_number( '<a href="'.get_permalink($post->ID).'#respond">'.__( "No comments","wip").'</a>', '<a href="'.get_permalink($post->ID).'#comments">1 '.__( "comment","wip").'</a>', '<a href="'.get_permalink($post->ID).'#comments">% '.__( "comments","wip").'</a>' ); ?></span>
+            <span class="entry-comments"><i class="icon-comments-alt" ></i><?php echo comments_number( '<a href="'.get_permalink($post->ID).'#respond">'.__( "No comments","wip").'</a>', '<a href="'.get_permalink($post->ID).'#comments">1 '.__( "comment","wip").'</a>', '<a href="'.get_permalink($post->ID).'#comments">% '.__( "comments","wip").'</a>' ); ?></span>
             <?php endif; ?>
-            <span class="entry-standard">Article</span>
+            <span class="entry-standard"><i class="icon-edit"></i>Article</span>
         </div>
     
     </div>
