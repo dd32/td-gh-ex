@@ -341,3 +341,6 @@ Version 2.6.1
 * Added Skype Social Icon
 * Fixed admin.js to support WordPress 3.6 jQuery UI version update
 * Updated Dutch translation nl_NL.po and nl_NL.mo
+
+Version 2.6.2
+* Fixed Fav Icon image

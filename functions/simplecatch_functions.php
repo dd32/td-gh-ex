@@ -178,7 +178,7 @@ function simplecatch_headerdetails() {
 				if ( !empty( $options[ 'featured_logo_header' ] ) ) :
 					$simplecatch_headerdetails .= '<img src="'.esc_url( $options[ 'featured_logo_header' ] ).'" alt="'.get_bloginfo( 'name' ).'" />';
 				else:
-					// if empty featured_logo_footer on theme options, display default fav icon
+					// if empty featured_logo_footer on theme options, display default Header Logo
 					$simplecatch_headerdetails .='<img src="'. get_template_directory_uri().'/images/logo-head.png" alt="logo" />';
 				endif;
 			
@@ -227,14 +227,14 @@ function simplecatch_footerlogo() {
         $options = $simplecatch_options_settings;
 
 		echo '<!-- refreshing cache -->';
-		if ( $options[ 'remove_footer_logo' ] == "0" ) :
+		if ( empty( $options[ 'remove_footer_logo' ] ) ) :
 		
 			// if not empty featured_logo_footer on theme options
 			if ( !empty( $options[ 'featured_logo_footer' ] ) ) :
 				$simplecatch_footerlogo = 
 					'<img src="'.esc_url( $options[ 'featured_logo_footer' ] ).'" alt="'.get_bloginfo( 'name' ).'" />';
 			else:
-				// if empty featured_logo_footer on theme options, display default fav icon
+				// if empty featured_logo_footer on theme options, display default Footer Logo
 				$simplecatch_footerlogo ='
 					<img src="'. get_template_directory_uri().'/images/logo-foot.png" alt="footerlogo" />';
 			endif;
@@ -269,14 +269,14 @@ function simplecatch_favicon() {
 		echo '<!-- refreshing cache -->';
 		
 		// if not empty fav_icon on theme options
-		if ( empty ( $options[ 'remove_fav_icon' ] ) ) :
+		if ( empty( $options[ 'remove_fav_icon' ] ) ) :
 			
 			// if not empty fav_icon on theme options
 			if ( !empty( $options[ 'fav_icon' ] ) ) :
-				$simplecatch_footerlogo = '<link rel="shortcut icon" href="'.esc_url( $options[ 'fav_icon' ] ).'" type="image/x-icon" />';
+				$simplecatch_favicon = '<link rel="shortcut icon" href="'.esc_url( $options[ 'fav_icon' ] ).'" type="image/x-icon" />';
 			else:
 				// if empty featured_logo_footer on theme options, display default fav icon
-				$simplecatch_footerlogo ='<link rel="shortcut icon" href="'. get_template_directory_uri().'/images/favicon.ico" type="image/x-icon" />';
+				$simplecatch_favicon ='<link rel="shortcut icon" href="'. get_template_directory_uri().'/images/favicon.ico" type="image/x-icon" />';
 			endif;
 	
 		endif;
