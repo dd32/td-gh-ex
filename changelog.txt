@@ -1,7 +1,7 @@
 *** discover Changelog ***
 
-27-08-2013 - version 1.7.10
-* Meta box Option added in post type -page to on/off leave a reply section. Page.php and functions.php file updated accordingly.
+30-08-2013 - version 1.7.11
+* 404.php file added.
 
 19-08-2013 - version 1.7.9
 * Remove function_exists() conditional wrapper from has_post_thumbnail() from loop.php and template-blog.php file.
