@@ -60,6 +60,9 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ============================Change Log================================
+@version 1.3.6
+1. Add auhtor uri and theme uri
+2. Fixed Some styling issues that creating problem with appointment plugin.
 @version 1.3.5
 1. Added Ajax enabled Categorised blog posts Template.
 @verison 1.3.3
