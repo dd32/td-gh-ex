@@ -482,4 +482,29 @@ function travelify_admin_header_image() {
 	</div>
 
 <?php }
+
+/****************************************************************************************/
+
+add_action('wp_head', 'travelify_headercode');
+/**
+ * Custom header scripts
+ */
+function travelify_headercode() { 
+    
+   $travelify_headercode = '';
+	if ( ( !$travelify_headercode = get_transient( 'travelify_headercode' ) )  ) {
+
+		global $travelify_theme_options_settings;
+		$options = $travelify_theme_options_settings;
+
+		// custom scripts header code
+		if ( !empty( $options['customscripts_header'] ) ) {  
+		$travelify_headercode .=  $options[ 'customscripts_header' ] ;
+		}
+
+		set_transient( 'travelify_headercode', $travelify_headercode, 86940 );
+	}
+	echo $travelify_headercode;
+}
+
 ?>
