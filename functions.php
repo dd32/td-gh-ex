@@ -20,7 +20,7 @@ function beta_theme_setup() {
 	/* Load the primary menu. */
 	remove_action( "{$prefix}_before_header", 'omega_get_primary_menu' );
 	remove_action( "{$prefix}_header", 'omega_site_description' );
-	add_action( "{$prefix}_header_right", 'omega_get_primary_menu' );
+	add_action( "{$prefix}_header_right", 'omega_get_primary_menu', 1 );
 
 	add_theme_support( 'omega-footer-widgets', 3 );
 

@@ -20,5 +20,8 @@ Install
 
 Changelog
 ---------
+0.3.3 - 2013-08-12
+- set action priority for future omega layout compatibility
+
 0.3.1 - 2013-08-12
 - First release
