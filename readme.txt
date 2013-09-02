@@ -4,7 +4,7 @@ Contributors: Iceable
 Tags: black, blue, white, light, two-columns, right-sidebar, flexible-width, custom-header, custom-background, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.5
 Tested up to: 3.6
-Stable tag: 1.1.10
+Stable tag: 1.1.11
 
 == ABOUT BOLDR LITE ==
 
@@ -58,10 +58,14 @@ Your translation files will be added to the next update. Don't forget to leave y
 
 == CHANGELOG ==
 
+= 1.1.11 =
+September 2nd, 2013
+* Added: Dismissable admin notice warning users who have not set a primary menu (fallback menu is not responsive).
+
 = 1.1.10 =
 August 23th, 2013
-* Fixed: Thumbnail display for single post causing occasional issue if not resized properly (usually happened when the image were upload while using another theme with different thumbnail size)
-Added: de_DE Translation file.
+* Fixed: Thumbnail display for single post causing occasional issue if not sized properly (happened when the image were uploaded while using another theme with different thumbnail size)
+* Added: de_DE translation files.
 
 = 1.1.9 =
 August 5th, 2013

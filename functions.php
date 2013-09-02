@@ -121,6 +121,33 @@ function boldr_add_menu_parent_class( $items ) {
 }
 add_filter( 'wp_nav_menu_objects', 'boldr_add_menu_parent_class' );
 
+/*
+ * The automatically generated fallback menu is not responsive.
+ * Add an admin notice to warn users who did not set a primary menu
+ * and make this notice dismissable so it is less intrusive.
+ */
+
+function boldr_admin_notice(){
+	global $current_user;
+	$user_id = $current_user->ID;
+	/* Display notice if primary menu is not set and user did not dismiss the notice */
+    if  ( !has_nav_menu( 'primary' ) && !get_user_meta($user_id, 'boldr_ignore_notice' ) ):
+	    echo '<div class="updated"><p><strong>BoldR Lite Notice:</strong> you have not set your primary menu yet, and your site is currently using a fallback menu which is not responsive. Please take a minute to <a href="'.admin_url('nav-menus.php').'">set your menu now</a>!';
+	    printf(__('<a href="%1$s" style="float:right">Dismiss</a>'), '?boldr_notice_ignore=0');
+	    echo '</p></div>';
+    endif;
+}
+add_action('admin_notices', 'boldr_admin_notice');
+
+function boldr_notice_ignore() {
+	global $current_user;
+	$user_id = $current_user->ID;
+	/* If user clicks to ignore the notice, add that to their user meta */
+	if ( isset($_GET['boldr_notice_ignore']) && '0' == $_GET['boldr_notice_ignore'] ):		
+		add_user_meta($user_id, 'boldr_ignore_notice', true, true);
+	endif;
+}
+add_action('admin_init', 'boldr_notice_ignore');
 
 /*
  * Register Sidebar and Footer widgetized areas
