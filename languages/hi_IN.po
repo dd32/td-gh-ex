@@ -1,0 +1,657 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: sis spasalon\n"
+"POT-Creation-Date: 2013-08-16 17:38+0530\n"
+"PO-Revision-Date: 2013-08-16 17:39+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;_e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:23
+#, fuzzy
+msgid "Unfortunately, the page you tried accessing could not be retrieved. "
+msgstr "\"दुर्भाग्य से, आप तक पहुँचने की कोशिश की पृष्ठ प्राप्त नहीं किया जा सकता है\""
+
+#: 404.php:27
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr "\"यह हम आप के लिए क्या देख रहे हैं नहीं मिल सकता है. शायद मदद कर सकते हैं खोज.\""
+
+#: aboutus.php:18
+#, fuzzy
+msgid "Welcome to "
+msgstr "\"आपका स्वागत है\""
+
+#: aboutus.php:34
+msgid "Our Team"
+msgstr "\"हमारी टीम\""
+
+#: aboutus.php:54
+msgid "Designation: "
+msgstr "\"पद:\""
+
+#: aboutus.php:170
+msgid "Popular Procedures"
+msgstr "\"लोकप्रिय प्रक्रियाएं\""
+
+#: archive.php:17
+msgid "Daily Archives:"
+msgstr "\"दिन  अभिलेखागार\""
+
+#: archive.php:19
+msgid "Monthly Archives:"
+msgstr "\"मासिक अभिलेखागार:\""
+
+#: archive.php:21
+#, fuzzy
+msgid "Yearly Archives:"
+msgstr "\"दिन  अभिलेखागार\""
+
+#: archive.php:23
+msgid "Blog Archives"
+msgstr "\"ब्लॉग संग्रह\""
+
+#: archive.php:39 blog.php:33 category.php:32 page.php:25 search.php:42
+#: single.php:27
+msgid "Leave a comment"
+msgstr "\"एक टिप्पणी छोड़ दो\""
+
+#: archive.php:39 blog.php:33 category.php:32 page.php:25 search.php:42
+#: single.php:27
+msgid "1 Comment"
+msgstr "\"1 टिप्पणी\""
+
+#: archive.php:39 blog.php:33 category.php:32 page.php:25 search.php:42
+#: single.php:27
+msgid "% Comments"
+msgstr "\"% टिप्पणियाँ\""
+
+#: blog.php:48 page.php:33 single.php:34
+msgid "Pages:"
+msgstr "\"पेज:\""
+
+#: category.php:17
+msgid "Category  Archives:"
+msgstr "\"श्रेणी अभिलेखागार:\""
+
+#: comments.php:2
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr "\"इस पोस्ट कूटशब्द संरक्षित है कोई टिप्पणी देखने के लिए पासवर्ड दर्ज करें\""
+
+#: comments.php:15 comments.php:30
+msgid "Comment navigation"
+msgstr "\"नेविगेशन टिप्पणी\""
+
+#: comments.php:16 comments.php:31
+msgid "&larr; Older Comments"
+msgstr "\"← पुराने टिप्पणियां\""
+
+#: comments.php:17 comments.php:32
+msgid "Newer Comments &rarr;"
+msgstr "\"नई टिप्पणियाँ →\""
+
+#: comments.php:71
+msgid "Logged in as "
+msgstr "\"के रूप में लॉग\""
+
+#: comments.php:71
+msgid " Log out?"
+msgstr "\"बाहर प्रवेश करें?\""
+
+#: contact.php:17
+msgid "CONTACT INFO"
+msgstr "\"संपर्क जानकारी\""
+
+#: contact.php:23
+msgid "View Larger Map"
+msgstr "\"बड़ा नक्शा देखें\""
+
+#: contact.php:34
+msgid "GET IN TOUCH"
+msgstr "\"संपर्क करें\""
+
+#: contact.php:110
+#, fuzzy
+msgid "Your Name"
+msgstr "\"आपका ईमेल\""
+
+#: contact.php:112
+msgid "Email*"
+msgstr "\"ईमेल *\""
+
+#: contact.php:114
+msgid "Subject"
+msgstr "\"विषय\""
+
+#: contact.php:116
+#, fuzzy
+msgid "Your Message"
+msgstr "\"आपका ईमेल\""
+
+#: contact.php:121
+msgid "Submit"
+msgstr "\"प्रस्तुत करना\""
+
+#: contact.php:138 default_products.php:8 default_products.php:13
+#: default_products.php:18 default_products.php:23 default_products.php:28
+#: default_products.php:33 default_products.php:38 default_products.php:43
+#: default_products.php:48 default_products.php:53 default_products.php:58
+#: default_products.php:63
+msgid "Spa Salon"
+msgstr "\"स्पा सैलून\""
+
+#: contact.php:154
+msgid "Opening Hours"
+msgstr "\"खुलने का समय\""
+
+#: contact.php:167 index-slider.php:39 index-slider.php:108
+#: index-slider.php:129 index-slider.php:147 pink-header.php:23
+#: option_pannel/home.php:49
+msgid "Call us on"
+msgstr "\"पर हमें फोन\""
+
+#: default_services.php:4
+#, fuzzy
+msgid "Spa Treatment"
+msgstr "\"स्पा थीम विकल्प\""
+
+#: default_services.php:18
+msgid "Detox Treatment"
+msgstr "\"detox उपचार\""
+
+#: default_services.php:32
+msgid "Facial Treatment"
+msgstr "\"चेहरे का उपचार\""
+
+#: default_services.php:46
+msgid "Other Treatment"
+msgstr "\"अन्य उपचार\""
+
+#: functions.php:119
+msgid "Header Menu"
+msgstr "\"हैडर मेनू\""
+
+#: functions.php:120
+msgid "Footer Menu"
+msgstr "\"पाद मेनू\""
+
+#: functions.php:132
+msgid " Sidebar"
+msgstr "\"साइड बार\""
+
+#: functions.php:134
+msgid "The primary widget area"
+msgstr "\"प्राथमिक विजेट क्षेत्र\""
+
+#: functions.php:191 functions.php:192 functions.php:193 functions.php:256
+msgid "Add New Service"
+msgstr "\"नई सेवा जोड़ें\""
+
+#: functions.php:194 functions.php:227 functions.php:259 functions.php:328
+msgid "New Link"
+msgstr "\"नई लिंक\""
+
+#: functions.php:195
+msgid "All Featured Services"
+msgstr "\"सभी फीचर्ड सेवाएं\""
+
+#: functions.php:196 functions.php:229 functions.php:261 functions.php:330
+msgid "View Link"
+msgstr "\"लिंक देखें\""
+
+#: functions.php:197 functions.php:230 functions.php:262 functions.php:331
+msgid "Search Links"
+msgstr "\"खोज कड़ियाँ\""
+
+#: functions.php:198 functions.php:231 functions.php:263 functions.php:332
+msgid "No Links found"
+msgstr "\"कोई लिंक नहीं मिला\""
+
+#: functions.php:199 functions.php:232 functions.php:264 functions.php:333
+msgid "No Links found in Trash"
+msgstr "\"कचरा पेटी में कोई लिंक\""
+
+#: functions.php:224
+msgid "Add New "
+msgstr "\"नई जोड़ें\""
+
+#: functions.php:225
+msgid "Enter member name"
+msgstr "\"सदस्य का नाम दर्ज करें\""
+
+#: functions.php:226
+msgid "Add member name"
+msgstr "\"सदस्य का नाम जोड़ें\""
+
+#: functions.php:228
+msgid "All Member"
+msgstr "\"सभी सदस्य\""
+
+#: functions.php:257 functions.php:258
+msgid "Add new service"
+msgstr "\"नई सेवा जोड़ें\""
+
+#: functions.php:260
+msgid "All Services"
+msgstr "\"सभी सेवाएँ\""
+
+#: functions.php:325
+msgid "Add New Product"
+msgstr "\"नई उत्पाद जोड़ें\""
+
+#: functions.php:326
+msgid "Enter Product Name"
+msgstr "\"उत्पाद नाम दर्ज\""
+
+#: functions.php:327
+msgid "Enter Product Name "
+msgstr "\"उत्पाद नाम दर्ज\""
+
+#: functions.php:329
+msgid "All Product"
+msgstr "\"सभी उत्पाद\""
+
+#: functions.php:411 functions.php:456 functions.php:493
+msgid "Banner Description"
+msgstr "\"बैनर विवरण\""
+
+#: functions.php:417 functions.php:462 functions.php:499
+msgid "Banner Heading One"
+msgstr "\"बैनर एक शीर्षक\""
+
+#: functions.php:423 functions.php:468 functions.php:505
+msgid "Banner Heading Two"
+msgstr "\"बैनर दो शीर्षक\""
+
+#: functions.php:442
+msgid "Product detail"
+msgstr "\"उत्पाद विस्तार से\""
+
+#: functions.php:449
+msgid "Price"
+msgstr "\"कीमत\""
+
+#: functions.php:524
+msgid "Designation"
+msgstr "\"पदनाम\""
+
+#: functions.php:530
+msgid "Description"
+msgstr "\"विवरण\""
+
+#: functions.php:535
+msgid "Social Media Setting"
+msgstr "\"सामाजिक मीडिया की स्थापना\""
+
+#: functions.php:536
+msgid "Facebook"
+msgstr "\"फेसबुक\""
+
+#: functions.php:539
+msgid "Twitter Url"
+msgstr "\"ट्विटर यूआरएल\""
+
+#: functions.php:542
+msgid "Google Url"
+msgstr "\"गूगल यूआरएल\""
+
+#: functions.php:621
+msgid "Reply"
+msgstr "\"उत्तर\""
+
+#: functions.php:643
+msgid "Your comment is awaiting moderation."
+msgstr "\"आपकी टिप्पणी मॉडरेशन की प्रतीक्षा में है\""
+
+#: index-slider.php:68
+msgid "Explore More"
+msgstr "\"अधिक अन्वेषण\""
+
+#: index-slider.php:100 index-slider.php:121 index-slider.php:139
+msgid "our"
+msgstr "\"हमारे\""
+
+#: index-slider.php:101 index-slider.php:122 index-slider.php:140
+msgid "refreshed"
+msgstr "\"ताजा\""
+
+#: index-slider.php:160
+#, fuzzy
+msgid "Producing"
+msgstr "\"उत्पाद विस्तार से\""
+
+#: index-slider.php:160
+msgid "Quality"
+msgstr "\"गुणवत्ता\""
+
+#: index-slider.php:168
+msgid "Cool"
+msgstr "\"शीतल\""
+
+#: index-slider.php:168
+msgid "Experience"
+msgstr "\"अनुभव\""
+
+#: index-slider.php:176
+msgid "Feel"
+msgstr "\"मानना\""
+
+#: index-slider.php:176
+msgid "Amazing"
+msgstr "\"अद्भुत\""
+
+#: search.php:25
+msgid "Search Results for:"
+msgstr "के लिए खोज परिणाम:"
+
+#: search.php:59
+msgid "Nothing Found"
+msgstr "\"कुछ भी नहीं मिला\""
+
+#: search.php:63
+msgid ""
+"Sorry, but nothing matched your search criteria. Please try again with some "
+"different keywords."
+msgstr ""
+"\"क्षमा करें, लेकिन कुछ भी नहीं आपके खोज मानदंडों का मिलान. कुछ अलग खोजशब्दों के साथ पुन: "
+"प्रयास करें\""
+
+#: single-spa_products.php:35
+#, fuzzy
+msgid "Related Products"
+msgstr "\"स्पा हाल के उत्पाद\""
+
+#: functions/wpex_framework.php:8
+msgid "Framework location not defined."
+msgstr "\"फ्रेमवर्क स्थान परिभाषित नहीं\""
+
+#: functions/shortcodes/shortcodes.php:50
+msgid "Heading Title"
+msgstr "\"शीर्षक शीर्षक\""
+
+#: functions/shortcodes/shortcodes.php:151
+msgid "1"
+msgstr "\"1\""
+
+#: functions/shortcodes/shortcodes.php:152
+msgid "order"
+msgstr "\"आदेश\""
+
+#: functions/widgets/spa-recent-posts.php:10
+#: functions/widgets/spa-recent-posts.php:11
+msgid "Spa Recent Posts"
+msgstr "\"स्पा हाल के पोस्ट\""
+
+#: functions/widgets/spa-recent-posts.php:10
+msgid "The most recent posts on your site"
+msgstr "\"अपनी साइट पर सबसे हाल के पदों\""
+
+#: functions/widgets/spa-recent-posts.php:95
+#: functions/widgets/spa-recent-products.php:106
+#: functions/widgets/spa-widget-contact.php:90
+msgid "Title:"
+msgstr "\"शीर्षक:\""
+
+#: functions/widgets/spa-recent-posts.php:100
+#: functions/widgets/spa-recent-products.php:111
+msgid "Number of posts to show:"
+msgstr "\"दिखाने के लिए पदों की संख्या:\""
+
+#: functions/widgets/spa-recent-products.php:12
+msgid "The most recent products on your site"
+msgstr "\"अपनी साइट पर सबसे हाल उत्पादों\""
+
+#: functions/widgets/spa-recent-products.php:13
+msgid "Spa Recent Products"
+msgstr "\"स्पा हाल के उत्पाद\""
+
+#: functions/widgets/spa-widget-contact.php:9
+msgid "A widget that displays the authors contacts "
+msgstr "\"लेखकों संपर्कों को प्रदर्शित करता है कि एक विजेट\""
+
+#: functions/widgets/spa-widget-contact.php:13
+msgid "Spa Contact Widget"
+msgstr "\"स्पा संपर्क विजेट\""
+
+#: functions/widgets/spa-widget-contact.php:86
+msgid "Contact Us"
+msgstr "\"हमसे संपर्क करें\""
+
+#: functions/widgets/spa-widget-contact.php:86
+msgid "18001234567"
+msgstr ""
+
+#: functions/widgets/spa-widget-contact.php:86
+msgid "XYZ@XYZ.com"
+msgstr ""
+
+#: functions/widgets/spa-widget-contact.php:86
+msgid "NY,USA"
+msgstr ""
+
+#: functions/widgets/spa-widget-contact.php:98
+msgid "Your Contact Number"
+msgstr "\"अपने संपर्क नंबर\""
+
+#: functions/widgets/spa-widget-contact.php:102
+msgid "Your  email"
+msgstr "\"आपका ईमेल\""
+
+#: functions/widgets/spa-widget-contact.php:106
+msgid "Your  city"
+msgstr "\"आपका शहर\""
+
+#: option_pannel/footer_customization.php:1
+msgid "Footer Copyrights"
+msgstr "\"पाद कॉपीराइट\""
+
+#: option_pannel/footer_customization.php:1
+#: option_pannel/general_settings.php:125 option_pannel/home.php:194
+#: option_pannel/homepage_slider.php:146 option_pannel/typography.php:505
+msgid "Save Changes"
+msgstr "\"परिवर्तन सहेजें\""
+
+#: option_pannel/footer_customization.php:1
+#: option_pannel/general_settings.php:126 option_pannel/home.php:195
+#: option_pannel/homepage_slider.php:147 option_pannel/typography.php:506
+msgid "Restore Defaults"
+msgstr "\"डिफ़ॉल्टबहालकरें\""
+
+#: option_pannel/footer_customization.php:1
+#: option_pannel/general_settings.php:130 option_pannel/home.php:196
+#: option_pannel/homepage_slider.php:148
+msgid "Data reset sucessfully"
+msgstr "\"डेटा सफलतापूर्वक रीसेट\""
+
+#: option_pannel/footer_customization.php:1
+#: option_pannel/general_settings.php:131 option_pannel/home.php:197
+#: option_pannel/homepage_slider.php:149
+msgid "Data save sucessfully"
+msgstr "\"डेटा सफलतापूर्वक बचाया\""
+
+#: option_pannel/general_settings.php:55
+msgid "General Settings"
+msgstr "\"सामान्य सेटिंग्स\""
+
+#: option_pannel/general_settings.php:56
+msgid "Custom Logo"
+msgstr "\"कस्टम लोगो\""
+
+#: option_pannel/general_settings.php:69
+msgid "The placeholder image that will be used as a custom logo"
+msgstr "\"एक कस्टम लोगो के रूप में उपयोग किया जाएगा कि प्लेसहोल्डर छवि\""
+
+#: option_pannel/general_settings.php:74
+msgid "Header Logo Height"
+msgstr "\"हैडर लोगो ऊँचाई\""
+
+#: option_pannel/general_settings.php:81 option_pannel/general_settings.php:94
+msgid "The width of the header logo image."
+msgstr "\"हैडर लोगो छवि की चौड़ाई\""
+
+#: option_pannel/general_settings.php:87
+msgid "Header Logo width"
+msgstr "\"हैडर लोगो चौड़ाई\""
+
+#: option_pannel/general_settings.php:99
+msgid "Custom Favicon"
+msgstr "\"कस्टम फ़ेविकॉन\""
+
+#: option_pannel/general_settings.php:107
+msgid ""
+"The placeholder image that will be used if a featured image isnt specified."
+msgstr ""
+"\"एक विशेषताओं छवि निर्दिष्ट नहीं है कि अगर प्लेसहोल्डर छवि का उपयोग किया जाएगा.\""
+
+#: option_pannel/general_settings.php:111
+msgid "Add Google Link Here for Goole Map"
+msgstr "\"गूल मानचित्र के लिए यहाँ गूगल लिंक जोड़ें\""
+
+#: option_pannel/general_settings.php:118
+msgid "Put Your Google Map Url above"
+msgstr "\"आपका गूगल मानचित्र यूआरएल ऊपर रखो\""
+
+#: option_pannel/general_settings.php:118
+msgid "To know your Google Map Location Visit URL"
+msgstr "\"अपने गूगल मानचित्र स्थान भेंट यूआरएल पता करने के लिए\""
+
+#: option_pannel/home.php:13
+msgid "Sorry, your nonce did not verify."
+msgstr "\"क्षमा करें, अपने अस्थायी रूप से सत्यापित नहीं हुआ.\""
+
+#: option_pannel/home.php:48
+msgid "Home Page Setting"
+msgstr "\"मुख पृष्ठ सेटिंग\""
+
+#: option_pannel/home.php:61
+msgid "Tagline Title"
+msgstr "\"टैगलाइन शीर्षक\""
+
+#: option_pannel/home.php:71
+msgid "Tagline Content"
+msgstr "\"टैगलाइन सामग्री\""
+
+#: option_pannel/home.php:83
+msgid "Product Heading Title"
+msgstr "\"उत्पाद शीर्षक शीर्षक\""
+
+#: option_pannel/home.php:95
+msgid "Product Heading Content"
+msgstr "\"उत्पाद शीर्षक सामग्री\""
+
+#: option_pannel/home.php:106
+msgid "Tagline Settings"
+msgstr "\"टैगलाइन सेटिंग्स\""
+
+#: option_pannel/home.php:125 option_pannel/home.php:166
+#: option_pannel/typography.php:90 option_pannel/typography.php:150
+#: option_pannel/typography.php:209 option_pannel/typography.php:265
+#: option_pannel/typography.php:467
+msgid "px"
+msgstr "px"
+
+#: option_pannel/home.php:147
+msgid "Product Heading Settings"
+msgstr "\"उत्पाद शीर्षक सेटिंग्स\""
+
+#: option_pannel/homepage_slider.php:56
+msgid "Slider Entries"
+msgstr "\"स्लाइडर प्रविष्टियां\""
+
+#: option_pannel/homepage_slider.php:62
+msgid "Select a number"
+msgstr "\"एक नंबर पर क्लिक करें\""
+
+#: option_pannel/homepage_slider.php:77
+msgid "Slider Effect"
+msgstr "\"स्लाइडर प्रभाव\""
+
+#: option_pannel/homepage_slider.php:84
+msgid "fade"
+msgstr "\"मुरझाना\""
+
+#: option_pannel/homepage_slider.php:85
+msgid "slide"
+msgstr "\"स्लाइड\""
+
+#: option_pannel/homepage_slider.php:93
+msgid "Animation Speed"
+msgstr "\"एनिमेशन की गति\""
+
+#: option_pannel/homepage_slider.php:117
+msgid "Auto Slide Interval"
+msgstr "\"ऑटो स्लाइड अंतराल\""
+
+#: option_pannel/option_pannel.php:18
+msgid "Spa Theme Options"
+msgstr "\"स्पा थीम विकल्प\""
+
+#: option_pannel/option_pannel.php:25
+msgid "Tabs"
+msgstr "\"टैब्स\""
+
+#: option_pannel/option_pannel.php:46
+msgid "General"
+msgstr "\"सामान्य\""
+
+#: option_pannel/option_pannel.php:48 option_pannel/typography.php:68
+msgid "Typography"
+msgstr "\"मुद्रण कला\""
+
+#: option_pannel/option_pannel.php:50
+msgid "Homepage Slider"
+msgstr "\"मुखपृष्ठ स्लाइडर\""
+
+#: option_pannel/option_pannel.php:52
+msgid "Footer Customization"
+msgstr "\"पाद अनुकूलन\""
+
+#: option_pannel/option_pannel.php:54
+msgid "Home"
+msgstr "\"घर\""
+
+#: option_pannel/typography.php:69
+msgid "Style Menus"
+msgstr "\"शैली मेनू\""
+
+#: option_pannel/typography.php:128
+msgid "Post Title"
+msgstr "\"शीर्षक पोस्ट\""
+
+#: option_pannel/typography.php:188
+msgid "Post Excerpt"
+msgstr "\"अंश पोस्ट\""
+
+#: option_pannel/typography.php:243
+#, fuzzy
+msgid "Post Meta"
+msgstr "\"अंश पोस्ट\""
+
+#: option_pannel/typography.php:447
+msgid "Sidebar Widgte Title"
+msgstr "\"साइडबार Widgte शीर्षक\""
+
+#: option_pannel/typography.php:507
+msgid "Data Reset Successfully"
+msgstr "\"डेटा सफलतापूर्वक रीसेट\""
+
+#: option_pannel/typography.php:508
+msgid "Data Save Successfully"
+msgstr "\"डेटा सफलतापूर्वक सहेजें\""
+
+#~ msgid "09636063526"
+#~ msgstr "\"9636063526\""
+
+#~ msgid "abc@mail.com"
+#~ msgstr "\"abc@mail.com\""
+
+#~ msgid "Kota"
+#~ msgstr "\"कोटा\""
