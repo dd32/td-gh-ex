@@ -1,26 +1,8 @@
-<?php 
-/**
- * Index Template
- *
- *
- * @file           index-slider.php
- * @package        Appointment
- * @author         Priyanshu Mittal,Shahid Mansuri and Akhilesh Nagar
- * @copyright      2013 Appointment
- * @license        license.txt
- * @version        Release: 1.1
- * @filesource     wp-content/themes/appoinment/index-slider.php
- */
-
-
-?>
-
-
-<div class="banner">		
-		<div class="ind_slider_newbg">
-			<div class="slider-wrapper theme-default">
-        
-				<?php  
+ <div class="hero-unit">
+		<div class="container">
+			<div class="carousel slide" id="myCarousel">
+                <div class="carousel-inner">
+                     <?php  
 						
 						
 					$images = array ();
@@ -28,79 +10,77 @@
 					
 					
 				$query = new WP_Query( array( 'post_type' => 'post') ); 
-						/*echo "<pre>";
-						print_r ($query);*/
+						
 						$c=0;
 					while($query->have_posts() ){
 							$query->the_post();
-								//$meta_image= get_post_meta( get_the_ID(), '_meta_image', true );
-								//$meta_caption= get_post_meta( get_the_ID(), '_meta_caption', true );
 							
-								if(get_post_meta( get_the_ID(), '_meta_image', true ) != '' || get_post_meta( get_the_ID(), '_meta_caption', true ) != ''){
+							
+								if(get_post_meta( get_the_ID(), '_meta_image', true ) != '' || get_post_meta( get_the_ID(), '_meta_caption', true ) != '')
+								{
 								
 								$images[$c]=get_post_meta( get_the_ID(), '_meta_image', true );
 								$captions[$c]=get_post_meta( get_the_ID(), '_meta_caption', true );
-								$c++; }
-								 else {
-									//echo 'Enter Image Plz';
+								$c++; 
 								}
+								 
 						} 	
-					 	
-			if(count($images)!=0 || count($captions)!=0 ){ $i=1;
-		
-						?>
-                        
-				<div id="slider" class="nivoSlider nivoSlider-featured">
-						<?php
-			                     	while($query->have_posts()){
-												$query->the_post();
+						
+						 
+					 
+			if(count($images)!=0 || count($captions)!=0 ){  
+		           
+				                     $img_count=0;
+			                   
 										
 												
-										  
-						?> <?php foreach ($images as $image)
-						      { 	?>
-								<img   src="<?php echo $image ; ?>" alt="" <?php  echo "title="."#htmlcaption".$i ; ?> />
-							   <?php ++$i;}}?>
-						
-				<?php 				//print_r($image); ?>
-				</br>
-				      
-		
-             </div>
-			 
-        <?php }  else {  ?>
-                	
-				<div id="slider" class="nivoSlider">
-					
-					<img src="<?php echo get_template_directory_uri(); ?>/images/slider/banner1.png" data-thumb="images/slider/banner1.png" alt="" />
-					<img src="<?php echo get_template_directory_uri(); ?>/images/slider/banner2.png" data-thumb="images/slider/banner2.png" alt="" data-transition="slideInLeft" />
-					<img src="<?php echo get_template_directory_uri(); ?>/images/slider/banner3.png" data-thumb="images/slider/banner3.png" alt="" title="#htmlcaption" />
-				</div> 
-				<div id="htmlcaption" class="nivo-html-caption">
-             
-				<?php _e("This is an example of a HTML caption",'appointment'); ?> 
-				</div> 
-				
-                
-											 
-				
-                 <?php }	?>
-                 <?php 	$i=1;
-						while ( $query->have_posts() ) : $query->the_post(); 
-					?>      
-				
-				<?php foreach ($captions as $caption){ 
-				 ?>
-						<div  <?php  echo "id="."htmlcaption".$i ; ?> class="nivo-html-caption">
-					<span><?php echo $caption ;?></span>
-						</div>	<?php $i++; }?>
-								<?php    endwhile;   ?>
-			</div>
-			<script type="text/javascript">
-				jQuery(window).load(function() {
-				jQuery('#slider').nivoSlider();
-				});
-			</script>
-	</div>        
-</div><!-- closing of banner-->
+										$img_cap=0;  
+						 foreach ($images as $image)
+						      {
+								
+							  if($img_count==0){$active='active';}else{$active=''; } ?>
+					    <div class="item <?php echo $active;?>">
+						 
+                    <img alt="" src=" <?php echo $image;?>">
+                    <div class="carousel-caption">
+                      <h4><?php //the_title(); ?></h4>
+                      <p> <?php  echo  $captions[$img_cap] ?></p>
+                    </div>
+                  </div>
+				<?php  $img_count++; $img_cap++;}/*close forech*/ 
+			
+				?>		
+			
+<?php } else { ?>
+ <!-- Slider -->
 	
+                  <div class="item active">
+                    <img alt="" src=" <?php echo get_template_directory_uri();?>/images/banner1.png">
+                    <div class="carousel-caption">
+                      <h4>First Thumbnail label</h4>
+                      <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <img alt="" src="<?php echo get_template_directory_uri(); ?>/images/banner2.png">
+                    <div class="carousel-caption">
+                      <h4>Second Thumbnail label</h4>
+                      <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    </div>
+                  </div>
+                  <div class="item ">
+                    <img alt="" src="<?php echo get_template_directory_uri(); ?>/images/banner3.png">
+                    <div class="carousel-caption">
+                      <h4>Third Thumbnail label</h4>
+                      <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    </div>
+                  </div>
+               
+	<!-- /Slider -->
+<?php } ?>
+</div>
+			  </div>
+			  <a data-slide="prev" href="#myCarousel" class="left carousel-control"></a>
+              <a data-slide="next" href="#myCarousel" class="right carousel-control"></a>
+		</div>
+	</div>			

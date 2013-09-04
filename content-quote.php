@@ -18,20 +18,27 @@
 
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-<div class="blog_row_mn ">
-	<h2><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'appointment' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php $title = get_the_title();
+
+	<h3 class="main_title">
+	<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'appointment' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php $title = get_the_title();
     if (strlen($title) == 0)  _e('no title','appointment'); 
-	else  echo $title; ?></a></h2>
-	  <div class="blog_link_mn">
-					  						<span><img src="<?php echo get_template_directory_uri();?>/images/blog_ic.png" alt="Icon" /> 
-						<?php the_date('M j,Y');?></span> 
-						<a href="#"><img src="<?php echo get_template_directory_uri();?>/images/blog_ic2.png" alt="Icon" /> </a>
-                 <?php  comments_popup_link( __( 'Leave a comment', 'appointment' ),__( '1 Comment', 'appointment' ), __( 'Comments', 'appointment' ),'name' ); ?>
-						<img src="<?php echo get_template_directory_uri();?>/images/blog_ic3.png" alt="Icon" />
-                          <?php edit_post_link( __( 'Edit', 'appointment' ), '<span class="meta-sep"></span> <span class="name">', '</span>' ); ?>
-						<img src="<?php echo get_template_directory_uri();?>/images/blog_ic4a.png" alt="Icon" />  
-						<?php the_category(); ?>
-					</div>
+	else  echo $title; ?></a>
+	</h3>
+	  
+		<ul class="the-icons clearfix">
+                     
+					 
+						<li><i class="icon-calendar"></i> <?php the_time('M j,Y');?></li>	
+						<li><i class="icon-comment"></i>  <?php  comments_popup_link( __( 'Leave a comment', 'appointment' ),__( '1 Comment', 'appointment' ), __( 'Comments', 'appointment' ),'name' ); ?></li>
+
+						<li><i class="icon-edit"></i><?php edit_post_link( __( 'Edit', 'appointment' ), '<span class="meta-sep"></span> <span class="name">', '</span>' ); ?></li>
+						 
+					   <li><i class="icon-ok-circle">  </i></li> <li><?php the_category(); ?><li>
+						 
+		</ul>
+	  
+	  
+	  
 		 <div class="blog_con_mn">
 		
 			<?php the_content(__( 'Continue reading <span class="meta-nav">&rarr;</span>', 'appointment' ) ); ?>
@@ -48,9 +55,9 @@
 		</footer><!-- .entry-meta -->
 		 <div class="blog_bot_mn">
 						
-						<span> <?php the_tags('<b>'.__('Tags:','appointment').'</b>','');?> </span>
-						<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'appointment' ), the_title_attribute( 'echo=0' ) ); ?>"><?php _e('Read More','appointment'); ?></a>
+					<button class="btn appo_btn" type="button">	<a href="<?php the_permalink(); ?>" class="blog_rdmore"> <?php _e('Read More','appointment'); ?> </a></button>
+<p class="tag-element"> <?php the_tags('<b>'.__('Tags:','appointment').'</b>','');?> </p>
 					</div><!--blog_bot_mn-->
 
-</div>
+
 	</article><!-- #post -->

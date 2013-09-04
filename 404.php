@@ -1,60 +1,40 @@
 <?php
 /**
- * Error Template
+ * The template for displaying 404 pages (Not Found).
  *
- *
- * @file           404.php
- * @package        Appointment
- * @author         Priyanshu Mittal,Shahid Mansuri and Akhilesh Nagar
- * @copyright      2013 Appointment
- * @license        license.txt
- * @version        Release: 1.1
- * @filesource     wp-content/themes/appoinment/404.php
- */
- ?>
- <?php get_header(); ?>
- <div class="inner_top_mn">
-		<div class="page_wi">			
-			<h2>
-				<?php _e('PAGE NOT FOUND','appointment') ;	?>
-			</h2>
-			<div class="search_box">			 
-               <form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-                <input type="text"  name="s"  placeholder="<?php esc_attr_e( 'Search', 'appointment' ); ?>" />
-		        <input type="submit" class="search_btn" name="submit"  value="" />
-			   </form>          
-		   </div>
-		</div>
-	</div>
-    </header>
-          <section>
-		<div class="page_wi">
-			<div class="blog_right_bg_mn_con">
-			            
-			<div class="blog_left">
-		         <div class="page_blog_row_mn">
-					
-                    
-					
-				
-                    <div class="blog_con_mn"><p><?php _e( 'Apologies, but the page you requested could not be found. Perhaps searching will help.', 'appointment' ); ?></p>
-					
-									
-					</div>
-                   
-					
-					
-           </div><!--  the blog_row_mn -->
-		   
-    </div><!--  blog_left -->  
+ * @package WordPress
+ * @subpackage Spa salon
+ * 
+ */?>
+<!---Pink Strip----->
+<?php 
+get_header();
+get_template_part('orange','header');
+?>
 
-    <div class="blog_right_mn">
-				  
-		<?php get_sidebar();?>   		
-                
-                
-    </div>      
-  </div>
-    </section>
- <?php get_footer();?>    
-         
+<!---/Pink Strip-----> 
+
+	<div class="container">
+	<div class="_blank"></div>
+		<!--- Main ---> 
+		<div class="row-fluid">
+		<div class="span8"  >
+
+			
+				
+				<h2 class="blog-detail-head"><?php _e( 'Unfortunately, the page you tried accessing could not be retrieved. ', 'sis_spa' ); ?></h2>
+		
+
+				
+					 <div class="blog_content"><p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'sis_spa' ); ?></p></div>
+					<?php get_search_form(); ?>
+				<!-- .entry-content -->
+	
+
+		</div>
+		<?php get_sidebar (); ?>
+
+		</div><!-- #content -->
+	</div><!-- #primary -->
+		<div class="_blank"></div>	<div class="_blank"></div>	<div class="_blank"></div>	<div class="_blank"></div>
+<?php get_footer(); ?>

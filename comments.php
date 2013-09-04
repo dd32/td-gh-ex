@@ -1,9 +1,11 @@
+	
+	
 	<?php if ( post_password_required() ) : ?>
 		<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'appointment' ); ?></p>
 	<?php return;endif;?>
          <?php if ( have_comments() ) : ?>
 		
-         <div class="comment_mn">
+         <div class="row-fluid comment_mn">
 	
 			<?php
 				  printf( _n( '<p style="color: #f22853; margin-bottom: 30px; margin-top:20px;">One thought on &ldquo;%2$s&rdquo;', '<p style="color: #f22853; margin-top:20px;">%1$s thoughts on &ldquo;%2$s&rdquo;</p>', get_comments_number(), 'appointment' ),
@@ -49,26 +51,35 @@
 
 <?php else : ?>
  
-<div class="leave_comment_mn">
-	<?php 
-	      
-          $comments_args = array(
-        // change the title of send button 
-     'label_submit'=>'Submit Now',
-	
-        // change the title of the reply section
-        'title_reply'=>'',
-      
-        'comment_notes_after' => '',
-     
-		 
-        
-        'comment_field' => '<p class="comment-form-comment"> <br /><textarea id="comment" name="comment" aria-required="true" placeholder="Love to Hear from you."></textarea></p>',
-		'logged_in_as' => '<p class="logged-in-as">' . sprintf( ( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( get_permalink() ) ) . '</p>',
-		
+<div class="span12 comment_form">
+	<?php
+ 
+ $fields=array(
+    'author' => '<input class="input-xlarge" type="text" value="" placeholder="Your name" tabindex="1" />',
+    'email'  => '<input class="input-xlarge" type="text" placeholder="Email Id">',
+    
 );
+ 
+ function my_fields($fields) {
+ 
+return $fields;
+}
+add_filter('comment_form_default_fields','my_fields');
+ 
+	$defaults = array(
+     'fields'               => apply_filters( 'comment_form_default_fields', $fields ),
+   'comment_field'        => '<textarea class="input-xxxlarge" id="comment" name="comment" type="text" placeholder="Message" rows="3"></textarea>',
+ 
+   'logged_in_as' => '<p class="logged-in-as">' . __( "Logged in as ",'appointment' ).'<a href="'. admin_url( 'profile.php' ).'">'.$user_identity.'</a>'. '<a href="'. wp_logout_url( get_permalink() ).'" title="Log out of this account">'.__(" Log out?",'appointment').'</a>' . '</p>',
+   'comment_notes_after'  => '<dl class="">',
+    'id_form'              => 'commentform',
+    'id_submit'            => 'appo-form-post',
+);
+ 
+ 
+ 
 
-comment_form($comments_args);
+comment_form($defaults);
 ?>
 					
 </div><!-- leave_comment_mn -->

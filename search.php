@@ -1,39 +1,16 @@
-<?php
-/**
- * Search Template
- *
- @file             search.php
- * @package        Appointment
- * @author         Priyanshu Mittal,Shahid Mansuri and Akhilesh Nagar
- * @copyright      2013 Appointment
- * @license        license.txt
- * @version        Release: 1.1
- * @filesource     wp-content/themes/appoinment/search.php
-*/ 
+<?php get_header();
 
-get_header(); ?>
+	get_template_part('orange','header');
+ ?>
 
-		 <div class="inner_top_mn">
-		<div class="page_wi">			
-			<h2>
-				<?php bloginfo('title');?><br>
-				<span><?php bloginfo('description');?></span>	
-			</h2>
-			<div class="search_box">			 
-               <form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-                <input type="text"  name="s"  placeholder="<?php _e( 'Search', 'appointment' ); ?>" />
-		        <input type="submit" class="search_btn" name="submit"  value="" />
-			   </form>          
-		   </div>
-		</div>
-	</div>
-    </header>
-	 <section>
-		<div class="page_wi">
-			<div class="blog_right_bg_mn_con">
+
+	
+		<div class="container">
+			<div class="row-fluid">
 			
-			<div class="blog_left">
-		      <div class="blog_row_mn">
+			<div class="span12 main_space">
+			<div class="span8 appo_main_content">
+		      <div class="row-fluid appo_blog_post">
 			<?php if ( have_posts() ) : ?>
 
 			
@@ -69,21 +46,21 @@ get_header(); ?>
 						<h2><?php _e( 'Nothing Found', 'appointment' ); ?></h2>
 			
 
-			          <div class="blog_con_mn">
+			        <div class="blog_con_mn">
 						<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'appointment' ); ?></p>
 						<?php get_search_form(); ?>
 					</div><!-- .blog_con_mn -->
 			
               
 			<?php endif; ?>
-             <div class="about_border_row"></div>
+             
+			</div>
 			</div><!-- #content -->
+			<?php get_sidebar();?>
 			</div>
 		
-			<div class="blog_right_mn"><?php get_sidebar();?></div>
-			</div>
-			
-		</section><!-- #primary -->
+		</div>
+</div>	
+		<!-- #primary -->
 
     	<?php get_footer();?>
-    

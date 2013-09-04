@@ -1,6 +1,6 @@
 <?php  
 /**
- * Blog Template
+   Template Name:Blog
  * @file           blog.php
  * @package        Appointment
  * @author         Priyanshu Mittal,Shahid Mansuri and Akhilesh Nagar
@@ -12,29 +12,17 @@
 
 ?>
 <?php get_header();
+  get_template_part('orange','header');
 ?>
 	
-    <div class="inner_top_mn">
-		<div class="page_wi">			
-			<h2>
-				<?php bloginfo('title');?><br>
-				<span><?php bloginfo('description');?></span>	
-			</h2>
-			<div class="search_box">			 
-               <form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-                <input type="text"  name="s"  placeholder="<?php esc_attr_e( 'Search', 'appointment' ); ?>" />
-		        <input type="submit" class="search_btn" name="submit"  value="" />
-			   </form>          
-		   </div>
-		</div>
-	</div>
-    </header>
+ 
     
-    <section>
-		<div class="page_wi">
-			<div class="blog_right_bg_mn_con">
-			
-			<div class="blog_left">
+ 	<!-- Main_area -->
+	<div class="container">
+		<div class="row-fluid">
+		<div class="span12 main_space">
+			<!-- Main_content -->
+			<div class="span8 appo_main_content"> 
 			
 			<?php 
 				//run loop 
@@ -46,8 +34,10 @@
 				
 				while(have_posts()): the_post();		
 			?>
-			<?php get_template_part('content',get_post_format());  ?>
 			
+			 <div class="row-fluid appo_blog">
+			<?php get_template_part('content',get_post_format());  ?>
+			    </div>
 			<?php endwhile; ?>	
 				<?php 
 				global $wp_query;
@@ -68,19 +58,20 @@
 	'add_fragment' => ''
 ); ?>
 <?php if($wp_query->max_num_pages != 1 ):?>
-   <div class="pagination_blog"><?php _e("Scroll More Posts:",'appointment'); ?><?php echo paginate_links( $args ); ?> </div>
+   <div class="pagination_blog"><?php _e("Scroll More Posts:",'appointment') ?><?php echo paginate_links( $args ); ?> </div>
    <?php endif;?>
 				
-</div><!--blog_left-->
-			
-			<div class="blog_right_mn"><?php get_sidebar();?></div>
-			</div>
-        </div><!--page_wi-->
-    </section>
-    
-    <footer>
-    	<?php get_footer();?>
-    </footer>
-</div>
-</body>
-</html>
+</div><!--appo_main_content-->
+<!-- sidebar section -->
+
+
+	  <?php get_sidebar();?>
+
+
+	</div>
+		</div>
+	</div>
+	<!-- /Main_area -->	  
+
+
+<?php get_footer(); ?>

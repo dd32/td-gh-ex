@@ -1,28 +1,14 @@
-
-<?php
-/**
- * Blog Template
- *
-	@file             home.php
- * @package        Appointment
- * @author         Priyanshu Mittal,Shahid Mansuri and Akhilesh Nagar
- * @copyright      2013 Appointment
- * @license        license.txt
- * @version        Release: 1.1
- * @filesource     wp-content/themes/appoinment/home.php
-*/ 
-?>
-<?php get_header(); ?>
+<?php  get_header(); ?>
 <?php get_template_part('index','slider'); ?>
-    </header>
-    
-    <section>
-		<div class="page_wi">
-			<div class="blog_right_bg_mn_con">
+
+<!-- Main_area -->
+	<div class="container">
+		<div class="row-fluid">
+		<div class="span12 main_space">
+			<!-- Main_content -->
+			<div class="span8 appo_main_content">
 			
-			<div class="blog_left">
-			
-			<?php 
+			    	<?php 
 				//run loop 
 				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 				$args = array( 'post_type' => 'post','paged'=>$paged);
@@ -32,8 +18,9 @@
 				
 				while(have_posts()): the_post();		
 			?>
+			  <div class="row-fluid appo_blog">
 			<?php get_template_part('content',get_post_format());  ?>
-			
+			    </div>
 			<?php endwhile; ?>	
 				<?php 
 				global $wp_query;
@@ -54,19 +41,21 @@
 	'add_fragment' => ''
 ); ?>
 <?php if($wp_query->max_num_pages != 1 ):?>
-   <div class="pagination_blog"><?php _e("Scroll More Posts:",'appointment') ?><?php echo paginate_links( $args ); ?> </div>
-   <?php endif;?>
+
+
+   <?php    pagination();  endif;?>
 				
-</div><!--blog_left-->
-			
-			<div class="blog_right_mn"><?php get_sidebar();?></div>
-			</div><!--blog_right_bg_mn_con-->
-        </div><!--page_wi-->
-    </section>
-    
-    <footer>
-    	<?php get_footer();?>
-    </footer>
+</div><!--appo_main_content-->
+<!-- sidebar section -->
+
+
+	  <?php get_sidebar();?>	  
+
+
+	</div>
 </div>
-</body>
-</html>
+</div>
+	<!-- /Main_area -->	  
+
+
+<?php get_footer(); ?>

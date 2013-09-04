@@ -1,7 +1,7 @@
 Appointment Theme README.
 
 A Free Orange colored Business Blog theme that supports Primary menu's , Primary sidebar,Four widgets area at the footer region,Post Metaetc. 
-It has a perfect design that's great for any Business/Firms  Blogs who wants a new look for their site. Three page templates Default Blog Template, Full Widht Page and Ajax Categorised Blog Template. 
+It has a perfect design that's great for any Business/Firms  Blogs who wants a new look for their site. Three page templates Blog, Full Widht Page and Contact Page. 
 Appointment supports featured post slider based on the concept of custom post types.
 Author: Priyanshu Mittal,Shahid Mansuri,Vibhore Purandey and Akhilesh Nagar.
 Theme Homepage Url: http://www.appointpress.com/theme/appointment
@@ -18,12 +18,14 @@ Appoinment supports Custom Menu, Widgets and
 the following extra features:
 
  - Pre-installed menu and content colors
+ - Responsive
  - Custom sidebars
  - Support for post thumbnails
  - Similar posts feature
  - 4 widgetized areas in the footer
- - Slideshow using Post Meta  .
+ - Slideshow using Post Meta  
  - Custom footer
+ - Translation Ready 
  
 
 # Basic Setup of the Theme.
@@ -42,13 +44,13 @@ All images in Appointment are licensed under the terms of the GNU GPL.
 - Read more here: http://codex.wordpress.org/WordPress_Menu_User_Guide
 
 =============Page Templates======================
-1. Contact  Page Template:- Create a page as you do in WordPress and select the page template with the name 'Contact'
-2. Ajax Categorised Blog Template:- This Template will show category wise posts in the ajax fashion.
+1. Contact  Page Tempalte:- Create a page as you do in WordPress and select the page template with the name 'Contact'
+
 
 ===========Front Page Added with the theme=================
 1 It has header(logo + menus),slider, services,recent comments widgets and footer.
 
-==================Featured Slider=============
+==================Featued Slider=============
 For adding your custom Images in the slider you just need to add the information to the meta box , placed just below the post editor.
 
 ======Site Title and Description=============
@@ -60,13 +62,17 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ============================Change Log================================
+@version 1.4
+1. Theme revamped by using twitter bootstrap
+2. Removed ajax category template
+
 @version 1.3.6
 1. Add auhtor uri and theme uri
 2. Fixed Some styling issues that creating problem with appointment plugin.
 @version 1.3.5
 1. Added Ajax enabled Categorised blog posts Template.
 @verison 1.3.3
-1. Sidebar Background Removed.
+1. Siderbar Background Removed.
 2. Removed seperator after widgets.
 3.Translation Ready.
 @version 1.3

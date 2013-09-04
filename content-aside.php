@@ -18,21 +18,28 @@
 
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-<div class="blog_row_mn aside">
+
          
-<h2><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'appointment' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php $title = get_the_title();
+<h3 class="main-title">
+<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'appointment' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php $title = get_the_title();
     if (strlen($title) == 0)  _e('no title','appointment'); 
-	else  echo $title; ?></a></h2>
-  <div class="blog_link_mn">
-					  						<span><img src="<?php echo get_template_directory_uri();?>/images/blog_ic.png" alt="Icon" /> 
-						<?php the_date('M j,Y');?></span> 
-						<a href="#"><img src="<?php echo get_template_directory_uri();?>/images/blog_ic2.png" alt="Icon" /> </a>
-                 <?php  comments_popup_link( __( 'Leave a comment', 'appointment' ),__( '1 Comment', 'appointment' ), __( ' Comments', 'appointment' ),'name' ); ?>
-						<img src="<?php echo get_template_directory_uri();?>/images/blog_ic3.png" alt="Icon" />
-                          <?php edit_post_link( __( 'Edit', 'appointment' ), '<span class="meta-sep"></span> <span class="name">', '</span>' ); ?>
-						<img src="<?php echo get_template_directory_uri();?>/images/blog_ic4a.png" alt="Icon" />  
-						<?php the_category(); ?>
-					</div>
+	else  echo $title; ?></a>
+</h3>
+				<ul class="the-icons clearfix">
+                     				 
+					<li><i class="icon-calendar"></i> <?php the_time('M j,Y');?></li>	
+					<li><i class="icon-comment"></i>  <?php  comments_popup_link( __( 'Leave a comment', 'appointment' ),__( '1 Comment', 'appointment' ), __( 'Comments', 'appointment' ),'name' ); ?></li>
+
+					<li><i class="icon-edit"></i><?php edit_post_link( __( 'Edit', 'appointment' ), '<span class="meta-sep"></span> <span class="name">', '</span>' ); ?></li>
+						 
+					<li><i class="icon-ok-circle"></i></li><li><?php the_category(); ?><li>
+						 
+				</ul>
+ 
+ 
+ 
+ 
+ 
  <?php if ( comments_open() && ! post_password_required() ) : ?>
 			<div class="comments-link">
 				<?php comments_popup_link( '<span class="leave-reply">' . __( 'Reply', 'appointment' ) . '</span>', _x( '1', 'comments number', 'appointment' ), _x( '%', 'comments number', 'appointment' ) ); ?>
@@ -40,29 +47,21 @@
 <?php endif; ?>
 <?php if ( is_search() ) : // Only display Excerpts for search pages ?>
 		
-		<p class="blog_con_mn">
-			<?php the_excerpt(); ?>
-		</p>
-	
-		<?php else : ?>
-		
-              <div class="blog_con_mn">
-		
-				<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'appointment' ) ); ?>
-               </div>
-			
-		 <?php endif; ?>
-		 <?php if(wp_link_pages(array('echo'=>0))):?>
-					<div class="pagination_blog"><ul class="page-numbers"><?php 
-					 $args=array('before' => '<li>'.__('Pages:','appointment'),'after' => '</li>');
-					 wp_link_pages($args); ?></ul></div>
-					 <?php endif;?>
-
- <div class="blog_bot_mn">
+		<?php if ( post_password_required() ) : ?>	
+					<p><?php  the_content(); ?></p>
+					<div class="blog_bot_mn">
 						
-						<span> <?php the_tags('<b>'.__('Tags:','appointment').'</b>','');?> </span>
-						<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'appointment' ), the_title_attribute( 'echo=0' ) ); ?>"><?php _e('Read More','appointment'); ?></a>
-					</div><!--blog_bot_mn-->
-</div>
- 
-</article><!-- #post-<?php the_ID(); ?> -->
+						<span> <?php the_tags('<b>Tags:</b>','appointment');?> </span>
+						
+					</div>
+				<?php else:?>
+	<p><?php  the_excerpt(); ?></p>
+	<?php endif; ?>
+			<?php if(wp_link_pages(array('echo'=>0))):?>
+	<div class="pagination"><ul><?php 
+	$args=array('before' => '<li>','after' => '</li>');
+	wp_link_pages($args); ?></ul>
+	</div>
+		 <?php endif; ?>
+	<?php  endif;?>		
+</article><!-- #post--->

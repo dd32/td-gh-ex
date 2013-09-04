@@ -11,7 +11,8 @@
  * @filesource     wp-content/themes/appoinment/sidebar.php
 */ 
 ?>
- 
+ <div class="span4 appo_sidebar" id="sidebar">
+
   <?php if ( !dynamic_sidebar('sidebar-primary') ) : ?>     
 						
 		<?php the_widget('WP_Widget_Archives'); ?>
@@ -23,4 +24,5 @@
 	<?php endif;?>
 	
 	
+	</div>
  

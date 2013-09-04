@@ -19,25 +19,26 @@
 
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-<div class="blog_row_mn">
+
          	
-<h2><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'appointment' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php $title = get_the_title();
+<h3 class="main_title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'appointment' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php $title = get_the_title();
     if (strlen($title) == 0)  _e('no title','appointment'); 
-	else  echo $title; ?></a></h2>
-					<div class="blog_link_mn">
-					  						<span><img src="<?php echo get_template_directory_uri();?>/images/blog_ic.png" alt="Icon" /> 
-						<?php the_date('M j,Y');?></span> 
-						<a href="#"><img src="<?php echo get_template_directory_uri();?>/images/blog_ic2.png" alt="Icon" /> </a>
-                 <?php  comments_popup_link( __( 'Leave a comment', 'appointment' ),__( '1 Comment', 'appointment' ), __( 'Comments', 'appointment' ),'name' ); ?>
-						<img src="<?php echo get_template_directory_uri();?>/images/blog_ic3.png" alt="Icon" />
-                          <?php edit_post_link( __( 'Edit', 'appointment' ), '<span class="meta-sep"></span> <span class="name">', '</span>' ); ?>
-						<img src="<?php echo get_template_directory_uri();?>/images/blog_ic4a.png" alt="Icon" />  
-						<?php the_category(); ?>
-					</div>
+	else  echo $title; ?></a></h3>
+					<ul class="the-icons clearfix">
+                     
+					 
+						<li><i class="icon-calendar"></i> <?php the_time('M j,Y');?></li>	
+						<li><i class="icon-comment"></i>  <?php  comments_popup_link( __( 'Leave a comment', 'appointment' ),__( '1 Comment', 'appointment' ), __( 'Comments', 'appointment' ),'name' ); ?></li>
+
+						<li><i class="icon-edit"></i><?php edit_post_link( __( 'Edit', 'appointment' ), '<span class="meta-sep"></span> <span class="name">', '</span>' ); ?></li>
+						 
+					   <li><i class="icon-ok-circle">  </i></li> <li><?php the_category(); ?><li>
+						 
+					</ul>
 					<?php if ( is_search() ) : // Only display Excerpts for search pages ?>
-		<div class="blog_con_mn">
+		<p>
 			<?php the_excerpt(); ?>
-		</div><!-- .entry-summary -->
+		</p><!-- .entry-summary -->
 		<?php else : ?>
               <div class="blog_con_mn">
 			<?php if ( post_password_required() ) : ?>
@@ -52,9 +53,9 @@
 						$image_img_tag = wp_get_attachment_image( $image->ID, 'thumbnail' );
 				?>
 
-				<figure class="gallery-thumb">
+				<div class="img_gallery">
 					<a href="<?php the_permalink(); ?>"><?php echo $image_img_tag; ?></a>
-				</figure><!-- .gallery-thumb -->
+				</div><!-- .gallery-thumb -->
 
 				<p><em><?php printf( _n( 'This gallery contains <a %1$s>%2$s photo</a>.', 'This gallery contains <a %1$s>%2$s photos</a>.', $total_images, 'appointment' ),
 						'href="' . esc_url( get_permalink() ) . '" title="' . esc_attr( sprintf( __( 'Permalink to %s', 'appointment' ), the_title_attribute( 'echo=0' ) ) ) . '" rel="bookmark"',
@@ -66,15 +67,15 @@
 		
 	</div><!-- .entry-content -->
 						<?php if(wp_link_pages(array('echo'=>0))):?>
-					<div class="pagination_blog"><ul class="page-numbers"><?php 
-					 $args=array('before' => '<li>'.__('Pages:','appointment'),'after' => '</li>');
+					<div class="pagination"><ul><?php 
+					 $args=array('before' => '<li>','after' => '</li>');
 					 wp_link_pages($args); ?></ul></div>
 					 <?php endif;?>
  <?php endif?>
  <div class="blog_bot_mn">
 						
-						<span> <?php the_tags('<b>'.__('Pages:','appointment').'</b>','');?> </span>
-						<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'appointment' ), the_title_attribute( 'echo=0' ) ); ?>"><?php _e('Read More','appointment'); ?></a>
-					</div><!--blog_bot_mn-->
-</div>
+					
+<p class="tag-element"> <?php the_tags('<b>'.__('Tags:','appointment').'</b>','');?> </p>
+</div><!--blog_bot_mn-->
+
 	</article><!-- #post-<?php the_ID(); ?> -->
