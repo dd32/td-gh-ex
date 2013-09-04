@@ -18,7 +18,7 @@ jQuery(document).ready(function($){
 	var _custom_media = true;
     var _orig_send_attachment = wp.media.editor.send.attachment;
 
-	$('.upload-image-button').click(function(e) {
+	$('.upload_image_button').click(function(e) {
 
 	// Get reference to the parent.
 	var parent = jQuery(this).parent();
@@ -29,8 +29,7 @@ jQuery(document).ready(function($){
     _custom_media = true;
     wp.media.editor.send.attachment = function(props, attachment){
 		if ( _custom_media ) {
-			parent.find('.upload-image-field').val(attachment.url);
-			parent.find('.image-preview').attr('src', attachment.url);
+			parent.find('.upload_image_field').val(attachment.url);
 		}
 		else {
 			return _orig_send_attachment.apply( this, [props, attachment] );
