@@ -1,25 +1,24 @@
 /*
-Theme Name: BirdSITE
+Theme Name: BirdTIPS
 */
 /*
 Used to style the TinyMCE editor.
 */
 html .mceContentBody {
-	max-width:610px;
+	max-width:630px;
 	}
 
 * {
-	font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif;
-	line-height: 1.6;
-	color: #555;
+  font-family: 'Lucida Grande','Verdana','Hiragino Kaku Gothic ProN',Meiryo, sans-serif;
+  color: #555555;
 	}
 
 body, input, textarea {
 	}
 
 a {
-	text-decoration:none !important;
-	color:#06C !important;
+	color:#06A !important;
+	text-decoration: none !important;
 	}
 
 hr {
@@ -31,53 +30,42 @@ hr {
 	}
 
 p {
-  text-align: left;
+	text-align: left;
+	line-height: 1.6;
 	}
 
-p a {
-	color:#333 !important;
-	text-decoration: underline !important;
-	}
+h1, h2, h3, h4, h5, h6 {
+  margin: 0.7em 0;
+  line-height: 1.2;
+  color: #000; }
 
 h1 {
-	font-size: 130%;
-	font-weight: normal;
-	margin: 10px 0 30px;
-	padding: 0;
-	line-height: 1.5;
-	}
+  font-size: 2.4rem; }
 
 h2 {
-	font-size: 120%;
-	font-weight: bold;
-	margin: 0 0 0.5em 0;
-	}
+  font-size: 2rem;
+  border-bottom: dashed 1px #CCC;
+  padding-bottom: 0.4em;}
 
 h3 {
-	font-size: 120%;
-	margin: 0 0 0.5em 0;
-	}
+  font-size: 1.8rem;
+  border-left: solid 7px #CCC;
+  padding-left: 10px; }
 
 h4 {
-	font-size: 110%;
-	margin: 0 0 0.5em 0;
-	}
+  font-size: 1.6rem; }
 
 h5 {
-	font-size: 100%;
-	margin: 0 0 0.5em 0;
-	}
+  font-size: 1.4rem; }
 
 h6 {
-	font-size: 100%;
-	margin: 0 0 0.5em 0;
-	}
+  font-size: 1.2rem; }
 
 blockquote {
-	margin-left: 1em;
-	padding-left: 1em;
-	border-left: 2px solid #DDD;
-	}
+  margin-left: 1em;
+  padding-left: 1em;
+  border-left: 5px solid #CCC;
+  }
 
 pre {
 	border: dashed 1px #CCC;
@@ -85,12 +73,13 @@ pre {
 	}
 
 ul {
-	margin: 0 0 0 1em;
-	padding: 0 0 0 1em;
+    margin: 0 0 1.6em 1em;
+    padding: 0 0 0 1em;
 	list-style: disc;
 	}
 
 ul ul {
+	margin-bottom: 0;
 	list-style: circle;
 	}
 
@@ -103,11 +92,14 @@ ul ul ul ul {
 	}
 
 ol {
-	list-style: decimal;
+    margin: 0 0 1.6em 1em;
+    padding: 0 0 0 1em;
+    list-style: decimal;
 	}
 
 ol ol {
 	list-style:upper-alpha;
+	margin-bottom: 0;
 	}
 
 ol ol ol {
@@ -120,6 +112,7 @@ ol ol ol ol {
 
 dl {
 	margin:0 0 1em 0;
+	line-height: 1.6;
 	}
 
 dt {
@@ -127,13 +120,22 @@ dt {
 	}
 
 dd {
-	margin: 0 0 1em 0;
+	margin-bottom: 1em;
 	padding: 0;
-}
+	}
 
- strong {
+del {
+	 color: #C00;
+	}
+
+ins {
+	background: #ffc;
+    text-decoration: none;
+    }
+
+strong {
 	font-weight: bold;
-}
+	}
 
 em,
 i,
@@ -141,19 +143,22 @@ q {
 	font-style: italic;
 	}
 
+small {
+    line-height: 1;
+    color: #999999;
+    }
+
+cite:before {
+    content: "-";
+    }
+
 cite {
-	border-bottom: dashed 1px #CCC;
-	font-style: italic;
-	}
+    color: #999999;
+    display: block;
+    }
 
 big {
 	font-size: 130%;
-	}
-
-ins {
-	background: #ffc;
-	border: none;
-	color: #555;
 	}
 
 abbr {
@@ -172,91 +177,95 @@ pre, code, samp, kbd, var{
 	font:100% mono-space,monospace;
 	}
 
-del {
-	color: #C00;
-	}
-
 table {
-	text-align: left;
-	width: 100%;
-	border-collapse: collapse;
-	border-spacing: 0;
-}
+  max-width: 100%;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0; }
 
-table caption {
-	font-weight: bold;
-	color: #333;
-	font-style: italic;
+table th,
+table td {
+	border: 1px solid #CCC;
+	line-height: 20px;
+	padding: 8px;
 	text-align: left;
-	}
+	vertical-align: top; }
 
 table th {
-	border-bottom: solid 1px #CCC !important;
-	font-weight: bold;
-}
+	  background: #555555;
+	  color: #FFF; }
 
-table td {
-	border-bottom: solid 1px #CCC !important;
-}
+img[class*="wp-image-"] {
+	height: auto;
+	max-width: 100%;
+	}
 
-img {
-	margin: 0;
-	max-width: 610px;
-}
+img.size-full {
+	width: auto; /* Prevent stretching of full-size images in IE8 */
+	}
 
-.alignleft,
-img.alignleft {
-	display: inline;
-	float: left;
-	margin-right: 24px;
-	margin-top: 4px;
-}
+img.wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+	}
 
-.alignright,
-img.alignright {
-	display: inline;
-	float: right;
-	margin-left: 24px;
-	margin-top: 4px;
-}
+p img,
+.wp-caption {
+	margin-top: 0.4em;
+	}
 
-.aligncenter,
-img.aligncenter {
-	clear: both;
-	display: block;
+.aligncenter {
 	margin-left: auto;
 	margin-right: auto;
-}
+	display: block;
+	}
+
+.alignleft {
+	float: left;
+	margin-right: 0.5em;
+	}
+
+.alignright {
+	float: right;
+	margin-left: 0.5em;
+	}
 
 img.alignleft,
 img.alignright,
 img.aligncenter {
-	margin-bottom: 12px;
-}
+	margin-bottom: 0.75em;
+	}
 
 .wp-caption {
-	border: none;
-	background: #f1f1f1;
-	color: #888;
-	font-size: 12px;
-	line-height: 18px;
-	text-align: center;
-	margin-bottom: 20px;
-	padding: 4px;
-	-moz-border-radius: 0;
-	-khtml-border-radius: 0;
-	-webkit-border-radius: 0;
-	border-radius: 0;
-}
+    background: none repeat scroll 0 0 #F5F5F5;
+    color: #999999;
+    font-size: 0.8em;
+    max-width: 100%;
+    padding-top: 5px;
+    text-align: center;
+	}
 
 .wp-caption img {
-	margin: 5px;
-}
+	display: block;
+	margin: 5px auto 0 !important;
+	max-width: 98%;
+	}
 
-.wp-caption p.wp-caption-text {
-	margin: 0 0 4px;
-}
+.wp-caption a {
+	border: none !important;
+	}
+
+.wp-caption .wp-caption-text,
+.wp-caption-dd {
+    color: #999999;
+	margin: 0 0 0.6em 0 !important;
+	padding: 0 0 5px 0;
+	position: relative;
+	}
 
 .wp-smiley {
 	margin:0;
-}
+	}
+	

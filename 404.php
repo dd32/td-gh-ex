@@ -1,19 +1,23 @@
-<?php get_header(); ?>
+<?php
+/*
+The template for displaying 404 pages (Not Found).
+*/
+get_header(); ?>
 
-<div id="content">
+<article class="hentry">
 
-	<h1 class="entry-title"><?php _e('Error 404 - Not Found', 'birdsite'); ?></h1>
-	<h2><?php _e('Recent Articles', 'birdsite'); ?></h2>
+	<header class="entry-header">
+		<h1 class="entry-title"><?php _e('Error 404 - Not Found', 'birdsite'); ?></h1>
+	</header>
 
-   <?php query_posts('cat=&showposts=5'); ?>
-   <ul>
-		<?php while (have_posts()) : the_post(); ?>
-			<li>
-				<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a> 
-        		</li>
-   		<?php endwhile; ?>
-    </ul>
-</div>
 
-<?php get_sidebar(); ?>
+	<div class="entry-content">
+		<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'birdsite' ); ?></p>
+		<div class="widget">
+		<?php get_search_form(); ?>
+		</div>
+	</div>
+
+</article>
+
 <?php get_footer(); ?>

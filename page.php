@@ -1,19 +1,14 @@
-<?php get_header(); ?>
+<?php
+/*
+The template for displaying all pages.
+*/
+get_header(); ?>
 
-<div id="content">
+<?php while ( have_posts() ) : the_post(); ?>
+	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<?php get_template_part( 'content', get_post_format() ); ?>
+		<?php comments_template( '', true ); ?>
+	</article>
+<?php endwhile; // end of the loop. ?>
 
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-    <div class="post" id="post-<?php the_ID(); ?>">
-        <h1><?php the_title(); ?></h1>
-		<?php the_content('<p class="serif">Read the rest of this entry &raquo;</p>'); ?>
-	</div>
-	<?php comments_template( '', true ); ?>
-
-	<?php endwhile; endif; ?>
-
-</div>
-
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

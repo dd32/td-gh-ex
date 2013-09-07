@@ -1,40 +1,49 @@
-<?php get_header(); ?>
+<?php
+/*
+The template for displaying Archive pages.
+*/
+get_header(); ?>
 
-<div id="content">
-  
+<article class="hentry">
+
+	<header class="entry-header">
+		<h1 class="entry-title"><?php
+			if(is_category()) {
+				printf(__('Category Archives: %s', 'birdsite'), single_cat_title('', false));
+			}
+			elseif( is_tag() ) {
+				printf(__('Tag Archives: %s', 'birdsite'), single_tag_title('', false) );
+			}
+			elseif (is_day()) {
+				printf(__('Daily Archives: %s', 'birdsite'), get_post_time(get_option('date_format')));
+			}
+			elseif (is_month()) {
+				printf(__('Monthly Archives: %s', 'birdsite'), get_post_time(__('F, Y', 'birdsite')));
+			}
+			elseif (is_year()) {
+				printf(__('Yearly Archives: %s', 'birdsite'), get_post_time(__('Y', 'birdsite')));
+			}
+			elseif (is_author()) {
+				printf(__('Author Archives: %s', 'birdsite'), get_the_author_meta('display_name', get_query_var('author')) );
+			}
+			elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {
+				_e('Blog Archives', 'birdsite');
+			}
+		?></h1>
+	</header>
+
 	<?php if (have_posts()) : ?>
 
-	 	  <?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
-	 	  <?php /* If this is a category archive */ if (is_category()) { ?>
-			<h1 class="pagetitle"><?php printf(__('Archive for the &#8216;%s&#8217; Category', 'birdsite'), single_cat_title('', false)); ?></h1>
-	 	  <?php /* If this is a tag archive */ } elseif( is_tag() ) { ?>
-			<h1 class="pagetitle"><?php printf(__('Posts Tagged &#8216;%s&#8217;', 'birdsite'), single_tag_title('', false) ); ?></h1>
-	 	  <?php /* If this is a daily archive */ } elseif (is_day()) { ?>
-			<h1 class="pagetitle"><?php printf(__('Archive for %s|Daily archive page', 'birdsite'), get_the_time(__('F jS, Y', 'birdsite'))); ?></h1>
-	 	  <?php /* If this is a monthly archive */ } elseif (is_month()) { ?>
-			<h1 class="pagetitle"><?php printf(__('Archive for %s|Monthly archive page', 'birdsite'), get_the_time(__('F, Y', 'birdsite'))); ?></h1>
-	 	  <?php /* If this is a yearly archive */ } elseif (is_year()) { ?>
-			<h1 class="pagetitle"><?php printf(__('Archive for %s|Yearly archive page', 'birdsite'), get_the_time(__('Y', 'birdsite'))); ?></h1>
-		  <?php /* If this is an author archive */ } elseif (is_author()) { ?>
-			<h1 class="pagetitle"><?php _e('Author Archive', 'birdsite'); ?></h1>
-	 	  <?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
-			<h1 class="pagetitle"><?php _e('Blog Archives', 'birdsite'); ?></h1>
-	 	  <?php } ?>
-
-		<div id="thumbnail">
 		<ul>
-			<?php while (have_posts()) : the_post(); ?><li id="post-<?php the_ID(); ?>" <?php post_class(); ?>><?php birdsite_the_thumbnail(); ?><h2><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2><p><?php the_time(get_option('date_format')); ?>
-			<?php if ('closed' <> $post->comment_status) : ?><br /><?php comments_popup_link(__('No Comments &#187;', 'birdsite'), __('1 Comment &#187;', 'birdsite'), __('% Comments &#187;', 'birdsite'), '', __('Comments Closed', 'birdsite') ); ?>
-				<?php endif; ?>
-			</p></li><?php endwhile; // no CR conform CSS ?> 
+		<?php while (have_posts()) : the_post(); ?>
+			<?php get_template_part( 'content', get_post_format() ); ?>
+		<?php endwhile; ?>
 		</ul>
-		</div>
-		
-		<div class="tablenav"><?php birdsite_the_pagenation(); ?>	</div>
 
+		<div class="tablenav"><?php birdsite_the_pagenation(); ?></div>
+	<?php else: ?>
+		<p><?php _e( 'Sorry, no posts matched your criteria.', 'birdsite' ); ?></p>
 	<?php endif; ?>
+</article>
 
-</div>
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

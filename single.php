@@ -1,34 +1,23 @@
-<?php get_header(); ?>
+<?php
+/*
+The Template for displaying all single posts.
+*/
+get_header(); ?>
 
-<div id="content">
+<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<div class="post">
+		<?php get_template_part( 'content', get_post_format() ); ?>
+		<?php comments_template( '', true ); ?>
 
-		<h1><?php the_title(); ?></h1>
+		<nav id="nav-below">
+			<span class="nav-next"><?php next_post_link('%link', '%title'); ?></span>
+			<span class="nav-previous"><?php previous_post_link('%link', '%title'); ?></span>
+		</nav>
 
-		<?php the_content(); ?>
+	</article>
 
-		<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'birdsite' ), 'after' => '</div>' ) ); ?>
+<?php endwhile; ?>
 
-		<div class="posttag">
-			<div><?php the_date(get_option('date_format')); ?> <?php the_author(); ?> <?php edit_post_link( __( 'Edit', 'birdsite' ), ' ' ); ?></div>
-			<?php echo __('Posted in:', 'birdsite'); the_category(' , ') ?>
-			<?php the_tags('<br />' .__('Tags', 'birdsite') .': ', ' , ', ''); ?>
-		</div>
-
-	</div>
-
-	<?php comments_template(); ?>
-
-	<?php endwhile; else: ?>
-
-		<p><?php printf(__('Sorry, no posts matched your criteria.', 'birdsite'), wp_specialchars($s) ); ?></p>
-
-<?php endif; ?>
-
-</div>
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

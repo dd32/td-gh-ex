@@ -1,13 +1,13 @@
-# Translation of the WordPress theme BirdSITE 1.02 by Sysbird
+# Translation of the WordPress theme BirdSITE 1.03 by Sysbird
 # Copyright (C) Sysbird
 # This file is distributed under the same license as the BirdSITE package.
-# FIRST AUTHOR <sysbird@gmail.com>, 2010.
+# FIRST AUTHOR <sysbird@gmail.com>, 2012.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: wordpress 3.0\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tag/theme\n"
-"POT-Creation-Date: 2010-09-08 12:08+0200\n"
+"Project-Id-Version: BirdSITE 1.03\n"
+"Report-Msgid-Bugs-To: http://www.sysbird.jp/wptips/\n"
+"POT-Creation-Date: 2012-08-02 00:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Sysbird <sysbird@gmail.com>\n"
 "Language-Team: sysbird <sysbird@gmail.com>\n"
@@ -15,175 +15,201 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: 404.php:5
+#: 404.php:10
 msgid "Error 404 - Not Found"
 msgstr ""
 
-#: 404.php:6
-msgid "Recent Articles"
-msgstr ""
-
-#: archive.php:9
-msgid "Archive for the &#8216;%s&#8217; Category"
-msgstr ""
- 
-#: archive.php:11
-msgid "Posts Tagged &#8216;%s&#8217;"
+#: 404.php:15
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
 #: archive.php:13
-msgid "Archive for %s|Daily archive page"
+msgid "Category Archives: %s"
 msgstr ""
 
-#: archive.php:13
-msgid "F jS, Y"
-msgstr ""
-
-#: archive.php:15
-msgid "Archive for %s|Monthly archive page"
-msgstr ""
-
-#: archive.php:15
-msgid "F, Y"
-msgstr ""
-
-#: archive.php:17
-msgid "Archive for %s|Yearly archive page"
-msgstr ""
-
-#: archive.php:17
-msgid "Y"
+#: archive.php:16
+msgid "Tag Archives: %s"
 msgstr ""
 
 #: archive.php:19
-msgid "Author Archive"
+msgid "Daily Archives: %s"
 msgstr ""
 
-#: archive.php:21
+#: archive.php:22
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: archive.php:22
+msgid "F, Y"
+msgstr ""
+
+#: archive.php:25
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: archive.php:25
+msgid "Y"
+msgstr ""
+
+#: archive.php:28
+msgid "Author Archives: %s"
+msgstr ""
+
+#: archive.php:31
 msgid "Blog Archives"
 msgstr ""
 
-#: archive.php:27
-#: index.php:8
-#: search.php:12
-msgid "No Comments &#187;"
+#: archive.php:44
+msgid "Sorry, no posts matched your criteria."
 msgstr ""
 
-#: archive.php:27
-#: index.php:8
-#: search.php:12
-msgid "1 Comment &#187;"
+#: comments.php:8
+msgid "This post is password protected. Enter the password to view any comments."
 msgstr ""
 
-#: archive.php:27
-#: index.php:8
-#: search.php:12
-msgid "% Comments &#187;"
-msgstr ""
-
-#: archive.php:27
-#: index.php:8
-#: search.php:12
-msgid "Comments Closed"
-msgstr ""
-
-#: comments.php:3
-msgid "This post is password protected. Enter the password to view comments."
-msgstr ""
-
-#: comments.php:19
-#: comments.php:32
-msgid "Previous Comments &raquo;"
-msgstr ""
-
-#: comments.php:18
-#: comments.php:31
-msgid "&laquo; Next Comments"
-msgstr ""
-
-#: comments.php:12
+#: comments.php:17
 msgid "One Comment"
 msgid_plural "%1$s Comments"
+msgstr[0] "%1$såèÇÃÉRÉÅÉìÉg"
+
+#: comments.php:24
+#: comments.php:35
+msgid "Older Comments"
 msgstr ""
 
-#: comments.php:45
+#: comments.php:25
+#: comments.php:36
+msgid "Newer Comments"
+msgstr ""
+
+#: comments.php:43
 msgid "Name"
 msgstr ""
 
-#: comments.php:45
-#: comments.php:46
+#: comments.php:43
+#: comments.php:44
+#: comments.php:50
 msgid "(*required)"
 msgstr ""
 
-#: comments.php:46
+#: comments.php:44
 msgid "Email (will not be published)"
 msgstr ""
 
-#: comments.php:47
+#: comments.php:45
 msgid "Website"
 msgstr ""
 
-#: comments.php:39
-msgid "Comments are closed."
+#: comments.php:50
+msgid "Comment"
 msgstr ""
 
-#: single.php:41
-msgid "(Edit)"
+#: content.php:11
+#: content.php:33
+msgid "more"
+msgstr ""
+
+#: content.php:21
+#: content.php:25
+msgid "Permalink to %s"
+msgstr ""
+
+#: content.php:30
+msgid "No Comments"
+msgstr ""
+
+#: content.php:30
+msgid "1 Comment"
+msgstr ""
+
+#: content.php:30
+msgid "% Comments"
+msgstr ""
+
+#: content.php:30
+msgid "Comments Closed"
+msgstr ""
+
+#: content.php:44
+#: image.php:50
+msgid "Pages:"
+msgstr ""
+
+#: footer.php:19
+msgid "Proudly powered by WordPress"
+msgstr ""
+
+#: footer.php:21
+msgid "Go Top"
+msgstr ""
+
+#: functions.php:18
+#: functions.php:20
+msgid "Widget Area for footer left"
+msgstr ""
+
+#: functions.php:28
+#: functions.php:30
+msgid "Widget Area for footer center"
 msgstr ""
 
 #: functions.php:38
+#: functions.php:40
+msgid "Widget Area for footer right"
+msgstr ""
+
+#: functions.php:63
 msgid "Pingback"
 msgstr ""
 
-#: functions.php:97
-msgid "Search"
+#: function.php:63
+msgid "(Edit)"
 msgstr ""
 
-#: functions.php:194
-msgid "Primary Navigation"
+#: functions.php:73
+msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: page.php:9
-msgid "Read the rest of this entry &raquo;"
+#: functions.php:332
+msgid "Navigation Menu"
 msgstr ""
 
-#: search.php:7
-msgid "Search Results &#8216;%s&#8217;"
+#: functions.php:371
+msgid "Page %s"
+msgstr ""
+
+#: functions.php:397
+msgid "Theme Options"
+msgstr ""
+
+#: functions.php:407
+msgid "Text Color"
+msgstr ""
+
+#: functions.php:417
+msgid "Link Color"
+msgstr ""
+
+#: functions.php:429
+msgid "Header, Footer Color"
+msgstr ""
+
+#: functions.php:440
+msgid "Navigation Text Color"
+msgstr ""
+
+#: image.php:54
+msgid "Next Image"
+msgstr ""
+
+#: image.php:55
+msgid "Previous Image"
+msgstr ""
+
+#: search.php:10
+msgid "Search Results: %s"
 msgstr ""
 
 #: search.php:22
 msgid "Sorry, no posts matched &#8216;%s&#8217;"
 msgstr ""
-
-#: sidebar.php:7
-msgid "Categories"
-msgstr ""
-
-#: sidebar.php:11
-msgid "Archives"
-msgstr ""
-
-#: sidebar.php:18
-msgid "Meta"
-msgstr ""
-
-#: single.php:13
-msgid "Pages:"
-msgstr ""
-
-#: single.php:19
-msgid "Edit"
-msgstr ""
-
-#: single.php:20
-msgid "Posted in:"
-msgstr ""
-
-#: single.php:21
-msgid "Tags"
-msgstr ""
-
-#: single.php:30
-msgid "Sorry, no posts matched your criteria."
-msgstr ""
-
