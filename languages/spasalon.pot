@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Spasalon\n"
-"POT-Creation-Date: 2013-08-16 16:49+0530\n"
-"PO-Revision-Date: 2013-08-16 16:49+0530\n"
+"POT-Creation-Date: 2013-09-09 16:49+0530\n"
+"PO-Revision-Date: 2013-09-09 16:49+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -23,22 +23,6 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: aboutus.php:18
-msgid "Welcome to "
-msgstr ""
-
-#: aboutus.php:34
-msgid "Our Team"
-msgstr ""
-
-#: aboutus.php:54
-msgid "Designation: "
-msgstr ""
-
-#: aboutus.php:170
-msgid "Popular Procedures"
-msgstr ""
-
 #: archive.php:17
 msgid "Daily Archives:"
 msgstr ""
@@ -48,31 +32,36 @@ msgid "Monthly Archives:"
 msgstr ""
 
 #: archive.php:21
-#, php-format
-msgid "Yearly Archives: %s"
+msgid "Yearly Archives:"
 msgstr ""
 
 #: archive.php:23
 msgid "Blog Archives"
 msgstr ""
 
-#: archive.php:39 blog.php:33 category.php:32 page.php:25 search.php:42
-#: single.php:27
+#: archive.php:39 author.php:52 category.php:32 index.php:33 page.php:25
+#: search.php:42 single.php:27
 msgid "Leave a comment"
 msgstr ""
 
-#: archive.php:39 blog.php:33 category.php:32 page.php:25 search.php:42
-#: single.php:27
+#: archive.php:39 author.php:52 category.php:32 index.php:33 page.php:25
+#: search.php:42 single.php:27
 msgid "1 Comment"
 msgstr ""
 
-#: archive.php:39 blog.php:33 category.php:32 page.php:25 search.php:42
-#: single.php:27
+#: archive.php:39 author.php:52 category.php:32 index.php:33 page.php:25
+#: search.php:42 single.php:27
 msgid "% Comments"
 msgstr ""
 
-#: blog.php:48 page.php:33 single.php:34
-msgid "Pages:"
+#: author.php:13
+#, php-format
+msgid "Author Archives: %s"
+msgstr ""
+
+#: author.php:34
+#, php-format
+msgid "About %s"
 msgstr ""
 
 #: category.php:17
@@ -104,250 +93,204 @@ msgstr ""
 msgid " Log out?"
 msgstr ""
 
-#: contact.php:17
+#: contact.php:13
 msgid "CONTACT INFO"
 msgstr ""
 
-#: contact.php:23
-msgid "View Larger Map"
-msgstr ""
-
-#: contact.php:34
-msgid "GET IN TOUCH"
-msgstr ""
-
-#: contact.php:110
+#: contact.php:88
 msgid "Your Name"
 msgstr ""
 
-#: contact.php:112
+#: contact.php:90
 msgid "Email*"
 msgstr ""
 
-#: contact.php:114
+#: contact.php:92
 msgid "Subject"
 msgstr ""
 
-#: contact.php:116
+#: contact.php:94
 msgid "Your Message"
 msgstr ""
 
-#: contact.php:121
+#: contact.php:99
 msgid "Submit"
 msgstr ""
 
-#: contact.php:138 default_products.php:8 default_products.php:13
-#: default_products.php:18 default_products.php:23 default_products.php:28
-#: default_products.php:33 default_products.php:38 default_products.php:43
-#: default_products.php:48 default_products.php:53 default_products.php:58
-#: default_products.php:63
+#: contact.php:116
 msgid "Spa Salon"
 msgstr ""
 
-#: contact.php:154
+#: contact.php:132
 msgid "Opening Hours"
 msgstr ""
 
-#: contact.php:167 index-slider.php:39 index-slider.php:108
-#: index-slider.php:129 index-slider.php:147 pink-header.php:23
-#: option_pannel/home.php:49
+#: contact.php:145 index-slider.php:30 pink-header.php:23
+#: option_pannel/home.php:112
 msgid "Call us on"
 msgstr ""
 
-#: default_services.php:4
+#: functions.php:17
+msgid "Post navigation"
+msgstr ""
+
+#: functions.php:18
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr ""
+
+#: functions.php:19
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: functions.php:43
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: functions.php:60
+msgid "Our"
+msgstr ""
+
+#: functions.php:61
+msgid "Refreshed"
+msgstr ""
+
+#: functions.php:62
+msgid ""
+"Donec justo odio, lobortis eget congue sed, rutrum sit amet mauris. "
+"Curabitur sed lectus nulla.\n"
+"             Curabitur sed lectus nulla.lobortis eget congue sed, rutrum sit "
+"amet mauris. Curabitur sed \n"
+"             lectus nulla rutrum sit amet mauris"
+msgstr ""
+
+#: functions.php:72
 msgid "Spa Treatment"
 msgstr ""
 
-#: default_services.php:18
+#: functions.php:74 functions.php:81 functions.php:87 functions.php:93
+msgid ""
+"Pellentesque habitant morbi tristique senectus \n"
+"                                                      et netus et malesuada "
+"fames ac turpis egestas \n"
+"                                                    In in massa urna, vitae "
+"vestibulum orci. yoursb\n"
+"                                                     Maecenas quis est sed "
+"mauris..."
+msgstr ""
+
+#: functions.php:79
 msgid "Detox Treatment"
 msgstr ""
 
-#: default_services.php:32
+#: functions.php:85
 msgid "Facial Treatment"
 msgstr ""
 
-#: default_services.php:46
+#: functions.php:91
 msgid "Other Treatment"
 msgstr ""
 
-#: functions.php:119
+#: functions.php:99
+msgid "Product 1"
+msgstr ""
+
+#: functions.php:102
+msgid "Product 2"
+msgstr ""
+
+#: functions.php:105
+msgid "Product 3"
+msgstr ""
+
+#: functions.php:108
+msgid "Product 4"
+msgstr ""
+
+#: functions.php:111
+msgid "Product 5"
+msgstr ""
+
+#: functions.php:121
+msgid "Copyright 2013. All Rights Reserved by "
+msgstr ""
+
+#: functions.php:127
+msgid "Treatment we are offering"
+msgstr ""
+
+#: functions.php:128
+msgid ""
+"In commodo pulvinar metus, id tristique massa ultrices at. Nulla auctor "
+"turpis ut mi pulvinar eu accumsan risus sagittis. Mauris nunc ligula, "
+"ullamcorper vitae accumsan eu, \n"
+"congue in nulla. Cras hendrerit mi quis nisi semper in sodales nisl "
+"faucibus. Sed quis quam eu ante ornare hendrerit."
+msgstr ""
+
+#: functions.php:130
+msgid "Spasalon Our product rang"
+msgstr ""
+
+#: functions.php:131
+msgid ""
+"A SpaSalon Produc Heading Title In commodo pulvinar metus, id tristique "
+"massa ultrices at. Nulla auctor turpis ut mi pulvinar eu accumsan risus "
+"sagittis. Mauris nunc ligula, ullamcorper vitae accumsan eu, congue in "
+"nulla. Cras hendrerit mi quis nisi semper in sodales nisl faucibus. Sed quis "
+"quam eu ante ornare hendrerit. "
+msgstr ""
+
+#: functions.php:221
 msgid "Header Menu"
 msgstr ""
 
-#: functions.php:120
+#: functions.php:222
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:132
+#: functions.php:234
 msgid " Sidebar"
 msgstr ""
 
-#: functions.php:134
+#: functions.php:236
 msgid "The primary widget area"
 msgstr ""
 
-#: functions.php:191 functions.php:192 functions.php:193 functions.php:256
-msgid "Add New Service"
-msgstr ""
-
-#: functions.php:194 functions.php:227 functions.php:259 functions.php:328
-msgid "New Link"
-msgstr ""
-
-#: functions.php:195
-msgid "All Featured Services"
-msgstr ""
-
-#: functions.php:196 functions.php:229 functions.php:261 functions.php:330
-msgid "View Link"
-msgstr ""
-
-#: functions.php:197 functions.php:230 functions.php:262 functions.php:331
-msgid "Search Links"
-msgstr ""
-
-#: functions.php:198 functions.php:231 functions.php:263 functions.php:332
-msgid "No Links found"
-msgstr ""
-
-#: functions.php:199 functions.php:232 functions.php:264 functions.php:333
-msgid "No Links found in Trash"
-msgstr ""
-
-#: functions.php:224
-msgid "Add New "
-msgstr ""
-
-#: functions.php:225
-msgid "Enter member name"
-msgstr ""
-
-#: functions.php:226
-msgid "Add member name"
-msgstr ""
-
-#: functions.php:228
-msgid "All Member"
-msgstr ""
-
-#: functions.php:257 functions.php:258
-msgid "Add new service"
-msgstr ""
-
-#: functions.php:260
-msgid "All Services"
-msgstr ""
-
-#: functions.php:325
-msgid "Add New Product"
-msgstr ""
-
-#: functions.php:326
-msgid "Enter Product Name"
-msgstr ""
-
-#: functions.php:327
-msgid "Enter Product Name "
-msgstr ""
-
-#: functions.php:329
-msgid "All Product"
-msgstr ""
-
-#: functions.php:411 functions.php:456 functions.php:493
+#: functions.php:300
 msgid "Banner Description"
 msgstr ""
 
-#: functions.php:417 functions.php:462 functions.php:499
+#: functions.php:306
 msgid "Banner Heading One"
 msgstr ""
 
-#: functions.php:423 functions.php:468 functions.php:505
+#: functions.php:312
 msgid "Banner Heading Two"
 msgstr ""
 
-#: functions.php:442
-msgid "Product detail"
-msgstr ""
-
-#: functions.php:449
-msgid "Price"
-msgstr ""
-
-#: functions.php:524
-msgid "Designation"
-msgstr ""
-
-#: functions.php:530
-msgid "Description"
-msgstr ""
-
-#: functions.php:535
-msgid "Social Media Setting"
-msgstr ""
-
-#: functions.php:536
-msgid "Facebook"
-msgstr ""
-
-#: functions.php:539
-msgid "Twitter Url"
-msgstr ""
-
-#: functions.php:542
-msgid "Google Url"
-msgstr ""
-
-#: functions.php:621
+#: functions.php:400
 msgid "Reply"
 msgstr ""
 
-#: functions.php:631
-#, php-format
-msgid "<div class=\"mycomment-author\">%s</cite>"
-msgstr ""
-
-#: functions.php:643
+#: functions.php:422
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: index-slider.php:68
-msgid "Explore More"
+#: functions.php:441
+msgid ""
+"This post is password protected. To view it please enter your password below:"
 msgstr ""
 
-#: index-slider.php:100 index-slider.php:121 index-slider.php:139
-msgid "our"
+#: functions.php:442
+msgid "Password:"
 msgstr ""
 
-#: index-slider.php:101 index-slider.php:122 index-slider.php:140
-msgid "refreshed"
+#: index.php:49 page.php:33 single.php:34
+msgid "Pages:"
 msgstr ""
 
-#: index-slider.php:160
-msgid "Producing"
-msgstr ""
-
-#: index-slider.php:160
-msgid "Quality"
-msgstr ""
-
-#: index-slider.php:168
-msgid "Cool"
-msgstr ""
-
-#: index-slider.php:168
-msgid "Experience"
-msgstr ""
-
-#: index-slider.php:176
-msgid "Feel"
-msgstr ""
-
-#: index-slider.php:176
-msgid "Amazing"
-msgstr ""
-
-#: search.php:25
+#: search.php:26
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
@@ -362,88 +305,9 @@ msgid ""
 "different keywords."
 msgstr ""
 
-#: single-spa_products.php:35
-msgid "Related Products"
-msgstr ""
-
-#: functions/wpex_framework.php:8
-msgid "Framework location not defined."
-msgstr ""
-
-#: functions/shortcodes/shortcodes.php:50
-msgid "Heading Title"
-msgstr ""
-
-#: functions/shortcodes/shortcodes.php:151
-msgid "1"
-msgstr ""
-
-#: functions/shortcodes/shortcodes.php:152
-msgid "order"
-msgstr ""
-
-#: functions/widgets/spa-recent-posts.php:10
-#: functions/widgets/spa-recent-posts.php:11
-msgid "Spa Recent Posts"
-msgstr ""
-
-#: functions/widgets/spa-recent-posts.php:10
-msgid "The most recent posts on your site"
-msgstr ""
-
-#: functions/widgets/spa-recent-posts.php:95
-#: functions/widgets/spa-recent-products.php:106
-#: functions/widgets/spa-widget-contact.php:90
-msgid "Title:"
-msgstr ""
-
-#: functions/widgets/spa-recent-posts.php:100
-#: functions/widgets/spa-recent-products.php:111
-msgid "Number of posts to show:"
-msgstr ""
-
-#: functions/widgets/spa-recent-products.php:12
-msgid "The most recent products on your site"
-msgstr ""
-
-#: functions/widgets/spa-recent-products.php:13
-msgid "Spa Recent Products"
-msgstr ""
-
-#: functions/widgets/spa-widget-contact.php:9
-msgid "A widget that displays the authors contacts "
-msgstr ""
-
-#: functions/widgets/spa-widget-contact.php:13
-msgid "Spa Contact Widget"
-msgstr ""
-
-#: functions/widgets/spa-widget-contact.php:86
-msgid "Contact Us"
-msgstr ""
-
-#: functions/widgets/spa-widget-contact.php:86
-msgid "18001234567"
-msgstr ""
-
-#: functions/widgets/spa-widget-contact.php:86
-msgid "XYZ@XYZ.com"
-msgstr ""
-
-#: functions/widgets/spa-widget-contact.php:86
-msgid "NY,USA"
-msgstr ""
-
-#: functions/widgets/spa-widget-contact.php:98
-msgid "Your Contact Number"
-msgstr ""
-
-#: functions/widgets/spa-widget-contact.php:102
-msgid "Your  email"
-msgstr ""
-
-#: functions/widgets/spa-widget-contact.php:106
-msgid "Your  city"
+#: functions/Menu_Walker/default_menu_walker.php:23
+#: option_pannel/option_pannel.php:58
+msgid "Home"
 msgstr ""
 
 #: option_pannel/footer_customization.php:1
@@ -451,26 +315,24 @@ msgid "Footer Copyrights"
 msgstr ""
 
 #: option_pannel/footer_customization.php:1
-#: option_pannel/general_settings.php:125 option_pannel/home.php:194
-#: option_pannel/homepage_slider.php:146 option_pannel/typography.php:505
+#: option_pannel/general_settings.php:115 option_pannel/home.php:628
+#: option_pannel/typography.php:505
 msgid "Save Changes"
 msgstr ""
 
 #: option_pannel/footer_customization.php:1
-#: option_pannel/general_settings.php:126 option_pannel/home.php:195
-#: option_pannel/homepage_slider.php:147 option_pannel/typography.php:506
+#: option_pannel/general_settings.php:116 option_pannel/home.php:629
+#: option_pannel/typography.php:506
 msgid "Restore Defaults"
 msgstr ""
 
 #: option_pannel/footer_customization.php:1
-#: option_pannel/general_settings.php:130 option_pannel/home.php:196
-#: option_pannel/homepage_slider.php:148
+#: option_pannel/general_settings.php:120 option_pannel/home.php:630
 msgid "Data reset sucessfully"
 msgstr ""
 
 #: option_pannel/footer_customization.php:1
-#: option_pannel/general_settings.php:131 option_pannel/home.php:197
-#: option_pannel/homepage_slider.php:149
+#: option_pannel/general_settings.php:121 option_pannel/home.php:631
 msgid "Data save sucessfully"
 msgstr ""
 
@@ -507,111 +369,250 @@ msgid ""
 "The placeholder image that will be used if a featured image isnt specified."
 msgstr ""
 
-#: option_pannel/general_settings.php:111
-msgid "Add Google Link Here for Goole Map"
-msgstr ""
-
-#: option_pannel/general_settings.php:118
-msgid "Put Your Google Map Url above"
-msgstr ""
-
-#: option_pannel/general_settings.php:118
-msgid "To know your Google Map Location Visit URL"
-msgstr ""
-
 #: option_pannel/home.php:13
 msgid "Sorry, your nonce did not verify."
 msgstr ""
 
-#: option_pannel/home.php:48
-msgid "Home Page Setting"
-msgstr ""
-
-#: option_pannel/home.php:61
-msgid "Tagline Title"
-msgstr ""
-
-#: option_pannel/home.php:71
-msgid "Tagline Content"
-msgstr ""
-
-#: option_pannel/home.php:83
-msgid "Product Heading Title"
+#: option_pannel/home.php:93
+msgid "Pink Highlight Strip "
 msgstr ""
 
 #: option_pannel/home.php:95
+msgid "Line One"
+msgstr ""
+
+#: option_pannel/home.php:103
+msgid "Line Two"
+msgstr ""
+
+#: option_pannel/home.php:121
+msgid "Description"
+msgstr ""
+
+#: option_pannel/home.php:136
+msgid "Home Top Feature "
+msgstr ""
+
+#: option_pannel/home.php:138
+msgid "Upload Feature Image"
+msgstr ""
+
+#: option_pannel/home.php:149
+msgid ""
+"The placeholder image that will be used as a FullWidth Featured On Home page"
+msgstr ""
+
+#: option_pannel/home.php:158
+msgid "Home Feature Thumbstrip setting "
+msgstr ""
+
+#: option_pannel/home.php:160
+msgid "Upload First Thumb Image"
+msgstr ""
+
+#: option_pannel/home.php:170 option_pannel/home.php:184
+#: option_pannel/home.php:199
+msgid ""
+"The placeholder image that will be used below the FullWidth Feature as "
+"featured Thumb"
+msgstr ""
+
+#: option_pannel/home.php:174
+msgid "Upload Second Thumb Image"
+msgstr ""
+
+#: option_pannel/home.php:189
+msgid "Upload Third Thumb Image"
+msgstr ""
+
+#: option_pannel/home.php:214
+msgid "Home Page Tegline "
+msgstr ""
+
+#: option_pannel/home.php:215
+msgid "Tagline Title"
+msgstr ""
+
+#: option_pannel/home.php:225
+msgid "Tagline Content"
+msgstr ""
+
+#: option_pannel/home.php:241
+msgid "Home page Four Services Section "
+msgstr ""
+
+#: option_pannel/home.php:243
+msgid "First Service Title"
+msgstr ""
+
+#: option_pannel/home.php:251 option_pannel/home.php:356
+msgid "Upload First Service Image"
+msgstr ""
+
+#: option_pannel/home.php:261 option_pannel/home.php:296
+#: option_pannel/home.php:331 option_pannel/home.php:366
+msgid "The placeholder image that will be used as a Service Image on Home Page"
+msgstr ""
+
+#: option_pannel/home.php:266
+msgid "First Service Content"
+msgstr ""
+
+#: option_pannel/home.php:278
+msgid "Second Service Title"
+msgstr ""
+
+#: option_pannel/home.php:286
+msgid "Upload Second Service Image"
+msgstr ""
+
+#: option_pannel/home.php:301
+msgid "Second Service Content"
+msgstr ""
+
+#: option_pannel/home.php:313
+msgid "Third Service Title"
+msgstr ""
+
+#: option_pannel/home.php:321
+msgid "Upload Third Service Image"
+msgstr ""
+
+#: option_pannel/home.php:336
+msgid "Third Service Content"
+msgstr ""
+
+#: option_pannel/home.php:348
+msgid "Fourth Service Title"
+msgstr ""
+
+#: option_pannel/home.php:371
+msgid "Fourth Service Content"
+msgstr ""
+
+#: option_pannel/home.php:392
+msgid "Home page  Products Section "
+msgstr ""
+
+#: option_pannel/home.php:393
+msgid "Product Heading Title"
+msgstr ""
+
+#: option_pannel/home.php:405
 msgid "Product Heading Content"
 msgstr ""
 
-#: option_pannel/home.php:106
+#: option_pannel/home.php:415
+msgid "First Product Title"
+msgstr ""
+
+#: option_pannel/home.php:423
+msgid "Upload First Product Image"
+msgstr ""
+
+#: option_pannel/home.php:433 option_pannel/home.php:458
+#: option_pannel/home.php:483 option_pannel/home.php:507
+#: option_pannel/home.php:533
+msgid "The placeholder image that will be used as Product Image on home page"
+msgstr ""
+
+#: option_pannel/home.php:438
+msgid "Second Product Title"
+msgstr ""
+
+#: option_pannel/home.php:447
+msgid "Upload Second Product Image"
+msgstr ""
+
+#: option_pannel/home.php:463
+msgid "Third Product Title"
+msgstr ""
+
+#: option_pannel/home.php:472
+msgid "Upload Thrid Product Image"
+msgstr ""
+
+#: option_pannel/home.php:487
+msgid "Fourth Product Title"
+msgstr ""
+
+#: option_pannel/home.php:496
+msgid "Upload Fourth Product Image"
+msgstr ""
+
+#: option_pannel/home.php:513
+msgid "Fifth Product Title"
+msgstr ""
+
+#: option_pannel/home.php:522
+msgid "Upload Fifth Product Image"
+msgstr ""
+
+#: option_pannel/home.php:540
 msgid "Tagline Settings"
 msgstr ""
 
-#: option_pannel/home.php:125 option_pannel/home.php:166
+#: option_pannel/home.php:559 option_pannel/home.php:600
 #: option_pannel/typography.php:90 option_pannel/typography.php:150
 #: option_pannel/typography.php:209 option_pannel/typography.php:265
 #: option_pannel/typography.php:467
 msgid "px"
 msgstr ""
 
-#: option_pannel/home.php:147
+#: option_pannel/home.php:581
 msgid "Product Heading Settings"
 msgstr ""
 
-#: option_pannel/homepage_slider.php:56
-msgid "Slider Entries"
+#: option_pannel/home.php:681
+msgid "Spa enter your custom title for the homepage tagline"
 msgstr ""
 
-#: option_pannel/homepage_slider.php:62
-msgid "Select a number"
+#: option_pannel/home.php:682
+msgid ""
+"A spa WordPress theme for All Wordpress Lover. This is Best Blogging theme."
 msgstr ""
 
-#: option_pannel/homepage_slider.php:77
-msgid "Slider Effect"
+#: option_pannel/home.php:687
+msgid "Highlight Title"
 msgstr ""
 
-#: option_pannel/homepage_slider.php:84
-msgid "fade"
+#: option_pannel/home.php:688
+msgid "Latest Update"
 msgstr ""
 
-#: option_pannel/homepage_slider.php:85
-msgid "slide"
+#: option_pannel/option_pannel.php:13
+msgid "Spasalon Pro Verison Coming Soon !!! "
 msgstr ""
 
-#: option_pannel/homepage_slider.php:93
-msgid "Animation Speed"
+#: option_pannel/option_pannel.php:14
+msgid ""
+"You are Using the Lite Version of Spasalon Theme. The Premium Version  is "
+"coming soon with lots and lots of features. Soon releasing themes premium "
+"version on our blog"
 msgstr ""
 
-#: option_pannel/homepage_slider.php:117
-msgid "Auto Slide Interval"
+#: option_pannel/option_pannel.php:15
+msgid "Check Out Our Blog"
 msgstr ""
 
-#: option_pannel/option_pannel.php:18
+#: option_pannel/option_pannel.php:22
 msgid "Spa Theme Options"
 msgstr ""
 
-#: option_pannel/option_pannel.php:25
+#: option_pannel/option_pannel.php:29
 msgid "Tabs"
 msgstr ""
 
-#: option_pannel/option_pannel.php:46
+#: option_pannel/option_pannel.php:50
 msgid "General"
 msgstr ""
 
-#: option_pannel/option_pannel.php:48 option_pannel/typography.php:68
+#: option_pannel/option_pannel.php:52 option_pannel/typography.php:68
 msgid "Typography"
 msgstr ""
 
-#: option_pannel/option_pannel.php:50
-msgid "Homepage Slider"
-msgstr ""
-
-#: option_pannel/option_pannel.php:52
+#: option_pannel/option_pannel.php:56
 msgid "Footer Customization"
-msgstr ""
-
-#: option_pannel/option_pannel.php:54
-msgid "Home"
 msgstr ""
 
 #: option_pannel/typography.php:69

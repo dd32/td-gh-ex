@@ -254,7 +254,7 @@ if ( empty($_POST) || !wp_verify_nonce($_POST['spa_home_nonce_customization'],'s
 	  
         <div class="element">
 		      <input type="text" value="<?php if($current_options['service1_image']!='') { echo esc_attr($current_options['service1_image']); } ?>" id="third_thumb_image" name="service1_image" size="36" />
-               <input type="button" id="upload_button" value="Third Thumbnail" class="upload_image_button" class="upload_button" /><br>
+               <input type="button" id="upload_button" value="Service One" class="upload_image_button" class="upload_button" /><br>
          
            </div>
         <div class="description">
@@ -289,7 +289,7 @@ if ( empty($_POST) || !wp_verify_nonce($_POST['spa_home_nonce_customization'],'s
 	  
         <div class="element">
 		      <input type="text" value="<?php if($current_options['service2_image']!='') { echo esc_attr($current_options['service2_image']); } ?>" id="third_thumb_image" name="service2_image" size="36" />
-               <input type="button" id="upload_button" value="Third Thumbnail" class="upload_image_button" class="upload_button" /><br>
+               <input type="button" id="upload_button" value="Service Two" class="upload_image_button" class="upload_button" /><br>
          
            </div>
         <div class="description">
@@ -324,7 +324,7 @@ if ( empty($_POST) || !wp_verify_nonce($_POST['spa_home_nonce_customization'],'s
 	  
         <div class="element">
 		      <input type="text" value="<?php if($current_options['service3_image']!='') { echo esc_attr($current_options['service3_image']); } ?>" id="third_thumb_image" name="service3_image" size="36" />
-               <input type="button" id="upload_button" value="Third Thumbnail" class="upload_image_button" class="upload_button" /><br>
+               <input type="button" id="upload_button" value="Service Three" class="upload_image_button" class="upload_button" /><br>
          
            </div>
         <div class="description">
@@ -359,7 +359,7 @@ if ( empty($_POST) || !wp_verify_nonce($_POST['spa_home_nonce_customization'],'s
 	  
         <div class="element">
 		      <input type="text" value="<?php if($current_options['service4_image']!='') { echo esc_attr($current_options['service4_image']); } ?>" id="third_thumb_image" name="service4_image" size="36" />
-               <input type="button" id="upload_button" value="Third Thumbnail" class="upload_image_button" class="upload_button" /><br>
+               <input type="button" id="upload_button" value="Service Four" class="upload_image_button" class="upload_button" /><br>
          
            </div>
         <div class="description">

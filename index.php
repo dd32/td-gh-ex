@@ -1,4 +1,9 @@
-<?php get_header(); $current_options=get_option('spa_theme_options');
+<?php
+/**
+	Template Name: Featured Home
+*/
+
+ get_header(); $current_options=get_option('spa_theme_options');
 get_template_part('index', 'slider') ;
 ?>
 <div class="container">	  

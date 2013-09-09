@@ -84,15 +84,15 @@ $excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
 $len=strlen($excerpt);
 return $excerpt;
 }
-function new_excerpt_more($more) {
+function spa_new_excerpt_more($more) {
        global $post;
-	return '<a class="service-btn " href="'. get_permalink($post->ID) . '"> Read More</a>';
+	return '<a class="blog-readmore " href="'. get_permalink($post->ID) . '"> '._e('Read More','sis_spa').'</a>';
 }
-add_filter('excerpt_more', 'new_excerpt_more');
+add_filter('excerpt_more', 'spa_new_excerpt_more');
 //code for set the length of service excerpt
-function new_excerpt_length($length) {
+function spa_new_excerpt_length($length) {
     return 40;
 }
-add_filter('excerpt_length', 'new_excerpt_length');
+add_filter('excerpt_length', 'spa_new_excerpt_length');
 
 ?>

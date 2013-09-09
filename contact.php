@@ -116,15 +116,15 @@ else
     <h2 class="contact-add"><?php _e( "Spa Salon", 'sis_spa' ); ?></h2>
     <br />
     <div class="address-detail">
-	8901 Marmora Road,<br>
-    Glasgow,<br>
-    D04 89GR.<br><br>
-    <abbr title="Free Phone">Free phone:</abbr> +1 800 559 658 <br>
-    <abbr title="Telephone">Telephone:</abbr> +1 800 559 658<br><br>
-    <abbr title="Fax">Fax:</abbr> +1 800 559 658 <br>
+	<?php _e('8901 Marmora Road','sis_spa');?>,<br>
+    <?php _e('Glasgow','sis_spa');?>,<br>
+    <?php _e('D04 89GR.','sis_spa');?><br><br>
+    <abbr title="Free Phone"><?php _e('Free phone:','sis_spa');?></abbr> +1 800 559 658 <br>
+    <abbr title="Telephone"><?php _e('Telephone:','sis_spa');?></abbr> +1 800 559 658<br><br>
+    <abbr title="Fax"><?php _e('Fax:','sis_spa');?></abbr> +1 800 559 658 <br>
     </div>
 	<div class="address-detail">
-    Email:<a href="mailto:#"> mail@demolink.org</a>
+    <?php _e('Eamil:','sis_spa');?><a href="mailto:#"> mail@demolink.org</a>
     </div>
     </div>
     
@@ -132,11 +132,11 @@ else
     <h2 class="contact-add"><?php _e( "Opening Hours", 'sis_spa' ); ?></h2>
     <br />
    <div class="address-detail">
-    Mon. 11:00 &ndash; 17:30 <br><br>
-    Tue. - Thu. 9:30 &ndash; 17:30 <br><br>
-    Fri. 9:30 &ndash; 21:00 <br><br>
-    Sat. 9:30 &ndash; 17:30 <br><br>
-    Sun. 12:00 &ndash; 17:00 <br><br>
+    <?php _e('Mon','sis_spa');?>. 11:00 &ndash; 17:30 <br><br>
+    <?php _e('Tue','sis_spa');?>. - <?php _e('Thu','sis_spa');?>. 9:30 &ndash; 17:30 <br><br>
+    <?php _e('Fri','sis_spa');?>. 9:30 &ndash; 21:00 <br><br>
+    <?php _e('Sat','sis_spa');?>. 9:30 &ndash; 17:30 <br><br>
+    <?php _e('Sun','sis_spa');?>. 12:00 &ndash; 17:00 <br><br>
     </div>
     </div>
    <?php }  ?> 

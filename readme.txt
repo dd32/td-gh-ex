@@ -57,7 +57,16 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
-
+@version 1.0.1
+1. Author Uri Fixed
+2. Theme prefix applied 
+3. Title filter bug fixed.
+4. Removed extra code.
+5. Author archive added.
+6. Admin stylesheet hooked correctly.
+7. Snapshot size reduced.
+8. Data validation added.
+9. Some layout specfic issues resolved.
 @Version 1.0
 released
 

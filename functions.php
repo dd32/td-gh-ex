@@ -1,5 +1,50 @@
 <?php 
 
+//the  for author.php 
+if ( ! function_exists( 'spa_content_nav' ) ) :
+/**
+ * Displays navigation to next/previous pages when applicable.
+ *
+ * @since Twenty Twelve 1.0
+ */
+function spa_content_nav( $html_id ) {
+	global $wp_query;
+
+	$html_id = esc_attr( $html_id );
+
+	if ( $wp_query->max_num_pages > 1 ) : ?>
+		<nav id="<?php echo $html_id; ?>" class="navigation" role="navigation">
+			<h3 class="assistive-text"><?php _e( 'Post navigation', 'twentytwelve' ); ?></h3>
+			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'twentytwelve' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'twentytwelve' ) ); ?></div>
+		</nav><!-- #<?php echo $html_id; ?> .navigation -->
+	<?php endif;
+}
+endif;
+
+
+//wp_title
+function spa_wp_title( $title, $sep ) {
+	global $paged, $page;
+
+	if ( is_feed() )
+		return $title;
+
+	// Add the site name.
+	$title .= get_bloginfo( 'name' );
+
+	// Add the site description for the home/front page.
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) )
+		$title = "$title $sep $site_description";
+
+	// Add a page number if necessary.
+	if ( $paged >= 2 || $page >= 2 )
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'sis_spa' ), max( $paged, $page ) );
+
+	return $title;
+}
+add_filter( 'wp_title', 'spa_wp_title', 10, 2 );
 // code for default data 
 add_action( 'after_setup_theme', 'spa_the_theme_setup' );
 //if (!function_exists('spa_the_theme_setup')):
@@ -66,12 +111,7 @@ function spa_the_theme_setup() /*function declear*/
 								  'product5_title'=>__('Product 5','sis_spa'),
 								  'product5_image'=>$template_uri.'/images/default/home_product_thumb.jpg',
 								   
-								//settings for main slider 
-							/* 	'slider_type'=>'Flex', */
-								'slider_entries_main'=> 10,
-								'slide_effect_main'=>'slide',
-								'animation_speed_main'=>'1000',
-								'auto_slide_interval_main'=>'2000',
+							
 									
 								'footer_tagline' => __('Copyright 2013. All Rights Reserved by ','sis_spa'),
 								'upload_image'=>'',
@@ -122,9 +162,17 @@ congue in nulla. Cras hendrerit mi quis nisi semper in sodales nisl faucibus. Se
 	);
 add_option('spa_theme_options',$spa_theme_options); 
    
-// code for option pannel
+add_theme_support( 'post-thumbnails' );
+add_theme_support( 'automatic-feed-links' );
+
+add_editor_style();
+
+}
+
+//closing of the spa_the_theme_setup()
 
 
+//option-panel Scripts and CSS	
    require_once('option_pannel/option_pannel.php' );
    function spa_admin_enqueue_script() {
 
@@ -151,14 +199,6 @@ wp_enqueue_style('spa_flexslider', get_template_directory_uri('template_director
 
 }
 
-add_theme_support( 'post-thumbnails' );
-add_theme_support( 'automatic-feed-links' );
-//add_theme_support( 'custom-background' );
-add_editor_style();
-
-}
-
-//endif;//closing of the spa_the_theme_setup()
 
 if ( ! isset( $content_width ) ) $content_width = 900;
 
@@ -170,8 +210,8 @@ require_once ( get_template_directory() . '/functions/Menu_Walker/default_menu_w
 require_once ( get_template_directory() . '/functions/Menu_Walker/spasalon_nav_walker.php' );//custom menu
 
  //code for the custom menus....
- add_action( 'init', 'register_my_menus' );
-   function register_my_menus() {
+ add_action( 'init', 'register_spa_menus' );
+   function register_spa_menus() {
   register_nav_menus(
     array( 'header-menu' => __('Header Menu','sis_spa'),
 	       'footer-menu' => __('Footer Menu','sis_spa')
@@ -219,8 +259,8 @@ function spa_enqueue_script() {
       wp_enqueue_script('spa_menu', get_template_directory_uri('template_directory').'/js/menu/menu.js');
 	  wp_enqueue_script('spa-boot-menu-active', get_template_directory_uri('template_directory').'/js/menu/boot-business.js');
 	   wp_enqueue_script('spa-boot-menus', get_template_directory_uri('template_directory').'/js/menu/bootstrap.min.js'); 
-	    wp_enqueue_script('flexmain', get_template_directory_uri('template_directory').'/js/flex/jquery.flexslider.js');
-        wp_enqueue_script('flexslider-setting', get_template_directory_uri('template_directory').'/js/flex/flexslider-setting.js'); 
+	    wp_enqueue_script('spa_flexmain', get_template_directory_uri('template_directory').'/js/flex/jquery.flexslider.js');
+        wp_enqueue_script('spa_flexslider-setting', get_template_directory_uri('template_directory').'/js/flex/flexslider-setting.js'); 
   
 }
   
@@ -231,47 +271,53 @@ function spa_enqueue_script() {
 //code for the meta data...
      
 
-add_action('admin_init','my_meta_init');
+add_action('admin_init','spa_meta_init');
 
-function my_meta_init()
+function spa_meta_init()
 {
      foreach (array('post','page') as $type) 
 	{
-		add_meta_box('my_all_meta', 'Description', 'my_meta_banner', $type, 'normal', 'high');
+		add_meta_box('my_all_meta', 'Description', 'spa_meta_banner', $type, 'normal', 'high');
 	}
 	
  
  
-	add_action('save_post','my_meta_save');
+	add_action('save_post','spa_meta_save');
 }
 // code for banner description
-function my_meta_banner()
+function spa_meta_banner()
 {
+ //wp_nonce_field( plugin_basename( __FILE__ ), 'spasalon_noncename' );
 	global $post ;
  
+	$b_description= get_post_meta( get_the_ID(), 'banner_description', true );
+	$h_one= get_post_meta( get_the_ID(), 'heading_one', true );
+   $h_two= get_post_meta( get_the_ID(), 'heading_two', true );
 	
-	$meta = get_post_meta($post->ID,'_my_meta',TRUE);?>
-       <p>	
+	//$meta = get_post_meta($post->ID,'spa_pink_meta',TRUE);?>
+    <p>	
   <label><?php _e('Banner Description','sis_spa');?></label>
 	</p>
 	<p>
-		<textarea style="width:100%; height:100px;padding: 10px;" placeholder="Enter product banner description" name="_my_meta[banner_description]" rows="3" cols="10" ><?php if(!empty($meta['banner_description'])) echo $meta['banner_description']; ?></textarea>
+	<textarea name="meta_banner_description" id="meta_banner_description" style="width:100%; height:100px;padding: 10px;" placeholder="Enter product banner description"  rows="3" cols="10" >
+		<?php if (!empty($b_description)) echo $b_description; ?>
+		</textarea>
   </p>	
       <p>	
   <label><?php _e('Banner Heading One','sis_spa');?></label>
 	</p>
 	<p>
-		<input  name="_my_meta[heading_one]" placeholder="Enter text for product banner heading one" type="text" value="<?php if(!empty($meta['heading_one'])) echo $meta['heading_one']; ?>"> </input>
+   <input name="meta_heading_one" id="meta_heading_one" placeholder="Enter text for product banner heading one" 
+   type="text" value="<?php if (!empty($h_one)) echo $h_one; ?>"> </input>
   </p>	
       <p>	
   <label><?php _e('Banner Heading Two','sis_spa');?></label>
 	</p> 
 	<p>
-		<input  name="_my_meta[heading_two]" placeholder="Enter text for product banner heading two" type="text" value="<?php if(!empty($meta['heading_two'])) echo $meta['heading_two']; ?>"> </input>
+	<input  name="meta_heading_two" id="meta_heading_two" placeholder="Enter text for product banner heading two" 
+	type="text" value="<?php if (!empty($h_two)) echo $h_two;?>"> </input>
   </p>	
-  
  
-  
 <?php 	
 }
 
@@ -279,66 +325,44 @@ function my_meta_banner()
 
 
 
-function my_meta_save($post_id) 
+function spa_meta_save($post_id) 
 {
-	
-		if (!current_user_can('edit_post', $post_id)) return $post_id;
-	
+	 
+   
+     if ( ! current_user_can( 'edit_page', $post_id ) ){
+        return ;
+  } 
+	//if ( ! isset( $_POST['spasalon_noncename'] ) || ! wp_verify_nonce( $_POST['spasalon_noncename'], plugin_basename( __FILE__ ) ) )
+         //return ;  
 
-     $current_data = get_post_meta($post_id, '_my_meta', TRUE);	
-        if(isset($_POST['_my_meta']))
-	$new_data = $_POST['_my_meta'];
+if(isset( $_POST['post_ID'])){
+  $post_ID = $_POST['post_ID'];
 
-	my_meta_clean($new_data);
-	
-	if ($current_data) 
-	{
-		if (is_null($new_data)) delete_post_meta($post_id,'_my_meta');
-		else update_post_meta($post_id,'_my_meta',$new_data);
-	}
-	elseif (!is_null($new_data))
-	{
-		add_post_meta($post_id,'_my_meta',$new_data,TRUE);
-	}
-
-	return $post_id;
-}
-
-function my_meta_clean(&$arr)
-{
-	if (is_array($arr))
-	{
-		foreach ($arr as $i => $v)
-		{
-			if (is_array($arr[$i])) 
-			{
-				my_meta_clean($arr[$i]);
-
-				if (!count($arr[$i])) 
-				{
-					unset($arr[$i]);
-				}
-			}
-			else 
-			{
-				if (trim($arr[$i]) == '') 
-				{
-					unset($arr[$i]);
-				}
-			}
-		}
-
-		if (!count($arr)) 
-		{
-			$arr = NULL;
-		}
-	}
-} 
-
-
-
-
+ $banner_description =  sanitize_text_field($_POST['meta_banner_description']) ;
   
+
+  $heading_one = sanitize_text_field($_POST['meta_heading_one']) ;
+   $heading_two = sanitize_text_field($_POST['meta_heading_two']) ;
+
+} else {
+  $post_ID = null;
+
+ $banner_description =  null;
+
+  $heading_one = null;
+   $heading_two = null;
+}
+  
+    add_post_meta($post_ID, 'banner_description', $banner_description, true) or 
+	update_post_meta($post_ID, 'banner_description', $banner_description);
+	
+	add_post_meta($post_ID, 'heading_one', $heading_one, true) or 
+	update_post_meta($post_ID, 'heading_one', $heading_one);
+	
+    add_post_meta($post_ID, 'heading_two', $heading_two, true) or 
+	update_post_meta($post_ID, 'heading_two', $heading_two);
+	
+  }
   // code for comment
 if ( ! function_exists( 'spa_comment' ) ) :
 
@@ -352,7 +376,7 @@ function spa_comment( $comment, $args, $depth ) {
 global $data;
 
 //translations
-$leave_reply = $data['translation_reply_to_coment'] ? $data['translation_reply_to_coment'] : __('Reply','wpex');
+$leave_reply = $data['translation_reply_to_coment'] ? $data['translation_reply_to_coment'] : __('Reply','sis_spa');
 ?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
 	  

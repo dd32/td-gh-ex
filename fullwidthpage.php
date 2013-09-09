@@ -1,5 +1,5 @@
 <?php 
-  // Template Name: Fullwidthpage
+  // Template Name: Full Width Template
 ?>
 
 <?php get_template_part('pink','header')?>

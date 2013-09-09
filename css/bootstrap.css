@@ -745,6 +745,9 @@ h6 {
   line-height: 20px;
   color: inherit;
   text-rendering: optimizelegibility;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+	word-wrap:break-all;
 }
 
 h1 small,

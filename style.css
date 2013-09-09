@@ -2,7 +2,7 @@
 * Theme Name: Spasalon
 * Description: A responsive theme for SPA SALON and BEAUTY SALON type of business that uses multiple nav menus, right-sidebar,Featured Slider and Beautifully designed home page all manage via option panel.
 It has a pixel-perfect design that is great for any health care ,salons , spas etc related services who wants a new look for their site.
-* Version: 1.0
+* Version: 1.0.1
 * Author: priyanshu.mittal
 * Author URI: http://www.webriti.com
 * Tags: pink, white, full-width-template, threaded-comments, right-sidebar, one-column, two-columns, fixed-width, custom-menu, sticky-post, theme-options, translation-ready
@@ -891,6 +891,7 @@ margin:0px 0px 30px;
 font-weight: normal;
 word-wrap:break-word;
 word-break:break-all;
+ms-word-wrap: break-word;
 }
 .blog-icon-media {
     float: left;
@@ -945,7 +946,7 @@ word-break:break-all;
   font-family:roboto;
   color:#989495;
   line-height:24px;
-  font-size:12px;
+  font-size:14px;
 }
 .blog-readmore{
 display: block;
@@ -1123,7 +1124,7 @@ font-size: 16px;
 
 
 .blog-detail-content p{
-font-size:12px;
+font-size:14px;
 font-family:roboto;
 color:#989495;
 line-height:24px;
@@ -2979,5 +2980,24 @@ article.sticky .featured-post {
 
 #sidebar ul li a,.textwidget{ color:#7A8082; font-family:roboto;font-size:12px; }
 #sidebar ul li a:hover{ color:#f22853; font-family:roboto;font-size:12px;}
-#sidebar ul { margin-bottom:25px; margin-left:0px;word-wrap:break-word;word-break:break-all; }
+#sidebar ul { margin-bottom:25px; margin-left:0px;word-wrap:break-word;word-break:break-all; ms-word-wrap: break-word;}
 
+/*css for table*/
+
+.comment-content table {
+	border-bottom: 1px solid #ededed;
+	color: #757575;
+	font-size: 14px;
+	font-weight: 200;
+	
+	margin: 0;
+	width: 100%;
+}
+.comment-content th {
+    color: #636363;
+    font-size: 0.785714rem;
+    font-weight: bold;
+    line-height: 2.18182;
+    text-transform: uppercase;
+}
+td{padding-left:10px;}

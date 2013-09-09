@@ -1,5 +1,5 @@
 <?php
-function pagination($pages = '', $range = 2)
+function spa_pagination($pages = '', $range = 2)
 {
 $showitems = ($range * 2)+1;
 
@@ -36,28 +36,4 @@ echo "</ul></div>\n";
 }
 }
 
-
-
-
-/* function pagination(){
-
-
-
-				global $wp_query;
-				// post pagination
-				$args = array(
-	'base'         => add_query_arg( 'paged', '%#%' ),
-	'format'       => '',
-	'total'		   => $wp_query->max_num_pages,
-	'current'      => max( 1, get_query_var('paged') ),
-	'show_all'     => true,
-	'end_size'     => 1,
-	'mid_size'     => 1,
-	'prev_next'    => True,
-	'prev_text'    => __(' Previous','sis_spa'),
-	'next_text'    => __('Next ','sis_spa'),
-	'type'         => 'list',
-	'add_args'     => False,
-	'add_fragment' => ''
-);  */
 ?>

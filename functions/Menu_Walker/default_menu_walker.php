@@ -1,10 +1,10 @@
 <?php 
-function spasalon_page_menu_args( $args ) {
+function spa_page_menu_args( $args ) {
 	if ( ! isset( $args['show_home'] ) )
 		$args['show_home'] = true;
 	return $args;
 }
-add_filter( 'wp_page_menu_args', 'spasalon_page_menu_args' );
+add_filter( 'wp_page_menu_args', 'spa_page_menu_args' );
 
  
 function spa_fallback_page_menu( $args = array() ) {

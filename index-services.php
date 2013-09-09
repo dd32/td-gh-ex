@@ -24,7 +24,7 @@
 		
 		
          <div class="span3">
-          <h4 class="home_service"><?php echo  $service_data['service1_title']?></h4>
+          <h4 class="home_service"><?php echo  $service_data['service2_title']?></h4>
           <div class="thumbnail">
 		  
 		   	 <?php 	if($service_data['service2_image']!='')  ?>

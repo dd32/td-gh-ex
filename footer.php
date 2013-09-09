@@ -1,12 +1,9 @@
  <!-- Footer  --> 
  <?php $current_options=get_option('spa_theme_options'); 
+ 
+
   if(is_home()){ } 
-  else if(is_page_template('services_two_column.php'))
-   {?>
-      <div class="service-2c-footer-blank">
-</div>
-<?php
-   }
+  
   else{?>
  <!-----Footer Spacer Div----->
 <div class="footer-blank">

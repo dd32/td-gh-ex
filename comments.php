@@ -35,8 +35,8 @@
 
 	<?php
 		
-		elseif ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) :
-		   echo "comment are close";
+		elseif ( ! comments_open()  && post_type_supports( get_post_type(), 'comments' ) ) :
+		   _e('<p style="color: #f22853; font-family:roboto;font-size:14px;">comments are closed</p>','sis_spa');
 	?>
 		  
 	<?php endif; ?>
@@ -45,7 +45,7 @@
 
  
 <?php if ( get_option('comment_registration') && !$user_ID ) : ?>
-<p>You must be <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>">logged in</a> to post a comment.</p>
+<p><?php _e('You must be','sis_spa' ); ?><a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>"><?php _e('logged in','sis_spa');?></a> <?php _e('to post a comment.','sis_spa');?></p>
 <?php else : ?>
  <?php
  

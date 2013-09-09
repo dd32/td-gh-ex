@@ -22,8 +22,8 @@
 
 			
                 
-					<h2><?php printf( __( "Search Results for:", 'sis_spa' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
-			
+					
+					<h2><?php printf( __( 'Search Results for: %s', 'sis_spa' ), get_search_query() ); ?></h2>
 		
 
 				<?php /* Start the Loop */ ?>
