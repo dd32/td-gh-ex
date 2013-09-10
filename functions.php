@@ -189,6 +189,8 @@ function boldr_styles() {
 	$stylesheet_directory = get_stylesheet_directory(); // Current theme directory
 	$stylesheet_directory_uri = get_stylesheet_directory_uri(); // Current theme URI
 
+	$responsive_mode = boldr_get_option('responsive_mode');
+
 	/* Child theme support:
 	 * Enqueue child-theme's versions of stylesheets in /css if they exist,
 	 * or the parent theme's version otherwise
@@ -203,17 +205,20 @@ function boldr_styles() {
 	else
 		wp_register_style( 'theme-style', $template_directory_uri . '/css/theme-style.css' );	
 
-	if ( @file_exists( $stylesheet_directory . '/css/media-queries.css' ) )
-		wp_register_style( 'media-queries', $stylesheet_directory_uri . '/css/media-queries.css' );
-	else
-		wp_register_style( 'media-queries', $template_directory_uri . '/css/media-queries.css' );	
+	if ($responsive_mode != 'off'):
+		if ( @file_exists( $stylesheet_directory . '/css/media-queries.css' ) )
+			wp_register_style( 'media-queries', $stylesheet_directory_uri . '/css/media-queries.css' );
+		else
+			wp_register_style( 'media-queries', $template_directory_uri . '/css/media-queries.css' );	
+	endif;
 
 	// Always enqueue style.css from the current theme
 	wp_register_style( 'style', $stylesheet_directory_uri . '/style.css');
 
 	wp_enqueue_style( 'icefit' );
 	wp_enqueue_style( 'theme-style' );
-	wp_enqueue_style( 'media-queries' );
+	if ($responsive_mode != 'off')
+		wp_enqueue_style( 'media-queries' );
 	wp_enqueue_style( 'style' );
 
 	// Google Webfonts

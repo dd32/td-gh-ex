@@ -92,8 +92,16 @@ function boldr_settings_template() {
 			'type'          => 'radio',
 			'default'       => 'Excerpt',
 			'values'		=> array ('Excerpt', 'Full content'),
-		);		
-		
+		);
+
+		$settings_options[] = array(
+			'name'          => __('Responsive mode', 'icefit'),
+			'desc'          => __('Turn this setting off if you want your site to be unresponsive.', 'icefit'),
+			'id'            => 'responsive_mode',
+			'type'          => 'radio',
+			'default'       => 'on',
+			'values'		=> array ('on', 'off'),
+		);
 
 	$settings_options[] = array('type' => 'end_menu');
 // END PAGE 1
