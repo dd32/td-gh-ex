@@ -7,19 +7,18 @@
  * @since Customizr 3.0
  */
 ?>
-		 </div><!--/#main-wrapper"-->
+		<?php tc__f('rec' , __FILE__ , __FUNCTION__ ); ?>
+		
+		<?php do_action( '__before_footer' ); ?>
+		
+			<!-- FOOTER -->
+			<footer id="footer">
+			 	<?php do_action( '__footer' ); // hook of footer widget and colophon?>
+			</footer>
 
-		 <!-- FOOTER -->
-		<footer id="footer">
+		<?php wp_footer(); //do not remove, used by the theme and many plugins?>
 
-		 	<?php 
-				do_action( '__sidebar' , 'footer' );
-
-		 		do_action( '__footer' );//display template, you can hook here
-		 	?>
-		 </footer>
-
-		<?php wp_footer(); ?>
+		<?php do_action( '__after_footer' ); ?>
 
 	</body>
 

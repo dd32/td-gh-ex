@@ -14,42 +14,51 @@
 
 class TC_slider {
 
+    //Access any method or var of the class with classname::$instance -> var or method():
+    static $instance;
+
     function __construct () {
-        add_action( '__slider'                              , array( $this , 'tc_display_slider' ));
-        add_action( 'wp_footer'                             , array( $this , 'tc_slider_footer_options' ),20);
+
+        self::$instance =& $this;
+
+        add_action( '__after_header'                   , array( $this , 'tc_slider_display' ));
+        add_action( 'wp_footer'                        , array( $this , 'tc_slider_footer_options' ),20);
     }
 
   
   /**
-   *
+   * Displays the slider based on the context : home, post/page.
+   * 
    * @package Customizr
    * @since Customizr 1.0
    *
    */
-  function tc_display_slider() {
+  function tc_slider_display() {
+      
+
       //prevent the main ID override when creating a new query. (only if it is included in the main loop but who knows...)
       if (is_404() || is_archive() || is_search())
         return;
 
-      $__options             = tc__f ( '__options' );
+      $__options                    = tc__f( '__options' );
 
       //get the current slider id
-      $slider_name_id               = tc__f ( '__screen_slider' );
+      $slider_name_id               = esc_attr(get_post_meta( tc__f ( '__ID' ), $key = 'post_slider_key' , $single = true ));
       
-        if ( is_front_page() && $__options['tc_front_slider'] !=null) {
+      if ( tc__f('__is_home') && $__options['tc_front_slider'] !=null ) {
           $slider_name_id           = $__options['tc_front_slider'];
-        }
+      }
 
       //is the slider on?
       $slider_active                = esc_attr(get_post_meta( get_the_ID(), $key = 'post_slider_check_key' , $single = true ));
-        if ( is_front_page() && $__options['tc_front_slider'] !=null) {
+        if ( tc__f('__is_home') && $__options['tc_front_slider'] !=null) {
           $slider_active            = true;
       }
 
       //get slider options if any
       $layout_value                 = esc_attr(get_post_meta( get_the_ID(), $key = 'slider_layout_key' , $single = true ));
-      if (is_home() || is_front_page()) {
-        $layout_value               = tc__f ( '__get_options' , 'tc_slider_width' );
+      if ( tc__f('__is_home') ) {
+        $layout_value               = $__options['tc_slider_width'];
       }
 
       $layout_class                 = '';
@@ -63,7 +72,9 @@ class TC_slider {
         $img_size                   = 'slider-full';
       }
 
-      //render the slider : two cases
+      ob_start();
+      
+      //render the slider : two cases demo or not demo (that is the ...)
       switch ( $slider_name_id) {
         case 'demo':
 
@@ -71,9 +82,10 @@ class TC_slider {
         $admin_link                 = '';   
         if (is_user_logged_in())
           $admin_link                = admin_url().'customize.php';
-
         ?>
+
           <div id="customizr-slider" class="<?php echo $layout_class ?> carousel slide">
+            <?php tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__ ); ?>
             <div class="carousel-inner">
                 <div class="item active">
                    <div class="carousel-image">
@@ -115,9 +127,6 @@ class TC_slider {
         
 
         default:
-            $__options['another_query_in_the_main_loop'] = true;
-            $__options['original_ID'] = get_the_ID();
-
             //get the slider ID
             /*There is a tricky case with the blog page. If we choose to assign a page for the blog posts, then this page will return a 
             *'true' value if we test it with is_home(). Even if it is not the home page of the website!
@@ -134,15 +143,44 @@ class TC_slider {
               return;
             }
             
+            //get slides
             $slides = $__options['tc_sliders'][$slider_name_id];
+
+            //check if we have slides AND if they have an image!
+            $has_slides = array();
+
+            if ( $slides ) {
+
+              foreach ($slides as $attachment_id) {
+
+                 $slide_img = wp_get_attachment_image( $attachment_id);
+
+                 if (isset($slide_img) && !empty($slide_img)) {
+                    $has_slides[] = 1;
+                 }
+                 else {
+                    $has_slides[] = 0;
+                 }
+              }//end foreach
+            }//endif
+
+            if ( in_array(1, $has_slides) ) {
+              $has_slides = true;
+            }
+            else {
+              $has_slides = false;
+            }
 
             //init slide index
             $i = 0;
+
             ?>
-            <?php if( $slides) : ?>
+            <?php if( $slides && $has_slides ) : ?>
+
+              <?php  tc__f('rec' , __FILE__ , __FUNCTION__, __CLASS__ ); ?>
 
               <div id="customizr-slider" class="<?php echo $layout_class ?> carousel slide">
-
+                <?php tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__ ); ?>
                   <div class="carousel-inner">
 
                     <?php foreach ( $slides as $s) { 
@@ -153,12 +191,14 @@ class TC_slider {
                           continue;
                         }
 
-                        //set up variables
                         $id                 = $slide_object -> ID;
+
+                        //check if slider enable of this attachment
                         $slider_checked     = esc_attr(get_post_meta( $id, $key = 'slider_check_key' , $single = true ));
+
                         $alt                = trim(strip_tags(get_post_meta( $id, '_wp_attachment_image_alt' , true)));
                         $title              = esc_attr(get_post_meta( $id, $key = 'slide_title_key' , $single = true ));
-                        $text               = esc_textarea(get_post_meta( $id, $key = 'slide_text_key' , $single = true ));
+                        $text               = esc_html(get_post_meta( $id, $key = 'slide_text_key' , $single = true ));
                         $text_color         = esc_attr(get_post_meta( $id, $key = 'slide_color_key' , $single = true ));
                         $button_text        = esc_attr(get_post_meta( $id, $key = 'slide_button_key' , $single = true ));
                         $button_link        = esc_attr(get_post_meta( $id, $key = 'slide_link_key' , $single = true ));
@@ -173,14 +213,16 @@ class TC_slider {
                           $color_style      = 'style="color:'.$text_color.'"';
                         }
 
+                        //attachment image
+                        $slide_to_display   =  wp_get_attachment_image( $id, $img_size, array( 'class' => 'slide' , 'alt' => $alt ) );
                       ?>
 
-                      <?php if (isset( $slider_checked) && $slider_checked == 1) : ?>
+                      <?php if (isset( $slider_checked) && $slider_checked == 1 && isset($slide_to_display) && !empty($slide_to_display)) : ?>
 
                         <div class="item <?php echo $active; ?>">
 
                            <div class="carousel-image <?php echo $img_size ?>">
-                            <?php echo wp_get_attachment_image( $id, $img_size, array( 'class' => 'slide' , 'alt' => $alt ) ); ?>
+                            <?php echo $slide_to_display ?>
                            </div>
 
                             <?php if ( $title != null || $text != null || $button_text != null ) : ?>
@@ -225,6 +267,9 @@ class TC_slider {
             <?php
           break;
       }//end switch
+      $html = ob_get_contents();
+      ob_end_clean();
+      echo apply_filters( 'tc_slider_display', $html );
     }
 
 
@@ -242,9 +287,9 @@ class TC_slider {
       $delay_value      = get_post_meta( get_the_ID(), $key = 'slider_delay_key' , $single = true );
       
       //get the slider id and delay if we display home/front page
-      if ( is_front_page() || is_home()) {
-        $name_value     = tc__f ( '__get_options' , 'tc_front_slider' );
-        $delay_value    = tc__f ( '__get_options' , 'tc_slider_delay' );
+      if ( tc__f('__is_home') ) {
+        $name_value     = tc__f( '__get_option' , 'tc_front_slider' );
+        $delay_value    = tc__f( '__get_option' , 'tc_slider_delay' );
       }
 
       //render the delay script
@@ -257,7 +302,9 @@ class TC_slider {
 
       //fire the slider with the optionnal delay parameter
       if( $name_value != null) {//check if a slider is defined
-       
+
+      tc__f('rec' , __FILE__ , __FUNCTION__, __CLASS__ );
+
         ?>
           <script type="text/javascript">
             !function ( $) {

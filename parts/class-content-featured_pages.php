@@ -14,9 +14,15 @@
 
 class TC_featured_pages {
 
+    //Access any method or var of the class with classname::$instance -> var or method():
+    static $instance;
+
     function __construct () {
-        add_action  ( '__fp_block'               , array( $this , 'tc_display_fp_block' ));
-        add_action  ( '__fp_single'              , array( $this , 'tc_display_fp_single' ), 10, 2);
+
+        self::$instance =& $this;
+
+        add_action  ( '__before_main_container'     , array( $this , 'tc_fp_block_display'), 10 );
+        add_action  ( '__fp_single'                 , array( $this , 'tc_fp_single_display' ), 10, 2);
     }
 
 
@@ -28,44 +34,32 @@ class TC_featured_pages {
 	 * @package Customizr
 	 * @since Customizr 3.0
 	 */
-    function tc_display_fp_block() {
-    		//global customizr options array
-    		$__options              = tc__f ( '__options' );
+    function tc_fp_block_display() {
 
     		//get display options
-    		$tc_show_featured_pages 	     = esc_attr( $__options['tc_show_featured_pages']);
-    		$tc_show_featured_pages_img    = esc_attr( $__options['tc_show_featured_pages_img']);
+    		$tc_show_featured_pages 	     = esc_attr( tc__f( '__get_option' , 'tc_show_featured_pages' ) );
+    		$tc_show_featured_pages_img    = esc_attr( tc__f( '__get_option' , 'tc_show_featured_pages_img' ) );
 
     		//set the areas array
     		$areas = array ( 'one' , 'two' , 'three' );
 
     		?>
 
-    		<?php if ( $tc_show_featured_pages  != 0 && (is_front_page())) : ?>
+    		<?php if ( $tc_show_featured_pages  != 0 && tc__f('__is_home')  ) : ?>
+
+          <?php tc__f('rec' , __FILE__ , __FUNCTION__, __CLASS__ ); ?>
+
+          <?php ob_start(); ?>
 
     			<div class="container marketing">
+            <?php tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__ ); ?>
 
     				<div class="row widget-area" role="complementary">
 
     					<?php foreach ( $areas as $area) : ?>
 
     						<div class="span4">
-    							<?php 
-    								if ( !empty( $__options['tc_featured_page_'.$area] ) )  {
-    									do_action(
-    										'__fp_single' , 
-    										$area,	
-    										$tc_show_featured_pages_img
-    										);
-    								}
-    								else {
-    									do_action(
-    										'__fp_single' , 
-    										'not-set' ,	
-    										$tc_show_featured_pages_img
-    										);
-    								}
-    							 ?>
+    							<?php do_action('__fp_single' , $area, $tc_show_featured_pages_img);?>
     						</div><!-- .span4 -->
 
     					<?php endforeach; ?>
@@ -73,8 +67,15 @@ class TC_featured_pages {
     				</div><!-- .row widget-area -->
 
     			</div><!-- .container -->
+          <?php if ( !tc__f( '__is_home_empty')) : ?>
+    			   <hr class="featurette-divider">
+          <?php endif; ?>
 
-    			<hr class="featurette-divider">
+           <?php
+            $html = ob_get_contents();
+            ob_end_clean();
+            echo apply_filters( 'tc_fp_block_display' , $html );
+            ?>
 
     		<?php endif; ?>
     	<?php
@@ -84,7 +85,7 @@ class TC_featured_pages {
 
 
 
-	/**
+	     /**
       * The template displaying one single featured page
       *
       * @package Customizr
@@ -92,63 +93,64 @@ class TC_featured_pages {
       * @param area are defined in featured-pages templates,show_img is a customizer option
       * @todo better area definition : dynamic
       */
-      function tc_display_fp_single( $area,$show_img) {
-        switch ( $area) {
-          case 'not-set':
-              //admin link if user logged in
-              $featured_page_link           = '';
-              $admin_link                   = '';
-              if (is_user_logged_in()) {
-              $featured_page_link           = admin_url().'customize.php';
-              $admin_link                   = '<a href="'.admin_url().'customize.php" title="'.__( 'Customizer screen' , 'customizr' ).'">'.__( ' here' , 'customizr' ).'</a>';
-              }
+      function tc_fp_single_display( $area,$show_img) {
 
-              //rendering
-              $featured_page_id             =  null;
-              $featured_page_title          =  __( 'Featured page' , 'customizr' );
-              $text                         =  sprintf(__( 'Featured page description text : use the page excerpt or set your own custom text in the Customizr screen%s.' , 'customizr' ),
-              $admin_link 
-                );
-              $tc_thumb                     =  '<img data-src="holder.js/270x250" alt="Holder Thumbnail">';
+        //if not set
+        if ( null == tc__f( '__get_option' , 'tc_featured_page_'.$area ) ) {
+            //admin link if user logged in
+            $featured_page_link             = '';
+            $admin_link                     = '';
+            if (is_user_logged_in()) {
+            $featured_page_link             = admin_url().'customize.php';
+            $admin_link                     = '<a href="'.admin_url().'customize.php" title="'.__( 'Customizer screen' , 'customizr' ).'">'.__( ' here' , 'customizr' ).'</a>';
+            }
 
-            break;
+            //rendering
+            $featured_page_id               =  null;
+            $featured_page_title            =  __( 'Featured page' , 'customizr' );
+            $text                           =  sprintf(__( 'Featured page description text : use the page excerpt or set your own custom text in the Customizr screen%s.' , 'customizr' ),
+            $admin_link 
+              );
+            $tc_thumb                       =  '<img data-src="holder.js/270x250" alt="Holder Thumbnail">';
+
+        }
           
-
-
-          default://for areas one, two, three
+        else {
               //get saved options
-              $__options                    = tc__f ( '__options' );
+              $__options                    = tc__f( '__options' );
               $featured_page_id             = esc_attr( $__options['tc_featured_page_'.$area]);
               $featured_page_link           = get_permalink( $featured_page_id );
               $featured_page_title          = get_the_title( $featured_page_id );
-              $featured_text                = esc_attr( $__options['tc_featured_text_'.$area] );
+              $featured_text                = strip_tags(html_entity_decode((esc_html( $__options['tc_featured_text_'.$area] ))));
 
               //get the page/post object
-              $page                         =  get_post( $featured_page_id);
+              $page                         =  get_post($featured_page_id);
               
               //limit text to 200 car
-              $text                         = strip_tags( $featured_text);
-              if (empty( $text)) {
-                $text                       = strip_tags( $page->post_content);
+              $text                         = $featured_text ;
+              if ( empty($text) && !post_password_required($featured_page_id) ) {
+                $text                       = strip_tags(apply_filters( 'the_content' , $page->post_content ));
               }
-              if (strlen( $text) > 200) {
+
+              if ( strlen($text) > 200 ) {
                 $text                       = substr( $text,0,strpos( $text, ' ' ,200));
-                $text                       = esc_html( $text) . ' ...';
+                $text                       = $text . ' ...';
               }
+
               else {
-                $text                       = esc_textarea( $text );
+                $text                       = $text;
               }
               
               
             //set the image : uses thumbnail if any then >> the first attached image then >> a holder script
             $tc_thumb_size                  = 'tc-thumb';
 
-             if (has_post_thumbnail( $featured_page_id)) {
+             if ( has_post_thumbnail( $featured_page_id) ) {
                   $tc_thumb_id              = get_post_thumbnail_id( $featured_page_id);
 
                   //check if tc-thumb size exists for attachment and return large if not
                   $image = wp_get_attachment_image_src( $tc_thumb_id, $tc_thumb_size);
-                  if (null == $image[3])
+                  if ( null == $image[3] )
                     $tc_thumb_size          = 'medium';
 
                   $tc_thumb                 = get_the_post_thumbnail( $featured_page_id,$tc_thumb_size);
@@ -188,28 +190,40 @@ class TC_featured_pages {
 
               }//end else
 
-              if (!isset( $tc_thumb)) {
+              if (!isset( $tc_thumb) || post_password_required($featured_page_id) ) {
                 $tc_thumb                   = '<img data-src="holder.js/270x250" alt="Holder Thumbnail" />';
               }
-
-            break;
-          }//end switch
+          }//end if
 
           //Rendering
+          ob_start();
           ?>
-            <div class="widget-front">
-              <?php if ( isset( $show_img) && $show_img == 1) : //check if image option is checked ?>
-                  <div class="thumb-wrapper <?php if(!has_post_thumbnail( $featured_page_id )) {echo 'tc-holder';} ?>">
-                      <a class="round-div" href="<?php echo $featured_page_link ?>" title="<?php echo $featured_page_title ?>"></a>
-                        <?php echo $tc_thumb; ?>
-                  </div>
-              <?php endif; ?>
-                <h2><?php echo $featured_page_title ?></h2>
-                <p><?php echo $text;  ?></p>
-                <p><a class="btn btn-primary" href="<?php echo $featured_page_link ?>" title="<?php echo $featured_page_title ?>"><?php _e( 'Read more &raquo;' , 'customizr' ) ?></a></p>
-            </div><!-- /.widget-front -->
+
+          <div class="widget-front">
+            <?php if ( isset( $show_img) && $show_img == 1 ) : //check if image option is checked ?>
+
+                <div class="thumb-wrapper <?php if(!isset( $tc_thumb)) {echo 'tc-holder';} ?>">
+                    <a class="round-div" href="<?php echo $featured_page_link ?>" title="<?php echo $featured_page_title ?>"></a>
+                      <?php echo $tc_thumb; ?>
+                </div>
+
+            <?php endif; ?>
+
+              <h2><?php echo $featured_page_title ?></h2>
+              <p class="fp-text-<?php echo $area ?>"><?php echo $text;  ?></p>
+              <p>
+                 <?php tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__, 'right'); ?>
+                <a class="btn btn-primary fp-button" href="<?php echo $featured_page_link ?>" title="<?php echo $featured_page_title ?>">
+                  <?php echo esc_attr( tc__f( '__get_option' , 'tc_featured_page_button_text') ) ?>
+                </a>
+              </p>
+
+          </div><!-- /.widget-front -->
           
           <?php
+          $html = ob_get_contents();
+          ob_end_clean();
+          echo apply_filters( 'tc_fp_single_display' , $html );
       }//end of function
 
  }//end of class

@@ -14,35 +14,41 @@
 
 class TC_customize {
 
+    //Access any method or var of the class with classname::$instance -> var or method():
+    static $instance;
+
     function __construct () {
-    		add_action ( 'admin_menu'						, array( $this , 'tc_add_options_menu' ));
-    		add_action ( 'wp_before_admin_bar_render'		, array( $this , 'tc_add_admin_bar_options_menu' ));
 
-    		//add control class
-    		add_action ( 'customize_register'				, array( $this , 'tc_add_controls_class' ) ,10,1);
+        self::$instance =& $this;
 
-    		//add settings, controls and scripts
-    		add_action ( 'customize_register'				, array( $this , 'tc_customize_register' ) ,20,1 );
-    		
-    		//preview script
-    		add_action ( 'customize_preview_init'			, array( $this , 'tc_customize_preview_js' ));
+		//add control class
+		add_action ( 'customize_register'				, array( $this , 'tc_add_controls_class' ) ,10,1);
 
-    		//Redirect on activation (first activation only)
-    		add_action ( 'admin_init'						, array( $this , 'tc_theme_activation' ));
+		//add the customizer built with the builder below
+		add_action ( 'customize_register'				, array( $this , 'tc_customize_register' ) ,20,1 );
 
-    		//customizer section, settings and controls arguments
-    		add_filter ( '__customize_args'					, array( $this , 'tc_customize_arguments' ));
+		//ARGS : customizer section, settings and controls accepted arguments
+		add_filter ( '__customize_args'					, array( $this , 'tc_customize_arguments' ));
 
-    		//customizer factory filter
-    		add_filter ( '__customize_factory'				, array( $this , 'tc_customize_factory' ), 10, 3);
+		//MAP  of the customizer : sections, settings, controls.
+		add_filter ( '__customize_map'					, array( $this , 'tc_customizer_map' ));
 
-    		//list of accepted arguments for customizer
-    		add_filter ( '__customize_setup'				, array( $this , 'tc_customize_setup' ));
+		//BUILDER of the customizer using args + map
+		add_filter ( '__customize_factory'				, array( $this , 'tc_customize_factory' ), 10, 3);
 
-    		//sanitazition filters
-    		add_filter ( '__sanitize_textarea'				, array( $this , 'tc_sanitize_textarea' ));
-    		add_filter ( '__sanitize_number'				, array( $this , 'tc_sanitize_number' ));
-			add_filter ( '__sanitize_url'					, array( $this , 'tc_sanitize_url' ));
+		//sanitazition filters
+		add_filter ( '__sanitize_textarea'				, array( $this , 'tc_sanitize_textarea' ));
+		add_filter ( '__sanitize_number'				, array( $this , 'tc_sanitize_number' ));
+		add_filter ( '__sanitize_url'					, array( $this , 'tc_sanitize_url' ));
+
+		//preview script
+		add_action ( 'customize_preview_init'			, array( $this , 'tc_customize_preview_js' ));
+
+		//add option to menus
+		add_action ( 'admin_menu'						, array( $this , 'tc_add_options_menu' ));
+		add_action ( 'wp_before_admin_bar_render'		, array( $this , 'tc_add_admin_bar_options_menu' ));
+
+
     }
 
 
@@ -74,9 +80,12 @@ class TC_customize {
 	     global $wp_admin_bar;
 	     $wp_admin_bar->add_menu( array(
 	       'parent' => false,
-	       'id' => 'theme_editor_admin_bar' ,
+	       'id' => 'tc-customizr' ,
 	       'title' =>  __( 'Customiz\'it!' , 'customizr' ),
-	       'href' => admin_url( 'customize.php' )
+	       'href' => admin_url( 'customize.php' ),
+	       'meta'   => array(
+              'title'  => __( 'Customize your website at any time!', 'customizr' ),
+            ),
 	     ));
 	   }
 	}
@@ -85,7 +94,7 @@ class TC_customize {
 
 
 	 /**
-	 * adds controls to customizer
+	 * Adds controls to customizer
 	 * @package Customizr
 	 * @since Customizr 1.0 
 	 */
@@ -101,19 +110,20 @@ class TC_customize {
 	 * @since Customizr 3.0 
 	 */
 	function tc_customize_register( $wp_customize) {
-		return $this -> tc_customize_factory ( $wp_customize , $args = $this -> tc_customize_arguments(), $setup = $this -> tc_customize_setup() );
+		return $this -> tc_customize_factory ( $wp_customize , $args = $this -> tc_customize_arguments(), $setup = $this -> tc_customizer_map() );
 	}
 
 
 
+
 	/**
-	 * Defines sections, settings and function of customizer and return and array
+	 * Retrieves slider names and generate the select list
 	 * @package Customizr
-	 * @since Customizr 3.0 
+	 * @since Customizr 3.0.1
 	 */
-	function tc_customize_setup() {
-		//retrieve slider names and generate the select list
-	    $slider_names = tc__f ( '__get_options' , 'tc_sliders' );
+	function tc_slider_choices() {
+	    $__options		=  	get_option('tc_theme_options');
+	    $slider_names 	= 	isset($__options['tc_sliders']) ? $__options['tc_sliders'] : array();
 
 		$slider_choices = array( 
 			0 		=> 	__( '&mdash; No slider &mdash;' , 'customizr' ),
@@ -124,8 +134,21 @@ class TC_customize {
 				$slider_choices[$tc_name] = $tc_name;
 			}
 		}
+		return $slider_choices;
+	}
 
 
+
+
+	/**
+	* Defines sections, settings and function of customizer and return and array
+	* Also used to get the default options array, in this case $get_default = true and we DISABLE the __get_option (=>infinite loop) 
+	*	
+	* @package Customizr
+	* @since Customizr 3.0 
+	*/
+	function tc_customizer_map($get_default = null) {
+		
 		//customizer option array
 		$customize_array = array (
 		'remove_section'  		 =>   array(
@@ -179,10 +202,22 @@ class TC_customize {
 																	'description'	=>	__( 'Enable/disable lightbox effect on images' , 'customizr' ),
 								),
 
+								/*'tc_plugins_compatibility'			=> array(
+																	'title'			=>	__( 'Plugins compatibility' , 'customizr' ),
+																	'priority'		=>	190,
+																	'description'	=>	__( 'Ensure Customizr compatibilty with some plugins' , 'customizr' ),
+								),*/
+
 								'tc_custom_css'						=> array(
 																	'title'			=>	__( 'Custom CSS' , 'customizr' ),
-																	'priority'		=>	190,
+																	'priority'		=>	200,
 																	'description'	=>	__( 'Add your own CSS' , 'customizr' ),
+								),
+
+								'tc_debug_section'					=> array(
+																	'title'			=>	__( 'Dev Tools (advanced users)' , 'customizr' ),
+																	'priority'		=>	210,
+																	'description'	=>	__( 'Enable/disable the Dev Tools' , 'customizr' ),
 								),
 
 		),//end of add_section array
@@ -251,7 +286,7 @@ class TC_customize {
 								//logo upload
 								'tc_theme_options[tc_logo_upload]'	=> array(
 																	'control'		=>	'WP_Customize_Upload_Control' ,
-																	'label'			=>	__( 'Logo Upload' , 'customizr' ),
+																	'label'			=>	__( 'Logo Upload (supported formats : .jpg, .png, .gif)' , 'customizr' ),
 																	'section'		=>	'tc_logo_settings' ,
 								),
 
@@ -273,7 +308,7 @@ class TC_customize {
 								//favicon
 								'tc_theme_options[tc_fav_upload]'	=> array(
 																	'control'		=>	'WP_Customize_Upload_Control' ,
-																	'label'    		=> __( 'Favicon Upload' , 'customizr' ),
+																	'label'    		=> __( 'Favicon Upload (supported formats : .ico, .png, .gif)' , 'customizr' ),
 																	'section'		=>	'tc_logo_settings' ,
 								),
 
@@ -298,8 +333,9 @@ class TC_customize {
 																	'type'			=> 'select' ,
 																	'priority'      => 1,
 																	'choices' 		=> array(
-																					'posts' => __( 'Your latest posts' , 'customizr'  ),
-																					'page'  => __( 'A static page' , 'customizr'  ),
+																					'nothing' 	=> __( 'Don\'t show any posts or page' , 'customizr'),
+																					'posts' 	=> __( 'Your latest posts' , 'customizr'  ),
+																					'page'  	=> __( 'A static page' , 'customizr'  ),
 																	),
 								),
 
@@ -342,7 +378,8 @@ class TC_customize {
 																	'label'   		=> __( 'Select front page slider' , 'customizr' ),
 																	'section' 		=> 'tc_frontpage_settings' ,
 																	'type'    		=> 'select' ,
-																	'choices' 		=> $slider_choices,
+																	//!important
+																	'choices' 		=> ($get_default == true) ? null : $this ->tc_slider_choices(),
 																	'priority'      => 20,
 								),
 
@@ -404,6 +441,16 @@ class TC_customize {
 																	'priority'      => 60,
 								),
 
+								//display featured page images
+								'tc_theme_options[tc_featured_page_button_text]' => array(
+																	'default'       => __( 'Read more &raquo;' , 'customizr' ),
+																	'transport'     =>  'postMessage',
+																	'label'    		=> __( 'Button text' , 'customizr' ),
+																	'section'  		=> 'tc_frontpage_settings' ,
+																	'type'     		=> 'text' ,
+																	'priority'      => 65,
+								),
+
 								//widget page one
 								'tc_theme_options[tc_featured_page_one]' => array(
 																	'label'    		=> __( 'Home featured page one' , 'customizr' ),
@@ -431,33 +478,36 @@ class TC_customize {
 								//widget page text one
 								'tc_theme_options[tc_featured_text_one]' => array(
 																	'sanitize_callback' => array( $this , 'tc_sanitize_textarea' ),
+																	'transport' 	=> 'postMessage',
 																	'control'		=> 'TC_controls' ,
 																	'label'    		=> __( 'Featured text one (200 car. max)' , 'customizr' ),
 																	'section'  		=> 'tc_frontpage_settings' ,
 																	'type'     		=> 'textarea' ,
-																	'notice'		=> __( 'Leave this field empty if you want to use the selected page excerpt.' , 'customizr' ),
+																	'notice'		=> __( 'You need to select a page first. Leave this field empty if you want to use the page excerpt.' , 'customizr' ),
 																	'priority'      => 100,
 								),
 
 								//widget page text two
 								'tc_theme_options[tc_featured_text_two]' => array(
 																	'sanitize_callback' => array( $this , 'tc_sanitize_textarea' ),
+																	'transport' 	=> 'postMessage',
 																	'control'		=> 'TC_controls' ,
 																	'label'    		=> __( 'Featured text two (200 car. max)' , 'customizr' ),
 																	'section'  		=> 'tc_frontpage_settings' ,
 																	'type'     		=> 'textarea' ,
-																	'notice'		=> __( 'Leave this field empty if you want to use the selected page excerpt.' , 'customizr' ),
+																	'notice'		=> __( 'You need to select a page first. Leave this field empty if you want to use the page excerpt.' , 'customizr' ),
 																	'priority'      => 110,
 								),
 
 								//widget page text three
 								'tc_theme_options[tc_featured_text_three]' => array(
 																	'sanitize_callback' => array( $this , 'tc_sanitize_textarea' ),
+																	'transport' 	=> 'postMessage',
 																	'control'		=> 'TC_controls' ,
 																	'label'    		=> __( 'Featured text three (200 car. max)' , 'customizr' ),
 																	'section'  		=> 'tc_frontpage_settings' ,
 																	'type'     		=> 'textarea' ,
-																	'notice'		=> __( 'Leave this field empty if you want to use the selected page excerpt.' , 'customizr' ),
+																	'notice'		=> __( 'You need to select a page first. Leave this field empty if you want to use the page excerpt.' , 'customizr' ),
 																	'priority'      => 120,
 								),
 
@@ -556,28 +606,143 @@ class TC_customize {
 
 
 								/*-----------------------------------------------------------------------------------------------------
-														                   SOCIAL LINKS
-								------------------------------------------------------------------------------------------------------*/						
+														             SOCIAL POSITIONS AND NETWORKS
+								------------------------------------------------------------------------------------------------------*/
 								//Position checkboxes
-								'social_positions'	=>	array(
-													'footer'		=> __( 'footer' , 'customizr' ),
-													'right-sidebar' => __( 'right-sidebar' , 'customizr' ),
-													'left-sidebar' 	=> __( 'left-sidebar' , 'customizr' ),
-													'header' 		=> __( 'header' , 'customizr' )									
+								'tc_theme_options[tc_social_in_header]'	=>	array(
+																	'default'       => 1,
+																	'label'    		=> __( 'Social links in header' , 'customizr' ),
+																	'section'  		=> 'tc_social_settings' ,
+																	'type'     		=> 'checkbox' ,
+																	'priority'       => 10
 								),
 
-								//Social networks
-								'social_networks'	=>	array(
-													'tc_rss'    	=> __( 'RSS feed (default is the wordpress feed)' , 'customizr' ),
-											        'tc_twitter'  	=> __( 'Twitter profile url' , 'customizr' ),
-											        'tc_facebook' 	=> __( 'Facebook profile url' , 'customizr' ),
-											        'tc_google'   	=> __( 'Google+ profile url' , 'customizr' ), 
-											        'tc_youtube'  	=> __( 'Youtube profile url' , 'customizr' ),
-											        'tc_pinterest'	=> __( 'Pinterest profile url' , 'customizr' ),
-											        'tc_github'   	=> __( 'Github profile url' , 'customizr' ),
-											        'tc_dribbble' 	=> __( 'Dribbble profile url' , 'customizr' ),
-											        'tc_linkedin' 	=> __( 'LinkedIn profile url' , 'customizr' )
+								'tc_theme_options[tc_social_in_left-sidebar]'	=>	array(
+																	'default'       => 0,
+																	'label'    		=> __( 'Social links in left sidebar' , 'customizr' ),
+																	'section'  		=> 'tc_social_settings' ,
+																	'type'     		=> 'checkbox' ,
+																	'priority'       => 20
 								),
+
+								'tc_theme_options[tc_social_in_right-sidebar]'	=>	array(
+																	'default'       => 0,
+																	'label'    		=> __( 'Social links in right sidebar' , 'customizr' ),
+																	'section'  		=> 'tc_social_settings' ,
+																	'type'     		=> 'checkbox' ,
+																	'priority'       => 30
+								),
+
+								'tc_theme_options[tc_social_in_footer]'	=>	array(
+																	'default'       => 1,
+																	'label'    		=> __( 'Social links in footer' , 'customizr' ),
+																	'section'  		=> 'tc_social_settings' ,
+																	'type'     		=> 'checkbox' ,
+																	'priority'       => 40
+								),
+								
+
+								//Networks
+								'tc_theme_options[tc_rss]'	=>	array(
+																	'default'       => get_bloginfo( 'rss_url' ),
+																	'sanitize_callback' => array( $this , 'tc_sanitize_url' ),
+																	'control'		=> 'TC_controls' ,
+																	'label'    		=> __( 'RSS feed (default is the wordpress feed)' , 'customizr' ),
+																	'section'  		=> 'tc_social_settings' ,
+																	'type'     		=> 'url',
+																	'priority'       => 50
+								),
+
+								'tc_theme_options[tc_twitter]'	=>	array(
+																	'sanitize_callback' => array( $this , 'tc_sanitize_url' ),
+																	'control'		=> 'TC_controls' ,
+																	'label'    		=> __( 'Twitter profile url' , 'customizr' ),
+																	'section'  		=> 'tc_social_settings' ,
+																	'type'     		=> 'url',
+																	'priority'       => 60
+								),
+
+								'tc_theme_options[tc_facebook]'	=>	array(
+																	'sanitize_callback' => array( $this , 'tc_sanitize_url' ),
+																	'control'		=> 'TC_controls' ,
+																	'label'    		=> __( 'Facebook profile url' , 'customizr' ),
+																	'section'  		=> 'tc_social_settings' ,
+																	'type'     		=> 'url' ,
+																	'priority'       => 70
+								),
+
+								'tc_theme_options[tc_google]'	=>	array(
+																	'sanitize_callback' => array( $this , 'tc_sanitize_url' ),
+																	'control'		=> 'TC_controls' ,
+																	'label'    		=> __( 'Google+ profile url' , 'customizr' ), 
+																	'section'  		=> 'tc_social_settings' ,
+																	'type'     		=> 'url' ,
+																	'priority'       => 74 
+								),
+
+								'tc_theme_options[tc_instagram]'	=>	array(
+																	'sanitize_callback' => array( $this , 'tc_sanitize_url' ),
+																	'control'		=> 'TC_controls' ,
+																	'label'    		=> __( 'Instagram profile url' , 'customizr' ), 
+																	'section'  		=> 'tc_social_settings' ,
+																	'type'     		=> 'url' ,
+																	'priority'       => 78 
+								),
+
+								'tc_theme_options[tc_wordpress]'	=>	array(
+																	'sanitize_callback' => array( $this , 'tc_sanitize_url' ),
+																	'control'		=> 'TC_controls' ,
+																	'label'    		=> __( 'WordPress profile url' , 'customizr' ), 
+																	'section'  		=> 'tc_social_settings' ,
+																	'type'     		=> 'url' ,
+																	'priority'       => 80 
+								),
+
+								'tc_theme_options[tc_youtube]'	=>	array(
+																	'sanitize_callback' => array( $this , 'tc_sanitize_url' ),
+																	'control'		=> 'TC_controls' ,
+																	'label'    		=> __( 'Youtube profile url' , 'customizr' ), 
+																	'section'  		=> 'tc_social_settings' ,
+																	'type'     		=> 'url' ,
+																	'priority'       => 90 
+								),
+
+								'tc_theme_options[tc_pinterest]'	=>	array(
+																	'sanitize_callback' => array( $this , 'tc_sanitize_url' ),
+																	'control'		=> 'TC_controls' ,
+																	'label'    		=> __( 'Pinterest profile url' , 'customizr' ),
+																	'section'  		=> 'tc_social_settings' ,
+																	'type'     		=> 'url' ,
+																	'priority'       => 100 
+								),
+
+								'tc_theme_options[tc_github]'	=>	array(
+																	'sanitize_callback' => array( $this , 'tc_sanitize_url' ),
+																	'control'		=> 'TC_controls' ,
+																	'label'    		=> __( 'Github profile url' , 'customizr' ),
+																	'section'  		=> 'tc_social_settings' ,
+																	'type'     		=> 'url' ,
+																	'priority'       => 110 
+								),
+
+								'tc_theme_options[tc_dribbble]'	=>	array(
+																	'sanitize_callback' => array( $this , 'tc_sanitize_url' ),
+																	'control'		=> 'TC_controls' ,
+																	'label'    		=> __( 'Dribbble profile url' , 'customizr' ),
+																	'section'  		=> 'tc_social_settings' ,
+																	'type'     		=> 'url' ,
+																	'priority'       => 120 
+								),
+
+								'tc_theme_options[tc_linkedin]'	=>	array(
+																	'sanitize_callback' => array( $this , 'tc_sanitize_url' ),
+																	'control'		=> 'TC_controls' ,
+																	'label'    		=> __( 'LinkedIn profile url' , 'customizr' ),
+																	'section'  		=> 'tc_social_settings' ,
+																	'type'     		=> 'url' ,
+																	'priority'       => 130 
+								),
+
 
 								/*-----------------------------------------------------------------------------------------------------
 														                   IMAGE SETTINGS
@@ -591,6 +756,29 @@ class TC_customize {
 																	'notice'		=> __( 'If enabled, this option activate a popin window whith a zoom effect when an image is clicked. This will not apply to image gallery.' , 'customizr' ),
 								),
 
+								'tc_theme_options[tc_fancybox_autoscale]'	=>	array(
+																	'default'       => 1,
+																	'control'		=> 'TC_controls' ,
+																	'label'    		=> __( 'Autoscale images on zoom' , 'customizr' ),
+																	'section'  		=> 'tc_image_settings' ,
+																	'type'     		=> 'checkbox' ,
+																	'notice'		=> __( 'If enabled, this option will force images to fit the screen on lightbox zoom.' , 'customizr' ),
+								),
+
+								/*-----------------------------------------------------------------------------------------------------
+														                   PLUGINS COMPATIBILITY
+								------------------------------------------------------------------------------------------------------*/
+								/*'tc_theme_options[tc_woocommerce_compatibility]'	=>	array(
+																	'default'       => 1,
+																	'control'		=> 'TC_controls' ,
+																	'label'    		=> __( 'Enable Woocommerce compatibility' , 'customizr' ),
+																	'section'  		=> 'tc_plugins_compatibility' ,
+																	'type'     		=> 'checkbox' ,
+																	'notice'		=> __( 'If enabled, Customizr will use Woommerce specific hooks to help you build your online shop.' , 'customizr' ),
+								),*/
+
+
+
 								/*-----------------------------------------------------------------------------------------------------
 														                   CUSTOM CSS
 								------------------------------------------------------------------------------------------------------*/
@@ -600,8 +788,57 @@ class TC_customize {
 																	'label'    		=> __( 'Add your custom css here and design live! (for advanced users)' , 'customizr' ),
 																	'section'  		=> 'tc_custom_css' ,
 																	'type'     		=> 'textarea' ,
-																	'notice'		=> __( 'Always use this field to add your custom css instead of editing directly the style.css file : it will not be deleted during theme updates. Special characters like quotes or inferior/superior signs will not be accepted in this field as they might be used for malicious purposes. If your custom css includes some of these characters, just create a child theme and write it down in the style.css file.' , 'customizr' )
+																	'notice'		=> __( 'Always use this field to add your custom css instead of editing directly the style.css file : it will not be deleted during theme updates. You can also paste your custom css in the style.css file of a child theme.' , 'customizr' )
 								),
+
+								/*-----------------------------------------------------------------------------------------------------
+														                   DEVELOPER TOOLS
+								------------------------------------------------------------------------------------------------------*/
+								'dev_box_title'					=> array(
+																	'setting_type'	=> 	null,
+																	'control'		=>	'TC_controls' ,
+																	'title'   		=> __( 'Developer Box' , 'customizr' ),
+																	'section' 		=> 'tc_debug_section' ,
+																	'type'			=> 'title' ,
+																	//'priority'      => 0,
+								),
+
+								'tc_theme_options[tc_debug_box]'	=>	array(
+																	'default'       => 0,
+																	'control'		=> 'TC_controls' ,
+																	'label'    		=> __( 'Only visible for logged in users with an admin profile.' , 'customizr' ),
+																	'section'  		=> 'tc_debug_section' ,
+																	'type'     		=> 'checkbox' ,
+																	'notice'		=> __( 'If enabled, this option displays a draggable information box to help you develop or debug your Customizr based website.' , 'customizr' ),
+								),
+
+								'dev_tooltip_title'					=> array(
+																	'setting_type'	=> 	null,
+																	'control'		=>	'TC_controls' ,
+																	'title'   		=> __( 'Developer tooltips' , 'customizr' ),
+																	'section' 		=> 'tc_debug_section' ,
+																	'type'			=> 'title' ,
+																	//'priority'      => 0,
+								),
+
+								'tc_theme_options[tc_debug_tips]'	=>	array(
+																	'default'       => 0,
+																	'control'		=> 'TC_controls' ,
+																	'label'    		=> __( 'Only visible for logged in users with an admin profile.' , 'customizr' ),
+																	'section'  		=> 'tc_debug_section' ,
+																	'type'     		=> 'checkbox' ,
+																	'notice'		=> __( 'If enabled, this option displays clickable contextual tooltips right inside your website.' , 'customizr' ),
+								),
+
+								'tc_theme_options[tc_debug_tips_color]'  => array(
+																	'default'    	=> '#F00',
+																	'transport' 	=> 'postMessage' ,
+																	'sanitize_callback'    => array( $this, 'tc_sanitize_hex_color' ),
+																	//'sanitize_js_callback' => 'maybe_hash_hex_color' ,
+																	'control'		=> 'WP_Customize_Color_Control' ,
+																	'label'   		=> __( 'Tip icon color', 'customizr'),
+																	'section' 		=> 'tc_debug_section'
+								)
 			),//end of add_setting_control array
 
 		);//end of customize_array
@@ -648,7 +885,9 @@ class TC_customize {
 							'step' ,//number specific
 							'min' ,//number specific
 							'range-input' ,
-							'max'
+							'max',
+							'cssid',
+							'slider_default'
 				)
 		);
 		return $args;
@@ -703,101 +942,35 @@ class TC_customize {
 		if ( isset( $setup['add_setting_control'])) {
 
 			foreach ( $setup['add_setting_control'] as $key => $options) {
-				
-				//SETTINGS
-				switch ( $key) {
-					case 'social_positions':
 
-						foreach ( $options as $cle => $pos) {
-							$pos_option_name = 'tc_social_in_'.$cle;
-							$wp_customize->add_setting( 'tc_theme_options['.$pos_option_name.']' , array(
-								'default'        => tc__f ( '__get_options' ,$pos_option_name),
-								'capability'     => 'manage_options' ,
-								'type'           => 'option' ,
-							) );
-						}
+				//generate settings array
+				$option_settings = array();
+				foreach( $args['settings'] as $set => $set_value) {
+					if ( $set == 'setting_type' ) {
+						$option_settings['type'] = isset( $options['setting_type']) ?  $options['setting_type'] : $args['settings'][$set];
+					}
+					else {
+						$option_settings[$set] = isset( $options[$set]) ?  $options[$set] : $args['settings'][$set];
+					}
+				}
 
-						break;
-					
+				//add setting
+				$wp_customize	-> add_setting( $key, $option_settings);
+			
+				//generate controls array
+				$option_controls = array();
+				foreach( $args['controls'] as $con) {
+					$option_controls[$con] = isset( $options[$con]) ?  $options[$con] : null;
+				}
 
-					case 'social_networks':
-						foreach ( $options as $cle => $nw) {
+				//add control with a dynamic class instanciation if not default
+				if(!isset( $options['control'])) {
+						$wp_customize	-> add_control( $key,$option_controls );
+				}
+				else {
+						$wp_customize	-> add_control( new $options['control']( $wp_customize, $key, $option_controls ));
+				}
 
-							$nw_option_name = 'tc_theme_options['.$cle.']';
-							$wp_customize->add_setting( $nw_option_name, array(
-								'default'        => ( $cle == 'tc_rss' ) ? get_bloginfo( 'rss_url' ) : tc__f ( '__get_options' ,$cle),
-								'capability'     => 'manage_options' ,
-								'type'           => 'option' ,
-								'sanitize_callback' => array( $this , 'tc_sanitize_url' ),
-							) );
-						}
-
-						break;
-
-
-					default:
-						//generate settings array
-						$option_settings = array();
-						foreach( $args['settings'] as $set => $set_value) {
-							if ( $set == 'setting_type' ) {
-								$option_settings['type'] = isset( $options['setting_type']) ?  $options['setting_type'] : $args['settings'][$set];
-							}
-							else {
-								$option_settings[$set] = isset( $options[$set]) ?  $options[$set] : $args['settings'][$set];
-							}
-						}
-
-						//add setting
-						$wp_customize	-> add_setting( $key, $option_settings);
-
-						break;
-				}//end switch settings
-
-
-				//CONTROLS
-				switch ( $key) {
-					case 'social_positions':
-						foreach ( $options as $cle => $pos) {
-							$pos_option_name = 'tc_social_in_'.$cle;
-							$wp_customize->add_control( 'tc_theme_options['.$pos_option_name.']' , array(
-								'settings' 		=> 'tc_theme_options['.$pos_option_name.']' ,
-								'label'    		=> 	sprintf(__( 'Social links in %s' , 'customizr' ) , $pos ),
-								'priority' 		=> 0,
-								'section'  		=> 'tc_social_settings' ,
-								'type'     		=> 'checkbox' ,
-							) );
-						}
-						break;
-					
-					case 'social_networks':
-						foreach ( $options as $cle => $nw) {
-							$nw_option_name = 'tc_theme_options['.$cle.']';
-							$wp_customize->add_control( new TC_controls( $wp_customize, $nw_option_name, array(
-								'settings' 		=> $nw_option_name,
-								'label'    		=> $nw,
-								'section'  		=> 'tc_social_settings' ,
-								'type'     		=> 'url' ,
-							)));
-						}
-						break;
-
-					default:
-						//generate controls array
-						$option_controls = array();
-						foreach( $args['controls'] as $con) {
-							$option_controls[$con] = isset( $options[$con]) ?  $options[$con] : null;
-						}
-
-						//add control with a dynamic class instanciation if not default
-						if(!isset( $options['control'])) {
-								$wp_customize	-> add_control( $key,$option_controls );
-						}
-						else {
-								$wp_customize	-> add_control( new $options['control']( $wp_customize, $key, $option_controls ));
-						}
-
-					break;
-				}//end switch
 			}//end for each
 		}//end if isset
 
@@ -819,41 +992,13 @@ class TC_customize {
 
 
 
-
-	/**
-	*  On the first activation, redirect on the customization page, set the frontpage option to "posts" with 10 posts per page
-	* @package Customizr
-	* @since Customizr 1.0 
-	*/
-	function tc_theme_activation()
-	{
-		global $pagenow;
-		if ( is_admin() && 'themes.php' == $pagenow && isset( $_GET['activated'] ) ) 
-		{
-			#set frontpage to display_posts
-			//update_option( 'show_on_front' , 'posts' );
-
-			#set max number of posts to 10
-			//update_option( 'posts_per_page' , 10);
-
-			#redirect to Customizer page
-			//do we activate customizr for the first time? => tc_theme_options is not set in options table
-			$__options = get_option( 'tc_theme_options' );//return false if not defined
-			if (!$__options) {
-				header( 'Location: '.admin_url().'customize.php' ) ;
-			}
-		}
-	}
-
-
-
 	/**
 	 * adds sanitization callback funtion : textarea
 	 * @package Customizr
 	 * @since Customizr 1.1.4
 	 */
 	function tc_sanitize_textarea( $value) {
-		$value = esc_textarea( $value);
+		$value = esc_html( $value);
 		return $value;
 	}
 
@@ -883,6 +1028,19 @@ class TC_customize {
 		return $value;
 	}
 
+
+
+	/**
+	 * adds sanitization callback funtion : colors
+	 * @package Customizr
+	 * @since Customizr 1.1.4
+	 */
+	function tc_sanitize_hex_color( $color ) {
+	if ( $unhashed = sanitize_hex_color_no_hash( $color ) )
+		return '#' . $unhashed;
+
+	return $color;
+}
 
 
 

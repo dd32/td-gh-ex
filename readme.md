@@ -1,7 +1,12 @@
 ![Customizr - Free Wordpress Theme](/screenshot.png)  
 
-*Just enjoy designing your website live from the WP customizer screen. Choose your options  : skin, logo, social profiles, slider, layout, featured blocks... you can even customize your css live. And this is it! The clean and fully responsive design can be used for any type of website: corporate, portfolio, business, blog, landing page, etc. The theme also includes a responsive slider generator (with call to action text and button) to make your pages or posts look beautiful. Customizr is built with HTML5 and CSS3 upon the Twitter Bootstrap framework.*
+*Just enjoy designing your website live from the WP customizer screen. Choose your options  : skin, logo, social profiles, slider, layout, home featured blocks... you can even customize your css live. And this is it! The clean and fully responsive design can be used for any type of website: corporate, portfolio, business, blog, landing page, etc. The theme also includes a responsive slider generator (with call to action text and button) to make your pages or posts look beautiful. Customizr is built with HTML5 and CSS3 upon the Twitter Bootstrap framework. Customizr is translation ready and available in english, french, german, russian, brazilian portugues, spanish.*
 
+# Copyright
+**Customizr** is a free WordPress theme designed by Nicolas Guillaume in Nice, France. ([website : Themes and Co](http://www.themesandco.com>))  
+Feel free to use, modify and redistribute this theme as you like.
+You may remove any copyright references (unless required by third party components) and crediting is not necessary, but very appreciated... ;-D.  
+Customizr is distributed under the terms of the GNU GPL. 
 
 # Installation
 1. Upload the `customizr` folder to the `/wp-content/themes/` directory
@@ -81,17 +86,17 @@ Posts with the link post format will link out to the first a tag in the post.
 ## Code logic
 The theme is built on a classes framework. The classes are identified by their group and name like this : class-[group]-[name].php.
 
-The function tc__( $group, $classname), where the group parameter is required :
+The function tc__( $group, $classname):
 1) scans the theme folder to find the appropriate group / class 
 2) and then instanciates the class(es) only once through a singleton factory.
 
 A class typically includes a constructor which is mainly used to add the methods to WP actions and filters. 
 Actions are used to render HTML or execute some code in predefined WP action, while filters are used to get values.
 
-For simplification purposes, the theme uses few WP templates : index.php, header.php, footer.php, comments.php, sidebar(s).php. 
+For simplification purposes, the theme uses few WP templates : index.php, header.php, footer.php, comments.php. 
 Those templates only includes some structural HTML markup, the rest is rendered with the actions defined in the classes of the parts/ folder.
 
-Customizr uses one single loop for all kind of content. It is located in class-main-loop.php.
+Customizr uses one single loop for all kind of content. It is located in index.php.
 
 
 ## Translation
@@ -118,6 +123,105 @@ The exceptions to this license are as follows:
 
 
 # Changelog
+= 3.0.10 =
+* CHILD THEME USERS, templates have been modified : index.php, header.php, footer.php, comments.php *
+* added : (php) (css) (html) New option : Draggable help box and clickable tooltips to easily display some contextual information and help for developers
+* added : (php) support for custom post types for the slider meta boxes
+* added : (php) new filter to get the post type
+* added : polish translation. thanks to Marcin Sadowski from <a href="http://www.sadowski.edu.pl" target="_blank">http://www.sadowski.edu.pl</a>
+* added : (php) (html) attachments are now listed in the search results with their thumbnails and descriptions, just like posts or pages
+* added : (css) comment navigation styling, similar to post navigation
+* added : (php) (css) author box styling (if bio field not empty)
+* added : (css) comment bubble for pages
+* added : (js) smooth transition for "back to top" link. Thanks to Nikolov : <a href="https://github.com/nikolov-tmw" target="_blank">https://github.com/nikolov-tmw</a>
+* added : (js) smooth image loading on gallery attachment navigation
+* added : (lang) Dutch translation. Thanks to Joris Dutmer.
+* added : (css) icon to title of archive, search, 404
+* improved : (php) attachment screen layout based on the parent
+* improved : (php) simpler action hooks structure in the main templates : index, header, footer, comments, sidebars
+* improved : (css) responsive behaviour : slider caption now visible for devices < 480px wide, thumbnail/content layout change for better display, body extra padding modified
+* improved : (php) For better performances : options (single and full array) are now get from the TC_utils class instance instead of querying the database. (except for the customization context where they have to be retrieved dynamically from database on refresh)
+* improved : (js) performance : tc_scripts and ajax_slider have been minified
+* fixed : (css) IE fix : added z-index to active slide to fix slides falling below each other on transition. Thanks to PMStanley <a href="https://github.com/PMStanley">https://github.com/PMStanley</a>
+* fixed : (css) IE fix : added 'top: 25%' to center align slide caption on older versions of IE. Thanks to PMStanley <a href="https://github.com/PMStanley" target="_blank">https://github.com/PMStanley</a>
+* fixed : (php) empty reply button in comment threads : now checks if we reach the max level of threaded comment to render the reply button
+* fixed : (php) empty nav buttons in single posts are not displayed anymore
+* fixed : (css) font-icons compatibility with Safari is fixed for : page, formats (aside, link; image, video) and widgets (recent post, page menu, categories) thanks to <a href="http://wordpress.org/support/profile/electricfeet" target="_blank">electricfeet</a>
+* fixed : (css) ordered list margin were not consistent in the theme thanks to <a href="http://wordpress.org/support/profile/electricfeet" target="_blank">electricfeet</a>
+* fixed : (css) slider text overflow
+* removed : sidebars templates. Sidebar content is now rendered with the class-content-sidebar.php
+
+
+= 3.0.9 =
+* ! SAFE UPGRADE FOR CHILD THEME USERS (v3.0.8 => v3.0.9) ! *
+* fixed : function tc_is_home() was not checking the case where display nothing on home page. No impact for child theme users. Thanks to <a href="http://wordpress.org/support/profile/monten01">monten01</a>, <a href="http://wordpress.org/support/profile/rdellconsulting" target="_blank">rdellconsulting</a>
+* fixed : When the permalink structure was not set to default, conditional tags is_page() and is_attachement() stopped working. They are now replaced by tests on $post -> post_type in class-main-content.php
+* fixed : test if jet_pack is enabled before filtering post_gallery hook => avoid conflict
+* fixed : @media print modified to remove links thanks to <a href="http://wordpress.org/support/profile/electricfeet" target="_blank">electricfeet</a>
+* fixed : btn-info style is back to original Bootstrap style thanks to <a href="http://wordpress.org/support/profile/jo8192" target="_blank">jo8192</a>
+* fixed : featured pages text => html tags are removed from page excerpt
+* improved : custom css now allows special characters
+* improved : better css structure, media queries are grouped at the end of the css files
+* added : two new social networks in Customizer options : Instagram and WordPress
+* added : help button and page in admin with links to FAQ, documentation and forum
+* added : new constant TC_WEBSITE for author URI
+
+
+= 3.0.8 =
+* fixed : function tc_is_home() was missing a test. No impact for child theme users. Thanks to <a href="http://wordpress.org/support/profile/ldanielpour962gmailcom">http://wordpress.org/support/profile/ldanielpour962gmailcom</a>, <a href="http://wordpress.org/support/profile/rdellconsulting">http://wordpress.org/support/profile/rdellconsulting</a>, <a href="http://wordpress.org/support/profile/andyblackburn">http://wordpress.org/support/profile/andyblackburn</a>, <a href="http://wordpress.org/support/profile/chandlerleighcom">http://wordpress.org/support/profile/chandlerleighcom</a>
+
+
+= 3.0.7 =
+* fixed : the "force default layout" option was returning an array instead of a string. Thanks to http://wordpress.org/support/profile/edwardwilliamson and http://wordpress.org/support/profile/henry12345 for pointing this out!
+* improved : get infos from parent theme if using a child theme in customizr-__ class constructor
+* improved : enhanced filter for footer credit
+* added : a notice about changelog if using a child theme
+* improved : use esc_html tags in featured page text and slider captions
+
+
+= 3.0.6 =
+* fixed : Spanish translation has been fixed. Many thanks again to Maria del Mar for her great job!
+* fixed : Pages protected with password will not display any thumbnail or excerpt when used in a featured page home block (thanks to rocketpopgames http://wordpress.org/support/profile/rocketpopgames)
+* improved : performance : jquery.fancybox.1.3.4.js and modernizr have been minified
+* added : footer credits can now be filtered with add_filter( 'footer_credits') and hooked with add_action ('__credits' )
+* added : new customizer option to personnalize the featured page buttons
+
+
+= 3.0.5 =
+* fixed : breadcrumb translation domain was not right
+* fixed : domain translation for comment title was not set
+* fixed : in v3.0.4, a slider could disappeared only if some slides had been inserted at one time and then deleted or disabled afterward. Thanks to Dave http://wordpress.org/support/profile/rdellconsulting!
+* fixed : holder.js script bug in IE v8 and lower. Fixed by updating holder.js v1.9 to v2.0. Thanks to Joel (http://wordpress.org/support/profile/jrisberg) and Ivan (http://wordpress.org/support/profile/imsky).
+* improved : better handling of comment number bubble everywhere : check if comments are opened AND if there are comments to display
+* improved : welcome screen on update/activate : changelog automatic update, new tweet button
+* improved : lightbox navigation is now enabled for galleries with media link option choosen (new filters on post gallery and attachment_link)
+* improved : better code organization : split of content class in specific classes by content type
+* added : customizr option for images : enable/disable autoscale on lightbox zoom
+* added : jQuery fallback for CSS Transitions in carousel (ie. Internet Explorer) : https://github.com/twbs/bootstrap/pull/3052/files
+* added : spanish translation. Thanks to Maria del Mar
+
+
+= 3.0.4 =
+* fixed : minor css correction on responsive thumbnail hover effect
+* fixed : minor syntaxic issue on comment title (printf)
+* fixed : translation domain was wrong for social networks
+* fixed : slider arrows were still showing up if slides were deleted but not the slider itself. Added a routine to check if slides have attachment.
+* improved : image galleries : if fancybox active, lightbox navigation is now enabled
+* improved : better capability control of edit page button. Only appears if user_can edit_pages (like for posts)
+* added : Activation welcome screen
+* added : new action in admin_init hook to load the meta boxes class
+
+
+= 3.0.3 =
+* added : german translation. Thanks to Martin Bangemann <design@humane-wirtschaft.de> !
+* changed : default option are now based on customizer settings
+* fixed : reordering slides was deleting the slides
+
+
+= 3.0.2 =
+* fixed : problem fixed on theme zipping and upload in repository 
+
+
 = 3.0.1 =
 * fixed : "header already sent" error fixed (space before php opening markup in an admin class) was generating an error on log out  
 
@@ -263,11 +367,6 @@ The exceptions to this license are as follows:
 
 = 1.0 =
 * Initial Release
-
-# Copyright
-**Customizr** is a free WordPress theme designed by Nicolas Guillaume in Nice, France. ([website : Themes and Co](http://www.themesandco.com>))  
-Feel free to use, modify and redistribute this theme as you like.
-You may remove any copyright references (unless required by third party components) and crediting is not necessary, but very appreciated... ;-D.  
-Customizr is distributed under the terms of the GNU GPL.  
+ 
 
 Enjoy it!
