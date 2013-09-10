@@ -1,4 +1,31 @@
 Changelog -----------------------------------
+version:1.133
+Modified
+    add filter
+        raindrops_light_dark_bg
+        raindrops_light_light_bg
+        raindrops_light_color
+        raindrops_default_dark_bg
+        raindrops_default_light_bg
+        raindrops_default_color
+        raindrops_dark_dark_bg
+        raindrops_dark_light_bg
+        raindrops_dark_color
+
+        for wp_nav_menu(),body background, change brightness or darkness
+----------------------------------------------
+Changelog -----------------------------------
+version:1.132
+Modified
+    font style rule move from style.css to fonts.css
+        ( without media query font settings )
+
+    Note:h1,h2,h3 font-weight change from bold to normal
+        ( setting rule contain fonts.css )
+    Image file uploader add wp_verify_nonce check
+        lib/option-panel.php
+----------------------------------------------
+Changelog -----------------------------------
 version:1.131
 Added
     Add new action hooks
