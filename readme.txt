@@ -20,6 +20,9 @@ Install
 
 Changelog
 ---------
+0.4.0 - 2013-09-08
+- updated hook for omega 0.5 compatibility
+
 0.3.3 - 2013-08-12
 - set action priority for future omega layout compatibility
 

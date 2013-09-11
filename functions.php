@@ -18,9 +18,9 @@ function beta_theme_setup() {
 	$prefix = hybrid_get_prefix();
 	
 	/* Load the primary menu. */
-	remove_action( "{$prefix}_before_header", 'omega_get_primary_menu' );
-	remove_action( "{$prefix}_header", 'omega_site_description' );
-	add_action( "{$prefix}_header_right", 'omega_get_primary_menu', 1 );
+	remove_action( "{$prefix}_before_header", 'omega_get_primary_menu' );	
+	add_action( "{$prefix}_header", 'omega_get_primary_menu' );
+	add_filter( 'omega_site_description', 'beta_site_description' );
 
 	add_theme_support( 'omega-footer-widgets', 3 );
 
@@ -29,6 +29,11 @@ endif; // beta_theme_setup
 
 add_action( 'after_setup_theme', 'beta_theme_setup', 11 );
 
+
+function beta_site_description($desc) {
+	$desc = "";
+	return $desc;
+}
 /**
  * Enqueue scripts and styles
  */
