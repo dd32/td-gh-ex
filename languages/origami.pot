@@ -2,8 +2,8 @@
 # This file is distributed under the GNU General Public License 2.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: origami 1.5.11\n"
-"POT-Creation-Date: 2013-08-24T12:14:56+02:00\n"
+"Project-Id-Version: origami 1.5.12\n"
+"POT-Creation-Date: 2013-09-11T23:45:12+02:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -78,16 +78,19 @@ msgstr ""
 msgid "Create custom tileable background images using our free <a href='%s' target='_blank'>background image generator</a>."
 msgstr ""
 
-msgid "Hi! I'm Greg Priday from SiteOrigin."
-msgstr ""
-
-msgid "I hope you enjoy my WordPress theme."
-msgstr ""
-
-msgid "Please follow me on Twitter and Facebook for updates."
+msgid "Hi! I'm Greg from SiteOrigin. I hope you enjoy using %s. Sign up to <a href='%s' target='_blank'>our newsletter</a> if you'd like more free themes and exclusive offers."
 msgstr ""
 
 msgid "Basic Left"
+msgstr ""
+
+msgid "This Is The First Line"
+msgstr ""
+
+msgid "This is The Second"
+msgstr ""
+
+msgid "An Action Button"
 msgstr ""
 
 msgid "Basic Right"
@@ -97,6 +100,9 @@ msgid "Big Headline"
 msgstr ""
 
 msgid "Prebuilt Slide Layouts"
+msgstr ""
+
+msgid "Are you sure you want to replace your current slide content with this prebuilt layout?"
 msgstr ""
 
 msgid "Prebuilt Layouts"
@@ -252,6 +258,27 @@ msgstr ""
 msgid "Additional query arguments. See <a href=\"%s\" target=\"_blank\">query_posts</a>."
 msgstr ""
 
+msgid "Image (PB)"
+msgstr ""
+
+msgid "Displays a simple image."
+msgstr ""
+
+msgid "Image URL"
+msgstr ""
+
+msgid "Destination URL"
+msgstr ""
+
+msgid "Embedded Video (PB)"
+msgstr ""
+
+msgid "Embeds a video."
+msgstr ""
+
+msgid "Video"
+msgstr ""
+
 msgid "Custom Home Page Builder"
 msgstr ""
 
@@ -327,6 +354,30 @@ msgstr ""
 msgid "Get Additional Customizations"
 msgstr ""
 
+msgid "A Copy of %s Premium"
+msgstr ""
+
+msgid "You get a copy of %s Premium, delivered instantly to your PayPal email address. This includes the same basic support we offer users of our free themes."
+msgstr ""
+
+msgid "Premium Support"
+msgstr ""
+
+msgid "This includes Premium email support from our support team for a single site. We'll help you as quickly as possible with all your setup and configuration questions."
+msgstr ""
+
+msgid "Advanced Premium Support"
+msgstr ""
+
+msgid "We'll go the extra mile and help you with minor CSS customizations, plugin conflicts and anything else that falls outside standard %s Premium support."
+msgstr ""
+
+msgid "A Special Thank You"
+msgstr ""
+
+msgid "Our highest level of support. If you need it, you'll get support directly from the developer of %s. We'll also include your name on our contributors list."
+msgstr ""
+
 msgid "After you pay for %s Premium, we'll email you an order number to your <strong>PayPal email address</strong>. "
 msgstr ""
 
@@ -348,43 +399,31 @@ msgstr ""
 msgid "The premium version of this theme is no longer available. If you need any help, please contact <a href='http://siteorigin.com/#support'>SiteOrigin support</a>."
 msgstr ""
 
+msgid "We're working on more features for %s Premium, but we need your help."
+msgstr ""
+
+msgid "Every premium purchase will fund new features, helping you get the most out of %s."
+msgstr ""
+
+msgid "Visit the <a href='%s' target='_blank' class='roadmap'>%s roadmap</a> for progress updates."
+msgstr ""
+
+msgid "Choose Your Perk"
+msgstr ""
+
+msgid "Pay %s or more"
+msgstr ""
+
+msgid "Buy"
+msgstr ""
+
+msgid "Pay a custom amount."
+msgstr ""
+
+msgid "You'll receive a the highest level reward you qualify for."
+msgstr ""
+
 msgid "Buy Now"
-msgstr ""
-
-msgid "Although we appreciate and support all our premium users, our support staff prioritize orders of <strong>$15</strong> or more. Support on this order might take longer."
-msgstr ""
-
-msgid "You choose the price, so you can pay what %s is worth to you."
-msgstr ""
-
-msgid "Building your site on a budget"
-msgstr ""
-
-msgid "A fair price for a powerful theme"
-msgstr ""
-
-msgid "Our sincere thanks"
-msgstr ""
-
-msgid "We'll go that extra mile for you"
-msgstr ""
-
-msgid "A huge contribution to its development"
-msgstr ""
-
-msgid "Custom"
-msgstr ""
-
-msgid "Please enable Javascript to change pricing"
-msgstr ""
-
-msgid "We offer a 60 day full refund if you're not happy with your purchase"
-msgstr ""
-
-msgid "Your contribution will help fund new features in %s."
-msgstr ""
-
-msgid "Find out more on our <a href=\"%s\" target=\"_blank\">roadmap</a>."
 msgstr ""
 
 msgid "Our User Feedback"
@@ -402,13 +441,7 @@ msgstr ""
 msgid "They were all built to work perfectly with %s."
 msgstr ""
 
-msgid "<a href='%s'>Contact</a> SiteOrigin support if you need help. "
-msgstr ""
-
-msgid "<a href='%s'>Post a question</a> on the WordPress forums if you need help. "
-msgstr ""
-
-msgid "If you like %s, please <a href='%s' target='_blank'>rate it</a>. Your rating helps a lot! "
+msgid "I hope %s is working well for you! Sign up to <a href='%s' target='_blank'>our newsletter</a> if you'd like more free themes and goodies."
 msgstr ""
 
 msgid "%s Theme Settings"
@@ -838,9 +871,6 @@ msgstr ""
 msgid "like"
 msgstr ""
 
-msgid "Destination URL"
-msgstr ""
-
 msgid "SiteOrigin Google Map"
 msgstr ""
 
@@ -866,12 +896,6 @@ msgid "The zoom of the map."
 msgstr ""
 
 msgid "SiteOrigin Embedded Video"
-msgstr ""
-
-msgid "Embeds a video."
-msgstr ""
-
-msgid "Video"
 msgstr ""
 
 msgid "SiteOrigin Bullet List"
