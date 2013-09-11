@@ -1,6 +1,6 @@
 <?php
 // code to change length of blog excerpt
-function get_the_other_excerpt(){
+function spa_get_the_other_excerpt(){
   global $post;
 $excerpt = get_the_content();
 $excerpt = preg_replace(" (\[.*?\])",'',$excerpt);

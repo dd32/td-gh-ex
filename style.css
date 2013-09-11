@@ -2,7 +2,7 @@
 * Theme Name: Spasalon
 * Description: A responsive theme for SPA SALON and BEAUTY SALON type of business that uses multiple nav menus, right-sidebar,Featured Slider and Beautifully designed home page all manage via option panel.
 It has a pixel-perfect design that is great for any health care ,salons , spas etc related services who wants a new look for their site.
-* Version: 1.0.1
+* Version: 1.0.2
 * Author: priyanshu.mittal
 * Author URI: http://www.webriti.com
 * Tags: pink, white, full-width-template, threaded-comments, right-sidebar, one-column, two-columns, fixed-width, custom-menu, sticky-post, theme-options, translation-ready
@@ -69,6 +69,8 @@ margin-top:15px; width:auto; margin-left:25px;
 	font-size: 13px;
 	color: #626668;
 	text-align:justify;
+	word-wrap:break-word;
+	word-break:break-all;
 }
 .home_tagline{
 	color: #F22853;
