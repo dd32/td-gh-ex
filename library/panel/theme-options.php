@@ -540,7 +540,7 @@ function travelify_theme_options_do_page() {
 										</td>
 									</tr>
 									<tr>
-										<td></td><td><?php _e( 'Note: Enter your custom header script (i.e., analytics, social button scripts). ', 'travelify' ); ?></td>
+										<td></td><td><?php _e( 'Note: Enter your custom footer script (i.e., analytics, social button scripts). ', 'travelify' ); ?></td>
 									</tr>
 								</tbody>
 							</table>
@@ -749,7 +749,7 @@ function travelify_themeoption_invalidate_caches(){
 	delete_transient( 'travelify_socialnetworks' );  
 	delete_transient( 'travelify_footercode' );
 	delete_transient( 'travelify_internal_css' );
-	delete_transient( 'travelify_verification' );
+	delete_transient( 'travelify_headercode' );
 }
 
 
