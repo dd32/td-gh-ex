@@ -285,44 +285,44 @@ function optionsframework_options() {
 		
 	$options[] = array(
 		'name' => __('Facebook', 'options_check'),
-		'desc' => __('Your Facebook Profile.', 'options_check'),
+		'desc' => __('(e.g. http://www.facebook.com/your-user-name)', 'options_check'),
 		'id' => 'facebook_url',
-		'std' => 'http://www.facebook.com/your-user-name',
+		'std' => '',
 		'type' => 'text');	
 		
 	$options[] = array(
 		'name' => __('Google Plus', 'options_check'),
-		'desc' => __('Your Google Plus Profile.', 'options_check'),
+		'desc' => __('(eg. http://plus.google.com/your-user-name)', 'options_check'),
 		'id' => 'google_url',
-		'std' => 'http://plus.google.com/your-user-name',
+		'std' => '',
 		'type' => 'text');			
 		
 	$options[] = array(
 		'name' => __('Twitter', 'options_check'),
-		'desc' => __('Your Twitter Profile.', 'options_check'),
+		'desc' => __('(e.g. http://twitter.com/your-user-name)', 'options_check'),
 		'id' => 'twitter_url',
-		'std' => 'http://twitter.com/your-user-name',
+		'std' => '',
 		'type' => 'text');		
 
 	$options[] = array(
 		'name' => __('LinkedIn', 'options_check'),
-		'desc' => __('Your LinkedIn Profile.', 'options_check'),
+		'desc' => __('(e.g. http://linkedin.com/your-user-name)', 'options_check'),
 		'id' => 'linkedin_url',
-		'std' => 'http://linkedin.com/your-user-name',
+		'std' => '',
 		'type' => 'text');		
 	
 	$options[] = array(
 		'name' => __('Pinterest', 'options_check'),
-		'desc' => __('Your Pinterest Profile.', 'options_check'),
+		'desc' => __('(e.g. http://pinterest.com/your-user-name)', 'options_check'),
 		'id' => 'pinterest_url',
-		'std' => 'http://pinterest.com/your-user-name',
+		'std' => '',
 		'type' => 'text');		
 
 	$options[] = array(
 		'name' => __('RSS', 'options_check'),
-		'desc' => __('Your RSS url.', 'options_check'),
+		'desc' => __('(e.g. http://rss.com/your-user-name)', 'options_check'),
 		'id' => 'rss_url',
-		'std' => 'http://rss.com/your-user-name',
+		'std' => '',
 		'type' => 'text');				
 
 	return $options;

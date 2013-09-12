@@ -21,6 +21,7 @@
 	// If we get this far, we have widgets. Let do this.
 	$divclass = (of_get_option('extended_footer_count')=='4') ? '3' : '4';
 ?>
+<div class="full-width" id="extended">
 <div class="row">
 	<div class="large-<?php echo $divclass; ?> columns">
 	<?php if ( is_active_sidebar( 'extended_footer_one' ) ) : ?>
@@ -51,5 +52,5 @@
 	<?php endif; ?>
 	
 </div>
-
+</div><!-- #extended -->
 

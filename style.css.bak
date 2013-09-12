@@ -113,9 +113,7 @@ article.fixed {
 	padding: 10px 15px 15px;	
 }
 
-.widget {
-margin-bottom:20px;
-}
+
 
 .widget ul li {
 	list-style:none;
@@ -562,32 +560,26 @@ time {
 	font-size: 11px;
 }
 
-.feedburner_style_1 {
+.feedburner {
 	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 	padding-left:10px;
 	padding-right:10px;
 	padding-top:5px;
 	margin-bottom:10px;
+}
+
+.feedburner_style_1 {
 	border: 1px solid #f5f5f5;	
 	background-color: #f5f5f5;
 	-moz-border-radius: 5px;
 	-khtml-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
-	height:auto;
-	width:auto;	
 }
 
 .feedburner_style_2 {
-	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-	padding-left:10px;
-	padding-right:10px;
-	padding-top:5px;
-	margin-bottom:10px;
 	border: 3px solid #111;	
 	background-color: #FCFFB0;
-	height:auto;
-	width:auto;		
 }
 
 .feedburner:hover {

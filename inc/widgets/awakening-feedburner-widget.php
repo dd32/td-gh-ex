@@ -95,10 +95,11 @@ class Feedburner_Widget extends WP_Widget {
 			$feedburner_unique_id = $instance['feedburner_unique_id'];		
 			$feedburner_style = $instance['feedburner_style'];
 			$feedburner_title_text = $instance['feedburner_title_text'];	
-			$feedburner_sub_text = $instance['feedburner_sub_text'];		
+			$feedburner_sub_text = $instance['feedburner_sub_text'];
+			echo $before_widget;	
 			?>
 			
-			<div class="feedburner <?php echo "feedburner_".$feedburner_style; ?>">	
+			<div class="<?php echo "feedburner_".$feedburner_style; ?>">	
 			<form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=<?php echo $feedburner_unique_id; ?>', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">    
 			<div class="row">
 				<div class="large-12 columns ">				  
@@ -129,7 +130,8 @@ class Feedburner_Widget extends WP_Widget {
 				</div>  
 			</form>		
 			</div>	
-			<?php   		   			   
+			<?php  
+			echo $after_widget;	
         }
 
 }

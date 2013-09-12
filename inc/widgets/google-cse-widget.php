@@ -15,7 +15,7 @@ class GoogleCSE_Widget extends WP_Widget {
          public function __construct() {
 
 			/* Widget settings. */
-			$widget_ops = array( 'classname' => 'google custom search', 'description' => __('Enable Google Custom Search on Your Website.', 'google custom search') );
+			$widget_ops = array( 'classname' => 'google-custom-search', 'description' => __('Enable Google Custom Search on Your Website.', 'google custom search') );
 
 			/* Widget control settings. */
 			$control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'widget-google-cse' );
@@ -59,7 +59,8 @@ class GoogleCSE_Widget extends WP_Widget {
         public function widget( $args, $instance ) {
 			extract( $args );			
 			$google_cse_unique_id = $instance['google_cse_unique_id'];
-			$search_results_page_url = $instance['search_results_page_url'];			   
+			$search_results_page_url = $instance['search_results_page_url'];
+			echo $before_widget;	
 			?>
 			<form method="get" id="cse-search-box" action="<?php echo $search_results_page_url; ?>">
 				<div class="row">
@@ -79,7 +80,8 @@ class GoogleCSE_Widget extends WP_Widget {
 				</div>
 			</form>
 			<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>			   
-			<?php   		   			   
+			<?php
+			echo $after_widget;	
         }
 
 }

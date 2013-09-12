@@ -16,15 +16,13 @@
 <!-- Footer -->
 <footer>
 
-	<div class="full-width" id="extended">	
 		<?php
 		/* A sidebar in the footer? Yep. You can customize
 		 * your footer with three columns of widgets.
 		 */
 			get_sidebar( 'footer' );		
 		?>		
-	</div><!-- #extended -->	
-	
+		
 	<div class="full-width copyright">	
 	
 		<div class="row" id="copyright-text">
