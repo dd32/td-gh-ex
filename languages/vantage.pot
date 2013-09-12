@@ -2,8 +2,8 @@
 # This file is distributed under the GNU General Public License 2.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: vantage 1.0\n"
-"POT-Creation-Date: 2013-09-11T18:22:25+02:00\n"
+"Project-Id-Version: vantage 1.0.1\n"
+"POT-Creation-Date: 2013-09-12T22:36:49+02:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -384,6 +384,9 @@ msgstr ""
 msgid "Visit the <a href='%s' target='_blank' class='roadmap'>%s roadmap</a> for progress updates."
 msgstr ""
 
+msgid "Choose Your Perk"
+msgstr ""
+
 msgid "Pay %s or more"
 msgstr ""
 
@@ -646,9 +649,6 @@ msgstr ""
 msgid "Back To Top"
 msgstr ""
 
-msgid "Edit"
-msgstr ""
-
 msgid "&larr; Previous"
 msgstr ""
 
@@ -851,6 +851,9 @@ msgid "(Edit)"
 msgstr ""
 
 msgid "%1$s at %2$s"
+msgstr ""
+
+msgid "Edit"
 msgstr ""
 
 msgid "Your comment is awaiting moderation."
