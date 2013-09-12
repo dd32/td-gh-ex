@@ -8,6 +8,9 @@
  * @subpackage Mantra
  * @since Mantra 1.0
  */
+ 
+$options = mantra_get_theme_options();
+foreach ($options as $key => $value) { ${"$key"} = $value ; } 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -29,28 +32,35 @@
 		</div><!-- .entry-summary -->
 		<?php else : ?>
 		<div class="entry-content">
-			<?php if ( post_password_required() ) : ?>
-				<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'mantra' ) ); ?>
-
-			<?php else : ?>
 				<?php
-					$images = get_children( array( 'post_parent' => $post->ID, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order', 'order' => 'ASC', 'numberposts' => 999 ) );
+				/*	$images = get_children( array( 'post_parent' => $post->ID, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order', 'order' => 'ASC', 'numberposts' => 999 ) );
 					if ( $images ) :
 						$total_images = count( $images );
 						$image = array_shift( $images );
-						$image_img_tag = wp_get_attachment_image( $image->ID, 'thumbnail' );
-				?>
+						$image_img_tag = wp_get_attachment_image( $image->ID, 'thumbnail' );*/
+				$images = mantra_get_gallery_images(); 
+				if ( $images ) : $total_images = count( $images ); 
+				$image = array_shift( $images ); 
+
+				if (is_sticky() && $mantra_excerptsticky == "Full Post")  $sticky_test=1; else $sticky_test=0;
+				if ($mantra_excerpthome != "Full Post" && $sticky_test==0):				
+				/*?>
 
 				<figure class="gallery-thumb">
 					<a href="<?php the_permalink(); ?>"><?php echo $image_img_tag; ?></a>
 				</figure><!-- .gallery-thumb -->
-
-				<p><em><?php printf( _n( 'This gallery contains <a %1$s>%2$s photo</a>.', 'This gallery contains <a %1$s>%2$s photos</a>.', $total_images, 'mantra' ),
+				*/
+					mantra_set_featured_thumb(); 
+				?>
+					<p><em><?php printf( _n( 'This gallery contains <a %1$s>%2$s photo</a>.', 'This gallery contains <a %1$s>%2$s photos</a>.', $total_images, 'mantra' ),
 						'href="' . esc_url( get_permalink() ) . '" title="' . sprintf( esc_attr__( 'Permalink to %s', 'mantra' ), the_title_attribute( 'echo=0' ) ) . '" rel="bookmark"',
 						number_format_i18n( $total_images )
 					); ?></em></p>
-			<?php endif; ?>
-			<?php the_excerpt(); ?>
+				<?php
+					the_excerpt();
+				else: 
+				    the_content();
+				endif; ?>
 		<?php endif; ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'mantra' ) . '</span>', 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->

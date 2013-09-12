@@ -259,34 +259,7 @@ $mantra_googlefontsubheader = str_replace('+',' ',preg_replace('/:.*/i','',$mant
 ?><?php if ($mantra_parindent != "0px") { ?>  p {text-indent:<?php echo $mantra_parindent;?> ;} <?php }
 ?><?php if ($mantra_posttime == "Hide") { ?> .entry-meta .entry-time {display:none;} <?php }
 ?><?php if ($mantra_postmetas == "Hide") { ?> #content .entry-meta {display:none;} <?php }
-?><?php if (($mantra_mobile == "Enable") &&  $mantra_hcontain) { ?> #branding{ -webkit-background-size:contain !important;-moz-background-size:contain !important;background-size:contain !important; } <?php } ?><?php
-// Header styling and image loading
-// Check if this is a post or page, if it has a thumbnail, and if it's a big one
-/*
-global $post;
-					if ( is_singular() &&
-							has_post_thumbnail( $post->ID ) && $mantra_fheader == "Enable" &&
-							(  $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ) ) &&
-							$image[1] >= HEADER_IMAGE_WIDTH ) : ?>
-
-									#branding {background:url(<?php echo $image[0]; ?>) no-repeat;height:<?php echo HEADER_IMAGE_HEIGHT; ?>px;}
-
-					<?php else : if (get_header_image() != '') { ?>
-						  #branding {background:url("<?php header_image(); ?>") no-repeat;
-								<?php if ($mantra_dimselect=="Absolute") { ?>
-										width:<?php echo HEADER_IMAGE_WIDTH; ?>px; <?php } ?> height:<?php echo HEADER_IMAGE_HEIGHT; ?>px;}
-																	<?php }
-					else {}
-					endif;
-
-				if ($mantra_options['mantra_linkheader']=="Enable") { ?>
-					#linky { display:block; position:absolute; width:<?php echo HEADER_IMAGE_WIDTH; ?>px; height:<?php echo HEADER_IMAGE_HEIGHT; ?>px; z-index:1; }
-					#branding { height:<?php echo HEADER_IMAGE_HEIGHT; ?>px; }
-					#site-title, #site-description, #sheader { position:relative; z-index:2 }
-				<?php }
-
-			*/	?>
-
+?><?php if (($mantra_mobile == "Enable") &&  $mantra_hcontain) { ?> #branding{ -webkit-background-size:contain !important;-moz-background-size:contain !important;background-size:contain !important; } <?php } ?>
 #branding { height:<?php echo HEADER_IMAGE_HEIGHT; ?>px ;}
 <?php if ($mantra_hratio) { ?> @media (max-width: 800px) {#branding, #bg_image { min-height:inherit !important; } }	<?php } ?>
 </style>

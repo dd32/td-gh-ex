@@ -255,8 +255,7 @@ function mantra_page_fn() {
 </div>
 	<div style="clear: both;"></div>
 </div>
-<div id="jsAlert" class="error" style="padding:5px 10px;">There's a problem with your WordPress jQuery library. This can have several causes, including
-incompatible plugins.<br> The Mantra Settings page cannot function without jQuery. You need to fix this issue before you can configure Mantra.</div>
+<div id="jsAlert" class="error" style="padding:5px 10px;">If this message remains visible after the page has loaded then there is a problem with your WordPress jQuery library. This can have several causes, including incompatible plugins.<br> The Mantra Settings page cannot function without jQuery. You need to fix this issue before you can configure Mantra.</div>
 <?php if ( isset( $_GET['settings-updated'] ) ) {
     echo "<div class='updated fade' style='clear:left;'><p>";
 	echo _e('Mantra settings updated successfully.','mantra');

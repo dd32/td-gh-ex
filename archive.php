@@ -16,6 +16,7 @@ get_header(); ?>
 
 		<section id="container">
 			<div id="content" role="main">
+			
 			<?php cryout_before_content_hook(); ?>
 			
 			<?php if ( have_posts() ) : ?>

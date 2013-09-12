@@ -226,9 +226,7 @@ if ($mantra_backtop=="Enable") add_action ('cryout_body_hook','mantra_back_top')
  */
 function mantra_breadcrumbs() {
 $mantra_options= mantra_get_theme_options();
-foreach ($mantra_options as $key => $value) {
-     ${"$key"} = $value ;
-}
+foreach ($mantra_options as $key => $value) { ${"$key"} = $value; }
 global $post;
 echo '<div class="breadcrumbs">';
 if (is_page() && !is_front_page() || is_single() || is_category() || is_archive()) {
@@ -274,8 +272,7 @@ if (is_page() && !is_front_page() || is_single() || is_category() || is_archive(
 echo '</div>';
 }
 
-
-if($mantra_breadcrumbs=="Enable")  add_action ('cryout_breadcrumbs_hook','mantra_breadcrumbs');
+if($mantra_breadcrumbs=="Enable")  add_action ('cryout_before_content_hook','mantra_breadcrumbs',0);
 
 
 if ( ! function_exists( 'mantra_pagination' ) ) :
@@ -332,8 +329,8 @@ foreach ($mantra_options as $key => $value) {
 }	?>
 	<div style="text-align:center;clear:both;padding-top:4px;" >
 		<a href="<?php echo esc_url( home_url( '/' ) ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-			<?php bloginfo( 'name' ); ?></a> | <?php _e('Powered by','mantra')?> <a href="<?php echo 'http://www.cryoutcreations.eu';?>" title="<?php echo 'Mantra Theme by '.
-			'Cryout Creations';?>"><?php echo 'Mantra' ?></a> &amp; <a href="<?php echo esc_url('http://wordpress.org/' ); ?>"
+			<?php bloginfo( 'name' ); ?></a> | <?php _e('Powered by','mantra')?> <a target="_blank" href="<?php echo 'http://www.cryoutcreations.eu';?>" title="<?php echo 'Mantra Theme by '.
+			'Cryout Creations';?>"><?php echo 'Mantra' ?></a> &amp; <a target="_blank" href="<?php echo esc_url('http://wordpress.org/' ); ?>"
 			title="<?php esc_attr_e('Semantic Personal Publishing Platform', 'mantra'); ?>"> <?php printf(' %s.', 'WordPress' ); ?>
 		</a>
 	</div><!-- #site-info -->
@@ -358,6 +355,43 @@ if ($mantra_copyright != '') add_action('cryout_footer_hook','mantra_copyright',
 
 add_action('wp_ajax_nopriv_do_ajax', 'mantra_ajax_function');
 add_action('wp_ajax_do_ajax', 'mantra_ajax_function');
+
+
+/** 
+* Retrieves the IDs for images in a gallery. 
+* @since mantra 2.1.1
+* @return array List of image IDs from the post gallery. 
+*/ 
+function mantra_get_gallery_images() { 
+       $images = array(); 
+
+       if ( function_exists( 'get_post_galleries' ) ) { 
+               $galleries = get_post_galleries( get_the_ID(), false ); 
+               if ( isset( $galleries[0]['ids'] ) ) 
+                       $images = explode( ',', $galleries[0]['ids'] ); 
+       } else { 
+               $pattern = get_shortcode_regex(); 
+               preg_match( "/$pattern/s", get_the_content(), $match ); 
+               $atts = shortcode_parse_atts( $match[3] ); 
+               if ( isset( $atts['ids'] ) ) 
+                       $images = explode( ',', $atts['ids'] ); 
+       } 
+
+       if ( ! $images ) { 
+               $images = get_posts( array( 
+                       'fields'         => 'ids', 
+                       'numberposts'    => 999, 
+                       'order'          => 'ASC', 
+                       'orderby'        => 'menu_order', 
+                       'post_mime_type' => 'image', 
+                       'post_parent'    => get_the_ID(), 
+                       'post_type'      => 'attachment', 
+               ) ); 
+       } 
+
+       return $images; 
+} // mantra_get_gallery_images()
+
 
 if ( ! function_exists( 'mantra_ajax_function' ) ) :
 
@@ -394,18 +428,18 @@ endif;
 
 if ( ! function_exists( 'mantra_ajax_get_latest_posts' ) ) :
 function mantra_ajax_get_latest_posts($count,$categName){
- $testVar='';
-// The Query
-query_posts( 'category_name='.$categName);
-// The Loop
-if ( have_posts() ) : while ( have_posts() ) : the_post();
-$testVar .=the_title("<option>","</option>",0);
-endwhile; else: endif;
+	$testVar='';
+	// The Query
+	query_posts( 'category_name='.$categName);
+	// The Loop
+	if ( have_posts() ) : while ( have_posts() ) : the_post();
+		$testVar .=the_title("<option>","</option>",0);
+	endwhile; else: endif;
 
-// Reset Query
-wp_reset_query();
-
-return $testVar;
+	// Reset Query
+	wp_reset_query();
+	
+	return $testVar;
 }
 endif;
 ?>

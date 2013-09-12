@@ -54,6 +54,6 @@
 		<?php cryout_forbottom_hook(); ?>
 
 		<div style="clear:both;"> </div>
-
+		
 		<?php cryout_breadcrumbs_hook();?>
 							
