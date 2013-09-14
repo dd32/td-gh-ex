@@ -15,7 +15,7 @@
 									<div class="entry-meta">
 										<?php
 										$metadata = wp_get_attachment_metadata();
-										printf( __( '<a href="%1$s" title="Link to full-size image">%2$s &times; %3$s</a> in <a href="%4$s" title="Return to %5$s" rel="gallery">%6$s</a>', 'activetab' ),
+										printf( __( '<a href="%1$s">%2$s &times; %3$s</a> in <a href="%4$s" title="Return to %5$s" rel="gallery">%6$s</a>', 'activetab' ),
 											wp_get_attachment_url(),
 											$metadata['width'],
 											$metadata['height'],

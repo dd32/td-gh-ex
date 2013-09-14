@@ -2,14 +2,14 @@
 
 </div> <!-- /#main /.site-main -->
 
-</div> <!-- /.row-fluid -->
+</div> <!-- /.row -->
 
 
 <footer id="colophon" class="site-footer clearfix" role="contentinfo">
 
-	<div class="row-fluid">
+	<div class="row">
 
-		<div class="span8">
+		<div class="col-lg-8">
 			<div class="site-footer-left">
 
 				<?php if ( ! dynamic_sidebar( 'footer' ) ) : // footer widgetized area ?>
@@ -26,9 +26,9 @@
 				<?php endif; // end of the footer widgetized area ?>
 
 			</div> <!-- /.site-footer-left -->
-		</div> <!-- /.span8 -->
+		</div> <!-- /.col-lg-8 -->
 
-		<div class="span4">
+		<div class="col-lg-4">
 			<div class="site-footer-right text-right">
 
 				<?php if ( is_home() || is_front_page() ) : // show credit links only on homepage
@@ -44,17 +44,17 @@
 				<?php endif; ?>
 
 			</div> <!-- /.site-footer-right -->
-		</div> <!-- /.span4 -->
+		</div> <!-- /.col-lg-4 -->
 
-	</div> <!-- /.row-fluid -->
+	</div> <!-- /.row -->
 
 
 </footer> <!-- /#colophon /.site-footer -->
 
-</div> <!-- /.span12 -->
-</div> <!-- /.row-fluid -->
-</div> <!-- /.container-fluid -->
+</div> <!-- /.col-lg-12 -->
+</div> <!-- /.row -->
 </div> <!-- /.site-wrapper -->
+</div> <!-- /.container -->
 
 </div> <!-- /#page /.hfeed -->
 

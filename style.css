@@ -2,7 +2,7 @@
 Theme Name: activetab
 Theme URI: http://web-profile.com.ua/wordpress/themes/activetab/
 Description: Responsive clean theme. More info at http://web-profile.com.ua/activetab/
-Version: 0.4.7
+Version: 0.5.4
 Author: webvitaly
 Author URI: http://web-profile.com.ua/wordpress/
 Tags: gray, white, light, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -36,7 +36,6 @@ body { /* break long url and lines without spaces */
 
 /* ========== main classes ========== */
 .site-wrapper {
-	max-width: 1000px; /* site width */
 	margin-top: 20px;
 	margin-left: auto;
 	margin-right: auto;
@@ -45,12 +44,9 @@ body { /* break long url and lines without spaces */
 	border: 1px solid #e6e6e6;
 	/*box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);*/
 }
-.navbar .container-fluid {
-	max-width: 1040px;
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: 0;
-	padding-right: 0;
+
+.site-container {
+	max-width: 1000px; /* site width */
 }
 
 
@@ -186,7 +182,6 @@ table td.label { /* WordPress sample data fix */
 /* ========== links ========== */
 a:link {
 	text-decoration: underline;
-	/*color: #00e;*/
 }
 a:visited {
 	color: #333;
@@ -203,18 +198,6 @@ a img {
 }
 
 
-
-/* micro clearfix for modern browsers: http://nicolasgallagher.com/micro-clearfix-hack/ */
-.clearfix { /* For IE 6/7 (trigger hasLayout) */
-	*zoom: 1;
-}
-.clearfix:before, .clearfix:after {
-	display: table;
-	content: "";
-}
-.clearfix:after {
-	clear: both;
-}
 
 /* ========== pointer cursor for clickable elements ========== */
 a[href], input[type='submit'], input[type='image'], input[type='button'], input[type='reset'], label[for], select, button, .pointer {
@@ -651,9 +634,6 @@ article.sticky {
 	height: 44px;
 }
 .navbar {}
-.navbar-inner {
-	min-height: inherit;
-}
 .navbar-static-top {}
 body.admin-bar .navbar-fixed-top { /* move menu below admin-bar */
 	top: 28px;

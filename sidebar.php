@@ -1,5 +1,5 @@
 
-				<div class="span4">
+				<div class="col-lg-4">
 					<div id="secondary" class="widget-area" role="complementary">
 
 
@@ -23,7 +23,6 @@
 							if ( ! empty( $header_image ) ) : ?>
 								<?php echo $link_before; ?>
 									<img class="border-radius" src="<?php echo esc_url( $header_image ); ?>"
-					                   height="<?php echo get_custom_header()->height; ?>"
 					                   width="<?php echo get_custom_header()->width; ?>"
 					                   alt="<?php echo $title_desc ?>">
 								<?php echo $link_after; ?>
@@ -125,4 +124,4 @@
 						<?php endif; // end of the sidebar widgetized area ?>
 
 					</div> <!-- /#secondary /.widget-area -->
-				</div> <!-- /.span4 -->
+				</div> <!-- /.col-lg-4 -->

@@ -33,39 +33,35 @@ if( $menu_position_type == 'fixed' ) {
 ?>
 
 <div class="navbar navbar-inverse <?php echo $menu_position_class; ?>">
-	<div class="navbar-inner">
-		<div class="container-fluid">
-			<nav class="site-navigation main-navigation" role="navigation">
-			<?php //wp_list_pages('title_li='); // list of pages ?>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'primary-nav',
-				'container' => 'nav',
-				'container_class' => 'nav-menu clearfix',
-				'menu_class' => 'nav',
-				'fallback_cb' => 'activetab_list_pages'
-			) );
-			?>
-			</nav> <!-- /.site-navigation /.main-navigation -->
-		</div>
-	</div> <!-- /.navbar-inner -->
-</div> <!-- /.navbar -->
+
+	<div class="container site-container navbar-ex1-collapse">
+		<nav class="site-navigation main-navigation" role="navigation">
+		<?php //wp_list_pages('title_li='); // list of pages ?>
+		<?php
+		wp_nav_menu( array(
+			'theme_location' => 'primary-nav',
+			'container' => 'nav',
+			'container_class' => 'nav-menu clearfix',
+			'menu_class' => 'nav',
+			'fallback_cb' => 'activetab_list_pages'
+		) );
+		?>
+		</nav> <!-- /.site-navigation /.main-navigation -->
+	</div> <!-- /.container /.site-container -->
+
+</div> <!-- /.container /.site-container -->
 
 <?php if( $menu_position_type == 'fixed' ) : ?>
 <div class="site-content-pusher"><!-- push content because of fixed menu --></div>
 <?php endif; ?>
 
-<?php
-/*
-<div class="container-fluid"><div class="row-fluid">
-<div class="container"><div class="row">
-*/
-?>
 
+
+
+<div class="container site-container">
 <div class="site-wrapper border-radius">
-<div class="container-fluid">
-<div class="row-fluid">
-<div class="span12">
-<div class="row-fluid">
+<div class="row">
+<div class="col-lg-12">
+<div class="row">
 
 	<div id="main" class="site-main">

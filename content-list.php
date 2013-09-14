@@ -9,7 +9,7 @@
 			$sticky = '';
 		}
 		?>
-		<h3 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a><?php echo $sticky; ?></h3>
+		<h3 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a><?php echo $sticky; ?></h3>
 
 		<?php if ( 'post' == get_post_type() ) : // hide meta text for pages ?>
 			<?php echo activetab_post_meta(); ?>

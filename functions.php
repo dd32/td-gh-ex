@@ -5,23 +5,25 @@ if ( ! isset( $content_width ) ) {
 }
 
 
-$activetab_version = '0.4.7';
+$activetab_version = '0.5.4';
 
 
 if ( ! function_exists( 'activetab_enqueue_scripts_and_styles' ) ) :
 	function activetab_enqueue_scripts_and_styles() {
 		global $activetab_version;
 
+		//wp_enqueue_script( 'activetab-bootstrap-script', get_template_directory_uri() . '/bootstrap/js/bootstrap.js', array( 'jquery' ), $activetab_version );
+
 		wp_enqueue_script( 'activetab-script', get_template_directory_uri() . '/js/activetab.js', array( 'jquery' ), $activetab_version );
 
-	    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+
+		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 	        wp_enqueue_script( 'comment-reply' );
 	    }
 
-		wp_enqueue_style( 'activetab-bootstrap', get_template_directory_uri() . '/bootstrap/css/bootstrap.css', array(), $activetab_version, 'all' );
-		wp_enqueue_style( 'activetab-bootstrap-responsive', get_template_directory_uri() . '/bootstrap/css/bootstrap-responsive.css', array( 'activetab-bootstrap' ), $activetab_version, 'all' );
-		wp_enqueue_style( 'activetab-font-awesome', get_template_directory_uri() . '/font-awesome/css/font-awesome.css', array( 'activetab-bootstrap' ), $activetab_version, 'all' );
-		wp_enqueue_style( 'activetab-style', get_stylesheet_uri(), array( 'activetab-bootstrap' ), $activetab_version, 'all' ); // get_stylesheet_directory_uri() . '/style.css'
+		wp_enqueue_style( 'activetab-bootstrap-style', get_template_directory_uri() . '/bootstrap/css/bootstrap.css', array(), $activetab_version, 'all' );
+		wp_enqueue_style( 'activetab-font-awesome-style', get_template_directory_uri() . '/font-awesome/css/font-awesome.css', array(), $activetab_version, 'all' );
+		wp_enqueue_style( 'activetab-style', get_stylesheet_uri(), array( 'activetab-bootstrap-style' ), $activetab_version, 'all' ); // get_stylesheet_directory_uri() . '/style.css'
 	}
 	add_action( 'wp_enqueue_scripts', 'activetab_enqueue_scripts_and_styles' );
 endif; // activetab_enqueue_scripts_and_styles()

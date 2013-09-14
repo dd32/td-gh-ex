@@ -3,12 +3,12 @@ Contributors: webvitaly
 Donate link: http://web-profile.com.ua/donate/
 Tags: gray, white, light, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.4
-Tested up to: 3.5.2
-Stable tag: 0.4.6
+Tested up to: 3.6.1
+Stable tag: 0.5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Responsive clean theme. More info at http://web-profile.com.ua/wordpress/themes/activetab/
+Responsive clean theme. More info at http://web-profile.com.ua/activetab/
 
 == Description ==
 
@@ -26,12 +26,14 @@ Responsive clean theme. More info at http://web-profile.com.ua/wordpress/themes/
 
 = activetab theme options: =
 
-* upload custom logo
+* custom logo upload
 * show or hide site title in header section
 * show or hide site description in header section
 * menu position type (fixed or static)
-* head code - could be inserted any javascript or css code into head section before closing [/head] tag
-* footer code - same as head code, but it will be inserted before closing [/body] tag
+* show excerpt or full content in the list of posts
+* custom favicon upload (favicon shown in frontend and admin sections)
+* custom head code - could be inserted any javascript or css code into head section before closing [/head] tag
+* custom footer code - same as head code, but it will be inserted before closing [/body] tag
 
 
 FAQ:
@@ -40,6 +42,10 @@ FAQ:
 
 
 == Changelog ==
+
+= 0.5.4 - 2013-09-15 =
+* updated Bootstrap v.3
+* updated theme structure for Bootstrap v.3
 
 = 0.4.7 - 2013-07-26 =
 * option added: favicon upload (favicon shown in frontend and admin sections)
