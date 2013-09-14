@@ -2,14 +2,14 @@
 /**
  * @package WordPress
  * @subpackage Avedon
- * @since Avedon 1.04
+ * @since Avedon 1.05
  */
 
 get_header(); ?>
 
 <?php if ( ! dynamic_sidebar( 'home-fullfeature-content' ) ); ?>
-<div id="primary" class="row-fluid">
 <?php if ( ! dynamic_sidebar( 'home-feature-content' ) ); ?>
+<div id="primary" class="row-fluid">
 <div class="span6 offset1">
 <?php $text = of_get_option('headertext'); if ($text) { echo '<h1 class="homehead">' . of_get_option('headertext') . '</h1>'; }; ?>
 <?php $header_image = get_header_image(); if ( ! empty( $header_image ) ) : ?>
@@ -22,12 +22,12 @@ get_header(); ?>
 <a href="<?php the_permalink(); ?>" title="<?php the_title();?>" class="span11"><h3><?php the_title();?></h3></a>
 <span class="comment-count span1 hidden-phone"><?php comments_number('0','1','%'); ?></span>
 <p class="meta span12"><?php echo avedon_posted_on();?></p>
-<div class="row-fluid"><span class="span12">
+<div class="row-fluid"><div class="span12">
 <?php if ( has_post_thumbnail() ) ?>
 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
 <?php the_post_thumbnail( 'primary-post-thumbnail', array('class' => 'span3 teasepic'));?></a>
 <?php the_excerpt();?>
-</span>
+</div>
 </div>
 </div>
 

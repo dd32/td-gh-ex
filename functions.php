@@ -108,7 +108,7 @@ function avedon_widgets_init() {
     register_sidebar(array(
     'name' => 'Home Full Feature Content',
     'id'   => 'home-fullfeature-content',
-    'description'   => 'Above homepage content - 100% page width. (not recommended if using SuperSize)',
+    'description'   => 'Above frontpage content - 100% page width. (Primarily for feature slideshows / No formatting. Not recommended if using SuperSize)',
     'before_widget' => '<div id="fullfeature" class="fulltiptop row-fluid %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<span class="hometoptitle">',
@@ -118,9 +118,9 @@ function avedon_widgets_init() {
     register_sidebar(array(
     'name' => 'Home Feature Content',
     'id'   => 'home-feature-content',
-    'description'   => 'Above homepage content - As wide as the content.',
-    'before_widget' => '<div id="feature" class="span10 offset1 tiptop %2$s">',
-    'after_widget'  => '</div>',
+    'description'   => 'Above homepage content - As wide as the content. (Primarily for feature slideshows / No formatting)',
+    'before_widget' => '<div id="feature" class="row-fluid"><div class="span10 offset1">',
+    'after_widget'  => '</div></div>',
     'before_title'  => '<span class="hometoptitle">',
     'after_title'   => '</span>'
   ));

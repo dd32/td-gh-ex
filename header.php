@@ -2,8 +2,8 @@
 /**
  * @package WordPress
  * @subpackage Avedon
- * @since Avedon 1.04
-*/
+ * @since Avedon 1.05
+ */
 ?>
 
 <!DOCTYPE html>

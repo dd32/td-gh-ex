@@ -30,12 +30,19 @@ function avedontheme_options() {
 		'navbar-static-top' => __('Static', 'avedon_theme_options')
 	);
 
+	$navbar_body_padding = array(
+		'50px' => __('50px', 'avedon_theme_options'),
+		'75px' => __('75px', 'avedon_theme_options'),
+		'100px' => __('100px', 'avedon_theme_options'),
+		'125px' => __('125px', 'avedon_theme_options'),
+		'150px' => __('150px', 'avedon_theme_options')
+	);
+
 	$images_number = array(
 		'two' => __('Two', 'avedon_theme_options'),
 		'three' => __('Three', 'avedon_theme_options'),
 		'four' => __('Four', 'avedon_theme_options'),
 		'five' => __('Five', 'avedon_theme_options'),
-		'six' => __('Six', 'avedon_theme_options'),
 		'none' => __('None', 'avedon_theme_options')
 	);
 
@@ -45,8 +52,7 @@ function avedontheme_options() {
 		'scrollarrows' => __('Scrolling Arrows', 'avedon_theme_options'),
 		'slidecount' => __('Slide Counter', 'avedon_theme_options'),
 		'slidecaption' => __('Slide Caption', 'avedon_theme_options'),
-		'slidelist' => __('Nav Dots', 'avedon_theme_options'),
-		'progbar' => __('Progress Bar', 'avedon_theme_options')
+		'slidelist' => __('Nav Dots', 'avedon_theme_options')
 	);
 
 	// Multicheck Sharing Defaults
@@ -129,6 +135,14 @@ function avedontheme_options() {
 		'std' => 'navbar-static-top',
 		'type' => 'select',
 		'options' => $navbar_attachments);
+
+	$options[] = array(
+		'name' => __('Fixed Navbar Padding', 'avedon_theme_options'),
+		'desc' => __('Select the fixed menu padding - to allow for larger menus (applies to fixed menus on large width screensize).', 'avedon_theme_options'),
+		'id' => 'navbar_padding',
+		'std' => '150px',
+		'type' => 'select',
+		'options' => $navbar_body_padding);
 
 	$options[] = array(
 		'name' => __('Header / Footer Background Color', 'avedon_theme_options'),

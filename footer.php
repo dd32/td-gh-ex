@@ -2,7 +2,7 @@
 /**
  * @package WordPress
  * @subpackage Avedon
- * @since Avedon 1.04
+ * @since Avedon 1.05
  */
 
 ?>
@@ -43,7 +43,7 @@
 <span class="span1 pull-right totop hidden-phone"><a href="#"><i class="avedonicon-chevron-up"></i></a></span>
 </div></footer>
 
-<?php if ( of_get_option('show_supersize') ) { get_template_part('helper/superfoot'); get_template_part('helper/super'); } ?>
+<?php if ( of_get_option('show_supersize') ) { get_template_part('helper/super'); } ?>
 <?php wp_footer(); ?>
 </body>
 </html>

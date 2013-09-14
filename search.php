@@ -2,17 +2,17 @@
 /**
  * @package WordPress
  * @subpackage Avedon
- * @since Avedon 1.04
+ * @since Avedon 1.05
  */
 
 get_header(); ?>
 
 <div id="primary" class="row-fluid">
-<div class="span6 offset1">
+<div class="span6 offset1 subhead">
 
 <?php if ( have_posts() ) : ?>
 
-<h1 id="overview" class="subhead"><?php printf( __( 'Search Results for: %s', 'avedon' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+<h1 id="overview"><?php printf( __( 'Search Results for: %s', 'avedon' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 
 <?php get_posts(); while (have_posts()) : the_post(); ?>
 
@@ -33,14 +33,12 @@ get_header(); ?>
 <?php endwhile; ?>
 <?php else : ?>
 
-<div class="span6 offset1">
 
-<h1 id="overview" class="subhead"><?php _e( 'No Results Found', 'avedon' ); ?></h1>
+<h1 id="overview"><?php _e( 'No Results Found', 'avedon' ); ?></h1>
 <p class="lead"><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps you should try again with a different search term.', 'avedon' ); ?></p><hr />
 
 <?php get_search_form(); ?>
 
-</div>
 
 <?php endif ;?>
 
