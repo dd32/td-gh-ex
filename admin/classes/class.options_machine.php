@@ -1002,9 +1002,9 @@ class Options_Machine {
 		$icons .= '<input class="upload slide of-input" name="'. $id .'['.$order.'][url]" id="'. $id .'_'.$order .'_slide_url" value="'. $val['url'] .'" />';
 
 		$icons .= '<div class="upload_button_div"><span class="button media_upload_button" id="'.$id.'_'.$order .'">Upload</span>';
-		
+
 		if(!empty($val['url'])) {$hide = '';} else { $hide = 'hide';}
-		$icons .= '<span class="button mlu_remove_button '. $hide.'" id="reset_'. $id .'_'.$order .'" title="' . $id . '_'.$order .'">Remove</span>';
+		$icons .= '<span class="button remove-image '. $hide.'" id="reset_'. $id .'_'.$order .'" title="' . $id . '_'.$order .'">Remove</span>';
 		$icons .='</div>' . "\n";
 		$icons .= '<div class="screenshot">';
 		if(!empty($val['url'])){

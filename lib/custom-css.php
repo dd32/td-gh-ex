@@ -43,14 +43,14 @@ $logo_padding_left = '#logo {margin-left:0px;}';
   $logo_padding_right = '#logo {margin-right:0px;}';
 }
 if(isset($smof_data['menu_margin_top'])) {
- $menu_margin_top = '#nav-main ul.sf-menu {margin-top:'.$smof_data['menu_margin_top'].'px;}';
+ $menu_margin_top = '#nav-main {margin-top:'.$smof_data['menu_margin_top'].'px;}';
  } else {
-  $menu_margin_top = '#nav-main ul.sf-menu {margin-top:40px;}';
+  $menu_margin_top = '#nav-main {margin-top:40px;}';
  } 
  if(isset($smof_data['menu_margin_bottom'])) {
- $menu_margin_bottom = '#nav-main ul.sf-menu {margin-bottom:'.$smof_data['menu_margin_bottom'].'px;}';
+ $menu_margin_bottom = '#nav-main {margin-bottom:'.$smof_data['menu_margin_bottom'].'px;}';
 } else {
-  $menu_margin_bottom = '#nav-main ul.sf-menu {margin-bottom:10px;}';
+  $menu_margin_bottom = '#nav-main {margin-bottom:10px;}';
 }
 //Typography
 if(!empty($smof_data['font_header'])) {

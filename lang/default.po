@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Lite Virtue\n"
-"POT-Creation-Date: 2013-09-01 14:34-0500\n"
-"PO-Revision-Date: 2013-09-01 14:34-0500\n"
+"POT-Creation-Date: 2013-09-14 23:32-0700\n"
+"PO-Revision-Date: 2013-09-14 23:33-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -42,7 +42,7 @@ msgid "Newer posts &rarr;"
 msgstr ""
 
 #: ../page-blog.php:43 ../templates/similarblog-carousel.php:62
-#: ../templates/home/blog-home.php:70
+#: ../templates/home/blog-home.php:75
 msgid "Sorry, no blog entries found."
 msgstr ""
 
@@ -70,7 +70,7 @@ msgstr ""
 msgid "Sorry, an error occured."
 msgstr ""
 
-#: ../page-contact.php:126 ../lib/widgets.php:273
+#: ../page-contact.php:126 ../lib/widgets.php:283
 msgid "Name:"
 msgstr ""
 
@@ -159,7 +159,7 @@ msgid "Portfolio Carousel"
 msgstr ""
 
 #: ../admin/functions/functions.options.php:41
-#: ../admin/functions/functions.options.php:824
+#: ../admin/functions/functions.options.php:864
 msgid "Icon Menu"
 msgstr ""
 
@@ -192,649 +192,704 @@ msgid "Select Boxed or Wide Site Layout Style"
 msgstr ""
 
 #: ../admin/functions/functions.options.php:450
-msgid "Use Topbar?"
-msgstr ""
-
-#: ../admin/functions/functions.options.php:451
-msgid "Choose to show or hide topbar"
-msgstr ""
-
-#: ../admin/functions/functions.options.php:456
 msgid "Footer Widget Layout"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:457
+#: ../admin/functions/functions.options.php:451
 msgid "Select how many columns for footer widgets"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:467
-#: ../admin/functions/functions.options.php:470
+#: ../admin/functions/functions.options.php:461
+#: ../admin/functions/functions.options.php:464
 msgid "Logo Options"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:474
+#: ../admin/functions/functions.options.php:468
 msgid "Logo Layout"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:475
+#: ../admin/functions/functions.options.php:469
 msgid "Choose how you want your logo to be laid out"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:484
+#: ../admin/functions/functions.options.php:478
 msgid "Logo"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:485
+#: ../admin/functions/functions.options.php:479
 msgid "Upload your Logo. If left blank theme will use site name."
 msgstr ""
 
-#: ../admin/functions/functions.options.php:490
+#: ../admin/functions/functions.options.php:484
 msgid "Upload Your x2 Logo for Retina Screens"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:491
+#: ../admin/functions/functions.options.php:485
 msgid "Should be twice the pixel size of your normal logo."
 msgstr ""
 
-#: ../admin/functions/functions.options.php:496
+#: ../admin/functions/functions.options.php:490
 msgid "Sitename Logo Font"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:497
+#: ../admin/functions/functions.options.php:491
 msgid "This font will apply to your sitename if you don't upload a logo."
 msgstr ""
 
-#: ../admin/functions/functions.options.php:507
+#: ../admin/functions/functions.options.php:501
 msgid "Sitename Style"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:508
+#: ../admin/functions/functions.options.php:502
 msgid "Choose size and style your sitename, if you don't use an image logo."
 msgstr ""
 
-#: ../admin/functions/functions.options.php:518
+#: ../admin/functions/functions.options.php:512
 msgid "Below Logo Text"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:519
+#: ../admin/functions/functions.options.php:513
 msgid "An optional line of text below your logo"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:524
+#: ../admin/functions/functions.options.php:518
 msgid "Logo Spacing"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:525
-#: ../admin/functions/functions.options.php:561
+#: ../admin/functions/functions.options.php:519
+#: ../admin/functions/functions.options.php:555
 msgid "Top Spacing"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:534
-#: ../admin/functions/functions.options.php:570
+#: ../admin/functions/functions.options.php:528
+#: ../admin/functions/functions.options.php:564
 msgid "Bottom Spacing"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:543
+#: ../admin/functions/functions.options.php:537
 msgid "Left Spacing"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:552
+#: ../admin/functions/functions.options.php:546
 msgid "Right Spacing"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:560
+#: ../admin/functions/functions.options.php:554
 msgid "Primary Menu Spacing"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:578
+#: ../admin/functions/functions.options.php:572
 msgid "Sitewide Banner"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:579
+#: ../admin/functions/functions.options.php:573
 msgid "Upload a banner for bottom of header."
 msgstr ""
 
-#: ../admin/functions/functions.options.php:585
-msgid "Slider Settings"
+#: ../admin/functions/functions.options.php:577
+msgid "Topbar Settings"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:588
-msgid "Choose a Home Image Slider"
+#: ../admin/functions/functions.options.php:580
+msgid "Use Topbar?"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:589
-msgid "If you don't want an image slider on your home page choose none."
+#: ../admin/functions/functions.options.php:581
+#: ../admin/functions/functions.options.php:587
+msgid "Choose to show or hide topbar"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:601
-msgid "Slider Images"
+#: ../admin/functions/functions.options.php:586
+msgid "Use Topbar Icon Menu?"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:602
-msgid "Use images of at least 1170px wide for best results."
+#: ../admin/functions/functions.options.php:592
+msgid "Topbar Icon Menu"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:607
-#: ../admin/functions/functions.options.php:699
-msgid "Slider Height"
+#: ../admin/functions/functions.options.php:593
+msgid "Choose your icons for the topbar icon menu"
+msgstr ""
+
+#: ../admin/functions/functions.options.php:598
+msgid "Show Cart total in topbar"
+msgstr ""
+
+#: ../admin/functions/functions.options.php:599
+msgid "This only works if using woocommerce"
+msgstr ""
+
+#: ../admin/functions/functions.options.php:604
+msgid "Display Search in Topbar?"
+msgstr ""
+
+#: ../admin/functions/functions.options.php:605
+msgid "Choose to show or hide search in topbar"
+msgstr ""
+
+#: ../admin/functions/functions.options.php:610
+msgid "Enable widget area in right of Topbar?"
+msgstr ""
+
+#: ../admin/functions/functions.options.php:611
+msgid ""
+"Note this will hide remove search (you can reinable it my adding it to the "
+"widget area)"
 msgstr ""
 
 #: ../admin/functions/functions.options.php:616
-#: ../admin/functions/functions.options.php:709
-msgid "Auto Play?"
+msgid "Slider Settings"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:617
-#: ../admin/functions/functions.options.php:710
-msgid "This determines if a slider automatically scrolls"
+#: ../admin/functions/functions.options.php:619
+msgid "Choose a Home Image Slider"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:622
-#: ../admin/functions/functions.options.php:716
-msgid "Slider Pause Time"
-msgstr ""
-
-#: ../admin/functions/functions.options.php:623
-#: ../admin/functions/functions.options.php:717
-msgid "How long to pause on each slide, in milliseconds"
-msgstr ""
-
-#: ../admin/functions/functions.options.php:631
-#: ../admin/functions/functions.options.php:726
-msgid "Transition Type"
+#: ../admin/functions/functions.options.php:620
+msgid "If you don't want an image slider on your home page choose none."
 msgstr ""
 
 #: ../admin/functions/functions.options.php:632
-#: ../admin/functions/functions.options.php:727
-msgid "Choose a transition type"
+msgid "Slider Images"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:641
-#: ../admin/functions/functions.options.php:736
-msgid "Slider Transition Time"
+#: ../admin/functions/functions.options.php:633
+msgid "Use large images for best results."
 msgstr ""
 
-#: ../admin/functions/functions.options.php:642
-#: ../admin/functions/functions.options.php:737
-msgid "How long for slide transitions, in milliseconds"
+#: ../admin/functions/functions.options.php:638
+msgid "Slider Max Height"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:650
-msgid "Show Captions?"
+#: ../admin/functions/functions.options.php:639
+#: ../admin/functions/functions.options.php:648
+msgid "Note: does not work if images are smaller than max."
 msgstr ""
 
-#: ../admin/functions/functions.options.php:651
-msgid "Choose to show or hide captions"
+#: ../admin/functions/functions.options.php:647
+msgid "Slider Max Width"
 msgstr ""
 
 #: ../admin/functions/functions.options.php:656
-msgid "Video Embed Code"
+#: ../admin/functions/functions.options.php:749
+msgid "Auto Play?"
 msgstr ""
 
 #: ../admin/functions/functions.options.php:657
-#: ../admin/functions/functions.options.php:747
-msgid "If your useing a video on the home page place video embed code here."
+#: ../admin/functions/functions.options.php:750
+msgid "This determines if a slider automatically scrolls"
 msgstr ""
 
 #: ../admin/functions/functions.options.php:662
-msgid "Mobile Slider"
+#: ../admin/functions/functions.options.php:756
+msgid "Slider Pause Time"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:668
-msgid "Create a more lightweight home slider for your mobile visitors."
+#: ../admin/functions/functions.options.php:663
+#: ../admin/functions/functions.options.php:757
+msgid "How long to pause on each slide, in milliseconds"
+msgstr ""
+
+#: ../admin/functions/functions.options.php:671
+#: ../admin/functions/functions.options.php:766
+msgid "Transition Type"
 msgstr ""
 
 #: ../admin/functions/functions.options.php:672
+#: ../admin/functions/functions.options.php:767
+msgid "Choose a transition type"
+msgstr ""
+
+#: ../admin/functions/functions.options.php:681
+#: ../admin/functions/functions.options.php:776
+msgid "Slider Transition Time"
+msgstr ""
+
+#: ../admin/functions/functions.options.php:682
+#: ../admin/functions/functions.options.php:777
+msgid "How long for slide transitions, in milliseconds"
+msgstr ""
+
+#: ../admin/functions/functions.options.php:690
+msgid "Show Captions?"
+msgstr ""
+
+#: ../admin/functions/functions.options.php:691
+msgid "Choose to show or hide captions"
+msgstr ""
+
+#: ../admin/functions/functions.options.php:696
+msgid "Video Embed Code"
+msgstr ""
+
+#: ../admin/functions/functions.options.php:697
+#: ../admin/functions/functions.options.php:787
+msgid "If your useing a video on the home page place video embed code here."
+msgstr ""
+
+#: ../admin/functions/functions.options.php:702
+msgid "Mobile Slider"
+msgstr ""
+
+#: ../admin/functions/functions.options.php:708
+msgid "Create a more lightweight home slider for your mobile visitors."
+msgstr ""
+
+#: ../admin/functions/functions.options.php:712
 msgid "Would you like to use this feature?"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:673
+#: ../admin/functions/functions.options.php:713
 msgid ""
 "Choose if you would like to show a different slider on your home page for "
 "your mobile visitors. If you chooose no it will default to your home slider."
 msgstr ""
 
-#: ../admin/functions/functions.options.php:679
+#: ../admin/functions/functions.options.php:719
 msgid "Choose a Slider for Mobile"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:680
+#: ../admin/functions/functions.options.php:720
 msgid "Choose which slider you would like to show for mobile viewers."
 msgstr ""
 
-#: ../admin/functions/functions.options.php:692
+#: ../admin/functions/functions.options.php:732
 msgid "Mobile Slider Images"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:746
+#: ../admin/functions/functions.options.php:739
+msgid "Slider Height"
+msgstr ""
+
+#: ../admin/functions/functions.options.php:786
 msgid "Mobile Video Embed Code"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:754
+#: ../admin/functions/functions.options.php:794
 msgid "Home Layout"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:757
+#: ../admin/functions/functions.options.php:797
 msgid "Homepage Layout Manager"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:758
+#: ../admin/functions/functions.options.php:798
 msgid "Organize how you want the layout to appear on the homepage"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:766
+#: ../admin/functions/functions.options.php:806
 msgid "Home Blog Settings"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:770
+#: ../admin/functions/functions.options.php:810
 msgid "Home Blog Title"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:771
+#: ../admin/functions/functions.options.php:811
 msgid "ex: Latest from the blog"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:776
+#: ../admin/functions/functions.options.php:816
 msgid "Choose How many posts on Homepage"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:785
+#: ../admin/functions/functions.options.php:825
 msgid "Limit posts to a Category"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:795
+#: ../admin/functions/functions.options.php:835
 msgid "Home Porfolio Settings"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:799
+#: ../admin/functions/functions.options.php:839
 msgid "Home Portfolio Carousel title"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:800
+#: ../admin/functions/functions.options.php:840
 msgid "ex: Portfolio Carousel title"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:805
+#: ../admin/functions/functions.options.php:845
 msgid "Portfolio Carousel Category Type"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:806
+#: ../admin/functions/functions.options.php:846
 msgid "Choose type for the portfolio carousel"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:812
+#: ../admin/functions/functions.options.php:852
 msgid "Display Porfolio Types under Title"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:818
-#: ../admin/functions/functions.options.php:821
+#: ../admin/functions/functions.options.php:858
+#: ../admin/functions/functions.options.php:861
 msgid "Home Icon Menu"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:825
+#: ../admin/functions/functions.options.php:865
 msgid "choose your icons for the icon menu"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:831
+#: ../admin/functions/functions.options.php:871
 msgid "Shop Settings"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:837
+#: ../admin/functions/functions.options.php:877
 msgid "Shop Archive Page Settings"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:841
-msgid "Show Cart total in top bar"
-msgstr ""
-
-#: ../admin/functions/functions.options.php:842
-msgid "This if the cart total is displayed in the topbar"
-msgstr ""
-
-#: ../admin/functions/functions.options.php:847
+#: ../admin/functions/functions.options.php:881
 msgid "Display the sidebar on shop archives?"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:848
+#: ../admin/functions/functions.options.php:882
 msgid "This determines if there is a sidebar on the shop and category pages."
 msgstr ""
 
-#: ../admin/functions/functions.options.php:857
+#: ../admin/functions/functions.options.php:891
 msgid "Choose a Sidebar for your shop page"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:864
+#: ../admin/functions/functions.options.php:898
 msgid "How many products per page"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:873
+#: ../admin/functions/functions.options.php:907
 msgid "Show Ratings in Shop and Category Pages"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:874
+#: ../admin/functions/functions.options.php:908
 msgid "This determines if the rating is displayed in the product archive pages"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:882
+#: ../admin/functions/functions.options.php:916
 msgid "Product Page Settings"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:886
+#: ../admin/functions/functions.options.php:920
 msgid "Display product tabs?"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:887
+#: ../admin/functions/functions.options.php:921
 msgid "This determines if product tabs are displayed"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:892
+#: ../admin/functions/functions.options.php:926
 msgid "Display related products?"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:893
+#: ../admin/functions/functions.options.php:927
 msgid "This determines related products are displayed"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:898
+#: ../admin/functions/functions.options.php:932
 msgid "Basic Styling"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:901
+#: ../admin/functions/functions.options.php:935
 msgid "Theme Skin Stylesheet"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:902
+#: ../admin/functions/functions.options.php:936
 msgid ""
 "Note* changes made in options panel will override this stylesheet. Example: "
 "Colors set in typography."
 msgstr ""
 
-#: ../admin/functions/functions.options.php:908
+#: ../admin/functions/functions.options.php:942
 msgid "Primary Highlight Color"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:909
+#: ../admin/functions/functions.options.php:943
 msgid "Choose the default Highlight color for your site."
 msgstr ""
 
-#: ../admin/functions/functions.options.php:914
+#: ../admin/functions/functions.options.php:948
 msgid "30% lighter than Primary Color"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:920
+#: ../admin/functions/functions.options.php:954
 msgid "Footer Font Color"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:927
+#: ../admin/functions/functions.options.php:961
 msgid "Advanced Styling"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:933
+#: ../admin/functions/functions.options.php:967
 msgid "Main Conent Background"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:938
+#: ../admin/functions/functions.options.php:972
 msgid "Main Content Background"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:939
-#: ../admin/functions/functions.options.php:996
-#: ../admin/functions/functions.options.php:1053
-#: ../admin/functions/functions.options.php:1110
-#: ../admin/functions/functions.options.php:1167
-#: ../admin/functions/functions.options.php:1225
-#: ../admin/functions/functions.options.php:1283
+#: ../admin/functions/functions.options.php:973
+#: ../admin/functions/functions.options.php:1030
+#: ../admin/functions/functions.options.php:1087
+#: ../admin/functions/functions.options.php:1144
+#: ../admin/functions/functions.options.php:1201
+#: ../admin/functions/functions.options.php:1259
+#: ../admin/functions/functions.options.php:1317
 msgid "Background Color"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:945
-#: ../admin/functions/functions.options.php:1002
-#: ../admin/functions/functions.options.php:1059
-#: ../admin/functions/functions.options.php:1116
-#: ../admin/functions/functions.options.php:1173
-#: ../admin/functions/functions.options.php:1231
-#: ../admin/functions/functions.options.php:1289
+#: ../admin/functions/functions.options.php:979
+#: ../admin/functions/functions.options.php:1036
+#: ../admin/functions/functions.options.php:1093
+#: ../admin/functions/functions.options.php:1150
+#: ../admin/functions/functions.options.php:1207
+#: ../admin/functions/functions.options.php:1265
+#: ../admin/functions/functions.options.php:1323
 msgid "Upload background image or texture"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:951
-#: ../admin/functions/functions.options.php:1008
-#: ../admin/functions/functions.options.php:1065
-#: ../admin/functions/functions.options.php:1179
-#: ../admin/functions/functions.options.php:1237
-#: ../admin/functions/functions.options.php:1295
+#: ../admin/functions/functions.options.php:985
+#: ../admin/functions/functions.options.php:1042
+#: ../admin/functions/functions.options.php:1099
+#: ../admin/functions/functions.options.php:1213
+#: ../admin/functions/functions.options.php:1271
+#: ../admin/functions/functions.options.php:1329
 msgid "Image repeat options"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:964
-#: ../admin/functions/functions.options.php:1021
-#: ../admin/functions/functions.options.php:1078
-#: ../admin/functions/functions.options.php:1135
-#: ../admin/functions/functions.options.php:1193
-#: ../admin/functions/functions.options.php:1251
-#: ../admin/functions/functions.options.php:1309
+#: ../admin/functions/functions.options.php:998
+#: ../admin/functions/functions.options.php:1055
+#: ../admin/functions/functions.options.php:1112
+#: ../admin/functions/functions.options.php:1169
+#: ../admin/functions/functions.options.php:1227
+#: ../admin/functions/functions.options.php:1285
+#: ../admin/functions/functions.options.php:1343
 msgid "X image placement options"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:976
-#: ../admin/functions/functions.options.php:1033
-#: ../admin/functions/functions.options.php:1090
-#: ../admin/functions/functions.options.php:1147
-#: ../admin/functions/functions.options.php:1205
-#: ../admin/functions/functions.options.php:1263
-#: ../admin/functions/functions.options.php:1321
+#: ../admin/functions/functions.options.php:1010
+#: ../admin/functions/functions.options.php:1067
+#: ../admin/functions/functions.options.php:1124
+#: ../admin/functions/functions.options.php:1181
+#: ../admin/functions/functions.options.php:1239
+#: ../admin/functions/functions.options.php:1297
+#: ../admin/functions/functions.options.php:1355
 msgid "Y image placement options"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:990
-#: ../admin/functions/functions.options.php:995
+#: ../admin/functions/functions.options.php:1024
+#: ../admin/functions/functions.options.php:1029
 msgid "Topbar Background"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1047
-#: ../admin/functions/functions.options.php:1052
+#: ../admin/functions/functions.options.php:1081
+#: ../admin/functions/functions.options.php:1086
 msgid "Header Background"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1104
-#: ../admin/functions/functions.options.php:1109
+#: ../admin/functions/functions.options.php:1138
+#: ../admin/functions/functions.options.php:1143
 msgid "Secondary Menu Background"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1161
+#: ../admin/functions/functions.options.php:1195
 msgid "Featured Content Background"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1166
+#: ../admin/functions/functions.options.php:1200
 msgid "Feature Background"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1219
-#: ../admin/functions/functions.options.php:1224
+#: ../admin/functions/functions.options.php:1253
+#: ../admin/functions/functions.options.php:1258
 msgid "Footer Background"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1277
-#: ../admin/functions/functions.options.php:1282
+#: ../admin/functions/functions.options.php:1311
+#: ../admin/functions/functions.options.php:1316
 msgid "Body Background"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1333
+#: ../admin/functions/functions.options.php:1367
 msgid "Fixed or Scroll"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1344
+#: ../admin/functions/functions.options.php:1378
 msgid "Typography"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1350
+#: ../admin/functions/functions.options.php:1384
 msgid "Header Font Options"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1354
+#: ../admin/functions/functions.options.php:1388
 msgid "Header Font"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1355
+#: ../admin/functions/functions.options.php:1389
 msgid "This font will apply to all header tags"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1365
+#: ../admin/functions/functions.options.php:1399
 msgid "H1 Headings"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1366
+#: ../admin/functions/functions.options.php:1400
 msgid "Choose Size and Style for h1 (This Styles Your Page Titles)"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1376
+#: ../admin/functions/functions.options.php:1410
 msgid "H2 Headings"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1377
+#: ../admin/functions/functions.options.php:1411
 msgid "Choose Size and Style for h2"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1387
+#: ../admin/functions/functions.options.php:1421
 msgid "H3 Headings"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1388
+#: ../admin/functions/functions.options.php:1422
 msgid "Choose Size and Style for h3"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1398
+#: ../admin/functions/functions.options.php:1432
 msgid "H4 Headings"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1399
+#: ../admin/functions/functions.options.php:1433
 msgid "Choose Size and Style for h4"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1409
+#: ../admin/functions/functions.options.php:1443
 msgid "H5 Headings"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1410
+#: ../admin/functions/functions.options.php:1444
 msgid "Choose Size and Style for h5"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1423
+#: ../admin/functions/functions.options.php:1457
 msgid "Body Font Options"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1427
-#: ../admin/functions/functions.options.php:1438
+#: ../admin/functions/functions.options.php:1461
+#: ../admin/functions/functions.options.php:1472
 msgid "Body Font"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1428
+#: ../admin/functions/functions.options.php:1462
 msgid "This font will apply to all body text"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1439
+#: ../admin/functions/functions.options.php:1473
 msgid "Choose Size and Style for paragraphs"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1452
+#: ../admin/functions/functions.options.php:1486
 msgid "Menus Font Options"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1456
+#: ../admin/functions/functions.options.php:1490
 msgid "Menu Font"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1457
+#: ../admin/functions/functions.options.php:1491
 msgid "This font will apply to all page menus"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1467
+#: ../admin/functions/functions.options.php:1501
 msgid "Primary Menu"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1468
+#: ../admin/functions/functions.options.php:1502
 msgid "Choose Size and Style for primary menu"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1478
+#: ../admin/functions/functions.options.php:1512
 msgid "Secondary Menu"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1479
+#: ../admin/functions/functions.options.php:1513
 msgid "Choose Size and Style for secondary menu"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1490
+#: ../admin/functions/functions.options.php:1524
 msgid "Misc Settings"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1493
+#: ../admin/functions/functions.options.php:1527
 msgid "All Projects Portfolio Page"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1494
+#: ../admin/functions/functions.options.php:1528
 msgid ""
 "This sets the link in every single portfolio page. *note: You still have to "
 "set the page template to portfolio."
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1500
+#: ../admin/functions/functions.options.php:1534
+msgid "Show Comments Closed Text?"
+msgstr ""
+
+#: ../admin/functions/functions.options.php:1535
+msgid "Choose to show or hide comments closed alert below posts."
+msgstr ""
+
+#: ../admin/functions/functions.options.php:1540
 msgid "Custom Favicon"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1501
+#: ../admin/functions/functions.options.php:1541
 msgid ""
 "Upload a 16px x 16px png/gif/ico image that will represent your website's "
 "favicon."
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1506
+#: ../admin/functions/functions.options.php:1546
 msgid "Contact Form Email"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1507
+#: ../admin/functions/functions.options.php:1547
 msgid "Sets the email for the contact page email form."
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1512
+#: ../admin/functions/functions.options.php:1552
 msgid "Footer Copyright Text"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1513
+#: ../admin/functions/functions.options.php:1553
 msgid ""
 "Write your own copyright text here. You can use the following shortcodes in "
 "your footer text: [copyright] [site-name] [the-year]"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1521
+#: ../admin/functions/functions.options.php:1561
 msgid "Create Sidebars"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1525
+#: ../admin/functions/functions.options.php:1565
 msgid "Create Custom Sidebars"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1532
+#: ../admin/functions/functions.options.php:1572
 msgid "Advanced Settings"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1538
+#: ../admin/functions/functions.options.php:1578
 msgid "Custom CSS"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1543
+#: ../admin/functions/functions.options.php:1583
 msgid "Quickly add some CSS to your theme by adding it to this block."
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1549
+#: ../admin/functions/functions.options.php:1589
 msgid "Backup Options"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1553
+#: ../admin/functions/functions.options.php:1593
 msgid "Backup and Restore Options"
 msgstr ""
 
-#: ../admin/functions/functions.options.php:1557
+#: ../admin/functions/functions.options.php:1597
 msgid ""
 "You can use the two buttons below to backup your current options, and then "
 "restore it back at a later time. This is useful if you want to experiment on "
@@ -1224,7 +1279,7 @@ msgid "Video"
 msgstr ""
 
 #: ../lib/metaboxes.php:101 ../lib/metaboxes.php:202 ../lib/metaboxes.php:391
-#: ../lib/widgets.php:740
+#: ../lib/widgets.php:750
 msgid "Image"
 msgstr ""
 
@@ -1240,7 +1295,7 @@ msgstr ""
 msgid "Post Summery"
 msgstr ""
 
-#: ../lib/metaboxes.php:116 ../lib/widgets.php:746
+#: ../lib/metaboxes.php:116 ../lib/widgets.php:756
 msgid "Text"
 msgstr ""
 
@@ -1643,68 +1698,72 @@ msgstr ""
 msgid "All plugins installed and activated successfully. %s"
 msgstr ""
 
-#: ../lib/widgets.php:6 ../lib/widgets.php:46
+#: ../lib/widgets.php:6 ../lib/widgets.php:57
 msgid "Primary Sidebar"
 msgstr ""
 
-#: ../lib/widgets.php:59 ../lib/widgets.php:100 ../lib/widgets.php:131
-msgid "Footer Column 1"
+#: ../lib/widgets.php:47
+msgid "Topbar Widget"
 msgstr ""
 
 #: ../lib/widgets.php:69 ../lib/widgets.php:110 ../lib/widgets.php:141
+msgid "Footer Column 1"
+msgstr ""
+
+#: ../lib/widgets.php:79 ../lib/widgets.php:120 ../lib/widgets.php:151
 msgid "Footer Column 2"
 msgstr ""
 
-#: ../lib/widgets.php:79 ../lib/widgets.php:120
+#: ../lib/widgets.php:89 ../lib/widgets.php:130
 msgid "Footer Column 3"
 msgstr ""
 
-#: ../lib/widgets.php:89
+#: ../lib/widgets.php:99
 msgid "Footer Column 4"
 msgstr ""
 
-#: ../lib/widgets.php:165
+#: ../lib/widgets.php:175
 msgid "Use this widget to add a Vcard to your site"
 msgstr ""
 
-#: ../lib/widgets.php:166
+#: ../lib/widgets.php:176
 msgid "Virtue: Contact/Vcard"
 msgstr ""
 
-#: ../lib/widgets.php:193
+#: ../lib/widgets.php:203
 msgid "vCard"
 msgstr ""
 
-#: ../lib/widgets.php:265 ../lib/widgets.php:408 ../lib/widgets.php:545
-#: ../lib/widgets.php:683
+#: ../lib/widgets.php:275 ../lib/widgets.php:418 ../lib/widgets.php:555
+#: ../lib/widgets.php:693
 msgid "Title:"
 msgstr ""
 
-#: ../lib/widgets.php:269
+#: ../lib/widgets.php:279
 msgid "Company Name:"
 msgstr ""
 
-#: ../lib/widgets.php:277
+#: ../lib/widgets.php:287
 msgid "Street Address:"
 msgstr ""
 
-#: ../lib/widgets.php:281
+#: ../lib/widgets.php:291
 msgid "City/Locality:"
 msgstr ""
 
-#: ../lib/widgets.php:285
+#: ../lib/widgets.php:295
 msgid "State/Region:"
 msgstr ""
 
-#: ../lib/widgets.php:289
+#: ../lib/widgets.php:299
 msgid "Zipcode/Postal Code:"
 msgstr ""
 
-#: ../lib/widgets.php:293 ../woocommerce/order/order-details.php:102
+#: ../lib/widgets.php:303 ../woocommerce/order/order-details.php:102
 msgid "Telephone:"
 msgstr ""
 
-#: ../lib/widgets.php:297 ../woocommerce/emails/admin-new-order.php:53
+#: ../lib/widgets.php:307 ../woocommerce/emails/admin-new-order.php:53
 #: ../woocommerce/emails/customer-completed-order.php:54
 #: ../woocommerce/emails/customer-note.php:58
 #: ../woocommerce/emails/customer-processing-order.php:54
@@ -1716,116 +1775,112 @@ msgstr ""
 msgid "Email:"
 msgstr ""
 
-#: ../lib/widgets.php:308
+#: ../lib/widgets.php:318
 msgid "Simple way to add Social Icons"
 msgstr ""
 
-#: ../lib/widgets.php:309
+#: ../lib/widgets.php:319
 msgid "Virtue: Social Links"
 msgstr ""
 
-#: ../lib/widgets.php:336
-msgid "Social"
-msgstr ""
-
-#: ../lib/widgets.php:412
+#: ../lib/widgets.php:422
 msgid "Facebook:"
 msgstr ""
 
-#: ../lib/widgets.php:416
+#: ../lib/widgets.php:426
 msgid "Twitter:"
 msgstr ""
 
-#: ../lib/widgets.php:420
+#: ../lib/widgets.php:430
 msgid "Instagram:"
 msgstr ""
 
-#: ../lib/widgets.php:424
+#: ../lib/widgets.php:434
 msgid "GooglePlus:"
 msgstr ""
 
-#: ../lib/widgets.php:428
+#: ../lib/widgets.php:438
 msgid "Flickr:"
 msgstr ""
 
-#: ../lib/widgets.php:432
+#: ../lib/widgets.php:442
 msgid "Youtube:"
 msgstr ""
 
-#: ../lib/widgets.php:436
+#: ../lib/widgets.php:446
 msgid "Pinterest:"
 msgstr ""
 
-#: ../lib/widgets.php:440
+#: ../lib/widgets.php:450
 msgid "Dribbble:"
 msgstr ""
 
-#: ../lib/widgets.php:454
+#: ../lib/widgets.php:464
 msgid "This shows the most recent posts on your site with a thumbnail"
 msgstr ""
 
-#: ../lib/widgets.php:455
+#: ../lib/widgets.php:465
 msgid "Virtue: Recent Posts"
 msgstr ""
 
-#: ../lib/widgets.php:480
+#: ../lib/widgets.php:490
 msgid "Recent Posts"
 msgstr ""
 
-#: ../lib/widgets.php:548
+#: ../lib/widgets.php:558
 msgid "Number of posts to show:"
 msgstr ""
 
-#: ../lib/widgets.php:551
+#: ../lib/widgets.php:561
 msgid "Limit to Catagory (Optional):"
 msgstr ""
 
-#: ../lib/widgets.php:562
+#: ../lib/widgets.php:572
 msgid ""
 "This shows a grid of featured images from recent posts or portfolio items"
 msgstr ""
 
-#: ../lib/widgets.php:563
+#: ../lib/widgets.php:573
 msgid "Virtue: Image Grid"
 msgstr ""
 
-#: ../lib/widgets.php:588
+#: ../lib/widgets.php:598
 msgid "Post Gallery"
 msgstr ""
 
-#: ../lib/widgets.php:686
+#: ../lib/widgets.php:696
 msgid "Grid Choice:"
 msgstr ""
 
-#: ../lib/widgets.php:688
+#: ../lib/widgets.php:698
 msgid "Blog Posts"
 msgstr ""
 
-#: ../lib/widgets.php:689
+#: ../lib/widgets.php:699
 msgid "Portfolio"
 msgstr ""
 
-#: ../lib/widgets.php:692
+#: ../lib/widgets.php:702
 msgid "If Post - Choose Category (Optional):"
 msgstr ""
 
-#: ../lib/widgets.php:695
+#: ../lib/widgets.php:705
 msgid "If Portfolio - Choose Type (Optional):"
 msgstr ""
 
-#: ../lib/widgets.php:698
+#: ../lib/widgets.php:708
 msgid "Number of images to show:"
 msgstr ""
 
-#: ../lib/widgets.php:714
+#: ../lib/widgets.php:724
 msgid "This allows for an image and a simple about text."
 msgstr ""
 
-#: ../lib/widgets.php:715
+#: ../lib/widgets.php:725
 msgid "Virtue: About with Image"
 msgstr ""
 
-#: ../lib/widgets.php:743
+#: ../lib/widgets.php:753
 msgid "Upload"
 msgstr ""
 
@@ -1854,64 +1909,64 @@ msgstr ""
 msgid "Newer comments &rarr;"
 msgstr ""
 
-#: ../templates/comments.php:29 ../templates/comments.php:38
+#: ../templates/comments.php:31 ../templates/comments.php:43
 msgid "Comments are closed."
 msgstr ""
 
-#: ../templates/comments.php:45
+#: ../templates/comments.php:51
 msgid "Leave a Reply"
 msgstr ""
 
-#: ../templates/comments.php:45
+#: ../templates/comments.php:51
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr ""
 
-#: ../templates/comments.php:48
+#: ../templates/comments.php:54
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr ""
 
-#: ../templates/comments.php:53
+#: ../templates/comments.php:59
 #, php-format
 msgid "Logged in as <a href=\"%s/wp-admin/profile.php\">%s</a>."
 msgstr ""
 
-#: ../templates/comments.php:54
+#: ../templates/comments.php:60
 msgid "Log out of this account"
 msgstr ""
 
-#: ../templates/comments.php:54
+#: ../templates/comments.php:60
 msgid "Log out &raquo;"
 msgstr ""
 
-#: ../templates/comments.php:59 ../woocommerce/single-product-reviews.php:84
+#: ../templates/comments.php:65 ../woocommerce/single-product-reviews.php:84
 msgid "Name"
 msgstr ""
 
-#: ../templates/comments.php:59 ../templates/comments.php:63
+#: ../templates/comments.php:65 ../templates/comments.php:69
 msgid " <span>*</span>"
 msgstr ""
 
-#: ../templates/comments.php:63
+#: ../templates/comments.php:69
 msgid "Email (will not be published)"
 msgstr ""
 
-#: ../templates/comments.php:67
+#: ../templates/comments.php:73
 msgid "Website"
 msgstr ""
 
-#: ../templates/comments.php:72
+#: ../templates/comments.php:78
 msgid "Comment"
 msgstr ""
 
-#: ../templates/comments.php:74
+#: ../templates/comments.php:80
 msgid "Submit Comment"
 msgstr ""
 
 #: ../templates/content-fullpost.php:102
 #: ../templates/content-fullwidth.php:153 ../templates/content-single.php:75
-#: ../templates/content.php:152 ../templates/home/blog-home.php:52
+#: ../templates/content.php:152 ../templates/home/blog-home.php:57
 msgid "posted in:"
 msgstr ""
 
@@ -1924,15 +1979,15 @@ msgstr ""
 msgid "By"
 msgstr ""
 
-#: ../templates/header.php:18
+#: ../templates/header.php:30
 msgid "View your shopping cart"
 msgstr ""
 
-#: ../templates/header.php:19
+#: ../templates/header.php:31
 msgid "Your Cart"
 msgstr ""
 
-#: ../templates/header.php:55
+#: ../templates/header.php:69
 msgid "menu"
 msgstr ""
 
@@ -1948,7 +2003,7 @@ msgstr ""
 msgid "Latest from the Blog"
 msgstr ""
 
-#: ../templates/home/blog-home.php:60
+#: ../templates/home/blog-home.php:65
 msgid "READ MORE"
 msgstr ""
 

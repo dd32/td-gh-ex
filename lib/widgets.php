@@ -41,6 +41,17 @@ function virtue_register_sidebar($name, $id){
 add_action('widgets_init', 'virtue_register_sidebars');
 
 function kadence_widgets_init() {
+  //Topbar 
+  if(kadence_display_topbar_widget()) {
+  register_sidebar(array(
+    'name'          => __('Topbar Widget', 'virtue'),
+    'id'            => 'topbarright',
+    'before_widget' => '',
+    'after_widget'  => '',
+    'before_title'  => '',
+    'after_title'   => '',
+  ));
+}
   // Sidebars
   register_sidebar(array(
     'name'          => __('Primary Sidebar', 'virtue'),
@@ -50,7 +61,6 @@ function kadence_widgets_init() {
     'before_title'  => '<h3>',
     'after_title'   => '</h3>',
   ));
-
   // Footer
   global $smof_data; if(isset($smof_data['footer_layout'])) { $footer_layout = $smof_data['footer_layout'];} else {$footer_layout = "twoc";}
   if ($footer_layout == "fourc") {
@@ -333,7 +343,7 @@ class Kadence_Social_Widget extends WP_Widget {
     ob_start();
     extract($args, EXTR_SKIP);
 
-    $title = apply_filters('widget_title', empty($instance['title']) ? __('Social', 'virtue') : $instance['title'], $instance, $this->id_base);
+    $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
     if (!isset($instance['facebook'])) { $instance['facebook'] = ''; }
     if (!isset($instance['twitter'])) { $instance['twitter'] = ''; }
     if (!isset($instance['instagram'])) { $instance['instagram'] = ''; }
@@ -702,11 +712,11 @@ class Kadence_Image_Grid_Widget extends WP_Widget {
   }
 }
 
-function widget_uploadScript(){
+function kad_widget_uploadScript(){
   wp_enqueue_media();
   wp_enqueue_script('adsScript', get_template_directory_uri() . '/assets/js/widget_upload.js');
 }
-add_action('admin_enqueue_scripts', 'widget_uploadScript');
+add_action('admin_enqueue_scripts', 'kad_widget_uploadScript');
 
 class Simple_About_With_Image extends WP_Widget{
 

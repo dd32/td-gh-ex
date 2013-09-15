@@ -4,11 +4,23 @@
   <section id="topbar" class="topclass">
     <div class="container">
       <div class="row">
-        <div class="span8">
+        <div class="span6">
           <div class="topbarmenu clearfix">
           <?php if (has_nav_menu('topbar_navigation')) :
-              wp_nav_menu(array('theme_location' => 'topbar_navigation', 'menu_class' => ''));
+              wp_nav_menu(array('theme_location' => 'topbar_navigation', 'menu_class' => 'sf-menu'));
             endif;?>
+            <?php if(kadence_display_topbar_icons()) : ?>
+            <div class="topbar_social">
+              <ul>
+                <?php global $smof_data; $top_icons = $smof_data['topbar_icon_menu'];
+                foreach ($top_icons as $top_icon) {
+                  echo '<li><a href="'.$top_icon['link'].' title="'.$top_icon['title'].'" rel="tooltip" data-placement="bottom" data-original-title="'.$top_icon['title'].'">';
+                  if($top_icon['url'] != '') echo '<img src="'.$top_icon['url'].'"/>' ; else echo '<i class="'.$top_icon['icon_o'].'"></i>';
+                  echo '</a></li>';
+                } ?>
+              </ul>
+            </div>
+          <?php endif; ?>
             <?php global $smof_data; if(isset($smof_data['show_cartcount'])) {
                if($smof_data['show_cartcount'] == '1') { 
                 if (class_exists('woocommerce')) {
@@ -22,12 +34,14 @@
                   </ul>
                 <?php } } }?>
           </div>
-        </div><!-- close span8 -->
-        <div class="span4">
-          <div id="topbar-search">
-          <?php get_search_form(); ?>
-        </div><!-- Topbarsearch -->
-        </div> <!-- close span4-->
+        </div><!-- close span6 -->
+        <div class="span6">
+          <div id="topbar-search" class="topbar-widget">
+            <?php if(kadence_display_topbar_widget()) { if(is_active_sidebar('topbarright')) { dynamic_sidebar("Topbar Widget"); } 
+              } else { if(kadence_display_top_search()) {get_search_form();} 
+          } ?>
+        </div>
+        </div> <!-- close span6-->
       </div> <!-- Close Row -->
     </div> <!-- Close Container -->
   </section>
@@ -52,7 +66,8 @@
             endif;
             if (has_nav_menu('mobile_navigation')) :
             wp_nav_menu( array('theme_location' => 'mobile_navigation', 'items_wrap' => '<select id="%1$s" class="%2$s">%3$s</select>', 'menu_class' => 'navselect', 'walker' => new Virtue_Dropdown_Nav() ));
-            ?> <div class="mobilenav-button"><i class="icon-menu"></i><span class="headerfont"><?php _e('menu', 'virtue');?></span></div> <?php
+            global $smof_data; if(!empty($smof_data['mobile_menu_text'])) {$menu_text = $smof_data['mobile_menu_text'];} else {$menu_text = __('menu', 'virtue');} ?>
+             <div class="mobilenav-button"><i class="icon-reorder"></i><span class="headerfont"><?php echo $menu_text ?></span></div> <?php
            endif;
           ?>    
           </nav>

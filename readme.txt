@@ -47,6 +47,15 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 1.3.8 =
+
+* Updated CSS
+* Added Child Theme Ablilty
+* Added Comments Closed Option
+* Added Topbar options, and widget
+* Add dropdown ablitly in top menu
+
+
 = Version: 1.3.5 =
 
 * Updated CSS

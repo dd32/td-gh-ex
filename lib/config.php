@@ -62,10 +62,31 @@ function kadence_display_sidebar() {
 
 function kadence_display_topbar() {
   global $smof_data;
- if(isset($smof_data['topbar'])) {
+   if(isset($smof_data['topbar'])) {
   if($smof_data['topbar'] == 1 ) {$topbar = true;} else { $topbar = false;}
 } else {$topbar = true;}
   return $topbar;
+  }
+function kadence_display_topbar_icons() {
+  global $smof_data;
+ if(isset($smof_data['topbar_icons'])) {
+  if($smof_data['topbar_icons'] == 1 ) {$topbaricons = true;} else { $topbaricons = false;}
+} else {$topbaricons = false;}
+  return $topbaricons;
+  }
+  function kadence_display_top_search() {
+  global $smof_data;
+ if(isset($smof_data['topbar_search'])) {
+  if($smof_data['topbar_search'] == 1 ) {$topsearch = true;} else { $topsearch = false;}
+} else {$topsearch = true;}
+  return $topsearch;
+  }
+function kadence_display_topbar_widget() {
+  global $smof_data;
+ if(isset($smof_data['topbar_widget'])) {
+  if($smof_data['topbar_widget'] == 1 ) {$topbarwidget = true;} else { $topbarwidget = false;}
+} else {$topbarwidget = false;}
+  return $topbarwidget;
   }
 
 // Add body class for wide or boxed layout

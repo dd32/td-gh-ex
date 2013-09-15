@@ -432,7 +432,7 @@ $of_options = array();
 						<p>This theme was developed by <a href=\"http://kadencethemes.com/\">Kadence Themes</a></p>
                                     <p>For theme documentation visit: <a href=\"http://docs.kadencethemes.com/virtue/\">docs.kadencethemes.com/virtue/</a>
                                     <br />
-                                    For support please visit: <a href=\"http://kadencethemes.com/support/\">kadencethemes.com/support/</a></p>",
+                                    For support please visit: <a href=\"http://wordpress.org/support/theme/virtue\" target='_blank' >wordpress.org/support/theme/virtue</a></p>",
 						"icon" 		=> true,
 						"type" 		=> "info"
 				);
@@ -447,12 +447,6 @@ $of_options = array();
 							'boxed'     => $url . '3cm.png'
 						      )
 				);
-            $of_options[] = array( 	"name" 		=> __("Use Topbar?", 'virtue'),
-						"desc" 		=> __("Choose to show or hide topbar", 'virtue'),
-						"id" 		      => "topbar",
-						"std" 		=> 1,
-						"type" 		=> "switch"
-				); 
             $of_options[] = array(  "name"            => __("Footer Widget Layout", 'virtue'),
                                     "desc"            => __("Select how many columns for footer widgets", 'virtue'),
                                     "id"              => "footer_layout",
@@ -580,8 +574,45 @@ $of_options = array();
                                      "id"              => "banner_upload",
                                      "std"             => "",
                                      "type"            => "media");
+            $of_options[] = array(  "name"            => __("Topbar Settings", 'virtue'),
+                                    "type"            => "heading"
+                        );
+		$of_options[] = array(    "name"            => __("Use Topbar?", 'virtue'),
+                                    "desc"            => __("Choose to show or hide topbar", 'virtue'),
+                                    "id"              => "topbar",
+                                    "std"             => 1,
+                                    "type"            => "switch"
+                        ); 
+            $of_options[] = array(    "name"            => __("Use Topbar Icon Menu?", 'virtue'),
+                                    "desc"            => __("Choose to show or hide topbar", 'virtue'),
+                                    "id"              => "topbar_icons",
+                                    "std"             => 0,
+                                    "type"            => "switch"
+                        ); 
+            $of_options[] = array( "name"             => __("Topbar Icon Menu", 'virtue'),
+                                    "desc"            => __("Choose your icons for the topbar icon menu", 'virtue'),
+                                    "id"              => "topbar_icon_menu",
+                                    "std"             => "",
+                                    "type"            => "icons");
 
-				
+            $of_options[] = array(  "name"             => __("Show Cart total in topbar", 'virtue'),
+                                    "desc"             => __("This only works if using woocommerce", 'virtue'),
+                                    "id"               => "show_cartcount",
+                                    "std"              => 1,
+                                    "type"             => "switch"
+                                    ); 
+             $of_options[] = array(    "name"            => __("Display Search in Topbar?", 'virtue'),
+                                    "desc"            => __("Choose to show or hide search in topbar", 'virtue'),
+                                    "id"              => "topbar_search",
+                                    "std"             => 1,
+                                    "type"            => "switch"
+                        ); 
+             $of_options[] = array(    "name"            => __("Enable widget area in right of Topbar?", 'virtue'),
+                                    "desc"            => __("Note this will hide remove search (you can reinable it my adding it to the widget area)", 'virtue'),
+                                    "id"              => "topbar_widget",
+                                    "std"             => 0,
+                                    "type"            => "switch"
+                        ); 
             $of_options[] = array( 	"name" 		=> __("Slider Settings", 'virtue'),
 						"type" 		=> "heading"
 				);
@@ -599,13 +630,13 @@ $of_options = array();
 					);
 
             $of_options[] = array( 	"name" 		=> __("Slider Images", 'virtue'),
-						"desc" 		=> __("Use images of at least 1170px wide for best results.", 'virtue'),
+						"desc" 		=> __("Use large images for best results.", 'virtue'),
 						"id" 		      => "home_slider",
 						"std" 		=> "",
 						"type" 		=> "slider"
 				);
-            $of_options[] = array( 	"name" 		=> __("Slider Height", 'virtue'),
-						"desc" 		=> "",
+            $of_options[] = array( 	"name" 		=> __("Slider Max Height", 'virtue'),
+						"desc" 		=> __("Note: does not work if images are smaller than max.", 'virtue'),
 						"id" 		      => "slider_size",
 						"std" 		=> "400",
 						"min" 		=> "100",
@@ -613,6 +644,15 @@ $of_options = array();
 						"max" 		=> "600",
 						"type" 		=> "sliderui" 
 				);
+            $of_options[] = array(  "name"            => __("Slider Max Width", 'virtue'),
+                                    "desc"            => __("Note: does not work if images are smaller than max.", 'virtue'),
+                                    "id"              => "slider_size_width",
+                                    "std"             => "1170",
+                                    "min"             => "600",
+                                    "step"            => "5",
+                                    "max"             => "1170",
+                                    "type"            => "sliderui" 
+                        );
             $of_options[] = array( 	"name" 		=> __("Auto Play?", 'virtue'),
 						"desc" 		=> __("This determines if a slider automatically scrolls", 'virtue'),
 						"id" 		      => "slider_autoplay",
@@ -838,12 +878,6 @@ $of_options = array();
                                     "icon"             => true,
                                     "type"             => "info"
                                     );
-            $of_options[] = array(  "name"             => __("Show Cart total in top bar", 'virtue'),
-                                    "desc"             => __("This if the cart total is displayed in the topbar", 'virtue'),
-                                    "id"               => "show_cartcount",
-                                    "std"              => 1,
-                                    "type"             => "switch"
-                                    ); 
             $of_options[] = array( 	"name" 		=> __("Display the sidebar on shop archives?", 'virtue'),
 						"desc" 		=> __("This determines if there is a sidebar on the shop and category pages.", 'virtue'),
 						"id" 		      => "shop_layout",
@@ -967,9 +1001,9 @@ $of_options = array();
 										"type"              => "select",
 										"options"           => array(
                   										''            => 'select',
-                  										'top'         => 'left',
+                  										'left'         => 'left',
                   										'center'      => 'center',
-                  										'bottom'      => 'right',
+                  										'right'      => 'right',
                   										)
 										); 
 					       $of_options[] = array( "name"              => "",
@@ -1024,9 +1058,9 @@ $of_options = array();
                                                             "type"              => "select",
                                                             "options"           => array(
                                                                         ''            => 'select',
-                                                                        'top'         => 'left',
+                                                                        'left'         => 'left',
                                                                         'center'      => 'center',
-                                                                        'bottom'      => 'right',
+                                                                        'right'      => 'right',
                                                                         )
                                                             );
                                      $of_options[] = array( "name"             => "",
@@ -1081,9 +1115,9 @@ $of_options = array();
 										"type"              => "select",
             								"options"           => array(
             										''            => 'select',
-            										'top'         => 'left',
+            										'left'         => 'left',
             										'center'      => 'center',
-            										'bottom'      => 'right',
+            										'right'      => 'right',
             										)
 										);
 					       $of_options[] = array( "name"             => "",
@@ -1138,9 +1172,9 @@ $of_options = array();
 										"type" => "select",
 										"options" => array(
 										'' => 'select',
-										'top' => 'left',
+										'left' => 'left',
 										'center'=>'center',
-										'bottom'=>'right',
+										'right'=>'right',
 										)
 										);
 					$of_options[] = array( "name" => "",
@@ -1196,9 +1230,9 @@ $of_options = array();
 										"type" => "select",
 										"options" => array(
 										'' => 'select',
-										'top' => 'left',
+										'left' => 'left',
 										'center'=>'center',
-										'bottom'=>'right',
+										'right'=>'right',
 										)
 										);
 						$of_options[] = array( "name"             => "",
@@ -1254,9 +1288,9 @@ $of_options = array();
 										"type" => "select",
 										"options" => array(
 										'' => 'select',
-										'top' => 'left',
+										'left' => 'left',
 										'center'=>'center',
-										'bottom'=>'right',
+										'right'=>'right',
 										)
 										);
 						$of_options[] = array( "name" => "",
@@ -1312,9 +1346,9 @@ $of_options = array();
 										"type" => "select",
 										"options" => array(
 										'' => 'select',
-										'top' => 'left',
+										'left' => 'left',
 										'center'=>'center',
-										'bottom'=>'right',
+										'right'=>'right',
 										)
 										);
 						$of_options[] = array( "name" => "",
@@ -1497,6 +1531,12 @@ $of_options = array();
                               "type"            => "select",
                               "options"         => $of_pages
                               ); 
+      $of_options[] = array(  "name"            => __("Show Comments Closed Text?", 'virtue'),
+                              "desc"            => __("Choose to show or hide comments closed alert below posts.", 'virtue'),
+                              "id"              => "close_comments",
+                              "std"             => 1,
+                              "type"            => "switch"
+                        ); 
       $of_options[] = array(  "name"             => __("Custom Favicon", 'virtue'),
 					"desc"             => __("Upload a 16px x 16px png/gif/ico image that will represent your website's favicon.", 'virtue'),
 					"id"               => "custom_favicon",

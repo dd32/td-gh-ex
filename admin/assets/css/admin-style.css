@@ -167,6 +167,7 @@ border-radius: 2px;
 #of_container #of-nav li.miscsettings a{ background:url(../images/icon-cogs.png) no-repeat;}
 #of_container #of-nav li.backupoptions a {background: url(../images/icon-storage.png) no-repeat;}
 #of_container #of-nav li.advancedsettings a {background: url(../images/icon-wrench.png) no-repeat;}
+#of_container #of-nav li.topbarsettings a {background: url(../images/icon-topbar.png) no-repeat;}
 
 #of_container #content {
 	float: left;

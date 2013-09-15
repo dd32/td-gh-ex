@@ -4,17 +4,22 @@
 	<div class="row">
 		<?php global $smof_data; if(isset($smof_data['home_post_count'])) { $blogcount = $smof_data['home_post_count'];} else { $blogcount = '2'; } 
 				 if(isset($smof_data['home_post_type'])) { $blog_category = $smof_data['home_post_type'];}
-				 if($blog_category == "All") {$blog_category = '';}
+				 if($blog_category == 'All' || $blog_category == '') {
+      					$blog_cat_slug = '';
+					} else {
+					$blog_cat = get_term_by ('name',$blog_category,'category');
+					$blog_cat_slug = $blog_cat -> slug;
+					}
 					?>
 				<?php $temp = $wp_query; 
 					  $wp_query = null; 
 					  $wp_query = new WP_Query();
 					  $wp_query->query(array(
 						'posts_per_page' => $blogcount,
-						'category_name'=> $blog_category,
+						'category_name'=> $blog_cat_slug,
 						'post__not_in' => get_option( 'sticky_posts' )));
 					if ( $wp_query ) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
-				<div class="span6">
+				<div class="span6 clearclass<?php echo ($xyz++%2); ?>">
 				  	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	                    <div class="row">
 	                    			<?php 
