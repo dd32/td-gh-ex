@@ -1,10 +1,10 @@
 /*
 Theme Name:Intuition
-Description:Intuition is a theme focused on showcasing your best content effortlessly. 
+Description:Intuition is an elegant, all-terrain theme focused on showcasing your best content effortlessly. It comes with the ability to feature your posts and pages, creating a fully featured homepage complete with an animated slider and featured content blocks. This theme is fully responsive and makes use of retina-ready graphics, so it will look great on any device. Furthermore, the theme is specially made to integrate with the most popular plugins out there: WPML for translation, Yoast SEO, Contact Form 7, or even WooCommerce.
 Tags:custom-menu, featured-images, flexible-width, full-width-template, orange, right-sidebar, light, one-column, left-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, two-columns, white
 Author:CPOThemes
 Author URI:http://www.cpothemes.com
-Version:1.0.1
+Version:1.0.2
 License:GNU General Public License 2.0
 License URI:license.txt
 */
@@ -109,6 +109,9 @@ tr th, thead th, tr th, thead th { background:#ddd; }
 
 /* FORM FIELDS */
 input, textarea { font-size:1em; }
+
+/* EMBEDS */
+embed, iframe, object { max-width: 100%; }
 
 /* HEADING LINE */
 hr { background-color:#fff; border:0; border-top:1px solid #bbb; border-bottom:1px solid #fff; clear:both; height:0; margin:40px 0; }
