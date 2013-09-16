@@ -1,5 +1,10 @@
 *** discover Changelog ***
 
+17-09-2013 - version 1.7.13
+Below css added in style.css to control slider, headline and text color.
+#slider_container h1{color: #000;}
+#slider_container p{color: #000;}
+
 3-09-2013 - version 1.7.12
 * discover_posted_on function changed in functions.php, the bug caused blank screen in editor.
 * line 217 bug fixed in functions.php - Strict Standards: Only variables should be passed by reference in
