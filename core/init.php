@@ -106,7 +106,6 @@ require_once($core_path.'meta.php');
 require_once($core_path.'custom.php');
 require_once($core_path.'forms.php');
 require_once($core_path.'settings.php');
-require_once($core_path.'branding.php');
 //Classes
 require_once($core_path.'classes/class_menu.php');
 //Metadata

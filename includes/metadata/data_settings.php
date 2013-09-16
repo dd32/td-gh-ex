@@ -109,7 +109,7 @@ function cpotheme_metadata_settings(){
 	'name' => __('Enable Credit Link', 'cpotheme'),
 	'desc' => __('Enables a small, non-obtrusive credit link in the footer. If you decide to activate it, thanks a lot for supporting CPOThemes!', 'cpotheme'),
 	'type' => 'yesno',
-	'std' => '1');
+	'std' => '0');
 	
 	//Homepage
 	$cpotheme_config[] = array(

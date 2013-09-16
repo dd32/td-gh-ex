@@ -16,7 +16,7 @@ jQuery(document).ready(function(){
 		fit: 1
     });
 	
-	jQuery('.slider-prev, .slider-next, .slider-pages a').click(function(){
+	jQuery('.slider-prev, .slider-next').click(function(){
 		jQuery('.slider-slides').cycle('pause');
 	});
 	
