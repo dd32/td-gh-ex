@@ -1,10 +1,10 @@
 /*
 Theme Name: Baris
 Theme URI: http://www.malvouz.com/omega/2012/12/16/baris-theme/
-Description: Baris is a responsive and minimalist. Build on HTML5 and CSS3. Support for custom menu and also you can put your widget at 4 different place. This theme is for you who love simplicty and make you should to touch your reader's heart because your reader focus on content.
+Description: Baris is a responsive and minimalist. Build on HTML5 and CSS3. Great for desktop and mobile readers.
 Author: Malvouz
 Author URI: http://www.malvouz.com/omega/about/
-Version: 1.7
+Version: 1.7.1
 Tags: white, light, one-column, custom-menu, custom-background, left-sidebar, right-sidebar, flexible-width, threaded-comments, sticky-post
 License: GNU/GPL Version 2 or later
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -164,7 +164,7 @@ header p{
 }
 #content p.wp-caption-text {
 	font-family:'Droid Serif',  Times, serif;
-	font-size:12px;
+	font-size:14px;
 	text-align:center;
 	line-height:18px;
 	padding:7px 0px 10px 0px;
@@ -219,14 +219,11 @@ aarticle-edit-link {
 /* Image
 --------------------------------------------- */
 
-img.size-auto,
-img.size-full,
-img.size-large,
-img.size-medium,
-.attachment img {
-	max-width: 100%; /* When images are too wide for containing element, force them to fit. */
-	height: auto; /* Override height to match resized width for correct aspect ratio. */
+
+img.size-auto, img.size-full, img.size-large, img.size-medium, .attachment img, img {
+    max-width: 620px;
 }
+
 
 /* Single Post
 --------------------------------------------- */
