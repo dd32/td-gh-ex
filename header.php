@@ -76,6 +76,10 @@
             <a href="<?php echo esc_url( get_theme_mod( 'attorney_rss' ) ); ?>" class="social-rs" title="<?php echo esc_url( get_theme_mod( 'attorney_rss' ) ); ?>"><?php _e('RSS', 'attorney') ?></a>
             <?php endif; ?>
             
+            <?php if ( get_theme_mod( 'attorney_email' ) ) : ?>
+            <a href="<?php echo esc_url( get_theme_mod( 'attorney_email' ) ); ?>" class="social-em" title="<?php echo esc_url( get_theme_mod( 'attorney_email' ) ); ?>"><?php _e('Email', 'attorney') ?></a>
+            <?php endif; ?>
+            
             
         </div>
 

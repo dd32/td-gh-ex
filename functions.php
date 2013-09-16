@@ -277,6 +277,15 @@ if ( ! function_exists( 'attorney_theme_customizer' ) ) :
 			'priority'    => 112,
 		) ) );
 		
+		$wp_customize->add_setting( 'attorney_email' );
+		
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'attorney_email', array(
+			'label'    => __( 'Enter your Mailto url', 'attorney' ),
+			'section'  => 'attorney_social_section',
+			'settings' => 'attorney_email',
+			'priority'    => 113,
+		) ) );
+		
 		/* slider options */
 		
 		$wp_customize->add_section( 'attorney_slider_section' , array(

@@ -4,7 +4,7 @@ Theme URI: http://wpattorney.org/
 Author: WPThemes NZ
 Author URI: http://wpthemes.co.nz/
 Description: Attorney is an elegant and responsive theme designed with Attorneys and law firms in mind, though anyone who wants a theme with a corporate look and feel might like it too. It comes with a couple of alternative home page templates, one for static content and one with a latest posts slider. You can also add your own logo, adjust the slider behaviour, base theme colors and control the social media links from the theme customization screen.
-Version: 1.0.4
+Version: 1.0.5
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-menu, sticky-post, microformats, rtl-language-support, translation-ready, full-width-template, post-formats
@@ -690,6 +690,10 @@ SOCIAL MEDIA BUTTONS STYLES
 	
 	#social-media a.social-rs {
 		background-image: url(library/images/icon-rss.png);
+	}
+	
+	#social-media a.social-em {
+		background-image: url(library/images/icon-email.png);
 	}
 	
 	#search-icon {
@@ -2741,11 +2745,6 @@ URL: http://stuffandnonsense.co.uk/projects/320andup/
 		box-sizing: border-box;
 	}
 	
-	nav[role=navigation] .menu.nav-mobile ul li.current-menu-item a, 
-	nav[role=navigation] .menu.nav-mobile ul li.current_page_item a {
-		background: #f5f5f5;
-	}
-	
 	nav[role=navigation] .menu.nav-mobile ul li a:hover,
 	nav[role=navigation] .menu.nav-mobile ul li.current-menu-item a:hover, 
 	nav[role=navigation] .menu.nav-mobile ul li.current_page_item a:hover {
@@ -2753,19 +2752,37 @@ URL: http://stuffandnonsense.co.uk/projects/320andup/
 	}
 
 	
-	nav[role=navigation] .menu.nav-mobile > ul li ul.sub-menu, 
-	nav[role=navigation] .menu.nav-mobile > ul li ul.children {
+	nav[role=navigation] .menu.nav-mobile ul li > ul.sub-menu, 
+	nav[role=navigation] .menu.nav-mobile ul li > ul.children,
+	nav[role=navigation] .menu.nav-mobile ul li ul.sub-menu li ul, 
+	nav[role=navigation] .menu.nav-mobile ul li ul.children li ul {
+		background: #f5f5f5;
+		display: block;
+		position: relative;
 		z-index: 9999; 
-		right: -200px;
+		right: auto;
 		top: auto;
-		margin-top: -38px;
-		width: 200px;
+		margin-top: 0;
+		width: 100%;
+		box-shadow: none;
 	}
 	
-	.menu.nav-mobile ul li ul li ul li:hover > ul.sub-menu, 
-	.menu.nav-mobile ul li ul li ul li:hover > ul.children { 
-		display: none;
-	}
+		nav[role=navigation] .menu.nav-mobile ul li ul.sub-menu li, 
+		nav[role=navigation] .menu.nav-mobile ul li ul.children li {
+			border: 0;
+			border-top: 1px solid #e3e3e3;
+			text-indent: 20px;	
+		}
+		
+			nav[role=navigation] .menu.nav-mobile ul li ul.sub-menu li ul li, 
+			nav[role=navigation] .menu.nav-mobile ul li ul.children li ul li {
+				text-indent: 40px;
+			}
+			
+				nav[role=navigation] .menu.nav-mobile ul li ul.sub-menu li ul li ul li, 
+				nav[role=navigation] .menu.nav-mobile ul li ul.children li ul li ul li {
+					text-indent: 60px;
+				}
 	
 	#main.col620 {
 		width: 100%;
@@ -2805,7 +2822,6 @@ URL: http://stuffandnonsense.co.uk/projects/320andup/
 	#sidebar.col300 .widget:last-child {
 		margin-bottom: 0;
 	}
-	
 	
 	
 	#site-heading { 
@@ -2984,11 +3000,6 @@ URL: http://stuffandnonsense.co.uk/projects/320andup/
 
 @media only screen and (max-width: 480px) {
 	
-	.menu.nav-mobile ul li ul li:hover > ul.sub-menu, 
-	.menu.nav-mobile ul li ul li:hover > ul.children { 
-		display: none;
-	}
-	
 	.commentlist li.comment article[id*=comment-] video, .post_content video, .full-width-content .post_content video, 
 	.commentlist li.comment article[id*=comment-] object, .post_content object, .full-width-content .post_content object,
 	.commentlist li.comment article[id*=comment-] embed, .post_content embed, .full-width-content .post_content embed,
@@ -3022,11 +3033,6 @@ URL: http://stuffandnonsense.co.uk/projects/320andup/
 }
 
 @media only screen and (max-width: 320px) {
-	
-	.menu.nav-mobile ul li:hover > ul.sub-menu, 
-	.menu.nav-mobile ul li:hover > ul.children { 
-		display: none;
-	}
 	
 	.commentlist li.comment article[id*=comment-] video, .post_content video, .full-width-content .post_content video, 
 	.commentlist li.comment article[id*=comment-] object, .post_content object, .full-width-content .post_content object,

@@ -55,6 +55,10 @@ This theme is bundled with Cycle2
 =================================
 CHANGELOG
 =================================
+Version 1.0.5
+ * added mailto icon to the social media buttons
+ * modified the css for the menu dropdown on mobile screens, the submenu items now display as indented menu links
+ 
 Version 1.0.4
  * Adjusted the opacity of the background for the text/copy in the slider
  * Fixed the responsive dropdown not showing the second, third (and so on) level  submenu items 
