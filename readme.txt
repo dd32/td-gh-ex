@@ -62,6 +62,9 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ============================Change Log================================
+@version 1.4.1
+1. Logo Path fixed
+2. Removed some unused resources.
 @version 1.4
 1. Theme revamped by using twitter bootstrap
 2. Removed ajax category template
