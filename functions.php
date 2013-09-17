@@ -3,7 +3,7 @@
  * Add Custom Header
  */
 
-function twentythirteen_greenblue_custom_header_setup() { 
+function theme_2013blue_custom_header_setup() { 
 
 	add_theme_support( 'custom-header', array( 'default-image' => '%2$s/header-blue.png' ) );
 
@@ -16,14 +16,14 @@ function twentythirteen_greenblue_custom_header_setup() {
 	) );
 
 } 
-add_action( 'after_setup_theme', 'twentythirteen_greenblue_custom_header_setup' );
+add_action( 'after_setup_theme', 'theme_2013blue_custom_header_setup' );
 
 
 /**
  * Import twenty thirteen base styles
  */
 
-function twentythirteen_greenblue_styles() {
+function theme_2013blue_styles() {
 
 	// Load Twenty Thirteen main style
 	wp_enqueue_style( 'twentythirteen', get_template_directory_uri() . '/style.css' , array( ), '2013-09-09' );
@@ -38,6 +38,6 @@ function twentythirteen_greenblue_styles() {
 
 }
 
-add_action( 'wp_enqueue_scripts', 'twentythirteen_greenblue_styles' );
+add_action( 'wp_enqueue_scripts', 'theme_2013blue_styles' );
 
 ?>
