@@ -64,3 +64,18 @@ if ($favicon): ?><link rel="shortcut icon" href="<?php echo esc_url($favicon); ?
 				<?php get_search_form(); ?>
 			</div>
 		</div><!-- End navbar -->
+		
+<?php	if ( get_custom_header()->url ) :
+			if ( ( is_front_page() && boldr_get_option('home_header_image') != 'Off' )
+				|| ( is_page() && !is_front_page() && boldr_get_option('pages_header_image') != 'Off' )
+				|| ( is_single() && boldr_get_option('single_header_image') != 'Off' )
+				|| ( !is_front_page() && !is_singular() && boldr_get_option('blog_header_image') != 'Off' )
+				|| ( is_404() ) ):
+?>
+
+	<div id="header-image" class="container">
+		<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
+	</div>
+
+<?php	endif;
+	endif; ?>
