@@ -12,7 +12,7 @@
 * @license      http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 
-class TC_debug {
+class TC_dev_tools {
     public $hooks;
     public $hook_list;
     public $hook_tree;
@@ -188,10 +188,23 @@ class TC_debug {
               $(window).on( 'load' , function () {
                     $(function() {
                       $('#debug').draggable();
-                      $('#debugtab a').click(function (e) {
+                      $('#debugtab a').hover( function(e){
+                        e.preventDefault();
+                        if($(this).hasClass('hoverblock'))
+                            return;
+                        else
+                        $(this).tab('show');
+                      });
+
+
+                      $('#debugtab a').click( function(){
+                        $(this).parent()
+                          .siblings().addClass('hoverblock');
+                       });
+                      /*$('#debugtab a').click(function (e) {
                         e.preventDefault();
                         $(this).tab('show');
-                      })
+                      })*/
                     });
               })
              }(window.jQuery);
@@ -201,10 +214,7 @@ class TC_debug {
           <p class="general">
             <?php
               //CHECK IF WE ARE USING A CHILD THEME
-              //get WP_Theme object of customizr
-              $tc_theme                     = wp_get_theme();
-              //define a boolean if using a child theme
-              $is_child                     = $tc_theme -> parent();
+               $is_child                     = tc_is_child();
 
               printf('WP v%1$s | %2$s | Lang : %3$s',
                 get_bloginfo( $show = 'version' ),
@@ -456,7 +466,7 @@ class TC_debug {
                             if('tc_sliders' == $setting && !empty($value)) {
                               echo '<div class="hook-func"><p>'.$setting.' : <br/>';
                               foreach ($value as $key => $slides) {
-                                echo '---<span class="info">'.$key.' ('.count($slides).' slide(s)</span><br/>';
+                                echo '---<span class="info">'.$key.' ('.count($slides).' slide(s))</span><br/>';
                               }
                             echo '</p></div>';
                             }
@@ -714,9 +724,19 @@ class TC_debug {
     * @since Customizr 3.0.10
     */
     function tc_record_story( $file, $function = null, $class = null ) {
-      $options      = get_option( 'tc_theme_options');
-      if( false == $options['tc_debug_box'] )
+      //if we are NOT in a customization context we can use this global array otherwise we need to refresh options from database
+      if ( !isset( $_REQUEST['wp_customize'] ) ) {
+        global $tc_saved_options;
+      }
+      else {
+        $tc_saved_options = get_option( 'tc_theme_options' );
+      } 
+
+      if ( !isset($tc_saved_options['tc_debug_box']) )
         return;
+      if ( false == $tc_saved_options['tc_debug_box'] )
+        return;
+
       global $story;
 
        //isolate file name
@@ -806,7 +826,7 @@ class TC_debug {
         $i++;
       }
       echo '<br/><p class="total">Total server execution time : <span class="info">'.$last.'ms</span></p>';
-      tc__f('rec' , __FILE__ , __FUNCTION__, __CLASS__ );
+      //tc__f('rec' , __FILE__ , __FUNCTION__, __CLASS__ );
     }//end of function
 
 
@@ -965,7 +985,7 @@ class TC_debug {
 
 
     function tc_get_func_comments( $class , $function ) {
-      tc__f('rec' , __FILE__ , __FUNCTION__, __CLASS__ );
+      //tc__f('rec' , __FILE__ , __FUNCTION__, __CLASS__ );
       $comments = '';
       if ( class_exists( $class ) ) {
         $rc         = new ReflectionClass($class);
@@ -982,7 +1002,7 @@ class TC_debug {
 
 
     function tc_get_string($string, $start, $end){
-       tc__f('rec' , __FILE__ , __FUNCTION__, __CLASS__ );
+       //tc__f('rec' , __FILE__ , __FUNCTION__, __CLASS__ );
        $string = " ".$string;
        $pos = strpos($string,$start);
        if ($pos == 0) return "";

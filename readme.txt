@@ -123,6 +123,22 @@ The exceptions to this license are as follows:
 
 
 #######################  Changelog ######################
+= 3.0.11 =
+* added : (php) filter to the skin choices (in customizer options class), allowing to add new skins in the drop down list
+* added : (php) filter for enqueuing the styles (in class ressources), allowing a better control for child theme
+* added : (css) current menu item or current menu ancestor is colored with the skin color
+* added : (php) function to check if we are using a child theme. Handles WP version <3.4.
+* improved : (css) new conditional stylesheets ie8-hacks : icon sizes for IE8
+* improved : (css) better table styling
+* improved : (php) logo dimensions are beeing rendered in the img tag
+* improved : (php) class group instanciation is faster, using the class group array instead of each singular group of class.
+* improved : (php) the search and archive headers are easier to filter now with dedicated functions
+* fixed : (css) archives and search icons color were all green for all skins
+* fixed : (php) 404 content was displayed several times in a nested url rewrite context thanks to <a href="http://wordpress.org/support/profile/electricfeet" target="_blank">electricfeet</a>
+* fixed : (php) attachment meta data dimensions : checks if are set $metadata['height'] && $metadata['width'] before rendering
+* fixed : (php) attachment post type : checks if $post is set before getting the type
+* fixed : (php) left and right sidebars are rendered even if they have no widgets hooked in thanks to <a href="http://wordpress.org/support/profile/pereznat" target="_blank">pereznat</a>.
+
 = 3.0.10 =
 * CHILD THEME USERS, templates have been modified : index.php, header.php, footer.php, comments.php*
 * added : (php) (css) (html) New option : Draggable help box and clickable tooltips to easily display some contextual information and help for developers

@@ -22,7 +22,12 @@ class TC_post_list {
         self::$instance =& $this;
 
         //header of the list of post : archive, search...
-        add_action  ( '__before_loop'                 , array( $this , 'tc_list_header' ));
+        add_action  ( '__before_loop'                 , array( $this , 'tc_search_list_header' ));
+        add_action  ( '__before_loop'                 , array( $this , 'tc_author_header' ));
+        add_action  ( '__before_loop'                 , array( $this , 'tc_category_header' ));
+        add_action  ( '__before_loop'                 , array( $this , 'tc_tag_header' ));
+        add_action  ( '__before_loop'                 , array( $this , 'tc_time_archive_header' ));
+        add_action  ( '__before_loop'                 , array( $this , 'tc_hr_list_header' ) , 20);
         
 
         //posts parts actions
@@ -326,6 +331,8 @@ class TC_post_list {
 
 
 
+
+
       /**
      * Displays the conditional selectors of the article
      * 
@@ -347,49 +354,61 @@ class TC_post_list {
 
 
 
+     /**
+     * Displays header for search results
+     *
+     * @package Customizr
+     * @since Customizr 3.0.11
+     */
+    function tc_search_list_header() {
+      if ( is_singular() ) 
+        return;
+      if ( !is_search() )
+        return;
+
+      tc__f('rec' , __FILE__ , __FUNCTION__, __CLASS__ );
+      ob_start(); 
+      ?>
+        <header class="search-header">
+        <?php tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__ ); ?>  
+          <h1 class="format-icon">
+            <?php 
+              printf( __( '%1sSearch Results for: %2s' , 'customizr' ), 
+              have_posts() ? '' :  __( 'No' , 'customizr' ).'&nbsp;' ,
+              '<span>' . get_search_query() . '</span>' );
+            ?>
+          </h1>
+          
+        </header>
+
+      <?php
+      $html = ob_get_contents();
+      ob_end_clean();
+      echo apply_filters( 'tc_search_list_header', $html );
+    }
+
+
+
 
 
 
     /**
-     * The template part for displaying additional header for posts list.
+     * Displays header for author post list
      *
      * @package Customizr
-     * @since Customizr 1.0
+     * @since Customizr 3.0.11
      */
-    function tc_list_header() {
-      if ( is_singular() )
-            return;
-      tc__f('rec' , __FILE__ , __FUNCTION__, __CLASS__ );
-    ?>
-    
-    <?php if ( is_search()) : ?>
+    function tc_author_header() {
+      if ( is_singular() ) 
+        return;
+      if ( !is_author() )
+        return;
 
-    <?php ob_start(); ?>
-      <header class="search-header">
-      <?php tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__ ); ?>  
-        <h1 class="format-icon">
-          <?php 
-            printf( __( '%1sSearch Results for: %2s' , 'customizr' ), 
-            have_posts() ? '' :  __( 'No' , 'customizr' ).'&nbsp;' ,
-            '<span>' . get_search_query() . '</span>' );
-          ?>
-        </h1>
-        
-      </header>
-
-      <?php
-        $html = ob_get_contents();
-        ob_end_clean();
-        echo apply_filters( 'tc_search_list_header', $html );
-      ?>
-
-    <?php elseif ( is_author()) : ?>
-
-      <?php
       /* Get the user ID. */
       $user_id = get_query_var( 'author' );
+      tc__f('rec' , __FILE__ , __FUNCTION__, __CLASS__ );
+      ob_start(); 
       ?>
-        <?php ob_start(); ?>
         <header class="archive-header">
           <?php tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__ ); ?>
           <h1 class="format-icon"><?php printf( __( 'Author Archives: %s' , 'customizr' ), '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( $user_id ) ) . '" title="' . esc_attr( get_the_author_meta( 'display_name' , $user_id ) ) . '" rel="me">' . get_the_author_meta( 'display_name' , $user_id ) . '</a></span>' ); ?></h1>
@@ -410,45 +429,94 @@ class TC_post_list {
 
         </header><!-- .archive-header -->
        <?php
-          $html = ob_get_contents();
-          ob_end_clean();
-          echo apply_filters( 'tc_author_header', $html );
-        ?>
+        $html = ob_get_contents();
+        ob_end_clean();
+        echo apply_filters( 'tc_author_header', $html, $user_id );
+    }
 
-    <?php elseif ( is_category()) : ?>
-      <?php ob_start(); ?>
-      <header class="archive-header">
-        <?php tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__ ); ?>
-        <h1 class="format-icon"><?php printf( __( 'Category Archives: %s' , 'customizr' ), '<span>' . single_cat_title( '' , false ) . '</span>' ); ?></h1>
 
-        <?php if ( category_description() ) : // Show an optional category description ?>
-          <div class="archive-meta"><?php echo category_description(); ?></div>
-        <?php endif; ?>
-      </header><!-- .archive-header -->
-       <?php
-          $html = ob_get_contents();
-          ob_end_clean();
-          echo apply_filters( 'tc_category_header', $html );
-        ?>
 
-    <?php elseif ( is_tag()) : ?>
-      <?php ob_start(); ?>
-      <header class="archive-header">
-        <?php tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__ ); ?>
-        <h1 class="format-icon"><?php printf( __( 'Tag Archives: %s' , 'customizr' ), '<span>' . single_tag_title( '' , false ) . '</span>' ); ?></h1>
 
-      <?php if ( tag_description() ) : // Show an optional tag description ?>
-        <div class="archive-meta"><?php echo tag_description(); ?></div>
-      <?php endif; ?>
-      </header><!-- .archive-header -->
+
+    /**
+     * Displays header for the categories post list
+     *
+     * @package Customizr
+     * @since Customizr 3.0.11
+     */
+    function tc_category_header() {
+      if ( is_singular() ) 
+        return;
+      if ( !is_category() )
+        return;
+
+      tc__f('rec' , __FILE__ , __FUNCTION__, __CLASS__ );
+      ob_start();
+      ?>
+        <header class="archive-header">
+          <?php tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__ ); ?>
+          <h1 class="format-icon"><?php printf( __( 'Category Archives: %s' , 'customizr' ), '<span>' . single_cat_title( '' , false ) . '</span>' ); ?></h1>
+
+          <?php if ( category_description() ) : // Show an optional category description ?>
+            <div class="archive-meta"><?php echo category_description(); ?></div>
+          <?php endif; ?>
+        </header><!-- .archive-header -->
       <?php
         $html = ob_get_contents();
         ob_end_clean();
-        echo apply_filters( 'tc_tag_header', $html );
-      ?>
-    <?php elseif ( is_archive()) : ?>
+        echo apply_filters( 'tc_category_header', $html );
+    }
 
-      <?php ob_start(); ?>
+
+
+
+    /**
+     * Displays header for the tags post list
+     *
+     * @package Customizr
+     * @since Customizr 3.0.11
+     */
+    function tc_tag_header() {
+      if ( is_singular() ) 
+        return;
+      if ( !is_tag() )
+        return;
+
+      tc__f('rec' , __FILE__ , __FUNCTION__, __CLASS__ );
+      ob_start(); 
+      ?>
+        <header class="archive-header">
+          <?php tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__ ); ?>
+          <h1 class="format-icon"><?php printf( __( 'Tag Archives: %s' , 'customizr' ), '<span>' . single_tag_title( '' , false ) . '</span>' ); ?></h1>
+
+        <?php if ( tag_description() ) : // Show an optional tag description ?>
+          <div class="archive-meta"><?php echo tag_description(); ?></div>
+        <?php endif; ?>
+        </header><!-- .archive-header -->
+      <?php
+      $html = ob_get_contents();
+      ob_end_clean();
+      echo apply_filters( 'tc_tag_header', $html );
+    }
+
+
+
+
+     /**
+     * Displays header for the time archives post list
+     *
+     * @package Customizr
+     * @since Customizr 3.0.11
+     */
+    function tc_time_archive_header() {
+      if ( is_singular() ) 
+        return;
+      if ( !is_day() && !is_month() && !is_year() )
+        return;
+
+      tc__f('rec' , __FILE__ , __FUNCTION__, __CLASS__ );
+      ob_start(); 
+      ?>
       <header class="archive-header">
         <?php tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__ ); ?>
         <h1 class="format-icon"><?php
@@ -464,20 +532,33 @@ class TC_post_list {
         ?></h1>
       </header><!-- .archive-header -->
       <?php
-        $html = ob_get_contents();
-        ob_end_clean();
-        echo apply_filters( 'tc_time_archive_header', $html );
-      ?>
-
-    <?php endif; ?>
-
-    <?php 
-      //displays the hr after the title, if we are not on home page or the blog page.
-      global $wp_query;
-      echo ( tc__f('__is_home') || $wp_query -> is_posts_page ) ? '' : '<hr class="featurette-divider">';
+      $html = ob_get_contents();
+      ob_end_clean();
+      echo apply_filters( 'tc_time_archive_header', $html );
 
     }//end of function
 
+
+
+
+
+     /**
+     * Displays hr after header for the archives and search results post list
+     *
+     * @package Customizr
+     * @since Customizr 3.0.11
+     */
+    function tc_hr_list_header() {
+      if ( !is_archive() && !is_search() )
+        return;
+
+      tc__f('rec' , __FILE__ , __FUNCTION__, __CLASS__ );
+      //displays the hr after the title, if we are not on home page or the blog page.
+      global $wp_query;
+      $html = ( tc__f('__is_home') || $wp_query -> is_posts_page ) ? '' : '<hr class="featurette-divider">';
+      //$html .= tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__ );
+      echo apply_filters( 'tc_hr_list_header', $html );
+    }
 
 
 

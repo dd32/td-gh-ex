@@ -40,6 +40,8 @@ class TC_attachment {
     function tc_attachment_selectors () {
         //check conditional tags
         global $post;
+        if ( !isset($post) )
+        return;
         if ('attachment' != $post -> post_type || !is_singular() )
             return;
         
@@ -118,7 +120,7 @@ class TC_attachment {
     function tc_attachment_content() {
         //check conditional tags
         global $post;
-        if ('attachment' != $post -> post_type || !is_singular() )
+        if (isset($post) && 'attachment' != $post -> post_type || !is_singular() )
             return;
 
         tc__f('rec' , __FILE__ , __FUNCTION__, __CLASS__ );

@@ -413,7 +413,9 @@ class TC_utils {
       global $post;
 
       tc__f('rec' , __FILE__ , __FUNCTION__, __CLASS__ );
-
+      if ( !isset($post) )
+        return;
+      
       return $post -> post_type;
     }
 

@@ -48,6 +48,8 @@ class TC_customize {
 		add_action ( 'admin_menu'						, array( $this , 'tc_add_options_menu' ));
 		add_action ( 'wp_before_admin_bar_render'		, array( $this , 'tc_add_admin_bar_options_menu' ));
 
+		//skin choices filter
+		add_filter ( '__skin_choices'					, array( $this , 'tc_skin_choices' ), 20);
 
     }
 
@@ -104,6 +106,8 @@ class TC_customize {
 
 
 
+
+
 	/**
 	 * Generates customizer sections, settings and controls
 	 * @package Customizr
@@ -111,6 +115,29 @@ class TC_customize {
 	 */
 	function tc_customize_register( $wp_customize) {
 		return $this -> tc_customize_factory ( $wp_customize , $args = $this -> tc_customize_arguments(), $setup = $this -> tc_customizer_map() );
+	}
+
+
+
+
+
+	/**
+	 * Return the list of available skins list
+	 * 
+	 * @package Customizr
+	 * @since Customizr 3.0.11
+	 */
+	function tc_skin_choices() {
+	    return array( 
+		'blue.css' 		=> 	__( 'Blue' , 'customizr' ),
+		'green.css'  	=> 	__( 'Green' , 'customizr' ),
+		'yellow.css' 	=> 	__( 'Yellow' , 'customizr' ),
+		'orange.css' 	=> 	__( 'Orange' , 'customizr' ),
+		'red.css'		=> 	__( 'Red' , 'customizr' ),
+		'purple.css'	=> 	__( 'Purple' , 'customizr' ),
+		'grey.css'		=>	__( 'Grey' , 'customizr' ),
+		'black.css' 	=> 	__( 'Black' , 'customizr' )
+		);
 	}
 
 
@@ -257,16 +284,7 @@ class TC_customize {
 																	'label'			=>	__( 'Choose a predefined skin' , 'customizr' ),
 																	'section'		=>	'tc_skins_settings' ,
 																	'type'			=>	'select' ,
-																	'choices'		=>	array( 
-																					'blue.css' 		=> 	__( 'Blue' , 'customizr' ),
-																					'green.css'  	=> 	__( 'Green' , 'customizr' ),
-																					'yellow.css' 	=> 	__( 'Yellow' , 'customizr' ),
-																					'orange.css' 	=> 	__( 'Orange' , 'customizr' ),
-																					'red.css'		=> 	__( 'Red' , 'customizr' ),
-																					'purple.css'	=> 	__( 'Purple' , 'customizr' ),
-																					'grey.css'		=>	__( 'Grey' , 'customizr' ),
-																					'black.css' 	=> 	__( 'Black' , 'customizr' )
-																	),
+																	'choices'		=>	tc__f( '__skin_choices' )
 								),
 
 								//enable/disable top border

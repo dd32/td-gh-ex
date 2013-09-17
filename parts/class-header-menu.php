@@ -92,7 +92,7 @@ class TC_menu {
             </button>
           <?php endif; ?>
          <div class="nav-collapse collapse">
-              <?php wp_nav_menu( array( 'theme_location' => 'main' , 'menu_class' => 'nav' , 'fallback_cb' => array( $this , 'tc_link_to_menu_editor' ) , 'walker' => tc__ ( 'header' , 'nav_walker' )) );  ?>
+              <?php wp_nav_menu( array( 'theme_location' => 'main' , 'menu_class' => 'nav' , 'fallback_cb' => array( $this , 'tc_link_to_menu_editor' ) , 'walker' => TC_nav_walker::$instance) );  ?>
          </div><!-- /.nav-collapse collapse -->
 
       <?php

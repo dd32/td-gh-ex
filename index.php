@@ -28,7 +28,7 @@
                             </article>
                         <?php endif; ?>
 
-                        <?php if ( have_posts() ) : ?>
+                        <?php if ( have_posts() && !is_404() ) : ?>
                             <?php while ( have_posts() ) : ##all other cases for single and lists: post, custom post type, page, archives, search, 404 ?>
                                 <?php the_post(); ?>
                                 <article <?php tc__f('__article_selectors') ?>>
@@ -36,10 +36,6 @@
                                         do_action( '__loop' );
                                     ?>
                                 </article>
-                                    <?php  ##we don't want to display more than one post if 404!
-                                        if ( is_404() )
-                                            break;
-                                    ?>
                             <?php endwhile; ?>
 
                         <?php endif; ##end if have posts ?>

@@ -1,5 +1,5 @@
 /*
- * Customizr v3.0.10
+ * Customizr v3.0.11
  *
  * Licensed under the GNU General Public License v2 or later
  * http://www.gnu.org/licenses/gpl-2.0.html
@@ -4885,6 +4885,23 @@ textarea,
 section {
   word-wrap: break-word;
 }
+table {
+  border-bottom: 5px solid rgba(230, 127, 185, 0.5);
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 14px;
+  line-height: 2;
+  margin: 0 0 20px;
+  width: 100%;
+}
+th {
+  font-weight: bold;
+  border-bottom: 1px solid rgba(230, 127, 185, 0.5);
+}
+td {
+  border-top: 1px solid #ededed;
+  padding: 6px 10px 6px 0;
+}
 /* LAYOUT STUFFS
   --------------------------------------------------- */
 
@@ -5220,8 +5237,9 @@ article.format-link .format-icon:before {
 
 .search .search-header .format-icon:before,
 .archive .archive-header .format-icon:before {
-  color: #9db668;
+  color: #e67fb9;
   opacity: 1;
+  line-height: 0.2em;
 }
 .search .search-header .format-icon:before {
   font-family: 'genericons';
@@ -5383,7 +5401,29 @@ h2.site-description {
   font-size: 16px;
 }
 .navbar .nav > li > a:first-letter {
-  font-size: 18px;
+  font-size: 17px;
+}
+.navbar .nav > li.current-menu-item > a,
+.navbar .nav > li.current-menu-ancestor > a {
+  color: #e67fb9;
+}
+.navbar .nav li.dropdown.current-menu-ancestor > a .caret,
+.navbar .nav li.dropdown.open.current-menu-ancestor > .dropdown-toggle .caret {
+  border-top-color: #e67fb9;
+  border-bottom-color: #e67fb9;
+}
+.dropdown-menu > li.current-menu-item > a,
+.dropdown-menu > li.current-menu-ancestor > a {
+  text-decoration: none;
+  color: white;
+  background-color: #e476b4;
+  background-image: -moz-linear-gradient(top, #e67fb9, #e26aad);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e67fb9), to(#e26aad));
+  background-image: -webkit-linear-gradient(top, #e67fb9, #e26aad);
+  background-image: -o-linear-gradient(top, #e67fb9, #e26aad);
+  background-image: linear-gradient(to bottom, #e67fb9, #e26aad);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe67fb9' , endColorstr='#ffe26aad' , GradientType=0);
 }
 /* Offset the responsive button for proper vertical alignment */
 
@@ -6466,6 +6506,7 @@ li#wp-admin-bar-tc-customizr a {
 .nav > li > a:focus {
   text-decoration: none;
   background-color: #ffed6d;
+  cursor: pointer;
 }
 #debug:hover {
   cursor: move;

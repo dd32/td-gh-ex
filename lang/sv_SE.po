@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Customizr 3.0.8\n"
-"POT-Creation-Date: 2013-09-10 18:06+0100\n"
-"PO-Revision-Date: 2013-09-10 18:07+0100\n"
+"POT-Creation-Date: 2013-09-17 19:35+0100\n"
+"PO-Revision-Date: 2013-09-17 19:35+0100\n"
 "Last-Translator: Nicolas G. <contact@themesandco.com>\n"
 "Language-Team: Nicolas G. <contact@themesandco.com>\n"
 "Language: Swedish\n"
@@ -58,263 +58,263 @@ msgstr "Sidfot widget område två"
 msgid "Footer Widget Area Three"
 msgstr "Sidfot widget område tre"
 
-#: ../inc/admin/class-admin-customize.php:62
-#: ../inc/admin/class-admin-customize.php:63
-#: ../inc/admin/class-admin-customize.php:84
+#: ../inc/admin/class-admin-customize.php:64
+#: ../inc/admin/class-admin-customize.php:65
+#: ../inc/admin/class-admin-customize.php:86
 msgid "Customiz'it!"
 msgstr "Customiz'it!"
 
-#: ../inc/admin/class-admin-customize.php:87
+#: ../inc/admin/class-admin-customize.php:89
 msgid "Customize your website at any time!"
 msgstr "Anpassa din webbplats när som helst!"
 
-#: ../inc/admin/class-admin-customize.php:129
-msgid "&mdash; No slider &mdash;"
-msgstr "&mdash; Ingen slider &mdash;"
-
-#: ../inc/admin/class-admin-customize.php:130
-msgid "&mdash; Demo Slider &mdash;"
-msgstr "&mdash; Demo Slider &mdash;"
-
-#: ../inc/admin/class-admin-customize.php:164
-msgid "Skin"
-msgstr "Skal"
-
-#: ../inc/admin/class-admin-customize.php:166
-msgid "Select a skin for Customizr"
-msgstr "Välj skal för Customizr"
-
-#: ../inc/admin/class-admin-customize.php:170
-msgid "Logo &amp; Favicon"
-msgstr "Logotyp &amp; Favicon"
-
-#: ../inc/admin/class-admin-customize.php:172
-msgid "Set up logo and favicon options"
-msgstr "Ställ in logotyp och favicon alternativ"
-
-#: ../inc/admin/class-admin-customize.php:176
-msgid "Front Page"
-msgstr "Förstasidan"
-
-#: ../inc/admin/class-admin-customize.php:178
-msgid "Set up front page options"
-msgstr "Ställ in alternativ för förstasidan"
-
-#: ../inc/admin/class-admin-customize.php:182
-msgid "Pages &amp; Posts Layout"
-msgstr "Sidor &amp; inläggs layout"
-
-#: ../inc/admin/class-admin-customize.php:184
-msgid "Set up layout options"
-msgstr "Ställ in layout alternativ"
-
-#: ../inc/admin/class-admin-customize.php:188
-msgid "Comments"
-msgstr "Kommentarer"
-
-#: ../inc/admin/class-admin-customize.php:190
-msgid "Set up comments options"
-msgstr "Ställ in alternativ för kommentarer"
-
-#: ../inc/admin/class-admin-customize.php:194
-#: ../parts/class-content-sidebar.php:136
-msgid "Social links"
-msgstr "Sociala länkar"
-
-#: ../inc/admin/class-admin-customize.php:196
-msgid "Set up your social links"
-msgstr "Ställ in dina sociala länkar"
-
-#: ../inc/admin/class-admin-customize.php:200
-msgid "Images"
-msgstr "Bilder"
-
-#: ../inc/admin/class-admin-customize.php:202
-#: ../inc/admin/class-admin-customize.php:753
-msgid "Enable/disable lightbox effect on images"
-msgstr "Slå på/av lightbox effekt på bilder"
-
-#: ../inc/admin/class-admin-customize.php:212
-msgid "Custom CSS"
-msgstr "Anpassad CSS"
-
-#: ../inc/admin/class-admin-customize.php:214
-msgid "Add your own CSS"
-msgstr "Lägg till din egen CSS"
-
-#: ../inc/admin/class-admin-customize.php:218
-msgid "Dev Tools (advanced users)"
-msgstr "Utvecklingsverktyg (avancerade användare)"
-
-#: ../inc/admin/class-admin-customize.php:220
-msgid "Enable/disable the Dev Tools"
-msgstr "Slå på/slå av utvecklingsverktygen"
-
-#: ../inc/admin/class-admin-customize.php:246
-msgid "Manage menus"
-msgstr "Hantera menyer"
-
-#: ../inc/admin/class-admin-customize.php:257
-msgid "Choose a predefined skin"
-msgstr "Välj ett fördefinierat skal"
-
-#: ../inc/admin/class-admin-customize.php:261
+#: ../inc/admin/class-admin-customize.php:132
 msgid "Blue"
 msgstr "Blå"
 
-#: ../inc/admin/class-admin-customize.php:262
+#: ../inc/admin/class-admin-customize.php:133
 msgid "Green"
 msgstr "Grön"
 
-#: ../inc/admin/class-admin-customize.php:263
+#: ../inc/admin/class-admin-customize.php:134
 msgid "Yellow"
 msgstr "Gul"
 
-#: ../inc/admin/class-admin-customize.php:264
+#: ../inc/admin/class-admin-customize.php:135
 msgid "Orange"
 msgstr "Orange"
 
-#: ../inc/admin/class-admin-customize.php:265
+#: ../inc/admin/class-admin-customize.php:136
 msgid "Red"
 msgstr "Röd"
 
-#: ../inc/admin/class-admin-customize.php:266
+#: ../inc/admin/class-admin-customize.php:137
 msgid "Purple"
 msgstr "Lila"
 
-#: ../inc/admin/class-admin-customize.php:267
+#: ../inc/admin/class-admin-customize.php:138
 msgid "Grey"
 msgstr "Grå"
 
-#: ../inc/admin/class-admin-customize.php:268
+#: ../inc/admin/class-admin-customize.php:139
 msgid "Black"
 msgstr "Svart"
 
-#: ../inc/admin/class-admin-customize.php:275
+#: ../inc/admin/class-admin-customize.php:156
+msgid "&mdash; No slider &mdash;"
+msgstr "&mdash; Ingen slider &mdash;"
+
+#: ../inc/admin/class-admin-customize.php:157
+msgid "&mdash; Demo Slider &mdash;"
+msgstr "&mdash; Demo Slider &mdash;"
+
+#: ../inc/admin/class-admin-customize.php:191
+msgid "Skin"
+msgstr "Skal"
+
+#: ../inc/admin/class-admin-customize.php:193
+msgid "Select a skin for Customizr"
+msgstr "Välj skal för Customizr"
+
+#: ../inc/admin/class-admin-customize.php:197
+msgid "Logo &amp; Favicon"
+msgstr "Logotyp &amp; Favicon"
+
+#: ../inc/admin/class-admin-customize.php:199
+msgid "Set up logo and favicon options"
+msgstr "Ställ in logotyp och favicon alternativ"
+
+#: ../inc/admin/class-admin-customize.php:203
+msgid "Front Page"
+msgstr "Förstasidan"
+
+#: ../inc/admin/class-admin-customize.php:205
+msgid "Set up front page options"
+msgstr "Ställ in alternativ för förstasidan"
+
+#: ../inc/admin/class-admin-customize.php:209
+msgid "Pages &amp; Posts Layout"
+msgstr "Sidor &amp; inläggs layout"
+
+#: ../inc/admin/class-admin-customize.php:211
+msgid "Set up layout options"
+msgstr "Ställ in layout alternativ"
+
+#: ../inc/admin/class-admin-customize.php:215
+msgid "Comments"
+msgstr "Kommentarer"
+
+#: ../inc/admin/class-admin-customize.php:217
+msgid "Set up comments options"
+msgstr "Ställ in alternativ för kommentarer"
+
+#: ../inc/admin/class-admin-customize.php:221
+#: ../parts/class-content-sidebar.php:134
+msgid "Social links"
+msgstr "Sociala länkar"
+
+#: ../inc/admin/class-admin-customize.php:223
+msgid "Set up your social links"
+msgstr "Ställ in dina sociala länkar"
+
+#: ../inc/admin/class-admin-customize.php:227
+msgid "Images"
+msgstr "Bilder"
+
+#: ../inc/admin/class-admin-customize.php:229
+#: ../inc/admin/class-admin-customize.php:771
+msgid "Enable/disable lightbox effect on images"
+msgstr "Slå på/av lightbox effekt på bilder"
+
+#: ../inc/admin/class-admin-customize.php:239
+msgid "Custom CSS"
+msgstr "Anpassad CSS"
+
+#: ../inc/admin/class-admin-customize.php:241
+msgid "Add your own CSS"
+msgstr "Lägg till din egen CSS"
+
+#: ../inc/admin/class-admin-customize.php:245
+msgid "Dev Tools (advanced users)"
+msgstr "Utvecklingsverktyg (avancerade användare)"
+
+#: ../inc/admin/class-admin-customize.php:247
+msgid "Enable/disable the Dev Tools"
+msgstr "Slå på/slå av utvecklingsverktygen"
+
+#: ../inc/admin/class-admin-customize.php:273
+msgid "Manage menus"
+msgstr "Hantera menyer"
+
+#: ../inc/admin/class-admin-customize.php:284
+msgid "Choose a predefined skin"
+msgstr "Välj ett fördefinierat skal"
+
+#: ../inc/admin/class-admin-customize.php:293
 msgid "Display top border"
 msgstr "Visa översta gränsen (top border)"
 
-#: ../inc/admin/class-admin-customize.php:279
+#: ../inc/admin/class-admin-customize.php:297
 msgid "Uncheck this option to remove the colored top border."
 msgstr ""
 "Kryssa ur detta alternativ för att ta bort den överst färgade gränsen (top "
 "border)."
 
-#: ../inc/admin/class-admin-customize.php:289
+#: ../inc/admin/class-admin-customize.php:307
 msgid "Logo Upload (supported formats : .jpg, .png, .gif)"
 msgstr "Logo uppladdning (supportade format : .jpg, .png, .gif)"
 
-#: ../inc/admin/class-admin-customize.php:296
+#: ../inc/admin/class-admin-customize.php:314
 msgid "Force logo dimensions to max-width:250px and max-height:100px"
 msgstr "Tvinga logotyp dimensioner till max-bredd:250px och max-höjd:100px"
 
-#: ../inc/admin/class-admin-customize.php:311
+#: ../inc/admin/class-admin-customize.php:329
 msgid "Favicon Upload (supported formats : .ico, .png, .gif)"
 msgstr "Favicon uppladdning (supportade format : .ico, .png, .gif)"
 
-#: ../inc/admin/class-admin-customize.php:323
+#: ../inc/admin/class-admin-customize.php:341
 msgid "Choose content and layout"
 msgstr "Välj innehåll och layout"
 
-#: ../inc/admin/class-admin-customize.php:331
+#: ../inc/admin/class-admin-customize.php:349
 msgid "Front page displays"
 msgstr "Förstasidan visar"
 
-#: ../inc/admin/class-admin-customize.php:336
+#: ../inc/admin/class-admin-customize.php:354
 msgid "Don't show any posts or page"
 msgstr "Visa inga inlägg eller sidor"
 
-#: ../inc/admin/class-admin-customize.php:337
+#: ../inc/admin/class-admin-customize.php:355
 msgid "Your latest posts"
 msgstr "Dina senaste inlägg"
 
-#: ../inc/admin/class-admin-customize.php:338
+#: ../inc/admin/class-admin-customize.php:356
 msgid "A static page"
 msgstr "En statisk sida"
 
-#: ../inc/admin/class-admin-customize.php:344
+#: ../inc/admin/class-admin-customize.php:362
 msgid "Front page"
 msgstr "Förstasida"
 
-#: ../inc/admin/class-admin-customize.php:352
+#: ../inc/admin/class-admin-customize.php:370
 msgid "Posts page"
 msgstr "Inläggssida"
 
-#: ../inc/admin/class-admin-customize.php:361
+#: ../inc/admin/class-admin-customize.php:379
 msgid "Set up the front page layout"
 msgstr "Ställ in titelsidans layout"
 
-#: ../inc/admin/class-admin-customize.php:365
-#: ../inc/admin/class-admin-customize.php:533
-#: ../inc/admin/class-admin-customize.php:559
-#: ../inc/admin/class-admin-customize.php:587
+#: ../inc/admin/class-admin-customize.php:383
+#: ../inc/admin/class-admin-customize.php:551
+#: ../inc/admin/class-admin-customize.php:577
+#: ../inc/admin/class-admin-customize.php:605
 #: ../inc/admin/class-admin-meta_boxes.php:130
 msgid "Right sidebar"
 msgstr "Höger sidofält"
 
-#: ../inc/admin/class-admin-customize.php:366
-#: ../inc/admin/class-admin-customize.php:534
-#: ../inc/admin/class-admin-customize.php:560
-#: ../inc/admin/class-admin-customize.php:588
+#: ../inc/admin/class-admin-customize.php:384
+#: ../inc/admin/class-admin-customize.php:552
+#: ../inc/admin/class-admin-customize.php:578
+#: ../inc/admin/class-admin-customize.php:606
 #: ../inc/admin/class-admin-meta_boxes.php:131
 msgid "Left sidebar"
 msgstr "Vänster sidofält"
 
-#: ../inc/admin/class-admin-customize.php:367
-#: ../inc/admin/class-admin-customize.php:535
-#: ../inc/admin/class-admin-customize.php:561
-#: ../inc/admin/class-admin-customize.php:589
+#: ../inc/admin/class-admin-customize.php:385
+#: ../inc/admin/class-admin-customize.php:553
+#: ../inc/admin/class-admin-customize.php:579
+#: ../inc/admin/class-admin-customize.php:607
 msgid "2 sidebars : Right and Left"
 msgstr "2 sidofält: Höger och vänster"
 
-#: ../inc/admin/class-admin-customize.php:368
-#: ../inc/admin/class-admin-customize.php:536
-#: ../inc/admin/class-admin-customize.php:562
-#: ../inc/admin/class-admin-customize.php:590
+#: ../inc/admin/class-admin-customize.php:386
+#: ../inc/admin/class-admin-customize.php:554
+#: ../inc/admin/class-admin-customize.php:580
+#: ../inc/admin/class-admin-customize.php:608
 msgid "No sidebars : full width layout"
 msgstr "Inga sidofält: Full bredd layout"
 
-#: ../inc/admin/class-admin-customize.php:377
+#: ../inc/admin/class-admin-customize.php:395
 msgid "Slider options"
 msgstr "Slider alternativ"
 
-#: ../inc/admin/class-admin-customize.php:378
+#: ../inc/admin/class-admin-customize.php:396
 msgid "Select front page slider"
 msgstr "Välj förstasidans slider"
 
-#: ../inc/admin/class-admin-customize.php:390
+#: ../inc/admin/class-admin-customize.php:408
 msgid "Full width slider"
 msgstr "Full bredd slider"
 
-#: ../inc/admin/class-admin-customize.php:409
+#: ../inc/admin/class-admin-customize.php:427
 msgid "Delay between each slides"
 msgstr "Fördröjning mellan varje slide"
 
-#: ../inc/admin/class-admin-customize.php:414
+#: ../inc/admin/class-admin-customize.php:432
 msgid "in ms : 1000ms = 1s"
 msgstr "i ms : 1000ms = 1s"
 
-#: ../inc/admin/class-admin-customize.php:422
+#: ../inc/admin/class-admin-customize.php:440
 msgid "Featured pages options"
 msgstr "Alternativ för utvalda sidor"
 
-#: ../inc/admin/class-admin-customize.php:423
+#: ../inc/admin/class-admin-customize.php:441
 msgid "Display home featured pages area"
 msgstr "Visa området utvalda sidor på förstasidan"
 
-#: ../inc/admin/class-admin-customize.php:427
+#: ../inc/admin/class-admin-customize.php:445
 msgid "Enable"
 msgstr "Aktivera"
 
-#: ../inc/admin/class-admin-customize.php:428
+#: ../inc/admin/class-admin-customize.php:446
 msgid "Disable"
 msgstr "Inaktivera"
 
-#: ../inc/admin/class-admin-customize.php:437
+#: ../inc/admin/class-admin-customize.php:455
 msgid "Show images"
 msgstr "Visa bilder"
 
-#: ../inc/admin/class-admin-customize.php:440
+#: ../inc/admin/class-admin-customize.php:458
 msgid ""
 "The images are set with the \"featured image\" of each pages (in the page "
 "edit screen). Uncheck the option above to disable the featured page images."
@@ -322,33 +322,33 @@ msgstr ""
 "Bilderna sätts med \"Utvald bild \" på varje sida (på sidan redigera sidan). "
 "Bocka av alternativet ovan för att inaktivera de utvalda bilderna på sidan."
 
-#: ../inc/admin/class-admin-customize.php:446
+#: ../inc/admin/class-admin-customize.php:464
 msgid "Read more &raquo;"
 msgstr "Läs mer &raquo;"
 
-#: ../inc/admin/class-admin-customize.php:448
+#: ../inc/admin/class-admin-customize.php:466
 msgid "Button text"
 msgstr "Knapptext"
 
-#: ../inc/admin/class-admin-customize.php:456
+#: ../inc/admin/class-admin-customize.php:474
 msgid "Home featured page one"
 msgstr "Utvald sida ett"
 
-#: ../inc/admin/class-admin-customize.php:464
+#: ../inc/admin/class-admin-customize.php:482
 msgid "Home featured page two"
 msgstr "Utvald sida två"
 
-#: ../inc/admin/class-admin-customize.php:472
+#: ../inc/admin/class-admin-customize.php:490
 msgid "Home featured page three"
 msgstr "Utvald sida tre"
 
-#: ../inc/admin/class-admin-customize.php:483
+#: ../inc/admin/class-admin-customize.php:501
 msgid "Featured text one (200 car. max)"
 msgstr "Utvald text ett (200 tecken max)"
 
-#: ../inc/admin/class-admin-customize.php:486
-#: ../inc/admin/class-admin-customize.php:498
-#: ../inc/admin/class-admin-customize.php:510
+#: ../inc/admin/class-admin-customize.php:504
+#: ../inc/admin/class-admin-customize.php:516
+#: ../inc/admin/class-admin-customize.php:528
 msgid ""
 "You need to select a page first. Leave this field empty if you want to use "
 "the page excerpt."
@@ -356,27 +356,27 @@ msgstr ""
 "Du måste välja en sida först. Lämna det här fältet tomt om du vill använda "
 "ett utdrag från sidan."
 
-#: ../inc/admin/class-admin-customize.php:495
+#: ../inc/admin/class-admin-customize.php:513
 msgid "Featured text two (200 car. max)"
 msgstr "Utvald text två (200 tecken max)"
 
-#: ../inc/admin/class-admin-customize.php:507
+#: ../inc/admin/class-admin-customize.php:525
 msgid "Featured text three (200 car. max)"
 msgstr "Utvald text tre (200 tecken max)"
 
-#: ../inc/admin/class-admin-customize.php:520
+#: ../inc/admin/class-admin-customize.php:538
 msgid "Display Breadcrumb"
 msgstr "Visa navigation (breadcrumb)"
 
-#: ../inc/admin/class-admin-customize.php:529
+#: ../inc/admin/class-admin-customize.php:547
 msgid "Choose the global default layout"
 msgstr "Välj global default layout"
 
-#: ../inc/admin/class-admin-customize.php:545
+#: ../inc/admin/class-admin-customize.php:563
 msgid "Force default layout everywhere"
 msgstr "Tvinga default layout överallt"
 
-#: ../inc/admin/class-admin-customize.php:548
+#: ../inc/admin/class-admin-customize.php:566
 msgid ""
 "This option will override the specific layouts on all posts/pages, including "
 "the front page."
@@ -384,23 +384,23 @@ msgstr ""
 "Detta alternativ kommer att åsidosätta de särskilda layouter på alla "
 "inlägg / sidor, inklusive den främre sidan."
 
-#: ../inc/admin/class-admin-customize.php:555
+#: ../inc/admin/class-admin-customize.php:573
 msgid "Choose the posts default layout"
 msgstr "Välj default layout för inlägg"
 
-#: ../inc/admin/class-admin-customize.php:572
+#: ../inc/admin/class-admin-customize.php:590
 msgid "Maximum number of posts per page"
 msgstr "Maximalt antal av inlägg per sida"
 
-#: ../inc/admin/class-admin-customize.php:583
+#: ../inc/admin/class-admin-customize.php:601
 msgid "Choose the pages default layout"
 msgstr "Välj default layout för sidor"
 
-#: ../inc/admin/class-admin-customize.php:601
+#: ../inc/admin/class-admin-customize.php:619
 msgid "Enable comments on pages"
 msgstr "Aktivera kommentarer på sidor"
 
-#: ../inc/admin/class-admin-customize.php:604
+#: ../inc/admin/class-admin-customize.php:622
 msgid ""
 "This option will enable comments on pages. You can disable comments for a "
 "single page in the quick edit mode of the page list screen."
@@ -409,67 +409,67 @@ msgstr ""
 "inaktivera kommentarer för en enda sida i snabbredigeringarläge på sidan "
 "alla sidor."
 
-#: ../inc/admin/class-admin-customize.php:614
+#: ../inc/admin/class-admin-customize.php:632
 msgid "Social links in header"
 msgstr "Sociala länkar i sidhuvudet"
 
-#: ../inc/admin/class-admin-customize.php:622
+#: ../inc/admin/class-admin-customize.php:640
 msgid "Social links in left sidebar"
 msgstr "Sociala länkar i vänster sidofält"
 
-#: ../inc/admin/class-admin-customize.php:630
+#: ../inc/admin/class-admin-customize.php:648
 msgid "Social links in right sidebar"
 msgstr "Sociala länkar i höger sidofält"
 
-#: ../inc/admin/class-admin-customize.php:638
+#: ../inc/admin/class-admin-customize.php:656
 msgid "Social links in footer"
 msgstr "Sociala länkar i sidfoten"
 
-#: ../inc/admin/class-admin-customize.php:650
+#: ../inc/admin/class-admin-customize.php:668
 msgid "RSS feed (default is the wordpress feed)"
 msgstr "RSS feed (defalt är wordpress feed)"
 
-#: ../inc/admin/class-admin-customize.php:659
+#: ../inc/admin/class-admin-customize.php:677
 msgid "Twitter profile url"
 msgstr "Twitter profil url"
 
-#: ../inc/admin/class-admin-customize.php:668
+#: ../inc/admin/class-admin-customize.php:686
 msgid "Facebook profile url"
 msgstr "Facebook profil url"
 
-#: ../inc/admin/class-admin-customize.php:677
+#: ../inc/admin/class-admin-customize.php:695
 msgid "Google+ profile url"
 msgstr "Google+ profil url"
 
-#: ../inc/admin/class-admin-customize.php:686
+#: ../inc/admin/class-admin-customize.php:704
 msgid "Instagram profile url"
 msgstr "Instagram profil url"
 
-#: ../inc/admin/class-admin-customize.php:695
+#: ../inc/admin/class-admin-customize.php:713
 msgid "WordPress profile url"
 msgstr "WordPress profil url"
 
-#: ../inc/admin/class-admin-customize.php:704
+#: ../inc/admin/class-admin-customize.php:722
 msgid "Youtube profile url"
 msgstr "Youtube profil url"
 
-#: ../inc/admin/class-admin-customize.php:713
+#: ../inc/admin/class-admin-customize.php:731
 msgid "Pinterest profile url"
 msgstr "Pinterest profil url"
 
-#: ../inc/admin/class-admin-customize.php:722
+#: ../inc/admin/class-admin-customize.php:740
 msgid "Github profile url"
 msgstr "Github profil url"
 
-#: ../inc/admin/class-admin-customize.php:731
+#: ../inc/admin/class-admin-customize.php:749
 msgid "Dribbble profile url"
 msgstr "Dribbble profil url"
 
-#: ../inc/admin/class-admin-customize.php:740
+#: ../inc/admin/class-admin-customize.php:758
 msgid "LinkedIn profile url"
 msgstr "LinkedIn profil url"
 
-#: ../inc/admin/class-admin-customize.php:756
+#: ../inc/admin/class-admin-customize.php:774
 msgid ""
 "If enabled, this option activate a popin window whith a zoom effect when an "
 "image is clicked. This will not apply to image gallery."
@@ -478,23 +478,23 @@ msgstr ""
 "zoomeffekt när en bild klickas. Detta kommer inte att gälla för "
 "bildgallerier."
 
-#: ../inc/admin/class-admin-customize.php:762
+#: ../inc/admin/class-admin-customize.php:780
 msgid "Autoscale images on zoom"
 msgstr "Autoskala bilder vid zoom"
 
-#: ../inc/admin/class-admin-customize.php:765
+#: ../inc/admin/class-admin-customize.php:783
 msgid ""
 "If enabled, this option will force images to fit the screen on lightbox zoom."
 msgstr ""
 "Om aktiverad, kommer detta alternativ att tvinga bilderna att passa skärmen "
 "vid lightbox zoom."
 
-#: ../inc/admin/class-admin-customize.php:788
+#: ../inc/admin/class-admin-customize.php:806
 msgid "Add your custom css here and design live! (for advanced users)"
 msgstr ""
 "Lägg till din egen CSS här och designa live! (för avancerade användare)"
 
-#: ../inc/admin/class-admin-customize.php:791
+#: ../inc/admin/class-admin-customize.php:809
 msgid ""
 "Always use this field to add your custom css instead of editing directly the "
 "style.css file : it will not be deleted during theme updates. You can also "
@@ -505,16 +505,16 @@ msgstr ""
 "temats uppdateringar. Du kan också klistra in egen CSS i style.css i ett "
 "barn-tema."
 
-#: ../inc/admin/class-admin-customize.php:800
+#: ../inc/admin/class-admin-customize.php:818
 msgid "Developer Box"
 msgstr "Utvecklingsbox"
 
-#: ../inc/admin/class-admin-customize.php:809
 #: ../inc/admin/class-admin-customize.php:827
+#: ../inc/admin/class-admin-customize.php:845
 msgid "Only visible for logged in users with an admin profile."
 msgstr "Endast synlig för inloggade användare med en admin profil."
 
-#: ../inc/admin/class-admin-customize.php:812
+#: ../inc/admin/class-admin-customize.php:830
 msgid ""
 "If enabled, this option displays a draggable information box to help you "
 "develop or debug your Customizr based website."
@@ -522,11 +522,11 @@ msgstr ""
 "Om aktiverad, visas detta alternativ en dragbar informationsruta som hjälper "
 "dig att utveckla eller felsöka din Customizr-baserade webbplats."
 
-#: ../inc/admin/class-admin-customize.php:818
+#: ../inc/admin/class-admin-customize.php:836
 msgid "Developer tooltips"
 msgstr "Utvecklare verktygstips"
 
-#: ../inc/admin/class-admin-customize.php:830
+#: ../inc/admin/class-admin-customize.php:848
 msgid ""
 "If enabled, this option displays clickable contextual tooltips right inside "
 "your website."
@@ -534,7 +534,7 @@ msgstr ""
 "Om aktiverad, visas detta alternativ klickbara kontextuella verktygstips "
 "direkt i din webbplats."
 
-#: ../inc/admin/class-admin-customize.php:839
+#: ../inc/admin/class-admin-customize.php:857
 msgid "Tip icon color"
 msgstr "Tip icon färg"
 
@@ -749,12 +749,12 @@ msgid "Button Link"
 msgstr "Knapplänk"
 
 #: ../inc/admin/class-admin-meta_boxes.php:848
-#: ../parts/class-content-attachment.php:86
+#: ../parts/class-content-attachment.php:88
 #: ../parts/class-content-breadcrumb.php:614
 #: ../parts/class-content-breadcrumb.php:647
 #: ../parts/class-content-breadcrumb.php:662
 #: ../parts/class-content-breadcrumb.php:690
-#: ../parts/class-content-comments.php:154 ../parts/class-content-post.php:92
+#: ../parts/class-content-comments.php:154 ../parts/class-content-post.php:94
 msgid "Edit"
 msgstr "Redigera"
 
@@ -801,16 +801,16 @@ msgstr "Hjälp"
 msgid "Need help with Customizr? Click here!"
 msgstr "Behöver du hjälp med Customizr? Klicka här!"
 
-#: ../inc/admin/class-fire-admin_init.php:231
+#: ../inc/admin/class-fire-admin_init.php:228
 msgid "Need help with Customizr ?"
 msgstr "Behöver du hjälp med Customizr?"
 
-#: ../inc/admin/class-fire-admin_init.php:233
+#: ../inc/admin/class-fire-admin_init.php:230
 #, php-format
 msgid "Welcome to Customizr %s"
 msgstr "Välkommen till Customizr %s"
 
-#: ../inc/admin/class-fire-admin_init.php:239
+#: ../inc/admin/class-fire-admin_init.php:236
 #, php-format
 msgid ""
 "Thank you for updating to the latest version! Customizr %1$s has more "
@@ -826,7 +826,7 @@ msgstr ""
 "a> och hitta inspiration i <a href=\"#showcase\">showcasen</a>.<br/>Njut av "
 "det!"
 
-#: ../inc/admin/class-fire-admin_init.php:248
+#: ../inc/admin/class-fire-admin_init.php:245
 #, php-format
 msgid ""
 "You can start by watching the <a href=\"#introduction\">introduction video</"
@@ -844,19 +844,19 @@ msgstr ""
 "förbättringar, kommer du förmodligen hitta en lösning på ditt problem "
 "antingen i FAQ eller i användarforumet."
 
-#: ../inc/admin/class-fire-admin_init.php:255
+#: ../inc/admin/class-fire-admin_init.php:252
 msgid "Read the documentation"
 msgstr "Läs dokumentationen"
 
-#: ../inc/admin/class-fire-admin_init.php:259
+#: ../inc/admin/class-fire-admin_init.php:256
 msgid "Check the FAQ"
 msgstr "Kontrollera FAQ"
 
-#: ../inc/admin/class-fire-admin_init.php:263
+#: ../inc/admin/class-fire-admin_init.php:260
 msgid "Discuss in the user forum"
 msgstr "Diskutera i användarforumet"
 
-#: ../inc/admin/class-fire-admin_init.php:271
+#: ../inc/admin/class-fire-admin_init.php:268
 #, php-format
 msgid ""
 "Thank you for using Customizr! Customizr %1$s has more features, is safer "
@@ -871,7 +871,7 @@ msgstr ""
 "Titta på <a href=\"#introduction\">introduktionsvideon</a> och hitta "
 "inspiration i  <a href=\"#showcase\">showcasen</a>.<br/>Njut av det! "
 
-#: ../inc/admin/class-fire-admin_init.php:288
+#: ../inc/admin/class-fire-admin_init.php:285
 #, php-format
 msgid ""
 "You are using a child theme of Customizr %1$s : always check the %2$s after "
@@ -880,11 +880,11 @@ msgstr ""
 "Du använder ett barn tema Customizr %1$s: kontrollera alltid %2$s efter "
 "uppgradering för att se om en funktion eller en mall har utfasats."
 
-#: ../inc/admin/class-fire-admin_init.php:303
+#: ../inc/admin/class-fire-admin_init.php:300
 msgid "We need sponsors!"
 msgstr "Vi behöver sponsorer!"
 
-#: ../inc/admin/class-fire-admin_init.php:304
+#: ../inc/admin/class-fire-admin_init.php:301
 msgid ""
 "<strong>We do our best do make Customizr the perfect free theme for you!</"
 "strong><br/> Please help support it's continued development with a donation "
@@ -894,11 +894,11 @@ msgstr ""
 "gratistemat för dig! </ strong> <br/> Snälla bidra till att stödja den "
 "fortsatta utvecklingen med en donation på €20, €50, och €100."
 
-#: ../inc/admin/class-fire-admin_init.php:311
+#: ../inc/admin/class-fire-admin_init.php:308
 msgid "Happy user of Customizr?"
 msgstr "Glad användare av Customizr?"
 
-#: ../inc/admin/class-fire-admin_init.php:312
+#: ../inc/admin/class-fire-admin_init.php:309
 msgid ""
 "If you are happy with the theme, say it on wordpress.org and give Customizr "
 "a nice review! <br />(We are addicted to your feedbacks...)"
@@ -906,19 +906,19 @@ msgstr ""
 "Om du är nöjd med temat, säg det på wordpress.org och ge Customizr en "
 "trevlig recension! <br /> (Vi är beroende av era återkopplingar ...)"
 
-#: ../inc/admin/class-fire-admin_init.php:317
+#: ../inc/admin/class-fire-admin_init.php:314
 msgid "Follow us"
 msgstr "Följ oss"
 
-#: ../inc/admin/class-fire-admin_init.php:336
+#: ../inc/admin/class-fire-admin_init.php:333
 msgid "New! Customizr Developer Tools"
 msgstr "Nytt! Customizr utvecklingsverktyg"
 
-#: ../inc/admin/class-fire-admin_init.php:340
+#: ../inc/admin/class-fire-admin_init.php:337
 msgid "Easily drill down into Customizr code with the dev tools!"
 msgstr "Borra enkelt ner dig i Customizr kod med utvecklingsverktyg!"
 
-#: ../inc/admin/class-fire-admin_init.php:341
+#: ../inc/admin/class-fire-admin_init.php:338
 msgid ""
 "A new section called \"Dev Tools\" has been added to the customizer options."
 "<br/> There you will find two optional new features : <br/><strong>-The "
@@ -950,20 +950,20 @@ msgstr ""
 "fil, funktionsbeskrivning och eventuella filter <br/> <i> Dessa verktyg "
 "visas bara för inloggade användare med en admin behörighetsprofil.</ i>"
 
-#: ../inc/admin/class-fire-admin_init.php:348
+#: ../inc/admin/class-fire-admin_init.php:345
 msgid "Customizr Showcase"
 msgstr "Customizr Showcase"
 
-#: ../inc/admin/class-fire-admin_init.php:351
-#: ../inc/admin/class-fire-admin_init.php:358
+#: ../inc/admin/class-fire-admin_init.php:348
+#: ../inc/admin/class-fire-admin_init.php:355
 msgid "Visit the showcase"
 msgstr ""
 
-#: ../inc/admin/class-fire-admin_init.php:352
+#: ../inc/admin/class-fire-admin_init.php:349
 msgid "Find inspiration for your next Customizr based website!"
 msgstr "Hitta inspiration till din nästa Customizr baserad webbplats!"
 
-#: ../inc/admin/class-fire-admin_init.php:353
+#: ../inc/admin/class-fire-admin_init.php:350
 msgid ""
 "This showcase aims to show what can be done with Customizr and helping other "
 "users to find inspiration for their web design."
@@ -971,7 +971,7 @@ msgstr ""
 "Denna presentation syftar till att visa vad som kan göras med Customizr och "
 "hjälpa andra användare att hitta inspiration till sin webbdesign."
 
-#: ../inc/admin/class-fire-admin_init.php:355
+#: ../inc/admin/class-fire-admin_init.php:352
 msgid ""
 "Do you think you made an awesome website that can inspire people? Submitting "
 "a site for review is quick and easy to do."
@@ -979,24 +979,24 @@ msgstr ""
 "Tror du att du gjort en fantastisk hemsida som kan inspirera människor? "
 "Skicka in en webbplats för granskning är snabb och enkel att göra."
 
-#: ../inc/admin/class-fire-admin_init.php:365
+#: ../inc/admin/class-fire-admin_init.php:362
 msgid "Discover Customizr : quick video introduction"
 msgstr "Upptäck Customizr: snabb videointroduktion"
 
-#: ../inc/admin/class-fire-admin_init.php:375
+#: ../inc/admin/class-fire-admin_init.php:372
 #, php-format
 msgid "Changelog in version %1$s"
 msgstr "Ändringslog för version %1$s"
 
-#: ../inc/admin/class-fire-admin_init.php:384
+#: ../inc/admin/class-fire-admin_init.php:381
 msgid "Go to Dashboard &rarr; Home"
 msgstr "Gå till Adminpanel &rarr; Hem"
 
-#: ../inc/admin/class-fire-admin_init.php:384
+#: ../inc/admin/class-fire-admin_init.php:381
 msgid "Go to Dashboard"
 msgstr "Gå till Adminpanel"
 
-#: ../inc/admin/class-fire-admin_init.php:422
+#: ../inc/admin/class-fire-admin_init.php:419
 #, php-format
 msgid ""
 "Welcome to the new version of Customizr. You will be redirected to the About "
@@ -1024,16 +1024,16 @@ msgid ""
 msgstr ""
 "Ledsen, men den begärda sidan kan inte hittas. Du kan prova en sökning nedan."
 
-#: ../parts/class-content-attachment.php:84 ../parts/class-content-page.php:71
-#: ../parts/class-content-post.php:90
+#: ../parts/class-content-attachment.php:86 ../parts/class-content-page.php:74
+#: ../parts/class-content-post.php:92
 msgid "Comment(s) on "
 msgstr "Kommentar(er) på"
 
-#: ../parts/class-content-attachment.php:134
+#: ../parts/class-content-attachment.php:136
 msgid "&larr; Previous"
 msgstr "&larr; Föregående"
 
-#: ../parts/class-content-attachment.php:136
+#: ../parts/class-content-attachment.php:138
 msgid "Next &rarr;"
 msgstr "Nästa &rarr;"
 
@@ -1206,80 +1206,80 @@ msgstr ""
 "Tyvärr, men ingenting matchade dina sökkriterier. Vänligen försök igen med "
 "några andra nyckelord."
 
-#: ../parts/class-content-page.php:73
+#: ../parts/class-content-page.php:76
 msgid "Edit page"
 msgstr "Redigera sida"
 
-#: ../parts/class-content-page.php:81 ../parts/class-content-post.php:145
-#: ../parts/class-content-post_list.php:184
+#: ../parts/class-content-page.php:84 ../parts/class-content-post.php:149
+#: ../parts/class-content-post_list.php:189
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Fortsätt läsa <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../parts/class-content-page.php:84 ../parts/class-content-post.php:146
-#: ../parts/class-content-post_list.php:185
+#: ../parts/class-content-page.php:87 ../parts/class-content-post.php:150
+#: ../parts/class-content-post_list.php:190
 msgid "Pages:"
 msgstr "Sidor:"
 
-#: ../parts/class-content-post.php:192
-#: ../parts/class-content-post_list.php:405
+#: ../parts/class-content-post.php:196
+#: ../parts/class-content-post_list.php:423
 #, php-format
 msgid "About %s"
 msgstr "Om %s"
 
-#: ../parts/class-content-post.php:197
+#: ../parts/class-content-post.php:201
 #, php-format
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Visa alla inlägg av %s <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../parts/class-content-post_list.php:111
+#: ../parts/class-content-post_list.php:116
 #, php-format
 msgid "Permalink to %s"
 msgstr "Permalänk till %s"
 
-#: ../parts/class-content-post_list.php:111
+#: ../parts/class-content-post_list.php:116
 msgid "{no title} Read the post &raquo;"
 msgstr "{ingen titel} Läs inlägget &raquo;"
 
-#: ../parts/class-content-post_list.php:372
+#: ../parts/class-content-post_list.php:376
 #, php-format
 msgid "%1sSearch Results for: %2s"
 msgstr "%1ssökträffar för: %2s"
 
-#: ../parts/class-content-post_list.php:373
+#: ../parts/class-content-post_list.php:377
 msgid "No"
 msgstr "Inga"
 
-#: ../parts/class-content-post_list.php:395
+#: ../parts/class-content-post_list.php:414
 #, php-format
 msgid "Author Archives: %s"
 msgstr "Författararkiv: %s"
 
-#: ../parts/class-content-post_list.php:423
+#: ../parts/class-content-post_list.php:458
 #, php-format
 msgid "Category Archives: %s"
 msgstr "Kategoriarkiv: %s"
 
-#: ../parts/class-content-post_list.php:439
+#: ../parts/class-content-post_list.php:490
 #, php-format
 msgid "Tag Archives: %s"
 msgstr "Etikettarkiv: %s"
 
-#: ../parts/class-content-post_list.php:457
+#: ../parts/class-content-post_list.php:524
 #, php-format
 msgid "Daily Archives: %s"
 msgstr "Dagsarkiv: %s"
 
-#: ../parts/class-content-post_list.php:459
+#: ../parts/class-content-post_list.php:526
 #, php-format
 msgid "Monthly Archives: %s"
 msgstr "Månadsarkiv: %s"
 
-#: ../parts/class-content-post_list.php:461
+#: ../parts/class-content-post_list.php:528
 #, php-format
 msgid "Yearly Archives: %s"
 msgstr "Årsarkiv: %s"
 
-#: ../parts/class-content-post_list.php:463
+#: ../parts/class-content-post_list.php:530
 msgid "Archives"
 msgstr "Arkiv"
 
@@ -1288,7 +1288,7 @@ msgid "Published"
 msgstr ""
 
 #: ../parts/class-content-post_metas.php:51
-msgid "at"
+msgid "at dimensions"
 msgstr ""
 
 #: ../parts/class-content-post_metas.php:51
@@ -1363,7 +1363,7 @@ msgstr "Prenumerera på min rss feed"
 msgid "Back to top"
 msgstr "Åter till toppen"
 
-#: ../parts/class-header-header_main.php:134
+#: ../parts/class-header-header_main.php:142
 msgid "Back Home"
 msgstr "Åter till startsidan"
 

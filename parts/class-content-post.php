@@ -44,6 +44,8 @@ class TC_post {
     function tc_post_selectors () {
       //check conditional tags : we want to show single post or single custom post types
       global $post;
+      if ( !isset($post) )
+      return;
       if ( 'page' == $post -> post_type || 'attachment' == $post -> post_type || !is_singular() )
         return;
 
@@ -122,6 +124,8 @@ class TC_post {
     function tc_post_content() {
       //check conditional tags : we want to show single post or single custom post types
       global $post;
+      if ( !isset($post) )
+      return;
       if ( 'page' == $post -> post_type || 'attachment' == $post -> post_type || !is_singular() )
         return;
       if ( tc__f( '__is_home_empty') )

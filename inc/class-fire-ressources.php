@@ -20,13 +20,13 @@ class TC_ressources {
     function __construct () {
 
         self::$instance =& $this;
-
-        add_action( 'wp_enqueue_scripts'						, array( $this , 'tc_customizer_styles' ));
-        add_action( 'wp_enqueue_scripts'						, array( $this , 'tc_scripts' ));
+        add_filter( '__customizr_styles'						, array( $this , 'tc_customizer_styles' ) );
+        add_action( 'wp_enqueue_scripts'						, array( $this , 'tc_enqueue_customizer_styles' ) );
+        add_action( 'wp_enqueue_scripts'						, array( $this , 'tc_scripts' ) );
         
         //Based on options
         add_action ( 'wp_head'                 					, array( $this , 'tc_write_custom_css' ), 20 );
-        add_action ( 'wp_enqueue_scripts'						, array( $this , 'tc_optional_scripts' ));
+        add_action ( 'wp_enqueue_scripts'						, array( $this , 'tc_optional_scripts' ) );
         add_action ( 'wp_footer'								, array( $this , 'tc_generated_scripts' ) , 20);
     }
 
@@ -40,30 +40,44 @@ class TC_ressources {
 	  	 //record for debug
       	tc__f('rec' , __FILE__ , __FUNCTION__, __CLASS__ );
       	
-      	$skin = tc__f( '__get_option' , 'tc_skin' );
-      	
-	    wp_register_style( 
-	      'customizr-skin' , 
-	      TC_BASE_URL.'inc/css/'.$skin, 
-	      array(), 
-	      CUSTOMIZR_VER, 
-	      $media = 'all' 
-	      );
+	      	$skin = tc__f( '__get_option' , 'tc_skin' );
+	      	
+		    wp_register_style( 
+		      'customizr-skin' , 
+		      TC_BASE_URL.'inc/css/'.$skin,
+		      array(), 
+		      CUSTOMIZR_VER, 
+		      $media = 'all' 
+		      );
 
 
-	    //enqueue skin
-	    wp_enqueue_style( 'customizr-skin' );
+		    //enqueue skin
+		    wp_enqueue_style( 'customizr-skin' );
 
-	    //enqueue WP style sheet
-	    wp_enqueue_style( 
-	    	'customizr-style' , 
-	    	get_stylesheet_uri() , 
-	    	array( 'customizr-skin' ),
-	    	CUSTOMIZR_VER , 
-	    	$media = 'all'  
-	    );
+		    //enqueue WP style sheet
+		    wp_enqueue_style( 
+		    	'customizr-style' , 
+		    	get_stylesheet_uri() , 
+		    	array( 'customizr-skin' ),
+		    	CUSTOMIZR_VER , 
+		    	$media = 'all'  
+		    );
 
 	}
+
+
+	/**
+	 * Apply the __customizr_styles filter and make it filtrable.
+	 * 
+	 * @uses wp_enqueue_script() to manage script dependencies
+	 * @package Customizr
+	 * @since Customizr 3.0.11
+	 */
+	function tc_enqueue_customizer_styles() {
+		tc__f('rec' , __FILE__ , __FUNCTION__, __CLASS__ );
+		return tc__f('__customizr_styles');
+	}
+
 
 
 

@@ -20,18 +20,20 @@ class TC___ {
 
         self::$instance =& $this;
 
-        /* theme class groups instanciation */
+        /* theme class groups definition */
         global $instance_groups;
         $instance_groups = array(
             'fire' ,
+            'debug',
             'header' ,
             'content',
-            'footer'
+            'footer',
+            'addons' 
         );
 
         /* GET INFORMATIONS FROM STYLE.CSS */
         // get themedata version wp 3.4+
-        if(function_exists( 'wp_get_theme' ))
+        if( function_exists( 'wp_get_theme' ) )
           {
             //get WP_Theme object of customizr
             $tc_theme                     = wp_get_theme();
@@ -44,20 +46,20 @@ class TC___ {
             $tc_base_data['authoruri']    = $tc_theme -> {'Author URI'};
           }
 
-        // get themedata for lower versions
+        // get themedata for lower versions (get_stylesheet_directory() points to the current theme root, child or parent)
         else
           {
-             $tc_base_data                = get_theme_data( TC_BASE . 'style.css' );
+             $tc_base_data                = get_theme_data( get_stylesheet_directory().'/style.css' );
              $tc_base_data['prefix']      = $tc_base_data['title'];
           }
 
         /* CUSTOMIZR_VER is the Version */
         if( ! defined( 'CUSTOMIZR_VER' ) ) { define( 'CUSTOMIZR_VER' , $tc_base_data['version'] ); }
 
-        /* TC_BASE is the root server path */
+        /* TC_BASE is the root server path of the parent theme */
         if( ! defined( 'TC_BASE' ) )       { define( 'TC_BASE' , get_template_directory().'/' ); }
 
-        /* TC_BASE_URL http url of the loaded template */
+        /* TC_BASE_URL http url of the loaded parent theme*/
         if( ! defined( 'TC_BASE_URL' ) )   { define( 'TC_BASE_URL' , get_template_directory_uri() . '/' ); }
 
         /* THEMENAME contains the Name of the currently loaded theme */
@@ -66,10 +68,8 @@ class TC___ {
         /* TC_WEBSITE is the home website of Customizr */
         if( ! defined( 'TC_WEBSITE' ) )     { define( 'TC_WEBSITE' , $tc_base_data['authoruri'] ); }
 
-        foreach ( $instance_groups as $g) 
-        {
-             tc__ ( $g);
-        }
+        /* theme class groups instanciation */
+        tc__ ( $instance_groups );
 
     }//end of __construct()
 

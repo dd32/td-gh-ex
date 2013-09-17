@@ -57,21 +57,20 @@ class TC_sidebar {
                 return;
               }
               ?>
-                <?php if ( is_active_sidebar( 'left' ) ) : ?>
-                <?php tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__ ); ?>
-                  <div class="span3 left tc-sidebar">
-                    <div id="left" class="widget-area" role="complementary">
-
+               
+              <?php tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__ ); ?>
+                <div class="span3 left tc-sidebar">
+                  <div id="left" class="widget-area" role="complementary">
+                    <?php if ( is_active_sidebar( 'left' ) ) : ?>
                       <?php do_action( '__before_left_sidebar' );##hook of social icons ?>
 
                         <?php dynamic_sidebar( 'left' ); ?>
 
                       <?php do_action( '__after_left_sidebar' ); ?>
-
-                    </div><!-- #left -->
-                  </div><!--.tc-sidebar .span3 -->
-                <?php endif; ?>
-
+                     <?php endif; ?>
+                  </div><!-- #left -->
+                </div><!--.tc-sidebar .span3 -->
+               
               <?php
             break;
 
@@ -82,21 +81,20 @@ class TC_sidebar {
                 return;
               }
               ?>
-                <?php if ( is_active_sidebar( 'right' ) ) : ?>
-                <?php tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__ ); ?>
-                  <div class="span3 right tc-sidebar">
-                    <div id="right" class="widget-area" role="complementary">
+               
+              <?php tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__ ); ?>
+                <div class="span3 right tc-sidebar">
+                  <div id="right" class="widget-area" role="complementary">
+                     <?php if ( is_active_sidebar( 'right' ) ) : ?>
+                        <?php do_action( '__before_right_sidebar' );##hook of social icons ?>
 
-                      <?php do_action( '__before_right_sidebar' );##hook of social icons ?>
+                          <?php dynamic_sidebar( 'right' ); ?>
 
-                        <?php dynamic_sidebar( 'right' ); ?>
-
-                      <?php do_action( '__after_right_sidebar' ); ?>
-
-                    </div><!-- #secondary -->
-                  </div><!--.tc-sidebar .span3 -->
-                <?php endif; ?>
-              
+                        <?php do_action( '__after_right_sidebar' ); ?>
+                      <?php endif; ?>
+                  </div><!-- #right -->
+                </div><!--.tc-sidebar .span3 -->
+                
               <?php
             break;
           }//end switch

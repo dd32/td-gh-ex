@@ -218,10 +218,7 @@ class TC_admin_init {
       $is_help = isset($_GET['help'])  ?  true : false;
 
       //CHECK IF WE ARE USING A CHILD THEME
-      //get WP_Theme object of customizr
-      $tc_theme                     = wp_get_theme();
-      //define a boolean if using a child theme
-      $is_child                     = $tc_theme -> parent();
+      $is_child                     = tc_is_child();
 
       ?>
       <div class="wrap about-wrap">

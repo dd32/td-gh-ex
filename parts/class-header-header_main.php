@@ -32,7 +32,7 @@ class TC_header_main {
         add_action ( '__header' 				, array( $this , 'tc_navbar_display' ) , 30 );
 
         //body > header > navbar actions ordered by priority
-        add_action ( '__navbar' 				, array( $this , 'tc_social_in_header' ) , 10, 1 );
+        add_action ( '__navbar' 				, array( $this , 'tc_social_in_header' ) , 10, 2 );
         add_action ( '__navbar' 				, array( $this , 'tc_tagline_display' ) , 20, 1 );
     }
 	
@@ -64,7 +64,7 @@ class TC_header_main {
 		    ?>
 		    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 		   
-		   <!-- Icons font support for IE6-7 -->
+		   <!-- Icons font support for IE6-7  -->
 		    <!--[if lt IE 8]>
 		      <script src="<?php echo TC_BASE_URL ?>inc/css/fonts/lte-ie7.js"></script>
 		    <![endif]-->
@@ -76,6 +76,10 @@ class TC_header_main {
 		       */
 		      wp_head();
 		    ?>
+		    <!--Icons size hack for IE8 and less -->
+		    <!--[if lt IE 9]>
+		      <link href="<?php echo TC_BASE_URL ?>inc/css/fonts/ie8-hacks.css" rel="stylesheet" type="text/css"/>
+		    <![endif]-->
 		</head>
 		<?php
 	}
@@ -117,23 +121,28 @@ class TC_header_main {
 	 */
 	function tc_logo_title_display() {
 		tc__f('rec' , __FILE__ , __FUNCTION__, __CLASS__ );
-       $logo_src    			= esc_url ( tc__f( '__get_option' , 'tc_logo_upload') ) ;
-       $logo_resize 			= esc_attr( tc__f( '__get_option' , 'tc_logo_resize') );
-       //logo styling option
-       $logo_img_style			= '';
-       if( $logo_resize == 1) {
-       	 $logo_img_style 		= 'style="max-width:250px;max-height:100px"';
-       }
-       ob_start();
+       	$logo_src    			= esc_url ( tc__f( '__get_option' , 'tc_logo_upload') ) ;
+       	$logo_resize 			= esc_attr( tc__f( '__get_option' , 'tc_logo_resize') );
+      	$accepted_formats		= array('jpg', 'jpeg', 'png' ,'gif');
+       	$filetype 				= wp_check_filetype ($logo_src);
+
+       	ob_start();
 		?>
 
-		<?php if( $logo_src != null) :?>
+		<?php if( !empty($logo_src) && in_array( $filetype['ext'], $accepted_formats ) ) :?>
+			
+			<?php
+				//get height and width from image
+				list( $width, $height ) = getimagesize($logo_src); 
+				//logo styling option
+	       		$logo_img_style			= ( 1 == $logo_resize) ? 'style="max-width:250px;max-height:100px"' : '';
+			?>
 
-          <div class="brand span3">
-          	<?php tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__ ); ?>
-            <h1><a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' , 'display' ) ); ?> | <?php bloginfo( 'description' ); ?>"><img src="<?php echo $logo_src ?>" alt="<?php _e( 'Back Home' , 'customizr' ); ?>" <?php echo $logo_img_style ?>/></a>
-            </h1>
-          </div>
+	        <div class="brand span3">
+	          <?php tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__ ); ?>
+	           <h1><a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' , 'display' ) ); ?> | <?php bloginfo( 'description' ); ?>"><img src="<?php echo $logo_src ?>" alt="<?php _e( 'Back Home' , 'customizr' ); ?>" <?php echo $logo_img_style ?> width="<?php echo $width ?>" height="<?php echo $height ?>"/></a>
+	           </h1>
+	        </div>
 
 	    <?php else : ?>
 
@@ -223,7 +232,7 @@ class TC_header_main {
         <?php
         $html = ob_get_contents();
         ob_end_clean();
-        echo apply_filters( 'tc_social_in_header', $html );
+        echo apply_filters( 'tc_social_in_header', $html, $resp );
     }
 
 
