@@ -4,9 +4,9 @@ Donate link: http://web-profile.com.ua/donate/
 Tags: gray, white, light, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.4
 Tested up to: 3.6.1
-Stable tag: 0.5.4
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Stable tag: 0.5.5
+License: GPLv3
+License URI: http://www.gnu.org/licenses/gpl.html
 
 Responsive clean theme. More info at http://web-profile.com.ua/activetab/
 
@@ -42,6 +42,9 @@ FAQ:
 
 
 == Changelog ==
+
+= 0.5.5 - 2013-09-17 =
+* updated license to GPLv3
 
 = 0.5.4 - 2013-09-15 =
 * updated Bootstrap v.3
