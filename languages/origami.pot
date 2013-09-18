@@ -2,8 +2,8 @@
 # This file is distributed under the GNU General Public License 2.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: origami 1.5.12\n"
-"POT-Creation-Date: 2013-09-11T23:45:12+02:00\n"
+"Project-Id-Version: origami 1.5.13\n"
+"POT-Creation-Date: 2013-09-18T10:33:30+02:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -399,31 +399,43 @@ msgstr ""
 msgid "The premium version of this theme is no longer available. If you need any help, please contact <a href='http://siteorigin.com/#support'>SiteOrigin support</a>."
 msgstr ""
 
-msgid "We're working on more features for %s Premium, but we need your help."
-msgstr ""
-
-msgid "Every premium purchase will fund new features, helping you get the most out of %s."
-msgstr ""
-
-msgid "Visit the <a href='%s' target='_blank' class='roadmap'>%s roadmap</a> for progress updates."
-msgstr ""
-
-msgid "Choose Your Perk"
-msgstr ""
-
-msgid "Pay %s or more"
-msgstr ""
-
-msgid "Buy"
-msgstr ""
-
-msgid "Pay a custom amount."
-msgstr ""
-
-msgid "You'll receive a the highest level reward you qualify for."
-msgstr ""
-
 msgid "Buy Now"
+msgstr ""
+
+msgid "Although we appreciate and support all our premium users, our support staff prioritize orders of <strong>$15</strong> or more. Support on this order might take longer."
+msgstr ""
+
+msgid "You choose the price, so you can pay what %s is worth to you."
+msgstr ""
+
+msgid "Building your site on a budget"
+msgstr ""
+
+msgid "A fair price for a powerful theme"
+msgstr ""
+
+msgid "Our sincere thanks"
+msgstr ""
+
+msgid "We'll go that extra mile for you"
+msgstr ""
+
+msgid "A huge contribution to its development"
+msgstr ""
+
+msgid "Custom"
+msgstr ""
+
+msgid "Please enable Javascript to change pricing"
+msgstr ""
+
+msgid "We offer a 60 day full refund if you're not happy with your purchase"
+msgstr ""
+
+msgid "Your contribution will help fund new features in %s."
+msgstr ""
+
+msgid "Find out more on our <a href=\"%s\" target=\"_blank\">roadmap</a>."
 msgstr ""
 
 msgid "Our User Feedback"
@@ -448,6 +460,9 @@ msgid "%s Theme Settings"
 msgstr ""
 
 msgid "Save Settings"
+msgstr ""
+
+msgid "Suggest a feature"
 msgstr ""
 
 msgid "Theme Settings"

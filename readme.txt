@@ -13,6 +13,7 @@ Origami includes the following external libraries
 * Selectivizr by Keith Clark under MIT license <http://selectivizr.com/>
 * Images in demo folder are from Pixabay Licensed under public domain <http://pixabay.com/>
 * Dosis font used via Google Web Fonts. Licensed under SIL font license <http://www.google.com/fonts/specimen/Dosis>
+* The folder extras contains the SiteOrigin extras framework. All files are released under the same license as Origami.
 
  [so]: http://siteorigin.com
  [gpl]: http://www.gnu.org/licenses/gpl-2.0.html
@@ -145,3 +146,6 @@ Added feature road map information.
 Updated to latest version of FitVid to fix mobile.
 Fixed social sharing in premium.
 Updated to latest version of SiteOrigin framework.
+
+**1.5.13**
+Replaced SVG Polyfill with simple png image replacement.
