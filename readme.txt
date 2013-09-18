@@ -123,6 +123,9 @@ The exceptions to this license are as follows:
 
 
 #######################  Changelog ######################
+= 3.0.12 =
+* fixed : (php) the slider is now also displayed on the blog page. Thanks to <a href="http://wordpress.org/support/profile/defttester" target="_blank">defttester</a> and <a href="http://wordpress.org/support/profile/rdellconsulting" target="_blank">rdellconsulting</a>
+
 = 3.0.11 =
 * added : (php) filter to the skin choices (in customizer options class), allowing to add new skins in the drop down list
 * added : (php) filter for enqueuing the styles (in class ressources), allowing a better control for child theme

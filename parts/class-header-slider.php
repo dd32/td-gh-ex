@@ -40,23 +40,29 @@ class TC_slider {
       if (is_404() || is_archive() || is_search())
         return;
 
+      //we retrieve the options
       $__options                    = tc__f( '__options' );
 
+      //we get the actual page id if we are displaying the posts page
+      global $wp_query;
+      $queried_id                   = get_queried_object_id();
+      $queried_id                   = ( !tc__f('__is_home') && $wp_query -> is_posts_page && !empty($queried_id) ) ?  $queried_id : get_the_ID();
+
       //get the current slider id
-      $slider_name_id               = esc_attr(get_post_meta( tc__f ( '__ID' ), $key = 'post_slider_key' , $single = true ));
+      $slider_name_id               = esc_attr(get_post_meta( $queried_id, $key = 'post_slider_key' , $single = true ));
       
       if ( tc__f('__is_home') && $__options['tc_front_slider'] !=null ) {
           $slider_name_id           = $__options['tc_front_slider'];
       }
 
       //is the slider on?
-      $slider_active                = esc_attr(get_post_meta( get_the_ID(), $key = 'post_slider_check_key' , $single = true ));
-        if ( tc__f('__is_home') && $__options['tc_front_slider'] !=null) {
+      $slider_active                = esc_attr(get_post_meta( $queried_id, $key = 'post_slider_check_key' , $single = true ));
+      if ( tc__f('__is_home') && $__options['tc_front_slider'] !=null) {
           $slider_active            = true;
       }
 
       //get slider options if any
-      $layout_value                 = esc_attr(get_post_meta( get_the_ID(), $key = 'slider_layout_key' , $single = true ));
+      $layout_value                 = esc_attr(get_post_meta( $queried_id, $key = 'slider_layout_key' , $single = true ));
       if ( tc__f('__is_home') ) {
         $layout_value               = $__options['tc_slider_width'];
       }
@@ -77,11 +83,9 @@ class TC_slider {
       //render the slider : two cases demo or not demo (that is the ...)
       switch ( $slider_name_id) {
         case 'demo':
-
         //admin link if user logged in
-        $admin_link                 = '';   
-        if (is_user_logged_in())
-          $admin_link                = admin_url().'customize.php';
+        $admin_link  = is_user_logged_in() ? admin_url().'customize.php' : '';
+
         ?>
 
           <div id="customizr-slider" class="<?php echo $layout_class ?> carousel slide">
