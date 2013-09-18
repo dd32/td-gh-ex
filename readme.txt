@@ -62,6 +62,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ============================Change Log================================
+@version 1.4.2
+1. Commented code in the walker class which creating menu related bug.
 @version 1.4.1
 1. Logo Path fixed
 2. Removed some unused resources.
