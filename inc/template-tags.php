@@ -39,10 +39,8 @@ function vantage_content_nav( $nav_id ) {
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
 
-		<div class="single-nav-wrapper">
-			<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'vantage' ) . '</span> %title' ); ?>
-			<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'vantage' ) . '</span>' ); ?>
-		</div>
+		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'vantage' ) . '</span> %title' ); ?>
+		<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'vantage' ) . '</span>' ); ?>
 
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
@@ -168,11 +166,9 @@ function vantage_display_logo(){
 			'width' => round($width),
 			'height' => round($height),
 		) );
-
 		$logo_attributes_str = array();
 		if( !empty( $logo_attributes ) ) {
 			foreach($logo_attributes as $name => $val) {
-				if( empty($val) ) continue;
 				$logo_attributes_str[] = $name.'="'.esc_attr($val).'"';
 			}
 		}

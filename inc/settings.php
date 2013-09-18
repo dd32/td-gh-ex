@@ -31,11 +31,10 @@ function vantage_theme_settings(){
 		'description' => __('Your own custom logo.', 'vantage')
 	) );
 
-	siteorigin_settings_add_teaser('logo', 'image_retina', __('Retina Logo', 'vantage'), array(
+	siteorigin_settings_add_teaser('logo', 'image_retina', __('Retina Logo'), array(
 		'choose' => __('Choose Image', 'vantage'),
 		'update' => __('Set Logo', 'vantage'),
-		'description' => __('A double sized version of your logo for retina displays. Must be used in addition to standard logo.', 'vantage'),
-		'teaser-image' => get_template_directory_uri().'/upgrade/teasers/retina-logo.png',
+		'description' => __('A double sized version of your logo for retina displays. Must be used in addition to standard logo.', 'vantage')
 	) );
 
 	siteorigin_settings_add_field('logo', 'header_text', 'text', __('Header Text', 'vantage'), array(
@@ -63,12 +62,7 @@ function vantage_theme_settings(){
 	 */
 
 	siteorigin_settings_add_teaser('navigation', 'responsive_menu', __('Responsive Menu', 'vantage'), array(
-		'description' => __('Use a special responsive menu for small screen devices.', 'vantage'),
-		'teaser-image' => get_template_directory_uri().'/upgrade/teasers/mobile-nav.png',
-	));
-
-	siteorigin_settings_add_teaser('navigation', 'responsive_menu_text', __('Responsive Menu Text', 'vantage'), array(
-		'description' => __('The button used for the responsive menu.', 'vantage')
+		'description' => __('Use a special responsive menu for small screen devices.', 'vantage')
 	));
 
 	siteorigin_settings_add_field('navigation', 'use_sticky_menu', 'checkbox', __('Sticky Menu', 'vantage'), array(
@@ -83,10 +77,6 @@ function vantage_theme_settings(){
 		'description' => __('Display a scroll-to-top button when a user scrolls down.', 'vantage')
 	));
 
-	siteorigin_settings_add_field('navigation', 'post_nav', 'checkbox', __('Post Navigation', 'vantage'), array(
-		'description' => __('Display next/previous post navigation.', 'vantage')
-	));
-
 	/**
 	 * Home Page
 	 */
@@ -94,10 +84,10 @@ function vantage_theme_settings(){
 	siteorigin_settings_add_field('home', 'slider', 'select', __('Home Page Slider', 'vantage'), array(
 		'options' => siteorigin_metaslider_get_options(true),
 		'description' => sprintf(
-			__('This theme supports <a href="%s" target="_blank">Meta Slider</a>. <a href="%s">Install it</a> for free to create beautiful responsive sliders - <a href="%s" target="_blank">More Info</a>', 'vantage'),
+			__('This theme supports <a href="%s" target="_blank">Meta Slider</a>. <a href="%s">Install it</a> for free to create responsive, animated sliders - <a href="%s" target="_blank">More Info</a>', 'vantage'),
 			'http://sorig.in/metaslider',
 			siteorigin_metaslider_install_link(),
-			'http://siteorigin.com/vantage-documentation/slider/'
+			'http://siteorigin.com/vantage-documentation/sliders/'
 		)
 	));
 
@@ -129,22 +119,13 @@ function vantage_theme_settings(){
 	));
 
 	siteorigin_settings_add_teaser('social', 'share_post', __('Post Sharing', 'vantage'), array(
-		'description' => __('Show icons to share your posts on Facebook, Twitter and Google+.', 'vantage'),
-		'teaser-image' => get_template_directory_uri().'/upgrade/teasers/share.png',
+		'description' => __('Show icons to share your posts on Facebook, Twitter and Google+.', 'vantage')
 	));
 
 	siteorigin_settings_add_teaser('social', 'twitter', __('Twitter Handle', 'vantage'), array(
-		'description' => __('This handle will be recommended after a user shares one of your posts.', 'vantage'),
-		'teaser-image' => get_template_directory_uri().'/upgrade/teasers/share-rec.png',
+		'description' => __('This handle will be recommended after a user shares one of your posts.', 'vantage')
 	));
 
-	/**
-	 * General Settings
-	 */
-
-	siteorigin_settings_add_field( 'general', 'site_info_text', 'text', __( 'Site Information Text', 'vantage' ), array(
-		'description' => __( 'Text displayed in your footer. Useful for copyright information.', 'vantage' )
-	) );
 
 }
 add_action('admin_init', 'vantage_theme_settings');
@@ -160,31 +141,28 @@ function vantage_theme_setting_defaults($defaults){
 	$defaults['logo_image'] = array(
 		get_template_directory_uri().'/images/logo.png', 40, 181
 	);
-	$defaults['logo_image_retina'] = false;
 
 	$defaults['logo_header_text'] = __('Call me! Maybe?', 'vantage');
+
 
 	$defaults['layout_responsive'] = true;
 	$defaults['layout_bound'] = 'full';
 
 	$defaults['navigation_responsive_menu'] = true;
-	$defaults['navigation_responsive_menu_text'] = '';
 	$defaults['navigation_use_sticky_menu'] = true;
 	$defaults['navigation_menu_search'] = true;
 	$defaults['navigation_display_scroll_to_top'] = true;
-	$defaults['navigation_post_nav'] = true;
 
 	$defaults['home_slider'] = 'demo';
 	$defaults['home_slider_stretch'] = true;
 
 	$defaults['blog_post_author'] = true;
 	$defaults['blog_post_date'] = true;
+	$defaults['blog_author_bio'] = false;
 
 	$defaults['social_ajax_comments'] = true;
 	$defaults['social_share_post'] = true;
 	$defaults['social_twitter'] = '';
-
-	$defaults['general_site_info_text'] = '';
 
 	return $defaults;
 }

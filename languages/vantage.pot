@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License 2.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: vantage 1.0.11\n"
-"POT-Creation-Date: 2013-10-08T14:18:18+02:00\n"
+"Project-Id-Version: vantage 1.0.2\n"
+"POT-Creation-Date: 2013-09-18T15:36:02+02:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-msgid "That page can&rsquo;t be found."
+msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
 msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
@@ -676,19 +676,13 @@ msgstr ""
 msgid "Vantage (Flex)"
 msgstr ""
 
-msgid "Page Meta Slider"
-msgstr ""
-
-msgid "Display Page Metaslider"
-msgstr ""
-
 msgid "Default Home"
 msgstr ""
 
 msgid "Editable Home Page"
 msgstr ""
 
-msgid "You can edit this home page using our free, drag and drop Page Builder, or simply disable it to fall back to a standard blog. It's a powerful page building experience."
+msgid "You can edit this home page using our free, drag and drop Page Builder, or simply disable it to fall back to a standard blog. It\'s a powerful page building experience."
 msgstr ""
 
 msgid "Start Editing"
@@ -793,12 +787,6 @@ msgstr ""
 msgid "Responsive Menu"
 msgstr ""
 
-msgid "Responsive Menu Text"
-msgstr ""
-
-msgid "The button used for the responsive menu."
-msgstr ""
-
 msgid "Sticky Menu"
 msgstr ""
 
@@ -817,16 +805,10 @@ msgstr ""
 msgid "Display a scroll-to-top button when a user scrolls down."
 msgstr ""
 
-msgid "Post Navigation"
-msgstr ""
-
-msgid "Display next/previous post navigation."
-msgstr ""
-
 msgid "Home Page Slider"
 msgstr ""
 
-msgid "This theme supports <a href=\"%s\" target=\"_blank\">Meta Slider</a>. <a href=\"%s\">Install it</a> for free to create beautiful responsive sliders - <a href=\"%s\" target=\"_blank\">More Info</a>"
+msgid "This theme supports <a href=\"%s\" target=\"_blank\">Meta Slider</a>. <a href=\"%s\">Install it</a> for free to create responsive, animated sliders - <a href=\"%s\" target=\"_blank\">More Info</a>"
 msgstr ""
 
 msgid "Stretch Home Slider"
@@ -869,12 +851,6 @@ msgid "Twitter Handle"
 msgstr ""
 
 msgid "This handle will be recommended after a user shares one of your posts."
-msgstr ""
-
-msgid "Site Information Text"
-msgstr ""
-
-msgid "Text displayed in your footer. Useful for copyright information."
 msgstr ""
 
 msgid "Call me! Maybe?"
@@ -949,28 +925,16 @@ msgstr ""
 msgid "More Info"
 msgstr ""
 
-msgid "Icon Background Color"
-msgstr ""
-
-msgid "A hex color"
-msgstr ""
-
 msgid "Circle Background Image URL"
 msgstr ""
 
 msgid "Icon Position"
 msgstr ""
 
-msgid "Icon Size"
-msgstr ""
-
 msgid "More Text"
 msgstr ""
 
 msgid "More URL"
-msgstr ""
-
-msgid "Link title and icon to \"More URL"
 msgstr ""
 
 msgid "Show Box Container"
@@ -1024,6 +988,9 @@ msgstr ""
 msgid "Save CSS"
 msgstr ""
 
+msgid "Search"
+msgstr ""
+
 msgid "Navigate"
 msgstr ""
 
@@ -1031,9 +998,6 @@ msgid "Back"
 msgstr ""
 
 msgid "Close"
-msgstr ""
-
-msgid "Search"
 msgstr ""
 
 msgid "like"
@@ -1093,106 +1057,10 @@ msgstr ""
 msgid "Contact Form"
 msgstr ""
 
-msgid "Fonts"
-msgstr ""
-
-msgid "Widgets"
-msgstr ""
-
-msgid "Page"
-msgstr ""
-
-msgid "Body Font"
-msgstr ""
-
-msgid "Site Title Font"
-msgstr ""
-
-msgid "Heading Font"
-msgstr ""
-
-msgid "Link Color"
-msgstr ""
-
-msgid "Link Hover Color"
-msgstr ""
-
-msgid "Background"
-msgstr ""
-
-msgid "Text Color"
-msgstr ""
-
-msgid "Second Level Background"
-msgstr ""
-
-msgid "Second Level Text"
-msgstr ""
-
-msgid "Hover Background"
-msgstr ""
-
-msgid "Hover Text"
-msgstr ""
-
-msgid "Second Level Hover"
-msgstr ""
-
-msgid "Second Level Hover Text"
-msgstr ""
-
-msgid "Search Icon Background"
-msgstr ""
-
-msgid "Search Input Background"
-msgstr ""
-
-msgid "Search Input Text"
-msgstr ""
-
-msgid "Circle Icon Widget Background"
-msgstr ""
-
-msgid "Circle Icon Widget Icon"
-msgstr ""
-
-msgid "Masthead Background"
-msgstr ""
-
-msgid "Masthead Background Image"
-msgstr ""
-
-msgid "Page Background"
-msgstr ""
-
-msgid "Page Background Image"
-msgstr ""
-
-msgid "Footer Background"
-msgstr ""
-
-msgid "Footer Background Image"
-msgstr ""
-
-msgid "Headings"
-msgstr ""
-
-msgid "Links"
-msgstr ""
-
-msgid "Site Info Text"
-msgstr ""
-
-msgid "Site Info Link"
-msgstr ""
-
-msgid "Mobile Menu Collapse"
-msgstr ""
-
-msgid "The resolution when the menu collapses into a mobile navigation menu."
-msgstr ""
-
 msgid "Search Results for: %s"
+msgstr ""
+
+msgid "Meta"
 msgstr ""
 
 msgid "Upgrade To Vantage Premium"
@@ -1204,7 +1072,7 @@ msgstr ""
 msgid "Premium Email Support"
 msgstr ""
 
-msgid "Need help setting up vantage? Upgrading to vantage Premium gives you email support. We have a growing support team ready to help you with your questions."
+msgid "Need help setting up vantage? Upgrading to vantage Premium gives you email support."
 msgstr ""
 
 msgid "Name The Price"
@@ -1222,28 +1090,10 @@ msgstr ""
 msgid "Remove Attribution Links"
 msgstr ""
 
-msgid "Vantage premium gives you the option to easily remove the \"Powered by WordPress, Theme by SiteOrigin\" text from your footer. "
-msgstr ""
-
-msgid "No one wants a fuzzy logo. Vantage Premium lets you upload a second, double-size logo that's only displayed to users with retina screens."
-msgstr ""
-
-msgid "Customizer Integration"
-msgstr ""
-
-msgid "Make Vantage your own with customizer integration. Change fonts, colors and more all using the live-updating WordPress customizer."
-msgstr ""
-
-msgid "Page Builder Element Styles"
-msgstr ""
-
-msgid "Vantage Premium has additional styles for the Page Builder elements button and call to action. Give your site a unique look and feel with loads of colour variations."
+msgid "vantage premium gives you the option to easily remove the \"Powered by WordPress, Theme by SiteOrigin\" text from your footer. "
 msgstr ""
 
 msgid "Want to keep the conversation flowing? Ajax comments means your visitors can comment without reloading your page. So commenting wont interrupt a video or lose their position in one of your galleries."
-msgstr ""
-
-msgid "Add post sharing icons to the bottom of every post on your blog. It's about time to go viral."
 msgstr ""
 
 msgid "CSS Editor"
@@ -1262,10 +1112,4 @@ msgid "Vantage is simple and clean. The user interface is easy to use. Combined 
 msgstr ""
 
 msgid "Clean, simple and powerful. Like other themes from SiteOrigin."
-msgstr ""
-
-msgid "Combined Vantage and Page builder are now one of the best combinations to have a premium WordPress theme."
-msgstr ""
-
-msgid "Additional styles are available in <a href=\"%s\" target=\"_blank\">Vantage Premium</a>."
 msgstr ""

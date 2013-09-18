@@ -43,7 +43,6 @@ font-style:normal;
 	font-style: normal;
 	font-weight: normal;
 	text-decoration: inherit;
-	-webkit-font-smoothing: antialiased;
 }
 
 [class^="icon-"]:before {

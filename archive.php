@@ -17,7 +17,7 @@ get_header(); ?>
 	<?php if ( have_posts() ) : ?>
 
 		<header class="page-header">
-			<h1 id="page-title"><?php echo vantage_get_archive_title() ?></h1>
+			<h1 class="page-title"><?php echo vantage_get_archive_title() ?></h1>
 			<?php
 				if ( is_category() ) {
 					// show an optional category description
@@ -38,7 +38,7 @@ get_header(); ?>
 		<?php /* Start the Loop */ ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 				
-			<?php get_template_part( 'content' ); ?>
+			<?php get_template_part( 'content', get_post_format() ); ?>
 				
 		<?php endwhile; ?>
 

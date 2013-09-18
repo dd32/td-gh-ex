@@ -5,26 +5,24 @@ jQuery(function($){
     $('body.no-js').removeClass('no-js');
 
     // Initialize the flex slider
-    $('.entry-content .flexslider:not(.metaslider .flexslider), #metaslider-demo.flexslider').flexslider( {
+    $('.entry-content .flexslider, #metaslider-demo.flexslider').flexslider( {
 
     } );
     
     /* Setup fitvids for entry content and panels */
     $('.entry-content, .entry-content .panel' ).fitVids();
 
-    if( !$('body').hasClass('mobile-device') ) {
+    // Everything we need for scrolling up and down.
 
-        // Everything we need for scrolling up and down.
-        $(window).scroll( function(){
-            if($(window).scrollTop() > 150) $('#scroll-to-top').addClass('displayed');
-            else $('#scroll-to-top').removeClass('displayed');
-        } );
+    $(window).scroll( function(){
+        if($(window).scrollTop() > 150) $('#scroll-to-top').addClass('displayed');
+        else $('#scroll-to-top').removeClass('displayed');
+    } );
 
-        $('#scroll-to-top').click( function(){
-            $("html, body").animate( { scrollTop: "0px" } );
-            return false;
-        } );
-    }
+    $('#scroll-to-top').click( function(){
+        $("html, body").animate( { scrollTop: "0px" } );
+        return false;
+    } );
 
     // The carousel widget
     $('.vantage-carousel').each(function(){
@@ -109,14 +107,8 @@ jQuery(function($){
             isSearchHover = false;
         } );
 
-    $(window).resize(function() {
-        $('#search-icon .searchform').each(function(){
-            $(this).width($(this).closest('.full-container').width());
-        });
-    }).resize();
-
     // The sticky menu
-    if( $('nav.site-navigation.primary').hasClass('use-sticky-menu') && !$('body').hasClass('mobile-device')) {
+    if($('nav.site-navigation.primary').hasClass('use-sticky-menu')) {
         var $mc = null;
         var resetStickyMenu = function(){
             var $$ = $('nav.site-navigation.primary');
@@ -133,7 +125,7 @@ jQuery(function($){
                         'width' : $$.outerWidth(),
                         'top' : $('body').hasClass('admin-bar') ? 28 : 0,
                         'left' : $$.position().left,
-                        'z-index' : 998
+                        'z-index' : 1001
                     }).addClass('sticky').insertAfter($$);
                 }
                 else {
@@ -177,20 +169,10 @@ jQuery(function($){
 
     // Substitute any retina images
     var pixelRatio = !!window.devicePixelRatio ? window.devicePixelRatio : 1;
-    if( pixelRatio > 1 ) {
+    if(pixelRatio > 1 || true) {
+        console.log($('img[data-retina-image]').length);
         $('img[data-retina-image]').each(function(){
-            var $$ = $(this);
-            $$.attr('src', $$.data('retina-image'));
-
-            // If the width attribute isn't set, then lets scale to 50%
-            if( typeof $$.attr('width') == 'undefined' ) {
-                $$.load( function(){
-                    var size = [$$.width(), $$.height()];
-                    $$.width(size[0]/2);
-                    $$.height(size[1]/2);
-                } );
-            }
+            $(this).attr('src', $(this).data('retina-image'));
         })
     }
-
 });
