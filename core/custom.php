@@ -5,9 +5,10 @@ add_action('admin_menu', 'cpotheme_custom');
 function cpotheme_custom(){
 	//Get the image path for the core icon
 	$core_path = get_template_directory_uri().'/core/';
+	if(defined('WP_CPODEV')) $core_path = get_template_directory_uri().'/../cpoframework/core/';
 	
 	//Set up data to add admin menus
-	add_theme_page(__('Theme Options', 'cpotheme'), __('Theme Options', 'cpotheme'), 'edit_theme_options', 'cpotheme_settings', 'cpotheme_settings', $core_path.'images/icon_options.png', 50);
+	add_theme_page(__('Theme Options', 'cpocore'), __('Theme Options', 'cpocore'), 'edit_theme_options', 'cpotheme_settings', 'cpotheme_settings', $core_path.'images/icon_options.png', 50);
 }
 
 //Build Settings Form
@@ -19,18 +20,20 @@ function cpotheme_custom_form($option_name, $option_list){
 		<div class="icon32" id="icon-themes"></div>
 		<h2><?php echo get_admin_page_title(); ?></h2>
 		
+		<?php cpotheme_custom_header($option_list); ?>
+		
 		<div id="settingsmenu">
 			<?php cpotheme_custom_nav($option_list); ?>
 		</div>
 
 		<?php if(isset($_GET['ok'])): ?>
 		<div id="message" class="updated">
-			<p><strong><?php _e('Changes have been saved.', 'cpotheme'); ?></strong></p>
+			<p><strong><?php _e('Changes have been saved.', 'cpocore'); ?></strong></p>
 		</div>
 		<?php endif; ?>
 		<?php if(isset($_GET['error'])): ?>
 		<div id="message" class="error">
-			<p><strong><?php _e('Changes could not be saved.', 'cpotheme'); ?></strong></p>
+			<p><strong><?php _e('Changes could not be saved.', 'cpocore'); ?></strong></p>
 		</div>
 		<?php endif; ?> 
 		
@@ -69,7 +72,7 @@ function cpotheme_custom_nav($options){
 	$output .= '</ul>';
 	$output .= '<div class="submenu">';
 	$output .= cpotheme_custom_wpml_nav();
-	//$output .= '<a href="http://www.cpothemes.com/support">'.__('Support', 'cpotheme').'</a>';
+	//$output .= '<a href="http://www.cpothemes.com/support">'.__('Support', 'cpocore').'</a>';
 	$output .= '</div>';
 	echo $output;
 }
@@ -98,13 +101,13 @@ function cpotheme_custom_fields($cpo_options, $list_name){
 		//Is a field block separator. Print a separate container.
 		if($field_type == 'separator'){
 			if($tab_count > 0):
-				$output .= '<input class="cposettings_submit button-primary" type="submit" name="cpotheme_settings_save" value="'.__('Save Settings', 'cpotheme').'" />';
+				$output .= '<input class="cposettings_submit button-primary" type="submit" name="cpotheme_settings_save" value="'.__('Save Settings', 'cpocore').'" />';
 				$output .= '</div>';
 			endif;
 			$output .= '<div class="cposettings_block" id="'.$field_name.'_block"';
 			if(($current_tab != '' && $current_tab != $field_name) || ($current_tab == '' && $tab_count > 0)) $output .= ' style="display:none;"';
 			$output .= '>';
-			$output .= '<input class="cposettings_submit button-primary" type="submit" name="cpotheme_settings_save" value="'.__('Save Settings', 'cpotheme').'" />';
+			$output .= '<input class="cposettings_submit button-primary" type="submit" name="cpotheme_settings_save" value="'.__('Save Settings', 'cpocore').'" />';
 			$output .= '<div class="cposettings_separator">';
 			$output .= $field_title.'<br/><span class="desc">'.$field_desc.'</span>';
 			$output .= '</div>';
@@ -158,7 +161,7 @@ function cpotheme_custom_fields($cpo_options, $list_name){
 		}
 		unset($current_field);
     }
-	$output .= '<input class="cposettings_submit button-primary" type="submit" name="cpotheme_settings_save" value="'.__('Save Settings', 'cpotheme').'" />';
+	$output .= '<input class="cposettings_submit button-primary" type="submit" name="cpotheme_settings_save" value="'.__('Save Settings', 'cpocore').'" />';
     $output .= '</div>';
     echo $output;
 }
@@ -212,6 +215,55 @@ function cpotheme_custom_save($option_name, $option_fields){
 		header('Location: admin.php?page='.$_GET['page'].$current_tab.$lang_url."&ok");
 	}
 }
+
+
+
+function cpotheme_custom_header(){
+	$theme_data = wp_get_theme(); ?>
+	<div class="cpotheme-header">
+		
+		
+		<div class="header-version">
+			<div class="header-version-name">
+				<?php _e('Theme Version', 'cpocore'); ?>
+			</div>
+			<div class="header-version-number">
+				<?php echo $theme_data->get('Version'); ?>
+			</div>
+		</div>
+		<!--<div class="header-version">
+			<div class="header-version-name">
+				<?php _e('Core Version', 'cpocore'); ?>
+			</div>
+			<div class="header-version-number">
+				<?php echo cpotheme_get_option('cpo_core_version'); ?>
+			</div>
+		</div>-->
+		
+		<div class="header-social">
+			<div class="header-social-item">
+				<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fcpothemes&amp;width=120&amp;height=21&amp;colorscheme=light&amp;lang=en&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;send=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:120px; height:21px;" allowTransparency="true"></iframe>
+			</div>
+			<div class="header-social-item">
+				<iframe scrolling="no" frameborder="0" allowtransparency="true" src="http://platform.twitter.com/widgets/follow_button.1379006964.html#_=1379511119899&amp;id=twitter-widget-0&amp;lang=en&amp;screen_name=cpothemes&amp;show_count=false&amp;show_screen_name=true&amp;size=m" class="twitter-follow-button twitter-follow-button" style="width: 140px; height:20px;" title="Follow On Twitter" data-twttr-rendered="true"></iframe>
+			</div>
+		</div>
+		
+		<div class="header-title" id="cpo-header-title">
+			<?php echo $theme_data->get('Name'); ?>
+		</div>
+		<div class="header-meta">
+			<a target="_blank" href="http://www.cpothemes.com/support"><?php _e('Theme Documentation', 'cpocore'); ?></a>
+			&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+			<a target="_blank" href="http://www.cpothemes.com/forums"><?php _e('Support Forums', 'cpocore'); ?></a>
+			&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+			<a target="_blank" href="http://www.cpothemes.com/themes"><?php _e('More Themes', 'cpocore'); ?></a>
+		</div>
+	</div>
+	
+	<?php
+}
+
 
 //Installs options with default values, without overriding existing ones
 function cpotheme_custom_install($option_name, $option_fields, $overwrite){
@@ -275,7 +327,7 @@ function cpotheme_custom_wpml_nav(){
 			
 			$output .= $language_name;
 			if(cpotheme_custom_wpml_default_language() == $language_code) 
-				$output .= ' ('.__('default', 'cpotheme').')';
+				$output .= ' ('.__('default', 'cpocore').')';
 			
 			if($language_active)
 				$output .= '</b></span>';

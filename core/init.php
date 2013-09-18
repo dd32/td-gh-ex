@@ -3,8 +3,7 @@
 add_action('after_setup_theme', 'cpotheme_setup');
 function cpotheme_setup(){
 	//Set core variables
-	cpotheme_update_option('cpo_core_version', '1.0.0');
-	cpotheme_update_option('cpo_core_support', 'http://www.cpothemes.com/support');
+	cpotheme_update_option('cpo_core_version', '1.0.1');
 
 	//Initialize supported theme features
 	add_editor_style();

@@ -1,10 +1,11 @@
 /*
 Theme Name:Intuition
+Theme URI:http://www.cpothemes.com/theme/intuition
 Description:Intuition is an elegant, all-terrain theme focused on showcasing your best content effortlessly. It comes with the ability to feature your posts and pages, creating a fully featured homepage complete with an animated slider and featured content blocks. This theme is fully responsive and makes use of retina-ready graphics, so it will look great on any device. Furthermore, the theme is specially made to integrate with the most popular plugins out there: WPML for translation, Yoast SEO, Contact Form 7, or even WooCommerce.
 Tags:custom-menu, featured-images, flexible-width, full-width-template, orange, right-sidebar, light, one-column, left-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, two-columns, white
 Author:CPOThemes
 Author URI:http://www.cpothemes.com
-Version:1.0.2
+Version:1.0.3
 License:GNU General Public License 2.0
 License URI:license.txt
 */
@@ -356,13 +357,17 @@ text-shadow:0 -1px 0 rgba(0, 0, 0, 0.5); border-color:#c15289; }
 
 
 /* SUBMENU NAVIGATION */
-.menu-sub { overflow:hidden; margin:10px 0 20px; padding:0; }
-.menu-sub li { display:block; float:left; list-style:none; margin:0; }
-.menu-sub li a { display:block; padding:0 10px; border-left:1px solid #ddd; }
-.menu-sub li:first-child a { border:none; padding-left:0; }
-.menu-sub .current_page_item { }
-.menu-sub .current_page_item a { }
-.menu-sub li ul { display:none; font-size:1em; }
+.menu-sub { display:block; margin:0 0 30px; padding:0; border:1px solid #ddd; }
+.menu-sub li { position:relative; list-style:none; margin:0; border-top:1px solid #eee; }
+.menu-sub li:first-child { border-top:none; }
+.menu-sub li a:before { display:block; position:absolute; top:50%; left:10px; list-style:none; font-family:'fontawesome'; content:'\f104'; font-size:14px; color:#999; margin-top:-7px; line-height:1; }
+.menu-sub li a { display:block; position:relative; padding:8px 10px 8px 30px; }
+.content-right .menu-sub li a:before { left:auto; right:10px; content:'\f105'; color:#aaa; }
+.content-right .menu-sub li a { padding:8px 30px 8px 10px; }
+.menu-sub li a:hover { text-decoration:none; }
+.menu-sub .current_page_item, .menu-sub .current-cat { border-bottom:0; }
+.menu-sub .current_page_item > a, .menu-sub .current-cat > a { background:#f2f2f2; }
+.menu-sub li ul { border:none; border-top:1px solid #eee; margin:0; display:block; padding:0; }
 
 
 /* PORTFOLIO NAVIGATION */
