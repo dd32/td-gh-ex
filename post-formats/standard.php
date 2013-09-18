@@ -41,7 +41,9 @@
 
 		the_content();
 		
-    	wp_link_pages();
+		echo "<div class='clear'></div>";
+		
+		wp_link_pages();
 
 		the_tags( '<footer class="line"><div class="entry-info"><span class="tags">Tags: ', ', ', '</span></div></footer>' );
 		

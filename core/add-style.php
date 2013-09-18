@@ -32,7 +32,7 @@
 		$bodystyle .= 'background-attachment:'.suevafree_setting('suevafree_body_background_attachment').';'; 
 
 	if ($bodystyle)
-		echo 'body { '.$bodystyle.' } ';
+		echo 'body.custombody { '.$bodystyle.' } ';
 		
 /* =================== END BODY STYLE =================== */
 
