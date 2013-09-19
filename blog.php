@@ -39,7 +39,7 @@ while(have_posts()):the_post();?>
 			     <h4 >
 				 <a href="<?php the_permalink(); ?>"title="<?php the_title(); ?>" class="blog-heading"><?php the_title(); ?></a></h4>
               
-                <div class="blog_content"><p><?php echo spa_get_the_other_excerpt();?></p><span> <?php the_tags('<b>Tags:</b>',', ');?> </span></div>
+                <div class="blog_content"><p><?php echo spa_get_the_other_excerpt();?></p><span> <?php the_tags('<b>Tags: </b>',', ');?> </span></div>
 				
                    <?php if(wp_link_pages(array('echo'=>0))):?>
 					<div class="pagi pagi-large">

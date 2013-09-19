@@ -5,7 +5,7 @@ if ( ! function_exists( 'spa_content_nav' ) ) :
 /**
  * Displays navigation to next/previous pages when applicable.
  *
- * @since Twenty Twelve 1.0
+ * @since Spasalon 1.0
  */
 function spa_content_nav( $html_id ) {
 	global $wp_query;
@@ -14,9 +14,9 @@ function spa_content_nav( $html_id ) {
 
 	if ( $wp_query->max_num_pages > 1 ) : ?>
 		<nav id="<?php echo $html_id; ?>" class="navigation" role="navigation">
-			<h3 class="assistive-text"><?php _e( 'Post navigation', 'twentytwelve' ); ?></h3>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'twentytwelve' ) ); ?></div>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'twentytwelve' ) ); ?></div>
+			<h3 class="assistive-text"><?php _e( 'Post navigation', 'sis_spa' ); ?></h3>
+			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'sis_spa' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'sis_spa' ) ); ?></div>
 		</nav><!-- #<?php echo $html_id; ?> .navigation -->
 	<?php endif;
 }
@@ -144,12 +144,12 @@ congue in nulla. Cras hendrerit mi quis nisi semper in sodales nisl faucibus. Se
 																		'font_family_post_title' => 'roboto',
 																		'font_style_post_title' => 'Normal'
 																	 ),
-								'spa_post_entry_typography'=>array(	'post_entry_px' => '12',
+								'spa_post_entry_typography'=>array(	'post_entry_px' => '13',
 																		'color_post_entry' => '#989495',
 																		'font_family_post_entry' => 'roboto',
 																		'font_style_post_entry' => 'Normal'
 																	 ),
-								'spa_post_meta_typography'=>array(	'post_meta_px' => '12',
+								'spa_post_meta_typography'=>array(	'post_meta_px' => '13',
 																		'color_post_meta' => '#9a9a9a',
 																		'font_family_post_meta' => 'roboto',
 																		'font_style_post_meta' => 'Normal'

@@ -57,6 +57,9 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
+@version 1.0.3
+1. Credit link added
+2. commented unused codes.
 @version 1.0.2
 1. Blog posts index and fornt page added
 2. Text wrap style appied to the front page.

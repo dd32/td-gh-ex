@@ -6,13 +6,13 @@
 	add_image_size( 'service-one-thumb', 245, 240,false );
 	add_image_size( 'service-two-thumb', 150, 150,false ); */
 	
-	 add_image_size('service-home-thumb',270,157,false);
-       add_image_size( 'service-about-thumb',260, 152,false );
-       add_image_size( 'service-one-thumb', 150, 87,false );
-       add_image_size( 'service-two-thumb', 150, 87,false );
+	 //add_image_size('service-home-thumb',270,157,false);
+       //add_image_size( 'service-about-thumb',260, 152,false );
+       //add_image_size( 'service-one-thumb', 150, 87,false );
+       //add_image_size( 'service-two-thumb', 150, 87,false );
 	//for product post type
-	 add_image_size('product-home-image',232,236,false);
-	 add_image_size('product-widget-thumb',67,39,false);
+	 //add_image_size('product-home-image',232,236,false);
+	 //add_image_size('product-widget-thumb',67,39,false);
 	 //normal post type 
 	 add_image_size('blog-left-thumb',150,87,false);
 	 add_image_size('blog-widget-thumb',67,39,false);
@@ -20,16 +20,16 @@
 	 //slider post type
 	 add_image_size('index-slider-thumb',366,155,false);
 	 //post tyepe our team 
-	 add_image_size('aboutus-team-thumb',180,180,false);
+	 //add_image_size('aboutus-team-thumb',180,180,false);
 	 //post type page
 	 add_image_size('page-image',1170,800,false);
 	 
 	
 }
 // code for services post types 
-add_filter( 'intermediate_image_sizes', function($sizes)
+/* add_filter( 'intermediate_image_sizes', function($sizes)
 {
-    $type = get_post_type($_REQUEST['post_id']);
+   // $type = get_post_type($_REQUEST['post_id']);
 	
     foreach($sizes as $key => $value){
         if($type=='spa_services'  &&  $value != 'service-home-thumb'  &&  $value != 'service-two-thumb' &&  $value != 'service-one-thumb'&&  $value != 'service-about-thumb' ){
@@ -67,7 +67,7 @@ add_filter( 'intermediate_image_sizes', function($sizes){
 	
     }
     return $sizes;
-});
+}); */
 
 //code for normal post types
 add_filter( 'intermediate_image_sizes', function($sizes){
@@ -85,7 +85,7 @@ add_filter( 'intermediate_image_sizes', function($sizes){
     return $sizes;
 });
 //code for about us  team images 
-add_filter( 'intermediate_image_sizes', function($sizes){
+/* add_filter( 'intermediate_image_sizes', function($sizes){
 
 
   
@@ -98,7 +98,7 @@ add_filter( 'intermediate_image_sizes', function($sizes){
 	
     }
     return $sizes;
-});
+}); */
 
 //for single page tempaltes
 add_filter( 'intermediate_image_sizes', function($sizes)
