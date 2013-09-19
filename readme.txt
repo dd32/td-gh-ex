@@ -47,6 +47,25 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 1.4.2 =
+
+* Updated CSS
+* Add Tagline font options
+* Add Gray font options
+
+= Version: 1.4.1 =
+
+* Added max width and hieght to sliders
+
+= Version: 1.4.0 =
+
+* Updated CSS
+
+= Version: 1.3.9 =
+
+* Updated CSS to better deal with feature image page
+
+
 = Version: 1.3.8 =
 
 * Updated CSS

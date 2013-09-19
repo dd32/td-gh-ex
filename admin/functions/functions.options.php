@@ -509,12 +509,34 @@ $of_options = array();
                                                             ),
                                     "type"            => "typography"
                         );  
-            $of_options[] = array(  "name"            => __("Below Logo Text", 'virtue'),
+            $of_options[] = array(  "name"            => __("Site Tagline - Below Logo", 'virtue'),
                                     "desc"            => __("An optional line of text below your logo", 'virtue'),
                                     "id"              => "logo_below_text",
                                     "std"             => "",
                                     "type"            => "text"
                                     );
+            $of_options[] = array(  "name"            => __("Site Tagline Font", 'virtue'),
+                                    "desc"            => __("This font will apply to your site tagline", 'virtue'),
+                                    "id"              => "font_tagline",
+                                    "std"             => "Lato",
+                                    "type"            => "select_google_font",
+                                    "preview"   => array(
+                                                            "text" => "This is font preview text!",
+                                                            "size" => "14px"
+                                                            ),
+                                    "options"   => $font_options
+                        );
+            $of_options[] = array(  "name"            => __("Site Tagline Style", 'virtue'),
+                                    "desc"            => __("Choose size and style your site tagline", 'virtue'),
+                                    "id"              => "font_tagline_style",
+                                    "std"             => array(
+                                                            'size'  => '14px',
+                                                            'style' => 'normal',
+                                                            'height' => '20px',
+                                                            'color' => ''
+                                                            ),
+                                    "type"            => "typography"
+                        );  
             $of_options[] = array( 	"name" 		=> __("Logo Spacing", 'virtue'),
 						"desc" 		=> __("Top Spacing", 'virtue'),
 						"id" 		      => "logo_padding_top",
@@ -950,6 +972,12 @@ $of_options = array();
       					"id"               => "primary20_color",
       					"std"              => "",
       					"type"             => "color"
+                                    ); 
+            $of_options[] = array(  "name"             => __("Sitewide Gray Fonts", 'virtue'),
+                                    "desc"             => "",
+                                    "id"               => "gray_font_color",
+                                    "std"              => "",
+                                    "type"             => "color"
                                     ); 
              $of_options[] = array(  "name"             => __("Footer Font Color", 'virtue'),
                                     "desc"             => "",

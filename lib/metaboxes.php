@@ -102,9 +102,15 @@ function virtue_metaboxes( array $meta_boxes ) {
 				),
 			),
 			array(
-				'name' => __("Image and Slider Height", 'virtue' ),
-				'desc' => __("Default is: 350 <b>(Note: just input number, example: 350)</b>", 'virtue' ),
+				'name' => __("Max Image/Slider Height", 'virtue' ),
+				'desc' => __("Default is: 400 <b>(Note: just input number, example: 350)</b>", 'virtue' ),
 				'id'   => $prefix . 'posthead_height',
+				'type' => 'text_small',
+			),
+			array(
+				'name' => __("Max Image/Slider Width", 'virtue' ),
+				'desc' => __("Default is: 770 or 1170 on fullwidth posts <b>(Note: just input number, example: 650, does not apply to carousel slider)</b>", 'virtue' ),
+				'id'   => $prefix . 'posthead_width',
 				'type' => 'text_small',
 			),
 			array(
@@ -392,12 +398,17 @@ $meta_boxes[] = array(
 				),
 			),
 			array(
-				'name' => __('Image and slider Height', 'virtue'),
-				'desc' => __('Default is: 350 <b>(Note: just input number, example: 350)</b>', 'virtue'),
+				'name' => __('Max Image/Slider Height', 'virtue'),
+				'desc' => __('Default is: 400 <b>(Note: just input number, example: 350)</b>', 'virtue'),
 				'id'   => $prefix . 'posthead_height',
 				'type' => 'text_small',
 			),
 			array(
+				'name' => __("Max Image/Slider Width", 'virtue' ),
+				'desc' => __("Default is: 1170 <b>(Note: just input number, example: 650, does not apply to Carousel slider)</b>", 'virtue' ),
+				'id'   => $prefix . 'posthead_width',
+				'type' => 'text_small',
+			),			array(
 				'name' => __('If Video Post', 'virtue'),
 				'desc' => __('Place Embed Code Here, works with youtube, vimeo...', 'virtue'),
 				'id'   => $prefix . 'post_video',

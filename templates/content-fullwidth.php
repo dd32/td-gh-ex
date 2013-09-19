@@ -1,18 +1,18 @@
               <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                   <div class="row">
-                      <?php global $post; $postsummery = get_post_meta( $post->ID, '_kad_post_summery', true );
+                      <?php global $post; global $post; $postsummery = get_post_meta( $post->ID, '_kad_post_summery', true );
+                          $height = get_post_meta( $post->ID, '_kad_posthead_height', true ); if (!empty($height)) $slideheight = $height; else $slideheight = 400; 
+                          $swidth = get_post_meta( $post->ID, '_kad_posthead_width', true ); if (!empty($swidth)) $slidewidth = $swidth; else $slidewidth = 1170;
                           if($postsummery == 'img_landscape') { 
                             $textsize = 'span12'; 
-                            global $post; $height = get_post_meta( $post->ID, '_kad_posthead_height', true ); 
-                             if($height != '') $slideheight = $height; else $slideheight = 350;
                             if (has_post_thumbnail( $post->ID ) ) {
                               $image_url = wp_get_attachment_image_src( 
                               get_post_thumbnail_id( $post->ID ), 'full' ); 
                               $thumbnailURL = $image_url[0]; 
-                              $image = aq_resize($thumbnailURL, 1170, $slideheight, true);
-                              if(empty($image)) {$image = $thumbnailURL;} ?>
+                              $image = aq_resize($thumbnailURL, $slidewidth, $slideheight, true);
+                              if(empty($image)) { $image = $thumbnailURL; } ?>
                           <div class="span12">
-                              <div class="imghoverclass">
+                              <div class="imghoverclass img-margin-center">
                                 <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
                                   <img src="<?php echo $image ?>" alt="<?php the_title(); ?>" class="iconhover" style="display:block;">
                                 </a> 
@@ -27,9 +27,9 @@
                               get_post_thumbnail_id( $post->ID ), 'full' ); 
                               $thumbnailURL = $image_url[0];
                               $image = aq_resize($thumbnailURL, 370, 370, true); 
-                                if(empty($image)) {$image = $thumbnailURL;}?>
+                              if(empty($image)) { $image = $thumbnailURL; } ?>
                                 <div class="span4">
-                                  <div class="imghoverclass">
+                                  <div class="imghoverclass img-margin-center">
                                     <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
                                       <img src="<?php echo $image ?>" alt="<?php the_title(); ?>" class="iconhover" style="display:block;">
                                     </a> 
@@ -38,11 +38,9 @@
                               <?php $image = null; $thumbnailURL = null; } ?>
 
                       <?php } elseif($postsummery == 'slider_landscape') {
-                            $textsize = 'span12'; 
-                            global $post; $height = get_post_meta( $post->ID, '_kad_posthead_height', true ); 
-                            if($height != '') $slideheight = $height; else $slideheight = 350; ?>
+                            $textsize = 'span12'; ?>
                                 <div class="span12">
-                                  <div class="flexslider loading">
+                                  <div class="flexslider loading" style="max-width:<?php echo $slidewidth;?>px;">
                                     <ul class="slides">
                                       <?php $args = array(
                                           'order'          => 'ASC',
@@ -56,8 +54,8 @@
                                           if ($attachments) {
                                             foreach ($attachments as $attachment) {
                                               $attachment_url = wp_get_attachment_url($attachment->ID , 'large');
-                                              $image = aq_resize($attachment_url, 1170, $slideheight, true); 
-                                                if(empty($image)) {$image = $attachment_url;} ?>
+                                              $image = aq_resize($attachment_url, $slidewidth, $slideheight, true);
+                                              if(empty($image)) { $image = $attachment_url; } ?>
                                                 <li>
                                                   <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
                                                     <img src="<?php echo $image ?>" class="" />
@@ -100,7 +98,7 @@
                                               foreach ($attachments as $attachment) {
                                                 $attachment_url = wp_get_attachment_url($attachment->ID , 'large');
                                                 $image = aq_resize($attachment_url, 370, 370, true); 
-                                                 if(empty($image)) {$image = $attachment_url;}?>
+                                                if(empty($image)) { $image = $attachment_url; }?>
                                                   <li>
                                                     <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
                                                       <img src="<?php echo $image ?>" class="" />

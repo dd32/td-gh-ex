@@ -12,13 +12,13 @@ jQuery(document).ready( function(){
         _custom_media = true;
         wp.media.editor.send.attachment = function(props, attachment){
             if ( _custom_media  ) {
-               jQuery('.custom_media_id').val(attachment.id); 
+               jQuery('.custom_media_id').val(attachment.id);
                jQuery('.custom_media_url').val(attachment.url);
-               jQuery('.custom_media_image').attr('src',attachment.url).css('display','block');   
+               jQuery('.custom_media_image').attr('src',attachment.url).css('display','block');
             } else {
                 return _orig_send_attachment.apply( button_id, [props, attachment] );
             }
-        }
+        };
         wp.media.editor.open(button);
         return false;
     });

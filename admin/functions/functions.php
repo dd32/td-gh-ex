@@ -314,12 +314,16 @@ if ( !function_exists( 'options_typography_google_fonts' ) ) {
         if(isset($smof_data['font_logo'])) {
         $logo_font = $smof_data['font_logo'];
         } else {$logo_font = 'Pacifico';}
+        if(isset($smof_data['font_tagline'])) {
+        $tagline_font = $smof_data['font_tagline'];
+        } else {$tagline_font = 'Lato';}
         // Get the font face for each option and put it in an array
         $selected_fonts = array(
             $font_header,
             $font_body,
             $menu_font,
-            $logo_font            
+            $logo_font,
+            $tagline_font            
             );
         // Remove any duplicates in the list
         $selected_fonts = array_unique($selected_fonts);

@@ -22,32 +22,43 @@ if(!empty($smof_data['font_logo_style'])) {
 } else {
   $font_logo = '#logo a.brand {font-size:38px; font-weight:normal; line-height:40px;}';
 }
-if(isset($smof_data['logo_padding_top'])) {
+if(!empty($smof_data['font_tagline'])) {
+  $tagline_font = '.kad_tagline {font-family:'.$smof_data['font_tagline'].';}';
+} else {
+  $tagline_font = '.kad_tagline {font-family:Lato;}';
+}
+if(!empty($smof_data['font_tagline_style'])) {
+  $font_tg = $smof_data['font_tagline_style'];
+ $font_tagline = '.kad_tagline {font-size:' . $font_tg['size']. '; font-weight:' . $font_tg['style']. '; line-height:' . $font_tg['height']. '; color:' . $font_tg['color']. ';}';
+} else {
+  $font_tagline = '.kad_tagline {font-size:14px; font-weight:normal; line-height:20px;}';
+}
+if(!empty($smof_data['logo_padding_top'])) {
 $logo_padding_top = '#logo {padding-top:'.$smof_data['logo_padding_top'].'px;}';
 } else {
   $logo_padding_top = '#logo {padding-top:25px;}';
 }
-if(isset($smof_data['logo_padding_bottom'])) {
+if(!empty($smof_data['logo_padding_bottom'])) {
  $logo_padding_bottom = '#logo {padding-bottom:'.$smof_data['logo_padding_bottom'].'px;}';
  } else {
   $logo_padding_bottom = '#logo {padding-bottom:10px;}';
  } 
- if(isset($smof_data['logo_padding_left'])) {
+ if(!empty($smof_data['logo_padding_left'])) {
  $logo_padding_left = '#logo {margin-left:'.$smof_data['logo_padding_left'].'px;}';
  } else {
 $logo_padding_left = '#logo {margin-left:0px;}';
  }
- if(isset($smof_data['logo_padding_right'])) {
+ if(!empty($smof_data['logo_padding_right'])) {
   $logo_padding_right = '#logo {margin-right:'.$smof_data['logo_padding_right'].'px;}';
 } else {
   $logo_padding_right = '#logo {margin-right:0px;}';
 }
-if(isset($smof_data['menu_margin_top'])) {
+if(!empty($smof_data['menu_margin_top'])) {
  $menu_margin_top = '#nav-main {margin-top:'.$smof_data['menu_margin_top'].'px;}';
  } else {
   $menu_margin_top = '#nav-main {margin-top:40px;}';
  } 
- if(isset($smof_data['menu_margin_bottom'])) {
+ if(!empty($smof_data['menu_margin_bottom'])) {
  $menu_margin_bottom = '#nav-main {margin-bottom:'.$smof_data['menu_margin_bottom'].'px;}';
 } else {
   $menu_margin_bottom = '#nav-main {margin-bottom:10px;}';
@@ -88,7 +99,7 @@ if(!empty($smof_data['font_h1'])) {
     $font_h5 = 'h5 {font-size:18px; font-weight:bold; line-height:24px;}';
   }
   if(!empty($smof_data['font_p'])) {
-  $font_p = 'body {font-size:' . $smof_data['font_p']['size']. '; font-weight:' . $smof_data['font_p']['style']. '; line-height:' . $smof_data['font_p']['height']. '; color:' . $smof_data['font_p']['color']. ';}';
+  $font_p = 'body {font-size:' . $smof_data['font_p']['size']. '; font-weight:' . $smof_data['font_p']['style']. '; line-height:' . $smof_data['font_p']['height']. '; color:' . $smof_data['font_p']['color']. ';} .sidebar a, .color_body, .author-name a, .author-latestposts h5 a, .author-latestposts h5, .nav-tabs > .active > a, .nav-tabs > .active > a:hover, .author-profile .author-occupation, .product_price {color:' . $smof_data['font_p']['color']. ';}';
   } else {
   $font_p = 'body {font-size:14px; font-weight:normal; line-height:20px;}';
   }
@@ -110,16 +121,21 @@ if(!empty($smof_data['primary_color'])) {
   $color_primary = '.home-message:hover {background-color:'.$smof_data['primary_color'].'; background-color: rgba('.$primaryrgb[0].', '.$primaryrgb[1].', '.$primaryrgb[2].', 0.6);}
   nav.woocommerce-pagination ul li a:hover, .wp-pagenavi a:hover, .accordion-heading .accordion-toggle.open {border-color: '.$smof_data['primary_color'].';}
   a, #nav-main ul.sf-menu ul li a:hover, .product_price ins .amount, .color_primary, .primary-color, #logo a.brand, #nav-main ul.sf-menu a:hover,
-  .woocommerce-message:before, .woocommerce-info:before, #nav-second ul.sf-menu a:hover, .footerclass a:hover {color: '.$smof_data['primary_color'].';}
+  .woocommerce-message:before, .woocommerce-info:before, #nav-second ul.sf-menu a:hover, .footerclass a:hover, .posttags a:hover, .subhead a:hover {color: '.$smof_data['primary_color'].';}
   .widget_price_filter .ui-slider .ui-slider-handle, .product_item .kad_add_to_cart:hover, .kad-btn-primary, .woocommerce-message .button, 
-  #containerfooter .menu li a:hover, .bg_primary, .portfolionav a:hover, .home-iconmenu a:hover, p.demo_store, .topclass {background: '.$smof_data['primary_color'].';}';
+  #containerfooter .menu li a:hover, .bg_primary, .portfolionav a:hover, .home-iconmenu a:hover, p.demo_store, .topclass, #commentform .form-submit #submit {background: '.$smof_data['primary_color'].';}';
 } else {
   $color_primary = '';
 }
 if(!empty($smof_data['primary20_color'])) {
-  $color_primary30 =  'a:hover {color: '.$smof_data['primary20_color'].';} .kad-btn-primary:hover, .woocommerce-message .button:hover {background: '.$primary20.';}';
+  $color_primary30 =  'a:hover {color: '.$smof_data['primary20_color'].';} .kad-btn-primary:hover, .woocommerce-message .button:hover, #commentform .form-submit #submit:hover {background: '.$primary20.';}';
 } else {
   $color_primary30 = '';
+}
+if(!empty($smof_data['gray_font_color'])) {
+  $color_grayfont = '.color_gray, .subhead, .subhead a, .posttags, .posttags a, .product_meta a {color:'.$smof_data['gray_font_color'].';}';
+} else {
+  $color_grayfont = '';
 }
 if(!empty($smof_data['footerfont_color'])) {
   $color_footerfont = '#containerfooter h3, #containerfooter, .footercredits p, .footerclass a, .footernav ul li a {color:'.$smof_data['footerfont_color'].';}';
@@ -316,9 +332,10 @@ if (!empty($smof_data['custom_css'])) {
 } else {
   $custom_css = '';
 }
-echo $logo_font.$font_logo.$logo_padding_top.$logo_padding_bottom.$logo_padding_left.$logo_padding_right.$menu_margin_top.$menu_margin_bottom.$font_family.$font_h1.$font_h2.$font_h3.$font_h4.$font_h5.$font_p.$font_primary_menu.$font_secondary_menu.$color_primary.$color_primary30.$color_footerfont.'
 
-  .contentclass {background:'.$content_bg_color.' '.$content_bg_img.' '.$content_bg_repeat.' '.$content_bg_x.' '.$content_bg_y.';}
+echo $logo_font.$font_logo.$font_tagline.$tagline_font.$logo_padding_top.$logo_padding_bottom.$logo_padding_left.$logo_padding_right.$menu_margin_top.$menu_margin_bottom.$font_family.$font_h1.$font_h2.$font_h3.$font_h4.$font_h5.$font_p.$font_primary_menu.$font_secondary_menu.$color_primary.$color_primary30.$color_grayfont.$color_footerfont.'
+
+  .contentclass, .nav-tabs>.active>a, .nav-tabs>.active>a:hover, .nav-tabs>.active>a:focus {background:'.$content_bg_color.' '.$content_bg_img.' '.$content_bg_repeat.' '.$content_bg_x.' '.$content_bg_y.';}
   .headerclass {background:'.$header_bg_color.' '.$header_bg_img.' '.$header_bg_repeat.' '.$header_bg_x.' '.$header_bg_y.';}
   .topclass {background:'.$topbar_bg_color.' '.$topbar_bg_img.' '.$topbar_bg_repeat.' '.$topbar_bg_x.' '.$topbar_bg_y.';}
   .navclass {background:'.$menu_bg_color.' '.$menu_bg_img.' '.$menu_bg_repeat.' '.$menu_bg_x.' '.$menu_bg_y.';}

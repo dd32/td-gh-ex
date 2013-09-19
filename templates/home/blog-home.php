@@ -41,7 +41,7 @@
                            		<?php $image = null; $thumbnailURL = null; ?> 
                            		<?php } else { $textsize = 'span6'; } ?>
 	                       		<div class="<?php echo $textsize;?> postcontent">
-	                       			<div class="postmeta">
+	                       			<div class="postmeta color_gray">
 				                        	<div class="postdate bg-lightgray headerfont">
 				                        		<span class="postday"><?php echo get_the_date('j'); ?></span>
 				                        		<?php echo get_the_date('M Y');?>
@@ -50,7 +50,7 @@
 				                        </div>
 				                    <header class="home_blog_title">
 			                          <a href="<?php the_permalink() ?>"><h4 class="entry-title"><?php the_title(); ?></h4></a>
-			                          <div class="subhead">
+			                          <div class="subhead color_gray">
 			                          	<span class="postauthortop" rel="tooltip" data-placement="bottom" data-original-title="<?php echo get_the_author() ?>">
 			                          		<i class="icon-user"></i>
 			                          	</span>

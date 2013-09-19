@@ -1,13 +1,15 @@
-  <?php $headcontent = get_post_meta( $post->ID, '_kad_blog_head', true );?>
+  <?php global $post; $headcontent = get_post_meta( $post->ID, '_kad_blog_head', true );
+   $height = get_post_meta( $post->ID, '_kad_posthead_height', true ); if (!empty($height)) $slideheight = $height; else $slideheight = 400; 
+    $swidth = get_post_meta( $post->ID, '_kad_posthead_width', true ); if (!empty($swidth)) $slidewidth = $swidth; else $slidewidth = 770; 
+?>
 <div id="content" class="container">
     <div class="row single-article">
       <div class="main <?php echo kadence_main_class(); ?>" role="main">
         <?php while (have_posts()) : the_post(); ?>
           <article <?php post_class(); ?>>
-          <?php $headcontent = get_post_meta( $post->ID, '_kad_blog_head', true );
-            if ($headcontent == 'flex') { ?>
+          <?php  if ($headcontent == 'flex') { ?>
               <section class="postfeat">
-                <div class="flexslider">
+                <div class="flexslider" style="max-width:<?php echo $slidewidth;?>px;">
                 <ul class="slides">
                   <?php $args = array(
                       'order'          => 'ASC',
@@ -17,13 +19,12 @@
                       'post_status'    => null,
                       'orderby'    => 'menu_order',
                       'numberposts'    => -1,);
-                    $attachments = get_posts($args);
-                    global $post; $height = get_post_meta( $post->ID, '_kad_posthead_height', true ); if ($height != '') $slideheight = $height; else $slideheight = 350; 
+                    $attachments = get_posts($args); 
                 if ($attachments) {
                 foreach ($attachments as $attachment) {
                   $attachment_url = wp_get_attachment_url($attachment->ID , 'full');
-                  $image = aq_resize($attachment_url, 770, $slideheight, true);
-                    if(empty($image)) {$image = $attachment_url; }
+                  $image = aq_resize($attachment_url, $slidewidth, $slideheight, true);
+                  if(empty($image)) { $image = $attachment_url; }
                   echo '<li><img src="'.$image.'"/></li>';
                 } 
               } ?>                            
@@ -54,10 +55,12 @@
                 <?php global $post; $height = get_post_meta( $post->ID, '_kad_posthead_height', true ); if ($height != '') $slideheight = $height; else $slideheight = 350;             
                     $thumb = get_post_thumbnail_id();
                     $img_url = wp_get_attachment_url( $thumb,'full' ); //get full URL to image (use "large" or "medium" if the images too big)
-                    $image = aq_resize( $img_url, 770, $slideheight, true ); //resize & crop the image
+                    $image = aq_resize( $img_url, $slidewidth, $slideheight, true ); //resize & crop the image
+                    if(empty($image)) { $image = $img_url; }
                     ?>
-                    <?php if(empty($image)) {$image = $img_url; } ?>
+                    <?php if($image) : ?>
                       <div class="imghoverclass post-single-img"><a href="<?php echo $img_url ?>" rel="lightbox[pp_gal]" class="lightboxhover"><img src="<?php echo $image ?>" alt="<?php the_title(); ?>" /></a></div>
+                    <?php endif; ?>
         <?php } ?>
     <div class="postmeta">
                                   <div class="postdate bg-lightgray headerfont">

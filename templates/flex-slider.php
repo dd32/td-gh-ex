@@ -1,5 +1,8 @@
 <section class="pagefeat container">
-                <div class="flexslider">
+  <?php global $post; $height = get_post_meta( $post->ID, '_kad_posthead_height', true ); if (!empty($height)) $slideheight = $height; else $slideheight = 400; 
+                          $swidth = get_post_meta( $post->ID, '_kad_posthead_width', true ); if (!empty($swidth)) $slidewidth = $swidth; else $slidewidth = 1170;
+                          ?>
+                <div class="flexslider" style="max-width:<?php echo $slidewidth;?>px;">
                 <ul class="slides">
                   <?php $args = array(
                       'order'          => 'ASC',
@@ -10,12 +13,11 @@
                       'orderby'    => 'menu_order',
                       'numberposts'    => -1,);
                     $attachments = get_posts($args);
-                    global $post; $height = get_post_meta( $post->ID, '_kad_posthead_height', true ); if ($height != '') $slideheight = $height; else $slideheight = 350; 
                 if ($attachments) {
                 foreach ($attachments as $attachment) {
                   $attachment_url = wp_get_attachment_url($attachment->ID , 'full');
-                  $image = aq_resize($attachment_url, 1170, $slideheight, true);
-                  if(empty($image)) {$image = $attachment_url; }
+                  $image = aq_resize($attachment_url, $slidewidth, $slideheight, true);
+                  if(empty($image)) { $image = $attachment_url; }
                   echo '<li><img src="'.$image.'"/></li>';
                 } 
               } ?>                            

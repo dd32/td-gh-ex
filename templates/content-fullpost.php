@@ -1,38 +1,11 @@
-  <?php $headcontent = get_post_meta( $post->ID, '_kad_blog_head', true );?>
-     <?php if ($headcontent == 'carousel') { ?>
-        <section class="postfeat carousel_outerrim">
-            <div id="post-carousel-gallery" class="fredcarousel">
-                <div class="gallery-carousel">
-                  <?php 
-                    $args = array(
-                      'order'          => 'ASC',
-                      'post_type'      => 'attachment',
-                      'post_parent'    => $post->ID,
-                      'post_mime_type' => 'image',
-                      'post_status'    => null,
-                      'orderby'    => 'menu_order',
-                      'numberposts'    => -1,
-                    );
-                    $attachments = get_posts($args);
-              if ($attachments) {
-                foreach ($attachments as $attachment) {
-                  $attachment_url = wp_get_attachment_url($attachment->ID , 'full');
-                  $image = aq_resize($attachment_url, null, 480, false, false);
-                  echo '<img src="'.$image[0].'" width="'.$image[1].'" height="'.$image[2].'" />';
-                } 
-              } ?>                            
-            </div> <!--post gallery carousel-->
-            <div class="clearfix"></div>
-              <a id="prevport_bloggallery" class="prev_carousel icon-arrow-left" href="#"></a>
-              <a id="nextport_bloggallery" class="next_carousel icon-arrow-right" href="#"></a>
-          </div> <!--fredcarousel-->
-        </section>
-        <?php } ?>
+<?php global $post; $headcontent = get_post_meta( $post->ID, '_kad_blog_head', true );
+   $height = get_post_meta( $post->ID, '_kad_posthead_height', true ); if (!empty($height)) $slideheight = $height; else $slideheight = 400; 
+    $swidth = get_post_meta( $post->ID, '_kad_posthead_width', true ); if (!empty($swidth)) $slidewidth = $swidth; else $slidewidth = 770; 
+     ?>
           <article <?php post_class(); ?>>
-          <?php $headcontent = get_post_meta( $post->ID, '_kad_blog_head', true );
-            if ($headcontent == 'flex') { ?>
-              <section class="postfeat">
-                <div class="flexslider">
+           <?php if ($headcontent == 'flex') { ?>
+               <section class="postfeat">
+                <div class="flexslider" style="max-width:<?php echo $slidewidth;?>px;">
                 <ul class="slides">
                   <?php $args = array(
                       'order'          => 'ASC',
@@ -43,12 +16,11 @@
                       'orderby'    => 'menu_order',
                       'numberposts'    => -1,);
                     $attachments = get_posts($args);
-                    global $post; $height = get_post_meta( $post->ID, '_kad_posthead_height', true ); if ($height != '') $slideheight = $height; else $slideheight = 350; 
                 if ($attachments) {
                 foreach ($attachments as $attachment) {
                   $attachment_url = wp_get_attachment_url($attachment->ID , 'full');
-                  $image = aq_resize($attachment_url, 770, $slideheight, true);
-                    if(empty($image)) {$image = $attachment_url;}
+                  $image = aq_resize($attachment_url, $swidth, $slideheight, true);
+                   if(empty($image)) { $image = $attachment_url; } 
                   echo '<li><img src="'.$image.'"/></li>';
                 } 
               } ?>                            
@@ -75,12 +47,11 @@
               <?php global $post; $video = get_post_meta( $post->ID, '_kad_post_video', true ); echo $video; ?>
           </div>
         </section>
-        <?php } else if ($headcontent == 'image') { ?>
-                <?php global $post; $height = get_post_meta( $post->ID, '_kad_posthead_height', true ); if ($height != '') $slideheight = $height; else $slideheight = 350;             
+        <?php } else if ($headcontent == 'image') {           
                     $thumb = get_post_thumbnail_id();
                     $img_url = wp_get_attachment_url( $thumb,'full' ); //get full URL to image (use "large" or "medium" if the images too big)
-                    $image = aq_resize( $img_url, 770, $slideheight, true ); //resize & crop the image
-                      if(empty($image)) {$image = $img_url;}
+                    $image = aq_resize( $img_url, $slidewidth, $slideheight, true ); //resize & crop the image
+                     if(empty($image)) { $image = $img_url; } 
                     ?>
                     <?php if($image) : ?>
                       <div class="imghoverclass"><a href="<?php echo $img_url ?>" rel="lightbox[pp_gal]" class="lightboxhover"><img src="<?php echo $image ?>" alt="<?php the_title(); ?>" /></a></div>

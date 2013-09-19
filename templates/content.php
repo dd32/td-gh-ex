@@ -1,18 +1,19 @@
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                       <div class="row">
-                        <?php global $post; $postsummery = get_post_meta( $post->ID, '_kad_post_summery', true );
-                          if($postsummery == 'img_landscape') { 
+                         <?php global $post; global $post; $postsummery = get_post_meta( $post->ID, '_kad_post_summery', true );
+                          $height = get_post_meta( $post->ID, '_kad_posthead_height', true ); if (!empty($height)) $slideheight = $height; else $slideheight = 400; 
+                          $swidth = get_post_meta( $post->ID, '_kad_posthead_width', true ); if (!empty($swidth)) $slidewidth = $swidth; else $slidewidth = 770; 
+                        if($postsummery == 'img_landscape') { 
                             $textsize = 'span8'; 
-                            global $post; $height = get_post_meta( $post->ID, '_kad_posthead_height', true ); 
-                            if($height != '') $slideheight = $height; else $slideheight = 350;
                             if (has_post_thumbnail( $post->ID ) ) {
                               $image_url = wp_get_attachment_image_src( 
                               get_post_thumbnail_id( $post->ID ), 'full' ); 
                               $thumbnailURL = $image_url[0];
-                              $image = aq_resize($thumbnailURL, 770, $slideheight, true);
-                                if(empty($image)) {$image = $thumbnailURL; }?>
+                              $image = aq_resize($thumbnailURL, $slidewidth, $slideheight, true);
+                              if(empty($image)) { $image = $thumbnailURL; }
+                              ?>
                               <div class="span8">
-                                  <div class="imghoverclass">
+                                  <div class="imghoverclass img-margin-center">
                                     <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
                                       <img src="<?php echo $image ?>" alt="<?php the_title(); ?>" class="iconhover" style="display:block;">
                                     </a> 
@@ -26,10 +27,10 @@
                             $image_url = wp_get_attachment_image_src( 
                             get_post_thumbnail_id( $post->ID ), 'full' ); 
                             $thumbnailURL = $image_url[0]; 
-                            $image = aq_resize($thumbnailURL, 270, 270, true); 
-                             if(empty($image)) {$image = $thumbnailURL; }?>
+                            $image = aq_resize($thumbnailURL, 270, 270, true);
+                            if(empty($image)) { $image = $thumbnailURL; } ?>
                             <div class="span3">
-                                <div class="imghoverclass">
+                                <div class="imghoverclass img-margin-center">
                                     <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
                                         <img src="<?php echo $image ?>" alt="<?php the_title(); ?>" class="iconhover" style="display:block;">
                                     </a> 
@@ -42,7 +43,7 @@
                             global $post; $height = get_post_meta( $post->ID, '_kad_posthead_height', true ); 
                             if($height != '') $slideheight = $height; else $slideheight = 350; ?>
                             <div class="span8">
-                                <div class="flexslider loading">
+                                <div class="flexslider loading" style="max-width:<?php echo $slidewidth;?>px;">
                                     <ul class="slides">
                                        <?php $args = array(
                                          'order'          => 'ASC',
@@ -56,8 +57,9 @@
                                           if ($attachments) {
                                             foreach ($attachments as $attachment) {
                                                 $attachment_url = wp_get_attachment_url($attachment->ID , 'large');
-                                                $image = aq_resize($attachment_url, 770, $slideheight, true); 
-                                                  if(empty($image)) {$image = $attachment_url; }?>
+                                                $image = aq_resize($attachment_url, $slidewidth, $slideheight, true); 
+                                                if($image == "") { $image = $attachment_url; }
+                                                ?>
                                                 <li>
                                                   <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
                                                       <img src="<?php echo $image ?>" class="" />
@@ -99,8 +101,8 @@
                                             if ($attachments) {
                                               foreach ($attachments as $attachment) {
                                                 $attachment_url = wp_get_attachment_url($attachment->ID , 'large');
-                                                $image = aq_resize($attachment_url, 270, 270, true); 
-                                                  if(empty($image)) {$image = $attachment_url; }?>
+                                                $image = aq_resize($attachment_url, 270, 270, true);
+                                                if(empty($image)) { $image = $attachment_url; } ?>
                                                 <li>
                                                   <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
                                                     <img src="<?php echo $image ?>" class="" />
@@ -137,7 +139,7 @@
                           }?>
 
                       <div class="<?php echo $textsize;?> postcontent">
-                          <div class="postmeta">
+                          <div class="postmeta color_gray">
                               <div class="postdate bg-lightgray headerfont">
                                   <span class="postday"><?php echo get_the_date('j'); ?></span>
                                   <?php echo get_the_date('M Y');?>
@@ -145,14 +147,14 @@
                           </div>
                           <header>
                               <a href="<?php the_permalink() ?>"><h2 class="entry-title"><?php the_title(); ?></h2></a>
-                                <div class="subhead">
+                                <div class="subhead color_gray">
                                   <span class="postauthortop">
                                     <i class="icon-user"></i> by <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author"><?php echo get_the_author() ?></a>
                                   </span>
-                                  <?php $post_category = get_the_category($post->ID); if ( $post_category==true ) { ?> | <span class="postedintop"><i class="icon-folder-open"></i> <?php _e('posted in:', 'virtue');?> <?php the_category(', ') ?></span> <?php }?>
+                                  <?php $post_category = get_the_category($post->ID); if ( $post_category==true ) { ?> | <span class="postedintop"><i class="icon-drawer"></i> <?php _e('posted in:', 'virtue');?> <?php the_category(', ') ?></span> <?php }?>
                                   | 
                                   <span class="postcommentscount">
-                                      <i class="icon-comments-alt"></i> <?php comments_number( '0', '1', '%' ); ?>
+                                      <i class="icon-bubbles"></i> <?php comments_number( '0', '1', '%' ); ?>
                                   </span>
                                 </div>   
                           </header>
@@ -160,7 +162,7 @@
                               <?php the_excerpt(); ?>
                           </div>
                           <footer>
-                              <?php $tags = get_the_tags(); if ($tags) { ?> <span class="posttags"><i class="icon-tag"></i> <?php the_tags('', ', ', ''); ?> </span><?php } ?>
+                              <?php $tags = get_the_tags(); if ($tags) { ?> <span class="posttags color_gray"><i class="icon-tag"></i> <?php the_tags('', ', ', ''); ?> </span><?php } ?>
                           </footer>
                         </div><!-- Text size -->
                   </div><!-- row-->
