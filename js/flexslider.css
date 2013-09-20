@@ -35,7 +35,7 @@ html[xmlns] .slides {display: block;}
 .no-js .slides > li:first-child {display: block;}
 /* FlexSlider Default Theme
 *********************************/
-.flexslider { margin: 0; background: #fff; /*border: 1px solid #fff;*/ position: relative;  /*box-shadow: 0 1px 4px rgba(0,0,0,.2); -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.2); -moz-box-shadow: 0 1px 4px rgba(0,0,0,.2); -o-box-shadow: 0 1px 4px rgba(0,0,0,.2);*/ zoom: 1;}
+.flexslider { margin: 0; background: #222; /*border: 1px solid #fff;*/ position: relative;  /*box-shadow: 0 1px 4px rgba(0,0,0,.2); -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.2); -moz-box-shadow: 0 1px 4px rgba(0,0,0,.2); -o-box-shadow: 0 1px 4px rgba(0,0,0,.2);*/ zoom: 1;}
 .flex-viewport {max-height: 2000px; -webkit-transition: all 1s ease; -moz-transition: all 1s ease; transition: all 1s ease;}
 .loading .flex-viewport {max-height: 300px;}
 .flexslider .slides {zoom: 1;}
