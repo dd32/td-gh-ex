@@ -131,12 +131,16 @@ class TC_header_main {
 
 		<?php if( !empty($logo_src) && in_array( $filetype['ext'], $accepted_formats ) ) :?>
 			
-			<?php
-				//get height and width from image
-				list( $width, $height ) = getimagesize($logo_src); 
-				//logo styling option
-	       		$logo_img_style			= ( 1 == $logo_resize) ? 'style="max-width:250px;max-height:100px"' : '';
-			?>
+		<?php
+			$width = '';
+			$height = '';
+			//get height and width from image, we check if getimagesize can be used first with the error control operator
+			if ( @getimagesize($logo_src) ) {
+				list( $width, $height ) = getimagesize($logo_src);
+			}
+			//logo styling option
+       		$logo_img_style			= ( 1 == $logo_resize) ? 'style="max-width:250px;max-height:100px"' : '';
+		?>
 
 	        <div class="brand span3">
 	          <?php tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__ ); ?>
