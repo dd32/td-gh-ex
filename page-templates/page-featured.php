@@ -14,7 +14,6 @@ do_action( 'raindrops_'. basename(__FILE__) );
 	
 	class values unit and size1of1, size1of2, size1of3, size2of3, size1of4, size3of4, size1of5, size2of5, size3of5, size4of5
 */
-			
 //Demo settings
 
 	if( ! isset( $page_lists ) ) {
