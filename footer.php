@@ -22,7 +22,7 @@
 	<div class="row-fluid show-grid">
 	<footer>
         <div class="span7">
-		<p>&copy; <?php echo $current_options['footer_tagline'] ; ?> <a href="<?php echo home_url() ?>" target="_blank" title="<?php bloginfo('name'); ?>" ><?php bloginfo('name'); ?></a> | <?php _e('Spasalon Responsive WordPress Theme by','sis_spa');?> <a href="http://www.webriti.com"><?php _e('webriti.com','sis_spa');?></a></p>
+		<p>&copy; <?php echo $current_options['footer_tagline'] ; ?> <a href="<?php echo home_url() ?>" target="_blank" title="<?php bloginfo('name'); ?>" ><?php bloginfo('name'); ?></a> | <?php _e('Spasalon  Theme by','sis_spa');?> <a href="http://www.webriti.com"><?php _e('webriti.com','sis_spa');?></a></p>
 		</div>
 				<div class="span5">
 					<ul class="footer_nav_links pull-right">

@@ -6,7 +6,7 @@
  *
  * @package WordPress
  * @subpackage SpaSalon
- * @since Twenty Eleven 1.0
+ * @since Spasalon 1.0
  */
 ?>
 
@@ -15,7 +15,6 @@
 <head>
        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>" charset="<?php bloginfo('charset'); ?>" />
-<meta name="generator" content="WordPress <?php bloginfo('version'); ?>"/>
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 	<?php if(get_option('spa_theme_options')!='')
 			

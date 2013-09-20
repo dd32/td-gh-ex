@@ -3,8 +3,8 @@
  * The template for displaying search forms in appointpress
  *
  * @package WordPress
- * @subpackage Twenty_Eleven
- * @since Twenty Eleven 1.0
+ * @subpackage Spasalon
+ * @since Spasalon 1.0
  */
 ?>
 	<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
