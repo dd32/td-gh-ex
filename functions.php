@@ -21,8 +21,4 @@ require_once get_template_directory() . '/core/add-widgets.php';
 require_once get_template_directory() . '/core/register-metaboxes.php';
 require_once get_template_directory() . '/core/admin/function_panel.php';
 
-/* SHORTCODE */
-require_once get_template_directory() . '/core/register-shortcode.php';
-
-
 ?>

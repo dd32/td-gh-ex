@@ -1,6 +1,6 @@
 SuevaFree Changelog
 
-Version 1.1.4 - Released: 18.09.2013
+Version 1.1.5 - Released: 21.09.2013
 
 Fixed : Correct view for images with captions for responsive version.
 Fixed : Css code optimized.

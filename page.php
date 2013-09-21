@@ -42,11 +42,11 @@
     </div>
     
 
-	<?php if ( ( is_active_sidebar(suevafree_postmeta('suevafree_sidebar')) ) && ( suevafree_template('span') == "span8" ) ) : ?>
+	<?php if ( ( is_active_sidebar('sidebar-area') ) && ( suevafree_template('span') == "span8" ) ) : ?>
         
         <section id="sidebar" class="pin-article span4">
             <div class="sidebar-box">
-            	<?php dynamic_sidebar(suevafree_postmeta('suevafree_sidebar')) ?>
+            	<?php dynamic_sidebar('sidebar-area') ?>
             </div>
         </section>
     

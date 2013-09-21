@@ -9,27 +9,11 @@
 
 <title>
 	<?php
-		if (!get_post_meta( $post->ID , 'suevafree_seo_title', TRUE)):
-			wp_title( '|', true, 'right' );
-			echo get_bloginfo('name')." - ";
-			echo get_bloginfo('description');
-		else:
-			echo get_post_meta( $post->ID , 'suevafree_seo_title', TRUE);
-		endif;
+		wp_title( '|', true, 'right' );
+		bloginfo('name');
+		if ( is_home() || is_front_page() ) echo ' - ' . get_bloginfo( 'description' );
  	?>
 </title>
-
-<?php
-	
-	if (get_post_meta( $post->ID , 'suevafree_seo_description', TRUE)):
-		echo '<meta name="description" content="' . get_post_meta( $post->ID , 'suevafree_seo_description', TRUE) . '"/>';
-		endif;
-
-	if (get_post_meta( $post->ID , 'suevafree_seo_keywords', TRUE)):
-		echo '<meta name="keywords" content="' . get_post_meta( $post->ID , 'suevafree_seo_keywords', TRUE) . '"/>';
-	endif;
-		
-?>
 
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" media="screen" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.2, user-scalable=yes" />

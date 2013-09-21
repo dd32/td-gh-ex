@@ -1,15 +1,14 @@
 <?php
 
-function add_menu()
-{
+function suevafree_add_menu() {
 	global $themename, $adminmenuname,$optionfile;
-	add_theme_page("Theme Options", "Theme Options", 'administrator',  'themeoption', 'themeoption');
-	add_theme_page("Get Premium", "Get Premium", 'administrator',  'getpremium', 'getpremium');
+	add_theme_page("Theme Options", "Theme Options", 'administrator',  'themeoption', 'suevafree_themeoption');
+	add_theme_page("Get Premium", "Get Premium", 'administrator',  'getpremium', 'suevafree_getpremium');
 }
 
-add_action('admin_menu', 'add_menu'); 
+add_action('admin_menu', 'suevafree_add_menu'); 
 
-function add_script() {
+function suevafree_add_script() {
 	
 	 global $wp_version;
      wp_enqueue_style( "thickbox" );
@@ -23,9 +22,9 @@ function add_script() {
 	 wp_enqueue_style ( 'wip_on_off', $file_dir.'/css/wip_on_off.css' );
 }
 
-add_action('admin_init', 'add_script');
+add_action('admin_init', 'suevafree_add_script');
 
-function save_option ( $panel ) {
+function suevafree_save_option ( $panel ) {
 	
 	global $message_action;
 	
@@ -83,18 +82,14 @@ function save_option ( $panel ) {
 		}
 }
 
-function message () 
-
-	{
+function suevafree_message () {
 		global $message_action;
 		if (isset($message_action))
 		echo '<div id="message" class="updated fade message_save voobis_message"><p><strong>'.$message_action.'</strong></p></div>';
 	}
 
 
-function themeoption() 
-
-	{
+function suevafree_themeoption() {
 
 		$themename = "Sueva";
 		$shortname = "suevafree";
@@ -102,7 +97,7 @@ function themeoption()
 
 	}
 
-function getpremium() {	?>
+function suevafree_getpremium() {	?>
 
 	<a href="http://www.themeinprogress.com/?ref=panel" target="_blank" >
     	<img src="http://www.themeinprogress.com/images/suevapremium.jpg" alt="Get Premium" style="margin:15px auto" />

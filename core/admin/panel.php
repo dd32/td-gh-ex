@@ -2,7 +2,7 @@
 
 	function thepane( $panel ) { 
 	
-	save_option ( $panel );
+	suevafree_save_option ( $panel );
 
 	$suevafree_setting = get_option( suevafree_themename() );
 
@@ -14,7 +14,7 @@
 		
 			case 'navigation':
 			
-				message($panel); ?>
+				suevafree_message($panel); ?>
 	
     			<h2 class="voobis"> <?php _e( 'General Settings','wip'); ?>  </h2>
 
