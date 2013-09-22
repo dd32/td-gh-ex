@@ -80,5 +80,4 @@
 		<a class="reply-link" href="<?php the_permalink(); ?>#comments-wrap"><?php _e('Leave a Reply', 'asteroid'); ?></a>
 	</div>
 <?php endif ; ?>
-
 </article>

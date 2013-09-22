@@ -535,6 +535,14 @@ class Asteroid_Theme_Options {
 			'std'     => 0
 		);
 
+		$this->settings['ast_single_edit_link'] = array(
+			'section' => 'post-page',
+			'title'   => __( 'Edit Link', 'asteroid' ),
+			'desc'    => __( 'Show "Edit" link below titles on posts and pages.', 'asteroid' ),
+			'type'    => 'checkbox',
+			'std'     => 0
+		);
+
 		/* Custom Widgets
 		===========================================*/
 		$this->settings['ast_widget_body'] = array(

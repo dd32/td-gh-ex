@@ -1,6 +1,4 @@
-<?php
-// Template Name: Full, No Sidebar
-?>
+<?php // Template Name: Full, No Sidebar ?>
 <?php get_header(); ?>
 
 <div id="content-nosidebar">
@@ -15,7 +13,7 @@
 
 	<?php
 		the_post();
-		get_template_part('loop', 'single');
+		get_template_part( 'loop', 'single' );
 	?>
 
 	<?php do_action('ast_hook_after_content'); ?>

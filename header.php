@@ -23,13 +23,13 @@
 		<?php do_action('ast_hook_before_header'); ?>
 		<div id="header-info-wrap">
 			<?php if ( asteroid_option('ast_header_logo') != '' ) : ?>
-				<div id="header-logo"><a href="<?php echo home_url(); ?>">
+				<div id="header-logo"><a href="<?php echo esc_url( home_url('/') ); ?>">
 					<img src="<?php echo asteroid_option('ast_header_logo'); ?>" <?php echo (apply_filters( 'asteroid_filter_logo_alt', 'alt=""')); ?> /></a>
 				</div>
 			<?php else : ?>
 				<?php if (! ('blank' == get_header_textcolor() )) : ?>
 					<div id="header-text">
-						<h1 id="site-title"><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+						<h1 id="site-title"><a href="<?php echo esc_url( home_url('/') ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 						<h4 id="site-description"><?php bloginfo( 'description' ); ?></h4>		
 					</div>
 				<?php endif; ?>

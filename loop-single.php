@@ -20,7 +20,7 @@
 
 <!-- Date & Author -->
 <div class="entry-meta-top">
-	<?php edit_post_link( __('Edit', 'asteroid') ); ?>
+	<?php if ( asteroid_option('ast_single_edit_link') == 1 ) edit_post_link( __('Edit', 'asteroid') ); ?>
 	<?php if (
 		( asteroid_option('ast_single_date') == 1 && is_singular('post') ) ||
 		( asteroid_option('ast_single_date') == 2 && is_page() ) ||

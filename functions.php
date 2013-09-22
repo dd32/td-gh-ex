@@ -5,7 +5,7 @@
  * @package Asteroid
  *
  */
-$ast_version = "1.1.2";
+$ast_version = "1.1.3";
 /*-------------------------------------
 	Theme Localization
 --------------------------------------*/
@@ -23,10 +23,9 @@ require( get_template_directory() . '/includes/theme-options.php' );
 --------------------------------------*/
 function asteroid_enqueue_styles() {
 	global $ast_version;
-	if ( ! is_admin() ) {
-		wp_register_style( 'asteroid-main-style', get_stylesheet_uri(), array(), $ast_version, 'screen' ); 
-		wp_enqueue_style( 'asteroid-main-style' );
-	}
+	wp_register_style( 'asteroid-main-style', get_stylesheet_uri(), array(), $ast_version, 'screen' ); 
+	wp_enqueue_style( 'asteroid-main-style' );
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' );
 }
 add_action( 'wp_enqueue_scripts', 'asteroid_enqueue_styles' );
@@ -367,7 +366,7 @@ function asteroid_img_caption_filter($val, $attr, $content = null) {
 
 	if ( $id ) $id = 'id="' . esc_attr($id) . '" ';
 
-	return '<div ' . $id . 'class="wp-caption ' . esc_attr($align) . '" style="width: ' . (int) $width . 'px">' . do_shortcode( $content ) . '<p class="wp-caption-text">' . $caption . '</p></div>';
+	return '<div ' . $id . 'class="wp-caption ' . esc_attr($align) . '" style="width: ' . ((int) $width + 10) . 'px">' . do_shortcode( $content ) . '<p class="wp-caption-text">' . $caption . '</p></div>';
 }
 add_filter( 'img_caption_shortcode', 'asteroid_img_caption_filter', 10, 3 );
 

@@ -8,11 +8,27 @@
 		<div id="widgets-wrap-before-content"><?php dynamic_sidebar('widgets_before_content'); ?></div>
 	<?php endif ; ?>
 
-	<?php if ( is_category() || is_tag() ) : ?>
-		<div class="taxonomy-info">
-			<h4 class="taxonomy-title"><?php single_cat_title(); ?></h4>
-			<?php if ( category_description() != '' ) : ?>
-				<div class="taxonomy-description"><?php echo category_description(); ?> </div>
+	<?php if ( is_archive() ) : ?>
+		<div class="archive-info">
+			<h4 class="archive-title">
+			<?php
+				if ( is_category() ) {
+				printf(	__( 'Category &ndash; %s', 'asteroid' ), '<span>' . single_cat_title( '', false ) . '</span>' ); }
+				elseif ( is_tag() ) {
+				printf(	__( 'Tag &ndash; %s', 'asteroid' ), '<span>' . single_cat_title( '', false ) . '</span>' ); }
+				elseif ( is_day() ) {
+				printf( __( 'Date &ndash; %s', 'asteroid' ), '<span>' . get_the_date() . '</span>' ); }
+				elseif ( is_month() ) {
+				printf( __( 'Month &ndash; %s', 'asteroid' ), '<span>' . get_the_date( 'F Y' ) . '</span>' ); }
+				elseif ( is_year() ) {
+				printf( __( 'Year &ndash; %s', 'asteroid' ), '<span>' . get_the_date( 'Y' ) . '</span>' ); }
+			?>
+			</h4>
+
+			<?php if ( is_category() && category_description() != '' ) : ?>
+				<div class="archive-description"><?php echo category_description(); ?> </div>
+			<?php elseif ( is_tag() && tag_description() != '' ) : ?>
+				<div class="archive-description"><?php echo tag_description(); ?> </div>
 			<?php endif; ?>
 		</div>
 	<?php endif; ?>
@@ -21,9 +37,9 @@
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 			<?php if ( !is_singular() ) : ?>
-					<?php get_template_part('loop'); ?>
+					<?php get_template_part( 'loop' ); ?>
 			<?php else : ?>
-					<?php get_template_part('loop', 'single'); ?>
+					<?php get_template_part( 'loop', 'single' ); ?>
 			<?php endif; ?>
 
 	<?php endwhile; else: ?>

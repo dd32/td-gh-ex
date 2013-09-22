@@ -4,7 +4,7 @@
 
 <?php if ( have_posts() ) { the_post(); } ?>
 
-	<div id="author-<?php the_author_meta( 'ID' ); ?>" <?php post_class(array( 'clearfix', 'page', 'author' ) ); ?>>
+	<div id="author-<?php the_author_meta( 'ID' ); ?>">
 
 		<div class="author-info-box">
 			<h4 class="author-info-box-title "><?php _e('About the Author', 'asteroid'); ?></h4>
