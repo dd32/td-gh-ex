@@ -129,7 +129,7 @@ function catcheverest_theme_options_do_page() {
                 <div id="theme-support">
                     <ul>
                     	<li><a class="button donate" href="<?php echo esc_url(__('http://catchthemes.com/donate/','catcheverest')); ?>" title="<?php esc_attr_e('Donate to Catch Everest', 'catcheverest'); ?>" target="_blank"><?php printf(__('Donate Now','catcheverest')); ?></a></li>
-                        <li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/support-forum/forum/catch-everest-public/','catcheverest')); ?>" title="<?php esc_attr_e('Support Forum', 'catcheverest'); ?>" target="_blank"><?php printf(__('Support Forum','catcheverest')); ?></a></li>
+                        <li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/support/','catcheverest')); ?>" title="<?php esc_attr_e('Support', 'catcheverest'); ?>" target="_blank"><?php printf(__('Support','catcheverest')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/theme-instructions/catch-everest/','catcheverest')); ?>" title="<?php esc_attr_e('Theme Instruction', 'catcheverest'); ?>" target="_blank"><?php printf(__('Theme Instruction','catcheverest')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('https://www.facebook.com/catchthemes/','catcheverest')); ?>" title="<?php esc_attr_e('Like Catch Themes on Facebook', 'catcheverest'); ?>" target="_blank"><?php printf(__('Facebook','catcheverest')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('https://twitter.com/catchthemes/','catcheverest')); ?>" title="<?php esc_attr_e('Follow Catch Themes on Twitter', 'catcheverest'); ?>" target="_blank"><?php printf(__('Twitter','catcheverest')); ?></a></li>
@@ -787,9 +787,14 @@ function catcheverest_theme_options_do_page() {
                                 </tr>                                
                                 <tr>
                                     <th scope="row"><h4><?php _e( 'Skype', 'catcheverest' ); ?></h4></th>
-                                    <td><input type="text" size="45" name="catcheverest_options[social_skype]" value="<?php echo esc_url( $options[ 'social_skype' ] ); ?>" />
+                                    <td><input type="text" size="45" name="catcheverest_options[social_skype]" value="<?php echo esc_attr( $options[ 'social_skype' ] ); ?>" />
                                     </td>
-                                </tr>                                 
+                                </tr>  
+                                <tr>
+                                    <th scope="row"><h4><?php _e( 'Soundcloud', 'catcheverest' ); ?></h4></th>
+                                    <td><input type="text" size="45" name="catcheverest_options[social_soundcloud]" value="<?php echo esc_url( $options[ 'social_soundcloud' ] ); ?>" />
+                                    </td>
+                                </tr>                                
                             </tbody>
                         </table>                           
             			<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catcheverest' ); ?>" /></p>                    
@@ -1073,8 +1078,11 @@ function catcheverest_theme_options_validate( $options ) {
 		$input_validated[ 'social_goodreads' ] = esc_url_raw( $input[ 'social_goodreads' ] );
 	}	
 	if( isset( $input[ 'social_skype' ] ) ) {
-		$input_validated[ 'social_skype' ] = esc_url_raw( $input[ 'social_skype' ] );
+		$input_validated[ 'social_skype' ] = sanitize_text_field( $input[ 'social_skype' ] );
 	}
+	if( isset( $input[ 'social_soundcloud' ] ) ) {
+		$input_validated[ 'social_soundcloud' ] = esc_url_raw( $input[ 'social_soundcloud' ] );
+	}		
 		
 	//Webmaster Tool Verification
 	if( isset( $input[ 'google_verification' ] ) ) {

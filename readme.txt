@@ -137,3 +137,7 @@ version 1.2
 
 version 1.2.1
 * Fixed Web Clip Icon
+
+version 1.2.2
+* Added Soundcloud social icon
+* Fixed Skype Link Data Validation as per https://dev.skype.com/skype-uri

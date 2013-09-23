@@ -71,6 +71,7 @@ $catcheverest_options_defaults = array(
 	'social_odnoklassniki'					=> '',
 	'social_goodreads'						=> '',
 	'social_skype'							=> '',
+	'social_soundcloud'						=> '',
  	'google_verification'					=> '',
  	'yahoo_verification'					=> '',
  	'bing_verification'						=> '',

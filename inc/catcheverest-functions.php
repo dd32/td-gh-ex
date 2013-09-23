@@ -1052,7 +1052,8 @@ function catcheverest_social_networks() {
 						$options[ 'social_myworld' ],
 						$options[ 'social_odnoklassniki' ],
 						$options[ 'social_goodreads' ],
-						$options[ 'social_skype' ]
+						$options[ 'social_skype' ],
+						$options[ 'social_soundcloud' ]
 					);
 	$flag = 0;
 	if( !empty( $elements ) ) {
@@ -1198,8 +1199,13 @@ function catcheverest_social_networks() {
 			//Skype
 			if ( !empty( $options[ 'social_skype' ] ) ) {
 				$catcheverest_social_networks .=
-					'<li class="skype"><a href="'.esc_url( $options[ 'social_skype' ] ).'" title="'.sprintf( esc_attr__( '%s on Skype', 'catcheverest' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Skype </a></li>';
+					'<li class="skype"><a href="'.esc_attr( $options[ 'social_skype' ] ).'" title="'.sprintf( esc_attr__( '%s on Skype', 'catcheverest' ),get_bloginfo( 'name' ) ).'">'.get_bloginfo( 'name' ).' Skype </a></li>';
 			}
+			//Soundcloud
+			if ( !empty( $options[ 'social_soundcloud' ] ) ) {
+				$catcheverest_social_networks .=
+					'<li class="soundcloud"><a href="'.esc_url( $options[ 'social_soundcloud' ] ).'" title="'.sprintf( esc_attr__( '%s on Soundcloud', 'catcheverest' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Soundcloud </a></li>';
+			}			
 			
 			$catcheverest_social_networks .='
 		</ul>';
