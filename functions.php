@@ -788,7 +788,7 @@ function adventure_customize($wp_customize) {
 	// Settings for the Previous & Next Post Link
 	$wp_customize->add_setting( 'previousnext_setting', array(
 		'default'           => 'both',
-		'control'           => 'select',));
+		'control'           => 'radio',));
 
 	$wp_customize->add_control( 'previousnext_control', array(
 		'label'				=> 'Previous & Next Links After Content',
@@ -800,6 +800,20 @@ function adventure_customize($wp_customize) {
 			'posts'			=> 'Only Posts',
 			'pages'			=> 'Only Pages',
 			'neither'		=> 'Neither', ), ));
+
+	// Settings for the text about the Author
+	$wp_customize->add_setting( 'author_setting', array(
+		'default'           => 'on',
+		'control'           => 'radio',));
+
+	$wp_customize->add_control( 'author_control', array(
+		'label'				=> 'Author Information',
+		'section'			=> 'content_section',
+		'settings'			=> 'author_setting',
+		'type'				=> 'radio',
+		'choices'			=> array(
+			'on'             => 'On',
+			'off'            => 'Off', ), ));
 			
 	// Comments Choice
 	$wp_customize->add_setting( 'comments_setting', array(
@@ -816,6 +830,20 @@ function adventure_customize($wp_customize) {
 			'posts'				=> 'Comments only on Posts',
 			'pages'				=> 'Comments only on Pages',
 			'none'				=> 'Comments completely Off',), ));
+
+	// Turn the information for the comments On or Off
+	$wp_customize->add_setting( 'commentsclosed_setting', array(
+		'default'           => 'on',
+		'control'           => 'radio',));
+
+	$wp_customize->add_control( 'commentsclosed_control', array(
+		'label'				=> 'Comment Information',
+		'section'			=> 'content_section',
+		'settings'			=> 'commentsclosed_setting',
+		'type'				=> 'radio',
+		'choices'			=> array(
+			'on'             => 'On',
+			'off'            => 'Off', ), ));
 
 	// Change the color of the Sidebar Background
 	$wp_customize->add_setting( 'sidebarcolor_setting', array(
@@ -1110,6 +1138,14 @@ function adventure_theme_options_do_page() { ?>
         <th class="justify"></th>
         </tr>
         <tr>
+        <th>2.6</th>
+        <td class="justify">Currently writing the code to move the sidebar to the left or the right.</td>
+        </tr>
+        <tr>
+        <th>2.5</th>
+        <td class="justify">I'm working on a complete rewrite for Adventure to match my current coding skills, however it keeps taking longer than I expect. So in the mean time I decided to keep updating this old code that works just fine. New in this version is the ablity to the comment information and author information at the end of post and pages off.</td>
+        </tr>
+        <tr>
         <th>2.4</th>
         <td class="justify">Added the ablitity to put soical icon and/or a search bar into the menu.  Fixed the issue with the theme display "and comments are closed." Added Google Analytics and Web Master Tool option because everyone should have it and more control of over the comments display too. The option to choose either display excerpts or the entire content of a post or page. You can choose to display dates on posts.</td>
         </tr>
@@ -1140,6 +1176,10 @@ function adventure_theme_options_do_page() { ?>
         <tr>
         <th>Version</th>
         <th class="justify"></th>
+        </tr>
+        <tr>
+        <th>6</th>
+        <td class="justify">Same as "Adventure 2.5".</td>
         </tr>
         <tr>
         <th>6</th>

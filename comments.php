@@ -5,7 +5,7 @@
    
 
 <?php if (have_comments()) : ?>
-<li>
+<li id="comments">
 	<ul class="commentbox">
         <h4 class="title">Comments</h4>
     
