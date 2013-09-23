@@ -344,3 +344,7 @@ Version 2.6.1
 
 Version 2.6.2
 * Fixed Fav Icon image
+
+Version 2.6.3
+* Added Soundcloud social icon
+* Fixed Skype Link Data Validation as per https://dev.skype.com/skype-uri

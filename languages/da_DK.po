@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-29 21:17+0545\n"
-"PO-Revision-Date: 2013-08-29 21:17+0545\n"
+"POT-Creation-Date: 2013-09-24 00:39+0545\n"
+"PO-Revision-Date: 2013-09-24 00:39+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: \n"
 "Language: Danish\n"
@@ -57,17 +57,17 @@ msgstr ""
 "Dette indlæg er password-beskyttet. Indtast password for at se kommentarer."
 
 #: ../comments.php:29 ../content.php:46 ../image.php:48 ../page-blog.php:69
-#: ../functions/simplecatch_functions.php:927
+#: ../functions/simplecatch_functions.php:933
 msgid "No Comments"
 msgstr "Ingen kommentarer"
 
 #: ../comments.php:29 ../content.php:46 ../image.php:48 ../page-blog.php:69
-#: ../functions/simplecatch_functions.php:927
+#: ../functions/simplecatch_functions.php:933
 msgid "1 Comment"
 msgstr "1 Kommentar"
 
 #: ../comments.php:29 ../content.php:46 ../image.php:48 ../page-blog.php:69
-#: ../functions/simplecatch_functions.php:927
+#: ../functions/simplecatch_functions.php:933
 msgid "% Comments"
 msgstr "% Kommentarer"
 
@@ -81,7 +81,7 @@ msgid "Permalink to %s"
 msgstr "Permalink til %s"
 
 #: ../content.php:44 ../image.php:46 ../page-blog.php:67
-#: ../functions/simplecatch_functions.php:925
+#: ../functions/simplecatch_functions.php:931
 msgid "By"
 msgstr "Af"
 
@@ -117,11 +117,11 @@ msgstr "Forrige motiv"
 msgid "Next Image"
 msgstr "Næste motiv"
 
-#: ../page-blog.php:97 ../functions/simplecatch_functions.php:1137
+#: ../page-blog.php:97 ../functions/simplecatch_functions.php:1143
 msgid "Previous"
 msgstr "Forrige"
 
-#: ../page-blog.php:98 ../functions/simplecatch_functions.php:1138
+#: ../page-blog.php:98 ../functions/simplecatch_functions.php:1144
 msgid "Next"
 msgstr "Næste"
 
@@ -161,183 +161,188 @@ msgstr "%s"
 msgid "Page %s"
 msgstr "Side %s"
 
-#: ../functions/simplecatch_functions.php:480
+#: ../functions/simplecatch_functions.php:481
 #, php-format
 msgid "%s on Facebook"
 msgstr "%s på Facebook"
 
-#: ../functions/simplecatch_functions.php:485
+#: ../functions/simplecatch_functions.php:486
 #, php-format
 msgid "%s on Twitter"
 msgstr "%s på Twitter"
 
-#: ../functions/simplecatch_functions.php:490
+#: ../functions/simplecatch_functions.php:491
 #, php-format
 msgid "%s on Google+"
 msgstr "%s på Google+"
 
-#: ../functions/simplecatch_functions.php:495
+#: ../functions/simplecatch_functions.php:496
 #, php-format
 msgid "%s on Linkedin"
 msgstr "%s på Linkedin"
 
-#: ../functions/simplecatch_functions.php:500
+#: ../functions/simplecatch_functions.php:501
 #, php-format
 msgid "%s on Pinterest"
 msgstr "%s på Pinterest"
 
-#: ../functions/simplecatch_functions.php:505
+#: ../functions/simplecatch_functions.php:506
 #, php-format
 msgid "%s on YouTube"
 msgstr "%s på YouTube"
 
-#: ../functions/simplecatch_functions.php:510
+#: ../functions/simplecatch_functions.php:511
 #, php-format
 msgid "%s on Vimeo"
 msgstr "%s på Vimeo"
 
-#: ../functions/simplecatch_functions.php:515
+#: ../functions/simplecatch_functions.php:516
 #, php-format
 msgid "%s on Slideshare"
 msgstr "%s på Slideshare"
 
-#: ../functions/simplecatch_functions.php:520
+#: ../functions/simplecatch_functions.php:521
 #, php-format
 msgid "%s on Foursquare"
 msgstr "%s på Foursquare"
 
-#: ../functions/simplecatch_functions.php:525
+#: ../functions/simplecatch_functions.php:526
 #, php-format
 msgid "%s on Flickr"
 msgstr "%s på Flickr"
 
-#: ../functions/simplecatch_functions.php:530
+#: ../functions/simplecatch_functions.php:531
 #, php-format
 msgid "%s on Tumblr"
 msgstr "%s på Tumblr"
 
-#: ../functions/simplecatch_functions.php:535
+#: ../functions/simplecatch_functions.php:536
 #, php-format
 msgid "%s on deviantART"
 msgstr "%s på deviantART"
 
-#: ../functions/simplecatch_functions.php:540
+#: ../functions/simplecatch_functions.php:541
 #, php-format
 msgid "%s on Dribbble"
 msgstr "%s på Dribbble"
 
-#: ../functions/simplecatch_functions.php:545
+#: ../functions/simplecatch_functions.php:546
 #, php-format
 msgid "%s on MySpace"
 msgstr "%s på MySpace"
 
-#: ../functions/simplecatch_functions.php:550
+#: ../functions/simplecatch_functions.php:551
 #, php-format
 msgid "%s on WordPress"
 msgstr "%s på WordPress"
 
-#: ../functions/simplecatch_functions.php:555
+#: ../functions/simplecatch_functions.php:556
 #, php-format
 msgid "%s on RSS"
 msgstr "%s på RSS"
 
-#: ../functions/simplecatch_functions.php:560
+#: ../functions/simplecatch_functions.php:561
 #, php-format
 msgid "%s on Delicious"
 msgstr "%s på Delicious"
 
-#: ../functions/simplecatch_functions.php:565
+#: ../functions/simplecatch_functions.php:566
 #, php-format
 msgid "%s on Last.fm"
 msgstr "%s på Last.fm"
 
-#: ../functions/simplecatch_functions.php:570
+#: ../functions/simplecatch_functions.php:571
 #, php-format
 msgid "%s on Instagram"
 msgstr "%s på Instagram"
 
-#: ../functions/simplecatch_functions.php:575
+#: ../functions/simplecatch_functions.php:576
 #, php-format
 msgid "%s on GitHub"
 msgstr "%s på GitHub"
 
-#: ../functions/simplecatch_functions.php:580
+#: ../functions/simplecatch_functions.php:581
 #, php-format
 msgid "%s on Vkontakte"
 msgstr "%s på Vkontakte"
 
-#: ../functions/simplecatch_functions.php:585
+#: ../functions/simplecatch_functions.php:586
 #, php-format
 msgid "%s on My World"
 msgstr "%s på My World"
 
-#: ../functions/simplecatch_functions.php:590
+#: ../functions/simplecatch_functions.php:591
 #, php-format
 msgid "%s on Odnoklassniki"
 msgstr "%s på Odnoklassniki"
 
-#: ../functions/simplecatch_functions.php:595
+#: ../functions/simplecatch_functions.php:596
 #, php-format
 msgid "%s on Goodreads"
 msgstr "%s på Goodreads"
 
-#: ../functions/simplecatch_functions.php:600
+#: ../functions/simplecatch_functions.php:601
 #, php-format
 msgid "%s on Skype"
 msgstr "%s på Skype"
 
-#: ../functions/simplecatch_functions.php:754
+#: ../functions/simplecatch_functions.php:606
+#, php-format
+msgid "%s on Soundcloud"
+msgstr "%s på Soundcloud"
+
+#: ../functions/simplecatch_functions.php:760
 msgid "Powered By:"
 msgstr "Styret af:"
 
-#: ../functions/simplecatch_functions.php:754
+#: ../functions/simplecatch_functions.php:760
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: ../functions/simplecatch_functions.php:754
+#: ../functions/simplecatch_functions.php:760
 msgid "Powered By WordPress"
 msgstr "Styret af WordPress"
 
-#: ../functions/simplecatch_functions.php:754
+#: ../functions/simplecatch_functions.php:760
 #: ../functions/panel/theme_options.php:705
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../functions/simplecatch_functions.php:754
+#: ../functions/simplecatch_functions.php:760
 msgid "Theme:"
 msgstr "Tema:"
 
-#: ../functions/simplecatch_functions.php:754
+#: ../functions/simplecatch_functions.php:760
 #: ../functions/panel/theme_options.php:118
 msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
-#: ../functions/simplecatch_functions.php:754
+#: ../functions/simplecatch_functions.php:760
 msgid "Simple Catch"
 msgstr "Simple Catch"
 
-#: ../functions/simplecatch_functions.php:941
+#: ../functions/simplecatch_functions.php:947
 msgid "Categories: "
 msgstr "Kategorier:"
 
-#: ../functions/simplecatch_functions.php:1009
+#: ../functions/simplecatch_functions.php:1015
 msgid "Name"
 msgstr "Navn"
 
-#: ../functions/simplecatch_functions.php:1009
-#: ../functions/simplecatch_functions.php:1010
+#: ../functions/simplecatch_functions.php:1015
+#: ../functions/simplecatch_functions.php:1016
 msgid "( required )"
 msgstr "( påkrævet )"
 
-#: ../functions/simplecatch_functions.php:1010
+#: ../functions/simplecatch_functions.php:1016
 msgid "Email"
 msgstr "Email"
 
-#: ../functions/simplecatch_functions.php:1011
+#: ../functions/simplecatch_functions.php:1017
 msgid "Website"
 msgstr "Website"
 
-#: ../functions/simplecatch_functions.php:1042
+#: ../functions/simplecatch_functions.php:1048
 msgid "ID"
 msgstr "ID"
 
@@ -426,12 +431,12 @@ msgid "Upgrade to Simple Catch Pro"
 msgstr "Opgradér til Simple Catch Pro"
 
 #: ../functions/panel/theme_options.php:129
-msgid "http://catchthemes.com/support-forum/forum/simple-catch-public/"
-msgstr "http://catchthemes.com/support-forum/forum/simple-catch-public/"
+msgid "http://catchthemes.com/support/"
+msgstr "http://catchthemes.com/support/"
 
 #: ../functions/panel/theme_options.php:129
-msgid "Support Forum"
-msgstr "Support Forum"
+msgid "Support"
+msgstr "Support"
 
 #: ../functions/panel/theme_options.php:130
 msgid "http://catchthemes.com/theme-instructions/simple-catch/"
@@ -554,8 +559,8 @@ msgstr "Deaktivér logo for sidefod (Footer)?"
 #: ../functions/panel/theme_options.php:540
 #: ../functions/panel/theme_options.php:573
 #: ../functions/panel/theme_options.php:624
-#: ../functions/panel/theme_options.php:760
-#: ../functions/panel/theme_options.php:791
+#: ../functions/panel/theme_options.php:765
+#: ../functions/panel/theme_options.php:796
 msgid "Save"
 msgstr "Gem"
 
@@ -920,15 +925,19 @@ msgstr "Goodreads"
 msgid "Skype"
 msgstr "Skype"
 
-#: ../functions/panel/theme_options.php:766
+#: ../functions/panel/theme_options.php:760
+msgid "Soundcloud"
+msgstr "Soundcloud"
+
+#: ../functions/panel/theme_options.php:771
 msgid "Header and Footer Codes"
 msgstr "Koder for sidehoved og –fod (Header og Footer)"
 
-#: ../functions/panel/theme_options.php:771
+#: ../functions/panel/theme_options.php:776
 msgid "Code to display on Header"
 msgstr "Kode til visning i sidehoved (Header)"
 
-#: ../functions/panel/theme_options.php:777
+#: ../functions/panel/theme_options.php:782
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
@@ -936,17 +945,20 @@ msgstr ""
 "Note: Her kan du lægge scripts fra Google, Facebook osv. som vil blive "
 "indlæst i sidehoved (Header)"
 
-#: ../functions/panel/theme_options.php:780
+#: ../functions/panel/theme_options.php:785
 msgid "Code to display on Footer"
 msgstr "Kode til visning i sidefod (Footer)"
 
-#: ../functions/panel/theme_options.php:787
+#: ../functions/panel/theme_options.php:792
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"
 msgstr ""
 "Note: Her kan du lægge scripts fra Google, Facebook, Add This osv. som vil "
 "blive indlæst i sidefod (Footer)"
+
+#~ msgid "http://catchthemes.com/support-forum/forum/simple-catch-public/"
+#~ msgstr "http://catchthemes.com/support-forum/forum/simple-catch-public/"
 
 #~ msgid "Featured Slider Post #"
 #~ msgstr "Featured Slider Post #"

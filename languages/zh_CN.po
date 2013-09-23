@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-29 21:18+0545\n"
-"PO-Revision-Date: 2013-08-29 21:18+0545\n"
+"POT-Creation-Date: 2013-09-24 00:42+0545\n"
+"PO-Revision-Date: 2013-09-24 00:42+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Catch Themes <info@catchinternet.com>\n"
 "Language: en\n"
@@ -52,17 +52,17 @@ msgid "This post is password protected. Enter the password to view comments."
 msgstr "本文受密码保护。请输入密码以查看评论"
 
 #: ../comments.php:29 ../content.php:46 ../image.php:48 ../page-blog.php:69
-#: ../functions/simplecatch_functions.php:927
+#: ../functions/simplecatch_functions.php:933
 msgid "No Comments"
 msgstr "暂无评论"
 
 #: ../comments.php:29 ../content.php:46 ../image.php:48 ../page-blog.php:69
-#: ../functions/simplecatch_functions.php:927
+#: ../functions/simplecatch_functions.php:933
 msgid "1 Comment"
 msgstr "1条评论"
 
 #: ../comments.php:29 ../content.php:46 ../image.php:48 ../page-blog.php:69
-#: ../functions/simplecatch_functions.php:927
+#: ../functions/simplecatch_functions.php:933
 msgid "% Comments"
 msgstr "% 条评论"
 
@@ -76,7 +76,7 @@ msgid "Permalink to %s"
 msgstr "固定链接到 %s"
 
 #: ../content.php:44 ../image.php:46 ../page-blog.php:67
-#: ../functions/simplecatch_functions.php:925
+#: ../functions/simplecatch_functions.php:931
 msgid "By"
 msgstr "作者"
 
@@ -110,11 +110,11 @@ msgstr "上一张图片"
 msgid "Next Image"
 msgstr "下一张图片"
 
-#: ../page-blog.php:97 ../functions/simplecatch_functions.php:1137
+#: ../page-blog.php:97 ../functions/simplecatch_functions.php:1143
 msgid "Previous"
 msgstr "上一页"
 
-#: ../page-blog.php:98 ../functions/simplecatch_functions.php:1138
+#: ../page-blog.php:98 ../functions/simplecatch_functions.php:1144
 msgid "Next"
 msgstr "下一页"
 
@@ -154,183 +154,188 @@ msgstr "%s"
 msgid "Page %s"
 msgstr "第%s页"
 
-#: ../functions/simplecatch_functions.php:480
+#: ../functions/simplecatch_functions.php:481
 #, php-format
 msgid "%s on Facebook"
 msgstr "%s on Facebook"
 
-#: ../functions/simplecatch_functions.php:485
+#: ../functions/simplecatch_functions.php:486
 #, php-format
 msgid "%s on Twitter"
 msgstr "%s on Twitter"
 
-#: ../functions/simplecatch_functions.php:490
+#: ../functions/simplecatch_functions.php:491
 #, php-format
 msgid "%s on Google+"
 msgstr "%s on Google+"
 
-#: ../functions/simplecatch_functions.php:495
+#: ../functions/simplecatch_functions.php:496
 #, php-format
 msgid "%s on Linkedin"
 msgstr "%s on Linkedin"
 
-#: ../functions/simplecatch_functions.php:500
+#: ../functions/simplecatch_functions.php:501
 #, php-format
 msgid "%s on Pinterest"
 msgstr "%s on Pinterest"
 
-#: ../functions/simplecatch_functions.php:505
+#: ../functions/simplecatch_functions.php:506
 #, php-format
 msgid "%s on YouTube"
 msgstr "%s on YouTube"
 
-#: ../functions/simplecatch_functions.php:510
+#: ../functions/simplecatch_functions.php:511
 #, php-format
 msgid "%s on Vimeo"
 msgstr "%s on Vimeo"
 
-#: ../functions/simplecatch_functions.php:515
+#: ../functions/simplecatch_functions.php:516
 #, php-format
 msgid "%s on Slideshare"
 msgstr "%s on Slideshare"
 
-#: ../functions/simplecatch_functions.php:520
+#: ../functions/simplecatch_functions.php:521
 #, php-format
 msgid "%s on Foursquare"
 msgstr "%s on Foursquare"
 
-#: ../functions/simplecatch_functions.php:525
+#: ../functions/simplecatch_functions.php:526
 #, php-format
 msgid "%s on Flickr"
 msgstr "%s on Flickr"
 
-#: ../functions/simplecatch_functions.php:530
+#: ../functions/simplecatch_functions.php:531
 #, php-format
 msgid "%s on Tumblr"
 msgstr "%s on Tumblr"
 
-#: ../functions/simplecatch_functions.php:535
+#: ../functions/simplecatch_functions.php:536
 #, php-format
 msgid "%s on deviantART"
 msgstr "%s on deviantART"
 
-#: ../functions/simplecatch_functions.php:540
+#: ../functions/simplecatch_functions.php:541
 #, php-format
 msgid "%s on Dribbble"
 msgstr "%s on Dribbble"
 
-#: ../functions/simplecatch_functions.php:545
+#: ../functions/simplecatch_functions.php:546
 #, php-format
 msgid "%s on MySpace"
 msgstr "%s on MySpace"
 
-#: ../functions/simplecatch_functions.php:550
+#: ../functions/simplecatch_functions.php:551
 #, php-format
 msgid "%s on WordPress"
 msgstr "%s on WordPress"
 
-#: ../functions/simplecatch_functions.php:555
+#: ../functions/simplecatch_functions.php:556
 #, php-format
 msgid "%s on RSS"
 msgstr "%s on RSS"
 
-#: ../functions/simplecatch_functions.php:560
+#: ../functions/simplecatch_functions.php:561
 #, php-format
 msgid "%s on Delicious"
 msgstr "%s on Delicious"
 
-#: ../functions/simplecatch_functions.php:565
+#: ../functions/simplecatch_functions.php:566
 #, php-format
 msgid "%s on Last.fm"
 msgstr "%s on Last.fm"
 
-#: ../functions/simplecatch_functions.php:570
+#: ../functions/simplecatch_functions.php:571
 #, php-format
 msgid "%s on Instagram"
 msgstr "%s on Instagram"
 
-#: ../functions/simplecatch_functions.php:575
+#: ../functions/simplecatch_functions.php:576
 #, php-format
 msgid "%s on GitHub"
 msgstr "%s on GitHub"
 
-#: ../functions/simplecatch_functions.php:580
+#: ../functions/simplecatch_functions.php:581
 #, php-format
 msgid "%s on Vkontakte"
 msgstr "%s on Vkontakte"
 
-#: ../functions/simplecatch_functions.php:585
+#: ../functions/simplecatch_functions.php:586
 #, php-format
 msgid "%s on My World"
 msgstr "%s on My World"
 
-#: ../functions/simplecatch_functions.php:590
+#: ../functions/simplecatch_functions.php:591
 #, php-format
 msgid "%s on Odnoklassniki"
 msgstr "%s on Odnoklassniki"
 
-#: ../functions/simplecatch_functions.php:595
+#: ../functions/simplecatch_functions.php:596
 #, php-format
 msgid "%s on Goodreads"
 msgstr "%s on Goodreads"
 
-#: ../functions/simplecatch_functions.php:600
+#: ../functions/simplecatch_functions.php:601
 #, php-format
 msgid "%s on Skype"
 msgstr "%s on Skype"
 
-#: ../functions/simplecatch_functions.php:754
+#: ../functions/simplecatch_functions.php:606
+#, php-format
+msgid "%s on Soundcloud"
+msgstr "%s on Soundcloud"
+
+#: ../functions/simplecatch_functions.php:760
 msgid "Powered By:"
 msgstr "Powered By:"
 
-#: ../functions/simplecatch_functions.php:754
+#: ../functions/simplecatch_functions.php:760
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: ../functions/simplecatch_functions.php:754
+#: ../functions/simplecatch_functions.php:760
 msgid "Powered By WordPress"
 msgstr "Powered By WordPress"
 
-#: ../functions/simplecatch_functions.php:754
+#: ../functions/simplecatch_functions.php:760
 #: ../functions/panel/theme_options.php:705
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../functions/simplecatch_functions.php:754
+#: ../functions/simplecatch_functions.php:760
 msgid "Theme:"
 msgstr "主题："
 
-#: ../functions/simplecatch_functions.php:754
+#: ../functions/simplecatch_functions.php:760
 #: ../functions/panel/theme_options.php:118
 msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
-#: ../functions/simplecatch_functions.php:754
+#: ../functions/simplecatch_functions.php:760
 msgid "Simple Catch"
 msgstr "Simple Catch"
 
-#: ../functions/simplecatch_functions.php:941
+#: ../functions/simplecatch_functions.php:947
 msgid "Categories: "
 msgstr "分类"
 
-#: ../functions/simplecatch_functions.php:1009
+#: ../functions/simplecatch_functions.php:1015
 msgid "Name"
 msgstr "名称"
 
-#: ../functions/simplecatch_functions.php:1009
-#: ../functions/simplecatch_functions.php:1010
+#: ../functions/simplecatch_functions.php:1015
+#: ../functions/simplecatch_functions.php:1016
 msgid "( required )"
 msgstr "( 必要的 )"
 
-#: ../functions/simplecatch_functions.php:1010
+#: ../functions/simplecatch_functions.php:1016
 msgid "Email"
 msgstr "Email"
 
-#: ../functions/simplecatch_functions.php:1011
+#: ../functions/simplecatch_functions.php:1017
 msgid "Website"
 msgstr "网址"
 
-#: ../functions/simplecatch_functions.php:1042
+#: ../functions/simplecatch_functions.php:1048
 msgid "ID"
 msgstr "ID"
 
@@ -419,12 +424,12 @@ msgid "Upgrade to Simple Catch Pro"
 msgstr "升级到Simple Catch Pro"
 
 #: ../functions/panel/theme_options.php:129
-msgid "http://catchthemes.com/support-forum/forum/simple-catch-public/"
-msgstr "http://catchthemes.com/support-forum/forum/simple-catch-public/"
+msgid "http://catchthemes.com/support/"
+msgstr "http://catchthemes.com/support/"
 
 #: ../functions/panel/theme_options.php:129
-msgid "Support Forum"
-msgstr "论坛支持"
+msgid "Support"
+msgstr "Support"
 
 #: ../functions/panel/theme_options.php:130
 msgid "http://catchthemes.com/theme-instructions/simple-catch/"
@@ -547,8 +552,8 @@ msgstr "禁用底部logo"
 #: ../functions/panel/theme_options.php:540
 #: ../functions/panel/theme_options.php:573
 #: ../functions/panel/theme_options.php:624
-#: ../functions/panel/theme_options.php:760
-#: ../functions/panel/theme_options.php:791
+#: ../functions/panel/theme_options.php:765
+#: ../functions/panel/theme_options.php:796
 msgid "Save"
 msgstr "保存"
 
@@ -910,29 +915,36 @@ msgstr "Goodreads"
 msgid "Skype"
 msgstr "Skype"
 
-#: ../functions/panel/theme_options.php:766
+#: ../functions/panel/theme_options.php:760
+msgid "Soundcloud"
+msgstr "Soundcloud"
+
+#: ../functions/panel/theme_options.php:771
 msgid "Header and Footer Codes"
 msgstr "Disable Fav Icon?"
 
-#: ../functions/panel/theme_options.php:771
+#: ../functions/panel/theme_options.php:776
 msgid "Code to display on Header"
 msgstr "显示在顶部代码"
 
-#: ../functions/panel/theme_options.php:777
+#: ../functions/panel/theme_options.php:782
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
 msgstr "注意：你能够将Google,Facebook等script放到这里，其将会载入到Header"
 
-#: ../functions/panel/theme_options.php:780
+#: ../functions/panel/theme_options.php:785
 msgid "Code to display on Footer"
 msgstr "显示在底部代码"
 
-#: ../functions/panel/theme_options.php:787
+#: ../functions/panel/theme_options.php:792
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"
 msgstr "注意：你能够将Google,Facebook等script放到这里，其将会载入到footer"
+
+#~ msgid "http://catchthemes.com/support-forum/forum/simple-catch-public/"
+#~ msgstr "http://catchthemes.com/support-forum/forum/simple-catch-public/"
 
 #~ msgid "Featured Slider Post #"
 #~ msgstr "特色幻灯片文章"

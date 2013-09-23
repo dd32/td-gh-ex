@@ -126,7 +126,7 @@ function simplecatch_theme_options_do_page() {
             
                 <div id="theme-support">
                     <ul>
-                        <li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/support-forum/forum/simple-catch-public/','simplecatch')); ?>" title="<?php esc_attr_e('Support Forum', 'simplecatch'); ?>" target="_blank"><?php printf(__('Support Forum','simplecatch')); ?></a></li>
+                        <li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/support/','simplecatch')); ?>" title="<?php esc_attr_e('Support', 'simplecatch'); ?>" target="_blank"><?php printf(__('Support','simplecatch')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/theme-instructions/simple-catch/','simplecatch')); ?>" title="<?php esc_attr_e('Theme Instruction', 'simplecatch'); ?>" target="_blank"><?php printf(__('Theme Instruction','simplecatch')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('https://www.facebook.com/catchthemes/','simplecatch')); ?>" title="<?php esc_attr_e('Like Catch Themes on Facebook', 'simplecatch'); ?>" target="_blank"><?php printf(__('Facebook','simplecatch')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('https://twitter.com/catchthemes/','simplecatch')); ?>" title="<?php esc_attr_e('Follow Catch Themes on Twitter', 'simplecatch'); ?>" target="_blank"><?php printf(__('Twitter','simplecatch')); ?></a></li>
@@ -753,9 +753,14 @@ function simplecatch_theme_options_do_page() {
                                 </tr>
                                 <tr>
                                     <th scope="row"><h4><?php _e( 'Skype', 'simplecatch' ); ?> </h4></th>
-                                    <td><input type="text" size="45" name="simplecatch_options[social_skype]" value="<?php echo esc_url( $options[ 'social_skype' ] ); ?>" />
+                                    <td><input type="text" size="45" name="simplecatch_options[social_skype]" value="<?php echo esc_attr( $options[ 'social_skype' ] ); ?>" />
                                     </td>
-                                </tr>                                                             
+                                </tr>  
+                                <tr>
+                                    <th scope="row"><h4><?php _e( 'Soundcloud', 'simplecatch' ); ?> </h4></th>
+                                    <td><input type="text" size="45" name="simplecatch_options[social_soundcloud]" value="<?php echo esc_url( $options[ 'social_soundcloud' ] ); ?>" />
+                                    </td>
+                                </tr>                                                           
                             </tbody>
                         </table><p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p>      
                 	</div><!-- .option-container -->                       
@@ -1008,7 +1013,10 @@ function simplecatch_theme_options_validate( $options ) {
 		$input_validated[ 'social_goodreads' ] = esc_url_raw( $input[ 'social_goodreads' ] );
 	}
 	if( isset( $input[ 'social_skype' ] ) ) {
-		$input_validated[ 'social_skype' ] = esc_url_raw( $input[ 'social_skype' ] );
+		$input_validated[ 'social_skype' ] = sanitize_text_field( $input[ 'social_skype' ] );
+	}	
+	if( isset( $input[ 'social_soundcloud' ] ) ) {
+		$input_validated[ 'social_soundcloud' ] = esc_url_raw( $input[ 'social_soundcloud' ] );
 	}	
 	
 	//Custom CSS Style Validation

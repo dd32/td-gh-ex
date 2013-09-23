@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-29 21:18+0545\n"
-"PO-Revision-Date: 2013-08-29 21:18+0545\n"
+"POT-Creation-Date: 2013-09-24 00:41+0545\n"
+"PO-Revision-Date: 2013-09-24 00:41+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Thomas Gerard <beldin2000@gmail.com>\n"
 "Language: nl_NL\n"
@@ -58,17 +58,17 @@ msgstr ""
 "te zien."
 
 #: ../comments.php:29 ../content.php:46 ../image.php:48 ../page-blog.php:69
-#: ../functions/simplecatch_functions.php:927
+#: ../functions/simplecatch_functions.php:933
 msgid "No Comments"
 msgstr "Geen reacties"
 
 #: ../comments.php:29 ../content.php:46 ../image.php:48 ../page-blog.php:69
-#: ../functions/simplecatch_functions.php:927
+#: ../functions/simplecatch_functions.php:933
 msgid "1 Comment"
 msgstr "Eén reactie"
 
 #: ../comments.php:29 ../content.php:46 ../image.php:48 ../page-blog.php:69
-#: ../functions/simplecatch_functions.php:927
+#: ../functions/simplecatch_functions.php:933
 msgid "% Comments"
 msgstr "% reacties"
 
@@ -82,7 +82,7 @@ msgid "Permalink to %s"
 msgstr "Permalink naar %s"
 
 #: ../content.php:44 ../image.php:46 ../page-blog.php:67
-#: ../functions/simplecatch_functions.php:925
+#: ../functions/simplecatch_functions.php:931
 msgid "By"
 msgstr "Door"
 
@@ -118,11 +118,11 @@ msgstr "Vorige afbeelding"
 msgid "Next Image"
 msgstr "Volgende afbeelding"
 
-#: ../page-blog.php:97 ../functions/simplecatch_functions.php:1137
+#: ../page-blog.php:97 ../functions/simplecatch_functions.php:1143
 msgid "Previous"
 msgstr "Vorige"
 
-#: ../page-blog.php:98 ../functions/simplecatch_functions.php:1138
+#: ../page-blog.php:98 ../functions/simplecatch_functions.php:1144
 msgid "Next"
 msgstr "Volgende"
 
@@ -162,183 +162,188 @@ msgstr "%s"
 msgid "Page %s"
 msgstr "Pagina %s"
 
-#: ../functions/simplecatch_functions.php:480
+#: ../functions/simplecatch_functions.php:481
 #, php-format
 msgid "%s on Facebook"
 msgstr "%s op Facebook"
 
-#: ../functions/simplecatch_functions.php:485
+#: ../functions/simplecatch_functions.php:486
 #, php-format
 msgid "%s on Twitter"
 msgstr "%s op Twitter"
 
-#: ../functions/simplecatch_functions.php:490
+#: ../functions/simplecatch_functions.php:491
 #, php-format
 msgid "%s on Google+"
 msgstr "%s op Google+"
 
-#: ../functions/simplecatch_functions.php:495
+#: ../functions/simplecatch_functions.php:496
 #, php-format
 msgid "%s on Linkedin"
 msgstr "%s op Linkedin"
 
-#: ../functions/simplecatch_functions.php:500
+#: ../functions/simplecatch_functions.php:501
 #, php-format
 msgid "%s on Pinterest"
 msgstr "%s op Pinterest"
 
-#: ../functions/simplecatch_functions.php:505
+#: ../functions/simplecatch_functions.php:506
 #, php-format
 msgid "%s on YouTube"
 msgstr "%s op YouTube"
 
-#: ../functions/simplecatch_functions.php:510
+#: ../functions/simplecatch_functions.php:511
 #, php-format
 msgid "%s on Vimeo"
 msgstr "%s op Vimeo"
 
-#: ../functions/simplecatch_functions.php:515
+#: ../functions/simplecatch_functions.php:516
 #, php-format
 msgid "%s on Slideshare"
 msgstr "%s op Slideshare"
 
-#: ../functions/simplecatch_functions.php:520
+#: ../functions/simplecatch_functions.php:521
 #, php-format
 msgid "%s on Foursquare"
 msgstr "%s op Foursquare"
 
-#: ../functions/simplecatch_functions.php:525
+#: ../functions/simplecatch_functions.php:526
 #, php-format
 msgid "%s on Flickr"
 msgstr "%s op Flickr"
 
-#: ../functions/simplecatch_functions.php:530
+#: ../functions/simplecatch_functions.php:531
 #, php-format
 msgid "%s on Tumblr"
 msgstr "%s op Tumblr"
 
-#: ../functions/simplecatch_functions.php:535
+#: ../functions/simplecatch_functions.php:536
 #, php-format
 msgid "%s on deviantART"
 msgstr "%s op deviantART"
 
-#: ../functions/simplecatch_functions.php:540
+#: ../functions/simplecatch_functions.php:541
 #, php-format
 msgid "%s on Dribbble"
 msgstr "%s op Dribbble"
 
-#: ../functions/simplecatch_functions.php:545
+#: ../functions/simplecatch_functions.php:546
 #, php-format
 msgid "%s on MySpace"
 msgstr "%s opMySpace"
 
-#: ../functions/simplecatch_functions.php:550
+#: ../functions/simplecatch_functions.php:551
 #, php-format
 msgid "%s on WordPress"
 msgstr "%s op WordPress"
 
-#: ../functions/simplecatch_functions.php:555
+#: ../functions/simplecatch_functions.php:556
 #, php-format
 msgid "%s on RSS"
 msgstr "%s op RSS"
 
-#: ../functions/simplecatch_functions.php:560
+#: ../functions/simplecatch_functions.php:561
 #, php-format
 msgid "%s on Delicious"
 msgstr "%s op Delicious"
 
-#: ../functions/simplecatch_functions.php:565
+#: ../functions/simplecatch_functions.php:566
 #, php-format
 msgid "%s on Last.fm"
 msgstr "%s op Last.fm"
 
-#: ../functions/simplecatch_functions.php:570
+#: ../functions/simplecatch_functions.php:571
 #, php-format
 msgid "%s on Instagram"
 msgstr "%s op Instagram"
 
-#: ../functions/simplecatch_functions.php:575
+#: ../functions/simplecatch_functions.php:576
 #, php-format
 msgid "%s on GitHub"
 msgstr "%s op GitHub"
 
-#: ../functions/simplecatch_functions.php:580
+#: ../functions/simplecatch_functions.php:581
 #, php-format
 msgid "%s on Vkontakte"
 msgstr "%s on Vkontakte"
 
-#: ../functions/simplecatch_functions.php:585
+#: ../functions/simplecatch_functions.php:586
 #, php-format
 msgid "%s on My World"
 msgstr "%s op My World"
 
-#: ../functions/simplecatch_functions.php:590
+#: ../functions/simplecatch_functions.php:591
 #, php-format
 msgid "%s on Odnoklassniki"
 msgstr "%s op Odnoklassniki"
 
-#: ../functions/simplecatch_functions.php:595
+#: ../functions/simplecatch_functions.php:596
 #, php-format
 msgid "%s on Goodreads"
 msgstr "%s op Goodreads"
 
-#: ../functions/simplecatch_functions.php:600
+#: ../functions/simplecatch_functions.php:601
 #, php-format
 msgid "%s on Skype"
 msgstr "%s op Skype"
 
-#: ../functions/simplecatch_functions.php:754
+#: ../functions/simplecatch_functions.php:606
+#, php-format
+msgid "%s on Soundcloud"
+msgstr "%s op Soundcloud"
+
+#: ../functions/simplecatch_functions.php:760
 msgid "Powered By:"
 msgstr "Met de hulp van: "
 
-#: ../functions/simplecatch_functions.php:754
+#: ../functions/simplecatch_functions.php:760
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: ../functions/simplecatch_functions.php:754
+#: ../functions/simplecatch_functions.php:760
 msgid "Powered By WordPress"
 msgstr "Met dank aan Wordpress"
 
-#: ../functions/simplecatch_functions.php:754
+#: ../functions/simplecatch_functions.php:760
 #: ../functions/panel/theme_options.php:705
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../functions/simplecatch_functions.php:754
+#: ../functions/simplecatch_functions.php:760
 msgid "Theme:"
 msgstr "Thema:"
 
-#: ../functions/simplecatch_functions.php:754
+#: ../functions/simplecatch_functions.php:760
 #: ../functions/panel/theme_options.php:118
 msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
-#: ../functions/simplecatch_functions.php:754
+#: ../functions/simplecatch_functions.php:760
 msgid "Simple Catch"
 msgstr "Simple Catch"
 
-#: ../functions/simplecatch_functions.php:941
+#: ../functions/simplecatch_functions.php:947
 msgid "Categories: "
 msgstr "Categorieën: "
 
-#: ../functions/simplecatch_functions.php:1009
+#: ../functions/simplecatch_functions.php:1015
 msgid "Name"
 msgstr "Naam"
 
-#: ../functions/simplecatch_functions.php:1009
-#: ../functions/simplecatch_functions.php:1010
+#: ../functions/simplecatch_functions.php:1015
+#: ../functions/simplecatch_functions.php:1016
 msgid "( required )"
 msgstr "( verplicht )"
 
-#: ../functions/simplecatch_functions.php:1010
+#: ../functions/simplecatch_functions.php:1016
 msgid "Email"
 msgstr "E-mail"
 
-#: ../functions/simplecatch_functions.php:1011
+#: ../functions/simplecatch_functions.php:1017
 msgid "Website"
 msgstr "Website"
 
-#: ../functions/simplecatch_functions.php:1042
+#: ../functions/simplecatch_functions.php:1048
 msgid "ID"
 msgstr "ID"
 
@@ -427,12 +432,12 @@ msgid "Upgrade to Simple Catch Pro"
 msgstr "Upgrade naar Simple Catch Pro"
 
 #: ../functions/panel/theme_options.php:129
-msgid "http://catchthemes.com/support-forum/forum/simple-catch-public/"
-msgstr "http://catchthemes.com/support-forum/forum/simple-catch-public/"
+msgid "http://catchthemes.com/support/"
+msgstr "http://catchthemes.com/support/"
 
 #: ../functions/panel/theme_options.php:129
-msgid "Support Forum"
-msgstr "Ondersteunings Forum"
+msgid "Support"
+msgstr "Support"
 
 #: ../functions/panel/theme_options.php:130
 msgid "http://catchthemes.com/theme-instructions/simple-catch/"
@@ -555,8 +560,8 @@ msgstr "Logo in de voettekst uitzetten?"
 #: ../functions/panel/theme_options.php:540
 #: ../functions/panel/theme_options.php:573
 #: ../functions/panel/theme_options.php:624
-#: ../functions/panel/theme_options.php:760
-#: ../functions/panel/theme_options.php:791
+#: ../functions/panel/theme_options.php:765
+#: ../functions/panel/theme_options.php:796
 msgid "Save"
 msgstr "Bewaar"
 
@@ -922,15 +927,19 @@ msgstr "Goodreads"
 msgid "Skype"
 msgstr "Skype"
 
-#: ../functions/panel/theme_options.php:766
+#: ../functions/panel/theme_options.php:760
+msgid "Soundcloud"
+msgstr "Soundcloud"
+
+#: ../functions/panel/theme_options.php:771
 msgid "Header and Footer Codes"
 msgstr "Hoofding en voettekst Codes"
 
-#: ../functions/panel/theme_options.php:771
+#: ../functions/panel/theme_options.php:776
 msgid "Code to display on Header"
 msgstr "Code weer te geven in de hoofding"
 
-#: ../functions/panel/theme_options.php:777
+#: ../functions/panel/theme_options.php:782
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
@@ -938,17 +947,20 @@ msgstr ""
 "Tip: hier kan je scripts van Google, Facebook enz invullen, die geladen "
 "zullen worden in de hoofding"
 
-#: ../functions/panel/theme_options.php:780
+#: ../functions/panel/theme_options.php:785
 msgid "Code to display on Footer"
 msgstr "Code weer te geven in de voettekst"
 
-#: ../functions/panel/theme_options.php:787
+#: ../functions/panel/theme_options.php:792
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"
 msgstr ""
 "Tip: hier kan je scripts van Google, Facebook enz invullen, die geladen "
 "zullen worden in de voettekst"
+
+#~ msgid "http://catchthemes.com/support-forum/forum/simple-catch-public/"
+#~ msgstr "http://catchthemes.com/support-forum/forum/simple-catch-public/"
 
 #~ msgid "Featured Slider Post #"
 #~ msgstr "Uitgelichte tekst #"
