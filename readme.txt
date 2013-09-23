@@ -1,0 +1,34 @@
+--------------------------------------------------------
+Thanks for Downloading Optimize theme
+--------------------------------------------------------
+I made this for free to use if you find any bug or error please
+You can directly contact us: http://www.wrock.org/seo-optimized
+also suggestion are welcome
+
+
+--------------------------Optimize------------------------
+Features:
+
+Theme have many features like some main are listed below
+
+Theme option:
+-upload favicon from theme option by url
+-Customize you site backgroud color or image
+-show 5 latest posts with thumbnail in right sidebar -activate from theme option > General settings
+-enable search from theme option > General settings
+
+Advertise:
+-Add text link below navigation
+-Ads supports single post and footer best for adsense
+
+Social:
+-Add you fan page or follow page of Facebook, twitter, Rss feed, Google+, Linkedin from theme option > Social Media
+
+Custom Css:
+-Also support for Custom Css with you have not need to change main style.css file
+
+
+== Change log ==
+
+= 1.0 =
+*Initial Release @ 1.0
