@@ -826,7 +826,13 @@ function catchbox_theme_options_render_page() {
                                 
                                 <tr>
                                     <th scope="row"><label><?php _e( 'Skype', 'catchbox' ); ?></label></th>
-                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_skype]" value="<?php if ( isset( $options[ 'social_skype' ] ) ) echo esc_url( $options[ 'social_skype' ] ); ?>" />
+                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_skype]" value="<?php if ( isset( $options[ 'social_skype' ] ) ) echo esc_attr( $options[ 'social_skype' ] ); ?>" />
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <th scope="row"><label><?php _e( 'Soundcloud', 'catchbox' ); ?></label></th>
+                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_soundcloud]" value="<?php if ( isset( $options[ 'social_soundcloud' ] ) ) echo esc_url( $options[ 'social_soundcloud' ] ); ?>" />
                                     </td>
                                 </tr>
                                 
@@ -1019,7 +1025,10 @@ function catchbox_options_social_links_validation( $options ) {
 		$options_validated[ 'social_instagram' ] = esc_url_raw( $options[ 'social_instagram' ] );
 	//Skype
 	if( isset( $options[ 'social_skype' ] ) )
-		$options_validated[ 'social_skype' ] = esc_url_raw( $options[ 'social_skype' ] );
+		$options_validated[ 'social_skype' ] = sanitize_text_field( $options[ 'social_skype' ] );
+	//Soundcloud
+	if( isset( $options[ 'social_soundcloud' ] ) )
+		$options_validated[ 'social_soundcloud' ] = esc_url_raw( $options[ 'social_soundcloud' ] );		
 	
 	//Clearing the theme option cache
 	if( function_exists( 'catchbox_themeoption_invalidate_caches' ) )  { catchbox_themeoption_invalidate_caches(); }

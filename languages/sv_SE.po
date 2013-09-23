@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-29 22:36+0545\n"
-"PO-Revision-Date: 2013-08-29 22:36+0545\n"
+"POT-Creation-Date: 2013-09-24 01:29+0545\n"
+"PO-Revision-Date: 2013-09-24 01:29+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Johnny Eriksson <info@johnnysblogg.se>\n"
 "Language: sv\n"
@@ -458,52 +458,52 @@ msgstr "Namn"
 msgid "Email"
 msgstr "E-post"
 
-#: ../functions.php:1337
+#: ../functions.php:1342
 msgid "Primary menu"
 msgstr "Huvudmeny"
 
-#: ../functions.php:1339 ../functions.php:1372
+#: ../functions.php:1344 ../functions.php:1377
 msgid "Skip to primary content"
 msgstr "G&aring; till huvudsakligt inneh&aring;ll"
 
-#: ../functions.php:1340 ../functions.php:1373
+#: ../functions.php:1345 ../functions.php:1378
 msgid "Skip to secondary content"
 msgstr "G&aring; till sekund&auml;rt inneh&aring;ll"
 
-#: ../functions.php:1370
+#: ../functions.php:1375
 msgid "Secondary menu"
 msgstr "Sidomeny"
 
-#: ../functions.php:1392
+#: ../functions.php:1397
 msgid "Copyright &copy;"
 msgstr "Copyright &copy;"
 
-#: ../functions.php:1396
+#: ../functions.php:1401
 msgid ". All Rights Reserved."
 msgstr ". Alla r&auml;ttigheter f&ouml;rbeh&aring;lls."
 
-#: ../functions.php:1399
+#: ../functions.php:1404
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: ../functions.php:1399
+#: ../functions.php:1404
 msgid "Powered by WordPress"
 msgstr "Drivs med Wordpress"
 
-#: ../functions.php:1399
+#: ../functions.php:1404
 #, php-format
 msgid "Powered by %s"
 msgstr "Drivs med %s"
 
-#: ../functions.php:1401 ../inc/theme-options.php:593
+#: ../functions.php:1406 ../inc/theme-options.php:593
 msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
-#: ../functions.php:1401
+#: ../functions.php:1406
 msgid "Theme Catch Box by Catch Themes"
 msgstr "Tema Catch Box av Catch Internet"
 
-#: ../functions.php:1401
+#: ../functions.php:1406
 #, php-format
 msgid "Theme: %s"
 msgstr "Tema: %s"
@@ -807,7 +807,7 @@ msgstr ""
 "f&ouml;rstasidans framh&auml;vda bildspel"
 
 #: ../inc/theme-options.php:670 ../inc/theme-options.php:716
-#: ../inc/theme-options.php:836 ../inc/theme-options.php:876
+#: ../inc/theme-options.php:842 ../inc/theme-options.php:882
 msgid "Save"
 msgstr "Spara"
 
@@ -935,7 +935,11 @@ msgstr "Instagram"
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/theme-options.php:835
+#: ../inc/theme-options.php:834
+msgid "Soundcloud"
+msgstr "Soundcloud"
+
+#: ../inc/theme-options.php:841
 msgid ""
 "<strong>Note:</strong> Enter the url for correponding social networking "
 "website"
@@ -943,15 +947,15 @@ msgstr ""
 "<strong>OBS:</strong> Ange URL:en till motsvarande socialt n&auml;tverks "
 "webbsida"
 
-#: ../inc/theme-options.php:849
+#: ../inc/theme-options.php:855
 msgid "Header and Footer Code"
 msgstr "Header and Footer Code"
 
-#: ../inc/theme-options.php:854
+#: ../inc/theme-options.php:860
 msgid "Code to display on Header"
 msgstr "Code to display on Header"
 
-#: ../inc/theme-options.php:861
+#: ../inc/theme-options.php:867
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
@@ -959,11 +963,11 @@ msgstr ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
 
-#: ../inc/theme-options.php:865
+#: ../inc/theme-options.php:871
 msgid "Code to display on Footer"
 msgstr "Code to display on Footer"
 
-#: ../inc/theme-options.php:872
+#: ../inc/theme-options.php:878
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"

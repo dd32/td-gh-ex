@@ -114,44 +114,6 @@ input#s {
 /* =Header
 ----------------------------------------------- */
 
-
-/* =Menu
--------------------------------------------------------------- */
-
-#access {
-	float: right;
-}
-#access ul {
-	margin: 0 -0.8125em 0 0;
-	padding-right: 0;
-}
-#access li {
-	float: right;
-}
-#access ul ul {
-	float: right;
-	left: auto;
-	right: 0;
-}
-#access ul ul ul {
-	left: auto;
-	right: 100%;
-}
-#branding ul.menu li {
-	float:right; 
-	border-left: 1px solid #444;
-	border-right: none;
-}
-#colophon #access-footer ul.menu li { 
-	float:right;
-	border-right:1px solid #444;
-	border-left:none;
-}
-#branding #access-secondary ul.menu li {
-	border-right:none;
-	border-left:1px solid #dedede;
-}
-
 /* Search Form */
 #branding #searchform {
 	right: auto;
@@ -164,6 +126,38 @@ input#s {
 #branding .only-search + #access div {
 	padding-right: 0;
 	padding-left: 205px;
+}
+
+
+/* =Menu
+-------------------------------------------------------------- */
+
+#branding ul.menu li, 
+#branding #access-secondary ul.menu li,
+#colophon #access-footer ul.menu li { 
+	float: right;
+	border-left: none;
+}
+#branding ul.menu li, 
+#colophon #access-footer ul.menu li {
+	border-right: 1px solid #444;
+}
+#branding #access-secondary ul.menu li {
+	border-right: 1px solid #dedede;
+}
+#access ul ul,
+#branding #access-secondary ul ul {
+	float: right;
+	left: auto;
+	right: 0;
+}
+#access ul ul ul,
+#branding #access-secondary ul ul ul {
+	left: auto;
+	right: 100%;
+}
+#branding #access-secondary ul.menu ul li {
+	border: none;
 }
 
 

@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-29 22:35+0545\n"
-"PO-Revision-Date: 2013-08-29 22:35+0545\n"
+"POT-Creation-Date: 2013-09-24 01:28+0545\n"
+"PO-Revision-Date: 2013-09-24 01:28+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Piotrekkk\n"
 "Language: pl\n"
@@ -462,52 +462,52 @@ msgstr "Podpis"
 msgid "Email"
 msgstr "Email"
 
-#: ../functions.php:1337
+#: ../functions.php:1342
 msgid "Primary menu"
 msgstr "Główne menu"
 
-#: ../functions.php:1339 ../functions.php:1372
+#: ../functions.php:1344 ../functions.php:1377
 msgid "Skip to primary content"
 msgstr "Przeskocz do tekstu"
 
-#: ../functions.php:1340 ../functions.php:1373
+#: ../functions.php:1345 ../functions.php:1378
 msgid "Skip to secondary content"
 msgstr "Przeskocz do widgetów"
 
-#: ../functions.php:1370
+#: ../functions.php:1375
 msgid "Secondary menu"
 msgstr "Drugie menu"
 
-#: ../functions.php:1392
+#: ../functions.php:1397
 msgid "Copyright &copy;"
 msgstr "Copyright &copy;"
 
-#: ../functions.php:1396
+#: ../functions.php:1401
 msgid ". All Rights Reserved."
 msgstr ". Wszelkie prawa zastrzeżone."
 
-#: ../functions.php:1399
+#: ../functions.php:1404
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: ../functions.php:1399
+#: ../functions.php:1404
 msgid "Powered by WordPress"
 msgstr "Dumnie wspierane przez WordPressa"
 
-#: ../functions.php:1399
+#: ../functions.php:1404
 #, php-format
 msgid "Powered by %s"
 msgstr "Dumnie wspierane przez %s"
 
-#: ../functions.php:1401 ../inc/theme-options.php:593
+#: ../functions.php:1406 ../inc/theme-options.php:593
 msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
-#: ../functions.php:1401
+#: ../functions.php:1406
 msgid "Theme Catch Box by Catch Themes"
 msgstr "Theme Catch Box by Catch Themes"
 
-#: ../functions.php:1401
+#: ../functions.php:1406
 #, php-format
 msgid "Theme: %s"
 msgstr "Motyw: %s"
@@ -811,7 +811,7 @@ msgstr ""
 "pokazie slajdów na stronie głównej."
 
 #: ../inc/theme-options.php:670 ../inc/theme-options.php:716
-#: ../inc/theme-options.php:836 ../inc/theme-options.php:876
+#: ../inc/theme-options.php:842 ../inc/theme-options.php:882
 msgid "Save"
 msgstr "Zapisz"
 
@@ -939,22 +939,26 @@ msgstr "Instagram"
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/theme-options.php:835
+#: ../inc/theme-options.php:834
+msgid "Soundcloud"
+msgstr "Soundcloud"
+
+#: ../inc/theme-options.php:841
 msgid ""
 "<strong>Note:</strong> Enter the url for correponding social networking "
 "website"
 msgstr ""
 "<strong>Rada:</strong> Wpisz adres odpowiedniej strony społecznościowej"
 
-#: ../inc/theme-options.php:849
+#: ../inc/theme-options.php:855
 msgid "Header and Footer Code"
 msgstr "Header and Footer Code"
 
-#: ../inc/theme-options.php:854
+#: ../inc/theme-options.php:860
 msgid "Code to display on Header"
 msgstr "Kod do wyświetlenia w nagłówku"
 
-#: ../inc/theme-options.php:861
+#: ../inc/theme-options.php:867
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
@@ -962,11 +966,11 @@ msgstr ""
 "Rada: Tutaj możesz wpisać kod skryptu od Google, Facebooka, itp. który "
 "będzie załadowany w nagłówku"
 
-#: ../inc/theme-options.php:865
+#: ../inc/theme-options.php:871
 msgid "Code to display on Footer"
 msgstr "Kod do wyświetlenia w stopce"
 
-#: ../inc/theme-options.php:872
+#: ../inc/theme-options.php:878
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"

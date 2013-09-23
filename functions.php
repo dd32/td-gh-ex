@@ -1181,7 +1181,12 @@ function catchbox_socialprofile() {
 					//skype
 					if ( !empty( $options[ 'social_skype' ] ) ) {
 						$catchbox_socialprofile .= '<li class="skype"><a href="'.$options[ 'social_skype' ].'" title="Skype" target="_blank">Skype</a></li>';
-					}	
+					}
+					
+					//Soundcloud
+					if ( !empty( $options[ 'social_soundcloud' ] ) ) {
+						$catchbox_socialprofile .= '<li class="soundcloud"><a href="'.$options[ 'social_soundcloud' ].'" title="Instagram" target="_blank">Soundcloud</a></li>';
+					}
 					
 					$catchbox_socialprofile .= '
 				</ul>

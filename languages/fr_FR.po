@@ -2,19 +2,20 @@
 # This file is distributed under the  GNU General Public License.
 msgid ""
 msgstr ""
-"Project-Id-Version: Catch Box\n"
+"Project-Id-Version: Catch Box 2.7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-29 22:34+0545\n"
-"PO-Revision-Date: 2013-08-29 22:35+0545\n"
+"POT-Creation-Date: 2013-09-24 01:27+0545\n"
+"PO-Revision-Date: 2013-09-24 01:27+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
-"Language-Team: D'CLIC <contact@dclic.info>\n"
+"Language-Team: D'CLIC, L Capronnier <contact@dclic.info, lcapronnier@yahoo."
+"Com>\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
-"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.5.7\n"
 "X-Poedit-SearchPath-0: ..\n"
@@ -125,15 +126,15 @@ msgstr[1] "%1$s commentaires à propos de &ldquo;%2$s&rdquo;"
 
 #: ../comments.php:40 ../comments.php:60
 msgid "Comment navigation"
-msgstr "Navigation des commentaires"
+msgstr "Navigation dans les commentaires"
 
 #: ../comments.php:41 ../comments.php:61
 msgid "&larr; Older Comments"
-msgstr "&larr; Commentaires plus anciens"
+msgstr "&larr; Commentaires les plus anciens"
 
 #: ../comments.php:42 ../comments.php:62
 msgid "Newer Comments &rarr;"
-msgstr "Commentaires plus récents &rarr;"
+msgstr "Commentaires les plus récents &rarr;"
 
 #: ../comments.php:72
 msgid "Comments are closed."
@@ -205,7 +206,7 @@ msgstr "<b>%</b> réponses"
 #: ../content-status.php:51 ../content.php:100 ../functions.php:646
 #: ../functions.php:674 ../image.php:97
 msgid "Edit"
-msgstr "Éditer"
+msgstr "Modifier"
 
 #: ../content-featured.php:35 ../content-featured.php:44
 #: ../content-gallery.php:68 ../content-gallery.php:78 ../content-image.php:53
@@ -236,13 +237,13 @@ msgstr ""
 
 #: ../content-gallery.php:17
 msgid "Gallery"
-msgstr "Gallery"
+msgstr "Album"
 
 #: ../content-gallery.php:47
 #, php-format
 msgid "This gallery contains <a %1$s>%2$s photo</a>."
 msgid_plural "This gallery contains <a %1$s>%2$s photos</a>."
-msgstr[0] "Cet album contient <a %1$s>%2$s photos</a>."
+msgstr[0] "Cet album contient <a %1$s>%2$s photo</a>."
 msgstr[1] "Cet album contient <a %1$s>%2$s photos</a>."
 
 #: ../content-gallery.php:72 ../content-image.php:57 ../content-quote.php:54
@@ -359,15 +360,15 @@ msgstr "Menu de bas de page"
 
 #: ../functions.php:198
 msgid "Garden"
-msgstr "Garden"
+msgstr "Jardin"
 
 #: ../functions.php:204
 msgid "Flower"
-msgstr "Flower"
+msgstr "Fleur"
 
 #: ../functions.php:210
 msgid "Mountain"
-msgstr "Mountain"
+msgstr "Montagne"
 
 #: ../functions.php:368
 #, php-format
@@ -380,19 +381,19 @@ msgstr "Colonne latérale"
 
 #: ../functions.php:476
 msgid "Footer Area One"
-msgstr "Footer Area One"
+msgstr "Zone 1 de pied de page"
 
 #: ../functions.php:478 ../functions.php:488 ../functions.php:498
 msgid "An optional widget area for your site footer"
-msgstr "An optional widget area for your site footer"
+msgstr "Une zone optionelle pour le pied de page de votre site"
 
 #: ../functions.php:486
 msgid "Footer Area Two"
-msgstr "Footer Area Two"
+msgstr "Zone 2 de pied de page"
 
 #: ../functions.php:496
 msgid "Footer Area Three"
-msgstr "Footer Area Three"
+msgstr "Zone 3 de pied de page"
 
 #: ../functions.php:530 ../functions.php:559 ../single.php:15
 msgid "Post navigation"
@@ -400,11 +401,11 @@ msgstr "Navigation"
 
 #: ../functions.php:538 ../functions.php:567
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr "<span class=\"meta-nav\">&larr;</span> Plus anciens"
+msgstr "<span class=\"meta-nav\">&larr;</span> Articles plus anciens"
 
 #: ../functions.php:539 ../functions.php:568
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Plus récents <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Articles plus récents <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../functions.php:646
 msgid "Pingback:"
@@ -449,58 +450,58 @@ msgstr "ID"
 
 #: ../functions.php:974
 msgid "Name"
-msgstr "Name"
+msgstr "Nom"
 
 #: ../functions.php:976
 msgid "Email"
 msgstr "E-mail"
 
-#: ../functions.php:1337
+#: ../functions.php:1342
 msgid "Primary menu"
 msgstr "Menu principal"
 
-#: ../functions.php:1339 ../functions.php:1372
+#: ../functions.php:1344 ../functions.php:1377
 msgid "Skip to primary content"
 msgstr "Aller au contenu principal"
 
-#: ../functions.php:1340 ../functions.php:1373
+#: ../functions.php:1345 ../functions.php:1378
 msgid "Skip to secondary content"
 msgstr "Aller au contenu secondaire"
 
-#: ../functions.php:1370
+#: ../functions.php:1375
 msgid "Secondary menu"
 msgstr "Menu secondaire"
 
-#: ../functions.php:1392
+#: ../functions.php:1397
 msgid "Copyright &copy;"
 msgstr "Copyright &copy;"
 
-#: ../functions.php:1396
+#: ../functions.php:1401
 msgid ". All Rights Reserved."
 msgstr ". Tous Droits Réservés."
 
-#: ../functions.php:1399
+#: ../functions.php:1404
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: ../functions.php:1399
+#: ../functions.php:1404
 msgid "Powered by WordPress"
 msgstr "Propulsé par WordPress "
 
-#: ../functions.php:1399
+#: ../functions.php:1404
 #, php-format
 msgid "Powered by %s"
 msgstr "Propulsé par %s"
 
-#: ../functions.php:1401 ../inc/theme-options.php:593
+#: ../functions.php:1406 ../inc/theme-options.php:593
 msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
-#: ../functions.php:1401
+#: ../functions.php:1406
 msgid "Theme Catch Box by Catch Themes"
 msgstr "Thème Catch Box par Catch Themes"
 
-#: ../functions.php:1401
+#: ../functions.php:1406
 #, php-format
 msgid "Theme: %s"
 msgstr "Thème: %s"
@@ -578,7 +579,7 @@ msgstr "Web Clip Icon URL"
 
 #: ../inc/theme-options.php:102
 msgid "Color Scheme"
-msgstr "Ensemble de couleur"
+msgstr "Ensemble de couleurs"
 
 #: ../inc/theme-options.php:110
 msgid "Link Color"
@@ -598,23 +599,25 @@ msgstr "Longueur du résumé en mots"
 
 #: ../inc/theme-options.php:142
 msgid "Feed Redirect URL"
-msgstr "Feed Redirect URL"
+msgstr "URL de redirection pour flux"
 
 #: ../inc/theme-options.php:150
 msgid "Move Site Title and Tagline?"
-msgstr "Move Site Title and Tagline?"
+msgstr "Déplacer le titre du site et le fil d'ariane ?"
 
 #: ../inc/theme-options.php:158
 msgid "Disable Search in Header?"
-msgstr "Disable Search in Header?"
+msgstr "Supprimer la recherche dans l'entête ?"
 
 #: ../inc/theme-options.php:166
 msgid "Enable Secondary & Footer Menu in Mobile Devices?"
-msgstr "Enable Secondary & Footer Menu in Mobile Devices?"
+msgstr ""
+"Activer le menu secondaire et celui du pied de page dans les terminaux "
+"mobiles ?"
 
 #: ../inc/theme-options.php:174
 msgid "Custom CSS Styles"
-msgstr "Custom CSS Styles"
+msgstr "Personnalisation des styles CSS"
 
 #: ../inc/theme-options.php:211 ../inc/theme-options.php:212
 #: ../inc/theme-options.php:618
@@ -623,11 +626,11 @@ msgstr "Options du thème"
 
 #: ../inc/theme-options.php:234
 msgid "Add/Change Favicon"
-msgstr "Add/Change Favicon"
+msgstr "Ajouter/modifier la Favicon"
 
 #: ../inc/theme-options.php:248
 msgid "Add/Change Web Clip Icon"
-msgstr "Add/Change Web Clip Icon"
+msgstr "Ajouter/Modifier l'icône Web Clip"
 
 #: ../inc/theme-options.php:262
 msgid "Light"
@@ -643,7 +646,7 @@ msgstr "Bleu"
 
 #: ../inc/theme-options.php:280
 msgid "Green"
-msgstr "Green"
+msgstr "Vert"
 
 #: ../inc/theme-options.php:299
 msgid "Content on left"
@@ -680,7 +683,7 @@ msgstr "mots"
 
 #: ../inc/theme-options.php:479
 msgid "Check to move above the Header/Logo Image"
-msgstr "Check to move above the Header/Logo Image"
+msgstr "Valider pour déplacer au dessus de l'entête et de l'image du logo"
 
 #: ../inc/theme-options.php:494
 msgid "Check to Disable"
@@ -692,7 +695,7 @@ msgstr "Cocher pour activer"
 
 #: ../inc/theme-options.php:523
 msgid "CSS Tutorial from W3Schools."
-msgstr "Tutoriel CSS de  W3Schools."
+msgstr "Tutoriel CSS de W3Schools."
 
 #: ../inc/theme-options.php:523
 msgid "http://www.w3schools.com/css/default.asp"
@@ -709,7 +712,7 @@ msgstr "Appuyez ici pour lire"
 #: ../inc/theme-options.php:588 ../inc/theme-options.php:590
 #, php-format
 msgid "%s Theme Options By"
-msgstr "%s Theme Options By"
+msgstr "%s Options du thème par "
 
 #: ../inc/theme-options.php:593
 msgid "Catch Themes"
@@ -729,7 +732,7 @@ msgstr "http://catchthemes.com/themes/catch-box-pro/"
 
 #: ../inc/theme-options.php:600 ../inc/theme-options.php:601
 msgid "Upgrade to Catch Box Pro"
-msgstr "Upgrade auf Catch Box Pro"
+msgstr "Passer à la version pro de Catch Box"
 
 #: ../inc/theme-options.php:603
 msgid "http://facebook.com/catchthemes"
@@ -763,7 +766,7 @@ msgstr "Diaporama en vedette"
 
 #: ../inc/theme-options.php:620
 msgid "Social Links"
-msgstr "Social Links"
+msgstr "Liens pour les réseaux sociaux"
 
 #: ../inc/theme-options.php:621
 msgid "Webmaster Tools"
@@ -787,11 +790,11 @@ msgstr "Nombre de slides"
 
 #: ../inc/theme-options.php:661
 msgid "Featured Post ID"
-msgstr "Featured Post ID"
+msgstr "ID de l'article en vedette"
 
 #: ../inc/theme-options.php:663
 msgid "Click Here To Edit"
-msgstr "Cliquez ici pour éditer"
+msgstr "Cliquez ici pour modifier"
 
 #: ../inc/theme-options.php:669
 msgid ""
@@ -802,7 +805,7 @@ msgstr ""
 "affichés dans le diaporama de la page d'accueil."
 
 #: ../inc/theme-options.php:670 ../inc/theme-options.php:716
-#: ../inc/theme-options.php:836 ../inc/theme-options.php:876
+#: ../inc/theme-options.php:842 ../inc/theme-options.php:882
 msgid "Save"
 msgstr "Enregistrer"
 
@@ -820,7 +823,7 @@ msgstr "Palir"
 
 #: ../inc/theme-options.php:685
 msgid "wipe"
-msgstr "essuyer"
+msgstr "Essuyer"
 
 #: ../inc/theme-options.php:686
 msgid "scrollUp"
@@ -828,27 +831,27 @@ msgstr "Defiler vers le haut"
 
 #: ../inc/theme-options.php:687
 msgid "scrollDown"
-msgstr "défiler vers le bas"
+msgstr "Défiler vers le bas"
 
 #: ../inc/theme-options.php:688
 msgid "scrollLeft"
-msgstr "Defiler vers la gauche"
+msgstr "Défiler vers la gauche"
 
 #: ../inc/theme-options.php:689
 msgid "scrollRight"
-msgstr "Defiler vers la droite"
+msgstr "Défiler vers la droite"
 
 #: ../inc/theme-options.php:690
 msgid "blindX"
-msgstr "blindX"
+msgstr "Cacher X"
 
 #: ../inc/theme-options.php:691
 msgid "blindY"
-msgstr "blindY"
+msgstr "Cacher Y"
 
 #: ../inc/theme-options.php:692
 msgid "blindZ"
-msgstr "blindZ"
+msgstr "Cacher Z"
 
 #: ../inc/theme-options.php:693
 msgid "cover"
@@ -856,7 +859,7 @@ msgstr "Couverture"
 
 #: ../inc/theme-options.php:694
 msgid "shuffle"
-msgstr "aléatoire"
+msgstr "Aléatoire"
 
 #: ../inc/theme-options.php:700
 msgid "Transition Delay"
@@ -930,7 +933,11 @@ msgstr "Instagram"
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/theme-options.php:835
+#: ../inc/theme-options.php:834
+msgid "Soundcloud"
+msgstr "Soundcloud"
+
+#: ../inc/theme-options.php:841
 msgid ""
 "<strong>Note:</strong> Enter the url for correponding social networking "
 "website"
@@ -938,43 +945,43 @@ msgstr ""
 "<strong>Note:</strong> Entrer le lien URL qui correspond à votre site de "
 "reseau social"
 
-#: ../inc/theme-options.php:849
+#: ../inc/theme-options.php:855
 msgid "Header and Footer Code"
-msgstr "Header and Footer Code"
+msgstr "Code pour l'entête et le pied de page"
 
-#: ../inc/theme-options.php:854
+#: ../inc/theme-options.php:860
 msgid "Code to display on Header"
-msgstr "Code to display on Header"
+msgstr "Code à afficher dans l'entête"
 
-#: ../inc/theme-options.php:861
+#: ../inc/theme-options.php:867
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
 msgstr ""
-"Note: Here you can put scripts from Google, Facebook etc. which will load on "
-"Header"
+"Note: vous pouvez mettre ici les scripts pour Google, Facebook, ... qui "
+"seront chargés dans l'entête"
 
-#: ../inc/theme-options.php:865
+#: ../inc/theme-options.php:871
 msgid "Code to display on Footer"
-msgstr "Code to display on Footer"
+msgstr "Code à afficher dans le pied de page"
 
-#: ../inc/theme-options.php:872
+#: ../inc/theme-options.php:878
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"
 msgstr ""
-"Note: Here you can put scripts from Google, Facebook, Add This etc. which "
-"will load on footer"
+"Note: Ici vous pouvez mettre les scripts de Google, Facebook, "
+"Publicités, ... qui seront chargées dans le pied de page"
 
 #: ../inc/widgets.php:20
 msgid "Use this widget to add any type of Ad as a widget."
 msgstr ""
-"Utilisez ce Widget pour ajouter n'importe quel type d'annonce comme étant un "
-"widget"
+"Utilisez ce Widget pour ajouter n'importe quel type de publicité comme étant "
+"un widget"
 
 #: ../inc/widgets.php:21
 msgid "Catch Box Adspace Widget"
-msgstr "Catch Box Adspace Widget"
+msgstr "Widget de publicité de Catch Box"
 
 #: ../inc/widgets.php:38
 msgid "Title (optional):"
@@ -994,10 +1001,7 @@ msgstr "Lien URL:"
 
 #: ../inc/widgets.php:57
 msgid "Alt text:"
-msgstr "Text Alt"
-
-#~ msgid "Settings saved."
-#~ msgstr "Paramètres enregistrés."
+msgstr "Texte alternatif"
 
 #~ msgid ""
 #~ "Some themes provide customization options that are grouped together on a "
@@ -1078,6 +1082,9 @@ msgstr "Text Alt"
 #~ "thèmes, les options peuvent changer ou disparaître, car ils ont un thème "
 #~ "spécifique. Votre thème actuel, zone de capture, fournit les options de "
 #~ "thèmes suivants:"
+
+#~ msgid "Settings saved."
+#~ msgstr "Paramètres enregistrés."
 
 #~ msgid "Webmaster Site Verification IDs"
 #~ msgstr "Site de vérification d'identification du webmaster"

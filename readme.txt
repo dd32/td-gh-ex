@@ -10,7 +10,7 @@ Added Translation for Brazilian Portuguese by Valdir Trombini ( Email: valdir.tr
 Added Translation for Spanish by César Gómez ( Email: cesar@temperatio.com )
 Added Translation for Danish by Kris Thomsen ( Email: mail@kristhomsen.dk )
 Added Translation for Germany by Heinz Peter Brinkmann
-Added Translation for French by  D'CLIC (cEmail: ontact@dclic.info) and and Athéna G (Email: webmaster@athena.georgakelos.net)
+Added Translation for French by  D'CLIC (cEmail: ontact@dclic.info), Athéna G (Email: webmaster@athena.georgakelos.net) and Capronnier luc (Emil: lcapronnier@yahoo.com)
 Added Translation for Polish by Piotr (Email: fansitepoprostugry@gmail.com)
 Added Translation for Czech by Marek Přidal (Email: m.pridal29@gmail.com)
 Added Translation for Croatian by Sanjin Barac (Email: rapid24income@gmail.com)
@@ -328,3 +328,9 @@ Version 2.6.2
 Version 2.7
 * Added Green Color Scheme
 * Added class slider-title, sep and slider-excerpt for Featured Post Slider content to give more control though css
+
+Version 2.7.1
+* Added Soundcloud social icon
+* Fixed Mobile menu issue not displaying last menu item
+* Fixed Skype Link Data Validation as per https://dev.skype.com/skype-uri
+* Fixed RTL css for secondary menu
