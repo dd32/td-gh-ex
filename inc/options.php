@@ -17,6 +17,11 @@ function optionsframework_options() {
 	$options[] = array(
 		'name' => 'General Options', 
 		'type' => 'heading');
+		
+	$options[] = array(
+		'desc' => '<div class="infohead"><span class="donation">If you like this FREEE Theme You can consider for a small Donation to us. Your Donation will be spent for the Disadvantaged Children and Students. You can visit our <a href="http://d5creation.com/donate/" target="_blank"><strong>DONATION PAGE</strong></a> and Take your decision.</span><br /><br /><span class="donation"> Need More Features and Options including Exciting  Slide and 100+ Advanced Features? Try <a href="http://d5creation.com/theme/green-eye/" target="_blank"><strong>GREEN EYE Extend</strong></a>.</span><br /> <br /><span class="donation"> You can Visit the GREEN EYE Extend Demo <a href="http://demo.d5creation.com/wp/themes/green-eye/" target="_blank"><strong>Here</strong></a>.</span> </div>',
+		'type' => 'info');
+
 	
 	$options[] = array(
 		'name' => 'Front Page Heading', 
