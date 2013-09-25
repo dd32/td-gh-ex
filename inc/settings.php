@@ -31,7 +31,7 @@ function vantage_theme_settings(){
 		'description' => __('Your own custom logo.', 'vantage')
 	) );
 
-	siteorigin_settings_add_teaser('logo', 'image_retina', __('Retina Logo'), array(
+	siteorigin_settings_add_teaser('logo', 'image_retina', __('Retina Logo', 'vantage'), array(
 		'choose' => __('Choose Image', 'vantage'),
 		'update' => __('Set Logo', 'vantage'),
 		'description' => __('A double sized version of your logo for retina displays. Must be used in addition to standard logo.', 'vantage')
@@ -63,6 +63,10 @@ function vantage_theme_settings(){
 
 	siteorigin_settings_add_teaser('navigation', 'responsive_menu', __('Responsive Menu', 'vantage'), array(
 		'description' => __('Use a special responsive menu for small screen devices.', 'vantage')
+	));
+
+	siteorigin_settings_add_teaser('navigation', 'responsive_menu_text', __('Responsive Menu Text', 'vantage'), array(
+		'description' => __('The button used for the responsive menu.', 'vantage')
 	));
 
 	siteorigin_settings_add_field('navigation', 'use_sticky_menu', 'checkbox', __('Sticky Menu', 'vantage'), array(
@@ -126,6 +130,13 @@ function vantage_theme_settings(){
 		'description' => __('This handle will be recommended after a user shares one of your posts.', 'vantage')
 	));
 
+	/**
+	 * General Settings
+	 */
+
+	siteorigin_settings_add_field( 'general', 'site_info_text', 'text', __( 'Site Information Text', 'vantage' ), array(
+		'description' => __( 'Text displayed in your footer. Useful for copyright information.', 'vantage' )
+	) );
 
 }
 add_action('admin_init', 'vantage_theme_settings');
@@ -144,11 +155,11 @@ function vantage_theme_setting_defaults($defaults){
 
 	$defaults['logo_header_text'] = __('Call me! Maybe?', 'vantage');
 
-
 	$defaults['layout_responsive'] = true;
 	$defaults['layout_bound'] = 'full';
 
 	$defaults['navigation_responsive_menu'] = true;
+	$defaults['navigation_responsive_menu_text'] = '';
 	$defaults['navigation_use_sticky_menu'] = true;
 	$defaults['navigation_menu_search'] = true;
 	$defaults['navigation_display_scroll_to_top'] = true;
@@ -158,11 +169,12 @@ function vantage_theme_setting_defaults($defaults){
 
 	$defaults['blog_post_author'] = true;
 	$defaults['blog_post_date'] = true;
-	$defaults['blog_author_bio'] = false;
 
 	$defaults['social_ajax_comments'] = true;
 	$defaults['social_share_post'] = true;
 	$defaults['social_twitter'] = '';
+
+	$defaults['general_site_info_text'] = '';
 
 	return $defaults;
 }

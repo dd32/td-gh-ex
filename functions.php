@@ -7,7 +7,7 @@
  * @license GPL 2.0
  */
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.0.2' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.0.3' );
 define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://siteorigin.com' );
 
 if( file_exists( get_template_directory() . '/premium/functions.php' ) ){
@@ -283,3 +283,11 @@ function vantage_post_class_filter($classes){
 	return $classes;
 }
 add_filter('post_class', 'vantage_post_class_filter');
+
+function vantage_filter_vantage_post_on_parts($parts){
+	if(!siteorigin_setting('blog_post_author')) $parts['by'] = '';
+	if(!siteorigin_setting('blog_post_date')) $parts['on'] = '';
+
+	return $parts;
+}
+add_filter('vantage_post_on_parts', 'vantage_filter_vantage_post_on_parts');
