@@ -15,9 +15,12 @@ The Theme has customizable footer.
 
 
 == License ==
-Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License version 2, see file license.txt.
+BirdSITE WordPress theme, Copyright (C) 2013 Sysbird
+BirdSITE WordPress theme is licensed under the GPL.
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 The exceptions to this license are as follows:
-The script html5.js and css3-mediaqueries.js are released under the  MIT License.
+The script html5.js and respond.min.js are released under the  MIT License.
 The iconfont Genericons is released under the GPL license.
 The headers and icon images are created by theme author and are released under GPL license.
 
@@ -29,6 +32,9 @@ http://www.sysbird.jp/wptips/contact/
 
 
 == Changelog ==
+v1.04
+* fix based on theme review.
+
 v1.03
 * uses CSS3 media queries for its responsive
 * fix WordPress Version 3.6

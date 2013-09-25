@@ -360,30 +360,35 @@ function birdsite_setup() {
 	);
 
 	register_default_headers( array(
-		'birdsite-header-01' => array(
-			'url' => '%s/images/headers/birdsite-header-01.jpg',
-			'thumbnail_url' => '%s/images/headers/birdsite-header-01-thumbnail.jpg',
-			'description' => 'birdsite-header-01'
+		'blue' => array(
+			'url' => '%s/images/headers/blue.jpg',
+			'thumbnail_url' => '%s/images/headers/blue-thumbnail.jpg',
+			'description' => 'blue'
 		),
-		'birdsite-header-02' => array(
-			'url' => '%s/images/headers/birdsite-header-02.jpg',
-			'thumbnail_url' => '%s/images/headers/birdsite-header-02-thumbnail.jpg',
-			'description' => 'birdsite-header-02'
+		'yellow' => array(
+			'url' => '%s/images/headers/yellow.jpg',
+			'thumbnail_url' => '%s/images/headers/yellow-thumbnail.jpg',
+			'description' => 'yellow'
 		),
-		'birdsite-header-03' => array(
-			'url' => '%s/images/headers/birdsite-header-03.jpg',
-			'thumbnail_url' => '%s/images/headers/birdsite-header-03-thumbnail.jpg',
-			'description' => 'birdsite-header-03'
+		'pink' => array(
+			'url' => '%s/images/headers/pink.jpg',
+			'thumbnail_url' => '%s/images/headers/pink-thumbnail.jpg',
+			'description' => 'pink'
 		),
-		'birdsite-header-04' => array(
-			'url' => '%s/images/headers/birdsite-header-04.jpg',
-			'thumbnail_url' => '%s/images/headers/birdsite-header-04-thumbnail.jpg',
-			'description' => 'birdsite-header-04'
+		'navy' => array(
+			'url' => '%s/images/headers/navy.jpg',
+			'thumbnail_url' => '%s/images/headers/navy-thumbnail.jpg',
+			'description' => 'navy'
 		),
-		'birdsite-header-05' => array(
-			'url' => '%s/images/headers/birdsite-header-05.jpg',
-			'thumbnail_url' => '%s/images/headers/birdsite-header-05-thumbnail.jpg',
-			'description' => 'birdsite-header-05'
+		'red' => array(
+			'url' => '%s/images/headers/red.jpg',
+			'thumbnail_url' => '%s/images/headers/red-thumbnail.jpg',
+			'description' => 'red'
+		),
+		'green' => array(
+			'url' => '%s/images/headers/green.jpg',
+			'thumbnail_url' => '%s/images/headers/green-thumbnail.jpg',
+			'description' => 'green'
 		),
 	) );
 
@@ -418,7 +423,7 @@ function birdsite_scripts() {
 	}
 
 	wp_enqueue_script('jquery');  
-	wp_enqueue_script( 'birdsite', get_template_directory_uri() .'/js/birdsite.js', 'jquery', '1.03' );
+	wp_enqueue_script( 'birdsite', get_template_directory_uri() .'/js/birdsite.js', 'jquery', '1.04' );
 	wp_enqueue_style( 'birdsite', get_stylesheet_uri() );
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css');
 }
