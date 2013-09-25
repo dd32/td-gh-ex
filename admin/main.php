@@ -116,6 +116,7 @@ function mantra_init_fn(){
 /*** presentation ***/
 
 	add_settings_field('mantra_frontpage', __('Enable Presentation Page','mantra') , 'cryout_setting_frontpage_fn', __FILE__, 'presentation_section');
+	add_settings_field('mantra_frontposts', __('Show Posts on Presentation Page','mantra') , 'cryout_setting_frontposts_fn', __FILE__, 'presentation_section');
 	add_settings_field('mantra_frontslider', __('Slider Settings','mantra') , 'cryout_setting_frontslider_fn', __FILE__, 'presentation_section');
 	add_settings_field('mantra_frontslider2', __('Slides','mantra') , 'cryout_setting_frontslider2_fn', __FILE__, 'presentation_section');
 	add_settings_field('mantra_frontcolumns', __('Presentation Page Columns','mantra') , 'cryout_setting_frontcolumns_fn', __FILE__, 'presentation_section');
@@ -172,6 +173,7 @@ function mantra_init_fn(){
 /*** graphics ***/
 	add_settings_field('mantra_breadcrumbs', __('Breadcrumbs','mantra') , 'cryout_setting_breadcrumbs_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_pagination', __('Pagination','mantra') , 'cryout_setting_pagination_fn', __FILE__, 'graphics_section');
+	add_settings_field('mantra_menualign', __('Main Menu Alignment','mantra') , 'cryout_setting_menualign_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_image', __('Post Images Border','mantra') , 'cryout_setting_image_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_caption', __('Caption Border','mantra') , 'cryout_setting_caption_fn', __FILE__, 'graphics_section');
 	add_settings_field('mantra_pin', __('Caption Pin','mantra') , 'cryout_setting_pin_fn', __FILE__, 'graphics_section');

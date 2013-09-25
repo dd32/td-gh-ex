@@ -17,6 +17,9 @@ $mantra_defaults = array(
 
 
 "mantra_frontpage" => "Disable",
+"mantra_frontposts" => "Disable",
+"mantra_frontpostscount" => 5,
+"mantra_menualign" => "left",
 "mantra_fpsliderwidth" => "800",
 "mantra_fpsliderheight" => "250",
 "mantra_fpslideranim" => "random",

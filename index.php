@@ -12,10 +12,10 @@
  * @subpackage Mantra
  */
 get_header(); 
-if ($mantra_frontpage=="Enable" && is_front_page() ) {
-mantra_frontpage_generator();
-} 
-else {
+if ($mantra_frontpage=="Enable" && is_front_page() ):
+	mantra_frontpage_generator();
+	if ($mantra_frontposts=="Enable"): get_template_part('content','frontpage'); endif;
+else:
 ?>
 		<section id="container">
 				
@@ -52,6 +52,6 @@ else {
 			</div><!-- #content -->
 	<?php get_sidebar(); ?>
 		</section><!-- #container -->
-
-<?php } // else
+<?php 
+endif;
 get_footer(); ?>

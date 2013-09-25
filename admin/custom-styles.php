@@ -243,6 +243,12 @@ $mantra_googlefontsubheader = str_replace('+',' ',preg_replace('/:.*/i','',$mant
 ?><?php if (1) { ?> #footer-widget-area a { color:<?php echo $mantra_footertext; ?>  ;}<?php }
 ?><?php if (1) { ?> #footer-widget-area a:hover { color:<?php echo $mantra_footerhover; ?>  ;}<?php }
 
+switch ($mantra_menualign):
+    case "center": ?> #access ul { display: table; margin: 0 auto; } <?php break;
+	case "right": ?> #access ul li { float: right; } <?php break;
+	default: break;
+endswitch;
+
 ?><?php if ($mantra_pin != "Pin2") { ?> #content .wp-caption { background-image:url(<?php echo get_template_directory_uri()."/images/pins/".$mantra_pin; ?>.png)  ;} <?php }
 ?><?php if ($mantra_sidebullet != "arrow_white") { ?>.widget-area ul ul li{ background-image:url(<?php echo get_template_directory_uri()."/images/bullets/".$mantra_sidebullet; ?>.png);background-position: 0px 8px ;}<?php }
 

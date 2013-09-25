@@ -256,6 +256,22 @@ foreach($items as $id=>$item) {
 
 }
 
+function cryout_setting_frontposts_fn() {
+	global $mantra_options;
+	$items = array ("Enable" , "Disable");
+	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
+	echo "<select id='mantra_frontposts' name='ma_options[mantra_frontposts]'>";
+	foreach($items as $id=>$item) {
+		echo "<option value='$item'";
+		selected($mantra_options['mantra_frontposts'],$item);
+		echo ">$itemsare[$id]</option>";
+	}
+	echo "</select> ";
+	echo "<input type='text' id='mantra_frontpostscount' name='ma_options[mantra_frontpostscount]' size='3' value='";
+	echo $mantra_options['mantra_frontpostscount']."'> ".__('posts','mantra');
+	echo "<div><small>".__("Enable to display latest posts on the presentation page, below the columns. Sticky posts are always displayed and not counted.","mantra")."</small></div>";
+}
+
 //CHECKBOX - Name: ma_options[frontslider]
 function cryout_setting_frontslider_fn() {
 	global $mantra_options;
@@ -1349,6 +1365,20 @@ foreach($items as $id=>$item) {
 }
 	echo "</select>";
 	echo "<div><small>".__("Show numbered pagination. Where there is more than one page, instead of the bottom <b>Older Posts</b> and <b>Newer posts</b> links you have a numbered pagination. ","mantra")."</small></div>";
+}
+
+function cryout_setting_menualign_fn() {
+	global $mantra_options;
+	$items = array ("left", "center", "right");
+	$itemsare = array( __("Left","mantra"), __("Center","mantra"), __("Right","mantra"));
+	echo "<select id='mantra_menualign' name='ma_options[mantra_menualign]'>";
+foreach($items as $id=>$item) {
+	echo "<option value='$item'";
+	selected($mantra_options['mantra_menualign'],$item);
+	echo ">$itemsare[$id]</option>";
+}
+	echo "</select>";
+	echo "<div><small>".__("Select the desired main menu items alignment. Center option is only valid for single line menus.","mantra")."</small></div>";
 }
 
 //SELECT - Name: ma_options[caption]

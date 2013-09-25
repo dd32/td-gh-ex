@@ -63,9 +63,6 @@
 	#access .menu-header, div.menu {
 		width:95%;
 	}
-	article.post {
-   		width:98%;
- 	}
 	#primary, #secondary {
 		width:100%;
 		height:auto !important;
@@ -82,9 +79,6 @@
 	#front-columns .column-image {height:auto;}
 	#content img, content article.post img, #content article .wp-caption, article embed {
 		max-width:90% !important;
-	}
-	#content {
-		margin:0 10px;
 	}
 	#access {
 	/*background:#ddd;*/
@@ -118,11 +112,6 @@
 		margin-top:5px;
 		font-size:15px;
 		line-height: 15px;
-	}
-	
-	article.sticky {
-	padding:3%;
-	width:92%;
 	}
 	
 	#main .widget-area ul.xoxo {
