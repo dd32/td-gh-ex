@@ -1142,6 +1142,10 @@ function adventure_theme_options_do_page() { ?>
         <td class="justify">Currently writing the code to move the sidebar to the left or the right.</td>
         </tr>
         <tr>
+        <th>2.55</th>
+        <td class="justify">Fixed an issues with list not displaying the element icon.</td>
+        </tr>
+        <tr>
         <th>2.5</th>
         <td class="justify">I'm working on a complete rewrite for Adventure to match my current coding skills, however it keeps taking longer than I expect. So in the mean time I decided to keep updating this old code that works just fine. New in this version is the ablity to the comment information and author information at the end of post and pages off.</td>
         </tr>

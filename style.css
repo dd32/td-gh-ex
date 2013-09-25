@@ -6,7 +6,7 @@ Theme URI: http://schwarttzy.com/shop/adventureplus/
 
 Description: Inspired by a certain GPS Manufacture, I designed this theme to feel like you're looking through a window out into the wilderness and hopefully inspire you to explore. I'm constantly adding new features to this theme to allow you to personalize it to your own needs. If you want a new feature or just want to be able to change something just ask me and I would be happy to add it for you. I would like to thank you for your support, visit the Theme URI for the update history, and Enjoy!
 
-Version: 2.5
+Version: 2.55
 
 Author: Eric Schwarz
 
@@ -147,7 +147,7 @@ ul, li {display:inline-block;}
 
 #content>li ul, #content>li ol {float:none; list-style-type:decimal; margin:.1em 0 0 5%; width:95%;}
 
-#content>li ul li, #content>li ol li {width:100%; text-align:left; margin:.1em 0 0;}
+#content>li ul li, #content>li ol li {display:list-item; margin:.1em 0 0; text-align:left; width:100%;}
 
 #content>li ul li {list-style-type:circle;}
 
@@ -309,6 +309,8 @@ textarea {width:99.5%; max-width:99.5%; min-width:99.5%; border:1px solid #111;b
 	top:0;
 	width:100%;
 	z-index:100;}
+
+#navi>div {display:inline;}
 	
 #navi img {
 	margin:0 auto;
