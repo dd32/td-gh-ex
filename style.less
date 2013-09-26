@@ -3,7 +3,7 @@ Theme Name: Vantage
 Author: SiteOrigin
 Author URI: http://siteorigin.com/
 Theme URI: http://siteorigin.com/theme/vantage/
-Description: Vantage is a flexible multipurpose theme. It's strength lies in its tight integration with some powerful plugins like Page Builder for responsive page layouts, MetaSlider for big beautiful sliders and WooCommerce to help you sell online. Use it to start a business site, portfolio or online store.
+Description: Vantage is a flexible multipurpose theme. It's strength lies in its tight integration with some powerful plugins like Page Builder for responsive page layouts, MetaSlider for big beautiful sliders and WooCommerce to help you sell online. Vantage is fully responsive and retina ready. Use it to start a business site, portfolio or online store.
 Version: trunk
 License: GNU General Public License 2.0
 License URI: license.txt
@@ -355,6 +355,13 @@ body {
 	}
 }
 
+@media  (max-width:1080px){
+	.responsive.layout-boxed #page-wrapper{
+		margin: 0;
+		padding: 0;
+	}
+}
+
 header#masthead {
 	background: #fcfcfc;
 	padding: 25px 35px;
@@ -501,6 +508,12 @@ body.responsive {
 		}
 	}
 
+	&.layout-boxed {
+		#page-wrapper {
+			overflow-x: visible;
+		}
+	}
+
 	&.layout-full #page-wrapper{
 		.full-container {
 			max-width: 1080px;
@@ -560,9 +573,8 @@ body.responsive {
 
 			position: absolute;
 			top: 100%;
-			left: 50%;
+			left: 0;
 			z-index: 99999;
-			margin-left: -100px;
 
 			a {
 				width: 200px;
@@ -629,16 +641,49 @@ body.responsive {
 	position: relative;
 
 	#search-icon-icon {
+		.box-sizing(border-box);
+		display: block;
 		cursor: pointer;
-		height: 59px;
+		background-color: #303134;
 		width: 59px;
-		background: #303134 url(./images/sprites/search.png) no-repeat;
+		height: 59px;
+
 		border-left: 1px solid #2e2f31;
-		.transition(0.25s);
+
+		&, .icon-search {
+			.transition(0.4s);
+		}
+
+		padding: 22px;
+
+		.icon {
+			display: inline-block;
+			width: 17px;
+			height: 17px;
+
+			background: url(./images/sprites/search-icon.png) no-repeat;
+		}
 
 		&:hover {
-			background: #00bcff url(./images/sprites/search-white.png) no-repeat;
+			.icon {
+				background: url(./images/sprites/search-icon-white.png) no-repeat;
+			}
+			background-color: #00bcff;
 		}
+
+		@media screen and (-webkit-min-device-pixel-ratio: 2) {
+			.icon {
+				background: url(./images/retina/search-icon.png) no-repeat;
+				background-size: 17px 17px;
+			}
+
+			&:hover .icon{
+				background: url(./images/retina/search-icon-white.png) no-repeat;
+				background-size: 17px 17px;
+			}
+
+		}
+
 	}
 
 	.searchform {
@@ -940,7 +985,7 @@ article.page{
 
 		overflow-x: auto;
 
-		p:fist-child {
+		p:first-child {
 			margin-top: 0;
 		}
 	}
@@ -1382,6 +1427,13 @@ body.layout-full{
 	width: 48px;
 	height: 48px;
 	background: url(./images/sprites/to-top.png);
+
+	@media screen and (-webkit-min-device-pixel-ratio: 2) {
+		& {
+			background-image: url(./images/retina/to-top.png);
+			background-size: 48px 48px;
+		}
+	}
 
 	-ms-transform: scale(0, 0);
 	-webkit-transform: scale(0, 0);

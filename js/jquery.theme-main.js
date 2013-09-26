@@ -5,7 +5,7 @@ jQuery(function($){
     $('body.no-js').removeClass('no-js');
 
     // Initialize the flex slider
-    $('.entry-content .flexslider, #metaslider-demo.flexslider').flexslider( {
+    $('.entry-content .flexslider:not(.metaslider .flexslider), #metaslider-demo.flexslider').flexslider( {
 
     } );
     
@@ -107,6 +107,13 @@ jQuery(function($){
             isSearchHover = false;
         } );
 
+    $(window).resize(function() {
+        $('#search-icon .searchform').each(function(){
+            console.log($(this).closest('.full-container').width());
+            $(this).width($(this).closest('.full-container').width());
+        });
+    }).resize();
+
     // The sticky menu
     if($('nav.site-navigation.primary').hasClass('use-sticky-menu')) {
         var $mc = null;
@@ -125,7 +132,7 @@ jQuery(function($){
                         'width' : $$.outerWidth(),
                         'top' : $('body').hasClass('admin-bar') ? 28 : 0,
                         'left' : $$.position().left,
-                        'z-index' : 1001
+                        'z-index' : 998
                     }).addClass('sticky').insertAfter($$);
                 }
                 else {

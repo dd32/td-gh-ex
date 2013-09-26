@@ -3,8 +3,8 @@ Theme Name: Vantage
 Author: SiteOrigin
 Author URI: http://siteorigin.com/
 Theme URI: http://siteorigin.com/theme/vantage/
-Description: Vantage is a flexible multipurpose theme. It's strength lies in its tight integration with some powerful plugins like Page Builder for responsive page layouts, MetaSlider for big beautiful sliders and WooCommerce to help you sell online. Use it to start a business site, portfolio or online store.
-Version: 1.0.3
+Description: Vantage is a flexible multipurpose theme. It's strength lies in its tight integration with some powerful plugins like Page Builder for responsive page layouts, MetaSlider for big beautiful sliders and WooCommerce to help you sell online. Vantage is fully responsive and retina ready. Use it to start a business site, portfolio or online store.
+Version: 1.0.4
 License: GNU General Public License 2.0
 License URI: license.txt
 Tags: flexible-width, custom-background, custom-menu, featured-images, theme-options, threaded-comments, translation-ready
@@ -84,6 +84,8 @@ td {
 html {
 	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */ 
 	overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */ 
+	-webkit-text-size-adjust: 100%; /* Keeps page centred in all browsers regardless of content height */ 
+	-ms-text-size-adjust: 100%; /* Keeps page centred in all browsers regardless of content height */ 
 }
 
 body {
@@ -373,6 +375,7 @@ input[type="submit"] {
 	padding: 12px 20px;
 	text-decoration: none; /* Improves usability and consistency of cursor style between image-type 'input' and others */ 
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	-webkit-appearance: button;
 }
 
 button:hover,
@@ -422,9 +425,11 @@ input[type="search"] {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
+	-webkit-appearance: textfield;
 }
 
 input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none; /* Corrects inner padding displayed oddly in S5, Chrome on OSX */ 
 }
 
 button::-moz-focus-inner,
@@ -533,6 +538,15 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 1080px;
+}
+
+@media (max-width: 1080px) {
+	
+	.responsive.layout-boxed #page-wrapper {
+		margin: 0;
+		padding: 0;
+	}
+
 }
 
 header#masthead {
@@ -696,6 +710,10 @@ body.responsive.layout-full #page-wrapper {
 	max-width: 100%;
 }
 
+body.responsive.layout-boxed #page-wrapper {
+	overflow-x: visible;
+}
+
 body.responsive.layout-full #page-wrapper .full-container {
 	margin-left: auto;
 	margin-right: auto;
@@ -764,13 +782,12 @@ body.responsive.layout-full #page-wrapper .full-container {
 .main-navigation ul ul {
 	position: absolute;
 	top: 100%;
-	left: 50%;
+	left: 0;
 	
 	background: #464646;
 	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.15); /* Third Level Items */ 
 	-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.15); /* Third Level Items */ 
 	box-shadow: 0 1px 2px rgba(0,0,0,0.15);
-	margin-left: -100px; /* Third Level Items */ 
 	opacity: 0;
 	pointer-events: none;
 	-webkit-transition: all 0.35s ease; /* Third Level Items */ 
@@ -778,7 +795,7 @@ body.responsive.layout-full #page-wrapper .full-container {
 	-o-transition: all 0.35s ease; /* Third Level Items */ 
 	transition: all 0.35s ease;
 	visibility: hidden;
-	z-index: 99999;
+	z-index: 99999; /* Third Level Items */ 
 }
 
 .main-navigation ul ul a {
@@ -845,17 +862,53 @@ body.responsive.layout-full #page-wrapper .full-container {
 	width: 59px;
 	height: 59px;
 	
-	background: #303134 url(./images/sprites/search.png) no-repeat;
+	background-color: #303134;
 	border-left: 1px solid #2e2f31;
+	-ms-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 	cursor: pointer;
-	-webkit-transition: all 0.25s ease;
-	-moz-transition: all 0.25s ease;
-	-o-transition: all 0.25s ease;
-	transition: all 0.25s ease;
+	display: block;
+	padding: 22px;
+}
+
+#search-icon #search-icon-icon,
+#search-icon #search-icon-icon .icon-search {
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+
+#search-icon #search-icon-icon .icon {
+	width: 17px;
+	height: 17px;
+	
+	background: url('images/sprites-1-0-4.png') no-repeat -51px -15px;
+	display: inline-block;
 }
 
 #search-icon #search-icon-icon:hover {
-	background: #00bcff url(./images/sprites/search-white.png) no-repeat;
+	background-color: #00bcff;
+}
+
+#search-icon #search-icon-icon:hover .icon {
+	background: url('images/sprites-1-0-4.png') no-repeat -69px -15px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+	
+	#search-icon #search-icon-icon .icon {
+		background: url(./images/retina/search-icon.png) no-repeat;
+		background-size: 17px 17px;
+	}
+
+	#search-icon #search-icon-icon:hover .icon {
+		background: url(./images/retina/search-icon-white.png) no-repeat;
+		background-size: 17px 17px;
+	}
+
 }
 
 #search-icon .searchform {
@@ -1282,8 +1335,8 @@ article.page .entry-categories a {
 	padding: 10px;
 }
 
-.entry-content pre p:fist-child,
-.entry-content code p:fist-child {
+.entry-content pre p:first-child,
+.entry-content code p:first-child {
 	margin-top: 0;
 }
 
@@ -1772,7 +1825,7 @@ body.layout-full {
 	width: 48px;
 	height: 48px;
 	
-	background: url(./images/sprites/to-top.png);
+	background: url('images/sprites-1-0-4.png') no-repeat -33px -33px;
 	opacity: 0;
 	-ms-transform: scale(0, 0);
 	-webkit-transform: scale(0, 0);
@@ -1781,6 +1834,15 @@ body.layout-full {
 	-moz-transition: all 0.2s ease;
 	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+	
+	#scroll-to-top {
+		background-image: url(./images/retina/to-top.png);
+		background-size: 48px 48px;
+	}
+
 }
 
 #scroll-to-top.displayed {
@@ -1881,6 +1943,7 @@ body.layout-full {
 	background-size: cover;
 	display: none;
 	margin-left: 0;
+	-webkit-backface-visibility: hidden; /* Stuff specific to metaslider */ 
 }
 
 .flexslider .slides > li .content img {
@@ -1915,17 +1978,17 @@ body.layout-full {
 	width: 14px;
 	height: 14px;
 	
-	background: url(images/sprites/slide-indicator-inactive.png);
+	background: url('images/sprites-1-0-4.png') no-repeat -48px 0;
 	cursor: pointer;
 	display: block;
 }
 
 .flexslider .flex-control-paging li a.flex-active {
-	background: url(images/sprites/slide-indicator-active.png);
+	background: url('images/sprites-1-0-4.png') no-repeat -33px 0;
 }
 
 .flexslider .flex-control-paging li a:hover {
-	background: url(images/sprites/slide-indicator-inactive.png);
+	background: url('images/sprites-1-0-4.png') no-repeat -48px 0;
 }
 
 .flexslider .flex-direction-nav {
@@ -1956,13 +2019,13 @@ body.layout-full {
 .flexslider .flex-direction-nav li a.flex-prev {
 	left: 0;
 	
-	background: url(images/sprites/gallery-prev.png);
+	background: url('images/sprites-1-0-4.png') no-repeat 0 -86px;
 }
 
 .flexslider .flex-direction-nav li a.flex-next {
 	right: 0;
 	
-	background: url(images/sprites/gallery-next.png);
+	background: url('images/sprites-1-0-4.png') no-repeat 0 0;
 }
 
 .flexslider:hover .flex-direction-nav li a {
@@ -2138,23 +2201,23 @@ body.layout-full {
 
 .widget a.button {
 	background: #107fc9;
-	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, lumdarken(#107fc9, 3.5)), color-stop(1, lumlighten(#107fc9, 3.5)));
-	background: -ms-linear-gradient(bottom, lumdarken(#107fc9, 3.5), lumlighten(#107fc9, 3.5));
-	background: -moz-linear-gradient(center bottom, lumdarken(#107fc9, 3.5) 0%, lumlighten(#107fc9, 3.5) 100%);
-	background: -o-linear-gradient(lumlighten(#107fc9, 3.5), lumdarken(#107fc9, 3.5));
-	border-bottom: solid 1px lumdarken(lumdarken(#107fc9, 18), 4);
-	border-left: solid 1px lumdarken(#107fc9, 18);
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #0f75b8), color-stop(1, #1189da));
+	background: -ms-linear-gradient(bottom, #0f75b8, #1189da);
+	background: -moz-linear-gradient(center bottom, #0f75b8 0%, #1189da 100%);
+	background: -o-linear-gradient(#1189da, #0f75b8);
+	border-bottom: solid 1px #083d61;
+	border-left: solid 1px #094974;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
-	border-right: solid 1px lumdarken(#107fc9, 18);
-	border-top: solid 1px lumlighten(lumdarken(#107fc9, 18), 4);
+	border-right: solid 1px #094974;
+	border-top: solid 1px #0b5587;
 	-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -1px 0 rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.1);
 	-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -1px 0 rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.1);
 	box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -1px 0 rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.1);
 	color: white;
 	display: inline-block;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='lumlighten(#107fc9, 3.5)', endColorstr='lumdarken(#107fc9, 3.5)', GradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1189da', endColorstr='#0f75b8', GradientType=0);
 	font-size: 0.875em;
 	padding: 9px 26px;
 	text-decoration: none;
@@ -2333,9 +2396,18 @@ body.layout-full {
 	width: 5px;
 	height: 8px;
 	
-	background: url(images/sprites/more-icon.png) no-repeat;
+	background: url('images/sprites-1-0-4.png') no-repeat -63px 0;
 	display: inline-block;
 	margin-left: 3px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+	
+	.widget_circleicon-widget .circle-icon-box a.more-button i {
+		background: url(./images/retina/more-icon.png);
+		background-size: 5px 8px;
+	}
+
 }
 
 .widget_circleicon-widget .circle-icon-box.icon-position-top {
@@ -2481,11 +2553,25 @@ body.layout-full {
 }
 
 .vantage-carousel-title a.next {
-	background-image: url(images/sprites/carousel-right.png);
+	background: url('images/sprites-1-0-4.png') no-repeat -87px -15px;
 }
 
 .vantage-carousel-title a.previous {
-	background-image: url(images/sprites/carousel-left.png);
+	background: url('images/sprites-1-0-4.png') no-repeat -33px -15px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+	
+	.vantage-carousel-title a.next {
+		background: url(images/retina/carousel-right.png);
+		background-size: 17px 17px;
+	}
+
+	.vantage-carousel-title a.previous {
+		background: url(images/retina/carousel-left.png);
+		background-size: 17px 17px;
+	}
+
 }
 
 .vantage-carousel-wrapper {
@@ -2744,6 +2830,7 @@ body.layout-full {
 	line-height: 1;
 	text-decoration: none; /* Improves usability and consistency of cursor style between image-type 'input' and others */ 
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	-webkit-appearance: button;
 }
 
 .woocommerce #page-wrapper .product h1.entry-title {
@@ -2757,32 +2844,6 @@ body.layout-full {
 	font-size: 20px;
 	font-weight: bold;
 	text-decoration: none;
-}
-
-.woocommerce #page-wrapper .product button.single_add_to_cart_button {
-	width: auto;
-	
-	background: #ffffff;
-	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #dfdfdf), color-stop(1, #ffffff));
-	background: -ms-linear-gradient(bottom, #dfdfdf, #ffffff);
-	background: -moz-linear-gradient(center bottom, #dfdfdf 0%, #ffffff 100%);
-	background: -o-linear-gradient(#ffffff, #dfdfdf);
-	border-bottom: solid 1px #9f9f9f;
-	border-left: solid 1px #c3c3c3;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	border-right: solid 1px #c3c3c3;
-	border-top: solid 1px #d2d2d2;
-	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.125), inset 0 1px 0 rgba(255, 255, 255, 0.5);
-	-moz-box-shadow: 0 1px 1px rgba(0,0,0,0.125), inset 0 1px 0 rgba(255, 255, 255, 0.5);
-	box-shadow: 0 1px 1px rgba(0,0,0,0.125), inset 0 1px 0 rgba(255, 255, 255, 0.5);
-	color: #646464;
-	cursor: pointer; /* Corrects inability to style clickable 'input' types in iOS */ 
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#dfdfdf', GradientType=0);
-	line-height: 1;
-	text-decoration: none; /* Improves usability and consistency of cursor style between image-type 'input' and others */ 
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .woocommerce-page #container {
