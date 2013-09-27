@@ -14,7 +14,7 @@
               <ul>
                 <?php global $smof_data; $top_icons = $smof_data['topbar_icon_menu'];
                 foreach ($top_icons as $top_icon) {
-                  echo '<li><a href="'.$top_icon['link'].' title="'.$top_icon['title'].'" rel="tooltip" data-placement="bottom" data-original-title="'.$top_icon['title'].'">';
+                  echo '<li><a href="'.$top_icon['link'].'" title="'.$top_icon['title'].'" rel="tooltip" data-placement="bottom" data-original-title="'.$top_icon['title'].'">';
                   if($top_icon['url'] != '') echo '<img src="'.$top_icon['url'].'"/>' ; else echo '<i class="'.$top_icon['icon_o'].'"></i>';
                   echo '</a></li>';
                 } ?>
@@ -54,7 +54,7 @@
               <a class="brand logofont" href="<?php echo home_url(); ?>/">
                        <?php global $smof_data; if (!empty($smof_data['logo_upload'])) { ?> <div id="thelogo"><img src="<?php echo $smof_data['logo_upload']; ?>" <?php if(isset($smof_data['x2logo_upload'])) {echo 'data-at2x="'.$smof_data['x2logo_upload'].'"';} ?> /></div> <?php } else { bloginfo('name'); } ?>
               </a>
-              <?php if (isset($smof_data['logo_below_text'])) { ?> <p class="belowlogo-text"><?php echo $smof_data['logo_below_text']; ?></p> <?php }?>
+              <?php if (isset($smof_data['logo_below_text'])) { ?> <p class="kad_tagline belowlogo-text"><?php echo $smof_data['logo_below_text']; ?></p> <?php }?>
            </div> <!-- Close #logo -->
        </div><!-- close logo span -->
 

@@ -82,6 +82,15 @@ function kadence_gallery($attr) {
         } elseif ($columns == 2) {
           $output .= '<ul class="s-twocolumn gallery clearfix">';
           $imgsize = 365;
+        } elseif ($columns == 5) {
+          $output .= '<ul class="s-fivecolumn gallery clearfix">';
+          $imgsize = 134;
+        } elseif ($columns == 6) {
+          $output .= '<ul class="s-sixcolumn gallery clearfix">';
+          $imgsize = 120;
+        } elseif ($columns == 7) {
+          $output .= '<ul class="s-sevencolumn gallery clearfix">';
+          $imgsize = 120;
         } else {
           $output .= '<ul class="s-threecolumn gallery clearfix">';
           $imgsize = 236;
@@ -90,7 +99,16 @@ function kadence_gallery($attr) {
         if ($columns == 4) {
            $output .= '<ul class="fourcolumn gallery clearfix">';
            $imgsize = 270;
-        } elseif ($columns == 2) {
+        } elseif ($columns == 5) {
+          $output .= '<ul class="fivecolumn gallery clearfix">';
+          $imgsize = 214;
+        } elseif ($columns == 6) {
+          $output .= '<ul class="sixcolumn gallery clearfix">';
+          $imgsize = 175;
+        } elseif ($columns == 7) {
+          $output .= '<ul class="sevencolumn gallery clearfix">';
+          $imgsize = 147;
+        }  elseif ($columns == 2) {
           $output .= '<ul class="twocolumn gallery clearfix">';
           $imgsize = 556;
         } else {

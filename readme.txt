@@ -47,6 +47,21 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 1.5.0 =
+
+* Fixed Issue with topbar icon links not working
+* Fixed Issue with subtitle box being too large
+* Fixed Issue with Site Tagline Syling
+* Changed how categories show on Home page posts
+* Update Skins
+* Fixed Issue with Product variations on sale
+* Add Portfolio image size options
+* Add gallery metabox
+* Add third Layout for Portfolio
+* Added fullwidth blog posts
+* Added fullwidth blog pages
+* Added Wordpress Gallery sizes 5, 6 and 7
+
 = Version: 1.4.2 =
 
 * Updated CSS

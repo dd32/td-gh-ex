@@ -42,27 +42,40 @@
                                 <div class="span12">
                                   <div class="flexslider loading" style="max-width:<?php echo $slidewidth;?>px;">
                                     <ul class="slides">
-                                      <?php $args = array(
-                                          'order'          => 'ASC',
-                                          'post_type'      => 'attachment',
-                                          'post_parent'    => $post->ID,
-                                          'post_mime_type' => 'image',
-                                          'post_status'    => null,
-                                          'orderby'    => 'menu_order',
-                                          'numberposts'    => 5,);
-                                          $attachments = get_posts($args);              
-                                          if ($attachments) {
-                                            foreach ($attachments as $attachment) {
-                                              $attachment_url = wp_get_attachment_url($attachment->ID , 'large');
-                                              $image = aq_resize($attachment_url, $slidewidth, $slideheight, true);
-                                              if(empty($image)) { $image = $attachment_url; } ?>
-                                                <li>
-                                                  <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-                                                    <img src="<?php echo $image ?>" class="" />
-                                                  </a>
-                                                </li>
-                                            <?php } ?>  
-                                        <?php } ?>                            
+                                     <?php global $post;
+                                        $image_gallery = get_post_meta( $post->ID, '_kad_image_gallery', true );
+                                            if(!empty($image_gallery)) {
+                                              $attachments = array_filter( explode( ',', $image_gallery ) );
+                                                if ($attachments) {
+                                                foreach ($attachments as $attachment) {
+                                                  $attachment_url = wp_get_attachment_url($attachment , 'full');
+                                                  $image = aq_resize($attachment_url, $slidewidth, $slideheight, true);
+                                                    if(empty($image)) {$image = $attachment_url;} ?>
+                                                    <li>
+                                                      <a href="<?php the_permalink() ?>" alt="<?php the_title(); ?>">
+                                                        <img src="<?php echo $image ?>" class="" />
+                                                      </a>
+                                                    </li>
+                                                <?php 
+                                                }
+                                              }
+                                            } else {
+                                              $attach_args = array('order'=> 'ASC','post_type'=> 'attachment','post_parent'=> $post->ID,'post_mime_type' => 'image','post_status'=> null,'orderby'=> 'menu_order','numberposts'=> -1);
+                                              $attachments = get_posts($attach_args);
+                                                if ($attachments) {
+                                                  foreach ($attachments as $attachment) {
+                                                    $attachment_url = wp_get_attachment_url($attachment->ID , 'full');
+                                                    $image = aq_resize($attachment_url, $slidewidth, $slideheight, true);
+                                                      if(empty($image)) {$image = $attachment_url;} ?>
+                                                    <li>
+                                                      <a href="<?php the_permalink() ?>" alt="<?php the_title(); ?>">
+                                                        <img src="<?php echo $image ?>" class="" />
+                                                      </a>
+                                                    </li>
+                                                <?php 
+                                                  }
+                                                } 
+                                            } ?>                                                      
                                     </ul>
                                   </div> <!--Flex Slides-->
                                   <script type="text/javascript">
@@ -85,27 +98,40 @@
                               <div class="span4">
                                 <div class="flexslider loading">
                                   <ul class="slides">
-                                    <?php $args = array(
-                                          'order'          => 'ASC',
-                                          'post_type'      => 'attachment',
-                                          'post_parent'    => $post->ID,
-                                          'post_mime_type' => 'image',
-                                          'post_status'    => null,
-                                          'orderby'    => 'menu_order',
-                                          'numberposts'    => 5,);
-                                          $attachments = get_posts($args);              
-                                          if ($attachments) {
-                                              foreach ($attachments as $attachment) {
-                                                $attachment_url = wp_get_attachment_url($attachment->ID , 'large');
-                                                $image = aq_resize($attachment_url, 370, 370, true); 
-                                                if(empty($image)) { $image = $attachment_url; }?>
-                                                  <li>
-                                                    <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-                                                      <img src="<?php echo $image ?>" class="" />
-                                                    </a>
-                                                  </li>
-                                            <?php } ?>  
-                                        <?php } ?>                            
+                                   <?php global $post;
+                                        $image_gallery = get_post_meta( $post->ID, '_kad_image_gallery', true );
+                                            if(!empty($image_gallery)) {
+                                              $attachments = array_filter( explode( ',', $image_gallery ) );
+                                                if ($attachments) {
+                                                foreach ($attachments as $attachment) {
+                                                  $attachment_url = wp_get_attachment_url($attachment , 'full');
+                                                  $image = aq_resize($attachment_url, 370, 370, true);
+                                                    if(empty($image)) {$image = $attachment_url;} ?>
+                                                    <li>
+                                                      <a href="<?php the_permalink() ?>" alt="<?php the_title(); ?>">
+                                                        <img src="<?php echo $image ?>" class="" />
+                                                      </a>
+                                                    </li>
+                                                <?php 
+                                                }
+                                              }
+                                            } else {
+                                              $attach_args = array('order'=> 'ASC','post_type'=> 'attachment','post_parent'=> $post->ID,'post_mime_type' => 'image','post_status'=> null,'orderby'=> 'menu_order','numberposts'=> -1);
+                                              $attachments = get_posts($attach_args);
+                                                if ($attachments) {
+                                                  foreach ($attachments as $attachment) {
+                                                    $attachment_url = wp_get_attachment_url($attachment->ID , 'full');
+                                                    $image = aq_resize($attachment_url, 370, 370, true);
+                                                      if(empty($image)) {$image = $attachment_url;} ?>
+                                                    <li>
+                                                      <a href="<?php the_permalink() ?>" alt="<?php the_title(); ?>">
+                                                        <img src="<?php echo $image ?>" class="" />
+                                                      </a>
+                                                    </li>
+                                                <?php 
+                                                  }
+                                                } 
+                                            } ?>                               
                                   </ul>
                               </div> <!--Flex Slides-->
                               <script type="text/javascript">

@@ -128,6 +128,16 @@ function virtue_metaboxes( array $meta_boxes ) {
 				),
 			),
 			array(
+				'name' => __('Display Sidebar?', 'virtue'),
+				'desc' => __('Choose if layout is fullwidth or sidebar', 'virtue'),
+				'id'   => $prefix . 'post_sidebar',
+				'type'    => 'select',
+				'options' => array(
+					array( 'name' => __('Yes', 'virtue'), 'value' => 'yes', ),
+					array( 'name' => __('No', 'virtue'), 'value' => 'no', ),
+				),
+			),
+			array(
 				'name'    => __('Choose Sidebar', 'virtue'),
 				'desc'    => '',
 				'id'      => $prefix . 'sidebar_choice',
@@ -190,13 +200,14 @@ $meta_boxes[] = array(
 				'fields' => array(
 			
 			array(
-				'name'    => 'Project Layout',
-				'desc'    => '',
+				'name'    => __('Project Layout', 'virtue'),
+				'desc'    => '<a href="#" rel="lightbox" target="_new" >Whats the difference?</a>',
 				'id'      => $prefix . 'ppost_layout',
 				'type'    => 'radio_inline',
 				'options' => array(
 					array( 'name' => __('Beside', 'virtue'), 'value' => 'beside', ),
-					array( 'name' => __('Above', 'virtue'), 'value' => 'above', ), 
+					array( 'name' => __('Above', 'virtue'), 'value' => 'above', ),
+					array( 'name' => __('Three Rows', 'virtue'), 'value' => 'three', ), 
 				),
 			),
 			array(
@@ -211,9 +222,15 @@ $meta_boxes[] = array(
 				),
 			),
 			array(
-				'name' => __('Image and Slider Height', 'virtue'),
-				'desc' => __('Default is: 450 <b>(Note: just input number, example: 450)</b>', 'virtue'),
+				'name' => __("Max Image/Slider Height", 'virtue' ),
+				'desc' => __("Default is: 450 <b>(Note: just input number, example: 350)</b>", 'virtue' ),
 				'id'   => $prefix . 'posthead_height',
+				'type' => 'text_small',
+			),
+			array(
+				'name' => __("Max Image/Slider Width", 'virtue' ),
+				'desc' => __("Default is: 670 or 1170 on <b>above</b> or <b>three row</b> layouts (Note: just input number, example: 650)</b>", 'virtue' ),
+				'id'   => $prefix . 'posthead_width',
 				'type' => 'text_small',
 			),
 			array(
@@ -467,6 +484,22 @@ $meta_boxes[] = array(
 					array( 'name' => __('Full', 'virtue'), 'value' => 'full', ),
 				),
 			),
+			array(
+				'name' => __('Display Sidebar?', 'virtue'),
+				'desc' => __('Choose if layout is fullwidth or sidebar', 'virtue'),
+				'id'   => $prefix . 'page_sidebar',
+				'type'    => 'select',
+				'options' => array(
+					array( 'name' => __('Yes', 'virtue'), 'value' => 'yes', ),
+					array( 'name' => __('No', 'virtue'), 'value' => 'no', ),
+				),
+			),
+			array(
+				'name'    => __('Choose Sidebar', 'virtue'),
+				'desc'    => '',
+				'id'      => $prefix . 'sidebar_choice',
+				'type'    => 'imag_select_sidebars',
+				),
 				
 			));
 			$meta_boxes[] = array(
@@ -565,7 +598,7 @@ $meta_boxes[] = array(
 				'id'         => 'page_sidebar',
 				'title'      => __('Sidebar Options', 'virtue'),
 				'pages'      => array( 'page' ), // Post type
-				'show_on' => array( 'key' => 'page-template', 'value' => array('page-sidebar.php','page-feature-sidebar.php', 'page-blog.php')),
+				'show_on' => array( 'key' => 'page-template', 'value' => array('page-sidebar.php','page-feature-sidebar.php')),
 				'context'    => 'normal',
 				'priority'   => 'high',
 				'show_names' => true, // Show field names on the left

@@ -1,15 +1,15 @@
 <?php
  header("Content-type: text/css; charset: UTF-8");
-$wp_include = "../wp-load.php";
-$i = 0;
-while (!file_exists($wp_include) && $i++ < 10) {
-  $wp_include = "../$wp_include";
-}
+  $wp_include = "../wp-load.php";
+  $i = 0;
+  while (!file_exists($wp_include) && $i++ < 10) {
+    $wp_include = "../$wp_include";
+  }
 
 // let's load WordPress
 require($wp_include);
 
- global $smof_data; 
+global $smof_data; 
 //Logo
 if(!empty($smof_data['font_logo'])) {
   $logo_font = '.logofont {font-family:'.$smof_data['font_logo'].';}';
@@ -99,7 +99,7 @@ if(!empty($smof_data['font_h1'])) {
     $font_h5 = 'h5 {font-size:18px; font-weight:bold; line-height:24px;}';
   }
   if(!empty($smof_data['font_p'])) {
-  $font_p = 'body {font-size:' . $smof_data['font_p']['size']. '; font-weight:' . $smof_data['font_p']['style']. '; line-height:' . $smof_data['font_p']['height']. '; color:' . $smof_data['font_p']['color']. ';} .sidebar a, .color_body, .author-name a, .author-latestposts h5 a, .author-latestposts h5, .nav-tabs > .active > a, .nav-tabs > .active > a:hover, .author-profile .author-occupation, .product_price {color:' . $smof_data['font_p']['color']. ';}';
+  $font_p = 'body {font-size:' . $smof_data['font_p']['size']. '; font-weight:' . $smof_data['font_p']['style']. '; line-height:' . $smof_data['font_p']['height']. '; color:' . $smof_data['font_p']['color']. ';} .sidebar a, .color_body, .author-name a, .author-latestposts h5 a, .author-latestposts h5, .nav-tabs > .active > a, .nav-tabs > .active > a:hover, .author-profile .author-occupation, .product_price, .product_details > .product_excerpt {color:' . $smof_data['font_p']['color']. ';}';
   } else {
   $font_p = 'body {font-size:14px; font-weight:normal; line-height:20px;}';
   }
@@ -120,15 +120,15 @@ if(!empty($smof_data['primary_color'])) {
   $primaryrgb = hex2rgb($smof_data['primary_color']); 
   $color_primary = '.home-message:hover {background-color:'.$smof_data['primary_color'].'; background-color: rgba('.$primaryrgb[0].', '.$primaryrgb[1].', '.$primaryrgb[2].', 0.6);}
   nav.woocommerce-pagination ul li a:hover, .wp-pagenavi a:hover, .accordion-heading .accordion-toggle.open {border-color: '.$smof_data['primary_color'].';}
-  a, #nav-main ul.sf-menu ul li a:hover, .product_price ins .amount, .color_primary, .primary-color, #logo a.brand, #nav-main ul.sf-menu a:hover,
+  a, #nav-main ul.sf-menu ul li a:hover, .product_price ins .amount, .price ins .amount, .color_primary, .primary-color, #logo a.brand, #nav-main ul.sf-menu a:hover,
   .woocommerce-message:before, .woocommerce-info:before, #nav-second ul.sf-menu a:hover, .footerclass a:hover, .posttags a:hover, .subhead a:hover {color: '.$smof_data['primary_color'].';}
-  .widget_price_filter .ui-slider .ui-slider-handle, .product_item .kad_add_to_cart:hover, .kad-btn-primary, .woocommerce-message .button, 
+  .widget_price_filter .ui-slider .ui-slider-handle, .product_item .kad_add_to_cart:hover, .product_item.hidetheaction:hover .kad_add_to_cart:hover, .kad-btn-primary, .woocommerce-message .button, 
   #containerfooter .menu li a:hover, .bg_primary, .portfolionav a:hover, .home-iconmenu a:hover, p.demo_store, .topclass, #commentform .form-submit #submit {background: '.$smof_data['primary_color'].';}';
 } else {
   $color_primary = '';
 }
 if(!empty($smof_data['primary20_color'])) {
-  $color_primary30 =  'a:hover {color: '.$smof_data['primary20_color'].';} .kad-btn-primary:hover, .woocommerce-message .button:hover, #commentform .form-submit #submit:hover {background: '.$primary20.';}';
+  $color_primary30 =  'a:hover {color: '.$smof_data['primary20_color'].';} .kad-btn-primary:hover, .woocommerce-message .button:hover, #commentform .form-submit #submit:hover, .product_item.hidetheaction:hover .kad_add_to_cart {background: '.$smof_data['primary20_color'].';}';
 } else {
   $color_primary30 = '';
 }

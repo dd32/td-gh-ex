@@ -17,7 +17,7 @@ if ( get_option( 'woocommerce_enable_review_rating' ) == 'no' )
 <?php global $smof_data; if(isset($smof_data['shop_rating'])) { $show_rating = $smof_data['shop_rating'];} else {$show_rating = 1;} 
 			if($show_rating == 1) { ?> 
 	<?php if ( $rating_html = $product->get_rating_html() ) { ?>
-		<?php echo $rating_html; ?>
+		<a href="<?php the_permalink(); ?>"><?php echo $rating_html; ?></a>
 	<?php } else { echo "<span class='notrated'>not rated</span>"; ?>
 	<?php } ?>
 <?php } ?>

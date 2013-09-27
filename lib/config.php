@@ -34,32 +34,56 @@ function kadence_sidebar_class() {
  * See lib/sidebar.php for more details
  */
 function kadence_display_sidebar() {
-
-   if ( class_exists( 'woocommerce' ) ) {
-      global $smof_data; if(isset($smof_data['shop_layout']) && $smof_data['shop_layout'] == 'sidebar') {
+   if (class_exists('woocommerce'))  {
         $sidebar_config = new Kadence_Sidebar(
-        array('is_404','is_front_page','is_cart','is_product','is_checkout','is_account_page',array('is_singular', array('portfolio'))
+        array('kadence_sidebar_on_shop_page','kadence_sidebar_on_blog_post','kadence_sidebar_on_blog_page','is_404','is_front_page','is_cart','is_product','is_checkout','is_account_page',array('is_singular', array('portfolio'))
         ),
-        array('page-fullwidth.php','page-feature.php','page-portfolio.php','page-staff-grid.php','page-testimonial-grid.php','page-contact.php','page-gallery.php')
+        array('page-fullwidth.php','page-feature.php','page-portfolio.php','page-staff-grid.php','page-testimonial-grid.php','page-contact.php')
       );
-      } else {
-        $sidebar_config = new Kadence_Sidebar(
-          array('is_404','is_front_page','is_shop','is_cart','is_product','is_checkout','is_account_page','is_product_tag','is_product_category',array('is_singular', array('portfolio'))
-          ),
-          array('page-fullwidth.php','page-portfolio.php','page-feature.php','page-staff-grid.php','page-testimonial-grid.php','page-contact.php','page-gallery.php')
-        );
-      }
   } else {
   $sidebar_config = new Kadence_Sidebar(
-    array('is_404','is_front_page', array('is_singular', array('portfolio'))
+    array('kadence_sidebar_on_blog_post','kadence_sidebar_on_blog_page','is_404','is_front_page', array('is_singular', array('portfolio'))
       ),
-    array('page-fullwidth.php','page-feature.php','page-portfolio.php','page-staff-grid.php','page-testimonial-grid.php','page-contact.php','page-gallery.php')
+    array('page-fullwidth.php','page-feature.php','page-portfolio.php','page-staff-grid.php','page-testimonial-grid.php','page-contact.php')
   );
 }
 
   return $sidebar_config->display;
 }
-
+function kadence_sidebar_on_shop_page() {
+  global $smof_data; 
+    if(isset($smof_data['shop_layout']) && $smof_data['shop_layout'] == 'sidebar') {
+      if( is_shop() || is_product_category() || is_product_tag()) {
+        return false;
+      }
+    } else {
+      if( is_shop() || is_product_category() || is_product_tag()) {
+        return true;
+    }
+  }
+}
+function kadence_sidebar_on_blog_post() {
+  if(is_single()) {
+    global $post;
+    $postsidebar = get_post_meta( $post->ID, '_kad_post_sidebar', true );
+      if(isset($postsidebar) && $postsidebar == 'no') {
+        return true;
+        } else {
+          return false;
+        }
+      }
+}
+function kadence_sidebar_on_blog_page() {
+  if(is_page_template('page-blog.php')) {
+    global $post;
+    $pagesidebar = get_post_meta( $post->ID, '_kad_page_sidebar', true );
+      if(isset($pagesidebar) && $pagesidebar == 'no') {
+        return true;
+        } else {
+          return false;
+        }
+      }
+}
 function kadence_display_topbar() {
   global $smof_data;
    if(isset($smof_data['topbar'])) {

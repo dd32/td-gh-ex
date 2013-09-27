@@ -12,6 +12,7 @@ require_once locate_template('/lib/activation.php');      			// Theme activation
 require_once locate_template('/lib/cleanup.php');        			// Cleanup
 require_once locate_template('/lib/nav.php');            			// Custom nav modifications
 require_once locate_template('/lib/metaboxes.php');     			// Custom metaboxes
+require_once locate_template('/lib/gallery_metabox.php');     		// Custom metaboxes
 require_once locate_template('/lib/comments.php');        			// Custom comments modifications
 require_once locate_template('/lib/shortcodes.php');      			// Shortcodes
 require_once locate_template('/lib/gallery.php');      				// Gallery Shortcode

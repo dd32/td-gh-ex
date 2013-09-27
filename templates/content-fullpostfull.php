@@ -1,13 +1,13 @@
-<?php global $post; $headcontent = get_post_meta( $post->ID, '_kad_blog_head', true );
+ <?php global $post; $headcontent = get_post_meta( $post->ID, '_kad_blog_head', true );
    $height = get_post_meta( $post->ID, '_kad_posthead_height', true ); if (!empty($height)) $slideheight = $height; else $slideheight = 400; 
-    $swidth = get_post_meta( $post->ID, '_kad_posthead_width', true ); if (!empty($swidth)) $slidewidth = $swidth; else $slidewidth = 770; 
+    $swidth = get_post_meta( $post->ID, '_kad_posthead_width', true ); if (!empty($swidth)) $slidewidth = $swidth; else $slidewidth = 1170; 
      ?>
           <article <?php post_class(); ?>>
            <?php if ($headcontent == 'flex') { ?>
                <section class="postfeat">
                 <div class="flexslider" style="max-width:<?php echo $slidewidth;?>px;">
                 <ul class="slides">
-                   <?php global $post;
+                 <?php global $post;
                       $image_gallery = get_post_meta( $post->ID, '_kad_image_gallery', true );
                           if(!empty($image_gallery)) {
                             $attachments = array_filter( explode( ',', $image_gallery ) );
@@ -30,7 +30,7 @@
                                   echo '<li><img src="'.$image.'"/></li>';
                                 }
                               } 
-                          } ?>                             
+                          } ?>               
             </ul>
           </div> <!--Flex Slides-->
           <script type="text/javascript">
