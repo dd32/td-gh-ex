@@ -7,7 +7,7 @@ Description: Vantage is a flexible multipurpose theme. It's strength lies in its
 Version: trunk
 License: GNU General Public License 2.0
 License URI: license.txt
-Tags: flexible-width, custom-background, custom-menu, featured-images, theme-options, threaded-comments, translation-ready
+Tags: flexible-width, custom-background, custom-menu, featured-images, theme-options, threaded-comments, translation-ready, black, white, light, one-column, two-columns, full-width-template
 
 spritemapper.sprite_dirs = images/sprites
 spritemapper.output_css = style.sprites.css
@@ -411,6 +411,11 @@ header#masthead {
 	width: 71.287%;
 }
 
+body.no-sidebar #primary {
+	float: none;
+	width: auto;
+}
+
 /* Full Width Primary blocks */
 .siteorigin-panels-home #primary,
 .page-template-templatestemplate-full-php #primary,
@@ -654,7 +659,7 @@ body.responsive {
 			.transition(0.4s);
 		}
 
-		padding: 22px;
+		padding: 22px 21px;
 
 		.icon {
 			display: inline-block;

@@ -7,7 +7,7 @@
  * @license GPL 2.0
  */
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.0.4' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.0.5' );
 define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://siteorigin.com' );
 
 if( file_exists( get_template_directory() . '/premium/functions.php' ) ){
@@ -36,13 +36,6 @@ include get_template_directory() . '/inc/widgets.php';
 include get_template_directory() . '/inc/menu-icon.php';
 include get_template_directory() . '/inc/woocommerce.php';
 
-
-/**
- * Set the content width based on the theme's design and stylesheet.
- *
- * @since vantage 1.0
- */
-if ( ! isset( $content_width ) ) $content_width = 789; /* pixels */
 
 if ( ! function_exists( 'vantage_setup' ) ) :
 /**
@@ -80,6 +73,7 @@ function vantage_setup() {
 	// define('WOOCOMMERCE_USE_CSS', false);
 
 	set_post_thumbnail_size(720, 380, true);
+	add_image_size('vantage-thumbnail-no-sidebar', 1080, 380, true);
 	add_image_size('vantage-slide', 960, 480, true);
 	add_image_size('vantage-carousel', 272, 182, true);
 	add_image_size('vantage-grid-loop', 218, 136, true);
@@ -88,6 +82,11 @@ function vantage_setup() {
 		// Only include panels lite if the panels plugin doesn't exist
 		include get_template_directory() . '/extras/panels-lite/panels-lite.php';
 	}
+
+	global $content_width, $vantage_site_width;
+
+	if ( ! isset( $content_width ) ) $content_width = 789; /* pixels */
+	if ( ! isset( $vantage_site_width ) ) $vantage_site_width = 1080; /* pixels */
 }
 endif; // vantage_setup
 add_action( 'after_setup_theme', 'vantage_setup' );
@@ -170,7 +169,7 @@ add_action( 'wp_enqueue_scripts', 'vantage_register_scripts' , 5);
  * Enqueue scripts and styles
  */
 function vantage_scripts() {
-	wp_enqueue_style( 'vantage-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'vantage-style', get_stylesheet_uri(), array(), SITEORIGIN_THEME_VERSION );
 	wp_enqueue_script( 'vantage-main' , get_template_directory_uri() . '/js/jquery.theme-main.min.js', array('jquery', 'flexslider', 'fitvids'), SITEORIGIN_THEME_VERSION );
 	wp_enqueue_style( 'vantage-fontawesome', get_template_directory_uri().'/fontawesome/css/font-awesome.css', array(), '3.2.1' );
 
@@ -206,6 +205,11 @@ function vantage_body_class($classes){
 	if( siteorigin_setting('layout_responsive') ) $classes[] = 'responsive';
 	$classes[] = 'layout-'.siteorigin_setting('layout_bound');
 	$classes[] = 'no-js';
+
+	if( !is_active_sidebar('sidebar-1') ) {
+		$classes[] = 'no-sidebar';
+	}
+
 	return $classes;
 }
 add_filter('body_class', 'vantage_body_class');
@@ -263,6 +267,9 @@ function vantage_render_slider(){
 	$slider = siteorigin_setting('home_slider');
 	if($slider == 'none') return;
 
+	global $vantage_is_main_slider;
+	$vantage_is_main_slider = true;
+
 	?><div id="main-slider" <?php if( siteorigin_setting('home_slider_stretch') ) echo 'data-stretch="true"' ?>><?php
 
 
@@ -275,6 +282,7 @@ function vantage_render_slider(){
 	}
 
 	?></div><?php
+	$vantage_is_main_slider = false;
 }
 
 function vantage_post_class_filter($classes){
@@ -291,3 +299,7 @@ function vantage_filter_vantage_post_on_parts($parts){
 	return $parts;
 }
 add_filter('vantage_post_on_parts', 'vantage_filter_vantage_post_on_parts');
+
+function vantage_get_site_width(){
+	return apply_filters('vantage_site_width', !empty($GLOBALS['vantage_site_width']) ? $GLOBALS['vantage_site_width'] : 1080);
+}

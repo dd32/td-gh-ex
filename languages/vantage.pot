@@ -2,8 +2,8 @@
 # This file is distributed under the GNU General Public License 2.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: vantage 1.0.4\n"
-"POT-Creation-Date: 2013-09-26T18:13:00+02:00\n"
+"Project-Id-Version: vantage 1.0.5\n"
+"POT-Creation-Date: 2013-09-28T18:43:43+02:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -814,7 +814,7 @@ msgstr ""
 msgid "Home Page Slider"
 msgstr ""
 
-msgid "This theme supports <a href=\"%s\" target=\"_blank\">Meta Slider</a>. <a href=\"%s\">Install it</a> for free to create responsive, animated sliders - <a href=\"%s\" target=\"_blank\">More Info</a>"
+msgid "This theme supports <a href=\"%s\" target=\"_blank\">Meta Slider</a>. <a href=\"%s\">Install it</a> for free to create beautiful responsive sliders - <a href=\"%s\" target=\"_blank\">More Info</a>"
 msgstr ""
 
 msgid "Stretch Home Slider"
@@ -1081,9 +1081,6 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-msgid "Meta"
-msgstr ""
-
 msgid "Upgrade To Vantage Premium"
 msgstr ""
 
@@ -1093,7 +1090,7 @@ msgstr ""
 msgid "Premium Email Support"
 msgstr ""
 
-msgid "Need help setting up vantage? Upgrading to vantage Premium gives you email support."
+msgid "Need help setting up vantage? Upgrading to vantage Premium gives you email support. We have a growing support team ready to help you with your questions."
 msgstr ""
 
 msgid "Name The Price"
@@ -1114,7 +1111,13 @@ msgstr ""
 msgid "vantage premium gives you the option to easily remove the \"Powered by WordPress, Theme by SiteOrigin\" text from your footer. "
 msgstr ""
 
+msgid "No one wants a fuzzy logo. Vantage Premium lets you upload a second, double-size logo that's only displayed to users with retina screens."
+msgstr ""
+
 msgid "Want to keep the conversation flowing? Ajax comments means your visitors can comment without reloading your page. So commenting wont interrupt a video or lose their position in one of your galleries."
+msgstr ""
+
+msgid "Add post sharing icons to the bottom of every post on your blog. It's about time to go viral."
 msgstr ""
 
 msgid "CSS Editor"
@@ -1133,4 +1136,7 @@ msgid "Vantage is simple and clean. The user interface is easy to use. Combined 
 msgstr ""
 
 msgid "Clean, simple and powerful. Like other themes from SiteOrigin."
+msgstr ""
+
+msgid "Combined Vantage and Page builder are now one of the best combinations to have a premium WordPress theme."
 msgstr ""

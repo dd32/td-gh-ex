@@ -53,3 +53,10 @@ Created spritemaps.
 Various fixes and improvements.
 Fixes some CSS issues that resulted from broken build process.
 Added minified Javascript
+
+**1.0.5**
+Fixed ordering of footer widgets.
+Minor CSS fixes and changes.
+Added IE compatibility header to prevent compatibility mode from breaking design.
+Handles no sidebar properly.
+Added a way to include an overlay image in Meta Slider free.
