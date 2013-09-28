@@ -245,7 +245,6 @@ function catchevolution_header_top_menu() {
         <div id="fixed-header-top" class="full-menu">
             <div class="wrapper">
                 <?php 
-				echo $headerimage;
 				echo '<nav id="access-top" role="navigation">';
 					$args = array(
 						'theme_location'    => 'top',

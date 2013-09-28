@@ -38,3 +38,6 @@ Version 1.0.1
 * Fixed custom header undefined index
 * Fixed Older/Newest entries navigations 
 * Removed unwanted color_picker.js and jetpack.php files
+
+Version 1.0.2
+* Fixed Undefined variable: headerimage in frontend
