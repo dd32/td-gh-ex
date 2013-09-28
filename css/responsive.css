@@ -31,7 +31,7 @@
 		padding-left: 30px;
 		padding-right: 30px;
 	}
-	.home #content nav, .archive #content nav {
+	#content nav#nav-below {
 		padding-bottom: 30px;
 	}
 	#supplementary {
@@ -403,8 +403,7 @@ and (orientation : landscape) {
 		padding: 10px;
 	}
 	#content nav,
-	.home #content nav,
-	.archive #content nav {
+	#content nav#nav-below {
 		padding-bottom: 15px;
 	}
 	#slider-wrap .featured-text .featured-text-wrap {

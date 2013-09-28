@@ -129,20 +129,11 @@ function catchevolution_header_style() {
 		// If the user has set a custom color for the text use that
 		else :
 	?>
-		#site-title a {
+		#site-title a,
+		#site-description {
 			color: #<?php echo get_header_textcolor(); ?>;
 		}
 	<?php endif; ?>
-	<?php 
-	// Site Title Hover Color
-	if( ( $defaults[ 'title_hover_color' ] != $options[ 'title_hover_color' ] ) || ( $defaults[ 'title_hover_color' ] != $options[ 'title_hover_color' ] ) ) {
-		echo "#site-title a:hover, #site-title a:focus, #site-title a:active { color: " .  $options[ 'title_hover_color' ] ."; }". "\n";
-	}
-	// Site Tagline Color	
-	if( ( $defaults[ 'tagline_color' ] != $options[ 'tagline_color' ] ) || ( $defaults[ 'tagline_color' ] != $options[ 'tagline_color' ] ) ) {
-		echo "#site-description { color: " .  $options[ 'tagline_color' ] ."; }". "\n";
-	}
-	?>
 	</style>
 	<?php
 }
@@ -195,22 +186,12 @@ function catchevolution_admin_header_style() {
 		// If the user has set a custom color for the text use that
 		if ( get_header_textcolor() != HEADER_TEXTCOLOR ) :
 	?>
-		#site-title a {
+		#site-title a,
+		#site-description {
 			color: #<?php echo get_header_textcolor(); ?>;
 		}
 		
 	<?php endif; ?>
-	<?php 
-	// Site Title Hover Color
-	if( ( $defaults[ 'title_hover_color' ] != $options[ 'title_hover_color' ] ) || ( $defaults[ 'title_hover_color' ] != $options[ 'title_hover_color' ] ) ) {
-		echo "#site-title a:hover, #site-title a:focus, #site-title a:active { color: " .  $options[ 'title_hover_color' ] ."; }". "\n";
-	}
-	// Site Tagline Color	
-	if( ( $defaults[ 'tagline_color' ] != $options[ 'tagline_color' ] ) || ( $defaults[ 'tagline_color' ] != $options[ 'tagline_color' ] ) ) {
-		echo "#site-description { color: " .  $options[ 'tagline_color' ] ."; }". "\n";
-	}
-	?>
-
 	#headimg img {
 		height: auto;
 		max-width: 100%;

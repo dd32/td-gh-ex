@@ -14,14 +14,13 @@ add_action( 'admin_menu', 'catchevolution_options_menu' );
  * Enqueue admin script and styles
  *
  * @uses wp_register_script, wp_enqueue_script and wp_enqueue_style
- * @Calling jquery, jquery-ui-tabs,jquery-cookie, jquery-ui-sortable, jquery-ui-draggable, media-upload, thickbox, farbtastic, colorpicker
+ * @Calling jquery, jquery-ui-tabs,jquery-cookie, jquery-ui-sortable, jquery-ui-draggable, media-upload, thickbox, colorpicker
  */
 function catchevolution_admin_scripts() {
 	//jquery-cookie registered in functions.php
 	wp_enqueue_script( 'catchevolution_admin', get_template_directory_uri().'/inc/panel/admin.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable' ) );
 	wp_enqueue_script( 'catchevolution_upload', get_template_directory_uri().'/inc/panel/add_image_scripts.js', array( 'jquery','media-upload','thickbox' ) );
-	wp_enqueue_script( 'catchevolution_color', get_template_directory_uri().'/inc/panel/color_picker.js', array( 'farbtastic' ) );
-	wp_enqueue_style( 'catchevolution_admin',get_template_directory_uri().'/inc/panel/admin.css', array( 'farbtastic', 'thickbox' ), '1.0', 'screen' );
+	wp_enqueue_style( 'catchevolution_admin',get_template_directory_uri().'/inc/panel/admin.css', array('thickbox' ), '1.0', 'screen' );
 }
 add_action( 'admin_print_styles-appearance_page_theme_options', 'catchevolution_admin_scripts' );
 
@@ -63,7 +62,7 @@ function catchevolution_admin_social() { ?>
 <!-- End Social scripts -->
 <?php
 }
-add_action( 'admin_print_styles-appearance_page_theme_options', 'catchevolution_admin_social' );
+//add_action( 'admin_print_styles-appearance_page_theme_options', 'catchevolution_admin_social' );
 
 
 /*
@@ -78,7 +77,7 @@ function catchevolution_register_settings(){
 
 
 /*
- * Render Simple Catch Pro Theme Options page
+ * Render Catch Evolution Pro Theme Options page
  *
  * @uses settings_fields, get_option, bloginfo
  * @Settings Updated
@@ -95,9 +94,6 @@ function catchevolution_theme_options_do_page() {
                 settings_fields( 'catchevolution_options' );
                 global $catchevolution_options_settings;
                 $options = $catchevolution_options_settings;
-				
-				//Getting Units
-				$units = array( 'px', 'pt', 'em', '%' ); 
             ?>   
             
             <?php if (false !== $_REQUEST['settings-updated']) : ?>
@@ -673,12 +669,17 @@ function catchevolution_theme_options_do_page() {
                 	<div class="option-container">
                         <table class="form-table">
                             <tbody>
+                            	<tr>                            
+                                    <th scope="row"><?php _e( 'Enable Social Icons in Header Right Sidebar?', 'catchevolution' ); ?></th>
+                                    <td>
+                                        <a class="button" href="<?php echo admin_url('widgets.php'); ?>" title="<?php esc_attr_e( 'Just add Catch Evolution Social Widget in Header Right Sidebar', 'catchevolution' ); ?>"><?php _e( 'Just add Catch Evolution Social Widget in Header Right Sidebar', 'catchevolution' );?></a>
+                                    </td>
+                                </tr>     
                                 <tr>                            
-                                    <th scope="row"><?php _e( 'Enable Social Links in Footer?', 'catchevolution' ); ?></th>
+                                    <th scope="row"><?php _e( 'Enable Social Icons in Footer?', 'catchevolution' ); ?></th>
                                     <input type='hidden' value='0' name='catchevolution_options[disable_footer_social]'>
                                     <td><input type="checkbox" id="headerlogo" name="catchevolution_options[disable_footer_social]" value="1" <?php checked( '1', $options['disable_footer_social'] ); ?> /> <?php _e('Check to enable', 'catchevolution'); ?></td>
                                 </tr>
-                            
                                 <tr>
                                     <th scope="row"><h4><?php _e( 'Facebook', 'catchevolution' ); ?></h4></th>
                                     <td><input type="text" size="45" name="catchevolution_options[social_facebook]" value="<?php echo esc_url( $options[ 'social_facebook' ] ); ?>" />
@@ -886,32 +887,16 @@ function catchevolution_theme_options_validate( $options ) {
 		$input_validated[ 'seperate_logo' ] = $input[ 'seperate_logo' ];
 	}		
 
-	// data validation for Search Settings
-	if ( isset( $input[ 'search_display_text' ] ) ) {
-        $input_validated[ 'search_display_text' ] = sanitize_text_field( $input[ 'search_display_text' ] );
-    }	
-	
-	if( isset( $input[ 'reset_header_space'] ) ) {  
-		// Our checkbox value is either 0 or 1 
-		$input_validated[ 'reset_header_space' ] = $input[ 'reset_header_space' ];
-		$input_validated['header_top_size'] = number_format( floatval( $input['header_top_size'] ), 2, '.', '' ); 
-		$input_validated['header_top_size_unit'] = ( in_array( $input['header_top_size_unit'], $units ) ? $input['header_top_size_unit'] : $defaults[ 'header_top_size_unit' ] ); 	
-		$input_validated['header_bottom_size'] = number_format( floatval( $input['header_bottom_size'] ), 2, '.', '' ); 
-		$input_validated['header_bottom_size_unit'] = ( in_array( $input['header_bottom_size_unit'], $units ) ? $input['header_bottom_size_unit'] : $defaults[ 'header_bottom_size_unit' ] );	
-		
-		if( $input[ 'reset_header_space'] == '1' )	{	
-			$input_validated['header_top_size'] = $defaults[ 'header_top_size' ];
-			$input_validated['header_top_size_unit'] = $defaults[ 'header_top_size_unit' ];
-			$input_validated['header_bottom_size'] = $defaults[ 'header_bottom_size' ];
-			$input_validated['header_bottom_size_unit'] = $defaults[ 'header_bottom_size_unit' ];
-		}
-	}
- 
 	// data validation for Disable Primary Menu 
 	if ( isset( $input['disable_header_menu'] ) ) {
 		// Our checkbox value is either 0 or 1 
 		$input_validated[ 'disable_header_menu' ] = $input[ 'disable_header_menu' ];
 	}	
+	
+	// data validation for Search Settings
+	if ( isset( $input[ 'search_display_text' ] ) ) {
+        $input_validated[ 'search_display_text' ] = sanitize_text_field( $input[ 'search_display_text' ] );
+    }	
 
 	// data validation for Color Scheme
 	if ( isset( $input['color_scheme'] ) ) {
@@ -932,21 +917,17 @@ function catchevolution_theme_options_validate( $options ) {
 		$input_validated[ 'reset_sidebar_layout' ] = $input[ 'reset_sidebar_layout' ];
 		
 		if ( $input['reset_sidebar_layout'] == 1 ) {
+			global $catchevolution_options_defaults;
+			$defaults = $catchevolution_options_defaults;
 			$input_validated[ 'sidebar_layout' ] = $defaults[ 'sidebar_layout' ];
 			$input_validated[ 'content_layout' ] = $defaults[ 'content_layout' ];
 		}
 	}	
 	
-	
-	// data validation for Custom CSS Style
-	if ( isset( $input['custom_css'] ) ) {
-		$input_validated['custom_css'] = wp_kses_stripslashes($input['custom_css']);
-	}	
-
 	// data validation for Homepage/Frontpage posts categories
     if ( isset( $input['front_page_category' ] ) ) {
 		$input_validated['front_page_category'] = $input['front_page_category'];
-    }
+    }	
 	
 	// data validation for More Tags and Excerpt Length
     if ( isset( $input[ 'more_tag_text' ] ) ) {
@@ -956,6 +937,7 @@ function catchevolution_theme_options_validate( $options ) {
     if ( isset( $input[ 'excerpt_length' ] ) ) {
         $input_validated[ 'excerpt_length' ] = absint( $input[ 'excerpt_length' ] ) ? $input [ 'excerpt_length' ] : 30;
     }
+	
    //data validation for reset more
 	if ( isset( $input['reset_more_tag'] ) ) {
 		// Our checkbox value is either 0 or 1 
@@ -964,27 +946,19 @@ function catchevolution_theme_options_validate( $options ) {
 		if( $input['reset_more_tag'] == 1 ) {
 			global $catchevolution_options_defaults;
 			$defaults = $catchevolution_options_defaults;
-			$input_validated[ 'reset_more_tag' ] = $input[ 'reset_more_tag' ];
 			$input_validated[ 'more_tag_text' ] = $defaults[ 'more_tag_text' ];
 			$input_validated[ 'excerpt_length' ] = $defaults[ 'excerpt_length' ];
 		}	
-	}	
-
+	}		
+	
 	//Feed Redirect
 	if ( isset( $input[ 'feed_url' ] ) ) {
 		$input_validated['feed_url'] = esc_url_raw($input['feed_url']);
 	}
-
-	if ( isset( $input['reset_footer'] ) ) {
-		// Our checkbox value is either 0 or 1 
-		$input_validated[ 'reset_footer' ] = $input[ 'reset_footer' ];
-		
-		if( $input['reset_footer'] == 1 ) {
-			global $catchevolution_options_defaults;
-			$defaults = $catchevolution_options_defaults;
-			$input_validated[ 'reset_footer' ] = $input[ 'reset_footer' ];
-			$input_validated[ 'footer_code' ] = $defaults[ 'footer_code' ];
-		}	
+	
+	// data validation for Custom CSS Style
+	if ( isset( $input['custom_css'] ) ) {
+		$input_validated['custom_css'] = wp_kses_stripslashes($input['custom_css']);
 	}	
 		
     if ( isset( $input['exclude_slider_post'] ) ) {
@@ -1018,58 +992,12 @@ function catchevolution_theme_options_validate( $options ) {
 	if ( isset( $input[ 'featured_slider' ] ) ) {
 		$input_validated[ 'featured_slider' ] = array();
 	}
-	if ( isset( $input[ 'featured_slider_page' ] ) ) {
-		$input_validated[ 'featured_slider_page' ] = array();
-	}
  	if ( isset( $input[ 'slider_qty' ] ) )	{	
 		for ( $i = 1; $i <= $input [ 'slider_qty' ]; $i++ ) {
 			if ( !empty( $input[ 'featured_slider' ][ $i ] ) && intval( $input[ 'featured_slider' ][ $i ] ) ) {
 				$input_validated[ 'featured_slider' ][ $i ] = absint($input[ 'featured_slider' ][ $i ] );
 			}
-			if ( !empty( $input[ 'featured_slider_page' ][ $i ] ) && intval( $input[ 'featured_slider_page' ][ $i ] ) ) {
-				$input_validated[ 'featured_slider_page' ][ $i ] = absint($input[ 'featured_slider_page' ][ $i ] );
-			}
 		}
-	}	
-	
-	// data validation for Featured Image Slider
-	if ( isset( $input[ 'featured_image_slider_image' ] ) ) {
-		$input_validated[ 'featured_image_slider_image' ] = array();
-	}
-	if ( isset( $input[ 'featured_image_slider_link' ] ) ) {
-		$input_validated[ 'featured_image_slider_link' ] = array();
-	}
-	if ( isset( $input[ 'featured_image_slider_base' ] ) ) {
-		$input_validated[ 'featured_image_slider_base' ] = array();
-	}		
-	if ( isset( $input[ 'featured_image_slider_title' ] ) ) {
-		$input_validated[ 'featured_image_slider_title' ] = array();
-	}
-	if ( isset( $input[ 'featured_image_slider_content' ] ) ) {
-		$input_validated[ 'featured_image_slider_content' ] = array();
-	}	
- 	if ( isset( $input[ 'slider_qty' ] ) )	{	
-		for ( $i = 1; $i <= $input [ 'slider_qty' ]; $i++ ) {
-			if ( !empty( $input[ 'featured_image_slider_image' ][ $i ] ) ) {
-				$input_validated[ 'featured_image_slider_image' ][ $i ] = esc_url_raw($input[ 'featured_image_slider_image' ][ $i ] );
-			}
-			if ( !empty( $input[ 'featured_image_slider_link' ][ $i ] ) ) {
-				$input_validated[ 'featured_image_slider_link'][ $i ] = esc_url_raw($input[ 'featured_image_slider_link'][ $i ]);
-			}
-			if ( !empty( $input[ 'featured_image_slider_base' ][ $i ] ) ) {
-				$input_validated[ 'featured_image_slider_base'][ $i ] = $input[ 'featured_image_slider_base'][ $i ];
-			}
-			if ( !empty( $input[ 'featured_image_slider_title' ][ $i ] ) ) {
-				$input_validated[ 'featured_image_slider_title'][ $i ] = sanitize_text_field($input[ 'featured_image_slider_title'][ $i ]);
-			}
-			if ( !empty( $input[ 'featured_image_slider_content' ][ $i ] ) ) {
-				$input_validated[ 'featured_image_slider_content'][ $i ] = wp_kses_stripslashes($input[ 'featured_image_slider_content'][ $i ]);
-			}			
-		}
-	}	
-	//Featured Catgory Slider
-	if ( isset( $input['slider_category'] ) ) {
-		$input_validated[ 'slider_category' ] = $input[ 'slider_category' ];
 	}		
 	
 	// data validation for Social Icons
@@ -1157,9 +1085,6 @@ function catchevolution_themeoption_invalidate_caches(){
 	delete_transient( 'catchevolution_web_clip' ); // web clip icons
 	delete_transient( 'catchevolution_inline_css' ); // Custom Inline CSS and color options
 	delete_transient( 'catchevolution_sliders' ); // featured post slider
-	delete_transient( 'catchevolution_page_sliders' ); // featured page slider
-	delete_transient( 'catchevolution_category_sliders' ); // featured category slider
-	delete_transient( 'catchevolution_imagesliders' ); // featured image slider
 	delete_transient( 'catchevolution_social_networks' );  // Social links on header
 	delete_transient( 'catchevolution_social_search' );  // Social links with search  on header
 	delete_transient( 'catchevolution_site_verification' ); // scripts which loads on header	
@@ -1172,8 +1097,6 @@ function catchevolution_themeoption_invalidate_caches(){
  */
 function catchevolution_post_invalidate_caches(){
 	delete_transient( 'catchevolution_sliders' ); // featured post slider
-	delete_transient( 'catchevolution_page_sliders' ); // featured page slider
-	delete_transient( 'catchevolution_category_sliders' ); // featured category slider
 }
 //Add action hook here save post
 add_action( 'save_post', 'catchevolution_post_invalidate_caches' );

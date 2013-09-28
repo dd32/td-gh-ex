@@ -30,5 +30,11 @@ dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-si
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 
 == Changelog ==
-Version 0.1
+Version 1.0
 * Initial Submission to WordPress.org
+
+Version 1.0.1
+* Fixed long title overflow issue
+* Fixed custom header undefined index
+* Fixed Older/Newest entries navigations 
+* Removed unwanted color_picker.js and jetpack.php files

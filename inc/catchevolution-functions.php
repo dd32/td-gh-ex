@@ -282,30 +282,39 @@ if ( ! function_exists( 'catchevolution_content_nav' ) ) :
  */
 function catchevolution_content_nav( $nav_id ) {
 	global $wp_query;
-	$jetpack_active_modules = get_option('jetpack_active_modules');
-
+	
+	/**
+	 * Check Jetpack Infinite Scroll
+	 * if it's active then disable pagination
+	 */
+	if ( class_exists( 'Jetpack', false ) ) {
+		$jetpack_active_modules = get_option('jetpack_active_modules');
+		if ( $jetpack_active_modules && in_array( 'infinite-scroll', $jetpack_active_modules ) ) {
+			return false;
+		}
+	}
+	
+	$nav_class = 'site-navigation paging-navigation';
+	if ( is_single() )
+		$nav_class = 'site-navigation post-navigation';
+	
 	if ( $wp_query->max_num_pages > 1 ) { ?>
-	<nav id="<?php echo $nav_id; ?>">
-		<?php if ( class_exists( 'Jetpack', false ) && $jetpack_active_modules && !in_array( 'infinite-scroll', $jetpack_active_modules ) ) { 
-		?>
-            
-                <h3 class="assistive-text"><?php _e( 'Post navigation', 'catchevolution' ); ?></h3>
-                <?php if ( function_exists('wp_pagenavi' ) )  { 
-                    wp_pagenavi();
-                }
-                elseif ( function_exists('wp_page_numbers' ) ) { 
-                    wp_page_numbers();
-                }
-                else { ?>	
-                    <div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'catchevolution' ) ); ?></div>
-                    <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'catchevolution' ) ); ?></div>
-                <?php 
-                } ?>
-            
-		<?php
-		} ?>
-	</nav><!-- #nav -->	
-	<?php }
+        <nav role="navigation" id="<?php echo $nav_id; ?>">
+        	<h3 class="assistive-text"><?php _e( 'Post navigation', 'catchevolution' ); ?></h3>
+			<?php if ( function_exists('wp_pagenavi' ) )  { 
+                wp_pagenavi();
+            }
+            elseif ( function_exists('wp_page_numbers' ) ) { 
+                wp_page_numbers();
+            }
+            else { ?>	
+                <div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'catchevolution' ) ); ?></div>
+                <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'catchevolution' ) ); ?></div>
+            <?php 
+            } ?>
+        </nav><!-- #nav -->	
+	<?php 
+	}
 }
 endif; // catchevolution_content_nav
 
