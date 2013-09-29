@@ -423,7 +423,7 @@ function birdsite_scripts() {
 	}
 
 	wp_enqueue_script('jquery');  
-	wp_enqueue_script( 'birdsite', get_template_directory_uri() .'/js/birdsite.js', 'jquery', '1.04' );
+	wp_enqueue_script( 'birdsite', get_template_directory_uri() .'/js/birdsite.js', 'jquery', '1.05' );
 	wp_enqueue_style( 'birdsite', get_stylesheet_uri() );
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css');
 }

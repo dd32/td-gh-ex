@@ -32,6 +32,9 @@ http://www.sysbird.jp/wptips/contact/
 
 
 == Changelog ==
+v1.05
+* fix based on theme review.
+
 v1.04
 * fix based on theme review.
 
