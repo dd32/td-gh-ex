@@ -4,11 +4,6 @@
 	Based on the Simplest D5 Framework for WordPress
 	Since GREEN 1.0
 */
-   
-  
-  	add_theme_support( 'automatic-feed-links' );
-  	register_nav_menus( array( 'main-menu' => "Main Menu" ) );
-
 
 //	Set the content width based on the theme's design and stylesheet.
 	if ( ! isset( $content_width ) ) $content_width = 584;
@@ -28,21 +23,21 @@
 	}
 	add_filter( 'wp_title', 'green_filter_wp_title' );
 
-
+	function green_setup() {
 // 	Tell WordPress for the Feed Link
-	add_editor_style();
 	add_theme_support( 'automatic-feed-links' );
-	
+	add_editor_style();
+	register_nav_menus( array( 'main-menu' => "Main Menu" ) );
+		
 // 	This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images
-	if ( function_exists( 'add_theme_support' ) ) { 
+	 
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 150, 150, true ); // default Post Thumbnail dimensions (cropped)
 
 	// additional image sizes
 	// delete the next line if you do not need additional image sizes
 	add_image_size( 'category-thumb', 300, 9999 ); //300 pixels wide (and unlimited height)
-	}
-	
+		
 		
 // 	WordPress 3.4 Custom Background Support	
 	$green_custom_background = array( 'default-color' => '013410', );
@@ -64,6 +59,9 @@
 	'admin-preview-callback' => '',
 	);
 	add_theme_support( 'custom-header', $green_custom_header );
+	
+	}
+	add_action( 'after_setup_theme', 'green_setup' );
 
 // 	Functions for adding script
 	function green_enqueue_scripts() { 
@@ -71,9 +69,12 @@
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) { 
 		wp_enqueue_script( 'comment-reply' ); 
 	}
-	wp_enqueue_style('green-gfonts', '//fonts.googleapis.com/css?family=PT+Sans', false );
-	wp_enqueue_style('green-gfonts1', '//fonts.googleapis.com/css?family=Open+Sans+Condensed:300', false );
+	wp_register_style('green-gfonts', '//fonts.googleapis.com/css?family=PT+Sans', false );
+	wp_register_style('green-gfonts1', '//fonts.googleapis.com/css?family=Open+Sans+Condensed:300', false );
 	
+	wp_enqueue_style('green-gfonts');
+	wp_enqueue_style('green-gfonts1');
+		
 	if (is_front_page()):
 	wp_enqueue_script( 'green-menu-style', get_template_directory_uri(). '/js/menu.js' );
 	wp_enqueue_style( 'green-slide-style', get_template_directory_uri(). '/css/style_ie.css', false );
