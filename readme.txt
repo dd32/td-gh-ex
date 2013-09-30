@@ -2,7 +2,7 @@
 
 Contributors: Matthew Haeck
 Tags: bootstrap, responsive, wordpress theme
-Stable tag: 1.05
+Stable tag: 1.06
 License: GPLv3
 
 Avedon Theme - http://code.google.com/p/avedon/

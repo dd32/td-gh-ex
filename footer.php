@@ -2,7 +2,7 @@
 /**
  * @package WordPress
  * @subpackage Avedon
- * @since Avedon 1.05
+ * @since Avedon 1.06
  */
 
 ?>
@@ -28,7 +28,7 @@
 
 <div class="span4">
 <?php if ( ! dynamic_sidebar( 'bottom-right' ) ): ?>
-<div class="widget widget_text"><div class="textwidget"><h4 class="title">Subscribe</h4><i class="subicon avedonicon-picture"></i><p class="margin-bottom-10">Subscribe to our newsletter and stay up to date!</p><form class="form-inline"><input class="input-medium" placeholder="Your email" type="text">&nbsp;<button type="submit" class="btn btn-inverse">Go</button></form></div></div>
+<div class="widget widget_text"><div class="textwidget"><h4 class="widget-title">Subscribe</h4><i class="subicon avedonicon-picture"></i><p class="margin-bottom-10">Subscribe to our newsletter and stay up to date!</p><form class="form-inline"><input class="input-medium" placeholder="Your email" type="text">&nbsp;<button type="submit" class="btn btn-inverse">Go</button></form></div></div>
 <?php endif; ?>
 </div>
 

@@ -106,36 +106,6 @@ add_action( 'wp_head', 'avedon_favicons', 1 );
 function avedon_widgets_init() {
 
     register_sidebar(array(
-    'name' => 'Home Full Feature Content',
-    'id'   => 'home-fullfeature-content',
-    'description'   => 'Above frontpage content - 100% page width. (Primarily for feature slideshows / No formatting. Not recommended if using SuperSize)',
-    'before_widget' => '<div id="fullfeature" class="fulltiptop row-fluid %2$s">',
-    'after_widget'  => '</div>',
-    'before_title'  => '<span class="hometoptitle">',
-    'after_title'   => '</span>'
-  ));
-
-    register_sidebar(array(
-    'name' => 'Home Feature Content',
-    'id'   => 'home-feature-content',
-    'description'   => 'Above homepage content - As wide as the content. (Primarily for feature slideshows / No formatting)',
-    'before_widget' => '<div id="feature" class="row-fluid"><div class="span10 offset1">',
-    'after_widget'  => '</div></div>',
-    'before_title'  => '<span class="hometoptitle">',
-    'after_title'   => '</span>'
-  ));
-
-    register_sidebar(array(
-    'name' => 'Top Content',
-    'id'   => 'top-content',
-    'description'   => 'Above content, below the menu.',
-    'before_widget' => '<div id="%1$s" class="hometoptwo %2$s">',
-    'after_widget'  => '</div>',
-    'before_title'  => '<span class="hometoptitle">',
-    'after_title'   => '</span>'
-  ));
-
-    register_sidebar(array(
     'name' => 'Home Sidebar',
     'id'   => 'home-right',
     'description'   => 'Right sidebar on homepage',

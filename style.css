@@ -4,7 +4,7 @@ Theme URI: http://code.google.com/p/avedon/
 Description: A simple bootstrap based Wordpress theme, minimally coded, w/ plenty of bells and whistles.
 Author: Matthew Haeck
 Author URI: http://haeckdesign.com/
-Version: 1.05
+Version: 1.06
 License: GPL3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: black, blue, gray, white, dark, light, two-columns, right-sidebar, flexible-width, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, microformats, post-formats, theme-options, threaded-comments, photoblogging
@@ -205,7 +205,8 @@ border-radius: 4px;
 border-radius: 4px;
 }
 #bottom .span4 div div { margin: 15px; }
-#bottom h4 { border-bottom: 1px solid rgba(0, 0, 0, 0.1); line-height: 1.2em; padding-bottom: 10px;margin-top: 10px;text-indent: 10px; }
+#bottom h4 { border-bottom: 1px solid rgba(0, 0, 0, 0.1); line-height: 1.2em; padding-bottom: 10px;margin-top: 15px;text-indent: 15px; }
+#bottom h4.widget-title { text-indent: 0; }
 #bottom h4 i { color: #FFFFFF; margin-left: 6px; margin-right: 6px; margin-top: 4px; }
 #bottom ul li a { color: rgba(0, 0, 0, 0.6);}
 #bottom ul li a:hover { color: rgba(0, 0, 0, 0.8);}
@@ -304,10 +305,9 @@ border-radius: 4px;
 /* 404 Page */
 .fourofour article { padding-bottom: 120px; padding-top: 60px; }
 .fourofour .entry-header { padding-bottom: 10px; padding-left: 30px; padding-right: 30px; padding-top: 10px; margin-bottom: 15px; }
-.fourofour p { font-size: 1.2em; padding-left: 5px;padding-top: 10px; }
+.fourofour p { font-size: 1.2em; padding-left: 5px;margin-top: 10px; }
 
 /* WIDGET SPECIFIC */
-#feature { display: block; padding-bottom: 10px;}
 #calendar_wrap { padding-bottom: 10px; padding-left: 15px; padding-right: 15px; padding-top: 10px; }
 .well table, #wp-calendar { width: 100%; }
 #wp-calendar caption { margin-bottom: 5px; text-align: right; width: 100%; }

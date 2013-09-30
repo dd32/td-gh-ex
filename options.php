@@ -52,14 +52,8 @@ function avedontheme_options() {
 		'scrollarrows' => __('Scrolling Arrows', 'avedon_theme_options'),
 		'slidecount' => __('Slide Counter', 'avedon_theme_options'),
 		'slidecaption' => __('Slide Caption', 'avedon_theme_options'),
-		'slidelist' => __('Nav Dots', 'avedon_theme_options')
-	);
-
-	// Multicheck Sharing Defaults
-	$sharing_defaults = array(
-		'twitter' => '1',
-		'googleplus' => '1',
-		'facebook' => '1'
+		'slidelist' => __('Nav Dots', 'avedon_theme_options'),
+		'progbar' => __('Progress Bar', 'avedon_theme_options')
 	);
 
 	$superopts_defaults = array(
@@ -241,10 +235,10 @@ function avedontheme_options() {
 		'type' => 'color' );
 
 	$options[] = array(
-		'name' => __('Favicon and Apple Touch Icons', 'avedon_theme_options'),
-		'desc' => __('Include favicon and apple touch icons. (Replace favicon.ico and apple_touch_icon.png files with your own icons)', 'avedon_theme_options'),
+		'name' => __('Disable Favicon and Apple Touch Icons', 'avedon_theme_options'),
+		'desc' => __('Disable favicon and apple touch icons. (Replace favicon.ico and apple_touch_icon.png files with your own icons)', 'avedon_theme_options'),
 		'id' => 'include_metaicons',
-		'std' => '0',
+		'std' => '1',
 		'type' => 'checkbox');
 
 	$options[] = array(

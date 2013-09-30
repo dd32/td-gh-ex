@@ -2,7 +2,7 @@
 /**
  * @package WordPress
  * @subpackage Avedon
- * @since Avedon 1.05
+ * @since Avedon 1.06
  */
 
 get_header(); ?>

@@ -2,8 +2,8 @@
 /**
  * @package WordPress
  * @subpackage Avedon
- * @since Avedon 1.05
- */
+ * @since Avedon 1.06
+*/
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +39,7 @@
 <a class="brand" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 <?php if ( of_get_option('primary_logo') ) { echo '<img src=' . of_get_option('primary_logo') . ' alt="home" />'; } else { echo bloginfo( 'name' ); } ?></a>
 
-<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-collapse collapse', 'menu_class' => 'nav', 'fallback_cb' => '', 'menu_id' => 'main-menu', 'walker' => new Avedon_Walker_Nav_Menu() ) ); ?>
+<?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 2, 'container_class' => 'nav-collapse collapse', 'menu_class' => 'nav', 'fallback_cb' => '', 'menu_id' => 'main-menu', 'walker' => new Avedon_Walker_Nav_Menu() ) ); ?>
 
 </div>
 </div>

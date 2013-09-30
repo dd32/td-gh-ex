@@ -2,13 +2,11 @@
 /**
  * @package WordPress
  * @subpackage Avedon
- * @since Avedon 1.05
+ * @since Avedon 1.06
  */
 
 get_header(); ?>
 
-<?php if ( ! dynamic_sidebar( 'home-fullfeature-content' ) ); ?>
-<?php if ( ! dynamic_sidebar( 'home-feature-content' ) ); ?>
 <div id="primary" class="row-fluid">
 <div class="span6 offset1">
 <?php $text = of_get_option('headertext'); if ($text) { echo '<h1 class="homehead">' . of_get_option('headertext') . '</h1>'; }; ?>
