@@ -97,26 +97,5 @@
 				</div>
 				<?php endif; ?>
 			</div>
-						
 			
-			<div class="container">
-				<?php $feature_posts = new WP_Query('post_type=portfolio&order=ASC&orderby=menu_order&meta_key=portfolio_featured&meta_value=1&numberposts=-1&posts_per_page=-1'); ?>
-				<?php if($feature_posts->have_posts()): $feature_count = 0; ?>
-				<div id="portfolio" class="portfolio">
-					<div class="portfolio-heading">
-						<?php echo do_shortcode(stripslashes(cpotheme_get_option('cpo_home_portfolio'))); ?>
-					</div>
-					
-						<?php while($feature_posts->have_posts()): $feature_posts->the_post(); ?>
-						<?php if($feature_count % 3 == 0 && $feature_count != 0) echo '<div class="col-divide"></div>'; ?>
-						<?php $feature_count++; ?>
-						<div class="column col3<?php if($feature_count % 3 == 0 && $feature_count != 0) echo ' col-last'; ?>">
-							<?php get_template_part('element', 'portfolio'); ?>
-						</div>
-						<?php endwhile; ?>
-						<div class='clear'></div>
-				</div>
-				<?php endif; ?>
-				<div class="clear"></div>
-			</div>
 			<?php } ?>

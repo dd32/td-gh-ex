@@ -37,7 +37,7 @@ function cpotheme_custom_form($option_name, $option_list){
 		</div>
 		<?php endif; ?> 
 		
-		<form name="cpotheme_custom_form" method="post" action="admin.php?page=<?php echo $_GET['page'].cpotheme_custom_wpml_option_url(); ?>" enctype="multipart/form-data">
+		<form name="cpotheme_custom_form" method="post" action="themes.php?page=<?php echo $_GET['page'].cpotheme_custom_wpml_option_url(); ?>" enctype="multipart/form-data">
             <?php if(isset($_GET['tab']) && $_GET['tab'] != '') $current_tab = htmlentities($_GET['tab']); else $current_tab = ''; ?>
 			<input type="hidden" name="cpotheme_custom_tab" id="cpotheme_custom_tab" value="<?php echo $current_tab; ?>" />
             <input type="hidden" name="cpotheme_custom_action" id="cpotheme_custom_action" value="<?php echo $option_name; ?>" />
@@ -178,7 +178,7 @@ function cpotheme_custom_save($option_name, $option_fields){
 		
 	//Check if we're submitting a custom page
     if(isset($_POST['cpotheme_custom_action']) && $_POST['cpotheme_custom_action'] == $option_name){
-		if(!wp_verify_nonce($_POST['_wpnonce'], 'cpotheme_nonce')) header("Location: admin.php?page=".$_GET['page'].$lang_url."&error");
+		if(!wp_verify_nonce($_POST['_wpnonce'], 'cpotheme_nonce')) header("Location: themes.php?page=".$_GET['page'].$lang_url."&error");
 		
 
 		//Get the option array, then update the array values
@@ -212,7 +212,7 @@ function cpotheme_custom_save($option_name, $option_fields){
 		}
 		update_option($option_name, $options_list);
 		
-		header('Location: admin.php?page='.$_GET['page'].$current_tab.$lang_url."&ok");
+		header('Location: themes.php?page='.$_GET['page'].$current_tab.$lang_url."&ok");
 	}
 }
 
@@ -323,7 +323,7 @@ function cpotheme_custom_wpml_nav(){
 			if($language_active)
 				$output .= '<span><b>';
 			else
-				$output .= '<a href="admin.php?page='.$_GET['page'].'&lang='.$language_code.'">';
+				$output .= '<a href="themes.php?page='.$_GET['page'].'&lang='.$language_code.'">';
 			
 			$output .= $language_name;
 			if(cpotheme_custom_wpml_default_language() == $language_code) 

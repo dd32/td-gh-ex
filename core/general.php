@@ -353,7 +353,7 @@ function cpotheme_menu(){
 
 //Displays a dropdown list of the main menu items
 function cpotheme_mobile_menu(){
-	if(has_nav_menu('main_menu') && cpotheme_get_option('cpo_layout_responsive') != 0){
+	if(has_nav_menu('main_menu')){
 		//Get all custom menus, then retrieve the one set to the main menu
 		$menu_locations = get_nav_menu_locations();
 		$menu_object = wp_get_nav_menu_object($menu_locations['main_menu']);

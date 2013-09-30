@@ -38,7 +38,7 @@
 
 
 /* SMARTPHONE */
-@media only screen and (max-width: 780px){
+@media only screen and (max-width: 480px){
 	
 	h1 { font-size:2em; } 
 	h2 { font-size:1.8em; } 
@@ -62,11 +62,21 @@
 	.header .logo { float:none; text-align:center; }
 	.header .subheader { display:none; }
 	
-	.slider-slides .slide-textbox,
-	.slider-slides .slide-right .slide-textbox { bottom:20px; left:20px; right:20px; padding:10px; width:auto; text-align:left; }
+	.slider-slides .slide-textbox:link,
+	.slider-slides .slide-textbox:visited,
+	.slider-slides .slide-right .slide-textbox { bottom:10px; left:10px; right:10px; padding:10px; width:auto; text-align:left; }
 	.slider-slides .slide-textbox .slide-title { font-size:1.8em; }
 	
+	.slider-prev, 
+	.slider-next { width:30px; height:30px; font-size:50px; line-height:30px; margin-top:-15px; }
+	.slider:hover .slider-prev { margin-left:10px; } 
+	.slider:hover .slider-next { margin-right:10px; }
+
+	
 	.minifeatures .feature { margin-top:50px; }
+	
+	.pagetitle { margin:10px 0 0; }
+	.breadcrumb { float:none; margin:0 0 10px; }
 	
 	.content { margin:0; float:none; width:auto; }
     .content-right { float:none; margin:0; }
@@ -76,6 +86,8 @@
 	/* CONTENT */
 	.sidebar .widget > li { float:none; width:auto; margin-right:0; }
 	.sidebar .widget > li:nth-child(odd) { margin-right:0; }
+	
+	.toplink:link { bottom:10px; right:10px; width:30px; height:30px; line-height:30px; }
 	
 	/* NAVIGATION */
 	.menu-top { text-align:center;  }

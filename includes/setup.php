@@ -54,7 +54,7 @@ function cpotheme_sidebar_init(){
 }
 
 //Registers all menu areas
-add_action('after_theme_setup', 'cpotheme_menu_init');
+add_action('after_setup_theme', 'cpotheme_menu_init');
 function cpotheme_menu_init(){
     register_nav_menus(array('top_menu' => __('Top Menu', 'cpotheme')));
     register_nav_menus(array('main_menu' => __('Main Menu', 'cpotheme')));

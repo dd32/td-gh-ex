@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CPO Framework 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-13 09:59+0100\n"
-"PO-Revision-Date: 2013-09-13 10:01+0100\n"
+"POT-Creation-Date: 2013-09-30 09:36+0100\n"
+"PO-Revision-Date: 2013-09-30 09:36+0100\n"
 "Last-Translator: CPO <mvicedo@cpo.es>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -44,12 +44,12 @@ msgid "Author Archive"
 msgstr "Archivo por Autor"
 
 #: .././archive.php:35 .././comments.php:29 .././index.php:12
-#: .././search.php:37 .././template-blog.php:26
+#: .././search.php:37
 msgid "Newer"
 msgstr "Nuevos"
 
 #: .././archive.php:38 .././comments.php:28 .././index.php:15
-#: .././search.php:40 .././template-blog.php:29
+#: .././search.php:40
 msgid "Older"
 msgstr "Antiguos"
 
@@ -82,12 +82,8 @@ msgstr "Los comentarios est&aacute;n cerrados."
 msgid "Read More"
 msgstr "Leer Más"
 
-#: .././footer.php:15
-msgid "Theme designed by <a href=\"http://www.cpothemes.com\">CPOThemes</a>."
-msgstr "Tema creado por <a href=\"http://www.cpothemes.com\">CPOThemes</a>."
-
-#: .././page.php:13 .././single.php:13 .././template-contact.php:135
-#: .././template-full.php:18 .././template-sitemap.php:19
+#: .././page.php:13 .././single.php:13 .././template-full.php:18
+#: .././template-submenu.php:18
 msgid "Pages"
 msgstr "P&aacute;ginas"
 
@@ -99,78 +95,43 @@ msgstr "Resultados para"
 msgid "Search"
 msgstr "Buscar"
 
-#: .././template-contact.php:19 .././template-contact.php:27
-#: .././template-contact.php:38
-msgid "This field cannot be left empty."
-msgstr "Este campo no puede dejarse vac&iacute;o."
-
-#: .././template-contact.php:30
-msgid "The email address has an incorrect format.."
-msgstr "La direcci&oacute;n de correo tiene un formato incorrecto."
-
-#: .././template-contact.php:51
-msgid "New contact form response by"
-msgstr "Nueva respuesta en el formulario de contacto por"
-
-#: .././template-contact.php:53 .././template-contact.php:96
-msgid "Name"
-msgstr "Nombre"
-
-#: .././template-contact.php:54 .././template-contact.php:104
-msgid "Email"
-msgstr "Email"
-
-#: .././template-contact.php:55 .././template-contact.php:112
-msgid "Message"
-msgstr "Mensaje"
-
-#: .././template-contact.php:57
-msgid "IP Address"
-msgstr "Direcci&oacute;n IP"
-
-#: .././template-contact.php:58
-msgid "Time"
-msgstr "Hora"
-
-#: .././template-contact.php:63
-msgid "Your message has been sent"
-msgstr "Tu mensaje ha sido enviado."
-
-#: .././template-contact.php:84
-msgid "The email address for the contact form is not configured."
-msgstr ""
-"La direcci&oacute;n de env&iacute; del formulario de contacto no est&aacute; "
-"configurada."
-
-#: .././template-contact.php:91
-msgid "Your message has been sent."
-msgstr "Tu mensaje se ha enviado."
-
-#: .././template-contact.php:120
-msgid "In order to complete this form, leave this field empty"
-msgstr "Para completar el formulario, deja este campo vac&iacute;o"
-
-#: .././template-contact.php:126
-msgid "Send"
-msgstr "Enviar"
-
-#: .././core/custom.php:10 .././core/settings.php:25
+#: .././core/custom.php:11 .././core/settings.php:25
 msgid "Theme Options"
 msgstr "Opciones del Tema"
 
-#: .././core/custom.php:28
+#: .././core/custom.php:31
 msgid "Changes have been saved."
 msgstr "Las opciones de configuraci&oacute;n han sido guardadas."
 
-#: .././core/custom.php:33
+#: .././core/custom.php:36
 msgid "Changes could not be saved."
 msgstr "Las opciones de configuraci&oacute;n no han podido ser guardadas."
 
-#: .././core/custom.php:101 .././core/custom.php:107 .././core/custom.php:161
+#: .././core/custom.php:104 .././core/custom.php:110 .././core/custom.php:164
 msgid "Save Settings"
 msgstr "Guardar"
 
-#: .././core/custom.php:278
+#: .././core/custom.php:228
+msgid "Theme Version"
+msgstr "Versión del Tema"
+
+#: .././core/custom.php:236
+msgid "Core Version"
+msgstr "Versión del Core"
+
+#: .././core/custom.php:256
+msgid "Theme Documentation"
+msgstr "Documentación del Tema"
+
+#: .././core/custom.php:258
+msgid "Support Forums"
+msgstr "Foros de Soporte"
+
+#: .././core/custom.php:260
+msgid "More Themes"
+msgstr "Más Temas"
+
+#: .././core/custom.php:330
 msgid "default"
 msgstr "por defecto"
 
@@ -711,6 +672,51 @@ msgstr "Página de Skype"
 msgid "Enter the URL of your Skype page to display a link in the site."
 msgstr ""
 "Introduce la URL de tu perfil de Skype para mostrar un enlace en el sitio."
+
+#~ msgid ""
+#~ "Theme designed by <a href=\"http://www.cpothemes.com\">CPOThemes</a>."
+#~ msgstr "Tema creado por <a href=\"http://www.cpothemes.com\">CPOThemes</a>."
+
+#~ msgid "This field cannot be left empty."
+#~ msgstr "Este campo no puede dejarse vac&iacute;o."
+
+#~ msgid "The email address has an incorrect format.."
+#~ msgstr "La direcci&oacute;n de correo tiene un formato incorrecto."
+
+#~ msgid "New contact form response by"
+#~ msgstr "Nueva respuesta en el formulario de contacto por"
+
+#~ msgid "Name"
+#~ msgstr "Nombre"
+
+#~ msgid "Email"
+#~ msgstr "Email"
+
+#~ msgid "Message"
+#~ msgstr "Mensaje"
+
+#~ msgid "IP Address"
+#~ msgstr "Direcci&oacute;n IP"
+
+#~ msgid "Time"
+#~ msgstr "Hora"
+
+#~ msgid "Your message has been sent"
+#~ msgstr "Tu mensaje ha sido enviado."
+
+#~ msgid "The email address for the contact form is not configured."
+#~ msgstr ""
+#~ "La direcci&oacute;n de env&iacute; del formulario de contacto no "
+#~ "est&aacute; configurada."
+
+#~ msgid "Your message has been sent."
+#~ msgstr "Tu mensaje se ha enviado."
+
+#~ msgid "In order to complete this form, leave this field empty"
+#~ msgstr "Para completar el formulario, deja este campo vac&iacute;o"
+
+#~ msgid "Send"
+#~ msgstr "Enviar"
 
 #~ msgid "Back to Portfolio"
 #~ msgstr "Volver al Portafolio"
@@ -1920,9 +1926,6 @@ msgstr ""
 #~ msgid "Pages:"
 #~ msgstr "P&aacute;ginas:"
 
-#~ msgid "Support"
-#~ msgstr "Soporte"
-
 #~ msgid "Taglines"
 #~ msgstr "Lemas"
 
@@ -2019,9 +2022,6 @@ msgstr ""
 #~ msgstr ""
 #~ "Muestra una frase corta o lema debajo del pase de diapositivas en la "
 #~ "página de inicio. Puedes utilizar HTML para estilizar tu frase,"
-
-#~ msgid "Theme Settings"
-#~ msgstr "Configuraci&oacute;n"
 
 #~ msgid "Posted on %1$s"
 #~ msgstr "Escrito en %1$s "
