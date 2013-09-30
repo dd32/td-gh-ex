@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Lite Virtue\n"
-"POT-Creation-Date: 2013-09-27 17:05-0700\n"
-"PO-Revision-Date: 2013-09-27 17:06-0700\n"
+"POT-Creation-Date: 2013-09-29 22:25-0700\n"
+"PO-Revision-Date: 2013-09-29 22:25-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1193,51 +1193,51 @@ msgstr ""
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../lib/custom.php:372
+#: ../lib/custom.php:376
 msgid "Previous Post"
 msgstr ""
 
-#: ../lib/custom.php:372
+#: ../lib/custom.php:376
 msgid "Next Post"
 msgstr ""
 
-#: ../lib/custom.php:464
+#: ../lib/custom.php:468
 msgid "Occupation"
 msgstr ""
 
-#: ../lib/custom.php:467
+#: ../lib/custom.php:471
 msgid "Please enter your Occupation."
 msgstr ""
 
-#: ../lib/custom.php:474
+#: ../lib/custom.php:478
 msgid "Please enter your Twitter username."
 msgstr ""
 
-#: ../lib/custom.php:481
+#: ../lib/custom.php:485
 msgid "Please enter your Facebook url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:488
+#: ../lib/custom.php:492
 msgid "Please enter your Google Plus url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:495
+#: ../lib/custom.php:499
 msgid "Please enter your Flickr url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:502
+#: ../lib/custom.php:506
 msgid "Please enter your Linkedin url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:509
+#: ../lib/custom.php:513
 msgid "Please enter your Dribbble url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:516
+#: ../lib/custom.php:520
 msgid "Please enter your Pinterest url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:523
+#: ../lib/custom.php:527
 msgid "Please enter your Instagram url. (be sure to include http://)"
 msgstr ""
 
@@ -2066,15 +2066,15 @@ msgstr ""
 msgid "By"
 msgstr ""
 
-#: ../templates/header.php:30
+#: ../templates/header.php:29
 msgid "View your shopping cart"
 msgstr ""
 
-#: ../templates/header.php:31
+#: ../templates/header.php:30
 msgid "Your Cart"
 msgstr ""
 
-#: ../templates/header.php:69
+#: ../templates/header.php:68
 msgid "menu"
 msgstr ""
 

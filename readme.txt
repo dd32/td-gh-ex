@@ -47,6 +47,13 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 1.5.1 =
+
+* Added Support for showing subcategories in Woocommerce.
+* Fixed Issue with title color not working correctly.
+* Fixed Issue with home blog tooltip
+
+
 = Version: 1.5.0 =
 
 * Fixed Issue with topbar icon links not working

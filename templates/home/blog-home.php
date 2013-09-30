@@ -51,7 +51,7 @@
 				                    <header class="home_blog_title">
 			                          <a href="<?php the_permalink() ?>"><h4 class="entry-title"><?php the_title(); ?></h4></a>
 			                          <div class="subhead color_gray">
-			                          	<span class="postauthortop" rel="tooltip" data-placement="bottom" data-original-title="<?php echo get_the_author() ?>">
+			                          	<span class="postauthortop" rel="tooltip" data-placement="top" data-original-title="<?php echo get_the_author() ?>">
 			                          		<i class="icon-user"></i>
 			                          	</span>
 			                          		<?php $post_category = get_the_category($post->ID); if (!empty($post_category)) { ?> 
@@ -61,7 +61,7 @@
 			                          			} ?>"><i class="icon-folder-open"></i></span>
 			                          		 <?php }?>
 			                          		 |
-			                        	<span class="postcommentscount" rel="tooltip" data-placement="bottom" data-original-title="<?php comments_number( '0', '1', '%' ); ?>">
+			                        	<span class="postcommentscount" rel="tooltip" data-placement="top" data-original-title="<?php comments_number( '0', '1', '%' ); ?>">
 			                        		<i class="icon-comments-alt"></i>
 			                        	</span>
 			                        </div>

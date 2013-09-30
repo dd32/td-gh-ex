@@ -18,9 +18,9 @@ if(!empty($smof_data['font_logo'])) {
 }
 if(!empty($smof_data['font_logo_style'])) {
   $font_lg = $smof_data['font_logo_style'];
- $font_logo = '#logo a.brand {font-size:' . $font_lg['size']. '; font-weight:' . $font_lg['style']. '; line-height:' . $font_lg['height']. '; color:' . $font_lg['color']. ';}';
+ $font_logo = 'header #logo a.brand {font-size:' . $font_lg['size']. '; font-weight:' . $font_lg['style']. '; line-height:' . $font_lg['height']. '; color:' . $font_lg['color']. ';}';
 } else {
-  $font_logo = '#logo a.brand {font-size:38px; font-weight:normal; line-height:40px;}';
+  $font_logo = 'header #logo a.brand {font-size:38px; font-weight:normal; line-height:40px;}';
 }
 if(!empty($smof_data['font_tagline'])) {
   $tagline_font = '.kad_tagline {font-family:'.$smof_data['font_tagline'].';}';
@@ -122,8 +122,9 @@ if(!empty($smof_data['primary_color'])) {
   nav.woocommerce-pagination ul li a:hover, .wp-pagenavi a:hover, .accordion-heading .accordion-toggle.open {border-color: '.$smof_data['primary_color'].';}
   a, #nav-main ul.sf-menu ul li a:hover, .product_price ins .amount, .price ins .amount, .color_primary, .primary-color, #logo a.brand, #nav-main ul.sf-menu a:hover,
   .woocommerce-message:before, .woocommerce-info:before, #nav-second ul.sf-menu a:hover, .footerclass a:hover, .posttags a:hover, .subhead a:hover {color: '.$smof_data['primary_color'].';}
-  .widget_price_filter .ui-slider .ui-slider-handle, .product_item .kad_add_to_cart:hover, .product_item.hidetheaction:hover .kad_add_to_cart:hover, .kad-btn-primary, .woocommerce-message .button, 
-  #containerfooter .menu li a:hover, .bg_primary, .portfolionav a:hover, .home-iconmenu a:hover, p.demo_store, .topclass, #commentform .form-submit #submit {background: '.$smof_data['primary_color'].';}';
+  .widget_price_filter .ui-slider .ui-slider-handle, .product_item .kad_add_to_cart:hover, .product_item.hidetheaction:hover .kad_add_to_cart:hover, .kad-btn-primary, .woocommerce-message .button,
+  .product-category.grid_item a:hover h5, #containerfooter .menu li a:hover, .bg_primary, .portfolionav a:hover, .home-iconmenu a:hover, p.demo_store, .topclass, 
+  #commentform .form-submit #submit {background: '.$smof_data['primary_color'].';}';
 } else {
   $color_primary = '';
 }
