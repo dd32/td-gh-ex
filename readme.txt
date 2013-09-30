@@ -1,7 +1,7 @@
 ----------------------------------
 GREEN EYE
 ----------------------------------
-Version: 	1.3.2
+Version: 	1.3.4
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
