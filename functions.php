@@ -7,7 +7,7 @@ function adelle_theme_styles() {
 
   wp_enqueue_script('jquery');
   wp_enqueue_script('jquery-ui-widget');
-  wp_enqueue_style( 'adelle-style', get_stylesheet_uri(), '13.09', array(), 'all' );
+  wp_enqueue_style( 'adelle-style', get_stylesheet_uri(), '13.09.5', array(), 'all' );
   wp_enqueue_style( 'adelle-google-webfont', 'http://fonts.googleapis.com/css?family=Lora:400,400italic|Muli:400,400italic|Montserrat', '', 'all' );
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' );
 
@@ -26,28 +26,6 @@ function adelle_theme_scripts(){
 }
 add_action('wp_footer', 'adelle_theme_scripts');
 
-
-// ==================================================================
-// Custom header
-// ==================================================================
-if( function_exists('get_custom_header') ) {
-
-  add_theme_support( 'custom-header', array(
-	'default-image'          => '',
-	'random-default'         => false,
-	'width'                  => 400,
-	'height'                 => 100,
-	'flex-height'            => true,
-	'flex-width'             => true,
-	'default-text-color'     => '',
-	'header-text'            => false,
-	'uploads'                => true,
-	'wp-head-callback'       => '',
-	'admin-head-callback'    => '',
-	'admin-preview-callback' => '',
-  ));
-
-}
 
 // ==================================================================
 // Heading
@@ -77,6 +55,28 @@ if ( ! isset( $content_width ) ) $content_width = 640;
 // Innit
 // ====================================================================================================================================
 function adelle_setup() {
+
+  // ==================================================================
+  // Custom header
+  // ==================================================================
+  if( function_exists('get_custom_header') ) {
+
+    add_theme_support( 'custom-header', array(
+    'default-image'          => '',
+    'random-default'         => false,
+    'width'                  => 400,
+    'height'                 => 100,
+    'flex-height'            => true,
+    'flex-width'             => true,
+    'default-text-color'     => '',
+    'header-text'            => false,
+    'uploads'                => true,
+    'wp-head-callback'       => '',
+    'admin-head-callback'    => '',
+    'admin-preview-callback' => '',
+    ));
+
+  }
 
   // ==================================================================
   // Language
@@ -208,7 +208,7 @@ add_filter( 'wp_title', 'adelle_theme_wp_title', 10, 2 );
 // ==================================================================
 // Add internal lightbox
 // ==================================================================
-function ace_add_themescript(){
+function adelle_add_themescript(){
 
   if( !is_admin() ){
     wp_enqueue_script('jquery');
@@ -217,7 +217,7 @@ function ace_add_themescript(){
 
 }
 
-function ace_wp_thickbox_script() {
+function adelle_wp_thickbox_script() {
 
   ?>
   <script type="text/javascript">
@@ -234,44 +234,44 @@ function ace_wp_thickbox_script() {
   wp_enqueue_style('thickbox.css', '/'.WPINC.'/js/thickbox/thickbox.css', null, '1.0');
 
 }
-add_action('init','ace_add_themescript');
-add_action('wp_head', 'ace_wp_thickbox_script');
+add_action('init','adelle_add_themescript');
+add_action('wp_head', 'adelle_wp_thickbox_script');
 
 // ==================================================================
 // Add colorbox
 // ==================================================================
 define( "IMAGE_FILETYPE", "(bmp|gif|jpeg|jpg|png)", true );
 
-function ace_colorbox_replace($string) {
+function adelle_colorbox_replace($string) {
 
   $pattern = '/(<a(.*?)href="([^"]*.)'.IMAGE_FILETYPE.'"(.*?)><img)/ie';
   $replacement = 'stripslashes(strstr("\2\5","rel=\class=") ? "\1" : "<a\2href=\"\3\4\"\5 rel=\"colorbox\" class=\"colorbox\"><img")';
   return preg_replace($pattern, $replacement, $string);
 
 }
-add_filter('the_content', 'ace_colorbox_replace');
+add_filter('the_content', 'adelle_colorbox_replace');
 
-function ace_add_colorbox_rel( $attachment_link ) {
+function adelle_add_colorbox_rel( $attachment_link ) {
   $attachment_link = str_replace( 'a href' , 'a rel="colorbox-cats" class="colorbox-cats" href' , $attachment_link );
   return $attachment_link;
 }
-add_filter('wp_get_attachment_link' , 'ace_add_colorbox_rel');
+add_filter('wp_get_attachment_link' , 'adelle_add_colorbox_rel');
 
 
-function ace_colorbox_script(){
+function adelle_colorbox_script(){
   wp_register_script('colorbox', get_template_directory_uri() . '/js/colorbox/jquery.colorbox-min.js');
   wp_enqueue_script('colorbox');
 }
-add_action('wp_footer', 'ace_colorbox_script');
+add_action('wp_footer', 'adelle_colorbox_script');
 
 
-function ace_colorbox_css(){
+function adelle_colorbox_css(){
   wp_register_style('colorbox', get_template_directory_uri() . '/js/colorbox/colorbox.css');
   wp_enqueue_style('colorbox');
 }
-add_action('wp_head', 'ace_colorbox_css');
+add_action('wp_head', 'adelle_colorbox_css');
 
-function ace_colorbox_javascript() {
+function adelle_colorbox_javascript() {
   ?>
   <script type="text/javascript">
   /* <![CDATA[ */
@@ -285,7 +285,7 @@ function ace_colorbox_javascript() {
   </script>
   <?php
 }
-add_action('wp_head', 'ace_colorbox_javascript');
+add_action('wp_head', 'adelle_colorbox_javascript');
 
 // ==================================================================
 // Post/page pagination

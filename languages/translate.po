@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Adelle Theme\n"
-"POT-Creation-Date: 2013-10-01 15:16+0800\n"
-"PO-Revision-Date: 2013-10-01 15:16+0800\n"
+"POT-Creation-Date: 2013-10-01 22:16+0800\n"
+"PO-Revision-Date: 2013-10-01 22:16+0800\n"
 "Last-Translator: Andrew Wong <hello@bluchic.com>\n"
 "Language-Team: BluChic <hello@bluchic.com>\n"
 "Language: English\n"
@@ -60,15 +60,15 @@ msgstr ""
 msgid "This post is password protected. Enter the password to view comments"
 msgstr ""
 
-#: comments.php:18 content-list.php:24 content.php:19
+#: comments.php:18 content-list.php:18 content.php:17
 msgid "0 comment"
 msgstr ""
 
-#: comments.php:18 content-list.php:24 content.php:19
+#: comments.php:18 content-list.php:18 content.php:17
 msgid "1 Comment"
 msgstr ""
 
-#: comments.php:18 content-list.php:24 content.php:19
+#: comments.php:18 content-list.php:18 content.php:17
 msgid "% Comments"
 msgstr ""
 
@@ -113,11 +113,11 @@ msgstr ""
 msgid "Website"
 msgstr ""
 
-#: content-list.php:6 content.php:6
+#: content-list.php:5 content.php:5
 msgid "bookmark"
 msgstr ""
 
-#: content-list.php:7 content.php:7
+#: content-list.php:6 content.php:6
 msgid "categories"
 msgstr ""
 
@@ -130,11 +130,11 @@ msgid ""
 "You have come to a page that is either not existing or already been removed"
 msgstr ""
 
-#: content.php:23
+#: content.php:21
 msgid "<li class=\"previous\">&laquo; %link</li>"
 msgstr ""
 
-#: content.php:24
+#: content.php:22
 msgid "<li class=\"next\">%link &raquo;</li>"
 msgstr ""
 

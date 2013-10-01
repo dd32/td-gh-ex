@@ -1,7 +1,7 @@
 /*
 Theme Name: Adelle
 Description: WordPress theme by BluChic
-Version: 13.09.03
+Version: 13.09.5
 Author: BluChic
 Author URI: http://www.bluchic.com
 Theme URI: http://www.bluchic.com/shop/adelle-theme
@@ -166,7 +166,7 @@ h2,
 h3,
 h4,
 h5,
-h6 {line-height: 1.2em; margin-bottom: 15px; font-family: 'Montserrat', Sans-serif; font-weight: 400;}
+h6 {line-height: 1.2em; margin-bottom: 15px; font-family: 'Montserrat', Sans-serif; font-weight: 400; word-wrap: break-word; -ms-word-wrap: break-word;}
 h1 {font-size: 1.6em; color: #000;}
 h2 {font-size: 1.4em; color: #000;}
 h3 {font-size: 1.2em; color: #333;}
@@ -229,6 +229,7 @@ position: absolute; width: 200px; background: #000; z-index: 200;
 .article .post-header {margin-bottom: 30px; overflow: hidden;}
 .article .post-date {float: left; margin-right: 10px; background: #000; color: #ddd; width: 45px; padding: 18px; line-height: 1em; font-size: 1.2em; text-align: center; text-transform: uppercase;}
 .article .post-date span {color: #fff; font-size: 1.4em;}
+.article .post-date a {color: #fff;}
 .article h2.post-title {font: italic 400 1.8em 'Lora', Serif; margin: 10px 0 5px 0; line-height: 1.2em;}
 .article h2.post-title a {color: #000;}
 .article .post-comment {padding: 2px 0 2px 20px; background: url('images/comment_icon.gif') no-repeat 0 4px;}
