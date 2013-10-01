@@ -1,10 +1,10 @@
 /*
 Theme Name: Optimize
 Author: wrock.org by Sandy
-Author URI: http://www.wrock.org
-Theme URI: http://www.wrock.org/seo-optimized
-Description: Optimize as name tells every thing completely optimized for search you will get 90+ page speed H1 and H2 Title Tags on page and posts. Google Adsense ready template show ads in single post, header or below navigation and widget as well. This is fully magazine style best for any kind of personal blog or business website it comes with Responsive design to increase mobile friendly.Fully featured control panel that support favicon link, custom Google publisher and author links you can add Meta data to header vie control panel no need special plugin.
-Version: 1.0
+Author URI: http://www.wrock.org/about
+Theme URI: http://www.wrock.org/seo-optimized-wordpress-theme
+Description: Optimize as name tells every thing completely optimized for search you will get 90+ page speed H1 and H2 Title Tags on page and posts. Google Adsense ready template show ads in single post, header or below navigation and widget as well. This is fully magazine style best for any kind of personal blog or business website it comes with Responsive design to increase mobile friendly.Fully featured control panel that support favicon link.
+Version: 1.2
 Tags: black, white, light, custom-menu, custom-header, custom-background, one-column, two-columns, right-sidebar, theme-options, threaded-comments, sticky-post
 Text Domain: optimize
 License: GNU General Public License v3 or later
@@ -622,22 +622,7 @@ box-shadow: 0 1px 3px 0 #B5B5B5;
 -moz-box-shadow: 0 1px 3px 0 #b5b5b5;
 -webkit-box-shadow: 0 1px 3px 0 #B5B5B5;
 }
-#featured-area {
-	padding: 0;
-	position: relative;
-	z-index: 1;
-}
-#featured-area-inner {
-	position: relative;
-	padding: 20px;
-	width: 590px;
-	height: 412px;
-	float: left;
-	margin-bottom: 10px;
-}
-#featured-area-inner a:hover {
-	text-decoration: none;
-}
+
 #page {
 	margin-top: 20px;
 	position: relative;
@@ -714,7 +699,6 @@ margin: 1%;
 	cursor: pointer;
 	height: 40px;
 	width: 45px;
-	line-height: 1px;
 }
 form#searchform input#s {
 	width: 200px;
@@ -856,7 +840,6 @@ tbody{
 .postmeta_box {
 height: auto;
 font-size: 11px;
-clear: both;
 margin: 11px 0;
 float: left;
 width: 99%;

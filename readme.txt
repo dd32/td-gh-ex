@@ -29,6 +29,9 @@ Custom Css:
 
 
 == Change log ==
+= 1.2=
+*Removed plugin territory functions
+*Bug Fixed
 
 = 1.0 =
 *Initial Release @ 1.0

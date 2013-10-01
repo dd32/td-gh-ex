@@ -48,17 +48,10 @@ if ( ! isset( $content_width ) )
 
 	
  function optimize_googlemeta() {
-        if (optimize_get_option('optimize_gpub') != '') {
-            echo '<link rel="publisher" href="' . optimize_get_option('optimize_gpub') . '"/>' . "\n";
-        } 
-		if (optimize_get_option('optimize_gauth') != '') {
-            echo '<link rel="author" href="' . optimize_get_option('optimize_gauth') . '"/>' . "\n";
-        } 
-		if (optimize_get_option('optimize_headad') != '') {
+       	if (optimize_get_option('optimize_headad') != '') {
             echo '' . optimize_get_option('optimize_headad') . '' . "\n";
         } 
     }
-
 add_action('wp_head', 'optimize_googlemeta');
 	
 	
@@ -153,7 +146,7 @@ function optimize_theme_setup() {
     $output = get_the_excerpt();
     $output = apply_filters('wptexturize', $output);
     $output = apply_filters('convert_chars', $output);
-    $output = '<p>'.$output.'</p>';
+    $output = ''.$output.'';
     echo $output;
     }
 

@@ -67,22 +67,7 @@ function optionsframework_options() {
             "id" => "optimize_author",
             "std" => "",
 			"type" => "checkbox"),
-		array("name" => __( "Google+ Publisher URL", "wrockmetro" ),
-            "desc" => "Google+ Publisher URL",
-            "id" => "optimize_gpub",
-            "std" => "",
-            "type" => "text"),
-		array("name" => __( "Google+ Author URL", "wrockmetro" ),
-            "desc" => "Google+ Author URL",
-            "id" => "optimize_gauth",
-            "std" => "",
-            "type" => "text"),
-			array("name" => __( "Put Additional Codes in header", "optimize" ),
-            "desc" => "Put Additional Codes for header like any meta verification, google analytics or any thing else HTML allowed here",
-            "id" => "optimize_headad",
-            "std" => "",
-            "type" => "textarea"),
-			
+
 //****=============================================================================****//
 //****-----------This code is used for creating slider settings--------------------****//							
 //****=============================================================================****//						

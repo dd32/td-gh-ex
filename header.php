@@ -5,21 +5,6 @@
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />	
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-<!--
-* DD_belatedPNG: Adds IE6 support: PNG images for CSS background-image and HTML <IMG/>.
-* Author: Drew Diller
-* Email: drew.diller@gmail.com
-* URL: http://www.dillerdesign.com/experiment/DD_belatedPNG/
-* Version: 0.0.8a
-* Licensed under the MIT License: http://dillerdesign.com/experiment/DD_belatedPNG/#license
--->
-	
-	<!--[if IE 6]>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/DD_belatedPNG_0.0.8a-min.js"></script>
-	<script>
-		DD_belatedPNG.fix('*');
-	</script>
-	<![endif]-->
 	<?php //comments_popup_script(); // off by default ?>
 	<?php wp_head(); ?>
 </head>
