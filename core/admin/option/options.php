@@ -57,7 +57,17 @@ array( "type" => "begintab",
 	array( "type" => "start",
 	       "id" => "General",
 	       "name" => __( "General","wip")),
-	
+
+	array( "name" => __( "Home Blog Layout","wip"),
+	       "desc" => __( "If you don't select a single page, select a layout for homepage","wip"),
+	       "id" => $shortname."_home",
+	       "type" => "select",
+	       "options" => array(
+		   "home-default" => __( "Full Width","wip"),
+	   	   "home-blog" => __( "Blog Sidebar","wip"),
+		   ),
+	       "std" => ""),
+
 	array( "name" => __( "Category Layout","wip"),
 	       "desc" => __( "Select a layout for category pages","wip"),
 	       "id" => $shortname."_category_layout",

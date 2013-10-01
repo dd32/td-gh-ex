@@ -43,27 +43,24 @@ function suevafree_postmeta($id) {
 
 function suevafree_template($id) {
 
-	
-		$template = array ("full" => "span12" , "left-sidebar" => "span8" , "right-sidebar" => "span8" );
-	
-		if ( (is_category()) || (is_tag()) ) {
+	$template = array ("full" => "span12" , "left-sidebar" => "span8" , "right-sidebar" => "span8" );
+
+	$span = $template["full"];
+	$sidebar =  "full";
+
+	if ( (is_category()) || (is_tag()) || (is_home()) ) {
 		
-			$span = $template[suevafree_setting('suevafree_category_layout')];
-			$sidebar =  suevafree_setting('suevafree_category_layout');
+		$span = $template[suevafree_setting('suevafree_category_layout')];
+		$sidebar =  suevafree_setting('suevafree_category_layout');
 			
-		} else if (suevafree_postmeta('suevafree_template')) {
+	} else if (suevafree_postmeta('suevafree_template')) {
 		
-			$span = $template[suevafree_postmeta('suevafree_template')];
-			$sidebar =  suevafree_postmeta('suevafree_template');
+		$span = $template[suevafree_postmeta('suevafree_template')];
+		$sidebar =  suevafree_postmeta('suevafree_template');
 			
-		} else if (!suevafree_postmeta('suevafree_template')) {
-		
-			$span = $template["full"];
-			$sidebar =  "full";
-			
-		}
+	}
 	
-		return ${$id};
+	return ${$id};
 
 }
 
