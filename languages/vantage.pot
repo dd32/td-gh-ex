@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License 2.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: vantage 1.0.5\n"
-"POT-Creation-Date: 2013-09-28T18:43:43+02:00\n"
+"Project-Id-Version: vantage 1.0.6\n"
+"POT-Creation-Date: 2013-10-01T17:01:33+02:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-msgid "Oops! That page can&rsquo;t be found."
+msgid "That page can&rsquo;t be found."
 msgstr ""
 
 msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
@@ -676,6 +676,12 @@ msgstr ""
 msgid "Vantage (Flex)"
 msgstr ""
 
+msgid "Page Meta Slider"
+msgstr ""
+
+msgid "Display Page Metaslider"
+msgstr ""
+
 msgid "Default Home"
 msgstr ""
 
@@ -1072,6 +1078,69 @@ msgstr ""
 msgid "Contact Form"
 msgstr ""
 
+msgid "Fonts"
+msgstr ""
+
+msgid "Page"
+msgstr ""
+
+msgid "Body Font"
+msgstr ""
+
+msgid "Site Title Font"
+msgstr ""
+
+msgid "Heading Font"
+msgstr ""
+
+msgid "Background"
+msgstr ""
+
+msgid "Text Color"
+msgstr ""
+
+msgid "Second Level Background"
+msgstr ""
+
+msgid "Second Level Text"
+msgstr ""
+
+msgid "Hover Background"
+msgstr ""
+
+msgid "Hover Text"
+msgstr ""
+
+msgid "Search Icon Background"
+msgstr ""
+
+msgid "Search Input Background"
+msgstr ""
+
+msgid "Search Input Text"
+msgstr ""
+
+msgid "Masthead Background"
+msgstr ""
+
+msgid "Page Background"
+msgstr ""
+
+msgid "Footer Background"
+msgstr ""
+
+msgid "Headings"
+msgstr ""
+
+msgid "Links"
+msgstr ""
+
+msgid "Site Info Text"
+msgstr ""
+
+msgid "Site Info Link"
+msgstr ""
+
 msgid "Mobile Menu Collapse"
 msgstr ""
 
@@ -1112,6 +1181,12 @@ msgid "vantage premium gives you the option to easily remove the \"Powered by Wo
 msgstr ""
 
 msgid "No one wants a fuzzy logo. Vantage Premium lets you upload a second, double-size logo that's only displayed to users with retina screens."
+msgstr ""
+
+msgid "Customizer Integration"
+msgstr ""
+
+msgid "Make Vantage your own with customizer integration. Change fonts, colors and more all using the live-updating WordPress customizer."
 msgstr ""
 
 msgid "Want to keep the conversation flowing? Ajax comments means your visitors can comment without reloading your page. So commenting wont interrupt a video or lose their position in one of your galleries."

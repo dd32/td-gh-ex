@@ -12,7 +12,6 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
-	<meta name="viewport" content="width=device-width" />
 	<meta http-equiv="X-UA-Compatible" content="IE=9" />
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -32,7 +31,7 @@
 
 	<?php do_action( 'vantage_after_masthead' ); ?>
 
-	<?php if ( is_front_page() ) vantage_render_slider() ?>
+	<?php vantage_render_slider() ?>
 
 	<?php do_action( 'vantage_before_main_container' ); ?>
 

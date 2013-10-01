@@ -7,7 +7,7 @@
  * @license GPL 2.0
  */
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.0.5' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.0.6' );
 define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://siteorigin.com' );
 
 if( file_exists( get_template_directory() . '/premium/functions.php' ) ){
@@ -83,8 +83,12 @@ function vantage_setup() {
 		include get_template_directory() . '/extras/panels-lite/panels-lite.php';
 	}
 
-	global $content_width, $vantage_site_width;
+	add_theme_support('siteorigin-premium-teaser', array(
+		'customizer' => true,
+		'settings' => true,
+	));
 
+	global $content_width, $vantage_site_width;
 	if ( ! isset( $content_width ) ) $content_width = 789; /* pixels */
 	if ( ! isset( $vantage_site_width ) ) $vantage_site_width = 1080; /* pixels */
 }
@@ -172,6 +176,10 @@ function vantage_scripts() {
 	wp_enqueue_style( 'vantage-style', get_stylesheet_uri(), array(), SITEORIGIN_THEME_VERSION );
 	wp_enqueue_script( 'vantage-main' , get_template_directory_uri() . '/js/jquery.theme-main.min.js', array('jquery', 'flexslider', 'fitvids'), SITEORIGIN_THEME_VERSION );
 	wp_enqueue_style( 'vantage-fontawesome', get_template_directory_uri().'/fontawesome/css/font-awesome.css', array(), '3.2.1' );
+
+	wp_localize_script('vantage-main', 'vantageSettings', array(
+		'isMobile' => wp_is_mobile(),
+	));
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -264,8 +272,15 @@ function vantage_get_query_variables(){
  * Render the slider.
  */
 function vantage_render_slider(){
-	$slider = siteorigin_setting('home_slider');
-	if($slider == 'none') return;
+
+	if( is_home() && siteorigin_setting('home_slider') != 'none' ) {
+		$slider = siteorigin_setting('home_slider');
+	}
+	else if( is_page() && get_post_meta(get_the_ID(), 'vantage_metaslider_slider', true) != 'none' ) {
+		$slider = get_post_meta(get_the_ID(), 'vantage_metaslider_slider', true);
+	}
+	else return;
+
 
 	global $vantage_is_main_slider;
 	$vantage_is_main_slider = true;
@@ -303,3 +318,10 @@ add_filter('vantage_post_on_parts', 'vantage_filter_vantage_post_on_parts');
 function vantage_get_site_width(){
 	return apply_filters('vantage_site_width', !empty($GLOBALS['vantage_site_width']) ? $GLOBALS['vantage_site_width'] : 1080);
 }
+
+function vantage_responsive_header(){
+	if( siteorigin_setting('layout_responsive') ) {
+		?><meta name="viewport" content="width=device-width" /><?php
+	}
+}
+add_action('wp_head', 'vantage_responsive_header');
