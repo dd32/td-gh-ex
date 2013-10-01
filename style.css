@@ -1,10 +1,10 @@
 /* 
 Theme Name: Rockers
 Author: Alberto Ramacciotti
-Author URI: http://www.arwebdevstudio.it
-Theme URI: http://ramacciotti.altervista.org/archivio/articolo/rockers-theme
+Author URI: http://ramacciotti.altervista.org
+Theme URI: http://ramacciotti.altervista.org/archives/articles/rockers-wordpress-theme
 Description: Rockers is a responsive theme for bloggers with a clean design.
-Version: 2.0.5
+Version: 2.0.6
 License: GNU General Public License v2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -118,15 +118,15 @@ section,
 .comment-content pre code,
 .post-content address,
 .comment-content address,
-.image-attachment div.attachment img,
-article.format-quote .post-content blockquote,
+.image-attachment .attachment img,
+.format-quote .post-content blockquote,
 .comments-area article header cite,
 .comments-area article header time,
 #respond form label,
-label ~ span.required,
+label ~ .required,
 .widget-search label,
 .widget-twitter .timesince,
-img#wpstats,
+#wpstats,
 .menu a,
 .menu a:visited,
 .prev-link a,
@@ -135,7 +135,7 @@ img#wpstats,
 .next-link a:visited,
 .blog-header h1 a,
 .blog-header h1 a:visited,
-.post-meta span.edit-link {
+.post-meta .edit-link {
     display: block;
 }
 
@@ -146,7 +146,7 @@ video,
 .blog-header h1 a:visited,
 .blog-header h2 a,
 .blog-header h2 a:visited,
-.menu ul.nav-menu.toggled-on,
+.menu .nav-menu.toggled-on,
 .menu-toggle,
 .format-status .post-header header {
     display: inline-block;
@@ -154,8 +154,8 @@ video,
 
 audio:not([controls]),
 #pagination-top,
-.menu ul.nav-menu,
-.menu div.nav-menu > ul,
+.menu .nav-menu,
+.menu .nav-menu > ul,
 .single-author .post-meta .by-author,
 .skip-link,
 .screen-reader-text,
@@ -165,7 +165,7 @@ audio:not([controls]),
 
 .comments-area article header,
 .author-info,
-.article.attachment,
+..attachment,
 .blog-header h1,
 .site,
 .wrapper {
@@ -216,13 +216,13 @@ td,
 .blog-header h2,
 .menu-toggle,
 input[type="submit"],
-article.post-password-required input[type=submit],
-li.bypostauthor cite span,
+.post-password-required input[type=submit],
+.bypostauthor cite span,
 .post-header .post-title,
 .post-header .post-format,
-article.format-image footer h1,
-article.format-image footer a h2,
-article.format-image footer a:visited h2,
+.format-image footer h1,
+.format-image footer a h2,
+.format-image footer a:visited h2,
 .format-status .post-header h1,
 .format-status .post-header h2,
 .comments-area article header h4,
@@ -243,9 +243,9 @@ td,
 .wp-caption .wp-caption-text,
 .gallery-caption, 
 .post-caption,
-.image-attachment div.attachment,
-.image-attachment div.attachment p,
-.post-meta span.edit-link {
+.image-attachment .attachment,
+.image-attachment .attachment p,
+.post-meta .edit-link {
     text-align: center;
 }
 
@@ -253,15 +253,15 @@ td,
 .edit-link a, 
 .edit-link a:visited,
 .archive-title,
-article.format-link header,
+.format-link header,
 .page-title,
 .widget-title,
 .post-content th,
 .comment-content th,
 .menu-toggle,
 input[type="submit"],
-article.post-password-required input[type=submit],
-li.bypostauthor cite span {
+.post-password-required input[type=submit],
+.bypostauthor cite span {
     text-transform: uppercase;
 }
 
@@ -273,7 +273,7 @@ h5,
 h6,
 .clear:after,
 .format-status .post-header:after,
-footer#footer,
+#footer,
 .post-meta,
 .navigation,
 #numbered-pagination,
@@ -284,7 +284,7 @@ footer#footer,
 
 .menu-toggle,
 input[type="submit"],
-article.post-password-required input[type=submit] {
+.post-password-required input[type=submit] {
     cursor: pointer;
 }
 
@@ -343,9 +343,9 @@ img {
     color: #111111;
 }
 
-article.format-quote footer.post-meta,
-article.format-link footer.post-meta,
-article.format-status footer.post-meta {
+.format-quote .post-meta,
+.format-link .post-meta,
+.format-status .post-meta {
     font-size: .9em;
     line-height: 2;
 }
@@ -358,8 +358,8 @@ article.format-status footer.post-meta {
 
 .menu-toggle,
 input[type="submit"],
-article.post-password-required input[type=submit],
-li.bypostauthor cite span {
+.post-password-required input[type=submit],
+.bypostauthor cite span {
     padding: 6px 10px;
     line-height: 1;
     color: #f9f8f0;
@@ -394,7 +394,7 @@ input[type="submit"]:hover {
 }
 
 input[type="submit"]:active,
-article.post-password-required input[type=submit]:active,
+.post-password-required input[type=submit]:active,
 input[type="submit"].toggled-on {
     color: #e8e2c6;
     background-color: transparent;
@@ -406,7 +406,7 @@ input[type="submit"].toggled-on {
     border: 0;
 }
 
-li.bypostauthor cite span {
+.bypostauthor cite span {
     border: 1px solid #1f6f93;
     border-radius: 2px;
     box-shadow: none;
@@ -434,14 +434,17 @@ textarea {
 
 img[class*="align"],
 img[class*="wp-image-"],
-img[class*="attachment-"] {
+img[class*="attachment-"],
+.post-content img,
+.comment-content img,
+.widget img {
     height: auto;
 }
 
-img.size-full,
-img.size-large,
-img.header-image,
-img.wp-post-image {
+.size-full,
+.size-large,
+.header-image,
+.wp-post-image {
     max-width: 100%;
     height: auto;
 }
@@ -461,18 +464,18 @@ video {
 .posts-by-tag-item img,
 .prev-link,
 .previous-image,
-article.format-link .post-content,
+.format-link .post-content,
 .format-status .post-header img,
 .comments-area article header img,
 .template-front-page .aside .widget-text img,
-label ~ span.required {
+label ~ .required {
     float: left;
 }
 
 .alignright,
 .next-link,
 .next-image,
-article.format-link header {
+.format-link header {
     float: right;
 }
 
@@ -484,9 +487,9 @@ article.format-link header {
 .post-content img,
 .comment-content img,
 .widget img,
-img.header-image,
+.header-image,
 .author-avatar img,
-img.wp-post-image {
+.wp-post-image {
     border-radius: 3px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
@@ -504,7 +507,7 @@ img.wp-post-image {
     color: #5e1900;
 }
 
-img.wp-smiley,
+.wp-smiley,
 .rsswidget img {
     border: 0;
     border-radius: 0;
@@ -608,7 +611,7 @@ body {
     background-color: #f1efdc;
 }
 
-body.custom-font-enabled {
+.custom-font-enabled {
     font-family: Source Sans Pro, verdana, sans-serif;
 }
 
@@ -818,27 +821,44 @@ a:hover {
     border-bottom: 1px solid #F3F1E2;
 }
 
-footer#footer {
+#footer {
     letter-spacing: 1px;
     font-weight: normal;
     margin: 3em 0 1em 0;
     padding: 2em 0 0 0;
 }
 
-footer#footer a,
-footer#footer a:visited {
+#footer a,
+#footer a:visited {
     border-bottom: 1px solid #f3f1e2;
 }
 
-footer#footer a:hover {
+#footer a:hover {
     border-bottom: 1px solid #cdb79e;
+}
+
+#footer .ar {
+    width: 17px;
+    height: 14px;
+}
+
+#page #footer .ar,
+#page #footer .ar:visited,
+#page #footer .ar:hover {
+    padding: 0;
+    border-bottom: 0;
+    background-color: transparent;
+}
+
+#footer .ar img {
+    vertical-align: middle;
 }
 
 .post-header {
     margin-bottom: 24px;
 }
 
-.post-header img.wp-post-image {
+.post-header .wp-post-image {
     margin-bottom: 24px;
 }
 
@@ -1005,15 +1025,15 @@ footer#footer a:hover {
     margin: 0 0 24px;
 }
 
-img.alignleft {
+.alignleft {
     margin: 12px 24px 12px 0;
 }
 
-img.alignright {
+.alignright {
     margin: 12px 0 12px 24px;
 }
 
-img.aligncenter {
+.aligncenter {
     margin-top: 12px;
     margin-bottom: 12px;
 }
@@ -1105,7 +1125,7 @@ img.aligncenter {
     padding: .5em;
 }
 
-footer.post-meta {
+.post-meta {
     margin-top: 24px;
     color: #727d31;
     line-height: 2;
@@ -1124,7 +1144,7 @@ footer.post-meta {
     margin-top: 22px;
 }
 
-.image-attachment div.attachment img {
+.image-attachment .attachment img {
     height: auto;
     margin: 0 auto;
     max-width: 100%;
@@ -1134,19 +1154,19 @@ footer.post-meta {
     margin-top: 8px;
 }
 
-article.format-aside h1 {
+.format-aside h1 {
     margin-bottom: 24px;
 }
 
-article.format-aside h1 a {
+.format-aside h1 a {
     color: #4d525a;
 }
 
-article.format-aside h1 a:hover {
+.format-aside h1 a:hover {
     color: #2e3542;
 }
 
-article.format-aside .aside {
+.format-aside .aside {
     padding: 24px;
     background-color: #f5f3e7;
     color: #000000;
@@ -1156,28 +1176,28 @@ article.format-aside .aside {
     border-left: 1px solid #f2f0e1;
 }
 
-article.format-aside p {
+.format-aside p {
     font-size: .9em;
     line-height: 1.5;
     color: #4a5466;
 }
 
-article.format-aside blockquote:last-child,
-article.format-aside p:last-child {
+.format-aside blockquote:last-child,
+.format-aside p:last-child {
     margin-bottom: 0;
 }
 
-article.format-image footer h1 {
+.format-image footer h1 {
     font-size: .9em;
     line-height: 1.8;
 }
 
-article.format-image footer h2 {
+.format-image footer h2 {
     font-size: .9em;
     line-height: 2;
 }
 
-article.format-link header {
+.format-link header {
     padding: 0 10px;
     font-size: .9em;
     line-height: 2;
@@ -1188,21 +1208,21 @@ article.format-link header {
     border-radius: 3px;
 }
 
-article.format-link .post-content {
+.format-link .post-content {
     width: 80%;
 }
 
-article.format-link .post-content a {
+.format-link .post-content a {
     font-size: 22px;
     line-height: 1;
 }
 
-article.format-quote .post-content p {
+.format-quote .post-content p {
     margin: 0;
     padding-bottom: 24px;
 }
 
-article.format-quote .post-content blockquote {
+.format-quote .post-content blockquote {
     padding: 24px 24px 0;
     font-size: 15px;
     line-height: 1.6;
@@ -1282,20 +1302,20 @@ article.format-quote .post-content blockquote {
     border: 1px solid #007cbd;
 }
 
-.comments-area li.bypostauthor cite span {
+.comments-area .bypostauthor cite span {
     position: absolute;
     margin-left: 5px;
     padding: 2px 5px;
     font-size: .9em;
 }
 
-a.comment-reply-link {
+.comment-reply-link {
     font-size: .9em;
     line-height: 1.8;
     color: #111111;
 }
 
-a.comment-reply-link:hover {
+.comment-reply-link:hover {
     color: #000000;
 }
 
@@ -1359,7 +1379,7 @@ a.comment-reply-link:hover {
     color: red;
 }
 
-label ~ span.required {
+label ~ .required {
     margin: -18px 0 0 -16px;
 }
 
@@ -1367,7 +1387,7 @@ label ~ span.required {
     margin-bottom: 14px;
 }
 
-.post-meta span.edit-link {
+.post-meta .edit-link {
     margin: 1.5em 0;
     font-weight: bold;
     font-size: 2em;
@@ -1431,7 +1451,7 @@ label ~ span.required {
     text-align: right;
 }
 
-img#wpstats {
+#wpstats {
     margin: 0 auto 24px;
 }
 
@@ -1494,8 +1514,8 @@ img#wpstats {
         line-height: 1.5;
     }
 
-    .menu ul.nav-menu,
-    .menu div.nav-menu > ul {
+    .menu .nav-menu,
+    .menu .nav-menu > ul {
         display: inline-block !important;
         text-align: left;
         width: 100%;
@@ -1583,7 +1603,7 @@ img#wpstats {
         width: 46%;
     }
 
-    #respond form textarea.blog-textarea {
+    #respond form .blog-textarea {
         width: 79%;
     }
 
@@ -1691,7 +1711,7 @@ img#wpstats {
     .post-content img,
     .comment-content img,
     .author-avatar img,
-    img.wp-post-image {
+    .wp-post-image {
         border-radius: 0;
         box-shadow: none;
     }
@@ -1729,7 +1749,7 @@ img#wpstats {
     .post-meta .edit-link a,
     #numbered-pagination,
     .aside,
-    img.header-image,
+    .header-image,
     .menu {
         display: none;
     }
@@ -1740,7 +1760,7 @@ img#wpstats {
 
     .singular .post-header,
     .singular .post-content,
-    .singular footer.post-meta,
+    .singular .post-meta,
     .singular .comments-title {
         margin: 0;
         width: 100%;
@@ -1752,8 +1772,8 @@ img#wpstats {
         font-size: 21pt;
     }
 
-    footer.post-meta,
-    footer.post-meta a {
+    .post-meta,
+    .post-meta a {
         color: #000000;
         font-size: 10pt;
     }
@@ -1808,9 +1828,9 @@ img#wpstats {
     width: 26%;
 }
 
-.ie img.size-full,
-.ie img.size-large,
-.ie img.header-image,
-.ie img.wp-post-image {
+.ie .size-full,
+.ie .size-large,
+.ie .header-image,
+.ie .wp-post-image {
     width: auto;
 }

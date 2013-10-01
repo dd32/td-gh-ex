@@ -55,16 +55,16 @@ td {
     padding: 6px 0 6px 10px;
 }
 
-article.format-aside .aside {
+.format-aside .aside {
     border-right: 22px solid #a8bfe8;
     border-left: none;
 }
 
-article.format-link header {
+.format-link header {
     float: left;
 }
 
-article.format-link .post-content {
+.format-link .post-content {
     float: right;
 }
 
@@ -89,7 +89,7 @@ article.format-link .post-content {
     right: auto;
 }
 
-.comments-area li.bypostauthor cite span {
+.comments-area .bypostauthor cite span {
     margin-right: 5px;
     margin-left: auto;
 }
@@ -173,8 +173,8 @@ label ~ span.required {
         margin: 0 24px 0;
     }
 
-    .main-navigation ul.nav-menu,
-     .main-navigation div.nav-menu > ul {
+    .main-navigation .nav-menu,
+     .main-navigation .nav-menu > ul {
         text-align: right;
     }
 

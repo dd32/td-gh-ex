@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: inBlu\n"
+"Project-Id-Version: Rockers\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-18 16:27+0100\n"
-"PO-Revision-Date: 2013-06-18 16:30+0100\n"
+"POT-Creation-Date: 2013-10-01 07:54+0100\n"
+"PO-Revision-Date: 2013-10-01 07:54+0100\n"
 "Last-Translator: AR <ramacciotti.alberto@gmail.com>\n"
 "Language-Team: AR <ramacciotti.alberto@gmail.com>\n"
 "Language: it_IT\n"
@@ -14,7 +14,7 @@ msgstr ""
 "X-Poedit-Basepath: C:\\xampp\\htdocs\\wordpress\\wp-content\\themes"
 "\\rockers\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.5.7\n"
 "X-Poedit-SearchPath-0: C:\\xampp\\htdocs\\wordpress\\wp-content\\themes"
 "\\rockers\n"
 
@@ -166,17 +166,8 @@ msgstr ""
 "Visualizza tutti gli articoli di %s <span class=\"meta-nav\">&rarr;</span>"
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/footer.php:3
-msgid "is based on"
-msgstr "basato su"
-
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/footer.php:3
-msgid "http://wordpress.org/"
-msgstr "http://wordpress.org/"
-
-#: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/footer.php:3
-#, php-format
-msgid "%s"
-msgstr "%s"
+msgid "http://ramacciotti.altervista.org"
+msgstr "http://ramacciotti.altervista.org"
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\rockers/functions.php:27
 msgid "Navigation Menu"
@@ -355,6 +346,15 @@ msgstr "Risultati della ricerca per: %s"
 #, php-format
 msgid "Tag Archives: %s"
 msgstr "Archivi delle etichette: %s"
+
+#~ msgid "is based on"
+#~ msgstr "basato su"
+
+#~ msgid "http://wordpress.org/"
+#~ msgstr "http://wordpress.org/"
+
+#~ msgid "%s"
+#~ msgstr "%s"
 
 #~ msgid "Please come back and search again."
 #~ msgstr "Si prega di tornare indietro e cercare di nuovo."
