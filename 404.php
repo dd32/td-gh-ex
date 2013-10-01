@@ -8,7 +8,7 @@
         <h2 class="post-title"><?php _e('Error 404 - Not Found','adelle-theme'); ?></h2>
       </header>
 
-      <p><?php if( get_option("adelle_theme_404_page") == true ) { echo esc_html( get_option("adelle_theme_404_page") ); } else { echo _e('404 Not Found','adelle-theme'); } ?></p>
+      <p><?php echo _e('404 Not Found','adelle-theme'); ?></p>
 
       <?php get_search_form();?>
 

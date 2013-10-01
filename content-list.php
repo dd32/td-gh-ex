@@ -17,18 +17,12 @@
 
       <?php } ?>
       
-      <?php the_excerpt(); ?>
+      <?php the_content(); ?>
 
     <footer class="post-footer">
-      <ul class="post-info-meta">
-        <li>
-          <a href="<?php echo esc_url('https://twitter.com/share'); ?>" class="twitter-share-button" data-url="<?php the_permalink() ?>" data-count="horizontal">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
-        </li>
-        <li>
-          <div class="fb-like" data-href="<?php the_permalink() ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
-        </li>
-        <li class="post-info-comment"><div class="post-comment"><?php comments_popup_link( __('0 comment','adelle-theme'), __('1 Comment','adelle-theme'), __('% Comments','adelle-theme') ); ?></div></li>
-      </ul>
+        <ul class="post-info-meta">
+          <li class="post-info-comment"><div class="post-comment"><?php comments_popup_link( __('0 comment','adelle-theme'), __('1 Comment','adelle-theme'), __('% Comments','adelle-theme') ); ?></div></li>
+        </ul>
     </footer><!-- .post-footer -->
 
   </article><!-- .article -->

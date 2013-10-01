@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Adelle Theme\n"
-"POT-Creation-Date: 2013-06-05 17:19+0800\n"
-"PO-Revision-Date: 2013-06-05 17:19+0800\n"
+"POT-Creation-Date: 2013-10-01 15:16+0800\n"
+"PO-Revision-Date: 2013-10-01 15:16+0800\n"
 "Last-Translator: Andrew Wong <hello@bluchic.com>\n"
 "Language-Team: BluChic <hello@bluchic.com>\n"
 "Language: English\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.5.7\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ../\n"
 "Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
@@ -60,15 +60,15 @@ msgstr ""
 msgid "This post is password protected. Enter the password to view comments"
 msgstr ""
 
-#: comments.php:18 content-list.php:30 content.php:21 single.php:32
+#: comments.php:18 content-list.php:24 content.php:19
 msgid "0 comment"
 msgstr ""
 
-#: comments.php:18 content-list.php:30 content.php:21 single.php:32
+#: comments.php:18 content-list.php:24 content.php:19
 msgid "1 Comment"
 msgstr ""
 
-#: comments.php:18 content-list.php:30 content.php:21 single.php:32
+#: comments.php:18 content-list.php:24 content.php:19
 msgid "% Comments"
 msgstr ""
 
@@ -113,11 +113,11 @@ msgstr ""
 msgid "Website"
 msgstr ""
 
-#: content-list.php:6 content.php:6 single.php:12
+#: content-list.php:6 content.php:6
 msgid "bookmark"
 msgstr ""
 
-#: content-list.php:7 content.php:7 single.php:13
+#: content-list.php:7 content.php:7
 msgid "categories"
 msgstr ""
 
@@ -128,6 +128,14 @@ msgstr ""
 #: content-none.php:5
 msgid ""
 "You have come to a page that is either not existing or already been removed"
+msgstr ""
+
+#: content.php:23
+msgid "<li class=\"previous\">&laquo; %link</li>"
+msgstr ""
+
+#: content.php:24
+msgid "<li class=\"next\">%link &raquo;</li>"
 msgstr ""
 
 #: footer.php:4
@@ -146,166 +154,70 @@ msgstr ""
 msgid "Designed by"
 msgstr ""
 
-#: header.php:43 header.php:44 searchform.php:3 searchform.php:4
+#: functions.php:103
+msgid "Top Menu"
+msgstr ""
+
+#: functions.php:152
+msgid "Please enable referrers in your browser."
+msgstr ""
+
+#: functions.php:162
+msgid "ago"
+msgstr ""
+
+#: functions.php:174
+#, php-format
+msgid "<h6>%s</h6>"
+msgstr ""
+
+#: functions.php:175
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: functions.php:175
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: functions.php:177
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions.php:202
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: functions.php:297
+msgid "Pages:"
+msgstr ""
+
+#: functions.php:302
+msgid "Next page"
+msgstr ""
+
+#: functions.php:303
+msgid "Previous page"
+msgstr ""
+
+#: functions.php:324
+msgid "Previous"
+msgstr ""
+
+#: functions.php:325
+msgid "Next"
+msgstr ""
+
+#: functions.php:345
+msgid "Right Widget 1"
+msgstr ""
+
+#: header.php:37 header.php:38 searchform.php:3 searchform.php:4
 msgid "Search"
 msgstr ""
 
 #: search.php:7
 msgid "Searching for"
-msgstr ""
-
-#: single.php:36
-msgid "<li class=\"previous\">&laquo; %link</li>"
-msgstr ""
-
-#: single.php:37
-msgid "<li class=\"next\">%link &raquo;</li>"
-msgstr ""
-
-#: includes/ace_options.php:181
-msgid "General settings"
-msgstr ""
-
-#: includes/ace_options.php:182
-msgid "Extra inputs settings"
-msgstr ""
-
-#: includes/ace_options.php:183
-msgid "404 page settings"
-msgstr ""
-
-#: includes/ace_options.php:185 includes/ace_options.php:386
-msgid "Save settings"
-msgstr ""
-
-#: includes/ace_options.php:297 includes/ace_options.php:299
-msgid "Upload"
-msgstr ""
-
-#: includes/ace_options.php:301
-msgid "Upload an image"
-msgstr ""
-
-#: includes/ace_options.php:301
-msgid "and copy-paste the file URL or enter an image URL"
-msgstr ""
-
-#: includes/ace_options.php:301
-msgid "(including http://)"
-msgstr ""
-
-#: includes/ace_options.php:301
-msgid "Preferable size at"
-msgstr ""
-
-#: includes/ace_options.php:301
-msgid "pixel"
-msgstr ""
-
-#: includes/ace_options.php:326
-msgid "Select"
-msgstr ""
-
-#: includes/ace_options.php:390
-msgid "Reset all settings"
-msgstr ""
-
-#: includes/custom_widgets.php:35
-msgid "Title:"
-msgstr ""
-
-#: includes/custom_widgets.php:39
-msgid "Flickr ID"
-msgstr ""
-
-#: includes/custom_widgets.php:43
-msgid "Number"
-msgstr ""
-
-#: includes/custom_widgets.php:98 includes/custom_widgets.php:164
-msgid "Title"
-msgstr ""
-
-#: includes/custom_widgets.php:102
-msgid "Custom RSS feed (Leave blank to use default)"
-msgstr ""
-
-#: includes/custom_widgets.php:106 includes/custom_widgets.php:168
-msgid "Twitter username"
-msgstr ""
-
-#: includes/custom_widgets.php:110
-msgid "Facebook full URL"
-msgstr ""
-
-#: includes/custom_widgets.php:114
-msgid "Pinterest"
-msgstr ""
-
-#: includes/custom_widgets.php:172
-msgid "Number of Twitter updates"
-msgstr ""
-
-#: includes/modules.php:56
-msgid "Theme Options"
-msgstr ""
-
-#: includes/modules.php:98
-msgid "Top Menu"
-msgstr ""
-
-#: includes/modules.php:155
-msgid "Please enable referrers in your browser."
-msgstr ""
-
-#: includes/modules.php:165
-msgid "ago"
-msgstr ""
-
-#: includes/modules.php:177
-#, php-format
-msgid "<h6>%s</h6>"
-msgstr ""
-
-#: includes/modules.php:178
-#, php-format
-msgid "%1$s at %2$s"
-msgstr ""
-
-#: includes/modules.php:178
-#, php-format
-msgid "%s"
-msgstr ""
-
-#: includes/modules.php:180
-msgid "Your comment is awaiting moderation."
-msgstr ""
-
-#: includes/modules.php:205
-#, php-format
-msgid "Page %s"
-msgstr ""
-
-#: includes/modules.php:281
-msgid "Pages:"
-msgstr ""
-
-#: includes/modules.php:286
-msgid "Next page"
-msgstr ""
-
-#: includes/modules.php:287
-msgid "Previous page"
-msgstr ""
-
-#: includes/modules.php:308
-msgid "Previous"
-msgstr ""
-
-#: includes/modules.php:309
-msgid "Next"
-msgstr ""
-
-#: includes/widgets.php:6
-msgid "Right Widget 1"
 msgstr ""
