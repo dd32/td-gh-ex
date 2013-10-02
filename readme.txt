@@ -21,6 +21,7 @@ Added Translation for Arabic by ed3s (Email: master@ed3s.com)
 Added Translation for Serbian by Tomo Popovic (Email: tp0x45@gmail.com)
 Added Translation for Dutch by Alain Baudrez (Email: a.baudrez@gmail.com)
 Added translation for Persian by Ali Akbar Kaviani (Email: persian@wiki10.net)
+Added translation for Hungarian by Szentpétery István (Email: szempy@gmail.com)
 
 == Menus ===
 There are 3 Menus registered in this theme. Primary, Secondary and Footer menu. 
@@ -334,3 +335,7 @@ Version 2.7.1
 * Fixed Mobile menu issue not displaying last menu item
 * Fixed Skype Link Data Validation as per https://dev.skype.com/skype-uri
 * Fixed RTL css for secondary menu
+
+Version 2.8
+* Added Hungarian translation hu_HU.po and hu_HU.mo
+* Added sep-comment class in comment separator
