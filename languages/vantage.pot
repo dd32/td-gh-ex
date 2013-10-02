@@ -2,8 +2,8 @@
 # This file is distributed under the GNU General Public License 2.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: vantage 1.0.6\n"
-"POT-Creation-Date: 2013-10-01T17:01:33+02:00\n"
+"Project-Id-Version: vantage 1.0.7\n"
+"POT-Creation-Date: 2013-10-02T07:00:04+02:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -1177,7 +1177,7 @@ msgstr ""
 msgid "Remove Attribution Links"
 msgstr ""
 
-msgid "vantage premium gives you the option to easily remove the \"Powered by WordPress, Theme by SiteOrigin\" text from your footer. "
+msgid "Vantage premium gives you the option to easily remove the \"Powered by WordPress, Theme by SiteOrigin\" text from your footer. "
 msgstr ""
 
 msgid "No one wants a fuzzy logo. Vantage Premium lets you upload a second, double-size logo that's only displayed to users with retina screens."
