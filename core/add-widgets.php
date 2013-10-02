@@ -45,11 +45,4 @@ if (function_exists('register_sidebar')) {
 	
 }
 
-function unregister_default_wp_widgets() {
-	unregister_widget('WP_Widget_Search');
-}
-
-add_action('widgets_init', 'unregister_default_wp_widgets', 1);
-
-
 ?>
