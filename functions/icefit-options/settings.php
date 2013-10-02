@@ -95,8 +95,8 @@ function boldr_settings_template() {
 		);
 
 		$settings_options[] = array(
-			'name'          => __('Responsive mode', 'icefit'),
-			'desc'          => __('Turn this setting off if you want your site to be unresponsive.', 'icefit'),
+			'name'          => __('Responsive mode', 'boldr'),
+			'desc'          => __('Turn this setting off if you want your site to be unresponsive.', 'boldr'),
 			'id'            => 'responsive_mode',
 			'type'          => 'radio',
 			'default'       => 'on',

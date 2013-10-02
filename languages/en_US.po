@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BoldR Lite 1.1\n"
-"POT-Creation-Date: 2013-08-23 11:22+0100\n"
-"PO-Revision-Date: 2013-08-23 11:22+0100\n"
+"POT-Creation-Date: 2013-10-02 10:28+0100\n"
+"PO-Revision-Date: 2013-10-02 10:28+0100\n"
 "Last-Translator: \n"
 "Language-Team: Iceable Themes <contact@iceablethemes.com>\n"
 "Language: en_US\n"
@@ -15,20 +15,20 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../404.php:25
+#: ../404.php:17
 msgid "404"
 msgstr ""
 
-#: ../404.php:29
+#: ../404.php:21
 msgid "Page Not Found"
 msgstr ""
 
-#: ../404.php:30 ../index.php:119 ../page-full-width.php:55 ../page.php:55
-#: ../single.php:147
+#: ../404.php:22 ../index.php:115 ../page-full-width.php:43 ../page.php:43
+#: ../single.php:136
 msgid "What you are looking for isn't here..."
 msgstr ""
 
-#: ../404.php:31
+#: ../404.php:23
 msgid "Maybe a search will help ?"
 msgstr ""
 
@@ -66,87 +66,102 @@ msgstr ""
 msgid "Page %s"
 msgstr ""
 
-#: ../functions.php:130
+#: ../functions.php:136
+#, php-format
+msgid "<a href=\"%1$s\" style=\"float:right\">Dismiss</a>"
+msgstr ""
+
+#: ../functions.php:157
 msgid "Default Sidebar"
 msgstr ""
 
-#: ../functions.php:142
+#: ../functions.php:169
 msgid "Footer"
 msgstr ""
 
-#: ../functions.php:263
+#: ../functions.php:295
 msgid "Read More"
 msgstr ""
 
-#: ../index.php:32
+#: ../index.php:19
 msgid "Search Results for "
 msgstr ""
 
-#: ../index.php:37
+#: ../index.php:24
 msgid "Tag: "
 msgstr ""
 
-#: ../index.php:42
+#: ../index.php:29
 msgid "Category: "
 msgstr ""
 
-#: ../index.php:47
+#: ../index.php:34
 msgid "Daily archives: "
 msgstr ""
 
-#: ../index.php:50
+#: ../index.php:37
 msgid "Monthly archives: "
 msgstr ""
 
-#: ../index.php:53
+#: ../index.php:40
 msgid "Yearly archives: "
 msgstr ""
 
-#: ../index.php:78 ../single.php:44
+#: ../index.php:65 ../single.php:33
 msgid "No"
 msgstr ""
 
-#: ../index.php:78 ../single.php:44
+#: ../index.php:65 ../single.php:33
 msgid "1"
 msgstr ""
 
-#: ../index.php:78 ../single.php:44
+#: ../index.php:65 ../single.php:33
 msgid "%"
 msgstr ""
 
-#: ../index.php:79 ../single.php:45
+#: ../index.php:66 ../single.php:34
 msgid "Comment"
 msgstr ""
 
-#: ../index.php:79 ../single.php:45
+#: ../index.php:66 ../single.php:34
 msgid "Comments"
 msgstr ""
 
-#: ../index.php:79 ../single.php:45
+#: ../index.php:66 ../single.php:34
 msgid "Comments Off"
 msgstr ""
 
-#: ../index.php:83 ../single.php:49
+#: ../index.php:70 ../single.php:38
 msgid "by "
 msgstr ""
 
-#: ../index.php:85 ../page-full-width.php:40 ../page.php:40 ../single.php:51
+#: ../index.php:72 ../page-full-width.php:28 ../page.php:28 ../single.php:40
 msgid "Edit"
 msgstr ""
 
-#: ../index.php:100 ../single.php:68
+#: ../index.php:87 ../single.php:57
 msgid "Posted in"
 msgstr ""
 
-#: ../index.php:118 ../page-full-width.php:54 ../page.php:54 ../single.php:146
+#: ../index.php:107 ../index.php:114 ../page-full-width.php:42 ../page.php:42
+#: ../single.php:135
 msgid "Not Found"
 msgstr ""
 
-#: ../index.php:125
+#: ../index.php:108
+#, php-format
+msgid "Your search for \"%s\" did not return any result."
+msgstr ""
+
+#: ../index.php:109
+msgid "Would you like to try another search ?"
+msgstr ""
+
+#: ../index.php:123
 msgid "Previous Posts"
 msgstr ""
 
-#: ../index.php:128
+#: ../index.php:126
 msgid "Next Posts"
 msgstr ""
 
@@ -162,30 +177,38 @@ msgstr ""
 msgid "Meta"
 msgstr ""
 
-#: ../single.php:75
+#: ../single.php:64
 msgid "Pages:"
 msgstr ""
 
-#: ../single.php:80
+#: ../single.php:69
 msgid "Next page"
 msgstr ""
 
-#: ../single.php:81
+#: ../single.php:70
 msgid "Previous page"
 msgstr ""
 
-#: ../single.php:100
+#: ../single.php:89
 msgid "Previous Image"
 msgstr ""
 
-#: ../single.php:103
+#: ../single.php:92
 msgid "Next Image"
 msgstr ""
 
-#: ../single.php:109 ../single.php:132
+#: ../single.php:98 ../single.php:121
 msgid "Previous Post"
 msgstr ""
 
-#: ../single.php:112 ../single.php:135
+#: ../single.php:101 ../single.php:124
 msgid "Next Post"
+msgstr ""
+
+#: ../functions/icefit-options/settings.php:98
+msgid "Responsive mode"
+msgstr ""
+
+#: ../functions/icefit-options/settings.php:99
+msgid "Turn this setting off if you want your site to be unresponsive."
 msgstr ""

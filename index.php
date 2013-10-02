@@ -99,13 +99,24 @@
 
 			<hr />
 
-		<?php endwhile; ?>
-		<?php else : ?>
+		<?php endwhile;
+			else :
 
-			<h2><?php _e('Not Found', 'boldr'); ?></h2>
-			<p><?php _e('What you are looking for isn\'t here...', 'boldr'); ?></p>
-
-		<?php endif; ?>
+				if ( is_search() ): // Empty search results
+	
+				?><h2><?php _e('Not Found', 'boldr'); ?></h2>
+				<p><?php echo sprintf( __('Your search for "%s" did not return any result.', 'boldr'), get_search_query() ); ?><br />
+				<?php _e('Would you like to try another search ?', 'boldr'); ?></p>
+				<?php get_search_form();
+	
+				else: // Empty loop (this should never happen!)
+	
+				?><h2><?php _e('Not Found', 'boldr'); ?></h2>
+				<p><?php _e('What you are looking for isn\'t here...', 'boldr'); ?></p>
+	
+			<?php endif;
+		
+		endif; ?>
 
 			<div class="page_nav">
 				<?php if ( null != get_next_posts_link() ): ?>
