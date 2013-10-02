@@ -1,0 +1,64 @@
+<?php if ( have_posts() ) :  ?>
+
+<div class="container main-content blog">
+	<div class="row" id="blog" >
+    
+	<?php if ( ( wip_template('sidebar') == "left-sidebar" ) || ( wip_template('sidebar') == "right-sidebar" ) ) : ?>
+        
+        <div class="<?php echo wip_template('span') .' '. wip_template('sidebar'); ?>"> 
+        <div class="row"> 
+        
+    <?php endif; ?>
+        
+		
+		<?php while ( have_posts() ) : the_post(); ?>
+
+        <div <?php post_class(array('pin-article', wip_template('span') )); ?> >
+    
+				<?php do_action('wip_postformat'); ?>
+        
+                <div style="clear:both"></div>
+            
+            </div>
+		
+		<?php endwhile; else:  ?>
+
+        <div class="container">
+            <div class="row" id="blog" >
+
+                <div class="pin-article span12">
+        
+                    <article class="article">
+
+                        <h1>Not found</h1>
+
+                        <p><?php _e( 'Sorry, no posts matched your criteria',"wip" ) ?> </p>
+         
+                    </article>
+        
+                </div>
+                
+            </div>
+        </div>
+	
+		<?php endif; ?>
+        
+	<?php if ( ( wip_template('sidebar') == "left-sidebar" ) || ( wip_template('sidebar') == "right-sidebar" ) ) : ?>
+        
+        </div>
+        </div>
+        
+    <?php endif; ?>
+
+	<?php if ( ( is_active_sidebar('category_sidebar_area') ) && ( wip_template('span') == "span8" ) ) : ?>
+        
+        <section id="sidebar" class="pin-article span4">
+            <div class="sidebar-box">
+            	<?php dynamic_sidebar('category_sidebar_area') ?>
+            </div>
+        </section>
+    
+	<?php endif; ?>
+           
+    </div>
+</div>
