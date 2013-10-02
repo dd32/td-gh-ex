@@ -1,4 +1,4 @@
-Alhena Free Wordpress Theme
+Alhena WordPress Theme
 ---------------------
 
 Alhena is a responsive clean and corporate WordPress Theme. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10 and uses the most modern technologies like HTML5 and CSS3.
@@ -25,14 +25,6 @@ Credits
 --- Code License under MIT License - http://opensource.org/licenses/mit-license.html
 --- Documentation License under CC BY 3.0 - http://creativecommons.org/licenses/by/3.0
 --- Brand Icons - All brand icons are trademarks of their respective owners. The use of these trademarks does not indicate endorsement of the trademark holder by Font Awesome, nor vice versa.
-
-- Social Icons
-
--- By Designdeck - http://www.designdeck.co.uk
--- Simple Social Icon Set - http://www.designdeck.co.uk/a/253
--- Pinterest Icon Set - http://www.designdeck.co.uk/a/1255
-
---- License - Not license
 
 /** FONTS **/
 

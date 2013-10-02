@@ -16,10 +16,6 @@ function wip_post_formats_function() {
 		$postformats = "page";
 	} 
 	
-	else if ( get_post_type( get_the_ID()) == "portfolio" ) {
-		$postformats = "portfolio";
-	}
-				
 	else if ( !get_post_format() )  {
 		$postformats = "standard";
 	} 
