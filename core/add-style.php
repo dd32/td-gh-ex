@@ -145,6 +145,7 @@
 		echo '::selection { background-color: '.suevafree_setting('suevafree_link_color').'; } ';
 		echo 'nav#mainmenu ul ul { border-top-color: '.suevafree_setting('suevafree_link_color').'; } ';
 		echo 'nav#mainmenu ul ul:before { border-bottom-color: '.suevafree_setting('suevafree_link_color').'; } ';
+		echo 'nav#mainmenu ul ul li ul { border-top-color: '.suevafree_setting('suevafree_link_color').'; } ';
 		echo 'nav#mainmenu ul ul li a:hover, nav#mainmenu ul ul li.current-menu-item > a, nav#mainmenu ul ul li.current_page_item > a, nav#mainmenu ul ul li.current_page_ancestor > a, nav#mainmenu ul ul li.current_page_ancestor > a, nav#mainmenu ul ul li.current-menu-ancestor > a, #sidebar .tagcloud a, #footer .tagcloud a  { background: '.suevafree_setting('suevafree_link_color').'; } ';
 		echo 'nav#mainmenu ul ul li a:hover, nav#mainmenu ul ul li.current-menu-item > a, nav#mainmenu ul ul li.current_page_item > a, nav#mainmenu ul ul li.current_page_ancestor > a, nav#mainmenu ul ul li.current_page_ancestor > a, nav#mainmenu ul ul li.current-menu-ancestor > a  { border-top-color: '.suevafree_setting('suevafree_link_color').'; } ';
 		
