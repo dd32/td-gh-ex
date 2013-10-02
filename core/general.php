@@ -1,24 +1,24 @@
 <?php
 
 //Displays the blog title and descripion in home or frontpage
-function cpotheme_title(){
+add_filter('wp_title', 'cpotheme_title');
+function cpotheme_title($title){
 	global $post, $page, $paged;
 	
-	$separator = '|';	
+	$separator = ' | ';	
 	$description = get_bloginfo('description', 'display');
-	$title = wp_title($separator, false, 'right');
 	$name = get_bloginfo('name');
 	$full_title = $title.get_bloginfo('name');
 	
 	//Homepage title
 	if($description && (is_home() || is_front_page()))
-		$full_title .= ' '.$separator.' '.$description;
+		$full_title = $full_title.$separator.$description;
 	
 	//Page numbers
 	if($paged >= 2 || $page >= 2) 
 		$full_title .= ' | '.sprintf( __('Page %s', 'cpotheme'), max($paged, $page));
 	
-	echo $full_title;
+	return $full_title;
 }
 
 //Display custom favicon
@@ -356,13 +356,12 @@ function cpotheme_mobile_menu(){
 	if(has_nav_menu('main_menu')){
 		//Get all custom menus, then retrieve the one set to the main menu
 		$menu_locations = get_nav_menu_locations();
-		$menu_object = wp_get_nav_menu_object($menu_locations['main_menu']);
-		
+		$menu_object = wp_get_nav_menu_object($menu_locations['main_menu']);		
+		$current_parent = array();
+		$current_level = 0;
+		$last_id = 'root';
 		if($menu_object){
 			$menu_items = wp_get_nav_menu_items($menu_object->term_id);
-			$current_parent = array();
-			$current_level = 0;
-			$last_id = 'root';
 			$output = '';
 			$output .= '<select id="menu-mobile" class="menu-mobile">';
 			$output .= '<option value="#">'.__('Go To...', 'cpotheme').'</option>';
@@ -389,6 +388,39 @@ function cpotheme_mobile_menu(){
 			$output .= '<select>';
 			echo $output;
 		}
+	}else{
+		//Default page list
+		$args = array('sort_column' => 'menu_order');
+		$menu_items = get_pages($args);
+		$current_parent = array();
+		$current_level = 0;
+		$last_id = -1;
+		
+		$output = '';
+		$output .= '<select id="menu-mobile" class="menu-mobile">';
+		$output .= '<option value="#">'.__('Go To...', 'cpotheme').'</option>';
+		foreach($menu_items as $current_item){
+			$item_title = '';
+			//Go down a level
+			if($current_item->post_parent == $last_id){
+				$current_level++;
+				array_push($current_parent, $last_id);
+			//Go back up a level, check if going up more than once
+			}elseif($current_level > 0 && $current_item->post_parent != end($current_parent)){
+				while($current_item->post_parent != end($current_parent)){
+					$current_level--;
+					array_pop($current_parent);
+				}
+			}
+			
+			$item_title .= str_repeat('-', $current_level).' ';
+			$item_title .= $current_item->post_title;
+			$item_url = get_permalink($current_item->ID);
+			$last_id = $current_item->ID;
+			$output .= '<option value="'.$item_url.'">'.$item_title.'</option>';
+		}
+		$output .= '<select>';
+		echo $output;
 	}
 }
 
