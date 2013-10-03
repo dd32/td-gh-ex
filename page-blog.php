@@ -13,14 +13,15 @@ if ( !defined('ABSPATH')) exit;
  * @package Catch Everest
  * @since Catch Everest 0.2
  */
-get_header();
-?>
+ 
+get_header(); ?>
 
 		<div id="primary" class="content-area">
 			<div id="content" class="site-content" role="main">
             
             	<?php 
-				global $wp_query, $paged;
+				global $more, $wp_query, $post, $paged;
+				$more = 0;
 				
 				if ( get_query_var( 'paged' ) ) {
 					

@@ -141,3 +141,6 @@ version 1.2.1
 version 1.2.2
 * Added Soundcloud social icon
 * Fixed Skype Link Data Validation as per https://dev.skype.com/skype-uri
+
+version 1.2.3
+* Fixed blog template more tag issue
