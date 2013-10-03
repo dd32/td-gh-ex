@@ -57,6 +57,11 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
+@verison 1.5
+1. Added backward php version compatibility to resize_image.php  file by removing anonymous function.
+@version 1.0.4
+1 Remove responsive wordpress.
+2. Removed all reference of Twenty Eleven.
 @version 1.0.3
 1. Credit link added
 2. commented unused codes.
