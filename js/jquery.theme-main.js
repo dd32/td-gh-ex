@@ -12,10 +12,9 @@ jQuery(function($){
     /* Setup fitvids for entry content and panels */
     $('.entry-content, .entry-content .panel' ).fitVids();
 
-    if(!vantageSettings.isMobile) {
+    if( !$('body').hasClass('mobile-device') ) {
 
         // Everything we need for scrolling up and down.
-
         $(window).scroll( function(){
             if($(window).scrollTop() > 150) $('#scroll-to-top').addClass('displayed');
             else $('#scroll-to-top').removeClass('displayed');
@@ -117,7 +116,7 @@ jQuery(function($){
     }).resize();
 
     // The sticky menu
-    if( $('nav.site-navigation.primary').hasClass('use-sticky-menu') && !vantageSettings.isMobile) {
+    if( $('nav.site-navigation.primary').hasClass('use-sticky-menu') && !$('body').hasClass('mobile-device')) {
         var $mc = null;
         var resetStickyMenu = function(){
             var $$ = $('nav.site-navigation.primary');
@@ -178,9 +177,20 @@ jQuery(function($){
 
     // Substitute any retina images
     var pixelRatio = !!window.devicePixelRatio ? window.devicePixelRatio : 1;
-    if(pixelRatio > 1 || true) {
+    if( pixelRatio > 1 ) {
         $('img[data-retina-image]').each(function(){
-            $(this).attr('src', $(this).data('retina-image'));
+            var $$ = $(this);
+            $$.attr('src', $$.data('retina-image'));
+
+            // If the width attribute isn't set, then lets scale to 50%
+            if( typeof $$.attr('width') == 'undefined' ) {
+                $$.load( function(){
+                    var size = [$$.width(), $$.height()];
+                    $$.width(size[0]/2);
+                    $$.height(size[1]/2);
+                } );
+            }
         })
     }
+
 });

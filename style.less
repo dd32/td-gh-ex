@@ -38,10 +38,6 @@ textarea {
 a {
 	color: #248cc8;
 
-	&:visited {
-		color: #248cc8;
-	}
-
 	&:hover,
 	&:focus,
 	&:active {
@@ -360,6 +356,10 @@ body {
 		margin: 0;
 		padding: 0;
 	}
+
+	.responsive.layout-boxed #colophon {
+		margin-bottom: 0;
+	}
 }
 
 header#masthead {
@@ -605,10 +605,12 @@ body.responsive {
 			}
 		}
 
-		li:hover > ul {
-			visibility: visible;
-            opacity:1;
-			pointer-events: auto;
+		li:hover {
+			> ul {
+				visibility: visible !important;
+				opacity:1 !important;
+				pointer-events: auto !important;
+			}
 		}
 	}
 
@@ -633,6 +635,26 @@ body.responsive {
 		line-height: 0.5em;
 		color: #CCCCCC;
 	}
+
+}
+
+
+/* Handle the navigation slightly differently on mobile devices */
+
+body.mobile-device {
+
+	.main-navigation {
+		ul {
+			ul {
+				display: none;
+			}
+		}
+
+		li:hover ul {
+			display: block;
+		}
+	}
+
 }
 
 
@@ -725,7 +747,7 @@ article.sticky{
 	/* Style a sticky post */
 }
 
-.page-title {
+#page-title {
 	color: #3b3b3b;
 	margin-bottom: 20px;
 	font-size: 20px;
@@ -1176,7 +1198,7 @@ article.page{
 /* =Navigation
 ----------------------------------------------- */
 
-.pagination {
+.pagination, .entry-content .pagination {
 	position:relative;
 	font-size:11px;
 	line-height:13px;
@@ -1387,6 +1409,23 @@ article.page{
 		color: #A40802;
 	}
 }
+
+@media (max-width:480px) {
+	body.responsive  #commentform{
+		label{
+			float: none;
+			width: 100%;
+			margin-bottom: 3px;
+		}
+
+		input, textarea {
+			float:none;
+			width: 100%;
+		}
+	}
+}
+
+
 
 /* =Sidebars and Asides
 ----------------------------------------------- */

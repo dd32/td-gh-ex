@@ -70,3 +70,18 @@ Premium: Customizer integration.
 **1.0.7**
 Removed call to function that isn't part of WordPress core.
 Bug fixes with Meta Slider integration.
+
+**1.0.8**
+Fixed issue with home slider being shown on blog archives.
+Fixed logo issues with Jetpack Photon.
+Minor bug fixes.
+Premium: Added more customizations
+Premium: Added Page Builder element styles
+
+**1.0.9**
+Fixed responsive header for iPad.
+Fixed drop down menu for iPad.
+Added mobile-device class to body when visiting from a mobile device.
+Responsive CSS improvements.
+Fixed carousel loop with long title.
+Premium: Added more customizations.

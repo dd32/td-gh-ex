@@ -4,7 +4,7 @@ Author: SiteOrigin
 Author URI: http://siteorigin.com/
 Theme URI: http://siteorigin.com/theme/vantage/
 Description: Vantage is a flexible multipurpose theme. It's strength lies in its tight integration with some powerful plugins like Page Builder for responsive page layouts, MetaSlider for big beautiful sliders and WooCommerce to help you sell online. Vantage is fully responsive and retina ready. Use it to start a business site, portfolio or online store.
-Version: 1.0.7
+Version: 1.0.9
 License: GNU General Public License 2.0
 License URI: license.txt
 Tags: flexible-width, custom-background, custom-menu, featured-images, theme-options, threaded-comments, translation-ready, black, white, light, one-column, two-columns, full-width-template
@@ -167,10 +167,6 @@ textarea {
 /* Links */
 
 a {
-	color: #248cc8;
-}
-
-a:visited {
 	color: #248cc8;
 }
 
@@ -547,6 +543,10 @@ body {
 		padding: 0;
 	}
 
+	.responsive.layout-boxed #colophon {
+		margin-bottom: 0;
+	}
+
 }
 
 header#masthead {
@@ -828,9 +828,9 @@ body.responsive.layout-full #page-wrapper .full-container {
 }
 
 .main-navigation ul li:hover > ul {
-	opacity: 1;
-	pointer-events: auto;
-	visibility: visible;
+	opacity: 1 !important;
+	pointer-events: auto !important;
+	visibility: visible !important;
 }
 
 .main-navigation a {
@@ -852,6 +852,16 @@ body.responsive.layout-full #page-wrapper .full-container {
 	font-size: 16px;
 	line-height: 0.5em;
 	margin-right: 15px;
+}
+
+/* Handle the navigation slightly differently on mobile devices */
+
+body.mobile-device .main-navigation ul ul {
+	display: none;
+}
+
+body.mobile-device .main-navigation li:hover ul {
+	display: block;
 }
 
 .mobile-nav-frame [class^="icon-"] {
@@ -890,7 +900,7 @@ body.responsive.layout-full #page-wrapper .full-container {
 	width: 17px;
 	height: 17px;
 	
-	background: url('images/sprites-1-0-7.png') no-repeat -15px -67px;
+	background: url('images/sprites-1-0-9.png') no-repeat -15px -36px;
 	display: inline-block;
 }
 
@@ -899,7 +909,7 @@ body.responsive.layout-full #page-wrapper .full-container {
 }
 
 #search-icon #search-icon-icon:hover .icon {
-	background: url('images/sprites-1-0-7.png') no-repeat -15px -85px;
+	background: url('images/sprites-1-0-9.png') no-repeat -15px -18px;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
@@ -955,14 +965,14 @@ body.responsive.layout-full #page-wrapper .full-container {
 article.sticky {
 }
 
-.page-title {
+#page-title {
 	color: #3b3b3b; /* Style a sticky post */ 
 	font-size: 20px;
 	font-weight: 500;
 	margin-bottom: 20px;
 }
 
-.page-title a {
+#page-title a {
 	color: inherit;
 	font-weight: bold;
 	text-decoration: none;
@@ -1532,7 +1542,8 @@ article.page .entry-categories a {
 /* =Navigation
 ----------------------------------------------- */
 
-.pagination {
+.pagination,
+.entry-content .pagination {
 	position: relative;
 	
 	font-size: 11px;
@@ -1541,7 +1552,9 @@ article.page .entry-categories a {
 }
 
 .pagination span,
-.pagination a {
+.entry-content .pagination span,
+.pagination a,
+.entry-content .pagination a {
 	width: auto;
 	
 	background: #4f5355;
@@ -1573,11 +1586,14 @@ article.page .entry-categories a {
 }
 
 .pagination span:last-child,
-.pagination a:last-child {
+.entry-content .pagination span:last-child,
+.pagination a:last-child,
+.entry-content .pagination a:last-child {
 	margin-right: 0;
 }
 
-.pagination a:hover {
+.pagination a:hover,
+.entry-content .pagination a:hover {
 	background: #f0f0f0;
 	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #d0d0d0), color-stop(1, #f0f0f0));
 	background: -ms-linear-gradient(bottom, #d0d0d0, #f0f0f0);
@@ -1587,7 +1603,8 @@ article.page .entry-categories a {
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0f0f0', endColorstr='#d0d0d0', GradientType=0);
 }
 
-.pagination .current {
+.pagination .current,
+.entry-content .pagination .current {
 	background: #333333;
 	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #505050), color-stop(1, #333333));
 	background: -ms-linear-gradient(bottom, #505050, #333333);
@@ -1787,6 +1804,24 @@ article.page .entry-categories a {
 	color: #A40802;
 }
 
+@media (max-width: 480px) {
+	
+	body.responsive #commentform label {
+		width: 100%;
+		
+		float: none;
+		margin-bottom: 3px;
+	}
+
+	body.responsive #commentform input,
+	body.responsive #commentform textarea {
+		width: 100%;
+		
+		float: none;
+	}
+
+}
+
 /* =Sidebars and Asides
 ----------------------------------------------- */
 
@@ -1829,7 +1864,7 @@ body.layout-full {
 	width: 48px;
 	height: 48px;
 	
-	background: url('images/sprites-1-0-7.png') no-repeat 0 0;
+	background: url('images/sprites-1-0-9.png') no-repeat -99px 0;
 	opacity: 0;
 	-ms-transform: scale(0, 0);
 	-webkit-transform: scale(0, 0);
@@ -1982,17 +2017,17 @@ body.layout-full {
 	width: 14px;
 	height: 14px;
 	
-	background: url('images/sprites-1-0-7.png') no-repeat 0 -49px;
+	background: url('images/sprites-1-0-9.png') no-repeat 0 0;
 	cursor: pointer;
 	display: block;
 }
 
 .flexslider .flex-control-paging li a.flex-active {
-	background: url('images/sprites-1-0-7.png') no-repeat 0 -64px;
+	background: url('images/sprites-1-0-9.png') no-repeat 0 -15px;
 }
 
 .flexslider .flex-control-paging li a:hover {
-	background: url('images/sprites-1-0-7.png') no-repeat 0 -49px;
+	background: url('images/sprites-1-0-9.png') no-repeat 0 0;
 }
 
 .flexslider .flex-direction-nav {
@@ -2023,13 +2058,13 @@ body.layout-full {
 .flexslider .flex-direction-nav li a.flex-prev {
 	left: 0;
 	
-	background: url('images/sprites-1-0-7.png') no-repeat -82px 0;
+	background: url('images/sprites-1-0-9.png') no-repeat -33px 0;
 }
 
 .flexslider .flex-direction-nav li a.flex-next {
 	right: 0;
 	
-	background: url('images/sprites-1-0-7.png') no-repeat -49px 0;
+	background: url('images/sprites-1-0-9.png') no-repeat -66px 0;
 }
 
 .flexslider:hover .flex-direction-nav li a {
@@ -2346,7 +2381,7 @@ body.layout-full {
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	border: 6px solid #ffffff;
+	border: 0px solid #ffffff;
 	-webkit-border-radius: 130px;
 	-moz-border-radius: 130px;
 	border-radius: 130px;
@@ -2403,7 +2438,7 @@ body.layout-full {
 	width: 5px;
 	height: 8px;
 	
-	background: url('images/sprites-1-0-7.png') no-repeat 0 -79px;
+	background: url('images/sprites-1-0-9.png') no-repeat 0 -30px;
 	display: inline-block;
 	margin-left: 3px;
 }
@@ -2418,29 +2453,29 @@ body.layout-full {
 }
 
 .widget_circleicon-widget .circle-icon-box.icon-position-top {
-	padding-top: 87px;
+	padding-top: 75px;
 }
 
 .widget_circleicon-widget .circle-icon-box.icon-position-top .circle-icon {
 	top: 0;
 	left: 50%;
 	
-	margin-left: -38.5px;
+	margin-left: -32.5px;
 }
 
 .widget_circleicon-widget .circle-icon-box.icon-position-bottom {
-	padding-bottom: 87px;
+	padding-bottom: 75px;
 }
 
 .widget_circleicon-widget .circle-icon-box.icon-position-bottom .circle-icon {
 	bottom: 0;
 	left: 50%;
 	
-	margin-left: -38.5px;
+	margin-left: -32.5px;
 }
 
 .widget_circleicon-widget .circle-icon-box.icon-position-left {
-	padding-left: 87px;
+	padding-left: 75px;
 	text-align: left;
 }
 
@@ -2448,11 +2483,11 @@ body.layout-full {
 	top: 50%;
 	left: 0;
 	
-	margin-top: -38.5px;
+	margin-top: -32.5px;
 }
 
 .widget_circleicon-widget .circle-icon-box.icon-position-right {
-	padding-right: 87px;
+	padding-right: 75px;
 	text-align: left;
 }
 
@@ -2460,7 +2495,7 @@ body.layout-full {
 	top: 50%;
 	right: 0;
 	
-	margin-top: -38.5px;
+	margin-top: -32.5px;
 }
 
 .widget_headline-widget {
@@ -2560,11 +2595,11 @@ body.layout-full {
 }
 
 .vantage-carousel-title a.next {
-	background: url('images/sprites-1-0-7.png') no-repeat -15px -49px;
+	background: url('images/sprites-1-0-9.png') no-repeat -15px 0;
 }
 
 .vantage-carousel-title a.previous {
-	background: url('images/sprites-1-0-7.png') no-repeat -15px -103px;
+	background: url('images/sprites-1-0-9.png') no-repeat -15px -54px;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
@@ -2611,11 +2646,14 @@ body.layout-full {
 }
 
 .vantage-carousel-wrapper .vantage-carousel li.carousel-entry {
+	width: 242px;
+	
 	display: block;
 	float: left;
 	list-style: none;
 	margin-left: 0;
 	margin-right: 15px;
+	overflow-x: hidden;
 	padding: 0;
 }
 
@@ -2726,7 +2764,7 @@ body.layout-full {
 	padding: 0 15px;
 }
 
-.vantage-grid-loop article .thumbnail {
+.vantage-grid-loop article .grid-thumbnail {
 	background: #FFFFFF;
 	border: 1px solid #c2c5ca;
 	-webkit-box-shadow: 0 0 4px rgba(0,0,0,0.1);
@@ -2737,14 +2775,17 @@ body.layout-full {
 	padding: 5px;
 }
 
-.vantage-grid-loop article .thumbnail:hover {
+.vantage-grid-loop article .grid-thumbnail:hover {
 	border-color: #00bafa;
 	-webkit-box-shadow: 0 0 5px rgba(0,187,251,0.75);
 	-moz-box-shadow: 0 0 5px rgba(0,187,251,0.75);
 	box-shadow: 0 0 5px rgba(0,187,251,0.75);
 }
 
-.vantage-grid-loop article .thumbnail img {
+.vantage-grid-loop article .grid-thumbnail img {
+	width: 100%;
+	height: auto;
+	
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
 	border-radius: 0;
@@ -2781,6 +2822,25 @@ body.layout-full {
 
 .vantage-grid-loop .clear {
 	clear: both;
+}
+
+@media (max-width: 640px) {
+	
+	body.responsive .vantage-grid-loop article {
+		width: 50%;
+		
+	}
+
+}
+
+@media (max-width: 480px) {
+	
+	body.responsive .vantage-grid-loop article {
+		width: 100%;
+		
+		float: none;
+	}
+
 }
 
 .vantage-circleicon-loop {

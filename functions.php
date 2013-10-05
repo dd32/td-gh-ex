@@ -7,7 +7,7 @@
  * @license GPL 2.0
  */
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.0.7' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.0.9' );
 define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://siteorigin.com' );
 
 if( file_exists( get_template_directory() . '/premium/functions.php' ) ){
@@ -76,7 +76,7 @@ function vantage_setup() {
 	add_image_size('vantage-thumbnail-no-sidebar', 1080, 380, true);
 	add_image_size('vantage-slide', 960, 480, true);
 	add_image_size('vantage-carousel', 272, 182, true);
-	add_image_size('vantage-grid-loop', 218, 136, true);
+	add_image_size('vantage-grid-loop', 436, 272, true);
 
 	if( !defined('SITEORIGIN_PANELS_VERSION') && !siteorigin_plugin_activation_is_activating('siteorigin-panels') ){
 		// Only include panels lite if the panels plugin doesn't exist
@@ -177,10 +177,6 @@ function vantage_scripts() {
 	wp_enqueue_script( 'vantage-main' , get_template_directory_uri() . '/js/jquery.theme-main.min.js', array('jquery', 'flexslider', 'fitvids'), SITEORIGIN_THEME_VERSION );
 	wp_enqueue_style( 'vantage-fontawesome', get_template_directory_uri().'/fontawesome/css/font-awesome.css', array(), '3.2.1' );
 
-	wp_localize_script('vantage-main', 'vantageSettings', array(
-		'isMobile' => wp_is_mobile(),
-	));
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -216,6 +212,10 @@ function vantage_body_class($classes){
 
 	if( !is_active_sidebar('sidebar-1') ) {
 		$classes[] = 'no-sidebar';
+	}
+
+	if( wp_is_mobile() ) {
+		$classes[] = 'mobile-device';
 	}
 
 	return $classes;
@@ -273,7 +273,7 @@ function vantage_get_query_variables(){
  */
 function vantage_render_slider(){
 
-	if( is_home() && siteorigin_setting('home_slider') != 'none' ) {
+	if( is_front_page() && siteorigin_setting('home_slider') != 'none' ) {
 		$slider = siteorigin_setting('home_slider');
 	}
 	else if( is_page() && get_post_meta(get_the_ID(), 'vantage_metaslider_slider', true) != 'none' ) {
@@ -307,6 +307,12 @@ function vantage_post_class_filter($classes){
 }
 add_filter('post_class', 'vantage_post_class_filter');
 
+/**
+ * Filter the posted on parts to remove the ones disabled in settings.
+ *
+ * @param $parts
+ * @return mixed
+ */
 function vantage_filter_vantage_post_on_parts($parts){
 	if(!siteorigin_setting('blog_post_author')) $parts['by'] = '';
 	if(!siteorigin_setting('blog_post_date')) $parts['on'] = '';
@@ -315,13 +321,21 @@ function vantage_filter_vantage_post_on_parts($parts){
 }
 add_filter('vantage_post_on_parts', 'vantage_filter_vantage_post_on_parts');
 
+/**
+ * Get the site width.
+ *
+ * @return int The side width in pixels.
+ */
 function vantage_get_site_width(){
 	return apply_filters('vantage_site_width', !empty($GLOBALS['vantage_site_width']) ? $GLOBALS['vantage_site_width'] : 1080);
 }
 
+/**
+ * Add the responsive header
+ */
 function vantage_responsive_header(){
 	if( siteorigin_setting('layout_responsive') ) {
-		?><meta name="viewport" content="width=device-width" /><?php
+		?><meta name="viewport" content="width=device-width, initial-scale=1" /><?php
 	}
 }
 add_action('wp_head', 'vantage_responsive_header');
