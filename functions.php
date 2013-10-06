@@ -8,8 +8,14 @@ function adelle_theme_styles() {
   wp_enqueue_script('jquery');
   wp_enqueue_script('jquery-ui-widget');
   wp_enqueue_style( 'adelle-style', get_stylesheet_uri(), '13.09.5', array(), 'all' );
-  wp_enqueue_style( 'adelle-google-webfont', 'http://fonts.googleapis.com/css?family=Lora:400,400italic|Muli:400,400italic|Montserrat', '', 'all' );
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' );
+
+  wp_register_style( 'adelle-google-webfont', 'http://fonts.googleapis.com/css?family=Lora:400,400italic|Muli:400,400italic|Montserrat', '', 'all' );
+  wp_enqueue_style( 'adelle-google-webfont' );
+
+  wp_enqueue_script( 'adelle-respond', get_template_directory_uri() . '/js/respond.min.js', array( 'jquery' ), '1.0.1', true );
+  wp_enqueue_script( 'adelle-fitvids', get_template_directory_uri() . '/js/fitvids.min.js', array( 'jquery' ), '1.0', true );
+  wp_enqueue_script( 'adelle-scripts', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ), null, true );
 
 }
 add_action('wp_enqueue_scripts', 'adelle_theme_styles');
@@ -19,12 +25,15 @@ add_action('wp_enqueue_scripts', 'adelle_theme_styles');
 // ==================================================================
 function adelle_theme_scripts(){
 
-  wp_enqueue_script( 'adelle-respond', get_template_directory_uri() . '/js/respond.min.js', array( 'jquery' ), '1.0.1', true );
-  wp_enqueue_script( 'adelle-fitvids', get_template_directory_uri() . '/js/fitvids.min.js', array( 'jquery' ), '1.0', true );
-  wp_enqueue_script( 'adelle-scripts', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ), null, true );
+    wp_enqueue_style( 'adelle-ie9', get_template_directory_uri() . '/js/IE9.js', array(), 'null' );
+    wp_enqueue_style( 'adelle-html5', get_template_directory_uri() . '/js/html5.js', array(), 'null' );
+
+    global $wp_styles;
+    $wp_styles->registered['adelle-ie9']->add_data( 'conditional', 'lt IE 9' );
+    $wp_styles->registered['adelle-html5']->add_data( 'conditional', 'lt IE 9' );
 
 }
-add_action('wp_footer', 'adelle_theme_scripts');
+add_action('wp_enqueue_scripts', 'adelle_theme_scripts');
 
 
 // ==================================================================
@@ -59,9 +68,7 @@ function adelle_setup() {
   // ==================================================================
   // Custom header
   // ==================================================================
-  if( function_exists('get_custom_header') ) {
-
-    add_theme_support( 'custom-header', array(
+  add_theme_support( 'custom-header', array(
     'default-image'          => '',
     'random-default'         => false,
     'width'                  => 400,
@@ -74,9 +81,7 @@ function adelle_setup() {
     'wp-head-callback'       => '',
     'admin-head-callback'    => '',
     'admin-preview-callback' => '',
-    ));
-
-  }
+  ));
 
   // ==================================================================
   // Language
@@ -92,10 +97,7 @@ function adelle_setup() {
   // Post thumbnail
   // ==================================================================
   add_theme_support('post-thumbnails');
-
-  if ( function_exists( 'add_image_size' ) ) {
     add_image_size( 'post_thumb', 300, 200, true );
-  }
 
   // ==================================================================
   // Menu location
@@ -204,88 +206,6 @@ function adelle_theme_wp_title( $title, $sep ) {
 	return $title;
 }
 add_filter( 'wp_title', 'adelle_theme_wp_title', 10, 2 );
-
-// ==================================================================
-// Add internal lightbox
-// ==================================================================
-function adelle_add_themescript(){
-
-  if( !is_admin() ){
-    wp_enqueue_script('jquery');
-    wp_enqueue_script('thickbox',null,array('jquery'));
-  }
-
-}
-
-function adelle_wp_thickbox_script() {
-
-  ?>
-  <script type="text/javascript">
-  if ( typeof tb_pathToImage != 'string' )
-    {
-      var tb_pathToImage = "<?php echo home_url().'/wp-includes/js/thickbox'; ?>/loadingAnimation.gif";
-    }
-  if ( typeof tb_closeImage != 'string' )
-    {
-      var tb_closeImage = "<?php echo home_url().'/wp-includes/js/thickbox'; ?>/tb-close.png";
-    }
-  </script>
-  <?php
-  wp_enqueue_style('thickbox.css', '/'.WPINC.'/js/thickbox/thickbox.css', null, '1.0');
-
-}
-add_action('init','adelle_add_themescript');
-add_action('wp_head', 'adelle_wp_thickbox_script');
-
-// ==================================================================
-// Add colorbox
-// ==================================================================
-define( "IMAGE_FILETYPE", "(bmp|gif|jpeg|jpg|png)", true );
-
-function adelle_colorbox_replace($string) {
-
-  $pattern = '/(<a(.*?)href="([^"]*.)'.IMAGE_FILETYPE.'"(.*?)><img)/ie';
-  $replacement = 'stripslashes(strstr("\2\5","rel=\class=") ? "\1" : "<a\2href=\"\3\4\"\5 rel=\"colorbox\" class=\"colorbox\"><img")';
-  return preg_replace($pattern, $replacement, $string);
-
-}
-add_filter('the_content', 'adelle_colorbox_replace');
-
-function adelle_add_colorbox_rel( $attachment_link ) {
-  $attachment_link = str_replace( 'a href' , 'a rel="colorbox-cats" class="colorbox-cats" href' , $attachment_link );
-  return $attachment_link;
-}
-add_filter('wp_get_attachment_link' , 'adelle_add_colorbox_rel');
-
-
-function adelle_colorbox_script(){
-  wp_register_script('colorbox', get_template_directory_uri() . '/js/colorbox/jquery.colorbox-min.js');
-  wp_enqueue_script('colorbox');
-}
-add_action('wp_footer', 'adelle_colorbox_script');
-
-
-function adelle_colorbox_css(){
-  wp_register_style('colorbox', get_template_directory_uri() . '/js/colorbox/colorbox.css');
-  wp_enqueue_style('colorbox');
-}
-add_action('wp_head', 'adelle_colorbox_css');
-
-function adelle_colorbox_javascript() {
-  ?>
-  <script type="text/javascript">
-  /* <![CDATA[ */
-  jQuery(document).ready(function($){ // START
-    $(".colorbox-cats").colorbox({rel:"colorbox-cats", maxWidth:"100%", maxHeight:"100%"});
-    $(".colorbox").colorbox({rel:"colorbox", maxWidth:"100%", maxHeight:"100%"});
-    $(".colorbox-video").colorbox({iframe:true, innerWidth:"80%", innerHeight:"80%"});
-    $(".colorbox-iframe").colorbox({iframe:true, width:"80%", height:"80%"});
-  }); // END
-  /* ]]> */
-  </script>
-  <?php
-}
-add_action('wp_head', 'adelle_colorbox_javascript');
 
 // ==================================================================
 // Post/page pagination

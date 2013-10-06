@@ -1,7 +1,7 @@
 /*
 Theme Name: Adelle
 Description: WordPress theme by BluChic
-Version: 13.09.5
+Version: 13.09.8
 Author: BluChic
 Author URI: http://www.bluchic.com
 Theme URI: http://www.bluchic.com/shop/adelle-theme
@@ -110,7 +110,7 @@ Screen between 681px and 1024px
   ul.post-info-meta li.post-info-comment {float: right;}
 
   /* .footer */
-  p.footer-copy {background: url('images/nav_bg.gif') no-repeat center; padding: 10px 20px; clear: both; font-size: 0.9em; overflow: hidden; margin: 0 auto;}
+  p.footer-copy {padding: 10px 20px; clear: both; font-size: 0.9em; overflow: hidden; margin: 0 auto;}
   p.footer-copy .footer-credit {display: block; float: right; width: 55px; height: 11px; background: url('images/footer_credit.png') no-repeat 0 0; text-indent: -9999px; margin-top: 5px;}
 
 }
@@ -151,7 +151,7 @@ Screen larger than 1025px
   ul.post-info-meta li.post-info-comment {float: right;}
 
   /* .footer */
-  p.footer-copy {background: url('images/nav_bg.gif') no-repeat center; padding: 10px 20px; clear: both; font-size: 0.9em; overflow: hidden; margin: 0 auto;}
+  p.footer-copy {padding: 10px 20px; clear: both; font-size: 0.9em; overflow: hidden; margin: 0 auto;}
   p.footer-copy .footer-credit {display: block; float: right; width: 55px; height: 11px; background: url('images/footer_credit.png') no-repeat 0 0; text-indent: -9999px; margin-top: 5px;}
 
 }
