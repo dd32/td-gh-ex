@@ -1,5 +1,5 @@
 
-                <?php global $data; $icons = $data['icon_menu']; 
+                <?php global $smof_data; $icons = $smof_data['icon_menu']; 
                 $iconcount = count($icons); 
                 if ($iconcount == "2") {
                 		$columnsize = 'span6';
@@ -10,7 +10,7 @@
                 	}
                 	?>
                 <div class="home-margin home-padding">
-                	<div class="row homepromo">
+                	<div class="row-fluid homepromo">
         
                         <?php foreach ($icons as $icon) : ?>
                             <div class="<?php echo $columnsize;?> home-iconmenu">

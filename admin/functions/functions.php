@@ -347,7 +347,7 @@ add_action( 'wp_enqueue_scripts', 'options_typography_google_fonts' );
 function options_typography_enqueue_google_font($fonts) {
     
     $fonts = str_replace(" ", "+", $fonts);
-    wp_enqueue_style( "options_typography_$fonts", "http://fonts.googleapis.com/css?family=$fonts", false, null, 'all' );
+    wp_enqueue_style( "options_typography_$fonts", "//fonts.googleapis.com/css?family=$fonts", false, null, 'all' );
 }
 
 ?>

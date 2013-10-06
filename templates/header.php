@@ -45,7 +45,7 @@
     </div> <!-- Close Container -->
   </section>
 <?php endif; ?>
-<?php global $smof_data; if(!empty($smof_data['logo_layout']) && ($smof_data['logo_layout'] == 'logocenter')) {$logocclass = 'span12'; $menulclass = 'span12';} else {$logocclass = 'span4'; $menulclass = 'span8';} ?>
+<?php global $smof_data; if(isset($smof_data['logo_layout']) && ($smof_data['logo_layout'] == 'logocenter')) {$logocclass = 'span12'; $menulclass = 'span12';} else {$logocclass = 'span4'; $menulclass = 'span8';} ?>
   <div class="container">
     <div class="row">
           <div class="<?php echo $logocclass; ?>  clearfix">
@@ -63,15 +63,25 @@
             if (has_nav_menu('primary_navigation')) :
               wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'sf-menu')); 
             endif;
-            if (has_nav_menu('mobile_navigation')) :
-            wp_nav_menu( array('theme_location' => 'mobile_navigation', 'items_wrap' => '<select id="%1$s" class="%2$s">%3$s</select>', 'menu_class' => 'navselect', 'walker' => new Virtue_Dropdown_Nav() ));
-            global $smof_data; if(!empty($smof_data['mobile_menu_text'])) {$menu_text = $smof_data['mobile_menu_text'];} else {$menu_text = __('menu', 'virtue');} ?>
-             <div class="mobilenav-button"><i class="icon-reorder"></i><span class="headerfont"><?php echo $menu_text ?></span></div> <?php
-           endif;
-          ?>    
-          </nav>
-        </div> <!-- Close menu span -->
+           ?>
+         </nav> 
+        </div> <!-- Close span7 -->       
     </div> <!-- Close Row -->
+    <?php if (has_nav_menu('mobile_navigation')) : ?>
+           <div id="mobile-nav-trigger" class="nav-trigger">
+              <a class="nav-trigger-case mobileclass collapsed" data-toggle="collapse" data-target=".kad-nav-collapse">
+                <div class="kad-navbtn"><i class="icon-reorder"></i></div>
+                <div class="kad-menu-name"><?php echo __('Menu', 'virtue'); ?></div>
+              </a>
+            </div>
+            <div id="kad-mobile-nav" class="kad-mobile-nav">
+              <div class="kad-nav-inner mobileclass">
+                <div class="kad-nav-collapse">
+                 <?php wp_nav_menu( array('theme_location' => 'mobile_navigation','items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>', 'menu_class' => 'kad-mnav')); ?>
+               </div>
+            </div>
+          </div>   
+          <?php  endif; ?> 
   </div> <!-- Close Container -->
   <?php
             if (has_nav_menu('secondary_navigation')) : ?>

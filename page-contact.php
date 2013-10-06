@@ -12,7 +12,7 @@ Template Name: Contact
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery.validate.js"></script>
 	<?php global $post; $map = get_post_meta( $post->ID, '_kad_contact_map', true ); 
 	if ($map == 'yes') { ?>
-		    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+		    <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"></script>
 		    <?php global $post; $address = get_post_meta( $post->ID, '_kad_contact_address', true ); 
 							    $maptype = get_post_meta( $post->ID, '_kad_contact_maptype', true ); 
 							    $height = get_post_meta( $post->ID, '_kad_contact_mapheight', true ); 

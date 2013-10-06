@@ -2,7 +2,8 @@
 .home-message:hover {background-color:#c72c00; background-color: rgba(45, 92, 136, 0.6);}
 nav.woocommerce-pagination ul li a:hover, .wp-pagenavi a:hover, .accordion-heading .accordion-toggle.open {border-color: #c72c00;}
 a, #nav-main ul.sf-menu ul li a:hover, .product_price ins .amount, .price ins .amount, .color_primary, .primary-color, #logo a.brand, #nav-main ul.sf-menu a:hover,
-.woocommerce-message:before, .woocommerce-info:before, #nav-second ul.sf-menu a:hover, .footerclass a:hover, .posttags a:hover, .subhead a:hover {color: #c72c00;}
+.woocommerce-message:before, .woocommerce-info:before, #nav-second ul.sf-menu a:hover, .footerclass a:hover, .posttags a:hover, .subhead a:hover, .nav-trigger-case:hover .kad-menu-name, 
+  .nav-trigger-case:hover .kad-navbtn {color: #c72c00;}
 .widget_price_filter .ui-slider .ui-slider-handle, .product_item .kad_add_to_cart:hover, .product_item.hidetheaction:hover .kad_add_to_cart:hover, .kad-btn-primary,
 .product-category.grid_item a:hover h5, .woocommerce-message .button, 
 #containerfooter .menu li a:hover, .bg_primary, .portfolionav a:hover, .home-iconmenu a:hover, p.demo_store, .topclass, #commentform .form-submit #submit {background: #c72c00;}
@@ -11,10 +12,15 @@ a, #nav-main ul.sf-menu ul li a:hover, .product_price ins .amount, .price ins .a
 a:hover {color: #d86b4c;}
 .kad-btn-primary:hover, .woocommerce-message .button:hover, #commentform .form-submit #submit:hover {background: #d86b4c;}
 
+.product_item.hidetheaction .kad_add_to_cart {background: transparent; color: transparent;}
+.product_item.hidetheaction:hover .kad_add_to_cart {background: #95b5b2; color: #fff;}
+
 
 /* Background Skins */
 .contentclass, .nav-tabs>.active>a, .nav-tabs>.active>a:hover, .nav-tabs>.active>a:focus {background: #fff;}
-.featclass {background: #fff;}
+.kad-nav-inner .kad-mnav, .kad-mobile-nav .kad-nav-inner li a, .nav-trigger-case {color:#fff;}
+.mobileclass {background: #444;}
+.mobileclass.collapsed {background: #f2f2f2; background: rgba(0,0,0,0.05); color:#444;}
 .headerclass {background: #fff;}
 .footerclass {background: #373737;}
 .navclass {background: #fff;}

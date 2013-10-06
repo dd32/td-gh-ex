@@ -1,12 +1,15 @@
 
-<div class="featclass home-portfolio home-margin carousel_outerrim home-padding">
-<div class="container">
+<div class="home-portfolio home-margin carousel_outerrim home-padding">
 		<?php global $smof_data; if(isset($smof_data['portfolio_title'])) {$porttitle = $smof_data['portfolio_title'];} else { $porttitle = __('Featured Projects', 'virtue'); } ?>
 		<div class="clearfix"><h3 class="hometitle"><?php echo $porttitle; ?></h3></div>
 		<?php  if(isset($smof_data['portfolio_type'])) { $portfolio_category = $smof_data['portfolio_type'];} else {$portfolio_category = '';}
 				if(isset($smof_data['porfolio_show_type'])) {$portfolio_item_types = $smof_data['porfolio_show_type'];} else {$portfolio_item_types = '';}
 					if($portfolio_category == "All") {$portfolio_category = '';}
-					   		$columnnum = 'threecolumn'; $imgwidth = 370; $imgheight = 370;
+					   		if(kadence_display_sidebar()) {
+					   		 	$columnnum = 's-twocolumn'; $slidewidth = 365; $slideheight = 365;
+					   		 }else {
+					   		 	$columnnum = 'threecolumn'; $slidewidth = 370; $slideheight = 370;
+					   		 }
 					   		?>
 
 		<div class="home-margin fredcarousel">
@@ -33,7 +36,7 @@
 									$image_url = wp_get_attachment_image_src( 
 									get_post_thumbnail_id( $post->ID ), 'full' ); 
 									$thumbnailURL = $image_url[0]; 
-									$image = aq_resize($thumbnailURL, $imgwidth, $imgheight, true); 
+									$image = aq_resize($thumbnailURL, $slidewidth, $slideheight, true); 
 									 if(empty($image)) {$image = $thumbnailURL; } ?>
 
 									<div class="imghoverclass">
@@ -66,5 +69,4 @@
             <a id="prevport_portfolio" class="prev_carousel icon-chevron-left" href="#"></a>
 			<a id="nextport_portfolio" class="next_carousel icon-chevron-right" href="#"></a>
 </div> <!-- fred Carousel-->
-</div> <!-- Container-->
 </div> <!--featclass -->

@@ -47,6 +47,15 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 1.5.2 =
+
+* Added option for full blog on home page
+* Added new Mobile Menu
+* Added mobile menu background options
+* Updated how google fonts called for https
+* Updated how google maps api called for https
+* Option to Hide Post Author
+
 = Version: 1.5.1 =
 
 * Added Support for showing subcategories in Woocommerce.

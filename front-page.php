@@ -49,17 +49,29 @@
 
 				    	case 'block_one':?>
 						    <div id="homeheader" class="welcomeclass">
-								<div class="container">
 									<?php get_template_part('templates/page', 'header'); ?>
-								</div><!--container-->
 							</div><!--titleclass-->
 					    <?php 
 					    break;
 						case 'block_four': ?>
 							<?php if(is_home()) { ?>
-							<div class="homecontent postlist fullwidth clearfix home-margin"> 
+							<?php if(kadence_display_sidebar()) {$display_sidebar = true; $fullclass = '';} else {$display_sidebar = false; $fullclass = 'fullwidth';} ?>
+							<?php global $smof_data; if(isset($smof_data['home_post_summery']) and ($smof_data['home_post_summery'] == 'full')) {$summery = "full"; $postclass = "single-article fullpost";} else {$summery = "summery"; $postclass = "postlist";} ?>
+								<div class="homecontent <?php echo $fullclass; ?>  <?php echo $postclass; ?> clearfix home-margin"> 
 							<?php while (have_posts()) : the_post(); ?>
-							  <?php get_template_part('templates/content', 'fullwidth'); ?>
+							  <?php  if($summery == 'full') {
+											if($display_sidebar){
+												get_template_part('templates/content', 'fullpost'); 
+											} else {
+												get_template_part('templates/content', 'fullpostfull');
+											}
+									} else {
+											if($display_sidebar){
+											 	get_template_part('templates/content', get_post_format()); 
+											 } else {
+											 	get_template_part('templates/content', 'fullwidth');
+											 }
+									}?>
 							<?php endwhile; ?>
 							</div> 
 						<?php } else { ?>
