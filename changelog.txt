@@ -1,5 +1,8 @@
 *** discover Changelog ***
 
+08-10-2013 - version 1.7.14
+* template-home.php file modified to fix bug, download now button not getting off when kept off in theme options.
+
 17-09-2013 - version 1.7.13
 Below css added in style.css to control slider, headline and text color.
 #slider_container h1{color: #000;}
