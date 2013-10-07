@@ -23,10 +23,9 @@
 		float: none;
 		position: static;
 		text-align: center;	
-		margin: 10px 0;
+		padding: 20px 0 30px;
 	}
-	#logo img,
-	#logo h1 {
+	#logo img {
 		margin: 0;
 	}
 	#header-links {
@@ -75,18 +74,6 @@
 
 	/* Widgets */
 
-	/* Shortcodes */
-	.customtitle h1,
-	.customtitle h2,
-	.customtitle h3,
-	.customtitle h4,
-	.customtitle h5,
-	.customtitle h6 {
-		white-space: initial;
-	}
-	.customtitle .title-div {
-		display: none;
-	}
 }
 
 
@@ -97,23 +84,24 @@
 	#pre-header-links-inner,
 	#breadcrumbs,
 	#sidebar,
+	#family,
 	#intro.option3 .page-teaser,
 	#footer-menu,
-	.meta-author {
-		display: none !important;
+	.meta-author	{
+		display: none;
 	}
 	#main-core,
 	#intro.option1, 
 	#intro.option2 {
-		margin-left: 0px !important;
+		margin-left: 0px;
 	}
 	#main {
-		width: 100% !important;
+		width: 100%;
 	}
 	#main-core, 
 	#intro,
 	.commentlist .children .children {
-		margin: 0px !important;
+		margin: 0px;
 	}
 	#intro.option1 #intro-core {
 		display: block;
@@ -125,11 +113,6 @@
 	.notification-text {
 		display: block;
 		margin-bottom: 5px;
-	}
-
-	/* Featured Slider */
-	#slider .featured-excerpt {
-		display: none;
 	}
 
 	/* Portfolio */
@@ -184,13 +167,10 @@
 		margin-bottom: 5px;
 	}
 
-	/* Featured Slider */
-	#slider .featured-title span {
-		font-size: 20px;
-	}
-	#slider .featured-link a {
-		padding: 3px 15px;
-		margin: 0px;
+	/* Slider */
+	.tp-leftarrow.large,
+	.tp-rightarrow.large {
+		display: none;
 	}
 
 	/* Portfolio */
@@ -216,7 +196,7 @@
 	.element.column-2 ,
 	.element.column-3 ,
 	.element.column-4 {
-		width: auto !important;
+		width: auto;
 	}
 	#filter.portfolio-filter li {
 		display: block;
@@ -285,12 +265,6 @@
 	.action-button p {
 		margin-left: 0px;
 		margin-right: 0px;
-	}
-
-	/* Pre-Designed Homepage */
-	#section-home .section1.one_third,
-	#section-home .section2.one_third {
-		margin-bottom: 60px;
 	}
 
 	/* Shortcode Content */
@@ -367,11 +341,6 @@
 		float: none;
 		padding-left: 5px;
 	}
-
-	/* Misc */
-	.hidden-mobile {
-		display: none;
-	}
 }
 
 
@@ -383,6 +352,9 @@
 	}
 
 	/* Blog */
+	.blog-style1 .blog-icon {
+		display: none;
+	}
 
 	/* Single Post Share */
 	.comment-meta {

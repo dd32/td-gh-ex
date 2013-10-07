@@ -13,10 +13,10 @@ get_header(); ?>
 
 				<?php get_template_part( 'content', 'page' ); ?>
 
-				<?php thinkup_input_nav( 'nav-below' ); ?>
+				<?php paginate_links( 'nav-below' ); ?>
 
 				<?php thinkup_input_allowcomments(); ?>
 
-			<?php endwhile; wp_reset_postdata(); ?>
+			<?php endwhile; wp_reset_query(); ?>
 
 <?php get_footer(); ?>

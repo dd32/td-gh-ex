@@ -6,12 +6,14 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" class="post" >
 
 	<header class="entry-header">
 
 		<h2 class="search-title">
-		<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'engrave-lite' ), the_title_attribute( 'echo=0' ) ); ?>"><?php the_title(); ?></a>
+
+		<?php echo '<a href="' . get_permalink() . '" title="' . esc_attr( sprintf( __( 'Permalink to %s', '_s' ), the_title_attribute( 'echo=0' ) ) ) . '">' . get_the_title() . '</a>'; ?>
+
 		</h2>
 
 	</header><!-- .entry-header -->
@@ -26,7 +28,6 @@
 
 		<div class="entry-content">
 			<?php the_content(); ?>
-			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'engrave-lite' ), 'after'  => '</div>', ) ); ?>
 		</div><!-- .entry-content -->
 
 	<?php endif; ?>

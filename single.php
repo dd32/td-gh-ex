@@ -11,12 +11,14 @@ get_header(); ?>
 
 				<?php get_template_part( 'content', 'single' ); ?>
 
-				<?php thinkup_input_nav( 'nav-below' ); ?>
+				<?php paginate_links( 'nav-below' ); ?>
+
+				<?php edit_post_link( 'Edit', '<span class="edit-link">', '</span>' ); ?>
 
 				<?php /* Add Author Bio */ thinkup_input_postauthorbio(); ?>
 
 				<?php thinkup_input_allowcomments(); ?>
 
-			<?php endwhile; wp_reset_postdata(); ?>
+			<?php endwhile; wp_reset_query(); ?>
 
 <?php get_footer(); ?>

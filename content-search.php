@@ -6,14 +6,13 @@
  */
 ?>
 
-					<article id="post-<?php the_ID(); ?>" <?php post_class('blog-article'); ?>>
+					<article id="post-<?php the_ID(); ?>" <?php post_class('blog-style1'); ?>>
 
 						<?php thinkup_input_blogformat(); ?>
 
-						<?php thinkup_input_blogtitle(); ?>
-							
 						<div class="entry-content">
-							<?php the_excerpt(); ?>
+							<?php think_input_blogtitle(); ?>
+							<?php thinkup_input_blogtext(); ?>
 							<?php thinkup_input_readmore(); ?>
 
 							<div class="entry-meta">

@@ -8,22 +8,22 @@
 
 				<article id="no-results">
 					<header class="entry-header">
-						<h1 class="entry-title"><?php _e( 'Nothing Found', 'engrave-lite' ); ?></h1>
+						<h1 class="entry-title"><?php echo 'Nothing Found'; ?></h1>
 					</header><!-- .entry-header -->
 
 					<div class="entry-content">
 						<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
-							<p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'engrave-lite' ), admin_url( 'post-new.php' ) ); ?></p>
+							<p><?php printf( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', admin_url( 'post-new.php' ) ); ?></p>
 
 						<?php elseif ( is_search() ) : ?>
 
-							<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'engrave-lite' ); ?></p>
+							<p><?php echo 'Sorry, but nothing matched your search terms. Please try again with some different keywords.'; ?></p>
 							<?php get_search_form(); ?>
 
 						<?php else : ?>
 
-							<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'engrave-lite' ); ?></p>
+							<p><?php echo 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.'; ?></p>
 							<?php get_search_form(); ?>
 
 						<?php endif; ?>

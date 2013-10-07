@@ -5,37 +5,46 @@
  * @package ThinkUpThemes
  */
 
-// Declare latest theme version
-$GLOBALS['thinkup_theme_version'] = '1.10.4';
-
-// Setup content width
-function thinkup_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'thinkup_content_width', 1170 );
-}
-add_action( 'after_setup_theme', 'thinkup_content_width', 0 );
-
+// Setup content width 
+if ( ! isset( $content_width ) )
+	$content_width = 960;
 
 //----------------------------------------------------------------------------------
 //	Add Theme Options Panel & Assign Variable Values
 //----------------------------------------------------------------------------------
 
-	// Add Cusomizer Framework
-	require_once( get_template_directory() . '/admin/main/framework.php' );
-	require_once( get_template_directory() . '/admin/main/options.php' );
+	// Add Redux Framework - Credits attributable to http://reduxframework.com/
+	require_once (get_template_directory() . '/admin/main/framework.php');
 
-	// Add Toolbox Framework
-	require_once( get_template_directory() . '/admin/main-toolbox/toolbox.php' );
+	// Load demo functions if required.
+	if( file_exists( get_template_directory() . '/demo/functions/demo-variable.php' ) and $thinkup_general_democontent == '1' )
+		include get_template_directory() . '/demo/functions/demo-variable.php';
 
 	// Add Theme Options Features.
 	require_once( get_template_directory() . '/admin/main/options/00.theme-setup.php' ); 
+	require_once( get_template_directory() . '/admin/main/options/00.variables.php' ); 
 	require_once( get_template_directory() . '/admin/main/options/01.general-settings.php' ); 
 	require_once( get_template_directory() . '/admin/main/options/02.homepage.php' ); 
 	require_once( get_template_directory() . '/admin/main/options/03.header.php' ); 
 	require_once( get_template_directory() . '/admin/main/options/04.footer.php' );
 	require_once( get_template_directory() . '/admin/main/options/05.blog.php' ); 
+	require_once( get_template_directory() . '/admin/main/options/06.portfolio.php' ); 
+	require_once( get_template_directory() . '/admin/main/options/07.contact-page.php' ); 
+	require_once( get_template_directory() . '/admin/main/options/08.special-pages.php' ); 
+	require_once( get_template_directory() . '/admin/main/options/09.notification-bar.php' ); 
+	require_once( get_template_directory() . '/admin/main/options/10.seo.php' ); 
+	require_once( get_template_directory() . '/admin/main/options/11.typography.php' ); 
+	require_once( get_template_directory() . '/admin/main/options/12.custom-styling.php' );
 
-	// Add Migration Scripts
-	require_once( get_template_directory() . '/admin/main/options/99.migration.php' );
+	// Add widget features.
+	include_once( get_template_directory() . '/lib/widgets/categories.php' ); 
+	include_once( get_template_directory() . '/lib/widgets/flickr.php' ); 
+	include_once( get_template_directory() . '/lib/widgets/popularposts.php' ); 
+	include_once( get_template_directory() . '/lib/widgets/recentcomments.php' ); 
+	include_once( get_template_directory() . '/lib/widgets/recentposts.php' ); 
+	include_once( get_template_directory() . '/lib/widgets/searchfield.php' ); 
+	include_once( get_template_directory() . '/lib/widgets/tabs.php' );
+	include_once( get_template_directory() . '/lib/widgets/tagscloud.php' );
 
 
 //----------------------------------------------------------------------------------
@@ -52,37 +61,17 @@ if ( ! function_exists( 'thinkup_themesetup' ) ) {
 		require_once ( get_template_directory() . '/lib/functions/template-tags.php' );
 
 		// Make theme translation ready.
-		load_theme_textdomain( 'engrave-lite', get_template_directory() . '/languages' );
+		load_theme_textdomain( '_s', get_template_directory() . '/lib/languages' );
 
 		// Add default theme functions.
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'post-thumbnails' );
-		add_theme_support( 'post-formats', array( 'image' ) );
-		add_theme_support( 'title-tag' );
-
-		// Add support for custom background
-		add_theme_support( 'custom-background' );
-
-		// Add support for custom header
-		$thinkup_header_args = apply_filters( 'thinkup_custom_header', array( 'height' => 200, 'width'  => 1600, 'header-text' => false, 'flex-height' => true ) );
-		add_theme_support( 'custom-header', $thinkup_header_args );
-
-		// Add support for custom logo
-		add_theme_support( 'custom-logo', array( 'height' => 90, 'width' => 200, 'flex-width' => true, 'flex-height' => true ) );
-
-		// Add WooCommerce functions.
-		add_theme_support( 'woocommerce' );
-		add_theme_support( 'wc-product-gallery-zoom' );
-		add_theme_support( 'wc-product-gallery-lightbox' );
-		add_theme_support( 'wc-product-gallery-slider' );
-
-		// Add excerpt support to pages.
-		add_post_type_support( 'page', 'excerpt' );
+		add_theme_support( 'post-formats', array( 'gallery', 'image', 'video', 'audio', 'status', 'quote', 'link', 'chat' ) );
 
 		// Register theme menu's.
-		register_nav_menus( array( 'pre_header_menu' => __( 'Pre Header Menu', 'engrave-lite' ) ) );
-		register_nav_menus( array( 'header_menu'     => __( 'Primary Header Menu', 'engrave-lite' ) ) );
-		register_nav_menus( array( 'sub_footer_menu' => __( 'Footer Menu', 'engrave-lite' ) ) );
+		register_nav_menus( array( 'pre_header_menu' => 'Pre Header Menu', ) );
+		register_nav_menus( array( 'header_menu' => 'Primary Header Menu', ) );
+		register_nav_menus( array( 'sub_footer_menu' => 'Footer Menu', ) );
 	}
 }
 add_action( 'after_setup_theme', 'thinkup_themesetup' );
@@ -94,46 +83,23 @@ add_action( 'after_setup_theme', 'thinkup_themesetup' );
 
 function thinkup_frontscripts() {
 
-	global $thinkup_theme_version;
+	// Register theme stylesheets.
+	wp_register_style( 'responsive', get_template_directory_uri() . '/styles/style-responsive.css', '', '1.1' );
+	wp_register_style( 'sidebarleft', get_template_directory_uri() . '/styles/layouts/thinkup-left-sidebar.css', '', '1.1' );
+	wp_register_style( 'sidebarright', get_template_directory_uri() . '/styles/layouts/thinkup-right-sidebar.css', '', '1.1' );
 
-	// Add 3rd party stylesheets
-
-	// Add 3rd party stylesheets - Prefixed to prevent conflict between library versions
-	wp_enqueue_style( 'thinkup-bootstrap', get_template_directory_uri() . '/lib/extentions/bootstrap/css/bootstrap.min.css', '', '2.3.2' );
-
-	// Add 3rd party Font Packages
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/lib/extentions/font-awesome/css/font-awesome.min.css', '', '4.7.0' );
-
-	// Add 3rd party scripts
-	wp_enqueue_script( 'imagesloaded' );
-
-	// Add 3rd party scripts - Prefixed to prevent conflict between library versions
-	wp_enqueue_script( 'thinkup-bootstrap', get_template_directory_uri() . '/lib/extentions/bootstrap/js/bootstrap.js', array( 'jquery' ), '2.3.2', 'true' );
-
-	// Add theme stylesheets
-	wp_enqueue_style( 'thinkup-shortcodes', get_template_directory_uri() . '/styles/style-shortcodes.css', '', $thinkup_theme_version );
-	wp_enqueue_style( 'thinkup-style', get_stylesheet_uri(), '', $thinkup_theme_version );
+	// Add theme stylesheets.
+	wp_enqueue_style( 'font-awesome-min', get_template_directory_uri() . '/lib/extentions/font-awesome/css/font-awesome.min.css', '', '3.2.1' );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/lib/extentions/bootstrap/css/bootstrap.min.css', '', '2.3.2' );
+	wp_enqueue_style( 'style', get_stylesheet_uri(), '', '1.1' );
+	wp_enqueue_style( 'shortcodes', get_template_directory_uri() . '/styles/style-shortcodes.css', '', '1.1' );
 
 	// Add theme scripts
-	wp_enqueue_script( 'thinkup-frontend', get_template_directory_uri() . '/lib/scripts/main-frontend.js', array( 'jquery' ), $thinkup_theme_version, 'true' );
+	wp_enqueue_script( 'frontend', get_template_directory_uri() . '/lib/scripts/main-frontend.js', array( 'jquery' ), '1.1', true );
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/lib/extentions/bootstrap/js/bootstrap.js', array( 'jquery' ), '2.3.2', true );
+	wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/lib/scripts/modernizr.js', array( 'jquery' ), '', true );
+	wp_enqueue_script( 'retina', get_template_directory_uri() . '/lib/scripts/retina.js', array( 'jquery' ), '', true );
 
-	// Register theme stylesheets
-	wp_register_style( 'thinkup-responsive', get_template_directory_uri() . '/styles/style-responsive.css', '', $thinkup_theme_version );
-
-	// Register WooCommerce (theme specific) stylesheets
-
-	// Add Masonry script to all archive pages
-	if ( thinkup_check_isblog() or is_page_template( 'template-blog.php' ) or is_archive() ) {
-		wp_enqueue_script( 'masonry' );
-	}
-
-	// Add Portfolio styles & scripts
-
-	// Add ThinkUpSlider scripts
-	wp_enqueue_script( 'responsiveslides', get_template_directory_uri() . '/lib/scripts/plugins/ResponsiveSlides/responsiveslides.min.js', array( 'jquery' ), '1.54', 'true' );
-	wp_enqueue_script( 'thinkup-responsiveslides', get_template_directory_uri() . '/lib/scripts/plugins/ResponsiveSlides/responsiveslides-call.js', array( 'jquery' ), $thinkup_theme_version, 'true' );
-
-	// Add comments reply script
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -147,18 +113,17 @@ add_action( 'wp_enqueue_scripts', 'thinkup_frontscripts', 10 );
 
 function thinkup_adminscripts() {
 
-	if ( is_customize_preview() ) {
+	// Register theme stylesheets.
+	wp_register_style( 'backend', get_template_directory_uri() . '/styles/backend/style-backend.css', '', 1.1 );
 
-		global $thinkup_theme_version;
+	// Register theme scripts.
+	wp_register_script( 'backend', get_template_directory_uri() . '/lib/scripts/main-backend.js', array( 'jquery' ), '1.1' );
 
-		// Add theme stylesheets
-		wp_enqueue_style( 'thinkup-backend', get_template_directory_uri() . '/styles/backend/style-backend.css', '', $thinkup_theme_version );
-		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/lib/extentions/font-awesome/css/font-awesome.min.css', '', '4.7.0' );
+		// Add theme stylesheets.
+		wp_enqueue_style( 'backend' );
 
-		// Add theme scripts
-		wp_enqueue_script( 'thinkup-backend', get_template_directory_uri() . '/lib/scripts/main-backend.js', array( 'jquery' ), $thinkup_theme_version );
-
-	}
+		// Add theme scripts.
+		wp_enqueue_script( 'backend' );
 }
 add_action( 'admin_enqueue_scripts', 'thinkup_adminscripts' );
 
@@ -168,70 +133,67 @@ add_action( 'admin_enqueue_scripts', 'thinkup_adminscripts' );
 //----------------------------------------------------------------------------------
 
 function thinkup_widgets_init() {
-
-	// Register default sidebar
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'engrave-lite' ),
-		'id'            => 'sidebar-1',
+		'name' => 'Sidebar',
+		'id' => 'sidebar-1',
 		'before_widget' => '<aside class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
 	) );
 
-	// Register footer sidebars
     register_sidebar( array(
-        'name'          => __( 'Footer Widget Area 1', 'engrave-lite' ),
-        'id'            => 'footer-w1',
+        'name' => 'Footer Widget Area 1',
+        'id' => 'footer-w1',
         'before_widget' => '<aside class="widget %2$s">',
-        'after_widget'  => '</aside>',
-        'before_title'  => '<h3 class="footer-widget-title"><span>',
-        'after_title'   => '</span></h3>',
+        'after_widget' => '</aside>',
+        'before_title' => '<h3 class="footer-widget-title"><span>',
+        'after_title' => '</span></h3>',
     ) );
  
     register_sidebar( array(
-        'name'          => __( 'Footer Widget Area 2', 'engrave-lite' ),
-        'id'            => 'footer-w2',
+        'name' => 'Footer Widget Area 2',
+        'id' => 'footer-w2',
         'before_widget' => '<aside class="widget %2$s">',
-        'after_widget'  => '</aside>',
-        'before_title'  => '<h3 class="footer-widget-title"><span>',
-        'after_title'   => '</span></h3>',
+        'after_widget' => '</aside>',
+        'before_title' => '<h3 class="footer-widget-title"><span>',
+        'after_title' => '</span></h3>',
     ) );
 
     register_sidebar( array(
-        'name'          => __( 'Footer Widget Area 3', 'engrave-lite' ),
-        'id'            => 'footer-w3',
+        'name' => 'Footer Widget Area 3',
+        'id' => 'footer-w3',
         'before_widget' => '<aside class="widget %2$s">',
-        'after_widget'  => '</aside>',
-        'before_title'  => '<h3 class="footer-widget-title"><span>',
-        'after_title'   => '</span></h3>',
+        'after_widget' => '</aside>',
+        'before_title' => '<h3 class="footer-widget-title"><span>',
+        'after_title' => '</span></h3>',
     ) );
 
     register_sidebar( array(
-        'name'          => __( 'Footer Widget Area 4', 'engrave-lite' ),
-        'id'            => 'footer-w4',
+        'name' => 'Footer Widget Area 4',
+        'id' => 'footer-w4',
         'before_widget' => '<aside class="widget %2$s">',
-        'after_widget'  => '</aside>',
-        'before_title'  => '<h3 class="footer-widget-title"><span>',
-        'after_title'   => '</span></h3>',
+        'after_widget' => '</aside>',
+        'before_title' => '<h3 class="footer-widget-title"><span>',
+        'after_title' => '</span></h3>',
     ) );
 
     register_sidebar( array(
-        'name'          => __( 'Footer Widget Area 5', 'engrave-lite' ),
-        'id'            => 'footer-w5',
+        'name' => 'Footer Widget Area 5',
+        'id' => 'footer-w5',
         'before_widget' => '<aside class="widget %2$s">',
-        'after_widget'  => '</aside>',
-        'before_title'  => '<h3 class="footer-widget-title"><span>',
-        'after_title'   => '</span></h3>',
+        'after_widget' => '</aside>',
+        'before_title' => '<h3 class="footer-widget-title"><span>',
+        'after_title' => '</span></h3>',
     ) );
 
     register_sidebar( array(
-        'name'          => __( 'Footer Widget Area 6', 'engrave-lite' ),
-        'id'            => 'footer-w6',
+        'name' => 'Footer Widget Area 6',
+        'id' => 'footer-w6',
         'before_widget' => '<aside class="widget %2$s">',
-        'after_widget'  => '</aside>',
-        'before_title'  => '<h3 class="footer-widget-title"><span>',
-        'after_title'   => '</span></h3>',
+        'after_widget' => '</aside>',
+        'before_title' => '<h3 class="footer-widget-title"><span>',
+        'after_title' => '</span></h3>',
     ) );
  }
 add_action( 'widgets_init', 'thinkup_widgets_init' );
