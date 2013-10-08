@@ -437,7 +437,7 @@ if ( is_admin() && isset($_GET['activated'] ) && $pagenow == 'themes.php' ) {
 		"wip_header_sidebar_area" => "span4",
 		"wip_footer_sidebar_area" => "span4",
 
-		"wip_home" => "home-default",
+		"wip_home" => "full",
 		"wip_category_layout" => "full",
 		"wip_footer_facebook_button" => "#",
 		"wip_footer_twitter_button" => "#",
