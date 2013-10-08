@@ -93,13 +93,6 @@ function custom_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 
-/* Favicon */
-
-function avedon_favicons() { if (of_get_option('include_metaicons')) return;
-echo '<link rel="apple-touch-icon" href="' . get_template_directory_uri() . '/apple-touch-icon.png" /><link rel="shortcut icon" href="' . get_template_directory_uri() . '/favicon.ico" />';
-}
-add_action( 'wp_head', 'avedon_favicons', 1 );
-
 
 /* Register Widgets */
 
@@ -402,27 +395,16 @@ add_action( 'wp_enqueue_scripts', 'avedon_load_js_files' );
 
 function avedon_load_js_files() {
 
+wp_enqueue_script( 'bootstrap', get_template_directory_uri() .'/js/bootstrap.min.js', array('jquery'), '1.0', true );
+
 if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 wp_enqueue_script( 'comment-reply' );
 
-if (of_get_option('include_fullbootjava') == "1") {
-wp_register_script( 'bootstrap', get_template_directory_uri() .'/js/bootstrap.js', array('jquery'), '1.0', true );
-wp_enqueue_script( 'bootstrap' );
-}
-else {
-wp_register_script( 'fullbootjava', get_template_directory_uri() .'/js/bootstrap-dropdown.js', array('jquery'), '1.0', true );
-wp_enqueue_script( 'fullbootjava' );
-}
-
 if (of_get_option('show_supersize') ) {
-wp_register_script( 'jqueryeasing', get_template_directory_uri() .'/js/jquery.easing.min.js', array('jquery'), '1.0', true );
-wp_register_script( 'supersized', get_template_directory_uri() .'/js/supersized.3.2.7.js', '1.0', true );
-wp_register_script( 'supersizedshutter', get_template_directory_uri() .'/js/supersized.shutter.js', '1.0', true );
-wp_register_style( 'supercss', get_template_directory_uri() .'/css/supersized.css', '1.0', true );
-wp_enqueue_script( 'jqueryeasing' );
-wp_enqueue_script( 'supersized' );
-wp_enqueue_script( 'supersizedshutter' );
-wp_enqueue_style( 'supercss' );
+wp_enqueue_script( 'jqueryeasing', get_template_directory_uri() .'/js/jquery.easing.min.js', array('jquery'), '1.0', true );
+wp_enqueue_script( 'supersized', get_template_directory_uri() .'/js/supersized.3.2.7.min.js', '1.0', true  );
+wp_enqueue_script( 'supersizedshutter', get_template_directory_uri() .'/js/supersized.shutter.min.js', '1.0', true );
+wp_enqueue_style( 'supercss', get_template_directory_uri() .'/css/supersized.css', '1.0', true  );
 }
 
 if (of_get_option('invert_color') == "color-dark") {

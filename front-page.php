@@ -1,8 +1,7 @@
 <?php
 /**
- * @package WordPress
  * @subpackage Avedon
- * @since Avedon 1.06
+ * @since Avedon 1.07
  */
 
 get_header(); ?>

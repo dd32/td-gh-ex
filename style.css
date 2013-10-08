@@ -4,7 +4,7 @@ Theme URI: http://code.google.com/p/avedon/
 Description: A simple bootstrap based Wordpress theme, minimally coded, w/ plenty of bells and whistles.
 Author: Matthew Haeck
 Author URI: http://haeckdesign.com/
-Version: 1.06
+Version: 1.07
 License: GPL3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: black, blue, gray, white, dark, light, two-columns, right-sidebar, flexible-width, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, microformats, post-formats, theme-options, threaded-comments, photoblogging
@@ -13,7 +13,7 @@ Avedon is copyright 2013 by Haeck Design
 Avedon is licensed under the GPL 3.
 
 Avedon is based on Bootstrap by Twitter.
-See readme.txt for all license information.
+See license.txt for all license information.
 */
 
 
@@ -70,7 +70,8 @@ border-radius: 0 4px 0 4px;
 .row-fluid .post-date .span8, .row-fluid .post-date .span4 { min-height: 20px; }
 .single-entry p { padding: 5px; }
 .single-entry .post { padding-top: 5px;}
-.single-entry img, .single-entry iframe { height: auto; max-width: 100%; }
+.single-entry img { height: auto; max-width: 100%; }
+.single-entry iframe { max-height: 100%; max-width: 100%; }
 .wp-caption { max-width: 100%; }
 
 /* TYPOGRAPHY */
@@ -217,7 +218,7 @@ border-radius: 4px;
 .home .thebottom, .archive .thebottom { padding-top: 20px; }
 
 /* FOOT */
-#foot { padding-bottom: 15px;padding-top:15px;margin-top: -5px; line-height: 1.2em; border-top: 1px solid rgba(0, 0, 0, 0.2); }
+#foot { padding-bottom: 25px;padding-top:15px;margin-top: -5px; line-height: 1.2em; border-top: 1px solid rgba(0, 0, 0, 0.2); }
 .toptop { display: inline-block; }
 .totop .avedonicon-chevron-up {font-size: 1.6em;}
 .totop a { color: #333;float: right;margin-top: -2px; }
@@ -338,85 +339,6 @@ border-radius: 4px;
 border-radius: 4px;
 }
 .socialbox a:hover { text-shadow: 0 0 1px rgba( 0, 0, 0, 0.6);  }
-
-/* SOCIAL COUNT */
-.socialcount > li { font-weight: bold; text-shadow: 1px 1px 1px #FFFFFF; border: 1px solid rgba(0, 0, 0, 0.1); color: rgba(0, 0, 0, 0.4); }
-.socialcount > li, .socialcount > li > a:focus, .socialcount .loading {
--webkit-border-radius: 4px;
--moz-border-radius: 4px;
--o-border-radius: 4px;
--khtml-border-radius: 4px;
-border-radius: 4px;
-}
-.socialcount > li > a:focus, .socialcount > li:hover, .socialcount > li.hover { background-color: rgba(0, 0, 0, 0.2); text-shadow: 0 0 1px rgba( 0, 0, 0, 0.6); text-decoration: none;outline: none;border: 1px solid rgba(0, 0, 0, 0.2); }
-.socialcount { list-style: none; padding-left: 0; margin: 0; overflow: hidden; }
-.socialcount :link, .socialcount :visited { color: inherit; }
-.socialcount > li {
-display: inline-block;
-*display: inline;
-zoom: 1;
-position: relative;
-vertical-align: top;
-min-width: 80px;
-min-height: 30px;
-text-align: center;
-white-space: nowrap;
-*margin-right: 4px;
-}
-.socialcount.recommend .facebook { min-width: 120px; }
-.socialcount > li > a { display: block; padding: 0; color: rgba(0, 0, 0, 0.4); outline: none; text-decoration: none; font-size: 1.2em; margin: 2px; }
-.socialcount .count {
-color: inherit;
-position: relative;
-display: inline-block;
-*display: inline;
-zoom: 1;
-text-align: center;
-}
-.socialcount .facebook iframe { height: 21px; width: 90px; }
-.socialcount.like .facebook iframe { width: 48px; }
-.socialcount .button { display: none; width: 100%; position: absolute; left: 0; top: 5px; text-align: center; pointer-events: none; }
-.socialcount .button iframe { pointer-events: auto; }
-.socialcount.grade-a.activate-on-hover > li.hover .count, .socialcount.grade-a.activate-on-click > li.hover.active .count { text-indent: -999px; }
-.socialcount.grade-a.activate-on-hover > li.hover .button, .socialcount.grade-a.activate-on-click > li.hover.active .button { display: block; }
-.socialcount.grade-a.activate-on-hover > li.hover > a, .socialcount.grade-a.activate-on-click > li.hover.active > a { cursor: default; }
-.socialcount.grade-a.activate-on-hover > li.hover .button iframe, .socialcount.grade-a.activate-on-click > li.hover.active .button iframe { cursor: pointer; }
-.socialcount .loading { position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: 3; background-color: rgba(255, 255, 255, 0.4); background-color: rgba(255, 255, 255, 0.4); color: rgba(255, 255, 255, 0.4); text-transform: uppercase; text-align: center; }
-.socialcount .loading .dot { display: inline-block; width: 6px; height: 6px; margin-bottom: 0; margin-left: 3px; margin-right: 3px; margin-top: 12px; background: #fff;opacity: 0;
--webkit-border-radius: 50%;
--moz-border-radius: 50%;
--o-border-radius: 50%;
--khtml-border-radius: 50%;
-border-radius: 50%;
--webkit-animation: socialCountLoadingFade .6s infinite;
--moz-animation: socialCountLoadingFade .6s infinite;
-animation: socialCountLoadingFade .6s infinite;
-}
-.socialcount .loading .dot:nth-child(1) { -webkit-animation-delay: 0s; -moz-animation-delay: 0s; animation-delay: 0s; }
-.socialcount .loading .dot:nth-child(2) { -webkit-animation-delay: .05s; -moz-animation-delay: .05s; animation-delay: .05s; }
-.socialcount .loading .dot:nth-child(3) { -webkit-animation-delay: .1s; -moz-animation-delay: .1s; animation-delay: .1s; }
-
-@-webkit-keyframes socialCountLoadingFade { 0% { opacity: 0; } 50% { opacity: 0.6; } 100% { opacity: 0; } }
-@-moz-keyframes socialCountLoadingFade { 0% { opacity: 0;  } 50% { opacity: 0.6; } 100% { opacity: 0; } }
-@keyframes socialCountLoadingFade { 0% { opacity: 0; } 50% { opacity: 0.6; } 100% { opacity: 0; } }
-
-.social-icon {
-  display: inline-block;
-  *display: inline;
-  zoom: 1;
-  vertical-align: middle;
-  *margin-right: 5px;
-}
-.socialcount.grade-a.activate-on-hover > li.hover .social-icon, .socialcount.grade-a.activate-on-click > li.hover.active .social-icon {  display: none; }
-.socialcount-small.grade-a.activate-on-hover > li.hover .social-icon,
-.socialcount-small.grade-a.activate-on-click > li.hover.active .social-icon,
-.socialcount-large.grade-a.activate-on-hover > li.hover .social-icon,
-.socialcount-large.grade-a.activate-on-click > li.hover.active .social-icon {
-  display: inline-block;
-  *display: inline;
-  zoom: 1;
-}
-.socialcount .button, .socialcount .count { color: #aaa; }
 
 
 /*!
@@ -6325,7 +6247,6 @@ button.close {
 }
 
 
-/* ICONS */
 
 @font-face {
 	font-family: 'avedon';
@@ -6348,15 +6269,16 @@ button.close {
 	text-transform: none;
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 /* Use the following CSS code if you want to have a class per icon */
 /*
 Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
-[class*="avedonicon-"] {
+[class*="icon-"] {
 */
-.avedonicon-refresh, .avedonicon-chevron-left, .avedonicon-chevron-right, .avedonicon-question-sign, .avedonicon-info-sign, .avedonicon-exclamation-sign, .avedonicon-eject, .avedonicon-pause, .avedonicon-play, .avedonicon-foursquare, .avedonicon-youtube, .avedonicon-pinterest, .avedonicon-googleplus, .avedonicon-stumbleupon, .avedonicon-linkedin, .avedonicon-twitter, .avedonicon-facebook, .avedonicon-vimeo, .avedonicon-flickr, .avedonicon-instagram, .avedonicon-phone, .avedonicon-location, .avedonicon-mail, .avedonicon-dribbble, .avedonicon-forrst, .avedonicon-wordpress, .avedonicon-soundcloud, .avedonicon-lastfm, .avedonicon-html5, .avedonicon-paypal, .avedonicon-reddit, .avedonicon-feed, .avedonicon-safari, .avedonicon-console, .avedonicon-meter, .avedonicon-gift, .avedonicon-chevron-up, .avedonicon-chevron-down, .avedonicon-reorder, .avedonicon-adjust, .avedonicon-tag, .avedonicon-code, .avedonicon-fullscreen, .avedonicon-link, .avedonicon-cloud, .avedonicon-music, .avedonicon-quote-right, .avedonicon-comment, .avedonicon-facetime-video, .avedonicon-time, .avedonicon-picture, .avedonicon-bookmark, .avedonicon-edit, .avedonicon-asterisk, .avedonicon-bullhorn, .avedonicon-camera, .avedonicon-html5-2, .avedonicon-css3, .avedonicon-rocket, .avedonicon-superscript, .avedonicon-ticket, .avedonicon-code-fork, .avedonicon-question, .avedonicon-tablet, .avedonicon-laptop, .avedonicon-beaker {
+.avedonicon-beaker, .avedonicon-laptop, .avedonicon-tablet, .avedonicon-mobile, .avedonicon-desktop, .avedonicon-question-sign, .avedonicon-info-sign, .avedonicon-calendar, .avedonicon-code, .avedonicon-ticket, .avedonicon-rocket, .avedonicon-html5, .avedonicon-css3, .avedonicon-camera, .avedonicon-bullhorn, .avedonicon-comment, .avedonicon-asterisk, .avedonicon-quote-right, .avedonicon-suitcase, .avedonicon-envelope-alt, .avedonicon-bookmark, .avedonicon-picture, .avedonicon-facetime-video, .avedonicon-map-marker, .avedonicon-edit, .avedonicon-globe, .avedonicon-link, .avedonicon-undo, .avedonicon-save, .avedonicon-paper-clip, .avedonicon-adjust, .avedonicon-tag, .avedonicon-cog, .avedonicon-home, .avedonicon-file, .avedonicon-eject, .avedonicon-chevron-left, .avedonicon-chevron-right, .avedonicon-play, .avedonicon-pause, .avedonicon-remove-sign, .avedonicon-ok-sign, .avedonicon-search, .avedonicon-music, .avedonicon-film, .avedonicon-time, .avedonicon-cogs, .avedonicon-cloud, .avedonicon-fullscreen, .avedonicon-eye-open, .avedonicon-reorder, .avedonicon-chevron-up, .avedonicon-chevron-down, .avedonicon-gift, .avedonicon-dashboard, .avedonicon-rss, .avedonicon-instagram, .avedonicon-question, .avedonicon-wordpress, .avedonicon-reddit, .avedonicon-paypal, .avedonicon-vimeo, .avedonicon-facebook, .avedonicon-instagram-2, .avedonicon-twitter, .avedonicon-feed, .avedonicon-dribbble, .avedonicon-soundcloud, .avedonicon-lastfm, .avedonicon-forrst, .avedonicon-tumblr, .avedonicon-phone, .avedonicon-google-plus, .avedonicon-flickr, .avedonicon-youtube, .avedonicon-pinterest, .avedonicon-linkedin, .avedonicon-stumbleupon, .avedonicon-foursquare, .avedonicon-IcoMoon, .avedonicon-chrome, .avedonicon-firefox, .avedonicon-IE, .avedonicon-opera, .avedonicon-safari {
 	font-family: 'avedon';
 	speak: none;
 	font-style: normal;
@@ -6366,14 +6288,20 @@ you can use the generic selector below, but it's slower:
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 }
-.avedonicon-refresh:before {
-	content: "\f021";
+.avedonicon-beaker:before {
+	content: "\f0c3";
 }
-.avedonicon-chevron-left:before {
-	content: "\f053";
+.avedonicon-laptop:before {
+	content: "\f109";
 }
-.avedonicon-chevron-right:before {
-	content: "\f054";
+.avedonicon-tablet:before {
+	content: "\f10a";
+}
+.avedonicon-mobile:before {
+	content: "\f10b";
+}
+.avedonicon-desktop:before {
+	content: "\f108";
 }
 .avedonicon-question-sign:before {
 	content: "\f059";
@@ -6381,107 +6309,74 @@ you can use the generic selector below, but it's slower:
 .avedonicon-info-sign:before {
 	content: "\f05a";
 }
-.avedonicon-exclamation-sign:before {
-	content: "\f06a";
+.avedonicon-calendar:before {
+	content: "\f073";
 }
-.avedonicon-eject:before {
-	content: "\f052";
+.avedonicon-code:before {
+	content: "\f121";
 }
-.avedonicon-pause:before {
-	content: "\f04c";
+.avedonicon-ticket:before {
+	content: "\f145";
 }
-.avedonicon-play:before {
-	content: "\f04b";
-}
-.avedonicon-foursquare:before {
-	content: "\e007";
-}
-.avedonicon-youtube:before {
-	content: "\e008";
-}
-.avedonicon-pinterest:before {
-	content: "\e00a";
-}
-.avedonicon-googleplus:before {
-	content: "\e00b";
-}
-.avedonicon-stumbleupon:before {
-	content: "\e001";
-}
-.avedonicon-linkedin:before {
-	content: "\e003";
-}
-.avedonicon-twitter:before {
-	content: "\e004";
-}
-.avedonicon-facebook:before {
-	content: "\e000";
-}
-.avedonicon-vimeo:before {
-	content: "\e00c";
-}
-.avedonicon-flickr:before {
-	content: "\e002";
-}
-.avedonicon-instagram:before {
-	content: "\e005";
-}
-.avedonicon-phone:before {
-	content: "\e006";
-}
-.avedonicon-location:before {
-	content: "\e009";
-}
-.avedonicon-mail:before {
-	content: "\e00d";
-}
-.avedonicon-dribbble:before {
-	content: "\e00e";
-}
-.avedonicon-forrst:before {
-	content: "\e00f";
-}
-.avedonicon-wordpress:before {
-	content: "\e010";
-}
-.avedonicon-soundcloud:before {
-	content: "\e013";
-}
-.avedonicon-lastfm:before {
-	content: "\e011";
+.avedonicon-rocket:before {
+	content: "\f135";
 }
 .avedonicon-html5:before {
-	content: "\e012";
+	content: "\f13b";
 }
-.avedonicon-paypal:before {
-	content: "\e015";
+.avedonicon-css3:before {
+	content: "\f13c";
 }
-.avedonicon-reddit:before {
-	content: "\e014";
+.avedonicon-camera:before {
+	content: "\f030";
 }
-.avedonicon-feed:before {
-	content: "\e016";
+.avedonicon-bullhorn:before {
+	content: "\f0a1";
 }
-.avedonicon-safari:before {
-	content: "\e017";
+.avedonicon-comment:before {
+	content: "\f075";
 }
-.avedonicon-console:before {
-	content: "\e018";
+.avedonicon-asterisk:before {
+	content: "\f069";
 }
-.avedonicon-meter:before {
-	content: "\e019";
+.avedonicon-quote-right:before {
+	content: "\f10e";
 }
-.avedonicon-gift:before {
-	content: "\e01a";
+.avedonicon-suitcase:before {
+	content: "\f0f2";
 }
-.avedonicon-chevron-up:before {
-	content: "\f077";
+.avedonicon-envelope-alt:before {
+	content: "\f0e0";
 }
-.avedonicon-chevron-down:before {
-	content: "\f078";
+.avedonicon-bookmark:before {
+	content: "\f02e";
 }
-.avedonicon-reorder:before {
-	content: "\f0c9";
+.avedonicon-picture:before {
+	content: "\f03e";
+}
+.avedonicon-facetime-video:before {
+	content: "\f03d";
+}
+.avedonicon-map-marker:before {
+	content: "\f041";
+}
+.avedonicon-edit:before {
+	content: "\f044";
+}
+.avedonicon-globe:before {
+	content: "\f0ac";
+}
+.avedonicon-link:before {
+	content: "\f0c1";
+}
+.avedonicon-undo:before {
+	content: "\f0e2";
+}
+.avedonicon-save:before {
+	content: "\f0c7";
+}
+.avedonicon-paper-clip:before {
+	content: "\f0c6";
 }
 .avedonicon-adjust:before {
 	content: "\f042";
@@ -6489,78 +6384,162 @@ you can use the generic selector below, but it's slower:
 .avedonicon-tag:before {
 	content: "\f02b";
 }
-.avedonicon-code:before {
-	content: "\f121";
+.avedonicon-cog:before {
+	content: "\f013";
 }
-.avedonicon-fullscreen:before {
-	content: "\f0b2";
+.avedonicon-home:before {
+	content: "\f015";
 }
-.avedonicon-link:before {
-	content: "\f0c1";
+.avedonicon-file:before {
+	content: "\f016";
 }
-.avedonicon-cloud:before {
-	content: "\f0c2";
+.avedonicon-eject:before {
+	content: "\f052";
+}
+.avedonicon-chevron-left:before {
+	content: "\f053";
+}
+.avedonicon-chevron-right:before {
+	content: "\f054";
+}
+.avedonicon-play:before {
+	content: "\f04b";
+}
+.avedonicon-pause:before {
+	content: "\f04c";
+}
+.avedonicon-remove-sign:before {
+	content: "\f057";
+}
+.avedonicon-ok-sign:before {
+	content: "\f058";
+}
+.avedonicon-search:before {
+	content: "\f002";
 }
 .avedonicon-music:before {
 	content: "\f001";
 }
-.avedonicon-quote-right:before {
-	content: "\f10e";
-}
-.avedonicon-comment:before {
-	content: "\f075";
-}
-.avedonicon-facetime-video:before {
-	content: "\f03d";
+.avedonicon-film:before {
+	content: "\f008";
 }
 .avedonicon-time:before {
 	content: "\f017";
 }
-.avedonicon-picture:before {
-	content: "\f03e";
+.avedonicon-cogs:before {
+	content: "\f085";
 }
-.avedonicon-bookmark:before {
-	content: "\f02e";
+.avedonicon-cloud:before {
+	content: "\f0c2";
 }
-.avedonicon-edit:before {
-	content: "\f044";
+.avedonicon-fullscreen:before {
+	content: "\f0b2";
 }
-.avedonicon-asterisk:before {
-	content: "\f069";
+.avedonicon-eye-open:before {
+	content: "\f06e";
 }
-.avedonicon-bullhorn:before {
-	content: "\f0a1";
+.avedonicon-reorder:before {
+	content: "\f0c9";
 }
-.avedonicon-camera:before {
-	content: "\f030";
+.avedonicon-chevron-up:before {
+	content: "\f077";
 }
-.avedonicon-html5-2:before {
-	content: "\f13b";
+.avedonicon-chevron-down:before {
+	content: "\f078";
 }
-.avedonicon-css3:before {
-	content: "\f13c";
+.avedonicon-gift:before {
+	content: "\f06b";
 }
-.avedonicon-rocket:before {
-	content: "\f135";
+.avedonicon-dashboard:before {
+	content: "\f0e4";
 }
-.avedonicon-superscript:before {
-	content: "\f12b";
+.avedonicon-rss:before {
+	content: "\f09e";
 }
-.avedonicon-ticket:before {
-	content: "\f145";
-}
-.avedonicon-code-fork:before {
-	content: "\f126";
+.avedonicon-instagram:before {
+	content: "\f16d";
 }
 .avedonicon-question:before {
 	content: "\f128";
 }
-.avedonicon-tablet:before {
-	content: "\f10a";
+.avedonicon-wordpress:before {
+	content: "\e000";
 }
-.avedonicon-laptop:before {
-	content: "\f109";
+.avedonicon-reddit:before {
+	content: "\e002";
 }
-.avedonicon-beaker:before {
-	content: "\f0c3";
+.avedonicon-paypal:before {
+	content: "\e003";
+}
+.avedonicon-vimeo:before {
+	content: "\e004";
+}
+.avedonicon-facebook:before {
+	content: "\e005";
+}
+.avedonicon-instagram-2:before {
+	content: "\e006";
+}
+.avedonicon-twitter:before {
+	content: "\e007";
+}
+.avedonicon-feed:before {
+	content: "\e008";
+}
+.avedonicon-dribbble:before {
+	content: "\e001";
+}
+.avedonicon-soundcloud:before {
+	content: "\e009";
+}
+.avedonicon-lastfm:before {
+	content: "\e00a";
+}
+.avedonicon-forrst:before {
+	content: "\e00b";
+}
+.avedonicon-tumblr:before {
+	content: "\e00c";
+}
+.avedonicon-phone:before {
+	content: "\e00d";
+}
+.avedonicon-google-plus:before {
+	content: "\e00e";
+}
+.avedonicon-flickr:before {
+	content: "\e00f";
+}
+.avedonicon-youtube:before {
+	content: "\e010";
+}
+.avedonicon-pinterest:before {
+	content: "\e011";
+}
+.avedonicon-linkedin:before {
+	content: "\e012";
+}
+.avedonicon-stumbleupon:before {
+	content: "\e013";
+}
+.avedonicon-foursquare:before {
+	content: "\e014";
+}
+.avedonicon-IcoMoon:before {
+	content: "\e015";
+}
+.avedonicon-chrome:before {
+	content: "\e016";
+}
+.avedonicon-firefox:before {
+	content: "\e017";
+}
+.avedonicon-IE:before {
+	content: "\e018";
+}
+.avedonicon-opera:before {
+	content: "\e019";
+}
+.avedonicon-safari:before {
+	content: "\e01a";
 }

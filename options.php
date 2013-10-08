@@ -52,8 +52,7 @@ function avedontheme_options() {
 		'scrollarrows' => __('Scrolling Arrows', 'avedon_theme_options'),
 		'slidecount' => __('Slide Counter', 'avedon_theme_options'),
 		'slidecaption' => __('Slide Caption', 'avedon_theme_options'),
-		'slidelist' => __('Nav Dots', 'avedon_theme_options'),
-		'progbar' => __('Progress Bar', 'avedon_theme_options')
+		'slidelist' => __('Nav Dots', 'avedon_theme_options')
 	);
 
 	$superopts_defaults = array(
@@ -62,8 +61,7 @@ function avedontheme_options() {
 		'scrollarrows' => '0',
 		'slidecount' => '0',
 		'slidecaption' => '0',
-		'slidelist' => '1',
-		'progbar' => '0'
+		'slidelist' => '1'
 	);
 
 	// Typography Defaults
@@ -233,20 +231,6 @@ function avedontheme_options() {
 		'desc' => __('Set the color of your footer text.', 'avedon_theme_options'),
 		'id' => 'footer_text_color',
 		'type' => 'color' );
-
-	$options[] = array(
-		'name' => __('Disable Favicon and Apple Touch Icons', 'avedon_theme_options'),
-		'desc' => __('Disable favicon and apple touch icons. (Replace favicon.ico and apple_touch_icon.png files with your own icons)', 'avedon_theme_options'),
-		'id' => 'include_metaicons',
-		'std' => '1',
-		'type' => 'checkbox');
-
-	$options[] = array(
-		'name' => __('Include Full Bootstrap Javascript', 'avedon_theme_options'),
-		'desc' => __('Include Full Bootstrap Javascript (otherwise only the dropmenu script is loaded).', 'avedon_theme_options'),
-		'id' => 'include_fullbootjava',
-		'std' => '1',
-		'type' => 'checkbox');
 
 	$options[] = array(
 		'name' => __('404 Text', 'avedon_theme_options'),
@@ -557,7 +541,7 @@ function avedontheme_options() {
 
 	$options[] = array(
 		'name' => __('Avedon Wordpress Theme', 'avedon_theme_options'),
-		'desc' => __('<p>Avedon is a Wordpress Theme designed to utilize a lot of technologies that much brighter folks have built (see below). Any and all respect should be given to them. Haeck Design is always available for projects, but since it is a theme - support cant be guaranteed. That said, we will always do our best to respond to functional issues in a timely manner.<hr /><h4>Demo</h4><p>http://demo.haeckdesign.com/avedon/</p><hr /><h4>Support</h4><p>http://code.google.com/p/avedon/</p><hr /><h4>Purchase Advanced Version</h4><p>Buy an advanced version of the Avedon theme by visiting our demo page and clicking the "buy" button.</p><hr /><h4>Credits</h4><ul class="line"><li>For more information regarding Bootstrap, please refer to http://getbootstrap.com</li><li>For more information regarding Supersize, please refer to BuildInternet.com</li><li>For more information regarding Wordpress, please refer to the Wordpress Codex</li></ul>', 'avedon_theme_options'),
+		'desc' => __('<p>Avedon is a Wordpress Theme designed to utilize a lot of technologies that much brighter folks have built (see below). Any and all respect should be given to them. Haeck Design is always available for projects, but since it is a theme - support cant be guaranteed. That said, we will always do our best to respond to functional issues in a timely manner.</p><p>Please note that the dropdown menu only supports one level of dropdowns.</p><hr /><h4>Demo</h4><p>http://demo.haeckdesign.com/avedon/</p><hr /><h4>Support</h4><p>http://code.google.com/p/avedon/</p><hr /><h4>Purchase Advanced Version</h4><p>Buy an advanced version of the Avedon theme by visiting our demo page and clicking the "buy" button.</p><hr /><h4>Credits</h4><ul class="line"><li>For more information regarding Bootstrap, please refer to http://getbootstrap.com</li><li>For more information regarding Supersize, please refer to BuildInternet.com</li><li>For more information regarding Wordpress, please refer to the Wordpress Codex</li></ul>', 'avedon_theme_options'),
 		'type' => 'info');
 
 	return $options;

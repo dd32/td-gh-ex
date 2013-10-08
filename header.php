@@ -1,9 +1,8 @@
 <?php
 /**
- * @package WordPress
  * @subpackage Avedon
- * @since Avedon 1.06
-*/
+ * @since Avedon 1.07
+ */
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +13,6 @@
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-<link rel="alternate" type="application/rss+xml" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?> Feed" href="<?php bloginfo('rss2_url'); ?>" />
 
 <?php get_template_part('helper/styling'); ?>
 <!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>/js/lte-ie7.js" /><![endif]-->
