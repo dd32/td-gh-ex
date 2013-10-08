@@ -4,7 +4,7 @@
 /* START FACEBOOK WIDGET
 /*-----------------------------------------------------------------------------------*/    
     
-class wip_facebook_widget extends WP_Widget
+class alhenalite_facebook_widget extends WP_Widget
 {
 	public function __construct() 
     {
@@ -187,11 +187,11 @@ class wip_facebook_widget extends WP_Widget
 	}
 	
 	}
-function add_wip_facebook_widget()
+function add_alhenalite_facebook_widget()
 {
-	register_widget( 'wip_facebook_widget' );
+	register_widget( 'alhenalite_facebook_widget' );
 }
-add_action( 'widgets_init', 'add_wip_facebook_widget' );
+add_action( 'widgets_init', 'add_alhenalite_facebook_widget' );
 
 /*-----------------------------------------------------------------------------------*/
 /* END FACEBOOK WIDGET

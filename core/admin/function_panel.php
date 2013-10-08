@@ -3,30 +3,29 @@
 /**
  * Wp in Progress
  * 
- * @package Wordpress
  * @author WPinProgress
  *
  * This source file is subject to the GNU GENERAL PUBLIC LICENSE (GPL 3.0)
  * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-function wip_add_menu() {
+function alhenalite_add_menu() {
 	
-	add_theme_page( __('Alhena Options.', 'wip' ), __('Alhena Options.', 'wip' ), 'administrator',  'themeoption', 'wip_themeoption');
-	add_theme_page("Get Premium", "Get Premium", 'administrator',  'getpremium', 'wip_getpremium');
+	add_theme_page( __('Alhena Options.', 'wip' ), __('Alhena Options.', 'wip' ), 'administrator',  'themeoption', 'alhenalite_themeoption');
+	add_theme_page("Get Premium", "Get Premium", 'administrator',  'getpremium', 'alhenalite_getpremium');
 	
 }
 
-add_action('admin_menu', 'wip_add_menu'); 
+add_action('admin_menu', 'alhenalite_add_menu'); 
 
-function wip_themeoption() {
+function alhenalite_themeoption() {
 		
 		$shortname = "wip";
 		require_once get_template_directory() . '/core/admin/option/options.php';   
 
 }
 
-function wip_add_scripts() {
+function alhenalite_add_scripts() {
 	
 	 global $wp_version;
      wp_enqueue_style( "thickbox" );
@@ -46,13 +45,13 @@ function wip_add_scripts() {
 	 
 }
 
-add_action('admin_init', 'wip_add_scripts');
+add_action('admin_init', 'alhenalite_add_scripts');
 
-function wip_save_options ( $panel ) {
+function alhenalite_save_options ( $panel ) {
 	
 	global $message_action;
 	
-	$wip_setting = get_option( wip_themename() );
+	$wip_setting = get_option( alhenalite_themename() );
 	
 	if ( $wip_setting != false ) {
 			$wip_setting = maybe_unserialize( $wip_setting );
@@ -62,7 +61,7 @@ function wip_save_options ( $panel ) {
 			$wip_setting = array();
 		}      
 		
-	if ( "Save" == wip_request('action') )
+	if ( "Save" == alhenalite_request('action') )
 
 	{
 				
@@ -79,14 +78,14 @@ function wip_save_options ( $panel ) {
 						if ( $_REQUEST['element-opened'] == "Skins" ) {
 								
 								require_once get_template_directory() . '/core/admin/option/skins.php';
-								update_option( wip_themename(), array_merge( $wip_setting  ,$current) );
+								update_option( alhenalite_themename(), array_merge( $wip_setting  ,$current) );
 								break;
 							} 
 						
 						else if ( ( isset( $value['id']) ) && ( isset( $_POST[$value["id"]] ) ) && ( $value['id'] <> "wip_sidebars" ) ) {	
 								
 								$current[$value["id"]] = $_POST[$value["id"]]; 
-								update_option( wip_themename(), array_merge( $wip_setting  ,$current) );
+								update_option( alhenalite_themename(), array_merge( $wip_setting  ,$current) );
 							}
 							
 						$message_action = 'Options saved successfully.';
@@ -99,7 +98,7 @@ function wip_save_options ( $panel ) {
 		}
 }
 
-function wip_message () 
+function alhenalite_message () 
 
 	{
 		global $message_action;
@@ -107,7 +106,7 @@ function wip_message ()
 		echo '<div id="message" class="updated fade message_save voobis_message"><p><strong>'.$message_action.'</strong></p></div>';
 	}
 
-function wip_getpremium() {	?>
+function alhenalite_getpremium() {	?>
 
 	<a href="http://www.themeinprogress.com/?ref=panel" target="_blank" >
     	<img src="http://www.themeinprogress.com/images/alhenapremium.jpg" alt="Get Premium" style="margin:15px auto" />

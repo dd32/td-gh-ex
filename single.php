@@ -1,7 +1,7 @@
 <?php 
 
 	get_header(); 
-	do_action( 'wip_header_content' );
+	do_action( 'alhenalite_header_content' );
 
 ?>
 
@@ -11,14 +11,17 @@
 
 	<div class="row">
        
-        <div <?php post_class(array('pin-article', wip_template('span') , wip_template('sidebar'))); ?> >
+        <div <?php post_class(array('pin-article', alhenalite_template('span') , alhenalite_template('sidebar'))); ?> >
             
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post();
             
-                do_action('wip_postformat');
+                do_action('alhenalite_postformat');
     
             ?>
-                
+
+            <?php wp_link_pages(); ?>
+			<?php posts_nav_link(); ?>
+            
             <div style="clear:both"></div>
             
         </div>
@@ -33,7 +36,7 @@
 
 <?php
 
-	do_action( 'wip_footer_content' ); 
+	do_action( 'alhenalite_footer_content' ); 
 
 	get_footer(); 
 

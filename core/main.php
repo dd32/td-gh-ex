@@ -3,7 +3,6 @@
 /**
  * Wp in Progress
  * 
- * @package Wordpress
  * @theme Alhena
  *
  * This source file is subject to the GNU GENERAL PUBLIC LICENSE (GPL 3.0)
@@ -17,21 +16,51 @@
 load_theme_textdomain( 'wip', get_template_directory() . '/languages');
 
 /*-----------------------------------------------------------------------------------*/
-/* Post formats */
+/* Default menu */
 /*-----------------------------------------------------------------------------------*/   
 
-add_theme_support( 'post-formats', array( 'aside','gallery','quote','video','audio','link' ) );
+function alhenalite_add_menuclass( $ulclass ) {
+	return preg_replace( '/<ul>/', '<ul class="menu">', $ulclass, 1 );
+}
+add_filter( 'wp_page_menu', 'alhenalite_add_menuclass' );
+
+/*-----------------------------------------------------------------------------------*/
+/* Tag Title */
+/*-----------------------------------------------------------------------------------*/  
+ 
+function alhenalite_title( $title, $sep ) {
+	global $paged, $page;
+
+	if ( is_feed() )
+		return $title;
+
+	// Add the site name.
+	$title .= get_bloginfo( 'name' );
+
+	// Add the site description for the home/front page.
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) )
+		$title = "$title $sep $site_description";
+
+	// Add a page number if necessary.
+	if ( $paged >= 2 || $page >= 2 )
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'twentytwelve' ), max( $paged, $page ) );
+
+	return $title;
+}
+
+add_filter( 'wp_title', 'alhenalite_title', 10, 2 );
 
 /*-----------------------------------------------------------------------------------*/
 /* Admin menu */
-/*-----------------------------------------------------------------------------------*/   
+/*-----------------------------------------------------------------------------------*/  
 
-function wip_option_panel() {
+function alhenalite_option_panel() {
         global $wp_admin_bar, $wpdb;
     	$wp_admin_bar->add_menu( array( 'id' => 'theme_options', 'title' => '<span> Alhena Options </span>', 'href' => get_admin_url() . 'themes.php?page=themeoption' ) );
         $wp_admin_bar->add_menu( array( 'id' => 'get_premium', 'title' => '<span> Get Premium </span>', 'href' => get_admin_url() . 'themes.php?page=getpremium' ) );
 }
-add_action( 'admin_bar_menu', 'wip_option_panel', 1000 );
+add_action( 'admin_bar_menu', 'alhenalite_option_panel', 1000 );
 
 /*-----------------------------------------------------------------------------------*/
 /* Content width */
@@ -44,7 +73,7 @@ if ( ! isset( $content_width ) )
 /* Prettyphoto at post gallery */
 /*-----------------------------------------------------------------------------------*/   
 
-function wip_prettyPhoto( $html, $id, $size, $permalink, $icon, $text ) {
+function alhenalite_prettyPhoto( $html, $id, $size, $permalink, $icon, $text ) {
 	
     if ( ! $permalink )
         return str_replace( '<a', '<a data-rel="prettyPhoto" ', $html );
@@ -52,19 +81,19 @@ function wip_prettyPhoto( $html, $id, $size, $permalink, $icon, $text ) {
         return $html;
 }
 
-add_filter( 'wp_get_attachment_link', 'wip_prettyPhoto', 10, 6);
+add_filter( 'wp_get_attachment_link', 'alhenalite_prettyPhoto', 10, 6);
 
 
 /*-----------------------------------------------------------------------------------*/
 /* Custom excerpt more */
 /*-----------------------------------------------------------------------------------*/   
 
-function wip_new_excerpt_more( $more ) {
+function alhenalite_new_excerpt_more( $more ) {
 	
 	global $post;
 	
-	if (wip_postmeta( 'wip_service_url' )):
-		$url = wip_postmeta('wip_service_url' );
+	if (alhenalite_postmeta( 'wip_service_url' )):
+		$url = alhenalite_postmeta('wip_service_url' );
 	else:
 		$url = get_permalink($post->ID);
 	endif;
@@ -73,7 +102,7 @@ function wip_new_excerpt_more( $more ) {
 
 }
 
-add_filter('excerpt_more', 'wip_new_excerpt_more');
+add_filter('excerpt_more', 'alhenalite_new_excerpt_more');
 
 
 /*-----------------------------------------------------------------------------------*/
@@ -86,51 +115,51 @@ add_filter('widget_text', 'do_shortcode');
 /* Remove category list rel */
 /*-----------------------------------------------------------------------------------*/   
 
-function wip_remove_category_list_rel($output) {
+function alhenalite_remove_category_list_rel($output) {
 	$output = str_replace('rel="category"', '', $output);
 	return $output;
 }
 
-add_filter('wp_list_categories', 'wip_remove_category_list_rel');
-add_filter('the_category', 'wip_remove_category_list_rel');
+add_filter('wp_list_categories', 'alhenalite_remove_category_list_rel');
+add_filter('the_category', 'alhenalite_remove_category_list_rel');
 
 /*-----------------------------------------------------------------------------------*/
 /* Remove thumbnail dimensions */
 /*-----------------------------------------------------------------------------------*/ 
 
-function wip_remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
+function alhenalite_remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
     $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
     return $html;
 }
 
-add_filter( 'post_thumbnail_html', 'wip_remove_thumbnail_dimensions', 10, 3 );
+add_filter( 'post_thumbnail_html', 'alhenalite_remove_thumbnail_dimensions', 10, 3 );
   
 /*-----------------------------------------------------------------------------------*/
 /* Remove css gallery */
 /*-----------------------------------------------------------------------------------*/ 
 
-function wip_my_gallery_style() {
+function alhenalite_my_gallery_style() {
     return "<div class='gallery'>";
 }
 
-add_filter( 'gallery_style', 'wip_my_gallery_style', 99 );
+add_filter( 'gallery_style', 'alhenalite_my_gallery_style', 99 );
 
 /*-----------------------------------------------------------------------------------*/
 /* Thematic dropdown options */
 /*-----------------------------------------------------------------------------------*/ 
 
-function wip_childtheme_dropdown_options($dropdown_options) {
+function alhenalite_childtheme_dropdown_options($dropdown_options) {
 	$dropdown_options = '<script type="text/javascript" src="'. get_stylesheet_directory_uri() .'/scripts/thematic-dropdowns.js"></script>';
 	return $dropdown_options;
 }
 
-add_filter('thematic_dropdown_options','wip_childtheme_dropdown_options');
+add_filter('thematic_dropdown_options','alhenalite_childtheme_dropdown_options');
 
 /*-----------------------------------------------------------------------------------*/
 /* Require */
 /*-----------------------------------------------------------------------------------*/ 
 
-function wip_require($folder) {
+function alhenalite_require($folder) {
 
 $dh  = opendir(get_template_directory().$folder);
 
@@ -148,7 +177,7 @@ while (false !== ($filename = readdir($dh))) {
 /* Scripts */
 /*-----------------------------------------------------------------------------------*/ 
 
-function wip_enqueue_script($folder) {
+function alhenalite_enqueue_script($folder) {
 
 	if (isset($folder)) : 
 	
@@ -169,7 +198,7 @@ endif;
 /* Styles */
 /*-----------------------------------------------------------------------------------*/ 
 
-function wip_enqueue_style($folder) {
+function alhenalite_enqueue_style($folder) {
 
 if (isset($folder)) : 
 
@@ -186,11 +215,12 @@ endif;
 
 }
 
+
 /*-----------------------------------------------------------------------------------*/
 /* Sidebar list */
 /*-----------------------------------------------------------------------------------*/ 
 
-function wip_sidebar_list($sidebar_type) {
+function alhenalite_sidebar_list($sidebar_type) {
 	
 		$sidebars = array( "none" => "None" , $sidebar_type."_sidebar_area" => "Default");
 
@@ -203,7 +233,7 @@ function wip_sidebar_list($sidebar_type) {
 /* Request */
 /*-----------------------------------------------------------------------------------*/ 
 
-function wip_request($id) {
+function alhenalite_request($id) {
 	
 	if ( isset ( $_REQUEST[$id])) 
 	return $_REQUEST[$id];	
@@ -214,11 +244,11 @@ function wip_request($id) {
 /* Theme path */
 /*-----------------------------------------------------------------------------------*/ 
 
-function wip_theme_data($id) {
+function alhenalite_theme_data($id) {
 	
 	 global $wp_version;	
 	 if ( $wp_version <= 3.4 ) :
-	 	$themedata = get_theme_data(TEMPLATEPATH. '/style.css');
+	 	$themedata = get_theme_data( get_template_directory(). '/style.css');
 		return $themedata[$id];
 	 else:
 		$themedata = wp_get_theme();
@@ -231,7 +261,7 @@ function wip_theme_data($id) {
 /* Theme name */
 /*-----------------------------------------------------------------------------------*/ 
 
-function wip_themename() {
+function alhenalite_themename() {
 	
 	$themename = "alhenalite_theme_settings";
 	return $themename;	
@@ -242,9 +272,9 @@ function wip_themename() {
 /* Theme settings */
 /*-----------------------------------------------------------------------------------*/ 
 
-function wip_setting($id) {
+function alhenalite_setting($id) {
 
-	$wip_setting = get_option(wip_themename());
+	$wip_setting = get_option(alhenalite_themename());
 	if(isset($wip_setting[$id]))
 		return $wip_setting[$id];
 
@@ -254,7 +284,7 @@ function wip_setting($id) {
 /* Post meta */
 /*-----------------------------------------------------------------------------------*/ 
 
-function wip_postmeta($id) {
+function alhenalite_postmeta($id) {
 
 	global $post;
 	
@@ -265,13 +295,38 @@ function wip_postmeta($id) {
 }
 
 /*-----------------------------------------------------------------------------------*/
+/* Post formats */
+/*-----------------------------------------------------------------------------------*/   
+
+function alhenalite_setup() {
+
+	add_theme_support( 'post-formats', array( 'aside','gallery','quote','video','audio','link' ) );
+	add_theme_support( 'automatic-feed-links' );
+	add_theme_support( 'post-thumbnails' );
+	
+	
+	add_theme_support( 'custom-background', array(
+		'default-color' => 'f3f3f3',
+		'default-image' => get_template_directory_uri() . alhenalite_setting('wip_body_background'),
+	) );
+	
+	add_theme_support( 'custom-header' );
+	
+	add_image_size( 'blog', 940,429, TRUE ); 
+	register_nav_menu( 'main-menu', 'Main menu' );
+	
+}
+
+add_action( 'after_setup_theme', 'alhenalite_setup' );
+
+/*-----------------------------------------------------------------------------------*/
 /* Get Skin */
 /*-----------------------------------------------------------------------------------*/ 
 
-function wip_getskins($classes) {
+function alhenalite_getskins($classes) {
 
-	if (wip_setting('wip_skins')):
-		$getskin = explode("_", wip_setting('wip_skins'));
+	if (alhenalite_setting('wip_skins')):
+		$getskin = explode("_", alhenalite_setting('wip_skins'));
 		$classes[] = $getskin[0];
 		return $classes;
 	else:
@@ -280,28 +335,33 @@ function wip_getskins($classes) {
 	endif;
 }
 
-add_filter('body_class','wip_getskins');
+add_filter('body_class','alhenalite_getskins');
 
 /*-----------------------------------------------------------------------------------*/
 /* Content template */
 /*-----------------------------------------------------------------------------------*/ 
 
-function wip_template($id) {
+function alhenalite_template($id) {
 
 	$template = array ("full" => "span12" , "left-sidebar" => "span8" , "right-sidebar" => "span8" );
 
 	$span = $template["full"];
 	$sidebar =  "full";
 
-	if ( (is_category()) || (is_tag()) || (is_home()) ) {
+	if ( (is_category()) || (is_tag()) ) {
 		
-		$span = $template[wip_setting('wip_category_layout')];
-		$sidebar =  wip_setting('wip_category_layout');
+		$span = $template[alhenalite_setting('wip_category_layout')];
+		$sidebar =  alhenalite_setting('wip_category_layout');
 			
-	} else if (wip_postmeta('wip_template')) {
+	} else if (is_home()) {
 		
-		$span = $template[wip_postmeta('wip_template')];
-		$sidebar =  wip_postmeta('wip_template');
+		$span = $template[alhenalite_setting('wip_home')];
+		$sidebar =  alhenalite_setting('wip_home');
+			
+	} else if (alhenalite_postmeta('wip_template')) {
+		
+		$span = $template[alhenalite_postmeta('wip_template')];
+		$sidebar =  alhenalite_postmeta('wip_template');
 			
 	}
 	
@@ -313,15 +373,15 @@ function wip_template($id) {
 /* Content template */
 /*-----------------------------------------------------------------------------------*/ 
 
-function wip_layout($id) {
+function alhenalite_layout($id) {
 
-	if (!wip_setting($id)):
+	if (!alhenalite_setting($id)):
 	
 		$layout = "span12";
 	
 	else:
 
-		$layout = wip_setting($id);
+		$layout = alhenalite_setting($id);
 
 	endif;
 	
@@ -331,35 +391,12 @@ function wip_layout($id) {
 
 
 /*-----------------------------------------------------------------------------------*/
-/* Theme Support */
-/*-----------------------------------------------------------------------------------*/         
-
-add_theme_support( 'automatic-feed-links' );
-add_theme_support( 'post-thumbnails' );
-
-/*-----------------------------------------------------------------------------------*/
-/* Thumbnails */
-/*-----------------------------------------------------------------------------------*/         
-
-add_image_size( 'blog', 940,429, TRUE ); 
-
-/*-----------------------------------------------------------------------------------*/
-/* Main menu */
-/*-----------------------------------------------------------------------------------*/         
-
-function wip_main_menu() {
-register_nav_menu( 'main-menu', 'Menu principale' );
-}
-
-add_action( 'init', 'wip_main_menu' );
-
-/*-----------------------------------------------------------------------------------*/
 /* Add default style, at theme activation */
 /*-----------------------------------------------------------------------------------*/         
 
 if ( is_admin() && isset($_GET['activated'] ) && $pagenow == 'themes.php' ) {
 	
-	$wip_setting = get_option(wip_themename());
+	$wip_setting = get_option(alhenalite_themename());
 
 	if (!$wip_setting) {	
 		
@@ -396,9 +433,8 @@ if ( is_admin() && isset($_GET['activated'] ) && $pagenow == 'themes.php' ) {
 		"wip_footer_background" => "None",
 		"wip_footer_background_color" => "#333333",
 	
-		"wip_top_sidebar_area" => "span12",
-		"wip_header_sidebar_area" => "span12",
-		"wip_bottom_sidebar_area" => "span12",
+		"wip_top_sidebar_area" => "span4",
+		"wip_header_sidebar_area" => "span4",
 		"wip_footer_sidebar_area" => "span4",
 
 		"wip_home" => "home-default",
@@ -407,23 +443,35 @@ if ( is_admin() && isset($_GET['activated'] ) && $pagenow == 'themes.php' ) {
 		"wip_footer_twitter_button" => "#",
 		"wip_footer_skype_button" => "#",
 		"wip_view_comments" => "on",
-		"wip_view_social_buttons" => "on",
 		
 		);
 	
-		update_option( wip_themename(), $skins ); 
+		update_option( alhenalite_themename(), $skins ); 
 		
 	}
 }
 
 /*-----------------------------------------------------------------------------------*/
+/* Styles and scripts */
+/*-----------------------------------------------------------------------------------*/ 
+
+function alhenalite_scripts_styles() {
+	
+	alhenalite_enqueue_script('/js');
+	alhenalite_enqueue_style('/css');
+
+}
+
+add_action( 'wp_enqueue_scripts', 'alhenalite_scripts_styles' );
+
+/*-----------------------------------------------------------------------------------*/
 /* Functions */
 /*-----------------------------------------------------------------------------------*/ 
 
-wip_require('/core/widgets/');
-wip_require('/core/templates/');
-wip_require('/core/classes/');
-wip_require('/core/functions/');
-wip_require('/core/metaboxes/');
+alhenalite_require('/core/widgets/');
+alhenalite_require('/core/templates/');
+alhenalite_require('/core/classes/');
+alhenalite_require('/core/functions/');
+alhenalite_require('/core/metaboxes/');
 
 ?>

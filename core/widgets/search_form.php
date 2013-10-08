@@ -4,7 +4,7 @@
 /* START SEARCH WIDGET
 /*-----------------------------------------------------------------------------------*/ 
    
-class wip_search_widget extends WP_Widget
+class alhenalite_search_widget extends WP_Widget
 {
 	public function __construct() 
     {
@@ -66,11 +66,11 @@ class wip_search_widget extends WP_Widget
 		echo $after_widget;
 	}
 	}
-function add_wip_search_widget()
+function add_alhenalite_search_widget()
 {
-	register_widget( 'wip_search_widget' );
+	register_widget( 'alhenalite_search_widget' );
 }
-add_action( 'widgets_init', 'add_wip_search_widget' );
+add_action( 'widgets_init', 'add_alhenalite_search_widget' );
 
 /*-----------------------------------------------------------------------------------*/
 /* END SEARCH WIDGET

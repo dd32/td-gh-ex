@@ -3,7 +3,6 @@
 /**
  * Wp in Progress
  * 
- * @package Wordpress
  * @author WPinProgress
  *
  * This source file is subject to the GNU GENERAL PUBLIC LICENSE (GPL 3.0)
@@ -14,7 +13,7 @@
     
 <article class="article">
 
-	<?php wip_get_title(); ?>    
+	<?php alhenalite_get_title(); ?>    
     
 	<?php do_action('wip_after_content'); ?>
 

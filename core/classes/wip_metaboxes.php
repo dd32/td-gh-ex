@@ -1,6 +1,6 @@
 <?php
 
-	class wip_metaboxes {
+	class alhenalite_metaboxes {
 	   
 		public $posttype;
 		public $metaboxes_fields;
@@ -11,7 +11,7 @@
 			$this->metaboxes_fields = $fields;
 			
 			add_action( 'add_meta_boxes', array( &$this, 'new_metaboxes' ) ); 
-			add_action( 'save_post', array( &$this, 'wip_metaboxes_save' ) );
+			add_action( 'save_post', array( &$this, 'alhenalite_metaboxes_save' ) );
 		}
 	
 		public function new_metaboxes() {
@@ -95,13 +95,13 @@
 						</div>
 						<div class="input-right">
 		
-								<div class="bool-slider <?php if ( wip_postmeta($field['id']) != "") { echo stripslashes(wip_postmeta($field['id'])); } else { echo "on"; } ?>">
+								<div class="bool-slider <?php if ( alhenalite_postmeta($field['id']) != "") { echo stripslashes(alhenalite_postmeta($field['id'])); } else { echo "on"; } ?>">
 									
 									<div class="inset">
 										<div class="control"></div>
 									</div>
 									
-									<input name="<?php echo $field['id']; ?>" id="<?php echo $field['id']; ?>" type="hidden" value="<?php if ( wip_postmeta( $field['id']) != "") { echo wip_postmeta( $field['id']); } else { echo $field['std']; } ?>" class="on-off" />
+									<input name="<?php echo $field['id']; ?>" id="<?php echo $field['id']; ?>" type="hidden" value="<?php if ( alhenalite_postmeta( $field['id']) != "") { echo alhenalite_postmeta( $field['id']); } else { echo $field['std']; } ?>" class="on-off" />
 	
 								</div>  
 								
@@ -134,7 +134,7 @@
 						
 						<div class="input-right">
 						
-							<input name="<?php echo $field['id']; ?>" id="<?php echo $field['id']; ?>" type="<?php echo $field['type']; ?>" value="<?php if ( wip_postmeta( $field['id']) != "") { echo wip_postmeta( $field['id']); } ?>" style="width:100%"/>
+							<input name="<?php echo $field['id']; ?>" id="<?php echo $field['id']; ?>" type="<?php echo $field['type']; ?>" value="<?php if ( alhenalite_postmeta( $field['id']) != "") { echo alhenalite_postmeta( $field['id']); } ?>" style="width:100%"/>
 							
 						</div>
 						
@@ -159,7 +159,7 @@
 
 							<select name="<?php echo $field['id']; ?>" id="<?php echo $field['id']; ?>" style="width:100%">
 								<?php foreach ($field['options'] as $option => $values) { ?>
-								<option <?php if (wip_postmeta( $field['id']) == $option) { echo 'selected="selected"'; } ?> value="<?php echo $option; ?>"><?php echo $values; ?></option><?php } ?>
+								<option <?php if (alhenalite_postmeta( $field['id']) == $option) { echo 'selected="selected"'; } ?> value="<?php echo $option; ?>"><?php echo $values; ?></option><?php } ?>
 							</select>
 						
 						</div>
@@ -183,7 +183,7 @@
 						<select name="<?php echo $field['id']; ?>" id="<?php echo $field['id']; ?>" style="width:100%">
 							<option value="all"> All </option>
 							<?php foreach ( $wp_terms as $option => $values) { ?>
-							<option <?php if (wip_postmeta( $field['id']) == $option) { echo 'selected="selected"'; } ?> value="<?php echo $option; ?>"><?php echo $values; ?></option><?php } ?>
+							<option <?php if (alhenalite_postmeta( $field['id']) == $option) { echo 'selected="selected"'; } ?> value="<?php echo $option; ?>"><?php echo $values; ?></option><?php } ?>
 						</select>
 						<em> <?php echo $field['desc']; ?> </em>
 					
@@ -200,7 +200,7 @@
 							<em> <?php echo $field['desc']; ?> </em>
 						</div>
 						<div class="input-right">
-						<textarea name="<?php echo $field['id']; ?>" id="<?php echo $field['id']; ?>" type="<?php echo $field['type']; ?>" style="width:100%"><?php if ( wip_postmeta( $field['id']) != "") { echo stripslashes(wip_postmeta( $field['id'])); } ?></textarea>
+						<textarea name="<?php echo $field['id']; ?>" id="<?php echo $field['id']; ?>" type="<?php echo $field['type']; ?>" style="width:100%"><?php if ( alhenalite_postmeta( $field['id']) != "") { echo stripslashes(alhenalite_postmeta( $field['id'])); } ?></textarea>
 						</div>
 						<div class="clear"></div>
 					
@@ -217,7 +217,7 @@
 	
 		}
 		
-		public function wip_metaboxes_save() {
+		public function alhenalite_metaboxes_save() {
 		
 				global $post_id, $post;
 				

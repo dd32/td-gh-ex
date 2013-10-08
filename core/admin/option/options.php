@@ -3,7 +3,6 @@
 /**
  * Wp in Progress
  * 
- * @package Wordpress
  * @author WPinProgress
  *
  * This source file is subject to the GNU GENERAL PUBLIC LICENSE (GPL 3.0)
@@ -18,7 +17,7 @@ $panel = array (
 
 array( "name" => "Navigation",  
        "type" => "navigation",  
-       "item" => array( "General" => __( "General","wip") , "Fonts" => __( "Fonts","wip") , "Colors" => __( "Colors","wip") , "Backgrounds" => __( "Backgrounds","wip")),   
+       "item" => array( "General" => __( "General","wip") , "Fonts" => __( "Fonts","wip") , "Colors" => __( "Colors","wip") ),   
        "start" => "<ul>", 
        "end" => "</ul>"),  
 	   
@@ -80,8 +79,9 @@ array( "type" => "begintab",
 	       "id" => $shortname."_home",
 	       "type" => "select",
 	       "options" => array(
-		   "home-default" => __( "Full Width","wip"),
-	   	   "home-blog" => __( "Blog Sidebar","wip"),
+		   "full" => __( "Full Width","wip"),
+	   	   "left-sidebar" => __( "Left Sidebar","wip"),
+	   	   "right-sidebar" => __( "Right Sidebar","wip"),
 		   ),
 	       "std" => ""),
 	
@@ -103,13 +103,6 @@ array( "type" => "begintab",
 	       "type" => "on-off",
 	       "std" => "off"),
 	
-	array( "name" => __( "Social Buttons","wip"),
-	       "desc" => __( "You want to view the social buttons after articles?","wip"),
-	       "class" => "hidden",
-	       "id" => $shortname."_view_social_buttons",
-	       "type" => "on-off",
-	       "std" => "off"),
-		   
 	array( "name" => __( "Custom css","wip"),
 	       "desc" => __( "Insert your custom css code","wip"),
 	       "id" => $shortname."_custom_css_code",
@@ -502,219 +495,6 @@ array( "type" => "begintab",
 array( "type" => "endtab"),
 	   
 /* =================== END COLORS OPTION TAB =================== */
-
-/* =================== BEGIN BACKGROUNDS TAB =================== */
-
-array( "type" => "begintab",
-	   "tab" => "Backgrounds",
-	   "element" =>
-	   
-
-	array( "type" => "form",
-	       "name" => "Backgrounds"),
-
-/* START BACKGROUNDS */ 
-
-	array( "type" => "start",
-	       "val" => "Body Background",
-	       "name" => __( "Body Background","wip")),
-
-	array( "name" => __( "Color","wip"),
-	       "desc" => __( "Select a color for body background.","wip"),
-	       "id" => $shortname."_body_background_color",
-	       "type" => "text",
-	       "std" => ""),
-
-	array( "name" => __( "Default image background","wip"),
-	       "desc" => __( "Select a image for body background.","wip"),
-	       "id" => $shortname."_body_background",
-	       "type" => "background",
-	       "options" => $backgrounds,
-	       "std" => "/images/background/patterns/weave.png"),
-
-	array( "name" => __( "Repeat","wip"),
-	       "desc" => __( "Repeat","wip"),
-	       "id" => $shortname."_body_background_repeat",
-	       "type" => "select",
-	       "options" => array(
-	   	   		"" => "None",
-	   	   		"repeat" => __( "Repeat","wip"),
-				"no-repeat" => __( "No repeat","wip"),
-	   			"repeat-x" => __( "Repeat orizzontal","wip"),
-				"repeat-y" => __( "Repeat vertical","wip"),
-		   ),
-	       "std" => ""),
-
-	array( "name" => __( "Background Position","wip"),
-	       "desc" => __( "Background Position","wip"),
-	       "id" => $shortname."_body_background_position",
-	       "type" => "select",
-	       "options" => array(
-	   			"" => "None",
-	   			"top left" => "top left",
-				"top center" => "top center",
-	   			"top right" => "top right",
-				"center" => "center",
-	   			"bottom left" => "bottom left",
-				"bottom center" => "bottom center",
-				"bottom right" => "bottom right",
-		    ),
-	       "std" => ""),
-
-	array( "name" => __( "Background Attachment","wip"),
-	       "desc" => __( "Background Attachment","wip"),
-	       "id" => $shortname."_body_background_attachment",
-	       "type" => "select",
-	       "options" => array(
-	   			"normal" => "normal",
-				"fixed" => "fixed",
-		    ),
-	       "std" => ""),
-	   
-	array( "type" => "save-button",
-	       "class" => "Body Background",
-	       "value" => "Save"),
-
-	array( "type" => "end"),
-
-/* END BACKGROUNDS */ 
-
-/* START HEADER BACKGROUNDS */ 
-
-	array( "type" => "start",
-	       "val" => "Header Backgrounds",
-	       "name" => __( "Header Backgrounds","wip")),
-
-	array( "name" => __( "Color","wip"),
-	       "desc" => __( "Select a color for header background.","wip"),
-	       "id" => $shortname."_header_background_color",
-	       "type" => "text",
-	       "std" => ""),
-
-	array( "name" => __( "Default image background","wip"),
-	       "desc" => __( "Select a image for header background.","wip"),
-	       "id" => $shortname."_header_background",
-	       "type" => "background",
-	       "options" => $backgrounds,
-	       "std" => "/images/background/patterns/weave.png"),
-
-	array( "name" => __( "Repeat","wip"),
-	       "desc" => __( "Repeat","wip"),
-	       "id" => $shortname."_header_background_repeat",
-	       "type" => "select",
-	       "options" => array(
-	   	   		"" => "None",
-	   	   		"repeat" => __( "Repeat","wip"),
-				"no-repeat" => __( "No repeat","wip"),
-	   			"repeat-x" => __( "Repeat orizzontal","wip"),
-				"repeat-y" => __( "Repeat vertical","wip"),
-		   ),
-	       "std" => ""),
-
-	array( "name" => __( "Background Position","wip"),
-	       "desc" => __( "Background Position","wip"),
-	       "id" => $shortname."_header_background_position",
-	       "type" => "select",
-	       "options" => array(
-	   			"" => "None",
-	   			"top left" => "top left",
-				"top center" => "top center",
-	   			"top right" => "top right",
-				"center" => "center",
-	   			"bottom left" => "bottom left",
-				"bottom center" => "bottom center",
-				"bottom right" => "bottom right",
-		    ),
-	       "std" => ""),
-
-	array( "name" => __( "Background Attachment","wip"),
-	       "desc" => __( "Background Attachment","wip"),
-	       "id" => $shortname."_header_background_attachment",
-	       "type" => "select",
-	       "options" => array(
-	   			"normal" => "normal",
-				"fixed" => "fixed",
-		    ),
-	       "std" => ""),
-	   
-	array( "type" => "save-button",
-	       "class" => "Body Background",
-	       "value" => "Save"),
-
-	array( "type" => "end"),
-
-/* END HEADER BACKGROUNDS */ 
-
-/* START FOOTER BACKGROUNDS */ 
-
-	array( "type" => "start",
-	       "val" => "Footer Background",
-	       "name" => __( "Footer Background","wip")),
-
-	array( "name" => __( "Color","wip"),
-	       "desc" => __( "Select a color for footer background.","wip"),
-	       "id" => $shortname."_footer_background_color",
-	       "type" => "text",
-	       "std" => ""),
-	   
-	array( "name" => __( "Default image background","wip"),
-	       "desc" => __( "Select a image for footer background.","wip"),
-	       "id" => $shortname."_footer_background",
-	       "type" => "background",
-	       "options" => $backgrounds,
-	       "std" => ""),
-	   
-	array( "name" => __( "Repeat","wip"),
-	       "desc" => __( "Repeat","wip"),
-	       "id" => $shortname."_footer_background_repeat",
-	       "type" => "select",
-	       "options" => array(
-	   	   		"repeat" => __( "Repeat","wip"),
-				"no-repeat" => __( "No repeat","wip"),
-	   			"repeat-x" => __( "Repeat orizzontal","wip"),
-				"repeat-y" => __( "Repeat vertical","wip"),
-		    ),
-	       "std" => ""),
-	   
-	array( "name" => __( "Background Position","wip"),
-	       "desc" => __( "Background Position","wip"),
-	       "id" => $shortname."_footer_background_position",
-	       "type" => "select",
-	       "options" => array(
-	   			"" => "None",
-	   			"top left" => "top left",
-				"top center" => "top center",
-	   			"top right" => "top right",
-				"center" => "center",
-	   			"bottom left" => "bottom left",
-				"bottom center" => "bottom center",
-				"bottom right" => "bottom right",
-		    ),
-	       "std" => ""),
-		   
-	array( "name" => __( "Background Attachment","wip"),
-	       "desc" => __( "Background Attachment","wip"),
-	       "id" => $shortname."_footer_background_attachment",
-	       "type" => "select",
-	       "options" => array(
-	   			"normal" => "normal",
-				"fixed" => "fixed",
-		    ),
-	       "std" => ""),
-	   
-	array( "type" => "save-button",
-	       "value" => "Save",
-	       "class" => "Footer Background"),
-
-	array( "type" => "end"),
-
-/* END PAGE BACKGROUNDS */ 
-
-),
-
-array( "type" => "endtab"),
-	   
-/* END PAGE BACKGROUNDS */ 
 	   
 /* =================== END BACKGROUNDS TAB =================== */
 
@@ -725,6 +505,6 @@ array( "type" => "endpanel"),
 
 require_once get_template_directory() . '/core/admin/panel.php'; 
 
-wip_optionpanel( $panel ); 
+alhenalite_optionpanel( $panel ); 
 
 ?>

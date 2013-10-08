@@ -4,7 +4,7 @@ Theme Name: Alhena Lite
 Description: Alhena is a responsive clean and corporate WordPress Theme. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10 and uses the most modern technologies like HTML5 and CSS3.
 Author: Theme in Progress.
 Author URI: http://themeinprogress.com
-Version: 1.0.1
+Version: 1.0.2
 Tags: gray, light, black, orange, blue, white, two-columns, right-sidebar, left-sidebar, custom-background, custom-menu, threaded-comments, full-width-template, theme-options 
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -17,7 +17,8 @@ html {
 	min-height:101%;
 }
 body.custombody { 
-	background:url(images/background/patterns/pattern1.jpg) repeat #f3f3f3 ;
+	background-image:url(images/background/patterns/pattern1.jpg) repeat;
+	background-color:#f3f3f3;
 }
 
 /* ====================== START TYPOGRAPHY ====================== */
@@ -44,12 +45,14 @@ blockquote {
 	color:#545252;
 } 
 
-p,
+p { 
+	margin: 0 !important;
+} 
+
 dl,
 ul,
 ol { 
-	margin: 0 !important;
-	list-style:none !important;
+	margin: 0 0 0 20px !important;
 } 
 
 body.dark #top-box p, 
@@ -136,6 +139,13 @@ select {
 code {
 	display:block;
 	white-space:normal !important;
+}
+
+iframe, 
+embed, 
+object, 
+video {
+	max-width:100%;
 }
 
 /* ====================== END TYPOGRAPHY ====================== */
@@ -253,13 +263,13 @@ form {
 	text-align:center;
 	margin:0 0 50px 0;
 	padding:0;
-	background:#333;
+	background-color: #ffffff;
 	height:90px;
 }
 
 #footer { 
 	position:relative; 
-	background:#333;
+	background-color: #ffffff;
 	box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
 	-moz-box-shadow: 0 1px 2px rgba(34,25,25,0.4);
 	-webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
@@ -563,11 +573,16 @@ nav#mainmenu ul ul li.current-menu-ancestor > a {
 
 nav#mainmenu ul ul li ul { 
 	top:-1px; 
-	left:180px; 
-	border-top:solid 1px #c4c4c4;
+	left:170px; 
+}
+
+nav#mainmenu ul ul li ul:before {
+	display:none;
 }
 
 /* END SUBMENU */
+
+.tinynav { display: none }
 
 /* ====================== END NAV ====================== */
 
@@ -720,6 +735,7 @@ nav#mainmenu ul ul li ul {
 	font-style: normal;
 	position:relative;
 	color:#616161;
+	line-height: 1.4em;
 }
 .pin-article .title h1 a {
 	color:#616161;
@@ -755,12 +771,27 @@ nav#mainmenu ul ul li ul {
 	text-align:center;
 }
 
+.pin-article table {
+	border: solid 1px #ddd;
+	text-align:center
+}
+
+.pin-article th {
+	border-right: solid 1px #ddd;
+}
+
+.pin-article td {
+	border-top: solid 1px #ddd;
+	border-right: solid 1px #ddd;
+}
+
+
 /* START COMMENT   */
 
 .commentlist { 
 	list-style:none;
 	line-height:1px; 
-	margin:0;
+	margin:0 !important;
 }
 
 .commentlist ul { 
@@ -1548,6 +1579,20 @@ a.email  {
 
 /* PAGINATION */
 
+.post-pagination {
+	margin:45px 0 0 0;
+}
+
+.post-pagination a[rel="prev"] {
+	float:left;
+	text-align:left;
+}
+
+.post-pagination a[rel="next"] {
+	float:right;
+	text-align:right;
+}
+
 .wp-pagenavi { 
 	text-align: center; 
 	position:relative;
@@ -1627,14 +1672,20 @@ p.form-submit, .button { margin-bottom:10px !important; }
 }
 
 nav#mainmenu {
+	height:inherit;
+	margin-bottom:25px;
+}
+
+nav#mainmenu ul.menu {
 	visibility:hidden;
 	display:none;
 }
 
-.select-menu {
-	display: inherit;
-	visibility:inherit;
-	width: 90%;
+.tinynav {
+	display: block;
+	visibility:visible;
+	width: 90% !important;
+	margin:auto;
 	height: auto;
 	padding: 8px 10px;
 	background: #fafafa;

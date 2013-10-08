@@ -70,11 +70,11 @@ Credits
 
 --- Licensed under MIT License
 
-- Mobile Menu:
+- Tinynav:
 
--- By Mambows - https://github.com/mambows/mobilemenu
+-- By Viljamis - http://tinynav.viljamis.com
 
---- Licensed - Not license
+--- Licensed under MIT License
 
 - Pretty Photo:
 

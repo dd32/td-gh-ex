@@ -3,7 +3,6 @@
 /**
  * Wp in Progress
  * 
- * @package Wordpress
  * @author WPinProgress
  *
  * This source file is subject to the GNU GENERAL PUBLIC LICENSE (GPL 3.0)

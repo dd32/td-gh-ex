@@ -1,6 +1,6 @@
 <?php 
 
-if ( have_comments() ) : 
+if  ( comments_open() && ( have_comments()) ) : 
 
 	echo comments_number( '<h3 class="comments">'.__( "No comments","wip").'</h3>', '<h3 class="comments">1 '.__( "comment","wip").'</h3>', '<h3 class="comments">% '.__( "comments","wip").'</h3>' ); 
 	
@@ -8,14 +8,14 @@ if ( have_comments() ) :
 
 <section id="comments">
 	<ul class="commentlist">
-		<?php wp_list_comments('type=comment&callback=wip_comment'); ?>
+		<?php wp_list_comments('type=comment&callback=alhenalite_comment'); ?>
 	</ul>
 </section>
 
 <?php endif; ?>
 
 <?php 
-function wip_comment ($comment, $args, $depth) {
+function alhenalite_comment ($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
    <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
  

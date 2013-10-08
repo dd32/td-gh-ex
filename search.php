@@ -21,7 +21,7 @@
 
                 <div class="pin-article span12">
         
-                    <?php do_action('wip_postformat'); ?>
+                    <?php do_action('alhenalite_postformat'); ?>
             
                     <div style="clear:both"></div>
                 

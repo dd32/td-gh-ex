@@ -3,14 +3,13 @@
 /**
  * Wp in Progress
  * 
- * @package Wordpress
  * @author WPinProgress
  *
  * This source file is subject to the GNU GENERAL PUBLIC LICENSE (GPL 3.0)
  * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-$wip_new_metaboxes = new wip_metaboxes ('page', array (
+$wip_new_metaboxes = new alhenalite_metaboxes ('page', array (
 
 array( "name" => "Navigation",  
        "type" => "navigation",  
@@ -73,21 +72,21 @@ array( "type" => "begintab",
 			   "desc" => __( "Select top sidebar","wip"),
 			   "id" => "wip_top_sidebar",
 			   "type" => "select",
-			   "options" => wip_sidebar_list('top'),
+			   "options" => alhenalite_sidebar_list('top'),
 			),
 
 		array( "name" => __( "Sidebar","wip"),
 			   "desc" => __( "Select side sidebar","wip"),
 			   "id" => "wip_sidebar",
 			   "type" => "select",
-			   "options" => wip_sidebar_list('side'),
+			   "options" => alhenalite_sidebar_list('side'),
 			),
 			
 		array( "name" => __( "Footer sidebar","wip"),
 			   "desc" => __( "Select footer sidebar","wip"),
 			   "id" => "wip_footer_sidebar",
 			   "type" => "select",
-			   "options" => wip_sidebar_list('footer'),
+			   "options" => alhenalite_sidebar_list('footer'),
 			),
 
 ),

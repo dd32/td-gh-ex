@@ -3,14 +3,13 @@
 /**
  * Wp in Progress
  * 
- * @package Wordpress
  * @author WPinProgress
  *
  * This source file is subject to the GNU GENERAL PUBLIC LICENSE (GPL 3.0)
  * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-function wip_post_formats_function() {
+function alhenalite_post_formats_function() {
 	
 	if ( get_post_type( get_the_ID()) == "page" ) {
 		$postformats = "page";
@@ -28,6 +27,6 @@ function wip_post_formats_function() {
 
 }
 
-add_action( 'wip_postformat','wip_post_formats_function', 10, 2 );
+add_action( 'alhenalite_postformat','alhenalite_post_formats_function', 10, 2 );
 
 ?>

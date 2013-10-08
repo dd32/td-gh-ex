@@ -23,9 +23,9 @@
 <div class="container main-content blog">
 	<div class="row" id="blog" >
     
-	<?php if ( ( wip_template('sidebar') == "left-sidebar" ) || ( wip_template('sidebar') == "right-sidebar" ) ) : ?>
+	<?php if ( ( alhenalite_template('sidebar') == "left-sidebar" ) || ( alhenalite_template('sidebar') == "right-sidebar" ) ) : ?>
         
-        <div class="<?php echo wip_template('span') .' '. wip_template('sidebar'); ?>"> 
+        <div class="<?php echo alhenalite_template('span') .' '. alhenalite_template('sidebar'); ?>"> 
         <div class="row"> 
         
     <?php endif; ?>
@@ -33,9 +33,9 @@
 		
 		<?php while ( have_posts() ) : the_post(); ?>
 
-        <div <?php post_class(array('pin-article', wip_template('span') )); ?> >
+        <div <?php post_class(array('pin-article', alhenalite_template('span') )); ?> >
     
-				<?php do_action('wip_postformat'); ?>
+				<?php do_action('alhenalite_postformat'); ?>
         
                 <div style="clear:both"></div>
             
@@ -63,22 +63,58 @@
 	
 		<?php endif; ?>
         
-	<?php if ( ( wip_template('sidebar') == "left-sidebar" ) || ( wip_template('sidebar') == "right-sidebar" ) ) : ?>
+	<?php if ( ( alhenalite_template('sidebar') == "left-sidebar" ) || ( alhenalite_template('sidebar') == "right-sidebar" ) ) : ?>
         
         </div>
         </div>
         
     <?php endif; ?>
 
-	<?php if ( ( is_active_sidebar('category_sidebar_area') ) && ( wip_template('span') == "span8" ) ) : ?>
-        
-        <section id="sidebar" class="pin-article span4">
-            <div class="sidebar-box">
-            	<?php dynamic_sidebar('category_sidebar_area') ?>
+	<?php if ( alhenalite_template('span') == "span8" ) :  ?>
+
+    <!-- HOME WIDGET -->
+
+    <section id="sidebar" class="pin-article span4">
+    	<div class="sidebar-box">
+
+			<?php if ( is_active_sidebar('category_sidebar_area') ) { 
+            
+				dynamic_sidebar('category_sidebar_area');
+            
+            } else { 
+                
+                the_widget( 'WP_Widget_Archives','',
+				array('before_widget' => '<div class="widget-box">',
+					  'after_widget'  => '</div>',
+					  'before_title'  => '<header class="title"><div class="line"><h3>',
+					  'after_title'   => '</h3></div></header>'
+				));
+
+                the_widget( 'WP_Widget_Calendar',
+				array("title"=> __('Calendar')),
+				array('before_widget' => '<div class="widget-box">',
+					  'after_widget'  => '</div>',
+					  'before_title'  => '<header class="title"><div class="line"><h3>',
+					  'after_title'   => '</h3></div></header>'
+				));
+
+                the_widget( 'WP_Widget_Categories','',
+				array('before_widget' => '<div class="widget-box">',
+					  'after_widget'  => '</div>',
+					  'before_title'  => '<header class="title"><div class="line"><h3>',
+					  'after_title'   => '</h3></div></header>'
+				));
+            
+             } 
+			 
+			 ?>
+
             </div>
         </section>
-    
-	<?php endif; ?>
+
+	<!--  END HOME WIDGET -->
+
+	<?php endif;?>
            
     </div>
 </div>

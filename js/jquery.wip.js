@@ -1,6 +1,15 @@
+/**
+	Functionality for Alhena Lite theme.
+	Author: ThemeinProgress.
+	Licensed under GNU General Public License v3 or later.
+*/
+
+
 jQuery(document).ready(function(){
 	
-	jQuery('nav#mainmenu').mobileMenu();
+    jQuery('nav#mainmenu ul.menu').tinyNav({
+        active: 'selected',
+    });
 	
 	jQuery('nav#mainmenu ul > li').each(function(){
 			if( jQuery('ul', this).length > 0 )

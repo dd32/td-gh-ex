@@ -4,7 +4,7 @@
 /* START PAGE WIDGET
 /*-----------------------------------------------------------------------------------*/    
     
-class wip_page_widget extends WP_Widget
+class alhenalite_page_widget extends WP_Widget
 {
 	public function __construct() 
     {
@@ -83,11 +83,11 @@ class wip_page_widget extends WP_Widget
                  
 
 	}
-function add_wip_page_widget()
+function add_alhenalite_page_widget()
 {
-	register_widget( 'wip_page_widget' );
+	register_widget( 'alhenalite_page_widget' );
 }
-add_action( 'widgets_init', 'add_wip_page_widget' );
+add_action( 'widgets_init', 'add_alhenalite_page_widget' );
 
 /*-----------------------------------------------------------------------------------*/
 /* END PAGE

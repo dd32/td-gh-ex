@@ -4,7 +4,7 @@
 /* START CATEGORY
 /*-----------------------------------------------------------------------------------*/    
     
-class wip_contact_info_widget extends WP_Widget
+class alhenalite_contact_info_widget extends WP_Widget
 {
 	public function __construct() 
     {
@@ -134,11 +134,11 @@ class wip_contact_info_widget extends WP_Widget
                  
 
 	}
-function add_wip_contact_info_widget()
+function add_alhenalite_contact_info_widget()
 {
-	register_widget( 'wip_contact_info_widget' );
+	register_widget( 'alhenalite_contact_info_widget' );
 }
-add_action( 'widgets_init', 'add_wip_contact_info_widget' );
+add_action( 'widgets_init', 'add_alhenalite_contact_info_widget' );
 
 /*-----------------------------------------------------------------------------------*/
 /* END WIDGET

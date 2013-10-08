@@ -3,16 +3,15 @@
 /**
  * Wp in Progress
  * 
- * @package Wordpress
  * @author WPinProgress
  *
  * This source file is subject to the GNU GENERAL PUBLIC LICENSE (GPL 3.0)
  * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-	function wip_optionpanel( $panel ) { 
+	function alhenalite_optionpanel( $panel ) { 
 	
-	wip_save_options ( $panel );
+	alhenalite_save_options ( $panel );
 	
 	if (!isset($_GET['tab']))  { $_GET['tab'] = "General"; }
 	
@@ -25,12 +24,12 @@
 				<div class="header">
                     <h2 class="maintitle settings"> <?php _e( 'General Settings','wip'); ?> </h2> 
                     <div class="right">
-                        <h2 class="maintitle"> <?php echo wip_theme_data('Name') . " " . wip_theme_data('Version');  ?> </h2>
+                        <h2 class="maintitle"> <?php echo alhenalite_theme_data('Name') . " " . alhenalite_theme_data('Version');  ?> </h2>
                     </div>
                     <div class="clear"></div>
                 </div>
                 
-				<?php wip_message($panel); ?>
+				<?php alhenalite_message($panel); ?>
                 
                 <div id="tabs">
 
@@ -87,7 +86,7 @@
 
 					<?php 
 		
-						if ( ('Save' == wip_request('action'))  && ( $value['val'] == wip_request('element-opened')) ) { 
+						if ( ('Save' == alhenalite_request('action'))  && ( $value['val'] == alhenalite_request('element-opened')) ) { 
 							$class=" inactive"; $style='style="display:block;"'; } else { $class="";  $style=''; 
 						}  
 			
@@ -129,9 +128,9 @@
 		
 							$checked ='';
 		
-							if ( wip_setting($value['id']) != false ) {
+							if ( alhenalite_setting($value['id']) != false ) {
 		
-								foreach (wip_setting($value['id']) as $check ) { 
+								foreach (alhenalite_setting($value['id']) as $check ) { 
 		
 								if ($check == $val )  { $checked ='checked="checked"'; } } 
 		
@@ -154,9 +153,9 @@
 		
 							$checked ='';
 		
-							if ( wip_setting($value['id']) != false ) {
+							if ( alhenalite_setting($value['id']) != false ) {
 		
-								foreach (wip_setting($value['id']) as $check ) { 
+								foreach (alhenalite_setting($value['id']) as $check ) { 
 		
 								if ($check == $page->ID )  { $checked ='checked="checked"'; } } 
 		
@@ -182,7 +181,7 @@
                                 
                                 <span class="separator">X</span> 
                                 
-								<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="text" value="<?php if ( wip_setting($value['id']) != "") { echo stripslashes(wip_setting($value['id'])); } else { echo $value['std']; } ?>" style="width:50px; display:inline-block"/>
+								<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="text" value="<?php if ( alhenalite_setting($value['id']) != "") { echo stripslashes(alhenalite_setting($value['id'])); } else { echo $value['std']; } ?>" style="width:50px; display:inline-block"/>
 								
 								<p> <?php echo $value['desc']; ?> </p>
 			
@@ -196,7 +195,7 @@
 		
 							<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
 							
-							<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php if ( wip_setting($value['id']) != "") { echo stripslashes(wip_setting($value['id'])); } else { echo $value['std']; } ?>" />
+							<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php if ( alhenalite_setting($value['id']) != "") { echo stripslashes(alhenalite_setting($value['id'])); } else { echo $value['std']; } ?>" />
 							
 							<p> <?php echo $value['desc']; ?> </p>
 		
@@ -224,7 +223,7 @@
 		
 							<label for="bl_custom_style"> <?php echo $value['name']; ?> </label>
 							
-							<textarea name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" cols="" rows=""><?php if ( wip_setting($value['id']) != "") { echo stripslashes(wip_setting($value['id'])); } else { echo $value['std']; } ?></textarea>
+							<textarea name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" cols="" rows=""><?php if ( alhenalite_setting($value['id']) != "") { echo stripslashes(alhenalite_setting($value['id'])); } else { echo $value['std']; } ?></textarea>
 		
 							<p><?php echo $value['desc']; ?></p>
 		
@@ -238,11 +237,11 @@
 		
 							<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
 		
-                            <div class="bool-slider <?php if ( wip_setting($value['id']) != "") { echo stripslashes(wip_setting($value['id'])); } else { echo $value['std']; } ?>">
+                            <div class="bool-slider <?php if ( alhenalite_setting($value['id']) != "") { echo stripslashes(alhenalite_setting($value['id'])); } else { echo $value['std']; } ?>">
                                 <div class="inset">
                                     <div class="control"></div>
                                 </div>
-                                <input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" class="on-off" type="hidden" value="<?php if ( wip_setting($value['id']) != "") { echo stripslashes(wip_setting($value['id'])); } else { echo $value['std']; } ?>" />
+                                <input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" class="on-off" type="hidden" value="<?php if ( alhenalite_setting($value['id']) != "") { echo stripslashes(alhenalite_setting($value['id'])); } else { echo $value['std']; } ?>" />
                             </div>  
                             
                             <div class="clear"></div>      
@@ -259,7 +258,7 @@
 		
 							<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
 		
-							<select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>"><?php foreach ($value['options'] as $option) { ?><option<?php if ( wip_setting($value['id']) == get_cat_id($option)) { echo ' selected="selected"'; } elseif ($option == $value['std']) { echo ' selected="selected"'; } ?> value="<?php echo get_cat_id($option); ?>" ><?php echo $option; ?></option><?php } ?></select>
+							<select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>"><?php foreach ($value['options'] as $option) { ?><option<?php if ( alhenalite_setting($value['id']) == get_cat_id($option)) { echo ' selected="selected"'; } elseif ($option == $value['std']) { echo ' selected="selected"'; } ?> value="<?php echo get_cat_id($option); ?>" ><?php echo $option; ?></option><?php } ?></select>
 		 
 							<p><?php echo $value['desc']; ?></p>
 		
@@ -277,7 +276,7 @@
 							
 							<?php foreach ( $value['options'] as $val => $option ) { ?>  
 							
-							<option <?php if (( wip_setting( $value['id'] ) == $val) || ( ( !wip_setting($value['id'])) && ( $value['std'] == $val) )) { echo 'selected="selected"'; } ?> value="<?php echo $val; ?>"><?php echo $option; ?></option><?php } ?>  
+							<option <?php if (( alhenalite_setting( $value['id'] ) == $val) || ( ( !alhenalite_setting($value['id'])) && ( $value['std'] == $val) )) { echo 'selected="selected"'; } ?> value="<?php echo $val; ?>"><?php echo $option; ?></option><?php } ?>  
 							</select>  
 		 
 							<p><?php echo $value['desc']; ?></p>
@@ -301,7 +300,7 @@
 		
 							<?php foreach ($value['options'] as $val => $option ) { ?>  
 								
-								<option <?php if ( ( wip_setting($value['id']) == $val) || ( ( !wip_setting($value['id'])) && ( $value['std'] == $val) )) { echo 'selected="selected"'; } ?> value="<?php echo $val; ?>"><?php echo $option; ?></option>							
+								<option <?php if ( ( alhenalite_setting($value['id']) == $val) || ( ( !alhenalite_setting($value['id'])) && ( $value['std'] == $val) )) { echo 'selected="selected"'; } ?> value="<?php echo $val; ?>"><?php echo $option; ?></option>							
 								
 							<?php } ?>  
 							
