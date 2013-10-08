@@ -1,5 +1,7 @@
+<?php if ( is_active_sidebar( 'right-widget' ) ) : ?>
 <aside class="aside" role="complementary">
 
-  <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Right Widget') ) : endif; ?>
+  <?php dynamic_sidebar( 'right-widget' ); ?>
 
 </aside><!-- .aside -->
+<?php endif; ?>

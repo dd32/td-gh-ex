@@ -1,4 +1,4 @@
-  <article class="article" <?php post_class(); ?> id="post-<?php the_ID(); ?>" itemscope itemtype="http://schema.org/Article">
+  <article <?php post_class('article'); ?> id="post-<?php the_ID(); ?>" itemscope itemtype="http://schema.org/Article">
 
     <header class="post-header">
       <div class="post-date radius-100"><span><a href="<?php the_permalink() ?>"><?php echo get_the_date('d') ?></span><br /><?php echo get_the_date('M') ?><br /><?php echo get_the_date('Y') ?></a></div>

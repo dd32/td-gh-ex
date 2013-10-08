@@ -107,9 +107,7 @@ function adelle_setup() {
   // ==================================================================
   // Custom background
   // ==================================================================
-  if( function_exists('get_custom_header') ) {
-    add_theme_support( 'custom-background', array('default-color' => 'ffffff',) );
-  }
+  add_theme_support( 'custom-background', array('default-color' => 'ffffff',) );
 
   // ==================================================================
   // Visual editor stylesheet
