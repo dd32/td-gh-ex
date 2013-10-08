@@ -17,7 +17,7 @@
 		<header class="entry-header">
 			<?php if( has_post_thumbnail() ): ?>
 				<div class="entry-thumbnail">
-					<a href="<?php the_permalink() ?>"><?php the_post_thumbnail() ?></a>
+					<a href="<?php the_permalink() ?>"><?php the_post_thumbnail( is_active_sidebar('sidebar-1') ? 'post-thumbnail' : 'vantage-thumbnail-no-sidebar' ) ?></a>
 				</div>
 			<?php endif; ?>
 
@@ -28,6 +28,7 @@
 					<?php vantage_posted_on(); ?>
 				</div><!-- .entry-meta -->
 			<?php endif; ?>
+
 		</header><!-- .entry-header -->
 
 		<?php if ( is_search() ) : // Only display Excerpts for Search ?>

@@ -3,11 +3,11 @@ Theme Name: Vantage
 Author: SiteOrigin
 Author URI: http://siteorigin.com/
 Theme URI: http://siteorigin.com/theme/vantage/
-Description: Vantage is a flexible multipurpose theme. It's strength lies in its tight integration with some powerful plugins like Page Builder for responsive page layouts, MetaSlider for big beautiful sliders and WooCommerce to help you sell online. Use it to start a business site, portfolio or online store.
+Description: Vantage is a flexible multipurpose theme. It's strength lies in its tight integration with some powerful plugins like Page Builder for responsive page layouts, MetaSlider for big beautiful sliders and WooCommerce to help you sell online. Vantage is fully responsive and retina ready. Use it to start a business site, portfolio or online store.
 Version: trunk
 License: GNU General Public License 2.0
 License URI: license.txt
-Tags: flexible-width, custom-background, custom-menu, featured-images, theme-options, threaded-comments, translation-ready
+Tags: flexible-width, custom-background, custom-menu, featured-images, theme-options, threaded-comments, translation-ready, black, white, light, one-column, two-columns, full-width-template
 
 spritemapper.sprite_dirs = images/sprites
 spritemapper.output_css = style.sprites.css
@@ -37,10 +37,6 @@ textarea {
 
 a {
 	color: #248cc8;
-
-	&:visited {
-		color: #248cc8;
-	}
 
 	&:hover,
 	&:focus,
@@ -322,7 +318,7 @@ textarea {
 	clear:both;
 }
 
-.site-title a{
+#site-title a{
 	color: inherit;
 }
 
@@ -352,6 +348,17 @@ body {
 		margin-left: auto;
 		margin-right: auto;
 		position: relative;
+	}
+}
+
+@media  (max-width:1080px){
+	.responsive.layout-boxed #page-wrapper{
+		margin: 0;
+		padding: 0;
+	}
+
+	.responsive.layout-boxed #colophon {
+		margin-bottom: 0;
 	}
 }
 
@@ -402,6 +409,11 @@ header#masthead {
 #primary {
 	float: left;
 	width: 71.287%;
+}
+
+body.no-sidebar #primary {
+	float: none;
+	width: auto;
 }
 
 /* Full Width Primary blocks */
@@ -501,6 +513,12 @@ body.responsive {
 		}
 	}
 
+	&.layout-boxed {
+		#page-wrapper {
+			overflow-x: visible;
+		}
+	}
+
 	&.layout-full #page-wrapper{
 		.full-container {
 			max-width: 1080px;
@@ -560,9 +578,8 @@ body.responsive {
 
 			position: absolute;
 			top: 100%;
-			left: 50%;
+			left: 0;
 			z-index: 99999;
-			margin-left: -100px;
 
 			a {
 				width: 200px;
@@ -588,10 +605,12 @@ body.responsive {
 			}
 		}
 
-		li:hover > ul {
-			visibility: visible;
-            opacity:1;
-			pointer-events: auto;
+		li:hover {
+			> ul {
+				visibility: visible !important;
+				opacity:1 !important;
+				pointer-events: auto !important;
+			}
 		}
 	}
 
@@ -616,7 +635,29 @@ body.responsive {
 		line-height: 0.5em;
 		color: #CCCCCC;
 	}
+
 }
+
+
+/* Handle the navigation slightly differently on mobile devices */
+
+body.mobile-device {
+
+	.main-navigation {
+		ul {
+			ul {
+				display: none;
+			}
+		}
+
+		li:hover ul {
+			display: block;
+		}
+	}
+
+}
+
+
 
 .mobile-nav-frame {
 	[class^="icon-"] {
@@ -629,16 +670,47 @@ body.responsive {
 	position: relative;
 
 	#search-icon-icon {
+		.box-sizing(border-box);
+		display: block;
 		cursor: pointer;
-		height: 59px;
+		background-color: #303134;
 		width: 59px;
-		background: #303134 url(./images/sprites/search.png) no-repeat;
-		border-left: 1px solid #2e2f31;
-		.transition(0.25s);
+		height: 59px;
+
+		&, .icon-search {
+			.transition(0.4s);
+		}
+
+		padding: 22px 21px;
+
+		.icon {
+			display: inline-block;
+			width: 17px;
+			height: 17px;
+
+			background: url(./images/sprites/search-icon.png) no-repeat;
+		}
 
 		&:hover {
-			background: #00bcff url(./images/sprites/search-white.png) no-repeat;
+			.icon {
+				background: url(./images/sprites/search-icon-white.png) no-repeat;
+			}
+			background-color: #00bcff;
 		}
+
+		@media screen and (-webkit-min-device-pixel-ratio: 2) {
+			.icon {
+				background: url(./images/retina/search-icon.png) no-repeat;
+				background-size: 17px 17px;
+			}
+
+			&:hover .icon{
+				background: url(./images/retina/search-icon-white.png) no-repeat;
+				background-size: 17px 17px;
+			}
+
+		}
+
 	}
 
 	.searchform {
@@ -675,18 +747,16 @@ article.sticky{
 	/* Style a sticky post */
 }
 
-.page-header {
-	.page-title {
-		color: #3b3b3b;
-		margin-bottom: 20px;
-		font-size: 20px;
-		font-weight: 500;
+#page-title {
+	color: #3b3b3b;
+	margin-bottom: 20px;
+	font-size: 20px;
+	font-weight: 500;
 
-		a {
-			color: inherit;
-			text-decoration: none;
-			font-weight: bold;
-		}
+	a {
+		color: inherit;
+		text-decoration: none;
+		font-weight: bold;
 	}
 }
 
@@ -744,7 +814,6 @@ article.page{
 
 		h1.entry-title {
 			color: #3b3b3b;
-			margin-bottom: 20px;
 			font-size: 20px;
 			font-weight: 500;
 
@@ -758,8 +827,6 @@ article.page{
 		.entry-meta {
 			color: #8f8f8f;
 			font-size: 12px;
-			margin-bottom: 20px;
-			margin-top: -20px;
 
 			a {
 				font-weight: 500;
@@ -767,6 +834,8 @@ article.page{
 				text-decoration: none;
 			}
 		}
+
+		margin-bottom: 20px;
 	}
 
 	margin-bottom: 40px;
@@ -798,7 +867,7 @@ article.page{
 	}
 
 	.share-buttons {
-		margin: 10px 0 0 0;
+		margin: 20px 0 0 0;
 		padding: 15px 25px;
 		background: #F5F5F5;
 		border: 1px solid #E0E0E0;
@@ -943,7 +1012,7 @@ article.page{
 
 		overflow-x: auto;
 
-		p:fist-child {
+		p:first-child {
 			margin-top: 0;
 		}
 	}
@@ -1026,7 +1095,6 @@ article.page{
 
 	.wp-caption p.wp-caption-text{
 		margin: 0;
-		font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 	}
 
 	.alignleft {
@@ -1130,7 +1198,7 @@ article.page{
 /* =Navigation
 ----------------------------------------------- */
 
-.pagination {
+.pagination, .entry-content .pagination {
 	position:relative;
 	font-size:11px;
 	line-height:13px;
@@ -1177,6 +1245,12 @@ article.page{
 
 .site-content {
 
+	overflow-x: hidden;
+
+	.nav-previous, .nav-next {
+		white-space: nowrap;
+	}
+
 	.nav-previous {
 		float: left;
 		width: 50%;
@@ -1188,6 +1262,19 @@ article.page{
 		width: 50%;
 	}
 
+}
+
+@media (max-width:480px) {
+	body.responsive {
+		.site-content{
+			.nav-previous, .nav-next {
+				float: none;
+				width: 100%;
+				margin-bottom: 20px;
+				text-align: center;
+			}
+		}
+	}
 }
 
 /* =Comments
@@ -1342,6 +1429,23 @@ article.page{
 	}
 }
 
+@media (max-width:480px) {
+	body.responsive  #commentform{
+		label{
+			float: none;
+			width: 100%;
+			margin-bottom: 3px;
+		}
+
+		input, textarea {
+			float:none;
+			width: 100%;
+		}
+	}
+}
+
+
+
 /* =Sidebars and Asides
 ----------------------------------------------- */
 
@@ -1350,7 +1454,7 @@ article.page{
 	background: #2f3033;
 	padding: 30px;
 
-	#theme-attribution {
+	#theme-attribution, #site-info {
 		text-align: center;
 		margin-top: 25px;
 		color: #AAAAAA;
@@ -1362,6 +1466,11 @@ article.page{
 			font-weight: 500;
 		}
 	}
+}
+
+body.layout-full{
+	/* Use the same color as the footer */
+	background-color: #2f3033;
 }
 
 .layout-full {
@@ -1380,6 +1489,13 @@ article.page{
 	width: 48px;
 	height: 48px;
 	background: url(./images/sprites/to-top.png);
+
+	@media screen and (-webkit-min-device-pixel-ratio: 2) {
+		& {
+			background-image: url(./images/retina/to-top.png);
+			background-size: 48px 48px;
+		}
+	}
 
 	-ms-transform: scale(0, 0);
 	-webkit-transform: scale(0, 0);

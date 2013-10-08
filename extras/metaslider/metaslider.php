@@ -73,6 +73,8 @@ function siteorigin_metaslider_get_options($has_demo = true){
 	if(class_exists('MetaSliderPlugin')){
 		$sliders = get_posts(array(
 			'post_type' => 'ml-slider',
+			'numberposts' => 200,
+
 		));
 
 		foreach($sliders as $slider) {
@@ -95,7 +97,7 @@ function siteorigin_metaslider_install_link(){
 function siteorigin_metaslider_affiliate(){
 	return 'http://sorig.in/metaslider';
 }
-add_filter('metaslider_hoplink', 'siteorigin_panels_metaslider_hoplink');
+add_filter('metaslider_hoplink', 'siteorigin_metaslider_affiliate');
 
 /**
  * Create the HTML for a slider layer.

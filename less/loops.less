@@ -22,11 +22,23 @@
 	}
 
 	a.next {
-		background-image: url(images/sprites/carousel-right.png);
+		background: url(images/sprites/carousel-right.png);
 	}
 
 	a.previous {
-		background-image: url(images/sprites/carousel-left.png);
+		background: url(images/sprites/carousel-left.png);
+	}
+
+	@media screen and (-webkit-min-device-pixel-ratio: 2) {
+		a.next {
+			background: url(images/retina/carousel-right.png);
+			background-size: 17px 17px;
+		}
+
+		a.previous {
+			background: url(images/retina/carousel-left.png);
+			background-size: 17px 17px;
+		}
 	}
 }
 
@@ -50,6 +62,8 @@
 			display: block;
 			float: left;
 			margin-right: 15px;
+			width: 242px;
+			overflow-x: hidden;
 
 			&:last-child {
 				margin-right: 0;
@@ -121,7 +135,7 @@
 
 .vantage-grid-loop {
 	.clearfix();
-	margin: 25px -15px 0 -15px;
+	margin: 0 -15px 0 -15px;
 
 	article {
 		float: left;
@@ -130,7 +144,7 @@
 		margin-bottom: 30px;
 		.box-sizing(border-box);
 
-		.thumbnail {
+		.grid-thumbnail {
 			display: block;
 			padding: 5px;
 			border: 1px solid #c2c5ca;
@@ -144,6 +158,8 @@
 			}
 
 			img {
+				width: 100%;
+				height: auto;
 				display: block;
 				.rounded(0);
 				.box-shadow(~"none");
@@ -179,5 +195,38 @@
 
 	.clear {
 		clear:both;
+	}
+}
+
+.widget_siteorigin-panels-postloop .pagination {
+	margin-top: 20px;
+}
+
+@media (max-width:640px) {
+	body.responsive .vantage-grid-loop article {
+		width: 50%;
+	}
+}
+
+@media (max-width:480px) {
+	body.responsive .vantage-grid-loop article {
+		float: none;
+		width: 100%;
+	}
+}
+
+.vantage-circleicon-loop {
+	.clearfix();
+	margin: 0 -20px;
+
+	.widget_circleicon-widget {
+		width: 33.333%;
+		float: left;
+		clear: none;
+
+		.circle-icon-box {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
 	}
 }

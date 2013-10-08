@@ -9,7 +9,9 @@
 		<?php settings_fields( 'theme_settings' ); ?>
 		<?php do_settings_sections( 'theme_settings' ) ?>
 
-		<p class="submit"><input name="Submit" type="submit" class="button-primary" value="<?php esc_attr_e('Save Settings', 'vantage'); ?>" /></p>
+		<p class="submit">
+			<input name="Submit" type="submit" class="button-primary" value="<?php esc_attr_e('Save Settings', 'vantage'); ?>" />
+		</p>
 		<input type="hidden" id="current-tab-field" name="theme_settings_current_tab" value="<?php echo intval(get_theme_mod('_theme_settings_current_tab', 0)) ?>" />
 	</form>
 </div> 

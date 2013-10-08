@@ -151,3 +151,15 @@
 	color: #BC0B0B;
 }
 
+#siteorigin-theme-feature-suggestions {
+	color: #999999;
+	display: inline-block;
+	font-size: 0.85em;
+	margin-left: 10px;
+	text-decoration: none;
+}
+
+#siteorigin-theme-feature-suggestions:hover {
+	color: #666666;
+}
+

@@ -21,7 +21,8 @@ class SiteOrigin_Panels_Widgets_PostLoop extends WP_Widget{
 	 * @param array $instance
 	 */
 	function widget( $args, $instance ) {
-		if(empty($instance['template'])) return;
+		if( empty($instance['template']) ) return;
+		if( is_admin() ) return;
 
 		$template = $instance['template'];
 		$query_args = $instance;
@@ -47,12 +48,15 @@ class SiteOrigin_Panels_Widgets_PostLoop extends WP_Widget{
 				break;
 		}
 
-		// Exclude the current post to prevent possible infinite loop
-		if(!empty($query_args['post__not_in'])){
-			$query_args['post__not_in'][] = get_the_ID();
-		}
-		else {
-			$query_args['post__not_in'] = array( get_the_ID() );
+		global $post;
+		if(!empty($post) && !siteorigin_panels_lite_is_home()){
+			// Exclude the current post to prevent possible infinite loop
+			if(!empty($query_args['post__not_in'])){
+				$query_args['post__not_in'][] = $post->ID;
+			}
+			else {
+				$query_args['post__not_in'] = array( $post->ID );
+			}
 		}
 
 		// Create the query
@@ -332,9 +336,9 @@ class SiteOrigin_Panels_Widgets_EmbeddedVideo extends WP_Widget {
 /**
  * Register the widgets.
  */
-function siteorigin_panels_widgets_init(){
+function siteorigin_panels_lite_widgets_init(){
 	register_widget('SiteOrigin_Panels_Widgets_PostLoop');
 	register_widget('SiteOrigin_Panels_Widgets_Image');
 	register_widget('SiteOrigin_Panels_Widgets_EmbeddedVideo');
 }
-add_action('widgets_init', 'siteorigin_panels_widgets_init');
+add_action('widgets_init', 'siteorigin_panels_lite_widgets_init');
