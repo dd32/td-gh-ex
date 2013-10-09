@@ -422,7 +422,8 @@ global $of_options;
 $of_options = array();
 
             $of_options[] = array( 	"name" 		=> __("Main Settings", 'virtue'),
-						"type" 		=> "heading"
+						"type" 		=> "heading",
+                                    "desc"            => "Main Settings"
 				);
 					
             $of_options[] = array( 	"name" 		=> "Hello there!",
@@ -597,7 +598,8 @@ $of_options = array();
                                      "std"             => "",
                                      "type"            => "media");
             $of_options[] = array(  "name"            => __("Topbar Settings", 'virtue'),
-                                    "type"            => "heading"
+                                    "type"            => "heading",
+                                    "desc"            => "Topbar Settings"
                         );
 		$of_options[] = array(    "name"            => __("Use Topbar?", 'virtue'),
                                     "desc"            => __("Choose to show or hide topbar", 'virtue'),
@@ -636,7 +638,8 @@ $of_options = array();
                                     "type"            => "switch"
                         ); 
             $of_options[] = array( 	"name" 		=> __("Slider Settings", 'virtue'),
-						"type" 		=> "heading"
+						"type" 		=> "heading",
+                                    "desc"            => "Slider Settings"
 				);
             $of_options[] = array( "name"             => __("Choose a Home Image Slider", 'virtue'),
       					"desc"            => __("If you don't want an image slider on your home page choose none.", 'virtue'),
@@ -722,7 +725,8 @@ $of_options = array();
 						"type"            => "textarea"); 
 
             $of_options[] = array( 	"name" 		=> __("Mobile Slider", 'virtue'),
-						"type" 		=> "heading"
+						"type" 		=> "heading",
+                                    "desc"            => "Mobile Slider"
 				);
             $of_options[] = array(   "name"            => "Mobile Body",
 					       "desc"            => "",
@@ -814,7 +818,10 @@ $of_options = array();
                                     );
 
             $of_options[] = array( "name"             => __("Home Layout", 'virtue'),
-					     "type"             => "heading");
+					     "type"             => "heading",
+                                    "desc"            => "Home Layout"
+                                    );
+
 
             $of_options[] = array(  "name"            => __("Display the sidebar on the Home Page?", 'virtue'),
                                     "desc"            => __("This determines if there is a sidebar on the home page.", 'virtue'),
@@ -925,7 +932,8 @@ $of_options = array();
 
 
             $of_options[] = array(  "name"            => __("Shop Settings", 'virtue'),
-					      "type"            => "heading"
+					      "type"            => "heading",
+                                    "desc"            => "Shop Settings"
                                     );
             $of_options[] = array(  "name"             => "shopsettings",
                                     "desc"             => "",
@@ -986,7 +994,9 @@ $of_options = array();
                                     "type"          => "switch"
                                 ); 
             $of_options[] = array( "name"        => __("Basic Styling", 'virtue'),
-					     "type"        => "heading");
+					     "type"        => "heading",
+                                    "desc"       => "Basic Styling"
+                                   );
 
             $of_options[] = array(  "name"             => __("Theme Skin Stylesheet", 'virtue'),
 					      "desc"             => __("Note* changes made in options panel will override this stylesheet. Example: Colors set in typography.", 'virtue'),
@@ -1021,7 +1031,9 @@ $of_options = array();
                                     ); 
 
 	     $of_options[] = array( "name" => __("Advanced Styling", 'virtue'),
-					"type" => "heading");
+					       "type" => "heading",
+                                    "desc"  => "Advanced Styling"
+                                    );
 					
 		                         $of_options[] = array( "name"             => "maincontentback",
 					                              "desc"             => "",
@@ -1438,7 +1450,8 @@ $of_options = array();
 										); 
 
             $of_options[] = array(  "name"            => __("Typography", 'virtue'),
-                                    "type"            => "heading"
+                                    "type"            => "heading",
+                                    "desc"            => "Typography"
                                     );
             $of_options[] = array(  "name"             => "Header Font Options",
       					"desc"             => "",
@@ -1584,7 +1597,8 @@ $of_options = array();
 				);  
 
       $of_options[] = array( "name" => __("Misc Settings", 'virtue'),
-					"type" => "heading"
+					"type" => "heading",
+                              "desc"  => "Misc Settings"
                               );
       $of_options[] = array(  "name"            => __("All Projects Portfolio Page", 'virtue'),
                               "desc"            => __("This sets the link in every single portfolio page. *note: You still have to set the page template to portfolio.", 'virtue'),
@@ -1638,7 +1652,8 @@ $of_options = array();
                               );
 
       $of_options[] = array( "name"              => __("Advanced Settings", 'virtue'),
-					"type"             => "heading"
+					"type"             => "heading",
+                              "desc"            => "Advanced Settings"
                               ); 
       $of_options[] = array(  "name"             => "CSS Info",
 					"desc"             => "",
@@ -1655,7 +1670,8 @@ $of_options = array();
 				
 // Backup Options
 $of_options[] = array( 	"name" 		=> __("Backup Options", 'virtue'),
-				"type" 		=> "heading"
+				"type" 		=> "heading",
+                        "desc"            => "Backup Options"
 				);
 				
 $of_options[] = array( 	"name" 		=> __("Backup and Restore Options", 'virtue'),

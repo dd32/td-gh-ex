@@ -541,8 +541,8 @@ class Kadence_Recent_Posts_Widget extends WP_Widget {
   function form( $instance ) {
     $title = isset($instance['title']) ? esc_attr($instance['title']) : '';
     $number = isset($instance['number']) ? absint($instance['number']) : 5;
-    if (isset($instance['thecate'])) { $thecate = esc_attr($instance['thecate']); }
-     $categories= get_categories();
+     if (isset($instance['thecate'])) { $thecate = esc_attr($instance['thecate']); } else {$thecate = '';}
+          $categories= get_categories();
      $cate_options = array();
           $cate_options[] = '<option value="">All</option>';
  

@@ -47,6 +47,13 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 1.5.3 =
+
+* Updated Menu Walker
+* Added portfolio Tax update
+* Fixed issue with admin icons disapearing when theme is translated.
+* Updated Screen shot
+
 = Version: 1.5.2 =
 
 * Added option for full blog on home page
