@@ -190,10 +190,10 @@ class RW_Meta_Box {
 	// Delete all attachments when delete post
 	function delete_attachments( $post_id ) {
 		$attachments = get_posts( array(
-									  'numberposts' => -1,
-									  'post_type'   => 'attachment',
-									  'post_parent' => $post_id
-								  ) );
+			                          'numberposts' => -1,
+			                          'post_type'   => 'attachment',
+			                          'post_parent' => $post_id
+		                          ) );
 		if( !empty( $attachments ) ) {
 			foreach( $attachments as $att ) {
 				wp_delete_attachment( $att->ID );
@@ -384,10 +384,10 @@ class RW_Meta_Box {
 		if( !empty( $meta ) ) {
 			// show attached files
 			$attachs = get_posts( array(
-									  'numberposts' => -1,
-									  'post_type'   => 'attachment',
-									  'post_parent' => $post->ID
-								  ) );
+				                      'numberposts' => -1,
+				                      'post_type'   => 'attachment',
+				                      'post_parent' => $post->ID
+			                      ) );
 
 			$nonce = wp_create_nonce( 'rw_ajax_delete_file' );
 
@@ -428,12 +428,12 @@ class RW_Meta_Box {
 		if( !empty( $meta ) ) {
 			// show attached images
 			$attachs = get_posts( array(
-									  'numberposts'    => -1,
-									  'post_type'      => 'attachment',
-									  'post_parent'    => $post->ID,
-									  'post_mime_type' => 'image', // get attached images only
-									  'output'         => ARRAY_A
-								  ) );
+				                      'numberposts'    => -1,
+				                      'post_type'      => 'attachment',
+				                      'post_parent'    => $post->ID,
+				                      'post_mime_type' => 'image', // get attached images only
+				                      'output'         => ARRAY_A
+			                      ) );
 
 			$nonce = wp_create_nonce( 'rw_ajax_delete_file' );
 
@@ -792,10 +792,10 @@ class RW_Meta_Box {
 	function add_missed_values() {
 		// default values for meta box
 		$this->_meta_box = array_merge( array(
-											'context'  => 'normal',
-											'priority' => 'high',
-											'pages'    => array( 'if_custom_slides' )
-										), $this->_meta_box );
+			                                'context'  => 'normal',
+			                                'priority' => 'high',
+			                                'pages'    => array( 'if_custom_slides' )
+		                                ), $this->_meta_box );
 
 		// default values for fields
 		foreach( $this->tabs as $tabkey => $tab ) {
@@ -804,12 +804,12 @@ class RW_Meta_Box {
 				$std                       = $multiple ? array() : '';
 				$format                    = 'date' == $field['type'] ? 'yy-mm-dd' : ( 'time' == $field['type'] ? 'hh:mm' : '' );
 				$this->tabs[$tabkey][$key] = array_merge( array(
-															  'multiple'      => $multiple,
-															  'std'           => $std,
-															  'desc'          => '',
-															  'format'        => $format,
-															  'validate_func' => ''
-														  ), $field );
+					                                          'multiple'      => $multiple,
+					                                          'std'           => $std,
+					                                          'desc'          => '',
+					                                          'format'        => $format,
+					                                          'validate_func' => ''
+				                                          ), $field );
 			}
 		}
 	}
@@ -928,23 +928,25 @@ function metabox_enqueue() {
 
 	wp_register_script( 'jf-metabox-tabs', $path_js . 'metabox-tabs.js' );
 
+	wp_register_script( 'jf-metabox-tabs', $path_js . 'metabox-tabs.min.js' );
+
 	wp_enqueue_script( 'jf-metabox-tabs' );
 
 	// Load different css/js for different version of WP to support respective media uploader
 	if( function_exists( 'wp_enqueue_media' ) ) {
 		wp_enqueue_media();
-		wp_enqueue_script( 'metabox-media-uploader-3.5', $path_js . 'media-uploader-new.js', array( 'jquery' ) );
+		wp_enqueue_script( 'metabox-media-uploader-3.5', $path_js . 'media-uploader-new.min.js', array( 'jquery' ) );
 	}
 	else {
 		wp_enqueue_style( 'thickbox' );
 		wp_enqueue_script( 'media-upload' );
 		wp_enqueue_script( 'thickbox' );
-		wp_enqueue_script( 'metabox-media-uploader-below-3.5', $path_js . 'media-uploader-old.js', array( 'jquery' ) );
+		wp_enqueue_script( 'metabox-media-uploader-below-3.5', $path_js . 'media-uploader-old.min.js', array( 'jquery' ) );
 	}
 
 	wp_enqueue_script( 'jf-metabox-tabs' );
-	wp_enqueue_script( 'jquery-touch-punch-min', $path_js . 'touch-punch-min.js', array( 'jquery' ) );
-	wp_enqueue_script( 'jquery-touch-sense', $path_js . 'touch-sensitive.js', array( 'jquery' ) );
+	wp_enqueue_script( 'jquery-touch-punch-min', $path_js . 'touch-punch.min.js', array( 'jquery' ) );
+	wp_enqueue_script( 'jquery-touch-sense', $path_js . 'touch-sensitive.min.js', array( 'jquery' ) );
 
 	wp_enqueue_style( 'metabox-tabs-css' );
 }

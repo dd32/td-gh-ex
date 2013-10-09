@@ -9,14 +9,17 @@
 	if (!b.support.touch) {
 		return;
 	}
-	var c = b.ui.mouse.prototype, e = c._mouseInit, a;
+	var c = b.ui.mouse.prototype,
+		e = c._mouseInit,
+		a;
 
 	function d(g, h) {
 		if (g.originalEvent.touches.length > 1) {
 			return;
 		}
 		g.preventDefault();
-		var i = g.originalEvent.changedTouches[0], f = document.createEvent("MouseEvents");
+		var i = g.originalEvent.changedTouches[0],
+			f = document.createEvent("MouseEvents");
 		f.initMouseEvent(h, true, true, window, 1, i.screenX, i.screenY, i.clientX, i.clientY, false, false, false, false, 0, null);
 		g.target.dispatchEvent(f);
 	}

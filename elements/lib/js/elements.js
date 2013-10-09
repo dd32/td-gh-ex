@@ -16,29 +16,29 @@
 
 /*	Boxes element make all the same height */
 
-jQuery(document).ready(function($) {
-	
-	if($(window).width() > 767) {
-	setTimeout(function() {
-		$('#widget-boxes-container .box').css('height', $('#widget-boxes-container').height() - 20)
-		}, 500 );
+jQuery(document).ready(function ($) {
+
+	if ($(window).width() > 767) {
+		setTimeout(function () {
+			$('#widget-boxes-container .box').css('height', $('#widget-boxes-container').height() - 20)
+		}, 500);
 	}
-	
-	$('.boxes .box').each(function(){
+
+	$('.boxes .box').each(function () {
 		var url = $(this).children('.box-link').attr('href');
-		$(this).hover(function(){
-			if(url && url != '')
-			$(this).css('cursor', 'pointer');
-		},
-		function(){
-			$(this).css('cursor', 'default');
-		});
-		$(this).click(function(){
-			if(url && url != '')
-			window.location = url;
+		$(this).hover(function () {
+				if (url && url != '')
+					$(this).css('cursor', 'pointer');
+			},
+			function () {
+				$(this).css('cursor', 'default');
+			});
+		$(this).click(function () {
+			if (url && url != '')
+				window.location = url;
 		})
 	});
-	
+
 	//starts carousel cycle
 	$('.carousel').carousel('cycle');
 

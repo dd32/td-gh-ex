@@ -63,7 +63,7 @@ function cyberchimps_load_scripts() {
 	// Include media uploader for WP version >= 3.5
 	if( function_exists( 'wp_enqueue_media' ) ) {
 		wp_enqueue_media();
-		wp_enqueue_script( 'theme-option-media-uploader-3.5', $directory_uri . '/cyberchimps/options/lib/js/media-uploader-new.js', array( 'jquery' ) );
+		wp_enqueue_script( 'theme-option-media-uploader-3.5', $directory_uri . '/cyberchimps/options/lib/js/media-uploader-new.min.js', array( 'jquery' ) );
 	}
 
 	// Enqueued scripts
@@ -71,15 +71,15 @@ function cyberchimps_load_scripts() {
 	wp_enqueue_script( 'jquery-ui-sortable' );
 
 	// Adding JS to support drag and drop in theme options
-	wp_enqueue_script( 'jquery-touch-punch-min', $directory_uri . '/cyberchimps/lib/js/touch-punch-min.js', array( 'jquery' ) );
-	wp_enqueue_script( 'jquery-touch-sense', $directory_uri . '/cyberchimps/lib/js/touch-sensitive.js', array( 'jquery' ) );
+	wp_enqueue_script( 'jquery-touch-punch-min', $directory_uri . '/cyberchimps/lib/js/touch-punch.min.js', array( 'jquery' ) );
+	wp_enqueue_script( 'jquery-touch-sense', $directory_uri . '/cyberchimps/lib/js/touch-sensitive.min.js', array( 'jquery' ) );
 
 	wp_enqueue_script( 'thickbox' );
-	wp_enqueue_script( 'color-picker', $directory_uri . '/cyberchimps/options/lib/js/colorpicker.js', array( 'jquery' ) );
-	wp_enqueue_script( 'media-uploader', $directory_uri . '/cyberchimps/options/lib/js/options-medialibrary-uploader.js', array( 'jquery' ) );
-	wp_enqueue_script( 'options-custom', $directory_uri . '/cyberchimps/options/lib/js/options-custom.js', array( 'jquery' ) );
+	wp_enqueue_script( 'color-picker', $directory_uri . '/cyberchimps/options/lib/js/colorpicker.min.js', array( 'jquery' ) );
+	wp_enqueue_script( 'media-uploader', $directory_uri . '/cyberchimps/options/lib/js/options-medialibrary-uploader.min.js', array( 'jquery' ) );
+	wp_enqueue_script( 'options-custom', $directory_uri . '/cyberchimps/options/lib/js/options-custom.min.js', array( 'jquery' ) );
 	wp_enqueue_script( 'bootstrap-js', $directory_uri . '/cyberchimps/lib/bootstrap/js/bootstrap.min.js', array( 'jquery' ) );
-	wp_enqueue_script( 'google-fonts', $directory_uri . '/cyberchimps/options/lib/js/font_inline_plugin.js', array( 'jquery' ) );
+	wp_enqueue_script( 'google-fonts', $directory_uri . '/cyberchimps/options/lib/js/font_inline_plugin.min.js', array( 'jquery' ) );
 }
 
 // Load options customizer file
@@ -117,7 +117,7 @@ function cyberchimps_options_page() {
 	<?php do_action( 'cyberchimps_options_before_container' ); ?>
 	<div class="container-fluid cc-options">
 
-	<form action="options.php" method="post" id="cyberchimps_options_page" enctype="multipart/form-data">
+	<form action="options.php" method="post" id="cyberchimps_options_page">
 	<?php
 	settings_fields( 'cyberchimps_options' );
 	$headings_list = cyberchimps_get_headings();
@@ -138,11 +138,11 @@ function cyberchimps_options_page() {
 		<div class="span8">
 			<ul class="cc-header-links">
 				<li><a href="<?php echo apply_filters( 'cyberchimps_support_forum', 'http://cyberchimps.com/forum/free/' ); ?>"
-					   target="_blank"><?php _e( 'Support', 'cyberchimps_core' ); ?></a></li>
+				       target="_blank"><?php _e( 'Support', 'cyberchimps_core' ); ?></a></li>
 				<li><a href="<?php echo apply_filters( 'cyberchimps_documentation', 'http://cyberchimps.com/guides/' ); ?>"
-					   target="_blank"><?php _e( 'Instructions', 'cyberchimps_core' ); ?></a></li>
+				       target="_blank"><?php _e( 'Instructions', 'cyberchimps_core' ); ?></a></li>
 				<li><a href="<?php echo apply_filters( 'cyberchimps_options_buy_link', 'http://cyberchimps.com/store/' ); ?>"
-					   target="_blank"><?php _e( 'Buy Themes', 'cyberchimps_core' ); ?></a></li>
+				       target="_blank"><?php _e( 'Buy Themes', 'cyberchimps_core' ); ?></a></li>
 				<?php if( has_filter( 'cyberchimps_upgrade_pro_title', 'cyberchimps_upgrade_bar_pro_title' ) ): ?>
 					<li><a href="<?php echo apply_filters( 'cyberchimps_upgrade_link', '' ); ?>" target="_blank"><?php echo apply_filters( 'cyberchimps_upgrade_pro_title', '' ); ?></a>
 					</li>
@@ -196,7 +196,7 @@ function cyberchimps_options_page() {
 				<div class="cc-submenu-links">
 					<input type="submit" id="cyberchimps_options_submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'cyberchimps_core' ); ?>"/>
 					<button class="reset-button btn" name="reset" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!',
-																													'cyberchimps_core' ) ); ?>' );">
+					                                                                                                'cyberchimps_core' ) ); ?>' );">
 						<?php esc_attr_e( 'Restore Defaults', 'cyberchimps_core' ); ?>
 					</button>
 				</div>
@@ -333,7 +333,7 @@ function cyberchimps_options_page() {
 				<div class="footer-links">
 					<input type="submit" id="cyberchimps_options_submit" class="btn btn-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'cyberchimps_core' ); ?>"/>
 					<button class="reset-button btn" name="reset" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!',
-																													'cyberchimps_core' ) ); ?>' );">
+					                                                                                                'cyberchimps_core' ) ); ?>' );">
 						<?php esc_attr_e( 'Restore Defaults', 'cyberchimps_core' ); ?>
 					</button>
 				</div>
@@ -1016,8 +1016,7 @@ function cyberchimps_fields_callback( $value ) {
  */
 function cyberchimps_options_validate( $input ) {
 
-global $wp_filesystem;
-
+	global $wp_filesystem;
 	/*
 	 * Import functionality
 	 *
@@ -1029,11 +1028,11 @@ global $wp_filesystem;
 	if( isset( $_FILES['import_file'] ) && $_FILES['import_file']['name'] ) {
 
 		// Initialise WP filesystem.
-		WP_Filesystem( request_filesystem_credentials('options.php', '', false, false, null) );
-		
+		WP_Filesystem( request_filesystem_credentials( 'options.php', '', false, false, null ) );
+
 		// Get the text of the uploaded file and trim it to remove space from either end.
-		$import_file_text = trim( $wp_filesystem->get_contents( $_FILES['import_file']['tmp_name']) );
-		
+		$import_file_text = trim( $wp_filesystem->get_contents( $_FILES['import_file']['tmp_name'] ) );
+
 		if( $import_file_text ) {
 			$string = stripslashes( $import_file_text );
 
@@ -1054,24 +1053,26 @@ global $wp_filesystem;
 		}
 	}
 	// If no file is uploaded then check for the texarea field for improt option.
-	else if( isset( $_POST['import'] ) ) {
-		if( trim( $_POST['import'] ) ) {
+	else {
+		if( isset( $_POST['import'] ) ) {
+			if( trim( $_POST['import'] ) ) {
 
-			$string = stripslashes( trim( $_POST['import'] ) );
+				$string = stripslashes( trim( $_POST['import'] ) );
 
-			// check string is serialized and unserialize it
-			if( is_serialized( $string ) ) {
-				$try = unserialize( ( $string ) );
-			}
+				// check string is serialized and unserialize it
+				if( is_serialized( $string ) ) {
+					$try = unserialize( ( $string ) );
+				}
 
-			// make sure $try is set with the unserialized data
-			if( $try ) {
-				add_settings_error( 'cyberchimps_options', 'imported_success', __( 'Options Imported', 'cyberchimps_core' ), 'updated fade' );
+				// make sure $try is set with the unserialized data
+				if( $try ) {
+					add_settings_error( 'cyberchimps_options', 'imported_success', __( 'Options Imported', 'cyberchimps_core' ), 'updated fade' );
 
-				return $try;
-			}
-			else {
-				add_settings_error( 'cyberchimps_options', 'imported_failed', __( 'Invalid Data for Import', 'cyberchimps_core' ), 'error fade' );
+					return $try;
+				}
+				else {
+					add_settings_error( 'cyberchimps_options', 'imported_failed', __( 'Invalid Data for Import', 'cyberchimps_core' ), 'error fade' );
+				}
 			}
 		}
 	}
@@ -1201,9 +1202,9 @@ function cyberchimps_admin_bar() {
 	global $wp_admin_bar;
 
 	$wp_admin_bar->add_menu( array(
-								 'parent' => 'appearance',
-								 'id'     => 'cyberchimps_options_page',
-								 'title'  => __( 'Theme Options', 'cyberchimps_core' ),
-								 'href'   => admin_url( 'themes.php?page=cyberchimps-theme-options' )
-							 ) );
+		                         'parent' => 'appearance',
+		                         'id'     => 'cyberchimps_options_page',
+		                         'title'  => __( 'Theme Options', 'cyberchimps_core' ),
+		                         'href'   => admin_url( 'themes.php?page=cyberchimps-theme-options' )
+	                         ) );
 }
