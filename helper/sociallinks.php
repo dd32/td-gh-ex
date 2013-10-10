@@ -5,11 +5,11 @@
 <?php $text = of_get_option('twitter_uid');
 if ($text) { echo '<a href=' . of_get_option('twitter_uid') . ' class="btn btn-navbar btn-large avedonicon-twitter" title="twitter" target="_blank"><img src="' . get_template_directory_uri() . '/images/nothing.gif" alt="twitter" /></a>'; }; ?>
 <?php $text = of_get_option('googleplus_uid');
-if ($text) { echo '<a href=' . of_get_option('googleplus_uid') . ' class="btn btn-navbar btn-large btn-large avedonicon-googleplus" title="googleplus" target="_blank"><img src="' . get_template_directory_uri() . '/images/nothing.gif" alt="googleplus" /></a>'; }; ?>
+if ($text) { echo '<a href=' . of_get_option('googleplus_uid') . ' class="btn btn-navbar btn-large btn-large avedonicon-google-plus" title="googleplus" target="_blank"><img src="' . get_template_directory_uri() . '/images/nothing.gif" alt="googleplus" /></a>'; }; ?>
 <?php $text = of_get_option('facebook_uid');
 if ($text) { echo '<a href=' . of_get_option('facebook_uid') . ' class="btn btn-navbar btn-large avedonicon-facebook" title="facebook" target="_blank"><img src="' . get_template_directory_uri() . '/images/nothing.gif" alt="facebook" /></a>'; };?>
 <?php $text = of_get_option('stumble_uid');
-if ($text) { echo '<a href=' . of_get_option('stumble_uid') . ' class="btn btn-navbar btn-large avedonicon-stumbleupon" title="stumbleupon" target="_blank"><img src="' . get_template_directory_uri() . '/images/nothing.gif" alt="stumble" /></a>'; }; ?>
+if ($text) { echo '<a href=' . of_get_option('stumble_uid') . ' class="btn btn-navbar btn-large avedonicon-stumble" title="stumbleupon" target="_blank"><img src="' . get_template_directory_uri() . '/images/nothing.gif" alt="stumble" /></a>'; }; ?>
 <?php $text = of_get_option('pinterest_uid');
 if ($text) { echo '<a href=' . of_get_option('pinterest_uid') . ' class="btn btn-navbar btn-large avedonicon-pinterest" title="pinterest" target="_blank"><img src="' . get_template_directory_uri() . '/images/nothing.gif" alt="pinterest" /></a>'; }; ?>
 <?php $text = of_get_option('flickr_uid');
@@ -35,6 +35,6 @@ if ($text) { echo '<a href=' . of_get_option('soundcloud_uid') . ' class="btn bt
 <?php $text = of_get_option('lastfm_uid');
 if ($text) { echo '<a href=' . of_get_option('lastfm_uid') . ' class="btn btn-navbar btn-large avedonicon-lastfm" title="lastfm" target="_blank"><img src="' . get_template_directory_uri() . '/images/nothing.gif" alt="lastfm" /></a>'; }; ?>
 <?php $text = of_get_option('rss_uid');
-if ($text) { echo '<a href=' . of_get_option('rss_uid') . ' class="btn btn-navbar btn-large avedonicon-feed" title="rssfeed" target="_blank"><img src="' . get_template_directory_uri() . '/images/nothing.gif" alt="rss" /></a>'; }; ?>
+if ($text) { echo '<a href=' . of_get_option('rss_uid') . ' class="btn btn-navbar btn-large avedonicon-rss" title="rssfeed" target="_blank"><img src="' . get_template_directory_uri() . '/images/nothing.gif" alt="rss" /></a>'; }; ?>
 
 </div>

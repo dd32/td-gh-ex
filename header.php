@@ -1,7 +1,7 @@
 <?php
 /**
  * @subpackage Avedon
- * @since Avedon 1.07
+ * @since Avedon 1.08
  */
 ?>
 
@@ -28,9 +28,9 @@
 
 <!-- MOBILE HEADER BUTTONS -->
 <?php if ( of_get_option('emailicon') ) { ?>
-<a href='mailto:<?php echo of_get_option('emailicon'); ?>' class="btn btn-navbar avedonicon-mail" title="Email"><img src="<?php echo get_template_directory_uri(); ?>/images/nothing.gif" alt="mail" /></a><?php } ?>
+<a href='mailto:<?php echo of_get_option('emailicon'); ?>' class="btn btn-navbar avedonicon-envelope-alt" title="Email"><img src="<?php echo get_template_directory_uri(); ?>/images/nothing.gif" alt="mail" /></a><?php } ?>
 <?php if ( of_get_option('mapicon') ) { ?>
-<a href='<?php echo of_get_option('mapicon'); ?>' class="btn btn-navbar avedonicon-location" title="Map"><img src="<?php echo get_template_directory_uri(); ?>/images/nothing.gif" alt="map" /></a><?php } ?>
+<a href='<?php echo of_get_option('mapicon'); ?>' class="btn btn-navbar avedonicon-map-marker" title="Map"><img src="<?php echo get_template_directory_uri(); ?>/images/nothing.gif" alt="map" /></a><?php } ?>
 <?php if ( of_get_option('phoneicon') ) { ?>
 <a href='tel:<?php echo of_get_option('phoneicon'); ?>' class="btn btn-navbar avedonicon-phone" title="Call Now."><img src="<?php echo get_template_directory_uri(); ?>/images/nothing.gif" alt="phone" /></a><?php } ?>
 

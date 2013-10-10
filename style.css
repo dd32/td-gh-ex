@@ -4,7 +4,7 @@ Theme URI: http://code.google.com/p/avedon/
 Description: A simple bootstrap based Wordpress theme, minimally coded, w/ plenty of bells and whistles.
 Author: Matthew Haeck
 Author URI: http://haeckdesign.com/
-Version: 1.07
+Version: 1.08
 License: GPL3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: black, blue, gray, white, dark, light, two-columns, right-sidebar, flexible-width, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, microformats, post-formats, theme-options, threaded-comments, photoblogging
@@ -108,8 +108,8 @@ border-radius: 4px;
 /* MENU */
 .navbar ul.dropdown-menu {background-color: rgba(0, 0, 0, 0.8);border-radius: 0;border-top: 0;}
 .logged-in .navbar-fixed-top {top: 28px;}
-#main-menu .dropdown-menu > li.menu-item > a {font-size: 0.9em;line-height: 1.4em;}
-#main-menu .dropdown li a:hover { background: rgba(0, 0, 0, 0.2); color: rgba(255,255,255,0.8); }
+#main-menu .dropdown-menu > li.menu-item > a {font-size: 0.9em;line-height: 1.6em;opacity: 0.8;}
+#main-menu .dropdown li a:hover { background: rgba(0, 0, 0, 0.2); color: rgba(255,255,255,0.8);opacity: 1; }
 .navbar-inverse .nav li.dropdown > .dropdown-toggle .caret {margin-left: 5px;}
 .dropdown-menu {border-radius: 0;margin-top: 0;}
 .navbar .nav > li > .dropdown-menu:after {border:0;border-right-width-value:0;}
@@ -122,7 +122,7 @@ border-radius: 4px;
 .navbar-fixed-bottom+#primary+#mid+#bottom+#foot{margin-bottom:80px;}
 .navbar-fixed-bottom+#primary+#mid+#bottom+#foot+#controls-wrapper {bottom:50px;}
 .navbar-static-top .navbar-inner .nav { float: none; }
-.navbar-static-top + #primary {margin-top: 25px;}
+.navbar-static-top + #primary {margin-top: 35px;}
 body .navbar-static-top {margin-bottom: -15px;}
 .navbar-static-top .navbar-inner { padding-left: 0;padding-right: 0;}
 .navbar-static-top + .row-fluid { margin-top: 15px; }
@@ -5348,6 +5348,8 @@ button.close {
 .carousel-inner i { font-size: 2.5em; padding-right: 10px; padding-top:20px; }
 .carousel-inner span i { margin-top:-25px;padding-right: 15px;padding-left: 10px; }
 #myCarousel .circled.avedonicon-chevron-left, #myCarousel .circled.avedonicon-chevron-right { margin-top:20px; }
+.navbar-inverse .brand { padding-left: 10px; }
+.socialbox {padding-left: 5px;padding-right: 5px;}
 }
 
 @media (min-width: 480px) and (max-width: 979px) {
@@ -5355,6 +5357,7 @@ button.close {
 .carousel-inner i { font-size: 3.5em; padding-right: 10px; padding-top:20px; }
 .carousel-inner span i { margin-top:-45px;padding-right: 20px;padding-left: 5px; }
 #myCarousel .circled.avedonicon-chevron-left, #myCarousel .circled.avedonicon-chevron-right { margin-top:60px; }
+.socialbox {padding-left: 5px;padding-right: 5px;}
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
@@ -6098,7 +6101,7 @@ button.close {
   .nav-collapse .nav > li > a,
   .nav-collapse .dropdown-menu a {
     padding: 9px 15px;
-    font-weight: bold;
+    font-weight: normal;
     color: #777777;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -6247,14 +6250,13 @@ button.close {
 }
 
 
-
 @font-face {
 	font-family: 'avedon';
 	src:url('css/fonts/avedon.eot');
 	src:url('css/fonts/avedon.eot?#iefix') format('embedded-opentype'),
 		url('css/fonts/avedon.woff') format('woff'),
 		url('css/fonts/avedon.ttf') format('truetype'),
-		url('css/fonts/avedon.svg#avedon') format('svg');
+		url('css/fonts/avedon.svg#Avedon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -6276,9 +6278,9 @@ button.close {
 /*
 Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
-[class*="icon-"] {
+[class*="avedonicon-"] {
 */
-.avedonicon-beaker, .avedonicon-laptop, .avedonicon-tablet, .avedonicon-mobile, .avedonicon-desktop, .avedonicon-question-sign, .avedonicon-info-sign, .avedonicon-calendar, .avedonicon-code, .avedonicon-ticket, .avedonicon-rocket, .avedonicon-html5, .avedonicon-css3, .avedonicon-camera, .avedonicon-bullhorn, .avedonicon-comment, .avedonicon-asterisk, .avedonicon-quote-right, .avedonicon-suitcase, .avedonicon-envelope-alt, .avedonicon-bookmark, .avedonicon-picture, .avedonicon-facetime-video, .avedonicon-map-marker, .avedonicon-edit, .avedonicon-globe, .avedonicon-link, .avedonicon-undo, .avedonicon-save, .avedonicon-paper-clip, .avedonicon-adjust, .avedonicon-tag, .avedonicon-cog, .avedonicon-home, .avedonicon-file, .avedonicon-eject, .avedonicon-chevron-left, .avedonicon-chevron-right, .avedonicon-play, .avedonicon-pause, .avedonicon-remove-sign, .avedonicon-ok-sign, .avedonicon-search, .avedonicon-music, .avedonicon-film, .avedonicon-time, .avedonicon-cogs, .avedonicon-cloud, .avedonicon-fullscreen, .avedonicon-eye-open, .avedonicon-reorder, .avedonicon-chevron-up, .avedonicon-chevron-down, .avedonicon-gift, .avedonicon-dashboard, .avedonicon-rss, .avedonicon-instagram, .avedonicon-question, .avedonicon-wordpress, .avedonicon-reddit, .avedonicon-paypal, .avedonicon-vimeo, .avedonicon-facebook, .avedonicon-instagram-2, .avedonicon-twitter, .avedonicon-feed, .avedonicon-dribbble, .avedonicon-soundcloud, .avedonicon-lastfm, .avedonicon-forrst, .avedonicon-tumblr, .avedonicon-phone, .avedonicon-google-plus, .avedonicon-flickr, .avedonicon-youtube, .avedonicon-pinterest, .avedonicon-linkedin, .avedonicon-stumbleupon, .avedonicon-foursquare, .avedonicon-IcoMoon, .avedonicon-chrome, .avedonicon-firefox, .avedonicon-IE, .avedonicon-opera, .avedonicon-safari {
+.avedonicon-desktop, .avedonicon-laptop, .avedonicon-tablet, .avedonicon-mobile, .avedonicon-instagram, .avedonicon-facebook, .avedonicon-wordpress, .avedonicon-vimeo, .avedonicon-youtube, .avedonicon-twitter, .avedonicon-flickr, .avedonicon-linkedin, .avedonicon-google, .avedonicon-forrst, .avedonicon-dribbble, .avedonicon-tumblr, .avedonicon-foursquare, .avedonicon-reedit, .avedonicon-paypal, .avedonicon-lastfm, .avedonicon-pinterest, .avedonicon-stumble, .avedonicon-soundcloud, .avedonicon-refresh, .avedonicon-camera, .avedonicon-bookmark, .avedonicon-tag, .avedonicon-time, .avedonicon-cog, .avedonicon-music, .avedonicon-facetime-video, .avedonicon-picture, .avedonicon-adjust, .avedonicon-map-marker, .avedonicon-play, .avedonicon-pause, .avedonicon-backward, .avedonicon-forward, .avedonicon-stop, .avedonicon-eject, .avedonicon-chevron-left, .avedonicon-chevron-right, .avedonicon-chevron-up, .avedonicon-chevron-down, .avedonicon-asterisk, .avedonicon-exclamation-sign, .avedonicon-minus, .avedonicon-plus, .avedonicon-info-sign, .avedonicon-question-sign, .avedonicon-warning-sign, .avedonicon-phone, .avedonicon-fullscreen, .avedonicon-dashboard, .avedonicon-envelope-alt, .avedonicon-quote-right, .avedonicon-rocket, .avedonicon-ticket, .avedonicon-link, .avedonicon-bullhorn, .avedonicon-calendar, .avedonicon-beaker, .avedonicon-coffee, .avedonicon-lightbulb, .avedonicon-google-plus, .avedonicon-paper-clip, .avedonicon-code, .avedonicon-css3, .avedonicon-html5, .avedonicon-comment, .avedonicon-bar-chart, .avedonicon-briefcase, .avedonicon-comments, .avedonicon-edit, .avedonicon-globe, .avedonicon-save, .avedonicon-home, .avedonicon-file, .avedonicon-zoom-in, .avedonicon-rss, .avedonicon-eye-open, .avedonicon-reorder, .avedonicon-gift, .avedonicon-cogs, .avedonicon-bolt, .avedonicon-fire-extinguisher {
 	font-family: 'avedon';
 	speak: none;
 	font-style: normal;
@@ -6288,8 +6290,8 @@ you can use the generic selector below, but it's slower:
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 }
-.avedonicon-beaker:before {
-	content: "\f0c3";
+.avedonicon-desktop:before {
+	content: "\f108";
 }
 .avedonicon-laptop:before {
 	content: "\f109";
@@ -6300,98 +6302,110 @@ you can use the generic selector below, but it's slower:
 .avedonicon-mobile:before {
 	content: "\f10b";
 }
-.avedonicon-desktop:before {
-	content: "\f108";
+.avedonicon-instagram:before {
+	content: "\f16d";
 }
-.avedonicon-question-sign:before {
-	content: "\f059";
+.avedonicon-facebook:before {
+	content: "\21";
 }
-.avedonicon-info-sign:before {
-	content: "\f05a";
+.avedonicon-wordpress:before {
+	content: "\22";
 }
-.avedonicon-calendar:before {
-	content: "\f073";
+.avedonicon-vimeo:before {
+	content: "\23";
 }
-.avedonicon-code:before {
-	content: "\f121";
+.avedonicon-youtube:before {
+	content: "\24";
 }
-.avedonicon-ticket:before {
-	content: "\f145";
+.avedonicon-twitter:before {
+	content: "\25";
 }
-.avedonicon-rocket:before {
-	content: "\f135";
+.avedonicon-flickr:before {
+	content: "\26";
 }
-.avedonicon-html5:before {
-	content: "\f13b";
+.avedonicon-linkedin:before {
+	content: "\27";
 }
-.avedonicon-css3:before {
-	content: "\f13c";
+.avedonicon-google:before {
+	content: "\28";
+}
+.avedonicon-forrst:before {
+	content: "\29";
+}
+.avedonicon-dribbble:before {
+	content: "\2a";
+}
+.avedonicon-tumblr:before {
+	content: "\2b";
+}
+.avedonicon-foursquare:before {
+	content: "\2c";
+}
+.avedonicon-reedit:before {
+	content: "\2d";
+}
+.avedonicon-paypal:before {
+	content: "\2e";
+}
+.avedonicon-lastfm:before {
+	content: "\2f";
+}
+.avedonicon-pinterest:before {
+	content: "\32";
+}
+.avedonicon-stumble:before {
+	content: "\31";
+}
+.avedonicon-soundcloud:before {
+	content: "\33";
+}
+.avedonicon-refresh:before {
+	content: "\f021";
 }
 .avedonicon-camera:before {
 	content: "\f030";
 }
-.avedonicon-bullhorn:before {
-	content: "\f0a1";
-}
-.avedonicon-comment:before {
-	content: "\f075";
-}
-.avedonicon-asterisk:before {
-	content: "\f069";
-}
-.avedonicon-quote-right:before {
-	content: "\f10e";
-}
-.avedonicon-suitcase:before {
-	content: "\f0f2";
-}
-.avedonicon-envelope-alt:before {
-	content: "\f0e0";
-}
 .avedonicon-bookmark:before {
 	content: "\f02e";
-}
-.avedonicon-picture:before {
-	content: "\f03e";
-}
-.avedonicon-facetime-video:before {
-	content: "\f03d";
-}
-.avedonicon-map-marker:before {
-	content: "\f041";
-}
-.avedonicon-edit:before {
-	content: "\f044";
-}
-.avedonicon-globe:before {
-	content: "\f0ac";
-}
-.avedonicon-link:before {
-	content: "\f0c1";
-}
-.avedonicon-undo:before {
-	content: "\f0e2";
-}
-.avedonicon-save:before {
-	content: "\f0c7";
-}
-.avedonicon-paper-clip:before {
-	content: "\f0c6";
-}
-.avedonicon-adjust:before {
-	content: "\f042";
 }
 .avedonicon-tag:before {
 	content: "\f02b";
 }
+.avedonicon-time:before {
+	content: "\f017";
+}
 .avedonicon-cog:before {
 	content: "\f013";
 }
-.avedonicon-home:before {
-	content: "\f015";
+.avedonicon-music:before {
+	content: "\f001";
 }
-.avedonicon-file:before {
-	content: "\f016";
+.avedonicon-facetime-video:before {
+	content: "\f03d";
+}
+.avedonicon-picture:before {
+	content: "\f03e";
+}
+.avedonicon-adjust:before {
+	content: "\f042";
+}
+.avedonicon-map-marker:before {
+	content: "\f041";
+}
+.avedonicon-play:before {
+	content: "\f04b";
+}
+.avedonicon-pause:before {
+	content: "\f04c";
+}
+.avedonicon-backward:before {
+	content: "\f04a";
+}
+.avedonicon-forward:before {
+	content: "\f04e";
+}
+.avedonicon-stop:before {
+	content: "\f04d";
 }
 .avedonicon-eject:before {
 	content: "\f052";
@@ -6402,38 +6416,119 @@ you can use the generic selector below, but it's slower:
 .avedonicon-chevron-right:before {
 	content: "\f054";
 }
-.avedonicon-play:before {
-	content: "\f04b";
+.avedonicon-chevron-up:before {
+	content: "\f077";
 }
-.avedonicon-pause:before {
-	content: "\f04c";
+.avedonicon-chevron-down:before {
+	content: "\f078";
 }
-.avedonicon-remove-sign:before {
-	content: "\f057";
+.avedonicon-asterisk:before {
+	content: "\f069";
 }
-.avedonicon-ok-sign:before {
-	content: "\f058";
+.avedonicon-exclamation-sign:before {
+	content: "\f06a";
 }
-.avedonicon-search:before {
-	content: "\f002";
+.avedonicon-minus:before {
+	content: "\f068";
 }
-.avedonicon-music:before {
-	content: "\f001";
+.avedonicon-plus:before {
+	content: "\f067";
 }
-.avedonicon-film:before {
-	content: "\f008";
+.avedonicon-info-sign:before {
+	content: "\f05a";
 }
-.avedonicon-time:before {
-	content: "\f017";
+.avedonicon-question-sign:before {
+	content: "\f059";
 }
-.avedonicon-cogs:before {
-	content: "\f085";
+.avedonicon-warning-sign:before {
+	content: "\f071";
 }
-.avedonicon-cloud:before {
-	content: "\f0c2";
+.avedonicon-phone:before {
+	content: "\f095";
 }
 .avedonicon-fullscreen:before {
 	content: "\f0b2";
+}
+.avedonicon-dashboard:before {
+	content: "\f0e4";
+}
+.avedonicon-envelope-alt:before {
+	content: "\f0e0";
+}
+.avedonicon-quote-right:before {
+	content: "\f10e";
+}
+.avedonicon-rocket:before {
+	content: "\f135";
+}
+.avedonicon-ticket:before {
+	content: "\f145";
+}
+.avedonicon-link:before {
+	content: "\f0c1";
+}
+.avedonicon-bullhorn:before {
+	content: "\f0a1";
+}
+.avedonicon-calendar:before {
+	content: "\f073";
+}
+.avedonicon-beaker:before {
+	content: "\f0c3";
+}
+.avedonicon-coffee:before {
+	content: "\f0f4";
+}
+.avedonicon-lightbulb:before {
+	content: "\f0eb";
+}
+.avedonicon-google-plus:before {
+	content: "\f0d5";
+}
+.avedonicon-paper-clip:before {
+	content: "\f0c6";
+}
+.avedonicon-code:before {
+	content: "\f121";
+}
+.avedonicon-css3:before {
+	content: "\f13c";
+}
+.avedonicon-html5:before {
+	content: "\f13b";
+}
+.avedonicon-comment:before {
+	content: "\f075";
+}
+.avedonicon-bar-chart:before {
+	content: "\f080";
+}
+.avedonicon-briefcase:before {
+	content: "\f0b1";
+}
+.avedonicon-comments:before {
+	content: "\f086";
+}
+.avedonicon-edit:before {
+	content: "\f044";
+}
+.avedonicon-globe:before {
+	content: "\f0ac";
+}
+.avedonicon-save:before {
+	content: "\f0c7";
+}
+.avedonicon-home:before {
+	content: "\f015";
+}
+.avedonicon-file:before {
+	content: "\f016";
+}
+.avedonicon-zoom-in:before {
+	content: "\f00e";
+}
+.avedonicon-rss:before {
+	content: "\f09e";
 }
 .avedonicon-eye-open:before {
 	content: "\f06e";
@@ -6441,105 +6536,15 @@ you can use the generic selector below, but it's slower:
 .avedonicon-reorder:before {
 	content: "\f0c9";
 }
-.avedonicon-chevron-up:before {
-	content: "\f077";
-}
-.avedonicon-chevron-down:before {
-	content: "\f078";
-}
 .avedonicon-gift:before {
 	content: "\f06b";
 }
-.avedonicon-dashboard:before {
-	content: "\f0e4";
+.avedonicon-cogs:before {
+	content: "\f085";
 }
-.avedonicon-rss:before {
-	content: "\f09e";
+.avedonicon-bolt:before {
+	content: "\f0e7";
 }
-.avedonicon-instagram:before {
-	content: "\f16d";
-}
-.avedonicon-question:before {
-	content: "\f128";
-}
-.avedonicon-wordpress:before {
-	content: "\e000";
-}
-.avedonicon-reddit:before {
-	content: "\e002";
-}
-.avedonicon-paypal:before {
-	content: "\e003";
-}
-.avedonicon-vimeo:before {
-	content: "\e004";
-}
-.avedonicon-facebook:before {
-	content: "\e005";
-}
-.avedonicon-instagram-2:before {
-	content: "\e006";
-}
-.avedonicon-twitter:before {
-	content: "\e007";
-}
-.avedonicon-feed:before {
-	content: "\e008";
-}
-.avedonicon-dribbble:before {
-	content: "\e001";
-}
-.avedonicon-soundcloud:before {
-	content: "\e009";
-}
-.avedonicon-lastfm:before {
-	content: "\e00a";
-}
-.avedonicon-forrst:before {
-	content: "\e00b";
-}
-.avedonicon-tumblr:before {
-	content: "\e00c";
-}
-.avedonicon-phone:before {
-	content: "\e00d";
-}
-.avedonicon-google-plus:before {
-	content: "\e00e";
-}
-.avedonicon-flickr:before {
-	content: "\e00f";
-}
-.avedonicon-youtube:before {
-	content: "\e010";
-}
-.avedonicon-pinterest:before {
-	content: "\e011";
-}
-.avedonicon-linkedin:before {
-	content: "\e012";
-}
-.avedonicon-stumbleupon:before {
-	content: "\e013";
-}
-.avedonicon-foursquare:before {
-	content: "\e014";
-}
-.avedonicon-IcoMoon:before {
-	content: "\e015";
-}
-.avedonicon-chrome:before {
-	content: "\e016";
-}
-.avedonicon-firefox:before {
-	content: "\e017";
-}
-.avedonicon-IE:before {
-	content: "\e018";
-}
-.avedonicon-opera:before {
-	content: "\e019";
-}
-.avedonicon-safari:before {
-	content: "\e01a";
+.avedonicon-fire-extinguisher:before {
+	content: "\f134";
 }

@@ -2,7 +2,7 @@
 
 Contributors: Matthew Haeck
 Tags: bootstrap, responsive, wordpress theme
-Stable tag: 1.07
+Stable tag: 1.08
 License: GPLv3
 
 Avedon Theme - http://code.google.com/p/avedon/
@@ -72,6 +72,7 @@ Icon Set:	Font Awesome - http://fortawesome.github.com/Font-Awesome/
 License:	CC BY 3.0 - http://creativecommons.org/licenses/by/3.0/
 Copyright:	Dave Gandy - https://twitter.com/davegandy
 
-Icon Set:	IcoMoon - http://keyamoon.com/icomoon/
-License:	CC BY 3.0 - http://creativecommons.org/licenses/by/3.0/
-Copyright:	Keyamoon - http://keyamoon.com/
+Icon Set:	Social Font Icons - http://haeckdesign.com/
+License:	SIL OFL 1.1 / MIT License - http://scripts.sil.org/OFL - http://opensource.org/licenses/mit-license.html
+Copyright:	Matthew Haeck - http://www.matthewhaeck.com
+

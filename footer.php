@@ -1,7 +1,7 @@
 <?php
 /**
  * @subpackage Avedon
- * @since Avedon 1.07
+ * @since Avedon 1.08
  */
 ?>
 
@@ -20,7 +20,7 @@
 
 <div class="span4">
 <?php if ( ! dynamic_sidebar( 'bottom-middle' ) ): ?>
-<div class="widget widget_text"><div class="textwidget"><h4 class="widget-title">Our Location</h4><i class="subicon avedonicon-location"></i><ul><li><b>Address: </b> 25, Lorem Lis, California, US</li><li><b>Phone: </b> 800 123 3456</li><li><b>Fax: </b> 800 123 3456</li><li><b>Email: </b> info@anybiz.com</li></ul></div></div>
+<div class="widget widget_text"><div class="textwidget"><h4 class="widget-title">Our Location</h4><i class="subicon avedonicon-map-marker"></i><ul><li><b>Address: </b> 25, Lorem Lis, California, US</li><li><b>Phone: </b> 800 123 3456</li><li><b>Fax: </b> 800 123 3456</li><li><b>Email: </b> info@anybiz.com</li></ul></div></div>
 <?php endif; ?>
 </div>
 
