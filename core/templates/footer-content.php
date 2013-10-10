@@ -11,45 +11,15 @@
 
 function alhenalite_footer_content_function() { 
 
-	if ( ( alhenalite_postmeta('wip_footer_sidebar')) && ( alhenalite_postmeta('wip_footer_sidebar') <> "none" )) :  ?>
-
+	if ( is_active_sidebar('footer_sidebar_area')) : ?>
+    
     <!-- FOOTER WIDGET -->
 
     <section id="footer-box" >
         <div class="container">
             <div class="row">
 
-			<?php if ( is_active_sidebar(alhenalite_postmeta('wip_footer_sidebar'))) { 
-            
-				dynamic_sidebar(alhenalite_postmeta('wip_footer_sidebar'));
-            
-            } else { 
-                
-                the_widget( 'WP_Widget_Archives','',
-				array('before_widget' => '<div class="pin-article ' . alhenalite_layout('wip_footer_sidebar_area') . '"><article class="article">',
-					  'after_widget'  => '</article></div>',
-					  'before_title'  => '<header class="title"><div class="line"><h3>',
-		              'after_title'   => '</h3></div></header>'
-				));
-
-                the_widget( 'WP_Widget_Calendar',
-				array("title"=> __('Calendar')),
-				array('before_widget' => '<div class="pin-article ' . alhenalite_layout('wip_footer_sidebar_area') . '"><article class="article">',
-					  'after_widget'  => '</article></div>',
-					  'before_title'  => '<header class="title"><div class="line"><h3>',
-		              'after_title'   => '</h3></div></header>'
-				));
-
-                the_widget( 'WP_Widget_Categories','',
-				array('before_widget' => '<div class="pin-article ' . alhenalite_layout('wip_footer_sidebar_area') . '"><article class="article">',
-					  'after_widget'  => '</article></div>',
-					  'before_title'  => '<header class="title"><div class="line"><h3>',
-		              'after_title'   => '</h3></div></header>'
-				));
-            
-             } 
-			 
-			 ?>
+			<?php dynamic_sidebar('footer_sidebar_area'); ?>
 
             </div>
         </div>
@@ -57,7 +27,9 @@ function alhenalite_footer_content_function() {
 
 	<!--  END FOOTER WIDGET -->
 
-<?php endif;
+<?php
+	
+	endif;
 
 } 
 

@@ -65,268 +65,272 @@
 		case $_GET['tab']:  
 
 			foreach ($element as $value) {
-			
-				switch ( $value['type'] ) { 
-				
-					case 'form':  ?>
-						
-						<div id="<?php echo str_replace(" ", "", $value['name']); ?>">
-						<form method="post" action="?page=themeoption&tab=<?php echo $_GET['tab']; ?>">
-					
-					<?php break;
-					
-					case 'endtab':  ?>
-						
-						</form>
-						</div>
-					
-					<?php break;
-						
-					case 'start':  ?>
 
-					<?php 
-		
-						if ( ('Save' == alhenalite_request('action'))  && ( $value['val'] == alhenalite_request('element-opened')) ) { 
-							$class=" inactive"; $style='style="display:block;"'; } else { $class="";  $style=''; 
-						}  
-			
-						?>
-
-						<div class="wip_container">
-		
-						<h5 class="element<?php echo $class; ?>" id="<?php echo $value['val']; ?>"><?php echo $value['name']; ?></h5>
-			   
-						<div class="wip_mainbox"> 
-		
-					<?php break;
-			
-					case 'startopen':  ?>
-			
-						<div class="wip_container">
-		
-						<h5 class="element-open"><?php echo $value['name']; ?></h5>
-			   
-						<div class="wip_mainbox2"> 
-		
-					<?php break;
-			
-					case 'end':  ?>
-			
-						</div>            
-		
-						</div>
-		   
-					<?php break;
-		
-					case 'multicategory': ?>
-		
-						<div class="wip_inputbox">
-		
-						<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
-				
-						<?php foreach ($value['options'] as $val => $option ) { 
-		
-							$checked ='';
-		
-							if ( alhenalite_setting($value['id']) != false ) {
-		
-								foreach (alhenalite_setting($value['id']) as $check ) { 
-		
-								if ($check == $val )  { $checked ='checked="checked"'; } } 
-		
-							} ?> 
-		
-							<p><input name="<?php echo $value['id']; ?>[]" type="checkbox" value="<?php echo $val; ?>" <?php echo $checked; ?> /> <?php echo $option; ?> 					</p> <?php } ?>  
-							<p><?php echo $value['desc']; ?></p>
-		
-							</div>
-		
-						<?php break;
-		
-						case 'pages': ?>
-		
-							<div class="wip_inputbox">
-		
-							<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
-		
-							<?php foreach ( $value['options'] as $page ) { 
-		
-							$checked ='';
-		
-							if ( alhenalite_setting($value['id']) != false ) {
-		
-								foreach (alhenalite_setting($value['id']) as $check ) { 
-		
-								if ($check == $page->ID )  { $checked ='checked="checked"'; } } 
-		
-							} ?> 
-			  
-							<p><input name="<?php echo $value['id']; ?>[]" type="checkbox" value="<?php echo $page->ID; ?>" <?php echo $checked; ?> /> <?php echo $page->post_title; ?></p>
-		
-							<?php } ?>  
+				if (isset($value['type'])) { 
+	
+					switch ( $value['type'] ) { 
+					
+						case 'form':  ?>
 							
-							<p><?php echo $value['desc']; ?></p>
-		 
-							</div>
-		 
+							<div id="<?php echo str_replace(" ", "", $value['name']); ?>">
+							<form method="post" action="?page=themeoption&tab=<?php echo $_GET['tab']; ?>">
+						
 						<?php break;
-
-							case 'thumbs': ?>
+						
+						case 'endtab':  ?>
+							
+							</form>
+							</div>
+						
+						<?php break;
+							
+						case 'start':  ?>
+	
+						<?php 
+			
+							if ( ('Save' == alhenalite_request('action'))  && ( $value['val'] == alhenalite_request('element-opened')) ) { 
+								$class=" inactive"; $style='style="display:block;"'; } else { $class="";  $style=''; 
+							}  
+				
+							?>
+	
+							<div class="wip_container">
+			
+							<h5 class="element<?php echo $class; ?>" id="<?php echo $value['val']; ?>"><?php echo $value['name']; ?></h5>
+				   
+							<div class="wip_mainbox"> 
+			
+						<?php break;
+				
+						case 'startopen':  ?>
+				
+							<div class="wip_container">
+			
+							<h5 class="element-open"><?php echo $value['name']; ?></h5>
+				   
+							<div class="wip_mainbox2"> 
+			
+						<?php break;
+				
+						case 'end':  ?>
+				
+							</div>            
+			
+							</div>
+			   
+						<?php break;
+			
+						case 'multicategory': ?>
+			
+							<div class="wip_inputbox">
+			
+							<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
+					
+							<?php foreach ($value['options'] as $val => $option ) { 
+			
+								$checked ='';
+			
+								if ( alhenalite_setting($value['id']) != false ) {
+			
+									foreach (alhenalite_setting($value['id']) as $check ) { 
+			
+									if ($check == $val )  { $checked ='checked="checked"'; } } 
+			
+								} ?> 
+			
+								<p><input name="<?php echo $value['id']; ?>[]" type="checkbox" value="<?php echo $val; ?>" <?php echo $checked; ?> /> <?php echo $option; ?> 					</p> <?php } ?>  
+								<p><?php echo $value['desc']; ?></p>
+			
+								</div>
+			
+							<?php break;
+			
+							case 'pages': ?>
+			
+								<div class="wip_inputbox">
+			
+								<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
+			
+								<?php foreach ( $value['options'] as $page ) { 
+			
+								$checked ='';
+			
+								if ( alhenalite_setting($value['id']) != false ) {
+			
+									foreach (alhenalite_setting($value['id']) as $check ) { 
+			
+									if ($check == $page->ID )  { $checked ='checked="checked"'; } } 
+			
+								} ?> 
+				  
+								<p><input name="<?php echo $value['id']; ?>[]" type="checkbox" value="<?php echo $page->ID; ?>" <?php echo $checked; ?> /> <?php echo $page->post_title; ?></p>
+			
+								<?php } ?>  
+								
+								<p><?php echo $value['desc']; ?></p>
+			 
+								</div>
+			 
+							<?php break;
+	
+								case 'thumbs': ?>
+				
+									<div class="wip_inputbox">
+				
+									<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
+									
+									<input name="width" type="text" value="940" disabled="disabled" style="width:50px; display:inline-block"/>  
+									
+									<span class="separator">X</span> 
+									
+									<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="text" value="<?php if ( alhenalite_setting($value['id']) != "") { echo stripslashes(alhenalite_setting($value['id'])); } else { echo $value['std']; } ?>" style="width:50px; display:inline-block"/>
+									
+									<p> <?php echo $value['desc']; ?> </p>
+				
+									</div>
+				
+								<?php break;
+	
+							case 'text': ?>
 			
 								<div class="wip_inputbox">
 			
 								<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
 								
-								<input name="width" type="text" value="940" disabled="disabled" style="width:50px; display:inline-block"/>  
-                                
-                                <span class="separator">X</span> 
-                                
-								<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="text" value="<?php if ( alhenalite_setting($value['id']) != "") { echo stripslashes(alhenalite_setting($value['id'])); } else { echo $value['std']; } ?>" style="width:50px; display:inline-block"/>
+								<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php if ( alhenalite_setting($value['id']) != "") { echo stripslashes(alhenalite_setting($value['id'])); } else { echo $value['std']; } ?>" />
 								
 								<p> <?php echo $value['desc']; ?> </p>
 			
 								</div>
 			
 							<?php break;
-
-						case 'text': ?>
-		
-							<div class="wip_inputbox">
-		
-							<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
-							
-							<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php if ( alhenalite_setting($value['id']) != "") { echo stripslashes(alhenalite_setting($value['id'])); } else { echo $value['std']; } ?>" />
-							
-							<p> <?php echo $value['desc']; ?> </p>
-		
-							</div>
-		
-						<?php break;
+				
+							case 'form':  ?>
+				
+							<?php break;
+				
+							case 'navigation':  ?>
+				
+								<?php echo $value['start']; ?>
 			
-						case 'form':  ?>
+								<?php foreach ($value['item'] as $option) { echo "<li><a href='#".str_replace(" ", "", $option)."'>".$option."</a></li>"; } ?>
 			
-						<?php break;
-			
-						case 'navigation':  ?>
-			
-							<?php echo $value['start']; ?>
-		
-							<?php foreach ($value['item'] as $option) { echo "<li><a href='#".str_replace(" ", "", $option)."'>".$option."</a></li>"; } ?>
-		
-							<?php echo $value['end']; ?>
-		   
-						<?php break;
-		 
-						case 'textarea':  ?>
-			
-							<div class="wip_inputbox">
-		
-							<label for="bl_custom_style"> <?php echo $value['name']; ?> </label>
-							
-							<textarea name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" cols="" rows=""><?php if ( alhenalite_setting($value['id']) != "") { echo stripslashes(alhenalite_setting($value['id'])); } else { echo $value['std']; } ?></textarea>
-		
-							<p><?php echo $value['desc']; ?></p>
-		
-							</div> 
-			
-						<?php break;
-		
-						case "on-off": ?>
-		
-							<div class="wip_inputbox">
-		
-							<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
-		
-                            <div class="bool-slider <?php if ( alhenalite_setting($value['id']) != "") { echo stripslashes(alhenalite_setting($value['id'])); } else { echo $value['std']; } ?>">
-                                <div class="inset">
-                                    <div class="control"></div>
-                                </div>
-                                <input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" class="on-off" type="hidden" value="<?php if ( alhenalite_setting($value['id']) != "") { echo stripslashes(alhenalite_setting($value['id'])); } else { echo $value['std']; } ?>" />
-                            </div>  
-                            
-                            <div class="clear"></div>      
-							
-							<p><?php echo $value['desc']; ?></p>
-							
-							</div>
-		
-						<?php break;
+								<?php echo $value['end']; ?>
+			   
+							<?php break;
 			 
-						case 'categoria': ?>
+							case 'textarea':  ?>
+				
+								<div class="wip_inputbox">
 			
-							<div class="wip_inputbox">
-		
-							<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
-		
-							<select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>"><?php foreach ($value['options'] as $option) { ?><option<?php if ( alhenalite_setting($value['id']) == get_cat_id($option)) { echo ' selected="selected"'; } elseif ($option == $value['std']) { echo ' selected="selected"'; } ?> value="<?php echo get_cat_id($option); ?>" ><?php echo $option; ?></option><?php } ?></select>
-		 
-							<p><?php echo $value['desc']; ?></p>
-		
-							</div>
+								<label for="bl_custom_style"> <?php echo $value['name']; ?> </label>
+								
+								<textarea name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" cols="" rows=""><?php if ( alhenalite_setting($value['id']) != "") { echo stripslashes(alhenalite_setting($value['id'])); } else { echo $value['std']; } ?></textarea>
 			
-						<?php break;
+								<p><?php echo $value['desc']; ?></p>
+			
+								</div> 
+				
+							<?php break;
+			
+							case "on-off": ?>
+			
+								<div class="wip_inputbox">
+			
+								<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
+			
+								<div class="bool-slider <?php if ( alhenalite_setting($value['id']) != "") { echo stripslashes(alhenalite_setting($value['id'])); } else { echo $value['std']; } ?>">
+									<div class="inset">
+										<div class="control"></div>
+									</div>
+									<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" class="on-off" type="hidden" value="<?php if ( alhenalite_setting($value['id']) != "") { echo stripslashes(alhenalite_setting($value['id'])); } else { echo $value['std']; } ?>" />
+								</div>  
+								
+								<div class="clear"></div>      
+								
+								<p><?php echo $value['desc']; ?></p>
+								
+								</div>
+			
+							<?php break;
+				 
+							case 'categoria': ?>
+				
+								<div class="wip_inputbox">
+			
+								<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
+			
+								<select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>"><?php foreach ($value['options'] as $option) { ?><option<?php if ( alhenalite_setting($value['id']) == get_cat_id($option)) { echo ' selected="selected"'; } elseif ($option == $value['std']) { echo ' selected="selected"'; } ?> value="<?php echo get_cat_id($option); ?>" ><?php echo $option; ?></option><?php } ?></select>
 			 
-						case 'select': ?>
+								<p><?php echo $value['desc']; ?></p>
 			
-							<div class="wip_inputbox">
-		
-							<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
-		
-							<select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>">  
-							
-							<?php foreach ( $value['options'] as $val => $option ) { ?>  
-							
-							<option <?php if (( alhenalite_setting( $value['id'] ) == $val) || ( ( !alhenalite_setting($value['id'])) && ( $value['std'] == $val) )) { echo 'selected="selected"'; } ?> value="<?php echo $val; ?>"><?php echo $option; ?></option><?php } ?>  
-							</select>  
-		 
-							<p><?php echo $value['desc']; ?></p>
-		
-							</div>
-			
-			
-						<?php break;
-						
-						case 'background': ?>
-			
-							<div class="wip_inputbox">
-		
-							<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
+								</div>
 				
-							<input type="hidden" name="template_directory" class="template_directory" value="<?php echo get_template_directory_uri(); ?>" />
-		
-							<select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" class="select-background">  
-							
-							<option value="None">None</option>
-		
-							<?php foreach ($value['options'] as $val => $option ) { ?>  
+							<?php break;
+				 
+							case 'select': ?>
+				
+								<div class="wip_inputbox">
+			
+								<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
+			
+								<select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>">  
 								
-								<option <?php if ( ( alhenalite_setting($value['id']) == $val) || ( ( !alhenalite_setting($value['id'])) && ( $value['std'] == $val) )) { echo 'selected="selected"'; } ?> value="<?php echo $val; ?>"><?php echo $option; ?></option>							
+								<?php foreach ( $value['options'] as $val => $option ) { ?>  
 								
-							<?php } ?>  
+								<option <?php if (( alhenalite_setting( $value['id'] ) == $val) || ( ( !alhenalite_setting($value['id'])) && ( $value['std'] == $val) )) { echo 'selected="selected"'; } ?> value="<?php echo $val; ?>"><?php echo $option; ?></option><?php } ?>  
+								</select>  
+			 
+								<p><?php echo $value['desc']; ?></p>
+			
+								</div>
+				
+				
+							<?php break;
 							
-							</select>  
+							case 'background': ?>
 				
-							<div class="preview"></div>
-				
-							<div class="clear"></div>
-				
-							<p><?php echo $value['desc']; ?></p>
-		   
-						</div>
-						
-						<?php break;
-		
-						case "save-button": ?>
-		
-							<div class="wip_inputbox">
-		
-							<input name="action" id="element-open" type="submit" value="<?php echo $value['value']; ?>" class="button"/>
-		
+								<div class="wip_inputbox">
+			
+								<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
+					
+								<input type="hidden" name="template_directory" class="template_directory" value="<?php echo get_template_directory_uri(); ?>" />
+			
+								<select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" class="select-background">  
+								
+								<option value="None">None</option>
+			
+								<?php foreach ($value['options'] as $val => $option ) { ?>  
+									
+									<option <?php if ( ( alhenalite_setting($value['id']) == $val) || ( ( !alhenalite_setting($value['id'])) && ( $value['std'] == $val) )) { echo 'selected="selected"'; } ?> value="<?php echo $val; ?>"><?php echo $option; ?></option>							
+									
+								<?php } ?>  
+								
+								</select>  
+					
+								<div class="preview"></div>
+					
+								<div class="clear"></div>
+					
+								<p><?php echo $value['desc']; ?></p>
+			   
 							</div>
-		
-						<?php break;
-						
+							
+							<?php break;
+			
+							case "save-button": ?>
+			
+								<div class="wip_inputbox">
+			
+								<input name="action" id="element-open" type="submit" value="<?php echo $value['value']; ?>" class="button"/>
+			
+								</div>
+			
+							<?php break;
+							
+					}
 				}
+			
 			}
 		}	
 		

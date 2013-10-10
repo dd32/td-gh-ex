@@ -22,7 +22,7 @@
 
 <?php 
 
-	do_action( 'alhenalite_head' ); 
+	if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 	wp_head(); 
 	
 ?>

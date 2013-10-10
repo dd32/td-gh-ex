@@ -217,19 +217,6 @@ endif;
 
 
 /*-----------------------------------------------------------------------------------*/
-/* Sidebar list */
-/*-----------------------------------------------------------------------------------*/ 
-
-function alhenalite_sidebar_list($sidebar_type) {
-	
-		$sidebars = array( "none" => "None" , $sidebar_type."_sidebar_area" => "Default");
-
-		return $sidebars;
-			
-		
-}
-
-/*-----------------------------------------------------------------------------------*/
 /* Request */
 /*-----------------------------------------------------------------------------------*/ 
 
@@ -407,7 +394,7 @@ if ( is_admin() && isset($_GET['activated'] ) && $pagenow == 'themes.php' ) {
 		"wip_logo_font_size" => "55px", 
 		
 		"wip_menu_font" => "Abel", 
-		"wip_menu_font_size" => "16px", 
+		"wip_menu_font_size" => "14px", 
 		
 		"wip_titles_font" => "Abel", 
 		

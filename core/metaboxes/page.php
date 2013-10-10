@@ -11,9 +11,8 @@
 
 $wip_new_metaboxes = new alhenalite_metaboxes ('page', array (
 
-array( "name" => "Navigation",  
-       "type" => "navigation",  
-       "item" => array( "setting" => __( "Setting","wip"), "sidebars" => __( "Sidebars","wip") ),   
+array( "type" => "navigation",  
+       "item" => array( "setting" => __( "Setting","wip")),   
        "start" => "<ul>", 
        "end" => "</ul>"),  
 
@@ -23,20 +22,6 @@ array( "type" => "begintab",
 
 		array( "name" => __( "Setting","wip"),
 			   "type" => "title",
-			  ),
-
-		array( "name" => __( "Title","wip"),
-			   "desc" => __( "You want to display the title?","wip"),
-			   "id" => "wip_content_title",
-			   "type" => "on-off",
-			   "std" => "on",
-			  ),
-
-		array( "name" => __( "Content","wip"),
-			   "desc" => __( "You want to display the content?","wip"),
-			   "id" => "wip_content",
-			   "type" => "on-off",
-			   "std" => "on",
 			  ),
 
 		array( "name" => __( "Slogan","wip"),
@@ -56,39 +41,6 @@ array( "type" => "begintab",
 			  ),
 			  ),
 			  
-),
-
-array( "type" => "endtab"),
-
-array( "type" => "begintab",
-	   "tab" => "sidebars",
-	   "element" =>
-	  
-		array( "name" => __( "Sidebars","wip"),
-			   "type" => "title",
-			  ),
-		
-		array( "name" => __( "Top sidebar","wip"),
-			   "desc" => __( "Select top sidebar","wip"),
-			   "id" => "wip_top_sidebar",
-			   "type" => "select",
-			   "options" => alhenalite_sidebar_list('top'),
-			),
-
-		array( "name" => __( "Sidebar","wip"),
-			   "desc" => __( "Select side sidebar","wip"),
-			   "id" => "wip_sidebar",
-			   "type" => "select",
-			   "options" => alhenalite_sidebar_list('side'),
-			),
-			
-		array( "name" => __( "Footer sidebar","wip"),
-			   "desc" => __( "Select footer sidebar","wip"),
-			   "id" => "wip_footer_sidebar",
-			   "type" => "select",
-			   "options" => alhenalite_sidebar_list('footer'),
-			),
-
 ),
 
 array( "type" => "endtab"),

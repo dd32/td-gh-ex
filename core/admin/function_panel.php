@@ -11,7 +11,7 @@
 
 function alhenalite_add_menu() {
 	
-	add_theme_page( __('Alhena Options.', 'wip' ), __('Alhena Options.', 'wip' ), 'administrator',  'themeoption', 'alhenalite_themeoption');
+	add_theme_page( __('Alhena Options', 'wip' ), __('Alhena Options', 'wip' ), 'administrator',  'themeoption', 'alhenalite_themeoption');
 	add_theme_page("Get Premium", "Get Premium", 'administrator',  'getpremium', 'alhenalite_getpremium');
 	
 }

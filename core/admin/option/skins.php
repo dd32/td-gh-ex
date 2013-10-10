@@ -19,7 +19,7 @@ $skins = array(
     "wip_logo_font_size" => "55px", 
 	
     "wip_menu_font" => "Abel", 
-    "wip_menu_font_size" => "16px", 
+    "wip_menu_font_size" => "14px", 
 	
     "wip_titles_font" => "Abel", 
 	
@@ -56,7 +56,7 @@ $skins = array(
     "wip_logo_font_size" => "55px", 
 	
     "wip_menu_font" => "Abel", 
-    "wip_menu_font_size" => "16px", 
+    "wip_menu_font_size" => "14px", 
 	
     "wip_titles_font" => "Abel", 
 	
@@ -93,7 +93,7 @@ $skins = array(
     "wip_logo_font_size" => "55px", 
 	
     "wip_menu_font" => "Abel", 
-    "wip_menu_font_size" => "16px", 
+    "wip_menu_font_size" => "14px", 
 	
     "wip_titles_font" => "Abel", 
 	
@@ -131,7 +131,7 @@ $skins = array(
     "wip_logo_font_size" => "55px", 
 	
     "wip_menu_font" => "Abel", 
-    "wip_menu_font_size" => "16px", 
+    "wip_menu_font_size" => "14px", 
 	
     "wip_titles_font" => "Abel", 
 	
@@ -169,7 +169,7 @@ $skins = array(
     "wip_logo_font_size" => "55px", 
 	
     "wip_menu_font" => "Abel", 
-    "wip_menu_font_size" => "16px", 
+    "wip_menu_font_size" => "14px", 
 	
     "wip_titles_font" => "Abel", 
 	
@@ -207,7 +207,7 @@ $skins = array(
     "wip_logo_font_size" => "55px", 
 	
     "wip_menu_font" => "Abel", 
-    "wip_menu_font_size" => "16px", 
+    "wip_menu_font_size" => "14px", 
 	
     "wip_titles_font" => "Abel", 
 	
@@ -245,7 +245,7 @@ $skins = array(
     "wip_logo_font_size" => "55px", 
 	
     "wip_menu_font" => "Abel", 
-    "wip_menu_font_size" => "16px", 
+    "wip_menu_font_size" => "14px", 
 	
     "wip_titles_font" => "Abel", 
 	
@@ -283,7 +283,7 @@ $skins = array(
     "wip_logo_font_size" => "55px", 
 	
     "wip_menu_font" => "Abel", 
-    "wip_menu_font_size" => "16px", 
+    "wip_menu_font_size" => "14px", 
 	
     "wip_titles_font" => "Abel", 
 	
@@ -319,7 +319,7 @@ $skins = array(
     "wip_logo_font_size" => "55px", 
 	
     "wip_menu_font" => "Abel", 
-    "wip_menu_font_size" => "16px", 
+    "wip_menu_font_size" => "14px", 
 	
     "wip_titles_font" => "Abel", 
 	
@@ -357,7 +357,7 @@ $skins = array(
     "wip_logo_font_size" => "55px", 
 	
     "wip_menu_font" => "Abel", 
-    "wip_menu_font_size" => "16px", 
+    "wip_menu_font_size" => "14px", 
 	
     "wip_titles_font" => "Abel", 
 	
@@ -395,7 +395,7 @@ $skins = array(
     "wip_logo_font_size" => "55px", 
 	
     "wip_menu_font" => "Abel", 
-    "wip_menu_font_size" => "16px", 
+    "wip_menu_font_size" => "14px", 
 	
     "wip_titles_font" => "Abel", 
 	
@@ -433,7 +433,7 @@ $skins = array(
     "wip_logo_font_size" => "55px", 
 	
     "wip_menu_font" => "Abel", 
-    "wip_menu_font_size" => "16px", 
+    "wip_menu_font_size" => "14px", 
 	
     "wip_titles_font" => "Abel", 
 	
@@ -471,7 +471,7 @@ $skins = array(
     "wip_logo_font_size" => "55px", 
 	
     "wip_menu_font" => "Abel", 
-    "wip_menu_font_size" => "16px", 
+    "wip_menu_font_size" => "14px", 
 	
     "wip_titles_font" => "Abel", 
 	
@@ -509,7 +509,7 @@ $skins = array(
     "wip_logo_font_size" => "55px", 
 	
     "wip_menu_font" => "Abel", 
-    "wip_menu_font_size" => "16px", 
+    "wip_menu_font_size" => "14px", 
 	
     "wip_titles_font" => "Abel", 
 	

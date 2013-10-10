@@ -13,23 +13,27 @@ function alhenalite_get_title() {
 	
 	global $post;
 	
-	if ( alhenalite_postmeta('wip_content_title') <> "off") { 
-
-		if ((is_home()) || (is_category()) || (is_page() )): ?>
-			
-        <header class="title">
-            <div class="line"><h1><a href="<?php echo get_permalink($post->ID); ?>"><?php the_title(); ?></a></h1></div>
-        </header>
-            
+	$posttitle = get_the_title();
+	
+	if (!empty($posttitle)) {
+	
+		if ((is_home()) || (is_category()) || (is_page() || (is_search()  ))): ?>
+				
+			<header class="title">
+				<div class="line"><h1><a href="<?php echo get_permalink($post->ID); ?>"><?php echo $posttitle; ?></a></h1></div>
+			</header>
+				
 	<?php else: ?>
+			
+			<header class="title">
+				<div class="line"><h1><?php echo $posttitle; ?></h1></div>
+			</header>
+			
+	<?php 
 		
-        <header class="title">
-            <div class="line"><h1><?php the_title(); ?></h1></div>
-        </header>
-		
-	<?php endif; 
-
+			endif; 
 	}
+	
 }
 
 ?>

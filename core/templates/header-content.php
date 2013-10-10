@@ -27,11 +27,9 @@ function alhenalite_header_content_function() {
 	
 	<!-- END SLOGAN -->
 	
-<?php
-	
-	endif;
+<?php endif; ?>
 
-	if ( ( alhenalite_postmeta('wip_top_sidebar')) && ( alhenalite_postmeta('wip_top_sidebar') <> "none" )) :  ?>
+	<?php if ( is_active_sidebar('top_sidebar_area')) : ?>
     
 	<!-- TOP WIDGET -->
 
@@ -39,37 +37,7 @@ function alhenalite_header_content_function() {
 		<div class="container">
 			<div class="row">
 
-			<?php if ( is_active_sidebar(alhenalite_postmeta('wip_top_sidebar'))) { 
-            
-				dynamic_sidebar(alhenalite_postmeta('wip_top_sidebar'));
-            
-            } else { 
-                
-                the_widget( 'WP_Widget_Archives','',
-				array('before_widget' => '<div class="' . alhenalite_layout('wip_top_sidebar_area') . '"><div class="widget-box">',
-					  'after_widget'  => '</div></div>',
-					  'before_title'  => '<header class="title"><div class="line"><h3>',
-					  'after_title'   => '</h3></div></header>'
-				));
-
-                the_widget( 'WP_Widget_Calendar',
-				array("title"=> __('Calendar')),
-				array('before_widget' => '<div class="' . alhenalite_layout('wip_top_sidebar_area') . '"><div class="widget-box">',
-					  'after_widget'  => '</div></div>',
-					  'before_title'  => '<header class="title"><div class="line"><h3>',
-					  'after_title'   => '</h3></div></header>'
-				));
-
-                the_widget( 'WP_Widget_Categories','',
-				array('before_widget' => '<div class="' . alhenalite_layout('wip_top_sidebar_area') . '"><div class="widget-box">',
-					  'after_widget'  => '</div></div>',
-					  'before_title'  => '<header class="title"><div class="line"><h3>',
-					  'after_title'   => '</h3></div></header>'
-				));
-            
-             } 
-			 
-			 ?>
+			<?php dynamic_sidebar('top_sidebar_area'); ?>
 
 			</div>
 		</div>
@@ -77,8 +45,10 @@ function alhenalite_header_content_function() {
 
 	<!--  END TOP WIDGET -->
 
-<?php endif;
-
+<?php
+	
+	endif;
+	
 } 
 
 add_action( 'alhenalite_header_content', 'alhenalite_header_content_function', 10, 2 );

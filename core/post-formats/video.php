@@ -17,7 +17,7 @@ alhenalite_thumbnail('blog','pin-container'); ?>
     
     <div class="entry-info">
        
-         <span class="entry-date"><i class="icon-time" ></i><?php echo get_the_date(); ?></span>
+         <span class="entry-date"><i class="icon-time" ></i><a href="<?php echo get_permalink($post->ID); ?>"><?php echo get_the_date(); ?></a></span>
       
          <?php if (alhenalite_setting('wip_view_comments') == "on" ): ?>
          

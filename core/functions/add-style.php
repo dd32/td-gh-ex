@@ -107,7 +107,7 @@
 		echo '::-moz-selection { background-color: '.alhenalite_setting('wip_link_color').'; } ';
 		echo '::selection { background-color: '.alhenalite_setting('wip_link_color').'; } ';
 
-		echo '.button, .skills .views.active, .skills .views:hover, .filter li:hover, .filter li.active, .contact-form input[type=submit], .comment-form input[type=submit], .button:hover, #header-box .tagcloud a, #bottom-box .tagcloud a, #top-box .tagcloud a, #footer-box .tagcloud a, #sidebar .tagcloud a, #slogan, .flex-control-paging li a.flex-active, .flex-control-paging li a:hover, .rev_slider_wrapper .tp-bullets.simplebullets.round .bullet.selected, .ei-slider-thumbs li.ei-slider-element { background-color: '.alhenalite_setting('wip_link_color').'; } ';
+		echo '.button, .skills .views.active, .skills .views:hover, .filter li:hover, .filter li.active, #searchform input[type=submit], .comment-form input[type=submit], .button:hover, #header-box .tagcloud a, #bottom-box .tagcloud a, #top-box .tagcloud a, #footer-box .tagcloud a, #sidebar .tagcloud a, #slogan, .flex-control-paging li a.flex-active, .flex-control-paging li a:hover, .rev_slider_wrapper .tp-bullets.simplebullets.round .bullet.selected, .ei-slider-thumbs li.ei-slider-element { background-color: '.alhenalite_setting('wip_link_color').'; } ';
 
 		echo 'a, .works a.link:hover { color: '.alhenalite_setting('wip_link_color').'; } ';
 
@@ -134,7 +134,7 @@
 
 		echo 'a:hover, #footer a:hover, #footer .copyright a:hover, #footer ul.widget-category li:hover, #footer ul.widget-category li a:hover, .pin-article .title h1 a:hover, blockquote h4.title a:hover { color: '.alhenalite_setting('wip_link_color_hover').'; } ';
 
-		echo '.button:hover, .pin-article .quote:hover, .pin-article .link a:hover, .contact-form input[type=submit]:hover, .comment-form input[type=submit]:hover, .jcarousel-skin-wip .circle, .jcarousel-skin-wip .pin-article > .text .button:hover, .jcarousel-skin-wip .pin-article:hover, #header-box .tagcloud a:hover, #top-box .tagcloud a:hover, #bottom-box .tagcloud a:hover, #footer-box .tagcloud a:hover, #sidebar .tagcloud a:hover, .wp-pagenavi a:hover, .wp-pagenavi span.current, .theme-default .nivo-directionNav a:hover, .flexslider .flex-next:hover, .flexslider .flex-prev:hover, .flex-caption .description, .jcarousel-skin-wip .jcarousel-next-horizontal, .jcarousel-skin-wip .jcarousel-prev-horizontal, .flex-caption .url:hover { background-color: '.alhenalite_setting('wip_link_color_hover').'; } ';
+		echo '.button:hover, .pin-article .quote:hover, .pin-article .link a:hover, #searchform input[type=submit]:hover, .comment-form input[type=submit]:hover, .jcarousel-skin-wip .circle, .jcarousel-skin-wip .pin-article > .text .button:hover, .jcarousel-skin-wip .pin-article:hover, #header-box .tagcloud a:hover, #top-box .tagcloud a:hover, #bottom-box .tagcloud a:hover, #footer-box .tagcloud a:hover, #sidebar .tagcloud a:hover, .wp-pagenavi a:hover, .wp-pagenavi span.current, .theme-default .nivo-directionNav a:hover, .flexslider .flex-next:hover, .flexslider .flex-prev:hover, .flex-caption .description, .jcarousel-skin-wip .jcarousel-next-horizontal, .jcarousel-skin-wip .jcarousel-prev-horizontal, .flex-caption .url:hover { background-color: '.alhenalite_setting('wip_link_color_hover').'; } ';
 
 		echo '.jcarousel-skin-wip .pin-article:hover { border-color: '.alhenalite_setting('wip_link_color_hover').' !important; } ';
 
@@ -144,7 +144,7 @@
 
 	if ( alhenalite_setting('wip_border_color') ):
 	
-		echo '.contact-form input[type=submit], .contact-form input[type=submit]:hover, .comment-form input[type=submit], .comment-form input[type=submit]:hover, .jcarousel-skin-wip .pin-article > .text, .button, .button:hover { border-color: '.alhenalite_setting('wip_border_color').' !important; } ';
+		echo '#searchform input[type=submit], .contact-form input[type=submit]:hover, .comment-form input[type=submit], .comment-form input[type=submit]:hover, .jcarousel-skin-wip .pin-article > .text, .button, .button:hover { border-color: '.alhenalite_setting('wip_border_color').' !important; } ';
 
 		echo '#footer, #footer .widget, article blockquote { border-color: '.alhenalite_setting('wip_border_color').'; } ';
 		

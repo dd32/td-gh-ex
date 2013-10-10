@@ -1,5 +1,16 @@
 <?php
 
+	register_sidebar(array(
+	
+		'name' => 'Side Sidebar',
+		'id'   => 'side_sidebar_area',
+		'description'   => __( "This sidebar will be shown at the side of content","wip"),
+		'before_widget' => '<div class="widget-box">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<header class="title"><div class="line"><h3>',
+		'after_title'   => '</h3></div></header>'
+	
+	));
 
 	register_sidebar(array(
 	
@@ -25,18 +36,6 @@
 	
 	));
 	
-	register_sidebar(array(
-	
-		'name' => 'Side Sidebar',
-		'id'   => 'side_sidebar_area',
-		'description'   => __( "This sidebar will be shown at the side of content","wip"),
-		'before_widget' => '<div class="widget-box">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<header class="title"><div class="line"><h3>',
-		'after_title'   => '</h3></div></header>'
-	
-	));
-
 	register_sidebar(array(
 	
 		'name' => 'Category Sidebar',

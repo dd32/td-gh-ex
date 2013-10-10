@@ -3,9 +3,9 @@
 	<section id="sidebar" class="pin-article span4">
 		<div class="sidebar-box">
 
-			<?php if ( is_active_sidebar(alhenalite_postmeta('wip_sidebar'))) { 
+			<?php if ( is_active_sidebar('side_sidebar_area')) { 
             
-                dynamic_sidebar(alhenalite_postmeta('wip_sidebar'));
+                dynamic_sidebar('side_sidebar_area');
             
             } else { 
                 
