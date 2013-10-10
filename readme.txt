@@ -41,3 +41,10 @@ Version 1.0.1
 
 Version 1.0.2
 * Fixed Undefined variable: headerimage in frontend
+
+Version 1.1
+* Added 3 column layout
+* Added Third Column Sidebar
+* Added content-sidebar-wrap div to support 3 column layout
+* Added catchevolution_before_contentsidebarwrap and catchevolution_after_contentsidebarwrap hook to support 3 column layout
+* Fixed Error 404 page search box

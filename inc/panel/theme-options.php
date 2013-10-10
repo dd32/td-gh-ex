@@ -438,7 +438,12 @@ function catchevolution_theme_options_do_page() {
                                             <label title="no-sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/images/no-sidebar.png" alt="Content-Sidebar" /><br />
                                             <input type="radio" name="catchevolution_options[sidebar_layout]" id="no-sidebar" <?php checked($options['sidebar_layout'], 'no-sidebar') ?> value="no-sidebar"  />
                                             <?php _e( 'No Sidebar', 'catchevolution' ); ?>
-                                            </label>            
+                                            </label>   
+                                            
+                                            <label title="three-columns" class="box"><img src="<?php echo get_template_directory_uri(); ?>/images/three-columns.png" alt="Three Columns" /><br />
+                                            <input type="radio" name="catchevolution_options[sidebar_layout]" id="three-columns" <?php checked($options['sidebar_layout'], 'three-columns') ?> value="three-columns"  />
+                                            <?php _e( 'Three Columns', 'catchevolution' ); ?>
+                                            </label>                                                      
                                         </td>
                                     </tr> 
                                     

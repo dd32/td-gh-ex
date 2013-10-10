@@ -4,10 +4,10 @@ Theme URI: http://catchthemes.com/themes/catch-evolution
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
 Description: Catch Evolution is a beautifully sleek creation of Catch Themes. It exudes a clean and super sharp look. It comes with a whole set of interesting, rich features and flexible theme options. Built on HTML5, CSS3, it has a responsive design which lets the content automatically adapt to the screen's size on different devices. Catch Evolution looks striking in a bigger screen. The layout is wider, bigger and luxuriously spacious. This theme is easily customizable with an advanced theme options panel. It supports popular plugins such as Jetpack, WordPress SEO by Yoast, WP-PageNavi, Contact Form 7, WooCommerce and many more. It is also translation ready and should you need support with this theme, please go to http://catchthemes.com/support/
-Version: 1.0.2
+Version: 1.1
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
-Tags: dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+Tags: dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, threaded-comments, flexible-header, three-columns
 */
 
 /* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
@@ -117,6 +117,10 @@ footer, header, hgroup, menu, nav, section, .sticky {
 .widget_search #s {
     width: 87%;
 }
+.sidebar-three-columns .widget_search #s {
+    padding-right: 1%;
+    width: 80%;
+}
 
 /* Left-Sidebar, Content on Right */
 .left-sidebar #primary {
@@ -204,6 +208,21 @@ footer, header, hgroup, menu, nav, section, .sticky {
     margin: 0;
 }
 
+/* Three Columns Layout with 2 Sidebars */
+.three-columns .content-sidebar-wrap {
+    float: right;
+    width: 920px;
+}
+.three-columns #primary {
+    width: 530px;
+}
+.three-columns #secondary {
+    width: 360px;
+}
+.three-columns #third {
+    float: left;
+    width: 240px;
+}
 
 /* Attachments */
 .no-sidebar .single-attachment .entry-header,
@@ -1596,16 +1615,8 @@ blockquote.pull {
 /* =error404
 ----------------------------------------------- */
 
-.error404 #main #searchform {
-	background: #f9f9f9;
-	border: 1px solid #ccc;
-	border-width: 1px 0;
-	margin: 0 -30.55% 2em;
-	overflow: hidden;
-	padding: 2em 8.9%;
-}
 .error404 #main #s {
-	width: 95%;
+	width: 90%;
 }
 .error404 #main .widget {
 	clear: none;

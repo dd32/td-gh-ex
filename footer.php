@@ -9,6 +9,15 @@
  * @since Catch Evolution Pro 1.0
  */
 ?>
+		</div><!-- #content-sidebar-wrap -->
+        <?php 
+		/** 
+		 * catchevolution_after_contentsidebarwrap hook
+		 *
+         * @hooked catchevolution_third_sidebar - 10
+		 */
+		do_action( 'catchevolution_after_contentsidebarwrap' ); 
+		?>   
 	</div><!-- .wrapper -->
 </div><!-- #main -->
 

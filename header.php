@@ -104,24 +104,33 @@ do_action( 'catchevolution_before' ); ?>
     
 	<div id="main" class="clearfix">
     	<div class="wrapper">
+        
+ 			<?php 
+			/** 
+			 * catchevolution_before_contentsidebarwrap hook
+			 */
+			do_action( 'catchevolution_before_contentsidebarwrap' ); 
+			?> 
+        	
+            <div class="content-sidebar-wrap">       
     
-		<?php 
-        /** 
-		 * catchevolution_before_primary hook
-		 *
-		 * @hooked catchevolution_slider_display - 10 if full width image slide is selected
-		 */
-        do_action( 'catchevolution_before_primary' ); ?>
-        
-		<div id="primary">
-        
-        	<?php do_action( 'catchevolution_before_content' ); ?>
-            
-			<div id="content" role="main">
 				<?php 
                 /** 
-                 * catchevolution_content hook
+                 * catchevolution_before_primary hook
                  *
-                 * @hooked catchevolution_slider_display - 10 if full width image slide is not selected
+                 * @hooked catchevolution_slider_display - 10 if full width image slide is selected
                  */
-                do_action( 'catchevolution_content' ); ?>
+                do_action( 'catchevolution_before_primary' ); ?>
+                
+                <div id="primary">
+                
+                    <?php do_action( 'catchevolution_before_content' ); ?>
+                    
+                    <div id="content" role="main">
+                        <?php 
+                        /** 
+                         * catchevolution_content hook
+                         *
+                         * @hooked catchevolution_slider_display - 10 if full width image slide is not selected
+                         */
+                        do_action( 'catchevolution_content' ); ?>

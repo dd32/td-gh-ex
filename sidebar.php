@@ -34,8 +34,9 @@ do_action( 'catchevolution_before_secondary' );
 	$options = $catchevolution_options_settings;
 	$themeoption_layout = $options['sidebar_layout'];
     
-	if ( ( $layout == 'left-sidebar' || $layout == 'right-sidebar' || ( $layout=='default' && $themeoption_layout == 'left-sidebar') || ( $layout=='default' && $themeoption_layout == 'right-sidebar') ) ) : 
+	if ( $layout == 'left-sidebar' || $layout == 'right-sidebar' || $layout == 'three-columns' || ( $layout=='default' && $themeoption_layout == 'left-sidebar') || ( $layout=='default' && $themeoption_layout == 'right-sidebar') || ( $layout=='default' && $themeoption_layout == 'three-columns' ) ) : 
 	?>
+        
         <div id="secondary" class="widget-area" role="complementary">
 			<?php 
 			/** 

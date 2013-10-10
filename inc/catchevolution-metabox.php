@@ -46,23 +46,17 @@ $sidebar_layout = array(
 		'label' 	=> __( 'Left sidebar', 'catchevolution' ),
 		'thumbnail' => get_template_directory_uri() . '/images/left-sidebar.png'
 	),	
-	'no-sidebar-one-column' => array(
-		'id'		=> 'catchevolution-sidebarlayout',
-		'value' 	=> 'no-sidebar-one-column',
-		'label' 	=> __( 'No Sidebar, One Column', 'catchevolution' ),
-		'thumbnail' => get_template_directory_uri() . '/images/one-column.png'
-	),	
-	'no-sidebar-full-width' => array(
-		'id'		=> 'catchevolution-sidebarlayout',
-		'value' 	=> 'no-sidebar-full-width',
-		'label' 	=> __( 'No sidebar, Full Width', 'catchevolution' ),
-		'thumbnail' => get_template_directory_uri() . '/images/no-sidebar-fullwidth.png'
-	),	
 	'no-sidebar' => array(
 		'id'		=> 'catchevolution-sidebarlayout',
 		'value' 	=> 'no-sidebar',
 		'label' 	=> __( 'No sidebar', 'catchevolution' ),
 		'thumbnail' => get_template_directory_uri() . '/images/no-sidebar.png'
+	),	
+	'three-columns'			=> array(
+		'id'				=> 'catchevolution-sidebarlayout',
+		'value'				=> 'three-columns',
+		'label'				=> __( 'Three Columns', 'catchevolution' ),
+		'thumbnail'			=> get_template_directory_uri() . '/images/three-columns.png'
 	)
 );
 

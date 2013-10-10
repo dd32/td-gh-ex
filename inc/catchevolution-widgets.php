@@ -22,6 +22,16 @@ function catchevolution_widgets_init() {
 		'after_title' => '</h3>',
 	) );		
 	
+	//Third Column Sidebar
+	register_sidebar( array(
+		'name' => __( 'Third Column Sidebar', 'catchevolution' ),
+		'id' => 'catchevolution_third',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => "</aside>",
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+	
 	// Header Right Sidebar
 	register_sidebar( array(
 		'name' => __( 'Header Right Sidebar', 'catchevolution' ),

@@ -495,8 +495,10 @@ function catchevolution_body_classes( $classes ) {
 	if ( empty( $layout ) || ( !is_page() && !is_single() && 'product' != get_post_type() ) ) {
 		$layout='default';
 	}	
-
-	if ( $layout == 'no-sidebar' || ( $layout=='default' && $themeoption_layout == 'no-sidebar' ) || is_page_template( 'page-disable-sidebar.php' ) ) {
+	if ( $layout == 'three-columns' || ( $layout=='default' && $themeoption_layout == 'three-columns' ) || is_page_template( 'page-three-columns.php' ) ) {
+		$classes[] = 'three-columns';
+	}
+	elseif ( $layout == 'no-sidebar' || ( $layout=='default' && $themeoption_layout == 'no-sidebar' ) || is_page_template( 'page-disable-sidebar.php' ) ) {
 		$classes[] = 'no-sidebar';
 	}
 	elseif ( $layout == 'no-sidebar-one-column' || ( $layout=='default' && $themeoption_layout == 'no-sidebar-one-column' ) || is_page_template( 'page-onecolumn.php' ) ) {
@@ -1309,4 +1311,16 @@ function catchevolution_footer_menu() {
 } // catchevolution_footer_menu
 endif;
 
-add_action( 'catchevolution_after_footer_sidebar', 'catchevolution_footer_menu', 10 );
+add_action( 'catchevolution_after_footer_sidebar', 'catchevolution_footer_menu', 10 ); 
+
+/**
+ * Third Sidebar
+ *
+ * @Hooked in catchevolution_before_primary
+ * @since Catch Evolution 1.1
+ */
+
+function catchevolution_third_sidebar() {
+	get_sidebar( 'third' ); 
+}  
+add_action( 'catchevolution_after_contentsidebarwrap', 'catchevolution_third_sidebar', 10 );

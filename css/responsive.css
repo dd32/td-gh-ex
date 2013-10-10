@@ -43,6 +43,21 @@
 	#site-generator .wrapper {
 		padding: 25px 0;
 	}	
+	/* Three Columns Layout with 2 Sidebars */
+	.three-columns .content-sidebar-wrap {
+		float: right;
+		width: 754px;
+	}
+	.three-columns #primary {
+		width: 434px;
+	}
+	.three-columns #secondary {
+		width: 290px;
+	}
+	.three-columns #third {
+		float: left;
+		width: 240px;
+	}
 }
 @media screen and (max-width: 1060px) {		
 	.wrapper {
@@ -51,6 +66,19 @@
 	#primary {
 		width: 530px;
 	}
+	/* Three Columns Layout with 2 Sidebars */
+	.three-columns .content-sidebar-wrap {
+		width: 670px;
+	}
+	.three-columns #primary {
+		width: 400px;
+	}
+	.three-columns #secondary {
+		width: 240px;
+	}
+	.three-columns #third {
+		width: 200px;
+	}		
 }
 /* iPads (landscape) ----------- */
 @media only screen 
@@ -134,7 +162,19 @@ and (orientation : landscape) {
 		background-color: #fff;
 		color: #000;
 	}	
-	
+	/* Three Columns Layout with 2 Sidebars */
+	.three-columns .content-sidebar-wrap {
+		width: 730px;
+	}
+	.three-columns #primary {
+		width: 460px;
+	}
+	.three-columns #secondary {
+		width: 240px;
+	}
+	.three-columns #third {
+		width: 200px;
+	}	
 }
 @media screen and (max-width: 960px) {	
 	/* Styles */
@@ -253,6 +293,13 @@ and (orientation : landscape) {
 	}
 	.entry-content h6 {
 		font-size: 11px;
+	}	
+	/* Three Columns Layout with 2 Sidebars */
+	.three-columns .content-sidebar-wrap,
+	.three-columns #primary,
+	.three-columns #secondary,
+	.three-columns #third {
+		width: 100%;
 	}	
 }
 
@@ -550,6 +597,9 @@ and (orientation : landscape) {
 	}
 	#site-generator {
 		font-size: 11px;
+	}	
+	.error404 #main #s {
+		width: 85%;
 	}		
 }
 @media only screen 
@@ -705,5 +755,8 @@ and (max-width: 767px) {
 	}
 	.featured-post .entry-title {
 		font-size: 13px;
-	}		
+	}
+	.error404 #main #s {
+		width: 80%;
+	}			
 }
