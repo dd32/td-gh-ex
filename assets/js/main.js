@@ -6,7 +6,10 @@ jQuery(document).ready(function ($) {
 		$("collapse").collapse();
 		$('#authorTab a').click(function (e) {e.preventDefault(); $(this).tab('show'); });
 		$('.sc_tabs a').click(function (e) {e.preventDefault(); $(this).tab('show'); });
-		
+		$("a[rel^='lightbox']").prettyPhoto({
+			theme: 'dark_square', /* light_rounded / dark_rounded / light_square / dark_square / facebook */
+			social_tools: false,
+		});
 		$(".videofit").fitVids();
 		$('.accordion').on('show', function (e) {
          $(e.target).prev('.accordion-heading').find('.accordion-toggle').addClass('open');

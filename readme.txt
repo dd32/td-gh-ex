@@ -22,13 +22,13 @@ Virtue Theme Uses:
 * FontAwesome by Dave Gandy (http://fontawesome.io) licensed under the SIL OFL 1.1 (http://scripts.sil.org/OFL)
 * FlexSlider by WooThemes under the GPLv2 license (http://www.gnu.org/licenses/gpl-2.0.html)
 * Star Font and Woocommerce Templates by Woothemes for Woocommerce (licensed under GNU General Public License v2.0 or later)
-* RootsTheme (http://www.rootstheme.com/) licensed under MIT license, http://www.opensource.org/licenses/mit-license.php
-* SMOF - Slightly Modded Options Framework (https://github.com/syamilmj/Options-Framework) licensed under GNU General Public License v2.0 or later
+* Theme aspects derived from RootsTheme (http://www.rootstheme.com/) licensed under MIT license, http://www.opensource.org/licenses/mit-license.php
+* Theme Options derived from SMOF - Slightly Modded Options Framework (https://github.com/syamilmj/Options-Framework) licensed under GNU General Public License v3.0
 * Google Fonts (available through Google web Fonts: http://www.google.com/fonts/), licensed under Apache License Version 2
 * Aqua Resizer (https://github.com/syamilmj/Aqua-Resizer), licensed under WTFPL http://www.wtfpl.net/
 * Twitter Bootstrap (https://github.com/twbs/bootstrap), licensed under Apache License Version 2
 * Custom Metaboxes and Fields for Wordpress (https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress), licensed under GNU General Public License v2.0 or later
-* Lightbox2 (https://github.com/lokesh/lightbox2) Licensed under the Creative Commons Attribution 2.5 License
+* prettyPhoto (http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/) licensed under GNU General Public License v2.0
 * carouFredSel (https://github.com/gilbitron/carouFredSel), licensed under GNU General Public License v2.0 or later 
 * Select2 (http://ivaynberg.github.io/select2/), licensed under GNU General Public License v2.0 or later
 * hoverIntent (https://github.com/briancherne/jquery-hoverIntent), licensed under MIT license, http://www.opensource.org/licenses/mit-license.php
@@ -37,7 +37,7 @@ Virtue Theme Uses:
 * Fitvids (https://github.com/davatron5000/FitVids.js/blob/master/jquery.fitvids.js), Released under the WTFPL license - http://sam.zoy.org/wtfpl/
 * touchSwipe, (https://github.com/mattbryson/TouchSwipe-Jquery-Plugin), Dual licensed under the MIT or GPL Version 2 licenses
 * jquery.customSelect (http://adam.co/lab/jquery/customselect/), Dual licensed under the MIT or GPL Version 2 licenses
-* jQuery gMap (http://github.com/marioestrada/jQuery-gMap), licensed under Creative Commons BY-SA 3.0 
+* GMAP3 Plugin for JQuery (http://gmap3.net/), licensed under GNU General Public License v3.0
 * jQuery Scroll to Top Control script (http://www.dynamicdrive.com/) Custom license: http://www.dynamicdrive.com/notice.htm
 * TGM Plugin Activation library (https://github.com/thomasgriffin/TGM-Plugin-Activation) licensed under GNU General Public License v2.0 or later
 
@@ -46,6 +46,12 @@ Virtue Theme Uses:
 -------------------------------------------------------
 
 = Theme Name: Virtue =
+
+= Version: 1.5.4 =
+
+* Updated Links in Theme Options
+* Changed Theme Lightbox to prettyPhoto
+* Change gMap to GMAP3 Plugin for JQuery
 
 = Version: 1.5.3 =
 

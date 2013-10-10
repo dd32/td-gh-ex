@@ -430,8 +430,8 @@ $of_options = array();
 						"desc" 		=> "",
 						"id" 		      => "introduction",
 						"std" 		=> "<h3>".__('Welcome to Virtue Theme Options', 'virtue')."</h3>
-						<p>This theme was developed by <a href=\"http://kadencethemes.com/\">Kadence Themes</a></p>
-                                    <p>For theme documentation visit: <a href=\"http://docs.kadencethemes.com/virtue/\">docs.kadencethemes.com/virtue/</a>
+						<p>This theme was developed by <a href=\"http://kadencethemes.com/\" target=\"_blank\">Kadence Themes</a></p>
+                                    <p>For theme documentation visit: <a href=\"http://docs.kadencethemes.com/virtue/\" target=\"_blank\">docs.kadencethemes.com/virtue/</a>
                                     <br />
                                     For support please visit: <a href=\"http://wordpress.org/support/theme/virtue\" target='_blank' >wordpress.org/support/theme/virtue</a></p>",
 						"icon" 		=> true,
