@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Mantra 2.1\n"
-"POT-Creation-Date: 2013-09-25 13:14+0200\n"
-"PO-Revision-Date: 2013-09-25 13:15+0200\n"
+"POT-Creation-Date: 2013-10-10 13:45+0200\n"
+"PO-Revision-Date: 2013-10-10 13:46+0200\n"
 "Last-Translator: Cryout Creations\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -50,12 +50,12 @@ msgstr ""
 msgid "Blog Archives"
 msgstr ""
 
-#: archive.php:59 author.php:75 category.php:51 content-frontpage.php:25
+#: archive.php:59 author.php:75 category.php:51 content-frontpage.php:26
 #: index.php:41 search.php:41 tag.php:52 template-blog.php:36
 msgid "Nothing Found"
 msgstr ""
 
-#: archive.php:63 author.php:79 category.php:55 content-frontpage.php:29
+#: archive.php:63 author.php:79 category.php:55 content-frontpage.php:30
 #: index.php:45 tag.php:56 template-blog.php:40
 msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
@@ -185,6 +185,35 @@ msgstr ""
 
 #: searchform.php:1
 msgid "Search"
+msgstr ""
+
+#: sidebar.php:26 sidebar.php:92
+msgid "Sidebar 1"
+msgstr ""
+
+#: sidebar.php:28 sidebar.php:94
+#, php-format
+msgid ""
+"You currently have no widgets set in the primary sidebar. You can add "
+"widgets via the <a href=\"%s\">Dashboard</a>."
+msgstr ""
+
+#: sidebar.php:29 sidebar.php:61 sidebar.php:95 sidebar.php:129
+#, php-format
+msgid ""
+"To hide this sidebar, switch to a different Layout via the <a href=\"%s"
+"\">Theme Settings</a>."
+msgstr ""
+
+#: sidebar.php:58 sidebar.php:126
+msgid "Sidebar 2"
+msgstr ""
+
+#: sidebar.php:60 sidebar.php:128
+#, php-format
+msgid ""
+"You currently have no widgets set in the secondary sidebar. You can add "
+"widgets via the <a href=\"%s\">Dashboard</a>."
 msgstr ""
 
 #: single.php:46

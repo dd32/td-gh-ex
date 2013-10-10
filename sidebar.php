@@ -18,7 +18,21 @@ if (is_page_template() && !is_page_template('template-blog.php') && !is_page_tem
 	<div id="primary" class="widget-area" role="complementary">
 	
 	<?php cryout_before_primary_widgets_hook(); ?>
-	
+			
+			
+		<?php if (!is_active_sidebar('primary-widget-area') && !is_active_sidebar('secondary-widget-area')): ?>
+			<ul class="xoxo">	
+				<li class="widget-container widget-placeholder">
+					<h3 class="widget-title"><?php _e('Sidebar 1','mantra'); ?></h3>
+					<p><?php
+					printf( __('You currently have no widgets set in the primary sidebar. You can add widgets via the <a href="%s">Dashboard</a>.','mantra'),esc_url( admin_url()."widgets.php") ); echo "<br/>";
+					printf( __('To hide this sidebar, switch to a different Layout via the <a href="%s">Theme Settings</a>.','mantra'), esc_url( admin_url()."themes.php?page=mantra-page") );
+					?></p>
+				</li>
+			</ul>
+		<?php endif; ?>
+			
+			
 			<ul class="xoxo">
 				<?php dynamic_sidebar( 'primary-widget-area' ); ?>
 			</ul>
@@ -37,6 +51,18 @@ if (is_page_template() && !is_page_template('template-blog.php') && !is_page_tem
 		<div id="secondary" class="widget-area" role="complementary" >
 		
 		<?php cryout_before_secondary_widgets_hook(); ?>
+		
+				<?php if (!is_active_sidebar('third-widget-area') && !is_active_sidebar('fourth-widget-area')): ?>
+			<ul class="xoxo">	
+				<li class="widget-container widget-placeholder">
+					<h3 class="widget-title"><?php _e('Sidebar 2','mantra'); ?></h3>
+					<p><?php
+					printf( __('You currently have no widgets set in the secondary sidebar. You can add widgets via the <a href="%s">Dashboard</a>.','mantra'),esc_url( admin_url()."widgets.php") ); echo "<br/>";
+					printf( __('To hide this sidebar, switch to a different Layout via the <a href="%s">Theme Settings</a>.','mantra'), esc_url( admin_url()."themes.php?page=mantra-page") );
+					?></p>
+				</li>
+			</ul>
+		<?php endif; ?>
 		
 			<ul class="xoxo">
 				<?php dynamic_sidebar( 'third-widget-area' ); ?>
@@ -59,6 +85,19 @@ if ($mantra_side != "1c") { ?>
 		
 		<?php cryout_before_primary_widgets_hook(); ?>
 		
+		<?php 
+				if (!is_active_sidebar('primary-widget-area') && !is_active_sidebar('secondary-widget-area')): ?>
+			<ul class="xoxo">	
+				<li class="widget-container widget-placeholder">
+					<h3 class="widget-title"><?php _e('Sidebar 1','mantra'); ?></h3>
+					<p><?php
+					printf( __('You currently have no widgets set in the primary sidebar. You can add widgets via the <a href="%s">Dashboard</a>.','mantra'),esc_url( admin_url()."widgets.php") ); echo "<br/>";
+					printf( __('To hide this sidebar, switch to a different Layout via the <a href="%s">Theme Settings</a>.','mantra'), esc_url( admin_url()."themes.php?page=mantra-page") );
+					?></p>
+				</li>
+			</ul>
+		<?php endif; ?>
+		
 			<ul class="xoxo">
 				<?php dynamic_sidebar( 'primary-widget-area' ) ; ?>
 			</ul>
@@ -67,18 +106,31 @@ if ($mantra_side != "1c") { ?>
 				<?php dynamic_sidebar( 'secondary-widget-area' ); ?>
 			</ul>
 			
+			
 			<?php cryout_after_primary_widgets_hook(); ?>
 			
 		</div><!-- #primary .widget-area -->
 
 <?php
 	// A second sidebar for widgets, just because.
-	if ( is_active_sidebar( 'third-widget-area' ) || is_active_sidebar( 'fourth-widget-area' )) {
+	
 	if ( $mantra_side != "2cSr" &&  $mantra_side != "2cSl") { ?>
 	
 		<div id="secondary" class="widget-area" role="complementary" >
 		
 		<?php cryout_before_secondary_widgets_hook(); ?>
+		<?php echo is_active_sidebar('third-widget-area'); ?>
+		<?php if (!is_active_sidebar('third-widget-area') && !is_active_sidebar('fourth-widget-area')): ?>
+			<ul class="xoxo">	
+				<li class="widget-container widget-placeholder">
+					<h3 class="widget-title"><?php _e('Sidebar 2','mantra'); ?></h3>
+					<p><?php
+					printf( __('You currently have no widgets set in the secondary sidebar. You can add widgets via the <a href="%s">Dashboard</a>.','mantra'),esc_url( admin_url()."widgets.php") ); echo "<br/>";
+					printf( __('To hide this sidebar, switch to a different Layout via the <a href="%s">Theme Settings</a>.','mantra'), esc_url( admin_url()."themes.php?page=mantra-page") );
+					?></p>
+				</li>
+			</ul>
+		<?php endif; ?>
 		
 			<ul class="xoxo">
 				<?php dynamic_sidebar( 'third-widget-area' ); ?>
@@ -91,5 +143,5 @@ if ($mantra_side != "1c") { ?>
 		<?php cryout_after_secondary_widgets_hook(); ?>	
 		
 		</div><!-- #secondary .widget-area -->
-	<?php }}
+	<?php }
  }?> <!-- 1c -->

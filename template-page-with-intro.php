@@ -41,6 +41,7 @@ Template Name: Category page with intro
 	?>
 	<?php /* Start the Loop */ ?>
 		<?php while ( have_posts() ) : the_post(); ?>
+		<?php global $more; $more=0; ?>
 		<?php get_template_part( 'content', get_post_format() ); ?>
 		<?php endwhile; ?>
 		<?php if($mantra_pagination=="Enable") mantra_pagination(); else mantra_content_nav( 'nav-below' ); ?>

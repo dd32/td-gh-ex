@@ -13,7 +13,8 @@ global $mantra_options;
 
 				<?php $the_query = new WP_Query( array('posts_per_page'=>$mantra_options['mantra_frontpostscount']) ); ?>
 				<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-
+					
+					<?php global $more; $more=0; ?>
 					<?php get_template_part( 'content', get_post_format() ); ?>
 										
 				<?php endwhile; 

@@ -284,7 +284,7 @@ $image_src = cryout_echo_first_image($post->ID);
 			the_post_thumbnail( 'custom', array("class" => "align".strtolower($mantra_falign)." post_thumbnail" ) ); 
 
 	else if ($mantra_fpost=='Enable' && $mantra_fauto=="Enable" && $image_src && ($mantra_excerptarchive != "Full Post" || $mantra_excerpthome != "Full Post")) 
-			echo '<a title="'.the_title_attribute('echo=0').'" href="'.get_permalink().'" ><img title="" alt="" class="align'.strtolower($mantra_falign).' post_thumbnail" src="'.$image_src.'"></a>' ;
+			echo '<a title="'.the_title_attribute('echo=0').'" href="'.get_permalink().'" ><img width="'.$mantra_fwidth.'" title="" alt="" class="align'.strtolower($mantra_falign).' post_thumbnail" src="'.$image_src.'"></a>' ;
 							
 	}
 endif; // mantra_set_featured_thumb

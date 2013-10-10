@@ -16,6 +16,16 @@ add_shortcode( 'mantra-button-light', 'mantra_button_light_fn' );
 add_shortcode( 'mantra-button-dark', 'mantra_button_dark_fn' );
 add_shortcode( 'mantra-button-color', 'mantra_button_color_fn' );
 
+add_shortcode('cryout-site', 'mantra_site_link_fn'); 
+add_shortcode('cryout-author', 'mantra_the_author_fn');
+add_shortcode('cryout-tag-cloud', 'mantra_tag_cloud_fn');
+add_shortcode('cryout-multi', 'mantra_multi_column_fn');
+add_shortcode('cryout-column', 'mantra_column_fn');
+add_shortcode( 'cryout-pullquote', 'mantra_pullquote_fn' );
+add_shortcode( 'cryout-button-light', 'mantra_button_light_fn' );
+add_shortcode( 'cryout-button-dark', 'mantra_button_dark_fn' );
+add_shortcode( 'cryout-button-color', 'mantra_button_color_fn' );
+
 /**
  * Returns a link to the current site 
  * No attributes 

@@ -176,8 +176,9 @@
 	.theme-default .nivo-caption {
 	font-size:9px;
 	}
-	
-
+	.short-columns {
+		width:100%;
+	}
 }
 
 
@@ -211,7 +212,6 @@ body, #content p, #content ul, #content ol,#content code, #content pre, #content
 	#branding {
 		border-top: none;
 	}
-
 
 }
 
