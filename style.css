@@ -4,7 +4,7 @@ Theme Name: Alhena Lite
 Description: Alhena is a responsive clean and corporate WordPress Theme. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10 and uses the most modern technologies like HTML5 and CSS3.
 Author: Theme in Progress.
 Author URI: http://themeinprogress.com
-Version: 1.0.3.1
+Version: 1.0.3.2
 Tags: gray, black, white, orange, blue, red, purple, yellow, green, dark, light, two-columns, right-sidebar, left-sidebar, custom-background, custom-menu, threaded-comments, full-width-template, theme-options 
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -1586,13 +1586,19 @@ a.email  {
 	text-align:right;
 }
 
-.wp-pagenavi { 
+.wp-pagenavi,
+.wip-pagination { 
 	text-align: center; 
 	position:relative;
 	margin-bottom:50px;
 }
- 
-.wp-pagenavi a, .wp-pagenavi a:link,.wp-pagenavi span.current { 
+.wip-pagination { 
+	margin-top:50px;
+}
+.wp-pagenavi a, 
+.wp-pagenavi a:link,
+.wp-pagenavi span.current, 
+.wip-pagination span { 
 	display:inline-block;
 	padding:10px 12px;
 	margin-bottom:0;
@@ -1615,7 +1621,14 @@ a.email  {
 	-o-transition: all .3s ease
 }
 
+.wip-pagination a span  {
+	background:#fff;
+	color:#333;
+}
+
 .wp-pagenavi a:hover, 
+.wip-pagination span,
+.wip-pagination a span:hover,
 .wp-pagenavi span.current {
 	color:#fff;
 	background:#3498db;
@@ -1693,6 +1706,10 @@ nav#mainmenu ul.menu {
 	margin-bottom:25px;
 }
 
+.wip-pagination {
+	padding-bottom:50px;
+}
+
 .main-content.blog {
 	margin-top: 25px;
 	margin-bottom: 25px;
@@ -1714,7 +1731,7 @@ nav#mainmenu ul.menu {
 #footer .copyright {
 	margin:0;
 	line-height:15px;
-	padding:0;
+	text-align:center;
 }
 
 .socials {

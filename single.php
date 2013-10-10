@@ -19,8 +19,7 @@
     
             ?>
 
-            <?php wp_link_pages(); ?>
-			<?php posts_nav_link(); ?>
+            <?php wp_link_pages(array('before' => '<div class="wip-pagination">' . __('Pages:'), 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>') ); ?>
             
             <div style="clear:both"></div>
             
