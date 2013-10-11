@@ -4,7 +4,7 @@ Theme Name: Alhena Lite
 Description: Alhena is a responsive clean and corporate WordPress Theme. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10 and uses the most modern technologies like HTML5 and CSS3.
 Author: Theme in Progress.
 Author URI: http://themeinprogress.com
-Version: 1.0.3.3
+Version: 1.0.3.4
 Tags: gray, black, white, orange, blue, red, purple, yellow, green, dark, light, two-columns, right-sidebar, left-sidebar, custom-background, custom-menu, threaded-comments, full-width-template, theme-options 
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -426,8 +426,8 @@ form {
 	position:relative; 
 	display:block;
 	text-align:left;
-	line-height:90px;
-	min-height:90px;
+	margin-top:12px;
+	margin-bottom:12px
 }
 #logo a.logo { 
 	font-family:'Kristi',Verdana, Geneva, sans-serif; 
@@ -438,6 +438,7 @@ form {
 	-webkit-transition: all .3s ease;
 	-moz-transition: all .3s ease;
 	-o-transition: all .3s ease;
+	line-height:1.1em;
 } 
 #logo a.logo:hover { 
 	text-decoration:none;
@@ -635,6 +636,7 @@ nav#mainmenu ul ul li ul:before {
 	-webkit-box-shadow: none;
 	-moz-box-shadow:    none;
 	box-shadow:         none;
+	word-wrap: break-word
 }
 
 .pin-article:last-child,
@@ -645,11 +647,13 @@ nav#mainmenu ul ul li ul:before {
 
 .pin-article article.article { 
 	padding:45px;
+	word-wrap: break-word
 }
 
 .pin-article.span4 article.article, 
 .pin-article.span3 article.article { 
 	padding:30px;
+	word-wrap: break-word
 }
 
 
@@ -731,6 +735,7 @@ nav#mainmenu ul ul li ul:before {
 	position:relative;
 	color:#616161;
 	line-height: 1.4em;
+	word-wrap: break-word
 }
 .pin-article .title h1 a {
 	color:#616161;
@@ -1169,7 +1174,10 @@ footer.post-tags .line {
 	display:inline-block;
 	margin:0 0 40px 0 ;
 	min-height:11px;
+	word-wrap: break-word;
+	max-width:100%
 }
+
 .line:before {
 	content: '';
 	position: absolute;
@@ -1181,6 +1189,7 @@ footer.post-tags .line {
 	height: 7px;
 	z-index: 998;
 	background: url(images/icons/dark_stripes.png) repeat;
+	word-wrap: break-word
 }
 
 body.dark #top-box .line:before {
