@@ -132,7 +132,7 @@
 
 	if ( alhenalite_setting('wip_link_color_hover') ):
 
-		echo 'a:hover, #footer a:hover, #footer .copyright a:hover, #footer ul.widget-category li:hover, #footer ul.widget-category li a:hover, .pin-article .title h1 a:hover, blockquote h4.title a:hover { color: '.alhenalite_setting('wip_link_color_hover').'; } ';
+		echo 'a:hover, #footer a:hover, #footer .copyright a:hover, #footer ul.widget-category li:hover, #footer ul.widget-category li a:hover, .pin-article .title h1 a:hover, blockquote h4.title a:hover, #comments a:hover, .logged-in-as a:hover  { color: '.alhenalite_setting('wip_link_color_hover').'; } ';
 
 		echo '.button:hover, .pin-article .quote:hover, .pin-article .link a:hover, #searchform input[type=submit]:hover, .comment-form input[type=submit]:hover, .jcarousel-skin-wip .circle, .jcarousel-skin-wip .pin-article > .text .button:hover, .jcarousel-skin-wip .pin-article:hover, #header-box .tagcloud a:hover, #top-box .tagcloud a:hover, #bottom-box .tagcloud a:hover, #footer-box .tagcloud a:hover, #sidebar .tagcloud a:hover, .wp-pagenavi a:hover, .wip-pagination a span:hover, .wip-pagination span, .wp-pagenavi span.current, .theme-default .nivo-directionNav a:hover, .flexslider .flex-next:hover, .flexslider .flex-prev:hover, .flex-caption .description, .jcarousel-skin-wip .jcarousel-next-horizontal, .jcarousel-skin-wip .jcarousel-prev-horizontal, .flex-caption .url:hover { background-color: '.alhenalite_setting('wip_link_color_hover').'; } ';
 

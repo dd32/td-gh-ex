@@ -15,6 +15,14 @@ Alhena is licensed under GNU General Public License v3.
 Credits
 -------
 
+/** IMAGES **/
+
+- Patters
+
+-- By Theme in Progress - http://www.themeinprogress.com
+
+--- Licensed under GNU General Public License v3.
+
 /** ICONS **/
 
 - Font Awesome

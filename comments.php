@@ -8,7 +8,7 @@ if  ( comments_open() && ( have_comments()) ) :
 
 <section id="comments">
 	<ul class="commentlist">
-		<?php wp_list_comments('type=comment&callback=alhenalite_comment'); ?>
+		<?php wp_list_comments('type=all&callback=alhenalite_comment&short_ping=TRUE'); ?>
 	</ul>
 </section>
 
