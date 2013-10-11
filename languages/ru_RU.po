@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-02 22:38+0545\n"
-"PO-Revision-Date: 2013-10-02 22:38+0545\n"
+"POT-Creation-Date: 2013-10-11 20:00+0545\n"
+"PO-Revision-Date: 2013-10-11 20:00+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: D'CLIC <contact@dclic.info>\n"
 "Language: en\n"
@@ -485,7 +485,7 @@ msgstr "Работает на WordPress"
 msgid "Powered by %s"
 msgstr "Работает на %s"
 
-#: ../functions.php:1406 ../inc/theme-options.php:593
+#: ../functions.php:1406 ../inc/theme-options.php:642
 msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
@@ -537,7 +537,7 @@ msgstr ""
 "Извините, ничего не найдено по вашему запросу. Пожалуйста, попробуйте ввести "
 "другие ключевые слова."
 
-#: ../searchform.php:11 ../searchform.php:12 ../searchform.php:13
+#: ../searchform.php:11
 msgid "Search"
 msgstr "Поиск"
 
@@ -562,232 +562,277 @@ msgstr "Вперед <span class=\"meta-nav\">&rarr;</span>"
 msgid "Tag Archives: %s"
 msgstr "Архивы ключевых слов: %s"
 
-#: ../inc/theme-options.php:84
+#: ../inc/theme-options.php:104
 msgid "Favicon URL"
 msgstr "Favicon URL"
 
-#: ../inc/theme-options.php:93
+#: ../inc/theme-options.php:113
 msgid "Web Clip Icon URL"
 msgstr "Web Clip Icon URL"
 
-#: ../inc/theme-options.php:102
+#: ../inc/theme-options.php:122
 msgid "Color Scheme"
 msgstr "Цветовая схема"
 
-#: ../inc/theme-options.php:110
+#: ../inc/theme-options.php:130
 msgid "Link Color"
 msgstr "Цвет ссылок"
 
-#: ../inc/theme-options.php:118
+#: ../inc/theme-options.php:138
 msgid "Default Layout"
 msgstr "Выберите скелет сайта:"
 
-#: ../inc/theme-options.php:126
+#: ../inc/theme-options.php:146
 msgid "Content layout"
 msgstr "Отображение материала"
 
-#: ../inc/theme-options.php:134
+#: ../inc/theme-options.php:154
 msgid "Excerpt Length in Words"
 msgstr "Кол-во слов до \"Читать далее...\""
 
-#: ../inc/theme-options.php:142
+#: ../inc/theme-options.php:162
 msgid "Feed Redirect URL"
 msgstr "Feed Redirect URL"
 
-#: ../inc/theme-options.php:150
+#: ../inc/theme-options.php:170
 msgid "Move Site Title and Tagline?"
 msgstr "Move Site Title and Tagline?"
 
-#: ../inc/theme-options.php:158
+#: ../inc/theme-options.php:178
+msgid "Default Display Text in Search"
+msgstr "Default Display Text in Search"
+
+#: ../inc/theme-options.php:186
 msgid "Disable Search in Header?"
 msgstr "Отключить поиск в заголовке (header)"
 
-#: ../inc/theme-options.php:166
+#: ../inc/theme-options.php:194
 msgid "Enable Secondary & Footer Menu in Mobile Devices?"
 msgstr "Enable Secondary & Footer Menu in Mobile Devices?"
 
-#: ../inc/theme-options.php:174
+#: ../inc/theme-options.php:202
 msgid "Custom CSS Styles"
 msgstr "Пользовательские стили CSS"
 
-#: ../inc/theme-options.php:211 ../inc/theme-options.php:212
-#: ../inc/theme-options.php:618
+#: ../inc/theme-options.php:239 ../inc/theme-options.php:240
+#: ../inc/theme-options.php:669
 msgid "Theme Options"
 msgstr "Параметры темы"
 
-#: ../inc/theme-options.php:234
+#: ../inc/theme-options.php:262
 msgid "Add/Change Favicon"
 msgstr "Добавить / Изменить Favicon"
 
-#: ../inc/theme-options.php:248
+#: ../inc/theme-options.php:276
 msgid "Add/Change Web Clip Icon"
 msgstr "Добавить / Изменить Web Clip Icon"
 
-#: ../inc/theme-options.php:262
+#: ../inc/theme-options.php:290
 msgid "Light"
 msgstr "Светлый"
 
-#: ../inc/theme-options.php:268
+#: ../inc/theme-options.php:296
 msgid "Dark"
 msgstr "Темный"
 
-#: ../inc/theme-options.php:274
+#: ../inc/theme-options.php:302
 msgid "Blue"
 msgstr "Голубой"
 
-#: ../inc/theme-options.php:280
+#: ../inc/theme-options.php:308
 msgid "Green"
 msgstr "Green"
 
-#: ../inc/theme-options.php:299
+#: ../inc/theme-options.php:327
 msgid "Content on left"
 msgstr "Контент слева"
 
-#: ../inc/theme-options.php:304
+#: ../inc/theme-options.php:332
 msgid "Content on right"
 msgstr "Контент справа"
 
-#: ../inc/theme-options.php:309
+#: ../inc/theme-options.php:337
 msgid "One-column, no sidebar"
 msgstr "Один блок, без боковых панелей"
 
-#: ../inc/theme-options.php:327
+#: ../inc/theme-options.php:355
 msgid "Show excerpt"
 msgstr "Показывать до \"Читать далее...\""
 
-#: ../inc/theme-options.php:332
+#: ../inc/theme-options.php:360
 msgid "Show full content"
 msgstr "Показать полный контент"
 
-#: ../inc/theme-options.php:432
+#: ../inc/theme-options.php:461
 msgid "Select a Color"
 msgstr "Выберите цвет"
 
-#: ../inc/theme-options.php:435
+#: ../inc/theme-options.php:464
 #, php-format
 msgid "Default color: %s"
 msgstr "Цвет по умолчанию: %s"
 
-#: ../inc/theme-options.php:451
+#: ../inc/theme-options.php:480
 msgid "Words"
 msgstr "слова"
 
-#: ../inc/theme-options.php:479
+#: ../inc/theme-options.php:508
 msgid "Check to move above the Header/Logo Image"
 msgstr "Check to move above the Header/Logo Image"
 
-#: ../inc/theme-options.php:494
+#: ../inc/theme-options.php:538
 msgid "Check to Disable"
 msgstr "Отметьте, чтобы отключить"
 
-#: ../inc/theme-options.php:509
+#: ../inc/theme-options.php:553
 msgid "Check to Enable"
 msgstr "Check to Enable"
 
-#: ../inc/theme-options.php:523
+#: ../inc/theme-options.php:567
 msgid "CSS Tutorial from W3Schools."
 msgstr "CSS учебник."
 
-#: ../inc/theme-options.php:523
+#: ../inc/theme-options.php:567
 msgid "http://www.w3schools.com/css/default.asp"
 msgstr "http://htmlbook.ru/css/"
 
-#: ../inc/theme-options.php:523
+#: ../inc/theme-options.php:567
 msgid "CSS Tutorial"
 msgstr "Учебник CSS"
 
-#: ../inc/theme-options.php:523
+#: ../inc/theme-options.php:567
 msgid "Click Here to Read"
 msgstr "Нажмите здесь, чтобы прочитать"
 
-#: ../inc/theme-options.php:588 ../inc/theme-options.php:590
-#, php-format
-msgid "%s Theme Options By"
-msgstr "%s Theme Options By"
-
-#: ../inc/theme-options.php:593
-msgid "Catch Themes"
-msgstr "Catch Themes"
-
-#: ../inc/theme-options.php:597
-msgid "http://catchthemes.com/support/"
-msgstr "http://catchthemes.com/support/"
-
-#: ../inc/theme-options.php:597 ../inc/theme-options.php:598
-msgid "Theme Support"
-msgstr "Поддержка и помощь (Eng)"
-
-#: ../inc/theme-options.php:600
-msgid "http://catchthemes.com/themes/catch-box-pro/"
-msgstr "http://catchthemes.com/themes/catch-box-pro/"
-
-#: ../inc/theme-options.php:600 ../inc/theme-options.php:601
-msgid "Upgrade to Catch Box Pro"
-msgstr "Обновить до Catch Box Pro"
-
-#: ../inc/theme-options.php:603
+#: ../inc/theme-options.php:632
 msgid "http://facebook.com/catchthemes"
 msgstr "http://facebook.com/catchthemes"
 
-#: ../inc/theme-options.php:603 ../inc/theme-options.php:604
-#: ../inc/theme-options.php:733
-msgid "Facebook"
-msgstr "Facebook"
+#: ../inc/theme-options.php:634
+msgid "https://twitter.com/catchthemes"
+msgstr "https://twitter.com/catchthemes"
 
-#: ../inc/theme-options.php:606
-msgid "http://twitter.com/#!/catchthemes"
-msgstr "http://twitter.com/#!/catchthemes"
+#: ../inc/theme-options.php:640
+msgid "Theme Options By"
+msgstr "Theme Options By"
 
-#: ../inc/theme-options.php:606 ../inc/theme-options.php:607
-#: ../inc/theme-options.php:738
-msgid "Twitter"
-msgstr "Twitter"
+#: ../inc/theme-options.php:642 ../inc/theme-options.php:643
+msgid "Catch Themes"
+msgstr "Catch Themes"
 
-#: ../inc/theme-options.php:609
+#: ../inc/theme-options.php:649
+msgid "http://catchthemes.com/themes/catch-box-pro/"
+msgstr "http://catchthemes.com/themes/catch-box-pro/"
+
+#: ../inc/theme-options.php:649
+msgid "Upgrade to Catch Box Pro"
+msgstr "Обновить до Catch Box Pro"
+
+#: ../inc/theme-options.php:654
 msgid "http://catchthemes.com/donate/"
 msgstr "http://catchthemes.com/donate/"
 
-#: ../inc/theme-options.php:609 ../inc/theme-options.php:610
-msgid "Donate Now"
+#: ../inc/theme-options.php:654
+msgid "Donate"
 msgstr "Пожертвования приветсвуются"
 
-#: ../inc/theme-options.php:619
-msgid "Featured Slider"
-msgstr "Популярные слайд-шоу"
+#: ../inc/theme-options.php:655
+msgid "http://catchthemes.com/support/"
+msgstr "http://catchthemes.com/support/"
 
-#: ../inc/theme-options.php:620
+#: ../inc/theme-options.php:655
+msgid "Support"
+msgstr "Поддержка и помощь (Eng)"
+
+#: ../inc/theme-options.php:656
+msgid "http://catchthemes.com/support-forum/forum/catch-box-public/"
+msgstr "http://catchthemes.com/support-forum/forum/catch-box-public/"
+
+#: ../inc/theme-options.php:656
+msgid "Support Forum"
+msgstr "Support Forum"
+
+#: ../inc/theme-options.php:657
+msgid "http://catchthemes.com/theme-instructions/catch-box/"
+msgstr "http://catchthemes.com/theme-instructions/catch-box/"
+
+#: ../inc/theme-options.php:657
+msgid "Theme Instructions"
+msgstr "Theme Instructions"
+
+#: ../inc/theme-options.php:658
+msgid "https://www.facebook.com/catchthemes/"
+msgstr "https://www.facebook.com/catchthemes/"
+
+#: ../inc/theme-options.php:658
+msgid "Like Catch Themes on Facebook"
+msgstr "Like Catch Themes on Facebook"
+
+#: ../inc/theme-options.php:658 ../inc/theme-options.php:787
+msgid "Facebook"
+msgstr "Facebook"
+
+#: ../inc/theme-options.php:659
+msgid "https://twitter.com/catchthemes/"
+msgstr "https://twitter.com/catchthemes/"
+
+#: ../inc/theme-options.php:659
+msgid "Follow Catch Themes on Twitter"
+msgstr "Follow Catch Themes on Twitter"
+
+#: ../inc/theme-options.php:659 ../inc/theme-options.php:792
+msgid "Twitter"
+msgstr "Twitter"
+
+#: ../inc/theme-options.php:660
+msgid "http://wordpress.org/support/view/theme-reviews/catch-box/"
+msgstr "http://wordpress.org/support/view/theme-reviews/catch-box/"
+
+#: ../inc/theme-options.php:660
+msgid "Rate us 5 Star on WordPress"
+msgstr "Rate us 5 Star on WordPress"
+
+#: ../inc/theme-options.php:660
+msgid "5 Star Rating"
+msgstr "5 Star Rating"
+
+#: ../inc/theme-options.php:670
+msgid "Featured Post Slider"
+msgstr "Featured Post Slider"
+
+#: ../inc/theme-options.php:671
 msgid "Social Links"
 msgstr "Социальные сети"
 
-#: ../inc/theme-options.php:621
+#: ../inc/theme-options.php:672
 msgid "Webmaster Tools"
 msgstr "Webmaster Tools"
 
-#: ../inc/theme-options.php:646
+#: ../inc/theme-options.php:699
 msgid "Slider Options"
 msgstr "Параметры слайд-шоу"
 
-#: ../inc/theme-options.php:650
+#: ../inc/theme-options.php:703
 msgid "Exclude Slider post from Home page posts:"
 msgstr "Исключить из слайд-шоу элементы, присутствущие на домашней страницы."
 
-#: ../inc/theme-options.php:652
+#: ../inc/theme-options.php:705
 msgid "Check to disable"
 msgstr "Отметьте, чтобы отключить"
 
-#: ../inc/theme-options.php:655
+#: ../inc/theme-options.php:708
 msgid "Number of Slides"
 msgstr "Количество слайдов"
 
-#: ../inc/theme-options.php:661
+#: ../inc/theme-options.php:714
 msgid "Featured Post ID"
 msgstr "Featured Post ID"
 
-#: ../inc/theme-options.php:663
+#: ../inc/theme-options.php:716
 msgid "Click Here To Edit"
 msgstr "Нажмите здесь, чтобы редактировать"
 
-#: ../inc/theme-options.php:669
+#: ../inc/theme-options.php:722
 msgid ""
 "<strong>Note</strong>: Here you add in Post IDs which displays on Homepage "
 "Featured Slider."
@@ -795,140 +840,140 @@ msgstr ""
 "<strong>Внимание</strong> : здесь вы добавляете ID статьи, которая должна "
 "отображаться на слайде главной странице (Homepage Featured Slider)."
 
-#: ../inc/theme-options.php:670 ../inc/theme-options.php:716
-#: ../inc/theme-options.php:842 ../inc/theme-options.php:882
+#: ../inc/theme-options.php:723 ../inc/theme-options.php:769
+#: ../inc/theme-options.php:896 ../inc/theme-options.php:937
 msgid "Save"
 msgstr "Сохранить"
 
-#: ../inc/theme-options.php:674
+#: ../inc/theme-options.php:727
 msgid "Slider Effect Options"
 msgstr "Установка эффектов"
 
-#: ../inc/theme-options.php:679
+#: ../inc/theme-options.php:732
 msgid "Transition Effect:"
 msgstr "Эффект перехода:"
 
-#: ../inc/theme-options.php:684
+#: ../inc/theme-options.php:737
 msgid "fade"
 msgstr "мягкий"
 
-#: ../inc/theme-options.php:685
+#: ../inc/theme-options.php:738
 msgid "wipe"
 msgstr "перекрытие"
 
-#: ../inc/theme-options.php:686
+#: ../inc/theme-options.php:739
 msgid "scrollUp"
 msgstr "прокрутка вверх"
 
-#: ../inc/theme-options.php:687
+#: ../inc/theme-options.php:740
 msgid "scrollDown"
 msgstr "прокрутка вниз"
 
-#: ../inc/theme-options.php:688
+#: ../inc/theme-options.php:741
 msgid "scrollLeft"
 msgstr "прокрутка влево"
 
-#: ../inc/theme-options.php:689
+#: ../inc/theme-options.php:742
 msgid "scrollRight"
 msgstr "прокрутка вправо"
 
-#: ../inc/theme-options.php:690
+#: ../inc/theme-options.php:743
 msgid "blindX"
 msgstr "blindX"
 
-#: ../inc/theme-options.php:691
+#: ../inc/theme-options.php:744
 msgid "blindY"
 msgstr "blindY"
 
-#: ../inc/theme-options.php:692
+#: ../inc/theme-options.php:745
 msgid "blindZ"
 msgstr "blindZ"
 
-#: ../inc/theme-options.php:693
+#: ../inc/theme-options.php:746
 msgid "cover"
 msgstr "перекрытие"
 
-#: ../inc/theme-options.php:694
+#: ../inc/theme-options.php:747
 msgid "shuffle"
 msgstr "случайно"
 
-#: ../inc/theme-options.php:700
+#: ../inc/theme-options.php:753
 msgid "Transition Delay"
 msgstr "Задержка перехода"
 
-#: ../inc/theme-options.php:703 ../inc/theme-options.php:712
+#: ../inc/theme-options.php:756 ../inc/theme-options.php:765
 msgid "second(s)"
 msgstr "секунд"
 
-#: ../inc/theme-options.php:709
+#: ../inc/theme-options.php:762
 msgid "Transition Length"
 msgstr "Длительность перехода"
 
-#: ../inc/theme-options.php:744
+#: ../inc/theme-options.php:798
 msgid "Google +"
 msgstr "Google +"
 
-#: ../inc/theme-options.php:750
+#: ../inc/theme-options.php:804
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: ../inc/theme-options.php:756
+#: ../inc/theme-options.php:810
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../inc/theme-options.php:762
+#: ../inc/theme-options.php:816
 msgid "Youtube"
 msgstr "Youtube"
 
-#: ../inc/theme-options.php:768
+#: ../inc/theme-options.php:822
 msgid "RSS Feed"
 msgstr "RSS Feed"
 
-#: ../inc/theme-options.php:774
+#: ../inc/theme-options.php:828
 msgid "Deviantart"
 msgstr "Deviantart"
 
-#: ../inc/theme-options.php:780
+#: ../inc/theme-options.php:834
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/theme-options.php:786
+#: ../inc/theme-options.php:840
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../inc/theme-options.php:792
+#: ../inc/theme-options.php:846
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../inc/theme-options.php:798
+#: ../inc/theme-options.php:852
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../inc/theme-options.php:804
+#: ../inc/theme-options.php:858
 msgid "Aim"
 msgstr "Aim"
 
-#: ../inc/theme-options.php:810
+#: ../inc/theme-options.php:864
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/theme-options.php:816
+#: ../inc/theme-options.php:870
 msgid "Slideshare"
 msgstr "Slideshare"
 
-#: ../inc/theme-options.php:822
+#: ../inc/theme-options.php:876
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../inc/theme-options.php:828
+#: ../inc/theme-options.php:882
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/theme-options.php:834
+#: ../inc/theme-options.php:888
 msgid "Soundcloud"
 msgstr "Soundcloud"
 
-#: ../inc/theme-options.php:841
+#: ../inc/theme-options.php:895
 msgid ""
 "<strong>Note:</strong> Enter the url for correponding social networking "
 "website"
@@ -936,15 +981,15 @@ msgstr ""
 "<strong>Внимание:</strong> Введите URL, который соответствует вашей "
 "социальной сети"
 
-#: ../inc/theme-options.php:855
+#: ../inc/theme-options.php:910
 msgid "Header and Footer Code"
 msgstr "Header and Footer Code"
 
-#: ../inc/theme-options.php:860
+#: ../inc/theme-options.php:915
 msgid "Code to display on Header"
 msgstr "Code to display on Header"
 
-#: ../inc/theme-options.php:867
+#: ../inc/theme-options.php:922
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
@@ -952,11 +997,11 @@ msgstr ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
 
-#: ../inc/theme-options.php:871
+#: ../inc/theme-options.php:926
 msgid "Code to display on Footer"
 msgstr "Code to display on Footer"
 
-#: ../inc/theme-options.php:878
+#: ../inc/theme-options.php:933
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"

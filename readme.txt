@@ -339,3 +339,7 @@ Version 2.7.1
 Version 2.8
 * Added Hungarian translation hu_HU.po and hu_HU.mo
 * Added sep-comment class in comment separator
+
+Version 2.8.1
+* Added option to change search text in search box
+* Changed Theme Options page design

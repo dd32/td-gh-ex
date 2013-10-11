@@ -26,6 +26,26 @@ function catchbox_admin_enqueue_scripts( $hook_suffix ) {
 }
 add_action( 'admin_print_styles-appearance_page_theme_options', 'catchbox_admin_enqueue_scripts' );
 
+/* 
+ * Admin Social Links
+ * use facebook and twitter scripts
+ */
+function catchbox_admin_social() { ?>
+<!-- Start Social scripts -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=276203972392824";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<!-- End Social scripts -->
+<?php
+}
+add_action( 'admin_print_styles-appearance_page_theme_options', 'catchbox_admin_social' );
+
 
 /**
  * Register the form setting for our catchbox_options array.
@@ -149,6 +169,14 @@ function catchbox_theme_options_init() {
 		'site_title_above', // Unique identifier for the settings section
 		__( 'Move Site Title and Tagline?', 'catchbox' ), // Setting field label
 		'catchbox_settings_field_site_title_above', // Function that renders the settings field
+		'theme_options', // Menu slug, used to uniquely identify the page; see catchbox_theme_options_add_page()
+		'general' // Settings section. Same as the first argument in the add_settings_section() above
+	);	
+	
+	add_settings_field(
+		'search_text', // Unique identifier for the settings section
+		__( 'Default Display Text in Search', 'catchbox' ), // Setting field label
+		'catchbox_settings_field_search_text', // Function that renders the settings field
 		'theme_options', // Menu slug, used to uniquely identify the page; see catchbox_theme_options_add_page()
 		'general' // Settings section. Same as the first argument in the add_settings_section() above
 	);	
@@ -308,7 +336,7 @@ function catchbox_layouts() {
 			'value'			=> 'content-onecolumn',
 			'label'			=> __( 'One-column, no sidebar', 'catchbox' ),
 			'thumbnail'		=> get_template_directory_uri() . '/inc/images/content.png',
-		),
+		)	
 	);
 
 	return apply_filters( 'catchbox_layouts', $layout_options );
@@ -352,7 +380,8 @@ function catchbox_get_default_theme_options() {
 		'content_layout'		=> 'excerpt',
 		'site_title_above'		=> '0',
 		'disable_header_search' => '0',
-		'enable_menus' 			=> '0'
+		'enable_menus' 			=> '0',
+		'search_display_text'	=> 'Search'
 	);
 
 	if ( is_rtl() )
@@ -482,6 +511,21 @@ function catchbox_settings_field_site_title_above() {
 
 
 /**
+ * Search Text 
+ *
+ * @since Catch Box 2.8.1
+ */
+function catchbox_settings_field_search_text() {
+	$options = catchbox_get_theme_options();
+	if( empty( $options['search_display_text'] ) )
+		$options = catchbox_get_default_theme_options();	
+	?>
+    <input type="text" size="45" name="catchbox_theme_options[search_display_text]" value="<?php if ( isset( $options[ 'search_display_text' ] ) ) echo esc_attr( $options[ 'search_display_text' ] ); ?>" />
+	<?php
+}
+
+
+/**
  * Disable Header Search Checkbox
  *
  * @since Catch Box 1.3.1
@@ -579,57 +623,66 @@ function catchbox_settings_field_content_scheme() {
  */
 function catchbox_theme_options_render_page() {
 	?>
-	<div class="wrap">
-		<?php screen_icon(); ?>
-        
-		<h2>
-			<?php 
-            if( function_exists( 'wp_get_theme' ) ) {
-                printf( __( '%s Theme Options By', 'catchbox' ), wp_get_theme() );
-            } else {
-                printf( __( '%s Theme Options By', 'catchbox' ), get_current_theme() );
-            }
-			?> 
-            <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catchbox' ) ); ?>" title="<?php echo esc_attr_e( 'Catch Themes', 'catchbox' ); ?>" target="_blank"><?php _e( 'Catch Themes', 'catchbox' ); ?></a>
-        </h2>
-        
-		<div id="info-support">
-           	<a class="support button" href="<?php echo esc_url(__('http://catchthemes.com/support/','catchbox')); ?>" title="<?php esc_attr_e('Theme Support', 'catchbox'); ?>" target="_blank">
-          	<?php printf(__('Theme Support','catchbox')); ?></a>
-                
-        	<a class="themes button" href="<?php echo esc_url(__('http://catchthemes.com/themes/catch-box-pro/','catchbox')); ?>" title="<?php esc_attr_e('Upgrade to Catch Box Pro', 'catchbox'); ?>" target="_blank">
-            <?php printf(__('Upgrade to Catch Box Pro','catchbox')); ?></a>
-                
-            <a class="facebook button" href="<?php echo esc_url(__('http://facebook.com/catchthemes','catchbox')); ?>" title="<?php esc_attr_e('Facebook', 'catchbox'); ?>" target="_blank">
-            <?php printf(__('Facebook','catchbox')); ?></a>
-                
-            <a class="twitter button" href="<?php echo esc_url(__('http://twitter.com/#!/catchthemes','catchbox')); ?>" title="<?php esc_attr_e('Twitter', 'catchbox'); ?>" target="_blank">
-            <?php printf(__('Twitter','catchbox')); ?></a>
-                
-            <a class="donate button" href="<?php echo esc_url(__('http://catchthemes.com/donate/','catchbox')); ?>" title="<?php esc_attr_e('Donate Now', 'catchbox'); ?>" target="_blank">
-            <?php printf(__('Donate Now','catchbox')); ?></a>
-        </div>        
+	<div id="catchthemes" class="wrap">
+    
+			<div id="theme-option-header">
+            	<div id="theme-social">
+                	<ul>
+            			<li class="widget-fb">
+                            <div data-show-faces="false" data-width="80" data-layout="button_count" data-send="false" data-href="<?php echo esc_url(__('http://facebook.com/catchthemes','catchbox')); ?>" class="fb-like"></div></li>
+                     	<li class="widget-tw">
+                            <a data-dnt="true" data-show-screen-name="true" data-show-count="true" class="twitter-follow-button" href="<?php echo esc_url(__('https://twitter.com/catchthemes','catchbox')); ?>">Follow @catchthemes</a>
+            			</li>
+                   	</ul>
+               	</div><!-- #theme-social -->
             
-		<?php settings_errors(); ?>
+                <div id="theme-option-title">
+                    <h2 class="title"><?php _e( 'Theme Options By', 'catchbox' ); ?></h2>
+                    <h2 class="logo">
+                        <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catchbox' ) ); ?>" title="<?php esc_attr_e( 'Catch Themes', 'catchbox' ); ?>" target="_blank">
+                            <img src="<?php echo get_template_directory_uri().'/inc/images/catch-themes.png'; ?>" alt="<?php _e( 'Catch Themes', 'catchbox' ); ?>" />
+                        </a>
+                    </h2>
+                </div><!-- #theme-option-title -->
+                
+                <div id="upgradepro">
+                	<a class="button" href="<?php echo esc_url(__('http://catchthemes.com/themes/catch-box-pro/','catchbox')); ?>" title="<?php esc_attr_e('Upgrade to Catch Box Pro', 'catchbox'); ?>" target="_blank"><?php printf(__('Upgrade to Catch Box Pro','catchbox')); ?></a>
+               	</div><!-- #upgradepro -->
+            
+                <div id="theme-support">
+                    <ul>
+                    	<li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/donate/','catchbox')); ?>" title="<?php esc_attr_e('Donate', 'catchbox'); ?>" target="_blank"><?php printf(__('Donate','catchbox')); ?></a></li>
+                    	<li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/support/','catchbox')); ?>" title="<?php esc_attr_e('Support', 'catchbox'); ?>" target="_blank"><?php printf(__('Support','catchbox')); ?></a></li>
+                        <li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/support-forum/forum/catch-box-public/','catchbox')); ?>" title="<?php esc_attr_e('Support Forum', 'catchbox'); ?>" target="_blank"><?php printf(__('Support Forum','catchbox')); ?></a></li>
+                        <li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/theme-instructions/catch-box/','catchbox')); ?>" title="<?php esc_attr_e('Theme Instructions', 'catchbox'); ?>" target="_blank"><?php printf(__('Theme Instructions','catchbox')); ?></a></li>
+                        <li><a class="button" href="<?php echo esc_url(__('https://www.facebook.com/catchthemes/','catchbox')); ?>" title="<?php esc_attr_e('Like Catch Themes on Facebook', 'catchbox'); ?>" target="_blank"><?php printf(__('Facebook','catchbox')); ?></a></li>
+                        <li><a class="button" href="<?php echo esc_url(__('https://twitter.com/catchthemes/','catchbox')); ?>" title="<?php esc_attr_e('Follow Catch Themes on Twitter', 'catchbox'); ?>" target="_blank"><?php printf(__('Twitter','catchbox')); ?></a></li>
+                        <li><a class="button" href="<?php echo esc_url(__('http://wordpress.org/support/view/theme-reviews/catch-box/','catchbox')); ?>" title="<?php esc_attr_e('Rate us 5 Star on WordPress', 'catchbox'); ?>" target="_blank"><?php printf(__('5 Star Rating','catchbox')); ?></a></li>
+                   	</ul>
+                </div><!-- #theme-support --> 
+                 
+          	</div><!-- #theme-option-header -->  
 
 		
             <div id="catchbox_ad_tabs">
                 <ul class="tabNavigation" id="mainNav">
                     <li><a href="#themeoptions"><?php _e( 'Theme Options', 'catchbox' );?></a></li>
-                    <li><a href="#slidersettings"><?php _e( 'Featured Slider', 'catchbox' );?></a></li>
+                    <li><a href="#slidersettings"><?php _e( 'Featured Post Slider', 'catchbox' );?></a></li>
                     <li><a href="#sociallinks"><?php _e( 'Social Links', 'catchbox' );?></a></li>
                     <li><a href="#webmaster"><?php _e( 'Webmaster Tools', 'catchbox' );?></a></li>
                 </ul><!-- .tabsNavigation #mainNav -->        
                 
                 <!-- Option for Theme Options -->
                 <div id="themeoptions">
-                	<form method="post" action="options.php">
-						<?php
-                            settings_fields( 'catchbox_options' );
-                            do_settings_sections( 'theme_options' );
-                            submit_button();
-                        ?>
-                    </form>
+                	<div class="option-container"> 
+                        <form method="post" action="options.php">
+                            <?php
+                                settings_fields( 'catchbox_options' );
+                                do_settings_sections( 'theme_options' );
+                                submit_button();
+                            ?>
+                        </form>
+                  	</div><!-- .option-container -->
              	</div> <!-- #themeoptions --> 
                 
                 <!-- Option for Featured Post Slider -->
@@ -721,126 +774,128 @@ function catchbox_theme_options_render_page() {
                 </div> <!-- #slidersettings --> 
                 
                 <!-- Option for Social Links -->
-                <div id="sociallinks">                
-                    <form method="post" action="options.php">
-                        <?php
-                            settings_fields( 'catchbox_options_social_links' );
-                            $options = get_option( 'catchbox_options_social_links' );           
-                        ?>
-                        <table class="form-table">
-                            <tbody>
-                                <tr>
-                                    <th scope="row"><label><?php _e( 'Facebook', 'catchbox' ); ?></label></th>
-                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_facebook]" value="<?php if( isset( $options[ 'social_facebook' ] ) ) echo esc_url( $options[ 'social_facebook' ] ); ?>" />
-                                    </td>
-                                </tr>
-                                <tr> 
-                                    <th scope="row"><label><?php _e( 'Twitter', 'catchbox' ); ?></label></th>
-                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_twitter]" value="<?php if ( isset( $options[ 'social_twitter' ] ) ) echo esc_url( $options[ 'social_twitter'] ); ?>" />
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <th scope="row"><label><?php _e( 'Google +', 'catchbox' ); ?></label></th>
-                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_google]" value="<?php if ( isset( $options[ 'social_google' ] ) ) echo esc_url( $options[ 'social_google' ] ); ?>" />
-                                    </td>
-                                </tr>
-                                
-                                 <tr>
-                                    <th scope="row"><label><?php _e( 'LinkedIn', 'catchbox' ); ?></label></th>
-                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_linkedin]" value="<?php if ( isset( $options[ 'social_linkedin' ] ) ) echo esc_url( $options[ 'social_linkedin' ] ); ?>" />
-                                    </td>
-                                </tr>
-                                
-                                 <tr>
-                                    <th scope="row"><label><?php _e( 'Pinterest', 'catchbox' ); ?></label></th>
-                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_pinterest]" value="<?php if ( isset( $options[ 'social_pinterest' ] ) ) echo esc_url( $options[ 'social_pinterest' ] ); ?>" />
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <th scope="row"><label><?php _e( 'Youtube', 'catchbox' ); ?></label></th>
-                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_youtube]" value="<?php if ( isset( $options[ 'social_youtube' ] ) ) echo esc_url( $options[ 'social_youtube' ] ); ?>" />
-                                    </td>
-                                </tr>
-                               
-                                <tr>
-                                    <th scope="row"><label><?php _e( 'RSS Feed', 'catchbox' ); ?></label></th>
-                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_rss]" value="<?php if ( isset( $options[ 'social_rss' ] ) ) echo esc_url( $options[ 'social_rss' ] ); ?>" />
-                                    </td>
-                                </tr>
-            
-                                <tr>
-                                    <th scope="row"><label><?php _e( 'Deviantart', 'catchbox' ); ?></label></th>
-                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_deviantart]" value="<?php if ( isset( $options[ 'social_deviantart' ] ) ) echo esc_url( $options[ 'social_deviantart' ] ); ?>" />
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <th scope="row"><label><?php _e( 'Tumblr', 'catchbox' ); ?></label></th>
-                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_tumblr]" value="<?php if ( isset( $options[ 'social_tumblr' ] ) ) echo esc_url( $options[ 'social_tumblr' ] ); ?>" />
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <th scope="row"><label><?php _e( 'Vimeo', 'catchbox' ); ?></label></th>
-                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_viemo]" value="<?php if ( isset( $options[ 'social_viemo' ] ) ) echo esc_url( $options[ 'social_viemo' ] ); ?>" />
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <th scope="row"><label><?php _e( 'Dribbble', 'catchbox' ); ?></label></th>
-                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_dribbble]" value="<?php if ( isset( $options[ 'social_dribbble' ] ) ) echo esc_url( $options[ 'social_dribbble' ] ); ?>" />
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <th scope="row"><label><?php _e( 'MySpace', 'catchbox' ); ?></label></th>
-                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_myspace]" value="<?php if ( isset( $options[ 'social_myspace' ] ) ) echo esc_url( $options[ 'social_myspace' ] ); ?>" />
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <th scope="row"><label><?php _e( 'Aim', 'catchbox' ); ?></label></th>
-                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_aim]" value="<?php if ( isset( $options[ 'social_aim' ] ) ) echo esc_url( $options[ 'social_aim' ] ); ?>" />
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <th scope="row"><label><?php _e( 'Flickr', 'catchbox' ); ?></label></th>
-                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_flickr]" value="<?php if ( isset( $options[ 'social_flickr' ] ) ) echo esc_url( $options[ 'social_flickr' ] ); ?>" />
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <th scope="row"><label><?php _e( 'Slideshare', 'catchbox' ); ?></label></th>
-                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_slideshare]" value="<?php if ( isset( $options[ 'social_slideshare' ] ) ) echo esc_url( $options[ 'social_slideshare' ] ); ?>" />
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <th scope="row"><label><?php _e( 'Instagram', 'catchbox' ); ?></label></th>
-                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_instagram]" value="<?php if ( isset( $options[ 'social_instagram' ] ) ) echo esc_url( $options[ 'social_instagram' ] ); ?>" />
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <th scope="row"><label><?php _e( 'Skype', 'catchbox' ); ?></label></th>
-                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_skype]" value="<?php if ( isset( $options[ 'social_skype' ] ) ) echo esc_attr( $options[ 'social_skype' ] ); ?>" />
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <th scope="row"><label><?php _e( 'Soundcloud', 'catchbox' ); ?></label></th>
-                                    <td><input type="text" size="45" name="catchbox_options_social_links[social_soundcloud]" value="<?php if ( isset( $options[ 'social_soundcloud' ] ) ) echo esc_url( $options[ 'social_soundcloud' ] ); ?>" />
-                                    </td>
-                                </tr>
-                                
-                            </tbody>
-                        </table>
-                        <p><?php _e( '<strong>Note:</strong> Enter the url for correponding social networking website', 'catchbox' ); ?></p>
-                        <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catchbox' ); ?>" /></p> 
-                    </form> 
+                <div id="sociallinks"> 
+                	<div class="option-container">               
+                        <form method="post" action="options.php">
+                            <?php
+                                settings_fields( 'catchbox_options_social_links' );
+                                $options = get_option( 'catchbox_options_social_links' );           
+                            ?>
+                            <table class="form-table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"><label><?php _e( 'Facebook', 'catchbox' ); ?></label></th>
+                                        <td><input type="text" size="45" name="catchbox_options_social_links[social_facebook]" value="<?php if( isset( $options[ 'social_facebook' ] ) ) echo esc_url( $options[ 'social_facebook' ] ); ?>" />
+                                        </td>
+                                    </tr>
+                                    <tr> 
+                                        <th scope="row"><label><?php _e( 'Twitter', 'catchbox' ); ?></label></th>
+                                        <td><input type="text" size="45" name="catchbox_options_social_links[social_twitter]" value="<?php if ( isset( $options[ 'social_twitter' ] ) ) echo esc_url( $options[ 'social_twitter'] ); ?>" />
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <th scope="row"><label><?php _e( 'Google +', 'catchbox' ); ?></label></th>
+                                        <td><input type="text" size="45" name="catchbox_options_social_links[social_google]" value="<?php if ( isset( $options[ 'social_google' ] ) ) echo esc_url( $options[ 'social_google' ] ); ?>" />
+                                        </td>
+                                    </tr>
+                                    
+                                     <tr>
+                                        <th scope="row"><label><?php _e( 'LinkedIn', 'catchbox' ); ?></label></th>
+                                        <td><input type="text" size="45" name="catchbox_options_social_links[social_linkedin]" value="<?php if ( isset( $options[ 'social_linkedin' ] ) ) echo esc_url( $options[ 'social_linkedin' ] ); ?>" />
+                                        </td>
+                                    </tr>
+                                    
+                                     <tr>
+                                        <th scope="row"><label><?php _e( 'Pinterest', 'catchbox' ); ?></label></th>
+                                        <td><input type="text" size="45" name="catchbox_options_social_links[social_pinterest]" value="<?php if ( isset( $options[ 'social_pinterest' ] ) ) echo esc_url( $options[ 'social_pinterest' ] ); ?>" />
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <th scope="row"><label><?php _e( 'Youtube', 'catchbox' ); ?></label></th>
+                                        <td><input type="text" size="45" name="catchbox_options_social_links[social_youtube]" value="<?php if ( isset( $options[ 'social_youtube' ] ) ) echo esc_url( $options[ 'social_youtube' ] ); ?>" />
+                                        </td>
+                                    </tr>
+                                   
+                                    <tr>
+                                        <th scope="row"><label><?php _e( 'RSS Feed', 'catchbox' ); ?></label></th>
+                                        <td><input type="text" size="45" name="catchbox_options_social_links[social_rss]" value="<?php if ( isset( $options[ 'social_rss' ] ) ) echo esc_url( $options[ 'social_rss' ] ); ?>" />
+                                        </td>
+                                    </tr>
+                
+                                    <tr>
+                                        <th scope="row"><label><?php _e( 'Deviantart', 'catchbox' ); ?></label></th>
+                                        <td><input type="text" size="45" name="catchbox_options_social_links[social_deviantart]" value="<?php if ( isset( $options[ 'social_deviantart' ] ) ) echo esc_url( $options[ 'social_deviantart' ] ); ?>" />
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <th scope="row"><label><?php _e( 'Tumblr', 'catchbox' ); ?></label></th>
+                                        <td><input type="text" size="45" name="catchbox_options_social_links[social_tumblr]" value="<?php if ( isset( $options[ 'social_tumblr' ] ) ) echo esc_url( $options[ 'social_tumblr' ] ); ?>" />
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <th scope="row"><label><?php _e( 'Vimeo', 'catchbox' ); ?></label></th>
+                                        <td><input type="text" size="45" name="catchbox_options_social_links[social_viemo]" value="<?php if ( isset( $options[ 'social_viemo' ] ) ) echo esc_url( $options[ 'social_viemo' ] ); ?>" />
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <th scope="row"><label><?php _e( 'Dribbble', 'catchbox' ); ?></label></th>
+                                        <td><input type="text" size="45" name="catchbox_options_social_links[social_dribbble]" value="<?php if ( isset( $options[ 'social_dribbble' ] ) ) echo esc_url( $options[ 'social_dribbble' ] ); ?>" />
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <th scope="row"><label><?php _e( 'MySpace', 'catchbox' ); ?></label></th>
+                                        <td><input type="text" size="45" name="catchbox_options_social_links[social_myspace]" value="<?php if ( isset( $options[ 'social_myspace' ] ) ) echo esc_url( $options[ 'social_myspace' ] ); ?>" />
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <th scope="row"><label><?php _e( 'Aim', 'catchbox' ); ?></label></th>
+                                        <td><input type="text" size="45" name="catchbox_options_social_links[social_aim]" value="<?php if ( isset( $options[ 'social_aim' ] ) ) echo esc_url( $options[ 'social_aim' ] ); ?>" />
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <th scope="row"><label><?php _e( 'Flickr', 'catchbox' ); ?></label></th>
+                                        <td><input type="text" size="45" name="catchbox_options_social_links[social_flickr]" value="<?php if ( isset( $options[ 'social_flickr' ] ) ) echo esc_url( $options[ 'social_flickr' ] ); ?>" />
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <th scope="row"><label><?php _e( 'Slideshare', 'catchbox' ); ?></label></th>
+                                        <td><input type="text" size="45" name="catchbox_options_social_links[social_slideshare]" value="<?php if ( isset( $options[ 'social_slideshare' ] ) ) echo esc_url( $options[ 'social_slideshare' ] ); ?>" />
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <th scope="row"><label><?php _e( 'Instagram', 'catchbox' ); ?></label></th>
+                                        <td><input type="text" size="45" name="catchbox_options_social_links[social_instagram]" value="<?php if ( isset( $options[ 'social_instagram' ] ) ) echo esc_url( $options[ 'social_instagram' ] ); ?>" />
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <th scope="row"><label><?php _e( 'Skype', 'catchbox' ); ?></label></th>
+                                        <td><input type="text" size="45" name="catchbox_options_social_links[social_skype]" value="<?php if ( isset( $options[ 'social_skype' ] ) ) echo esc_attr( $options[ 'social_skype' ] ); ?>" />
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <th scope="row"><label><?php _e( 'Soundcloud', 'catchbox' ); ?></label></th>
+                                        <td><input type="text" size="45" name="catchbox_options_social_links[social_soundcloud]" value="<?php if ( isset( $options[ 'social_soundcloud' ] ) ) echo esc_url( $options[ 'social_soundcloud' ] ); ?>" />
+                                        </td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                            <p><?php _e( '<strong>Note:</strong> Enter the url for correponding social networking website', 'catchbox' ); ?></p>
+                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catchbox' ); ?>" /></p> 
+                    	</form> 
+                  	</div><!-- .option-container -->
                 </div> <!-- #sociallinks --> 
                 
                 <!-- Option for Webmaster Tools -->
@@ -1088,6 +1143,11 @@ function catchbox_theme_options_validate( $input ) {
 		// Our checkbox value is either 0 or 1 
 		$output[ 'site_title_above' ] = $input[ 'site_title_above' ];
 		
+	// data validation for Search Settings
+	if ( isset( $input[ 'search_display_text' ] ) ) {
+        $output[ 'search_display_text' ] = sanitize_text_field( $input[ 'search_display_text' ] );
+    }
+	
 	// Disable Header Search
 	if ( isset( $input['disable_header_search'] ) )
 		// Our checkbox value is either 0 or 1 

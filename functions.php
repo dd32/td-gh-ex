@@ -738,7 +738,7 @@ function catchbox_body_classes( $classes ) {
 	}
 	elseif ( $layout == 'content-onecolumn' || is_page_template( 'page-onecolumn.php' ) && !is_page_template( 'page-disable-sidebar.php' ) && !is_page_template( 'page-fullwidth.php' ) ) {
 		$classes[] = 'content-onecolumn';
-	}	
+	}		
 	elseif ( is_page_template( 'page-disable-sidebar.php' ) || is_attachment() ) {
 		$classes[] = 'singular';
 	}
