@@ -1,0 +1,210 @@
+/*
+Theme Name: Shipyard
+Theme URI: http://www.guidovanderleest.nl/shipyard
+Version: 1.0
+Author: Guido
+Author URI: http://www.guidovanderleest.nl
+Description: Shipyard is a free, basic, clean, responsive, mobile friendly, WordPress theme. No theme settings page, no fancy options, no slideshow, this one only has the basic options. Custom header-image and dropdown navigation are included. Enjoy. 
+Tags: one-column, two-columns, right-sidebar, fixed-width, flexible-width, custom-header, custom-menu, white, gray, orange, translation-ready
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+
+/* RESET STYLESHEET BY ERIC MEYER: http://meyerweb.com/eric/tools/css/reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* GENERAL */
+body {background: #f2f2f2; font-family: 'Anaheim', sans-serif; font-size:1em; color:#333; line-height:1.5em;}
+#container {max-width: 960px; background:#fff; border: 1px solid #ccc; margin: 10px auto 10px; padding: 20px; text-align: left;}
+#content {width: 65%; float:left;}
+#content-full {float:left;}
+
+h1 {font-size:3.0em; line-height:1em;}
+h2 {font-size:2.5em; line-height:1em;}
+h3 {font-size:2.0em; line-height:1em;}
+h4 {font-size:1.5em; line-height:1em;}
+h5 {font-size:1.0em; line-height:1em;}
+h6 {font-size:0.75em; line-height:1em;}
+
+a {text-decoration:none; color:#f26535;}
+a:hover {text-decoration:underline;}
+
+blockquote, address {padding:10px; font-style:italic;}
+
+table {margin:0 0 0 5px;}
+
+ul {list-style: square; margin: 0 0 0 25px;}
+li {margin: 0 0 0 5px;}
+ol {list-style: decimal; margin: 0 0 0 25px;}
+dl {margin: 0 0 0 25px;}
+dd {margin: 0 0 0 25px;}
+
+input, textarea {border:1px solid #ccc; border-radius:5px;-moz-border-radius:5px; padding: 2px; background: none;font-size:1em; font-family: 'Anaheim', sans-serif;}
+input[type="submit"]{cursor:pointer;	border:0; -webkit-appearance:none; border-radius:5px;-moz-border-radius:5px; padding:2px 10px; background: #333; color:#fff;}
+input[type="submit"]:hover {background: #f26535;}
+
+
+/* HEADER */
+#header {margin:0; padding: 0 0 10px; background:none;}
+#header .header-img {width: 100%; height: auto;}
+#header .logo {float:left; text-align:left;}
+#header .logo h1 a:hover {text-decoration:none; color:#333;}
+#header .logo h3 {padding:10px;}
+
+
+/* HEADER MENU */
+.nav-head {background:none;margin:10px 0; clear:both; padding:10px 0; font-size:1em; border:1px solid #ccc; border-radius:5px;-moz-border-radius:5px; text-align:left;}
+.nav-head select {display:none;}
+.nav-head ul {padding:0; margin: 0;}
+.nav-head ul li {list-style-type: none; display: inline-block; position: relative;}
+.nav-head ul li a {text-decoration: none; color: #f26535; background: none; padding: 5px 10px; display: inline-block;}
+.nav-head ul li a:hover {text-decoration:underline;}
+
+
+/* HEADER SUBMENU */
+.nav-head ul ul {display:none; position: absolute; top: 100%; left: -5px; background: #f2f2f2; z-index:999; }
+.nav-head ul ul ul {display:none; position: absolute; top: 30%; left: 100%; background: #f8f8f8;}
+.nav-head ul ul a {width:10em;}
+.nav-head ul li:hover > ul {display:block;}
+
+
+/* PAGE AND POST */
+.page-title {margin: 0; padding: 0 0 10px;}
+.entry-title {margin: 0; padding: 0;}
+.excerpt {margin: 0 0 20px; padding:0 0 40px; border-bottom:1px solid #ccc;}
+.sticky {text-align:center; color:#333; background: #f2f2f2; margin: 0 0 10px; padding:5px; border:1px solid #f26535; border-radius:5px;-moz-border-radius:5px;}
+.postmetadata {margin:20px 0; padding:5px; background: #f2f2f2; border:1px solid #ccc; border-radius:5px;-moz-border-radius:5px;}
+.edit-link {display:block; clear:left; margin:10px 0; padding: 5px; border:1px solid #f26535; border-radius:5px;-moz-border-radius:5px;}
+a.moretag {float:right; border:0; -webkit-appearance:none;	border-radius:5px;-moz-border-radius:5px; margin:25px 0 0; padding: 2px 5px; background: #333; color:#fff;}
+a.moretag:hover {background: #f26535; text-decoration:none;}
+.nav-prev {float:left;}
+.nav-next{float:right;}
+.pagelink {clear:left; margin:20px 0 10px;}
+
+
+/* IMAGE AND VIDEO */
+img, embed, iframe, object, video {max-width:100%; height:auto;}
+
+.alignright {float:right; margin:0 0 1em 1em;}
+.alignleft {float:left; margin:0 1em 1em 0;}
+.aligncenter {display: block; margin-left: auto; margin-right: auto;}
+
+.wp-caption {background:none;}
+.wp-caption-text {overflow:hidden; text-align:center;}
+
+.gallery dl, .gallery dt, .gallery dd {margin:0; padding:0;}
+.gallery-caption {background:none;}
+.gallery-caption-text {overflow:hidden; text-align:center;}
+
+
+/* SEARCHFORM */
+.search-form {margin:10px 0;}
+.screen-reader-text {display:none;}
+
+
+/* COMMENTS */
+#comments {width:95%;}
+.comment {padding: 0 0 20px;}
+.comment-list {list-style:none; clear:left; padding:10px; margin:20px 0; background:#f2f2f2; border:1px solid #ccc; border-radius:5px;-moz-border-radius:5px; font-weight:normal;}
+.children {list-style:none; background: #f8f8f8; padding:10px;}
+.no-comments {clear:left; margin:20px 0; padding:5px; background: #f2f2f2; border:1px solid #ccc; border-radius:5px;-moz-border-radius:5px;}
+.comment-notes, .form-allowed-tags {font-size:0.75em; padding:10px 0;}
+.comments-title, .comment-reply-title {font-size: 1.5em;} 
+.bypostauthor {color:#333;}
+
+#respond {padding:10px 0; clear:both;}
+#commentform label {margin: 0 0 10px; font-family: 'Anaheim', sans-serif; line-height:1.5em; font-size:1em; display:block;}
+#commentform textarea, #commentform input {width: 90%; padding:5px;}
+#commentform input[type="submit"]{width:10em; margin:10px 0 0;} 
+
+
+/* SIDEBAR AND WIDGETS */
+#sidebar {width: 30%; border:1px solid #ccc; border-radius:5px;-moz-border-radius:5px; float: right; margin:10px 0; padding:10px;}
+#sidebar .widgettitle {background:#f2f2f2; color:#333; padding:5px; margin:10px 0; border:1px solid #ccc; border-radius:5px;-moz-border-radius:5px;}
+
+#sidebar .search-form {margin:10px 5px;}
+#sidebar .textwidget {margin:10px 5px;}
+#sidebar .tagcloud {margin:10px 5px;}
+#wp-calendar {width:90%; margin:0 20px;}
+
+
+/* FOOTER */
+#footer {clear:both; background:none; color:#333; padding:20px 0 0;}
+#footer .site-info {text-align:center;}
+
+
+/* FOOTER MENU */
+.nav-foot {background:none;margin:10px 0; clear:both; padding:10px 0; font-size:1em; border:1px solid #ccc; border-radius:5px;-moz-border-radius:5px; text-align:left;}
+.nav-foot select {display:none;}
+.nav-foot ul ul {display:none;}
+.nav-foot ul ul ul {display:none;}
+.nav-foot ul {padding:0; margin: 0;}
+.nav-foot ul li {list-style-type: none; display: inline-block; position: relative;}
+.nav-foot ul li a {text-decoration: none; color: #f26535; background: none; padding: 5px 10px; display: inline-block;}
+.nav-foot ul li a:hover {text-decoration:underline;}
+
+
+/* Mobile */
+@media screen and (max-width: 600px) { 
+	#container {width: 90%; padding:10px;}
+	#content, #content-full {width:100%;}
+	#header .header-img {width: 100%; height: auto;}
+	#sidebar {width:100%; border:0; padding:0; float:left;}
+	#footer {width:100%;}
+	.nav-head ul {display: none;} 
+	.nav-head {padding:0; border:0;}
+	.nav-head select {display: block; width: 100%; height: 35px; margin: 0 auto 0; font-family: 'Anaheim', sans-serif; font-size: 1em; line-height: 1.5em; color: #fff; background:#f26535; border:0;}
+	.nav-foot ul {display: none;} 
+	.nav-foot {padding:0; border:0;}
+	.nav-foot select {display: block; width: 100%; height: 35px; margin: 0 auto 0; font-family: 'Anaheim', sans-serif; font-size: 1em; line-height: 1.5em; color: #fff; background:#f26535; border:0;}
+}
