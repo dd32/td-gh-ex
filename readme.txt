@@ -1,6 +1,6 @@
 CHANGELOG
 =========
-Version 1.0 - oktober 2013
+Version 1.1 - oktober 2013
 
 
 INSTALLATION
