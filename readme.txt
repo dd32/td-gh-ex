@@ -88,6 +88,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.3.1
+- Theme URL changed.
+
 Version 1.3
 - Unlimited Sidebars removed.
 - Twitter widget removed (php & css).
