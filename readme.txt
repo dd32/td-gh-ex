@@ -348,3 +348,7 @@ Version 2.6.2
 Version 2.6.3
 * Added Soundcloud social icon
 * Fixed Skype Link Data Validation as per https://dev.skype.com/skype-uri
+
+Version 2.6.4
+* Added Simple Catch: Advertisement widget to add google ads and custom image ads
+* Added support for Widgets id and class for custom css support
