@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Everest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-03 19:51+0545\n"
-"PO-Revision-Date: 2013-10-03 19:51+0545\n"
+"POT-Creation-Date: 2013-10-14 22:44+0545\n"
+"PO-Revision-Date: 2013-10-14 22:45+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Ruben Ramos Fernandez <support@catchthemes.com>\n"
 "Language: es_ES\n"
@@ -631,42 +631,74 @@ msgstr ""
 "<span class=\"on-date\">Enviado el %3$s</span><span class=\"sep\"> | </"
 "span><span class=\"by-author\"> por %4$s</span>."
 
-#: ../inc/widgets.php:13
+#: ../inc/widgets.php:14
 msgid "Main Sidebar"
 msgstr "Sidebar principal"
 
-#: ../inc/widgets.php:15
+#: ../inc/widgets.php:16
 msgid "Shows the Widgets at the side of Content"
 msgstr "Muestra los widgets en la parte de contenido"
 
-#: ../inc/widgets.php:24
+#: ../inc/widgets.php:25
 msgid "Footer Area One"
 msgstr "Zona de Footer 1"
 
-#: ../inc/widgets.php:26 ../inc/widgets.php:37 ../inc/widgets.php:48
+#: ../inc/widgets.php:27 ../inc/widgets.php:38 ../inc/widgets.php:49
 msgid "An optional widget area for your site footer"
 msgstr "Un área de widget opcional para el Footer del sitio"
 
-#: ../inc/widgets.php:35
+#: ../inc/widgets.php:36
 msgid "Footer Area Two"
 msgstr "Zona de Footer 2"
 
-#: ../inc/widgets.php:46
+#: ../inc/widgets.php:47
 msgid "Footer Area Three"
 msgstr "Zona de Footer 3"
 
-#: ../inc/widgets.php:75
+#: ../inc/widgets.php:76
 msgid ""
 "Use this widget to add Social Icons from Social Icons Settings as a widget. "
 msgstr "Utilice este Widget para agregar Iconos Sociales como un widget."
 
-#: ../inc/widgets.php:76
-msgid "Catch Everest Social Widget"
-msgstr "Catch Everest Social Widget"
+#: ../inc/widgets.php:77
+msgid "1. Catch Everest Social Widget"
+msgstr "1. Catch Everest Social Widget"
 
-#: ../inc/widgets.php:89
+#: ../inc/widgets.php:90 ../inc/widgets.php:174
 msgid "Title (optional):"
 msgstr "Titulo (opcional):"
+
+#: ../inc/widgets.php:155
+msgid "Use this widget to add any type of Advertisement as a widget."
+msgstr "Use this widget to add any type of Advertisement as a widget."
+
+#: ../inc/widgets.php:156
+msgid "2. Catch Everest: Advertisement"
+msgstr "2. Catch Everest: Advertisement"
+
+#: ../inc/widgets.php:179
+msgid "Advertisement Code:"
+msgstr "Advertisement Code:"
+
+#: ../inc/widgets.php:185
+msgid "Image Url:"
+msgstr "Image Url:"
+
+#: ../inc/widgets.php:189
+msgid "Link URL:"
+msgstr "Link URL:"
+
+#: ../inc/widgets.php:193
+msgid "Open Link in New Window"
+msgstr "Open Link in New Window"
+
+#: ../inc/widgets.php:196
+msgid "Alt text:"
+msgstr "Alt text:"
+
+#: ../inc/widgets.php:259
+msgid "Add Advertisement Code or Image URL"
+msgstr "Add Advertisement Code or Image URL"
 
 #: ../inc/panel/theme-options.php:40 ../inc/panel/theme-options.php:41
 #: ../inc/panel/theme-options.php:145

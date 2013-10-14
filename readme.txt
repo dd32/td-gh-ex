@@ -144,3 +144,6 @@ version 1.2.2
 
 version 1.2.3
 * Fixed blog template more tag issue
+
+version 1.3
+* Added Catch Everest: Advertisement widget to add google ads and custom image ads
