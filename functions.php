@@ -5,8 +5,8 @@
 
 
 // Make theme available for translation
-	add_action('after_setup_theme', 'my_theme_setup'); 
-		function my_theme_setup(){ 
+	add_action('after_setup_theme', 'shipyard_setup'); 
+		function shipyard_setup(){ 
 		load_theme_textdomain('guido', get_template_directory() . '/languages'); } 
 
 
@@ -36,21 +36,42 @@ if ( ! isset( $content_width ) )
 
 
 // Register Menu
-	function register_my_menus() {
+	function register_shipyard_menu() {
 		register_nav_menus(
 			array(
-      		'head-menu' => __( 'Header Menu', 'guido' ),
-      		'foot-menu' => __( 'Footer Menu', 'guido' )
+      		'primary' => __( 'Primary Menu', 'guido' )
     			)
   		);
 	}
-	add_action( 'init', 'register_my_menus' );
+	add_action( 'init', 'register_shipyard_menu' );
 
 
-// Sidebar
+// Sidebars
 register_sidebar(array(
 	'name'          => __( 'Primary Sidebar', 'guido' ),
 	'id'            => 'primary',
+	'description'   => __( 'Select widgets from the right-hand side.', 'guido' ),
+	'class'         => '',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">', 
+	'after_widget' => '</div>', 
+	'before_title'  => '<h4 class="widgettitle">',
+	'after_title'   => '</h4>'
+));
+
+register_sidebar(array(
+	'name'          => __( 'Footer Sidebar Right', 'guido' ),
+	'id'            => 'footer_right',
+	'description'   => __( 'Select widgets from the right-hand side.', 'guido' ),
+	'class'         => '',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">', 
+	'after_widget' => '</div>', 
+	'before_title'  => '<h4 class="widgettitle">',
+	'after_title'   => '</h4>'
+));
+
+register_sidebar(array(
+	'name'          => __( 'Footer Sidebar Left', 'guido' ),
+	'id'            => 'footer_left',
 	'description'   => __( 'Select widgets from the right-hand side.', 'guido' ),
 	'class'         => '',
 	'before_widget' => '<div id="%1$s" class="widget %2$s">', 

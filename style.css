@@ -1,7 +1,7 @@
 /*
 Theme Name: Shipyard
 Theme URI: http://www.guidovanderleest.nl/shipyard
-Version: 1.1
+Version: 1.2
 Author: Guido
 Author URI: http://www.guidovanderleest.nl
 Description: Shipyard is a free, basic, clean, responsive, mobile friendly, WordPress theme. No theme settings page, no fancy options, no slideshow, this one only has the basic options. Custom header-image and dropdown navigation are included. Enjoy. 
@@ -103,7 +103,7 @@ input[type="submit"]:hover {background: #f26535;}
 
 
 /* HEADER MENU */
-.nav-head {background:none;margin:10px 0; clear:both; padding:10px 0; font-size:1em; border:1px solid #ccc; border-radius:5px;-moz-border-radius:5px; text-align:left; overflow:hidden;}
+.nav-head {background:none;margin:10px 0; clear:both; padding:10px 0; font-size:1em; border:1px solid #ccc; border-radius:5px;-moz-border-radius:5px; text-align:left;}
 .nav-head select {display:none;}
 .nav-head ul {padding:0; margin: 0;}
 .nav-head ul li {list-style-type: none; display: inline-block; position: relative;}
@@ -148,7 +148,7 @@ img, embed, iframe, object, video {max-width:100%; height:auto;}
 
 
 /* SEARCHFORM */
-.search-form {margin:10px 0;}
+.search-form {padding:10px 0;}
 .screen-reader-text {display:none;}
 
 
@@ -170,28 +170,18 @@ img, embed, iframe, object, video {max-width:100%; height:auto;}
 
 /* SIDEBAR AND WIDGETS */
 #sidebar {width: 30%; border:1px solid #ccc; border-radius:5px;-moz-border-radius:5px; float: right; margin:10px 0; padding:10px; word-wrap: break-word;}
-#sidebar .widgettitle {background:#f2f2f2; color:#333; padding:5px; margin:10px 0; border:1px solid #ccc; border-radius:5px;-moz-border-radius:5px;}
-
-#sidebar .search-form {margin:10px 5px;}
-#sidebar .textwidget {margin:10px 5px;}
-#sidebar .tagcloud {margin:10px 5px;}
+.widgettitle {background:#f2f2f2; color:#333; padding:5px; margin:10px 0; border:1px solid #ccc; border-radius:5px;-moz-border-radius:5px;}
+.textwidget {margin:10px 5px;}
+.tagcloud {margin:10px 5px;}
 #wp-calendar {width:90%; margin:0 20px;}
 
 
 /* FOOTER */
 #footer {clear:both; background:none; color:#333; padding:20px 0 0;}
-#footer .site-info {text-align:center;}
+#footer .site-info {text-align:center; clear:both;}
 
-
-/* FOOTER MENU */
-.nav-foot {background:none;margin:10px 0; clear:both; padding:10px 0; font-size:1em; border:1px solid #ccc; border-radius:5px;-moz-border-radius:5px; text-align:left; overflow:hidden;}
-.nav-foot select {display:none;}
-.nav-foot ul ul {display:none;}
-.nav-foot ul ul ul {display:none;}
-.nav-foot ul {padding:0; margin: 0;}
-.nav-foot ul li {list-style-type: none; display: inline-block; position: relative;}
-.nav-foot ul li a {text-decoration: none; color: #f26535; background: none; padding: 5px 10px; display: inline-block;}
-.nav-foot ul li a:hover {text-decoration:underline;}
+.footer-left {float: left; width: 45%; border:1px solid #ccc; border-radius:5px;-moz-border-radius:5px; margin:10px 0; padding:10px; word-wrap: break-word;}
+.footer-right {float: right; width: 45%; border:1px solid #ccc; border-radius:5px;-moz-border-radius:5px; margin:10px 0; padding:10px; word-wrap: break-word;}
 
 
 /* Mobile */
@@ -201,10 +191,8 @@ img, embed, iframe, object, video {max-width:100%; height:auto;}
 	#header .header-img {width: 100%; height: auto;}
 	#sidebar {width:100%; border:0; padding:0; float:left;}
 	#footer {width:100%;}
+	.footer-right, .footer-left {width:100%; border:0; padding:0; float:left;} 
 	.nav-head ul {display: none;} 
 	.nav-head {padding:0; border:0;}
 	.nav-head select {display: block; width: 100%; height: 35px; margin: 0 auto 0; font-family: 'Anaheim', sans-serif; font-size: 1em; line-height: 1.5em; color: #fff; background:#f26535; border:0;}
-	.nav-foot ul {display: none;} 
-	.nav-foot {padding:0; border:0;}
-	.nav-foot select {display: block; width: 100%; height: 35px; margin: 0 auto 0; font-family: 'Anaheim', sans-serif; font-size: 1em; line-height: 1.5em; color: #fff; background:#f26535; border:0;}
 }

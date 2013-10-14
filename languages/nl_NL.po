@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Shipyard v1.0\n"
+"Project-Id-Version: Shipyard v1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-10-11 08:59:14+0000\n"
+"PO-Revision-Date: 2013-10-11 22:45:41+0000\n"
 "Last-Translator: Guido\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -100,48 +100,40 @@ msgstr "&laquo; Oudere berichten"
 msgid "Newer posts &raquo;"
 msgstr "Nieuwere berichten &raquo;"
 
-#: footer.php:14
+#: footer.php:44
 #@ guido
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: footer.php:14
+#: footer.php:44
 #@ guido
 msgid "WordPress Blog Platform"
 msgstr "WordPress Blog Platform"
 
-#: footer.php:14
+#: footer.php:44
 #, php-format
 #@ guido
 msgid "Proudly powered by %s"
 msgstr "Proudly powered by %s"
 
-#: functions.php:43
-#@ guido
-msgid "Header Menu"
-msgstr "Header menu"
-
-#: functions.php:44
-#@ guido
-msgid "Footer Menu"
-msgstr "Footer Menu"
-
-#: functions.php:53
+#: functions.php:51
 #@ guido
 msgid "Primary Sidebar"
 msgstr "Hoofd Sidebar"
 
-#: functions.php:55
+#: functions.php:53
+#: functions.php:64
+#: functions.php:75
 #@ guido
 msgid "Select widgets from the right-hand side."
 msgstr "Selecteer widgets van de rechterkant."
 
-#: functions.php:67
+#: functions.php:87
 #@ guido
 msgid "Read More &raquo;"
 msgstr "Lees Meer &raquo;"
 
-#: functions.php:108
+#: functions.php:128
 #@ guido
 msgid "Boats"
 msgstr "Boten"
@@ -164,11 +156,13 @@ msgstr "Bewerk"
 msgid "Search Results for: %s"
 msgstr "Zoekresultaat voor: %s"
 
+#: footer.php:17
 #: sidebar.php:14
 #@ guido
 msgid "Search"
 msgstr "Zoek"
 
+#: footer.php:34
 #: sidebar.php:19
 #@ guido
 msgid "Recent Posts"
@@ -179,7 +173,7 @@ msgstr "Nieuwe Berichten"
 msgid "Posted in "
 msgstr "Geplaatst in "
 
-#: comments.php:19
+#: comments.php:18
 #, php-format
 #@ guido
 msgctxt "comments title"
@@ -188,18 +182,33 @@ msgid_plural "%1$s responses on %2$s"
 msgstr[0] "1 reactie op  %2$s"
 msgstr[1] "%1$s reacties op %2$s"
 
-#: comments.php:38
+#: comments.php:37
 #@ guido
 msgid "&laquo; Older Comments"
 msgstr "&laquo; Oudere Reacties"
 
-#: comments.php:39
+#: comments.php:38
 #@ guido
 msgid "Newer Comments &raquo;"
 msgstr "Nieuwere Reacties &raquo;"
 
-#: comments.php:44
+#: comments.php:43
 #@ guido
 msgid "Comments are closed."
 msgstr "Reageren is niet mogelijk."
+
+#: functions.php:42
+#@ guido
+msgid "Primary Menu"
+msgstr "Hoofdmenu"
+
+#: functions.php:62
+#@ guido
+msgid "Footer Sidebar Right"
+msgstr "Footer Sidebar Rechts"
+
+#: functions.php:73
+#@ guido
+msgid "Footer Sidebar Left"
+msgstr "Footer Sidebar Links"
 

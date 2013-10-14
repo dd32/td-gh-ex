@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Shipyard v1.0\n"
+"Project-Id-Version: Shipyard v1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-10-11 08:57:04+0000\n"
+"PO-Revision-Date: 2013-10-11 22:44:55+0000\n"
 "Last-Translator: Guido\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -100,48 +100,40 @@ msgstr ""
 msgid "Newer posts &raquo;"
 msgstr ""
 
-#: footer.php:14
+#: footer.php:44
 #@ guido
 msgid "http://wordpress.org/"
 msgstr ""
 
-#: footer.php:14
+#: footer.php:44
 #@ guido
 msgid "WordPress Blog Platform"
 msgstr ""
 
-#: footer.php:14
+#: footer.php:44
 #, php-format
 #@ guido
 msgid "Proudly powered by %s"
 msgstr ""
 
-#: functions.php:43
-#@ guido
-msgid "Header Menu"
-msgstr ""
-
-#: functions.php:44
-#@ guido
-msgid "Footer Menu"
-msgstr ""
-
-#: functions.php:53
+#: functions.php:51
 #@ guido
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:55
+#: functions.php:53
+#: functions.php:64
+#: functions.php:75
 #@ guido
 msgid "Select widgets from the right-hand side."
 msgstr ""
 
-#: functions.php:67
+#: functions.php:87
 #@ guido
 msgid "Read More &raquo;"
 msgstr ""
 
-#: functions.php:108
+#: functions.php:128
 #@ guido
 msgid "Boats"
 msgstr ""
@@ -164,11 +156,13 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
+#: footer.php:17
 #: sidebar.php:14
 #@ guido
 msgid "Search"
 msgstr ""
 
+#: footer.php:34
 #: sidebar.php:19
 #@ guido
 msgid "Recent Posts"
@@ -179,7 +173,7 @@ msgstr ""
 msgid "Posted in "
 msgstr ""
 
-#: comments.php:19
+#: comments.php:18
 #, php-format
 #@ guido
 msgctxt "comments title"
@@ -188,18 +182,33 @@ msgid_plural "%1$s responses on %2$s"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:38
+#: comments.php:37
 #@ guido
 msgid "&laquo; Older Comments"
 msgstr ""
 
-#: comments.php:39
+#: comments.php:38
 #@ guido
 msgid "Newer Comments &raquo;"
 msgstr ""
 
-#: comments.php:44
+#: comments.php:43
 #@ guido
 msgid "Comments are closed."
+msgstr ""
+
+#: functions.php:42
+#@ guido
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:62
+#@ guido
+msgid "Footer Sidebar Right"
+msgstr ""
+
+#: functions.php:73
+#@ guido
+msgid "Footer Sidebar Left"
 msgstr ""
 

@@ -1,6 +1,6 @@
 CHANGELOG
 =========
-Version 1.1 - oktober 2013
+Version 1.2 - oktober 2013
 
 
 INSTALLATION
@@ -25,7 +25,7 @@ The default header (boats.jpg) is from my private collection and I don't mind yo
 
 HOW TO SET MENU
 ===============
-Shipyard offers two menu's: one in header and the second one in footer. Menu in head can contain subpages (2 levels deep).
+Shipyard offers a menu that can contain subpages (2 levels deep).
 You can set menu via WordPress Dashboard > Appearance > Menu's and select the menu you want.
 
 
