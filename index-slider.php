@@ -4,7 +4,7 @@
    
 
  <!-- Slider -->
-  <div id="container" class="cf">
+<div id="container" class="cf">
 <div id="main" role="main">
       <div class="slider">
         <div id="slider" class="flexslider">
@@ -32,10 +32,7 @@
            </div>
       
   	    	</li>
-		
-  	    
-  	    	
-  	    		
+		  		
           </ul>
 		  
 		  	<div class="slider-thumb-container container">	

@@ -13,14 +13,14 @@
 	<div class="row-fluid">
 			 <div class="span3" style="margin-top:20px;margin-left:5px; width:auto;">
 			    <dl class="pink_title">
-				<dt><?php if(isset($bd)){ echo $bd; } else{ 
+				<dt><?php if($h1!=''){ echo $h1; } else{ 
 		  _e("GET YOURSELF",'sis_spa');} ?></dt>
-				<dt><h1 class="pink-head"><?php if(isset($h1)) { echo $h1;} else{ 
+				<dt><h1 class="pink-head"><?php if($h2!='') { echo $h2;} else{ 
 		  _e("REFRESHED",'sis_spa');} ?></h1></dt>
 				</dl>
 			 </div>
 			 
-			 <div class="span6" style="margin-top:20px"><p><?php if(isset( $h2)){ echo $h2;}  else{ 
+			 <div class="span6" style="margin-top:20px"><p><?php if($bd!=''){ echo $bd;}  else{ 
 		  _e(" Banner Description Donec justo odio, lobortis eget congue sed, rutrum sit amet mauris. Curabitur sed lectus nulla. Curabitur sed lectus nulla.lobortis eget congue sed, rutrum sit amet mauris. Curabitur sed lectus nulla rutrum sit amet mauris ",'sis_spa');}?></p>
 			</div>
 		<div class="spa_tag">

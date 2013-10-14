@@ -514,8 +514,7 @@ if ( empty($_POST) || !wp_verify_nonce($_POST['spa_home_nonce_customization'],'s
 
     <div class="section">
         <div class="element">
-            <input type="text"  name="product5_title" 
-			value="<?php if($current_options['product5_title']!='') { echo esc_attr($current_options['product5_title']); } ?>"/>
+            <input type="text"  name="product5_title" value="<?php if($current_options['product5_title']!='') { echo esc_attr($current_options['product5_title']); } ?>"/>
         </div>
 	</div>
    

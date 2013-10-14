@@ -18,9 +18,6 @@ window.send_to_editor = function(html) {
     tb_remove();
 };
 
-
-
-
 });
 
 

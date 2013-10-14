@@ -22,7 +22,7 @@ if ( empty($_POST) || !wp_verify_nonce($_POST['spa_gernalsetting_nonce_customiza
 	
 	else  
 	{
-          	 echo $page; 
+          	 //echo $page; 
 			$current_options['spa_Site_Title']['site_title_px']=sanitize_text_field($_POST['site_title_px']);
 			$current_options['spa_Site_Title']['color_title']=sanitize_text_field($_POST['color_title']);
 			$current_options['spa_Site_Title']['font_family']=sanitize_text_field($_POST['font_family']);

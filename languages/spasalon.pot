@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Spasalon\n"
-"POT-Creation-Date: 2013-09-09 16:49+0530\n"
-"PO-Revision-Date: 2013-09-09 16:49+0530\n"
+"POT-Creation-Date: 2013-10-14 19:05+0530\n"
+"PO-Revision-Date: 2013-10-14 19:05+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -13,632 +13,431 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: 404.php:23
-msgid "Unfortunately, the page you tried accessing could not be retrieved. "
-msgstr ""
-
-#: 404.php:27
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
-msgstr ""
-
-#: archive.php:17
-msgid "Daily Archives:"
-msgstr ""
-
-#: archive.php:19
-msgid "Monthly Archives:"
-msgstr ""
-
-#: archive.php:21
-msgid "Yearly Archives:"
-msgstr ""
-
-#: archive.php:23
-msgid "Blog Archives"
-msgstr ""
-
-#: archive.php:39 author.php:52 category.php:32 index.php:33 page.php:25
-#: search.php:42 single.php:27
-msgid "Leave a comment"
-msgstr ""
-
-#: archive.php:39 author.php:52 category.php:32 index.php:33 page.php:25
-#: search.php:42 single.php:27
-msgid "1 Comment"
-msgstr ""
-
-#: archive.php:39 author.php:52 category.php:32 index.php:33 page.php:25
-#: search.php:42 single.php:27
-msgid "% Comments"
-msgstr ""
-
-#: author.php:13
-#, php-format
-msgid "Author Archives: %s"
-msgstr ""
-
-#: author.php:34
-#, php-format
-msgid "About %s"
-msgstr ""
-
-#: category.php:17
-msgid "Category  Archives:"
-msgstr ""
-
-#: comments.php:2
-msgid ""
-"This post is password protected. Enter the password to view any comments."
-msgstr ""
-
-#: comments.php:15 comments.php:30
-msgid "Comment navigation"
-msgstr ""
-
-#: comments.php:16 comments.php:31
-msgid "&larr; Older Comments"
-msgstr ""
-
-#: comments.php:17 comments.php:32
-msgid "Newer Comments &rarr;"
-msgstr ""
-
-#: comments.php:71
-msgid "Logged in as "
-msgstr ""
-
-#: comments.php:71
-msgid " Log out?"
-msgstr ""
-
-#: contact.php:13
-msgid "CONTACT INFO"
-msgstr ""
-
-#: contact.php:88
-msgid "Your Name"
-msgstr ""
-
-#: contact.php:90
-msgid "Email*"
-msgstr ""
-
-#: contact.php:92
-msgid "Subject"
-msgstr ""
-
-#: contact.php:94
-msgid "Your Message"
-msgstr ""
-
-#: contact.php:99
-msgid "Submit"
-msgstr ""
-
-#: contact.php:116
-msgid "Spa Salon"
-msgstr ""
-
-#: contact.php:132
-msgid "Opening Hours"
-msgstr ""
-
-#: contact.php:145 index-slider.php:30 pink-header.php:23
-#: option_pannel/home.php:112
-msgid "Call us on"
-msgstr ""
-
-#: functions.php:17
-msgid "Post navigation"
-msgstr ""
-
-#: functions.php:18
-msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr ""
-
-#: functions.php:19
-msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-
-#: functions.php:43
-#, php-format
-msgid "Page %s"
-msgstr ""
-
-#: functions.php:60
-msgid "Our"
-msgstr ""
-
-#: functions.php:61
-msgid "Refreshed"
-msgstr ""
-
-#: functions.php:62
-msgid ""
-"Donec justo odio, lobortis eget congue sed, rutrum sit amet mauris. "
-"Curabitur sed lectus nulla.\n"
-"             Curabitur sed lectus nulla.lobortis eget congue sed, rutrum sit "
-"amet mauris. Curabitur sed \n"
-"             lectus nulla rutrum sit amet mauris"
-msgstr ""
-
-#: functions.php:72
-msgid "Spa Treatment"
-msgstr ""
-
-#: functions.php:74 functions.php:81 functions.php:87 functions.php:93
-msgid ""
-"Pellentesque habitant morbi tristique senectus \n"
-"                                                      et netus et malesuada "
-"fames ac turpis egestas \n"
-"                                                    In in massa urna, vitae "
-"vestibulum orci. yoursb\n"
-"                                                     Maecenas quis est sed "
-"mauris..."
-msgstr ""
-
-#: functions.php:79
-msgid "Detox Treatment"
-msgstr ""
-
-#: functions.php:85
-msgid "Facial Treatment"
-msgstr ""
-
-#: functions.php:91
-msgid "Other Treatment"
-msgstr ""
-
-#: functions.php:99
-msgid "Product 1"
-msgstr ""
-
-#: functions.php:102
-msgid "Product 2"
-msgstr ""
-
-#: functions.php:105
-msgid "Product 3"
-msgstr ""
-
-#: functions.php:108
-msgid "Product 4"
-msgstr ""
-
-#: functions.php:111
-msgid "Product 5"
-msgstr ""
-
-#: functions.php:121
-msgid "Copyright 2013. All Rights Reserved by "
-msgstr ""
-
-#: functions.php:127
-msgid "Treatment we are offering"
-msgstr ""
-
-#: functions.php:128
-msgid ""
-"In commodo pulvinar metus, id tristique massa ultrices at. Nulla auctor "
-"turpis ut mi pulvinar eu accumsan risus sagittis. Mauris nunc ligula, "
-"ullamcorper vitae accumsan eu, \n"
-"congue in nulla. Cras hendrerit mi quis nisi semper in sodales nisl "
-"faucibus. Sed quis quam eu ante ornare hendrerit."
-msgstr ""
-
-#: functions.php:130
-msgid "Spasalon Our product rang"
-msgstr ""
-
-#: functions.php:131
-msgid ""
-"A SpaSalon Produc Heading Title In commodo pulvinar metus, id tristique "
-"massa ultrices at. Nulla auctor turpis ut mi pulvinar eu accumsan risus "
-"sagittis. Mauris nunc ligula, ullamcorper vitae accumsan eu, congue in "
-"nulla. Cras hendrerit mi quis nisi semper in sodales nisl faucibus. Sed quis "
-"quam eu ante ornare hendrerit. "
-msgstr ""
-
-#: functions.php:221
-msgid "Header Menu"
-msgstr ""
-
-#: functions.php:222
-msgid "Footer Menu"
-msgstr ""
-
-#: functions.php:234
-msgid " Sidebar"
-msgstr ""
-
-#: functions.php:236
-msgid "The primary widget area"
-msgstr ""
-
-#: functions.php:300
-msgid "Banner Description"
-msgstr ""
-
-#: functions.php:306
-msgid "Banner Heading One"
-msgstr ""
-
-#: functions.php:312
-msgid "Banner Heading Two"
-msgstr ""
-
-#: functions.php:400
-msgid "Reply"
-msgstr ""
-
-#: functions.php:422
-msgid "Your comment is awaiting moderation."
-msgstr ""
-
-#: functions.php:441
-msgid ""
-"This post is password protected. To view it please enter your password below:"
-msgstr ""
-
-#: functions.php:442
-msgid "Password:"
-msgstr ""
-
-#: index.php:49 page.php:33 single.php:34
-msgid "Pages:"
-msgstr ""
-
-#: search.php:26
-#, php-format
-msgid "Search Results for: %s"
-msgstr ""
-
-#: search.php:59
-msgid "Nothing Found"
-msgstr ""
-
-#: search.php:63
-msgid ""
-"Sorry, but nothing matched your search criteria. Please try again with some "
-"different keywords."
-msgstr ""
-
-#: functions/Menu_Walker/default_menu_walker.php:23
-#: option_pannel/option_pannel.php:58
-msgid "Home"
-msgstr ""
-
-#: option_pannel/footer_customization.php:1
+#: spa_footer_customization.php:1 New Folder/footer_customization.php:1
 msgid "Footer Copyrights"
 msgstr ""
 
-#: option_pannel/footer_customization.php:1
-#: option_pannel/general_settings.php:115 option_pannel/home.php:628
-#: option_pannel/typography.php:505
+#: spa_footer_customization.php:1
+msgid "Footer Tagline"
+msgstr ""
+
+#: spa_footer_customization.php:1 spa_typography.php:1
+msgid "Enter home project title one"
+msgstr ""
+
+#: spa_footer_customization.php:1 spa_general_settings.php:1 spa_home.php:1
+#: spa_typography.php:1 New Folder/footer_customization.php:1
+#: Folder/general_settings.php:115 Folder/home.php:627
+#: Folder/typography.php:505
 msgid "Save Changes"
 msgstr ""
 
-#: option_pannel/footer_customization.php:1
-#: option_pannel/general_settings.php:116 option_pannel/home.php:629
-#: option_pannel/typography.php:506
+#: spa_footer_customization.php:1 spa_general_settings.php:1 spa_home.php:1
+#: spa_typography.php:1 New Folder/footer_customization.php:1
+#: Folder/general_settings.php:116 Folder/home.php:628
+#: Folder/typography.php:506
 msgid "Restore Defaults"
 msgstr ""
 
-#: option_pannel/footer_customization.php:1
-#: option_pannel/general_settings.php:120 option_pannel/home.php:630
+#: spa_footer_customization.php:1 spa_general_settings.php:1 spa_home.php:1
+#: spa_typography.php:1 New Folder/footer_customization.php:1
+#: Folder/general_settings.php:120 Folder/home.php:629
 msgid "Data reset sucessfully"
 msgstr ""
 
-#: option_pannel/footer_customization.php:1
-#: option_pannel/general_settings.php:121 option_pannel/home.php:631
+#: spa_footer_customization.php:1 spa_general_settings.php:1 spa_home.php:1
+#: spa_typography.php:1 New Folder/footer_customization.php:1
+#: Folder/general_settings.php:121 Folder/home.php:630
 msgid "Data save sucessfully"
 msgstr ""
 
-#: option_pannel/general_settings.php:55
-msgid "General Settings"
+#: spa_general_settings.php:1
+msgid "Settings"
 msgstr ""
 
-#: option_pannel/general_settings.php:56
+#: spa_general_settings.php:1 New Folder/general_settings.php:56
 msgid "Custom Logo"
 msgstr ""
 
-#: option_pannel/general_settings.php:69
+#: spa_general_settings.php:1 New Folder/general_settings.php:69
 msgid "The placeholder image that will be used as a custom logo"
 msgstr ""
 
-#: option_pannel/general_settings.php:74
+#: spa_general_settings.php:1 New Folder/general_settings.php:74
 msgid "Header Logo Height"
 msgstr ""
 
-#: option_pannel/general_settings.php:81 option_pannel/general_settings.php:94
+#: spa_general_settings.php:1 New Folder/general_settings.php:81
+#: Folder/general_settings.php:94
 msgid "The width of the header logo image."
 msgstr ""
 
-#: option_pannel/general_settings.php:87
+#: spa_general_settings.php:1 New Folder/general_settings.php:87
 msgid "Header Logo width"
 msgstr ""
 
-#: option_pannel/general_settings.php:99
+#: spa_general_settings.php:1 New Folder/general_settings.php:99
 msgid "Custom Favicon"
 msgstr ""
 
-#: option_pannel/general_settings.php:107
+#: spa_general_settings.php:1 New Folder/general_settings.php:107
 msgid ""
 "The placeholder image that will be used if a featured image isnt specified."
 msgstr ""
 
-#: option_pannel/home.php:13
-msgid "Sorry, your nonce did not verify."
-msgstr ""
-
-#: option_pannel/home.php:93
+#: spa_home.php:1 New Folder/home.php:93
 msgid "Pink Highlight Strip "
 msgstr ""
 
-#: option_pannel/home.php:95
+#: spa_home.php:1 New Folder/home.php:95
 msgid "Line One"
 msgstr ""
 
-#: option_pannel/home.php:103
+#: spa_home.php:1
+msgid "Enter line one"
+msgstr ""
+
+#: spa_home.php:1 New Folder/home.php:103
 msgid "Line Two"
 msgstr ""
 
-#: option_pannel/home.php:121
+#: spa_home.php:1
+msgid "Enter line two"
+msgstr ""
+
+#: spa_home.php:1 New Folder/home.php:112
+msgid "Call us on"
+msgstr ""
+
+#: spa_home.php:1
+msgid "Enter call us no"
+msgstr ""
+
+#: spa_home.php:1 New Folder/home.php:121
 msgid "Description"
 msgstr ""
 
-#: option_pannel/home.php:136
+#: spa_home.php:1
+msgid "Enter description"
+msgstr ""
+
+#: spa_home.php:1 New Folder/home.php:136
 msgid "Home Top Feature "
 msgstr ""
 
-#: option_pannel/home.php:138
+#: spa_home.php:1 New Folder/home.php:138
 msgid "Upload Feature Image"
 msgstr ""
 
-#: option_pannel/home.php:149
+#: spa_home.php:1 New Folder/home.php:149
 msgid ""
 "The placeholder image that will be used as a FullWidth Featured On Home page"
 msgstr ""
 
-#: option_pannel/home.php:158
+#: spa_home.php:1 New Folder/home.php:158
 msgid "Home Feature Thumbstrip setting "
 msgstr ""
 
-#: option_pannel/home.php:160
+#: spa_home.php:1 New Folder/home.php:160
 msgid "Upload First Thumb Image"
 msgstr ""
 
-#: option_pannel/home.php:170 option_pannel/home.php:184
-#: option_pannel/home.php:199
+#: spa_home.php:1 New Folder/home.php:170 Folder/home.php:184
+#: Folder/home.php:199
 msgid ""
 "The placeholder image that will be used below the FullWidth Feature as "
 "featured Thumb"
 msgstr ""
 
-#: option_pannel/home.php:174
+#: spa_home.php:1 New Folder/home.php:174
 msgid "Upload Second Thumb Image"
 msgstr ""
 
-#: option_pannel/home.php:189
+#: spa_home.php:1 New Folder/home.php:189
 msgid "Upload Third Thumb Image"
 msgstr ""
 
-#: option_pannel/home.php:214
+#: spa_home.php:1 New Folder/home.php:214
 msgid "Home Page Tegline "
 msgstr ""
 
-#: option_pannel/home.php:215
+#: spa_home.php:1 New Folder/home.php:215
 msgid "Tagline Title"
 msgstr ""
 
-#: option_pannel/home.php:225
+#: spa_home.php:1
+msgid "Tagline title"
+msgstr ""
+
+#: spa_home.php:1 New Folder/home.php:225
 msgid "Tagline Content"
 msgstr ""
 
-#: option_pannel/home.php:241
+#: spa_home.php:1 New Folder/home.php:241
 msgid "Home page Four Services Section "
 msgstr ""
 
-#: option_pannel/home.php:243
+#: spa_home.php:1 New Folder/home.php:243
 msgid "First Service Title"
 msgstr ""
 
-#: option_pannel/home.php:251 option_pannel/home.php:356
+#: spa_home.php:1 New Folder/home.php:251 Folder/home.php:356
 msgid "Upload First Service Image"
 msgstr ""
 
-#: option_pannel/home.php:261 option_pannel/home.php:296
-#: option_pannel/home.php:331 option_pannel/home.php:366
+#: spa_home.php:1 New Folder/home.php:261 Folder/home.php:296
+#: Folder/home.php:331 Folder/home.php:366
 msgid "The placeholder image that will be used as a Service Image on Home Page"
 msgstr ""
 
-#: option_pannel/home.php:266
+#: spa_home.php:1 New Folder/home.php:266
 msgid "First Service Content"
 msgstr ""
 
-#: option_pannel/home.php:278
+#: spa_home.php:1 New Folder/home.php:278
 msgid "Second Service Title"
 msgstr ""
 
-#: option_pannel/home.php:286
+#: spa_home.php:1 New Folder/home.php:286
 msgid "Upload Second Service Image"
 msgstr ""
 
-#: option_pannel/home.php:301
+#: spa_home.php:1 New Folder/home.php:301
 msgid "Second Service Content"
 msgstr ""
 
-#: option_pannel/home.php:313
+#: spa_home.php:1
+msgid "Enter service content"
+msgstr ""
+
+#: spa_home.php:1 New Folder/home.php:313
 msgid "Third Service Title"
 msgstr ""
 
-#: option_pannel/home.php:321
+#: spa_home.php:1
+msgid "Enter service title"
+msgstr ""
+
+#: spa_home.php:1 New Folder/home.php:321
 msgid "Upload Third Service Image"
 msgstr ""
 
-#: option_pannel/home.php:336
+#: spa_home.php:1 New Folder/home.php:336
 msgid "Third Service Content"
 msgstr ""
 
-#: option_pannel/home.php:348
+#: spa_home.php:1 New Folder/home.php:348
 msgid "Fourth Service Title"
 msgstr ""
 
-#: option_pannel/home.php:371
+#: spa_home.php:1 New Folder/home.php:371
 msgid "Fourth Service Content"
 msgstr ""
 
-#: option_pannel/home.php:392
+#: spa_home.php:1
+msgid "Entert servce content"
+msgstr ""
+
+#: spa_home.php:1 New Folder/home.php:392
 msgid "Home page  Products Section "
 msgstr ""
 
-#: option_pannel/home.php:393
+#: spa_home.php:1 New Folder/home.php:393
 msgid "Product Heading Title"
 msgstr ""
 
-#: option_pannel/home.php:405
+#: spa_home.php:1 New Folder/home.php:405
 msgid "Product Heading Content"
 msgstr ""
 
-#: option_pannel/home.php:415
+#: spa_home.php:1 New Folder/home.php:415
 msgid "First Product Title"
 msgstr ""
 
-#: option_pannel/home.php:423
+#: spa_home.php:1 New Folder/home.php:423
 msgid "Upload First Product Image"
 msgstr ""
 
-#: option_pannel/home.php:433 option_pannel/home.php:458
-#: option_pannel/home.php:483 option_pannel/home.php:507
-#: option_pannel/home.php:533
+#: spa_home.php:1 New Folder/home.php:433 Folder/home.php:458
+#: Folder/home.php:483 Folder/home.php:507 Folder/home.php:532
 msgid "The placeholder image that will be used as Product Image on home page"
 msgstr ""
 
-#: option_pannel/home.php:438
+#: spa_home.php:1 New Folder/home.php:438
 msgid "Second Product Title"
 msgstr ""
 
-#: option_pannel/home.php:447
+#: spa_home.php:1 New Folder/home.php:447
 msgid "Upload Second Product Image"
 msgstr ""
 
-#: option_pannel/home.php:463
+#: spa_home.php:1 New Folder/home.php:463
 msgid "Third Product Title"
 msgstr ""
 
-#: option_pannel/home.php:472
-msgid "Upload Thrid Product Image"
+#: spa_home.php:1
+msgid "Upload Third Product Image"
 msgstr ""
 
-#: option_pannel/home.php:487
+#: spa_home.php:1 New Folder/home.php:487
 msgid "Fourth Product Title"
 msgstr ""
 
-#: option_pannel/home.php:496
+#: spa_home.php:1 New Folder/home.php:496
 msgid "Upload Fourth Product Image"
 msgstr ""
 
-#: option_pannel/home.php:513
+#: spa_home.php:1 New Folder/home.php:513
 msgid "Fifth Product Title"
 msgstr ""
 
-#: option_pannel/home.php:522
+#: spa_home.php:1 New Folder/home.php:521
 msgid "Upload Fifth Product Image"
 msgstr ""
 
-#: option_pannel/home.php:540
+#: spa_home.php:1 New Folder/home.php:539
 msgid "Tagline Settings"
 msgstr ""
 
-#: option_pannel/home.php:559 option_pannel/home.php:600
-#: option_pannel/typography.php:90 option_pannel/typography.php:150
-#: option_pannel/typography.php:209 option_pannel/typography.php:265
-#: option_pannel/typography.php:467
+#: spa_home.php:1 spa_typography.php:1 New Folder/home.php:558
+#: Folder/home.php:599 Folder/typography.php:90 Folder/typography.php:150
+#: Folder/typography.php:209 Folder/typography.php:265
+#: Folder/typography.php:467
 msgid "px"
 msgstr ""
 
-#: option_pannel/home.php:581
+#: spa_home.php:1 New Folder/home.php:580
 msgid "Product Heading Settings"
 msgstr ""
 
-#: option_pannel/home.php:681
-msgid "Spa enter your custom title for the homepage tagline"
+#: spa_home.php:1
+msgid "Select product heading setting"
 msgstr ""
 
-#: option_pannel/home.php:682
-msgid ""
-"A spa WordPress theme for All Wordpress Lover. This is Best Blogging theme."
-msgstr ""
-
-#: option_pannel/home.php:687
-msgid "Highlight Title"
-msgstr ""
-
-#: option_pannel/home.php:688
-msgid "Latest Update"
-msgstr ""
-
-#: option_pannel/option_pannel.php:13
+#: spa_option.php:3
 msgid "Spasalon Pro Verison Coming Soon !!! "
 msgstr ""
 
-#: option_pannel/option_pannel.php:14
+#: spa_option.php:4
 msgid ""
 "You are Using the Lite Version of Spasalon Theme. The Premium Version  is "
 "coming soon with lots and lots of features. Soon releasing themes premium "
 "version on our blog"
 msgstr ""
 
-#: option_pannel/option_pannel.php:15
+#: spa_option.php:5
 msgid "Check Out Our Blog"
 msgstr ""
 
-#: option_pannel/option_pannel.php:22
+#: spa_option.php:12
 msgid "Spa Theme Options"
 msgstr ""
 
-#: option_pannel/option_pannel.php:29
+#: spa_option.php:19
 msgid "Tabs"
 msgstr ""
 
-#: option_pannel/option_pannel.php:50
+#: spa_option.php:40 spa_options_pannel.php:1
 msgid "General"
 msgstr ""
 
-#: option_pannel/option_pannel.php:52 option_pannel/typography.php:68
+#: spa_option.php:42 spa_options_pannel.php:1 New Folder/typography.php:68
 msgid "Typography"
 msgstr ""
 
-#: option_pannel/option_pannel.php:56
+#: spa_option.php:46
 msgid "Footer Customization"
 msgstr ""
 
-#: option_pannel/typography.php:69
+#: spa_option.php:48 spa_options_pannel.php:1
+msgid "Home"
+msgstr ""
+
+#: spa_options_pannel.php:1
+msgid "Upgrade to Spasalon Pro!"
+msgstr ""
+
+#: spa_options_pannel.php:1
+msgid "All SpaSalon PRO"
+msgstr ""
+
+#: spa_options_pannel.php:1
+msgid "custom typography, unlimited colors, filterable portfolio"
+msgstr ""
+
+#: spa_options_pannel.php:1
+msgid "and more!"
+msgstr ""
+
+#: spa_options_pannel.php:1
+msgid "Buy now!"
+msgstr ""
+
+#: spa_options_pannel.php:1
+msgid "Footer Custmization"
+msgstr ""
+
+#: spa_options_pannel.php:1
+msgid "This theme recommends the following plugin: "
+msgstr ""
+
+#: spa_options_pannel.php:1
+msgid "appointment calendar"
+msgstr ""
+
+#: spa_options_pannel.php:1 New Folder/general_settings.php:55
+msgid "General Settings"
+msgstr ""
+
+#: spa_typography.php:1 New Folder/typography.php:69
 msgid "Style Menus"
 msgstr ""
 
-#: option_pannel/typography.php:128
+#: spa_typography.php:1 New Folder/typography.php:128
 msgid "Post Title"
 msgstr ""
 
-#: option_pannel/typography.php:188
+#: spa_typography.php:1 New Folder/typography.php:188
 msgid "Post Excerpt"
 msgstr ""
 
-#: option_pannel/typography.php:243
+#: spa_typography.php:1 New Folder/typography.php:243
 msgid "Post Meta"
 msgstr ""
 
-#: option_pannel/typography.php:447
+#: spa_typography.php:1 New Folder/typography.php:447
 msgid "Sidebar Widgte Title"
 msgstr ""
 
-#: option_pannel/typography.php:507
+#: New Folder/home.php:13
+msgid "Sorry, your nonce did not verify."
+msgstr ""
+
+#: New Folder/home.php:472
+msgid "Upload Thrid Product Image"
+msgstr ""
+
+#: New Folder/home.php:680
+msgid "Spa enter your custom title for the homepage tagline"
+msgstr ""
+
+#: New Folder/home.php:681
+msgid ""
+"A spa WordPress theme for All Wordpress Lover. This is Best Blogging theme."
+msgstr ""
+
+#: New Folder/home.php:686
+msgid "Highlight Title"
+msgstr ""
+
+#: New Folder/home.php:687
+msgid "Latest Update"
+msgstr ""
+
+#: New Folder/typography.php:507
 msgid "Data Reset Successfully"
 msgstr ""
 
-#: option_pannel/typography.php:508
+#: New Folder/typography.php:508
 msgid "Data Save Successfully"
 msgstr ""

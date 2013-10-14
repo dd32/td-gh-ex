@@ -240,7 +240,7 @@ update_option('spa_theme_options' , $current_options);
 
 <!--code for post meta -->
 <div class="option option-checbox">
-    <h3><?php __("Post Meta",'sis_spa');?></h3>
+    <h3><?php _("Post Meta",'sis_spa');?></h3>
 
 </div>
 

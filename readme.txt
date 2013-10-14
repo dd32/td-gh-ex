@@ -57,7 +57,9 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
-@verison 1.5
+@version 1.2 
+1. Completely new option panel.
+@verison 1.1
 1. Added backward php version compatibility to resize_image.php  file by removing anonymous function.
 @version 1.0.4
 1 Remove responsive wordpress.
