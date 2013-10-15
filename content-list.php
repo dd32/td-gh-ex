@@ -2,14 +2,8 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 
 	<header class="entry-header page-header">
-		<?php
-		if( is_sticky() ) { // add 'sticky' label to sticky post
-			$sticky = ' <span class="label label-info">'.__( 'Sticky', 'activetab' ).'</span>';
-		} else {
-			$sticky = '';
-		}
-		?>
-		<h3 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a><?php echo $sticky; ?></h3>
+
+		<h3 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
 
 		<?php if ( 'post' == get_post_type() ) : // hide meta text for pages ?>
 			<?php echo activetab_post_meta(); ?>

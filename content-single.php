@@ -2,14 +2,8 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 
 	<header class="entry-header page-header">
-		<?php
-		if( is_sticky() ){ // add 'sticky' label to sticky post
-			$sticky = ' <span class="label label-info">'.__( 'Sticky', 'activetab' ).'</span>';
-		}else{
-			$sticky = '';
-		}
-		?>
-		<h1 class="entry-title"><?php the_title(); echo $sticky; ?></h1>
+
+		<h1 class="entry-title"><?php the_title(); ?></h1>
 
 		<?php echo activetab_post_meta(); ?>
 	</header> <!-- /.entry-header -->

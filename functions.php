@@ -5,7 +5,7 @@ if ( ! isset( $content_width ) ) {
 }
 
 
-$activetab_version = '0.5.5';
+$activetab_version = '0.5.6';
 
 
 if ( ! function_exists( 'activetab_enqueue_scripts_and_styles' ) ) :
@@ -251,6 +251,22 @@ if ( ! function_exists( 'activetab_post_date' ) ) :
 endif; // activetab_post_date()
 
 
+if ( ! function_exists( 'activetab_post_sticky' ) ) :
+	function activetab_post_sticky() {
+
+		if( is_sticky() ) { // add 'sticky' label to sticky post
+			$sticky = ' <span class="label label-info">'.__( 'Sticky', 'activetab' ).'</span>';
+			$post_sticky = '<span class="entry-meta-item entry-meta-sticky">'.$sticky.'</span>'."\n";
+		} else {
+			$sticky = '';
+			$post_sticky = '';
+		}
+
+		return $post_sticky;
+	}
+endif; // activetab_post_sticky()
+
+
 if ( ! function_exists( 'activetab_post_author' ) ) :
 	function activetab_post_author() { // author
 		global $authordata;
@@ -299,11 +315,12 @@ endif; // activetab_post_tags()
 
 if ( ! function_exists( 'activetab_post_meta' ) ) :
 	function activetab_post_meta() { // post meta
-		$post_meta = '<div class="entry-meta-row">'."\n" . activetab_post_date() . activetab_post_author() . activetab_comments_count() . activetab_post_categories() . '</div>'."\n";
+		$post_meta = '<div class="entry-meta-row">'."\n" . activetab_post_sticky() . activetab_post_date() . activetab_post_author() . activetab_comments_count() . activetab_post_categories() . '</div>'."\n";
 		$post_tags = activetab_post_tags();
 		if( !empty( $post_tags ) && is_single() ){
 			$post_meta .= '<div class="entry-meta-row">'."\n" . $post_tags . '</div>'."\n";
 		}
+
 		return "\n".'<div class="entry-meta">'."\n".$post_meta.'</div> <!-- /.entry-meta -->'."\n";
 	}
 endif; // activetab_post_meta()

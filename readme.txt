@@ -4,7 +4,7 @@ Donate link: http://web-profile.com.ua/donate/
 Tags: gray, white, light, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.4
 Tested up to: 3.6.1
-Stable tag: 0.5.5
+Stable tag: 0.5.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -42,6 +42,9 @@ FAQ:
 
 
 == Changelog ==
+
+= 0.5.6 - 2013-10-15 =
+* bug fixing
 
 = 0.5.5 - 2013-09-17 =
 * updated license to GPLv3
@@ -135,11 +138,11 @@ activetab theme is distributed under the terms of the GNU GPL
 
 = Bundled Resources: =
 
+* [Bootstrap](http://getbootstrap.com/) licensed under [Apache License v2.0](http://www.apache.org/licenses/LICENSE-2.0)
 * [Options Framework](http://wptheming.com/options-framework-theme/) licensed under [GPL](https://github.com/devinsays/options-framework-theme/blob/master/license.txt)
-* [Bootstrap](http://twitter.github.io/bootstrap/) licensed under [Apache License v2.0](http://www.apache.org/licenses/LICENSE-2.0)
+* [Pixabay](http://pixabay.com/) public domain images
 * [Font Awesome](http://fortawesome.github.io/Font-Awesome/) licensed under [open source and GPL compatible license](http://fortawesome.github.io/Font-Awesome/license/)
 * [RSS-feed icon](http://www.feedicons.com/) is free to use
-* [Pixabay](http://pixabay.com/) public domain images
 
 = Images used: =
 

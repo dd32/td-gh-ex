@@ -2,7 +2,7 @@
 Theme Name: activetab
 Theme URI: http://web-profile.com.ua/wordpress/themes/activetab/
 Description: Responsive clean theme. More info at http://web-profile.com.ua/activetab/
-Version: 0.5.5
+Version: 0.5.6
 Author: webvitaly
 Author URI: http://web-profile.com.ua/wordpress/
 Tags: gray, white, light, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -98,37 +98,7 @@ p, ol, ul {
 ol ol, ul ul, ol ul, ul ol {
 	margin-bottom: 0;
 }
-/*h1, h2, h3, h4, h5, h6 {
-	text-transform: none;
-	font-weight: bold;
-	margin: 30px 0;
-}
-h1 {
-	font-size: 30px;
-	line-height: 2.25em;
-	clear: both;
-}
-h2 {
-	font-size: 26px;
-	line-height: 2.25em;
-	clear: both;
-}
-h3 {
-	font-size: 22px;
-	line-height: 1.75em;
-}
-h4 {
-	font-size: 20px;
-	line-height: 1.5em;
-}
-h5 {
-	font-size: 18px;
-	line-height: 1.5em;
-}
-h6 {
-	font-size: 16px;
-	line-height: 1.8em;
-}*/
+
 
 /* ========== table ========== */
 table { /* tables still need 'cellspacing="0"' in the markup */
@@ -441,6 +411,29 @@ video {
 	width: 630px;
 	max-width: 100%;
 	margin-bottom: 18px;
+}
+
+
+/* ========== default form styles ========== */
+input[type="text"], input[type="email"],
+input[type="url"], select, textarea {
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.428571429;
+	color: #555555;
+	vertical-align: middle;
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
+	border-radius: 4px;
+}
+input[type="submit"], input[type="button"], button {
+	display: inline-block;
+	margin-bottom: 0;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
 }
 
 
