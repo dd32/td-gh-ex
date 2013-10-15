@@ -8,13 +8,13 @@
 	
 	<div class="footer-right"> 
 
-		<?php if ( is_active_sidebar( 'footer_right' ) ) : ?>
+		<?php if ( is_active_sidebar( 'footer-right' ) ) : ?>
 	
-		<?php dynamic_sidebar( 'footer_right' ); ?>
+		<?php dynamic_sidebar( 'footer-right' ); ?>
 
 		<?php else : ?> 
 			
-		<h4 class="widgettitle"><?php _e( 'Search', 'guido' ); ?></h4>
+		<h4 class="widgettitle"><?php _e( 'Search', 'shipyard' ); ?></h4>
 			<div id="search" class="widget-container widget_search">
 				<?php get_search_form(); ?>
 			</div>
@@ -25,13 +25,13 @@
 
 	<div class="footer-left"> 
 
-		<?php if ( is_active_sidebar( 'footer_left' ) ) : ?>
+		<?php if ( is_active_sidebar( 'footer-left' ) ) : ?>
 	
-		<?php dynamic_sidebar( 'footer_left' ); ?>
+		<?php dynamic_sidebar( 'footer-left' ); ?>
 
 		<?php else : ?> 
 			
-		<h4 class="widgettitle"><?php _e( 'Recent Posts', 'guido' ); ?></h4>
+		<h4 class="widgettitle"><?php _e( 'Recent Posts', 'shipyard' ); ?></h4>
 			<div id="recent-posts" class="widget-container widget_recent_entries">
 				 <ul><?php wp_get_archives('type=postbypost&limit=5'); ?></ul>
 			</div>
@@ -41,7 +41,7 @@
 
 
 	<div class="site-info">
-		<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'guido' ) ); ?>" title="<?php esc_attr_e( 'WordPress Blog Platform', 'guido' ); ?>"><?php printf( __( 'Proudly powered by %s', 'guido' ), 'WordPress' ); ?></a>
+		Copyright &copy; <?php echo date('Y'); ?>  <a href="<?php echo home_url() ; ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> - <a href="http://wordpress.org" title="WordPress Blog Platform">Proudly powered by WordPress</a>
 	</div>
 
 </div>

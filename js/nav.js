@@ -1,3 +1,11 @@
+/*
+ * Source: http://maxfoundry.com/blog/responsive-mobile-navigation-in-wordpress/
+ * Copyright author: John Hartley
+ * Author URI: http://maxfoundry.com/blog/author/johnbhartley 
+ * License: GNU General Public License v2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ */
+
 jQuery(document).ready(function() {
             
             // build <select> dropdown

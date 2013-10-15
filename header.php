@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<title><?php bloginfo('name'); ?> <?php wp_title(); ?></title>
+<title><?php wp_title( '|', true, 'right' ); ?></title>
 <meta name="viewport" content="width=device-width" />
 <meta charset="utf-8">
 
@@ -34,6 +34,6 @@
 	<?php endif; ?>
 
 	<?php if( is_home() || is_front_page() ) :?>
-		<img src="<?php header_image(); ?>" class="header-img" alt="Header Image" />
+		<img src="<?php header_image(); ?>" class="header-img" alt="Header" />
 	<?php endif;?>
 </div>

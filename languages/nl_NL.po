@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Shipyard v1.1\n"
+"Project-Id-Version: Shipyard v1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-10-11 22:45:41+0000\n"
+"PO-Revision-Date: 2013-10-15 18:34:30+0000\n"
 "Last-Translator: Guido\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: 404.php:9
 #: search.php:25
-#@ guido
+#@ shipyard
 msgid "Nothing Found"
 msgstr "Niets gevonden"
 
@@ -30,44 +30,44 @@ msgstr "Niets gevonden"
 #: archive.php:36
 #: index.php:28
 #: search.php:26
-#@ guido
+#@ shipyard
 msgid "Sorry, no posts matched your criteria."
 msgstr "Sorry, er zijn helaas geen berichten gevonden."
 
 #: archive.php:12
-#@ guido
+#@ shipyard
 msgid "Archive"
 msgstr "Archief"
 
 #: archive.php:14
-#@ guido
+#@ shipyard
 msgid "Daily Archives"
 msgstr "Dag Archieven"
 
 #: archive.php:16
-#@ guido
+#@ shipyard
 msgid "Monthly Archives"
 msgstr "Maand Archieven"
 
 #: archive.php:18
-#@ guido
+#@ shipyard
 msgid "Yearly Archives"
 msgstr "Jaar Archieven"
 
 #: archive.php:20
-#@ guido
+#@ shipyard
 msgid "Author Archives"
 msgstr "Auteur Archieven"
 
 #: archive.php:22
-#@ guido
+#@ shipyard
 msgid "Tag Archives"
 msgstr "Tag Archieven"
 
 #: archive.php:27
 #: index.php:18
 #: search.php:15
-#@ guido
+#@ shipyard
 msgid "Permalink to "
 msgstr "Permalink naar "
 
@@ -75,107 +75,91 @@ msgstr "Permalink naar "
 #: index.php:20
 #: search.php:16
 #: single.php:15
-#@ guido
+#@ shipyard
 msgid "Posted on "
 msgstr "Geplaatst op "
 
 #: archive.php:28
 #: index.php:20
 #: single.php:15
-#@ guido
+#@ shipyard
 msgid "Posted by "
 msgstr "Geplaatst door "
 
 #: archive.php:40
 #: index.php:31
 #: search.php:31
-#@ guido
+#@ shipyard
 msgid "&laquo; Older posts"
 msgstr "&laquo; Oudere berichten"
 
 #: archive.php:41
 #: index.php:32
 #: search.php:32
-#@ guido
+#@ shipyard
 msgid "Newer posts &raquo;"
 msgstr "Nieuwere berichten &raquo;"
 
-#: footer.php:44
-#@ guido
-msgid "http://wordpress.org/"
-msgstr "http://wordpress.org/"
-
-#: footer.php:44
-#@ guido
-msgid "WordPress Blog Platform"
-msgstr "WordPress Blog Platform"
-
-#: footer.php:44
-#, php-format
-#@ guido
-msgid "Proudly powered by %s"
-msgstr "Proudly powered by %s"
-
-#: functions.php:51
-#@ guido
+#: functions.php:73
+#@ shipyard
 msgid "Primary Sidebar"
 msgstr "Hoofd Sidebar"
 
-#: functions.php:53
-#: functions.php:64
 #: functions.php:75
-#@ guido
+#: functions.php:85
+#: functions.php:95
+#@ shipyard
 msgid "Select widgets from the right-hand side."
 msgstr "Selecteer widgets van de rechterkant."
 
-#: functions.php:87
-#@ guido
+#: functions.php:109
+#@ shipyard
 msgid "Read More &raquo;"
 msgstr "Lees Meer &raquo;"
 
-#: functions.php:128
-#@ guido
+#: functions.php:126
+#@ shipyard
 msgid "Boats"
 msgstr "Boten"
 
 #: index.php:12
-#@ guido
+#@ shipyard
 msgid "Featured post"
 msgstr "Aanbevolen bericht"
 
 #: page-full.php:20
 #: page.php:19
 #: single.php:28
-#@ guido
+#@ shipyard
 msgid "Edit"
 msgstr "Bewerk"
 
 #: search.php:11
 #, php-format
-#@ guido
+#@ shipyard
 msgid "Search Results for: %s"
 msgstr "Zoekresultaat voor: %s"
 
 #: footer.php:17
 #: sidebar.php:14
-#@ guido
+#@ shipyard
 msgid "Search"
 msgstr "Zoek"
 
 #: footer.php:34
 #: sidebar.php:19
-#@ guido
+#@ shipyard
 msgid "Recent Posts"
 msgstr "Nieuwe Berichten"
 
 #: single.php:20
-#@ guido
+#@ shipyard
 msgid "Posted in "
 msgstr "Geplaatst in "
 
 #: comments.php:18
 #, php-format
-#@ guido
+#@ shipyard
 msgctxt "comments title"
 msgid "1 response on %2$s"
 msgid_plural "%1$s responses on %2$s"
@@ -183,32 +167,32 @@ msgstr[0] "1 reactie op  %2$s"
 msgstr[1] "%1$s reacties op %2$s"
 
 #: comments.php:37
-#@ guido
+#@ shipyard
 msgid "&laquo; Older Comments"
 msgstr "&laquo; Oudere Reacties"
 
 #: comments.php:38
-#@ guido
+#@ shipyard
 msgid "Newer Comments &raquo;"
 msgstr "Nieuwere Reacties &raquo;"
 
 #: comments.php:43
-#@ guido
+#@ shipyard
 msgid "Comments are closed."
 msgstr "Reageren is niet mogelijk."
 
-#: functions.php:42
-#@ guido
-msgid "Primary Menu"
-msgstr "Hoofdmenu"
-
-#: functions.php:62
-#@ guido
+#: functions.php:83
+#@ shipyard
 msgid "Footer Sidebar Right"
 msgstr "Footer Sidebar Rechts"
 
-#: functions.php:73
-#@ guido
+#: functions.php:93
+#@ shipyard
 msgid "Footer Sidebar Left"
 msgstr "Footer Sidebar Links"
+
+#: functions.php:19
+#@ shipyard
+msgid "Primary Navigation"
+msgstr "Hoofdmenu"
 

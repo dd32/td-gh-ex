@@ -17,7 +17,7 @@
 
 	<?php endwhile; ?>
 
-	<h4><?php edit_post_link( __( 'Edit', 'guido' ), '<span class="edit-link">', '</span>' ) ?></h4>
+	<h4><?php edit_post_link( __( 'Edit', 'shipyard' ), '<span class="edit-link">', '</span>' ) ?></h4>
 </div>	
 	
 <?php get_footer(); ?>

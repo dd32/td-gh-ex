@@ -15,7 +15,7 @@ if ( post_password_required() )
 	<?php if ( have_comments() ) : ?>
 		<h4 class="comments-title">
 			<?php
-				printf( _nx( '1 response on %2$s', '%1$s responses on %2$s', get_comments_number(), 'comments title', 'guido' ),
+				printf( _nx( '1 response on %2$s', '%1$s responses on %2$s', get_comments_number(), 'comments title', 'shipyard' ),
 					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
 			?>
 		</h4>
@@ -34,13 +34,13 @@ if ( post_password_required() )
 			// Are there comments to navigate through?
 			if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :
 		?>
-			<div class="nav-prev"><?php previous_comments_link( __( '&laquo; Older Comments', 'guido' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &raquo;', 'guido' ) ); ?></div>
+			<div class="nav-prev"><?php previous_comments_link( __( '&laquo; Older Comments', 'shipyard' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &raquo;', 'shipyard' ) ); ?></div>
 
 		<?php endif; // Check for comment navigation ?>
 
 		<?php if ( ! comments_open() && get_comments_number() ) : ?>
-		<p class="no-comments"><?php _e( 'Comments are closed.' , 'guido' ); ?></p>
+		<p class="no-comments"><?php _e( 'Comments are closed.' , 'shipyard' ); ?></p>
 		<?php endif; ?>
 
 	<?php endif; // have_comments() ?>

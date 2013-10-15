@@ -1,6 +1,6 @@
 CHANGELOG
 =========
-Version 1.2 - oktober 2013
+Version 1.3 - oktober 2013
 
 
 INSTALLATION
@@ -37,7 +37,7 @@ You can translate this into your own language using for example plugin Codestyli
 
 CREDITS
 =======
-Without the WordPress codex and lots of help from the WordPress community I was not able to develop my theme, so: thank you!
+Without the WordPress codex and help from the WordPress community I was not able to develop my theme, so: thank you!
 
 
 SUPPORT
