@@ -44,7 +44,7 @@ function cyberchimps_boxes_lite_content() {
 	?>
 
 	<!-- Start of markup for boxes lite element -->
-	<div id="widget-boxes-container" class="row-fluid">
+	<div id="widget_boxes_container" class="row-fluid">
 		<div class="boxes">
 			<div class="box span4">
 				<?php if( $url1 != '' && $img1 != '' ): ?>

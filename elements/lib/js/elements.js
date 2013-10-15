@@ -20,7 +20,7 @@ jQuery(document).ready(function ($) {
 
 	if ($(window).width() > 767) {
 		setTimeout(function () {
-			$('#widget-boxes-container .box').css('height', $('#widget-boxes-container').height() - 20)
+			$('#widget_boxes_container .box').css('height', $('#widget_boxes_container').height() - 20)
 		}, 500);
 	}
 
