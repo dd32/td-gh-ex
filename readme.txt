@@ -38,47 +38,41 @@ The following opensource projects, graphics, fonts, API's or other files as list
 
     [1.01] Item:        Redux Framework
            Item URL:    https://github.com/ReduxFramework/ReduxFramework
-           Licence:     GPLv2
-           Licence URL: http://www.gnu.org/licenses/gpl-2.0.html
+           Licence:     GPLv3
+           Licence URL: http://www.gnu.org/licenses/gpl.html
 
     [1.02] Item:        TGM Plugin Activation
            Item URL:    http://tgmpluginactivation.com/#license
            Licence:     GPLv3
            Licence URL: http://www.gnu.org/licenses/gpl.html
 
-    [1.03] Item:        html5shiv (jQuery file)
-           Item URL:    http://code.google.com/p/html5shiv/
-           Licence:     MIT / GPLv2 Licensed
-           Licence MIT: http://opensource.org/licenses/mit-license.html
-           Licence GPL: http://www.gnu.org/licenses/gpl-2.0.html
-
-    [1.04] Item:        Retina js
+    [1.03] Item:        Retina js
            Item URL:    http://retinajs.com
            Licence:     MIT
            Licence URL: http://opensource.org/licenses/mit-license.html
 
-    [1.05] Item:        Font Awesome
+    [1.04] Item:        Font Awesome
            Item URL:    http://fortawesome.github.io/Font-Awesome/#license
            Licence:     SIL Open Font &  MIT
            Licence OFL: http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
            Licence MIT: http://opensource.org/licenses/mit-license.html
 
-    [1.06] Item:        Twitter Bootstrap
+    [1.05] Item:        Twitter Bootstrap
            Item URL:    https://github.com/twitter/bootstrap/wiki/License
            Licence:     Apache 2.0
            Licence URL: http://www.apache.org/licenses/LICENSE-2.0
 
-    [1.07] Item:        Elegant Icons
+    [1.06] Item:        Elegant Icons
            Item URL:    http://www.elegantthemes.com/blog/resources/elegant-themes-icon-pack-for-free
            Licence:     Dual GPL and MIT
            Licence URL: /licenses/license_(elegant_icons).txt
 
-    [1.08] Item:        Elegant Media Icons
+    [1.07] Item:        Elegant Media Icons
            Item URL:    https://www.iconfinder.com/search/?q=iconset:elegantmediaicons
            Licence:     GPL
            Licence URL: http://www.gnu.org/licenses/gpl.html		   
 
-    [1.09] Item:        Elegant Media Icons
+    [1.08] Item:        Elegant Media Icons
            Item URL:    https://www.iconfinder.com/search/?q=iconset:elegantmediaicons
            Licence:     GPL
            Licence URL: http://www.gnu.org/licenses/gpl.html
@@ -87,6 +81,10 @@ The following opensource projects, graphics, fonts, API's or other files as list
 -----------------------------------------------------------------------------
 	Changelog
 -----------------------------------------------------------------------------
+
+Version 1.3.2
+- html5shiv removed.
+- Redux framework license changed from GPLv2 to GPLv3. (Author allows the distributor flexibility on choice of GPL license version).
 
 Version 1.3.1
 - Theme URL changed.
