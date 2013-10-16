@@ -15,8 +15,8 @@ if ( post_password_required() )
 	<?php if ( have_comments() ) : ?>
 		<h4 class="comments-title">
 			<?php
-				printf( _nx( '1 response on %2$s', '%1$s responses on %2$s', get_comments_number(), 'comments title', 'shipyard' ),
-					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
+				printf( _n( '1 response on %2$s', '%1$s responses on %2$s', get_comments_number(), 'shipyard' ),
+				number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
 			?>
 		</h4>
 

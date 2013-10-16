@@ -17,7 +17,7 @@
 
 		<h3 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to ', 'shipyard'); ?><?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
 
-		<h5 class="postmetadata"><?php _e('Posted on ', 'shipyard'); ?><?php echo get_the_date(); ?> | <?php _e('Posted by ', 'shipyard'); ?> <?php the_author_posts_link() ?></h5>
+		<h5 class="postmetadata"><?php _e('Posted on ', 'shipyard'); ?><a href="<?php the_permalink(); ?>"><?php echo get_the_date(); ?></a> | <?php _e('Posted by ', 'shipyard'); ?> <?php the_author_posts_link() ?></h5>
 
 	<?php if ( has_post_thumbnail() ) { 
 		the_post_thumbnail(); 

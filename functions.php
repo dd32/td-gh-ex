@@ -5,7 +5,7 @@
 
 // Set width without the padding
 if ( ! isset( $content_width ) )
-	$content_width = 920;
+	$content_width = 570;
 
 
 // Sets up theme defaults and registers various WordPress features that Shipyard supports

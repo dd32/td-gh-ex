@@ -1,10 +1,10 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Shipyard v1.3\n"
+"Project-Id-Version: Shipyard v1.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-10-15 18:34:30+0000\n"
-"Last-Translator: Guido\n"
+"PO-Revision-Date: 2013-10-16 20:33:07+0000\n"
+"Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -157,15 +157,6 @@ msgstr "Nieuwe Berichten"
 msgid "Posted in "
 msgstr "Geplaatst in "
 
-#: comments.php:18
-#, php-format
-#@ shipyard
-msgctxt "comments title"
-msgid "1 response on %2$s"
-msgid_plural "%1$s responses on %2$s"
-msgstr[0] "1 reactie op  %2$s"
-msgstr[1] "%1$s reacties op %2$s"
-
 #: comments.php:37
 #@ shipyard
 msgid "&laquo; Older Comments"
@@ -195,4 +186,12 @@ msgstr "Footer Sidebar Links"
 #@ shipyard
 msgid "Primary Navigation"
 msgstr "Hoofdmenu"
+
+#: comments.php:18
+#, php-format
+#@ shipyard
+msgid "1 response on %2$s"
+msgid_plural "%1$s responses on %2$s"
+msgstr[0] "1 reactie op %2$s"
+msgstr[1] "%1$s reacties op %2$s"
 
