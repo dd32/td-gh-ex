@@ -20,6 +20,7 @@ ul.dropdown-menu li, ul.dropdown-menu li a, .navbar .nav > li > .dropdown-menu:a
 .masthead { background-color:#fefefe;padding:15px 0;border-bottom:1px solid #bcbcbc;position:fixed;height:60px;width:100%;z-index:99;opacity:.9;margin-bottom:15px;-webkit-box-shadow:0 2px 5px rgba(0,0,0,0.5);-moz-box-shadow:0 2px 5px rgba(0,0,0,0.5);-o-box-shadow:0 2px 5px rgba(0,0,0,0.5);box-shadow:0 2px 5px rgba(0,0,0,0.5); }
 .masthead a { font-weight:normal;text-decoration:none; }
 #mid h4, #foot h4, .blog .row-fluid .post p.meta#foot h4 { border-bottom-color:rgba(255,255,255,0.4); }
+#mid ul li a { color: rgba(255, 255, 255, 0.8); }
 .loop-paging { background:#fefefe;opacity:.9;-webkit-border-radius:4px;-moz-border-radius:4px;-o-border-radius:4px;-khtml-border-radius:4px;border-radius:4px; }
 .loop-paging .show-previous-page { float:left; }
 .loop-paging .show-next-page { float:right; }

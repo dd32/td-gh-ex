@@ -2,7 +2,7 @@
 
 Contributors: Matthew Haeck
 Tags: bootstrap, responsive, wordpress theme
-Stable tag: 1.08
+Stable tag: 1.09
 License: GPLv3
 
 Avedon Theme - http://code.google.com/p/avedon/
@@ -19,10 +19,9 @@ Although donations are certainly welcome, the best way you can support our work 
 
 - A built in Twitter feed
 - Additional SuperSized background images (up to 12)
-- The ability to signup for our newsletter (so you can receive theme updates and operational tutorials)
 - Social Sharing Functions (Facebook Likes, Google +1, and Tweets w/ Asynchronous loading)
 - Meta Data Inclusions (Automatic Open Graph Meta and Google Analytics tracker)
-- Access to our Git repository
+- Newsletter updates (so you can receive theme updates and operational tutorials)
 
 
 == Frequently Asked Questions ==
@@ -52,27 +51,26 @@ Initial Release
 
 == Licenses (See license.txt for full license information) ==
 
-Bootstrap Version 2.3.2 - http://getbootstrap.com
-License: 	Apache License v2.0 - http://www.apache.org/licenses/
-Copyright: 	Twitter, Inc, twitter.com
+Bootstrap V2.3.2	http://getbootstrap.com
+License: 			Apache License v2.0 - http://www.apache.org/licenses/
+Copyright: 			Twitter, Inc, twitter.com
 
-BootstrapWP - http://bootstrapwp.rachelbaker.me/
-License:	GNU GPL3 - http://www.gnu.org/licenses/gpl-3.0.html
-Copyright:	Rachael Baker - http://rachelbaker.me/
+BootstrapWP:		http://bootstrapwp.rachelbaker.me/
+License:			GNU GPL3 - http://www.gnu.org/licenses/gpl-3.0.html
+Copyright:			Rachael Baker - http://rachelbaker.me/
 
-jQuery Easing v1.3 - http://gsgd.co.uk/sandbox/jquery/easing/
-License: 	BSD License - http://www.gnu.org/licenses/license-list.html#OriginalBSD
-Copyright: 	George McGinley Smith, gsgd.co.uk/
+jQuery Easing v1.3: http://gsgd.co.uk/sandbox/jquery/easing/
+License: 			BSD License - http://www.gnu.org/licenses/license-list.html#OriginalBSD
+Copyright: 			George McGinley Smith, gsgd.co.uk/
 
-IcoMoon App: http://icomoon.io/app
-License: 	MIT License - http://opensource.org/licenses/MIT
-Copyright: 	Keyamoon, http://keyamoon.com/
+IcoMoon App: 		http://icomoon.io/app
+License: 			MIT License - http://opensource.org/licenses/MIT
+Copyright: 			Keyamoon, http://keyamoon.com/
 
-Icon Set:	Font Awesome - http://fortawesome.github.com/Font-Awesome/
-License:	CC BY 3.0 - http://creativecommons.org/licenses/by/3.0/
-Copyright:	Dave Gandy - https://twitter.com/davegandy
+Icon Set:			Font Awesome - http://fortawesome.github.com/Font-Awesome/
+License:    		SIL OFL 1.1 / MIT License - http://scripts.sil.org/OFL - http://opensource.org/licenses/mit-license.html
+Copyright:			Dave Gandy - https://twitter.com/davegandy
 
-Icon Set:	Social Font Icons - http://haeckdesign.com/
-License:	SIL OFL 1.1 / MIT License - http://scripts.sil.org/OFL - http://opensource.org/licenses/mit-license.html
-Copyright:	Matthew Haeck - http://www.matthewhaeck.com
-
+Social Icon Set:	HaeckDesign - http://haeckdesign.com/freebies
+License:            SIL OFL 1.1 / MIT License - http://scripts.sil.org/OFL - http://opensource.org/licenses/mit-license.html
+Copyright:          Matthew Haeck - http://www.matthewhaeck.com

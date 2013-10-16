@@ -1,11 +1,10 @@
 
-
 <div class="socialbox row-fluid">
 
 <?php $text = of_get_option('twitter_uid');
 if ($text) { echo '<a href=' . of_get_option('twitter_uid') . ' class="btn btn-navbar btn-large avedonicon-twitter" title="twitter" target="_blank"><img src="' . get_template_directory_uri() . '/images/nothing.gif" alt="twitter" /></a>'; }; ?>
 <?php $text = of_get_option('googleplus_uid');
-if ($text) { echo '<a href=' . of_get_option('googleplus_uid') . ' class="btn btn-navbar btn-large btn-large avedonicon-google-plus" title="googleplus" target="_blank"><img src="' . get_template_directory_uri() . '/images/nothing.gif" alt="googleplus" /></a>'; }; ?>
+if ($text) { echo '<a href=' . of_get_option('googleplus_uid') . ' class="btn btn-navbar btn-large btn-large avedonicon-google" title="googleplus" target="_blank"><img src="' . get_template_directory_uri() . '/images/nothing.gif" alt="googleplus" /></a>'; }; ?>
 <?php $text = of_get_option('facebook_uid');
 if ($text) { echo '<a href=' . of_get_option('facebook_uid') . ' class="btn btn-navbar btn-large avedonicon-facebook" title="facebook" target="_blank"><img src="' . get_template_directory_uri() . '/images/nothing.gif" alt="facebook" /></a>'; };?>
 <?php $text = of_get_option('stumble_uid');

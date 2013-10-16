@@ -64,9 +64,9 @@ global $wp_query;
 ?>
 
 <?php if ( is_single() ) : ?>
-<ul class="pager row-fluid">
-<?php previous_post_link( '<li class="previous span6">%link</li>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'avedon' ) . '</span> %title' ); ?>
-<?php next_post_link( '<li class="next span6">%link</li>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'avedon' ) . '</span>' ); ?>
+<ul class="pager">
+<?php previous_post_link( '<li class="previous">%link</li>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'avedon' ) . '</span> %title' ); ?>
+<?php next_post_link( '<li class="next">%link</li>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'avedon' ) . '</span>' ); ?>
 </ul>
 <?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : ?>
 <ul class="subpager row-fluid">
