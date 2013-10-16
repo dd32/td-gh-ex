@@ -2,6 +2,10 @@
 /**
 	Template Name: Featured Home
 */
+if ( 'posts' == get_option( 'show_on_front' ) ) {
+    include( get_home_template() );
+} else {
+    // Custom content markup goes here
 
  get_header(); $current_options=get_option('spa_theme_options');
 get_template_part('index', 'slider') ;
@@ -30,4 +34,5 @@ get_template_part('index', 'slider') ;
 	</div>
 </div>	
 
-<?php get_footer();?>
+<?php get_footer();
+}?>

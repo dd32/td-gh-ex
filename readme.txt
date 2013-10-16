@@ -57,6 +57,11 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
+@version 1.2.1
+1. register_nav_menus() called from after_setup_theme hook
+2. Removed script enqueued in header.php
+3. Corrected front page implementation.
+4. Remove dynamic_function existance checking.
 @version 1.2 
 1. Completely new option panel.
 @verison 1.1

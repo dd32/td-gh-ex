@@ -30,7 +30,7 @@
 	
 	
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
-	<?php  wp_enqueue_script('jquery'); ?>
+
 	 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
