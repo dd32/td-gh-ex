@@ -1,6 +1,6 @@
 CHANGELOG
 =========
-Shipyard version 1.4 - oktober 2013
+Shipyard version 1.5 - oktober 2013
 
 
 INSTALLATION

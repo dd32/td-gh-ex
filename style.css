@@ -1,7 +1,7 @@
 /*
 Theme Name: Shipyard
 Theme URI: http://www.guidovanderleest.nl/shipyard
-Version: 1.4
+Version: 1.5
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: Shipyard is a free, basic, clean, responsive, mobile friendly, WordPress theme. No theme settings page, no fancy options, no slideshow, this one only has the basic options. Custom header-image and dropdown navigation are included. Enjoy. 
@@ -80,12 +80,12 @@ body {background: #f2f2f2; font-family: 'Anaheim', sans-serif; font-size:1em; co
 #content {width: 62%; float:left; word-wrap: break-word;}
 #content-full {max-width: 920px; float:left; word-wrap: break-word;}
 
-h1 {font-size:3.0em; line-height:1em;}
-h2 {font-size:2.5em; line-height:1em;}
-h3 {font-size:2.0em; line-height:1em;}
-h4 {font-size:1.5em; line-height:1em;}
-h5 {font-size:1.0em; line-height:1em;}
-h6 {font-size:0.75em; line-height:1em;}
+h1 {font-size:3.0em; line-height:1.2em;}
+h2 {font-size:2.5em; line-height:1.2em;}
+h3 {font-size:2.0em; line-height:1.2em;}
+h4 {font-size:1.5em; line-height:1.2em;}
+h5 {font-size:1.0em; line-height:1.2em;}
+h6 {font-size:0.75em; line-height:1.2em;}
 
 a {text-decoration:none; color:#f26535;}
 a:hover {text-decoration:underline;}
@@ -93,11 +93,11 @@ a:hover {text-decoration:underline;}
 blockquote, address {padding:10px; font-size:1.25em; font-style:italic;}
 
 table {margin:10px; border-collapse:collapse;}
-table,th, td {border: 1px solid #ccc; padding:5px;}
+table, th, td {border: 1px solid #ccc; padding:5px;}
 
-ul {list-style: square; margin: 5px 0 5px 15px;}
+ul {list-style: square; margin: 2px 0 2px 15px;}
 li {margin: 0 0 0 10px;}
-ol {list-style: decimal; margin: 5px 0 5px 15px;}
+ol {list-style: decimal; margin: 2px 0 2px 15px;}
 dl {margin: 10px;}
 dt {margin: 0; font-size:1.25em;}
 dd {margin: 0 0 0 10px;}
@@ -150,21 +150,21 @@ a.moretag:hover {background: #f26535; text-decoration:none;}
 embed, iframe, object, video {max-width:100%;}
 img {max-width:100%; height:auto;}
 
-
 .alignright {float:right; margin:0 0 1em 1em;}
 .alignleft {float:left; margin:0 1em 1em 0;}
 .aligncenter {display: block; margin-left: auto; margin-right: auto;}
 
-.wp-caption {background:none;}
+.wp-caption {background:none; max-width: 100%;}
 .wp-caption-text {text-align:center; word-wrap: break-word;}
 
 .gallery dl, .gallery dt, .gallery dd {margin:0; padding:0;}
-.gallery-caption {background:none;}
+.gallery-caption {background:none; max-width: 100%;}
 .gallery-caption-text {text-align:center; word-wrap: break-word;}
 
 
 /* SEARCHFORM */
 .search-form {padding:10px 0;}
+.search-field {width:50%;}
 .screen-reader-text {display:none;}
 
 

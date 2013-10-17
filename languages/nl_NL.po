@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Shipyard v1.4\n"
+"Project-Id-Version: Shipyard v1.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2013-10-16 20:33:07+0000\n"
