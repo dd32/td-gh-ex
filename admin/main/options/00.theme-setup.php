@@ -51,7 +51,7 @@ function thinkup_theme_register_required_plugins() {
     // Change this to your theme text domain, used for internationalising strings
     $theme_text_domain = 'afzaal-theme';
     $config = array(
-        'domain'            => $theme_text_domain,           // Text domain - likely want to be the same as your theme.
+        'domain'            => 'lan-thinkupthemes',           // Text domain - likely want to be the same as your theme.
         'default_path'      =>  '',                           // Default absolute path to pre-packaged plugins
         'parent_menu_slug'  => 'themes.php',         // Default parent menu slug
         'parent_url_slug'   => 'themes.php',         // Default parent URL slug
@@ -60,10 +60,10 @@ function thinkup_theme_register_required_plugins() {
         'is_automatic'      => false,            // Automatically activate plugins after installation or not
         'message'           => '',               // Message to output right before the plugins table
         'strings'           => array(
-            'page_title'                                => __( 'Install Required Plugins', $theme_text_domain ),
-            'menu_title'                                => __( 'Install Plugins', $theme_text_domain ),
-            'installing'                                => __( 'Installing Plugin: %s', $theme_text_domain ), // %1$s = plugin name
-            'oops'                                      => __( 'Something went wrong with the plugin API.', $theme_text_domain ),
+            'page_title'                                => __( 'Install Required Plugins', 'lan-thinkupthemes' ),
+            'menu_title'                                => __( 'Install Plugins', 'lan-thinkupthemes' ),
+            'installing'                                => __( 'Installing Plugin: %s', 'lan-thinkupthemes' ), // %1$s = plugin name
+            'oops'                                      => __( 'Something went wrong with the plugin API.', 'lan-thinkupthemes' ),
             'notice_can_install_required'               => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.' ), // %1$s = plugin name(s)
             'notice_can_install_recommended'            => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.' ), // %1$s = plugin name(s)
             'notice_cannot_install'                     => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.' ), // %1$s = plugin name(s)
@@ -74,9 +74,9 @@ function thinkup_theme_register_required_plugins() {
             'notice_cannot_update'                      => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.' ), // %1$s = plugin name(s)
             'install_link'                              => _n_noop( 'Begin installing plugin', 'Begin installing plugins' ),
             'activate_link'                             => _n_noop( 'Activate installed plugin', 'Activate installed plugins' ),
-            'return'                                    => __( 'Return to Required Plugins Installer', $theme_text_domain ),
-            'plugin_activated'                          => __( 'Plugin activated successfully.', $theme_text_domain ),
-            'complete'                                  => __( 'Plugin(s) installed and activated successfully. %s', $theme_text_domain ) // %1$s = dashboard link
+            'return'                                    => __( 'Return to Required Plugins Installer', 'lan-thinkupthemes' ),
+            'plugin_activated'                          => __( 'Plugin activated successfully.', 'lan-thinkupthemes' ),
+            'complete'                                  => __( 'Plugin(s) installed and activated successfully. %s', 'lan-thinkupthemes' ) // %1$s = dashboard link
         )
     );
     tgmpa( $plugins, $config );
@@ -157,9 +157,9 @@ $thinkup_general_breadcrumbdelimeter = thinkup_var ( 'thinkup_general_breadcrumb
 				}
 			}
 		} elseif (is_category()) {
-			echo 'Archive Category: ' . get_category_parents($cat, true,' ' . $delimiter . ' ') ;
+			_e( 'Archive Category: ', 'lan-thinkupthemes' ) . get_category_parents($cat, true,' ' . $delimiter . ' ') ;
 		} elseif ( is_tag() ) {
-			echo 'Posts Tagged: "' . single_tag_title("", false) . '"';
+			_e( 'Posts Tagged: ', 'lan-thinkupthemes' ) . single_tag_title("", false) . '"';
 		} elseif ( is_day()) {
 			echo '<a href="' . $url_year . '">' . $arc_year . '</a> ' . $delimiter . ' ';
 			echo '<a href="' . $url_month . '">' . $arc_month . '</a> ' . $delimiter . $arc_day . ' (' . $arc_day_full . ')';
@@ -168,7 +168,7 @@ $thinkup_general_breadcrumbdelimeter = thinkup_var ( 'thinkup_general_breadcrumb
 		} elseif ( is_year() ) {
 			echo $arc_year;
 		} elseif ( is_search() ) {
-			echo 'Search Results for: "' . get_search_query() . '"';
+			_e( 'Search Results for: ', 'lan-thinkupthemes' ) . get_search_query() . '"';
 		} elseif ( is_page() && !$post->post_parent ) {
 			echo get_the_title();
 		} elseif ( is_page() && $post->post_parent ) {
@@ -183,11 +183,11 @@ $thinkup_general_breadcrumbdelimeter = thinkup_var ( 'thinkup_general_breadcrumb
 		} elseif ( is_author() ) {
 			global $author;
 			$user_info = get_userdata($author);
-			echo  'Archived Article(s) by Author: ' . $user_info->display_name ;
+			_e( 'Archived Article(s) by Author: ', 'lan-thinkupthemes' ) . $user_info->display_name ;
 		} elseif ( is_404() ) {
-			echo  'Error 404 - Not Found.';
+			_e( 'Error 404 - Not Found.', 'lan-thinkupthemes' );
 		} elseif ( is_post_type_archive( $portfolio )	) {
-			echo  'Portfolio';
+			_e( 'Portfolio', 'lan-thinkupthemes' );
 		}
        echo '</div></div>';
     }
@@ -217,8 +217,7 @@ global $wp_query;
 			if($paged > 2 && $paged > $range+1 && $showitems < $pages) 
 				echo '<li class="pag-first"><a href="' . get_pagenum_link(1). '">&laquo;</a></li>';
 			if($paged > 1 && $showitems < $pages) 
-				echo '<li class="pag-previous"><a href="' . get_pagenum_link($paged - 1). '">&lsaquo; Prev</a></li>';
-
+				echo '<li class="pag-previous"><a href="' . get_pagenum_link($paged - 1). '">&lsaquo; ' . __( 'Prev', 'lan-thinkupthemes' ) . '</a></li>';
 			for ($i=1; $i <= $pages; $i++) {
 				if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems )) {
 					echo ($paged == $i)? '<li class="current"><span>' . $i . '</span></li>':'<li><a href="' . get_pagenum_link($i) . '">'. $i . '</a></li>';
@@ -226,10 +225,9 @@ global $wp_query;
 			}
 
 			if ($paged < $pages && $showitems < $pages) 
-				echo '<li class="pag-next"><a href="' . get_pagenum_link($paged + 1) . '">Next &rsaquo;</i></a></li>';
+				echo '<li class="pag-next"><a href="' . get_pagenum_link($paged + 1) . '">' . __( 'Next', 'lan-thinkupthemes' ) . ' &rsaquo;</a></li>';
 			if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) 
 				echo '<li class="pag-last" ><a href="' . get_pagenum_link($pages) . '">&raquo;</a></li>';
-
 		echo '</ul>';
      }
 }
@@ -394,5 +392,83 @@ function thinkup_url_current() {
 	}
 	return $pageURL;
 }
+
+
+//----------------------------------------------------------------------------------
+//	ADD CUSTOM 'get_comments_popup_link' FUNCTION - Credit to http://www.thescubageek.com/code/wordpress-code/add-get_comments_popup_link-to-wordpress/
+//----------------------------------------------------------------------------------
+
+// Modifies WordPress's built-in comments_popup_link() function to return a string instead of echo comment results
+function get_comments_popup_link( $zero = false, $one = false, $more = false, $css_class = '', $none = false ) {
+    global $wpcommentspopupfile, $wpcommentsjavascript;
+ 
+    $id = get_the_ID();
+ 
+    if ( false === $zero ) $zero = __( 'No Comments' );
+    if ( false === $one ) $one = __( '1 Comment' );
+    if ( false === $more ) $more = __( '% Comments' );
+    if ( false === $none ) $none = __( 'Comments Off' );
+ 
+    $number = get_comments_number( $id );
+ 
+    $str = '';
+ 
+    if ( 0 == $number && !comments_open() && !pings_open() ) {
+        $str = '<span' . ((!empty($css_class)) ? ' class="' . esc_attr( $css_class ) . '"' : '') . '>' . $none . '</span>';
+        return $str;
+    }
+ 
+    if ( post_password_required() ) {
+        $str = __('Enter your password to view comments.');
+        return $str;
+    }
+ 
+    $str = '<a href="';
+    if ( $wpcommentsjavascript ) {
+        if ( empty( $wpcommentspopupfile ) )
+            $home = home_url();
+        else
+            $home = get_option('siteurl');
+        $str .= $home . '/' . $wpcommentspopupfile . '?comments_popup=' . $id;
+        $str .= '" onclick="wpopen(this.href); return false"';
+    } else { // if comments_popup_script() is not in the template, display simple comment link
+        if ( 0 == $number )
+            $str .= get_permalink() . '#respond';
+        else
+            $str .= get_comments_link();
+        $str .= '"';
+    }
+ 
+    if ( !empty( $css_class ) ) {
+        $str .= ' class="'.$css_class.'" ';
+    }
+    $title = the_title_attribute( array('echo' => 0 ) );
+ 
+    $str .= apply_filters( 'comments_popup_link_attributes', '' );
+ 
+    $str .= ' title="' . esc_attr( sprintf( __('Comment on %s'), $title ) ) . '">';
+    $str .= get_comments_number_str( $zero, $one, $more );
+    $str .= '</a>';
+     
+    return $str;
+}
+ 
+// Modifies WordPress's built-in comments_number() function to return string instead of echo
+function get_comments_number_str( $zero = false, $one = false, $more = false, $deprecated = '' ) {
+    if ( !empty( $deprecated ) )
+        _deprecated_argument( __FUNCTION__, '1.3' );
+ 
+    $number = get_comments_number();
+ 
+    if ( $number > 1 )
+        $output = str_replace('%', number_format_i18n($number), ( false === $more ) ? __('% Comments') : $more);
+    elseif ( $number == 0 )
+        $output = ( false === $zero ) ? __('No Comments') : $zero;
+    else // must be one
+        $output = ( false === $one ) ? __('1 Comment') : $one;
+ 
+    return apply_filters('comments_number', $output, $number);
+}
+
 
 ?>

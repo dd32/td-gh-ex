@@ -6,19 +6,19 @@
  */
 
 
-/* ----------------------------------------------------------------------------------
-	Popular Posts
----------------------------------------------------------------------------------- */
+//----------------------------------------------------------------------------------
+//	Popular Posts
+//----------------------------------------------------------------------------------
 
 class thinkup_widget_popularposts extends WP_Widget {
 
-	/* Register widget description. */
+	// Register widget description.
 	function thinkup_widget_popularposts() {
 		$widget_ops = array('classname' => 'thinkup_widget_popularposts', 'description' => 'Display your posts by comment count.' );
 		$this->WP_Widget('thinkup_widget_popularposts', 'ThinkUpThemes: Popular Posts', $widget_ops);
 	}
 
-	/* Add widget structure to Admin area. */
+	// Add widget structure to Admin area.
 	function form($instance) {
 		$default_entries = array( 'title' => '', 'postcount' => '5', 'excerpt' => '', 'excerptlength' => '20' , 'comments' => '' );
 		$instance = wp_parse_args( (array) $instance, $default_entries );
@@ -47,7 +47,7 @@ class thinkup_widget_popularposts extends WP_Widget {
 
 	}
 
-	/* Assign variable values. */
+	// Assign variable values.
 	function update($new_instance, $old_instance) {
 		$instance                  = $old_instance;
 		$instance['title']         = $new_instance['title'];
@@ -58,7 +58,7 @@ class thinkup_widget_popularposts extends WP_Widget {
 		return $instance;
 	}
 
-	/* Output widget to front-end. */
+	// Output widget to front-end.
 	function widget($args, $instance) {
 	global $post;
 	
@@ -68,7 +68,7 @@ class thinkup_widget_popularposts extends WP_Widget {
 		extract($args, EXTR_SKIP);
 
 		echo $before_widget;
-		$title = empty($instance['title']) ? 'Popular Posts' : apply_filters('widget_title', $instance['title']);
+		$title = empty($instance['title']) ? __( 'Popular Posts', 'lan-thinkupthemes' ) : apply_filters('widget_title', $instance['title']);
 		if (!empty($title))
 			echo $before_title . $title . $after_title;
 
@@ -85,20 +85,12 @@ class thinkup_widget_popularposts extends WP_Widget {
 				$excerpt = '<a class="excerpt" href="' . get_permalink() . '">' . substr(get_the_excerpt(), 0, $excerpt_input ) . '...</a>';
 			}
 
-			/* Insert comments if needed. */
-			$comment_count = get_comments_number();
-			if ( $comment_count == 0 ) {
-				$commentnumber_input = 'No Comments';
-			} else if ( $comment_count == 1 ) {
-				$commentnumber_input = '1 Comment';
-			} else if ( $comment_count > 1 ) {
-				$commentnumber_input = $comment_count . ' Comments';
-			}
+			// Insert comments if needed.
 			if ( $instance['comments'] == 'on' ) {
-				$comment_input = '<a class="comment" href="' . get_permalink() . '">' .  $commentnumber_input . '</a>';
-			}			
+				$comment_input = get_comments_popup_link( __( 'No Comments', 'lan-thinkupthemes' ), __( '1 Comment', 'lan-thinkupthemes' ), __( '% Comments', 'lan-thinkupthemes' ), 'comment' );
+			}
 
-			/* HTML output */
+			// HTML output
 			echo '<div class="popular-posts">';
 				if ( has_post_thumbnail() ) {
 				echo	'<div class="image">',

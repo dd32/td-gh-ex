@@ -12,7 +12,7 @@
 
 		<h2 class="search-title">
 
-		<?php echo '<a href="' . get_permalink() . '" title="' . esc_attr( sprintf( __( 'Permalink to %s', '_s' ), the_title_attribute( 'echo=0' ) ) ) . '">' . get_the_title() . '</a>'; ?>
+		<?php echo '<a href="' . get_permalink() . '" title="' . esc_attr( sprintf( __( 'Permalink to %s', 'lan-thinkupthemes' ), the_title_attribute( 'echo=0' ) ) ) . '">' . get_the_title() . '</a>'; ?>
 
 		</h2>
 

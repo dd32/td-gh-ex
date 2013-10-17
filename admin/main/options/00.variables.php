@@ -6,11 +6,11 @@
  */
 
 
-/* ----------------------------------------------------------------------------------
-	ADD CUSTOM VARIABLES
----------------------------------------------------------------------------------- */
+//----------------------------------------------------------------------------------
+//	ADD CUSTOM VARIABLES
+//----------------------------------------------------------------------------------
 
-/* Add global variables used in Redux framework */
+// Add global variables used in Redux framework
 function thinkup_reduxvariables() { 
 
 	// Fetch options stored in $data.
@@ -100,7 +100,7 @@ function thinkup_reduxvariables() {
 
 	//  1.9.     Notification bar. - PREMIUM FEATURE
 
-	//  1.10.     Search engine optimisation. - PREMIUM FEATURE
+	//  1.10.    Search engine optimization. - PREMIUM FEATURE
 
 	//  1.11.     Typography.
 	$GLOBALS['thinkup_font_bodyswitch']                     = thinkup_var ( 'thinkup_font_bodyswitch' );
@@ -138,7 +138,7 @@ function thinkup_reduxvariables() {
 	$GLOBALS['thinkup_font_mainheadersubsize']              = thinkup_var ( 'thinkup_font_mainheadersubsize' );
 	$GLOBALS['thinkup_font_footerheadingsize']              = thinkup_var ( 'thinkup_font_footerheadingsize' );
 	$GLOBALS['thinkup_font_mainfootersize']                 = thinkup_var ( 'thinkup_font_mainfootersize' );
-	$GLOBALS['thinkup_font_postfootersize']                = thinkup_var ( 'thinkup_font_postfootersize' );
+	$GLOBALS['thinkup_font_postfootersize']                 = thinkup_var ( 'thinkup_font_postfootersize' );
 
 	//  1.12.     Custom styling. - PREMIUM FEATURE
 

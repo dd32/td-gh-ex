@@ -61,7 +61,7 @@ if ( ! function_exists( 'thinkup_themesetup' ) ) {
 		require_once ( get_template_directory() . '/lib/functions/template-tags.php' );
 
 		// Make theme translation ready.
-		load_theme_textdomain( '_s', get_template_directory() . '/lib/languages' );
+		load_theme_textdomain( 'lan-thinkupthemes', get_template_directory() . '/languages' );
 
 		// Add default theme functions.
 		add_theme_support( 'automatic-feed-links' );

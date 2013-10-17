@@ -134,7 +134,7 @@ if( !class_exists( 'ReduxFramework' ) ) {
             $defaults['admin_stylesheet']   = 'standard';
             $defaults['footer_credit']      = __( '<span id="footer-thankyou">Options panel created using <a href="' . $this->framework_url . '" target="_blank">Redux Framework</a> v' . $this->framework_version . '</span>', 'redux-framework' );
             $defaults['help_tabs']          = array();
-            $defaults['help_sidebar']       = __( '', 'redux-framework' );
+            $defaults['help_sidebar']       = '';
             $defaults['database'] 			= ''; // possible: options, theme_mods, theme_mods_expanded, transient
 			$defaults['global_variable'] 	= '';
             /** @noinspection PhpUndefinedConstantInspection */
@@ -1638,7 +1638,7 @@ if( !class_exists( 'ReduxFramework' ) ) {
                 if( isset( $section['fields'] ) ) {
                     foreach( $section['fields'] as $fieldk => $field ) {
                     	$th = "";		
-                        if( isset( $field['title'] ) && isset( $field['type'] ) && $field['type'] !== "info" ) {
+                        if( ( isset( $field['title'] ) || isset( $field['subtitle'] ) )&& isset( $field['type'] ) && $field['type'] !== "info" ) {
 			    			$default_mark = ( !empty($field['default']) && isset($this->options[$field['id']]) && $this->options[$field['id']] == $field['default'] && !empty( $this->args['default_mark'] ) && isset( $field['default'] ) ) ? $this->args['default_mark'] : '';
                             if (!empty($field['title'])) {
                             	$th = $field['title'] . $default_mark;	

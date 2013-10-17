@@ -5,11 +5,11 @@
  * @package ThinkUpThemes
  */
 
-/* ----------------------------------------------------------------------------------
-	ENABLE HOMEPAGE SLIDER
----------------------------------------------------------------------------------- */
+//----------------------------------------------------------------------------------
+//	ENABLE HOMEPAGE SLIDER
+//----------------------------------------------------------------------------------
 
-/* Add Slider - Homepage */
+// Add Slider - Homepage
 function thinkup_input_sliderhome() {
 global $thinkup_homepage_sliderswitch;
 global $thinkup_homepage_slidername;
@@ -25,14 +25,14 @@ global $thinkup_homepage_slidername;
 	}
 }
 
-/* Add Slider - Inner Page */
+// Add Slider - Inner Page
 function thinkup_input_sliderpage() {
 global $post;
 $_thinkup_meta_slider = get_post_meta( $post->ID, '_thinkup_meta_slider', true );
 $_thinkup_meta_slidername = get_post_meta( $post->ID, '_thinkup_meta_slidername', true );
 
 	if ( ! is_home() and site_url( '/' ) !== thinkup_url_current() and $_thinkup_meta_slider == 'on' ) {
-			echo '123';
+
 		echo	'<div id="slider"><div id="slider-core">',
 				do_shortcode( $_thinkup_meta_slidername ),
 				'</div></div>';
@@ -40,24 +40,24 @@ $_thinkup_meta_slidername = get_post_meta( $post->ID, '_thinkup_meta_slidername'
 }
 
 
-/* ----------------------------------------------------------------------------------
-	ENABLE HOMEPAGE BLOG - PREMIUM FEATURE
----------------------------------------------------------------------------------- */
+//----------------------------------------------------------------------------------
+//	ENABLE HOMEPAGE BLOG - PREMIUM FEATURE
+//----------------------------------------------------------------------------------
 
 
-/* ----------------------------------------------------------------------------------
-	HOMEPAGE TEXT - PREMIUM FEATURE
----------------------------------------------------------------------------------- */
+//----------------------------------------------------------------------------------
+//	HOMEPAGE TEXT - PREMIUM FEATURE
+//----------------------------------------------------------------------------------
 
 
-/* ----------------------------------------------------------------------------------
-	ADDITIONAL HOMEPAGE TEXT - PREMIUM FEATURE
----------------------------------------------------------------------------------- */
+//----------------------------------------------------------------------------------
+//	ADDITIONAL HOMEPAGE TEXT - PREMIUM FEATURE
+//----------------------------------------------------------------------------------
 
 
-/* ----------------------------------------------------------------------------------
-	CALL TO ACTION - INTRO
----------------------------------------------------------------------------------- */
+//----------------------------------------------------------------------------------
+//	CALL TO ACTION - INTRO
+//----------------------------------------------------------------------------------
 
 function thinkup_input_ctaintro() {
 global $thinkup_homepage_introswitch;

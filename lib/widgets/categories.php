@@ -6,19 +6,19 @@
  */
 
 
-/* ----------------------------------------------------------------------------------
-	Categories
----------------------------------------------------------------------------------- */
+//----------------------------------------------------------------------------------
+//	Categories
+//----------------------------------------------------------------------------------
 
 class thinkup_widget_categories extends WP_Widget {
 
-	/* Register widget description. */
+	// Register widget description.
 	function thinkup_widget_categories() {
 		$widget_ops = array('classname' => 'thinkup_widget_categories', 'description' => 'List your blog categories.' );
 		$this->WP_Widget('thinkup_widget_categories', 'ThinkUpThemes: Categories', $widget_ops);
 	}
 
-	/* Add widget structure to Admin area. */
+	// Add widget structure to Admin area.
 	function form($instance) {
 		$default_entries = array( 'title' => '', 'postswitch' => '', 'displayswitch' => '', 'orderswitch' => '', 'directionswitch' => '', 'exclude' => '' );
 		$instance = wp_parse_args( (array) $instance, $default_entries );
@@ -60,7 +60,7 @@ class thinkup_widget_categories extends WP_Widget {
 		echo '<p><label for="' . $this->get_field_id('exclude') . '">Exclude categories: <input class="widefat" id="' . $this->get_field_id('exclude') . '" name="' . $this->get_field_name('exclude') . '" type="text" value="' . esc_attr($exclude) . '" style="width: 95px;margin-left: 20px;" /></label></p>';
 	}
 
-	/* Assign variable values. */
+	// Assign variable values.
 	function update($new_instance, $old_instance) {
 		$instance                    = $old_instance;
 		$instance['title']           = $new_instance['title'];		
@@ -72,7 +72,7 @@ class thinkup_widget_categories extends WP_Widget {
 		return $instance;
 	}
 
-	/* Output widget to front-end. */
+	// Output widget to front-end.
 	function widget($args, $instance) {
 		if (empty($instance['displayswitch']) or $instance['displayswitch'] == '1' ) {
 			$displayswitch = 'option1';
@@ -115,18 +115,9 @@ class thinkup_widget_categories extends WP_Widget {
 		extract($args, EXTR_SKIP);
 	 
 		echo $before_widget;
-		$title = empty($instance['title']) ? 'Categories' : apply_filters('widget_title', $instance['title']);
+		$title = empty($instance['title']) ? __( 'Categories', 'lan-thinkupthemes' ) : apply_filters('widget_title', $instance['title']);
 		if (!empty($title))
 		  echo $before_title . $title . $after_title;
-
-/*		if ($displayswitch == 'option1') {
-			echo '<ul>';
-			wp_list_categories( $categories );
-			echo '</ul>';
-		} else {
-			wp_dropdown_categories( $categories );	 
-		}
-*/
 
 		if ($displayswitch == 'option1') {
 			$terms = get_categories($categories);
@@ -134,7 +125,7 @@ class thinkup_widget_categories extends WP_Widget {
 				echo '<ul>';
 					foreach( $terms as $term ) {
 					  echo '<li class="cat-item cat-item-24">',
-							'<a href="' . get_category_link( $term->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $term->name ) . '" ' . '><span>' . $term->name;  
+							'<a href="' . get_category_link( $term->term_id ) . '" title="' . sprintf( __( 'View all posts in %s' ), 'lan-thinkupthemes' ) . '" ' . '><span>' . $term->name;
 								if ($instance['postswitch'] == 'on') {
 									echo '  <small>('.$term->count.')</small>';
 								}

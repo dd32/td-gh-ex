@@ -5,9 +5,10 @@
  * @package ThinkUpThemes
  */
 
-/* ----------------------------------------------------------------------------------
-	SEARCH - DISABLE SEARCH
----------------------------------------------------------------------------------- */
+//----------------------------------------------------------------------------------
+//	SEARCH - DISABLE SEARCH
+//----------------------------------------------------------------------------------
+
 function thinkup_input_headersearch() {
 global $thinkup_header_searchswitch;
 
@@ -18,11 +19,11 @@ global $thinkup_header_searchswitch;
 	}
 }
 
-/* ----------------------------------------------------------------------------------
-	SOCIAL MEDIA - DISPLAY MESSAGE
----------------------------------------------------------------------------------- */
+//----------------------------------------------------------------------------------
+//	SOCIAL MEDIA - DISPLAY MESSAGE
+//----------------------------------------------------------------------------------
 
-/* Message Settings */
+// Message Settings
 function thinkup_input_socialmessage(){
 global $thinkup_header_socialmessage;
 global $thinkup_header_facebookswitch;
@@ -44,11 +45,11 @@ global $thinkup_header_diggswitch;
 }
 
 
-/* ----------------------------------------------------------------------------------
-	SOCIAL MEDIA - CUSTOM ICONS
----------------------------------------------------------------------------------- */
+//----------------------------------------------------------------------------------
+//	SOCIAL MEDIA - CUSTOM ICONS
+//----------------------------------------------------------------------------------
 
-/* Facebook - Custom Icon */
+// Facebook - Custom Icon
 function thinkup_input_facebookicon(){
 global $thinkup_header_facebookiconswitch;
 global $thinkup_header_facebookcustomicon;
@@ -58,7 +59,7 @@ global $thinkup_header_facebookcustomicon;
 	}
 }
 
-/* Twitter - Custom Icon */
+// Twitter - Custom Icon
 function thinkup_input_twittericon(){
 global $thinkup_header_twittericonswitch;
 global $thinkup_header_twittercustomicon;
@@ -68,7 +69,7 @@ global $thinkup_header_twittercustomicon;
 	}
 }
 
-/* Google+ - Custom Icon */
+// Google+ - Custom Icon
 function thinkup_input_googleicon(){
 global $thinkup_header_googleiconswitch;
 global $thinkup_header_googlecustomicon;
@@ -78,7 +79,7 @@ global $thinkup_header_googlecustomicon;
 	}
 }
 
-/* LinkedIn - Custom Icon */
+// LinkedIn - Custom Icon
 function thinkup_input_linkedinicon(){
 global $thinkup_header_linkediniconswitch;
 global $thinkup_header_linkedincustomicon;
@@ -88,7 +89,7 @@ global $thinkup_header_linkedincustomicon;
 	}
 }
 
-/* Flickr - Custom Icon */
+// Flickr - Custom Icon
 function thinkup_input_flickricon(){
 global $thinkup_header_flickriconswitch;
 global $thinkup_header_flickrcustomicon;
@@ -98,7 +99,7 @@ global $thinkup_header_flickrcustomicon;
 	}
 }
 
-/* LastFM - Custom Icon */
+// LastFM - Custom Icon
 function thinkup_input_lastfmicon(){
 global $thinkup_header_lastfmiconswitch;
 global $thinkup_header_lastfmcustomicon;
@@ -108,7 +109,7 @@ global $thinkup_header_lastfmcustomicon;
 	}
 }
 
-/* RSS - Custom Icon */
+// RSS - Custom Icon
 function thinkup_input_rssicon(){
 global $thinkup_header_rssiconswitch;
 global $thinkup_header_rsscustomicon;
@@ -118,7 +119,7 @@ global $thinkup_header_rsscustomicon;
 	}
 }
 
-/* Input Custom Social Media Icons */
+// Input Custom Social Media Icons
 function thinkup_input_socialicon(){
 
 	$output = NULL;
@@ -138,9 +139,9 @@ function thinkup_input_socialicon(){
 add_action( 'wp_head', 'thinkup_input_socialicon', 13 );
 
 
-/* ----------------------------------------------------------------------------------
-	SOCIAL MEDIA - OUTPUT SOCIAL MEDIA SELECTIONS
----------------------------------------------------------------------------------- */
+//----------------------------------------------------------------------------------
+//	SOCIAL MEDIA - OUTPUT SOCIAL MEDIA SELECTIONS
+//----------------------------------------------------------------------------------
 
 function thinkup_input_socialmedia() {
 global $thinkup_header_socialswitch;
@@ -168,37 +169,37 @@ global $thinkup_header_rsslink;
 				echo '<li class="social message">' . thinkup_input_socialmessage() . '</li>';
 			}
 
-			/* Facebook settings */
+			// Facebook settings
 			if ( $thinkup_header_facebookswitch == '1' ) {
 				echo '<li class="social facebook"><a href="' . $thinkup_header_facebooklink . '" data-tip="bottom" data-original-title="Facebook"></a></li>';
 			}
 
-			/* Twitter settings */
+			// Twitter settings
 			if ( $thinkup_header_twitterswitch == '1' ) {
 				echo '<li class="social twitter"><a href="' . $thinkup_header_twitterlink . '" data-tip="bottom" data-original-title="Twitter"></a></li>';
 			}
 
-			/* Google+ settings */
+			// Google+ settings
 			if ( $thinkup_header_googleswitch == '1' ) {
 				echo '<li class="social google"><a href="' . $thinkup_header_googlelink . '" data-tip="bottom" data-original-title="Google+"></a></li>';
 			}
 
-			/* LinkedIn settings */
+			// LinkedIn settings
 			if ( $thinkup_header_linkedinswitch == '1' ) {
 				echo '<li class="social linkedin"><a href="' . $thinkup_header_linkedinlink . '" data-tip="bottom" data-original-title="LinkedIn"></a></li>';
 			}
 
-			/* Flickr settings */
+			// Flickr settings
 			if ( $thinkup_header_flickrswitch == '1' ) {
 				echo '<li class="social flickr"><a href="' . $thinkup_header_flickrlink . '" data-tip="bottom" data-original-title="Flickr"></a></li>';
 			}
 
-			/* Last FM settings */
+			// Last FM settings
 			if ( $thinkup_header_lastfmswitch == '1' ) {
 				echo '<li class="social lastfm"><a href="' . $thinkup_header_lastfmlink . '" data-tip="bottom" data-original-title="Last FM"></a></li>';
 			}
 
-			/* RSS settings */
+			// RSS settings
 			if ( $thinkup_header_rssswitch == '1' ) {
 				echo '<li class="social rss"><a href="' . $thinkup_header_rsslink . '" data-tip="bottom" data-original-title="RSS"></a></li>';
 			}

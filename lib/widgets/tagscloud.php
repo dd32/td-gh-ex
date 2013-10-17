@@ -6,19 +6,19 @@
  */
 
 
-/* ----------------------------------------------------------------------------------
-	Tags
----------------------------------------------------------------------------------- */
+//----------------------------------------------------------------------------------
+//	Tags
+//----------------------------------------------------------------------------------
 
 class thinkup_widget_tagscloud extends WP_Widget {
 
-	/* Register widget description. */
+	// Register widget description.
 	function thinkup_widget_tagscloud() {
 		$widget_ops = array('classname' => 'thinkup_widget_tagscloud', 'description' => 'A cool tag cloud.' );
 		$this->WP_Widget('thinkup_widget_tagscloud', 'ThinkUpThemes: Tags Cloud', $widget_ops);
 	}
 
-	/* Add widget structure to Admin area. */
+	// Add widget structure to Admin area.
 	function form($instance) {
 		$default_entries = array( 'title' => '', 'orderby' => '', 'order' => '', 'exclude' => '' );
 		$instance = wp_parse_args( (array) $instance, $default_entries );
@@ -29,25 +29,25 @@ class thinkup_widget_tagscloud extends WP_Widget {
 
 	}
 
-	/* Assign variable values. */
+	// Assign variable values.
 	function update($new_instance, $old_instance) {
 		$instance                    = $old_instance;
 		$instance['title']           = $new_instance['title'];
 		return $instance;
 	}
 
-	/* Output widget to front-end. */
+	// Output widget to front-end.
 	function widget($args, $instance) {		
 		extract($args, EXTR_SKIP);
 	 
 		echo $before_widget;
-		$title = empty($instance['title']) ? 'Tags' : apply_filters('widget_title', $instance['title']);
+		$title = empty($instance['title']) ? __( 'Tags', 'lan-thinkupthemes' ) : apply_filters('widget_title', $instance['title']);
 
-		/* Title widget area */
+		// Title widget area
 		if (!empty($title))
 		  echo $before_title . $title . $after_title;
 
-		/* Main widget area */
+		// Main widget area
 		$tags = get_tags();
 		$html = '<div class="post_tags">';
 			foreach ( $tags as $tag ) {

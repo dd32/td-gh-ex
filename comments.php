@@ -7,7 +7,7 @@
 ?>
 
 <?php
-	/* Exit if the post is password protected & user is not logged in */
+	// Exit if the post is password protected & user is not logged in
 	if ( post_password_required() )
 		return;
 ?>
@@ -28,8 +28,8 @@
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 		<nav role="navigation" id="comment-nav-above" class="comment-navigation">
-			<div class="nav-previous"><?php previous_comments_link( 'Older Comments' ); ?></div>
-			<div class="nav-next"><?php next_comments_link( 'Newer Comments' ); ?></div>
+			<div class="nav-previous"><?php previous_comments_link( __( 'Older Comments', 'lan-thinkupthemes' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments', 'lan-thinkupthemes' ) ); ?></div>
 		</nav><!-- #comment-nav-before .comment-navigation -->
 		<?php endif;?>
 
@@ -39,20 +39,20 @@
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 		<nav role="navigation" id="comment-nav-below" class="comment-navigation">
-			<div class="nav-previous"><?php previous_comments_link( 'Older Comments' ); ?></div>
-			<div class="nav-next"><?php next_comments_link( 'Newer Comments' ); ?></div>
+			<div class="nav-previous"><?php previous_comments_link( __( 'Older Comments', 'lan-thinkupthemes' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments', 'lan-thinkupthemes' ) ); ?></div>
 		</nav><!-- #comment-nav-below .comment-navigation -->
 		<?php endif; ?>
 
 	<?php endif; ?>
 
 	<?php
-		/* Message to display when comments are closed */
+		// Message to display when comments are closed
 		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
 
 		<div id="nocomments" class="notification info">
-			<div class="icon"><?php echo 'Comments are closed.'; ?></div>
+			<div class="icon"><?php _e( 'Comments are closed.', 'lan-thinkupthemes' ); ?></div>
 		</div>
 
 	<?php endif; ?>

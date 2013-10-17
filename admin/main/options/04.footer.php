@@ -5,90 +5,90 @@
  * @package ThinkUpThemes
  */
 
-/* ----------------------------------------------------------------------------------
-	FOOTER WIDGETS LAYOUT
----------------------------------------------------------------------------------- */
+//----------------------------------------------------------------------------------
+//	FOOTER WIDGETS LAYOUT
+//----------------------------------------------------------------------------------
 
-/* Assign function for widget area 1 */
+// Assign function for widget area 1
 function thinkup_input_footerw1() {
 	echo	'<div id="footer-col1" class="widget-area">';
 	if ( ! dynamic_sidebar( 'footer-w1' ) ) {
-		echo	'<h3 class="widget-title">Please Add Widgets</h3>',
+		echo	'<h3 class="widget-title">' . __( 'Please Add Widgets', 'lan-thinkupthemes') . '</h3>',
 			'<div class="error-icon">',
-				'<p>Remove this message by adding widgets to Footer Widget Area 1.</p>',
-				'<a href="/wp-admin/widgets.php" title="No Widgets Selected">Click here to go to Widget area.</a>',
+				'<p>' . __( 'Remove this message by adding widgets to Footer Widget Area 1.', 'lan-thinkupthemes') . '</p>',
+				'<a href="/wp-admin/widgets.php" title="No Widgets Selected">' . __( 'Click here to go to Widget area.', 'lan-thinkupthemes') . '</a>',
 			'</div>';
 	};
 	echo	'</div>';
 }
 
-/* Assign function for widget area 2 */
+// Assign function for widget area 2
 function thinkup_input_footerw2() {
 	echo	'<div id="footer-col2" class="widget-area">';
 	if ( ! dynamic_sidebar( 'footer-w2' ) ) {
-	echo	'<h3 class="widget-title">Please Add Widgets</h3>',
+	echo	'<h3 class="widget-title">' . __( 'Please Add Widgets', 'lan-thinkupthemes') . '</h3>',
 			'<div class="error-icon">',
-				'<p>Remove this message by adding widgets to Footer Widget Area 2.</p>',
-				'<a href="/wp-admin/widgets.php" title="No Widgets Selected">Click here to go to Widget area.</a>',
+				'<p>' . __( 'Remove this message by adding widgets to Footer Widget Area 2.', 'lan-thinkupthemes') . '</p>',
+				'<a href="/wp-admin/widgets.php" title="No Widgets Selected">' . __( 'Click here to go to Widget area.', 'lan-thinkupthemes') . '</a>',
 			'</div>';
 	};
 	echo	'</div>';
 }
 
-/* Assign function for widget area 3 */
+// Assign function for widget area 3
 function thinkup_input_footerw3() {
 	echo	'<div id="footer-col3" class="widget-area">';
 	if ( ! dynamic_sidebar( 'footer-w3' ) ) {
-	echo	'<h3 class="widget-title">Please Add Widgets</h3>',
+	echo	'<h3 class="widget-title">' . __( 'Please Add Widgets', 'lan-thinkupthemes') . '</h3>',
 			'<div class="error-icon">',
-				'<p>Remove this message by adding widgets to Footer Widget Area 3.</p>',
-				'<a href="/wp-admin/widgets.php" title="No Widgets Selected">Click here to go to Widget area.</a>',
+				'<p>' . __( 'Remove this message by adding widgets to Footer Widget Area 3.', 'lan-thinkupthemes') . '</p>',
+				'<a href="/wp-admin/widgets.php" title="No Widgets Selected">' . __( 'Click here to go to Widget area.', 'lan-thinkupthemes') . '</a>',
 			'</div>';
 	};	
 	echo	'</div>';
 }
 
-/* Assign function for widget area 4 */
+// Assign function for widget area 4
 function thinkup_input_footerw4() {
 	echo	'<div id="footer-col4" class="widget-area">';
 	if ( ! dynamic_sidebar( 'footer-w4' ) ) {
-	echo	'<h3 class="widget-title">Please Add Widgets</h3>',
+	echo	'<h3 class="widget-title">' . __( 'Please Add Widgets', 'lan-thinkupthemes') . '</h3>',
 			'<div class="error-icon">',
-				'<p>Remove this message by adding widgets to Footer Widget Area 4.</p>',
-				'<a href="/wp-admin/widgets.php" title="No Widgets Selected">Click here to go to Widget area.</a>',
+				'<p>' . __( 'Remove this message by adding widgets to Footer Widget Area 4.', 'lan-thinkupthemes') . '</p>',
+				'<a href="/wp-admin/widgets.php" title="No Widgets Selected">' . __( 'Click here to go to Widget area.', 'lan-thinkupthemes') . '</a>',
 			'</div>';	
 	};	
 	echo	'</div>';
 }
 
-/* Assign function for widget area 5 */
+// Assign function for widget area 5
 function thinkup_input_footerw5() {
 	echo	'<div id="footer-col5" class="widget-area">';
 	if ( ! dynamic_sidebar( 'footer-w5' ) ) {
-	echo	'<h3 class="widget-title">Please Add Widgets</h3>',
+	echo	'<h3 class="widget-title">' . __( 'Please Add Widgets', 'lan-thinkupthemes') . '</h3>',
 			'<div class="error-icon">',
-				'<p>Remove this message by adding widgets to Footer Widget Area 5.</p>',
-				'<a href="/wp-admin/widgets.php" title="No Widgets Selected">Click here to go to Widget area.</a>',
+				'<p>' . __( 'Remove this message by adding widgets to Footer Widget Area 5.', 'lan-thinkupthemes') . '</p>',
+				'<a href="/wp-admin/widgets.php" title="No Widgets Selected">' . __( 'Click here to go to Widget area.', 'lan-thinkupthemes') . '</a>',
 			'</div>';	
 	};	
 	echo	'</div>';
 }
 
-/* Assign function for widget area 6 */
+// Assign function for widget area 6
 function thinkup_input_footerw6() {
 	echo	'<div id="footer-col6" class="widget-area">';
 	if ( ! dynamic_sidebar( 'footer-w6' ) ) {
-	echo	'<h3 class="widget-title">Please Add Widgets</h3>',
+	echo	'<h3 class="widget-title">' . __( 'Please Add Widgets', 'lan-thinkupthemes') . '</h3>',
 			'<div class="error-icon">',
-			'<p>Remove this message by adding widgets to Footer Widget Area 6.</p>',
-			'<a href="/wp-admin/widgets.php" title="No Widgets Selected">Click here to go to Widget area.</a>',
+			'<p>' . __( 'Remove this message by adding widgets to Footer Widget Area 6.', 'lan-thinkupthemes') . '</p>',
+			'<a href="/wp-admin/widgets.php" title="No Widgets Selected">' . __( 'Click here to go to Widget area.', 'lan-thinkupthemes') . '</a>',
 			'</div>';	
 	};	
 	echo	'</div>';
 }
 
 
-/* Add Custom Footer Layout */
+// Add Custom Footer Layout
 function thinkup_input_footerlayout() {	
 global $thinkup_footer_layout;
 global $thinkup_footer_widgetswitch;
@@ -219,9 +219,9 @@ global $footer_w6;
 }
 
 
-/* ----------------------------------------------------------------------------------
-	COPYRIGHT TEXT
----------------------------------------------------------------------------------- */
+//----------------------------------------------------------------------------------
+//	COPYRIGHT TEXT
+//----------------------------------------------------------------------------------
 
 function thinkup_input_copyright() {
 global $thinkup_footer_copyright;
@@ -229,7 +229,7 @@ global $thinkup_footer_copyright;
 	if ( ! empty( $thinkup_footer_copyright ) ) {
 		echo $thinkup_footer_copyright;
 	} else if ( empty( $thinkup_footer_copyright ) ) {
-		echo 'Developed by <a href="http://www.thinkupthemes.com/" target="_blank">Think Up Themes Ltd</a>. Powered by <a href="http://www.wordpress.org/" target="_blank">Wordpress</a>.';
+		printf( __( 'Developed by %1$s. Powered by %2$s.' ) , '<a href="http://www.thinkupthemes.com/" target="_blank">Think Up Themes Ltd</a>', '<a href="http://www.wordpress.org/" target="_blank">Wordpress</a>'); 
 	}
 }
 

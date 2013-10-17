@@ -6,19 +6,19 @@
  */
 
 
-/* ----------------------------------------------------------------------------------
-	Tabs
----------------------------------------------------------------------------------- */
+//----------------------------------------------------------------------------------
+//	Tabs
+//----------------------------------------------------------------------------------
 
 class thinkup_widget_tabs extends WP_Widget {
 
-	/* Register widget description. */
+	// Register widget description.
 	function thinkup_widget_tabs() {
 		$widget_ops = array('classname' => 'thinkup_widget_tabs', 'description' => 'Show recent, popular and commented posts in tabs.' );
 		$this->WP_Widget('thinkup_widget_tabs', 'ThinkUpThemes: Tabs', $widget_ops);
 	}
 
-	/* Add widget structure to Admin area. */
+	// Add widget structure to Admin area.
 	function form($instance) {
 		$default_entries = array( 'title' => '', 'postcount' => '5' );
 		$instance = wp_parse_args( (array) $instance, $default_entries );
@@ -32,7 +32,7 @@ class thinkup_widget_tabs extends WP_Widget {
 
 	}
 
-	/* Assign variable values. */
+	// Assign variable values.
 	function update($new_instance, $old_instance) {
 		$instance                    = $old_instance;
 		$instance['title']           = $new_instance['title'];		
@@ -40,24 +40,24 @@ class thinkup_widget_tabs extends WP_Widget {
 		return $instance;
 	}
 
-	/* Output widget to front-end. */
+	// Output widget to front-end.
 	function widget($args, $instance) {
 	global $post;
 
 		extract($args, EXTR_SKIP);
 	 
-		/* current instance id */
+		// current instance id
 		$current_instance_id = substr($this->id, strrpos($this->id, '-') + 1);
 
 		echo $before_widget;
 
-		/* Tab navigation */
+		// Tab navigation
 		echo	'<ul class="nav nav-tabs">',
-					'<li class="active"><a href="#widgetrecent-' . $current_instance_id . '" data-toggle="tab"><h3 class="widget-title">Recent</h3></a></li>',
-					'<li><a href="#widgetpopular-' . $current_instance_id . '" data-toggle="tab"><h3 class="widget-title">Popular</h3></a></li>',
+					'<li class="active"><a href="#widgetrecent-' . $current_instance_id . '" data-toggle="tab"><h3 class="widget-title">' . __( 'Recent', 'lan-thinkupthemes' ) . '</h3></a></li>',
+					'<li><a href="#widgetpopular-' . $current_instance_id . '" data-toggle="tab"><h3 class="widget-title">' . __( 'Popular', 'lan-thinkupthemes' ) . '</h3></a></li>',
 				'</ul>';
 
-		/* Main tabs */
+		// Main tabs
 		echo	'<div class="tab-content">',
 				'<div class="tab-pane fade active in" id="widgetrecent-' . $current_instance_id . '">';
 
@@ -66,7 +66,7 @@ class thinkup_widget_tabs extends WP_Widget {
 
 							$date_input = '<a href="' . get_permalink() . '" class="date">' .  get_the_date() . '</a>';
 					
-						/* HTML output */
+						// HTML output
 						echo '<div class="recent-posts">';
 							if ( has_post_thumbnail() ) {
 							echo	'<div class="image">',
@@ -91,7 +91,7 @@ class thinkup_widget_tabs extends WP_Widget {
 					$posts = new WP_Query('orderby=comment_count&posts_per_page=' . $instance['postcount'] . '');
 					while ($posts->have_posts()) : $posts->the_post();
 
-						/* Insert comments if needed. */
+						// Insert comments if needed.
 						$comment_count = get_comments_number();
 						if ( $comment_count == 0 ) {
 							$commentnumber_input = 'No Comments';
@@ -102,7 +102,7 @@ class thinkup_widget_tabs extends WP_Widget {
 						}
 						$comment_input = '<a class="comment" href="' . get_permalink() . '">' .  $commentnumber_input . '</a>';
 
-						/* HTML output */
+						// HTML output
 						echo '<div class="popular-posts">';
 							if ( has_post_thumbnail() ) {
 							echo	'<div class="image">',

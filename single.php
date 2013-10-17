@@ -13,7 +13,7 @@ get_header(); ?>
 
 				<?php paginate_links( 'nav-below' ); ?>
 
-				<?php edit_post_link( 'Edit', '<span class="edit-link">', '</span>' ); ?>
+				<?php edit_post_link( __( 'Edit', 'lan-thinkupthemes' ), '<span class="edit-link">', '</span>' ); ?>
 
 				<?php /* Add Author Bio */ thinkup_input_postauthorbio(); ?>
 

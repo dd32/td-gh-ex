@@ -87,6 +87,11 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.4.0
+- Translation ready functionality added.
+- Removed blog template (style2).
+- Default showing of 'Think Up Themes Ltd' logo removed.
+
 Version 1.3.3
 - html5shiv added - licensed under MIT.
 

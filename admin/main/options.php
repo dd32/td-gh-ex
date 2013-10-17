@@ -535,7 +535,6 @@ function setup_framework_options(){
 				),				
 
 			array(
-				'title' => __('', 'redux-framework'), 
 				'subtitle' => __('Enter a <strong>main</strong> message.<br /><br />This will be one of the first messages your visitors see. Use this to get their attention.', 'redux-framework'),
 				'id'=>'thinkup_homepage_introaction',
 				'type' => 'textarea',
@@ -543,7 +542,6 @@ function setup_framework_options(){
 				),
 
 			array(
-				'title' => __('', 'redux-framework'), 
 				'subtitle' => __('Enter a <strong>teaser</strong> message. <br /><br />Use this to provide more details about what you offer.', 'redux-framework'),
 				'id'=>'thinkup_homepage_introactionteaser',
 				'type' => 'textarea',
@@ -642,7 +640,6 @@ function setup_framework_options(){
 				),
 				
 			array(
-				'title' => __('', 'redux-framework'),
 				'desc' => __('Input the url to your Facebook page. <strong>Note:</strong> Add http:// as the url is an external link.', 'redux-framework'),
 				'id'=>'thinkup_header_facebooklink',
 				'type' => 'text',
@@ -651,7 +648,6 @@ function setup_framework_options(){
 				),				
 
 			array(
-				'title' => __('', 'redux-framework'), 
 				'desc' => __('Use Custom Facebook Icon', 'redux-framework'),
 				'id'=>'thinkup_header_facebookiconswitch',
 				'type' => 'checkbox',
@@ -660,7 +656,6 @@ function setup_framework_options(){
 				),
 
 			array(
-				'title' => __('', 'redux-framework'),
 				'desc'=> __('Add a link to the image or upload one from your desktop. The image will be resized.', 'redux-framework'),
 				'id'=>'thinkup_header_facebookcustomicon',
 				'type' => 'media',
@@ -678,7 +673,6 @@ function setup_framework_options(){
 				),
 				
 			array(
-				'title' => __('', 'redux-framework'),
 				'desc' => __('Input the url to your Twitter page. <strong>Note:</strong> Add http:// as the url is an external link.', 'redux-framework'),
 				'id'=>'thinkup_header_twitterlink',
 				'type' => 'text',
@@ -687,7 +681,6 @@ function setup_framework_options(){
 				),				
 
 			array(
-				'title' => __('', 'redux-framework'), 
 				'desc' => __('Use Custom Twitter Icon', 'redux-framework'),
 				'id'=>'thinkup_header_twittericonswitch',
 				'type' => 'checkbox',
@@ -696,7 +689,6 @@ function setup_framework_options(){
 				),
 
 			array(
-				'title' => __('', 'redux-framework'),
 				'desc'=> __('Add a link to the image or upload one from your desktop. The image will be resized.', 'redux-framework'),
 				'id'=>'thinkup_header_twittercustomicon',
 				'type' => 'media',
@@ -714,7 +706,6 @@ function setup_framework_options(){
 				),
 				
 			array(
-				'title' => __('', 'redux-framework'),
 				'desc' => __('Input the url to your Google+ page. <strong>Note:</strong> Add http:// as the url is an external link.', 'redux-framework'),
 				'id'=>'thinkup_header_googlelink',
 				'type' => 'text',
@@ -723,7 +714,6 @@ function setup_framework_options(){
 				),				
 
 			array(
-				'title' => __('', 'redux-framework'), 
 				'desc' => __('Use Custom Google+ Icon', 'redux-framework'),
 				'id'=>'thinkup_header_googleiconswitch',
 				'type' => 'checkbox',
@@ -732,7 +722,6 @@ function setup_framework_options(){
 				),
 
 			array(
-				'title' => __('', 'redux-framework'),
 				'desc'=> __('Add a link to the image or upload one from your desktop. The image will be resized.', 'redux-framework'),
 				'id'=>'thinkup_header_googlecustomicon',
 				'type' => 'media',
@@ -750,7 +739,6 @@ function setup_framework_options(){
 				),
 				
 			array(
-				'title' => __('', 'redux-framework'),
 				'desc' => __('Input the url to your LinkedIn page. <strong>Note:</strong> Add http:// as the url is an external link.', 'redux-framework'),
 				'id'=>'thinkup_header_linkedinlink',
 				'type' => 'text',
@@ -759,7 +747,6 @@ function setup_framework_options(){
 				),				
 
 			array(
-				'title' => __('', 'redux-framework'), 
 				'desc' => __('Use Custom LinkedIn Icon', 'redux-framework'),
 				'id'=>'thinkup_header_linkediniconswitch',
 				'type' => 'checkbox',
@@ -768,7 +755,6 @@ function setup_framework_options(){
 				),
 
 			array(
-				'title' => __('', 'redux-framework'),
 				'desc'=> __('Add a link to the image or upload one from your desktop. The image will be resized.', 'redux-framework'),
 				'id'=>'thinkup_header_linkedincustomicon',
 				'type' => 'media',
@@ -786,7 +772,6 @@ function setup_framework_options(){
 				),
 				
 			array(
-				'title' => __('', 'redux-framework'),
 				'desc' => __('Input the url to your Flickr page. <strong>Note:</strong> Add http:// as the url is an external link.', 'redux-framework'),
 				'id'=>'thinkup_header_flickrlink',
 				'type' => 'text',
@@ -795,7 +780,6 @@ function setup_framework_options(){
 				),				
 
 			array(
-				'title' => __('', 'redux-framework'), 
 				'desc' => __('Use Custom Flickr Icon', 'redux-framework'),
 				'id'=>'thinkup_header_flickriconswitch',
 				'type' => 'checkbox',
@@ -804,7 +788,6 @@ function setup_framework_options(){
 				),
 
 			array(
-				'title' => __('', 'redux-framework'),
 				'desc'=> __('Add a link to the image or upload one from your desktop. The image will be resized.', 'redux-framework'),
 				'id'=>'thinkup_header_flickrcustomicon',
 				'type' => 'media',
@@ -822,7 +805,6 @@ function setup_framework_options(){
 				),
 				
 			array(
-				'title' => __('', 'redux-framework'),
 				'desc' => __('Input the url to your Last FM page. <strong>Note:</strong> Add http:// as the url is an external link.', 'redux-framework'),
 				'id'=>'thinkup_header_lastfmlink',
 				'type' => 'text',
@@ -831,7 +813,6 @@ function setup_framework_options(){
 				),				
 
 			array(
-				'title' => __('', 'redux-framework'), 
 				'desc' => __('Use Custom Last FM Icon', 'redux-framework'),
 				'id'=>'thinkup_header_lastfmiconswitch',
 				'type' => 'checkbox',
@@ -840,7 +821,6 @@ function setup_framework_options(){
 				),
 
 			array(
-				'title' => __('', 'redux-framework'),
 				'desc'=> __('Add a link to the image or upload one from your desktop. The image will be resized.', 'redux-framework'),
 				'id'=>'thinkup_header_lastfmcustomicon',
 				'type' => 'media',
@@ -858,7 +838,6 @@ function setup_framework_options(){
 				),
 				
 			array(
-				'title' => __('', 'redux-framework'),
 				'desc' => __('Input the url to your RSS page. <strong>Note:</strong> Add http:// as the url is an external link.', 'redux-framework'),
 				'id'=>'thinkup_header_rsslink',
 				'type' => 'text',
@@ -867,7 +846,6 @@ function setup_framework_options(){
 				),				
 
 			array(
-				'title' => __('', 'redux-framework'), 
 				'desc' => __('Use Custom RSS Icon', 'redux-framework'),
 				'id'=>'thinkup_header_rssiconswitch',
 				'type' => 'checkbox',
@@ -876,7 +854,6 @@ function setup_framework_options(){
 				),
 
 			array(
-				'title' => __('', 'redux-framework'),
 				'desc'=> __('Add a link to the image or upload one from your desktop. The image will be resized.', 'redux-framework'),
 				'id'=>'thinkup_header_rsscustomicon',
 				'type' => 'media',
@@ -1069,7 +1046,6 @@ function setup_framework_options(){
 				),
 
 			array(
-				'title' => __('', 'redux-framework'), 
 				'subtitle' => __('Select a "Standard Font" for body text.<br />This will <strong>NOT</strong> affect text in header or footer areas.', 'redux-framework'),
 				'id'=>'thinkup_font_bodystandard',
 				'type' => 'select',
@@ -1077,7 +1053,6 @@ function setup_framework_options(){
 				),
 
 			array(
-				'title' => __('', 'redux-framework'), 
 				'subtitle' => __('Select a "Google Font" for body text.<br />This will <strong>NOT</strong> affect text in header or footer areas.', 'redux-framework'),
 				'id'=>'thinkup_font_bodygoogle',
 				'type' => 'select',
@@ -1093,7 +1068,6 @@ function setup_framework_options(){
 				),
 
 			array(
-				'title' => __('', 'redux-framework'), 
 				'subtitle' => __('Select a "Standard Font" for header text.<br />This will <strong>NOT</strong> affect text in header or footer areas.', 'redux-framework'),
 				'id'=>'thinkup_font_bodyheadingstandard',
 				'type' => 'select',
@@ -1101,7 +1075,6 @@ function setup_framework_options(){
 				),
 
 			array(
-				'title' => __('', 'redux-framework'), 
 				'subtitle' => __('Select a "Google Font" for header text.<br />This will <strong>NOT</strong> affect text in header or footer areas.', 'redux-framework'),
 				'id'=>'thinkup_font_bodyheadinggoogle',
 				'type' => 'select',
@@ -1117,7 +1090,6 @@ function setup_framework_options(){
 				),
 
 			array(
-				'title' => __('', 'redux-framework'), 
 				'subtitle' => __('Select a "Standard Font" for pre header text.', 'redux-framework'),
 				'id'=>'thinkup_font_preheaderstandard',
 				'type' => 'select',
@@ -1125,7 +1097,6 @@ function setup_framework_options(){
 				),
 
 			array(
-				'title' => __('', 'redux-framework'), 
 				'subtitle' => __('Select a "Google Font" for pre header text.', 'redux-framework'),
 				'id'=>'thinkup_font_preheadergoogle',
 				'type' => 'select',
@@ -1141,7 +1112,6 @@ function setup_framework_options(){
 				),
 
 			array(
-				'title' => __('', 'redux-framework'), 
 				'subtitle' => __('Select a "Standard Font" for main header text.', 'redux-framework'),
 				'id'=>'thinkup_font_mainheaderstandard',
 				'type' => 'select',
@@ -1149,7 +1119,6 @@ function setup_framework_options(){
 				),
 
 			array(
-				'title' => __('', 'redux-framework'), 
 				'subtitle' => __('Select a "Google Font" for main header text.', 'redux-framework'),
 				'id'=>'thinkup_font_mainheadergoogle',
 				'type' => 'select',
@@ -1165,7 +1134,6 @@ function setup_framework_options(){
 				),
 
 			array(
-				'title' => __('', 'redux-framework'), 
 				'subtitle' => __('Select a "Standard Font" for body text.', 'redux-framework'),
 				'id'=>'thinkup_font_footerheadingstandard',
 				'type' => 'select',
@@ -1173,7 +1141,6 @@ function setup_framework_options(){
 				),
 
 			array(
-				'title' => __('', 'redux-framework'), 
 				'subtitle' => __('Select a "Google Font" for body text.', 'redux-framework'),
 				'id'=>'thinkup_font_footerheadinggoogle',
 				'type' => 'select',
@@ -1189,7 +1156,6 @@ function setup_framework_options(){
 				),
 
 			array(
-				'title' => __('', 'redux-framework'), 
 				'subtitle' => __('Select a "Standard Font" for footer menu text.', 'redux-framework'),
 				'id'=>'thinkup_font_mainfooterstandard',
 				'type' => 'select',
@@ -1197,7 +1163,6 @@ function setup_framework_options(){
 				),
 
 			array(
-				'title' => __('', 'redux-framework'), 
 				'subtitle' => __('Select a "Google Font" for footer menu text.', 'redux-framework'),
 				'id'=>'thinkup_font_mainfootergoogle',
 				'type' => 'select',
@@ -1213,7 +1178,6 @@ function setup_framework_options(){
 				),
 
 			array(
-				'title' => __('', 'redux-framework'), 
 				'subtitle' => __('Select a "Standard Font" for post footer text.', 'redux-framework'),
 				'id'=>'thinkup_font_postfooterstandard',
 				'type' => 'select',
@@ -1221,7 +1185,6 @@ function setup_framework_options(){
 				),
 
 			array(
-				'title' => __('', 'redux-framework'), 
 				'subtitle' => __('Select a "Google Font" for post footer text.', 'redux-framework'),
 				'id'=>'thinkup_font_postfootergoogle',
 				'type' => 'select',

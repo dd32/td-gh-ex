@@ -6,19 +6,19 @@
  */
 
 
-/* ----------------------------------------------------------------------------------
-	Flickr
----------------------------------------------------------------------------------- */
+//----------------------------------------------------------------------------------
+//	Flickr
+//----------------------------------------------------------------------------------
 
 class thinkup_widget_flickr extends WP_Widget {
 
-	/* Register widget description. */
+	// Register widget description.
 	function thinkup_widget_flickr() {
 		$widget_ops = array('classname' => 'thinkup_widget_flickr', 'description' => 'Import your Flickr photos for all to see!' );
 		$this->WP_Widget('thinkup_widget_flickr', 'ThinkUpThemes: Flickr', $widget_ops);
 	}
 
-	/* Add widget structure to Admin area. */
+	// Add widget structure to Admin area.
 	function form($instance) {
 		$default_entries = array( 'title' => '', 'flickrid' => '' , 'photocount' => '', 'layout' => '' );
 		$instance = wp_parse_args( (array) $instance, $default_entries );
@@ -43,7 +43,7 @@ class thinkup_widget_flickr extends WP_Widget {
 		</label></p>';
 	}
 
-	/* Assign variable values. */
+	// Assign variable values.
 	function update($new_instance, $old_instance) {
 		$instance               = $old_instance;
 		$instance['title']      = $new_instance['title'];
@@ -53,14 +53,14 @@ class thinkup_widget_flickr extends WP_Widget {
 		return $instance;
 	  }
 
-	/* Output widget to front-end. */
+	// Output widget to front-end.
 	function widget($args, $instance) {
 		extract($args, EXTR_SKIP);
 	 
 		echo $before_widget;
-		$title = empty($instance['title']) ? 'Flickr Feed' : apply_filters('widget_title', $instance['title']);
+		$title = empty($instance['title']) ? __( 'Flickr Feed', 'lan-thinkupthemes') : apply_filters('widget_title', $instance['title']);
 		if (!empty($title))
-		  echo $before_title . $title . $after_title;;
+		  echo $before_title . $title . $after_title;
 
 		$flickrphoto = wp_remote_get('http://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=66e5aec1e597a51e1453e58b41dc749a&user_id=' . $instance['flickrid'] . '&per_page=' . $instance['photocount'] . '&format=json');
 		$flickrphoto = json_decode( trim($flickrphoto['body'], 'jsonFlickrApi()') ); 
@@ -70,7 +70,7 @@ class thinkup_widget_flickr extends WP_Widget {
 		if($flickrphoto->photos->photo) {
 
 			foreach($flickrphoto->photos->photo as $flickrphoto) { $flickrphoto = (array) $flickrphoto;
-			$flickrphoto_url = 	'http://farm' . $flickrphoto['farm'] . '.static.flickr.com/' . $flickrphoto['server'] . '/' . $flickrphoto['id'] . '_' . $flickrphoto['secret'] . '_s' . '.jpg';
+			$flickrphoto_url = 	'http://farm' . $flickrphoto['farm'] . '.static.flickr.com/' . $flickrphoto['server'] . '/' . $flickrphoto['id'] . '_' . $flickrphoto['secret'] . 'lan-thinkupthemes' . '.jpg';
 			echo '<div class="flickr-photo">'.
 			     '<a href="http://www.flickr.com/photos/' . $instance['flickrid'] . '/' . $flickrphoto['id'] . '">',
 			     '<img src="' . $flickrphoto_url . '" alt="' . $flickrphoto['title'] . '" width="75" height="75" />',
@@ -79,7 +79,7 @@ class thinkup_widget_flickr extends WP_Widget {
 			     '</div>';
 			}
 		} else {
-			echo '<div class="error-icon">Oops! Therere&#39;s been an error!<br /> Check that the Flickr ID is correct at <a href="http://idgettr.com/">http://idgettr.com/</a>.</div>';
+			echo '<div class="error-icon">' . __( 'Oops! There&#39;s been an error!', 'lan-thinkupthemes') . '<br />' .  __( 'Check that the Flickr ID is correct at', 'lan-thinkupthemes') . '<a href="http://idgettr.com/">http://idgettr.com/</a>.</div>';
 			}
 			echo	'<div style="clear: both;"></div>';
 			echo	'</div>';

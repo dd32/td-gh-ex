@@ -6,19 +6,19 @@
  */
 
 
-/* ----------------------------------------------------------------------------------
-	Recent Comments
----------------------------------------------------------------------------------- */
+//----------------------------------------------------------------------------------
+//	Recent Comments
+//----------------------------------------------------------------------------------
 
 class thinkup_widget_recentcomments extends WP_Widget {
 
-	/* Register widget description. */
+	// Register widget description.
 	function thinkup_widget_recentcomments() {
 		$widget_ops = array('classname' => 'thinkup_widget_recentcomments', 'description' => 'Display your recent comments.' );
 		$this->WP_Widget('thinkup_widget_recentcomments', 'ThinkUpThemes: Recent Comments', $widget_ops);
 	}
 
-	/* Add widget structure to Admin area. */
+	// Add widget structure to Admin area.
 	function form($instance) {
 		$default_entries = array( 'title' => '', 'commentcount' => '5', 'excerptlength' => '30','commentdate' => '' , 'imagesize_width' => '50', 'imagesize_height' => '50' );
 		$instance = wp_parse_args( (array) $instance, $default_entries );
@@ -41,7 +41,7 @@ class thinkup_widget_recentcomments extends WP_Widget {
 		echo '<p><label for="' . $this->get_field_id('commentdate') . '">Show comment date?</label>&nbsp;<input id="' . $this->get_field_id('commentdate') . '" name="' . $this->get_field_name('commentdate') . '" type="checkbox" ' . $commentdate_check . ' style="margin-left: 86px;" /></p>';
 	}
 
-	/* Assign variable values. */
+	// Assign variable values.
 	function update($new_instance, $old_instance) {
 		$instance = $old_instance;
 		$instance['title']         = $new_instance['title'];
@@ -51,12 +51,12 @@ class thinkup_widget_recentcomments extends WP_Widget {
 		return $instance;
 	}
 
-	/* Output widget to front-end. */
+	// Output widget to front-end.
 	function widget($args, $instance) {
 		extract($args, EXTR_SKIP);
 
 		echo $before_widget;
-		$title = empty($instance['title']) ? 'Recent Comments' : apply_filters('widget_title', $instance['title']);
+		$title = empty($instance['title']) ? __( 'Recent Comments', 'lan-thinkupthemes' ) : apply_filters('widget_title', $instance['title']);
 		if (!empty($title))
 			echo $before_title . $title . $after_title;;
 
