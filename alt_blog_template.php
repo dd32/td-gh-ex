@@ -81,5 +81,9 @@ get_header(); ?>
         <?php get_sidebar(); ?>
 
     </div> <!-- end #content -->
+    
+    <?php if ( get_theme_mod('hostmarks_footer_widget') ) {
+		get_sidebar('footer');
+	} ?>
         
 <?php get_footer(); ?>

@@ -46,5 +46,12 @@ This theme is bundled with Modernizr
 =================================
 CHANGELOG
 =================================
+Version 1.0.1
+ * Added a theme customizer option to display the Footer widget section on all pages
+ * Removed the "Full-width, w/ footer widgets" page template
+ * Added a banner spot/section on top of the right sidebar, can be set through Appearance > Customize
+ * Some css fixes
+ * Updated screenshot and readme
+
 Version 1.0
  * First public release

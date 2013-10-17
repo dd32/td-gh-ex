@@ -246,6 +246,52 @@ if ( ! function_exists( 'hostmarks_theme_customizer' ) ) :
 			'priority' => 108,
 		) ) );
 		
+		/* display footer widget on all pages option */
+		$wp_customize->add_section( 'hostmarks_footer_widget_section' , array(
+			'title'       => __( 'Display Footer Widgets', 'hostmarks' ),
+			'priority'    => 32,
+			'description' => __( 'Option to show/hide the footer widgets on all pages.', 'hostmarks' ),
+		) );
+		
+		$wp_customize->add_setting( 'hostmarks_footer_widget' );
+		
+		$wp_customize->add_control('footer_widget', array(
+			'settings' => 'hostmarks_footer_widget',
+			'label' => __('Show the footer widget on all pages?', 'hostmarks'),
+			'section' => 'hostmarks_footer_widget_section',
+			'type' => 'checkbox',
+		));
+		
+		/* option for the banner section */
+		
+		class hostmarks_Customize_Textarea_Control extends WP_Customize_Control {
+			public $type = 'textarea';
+		 
+			public function render_content() {
+				?>
+				<label>
+				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+				<textarea rows="5" style="width:100%;" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
+				</label>
+				<?php
+			}
+		}
+		
+		$wp_customize->add_section( 'hostmarks_banner_section' , array(
+			'title'       => __( 'Sidebar Banner Code', 'hostmarks' ),
+			'priority'    => 32,
+			'description' => __( 'Enter the code for the sidebar banner.', 'hostmarks' ),
+		) );
+		
+		/* Sidebar Banner (max 300px wide)  */
+		$wp_customize->add_setting( 'hostmarks_banner_sidebar' );
+		
+		$wp_customize->add_control( new hostmarks_Customize_Textarea_Control( $wp_customize, 'hostmarks_banner_sidebar', array(
+			'label'    => __( 'Sidebar Banner (max 300px wide)', 'hostmarks' ),
+			'section'  => 'hostmarks_banner_section',
+			'settings' => 'hostmarks_banner_sidebar',
+		) ) );
+		
 	}
 endif;
 add_action('customize_register', 'hostmarks_theme_customizer');
@@ -257,7 +303,7 @@ if ( ! function_exists( 'hostmarks_apply_color' ) ) :
   function hostmarks_apply_color() {
 	 if ( get_theme_mod('hostmarks_header_bg') || get_theme_mod('hostmarks_alt_blog_intro') || get_theme_mod('hostmarks_post_title_color') || get_theme_mod('hostmarks_body_text_color') || get_theme_mod('hostmarks_divider_color') || get_theme_mod('hostmarks_comment_title') || get_theme_mod('hostmarks_widget_title_bg') || get_theme_mod('hostmarks_footer_bg') )  {
 	?>
-	<style id="newswire-color-settings">
+	<style id="hostmarks-color-settings">
 	<?php if ( get_theme_mod('hostmarks_header_bg') ) : ?>
 		header[role=banner] {
 			background-color: <?php echo get_theme_mod('hostmarks_header_bg'); ?>;

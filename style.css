@@ -4,7 +4,7 @@ Theme URI: http://hostmarks.com/theme/
 Author: Hostmarks.com
 Author URI: http://hostmarks.com/
 Description: Hostmarks is a very clean and simple blog theme. It features a clean layout with contemporary typography, and the ability to customize all the principle theme colors right from the customization menu. Of course it is fully responsive, supports custom menus and widgets and comes with an alternative blog page template as well as a plain full page template for static content.
-Version: 1.0
+Version: 1.0.1
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-menu, sticky-post, microformats, rtl-language-support, translation-ready, full-width-template, post-formats
@@ -661,7 +661,7 @@ header[role=banner] {
 		width: 96%;
 		margin: 0 auto;
 		padding: 0 2%;
-		padding-bottom: 1px;
+		padding-bottom: 4px;
 		max-width: 1044px; /* for ie8 & below */
 		max-width: 104.4rem;
 	}
@@ -673,10 +673,10 @@ header[role=banner] {
 
 	#site-heading {
 		width: 30%;
-		display: inline-block;
-		padding: 20px 0; 
-		padding: 2rem 0; /* for ie8 & below */
-		vertical-align: top;
+		float: left;
+		padding: 24px 0; 
+		padding: 2.4rem 0; /* for ie8 & below */
+		
 	}
 	
 	#site-title {
@@ -889,10 +889,10 @@ div.menu {
 			}
 
 nav[role=navigation] {
-	padding-top: 20px; 
-	padding-top: 2rem; /* for ie8 & below */
+	padding-top: 24px; 
+	padding-top: 2.4rem; /* for ie8 & below */
 	width: 69%;
-	display: inline-block;
+	float: right;
 	
 }
 	nav[role=navigation] div.menu { 
@@ -1404,7 +1404,8 @@ POSTS & CONTENT STYLES
 		article[id*=post-] footer a {}
 		
 		.more-link {
-			display: inline-block;
+			display: block;
+			width: 180px;
 			margin-top: 40px;
 			text-transform: uppercase;
 			text-decoration: none;
@@ -1709,7 +1710,13 @@ PAGE LINK STYLES
 /******************************************************************
 SIDEBARS & ASIDES
 ******************************************************************/
-
+#banner-sidebar {
+	margin: 0 0 60px 0; /* for ie8 & below */
+	margin: 0 0 6rem 0;
+}
+	#banner-sidebar img {
+		max-width: 100%;
+	}
 #sidebar {
 	float: right;
 	margin: 60px 0; /* for ie8 & below */ 
