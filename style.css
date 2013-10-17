@@ -3,8 +3,8 @@ Theme Name: Adamos
 Theme URI: http://www.templateexpress.com/adamos-theme/
 Author: Ossie Heffell
 Author URI: http://www.templateexpress.com/
-Description: adamos is a full-width, fully responsive and highly customizable WordPress Theme. Add your own logo, header, featured areas and much more.
-Version: 1.1
+Description: Adamos is a full-width, fully responsive and highly customizable WordPress Theme. Add and edit your own logo, header, featured slider, featured areas and much more.
+Version: 1.2
 License: GNU General Public License v2.0
 License URI: ​http://www.gnu.org/licenses/gpl-2.0.html
 Tags: light, white, one-column, two-columns, right-sidebar, flexible-width, custom-header, custom-menu, featured-images, flexible-header, microformats, post-formats, rtl-language-support, threaded-comments, translation-ready, theme-options, full-width-template, black
@@ -20,6 +20,12 @@ and Blueprint http://www.blueprintcss.org/
 /*
 adamos WordPress Theme, Copyright 2013 Ossie Heffell
 adamos Theme is distributed under the terms of the GNU GPL
+*/
+
+/*
+Adamos Theme based on Underscores (_s) Theme
+_s ("Underscores") WordPress Theme, Copyright 2012 Automattic, Inc.
+_s ("Underscores") WordPress Theme is distributed under the terms of the GNU GPL
 */
 
 /* =Reset
@@ -596,12 +602,11 @@ a:active {
 	position: relative;
 }
 .main-navigation a {
-	color: #CCC;
+	color: #FFF;
     display: block;
     font-size: 1.1rem;
 	font-size: 11px;
     font-weight: normal;
-
     margin-right: 1em;
     text-decoration: none;
 	text-transform: uppercase;

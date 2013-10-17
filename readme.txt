@@ -16,7 +16,7 @@ Homepage layout can be set by making a page and selecting "Custom Home Page" fro
 
 Adding images to slider
 -------------------------------------------
-A post category called "Featured" and with the slug "featured" will have to be added to your post categories. The slider will pick up the latest 3 posts from this category and the image if you have set a featured image. Image sizes should be at least 960px width but will look best at a 4:1 width-to-height ratio, and at least 500px tall.
+A post category called "Featured" and with the slug "featured" will have to be added to your post categories. The slider will pick up the latest 3 posts from this category and the image if you have set a featured image. Image sizes should be at least 960px width but will look best at a 4:1 width-to-height ratio, and at least 500px height.
 
 
 Font
