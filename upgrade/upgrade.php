@@ -52,6 +52,12 @@ function vantage_premium_upgrade_content($content){
 	);
 
 	$content['features'][] = array(
+		'heading' => __("Enhanced Social Media Widget", 'vantage'),
+		'content' => __("Additional social networks and sizes (small and large) for the social media widget. Networks include LinkedIn, Dribbble, Flickr, Instagram, Pinterest, Skype, YouTube, GitHub and Vimeo. With more coming as they're requested.", 'vantage'),
+		'image' => get_template_directory_uri().'/upgrade/teasers/social-widget.png',
+	);
+
+	$content['features'][] = array(
 		'heading' => __("Ajax Comments", 'vantage'),
 		'content' => __("Want to keep the conversation flowing? Ajax comments means your visitors can comment without reloading your page. So commenting wont interrupt a video or lose their position in one of your galleries.", 'vantage'),
 	);

@@ -27,8 +27,9 @@ input,
 select,
 textarea {
 	color: #333;
-	font-family: "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-	line-height: 1.5;
+	font-family: Arial;
+	font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	line-height: 1.5em;
 	font-size: 13px;
 	word-wrap: break-word;
 }
@@ -364,13 +365,15 @@ body {
 
 header#masthead {
 	background: #fcfcfc;
-	padding: 25px 35px;
+	padding: 0 35px 0 35px;
 	.box-sizing(border-box);
 
 	hgroup {
-		margin-bottom: 40px;
-		margin-top: 20px;
+		.clearfix();
+
 		position: relative;
+		padding-top: 45px;
+		padding-bottom: 45px;
 
 		a {
 			color: inherit;
@@ -384,9 +387,12 @@ header#masthead {
 			line-height: 1em;
 		}
 
-		img {
-			max-width: 100%;
-			height: auto;
+		.logo {
+			display: block;
+			float: left;
+			img {
+				display: block;
+			}
 		}
 
 		.support-text {
@@ -399,6 +405,52 @@ header#masthead {
 			font-style: italic;
 			max-width: 50%;
 		}
+
+		#header-sidebar {
+			padding-top: 15px;
+			padding-bottom: 15px;
+			height: 100%;
+			position: absolute;
+			right: 0;
+			top: 0;
+
+			.box-sizing(border-box);
+
+			/* Center align layout. Based on old CSS3 spec, so update when new spec is available */
+
+			display:-ms-flexbox;
+			-ms-flex-pack:center;
+			-ms-flex-align:center;
+
+			display:-moz-box;
+			-moz-box-pack:center;
+			-moz-box-align:center;
+
+			display:-webkit-box;
+			-webkit-box-pack:center;
+			-webkit-box-align:center;
+
+			display:box;
+			box-pack:center;
+			box-align:center;
+
+
+			aside.widget {
+				margin-bottom: 0;
+			}
+
+			.widget-title {
+				font-weight: bold;
+				margin-bottom: 5px;
+			}
+		}
+	}
+}
+
+body.ie-8,body.ie-9 {
+	header#masthead hgroup #header-sidebar {
+		padding-top: 40px;
+		padding-bottom: 40px;
 	}
 }
 
@@ -436,6 +488,7 @@ body.no-sidebar #primary {
 
 #main-slider {
 	line-height: 0;
+	background: #EEEEEE;
 
 	.flexslider {
 		margin-bottom: 0;
@@ -452,11 +505,29 @@ body.no-sidebar #primary {
 		border: 3px solid white;
 		font-weight: bold;
 	}
+
+	.metaslider, #metaslider-demo {
+		margin:  0 auto;
+	}
 }
 
 
 /* =Responsive Layout
 ----------------------------------------------- */
+
+@media (max-width:1080px) {
+	body.responsive {
+		header#masthead {
+			hgroup {
+				.logo img {
+					/* Scale down the logo if necessary */
+					max-width: 100%;
+					height: auto;
+				}
+			}
+		}
+	}
+}
 
 /* We consider 680px to be mobile resolution */
 @media (max-width:680px) {
@@ -466,12 +537,32 @@ body.no-sidebar #primary {
 			hgroup {
 				text-align: center;
 
-				.support-text {
+				.logo {
+					float:none;
+
+					img {
+						margin: 0 auto;
+					}
+				}
+
+				.support-text, #header-sidebar {
 					position: static;
 					display: block;
 					margin-top: 30px;
 					max-width: 100%;
+
+					img {
+						max-width: 100%;
+						height: auto;
+					}
 				}
+
+				#header-sidebar {
+					padding-top: 0 !important;
+					padding-bottom: 0 !important;
+					height: auto;
+				}
+
 			}
 		}
 
@@ -532,7 +623,7 @@ body.responsive {
 ----------------------------------------------- */
 
 .main-navigation {
-	margin: 0 -35px -25px -35px;
+	margin: 0 -35px;
 	background: #343538;
 	font-size: 13px;
 
@@ -797,6 +888,7 @@ article.page{
 	}
 
 	.entry-header {
+
 		.entry-thumbnail {
 
 			img {
@@ -896,6 +988,28 @@ article.page{
 			color: #777777;
 		}
 	}
+
+	&.post-with-thumbnail-icon {
+
+		.entry-thumbnail {
+			margin-top: 0.2em;
+			float: left;
+			clear:none;
+			width: 11.68%; /* 90px in standard width */
+
+			img {
+				width: 100%;
+				height: auto;
+				.rounded(3px);
+			}
+		}
+
+		.entry-main {
+			width: 650px;
+			width: 84.41%; /* 650px in standard width */
+			float: right;
+		}
+	}
 }
 
 .post-navigation,
@@ -913,6 +1027,7 @@ article.page{
 		font-size: 11px;
 		font-weight: bold;
 		color: #646464;
+		display: inline-block;
 
 		.meta-nav {
 			display: inline-block;
@@ -937,6 +1052,10 @@ article.page{
 			margin-left: 7px;
 		}
 	}
+}
+
+.single-nav-wrapper {
+	overflow: hidden;
 }
 
 /* Reset the navigation */
@@ -1245,6 +1364,10 @@ article.page{
 
 .site-content {
 
+	.nav-previous, .nav-next {
+		white-space: nowrap;
+	}
+
 	.nav-previous {
 		float: left;
 		width: 50%;
@@ -1256,6 +1379,19 @@ article.page{
 		width: 50%;
 	}
 
+}
+
+@media (max-width:480px) {
+	body.responsive {
+		.site-content{
+			.nav-previous, .nav-next {
+				float: none;
+				width: 100%;
+				margin-bottom: 20px;
+				text-align: center;
+			}
+		}
+	}
 }
 
 /* =Comments

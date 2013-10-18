@@ -83,6 +83,14 @@ function vantage_theme_settings(){
 		'description' => __('Display a scroll-to-top button when a user scrolls down.', 'vantage')
 	));
 
+	siteorigin_settings_add_field( 'navigation', 'post_nav', 'checkbox', __('Post Navigation', 'vantage'), array(
+		'description' => __('Display next/previous post navigation.', 'vantage')
+	) );
+
+	siteorigin_settings_add_field( 'navigation', 'home_icon', 'checkbox', __('Home Page Icon', 'vantage'), array(
+		'description' => __('Display home icon for home page menu links.', 'vantage')
+	) );
+
 	/**
 	 * Home Page
 	 */
@@ -106,6 +114,19 @@ function vantage_theme_settings(){
 	 * Blog Settings
 	 */
 
+	siteorigin_settings_add_field('blog', 'archive_layout', 'select', __('Blog Archive Layout', 'vantage'), array(
+		'options' => vantage_blog_layout_options(),
+		'description' => __('Show the post author in blog archive pages.', 'vantage')
+	) );
+
+	siteorigin_settings_add_field('blog', 'archive_content', 'select', __('Post Content', 'vantage'), array(
+		'options' => array(
+			'full' => __('Full Post', 'vantage'),
+			'excerpt' => __('Post Excerpt', 'vantage'),
+		),
+		'description' => __('Choose how to display posts on post archive when using default blog layout.', 'vantage')
+	));
+
 	siteorigin_settings_add_field('blog', 'post_author', 'checkbox', __('Post Author', 'vantage'), array(
 		'label' => __('Display', 'vantage'),
 		'description' => __('Show the post author in blog archive pages.', 'vantage')
@@ -115,6 +136,19 @@ function vantage_theme_settings(){
 		'label' => __('Display', 'vantage'),
 		'description' => __('Show the post date.', 'vantage')
 	));
+
+	siteorigin_settings_add_field('blog', 'featured_image', 'checkbox', __('Featured Image', 'vantage'), array(
+		'label' => __('Display', 'vantage'),
+		'description' => __('Show the featured image on a post single page.', 'vantage')
+	) );
+
+	siteorigin_settings_add_field('blog', 'featured_image_type', 'select', __('Featured Image Type', 'vantage'), array(
+		'options' => array(
+			'large' => __('Large', 'vantage'),
+			'icon' => __('Small Icon', 'vantage'),
+		),
+		'description' => __('Show the featured image on a post single page.', 'vantage')
+	) );
 
 	/**
 	 * Social Settings
@@ -156,8 +190,8 @@ function vantage_theme_setting_defaults($defaults){
 	$defaults['logo_image'] = array(
 		get_template_directory_uri().'/images/logo.png', 40, 181
 	);
-	$defaults['logo_image_retina'] = false;
 
+	$defaults['logo_image_retina'] = false;
 	$defaults['logo_header_text'] = __('Call me! Maybe?', 'vantage');
 
 	$defaults['layout_responsive'] = true;
@@ -168,12 +202,18 @@ function vantage_theme_setting_defaults($defaults){
 	$defaults['navigation_use_sticky_menu'] = true;
 	$defaults['navigation_menu_search'] = true;
 	$defaults['navigation_display_scroll_to_top'] = true;
+	$defaults['navigation_post_nav'] = true;
+	$defaults['navigation_home_icon'] = false;
 
 	$defaults['home_slider'] = 'demo';
 	$defaults['home_slider_stretch'] = true;
 
+	$defaults['blog_archive_layout'] = 'blog';
+	$defaults['blog_archive_content'] = 'full';
 	$defaults['blog_post_author'] = true;
 	$defaults['blog_post_date'] = true;
+	$defaults['blog_featured_image'] = true;
+	$defaults['blog_featured_image_type'] = 'large';
 
 	$defaults['social_ajax_comments'] = true;
 	$defaults['social_share_post'] = true;
@@ -184,6 +224,27 @@ function vantage_theme_setting_defaults($defaults){
 	return $defaults;
 }
 add_filter('siteorigin_theme_default_settings', 'vantage_theme_setting_defaults');
+
+function vantage_blog_layout_options(){
+	$layouts = array();
+	foreach( glob(get_template_directory().'/loops/loop-*.php') as $template ) {
+		$headers = get_file_data( $template, array(
+			'loop_name' => 'Loop Name',
+		) );
+
+		preg_match('/loop\-(.*?)\.php/', basename($template), $matches);
+		if(!empty($matches[1])) {
+			$layouts[$matches[1]] = $headers['loop_name'];
+		}
+	}
+
+	static $exclude = array(
+		'carousel', 'slider'
+	);
+
+	foreach($exclude as $e) unset($layouts[$e]);
+	return $layouts;
+}
 
 function vantage_feature_suggestion_url($url){
 	return 'http://sorig.in/vantage-suggestions';
