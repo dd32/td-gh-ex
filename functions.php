@@ -119,6 +119,13 @@
  *
  *
  *
+ * @since 1.138
+ */
+	do_action( 'raindrops_include_after' );
+/**
+ *
+ *
+ *
  *
  *
  */
@@ -1193,12 +1200,17 @@
  *
  *
  */
-    if ( ! function_exists( 'raindrops_edit_help' ) and RAINDROPS_USE_AUTO_COLOR == true ) {
+    if ( ! function_exists( 'raindrops_edit_help' ) ) {
 
         function raindrops_edit_help( $text, $force = false ) {
 
             global $post_type_object;
             global $title;
+			
+			if ( RAINDROPS_USE_AUTO_COLOR !== true and $force !== true ) {
+			
+				return $text;	
+			}
 
             if (( isset( $post_type_object ) and ( $title == $post_type_object->labels->add_new_item or $title == $post_type_object->labels->edit_item ) or $force == true ) ) {
 
@@ -3995,7 +4007,7 @@ span#site-title,
                 $size = $_SERVER['HTTP_X_JPHONE_DISPLAY'];
             }
 
-            $size = split( '[x,*]', $size );
+            $size = preg_split( '[x,*]', $size );
 
             if ( $raindrops_fallback_human_interface_show == true ) {
                 return true;
@@ -6216,4 +6228,11 @@ span#site-title,
 			return $color;
 		}
 	}
+/**
+ *
+ *
+ *
+ * @since 1.138
+ */	
+	do_action( 'raindrops_last' );
 ?>
