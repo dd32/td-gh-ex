@@ -845,6 +845,20 @@ function adventure_customize($wp_customize) {
 			'on'             => 'On',
 			'off'            => 'Off', ), ));
 
+	// Adjust the position of the sidebar to be on the left or the right
+	$wp_customize->add_setting( 'sidebar_position_setting', array(
+		'default'           => 'left',
+		'control'           => 'radio',));
+
+	$wp_customize->add_control( 'sidebar_position_control', array(
+		'label'				=> 'Sidebar Position',
+		'section'			=> 'sidebar_section',
+		'settings'			=> 'sidebar_position_setting',
+		'type'				=> 'radio',
+		'choices'			=> array(
+			'right'          => 'Right',
+			'left'            => 'Left', ), ));
+
 	// Change the color of the Sidebar Background
 	$wp_customize->add_setting( 'sidebarcolor_setting', array(
 		'default'           => '#000000',
@@ -1139,7 +1153,7 @@ function adventure_theme_options_do_page() { ?>
         </tr>
         <tr>
         <th>2.6</th>
-        <td class="justify">Currently writing the code to move the sidebar to the left or the right.</td>
+        <td class="justify">Code to move the sidebar to the left or the right.</td>
         </tr>
         <tr>
         <th>2.55</th>
@@ -1182,7 +1196,11 @@ function adventure_theme_options_do_page() { ?>
         <th class="justify"></th>
         </tr>
         <tr>
-        <th>6</th>
+        <th>8</th>
+        <td class="justify">Fixed an issue where the theme didn't update and added the option to move the sidebar to the left and content to the right.</td>
+        </tr>
+        <tr>
+        <th>7</th>
         <td class="justify">Same as "Adventure 2.5".</td>
         </tr>
         <tr>

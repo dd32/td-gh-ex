@@ -13,7 +13,7 @@
 
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php if (get_theme_mod('sidebar_position_setting') != 'left') : body_class(); else : body_class('left_sidebar'); endif; ?>>
 
 <!-- Setting up The Layout of the Webpage -->
 <ul id="spacing"></ul>
