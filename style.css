@@ -6,7 +6,7 @@ Author URI: http://crayonux.com/
 
 Description: WP FlatThirteen is a flat and minimal design TwentyThirteen child theme powered by TwitterBootstrap 3.0. It has unique designed for SEO optimization with faster page loading.  The child theme helps Bloggers to make unique and elegant look blogs. The theme can be used for any kind of blog or news websites. The child theme only works with TwentyThirteen  parent theme. Due to bootstrap power, admin can add a lot of creative works  to its content. This is fully responsive theme, works perfectly with any mobile devices or tablet.
 
-Version: 1.1
+Version: 1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, light, green,  three-columns, two-columns, right-sidebar, flexible-width, custom-menu, featured-images
@@ -398,7 +398,26 @@ hr {
 	margin: 0 0 24px;
 }
 
-
+#tertiary {
+	overflow: hidden;
+}
+.format-aside {
+	box-shadow : none !important;
+}
+.entry-content a, .entry-meta a{
+	color: #bc360a !important;
+}
+.admin-bar .navbar-fixed-top {
+	margin-top: 28px;
+}
+ 
+ .category-post-formats {
+	background: none !important;
+ }
+  
+ .category-post-formats h3.entry-title {
+	font-size: 18px;
+ }
 /**
  * 2.0 Repeatable Patterns
  * ----------------------------------------------------------------------------
@@ -1623,14 +1642,21 @@ footer.entry-meta {
 }
 
 .format-video .entry-title {
-	font-size: 50px;
+	font-size: 30px;
 	font-weight: 400;
 }
 
 .format-video .entry-meta {
 	color: #220e10;
 }
-
+.entry-title a {
+	-ms-word-break: break-all;
+     word-break: break-all;
+     word-break: break-word;
+	 -webkit-hyphens: auto;
+   -moz-hyphens: auto;
+        hyphens: auto;
+}
 
 /**
  * 5.6 Attachments

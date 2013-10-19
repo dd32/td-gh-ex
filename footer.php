@@ -7,7 +7,7 @@
  *
  * @package WordPress
  * @subpackage Flat_Thirteen
- * @since WP FlatThirteen 1.1
+ * @since WP FlatThirteen 1.2
  */
 ?>
 
@@ -15,14 +15,9 @@
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<?php get_sidebar( 'main' ); ?>
 			<div class="site-info">
-				<p>Proudly powered by<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform"> WordPress </a> | Designed by <a href="http://crayonux.com/" title="Basanta Moharana, User Experience designer, Wordpress developer"> Crayonux </a></p>
+				<p>Proudly powered by<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform"> WordPress </a> | Child Theme by:<a href="http://crayonux.com/" rel="designer"> Crayonux </a></p>
 	    	</div><!-- .site-info -->
 		</footer><!-- #colophon -->
-	</div><!-- #page -->
-
-	<?php wp_footer(); ?>	
-	<script type="text/javascript">
-	<?php echo of_get_option('analytics_textarea'); ?>
-</script>	
+	<?php wp_footer(); ?>		
 </body>
 </html>

@@ -4,7 +4,7 @@
  *
  * @package WordPress
  * @subpackage Flat_Thirteen
- * @since WP FlatThirteen 1.1
+ * @since WP FlatThirteen 1.2
  */
 ?>
 
@@ -26,7 +26,7 @@
 	
 	<div class="entry-meta">
 	<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
-	<?php echo get_avatar( get_the_author_id() ); ?>
+	<?php echo get_avatar( get_the_author_meta('ID') ); ?>
 </a>
 <span><?php the_author_posts_link(); ?></span>
 			<?php twentythirteen_entry_meta(); ?>

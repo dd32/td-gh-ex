@@ -4,7 +4,7 @@
  *
  * @package WordPress
  * @subpackage Flat_Thirteen
- * @since WP FlatThirteen 1.1
+ * @since WP FlatThirteen 1.2
  */
 
 get_header(); ?>

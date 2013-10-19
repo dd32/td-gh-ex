@@ -101,20 +101,6 @@ function optionsframework_options() {
 	$imagepath =  get_template_directory_uri() . '/images/';
 
 	$options = array();
-
-	$options[] = array(
-		'name' => __('Basic Settings', 'options_framework_theme'),
-		'type' => 'heading');
-
-	
-
-	$options[] = array(
-		'name' => __('Google analytics setting', 'options_framework_theme'),
-		'desc' => __('Please paste your Google tracking code here.', 'options_framework_theme'),
-		'id' => 'analytics_textarea',
-		'std' => 'Code',
-		'type' => 'textarea');
-
 	$options[] = array(
 		'name' => __('Logo Setting', 'options_framework_theme'),
 		'type' => 'heading');

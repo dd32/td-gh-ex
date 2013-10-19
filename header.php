@@ -6,7 +6,7 @@
  *
  * @package WordPress
  * @subpackage Flat_Thirteen
- * @since WP FlatThirteen 1.1
+ * @since WP FlatThirteen 1.2
  */
 ?><!DOCTYPE html>
 <!--[if IE 7]>
@@ -28,16 +28,10 @@
 	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/html5shiv.js" type="text/javascript"></script>
 	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/respond.min.js" type="text/javascript"></script>
 	<![endif]-->
-	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/bootstrap.js" type="text/javascript"></script>
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-	<?php if ( get_theme_mod( 'flatthirteen_site_format' ) != 1 ) { ?>
-        <div id="page" class="hfeed site-boxed">
-    <?php } else { ?>
-        <div id="page" class="hfeed site">
-    <?php } ?>
 		<header id="masthead" class="site-header" role="banner">
 		<div id="navbar" class="navbar navbar-fixed-top">
 			<div class="navbar-header">				
