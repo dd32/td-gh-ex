@@ -39,7 +39,7 @@ function busiprof_head( $title, $sep ) {
 
 	// Add a page number if necessary.
 	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( _e( 'Page %s', 'busi_prof' ), max( $paged, $page ) );
+		$title = "$title $sep " ;
 
 	return $title;
 }

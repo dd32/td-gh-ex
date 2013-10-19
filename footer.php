@@ -81,7 +81,7 @@
 				<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'busi_prof' ) ); ?>"><?php _e('WordPress', 'busi_prof'); ?></a>
 				
 				<?php bloginfo(); ?> <?php echo date( 'Y' ); ?>. <?php _e( 'Designed by', 'busi_prof' ); ?> 
-				<a href="<?php echo esc_url( __( 'http://www.webriti.com/','busi_prof' ) ); ?>"><?php _e( 'Webriti &copy;', 'busi_prof' ); ?></a>
+				<a href="<?php echo esc_url( __( 'http://www.webriti.com/','busi_prof' ) ); ?>"><?php _e( 'Webriti ', 'busi_prof' ); ?></a>
 				<?php _e( 'All Rights Reserved.', 'busi_prof' ); ?>
 				</div>
 				</div>

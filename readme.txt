@@ -59,7 +59,11 @@ Support
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
-
+@Version 1.0.1
+1. Copyright sign removed from hyperlink.
+2. GPLv3 added in the theme.
+3. Comments and reply width set to 90% to maintain proper layout.
+4. Title bug fixed.
 @Version 1.0
 released
 
