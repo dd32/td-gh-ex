@@ -4,9 +4,8 @@
  *
  * Displays all of the <head> section and everything up till <div id="maincontainer">
  *
- * @package WordPress
  * @subpackage Flat_Thirteen
- * @since WP FlatThirteen 1.2
+ * @since WP FlatThirteen 1.3
  */
 ?><!DOCTYPE html>
 <!--[if IE 7]>

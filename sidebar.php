@@ -4,9 +4,8 @@
  *
  * If no active widgets in this sidebar, it will be hidden completely.
  *
- * @package WordPress
  * @subpackage Flat_Thirteen
- * @since WP FlatThirteen 1.2
+ * @since WP FlatThirteen 1.3
  */
 
 if ( is_active_sidebar( 'sidebar-2' ) ) : ?>

@@ -6,9 +6,8 @@
  * Please note that this is the WordPress construct of pages and that other
  * 'pages' on your WordPress site will use a different template.
  *
- * @package WordPress
  * @subpackage Flat_Thirteen
- * @since WP FlatThirteen 1.2
+ * @since WP FlatThirteen 1.3
  */
 
 get_header(); ?>
@@ -40,11 +39,12 @@ get_header(); ?>
 					</footer><!-- .entry-meta -->
 				</article><!-- #post -->
 
-				
+			<?php comments_template(); ?>
 			<?php endwhile; ?>
 
 		</div><!-- #content -->
+		
 	</div><!-- #primary -->
-
+	
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -5,9 +5,8 @@
  * Contains footer content and the closing of the
  * #main and #page div elements.
  *
- * @package WordPress
  * @subpackage Flat_Thirteen
- * @since WP FlatThirteen 1.2
+ * @since WP FlatThirteen 1.3
  */
 ?>
 

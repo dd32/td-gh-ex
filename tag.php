@@ -6,9 +6,8 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package WordPress
  * @subpackage Flat_Thirteen
- * @since WP FlatThirteen 1.2
+ * @since WP FlatThirteen 1.3
  */
 
 get_header(); ?>

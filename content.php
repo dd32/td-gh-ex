@@ -2,9 +2,8 @@
 /**
  * The default template for displaying content. Used for both single and index/archive/search.
  *
- * @package WordPress
  * @subpackage Flat_Thirteen
- * @since WP FlatThirteen 1.2
+ * @since WP FlatThirteen 1.3
  */
 ?>
 

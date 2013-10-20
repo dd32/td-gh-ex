@@ -1,4 +1,4 @@
-------- WP FlatThirteen 1.2 -------
+------- WP FlatThirteen 1.3 -------
 
 -- Basanta Moharana, http://crayonux.com/
 
@@ -11,7 +11,7 @@ Bootstrap - Copyright 2012 Twitter, Inc
 http://www.apache.org/licenses/LICENSE-2.0
 Licensed under the Apache License v2.0 
 
--------* ABOUT WP FlatThirteen 1.2 *-------
+-------* ABOUT WP FlatThirteen 1.3 *-------
 
 Requires at least:	3.6.0
 Tested up to:		3.6.1
