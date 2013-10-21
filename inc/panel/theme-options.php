@@ -352,7 +352,11 @@ function catcheverest_theme_options_do_page() {
                                             <input type="radio" name="catcheverest_options[sidebar_layout]" id="no-sidebar" <?php checked($options['sidebar_layout'], 'no-sidebar') ?> value="no-sidebar"  />
                                             <?php _e( 'No Sidebar', 'catcheverest' ); ?>
                                             </label>
-                                                                                  
+                                                      
+                                            <label title="no-sidebar-full-width" class="box"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/no-sidebar-fullwidth.png" alt="No Sidebar, Full Width" /><br />
+                                            <input type="radio" name="catcheverest_options[sidebar_layout]" id="no-sidebar-full-width" <?php checked($options['sidebar_layout'], 'no-sidebar-full-width'); ?> value="no-sidebar-full-width"  />
+                                            <?php _e( 'No Sidebar, Full Width', 'catcheverest' ); ?>
+                                            </label>                                                                                  
                                         </td>
                                     </tr>  
                                     <tr>

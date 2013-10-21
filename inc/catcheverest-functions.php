@@ -304,6 +304,9 @@ function catcheverest_body_classes( $classes ) {
 	if( ( $layout == 'no-sidebar' || ( $layout=='default' && $themeoption_layout == 'no-sidebar') ) ) {
 		$classes[] = 'no-sidebar';
 	}
+	elseif( ( $layout == 'no-sidebar-full-width' || ( $layout=='default' && $themeoption_layout == 'no-sidebar-full-width') ) ) {
+		$classes[] = 'no-sidebar-full-width';
+	}		
 	elseif( ( $layout == 'left-sidebar' || ( $layout=='default' && $themeoption_layout == 'left-sidebar') ) ){
 		$classes[] = 'left-sidebar';
 	}

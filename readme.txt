@@ -147,3 +147,6 @@ version 1.2.3
 
 version 1.3
 * Added Catch Everest: Advertisement widget to add google ads and custom image ads
+
+version 1.3.1
+* Added No Sidebar Full Width Content Layout
