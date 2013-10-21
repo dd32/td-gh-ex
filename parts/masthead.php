@@ -1,8 +1,3 @@
-<?php
-/**
- * Part Name: Default Masthead
- */
-?>
 <header id="masthead" class="site-header" role="banner">
 
 	<hgroup class="full-container">
@@ -11,12 +6,7 @@
 		<?php if( is_active_sidebar('sidebar-header') ) : ?>
 
 			<div id="header-sidebar">
-				<?php
-				// Display the header area sidebar, and tell mobile navigation that we can use menus in here
-				add_filter('siteorigin_mobilenav_is_valid', '__return_true');
-				dynamic_sidebar( 'sidebar-header' );
-				remove_filter('siteorigin_mobilenav_is_valid', '__return_true');
-				?>
+				<?php dynamic_sidebar( 'sidebar-header' ); ?>
 			</div>
 
 		<?php else : ?>
@@ -26,9 +16,21 @@
 			</div>
 
 		<?php endif; ?>
+	</hgroup>
 
-	</hgroup><!-- hgroup.full-container -->
+	<nav role="navigation" class="site-navigation main-navigation primary <?php if( siteorigin_setting('navigation_use_sticky_menu') ) echo 'use-sticky-menu' ?>">
+		<div class="full-container">
+			<?php if( siteorigin_setting('navigation_menu_search') ) : ?>
+				<div id="search-icon">
+					<div id="search-icon-icon"><div class="icon"></div></div>
+					<form method="get" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
+						<input type="text" class="field" name="s" value="<?php echo esc_attr( get_search_query() ); ?>" />
+					</form>
+				</div>
+			<?php endif; ?>
 
-	<?php get_template_part( 'parts/menu', apply_filters( 'vantage_menu_type', siteorigin_setting( 'layout_menu' ) ) ); ?>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'link_before' => '<span class="icon"></span>' ) ); ?>
+		</div>
+	</nav><!-- .site-navigation .main-navigation -->
 
 </header><!-- #masthead .site-header -->

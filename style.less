@@ -3,11 +3,11 @@ Theme Name: Vantage
 Author: SiteOrigin
 Author URI: http://siteorigin.com/
 Theme URI: http://siteorigin.com/theme/vantage/
-Description: Vantage is a flexible multipurpose theme. It's strength lies in its tight integration with some powerful plugins like Page Builder for responsive page layouts, MetaSlider for big beautiful sliders and WooCommerce to help you sell online. Vantage is fully responsive and retina ready. Use it to start a business site, portfolio or online store. We offer free and premium support on our support <a href="http://siteorigin.com/thread/">forums</a> (http://siteorigin.com/thread/).
+Description: Vantage is a flexible multipurpose theme. It's strength lies in its tight integration with some powerful plugins like Page Builder for responsive page layouts, MetaSlider for big beautiful sliders and WooCommerce to help you sell online. Vantage is fully responsive and retina ready. Use it to start a business site, portfolio or online store.
 Version: trunk
 License: GNU General Public License 2.0
 License URI: license.txt
-Tags: responsive-layout, fluid-layout, custom-background, custom-menu, featured-images, theme-options, threaded-comments, translation-ready, black, white, light, one-column, two-columns, full-width-template
+Tags: flexible-width, custom-background, custom-menu, featured-images, theme-options, threaded-comments, translation-ready, black, white, light, one-column, two-columns, full-width-template
 
 spritemapper.sprite_dirs = images/sprites
 spritemapper.output_css = style.sprites.css
@@ -376,6 +376,7 @@ header#masthead {
 		padding-bottom: 45px;
 
 		a {
+			color: inherit;
 			text-decoration: none;
 		}
 
@@ -389,10 +390,8 @@ header#masthead {
 		.logo {
 			display: block;
 			float: left;
-			max-width: 100%;
-
 			img {
-				vertical-align:bottom;
+				display: block;
 			}
 		}
 
@@ -417,33 +416,27 @@ header#masthead {
 
 			.box-sizing(border-box);
 
-			/* Center align layout. Based on old CSS3 spec, so update when new spec is available and supported */
+			/* Center align layout. Based on old CSS3 spec, so update when new spec is available */
 
+			display:-ms-flexbox;
 			-ms-flex-pack:center;
 			-ms-flex-align:center;
-			display:-ms-flexbox;
 
+			display:-moz-box;
 			-moz-box-pack:center;
 			-moz-box-align:center;
-			display:-moz-box;
 
+			display:-webkit-box;
 			-webkit-box-pack:center;
 			-webkit-box-align:center;
-			display:-webkit-box;
 
 			display:box;
 			box-pack:center;
 			box-align:center;
 
+
 			aside.widget {
 				margin-bottom: 0;
-				float: left;
-				position: relative;
-				margin-right: 25px;
-
-				&:last-child {
-					margin-right: 0;
-				}
 			}
 
 			.widget-title {
@@ -452,35 +445,12 @@ header#masthead {
 			}
 		}
 	}
-
-	&.masthead-logo-in-menu {
-		.logo {
-			float: left;
-			padding: 12px 0;
-			margin-right: 15px;
-
-			> * {
-				display: block;
-			}
-
-			> img {
-				max-height: 35px;
-				width: auto;
-			}
-		}
-	}
-}
-
-.layout-boxed header#masthead.masthead-logo-in-menu .logo {
-	margin-left: 25px;
 }
 
 body.ie-8,body.ie-9 {
-	header#masthead hgroup {
-		#header-sidebar {
-			padding-top: 40px;
-			padding-bottom: 40px;
-		}
+	header#masthead hgroup #header-sidebar {
+		padding-top: 40px;
+		padding-bottom: 40px;
 	}
 }
 
@@ -555,29 +525,6 @@ body.no-sidebar #primary {
 					height: auto;
 				}
 			}
-
-			&.masthead-logo-in-menu {
-				.logo {
-					margin-left: 20px;
-				}
-
-				.main-navigation .menu-mobilenav-container ul {
-					margin-right: 0;
-					li {
-						float: right;
-
-						a {
-							padding-left: 20px;
-							padding-right: 20px;
-						}
-
-					}
-				}
-
-				#search-icon-icon {
-					display: none;
-				}
-			}
 		}
 	}
 }
@@ -595,8 +542,6 @@ body.no-sidebar #primary {
 
 					img {
 						margin: 0 auto;
-						padding-top: 0px !important;
-						padding-bottom: 0px !important;
 					}
 				}
 
@@ -616,12 +561,6 @@ body.no-sidebar #primary {
 					padding-top: 0 !important;
 					padding-bottom: 0 !important;
 					height: auto;
-
-					.widget{
-						display: block;
-						margin: 0 auto;
-						float: none;
-					}
 				}
 
 			}
@@ -689,19 +628,6 @@ body.responsive {
 	font-size: 13px;
 	position: relative;
 
-	/* Font awesome icons */
-	[class^="icon-"] {
-		display: inline-block;
-		margin-right: 15px;
-		font-size: 16px;
-		line-height: 0.5em;
-		color: #CCCCCC;
-	}
-
-	a:hover [class^="icon-"] {
-		color: #FFFFFF;
-	}
-
 	ul {
 		list-style: none;
 		margin: 0;
@@ -730,10 +656,13 @@ body.responsive {
 
 		/* Second level menu items */
 		ul {
+			.transition(0.35s);
 			.box-shadow(~"0 1px 2px rgba(0,0,0,0.15)");
 
 			background: #464646;
-			display: none;
+			visibility: hidden;
+            opacity:0;
+			pointer-events: none;
 
 			position: absolute;
 			top: 100%;
@@ -766,7 +695,9 @@ body.responsive {
 
 		li:hover {
 			> ul {
-				display: block;
+				visibility: visible !important;
+				opacity:1 !important;
+				pointer-events: auto !important;
 			}
 		}
 	}
@@ -783,11 +714,25 @@ body.responsive {
 	&.sticky {
 		.box-shadow(~"0 2px 1px rgba(0,0,0,0.15)");
 	}
+
+	/* Font awesome icons */
+	[class^="icon-"] {
+		display: inline-block;
+		margin-right: 15px;
+		font-size: 16px;
+		line-height: 0.5em;
+		color: #CCCCCC;
+	}
+
+	a:hover [class^="icon-"] {
+		color: #FFFFFF;
+	}
 }
 
 body.has-menu-search .main-navigation ul {
 	margin-right: 59px;
 }
+
 
 /* Handle the navigation slightly differently on mobile devices */
 
@@ -800,29 +745,17 @@ body.mobile-device {
 			}
 		}
 
-		li:hover > ul {
+		li:hover ul {
 			display: block;
 		}
 	}
+
 }
 
 .mobile-nav-frame {
 	[class^="icon-"] {
-		display: inline-block;
 		margin-right: 10px;
-		min-width: 1em;
 	}
-}
-
-.mobile-nav-icon {
-	font-family: 'FontAwesome';
-	display: inline-block;
-	margin-right: 10px;
-}
-
-.mobile-nav-icon:before {
-	font-size: 14px;
-	content: "\f00b";
 }
 
 #search-icon {
@@ -983,11 +916,11 @@ article.page{
 			color: #3b3b3b;
 			font-size: 20px;
 			font-weight: 500;
-			line-height: 1.35em;
 
 			a {
 				color: inherit;
 				text-decoration: none;
+				font-weight: bold;
 			}
 		}
 
@@ -1045,17 +978,6 @@ article.page{
 			height: 20px;
 			display: block;
 			float: left;
-		}
-
-		@media (max-width:480px) {
-			li {
-				float: none;
-				margin-bottom: 10px;
-
-				&:last-child {
-					margin-bottom: 0;
-				}
-			}
 		}
 	}
 
@@ -1247,15 +1169,16 @@ article.page{
 	}
 
 	.gallery{
-		margin: 15px 0 25px 0;
+		margin: 25px 0 !important;
 
 		.gallery-item{
-			margin-bottom: 0;
+			margin-bottom: 0 !important;
+			margin-top: 0 !important;
 		}
 
 		.gallery-icon{
 			line-height: 0;
-			margin-bottom: 0;
+			margin-bottom: 0 !important;
 		}
 
 		img{
@@ -1263,18 +1186,12 @@ article.page{
 		}
 
 		.gallery-caption{
-			margin: 10px;
-			padding-left: 0;
+			margin: 10px !important;
+			padding-left: 0 !important;
 		}
 	}
 
-	table {
-		border-bottom: 1px solid #ededed;
-		border-collapse: collapse;
-		border-spacing: 0;
-		font-size: 14px;
-		line-height: 2;
-		margin: 0 0 20px;
+	table{
 		width: 100%;
 	}
 
@@ -1297,11 +1214,6 @@ article.page{
 		.box-sizing(border-box);
 
 		text-align: center;
-
-		&.aligncenter {
-			margin-left: auto;
-			margin-right: auto;
-		}
 	}
 
 	.wp-caption:first-child{
@@ -1313,13 +1225,13 @@ article.page{
 	}
 
 	.alignleft {
-		/* This is also styled on a global level */
-		margin: 0 1.5em 1.5em 0;
+	/* This is also styled on a global level */
+		margin: 0 0 1.5em 1.5em;
 	}
 
 	.alignright {
-		/* This is also styled on a global level */
-		margin: 0 0 1.5em 1.5em;
+	/* This is also styled on a global level */
+		margin: 0 1.5em 1.5em 0;
 	}
 
 	img.wp-smiley {
@@ -1408,7 +1320,6 @@ article.page{
 			text-decoration: none;
 		}
 	}
-
 }
 
 /* =Navigation

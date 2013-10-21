@@ -84,44 +84,7 @@ jQuery(function($){
             updatePosition();
             return false;
         } );
-    } );
-
-    // The menu hover effects
-    $('#masthead')
-        .on('mouseenter', '.main-navigation ul li', function(){
-            var $$ = $(this);
-            var $ul = $$.find('> ul');
-            $ul.css({
-                'display' : 'block',
-                'opacity' : 0
-            }).clearQueue().animate({opacity: 1}, 250);
-            $ul.data('final-opacity', 1);
-        } )
-        .on('mouseleave', '.main-navigation ul li', function(){
-            var $$ = $(this);
-            var $ul = $$.find('> ul');
-            $ul.clearQueue().animate( {opacity: 0}, 250, function(){
-                if($ul.data('final-opacity') == 0) {
-                    $ul.css('display', 'none');
-                }
-            });
-            $ul.data('final-opacity', 0);
-        } );
-
-    // Hover for the menu widget in the header
-    $('#header-sidebar .widget_nav_menu')
-        .on('mouseenter', 'ul.menu li', function(){
-            var $$ = $(this);
-            var $ul = $$.find('> ul');
-            $ul.finish().css('opacity', 0)
-                .hide().slideDown(200)
-                .animate( { opacity: 1 }, { queue: false, duration: 200 } );
-        } )
-        .on('mouseleave', 'ul.menu li', function(){
-            var $$ = $(this);
-            var $ul = $$.find('> ul');
-            $ul.finish().fadeOut(150);
-        } );
+    });
 
     // The search bar
     var isSearchHover = false;
@@ -154,14 +117,12 @@ jQuery(function($){
 
     // The sticky menu
     if( $('nav.site-navigation.primary').hasClass('use-sticky-menu') && !$('body').hasClass('mobile-device')) {
-
-        var adminBarHeight = $('body').hasClass('admin-bar') ? $('#wpadminbar').outerHeight() : 0;
         var $mc = null;
         var resetStickyMenu = function(){
             var $$ = $('nav.site-navigation.primary');
 
             // Work out the current position
-            if( $$.position().top <= $(window).scrollTop() + adminBarHeight ) {
+            if( $$.position().top <= $(window).scrollTop() + ( $('body').hasClass('admin-bar') ? 28 : 0 ) ) {
 
                 if($mc == null){
                     $mc = $$;
@@ -170,7 +131,7 @@ jQuery(function($){
                     $mc.css({
                         'position' : 'fixed',
                         'width' : $$.outerWidth(),
-                        'top' : adminBarHeight,
+                        'top' : $('body').hasClass('admin-bar') ? 28 : 0,
                         'left' : $$.position().left,
                         'z-index' : 998
                     }).addClass('sticky').insertAfter($$);
@@ -232,28 +193,13 @@ jQuery(function($){
         })
     }
 
-    // Resize the header widget area
+    // Resize the header
     $('#header-sidebar').each(function(){
         var $$ = $(this);
-        var padding = 0;
-        $$.find('> aside').each(function(){
-            var thisPadding = ( $$.outerHeight() - $$.find('> aside').outerHeight() ) / 2;
-            if(thisPadding > padding) padding = thisPadding;
-        });
-
-        if(padding > 15) {
-            $$.css({
-                'padding-top' : padding,
-                'padding-bottom' : padding
-            });
-        }
-        else{
-            padding = -padding + 15;
-            $('header#masthead .logo > *').css({
-                'padding-top' : padding,
-                'padding-bottom' : padding
-            });
-        }
-    });
-
+        var padding = ( $$.outerHeight() - $$.find('.widget').outerHeight() ) / 2;
+        $$.css({
+            'padding-top' : padding,
+            'padding-bottom' : padding
+        })
+    })
 });
