@@ -6,7 +6,19 @@
  * hooks action wp_enqueue_scripts
  */
 function simplecatch_scripts_method() {	
-	global $post;
+	global $post, $simplecatch_options_settings;
+    $options = $simplecatch_options_settings;
+	
+	// Enqueue catchevolution Sytlesheet
+	wp_enqueue_style( 'simplecatch_style', get_stylesheet_uri() );
+	
+	/**
+	 * Loads up Color Scheme
+	 */
+	$color_scheme = $options['color_scheme'];
+	if ( 'dark' == $color_scheme ) {
+		wp_enqueue_style( 'dark', get_template_directory_uri() . '/css/dark.css', array(), null );	
+	}	
 	
 	//Register JQuery circle all and JQuery set up as dependent on Jquery-cycle
 	wp_register_script( 'jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
@@ -698,40 +710,41 @@ function simplecatch_inline_css() {
 	//delete_transient( 'simplecatch_inline_css' );	
 	
 	if ( ( !$simplecatch_inline_css = get_transient( 'simplecatch_inline_css' ) ) ) {
-		global $simplecatch_options_settings;
+		global $simplecatch_options_settings, $simplecatch_options_defaults;
         $options = $simplecatch_options_settings;
+		$defaults = $simplecatch_options_defaults;
 
-		if( $options[ 'reset_color' ] == "0" ) {
+		if( $options[ 'reset_color' ] == "0" || !empty( $options[ 'custom_css' ] ) ) {
+			
 			$simplecatch_inline_css	= '<!-- '.get_bloginfo('name').' Custom CSS Styles -->' . "\n";
 	        $simplecatch_inline_css .= '<style type="text/css" media="screen">' . "\n";
-			$simplecatch_inline_css .= "#main {
-										   color: ".  $options[ 'text_color' ] .";
-										}
-										#main a {
-										    color: ". $options[ 'link_color' ] .";
-										}
-										#main h1 a, #main h2 a, #main h3 a, #main h4 a, #main h5 a, #main h6 a {
-										   color: ".  $options[ 'heading_color' ] .";
-										}
-										#main #content ul.post-by li, #main #content ul.post-by li a {
-											color: ".  $options[ 'meta_color' ] .";	
-										}
-										#sidebar h3, #sidebar h4, #sidebar h5 {
-											color: ".  $options[ 'widget_heading_color' ] .";
-										}
-										#sidebar, #sidebar p, #sidebar a, #sidebar ul li a, #sidebar ol li a {
-											color: ".  $options[ 'widget_text_color' ] .";
-										}". "\n";
+			
+			if( $defaults[ 'text_color' ] != $options[ 'text_color' ] ) {
+				$simplecatch_inline_css	.=  "#main { color: ".  $options[ 'text_color' ] ."; }". "\n";	
+			}
+			if( $defaults[ 'link_color' ] != $options[ 'link_color' ] ) {
+				$simplecatch_inline_css	.=  "#main a { color: ".  $options[ 'link_color' ] ."; }". "\n";	
+			}
+			if( $defaults[ 'heading_color' ] != $options[ 'heading_color' ] ) {
+				$simplecatch_inline_css	.=  "#main h1 a, #main h2 a, #main h3 a, #main h4 a, #main h5 a, #main h6 a { color: ".  $options[ 'heading_color' ] ."; }". "\n";	
+			}
+			if( $defaults[ 'meta_color' ] != $options[ 'meta_color' ] ) {
+				$simplecatch_inline_css	.=  "#main #content ul.post-by li, #main #content ul.post-by li a { color: ".  $options[ 'meta_color' ] ."; }". "\n";	
+			}
+			if( $defaults[ 'widget_heading_color' ] != $options[ 'widget_heading_color' ] ) {
+				$simplecatch_inline_css	.=  "#sidebar h3, #sidebar h4, #sidebar h5 { color: ".  $options[ 'widget_heading_color' ] ."; }". "\n";	
+			}
+			if( $defaults[ 'widget_text_color' ] != $options[ 'widget_text_color' ] ) {
+				$simplecatch_inline_css	.=  "#sidebar, #sidebar p, #sidebar a, #sidebar ul li a, #sidebar ol li a { color: ".  $options[ 'widget_text_color' ] ."; }". "\n";	
+			}
+			
+			//Custom CSS Option
+			if( !empty( $options[ 'custom_css' ] ) ) {
+				$simplecatch_inline_css .=  $options['custom_css'] . "\n";
+			}	
+			
 			$simplecatch_inline_css .= '</style>' . "\n";
-		}
-		
-
-		echo '<!-- refreshing cache -->' . "\n";
-		if( !empty( $options[ 'custom_css' ] ) ) {
-			$simplecatch_inline_css	.= '<!-- '.get_bloginfo('name').' Custom Content Color CSS Styles -->' . "\n";
-	        $simplecatch_inline_css .= '<style type="text/css" media="screen">' . "\n";
-			$simplecatch_inline_css .=  $options['custom_css'] . "\n";
-			$simplecatch_inline_css .= '</style>' . "\n";
+			
 		}
 			
 	set_transient( 'simplecatch_inline_css', $simplecatch_inline_css, 86940 );

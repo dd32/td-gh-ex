@@ -20,6 +20,7 @@ $simplecatch_options_defaults = array(
  	'fav_icon'						=> get_template_directory_uri().'/images/favicon.ico',
 	'remove_fav_icon'				=> '1',
 	'web_clip'						=> '',
+	'color_scheme'					=> 'default',
 	'heading_color'					=> '#444444',
  	'meta_color'					=> '#999999',
  	'text_color'					=> '#555555',

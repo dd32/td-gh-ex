@@ -352,3 +352,9 @@ Version 2.6.3
 Version 2.6.4
 * Added Simple Catch: Advertisement widget to add google ads and custom image ads
 * Added support for Widgets id and class for custom css support
+
+Version 2.6.5
+* Added dark color scheme 
+* Fixed custom css issues with color options
+* Moved style.css enque to wp_enqueue_scripts
+* Merged Content Background and Content Color Options to Color Options 

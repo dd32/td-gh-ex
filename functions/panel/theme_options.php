@@ -297,20 +297,35 @@ function simplecatch_theme_options_do_page() {
                             <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->                    
-
-                    <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Content Background', 'simplecatch' ); ?></a></h3>
-                        <div class="option-content inside">
-                        	<p><?php printf(__('Need to replace default background?','simplecatch')); ?> <?php printf(__('<a class="button" href="%s">Click here</a>', 'simplecatch'), admin_url('themes.php?page=custom-background')); ?></p>
-                     			
-                    	</div><!-- .option-content -->
-                 	</div><!-- .option-container --> 
             
             		<div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Content Color Options', 'simplecatch' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Color Options', 'simplecatch' ); ?></a></h3>
                         <div class="option-content inside">
                         	<table class="form-table">  
                                 <tbody>
+                                    <tr>
+                                        <th scope="row"><label><?php _e( 'Default Color Scheme', 'catcheverest' ); ?></label></th>
+                                        <td>
+                                            <label title="color-light" class="box"><img src="<?php echo get_template_directory_uri(); ?>/functions/panel/images/default.jpg" alt="color-default" /><br />
+                                            <input type="radio" name="simplecatch_options[color_scheme]" id="color-default" <?php checked($options['color_scheme'], 'default'); ?> value="default"  />
+                                            <?php _e( 'Default', 'catcheverest' ); ?>
+                                            </label>
+                                            <label title="color-dark" class="box"><img src="<?php echo get_template_directory_uri(); ?>/functions/panel/images/dark.jpg" alt="color-dark" /><br />
+                                            <input type="radio" name="simplecatch_options[color_scheme]" id="color-clean" <?php checked($options['color_scheme'], 'dark'); ?> value="dark"  />
+                                            <?php _e( 'Dark', 'catcheverest' ); ?>
+                                            </label>                                     
+                                        </td>
+                                    </tr>                                
+                                	<tr>
+                                        <th>
+                                            <label for="simplecatch_content_background">
+                                                <?php _e( 'Content Background:', 'simplecatch' ); ?>
+                                            </label>
+                                        </th>
+                                        <td>
+                                            <?php printf(__('Need to replace default background?','simplecatch')); ?> <?php printf(__('<a class="button" href="%s">Click here</a>', 'simplecatch'), admin_url('themes.php?page=custom-background')); ?>
+                                        </td>
+                                    </tr> 
                                 	<tr>
                                         <th>
                                             <label for="simplecatch_heading_color">
@@ -382,7 +397,7 @@ function simplecatch_theme_options_do_page() {
                                         <th scope="row"><?php _e( 'Reset Color:', 'simplecatch' ); ?></th>
                                         <input type='hidden' value='0' name='simplecatch_options[reset_color]'>
                                         <td>
-                                        	<input type="checkbox" id="headerlogo" name="simplecatch_options[reset_color]" value="1" <?php checked( '1', $options['reset_color'] ); ?> />
+                                        	<input type="checkbox" id="headerlogo" name="simplecatch_options[reset_color]" value="1" <?php checked( '1', $options['reset_color'] ); ?> /> <?php _e( 'Check to Reset Color', 'simplecatch' ); ?>
                                        	</td>
                                     </tr>
                                 </tbody>
@@ -857,6 +872,12 @@ function simplecatch_theme_options_validate( $options ) {
 	if ( isset( $input[ 'web_clip' ] ) ) {
 		$input_validated[ 'web_clip' ] = esc_url_raw( $input[ 'web_clip' ] );
 	}	
+
+	// data validation for Color Scheme
+	if ( isset( $input['color_scheme'] ) ) {
+		// Our checkbox value is either 0 or 1 
+		$input_validated[ 'color_scheme' ] = $input[ 'color_scheme' ];
+	}	
 	
 	//Color Options
 	if( isset( $input[ 'heading_color' ] ) ) {
@@ -888,6 +909,7 @@ function simplecatch_theme_options_validate( $options ) {
 		global $simplecatch_options_defaults;
 		$defaults = $simplecatch_options_defaults;
 
+		$input_validated[ 'color_scheme' ] = $defaults[ 'color_scheme' ];
 		$input_validated[ 'heading_color' ] = $defaults[ 'heading_color' ];
 		$input_validated[ 'meta_color' ] = $defaults[ 'meta_color' ];
 		$input_validated[ 'text_color' ] = $defaults[ 'text_color' ];
