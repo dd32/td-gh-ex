@@ -87,6 +87,12 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.4.1
+- Default header styles added to match menus.
+- Site title displayed upon activation.
+- Footer widgets disabled upon activation.
+- 'Walker_Nav_Menu_Responsive extends Walker_Nav_Menu' updated. 
+
 Version 1.4.0
 - Translation ready functionality added.
 - Removed blog template (style2).

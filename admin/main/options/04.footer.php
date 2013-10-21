@@ -99,9 +99,9 @@ global $footer_w4;
 global $footer_w5;
 global $footer_w6;
 					
-	if ( $thinkup_footer_widgetswitch !== "1" ) {
+	if ( $thinkup_footer_widgetswitch !== "1" and ! empty( $thinkup_footer_layout )  ) {
 		echo	'<div id="footer">';
-			if ( $thinkup_footer_layout == "option1" or empty( $thinkup_footer_layout ) ) {	
+			if ( $thinkup_footer_layout == "option1" ) {	
 				echo	'<div id="footer-core" class="option1">';
 						thinkup_input_footerw1();
 				echo	'</div>';

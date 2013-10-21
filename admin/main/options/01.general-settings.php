@@ -15,11 +15,11 @@ global $thinkup_general_logolink;
 global $thinkup_general_sitetitle;
 global $thinkup_general_sitedescription;
 
-	if ( $thinkup_general_logoswitch == "option1" or empty( $thinkup_general_logoswitch ) ) {
+	if ( $thinkup_general_logoswitch == "option1" ) {
 		if ( ! empty( $thinkup_general_logolink ) ) {
 			echo '<img src="' . $thinkup_general_logolink . '" alt="Logo">';
 		} 
-	} else if ( $thinkup_general_logoswitch == "option2" ) {
+	} else if ( $thinkup_general_logoswitch == "option2" or empty( $thinkup_general_logoswitch ) ) {
 		if ( empty( $thinkup_general_sitetitle ) ) {
 			echo '<h1 rel="home" class="site-title" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '">' . get_bloginfo( 'name' ) . '</h1>';
 		} else {
@@ -409,15 +409,15 @@ function thinkup_custom_intro() {
 //----------------------------------------------------------------------------------
 
 // http://wordpress.stackexchange.com/questions/27497/how-to-use-wp-nav-menu-to-create-a-select-menu-dropdown
-class Walker_Nav_Menu_Responsive extends Walker_Nav_Menu{
+class Walker_Nav_Menu_Responsive extends Walker_Nav_Menu {
 
     // don't output children opening tag (`<ul>`)
-    public function start_lvl($output, $depth){}
+    public function start_lvl(&$output, $depth=0, $args=array()){}
 
     // don't output children closing tag    
-    public function end_lvl($output, $depth){}
+    public function end_lvl(&$output, $depth=0, $args=array()){}
 
-    public function start_el($output, $item, $depth = 0, $args = array(), $id = 0){
+    public function start_el(&$output, $item, $depth=0, $args=array(), $id = 0){
 
       // add spacing to the title based on the current depth
       $item->title = str_repeat("&#45; ", $depth ) . $item->title;
@@ -429,7 +429,7 @@ class Walker_Nav_Menu_Responsive extends Walker_Nav_Menu{
   } 
 	
     // replace closing </li> with the closing option tag
-    public function end_el($output, $item, $depth){
+    public function end_el(&$output, $item, $depth=0, $args=array()){
 	  $output = str_replace( '</a>', '</option>', $output );
     }
 }

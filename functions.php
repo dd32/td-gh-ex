@@ -17,7 +17,7 @@ if ( ! isset( $content_width ) )
 	require_once (get_template_directory() . '/admin/main/framework.php');
 
 	// Load demo functions if required.
-	if( file_exists( get_template_directory() . '/demo/functions/demo-variable.php' ) and $thinkup_general_democontent == '1' )
+	if( file_exists( get_template_directory() . '/demo/functions/demo-variable.php' ) )
 		include get_template_directory() . '/demo/functions/demo-variable.php';
 
 	// Add Theme Options Features.

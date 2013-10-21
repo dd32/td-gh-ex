@@ -4,7 +4,7 @@ Theme URI: http://www.thinkupthemes.com/free/engrave-lite/
 Author: ThinkUpThemes
 Author URI: http://www.ThinkUpThemes.com
 Description: Engrave Lite is the free version of the multi-purpose professional theme ideal for a business or blog website. The theme has a responsive layout, HD retina ready and comes with 600+ Google Fonts which can easily be selected directly from the theme options panel.
-Version: 1.4.0
+Version: 1.4.1
 License: GNU General Public License
 License URI: license.txt
 Tags: black, dark, one-column, two-columns, right-sidebar, left-sidebar, flexible-width, custom-header, custom-menu, flexible-width, full-width-template, theme-options, threaded-comments, editor-style, featured-images, post-formats, sticky-post, translation-ready
@@ -720,19 +720,18 @@ li.pag-next {
 #header-links-inner {
 	float: right;
 }
-#header .header-links li {
+#header #header-links li {
 	float: left;
 }
-#header .header-links > ul > li a{
+#header .menu li a{
 	color: white;
 	padding: 25px 16px;
 }
-#header .header-links li a {
+#header #header-links li a {
 	display: block;
-	padding: 8px 14px;
-	margin: 0px;
 }
-#header .header-links .sub-menu {
+#header #header-links .sub-menu,
+#header #header-links .children {
 	display: none;
 	float: left;
 	position: absolute;
@@ -740,7 +739,8 @@ li.pag-next {
 	background: #1A1A1A;
 	border: 1px solid #222;
 }
-#header .header-links .sub-menu a {
+#header #header-links .sub-menu a,
+#header #header-links .children a {
 	color: white;
 	font-size: 12px;
 	line-height: 32px;
@@ -748,20 +748,25 @@ li.pag-next {
 	margin: 0;
 	padding: 0 10px;
 }
-#header .header-links .sub-menu a:hover,
-#header .header-links .sub-menu .current-menu-item a {
+#header #header-links .sub-menu a:hover,
+#header #header-links .sub-menu .current-menu-item a,
+#header #header-links .children a:hover,
+#header #header-links .children .current-menu-item a {
 	color: #EC4C4C;
 }
 #pre-header .sub-menu li,
-#header .sub-menu li {
+#header #header-links .sub-menu li,
+#header #header-links .children li {
 	float: none;
 	position: relative;
 }
-#header .sub-menu li {
+#header .sub-menu li,
+#header .children li {
 	padding: 2px 15px;
 	border-bottom: 1px solid #222;
 }
-#header .menu > li > a {
+#header .menu > li > a,
+#header .menu > ul > li > a {
 	font-weight: bold;
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
@@ -786,10 +791,12 @@ li.pag-next {
 	margin: 0;
 	padding-left: 0;
 }
-.main-navigation .sub-menu a {
+.main-navigation .sub-menu a,
+.main-navigation .children a {
 	white-space: nowrap;
 }
-.main-navigation .sub-menu .sub-menu {
+.main-navigation .sub-menu .sub-menu,
+.main-navigation .children .children {
 	position: absolute;
 	top: -1px;
 	left: 100%;
@@ -813,7 +820,8 @@ li.pag-next {
 	display: inline-block;
 	float: right
 }
-#header .sub-menu .menu-parent > a:before {
+#header .sub-menu .menu-parent > a:before,
+#header .children .menu-parent > a:before {
 	font-family: FontAwesome;
 	font-size: 1.5em;
 	text-align: right;

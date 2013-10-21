@@ -99,7 +99,7 @@ global $thinkup_font_postfootergoogle;
 
 	$output = NULL;
 
-	if ( empty( $thinkup_font_bodyswitch ) or $thinkup_font_bodyswitch == '0' ) {
+	if ( ( empty( $thinkup_font_bodyswitch ) or $thinkup_font_bodyswitch == '0' ) and ! empty( $thinkup_font_bodystandard ) ) {
 		if ( $thinkup_font_bodystandard == 'Default Theme Font' ) {
 			$output .= '';
 		} else {
@@ -107,7 +107,7 @@ global $thinkup_font_postfootergoogle;
 			$output .= '#introaction-core, #introaction-core button, #introaction-core input, #introaction-core select, #introaction-core textarea { font-family:' . $thinkup_font_bodystandard . '}' . "\n";
 			$output .= '#outroaction-core, #outroaction-core button, #outroaction-core input, #outroaction-core select, #outroaction-core textarea { font-family:' . $thinkup_font_bodystandard . '}' . "\n";
 		}
-	} else if ( $thinkup_font_bodyswitch == '1' ) {
+	} else if ( $thinkup_font_bodyswitch == '1' and ! empty( $thinkup_font_bodygoogle ) ) {
 		if ( $thinkup_font_bodygoogle == 'Select a Google Font' ) {
 			$output .= '';
 		} else {
@@ -116,7 +116,7 @@ global $thinkup_font_postfootergoogle;
 			$output .= '#outroaction-core, #outroaction-core button, #outroaction-core input, #outroaction-core select, #outroaction-core textarea { font-family:' . $thinkup_font_bodygoogle . '}' . "\n";
 		}
 	}
-	if ( empty( $thinkup_font_bodyheadingswitch ) or $thinkup_font_bodyheadingswitch == '0' ) {
+	if ( ( empty( $thinkup_font_bodyheadingswitch ) or $thinkup_font_bodyheadingswitch == '0' ) and ! empty( $thinkup_font_bodyheadingstandard ) ) {
 		if ( $thinkup_font_bodyheadingstandard == 'Default Theme Font' ) {
 			$output .= '';
 		} else {
@@ -126,7 +126,7 @@ global $thinkup_font_postfootergoogle;
 			$output .= '#introaction-core h1, #introaction-core h2, #introaction-core h3, #introaction-core h4, #introaction-core h5, #introaction-core h6 { font-family:' . $thinkup_font_bodyheadingstandard . '}' . "\n";
 			$output .= '#outroaction-core h1, #outroaction-core h2, #outroaction-core h3, #outroaction-core h4, #outroaction-core h5, #outroaction-core h6 { font-family:' . $thinkup_font_bodyheadingstandard . '}' . "\n";
 		}
-	} else if ( $thinkup_font_bodyheadingswitch == '1' ) {
+	} else if ( $thinkup_font_bodyheadingswitch == '1' and ! empty( $thinkup_font_bodyheadinggoogle ) ) {
 		if ( $thinkup_font_bodyheadinggoogle == 'Select a Google Font' ) {
 			$output .= '';
 		} else {
@@ -137,7 +137,7 @@ global $thinkup_font_postfootergoogle;
 			$output .= '#outroaction-core h1, #outroaction-core h2, #outroaction-core h3, #outroaction-core h4, #outroaction-core h5, #outroaction-core h6 { font-family:' . $thinkup_font_bodyheadinggoogle . '}' . "\n";
 		}
 	}
-	if ( empty( $thinkup_font_footerheadingswitch ) or $thinkup_font_footerheadingswitch == '0' ) {
+	if ( ( empty( $thinkup_font_footerheadingswitch ) or $thinkup_font_footerheadingswitch == '0' ) and ! empty( $thinkup_font_footerheadingstandard ) ) {
 		if ( $thinkup_font_footerheadingstandard == 'Default Theme Font' ) {
 			$output .= '';
 		} else {
@@ -150,52 +150,52 @@ global $thinkup_font_postfootergoogle;
 			$output .= '#footer-core h3 { font-family:' . $thinkup_font_footerheadinggoogle . '}' . "\n";
 		}
 	}
-	if ( empty( $thinkup_font_preheaderswitch ) or $thinkup_font_preheaderswitch == '0' ) {
+	if ( ( empty( $thinkup_font_preheaderswitch ) or $thinkup_font_preheaderswitch == '0' ) and ! empty( $thinkup_font_preheaderstandard ) ) {
 		if ( $thinkup_font_preheaderstandard == 'Default Theme Font' ) {
 			$output .= '';
 		} else {
 			$output .= '#pre-header .header-links li a, #pre-header-social li.message, #pre-header-search input { font-family:' . $thinkup_font_preheaderstandard . '}' . "\n";
 		}
-	} else if ( $thinkup_font_preheaderswitch == '1' ) {
+	} else if ( $thinkup_font_preheaderswitch == '1' and ! empty( $thinkup_font_preheadergoogle ) ) {
 		if ( $thinkup_font_preheadergoogle == 'Select a Google Font' ) {
 			$output .= '';
 		} else {
 			$output .= '#pre-header .header-links li a, #pre-header-social li.message, #pre-header-search input { font-family:' . $thinkup_font_preheadergoogle . '}' . "\n";
 		}
 	}	
-	if ( empty( $thinkup_font_mainheaderswitch ) or $thinkup_font_mainheaderswitch == '0' ) {
+	if ( ( empty( $thinkup_font_mainheaderswitch ) or $thinkup_font_mainheaderswitch == '0' ) and ! empty( $thinkup_font_mainheaderstandard  ) ) {
 		if ( $thinkup_font_mainheaderstandard == 'Default Theme Font' ) {
 			$output .= '';
 		} else {
 			$output .= '#header li a { font-family:' . $thinkup_font_mainheaderstandard . '}' . "\n";
 		}
-	} else if ( $thinkup_font_mainheaderswitch == '1' ) {
+	} else if ( $thinkup_font_mainheaderswitch == '1' and ! empty( $thinkup_font_mainheadergoogle ) ) {
 		if ( $thinkup_font_mainheadergoogle == 'Select a Google Font' ) {
 			$output .= '';
 		} else {
 			$output .= '#header li a { font-family:' . $thinkup_font_mainheadergoogle . '}' . "\n";
 		}
 	}
-	if ( empty( $thinkup_font_mainfooterswitch ) or $thinkup_font_mainfooterswitch == '0' ) {
+	if ( ( empty( $thinkup_font_mainfooterswitch ) or $thinkup_font_mainfooterswitch == '0' ) and ! empty( $thinkup_font_mainfooterstandard ) ) {
 		if ( $thinkup_font_mainfooterstandard == 'Default Theme Font' ) {
 			$output .= '';
 		} else {
 			$output .= '#footer-core, #footer-core button, #footer-core input, #footer-core select, #footer-core textarea { font-family:' . $thinkup_font_mainfooterstandard . '}' . "\n";
 		}
-	} else if ( $thinkup_font_mainfooterswitch == '1' ) {
+	} else if ( $thinkup_font_mainfooterswitch == '1' and ! empty( $thinkup_font_mainfootergoogle ) ) {
 		if ( $thinkup_font_mainfootergoogle == 'Select a Google Font' ) {
 			$output .= '';
 		} else {
 			$output .= '#footer-core, #footer-core button, #footer-core input, #footer-core select, #footer-core textarea { font-family:' . $thinkup_font_mainfootergoogle . '}' . "\n";
 		}
 	}
-	if ( empty( $thinkup_font_postfooterswitch ) or $thinkup_font_postfooterswitch == '0' ) {
+	if ( ( empty( $thinkup_font_postfooterswitch ) or $thinkup_font_postfooterswitch == '0' ) and ! empty( $thinkup_font_postfooterstandard ) ) {
 		if ( $thinkup_font_postfooterstandard == 'Default Theme Font' ) {
 			$output .= '';
 		} else {
 			$output .= '#sub-footer-core, #sub-footer-core a { font-family:' . $thinkup_font_postfooterstandard . '}' . "\n";
 		}
-	} else if ( $thinkup_font_postfooterswitch == '1' ) {
+	} else if ( $thinkup_font_postfooterswitch == '1' and ! empty( $thinkup_font_postfootergoogle ) ) {
 		if ( $thinkup_font_postfootergoogle == 'Select a Google Font' ) {
 			$output .= '';
 		} else {
