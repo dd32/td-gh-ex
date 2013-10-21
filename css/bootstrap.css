@@ -1157,7 +1157,7 @@ input[type="password"]:focus,
 input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
 input[type="date"]:focus,
-input[type="month"]:focus,
+input[type="month"]:focus
 input[type="time"]:focus,
 input[type="week"]:focus,
 input[type="number"]:focus,
@@ -2938,7 +2938,7 @@ table th[class*="span"],
 	padding: 0px;
     margin: 0px;
     list-style: none;
-    background-color: #4b453f;
+    
 	font-size: 13px;
 	font-family: proximanovaalt;
  /*  position: absolute;

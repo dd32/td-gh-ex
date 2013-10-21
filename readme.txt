@@ -57,6 +57,9 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
+@version 1.2.2
+1. All the color related styles added in /css/skins/default.css
+2. Created theme setup file
 @version 1.2.1
 1. register_nav_menus() called from after_setup_theme hook
 2. Removed script enqueued in header.php

@@ -2,8 +2,8 @@
 * Theme Name: Spasalon
 * Description: A responsive theme for SPA SALON and BEAUTY SALON type of business that uses multiple nav menus, right-sidebar,Featured Slider and Beautifully designed home page all manage via option panel.
 It has a pixel-perfect design that is great for any health care ,salons , spas etc related services who wants a new look for their site.
-* Version: 1.2.1
-* Author: priyanshu.mittal
+* Version: 1.2.2
+* Author: priyanshu.mittal,vibhorp
 * Author URI: http://www.webriti.com
 * Tags: pink, white, full-width-template, threaded-comments, right-sidebar, one-column, two-columns, fixed-width, custom-menu, sticky-post, theme-options, translation-ready
 * License: GNU General Public License v3.0
@@ -72,13 +72,7 @@ margin-top:15px; width:auto; margin-left:25px;
 	word-wrap:break-word;
 	word-break:break-all;
 }
-.home_tagline{
-	color: #F22853;
-   
-}
-.home_product_tagline{
-	color: #4b453f;
-}
+
 .spacer {  margin-bottom: 115px; }
 
 
@@ -180,7 +174,7 @@ margin-top:15px; width:auto; margin-left:25px;
  @media (min-width: 1025px) {
 
 .pink-container {
-    background: none repeat scroll 0 0 #F22853;
+    
     bottom: 0px;
     left: 0;
     padding-top: 20px;
@@ -206,8 +200,7 @@ margin-top:15px; width:auto; margin-left:25px;
 	margin-bottom:20px;
 }
 .pink-container p{
-	border-left: 1px solid #F05D7D;
-    color: #FCCED7;
+	
     font-family: roboto;
     font-size: 13px;
     padding-left: 30px;
@@ -224,19 +217,9 @@ margin-top:15px; width:auto; margin-left:25px;
 	color: #ffffff;
 	font-size: 36px;
 }
-.spa_tag{
-	background: url("images/spa-tag.png") no-repeat scroll 0 0 transparent;
-	bottom: 8px;
-    height: 105px;
-     
-    position: relative;
-	float:right;
-	width:170px;
-	display:block;
-	margin-right:20px;
-}
+.spa_tag{	bottom: 8px;height: 105px;position: relative;float:right;width:170px;display:block;margin-right:20px;}
 .spa_tag span{
-	 color: #D61841;
+
     display: block;
     font-size: 12px;
     font-weight: 600;
@@ -253,7 +236,7 @@ margin-top:15px; width:auto; margin-left:25px;
 }
 .spa_tag span p{
     font-size: 18px;
-	color: #9C253E;
+	
 	font-family: Raleway-Sbold;
 	border: 0px;
 	padding: 0px;
@@ -367,11 +350,7 @@ display:none;
 	color:#f22853;
 	
 }
-a:hover,
-a:focus {
-  color: #f22853;
-  text-decoration: none;
-}
+
 
 
 .service-1c{	min-height:205px; }
@@ -735,9 +714,7 @@ border-bottom: 1px solid #EAE7E4;
 
 
 /*contact css-------------------------------------------------------------------------------------------------------------*/
-.contact-header{
-    color: #f22853;
-   
+.contact-header{   
     font-size: 24px;
 	font-family:roboto;
 	line-height:20px;
@@ -965,8 +942,7 @@ display: block;
 }
 
 #widget-title {
-    background: none repeat scroll 0 0 #F2F2F2;
-    border-left: 4px solid #F22853;
+    
     border-radius: 0 0 0 0;
     margin-bottom: 27px;
     padding-left: 15px;
@@ -1055,10 +1031,7 @@ font-size: 16px;
 	font-size: 16px;
 }
 
-.social-icons{
-	margin-top: 15px;
-	margin-bottom: 20px;
-}
+.social-icons{	margin-top: 15px;margin-bottom: 20px;	}
 
 .sidebar-btn {
   display: inline-block;
@@ -1073,8 +1046,7 @@ font-size: 16px;
   font-family: roboto;
   vertical-align: middle;
   cursor: pointer;
-  background-color: #F22853;
-  *background-color: #F22853;
+   *background-color: #F22853;
   background-image: -moz-linear-gradient(top, #F22853, #F22853);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#F22853), to(#F22853));
   background-image: -webkit-linear-gradient(top, #F22853, #F22853);
@@ -1099,13 +1071,7 @@ font-size: 16px;
   background-color: #3b3f41;
   *background-color: #3b3f41;
 }
-.sidebar-btn:hover,
-.sidebar-btn:focus {
-  color: #ffffff;
-  text-decoration: none;
-  background: #3b3f41;
 
-}
 
 /*blog post detail ------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -2981,7 +2947,7 @@ article.sticky .featured-post {
 /*css for widget */
 
 #sidebar ul li a,.textwidget{ color:#7A8082; font-family:roboto;font-size:12px; }
-#sidebar ul li a:hover{ color:#f22853; font-family:roboto;font-size:12px;}
+#sidebar ul li a:hover{ font-family:roboto;font-size:12px;}
 #sidebar ul { margin-bottom:25px; margin-left:0px;word-wrap:break-word;word-break:break-all; ms-word-wrap: break-word;}
 
 /*css for table*/
