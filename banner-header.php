@@ -22,7 +22,7 @@
 								<div class="container">
 									<div class="row-fluid about_space">
 									<h2 class="about_head pull-left">
-									<?php bloginfo('title');?>
+									<a href="<?php echo bloginfo('url');?>"><?php bloginfo('title');?></a>
 									<br />
 									<span><?php bloginfo('description');?>
 									</span>
