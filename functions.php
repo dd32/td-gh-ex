@@ -229,6 +229,13 @@ function boldr_styles() {
 }
 add_action('wp_print_styles', 'boldr_styles');
 
+/*
+ * Register editor style
+ */
+function boldr_editor_styles() {
+	add_editor_style();
+}
+add_action( 'init', 'boldr_editor_styles' );
 
 /*
  * Enqueue Javascripts
