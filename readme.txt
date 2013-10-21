@@ -343,3 +343,6 @@ Version 2.8
 Version 2.8.1
 * Added option to change search text in search box
 * Changed Theme Options page design
+
+Version 2.8.2
+* Added Red Color Scheme

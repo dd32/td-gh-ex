@@ -334,12 +334,12 @@ a.readmore:hover {
 .image-radio-option label {
     display: block;
     float: left;
-    margin: 0 30px 20px 2px;
+    margin: 0 15px 20px 2px;
     position: relative;
 }
 .image-radio-option span {
     display: block;
-    width: 150px;
+    width: 100px;
 }
 .image-radio-option span img {
 	width: 100%;
