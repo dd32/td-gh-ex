@@ -96,8 +96,8 @@ class catchevolution_adwidget extends WP_Widget {
 	 * @return void
 	 **/
 	function catchevolution_adwidget() {
-		$widget_ops = array( 'classname' => 'widget_catchevolution_adwidget', 'description' => __( 'Use this widget to add any type of Ad as a widget.', 'catchevolution' ) );
-		$this->WP_Widget( 'widget_catchevolution_adwidget', __( 'Catch Evolution Adspace Widget', 'catchevolution' ), $widget_ops );
+		$widget_ops = array( 'classname' => 'widget_catchevolution_adwidget', 'description' => __( 'Use this widget to add any type of Advertisement as a widget.', 'catchevolution' ) );
+		$this->WP_Widget( 'widget_catchevolution_adwidget', __( '1. Catch Evolution Adspace Widget', 'catchevolution' ), $widget_ops );
 		$this->alt_option_name = 'widget_catchevolution_adwidget';
 	}
 
@@ -106,11 +106,12 @@ class catchevolution_adwidget extends WP_Widget {
 	 * $instance Current settings
 	 */
 	function form($instance) {
-		$instance = wp_parse_args( (array) $instance, array( 'title' => '', 'adcode' => '', 'image' => '', 'href' => '', 'alt' => '' ) );
+		$instance = wp_parse_args( (array) $instance, array( 'title' => '', 'adcode' => '', 'image' => '', 'href' => '', 'target' => '0', 'alt' => '' ) );
 		$title = esc_attr( $instance[ 'title' ] );
 		$adcode = esc_textarea( $instance[ 'adcode' ] );
 		$image = esc_url( $instance[ 'image' ] );
 		$href = esc_url( $instance[ 'href' ] );
+		$target = $instance['target'] ? 'checked="checked"' : '';
 		$alt = esc_attr( $instance[ 'alt' ] );
 		?>
         <p>
@@ -132,6 +133,10 @@ class catchevolution_adwidget extends WP_Widget {
             <label for="<?php echo $this->get_field_id('href'); ?>"><?php _e('Link URL:','catchevolution'); ?></label>
             <input type="text" name="<?php echo $this->get_field_name('href'); ?>" value="<?php echo esc_url( $href ); ?>" class="widefat" id="<?php echo $this->get_field_id('href'); ?>" />
         </p>
+		<p>
+        	<label for="<?php echo $this->get_field_id('target'); ?>"><?php _e( 'Open Link in New Window', 'catchevolution' ); ?></label>
+			<input class="checkbox" type="checkbox" <?php echo $target; ?> id="<?php echo $this->get_field_id('target'); ?>" name="<?php echo $this->get_field_name('target'); ?>" />
+		</p>          
         <p>
             <label for="<?php echo $this->get_field_id('alt'); ?>"><?php _e('Alt text:','catchevolution'); ?></label>
             <input type="text" name="<?php echo $this->get_field_name('alt'); ?>" value="<?php echo $alt; ?>" class="widefat" id="<?php echo $this->get_field_id('alt'); ?>" />
@@ -156,6 +161,7 @@ class catchevolution_adwidget extends WP_Widget {
 		$instance['adcode'] = wp_kses_stripslashes($new_instance['adcode']);
 		$instance['image'] = esc_url_raw($new_instance['image']);
 		$instance['href'] = esc_url_raw($new_instance['href']);
+		$instance['target'] = isset( $new_instance['target'] ) ? 1 : 0;
 		$instance['alt'] = sanitize_text_field($new_instance['alt']);
 		
 		return $instance;
@@ -174,100 +180,29 @@ class catchevolution_adwidget extends WP_Widget {
 		$adcode = !empty( $instance['adcode'] ) ? $instance[ 'adcode' ] : '';
 		$image = !empty( $instance['image'] ) ? $instance[ 'image' ] : '';
 		$href = !empty( $instance['href'] ) ? $instance[ 'href' ] : '';
+		$target = !empty( $instance['target'] ) ? 'true' : 'false';
 		$alt = !empty( $instance['alt'] ) ? $instance[ 'alt' ] : '';
 
-			
+		if ( $target == "true" ) :
+			$base = '_blank'; 	
+		else:
+			$base = '_self'; 	
+		endif;
+		
 		echo $before_widget;
 		if ( $title != '' ) {
 			echo $before_title . apply_filters( 'widget_title', $title, $instance, $this->id_base ) . $after_title;
-		} else {
+		} 
+		else {
 			echo '<span class="paddingtop"></span>';
 		}
 
 		if ( $adcode != '' ) {
 			echo $adcode;
-		} else {
-			?><a href="<?php echo $href; ?>"><img src="<?php echo $image; ?>" alt="<?php echo $alt; ?>" /></a><?php
-		}
-		echo $after_widget;
-	}
-
-} 
-
-
-/**
- * Makes a custom Widget for Displaying Ads
- *
- * Learn more: http://codex.wordpress.org/Widgets_API#Developing_Widgets
- *
- * @package Catch Themes
- * @subpackage Catch_Evolution_Pro
- * @since Catch Evolution 1.0
- */
-class catchevolution_social_widget extends WP_Widget {
-	
-	/**
-	 * Constructor
-	 *
-	 * @return void
-	 **/
-	function catchevolution_social_widget() {
-		$widget_ops = array( 'classname' => 'widget_catchevolution_social_search_widget', 'description' => __( 'Use this widget to add Social Icons from Social Icons Settings & Search  as a widget. ', 'catchevolution' ) );
-		$this->WP_Widget( 'widget_catchevolution_social_search_widget', __( 'Catch Evolution Social & Seach Widget', 'catchevolution' ), $widget_ops );
-		$this->alt_option_name = 'widget_catchevolution_social_search_widget';
-	}
-
-	/**
-	 * Creates the form for the widget in the back-end which includes the Title , adcode, image, alt
-	 * $instance Current settings
-	 */
-	function form($instance) {
-		$instance = wp_parse_args( (array) $instance, array( 'title' => '' ) );
-		$title = esc_attr( $instance[ 'title' ] );
-		?>
-        <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title (optional):','catchevolution'); ?></label>
-            <input type="text" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $title; ?>" class="widefat" id="<?php echo $this->get_field_id('title'); ?>" />
-        </p>
-        <?php
-	}
-	
-	/**
-	 * update the particular instant  
-	 * 
-	 * This function should check that $new_instance is set correctly.
-	 * The newly calculated value of $instance should be returned.
-	 * If "false" is returned, the instance won't be saved/updated.
-	 *
-	 * $new_instance New settings for this instance as input by the user via form()
-	 * $old_instance Old settings for this instance
-	 * Settings to save or bool false to cancel saving
-	 */
-	function update( $new_instance, $old_instance ) {
-		$instance = $old_instance;
-		$instance['title'] = strip_tags($new_instance['title']);
-		
-		return $instance;
-	}	
-	
-	/**
-	 * Displays the Widget in the front-end.
-	 * 
-	 * $args Display arguments including before_title, after_title, before_widget, and after_widget.
-	 * $instance The settings for the particular instance of the widget
-	 */
-	function widget( $args, $instance ) {
-		extract( $args );
-		extract( $instance );
-		$title = !empty( $instance['title'] ) ? $instance[ 'title' ] : '';
-			
-		echo $before_widget;
-		if ( $title != '' ) {
-			echo $before_title . apply_filters( 'widget_title', $title, $instance, $this->id_base ) . $after_title;
 		} 
-		
-		catchevolution_social_search();
-		
+		else {
+			echo '<a href="' . $href . '" target="' . $base . '"><img src="'. $image . '" alt="' . $alt . '" /></a>';
+		}
 		echo $after_widget;
 	}
 
@@ -292,7 +227,7 @@ class catchevolution_social_search_widget extends WP_Widget {
 	 **/
 	function catchevolution_social_search_widget() {
 		$widget_ops = array( 'classname' => 'widget_catchevolution_social_widget', 'description' => __( 'Use this widget to add Social Icons from Social Icons Settings as a widget. ', 'catchevolution' ) );
-		$this->WP_Widget( 'widget_catchevolution_social_widget', __( 'Catch Evolution Social Widget', 'catchevolution' ), $widget_ops );
+		$this->WP_Widget( 'widget_catchevolution_social_widget', __( '2. Catch Evolution Social Widget', 'catchevolution' ), $widget_ops );
 		$this->alt_option_name = 'widget_catchevolution_social_widget';
 	}
 
@@ -351,3 +286,82 @@ class catchevolution_social_search_widget extends WP_Widget {
 	}
 
 } 
+
+
+/**
+ * Makes a custom Widget for Displaying Ads
+ *
+ * Learn more: http://codex.wordpress.org/Widgets_API#Developing_Widgets
+ *
+ * @package Catch Themes
+ * @subpackage Catch_Evolution_Pro
+ * @since Catch Evolution 1.0
+ */
+class catchevolution_social_widget extends WP_Widget {
+	
+	/**
+	 * Constructor
+	 *
+	 * @return void
+	 **/
+	function catchevolution_social_widget() {
+		$widget_ops = array( 'classname' => 'widget_catchevolution_social_search_widget', 'description' => __( 'Use this widget to add Social Icons from Social Icons Settings & Search  as a widget. ', 'catchevolution' ) );
+		$this->WP_Widget( 'widget_catchevolution_social_search_widget', __( '3. Catch Evolution Social & Seach Widget', 'catchevolution' ), $widget_ops );
+		$this->alt_option_name = 'widget_catchevolution_social_search_widget';
+	}
+
+	/**
+	 * Creates the form for the widget in the back-end which includes the Title , adcode, image, alt
+	 * $instance Current settings
+	 */
+	function form($instance) {
+		$instance = wp_parse_args( (array) $instance, array( 'title' => '' ) );
+		$title = esc_attr( $instance[ 'title' ] );
+		?>
+        <p>
+            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title (optional):','catchevolution'); ?></label>
+            <input type="text" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $title; ?>" class="widefat" id="<?php echo $this->get_field_id('title'); ?>" />
+        </p>
+        <?php
+	}
+	
+	/**
+	 * update the particular instant  
+	 * 
+	 * This function should check that $new_instance is set correctly.
+	 * The newly calculated value of $instance should be returned.
+	 * If "false" is returned, the instance won't be saved/updated.
+	 *
+	 * $new_instance New settings for this instance as input by the user via form()
+	 * $old_instance Old settings for this instance
+	 * Settings to save or bool false to cancel saving
+	 */
+	function update( $new_instance, $old_instance ) {
+		$instance = $old_instance;
+		$instance['title'] = strip_tags($new_instance['title']);
+		
+		return $instance;
+	}	
+	
+	/**
+	 * Displays the Widget in the front-end.
+	 * 
+	 * $args Display arguments including before_title, after_title, before_widget, and after_widget.
+	 * $instance The settings for the particular instance of the widget
+	 */
+	function widget( $args, $instance ) {
+		extract( $args );
+		extract( $instance );
+		$title = !empty( $instance['title'] ) ? $instance[ 'title' ] : '';
+			
+		echo $before_widget;
+		if ( $title != '' ) {
+			echo $before_title . apply_filters( 'widget_title', $title, $instance, $this->id_base ) . $after_title;
+		} 
+		
+		catchevolution_social_search();
+		
+		echo $after_widget;
+	}
+
+}

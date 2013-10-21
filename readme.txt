@@ -36,7 +36,7 @@ Version 1.0
 Version 1.0.1
 * Fixed long title overflow issue
 * Fixed custom header undefined index
-* Fixed Older/Newest entries navigations 
+* Fixed Older/Newest entries navigation 
 * Removed unwanted color_picker.js and jetpack.php files
 
 Version 1.0.2
@@ -48,3 +48,6 @@ Version 1.1
 * Added content-sidebar-wrap div to support 3 column layout
 * Added catchevolution_before_contentsidebarwrap and catchevolution_after_contentsidebarwrap hook to support 3 column layout
 * Fixed Error 404 page search box
+
+Version 1.1.1
+* Added Open Link in New Window option in Catch Evolution Adspace Widget
