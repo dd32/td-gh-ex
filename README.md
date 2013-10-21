@@ -27,6 +27,13 @@ Bundled Resources
 Change Log
 ---------------
 
+#### 1.1.1
+* Fixed Social widget to improve display in header on boxed layout.
+* Fixed archive posts view.
+* Premium: Added customizer settings for main menu to change icon color and item padding.
+* Premium: Removed duplicate CSS for social icon.
+* Premium: Improved mobile navigation.
+
 #### 1.1
 * Added blog archive settings to change layout and thumbnail display.
 * Added widgetized area to the header. Designed for a single widget to replace site info text.
@@ -110,22 +117,3 @@ Change Log
 
 #### 1.0
 * Initial release.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

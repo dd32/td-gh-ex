@@ -47,8 +47,9 @@
 	-moz-border-radius: 3px;
 	border-radius: 3px;
 	box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-	display: inline-block;
+	display: block;
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#f2f2f2',GradientType=0 );
+	float: left;
 }
 
 .media-field-wrapper:hover {

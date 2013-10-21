@@ -4,7 +4,7 @@ Author: SiteOrigin
 Author URI: http://siteorigin.com/
 Theme URI: http://siteorigin.com/theme/vantage/
 Description: Vantage is a flexible multipurpose theme. It's strength lies in its tight integration with some powerful plugins like Page Builder for responsive page layouts, MetaSlider for big beautiful sliders and WooCommerce to help you sell online. Vantage is fully responsive and retina ready. Use it to start a business site, portfolio or online store.
-Version: 1.1
+Version: 1.1.1
 License: GNU General Public License 2.0
 License URI: license.txt
 Tags: flexible-width, custom-background, custom-menu, featured-images, theme-options, threaded-comments, translation-ready, black, white, light, one-column, two-columns, full-width-template
@@ -826,8 +826,10 @@ body.responsive.layout-full #page-wrapper .full-container {
 ----------------------------------------------- */
 
 .main-navigation {
+	position: relative;
+	
 	background: #343538;
-	font-size: 13px; /* Font awesome icons */ 
+	font-size: 13px;
 	margin: 0 -35px;
 }
 
@@ -858,10 +860,6 @@ body.responsive.layout-full #page-wrapper .full-container {
 
 .main-navigation ul li:hover > a {
 	background: #00bcff;
-	color: #FFFFFF;
-}
-
-.main-navigation ul li:hover > a [class^="icon-"] {
 	color: #FFFFFF;
 }
 
@@ -950,6 +948,14 @@ body.responsive.layout-full #page-wrapper .full-container {
 	margin-right: 15px;
 }
 
+.main-navigation a:hover [class^="icon-"] {
+	color: #FFFFFF;
+}
+
+body.has-menu-search .main-navigation ul {
+	margin-right: 59px;
+}
+
 /* Handle the navigation slightly differently on mobile devices */
 
 body.mobile-device .main-navigation ul ul {
@@ -965,14 +971,17 @@ body.mobile-device .main-navigation li:hover ul {
 }
 
 #search-icon {
-	position: relative;
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
 	
-	float: right;
 }
 
 #search-icon #search-icon-icon {
+	position: relative;
 	width: 59px;
-	height: 59px;
+	height: 100%;
 	
 	background-color: #303134;
 	-ms-box-sizing: border-box;
@@ -981,7 +990,6 @@ body.mobile-device .main-navigation li:hover ul {
 	box-sizing: border-box;
 	cursor: pointer;
 	display: block;
-	padding: 22px 21px;
 }
 
 #search-icon #search-icon-icon,
@@ -993,11 +1001,16 @@ body.mobile-device .main-navigation li:hover ul {
 }
 
 #search-icon #search-icon-icon .icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
 	width: 17px;
 	height: 17px;
 	
-	background: url('images/sprites-1-1.png') no-repeat 0 -54px;
-	display: inline-block;
+	background: url('images/sprites-1-1-1.png') no-repeat -33px -15px;
+	display: block;
+	margin-left: -8.5px;
+	margin-top: -8px;
 }
 
 #search-icon #search-icon-icon:hover {
@@ -1005,7 +1018,7 @@ body.mobile-device .main-navigation li:hover ul {
 }
 
 #search-icon #search-icon-icon:hover .icon {
-	background: url('images/sprites-1-1.png') no-repeat 0 -18px;
+	background: url('images/sprites-1-1-1.png') no-repeat -51px -33px;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
@@ -2009,7 +2022,7 @@ body.layout-full {
 	width: 48px;
 	height: 48px;
 	
-	background: url('images/sprites-1-1.png') no-repeat -18px 0;
+	background: url('images/sprites-1-1-1.png') no-repeat -33px -86px;
 	opacity: 0;
 	-ms-transform: scale(0, 0);
 	-webkit-transform: scale(0, 0);
@@ -2163,17 +2176,17 @@ body.layout-full {
 	width: 14px;
 	height: 14px;
 	
-	background: url('images/sprites-1-1.png') no-repeat -18px -221px;
+	background: url('images/sprites-1-1-1.png') no-repeat -51px -15px;
 	cursor: pointer;
 	display: block;
 }
 
 .flexslider .flex-control-paging li a.flex-active {
-	background: url('images/sprites-1-1.png') no-repeat 0 -72px;
+	background: url('images/sprites-1-1-1.png') no-repeat -33px 0;
 }
 
 .flexslider .flex-control-paging li a:hover {
-	background: url('images/sprites-1-1.png') no-repeat -18px -221px;
+	background: url('images/sprites-1-1-1.png') no-repeat -51px -15px;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
@@ -2189,7 +2202,7 @@ body.layout-full {
 	}
 
 	.flexslider .flex-control-paging li a:hover {
-		background: url('images/sprites-1-1.png') no-repeat -18px -221px;
+		background: url('images/sprites-1-1-1.png') no-repeat -51px -15px;
 		background-size: 14px 14px;
 	}
 
@@ -2223,13 +2236,13 @@ body.layout-full {
 .flexslider .flex-direction-nav li a.flex-prev {
 	left: 0;
 	
-	background: url('images/sprites-1-1.png') no-repeat -18px -49px;
+	background: url('images/sprites-1-1-1.png') no-repeat 0 -86px;
 }
 
 .flexslider .flex-direction-nav li a.flex-next {
 	right: 0;
 	
-	background: url('images/sprites-1-1.png') no-repeat -18px -135px;
+	background: url('images/sprites-1-1-1.png') no-repeat 0 0;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
@@ -2618,7 +2631,7 @@ body.layout-full {
 	width: 5px;
 	height: 8px;
 	
-	background: url('images/sprites-1-1.png') no-repeat 0 -87px;
+	background: url('images/sprites-1-1-1.png') no-repeat -48px 0;
 	display: inline-block;
 	margin-left: 3px;
 }
@@ -2872,7 +2885,8 @@ body.layout-full {
 	-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 1px 1px rgba(0,0,0,0.1); /* The icons */ 
 	-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 1px 1px rgba(0,0,0,0.1); /* The icons */ 
 	box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 1px 1px rgba(0,0,0,0.1); /* The icons */ 
-	display: inline-block;
+	display: block;
+	float: left;
 	margin-right: 4px;
 	text-decoration: none;
 }
@@ -2952,186 +2966,6 @@ body.layout-full {
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7bc9f0', endColorstr='#6dc3ee', GradientType=0);
 }
 
-.widget_vantage-social-media .social-media-icon.social-media-icon-linkedin {
-	background: #0070b4;
-	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #0070b4), color-stop(1, #007ac3));
-	background: -ms-linear-gradient(bottom, #0070b4, #007ac3);
-	background: -moz-linear-gradient(center bottom, #0070b4 0%, #007ac3 100%);
-	background: -o-linear-gradient(#007ac3, #0070b4);
-	border: 1px solid #00609b;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#007ac3', endColorstr='#0070b4', GradientType=0);
-}
-
-.widget_vantage-social-media .social-media-icon.social-media-icon-linkedin:hover {
-	background: #007dc8;
-	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #007dc8), color-stop(1, #0086d8));
-	background: -ms-linear-gradient(bottom, #007dc8, #0086d8);
-	background: -moz-linear-gradient(center bottom, #007dc8 0%, #0086d8 100%);
-	background: -o-linear-gradient(#0086d8, #007dc8);
-	border: 1px solid #006daf;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0086d8', endColorstr='#007dc8', GradientType=0);
-}
-
-.widget_vantage-social-media .social-media-icon.social-media-icon-dribbble {
-	background: #d97aa5;
-	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #d97aa5), color-stop(1, #dc86ad));
-	background: -ms-linear-gradient(bottom, #d97aa5, #dc86ad);
-	background: -moz-linear-gradient(center bottom, #d97aa5 0%, #dc86ad 100%);
-	background: -o-linear-gradient(#dc86ad, #d97aa5);
-	border: 1px solid #d36698;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dc86ad', endColorstr='#d97aa5', GradientType=0);
-}
-
-.widget_vantage-social-media .social-media-icon.social-media-icon-dribbble:hover {
-	background: #de8ab0;
-	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #de8ab0), color-stop(1, #e196b8));
-	background: -ms-linear-gradient(bottom, #de8ab0, #e196b8);
-	background: -moz-linear-gradient(center bottom, #de8ab0 0%, #e196b8 100%);
-	background: -o-linear-gradient(#e196b8, #de8ab0);
-	border: 1px solid #d876a2;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e196b8', endColorstr='#de8ab0', GradientType=0);
-}
-
-.widget_vantage-social-media .social-media-icon.social-media-icon-flickr {
-	background: #444444;
-	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #444444), color-stop(1, #4c4c4c));
-	background: -ms-linear-gradient(bottom, #444444, #4c4c4c);
-	background: -moz-linear-gradient(center bottom, #444444 0%, #4c4c4c 100%);
-	background: -o-linear-gradient(#4c4c4c, #444444);
-	border: 1px solid #373737;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4c4c4c', endColorstr='#444444', GradientType=0);
-}
-
-.widget_vantage-social-media .social-media-icon.social-media-icon-flickr:hover {
-	background: #4e4e4e;
-	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #4e4e4e), color-stop(1, #565656));
-	background: -ms-linear-gradient(bottom, #4e4e4e, #565656);
-	background: -moz-linear-gradient(center bottom, #4e4e4e 0%, #565656 100%);
-	background: -o-linear-gradient(#565656, #4e4e4e);
-	border: 1px solid #414141;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#565656', endColorstr='#4e4e4e', GradientType=0);
-}
-
-.widget_vantage-social-media .social-media-icon.social-media-icon-instagram {
-	background: #426f98;
-	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #426f98), color-stop(1, #4777a3));
-	background: -ms-linear-gradient(bottom, #426f98, #4777a3);
-	background: -moz-linear-gradient(center bottom, #426f98 0%, #4777a3 100%);
-	background: -o-linear-gradient(#4777a3, #426f98);
-	border: 1px solid #3a6286;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4777a3', endColorstr='#426f98', GradientType=0);
-}
-
-.widget_vantage-social-media .social-media-icon.social-media-icon-instagram:hover {
-	background: #4879a6;
-	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #4879a6), color-stop(1, #4d81b1));
-	background: -ms-linear-gradient(bottom, #4879a6, #4d81b1);
-	background: -moz-linear-gradient(center bottom, #4879a6 0%, #4d81b1 100%);
-	background: -o-linear-gradient(#4d81b1, #4879a6);
-	border: 1px solid #406c94;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4d81b1', endColorstr='#4879a6', GradientType=0);
-}
-
-.widget_vantage-social-media .social-media-icon.social-media-icon-pinterest {
-	background: #fd3832;
-	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #fd3832), color-stop(1, #fd4741));
-	background: -ms-linear-gradient(bottom, #fd3832, #fd4741);
-	background: -moz-linear-gradient(center bottom, #fd3832 0%, #fd4741 100%);
-	background: -o-linear-gradient(#fd4741, #fd3832);
-	border: 1px solid #fd1f19;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fd4741', endColorstr='#fd3832', GradientType=0);
-}
-
-.widget_vantage-social-media .social-media-icon.social-media-icon-pinterest:hover {
-	background: #fd4c46;
-	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #fd4c46), color-stop(1, #fd5a55));
-	background: -ms-linear-gradient(bottom, #fd4c46, #fd5a55);
-	background: -moz-linear-gradient(center bottom, #fd4c46 0%, #fd5a55 100%);
-	background: -o-linear-gradient(#fd5a55, #fd4c46);
-	border: 1px solid #fd332d;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fd5a55', endColorstr='#fd4c46', GradientType=0);
-}
-
-.widget_vantage-social-media .social-media-icon.social-media-icon-rss {
-	background: #ff9900;
-	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #ff9900), color-stop(1, #ff9f0f));
-	background: -ms-linear-gradient(bottom, #ff9900, #ff9f0f);
-	background: -moz-linear-gradient(center bottom, #ff9900 0%, #ff9f0f 100%);
-	background: -o-linear-gradient(#ff9f0f, #ff9900);
-	border: 1px solid #e68a00;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff9f0f', endColorstr='#ff9900', GradientType=0);
-}
-
-.widget_vantage-social-media .social-media-icon.social-media-icon-rss:hover {
-	background: #ffa114;
-	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #ffa114), color-stop(1, #ffa724));
-	background: -ms-linear-gradient(bottom, #ffa114, #ffa724);
-	background: -moz-linear-gradient(center bottom, #ffa114 0%, #ffa724 100%);
-	background: -o-linear-gradient(#ffa724, #ffa114);
-	border: 1px solid #fa9600;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffa724', endColorstr='#ffa114', GradientType=0);
-}
-
-.widget_vantage-social-media .social-media-icon.social-media-icon-skype {
-	background: #09c6ff;
-	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #09c6ff), color-stop(1, #18caff));
-	background: -ms-linear-gradient(bottom, #09c6ff, #18caff);
-	background: -moz-linear-gradient(center bottom, #09c6ff 0%, #18caff 100%);
-	background: -o-linear-gradient(#18caff, #09c6ff);
-	border: 1px solid #00b7ef;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#18caff', endColorstr='#09c6ff', GradientType=0);
-}
-
-.widget_vantage-social-media .social-media-icon.social-media-icon-skype:hover {
-	background: #1dcbff;
-	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #1dcbff), color-stop(1, #2dceff));
-	background: -ms-linear-gradient(bottom, #1dcbff, #2dceff);
-	background: -moz-linear-gradient(center bottom, #1dcbff 0%, #2dceff 100%);
-	background: -o-linear-gradient(#2dceff, #1dcbff);
-	border: 1px solid #04c5ff;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2dceff', endColorstr='#1dcbff', GradientType=0);
-}
-
-.widget_vantage-social-media .social-media-icon.social-media-icon-youtube {
-	background: #ff3635;
-	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #ff3635), color-stop(1, #ff4544));
-	background: -ms-linear-gradient(bottom, #ff3635, #ff4544);
-	background: -moz-linear-gradient(center bottom, #ff3635 0%, #ff4544 100%);
-	background: -o-linear-gradient(#ff4544, #ff3635);
-	border: 1px solid #ff1d1b;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff4544', endColorstr='#ff3635', GradientType=0);
-}
-
-.widget_vantage-social-media .social-media-icon.social-media-icon-youtube:hover {
-	background: #ff4a49;
-	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #ff4a49), color-stop(1, #ff5a59));
-	background: -ms-linear-gradient(bottom, #ff4a49, #ff5a59);
-	background: -moz-linear-gradient(center bottom, #ff4a49 0%, #ff5a59 100%);
-	background: -o-linear-gradient(#ff5a59, #ff4a49);
-	border: 1px solid #ff3130;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5a59', endColorstr='#ff4a49', GradientType=0);
-}
-
-.widget_vantage-social-media .social-media-icon.social-media-icon-github {
-	background: #387cc9;
-	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #387cc9), color-stop(1, #4484cc));
-	background: -ms-linear-gradient(bottom, #387cc9, #4484cc);
-	background: -moz-linear-gradient(center bottom, #387cc9 0%, #4484cc 100%);
-	background: -o-linear-gradient(#4484cc, #387cc9);
-	border: 1px solid #3170b6;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4484cc', endColorstr='#387cc9', GradientType=0);
-}
-
-.widget_vantage-social-media .social-media-icon.social-media-icon-github:hover {
-	background: #4887cd;
-	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #4887cd), color-stop(1, #548ed1));
-	background: -ms-linear-gradient(bottom, #4887cd, #548ed1);
-	background: -moz-linear-gradient(center bottom, #4887cd 0%, #548ed1 100%);
-	background: -o-linear-gradient(#548ed1, #4887cd);
-	border: 1px solid #3679c6;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#548ed1', endColorstr='#4887cd', GradientType=0);
-}
-
 .widget_vantage-social-media .social-media-icon.social-media-icon-google-plus {
 	background: #f80000;
 	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #f80000), color-stop(1, #ff0808));
@@ -3150,71 +2984,6 @@ body.layout-full {
 	background: -o-linear-gradient(#ff1d1d, #ff0d0d);
 	border: 1px solid #f30000;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff1d1d', endColorstr='#ff0d0d', GradientType=0);
-}
-
-.widget_vantage-social-media .social-media-icon.social-media-icon-vimeo {
-	background: #42b8ff;
-	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #42b8ff), color-stop(1, #51beff));
-	background: -ms-linear-gradient(bottom, #42b8ff, #51beff);
-	background: -moz-linear-gradient(center bottom, #42b8ff 0%, #51beff 100%);
-	background: -o-linear-gradient(#51beff, #42b8ff);
-	border: 1px solid #28aeff;
-	-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), 0 1px 1px rgba(0,0,0,0.1);
-	-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), 0 1px 1px rgba(0,0,0,0.1);
-	box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), 0 1px 1px rgba(0,0,0,0.1);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#51beff', endColorstr='#42b8ff', GradientType=0);
-}
-
-.widget_vantage-social-media .social-media-icon.social-media-icon-vimeo:hover {
-	background: #56c0ff;
-	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #56c0ff), color-stop(1, #66c5ff));
-	background: -ms-linear-gradient(bottom, #56c0ff, #66c5ff);
-	background: -moz-linear-gradient(center bottom, #56c0ff 0%, #66c5ff 100%);
-	background: -o-linear-gradient(#66c5ff, #56c0ff);
-	border: 1px solid #3db6ff;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#66c5ff', endColorstr='#56c0ff', GradientType=0);
-}
-
-.widget_vantage-social-media .social-media-icon.social-media-icon-small {
-	width: 24px;
-	height: 24px;
-	
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
-	border-radius: 2px;
-}
-
-.widget_vantage-social-media .social-media-icon.social-media-icon-small [class^="icon-"] {
-	font-size: 12px;
-}
-
-.widget_vantage-social-media .social-media-icon.social-media-icon-small img {
-	width: 12px;
-	height: 12px;
-	
-	margin-left: -6px;
-	margin-top: -6px;
-}
-
-.widget_vantage-social-media .social-media-icon.social-media-icon-large {
-	width: 48px;
-	height: 48px;
-	
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
-}
-
-.widget_vantage-social-media .social-media-icon.social-media-icon-large [class^="icon-"] {
-	font-size: 22px;
-}
-
-.widget_vantage-social-media .social-media-icon.social-media-icon-large img {
-	width: 22px;
-	height: 22px;
-	
-	margin-left: -11px;
-	margin-top: -10px;
 }
 
 /* =Some row styling for page builder
@@ -3284,11 +3053,11 @@ body.layout-full {
 }
 
 .vantage-carousel-title a.next {
-	background: url('images/sprites-1-1.png') no-repeat 0 0;
+	background: url('images/sprites-1-1-1.png') no-repeat -33px -33px;
 }
 
 .vantage-carousel-title a.previous {
-	background: url('images/sprites-1-1.png') no-repeat 0 -36px;
+	background: url('images/sprites-1-1-1.png') no-repeat -69px -33px;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 2) {

@@ -7,7 +7,7 @@
  * @license GPL 2.0
  */
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.1' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.1.1' );
 define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://updates.siteorigin.com' );
 
 if( file_exists( get_template_directory() . '/premium/functions.php' ) ){
@@ -225,6 +225,10 @@ function vantage_body_class($classes){
 
 	if( wp_is_mobile() ) {
 		$classes[] = 'mobile-device';
+	}
+
+	if(siteorigin_setting('navigation_menu_search')) {
+		$classes[] = 'has-menu-search';
 	}
 
 	return $classes;
