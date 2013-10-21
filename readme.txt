@@ -58,7 +58,9 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
-
+@version 1.0.3
+@version 1.0.2
+1. Tag lien linked to home 
 @Version 1.0.1
 1. Copyright sign removed from hyperlink.
 2. GPLv3 added in the theme.
