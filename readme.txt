@@ -47,6 +47,20 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 1.5.5 =
+
+* Change how custom css gets called
+* Updated portfolio grid issue
+* Change styling with theme options
+* Add js override to make varations in woocommerce work
+* Add styling to prettyPhoto
+* Fix icon menu issue
+* Updated Social Widget
+* Update language for translation 
+* Fix issue with footer translation
+* Fix issue with icons disappearing in theme options when translated
+* Changes class for products
+
 = Version: 1.5.4 =
 
 * Updated Links in Theme Options

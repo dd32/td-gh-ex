@@ -15,7 +15,7 @@
 	<span style="display: none;" id="hooks"><?php echo json_encode(of_get_header_classes_array()); ?></span>
 	<input type="hidden" id="reset" value="<?php if(isset($_REQUEST['reset'])) echo $_REQUEST['reset']; ?>" />
 	<input type="hidden" id="security" name="security" value="<?php echo wp_create_nonce('of_ajax_nonce'); ?>" />
-	<div style="text-align:center; margin-bottom:20px; padding:20px; border:2px solid #999; font-size:16px;">Welcome to Virtue Theme! Upgrade to <a href="http://kadencethemes.com/product/virtue-premium-theme/" target="_blank" >Virtue Premium</a> for more great Features and Premium sliders.<div style="display:block; font-size:10px;">Revolution Slider, Testimonial Post Type, Staff Post Type, Filterable Portfolio, Shop Slider Options, Carousel Slider, and more!</div></div>
+	<div style="text-align:center; margin-bottom:20px; padding:20px; border:2px solid #999; font-size:16px;">Welcome to Virtue Theme! Upgrade to <a href="http://kadencethemes.com/product/virtue-premium-theme/" target="_blank" >Virtue Premium</a> for more great Features and Premium sliders.<div style="display:block; font-size:10px; max-width:600px; margin: 0 auto;">Revolution Slider, Product Carousel, Testimonial Post Type, Staff Post Type, Filterable Portfolio, Shop Slider Options, Carousel Slider, over 50 more Theme Options, Custom Breadcrumbs, more Skins, Custom Carousels and more!</div></div>
 
 	<form id="of_form" method="post" action="<?php echo esc_attr( $_SERVER['REQUEST_URI'] ) ?>" enctype="multipart/form-data" >
 	

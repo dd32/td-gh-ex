@@ -23,7 +23,7 @@ function kad_image_gallery_metabox() {
             foreach ( $attachments as $attachment_id ) {
                 echo '<li class="image attachment details" data-attachment_id="' . $attachment_id . '"><div class="attachment-preview"><div class="thumbnail">
                             ' . wp_get_attachment_image( $attachment_id, 'thumbnail' ) . '</div>
-                            <a href="#" class="delete check" title="' . __( 'Remove image', 'easy-image-gallery' ) . '"><div class="media-modal-icon"></div></a>
+                            <a href="#" class="delete check" title="' . __( 'Remove image', 'virtue' ) . '"><div class="media-modal-icon"></div></a>
                         </div></li>';
         }
 ?>

@@ -423,7 +423,7 @@ $of_options = array();
 
             $of_options[] = array( 	"name" 		=> __("Main Settings", 'virtue'),
 						"type" 		=> "heading",
-                                    "desc"            => "Main Settings"
+                                    "icon"                => ADMIN_IMAGES . "icon-main.png"
 				);
 					
             $of_options[] = array( 	"name" 		=> "Hello there!",
@@ -599,7 +599,7 @@ $of_options = array();
                                      "type"            => "media");
             $of_options[] = array(  "name"            => __("Topbar Settings", 'virtue'),
                                     "type"            => "heading",
-                                    "desc"            => "Topbar Settings"
+                                    "icon"                => ADMIN_IMAGES . "icon-topbar.png"
                         );
 		$of_options[] = array(    "name"            => __("Use Topbar?", 'virtue'),
                                     "desc"            => __("Choose to show or hide topbar", 'virtue'),
@@ -639,7 +639,8 @@ $of_options = array();
                         ); 
             $of_options[] = array( 	"name" 		=> __("Slider Settings", 'virtue'),
 						"type" 		=> "heading",
-                                    "desc"            => "Slider Settings"
+                                    "icon"                => ADMIN_IMAGES . "icon-slider.png"
+
 				);
             $of_options[] = array( "name"             => __("Choose a Home Image Slider", 'virtue'),
       					"desc"            => __("If you don't want an image slider on your home page choose none.", 'virtue'),
@@ -726,8 +727,8 @@ $of_options = array();
 
             $of_options[] = array( 	"name" 		=> __("Mobile Slider", 'virtue'),
 						"type" 		=> "heading",
-                                    "desc"            => "Mobile Slider"
-				);
+                                     "icon"                => ADMIN_IMAGES . "icon-mobile.png"
+                                     				);
             $of_options[] = array(   "name"            => "Mobile Body",
 					       "desc"            => "",
 					       "id"              => "info_mobile_slider",
@@ -819,7 +820,7 @@ $of_options = array();
 
             $of_options[] = array( "name"             => __("Home Layout", 'virtue'),
 					     "type"             => "heading",
-                                    "desc"            => "Home Layout"
+                                     "icon"                => ADMIN_IMAGES . "icon-home.png"
                                     );
 
 
@@ -933,7 +934,8 @@ $of_options = array();
 
             $of_options[] = array(  "name"            => __("Shop Settings", 'virtue'),
 					      "type"            => "heading",
-                                    "desc"            => "Shop Settings"
+                                    "icon"                => ADMIN_IMAGES . "icon-woocommerce.png"
+
                                     );
             $of_options[] = array(  "name"             => "shopsettings",
                                     "desc"             => "",
@@ -995,7 +997,8 @@ $of_options = array();
                                 ); 
             $of_options[] = array( "name"        => __("Basic Styling", 'virtue'),
 					     "type"        => "heading",
-                                    "desc"       => "Basic Styling"
+                                   "icon"       => ADMIN_IMAGES . "icon-brush.png"
+
                                    );
 
             $of_options[] = array(  "name"             => __("Theme Skin Stylesheet", 'virtue'),
@@ -1032,71 +1035,71 @@ $of_options = array();
 
 	     $of_options[] = array( "name" => __("Advanced Styling", 'virtue'),
 					       "type" => "heading",
-                                    "desc"  => "Advanced Styling"
+                                    "icon"                => ADMIN_IMAGES . "icon-paint.png"
                                     );
-					
-		                         $of_options[] = array( "name"             => "maincontentback",
-					                              "desc"             => "",
-										"id"               => "info_main_backgroun",
-										"std"              => "<h3>".__('Main Conent Background', 'virtue')."</h3>
-										        This sets your background for page content areas.",
-										"icon"              => true,
-										"type"              => "info"
+		                        
+                                     $of_options[] = array( "name"             => "maincontentback",
+                                                            "desc"             => "",
+                                                            "id"               => "info_main_backgroun",
+                                                            "std"              => "<h3>".__('Main Content Background', 'virtue')."</h3>
+                                                                    <p>".__('This sets your background for page content areas.', 'virtue')."</p>",
+                                                            "icon"              => true,
+                                                            "type"              => "info"
                                                             );
-					       $of_options[] = array( "name"              => __("Main Content Background", 'virtue'),
-										"desc"              => __("Background Color", 'virtue'),
-										"id"                => "content_bg_color",
-										"std"               => "",
-										"type"              => "color"
+                                     $of_options[] = array( "name"              => __("Main Content Background", 'virtue'),
+                                                            "desc"              => __("Background Color", 'virtue'),
+                                                            "id"                => "content_bg_color",
+                                                            "std"               => "",
+                                                            "type"              => "color"
                                                             ); 
-					       $of_options[] = array( "name"             => "",
-										"desc"              => __("Upload background image or texture", 'virtue'),
-										"id"                => "content_bg_img",
-										"std"               => "",
-										"type"              => "upload"); 
-										
-					       $of_options[] = array( "name"             => "",
-										"desc"              => __("Image repeat options", 'virtue'),
-										"id"                => "content_bg_repeat",
-										"std"               => "",
-										"type"              => "select",
-										"options"           => array(
-                  										''            => 'select',
-                  										'no-repeat'   => 'no-repeat',
-                  										'repeat'      => 'repeat',
-                  										'repeat-x'    => 'repeat-x',
-                  										'repeat-y'    => 'repeat-y'
-                  										)
-										); 
-					       $of_options[] = array( "name"             => "",
-										"desc"              => __("X image placement options", 'virtue'),
-										"id"                => "content_bg_placementx",
-										"std"               => "",
-										"type"              => "select",
-										"options"           => array(
-                  										''            => 'select',
-                  										'left'         => 'left',
-                  										'center'      => 'center',
-                  										'right'      => 'right',
-                  										)
-										); 
-					       $of_options[] = array( "name"              => "",
-										"desc"              => __("Y image placement options", 'virtue'),
-										"id"                => "content_bg_placementy",
-										"std"               => "",
-										"type"              => "select",
-										"options"           => array(
-                  										''            => 'select',
-                  										'top'         => 'top',
-                  										'center'      => 'center',
-                  										'bottom'      => 'bottom',
-										                    )
-										);
-                                                            $of_options[] = array(  "name"              => "topbar_back",
+                                     $of_options[] = array( "name"             => "",
+                                                            "desc"              => __("Upload background image or texture", 'virtue'),
+                                                            "id"                => "content_bg_img",
+                                                            "std"               => "",
+                                                            "type"              => "upload"); 
+                                                            
+                                     $of_options[] = array( "name"             => "",
+                                                            "desc"              => __("Image repeat options", 'virtue'),
+                                                            "id"                => "content_bg_repeat",
+                                                            "std"               => "",
+                                                            "type"              => "select",
+                                                            "options"           => array(
+                                                                              ''            => 'select',
+                                                                              'no-repeat'   => 'no-repeat',
+                                                                              'repeat'      => 'repeat',
+                                                                              'repeat-x'    => 'repeat-x',
+                                                                              'repeat-y'    => 'repeat-y'
+                                                                              )
+                                                            ); 
+                                     $of_options[] = array( "name"             => "",
+                                                            "desc"              => __("X image placement options", 'virtue'),
+                                                            "id"                => "content_bg_placementx",
+                                                            "std"               => "",
+                                                            "type"              => "select",
+                                                            "options"           => array(
+                                                                              ''            => 'select',
+                                                                              'left'         => 'left',
+                                                                              'center'      => 'center',
+                                                                              'right'      => 'right',
+                                                                              )
+                                                            ); 
+                                     $of_options[] = array( "name"              => "",
+                                                            "desc"              => __("Y image placement options", 'virtue'),
+                                                            "id"                => "content_bg_placementy",
+                                                            "std"               => "",
+                                                            "type"              => "select",
+                                                            "options"           => array(
+                                                                              ''            => 'select',
+                                                                              'top'         => 'top',
+                                                                              'center'      => 'center',
+                                                                              'bottom'      => 'bottom',
+                                                                                )
+                                                            );
+                                    $of_options[] = array(  "name"              => "topbar_back",
                                                             "desc"              => "",
                                                             "id"                => "info_topbar_background",
                                                             "std"               => "<h3>".__('Topbar Background', 'virtue')."</h3>
-                                                                          This sets your background for your sites topbar.",
+                                                                          <p>".__('This sets your background for your sites header.', 'virtue')."</p>",
                                                             "icon"              => true,
                                                             "type"              => "info"
                                                             );
@@ -1148,126 +1151,126 @@ $of_options = array();
                                                                               'center'      => 'center',
                                                                               'bottom'      => 'bottom',
                                                                               )
-                                                            ); 
-						$of_options[] = array(  "name"              => "headerback",
-										"desc"              => "",
-										"id"                => "info_header_background",
-										"std"               => "<h3>".__('Header Background', 'virtue')."</h3>
-										              This sets your background for your sites header.",
-										"icon"              => true,
-										"type"              => "info"
+                                                            );
+                                    $of_options[] = array(  "name"              => "headerback",
+                                                            "desc"              => "",
+                                                            "id"                => "info_header_background",
+                                                            "std"               => "<h3>".__('Header Background', 'virtue')."</h3>
+                                                                          <p>".__('This sets your background for your sites header.', 'virtue')."</p>",
+                                                            "icon"              => true,
+                                                            "type"              => "info"
                                                             );
                                     $of_options[] = array(  "name"              => __("Header Background", 'virtue'),
-										"desc"              => __("Background Color", 'virtue'),
-										"id"                => "header_bg_color",
-										"std"               => "",
-										"type"              => "color"
+                                                            "desc"              => __("Background Color", 'virtue'),
+                                                            "id"                => "header_bg_color",
+                                                            "std"               => "",
+                                                            "type"              => "color"
                                                             ); 
-					       $of_options[] = array( "name" => "",
-										"desc" => __("Upload background image or texture", 'virtue'),
-										"id" => "header_bg_img",
-										"std" => "",
-										"type" => "upload"
+                                     $of_options[] = array( "name" => "",
+                                                            "desc" => __("Upload background image or texture", 'virtue'),
+                                                            "id" => "header_bg_img",
+                                                            "std" => "",
+                                                            "type" => "upload"
                                                             ); 
-					       $of_options[] = array( "name"              => "",
-										"desc"              => __("Image repeat options", 'virtue'),
-										"id"                => "header_bg_repeat",
-										"std"               => "",
-										"type"              => "select",
-										"options"           => array(
-            										''            => 'select',
-            										'no-repeat'   => 'no-repeat',
-            										'repeat'      => 'repeat',
-            										'repeat-x'    => 'repeat-x',
-            										'repeat-y'    => 'repeat-y'
-										              )
-										);  
-					       $of_options[] = array( "name"              => "",
-										"desc"              => __("X image placement options", 'virtue'),
-										"id"                => "header_bg_placementx",
-										"std"               => "",
-										"type"              => "select",
-            								"options"           => array(
-            										''            => 'select',
-            										'left'         => 'left',
-            										'center'      => 'center',
-            										'right'      => 'right',
-            										)
-										);
-					       $of_options[] = array( "name"             => "",
-										"desc"              => __("Y image placement options", 'virtue'),
-										"id"                => "header_bg_placementy",
-										"std"               => "",
-										"type"              => "select",
-										"options"           => array(
-                  										''            => 'select',
-                  										'top'         => 'top',
-                  										'center'      => 'center',
-                  										'bottom'      => 'bottom',
-										                  )
-										);
-						$of_options[] = array(  "name"              => "menuback",
-										"desc"              => "",
-										"id"                => "info_menu_background",
-										"std"               => "<h3>".__('Secondary Menu Background', 'virtue')."</h3>
-										              This sets your background for the secondary menu.",
-										"icon"              => true,
-										"type"              => "info"
+                                     $of_options[] = array( "name"              => "",
+                                                            "desc"              => __("Image repeat options", 'virtue'),
+                                                            "id"                => "header_bg_repeat",
+                                                            "std"               => "",
+                                                            "type"              => "select",
+                                                            "options"           => array(
+                                                                        ''            => 'select',
+                                                                        'no-repeat'   => 'no-repeat',
+                                                                        'repeat'      => 'repeat',
+                                                                        'repeat-x'    => 'repeat-x',
+                                                                        'repeat-y'    => 'repeat-y'
+                                                                          )
+                                                            );  
+                                     $of_options[] = array( "name"              => "",
+                                                            "desc"              => __("X image placement options", 'virtue'),
+                                                            "id"                => "header_bg_placementx",
+                                                            "std"               => "",
+                                                            "type"              => "select",
+                                                            "options"           => array(
+                                                                        ''            => 'select',
+                                                                        'left'         => 'left',
+                                                                        'center'      => 'center',
+                                                                        'right'      => 'right',
+                                                                        )
                                                             );
-	                              $of_options[] = array( "name"            => __("Secondary Menu Background", 'virtue'),
-										"desc"           => __("Background Color", 'virtue'),
-										"id"             => "menu_bg_color",
-										"std"            => "",
-										"type"           => "color"); 
-					
-					       $of_options[] = array( "name"              => "",
-										"desc"              => __("Upload background image or texture", 'virtue'),
-										"id"                => "menu_bg_img",
-										"std"               => "",
-										"type"              => "upload"); 
-										
-					       $of_options[] = array( "name"              => "",
-										"desc"              => "Image repeat options",
-										"id"                => "menu_bg_repeat",
-										"std"               => "",
-										"type"              => "select",
-										"options"           => array(
-                  										''            => 'select',
-                  										'no-repeat'   => 'no-repeat',
-                  										'repeat'      => 'repeat',
-                  										'repeat-x'    => 'repeat-x',
-                  										'repeat-y'    => 'repeat-y'
-                  										)
-										);  
-					$of_options[] = array( "name" => "",
-										"desc" => __("X image placement options", 'virtue'),
-										"id" => "menu_bg_placementx",
-										"std" => "",
-										"type" => "select",
-										"options" => array(
-										'' => 'select',
-										'left' => 'left',
-										'center'=>'center',
-										'right'=>'right',
-										)
-										);
-					$of_options[] = array( "name" => "",
-										"desc" => __("Y image placement options", 'virtue'),
-										"id" => "menu_bg_placementy",
-										"std" => "",
-										"type" => "select",
-										"options" => array(
-										'' => 'select',
-										'top' => 'top',
-										'center'=>'center',
-										'bottom'=>'bottom',
-										)
-										);  
-				             $of_options[] = array( "name"              => "mobile_menu_back",
+                                     $of_options[] = array( "name"             => "",
+                                                            "desc"              => __("Y image placement options", 'virtue'),
+                                                            "id"                => "header_bg_placementy",
+                                                            "std"               => "",
+                                                            "type"              => "select",
+                                                            "options"           => array(
+                                                                              ''            => 'select',
+                                                                              'top'         => 'top',
+                                                                              'center'      => 'center',
+                                                                              'bottom'      => 'bottom',
+                                                                              )
+                                                            );
+                                    $of_options[] = array(  "name"              => "menuback",
+                                                            "desc"              => "",
+                                                            "id"                => "info_menu_background",
+                                                            "std"               => "<h3>".__('Secondary Menu Background', 'virtue')."</h3>
+                                                                          <p>".__('This sets your background for the secondary menu.', 'virtue')."</p>",
+                                                            "icon"              => true,
+                                                            "type"              => "info"
+                                                            );
+                                    $of_options[] = array( "name"            => __("Secondary Menu Background", 'virtue'),
+                                                            "desc"           => __("Background Color", 'virtue'),
+                                                            "id"             => "menu_bg_color",
+                                                            "std"            => "",
+                                                            "type"           => "color"); 
+                              
+                                     $of_options[] = array( "name"              => "",
+                                                            "desc"              => __("Upload background image or texture", 'virtue'),
+                                                            "id"                => "menu_bg_img",
+                                                            "std"               => "",
+                                                            "type"              => "upload"); 
+                                                            
+                                     $of_options[] = array( "name"              => "",
+                                                            "desc"              => "Image repeat options",
+                                                            "id"                => "menu_bg_repeat",
+                                                            "std"               => "",
+                                                            "type"              => "select",
+                                                            "options"           => array(
+                                                                              ''            => 'select',
+                                                                              'no-repeat'   => 'no-repeat',
+                                                                              'repeat'      => 'repeat',
+                                                                              'repeat-x'    => 'repeat-x',
+                                                                              'repeat-y'    => 'repeat-y'
+                                                                              )
+                                                            );  
+                              $of_options[] = array( "name" => "",
+                                                            "desc" => __("X image placement options", 'virtue'),
+                                                            "id" => "menu_bg_placementx",
+                                                            "std" => "",
+                                                            "type" => "select",
+                                                            "options" => array(
+                                                            '' => 'select',
+                                                            'left' => 'left',
+                                                            'center'=>'center',
+                                                            'right'=>'right',
+                                                            )
+                                                            );
+                              $of_options[] = array( "name" => "",
+                                                            "desc" => __("Y image placement options", 'virtue'),
+                                                            "id" => "menu_bg_placementy",
+                                                            "std" => "",
+                                                            "type" => "select",
+                                                            "options" => array(
+                                                            '' => 'select',
+                                                            'top' => 'top',
+                                                            'center'=>'center',
+                                                            'bottom'=>'bottom',
+                                                            )
+                                                            );  
+                                     $of_options[] = array( "name"              => "mobile_menu_back",
                                                             "desc"              => "",
                                                             "id"                => "info_mobile_background",
                                                             "std"               => "<h3>".__('Mobile Menu Background', 'virtue')."</h3>
-                                                                              This sets the background of the mobile menu.",
+                                                                    <p>".__('This sets the background of the mobile menu.', 'virtue')."</p>",
                                                             "icon"              => true,
                                                             "type"              => "info"
                                                             );
@@ -1321,137 +1324,136 @@ $of_options = array();
                                                                         'bottom'      => 'bottom',
                                                                         )
                                                             );
-				              $of_options[] = array( "name" => "footerback",
-										"desc" => "",
-										"id" => "info_footer_background",
-										"std" => "<h3>".__('Footer Background', 'virtue')."</h3>
-										This sets your background for your sites footer",
-										"icon" => true,
-										"type" => "info"
+                                      $of_options[] = array( "name" => "footerback",
+                                                            "desc" => "",
+                                                            "id" => "info_footer_background",
+                                                            "std" => "<h3>".__('Footer Background', 'virtue')."</h3>
+                                                            <p>".__('This sets your background for your sites footer', 'virtue')."</p>",
+                                                            "icon" => true,
+                                                            "type" => "info"
                                                             );
-					       $of_options[] = array( "name" => __("Footer Background", 'virtue'),
-										"desc" => __("Background Color", 'virtue'),
-										"id" => "footer_bg_color",
-										"std" => "",
-										"type" => "color"); 
-					
-					       $of_options[] = array( "name" => "",
-										"desc" => __("Upload background image or texture", 'virtue'),
-										"id" => "footer_bg_img",
-										"std" => "",
-										"type" => "upload"); 
-										
-					       $of_options[] = array( "name" => "",
-										"desc" => __("Image repeat options", 'virtue'),
-										"id" => "footer_bg_repeat",
-										"std" => "",
-										"type" => "select",
-										"options" => array(
-										'' => 'select',
-										'no-repeat' => 'no-repeat',
-										'repeat'=>'repeat',
-										'repeat-x'=>'repeat-x',
-										'repeat-y'=>'repeat-y'
-										)
-										);  
-					 
-					       $of_options[] = array( "name" => "",
-										"desc" => __("X image placement options", 'virtue'),
-										"id" => "footer_bg_placementx",
-										"std" => "",
-										"type" => "select",
-										"options" => array(
-										'' => 'select',
-										'left' => 'left',
-										'center'=>'center',
-										'right'=>'right',
-										)
-										);
-						$of_options[] = array( "name" => "",
-										"desc" => __("Y image placement options", 'virtue'),
-										"id" => "footer_bg_placementy",
-										"std" => "",
-										"type" => "select",
-										"options" => array(
-										'' => 'select',
-										'top' => 'top',
-										'center'=>'center',
-										'bottom'=>'bottom',
-										)
-										); 
-						$of_options[] = array( "name" => "bodyback",
-										"desc" => "",
-										"id" => "info_body_background",
-										"std" => "<h3>".__('Body Background', 'virtue')."</h3>
-										If Site is Boxed Layout, this will determine the body tags background.",
-										"icon" => true,
-										"type" => "info"
+                                     $of_options[] = array( "name" => __("Footer Background", 'virtue'),
+                                                            "desc" => __("Background Color", 'virtue'),
+                                                            "id" => "footer_bg_color",
+                                                            "std" => "",
+                                                            "type" => "color"); 
+                              
+                                     $of_options[] = array( "name" => "",
+                                                            "desc" => __("Upload background image or texture", 'virtue'),
+                                                            "id" => "footer_bg_img",
+                                                            "std" => "",
+                                                            "type" => "upload"); 
+                                                            
+                                     $of_options[] = array( "name" => "",
+                                                            "desc" => __("Image repeat options", 'virtue'),
+                                                            "id" => "footer_bg_repeat",
+                                                            "std" => "",
+                                                            "type" => "select",
+                                                            "options" => array(
+                                                            '' => 'select',
+                                                            'no-repeat' => 'no-repeat',
+                                                            'repeat'=>'repeat',
+                                                            'repeat-x'=>'repeat-x',
+                                                            'repeat-y'=>'repeat-y'
+                                                            )
+                                                            );  
+                               
+                                     $of_options[] = array( "name" => "",
+                                                            "desc" => __("X image placement options", 'virtue'),
+                                                            "id" => "footer_bg_placementx",
+                                                            "std" => "",
+                                                            "type" => "select",
+                                                            "options" => array(
+                                                            '' => 'select',
+                                                            'left' => 'left',
+                                                            'center'=>'center',
+                                                            'right'=>'right',
+                                                            )
                                                             );
-						$of_options[] = array( "name" => __("Body Background", 'virtue'),
-										"desc" => __("Background Color", 'virtue'),
-										"id" => "boxed_bg_color",
-										"std" => "",
-										"type" => "color"); 
-					
-					       $of_options[] = array( "name" => "",
-										"desc" => __("Upload background image or texture", 'virtue'),
-										"id" => "boxed_bg_img",
-										"std" => "",
-										"type" => "upload"); 
-										
-					       $of_options[] = array( "name" => "",
-										"desc" => __("Image repeat options", 'virtue'),
-										"id" => "boxed_bg_repeat",
-										"std" => "",
-										"type" => "select",
-										"options" => array(
-										'' => 'select',
-										'no-repeat' => 'no-repeat',
-										'repeat'=>'repeat',
-										'repeat-x'=>'repeat-x',
-										'repeat-y'=>'repeat-y'
-										)
-										);  
-					 
-					       $of_options[] = array( "name" => "",
-										"desc" => __("X image placement options", 'virtue'),
-										"id" => "boxed_bg_placementx",
-										"std" => "",
-										"type" => "select",
-										"options" => array(
-										'' => 'select',
-										'left' => 'left',
-										'center'=>'center',
-										'right'=>'right',
-										)
-										);
-						$of_options[] = array( "name" => "",
-										"desc" => __("Y image placement options", 'virtue'),
-										"id" => "boxed_bg_placementy",
-										"std" => "",
-										"type" => "select",
-										"options" => array(
-										'' => 'select',
-										'top' => 'top',
-										'center'=>'center',
-										'bottom'=>'bottom',
-										)
-										);
-						$of_options[] = array( "name"               => "",
-										"desc"              => __("Fixed or Scroll", 'virtue'),
-										"id"                => "boxed_bg_fixed",
-										"std"               => "",
-										"type"              => "select",
-										"options"           => array(
-            										'' => 'select',
-            										'fixed' => 'Fixed',
-            										'scroll'=>'Scroll',
-            										)
-										); 
-
+                                    $of_options[] = array( "name" => "",
+                                                            "desc" => __("Y image placement options", 'virtue'),
+                                                            "id" => "footer_bg_placementy",
+                                                            "std" => "",
+                                                            "type" => "select",
+                                                            "options" => array(
+                                                            '' => 'select',
+                                                            'top' => 'top',
+                                                            'center'=>'center',
+                                                            'bottom'=>'bottom',
+                                                            )
+                                                            ); 
+                                    $of_options[] = array( "name" => "bodyback",
+                                                            "desc" => "",
+                                                            "id" => "info_body_background",
+                                                            "std" => "<h3>".__('Body Background', 'virtue')."</h3>
+                                                            <p>".__('If Site is Boxed Layout, this will determine the body tags background.', 'virtue')."</p>",
+                                                            "icon" => true,
+                                                            "type" => "info"
+                                                            );
+                                    $of_options[] = array( "name" => __("Body Background", 'virtue'),
+                                                            "desc" => __("Background Color", 'virtue'),
+                                                            "id" => "boxed_bg_color",
+                                                            "std" => "",
+                                                            "type" => "color"); 
+                              
+                                     $of_options[] = array( "name" => "",
+                                                            "desc" => __("Upload background image or texture", 'virtue'),
+                                                            "id" => "boxed_bg_img",
+                                                            "std" => "",
+                                                            "type" => "upload"); 
+                                                            
+                                     $of_options[] = array( "name" => "",
+                                                            "desc" => __("Image repeat options", 'virtue'),
+                                                            "id" => "boxed_bg_repeat",
+                                                            "std" => "",
+                                                            "type" => "select",
+                                                            "options" => array(
+                                                            '' => 'select',
+                                                            'no-repeat' => 'no-repeat',
+                                                            'repeat'=>'repeat',
+                                                            'repeat-x'=>'repeat-x',
+                                                            'repeat-y'=>'repeat-y'
+                                                            )
+                                                            );  
+                               
+                                     $of_options[] = array( "name" => "",
+                                                            "desc" => __("X image placement options", 'virtue'),
+                                                            "id" => "boxed_bg_placementx",
+                                                            "std" => "",
+                                                            "type" => "select",
+                                                            "options" => array(
+                                                            '' => 'select',
+                                                            'left' => 'left',
+                                                            'center'=>'center',
+                                                            'right'=>'right',
+                                                            )
+                                                            );
+                                    $of_options[] = array( "name" => "",
+                                                            "desc" => __("Y image placement options", 'virtue'),
+                                                            "id" => "boxed_bg_placementy",
+                                                            "std" => "",
+                                                            "type" => "select",
+                                                            "options" => array(
+                                                            '' => 'select',
+                                                            'top' => 'top',
+                                                            'center'=>'center',
+                                                            'bottom'=>'bottom',
+                                                            )
+                                                            );
+                                    $of_options[] = array( "name"               => "",
+                                                            "desc"              => __("Fixed or Scroll", 'virtue'),
+                                                            "id"                => "boxed_bg_fixed",
+                                                            "std"               => "",
+                                                            "type"              => "select",
+                                                            "options"           => array(
+                                                                        '' => 'select',
+                                                                        'fixed' => 'Fixed',
+                                                                        'scroll'=>'Scroll',
+                                                                        )
+                                                            ); 
             $of_options[] = array(  "name"            => __("Typography", 'virtue'),
                                     "type"            => "heading",
-                                    "desc"            => "Typography"
+                                    "icon"            => ADMIN_IMAGES . "icon-type.png"
                                     );
             $of_options[] = array(  "name"             => "Header Font Options",
       					"desc"             => "",
@@ -1598,8 +1600,8 @@ $of_options = array();
 
       $of_options[] = array( "name" => __("Misc Settings", 'virtue'),
 					"type" => "heading",
-                              "desc"  => "Misc Settings"
-                              );
+                              "icon" => ADMIN_IMAGES . "icon-cogs.png"
+                                                            );
       $of_options[] = array(  "name"            => __("All Projects Portfolio Page", 'virtue'),
                               "desc"            => __("This sets the link in every single portfolio page. *note: You still have to set the page template to portfolio.", 'virtue'),
                               "id"              => "portfolio_link",
@@ -1653,7 +1655,7 @@ $of_options = array();
 
       $of_options[] = array( "name"              => __("Advanced Settings", 'virtue'),
 					"type"             => "heading",
-                              "desc"            => "Advanced Settings"
+                              "icon"                => ADMIN_IMAGES . "icon-wrench.png"
                               ); 
       $of_options[] = array(  "name"             => "CSS Info",
 					"desc"             => "",
@@ -1671,7 +1673,7 @@ $of_options = array();
 // Backup Options
 $of_options[] = array( 	"name" 		=> __("Backup Options", 'virtue'),
 				"type" 		=> "heading",
-                        "desc"            => "Backup Options"
+                        "icon"                => ADMIN_IMAGES . "icon-storage.png"
 				);
 				
 $of_options[] = array( 	"name" 		=> __("Backup and Restore Options", 'virtue'),

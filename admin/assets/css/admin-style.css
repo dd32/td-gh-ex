@@ -14,26 +14,25 @@
 } /* disable the admin notices */
 #of_container {
 	margin: 15px 15px 5px 15px;
-	width: 785px;
+	min-width: 785px;
+	max-width: 980px;
 	position:relative;
-	z-index: 0
+	z-index: 0;
+	-webkit-box-shadow: 0 1px 0 #FFFFFF inset, 0 1px 10px rgba(0, 0, 0, 0.1);
+box-shadow: 0 1px 0 #FFFFFF inset, 0 1px 10px rgba(0, 0, 0, 0.1);
 }
 #of_container #header {
 	height: 70px;
-	background:#f1f1f1;
-	border: 1px solid #ccc;
-	-webkit-border-radius: 6px 6px 0 0;
-	-moz-border-radius: 6px 6px 0 0;
-	border-radius: 6px 6px 0 0;
-	background-image: -ms-linear-gradient(top,#f9f9f9,#ececec);
-	background-image: -moz-linear-gradient(top,#f9f9f9,#ececec);
-	background-image: -o-linear-gradient(top,#f9f9f9,#ececec);
-	background-image: -webkit-gradient(linear,left top,left bottom,from(#f9f9f9),to(#ececec));
-	background-image: -webkit-linear-gradient(top,#f9f9f9,#ececec);
-	background-image: linear-gradient(top,#f9f9f9,#ececec);
-	-moz-box-shadow: inset 0 1px 0 #fff;
-	-webkit-box-shadow: inset 0 1px 0 #fff;
-	box-shadow: inset 0 1px 0 #fff;
+	background:#444;
+	background: url(../images/bg_head.png) repeat;
+	border-left: 1px solid #444;
+	border-right: 1px solid #444;
+	-webkit-border-radius: none;
+	-moz-border-radius: none;
+	border-radius: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
 }
 #of_container #header .logo {
 	float: left;
@@ -52,26 +51,29 @@
 
 #of_container #header .logo h2 {
 	display:inline-block;
+	color:#fff;
 	font-style:normal;
 	padding-right:5px;
+	text-shadow: #000 0 1px 1px;
 }
 #of_container #header .logo span {
-	color:#888888;
+	color: #eee;
 }
 #of_container #header .icon-option {
 	float: right;
-	height: 32px;
-	width: 32px;
-	background: url(../images/icon_option.png) no-repeat;
-	margin:20px 30px 0;
+	height: 41px;
+	width: 233px;
+	background: url(../images/kadence_themes_logo.png) no-repeat;
+	margin: 13px 30px 0;
 }
 
 #of_container #info_bar {
 	background: #f3f3f3;
+	background: url(../images/bg_darker_still.png) repeat;
 	border:solid #d8d8d8;
 	border-bottom:1px solid #D8D8D8;
 	border-width:0px 1px 1px 1px;
-	padding: 6px 20px 0px 6px;
+	padding: 6px 20px 6px 6px;
 	height: 31px;
 	text-align: right;
 	-moz-box-shadow: inset 0 1px 0 #fcfcfc;
@@ -87,7 +89,7 @@ width: 21px;
 float: left;
 font-size:0px;
 text-indent: -9999px;
-margin: 0 0 0 10px;
+margin: 6px 0 0 10px;
 border: 1px solid #bbb;
 -webkit-border-radius: 2px;
 -moz-border-radius: 2px;
@@ -101,6 +103,7 @@ border-radius: 2px;
 }
 #of_container #main {
 	background-color: #f1f1f1;
+	background: url(../images/bg_darker.png) repeat;
 	border-left: 1px solid #d8d8d8;
 	border-right: 1px solid #d8d8d8;
 	border-bottom: 1px solid #d8d8d8;
@@ -109,7 +112,7 @@ border-radius: 2px;
 	float: left;
 	position: relative;
 	z-index: 9999;
-	width: 160px;
+	width: 20%;
 }
 #of_container #of-nav ul {
 	margin:0;
@@ -145,8 +148,8 @@ border-radius: 2px;
 	opacity: 0.5;
 }
 #of_container #of-nav ul li.current a {
-	background-color: #fcfcfc;
-	color: #797979;
+	background-color: #fdfdfd;
+	color: #444;
 	opacity: 1;
 }
 
@@ -155,28 +158,14 @@ border-radius: 2px;
 	opacity: 1;
 }
 
-/*menu icons - customize to your liking*/
-#of_container #of-nav li.slidersettings a{ background:url(../images/icon-slider.png) no-repeat;}
-#of_container #of-nav li.mainsettings a{ background:url(../images/icon-main.png) no-repeat;}
-#of_container #of-nav li.mobileslider a{ background:url(../images/icon-mobile.png) no-repeat;}
-#of_container #of-nav li.shopsettings a{ background:url(../images/icon-woocommerce.png) no-repeat;}
-#of_container #of-nav li.basicstyling a{ background:url(../images/icon-brush.png) no-repeat;}
-#of_container #of-nav li.advancedstyling a{ background:url(../images/icon-paint.png) no-repeat;}
-#of_container #of-nav li.homelayout a{ background:url(../images/icon-home.png) no-repeat;}
-#of_container #of-nav li.typography a{ background:url(../images/icon-type.png) no-repeat;}
-#of_container #of-nav li.miscsettings a{ background:url(../images/icon-cogs.png) no-repeat;}
-#of_container #of-nav li.backupoptions a {background: url(../images/icon-storage.png) no-repeat;}
-#of_container #of-nav li.advancedsettings a {background: url(../images/icon-wrench.png) no-repeat;}
-#of_container #of-nav li.topbarsettings a {background: url(../images/icon-topbar.png) no-repeat;}
-
 #of_container #content {
+	min-height: 580px;
+	width: 80%;
 	float: left;
-	min-height: 500px;
-	width: 595px;
 	margin-left: -1px;
-	padding: 0 14px;
+	margin-right: -1px;
 	font-family: "Lucida Grande", Sans-serif;
-	background-color: #FCFCFC;
+	background-color: #fdfdfd;
 	border-left: 1px solid #d8d8d8;
 	-moz-box-shadow: inset 0 1px 0 #fff;
 	-webkit-box-shadow: inset 0 1px 0 #fff;
@@ -226,9 +215,13 @@ border-radius: 2px;
 padding: 5px 10px;
 line-height: 1.5em;
 font-size: 12px;
-background-color: #eee;
+background-color: #ddd;
 border: 1px solid #f8f8f8;
 color: #555;
+}
+#of_container #content .section-info .controls .of-info h3 {
+font-size: 18px;
+margin: 12px 5px;
 }
 
 #of_container #content .section-info .controls .of-info ._icon { 
@@ -249,13 +242,19 @@ color: #555;
 	-moz-border-radius: 0 0 3px 3px;
 	border-radius: 0 0 3px 3px;
 }
+#of_container #content .group .section-sorter .option .controls {
+	width: 460px;
+}
+#of_container #content .group .section-sorter .option .explain {
+	width: 95px;
+	}
 #of_container .sorter {margin-right: -20px;}
 #of_container .sorter ul {
 	background: #F9F9F9;
 	border: 1px dashed #E3E3E3;
 	min-height: 40px;
 	padding: 10px 10px 0;
-	width: 145px;
+	width: 200px;
 	float: left;
 	margin: 0 15px 0 0;
 }
@@ -305,11 +304,31 @@ color: #555;
 
 
 #of_container textarea, #of_container input, #of_container select, #of_container button{
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	border-style:solid;
-	border-width:1px;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	border:none;
+}
+#of_container button {
+	line-height: 30px;
+	padding: 0 12px;
+	height: 30px;
+	background: #00b5e2;
+	color:#fff;
+	border: none !important;
+	-webkit-transition: 0.1s linear all;
+-moz-transition: 0.1s linear all;
+-ms-transition: 0.1s linear all;
+-o-transition: 0.1s linear all;
+transition: 0.1s linear all;
+}
+#of_container button.button-primary:hover {
+	border: none !important;
+	color:#fff;
+	text-shadow: none;
+	background: #00afdb;
+	-webkit-box-shadow: none;
+	box-shadow: none;
 }
 #of_container .controls input, #of_container .controls select, #of_container .controls textarea {
 	margin-bottom: 9px !important;
@@ -332,7 +351,7 @@ color: #555;
 }
 
 #of_container .controls .upload {
-	width: 340px;
+	width: 320px;
 }
 
 
@@ -425,7 +444,7 @@ label.radio, label.multicheck {
 }
 #of_container .group {
 	display:none;
-	padding-bottom:20px;
+	padding: 5px 8px 20px 20px;
 }
 #of_container .group h2 {
 	display:none;
@@ -512,6 +531,9 @@ border-radius: 3px;
 border-color: #dfdfdf;
 background-color: #fff;
 margin:4px 0 4px;
+padding: 0px 10px;
+line-height: 30px;
+height: 30px;
 }
 
 
@@ -555,21 +577,22 @@ color: #464646;
 	border-color: #bbb;
 }
 
-#of_container .reset-button:hover { color: #ef521d; border-color: #888}
+#of_container .reset-button:hover { color: #ef521d; border-color: #bbb; background:#f1f1f1;}
 
 #of_container .slide_add_button { float:right; margin-top:10px; }
 
 
 #of_container .save_bar {
 	background: #f3f3f3;
+	background: url(../images/bg_darker_still.png) repeat;
 	border:solid #ccc;
 	border-width:0px 1px 1px 1px;
-	padding: 10px 20px 0px 20px;
+	padding: 10px 20px 6px 20px;
 	height: 35px;
 	text-align: right;
-	-webkit-border-radius: 0 0 3px 3px;
-	-moz-border-radius: 0 0 3px 3px;
-	border-radius: 0 0 3px 3px;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
 	-moz-box-shadow: inset 0 1px 0 #fff;
 	-webkit-box-shadow: inset 0 1px 0 #fff;
 	box-shadow: inset 0 1px 0 #fff;
@@ -918,3 +941,8 @@ width: 225px;
 	height: auto;
 }
 #of_container .controls .wp-picker-container .wp-color-result { outline: 0; }
+
+@media (min-width: 1200px) {
+#of_container #content .section .explain {width: 379px;}
+#of_container #content .group .section-sorter .option .explain {width: 255px;}
+}

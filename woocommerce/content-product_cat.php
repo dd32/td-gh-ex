@@ -28,9 +28,9 @@ $catimgheight = 130;
 ?>
 <div class="product-category grid_item <?php
     if ( ( $woocommerce_loop['loop'] - 1 ) % $woocommerce_loop['columns'] == 0 || $woocommerce_loop['columns'] == 1)
-        echo ' first';
+        echo ' kad-first';
 	if ( $woocommerce_loop['loop'] % $woocommerce_loop['columns'] == 0 )
-		echo ' last';
+		echo ' kad-last';
 	?>">
 
 	<?php do_action( 'woocommerce_before_subcategory', $category ); ?>
