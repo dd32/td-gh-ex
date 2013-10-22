@@ -31,53 +31,61 @@ Engrave Lite is the free version of the multi-purpose professional theme ideal f
 
 
 -----------------------------------------------------------------------------
-	Sources, Credits & Licenses
+	Copyright, Sources, Credits & Licenses
 -----------------------------------------------------------------------------
+
+Engrave Lite WordPress Theme, Copyright 2011 Think Up Themes Ltd
+Engrave Lite is distributed under the terms of the GNU GPL
 
 The following opensource projects, graphics, fonts, API's or other files as listed have been used in developing this theme. Thanks to the author for the creative work they made. All creative works are licensed as being GPL or GPL compatible.
 
-    [1.01] Item:        Redux Framework
+    [1.01] Item:        Underscores (_s) starter theme - Copyright: Automattic, automattic.com
+           Item URL:    http://underscores.me/
+           Licence:     Licensed under GPLv2 or later
+           Licence URL: http://www.gnu.org/licenses/gpl.html
+
+    [1.02] Item:        Redux Framework
            Item URL:    https://github.com/ReduxFramework/ReduxFramework
            Licence:     GPLv3
            Licence URL: http://www.gnu.org/licenses/gpl.html
 
-    [1.02] Item:        TGM Plugin Activation
+    [1.03] Item:        TGM Plugin Activation
            Item URL:    http://tgmpluginactivation.com/#license
            Licence:     GPLv3
            Licence URL: http://www.gnu.org/licenses/gpl.html
 
-    [1.03] Item:        html5shiv (jQuery file)
+    [1.04] Item:        html5shiv (jQuery file)
            Item URL:    http://code.google.com/p/html5shiv/
            Licence:     MIT
            Licence MIT: http://opensource.org/licenses/mit-license.html
 
-    [1.04] Item:        Retina js
+    [1.05] Item:        Retina js
            Item URL:    http://retinajs.com
            Licence:     MIT
            Licence URL: http://opensource.org/licenses/mit-license.html
 
-    [1.05] Item:        Font Awesome
+    [1.06] Item:        Font Awesome
            Item URL:    http://fortawesome.github.io/Font-Awesome/#license
            Licence:     SIL Open Font &  MIT
            Licence OFL: http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
            Licence MIT: http://opensource.org/licenses/mit-license.html
 
-    [1.06] Item:        Twitter Bootstrap
+    [1.07] Item:        Twitter Bootstrap
            Item URL:    https://github.com/twitter/bootstrap/wiki/License
            Licence:     Apache 2.0
            Licence URL: http://www.apache.org/licenses/LICENSE-2.0
 
-    [1.07] Item:        Elegant Icons
+    [1.08] Item:        Elegant Icons
            Item URL:    http://www.elegantthemes.com/blog/resources/elegant-themes-icon-pack-for-free
            Licence:     Dual GPL and MIT
            Licence URL: /licenses/license_(elegant_icons).txt
 
-    [1.08] Item:        Elegant Media Icons
+    [1.09] Item:        Elegant Media Icons
            Item URL:    https://www.iconfinder.com/search/?q=iconset:elegantmediaicons
            Licence:     GPL
            Licence URL: http://www.gnu.org/licenses/gpl.html		   
 
-    [1.09] Item:        Elegant Media Icons
+    [1.10] Item:        Elegant Media Icons
            Item URL:    https://www.iconfinder.com/search/?q=iconset:elegantmediaicons
            Licence:     GPL
            Licence URL: http://www.gnu.org/licenses/gpl.html
@@ -86,6 +94,10 @@ The following opensource projects, graphics, fonts, API's or other files as list
 -----------------------------------------------------------------------------
 	Changelog
 -----------------------------------------------------------------------------
+
+Version 1.4.2
+- Logo css changed to prevent overlap with main header menu.
+- Copyright added.
 
 Version 1.4.1
 - Default header styles added to match menus.
