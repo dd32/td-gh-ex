@@ -12,8 +12,7 @@
 	</span></div>		<div class="entry clearfix">
 			<?php if ( promax_get_option('promax_ad2') <> "" ) { echo stripslashes(promax_get_option('promax_ad2')); } ?>
 			<?php the_content(); ?> 
-				<?php  if (get_the_tags()) :?> <span class="tags"><?php if("the_tags") the_tags(''); ?></span><?php endif;?>
-	</p>	
+			<div class="gap"></div>	<?php  if (get_the_tags()) :?> <span class="tags"><?php if("the_tags") the_tags(''); ?></span><?php endif;?>
 			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'promax' ), 'after' => '</div>' ) ); ?></div> 
 <div class="gap"></div><?php if (promax_get_option('promax_author' ) =='1' ) {load_template(get_template_directory() . '/includes/author.php'); } ?>
 

@@ -6,8 +6,8 @@
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />	
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 	<?php //comments_popup_script(); // off by default ?>
-	<?php wp_head(); ?>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?> id="top">

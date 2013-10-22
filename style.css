@@ -1,8 +1,8 @@
 /*
 Theme Name: ProMax
 Theme URI: http://www.wrock.org/promax
-Description: ProMax Theme is best WordPress theme design for personal and business With full features and SEO Optimize.Magazine WordPress Theme easily adapts on your mobile and desktop or any other device. Theme with lots of customization and connect social media like Facebook, Google+, twitter, pinterest, rss, Skype, vimeo, dribbble, flickr, LinkedIn, YouTube and Adsense ready It supports all the awesome WordPress features completely free theme works also for blogging.
-Version: 1.0
+Description: ProMax Theme is best WordPress theme design for personal and business uses with full features and SEO Optimize.This WordPress Theme can easily adapts on your mobile and desktop or any other device. Theme comes with lots of customization and connect social media like Facebook, Google+, twitter, YouTube and Adsense ready It supports all the awesome WordPress features completely free theme for blogging.
+Version: 1.0.1
 Author: wrock.org by Sandy
 Author URI: http://www.wrock.org/about
 Tags: black, blue, white, light, custom-menu, custom-header, custom-background, one-column, two-columns, right-sidebar, theme-options, threaded-comments, sticky-post
@@ -199,7 +199,6 @@ div.gap {
 	clear: both;
 	display: block;
 	height: 10px;
-	margin-bottom: -22px;
 }
 .transparent_class {
 	-moz-opacity:0.9;
@@ -945,6 +944,9 @@ height: 338px;
 position: absolute;
 background: #4DD247;
 padding: 6px;
+max-width: 20%;
+max-height: 4%;
+overflow: hidden;
 }
 .homecat a {
 color: #fff;
@@ -1077,7 +1079,8 @@ background-position: 0px -142px;
 .tags a{background: #DC3030;
 padding: 5px;
 color: #FFF;
-text-decoration: none;}
+text-decoration: none;
+line-height: 35px;}
 .tags a:hover{background: #333;}
 .tags {
 padding-left: 14px;
@@ -1108,7 +1111,6 @@ margin-bottom: 15px;
 padding-bottom: 5px;
 margin-top: 20px;}
 .postcateg {
-float: left;
 padding-left: 18px;
 margin-right: 5px;
 background: url(images/metaimg.png) no-repeat;
@@ -1164,6 +1166,7 @@ background-position: 0px -26px;
 #sidebar .boxinside {
 clear: both;
 }
+#sidebar .home-icon{display:none;}
 
 select {
 max-width: 95%;
@@ -1369,7 +1372,6 @@ margin: 0 auto;
 padding-bottom: 10px;
 width: 100%;
 overflow: hidden;
-padding-top: 15px;
 background: #333;
 color: #FFF;
 }
@@ -1402,6 +1404,7 @@ line-height: 24px;
 color: #DDD;
 margin-bottom: 15px;
 font-size: 20px;
+padding-top: 20px;
 font-weight: bold;
 }
 #bottom-menu-1 {
