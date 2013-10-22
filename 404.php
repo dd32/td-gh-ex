@@ -1,0 +1,35 @@
+<?php
+/**
+ * The template for displaying 404 pages (Not Found).
+ *
+ * @package	Anarcho Notepad
+ * @since	2.1
+ * @author	Arthur Gareginyan aka Brute9000 <arthurgareginyan@gmail.com>
+ * @copyright 	Copyright (c) 2013, Arthur Gareginyan
+ * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
+ * @license   	http://opensource.org/licenses/AGPL-3.0
+ */
+?>
+
+<?php get_header(); ?>
+
+<section id="content" role="main">
+  <div class="col01">
+   <?php if (have_posts()) : ?>
+
+    <h1>Page Not Found</h1>
+    <p>We're very sorry, but the page you requested has not been found! It may have been moved or deleted.</p>
+    <p>I'm not blaming you, but have you checked your address bar? There might be a typo in the URL.</p>
+    <p>If there isn't, you could try searching my website for the content you were looking for:</p>
+    <?php get_search_form(); ?>
+    
+    <p>Alternatively, you can go to  or </p>
+    <p>One last thing, if you're feeling so kind, please tell me</a> about this error, so that I can fix it. Thanks!</p>
+
+    <?php endif; ?>
+  </div>
+
+   <?php get_sidebar(); ?>
+</section><br clear="all" />
+
+<?php get_footer(); ?>
