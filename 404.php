@@ -7,7 +7,7 @@
  * 
  */?>
 <!---Pink Strip----->
-<?php 
+<?php // This is a test1 comment by Deepesh
 get_header();
  //get_template_part('pink','header')?>
 <!---/Pink Strip-----> 

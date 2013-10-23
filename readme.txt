@@ -57,6 +57,9 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
+@version 1.2.3
+1. Help and support link added along with the documentation link.
+2. Proper option panel UI presentation.
 @version 1.2.2
 1. All the color related styles added in /css/skins/default.css
 2. Created theme setup file
