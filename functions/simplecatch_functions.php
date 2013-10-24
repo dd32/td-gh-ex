@@ -18,6 +18,9 @@ function simplecatch_scripts_method() {
 	$color_scheme = $options['color_scheme'];
 	if ( 'dark' == $color_scheme ) {
 		wp_enqueue_style( 'dark', get_template_directory_uri() . '/css/dark.css', array(), null );	
+	}
+	elseif ( 'brown' == $color_scheme ) {
+		wp_enqueue_style( 'brown', get_template_directory_uri() . '/css/brown.css', array(), null );	
 	}	
 	
 	//Register JQuery circle all and JQuery set up as dependent on Jquery-cycle

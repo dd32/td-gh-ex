@@ -3,16 +3,16 @@
 */
 
 body {
-	background-color: #222;
+	background-color: #2c211b;
 	color: #bbb;
 }
 #header,
 #footer,
 #main #content .post-img a {
-	background: none #000;
+	background: none #221915;
 }
 #header .top-bg {
-    background: none #333;
+    background: none #3e2e27;
     height: 0;
 }
 h1#site-title a {
@@ -31,7 +31,7 @@ h2#site-description {
 hr,
 #sidebar hr,
 #main #content .post-img a {
-	border-color: #333;
+	border-color: #3e2e27;
 }
 #main h1 a,
 #main h2 a,
@@ -84,8 +84,8 @@ ul {
 	color: #aaa;
 }
 #header #mainmenu {
-	background-color: #222;
-	border-color: #333;
+	background-color: #2c211b;
+	border-color: #3e2e27;
 	box-shadow: none;
 }
 #header #mainmenu ul li,
@@ -93,7 +93,7 @@ ul {
 .breadcrumb ul li a,
 .breadcrumb ul li.current_item a, 
 .breadcrumb ul li.current_item {
-	border-color: #333;
+	border-color: #3e2e27;
 }
 #header #mainmenu ul li a {
 	color: #ddd;
@@ -106,17 +106,17 @@ ul {
     background-color: #999;
 }
 .featured {
-    background-color: #222;
-	border-color: #333;
+    background-color: #2c211b;
+	border-color: #3e2e27;
 }
 #content #wp_page_numbers {
 	background: transparent;
 }
 .breadcrumb ul li a {
-	background-color: #000;
+	background-color: #221915;
 }
 .breadcrumb ul li a {
-    background: url("../images/breadcrumb-bg-dark.png") no-repeat scroll right -15px #000;
+    background: url("../images/breadcrumb-bg-dark.png") no-repeat scroll right -15px #221915;
 	color: #bbb;
 }
 .breadcrumb ul li a:hover {
@@ -125,5 +125,20 @@ ul {
 }
 .breadcrumb ul li.current_item a, 
 .breadcrumb ul li.current_item {
-	background-color: #333;
+	background-color: #3e2e27;
+}
+#header #mainmenu ul li a:hover, 
+#header #mainmenu ul li.current-menu-item a, 
+#header #mainmenu ul li.current-menu-parent a, 
+#header #mainmenu ul li.current_page_item a, 
+#header #mainmenu ul li.current_page_ancestor a, 
+#header #mainmenu ul li:hover > a {
+    background-color: #3e2e27;
+}
+#header #mainmenu ul li ul {
+    background-color: #3e2e27;
+}
+#header #mainmenu ul li ul li a:hover, 
+#header #mainmenu ul li ul li:hover > a {
+	background-color: #2c211b;
 }

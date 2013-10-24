@@ -356,5 +356,9 @@ Version 2.6.4
 Version 2.6.5
 * Added dark color scheme 
 * Fixed custom css issues with color options
-* Moved style.css enque to wp_enqueue_scripts
+* Moved style.css enqueue to wp_enqueue_scripts
 * Merged Content Background and Content Color Options to Color Options 
+
+Version 2.6.6
+* Added brown color scheme 
+* Fixed dark color scheme 

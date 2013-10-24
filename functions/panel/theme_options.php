@@ -311,9 +311,13 @@ function simplecatch_theme_options_do_page() {
                                             <?php _e( 'Default', 'catcheverest' ); ?>
                                             </label>
                                             <label title="color-dark" class="box"><img src="<?php echo get_template_directory_uri(); ?>/functions/panel/images/dark.jpg" alt="color-dark" /><br />
-                                            <input type="radio" name="simplecatch_options[color_scheme]" id="color-clean" <?php checked($options['color_scheme'], 'dark'); ?> value="dark"  />
+                                            <input type="radio" name="simplecatch_options[color_scheme]" id="color-dark" <?php checked($options['color_scheme'], 'dark'); ?> value="dark"  />
                                             <?php _e( 'Dark', 'catcheverest' ); ?>
-                                            </label>                                     
+                                            </label>  
+                                            <label title="color-brown" class="box"><img src="<?php echo get_template_directory_uri(); ?>/functions/panel/images/brown.jpg" alt="color-brown" /><br />
+                                            <input type="radio" name="simplecatch_options[color_scheme]" id="color-brown" <?php checked($options['color_scheme'], 'brown'); ?> value="brown"  />
+                                            <?php _e( 'Brown', 'catcheverest' ); ?>
+                                            </label>                                                                                 
                                         </td>
                                     </tr>                                
                                 	<tr>
