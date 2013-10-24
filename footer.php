@@ -53,7 +53,7 @@
 		 * however you like to. Of course you can remove the whole line. :-)
 		*/
 		?>
-		 <?php _e( 'By', 'atheros' ); ?> <a href="<?php echo esc_url( __( 'http://www.s-oliver.net', 'atheros' ) ); ?>"><?php printf( 's-oliver.net' ); ?></a>
+		 <?php _e( 'By', 'atheros' ); ?> <a href="<?php echo esc_url( __( 'http://www.sparlaxy.de', 'atheros' ) ); ?>"><?php printf( 'sparlaxy.de' ); ?></a>
 
 </div>
 <?php
