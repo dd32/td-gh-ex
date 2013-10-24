@@ -346,3 +346,7 @@ Version 2.8.1
 
 Version 2.8.2
 * Added Red Color Scheme
+
+Version 2.8.3
+* Added Brown Color Scheme
+* Changed the Theme Screenshot
