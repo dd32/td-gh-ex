@@ -26,7 +26,7 @@
             <?php if (suevafree_setting('suevafree_view_comments') == "on" ): ?>
             <span class="entry-comments"><i class="icon-comments-alt" ></i><?php echo comments_number( '<a href="'.get_permalink($post->ID).'#respond">'.__( "No comments","wip").'</a>', '<a href="'.get_permalink($post->ID).'#comments">1 '.__( "comment","wip").'</a>', '<a href="'.get_permalink($post->ID).'#comments">% '.__( "comments","wip").'</a>' ); ?></span>
             <?php endif; ?>
-            <span class="entry-standard"><i class="icon-edit"></i>Article</span>
+            <span class="entry-standard"><i class="icon-quote-left"></i><?php _e( "Quote","wip") ?></span>
         </div>
     
     </div>
@@ -46,10 +46,6 @@
 		wp_link_pages();
 
 		the_tags( '<footer class="line"><div class="entry-info"><span class="tags">Tags: ', ', ', '</span></div></footer>' );
-		
-		if (suevafree_setting('suevafree_view_social_buttons') == "on" ) :
-			get_template_part('socialbuttons');
-		endif;
 		
 		if (suevafree_setting('suevafree_view_comments') == "on" ) :
 			comments_template();

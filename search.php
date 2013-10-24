@@ -19,7 +19,7 @@
 
             <div class="pin-article span12">
     
-				<?php get_template_part('content'); ?>
+				<?php do_action('suevafree_postformat'); ?>
         
                 <div style="clear:both"></div>
             

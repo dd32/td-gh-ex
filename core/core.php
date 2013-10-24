@@ -1,6 +1,54 @@
 <?php
 
 /*-----------------------------------------------------------------------------------*/
+/* Post formats */
+/*-----------------------------------------------------------------------------------*/   
+
+function suevafree_setup() {
+
+	add_theme_support( 'post-formats', array( 'aside','gallery','quote','video','audio','link' ) );
+	add_theme_support( 'automatic-feed-links' );
+	add_theme_support( 'post-thumbnails' );
+	
+	add_image_size( 'blog', 940,429, TRUE ); 
+	add_image_size( 'large', 449,304, TRUE ); 
+	add_image_size( 'medium', 290,220, TRUE ); 
+	add_image_size( 'small', 211,150, TRUE ); 
+	
+	register_nav_menu( 'main-menu', 'Main menu' );
+	
+}
+
+add_action( 'after_setup_theme', 'suevafree_setup' );
+
+/*-----------------------------------------------------------------------------------*/
+/* Tag Title */
+/*-----------------------------------------------------------------------------------*/  
+ 
+function suevafree_title( $title, $sep ) {
+	global $paged, $page;
+
+	if ( is_feed() )
+		return $title;
+
+	// Add the site name.
+	$title .= get_bloginfo( 'name' );
+
+	// Add the site description for the home/front page.
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) )
+		$title = "$title $sep $site_description";
+
+	// Add a page number if necessary.
+	if ( $paged >= 2 || $page >= 2 )
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'twentytwelve' ), max( $paged, $page ) );
+
+	return $title;
+}
+
+add_filter( 'wp_title', 'suevafree_title', 10, 2 );
+
+/*-----------------------------------------------------------------------------------*/
 /* Theme name */
 /*-----------------------------------------------------------------------------------*/ 
 
@@ -48,10 +96,14 @@ function suevafree_template($id) {
 	$span = $template["full"];
 	$sidebar =  "full";
 
-	if ( (is_category()) || (is_tag()) || (is_home()) ) {
+	if ( (is_category()) || (is_tag()) ) {
 		
 		$span = $template[suevafree_setting('suevafree_category_layout')];
 		$sidebar =  suevafree_setting('suevafree_category_layout');
+			
+	} else if (is_home()) {
+		$span = $template[suevafree_setting('suevafree_home')];
+		$sidebar =  suevafree_setting('suevafree_home');
 			
 	} else if (suevafree_postmeta('suevafree_template')) {
 		
@@ -105,28 +157,6 @@ add_action( 'wp_enqueue_scripts', 'suevafree_enqueue_scripts_styles' );
 
 
 /*-----------------------------------------------------------------------------------*/
-/* Thumbnails */
-/*-----------------------------------------------------------------------------------*/         
-
-add_theme_support( 'post-thumbnails');
-add_theme_support( 'automatic-feed-links' );
-
-add_image_size( 'blog', 940,429, TRUE ); 
-add_image_size( 'large', 449,304, TRUE ); 
-add_image_size( 'medium', 290,220, TRUE ); 
-add_image_size( 'small', 211,150, TRUE ); 
-
-/*-----------------------------------------------------------------------------------*/
-/* Main menu */
-/*-----------------------------------------------------------------------------------*/         
-
-function suevafree_main_menu() {
-	register_nav_menu( 'main-menu', 'Menu principale' );
-}
-add_action( 'init', 'suevafree_main_menu' );
-
-
-/*-----------------------------------------------------------------------------------*/
 /* Add default style, at theme activation */
 /*-----------------------------------------------------------------------------------*/         
 
@@ -163,12 +193,11 @@ if ( is_admin() && isset($_GET['activated'] ) && $pagenow == 'themes.php' ) {
 	"suevafree_footer_background_repeat" => "repeat",
 	"suevafree_footer_background_color" => "#f3f3f3",
 
-	"home-default" => "default",
+	"home-default" => "full",
 	"suevafree_footer_facebook_button" => "#",
 	"suevafree_footer_twitter_button" => "#",
 	"suevafree_footer_skype_button" => "#",
 	"suevafree_view_comments" => "on",
-	"suevafree_view_social_buttons" => "on",
 	"suevafree_footer_rss_button" => "on",
 	"suevafree_category_layout" => "full",
 

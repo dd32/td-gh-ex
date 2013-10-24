@@ -18,6 +18,18 @@ if (function_exists('register_sidebar')) {
 		'after_title'   => '</h3>'
 	
 	));
+	
+	register_sidebar(array(
+	
+		'name' => 'Home Sidebar',
+		'id'   => 'home_sidebar_area',
+		'description'   => __( "This sidebar will be shown for the homepage","wip"),
+		'before_widget' => '<div class="widget-box">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="title">',
+		'after_title'   => '</h3>'
+	
+	));
 
 	register_sidebar(array(
 	

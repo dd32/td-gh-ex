@@ -9,7 +9,7 @@
 		
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         
-		<?php get_template_part( 'post-formats/standard' ); ?>
+		<?php do_action('suevafree_postformat'); ?>
 	        
         <div style="clear:both"></div>
         

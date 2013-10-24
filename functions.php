@@ -12,6 +12,7 @@
 
 /* CORE */
 require_once get_template_directory() . '/core/core.php';
+require_once get_template_directory() . '/core/post-formats.php';
 
 /* STYLE  */
 require_once get_template_directory() . '/core/add-style.php';

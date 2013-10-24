@@ -33,7 +33,7 @@
 
         <div <?php post_class(array('pin-article', suevafree_template('span') )); ?> >
     
-				<?php get_template_part('content'); ?>
+				<?php do_action('suevafree_postformat'); ?>
         
                 <div style="clear:both"></div>
             
