@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 	<!-- BEGIN PAGE -->
 	<div id="page">
-	<?php if (promax_get_option('promax_activate_latest' ) =='1' ) {load_template(get_template_directory() . '/includes/ltposts.php'); } ?>
+	<?php if (of_get_option('promax_latest' ) =='1' ) {load_template(get_template_directory() . '/includes/ltposts.php'); } ?>
     <div id="page-inner" class="clearfix">
 	<div id="content">
 			<?php promax_breadcrumbs(); ?>

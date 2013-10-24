@@ -1,29 +1,17 @@
 <?php
 ob_start();
-include_once get_template_directory() . '/functions/promax-functions.php';
-
-    /* ----------------------------------------------------------------------------------- */
-    /* Options Framework Theme
-      /*----------------------------------------------------------------------------------- */
-    /* Set the file path based on whether the Options Framework Theme is a parent theme or child theme */
-    //if (STYLESHEETPATH == get_template_directory()) {
-        define('OPTIONS_FRAMEWORK_URL', get_template_directory() . '/functions/');
-        define('OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/functions/');
-   // } else {
-        //define('OPTIONS_FRAMEWORK_URL', STYLESHEETPATH . '/functions/');
-        //define('OPTIONS_FRAMEWORK_DIRECTORY', get_stylesheet_directory_uri() . '/functions/');
-    //}
-	/*
-  Plugin Name: Options Framework
-  Plugin URI: http://www.wptheming.com
-  Description: A framework for building theme options.
-  Version: 0.8
-  Author: Devin Price
-  Author URI: http://www.wptheming.com
-  License: GPLv2
+/*
+ * Loads the Options Panel
+ *
+ * If you're loading from a child theme use stylesheet_directory
+ * instead of template_directory
  */
-    require_once (OPTIONS_FRAMEWORK_URL . 'options-framework.php');
-	
+
+if ( ! function_exists( 'optionsframework_init' ) ) {
+	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
+	require_once dirname( __FILE__ ) . '/inc/options-framework.php';
+}
+include_once('baztro.php');
 function promax_scripts() {
 	wp_enqueue_script('topnavi', get_template_directory_uri().'/js/topnavi.js', array('jquery'), '1.0', false );
 	wp_enqueue_style( 'promax-style', get_stylesheet_uri() );

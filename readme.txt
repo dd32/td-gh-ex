@@ -30,8 +30,9 @@ Custom Css:
 
 == Change log ==
 
-= 1.0.1 =
+= 1.2 =
 *Fixed issue related home icon and categories 
+*Theme Panel Change to new version
 
 = 1.0 =
 *Initial Release @ 1.0

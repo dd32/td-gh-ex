@@ -25,7 +25,7 @@
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
     <?php endif; // header image was removed (again) ?>
 		</div>		
-		<div id="banner-top">	<?php echo stripslashes(promax_get_option('promax_banner_top')); ?></div>		
+		<div id="banner-top">	<?php echo of_get_option( 'banner_top'); ?></div>		
     </div> <!-- end div #header-inner -->
 	</div> <!-- end div #header -->
 

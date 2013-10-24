@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <div id="page">
-	<?php if (promax_get_option('promax_activate_latest' ) =='1' ) {load_template(get_template_directory() . '/includes/ltposts.php'); } ?>
+	<?php if (of_get_option('promax_latest' ) =='1' ) {load_template(get_template_directory() . '/includes/ltposts.php'); } ?>
 	<div id="page-inner" class="clearfix">	
 		<div id="singlecontent"><?php promax_breadcrumbs(); ?>
 			<?php if(have_posts()) : ?>
@@ -10,11 +10,11 @@
 <div id="metad"><span class="postmeta_box">
 		<?php get_template_part('/includes/postmeta'); ?><?php edit_post_link('Edit', ' &#124; ', ''); ?>
 	</span></div>		<div class="entry clearfix">
-			<?php if ( promax_get_option('promax_ad2') <> "" ) { echo stripslashes(promax_get_option('promax_ad2')); } ?>
+			<?php if ( of_get_option('promax_ad2') <> "" ) { echo stripslashes(of_get_option('promax_ad2')); } ?>
 			<?php the_content(); ?> 
 			<div class="gap"></div>	<?php  if (get_the_tags()) :?> <span class="tags"><?php if("the_tags") the_tags(''); ?></span><?php endif;?>
 			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'promax' ), 'after' => '</div>' ) ); ?></div> 
-<div class="gap"></div><?php if (promax_get_option('promax_author' ) =='1' ) {load_template(get_template_directory() . '/includes/author.php'); } ?>
+<div class="gap"></div><?php if (of_get_option('promax_author' ) =='1' ) {load_template(get_template_directory() . '/includes/author.php'); } ?>
 
 		<div id="single-nav" class="clearfix">
 			<div id="single-nav-left"><?php previous_post_link('&laquo; <strong>%link</strong>'); ?></div>
