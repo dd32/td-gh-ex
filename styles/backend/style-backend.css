@@ -131,6 +131,34 @@ border-bottom: none;
 	height: 180px;
 }
 
+/* Homepage - Slider */
+.redux-slides-accordion-group h3 {
+	position: relative;
+}
+.ui-accordion .ui-accordion-content {
+	padding: 1em 2.4em;
+}
+.ui-accordion .ui-accordion-content input {
+	max-width: 100%
+}
+.ui-accordion .ui-accordion-header .ui-icon {
+	position: absolute;
+	left: .5em;
+	top: 50%;
+	margin-top: -8px;
+	width: 16px;
+	height: 16px
+}
+.ui-state-default .ui-icon {
+	background-image: url(http://demo.reduxframework.com/wp-content/plugins/redux-framework/ReduxCore/assets/css/vendor/jquery-ui-bootstrap/images/ui-icons_888888_256x240.png);
+	background-position: -16px -128px;
+}
+.ui-state-active .ui-icon {
+	background-image: url(http://demo.reduxframework.com/wp-content/plugins/redux-framework/ReduxCore/assets/css/vendor/jquery-ui-bootstrap/images/ui-icons_888888_256x240.png);
+	background-position: -48px -128px;
+}
+
+
 /* Social Media */
 #redux-container #section-thinkup_header_facebooklink,
 #redux-container #section-thinkup_header_facebookiconswitch,

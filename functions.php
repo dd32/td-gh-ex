@@ -103,6 +103,11 @@ function thinkup_frontscripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	// Add ThinkUpSlider scripts
+	if ( is_home() or site_url( '/' ) == thinkup_url_current() ) {
+		wp_enqueue_script( 'thinkupslider', get_template_directory_uri() . '/lib/scripts/plugins/ResponsiveSlides/responsiveslides.min.js', array( 'jquery' ), '1.54' );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'thinkup_frontscripts', 10 );
 

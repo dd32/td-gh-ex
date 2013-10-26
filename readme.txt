@@ -1,6 +1,6 @@
-== StrapVert ==
+== Think Up Themes ==
 
-* By WP Strap Code, http://wpstrapcode.com/
+- By Think Up Themes, http://www.thinkupthemes.com/
 
 Requires at least:	3.4.1
 Tested up to:		3.6.1
@@ -64,26 +64,26 @@ The following opensource projects, graphics, fonts, API's or other files as list
            Licence:     MIT
            Licence URL: http://opensource.org/licenses/mit-license.html
 
-    [1.06] Item:        Font Awesome
+    [1.06] Item:        ResponsiveSlides
+           Item URL:    https://github.com/viljamis/ResponsiveSlides.js
+           Licence:     MIT
+           Licence URL: http://opensource.org/licenses/mit-license.html
+
+    [1.07] Item:        Font Awesome
            Item URL:    http://fortawesome.github.io/Font-Awesome/#license
            Licence:     SIL Open Font &  MIT
            Licence OFL: http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
            Licence MIT: http://opensource.org/licenses/mit-license.html
 
-    [1.07] Item:        Twitter Bootstrap
+    [1.08] Item:        Twitter Bootstrap
            Item URL:    https://github.com/twitter/bootstrap/wiki/License
            Licence:     Apache 2.0
            Licence URL: http://www.apache.org/licenses/LICENSE-2.0
 
-    [1.08] Item:        Elegant Icons
+    [1.09] Item:        Elegant Icons
            Item URL:    http://www.elegantthemes.com/blog/resources/elegant-themes-icon-pack-for-free
            Licence:     Dual GPL and MIT
            Licence URL: /licenses/license_(elegant_icons).txt
-
-    [1.09] Item:        Elegant Media Icons
-           Item URL:    https://www.iconfinder.com/search/?q=iconset:elegantmediaicons
-           Licence:     GPL
-           Licence URL: http://www.gnu.org/licenses/gpl.html		   
 
     [1.10] Item:        Elegant Media Icons
            Item URL:    https://www.iconfinder.com/search/?q=iconset:elegantmediaicons
@@ -94,6 +94,10 @@ The following opensource projects, graphics, fonts, API's or other files as list
 -----------------------------------------------------------------------------
 	Changelog
 -----------------------------------------------------------------------------
+
+Version 1.4.2
+- Built in slider added.
+- SlideDeck2 Lite recommended install removed.
 
 Version 1.4.2
 - Logo css changed to prevent overlap with main header menu.

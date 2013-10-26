@@ -13,9 +13,37 @@
 function thinkup_input_sliderhome() {
 global $thinkup_homepage_sliderswitch;
 global $thinkup_homepage_slidername;
+global $thinkup_homepage_sliderpreset;
+global $thinkup_homepage_sliderpresetwidth;
+
+$thinkup_class_fullwidth = NULL;
 
 	if ( is_home() or site_url( '/' ) == thinkup_url_current() ) {
-		if ( $thinkup_homepage_sliderswitch == '0' or empty( $thinkup_homepage_sliderswitch ) or empty( $thinkup_homepage_slidername ) ) {
+		if ( $thinkup_homepage_sliderswitch == 'option1' ) {
+
+			if ( $thinkup_homepage_sliderpresetwidth == '1' ) {
+				$thinkup_class_fullwidth = ' full-width';
+			}
+			echo '<div id="slider"><div id="slider-core">',
+			     '<div class="rslides-container' . $thinkup_class_fullwidth . '"><div class="rslides-inner"><ul class="slides">';
+				if ( empty( $thinkup_homepage_sliderpreset[0]['slide_image_url'] ) ) {				 
+					echo '<li><img src="' . get_template_directory_uri() . '/images/transparent.png" style="background: url(' . get_template_directory_uri() . '/images/slideshow/slide_demo1.png) no-repeat center; background-size: cover;" alt="Demo Image" /></li>';
+					echo '<li><img src="' . get_template_directory_uri() . '/images/transparent.png" style="background: url(' . get_template_directory_uri() . '/images/slideshow/slide_demo2.png) no-repeat center; background-size: cover;" alt="Demo Image" /></li>';
+					echo '<li><img src="' . get_template_directory_uri() . '/images/transparent.png" style="background: url(' . get_template_directory_uri() . '/images/slideshow/slide_demo3.png) no-repeat center; background-size: cover;" alt="Demo Image" /></li>';
+				} else if (isset($thinkup_homepage_sliderpreset) && is_array($thinkup_homepage_sliderpreset)) {
+					foreach ($thinkup_homepage_sliderpreset as $slide) {
+						if ( ! empty( $slide['slide_url'] ) ) {
+							echo '<li><a href="' . $slide['slide_url'] . '">',
+								'<img src="' . get_template_directory_uri() . '/images/transparent.png" style="background: url(' . $slide['slide_image_url'] . ') no-repeat center; background-size: cover;" alt="' . $slide['slide_title'] . '" />',
+								'</a></li>';
+						} else {
+							echo '<li><img src="' . get_template_directory_uri() . '/images/transparent.png" style="background: url(' . $slide['slide_image_url'] . ') no-repeat center; background-size: cover;" alt="' . $slide['slide_title'] . '" /></li>';
+						}
+					}
+				}
+			echo '</ul></div></div>',
+			     '</div></div>';
+		} else if ( $thinkup_homepage_sliderswitch !== 'option2' or empty( $thinkup_homepage_slidername ) ) {
 			echo '';
 		} else {
 			echo	'<div id="slider"><div id="slider-core">',
@@ -24,6 +52,23 @@ global $thinkup_homepage_slidername;
 		}
 	}
 }
+
+// Add FlexSlider Height - Homepage
+function thinkup_input_sliderhomeflex() {
+global $thinkup_homepage_sliderswitch;
+global $thinkup_homepage_sliderpresetwidth;
+global $thinkup_homepage_sliderpresetheight;
+
+	if ( is_home() or site_url( '/' ) == thinkup_url_current() ) {
+		if ( $thinkup_homepage_sliderswitch == 'option1' ) {
+		echo 	"\n" .'<style type="text/css">' . "\n",
+			'#slider .rslides { height: ' . $thinkup_homepage_sliderpresetheight . 'px; max-height: ' . $thinkup_homepage_sliderpresetheight . 'px; }' . "\n",
+			'#slider .rslides img { height: 100%; max-height: ' . $thinkup_homepage_sliderpresetheight . 'px; }' . "\n",
+			'</style>' . "\n";
+		}
+	}
+}
+add_action( 'wp_head','thinkup_input_sliderhomeflex', '13' );
 
 // Add Slider - Inner Page
 function thinkup_input_sliderpage() {

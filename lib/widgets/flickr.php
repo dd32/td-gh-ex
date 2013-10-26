@@ -63,7 +63,10 @@ class thinkup_widget_flickr extends WP_Widget {
 		  echo $before_title . $title . $after_title;
 
 		$flickrphoto = wp_remote_get('http://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=66e5aec1e597a51e1453e58b41dc749a&user_id=' . $instance['flickrid'] . '&per_page=' . $instance['photocount'] . '&format=json');
-		$flickrphoto = json_decode( trim($flickrphoto['body'], 'jsonFlickrApi()') ); 
+
+		if ( !is_wp_error($flickrphoto) ) {
+			$flickrphoto = json_decode( trim($flickrphoto['body'], 'jsonFlickrApi()') ); 
+		}
 
 		echo '<div class="flickr ' .  $instance['layout'] . '">';
 			
