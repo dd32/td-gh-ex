@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: OneColumn v1.5\n"
+"Project-Id-Version: OneColumn v1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-10-25 09:42:18+0000\n"
+"PO-Revision-Date: 2013-10-27 22:39:52+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -87,14 +87,14 @@ msgid "Posted by "
 msgstr "Geplaatst door "
 
 #: archive.php:40
-#: index.php:31
+#: index.php:32
 #: search.php:31
 #@ onecolumn
 msgid "&laquo; Older posts"
 msgstr "&laquo; Oudere berichten"
 
 #: archive.php:41
-#: index.php:32
+#: index.php:33
 #: search.php:32
 #@ onecolumn
 msgid "Newer posts &raquo;"
@@ -134,16 +134,6 @@ msgstr "Bewerk"
 #@ onecolumn
 msgid "Search Results for: %s"
 msgstr "Zoekresultaat voor: %s"
-
-#: sidebar.php:17
-#@ onecolumn
-msgid "Search"
-msgstr "Zoek"
-
-#: sidebar.php:33
-#@ onecolumn
-msgid "Recent Posts"
-msgstr "Nieuwe Berichten"
 
 #: single.php:20
 #@ onecolumn

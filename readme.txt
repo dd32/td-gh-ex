@@ -1,6 +1,6 @@
 CHANGELOG
 =========
-OneColumn version 1.0 - oktober 2013
+OneColumn version 1.1 - oktober 2013
 
 
 INSTALLATION

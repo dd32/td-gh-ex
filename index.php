@@ -27,9 +27,11 @@
 		<?php endwhile; else: ?>
 		<p><?php _e('Sorry, no posts matched your criteria.', 'onecolumn'); ?></p>
 		<?php endif; ?>
-	
+
+<div class="post-nav">
 	<div class="nav-prev"><?php next_posts_link(__( '&laquo; Older posts', 'onecolumn' )) ?></div>
 	<div class="nav-next"><?php previous_posts_link(__( 'Newer posts &raquo;', 'onecolumn' )) ?></div>
+</div>
 
 </div>
 </div>
