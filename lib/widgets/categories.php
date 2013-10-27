@@ -125,7 +125,7 @@ class thinkup_widget_categories extends WP_Widget {
 				echo '<ul>';
 					foreach( $terms as $term ) {
 					  echo '<li class="cat-item cat-item-24">',
-							'<a href="' . get_category_link( $term->term_id ) . '" title="' . sprintf( __( 'View all posts in %s' ), 'lan-thinkupthemes' ) . '" ' . '><span>' . $term->name;
+							'<a href="' . get_category_link( $term->term_id ) . '" title="' . sprintf( __( 'View all posts in %s', 'lan-thinkupthemes' ), $term->name ) . '" ' . '><span>' . $term->name;
 								if ($instance['postswitch'] == 'on') {
 									echo '  <small>('.$term->count.')</small>';
 								}

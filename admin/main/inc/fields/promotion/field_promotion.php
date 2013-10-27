@@ -94,7 +94,7 @@ if( !class_exists( 'ReduxFramework_promotion' ) ) {
 		$screenshot = $ct->get_screenshot();
 		$class = 'screenshot-' . $this->field['name'];
 
-		$customize_title = sprintf( __( 'Customize &#8220;%s&#8221;' ), $ct->display('Name') );
+		$customize_title = sprintf( __( 'Customize &#8220;%s&#8221;', 'redux-framework' ), $ct->display('Name') );
 
             echo '</td></tr></table><div id="redux-promotion-field" class="' . $this->field['style'] . $this->field['class'] . '">';
 
@@ -126,7 +126,7 @@ if( !class_exists( 'ReduxFramework_promotion' ) ) {
 					echo	'<div>';
 
 					echo	'<ul class="theme-info">';
-					echo	'<li>' . sprintf( __('By %s'), $ct->display('Author') ) . '</li>';
+					echo	'<li>' . sprintf( __('By %s', 'redux-framework'), $ct->display('Author') ) . '</li>';
 					echo	'</ul>';
 
 					echo	'<p class="theme-description">' . $this->field['desc'] . '</p>';

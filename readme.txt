@@ -95,7 +95,10 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
-Version 1.4.2
+Version 1.4.4
+- Translation scripts updated
+
+Version 1.4.3
 - Built in slider added.
 - SlideDeck2 Lite recommended install removed.
 

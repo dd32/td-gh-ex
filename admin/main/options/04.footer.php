@@ -229,7 +229,7 @@ global $thinkup_footer_copyright;
 	if ( ! empty( $thinkup_footer_copyright ) ) {
 		echo $thinkup_footer_copyright;
 	} else if ( empty( $thinkup_footer_copyright ) ) {
-		printf( __( 'Developed by %1$s. Powered by %2$s.' ) , '<a href="http://www.thinkupthemes.com/" target="_blank">Think Up Themes Ltd</a>', '<a href="http://www.wordpress.org/" target="_blank">Wordpress</a>'); 
+		printf( __( 'Developed by %1$s. Powered by %2$s.', 'lan-thinkupthemes' ) , '<a href="http://www.thinkupthemes.com/" target="_blank">Think Up Themes Ltd</a>', '<a href="http://www.wordpress.org/" target="_blank">Wordpress</a>'); 
 	}
 }
 

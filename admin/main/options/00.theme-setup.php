@@ -399,10 +399,10 @@ function get_comments_popup_link( $zero = false, $one = false, $more = false, $c
  
     $id = get_the_ID();
  
-    if ( false === $zero ) $zero = __( 'No Comments' );
-    if ( false === $one ) $one = __( '1 Comment' );
-    if ( false === $more ) $more = __( '% Comments' );
-    if ( false === $none ) $none = __( 'Comments Off' );
+    if ( false === $zero ) $zero = __( 'No Comments','lan-thinkupthemes' );
+    if ( false === $one ) $one = __( '1 Comment','lan-thinkupthemes' );
+    if ( false === $more ) $more = __( '% Comments','lan-thinkupthemes' );
+    if ( false === $none ) $none = __( 'Comments Off','lan-thinkupthemes' );
  
     $number = get_comments_number( $id );
  
@@ -414,7 +414,7 @@ function get_comments_popup_link( $zero = false, $one = false, $more = false, $c
     }
  
     if ( post_password_required() ) {
-        $str = __('Enter your password to view comments.');
+        $str = __('Enter your password to view comments.','lan-thinkupthemes');
         return $str;
     }
  
@@ -441,7 +441,7 @@ function get_comments_popup_link( $zero = false, $one = false, $more = false, $c
  
     $str .= apply_filters( 'comments_popup_link_attributes', '' );
  
-    $str .= ' title="' . esc_attr( sprintf( __('Comment on %s'), $title ) ) . '">';
+    $str .= ' title="' . esc_attr( sprintf( __('Comment on %s','lan-thinkupthemes'), $title ) ) . '">';
     $str .= get_comments_number_str( $zero, $one, $more );
     $str .= '</a>';
      
@@ -456,11 +456,11 @@ function get_comments_number_str( $zero = false, $one = false, $more = false, $d
     $number = get_comments_number();
  
     if ( $number > 1 )
-        $output = str_replace('%', number_format_i18n($number), ( false === $more ) ? __('% Comments') : $more);
+        $output = str_replace('%', number_format_i18n($number), ( false === $more ) ? __( '% Comments', 'lan-thinkupthemes' ) : $more);
     elseif ( $number == 0 )
-        $output = ( false === $zero ) ? __('No Comments') : $zero;
+        $output = ( false === $zero ) ? __( 'No Comments', 'lan-thinkupthemes' ) : $zero;
     else // must be one
-        $output = ( false === $one ) ? __('1 Comment') : $one;
+        $output = ( false === $one ) ? __( '1 Comment', 'lan-thinkupthemes' ) : $one;
  
     return apply_filters('comments_number', $output, $number);
 }

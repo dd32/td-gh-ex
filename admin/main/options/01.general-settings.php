@@ -366,7 +366,7 @@ global $post;
 	} else if ( is_search() ) {
 		printf( __( 'Search Results: %s', 'lan-thinkupthemes' ), get_search_query() );
 	} else if ( is_404() ) {
-		printf( __( 'Page Not Found' ) );
+		printf( __( 'Page Not Found', 'lan-thinkupthemes' ) );
 	} else if ( is_category() ) {
 		printf( __( 'Category Archives: %s', 'lan-thinkupthemes' ), single_cat_title( '', false ) );
 	} elseif ( is_tag() ) {
