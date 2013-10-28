@@ -4,38 +4,6 @@
 
 <?php
 
-/* =================== BEGIN BODY STYLE =================== */
-
-	$bodystyle = '';
-
-	/* Background Image */
-	if ( (suevafree_setting('suevafree_body_background')) && (suevafree_setting('suevafree_body_background') <> 'None') ):
-		$bodystyle .= 'background: url('.get_bloginfo('template_directory').suevafree_setting('suevafree_body_background').');'; 
-	elseif ( suevafree_setting('suevafree_body_background') == "None") : 
-		$bodystyle .= 'background-image: none;'; 
-	endif;
-
-	/* Background Repeat */
-	if ( (suevafree_setting('suevafree_body_background_repeat') ) && ( (suevafree_setting('suevafree_body_background') <> 'None') || (suevafree_setting('suevafree_body_custom_background')) )  ) 
-		$bodystyle .= 'background-repeat:'.suevafree_setting('suevafree_body_background_repeat').';'; 
-	
-	/* Background Position */
-	if ( (suevafree_setting('suevafree_body_background_position') ) && ( (suevafree_setting('suevafree_body_background') <> 'None') || (suevafree_setting('suevafree_body_custom_background')) )  ) 
-		$bodystyle .= 'background-position:'.suevafree_setting('suevafree_body_background_position').';'; 
-	
-	/* Background Color */
-	if (suevafree_setting('suevafree_body_background_color')) 
-		$bodystyle .= 'background-color:'.suevafree_setting('suevafree_body_background_color').';';
-		 
-	/* Background Attachment */
-	if ( (suevafree_setting('suevafree_body_background_attachment')) && ( (suevafree_setting('suevafree_body_background') <> 'None') || (suevafree_setting('suevafree_body_custom_background')) )  ) 
-		$bodystyle .= 'background-attachment:'.suevafree_setting('suevafree_body_background_attachment').';'; 
-
-	if ($bodystyle)
-		echo 'body.custombody { '.$bodystyle.' } ';
-		
-/* =================== END BODY STYLE =================== */
-
 /* =================== BEGIN FOOTER STYLE =================== */
 
 	$footerstyle = '';

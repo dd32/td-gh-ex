@@ -27,7 +27,7 @@
     	<div class="span12" >
         	<div id="logo">
                     
-            	<a href="<?php bloginfo('url') ?>" title="<?php bloginfo('name') ?>">
+            	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name') ?>">
                         
                 	<?php 
 					

@@ -4,9 +4,8 @@ $numbersdisplay = array('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11',
 	
 require_once get_template_directory() . '/core/widgets/search_widget.php';
 
+function suevafree_widgets_init() {
 
-if (function_exists('register_sidebar')) {
- 
 	register_sidebar(array(
 	
 		'name' => 'Sidebar',
@@ -54,7 +53,9 @@ if (function_exists('register_sidebar')) {
 		'after_title'   => '</h4>'
 	
 	));
-	
+
 }
+
+add_action( 'widgets_init', 'suevafree_widgets_init' );
 
 ?>

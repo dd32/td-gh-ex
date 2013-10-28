@@ -66,7 +66,12 @@ function suevafree_save_option ( $panel ) {
 						else if ( ( isset( $value['id']) ) && ( isset( $_POST[$value["id"]] ) ) ) 	
 			
 							{	
-								$current[$value["id"]] = $_REQUEST[$value["id"]]; 
+								if ( $value["id"] == "suevafree_copyright_text"):
+									$current[$value["id"]] = $_REQUEST[$value["id"]];
+								else:
+									$current[$value["id"]] = sanitize_text_field( $_REQUEST[$value["id"]] );
+								endif; 
+								
 								update_option( suevafree_themename(), array_merge( $suevafree_setting  ,$current) );
 							}
 							

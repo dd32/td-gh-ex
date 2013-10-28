@@ -14,9 +14,14 @@ function suevafree_setup() {
 	add_image_size( 'large', 449,304, TRUE ); 
 	add_image_size( 'medium', 290,220, TRUE ); 
 	add_image_size( 'small', 211,150, TRUE ); 
-	
+
 	register_nav_menu( 'main-menu', 'Main menu' );
-	
+
+	add_theme_support( 'custom-background', array(
+		'default-color' => 'f3f3f3',
+		'default-image' => get_template_directory_uri() . suevafree_setting('suevafree_body_background'),
+	) );
+
 }
 
 add_action( 'after_setup_theme', 'suevafree_setup' );
@@ -96,12 +101,12 @@ function suevafree_template($id) {
 	$span = $template["full"];
 	$sidebar =  "full";
 
-	if ( (is_category()) || (is_tag()) ) {
+	if ( ( (is_category()) || (is_tag()) ) && (suevafree_setting('suevafree_category_layout') ) ){
 		
 		$span = $template[suevafree_setting('suevafree_category_layout')];
 		$sidebar =  suevafree_setting('suevafree_category_layout');
 			
-	} else if (is_home()) {
+	} else if ( (is_home()) && (suevafree_setting('suevafree_home')) ){
 		$span = $template[suevafree_setting('suevafree_home')];
 		$sidebar =  suevafree_setting('suevafree_home');
 			
