@@ -110,7 +110,7 @@ function optionsframework_options() {
 		
 	$options[] = array(
 		'name' => __('Custom Favicon URL', 'promax'),
-		'desc' => __('Enter your Google+ Link if you have one.', 'promax'),
+		'desc' => __('Enter Favicon Image URL in .ico format .', 'promax'),
 		'id' => 'promax_favicon',
 		'std' => '',
 		'type' => 'text');
@@ -188,7 +188,7 @@ $options[] = array(
 		'type' => 'textarea');
 	$options[] = array(
 		 'name' => __( 'AD Code For Single Post', 'promax' ),
-            'desc' => 'Path of the image to be displayed in sidebar section.',
+            'desc' => 'Paste Ad code for single post it show ads below post title and before content.',
             'id' => 'promax_ad2',
             'std' => '',
             'type' => 'textarea');

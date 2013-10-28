@@ -30,9 +30,17 @@ Custom Css:
 
 == Change log ==
 
-= 1.2 =
+= 1.2.1 =
 *Fixed issue related home icon and categories 
 *Theme Panel Change to new version
 
+
 = 1.0 =
 *Initial Release @ 1.0
+
+
+== License ==
+
+*Option Framework : Author is "Devin Price" provided at http://www.wptheming.com under License GPLv2 (All file Included in "inc" folder)
+*For Responsive Menu Public code Used as ref. for http://wordpress.stackexchange.com/questions/74633/convert-wp-menu-to-a-drop-down-for-mobile-browser/98257
+*Social Icons: are provided by "Konstantin Kovshenin" URL: http://kovshenin.com/2011/freebies-a-simple-social-icon-set-gpl/ Which in under GPL v2 
