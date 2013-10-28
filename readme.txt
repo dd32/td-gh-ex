@@ -1,6 +1,7 @@
 CHANGELOG
 =========
-OneColumn version 1.1 - oktober 2013
+OneColumn version 1.2 - oktober 2013
+- First stable release
 
 
 INSTALLATION

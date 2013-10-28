@@ -1,6 +1,6 @@
 <?php
 /*
- * The footer for displaying secondary menu and site-info.
+ * The footer for displaying site-info.
  */
 ?>
 
