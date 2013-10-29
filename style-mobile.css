@@ -76,7 +76,7 @@
 	#front-columns > div {
 		width:45% ;
 	}
-	#front-columns .column-image {height:auto;}
+	#front-columns .column-image, #front-columns .column-image img {height:inherit;}
 	#content img, content article.post img, #content article .wp-caption, article embed {
 		max-width:90% !important;
 	}

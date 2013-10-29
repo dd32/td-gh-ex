@@ -119,7 +119,6 @@ if ($mantra_side != "1c") { ?>
 		<div id="secondary" class="widget-area" role="complementary" >
 		
 		<?php cryout_before_secondary_widgets_hook(); ?>
-		<?php echo is_active_sidebar('third-widget-area'); ?>
 		<?php if (!is_active_sidebar('third-widget-area') && !is_active_sidebar('fourth-widget-area')): ?>
 			<ul class="xoxo">	
 				<li class="widget-container widget-placeholder">

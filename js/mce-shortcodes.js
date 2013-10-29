@@ -14,7 +14,7 @@
 				title : ed.getLang('mantrashortcodes.buttonlighttitle', 'Add a light button'),  
 				image : url+'/buttons/button-light.png',  
 				onclick : function() {  
-					 ed.selection.setContent('[cryout-button-light url="#"]' + ed.selection.getContent() + '[/mantra-button-light]');  
+					 ed.selection.setContent('[cryout-button-light url="#"]' + ed.selection.getContent() + '[/cryout-button-light]');  
 				}  
 			});
 			
@@ -22,7 +22,7 @@
 				title : ed.getLang('mantrashortcodes.buttondarktitle', 'Add a dark button'),  
 				image : url+'/buttons/button-dark.png',  
 				onclick : function() {  
-					 ed.selection.setContent('[cryout-button-dark url="#"]' + ed.selection.getContent() + '[/mantra-button-dark]');  
+					 ed.selection.setContent('[cryout-button-dark url="#"]' + ed.selection.getContent() + '[/cryout-button-dark]');  
 				}  
 			});
 			
@@ -30,7 +30,7 @@
 				title : ed.getLang('mantrashortcodes.buttoncolortitle', 'Add a color button'),  
 				image : url+'/buttons/button-color.png',  
 				onclick : function() {  
-					 ed.selection.setContent('[cryout-button-color url="#" color="#47AFFF"]' + ed.selection.getContent() + '[/mantra-button-color]');  
+					 ed.selection.setContent('[cryout-button-color url="#" color="#47AFFF"]' + ed.selection.getContent() + '[/cryout-button-color]');  
 				}  
 			});
 			
@@ -38,7 +38,7 @@
 				title : ed.getLang('mantrashortcodes.pullquotetitle', 'Add a pullquote'), 
 				image : url + '/buttons/pullquote.png',
 				onclick : function() {  
-					 ed.selection.setContent('[cryout-pullquote align="left|center|right" textalign="left|center|right" width="33%"]' + ed.selection.getContent() + '[/mantra-pullquote]');  
+					 ed.selection.setContent('[cryout-pullquote align="left|center|right" textalign="left|center|right" width="33%"]' + ed.selection.getContent() + '[/cryout-pullquote]');  
 				}  
 			});
 			
@@ -46,7 +46,7 @@
 				title : ed.getLang('mantrashortcodes.multicolumntitle', 'Add multiple columns'), 
 				image : url + '/buttons/multi-column.png',
 				onclick : function() {  
-					 ed.selection.setContent('[cryout-multi][cryout-column width="1/4"] [/mantra-column] [cryout-column width="1/2"]' + ed.selection.getContent() + '[/mantra-column] [cryout-column width="1/4"] [/mantra-column] [/mantra-multi]');  
+					 ed.selection.setContent('[cryout-multi][cryout-column width="1/4"] [/cryout-column] [cryout-column width="1/2"]' + ed.selection.getContent() + '[/cryout-column] [cryout-column width="1/4"] [/cryout-column] [/cryout-multi]');  
 				}  
 			});
 			

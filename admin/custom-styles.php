@@ -34,7 +34,6 @@ ob_start(); ?>
 
 if ($mantra_dimselect=="Absolute") { ?>
 #wrapper, #access, #colophon, #branding, #main { width:<?php echo ($totalwidth) ?>px ;}
-#access .menu-header, div.menu {width:<?php echo ($totalwidth-12) ?>px ;}
 <?php if (is_page_template() && !is_page_template('template-blog.php') && !is_page_template('template-onecolumn.php') && !is_page_template('template-page-with-intro.php')) {
 
  if (is_page_template("template-twocolumns-right.php") ) { ?>
@@ -245,7 +244,7 @@ $mantra_googlefontsubheader = str_replace('+',' ',preg_replace('/:.*/i','',$mant
 
 switch ($mantra_menualign):
     case "center": ?> #access ul { display: table; margin: 0 auto; } <?php break;
-	case "right": ?> #access ul li { float: right; } <?php break;
+	case "right": ?> #access .menu-header, div.menu { float: right; } <?php break;
 	default: break;
 endswitch;
 
