@@ -6,6 +6,7 @@ Catch Evolution is a beautifully sleek creation of Catch Themes. It exudes a cle
 
 == Translation ==
 Catch Evolution theme is translation ready.
+Added Translation for Spanish by Ruben Ramos Fernandez (batmovil69@hotmail.com)
 
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
@@ -51,3 +52,7 @@ Version 1.1
 
 Version 1.1.1
 * Added Open Link in New Window option in Catch Evolution Adspace Widget
+* Fixed Google Font script issue with default setting
+
+Version 1.2
+* Added Spanish translation es_ES.po and es_ES.mo
