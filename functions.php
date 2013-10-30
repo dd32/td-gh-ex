@@ -33,7 +33,7 @@ if ( ! isset( $content_width ) )
 		add_theme_support( 'post-thumbnails' ); 
 
 	// Resize mode thumbnails
-		set_post_thumbnail_size( 920, 400 ); 
+		set_post_thumbnail_size( 640, 480 ); 
 
 
 	// This feature adds RSS feed links to html head 

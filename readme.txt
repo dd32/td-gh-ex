@@ -1,6 +1,6 @@
 CHANGELOG
 =========
-OneColumn version 1.2 - oktober 2013
+OneColumn version 1.3 - november 2013
 - First stable release
 
 
