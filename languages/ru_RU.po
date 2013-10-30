@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Anarcho Notepad v2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-08-20 20:42+0300\n"
-"PO-Revision-Date: 2013-09-18 03:42:14+0000\n"
+"PO-Revision-Date: 2013-10-24 00:53:25-0500\n"
 "Last-Translator: Arthur Gareginyan aka Brute9000 <arthurgareginyan@gmail.com>\n"
 "Language-Team: Arthur Gareginyan aka Brute9000 <arthurgareginyan@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -60,22 +60,22 @@ msgstr "Результат поиска:"
 msgid "Category: "
 msgstr "Рубрика: "
 
-#: functions.php:927
+#: functions.php:865
 #@ anarcho-notepad
 msgid "Page "
 msgstr "Страница "
 
-#: functions.php:927
+#: functions.php:865
 #@ anarcho-notepad
 msgid " of the "
 msgstr " из "
 
-#: functions.php:924
+#: functions.php:862
 #@ anarcho-notepad
 msgid "Previous page"
 msgstr "Предыдущяя страница"
 
-#: functions.php:925
+#: functions.php:863
 #@ anarcho-notepad
 msgid "Next page"
 msgstr "Следующая страница"
@@ -85,22 +85,22 @@ msgstr "Следующая страница"
 msgid "About the Author"
 msgstr "Об Авторе"
 
-#: functions.php:96
+#: functions.php:97
 #@ anarcho-notepad
 msgid "Meta"
 msgstr ""
 
-#: functions.php:155
+#: functions.php:156
 #@ anarcho-notepad
 msgid "Stuff"
 msgstr ""
 
-#: functions.php:163
+#: functions.php:164
 #@ anarcho-notepad
 msgid "Enable \"Title animation\""
 msgstr "Включить \"Анимация заголовка\""
 
-#: functions.php:189
+#: functions.php:190
 #@ anarcho-notepad
 msgid "Scrypts"
 msgstr "Скрипты"
@@ -110,42 +110,37 @@ msgstr "Скрипты"
 msgid "Write your search and hit Enter"
 msgstr "Впишите слово и нажмите Enter"
 
-#: functions.php:170
+#: functions.php:171
 #@ anarcho-notepad
 msgid "Enable \"Breadcrumbs\""
 msgstr "Включить \"Цепочка навигации\""
 
-#: functions.php:177
+#: functions.php:178
 #@ anarcho-notepad
 msgid "Enable \"Page Navigation\""
 msgstr "Включить \"Постраничная навигация\""
 
-#: functions.php:184
-#@ anarcho-notepad
-msgid "Hide info line in footer"
-msgstr "Скрыть \"Инфо-строку\" в футере"
-
-#: functions.php:190
+#: functions.php:191
 #@ anarcho-notepad
 msgid "Put here your scripts"
 msgstr "Поместите сюда свои скрипты"
 
-#: functions.php:196
+#: functions.php:197
 #@ anarcho-notepad
 msgid "Scrypts in to header"
 msgstr "Скрипты в header"
 
-#: functions.php:203
+#: functions.php:204
 #@ anarcho-notepad
 msgid "Scrypts before post"
 msgstr "Скрипты перед постом"
 
-#: functions.php:210
+#: functions.php:211
 #@ anarcho-notepad
 msgid "Scrypts after post"
 msgstr "Скрипты после поста"
 
-#: functions.php:217
+#: functions.php:218
 #@ anarcho-notepad
 msgid "Scrypts in to footer"
 msgstr "Скрипты в footer"
@@ -207,12 +202,12 @@ msgstr ""
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Продолжить читать <span class=\"meta-nav\">&rarr;</span>"
 
-#: single.php:40
+#: single.php:41
 #@ anarcho-notepad
 msgid "Posted "
 msgstr "Опубликованно "
 
-#: single.php:40
+#: single.php:41
 #@ anarcho-notepad
 msgid " in category "
 msgstr " в категории "
@@ -251,100 +246,100 @@ msgstr ""
 msgid "Comments are closed."
 msgstr "Комментирование закрыто."
 
-#: functions.php:949
+#: functions.php:887
 #@ anarcho-notepad
 msgid "Pingback:"
 msgstr ""
 
-#: functions.php:949
+#: functions.php:887
 #@ anarcho-notepad
 msgid "(Edit)"
 msgstr "(Редактировать)"
 
-#: functions.php:964
+#: functions.php:902
 #@ anarcho-notepad
 msgid "Post author"
 msgstr ""
 
 #. translators: 1: date, 2: time
-#: functions.php:970
+#: functions.php:908
 #, php-format
 #@ anarcho-notepad
 msgid "%1$s at %2$s"
 msgstr "%1$s в %2$s"
 
-#: functions.php:976
+#: functions.php:914
 #@ anarcho-notepad
 msgid "Your comment is awaiting moderation."
 msgstr "Ваш комментарий ждёт модерации."
 
-#: functions.php:981
+#: functions.php:919
 #@ anarcho-notepad
 msgid "Edit"
 msgstr "Редактировать"
 
-#: functions.php:985
+#: functions.php:923
 #@ anarcho-notepad
 msgid "Reply"
 msgstr "Ответить"
 
-#: functions.php:1003
+#: functions.php:941
 #@ anarcho-notepad
 msgid "Name:"
 msgstr "Имя:"
 
-#: functions.php:1004
+#: functions.php:942
 #@ anarcho-notepad
 msgid "Name"
 msgstr "Имя"
 
-#: functions.php:1005
+#: functions.php:943
 #@ anarcho-notepad
 msgid "Email:"
 msgstr "Email:"
 
-#: functions.php:1006
+#: functions.php:944
 #@ anarcho-notepad
 msgid "Email"
 msgstr "Email"
 
-#: functions.php:1007
+#: functions.php:945
 #@ anarcho-notepad
 msgid "Website:"
 msgstr "Вебсайт:"
 
-#: functions.php:1008
+#: functions.php:946
 #@ anarcho-notepad
 msgid "Website"
 msgstr "Вебсайт"
 
-#: functions.php:1012
+#: functions.php:950
 #@ anarcho-notepad
 msgctxt "noun"
 msgid "Comment:"
 msgstr "Комментарий:"
 
-#: functions.php:1012
+#: functions.php:950
 #@ anarcho-notepad
 msgid "Comment"
 msgstr "Комментарий"
 
-#: functions.php:1014
+#: functions.php:952
 #@ anarcho-notepad
 msgid "Leave a Comment"
 msgstr "Оставьте комментарий"
 
-#: functions.php:104
+#: functions.php:105
 #@ anarcho-notepad
 msgid "Enter Your Google Analytics Code"
 msgstr "Впишите Ваш Google Analytics Code"
 
-#: functions.php:113
+#: functions.php:114
 #@ anarcho-notepad
 msgid "Enter Your Google Webmaster Verification Code"
 msgstr "Впишите Ваш Google Webmaster Verification Code"
 
-#: functions.php:140
+#: functions.php:141
 #@ anarcho-notepad
 msgid "Copyright after post"
 msgstr "Копирайт после поста"
@@ -359,65 +354,60 @@ msgstr ""
 msgid "Newer posts <span>&raquo;</span>"
 msgstr ""
 
-#: functions.php:526
+#: functions.php:527
 #@ anarcho-notepad
 msgid "Site Title font (Google Webfonts)"
 msgstr "Шрифт названия сайта (Google Webfonts)"
 
-#: functions.php:538
+#: functions.php:539
 #@ anarcho-notepad
 msgid "Site Tagline font (Google Webfonts)"
 msgstr "Шрифт описания сайта (Google Webfonts)"
 
-#: functions.php:551
+#: functions.php:552
 #@ anarcho-notepad
 msgid "Site Title color"
 msgstr "Цвет заголовка сайта"
 
-#: functions.php:563
+#: functions.php:564
 #@ anarcho-notepad
 msgid "Site Tagline color"
 msgstr "Цвет описания сайта"
 
-#: functions.php:577
+#: functions.php:578
 #@ anarcho-notepad
 msgid "Background Color"
 msgstr "Цвет фона"
 
-#: functions.php:585
+#: functions.php:586
 #@ anarcho-notepad
 msgid "Background Size"
 msgstr "Размер фона"
 
-#: functions.php:591
+#: functions.php:592
 #@ anarcho-notepad
 msgid "Auto (Default)"
 msgstr "Автоматически (Стандарт)"
 
-#: functions.php:592
+#: functions.php:593
 #@ anarcho-notepad
 msgid "Contain"
 msgstr ""
 
-#: functions.php:593
+#: functions.php:594
 #@ anarcho-notepad
 msgid "Cover"
 msgstr ""
 
-#: functions.php:848
+#: functions.php:786
 #@ anarcho-notepad
 msgid "Donate"
 msgstr "Пожертвование"
 
-#: functions.php:706
+#: functions.php:707
 #@ anarcho-notepad
 msgid "About the Theme \"Anarcho Notepad\""
 msgstr "О теме \"Anarcho Notepad\""
-
-#: functions.php:710
-#@ anarcho-notepad
-msgid "Customizing Anarcho Notepad"
-msgstr ""
 
 #: functions.php:711
 #@ anarcho-notepad
@@ -429,57 +419,57 @@ msgstr ""
 msgid "Anarcho Notepad Theme Features"
 msgstr ""
 
-#: functions.php:849
+#: functions.php:787
 #@ anarcho-notepad
 msgid "I'm doing everything possible in order to \"Anarcho Notepad\" remained a completely free template  for you!"
 msgstr "Я делаю всё возможное для того, что бы  \"Anarcho Notepad\" оставался полностью бесплатным шаблоном для Вас!"
 
-#: functions.php:861
+#: functions.php:799
 #@ anarcho-notepad
 msgid "Follow me in Twitter"
 msgstr "Следуйте за мной в Twitter"
 
-#: functions.php:697
+#: functions.php:698
 #@ anarcho-notepad
 msgid "Thank you for using Anarcho-Notepad! The Anarcho-Notepad 2.1 now even more opportunities, it is safer and more stable than ever! Enjoy yourselves! "
 msgstr "Спасибо, что используете Anarcho-Notepad! У Anarcho-Notepad 2.1 сейчас ещё больше возможностей, он надёжнее и стабильнее чем когда либо! Наслаждайтесь! "
 
-#: functions.php:817
+#: functions.php:772
 #@ anarcho-notepad
 msgid "Version 2.1 change log"
 msgstr "Журнал изменений в версии 2.1"
 
-#: functions.php:855
+#: functions.php:793
 #@ anarcho-notepad
 msgid "Happy to enjoy the Anarcho-Notepad?"
 msgstr "Счастливый обладатель Anarcho-Notepad?"
 
-#: functions.php:856
+#: functions.php:794
 #@ anarcho-notepad
 msgid "If you are content this template, tell about it at wordpress.org, describe your Anarcho-Notepad! "
 msgstr "Если Вы довольны данным шаблоном, скажите об этом на wordpress.org, опишите свой Anarcho-Notepad! "
 
-#: functions.php:856
+#: functions.php:794
 #@ anarcho-notepad
 msgid " I love the feedbacks ... "
 msgstr " Я люблю фидбеки... "
 
-#: functions.php:707
+#: functions.php:708
 #@ anarcho-notepad
 msgid "Inspired by the idea of anarchy, I designed this theme for your personal blogs and diaries. Anarcho Notepad can be easily customized. It utilizes latest HTML 5, CSS3 and wordpress native functions for creating the awesomeness that looks good on every browser. I'm constantly adding new features to this theme to allow you to personalize it to your own needs. If you want a new feature or just want to be able to change something just ask me and I would be happy to add it for you. I would like to thank you for your support, visit the Theme URI for the update history, and Enjoy!"
 msgstr ""
 
-#: functions.php:857
+#: functions.php:795
 #@ anarcho-notepad
 msgid "Visit the site of theme &raquo;"
 msgstr "Посетить сайт темы &raquo;"
 
-#: functions.php:57
+#: functions.php:58
 #@ anarcho-notepad
 msgid "Anarcho Menu in sidbar"
 msgstr ""
 
-#: functions.php:149
+#: functions.php:150
 #@ anarcho-notepad
 msgid "Site-info in footer"
 msgstr "Инфо о сайте в футере"
@@ -488,4 +478,14 @@ msgstr "Инфо о сайте в футере"
 #@ anarcho-notepad
 msgid "Pages:"
 msgstr "Страницы:"
+
+#: functions.php:185
+#@ anarcho-notepad
+msgid "Show info line in footer"
+msgstr "Отображать инфо-строку в футере"
+
+#: single.php:41
+#@ anarcho-notepad
+msgid " by "
+msgstr ""
 

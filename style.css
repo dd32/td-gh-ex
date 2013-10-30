@@ -2,8 +2,8 @@
 Theme Name: Anarcho Notepad
 Theme URI: http://mycyberuniverse.tk/anarcho-notepad.html
 Description: Inspired by the idea of anarchy, I designed this theme for your personal blogs and diaries. Anarcho Notepad can be easily customized. It utilizes latest HTML 5, CSS3 and wordpress native functions for creating the awesomeness that looks good on every browser. I’m constantly adding new features to this theme to allow you to personalize it to your own needs. If you want a new feature or just want to be able to change something just ask me and I would be happy to add it for you. I would like to thank you for your support, visit the Theme URI for the update history, and Enjoy!
-Version: 2.1
-Author: Arthur Gareginyan aka Brute9000
+Version: 2.1.1
+Author: Arthur (Berserkr) Gareginyan
 Author URI: http://mycyberuniverse.tk/author.html
 Tags: white, light, two-columns, right-sidebar, flexible-width, custom-background, theme-options, threaded-comments, translation-ready
 Copyright (C) 2013 Arthur Gareginyan
@@ -16,21 +16,11 @@ Text Domain: anarcho-notepad
 -------------------------------------------------------------- */
 @font-face {
 	font-family: 'Forum';
-	src: url('fonts/Forum.eot');
-	src: url('fonts/Forum.eot?#iefix') format('embedded-opentype'),
-	url('fonts/Forum.woff') format('woff'),
-	url('fonts/Forum.ttf') format('truetype'),
-	url('fonts/Forum.svg#Forum') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'FontAwesome';
-	src: url('fonts/fontawesome.eot');
-	src: url('fonts/fontawesome.eot?#iefix') format('embedded-opentype'),
-	url('fonts/fontawesome.woff') format('woff'),
-	url('fonts/fontawesome.ttf') format('truetype'),
-	url('fonts/fontawesome.svg#fontawesome') format('svg');
+	src: url('fonts/forum/Forum.eot');
+	src: url('fonts/forum/Forum.eot?#iefix') format('embedded-opentype'),
+	     url('fonts/forum/Forum.woff') format('woff'),
+	     url('fonts/forum/Forum.ttf') format('truetype'),
+	     url('fonts/forum/Forum.svg#Forum') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -104,18 +94,25 @@ body {
 /* Blog Title
 -------------------------------------------------------------- */
 #title {
-	width: 50%;
-	height: 50%;
+	width: 55%;
+	height: 70%;
 	text-align: center;
-	margin-left: 4%; }
+	margin-left: 4%;
+	overflow: hidden; }
 .site-title  {
-	position:relative;
-	font-size: 300%; }
+	font-size: 300%;
+	color: #e5e5e5;
+	line-height: 0.8;
+	margin: 0;
+	padding: 58px 0 10px; }
+.site-title  a {
+	color: #e5e5e5; }
 .site-title  a:hover {
 	text-decoration:none; }
 .site-description {
 	font-size:120%;
-	margin-top: -20px; }
+	color: #9b9b9b;
+	margin: 0; }
 .site-description .home-link a {
 	text-decoration:none;
 	text-shadow: 0 4px 0 rgba(0, 0, 0, 0.6); }
@@ -164,7 +161,22 @@ pre, code {
 	overflow-x:auto; }
 table {
 	border-collapse: collapse;
-	border-spacing: 0; }
+	border-spacing: 0;
+	text-align:left;
+	width:100%;
+	margin:1.5em 0;
+	padding:1em;
+	line-height:2;
+	font-size:90%; }
+td,
+th {
+	border: 1px solid #111;
+	padding: .5em .5em;
+	text-align: center; }
+tbody tr:nth-child(odd) {
+	background:#EEE;
+	background:rgba(0, 0, 0, 0.08);
+	border:none; }
 
 blockquote {
 	border-left: 1px solid #bbb;
@@ -362,7 +374,8 @@ blockquote cite:before {
 	background:url(images/pages-back.gif) repeat-y; }
 #sidebar .pages ul {
 	padding:0;
-	margin:0; }
+	margin:0;
+	overflow: hidden; }
 #sidebar .pages ul li {
 	font-size:100%;
 	line-height:110%;
@@ -377,7 +390,7 @@ blockquote cite:before {
 	width:170px;
 	margin-left: 10px;
 	padding:4px 0 4px 25px;
-	background:url(images/bullet.gif) no-repeat 5px 8px;
+	//background:url(images/bullet.gif) no-repeat 5px 8px;
 	-webkit-transition: margin .3s;
 	-moz-transition: margin .3s;
 	-ms-transition: margin .3s;
@@ -395,7 +408,8 @@ blockquote cite:before {
 	font-size:100%;
 	text-align:right; }
 #sidebar .pages ul .sub-menu {
-	padding-left: 10px; }
+	padding-left: 10px;
+	overflow: hidden; }
 
 
 /* Recent posts
@@ -718,7 +732,8 @@ img.alignleft {
 	padding: 2px 7px;
 	background-color: whitesmoke;
 	background-clip: padding-box;
-	border-radius: 10px; }
+	border-radius: 10px;
+	text-transform: uppercase; }
 /* End-Breadcrumbs */
 
 /* Breadcrumbs
@@ -747,16 +762,36 @@ img.alignleft {
 	clear: both;
 	margin: 5px;
 	text-shadow: 0 0 1px #AAA; }
-#page-nav a, #page-nav span {
+#page-nav a,
+#page-nav span {
 	text-decoration: none;
 	border: 1px solid #BFBFBF;
 	padding: 3px 12px;
 	background-color: whitesmoke;
 	background-clip:padding-box;
-	border-radius: 10px; } 
-#page-nav a:hover, #page-nav span.current { border-color: #BFBFBF; }
+	border-radius: 10px;
+	text-transform: uppercase; } 
+#page-nav a:hover,
+#page-nav span.current { border-color: #BFBFBF; }
 #page-nav span.current { font-weight: bold; }
 /* End-Page Navigation */
+
+/* Post Navigation
+-------------------------------------------------------------- */
+.post-navigation {
+	background-color: #fff;
+	color: #000000;
+	font-size: 20px;
+	font-style: italic;
+	font-weight: 300;
+	padding: 20px 0; }
+.post-navigation .nav-links {
+	margin: 0 auto;
+	max-width: 1040px; }
+.post-navigation a[rel="next"] {
+	float: right;
+	text-align: right; }
+/* End-Post Navigation */
 
 /* Up button
 -------------------------------------------------------------- */

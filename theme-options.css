@@ -2,8 +2,8 @@
  * Styles for theme info page.
  *
  * @package	Anarcho Notepad
- * @since	2.1
- * @author	Arthur Gareginyan aka Brute9000 <arthurgareginyan@gmail.com>
+ * @since	2.1.1
+ * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013, Arthur Gareginyan
  * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
  * @license   	http://opensource.org/licenses/AGPL-3.0
@@ -11,11 +11,11 @@
 
 @font-face {
 	font-family: 'Forum';
-	src: url('fonts/Forum.eot');
-	src: url('fonts/Forum.eot?#iefix') format('embedded-opentype'),
-	url('fonts/Forum.woff') format('woff'),
-	url('fonts/Forum.ttf') format('truetype'),
-	url('fonts/Forum.svg#Forum') format('svg');
+	src: url('fonts/forum/Forum.eot');
+	src: url('fonts/forum/Forum.eot?#iefix') format('embedded-opentype'),
+	     url('fonts/forum/Forum.woff') format('woff'),
+	     url('fonts/forum/Forum.ttf') format('truetype'),
+	     url('fonts/forum/Forum.svg#Forum') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }

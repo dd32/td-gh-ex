@@ -3,7 +3,7 @@
 
 	Theme URI: http://mycyberuniverse.tk/anarcho-notepad.html
 
-	Author: Arthur Gareginyan aka Brute9000
+	Author: Arthur (Berserkr) Gareginyan
 
 	Author URI: http://mycyberuniverse.tk/author.html
 

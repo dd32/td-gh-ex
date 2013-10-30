@@ -3,8 +3,8 @@
  * Anarcho Notepad functions and definitions.
  *
  * @package	Anarcho Notepad
- * @since	2.1
- * @author	Arthur Gareginyan aka Brute9000 <arthurgareginyan@gmail.com>
+ * @since	2.1.1
+ * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013, Arthur Gareginyan
  * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
  * @license   	http://opensource.org/licenses/AGPL-3.0
@@ -156,33 +156,36 @@ class Customize_Textarea_Control extends WP_Customize_Control {
 	'title'				=> __( 'Stuff', 'anarcho-notepad' ),
 	'priority'			=> 2, ));
 
-		$wp_customize->add_setting('enable_title_animation');
-		//'default'        		=> '1',
+		$wp_customize->add_setting('enable_title_animation', array(
+			'default'        		=> 'false'));
 		$wp_customize->add_control( 'enable_title_animation', array(
 			'priority'			=> 1,
 		        'type'				=> 'checkbox',
 		        'label'				=> __( 'Enable "Title animation"', 'anarcho-notepad' ),
 		        'section'			=> 'stuff_section', ));
 
-		$wp_customize->add_setting('enable_breadcrumbs');
+		$wp_customize->add_setting('enable_breadcrumbs', array(
+			'default'        		=> 'false'));
 		$wp_customize->add_control( 'enable_breadcrumbs', array(
 			'priority'			=> 2,
 		        'type'				=> 'checkbox',
 		        'label'				=> __( 'Enable "Breadcrumbs"', 'anarcho-notepad' ),
 		        'section'			=> 'stuff_section', ));
 
-		$wp_customize->add_setting('enable_page-nav');
+		$wp_customize->add_setting('enable_page-nav', array(
+			'default'        		=> 'true'));
 		$wp_customize->add_control( 'enable_page-nav', array(
 			'priority'			=> 3,
 		        'type'				=> 'checkbox',
 		        'label'				=> __( 'Enable "Page Navigation"', 'anarcho-notepad' ),
 		        'section'			=> 'stuff_section', ));
 
-		$wp_customize->add_setting('hide_info_line');
-		$wp_customize->add_control( 'hide_info_line', array(
+		$wp_customize->add_setting('show_info_line', array(
+			'default'        		=> 'false'));
+		$wp_customize->add_control( 'show_info_line', array(
 			'priority'			=> 5,
 		        'type'				=> 'checkbox',
-		        'label'				=> __( 'Hide info line in footer', 'anarcho-notepad' ),
+		        'label'				=> __( 'Show info line in footer', 'anarcho-notepad' ),
 		        'section'			=> 'stuff_section', ));
 
    // SCRYPTS SECTION
@@ -545,7 +548,7 @@ class Customize_Textarea_Control extends WP_Customize_Control {
 
 	// Title color
 	$wp_customize->add_setting( 'title_color', array(
-		'default' 			=> '#000000',
+		'default' 			=> '#e5e5e5',
                 'transport'                     => 'postMessage',
 		'type'           		=> 'option', ));
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'title_color', array(
@@ -557,7 +560,7 @@ class Customize_Textarea_Control extends WP_Customize_Control {
 
         // Tagline color
         $wp_customize->add_setting( 'tagline_color', array(
-		'default' 			=> '#000000',
+		'default' 			=> '#9b9b9b',
                 'transport'                     => 'postMessage',
 		'type'           		=> 'option', ));
         $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'tagline_color', array(
@@ -827,6 +830,16 @@ add_action( 'admin_bar_menu', 'anarcho_admin_link', 113 );
 
 /*****************END-Theme Information Page****************************/
 
+// Add IE conditional HTML5 shim to header
+function add_ie_html5_shim () {
+     global $is_IE;
+     if ($is_IE)
+    	echo '<!--[if lt IE 9]>';
+    	echo '<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>';
+    	echo '<![endif]-->';
+}
+add_action('wp_head', 'add_ie_html5_shim');
+
 // Adds a custom default avatar
 if ( !function_exists('anarcho_avatar') ) {
    function anarcho_avatar( $avatar_defaults ) {
@@ -836,6 +849,12 @@ if ( !function_exists('anarcho_avatar') ) {
    }
    add_filter( 'avatar_defaults', 'anarcho_avatar' );
 }
+
+// Enable comment_reply
+function include_comment_reply() {
+	if ( is_singular() ) wp_enqueue_script( "comment-reply" );
+}
+add_action( 'wp_enqueue_scripts', 'include_comment_reply' );
 
 // Enable smoothscroll.js
 function include_smoothscroll_script() {
@@ -868,6 +887,36 @@ function anarcho_page_nav() {
  }
 }
 // END-Page Navigation
+
+// Post navigation
+if ( ! function_exists( 'anarcho_post_nav' ) ) :
+/**
+ * Display navigation to next/previous post when applicable.
+*
+*/
+function anarcho_post_nav() {
+	global $post;
+
+	// Don't print empty markup if there's nowhere to navigate.
+	$previous = ( is_attachment() ) ? get_post( $post->post_parent ) : get_adjacent_post( false, '', true );
+	$next     = get_adjacent_post( false, '', false );
+
+	if ( ! $next && ! $previous )
+		return;
+	?>
+	<nav class="navigation post-navigation" role="navigation">
+		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'anarcho-notepad' ); ?></h1>
+		<div class="nav-links">
+
+			<?php previous_post_link( '%link', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', 'anarcho-notepad' ) ); ?>
+			<?php next_post_link( '%link', _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link', 'anarcho-notepad' ) ); ?>
+
+		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+	<?php
+}
+endif;
+// END-Post navigation
 
 // Comments
 if ( ! function_exists( 'anarcho_comment' ) ) :

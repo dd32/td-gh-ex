@@ -3,8 +3,8 @@
  * The template for displaying all single posts.
  *
  * @package	Anarcho Notepad
- * @since	2.1
- * @author	Arthur Gareginyan aka Brute9000 <arthurgareginyan@gmail.com>
+ * @since	2.1.1
+ * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013, Arthur Gareginyan
  * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
  * @license   	http://opensource.org/licenses/AGPL-3.0
@@ -31,6 +31,7 @@
 		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'anarcho-notepad' ) ); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-links"><span>' . __( 'Pages:', 'anarcho-notepad' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) ); ?>
       </div>
+		<?php anarcho_post_nav(); ?>
 
       <div class="after-post"><?php echo get_theme_mod('scrypt_after_post'); ?></div>
 

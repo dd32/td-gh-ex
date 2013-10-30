@@ -1,3 +1,7 @@
+/*
+ Smooth scroll v1.0 | @agareginyan | AGPL-3.0 Licensed
+*/
+
 jQuery(document).ready(function($){
 	$(window).scroll(function(){
         if ($(this).scrollTop() < 200) {

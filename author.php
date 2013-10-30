@@ -5,8 +5,8 @@
  * Template Name: Author page
  *
  * @package	Anarcho Notepad
- * @since	2.1
- * @author	Arthur Gareginyan aka Brute9000 <arthurgareginyan@gmail.com>
+ * @since	2.1.1
+ * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013, Arthur Gareginyan
  * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
  * @license   	http://opensource.org/licenses/AGPL-3.0

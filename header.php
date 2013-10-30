@@ -3,8 +3,8 @@
  * The Header for our theme.
  *
  * @package	Anarcho Notepad
- * @since	2.1
- * @author	Arthur Gareginyan aka Brute9000 <arthurgareginyan@gmail.com>
+ * @since	2.1.1
+ * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013, Arthur Gareginyan
  * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
  * @license   	http://opensource.org/licenses/AGPL-3.0
@@ -33,11 +33,7 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-	<!--[if lt IE 9]>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
-	<![endif]-->
-
-	<?php if ( is_singular() ) wp_enqueue_script( "comment-reply" ); ?>
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/fonts/font-awesome-4.0.0/font-awesome.min.css" type="text/css" media="screen" />
 
 	<?php wp_head(); ?>
 
