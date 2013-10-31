@@ -57,6 +57,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
+@veriosn 1.2.4
+1. Removed media upload script from post admin page which prohibitting to add image in editor
 @version 1.2.3
 1. Help and support link added along with the documentation link.
 2. Proper option panel UI presentation.

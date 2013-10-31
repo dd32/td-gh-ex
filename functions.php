@@ -64,11 +64,11 @@ wp_enqueue_script('tab',get_bloginfo('template_directory').'/option_pannel/js/sp
 
 
 wp_enqueue_script('prime',get_bloginfo('template_directory').'/option_pannel/js/prime-plugin-base.js');
-wp_enqueue_script('my-upload',get_bloginfo('template_directory').'/option_pannel/js/media-upload-script.js',array('media-upload','thickbox','jquery'));
+//wp_enqueue_script('my-upload',get_bloginfo('template_directory').'/option_pannel/js/media-upload-script.js',array('media-upload','thickbox','jquery'));
 wp_enqueue_script('prime1',get_bloginfo('template_directory').'/js/farbtastic.js');
 
 
-wp_enqueue_script('spa-optionpanal-jquery',get_template_directory_uri('template_directory').'/option_pannel/js/spa-optionpanal-jquery.js',array('farbtastic','jquery-ui-tabs','jquery-ui-sortable'));
+//wp_enqueue_script('spa-optionpanal-jquery',get_template_directory_uri('template_directory').'/option_pannel/js/spa-optionpanal-jquery.js',array('farbtastic','jquery-ui-tabs','jquery-ui-sortable'));
 
 wp_enqueue_style('font', get_template_directory_uri('template_directory').'/css/font/font.css');		
 wp_enqueue_style('classic',get_bloginfo('template_directory').'/option_pannel/css/style-classic.css');

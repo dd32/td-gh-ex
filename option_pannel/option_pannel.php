@@ -10,13 +10,17 @@ function spa_admin_menu_pannel() {
 	wp_enqueue_style( 'wpb_option_pannel', get_template_directory_uri() . '/option_pannel/css/spa_option_pannel.css' );
 	
 	// color 
-	wp_enqueue_script('my-upload',get_bloginfo('template_directory').'/option_pannel/js/media-upload-script.js',array('media-upload','thickbox','jquery'));
+	
 	wp_enqueue_style('thickbox');
 	wp_enqueue_style('farbtasticss',get_bloginfo('template_directory').'/option_pannel/css/farbtasticss.css');
 	$page=add_theme_page( 'spa', 'Option Panel', 'edit_theme_options', 'spa', 'spasalon_spa_option_panal_function' ); 
 	wp_enqueue_style('spa-bootstrap',get_bloginfo('template_directory').'/option_pannel/css/assets/css/spa-bootstrap.css');
-	//add_action('admin_print_styles-'.$page, 'spa_admin_enqueue_script');	
 	
+	add_action('admin_print_script-'.$page, 'spa_admin_enqueue_script_option_panel');	
+	}
+	
+	function spa_admin_enqueue_script_option_panel(){
+	wp_enqueue_script('my-upload',get_bloginfo('template_directory').'/option_pannel/js/media-upload-script.js',array('media-upload','thickbox','jquery'));
 			    
 }
 
