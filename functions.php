@@ -178,6 +178,76 @@ function semperfi_admin_link() {
 
 add_action( 'admin_bar_menu', 'SemperFi_admin_link', 113 );
 
+// The follow code adds a box to posts and pages to upload images for custom backgrounds
+add_action( 'add_meta_boxes', 'featured_background_add_meta_box' );
+function featured_background_add_meta_box() {
+	add_meta_box( 'featured_background1', 'Featured Background Image', 'featured_background_met_box', 'post', 'side', 'high' ); }
+
+add_action( 'add_meta_boxes', 'featured_background_box' );
+function featured_background_box() {
+	add_meta_box( 'featured_background1', 'Featured Background Image', 'featured_background_met_box', 'page', 'side', 'high' ); }
+
+// Create the meta box and populate it with the options
+function featured_background_met_box( $post ) {
+	$values = get_post_custom( $post->ID );
+	$featured_background = isset( $values['meta-image'] ) ? esc_attr( $values['meta-image'][0] ) : '';
+	wp_nonce_field( 'featured_background_meta_box_nonce', 'meta_box_nonce' );
+	?>
+
+	<p>
+	<label for="meta-image" class="example-row-title" style="text-align:justify;">Try to keep this image size smaller than 400kb and a resolution around 1920 by 1080.<br><br></label>
+    <?php if (empty($featured_background)): else: ?><img alt="Featured Background Image" src="<?php echo $featured_background; ?>" style="box-shadow:0 0 .05em rgba(19,19,19,.5); height:auto; width:100%;"><?php endif; ?>
+	<input type="text" name="meta-image" id="meta-image" value="<?php echo $featured_background; ?>" style="width:100%;" />  
+	<input type="button" id="meta-image-button" class="button" value="Select Image" style="float:right; margin:.5em 0 0;" />
+	</p>
+	<div style="clear:both"></div><?php }
+
+// Save the data that is entered into the fields
+function featured_background_meta_box_save( $post_id ) {
+
+	// Bail if we're doing an auto save
+	if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
+
+	// if our nonce isn't there, or we can't verify it, bail
+	if( !isset( $_POST['meta_box_nonce'] ) || !wp_verify_nonce( $_POST['meta_box_nonce'], 'featured_background_meta_box_nonce' ) ) return;
+
+	// if our current user can't edit this post, bail
+	if( !current_user_can( 'edit_post' ) ) return;
+
+	// now we can actually save the data
+	$allowed = array( 
+		'a' => array( // on allow a tags
+			'href' => array()));// and those anchords can only have href attribute
+	
+	// Probably a good idea to make sure your data is set
+	if( isset( $_POST['meta-image'] ) )
+		update_post_meta( $post_id, 'meta-image', wp_kses( $_POST['meta-image'], $allowed ) ); }
+
+add_action( 'save_post', 'featured_background_meta_box_save' );
+
+// Loads the image management javascript
+function example_image_enqueue() {
+    global $typenow;
+    if( ($typenow == 'post') || ($typenow == 'page') ) {
+        wp_enqueue_media();
+ 
+        // Registers and enqueues the required javascript.
+        wp_register_script( 'meta-image', get_template_directory_uri() . '/meta-image.js', array( 'jquery' ) );
+        wp_localize_script( 'meta-image', 'meta_image',
+            array(
+                'title' => 'Choose or Upload a File',
+                'button' => 'Use this file',
+            )
+        );
+        wp_enqueue_script( 'meta-image' );
+    } // End if
+} // End example_image_enqueue()
+add_action( 'admin_enqueue_scripts', 'example_image_enqueue' );
+
+// Checks for input and saves if needed
+if( isset( $_POST[ 'meta-image' ] ) ) {
+    update_post_meta( $post_id, 'meta-image', $_POST[ 'meta-image' ] ); }
+
 // Sets up the Customize.php for Semper Fi (More to come)
 function semperfi_customize($wp_customize) {
 
@@ -854,6 +924,7 @@ function semperfi_inline_css() {
 // Inject the Customizer Choices into the Theme
 		echo '<!-- Custom CSS Styles -->' . "\n";
         echo '<style type="text/css" media="screen">' . "\n";
+        $featured_background = get_post_meta( get_the_ID(), 'meta-image', true ); if (!empty($featured_background)) echo 'body {background-image:url(' . $featured_background . ');' . "\n";
 		if ( (get_theme_mod('backgroundsize_setting') != 'auto') && (get_theme_mod('backgroundsize_setting') != '') ) echo '	body.custom-background {background-size:' . get_theme_mod('backgroundsize_setting') . ';}' . "\n";
 		if ( (get_theme_mod('backgroundpaper_setting') != 'auto') && (get_theme_mod('backgroundpaper_setting') != '') )echo '	#margin {background-image:url(' . get_template_directory_uri() . '/images/' . get_theme_mod('backgroundpaper_setting') . '.png);}' . "\n";
 		if ( (get_option('bannerimage_setting') != 'blue.png') && (get_option('bannerimage_setting') != '') ) echo '	#header {background: bottom url(' . get_template_directory_uri() . '/images/' . get_option('bannerimage_setting') .  ');}'. "\n";
@@ -1078,6 +1149,10 @@ function semperfi_theme_options_do_page() { ?>
         </tr>
         <tr>
         <td>2.1</td>
+        <td class="justify">Created one of the most demanded feature of all time, custom backgrounds. I call it "Featured Background," because you can now upload or select any image to be a background unique to any page or post.</td>
+        </tr>
+        <tr>
+        <td>2.1</td>
         <td class="justify">Sorry about not updating as much lately I just don't have the money to spend the time on this theme as much as I would like too. Anyway, I added in editor CSS so that it easier to know what the text, photos, list, and any other HTML element will actually look like on the website. Social icon open up a new tab for browsing.</td>
         </tr>
         <tr>
@@ -1132,6 +1207,10 @@ function semperfi_theme_options_do_page() { ?>
         <tr>
         <th>Version</th>
         <td class="justify"></td>
+        </tr>
+        <tr>
+        <td>9</td>
+        <td class="justify">Same code as Semper Fi Lite 2.2</td>
         </tr>
         <tr>
         <td>8</td>
