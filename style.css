@@ -6,7 +6,7 @@ Theme URI: http://schwarttzy.com/shop/adventureplus/
 
 Description: Inspired by a certain GPS Manufacture, I designed this theme to feel like you're looking through a window out into the wilderness and hopefully inspire you to explore. I'm constantly adding new features to this theme to allow you to personalize it to your own needs. If you want a new feature or just want to be able to change something just ask me and I would be happy to add it for you. I would like to thank you for your support, visit the Theme URI for the update history, and Enjoy!
 
-Version: 2.60
+Version: 2.70
 
 Author: Eric Schwarz
 
@@ -14,7 +14,7 @@ Author URI: http://schwarttzy.com/about-2/
 
 Tags: white, purple, one-column, two-columns, fixed-width, custom-menu, custom-background, custom-colors, featured-images, theme-options, custom-header, editor-style, flexible-header, flexible-width, full-width-template, theme-options, sticky-post, threaded-comments
 
-Copyright (C) 2003-2012 Eric Schwarz - Schwarttzy
+Copyright (C) 2003-2013 Eric Schwarz - Schwarttzy
 
 License: GNU General Public License, version 3 (AGPLv3)
 
@@ -154,6 +154,8 @@ ul, li {display:inline-block;}
 #content>li ul li {list-style-type:circle;}
 
 #content>li ol li {list-style-type:decimal-leading-zero;}
+
+#content>li ol>li.comment {list-style-type:none;}
 
 .tag {float:left; font-size:.8em; margin:1em 0 0; width:100%;}
 
