@@ -15,15 +15,7 @@
         
     </div>
 
-	<?php if ( ( is_active_sidebar('sidebar-area') ) && ( suevafree_template('span') == "span8" ) ) : ?>
-        
-        <section id="sidebar" class="pin-article span4">
-            <div class="sidebar-box">
-            	<?php dynamic_sidebar('sidebar-area') ?>
-            </div>
-        </section>
-    
-	<?php endif; ?>
+	<?php get_sidebar(); ?>
 
 	<?php endwhile; get_template_part('pagination'); endif;?>
            

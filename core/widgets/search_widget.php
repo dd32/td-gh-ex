@@ -54,7 +54,7 @@ class suevafree_search_widget extends WP_Widget
 
 		?>
 		<section class="contact-form">
-			<form method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
+			<form method="get" id="searchform" action="<?php esc_url( home_url( '/' ) ); ?>">
    				 <div>
     		     <input type="text" placeholder="<?php _e( 'Search here', 'wip' ) ?>"  name="s" id="s" class="input-search"/>
     			 </div>

@@ -4,7 +4,7 @@ Theme URI: http://themeinprogress.com/sueva/
 Description: Sueva is a free responsive clean and corporate Tumblelog  WordPress Theme. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10 and uses the most modern technologies like HTML5 and CSS3.
 Author: ThemeinProgress.
 Author URI: http://themeinprogress.com
-Version: 1.2.1
+Version: 1.2.2
 Tags: gray, light, black, orange, blue, white, two-columns, right-sidebar, left-sidebar, custom-background, custom-menu, threaded-comments, full-width-template, theme-options 
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -14,7 +14,7 @@ html {
 	min-height:101%;
 }
 body.custombody { 
-	background:url(images/background/patterns/grid.png) repeat #f3f3f3;
+	background:url(images/background/patterns/pattern1.jpg) repeat #f3f3f3;
 }
 
 /* ====================== START TYPOGRAPHY ====================== */
@@ -213,7 +213,7 @@ span.error {
 	color:#fff;	
 	position:relative; 
 	margin-top:50px;
-	background:url(images/background/patterns/debut_dark.png) repeat #333;
+	background:url(images/background/patterns/pattern2.jpg) repeat #333;
 	border-top:solid 4px #ff6644;
 }
 
@@ -420,6 +420,7 @@ nav#mainmenu ul li.current-menu-parent > a,
 nav#mainmenu ul li.current_page_ancestor > a, 
 nav#mainmenu ul li.current-menu-ancestor > a { 
 	color:#ff6644;
+	margin-bottom:1px;
 }
 
 nav#mainmenu ul li.current-menu-item > a, 
@@ -428,6 +429,7 @@ nav#mainmenu ul li.current-menu-parent > a,
 nav#mainmenu ul li.current_page_ancestor > a, 
 nav#mainmenu ul li.current-menu-ancestor > a { 
 	border-bottom:dotted 1px;
+	margin-bottom:1px;
 }
 
 
@@ -533,6 +535,7 @@ nav#mainmenu ul ul li ul:before {
 	box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
 	-moz-box-shadow: 0 1px 2px rgba(34,25,25,0.4);
 	-webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+	word-wrap: break-word
 }
 .pin-article article.article { 
 	padding:45px;
@@ -613,7 +616,7 @@ nav#mainmenu ul ul li ul:before {
 	text-align:center;
 	position:relative;
 	color:#616161;
-	
+	word-wrap: break-word
 }
 .pin-article h1.title a {
 	color:#616161;

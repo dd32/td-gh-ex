@@ -2,14 +2,14 @@
 
 require_once get_template_directory() . '/core/metaboxes-fields.php';
 
-function addmetabox()
+function suevafree_addmetabox()
 {
-	add_meta_box( 'content', 'Content Settings', 'content', 'post', 'normal', 'high' );
-	add_meta_box( 'page', 'Page Settings', 'content', 'page', 'normal', 'high' );
+	add_meta_box( 'content', 'Content Settings', 'suevafree_contents', 'post', 'normal', 'high' );
+	add_meta_box( 'page', 'Page Settings', 'suevafree_pages', 'page', 'normal', 'high' );
 }
-add_action( 'add_meta_boxes', 'addmetabox' );
+add_action( 'add_meta_boxes', 'suevafree_addmetabox' );
 
-function content( $post, $post_id )
+function suevafree_contents( $post, $post_id )
 {
 	global $article; ?>
     
@@ -90,7 +90,7 @@ function content( $post, $post_id )
 
 }
 
-function page( $post, $post_id )
+function suevafree_pages( $post, $post_id )
 {
 	global $page; ?>
     
@@ -172,9 +172,9 @@ function page( $post, $post_id )
 
 }
 
-add_action( 'save_post', 'cd_meta_box_saves' );
+add_action( 'save_post', 'suevafree_metabox_saves' );
 
-function cd_meta_box_saves( $post_id  ) {
+function suevafree_metabox_saves( $post_id  ) {
 	
 		global $article,$page ;
 		

@@ -101,24 +101,25 @@ function suevafree_template($id) {
 	$span = $template["full"];
 	$sidebar =  "full";
 
-	if ( ( (is_category()) || (is_tag()) ) && (suevafree_setting('suevafree_category_layout') ) ){
+	if ( ( suevafree_setting('suevafree_home') )  && (  (is_home()) )  ){
+		
+		$span = $template[suevafree_setting('suevafree_home')];
+		$sidebar =  suevafree_setting('suevafree_home');
+
+	} else if ( ( suevafree_setting('suevafree_category_layout') )  && ( (is_category()) || (is_tag()) )  ){
 		
 		$span = $template[suevafree_setting('suevafree_category_layout')];
 		$sidebar =  suevafree_setting('suevafree_category_layout');
-			
-	} else if ( (is_home()) && (suevafree_setting('suevafree_home')) ){
-		$span = $template[suevafree_setting('suevafree_home')];
-		$sidebar =  suevafree_setting('suevafree_home');
-			
-	} else if (suevafree_postmeta('suevafree_template')) {
-		
+
+	} else if ( ( suevafree_postmeta('suevafree_template') )  && ( (is_page()) || (is_single())  )  ){
+
 		$span = $template[suevafree_postmeta('suevafree_template')];
 		$sidebar =  suevafree_postmeta('suevafree_template');
 			
 	}
 	
 	return ${$id};
-
+	
 }
 
 /*-----------------------------------------------------------------------------------*/
