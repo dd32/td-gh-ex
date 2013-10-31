@@ -1,6 +1,6 @@
 CHANGELOG
 =========
-OneColumn version 1.3 - november 2013
+OneColumn version 1.4 - november 2013
 - First stable release
 
 
@@ -21,7 +21,7 @@ To set a static homepage login into WordPress Dashboard > Settings > Reading and
 HOW TO CHANGE HEADER IMAGE
 ==========================
 You can change the header-image via WordPress Dashboard > Appearance > Header. I advice you to use a header-image of 960px wide and 350px high. 
-The default header (boats.jpg) is from my private collection and I don't mind you will use it for your blog.
+The default header (boats.jpg) is from my private collection and is licensed under the GPL.
 
 
 HOW TO SET MENU

@@ -1,10 +1,10 @@
 /*
 Theme Name: OneColumn
 Theme URI: http://www.guidovanderleest.nl/onecolumn
-Version: 1.3
+Version: 1.4
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
-Description: OneColumn is a free, basic, clean, responsive, mobile friendly, one-column (really? yeah!) WordPress theme. 2 widget-areas are located in footer and 2 underneath header-image on homepage. Custom header-image and dropdown navigation are included. Navigation and header-image can be turned off. Besides this no theme settings page, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
+Description: OneColumn is a free, basic, clean, responsive, mobile friendly, one-column WordPress theme. 2 widget-areas are located in footer and 2 underneath header-image on homepage. Custom header-image and dropdown navigation are included. Navigation, header-image and widgets can be turned off. Besides this no theme settings page, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
 Tags: one-column, fixed-width, flexible-width, custom-header, custom-menu, dark, white, gray, orange, translation-ready
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -113,7 +113,7 @@ select {max-width:100%;}
 
 
 /* HEADER */
-#header {margin:0; padding: 20px 0 10px; background:#f26535; text-align:center;}
+#header {margin:0; padding: 10px 0 10px; background:#f26535; text-align:center;}
 #header:after {content:''; display:block; clear:both;}
 #header .header-img {width: 960px; height: auto;}
 #header .logo {max-width: 920px; margin: 0 auto; padding:10px 20px;}
@@ -149,8 +149,9 @@ select {max-width:100%;}
 .article {padding:20px;}
 .page-title {margin: 0; padding: 0 0 10px;}
 .entry-title {margin: 0; padding: 0;}
+.entry-title a:hover {color:#333; text-decoration:none;}
 .excerpt {margin: 0 0 20px; padding:0 0 80px; border-bottom:3px solid #ccc;}
-.sticky {text-align:center; color:#333; background: #f2f2f2; margin: 0 0 10px; padding:5px; border:1px solid #f26535;}
+.sticky {text-align:center; clear:both; color:#333; background: #f5f5f5; margin: 0 0 10px; padding:5px; border:1px solid #f26535;}
 .postmetadata {margin:20px 0; padding:10px 0; color: #333; border-bottom: 1px solid #ccc; border-top:1px solid #ccc;}
 .edit-link {display:block; clear:left; margin:10px 0; padding: 5px; border:1px solid #f26535;}
 a.moretag {float:right; -webkit-appearance:none; margin:25px 0 0; padding: 2px 5px; background: #f26535; color:#fff;}
@@ -203,21 +204,21 @@ img {max-width:100%; height:auto;}
 /* WIDGETS */
 .widgettitle-home {background:#eee; color:#333; padding:5px; margin:20px 0 10px;}
 .widgettitle-foot {background:#eee; color:#333; padding:5px; margin:20px 0 10px;}
-.textwidget {margin:10px 5px;}
-.tagcloud {margin:10px 5px;}
-#wp-calendar {width:90%; margin:0 10px 10px;}
+.widget {padding:0 0 20px;}
+.textwidget {margin:0 5px 0;}
+.tagcloud {margin:0 5px 0;}
+#wp-calendar {width:90%; margin:0 10px 0;}
 
 
 /* SIDEBAR - FOOTER WIDGET AREA */
 #sidebar {clear:both; max-width: 960px; margin:0 auto; padding:0; color: #333; background: #f5f5f5; word-wrap: break-word;}
 #sidebar:after {content:''; display:block; clear:both;}
-
 .footer-left {float: left; padding: 0 0 0 20px; width: 45%; word-wrap: break-word;}
 .footer-right {float: right; padding: 0 20px 0 0; width: 45%; word-wrap: break-word;}
 
 
 /* FOOTER */
-#footer {clear:both; max-width: 960px; margin:0 auto; background:#f26535; color:#fff; padding:30px 0;}
+#footer {clear:both; max-width: 960px; margin:0 auto; background:#f26535; color:#fff; padding:20px 0;}
 #footer .site-info {text-align:center; clear:both;}
 #footer .site-info a{color:#fff;}
 

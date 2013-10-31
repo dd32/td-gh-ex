@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<title><?php bloginfo('name'); ?><?php wp_title('|', true, 'left'); ?></title>
+<title><?php wp_title('|', true, 'right'); ?></title>
 <meta name="viewport" content="width=device-width" />
 <meta charset="utf-8">
 

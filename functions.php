@@ -3,21 +3,24 @@
  * Theme functions and definitions.
  */
 
-// Set width without the padding
-if ( ! isset( $content_width ) )
-	$content_width = 920;
-
 
 // Sets up theme defaults and registers various WordPress features that OneColumn supports
 	function onecolumn_setup() { 
 
+	// Set width without the padding
+		if ( ! isset( $content_width ) )
+			$content_width = 920;
+
+
 	// Make theme available for translation
 		load_theme_textdomain('onecolumn', get_template_directory() . '/languages');  
+
 
 	// Register Menu
 		register_nav_menus( 
 		array( 'primary' => __( 'Primary Navigation', 'onecolumn' ), 
 	 	) ); 
+
 
 	// Custom header	
 		$args = array(		
@@ -28,6 +31,17 @@ if ( ! isset( $content_width ) )
 		'uploads' => true,
 		);	
 		add_theme_support( 'custom-header', $args );
+
+
+	// Default header
+		register_default_headers( array(
+		'boats' => array(
+			'url' => '%s/images/boats.jpg',
+			'thumbnail_url' => '%s/images/boats-thumbnail.jpg',
+			'description' => __( 'Boats', 'onecolumn' )
+			)
+		) );
+
 
 	// Post thumbnails
 		add_theme_support( 'post-thumbnails' ); 
@@ -47,8 +61,23 @@ if ( ! isset( $content_width ) )
 	add_action( 'after_setup_theme', 'onecolumn_setup' ); 
 
 
+// Add blogname to wp_title
+	function onecolumn_wp_title( $title ) { 
+		global $page, $paged; 
+	if ( is_feed() ) 
+		return $title; 
+	
+	$filtered_title = $title . get_bloginfo( 'name' ); 
+		return $filtered_title; 
+	}
+	add_filter( 'wp_title', 'onecolumn_wp_title' ); 
+
+
 // Enqueues scripts and styles for front-end
 	function onecolumn_scripts() {
+		if (!is_admin()) { 
+			wp_dequeue_style('style'); 
+		}
 		wp_enqueue_style( 'style', get_stylesheet_uri() );
 		wp_enqueue_script( 'nav', get_stylesheet_directory_uri() . '/js/nav.js', array( 'jquery' ) );
 
@@ -59,7 +88,10 @@ if ( ! isset( $content_width ) )
 
 
 // Register Google Fonts
-	function onecolumn_fonts() { 		
+	function onecolumn_fonts() { 
+		if (!is_admin()) { 
+			wp_dequeue_style('googleFonts'); 
+		}
 		wp_register_style('googleFonts', 'http://fonts.googleapis.com/css?family=Anaheim' ); 		
 		wp_enqueue_style( 'googleFonts'); 	
 	}  	
@@ -122,20 +154,11 @@ function onecolumn_widgets_init() {
 	add_filter('excerpt_more', 'onecolumn_excerpt_more'); 
 
 
+
 // Add class to the excerpt 
 	function onecolumn_excerpt( $excerpt ) {
     		return str_replace('<p', '<p class="excerpt"', $excerpt);
 		}
 	add_filter( "the_excerpt", "onecolumn_excerpt" );
-
-
-// Default header
-	register_default_headers( array(
-	'boats' => array(
-		'url' => '%s/images/boats.jpg',
-		'thumbnail_url' => '%s/images/boats-thumbnail.jpg',
-		'description' => __( 'Boats', 'onecolumn' )
-		)
-	) );
 
 ?>
