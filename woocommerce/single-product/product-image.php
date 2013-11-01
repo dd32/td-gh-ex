@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 global $post, $woocommerce, $product;
 
 ?>
-<div class="images">
+<div class="images kad-light-gallery">
 	<div class="product_image">
 
 	<?php

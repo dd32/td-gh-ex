@@ -28,7 +28,7 @@ Virtue Theme Uses:
 * Aqua Resizer (https://github.com/syamilmj/Aqua-Resizer), licensed under WTFPL http://www.wtfpl.net/
 * Twitter Bootstrap (https://github.com/twbs/bootstrap), licensed under Apache License Version 2
 * Custom Metaboxes and Fields for Wordpress (https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress), licensed under GNU General Public License v2.0 or later
-* prettyPhoto (http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/) licensed under GNU General Public License v2.0
+* Magnific Popup (http://dimsemenov.com/plugins/magnific-popup/) licensed under MIT license, http://www.opensource.org/licenses/mit-license.php
 * carouFredSel (https://github.com/gilbitron/carouFredSel), licensed under GNU General Public License v2.0 or later 
 * Select2 (http://ivaynberg.github.io/select2/), licensed under GNU General Public License v2.0 or later
 * hoverIntent (https://github.com/briancherne/jquery-hoverIntent), licensed under MIT license, http://www.opensource.org/licenses/mit-license.php
@@ -39,7 +39,9 @@ Virtue Theme Uses:
 * jquery.customSelect (http://adam.co/lab/jquery/customselect/), Dual licensed under the MIT or GPL Version 2 licenses
 * GMAP3 Plugin for JQuery (http://gmap3.net/), licensed under GNU General Public License v3.0
 * jQuery Scroll to Top Control script (http://www.dynamicdrive.com/) Custom license: http://www.dynamicdrive.com/notice.htm
+* Masonry (http://masonry.desandro.com/) licensed under MIT license, http://www.opensource.org/licenses/mit-license.php
 * TGM Plugin Activation library (https://github.com/thomasgriffin/TGM-Plugin-Activation) licensed under GNU General Public License v2.0 or later
+* jQuery Validation ( http://bassistance.de/jquery-plugins/jquery-plugin-validation/), Dual licensed under the MIT or GPL Version 2 licenses
 
 -------------------------------------------------------
     Changelog:
@@ -47,8 +49,23 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
-= Version: 1.5.5 =
+= Version: 1.5.6 =
+* Added opt in for retina.js
+* Updated Mobile slider
+* Updated language issue for topbar widget
+* Updated AquaResizer
+* Updated styling with theme options
+* Add Catagory Page Subtitle
+* Add to options: turning off Virtue Gallery
+* Update Menu CSS
+* Update Feature Template with lightbox options
+* Update flexslider, carousel css for IE 8
+* Added Masonry.js
+* Updated products to use masonry.js
+* Changed Lightbox to Magnific Popup, droped prettyPhoto.
+* Added footer column css class
 
+= Version: 1.5.5 =
 * Change how custom css gets called
 * Updated portfolio grid issue
 * Change styling with theme options

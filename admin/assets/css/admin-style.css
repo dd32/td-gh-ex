@@ -138,9 +138,9 @@ border-radius: 2px;
 
 #of_container #of-nav li a, #of_container #of-nav ul li a:link, #of-nav ul li a:visited {
 	display: block;
-	padding: 10px 10px 10px 40px;
+	padding: 16px 10px 16px 50px;
 	background-repeat: no-repeat;
-	background-position: 13px 10px;
+	background-position: 13px center;
 	font-weight:bold;
 	font-size: 12px;
 	text-decoration: none;
@@ -159,7 +159,7 @@ border-radius: 2px;
 }
 
 #of_container #content {
-	min-height: 580px;
+	min-height: 780px;
 	width: 80%;
 	float: left;
 	margin-left: -1px;
@@ -945,4 +945,5 @@ width: 225px;
 @media (min-width: 1200px) {
 #of_container #content .section .explain {width: 379px;}
 #of_container #content .group .section-sorter .option .explain {width: 255px;}
+#of_container #content .section-typography .explain {width: 280px;}
 }

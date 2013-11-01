@@ -18,13 +18,15 @@ jQuery(document).ready(function ($) {
 		$('.kad-select').customSelect();
 
 		// Lightbox
-		$("a[rel^='lightbox']").prettyPhoto({
-			theme: 'dark_square', /* light_rounded / dark_rounded / light_square / dark_square / facebook */
-			social_tools: false,
-			show_title: false,
-			deeplinking: false,
-			animation_speed: 'normal',
-		});
+		$("a[rel^='lightbox']").magnificPopup({type:'image'});
+		$('.kad-light-gallery').each(function() {
+    		$(this).find('a[rel^="lightbox"]').magnificPopup({
+		        type: 'image',
+		        gallery: {
+		          enabled:true
+				        }
+				});
+		}); 
 
 	//Menu
 	$("nav select").change(function() {

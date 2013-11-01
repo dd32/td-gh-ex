@@ -763,8 +763,8 @@ $of_options = array();
       					"fold" 		 => "mobile_slider", /* the switch hook */
       					"type"             => "slider"
                                     ); 
-            $of_options[] = array( 	"name" 		=> __("Slider Height", 'virtue'),
-						"desc" 		=> "",
+            $of_options[] = array( 	"name" 		=> __("Slider Max Height", 'virtue'),
+						"desc" 		=> __("Note: does not work if images are smaller than max.", 'virtue'),
 						"id" 		      => "mobile_slider_size",
 						"std" 		=> "300",
 						"min" 		=> "100",
@@ -773,6 +773,16 @@ $of_options = array();
 						"fold" 		=> "mobile_slider", /* the switch hook */
 						"type" 		=> "sliderui" 
 				);
+            $of_options[] = array(  "name"            => __("Slider Max Width", 'virtue'),
+                                    "desc"            => __("Note: does not work if images are smaller than max.", 'virtue'),
+                                    "id"              => "mobile_slider_size_width",
+                                    "std"             => "480",
+                                    "min"             => "200",
+                                    "step"            => "5",
+                                    "max"             => "800",
+                                    "fold"            => "mobile_slider", /* the switch hook */
+                                    "type"            => "sliderui" 
+                        );
             $of_options[] = array( 	"name" 		=> __("Auto Play?", 'virtue'),
 						"desc" 		=> __("This determines if a slider automatically scrolls", 'virtue'),
 						"id" 		      => "mobile_slider_autoplay",
@@ -809,7 +819,14 @@ $of_options = array();
 						"max" 		=> "1200",
 						"fold" 		=> "mobile_slider", /* the switch hook */
 						"type" 		=> "sliderui" 
-				);	
+				);
+            $of_options[] = array(  "name"            => __("Show Captions?", 'virtue'),
+                                    "desc"            => __("Choose to show or hide captions", 'virtue'),
+                                    "id"              => "mobile_slider_captions",
+                                    "std"             => 0,
+                                    "fold"            => "mobile_slider", /* the switch hook */
+                                    "type"            => "switch"
+                        );	
             $of_options[] = array(  "name"            => __("Mobile Video Embed Code", 'virtue'),
 						"desc"            => __("If your useing a video on the home page place video embed code here.", 'virtue'),
 						"id"              => "mobile_video_embed",
@@ -1652,6 +1669,32 @@ $of_options = array();
 					"std"              => "",
 					"type"             => "sidebars"
                               );
+      $of_options[] = array( "name"              => "WP Gallerys",
+                              "desc"             => "",
+                              "id"               => "info_wpgallerys",
+                              "std"              => "<h3>".__('Wordpress Galleries', 'virtue')."</h3>",
+                              "icon"             => true,
+                              "type"             => "info"
+                        ); 
+      $of_options[] = array(  "name"            => __("Enable Virtue Galleries to override Wordpress", 'virtue'),
+                              "desc"            => __("Disable this if using a plugin to customize galleries, for example jetpack tiled gallery.", 'virtue'),
+                              "id"              => "virtue_gallery",
+                              "std"             => 1,
+                              "type"            => "switch"
+                        ); 
+      $of_options[] = array( "name"              => "Retina Javascript",
+                              "desc"             => "",
+                              "id"               => "info_retina",
+                              "std"              => "<h3>".__('Retina Javascript', 'virtue')."</h3>",
+                              "icon"             => true,
+                              "type"             => "info"
+                        );
+      $of_options[] = array(  "name"            => __("Use Retina Javascript", 'virtue'),
+                              "desc"            => __("This script looks for @2x retina quality images to make your site more retina screen frendly.", 'virtue'),
+                              "id"              => "virtue_retina_script",
+                              "std"             => 1,
+                              "type"            => "switch"
+                        ); 
 
       $of_options[] = array( "name"              => __("Advanced Settings", 'virtue'),
 					"type"             => "heading",

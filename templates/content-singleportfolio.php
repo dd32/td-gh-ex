@@ -52,7 +52,7 @@
       	<div class="row">
       		<div class="<?php echo $imgclass; ?>">
 				<?php if ($ppost_type == 'flex') { ?>
-					<div class="flexslider loading" style="max-width:<?php echo $slidewidth;?>px;">
+					<div class="flexslider loading kad-light-gallery" style="max-width:<?php echo $slidewidth;?>px;">
                        <ul class="slides">
 						<?php global $post;
                           	$image_gallery = get_post_meta( $post->ID, '_kad_image_gallery', true );
@@ -63,7 +63,7 @@
 												$attachment_url = wp_get_attachment_url($attachment , 'full');
 												$image = aq_resize($attachment_url, $slidewidth, $slideheight, true);
 													if(empty($image)) {$image = $attachment_url;}
-												echo '<li><img src="'.$image.'"/></li>';
+												echo '<li><a href="'.$attachment_url.'" rel="lightbox"><img src="'.$image.'"/></a></li>';
 											}
 										}
                     			} else {
@@ -74,7 +74,7 @@
 												$attachment_url = wp_get_attachment_url($attachment->ID , 'full');
 												$image = aq_resize($attachment_url, $slidewidth, $slideheight, true);
 													if(empty($image)) {$image = $attachment_url;}
-												echo '<li><img src="'.$image.'"/></li>';
+												echo '<li><a href="'.$attachment_url.'" rel="lightbox"><img src="'.$image.'"/></a></li>';
 											}
                     					}	
 								} ?>                                
@@ -107,7 +107,7 @@
 							?>
                                 <?php if($image) : ?>
                                     <div class="imghoverclass">
-                                    	<a href="<?php echo $img_url ?>" rel="lightbox[pp_gal]" class="lightboxhover">
+                                    	<a href="<?php echo $img_url ?>" rel="lightbox" class="lightboxhover">
                                     		<img src="<?php echo $image ?>" alt="<?php the_title(); ?>" />
                                     	</a>
                                     </div>

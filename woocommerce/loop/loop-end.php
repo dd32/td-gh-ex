@@ -8,3 +8,12 @@
  */
 ?>
 </div>
+	<script type="text/javascript">
+             jQuery(document).ready(function ($) {	
+             	var $container = $('#product_masonry');
+					// initialize
+					$container.masonry({
+					  itemSelector: '.product_item'
+					});
+				});
+					</script>

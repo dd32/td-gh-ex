@@ -425,7 +425,18 @@ $meta_boxes[] = array(
 				'desc' => __("Default is: 1170 <b>(Note: just input number, example: 650, does not apply to Carousel slider)</b>", 'virtue' ),
 				'id'   => $prefix . 'posthead_width',
 				'type' => 'text_small',
-			),			array(
+			),
+			array(
+				'name'    => __('Use Lightbox for Feature Image', 'virtue'),
+				'desc'    => __("If feature option is set to image, choose to use lightbox link with image.", 'virtue' ),
+				'id'      => $prefix . 'feature_img_lightbox',
+				'type'    => 'select',
+				'options' => array(
+					array( 'name' => __('Yes', 'virtue'), 'value' => 'yes', ),
+					array( 'name' => __('No', 'virtue'), 'value' => 'no', ),
+				),
+			),
+			array(
 				'name' => __('If Video Post', 'virtue'),
 				'desc' => __('Place Embed Code Here, works with youtube, vimeo...', 'virtue'),
 				'id'   => $prefix . 'post_video',
