@@ -3,7 +3,7 @@
  * Anarcho Notepad functions and definitions.
  *
  * @package	Anarcho Notepad
- * @since	2.1.1
+ * @since	2.1.2
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013, Arthur Gareginyan
  * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
@@ -908,8 +908,8 @@ function anarcho_post_nav() {
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'anarcho-notepad' ); ?></h1>
 		<div class="nav-links">
 
-			<?php previous_post_link( '%link', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', 'anarcho-notepad' ) ); ?>
-			<?php next_post_link( '%link', _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link', 'anarcho-notepad' ) ); ?>
+			<?php previous_post_link( '%link', _x( '<i class="fa fa-arrow-left"></i> %title', 'Previous post link', 'anarcho-notepad' ) ); ?>
+			<?php next_post_link( '%link', _x( '%title <i class="fa fa-arrow-right"></i>', 'Next post link', 'anarcho-notepad' ) ); ?>
 
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -1004,8 +1004,4 @@ function anarcho_comment_form($anarcho_defaults) {
 }
 add_filter('comment_form_defaults', 'anarcho_comment_form');
 // END-Comments-Form
-
-
-
-
 ?>

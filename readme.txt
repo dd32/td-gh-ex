@@ -1,5 +1,5 @@
 
-= Anarcho Notepad Information =
+= Anarcho Notepad =
 
 	Theme URI: http://mycyberuniverse.tk/anarcho-notepad.html
 
@@ -16,6 +16,19 @@
 == About Anarcho Notepad ==
 
 	Inspired by the idea of anarchy, I designed this theme for your personal blogs and diaries. Anarcho Notepad can be easily customized. It utilizes latest HTML 5, CSS3 and wordpress native functions for creating the awesomeness that looks good on every browser. I’m constantly adding new features to this theme to allow you to personalize it to your own needs. If you want a new feature or just want to be able to change something just ask me and I would be happy to add it for you. I would like to thank you for your support, visit the Theme URI for the update history, and Enjoy!
+
+== Copyrights for Resources used in this theme.
+
+	I) Font-Awesome Icons are under the MIT Licnese. http://fontawesome.io
+	II) Font Name "Forum" are under the SIL Open Font License v1.1.
+	III) The Default Background Image (images/background.jpg) is under public domain: http://wallbox.ru/wallpaper/9422/#.UnLDFNQhCRs
+	IV) The images bullet.gif, notepad-back.gif, pages-back.gif, pages-bottom.gif, postit-back.gif, postit-upper.gif, recent-posts-bottom.gif, txt-friends-links.gif, txt-what.gif are under the General Public License. http://www.evaneckard.com/
+	V) The images anarchy-symbol-big.jpg, anarchy-symbol.jpg and anarchy-symbol.png is under public domain: http://www.layoutsparks.com/1/213916/anarchy-perfect-black-A-31000.html
+	VI) The images line.gif, outer-back.png and notepad-bottom.png has been created by me and under AGPLv3 license.
+	VII) The file html5.js present in the "/js" folder are under the MIT/GPL2 Licnese. https://github.com/aFarkas/html5shiv
+	VIII) The files theme-customizer.js and smoothscroll.js present in the "/js" folder has been created by me and under the AGPLv3 Licnese.
+
+Everything else used in this theme has been created by me, especially for "Anarcho Notepad" theme and is distributed under AGPLv3 license.
 
 == Installing Anarcho Notepad Manually (FTP) ==
 
@@ -44,10 +57,6 @@
 	Your selection should immediately become active.
 
 	Note: If the Theme preview is blank, do not activate the new Theme without investigating further. Your site may not be displayed correctly, otherwise.
-
-== Images / Icons Licensing on Anarcho Notepad ==
-
-	All Images / Icons in the Theme "Anarcho Notepad" are released under the same GPL (GNU General Public License, version 3 (AGPLv3)) license that the theme is released.
 
 == Customizing Anarcho Notepad ==
 
