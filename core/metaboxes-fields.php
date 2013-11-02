@@ -1,6 +1,6 @@
 <?php
 
-$article = array (
+$suevafree_article = array (
 
 array( "name" => __( "General Settings","wip"),
 	   "type" => "title",
@@ -20,7 +20,7 @@ array( "name" => __( "Template","wip"),
 	  
 );
 
-$page = array (
+$suevafree_page = array (
 
 array( "name" => __( "General Settings","wip"),
 	   "type" => "title",

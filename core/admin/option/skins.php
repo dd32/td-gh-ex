@@ -252,4 +252,6 @@ $skins = array(
 
 );
 	$current = $skins[$_REQUEST["suevafree_skins"]];
+	$suevafree_message_action = 'Options saved successfully.';
+	
 ?>

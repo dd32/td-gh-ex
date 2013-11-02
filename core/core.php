@@ -59,8 +59,8 @@ add_filter( 'wp_title', 'suevafree_title', 10, 2 );
 
 function suevafree_themename() {
 	
-	$themename = "suevafree_theme_settings";
-	return $themename;	
+	$suevafree_themename = "suevafree_theme_settings";
+	return $suevafree_themename;	
 	
 }
 
@@ -319,18 +319,26 @@ add_filter('thematic_dropdown_options','suevafree_childtheme_dropdown_options');
 
 function suevafree_socials() {
 	
-	$socials = array ("facebook","twitter","flickr","google","linkedin","myspace","pinterest","tumblr","youtube","vimeo","skype","email");
+	$socials = array ("facebook","twitter","flickr","google","linkedin","myspace","pinterest","tumblr","youtube","vimeo");
 	
-	foreach ( $socials as $social ) 
-	
-	{
+	foreach ( $socials as $social ) {
+		
 		if (suevafree_setting('suevafree_footer_'.$social.'_button')): 
-		if ($social == "email") $email = "mailto:"; else $email = "";
-		if ($social == "skype") $skype = "skype:"; else $skype = "";
-            echo '<a href="'.$email.$skype.suevafree_setting('suevafree_footer_'.$social.'_button').'" target="_blank" title="'.$social.'" class="social '.$social.'"> '.$social.'  </a> ';
+		
+			echo '<a href="'.esc_url(suevafree_setting('suevafree_footer_'.$social.'_button')).'" target="_blank" title="'.$social.'" class="social '.$social.'"> '.$social.'  </a> ';
+				
 		endif;
+
 	}
-	
+
+	if (suevafree_setting('suevafree_footer_skype_button')): 
+    	echo '<a href="skype:'.suevafree_setting('suevafree_footer_skype_button').'" title="Skype" class="social skype"> Skype  </a>'; 
+	endif; 
+
+	if (suevafree_setting('suevafree_footer_email_button')): 
+    	echo '<a href="mailto:'.suevafree_setting('suevafree_footer_email_button').'" title="Email" class="social email"> Email  </a>'; 
+	endif; 
+
 	if (suevafree_setting('suevafree_footer_rss_button') == "on"): 
     	echo '<a href="'; bloginfo('rss2_url'); echo '" title="Rss" class="social rss"> Rss  </a> ';
 	endif; 

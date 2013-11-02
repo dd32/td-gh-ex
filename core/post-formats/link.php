@@ -1,6 +1,6 @@
 <?php 
 	
-	global $wip_setting;
+	global $suevafree_wip_setting;
     
 	if ( has_post_thumbnail() ) : ?>
         
@@ -45,6 +45,8 @@
 		
 		wp_link_pages();
 
+		echo '<p><strong>'. __( "Categories: ","wip").'</strong>'; the_category(', '); echo '</p>';
+		
 		the_tags( '<footer class="line"><div class="entry-info"><span class="tags">Tags: ', ', ', '</span></div></footer>' );
 		
 		if (suevafree_setting('suevafree_view_comments') == "on" ) :

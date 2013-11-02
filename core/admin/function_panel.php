@@ -1,7 +1,8 @@
 <?php
 
 function suevafree_add_menu() {
-	global $themename, $adminmenuname,$optionfile;
+	global $suevafree_themename, $suevafree_adminmenuname,$suevafree_optionfile;
+	
 	add_theme_page("Theme Options", "Theme Options", 'administrator',  'themeoption', 'suevafree_themeoption');
 	add_theme_page("Get Premium", "Get Premium", 'administrator',  'getpremium', 'suevafree_getpremium');
 }
@@ -26,7 +27,7 @@ add_action('admin_init', 'suevafree_add_script');
 
 function suevafree_save_option ( $panel ) {
 	
-	global $message_action;
+	global $suevafree_message_action;
 	
 	$suevafree_setting = get_option( suevafree_themename() );
 	
@@ -77,7 +78,7 @@ function suevafree_save_option ( $panel ) {
 							
 								
 							
-						$message_action = 'Options saved successfully.';
+						$suevafree_message_action = 'Options saved successfully.';
 					
 					}
 				
@@ -88,15 +89,15 @@ function suevafree_save_option ( $panel ) {
 }
 
 function suevafree_message () {
-		global $message_action;
-		if (isset($message_action))
-		echo '<div id="message" class="updated fade message_save voobis_message"><p><strong>'.$message_action.'</strong></p></div>';
+		global $suevafree_message_action;
+		if (isset($suevafree_message_action))
+		echo '<div id="message" class="updated fade message_save voobis_message"><p><strong>'.$suevafree_message_action.'</strong></p></div>';
 	}
 
 
 function suevafree_themeoption() {
 
-		$themename = "Sueva";
+		$suevafree_themename = "Sueva";
 		$shortname = "suevafree";
 		require_once get_template_directory() . '/core/admin/option/options.php';   
 

@@ -11,11 +11,11 @@ add_action( 'add_meta_boxes', 'suevafree_addmetabox' );
 
 function suevafree_contents( $post, $post_id )
 {
-	global $article; ?>
+	global $suevafree_article; ?>
     
     <?php
 	
-	foreach ($article as $value) {
+	foreach ($suevafree_article as $value) {
 	switch ( $value['type'] ) { 
 	
 	case 'title':  ?>
@@ -92,11 +92,11 @@ function suevafree_contents( $post, $post_id )
 
 function suevafree_pages( $post, $post_id )
 {
-	global $page; ?>
+	global $suevafree_page; ?>
     
     <?php
 	
-	foreach ($page as $value) {
+	foreach ($suevafree_page as $value) {
 	switch ( $value['type'] ) { 
 	
 	case 'title':  ?>
@@ -176,9 +176,9 @@ add_action( 'save_post', 'suevafree_metabox_saves' );
 
 function suevafree_metabox_saves( $post_id  ) {
 	
-		global $article,$page ;
+		global $suevafree_article,$suevafree_page ;
 		
-		foreach ($article as $value) {
+		foreach ($suevafree_article as $value) {
 		
 		if(isset($_POST[$value['id']])) 
 			$new = $_POST[$value['id']];
@@ -188,7 +188,7 @@ function suevafree_metabox_saves( $post_id  ) {
 
 		}
 
-		foreach ($page as $value) {
+		foreach ($suevafree_page as $value) {
 			
 		if(isset($_POST[$value['id']])) 
 			$new = $_POST[$value['id']];
