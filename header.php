@@ -34,7 +34,7 @@ if( $menu_position_type == 'fixed' ) {
 
 <div class="navbar navbar-inverse <?php echo $menu_position_class; ?>">
 
-	<div class="container site-container navbar-ex1-collapse">
+	<div class="container site-container">
 		<nav class="site-navigation main-navigation" role="navigation">
 		<?php //wp_list_pages('title_li='); // list of pages ?>
 		<?php

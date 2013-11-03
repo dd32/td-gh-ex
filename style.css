@@ -2,7 +2,7 @@
 Theme Name: activetab
 Theme URI: http://web-profile.com.ua/wordpress/themes/activetab/
 Description: Responsive clean theme. More info at http://web-profile.com.ua/activetab/
-Version: 0.5.6
+Version: 0.5.7
 Author: webvitaly
 Author URI: http://web-profile.com.ua/wordpress/
 Tags: gray, white, light, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -10,7 +10,6 @@ License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl.html
 */
 
-/* do not use reset.css, use normalize.css http://necolas.github.com/normalize.css/ */
 
 body {
 	padding: 0 0 20px 0;
@@ -19,28 +18,13 @@ body {
 }
 
 
-body { /* break long url and lines without spaces */
-	/*-ms-word-break: break-all;
-	word-break: break-all; */
-	/* Non standard for webkit*/
-	/*word-break: break-word;*/
-	-webkit-hyphens: auto;
-	-moz-hyphens: auto;
-	hyphens: auto;
-	/*word-break: break-all;
-	word-break: keep-all;
-	word-wrap: break-word;*/
-}
-
-
-
 /* ========== main classes ========== */
 .site-wrapper {
 	margin-top: 20px;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 20px 20px;
-	background: #fff; /* #fbfbfb */
+	background: #fff;
 	border: 1px solid #e6e6e6;
 	/*box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);*/
 }
@@ -167,12 +151,6 @@ a img {
 	border: 0;
 }
 
-
-
-/* ========== pointer cursor for clickable elements ========== */
-a[href], input[type='submit'], input[type='image'], input[type='button'], input[type='reset'], label[for], select, button, .pointer {
-	cursor: pointer;
-}
 
 
 /* ========== selection colors ========== */
@@ -536,9 +514,14 @@ input[type="submit"], input[type="button"], button {
 .commentlist {
 	list-style-type: none;
 	margin-left: 0;
+	padding-left: 0;
 }
 
-.commentlist .children {margin: 0 0 0 20px; list-style-type: none;}
+.commentlist .children {
+	list-style-type: none;
+	margin: 0 0 0 20px;
+	padding-left: 0;
+}
 
 
 
@@ -565,7 +548,7 @@ input[type="submit"], input[type="button"], button {
 .page-header {
 	padding-bottom: 0;
 	border-bottom: 0;
-	margin-bottom: 20px;
+	margin: 20px 0;
 }
 #content .entry-meta {
 	/*color: #808080;*/
@@ -612,8 +595,9 @@ article.sticky {
 /* ========== responsive ========== */
 @media (max-width: 979px) {
 	.site-content-pusher { /* push content because of fixed menu */
-		height: 0px;
+		height: 0;
 	}
+
 }
 @media (max-width: 767px) {
 	.navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
@@ -921,14 +905,6 @@ a[href$=".tif"]:after { content: " [tif image]"; }*/
 	cursor: pointer;
 }
 
-
-/* ========== placeholder text ========== */
-::-webkit-input-placeholder {
-	color: #bbb;
-}
-:-moz-placeholder {
-	color: #bbb;
-}
 
 /* ========== pager ========== */
 .pager li > a {

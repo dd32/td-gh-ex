@@ -7,8 +7,9 @@
 							<h1 class="entry-title"><?php _e( 'Page not found. Error 404', 'activetab' ); ?></h1>
 						</header><!-- /.entry-header -->
 
+
 						<div class="entry-content">
-							<div class="alert alert-error">
+							<div class="alert alert-danger">
 								<?php _e( 'The URL you requested could not be found.', 'activetab' ); ?>
 							</div>
 
@@ -26,7 +27,7 @@
 							$popular_posts = get_posts( $args );
 							if( ! empty( $popular_posts ) ) : // show only if we have posts
 							?>
-							<h4><?php _e( 'Popular posts', 'activetab' ); ?></h4>
+							<h3><?php _e( 'Popular posts', 'activetab' ); ?></h3>
 							<ul>
 								<?php
 								foreach( $popular_posts as $popular_post ) : setup_postdata( $popular_post );
@@ -47,7 +48,7 @@
 							$recent_posts = get_posts( $args );
 							if( ! empty( $recent_posts ) ) : // show only if we have posts
 							?>
-							<h4><?php _e( 'Recent posts', 'activetab' ); ?></h4>
+							<h3><?php _e( 'Recent posts', 'activetab' ); ?></h3>
 							<ul>
 								<?php
 								foreach( $recent_posts as $recent_post ) : setup_postdata( $recent_post );
@@ -62,6 +63,6 @@
 
 <?php get_template_part( 'template-part', 'wrap-after' ); ?>
 
-<?php //get_sidebar(); ?>
+<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

@@ -3,8 +3,8 @@ Contributors: webvitaly
 Donate link: http://web-profile.com.ua/donate/
 Tags: gray, white, light, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.4
-Tested up to: 3.6.1
-Stable tag: 0.5.6
+Tested up to: 3.7.1
+Stable tag: 0.5.7
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -42,6 +42,10 @@ FAQ:
 
 
 == Changelog ==
+
+= 0.5.7 - 2013-11-03 =
+* updated Bootstrap v.3.0.1
+* bug fixing
 
 = 0.5.6 - 2013-10-15 =
 * bug fixing

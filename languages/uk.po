@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: activetab\n"
-"POT-Creation-Date: 2013-07-05 01:21+0200\n"
-"PO-Revision-Date: 2013-07-07 00:37+0200\n"
+"POT-Creation-Date: 2013-11-03 23:13+0200\n"
+"PO-Revision-Date: 2013-11-03 23:15+0200\n"
 "Last-Translator: webvitaly <webvitaly@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,15 +18,15 @@ msgstr ""
 msgid "Page not found. Error 404"
 msgstr "Сторінку не знайдено. Помилка 404"
 
-#: ../404.php:12
+#: ../404.php:13
 msgid "The URL you requested could not be found."
 msgstr "Не можливо знайти URL-адресу, яку ви запросили."
 
-#: ../404.php:29 ../sidebar.php:58
+#: ../404.php:30 ../sidebar.php:57
 msgid "Popular posts"
 msgstr "Популярні статті"
 
-#: ../404.php:50 ../sidebar.php:81
+#: ../404.php:51 ../sidebar.php:80
 msgid "Recent posts"
 msgstr "Нові статті"
 
@@ -145,11 +145,7 @@ msgstr "Надіслати коментар"
 msgid "Submit reply to %s"
 msgstr "Надіслати відповідь до %s"
 
-#: ../content-list.php:7 ../content-single.php:7 ../content.php:7
-msgid "Sticky"
-msgstr "Прикріплено"
-
-#: ../content-page.php:12 ../content-single.php:21 ../image.php:80
+#: ../content-page.php:12 ../content-single.php:15 ../image.php:80
 msgid "Pages:"
 msgstr "Сторінки:"
 
@@ -165,7 +161,7 @@ msgstr "WordPress CMS"
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../footer.php:37 ../functions.php:276 ../functions.php:288
+#: ../footer.php:37 ../functions.php:294 ../functions.php:306
 msgid ", "
 msgstr ", "
 
@@ -183,97 +179,101 @@ msgstr "RSS потік статей"
 
 #: ../footer.php:43
 msgid "Comments RSS feed"
-msgstr "RSS потік коментарів до статті"
+msgstr "RSS потік коментарів"
 
-#: ../functions.php:44
+#: ../functions.php:46
 msgid "Primary menu"
 msgstr "Головне меню"
 
-#: ../functions.php:74
+#: ../functions.php:76
 msgid "Nature"
 msgstr "Природа"
 
-#: ../functions.php:79
+#: ../functions.php:81
 msgid "Relax"
 msgstr "Відпочинок"
 
-#: ../functions.php:84
+#: ../functions.php:86
 msgid "Space"
 msgstr "Космос"
 
-#: ../functions.php:109
+#: ../functions.php:111
 msgid "Sidebar"
 msgstr "Бічна панель"
 
-#: ../functions.php:118
+#: ../functions.php:120
 msgid "Footer"
 msgstr "Нижня частина"
 
-#: ../functions.php:156
+#: ../functions.php:158
 #, php-format
 msgid "page %s"
 msgstr "сторінка %s"
 
-#: ../functions.php:176
+#: ../functions.php:178
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: ../functions.php:178
+#: ../functions.php:180
 msgid "Trackback:"
 msgstr "Trackback:"
 
-#: ../functions.php:182 ../functions.php:218
+#: ../functions.php:184 ../functions.php:220
 msgid "Edit"
 msgstr "Редагувати"
 
-#: ../functions.php:208
+#: ../functions.php:210
 msgid "Post author"
 msgstr "Автор статті"
 
-#: ../functions.php:215 ../functions.php:257
+#: ../functions.php:217 ../functions.php:275
 msgid "Author"
 msgstr "Автор"
 
-#: ../functions.php:216 ../functions.php:246
+#: ../functions.php:218 ../functions.php:248
 msgid "Published"
 msgstr "Опубліковано"
 
-#: ../functions.php:225
+#: ../functions.php:227
 msgid "Your comment is awaiting moderation."
 msgstr "Ваш коментар очікує перевірки."
 
-#: ../functions.php:233
+#: ../functions.php:235
 msgid "Reply"
 msgstr "Відповісти"
 
-#: ../functions.php:267
+#: ../functions.php:258
+msgid "Sticky"
+msgstr "Прикріплено"
+
+#: ../functions.php:285
 msgid "Comments"
 msgstr "Коментарі"
 
-#: ../functions.php:278 ../sidebar.php:93
+#: ../functions.php:296 ../sidebar.php:92
 msgid "Categories"
 msgstr "Категорії"
 
-#: ../functions.php:290
+#: ../functions.php:308
 msgid "Tags"
 msgstr "Теги"
 
-#: ../functions.php:316
+#: ../functions.php:335
 msgid "&larr; Previous posts"
 msgstr "&larr; попередні статті"
 
-#: ../functions.php:319
+#: ../functions.php:338
 msgid "Next posts &rarr;"
 msgstr "наступні статті &rarr;"
 
 #: ../image.php:18
 #, php-format
 msgid ""
-"<a href=\"%1$s\" title=\"Link to full-size image\">%2$s &times; %3$s</a> in "
-"<a href=\"%4$s\" title=\"Return to %5$s\" rel=\"gallery\">%6$s</a>"
+"<a href=\"%1$s\">%2$s &times; %3$s</a> in <a href=\"%4$s\" title=\"Return to "
+"%5$s\" rel=\"gallery\">%6$s</a>"
 msgstr ""
-"<a href=\"%1$s\" title=\"Посилання на повний розмір\">%2$s &times; %3$s</a> "
-"у <a href=\"%4$s\" title=\"Повернутись до %5$s\" rel=\"gallery\">%6$s</a>"
+"<a href=\"%1$s\">%2$s &times; %3$s</a> in <a href=\"%4$s\" title="
+"\"Повернутись до %5$s\" rel=\"gallery\">%6$s</a>"
 
 #: ../index.php:24
 msgid "No posts to display"
@@ -355,15 +355,19 @@ msgstr "Весь текст"
 msgid "Show excerpt or full content in the list of posts"
 msgstr "Показувати витяг або весь текст статті у списку статей"
 
+#: ../options.php:99
+msgid "Favicon"
+msgstr "Фавіконка"
+
 #: ../search.php:10
 msgid "Search results for:"
 msgstr "Результати пошуку для:"
 
-#: ../searchform.php:6 ../searchform.php:7
+#: ../searchform.php:8 ../searchform.php:9
 msgid "Search"
 msgstr "Шукати"
 
-#: ../sidebar.php:117
+#: ../sidebar.php:116
 msgid "Meta"
 msgstr "Мета"
 
