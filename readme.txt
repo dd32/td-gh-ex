@@ -1,9 +1,3 @@
-CHANGELOG
-=========
-OneColumn version 1.4 - november 2013
-- First stable release
-
-
 INSTALLATION
 ============
 
@@ -44,6 +38,11 @@ Without the WordPress codex and help from the WordPress community I was not able
 SUPPORT
 =======
 If you have a question or problem using this WordPress theme, please visit the WordPress Theme Directory and post a message in the Support Forum.
+
+
+CHANGELOG
+=========
+See separate file called changelog
 
 
 Enjoy,

@@ -64,11 +64,11 @@
 // Add blogname to wp_title
 	function onecolumn_wp_title( $title ) { 
 		global $page, $paged; 
-	if ( is_feed() ) 
+		if ( is_feed() ) 
 		return $title; 
 	
-	$filtered_title = $title . get_bloginfo( 'name' ); 
-		return $filtered_title; 
+		$filtered_title = $title . get_bloginfo( 'name' ); 
+			return $filtered_title; 
 	}
 	add_filter( 'wp_title', 'onecolumn_wp_title' ); 
 
@@ -76,11 +76,9 @@
 // Enqueues scripts and styles for front-end
 	function onecolumn_scripts() {
 		if (!is_admin()) { 
-			wp_dequeue_style('style'); 
+			wp_enqueue_style( 'style', get_stylesheet_uri() );
+			wp_enqueue_script( 'nav', get_stylesheet_directory_uri() . '/js/nav.js', array( 'jquery' ) );
 		}
-		wp_enqueue_style( 'style', get_stylesheet_uri() );
-		wp_enqueue_script( 'nav', get_stylesheet_directory_uri() . '/js/nav.js', array( 'jquery' ) );
-
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 			wp_enqueue_script( 'comment-reply' );
 	}
@@ -89,18 +87,16 @@
 
 // Register Google Fonts
 	function onecolumn_fonts() { 
-		if (!is_admin()) { 
-			wp_dequeue_style('googleFonts'); 
+		if (! is_admin() ) { 
+			wp_register_style('googleFonts', 'http://fonts.googleapis.com/css?family=Open+Sans' ); 		
+				wp_enqueue_style( 'googleFonts'); 	
 		}
-		wp_register_style('googleFonts', 'http://fonts.googleapis.com/css?family=Anaheim' ); 		
-		wp_enqueue_style( 'googleFonts'); 	
 	}  	
 	add_action('wp_enqueue_scripts', 'onecolumn_fonts');
 
 
-
 // Sidebars
-function onecolumn_widgets_init() {
+	function onecolumn_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Homepage Sidebar Right', 'onecolumn' ),
 		'id' => 'homepage-right',
