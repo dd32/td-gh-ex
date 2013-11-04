@@ -1,0 +1,18 @@
+  Theme : Hueman
+Version : 1.0.2
+ Author : Alexander "Alx" Agnarson - http://alxmedia.se
+
+November 2 2013 - 1.0.2
+===========================================================
+- Fixed margin issue with topbar menu disabled
+- Fixed responsive columns
+
+November 1 2013 - 1.0.1
+===========================================================
+- Theme screenshot updated
+- Detailed theme description added
+- New default color combination
+
+October 31 2013 - 1.0.0
+===========================================================
+- Theme released
