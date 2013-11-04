@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row" >
     
-    <div class="pin-article <?php echo suevafree_template('span') . " ". suevafree_template('sidebar'); ?>" >
+    <div class="pin-article span12 full" >
 		
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         
@@ -41,8 +41,6 @@
         
     </div>
     
-	<?php get_sidebar(); ?>
-
 	<?php endwhile; endif;?>
            
     </div>

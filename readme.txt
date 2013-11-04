@@ -20,9 +20,8 @@ Credits
 
 -- By Dave Gandy - http://fortawesome.github.io/Font-Awesome/
 
---- Font License under SIL OFL 1.1 - http://scripts.sil.org/OFL
---- Code License under MIT License - http://opensource.org/licenses/mit-license.html
---- Documentation License under CC BY 3.0 - http://creativecommons.org/licenses/by/3.0
+--- Font License under SIL OFL 1.1 - http://scripts.sil.org/OFL ( Applies to all desktop and webfont files in the following directory: /sueva/fonts/ )
+--- Code License under MIT License - http://opensource.org/licenses/mit-license.html ( Applies to the font-awesome.min.css file in /sueva/css/ )
 --- Brand Icons - All brand icons are trademarks of their respective owners. The use of these trademarks does not indicate endorsement of the trademark holder by Font Awesome, nor vice versa.
 
 /** FONTS **/
