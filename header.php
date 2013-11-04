@@ -7,8 +7,8 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<title><?php wp_title( '|', true, 'right' ); ?></title>
-<meta name="viewport" content="width=device-width" />
+<title><?php wp_title('|', true, 'right'); ?></title>
+<meta name="viewport" content="width=device-width, user-scalable=no" />
 <meta charset="utf-8">
 
 <?php
@@ -33,7 +33,10 @@
 		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-head' ) ); ?>
 	<?php endif; ?>
 
-	<?php if( is_home() || is_front_page() ) :?>
-		<img src="<?php header_image(); ?>" class="header-img" alt="Header" />
-	<?php endif;?>
+	<?php if ( is_home() || is_front_page() ) {?> 
+		<?php if ( get_header_image() ) {?> 
+			<img src="<?php echo get_header_image(); ?>" class="header-img" alt="" /> 
+		<?php } ?> 
+	<?php } ?> 
+
 </div>

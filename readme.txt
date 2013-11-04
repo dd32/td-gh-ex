@@ -1,8 +1,3 @@
-CHANGELOG
-=========
-Shipyard version 1.5 - oktober 2013
-
-
 INSTALLATION
 ============
 
@@ -20,7 +15,7 @@ To set a static homepage login into WordPress Dashboard > Settings > Reading and
 HOW TO CHANGE HEADER IMAGE
 ==========================
 You can change the header-image via WordPress Dashboard > Appearance > Header. I advice you to use a header-image of 960px wide and 350px high. 
-The default header (boats.jpg) is from my private collection and I don't mind you will use it for your blog.
+The default header (boats.jpg) is from my private collection and is licensed under the GPL.
 
 
 HOW TO SET MENU
@@ -43,6 +38,11 @@ Without the WordPress codex and help from the WordPress community I was not able
 SUPPORT
 =======
 If you have a question or problem using this WordPress theme, please visit the WordPress Theme Directory and post a message in the Support Forum.
+
+
+CHANGELOG
+=========
+See separate file called changelog
 
 
 Enjoy,

@@ -3,13 +3,12 @@
  * Theme functions and definitions.
  */
 
-// Set width without the padding
-if ( ! isset( $content_width ) )
-	$content_width = 570;
-
-
 // Sets up theme defaults and registers various WordPress features that Shipyard supports
 	function shipyard_setup() { 
+
+	// Set width without the padding
+		if ( ! isset( $content_width ) )
+		$content_width = 570;
 
 	// Make theme available for translation
 		load_theme_textdomain('shipyard', get_template_directory() . '/languages');  
@@ -47,11 +46,24 @@ if ( ! isset( $content_width ) )
 	add_action( 'after_setup_theme', 'shipyard_setup' ); 
 
 
+// Add blogname to wp_title
+	function shipyard_wp_title( $title ) { 
+		global $page, $paged; 
+		if ( is_feed() ) 
+		return $title; 
+	
+		$filtered_title = $title . get_bloginfo( 'name' ); 
+			return $filtered_title; 
+	}
+	add_filter( 'wp_title', 'shipyard_wp_title' ); 
+
+
 // Enqueues scripts and styles for front-end
 	function shipyard_scripts() {
-		wp_enqueue_style( 'style', get_stylesheet_uri() );
-		wp_enqueue_script( 'nav', get_stylesheet_directory_uri() . '/js/nav.js', array( 'jquery' ) );
-
+		if (!is_admin()) { 
+			wp_enqueue_style( 'style', get_stylesheet_uri() );
+			wp_enqueue_script( 'nav', get_stylesheet_directory_uri() . '/js/nav.js', array( 'jquery' ) );
+		}
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 			wp_enqueue_script( 'comment-reply' );
 	}
@@ -59,16 +71,17 @@ if ( ! isset( $content_width ) )
 
 
 // Register Google Fonts
-	function shipyard_fonts() { 		
-		wp_register_style('googleFonts', 'http://fonts.googleapis.com/css?family=Anaheim' ); 		
-		wp_enqueue_style( 'googleFonts'); 	
+	function shipyard_fonts() { 
+		if (! is_admin() ) { 
+			wp_register_style('googleFonts', 'http://fonts.googleapis.com/css?family=Open+Sans' ); 		
+				wp_enqueue_style( 'googleFonts'); 	
+		}
 	}  	
 	add_action('wp_enqueue_scripts', 'shipyard_fonts');
 
 
-
 // Sidebars
-function shipyard_widgets_init() {
+	function shipyard_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Primary Sidebar', 'shipyard' ),
 		'id' => 'primary',

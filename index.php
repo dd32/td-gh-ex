@@ -27,9 +27,11 @@
 		<?php endwhile; else: ?>
 		<p><?php _e('Sorry, no posts matched your criteria.', 'shipyard'); ?></p>
 		<?php endif; ?>
-	
+
+<div class="post-nav">
 	<div class="nav-prev"><?php next_posts_link(__( '&laquo; Older posts', 'shipyard' )) ?></div>
 	<div class="nav-next"><?php previous_posts_link(__( 'Newer posts &raquo;', 'shipyard' )) ?></div>
+</div>
 
 </div>
 <?php get_sidebar(); ?>

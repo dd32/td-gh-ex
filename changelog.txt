@@ -1,0 +1,19 @@
+CHANGELOG
+=========
+
+Shipyard version 1.6 - november 2013 
+- added wp_title function in functions.php
+- other minor adjustments in functions.php
+- removed default widgets from sidebar
+- removed default footer widgets so you can display footer without widgets too
+- added border to widgets, removed border from sidebar
+- fixed alignment issue of post navigation
+- added style to several text elements
+- changed font to Open Sans
+- a bunch of other minor adjustments in stylesheet
+
+
+Shipyard version 1.5 - oktober 2013 
+- first stable release
+
+

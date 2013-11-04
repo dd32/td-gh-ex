@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Shipyard v1.5\n"
+"Project-Id-Version: Shipyard v1.6\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-10-16 20:33:07+0000\n"
+"PO-Revision-Date: 2013-10-28 19:21:52+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -87,14 +87,14 @@ msgid "Posted by "
 msgstr "Geplaatst door "
 
 #: archive.php:40
-#: index.php:31
+#: index.php:32
 #: search.php:31
 #@ shipyard
 msgid "&laquo; Older posts"
 msgstr "&laquo; Oudere berichten"
 
 #: archive.php:41
-#: index.php:32
+#: index.php:33
 #: search.php:32
 #@ shipyard
 msgid "Newer posts &raquo;"
@@ -140,13 +140,11 @@ msgstr "Bewerk"
 msgid "Search Results for: %s"
 msgstr "Zoekresultaat voor: %s"
 
-#: footer.php:17
 #: sidebar.php:14
 #@ shipyard
 msgid "Search"
 msgstr "Zoek"
 
-#: footer.php:34
 #: sidebar.php:19
 #@ shipyard
 msgid "Recent Posts"
