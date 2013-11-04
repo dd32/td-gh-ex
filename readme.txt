@@ -14,6 +14,14 @@ Sueva is licensed under the GPL.
 Credits
 -------
 
+/** IMAGES **/
+
+- Patters
+
+-- By Theme in Progress - http://www.themeinprogress.com
+
+--- Licensed under GNU General Public License v3.
+
 /** ICONS **/
 
 - Font Awesome
@@ -68,11 +76,11 @@ Credits
 
 --- Licensed under MIT License
 
-- Mobile Menu:
+- Tinynav:
 
--- By Mambows - https://github.com/mambows/mobilemenu
+-- By Viljamis - http://tinynav.viljamis.com
 
---- Licensed - Not license
+--- Licensed under MIT License
 
 - Pretty Photo:
 
