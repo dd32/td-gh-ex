@@ -515,7 +515,6 @@
 		float: left;
 		margin-right: 4px;
 
-		background: green;
 		position: relative;
 
 		width: 36px;
@@ -564,7 +563,23 @@
 		&.social-media-icon-google-plus {
 			.social-button-style(#f80000);
 		}
+		&.social-media-icon-rss {
+			.social-button-style(#ff9200);
+		}
 
+	}
+}
+
+@media (max-width:680px) {
+	body.responsive {
+		.widget_vantage-social-media {
+			text-align: center;
+
+			.social-media-icon {
+				display: inline-block;
+				float:none;
+			}
+		}
 	}
 }
 
@@ -595,4 +610,8 @@
 			padding: 25px 35px;
 		}
 	}
+}
+
+.panel-grid-cell .flexslider {
+	margin-bottom: 0;
 }

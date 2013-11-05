@@ -390,8 +390,10 @@ header#masthead {
 		.logo {
 			display: block;
 			float: left;
+			max-width: 100%;
+
 			img {
-				display: block;
+				vertical-align:bottom;
 			}
 		}
 
@@ -437,6 +439,8 @@ header#masthead {
 
 			aside.widget {
 				margin-bottom: 0;
+				float: right;
+				position: relative;
 			}
 
 			.widget-title {
@@ -448,9 +452,11 @@ header#masthead {
 }
 
 body.ie-8,body.ie-9 {
-	header#masthead hgroup #header-sidebar {
-		padding-top: 40px;
-		padding-bottom: 40px;
+	header#masthead hgroup {
+		#header-sidebar {
+			padding-top: 40px;
+			padding-bottom: 40px;
+		}
 	}
 }
 
@@ -916,6 +922,7 @@ article.page{
 			color: #3b3b3b;
 			font-size: 20px;
 			font-weight: 500;
+			line-height: 1.35em;
 
 			a {
 				color: inherit;

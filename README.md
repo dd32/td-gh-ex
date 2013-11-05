@@ -27,7 +27,16 @@ Bundled Resources
 Change Log
 ---------------
 
-#### 1.1.1
+#### 1.1.3
+* Fixed RSS icon CSS.
+* Fixed double pagination on category pages.
+* Fixed alignment of social icons for responsive layout.
+* Fixed search pagination.
+* Added maximum logo width to prevent overflow.
+* Removed iframe from premium upgrade page.
+* Minor CSS fixes.
+
+#### 1.1.2
 * Premium: Fixed auto updates system.
 
 #### 1.1.1
