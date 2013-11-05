@@ -20,6 +20,158 @@ if( !defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
 
+// Portfolio Lite Page Options
+add_action( 'init', 'cyberchimps_portfolio_lite_page_options' );
+
+function cyberchimps_portfolio_lite_page_options() {
+	/**
+	 * Set up Portfolio Lite on Page options
+	 */
+
+	// set directory
+	$directory = get_template_directory_uri();
+
+	$page_fields = array(
+		// Image one
+		array(
+			'type'  => 'single_image',
+			'id'    => 'cyberchimps_portfolio_lite_image_one',
+			'class' => '',
+			'name'  => __( 'First Portfolio Image', 'cyberchimps_elements' ),
+			'std'   => $directory . '/cyberchimps/lib/images/portfolio.jpg'
+		),
+		array(
+			'type'  => 'text',
+			'id'    => 'cyberchimps_portfolio_lite_image_one_caption',
+			'class' => '',
+			'name'  => __( 'First Portfolio Image Caption', 'cyberchimps_elements' ),
+			'std'   => __( 'Image 1', 'cyberchimps_elements' )
+		),
+		array(
+			'type'  => 'checkbox',
+			'id'    => 'cyberchimps_portfolio_link_toggle_one',
+			'class' => 'checkbox',
+			'name'  => __( 'First Porfolio Link', 'cyberchimps_elements' ),
+			'std'   => 1
+		),
+		array(
+			'type'  => 'text',
+			'id'    => 'cyberchimps_portfolio_link_url_one',
+			'class' => '',
+			'name'  => __( 'Link URL', 'cyberchimps_elements' ),
+			'std'   => home_url()
+		),
+
+		// Image two
+		array(
+			'type'  => 'single_image',
+			'id'    => 'cyberchimps_portfolio_lite_image_two',
+			'class' => '',
+			'name'  => __( 'Second Portfolio Image', 'cyberchimps_elements' ),
+			'std'   => $directory . '/cyberchimps/lib/images/portfolio.jpg'
+		),
+		array(
+			'type'  => 'text',
+			'id'    => 'cyberchimps_portfolio_lite_image_two_caption',
+			'class' => '',
+			'name'  => __( 'Second Portfolio Image Caption', 'cyberchimps_elements' ),
+			'std'   => __( 'Image 2', 'cyberchimps_elements' )
+		),
+		array(
+			'type'  => 'checkbox',
+			'id'    => 'cyberchimps_portfolio_link_toggle_two',
+			'class' => 'checkbox',
+			'name'  => __( 'Second Porfolio Link', 'cyberchimps_elements' ),
+			'std'   => 1
+		),
+		array(
+			'type'  => 'text',
+			'id'    => 'cyberchimps_portfolio_link_url_two',
+			'class' => '',
+			'name'  => __( 'Link URL', 'cyberchimps_elements' ),
+			'std'   => home_url()
+		),
+
+		// Image three
+		array(
+			'type'  => 'single_image',
+			'id'    => 'cyberchimps_portfolio_lite_image_three',
+			'class' => '',
+			'name'  => __( 'Third Portfolio Image', 'cyberchimps_elements' ),
+			'std'   => $directory . '/cyberchimps/lib/images/portfolio.jpg'
+		),
+		array(
+			'type'  => 'text',
+			'id'    => 'cyberchimps_portfolio_lite_image_three_caption',
+			'class' => '',
+			'name'  => __( 'Third Portfolio Image Caption', 'cyberchimps_elements' ),
+			'std'   => __( 'Image 3', 'cyberchimps_elements' )
+		),
+		array(
+			'type'  => 'checkbox',
+			'id'    => 'cyberchimps_portfolio_link_toggle_three',
+			'class' => 'checkbox',
+			'name'  => __( 'Third Porfolio Link', 'cyberchimps_elements' ),
+			'std'   => 1
+		),
+		array(
+			'type'  => 'text',
+			'id'    => 'cyberchimps_portfolio_link_url_three',
+			'class' => '',
+			'name'  => __( 'Link URL', 'cyberchimps_elements' ),
+			'std'   => home_url()
+		),
+
+		// Image four
+		array(
+			'type'  => 'single_image',
+			'id'    => 'cyberchimps_portfolio_lite_image_four',
+			'class' => '',
+			'name'  => __( 'Fourth Portfolio Image', 'cyberchimps_elements' ),
+			'std'   => $directory . '/cyberchimps/lib/images/portfolio.jpg'
+		),
+		array(
+			'type'  => 'text',
+			'id'    => 'cyberchimps_portfolio_lite_image_four_caption',
+			'class' => '',
+			'name'  => __( 'Fourth Portfolio Image Caption', 'cyberchimps_elements' ),
+			'std'   => __( 'Image 4', 'cyberchimps_elements' )
+		),
+		array(
+			'type'  => 'checkbox',
+			'id'    => 'cyberchimps_portfolio_link_toggle_four',
+			'class' => 'checkbox',
+			'name'  => __( 'Fourth Porfolio Link', 'cyberchimps_elements' ),
+			'std'   => 1
+		),
+		array(
+			'type'  => 'text',
+			'id'    => 'cyberchimps_portfolio_link_url_four',
+			'class' => '',
+			'name'  => __( 'Link URL', 'cyberchimps_elements' ),
+			'std'   => home_url()
+		),
+	);
+	/*
+	 * configure your meta box
+	 */
+	$page_config = array(
+		'id'             => 'portfolio_lite_options', // meta box id, unique per meta box
+		'title'          => __( 'Portfolio Lite Options', 'cyberchimps_elements' ), // meta box title
+		'pages'          => array( 'page' ), // post types, accept custom post types as well, default is array('post'); optional
+		'context'        => 'normal', // where the meta box appear: normal (default), advanced, side; optional
+		'priority'       => 'low', // order of meta box: high (default), low; optional
+		'fields'         => $page_fields, // list of meta fields (can be added by field arrays)
+		'local_images'   => false, // Use local or hosted images (meta box images for add/remove)
+		'use_with_theme' => true //change path if used with theme set to true, false for a plugin or anything else for a custom path(default false).
+	);
+
+	/*
+	 * Initiate your meta box
+	 */
+	$page_meta = new Cyberchimps_Meta_Box( $page_config );
+}
+
 // Portfolio Lite element action
 add_action( 'portfolio_lite', 'cyberchimps_portfolio_lite_content' );
 
@@ -100,6 +252,10 @@ function cyberchimps_portfolio_lite_content() {
 	$title_output = ( $title_enable == 'on' OR $title_enable == '1' ) ? $title : '';
 
 	// Post-specific variables 	
+	$image = get_post_meta( $post->ID, 'portfolio_image', true );
+	$title = get_the_title();
+
+	// Post-specific variables
 	$image = get_post_meta( $post->ID, 'portfolio_image', true );
 	$title = get_the_title();
 
