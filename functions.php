@@ -190,35 +190,26 @@ function boldr_styles() {
 	$stylesheet_directory_uri = get_stylesheet_directory_uri(); // Current theme URI
 
 	$responsive_mode = boldr_get_option('responsive_mode');
+	
+	if ($responsive_mode != 'off'):
+		$stylesheet = '/css/boldr.min.css';
+	else:
+		$stylesheet = '/css/boldr-unresponsive.min.css';
+	endif;
 
 	/* Child theme support:
-	 * Enqueue child-theme's versions of stylesheets in /css if they exist,
+	 * Enqueue child-theme's versions of stylesheet in /css if they exist,
 	 * or the parent theme's version otherwise
 	 */
-	if ( @file_exists( $stylesheet_directory . '/css/icefit.css' ) )
-		wp_register_style( 'icefit', $stylesheet_directory_uri . '/css/icefit.css' );
+	if ( @file_exists( $stylesheet_directory . $stylesheet ) )
+		wp_register_style( 'boldr', $stylesheet_directory_uri . $stylesheet );
 	else
-		wp_register_style( 'icefit', $template_directory_uri . '/css/icefit.css' );				
-
-	if ( @file_exists( $stylesheet_directory . '/css/theme-style.css' ) )
-		wp_register_style( 'theme-style', $stylesheet_directory_uri . '/css/theme-style.css' );
-	else
-		wp_register_style( 'theme-style', $template_directory_uri . '/css/theme-style.css' );	
-
-	if ($responsive_mode != 'off'):
-		if ( @file_exists( $stylesheet_directory . '/css/media-queries.css' ) )
-			wp_register_style( 'media-queries', $stylesheet_directory_uri . '/css/media-queries.css' );
-		else
-			wp_register_style( 'media-queries', $template_directory_uri . '/css/media-queries.css' );	
-	endif;
+		wp_register_style( 'boldr', $template_directory_uri . $stylesheet );				
 
 	// Always enqueue style.css from the current theme
 	wp_register_style( 'style', $stylesheet_directory_uri . '/style.css');
 
-	wp_enqueue_style( 'icefit' );
-	wp_enqueue_style( 'theme-style' );
-	if ($responsive_mode != 'off')
-		wp_enqueue_style( 'media-queries' );
+	wp_enqueue_style( 'boldr' );
 	wp_enqueue_style( 'style' );
 
 	// Google Webfonts
@@ -241,9 +232,7 @@ add_action( 'init', 'boldr_editor_styles' );
  * Enqueue Javascripts
  */
 function boldr_scripts() {
-	wp_enqueue_script('icefit-scripts', get_template_directory_uri() . '/js/icefit.js', array('jquery'));
-	wp_enqueue_script('hoverIntent',    get_template_directory_uri() . '/js/hoverIntent.js', array('jquery'));
-	wp_enqueue_script('superfish',      get_template_directory_uri() . '/js/superfish.js', array('jquery'));
+	wp_enqueue_script('boldr', get_template_directory_uri() . '/js/boldr.min.js', array('jquery'));
     /* Threaded comments support */
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
