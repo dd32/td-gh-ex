@@ -112,6 +112,8 @@
 	margin: -1px -1px 0 -1px;
 	padding: 8px 10px;
 	text-shadow: rgba(255,255,255,0.6) 0px 1px 0px;
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-topright: 3px;
 }
 
 .ui-dialog.panels-admin-dialog .ui-dialog-titlebar-close {

@@ -12,21 +12,26 @@
 function siteorigin_theme_update_filter( $current ) {
 	$theme = basename( get_template_directory() );
 	$order_number = get_option( 'siteorigin_order_number_' . $theme, false );
-	if ( empty( $order_number ) ) return $current;
+	if ( empty( $order_number ) ) return $current; // Skip if the user has not entered an order number.
 
 	// Updates are not compatible with the old child theme system
 	if ( basename( get_stylesheet_directory() ) == basename( get_template_directory() ) . '-premium' ) return $current;
 
-	$request = wp_remote_post(
-		SITEORIGIN_THEME_ENDPOINT . '/premium/' . $theme . '/?rand=' . rand( 0, getrandmax() ),
-		array(
-			'body' => array(
+	static $request = false;
+	if(empty($request)){
+		// Only keep a single instance of this request. Stops double requests.
+		$request = wp_remote_get(
+			add_query_arg( array(
+				'timestamp' => time(),
 				'action' => 'update_info',
 				'version' => SITEORIGIN_THEME_VERSION,
 				'order_number' => $order_number
+			), SITEORIGIN_THEME_ENDPOINT . '/premium/' . $theme . '/' ),
+			array(
+				'timeout'     => 10,
 			)
-		)
-	);
+		);
+	}
 
 	if ( !is_wp_error( $request ) && $request['response']['code'] == 200 && !empty( $request['body'] ) ) {
 		$data = unserialize( $request['body'] );

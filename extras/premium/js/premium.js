@@ -7,8 +7,8 @@ jQuery( function ( $ ) {
 
     // Handle clicking the play button
     $('#theme-upgrade #click-to-play').click(function(){
-        // Only load the video from Vimeo when the user clicks play
-        $(this).replaceWith('<iframe src="http://player.vimeo.com/video/' + $(this).data('video-id') + '?title=0&byline=0&portrait=0&autoplay=1" width="640" height="362" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>');
+        // Open the Vimeo video in a new window
+        window.open($(this).attr('href'), 'videowindow', 'width=640,height=362,resizeable,scrollbars');
         return false;
     })
 

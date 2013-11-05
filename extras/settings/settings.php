@@ -359,6 +359,7 @@ function siteorigin_settings_field( $args ) {
 				</div>
 
 				<input type="hidden" id="<?php echo esc_attr( $field_id ) ?>" value="<?php echo esc_attr( is_array( $current ) ? '-1' : $current ) ?>" name="<?php echo esc_attr( $field_name ) ?>" />
+				<div class="clear"></div>
 			<?php
 			break;
 		
@@ -385,6 +386,22 @@ function siteorigin_settings_field( $args ) {
 				type="text"
 				value="<?php echo esc_attr( $current ) ?>" />
 			<a href="#" class="so-settings-gallery-edit"><?php _e('Select Images', 'origami') ?></a>
+			<?php
+			break;
+
+		case 'pages' :
+			$pages = get_posts( array(
+				'post_type' => 'page',
+				'numberposts' => 200,
+				'post_status' => empty($args['unpublished']) ? 'publish' : 'any',
+			) );
+			?>
+			<select id="<?php echo esc_attr( $field_id ) ?>" name="<?php echo esc_attr( $field_name ) ?>">
+				<option value="0"><?php _e('None', 'origami') ?></option>
+				<?php foreach ( $pages as $page ) : ?>
+					<option value="<?php echo $page->ID ?>" <?php selected($page->ID, $current) ?>><?php echo esc_attr($page->post_title) ?></option>
+				<?php endforeach ?>
+			</select>
 			<?php
 			break;
 

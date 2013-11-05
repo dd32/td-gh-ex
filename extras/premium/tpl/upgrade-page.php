@@ -41,7 +41,7 @@ $theme = basename( get_template_directory() );
 			<?php if( !empty($siteorigin_premium_info['premium_video_poster']) ) : // Only load the video iFrame after the video is clicked ?>
 				<div id="video-wrapper" style="background-image: url(<?php echo esc_url($siteorigin_premium_info['premium_video_poster']) ?>)">
 					<?php if(!empty($siteorigin_premium_info['premium_video_id'])) : ?>
-						<a href="#" id="click-to-play" data-video-id="<?php echo esc_attr($siteorigin_premium_info['premium_video_id']) ?>"></a>
+						<a href="http://player.vimeo.com/video/<?php echo intval($siteorigin_premium_info['premium_video_id']) ?>?title=0&byline=0&portrait=0&autoplay=1" target="_blank" id="click-to-play" data-video-id="<?php echo intval($siteorigin_premium_info['premium_video_id']) ?>"></a>
 					<?php else : ?>
 						<div class="placeholder"></div>
 					<?php endif; ?>
@@ -88,7 +88,7 @@ $theme = basename( get_template_directory() );
 					<label><input type="radio" name="variable_pricing_option" value="20"> <strong>$20</strong> <?php _e("Our sincere thanks", 'origami') ?></label>
 					<label><input type="radio" name="variable_pricing_option" value="35"> <strong>$35</strong> <?php _e("We'll go that extra mile for you", 'origami') ?></label>
 					<label><input type="radio" name="variable_pricing_option" value="50"> <strong>$50</strong> <?php _e("A huge contribution to its development", 'origami') ?></label>
-					<label><input type="radio" name="variable_pricing_option" value="custom" class="custom-price" > <strong><?php _e('Custom', 'origami') ?></strong> <input type="number" name="variable_pricing_custom" value="15" placeholder="$3+" min="3"> </label>
+					<label><input type="radio" name="variable_pricing_option" value="custom" class="custom-price" > <strong><?php _e('Custom', 'origami') ?></strong> <input type="number" name="variable_pricing_custom" value="15" placeholder="$5+" min="5"> </label>
 				</div>
 				<div class="options hide-if-js">
 					<p><?php _e('Please enable Javascript to change pricing', 'origami') ?></p>
