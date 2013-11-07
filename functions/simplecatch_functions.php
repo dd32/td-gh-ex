@@ -365,7 +365,7 @@ function simplecatch_sliders() {
 					</div> <!-- .featured -->
 					<div class="featured-text">';
 						if( $excerpt !='') {
-							$simplecatch_sliders .= the_title( '<span>','</span>', false ).': '.$excerpt;
+							$simplecatch_sliders .= the_title( '<span class="slider-title">','</span>', false ).'<span class="slider-sep">: </span><span class="slider-content">'.$excerpt.'</span>';
 						}
 						$simplecatch_sliders .= '
 					</div><!-- .featured-text -->

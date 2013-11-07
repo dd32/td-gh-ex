@@ -362,3 +362,6 @@ Version 2.6.5
 Version 2.6.6
 * Added brown color scheme 
 * Fixed dark color scheme 
+
+Version 2.6.7
+* Added span for slider title, separator and content to give better control through CSS
