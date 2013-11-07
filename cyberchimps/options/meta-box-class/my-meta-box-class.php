@@ -153,6 +153,9 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 
 			// Get Plugin Path
 			$plugin_path = $this->SelfPath;
+			
+			// Set template directory uri
+			$directory_uri = get_template_directory_uri();
 
 			//only load styles and js when needed
 			/*
@@ -163,6 +166,10 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 				// Enqueue Meta Box Style
 				wp_enqueue_style( 'at-meta-box', $plugin_path . '/css/meta-box.css' );
 
+				// Load color picker
+				wp_enqueue_style( 'color-picker', $directory_uri . '/cyberchimps/options/lib/css/colorpicker.css' );
+				wp_enqueue_script( 'color-picker-js', $directory_uri . '/cyberchimps/options/lib/js/colorpicker.min.js', array( 'jquery' ), '', true );
+				
 				// Enqueue Meta Box Scripts
 				wp_enqueue_script( 'at-meta-box', $plugin_path . '/js/meta-box.min.js', array( 'jquery' ), null, true );
 				// Enqueue Cyberchimps Scripts
@@ -181,7 +188,7 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 				// Check for special fields and add needed actions for them.
 
 				//this replaces the ugly check fields methods calls
-				foreach( array( 'upload', 'color', 'date', 'time', 'code', 'select' ) as $type ) {
+				foreach( array( 'upload', 'color', 'date', 'time', 'select' ) as $type ) {
 					call_user_func( array( $this, 'check_field_' . $type ) );
 				}
 			}
@@ -281,30 +288,6 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 				wp_enqueue_style( 'at-jquery-ui-css', $plugin_path . '/js/jquery-ui/jquery-ui.css' );
 				wp_enqueue_script( 'jquery-ui' );
 				wp_enqueue_script( 'at-timepicker', $plugin_path . '/js/jquery-ui/jquery-ui-timepicker-addon.js', array( 'jquery-ui-slider', 'jquery-ui-datepicker' ), false, true );
-			}
-		}
-
-		/**
-		 * Check Field code editor
-		 *
-		 * @since 2.1
-		 * @access public
-		 */
-		public function check_field_code() {
-
-			if( $this->has_field( 'code' ) && $this->is_edit_page() ) {
-				$plugin_path = $this->SelfPath;
-				// Enqueu codemirror js and css
-				wp_enqueue_style( 'at-code-css', $plugin_path . '/js/codemirror/codemirror.css', array(), null );
-				wp_enqueue_style( 'at-code-css-dark', $plugin_path . '/js/codemirror/solarizedDark.css', array(), null );
-				wp_enqueue_style( 'at-code-css-light', $plugin_path . '/js/codemirror/solarizedLight.css', array(), null );
-				wp_enqueue_script( 'at-code-js', $plugin_path . '/js/codemirror/codemirror.js', array( 'jquery' ), false, true );
-				wp_enqueue_script( 'at-code-js-xml', $plugin_path . '/js/codemirror/xml.js', array( 'jquery' ), false, true );
-				wp_enqueue_script( 'at-code-js-javascript', $plugin_path . '/js/codemirror/javascript.js', array( 'jquery' ), false, true );
-				wp_enqueue_script( 'at-code-js-css', $plugin_path . '/js/codemirror/css.js', array( 'jquery' ), false, true );
-				wp_enqueue_script( 'at-code-js-clike', $plugin_path . '/js/codemirror/clike.js', array( 'jquery' ), false, true );
-				wp_enqueue_script( 'at-code-js-php', $plugin_path . '/js/codemirror/php.js', array( 'jquery' ), false, true );
-
 			}
 		}
 
@@ -577,24 +560,6 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		}
 
 		/**
-		 * Show Field code editor.
-		 *
-		 * @param string $field
-		 *
-		 * @author Ohad Raz
-		 *
-		 * @param string $meta
-		 *
-		 * @since 2.1
-		 * @access public
-		 */
-		public function show_field_code( $field, $meta ) {
-			$this->show_field_begin( $field, $meta );
-			echo "<textarea class='code_text" . ( isset( $field['class'] ) ? ' ' . $field['class'] : '' ) . "' name='{$field['id']}' id='{$field['id']}' data-lang='{$field['syntax']}' " . ( isset( $field['style'] ) ? "style='{$field['style']}'" : '' ) . " data-theme='{$field['theme']}'>{$meta}</textarea>";
-			$this->show_field_end( $field, $meta );
-		}
-
-		/**
 		 * Show Field hidden.
 		 *
 		 * @param string $field
@@ -823,14 +788,9 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 			}
 
 			$this->show_field_begin( $field, $meta );
-			if( wp_style_is( 'wp-color-picker', 'registered' ) ) { //iris color picker since 3.5
-				echo "<input class='at-color-iris" . ( isset( $field['class'] ) ? " {$field['class']}" : "" ) . "' type='text' name='{$field['id']}' id='{$field['id']}' value='{$meta}' size='8' />";
-			}
-			else {
-				echo "<input class='at-color" . ( isset( $field['class'] ) ? " {$field['class']}" : "" ) . "' type='text' name='{$field['id']}' id='{$field['id']}' value='{$meta}' size='8' />";
-				echo "<input type='button' class='at-color-select button' rel='{$field['id']}' value='" . __( 'Select a color', 'apc' ) . "'/>";
-				echo "<div style='display:none' class='at-color-picker' rel='{$field['id']}'></div>";
-			}
+			echo '<div class="input-prepend ' . $field['class'] . '"><input class="of-color" name="' . $field['id'] . '" id="' . $field['id'] . '" type="text" value="' . $meta . '" />';
+			echo '<div id="' . $field['id'] . '_picker'  . '" class="add-on colorSelector"><div style="' . esc_attr( 'background-color:' . $meta ) . '"></div></div></div>';
+			
 			$this->show_field_end( $field, $meta );
 
 		}
@@ -1415,33 +1375,6 @@ if( !class_exists( 'AT_Meta_Box' ) ) :
 		 */
 		public function addNumber( $id, $args, $repeater = false ) {
 			$new_field = array( 'type' => 'number', 'id' => $id, 'std' => '0', 'desc' => '', 'style' => '', 'name' => 'Number Field', 'step' => '1', 'min' => '0' );
-			$new_field = array_merge( $new_field, $args );
-			if( false === $repeater ) {
-				$this->_fields[] = $new_field;
-			}
-			else {
-				return $new_field;
-			}
-		}
-
-		/**
-		 *  Add code Editor to meta box
-		 * @author Ohad Raz
-		 * @since 2.1
-		 * @access public
-		 *
-		 * @param $id string  field id, i.e. the meta key
-		 * @param $args mixed|array
-		 *    'name' => // field name/label string optional
-		 *    'desc' => // field description, string optional
-		 *    'std' => // default value, string optional
-		 *    'style' =>   // custom style for field, string optional
-		 *    'syntax' =>   // syntax language to use in editor (php,javascript,css,html)
-		 *    'validate_func' => // validate function, string optional
-		 * @param $repeater bool  is this a field inside a repeatr? true|false(default)
-		 */
-		public function addCode( $id, $args, $repeater = false ) {
-			$new_field = array( 'type' => 'code', 'id' => $id, 'std' => '', 'desc' => '', 'style' => '', 'name' => 'Code Editor Field', 'syntax' => 'php', 'theme' => 'defualt' );
 			$new_field = array_merge( $new_field, $args );
 			if( false === $repeater ) {
 				$this->_fields[] = $new_field;
