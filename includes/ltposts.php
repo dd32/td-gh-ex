@@ -11,8 +11,8 @@
 <?php } ?> 
 									 <a title="<?php the_title(); ?>" href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a><br />
 									 <div class="clear"></div>
-								</div>			
-							<?php endwhile; ?>
+								</div>
+							<?php endwhile; ?>			 <?php wp_reset_postdata(); ?>
 									</div>					
 					
 		

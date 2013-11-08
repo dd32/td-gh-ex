@@ -30,10 +30,10 @@ Custom Css:
 
 == Change log ==
 
-= 1.2.2 =
+= 1.2.3 =
 *Fixed issue related home icon and categories 
 *Theme Panel Change to new version
-
+*Added wp_reset_postdata(); in latest and popular post
 
 = 1.0 =
 *Initial Release @ 1.0
