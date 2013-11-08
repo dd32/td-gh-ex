@@ -76,9 +76,9 @@
 					<form id="contactus_form" method="post" class="" action="">
 					<?php wp_nonce_field('busiprof_name_nonce_check','busiprof_name_nonce_field'); ?>
 					
-						<input type="text" name="yourname" id="yourname" class="span6" placeholder="Your Name..."  />
+						<input type="text" name="yourname" id="yourname" class="span6 cont_field" placeholder="Your Name..."  />
 						
-						<input type="text" name="email" id="email" placeholder="Your Email..." class="span6"  />
+						<input type="text" name="email" id="email" placeholder="Your Email..." class="span6 cont_field"  />
 						
 						<textarea  class="span12 txt-area-box" style="height: 130px;" cols="40" rows="5" name="message" id="message" >Write Message...</textarea>
 						<input  type="submit" name="submit" id="submit"  class="cont_btn" value="Send Now!" />

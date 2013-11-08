@@ -2,10 +2,8 @@
 function busiprof_pagination($pages = '', $range = 2)
 {
 $showitems = ($range * 2)+1;
-
 global $paged;
 if(empty($paged)) $paged = 1;
-
 if($pages == '')
 {
 global $wp_query;
@@ -20,7 +18,7 @@ if(1 != $pages)
 {
 echo "<div class='pagination_blog'><ul>";
 if($paged > 2 && $paged > $range+1 && $showitems < $pages)?>
-<li class='page_links'><a href=<?php get_pagenum_link(1);?>><?php _e('Previous','busi_prof'); ?></a></li>
+<li class='page_links'><a href=<?php get_pagenum_link(1);?> ><?php _e('Previous','busi_prof'); ?></a></li>
 <?php
 if($paged > 1 && $showitems < $pages) echo "<li><a href='".paginate_links($paged - 1)."'>&lsaquo;</a></li>"; 
 

@@ -13,80 +13,63 @@
 
 ?>
        	<div class="widget_section">
-            	<div class="container">
-					<div class="row-fluid">
+            <div class="container">
+				<div class="row-fluid">
                    <?php if(is_active_sidebar('first-footer-widget-area','second-footer-widget-area','third-footer-widget-area','fourth-footer-widget-area')):?>
-                            <?php if ( is_active_sidebar( 'first-footer-widget-area' ) ) : ?>
-                                  <div class="span3">
-                                       <?php dynamic_sidebar( 'first-footer-widget-area' ); ?>
-                                  </div>
-                                <?php endif; ?>
-                                
-                             <?php if ( is_active_sidebar( 'second-footer-widget-area' ) ) : ?> 
+						<?php if ( is_active_sidebar( 'first-footer-widget-area' ) ) : ?>
+							  <div class="span3">
+								   <?php dynamic_sidebar( 'first-footer-widget-area' ); ?>
+							  </div>
+							<?php endif; ?>                                
+                            <?php if ( is_active_sidebar( 'second-footer-widget-area' ) ) : ?> 
                               <div class="span3">
                               <?php dynamic_sidebar( 'second-footer-widget-area' ); ?>
                               </div>
-                          							 
-	                          <?php endif; ?>      
-                        <?php if ( is_active_sidebar( 'third-footer-widget-area' ) ) : ?>
+                          	<?php endif; ?>      
+							<?php if ( is_active_sidebar( 'third-footer-widget-area' ) ) : ?>
                                <div class="span3">
-                              <?php dynamic_sidebar( 'third-footer-widget-area' ); ?>
+                             <?php dynamic_sidebar( 'third-footer-widget-area' ); ?>
                                </div>
-                          
-								 
-	                  <?php endif; ?>
-                        <?php if ( is_active_sidebar( 'fourth-footer-widget-area' ) ) : ?>
+							<?php endif; ?>
+							<?php if ( is_active_sidebar( 'fourth-footer-widget-area' ) ) : ?>
                                <div class="span3">
-                              <?php dynamic_sidebar( 'fourth-footer-widget-area' ); ?>
+                             <?php dynamic_sidebar( 'fourth-footer-widget-area' ); ?>
                                </div>
-                          
-								 
-	                        <?php endif; ?>
-            <?php else : ?>                   
-               			 
-						 <div class="span3">
-                       
-					    <?php the_widget('WP_Widget_Archives'); ?>
-                         </div>
-               
-							 
-						 <div class="span3">
-                       
+							<?php endif; ?>
+						<?php else : ?>
+						<div class="span3"> 
+							<?php the_widget('WP_Widget_Archives'); ?>
+                        </div>
+						<div class="span3">                       
 					     <?php the_widget('WP_Widget_Categories'); ?>
-                         </div>
-	 
-						 <div class="span3">
-                         <?php
-					  the_widget('WP_Widget_Meta'); ?>
-                         </div>
-               	 
-						 <div class="span3">
-                         <?php
-					  the_widget('WP_Widget_Pages'); ?>
-                         </div>
-                        
-       <?php endif; ?>
-                        
-       
-                   
-                 </div>	
-				 </div>
-            </div><!--closing of the footer widgets area-->
-             <div class="footer-section">      
-				<div class="container">
-				
-            	<div class="row">
-				<div class="span8">
-				<?php _e(' Powered by ', 'busi_prof'); ?>
-				<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'busi_prof' ) ); ?>"><?php _e('WordPress', 'busi_prof'); ?></a>
-				
-				<?php bloginfo(); ?> <?php echo date( 'Y' ); ?>. <?php _e( 'Designed by', 'busi_prof' ); ?> 
-				<a href="<?php echo esc_url( __( 'http://www.webriti.com/','busi_prof' ) ); ?>"><?php _e( 'Webriti ', 'busi_prof' ); ?></a>
-				<?php _e( 'All Rights Reserved.', 'busi_prof' ); ?>
+                        </div>	 
+						<div class="span3">
+                         <?php the_widget('WP_Widget_Meta'); ?>
+						</div>               	 
+						<div class="span3">
+                         <?php  the_widget('WP_Widget_Pages'); ?>
+						</div>
+                    <?php endif; ?>
+                </div>	
+			</div>
+        </div><!--closing of the footer widgets area-->
+		<?php $current_options = get_option('busiprof_theme_options' );?>
+		<?php if($current_options['busiprof_custom_css']!='')
+			{ echo "<style type='text/css'>".$current_options['busiprof_custom_css']."</style>"; }
+			?>
+		<div class="footer-section">      
+			<div class="container">
+				<div class="row">
+					<div class="span8">
+					<?php _e(' Powered by ', 'busi_prof'); ?>
+					<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'busi_prof' ) ); ?>"><?php _e('WordPress', 'busi_prof'); ?></a>
+					<?php bloginfo(); ?> <?php echo date( 'Y' ); ?>. <?php _e( 'Designed by', 'busi_prof' ); ?> 
+					<a href="<?php echo esc_url( __( 'http://www.webriti.com/','busi_prof' ) ); ?>"><?php _e( 'Webriti ', 'busi_prof' ); ?></a>
+					<?php _e( 'All Rights Reserved.', 'busi_prof' ); ?>
+					</div>
 				</div>
-				</div>
-               </div>
-            </div>
+		   </div>
+		</div>
 <!--closing of the footer-->
 
 </div>

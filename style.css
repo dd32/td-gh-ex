@@ -2,8 +2,8 @@
 * Theme Name: Busiprof
 * Theme URI: http://www.webriti.com/index.php/lite/busiprof-premium-wordpress-theme/
 * Description: Multi Purpose WordPress Responsive Theme. 
-* Version: 1.1
-* Author: priyanshu.mittal,vibhorp
+* Version: 1.2
+* Author: priyanshu.mittal,vibhorp,harimaliya
 * Author URI: http://www.webriti.com
 * Tags: white,full-width-template, threaded-comments,custom-menu,two-columns,translation-ready
 * License: GNU General Public License v3.0
@@ -1326,13 +1326,13 @@ li {list-style-type: none;}
 	
 }
 .cont_field{
-	border: 1px solid #E7E7E7;
-    border-radius: 6px 6px 6px 6px !important;
-    color: #999999 !important;
-    font-size: 14px !important;
-    margin-right: 5px !important;
-    padding-left: 0px;
-	height: 40px !important;
+ border: 1px solid #E7E7E7;
+border-radius: 6px 6px 6px 6px !important;
+color: #999999 !important;
+font-size: 14px !important;
+margin-right: 5px !important;
+padding-left: 0px;
+height: 40px !important;
 }
  .txt-area-box{
 	border: 1px solid #E7E7E7 !important;
