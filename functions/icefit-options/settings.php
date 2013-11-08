@@ -56,7 +56,7 @@ function boldr_settings_template() {
 			'desc'          => 'Upload your own logo',
 			'id'            => 'logo',
 			'type'          => 'image',
-			'default'       => get_template_directory_uri() .'/img/logo.png',
+			'default'       => '',
 		);
 
 		$settings_options[] = array(

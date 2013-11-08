@@ -24,7 +24,7 @@
 			 * Though it would be really nice if you decide to keep the tiny link to the theme author :)
 			 */ ?>
 			 Copyright &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. 
-			 <?php printf( __( 'Proudly powered by', 'boldr' ) ); ?><a href="<?php echo esc_url( 'http://wordpress.org/' ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'boldr' ); ?>"> WordPress</a>. BoldR design by <a href="<?php echo esc_url( 'http://www.iceablethemes.com' ); ?>" title="<?php esc_attr_e( 'Free and Premium WordPress themes', 'boldr' ); ?>">Iceable Themes</a>.
+			 <?php printf( __( 'Proudly powered by', 'boldr' ) ); ?><a href="<?php echo esc_url( 'http://wordpress.org/' ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'boldr' ); ?>"> WordPress</a>. BoldR design by <a href="<?php echo esc_url( 'http://www.iceablethemes.com' ); ?>" title="<?php esc_attr_e( 'Iceablethemes', 'boldr' ); ?>">Iceable Themes</a>.
 		</div>
 
 		<div class="sub-footer-right">
