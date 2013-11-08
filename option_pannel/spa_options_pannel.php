@@ -161,7 +161,7 @@
 			</h2>
 			<div class="updated" > 
 				<p><strong></strong></p>
-				<p><strong><?php _e("This theme recommends the following plugin: ",'sis_spa') ; ?> <em><?php _e("appointment calendar",'sis_spa') ; ?></em>.</strong></p>
+				<p><strong><?php _e("This theme recommends the following plugin: ",'sis_spa') ; ?><a href="http://wordpress.org/plugins/appointment-calendar/" target="_blank"> <em><?php _e("appointment calendar",'sis_spa') ; ?></em></a>.</strong></p>
 				
 				<p></p>
 			</div>
