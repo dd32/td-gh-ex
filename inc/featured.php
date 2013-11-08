@@ -63,13 +63,13 @@ $featured = new WP_Query(
 					clearInterval(checkforloaded);
 					jQuery('#flexslider-featured').flexslider({
 						animation: "slide",
+						useCSS: false, // Fix iPad flickering issue
 						slideshow: false,
-						controlsContainer: ".featured-controls",
 						directionNav: true,
 						controlNav: true,
 						pauseOnHover: true,
 						slideshowSpeed: 7000,
-						animationDuration: 600,
+						animationSpeed: 400,
 						smoothHeight: true,
 						touch: false
 					});
@@ -77,11 +77,7 @@ $featured = new WP_Query(
 			}, 20);
 		});
 	</script>
-	
-	<?php if ($featured->found_posts > 1): ?>
-	<div class="featured-controls group"></div>
-	<?php endif; ?>
-	
+		
 	<div class="flexslider featured" id="flexslider-featured">
 		<ul class="slides">				
 			<?php while ( $featured->have_posts() ): $featured->the_post(); ?>

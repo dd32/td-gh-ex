@@ -1,6 +1,5 @@
 <!DOCTYPE html> 
-<!--[if IE 8 ]>					<html class="no-js ie ie8" <?php language_attributes(); ?>> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->	<html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
+<html class="no-js" <?php language_attributes(); ?>>
 
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
@@ -11,11 +10,6 @@
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
 	<script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>
-
-	<!--[if lt IE 9]>
-		<script src="<?php echo get_template_directory_uri(); ?>/js/ie/html5.js"></script>
-		<script src="<?php echo get_template_directory_uri(); ?>/js/ie/selectivizr.js"></script>
-	<![endif]-->
 	
 	<?php wp_head(); ?>
 </head>
@@ -28,7 +22,7 @@
 	
 		<?php if (has_nav_menu('topbar')): ?>
 			<nav class="nav-container group" id="nav-topbar">
-				<div class="nav-toggle"><i class="fa fa-reorder"></i></div>
+				<div class="nav-toggle"><i class="fa fa-bars"></i></div>
 				<div class="nav-text"><!-- put your mobile menu text here --></div>
 				<div class="nav-wrap container"><?php wp_nav_menu(array('theme_location'=>'topbar','menu_class'=>'nav container-inner group','container'=>'','menu_id' => '','fallback_cb'=> FALSE)); ?></div>
 				
@@ -54,7 +48,7 @@
 				</div>
 				<?php if (has_nav_menu('header')): ?>
 					<nav class="nav-container group" id="nav-header">
-						<div class="nav-toggle"><i class="fa fa-reorder"></i></div>
+						<div class="nav-toggle"><i class="fa fa-bars"></i></div>
 						<div class="nav-text"><!-- put your mobile menu text here --></div>
 						<div class="nav-wrap container"><?php wp_nav_menu(array('theme_location'=>'header','menu_class'=>'nav container-inner group','container'=>'','menu_id' => '','fallback_cb'=> FALSE)); ?></div>
 					</nav><!--/#nav-header-->

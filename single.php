@@ -20,12 +20,11 @@
 							
 							<div class="clear"></div>
 							
-							<div class="entry <?php if ( !ot_get_option('sharrre') ) { echo 'share'; }; ?>">	
+							<div class="entry">	
 								<div class="entry-inner">
 									<?php the_content(); ?>
 									<?php wp_link_pages(array('before'=>'<div class="post-pages">'.__('Pages:','hueman'),'after'=>'</div>')); ?>
 								</div>
-								<?php if ( !ot_get_option('sharrre') ) { get_template_part('inc/sharrre'); } ?>
 								<div class="clear"></div>				
 							</div><!--/.entry-->
 							

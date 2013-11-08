@@ -1,6 +1,25 @@
-  Theme : Hueman
-Version : 1.0.2
+  Theme : Hueman (wordpress.org release)
+Version : 1.0.4
  Author : Alexander "Alx" Agnarson - http://alxmedia.se
+
+November 8 2013 - 1.0.4
+===========================================================
+- (wordpress.org release) Removed Sharrre integration
+- (wordpress.org release) Removed shortcodes
+- (wordpress.org release) Removed tracking code field
+- Restructured functions.php according to wordpress best practices
+- Loading IE-specific js via functions.php instead of template
+- Moved & added new browser body classes to functions.php
+- Fixed responsive embeds with Jetpack
+- Fixed featured slider flickering issue on iPad
+
+November 7 2013 - 1.0.3
+===========================================================
+- Updated to Flexslider 2.2.0
+- Updated to Sharrre 1.3.5
+- Updated to Font Awesome 4.0.3
+- Removed reply button for pingbacks & trackbacks
+- Fixed double site title in RSS feed
 
 November 2 2013 - 1.0.2
 ===========================================================

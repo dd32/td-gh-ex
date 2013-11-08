@@ -21,13 +21,11 @@ function custom_theme_options() {
       'content'       => array( 
         array(
           'id'        => 'general_help',
-          'title'     => 'FAQ',
+          'title'     => 'Documentation',
           'content'   => '
 			<p>First, a friendly warning: Please remember that the "Reset Options" button resets <strong>ALL</strong> options. That means, if you reset your styling options, all your custom sidebars and other settings will be reset as well.</p>
 			<p><i>Frequently Asked Questions:</i></p>
-			<p><strong>Q: Styling options do not work, why?</strong> &mdash; A: Make sure that the dynamic.css file has server permissions set to chmod 0777, so that it is writable.</p>
-			<p><strong>Q: Why are social sharing buttons missing Google Plus and Pinterest?</strong> &mdash; A: You need to enable urlCurl on your server for them to work. Ask your webhost to do so. If you are unable to, you can disable the buttons and use any other plugin instead.</p>
-			<p><strong>Q: Videos embeded in the content area are not responsive, help!</strong> &mdash; A: Turn off Jetpack embeds feature and the issue will go away.</p>
+			<p><strong>Q: Styling options do not work, why?</strong> &mdash; A: Make sure that the dynamic.css file has server permissions set to chmod 0777, so that it is writable. You may also need to empty cache.</p>
 		'
         )
       )
@@ -118,15 +116,6 @@ function custom_theme_options() {
 			'type'		=> 'text',
 			'section'	=> 'general'
 		),
-		// General: Analytics Script
-		array(
-			'id'		=> 'tracking-code',
-			'label'		=> 'Tracking Code',
-			'desc'		=> 'Paste your Google Analytics (or other) tracking code here. It will be inserted before the closing body tag of your theme.',
-			'type'		=> 'textarea-simple',
-			'section'	=> 'general',
-			'rows'		=> '3'
-		),
 		// General: Comments
 		array(
 			'id'		=> 'page-comments',
@@ -213,28 +202,6 @@ function custom_theme_options() {
 					'label' => 'Disable'
 				)
 			)
-		),
-		// Blog: Single - Sharrre
-		array(
-			'id'		=> 'sharrre',
-			'label'		=> 'Single &mdash; Share Buttons',
-			'desc'		=> 'Social sharing buttons for each article',
-			'type'		=> 'checkbox',
-			'section'	=> 'blog',
-			'choices'	=> array(
-				array( 
-					'value' => '1',
-					'label' => 'Disable'
-				)
-			)
-		),
-		// Blog: Twitter Username
-		array(
-			'id'		=> 'twitter-username',
-			'label'		=> 'Twitter Username',
-			'desc'		=> 'Your @username will be added to share-tweets of your posts (optional)',
-			'type'		=> 'text',
-			'section'	=> 'blog'
 		),
 		// Blog: Single - Authorbox
 		array(
@@ -379,7 +346,7 @@ function custom_theme_options() {
 		array(
 			'id'		=> 'credit',
 			'label'		=> 'Footer Credit',
-			'desc'		=> 'Disable footer credit text :-(',
+			'desc'		=> 'Disable footer credit text',
 			'std'		=> '',
 			'type'		=> 'checkbox',
 			'section'	=> 'footer',

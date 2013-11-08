@@ -140,7 +140,7 @@
 	.four-fifth { width: 79.5%; }
 	
 	/* blog */
-	.featured-controls { margin-top: 5px; }	
+	#flexslider-featured { margin-top: 5px; }	
 	.format-gallery .post-format .flexslider .slides img { max-height: 300px; }
 	.format-link .post-format p { margin-bottom: 15px; }
 
@@ -194,7 +194,7 @@
 	/* base */
 	.pad { padding: 20px 20px 10px; }
 	.notebox { margin-bottom: 20px; }
-	.featured-controls { margin-top: 10px; }
+	#flexslider-featured { margin-top: 10px; }
 	.entry { font-size: 15px; }
 	
 	/* text */
@@ -299,7 +299,7 @@
 	/* base */
 	.pad { padding: 15px 15px 5px; }
 	.notebox { margin-bottom: 15px; }
-	.featured-controls { margin-top: 15px; }
+	#flexslider-featured { margin-top: 15px; }
 	.gallery-caption { display: none; }
 	
 	/* header */

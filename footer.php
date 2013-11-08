@@ -39,7 +39,7 @@
 		
 		<?php if ( has_nav_menu( 'footer' ) ): ?>
 			<nav class="nav-container group" id="nav-footer">
-				<div class="nav-toggle"><i class="fa fa-reorder"></i></div>
+				<div class="nav-toggle"><i class="fa fa-bars"></i></div>
 				<div class="nav-text"><!-- put your mobile menu text here --></div>
 				<div class="nav-wrap"><?php wp_nav_menu( array('theme_location'=>'footer','menu_class'=>'nav container group','container'=>'','menu_id'=>'','fallback_cb'=>FALSE) ); ?></div>
 			</nav><!--/#nav-footer-->
@@ -82,6 +82,5 @@
 </div><!--/#wrapper-->
 
 <?php wp_footer(); ?>
-<!--[if lt IE 9]><script src="<?php echo get_template_directory_uri(); ?>/js/ie/respond.js"></script> <![endif]-->
 </body>
 </html>

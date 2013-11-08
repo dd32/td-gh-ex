@@ -95,7 +95,7 @@
 							controlNav: true,
 							pauseOnHover: true,
 							slideshowSpeed: 7000,
-							animationDuration: 600,
+							animationSpeed: 600,
 							smoothHeight: true,
 							touch: false
 						});
@@ -140,18 +140,18 @@
 
 <?php if ( has_post_format( 'video' ) ): // Video ?>
 
-	<div class="post-format">
-		<div class="video-container">
-			<?php 
-				if ( isset($meta['_video_url'][0]) && !empty($meta['_video_url'][0]) ) {
-					global $wp_embed;
-					$video = $wp_embed->run_shortcode('[embed]'.$meta['_video_url'][0].'[/embed]');
-					echo $video;
-				} elseif ( isset($meta['_video_embed_code'][0]) && !empty($meta['_video_embed_code'][0]) ) {
-					echo $meta['_video_embed_code'][0];
-				}
-			?>
-		</div>
+	<div class="post-format">	
+		<?php 
+			if ( isset($meta['_video_url'][0]) && !empty($meta['_video_url'][0]) ) {
+				global $wp_embed;
+				$video = $wp_embed->run_shortcode('[embed]'.$meta['_video_url'][0].'[/embed]');
+				echo $video;
+			} elseif ( isset($meta['_video_embed_code'][0]) && !empty($meta['_video_embed_code'][0]) ) {
+				echo '<div class="video-container">';
+				echo $meta['_video_embed_code'][0];
+				echo '</div>';
+			}
+		?>	
 	</div>
 	
 <?php endif; ?>
