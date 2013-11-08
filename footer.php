@@ -5,7 +5,7 @@
  * Contains the closing of the id=main div and all content after
  *
  * @package rootstrap
- * @since WP RootStrap 1.0
+ * @since WP RootStrap 1.1
  */
 ?>
 			</div><!-- close .*-inner (main-content or sidebar, depending if sidebar is used) -->

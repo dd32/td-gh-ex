@@ -8,7 +8,7 @@
  * different template.
  *
  * @package rootstrap
- * @since WP RootStrap 1.0
+ * @since WP RootStrap 1.1
  */
 
 get_header(); ?>
@@ -16,7 +16,7 @@ get_header(); ?>
 	<?php while ( have_posts() ) : the_post(); ?>
 
 		<?php get_template_part( 'content', 'page' ); ?>
-
+		
 		<?php
 			// If comments are open or we have at least one comment, load up the comment template
 			if ( comments_open() || '0' != get_comments_number() )

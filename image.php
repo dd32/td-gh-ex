@@ -3,7 +3,7 @@
  * The template for displaying image attachments.
  *
  * @package rootstrap
- * @since WP RootStrap 1.0
+ * @since WP RootStrap 1.1
  */
 
 get_header(); ?>

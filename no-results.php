@@ -5,7 +5,7 @@
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
  * @package rootstrap
- * @since WP RootStrap 1.0
+ * @since WP RootStrap 1.1
  */
 ?>
 

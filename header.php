@@ -5,7 +5,7 @@
  * Displays all of the <head> section and everything up till <div id="main">
  *
  * @package rootstrap
- * @since WP RootStrap 1.0
+ * @since WP RootStrap 1.1
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -21,7 +21,7 @@
 
 <body <?php body_class(); ?>>
 	<?php do_action( 'before' ); ?>	
-	<nav class="navbar navbar-default navbar-fixed-top">		
+	<nav class="navbar navbar-default">		
 	<div class="container">
 		<div class="row">
 			<div class="site-navigation-inner col-12">
@@ -65,22 +65,22 @@
 	<div class="container">
 		<div id="social">
 			<?php if(of_get_option('facebook_link')) {?>
-			<a href="<?php echo of_get_option('facebook_link'); ?>" class="facebook">Facebook</a>
+			<a href="<?php echo esc_url(of_get_option('facebook_link')); ?>" class="facebook">Facebook</a>
 			<?php } ?>
 			<?php if(of_get_option('twitter_link')) {?>
-			<a href="<?php echo of_get_option('twitter_link'); ?>" class="twitter">Twitter</a>
+			<a href="<?php echo esc_url(of_get_option('twitter_link')); ?>" class="twitter">Twitter</a>
 			<?php } ?>
 			<?php if(of_get_option('gplus_link')) {?>
-			<a href="<?php echo of_get_option('gplus_link'); ?>" class="gplus">Gplus</a>
+			<a href="<?php echo esc_url(of_get_option('gplus_link')); ?>" class="gplus">Gplus</a>
 			<?php } ?>
 			<?php if(of_get_option('linkedin_link')) {?>
-			<a href="<?php echo of_get_option('linkedin_link'); ?>" class="linkedin">linkedin</a>
+			<a href="<?php echo esc_url(of_get_option('linkedin_link')); ?>" class="linkedin">linkedin</a>
 			<?php } ?>
 			<?php if(of_get_option('youtube_link')) {?>
-			<a href="<?php echo of_get_option('youtube_link'); ?>" class="youtube">Youtube</a>
+			<a href="<?php echo esc_url(of_get_option('youtube_link')); ?>" class="youtube">Youtube</a>
 			<?php } ?>
 			<?php if(of_get_option('pinterest_link')) {?>
-			<a href="<?php echo of_get_option('pinterest_link'); ?>" class="pinterest">pinterest</a>
+			<a href="<?php echo esc_url(of_get_option('pinterest_link')); ?>" class="pinterest">pinterest</a>
 			<?php } ?>
 		</div>
 		<h1><?php echo of_get_option('custom_heading' , 'Wecome to the Blog'); ?></h1>

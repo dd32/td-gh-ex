@@ -3,7 +3,7 @@
  *  Content displaying for single post page.
  *
  * @package rootstrap
- * @since WP RootStrap 1.0
+ * @since WP RootStrap 1.1
  */
 ?>
 

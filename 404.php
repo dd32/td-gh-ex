@@ -3,7 +3,7 @@
  * The template for displaying 404 pages (Not Found).
  *
  * @package rootstrap
- * @since WP RootStrap 1.0
+ * @since WP RootStrap 1.1
  */
 
 get_header(); ?>

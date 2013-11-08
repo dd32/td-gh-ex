@@ -3,7 +3,7 @@
  * rootstrap functions and definitions
  *
  * @package rootstrap
- * @since WP RootStrap 1.0
+ * @since WP RootStrap 1.1
  */
 
 
@@ -28,11 +28,9 @@ if ( ! function_exists( 'rootstrap_setup' ) ) :
  */ 
 function rootstrap_setup() {
     global $cap, $content_width;
-
     // This theme styles the visual editor with editor-style.css to match the theme style.
     add_editor_style();
 
-    if ( function_exists( 'add_theme_support' ) ) {
 
 		/**
 		 * Add default posts and comments RSS feed links to head
@@ -59,7 +57,7 @@ function rootstrap_setup() {
 			'default-image' => '',
 		) ) );
 	
-    }
+
 
 	/**
 	 * This theme uses wp_nav_menu() in one location.
@@ -131,11 +129,6 @@ function rootstrap_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'rootstrap_scripts' );
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/includes/custom-header.php';
 
 /**
  * Custom template tags for this theme.

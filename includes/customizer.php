@@ -3,7 +3,7 @@
  * rootstrap Theme Customizer
  *
 * @package rootstrap
-* @since WP RootStrap 1.0
+* @since WP RootStrap 1.1
  */
 
 /**

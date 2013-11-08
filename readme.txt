@@ -1,4 +1,4 @@
-------- WP RootStrap 1.0 -------
+------- WP RootStrap 1.1 -------
 
 -- Basanta Moharana, http://crayonux.com/
 
@@ -6,12 +6,11 @@
 WP RootStrap, Copyright 2013 Basanta Moharana - crayonux.com
 http://www.gnu.org/licenses/gpl-3.0.html
 WP RootStrap is distributed under the terms of the GNU GPL
-
+WP RootStrap is based on the _s (or Underscores) http://underscores.me/, (C) 2012-2013 Automattic, Inc.
 Bootstrap - Copyright 2012 Twitter, Inc
 http://www.apache.org/licenses/LICENSE-2.0
 Licensed under the Apache License v2.0 
-
--------* ABOUT WP RootStrap 1.0 *-------
+-------* ABOUT WP RootStrap 1.1 *-------
 
 Requires at least:	3.6.0
 Tested up to:		3.7.1

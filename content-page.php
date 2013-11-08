@@ -3,7 +3,7 @@
  * The template used for displaying page content in page.php
  *
  * @package rootstrap
- * @since WP RootStrap 1.0
+ * @since WP RootStrap 1.1
  */
 ?>
 
@@ -20,6 +20,7 @@
 				'after'  => '</div>',
 			) );
 		?>
+		<div class="clear"></div>
 	</div><!-- .entry-content -->
 	<?php edit_post_link( __( 'Edit', 'rootstrap' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
 </article><!-- #post-## -->

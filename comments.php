@@ -8,7 +8,7 @@
  * located in the includes/template-tags.php file.
  *
  * @package rootstrap
- * @since WP RootStrap 1.0
+ * @since WP RootStrap 1.1
  */
 
 /*
