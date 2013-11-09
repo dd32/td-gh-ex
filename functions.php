@@ -628,6 +628,16 @@
 	}
 	add_action( 'pre_get_posts', 'alx_pre_get_posts' );
 
+
+/*  Script for no-js / js class
+/* ------------------------------------ */
+	function alx_html_js_class () {
+		$html = '';
+		echo '<script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>'. "\n";
+		echo $html;
+	}
+	add_action( 'wp_head', 'alx_html_js_class', 1 );
+
 	
 /*  IE js header
 /* ------------------------------------ */

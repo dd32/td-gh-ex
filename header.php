@@ -8,8 +8,6 @@
 	<title><?php wp_title(''); ?></title>
 
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-
-	<script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>
 	
 	<?php wp_head(); ?>
 </head>

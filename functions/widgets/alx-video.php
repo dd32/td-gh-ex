@@ -1,17 +1,15 @@
 <?php
-/**
+/*
 	AlxVideo Widget
-
-	The contents of this file are subject to the terms of the GNU General
-	Public License Version 2.0. You may not use this file except in
-	compliance with the license. Any of the license terms and conditions
-	can be waived if you get permission from the copyright holder.
-
-	Copyright (c) 2013 Alexander "Alx" Agnarson - http://alxmedia.se
-
+	
+	License: GNU General Public License v2.0
+	License URI: http://www.gnu.org/licenses/gpl-2.0.html
+	
+	Copyright: (c) 2013 Alexander "Alx" Agnarson - http://alxmedia.se
+	
 		@package AlxVideo
 		@version 1.0
-**/
+*/
 
 class AlxVideo extends WP_Widget {
 

@@ -1,7 +1,7 @@
 /*
 Theme Name: Hueman
 Theme URI: http://alxmedia.se/themes/hueman/
-Version: 1.0.4
+Version: 1.0.5
 Description: View full live demo &amp; feature list <a href="http://alxmedia.se/themes/hueman/">here</a>. Hueman is a responsive 100% high resolution theme for blogs and magazines. Unique toggle sidebars results in a great reading experience for both tablet and mobile. The feature list is long: Unlimited topbar, header, footer and accent colors, unlimited widget areas, 0-2 sidebars to the left or right that can be uniquely specified for each page or post, 300px / 220px fixed width sidebars, 0-4 footer widget columns, almost zero layout images, related posts and post nav, featured story or slider, 10 post formats, SEO optimized, 3 flexible custom widgets, localisation support, social links and many useful admin panel features.
 Author: Alexander Agnarson
 Author URI: http://alxmedia.se
@@ -798,7 +798,6 @@ box-shadow: inset 0 1px 0 rgba(0,0,0,0.05); }
 
 .featured,
 .featured.flexslider { padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px solid #eee; }
-.featured.flexslider  li { position: relative; }
 .featured .post-title { font-size: 34px; letter-spacing: -0.7px; line-height: 1.4em; }
 
 /*  post : custom loop
@@ -1058,6 +1057,7 @@ box-shadow: inset 0 1px 0 rgba(255,255,255,0.25); }
 .widget > h3 a,
 .widget > h3 a:hover { color: #444; }
 .widget > h3 a img { display: none; float: left; margin: 3px 7px 0 0; }
+.widget select { max-width: 100%; }
 
 .sidebar .widget { padding: 30px 30px 20px; }
 #footer .widget { padding-bottom: 30px; }
@@ -1450,6 +1450,7 @@ html[xmlns] .slides { display: block; }
 .flex-viewport { max-height: 2000px; -webkit-transition: all 1s ease; -moz-transition: all 1s ease; transition: all 1s ease; }
 .loading .flex-viewport { max-height: 300px; }
 .flexslider .slides { zoom: 1; }
+.flexslider .slides > li { position: relative; }
 .carousel li { margin-right: 5px; }
 
 /* direction nav */

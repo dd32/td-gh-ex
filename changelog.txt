@@ -1,6 +1,12 @@
   Theme : Hueman (wordpress.org release)
-Version : 1.0.4
+Version : 1.0.5
  Author : Alexander "Alx" Agnarson - http://alxmedia.se
+
+November 9 2013 - 1.0.5
+===========================================================
+- (wordpress.org release) Added unminified versions of Flexslider and jPlayer
+- Added additional license information
+- Moved no-js/js class javascript to functions.php
 
 November 8 2013 - 1.0.4
 ===========================================================
