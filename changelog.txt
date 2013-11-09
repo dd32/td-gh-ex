@@ -1,6 +1,11 @@
   Theme : Hueman (wordpress.org release)
-Version : 1.0.5
+Version : 1.0.6
  Author : Alexander "Alx" Agnarson - http://alxmedia.se
+
+November 9 2013 - 1.0.6
+===========================================================
+- Fixed issue with double sidebar left layout, for expanded sidebar secondary
+- Fixed issue with hidden dropdowns behind toggle-expanded sidebars
 
 November 9 2013 - 1.0.5
 ===========================================================

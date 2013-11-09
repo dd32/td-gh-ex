@@ -14,7 +14,7 @@
 	.s2 .sidebar-toggle { display: block; }
 	
 	/* s2 expand/collapse */
-	.s2-expand .s2 { background: #f0f0f0; position: absolute; top: 0; bottom: 0; width: 260px; margin: 0!important; z-index: 99; overflow: auto;
+	.s2-expand .s2 { background: #f0f0f0; position: absolute; top: 0; bottom: 0; width: 260px; margin: 0!important; z-index: 9; overflow: auto;
 	-moz-transition: width .2s ease; -webkit-transition: width .2s ease; transition: width .2s ease; }	
 	.s2-expand .s2 .sidebar-content { display: block; min-width: 260px; }
 	.s2-collapse .s2 .sidebar-content { display: none; }
@@ -48,7 +48,7 @@
 	.col-3cr .main-inner { background: url(img/sidebar/s-left-dual-half-collapse.png) repeat-y left; padding-left: 390px; }
 	.col-3cr .s2 { margin-left: -50px; }
 	.col-3cr .s1 { margin-left: -390px; }
-	.s2-expand .col-3cr .s2 { left: 390px; }
+	.s2-expand .col-3cr .s2 { left: 340px; }
 	
 }
 
@@ -63,7 +63,7 @@
 	.s1 .sidebar-toggle { display: block; }
 	
 	/* s1 expand/collapse */
-	.s1-expand .s1 { background: #f0f0f0; position: absolute; top: 0; bottom: 0; width: 340px; margin: 0!important; z-index: 99; overflow: auto;
+	.s1-expand .s1 { background: #f0f0f0; position: absolute; top: 0; bottom: 0; width: 340px; margin: 0!important; z-index: 9; overflow: auto;
 	-moz-transition: width .2s ease; -webkit-transition: width .2s ease; transition: width .2s ease; }	
 	.s1-expand .s1 .sidebar-content,
 	.s1-expand .s1 .post-nav { display: block; min-width: 340px; }
@@ -276,7 +276,7 @@
 	.related-posts li:nth-child(4) { display: none; }
 	
 	/* shortcodes */
-	.dropcap { font-size: 72px; }
+	.dropcap { font-size: 80px; }
 	
 }
 
