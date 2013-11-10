@@ -2,7 +2,7 @@
 Theme Name: activetab
 Theme URI: http://web-profile.com.ua/wordpress/themes/activetab/
 Description: Responsive clean theme. More info at http://web-profile.com.ua/activetab/
-Version: 0.5.7
+Version: 0.5.8
 Author: webvitaly
 Author URI: http://web-profile.com.ua/wordpress/
 Tags: gray, white, light, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -393,8 +393,7 @@ video {
 
 
 /* ========== default form styles ========== */
-input[type="text"], input[type="email"],
-input[type="url"], select, textarea {
+input[type="text"], input[type="email"], input[type="url"], select, textarea {
 	height: 34px;
 	padding: 6px 12px;
 	font-size: 14px;
@@ -416,11 +415,9 @@ input[type="submit"], input[type="button"], button {
 
 
 /* ========== comments form ========== */
-
 #comment-form-title{
 	padding-left: 20px;
 }
-
 #comments{
 	line-height: 24px;
 	margin-bottom: 18px;
@@ -459,7 +456,6 @@ input[type="submit"], input[type="button"], button {
 .commentlist .comment-author {
 	position: relative;
 }
-
 
 #comment-form-elements {
 	list-style-type: none;
@@ -509,7 +505,6 @@ input[type="submit"], input[type="button"], button {
 	border: 0;
 	padding: 0;
 }
-
 
 .commentlist {
 	list-style-type: none;
@@ -597,7 +592,9 @@ article.sticky {
 	.site-content-pusher { /* push content because of fixed menu */
 		height: 0;
 	}
-
+	.navbar-fixed-top { /* remove fixed menu from viewport on narrow screens */
+		position: static;
+	}
 }
 @media (max-width: 767px) {
 	.navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
