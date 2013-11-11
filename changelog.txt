@@ -2,6 +2,9 @@
 
 = Theme Name: Appointway Theme Pro=
 
+= Version: 1.0.4 =
+* Added plugins notification for recommends plugin.
+
 = Version: 1.0.1 =
 1. Theme Style Improve
 
