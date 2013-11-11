@@ -15,8 +15,10 @@
 	</div>
 	
 	<div id="footer-bottom">
-		<div id="footer-links"><?php do_action('ast_hook_footer_links'); ?></div>
-		
+		<div id="footer-links">
+			<?php echo asteroid_option('ast_hook_footer_links'); ?>
+		</div>
+
 		<?php if (! asteroid_option('ast_remove_theme_link') == 1 ) : ?>
 			<span id="theme-link">
 				<a href="<?php echo esc_url( __( 'http://ronangelo.com/asteroid/', 'asteroid' ) ); ?>"><?php _e( 'Asteroid Theme', 'asteroid' ); ?></a>
@@ -27,10 +29,10 @@
 	<?php do_action('ast_hook_after_footer'); ?>
 </div> <!-- #Footer -->
 
+<?php do_action('ast_hook_after_container'); ?>
 </div> <!-- #Container -->
 
 <?php do_action('ast_hook_after_body'); ?>
-
 <?php wp_footer(); ?>
 </body>
 </html>

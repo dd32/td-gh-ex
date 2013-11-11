@@ -1,7 +1,9 @@
 <?php // Template Name: Sitemap ?>
-<?php get_header();?>
+<?php get_header(); ?>
 
 <div id="content">
+	<?php do_action('ast_hook_before_content'); ?>
+
 	<div class="single-wrap sitemap-template">
 
 	<?php the_post(); the_content(); ?>
@@ -23,6 +25,7 @@
 				<?php endwhile; ?>
 			</ul>
 	</div>
+	<?php do_action('ast_hook_after_content'); ?>
 </div>
 
 <?php get_sidebar(); ?>

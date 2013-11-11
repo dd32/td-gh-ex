@@ -18,6 +18,7 @@
 	<?php endif ; ?>
 
 <div id="container">
+	<?php do_action('ast_hook_before_container'); ?>
 
 	<div id="header">
 		<?php do_action('ast_hook_before_header'); ?>

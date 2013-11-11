@@ -9,7 +9,7 @@
 <?php endif; ?>
 
 <?php if ( comments_open() || pings_open() ) : ?>
-	<?php comment_form(array('comment_notes_after' => '')); ?>
+	<?php comment_form(); ?>
 <?php elseif ( $comments ) : ?>
 	<div id="respond"><p id="closed"><?php _e('Comments Closed', 'asteroid'); ?></p></div>
 <?php endif; ?>

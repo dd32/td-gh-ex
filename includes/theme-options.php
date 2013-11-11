@@ -5,20 +5,20 @@ function asteroid_admin_bar_menu() {
 		$wp_admin_bar->add_menu( array(
 			'parent' => false,
 			'id' => 'asteroid_admin_bar', 
-			'title' => ('Asteroid Options'), 
-			'href' => admin_url( 'themes.php?page=asteroid-options')
+			'title' => __( 'Asteroid Options', 'asteroid' ), 
+			'href' => admin_url('themes.php?page=asteroid-options')
 		));
 		$wp_admin_bar->add_menu( array(
 			'parent' => 'appearance',
 			'id' => 'theme_editor_admin_bar', 	
-			'title' => ('Editor'), 
-			'href' => admin_url( 'theme-editor.php')
+			'title' => __( 'Editor', 'asteroid' ), 
+			'href' => admin_url('theme-editor.php')
 		));
 		$wp_admin_bar->add_menu( array(
 			'parent' => 'appearance',
 			'id' => 'plugins_admin_bar', 	
-			'title' => ('Plugins'), 
-			'href' => admin_url( 'plugins.php')
+			'title' => __( 'Plugins', 'asteroid' ), 
+			'href' => admin_url('plugins.php')
 		));
 	}
 }
@@ -636,14 +636,6 @@ class Asteroid_Theme_Options {
 			'desc'    => __( 'Disable theme styles on the visual editor. Disables resizing of editor width.', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 0
-		);
-
-		$this->settings['ast_remove_wp_version'] = array(
-			'section' => 'misc',
-			'title'   => __( 'Remove WordPress Version', 'asteroid' ),
-			'desc'    => __( 'Prevent WP Version from being displayed in the &lt;Head&gt;', 'asteroid' ),
-			'type'    => 'checkbox',
-			'std'     => 0 
 		);
 
 		$this->settings['ast_remove_theme_link'] = array(

@@ -10,12 +10,14 @@ if (
 <?php else : ?>
 	<div id="content">
 <?php endif; ?>
- 
+	<?php do_action('ast_hook_before_content'); ?>
+
     <?php
 		the_post();
 		get_template_part( 'loop', 'single' );
     ?>
-	
+
+	<?php do_action('ast_hook_after_content'); ?>
 	</div>
 
 <?php
