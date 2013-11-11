@@ -12,7 +12,11 @@ jQuery(document).ready(function($) {
 /*  Toggle header search
 /* ------------------------------------ */
 	$('.toggle-search').click(function(){
-		$('body').toggleClass('toggle-search-expand');
+		$('.toggle-search').toggleClass('active');
+		$('.search-expand').fadeToggle(250);
+            setTimeout(function(){
+                $('.search-expand input').focus();
+            }, 300);
 	});
 	
 /*  Scroll to top

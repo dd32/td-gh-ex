@@ -2,6 +2,7 @@
 	( is_home() && ( ot_get_option('layout-home') != 'col-1c' ) ) ||
 	( is_single() && ( ot_get_option('layout-single') != 'col-1c' ) ) ||
 	( is_archive() && ( ot_get_option('layout-archive') != 'col-1c' ) ) ||
+	( is_category() && ( ot_get_option('layout-archive-category') != 'col-1c' ) ) ||
 	( is_search() && ( ot_get_option('layout-search') != 'col-1c' ) ) ||
 	( is_404() && ( ot_get_option('layout-404') != 'col-1c' ) ) ||
 	( is_page() && ( ot_get_option('layout-page') != 'col-1c' ) )

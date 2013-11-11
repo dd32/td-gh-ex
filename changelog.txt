@@ -1,11 +1,16 @@
   Theme : Hueman (wordpress.org release)
-Version : 1.0.6
+Version : 1.0.7
  Author : Alexander "Alx" Agnarson - http://alxmedia.se
+
+November 11 2013 - 1.0.7
+===========================================================
+- Added sidebar layout option for category archives
+- Added fade-in and auto focus of header search field
 
 November 9 2013 - 1.0.6
 ===========================================================
-- Fixed issue with double sidebar left layout, for expanded sidebar secondary
-- Fixed issue with hidden dropdowns behind toggle-expanded sidebars
+- Fixed double sidebar left layout, for expanded sidebar secondary
+- Fixed hidden dropdowns behind toggle-expanded sidebars
 
 November 9 2013 - 1.0.5
 ===========================================================

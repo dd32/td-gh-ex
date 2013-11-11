@@ -130,6 +130,7 @@
 		
 		// Set layout based on page
 		elseif ( is_home() && ( ot_get_option('layout-home') !='inherit' ) ) $layout = ot_get_option('layout-home',''.$default.'');
+		elseif ( is_category() && ( ot_get_option('layout-archive-category') !='inherit' ) ) $layout = ot_get_option('layout-archive-category',''.$default.'');
 		elseif ( is_archive() && ( ot_get_option('layout-archive') !='inherit' ) ) $layout = ot_get_option('layout-archive',''.$default.'');
 		elseif ( is_search() && ( ot_get_option('layout-search') !='inherit' ) ) $layout = ot_get_option('layout-search',''.$default.'');
 		elseif ( is_404() && ( ot_get_option('layout-404') !='inherit' ) ) $layout = ot_get_option('layout-404',''.$default.'');
@@ -160,6 +161,11 @@
 				( ot_get_option('layout-archive') =='col-3cm' ) || 
 				( ot_get_option('layout-archive') =='col-3cl' ) || 
 				( ot_get_option('layout-archive') =='col-3cr' ) )
+			) ||
+			( is_category() && ( 
+				( ot_get_option('layout-archive-category') =='col-3cm' ) || 
+				( ot_get_option('layout-archive-category') =='col-3cl' ) || 
+				( ot_get_option('layout-archive-category') =='col-3cr' ) )
 			) ||
 			( is_search() && ( 
 				( ot_get_option('layout-search') =='col-3cm' ) || 
@@ -632,9 +638,7 @@
 /*  Script for no-js / js class
 /* ------------------------------------ */
 	function alx_html_js_class () {
-		$html = '';
 		echo '<script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>'. "\n";
-		echo $html;
 	}
 	add_action( 'wp_head', 'alx_html_js_class', 1 );
 
@@ -642,12 +646,10 @@
 /*  IE js header
 /* ------------------------------------ */
 	function alx_ie_js_header () {
-		$html = '';
 		echo '<!--[if lt IE 9]>'. "\n";
 		echo '<script src="' . esc_url( get_template_directory_uri() . '/js/ie/html5.js' ) . '"></script>'. "\n";
 		echo '<script src="' . esc_url( get_template_directory_uri() . '/js/ie/selectivizr.js' ) . '"></script>'. "\n";
 		echo '<![endif]-->'. "\n";
-		echo $html;
 	}
 	add_action( 'wp_head', 'alx_ie_js_header' );
 
@@ -655,11 +657,9 @@
 /*  IE js footer
 /* ------------------------------------ */
 	function alx_ie_js_footer () {
-		$html = '';
 		echo '<!--[if lt IE 9]>'. "\n";
 		echo '<script src="' . esc_url( get_template_directory_uri() . '/js/ie/respond.js' ) . '"></script>'. "\n";
 		echo '<![endif]-->'. "\n";
-		echo $html;
 	}
 	add_action( 'wp_footer', 'alx_ie_js_footer', 20 );
 	
