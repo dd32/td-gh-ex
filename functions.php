@@ -105,12 +105,12 @@ function adventure_enqueue_comment_reply() {
 
 add_action( 'wp_enqueue_scripts', 'adventure_enqueue_comment_reply' );	
 
-// Wrap Video with a DIV for a CSS Resposive Video
-function wrap_embed_with_div($html, $url, $attr) { 
-	// YouTube isn't in here because it provides sufficient mark-ups to just use their html elements
-	if (preg_match("/vimeo/", $html)) { return '<div class="video-container">' . $html . '</div>'; }
-	if (preg_match("/wordpress.tv/", $html)) { return '<div class="video-container">' . $html . '</div>'; } }
-	// Don't see your video host in here? Just add it in, make sure you have the forward slash marks
+// Wrap Video in a DIV so that videos width and height become reponsive using CSS
+function wrap_embed_with_div($html, $url, $attr) {
+	if (preg_match("/youtu.be/", $html) || preg_match("/youtube.com/", $html) || preg_match("/vimeo/", $html) || preg_match("/wordpress.tv/", $html) || preg_match("/v.wordpress.com/", $html)) { 
+        // Don't see your video host in here? Just add it in, make sure you have the forward slash marks
+            $html = '<div class="video-container">' . $html . "</div>"; }
+            return $html;}
 
 add_filter('embed_oembed_html', 'wrap_embed_with_div', 10, 3);
 
@@ -139,7 +139,7 @@ function adventure_is_sidebar_active($index) {
 // Load up links in admin bar so theme is edit
 function adventure_theme_options_add_page() {
 	add_theme_page('Theme Customizer', 'Theme Customizer', 'edit_theme_options', 'customize.php' );
-    add_theme_page('Theme Info', 'Theme Info', 'edit_theme_options', 'theme_options', 'adventure_theme_options_do_page');}
+    add_theme_page('Theme Information', 'Theme Information', 'edit_theme_options', 'theme_options', 'adventure_theme_options_do_page');}
 	
 // Add link to theme options in Admin bar
 function adventure_admin_link() {
@@ -148,13 +148,6 @@ function adventure_admin_link() {
 	$wp_admin_bar->add_menu( array( 'id' => 'Adventure_Information', 'title' => 'Theme Information', 'href' => admin_url( 'themes.php?page=theme_options' ) )); }
 
 add_action( 'admin_bar_menu', 'adventure_admin_link', 113 );
-
-
-
-
-
-
-
 
 // The follow code adds a box to posts and pages to upload images for custom backgrounds
 add_action( 'add_meta_boxes', 'featured_background_add_meta_box' );
@@ -226,12 +219,6 @@ add_action( 'admin_enqueue_scripts', 'example_image_enqueue' );
 if( isset( $_POST[ 'meta-image' ] ) ) {
     update_post_meta( $post_id, 'meta-image', $_POST[ 'meta-image' ] ); }
 
-
-
-
-
-
-
 // Sets up the Customize.php for Adventure (More to come)
 function adventure_customize($wp_customize) {
 
@@ -247,10 +234,6 @@ function adventure_customize($wp_customize) {
 			</label> <?php } }
 
 	// The Standard Sections for Theme Custimizer
-	$wp_customize->add_section( 'meta_section', array(
-        'title'					=> 'Meta',
-        'priority'				=> 1, ));
-
 	$wp_customize->add_section( 'header_section', array(
         'title'				=> 'Header',
 		'priority'			=> 26, ));
@@ -277,24 +260,6 @@ function adventure_customize($wp_customize) {
 
 	// Remove the Section Colors for the Sake of making Sense
 	$wp_customize->remove_section( 'colors');
-
-	// Adding Google Analytics to the Theme
-	$wp_customize->add_setting( 'google_analytics_setting', array(
-		'default'			=> 'For example mine is "UA-9335180-X"', ));
-
-	$wp_customize->add_control( new adventure_Customize_Textarea_Control( $wp_customize, 'analytics_control', array(
-		'label'				=> 'Enter Your Google Analytics Code',
-		'section'			=> 'meta_section',
-		'settings'			=> 'google_analytics_setting', )));
-			
-	// Adding Webmaster Tools to the Theme
-	$wp_customize->add_setting( 'google_webmaster_tool_setting', array(
-		'default'			=> 'For example "gN9drVvyyDUFQzMSBL8Y8-EttW1pUDtnUypP-331Kqh"', ));
-
-	$wp_customize->add_control( new adventure_Customize_Textarea_Control( $wp_customize, 'google_webmaster_tool_control', array(
-		'label'				=> 'Enter Your Google Webmaster Verification Code',
-		'section'			=> 'meta_section',
-		'settings'			=> 'google_webmaster_tool_setting', )));
 
 	// Background needed to be moved to to the Background Section
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'background_color', array(
@@ -1027,7 +992,7 @@ function adventure_inline_css() {
 
 		echo '<!-- Custom CSS Styles -->' . "\n";
         echo '<style type="text/css" media="screen">' . "\n";
-        $featured_background = get_post_meta( get_the_ID(), 'meta-image', true ); if (!empty($featured_background)) echo 'body {background-image:url(' . $featured_background . ')' . "\n";
+        $featured_background = get_post_meta( get_the_ID(), 'meta-image', true ); if (!empty($featured_background)) echo 'body {background-image:url(' . $featured_background . ');' . "\n";
 		if ( ( get_theme_mod('backgroundsize_setting') != 'auto' ) && ( get_theme_mod('backgroundsize_setting') != '' ) ) echo '	body.custom-background {background-size:' . get_theme_mod('backgroundsize_setting') . ';}' . "\n";
 		if ( ( get_theme_mod('backgroundcolor_setting') != '#b4b09d' ) && ( get_theme_mod('backgroundcolor_setting') != '' ) ) echo '	#content>li {background: rgba(' . $r . ',' . $g . ', ' . $b . ', ' .  get_theme_mod('contentbackground_setting') .  ');}' . "\n";
 		if ( ( get_theme_mod('sidebarcolor_setting') != '#000000'  ) || ( get_theme_mod('backgroundcolor_setting') != '#b4b09d' ) ) echo '	li#sidebar {background: rgba(' . $rs . ',' . $gs . ', ' . $bs . ', ' .  get_theme_mod('sidebarbackground_setting') .  ');}' . "\n";
@@ -1049,24 +1014,7 @@ function adventure_inline_css() {
 
 		echo '</style>' . "\n";
 		echo '<!-- End Custom CSS -->' . "\n";
-		echo "\n";
-		
-		if ( ( ( get_theme_mod('google_webmaster_tool_setting') != '' ) && ( get_theme_mod('google_webmaster_tool_setting') != 'For example mine is "gN9drVvyyDUFQzMSBL8Y8-EttW1pUDtnUypP-331Kqh"' ) ) || ( ( get_theme_mod('google_analytics_setting') != '' ) && ( get_theme_mod('google_analytics_setting') != 'For example mine is "UA-9335180-X"' ) ) ) {
-			echo '<!-- Google Analytics & Webtool -->' . "\n";
-			if ( ( get_theme_mod('google_webmaster_tool_setting') != '' ) && ( get_theme_mod('google_webmaster_tool_setting') != 'For example mine is "gN9drVvyyDUFQzMSBL8Y8-EttW1pUDtnUypP-331Kqh"' ) ) echo '<meta name="google-site-verification" content="' .  get_theme_mod('google_webmaster_tool_setting') . '" />' . "\n";
-			if ( ( get_theme_mod('google_analytics_setting') != '' ) && ( get_theme_mod('google_analytics_setting') != 'For example mine is "UA-9335180-X"' ) ) {
-			echo '<script type="text/javascript">' . "\n"; 
-			echo '	var _gaq = _gaq || [];' . "\n"; 
-			echo "	_gaq.push(['_setAccount', '" .  get_theme_mod('google_analytics_setting') . "']);" . "\n"; 
-			echo "	_gaq.push(['_trackPageview']);" . "\n\n"; 
-			echo "	(function() {" . "\n"; 
-			echo "	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;" . "\n"; 
-			echo "	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';" . "\n"; 
-			echo "	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);" . "\n"; 
-			echo "	})();" . "\n\n"; 
-			echo "</script>" . "\n";  }
-			echo '<!-- End Google Analytics & Webtool -->' . "\n";
-			echo "\n"; } }
+		echo "\n"; }
 
 add_action('wp_head', 'adventure_inline_css');
 
@@ -1093,244 +1041,156 @@ function adventure_theme_options_do_page() { ?>
     <div class="cover">
     
     <ul id="spacing"></ul>
-	<ul id="content">
     
-    <li>
-    <h4><span>Please Read</br>This Page!</span>Thanks for using Adventure Lite!</h4>
-	<p>Thank you for downloading and installing the WordPress Theme "Adventure." I hope that you enjoy it and that I can continue to create these beautiful themes for years to come. But, if you could take a moment and become acutely aware that I have created this Theme and other themes free of charge, and while I'm not looking to get rich, I really like creating these themes for you guys. Which is why I offer additional customization of "Adventure" when you support me and install the "Adventure+" on your WordPress. If you're interested in supporting my work, or need some of the addition features in "Adventure+" head on over to <a href="http://schwarttzy.com/shop/adventureplus/">this page</a>.</p>
-    <p>Incase you happen to have any issues, questions, comments, or a requests for features with "Adventure Lite," you can contact me through E-Mail with the form on <a href="http://schwarttzy.com/contact-me/">this page</a>.</p>
-    <p>Thank you again,</br><a href="http://schwarttzy.com/about-2/">Eric J. Schwarz</a></p>
-    </li>
     
-    <li>
-    <h4>Customizing Adventure</h4>
-    <p><span class='embed-youtube' style='text-align:center; display: block;'><iframe class='youtube-player' type='text/html' width='671' height='396' src='http://www.youtube.com/embed/IU__-ipUxxc?version=3&#038;rel=1&#038;fs=1&#038;showsearch=0&#038;showinfo=1&#038;iv_load_policy=1&#038;wmode=transparent' frameborder='0'></iframe></span>
-    This video is out of date only because it doesn't show all the features</p>
-    <h3 class="title">Features</h3>
-    <table>
-        <tbody>
-        <tr>
-        <th class="justify">Adventure Theme Features</th>
-        <th>Adventure</th>
-        <th>Adventure+</th>
-        </tr>
-        <tr>
-        <td class="justify">100% Responsive WordPress Theme</td>
-        <td>&#9733;</td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Clean and Beautiful Stylized HTML, CSS, JavaScript</td>
-        <td>&#9733;</td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Change the site Title and Slogan Colors</td>
-        <td>&#9733;</td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Upload Your Own Background Image</td>
-        <td>&#9733;</td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Adjust the opacity of the Content from 0 to 100% in 5% intervails</td>
-        <td>&#9733;</td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Adjust the opacity of the Sidebar from 0 to 100% in 5% intervails</td>
-        <td>&#9733;</td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Adjust Color of the Background for Content</td>
-        <td>&#9733;</td>
-        <td>&#9733;</td>
-        </tr>
-        <td class="justify">Adjust Color of the Background for Sidebar</td>
-        <td>&#9733;</td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Multiple Menu Banner Images to Choose</td>
-        <td>&#9733;</td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Control wether or not the "Previous" & "Next" shows</td>
-        <td>&#9733;</td>
-        <td>&#9733;</td>
-        </tr>
-        <td class="justify">Adjust the spacing between the top of the page and content</td>
-        <td>&#9733;</td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Comments on Pages only, Posts only, Both, or Nones</td>
-        <td>&#9733;</td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Upload your own image for the Background</td>
-        <td></td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Upload Your Own Custom Banner Image</td>
-        <td></td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Upload Your Own Logo in either the Header or above Content</td>
-        <td></td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Change the Font Color in the Content</td>
-        <td></td>
-        <td>&#9733;</td>
-        </tr>
-		<tr>
-        <td class="justify">Change the Link Colors in the Menu</td>
-        <td></td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Choose you own Hyper Link Color</td>
-        <td></td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Favicon on Your Website</td>
-        <td></td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">The Ability to use Custom Fonts from Typekit</td>
-        <td></td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Remove my Mark from the Footer</td>
-        <td></td>
-        <td>&#9733;</td>
-        </tr>
-		<tr>
-        <td class="justify">Personal Support on Technical Issues You May Run Into</td>
-        <td></td>
-        <td>&#9733;</td>
-        </tr>
-        </tbody>
-	</table>
-    <p>Don't see a feature that you want, maybe theres plugin that doesn't work right, <a href="http://schwarttzy.com/contact-me/">send me an Email about it</a>.</p>
-	</li>
-    
-    <li>
-    <h4>Adventure - Version Information</h4>
-    <table>
-        <tbody>
-        <tr>
-        <th>Version</th>
-        <th class="justify"></th>
-        </tr>
-        <tr>
-        <th>2.70</th>
-        <td class="justify">Created one of the most demanded feature of all time, custom backgrounds. I call it "Featured Background," because you can now upload or select any image to be a background unique to any page or post. Also fixed an issue with comments displaying ordered numbers.</td>
-        </tr>
-        <tr>
-        <th>2.60</th>
-        <td class="justify">Code to move the sidebar to the left or the right.</td>
-        </tr>
-        <tr>
-        <th>2.55</th>
-        <td class="justify">Fixed an issues with list not displaying the element icon.</td>
-        </tr>
-        <tr>
-        <th>2.5</th>
-        <td class="justify">I'm working on a complete rewrite for Adventure to match my current coding skills, however it keeps taking longer than I expect. So in the mean time I decided to keep updating this old code that works just fine. New in this version is the ablity to the comment information and author information at the end of post and pages off.</td>
-        </tr>
-        <tr>
-        <th>2.4</th>
-        <td class="justify">Added the ablitity to put soical icon and/or a search bar into the menu.  Fixed the issue with the theme display "and comments are closed." Added Google Analytics and Web Master Tool option because everyone should have it and more control of over the comments display too. The option to choose either display excerpts or the entire content of a post or page. You can choose to display dates on posts.</td>
-        </tr>
-        <tr>
-        <th>2.3</th>
-        <td class="justify">Minor update to add few things to the theme along with fixes. The custom CSS generated from the theme customizer should only show if you have changed something in the features. Static pages now will not show the pagination or comments. Include the option to do anything you want with the comments. Added Google Fonts to the Header for the Title and Slogan.</td>
-        </tr>
-        <tr>
-        <th>2.2</th>
-        <td class="justify">The update this time around was mainly for Adventure+ but in the process I added in a few more features. I included the option to have the menu lock to the top of the screen or the bottom similar to how the theme use to look. A lot of people asked for the ability to remove the “previous” & “next” links that come after content and I you guys one better. You now have the choice to remove the “previous” & “next” from just posts, just page, or both and you still can have it display the same. The slider and the content portion can now change to any color and adjust the opacity from 0% to 100% in 5% intervals. I also spent some time cleaning and organizing the customizer page, which means it is laid out a bit differently now but it works just the same. You now have the option to adjust the the amount of space fromt he top of the page to the where the content begins. I might have missed a thing or two but future updates should come much sooner with this hurdle cleared.</td>
-        </tr>
-        <tr>
-        <th>2.1</th>
-        <td class="justify">This is main an update to fix issues that I and others (like you) have found and fixed for the theme. The content no longer shifts to the right after the sidebar and embed video from YouTube and Vimeo are now responsive when embedded, plus some other minor stuff. I have also introduced the ablity change the color of the content of the background of content. In the next update I will include the ablity to change the sidebar.</td>
-        </tr>
-        <tr>
-        <th>1.8</th>
-        <td class="justify">The entire code for the WordPress theme "Adventure" has been completely rewritten in Version 1.8 and is a complete re-release of the theme. Not a single shred of code survived, and for good reason. The code was written over 3 years ago, before the HTML5 / CSS3 revolution, and had to be compatible with IE6 back then. Now that its three years later, I'm much better at coding and coupled with the progress made with HTML standards, the theme is back. While "Adventure" looks for the most part the same, there is a lot more happening in the code.</td>
-        </tr>
-        </tbody>
-	</table>
-    </li>
-    
-    <li>
-    <h4>Adventure+ Version Information</h4>
-    <table>
-        <tbody>
-        <tr>
-        <th>Version</th>
-        <th class="justify"></th>
-        </tr>
-        <tr>
-        <th>9</th>
-        <td class="justify">Same as "Adventure 2.70".</td>
-        </tr>
-        <tr>
-        <th>8</th>
-        <td class="justify">Fixed an issue where the theme didn't update and added the option to move the sidebar to the left and content to the right.</td>
-        </tr>
-        <tr>
-        <th>7</th>
-        <td class="justify">Same as "Adventure 2.5".</td>
-        </tr>
-        <tr>
-        <th>6</th>
-        <td class="justify">Same as "Adventure 2.4" but I got some stuff special to you guys for next release.</td>
-        </tr>
-        <tr>
-        <th>5</th>
-        <td class="justify">Same as "Adventure 2.3" but more.</td>
-        </tr>
-        <tr>
-        <th>4</th>
-        <td class="justify">Major backend update which is mainly for Adventure+ to implement a bunch of features, in particular the Logo that I have received so many emails for. If you have any trouble using the logo for your website send me an email about it and I’ll take a look, this isn’t exact science  and I might need to adjust the code some. I included the option to have the menu lock to the top of the screen or the bottom similar to how the theme use to look. I add in the ability to adjust the spacing from the top of the page to where the content and sidebar begins. You can also change the color of the font in the content, but it will receive more work in a future update. A lot of people asked for the ability to remove the “previous” & “next” links that come after content and I you guys one better. You now have the choice to remove the “previous” & “next” from just posts, just page, or both and you still can have it display the same. The slider and the content portion can now change to any color and adjust the opacity from 0% to 100% in 5% intervals. I also spent some time cleaning and organizing the customizer page, which means it is laid out a bit differently now but it works just the same. You now have the option to adjust the the amount of space fromt he top of the page to the where the content begins. I might have missed a thing or two but future updates should come much sooner with this hurdle cleared.</td>
-        </tr>
-        <tr>
-        <th>3</th>
-        <td class="justify">Nothing extra, just the same great code that Adventure 2.1 recieved in the latest update to the themes.</td>
-        </tr>
-        <tr>
-        <th>2</th>
-        <td class="justify">Since completely rewriting all the code for Adventure, and because Adventure+ is dependant and Adventure, I have designated that version 2 of Adventure+ is considered the initial re-release.</td>
-        </tr>
-        </tbody>
-	</table>
-	</li>
-    
-    <li>
-    <h4>About the Theme Adventure</h4>
-	<p>Inspired by a certain GPS Manufacture, I designed this theme to feel like you're looking through a window out into the wilderness and hopefully inspire you to explore. I'm constantly adding new features to this theme to allow you to personalize it to your own needs. If you want a new feature or just want to be able to change something just ask me and I would be happy to add it for you. I would like to thank you for your support, visit the Theme URI for the update history, and Enjoy!</p>
-    </li>
+    <div class="contain">
+            
+        <div id="header">
+		
+			<div class="themetitle">
+				<a href="http://schwarttzy.com/shop/adventureplus/" target="_blank" ><h1><?php $my_theme = wp_get_theme(); echo $my_theme->get( 'Name' ); ?></h1>
+				<span>- v<?php $my_theme = wp_get_theme(); echo $my_theme->get( 'Version' ); ?></span></a>
+			</div>
+            
+            
+			<div class="upgrade">
+                <a href="http://schwarttzy.com/shop/adventureplus/" target="_blank" ><h2>Upgrade to Adventure+</h2></a>
+            </div>
+		
+    	</div>
+            
+        <ul class="info_bar">
+			<li><a href="#description">Description</a></li>
+			<li><a href="#customizing">Customizing</a></li>
+			<li><a href="#features">Features</a></li>
+			<li><a href="#faq">FAQ</a></li>
+			<!-- <li><a href="#screenshots">Screen Shots</a></li> -->
+			<li><a href="#changelog">Changelog</a></li>
+			<li><a href="#support">Support</a></li>
+		</ul>
+        
+        <div id="main">
+            
+            <div id="customizing" class="information">
+                <h3>Customizing</h3>
+                <p>Basically all I have right now is <a href="https://www.youtube.com/watch?v=IU__-ipUxxc" target="_blank">this video</a> on YouTube. I know the video is for a different theme, but this will change soon. Also, I would embed the video, but regrettably people wiser than me have said that it will introduce security issues. In the future I plan to add stuff here, but for now I just need to get the theme approved.</p>
+            </div>
+            
+            <div id="features" class="information">
+                <h3>Features</h3>
+                <ul>
+                    <li>100% Responsive WordPress Theme</li>
+                    <li>Clean and Beautiful Stylized HTML, CSS, JavaScript</li>
+                    <li>Change the site Title and Slogan Colors</li>
+                    <li>Upload Your Own Background Image</li>
+                    <li>Adjust the opacity of the Content from 0 to 100% in 5% intervails</li>
+                    <li>Adjust the opacity of the Sidebar from 0 to 100% in 5% intervails</li>
+                    <li>Adjust Color of the Background for Content</li>
+                    <li>Adjust Color of the Background for Sidebar</li>
+                    <li>Multiple Menu Banner Images to Choose From</li>
+                    <li>Control wether or not the "Previous" & "Next" shows</li>
+                    <li>Adjust the spacing between the top of the page and content</li>
+                    <li>Comments on Pages only, Posts only, Both, or Nones</li>
+                    <li>Featured Background Image unique to a post or page</li>
+                    <li>Choose from 100's of Google fonts for the Title and Slogan</li>
+                </ul>
+                <p>Don't see a feature the theme needs? <a href="http://schwarttzy.com/contact-me/" target="_blank">Contact me</a> about it.</p>
+                <h3>Adventure+ Features</h3>
+                <ul>
+                    <li>Easily remove the footer with the link to my website</li>
+                    <li>Favicon on Your Website</li>
+                    <li>Change the Hyper Link Color</li>
+                    <li>Change the Link Colors in the Menu</li>
+                    <li>Change the Font Color in the Content</li>
+                    <li>Upload Your Own Logo in either the Header or above Content</li>
+                    <li>Upload Your Own Custom Banner Image</li>
+                    <li>Upload your own image for the Background</li>
+                    <li>Basic Google Meta for Analytics & Webmaster Verification</li>
+                    <li>More to come!</li>
+                </ul>
+            </div>
+            
+            <div id="faq" class="information">
+                <h3>FAQ</h3>
+                <p><b>How do I remove the "Good Old Fashioned Hand Written code by Eric J. Schwarz"</b></p>
+                <p>According to the WordPress.org I'm allowed to include one credit link, which you can read about <a href="http://make.wordpress.org/themes/guidelines/guidelines-license-theme-name-credit-links-up-sell-themes/" target="_blank">here</a>. I use this link to spread the word about my coding skills in the hopes I'll get some jobs. Anyway, you can dig through the code and remove it by hand but if you upgrade to the lastest version it will come right back. It's not really a big deal to do it by hand each time I release an update. However if you want to support my theme and get the Adventure+ upgrade, it's just a simple "On or Off" option in the "Theme Customizer."</p>
+                <p><b>More FAQ's coming soon!</b></p>
+            </div>
+            
+            <!--- <div id="screenshots" class="information">
+                <h3>I'll take some screen shots</h3>
+            </div> -->
+            
+            <div id="changelog" class="information">
+                <h3>The Changelog</h3>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Version</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <th>2.80</th>
+                            <td>Updated the theme information page to a new look. Dropped code I'm not allowed to have in the theme like redirecting to the Theme Infomation page upon activating the theme, google analytics code. Also fix some odd error with using the sidebar and a run on title 52+ letters in a row.</td>
+                        </tr>
+                        <tr>
+                            <th>2.70</th>
+                            <td>Created one of the most demanded feature of all time, custom backgrounds. I call it "Featured Background," because you can now upload or select any image to be a background unique to any page or post. Also fixed an issue with comments displaying ordered numbers.</td>
+                        </tr>
+                        <tr>
+                            <th>2.60</th>
+                            <td>Added the new option to have the content on the right and the sidebar on the left.</td>
+                        </tr>
+                        <tr>
+                            <th>2.4</th>
+                            <td>Added the ablitity to put soical icon and/or a search bar into the menu.  Fixed the issue with the theme display "and comments are closed." Added Google Analytics and Web Master Tool option because everyone should have it and more control of over the comments display too. The option to choose either display excerpts or the entire content of a post or page. You can choose to display dates on posts.</td>
+                        </tr>
+                        <tr>
+                            <th>2.3</th>
+                            <td>Minor update to add few things to the theme along with fixes. The custom CSS generated from the theme customizer should only show if you have changed something in the features. Static pages now will not show the pagination or comments. Include the option to do anything you want with the comments. Added Google Fonts to the Header for the Title and Slogan.</td>
+                        </tr>
+                        <tr>
+                            <th>2.2</th>
+                            <td>The update this time around was mainly for Adventure+ but in the process I added in a few more features. I included the option to have the menu lock to the top of the screen or the bottom similar to how the theme use to look. A lot of people asked for the ability to remove the “previous” & “next” links that come after content and I you guys one better. You now have the choice to remove the “previous” & “next” from just posts, just page, or both and you still can have it display the same. The slider and the content portion can now change to any color and adjust the opacity from 0% to 100% in 5% intervals. I also spent some time cleaning and organizing the customizer page, which means it is laid out a bit differently now but it works just the same. You now have the option to adjust the the amount of space fromt he top of the page to the where the content begins. I might have missed a thing or two but future updates should come much sooner with this hurdle cleared.</td>
+                        </tr>
+                        <tr>
+                            <th>2.1</th>
+                            <td>This is main an update to fix issues that I and others (like you) have found and fixed for the theme. The content no longer shifts to the right after the sidebar and embed video from YouTube and Vimeo are now responsive when embedded, plus some other minor stuff. I have also introduced the ablity change the color of the content of the background of content. In the next update I will include the ablity to change the sidebar.</td>
+                        </tr>
+                        <tr>
+                            <th>1.8</th>
+                            <td>The entire code for the WordPress theme "Adventure" has been completely rewritten in Version 1.8 and is a complete re-release of the theme. Not a single shred of code survived, and for good reason. The code was written over 3 years ago, before the HTML5 / CSS3 revolution, and had to be compatible with IE6 back then. Now that its three years later, I'm much better at coding and coupled with the progress made with HTML standards, the theme is back. While "Adventure" looks for the most part the same, there is a lot more happening in the code.</td>
+                        </tr>
+                    </tbody>
+                </table> 
+            </div>
+            
+            <div id="support" class="information">
+                <h3>Support Information</h3>
+                <p>If you happen to have issues with plugins, writing posts, customizing the theme, and basically anything just shoot me an email on <a href="http://schwarttzy.com/contact-me/" target="_blank">this page</a> I setup for contacting me.</p>
+                <p>I have a <a href="https://twitter.com/Schwarttzy" target="_blank">Twitter</a> account, but all I really use it for is posting information on updates to my themes. So if you looking for a new feature, you may be in luck. I'm not really sure what to do with Twitter, but I know a lot of people use it.</p>
+                <p>Your always welcome to use the "<a href="http://wordpress.org/support/theme/adventure" target="_blank">Support</a>" forums on WordPress.org for any questions or problems, I just don't check it as often because I don't recieve email notifications on new posts or replies.</p>
+            </div>
+        
+            <div id="description" class="information">
+                <h3>Description</h3>
+                <p>If you're having trouble with using the WordPress Theme <?php $my_theme = wp_get_theme(); echo $my_theme->get( 'Name' )?> and need some help, <a href="http://schwarttzy.com/contact-me/" target="_blank">contact me</a> about it. But I recommend taking a look at <a href="https://www.youtube.com/watch?v=IU__-ipUxxc" target="_blank">this video</a> before sending me an email. The video is for a different theme, but it will show everything there is to customizing the theme "<?php $my_theme = wp_get_theme(); echo $my_theme->get( 'Name' )?>."</p>
+                <p>Now that I have covered contacting me and a how to video, I would like to thank you for downloading and installing this theme. I hope that you enjoy it. I also hope that I can continue to create more beautiful themes like this for years to come, but that requires your help. I have created this Theme, and others, free of charge. And while I'm not looking to get rich, I really like creating these themes for you guys.</p>
+                <p>So if you're interested in supporting my work, I can offer you an <a href="http://schwarttzy.com/shop/adventureplus/" target="_blank" >upgrade to Adventure</a>. I have already included a few more features, some of which I'm not allowed include in the free version, and I also offer to write additional code to customize the theme for you. Even if the code will be unique to your website.</p>
+                <p>Eric Schwarz<br><a href="http://schwarttzy.com/" targe="_blank">http://schwarttzy.com/</a></p>                
+            </div>
+        
+        </div>
+            
+    </div>
+        
+  
+        
+        
     
     <ul id="finishing"></ul>
-    </ul>
+
     
     </div>
 <?php }
-add_action('admin_menu', 'adventure_theme_options_add_page');
-
-// Redirect to the theme options Page after theme is activated
-if ( is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" )
-	wp_redirect( 'themes.php?page=theme_options' ); ?>
+add_action('admin_menu', 'adventure_theme_options_add_page'); ?>
