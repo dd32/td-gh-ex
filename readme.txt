@@ -100,6 +100,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.4.7
+- Fixed:   Page links for homepage content boxes.
+
 Version 1.4.6
 - New:     Masonry JS script added.
 - Fixed:   Main header menu stays at bottom even when a large logo is added.
