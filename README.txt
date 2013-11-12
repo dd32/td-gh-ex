@@ -2,8 +2,8 @@
 Contributors: Alberto Ramacciotti ( http://ramacciotti.altervista.org )
 Tags: two-columns, left-sidebar, light, flexible-width, custom-background, custom-header, custom-menu, editor-style, threaded-comments, featured-images, sticky-post, translation-ready, post-formats, rtl-language-support, threaded-comments
 Requires at least: 3.0
-Tested up to: 3.5.1
-Version: 2.0.6
+Tested up to: 3.7.1
+Version: 2.0.7
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,7 +27,7 @@ do a backup of both filesystem and database.
 
 == Installation ==
 
-01. Download Rockers theme from http://ramacciotti.altervista.org/archivio/articolo/rockers-theme ,
+01. Download Rockers theme from http://ramacciotti.altervista.org/archives/articles/rockers-wordpress-theme ,
 02. Upload via FTP the `rockers` folder to your `/wp-content/themes/` directory,
 03. Activate through the 'Appearance -> Themes' menu in WordPress,
 04. Optional: customize the theme options like Widgets and Menu setup.
@@ -61,4 +61,7 @@ http://ramacciotti.altervista.org/magazzino/wp-themes/rockers-screenshot.png
 * Fixed bugs
 
 = 2.0.6 =
+* Fixed bugs
+
+= 2.0.7 =
 * Fixed bugs

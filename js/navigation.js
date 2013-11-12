@@ -1,5 +1,5 @@
 ( function() {
-    var button = document.getElementById('blog-menu').getElementsByTagName('h3')[0],
+    var button = document.getElementById('blog-menu').getElementsByTagName('h2')[0],
         menu   = document.getElementById('blog-menu').getElementsByTagName('ul')[0];
     if ( undefined === button )
         return false;

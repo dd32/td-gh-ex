@@ -4,7 +4,7 @@ Author: Alberto Ramacciotti
 Author URI: http://ramacciotti.altervista.org
 Theme URI: http://ramacciotti.altervista.org/archives/articles/rockers-wordpress-theme
 Description: Rockers is a responsive theme for bloggers with a clean design.
-Version: 2.0.6
+Version: 2.0.7
 License: GNU General Public License v2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -165,7 +165,7 @@ audio:not([controls]),
 
 .comments-area article header,
 .author-info,
-..attachment,
+.attachment,
 .blog-header h1,
 .site,
 .wrapper {
@@ -227,7 +227,7 @@ input[type="submit"],
 .format-status .post-header h2,
 .comments-area article header h4,
 .comments-title,
-#respond h3#reply-title #cancel-comment-reply-link {
+#respond #reply-title #cancel-comment-reply-link {
     font-weight: normal;
 }
 
@@ -271,14 +271,14 @@ h3,
 h4,
 h5,
 h6,
-.clear:after,
+.clear:after,s
 .format-status .post-header:after,
 #footer,
 .post-meta,
 .navigation,
 #numbered-pagination,
 .template-front-page .aside,
-.post-content  ol li.posts-by-tag-item {
+.post-content  ol .posts-by-tag-item {
     clear: both;
 }
 
@@ -288,7 +288,7 @@ input[type="submit"],
     cursor: pointer;
 }
 
-.post-content  ol li.posts-by-tag-item {
+.post-content  ol .posts-by-tag-item {
     margin: 0 5em 6em 0;
     list-style-position: inside;
 }
@@ -1332,12 +1332,12 @@ a:hover {
     margin-top: 24px;
 }
 
-#respond h3#reply-title {
+#respond #reply-title {
     font-size: 1.25em;
     line-height: 1.5;
 }
 
-#respond h3#reply-title #cancel-comment-reply-link {
+#respond #reply-title #cancel-comment-reply-link {
     margin-left: 10px;
     font-size: .9em;
 }
@@ -1478,6 +1478,10 @@ label ~ .required {
     .post-content h3,
     .comment-content h3 {
         margin-top: 2em;
+    }
+    
+    #page #header #blog-menu .menu-toggle {
+        color: #eeeeee;
     }
 }
 
@@ -1783,7 +1787,7 @@ label ~ .required {
         width: auto;
     }
 
-    .commentlist > li.comment {
+    .commentlist > .comment {
         background: none;
         position: relative;
         width: auto;
