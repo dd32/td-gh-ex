@@ -9,30 +9,39 @@ get_header(); ?>
 
 			<?php if( have_posts() ): ?>
 
+				<div id="container" class="portfolio-wrapper js-masonry">
+
 				<?php while( have_posts() ): the_post(); ?>
 
-					<article id="post-<?php the_ID(); ?>" <?php post_class('blog-style1'); ?>>
+					<div class="blog-grid element column-2">
+
+					<article id="post-<?php the_ID(); ?>" <?php post_class('blog-style2'); ?>>
+
+						<?php think_input_blogtitle(); ?>
 
 						<header class="entry-header">
 
-							<?php thinkup_input_blogimage1(); ?>
-
-							<?php thinkup_input_blogmeta(); ?>
+							<?php thinkup_input_blogimage(); ?>
+							<?php thinkup_input_blogformat(); ?>
 
 						</header>
 
-						<?php thinkup_input_blogformat(); ?>
-
 						<div class="entry-content">
-							<?php think_input_blogtitle(); ?>
+
 							<?php thinkup_input_blogtext(); ?>
 							<?php thinkup_input_readmore(); ?>
+
 						</div>
 
-					<div class="clearboth"></div>
+						<?php thinkup_input_blogmeta(); ?>
+
 					</article><!-- #post-<?php get_the_ID(); ?> -->	
 
+					</div>
+
 				<?php endwhile; ?>
+
+				</div><div class="clearboth"></div>
 
 				<?php thinkup_input_pagination(); ?>
 

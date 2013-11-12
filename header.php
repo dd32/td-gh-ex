@@ -38,9 +38,9 @@
 			</div>
 
 			<div id="header-links" class="main-navigation">
-
-			<?php wp_nav_menu(array('container_class' => 'header-links', 'container_id' => 'header-links-inner', 'theme_location'  => 'header_menu') ); ?>
-
+			<div id="header-links-inner" class="header-links">
+				<?php wp_nav_menu(array('container' => false, 'theme_location'  => 'header_menu' ) ); ?>
+			</div>
 			</div>
 			<!-- #header-links .main-navigation -->
 
@@ -71,6 +71,7 @@
 	</header>
 	<!-- header -->
 	<?php /*  Call To Action - Intro */ thinkup_input_ctaintro(); ?>
+	<?php /*  Pre-Designed HomePage Content */ thinkup_input_homepagesection(); ?>
 
 	<?php /* Custom Intro */ thinkup_custom_intro(); ?>
 	<?php /* Custom Slider */ thinkup_input_sliderpage(); ?>

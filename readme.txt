@@ -90,10 +90,28 @@ The following opensource projects, graphics, fonts, API's or other files as list
            Licence:     GPL
            Licence URL: http://www.gnu.org/licenses/gpl.html
 
+    [1.11] Item:        Masonry
+           Item URL:    https://github.com/desandro/masonry
+           Licence:     MIT
+           Licence URL: http://opensource.org/licenses/mit-license.html
+
 
 -----------------------------------------------------------------------------
 	Changelog
 -----------------------------------------------------------------------------
+
+Version 1.4.6
+- New:     Masonry JS script added.
+- Fixed:   Main header menu stays at bottom even when a large logo is added.
+- Fixed:   Responsive navigation menu displays when custom menu is not set.
+- Updated: Screenshot - Shows 3 boxes on homepage.
+- Updated: Blog layout changed to 2 column with masonry.
+- Updated: ThinkUpSlider ratio when loaded on mobile devices.
+- Updated: query_posts replaced with WP_Query in template-sitemap.php.
+
+Version 1.4.5
+- paginate_link() renamed to thinkup_input_nav().
+- Attachment pagination styled to match post / page pagination.
 
 Version 1.4.4
 - Translation scripts updated

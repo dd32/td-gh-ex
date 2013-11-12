@@ -358,7 +358,7 @@ if( !class_exists( 'ReduxFramework' ) ) {
 		        		}
 					}//if
 					else if ($type == "elusive-icons" || $type == "elusive-icon" || $type == "elusive") {
-						require_once(REDUX_DIR.'inc/fields/select/elusive-icons.php');
+						require(REDUX_DIR.'inc/fields/select/elusive-icons.php');
 						foreach($elusiveIcons as $k) {
 		           			$data[$k] = $k;
 		        		}

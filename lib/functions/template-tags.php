@@ -9,13 +9,14 @@
 /* ----------------------------------------------------------------------------------
 	Display navigation to next/previous pages when applicable.
 ---------------------------------------------------------------------------------- */
-if ( ! function_exists( 'paginate_links' ) ) :
-function paginate_links( $nav_id ) {
+// if ( ! function_exists( 'thinkup_input_nav' ) ) :
+function thinkup_input_nav( $nav_id ) {
 
 global $wp_query, $post;
 
 	// Don't print empty markup on single pages if there's nowhere to navigate.
 	if ( is_single() ) {
+
 		$previous = ( is_attachment() ) ? get_post( $post->post_parent ) : get_adjacent_post( false, '', true );
 		$next = get_adjacent_post( false, '', false );
 
@@ -50,7 +51,7 @@ global $wp_query, $post;
 	<?php
 
 }
-endif; 
+// endif; 
 
 
 /* ----------------------------------------------------------------------------------
@@ -61,10 +62,12 @@ function thinkup_input_imagesnav() {
 
 global $wp_query, $post;
 	?>
+
 	<nav role="navigation" id="nav-below">
-		<span class="nav-previous"><?php previous_image_link( false, 'Previous' ); ?></span>
-		<span class="nav-next"><?php next_image_link( false, 'Next' ); ?></span>
+		<div class="nav-previous"><?php previous_image_link( 'false', '<div class="nav-previous"><span class="meta-icon"><i class="icon-angle-left icon-large"></i></span><span class="meta-nav">Previous</span></div>' ); ?></div>
+		<div class="nav-next"><?php next_image_link( 'false', '<span class="meta-nav">Next</span><span class="meta-icon"><i class="icon-angle-right icon-large"></i></span>' ); ?></div>
 	</nav><!-- #image-navigation -->
+
 <?php
 
 }

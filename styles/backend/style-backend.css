@@ -303,6 +303,48 @@ border-bottom: none;
 	text-align: left;
 }
 
+/* Homepage Pre-Designed Content */
+#redux-container #section-thinkup_homepage_section1_icon,
+#redux-container #section-thinkup_homepage_section1_title,
+#redux-container #section-thinkup_homepage_section1_desc,
+#redux-container #section-thinkup_homepage_section2_icon,
+#redux-container #section-thinkup_homepage_section2_title,
+#redux-container #section-thinkup_homepage_section2_desc,
+#redux-container #section-thinkup_homepage_section3_icon,
+#redux-container #section-thinkup_homepage_section3_title,
+#redux-container #section-thinkup_homepage_section3_desc {
+	border-bottom: none;
+}
+#redux-container #section-thinkup_homepage_section1_icon td,
+#redux-container #section-thinkup_homepage_section1_title td,
+#redux-container #section-thinkup_homepage_section1_desc td,
+#redux-container #section-thinkup_homepage_section2_icon td,
+#redux-container #section-thinkup_homepage_section2_title td,
+#redux-container #section-thinkup_homepage_section2_desc td,
+#redux-container #section-thinkup_homepage_section3_icon td,
+#redux-container #section-thinkup_homepage_section3_title td,
+#redux-container #section-thinkup_homepage_section3_desc td {
+	padding-bottom: 0 !important;
+}
+#redux-container #section-thinkup_homepage_section1_icon .redux-select-item,
+#redux-container #section-thinkup_homepage_section1_link .redux-select-item,
+#redux-container #section-thinkup_homepage_section2_icon .redux-select-item,
+#redux-container #section-thinkup_homepage_section2_link .redux-select-item,
+#redux-container #section-thinkup_homepage_section3_icon .redux-select-item,
+#redux-container #section-thinkup_homepage_section3_link .redux-select-item {
+	width: 340px !important;
+	max-width: 340px;
+}
+#redux-container #section-thinkup_homepage_section1_desc textarea,
+#redux-container #section-thinkup_homepage_section2_desc textarea,
+#redux-container #section-thinkup_homepage_section3_desc textarea {
+	max-width: 340px;
+	height: 85px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box
+}
+
 /* Color More Themes tab */
 #redux-sidebar #redux-group-menu li:nth-child(10) a,
 #redux-sidebar #redux-group-menu li:nth-child(10) a:hover,

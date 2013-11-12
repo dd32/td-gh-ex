@@ -23,9 +23,10 @@
 		float: none;
 		position: static;
 		text-align: center;	
-		padding: 20px 0 30px;
+		padding: 20px 0;
 	}
-	#logo img {
+	#logo img,
+	#logo h1 {
 		margin: 0;
 	}
 	#header-links {
@@ -265,6 +266,12 @@
 	.action-button p {
 		margin-left: 0px;
 		margin-right: 0px;
+	}
+
+	/* Pre-Designed Homepage */
+	#section-home .section1.one_third,
+	#section-home .section2.one_third {
+		margin-bottom: 60px;
 	}
 
 	/* Shortcode Content */

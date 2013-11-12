@@ -23,15 +23,8 @@ global $thinkup_blog_title;
 //	BLOG CONTENT
 //----------------------------------------------------------------------------------
 
-// Input post thumbnail / featured media - Style 1
-function thinkup_input_blogimage1() {
-global $post;
-
-	echo '<div class="blog-thumb"><a href="'. get_permalink($post->ID) . '">' . get_the_post_thumbnail( $post->ID, 'column1-2/5' ) . '</a></div>';
-}
-
 // Input post thumbnail / featured media - Style 2
-function thinkup_input_blogimage2() {
+function thinkup_input_blogimage() {
 global $post;
 
 	echo '<div class="blog-thumb"><a href="'. get_permalink($post->ID) . '">' . get_the_post_thumbnail( $post->ID, 'column1-2/5' ) . '</a></div>';

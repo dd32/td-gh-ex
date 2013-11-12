@@ -25,9 +25,7 @@ global $thinkup_general_sitedescription;
 		} else {
 			echo '<h1 rel="home" class="site-title" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '">' . $thinkup_general_sitetitle . '</h1>';
 		}
-		if ( empty( $thinkup_general_sitedescription ) ) {
-			echo '<h2 class="site-description">' . get_bloginfo( 'description' ) . '</h2>';
-		} else {
+		if ( ! empty( $thinkup_general_sitedescription ) ) {
 			echo '<h2 class="site-description">' . $thinkup_general_sitedescription . '</h2>';
 		}
 	}
@@ -74,7 +72,7 @@ $_thinkup_meta_layout = get_post_meta( $post->ID, '_thinkup_meta_layout', true )
 		} else if ( $thinkup_homepage_layout == "option3" ) {
 			wp_enqueue_style ( 'sidebarright' );
 		}
-	} else if ( is_page() and ! is_page_template( 'template-blog-style1.php' ) and ! is_page_template( 'template-blog-style2.php' ) and !is_page_template( 'template-family.php' ) ) {	
+	} else if ( is_page() ) {	
 		if ( empty( $_thinkup_meta_layout ) or $_thinkup_meta_layout == 'option1' ) {
 			if ( $thinkup_general_layout == "option1" or empty( $thinkup_general_layout ) ) {		
 				echo '';
@@ -96,22 +94,6 @@ $_thinkup_meta_layout = get_post_meta( $post->ID, '_thinkup_meta_layout', true )
 		} else if ( $thinkup_blog_layout == "option2" ) {
 			wp_enqueue_style ( 'sidebarleft' );
 		} else if ( $thinkup_blog_layout == "option3" ) {
-			wp_enqueue_style ( 'sidebarright' );
-		}
-	} else if ( is_page_template( 'template-blog-style1.php' ) or is_page_template( 'template-blog-style2.php' ) ) {
-		if ( empty( $_thinkup_meta_layout ) or $_thinkup_meta_layout == 'option1' ) {
-			if ( $thinkup_blog_layout == "option1" or empty( $thinkup_blog_layout ) ) {		
-				echo '';
-			} else if ( $thinkup_blog_layout == "option2" ) {
-				wp_enqueue_style ( 'sidebarleft' );
-			} else if ( $thinkup_blog_layout == "option3" ) {
-				wp_enqueue_style ( 'sidebarright' );
-			}
-		} else if ( $_thinkup_meta_layout == 'option2' ) {
-			echo '';
-		} else if ( $_thinkup_meta_layout == 'option3' ) {
-			wp_enqueue_style ( 'sidebarleft' );
-		} else if ( $_thinkup_meta_layout == 'option4' ) {
 			wp_enqueue_style ( 'sidebarright' );
 		}
 	} else if ( is_post_type_archive( 'portfolio' ) ) {	
@@ -168,8 +150,6 @@ $_thinkup_meta_layout = get_post_meta( $post->ID, '_thinkup_meta_layout', true )
 		} else if ($thinkup_general_layout == "option3") {
 			wp_enqueue_style ( 'sidebarright' );
 		}
-	} else if ( is_page_template( 'template-family.php' ) ) {
-		wp_enqueue_style ( 'sidebarfamily' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'thinkup_sidebar_css', '11' );
@@ -196,29 +176,13 @@ do_action('thinkup_sidebar_html');
 		} else if ( $thinkup_homepage_layout == "option3" ) {
 				echo get_sidebar();
 		}
-	} else if ( is_page() and !is_page_template( 'template-blog-style1.php' ) and !is_page_template( 'template-blog-style2.php' ) and ! is_page_template( 'template-family.php' ) ) {	
+	} else if ( is_page() ) {	
 		if ( empty( $_thinkup_meta_layout ) or $_thinkup_meta_layout == 'option1' ) {
 			if ( $thinkup_general_layout == "option1" or empty( $thinkup_general_layout ) ) {		
 				echo '';
 			} else if ( $thinkup_general_layout == "option2" ) {
 				echo get_sidebar();
 			} else if ( $thinkup_general_layout == "option3" ) {
-				echo get_sidebar();
-			}
-		} else if ( $_thinkup_meta_layout == 'option2' ) {
-			echo '';
-		} else if ( $_thinkup_meta_layout == 'option3' ) {
-			echo get_sidebar(); 
-		} else if ( $_thinkup_meta_layout == 'option4' ) {
-			echo get_sidebar(); 
-		}
-	} else if ( is_page_template( 'template-blog-style1.php' ) or is_page_template( 'template-blog-style2.php' ) ) {
-		if ( empty( $_thinkup_meta_layout ) or $_thinkup_meta_layout == 'option1' ) {
-			if ( $thinkup_blog_layout == "option1" or empty( $thinkup_blog_layout ) ) {		
-				echo '';
-			} else if ( $thinkup_blog_layout == "option2" ) {
-				echo get_sidebar();
-			} else if ( $thinkup_blog_layout == "option3" ) {
 				echo get_sidebar();
 			}
 		} else if ( $_thinkup_meta_layout == 'option2' ) {
@@ -290,8 +254,6 @@ do_action('thinkup_sidebar_html');
 		} else if ( $thinkup_general_layout == "option3" ) {
 			get_sidebar();
 		}
-	} else if ( is_page_template( 'template-family.php' ) ) {	
-		get_template_part( 'content', 'family' );				
 	}
 }
 
@@ -315,13 +277,13 @@ $_thinkup_meta_sidebars = get_post_meta( $post->ID, '_thinkup_meta_sidebars', tr
 
 	if ( site_url( '/' ) == thinkup_url_current() ) {	
 			$output = $thinkup_homepage_sidebars;
-	} else if ( is_page() and ! is_page_template( 'template-blog-style1.php' ) and ! is_page_template( 'template-blog-style2.php' ) and !is_page_template( 'template-family.php' ) ) {	
+	} else if ( is_page() ) {	
 		if ( empty( $_thinkup_meta_layout ) or $_thinkup_meta_layout == 'option1' or $_thinkup_meta_sidebars == 'Select a sidebar:' ) {
 				$output = $thinkup_general_sidebars;
 		} else {
 			$output = $_thinkup_meta_sidebars;
 		}
-	} else if ( ( is_archive() or is_page_template( 'template-blog-style1.php' ) or is_page_template( 'template-blog-style2.php' ) )  and ! is_post_type_archive( 'portfolio' ) ) {	
+	} else if ( is_archive() ) {	
 		$output = $thinkup_blog_sidebars;
 	} else if ( is_post_type_archive( 'portfolio' ) ) {	
 		$output = $thinkup_portfolio_sidebars;
@@ -434,6 +396,21 @@ class Walker_Nav_Menu_Responsive extends Walker_Nav_Menu {
     }
 }
 
+// Fallback responsive menu when custom header menu has not been set.
+function thinkup_input_responsivefall() {
+
+	$output = wp_list_pages('echo=0&title_li=');
+	$output = str_replace( '<a', '<option', $output );
+	$output = str_replace( 'href=', 'value=', $output );
+	$output = str_replace( '</a>', '</option>', $output );
+
+	$output = strip_tags( $output, '<div>, <select>, <option>' );
+
+	echo '<div id="header-responsive">',
+		 '<select onchange="location = this.options[this.selectedIndex].value;"><option value="#">' . __( 'Navigation', 'lan-thinkupthemes') . '</option>' . $output . '</select>',
+		 '</div>';
+}
+
 function thinkup_input_responsivehtml() {
 global $thinkup_general_responsiveswitch;
 
@@ -446,10 +423,13 @@ global $thinkup_general_responsiveswitch;
 			'echo'           => false,
 			'walker'         => new Walker_Nav_Menu_Responsive(),
 			'depth'          => 0,
+			'fallback_cb'     => 'thinkup_input_responsivefall',
 		);
 		$menu = strip_tags(wp_nav_menu( $args ), '<div>, <select>, <option>' );
 
-		echo '<div id="header-responsive">' . $menu . '</div>';
+		if ( has_nav_menu( 'header_menu' ) ) {
+			echo '<div id="header-responsive">' . $menu . '</div>';
+		}
 	}
 }
 

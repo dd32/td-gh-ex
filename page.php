@@ -13,7 +13,7 @@ get_header(); ?>
 
 				<?php get_template_part( 'content', 'page' ); ?>
 
-				<?php paginate_links( 'nav-below' ); ?>
+				<?php thinkup_input_nav( 'nav-below' ); ?>
 
 				<?php thinkup_input_allowcomments(); ?>
 

@@ -475,7 +475,7 @@ function setup_framework_options(){
 
 	$sections[] = array(
 		'title' => __('Homepage', 'redux-framework'),
-		'desc' => __('<span class="redux-title">Control Homepage Layout</span>', 'redux-framework'),
+		'desc' => __('<span class="redux-title">Homepage Layout</span>', 'redux-framework'),
 		'icon_class' => 'icon-large',
 		'icon' => 'home',
 		'fields' => array(
@@ -502,9 +502,15 @@ function setup_framework_options(){
 				'data' => 'sidebars',
 				),
 
+			array(
+				'id'=>'info_page_structure',
+				'type'=>'info',
+				'style'=>'help',
+				'desc' => __( '<span class="redux-title">Homepage Slider</span>', 'redux-framework')
+				),
 
                         array(
-                                'title' => __('Enable Homepage Slider', 'redux-framework-demo'), 
+                                'title' => __('Enable Homepage Slider', 'redux-framework'), 
 				'subtitle' => __('Switch on to enable home page slider.', 'redux-framework'),
                                 'id'=>'thinkup_homepage_sliderswitch',
                                 'type' => 'button_set',
@@ -525,14 +531,14 @@ function setup_framework_options(){
 				),
 
                         array(
-                                'title' => __('Built-In Slider', 'redux-framework-demo'),
-                                'subtitle'=> __('Unlimited slides with drag and drop sortings.', 'redux-framework-demo'),
+                                'title' => __('Built-In Slider', 'redux-framework'),
+                                'subtitle'=> __('Unlimited slides with drag and drop sortings.', 'redux-framework'),
                                 'id'=>'thinkup_homepage_sliderpreset',
                                 'type' => 'slides',
                         ),
 
 			array(
-                                'title' => __('Enable Full-Width Slider', 'redux-framework-demo'),
+                                'title' => __('Enable Full-Width Slider', 'redux-framework'),
 				'subtitle' => __('Switch on to enable full-width slider.', 'redux-framework'),
 				'id'=>'thinkup_homepage_sliderpresetwidth',
 				'type' => 'switch',
@@ -542,13 +548,127 @@ function setup_framework_options(){
                         array(
                                 'id'=>'thinkup_homepage_sliderpresetheight',
                                 'type' => 'slider', 
-                                'title' => __('Slider Height (Max)', 'redux-framework-demo'),
-                                'subtitle'=> __('Specify the maximum slider height (px).', 'redux-framework-demo'),
+                                'title' => __('Slider Height (Max)', 'redux-framework'),
+                                'subtitle'=> __('Specify the maximum slider height (px).', 'redux-framework'),
                                 "default"             => "350",
                                 "min"                 => "200",
                                 "step"                => "5",
                                 "max"                 => "500",
                                 ),
+
+			array(
+				'id'=>'info_page_structure',
+				'type'=>'info',
+				'style'=>'help',
+				'desc' => __( '<span class="redux-title">Homepage Content</span>', 'redux-framework')
+				),								
+
+			array(
+				'title' => __('Enable Pre-Made Homepage ', 'redux-framework'), 
+				'subtitle' => __('switch on to enable pre-designed homepage layout.', 'redux-framework'),
+				'id'=>'thinkup_homepage_sectionswitch',
+				'type' => 'switch',
+				'default' => '1',// 1 = on | 0 = off
+				),
+
+			array(
+				'id'=>'thinkup_homepage_section1_icon',
+				'title' => __('Content Area 1', 'redux-framework'),
+				'desc' => __('Choose an icon for the section background.', 'redux-framework'),
+				'type' => 'select',
+				'data' => 'elusive-icons',
+				'fold' => array('thinkup_homepage_sectionswitch'=>1),
+			),
+
+			array(
+				'id'=>'thinkup_homepage_section1_title',
+				'desc' => __('Add a title to the section.', 'redux-framework'),
+				'type' => 'text',
+				'validate' => 'html', //see http://codex.wordpress.org/Function_Reference/wp_kses_post
+				'fold' => array('thinkup_homepage_sectionswitch'=>1),
+			),
+
+			array(
+				'id'=>'thinkup_homepage_section1_desc',
+				'desc' => __('Add a description to the section.', 'redux-framework'),
+				'type' => 'textarea',
+				'validate' => 'html', //see http://codex.wordpress.org/Function_Reference/wp_kses_post
+				'fold' => array('thinkup_homepage_sectionswitch'=>1),
+			),
+
+			array(
+				'id'=>'thinkup_homepage_section1_link',
+				'desc' => __('Link to a page', 'redux-framework'), 
+				'type' => 'select',
+				'data' => 'pages',
+				'fold' => array('thinkup_homepage_sectionswitch'=>1),
+			),
+
+			array(
+				'id'=>'thinkup_homepage_section2_icon',
+				'title' => __('Content Area 2', 'redux-framework'),
+				'desc' => __('Choose an icon for the section background.', 'redux-framework'),
+				'type' => 'select',
+				'data' => 'elusive-icons',
+				'fold' => array('thinkup_homepage_sectionswitch'=>1),
+			),    
+
+			array(
+				'id'=>'thinkup_homepage_section2_title',
+				'desc' => __('Add a title to the section.', 'redux-framework'),
+				'type' => 'text',
+				'validate' => 'html', //see http://codex.wordpress.org/Function_Reference/wp_kses_post
+				'fold' => array('thinkup_homepage_sectionswitch'=>1),
+			),
+
+			array(
+				'id'=>'thinkup_homepage_section2_desc',
+				'desc' => __('Add a description to the section.', 'redux-framework'),
+				'type' => 'textarea',
+				'validate' => 'html', //see http://codex.wordpress.org/Function_Reference/wp_kses_post
+				'fold' => array('thinkup_homepage_sectionswitch'=>1),
+			),
+
+			array(
+				'id'=>'thinkup_homepage_section2_link',
+				'desc' => __('Link to a page', 'redux-framework'), 
+				'type' => 'select',
+				'data' => 'pages',
+				'fold' => array('thinkup_homepage_sectionswitch'=>1),
+			),
+
+			array(
+				'id'=>'thinkup_homepage_section3_icon',
+				'title' => __('Content Area 3', 'redux-framework'),
+				'desc' => __('Choose an icon for the section background.', 'redux-framework'),
+				'type' => 'select',
+				'data' => 'elusive-icons',
+				'fold' => array('thinkup_homepage_sectionswitch'=>1),
+			),    
+
+			array(
+				'id'=>'thinkup_homepage_section3_title',
+				'desc' => __('Add a title to the section.', 'redux-framework'),
+				'type' => 'text',
+				'validate' => 'html', //see http://codex.wordpress.org/Function_Reference/wp_kses_post
+				'fold' => array('thinkup_homepage_sectionswitch'=>1),
+			),
+
+			array(
+				'id'=>'thinkup_homepage_section3_desc',
+				'desc' => __('Add a description to the section.', 'redux-framework'),
+				'type' => 'textarea',
+				'validate' => 'html', //see http://codex.wordpress.org/Function_Reference/wp_kses_post
+				'fold' => array('thinkup_homepage_sectionswitch'=>1),
+			),
+
+			array(
+				'id'=>'thinkup_homepage_section3_link',
+				'desc' => __('Link to a page', 'redux-framework'), 
+				'type' => 'select',
+				'data' => 'pages',
+				'fold' => array('thinkup_homepage_sectionswitch'=>1),
+			),
 
 			array(
 				'id'=>'info_page_structure',

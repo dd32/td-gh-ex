@@ -194,12 +194,13 @@ $thinkup_general_breadcrumbdelimeter = thinkup_var ( 'thinkup_general_breadcrumb
 function thinkup_input_pagination( $pages = "", $range = 2 ) {
 global $paged;
 global $wp_query;
-		
+
 	$showitems = ($range * 2)+1;  
 
 	if(empty($paged)) $paged = 1;
 
 	if($pages == "") {
+
 		$pages = $wp_query->max_num_pages;
 		if(!$pages) {
 			$pages = 1;
@@ -207,6 +208,7 @@ global $wp_query;
 	}
 
 	if(1 != $pages) {
+
 		echo '<ul class="pag">';
 		
 			if($paged > 2 && $paged > $range+1 && $showitems < $pages) 
@@ -463,6 +465,42 @@ function get_comments_number_str( $zero = false, $one = false, $more = false, $d
         $output = ( false === $one ) ? __( '1 Comment', 'lan-thinkupthemes' ) : $one;
  
     return apply_filters('comments_number', $output, $number);
+}
+
+
+//----------------------------------------------------------------------------------
+//	CHANGE FALLBACK WP_PAGE_MENU CLASSES TO MATCH WP_NAV_MENU CLASSES
+//----------------------------------------------------------------------------------
+
+function add_menuclass( $ulclass ) {
+
+	$ulclass = preg_replace( '/<ul>/', '<ul class="menu">', $ulclass, 1 );
+	$ulclass = str_replace( 'children', 'sub-menu', $ulclass );
+
+	return preg_replace('/<div (.*)>(.*)<\/div>/iU', '$2', $ulclass );
+}
+add_filter( 'wp_page_menu', 'add_menuclass' );
+
+
+//----------------------------------------------------------------------------------
+//	DETERMINE IF THE PAGE IS A BLOG - USEFUL FOR HOMEPAGE BLOG.
+//----------------------------------------------------------------------------------
+
+// Credit to: http://www.poseidonwebstudios.com/web-development/wordpress-is_blog-function/
+function is_blog() {
+ 
+    global $post;
+ 
+    //Post type must be 'post'.
+    $post_type = get_post_type($post);
+ 
+    //Check all blog-related conditional tags, as well as the current post type,
+    //to determine if we're viewing a blog page.
+    return (
+        ( is_home() || is_archive() || is_single() )
+        && ($post_type == 'post')
+    ) ? true : false ;
+ 
 }
 
 

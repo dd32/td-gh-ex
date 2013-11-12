@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Engrave Lite\n"
-"POT-Creation-Date: 2013-10-27 13:59-0000\n"
-"PO-Revision-Date: 2013-10-27 13:59-0000\n"
+"POT-Creation-Date: 2013-10-17 16:59-0000\n"
+"PO-Revision-Date: 2013-10-17 17:00-0000\n"
 "Last-Translator: \n"
 "Language-Team: Think Up Themes <contact@thinkupthemes.com>\n"
 "Language: English\n"
@@ -24,8 +24,8 @@ msgstr ""
 msgid "Please try using the search function."
 msgstr ""
 
-#: ../comments.php:22 ../admin/main/options/00.theme-setup.php:403
-#: ../admin/main/options/00.theme-setup.php:463
+#: ../comments.php:22 ../admin/main/options/00.theme-setup.php:408
+#: ../admin/main/options/00.theme-setup.php:468
 #: ../admin/main/options/05.blog.php:118 ../lib/widgets/popularposts.php:90
 #, fuzzy, php-format
 msgid "1 Comment"
@@ -423,7 +423,7 @@ msgid ""
 msgstr ""
 
 #: ../admin/main/options.php:393 ../admin/main/options.php:498
-#: ../admin/main/options.php:983 ../admin/main/options.php:1024
+#: ../admin/main/options.php:952 ../admin/main/options.php:993
 msgid "Select a Sidebar"
 msgstr ""
 
@@ -519,345 +519,321 @@ msgstr ""
 msgid "Select page layout. This will only be applied to the home page."
 msgstr ""
 
-#: ../admin/main/options.php:499 ../admin/main/options.php:1025
+#: ../admin/main/options.php:499 ../admin/main/options.php:994
 msgid "Choose a sidebar to use with the layout."
 msgstr ""
 
-#: ../admin/main/options.php:507
+#: ../admin/main/options.php:506
 msgid "Enable Homepage Slider"
 msgstr ""
 
-#: ../admin/main/options.php:508
+#: ../admin/main/options.php:507
 msgid "Switch on to enable home page slider."
 msgstr ""
 
-#: ../admin/main/options.php:520
+#: ../admin/main/options.php:514
 msgid "Homepage Slider Shortcode"
 msgstr ""
 
-#: ../admin/main/options.php:521
+#: ../admin/main/options.php:515
 msgid ""
 "Input the shortcode of the slider you want to display. I.e. [shortcode_name]."
 msgstr ""
 
-#: ../admin/main/options.php:528
-msgid "Built-In Slider"
-msgstr ""
-
-#: ../admin/main/options.php:529
-msgid "Unlimited slides with drag and drop sortings."
-msgstr ""
-
-#: ../admin/main/options.php:535
-msgid "Enable Full-Width Slider"
-msgstr ""
-
-#: ../admin/main/options.php:536
-msgid "Switch on to enable full-width slider."
-msgstr ""
-
-#: ../admin/main/options.php:545
-msgid "Slider Height (Max)"
-msgstr ""
-
-#: ../admin/main/options.php:546
-msgid "Specify the maximum slider height (px)."
-msgstr ""
-
-#: ../admin/main/options.php:557
+#: ../admin/main/options.php:526
 msgid "<span class=\"redux-title\">Call To Action - Intro</span>"
 msgstr ""
 
-#: ../admin/main/options.php:561
+#: ../admin/main/options.php:530
 msgid "Message"
 msgstr ""
 
-#: ../admin/main/options.php:562
+#: ../admin/main/options.php:531
 msgid "Check to enable intro on home page."
 msgstr ""
 
-#: ../admin/main/options.php:569
+#: ../admin/main/options.php:538
 msgid ""
 "Enter a <strong>main</strong> message.<br /><br />This will be one of the "
 "first messages your visitors see. Use this to get their attention."
 msgstr ""
 
-#: ../admin/main/options.php:576
+#: ../admin/main/options.php:545
 msgid ""
 "Enter a <strong>teaser</strong> message. <br /><br />Use this to provide "
 "more details about what you offer."
 msgstr ""
 
-#: ../admin/main/options.php:583
+#: ../admin/main/options.php:552
 msgid "Button Text"
 msgstr ""
 
-#: ../admin/main/options.php:584
+#: ../admin/main/options.php:553
 msgid "Input text to display on the action button."
 msgstr ""
 
-#: ../admin/main/options.php:591
+#: ../admin/main/options.php:560
 msgid "Link"
 msgstr ""
 
-#: ../admin/main/options.php:592
+#: ../admin/main/options.php:561
 msgid ""
 "Specify whether the action button should link to a page on your site, out to "
 "external webpage or disable the link altogether."
 msgstr ""
 
-#: ../admin/main/options.php:603
+#: ../admin/main/options.php:572
 msgid "Link to a page"
 msgstr ""
 
-#: ../admin/main/options.php:604
+#: ../admin/main/options.php:573
 msgid "Select a target page for action button link."
 msgstr ""
 
-#: ../admin/main/options.php:611
+#: ../admin/main/options.php:580
 msgid "Custom link"
 msgstr ""
 
-#: ../admin/main/options.php:612
+#: ../admin/main/options.php:581
 msgid ""
 "Input a custom url for the action button link.<br>Add http:// if linking to "
 "an external webpage."
 msgstr ""
 
-#: ../admin/main/options.php:627
+#: ../admin/main/options.php:596
 msgid "Header"
 msgstr ""
 
-#: ../admin/main/options.php:628
+#: ../admin/main/options.php:597
 msgid "<span class=\"redux-title\">Control Header Content</span>"
 msgstr ""
 
-#: ../admin/main/options.php:634
+#: ../admin/main/options.php:603
 msgid "Enable Search"
 msgstr ""
 
-#: ../admin/main/options.php:635
+#: ../admin/main/options.php:604
 msgid "Switch on to enable header search."
 msgstr ""
 
-#: ../admin/main/options.php:642
+#: ../admin/main/options.php:611
 msgid "Enable Social Media Links"
 msgstr ""
 
-#: ../admin/main/options.php:643
+#: ../admin/main/options.php:612
 msgid "Switch on to enable links to social media pages."
 msgstr ""
 
-#: ../admin/main/options.php:653
+#: ../admin/main/options.php:622
 msgid "<span class=\"redux-title\">Manage Social Media Content</span>"
 msgstr ""
 
-#: ../admin/main/options.php:657
+#: ../admin/main/options.php:626
 msgid "Display Message"
 msgstr ""
 
-#: ../admin/main/options.php:658
+#: ../admin/main/options.php:627
 msgid "Add a message here. E.g. &#34;Follow Us&#34;."
 msgstr ""
 
-#: ../admin/main/options.php:666
+#: ../admin/main/options.php:635
 msgid "Facebook"
 msgstr ""
 
-#: ../admin/main/options.php:667
+#: ../admin/main/options.php:636
 msgid "Enable link to Facebook profile."
 msgstr ""
 
-#: ../admin/main/options.php:674
+#: ../admin/main/options.php:643
 msgid ""
 "Input the url to your Facebook page. <strong>Note:</strong> Add http:// as "
 "the url is an external link."
 msgstr ""
 
-#: ../admin/main/options.php:682
+#: ../admin/main/options.php:651
 msgid "Use Custom Facebook Icon"
 msgstr ""
 
-#: ../admin/main/options.php:690 ../admin/main/options.php:723
-#: ../admin/main/options.php:756 ../admin/main/options.php:789
-#: ../admin/main/options.php:822 ../admin/main/options.php:855
-#: ../admin/main/options.php:888
+#: ../admin/main/options.php:659 ../admin/main/options.php:692
+#: ../admin/main/options.php:725 ../admin/main/options.php:758
+#: ../admin/main/options.php:791 ../admin/main/options.php:824
+#: ../admin/main/options.php:857
 msgid ""
 "Add a link to the image or upload one from your desktop. The image will be "
 "resized."
 msgstr ""
 
-#: ../admin/main/options.php:699
+#: ../admin/main/options.php:668
 msgid "Twitter"
 msgstr ""
 
-#: ../admin/main/options.php:700
+#: ../admin/main/options.php:669
 msgid "Enable link to Twitter profile."
 msgstr ""
 
-#: ../admin/main/options.php:707
+#: ../admin/main/options.php:676
 msgid ""
 "Input the url to your Twitter page. <strong>Note:</strong> Add http:// as "
 "the url is an external link."
 msgstr ""
 
-#: ../admin/main/options.php:715
+#: ../admin/main/options.php:684
 msgid "Use Custom Twitter Icon"
 msgstr ""
 
-#: ../admin/main/options.php:732
+#: ../admin/main/options.php:701
 msgid "Google+"
 msgstr ""
 
-#: ../admin/main/options.php:733
+#: ../admin/main/options.php:702
 msgid "Enable link to Google+ profile."
 msgstr ""
 
-#: ../admin/main/options.php:740
+#: ../admin/main/options.php:709
 msgid ""
 "Input the url to your Google+ page. <strong>Note:</strong> Add http:// as "
 "the url is an external link."
 msgstr ""
 
-#: ../admin/main/options.php:748
+#: ../admin/main/options.php:717
 msgid "Use Custom Google+ Icon"
 msgstr ""
 
-#: ../admin/main/options.php:765
+#: ../admin/main/options.php:734
 msgid "LinkedIn"
 msgstr ""
 
-#: ../admin/main/options.php:766
+#: ../admin/main/options.php:735
 msgid "Enable link to LinkedIn profile."
 msgstr ""
 
-#: ../admin/main/options.php:773
+#: ../admin/main/options.php:742
 msgid ""
 "Input the url to your LinkedIn page. <strong>Note:</strong> Add http:// as "
 "the url is an external link."
 msgstr ""
 
-#: ../admin/main/options.php:781
+#: ../admin/main/options.php:750
 msgid "Use Custom LinkedIn Icon"
 msgstr ""
 
-#: ../admin/main/options.php:798
+#: ../admin/main/options.php:767
 msgid "Flickr"
 msgstr ""
 
-#: ../admin/main/options.php:799
+#: ../admin/main/options.php:768
 msgid "Enable link to Flickr profile."
 msgstr ""
 
-#: ../admin/main/options.php:806
+#: ../admin/main/options.php:775
 msgid ""
 "Input the url to your Flickr page. <strong>Note:</strong> Add http:// as the "
 "url is an external link."
 msgstr ""
 
-#: ../admin/main/options.php:814
+#: ../admin/main/options.php:783
 msgid "Use Custom Flickr Icon"
 msgstr ""
 
-#: ../admin/main/options.php:831
+#: ../admin/main/options.php:800
 msgid "Last FM"
 msgstr ""
 
-#: ../admin/main/options.php:832
+#: ../admin/main/options.php:801
 msgid "Enable link to Last FM profile."
 msgstr ""
 
-#: ../admin/main/options.php:839
+#: ../admin/main/options.php:808
 msgid ""
 "Input the url to your Last FM page. <strong>Note:</strong> Add http:// as "
 "the url is an external link."
 msgstr ""
 
-#: ../admin/main/options.php:847
+#: ../admin/main/options.php:816
 msgid "Use Custom Last FM Icon"
 msgstr ""
 
-#: ../admin/main/options.php:864
+#: ../admin/main/options.php:833
 msgid "RSS"
 msgstr ""
 
-#: ../admin/main/options.php:865
+#: ../admin/main/options.php:834
 msgid "Enable link to RSS profile."
 msgstr ""
 
-#: ../admin/main/options.php:872
+#: ../admin/main/options.php:841
 msgid ""
 "Input the url to your RSS page. <strong>Note:</strong> Add http:// as the "
 "url is an external link."
 msgstr ""
 
-#: ../admin/main/options.php:880
+#: ../admin/main/options.php:849
 msgid "Use Custom RSS Icon"
 msgstr ""
 
-#: ../admin/main/options.php:903
+#: ../admin/main/options.php:872
 msgid "Footer"
 msgstr ""
 
-#: ../admin/main/options.php:904
+#: ../admin/main/options.php:873
 msgid "<span class=\"redux-title\">Control Footer Content</span>"
 msgstr ""
 
-#: ../admin/main/options.php:910
+#: ../admin/main/options.php:879
 msgid "Footer Widgets Layout"
 msgstr ""
 
-#: ../admin/main/options.php:911
+#: ../admin/main/options.php:880
 msgid ""
 "Select footer layout. Take complete control of the footer content by adding "
 "widgets."
 msgstr ""
 
-#: ../admin/main/options.php:939
+#: ../admin/main/options.php:908
 msgid "Disable Footer Widgets"
 msgstr ""
 
-#: ../admin/main/options.php:940
+#: ../admin/main/options.php:909
 msgid "Check to disable footer widgets."
 msgstr ""
 
-#: ../admin/main/options.php:947
+#: ../admin/main/options.php:916
 msgid "Copyright Text"
 msgstr ""
 
-#: ../admin/main/options.php:948
+#: ../admin/main/options.php:917
 msgid "Add custom copyright text.<br />Leave blank to display default message."
 msgstr ""
 
-#: ../admin/main/options.php:963
+#: ../admin/main/options.php:932
 msgid "Blog"
 msgstr ""
 
-#: ../admin/main/options.php:964
+#: ../admin/main/options.php:933
 msgid "<span class=\"redux-title\">Control Blog Pages</span>"
 msgstr ""
 
-#: ../admin/main/options.php:970
+#: ../admin/main/options.php:939
 msgid "Blog Layout"
 msgstr ""
 
-#: ../admin/main/options.php:971
+#: ../admin/main/options.php:940
 msgid ""
 "Select blog page layout. Only applied to the main blog page and not "
 "individual posts."
 msgstr ""
 
-#: ../admin/main/options.php:984
+#: ../admin/main/options.php:953
 msgid ""
 "<strong>Note:</strong> Sidebars will not be applied to homepage Blog. "
 "Control sidebars on the homepage from the &#39;Home Settings&#39; option."
 msgstr ""
 
-#: ../admin/main/options.php:991
+#: ../admin/main/options.php:960
 msgid "Post Content"
 msgstr ""
 
-#: ../admin/main/options.php:992
+#: ../admin/main/options.php:961
 msgid ""
 "Control how much content you want to show from each post on the main blog "
 "page. Remember to control the full article content by using the Wordpress <a "
@@ -865,232 +841,232 @@ msgid ""
 "a> tag in your post."
 msgstr ""
 
-#: ../admin/main/options.php:1006
+#: ../admin/main/options.php:975
 msgid "<span class=\"redux-title\">Control Single Post Page</span>"
 msgstr ""
 
-#: ../admin/main/options.php:1010
+#: ../admin/main/options.php:979
 msgid "Post Layout"
 msgstr ""
 
-#: ../admin/main/options.php:1011
+#: ../admin/main/options.php:980
 msgid ""
 "Select blog page layout. This will only be applied to individual posts and "
 "not the main blog page."
 msgstr ""
 
-#: ../admin/main/options.php:1065
+#: ../admin/main/options.php:1034
 msgid "Typography"
 msgstr ""
 
-#: ../admin/main/options.php:1066
+#: ../admin/main/options.php:1035
 msgid "<span class=\"redux-title\">Control Font Family</span>"
 msgstr ""
 
-#: ../admin/main/options.php:1072 ../admin/main/options.php:1233
+#: ../admin/main/options.php:1041 ../admin/main/options.php:1202
 msgid "Body Font"
 msgstr ""
 
-#: ../admin/main/options.php:1073 ../admin/main/options.php:1095
-#: ../admin/main/options.php:1117 ../admin/main/options.php:1139
-#: ../admin/main/options.php:1161 ../admin/main/options.php:1183
-#: ../admin/main/options.php:1205
+#: ../admin/main/options.php:1042 ../admin/main/options.php:1064
+#: ../admin/main/options.php:1086 ../admin/main/options.php:1108
+#: ../admin/main/options.php:1130 ../admin/main/options.php:1152
+#: ../admin/main/options.php:1174
 msgid "Check to use Google fonts."
 msgstr ""
 
-#: ../admin/main/options.php:1080
+#: ../admin/main/options.php:1049
 msgid ""
 "Select a \"Standard Font\" for body text.<br />This will <strong>NOT</"
 "strong> affect text in header or footer areas."
 msgstr ""
 
-#: ../admin/main/options.php:1087
+#: ../admin/main/options.php:1056
 msgid ""
 "Select a \"Google Font\" for body text.<br />This will <strong>NOT</strong> "
 "affect text in header or footer areas."
 msgstr ""
 
-#: ../admin/main/options.php:1094
+#: ../admin/main/options.php:1063
 msgid "Body Headings"
 msgstr ""
 
-#: ../admin/main/options.php:1102
+#: ../admin/main/options.php:1071
 msgid ""
 "Select a \"Standard Font\" for header text.<br />This will <strong>NOT</"
 "strong> affect text in header or footer areas."
 msgstr ""
 
-#: ../admin/main/options.php:1109
+#: ../admin/main/options.php:1078
 msgid ""
 "Select a \"Google Font\" for header text.<br />This will <strong>NOT</"
 "strong> affect text in header or footer areas."
 msgstr ""
 
-#: ../admin/main/options.php:1116 ../admin/main/options.php:1297
+#: ../admin/main/options.php:1085 ../admin/main/options.php:1266
 msgid "Pre Header Menu"
 msgstr ""
 
-#: ../admin/main/options.php:1124
+#: ../admin/main/options.php:1093
 msgid "Select a \"Standard Font\" for pre header text."
 msgstr ""
 
-#: ../admin/main/options.php:1131
+#: ../admin/main/options.php:1100
 msgid "Select a \"Google Font\" for pre header text."
 msgstr ""
 
-#: ../admin/main/options.php:1138 ../admin/main/options.php:1313
+#: ../admin/main/options.php:1107 ../admin/main/options.php:1282
 msgid "Main Header Menu"
 msgstr ""
 
-#: ../admin/main/options.php:1146
+#: ../admin/main/options.php:1115
 msgid "Select a \"Standard Font\" for main header text."
 msgstr ""
 
-#: ../admin/main/options.php:1153
+#: ../admin/main/options.php:1122
 msgid "Select a \"Google Font\" for main header text."
 msgstr ""
 
-#: ../admin/main/options.php:1160 ../admin/main/options.php:1329
+#: ../admin/main/options.php:1129 ../admin/main/options.php:1298
 msgid "Footer Headings"
 msgstr ""
 
-#: ../admin/main/options.php:1168
+#: ../admin/main/options.php:1137
 msgid "Select a \"Standard Font\" for body text."
 msgstr ""
 
-#: ../admin/main/options.php:1175
+#: ../admin/main/options.php:1144
 msgid "Select a \"Google Font\" for body text."
 msgstr ""
 
-#: ../admin/main/options.php:1182 ../admin/main/options.php:1337
+#: ../admin/main/options.php:1151 ../admin/main/options.php:1306
 msgid "Main Footer Menu"
 msgstr ""
 
-#: ../admin/main/options.php:1190
+#: ../admin/main/options.php:1159
 msgid "Select a \"Standard Font\" for footer menu text."
 msgstr ""
 
-#: ../admin/main/options.php:1197
+#: ../admin/main/options.php:1166
 msgid "Select a \"Google Font\" for footer menu text."
 msgstr ""
 
-#: ../admin/main/options.php:1204 ../admin/main/options.php:1345
+#: ../admin/main/options.php:1173 ../admin/main/options.php:1314
 msgid "Post Footer Menu"
 msgstr ""
 
-#: ../admin/main/options.php:1212
+#: ../admin/main/options.php:1181
 msgid "Select a \"Standard Font\" for post footer text."
 msgstr ""
 
-#: ../admin/main/options.php:1219
+#: ../admin/main/options.php:1188
 msgid "Select a \"Google Font\" for post footer text."
 msgstr ""
 
-#: ../admin/main/options.php:1229
+#: ../admin/main/options.php:1198
 msgid "<span class=\"redux-title\">Control Font Size<span>"
 msgstr ""
 
-#: ../admin/main/options.php:1234
+#: ../admin/main/options.php:1203
 msgid "Specify the body font size."
 msgstr ""
 
-#: ../admin/main/options.php:1241
+#: ../admin/main/options.php:1210
 msgid "H1 Heading"
 msgstr ""
 
-#: ../admin/main/options.php:1242
+#: ../admin/main/options.php:1211
 msgid "Specify the h1 heading font size."
 msgstr ""
 
-#: ../admin/main/options.php:1249
+#: ../admin/main/options.php:1218
 msgid "H2 Heading"
 msgstr ""
 
-#: ../admin/main/options.php:1250
+#: ../admin/main/options.php:1219
 msgid "Specify the h2 heading font size."
 msgstr ""
 
-#: ../admin/main/options.php:1257
+#: ../admin/main/options.php:1226
 msgid "H3 Heading"
 msgstr ""
 
-#: ../admin/main/options.php:1258
+#: ../admin/main/options.php:1227
 msgid "Specify the h3 heading font size."
 msgstr ""
 
-#: ../admin/main/options.php:1265
+#: ../admin/main/options.php:1234
 msgid "H4 Heading"
 msgstr ""
 
-#: ../admin/main/options.php:1266
+#: ../admin/main/options.php:1235
 msgid "Specify the h4 heading font size."
 msgstr ""
 
-#: ../admin/main/options.php:1273
+#: ../admin/main/options.php:1242
 msgid "H5 Heading"
 msgstr ""
 
-#: ../admin/main/options.php:1274
+#: ../admin/main/options.php:1243
 msgid "Specify the h5 heading font size."
 msgstr ""
 
-#: ../admin/main/options.php:1281
+#: ../admin/main/options.php:1250
 msgid "H6 Heading"
 msgstr ""
 
-#: ../admin/main/options.php:1282
+#: ../admin/main/options.php:1251
 msgid "Specify the h6 heading font size."
 msgstr ""
 
-#: ../admin/main/options.php:1289
+#: ../admin/main/options.php:1258
 msgid "Sidebar Widget Heading"
 msgstr ""
 
-#: ../admin/main/options.php:1290
+#: ../admin/main/options.php:1259
 msgid "Specify the sidebar widget heading font size."
 msgstr ""
 
-#: ../admin/main/options.php:1298
+#: ../admin/main/options.php:1267
 msgid "Specify the pre header font size."
 msgstr ""
 
-#: ../admin/main/options.php:1305
+#: ../admin/main/options.php:1274
 msgid "Pre Header Menu (Dropdown)"
 msgstr ""
 
-#: ../admin/main/options.php:1306
+#: ../admin/main/options.php:1275
 msgid "Specify the pre header dropdown font size."
 msgstr ""
 
-#: ../admin/main/options.php:1314
+#: ../admin/main/options.php:1283
 msgid "Specify the main header font size."
 msgstr ""
 
-#: ../admin/main/options.php:1321
+#: ../admin/main/options.php:1290
 msgid "Main Header Menu (Dropdown)"
 msgstr ""
 
-#: ../admin/main/options.php:1322
+#: ../admin/main/options.php:1291
 msgid "Specify the main header dropdown font size."
 msgstr ""
 
-#: ../admin/main/options.php:1330
+#: ../admin/main/options.php:1299
 msgid "Specify the footer heading font size."
 msgstr ""
 
-#: ../admin/main/options.php:1338
+#: ../admin/main/options.php:1307
 msgid "Specify the main footer font size."
 msgstr ""
 
-#: ../admin/main/options.php:1346
+#: ../admin/main/options.php:1315
 msgid "Specify the post footer font size."
 msgstr ""
 
-#: ../admin/main/options.php:1365
+#: ../admin/main/options.php:1334
 msgid "Support"
 msgstr ""
 
-#: ../admin/main/options.php:1366
+#: ../admin/main/options.php:1335
 msgid ""
 "<span class=\"redux-title\">Documentation</span><p>Please refer to the "
 "\"ThinkUpThemes - Lite Documentation\" file included with this theme for "
@@ -1103,7 +1079,7 @@ msgid ""
 "v=l7eI9QBkXwY\" target=\"_blank\">short video tutorial</a>.</p>"
 msgstr ""
 
-#: ../admin/main/options.php:1384
+#: ../admin/main/options.php:1353
 msgid "Premium Themes"
 msgstr ""
 
@@ -1322,97 +1298,97 @@ msgstr ""
 msgid "You must provide a valid URL for this option."
 msgstr ""
 
-#: ../admin/main/options/00.theme-setup.php:58
+#: ../admin/main/options/00.theme-setup.php:63
 #: ../lib/plugins/theme-plugin-activation.php:164
 msgid "Install Required Plugins"
 msgstr ""
 
-#: ../admin/main/options/00.theme-setup.php:59
+#: ../admin/main/options/00.theme-setup.php:64
 #: ../lib/plugins/theme-plugin-activation.php:165
 msgid "Install Plugins"
 msgstr ""
 
-#: ../admin/main/options/00.theme-setup.php:60
+#: ../admin/main/options/00.theme-setup.php:65
 #: ../lib/plugins/theme-plugin-activation.php:166
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#: ../admin/main/options/00.theme-setup.php:61
+#: ../admin/main/options/00.theme-setup.php:66
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: ../admin/main/options/00.theme-setup.php:72
+#: ../admin/main/options/00.theme-setup.php:77
 #: ../lib/plugins/theme-plugin-activation.php:178
 #: ../lib/plugins/theme-plugin-activation.php:489
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: ../admin/main/options/00.theme-setup.php:73
+#: ../admin/main/options/00.theme-setup.php:78
 #: ../lib/plugins/theme-plugin-activation.php:179
 #: ../lib/plugins/theme-plugin-activation.php:1845
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: ../admin/main/options/00.theme-setup.php:74
+#: ../admin/main/options/00.theme-setup.php:79
 #, php-format
 msgid "Plugin(s) installed and activated successfully. %s"
 msgstr ""
 
-#: ../admin/main/options/00.theme-setup.php:155
+#: ../admin/main/options/00.theme-setup.php:160
 msgid "Archive Category: "
 msgstr ""
 
-#: ../admin/main/options/00.theme-setup.php:157
+#: ../admin/main/options/00.theme-setup.php:162
 msgid "Posts Tagged: "
 msgstr ""
 
-#: ../admin/main/options/00.theme-setup.php:166
+#: ../admin/main/options/00.theme-setup.php:171
 msgid "Search Results for: "
 msgstr ""
 
-#: ../admin/main/options/00.theme-setup.php:181
+#: ../admin/main/options/00.theme-setup.php:186
 msgid "Archived Article(s) by Author: "
 msgstr ""
 
-#: ../admin/main/options/00.theme-setup.php:183
+#: ../admin/main/options/00.theme-setup.php:188
 msgid "Error 404 - Not Found."
 msgstr ""
 
-#: ../admin/main/options/00.theme-setup.php:185
+#: ../admin/main/options/00.theme-setup.php:190
 #: ../admin/main/options/01.general-settings.php:385
 msgid "Portfolio"
 msgstr ""
 
-#: ../admin/main/options/00.theme-setup.php:215
+#: ../admin/main/options/00.theme-setup.php:220
 msgid "Prev"
 msgstr ""
 
-#: ../admin/main/options/00.theme-setup.php:223
+#: ../admin/main/options/00.theme-setup.php:228
 msgid "Next"
 msgstr ""
 
-#: ../admin/main/options/00.theme-setup.php:402
-#: ../admin/main/options/00.theme-setup.php:461
+#: ../admin/main/options/00.theme-setup.php:407
+#: ../admin/main/options/00.theme-setup.php:466
 #: ../lib/widgets/popularposts.php:90
 msgid "No Comments"
 msgstr ""
 
-#: ../admin/main/options/00.theme-setup.php:404
-#: ../admin/main/options/00.theme-setup.php:459
+#: ../admin/main/options/00.theme-setup.php:409
+#: ../admin/main/options/00.theme-setup.php:464
 #: ../admin/main/options/05.blog.php:118 ../lib/widgets/popularposts.php:90
 msgid "% Comments"
 msgstr ""
 
-#: ../admin/main/options/00.theme-setup.php:405
+#: ../admin/main/options/00.theme-setup.php:410
 msgid "Comments Off"
 msgstr ""
 
-#: ../admin/main/options/00.theme-setup.php:417
+#: ../admin/main/options/00.theme-setup.php:422
 msgid "Enter your password to view comments."
 msgstr ""
 
-#: ../admin/main/options/00.theme-setup.php:444
+#: ../admin/main/options/00.theme-setup.php:449
 #, php-format
 msgid "Comment on %s"
 msgstr ""
@@ -1736,11 +1712,11 @@ msgstr ""
 msgid "Flickr Feed"
 msgstr ""
 
-#: ../lib/widgets/flickr.php:85
+#: ../lib/widgets/flickr.php:82
 msgid "Oops! There&#39;s been an error!"
 msgstr ""
 
-#: ../lib/widgets/flickr.php:85
+#: ../lib/widgets/flickr.php:82
 msgid "Check that the Flickr ID is correct at"
 msgstr ""
 

@@ -11,7 +11,7 @@ get_header(); ?>
 
 				<?php get_template_part( 'content', 'single' ); ?>
 
-				<?php paginate_links( 'nav-below' ); ?>
+				<?php thinkup_input_nav( 'nav-below' ); ?>
 
 				<?php edit_post_link( __( 'Edit', 'lan-thinkupthemes' ), '<span class="edit-link">', '</span>' ); ?>
 
