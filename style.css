@@ -2,9 +2,9 @@
 Theme Name: Content
 Author: Alberto Ramacciotti
 Author URI: http://ramacciotti.altervista.org/en/about
-Theme URI: http://ramacciotti.altervista.org/archivio/articolo/content-theme
+Theme URI: http://ramacciotti.altervista.org/archives/articles/content-wordpress-theme
 Description: Content is a responsive theme focused on readability.
-Version: 1.0.6
+Version: 1.0.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Content WordPress theme, Copyright (C) 2013 Alberto Ramacciotti, AR Web Dev Studio
@@ -136,8 +136,8 @@ label ~ span.required,
 audio,
 canvas,
 video,
-.blog-header h2 a,
-.blog-header h2 a:visited,
+.blog-description a,
+.blog-description a:visited,
 .menu .menu.toggled-on,
 .menu-toggle,
 .format-status .post-header header {
@@ -216,8 +216,8 @@ td,
 .image-attachment div.attachment,
 .image-attachment div.attachment p,
 .menu li,
-.blog-header h1, 
-.blog-header h2,
+.blog-title, 
+.blog-description,
 #footer {
     text-align: center;
 }
@@ -239,7 +239,7 @@ h6,
     clear: both;
 }
 
-.blog-header h1,
+.blog-title,
 .edit-link a, 
 .edit-link a:visited,
 .archive-title,
@@ -655,7 +655,7 @@ body {
     width: 93%;
 }
 
-.blog-header h1 {
+.blog-title {
     font-size: 5em;
     line-height: 1.5;
 }
@@ -666,12 +666,12 @@ body {
     color: #818181;
 }
 
-.blog-header h1 a,
-.blog-header h1 a:visited {
+.blog-title a,
+.blog-title a:visited {
     border: 0;
 }
 
-.blog-header h2 {
+.blog-description {
     margin-bottom: 4em;
     letter-spacing: 1px;
 }
@@ -1786,13 +1786,13 @@ label ~ span.required {
         text-align: left;
     }
 
-    .blog-header h1 {
+    .blog-title {
         font-size: 21pt;
         line-height: 1;
         text-align: left;
     }
 
-    .blog-header h2 {
+    .blog-description {
         font-size: 10pt;
         text-align: left;
     }
