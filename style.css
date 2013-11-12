@@ -1,7 +1,7 @@
 /*
 Theme Name: Adelle
-Description: WordPress theme by BluChic
-Version: 13.10
+Description: Your brand is eager and ready to go. The Adelle Theme is ready for you! With a soft pink confetti header and minimalist two-columns, you can get started blogging in no time. Adelle is poised to host any female-oriented brand.
+Version: 13.11
 Author: BluChic
 Author URI: http://www.bluchic.com
 Theme URI: http://www.bluchic.com/shop/adelle-theme
@@ -64,6 +64,12 @@ Screen smaller than 680px
   /* .header form */
   .header-form {display: none;}
 
+  /* .header */
+  .header h1,
+  .header h5 {font-size: 24px; text-transform: uppercase; margin: 10px 0 0 0;}
+  .header-title {color: #000;}
+  .header-desc {margin: 0; color: #777;}
+
   /* .nav */
   .mobile-nav {display: block; width: 100%; margin: 0 auto; background: #fff;}
   .nav {position: relative; width: 96%; background: #000; display: inline-block; padding: 2%; margin-top: 40px; clear: both; line-height: 1em; text-transform: uppercase;}
@@ -96,9 +102,15 @@ Screen between 681px and 1024px
   .header-form {clear: both; overflow: hidden; position: absolute; top: 4px; right: 20px;}
   .header-text {width: 80px; border: 1px solid #bbb;}
 
+  /* .header */
+  .header h1,
+  .header h5 {font-size: 40px; text-transform: uppercase; margin: 10px 0 0 0;}
+  .header-title {color: #000;}
+  .header-desc {margin: 0; color: #777;}
+
   /* .nav */
   .mobile-nav {display: block; width: 50%; background: #fff;}
-  .nav {position: relative; width: 90%; display: inline-block; background: #000; padding: 5px 5%; margin-top: 40px; clear: both; line-height: 1em; text-transform: uppercase;}
+  .nav {position: relative; width: 90%; display: inline-block; background: #000; padding: 5px 20px; margin-top: 40px; clear: both; line-height: 1em; text-transform: uppercase;}
   .nav ul {display: none; list-style: none;}
   .nav a {display: block; padding: 14px 10px; color: #fff;}
   .nav a:hover {text-decoration: underline; color: #fff;}
@@ -110,7 +122,7 @@ Screen between 681px and 1024px
   ul.post-info-meta li.post-info-comment {float: right;}
 
   /* .footer */
-  p.footer-copy {padding: 10px 20px; clear: both; font-size: 0.9em; overflow: hidden; margin: 0 auto;}
+  p.footer-copy {position: relative; background: #000; color: #aaa; padding: 10px 30px; clear: both; font-size: 0.9em; overflow: hidden; margin: 0 auto;}
   p.footer-copy .footer-credit {display: block; float: right; width: 55px; height: 11px; background: url('images/footer_credit.png') no-repeat 0 0; text-indent: -9999px; margin-top: 5px;}
 
 }
@@ -130,6 +142,12 @@ Screen larger than 1025px
   /* .header form */
   .header-form {clear: both; overflow: hidden; position: absolute; top: 4px; right: 40px;}
   .header-text {width: 100px; border: 1px solid #bbb;}
+
+  /* .header */
+  .header h1,
+  .header h5 {font-size: 48px; text-transform: uppercase; margin: 10px 0 0 0;}
+  .header-title {color: #000;}
+  .header-desc {margin: 0; color: #777;}
 
   /* .nav */
   .mobile-nav {display: none;}
@@ -151,7 +169,12 @@ Screen larger than 1025px
   ul.post-info-meta li.post-info-comment {float: right;}
 
   /* .footer */
-  p.footer-copy {padding: 10px 20px; clear: both; font-size: 0.9em; overflow: hidden; margin: 0 auto;}
+	p.footer-copy :before,
+	p.footer-copy :after {border: 1.8em solid #000; content: ""; display: block; position: absolute; bottom: 0; top: 0; z-index: 1;}
+	p.footer-copy :before {border-left-color: #fff; border-right-width: 1.4em; left: 0;}
+	p.footer-copy :after {border-left-width: 1.4em; border-right-color:#fff; right: 0;}
+
+  p.footer-copy {position: relative; background: #000; color: #aaa; padding: 10px 40px; clear: both; font-size: 0.9em; overflow: hidden; margin: 0 auto;}
   p.footer-copy .footer-credit {display: block; float: right; width: 55px; height: 11px; background: url('images/footer_credit.png') no-repeat 0 0; text-indent: -9999px; margin-top: 5px;}
 
 }
@@ -177,12 +200,6 @@ h6 {font-size: 1em; color: #555;}
 /* LINK */
 a {color: #ff8f85; text-decoration: none; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out;}
 a:hover {color: #000;}
-
-/* .header */
-.header h1,
-.header h5 {font-size: 48px; text-transform: uppercase; margin: 10px 0 0 0;}
-.header-title {color: #000;}
-.header-desc {margin: 0; color: #777;}
 
 /* .nav */
 .nav .current-menu-item > a,

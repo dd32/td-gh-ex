@@ -2,7 +2,7 @@
 
     <header class="post-header">
       <div class="post-date radius-100"><span><a href="<?php the_permalink() ?>"><?php echo get_the_date('d') ?></span><br /><?php echo get_the_date('M') ?><br /><?php echo get_the_date('Y') ?></a></div>
-      <h2 class="post-title"><a href="<?php the_permalink() ?>" rel="<?php _e('bookmark','adelle-theme'); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+      <h2 class="post-title" itemprop="name"><a href="<?php the_permalink() ?>" rel="<?php _e('bookmark','adelle-theme'); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
       <div class="post-category"><?php _e('categories', 'ace'); ?>: <?php the_category(', ') ?></div>
     </header>
 

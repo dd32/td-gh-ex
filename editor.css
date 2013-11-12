@@ -48,9 +48,9 @@ img.alignleft, img.alignright, img.aligncenter {margin-bottom: 12px;}
 .wp-caption img {margin: 5px;}
 .wp-caption p.wp-caption-text {margin: 0 0 4px;}
 .wp-smiley {margin: 0;}
-h1 {font-size: 1.6em; color: #9e0000; font-weight: 400;}
-h2 {font-size: 1.4em; color: #9e0000; font-weight: 400;}
+h1 {font-size: 1.6em; color: #000;}
+h2 {font-size: 1.4em; color: #000;}
 h3 {font-size: 1.2em; color: #333;}
 h4 {font-size: 1.2em; color: #333;}
-h5 {font-size: 1em; color: #555; font-weight: 700;}
-h6 {font-size: 1em; color: #555; font-weight: 700;}
+h5 {font-size: 1em; color: #555;}
+h6 {font-size: 1em; color: #555;}

@@ -22,7 +22,7 @@ if ( post_password_required() ) { ?>
   <?php } if (!empty($comments_by_type['pings'])) { ?>
     <h4 id="comments"><?php echo count($wp_query->comments_by_type['pings']); ?><?php _e('Pingbacks &amp; Trackbacks on','adelle-theme'); ?> <?php the_title(); ?></h4>
     <ol class="commentlist">
-      <?php wp_list_comments('type=pingback&callback=comment_style'); ?>
+      <?php wp_list_comments('type=pingback'); ?>
     </ol>
   <?php } ?>
 

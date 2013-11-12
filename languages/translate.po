@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Adelle Theme\n"
-"POT-Creation-Date: 2013-10-01 22:16+0800\n"
-"PO-Revision-Date: 2013-10-01 22:16+0800\n"
+"POT-Creation-Date: 2013-11-06 23:36+0800\n"
+"PO-Revision-Date: 2013-11-07 16:45+0800\n"
 "Last-Translator: Andrew Wong <hello@bluchic.com>\n"
 "Language-Team: BluChic <hello@bluchic.com>\n"
 "Language: English\n"
@@ -154,7 +154,7 @@ msgstr ""
 msgid "Designed by"
 msgstr ""
 
-#: functions.php:103
+#: functions.php:105
 msgid "Top Menu"
 msgstr ""
 
@@ -190,31 +190,31 @@ msgstr ""
 msgid "Page %s"
 msgstr ""
 
-#: functions.php:297
+#: functions.php:215
 msgid "Pages:"
 msgstr ""
 
-#: functions.php:302
+#: functions.php:220
 msgid "Next page"
 msgstr ""
 
-#: functions.php:303
+#: functions.php:221
 msgid "Previous page"
 msgstr ""
 
-#: functions.php:324
+#: functions.php:242
 msgid "Previous"
 msgstr ""
 
-#: functions.php:325
+#: functions.php:243
 msgid "Next"
 msgstr ""
 
-#: functions.php:345
+#: functions.php:263
 msgid "Right Widget 1"
 msgstr ""
 
-#: header.php:37 header.php:38 searchform.php:3 searchform.php:4
+#: header.php:31 header.php:32 searchform.php:3 searchform.php:4
 msgid "Search"
 msgstr ""
 
