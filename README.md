@@ -27,6 +27,13 @@ Bundled Resources
 Change Log
 ---------------
 
+#### 1.1.4
+* Fixed Circle Icon widget clash with FontAwesome CSS.
+* Small changes to premium upgrade page.
+* Fixed some invalid HTML.
+* Various CSS fixes and responsive improvements.
+* Premium: Fixed Twitter share.
+
 #### 1.1.3
 * Fixed RSS icon CSS.
 * Fixed double pagination on category pages.
