@@ -7,28 +7,23 @@ require_once ($functions_path . 'admin-functions.php');  // Custom functions and
 require_once ($functions_path . 'admin-interface.php');  // Admin Interfaces 
 require_once ($functions_path . 'theme-options.php');   // Options panel settings and custom settings
 require_once ($functions_path . 'themes-page.php');  // InkThmes Theme Page 
-?>
-<?php
 
 /* ----------------------------------------------------------------------------------- */
 /* jQuery Enqueue */
 /* ----------------------------------------------------------------------------------- */
-
 function appointway_wp_enqueue_scripts() {
     if (!is_admin()) {
-        wp_enqueue_script('jquery');
         wp_enqueue_script('appointway-ddsmoothmenu', get_template_directory_uri() . '/js/ddsmoothmenu.js', array('jquery'));
         wp_enqueue_script('appointway-custom', get_template_directory_uri() . '/js/custom.js', array('jquery'));
     } elseif (is_admin()) {
         
     }
 }
-
 add_action('wp_enqueue_scripts', 'appointway_wp_enqueue_scripts');
+
 /* ----------------------------------------------------------------------------------- */
 /* Custom Jqueries Enqueue */
 /* ----------------------------------------------------------------------------------- */
-
 function appointway_custom_jquery() {
     wp_enqueue_script('mobile-menu', get_template_directory_uri() . "/js/mobile-menu.js", array('jquery'));
 }

@@ -30,8 +30,8 @@ if (post_password_required()) {
             <!-- If comments are open, but there are no comments. -->
         <?php else : // comments are closed  ?>
             <!-- If comments are closed. -->
-            <?php if ( ! is_page() ) : ?>
-              <p class="nocomments">Comments are closed.</p>
+            <?php if (!is_page()) : ?>
+                <p class="nocomments">Comments are closed.</p>
             <?php endif; ?>
         <?php endif; ?>
     <?php endif; ?>
@@ -45,9 +45,9 @@ if (post_password_required()) {
                 <?php if (get_option('comment_registration') && !is_user_logged_in()) : ?>
                     <p>You must be <a href="<?php echo wp_login_url(get_permalink()); ?>">logged in</a> to post a comment.</p>
                 <?php else : ?>
-                  <div id="comment-form">
-				<?php comment_form(); ?>
-				</div>
+                    <div id="comment-form">
+                        <?php comment_form(); ?>
+                    </div>
                 <?php endif; // If registration required and not logged in  ?>
             </div>
         </div>

@@ -1,18 +1,20 @@
 <?php
-/* ----------------------------------------------------------------------------------- */
-/* Post Thumbnail Support
-  /*----------------------------------------------------------------------------------- */
-add_theme_support('post-thumbnails');
+
+function appoitway_setup() {
+    add_theme_support('post-thumbnails');
     add_image_size('post_thumbnail_1', 216, 168, false);
-/* ----------------------------------------------------------------------------------- */
-/* Auto Feed Links Support
-  /*----------------------------------------------------------------------------------- */
-if (function_exists('add_theme_support')) {
     add_theme_support('automatic-feed-links');
+    register_nav_menu('custom_menu', __('Main Menu', 'appointway'));
+    //Load languages file
+    load_theme_textdomain('appointway', get_template_directory() . '/languages');
+    $locale = get_locale();
+    $locale_file = get_template_directory() . "/languages/$locale.php";
+    if (is_readable($locale_file))
+        require_once($locale_file);
+// This theme styles the visual editor with editor-style.css to match the theme style.
+    add_editor_style();
 }
-/* ----------------------------------------------------------------------------------- */
-/* Custom Menus Function
-  /*----------------------------------------------------------------------------------- */
+add_action('after_setup_theme','appoitway_setup');
 
 // Add CLASS attributes to the first <ul> occurence in wp_page_menu
 function appointway_add_menuclass($ulclass) {
@@ -20,11 +22,6 @@ function appointway_add_menuclass($ulclass) {
 }
 
 add_filter('wp_page_menu', 'appointway_add_menuclass');
-add_action('init', 'appointway_register_custom_menu');
-
-function appointway_register_custom_menu() {
-    register_nav_menu('custom_menu', __('Main Menu', 'appointway'));
-}
 
 function appointway_nav() {
     if (function_exists('wp_nav_menu'))
@@ -44,6 +41,7 @@ function appointway_nav_fallback() {
     </div>
     <?php
 }
+
 function appointway_nav_menu_items($items) {
     if (is_home()) {
         $homelink = '<li class="current_page_item">' . '<a href="' . home_url('/') . '">' . __('Home', 'appointway') . '</a></li>';
@@ -53,30 +51,33 @@ function appointway_nav_menu_items($items) {
     $items = $homelink . $items;
     return $items;
 }
+
 add_filter('wp_list_pages', 'appointway_nav_menu_items');
-/*-----------------------------------------------------------------------------------*/
+/* ----------------------------------------------------------------------------------- */
 /* Function to call first uploaded image in functions file
-/*-----------------------------------------------------------------------------------*/
+  /*----------------------------------------------------------------------------------- */
+
 function inkthemes_main_image() {
-  global $post, $posts;
-  //This is required to set to Null
-  $id='';
-  $the_title='';
-  // Till Here
-  $permalink = get_permalink( $id ); 
-  $homeLink = get_template_directory_uri();
-  $first_img = '';
-  ob_start();
-  ob_end_clean();
-  $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-  if(isset($matches [1] [0])){
-  $first_img = $matches [1] [0];}
-  if(empty($first_img)){ //Defines a default image  
-  }
-  else{
-  print "<a href='$permalink'><img src='$first_img' width='250px' height='160px' class='postimg wp-post-image' alt='$the_title' /></a>";
+    global $post, $posts;
+    //This is required to set to Null
+    $id = '';
+    $the_title = '';
+    // Till Here
+    $permalink = get_permalink($id);
+    $homeLink = get_template_directory_uri();
+    $first_img = '';
+    ob_start();
+    ob_end_clean();
+    $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+    if (isset($matches [1] [0])) {
+        $first_img = $matches [1] [0];
+    }
+    if (empty($first_img)) { //Defines a default image  
+    } else {
+        print "<a href='$permalink'><img src='$first_img' width='250px' height='160px' class='postimg wp-post-image' alt='$the_title' /></a>";
+    }
 }
-}
+
 /* ----------------------------------------------------------------------------------- */
 /* Breadcrumbs Plugin
   /*----------------------------------------------------------------------------------- */
@@ -165,6 +166,7 @@ function appointway_breadcrumbs() {
     }
     echo '</div>';
 }
+
 /* ----------------------------------------------------------------------------------- */
 /* Attachment Page Design
   /*----------------------------------------------------------------------------------- */
@@ -189,8 +191,7 @@ function appointway_posted_in() {
             $posted_in, get_the_category_list(', '), $tag_list, get_permalink(), the_title_attribute('echo=0')
     );
 }
-?>
-<?php
+
 /**
  * Set the content width based on the theme's design and stylesheet.
  *
@@ -199,8 +200,6 @@ function appointway_posted_in() {
  */
 if (!isset($content_width))
     $content_width = 590;
-?>
-<?php
 
 /**
  * Register widgetized areas, including two sidebars and four widget-ready columns in the footer.
@@ -285,8 +284,6 @@ function appointway_widgets_init() {
 
 /** Register sidebars by running appointway_widgets_init() on the widgets_init hook. */
 add_action('widgets_init', 'appointway_widgets_init');
-?>
-<?php
 
 /**
  * Pagination
@@ -322,8 +319,6 @@ function appointway_pagination($pages = '', $range = 2) {
         echo "</ul>\n";
     }
 }
-?>
-<?php
 
 /////////Theme Options
 /* ----------------------------------------------------------------------------------- */
@@ -339,17 +334,7 @@ function appointway_childtheme_favicon() {
     }
 }
 add_action('wp_head', 'appointway_childtheme_favicon');
-/* ----------------------------------------------------------------------------------- */
-/* Show analytics code in footer */
-/* ----------------------------------------------------------------------------------- */
 
-function appointway_childtheme_analytics() {
-    $output = appointway_get_option('appointway_analytics');
-    if ($output <> "")
-        echo stripslashes($output);
-}
-
-add_action('wp_head', 'appointway_childtheme_analytics');
 /* ----------------------------------------------------------------------------------- */
 /* Custom CSS Styles */
 /* ----------------------------------------------------------------------------------- */
@@ -368,20 +353,13 @@ function appointway_of_head_css() {
 }
 
 add_action('wp_head', 'appointway_of_head_css');
-//Load languages file
-load_theme_textdomain('appointway', get_template_directory() . '/languages');
-$locale = get_locale();
-$locale_file = get_template_directory() . "/languages/$locale.php";
-if (is_readable($locale_file))
-    require_once($locale_file);
-// This theme styles the visual editor with editor-style.css to match the theme style.
-add_editor_style();
 
 // activate support for thumbnails
-function get_category_id($cat_name) {
+function appintway_get_category_id($cat_name) {
     $term = get_term_by('name', $cat_name, 'category');
     return $term->term_id;
 }
+
 //Trm excerpt
 function custom_trim_excerpt($length) {
     global $post;
@@ -405,4 +383,29 @@ function custom_trim_excerpt($length) {
     }
     return $text;
 }
+/**
+ * Filters wp_title to print a neat <title> tag based on what is being viewed.
+ */
+function appointway_wp_title($title, $sep) {
+    global $page, $paged;
+
+    if (is_feed())
+        return $title;
+
+    // Add the blog name
+    $title .= get_bloginfo('name');
+
+    // Add the blog description for the home/front page.
+    $site_description = get_bloginfo('description', 'display');
+    if ($site_description && ( is_home() || is_front_page() ))
+        $title .= " $sep $site_description";
+
+    // Add a page number if necessary:
+    if ($paged >= 2 || $page >= 2)
+        $title .= " $sep " . sprintf(__('Page %s', '_s'), max($paged, $page));
+
+    return $title;
+}
+
+add_filter('wp_title', 'appointway_wp_title', 10, 2);
 ?>

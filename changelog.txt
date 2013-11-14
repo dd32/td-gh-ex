@@ -2,8 +2,21 @@
 
 = Theme Name: Appointway Theme Pro=
 
+= Version: 1.0.5 =
+1. Code indented.
+2. Deprecated php function error fixed.
+3. Different text domain issue fixed.
+4. Theme url issue fixed.
+5. Google analytics option removed.
+6. All supporting function are hooked to after_setup_theme hook.
+7. Removed function exist wrapper.
+8. Removed wp_enqueue_script('jquery');
+9. Escaped all urls.
+10.wp_title filtered with additional content.
+11.Removed credit links from search anything.
+
 = Version: 1.0.4 =
-* Added plugins notification for recommends plugin.
+1. Added plugins notification for recommends plugin.
 
 = Version: 1.0.1 =
 1. Theme Style Improve
