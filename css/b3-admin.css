@@ -1,0 +1,5 @@
+#b3_options_form label {display: inline-block; width: 180px; height: 30px; margin-right: 10px;}
+#headimg {background-repeat: no-repeat; height: 160px;}
+#headimg h1, #headimg #desc {margin-left: 200px;}
+body.appearance_page_custom-header form table.form-table + h3,
+	body.appearance_page_custom-header form table.form-table + h3 + table {display: none !important;}
