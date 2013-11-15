@@ -60,8 +60,8 @@ jQuery("#access .menu ul li").hoverIntent({
 
 // Social Icons Animation
 jQuery(".socialicons").hover(
-	function(){  jQuery(this).animate({"top": "-5px" },{ queue: false, duration:200}); },
-	function(){  jQuery(this).animate({ "top": "0px" }, { queue: false, duration:200 });
+	function(){  jQuery(this).animate({"top": "-3px" },{ queue: false, duration:125}); },
+	function(){  jQuery(this).animate({ "top": "0px" }, { queue: false, duration:125 });
 });
 
 

@@ -75,10 +75,10 @@ add_action('wp_head','mantra_header_scripts',100);
 function mantra_title_and_description() {
 	$mantra_options = mantra_get_theme_options();
 	foreach ($mantra_options as $key => $value) { ${"$key"} = $value; }
-	
+
 	// Header styling and image loading
 	// Check if this is a post or page, if it has a thumbnail, and if it's a big one
-	
+
 	global $post;
 
 	if (get_header_image() != '') { $himgsrc = get_header_image(); }
@@ -120,7 +120,7 @@ function mantra_title_and_description() {
 
 	if ($mantra_socialsdisplay0): mantra_header_socials(); endif;
 	echo '</div>';
-	
+
 } // mantra_title_and_description()
 
 
@@ -357,40 +357,58 @@ add_action('wp_ajax_nopriv_do_ajax', 'mantra_ajax_function');
 add_action('wp_ajax_do_ajax', 'mantra_ajax_function');
 
 
-/** 
-* Retrieves the IDs for images in a gallery. 
+/**
+* Retrieves the IDs for images in a gallery.
 * @since mantra 2.1.1
-* @return array List of image IDs from the post gallery. 
-*/ 
-function mantra_get_gallery_images() { 
-       $images = array(); 
+* @return array List of image IDs from the post gallery.
+*/
+function mantra_get_gallery_images() {
+       $images = array();
 
-       if ( function_exists( 'get_post_galleries' ) ) { 
-               $galleries = get_post_galleries( get_the_ID(), false ); 
-               if ( isset( $galleries[0]['ids'] ) ) 
-                       $images = explode( ',', $galleries[0]['ids'] ); 
-       } else { 
-               $pattern = get_shortcode_regex(); 
-               preg_match( "/$pattern/s", get_the_content(), $match ); 
-               $atts = shortcode_parse_atts( $match[3] ); 
-               if ( isset( $atts['ids'] ) ) 
-                       $images = explode( ',', $atts['ids'] ); 
-       } 
+       if ( function_exists( 'get_post_galleries' ) ) {
+               $galleries = get_post_galleries( get_the_ID(), false );
+               if ( isset( $galleries[0]['ids'] ) )
+                       $images = explode( ',', $galleries[0]['ids'] );
+       } else {
+               $pattern = get_shortcode_regex();
+               preg_match( "/$pattern/s", get_the_content(), $match );
+               $atts = shortcode_parse_atts( $match[3] );
+               if ( isset( $atts['ids'] ) )
+                       $images = explode( ',', $atts['ids'] );
+       }
 
-       if ( ! $images ) { 
-               $images = get_posts( array( 
-                       'fields'         => 'ids', 
-                       'numberposts'    => 999, 
-                       'order'          => 'ASC', 
-                       'orderby'        => 'menu_order', 
-                       'post_mime_type' => 'image', 
-                       'post_parent'    => get_the_ID(), 
-                       'post_type'      => 'attachment', 
-               ) ); 
-       } 
+       if ( ! $images ) {
+               $images = get_posts( array(
+                       'fields'         => 'ids',
+                       'numberposts'    => 999,
+                       'order'          => 'ASC',
+                       'orderby'        => 'menu_order',
+                       'post_mime_type' => 'image',
+                       'post_parent'    => get_the_ID(),
+                       'post_type'      => 'attachment',
+               ) );
+       }
 
-       return $images; 
+       return $images;
 } // mantra_get_gallery_images()
+
+
+/**
+* Checks the browser agent string for mobile ids and adds "mobile" class to body if true
+* @since mantra 2.2.3
+* @return array list of classes.
+*/
+function mantra_mobile_body_class($classes){
+$mantra_options = mantra_get_theme_options();
+     if ($mantra_options['mantra_mobile']=="Enable"):
+          $browser = $_SERVER['HTTP_USER_AGENT'];
+          $keys = 'mobile|android|mobi|tablet|ipad|opera mini|series 60|s60|blackberry';
+          if (preg_match("/($keys)/i",$browser)): $classes[] = 'mobile'; endif; // mobile browser detected
+     endif;
+     return $classes;
+}
+
+add_filter('body_class', 'mantra_mobile_body_class');
 
 
 if ( ! function_exists( 'mantra_ajax_function' ) ) :
@@ -438,7 +456,7 @@ function mantra_ajax_get_latest_posts($count,$categName){
 
 	// Reset Query
 	wp_reset_query();
-	
+
 	return $testVar;
 }
 endif;

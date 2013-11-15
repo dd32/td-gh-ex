@@ -4,34 +4,33 @@
 
 jQuery(document).ready(function() {
 
-// WP image uploader for custom use in the admin section
-		var uploadparent = 0;
-		var old_send_to_editor = window.send_to_editor;
-		var old_tb_remove = window.tb_remove;
-
-		jQuery('.upload_image_button').click(function(){
-			uploadparent = jQuery(this).closest('div');
-			//Change "insert into post" to "Use this Button"
-     		tbframe_interval = setInterval( function() {jQuery('#TB_iframeContent').contents().find('.savesend .button').val('Use This Image');}, 2000);
-			tb_show('Select File', 'media-upload.php?post_id=0&amp;type=file&amp;TB_iframe=true');
-			return false;
-		});
-
-		window.tb_remove = function() {
-			uploadparent = 0;
-			old_tb_remove();
-		}
-
-		window.send_to_editor = function(html) {
-			if(uploadparent){
-				imgurl = jQuery('img',html).attr('src');
-				uploadparent.find('.slideimages').attr('value', imgurl);
-				uploadparent.find('.imagebox').attr('src', imgurl);
-				tb_remove();
-			} else {
-				old_send_to_editor();
-			}
-			}			
+var uploadparent = 0;
+ function media_upload( button_class) {
+    var _custom_media = true,
+    _orig_send_attachment = wp.media.editor.send.attachment;
+    jQuery('body').on('click',button_class, function(e) {
+	uploadparent = jQuery(this).closest('div');
+        var button_id ='#'+jQuery(this).attr('id');
+        /* console.log(button_id); */
+        var self = jQuery(button_id);
+        var send_attachment_bkp = wp.media.editor.send.attachment;
+        var button = jQuery(button_id);
+       // var id = button.attr('id').replace('_button', '');
+        _custom_media = true;
+        wp.media.editor.send.attachment = function(props, attachment){
+            if ( _custom_media  ) {
+              // jQuery('.custom_media_id').val(attachment.id); 		  
+               uploadparent.find('.slideimages').val(attachment.url);
+              // jQuery('.custom_media_image').attr('src',attachment.url).css('display','block');   
+            } else {
+                return _orig_send_attachment.apply( button_id, [props, attachment] );
+            }
+        }
+        wp.media.editor.open(button);
+        return false;
+    });
+}
+media_upload( '.upload_image_button');			
 			
 			
 // Show/hide slides

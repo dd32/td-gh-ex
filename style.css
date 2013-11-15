@@ -4,7 +4,7 @@
  * Description: Mantra is a do-it-yourself WordPress theme, featuring a pack of over 100 customization options and easy to use tweaks capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (1,2 or 3 columns), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 35 font-families plus all Google Fonts), text and header sizes, post metas, post excerpts, post formats, header and background images, custom menus, 27 social media links and icons, pins, bullets and much much more. With a fully responsive layout,a customizable showcase presentation page, animated slider, magazine and blog layouts, 8 widget areas, modern graphics and an easy and intuitive admin section, you can start creating your dream site right now.
  * Author: Cryout Creations
  * Author URI: http://www.cryoutcreations.eu
- * Version: 2.2.2
+ * Version: 2.3.0
  * License: GNU General Public License v2.0
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Tags: black, red, blue, white, silver, light, dark, one-column, two-columns, three-columns, right-sidebar, left-sidebar, flexible-width, fixed-width, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, front-page-post-form, full-width-template,  microformats, post-formats, rtl-language-support,  sticky-post, theme-options, threaded-comments, translation-ready
@@ -369,17 +369,22 @@ sup {
 sub {
 	top: .5ex;
 }
-input[type="text"],
+input[type="text"],input[type="password"],input[type="email"],
 textarea {
 	background: #fff;
 	border: 1px solid #DDD;
-	box-shadow: inset 2px 2px 3px #EEE;
-	-moz-box-shadow: inset 1px 1px 1px  #EEE;
-	-webkit-box-shadow: inset 2px 2px 3px  #EEE;
 	padding-left:5px;
-	border-radius:5px;
-	-moz-border-radius:5px;
-	-webkit-border-radius:5px
+	border-radius:2px;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	height:28px;
+	-webkit-transition:.2s border ease;
+	transition:.2s border ease;
+}
+
+input[type="text"]:hover,input[type="password"]:hover,input[type="email"]:hover,
+textarea:hover {
+border:1px solid #CCC !important;
 }
 a:link {
     color: #0D85CC;text-decoration:none;
@@ -1192,6 +1197,9 @@ article.format-chat h3.entry-format, article.format-aside h3.entry-format { disp
 	margin: 0;
 	height: auto;
 	max-width:100%;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
 }
 
 #content img:hover {
@@ -1227,28 +1235,24 @@ article.format-chat h3.entry-format, article.format-aside h3.entry-format { disp
 #content .wp-caption {
 	background:url(images/pins/Pin2.png) no-repeat center 1px  #F9F9F9;
 	border: 1px solid #DDD;
-	box-shadow: 2px 2px 3px #888;
-	 -moz-box-shadow: 2px 2px 3px #888;
- 	 -webkit-box-shadow: 2px 2px 3px #888;
 	border-radius:4px;
 	-moz-border-radius:4px;
 	-webkit-border-radius:4px;
 	line-height: 18px;
 	margin-bottom: 20px;
-	padding: 4px;
 	padding-top:22px;
 	text-align: center;
-	max-width:810px;
 	color: #333;
+	max-width:100%;
 }
 #content .wp-caption img {
-	margin: 5px 5px 0;
+	margin: 5px 0 0;
 	border:none !important;
 	padding:0px;
     box-shadow: none !important;
 	-moz-box-shadow: none !important;
     -webkit-box-shadow: none !important;
-
+	width:100%;
 }
 #content .wp-caption p.wp-caption-text {
 	font-size: 12px;
@@ -1347,22 +1351,26 @@ h3#comments-title {
 	margin: 0;
 }
 .commentlist li.comment {
-	border: 1px solid #e7e7e7;
 	padding:10px;
 	line-height: 24px;
 	margin: 0 0 10px 0;
-	padding: 0 10px 10px 56px;
+	padding: 0 0px 10px 56px;
 	position: relative;
-	-moz-box-shadow:1px 1px 3px #EEE;
-	-webkit-box-shadow:1px 1px 3px #EEE;
-	box-shadow:1px 1px 3px #EEE;
 	background:#FFF;
 	background-image:none;
 	list-style:none;
 }
 
+a.comment-reply-link {
+padding:0 3px;
+border-bottom:1px dotted;
+}
+
+a.comment-reply-link:hover {
+border-bottom:1px solid;
+}
+
 .commentlist li:last-child {
-	border-bottom: none;
 	margin-bottom: 0;
 }
 #comments .comment-body ul,
@@ -1377,19 +1385,18 @@ h3#comments-title {
 .commentlist ol {
 	list-style: decimal;
 }
-.commentlist .avatar {
+.commentlist img.avatar {
 	position: absolute;
 	top: 4px;
 	left: 5px;
-	border:1px solid #EEE !important;
-	-moz-border-radius:0 !important;
-	-webkit-border-radius:0 !important;
-	border-radius:0 !important;
-	background:#FFF !important;
-	padding-bottom:5px !important;
+	border:1px solid #EEE ;
+	-moz-border-radius:0 ;
+	-webkit-border-radius:0;
+	border-radius:0;
+	background:#FFF;
 }
 .comment-author {
-	padding-top:4px;
+	padding-top:2px;
 }
 .comment-author cite {
 	color: #000;
@@ -1420,7 +1427,8 @@ h3#comments-title {
 }
 .reply {
 	font-size: 12px;
-	padding: 0 0 24px 0;
+	padding: 0 0 10px 0;
+	text-align:right;
 }
 .reply a,
 a.comment-edit-link {
@@ -1443,9 +1451,6 @@ a.comment-edit-link:hover {
 	background-image:none !important;
 	margin: 0;
 	text-indent:0px !important;
-	border:1px solid #EEE;
-	margin-right:10px;
-	margin-bottom:10px;
 }
 
 .nopassword,
@@ -1478,7 +1483,6 @@ input[type="submit"] {
 	color: #333;
 }
 #respond {
-	border-top: 1px solid #e7e7e7;
 	margin: 24px 0;
 	overflow: hidden;
 	position: relative;
@@ -1487,7 +1491,7 @@ input[type="submit"] {
 	margin: 0;
 }
 #respond .comment-notes {
-	margin-bottom: 0.2em;
+	margin-bottom: 1.5em;
 	font-size:0.8em;
 	color:#999;
 }
@@ -1499,7 +1503,7 @@ input[type="submit"] {
 	min-width:400px;
 }
 h3#reply-title {
-	margin: 18px 0;
+	margin: 18px 0 0  0;
 }
 #comments-list #respond {
 	margin: 0 0 18px 0;
@@ -1514,7 +1518,6 @@ h3#reply-title {
 }
 #respond .required {
 	color: #0D85CC;
-	font-weight: bold;
 	display:inline;
 }
 
@@ -1533,15 +1536,13 @@ h3#reply-title {
 
 #respond input {
 	margin: 0 0 9px;
-	border-color:#EEE;
-	border-width:1px;
+	height:28px;
 }
 
 
 
 .comment-form-comment textarea {
 	width:80%;
-	border-color:#EEE;
 	display:block;
 	float:right;
 	margin-left:12px;
@@ -1563,11 +1564,6 @@ display:block;
 	margin-left:12px;
 }
 
-
-#respond input:hover, #respond textarea:hover {
-	border-color:#D7D7D7;
-}
-
 #respond .form-allowed-tags {
 	color: #666;
 	font-size: 12px;
@@ -1577,6 +1573,7 @@ display:block;
 	clear:both;
 	display:block;
 	float:none;
+	padding-top:8px;
 }
 #respond .form-allowed-tags code {
 	font-size: 11px;
@@ -2005,7 +2002,7 @@ code {
 	position:relative;
 }
 .socials img {
-	width:37px;
+	width:26px;
 }
 
 #header-container >div#sheader {
@@ -2015,11 +2012,12 @@ top:5px;
 right:5px;
 }
 #smenul, #smenur {
-	margin-top:-8px;
-	margin-bottom:-12px;
+	margin-top:3px;
+	margin-bottom:-6px;
 }
 #smenul {
 	float:left;
+	padding-left:20px;
 }
 #sfooter {
 	float:right;
@@ -2027,12 +2025,10 @@ right:5px;
 	top:-24px;
 	overflow:visible;
 }
-#sfooter img {
-	width:25px;
-}
+
 #sfooter a {
-	width:25px;
-	height:25px;
+	width:26px;
+	height:26px;
 	margin-left:5px;
 }
 
@@ -2052,10 +2048,6 @@ padding:10px;
 }
 
  .sticky hgroup {
-}
-
-#content article.post img, #content article .wp-caption , article embed {
-	max-width:99%;
 }
 
 

@@ -95,6 +95,7 @@ margin:0px auto;
 font-family:Segoe UI,Calibri, Arial !important;
 display:block;
 float:none;
+border-top:1px solid #E5E5E5;
 }
 
 #submitDiv {
@@ -117,7 +118,7 @@ color:#666;
 #accordion h3 {
 border:none;
 background-image:none;
-background:#2C5353;
+background:#F5F5F5;
 margin:0;
 padding:8px;
 clear:both;
@@ -127,18 +128,18 @@ font-size: 17px ;
 padding-left:30px ;
 font-weight:normal;
 text-transform:uppercase;
-color:#F5F5F5;
-border-top:1px solid #4C7373;
-border-bottom:1px solid #0C3333;
+color:#555;
+border-top:1px solid #FFF;
+border-bottom:1px solid #E5E5E5;
 line-height: 1.3;
 -moz-border-radius:0;
 -webkit-border-radius:0;
 border-radius:0;
-transition:background ease-in-out .2s;
+transition:background ease .3s;
 }
 
 #accordion h3:hover {
-background:#3C6363;
+background:#FFF;
 }
 
 #accordion select option {
@@ -146,13 +147,20 @@ font-size:1.1em;
 }
 
 .form-table th, .form-wrap label {
- color: #222 !important;
-font-size: 16px;
+ color: #444 !important;
+font-size: 15px;
 font-weight:normal;
+text-transform:uppercase;
+background:#FAFAFA;
+border-bottom:1px solid #FFF;
 }
 
 .form-table tr {
-border-bottom:1px dashed #DDD;
+border-bottom:1px solid #F7F7F7;
+}
+
+.form-table tr:last-child {
+border-bottom:none;
 }
 
 .form-table td {
@@ -327,11 +335,9 @@ display:block;
 }
 
 .ui-accordion-content {
-border-color:#EEE !important;
 background:#FFF !important;
 margin-bottom:10px !important;
-border:1px solid #DDD !important;
-border-top:none !important;
+border:none !important;
 overflow: hidden;
 padding:1em !important;
 }
@@ -339,7 +345,9 @@ padding:1em !important;
 .ui-accordion .ui-accordion-content-overflow { overflow: visible !important; }
 
 .ui-state-active {
-	background:#0C3333 !important;
+	background:#444 !important;
+	color:#FFF !important;
+	border:none !important;
 }
 
 .darkbg{
@@ -383,19 +391,22 @@ margin-top:20px;}
 .slmini, #cdimensions  {
 display:block;
 float:none;
-margin:10px;
 }
 
 .slmini {
 background:#F9F9F9;
-border:1px dashed #CCC;
-padding:5px;
+border-bottom:1px solid #E7E7E7;
+padding:15px 5px 15px 10px;
 }
 
 .slmini b {
 width:130px;
 display:inline-block;
-float:left;}
+float:left;
+text-transform:uppercase;
+font-weight:normal;
+font-style:italic;
+}
 
 .slidebox {
 background:#F7F7F7;
@@ -575,4 +586,11 @@ color:#C47D09;
 .wrap div.updated, .wrap div.error {
 margin-left: 15px; margin-right: 15px; 
 margin-top: 20px; }
+
+#jsAlert {
+margin: 0 15px 10px;
+background-color: #F4F8FA;
+border-color: #BCE8F1; border-style: solid; border-radius: 0; border-width: 0 0 0 3px; 
+padding:5px 10px;
+}
 

@@ -400,7 +400,7 @@ function cryout_setting_frontslider2_fn() {
 <?php
 $items = array("Custom Slides", "Latest Posts", "Random Posts", "Sticky Posts", "Latest Posts from Category" , "Random Posts from Category", "Specific Posts");
 	$itemsare = array( __("Custom Slides","mantra"), __("Latest Posts","mantra"), __("Random Posts","mantra"),__("Sticky Posts","mantra"), __("Latest Posts from Category","mantra"), __("Random Posts from Category","mantra"), __("Specific Posts","mantra"));
-	echo "<strong> Select the content you want to load in your slides: </strong> ";
+	echo "<em>".__("Select the content you want to load in your slides:","mantra")." </em> ";
 	echo "<select id='mantra_slideType' name='ma_options[mantra_slideType]'>";
 foreach($items as $id=>$item) {
 	echo "<option value='$item'";
@@ -2059,12 +2059,12 @@ foreach($items as $id=>$item) {
 }
 	echo "</select>";
 	echo "<div><small>".__("Enable Mantra's Search Engine Optimization. This is enabled by default and should only be disabled if you are using a SEO plugin.","mantra")."</small></div>";
-	echo "<br><small> All title tags are handled automatically by Mantra. </small>";
+	echo "<br><small>".__("All title tags are handled automatically by Mantra.","mantra")."</small>";
 
 	echo "<div class='slmini'>";
-		echo "<b> Homepage Meta Description </b>";
+		echo "<b>".__("Homepage Meta Description","mantra")."</b>";
 		echo "<textarea id='mantra_seo_home_desc' name='ma_options[mantra_seo_home_desc]' rows='2' cols=50' type='textarea' >{$mantra_options['mantra_seo_home_desc']}  </textarea>";
-		echo "<small> This is unique and you should fill this in. Describe your site the best you can and try not to go over 160 characters. </small>";
+		echo "<small>".__("This is unique and you should fill this in. Describe your site the best you can and try not to go over 160 characters.","mantra")."</small>";
 	echo "</div>";
 
 	echo "<div class='slmini'>";
@@ -2078,17 +2078,16 @@ foreach($items as $id=>$item) {
 			echo ">$moreitemsare[$id]</option>";
 				}
 		echo "</select>";
-		echo "<small>  <u>Auto</u> - Mantra will automatically add post expcerpts to 'page' and 'post'	meta descriptions.<br>
-					   <u>Manual</u> - you will enable a new custom field in your post/page admin section where you can type the exact description you want for every post and page.</small>";
+		echo "<small>".__("<u>Auto</u> - Mantra will automatically add post expcerpts to 'page' and 'post'	meta descriptions.<br>
+					   <u>Manual</u> - you will enable a new custom field in your post/page admin section where you can type the exact description you want for every post and page.<br>
+					   For category pages, the actual category descriptions will be used. Go to Posts > Categories and you can fill in a description for every category you have.","mantra")."</small>";
 	echo "</div>";
 
-	echo "<small>For category pages, the actual category descriptions will be used. Go to Posts > Categories and you can fill in a description for every category you have. </small>";
-
 	echo "<div class='slmini'>";
-		echo "<b>Post Author</b>";
+		echo "<b>".__("Post Author","mantra")."</b>";
 	$authors=wp_list_authors (array("echo"=>false,"html"=> false));
 	$authors_array = explode ("," , $authors);
-	array_unshift($authors_array,"Do not use");
+	array_unshift($authors_array,__("Do not use","mantra"));
 	echo "<select id='mantra_seo_author' name='ma_options[mantra_seo_author]'>";
 		foreach($authors_array as $item) {
 	echo "<option value='$item'";
@@ -2098,7 +2097,7 @@ foreach($items as $id=>$item) {
 	echo "</select>";
 
 
-		echo "<small> If you want to show an author in the meta tags. </small>";
+		echo "<small>".__("If you want to show an author in the meta tags.","mantra")."</small>";
 	echo "</div>";
 
 }
