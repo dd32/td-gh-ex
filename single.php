@@ -13,7 +13,7 @@
 					<article <?php post_class(); ?>>	
 						<div class="post-inner group">
 							
-							<h2 class="post-title"><?php the_title(); ?></h2>
+							<h1 class="post-title"><?php the_title(); ?></h1>
 							<p class="post-byline"><?php _e('by','hueman'); ?> <?php the_author_posts_link(); ?> &middot; <?php the_time('F j, Y'); ?></p>
 							
 							<?php get_template_part('inc/post-formats'); ?>

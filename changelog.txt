@@ -1,6 +1,11 @@
   Theme : Hueman (wordpress.org release)
-Version : 1.0.7
+Version : 1.0.8
  Author : Alexander "Alx" Agnarson - http://alxmedia.se
+
+November 12 2013 - 1.0.8
+===========================================================
+- Fixed and polished styling for widgets
+- Fixed primary color styling missing for slider controls
 
 November 11 2013 - 1.0.7
 ===========================================================

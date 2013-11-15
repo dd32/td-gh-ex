@@ -47,13 +47,17 @@
 		
 		<section class="container" id="footer-bottom">
 			<div class="container-inner">
+				
 				<a id="back-to-top" href="#"><i class="fa fa-angle-up"></i></a>
+				
 				<div class="pad group">
 					
 					<div class="grid one-half">
+						
 						<?php if ( ot_get_option('footer-logo') ): ?>
 							<img id="footer-logo" src="<?php echo ot_get_option('footer-logo'); ?>" alt="<?php get_bloginfo('name'); ?>">
 						<?php endif; ?>
+						
 						<div id="copyright">
 							<?php if ( ot_get_option( 'copyright' ) ): ?>
 								<p><?php echo ot_get_option( 'copyright' ); ?></p>
@@ -64,9 +68,10 @@
 						
 						<?php if ( !ot_get_option( 'credit' ) ): ?>
 						<div id="credit">
-								<p><?php _e('Powered by','hueman'); ?> <a href="http://wordpress.org">WordPress</a>. <?php _e('Designed by','hueman'); ?> <a href="http://alxmedia.se">Alx</a>.</p>
+							<p><?php _e('Powered by','hueman'); ?> <a href="http://wordpress.org">WordPress</a>. <?php _e('Designed by','hueman'); ?> <a href="http://alxmedia.se">Alx</a>.</p>
 						</div><!--/#credit-->
 						<?php endif; ?>
+						
 					</div>
 					
 					<div class="grid one-half last">	
@@ -74,6 +79,7 @@
 					</div>
 				
 				</div>
+				
 			</div><!--/.container-inner-->
 		</section><!--/.container-->
 		
