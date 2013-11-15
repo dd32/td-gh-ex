@@ -1,6 +1,10 @@
   Theme : Hueman (wordpress.org release)
-Version : 1.0.9
+Version : 1.1.0
  Author : Alexander "Alx" Agnarson - http://alxmedia.se
+
+November 15 2013 - 1.1.0
+===========================================================
+- Added styling option to change sidebar padding / width
 
 November 15 2013 - 1.0.9
 ===========================================================

@@ -903,11 +903,30 @@ function custom_theme_options() {
 		array(
 			'id'			=> 'container-width',
 			'label'			=> 'Website Max-width',
-			'desc'			=> 'Max-width of the container. If you use 2 sidebars, your container should be at least 1200px.<br /><i>Note: For 720px content(ideal) use <strong>1380px</strong> for 2 sidebars and <strong>1120px</strong> for 1 sidebar. If you use a combination of both, try something inbetween.</i>',
+			'desc'			=> 'Max-width of the container. If you use 2 sidebars, your container should be at least 1200px.<br /><i>Note: For 720px content (default) use <strong>1380px</strong> for 2 sidebars and <strong>1120px</strong> for 1 sidebar. If you use a combination of both, try something inbetween.</i>',
 			'std'			=> '1380',
 			'type'			=> 'numeric-slider',
 			'section'		=> 'styling',
 			'min_max_step'	=> '1024,1600,1'
+		),
+		// Styling: Sidebar Padding
+		array(
+			'id'		=> 'sidebar-padding',
+			'label'		=> 'Sidebar Width',
+			'desc'		=> 'Change sidebar content padding and width.',
+			'type'		=> 'radio',
+			'std'		=> '30',
+			'section'	=> 'styling',
+			'choices'	=> array(
+				array( 
+					'value' => '30',
+					'label' => '280px primary, 200px secondary (30px padding)'
+				),
+				array( 
+					'value' => '20',
+					'label' => '300px primary, 220px secondary (20px padding)'
+				)
+			)
 		),
 		// Styling: Primary Color
 		array(
@@ -997,6 +1016,8 @@ function custom_theme_options() {
 			'rows'		=> '2',
 			'std'		=> '
 .container-inner { max-width: {{container-width}}px; }
+
+.sidebar .widget { padding-left: {{sidebar-padding}}px; padding-right: {{sidebar-padding}}px; padding-top: {{sidebar-padding}}px; }
 
 img { -webkit-border-radius: {{image-border-radius}}px; border-radius: {{image-border-radius}}px; }
 

@@ -297,7 +297,7 @@
 	/* base */
 	.pad { padding: 15px 15px 5px; }
 	.sidebar-top,
-	.sidebar .widget { padding-left: 15px; padding-right: 15px; }
+	.sidebar .widget { padding-left: 15px!important; padding-right: 15px!important; }
 	.notebox { margin-bottom: 15px; }
 	#flexslider-featured { margin-top: 15px; }
 	.gallery-caption { display: none; }
