@@ -1,6 +1,8 @@
 /* SMALL SCREENS */
-@media screen and (max-width: 1024px) and (min-width: 768px){
+@media screen and (max-width: 1024px){
 	.wrapper-boxed { width:960px; }
+	.menu-main li ul { visibility:visible; opacity:1; display:none; } 
+	.menu-main li:hover > ul { display:block; } 
 }
 
 
@@ -26,7 +28,9 @@
 	
 	/* NAVIGATION */
 	.menu { float:none; }
+	.menu-main { float:none; }
 	.menu li a { line-height:40px; height:40px; }
+	
 
 	
 	/* CONTACT FORM */

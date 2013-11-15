@@ -34,7 +34,15 @@
 				</div>
 			</header>
 			<?php if(cpotheme_get_option('cpo_slider_always') == 1 || is_home() || is_front_page()){ ?>
-			<?php $slider_posts = new WP_Query('post_type=post&meta_key=post_featured&meta_value=1&posts_per_page=-1&order=ASC&orderby=menu_order'); ?>
+			<?php $feature_args = array(
+			'post_type' => array('post', 'page'),
+			'meta_key' => 'page_featured',
+			'meta_value' => 'slider',
+			'posts_per_page' => -1,
+			'orderby' => 'menu_order',
+			'ignore_sticky_posts' => 1,
+			'order' => 'ASC'); ?>
+			<?php $slider_posts = new WP_Query($feature_args); ?>
 			<?php if($slider_posts->post_count > 0): $slide_count = 0; ?>
 			<div id="slider" class="slider">
 				<ul class="slider-slides">
@@ -72,7 +80,15 @@
 			<?php if(is_home() || is_front_page()){ ?>
 			
 			<div class="container">					
-				<?php $feature_posts = new WP_Query('post_type=page&meta_key=page_featured&meta_value=1&posts_per_page=-1&order=ASC&orderby=menu_order'); ?>
+				<?php $feature_args = array(
+				'post_type' => array('post', 'page'),
+				'meta_key' => 'page_featured',
+				'meta_value' => 'features',
+				'posts_per_page' => -1,
+				'orderby' => 'menu_order',
+				'ignore_sticky_posts' => 1,
+				'order' => 'ASC'); ?>
+				<?php $feature_posts = new WP_Query($feature_args); ?>
 				<?php if($feature_posts->post_count > 0): $feature_count = 0; ?>
 				<div id="minifeatures" class="minifeatures">
 					<?php while($feature_posts->have_posts()): $feature_posts->the_post(); ?>

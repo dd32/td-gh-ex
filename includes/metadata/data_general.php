@@ -9,6 +9,14 @@ function cpotheme_metadata_pagelist_optional(){
 	return $cpotheme_data;
 }
 
+function cpotheme_metadata_featureditem(){
+	$cpotheme_data = array(
+	'none' => __('None', 'cpotheme'),
+	'slider' => __('In The Homepage Slider', 'cpotheme'),
+	'features' => __('In The Homepage Boxes', 'cpotheme'));
+	return $cpotheme_data;
+}
+
 function cpotheme_metadata_layoutstyle(){
 	$cpotheme_data = array(
 	'fixed' => __('Fixed', 'cpotheme'),

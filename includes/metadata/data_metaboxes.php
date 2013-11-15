@@ -1,21 +1,6 @@
 <?php
 
 //Create page meta fields
-function cpotheme_metadata_posts(){
-
-	$cpotheme_data = array();
-	
-	$cpotheme_data[] = array(
-	'name' => 'post_featured',
-	'std'  => '',
-	'label' => __('Featured Post', 'cpotheme'),
-	'desc' => __('Specifies whether this post appears in the homepage slider.', 'cpotheme'),
-	'type' => 'yesno');
-	
-	return $cpotheme_data;
-}
-
-//Create page meta fields
 function cpotheme_metadata_pages(){
 
 	$cpotheme_data = array();
@@ -23,9 +8,10 @@ function cpotheme_metadata_pages(){
 	$cpotheme_data[] = array(
 	'name' => 'page_featured',
 	'std'  => '',
-	'label' => __('Featured Page', 'cpotheme'),
-	'desc' => __('Specifies whether this page appears in the homepage feature listing.', 'cpotheme'),
-	'type' => 'yesno');
+	'label' => __('Featured Item', 'cpotheme'),
+	'desc' => __('Specifies whether this item is featured in the homepage.', 'cpotheme'),
+	'type' => 'select',
+	'option' => cpotheme_metadata_featureditem());
 	
 	$cpotheme_data[] = array(
 	'name' => 'page_icon',

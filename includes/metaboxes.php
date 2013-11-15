@@ -7,11 +7,11 @@ function cpotheme_metabox(){
 }
 
 function cpotheme_metabox_posts($post){
-	cpotheme_meta_fields($post, cpotheme_metadata_posts());
+	cpotheme_meta_fields($post, cpotheme_metadata_pages());
 }
 add_action('edit_post', 'cpotheme_metabox_posts_save');
 function cpotheme_metabox_posts_save($post){
-	cpotheme_meta_save(cpotheme_metadata_posts());
+	cpotheme_meta_save(cpotheme_metadata_pages());
 }
 
 
