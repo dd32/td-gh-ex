@@ -501,10 +501,10 @@
 /*  Body class
 /* ------------------------------------ */
 	function alx_body_class( $classes ) {
-		if ( ot_get_option('mobile-sidebar-hide') )
-			$classes[] = 'mobile-sidebar-hide';
-		if ( has_nav_menu('topbar') ) 
-			$classes[] = 'topbar-enabled';
+		if ( has_nav_menu('topbar') ) {	$classes[] = 'topbar-enabled'; }
+		if ( ot_get_option( 'mobile-sidebar-hide' ) == 's1' ) { $classes[] = 'mobile-sidebar-hide-s1'; }
+		if ( ot_get_option( 'mobile-sidebar-hide' ) == 's2' ) { $classes[] = 'mobile-sidebar-hide-s2'; }
+		if ( ot_get_option( 'mobile-sidebar-hide' ) == 's1-s2' ) { $classes[] = 'mobile-sidebar-hide'; }
 		return $classes;
 	}
 	add_filter( 'body_class', 'alx_body_class' );

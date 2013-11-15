@@ -1,6 +1,13 @@
   Theme : Hueman (wordpress.org release)
-Version : 1.0.8
+Version : 1.0.9
  Author : Alexander "Alx" Agnarson - http://alxmedia.se
+
+November 15 2013 - 1.0.9
+===========================================================
+- Added option to hide one or both sidebars for low-res mobile
+- Moved to a single css grid percent-width system
+- Centered footer bottom content on mobile
+- Fixed sidebar padding on mobile
 
 November 12 2013 - 1.0.8
 ===========================================================

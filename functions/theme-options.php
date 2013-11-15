@@ -91,12 +91,25 @@ function custom_theme_options() {
 			'id'		=> 'mobile-sidebar-hide',
 			'label'		=> 'Mobile Sidebar Content',
 			'desc'		=> 'Hide sidebar content on low-resolution mobile devices (320px)',
-			'type'		=> 'checkbox',
+			'type'		=> 'radio',
+			'std'		=> '1',
 			'section'	=> 'general',
 			'choices'	=> array(
 				array( 
 					'value' => '1',
-					'label' => 'Hide'
+					'label' => 'Show sidebars'
+				),
+				array( 
+					'value' => 's1',
+					'label' => 'Hide primary sidebar'
+				),
+				array( 
+					'value' => 's2',
+					'label' => 'Hide secondary sidebar'
+				),
+				array( 
+					'value' => 's1-s2',
+					'label' => 'Hide both sidebars'
 				)
 			)
 		),
