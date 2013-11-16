@@ -1,23 +1,14 @@
 <?php
 /**
-
-Template Name: Wide (No sidebar)
- *
- * @package B3
- */
-
-/*
-	Also used as single b3_slide post type template.
+	b3_slide post type single post template
 */
 
 get_header(); ?>
 
 	<div id="primary" class="content-area col-xs-12">
 		<main id="main" class="site-main" role="main">
-
 			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php get_template_part('content', 'page'); ?>
+				<?php get_template_part('content', 'single-b3_slide'); ?>
 
 				<?php
 					// If comments are open or we have at least one comment, load up the comment template

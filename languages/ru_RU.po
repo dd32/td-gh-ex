@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: B3 v1.0\n"
+"Project-Id-Version: B3 v1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-11-14 00:51:38+0000\n"
+"PO-Revision-Date: 2013-11-16 02:36:14+0000\n"
 "Last-Translator: Andrey K. <andrey271@bigmir.net>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -130,45 +130,45 @@ msgstr "Новые комментарии &rarr;"
 msgid "Comments are closed."
 msgstr "Комментирование закрыто."
 
-#: b3/comments.php:75
+#: b3/comments.php:79
 #@ b3
 msgid "Name"
 msgstr "Имя"
 
-#: b3/comments.php:82
+#: b3/comments.php:86
 #@ b3
 msgid "Email"
 msgstr "Email"
 
-#: b3/comments.php:89
+#: b3/comments.php:93
 #@ b3
 msgid "Website"
 msgstr "Сайт"
 
-#: b3/comments.php:97
+#: b3/comments.php:101
 #@ b3
 msgctxt "noun"
 msgid "Comment"
 msgstr "Комментарий"
 
-#: b3/comments.php:100
+#: b3/comments.php:104
 #, php-format
 #@ default
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr "Пожалуйста, <a href=\"%s\">авторизуйтесь</a> для комментирования."
 
-#: b3/comments.php:104
+#: b3/comments.php:108
 #, php-format
 #@ default
 msgid "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of this account\">Log out?</a>"
 msgstr "Вы вошли как <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of this account\">Выйти?</a>"
 
-#: b3/comments.php:107
+#: b3/comments.php:111
 #@ b3
 msgid "Your email address will not be published."
 msgstr "Ваш email не публикуется."
 
-#: b3/comments.php:109
+#: b3/comments.php:113
 #, php-format
 #@ b3
 msgid "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags and attributes: %s"
@@ -196,6 +196,7 @@ msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searc
 msgstr "Похоже, по данной ссылке нет ничего подходящего. Возможно, поможет поиск."
 
 #: b3/content-page.php:19
+#: b3/content-single-b3_slide.php:28
 #: b3/content-single.php:21
 #: b3/content.php:36
 #: b3/image.php:60
@@ -206,9 +207,11 @@ msgstr "Страницы:"
 #. translators: used between list items, there is a space after the comma
 #. translators: used between list items, there is a space after the comma
 #: b3/content-page.php:24
+#: b3/content-single-b3_slide.php:33
 #: b3/content-single.php:64
 #: b3/content.php:69
-#: b3/functions.php:583
+#: b3/functions.php:64
+#: b3/functions.php:453
 #: b3/image.php:66
 #: b3/inc/template-tags.php:70
 #: b3/inc/template-tags.php:89
@@ -261,22 +264,22 @@ msgstr "Тема %1$s от %2$s на основе %3$s."
 msgid "Primary Menu"
 msgstr "Главное меню"
 
-#: b3/functions.php:92
+#: b3/functions.php:91
 #@ b3
 msgid "Slide URL"
 msgstr "URL слайда"
 
-#: b3/functions.php:167
+#: b3/functions.php:166
 #@ b3
 msgid "Home"
 msgstr "Главная"
 
-#: b3/functions.php:262
+#: b3/functions.php:268
 #@ b3
 msgid "Top Sidebar"
 msgstr "Верхний сайдбар"
 
-#: b3/functions.php:270
+#: b3/functions.php:276
 #@ b3
 msgid "Bottom Sidebar"
 msgstr "Нижний сайдбар"
@@ -297,199 +300,199 @@ msgstr "Следующее <span class=\"meta-nav\">&rarr;</span>"
 msgid "Page %s"
 msgstr "Страница %s"
 
-#: b3/inc/options.php:18
-#: b3/inc/options.php:82
+#: b3/inc/options.php:183
+#: b3/inc/options.php:258
 #@ b3
 msgid "Yes"
 msgstr "Да"
 
-#: b3/inc/options.php:18
-#: b3/inc/options.php:82
+#: b3/inc/options.php:183
+#: b3/inc/options.php:258
 #@ b3
 msgid "No"
 msgstr "Нет"
 
-#: b3/inc/options.php:67
+#: b3/inc/options.php:245
 #@ b3
 msgid "B3 Custom Settings"
 msgstr "Собственные настройки темы B3"
 
-#: b3/inc/options.php:75
+#: b3/inc/options.php:251
 #@ b3
 msgid "Site Branding"
 msgstr "Брендинг сайта"
 
-#: b3/inc/options.php:76
+#: b3/inc/options.php:252
 #@ b3
 msgid "Display logo"
 msgstr "Показывать лого"
 
-#: b3/inc/options.php:77
+#: b3/inc/options.php:253
 #@ b3
 msgid "Display site title?"
 msgstr "Название сайта"
 
-#: b3/inc/options.php:78
+#: b3/inc/options.php:254
 #@ b3
 msgid "Display site description?"
 msgstr "Показывать описание сайта"
 
-#: b3/inc/options.php:79
+#: b3/inc/options.php:255
 #@ b3
 msgid "Navigation title"
 msgstr "Заголовок меню навигации"
 
-#: b3/inc/options.php:80
+#: b3/inc/options.php:256
 #@ b3
 msgid "Copyright text"
 msgstr "Текст копирайта"
 
-#: b3/inc/options.php:81
+#: b3/inc/options.php:257
 #@ b3
 msgid "Homepage carousel"
 msgstr "Карусель на главной"
 
-#: b3/inc/options.php:82
+#: b3/inc/options.php:258
 #@ b3
 msgid "Demo"
 msgstr "Демо"
 
-#: b3/inc/options.php:86
+#: b3/inc/options.php:262
 #@ b3
 msgid "Custom Colors"
 msgstr "Собственные цвета"
 
-#: b3/inc/options.php:87
+#: b3/inc/options.php:263
 #@ b3
 msgid "Text color"
 msgstr "Цвет текста"
 
-#: b3/inc/options.php:88
+#: b3/inc/options.php:264
 #@ b3
 msgid "Headers H1...H6 Color"
 msgstr "Цвет заголовков H1...H6"
 
-#: b3/inc/options.php:89
+#: b3/inc/options.php:265
 #@ b3
 msgid "Link color"
 msgstr "Цвет ссылок"
 
-#: b3/inc/options.php:90
+#: b3/inc/options.php:266
 #@ b3
 msgid "Navigation bar color"
 msgstr "Цвет панели навигации"
 
-#: b3/inc/options.php:91
+#: b3/inc/options.php:267
 #@ b3
 msgid "Navigation link color"
 msgstr "Цвет ссылок навигации"
 
-#: b3/inc/options.php:98
+#: b3/inc/options.php:274
 #@ b3
 msgid "Other Settings"
 msgstr "Другие настройки"
 
-#: b3/inc/options.php:99
+#: b3/inc/options.php:275
 #@ b3
 msgid "Main sidebar"
 msgstr "Боковая колонка"
 
-#: b3/inc/options.php:100
+#: b3/inc/options.php:276
 #@ b3
 msgid "Left"
 msgstr "Слева"
 
-#: b3/inc/options.php:100
+#: b3/inc/options.php:276
 #@ b3
 msgid "Right"
 msgstr "Справа"
 
-#: b3/inc/options.php:101
+#: b3/inc/options.php:277
 #@ b3
 msgid "Top sidebar"
 msgstr "Верхний сайдбар"
 
-#: b3/inc/options.php:102
+#: b3/inc/options.php:278
 #@ b3
 msgid "Bottom sidebar"
 msgstr "Нижний сайдбар"
 
-#: b3/inc/options.php:103
+#: b3/inc/options.php:279
 #@ b3
 msgid "Disable comments on pages"
 msgstr "Откл. комменты для страниц"
 
-#: b3/inc/options.php:104
+#: b3/inc/options.php:280
 #@ b3
 msgid "Widget as panel"
 msgstr "Виджеты в стиле панели"
 
-#: b3/inc/options.php:105
+#: b3/inc/options.php:281
 #@ b3
 msgid "Post as panel"
 msgstr "Записи в стиле панели"
 
-#: b3/inc/options.php:106
+#: b3/inc/options.php:282
 #@ b3
 msgid "Home link (in pages menu)"
 msgstr "Home ссылка в меню страниц"
 
-#: b3/inc/options.php:111
+#: b3/inc/options.php:287
 #@ b3
 msgid "Excerpts in archives"
 msgstr "Цитаты в архивах"
 
-#: b3/inc/options.php:112
+#: b3/inc/options.php:288
 #@ b3
 msgid "Featured images in excerpts"
 msgstr "Featured images в цитатах"
 
-#: b3/inc/options.php:113
+#: b3/inc/options.php:289
 #@ b3
 msgid "Display post date"
 msgstr "Показывать дату записи"
 
-#: b3/inc/options.php:114
+#: b3/inc/options.php:290
 #@ b3
 msgid "Display post author"
 msgstr "Показывать автора записи"
 
-#: b3/inc/options.php:115
+#: b3/inc/options.php:291
 #@ b3
 msgid "Rounded images"
 msgstr "Скругленные изображения"
 
-#: b3/inc/options.php:116
+#: b3/inc/options.php:292
 #@ b3
 msgid "Display credits"
 msgstr "Ссылки разработчиков"
 
-#: b3/inc/options.php:124
+#: b3/inc/options.php:299
 #@ b3
 msgid "Backup/Restore Settings"
 msgstr "Сохранение и восстановление настроек"
 
-#: b3/inc/options.php:125
+#: b3/inc/options.php:300
 #@ b3
 msgid "Export Settings"
 msgstr "Экспортировать настройки"
 
-#: b3/inc/options.php:125
+#: b3/inc/options.php:300
 #@ b3
 msgid "Save as File"
 msgstr "Сохранить как файл"
 
-#: b3/inc/options.php:128
+#: b3/inc/options.php:305
 #@ b3
 msgid "Upload and Apply"
 msgstr "Закачать и применить"
 
-#: b3/inc/options.php:136
+#: b3/inc/options.php:320
 #@ b3
 msgid "Reset Options"
 msgstr "Сбросить настройки"
 
-#: b3/inc/options.php:133
+#: b3/inc/options.php:317
 #@ b3
 msgid "Save Changes"
 msgstr "Сохранить изменения"
@@ -556,12 +559,12 @@ msgstr "Поискать &hellip;"
 msgid "B3 Theme settings"
 msgstr "Настройки темы B3"
 
-#: b3/functions.php:257
+#: b3/functions.php:263
 #@ b3
 msgid "Sidebar 1"
 msgstr "Боковая колонка"
 
-#: b3/functions.php:604
+#: b3/functions.php:474
 #, php-format
 #@ b3
 msgid "You have no slides yet. You can <a href=\"%1$s\">add your slides</a> or activate demo slides. The optimum image width/height ratio is %2$s, the best image size: %3$s."
@@ -573,29 +576,122 @@ msgstr "У вас еще нет слайдов. Вы можете <a href=\"%1$s
 msgid "size <a href=\"%2$s\"> %3$s &times; %4$s</a>"
 msgstr "размер  <a href=\"%2$s\"> %3$s &times; %4$s</a>"
 
-#: b3/inc/options.php:117
+#: b3/inc/options.php:293
 #@ b3
 msgid "Load Bootstrap from"
 msgstr "Брать файлы Bootstrap из"
 
-#: b3/inc/options.php:118
+#: b3/inc/options.php:294
 #@ b3
 msgid "Local theme files"
 msgstr "папки темы"
 
-#: b3/inc/options.php:118
+#: b3/inc/options.php:294
 #@ b3
 msgid "Bootstrap CDN"
 msgstr "Bootstrap CDN"
 
-#: b3/functions.php:106
+#: b3/functions.php:105
 #@ b3
 msgid "to set the Featured Image"
 msgstr "указать главное изображение (Featured Image)"
 
-#: b3/functions.php:107
+#: b3/functions.php:106
 #, php-format
 #@ b3
 msgid "Don&#39;t forget %1$s as it is the slide picture."
 msgstr "Не забудьте %1$s, так как оно показывается как слайд."
+
+#: b3/functions.php:48
+#: b3/functions.php:59
+#@ b3
+msgid "Slides"
+msgstr "Слайды"
+
+#: b3/functions.php:60
+#@ b3
+msgid "Slide"
+msgstr "Слайд"
+
+#: b3/functions.php:61
+#@ b3
+msgid "B3 Slides"
+msgstr "Слайды B3"
+
+#: b3/functions.php:62
+#@ b3
+msgid "Add Slide"
+msgstr "Добавить слайд"
+
+#: b3/functions.php:63
+#@ b3
+msgid "Add New Slide"
+msgstr "Добавить новый слайд"
+
+#: b3/functions.php:65
+#@ b3
+msgid "Edit Slide"
+msgstr "Изменить слайд"
+
+#: b3/functions.php:66
+#@ b3
+msgid "New Slide"
+msgstr "Новый слайд"
+
+#: b3/functions.php:67
+#: b3/functions.php:68
+#@ b3
+msgid "View Slide"
+msgstr "Смотреть слайд"
+
+#: b3/functions.php:69
+#@ b3
+msgid "Search Slides"
+msgstr "Искать слайды"
+
+#: b3/functions.php:70
+#@ b3
+msgid "No Slides Found"
+msgstr "Слайды не найдены"
+
+#: b3/functions.php:71
+#@ b3
+msgid "No Slides Found in Trash"
+msgstr "В корзине слайды не найдены"
+
+#: b3/inc/options.php:223
+#@ b3
+msgid "Theme settings have been updated."
+msgstr "Настройки темы сохранены."
+
+#: b3/inc/options.php:226
+#@ b3
+msgid "Theme settings have been reset."
+msgstr "Настройки темы сброшены."
+
+#: b3/inc/options.php:229
+#@ b3
+msgid "Theme settings have been imported from the uploded file."
+msgstr "Настройки темы импортированы из файла."
+
+#: b3/inc/options.php:233
+#@ b3
+msgid "Error: theme settings import failed."
+msgstr "Ошибка: не удалось импортировать настройки темы."
+
+#: b3/functions.php:501
+#@ b3
+msgid "All theme settings will be replaced by default dettings. Continue?"
+msgstr "Настройки темы будут заменены на настройки по умолчанию. Продолжаем?"
+
+#: b3/functions.php:502
+#@ b3
+msgid "Theme settings will be replaced by settings from the uploaded file. Continue?"
+msgstr "Текущие настройки будут заменены на набор настроек из закачиваемого файла. Продолжаем?"
+
+#: b3/inc/options.php:327
+#, php-format
+#@ b3
+msgid "Any questions? Look %1$s."
+msgstr "Есть вопросы? Посмотрите %1$s."
 

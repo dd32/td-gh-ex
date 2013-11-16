@@ -4,7 +4,7 @@ Theme URI: http://andrey.ws/b3-theme
 Author: Andrey K.
 Author URI: http://andrey.ws/
 Description: Responsive customizable theme based on Bootstrap 3 framework. Three widget areas, changeable colors and page look, export/import settings, translation ready.
-Version: 1.0
+Version: 1.1
 License: GNU General Public License v2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: b3
@@ -17,7 +17,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 */
 
 /*
-B3 theme is based on Underscores theme starter pack http://underscores.me/, (C) 2012-2013 Automattic, Inc.
+B3 theme is based on Underscores theme quick start pack http://underscores.me/ (C) 2012-2013 Automattic, Inc.
 and Bootstrap 3 framework http://getbootstrap.com/ (Apache License v2.0)
 
 IE8 compatibility is achieved by using of Respond.js https://github.com/scottjehl/respond (MIT/BSD license)

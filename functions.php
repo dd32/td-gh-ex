@@ -9,7 +9,7 @@ define('B3_URI', get_template_directory_uri());
 define('B3_PATH', get_template_directory());
 
 function add_b3_menu() {
-	add_theme_page(__('B3 Theme settings', 'b3'), __('B3 Theme settings', 'b3'), 'manage_options', 'b3_settings', 'b3_settings_page');
+	add_theme_page(__('B3 Theme settings', 'b3'), __('B3 Theme settings', 'b3'), 'edit_theme_options', 'b3_settings', 'b3_settings_page');
 }
 
 add_action('admin_menu', 'add_b3_menu');
@@ -41,11 +41,11 @@ global $b3_options;
 	add_filter('wp_nav_menu_container_allowedtags', 'b3_empty_array');
 	add_filter('wp_nav_menu_args', 'b3_wp_nav_menu_args');
 
-		require B3_PATH . '/inc/options.php';
-		add_action('admin_init', 'b3_register_settings');
+	require B3_PATH . '/inc/options.php';
+	add_action('admin_init', 'b3_admin_init');
 
 	register_post_type('b3_slide', array(
-		'label' => 'Slides',
+		'label' => __('Slides', 'b3'),
 		'description' => '',
 		'public' => true,
 		'show_ui' => true,
@@ -56,20 +56,19 @@ global $b3_options;
 		'query_var' => true,
 		'supports' => array('title', 'editor', 'thumbnail',),
 		'labels' => array (
-			'name' => 'Slides',
-			'singular_name' => 'Slide',
-			'menu_name' => 'B3 Slides',
-			'add_new' => 'Add Slide',
-			'add_new_item' => 'Add New Slide',
-			'edit' => 'Edit',
-			'edit_item' => 'Edit Slide',
-			'new_item' => 'New Slide',
-			'view' => 'View Slide',
-			'view_item' => 'View Slide',
-			'search_items' => 'Search Slides',
-			'not_found' => 'No Slides Found',
-			'not_found_in_trash' => 'No Slides Found in Trash',
-			'parent' => 'Parent Slide',
+			'name' =>  __('Slides', 'b3'),
+			'singular_name' => __('Slide', 'b3'),
+			'menu_name' => __('B3 Slides', 'b3'),
+			'add_new' => __('Add Slide', 'b3'),
+			'add_new_item' => __('Add New Slide', 'b3'),
+			'edit' => __('Edit', 'b3'),
+			'edit_item' => __('Edit Slide', 'b3'),
+			'new_item' => __('New Slide', 'b3'),
+			'view' => __('View Slide', 'b3'),
+			'view_item' => __('View Slide', 'b3'),
+			'search_items' => __('Search Slides', 'b3'),
+			'not_found' => __('No Slides Found', 'b3'),
+			'not_found_in_trash' =>  __('No Slides Found in Trash', 'b3'),
 	)));
 }
 
@@ -168,6 +167,11 @@ function b3_wp_page_menu($args) {
 	}
 
 	$walker = new Tb3_Walker_Nav_Menu();
+	$walker->before = '';
+	$walker->after = '';
+	$walker->link_before = '';
+	$walker->link_after = '';
+// echo '[[';	print_r($args); 
 	$tree = $walker->walk($pages, 0);
 	$out .= $tree;
 	$out .= '</ul>';
@@ -206,8 +210,10 @@ class Tb3_Walker_Nav_Menu extends Walker_Nav_Menu {
 			}
 		}
 		$classes[] = 'depth-'.$depth;
-		$args_dummy = array('link_before' => '', 'link_after' => '', 'before' => '', 'after' => '');
-		$args = array_merge($args_dummy, $args);
+
+		if (!is_object($args)) {
+			$args = (object)array_merge(array('link_before' => '', 'link_after' => '', 'before' => '', 'after' => ''), $args);
+		}
 		$class_names = join(' ', apply_filters('nav_menu_css_class', array_filter( $classes ), $item, $args ) );
 		$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 
@@ -221,17 +227,17 @@ class Tb3_Walker_Nav_Menu extends Walker_Nav_Menu {
 		$attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
 		$attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
 
-		$item_output = $args['before'];
+		$item_output = $args->before;
 		$item_output .= '<a'. $attributes
 			. ( !empty($item->has_children) ? ' class="dropdown-toggle" data-toggle="dropdown"' :'')
 			. '>';
-		$item_output .= $args['link_before']
+		$item_output .= $args->link_before
 			. apply_filters('the_title', !empty($item->post_title) ? $item->post_title : $item->title, $item->ID)
-			. $args['link_after'];
+			. $args->link_after;
 		
 		$item_output .= (!empty($item->has_children) && !$depth) ? ' <b class="caret"></b>' :'';
 		$item_output .= '</a>';
-		$item_output .= $args['after'];
+		$item_output .= $args->after;
 		$output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 	}
 }
@@ -328,6 +334,7 @@ add_action('wp_enqueue_scripts', 'b3_enqueue_styles');
 function b3_admin_enqueue_scripts() {
 	wp_enqueue_script('wp-color-picker', '', array('jquery'));
 	wp_enqueue_script('b3-admin', B3_URI . '/js/b3-admin.js', array('wp-color-picker'), null, true);
+	wp_localize_script('b3-admin', 'b3_admin', b3_admin_localize());
 	wp_enqueue_style('wp-color-picker');
 	wp_enqueue_style('b3-admin', B3_URI . '/css/b3-admin.css');
 }
@@ -366,143 +373,6 @@ function b3_options_css() {
 		$out .= '.navbar-nav > li > a:hover, a.navbar-brand:hover {color:'. b3_option('navbar_link_color2') . ' !important;} ';
 	}
 	return $out;
-}
-
-add_filter('sanitize_option_b3_options', 'b3_sanitize_options');
-
-function b3_sanitize_options($arr) {
-	$defaults = array(
-		'logo_enabled' => 'Y',
-		'site_title_enabled' => 'Y',
-		'site_description_enabled' => 'Y',
-		'navbar_brand' => 'Project Name',
-		'copyright' => date('Y ') . get_option('blogname'),
-		'show_home' => 'N',
-		'disable_comment_page' => 'N',
-		'sidebar_main' => 'right',
-		'sidebar_top' => 'Y',
-		'sidebar_bottom' => 'Y',
-		'panel_widget' => 'N', 
-		'panel_post' => 'N',
-		'carousel' => 'demo',
-		'image_rounded' => 'N',
-		'credits' => 'Y',
-		'post_thumbnail' => 'Y',
-		'post_date' => 'Y',
-		'post_author' => 'Y',
-		'excerpt' => 'N',
-		'text_color' => '#333333',
-		'headers_color' => '',
-		'link_color' => '',
-		'link_hover_color' => '',
-		'navbar_color' => '',
-		'navbar_color2' => '',
-		'navbar_border' => '',
-		'navbar_link_color' => '',
-		'navbar_link_color2' => '',
-		'bootstrap_src' => 'local',
-	);
-
-	if ( !empty($_POST['b3_action_reset']) ) {
-		return $defaults;
-	}
-	elseif (!empty($_POST['b3_action_upload'])) {
-		if ( ($file = $_FILES['b3_upload_settings']) && !$file['error'] && $file['size']) {
-			require_once ABSPATH . 'wp-admin/includes/class-wp-filesystem-base.php';
-			require_once ABSPATH . 'wp-admin/includes/class-wp-filesystem-direct.php';
-			$f = new WP_Filesystem_Direct('');
-			$content = $f->get_contents($file['tmp_name']);
-// I can obtain it by one call file get contents but Theme-Check grumbles
-			$import = maybe_unserialize($content);
-			$f->delete($file['tmp_name']);
-			if (is_array($import)) {
-				$arr = array_merge($arr, $import);
-			}
-		}
-	}
-	$out = array();
-	foreach ($defaults as $key => $value) {
-		$out[$key] = isset($arr[$key]) ? $arr[$key] : $value;
-		if (strpos($key, 'color') && !preg_match('/^#[0-9a-f]{6,6}$/i', $out[$key])) {
-			$out[$key] = '';
-		}
-	}
-
-
-	if ($out['text_color']) {
-		$out['text_color2'] = b3_smudge_color($out['text_color'], 40);
-	}
-	else {
-		$out['text_color'] = $out['text_color2'] = '';
-	}
-
-	if ($out['link_color']) {
-		$out['link_hover_color'] = b3_darken($out['link_color'], 15);
-	}
-	else {
-		$out['link_color'] = $out['link_hover_color'] = '';
-	}
-	if ($out['navbar_color']) {
-		$out['navbar_color2'] = b3_lighten($out['navbar_color'], 75);
-		$out['navbar_border'] = b3_lighten($out['navbar_color'], 25);
-	}
-	else {
-		$out['navbar_color'] = $out['navbar_color2'] = $out['navbar_border'] = '';
-	}
-	if ($out['navbar_link_color']) {
-		$out['navbar_link_color2'] = b3_darken($out['navbar_link_color'], 40);
-	}
-	else {
-		$out['navbar_link_color'] = $out['navbar_link_color2'] = '';
-	}
-	$out['copyright'] = htmlspecialchars($out['copyright']);
-	$out['navbar_brand'] = htmlspecialchars($out['navbar_brand']);
-	return $out;
-}
-
-function b3_darken($color, $percent) {
-	$p = min(abs($percent), 100);
-	$ratio = 1 - $p*0.01;
-	$dec = hexdec(substr($color, 1));
-	$b = dechex(floor((0xFF & $dec) * $ratio));
-	if (strlen($b) == 1) $b = '0'.$b;
-	$g = dechex(floor(((0xFF00 & $dec) / 256) * $ratio));
-	if (strlen($g) == 1) $g = '0'.$g;
-	$r = dechex(floor(((0xFF0000 & $dec) / 65536) * $ratio));
-	if (strlen($r) == 1) $r = '0'.$r;
-	return "#$r$g$b";
-}
-
-function b3_lighten($color, $percent) {
-	$p = min(abs($percent), 100);
-	$ratio =  1 + $p*0.01;
-	$dec = hexdec(substr($color, 1));
-	$b = dechex(min( floor((0xFF & $dec) * $ratio), 255 ));
-	if (strlen($b) == 1) $b = '0'.$b;
-	$g = dechex(min( floor(((0xFF00 & $dec) / 256) * $ratio), 255 ));
-	if (strlen($g) == 1) $g = '0'.$g;
-	$r = dechex(min( floor(((0xFF0000 & $dec) / 65536) * $ratio), 255 ));
-	if (strlen($r) == 1) $r = '0'.$r;
-	return "#$r$g$b";
-}
-
-/*
-
-*/
-function b3_smudge($c, $r) {
-	$x = dechex(floor($c*(1-$r) + (255-$c)*$r));				
-	if (strlen($x) == 1) $b = '0'.$x;
-	return $x;
-}
-
-function b3_smudge_color($color, $percent) {
-	$p = min(abs($percent), 100);
-	$ratio = $p*0.01;
-	 $dec = hexdec(substr($color, 1));
-	$b = b3_smudge(0xFF & $dec, $ratio);
-	$g = b3_smudge((0xFF00 & $dec)/256, $ratio);
-	$r = b3_smudge((0xFF0000 & $dec)/65536, $ratio);
-	return "#$r$g$b";
 }
 
 function b3_comment_form_before() {
@@ -625,3 +495,11 @@ function b3_footer_script() {
 }
 
 add_action('wp_footer', 'b3_footer_script');
+
+function b3_admin_localize() {
+	$out = array(
+		'reset'	=> __('All theme settings will be replaced by default dettings. Continue?', 'b3'),
+		'upload' => __('Theme settings will be replaced by settings from the uploaded file. Continue?', 'b3'),
+	);
+	return $out;
+}

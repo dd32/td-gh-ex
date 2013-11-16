@@ -9,15 +9,15 @@ jQuery(document).ready(function($) {
 });
 
 function b3_reset() {
-	if (confirm('All theme settings will be replaced by default dettings. Continue?')) {
-		jQuery('#b3_action_reset').val('1');
+	if (confirm(b3_admin.reset)) {
+		jQuery('#b3_action').val('reset');
 		jQuery('#b3_options_form').submit();
 	}
 }
 
 function b3_upload() {
-	if (confirm('Theme settings will be replaced by settings from the uploaded file. Continue?')) {
-		jQuery('#b3_action_upload').val('1');
+	if (confirm(b3_admin.upload)) {
+		jQuery('#b3_action').val('upload');
 		jQuery('#b3_options_form').submit();
 	}
 }

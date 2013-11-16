@@ -69,10 +69,14 @@ if ( post_password_required() )
 	<?php else: ?>
 	<div class="row spacer-bottom"><div class="col-sm-10 col xs-12">
 <?php
+	$commenter = wp_get_current_commenter();
+	$req = get_option( 'require_name_email' );
+	$aria_req = ( $req ? " aria-required='true'" : '' );
+	$required_text = ' <span class="required">*</span>';
 	$fields =  array(
 		'author' => '<div class="comment-form-author row spacer-top"><div class="col-xs-6">
 				' . '<label for="author">'
-			. __('Name', 'b3') . ( $req ? ' <span class="required">*</span>' : '') . '</label> '
+			. __('Name', 'b3') . ( $req ? $required_text : '') . '</label> '
 			. '<input class="form-control" id="author" name="author" type="text" value="'
 			. esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' />
 			</div></div>',
@@ -80,8 +84,8 @@ if ( post_password_required() )
 		'email'  => '<div class="comment-form-email row spacer-top">
 				<div class="col-xs-6">
 					<label for="email">' . __('Email', 'b3')
-			. ( $req ? ' <span class="required">*</span>' : '') . '</label>'
-			. '<input class="form-control" id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] )
+			. ( $req ? $required_text : '') . '</label>'
+			. '<input class="form-control" id="email" name="email" type="text" value="' . esc_attr( $commenter['comment_author_email'] )
 			. '" size="30"' . $aria_req . ' />
 			</div></div>',
 
@@ -98,11 +102,11 @@ $args = array('fields' => $fields,
 
 		'must_log_in' => '<div class="must-log-in">'
 			. sprintf( __('You must be <a href="%s">logged in</a> to post a comment.'),
-				wp_login_url( apply_filters('the_permalink', get_permalink( $post_id ) ) ) ) . '</div>',
+				wp_login_url( apply_filters('the_permalink', get_permalink( $post->ID ) ) ) ) . '</div>',
 
 		'logged_in_as'  => '<div class="logged-in-as">'
 			 . sprintf( __('Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>'),
-			 get_edit_user_link(), $user_identity, wp_logout_url( apply_filters('the_permalink', get_permalink( $post_id ) ) ) )
+			 get_edit_user_link(), $user_identity, wp_logout_url( apply_filters('the_permalink', get_permalink( $post->ID ) ) ) )
 			 . '</div>',
 		'comment_notes_before' => '<div class="comment-notes">' . __('Your email address will not be published.', 'b3')
 			. ( $req ? $required_text : '') . '</div>',
