@@ -52,7 +52,7 @@ for best look. Slides with 3.8 width/height ratio are being displayed also
 entirely. Bottom part of less ratio images is hidden.
 
 Also B3 Slides post type can be used to display wide pages (no sidebar)
-with featured image under the content. In case you bump into Not Found
+with featured image before the content. In case you bump into Not Found
 on a single slide page you need to update permalinks setting.
 
 == Page Templates ==

@@ -24,11 +24,6 @@ add_action('admin_menu', 'add_b3_menu');
 
 function b3_setup() {
 global $b3_options;
-	$b3_options = get_option('b3_options');
-	if (!$b3_options) {
-		update_option('b3_options', array());
-		$b3_options = get_option('b3_options');
-	}
 	load_theme_textdomain('b3', get_template_directory() . '/languages');
 	add_theme_support('automatic-feed-links');
 	add_theme_support('custom-header', array('default-image' => B3_URI . '/images/b3-logo.png'));
@@ -40,8 +35,13 @@ global $b3_options;
 	add_theme_support('post-thumbnails');
 	add_filter('wp_nav_menu_container_allowedtags', 'b3_empty_array');
 	add_filter('wp_nav_menu_args', 'b3_wp_nav_menu_args');
-
 	require B3_PATH . '/inc/options.php';
+	$b3_options = get_option('b3_options');
+	if (!$b3_options) {
+		update_option('b3_options', array());
+		$b3_options = get_option('b3_options');
+	}
+
 	add_action('admin_init', 'b3_admin_init');
 
 	register_post_type('b3_slide', array(
