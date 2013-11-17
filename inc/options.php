@@ -314,10 +314,9 @@ function b3_settings_page() {
 	<table class="form-table">
 	<tr>
 		<td style="width: 400px;">
-		<input name="submit" type="submit" value="<?php _e('Save Changes', 'b3'); ?>" class="button button-primary" id="b3_save_options"> </td>
+		<input name="b3_save_options" type="submit" value="<?php _e('Save Changes', 'b3'); ?>" class="button button-primary" id="b3_save_options"> </td>
 
-		<td><input type="hidden" id="b3_action_reset" name="b3_action_reset" value="" />
-				<input type="button" class="button button-secondary" onclick="b3_reset();" value="<?php _e('Reset Options', 'b3'); ?>" />
+		<td><input type="button" class="button button-secondary" onclick="b3_reset();" value="<?php _e('Reset Options', 'b3'); ?>" />
 				</td>
 	</tr>
 	<tr><td></td>
