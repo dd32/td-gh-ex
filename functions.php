@@ -67,17 +67,17 @@ function sempress_setup() {
 
   // Add default posts and comments RSS feed links to head
   add_theme_support( 'automatic-feed-links' );
-  
+
   // This theme uses post thumbnails
   add_theme_support( 'post-thumbnails' );
   set_post_thumbnail_size( 668, 9999 ); // Unlimited height, soft crop
-  
+
   // Register custom image size for image post formats.
   add_image_size( 'sempress-image-post', 668, 1288 );
-  
+
   // Switches default core markup for search form to output valid HTML5.
   add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
-  
+
   // This theme uses wp_nav_menu() in one location.
   register_nav_menus( array(
     'primary' => __( 'Primary Menu', 'sempress' ),
@@ -93,25 +93,31 @@ function sempress_setup() {
    * @see http://jetpack.me/support/infinite-scroll/
    */
   add_theme_support( 'infinite-scroll', array('container' => 'content', 'footer' => 'colophon') );
-  
+
+  if (get_theme_mod( 'sempress_columns', 'single' ) == "single") {
+    $width = 670;
+  } else {
+    $width = 950;
+  }
+
   // This theme supports a custom header
   $custom_header_args = array(
-    'width'         => 950,
+    'width'         => $width,
     'height'        => 200,
     'header-text'   => false
   );
   add_theme_support( 'custom-header', $custom_header_args );
-  
+
   // This theme supports custom backgrounds
   $custom_background_args = array(
     'default-color' => $themecolors['bg'],
     'default-image' => get_template_directory_uri() . '/img/noise.png',
   );
   add_theme_support( 'custom-background', $custom_background_args );
-  
+
   // This theme uses its own gallery styles.
   //add_filter( 'use_default_gallery_style', '__return_false' );
-  
+
   // Nicer WYSIWYG editor
   add_editor_style( 'css/editor-style.css' );
 }
@@ -162,17 +168,23 @@ add_filter( 'wp_title', 'sempress_wp_title', 10, 2 );
 function sempress_customize_register( $wp_customize ) {
   global $themecolors;
 
+  $wp_customize->add_section( 'sempress_settings_section', array(
+    'title'       => __( 'Sempress Settings', 'sempress' ),
+    'description' => __('Allows you to customize some example settings for MyTheme.', 'mytheme'), //Descriptive tooltip
+    'priority'    => 35
+  ) );
+
   $wp_customize->add_setting( 'sempress_textcolor' , array(
     'default'     => '#'.$themecolors['text'],
     'transport'   => 'refresh',
   ) );
-  
+
   $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'sempress_textcolor', array(
     'label'      => __( 'Text Color', 'sempress' ),
     'section'    => 'colors',
     'settings'   => 'sempress_textcolor',
   ) ) );
-  
+
   $wp_customize->add_setting( 'sempress_shadowcolor' , array(
     'default'     => '#'.$themecolors['shadow'],
     'transport'   => 'refresh',
@@ -183,7 +195,7 @@ function sempress_customize_register( $wp_customize ) {
     'section'    => 'colors',
     'settings'   => 'sempress_shadowcolor',
   ) ) );
-  
+
   $wp_customize->add_setting( 'sempress_bordercolor' , array(
     'default'     => '#'.$themecolors['border'],
     'transport'   => 'refresh',
@@ -194,6 +206,22 @@ function sempress_customize_register( $wp_customize ) {
     'section'    => 'colors',
     'settings'   => 'sempress_bordercolor',
   ) ) );
+
+  $wp_customize->add_setting( 'sempress_columns' , array(
+    'default'     => 'multi',
+    'transport'   => 'refresh',
+  ) );
+
+  $wp_customize->add_control( 'sempress_columns', array(
+    'label'      => __( 'Page Structure', 'sempress' ),
+    'section'    => 'sempress_settings_section',
+    'settings'   => 'sempress_columns',
+    'type'       => 'select',
+    'choices'    => array(
+      'single'   => __( 'Single Column (Sidebar at the bottom)', 'sempress' ),
+      'multi'    => __( 'Multi Column (Sidebar at the right)', 'sempress' ),
+    )
+  ) );
 }
 add_action( 'customize_register', 'sempress_customize_register' );
 
@@ -244,8 +272,8 @@ function sempress_widgets_init() {
     'id' => 'sidebar-1',
     'before_widget' => '<section id="%1$s" class="widget %2$s">',
     'after_widget' => "</section>",
-    'before_title' => '<h1 class="widget-title">',
-    'after_title' => '</h1>',
+    'before_title' => '<h3 class="widget-title">',
+    'after_title' => '</h3>',
   ) );
 
   register_sidebar( array(
@@ -254,8 +282,8 @@ function sempress_widgets_init() {
     'description' => __( 'An optional second sidebar area', 'sempress' ),
     'before_widget' => '<section id="%1$s" class="widget %2$s">',
     'after_widget' => "</section>",
-    'before_title' => '<h1 class="widget-title">',
-    'after_title' => '</h1>',
+    'before_title' => '<h3 class="widget-title">',
+    'after_title' => '</h3>',
   ) );
 }
 add_action( 'init', 'sempress_widgets_init' );
@@ -280,10 +308,10 @@ function sempress_enqueue_scripts() {
   if ( isset( $_SERVER['HTTP_USER_AGENT'] ) &&
      ( false !== strpos( $_SERVER['HTTP_USER_AGENT'], 'MSIE' ) ) &&
      ( false === strpos( $_SERVER['HTTP_USER_AGENT'], 'MSIE 9' ) ) ) {
-    
+
     wp_enqueue_script('html5', get_template_directory_uri() . '/js/html5.js', false, '3.6');
   }
-  
+
   // Loads our main stylesheet.
   wp_enqueue_style( 'sempress-style', get_stylesheet_uri() );
 }
@@ -343,7 +371,7 @@ function sempress_comment( $comment, $args, $depth ) {
   <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
     <article id="comment-<?php comment_ID(); ?>" class="comment <?php $comment->comment_type; ?>" itemprop="comment" itemscope itemtype="http://schema.org/UserComments">
       <footer>
-        <address class="comment-author p-author author vcard hcard h-card"  itemprop="creator" itemscope itemtype="http://schema.org/Person">
+        <address class="comment-author p-author author vcard hcard h-card" itemprop="creator" itemscope itemtype="http://schema.org/Person">
           <?php echo get_avatar( $comment, 50 ); ?>
           <?php printf( __( '%s <span class="says">says:</span>', 'sempress' ), sprintf( '<cite class="fn p-name" itemprop="name">%s</cite>', get_comment_author_link() ) ); ?>
         </address><!-- .comment-author .vcard -->
@@ -399,11 +427,17 @@ endif;
  *
  * @since SemPress 1.0.0
  */
-function sempress_the_post_thumbnail() {
+function sempress_the_post_thumbnail($before = "", $after = "") {
   if ( '' != get_the_post_thumbnail() ) {
-?>
-    <p><?php the_post_thumbnail( "thumbnail", array( "class" => "alignright", "itemprop" => "image" ) ); ?></p>
-<?php 
+    $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'post-thumbnail');
+    $class = "aligncenter";
+
+    if ($image['1'] < "300")
+      $class="alignright";
+
+    echo $before;
+    the_post_thumbnail( "post-thumbnail", array( "class" => $class . " photo u-photo", "itemprop" => "image" ) );
+    echo $after;
   }
 }
 
@@ -418,7 +452,7 @@ function sempress_content_width() {
     global $content_width;
     $content_width = 880;
   }
-  
+
   /*
   if ( has_post_format( 'image' ) || has_post_format( 'video' ) || is_attachment() ) {
     global $content_width;
@@ -434,15 +468,17 @@ add_action( 'template_redirect', 'sempress_content_width' );
  * @since SemPress 1.0.0
  */
 function sempress_body_classes( $classes ) {
+  $classes[] = get_theme_mod( 'sempress_columns', 'multi' ). "-column";
+
   // Adds a class of single-author to blogs with only 1 published author
   if ( ! is_multi_author() ) {
     $classes[] = 'single-author';
   }
-  
+
   if ( get_header_image() ) {
     $classes[] = 'custom-header';
   }
-  
+
   if (!is_singular()) {
     $classes[] = "hfeed";
     $classes[] = "h-feed";
@@ -461,13 +497,15 @@ add_filter( 'body_class', 'sempress_body_classes' );
  * @since SemPress 1.0.0
  */
 function sempress_post_classes( $classes ) {
+  $classes = array_diff($classes, array('hentry'));
+
   if (!is_singular()) {
     return sempress_get_post_classes($classes);
   } else {
     return $classes;
   }
 }
-add_filter( 'post_class', 'sempress_post_classes' );
+add_filter( 'post_class', 'sempress_post_classes', 99 );
 
 /**
  * Adds custom classes to the array of comment classes.
@@ -478,10 +516,11 @@ function sempress_comment_classes( $classes ) {
   $classes[] = "h-as-comment";
   $classes[] = "p-comment";
   $classes[] = "h-entry";
+  $classes[] = "comment";
 
-  return $classes;
+  return array_unique($classes);
 }
-add_filter( 'comment_class', 'sempress_comment_classes' );
+add_filter( 'comment_class', 'sempress_comment_classes', 99 );
 
 /**
  * encapsulates post-classes to use them on different tags
@@ -489,7 +528,10 @@ add_filter( 'comment_class', 'sempress_comment_classes' );
 function sempress_get_post_classes($classes = array()) {
   // Adds a class for microformats v2
   $classes[] = 'h-entry';
-  
+
+  // add hentry to the same tag as h-entry
+  $classes[] = 'hentry';
+
   // adds microformats 2 activity-stream support
   // for pages and articles
   if ( get_post_type() == "page" ) {
@@ -498,7 +540,7 @@ function sempress_get_post_classes($classes = array()) {
   if ( !get_post_format() && get_post_type() == "post" ) {
     $classes[] = "h-as-article";
   }
-  
+
   // adds some more microformats 2 classes based on the
   // posts "format"
   switch ( get_post_format() ) {
@@ -520,8 +562,8 @@ function sempress_get_post_classes($classes = array()) {
       $classes[] = "h-as-bookmark";
       break;
   }
-  
-  return $classes;
+
+  return array_unique($classes);
 }
 
 /**
@@ -661,7 +703,7 @@ function sempress_post_id( $post_id = null ) {
     echo 'id="' . $post_id  . '"';
   } else {
     echo 'id="' . sempress_get_post_id()  . '"';
-  } 
+  }
 }
 
 /**
@@ -671,7 +713,7 @@ function sempress_post_id( $post_id = null ) {
  */
 function sempress_get_post_id() {
   $post_id = "post-" . get_the_ID();
-  
+
   return apply_filters('sempress_post_id', $post_id, get_the_ID());
 }
 
@@ -682,7 +724,7 @@ function sempress_get_post_id() {
  * @return string
  */
 function sempress_comment_autocomplete($fields) {
-  $fields['author'] = preg_replace('/<input/', '<input autocomplete="nickname" ', $fields['author']);
+  $fields['author'] = preg_replace('/<input/', '<input autocomplete="nickname name" ', $fields['author']);
   $fields['email'] = preg_replace('/<input/', '<input autocomplete="email" ', $fields['email']);
   $fields['url'] = preg_replace('/<input/', '<input autocomplete="url" ', $fields['url']);
 
@@ -709,16 +751,19 @@ add_filter( 'search_form_format', 'sempress_searchform_format' );
  */
 function sempress_get_semantics($id = null) {
   $classes = array();
-  
+
   // add default values
   switch ($id) {
     case "body":
       if (!is_singular()) {
         $classes['itemscope'] = array('');
         $classes['itemtype'] = array('http://schema.org/Blog');
-      } else {
+      } elseif (is_single()) {
         $classes['itemscope'] = array('');
         $classes['itemtype'] = array('http://schema.org/BlogPosting');
+      } elseif (is_page()) {
+        $classes['itemscope'] = array('');
+        $classes['itemtype'] = array('http://schema.org/WebPage');
       }
       break;
     case "site-title":
@@ -747,11 +792,11 @@ function sempress_get_semantics($id = null) {
       }
       break;
   }
-  
+
   $classes = apply_filters( "sempress_semantics", $classes, $id );
   $classes = apply_filters( "sempress_semantics_{$id}", $classes, $id );
 
-  return $classes; 
+  return $classes;
 }
 
 /**
@@ -762,14 +807,14 @@ function sempress_get_semantics($id = null) {
  */
 function sempress_semantics($id) {
   $classes = sempress_get_semantics($id);
-  
+
   if (!$classes) {
     return;
   }
-  
+
   foreach ( $classes as $key => $value ) {
     echo ' ' . esc_attr( $key ) . '="' . esc_attr( join( ' ', $value ) ) . '"';
-  }  
+  }
 }
 
 /**
