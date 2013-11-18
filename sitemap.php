@@ -5,11 +5,11 @@
  * Template Name: Sitemap Page
  *
  * @package	Anarcho Notepad
- * @since	2.1.2
+ * @since	2.1.3
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013, Arthur Gareginyan
  * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
- * @license   	http://opensource.org/licenses/AGPL-3.0
+ * @license   	http://www.gnu.org/licenses/gpl-3.0.html
  */
 ?>
 
@@ -52,9 +52,9 @@
       echo '<li class="category">'."\n".'<h3><span class="grey">Category: </span>'.$cat->cat_name.'</h3>'."\n";
       echo '<ul class="cat-posts">'."\n";
        
-      query_posts('posts_per_page=-1&cat='.$cat->cat_ID); //-1 shows all posts per category. 1 to show most recent post.
+      $query = new WP_Query( array( 'posts_per_page' => '-1' ) ); //-1 shows all posts per category. 1 to show most recent post.
 
-      while(have_posts()): the_post(); 
+      while ($query->have_posts()): $query->the_post(); 
 
          $category = get_the_category();
          //Display a post once, even if it is in multiple categories/subcategories. Lists the post in the first Category displayed.

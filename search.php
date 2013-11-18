@@ -3,11 +3,11 @@
  * The template for displaying Search Results pages.
  *
  * @package	Anarcho Notepad
- * @since	2.1.2
+ * @since	2.1.3
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013, Arthur Gareginyan
  * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
- * @license   	http://opensource.org/licenses/AGPL-3.0
+ * @license   	http://www.gnu.org/licenses/gpl-3.0.html
  */
 ?>
 
@@ -26,6 +26,7 @@
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     <h3><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h3>
       <div class="post-inner">
+
         <a href="<?php the_permalink(); ?>"><div class="date-tab"><span class="month"><?php the_time('F') ?></span><span class="day"><?php the_time('j') ?></span></div></a>
         
 		<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>

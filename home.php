@@ -3,11 +3,11 @@
  * The template for displaying Home page.
  *
  * @package	Anarcho Notepad
- * @since	2.1.2
+ * @since	2.1.3
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013, Arthur Gareginyan
  * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
- * @license   	http://opensource.org/licenses/AGPL-3.0
+ * @license   	http://www.gnu.org/licenses/gpl-3.0.html
  */
 ?>
 

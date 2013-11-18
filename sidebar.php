@@ -3,11 +3,11 @@
  * The sidebar containing the secondary widget area, displays on posts and pages.
  *
  * @package	Anarcho Notepad
- * @since	2.1.2
+ * @since	2.1.3
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013, Arthur Gareginyan
  * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
- * @license   	http://opensource.org/licenses/AGPL-3.0
+ * @license   	http://www.gnu.org/licenses/gpl-3.0.html
  */
 ?>
 
@@ -44,17 +44,16 @@
 
 <!--RECENT POSTS-->
 <div class="recent-posts-upper"></div>
-<nav class="recent-posts">
-    <?php query_posts('showposts=10'); ?>
-    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+ <nav class="recent-posts">
+    <?php $query = new WP_Query( array( 'posts_per_page' => '9' ) ); ?>
+    <?php while ($query->have_posts()): $query->the_post(); ?>
     <ul>
-      <li><a href="<?php the_permalink() ?>">
-        <?php the_title() ?>
-        <br />
-      </a></li>
+       <li>
+          <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+       </li>
     </ul>
-    <?php endwhile; endif; ?>
-</nav>
+    <?php endwhile; ?>
+ </nav>
 <div class="recent-posts-bottom"></div>
 <!--END-RECENT POSTS-->
 

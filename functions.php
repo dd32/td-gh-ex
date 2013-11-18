@@ -3,11 +3,11 @@
  * Anarcho Notepad functions and definitions.
  *
  * @package	Anarcho Notepad
- * @since	2.1.2
+ * @since	2.1.3
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013, Arthur Gareginyan
  * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
- * @license   	http://opensource.org/licenses/AGPL-3.0
+ * @license   	http://www.gnu.org/licenses/gpl-3.0.html
  */
 
 // Localization Init
@@ -97,39 +97,12 @@ class Customize_Textarea_Control extends WP_Customize_Control {
 	'title'				=> __( 'Meta', 'anarcho-notepad' ),
 	'priority'			=> 1, ));
 
-		// Adding Google Analytics to the Theme
-		$wp_customize->add_setting( 'google_analytics_setting', array(
-			'default'			=> 'For example "UA-9338113-X"', ));
-		$wp_customize->add_control( new Customize_Textarea_Control( $wp_customize, 'analytics_control', array(
-			'priority'			=> 5,
-			'label'				=> __( 'Enter Your Google Analytics Code', 'anarcho-notepad' ),
-			'section'			=> 'meta_section',
-			'settings'			=> 'google_analytics_setting', )));
-
-		// Adding Webmaster Tools to the Theme
-		$wp_customize->add_setting( 'google_webmaster_tool_setting', array(
-			'default'			=> 'For example "gN9drVvyyDUFQzMSBL8Y8-EttW3pUDtnUypD-331Kqh"', ));
-		$wp_customize->add_control( new Customize_Textarea_Control( $wp_customize, 'google_webmaster_tool_control', array(
-			'priority'			=> 6,
-			'label'				=> __( 'Enter Your Google Webmaster Verification Code', 'anarcho-notepad' ),
-			'section'			=> 'meta_section',
-			'settings'			=> 'google_webmaster_tool_setting', )));
-
-		// About Box in column on Russian
-		$wp_customize->add_setting( 'about_box_ru', array(
-			'default'			=> 'Впишите сюда небольшой текст о себе и/или о сайте', ));
-		$wp_customize->add_control( new Customize_Textarea_Control( $wp_customize, 'about_box_ru', array(
-			'priority'			=> 2,
-		        'label'				=> 'About box (Русский)',
-		        'section'			=> 'meta_section',
-			'settings'			=> 'about_box_ru', )));
-
-		// About Box in column on English
+		// About Box in column
 		$wp_customize->add_setting( 'about_box_eng', array(
 			'default'			=> 'Paste here small text about You and/or about site', ));
 		$wp_customize->add_control( new Customize_Textarea_Control( $wp_customize, 'about_box_eng', array(
 			'priority'			=> 1,
-		        'label'				=> 'About box (English)',
+		        'label'				=> 'About box',
 		        'section'			=> 'meta_section',
 			'settings'			=> 'about_box_eng', )));
 
@@ -606,26 +579,6 @@ function anarcho_notepad_inline_css() {
 var tit=document.title,c=0;function writetitle(){document.title=tit.substring(0,c);c==tit.length?(c=0,setTimeout("writetitle()",3E3)):(c++,setTimeout("writetitle()",200))}writetitle(); 
 </script>' . "\n";
 
-		/* Google Analytics & Webtool */
-		if ( ( ( get_theme_mod('google_webmaster_tool_setting') != '' ) && ( get_theme_mod('google_webmaster_tool_setting') != 'For example mine is "gN9drVvyyDUFQzMSBL8Y8-EttW1pUDtnUypP-331Kqh"' ) ) || ( ( get_theme_mod('google_analytics_setting') != '' ) && ( get_theme_mod('google_analytics_setting') != 'For example mine is "UA-9335180-X"' ) ) ) {
-
-			if ( ( get_theme_mod('google_webmaster_tool_setting') != '' ) && ( get_theme_mod('google_webmaster_tool_setting') != 'For example mine is "gN9drVvyyDUFQzMSBL8Y8-EttW1pUDtnUypP-331Kqh"' ) ) echo '<meta name="google-site-verification" content="' .  get_theme_mod('google_webmaster_tool_setting') . '" />' . "\n";
-
-			if ( ( get_theme_mod('google_analytics_setting') != '' ) && ( get_theme_mod('google_analytics_setting') != 'For example mine is "UA-9335180-X"' ) ) {
-			echo '<script type="text/javascript">' . "\n";
-			echo '	var _gaq = _gaq || [];' . "\n";
-			echo "	_gaq.push(['_setAccount', '" .  get_theme_mod('google_analytics_setting') . "']);" . "\n";
-			echo "	_gaq.push(['_trackPageview']);" . "\n\n";
-			echo "	(function() {" . "\n";
-			echo "	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;" . "\n";
-			echo "	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';" . "\n";
-			echo "	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);" . "\n";
-			echo "	})();" . "\n\n";
-			echo "</script>" . "\n";
-			}
-		 }
-		/* End Google Analytics & Webtool */
-
 		/* Custom Font Styles */
 		if ( ( get_theme_mod('titlefontstyle_setting') != 'Default' ) && ( get_theme_mod('titlefontstyle_setting') != '' ) ) {
 			echo "<link href='http://fonts.googleapis.com/css?family=" . get_theme_mod('titlefontstyle_setting') . "' rel='stylesheet' type='text/css'>"  . "\n";
@@ -687,22 +640,23 @@ add_action( 'customize_preview_init', 'anarcho_customizer_live_preview' );
 
 // Add some CSS so I can Style the Theme Options Page
 function anarcho_admin_enqueue_scripts( $hook_suffix ) {
-	wp_enqueue_style('anarcho-theme-options', get_template_directory_uri() . '/theme-options.css', false, '1.0');}
+	wp_enqueue_style('anarcho-theme-options', get_template_directory_uri() . '/theme-options.css', false, '1.0');
+}
 add_action('admin_print_styles-appearance_page_theme_options', 'anarcho_admin_enqueue_scripts');
 
 // Create the Theme Information page (Theme Options)
 function anarcho_theme_options_do_page() { ?>
     <div class="cover">
     <header id="header"></header>
-    <section id="page"> 
+    <section id="page">
 
       <div class="content">
 
 	<div class="welcome"><i><?php _e('Thank you for using Anarcho-Notepad! The Anarcho-Notepad 2.1 now even more opportunities, it is safer and more stable than ever! Enjoy yourselves! ', 'anarcho-notepad');?></i>
 	<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://mycyberuniverse.tk/anarcho-notepad.html" data-text="My WordPress website is built with the #Anarcho-Notepad Theme version 2.1!" data-related="AGareginyan">Tweet</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	<p><a name="fb_share" type="icon" 
-   share_url="http://mycyberuniverse/anarcho-notepad.html"></a> 
+	<p><a name="fb_share" type="icon"
+   share_url="http://mycyberuniverse/anarcho-notepad.html"></a>
 <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript">
 </script></p>
 	</div>
@@ -816,17 +770,9 @@ function anarcho_theme_options_do_page() { ?>
 <?php }
 add_action('admin_menu', 'anarcho_theme_options_add_page');
 
-// Load up links in admin bar so theme is edit
+// Link to the page about theme in dashboard
 function anarcho_theme_options_add_page() {
-	add_theme_page('Theme Customizer', 'Theme Customizer', 'edit_theme_options', 'customize.php' );
 	add_theme_page('Theme Info', 'Theme Info', 'edit_theme_options', 'theme_options', 'anarcho_theme_options_do_page');}
-	
-// Add link to theme options in Admin bar
-function anarcho_admin_link() {
-	global $wp_admin_bar;
-	$wp_admin_bar->add_menu( array( 'id' => 'Anarcho_Customizer', 'title' => 'Theme Customizer', 'href' => admin_url( 'customize.php' ) ));
-	$wp_admin_bar->add_menu( array( 'id' => 'Anarcho_Information', 'title' => 'Theme Information', 'href' => admin_url( 'themes.php?page=theme_options' ) )); }
-add_action( 'admin_bar_menu', 'anarcho_admin_link', 113 );
 
 /*****************END-Theme Information Page****************************/
 
@@ -855,6 +801,13 @@ function include_comment_reply() {
 	if ( is_singular() ) wp_enqueue_script( "comment-reply" );
 }
 add_action( 'wp_enqueue_scripts', 'include_comment_reply' );
+
+// Include Font-Awesome styles
+function include_font_awesome_styles() {
+    wp_register_style( 'font_awesome_styles', get_template_directory_uri() . '/fonts/font-awesome-4.0.0/font-awesome.min.css', 'screen' );
+    wp_enqueue_style( 'font_awesome_styles' );
+}
+add_action( 'wp_enqueue_scripts', 'include_font_awesome_styles' );
 
 // Enable smoothscroll.js
 function include_smoothscroll_script() {
