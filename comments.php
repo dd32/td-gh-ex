@@ -32,7 +32,15 @@
 		<div id="pinglist-container" class="comment-tab" style="display: none;">
 			
 			<ol class="pinglist">
-				<?php wp_list_comments( 'type=pings' ); ?>
+				<?php // not calling wp_list_comments twice, as it breaks pagination
+				$pings = $comments_by_type['pings'];
+				foreach ($pings as $ping) { ?>
+					<li class="ping">
+						<div class="ping-link"><?php comment_author_link($ping); ?></div>
+						<div class="ping-meta"><?php comment_date( get_option( 'date_format' ), $ping ); ?></div>
+						<div class="ping-content"><?php comment_text($ping); ?></div>
+					</li>
+				<?php } ?>
 			</ol><!--/.pinglist-->
 			
 		</div>

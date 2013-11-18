@@ -1,6 +1,11 @@
   Theme : Hueman (wordpress.org release)
-Version : 1.1.1
+Version : 1.1.2
  Author : Alexander "Alx" Agnarson - http://alxmedia.se
+
+November 18 2013 - 1.1.2
+===========================================================
+- Fixed broken comments pagination when there are pingbacks as well
+- Polished and made post author comment icons slightly smaller
 
 November 18 2013 - 1.1.1
 ===========================================================
