@@ -218,7 +218,7 @@ function boldr_styles() {
 	wp_enqueue_style( 'PTSans-webfonts', "$protocol://fonts.googleapis.com/css?family=PT+Sans:400italic,700italic,400,700", array(), null );
 
 }
-add_action('wp_print_styles', 'boldr_styles');
+add_action('wp_enqueue_scripts', 'boldr_styles');
 
 /*
  * Register editor style

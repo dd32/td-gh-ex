@@ -4,7 +4,7 @@ Contributors: Iceable
 Tags: black, blue, white, light, two-columns, right-sidebar, flexible-width, custom-header, custom-background, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.5
 Tested up to: 3.7.1
-Stable tag: 1.1.17
+Stable tag: 1.1.18
 
 == ABOUT BOLDR LITE ==
 
@@ -57,6 +57,11 @@ If you have translated this theme into your own language and are willing to shar
 Your translation files will be added to the next update. Don't forget to leave your name, email address and/or website link so credits can be given to you!
 
 == CHANGELOG ==
+
+= 1.1.18 =
+November 18th, 2013
+* Bugfix: Appropriately use 'wp_enqueue_scripts' to enqueue CSS stylesheet
+* Changed comment about removing credit link in footer.php (compliance)
 
 = 1.1.17 =
 November 8th, 2013
