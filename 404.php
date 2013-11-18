@@ -3,32 +3,35 @@
  *
  * Chooko Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
  *
- * Copyright 2013-2015 Mathieu Sarrasin - Iceable Media
+ * Copyright 2013 Mathieu Sarrasin - Iceable Media
  *
  * 404 Page Template
  *
  */
+?>
 
-get_header();
+<?php get_header(); ?>
 
-?><div class="container" id="main-content"><?php
+	<div class="container" id="main-content">
 
-		?><h1 class="page-title"><?php _e('404', 'chooko'); ?></h1><?php
+		<h1 class="page-title"><?php _e('404', 'chooko'); ?></h1>
 
-		?><div id="page-container" class="left with-sidebar"><?php
+		<div id="page-container" class="left with-sidebar">
 
-			?><h2><?php _e('Page Not Found', 'chooko'); ?></h2><?php
-			?><p><?php _e('What you are looking for isn\'t here...', 'chooko'); ?></p><?php
-			?><p><?php _e('Maybe a search will help ?', 'chooko'); ?></p><?php
-			get_search_form();
+			<h2><?php _e('Page Not Found', 'chooko'); ?></h2>
+			<p><?php _e('What you are looking for isn\'t here...', 'chooko'); ?></p>
+			<p><?php _e('Maybe a search will help ?', 'chooko'); ?></p>
+			<?php get_search_form(); ?>
 
-		?></div><?php // End page container
+		</div>
+		<!-- End page container -->
 
-		?><div id="sidebar-container" class="right"><?php
-			?><ul id="sidebar"><?php
-			dynamic_sidebar( 'sidebar' );
-			?></ul><?php
-		?></div><?php // End sidebar
-	?></div><?php // End main content
-
-get_footer(); ?>
+		<div id="sidebar-container" class="right">
+			<ul id="sidebar">
+			   <?php dynamic_sidebar( 'sidebar' ); ?>
+			</ul>
+		</div>		
+		<!-- End sidebar -->
+	</div>
+	<!-- End main content -->
+<?php get_footer(); ?>

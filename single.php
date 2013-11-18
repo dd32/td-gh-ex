@@ -3,64 +3,53 @@
  *
  * Chooko Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
  *
- * Copyright 2013-2015 Mathieu Sarrasin - Iceable Media
+ * Copyright 2013 Mathieu Sarrasin - Iceable Media
  *
  * Single Post Template
  *
  */
+?>
 
-get_header();
-global $header_image;
+<?php get_header();
+global $header_image; ?>
 
-?><div id="main-content" class="container<?php if ( !$header_image ) echo " no-header-image"; ?>"><?php
+	<div id="main-content" class="container<?php if ( !$header_image ) echo " no-header-image"; ?>">
 
-	?><div id="page-container" class="left with-sidebar"><?php
+		<div id="page-container" class="left with-sidebar">
 
-		if(have_posts()):
-		while(have_posts()) : the_post();
+			<?php if(have_posts()) : ?>
+			<?php while(have_posts()) : the_post(); ?>
 
-		?><div id="post-<?php the_ID(); ?>" <?php post_class("single-post"); ?>><?php
+			<div id="post-<?php the_ID(); ?>" <?php post_class("single-post"); ?>>
 
-			?><h1 class="entry-title"><?php the_title(); ?></h1><?php
+				<h1 class="entry-title"><?php the_title(); ?></h1>
 
-			?><div class="postmetadata"><?php
-				?><span class="meta-date published"><span class="icon"></span><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php
-					the_time(get_option('date_format'));
-				?></a></span><?php
+				<div class="postmetadata">
+					<span class="meta-date"><span class="icon"></span><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_date(); ?></a></span>
+					<span class="meta-author"><span class="icon"></span><?php _e('by ', 'chooko'); the_author(); ?></span>
+					<?php if ( has_category() ): ?>
+					<span class="meta-category"><span class="icon"></span><?php _e('in', 'chooko'); ?> <?php the_category(', '); ?></span>
+					<?php endif; ?>
+					<?php if (comments_open() || get_comments_number()!=0 ): ?>
+					<span class="meta-comments"><span class="icon"></span>
+						<?php comments_popup_link( __( 'No', 'chooko' ), __( '1', 'chooko' ), __( '%', 'chooko' ), 'comments-count', '' ); ?>
+						<?php comments_popup_link( __( 'Comment', 'chooko' ), __( 'Comment', 'chooko' ), __( 'Comments', 'chooko' ), '', __('Comments Off', 'chooko') ); ?>
+					</span>
+					<?php endif; ?>
+					<?php edit_post_link(__('Edit', 'chooko'), '<span class="editlink"><span class="icon"></span>', '</span>'); ?>
+				</div>
 
-				// Echo updated date for hatom-feed - not to be displayed on front end
-				?><span class="updated"><?php the_modified_date(get_option('date_format')); ?></span><?php
-
-				?><span class="meta-author vcard author"><span class="icon"></span><?php _e('by ', 'chooko'); ?><span class="fn"><?php the_author(); ?></span></span><?php
-
-				if ( has_category() ):
-				?><span class="meta-category"><span class="icon"></span><?php _e('in', 'chooko'); ?> <?php the_category(', '); ?></span><?php
-				endif;
-
-				if (comments_open() || get_comments_number()!=0 ):
-				?><span class="meta-comments"><span class="icon"></span><?php
-					comments_popup_link( __( 'No', 'chooko' ), __( '1', 'chooko' ), __( '%', 'chooko' ), 'comments-count', '' );
-					comments_popup_link( __( 'Comment', 'chooko' ), __( 'Comment', 'chooko' ), __( 'Comments', 'chooko' ), '', __('Comments Off', 'chooko') );
-					?></span><?php
-				endif;
-
-				edit_post_link(__('Edit', 'chooko'), '<span class="editlink"><span class="icon"></span>', '</span>');
-
-				?></div><?php
-
-				?><div class="post-contents"><?php
-					
-					if ( '' != get_the_post_thumbnail() ) : // As recommended from the WP codex, to avoid potential failure of has_post_thumbnail()
-					?><div class="thumbnail"><?php
-					?><a href="<?php get_permalink() ?>"><?php
-					the_post_thumbnail('large', array('class' => 'scale-with-grid'));
-					?></a></div><?php
-					endif;
-					
-					the_content()
-
-					?><div class="clear"></div><?php
-					$args = array(
+				<div class="post-contents">
+					<?php if (has_post_thumbnail()) : ?>
+					<div class="thumbnail">
+					<a href="<?php get_permalink() ?>">
+					<?php the_post_thumbnail('large', array('class' => 'scale-with-grid')); ?>
+					</a>
+					</div>
+					<?php endif; ?>
+					<?php the_content() ?>
+					<div class="clear"></div>
+					<?php $args = array(
 						'before'           => '<br class="clear" /><div class="paged_nav"><span class="paged_nav_label">' . __('Pages', 'chooko') . '</span>',
 						'after'            => '</div>',
 						'link_before'      => '<span>',
@@ -71,74 +60,80 @@ global $header_image;
 						'pagelink'         => '%',
 						'echo'             => 1
 					);
-					wp_link_pages( $args );
-					
-					the_tags('<span class="tags"><span>', '</span><span>', '</span></span>');
-					
-					?></div><?php
-				?><br class="clear" /><?php
+					wp_link_pages( $args ); ?>
 
-			?></div><?php // end div post
+					<?php the_tags('<span class="tags"><span>', '</span><span>', '</span></span>'); ?>
 
-			?><div class="page_nav"><?php
-				if ( is_attachment() ):
-				// Use image navigation links on attachment pages, post navigation otherwise
-					if ( chooko_adjacent_image_link(false) ): // Is there a previous image ?
-					?><div class="previous"><?php previous_image_link(0, __("Previous Image", 'chooko') ); ?></div><?php
+				</div>
+				<br class="clear" />
 
-					endif;
-					if ( chooko_adjacent_image_link(true) ): // Is there a next image ?
-					?><div class="next"><?php next_image_link(0, __("Next Image",'chooko') ); ?></div><?php
-					endif;
+			</div><!-- end div post -->
+
+			<div class="page_nav">
+				<?php if ( is_attachment() ):
+				// Use image navigation links on attachment pages, post navigation otherwise ?>
+					<?php if ( chooko_adjacent_image_link(false) ): // Is there a previous image ? ?>
+					<div class="previous"><?php previous_image_link(0, __("Previous Image", 'chooko') ); ?></div>
+					<?php endif; ?>
+					<?php if ( chooko_adjacent_image_link(true) ): // Is there a next image ? ?>	
+					<div class="next"><?php next_image_link(0, __("Next Image",'chooko') ); ?></div>
+					<?php endif; ?>
 				
-				else:
+				<?php else: ?>
 
-					if ("" != get_adjacent_post( false, "", true ) ): // Is there a previous post?
-					?><div class="previous"><?php previous_post_link('%link', __("Previous Post", 'chooko') ); ?></div><?php
-					endif;
-					if ("" != get_adjacent_post( false, "", false ) ): // Is there a next post?
-					?><div class="next"><?php next_post_link('%link', __("Next Post", 'chooko') ); ?></div><?php
-					endif;
+					<?php if ("" != get_adjacent_post( false, "", true ) ): // Is there a previous post? ?>
+					<div class="previous"><?php previous_post_link('%link', __("Previous Post", 'chooko') ); ?></div>
+					<?php endif; ?>
+					<?php if ("" != get_adjacent_post( false, "", false ) ): // Is there a next post? ?>
+					<div class="next"><?php next_post_link('%link', __("Next Post", 'chooko') ); ?></div>
+					<?php endif; ?>
 
-				endif;
+				<?php endif; ?>
 
-				?><br class="clear" /><?php
-			?></div><?php
+				<br class="clear" />
+			</div>
 
-			// Display comments section only if comments are open or if there are comments already.
-			if ( comments_open() || get_comments_number()!=0 ):
-				?><hr /><?php // comments section
-				?><div class="comments"><?php
-					comments_template( '', true );
-				?></div><?php // end comments section
 
-			?><div class="page_nav"><?php
-				if ("" != get_adjacent_post( false, "", true ) ): // Is there a previous post?
-				?><div class="previous"><?php previous_post_link('%link', __("Previous Post", 'chooko') ); ?></div><?php
-				endif;
-				if ("" != get_adjacent_post( false, "", false ) ): // Is there a next post?
-				?><div class="next"><?php next_post_link('%link', __("Next Post", 'chooko') ); ?></div><?php
-				endif;
-				?><br class="clear" /><?php
-			?></div><?php
+			<?php	// Display comments section only if comments are open or if there are comments already.
+			if ( comments_open() || get_comments_number()!=0 ) : ?>
+				<hr />
+				<!-- comments section -->
+				<div class="comments">
+				<?php comments_template( '', true ); ?>
+				</div>
+				<!-- end comments section -->
 
-			endif;
-			
-			endwhile;
-			
-			else:
-			
-			?><h2><?php _e('Not Found', 'chooko'); ?></h2><?php
-			?><p><?php _e('What you are looking for isn\'t here...', 'chooko'); ?></p><?php
+			<div class="page_nav">
+				<?php if ("" != get_adjacent_post( false, "", true ) ): // Is there a previous post? ?>
+				<div class="previous"><?php previous_post_link('%link', __("Previous Post", 'chooko') ); ?></div>
+				<?php endif; ?>
+				<?php if ("" != get_adjacent_post( false, "", false ) ): // Is there a next post? ?>
+				<div class="next"><?php next_post_link('%link', __("Next Post", 'chooko') ); ?></div>
+				<?php endif; ?>
+				<br class="clear" />
+			</div>
 
-			endif;
+			<?php endif; ?>
 
-		?></div><?php // End page container
+			<?php endwhile; ?>
+
+			<?php else : ?>
 		
-		?><div id="sidebar-container" class="right"><?php
-			get_sidebar();
-		?></div><?php // End sidebar column
+			<h2><?php _e('Not Found', 'chooko'); ?></h2>
+			<p><?php _e('What you are looking for isn\'t here...', 'chooko'); ?></p>
 
-	?></div><?php // End main content
+			<?php endif; ?>
 
-get_footer(); ?>
+		</div>
+		<!-- End page container -->
+		
+		<div id="sidebar-container" class="right">
+			<?php get_sidebar(); ?>
+		</div>		
+		<!-- End sidebar column -->
+		
+
+	</div>
+	<!-- End main content -->
+
+<?php get_footer(); ?>
