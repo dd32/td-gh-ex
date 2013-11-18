@@ -1,6 +1,11 @@
   Theme : Hueman (wordpress.org release)
-Version : 1.1.0
+Version : 1.1.1
  Author : Alexander "Alx" Agnarson - http://alxmedia.se
+
+November 18 2013 - 1.1.1
+===========================================================
+- Fixed tabs widget tab-button css for better mobile browser compatibility
+- Fixed lists spacing
 
 November 15 2013 - 1.1.0
 ===========================================================
