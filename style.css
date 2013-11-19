@@ -2,9 +2,9 @@
 Theme Name: Optimize
 Author: wrock.org by Sandy
 Author URI: http://www.wrock.org/about
-Theme URI: http://www.wrock.org/seo-optimized-wordpress-theme
-Description: Optimize as name tells every thing completely optimized for search you will get 90+ page speed H1 and H2 Title Tags on page and posts. Google Adsense ready template show ads in single post, header or below navigation and widget as well. This is fully magazine style best for any kind of personal blog or business website it comes with Responsive design to increase mobile friendly.Fully featured control panel that support favicon link.
-Version: 1.2
+Theme URI: http://www.wrock.org/seo-optimized-wordpress-theme/
+Description: Optimize as name tells every thing completely optimized for search you will get 90+ page speed H1 and H2 Title Tags on page and posts. Google Adsense ready template show ads in single post, header or below navigation and widget as well. This is fully optimize style best for any kind of personal blog or business website it comes with Responsive design to increase mobile friendly.Fully featured control panel that support favicon link.
+Version: 1.4
 Tags: black, white, light, custom-menu, custom-header, custom-background, one-column, two-columns, right-sidebar, theme-options, threaded-comments, sticky-post
 Text Domain: optimize
 License: GNU General Public License v3 or later
@@ -199,102 +199,6 @@ div.gap {
 	-khtml-opacity: 0.9;
 	opacity: 0.9;
 }
-/*===================== responsive ===================*/
-@media only screen and (min-width: 480px) {
-/* == INTERMEDIATE: Menu == */
-
-#navigation-wrapper, .nav ul a, .nav ul {
-
-}
-.nav ul {
-
-}
-.nav a, .next-post a{
-
-}
-.nav li:first-child a{
-	margin-left:0;
-}
-.nav li:last-child  a{
-	margin-right:0;
-}
-/* == INTERMEDIATE: IE Fixes == */
-.nav ul li{
-	display:inline;
-}
-
-}
-
-.nav{
-	width:100%;
-
-}
-.nav select {
-	display: none;
-
-}
-@media (max-width: 960px) {
-.nav ul     {
-	display: none;
-}
-.nav select {
-	display: inline-block;
-	width: 100%;
-	font-size: 22px;
-}
-#pagecont {
-	width:100% !important;
-	font-size: 22px;
-	line-height: 2;}
-#content {
-	width:100% !important;
-	font-size: 22px;
-	line-height: 2;}
-.postmeta_box {
-	font-size: 18px !important;
-	line-height: 2;
-}
-h2 {
-	font-size: 28px !important;
-	line-height: 2;
-}
-#top-menu {
-	display: none;
-}
-#bottom-menu{
-	display: none;
-}
-#search {
-	display: none !important;}
-	
- #footerads{
-display: none;
-}
-#footer-right {
-	float: none !important;
-	width: auto !important;
-}
-#footer-left{
-	float: none !important;
-	width: auto !important;
-}
-.backtop {
-	display: none;
-}
-#search{
-	display: none !important;
-}
-body{
-font-size: 22px !important;
-line-height: 2 !important;
-}
-
-
-#sidebar{
-display: none !important;
-}
-}
-
 
 /*==========Author Information==========*/
 #author-bio {
@@ -526,7 +430,19 @@ color:#333;
 #navigation  ul li:hover ul ul, #navigation  ul li:hover ul ul ul, #navigation  ul li:hover ul ul ul ul { left:-999em; padding-top: 15px;}
 #navigation  ul li:hover ul, #navigation  ul li li:hover ul,#navigation  ul li li li:hover ul,#navigation  ul li li li li:hover ul { left:auto; }
 
+.nav li > a:after {
+font-size: 16px;
+    content: ' ▾';
+}
 
+.nav li > a:hover:after {
+font-size: 16px;
+    content: ' ▾';
+}
+
+.nav li > a:only-child:after {
+    content: '';
+}
 /* ===================== layout ===================== */
 
 #top-menu-inner #myslidemenu {
@@ -1201,28 +1117,10 @@ background: #DDD;
 	margin: auto;
 	width: auto;
 	position: relative;
+	text-align: center;
+	padding: 10px;
 }
-#footer-left, #footer-right {
-	font-size: 14px;
-}
-#footer-left {
-	float: left;
-	width: 50%;
-}
-#footer-right {
-	float: right;
-	text-align: right;
-	width: 28%;
-}
-#footer-left p, #footer-right p {
-	padding: 0 40px;
-}
-#footer-left a, #footer-right a {
-	font-weight: bold;
-}
-#footer-left, #footer-left a, #footer-right, #footer-right a {
-	text-decoration: none;
-}
+
 /* ===================== pagenavi ===================== */
 #pagenavi {
 	text-align:left;
@@ -1537,3 +1435,98 @@ border: 1px solid;
 	float: left;
 }
 
+/*===================== responsive ===================*/
+@media only screen and (min-width: 480px) {
+/* == INTERMEDIATE: Menu == */
+
+#navigation-wrapper, .nav ul a, .nav ul {
+
+}
+.nav ul {
+
+}
+.nav a, .next-post a{
+
+}
+.nav li:first-child a{
+	margin-left:0;
+}
+.nav li:last-child  a{
+	margin-right:0;
+}
+/* == INTERMEDIATE: IE Fixes == */
+.nav ul li{
+	display:inline;
+}
+
+}
+
+.nav{
+	width:100%;
+
+}
+.nav select {
+	display: none;
+
+}
+@media (max-width: 960px) {
+.nav ul     {
+	display: none;
+}
+.nav select {
+	display: inline-block;
+	width: 100%;
+	font-size: 22px;
+}
+#pagecont {
+	width:100% !important;
+	font-size: 22px;
+	line-height: 2;}
+#content {
+	width:100% !important;
+	font-size: 22px;
+	line-height: 2;}
+.postmeta_box {
+	font-size: 18px !important;
+	line-height: 2;
+}
+h2 {
+	font-size: 28px !important;
+	line-height: 2;
+}
+#top-menu {
+	display: none;
+}
+#bottom-menu{
+	display: none;
+}
+#search {
+	display: none !important;}
+	
+ #footerads{
+display: none;
+}
+#footer-right {
+	float: none !important;
+	width: auto !important;
+}
+#footer-left{
+	float: none !important;
+	width: auto !important;
+}
+.backtop {
+	display: none;
+}
+#search{
+	display: none !important;
+}
+body{
+font-size: 22px !important;
+line-height: 2 !important;
+}
+
+
+#sidebar{
+display: none !important;
+}
+}

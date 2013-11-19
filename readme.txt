@@ -29,9 +29,27 @@ Custom Css:
 
 
 == Change log ==
+= 1.4=
+*Option panel updated to new version
+*Premium version also available
+*Logo upload and other option now access from theme panel
+*Latest post widget added to sidebar
+*Added Arrow if drop down menu
+
+
 = 1.2=
 *Removed plugin territory functions
 *Bug Fixed
 
 = 1.0 =
 *Initial Release @ 1.0
+
+
+== License ==
+
+*Option Framework : Author is "Devin Price" provided at http://www.wptheming.com under License GPLv2 (All file Included in "inc" folder)
+*For Responsive Menu Public code Used as ref. for http://wordpress.stackexchange.com/questions/74633/convert-wp-menu-to-a-drop-down-for-mobile-browser/98257
+*Images into /images/ folder that's are created by me cat.png home.jpg, info.png, logo.png metaimg.png, quote.png, thumb.png are publish Under gpl v2
+*Fonts Monda: Copyright (c) 2012, vernon adams (vern@newtypography.co.uk)  This Font Software is licensed under the SIL Open Font License, Version 1.1. http://scripts.sil.org/OFL
+
+**This theme and file are created by me & publish under GPLv3

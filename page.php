@@ -7,7 +7,7 @@
 		<div id="pagecont">
 			<?php if(have_posts()) : ?><?php while(have_posts())  : the_post(); ?>
 					<div id="pagepost-<?php the_ID(); ?>" class="pagepost clearfix">					
-						<h1><?php the_title(); ?></h1>
+						<h1 class="entry-title"><?php the_title(); ?></h1>
 							<div class="entry" class="clearfix">
 																
 								<?php the_content(); ?>
@@ -16,7 +16,7 @@
 						<span class="postmeta_box">
 		<?php get_template_part('/includes/postmeta'); ?><?php edit_post_link('Edit', ' &#124; ', ''); ?>
 	</span><!-- .entry-header -->
-<div class="gap"></div><?php if (optimize_get_option('optimize_author' ) =='1' ) {load_template(get_template_directory() . '/includes/author.php'); } ?>
+<div class="gap"></div><?php if (of_get_option('optimize_author' ) =='1' ) {load_template(get_template_directory() . '/includes/author.php'); } ?>
 							<div class="comments">
 								<?php comments_template(); ?>
 							</div> <!-- end div .comments -->

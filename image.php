@@ -4,7 +4,7 @@
 <?php while(have_posts())  : the_post(); ?>
 
 <h1><?php the_title(); ?></h1>
-<div class="entry" class="clearfix"><?php if (optimize_get_option('optimize_ad2') <> "" ) { echo stripslashes(optimize_get_option('optimize_ad2')); } ?>
+<div class="entry" class="clearfix"><?php if (of_get_option('optimize_ad2') <> "" ) { echo stripslashes(of_get_option('optimize_ad2')); } ?>
 <div class="entry-meta">
 								<?php
 								$metadata = wp_get_attachment_metadata();
@@ -82,7 +82,7 @@ endif;
 
 </span>		
 
-<div class="gap"></div><?php if (optimize_get_option('optimize_author' ) =='1' ) {load_template(get_template_directory() . '/includes/author.php'); } ?>
+<div class="gap"></div><?php if (of_get_option('optimize_author' ) =='1' ) {load_template(get_template_directory() . '/includes/author.php'); } ?>
 
 
 		<div id="single-nav" class="clearfix">

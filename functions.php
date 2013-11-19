@@ -1,41 +1,16 @@
 <?php
 ob_start();
-include_once get_template_directory() . '/functions/optimize-functions.php';
-
-    /* ----------------------------------------------------------------------------------- */
-    /* Options Framework Theme
-      /*----------------------------------------------------------------------------------- */
-    /* Set the file path based on whether the Options Framework Theme is a parent theme or child theme */
-    //if (STYLESHEETPATH == get_template_directory()) {
-        define('OPTIONS_FRAMEWORK_URL', get_template_directory() . '/functions/');
-        define('OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/functions/');
-   // } else {
-        //define('OPTIONS_FRAMEWORK_URL', STYLESHEETPATH . '/functions/');
-        //define('OPTIONS_FRAMEWORK_DIRECTORY', get_stylesheet_directory_uri() . '/functions/');
-    //}
-	/*
-  Plugin Name: Options Framework
-  Plugin URI: http://www.wptheming.com
-  Description: A framework for building theme options.
-  Version: 0.8
-  Author: Devin Price
-  Author URI: http://www.wptheming.com
-  License: GPLv2
- */
-    require_once (OPTIONS_FRAMEWORK_URL . 'options-framework.php');
+if ( ! function_exists( 'optionsframework_init' ) ) {
+	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
+	require_once dirname( __FILE__ ) . '/inc/options-framework.php';
+}
+include_once('baztro.php');
 
 function optimize_scripts() {
-	/*
-	 * Loads our main stylesheet.
-	 */
-	 	wp_enqueue_script('topnavi', get_template_directory_uri().'/js/topnavi.js', array('jquery'), '1.0', false );
+
+	wp_enqueue_script('topnavi', get_template_directory_uri().'/js/topnavi.js', array('jquery'), '1.0', false );
 	wp_enqueue_style( 'optimize-style', get_stylesheet_uri() );
-	// Add Monda font, used in the main stylesheet.
-	wp_enqueue_style( 'monda', get_template_directory_uri() . '/fonts/monda.css', array(), '1.1' );
-	/**
-	* Enqueues the javascript for comment replys 
-	* 
-	**/
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -48,8 +23,8 @@ if ( ! isset( $content_width ) )
 
 	
  function optimize_googlemeta() {
-       	if (optimize_get_option('optimize_headad') != '') {
-            echo '' . optimize_get_option('optimize_headad') . '' . "\n";
+       	if (of_get_option('optimize_headad') != '') {
+            echo '' . of_get_option('optimize_headad') . '' . "\n";
         } 
     }
 add_action('wp_head', 'optimize_googlemeta');
@@ -81,45 +56,14 @@ function optimize_theme_setup() {
 		add_theme_support( 'post-thumbnails', array( 'post' ) ); // Add it for posts
 		set_post_thumbnail_size( 150, 150, true ); // Normal post thumbnails, 200 pixels wide by 200 pixels tall, hard crop mode
 	
-		/**
-         * optimize translations.
-         * Add your files into /languages/ directory.
-		 * @see http://codex.wordpress.org/Function_Reference/load_theme_textdomain
-         */
 	    load_theme_textdomain('optimize', get_template_directory() . '/languages');
-		/**
-         * Add callback for custom editor stylesheets. (editor-style.css)
-         * @see http://codex.wordpress.org/Function_Reference/add_editor_style
-         */
-		 
+			 
         add_editor_style();
 		
-		/**
-         * This feature enables post and comment RSS feed links to head.
-         * @see http://codex.wordpress.org/Function_Reference/add_theme_support#Feed_Links
-         */
         add_theme_support('automatic-feed-links');
 		}
 		register_nav_menu( 'primary', __( 'Navigation Menu', 'optimize' ) );
 	
-		/**
-         * This feature adds a callbacks for image header display.
-		 * In our case we are using this to display logo.
-         * @see http://codex.wordpress.org/Custom_Headers
-         */		
-		add_theme_support('custom-header', array (
-	        
-			'default-image'			=> get_template_directory_uri() . '/images/logo.png',
-	        'header-text'			=> false,
-	        'flex-width'             => true,
-	        'width'				    => 470,
-		    'flex-height'            => true,
-	        'height'			        => 100
-			));
-	// Add Support for Custom Backgrounds
-		add_theme_support('custom-background', array(
-			'default-color' => 'fff',
-			));
 	
 	add_action( 'after_setup_theme', 'optimize_theme_setup' );
 	
@@ -218,6 +162,12 @@ function optimize_wp_title( $title, $sep ) {
 	return $title;
 }
 add_filter( 'wp_title', 'optimize_wp_title', 10, 2 );
+global $pagenow;
+if ( is_admin() && isset( $_GET['activated'] ) && $pagenow == 'themes.php' )
+{
+wp_redirect( admin_url( 'themes.php?page=options-framework' ) );
+exit;
+}
 
 ob_clean();
 ?>
