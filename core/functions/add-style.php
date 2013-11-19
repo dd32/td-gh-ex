@@ -64,6 +64,13 @@
 
 /* =================== END NAV STYLE =================== */
 
+/* =================== BEGIN CONTENT STYLE =================== */
+
+	if (alhenalite_setting('wip_content_font_size')) 
+		echo ".article p, .article li, .article address, .article dd, .article blockquote, .article td, .article th { font-size:".alhenalite_setting('wip_content_font_size')."}"; 
+
+/* =================== END NAV STYLE =================== */
+
 /* =================== START TITLE STYLE =================== */
 
 	$titlestyle = '';
