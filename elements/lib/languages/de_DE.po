@@ -3,13 +3,13 @@ msgstr ""
 "Project-Id-Version: Elements Free\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-19 16:22:25 UTC\n"
-"PO-Revision-Date: 2013-06-24 17:46+0530\n"
-"Last-Translator: Web Translate It <support@webtranslateit.com>\n"
+"PO-Revision-Date: 2013-11-12 16:43+0530\n"
+"Last-Translator: Surya <surya@cyberchimps.com>\n"
 "Language-Team: German, Germany\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.5.7\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: ../../init.php
@@ -29,72 +29,105 @@ msgid "Slider Lite"
 msgstr "Schieberegler Lite"
 
 #: ../../init.php
-msgid "Twitter Bar"
-msgstr "Twitter Balken"
-
-#: ../../init.php
 msgid "Page"
 msgstr "Seite"
 
-#: ../../twitter-bar.php
-msgid "No tweets to display"
-msgstr "Keine Tweets vorhanden"
+#: ../../portfolio-lite.php
+msgid "First Portfolio Image"
+msgstr "Portfolio Lite"
 
-#: ../../twitter-bar.php
-msgid "Error retrieving tweets"
-msgstr "Fehler beim Abrufen der tweets"
+#: ../../portfolio-lite.php
+msgid "First Portfolio Image Caption"
+msgstr "Erste Portfolio Bildunterschrift"
 
-#: ../../twitter-bar.php
-msgid "Twitter API Options"
-msgstr "Twitter API-Optionen"
+#: ../../portfolio-lite.php
+msgid "Image 1"
+msgstr "Bild 1"
 
-#: ../../twitter-bar.php
-msgid "Edit Twitter API"
-msgstr "Twitter API bearbeiten"
+#: ../../portfolio-lite.php
+msgid "First Porfolio Link"
+msgstr "Portfolio Lite"
 
-#: ../../twitter-bar.php
-msgid "Create your Twitter App here"
-msgstr "Erstellen Sie hier Ihre Twitter App"
+#: ../../portfolio-lite.php
+msgid "Link URL"
+msgstr "URL"
 
-#: ../../twitter-bar.php
-msgid "Complete all parts of the form and create your application"
-msgstr "Alle Teile des Formulars abzuschließen und Ihre Anwendung zu erstellen"
+#: ../../portfolio-lite.php
+msgid "Second Portfolio Image"
+msgstr "Portfolio Lite"
 
-#: ../../twitter-bar.php
-msgid "On the next page click on the button Create my access token"
-msgstr ""
-"Erstellen Sie auf der nächsten Seite klicken Sie auf die Schaltfläche mein "
-"Zugangs-token"
+#: ../../portfolio-lite.php
+msgid "Second Portfolio Image Caption"
+msgstr "Zweitens Portfolio Bildunterschrift"
 
-#: ../../twitter-bar.php
-msgid "Now take the details and fill out the form below"
-msgstr ""
-"Jetzt nehmen Sie die Details und füllen Sie das untenstehende Formular aus"
+#: ../../portfolio-lite.php
+msgid "Image 2"
+msgstr "Bild 2"
 
-#: ../../twitter-bar.php
-msgid "Save your options"
-msgstr "Speichern Sie Ihre Optionen"
+#: ../../portfolio-lite.php
+msgid "Second Porfolio Link"
+msgstr "Portfolio Lite"
 
-#: ../../twitter-bar.php
-msgid "Create a Twitter App"
-msgstr "Erstellen Sie eine Twitter-App"
+#: ../../portfolio-lite.php
+msgid "Third Portfolio Image"
+msgstr "Portfolio Lite"
 
-#: ../../twitter-bar.php
-msgid "Consumer Key"
-msgstr "Consumer Key"
+#: ../../portfolio-lite.php
+msgid "Third Portfolio Image Caption"
+msgstr "Third Portfolio Bildunterschrift"
 
-#: ../../twitter-bar.php
-msgid "Consumer Secret"
-msgstr "Verbraucher-Geheimnis"
+#: ../../portfolio-lite.php
+msgid "Image 3"
+msgstr "Bild 3"
 
-#: ../../twitter-bar.php
-msgid "Access Token"
-msgstr "Zugangs-Token"
+#: ../../portfolio-lite.php
+msgid "Third Porfolio Link"
+msgstr "Portfolio Lite"
 
-#: ../../twitter-bar.php
-msgid "Access Token Secret"
-msgstr "Access Token Secret"
+#: ../../portfolio-lite.php
+msgid "Fourth Portfolio Image"
+msgstr "Portfolio Lite"
 
-#: ../../twitter-bar.php
-msgid "Twitter Handle"
-msgstr "Twitter Name"
+#: ../../portfolio-lite.php
+msgid "Fourth Portfolio Image Caption"
+msgstr "Vierte Portfolio Bildunterschrift"
+
+#: ../../portfolio-lite.php
+msgid "Image 4"
+msgstr "Bild 4"
+
+#: ../../portfolio-lite.php
+msgid "Fourth Porfolio Link"
+msgstr "Portfolio Lite"
+
+#: ../../portfolio-lite.php
+msgid "Portfolio Lite Options"
+msgstr "Portfolio Lite"
+
+#: ../../slider-lite.php
+msgid "Slide One Image"
+msgstr "Schieben Ein Bild"
+
+#: ../../slider-lite.php
+msgid "Slide One Link"
+msgstr "Schieberegler Lite"
+
+#: ../../slider-lite.php
+msgid "Slide Two Image"
+msgstr "Bild für das zweite Dia"
+
+#: ../../slider-lite.php
+msgid "Slide Two Link"
+msgstr "Schieberegler Lite"
+
+#: ../../slider-lite.php
+msgid "Slide Three Image"
+msgstr "Schieben Three Bild"
+
+#: ../../slider-lite.php
+msgid "Slide Three Link"
+msgstr "Schieberegler Lite"
+
+#: ../../slider-lite.php
+msgid "Slider Lite Options"
+msgstr "Schieberegler Lite"

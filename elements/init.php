@@ -24,7 +24,7 @@ function cyberchimps_add_elements_style() {
 	wp_register_style( 'elements_style', $directory_uri . '/elements/lib/css/elements.css' );
 	wp_enqueue_style( 'elements_style' );
 
-	wp_register_script( 'elements_js', $directory_uri . '/elements/lib/js/elements.js' );
+	wp_register_script( 'elements_js', $directory_uri . '/elements/lib/js/elements.min.js' );
 	wp_enqueue_script( 'elements_js', array( 'jquery' ) );
 }
 

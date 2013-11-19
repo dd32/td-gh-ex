@@ -3,13 +3,13 @@ msgstr ""
 "Project-Id-Version: Elements Free\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-19 16:22:25 UTC\n"
-"PO-Revision-Date: 2013-06-24 17:46+0530\n"
-"Last-Translator: Web Translate It <support@webtranslateit.com>\n"
+"PO-Revision-Date: 2013-11-12 16:42+0530\n"
+"Last-Translator: Surya <surya@cyberchimps.com>\n"
 "Language-Team: Croatian, Croatia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.5.7\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
@@ -17,9 +17,8 @@ msgstr ""
 msgid "Boxes Lite"
 msgstr "Okviri Lite"
 
-#: ../../init.php
 msgid "Portfolio Lite"
-msgstr ""
+msgstr "Portfolio Lite"
 
 #: ../../init.php
 msgid "Post Page"
@@ -30,69 +29,96 @@ msgid "Slider Lite"
 msgstr "Klizač Lite"
 
 #: ../../init.php
-msgid "Twitter Bar"
-msgstr ""
-
-#: ../../init.php
 msgid "Page"
 msgstr "Stranica"
 
-#: ../../twitter-bar.php
-msgid "No tweets to display"
-msgstr "Ne tweets za prikaz"
+msgid "First Portfolio Image"
+msgstr "Portfolio Lite"
 
-#: ../../twitter-bar.php
-msgid "Error retrieving tweets"
+#: ../../portfolio-lite.php
+msgid "First Portfolio Image Caption"
+msgstr "Naslov prve slike programa"
+
+#: ../../portfolio-lite.php
+msgid "Image 1"
+msgstr "Slika 1"
+
+msgid "First Porfolio Link"
+msgstr "Portfolio Lite"
+
+msgid "Link URL"
+msgstr "Link URL"
+
+#: ../../portfolio-lite.php
+msgid "Second Portfolio Image"
 msgstr ""
 
-#: ../../twitter-bar.php
-msgid "Twitter API Options"
-msgstr ""
+#: ../../portfolio-lite.php
+msgid "Second Portfolio Image Caption"
+msgstr "Naslov druge slike programa"
 
-#: ../../twitter-bar.php
-msgid "Edit Twitter API"
-msgstr ""
+#: ../../portfolio-lite.php
+msgid "Image 2"
+msgstr "Slika 2"
 
-#: ../../twitter-bar.php
-msgid "Create your Twitter App here"
-msgstr ""
+msgid "Second Porfolio Link"
+msgstr "Portfolio Lite"
 
-#: ../../twitter-bar.php
-msgid "Complete all parts of the form and create your application"
-msgstr ""
+msgid "Third Portfolio Image"
+msgstr "Portfolio Lite"
 
-#: ../../twitter-bar.php
-msgid "On the next page click on the button Create my access token"
-msgstr ""
+#: ../../portfolio-lite.php
+msgid "Third Portfolio Image Caption"
+msgstr "Naslov treće slike programa"
 
-#: ../../twitter-bar.php
-msgid "Now take the details and fill out the form below"
-msgstr ""
+#: ../../portfolio-lite.php
+msgid "Image 3"
+msgstr "Slika 3"
 
-#: ../../twitter-bar.php
-msgid "Save your options"
-msgstr ""
+msgid "Third Porfolio Link"
+msgstr "Portfolio Lite"
 
-#: ../../twitter-bar.php
-msgid "Create a Twitter App"
-msgstr ""
+msgid "Fourth Portfolio Image"
+msgstr "Portfolio Lite"
 
-#: ../../twitter-bar.php
-msgid "Consumer Key"
-msgstr ""
+#: ../../portfolio-lite.php
+msgid "Fourth Portfolio Image Caption"
+msgstr "Naziv slike četvrtog programa"
 
-#: ../../twitter-bar.php
-msgid "Consumer Secret"
-msgstr ""
+#: ../../portfolio-lite.php
+msgid "Image 4"
+msgstr "Slika 4"
 
-#: ../../twitter-bar.php
-msgid "Access Token"
-msgstr ""
+msgid "Fourth Porfolio Link"
+msgstr "Portfolio Lite"
 
-#: ../../twitter-bar.php
-msgid "Access Token Secret"
-msgstr ""
+msgid "Portfolio Lite Options"
+msgstr "Portfolio Lite"
 
-#: ../../twitter-bar.php
-msgid "Twitter Handle"
-msgstr "Twitter Drska"
+#: ../../slider-lite.php
+msgid "Slide One Image"
+msgstr "Slika prvog slidea"
+
+#: ../../slider-lite.php
+msgid "Slide One Link"
+msgstr "Klizač Lite"
+
+#: ../../slider-lite.php
+msgid "Slide Two Image"
+msgstr "Slide Dvije slike"
+
+#: ../../slider-lite.php
+msgid "Slide Two Link"
+msgstr "Klizač Lite"
+
+#: ../../slider-lite.php
+msgid "Slide Three Image"
+msgstr "Slide tri slike"
+
+#: ../../slider-lite.php
+msgid "Slide Three Link"
+msgstr "Klizač Lite"
+
+#: ../../slider-lite.php
+msgid "Slider Lite Options"
+msgstr "Klizač Lite"

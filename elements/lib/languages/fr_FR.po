@@ -3,13 +3,13 @@ msgstr ""
 "Project-Id-Version: Elements Free\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-19 16:22:25 UTC\n"
-"PO-Revision-Date: 2013-06-24 17:47+0530\n"
-"Last-Translator: Web Translate It <support@webtranslateit.com>\n"
+"PO-Revision-Date: 2013-11-12 16:43+0530\n"
+"Last-Translator: Surya <surya@cyberchimps.com>\n"
 "Language-Team: French, France\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.5.7\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 
 #: ../../init.php
@@ -29,69 +29,101 @@ msgid "Slider Lite"
 msgstr "Curseur Lite"
 
 #: ../../init.php
-msgid "Twitter Bar"
-msgstr "Barre de Twitter"
-
-#: ../../init.php
 msgid "Page"
 msgstr "Ajouter une page"
 
-#: ../../twitter-bar.php
-msgid "No tweets to display"
-msgstr "Pas de tweets à afficher"
+#: ../../portfolio-lite.php
+msgid "First Portfolio Image"
+msgstr "Portefeuille Lite"
 
-#: ../../twitter-bar.php
-msgid "Error retrieving tweets"
-msgstr "Erreur récupérer les tweets"
+#: ../../portfolio-lite.php
+msgid "First Portfolio Image Caption"
+msgstr "Légende de l'image 1 du Portfolio"
 
-#: ../../twitter-bar.php
-msgid "Twitter API Options"
-msgstr "Twitter API Options"
+msgid "Image 1"
+msgstr "Image 1"
 
-#: ../../twitter-bar.php
-msgid "Edit Twitter API"
-msgstr "Modifier les API de Twitter"
+#: ../../portfolio-lite.php
+msgid "First Porfolio Link"
+msgstr "Portefeuille Lite"
 
-#: ../../twitter-bar.php
-msgid "Create your Twitter App here"
-msgstr "Créer votre App Twitter ici"
+#: ../../portfolio-lite.php
+msgid "Link URL"
+msgstr "Lien URL"
 
-#: ../../twitter-bar.php
-msgid "Complete all parts of the form and create your application"
-msgstr "Remplir toutes les parties du formulaire et créez votre application"
+#: ../../portfolio-lite.php
+msgid "Second Portfolio Image"
+msgstr "Portefeuille Lite"
 
-#: ../../twitter-bar.php
-msgid "On the next page click on the button Create my access token"
-msgstr "Sur la page suivante, cliquez sur le bouton créer mon jeton d'accès"
+#: ../../portfolio-lite.php
+msgid "Second Portfolio Image Caption"
+msgstr "Légende de l'image 2 du Portfolio"
 
-#: ../../twitter-bar.php
-msgid "Now take the details and fill out the form below"
-msgstr "Maintenant, prenez les détails et remplir le formulaire ci-dessous"
+msgid "Image 2"
+msgstr "Image 2"
 
-#: ../../twitter-bar.php
-msgid "Save your options"
-msgstr "Enregistrer vos options"
+#: ../../portfolio-lite.php
+msgid "Second Porfolio Link"
+msgstr "Portefeuille Lite"
 
-#: ../../twitter-bar.php
-msgid "Create a Twitter App"
-msgstr "Créer une application Twitter"
+#: ../../portfolio-lite.php
+msgid "Third Portfolio Image"
+msgstr "Portefeuille Lite"
 
-#: ../../twitter-bar.php
-msgid "Consumer Key"
-msgstr "Clé de la consommation"
+#: ../../portfolio-lite.php
+msgid "Third Portfolio Image Caption"
+msgstr "Légende de l'image 3 du Portfolio"
 
-#: ../../twitter-bar.php
-msgid "Consumer Secret"
-msgstr "Secret de consommateur"
+msgid "Image 3"
+msgstr "Image 3"
 
-#: ../../twitter-bar.php
-msgid "Access Token"
-msgstr "Jeton d'accès"
+#: ../../portfolio-lite.php
+msgid "Third Porfolio Link"
+msgstr "Portefeuille Lite"
 
-#: ../../twitter-bar.php
-msgid "Access Token Secret"
-msgstr "Accès jeton Secret"
+#: ../../portfolio-lite.php
+msgid "Fourth Portfolio Image"
+msgstr "Portefeuille Lite"
 
-#: ../../twitter-bar.php
-msgid "Twitter Handle"
-msgstr "Poignée Twitter"
+#: ../../portfolio-lite.php
+msgid "Fourth Portfolio Image Caption"
+msgstr "Légende de l'image 4 du Portfolio"
+
+msgid "Image 4"
+msgstr "Image 4"
+
+#: ../../portfolio-lite.php
+msgid "Fourth Porfolio Link"
+msgstr "Portefeuille Lite"
+
+#: ../../portfolio-lite.php
+msgid "Portfolio Lite Options"
+msgstr "Portefeuille Lite"
+
+#: ../../slider-lite.php
+msgid "Slide One Image"
+msgstr "Faites glisser une image"
+
+#: ../../slider-lite.php
+msgid "Slide One Link"
+msgstr "Curseur Lite"
+
+#: ../../slider-lite.php
+msgid "Slide Two Image"
+msgstr "Image de la diapositive 2"
+
+#: ../../slider-lite.php
+msgid "Slide Two Link"
+msgstr "Curseur Lite"
+
+#: ../../slider-lite.php
+msgid "Slide Three Image"
+msgstr "Image de la diapositive 3"
+
+#: ../../slider-lite.php
+msgid "Slide Three Link"
+msgstr "Curseur Lite"
+
+#: ../../slider-lite.php
+msgid "Slider Lite Options"
+msgstr "Curseur Lite"

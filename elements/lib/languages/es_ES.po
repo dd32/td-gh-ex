@@ -3,13 +3,13 @@ msgstr ""
 "Project-Id-Version: Elements Free\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-19 16:22:25 UTC\n"
-"PO-Revision-Date: 2013-06-24 17:46+0530\n"
-"Last-Translator: Web Translate It <support@webtranslateit.com>\n"
+"PO-Revision-Date: 2013-11-12 16:42+0530\n"
+"Last-Translator: Surya <surya@cyberchimps.com>\n"
 "Language-Team: Spanish, Spain\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.5.7\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: ../../init.php
@@ -29,69 +29,105 @@ msgid "Slider Lite"
 msgstr "Deslizador Lite"
 
 #: ../../init.php
-msgid "Twitter Bar"
-msgstr "Twitter Bar"
-
-#: ../../init.php
 msgid "Page"
 msgstr "Ritmo"
 
-#: ../../twitter-bar.php
-msgid "No tweets to display"
-msgstr "No hay mensajes de twitter para mostrar"
+#: ../../portfolio-lite.php
+msgid "First Portfolio Image"
+msgstr "Cartera Lite"
 
-#: ../../twitter-bar.php
-msgid "Error retrieving tweets"
-msgstr "Error al recuperar tweets"
+#: ../../portfolio-lite.php
+msgid "First Portfolio Image Caption"
+msgstr "Cartera First Pie de foto"
 
-#: ../../twitter-bar.php
-msgid "Twitter API Options"
-msgstr "Opciones de la API de Twitter"
+#: ../../portfolio-lite.php
+msgid "Image 1"
+msgstr "Imagen 1"
 
-#: ../../twitter-bar.php
-msgid "Edit Twitter API"
-msgstr "Editar la API de Twitter"
+#: ../../portfolio-lite.php
+msgid "First Porfolio Link"
+msgstr "Cartera Lite"
 
-#: ../../twitter-bar.php
-msgid "Create your Twitter App here"
-msgstr "Crear su aplicación de Twitter aquí"
+#: ../../portfolio-lite.php
+msgid "Link URL"
+msgstr "URL:"
 
-#: ../../twitter-bar.php
-msgid "Complete all parts of the form and create your application"
-msgstr "Completar todas las partes de la forma y crear la aplicación"
+#: ../../portfolio-lite.php
+msgid "Second Portfolio Image"
+msgstr "Cartera Lite"
 
-#: ../../twitter-bar.php
-msgid "On the next page click on the button Create my access token"
-msgstr "En la siguiente página, haga clic en el botón crear mi token de acceso"
+#: ../../portfolio-lite.php
+msgid "Second Portfolio Image Caption"
+msgstr "Segunda foto de cartera"
 
-#: ../../twitter-bar.php
-msgid "Now take the details and fill out the form below"
-msgstr "Ahora toma el información y rellene el siguiente formulario"
+#: ../../portfolio-lite.php
+msgid "Image 2"
+msgstr "Imagen 2"
 
-#: ../../twitter-bar.php
-msgid "Save your options"
-msgstr "Guarde sus opciones"
+#: ../../portfolio-lite.php
+msgid "Second Porfolio Link"
+msgstr "Cartera Lite"
 
-#: ../../twitter-bar.php
-msgid "Create a Twitter App"
-msgstr "Crear una aplicación de Twitter"
+#: ../../portfolio-lite.php
+msgid "Third Portfolio Image"
+msgstr "Cartera Lite"
 
-#: ../../twitter-bar.php
-msgid "Consumer Key"
-msgstr "Clave del consumidor"
+#: ../../portfolio-lite.php
+msgid "Third Portfolio Image Caption"
+msgstr "Tercera Foto de cartera"
 
-#: ../../twitter-bar.php
-msgid "Consumer Secret"
-msgstr "Secreto del consumidor"
+#: ../../portfolio-lite.php
+msgid "Image 3"
+msgstr "Imagen 3"
 
-#: ../../twitter-bar.php
-msgid "Access Token"
-msgstr "Token de acceso"
+#: ../../portfolio-lite.php
+msgid "Third Porfolio Link"
+msgstr "Cartera Lite"
 
-#: ../../twitter-bar.php
-msgid "Access Token Secret"
-msgstr "Secreto de Token de acceso"
+#: ../../portfolio-lite.php
+msgid "Fourth Portfolio Image"
+msgstr "Cartera Lite"
 
-#: ../../twitter-bar.php
-msgid "Twitter Handle"
-msgstr "Twitter Mango"
+#: ../../portfolio-lite.php
+msgid "Fourth Portfolio Image Caption"
+msgstr "Cuarta foto de cartera"
+
+#: ../../portfolio-lite.php
+msgid "Image 4"
+msgstr "Imagen 4"
+
+#: ../../portfolio-lite.php
+msgid "Fourth Porfolio Link"
+msgstr "Cartera Lite"
+
+#: ../../portfolio-lite.php
+msgid "Portfolio Lite Options"
+msgstr "Cartera Lite"
+
+#: ../../slider-lite.php
+msgid "Slide One Image"
+msgstr "Deslice una imagen"
+
+#: ../../slider-lite.php
+msgid "Slide One Link"
+msgstr "Deslizador Lite"
+
+#: ../../slider-lite.php
+msgid "Slide Two Image"
+msgstr "Deslice dos imágenes"
+
+#: ../../slider-lite.php
+msgid "Slide Two Link"
+msgstr "Deslizador Lite"
+
+#: ../../slider-lite.php
+msgid "Slide Three Image"
+msgstr "Deslice Tres de imagen"
+
+#: ../../slider-lite.php
+msgid "Slide Three Link"
+msgstr "Deslizador Lite"
+
+#: ../../slider-lite.php
+msgid "Slider Lite Options"
+msgstr "Deslizador Lite"

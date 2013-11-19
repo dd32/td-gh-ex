@@ -3,19 +3,21 @@ msgstr ""
 "Project-Id-Version: Elements Free\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-19 16:22:25 UTC\n"
-"PO-Revision-Date: 2013-06-24 17:47+0530\n"
+"PO-Revision-Date: 2013-11-12 10:14:24 UTC\n"
 "Last-Translator: Web Translate It <support@webtranslateit.com>\n"
 "Language-Team: English\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: WebTranslateIt.com\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
+#: ../../init.php
 #: ../../init.php
 msgid "Boxes Lite"
 msgstr "Boxes Lite"
 
+#: ../../init.php
 #: ../../init.php
 msgid "Portfolio Lite"
 msgstr "Portfolio Lite"
@@ -25,73 +27,114 @@ msgid "Post Page"
 msgstr "Post Page"
 
 #: ../../init.php
+#: ../../init.php
 msgid "Slider Lite"
 msgstr "Slider Lite"
-
-#: ../../init.php
-msgid "Twitter Bar"
-msgstr "Twitter Bar"
 
 #: ../../init.php
 msgid "Page"
 msgstr "Page"
 
-#: ../../twitter-bar.php
-msgid "No tweets to display"
-msgstr "No tweets to display"
+#: ../../portfolio-lite.php
+msgid "First Portfolio Image"
+msgstr "Portfolio Lite"
 
-#: ../../twitter-bar.php
-msgid "Error retrieving tweets"
-msgstr "Error retrieving tweets"
+#: ../../portfolio-lite.php
+msgid "First Portfolio Image Caption"
+msgstr "First Portfolio Image Caption"
 
-#: ../../twitter-bar.php
-msgid "Twitter API Options"
-msgstr "Twitter API Options"
+#: ../../portfolio-lite.php
+msgid "Image 1"
+msgstr "Image 1"
 
-#: ../../twitter-bar.php
-msgid "Edit Twitter API"
-msgstr "Edit Twitter API"
+#: ../../portfolio-lite.php
+msgid "First Porfolio Link"
+msgstr "Portfolio Lite"
 
-#: ../../twitter-bar.php
-msgid "Create your Twitter App here"
-msgstr "Create your Twitter App here"
+#: ../../portfolio-lite.php
+#: ../../portfolio-lite.php
+#: ../../portfolio-lite.php
+#: ../../portfolio-lite.php
+msgid "Link URL"
+msgstr "Link URL"
 
-#: ../../twitter-bar.php
-msgid "Complete all parts of the form and create your application"
-msgstr "Complete all parts of the form and create your application"
+#: ../../portfolio-lite.php
+msgid "Second Portfolio Image"
+msgstr "Portfolio Lite"
 
-#: ../../twitter-bar.php
-msgid "On the next page click on the button Create my access token"
-msgstr "On the next page click on the button Create my access token"
+#: ../../portfolio-lite.php
+msgid "Second Portfolio Image Caption"
+msgstr "Second Portfolio Image Caption"
 
-#: ../../twitter-bar.php
-msgid "Now take the details and fill out the form below"
-msgstr "Now take the details and fill out the form below"
+#: ../../portfolio-lite.php
+msgid "Image 2"
+msgstr "Image 2"
 
-#: ../../twitter-bar.php
-msgid "Save your options"
-msgstr "Save your options"
+#: ../../portfolio-lite.php
+msgid "Second Porfolio Link"
+msgstr "Portfolio Lite"
 
-#: ../../twitter-bar.php
-msgid "Create a Twitter App"
-msgstr "Create a Twitter App"
+#: ../../portfolio-lite.php
+msgid "Third Portfolio Image"
+msgstr "Portfolio Lite"
 
-#: ../../twitter-bar.php
-msgid "Consumer Key"
-msgstr "Consumer Key"
+#: ../../portfolio-lite.php
+msgid "Third Portfolio Image Caption"
+msgstr "Third Portfolio Image Caption"
 
-#: ../../twitter-bar.php
-msgid "Consumer Secret"
-msgstr "Consumer Secret"
+#: ../../portfolio-lite.php
+msgid "Image 3"
+msgstr "Image 3"
 
-#: ../../twitter-bar.php
-msgid "Access Token"
-msgstr "Access Token"
+#: ../../portfolio-lite.php
+msgid "Third Porfolio Link"
+msgstr "Portfolio Lite"
 
-#: ../../twitter-bar.php
-msgid "Access Token Secret"
-msgstr "Access Token Secret"
+#: ../../portfolio-lite.php
+msgid "Fourth Portfolio Image"
+msgstr "Portfolio Lite"
 
-#: ../../twitter-bar.php
-msgid "Twitter Handle"
-msgstr "Twitter Handle"
+#: ../../portfolio-lite.php
+msgid "Fourth Portfolio Image Caption"
+msgstr "Fourth Portfolio Image Caption"
+
+#: ../../portfolio-lite.php
+msgid "Image 4"
+msgstr "Image 4"
+
+#: ../../portfolio-lite.php
+msgid "Fourth Porfolio Link"
+msgstr "Portfolio Lite"
+
+#: ../../portfolio-lite.php
+msgid "Portfolio Lite Options"
+msgstr "Portfolio Lite"
+
+#: ../../slider-lite.php
+msgid "Slide One Image"
+msgstr "Slide One Image"
+
+#: ../../slider-lite.php
+msgid "Slide One Link"
+msgstr "Slider Lite"
+
+#: ../../slider-lite.php
+msgid "Slide Two Image"
+msgstr "Slide Two Image"
+
+#: ../../slider-lite.php
+msgid "Slide Two Link"
+msgstr "Slider Lite"
+
+#: ../../slider-lite.php
+msgid "Slide Three Image"
+msgstr "Slide Three Image"
+
+#: ../../slider-lite.php
+msgid "Slide Three Link"
+msgstr "Slider Lite"
+
+#: ../../slider-lite.php
+msgid "Slider Lite Options"
+msgstr "Slider Lite"
+
