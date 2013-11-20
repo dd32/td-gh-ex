@@ -4,12 +4,14 @@
  */
 function virtue_sidebar_list() {
   $all_sidebars=array(array('name'=>__('Primary Sidebar', 'virtue'), 'id'=>'sidebar-primary'));
-  global $smof_data; 
-  if(isset($smof_data['c_sidebars'])) {
-  if (is_array($smof_data['c_sidebars'])) {
-  foreach($smof_data['c_sidebars'] as $sidebar){
-    if(empty($sidebar['title'])) $sidebar['title'] = 'sidebar'.$sidebar['order'];
-    $all_sidebars[]=array('name'=>$sidebar['title'], 'id'=>'sidebar'.$sidebar['order']);
+  global $virtue; 
+  if(isset($virtue['cust_sidebars'])) {
+  if (is_array($virtue['cust_sidebars'])) {
+    $i = 1;
+  foreach($virtue['cust_sidebars'] as $sidebar){
+    if(empty($sidebar)) {$sidebar = 'sidebar'.$i;}
+    $all_sidebars[]=array('name'=>$sidebar, 'id'=>'sidebar'.$i);
+    $i++;
   }
  }
 }
@@ -62,7 +64,7 @@ function kadence_widgets_init() {
     'after_title'   => '</h3>',
   ));
   // Footer
-  global $smof_data; if(isset($smof_data['footer_layout'])) { $footer_layout = $smof_data['footer_layout'];} else {$footer_layout = "twoc";}
+  global $virtue; if(isset($virtue['footer_layout'])) { $footer_layout = $virtue['footer_layout'];} else {$footer_layout = "twoc";}
   if ($footer_layout == "fourc") {
     if ( function_exists('register_sidebar') )
       register_sidebar(array(

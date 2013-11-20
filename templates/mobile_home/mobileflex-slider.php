@@ -1,9 +1,9 @@
 <div class="sliderclass">
-   <?php  global $smof_data; 
-         if(isset($smof_data['mobile_slider_size'])) {$slideheight = $smof_data['mobile_slider_size'];} else { $slideheight = 300; }
-        if(isset($smof_data['mobile_slider_size_width'])) {$slidewidth = $smof_data['mobile_slider_size_width'];} else { $slidewidth = 480; }
-        if(isset($smof_data['mobile_slider_captions'])) { $captions = $smof_data['mobile_slider_captions']; } else {$captions = '';}
-        if(isset($smof_data['home_mobile_slider'])) {$slides = $smof_data['home_mobile_slider']; } else {$slides = '';}
+   <?php  global $virtue; 
+         if(isset($virtue['mobile_slider_size'])) {$slideheight = $virtue['mobile_slider_size'];} else { $slideheight = 300; }
+        if(isset($virtue['mobile_slider_size_width'])) {$slidewidth = $virtue['mobile_slider_size_width'];} else { $slidewidth = 480; }
+        if(isset($virtue['mobile_slider_captions'])) { $captions = $virtue['mobile_slider_captions']; } else {$captions = '';}
+        if(isset($virtue['home_mobile_slider'])) {$slides = $virtue['home_mobile_slider']; } else {$slides = '';}
                 ?>
 <div id="imageslider" class="container">
                    <div class="flexslider loading" style="max-width:<?php echo $slidewidth;?>px; margin-left: auto; margin-right:auto;">
@@ -27,11 +27,11 @@
               </div> <!--Flex Slides-->
               </div><!--Container-->
               </div><!--feat-->
-               <?php  global $smof_data; 
-          $transtype = $smof_data['mobile_trans_type']; if ($transtype == '') $transtype = 'slide';
-          $transtime = $smof_data['mobile_slider_transtime']; if ($transtime == '') $transtime = '300'; 
-          $autoplay = $smof_data['mobile_slider_autoplay']; if ($autoplay == '') $autoplay = 'true'; 
-          $pausetime = $smof_data['mobile_slider_pausetime']; if ($pausetime == '') $pausetime = '7000'; 
+               <?php  global $virtue; 
+          $transtype = $virtue['mobile_trans_type']; if ($transtype == '') $transtype = 'slide';
+          $transtime = $virtue['mobile_slider_transtime']; if ($transtime == '') $transtime = '300'; 
+          $autoplay = $virtue['mobile_slider_autoplay']; if ($autoplay == '') $autoplay = 'true'; 
+          $pausetime = $virtue['mobile_slider_pausetime']; if ($pausetime == '') $pausetime = '7000'; 
       ?>
       <script type="text/javascript">
             jQuery(window).load(function () {

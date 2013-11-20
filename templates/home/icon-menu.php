@@ -1,4 +1,4 @@
-<?php global $smof_data; $icons = $smof_data['icon_menu']; 
+<?php global $virtue; $icons = $virtue['icon_menu']; 
                 $iconcount = count($icons);
                 if(kadence_display_sidebar()) {
                     if ($iconcount == "2") {
@@ -26,6 +26,7 @@
                                 <a href="<?php echo $icon['link'] ?>" title="<?php echo $icon['title'] ?>">
                                 <?php if($icon['url'] != '') echo '<img src="'.$icon['url'].'"/>' ; else echo '<i class="'.$icon['icon_o'].'"></i>'; ?>
                                 <?php if ($icon['title'] != '') echo '<h4>'.$icon['title'].'</h4>'; ?>
+                                <?php if ($icon['description'] != '') echo '<p>'.$icon['description'].'</p>'; ?>
                                 </a>
                             </div>
                              <?php $counter ++ ?>

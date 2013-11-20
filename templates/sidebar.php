@@ -1,6 +1,6 @@
 <?php	
 		if(is_front_page()) {
-				global $smof_data; $sidebar = $smof_data['home_sidebar'];
+				global $virtue; $sidebar = $virtue['home_sidebar'];
 				if (!empty($sidebar)) {
 					dynamic_sidebar($sidebar);
 					}
@@ -10,7 +10,7 @@
 		}
 		else if( class_exists('woocommerce') and (is_shop() || is_product_category() || is_product_tag())) {
 			
-				global $smof_data; $sidebar = $smof_data['shop_sidebar'];
+				global $virtue; $sidebar = $virtue['shop_sidebar'];
 	 			if ($sidebar != '') {
 					dynamic_sidebar($sidebar);
 					}

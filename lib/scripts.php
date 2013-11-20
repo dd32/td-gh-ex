@@ -17,7 +17,7 @@
 function kadence_scripts() {
   wp_enqueue_style('kadence_bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.css', false, null);
   wp_enqueue_style('kadence_theme', get_template_directory_uri() . '/assets/css/virtue.css', false, null);
-global $smof_data; if(isset($smof_data['skin_stylesheet'])) {$skin = $smof_data['skin_stylesheet'];} else { $skin = 'default.css';} 
+global $virtue; if(isset($virtue['skin_stylesheet'])) {$skin = $virtue['skin_stylesheet'];} else { $skin = 'default.css';} 
  wp_enqueue_style('virtue_skin', get_template_directory_uri() . '/assets/css/skins/'.$skin.'', false, null);
 
   if (is_child_theme()) {
@@ -35,11 +35,6 @@ global $smof_data; if(isset($smof_data['skin_stylesheet'])) {$skin = $smof_data[
   wp_enqueue_script('modernizr');
   wp_enqueue_script('kadence_plugins');
   wp_enqueue_script('kadence_main');
-  
-  if(isset($smof_data['virtue_retina_script']) && $smof_data['virtue_retina_script'] == 1) {
-    wp_register_script('retina', get_template_directory_uri() . '/assets/js/retina-1.1.0.min.js', false, null, true);
-    wp_enqueue_script('retina');
-  }
   
    if(class_exists('woocommerce')) {
   wp_deregister_script('wc-add-to-cart-variation');

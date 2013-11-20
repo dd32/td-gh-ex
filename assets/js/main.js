@@ -18,20 +18,27 @@ jQuery(document).ready(function ($) {
 		$('.kad-select').customSelect();
 
 		// Lightbox
+			$.extend(true, $.magnificPopup.defaults, {
+			tClose: '',
+			image: {
+				titleSrc: function(item) {
+					return item.el.find('img').attr('alt');
+					}
+				}
+		});
 		$("a[rel^='lightbox']").magnificPopup({type:'image'});
-		$('.kad-light-gallery').each(function() {
-    		$(this).find('a[rel^="lightbox"]').magnificPopup({
-		        type: 'image',
-		        gallery: {
-		          enabled:true
-				        }
+		$('.kad-light-gallery').each(function(){
+			$(this).find('a[rel^="lightbox"]').magnificPopup({
+				type: 'image',
+				gallery: {
+					enabled:true
+					},
+					image: {
+						titleSrc: 'title'
+					}
 				});
-		}); 
+		});
 
-	//Menu
-	$("nav select").change(function() {
-		window.location = $(this).find("option:selected").val();
-	});
 });
 
 

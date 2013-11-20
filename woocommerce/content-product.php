@@ -38,9 +38,13 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 $classes[] = 'grid_item';
 $classes[] = 'product_item';
 $classes[] = 'clearfix';
-
+if(isset($virtue_premium['product_img_resize']) && $virtue_premium['product_img_resize'] == 0) {
+	$resizeimage = 0;
+} else {
+	$resizeimage = 1;
 	$productimgwidth = 270;
 	$productimgheight = 270;
+}
 ?>
                     <?php
 						$terms = get_the_terms( $post->ID, 'product_cat' );
@@ -77,16 +81,20 @@ $classes[] = 'clearfix';
 			<?php echo woocommerce_show_product_loop_sale_flash($post, $product); ?>
 
 			<?php // echo woocommerce_template_loop_product_thumbnail($post, $product, $size); ?>
-			<?php if ( has_post_thumbnail() ) {
-				$product_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); 
-				$product_image_url = $product_image[0]; 
-				$image_product = aq_resize($product_image_url, $productimgwidth, $productimgheight, true);
-            	if(empty($image_product)) {$image_product = $product_image_url;} ?> 
-            	 <img width="<?php echo $productimgwidth;?>" height="<?php echo $productimgheight;?>" src="<?php echo $image_product;?>" class="attachment-shop_catalog wp-post-image" alt="<?php the_title();?>">
-            	 <?php
-        } elseif ( woocommerce_placeholder_img_src() ) {
-             echo woocommerce_placeholder_img( 'shop_catalog' );
-             } ?>
+			<?php if($resizeimage == 1) { 
+				if ( has_post_thumbnail() ) {
+					$product_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); 
+					$product_image_url = $product_image[0]; 
+					$image_product = aq_resize($product_image_url, $productimgwidth, $productimgheight, true);
+	            	if(empty($image_product)) {$image_product = $product_image_url;} ?> 
+	            	 <img width="<?php echo $productimgwidth;?>" height="<?php echo $productimgheight;?>" src="<?php echo $image_product;?>" class="attachment-shop_catalog wp-post-image" alt="<?php the_title();?>">
+	            	 <?php
+        		} elseif ( woocommerce_placeholder_img_src() ) {
+		             echo woocommerce_placeholder_img( 'shop_catalog' );
+		             }  
+			} else { 
+				echo woocommerce_template_loop_product_thumbnail();
+         }?>
              </a>
 		<div class="product_details">
 			<a href="<?php the_permalink(); ?>" class="product_item_link">

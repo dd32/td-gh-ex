@@ -1,10 +1,10 @@
 <div class="home_blog home-margin clearfix home-padding">
 	<?php if(kadence_display_sidebar()) {$postwidthclass = 'span8';} else {$postwidthclass = 'span6';}
-	global $smof_data; if(isset($smof_data['blog_title'])) { $btitle = $smof_data['blog_title'];} else { $btitle = __('Latest from the Blog', 'virtue'); } ?>
+	global $virtue; if(isset($virtue['blog_title'])) { $btitle = $virtue['blog_title'];} else { $btitle = __('Latest from the Blog', 'virtue'); } ?>
 		<div class="clearfix"><h3 class="hometitle"><?php echo $btitle; ?></h3></div>
 	<div class="row">
-		<?php global $smof_data; if(isset($smof_data['home_post_count'])) { $blogcount = $smof_data['home_post_count'];} else { $blogcount = '2'; } 
-				 if(isset($smof_data['home_post_type'])) { $blog_category = $smof_data['home_post_type'];}
+		<?php global $virtue; if(isset($virtue['home_post_count'])) { $blogcount = $virtue['home_post_count'];} else { $blogcount = '2'; } 
+				 if(isset($virtue['home_post_type'])) { $blog_category = $virtue['home_post_type'];}
 				 if($blog_category == 'All' || $blog_category == '') {
       					$blog_cat_slug = '';
 					} else {

@@ -1,16 +1,16 @@
-			<?php  global $smof_data; ?>
-			<?php if(isset($smof_data['mobile_slider'])) { 
-				$mobile_slider = $smof_data['mobile_slider'];
+			<?php  global $virtue; ?>
+			<?php if(isset($virtue['mobile_slider'])) { 
+				$mobile_slider = $virtue['mobile_slider'];
 			} else {
 				$mobile_slider = '';
 			}
-			if(isset($smof_data['choose_slider'])) {
-				$slider = $smof_data['choose_slider'];
+			if(isset($virtue['choose_slider'])) {
+				$slider = $virtue['choose_slider'];
 			} else {
 				$slider = 'mock_flex';
 			}
 			if(detect_mobile() && $mobile_slider == '1') {
-		 		$slider = $smof_data['choose_mobile_slider'];
+		 		$slider = $virtue['choose_mobile_slider'];
 					 if ($slider == "flex") {
 					get_template_part('templates/mobile_home/mobileflex', 'slider');
 				}
@@ -39,7 +39,7 @@
    		<div class="row">
           <div class="main <?php echo kadence_main_class(); ?>" role="main">
 
-      	<?php if(isset($smof_data['homepage_layout'])) { $layout = $smof_data['homepage_layout']['enabled']; } else {$layout = array("block_one" => "block_one", "block_two" => "block_two"); }
+      	<?php if(isset($virtue['homepage_layout'])) { $layout = $virtue['homepage_layout']['enabled']; } else {$layout = array("block_one" => "block_one", "block_two" => "block_two"); }
 
 				if ($layout):
 
@@ -56,7 +56,7 @@
 						case 'block_four': ?>
 							<?php if(is_home()) { ?>
 							<?php if(kadence_display_sidebar()) {$display_sidebar = true; $fullclass = '';} else {$display_sidebar = false; $fullclass = 'fullwidth';} ?>
-							<?php global $smof_data; if(isset($smof_data['home_post_summery']) and ($smof_data['home_post_summery'] == 'full')) {$summery = "full"; $postclass = "single-article fullpost";} else {$summery = "summery"; $postclass = "postlist";} ?>
+							<?php global $virtue; if(isset($virtue['home_post_summery']) and ($virtue['home_post_summery'] == 'full')) {$summery = "full"; $postclass = "single-article fullpost";} else {$summery = "summery"; $postclass = "postlist";} ?>
 								<div class="homecontent <?php echo $fullclass; ?>  <?php echo $postclass; ?> clearfix home-margin"> 
 							<?php while (have_posts()) : the_post(); ?>
 							  <?php  if($summery == 'full') {
@@ -73,6 +73,18 @@
 											 }
 									}?>
 							<?php endwhile; ?>
+							<?php if ($wp_query->max_num_pages > 1) : ?>
+							        <?php if(function_exists('wp_pagenavi')) { ?>
+							              <?php wp_pagenavi(); ?>   
+							            <?php } else { ?>      
+							              <nav class="post-nav">
+							                <ul class="pager">
+							                  <li class="previous"><?php next_posts_link(__('&larr; Older posts', 'virtue')); ?></li>
+							                  <li class="next"><?php previous_posts_link(__('Newer posts &rarr;', 'virtue')); ?></li>
+							                </ul>
+							              </nav>
+							            <?php } ?> 
+							        <?php endif; ?>
 							</div> 
 						<?php } else { ?>
 						<div class="homecontent clearfix home-margin"> 

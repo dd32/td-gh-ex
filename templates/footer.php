@@ -1,7 +1,7 @@
 <footer id="containerfooter" class="footerclass" role="contentinfo">
   <div class="container">
   	<div class="row">
-  		<?php global $smof_data; if(isset($smof_data['footer_layout'])) { $footer_layout = $smof_data['footer_layout']; } else { $footer_layout = 'fourc'; }
+  		<?php global $virtue; if(isset($virtue['footer_layout'])) { $footer_layout = $virtue['footer_layout']; } else { $footer_layout = 'fourc'; }
   			if ($footer_layout == "fourc") {
   				if (is_active_sidebar('footer_1') ) { ?> 
 					<div class="span3 footercol1">
@@ -59,7 +59,7 @@
               wp_nav_menu(array('theme_location' => 'footer_navigation', 'menu_class' => 'footermenu'));
             ?></div><?php
         	endif;?>
-        	<p><?php if(isset($smof_data['footer_text'])) { $footertext = $smof_data['footer_text'];} else {$footertext = '[copyright] [the-year] [site-name] [theme-credit]';} echo do_shortcode($footertext); ?></p>
+        	<p><?php if(isset($virtue['footer_text'])) { $footertext = $virtue['footer_text'];} else {$footertext = '[copyright] [the-year] [site-name] [theme-credit]';} echo do_shortcode($footertext); ?></p>
     	</div>
 
   </div>

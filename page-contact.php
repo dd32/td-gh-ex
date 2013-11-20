@@ -78,7 +78,7 @@ Template Name: Contact
 			</script>
 		    <?php echo '<style type="text/css" media="screen">#map_address {height:'.$mapheight.'px; margin-bottom:20px;}</style>'; ?>
     <?php } ?>
-<?php global $smof_data;
+<?php global $virtue;
 	if(isset($_POST['submitted'])) {
 	if(trim($_POST['contactName']) === '') {
 		$nameError = __('Please enter your name.', 'virtue');
@@ -111,7 +111,7 @@ Template Name: Contact
 	if(!isset($hasError)) {
 		$emailTo = get_option('tz_email');
 		if (!isset($emailTo) || ($emailTo == '') ){
-			$emailTo = $smof_data['contact_email'];
+			$emailTo = $virtue['contact_email'];
 		}
 		$subject = '[Website Contact] From '.$name;
 		$body = "Name: $name \n\nEmail: $email \n\nComments: $comments";

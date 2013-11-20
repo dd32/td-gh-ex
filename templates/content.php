@@ -1,8 +1,16 @@
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                       <div class="row">
-                         <?php global $post; global $post; $postsummery = get_post_meta( $post->ID, '_kad_post_summery', true );
+                         <?php global $post; $postsummery = get_post_meta( $post->ID, '_kad_post_summery', true );
                           $height = get_post_meta( $post->ID, '_kad_posthead_height', true ); if (!empty($height)) $slideheight = $height; else $slideheight = 400; 
-                          $swidth = get_post_meta( $post->ID, '_kad_posthead_width', true ); if (!empty($swidth)) $slidewidth = $swidth; else $slidewidth = 770; 
+                          $swidth = get_post_meta( $post->ID, '_kad_posthead_width', true ); if (!empty($swidth)) $slidewidth = $swidth; else $slidewidth = 770;
+                          if(empty($postsummery) || $postsummery == 'default') {
+                            global $virtue;
+                            if(!empty($virtue['post_summery_default'])) {
+                            $postsummery = $virtue['post_summery_default'];
+                            } else {
+                              $postsummery = 'img_portrait';
+                            }
+                          } 
                         if($postsummery == 'img_landscape') { 
                             $textsize = 'span8'; 
                             if (has_post_thumbnail( $post->ID ) ) {

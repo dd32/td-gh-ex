@@ -4,8 +4,8 @@
 			<div class="page-header">
 				<div class="portfolionav clearfix">
    			<?php previous_post_link_plus( array('order_by' => 'menu_order', 'loop' => true, 'format' => '%link', 'link' => '<i class="icon-chevron-left"></i>') ); ?>
-   			<?php global $smof_data; if( isset($smof_data['portfolio_link']) && $smof_data['portfolio_link'] != "Select a page:"){ ?>
-   			<a href="<?php echo get_home_url().'/'.$smof_data["portfolio_link"].'/'; ?>">
+   			<?php global $virtue; if( !empty($virtue['portfolio_link'])){ ?>
+					 <a href="<?php echo get_page_link($virtue["portfolio_link"]); ?>">
 				<?php } else {?> 
 				<a href="../">
 				<?php } ?>

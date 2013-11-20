@@ -23,7 +23,7 @@ Virtue Theme Uses:
 * FlexSlider by WooThemes under the GPLv2 license (http://www.gnu.org/licenses/gpl-2.0.html)
 * Star Font and Woocommerce Templates by Woothemes for Woocommerce (licensed under GNU General Public License v2.0 or later)
 * Theme aspects derived from RootsTheme (http://www.rootstheme.com/) licensed under MIT license, http://www.opensource.org/licenses/mit-license.php
-* Theme Options derived from SMOF - Slightly Modded Options Framework (https://github.com/syamilmj/Options-Framework) licensed under GNU General Public License v3.0
+* Redux Options Framework (http://reduxframework.com/) licensed under GNU General Public License v3.0
 * Google Fonts (available through Google web Fonts: http://www.google.com/fonts/), licensed under Apache License Version 2
 * Aqua Resizer (https://github.com/syamilmj/Aqua-Resizer), licensed under WTFPL http://www.wtfpl.net/
 * Twitter Bootstrap (https://github.com/twbs/bootstrap), licensed under Apache License Version 2
@@ -33,7 +33,6 @@ Virtue Theme Uses:
 * Select2 (http://ivaynberg.github.io/select2/), licensed under GNU General Public License v2.0 or later
 * hoverIntent (https://github.com/briancherne/jquery-hoverIntent), licensed under MIT license, http://www.opensource.org/licenses/mit-license.php
 * Superfish (https://github.com/joeldbirch/superfish) Dual licensed under the MIT and GPL licenses: http://www.opensource.org/licenses/mit-license.php, http://www.gnu.org/licenses/gpl.html
-* retina.js (https://github.com/imulus/retinajs) licensed under MIT license, http://www.opensource.org/licenses/mit-license.php
 * Fitvids (https://github.com/davatron5000/FitVids.js/blob/master/jquery.fitvids.js), Released under the WTFPL license - http://sam.zoy.org/wtfpl/
 * touchSwipe, (https://github.com/mattbryson/TouchSwipe-Jquery-Plugin), Dual licensed under the MIT or GPL Version 2 licenses
 * jquery.customSelect (http://adam.co/lab/jquery/customselect/), Dual licensed under the MIT or GPL Version 2 licenses
@@ -49,13 +48,24 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 1.7.5 =
+* Updated Skins CSS
+* New Theme Options panel
+* Update Old Theme Options on activation
+* New Theme Options for products 
+* Fix Masonry issue with products
+* Remove Retina.js from theme
+* Add description to icon menu
+* Add latest post slider option
+* Add option to change layout for topbar
+
 = Version: 1.5.6 =
 * Added opt in for retina.js
 * Updated Mobile slider
 * Updated language issue for topbar widget
 * Updated AquaResizer
 * Updated styling with theme options
-* Add Catagory Page Subtitle
+* Add Category Page Subtitle
 * Add to options: turning off Virtue Gallery
 * Update Menu CSS
 * Update Feature Template with lightbox options
