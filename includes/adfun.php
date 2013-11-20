@@ -18,16 +18,9 @@
 	<!-- BEGIN FOOTER -->
 	<div id="footer">
 	<div id="footer-inner" class="clearfix">
-				<div id="footer-left">
-<?php _e('Copyright &#169;', 'promax'); ?>  <?php echo date('Y');?> <a href="<?php echo esc_url(home_url());?>/" title="<?php bloginfo('name');?>" ><?php bloginfo('name');?></a><?php _e('. All rights reserved.', 'promax'); ?>
+				<?php _e('Copyright &#169;', 'promax'); ?>  <?php echo date('Y');?> <a href="<?php echo esc_url(home_url());?>/" title="<?php bloginfo('name');?>" ><?php bloginfo('name');?></a><?php _e('. All rights reserved.', 'promax'); ?><?php _e('Powered by', 'promax'); ?> <a href="http://wordpress.org/"><?php _e('WordPress', 'promax'); ?></a><?php _e('. Designed by ', 'promax'); ?><a href="<?php echo esc_url( __( 'http://www.wrock.org/promax', 'promax' ) ); ?>" title="<?php esc_attr_e( 'Wrock.Org', 'promax' ); ?>"><?php printf( __( 'ProMax Theme %s', 'promax' ),''); ?></a>
 
-</div> <!-- end div #footer-left -->
-
-		<div id="footer-right">
-
-<?php _e('Powered by', 'promax'); ?> <a href="http://wordpress.org/"><strong><?php _e('WordPress', 'promax'); ?></strong></a><?php _e('. Designed by ', 'promax'); ?><a href="<?php echo esc_url( __( 'http://www.wrock.org/promax', 'promax' ) ); ?>" title="<?php esc_attr_e( 'Wrock.Org', 'promax' ); ?>"><?php printf( __( 'ProMax Theme %s', 'promax' ),''); ?></a>
-
-		</div> <!-- end div #footer-right -->
+	
 
 
 	</div> <!-- end div #footer-inner -->

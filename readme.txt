@@ -30,6 +30,10 @@ Custom Css:
 
 == Change log ==
 
+= 1.3 =
+*Fixed thumbnail quality
+*Footer copyright text update
+
 = 1.2.3 =
 *Fixed issue related home icon and categories 
 *Theme Panel Change to new version

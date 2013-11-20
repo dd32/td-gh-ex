@@ -7,4 +7,6 @@
 </div> <!-- end div #pagenavi --><p></p>
 <div class="gap"></div>
 
-
+<div id="footerads">
+<?php if ( of_get_option('promax_ad1') <> "" ) { echo stripslashes(of_get_option('promax_ad1')); } ?>
+</div>	

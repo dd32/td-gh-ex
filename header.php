@@ -16,14 +16,14 @@
 	<div id="header">
     <div id="header-inner" class="clearfix">
 		<div id="logo">
-			<?php if ( get_header_image() != '' ) : ?>       
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" /></a>        
-    <?php endif; // header image was removed ?>
-    <?php if ( !get_header_image() ) : ?>                     
+			
+<?php if (of_get_option( 'promax_logo' )): ?>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo of_get_option( 'promax_logo' ); ?>" height="" width="" alt=""/></a>
+      			<?php else : ?>        
             <h1 class="site-title">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-    <?php endif; // header image was removed (again) ?>
+          <?php endif; ?>		
 		</div>		
 		<div id="banner-top">	<?php echo of_get_option( 'banner_top'); ?></div>		
     </div> <!-- end div #header-inner -->

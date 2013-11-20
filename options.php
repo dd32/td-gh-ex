@@ -29,11 +29,11 @@ function optionsframework_options() {
 
 	// Test data
 	$test_array = array(
-		'one' => __('One', 'promax'),
-		'two' => __('Two', 'promax'),
-		'three' => __('Three', 'promax'),
-		'four' => __('Four', 'promax'),
-		'five' => __('Five', 'promax')
+		'3' => __('3', 'promax'),
+		'5' => __('5', 'promax'),
+		'6' => __('6', 'promax'),
+		'8' => __('8', 'promax'),
+		'10' => __('10', 'promax')
 	);
 
 	// Multicheck Array
@@ -54,24 +54,28 @@ function optionsframework_options() {
 	
 
 	// Background Defaults
-	$background_defaults = array(
-		'color' => '',
+	$background_default = array(
+		'color' => '#ffffff',
 		'image' => '',
 		'repeat' => 'repeat',
-		'position' => 'top center',
 		'attachment'=>'scroll' );
 
 	// Typography Defaults
 	$typography_defaults = array(
-		'size' => '15px',
-		'face' => 'georgia',
-		'style' => 'bold',
-		'color' => '#bada55' );
+		'size' => '13px',
+		'face' => 'false',
+		'style' => 'normal',
+		'color' => '#555555' );
+	$typography_entrytitle = array(
+		'size' => '28px',
+		'face' => 'false',
+		'style' => 'normal',
+		'color' => '#555555' );
 		
 	// Typography Options
 	$typography_options = array(
 		'sizes' => array( '6','12','14','16','20' ),
-		'faces' => array( 'Helvetica Neue' => 'Helvetica Neue','Arial' => 'Arial' ),
+		'faces' => false,
 		'styles' => array( 'normal' => 'Normal','bold' => 'Bold' ),
 		'color' => false
 	);
@@ -110,11 +114,15 @@ function optionsframework_options() {
 		
 	$options[] = array(
 		'name' => __('Custom Favicon URL', 'promax'),
-		'desc' => __('Enter Favicon Image URL in .ico format .', 'promax'),
+		'desc' => __('Enter Favicon Image URL Specify a 16px x 16px image in .ico format .', 'promax'),
 		'id' => 'promax_favicon',
 		'std' => '',
 		'type' => 'text');
-	
+	$options[] = array(
+		'name' => __('Upload Site Logo', 'promax'),
+		'desc' => __('Upload Website Logo "max height = 50px" and max width= 184px" to fit here. Note you can upload any size it will automatic resize .', 'promax'),
+		'id' => 'promax_logo',
+		'type' => 'upload');
 
 	$options[] = array(
 		'name' => __('Show Author Profile', 'promax'),
@@ -124,23 +132,21 @@ function optionsframework_options() {
 		'type' => 'checkbox');
 
 	$options[] = array(
+		'name' => __('Show Latest Posts Below Navigation', 'promax'),
+		'desc' => __('Show 5 Latest Posts with Thumbnail.', 'promax'),
+		'id' => 'promax_latest',
+		'std' => '1',
+		'type' => 'checkbox');
+	$options[] = array(
 		'name' => __('Show Popular Posts in Sidebar', 'promax'),
 		'desc' => __('Check the box to Show Popular Posts with Thumbnail in Sidebar.', 'promax'),
 		'id' => 'promax_popular',
 		'std' => '1',
 		'type' => 'checkbox');
-	$options[] = array(
-		'name' => __('Show Popular Posts in Sidebar', 'promax'),
-		'desc' => __('Check the box to Show 5 Latest Posts below navigation', 'promax'),
-		'id' => 'promax_latest',
-		'std' => '1',
-		'type' => 'checkbox');
-
 		
 $options[] = array(
 		'name' => __('Social Media', 'promax'),
 		'type' => 'heading');
-		
 		$options[] = array(
 		'name' => __('Facebook Link', 'promax'),
 		'desc' => __('Enter your Facebook URL if you have one.', 'promax'),
@@ -165,8 +171,8 @@ $options[] = array(
 		'id' => 'gp',
 		'std' => '',
 		'type' => 'text');
-
 		
+				
 $options[] = array(
 		'name' => __('Custom Styling', 'promax'),
 		'type' => 'heading');
@@ -199,7 +205,235 @@ $options[] = array(
             'std' => '',
             'type' => 'textarea');	
 		
-
+$options[] = array(
+		'name' => __('Upgrade to Premium', 'promax'),
+		'type' => 'heading');
+		$options[] = array(
+		'desc' => '<b>Buy Premium version now via PayPal and enable all features Today!</b><span class="buypre"><a href="http://www.wrock.org/promax/">Upgrade Now</a></span>
+		<li>SEO Optimized WordPress Theme.</li>
+		<li><a href="https://developers.google.com/speed/pagespeed/insights">Page Speed</a> Optimize for better result.</li>
+		<li>Custom Widgets and Functions.</li>
+		<li>Responsive Website Design.</li>
+		<li>Many of Other customize feature for your blog or webiste.</li><span class="buypred"><a href="http://www.wrock.org/contact-us">Already Paid or Donated !</a></span>
+		For more info and Theme Home Page <a href="http://www.wrock.org/promax/">http://www.wrock.org/promax/</a>',
+		'class' => 'tesingh',
+		'type' => 'info');
+		
+				
+		$options[] = array(
+		'desc' => '<span class="pre-title">New Features</span>', 
+		'type' => 'info');
+		
+		$options[] = array(
+		'name' => __('Social Share Buttons with count', 'promax'),
+		'desc' => __('Display social share buttons with count below post title.', 'promax'),
+		'id' => 'promax_flowshare',
+		'std' => '0',
+		'type' => 'checkbox');
+		
+		$options[] = array(
+		'name' => __('Responsive Website Design', 'promax'),
+		'desc' => __('Enable Responsive Design for you website to increase exprience on Mobile Devices', 'promax'),
+		'id' => 'promax_responsive',
+		'std' => '0',
+		'type' => 'checkbox');
+		$options[] = array(
+		'name' => __('Excerpt Length (Number of words display in post description)', 'promax'),
+		'desc' => __('Number of words display in every post description Default is 45.', 'promax'),
+		'id' => 'promax_excerp',
+		'std' => '45',
+		'class' => 'mini',
+		'type' => 'text');
+		$options[] = array(
+		'name' => __('Home Icon from Top and Main Navigation', 'promax'),
+		'desc' => __('Show or Hide Home Icon.', 'promax'),
+		'id' => 'promax_homeicon',
+		'std' => 'on',
+		'type' => 'radio',
+		'options' => array(
+						'on' => 'Show',
+						'off' => 'Hide'
+						));
+		
+		$options[] = array(
+		'name' =>  __('Change Background', 'promax'),
+		'desc' => __('Change the background CSS Color or Image.', 'promax'),
+		'id' => 'promax_bg',
+		'std' => $background_default,
+		'type' => 'background' );
+		$options[] = array(
+		'name' => __('Change Link Color', 'promax'),
+		'desc' => __('Select Links Color.', 'promax'),
+		'id' => 'promax_linkcolor',
+		'std' => '#2D89A7',
+		'type' => 'color' );
+		$options[] = array(
+		'desc' => __('Change Link Hover Color.', 'promax'),
+		'id' => 'promax_linkhover',
+		'std' => '#FD4326',
+		'type' => 'color' );
+		$options[] = array(
+		'name' => __('Main Navigation Colors', 'promax'),
+		'desc' => __('Navigation bottom border color.', 'promax'),
+		'id' => 'promax_botborder',
+		'std' => '#FD4326',
+		'type' => 'color' );
+		$options[] = array(
+		'desc' => __('Main Naigation Background.', 'promax'),
+		'id' => 'promax_mainnavibg',
+		'std' => '#333333',
+		'type' => 'color' );
+		
+		$options[] = array(
+		'desc' => __('Main Navigation hover Color.', 'promax'),
+		'id' => 'promax_mainnavilinkcolor',
+		'std' => '#FD4326',
+		'type' => 'color' );
+	
+		$options[] = array(
+		'name' => __('Page Number Navigation Color Chnage ', 'promax'),
+		'desc' => __('Change Current Page Background.', 'promax'),
+		'id' => 'promax_pageanvibg',
+		'std' => '#333333',
+		'type' => 'color' );
+		$options[] = array(
+			'desc' => __('Change backgroud color of other pages.', 'promax'),
+		'id' => 'promax_pageanvia',
+		'std' => '#FD4326',
+		'type' => 'color' );
+		$options[] = array(
+		'desc' => __('Numbers text Color Change.', 'promax'),
+		'id' => 'promax_pageanvilink',
+		'std' => '#ffffff',
+		'type' => 'color' );
+		
+		$options[] = array( 'name' => __('Customize Theme Fonts', 'promax'),
+		'desc' => __('Change <b>Body (Theme) Font</b> color and Size.', 'promax'),
+		'id' => "promax_bodyfonts",
+		'std' => $typography_defaults,
+		'type' => 'typography' );
+		$options[] = array( 
+		'desc' => __('Change <b>H1 Posts and Pages Title </b>Font color or Size.', 'promax'),
+		'id' => "promax_entrytitle",
+		'std' => $typography_entrytitle,
+		'type' => 'typography' );
+		$options[] = array(
+		'name' => __('Footer Widget Area Settings', 'promax'),
+		'desc' => __('Show or Hide Footer Widget Area.', 'promax'),
+		'id' => 'promax_footerwidget',
+		'std' => 'on',
+		'type' => 'radio',
+		'options' => array(
+						'on' => 'Show',
+						'off' => 'Hide'
+						));
+				
+		$options[] = array(
+		'name' => __('Edit Categories', 'promax'),
+		'desc' => __('Show or Hode Categories Button .', 'promax'),
+		'id' => 'promax_countinue',
+		'std' => 'on',
+		'type' => 'radio',
+		'options' => array(
+						'on' => 'Show',
+						'off' => 'Hide'
+						));
+		$options[] = array(
+		'desc' => __('Categories Background Color Change.', 'promax'),
+		'id' => 'promax_readmorecolor',
+		'std' => '#4DD247',
+		'type' => 'color' );					
+		$options[] = array(
+		'name' => "Website layout",
+		'desc' => "Select Images for Website layout.",
+		'id' => "promax_layout",
+		'std' => "s1",
+		'type' => "images",
+		'options' => array(
+			's1' => $imagepath . 's1.png',
+			's2' => $imagepath . 's2.png',
+			
+			)
+	);
+		$options[] = array(
+		'desc' => '<span class="pre-titleseo">SEO & Meta Options</span>', 
+		'type' => 'info');
+		$options[] = array(
+		'name' => __('Google+ Publisher URL', 'promax'),
+		'desc' => __('Paste Your Google Publisher URL https://plus.google.com/YOUR-GOOGLE+ID/posts.', 'promax'),
+		'id' => 'promax_googlepub',
+		'std' => '',
+		'type' => 'text');
+		$options[] = array(
+		'name' => __('Bing Site Verification', 'promax'),
+		'desc' => __('Enter the ID only. It will be verified by Yahoo as well.', 'promax'),
+		'id' => 'promax_bingvari',
+		'std' => '',
+		'type' => 'text');
+		$options[] = array(
+		'name' => __('Google Site varification', 'promax'),
+		'desc' => __('Enter your ID only.', 'promax'),
+		'id' => 'promax_googlevari',
+		'std' => '',
+		'type' => 'text');
+		
+		
+		$options[] = array(
+		'desc' => '<span class="pre-titlecus">Customization</span>', 
+		'type' => 'info');
+		$options[] = array(
+		'name' => __('Breadcrumbs Options', 'promax'),
+		'desc' => __('Check Box to Enable or Disable Breadcrumbs.', 'promax'),
+		'id' => 'promax_bread',
+		'std' => '1',
+		'type' => 'checkbox');
+		$options[] = array(
+		'name' => __('Enable Post Meta Info.', 'promax'),
+		'desc' => __('Check Box to Show or Hide Tags ', 'promax'),
+		'id' => 'promax_tags',
+		'std' => '1',
+		'type' => 'checkbox');
+		$options[] = array(
+		'desc' => __('Check Box to Show or Hide Comments ', 'promax'),
+		'id' => 'promax_comments',
+		'std' => '1',
+		'type' => 'checkbox');
+		$options[] = array(
+		'desc' => __('Check Box to Show or Hide Categories ', 'promax'),
+		'id' => 'promax_categrious',
+		'std' => '1',
+		'type' => 'checkbox');
+		$options[] = array(
+		'desc' => __('Check Box to Show or Hide Author and date ', 'promax'),
+		'id' => 'promax_autodate',
+		'std' => '1',
+		'type' => 'checkbox');
+			
+		$options[] = array(
+		'name' => __('Next and Previous Post Link', 'promax'),
+		'desc' => __('Show or Hide Next and Previous Post Link below every post.', 'promax'),
+		'id' => 'promax_links',
+		'std' => 'on',
+		'type' => 'radio',
+		'options' => array(
+						'on' => 'Show',
+						'off' => 'Hide'
+						));
+		$options[] = array(
+		'name' => __('Show or Hide Copy Right Text', 'promax'),
+		'desc' => __('Show or Hode Copyright Text and Link.', 'promax'),
+		'id' => 'promax_copyright',
+		'std' => 'on',
+		'type' => 'radio',
+		'options' => array(
+						'on' => 'Show',
+						'off' => 'Hide'
+						));
+		$options[] = array(
+		    'desc' => 'Paste Ad code for single post it show ads below post title and before content.',
+            'id' => 'promax_ftarea',
+            'std' => '&#169; 2013 Designed by: <a href="http://www.wrock.org/promax" title="wRock.Org">wRock.Org</a> | Powered by <a href="http://wordpress.org/"><strong> WordPress</strong></a>',
+            'type' => 'textarea');				
 
 	return $options;
 }

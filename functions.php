@@ -103,8 +103,12 @@ function promax_post_meta_data() {
 	// let's instead make sure that the function exists first
 	
 function promax_theme_setup() { 
-		add_theme_support( 'post-thumbnails', array( 'post' ) );
-		set_post_thumbnail_size( 370, 230, true );
+		if ( function_exists( 'add_theme_support' ) ) { 
+		add_theme_support( 'post-thumbnails' );
+	}	
+		add_image_size( 'defaultthumb', 240, 190 , true );
+		add_image_size( 'popularpost', 340, 135 , true );
+
 	
 		/**
          * promax translations.
@@ -131,25 +135,6 @@ function promax_theme_setup() {
  				'primary' => __('Primary', 'promax'),
 				)		
 		);
-	
-		/**
-         * This feature adds a callbacks for image header display.
-		 * In our case we are using this to display logo.
-         * @see http://codex.wordpress.org/Custom_Headers
-         */		
-		add_theme_support('custom-header', array (
-	        
-			'default-image'			=> get_template_directory_uri() . '/images/logo.png',
-	        'header-text'			=> false,
-	        'flex-width'             => true,
-	        'width'				    => 470,
-		    'flex-height'            => true,
-	        'height'			        => 100
-			));
-	// Add Support for Custom Backgrounds
-		add_theme_support('custom-background', array(
-			'default-color' => 'fff',
-			));
 	
 	add_action( 'after_setup_theme', 'promax_theme_setup' );
 	
@@ -274,6 +259,12 @@ function promax_wp_title( $title, $sep ) {
 	return $title;
 }
 add_filter( 'wp_title', 'promax_wp_title', 10, 2 );
+global $pagenow;
+if ( is_admin() && isset( $_GET['activated'] ) && $pagenow == 'themes.php' )
+{
+wp_redirect( admin_url( 'themes.php?page=options-framework' ) );
+exit;
+}
 
 ob_clean();
 ?>

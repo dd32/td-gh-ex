@@ -25,7 +25,7 @@ jQuery(document).ready(function($){
 					// Set the text of the button.
 					text: $el.data('update'),
 					// Tell the button not to close the modal, since we're
-					// going to refresh the page when the image is selected.
+					// going to promax the page when the image is selected.
 					close: false
 				}
 			});

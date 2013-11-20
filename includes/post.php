@@ -1,6 +1,6 @@
 <?php if(has_post_thumbnail()) : ?>
 	<span class="homecat"><?php the_category(', '); ?></span><div class="thumbnail">
-	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php if ( has_post_thumbnail() ) {the_post_thumbnail();} else { ?><img src="<?php echo get_template_directory_uri(); ?>/images/thumb.jpg" />
+	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php if ( has_post_thumbnail() ) {the_post_thumbnail('defaultthumb');} else { ?><img src="<?php echo get_template_directory_uri(); ?>/images/thumb.jpg" />
 <?php } ?>  </a>
 	</div>	<span class="authmt"> <?php promax_post_meta_data(); ?></span>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

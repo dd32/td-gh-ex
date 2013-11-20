@@ -28,6 +28,9 @@
 					<h3><?php _e('404 Error&#58; Not Found', 'promax' ); ?></h3>
 				</div>
 			<?php endif; ?>
-		</div> <!-- end div #content -->
+		<div id="footerads">
+<?php if ( of_get_option('promax_ad1') <> "" ) { echo stripslashes(of_get_option('promax_ad1')); } ?>
+</div></div> <!-- end div #content -->
+			
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
