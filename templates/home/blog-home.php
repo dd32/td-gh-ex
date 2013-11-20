@@ -4,12 +4,11 @@
 		<div class="clearfix"><h3 class="hometitle"><?php echo $btitle; ?></h3></div>
 	<div class="row">
 		<?php global $virtue; if(isset($virtue['home_post_count'])) { $blogcount = $virtue['home_post_count'];} else { $blogcount = '2'; } 
-				 if(isset($virtue['home_post_type'])) { $blog_category = $virtue['home_post_type'];}
-				 if($blog_category == 'All' || $blog_category == '') {
-      					$blog_cat_slug = '';
+				 if(!empty($virtue['home_post_type'])) { 
+						$blog_cat = get_term_by ('id',$virtue['home_post_type'],'category');
+						$blog_cat_slug = $blog_cat -> slug;
 					} else {
-					$blog_cat = get_term_by ('name',$blog_category,'category');
-					$blog_cat_slug = $blog_cat -> slug;
+						$blog_cat_slug = '';
 					}
 					?>
 				<?php $temp = $wp_query; 

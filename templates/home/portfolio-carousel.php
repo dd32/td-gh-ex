@@ -2,7 +2,12 @@
 <div class="home-portfolio home-margin carousel_outerrim home-padding">
 		<?php global $virtue; if(isset($virtue['portfolio_title'])) {$porttitle = $virtue['portfolio_title'];} else { $porttitle = __('Featured Projects', 'virtue'); } ?>
 		<div class="clearfix"><h3 class="hometitle"><?php echo $porttitle; ?></h3></div>
-		<?php  if(isset($virtue['portfolio_type'])) { $portfolio_category = $virtue['portfolio_type'];} else {$portfolio_category = '';}
+		<?php  if(!empty($virtue['portfolio_type'])) {
+							$port_cat = get_term_by ('id',$virtue_premium['portfolio_type'],'portfolio-type');
+							$portfolio_category = $port_cat -> slug;
+						} else {
+							$portfolio_category = '';
+						}
 				if(isset($virtue['porfolio_show_type'])) {$portfolio_item_types = $virtue['porfolio_show_type'];} else {$portfolio_item_types = '';}
 					if($portfolio_category == "All") {$portfolio_category = '';}
 					   		if(kadence_display_sidebar()) {

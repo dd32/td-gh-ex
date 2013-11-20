@@ -48,6 +48,10 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 1.7.6 =
+* Fixed Issue with home page blog categories
+* Fixed Issue with the home page portfolio categories.
+
 = Version: 1.7.5 =
 * Updated Skins CSS
 * New Theme Options panel
