@@ -1,0 +1,7 @@
+CHANGELOG
+=========
+
+DarkOrange version 1.0 - november 2013 
+- first stable release
+
+
