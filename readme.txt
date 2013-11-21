@@ -37,7 +37,6 @@ of all site pages. Multi-level dropdown works.
 * Page commenting on/of
 * Rounded or usual images in posts
 * Excerpts and post thumbnail in archives on/off
-* Loading Bootstrap javascript and CSS from your domain or Bootstrap CDN
 
 == Export/Import Theme Settins ==
 
@@ -51,14 +50,9 @@ and/or select featured image. 1140 x 300 pixel image size is recommended
 for best look. Slides with 3.8 width/height ratio are being displayed also
 entirely. Bottom part of less ratio images is hidden.
 
-Also B3 Slides post type can be used to display wide pages (no sidebar)
-with featured image before the content. In case you bump into Not Found
-on a single slide page you need to update permalinks setting.
-
 == Page Templates ==
 
 To display static pages choose default or wide template (without sidebar).
-
 
 == Auto Colorizing Feature ==
 
@@ -68,18 +62,14 @@ manner the second color for navigation bar gradient is being assigned.
 Analogously, post icons (of post date, user, category, tags) color is
 calculated from main text color.
 
-== Screenshots ==
-
-1. Theme default look screenshot
-2. screenshot-2.png - theme settings page screenshot
-
 == What Is on Demo Slides? ==
 
 Views of Tbilisi city, Georia (41.7 N 44.8 E) made by me.
 
-== License ==
+== Copyright ==
 
-B3 theme is under GNU General Public License v2.
+B3 WordPress Theme (C) 2013 Andrey K http://profiles.wordpress.org/andreyk
+B3 is distributed under the terms of the GNU GPL v2.0
 
 Works used in B3:
 
@@ -87,3 +77,4 @@ Works used in B3:
 * Respond.js for MSIE8 compatibility: https://github.com/scottjehl/respond (MIT/BSD license)
 * HTML5 Shiv for HTML5 support in MSIE: http://code.google.com/p/html5shiv/ (MIT/GPL2 Licensed)
 * Underscores theme quick start pack http://underscores.me/ (GPLv2 or later, (C) 2012-2013 Automattic, Inc.)
+* Demo images by Andrey K http://profiles.wordpress.org/andreyk (GPLv2)

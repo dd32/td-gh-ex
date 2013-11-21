@@ -11,7 +11,7 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
-		 <div <?php b3_content_wrap_class(); ?>>
+		 <div <?php b3theme_content_wrap_class(); ?>>
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<header class="entry-header">
 					<?php the_title('<h1 class="entry-title">', '</h1>'); ?>
@@ -19,12 +19,12 @@ get_header(); ?>
 					<div class="entry-meta">
 						<?php
 							$metadata = wp_get_attachment_metadata();
-							$time = ('Y'== b3_option('post_date')) ?
+							$time = ('Y'== b3theme_option('post_date')) ?
 									sprintf('<span class="entry-date"><span class="glyphicon glyphicon-calendar"></span> <time class="entry-date" datetime="%1$s">%2$s</time></span>',
 										esc_attr(get_the_date('c')), esc_html(get_the_date())) : '';
 
 							printf('%1$s<span class="glyphicon glyphicon-pushpin"></span> <a href="%5$s" rel="gallery">%6$s</a>, '
-								. __('size <a href="%2$s"> %3$s &times; %4$s</a>', 'b3'), $time,
+								. __('size <a href="%2$s"> %3$s &times; %4$s</a>', 'b3theme'), $time,
 								esc_url( wp_get_attachment_url() ),
 								$metadata['width'],
 								$metadata['height'],
@@ -35,8 +35,8 @@ get_header(); ?>
 					</div><!-- .entry-meta -->
 				 <nav role="navigation" class="image-navigation">
 					 <ul class="pager">
-						<li class="previous"><?php previous_image_link( false, __('<span class="meta-nav">&larr;</span> Previous', 'b3') ); ?></li>
-						<li class="next"><?php next_image_link( false, __('Next <span class="meta-nav">&rarr;</span>', 'b3') ); ?></li>
+						<li class="previous"><?php previous_image_link( false, __('<span class="meta-nav">&larr;</span> Previous', 'b3theme') ); ?></li>
+						<li class="next"><?php next_image_link( false, __('Next <span class="meta-nav">&rarr;</span>', 'b3theme') ); ?></li>
 					</ul>
 				 </nav><!-- #image-navigation --></li>
 				</header><!-- .entry-header -->
@@ -44,7 +44,7 @@ get_header(); ?>
 				<div class="entry-content">
 					<div class="entry-attachment">
 						<div class="attachment">
-							<?php b3_the_attached_image(); ?>
+							<?php b3theme_the_attached_image(); ?>
 						</div><!-- .attachment -->
 
 						<?php if ( has_excerpt() ) : ?>
@@ -57,13 +57,13 @@ get_header(); ?>
 					<?php
 						the_content();
 						wp_link_pages( array(
-							'before' => '<div class="page-links">' . __('Pages:', 'b3'),
+							'before' => '<div class="page-links">' . __('Pages:', 'b3theme'),
 							'after'  => '</div>',
 						) );
 					?>
 				</div><!-- .entry-content -->
 
-				<?php edit_post_link( '<span class="glyphicon glyphicon-pencil"></span> ' . __('Edit', 'b3'), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>'); ?>
+				<?php edit_post_link( '<span class="glyphicon glyphicon-pencil"></span> ' . __('Edit', 'b3theme'), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>'); ?>
 			</article><!-- #post-## -->
 		 </div>
 

@@ -31,7 +31,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php b3_content_nav('nav-below'); ?>
+			<?php b3theme_content_nav('nav-below'); ?>
 
 		<?php else : ?>
 

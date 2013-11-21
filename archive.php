@@ -29,36 +29,36 @@ get_header(); ?>
 							 * what author we're dealing with (if that is the case).
 							*/
 							the_post();
-							printf( __('Author: %s', 'b3'), '<span class="vcard">' . get_the_author() . '</span>');
+							printf( __('Author: %s', 'b3theme'), '<span class="vcard">' . get_the_author() . '</span>');
 /* Since we called the_post() above, we need to rewind the loop back. */
 							rewind_posts();
 
 						elseif ( is_day() ) :
-							printf( __('Day: %s', 'b3'), '<span>' . get_the_date() . '</span>');
+							printf( __('Day: %s', 'b3theme'), '<span>' . get_the_date() . '</span>');
 
 						elseif ( is_month() ) :
-							printf( __('Month: %s', 'b3'), '<span>' . get_the_date('F Y') . '</span>');
+							printf( __('Month: %s', 'b3theme'), '<span>' . get_the_date('F Y') . '</span>');
 
 						elseif ( is_year() ) :
-							printf( __('Year: %s', 'b3'), '<span>' . get_the_date('Y') . '</span>');
+							printf( __('Year: %s', 'b3theme'), '<span>' . get_the_date('Y') . '</span>');
 
 						elseif ( is_tax('post_format', 'post-format-aside') ) :
-							_e('Asides', 'b3');
+							_e('Asides', 'b3theme');
 
 						elseif ( is_tax('post_format', 'post-format-image') ) :
-							_e('Images', 'b3');
+							_e('Images', 'b3theme');
 
 						elseif ( is_tax('post_format', 'post-format-video') ) :
-							_e('Videos', 'b3');
+							_e('Videos', 'b3theme');
 
 						elseif ( is_tax('post_format', 'post-format-quote') ) :
-							_e('Quotes', 'b3');
+							_e('Quotes', 'b3theme');
 
 						elseif ( is_tax('post_format', 'post-format-link') ) :
-							_e('Links', 'b3');
+							_e('Links', 'b3theme');
 
 						else :
-							_e('Archives', 'b3');
+							_e('Archives', 'b3theme');
 
 						endif;
 					?>
@@ -82,7 +82,7 @@ get_header(); ?>
 					 */
 					get_template_part('content', get_post_format() );
 						endwhile;
-						b3_content_nav('nav-below');
+						b3theme_content_nav('nav-below');
 				else :
 						get_template_part('content', 'none');
 				endif; ?>

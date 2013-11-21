@@ -21,7 +21,7 @@ get_header(); ?>
 
 				<?php
 					// If comments are open or we have at least one comment, load up the comment template
-					if ('Y'!=b3_option('disable_comment_page') && comments_open() || '0' != get_comments_number() )
+					if ('Y'!=b3theme_option('disable_comment_page') && comments_open() || '0' != get_comments_number() )
 						comments_template();
 				?>
 

@@ -1,35 +1,35 @@
 <?php
 
 $slides = array(
-	array(
-		'post_title' => 'The Future Come',
-		'post_content' => '<p class="lead"><strong>Responsive layout and styling based on <code>Bootstrap 3</code>.</strong></p>
+	1 => array(
+		'title' => 'The Bridge of Peace',
+		'content' => '<p class="lead">The B3 theme uses responsive layout and styling solution by <code>Bootstrap 3</code>.</p>
 			<p>With <button class="btn btn-warning">theme settings</button></p>',
-		'post_excerpt' => '#',
-		'src' => B3_URI .'/images/slides/slide1.jpg',
+		'link' => '#',
+		'src' => B3THEME_URI .'/images/slides/bridge.jpg',
 		'alt' => 'Alt text of the first slide',
 	),
-	array(
-		'post_title' => 'The City',
-		'post_content' => '<p class="lead">Three widget areas: left or right, top, bottom. Multi level dropdown menu.</p>
+	2 => array(
+		'title' => 'The City',
+		'content' => '<p class="lead">Three widget areas: left or right, top, bottom. Multi level dropdown menu.</p>
 			<p class="alert alert-info">Change <span class="badge">logo</span>, <span class="badge">background image</span>, <span class="badge">background color</span></p>',
-		'post_excerpt' => '#',
-		'src' => B3_URI .'/images/slides/slide2.jpg',
+		'link' => '#',
+		'src' => B3THEME_URI .'/images/slides/tbilisi.jpg',
 		'alt' => 'Alt text of the second slide',
 	),
-	array(
-		'post_title' => 'Good Old Bike',
-		'post_content' => '<p class="lead">Make it on your own. Two page templates and customizable posts look.</p>
-			<p class="lead">Slides on homepage. Wordpress rich editor for slide description.</p>',
-		'post_excerpt' => '#',
-		'src' => B3_URI .'/images/slides/slide3.jpg',
+	3 => array(
+		'title' => 'Good Old Bike',
+		'content' => '<p class="lead">Make it on your own. Two page templates and customizable posts look.</p>
+			<p class="lead">Slides on homepage. Rich editor for slide description.</p><p> Recommended slide image size: 1140 x 300 pixel or 17:5 width/height ratio.</p>',
+		'link' => '#',
+		'src' => B3THEME_URI .'/images/slides/bike.jpg',
 		'alt' => 'Alt text of the third slide',
 	),
-	array(
-		'post_title' => 'Higher than Clouds',
-		'post_content' => '<p>Feel free to experiment.</p><div class="well">Backup and restore theme settings.</div>',
-		'post_excerpt' => '#',
-		'src' => B3_URI .'/images/slides/slide4.jpg',
+	4 => array(
+		'title' => 'Higher than Clouds',
+		'content' => '<p>Feel free to experiment.</p><div class="well">Backup and restore theme settings.</div>',
+		'link' => '#',
+		'src' => B3THEME_URI .'/images/slides/clouds.jpg',
 		'alt' => 'Alt text of the fourth slide',
 	),
 );

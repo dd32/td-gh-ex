@@ -10,7 +10,7 @@
 /**
  * Adds custom classes to the array of body classes.
  */
-function b3_body_classes( $classes ) {
+function b3theme_body_classes( $classes ) {
 	// Adds a class of group-blog to blogs with more than 1 published author
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
@@ -18,12 +18,12 @@ function b3_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter('body_class', 'b3_body_classes');
+add_filter('body_class', 'b3theme_body_classes');
 
 /**
  * Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
  */
-function b3_enhanced_image_navigation( $url, $id ) {
+function b3theme_enhanced_image_navigation( $url, $id ) {
 	if ( ! is_attachment() && ! wp_attachment_is_image( $id ) )
 		return $url;
 
@@ -33,12 +33,12 @@ function b3_enhanced_image_navigation( $url, $id ) {
 
 	return $url;
 }
-add_filter('attachment_link', 'b3_enhanced_image_navigation', 10, 2 );
+add_filter('attachment_link', 'b3theme_enhanced_image_navigation', 10, 2 );
 
 /**
  * Filters wp_title to print a neat <title> tag based on what is being viewed.
  */
-function b3_wp_title( $title, $sep ) {
+function b3theme_wp_title( $title, $sep ) {
 	global $page, $paged;
 
 	if ( is_feed() )
@@ -54,8 +54,8 @@ function b3_wp_title( $title, $sep ) {
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 )
-		$title .= " $sep " . sprintf( __('Page %s', 'b3'), max( $paged, $page ) );
+		$title .= " $sep " . sprintf( __('Page %s', 'b3theme'), max( $paged, $page ) );
 
 	return $title;
 }
-add_filter('wp_title', 'b3_wp_title', 10, 2 );
+add_filter('wp_title', 'b3theme_wp_title', 10, 2 );

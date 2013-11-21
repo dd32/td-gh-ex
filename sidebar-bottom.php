@@ -8,7 +8,7 @@
 	<div id="sidebar-bottom" class="widget-area row" role="complementary">
 <?php
 	do_action('before_sidebar', 'sidebar-bottom');
-		remove_filter('widget_title', 'b3_panel_widget_title');
+		remove_filter('widget_title', 'b3theme_panel_widget_title');
 		if ( ! dynamic_sidebar('sidebar-bottom') ) {
 			$args = array(
 				'before_widget' => '<aside class="widget col-md-3 col-sm-4 col-xs-12">',

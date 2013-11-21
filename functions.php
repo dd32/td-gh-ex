@@ -1,18 +1,19 @@
 <?php
+
 /**
  * B3 functions and definitions
  *
  * @package B3
  */
 
-define('B3_URI', get_template_directory_uri());
-define('B3_PATH', get_template_directory());
+define('B3THEME_URI', get_template_directory_uri());
+define('B3THEME_PATH', get_template_directory());
 
-function add_b3_menu() {
-	add_theme_page(__('B3 Theme settings', 'b3'), __('B3 Theme settings', 'b3'), 'edit_theme_options', 'b3_settings', 'b3_settings_page');
+function add_b3theme_menu() {
+	add_theme_page(__('B3 Theme settings', 'b3theme'), __('B3 Theme settings', 'b3theme'), 'edit_theme_options', 'b3theme_settings', 'b3theme_settings_page');
 }
 
-add_action('admin_menu', 'add_b3_menu');
+add_action('admin_menu', 'add_b3theme_menu');
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -22,57 +23,34 @@ add_action('admin_menu', 'add_b3_menu');
  * support post thumbnails.
  */
 
-function b3_setup() {
-global $b3_options;
-	load_theme_textdomain('b3', get_template_directory() . '/languages');
+function b3theme_empty_array($arr) {
+	return array();
+}
+
+function b3theme_setup() {
+global $b3theme_options;
+	load_theme_textdomain('b3theme', get_template_directory() . '/languages');
 	add_theme_support('automatic-feed-links');
-	add_theme_support('custom-header', array('default-image' => B3_URI . '/images/b3-logo.png'));
-	register_nav_menus(array('primary' => __('Primary Menu', 'b3'),));
+	add_theme_support('custom-header', array('default-image' => B3THEME_URI . '/images/b3theme-logo.png'));
+	register_nav_menus(array('primary' => __('Primary Menu', 'b3theme'),));
 	add_theme_support('post-formats', array('aside', 'image', 'video', 'quote', 'link'));
-	add_theme_support('custom-background', apply_filters('b3_custom_background_args',
+	add_theme_support('custom-background', apply_filters('b3theme_custom_background_args',
 		array('default-color' => 'ffffff', 'default-image' => '',)
 	));
 	add_theme_support('post-thumbnails');
-	add_filter('wp_nav_menu_container_allowedtags', 'b3_empty_array');
-	add_filter('wp_nav_menu_args', 'b3_wp_nav_menu_args');
-	require B3_PATH . '/inc/options.php';
-	$b3_options = get_option('b3_options');
-	if (!$b3_options) {
-		update_option('b3_options', array());
-		$b3_options = get_option('b3_options');
+	add_filter('wp_nav_menu_container_allowedtags', 'b3theme_empty_array');
+	add_filter('wp_nav_menu_args', 'b3theme_wp_nav_menu_args');
+	require B3THEME_PATH . '/inc/options.php';
+	$b3theme_options = get_option('b3theme_options');
+	if (!$b3theme_options) {
+		update_option('b3theme_options', array());
+		$b3theme_options = get_option('b3theme_options');
 	}
 
-	add_action('admin_init', 'b3_admin_init');
-
-	register_post_type('b3_slide', array(
-		'label' => __('Slides', 'b3'),
-		'description' => '',
-		'public' => true,
-		'show_ui' => true,
-		'show_in_menu' => true,
-		'capability_type' => 'post',
-		'hierarchical' => false,
-		'rewrite' => array('slug' => ''),
-		'query_var' => true,
-		'supports' => array('title', 'editor', 'thumbnail',),
-		'labels' => array (
-			'name' =>  __('Slides', 'b3'),
-			'singular_name' => __('Slide', 'b3'),
-			'menu_name' => __('B3 Slides', 'b3'),
-			'add_new' => __('Add Slide', 'b3'),
-			'add_new_item' => __('Add New Slide', 'b3'),
-			'edit' => __('Edit', 'b3'),
-			'edit_item' => __('Edit Slide', 'b3'),
-			'new_item' => __('New Slide', 'b3'),
-			'view' => __('View Slide', 'b3'),
-			'view_item' => __('View Slide', 'b3'),
-			'search_items' => __('Search Slides', 'b3'),
-			'not_found' => __('No Slides Found', 'b3'),
-			'not_found_in_trash' =>  __('No Slides Found in Trash', 'b3'),
-	)));
+	add_action('admin_init', 'b3theme_admin_init');
 }
 
-add_action('after_setup_theme', 'b3_setup');
+add_action('after_setup_theme', 'b3theme_setup');
 
 if ( !isset( $content_width ) ) {
 	$content_width = 970;
@@ -83,104 +61,52 @@ if ( !isset( $content_width ) ) {
 	Content width is calculated and being set by Bootstrap.
 */
 
-function b3_empty_array($arr) {
-	return array();
-}
-
-function b3_add_slide_metaboxes() {
-	add_meta_box('b3-slide-uri', __('Slide URL', 'b3'),
-		'b3_slide_uri_metabox', 'b3_slide', 'normal', 'core');
-}
-
-add_action('add_meta_boxes', 'b3_add_slide_metaboxes');
-
-function b3_slide_uri_metabox($post) {
-	wp_nonce_field('b3_inner_custom_box', 'b3_inner_custom_box_nonce');
-?>
-	<div style="margin: 20px;">
-		<p><input type="text" name="b3_slide_uri" style="width: 100%;" placeholder="Enter URL the slide links to" value="<?php echo $post->post_excerpt; ?>" /></p>
-		<p style="text-align: right;"><?php
-		$set_featured = '<a href="'
-			. admin_url('media-upload.php?post_id=' . $post->ID . '&type=image&TB_iframe=1&width=640&height=285')
-			. '" class="thickbox">' . __('to set the Featured Image', 'b3') . '</a> ';
-		printf(__('Don&#39;t forget %1$s as it is the slide picture.', 'b3'), $set_featured); ?></p>
-	</div>
-<?php
-}
-
-function b3_save_slide_postdata($post_id) {
-	if (!isset($_POST['b3_inner_custom_box_nonce'])) {
-		return $post_id;
-	}
-	$nonce = $_POST['b3_inner_custom_box_nonce'];
-	if (!wp_verify_nonce($nonce, 'b3_inner_custom_box'))
-		return $post_id;
-	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) {
-		return $post_id;
-	}
-	if ('b3_slide' != $_POST['post_type'] || !current_user_can('edit_post', $post_id )) {
-		return $post_id;
-	}
-	$slide_uri = sanitize_text_field($_POST['b3_slide_uri']);
-
-	remove_action('save_post', 'b3_save_slide_postdata'); // required to avoid infinite loop!
-	wp_update_post(array(
-		'ID' => $post_id,
-		'post_type' => 'b3_slide',
-		'post_excerpt' => $slide_uri,
-	));
-	add_action('save_post', 'b3_save_slide_postdata');
-}
-
-add_action('save_post', 'b3_save_slide_postdata');
-
-function b3_option($key) {
-	global $b3_options;
-	if (isset($b3_options[$key])) {
-		return $b3_options[$key];
+function b3theme_option($key) {
+	global $b3theme_options;
+	if (isset($b3theme_options[$key])) {
+		return $b3theme_options[$key];
 	}
 	return '';
 }
 
-function b3_wp_nav_menu_args($args) {
+function b3theme_wp_nav_menu_args($args) {
 	$args['container'] = false;
 	return $args;
 }
 
-function b3_wp_page_menu($args) {
+function b3theme_wp_page_menu($args) {
 	$pages = get_pages();
 	foreach($pages as $key=>$page) {
 		$pages[$key]->db_id = $page->ID;
 		$pages[$key]->menu_item_parent = $page->post_parent;
 		$pages[$key]->url = get_page_link($page->ID);
 	}
-	$pages =  b3_wp_nav_menu_objects($pages);
+	$pages =  b3theme_wp_nav_menu_objects($pages);
 	$out = '<ul class="nav navbar-nav">';
 
-	if ('Y'==b3_option('show_home')) {
+	if ('Y'==b3theme_option('show_home')) {
 		$class = '';
 		if ( is_front_page() && !is_paged() ) {
 			$class = 'class="current_page_item"';
 		}
 		$out .= '<li ' . $class . '><a href="' . home_url('/') . '">'
-			. $args['link_before'] . __('Home', 'b3') . $args['link_after'] . '</a></li>';
+			. $args['link_before'] . __('Home', 'b3theme') . $args['link_after'] . '</a></li>';
 	}
 
-	$walker = new Tb3_Walker_Nav_Menu();
+	$walker = new Tb3theme_Walker_Nav_Menu();
 	$walker->before = '';
 	$walker->after = '';
 	$walker->link_before = '';
 	$walker->link_after = '';
-// echo '[[';	print_r($args); 
 	$tree = $walker->walk($pages, 0);
 	$out .= $tree;
 	$out .= '</ul>';
 	return $out;
 }
 
-add_filter('wp_nav_menu_objects', 'b3_wp_nav_menu_objects');
+add_filter('wp_nav_menu_objects', 'b3theme_wp_nav_menu_objects');
 
-function b3_wp_nav_menu_objects ($menu_items) {
+function b3theme_wp_nav_menu_objects ($menu_items) {
 	foreach($menu_items as $key => $item) {
 		$sort_num_of[$item->db_id] = $key;
 	}
@@ -192,7 +118,7 @@ function b3_wp_nav_menu_objects ($menu_items) {
 	return $menu_items;
 }
 
-class Tb3_Walker_Nav_Menu extends Walker_Nav_Menu {
+class Tb3theme_Walker_Nav_Menu extends Walker_Nav_Menu {
 
 	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 		$has_children = empty($item->has_children) ? false : true;
@@ -242,14 +168,13 @@ class Tb3_Walker_Nav_Menu extends Walker_Nav_Menu {
 	}
 }
 
-
-function b3_widgets_init() {
-	if ('Y' == b3_option('panel_widget')) {
+function b3theme_widgets_init() {
+	if ('Y' == b3theme_option('panel_widget')) {
 		$args= array(
 			'before_widget' => '<aside id="%1$s" class="widget %2$s panel panel-default">',
 			'after_widget' => '</div><!-- /.panel-body --></aside>',
 			'before_title' => '',
-			'after_title' => '', // see b3_panel_widget_title()
+			'after_title' => '', // see b3theme_panel_widget_title()
 		);
 	}
 	else {
@@ -260,12 +185,12 @@ function b3_widgets_init() {
 			'after_title' => '</h3>',
 		);
 	}
-	$args['name'] = __('Sidebar 1', 'b3');
+	$args['name'] = __('Sidebar 1', 'b3theme');
 	$args['id']   = 'sidebar-1';
 	register_sidebar($args);
 
 	register_sidebar(array(
-		'name'          => __('Top Sidebar', 'b3'),
+		'name'          => __('Top Sidebar', 'b3theme'),
 		'id'            => 'sidebar-top',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -273,7 +198,7 @@ function b3_widgets_init() {
 		'after_title'   => '</h3>',
 	));
 	register_sidebar( array(
-		'name'          => __('Bottom Sidebar', 'b3'),
+		'name'          => __('Bottom Sidebar', 'b3theme'),
 		'id'            => 'sidebar-bottom',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s col-md-3 col-sm-4 col-xs-12">',
 		'after_widget'  => '</aside>',
@@ -282,10 +207,10 @@ function b3_widgets_init() {
 	));
 
 }
-add_action('widgets_init', 'b3_widgets_init');
+add_action('widgets_init', 'b3theme_widgets_init');
 
-function b3_panel_widget_title($title) {
-	if ('Y' == b3_option('panel_widget')) {
+function b3theme_panel_widget_title($title) {
+	if ('Y' == b3theme_option('panel_widget')) {
 		if (!$title) {
 			$title = '&nbsp;';
 		}
@@ -298,102 +223,99 @@ function b3_panel_widget_title($title) {
 	return $out;
 }
 
-/**
- * Enqueue scripts and styles
- */
-function b3_enqueue_scripts() {
-	$src =  ('cdn' == b3_option('bootstrap_src')) ?
-		'//netdna.bootstrapcdn.com/bootstrap/3.0.2' : B3_URI . '/bootstrap';
-	wp_enqueue_script('bootstrap', $src . '/js/bootstrap.min.js', array('jquery'), null, true );
-	wp_enqueue_script('b3',  B3_URI . '/js/b3.js', array('jquery'), null, true );
+
+function b3theme_enqueue_scripts() {
+	global $wp_scripts;
+	wp_enqueue_script('bootstrap', apply_filters('b3theme_bootstrap_js', B3THEME_URI . '/bootstrap/js/bootstrap.min.js'),
+			array('jquery'), null, true);
+// apply_filters - a way to implement bootstrap CDN by plugins.
+	wp_enqueue_script('b3theme',  B3THEME_URI . '/js/b3theme.js', array('jquery'), null, true);
 	if ( is_singular() && comments_open() && get_option('thread_comments') ) {
 		wp_enqueue_script('comment-reply');
 	}
 	if (is_singular() && wp_attachment_is_image()) {
-		wp_enqueue_script('b3-keyboard-image-navigation',  B3_URI . '/js/keyboard-image-navigation.js', array('jquery'), '20120202');
+		wp_enqueue_script('b3theme-keyboard-image-navigation',  B3THEME_URI . '/js/keyboard-image-navigation.js', array('jquery'), '20120202');
 	}
 }
 
-add_action('wp_enqueue_scripts', 'b3_enqueue_scripts');
+add_action('wp_enqueue_scripts', 'b3theme_enqueue_scripts');
 
-function b3_enqueue_styles() {
-	$src =  ('cdn' == b3_option('bootstrap_src')) ?
-		'//netdna.bootstrapcdn.com/bootstrap/3.0.2' : B3_URI . '/bootstrap';
-	wp_enqueue_style('bootstrap', $src . '/css/bootstrap.min.css');
-	wp_enqueue_style('b3-style',  B3_URI . '/style.css');
-	wp_add_inline_style('b3-style', b3_options_css());
-//	add_editor_style();
-/*
-  the Bootstrap and custom theme css settings are not used in admin area
-  so adding editor style is moot point yet.
-*/
+function b3theme_enqueue_styles() {
+	wp_enqueue_style('bootstrap', apply_filters('b3theme_bootstrap_css', B3THEME_URI . '/bootstrap/css/bootstrap.min.css'));
+	wp_enqueue_style('b3theme-style',  B3THEME_URI . '/style.css');
+	wp_add_inline_style('b3theme-style', b3theme_options_css());
 }
 
-add_action('wp_enqueue_scripts', 'b3_enqueue_styles');
+add_action('wp_enqueue_scripts', 'b3theme_enqueue_styles');
 
-function b3_admin_enqueue_scripts() {
-	wp_enqueue_script('wp-color-picker', '', array('jquery'));
-	wp_enqueue_script('b3-admin', B3_URI . '/js/b3-admin.js', array('wp-color-picker'), null, true);
-	wp_localize_script('b3-admin', 'b3_admin', b3_admin_localize());
-	wp_enqueue_style('wp-color-picker');
-	wp_enqueue_style('b3-admin', B3_URI . '/css/b3-admin.css');
+function b3theme_admin_enqueue_scripts() {
+	global $pagenow;
+	if ('themes.php' == $pagenow) {
+		wp_enqueue_script('b3theme-admin', B3THEME_URI . '/js/b3theme-admin.js', array('wp-color-picker'), null, true);
+		wp_localize_script('b3theme-admin', 'b3theme_admin', b3theme_admin_localize());
+		wp_enqueue_script('quicktags', '', array('jquery'));
+		wp_enqueue_media();
+		wp_enqueue_style('b3theme-admin', B3THEME_URI . '/css/b3theme-admin.css');
+		wp_enqueue_style('wp-color-picker');
+		wp_enqueue_style('quicktags', includes_url('css/editor.min.css'));
+	}
 }
 
-add_action('admin_enqueue_scripts', 'b3_admin_enqueue_scripts');
+add_action('admin_enqueue_scripts', 'b3theme_admin_enqueue_scripts');
 
-function b3_options_css() {
+function b3theme_options_css() {
 	$out = '';
-	if ('left' == b3_option('sidebar_main')) {
+	if ('left' == b3theme_option('sidebar_main')) {
 		$out .= '#secondary {float: left;} #primary {float: right;} ';
 	}
-	if (($css = b3_option('text_color')) && $css != '#333333') {
+	if (($css = b3theme_option('text_color')) && $css != '#333333') {
 		$out .= 'body {color:'. $css . ';} ';
-		$out .= '.entry-meta {color:'. b3_option('text_color2') . ';} ';
+		$out .= '.entry-meta {color:'. b3theme_option('text_color2') . ';} ';
 	}
-	if ($css = b3_option('headers_color')) {
+	if ($css = b3theme_option('headers_color')) {
 		$out .= 'h1,h2,h3,h4,h5,h6 {color:'. $css . ';} ';
 	}
-	if ($css = b3_option('link_color')) {
+	if ($css = b3theme_option('link_color')) {
 		$out .= 'a, a:visited {color:'. $css . ';} ';
 	}
-	if ($css = b3_option('link_hover_color')) {
+	if ($css = b3theme_option('link_hover_color')) {
 		$out .= 'a:hover {color:'. $css . ';} ';
 	}
-	if (($css = b3_option('navbar_color')) && '#F8F8F8' != $css) {
-		$color2 =  b3_option('navbar_color2');
-		$out .= '.navbar-b3 {background-color: '. $css .'; background-image: linear-gradient(to bottom, '
+	if (($css = b3theme_option('navbar_color')) && '#F8F8F8' != $css) {
+		$color2 =  b3theme_option('navbar_color2');
+		$out .= '.navbar-b3theme {background-color: '. $css .'; background-image: linear-gradient(to bottom, '
 			. $css . ' 0px, '. $color2 .' 100%); ' 
 //    . 'filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=' . $css. ',endColorstr=' . $color2 . ');'
 // (dropdown menu in IE8 doesn't work with filter )
 //      .'-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=' . $css .',endColorstr=' . $color2 .')";'
-			.' border: ' . b3_option('navbar_border') .' solid 1px;}';
+			.' border: ' . b3theme_option('navbar_border') .' solid 1px;}';
 	}
-	if (($css = b3_option('navbar_link_color')) && '#777777' != $css) {
+	if (($css = b3theme_option('navbar_link_color')) && '#777777' != $css) {
 		$out .= '.navbar-nav > li > a, .navbar-nav > li > a:visited, a.navbar-brand {color:'. $css . ' !important;} ';
-		$out .= '.navbar-nav > li > a:hover, a.navbar-brand:hover {color:'. b3_option('navbar_link_color2') . ' !important;} ';
+		$out .= '.navbar-nav > li > a:hover, a.navbar-brand:hover {color:'. b3theme_option('navbar_link_color2') . ' !important;} ';
 	}
 	return $out;
 }
 
-function b3_comment_form_before() {
+function b3theme_comment_form_before() {
 	echo '<div class="form-group">';
 }
 
-function b3_comment_form_after() {
+function b3theme_comment_form_after() {
 	echo '</div>';
 }
 
-function b3_post_class($classes) {
-	if ('Y'==b3_option('panel_post')) {
+function b3theme_post_class($classes) {
+	if ('Y'==b3theme_option('panel_post')) {
 		$classes[]= 'panel-body';
 	}
 	$classes[]= 'clearfix';
 	return $classes;
 }
 
-function b3_content_wrap_class() {
+function b3theme_content_wrap_class() {
 	$classes = array();
-	if ('Y'==b3_option('panel_post')) {
+	if ('Y'==b3theme_option('panel_post')) {
 		$classes[]= 'panel';
 	}
 	if ($classes) {
@@ -401,91 +323,80 @@ function b3_content_wrap_class() {
 	}
 }
 
-add_filter('post_class', 'b3_post_class');
-add_action('comment_form_before', 'b3_comment_form_before');
-add_action('comment_form_after', 'b3_comment_form_after');
+add_filter('post_class', 'b3theme_post_class');
+add_action('comment_form_before', 'b3theme_comment_form_before');
+add_action('comment_form_after', 'b3theme_comment_form_after');
 
 
-function b3_carousel() {
-	$case = b3_option('carousel');
+function b3theme_carousel() {
+	$case = b3theme_option('carousel');
 	if ('N' == $case) {
 		return;
 	}
 	else {
 			if ('Y' == $case) {
-				$slides = get_posts(array('post_type' => 'b3_slide'));
+				$slides = b3theme_option('slides');
 			}
 			else {
-				include B3_PATH . '/inc/demo-slides.php';
+				include B3THEME_PATH . '/inc/demo-slides.php';
 			}
 			if ( $total = count($slides) ) {
-
 ?>
-	<div id="b3-slider" class="carousel slide spacer-bottom" data-ride="carousel" >
+	<div id="b3theme-slider" class="carousel slide spacer-bottom" data-ride="carousel" >
 <?php if ( $total > 1 ) { ?>
 	<ol class="carousel-indicators">
 <?php
 				for($i=0; $i<$total; $i++) {
-					echo '<li data-target="#b3-slider" data-slide-to="' . $i . '" ' . ($i ? '' : 'class="active"') . '></li>';
+					echo '<li data-target="#b3theme-slider" data-slide-to="' . $i . '" ' . ($i ? '' : 'class="active"') . '></li>';
 				} ?>
 	</ol>
 <?php } ?>
 	<div class="carousel-inner clearfix" >
 <?php
+
 		foreach ($slides as $c => $slide ) {
-			if ('Y' == $case) {
-				$slide = (array)$slide;
-				$attachment_id = get_post_thumbnail_id($slide['ID']);
-				$img = wp_get_attachment_image_src($attachment_id, 'full');
-				$slide['src'] = $img[0];
-				$slide['alt'] = get_post_meta($attachment_id, '_wp_attachment_image_alt', true);
-			}
 ?>
-				<div class="item <?php echo $c ? '' : 'active'; ?>" >
-					<a href="<?php echo $slide['post_excerpt'] ? $slide['post_excerpt'] : '#'; ?>"><img style="width:100%" src="<?php echo $slide['src']; ?>" alt="<?php echo $slide['alt'] ?>" /></a>
+				<div class="item <?php echo ($c>1) ? '' : 'active'; ?>" >
+					<a href="<?php echo $slide['link'] ? $slide['link'] : '#'; ?>"><img style="width:100%;" src="<?php echo $slide['src']; ?>" alt="<?php echo $slide['alt'] ?>" /></a>
 					<div class="container">
 							<div class="carousel-caption">
-								<h1><a href="<?php echo $slide['post_excerpt']; ?>"><?php echo apply_filters('the_title', $slide['post_title']); ?></a></h1>
+								<h1><a href="<?php echo $slide['link']; ?>"><?php echo apply_filters('the_title', $slide['title']); ?></a></h1>
 							<?php
-									echo '<div>' . apply_filters('the_title', $slide['post_content']) . '</div>';
-									if ('Y' == $case) {
-										echo '<p>';
-										edit_post_link( __('Edit', 'b3'), '<span class="edit-link">', '</span>');
-										echo '</p>';
-									}
+									echo '<div>' . apply_filters('the_content', $slide['content']) . '</div>';
 							?>
 							</div>
 					 </div>
 				</div>
 <?php
+
 		}
 ?>
 				</div><!-- /.carousel-inner -->
 			<?php
 			if ($total>1) { ?>
-				<a class="left carousel-control" href="#b3-slider" data-slide="prev"><span class="glyphicon glyphicon-chevron-left icon-large"></span></a>
-				<a class="right carousel-control" href="#b3-slider" data-slide="next"><span class="glyphicon glyphicon-chevron-right glyphicon-large"></span></a>
+				<a class="left carousel-control" href="#b3theme-slider" data-slide="prev"><span class="glyphicon glyphicon-chevron-left icon-large"></span></a>
+				<a class="right carousel-control" href="#b3theme-slider" data-slide="next"><span class="glyphicon glyphicon-chevron-right glyphicon-large"></span></a>
 			 <?php
 			} ?>
 	</div>
 <?php
 		} else {
 			echo '<div class="alert alert-warning text-center">';
-			printf( __('You have no slides yet. You can <a href="%1$s">add your slides</a> or activate demo slides. The optimum image width/height ratio is %2$s, the best image size: %3$s.', 'b3'),
-				admin_url('post-new.php?post_type=b3_slide'),
+			printf( __('You have no slides yet. You can <a href="%1$s">add your slides</a> or activate demo slides. The optimum image width/height ratio is %2$s, the best image size: %3$s.', 'b3theme'),
+				admin_url('themes.php?page=b3theme_settings'),
 				'17:5', '1140 &times; 300 pixel');
 		echo '</div>';
 		}
 	}
 }
 
-require B3_PATH . '/inc/template-tags.php';
-require B3_PATH . '/inc/extras.php';
-require B3_PATH . '/inc/customizer.php';
-require B3_PATH . '/inc/jetpack.php';
+require B3THEME_PATH . '/inc/template-tags.php';
+require B3THEME_PATH . '/inc/extras.php';
+require B3THEME_PATH . '/inc/customizer.php';
+require B3THEME_PATH . '/inc/jetpack.php';
 
-function b3_footer_script() {
-	if ('Y' == b3_option('image_rounded')) {
+function b3theme_footer_script() {
+	if ('Y' == b3theme_option('image_rounded')) {
 ?>
 <script type="text/javascript">
 	jQuery('.entry-content img, img.avatar').addClass('img-rounded');
@@ -494,12 +405,32 @@ function b3_footer_script() {
 	}
 }
 
-add_action('wp_footer', 'b3_footer_script');
+add_action('wp_footer', 'b3theme_footer_script');
 
-function b3_admin_localize() {
+function b3theme_admin_localize() {
 	$out = array(
-		'reset'	=> __('All theme settings will be replaced by default dettings. Continue?', 'b3'),
-		'upload' => __('Theme settings will be replaced by settings from the uploaded file. Continue?', 'b3'),
+		'reset'	=> __('All theme settings will be replaced by default dettings. Continue?', 'b3theme'),
+		'upload' => __('Theme settings will be replaced by settings from the uploaded file. Continue?', 'b3theme'),
+		'slide_remove' => __('This slide will be removed. Continue?', 'b3theme'),
+		'slide' => __('Slide', 'b3theme'),
+		'link' => __('Link', 'b3theme'),
+		'image_url' => __('Image URL', 'b3theme'),
+		'description' => __('Description', 'b3theme'),
+		'title' => __('Title', 'b3theme'),
+		'alt_text' => __('Alt text', 'b3theme'),
+		'choose' => __('Choose', 'b3theme'),
+		'choose_image' => __('Choose Image', 'b3theme'),
+		'specify_slide_url' => __('Please specify image URL for each slide or remove unnecessary slides.', 'b3theme'),
 	);
 	return $out;
 }
+
+function b3theme_ie_conditional() { ?>
+<!--[if lt IE 9]>
+	<script src="<?php echo B3THEME_URI; ?>/js/respond.min.js"></script>
+	<script src="<?php echo B3THEME_URI; ?>/js/html5shiv.js"></script>
+<![endif]-->
+<?php
+}
+
+add_action('wp_head', 'b3theme_ie_conditional');

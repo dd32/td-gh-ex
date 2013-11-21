@@ -4,13 +4,13 @@
  */
 ?>
 
-<div <?php b3_content_wrap_class(); ?>>
+<div <?php b3theme_content_wrap_class(); ?>>
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 
 		<div class="entry-meta">
-			<?php b3_posted_on(); ?>
+			<?php b3theme_posted_on(); ?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
@@ -18,7 +18,7 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __('Pages:', 'b3'),
+				'before' => '<div class="page-links">' . __('Pages:', 'b3theme'),
 				'after'  => '</div>',
 			) );
 		?>
@@ -27,14 +27,14 @@
 	<footer class="entry-meta">
 		<?php
 			/* translators: used between list items, there is a space after the comma */
-			$category_list = get_the_category_list( __(', ', 'b3') );
+			$category_list = get_the_category_list( __(', ', 'b3theme') );
 
 			/* translators: used between list items, there is a space after the comma */
 			$tag_list = get_the_tag_list('', ', ');
 
 			$permalink = '<span class="permalink"><a href="%3$s" rel="bookmark"><span class="glyphicon glyphicon-link"></span> permalink</a></span>';
 
-			if (!b3_categorized_blog()) {
+			if (!b3theme_categorized_blog()) {
 				// This blog only has 1 category so we just need to worry about tags in the meta text
 				if ('' != $tag_list ) {
 					$meta_text = '<span class="cat-links"><span class="glyphicon glyphicon-tag"></span> %2$s</span> <span class="permalink">' .  $permalink .'</span>';
@@ -61,7 +61,7 @@
 		?>
 
 		<?php edit_post_link('<span class="glyphicon glyphicon-pencil"></span> '
-			. __('Edit', 'b3'), '<span class="edit-link">', '</span>'); ?>
+			. __('Edit', 'b3theme'), '<span class="edit-link">', '</span>'); ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->
 </div>

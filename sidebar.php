@@ -8,9 +8,9 @@
 	<div id="secondary" class="widget-area col-md-3 col-sm-4 col-xs-12" role="complementary">
 		<?php
 		do_action('before_sidebar', 'sidebar-1');
-		add_filter('widget_title', 'b3_panel_widget_title');
+		add_filter('widget_title', 'b3theme_panel_widget_title');
 		if (!dynamic_sidebar('sidebar-1') ) {
-			if ('Y' == b3_option('panel_widget')) {
+			if ('Y' == b3theme_option('panel_widget')) {
 				$args= array(
 					'before_widget' => '<aside class="widget panel panel-default">',
 					'after_widget' => '</div></aside>',

@@ -6,10 +6,6 @@ Template Name: Wide (No sidebar)
  * @package B3
  */
 
-/*
-	Also used as single b3_slide post type template.
-*/
-
 get_header(); ?>
 
 	<div id="primary" class="content-area col-xs-12">
@@ -21,7 +17,7 @@ get_header(); ?>
 
 				<?php
 					// If comments are open or we have at least one comment, load up the comment template
-					if ('Y'!=b3_option('disable_comment_page') && comments_open() || '0' != get_comments_number() )
+					if ('Y' != b3theme_option('disable_comment_page') && comments_open() || '0' != get_comments_number() )
 						comments_template();
 				?>
 
