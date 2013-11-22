@@ -39,7 +39,7 @@
    		<div class="row">
           <div class="main <?php echo kadence_main_class(); ?>" role="main">
 
-      	<?php if(isset($virtue['homepage_layout'])) { $layout = $virtue['homepage_layout']['enabled']; } else {$layout = array("block_one" => "block_one", "block_two" => "block_two"); }
+      	<?php if(isset($virtue['homepage_layout']['enabled'])) { $layout = $virtue['homepage_layout']['enabled']; } else {$layout = array("block_one" => "block_one", "block_four" => "block_four"); }
 
 				if ($layout):
 

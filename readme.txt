@@ -48,6 +48,11 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 1.7.7 =
+* Fixed Issue with frontpage.php
+* Removed tracking file and System Info file
+* Removed Google Font Check
+
 = Version: 1.7.6 =
 * Fixed Issue with home page blog categories
 * Fixed Issue with the home page portfolio categories.

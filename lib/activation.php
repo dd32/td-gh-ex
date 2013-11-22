@@ -3,7 +3,7 @@
  * Theme activation
  */
 function updatedatabaseoptions($oldname, $oldtheme=false) {
-	$updated = get_option('virtue_lite_redux_updated');
+	$updated = get_option('virtue_test_redux_updated');
 	if ($updated == false) {
 		$options =  get_theme_mods();  // Get old values
 		// logo font
@@ -207,7 +207,7 @@ function updatedatabaseoptions($oldname, $oldtheme=false) {
 		}
 
 		update_option('virtue', $options);
-		update_option('virtue_lite_redux_updated', true);
+		update_option('virtue_test_redux_updated', true);
 		//remove_theme_mods(); // Remove old theme options
 	}
 }
