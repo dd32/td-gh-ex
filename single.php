@@ -3,7 +3,7 @@
  * The template for displaying all single posts.
  *
  * @package	Anarcho Notepad
- * @since	2.1.3
+ * @since	2.1.4
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013, Arthur Gareginyan
  * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
@@ -21,7 +21,7 @@
   <?php if (have_posts()) : ?>
   <?php while (have_posts()) : the_post(); ?>
 
-    <div class="before-post"><?php echo get_theme_mod('scrypt_before_post'); ?></div>
+    <div class="before-post"><?php echo get_theme_mod('script_before_post'); ?></div>
 
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
       <h3><?php the_title(); ?></h3>
@@ -32,7 +32,7 @@
 		<?php wp_link_pages( array( 'before' => '<div class="page-links"><span>' . __( 'Pages:', 'anarcho-notepad' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) ); ?>
       </div>
 
-      <div class="after-post"><?php echo get_theme_mod('scrypt_after_post'); ?></div>
+      <div class="after-post"><?php echo get_theme_mod('script_after_post'); ?></div>
 
       <p class="tagsandcopy"><?php the_tags(); ?><br/>
       <?php echo get_theme_mod('copyright_post'); ?></p>

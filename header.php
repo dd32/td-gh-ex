@@ -3,7 +3,7 @@
  * The Header for our theme.
  *
  * @package	Anarcho Notepad
- * @since	2.1.3
+ * @since	2.1.4
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013, Arthur Gareginyan
  * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
@@ -27,7 +27,7 @@
 
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" media="screen" />
 	<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 
 	<link rel="profile" href="http://gmpg.org/xfn/11">
@@ -44,8 +44,21 @@
 	<div class="top-search-form"><?php get_search_form(); ?></div>
 
 	<div id="title">
-	  <h1 class="site-title"><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a></h1>
-	  <h2 class="site-description"><?php bloginfo('description'); ?></h2>
+	  <a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+	   <?php $header_image = get_header_image();
+		if ( !empty( $header_image ) ) : ?>
+	    		<img
+	      			class="logo"
+	      			src="<?php header_image(); ?>" 
+	      			height="<?php echo get_custom_header()->height; ?>" 
+	      			width="<?php echo get_custom_header()->width; ?>" 
+	      			alt="<?php bloginfo('name'); ?>" 
+	    />
+<?php endif; ?>
+
+	    <h1 class="site-title"><?php bloginfo('name'); ?></h1>
+	    <h2 class="site-description"><?php bloginfo('description'); ?></h2>
+	  </a>
 	</div>
 
 </header>

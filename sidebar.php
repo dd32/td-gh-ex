@@ -3,7 +3,7 @@
  * The sidebar containing the secondary widget area, displays on posts and pages.
  *
  * @package	Anarcho Notepad
- * @since	2.1.3
+ * @since	2.1.4
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013, Arthur Gareginyan
  * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
@@ -15,7 +15,7 @@
 
 <!--PAGES (MENU)-->
 <nav class="pages">
-    <?php wp_nav_menu( array( 'theme_location' => 'anarcho-menu' ) ); ?>
+    <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 </nav>
 <div class="pages-bottom"></div>
 <!--END-PAGES (MENU)-->
@@ -57,7 +57,6 @@
 <div class="recent-posts-bottom"></div>
 <!--END-RECENT POSTS-->
 
-<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : ?>
-<?php endif; ?>
+<?php dynamic_sidebar(); ?>
 
 </aside><br clear="all" />

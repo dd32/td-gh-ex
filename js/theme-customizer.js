@@ -1,5 +1,5 @@
 /*
- Theme Customizer live preview v1.0 | @agareginyan | AGPL-3.0 Licensed
+ Theme Customizer live preview v1.0 | @agareginyan | GPL v3 Licensed
 
  This file adds some LIVE to the Theme Customizer live preview. To leverage
  this, set your custom settings to 'postMessage' and then add your handling

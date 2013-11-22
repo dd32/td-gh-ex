@@ -9,9 +9,9 @@
 
 	Copyright (C) 2013 Arthur Gareginyan
 
-	License: GNU General Public License, version 3 (AGPLv3)
+	License: GNU General Public License, version 3 (GPLv3)
 
-	License URI: http://opensource.org/licenses/AGPL-3.0
+	License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 == About Anarcho Notepad ==
 
@@ -75,6 +75,20 @@ Everything else used in this theme has been created by me, especially for "Anarc
 == Premium version of Anarcho Notepad ==
 
 	I'm doing everything possible in order to "Anarcho Notepad" remained a completely free template  for you!
+
+== Change log ==
+
+	2.1 	(2013.10.22) -  added : russian translation.
+				added : (css) rtl styles for hebrew or arabic.
+				added : (css) comment navigation styling, similar to post navigation
+				added : (php) (css) author box styling (if bio field not empty)
+				added : (js) smooth transition for "back to top" link.
+				added : (css) font-icons to title of archive, search, 404
+				fixed : many more minor fixes and changes.
+   	2.1.1   (2013.10.30) -  Minor additions and fixes
+	2.1.2   (2013.11.01) -  Minor additions and fixes
+	2.1.3   (2013.11.18) -  Minor additions and fixes
+	2.1.4   (2013.11.22) -  Minor additions and fixes
 
 == Contact & Issues for Anarcho Notepad ==
 

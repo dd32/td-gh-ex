@@ -3,7 +3,7 @@
  * The template for displaying all pages.
  *
  * @package	Anarcho Notepad
- * @since	2.1.3
+ * @since	2.1.4
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013, Arthur Gareginyan
  * @link      	http://mycyberuniverse.tk/anarcho-notepad.html

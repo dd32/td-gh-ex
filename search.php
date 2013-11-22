@@ -3,7 +3,7 @@
  * The template for displaying Search Results pages.
  *
  * @package	Anarcho Notepad
- * @since	2.1.3
+ * @since	2.1.4
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013, Arthur Gareginyan
  * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
@@ -18,8 +18,8 @@
   <?php anarcho_breadcrumbs(); ?>
 
 <div id="center">
-<h2><?php _e('For your search query "', 'anarcho-notepad'); ?><?php /* Search Count */ $allsearch = &new WP_Query("s=$s&showposts=-1"); $key = esc_html($s); $count = $allsearch->post_count; _e('<span class="search-terms">', 'anarcho-notepad'); echo $key; _e('"</span>', 'anarcho-notepad'); _e(' found ', 'anarcho-notepad'); echo $count; _e(' posts ', 'anarcho-notepad'); wp_reset_query(); ?></h2>
-<h1><?php _e('Search results:', 'anarcho-notepad'); ?></h1>
+
+<h1><?php printf( __( 'Search Results for: %s', 'anarcho-notepad' ), get_search_query() ); ?></h1>
 
   <?php if (have_posts()) : ?>
   <?php while (have_posts()) : the_post(); ?>

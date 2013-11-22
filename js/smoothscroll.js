@@ -1,5 +1,5 @@
 /*
- Smooth scroll v1.0 | @agareginyan | AGPL-3.0 Licensed
+ Smooth scroll v1.0 | @agareginyan | GPL v3 Licensed
 */
 
 jQuery(document).ready(function($){
