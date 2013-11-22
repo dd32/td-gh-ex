@@ -29,7 +29,7 @@ Custom Css:
 
 
 == Change log ==
-= 1.4=
+= 1.4.1=
 *Option panel updated to new version
 *Premium version also available
 *Logo upload and other option now access from theme panel

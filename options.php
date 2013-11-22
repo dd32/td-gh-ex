@@ -409,7 +409,7 @@ $options[] = array(
 		$options[] = array(
 		    'desc' => 'Paste Ad code for single post it show ads below post title and before content.',
             'id' => 'optimize_ftarea',
-            'std' => '&#169; 2013 Designed by: <a href="http://www.wrock.org/seo-optimized-wordpress-theme/" title="wRock.Org">wRock.Org</a> | Powered by <a href="http://wordpress.org/"><strong> WordPress</strong></a>',
+            'std' => '&#169; 2013 Designed by: <a href="http://www.wrock.org/seo-optimized-wordpress-theme/" title="wRock.Org">wRock.Org</a> | Powered by <a href="http://wordpress.org/">WordPress</a>',
             'type' => 'textarea');				
 
 	return $options;
