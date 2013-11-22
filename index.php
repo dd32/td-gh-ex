@@ -8,6 +8,7 @@
 			<?php get_template_part('inc/page-title'); ?>
 			
 			<div class="pad group">
+				
 				<?php get_template_part('inc/featured'); ?>
 				
 				<?php if ( have_posts() ) : ?>

@@ -1,6 +1,17 @@
   Theme : Hueman (wordpress.org release)
-Version : 1.1.2
+Version : 1.1.3
  Author : Alexander "Alx" Agnarson - http://alxmedia.se
+
+November 21 2013 - 1.1.3
+===========================================================
+- Improved IE8 support
+- Added option for header image
+- Fixed nav dropdowns expanding behind second nav row when too many menu links are used
+- Removed custom css field in styling options, replaced with custom.css file option
+- Fixed thumbnail comment count position with Disqus plugin enabled
+- Fixed related posts heading appearing even if there are no related posts
+- Changed page background area to full body background in styling options
+- Changed theme license to GPLv3
 
 November 18 2013 - 1.1.2
 ===========================================================

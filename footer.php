@@ -1,7 +1,5 @@
 		</div><!--/.container-inner-->
 	</div><!--/.container-->
-	
-	<div class="clear"></div>
 
 	<footer id="footer">	
 		<?php // footer widgets
@@ -22,17 +20,19 @@
 		{ ?>		
 		<section class="container" id="footer-widgets">
 			<div class="container-inner">
+				
 				<div class="pad group">
 					<?php $i = 0; while ( $i < $total ) { $i++; ?>
 						<?php if ( is_active_sidebar( 'footer-' . $i ) ) { ?>
-			
+					
 					<div class="footer-widget-<?php echo $i; ?> grid <?php echo $class; ?> <?php if ( $i == $total ) { echo 'last'; } ?>">
 						<?php dynamic_sidebar( 'footer-' . $i ); ?>
 					</div>
-			
+					
 						<?php } ?>
 					<?php } ?>
 				</div>
+				
 			</div><!--/.container-inner-->
 		</section><!--/.container-->	
 		<?php } ?>

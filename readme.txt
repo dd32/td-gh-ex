@@ -1,7 +1,7 @@
 /*  Theme License
 /* ------------------------------------ */
 
-The theme itself is nothing but 100% GPLv2 or later. See headers of files for further details.
+The theme itself is nothing but 100% GPLv3. See headers of files for further details.
 
 
 /*  Font Awesome License

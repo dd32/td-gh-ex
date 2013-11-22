@@ -1,5 +1,6 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('group'); ?>>	
 	<div class="post-inner post-hover">
+		
 		<div class="post-thumbnail">
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 				<?php if ( has_post_thumbnail() ): ?>

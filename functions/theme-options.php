@@ -86,6 +86,20 @@ function custom_theme_options() {
 				)
 			)
 		),
+		// General: Custom CSS
+		array(
+			'id'		=> 'custom',
+			'label'		=> 'Custom Stylesheet',
+			'desc'		=> 'Load your custom styles [ <strong>custom.css</strong> ]',
+			'type'		=> 'checkbox',
+			'section'	=> 'general',
+			'choices'	=> array(
+				array( 
+					'value' => '1',
+					'label' => 'Enable'
+				)
+			)
+		),
 		// General: Mobile Sidebar
 		array(
 			'id'		=> 'mobile-sidebar-hide',
@@ -301,6 +315,14 @@ function custom_theme_options() {
 					'label' => 'Disable'
 				)
 			)
+		),
+		// Header: Header Image
+		array(
+			'id'		=> 'header-image',
+			'label'		=> 'Header Image',
+			'desc'		=> 'Upload a header image. This will disable header title and description',
+			'type'		=> 'upload',
+			'section'	=> 'header'
 		),
 		// Footer: Widget Columns
 		array(
@@ -998,10 +1020,10 @@ function custom_theme_options() {
 			'section'		=> 'styling',
 			'min_max_step'	=> '0,15,1'
 		),
-		// Styling: Page Background
+		// Styling: Body Background
 		array(
-			'id'		=> 'background-page',
-			'label'		=> 'Page Background',
+			'id'		=> 'body-background',
+			'label'		=> 'Body Background',
 			'desc'		=> 'Set background color and/or upload your own background image',
 			'type'		=> 'background',
 			'section'	=> 'styling'
@@ -1023,7 +1045,7 @@ img { -webkit-border-radius: {{image-border-radius}}px; border-radius: {{image-b
 
 .site-title a img { max-height: {{logo-max-height}}px; }
 
-#page { {{background-page}} }
+body { {{body-background}} }
 
 ::selection { background-color: {{color-1}}; }
 ::-moz-selection { background-color: {{color-1}}; }
@@ -1108,17 +1130,6 @@ a,
 }
 
 #footer-bottom { background-color: {{color-footer}}; }
-'
-		),
-		// Styling: Custom CSS
-		array(
-			'id'		=> 'custom-output',
-			'label'		=> 'Custom CSS',
-			'desc'		=> 'Add your custom CSS styles here. It will be added to the [ <strong>dynamic.css</strong> ] file',
-			'type'		=> 'css',
-			'section'	=> 'styling',
-			'std'		=> '
-/* Add your custom CSS below */
 '
 		)
 	)

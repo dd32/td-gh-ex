@@ -32,18 +32,27 @@
 								<?php get_search_form(); ?>
 							</div>
 						</div>
-					</div>
-				</div>
+					</div><!--/.container-inner-->
+				</div><!--/.container-->
 				
 			</nav><!--/#nav-topbar-->
 		<?php endif; ?>
 		
 		<div class="container group">
 			<div class="container-inner">
+				
+				<?php if ( ot_get_option('header-image') == '' ): ?>
 				<div class="group pad">
 					<?php echo alx_site_title(); ?>
 					<?php if ( !ot_get_option('site-description') ): ?><p class="site-description"><?php bloginfo( 'description' ); ?></p><?php endif; ?>
 				</div>
+				<?php endif; ?>
+				<?php if ( ot_get_option('header-image') ): ?>
+					<a href="<?php echo home_url('/'); ?>" rel="home">
+						<img class="site-image" src="<?php echo ot_get_option('header-image'); ?>" alt="<?php get_bloginfo('name'); ?>">
+					</a>
+				<?php endif; ?>
+				
 				<?php if (has_nav_menu('header')): ?>
 					<nav class="nav-container group" id="nav-header">
 						<div class="nav-toggle"><i class="fa fa-bars"></i></div>
@@ -51,8 +60,10 @@
 						<div class="nav-wrap container"><?php wp_nav_menu(array('theme_location'=>'header','menu_class'=>'nav container-inner group','container'=>'','menu_id' => '','fallback_cb'=> FALSE)); ?></div>
 					</nav><!--/#nav-header-->
 				<?php endif; ?>
+				
 			</div><!--/.container-inner-->
 		</div><!--/.container-->
+		
 	</header><!--/#header-->
 	
 	<div class="container" id="page">

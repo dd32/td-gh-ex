@@ -1,8 +1,8 @@
 /*
 	scripts.js
 	
-	License: GNU General Public License v2.0
-	License URI: http://www.gnu.org/licenses/gpl-2.0.html
+	License: GNU General Public License v3.0
+	License URI: http://www.gnu.org/licenses/gpl-3.0.html
 	
 	Copyright: (c) 2013 Alexander "Alx" Agnarson, http://alxmedia.se
 */
@@ -22,7 +22,7 @@ jQuery(document).ready(function($) {
 /*  Scroll to top
 /* ------------------------------------ */
 	$('a#back-to-top').click(function() {
-		$('html, body').animate({scrollTop:0},'slow');
+		$('html, body').animate({scrollTop:0},'normal');
 		return false;
 	});
 	
