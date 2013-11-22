@@ -283,12 +283,11 @@ function b3theme_options_css() {
 	}
 	if (($css = b3theme_option('navbar_color')) && '#F8F8F8' != $css) {
 		$color2 =  b3theme_option('navbar_color2');
-		$out .= '.navbar-b3theme {background-color: '. $css .'; background-image: linear-gradient(to bottom, '
-			. $css . ' 0px, '. $color2 .' 100%); ' 
-//    . 'filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=' . $css. ',endColorstr=' . $color2 . ');'
-// (dropdown menu in IE8 doesn't work with filter )
-//      .'-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=' . $css .',endColorstr=' . $color2 .')";'
-			.' border: ' . b3theme_option('navbar_border') .' solid 1px;}';
+		$g = 'linear-gradient(top, ' . $css . ', '. $color2 .')';
+		$gg = 'linear-gradient(to bottom, ' . $css . ', '. $color2 .')';
+		$out .= '.navbar-b3theme {background-color: '. $css . '; background-image: -webkit-' . $g
+			. '; background-image: -ms-' . $g . '; background-image: ' . $gg
+			.'; border: ' . b3theme_option('navbar_border') .' solid 1px;}';
 	}
 	if (($css = b3theme_option('navbar_link_color')) && '#777777' != $css) {
 		$out .= '.navbar-nav > li > a, .navbar-nav > li > a:visited, a.navbar-brand {color:'. $css . ' !important;} ';
@@ -306,7 +305,7 @@ function b3theme_comment_form_after() {
 }
 
 function b3theme_post_class($classes) {
-	if ('Y'==b3theme_option('panel_post')) {
+	if ( 'Y'==b3theme_option('panel_post') || in_array('sticky', $classes) ) {
 		$classes[]= 'panel-body';
 	}
 	$classes[]= 'clearfix';
@@ -315,7 +314,7 @@ function b3theme_post_class($classes) {
 
 function b3theme_content_wrap_class() {
 	$classes = array();
-	if ('Y'==b3theme_option('panel_post')) {
+	if ('Y'==b3theme_option('panel_post') || is_sticky() ) {
 		$classes[]= 'panel';
 	}
 	if ($classes) {

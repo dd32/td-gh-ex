@@ -18,7 +18,7 @@
 			);
 			the_widget('WP_Widget_Recent_Posts', array('number' => 5), $args);
 			the_widget('WP_Widget_Recent_Comments', array(), $args);
-			the_widget('WP_Widget_Links', array(), $args);
+			the_widget('WP_Widget_Tag_Cloud', array(), $args);
 			the_widget('WP_Widget_Meta', array(), $args);
 		} ?>
 	</div>

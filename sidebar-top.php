@@ -14,8 +14,8 @@
 	<div id="sidebar-top" class="widget-area col-md-6" role="complementary">
 		<?php do_action('before_sidebar', 'sidebar-top'); ?>
 		<?php if ( ! dynamic_sidebar('sidebar-top') ) : ?>
-			<div class="row"><div class="col-xs-6">&nbsp;</div>
-				<aside id="search-default" class="col-xs-5 widget widget_search">
+			<div class="row"><div class="col-xs-5 col-sm-6">&nbsp;</div>
+				<aside id="search-default" class="col-xs-7 col-sm-6 widget widget_search">
 				<?php get_search_form(); ?>
 			</aside>
 			</div>

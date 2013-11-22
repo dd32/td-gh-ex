@@ -4,9 +4,9 @@ Theme URI: http://andrey.ws/b3theme-theme
 Author: Andrey K.
 Author URI: http://andrey.ws/
 Description: Responsive customizable theme based on Bootstrap 3 framework. Three widget areas, changeable colors and page look, export/import settings, translation ready.
-Version: 1.2
-License: GNU General Public License v2
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.2.1
+License: GNU General Public License v3.0
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: b3theme
 Domain Path: /languages/
 Tags: two-columns, white, light, flexible-width, custom-colors, custom-background, featured-images, rtl-language-support, theme-options, translation-ready
@@ -19,7 +19,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 /*
 
 B3 Theme, including demo images (C) 2013 andreyk http://profiles.wordpress.org/andreyk
-B3 is distributed under the terms of the GNU General Public License 2.0
+B3 is distributed under the terms of the GNU General Public License v3.0
 
 B3 theme is based on Underscores theme quick start pack http://underscores.me/ (C) 2012-2013 Automattic, Inc.
 and Bootstrap 3 framework http://getbootstrap.com/ (Apache License v2.0)
@@ -28,7 +28,6 @@ IE8 compatibility is achieved by using of Respond.js https://github.com/scottjeh
 and HTML5 Shiv http://code.google.com/p/html5shiv/ (MIT/GPL2 Licensed)
 
 */
-
 
 img.site-logo {
 	margin: 20px 15px 10px 0;
@@ -65,15 +64,16 @@ div.alignright, img.alignright {
 	max-width: 100%;
 	height: auto;
 }
-.entry-content img, .entry-content iframe, .entry-content video, .entry-content object,
-.widget img, .widget iframe, .widget video, .widget object {
+.entry-content img, .widget img {
 	max-width: 100%;
 	height: auto;
 }
 .wp-caption-text, .gallery-caption {
 	font-size: 85%;
 }
-.sticky {}
+.sticky {
+	box-shadow: inset 3px 3px 8px #eee, inset -3px -3px 8px #eee;
+}
 .bypostauthor {}
 
 .spacer-top {
@@ -162,13 +162,32 @@ div.alignright, img.alignright {
 }
 .entry-meta {
 	padding: 6px 0;
-	color:#707070;
+	color: #707070;
 }
 .tag-links, .cat-links, .permalink, .entry-date, .comments-link {
 	display: inline-block;
 	margin-right: 8px;
 }
 
-.glyphicon-folder-open {margin-right: 4px; display: inline-block;}
+.glyphicon-folder-open {
+	margin-right: 4px;
+	display: inline-block;
+}
 
-.type-b3theme_slide div.b3theme_slide {margin-bottom: 8px;}
+article, .widget {
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+	word-break: break-all;
+}
+
+.widget ul {padding-left: 20px;}
+.widget ul ul ul ul ul {
+	padding-left: 4px;
+}
+.widget ul ul ul ul ul ul ul ul ul ul {
+	padding-left: 0;
+}
+
+.comment-metadata {
+	font-size: 85%;
+}

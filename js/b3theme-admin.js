@@ -9,7 +9,7 @@ jQuery(document).ready(function($) {
 		}
 		else {
 			$('.b3theme-settings-section').hide();
-			$('.'+$( this ).attr('href').substring(1) ).toggle();
+			$('.' + $( this ).attr('href').substring(1) ).toggle();
 		}
 		$('.b3theme-slides textarea').each(function(index, elem) {
 			b3theme_add_quicktags(elem.getAttribute('id'));
@@ -28,7 +28,7 @@ qtjs = qtjs.substring(0, qtjs.indexOf('/wp-admin')) + '/wp-includes/js/quicktags
 function b3theme_add_quicktags(id) {
 	if (!jQuery('#qt_'+ id + '_toolbar').length) {
 		jQuery('<script src="' + qtjs + '"></script>').insertBefore('#'+id);
-		quicktags( {id: id, buttons: 'strong,em,link,block,del,ins,ul,ol,li,code,close'});
+		quicktags({id: id, buttons: 'strong,em,link,block,del,ins,ul,ol,li,code,close'});
 	}
 }
 
@@ -67,22 +67,24 @@ function b3theme_add_new_slide() {
 	i++;
 
 	html = '<div id="slide-' + i + '" class=""><h4><span class="space"> </span>'
-		+ b3theme_admin.slide + ' #' + i + ' &nbsp; <a name="slide-' + i + '" class="slide-remove" href="#" onclick="b3theme_remove_slide(' 
-		+ i + ');">&times;</a></span></h4>';
+		+ b3theme_admin.slide + ' #' + i + ' &nbsp; <a name="slide-' + i
+		+ '" class="slide-remove" href="#" onclick="b3theme_remove_slide(' + i
+		+ ');">&times;</a></span></h4>';
 	
-	html += '<p><label for="b3theme_options-slides-' + i + '-title">' + b3theme_admin.title + '</label>'
-		+ '<input id="b3theme_options-slides-'+ i + '-title" type="text" name="b3theme_options[slides]['
-		+ i + '][title]" value="" /></p>';
+	html += '<p><label for="b3theme_options-slides-' + i + '-title">'
+		+ b3theme_admin.title + '</label>' + '<input id="b3theme_options-slides-'
+		+ i + '-title" type="text" name="b3theme_options[slides][' + i + '][title]" value="" /></p>';
 
 	html += '<p><label for="b3theme_options-slides-'+ i + '-src">' + b3theme_admin.image_url + '</label>'
 		+ '<input id="b3theme_options-slides-' + i + '-src" type="text" name="b3theme_options[slides]['
-		+ i +'][src]" onchange="b3theme_slide_preview_change(' + i + ');" /></p>'
+		+ i + '][src]" onchange="b3theme_slide_preview_change(' + i + ');" /></p>'
 		+ '<p><span class="space"> </span><a href="#" id="slide-url-choose-' + i
 		+ '" class="button button-secondary slide-url-choose" onclick="b3theme_slide_choose(' + i
-		+ ');"><span class="media-icon"></span> ' + b3theme_admin.choose + '</a> <span class="slide-preview" id="slide-preview-'
-		+ i + '"></span></p>';
+		+ ');"><span class="media-icon"></span> ' + b3theme_admin.choose
+		+ '</a> <span class="slide-preview" id="slide-preview-'	+ i + '"></span></p>';
 
-	html += '<div><label class="slide-textarea-label" for="b3theme_options-slides-' + i + '-content">' + b3theme_admin.description + '</label></div>';
+	html += '<div><label class="slide-textarea-label" for="b3theme_options-slides-' + i
+		+ '-content">' + b3theme_admin.description + '</label></div>';
 
 	html += '<div id="wp-b3theme_options-slides-' + i +'-content-wrap" class="slide-textarea-wrap">'
 
@@ -90,11 +92,13 @@ function b3theme_add_new_slide() {
 		+ 'name="b3theme_options[slides][' + i + '][content]"></textarea>';
 	html += '</div>';
 
-	html += '<p><label for="b3theme_options-slides-' + i + '-link">' + b3theme_admin.link + '</label>'
-		+ '<input id="b3theme_options-slides-' + i + '-link" type="text" name="b3theme_options[slides][' + i + '][link]" /></p>';
+	html += '<p><label for="b3theme_options-slides-' + i + '-link">' + b3theme_admin.link
+		+ '</label>' + '<input id="b3theme_options-slides-' + i
+		+ '-link" type="text" name="b3theme_options[slides][' + i + '][link]" /></p>';
 
-	html += '<p><label for="b3theme_options-slides-' + i + '-alt">' + b3theme_admin.alt_text + '</label>'
-		+ '<input id="b3theme_options-slides-' + i + '-alt" type="text" name="b3theme_options[slides][' + i + '][alt]" /></p></div>';
+	html += '<p><label for="b3theme_options-slides-' + i + '-alt">'
+		+ b3theme_admin.alt_text + '</label>' + '<input id="b3theme_options-slides-' + i
+		+ '-alt" type="text" name="b3theme_options[slides][' + i + '][alt]" /></p></div>';
 
 	jQuery(html).insertAfter(after);
 	b3theme_add_quicktags('b3theme_options-slides-' + i + '-content');
@@ -107,21 +111,21 @@ function b3theme_slide_preview_change(n) {
 }
 
 function b3theme_slide_choose(n) {
-	var custom_uploader;
+	var b3theme_uploader;
 
-	if (custom_uploader) {
-		custom_uploader.open();
+	if (b3theme_uploader) {
+		b3theme_uploader.open();
 		return;
 	}
 
-	custom_uploader = wp.media.frames.file_frame = wp.media({
+	b3theme_uploader = wp.media.frames.file_frame = wp.media({
 		title: b3theme_admin.choose_image,
 		button: {text: b3theme_admin.choose_image},
 		multiple: false
 	});
 
-	custom_uploader.on('select', function() {
-		attachment = custom_uploader.state().get('selection').first().toJSON();
+	b3theme_uploader.on('select', function() {
+		attachment = b3theme_uploader.state().get('selection').first().toJSON();
 		jQuery('#b3theme_options-slides-'+ n + '-src').val(attachment.url);
 		jQuery('#slide-preview-'+ n).html( '<img src="' + attachment.url + '" alt="" />' );
 		jQuery('#b3theme_options-slides-' + n + '-alt').val(attachment.alt);
@@ -129,6 +133,6 @@ function b3theme_slide_choose(n) {
 		jQuery('#b3theme_options-slides-' + n + '-content').val(attachment.description);
 	});
 
-	custom_uploader.open();
+	b3theme_uploader.open();
 	return false;
 }
