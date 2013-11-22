@@ -1,0 +1,353 @@
+/*
+Theme Name:     2013 Green Sequence
+Theme URI:      http://noscope.com/2013/twenty-thirteen-make-it-yours/
+Description:    Green color scheme for Twenty Thirteen, alternates colors sequentially instead of per post formats.
+Author:         Joen Asmussen
+Author URI:     http://noscope.com
+Template:       twentythirteen
+Version:        1.0.8
+License: 		GNU General Public License v2 or later
+License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
+Tags: blue, green, light, one-column, two-columns, right-sidebar, flexible-width, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready
+Text Domain: twentythirteen
+
+Please fork this theme. Please modify it. Please make it your own. Then share it back with the community.
+
+2013 Green Sequence WordPress theme, Copyright (C) 2013 Joen Asmussen.
+2013 Green Sequence WordPress theme is licensed under the GPL.
+*/
+
+
+/**
+ * New header 
+ */
+
+body .site-header {
+	background-size: 1600px auto;
+	color: #202225;
+}
+
+
+/**
+ * Standard
+ */
+
+body {
+	color: #202225;
+}
+
+a:visited {
+	color: #9c1f9e;
+}
+
+.comment-author .fn, .comment-author .url, .comment-reply-link, .comment-reply-login {
+	color: #2f7d3d;
+}
+
+a:active,
+a:hover {
+	color: #95c26c;
+}
+
+.entry-meta,
+.entry-meta a,
+.entry-content a,
+.entry-summary a {
+	color: #266331;
+}
+
+.entry-meta a:hover {
+	color: #95c26c;
+}
+
+.entry-title a, .site-header .home-link {
+	color: #202225;
+}
+
+.entry-title a:hover {
+	color: #202225;
+}
+
+a {
+	color: #2f7d3d;
+}
+
+.form-allowed-tags, .form-allowed-tags code {
+	color: #333;
+}
+
+.comment-meta a {
+	color: #a2a2a2;
+}
+
+input, textarea {
+	border: 2px solid #a2a2a2;
+}
+
+.comment-respond {
+	background-color: #c8e8e2;
+}
+
+input[type="submit"], input[type="button"], input[type="reset"] {
+	border-color: #69963e;
+	background: #7caa51;
+}
+input[type="submit"]:hover, input[type="button"]:hover, input[type="reset"]:hover {
+	background: #68973c;
+	border-color: #58832f;
+}
+input[type="submit"]:active, input[type="button"]:active, input[type="reset"]:active {
+	background: #68973c;
+	border-color: #58832f;
+}
+
+.nav-menu .current_page_item > a, .nav-menu .current_page_ancestor > a, .nav-menu .current-menu-item > a, .nav-menu .current-menu-ancestor > a {
+	color: #398647;
+}
+
+.blog .format-link:first-of-type, .single .format-link:first-of-type, .format-link + .format-aside, .format-link + .format-link, .format-aside + .format-aside {
+	box-shadow: none;
+}
+
+.blog .format-aside:first-of-type, .single .format-aside:first-of-type, .format-aside + .format-aside, .format-aside + .format-link, .format-link + .format-aside {
+	box-shadow: none;
+}
+
+.hentry .mejs-mediaelement, .hentry .mejs-container .mejs-controls {
+	background: #202225;
+}
+
+.archive-header, .page-header {
+	background: #aed9bd;
+}
+
+
+/**
+ * Menu, Paging, Footer, 404
+ */
+
+.navbar, .paging-navigation, .site-footer, .post-navigation {
+	background-color: #eef8f6;
+}
+
+.nav-menu .sub-menu,
+.nav-menu .children {
+	border-color: #eef8f6;
+}
+
+.error404 .page-title:before {
+	color: #95c26c;
+} 
+
+.error404 .page-wrapper {
+	background-color: #eef8f6;
+}
+
+.nav-menu li:hover > a, .nav-menu li a:hover, .nav-menu .sub-menu, .nav-menu .children {
+	background-color: #0e5c13;
+}
+
+ul.nav-menu ul a:hover,
+.nav-menu ul ul a:hover,
+.toggled-on .nav-menu li a:hover, .toggled-on .nav-menu ul a:hover {
+	background-color: #398647;
+}
+
+.site-footer a, .navigation a {
+	color: #448275;
+}
+
+.site-footer a:hover, .navigation a:hover {
+	color: #95c26c;
+}
+
+.paging-navigation .meta-nav {
+	background-color: #448275;
+}
+
+.paging-navigation a:hover .meta-nav {
+	background-color: #95c26c;
+}
+
+
+/**
+ * First post 
+ */
+
+#content .hentry:nth-of-type( 7n + 1 ) {
+	background-color: #fff;
+}
+
+#content .hentry:nth-of-type( 7n + 1 ) .entry-content,
+#content .hentry:nth-of-type( 7n + 1 ) .entry-summary {
+	color: #202225;
+}
+
+#content .hentry:nth-of-type( 7n + 1 ) .entry-meta,
+#content .hentry:nth-of-type( 7n + 1 ) .entry-meta a,
+#content .hentry:nth-of-type( 7n + 1 ) .entry-content a,
+#content .hentry:nth-of-type( 7n + 1 ) .entry-summart a {
+	color: #2f7d3d;
+}
+
+
+/**
+ * Second post 
+ */
+
+#content .hentry:nth-of-type( 7n + 2 ) {
+	background-color: #398647;
+}
+
+#content .hentry:nth-of-type( 7n + 2 ) .entry-content,
+#content .hentry:nth-of-type( 7n + 2 ) .entry-summary {
+	color: #fff;
+}
+
+#content .hentry:nth-of-type( 7n + 2 ) .entry-title a,
+#content .hentry:nth-of-type( 7n + 2 ) .entry-title a:hover {
+	color: #fff;
+}
+
+#content .hentry:nth-of-type( 7n + 2 ) .entry-meta,
+#content .hentry:nth-of-type( 7n + 2 ) .entry-meta a,
+#content .hentry:nth-of-type( 7n + 2 ) .entry-content a,
+#content .hentry:nth-of-type( 7n + 2 ) .entry-summary a {
+	color: #0a3112;
+}
+
+
+/**
+ * Third post 
+ */
+
+#content .hentry:nth-of-type( 7n + 3 ) {
+	background-color: #0a3112;
+}
+
+#content .hentry:nth-of-type( 7n + 3 ) .entry-content,
+#content .hentry:nth-of-type( 7n + 3 ) .entry-summary {
+	color: #fff;
+}
+
+#content .hentry:nth-of-type( 7n + 3 ) .entry-title a,
+#content .hentry:nth-of-type( 7n + 3 ) .entry-title a:hover {
+	color: #fff;
+}
+
+#content .hentry:nth-of-type( 7n + 3 ) .entry-meta,
+#content .hentry:nth-of-type( 7n + 3 ) .entry-meta a,
+#content .hentry:nth-of-type( 7n + 3 ) .entry-content a,
+#content .hentry:nth-of-type( 7n + 3 ) .entry-summary a {
+	color: #48b29c;
+}
+
+
+/**
+ * Fourth post 
+ */
+
+#content .hentry:nth-of-type( 7n + 4 ) {
+	background-color: #95c26c;
+}
+
+#content .hentry:nth-of-type( 7n + 4 ) .entry-content,
+#content .hentry:nth-of-type( 7n + 4 ) .entry-summary {
+	color: #202225;
+}
+
+#content .hentry:nth-of-type( 7n + 4 ) .entry-title a,
+#content .hentry:nth-of-type( 7n + 4 ) .entry-title a:hover {
+	color: #202225;
+}
+
+#content .hentry:nth-of-type( 7n + 4 ) .entry-meta,
+#content .hentry:nth-of-type( 7n + 4 ) .entry-meta a,
+#content .hentry:nth-of-type( 7n + 4 ) .entry-content a,
+#content .hentry:nth-of-type( 7n + 4 ) .entry-summary a {
+	color: #004c3c;
+}
+
+
+/**
+ * Fifth post 
+ */
+
+#content .hentry:nth-of-type( 7n + 5 ) {
+	background-color: #eef8f6;
+}
+
+#content .hentry:nth-of-type( 7n + 5 ) .entry-content,
+#content .hentry:nth-of-type( 7n + 5 ) .entry-summary {
+	color: #202225;
+}
+
+#content .hentry:nth-of-type( 7n + 5 ) .entry-meta,
+#content .hentry:nth-of-type( 7n + 5 ) .entry-meta a,
+#content .hentry:nth-of-type( 7n + 5 ) .entry-content a,
+#content .hentry:nth-of-type( 7n + 5 ) .entry-summary a {
+	color: #2f7d3d;
+}
+
+
+/**
+ * Sixth post 
+ */
+
+#content .hentry:nth-of-type( 7n + 6 ) {
+	background-color: #448275;
+}
+
+#content .hentry:nth-of-type( 7n + 6 ) .entry-content,
+#content .hentry:nth-of-type( 7n + 6 ) .entry-summary {
+	color: #fff;
+}
+
+#content .hentry:nth-of-type( 7n + 6 ) .entry-title a,
+#content .hentry:nth-of-type( 7n + 6 ) .entry-title a:hover {
+	color: #fff;
+}
+
+#content .hentry:nth-of-type( 7n + 6 ) .entry-meta,
+#content .hentry:nth-of-type( 7n + 6 ) .entry-meta a,
+#content .hentry:nth-of-type( 7n + 6 ) .entry-content a,
+#content .hentry:nth-of-type( 7n + 6 ) .entry-summary a {
+	color: #fff;
+}
+
+
+
+/**
+ * Seventh post 
+ */
+
+#content .hentry:nth-of-type( 7n + 7 ) {
+	background-color: #aed9bd;
+}
+
+#content .hentry:nth-of-type( 7n + 7 ) .entry-meta,
+#content .hentry:nth-of-type( 7n + 7 ) .entry-meta a,
+#content .hentry:nth-of-type( 7n + 7 ) .entry-content a,
+#content .hentry:nth-of-type( 7n + 7 ) .entry-summary a {
+	color: #0e5c13;
+}
+
+
+/**
+ * Widgets
+ */
+
+.widget {
+	background: #eef8f6;
+}
+
+.widget a, .site-footer .widget a {
+	color: #2f7d3d;
+}
+
+.site-footer .sidebar-container {
+	background: #0a3112;
+}
+
+
+
