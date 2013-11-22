@@ -40,8 +40,11 @@
 
 	<?php if ( is_home() || is_front_page() ) {?> 
 		<?php if ( get_header_image() ) {?> 
-			<img src="<?php echo get_header_image(); ?>" class="header-img" alt="" /> 
-		<?php } ?> 
+			<img src="<?php echo get_header_image(); ?>" class="header-img" alt="" />
+		<?php } 
+		else{ 
+			echo __( 'You should add a header-image via your Dashboard', 'darkorange' );
+		} ?>
 	<?php } ?> 
 
 

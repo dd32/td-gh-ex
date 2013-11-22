@@ -10,11 +10,12 @@ HOW TO SET HOMEPAGE
 ===================
 You can use the default homepage (displaying posts) or set a static page as homepage. 
 To set a static homepage login into WordPress Dashboard > Settings > Reading and select the page you want.
+Because of the limited height of header, you should only display a few widgets in the homepage sidebar.
 
 
 HOW TO CHANGE HEADER IMAGE
 ==========================
-You can change the header-image via WordPress Dashboard > Appearance > Header. I advice you to use a header-image of 960px wide and 350px high. 
+You can change the header-image via WordPress Dashboard > Appearance > Header. I advice you to use a header-image of 650px wide and 450px high. 
 The default header (boats.jpg) is from my private collection and is licensed under the GPL.
 
 
