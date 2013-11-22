@@ -20,6 +20,9 @@ Install
 
 Changelog
 ---------
+0.4.1 - 2013-11-22
+- add omega 0.9.0 awesomeness
+
 0.4.0 - 2013-09-08
 - updated hook for omega 0.5 compatibility
 

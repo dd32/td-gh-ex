@@ -5,7 +5,6 @@
  * @package Beta
  */
 
-if ( ! function_exists( 'beta_theme_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -14,18 +13,15 @@ if ( ! function_exists( 'beta_theme_setup' ) ) :
  * support post thumbnails.
  */
 function beta_theme_setup() {
-	/* Get the theme prefix. */
-	$prefix = hybrid_get_prefix();
 	
 	/* Load the primary menu. */
-	remove_action( "{$prefix}_before_header", 'omega_get_primary_menu' );	
-	add_action( "{$prefix}_header", 'omega_get_primary_menu' );
+	remove_action( 'omega_before_header', 'omega_get_primary_menu' );	
+	add_action( 'omega_header', 'omega_get_primary_menu' );
 	add_filter( 'omega_site_description', 'beta_site_description' );
 
 	add_theme_support( 'omega-footer-widgets', 3 );
 
 }
-endif; // beta_theme_setup
 
 add_action( 'after_setup_theme', 'beta_theme_setup', 11 );
 
@@ -38,7 +34,7 @@ function beta_site_description($desc) {
  * Enqueue scripts and styles
  */
 function beta_scripts() {
-	wp_enqueue_style('lato-font', 'http://fonts.googleapis.com/css?family=Ubuntu:400,700');
+	//wp_enqueue_style('lato-font', 'http://fonts.googleapis.com/css?family=Ubuntu:400,700');
 }
 
 add_action( 'wp_enqueue_scripts', 'beta_scripts' );
