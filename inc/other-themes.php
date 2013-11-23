@@ -1,4 +1,5 @@
 
+<div id="top-bar">Let's get ready for Christmas! Visit fimply.de on November 29th and check out our great Black Friday Sale!</div>
 
 
 

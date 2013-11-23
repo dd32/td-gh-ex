@@ -29,7 +29,13 @@
 	color:#7e7e7e;
 }
 
-
+#top-bar {
+	background-color: #de4747;
+	width:100%;
+	font-size: 16px;
+	padding: 30px;
+	color:#ffffff;
+}
 
 #theme {
 	border-radius: 5px;
