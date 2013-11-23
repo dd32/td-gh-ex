@@ -318,6 +318,16 @@ function mantra_pagination($pages = '', $range = 2, $prefix ='')
 }
 endif;
 
+function mantra_nextpage_links($defaults) {
+$args = array(
+'link_before'      => '<em>',
+'link_after'       => '</em>',
+);
+$r = wp_parse_args($args, $defaults);
+return $r;
+}
+add_filter('wp_link_pages_args','mantra_nextpage_links');
+
 
 /**
  * Site info

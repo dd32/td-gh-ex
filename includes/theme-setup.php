@@ -6,13 +6,14 @@
  * @subpackage Functions
  */
 
+/* 
 // Bringing up Mantra Settings page after install
-
 if ( is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" ) {
 	wp_redirect( 'themes.php?page=mantra-page' );
 }
+*/
 
- $mantra_totalSize = $mantra_sidebar + $mantra_sidewidth+50;
+$mantra_totalSize = $mantra_sidebar + $mantra_sidewidth+50;
  
  /**
 

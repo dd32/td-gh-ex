@@ -51,7 +51,7 @@
 
 	$socialNetworks = array ("Amazon", "Delicious", "DeviantArt", "Digg", "Etsy", "Facebook", "Flickr", "Google", "GoodReads", "GooglePlus",
                               "IMDb", "Instagram", "LastFM", "LinkedIn", "Mail", "MySpace", "Picasa", "Pinterest", "Reddit", "RSS", "Skype",
-                              "SoundCloud", "StumbleUpon", "Technorati", "Tumblr", "Twitch", "Twitter", "Vimeo", "VK", "WordPress",
+                              "Steam", "SoundCloud", "StumbleUpon", "Technorati", "Tumblr", "Twitch", "Twitter", "Vimeo", "VK", "WordPress",
                               "Xing", "Yahoo", "Yelp", "YouTube" );
 
 
