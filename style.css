@@ -1,7 +1,7 @@
 /*
 Theme Name: DarkOrange
 Theme URI: http://www.guidovanderleest.nl/darkorange
-Version: 1.1
+Version: 1.2
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: DarkOrange is a free, basic, clean, minimalistic, responsive, mobile friendly, WordPress theme. Primary sidebar, homepage sidebar, 2 widget-area's in footer, custom header-image, full width page-template and dropdown navigation are included. Besides this no theme settings page, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
@@ -118,11 +118,12 @@ select {max-width:100%;}
 #pre-header {margin:0; padding:0;}
 #header {margin: 0 40px 20px; padding:0; background:none; border-bottom:1px solid #eee;}
 #header:after {content:''; display:block; clear:both;}
-#header .header-img {width: 55%; height: auto; float:left; margin: 20px 0 20px; padding:10px; border:1px solid #eee; border-radius:5px;-moz-border-radius:5px;}
-#header .logo {padding: 20px 0 0;}
+#header .header-image {width: 56%; float:left; margin: 0 0 20px; padding:0 30px 0 0;}
+#header .header-img {width: 100%; height: auto; padding:10px; border:1px solid #eee; border-radius:5px;-moz-border-radius:5px;}
+#header .logo {padding: 20px 0;}
 #header .logo h1 {text-align:left; font-weight:bold;}
 #header .logo h1 a:hover {text-decoration:none; color:#333;}
-#header .logo h4 {padding:20px 0; text-align:center; font-style:italic;}
+#header .logo h4 {padding:10px 20px 0; text-align:center; font-style:italic;}
 
 
 /* HEADER MENU */
@@ -209,7 +210,7 @@ img {max-width:100%; height:auto;}
 
 
 /* HOMEPAGE SIDEBAR */
-.homepage {width: 35%; float: right; margin:20px 0 20px; padding:0; word-wrap: break-word;}
+#header .homepage {width: 35%; float: right; margin:0 0 20px; padding:0; word-wrap: break-word;}
 
 
 /* FOOTER */
@@ -228,10 +229,11 @@ img {max-width:100%; height:auto;}
 	#container {width: 94%; padding:10px; margin:0;}
 	#content, #content-full {width:100%; margin:0; padding:15px 0 15px; border:0;}
 	#header {margin:0; padding:0 10px; border-bottom:1px solid #ccc;}
-	#header .header-img {width: 100%; height: auto; padding:3px; margin:0; border:1px solid #ccc;}
 	#header .logo {padding:0; margin: 0 0 10px;}
 	#header .logo h1, #header .logo h4 {text-align:center; padding:0; margin:0;}
-	.homepage {width:100%; border:0; padding:0; float:left;} 
+	#header .header-image {width:100%; border:0; padding:0; float:left;}
+	#header .header-img {width: 98%; height: auto; padding:3px; margin:0 auto 0; border:1px solid #ccc;}
+	#header .homepage {width:100%; border:0; padding:0; float:left;} 
 	.post-home, .post-home.left {width: 100%; float: left; margin:0;}
 	#sidebar {width:100%; border:0; padding:15px 0 0; float:left;}
 	.widget {padding:0 0 5px; margin: 0 0 5px; border-bottom: 1px solid #ccc;}

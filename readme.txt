@@ -11,6 +11,7 @@ HOW TO SET HOMEPAGE
 You can use the default homepage (displaying posts) or set a static page as homepage. 
 To set a static homepage login into WordPress Dashboard > Settings > Reading and select the page you want.
 Because of the limited height of header, you should only display a few widgets in the homepage sidebar.
+I recommend to display an even amount of posts on the homepage, because posts are displayed in 2 columns.
 
 
 HOW TO CHANGE HEADER IMAGE

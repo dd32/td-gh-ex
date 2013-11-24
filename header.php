@@ -8,7 +8,9 @@
 <head>
 <title><?php wp_title('|', true, 'right'); ?></title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="utf-8">
+<meta charset="<?php bloginfo( 'charset' ); ?>" />
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <?php
 	/* Always have wp_head() just before the closing </head>
@@ -33,30 +35,30 @@
 <div id="header">
 
 	<div class="logo">
-		<h1><a href="<?php echo home_url() ; ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> </h1>
+		<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> </h1>
 		<h4><?php bloginfo('description'); ?></h4> 
 	</div>
 
-
-	<?php if ( is_home() || is_front_page() ) {?> 
+	<div class="header-image"> 
+		<?php if ( is_home() || is_front_page() ) {?> 
 		<?php if ( get_header_image() ) {?> 
-			<img src="<?php echo get_header_image(); ?>" class="header-img" alt="" />
+				<img src="<?php echo get_header_image(); ?>" class="header-img" alt="" />
 		<?php } 
-		else{ 
-			echo __( 'You should add a header-image via your Dashboard', 'darkorange' );
-		} ?>
-	<?php } ?> 
-
-
-	<div class="homepage"> 
-	<?php if ( is_home() || is_front_page() ) {?> 
-		<?php if ( is_active_sidebar( 'homepage' ) ) {?> 
-	
-		<?php dynamic_sidebar( 'homepage' ); ?>
-
-	<?php } ?> 
-	<?php } ?> 
-
+			else{ 
+				echo __( 'Please add a header-image via your Dashboard', 'darkorange' );
+			} ?>
+		<?php } ?> 
 	</div>
 
+	<div class="homepage"> 
+		<?php if ( is_home() || is_front_page() ) {?> 
+		<?php if ( is_active_sidebar( 'homepage' ) ) {?> 
+			<?php dynamic_sidebar( 'homepage' ); ?>
+		<?php } 
+		else{ 
+			echo __( 'Please add a widget via your Dashboard', 'darkorange' );
+		} ?>
+ 		<?php } ?> 
+
+	</div>
 </div>

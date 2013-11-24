@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: DarkOrange v1.1\n"
+"Project-Id-Version: DarkOrange v1.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-11-22 15:24:23+0000\n"
+"PO-Revision-Date: 2013-11-24 11:11:04+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -189,8 +189,13 @@ msgstr "Homepage Sidebar"
 msgid "Featured post"
 msgstr "Aanbevolen bericht"
 
-#: header.php:46
+#: header.php:48
 #@ darkorange
-msgid "You should add a header-image via your Dashboard"
-msgstr "Je moet een header-afbeelding toevoegen via je Dashboard"
+msgid "Please add a header-image via your Dashboard"
+msgstr "Voeg svp header-afbeelding toe via je Dashboard"
+
+#: header.php:59
+#@ darkorange
+msgid "Please add a widget via your Dashboard"
+msgstr "Voeg svp widget toe via je Dashboard"
 
