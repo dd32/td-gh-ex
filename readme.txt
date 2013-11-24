@@ -30,7 +30,7 @@ Custom Css:
 
 == Change log ==
 
-= 1.3 =
+= 1.3.1 =
 *Fixed thumbnail quality
 *Footer copyright text update
 

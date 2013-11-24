@@ -259,12 +259,6 @@ function promax_wp_title( $title, $sep ) {
 	return $title;
 }
 add_filter( 'wp_title', 'promax_wp_title', 10, 2 );
-global $pagenow;
-if ( is_admin() && isset( $_GET['activated'] ) && $pagenow == 'themes.php' )
-{
-wp_redirect( admin_url( 'themes.php?page=options-framework' ) );
-exit;
-}
 
 ob_clean();
 ?>
