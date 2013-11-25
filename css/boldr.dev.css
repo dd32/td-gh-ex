@@ -1905,6 +1905,18 @@ select {
 	padding: 0 15px!important;
 }
 
+/* Fix for Firefox select display */
+@-moz-document url-prefix() {
+	select {
+		-moz-appearance: none;
+		text-indent: 0.01px;
+		text-overflow: '';
+		height: auto;
+		padding: 5px !important;
+		text-transform: none;
+    }
+}
+
 /* #Links */
 a, a:visited {
 	color: #25ceff;
