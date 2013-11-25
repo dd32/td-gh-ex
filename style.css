@@ -1,7 +1,7 @@
 /*
 Theme Name: Asteria Lite
 Description: Asteria Lite is a clean responsive theme with a beautiful slider, Narrow and Wide Layout Option, 10 Social Icons and 3 page templates - Full width page, Left sidebar page and a Blog page Template. The theme also allows you to design your site logo with 600+ fonts. The Theme also has a Maintenance Mode feature, Beautiful Gallery feature, Custom CSS feature, Import/Export feature and is fully compatible with Woocommerce and Contact Form 7 Plugin. It also comes with Ajax pagination feature which means you can navigate through posts without page refresh. The theme is SEO Friendly and has plenty of user-friendly options. The theme is translation ready and fully translated into French, Italian, German, Spanish, and Chinese. Asteria Lite is suitable for any types of website - corporate, portfolio, business, blog. Get Free Support without registration on http://www.towfiqi.com/forums/forum/asteria-lite
-Version: 0.1
+Version: 0.2
 Theme URI: http://www.towfiqi.com/asteria-lite-free-wordpress-theme.html
 Author: Towfiq I.
 Author URI: http://www.towfiqi.com/
@@ -26,49 +26,6 @@ body .no_sidebar{ width:100%;}
 .header .head_soc{ position:absolute;right: 0; bottom:-24px;z-index: 9999;background: url(images/submenu.png) repeat; cursor:pointer;}
 .header .center{ }
 
-
-
-
-/*Headers2*/
-.header2{width:100%; background:#333; float:left;}
-.header2 a{ color:#fff;}
-.header2 .logo h1, .header2 .logo h2{ margin:20px 0;}
-.top_head{ width:100%; float:left; padding-top:10px;background:rgba(0, 0, 0, 0.05);}
-.header2 #topmenu{ margin-top:0px; float:right;}
-.header2 #topmenu ul li{ padding-bottom:10px;}
-.header2 #topmenu ul li:first-child{ margin-left:0;}
-.header2 #topmenu ul li ul li{ padding-bottom:0;}
-.header2 #topmenu ul li a{ font-size:16px;}
-.header2 #topmenu ul li ul{ margin-top:10px;}
-.header2 #topmenu ul li ul li ul{ margin-top:-40px;}
-.header2 .head_soc{margin-top:30px;}
-
-.head_contact{ width:auto; float:right; color:#999; margin-top:40px;}
-.head_contact a{ color:#999;}
-.call_us, .email_us{ display:inline-block; margin-right:20px;}
-
-
-/*Headers3*/
-.header3{width:100%; background:#333; float:left;}
-.header3 .logo{ text-align:center; width:100%;}
-.header3 .logo h1, .header3 .logo h2{ float:none;}
-.header3 a{ color:#fff;}
-.header3 .top_head{ width:100%; float:left; padding:10px 0;border-bottom:1px solid rgba(0, 0, 0, 0.1);}
-.header3 .logo img{ margin:0;}
-.header3 #topmenu{ padding-top:10px; float:left; text-align:center; width:100%; margin-top:15px;}
-.header3 #topmenu ul li{ padding-bottom:15px;}
-.header3 #topmenu ul li:first-child{ margin-left:0;}
-.header3 #topmenu ul li ul li{ padding-bottom:0;}
-.header3 #topmenu ul li a{ font-size:17px;}
-.header3 #topmenu ul li ul{margin-top: 15px;}
-.header3 #topmenu ul li ul li ul{ margin-top:-40px;}
-
-.header3 .head_soc{ float: right;}
-.header3 .head_contact a{}
-.header3 .head_contact{ float:left; margin-top:0px;}
-
-.topsearch{background: rgba(0, 0, 0, 0.1);padding: 3px 10px;border: 1px solid rgba(255, 255, 255, 0.1);}
-.topsearch #s{ border:none; background:none; color:#fff;}
 /*Headers4*/
 .header4{width:100%; background:#333; height:auto; float:left;}
 .header4 a{ color:#fff;}
@@ -78,23 +35,17 @@ body .no_sidebar{ width:100%;}
 .header4 #topmenu{ margin-top:0;}
 .header4 #topmenu ul li{padding: 0 20px 0 20px; padding-top:34px; padding-bottom:31px;border-bottom: 3px solid transparent;margin-left: -4px;-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;transition:all 0.2s ease-out;}
 .header4 #topmenu ul li ul li{ padding:0; margin-left:0; border-bottom:none; line-height:normal!important; height:auto!important;}
-.header4 #topmenu ul li ul{top: 90px;margin-left: -20px; margin-top:0;}
+.header4 #topmenu ul li ul{top: 90px;margin-left: -80px; margin-top:0;}
 .header4 #topmenu ul li ul li ul{ margin-top:-90px; margin-left:0;}
-.header4 .current-menu-item{ background:rgba(0, 0, 0, 0.03);}
+.header4 .current-menu-item{ background:rgba(0, 0, 0, 0.1);}
 .header4 #topmenu ul li:hover{background:rgba(0, 0, 0, 0.03);border-bottom: 3px solid #2dcb73;}
 .header4 #topmenu ul .zn_parent_menu:hover{border-bottom: 3px solid transparent!important;}
 .header4 #topmenu .sub-menu{border-top: 3px solid #2dcb73;}
 .header4 #topmenu ul li:hover ul li{ border-bottom:none;}
 
-/*HEADER 5*/
-.header5{width:100%; float:left;position:relative;}
-.header5 .logo{width:100%}
-.header5 .logo h1, .header5 .logo h2{ text-align:center;width: 100%;}
-.header5 a{ color:#333;}
-body .fixed_site .header5 .center{width:100%!important;}
-.header5 #topmenu {float: left;background: #333;width: 100%;padding-top: 20px; text-align:center;margin-top: 20px;}
+.bigmenu{text-align: center; width: 100%;}
+body .header4 .bigmenu ul li:hover{ background:none!important;}
 
-.header5 .logo img{ display:block; margin:0 auto;}
 /*Social*/
 .head_soc{ float:right;}
 .head_soc a{display: inline-block;margin-left: 10px;width: 15px;height: 18px;padding: 2px 4px;text-align: center;-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;transition:all 0.2s ease-out; color:#ccc;}
@@ -201,6 +152,7 @@ body .fixed_site .header5 .center{width:100%!important;}
 .lastmap{ margin-bottom:0;}
 
 /*Midrow Blocks*/
+.ast_blocks{ margin:0; padding:35px 0; background:#fff;}
 .midrow{width:100%; float:left;}
 .midrow_wrap{ width:85%; margin:0 auto;}
 
@@ -291,8 +243,8 @@ body .fixed_site .header5 .center{width:100%!important;}
 .lay4{width:100%; float:left; padding:40px 0;}
 .lay4_wrap{overflow: hidden;width:68%; float:left;}
 .lay4 .hentry{width: 95.6%;float: left;padding: 2%;background: #fff; margin-bottom:30px; position:relative;}
-.lay4 .post_image{width: 25%;height: auto;float: left;margin-right: 2%; overflow:hidden;}
-.lay4 .post_content{float: left;width: 73%;}
+.lay4 .post_image{width: 25%;height: auto;float: left;margin-right: 2%; overflow:hidden; padding-top:10px;}
+.lay4 .post_content{float: right;width: 71%;}
 .lay4 .hentry img{ width:100%; height:auto; border:none;-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;transition:all 0.2 ease-out;}
 .lay4 .hentry:hover img
 {
@@ -493,7 +445,7 @@ h3#comments_ping{color:#333333; font-size:20px;}
 #sidebar{width:30%; float:right;}
 #sidebar .widgets ul{ margin:0; padding:0; }
 #sidebar .widget{ background:#f1f2f3; margin-bottom:30px; list-style-type:none;width: 100%;float: left; color:#999; position:relative; padding-bottom:40px;}
-#sidebar .widget .widgettitle, #sidebar .widget .widgettitle a{ color:#2dcb73;}
+#sidebar .widget .widgettitle, #sidebar .widget .widgettitle a{ color:#2dcb73; font-size:24px;}
 #sidebar .widget li{ list-style-type:none; margin:20px 0;}
 #sidebar .widget li a{ color:#999; }
 #sidebar .widget_wrap{width:80%; padding:0 10%;}
@@ -507,6 +459,7 @@ h3#comments_ping{color:#333333; font-size:20px;}
 #sidebar #searchform #s{ width:65%; padding:2%; border:none; color:#888; background:none;}
 #searchsubmit{ background:#2dcb73; padding:5px 10px; border:none; margin-left:-5px; color:#fff;right: 0px;top: 0}
 #sidebar #searchsubmit, #footer #searchsubmit{position: absolute;}
+#searchform{ position:relative;}
 
 .widget_search{ padding-bottom:0px!important;}
 .widget_search .widget_corner{ display:none;}
@@ -554,7 +507,7 @@ h3#comments_ping{color:#333333; font-size:20px;}
 #footer .widgets .widget a{color:#979797;}
 #footer .widgets ul{ margin:0; padding:0;}
 #footer .widgets .widget{ width:23%; float:left; margin:1%; list-style-type:none; margin-bottom:25px;}
-#footer .widgets .widgettitle, #midrow .widgets .widgettitle a{ color:#edeef0;}
+#footer .widgets .widgettitle, #midrow .widgets .widgettitle a{ color:#edeef0; font-size:1.5em;}
 #footer .widgets .widget ul{ margin:0; padding:0;}
 #footer .widgets .widget ul li{ list-style-type:none; padding:4px 0;}
 #footer .widgets .widget ul li a{color:#999; text-decoration:none;}

@@ -1,6 +1,8 @@
 <?php get_header(); ?>
 
 <!--Content-->
+<div class="fixed_site">
+	<div class="fixed_wrap singlefx">
                     <div class="page_tt"><div class="center"><div class="fourofour"><label><a>404</a></label></div><h2 class="postitle"><?php _e('Page Not Found', 'asteria'); ?></h2></div></div> 
 <div id="content">
 <div class="center">
@@ -27,6 +29,8 @@
    
     <!--PAGE END-->
 
+		</div>
+	</div>
 </div>
 </div>
 <?php get_footer(); ?>

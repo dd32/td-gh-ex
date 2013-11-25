@@ -28,9 +28,9 @@ Template Name: Blog Page Template
 				   'cat' => ''.$asteria['blog_cat_id'].'',
 				   'paged' => ( get_query_var('paged') ? get_query_var('paged') : 1),
 				   'posts_per_page' => '6');
-	query_posts($args);
+	$the_query = new WP_Query( $args );
  ?>
-                   <?php if(have_posts()): ?><?php while(have_posts()): ?><?php the_post(); ?>
+                <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
                 <div <?php post_class(); ?> id="post-<?php the_ID(); ?>"> 
 
                 <?php global $wp_query; $postid = $wp_query->post->ID; $astvidthumb = get_post_meta( $postid, 'ast_videolink', true ); ?>
@@ -83,8 +83,7 @@ Template Name: Blog Page Template
                 
                         </div>
             <?php endwhile ?> 
-
-            <?php endif ?>
+ 		<?php wp_reset_postdata(); ?>
 </div>
 
 <!--PAGINATION START-->

@@ -47,15 +47,26 @@
 
 <?php /*?><!------------------------------------------------------------Other Javascripts--------------------------------------------------------><?php */?>
 <script type="text/javascript">
+//Sidebar List style type
+<?php if(($asteria['site_width_id'] == "1") || (!get_option( 'asteria' )) ) {?>
+jQuery('#sidebar .widgets .widget li').prepend('<i class="fa-angle-double-right"></i> ');
+<?php } ?>
 //Header4 Fix
 jQuery(window).bind("load", function() {
+	
 var headheight = (jQuery(".logo").outerHeight());
+var logowidth = (jQuery(".logo").outerWidth());
+var menuwidth = (jQuery("#topmenu").outerWidth());
+if (logowidth + menuwidth <1100 ){
 //var headheight = (jQuery(".header4").outerHeight());
 jQuery(".header4").height(headheight)
 jQuery(".header4 #topmenu").css({"minHeight":headheight});
 jQuery(".header4 #topmenu ul li ul, .header4 .head_soc").css({"top": headheight + 'px'});
 jQuery(".header4 #topmenu ul li").css({"paddingTop": "0px", "paddingBottom": "0px","height":headheight - 3 + 'px', "line-height" :headheight - 3 + 'px'});
 jQuery(".header4 #topmenu ul li ul li ul").css({"marginTop": '-' + headheight + 'px'});
+}else{
+	jQuery(".header4 #topmenu").addClass('bigmenu');
+	}
 });
 
 
@@ -66,7 +77,7 @@ var galleryloadergif = "<?php echo get_template_directory_uri(); ?>/images/newlo
 //The Colors-------------------------------------------
 	var primarytext = "<?php echo $asteria['primtxt_color_id']; ?>";
 	var sechovertext = "<?php echo $asteria['sectxt_color_id']; ?>";	
-	var menutext = "<?php echo $asteria['menutxt_color_id']; ?>";
+	var menutext = "#FFFFFF";
 	var footwidget ="#999999";
 	var footwidgethover ="#ffffff";	
 			

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <?php global $asteria;?>
-
+<?php if ( is_home() ) { ?>
 <div class="fixed_site">
 	<div class="fixed_wrap fixindex">
 <!--Slider Area-->
@@ -24,7 +24,7 @@ foreach ($home_blocks as $key=>$value) {
     switch($key) {
 	//Blocks
     case 'blocks': ?>
-	<div class="home_blocks"><?php get_template_part('frontpage/content','blocks'); ?></div>
+	<div class="home_blocks ast_blocks"><?php get_template_part('frontpage/content','blocks'); ?></div>
     <?php
     //Welcome Text
 	break;
@@ -56,7 +56,13 @@ endif;
      <?php get_template_part('layout1'); ?>   
     
 <?php } ?>
-
+<?php }else{ ?>
+<div class="fixed_site">
+	<div class="fixed_wrap fixindex">
+<?php get_template_part('layout1'); ?> 
+	</div>
+</div>
+<?php } ?>
 
 </div>
 </div>

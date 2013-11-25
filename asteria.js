@@ -13,6 +13,12 @@ jQuery(window).ready(function() {
 	}, function(){
 	jQuery(this).find('i').stop().animate({ "color":socialbuttons }, 200);	
 	});
+	//Sidebar item hover animation
+	jQuery('#sidebar .widgets .widget li').hover(function(){
+	jQuery(this).find('a, i').animate({ "color":sechover }, 200);
+	}, function(){
+	jQuery(this).find('a, i').animate({ "color":primarytext }, 200);	
+	});
 	//Block Animation
 	if (jQuery(window).width() > 480) {
 	jQuery('.midrow_block').hover(function(){
@@ -30,12 +36,6 @@ jQuery(window).ready(function() {
 		jQuery(this).stop().animate({ "color":sechovertext, "backgroundColor":primarycolor }, 200);
 	}, function(){
 		jQuery(this).stop().animate({ "color":primarytext, "backgroundColor":primardefault }, 200);
-	});
-	//Sidebar & Home Widget Hover Animation
-	jQuery('#home_widgets .widget li a, #sidebar .widget li a').hover(function(){
-	jQuery(this).stop().animate({ "color":sechover}, 200);
-	}, function(){
-	jQuery(this).stop().animate({ "color":sidebarcolor}, 200);	
 	});
 	//Footer Widget color Animation
 	jQuery('#footer .widgets .widget ul li a').hover(function(){
@@ -222,12 +222,18 @@ jQuery(function () {
     
 });
 jQuery('.slider-wrapper').waitForImages(function() {
-	jQuery("#zn_nivo, .nivo-controlNav, #slide_acord, .nivoinner").fadeIn('slow');
+	jQuery("#zn_nivo, #slide_acord, .nivoinner").fadeIn('slow');
     jQuery(".pbar_wrap").fadeOut();
 });
+jQuery(window).load(function(){
+jQuery('.nivo-controlNav').css({"display":"block"});
+});	
 
 //load yanone font by default
 if (jQuery('#redux-google-fonts-css').length){}else{
     jQuery("h2, .mid_block_content h3, .widgettitle, .postitle, body .fixed_site .header4 #topmenu ul li a, .text_block, .lay1_title h3, #sidebar .widget .widgettitle, .left_arro, .right_arro, #submit, .widget_calendar caption, .rel_content a, #ast_related ul li a, .fourofour a").attr('style', 'font-family: "kaffeesatzthin"!important');
 }
+
+//Remove margin from homeblocks after ast_blocks
+jQuery(".ast_blocks").next('.home_blocks').css({"marginTop":"0"});
 });

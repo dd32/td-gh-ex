@@ -18,12 +18,12 @@ endif;
 <div class="author_div">
     <div class="author_left"><?php echo get_avatar($curauth->ID, $size = '100'); ?></div>
     <div class="author_right">
-    <h2><?php echo $curauth->nickname; ?></h2>
+    <h2><?php echo $curauth->display_name; ?></h2>
     <?php echo $curauth->user_description; ?>
     </div>
 </div>
 
-<h3 class="author_posts"><?php _e('Posts by ', 'asteria');?><?php echo $curauth->nickname; ?></h3>
+<h3 class="author_posts"><?php _e('Posts by ', 'asteria');?><?php echo $curauth->display_name; ?></h3>
 <div class="lay4_inner">
                    <?php if(have_posts()): ?><?php while(have_posts()): ?><?php the_post(); ?>
                 <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">            

@@ -59,9 +59,12 @@ body .fixed_site .center, body .fixed_site .midrow_wrap, body .fixed_site .heade
 body .fixed_site .header3 .center{width:100%!important;}
 
 .comment-form-comment textarea, .comm_wrap input{border-top: 1px solid rgba(0, 0, 0, 0.1)!important;border-left: 1px solid rgba(0, 0, 0, 0.1)!important;border-right: 1px solid rgba(0, 0, 0, 0.1)!important;}
+#sidebar .widget{ margin-top:20px;}
 
 .edit_wrap{ border-color:transparent;}
 .share_this{ background-color:transparent!important;}
+.author_posts{ background:none!important;}
+.ast_map{ margin-bottom:0!important;}
 <?php } ?>
 
 /*--------------SLIDER HEIGHT---------------*/
@@ -137,7 +140,7 @@ body .social_buttons div i, body .social_buttons div a{color:<?php echo $asteria
 .header4 #topmenu ul li:hover, .nivo-caption .sld_layout1 p, .banner .sld_layout1 p, .acc-sld_layout2 p, .header4 #topmenu .sub-menu, .acc-sld_layout1 p{ border-color:<?php echo $asteria['sec_color_id']; ?>!important;}
 #topmenu ul li ul li a:hover, .nivo-caption .sld_layout1 h3 a, .nivo-controlNav a.active, .banner .sld_layout1 h3 a, .acc-sld_layout1 h3 a, .tab.active, .thn_post_wrap .more-link:hover, .moretag:hover, #submit, .page_tt, #searchsubmit, .contact_submit input, .pad_menutitle, .to_top:hover, .page-numbers:hover, .ast_pagenav .current, .progrssn, #simple-menu{background-color:<?php echo $asteria['sec_color_id']; ?>!important;}
 
-.nivo-caption p a, .banner .sld_layout1 p a, .banner .sld_layout2 p a, .banner .wrap-sld_layout3 p a, .acord_text p a, .lay2 h2 a, .lay3 h2 a, .lay4 h2 a, .lay5 .postitle a, #ast_nextprev .ast-prev:hover .left_arro i, #ast_nextprev .ast-next:hover .right_arro i, .rel_content a, #reply-title small a, .logged-in-as a, .thn_post_wrap a:link, .thn_post_wrap a:visited, .single_metainfo a i:hover, .edit_wrap i:hover, .single_post .postitle, #sidebar .widget .widgettitle, #sidebar .widget .widgettitle a, #home_widgets .widget a:link, #home_widgets .widget a:visited, #home_widgets .widget .thn_wgt_tt, #sidebar .widget .thn_wgt_tt, #footer .widget .thn_wgt_tt, .widget_calendar td a, .astwt_iframe a, .ast_countdown li, .ast_biotxt a, .ast_bio .ast_biotxt h3, .search_term h2, .author_right h2, .author_right a, #contact_block .widgettitle, #contact_block a:link, #contact_block a:visited, .copytext a, .ast_maintanace .logo h1 a, #ast_nextprev .ast-prev:hover .left_arro i, #ast_nextprev .ast-next:hover .right_arro i, .single_metainfo a:hover, .post_meta a:hover{color:<?php echo $asteria['sec_color_id']; ?>!important;}
+.nivo-caption p a, .banner .sld_layout1 p a, .banner .sld_layout2 p a, .banner .wrap-sld_layout3 p a, .acord_text p a, .lay2 h2 a, .lay3 h2 a, .lay4 h2 a, .lay5 .postitle a, #ast_nextprev .ast-prev:hover .left_arro i, #ast_nextprev .ast-next:hover .right_arro i, .rel_content a, #reply-title small a, .logged-in-as a, .thn_post_wrap a:link, .thn_post_wrap a:visited, .single_metainfo a i:hover, .edit_wrap i:hover, .single_post .postitle, #sidebar .widget .widgettitle, #sidebar .widget .widgettitle a, #home_widgets .widget a:link, #home_widgets .widget a:visited, #home_widgets .widget .thn_wgt_tt, #sidebar .widget .thn_wgt_tt, #footer .widget .thn_wgt_tt, .widget_calendar td a, .astwt_iframe a, .ast_countdown li, .ast_biotxt a, .ast_bio .ast_biotxt h3, .search_term h2, .author_right h2, .author_right a, #contact_block .widgettitle, #contact_block a:link, #contact_block a:visited, .copytext a, .ast_maintanace .logo h1 a, #ast_nextprev .ast-prev:hover .left_arro i, #ast_nextprev .ast-next:hover .right_arro i, .single_metainfo a:hover, .post_meta a:hover, .social_buttons div a:hover i, .social_buttons div a:hover{color:<?php echo $asteria['sec_color_id']; ?>!important;}
 
 .rel_content .rel_more:hover{border-color: transparent transparent <?php echo $asteria['sec_color_id']; ?> transparent!important;}
 .tab.active .tab_arrow{border-color: <?php echo $asteria['sec_color_id']; ?> transparent transparent transparent!important;}
