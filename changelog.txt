@@ -1,5 +1,9 @@
 *** discover Changelog ***
 
+26-11-2013 - version 1.7.15
+*header.php file modified to allow larger width logos:
+Line 30 changed from three columns to twelve and nine columns removed from line 45
+
 08-10-2013 - version 1.7.14
 * template-home.php file modified to fix bug, download now button not getting off when kept off in theme options.
 
