@@ -20,10 +20,11 @@ Template Name: Blog
 						$more = 0;
 						$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 						$args = array( 'post_type' => 'post','paged'=>$paged);		
-						query_posts( $args );
+						//query_posts( $args );
 						$post_type_data = new WP_Query( $args );
-						while(have_posts()):the_post();	?>
-			
+						
+						while($post_type_data->have_posts()):
+						$post_type_data->the_post();?>
 				<div class="blog_section" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<h2 class="blog_section_title">
 					 <a href="<?php the_permalink(); ?>"title="<?php the_title(); ?>"><?php the_title(); ?></a>

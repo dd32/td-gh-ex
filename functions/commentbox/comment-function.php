@@ -1,5 +1,5 @@
 <?php
-		/*
+/*
  * @file           comment-function.php
  * @package        Busiprof
  * @author         Priyanshu Mittal
@@ -7,8 +7,7 @@
  * @license        license.txt
  * @filesource     wp-content/themes/Busiprof/comment-function.php
 */	
-		
-			// code for comment
+// code for comment
 if ( ! function_exists( 'busiprof_comment' ) ) :
 /**
  * Template for comments and pingbacks.
@@ -53,16 +52,13 @@ $leave_reply = $comment_data['translation_reply_to_coment'] ? $comment_data['tra
     	              </div><!-- /reply -->
                     </div><!-- /comment-content -->
 				</div><!-- /comment-details -->
-		<!-- /comment -->
-		
+		<!-- /comment -->		
 <?php
 }
 endif;
 add_filter('get_avatar','busiprof_add_gravatar_class');
-
 function busiprof_add_gravatar_class($class) {
     $class = str_replace("class='avatar", "class='img-circle", $class);
     return $class;
 }
-
 ?>

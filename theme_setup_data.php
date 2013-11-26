@@ -13,6 +13,7 @@
 		
 		return $busiprof_theme_options=array(
 				//Logo and Fevicon
+				'front_page'  => 'yes',
 				'upload_image'=>'',
 				'height'=>'60',
 				'width'=>'250',
@@ -88,17 +89,16 @@
 				'recent_blog_description' =>__("We are a group of passionate designers &amp; developers",'busi_prof'),
 				
 				//contact deafault
+				'contact_address_1'=>'378 Kingston Court',
+				'contact_address_2'=>'West New York, NJ 07093',
+				'contact_number'=>'973-960-4715',
+				'contact_fax_number'=>'0276-758645',
+				'contact_email'=>'info@busiprof.com',
+				'contact_website'=>'www.busiprof.com',
+				'facebook_url'=>'https://www.facebook.com/',
+				'linkedin_url' => 'http://www.linkedin.com/',
+				'twitter_url' => 'https://twitter.com/',
 				'google_map_url' =>'https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Kota+Industrial+Area,+Kota,+Rajasthan&amp;aq=2&amp;oq=kota+&amp;sll=25.003049,76.117499&amp;sspn=0.020225,0.042014&amp;t=h&amp;ie=UTF8&amp;hq=&amp;hnear=Kota+Industrial+Area,+Kota,+Rajasthan&amp;z=13&amp;ll=25.142832,75.879538&amp;output=embed',
-				'facebook_url'=>'#',
-				'rss_url' => '#',
-				'twitter_url' => '#',
-				
-				
-				
 				);
 	}
-	
-	
-
-
 ?>

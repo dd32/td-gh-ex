@@ -1,7 +1,7 @@
 <?php
 /*
-	*Theme Name	: BusiProf
-	*Theme Core Functions and Codes
+ * Theme Name	: BusiProf
+ * Theme Core Functions and Codes
  * @file           functions.php
  * @package        Busiprof
  * @author         Priyanshu Mittal
@@ -9,16 +9,16 @@
  * @license        license.txt
  * @filesource     wp-content/themes/Busiprof/functions.php
 */
-
-
+define('WEBRITI_TEMPLATE_DIR',get_template_directory());
+define('WEBRITI_THEME_FUNCTIONS_PATH',WEBRITI_TEMPLATE_DIR.'/functions');
 /**Includes reqired resources here**/
 
 	//Files for custom - defaults menus
-	require( get_template_directory() . '/functions/menu/busiprof_nav_walker.php' );
-	require( get_template_directory() . '/functions/menu/default_menu_walker.php' );	
-	require( get_template_directory() . '/functions/Pagination/pagination.php' );
-	require( get_template_directory() . '/functions/resize_image/resize_image.php' );
-	
+	require( WEBRITI_THEME_FUNCTIONS_PATH. '/menu/busiprof_nav_walker.php' );
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/menu/default_menu_walker.php' );	
+	require(WEBRITI_THEME_FUNCTIONS_PATH . '/Pagination/webriti_pagination.php' );
+	require( WEBRITI_THEME_FUNCTIONS_PATH .'/resize_image/resize_image.php' );	
+	require_once( WEBRITI_THEME_FUNCTIONS_PATH .'/commentbox/comment-function.php');
 //content width
 if ( ! isset( $content_width ) ) $content_width = 900;
 //wp title tag starts here
@@ -66,14 +66,9 @@ function busiprof_scripts(){
 	//wp_enqueue_style('docs',get_template_directory_uri().'/css/docs.css');	
 }
 add_action( 'wp_enqueue_scripts', 'busiprof_scripts' );
-
-
-
 	
 // Theme Setup /default data starts here
 /** Tell WordPress to run busiprof_setup() when the 'after_setup_theme' hook is run. */
-
-
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -123,23 +118,16 @@ add_action( 'wp_enqueue_scripts', 'busiprof_scripts' );
 	}
 	
 	// admin restore options page
-	
 	add_action('Busiprof_restore_data', 'Busiprof_restore_data_function', $resetno );		
 	function Busiprof_restore_data_function($resetno)
-	{
-		
+	{	
 		$busiprof_theme_options = Theme_Setup_data($resetno);
-		
-		
 		update_option('busiprof_theme_options',$busiprof_theme_options);
 		
-	}
-	
+	}	
 		
 add_action( 'widgets_init', 'busiprof_widgets_init');
 function busiprof_widgets_init() {
-
-
 /*sidebar*/
 register_sidebar( array(
 		'name' => __( ' Sidebar', 'busi_prof' ),
@@ -160,6 +148,7 @@ register_sidebar( array(
 		'before_title' => '<h2>',
 		'after_title' => '</h2>',
 	) );
+	
 	register_sidebar( array(
 		'name' => __( 'Second Footer Widget Area', 'busi_prof' ),
 		'id' => 'second-footer-widget-area',
@@ -169,6 +158,7 @@ register_sidebar( array(
 		'before_title' => '<h2 class="widget-title">',
 		'after_title' => '</h2>',
 	) );
+	
 	register_sidebar( array(
 		'name' => __( 'Third Footer Widget Area', 'busi_prof' ),
 		'id' => 'third-footer-widget-area',
@@ -177,8 +167,7 @@ register_sidebar( array(
 		'after_widget' => '</div>',
 		'before_title' => '<h2 class="widget-title">',
 		'after_title' => '</h2>',
-	) );
-	
+	) );	
 	
 	register_sidebar( array(
 		'name' => __( 'Fourth Footer Widget Area', 'busi_prof' ),
@@ -191,14 +180,4 @@ register_sidebar( array(
 	) );
 }	                     
 
-	
-/*#######################################################################################################*/
-/*Comment Section Code Block*/
-
-			require_once( get_template_directory() . '/functions/commentbox/comment-function.php');
-/*#########################################################################################################*/
-	
-
-?>			
-					
-					
+?>

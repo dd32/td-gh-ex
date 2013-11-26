@@ -1,4 +1,4 @@
-  <?php
+<?php
 function busiprof_pagination($pages = '', $range = 2)
 {
 $showitems = ($range * 2)+1;
@@ -37,5 +37,4 @@ if ($paged < $pages-1 && $paged+$range-1 < $pages && $showitems < $pages) ?>
 <?php
 }
 }
-
 ?>

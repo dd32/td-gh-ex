@@ -1,11 +1,6 @@
-<?php get_header();
-		
-		$current_options=get_option('busiprof_theme_options');
-		
-		//print_r($current_options);
+<?php get_header();		
+	$current_options=get_option('busiprof_theme_options');		
 ?>
-	<!----HTML BLOCK---->
-	
 	<div class="services_mid_mn">
 		<div class="container">
 			<div class="services_top_mn">
@@ -23,11 +18,7 @@
 				<?php }  ?>
 			</div>
 			<div class="row-fluid">
-			
-			
-				
-			<div class="tab-content" id="myTabContent">
-			
+			<div class="tab-content" id="myTabContent">			
 			  <div id="all" class="tab-pane fade active in">
 					<!---First Project Work---->
 					<div class="row-fluid service_section">
@@ -109,11 +100,7 @@
 					</div>
 					</div>
 				</div>	
-			</div>
-			
-			
-			
-			
+			</div>			
 		</div>
 	</div>		
-</div>	
+</div>

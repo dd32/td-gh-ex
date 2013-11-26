@@ -18,7 +18,7 @@
                    <?php if(is_active_sidebar('first-footer-widget-area','second-footer-widget-area','third-footer-widget-area','fourth-footer-widget-area')):?>
 						<?php if ( is_active_sidebar( 'first-footer-widget-area' ) ) : ?>
 							  <div class="span3">
-								   <?php dynamic_sidebar( 'first-footer-widget-area' ); ?>
+								<?php dynamic_sidebar( 'first-footer-widget-area' ); ?>
 							  </div>
 							<?php endif; ?>                                
                             <?php if ( is_active_sidebar( 'second-footer-widget-area' ) ) : ?> 
@@ -38,7 +38,7 @@
 							<?php endif; ?>
 						<?php else : ?>
 						<div class="span3"> 
-							<?php the_widget('WP_Widget_Archives'); ?>
+						<?php the_widget('WP_Widget_Archives'); ?>
                         </div>
 						<div class="span3">                       
 					     <?php the_widget('WP_Widget_Categories'); ?>
@@ -65,14 +65,12 @@
 					<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'busi_prof' ) ); ?>"><?php _e('WordPress', 'busi_prof'); ?></a>
 					<?php bloginfo(); ?> <?php echo date( 'Y' ); ?>. <?php _e( 'Designed by', 'busi_prof' ); ?> 
 					<a href="<?php echo esc_url( __( 'http://www.webriti.com/','busi_prof' ) ); ?>"><?php _e( 'Webriti ', 'busi_prof' ); ?></a>
-					<?php _e( 'All Rights Reserved.', 'busi_prof' ); ?>
 					</div>
 				</div>
 		   </div>
 		</div>
 <!--closing of the footer-->
-
 </div>
 <?php wp_footer(); ?> 
 </body>
-</html>  
+</html>

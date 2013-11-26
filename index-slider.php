@@ -14,7 +14,7 @@
 <!-------Slide---------->
 <?php if($current_options['slider_image']!='') {?>
 <div class="main_slider">
-	<img class="slider_img" style="height: 400px; width: 100%;" src="<?php echo $current_options['slider_image']; ?>">
+	<img class="slider_img busi_slider_image" src="<?php echo $current_options['slider_image']; ?>">
 	<?php } ?>
 	
 			<!--Caption Block---->
@@ -32,5 +32,4 @@
 				<?php } ?>
 				</div>
 			</div>
-</div>	
-<!-------/slide--------->
+</div>

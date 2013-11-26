@@ -202,18 +202,11 @@
 				<span id="explaincolor"><?php  _e('Enter project teo url','busi_prof');?>.</span>				
 			</p> -->
 		</div>	
-	</div>
-	
-	
-	
+	</div>	
 <!---DATA SAVE------>
     <div id="busiprof_optionsframework-submit">         
 		<input type="hidden" value="1" id="busiprof_settings_save_2" name="busiprof_settings_save_2" />
 		<input type="button" class="button-primary"  value= "<?php _e('Save Changes', 'busi_prof');?>" onclick="datasave_home('2')"/>									
 		<input type="button" class="reset-button button-secondary"  value="<?php _e('Restore Defaults','busi_prof');?>" onclick="reset_data_home('2')" />
-
 	</div>
 </form>
-
-
-

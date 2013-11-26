@@ -12,12 +12,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
 <head>
-	<meta http-equiv="X-UA-Compatible" content="IE=8">
+	<meta http-equiv="X-UA-Compatible" content="IE=9">
        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
 		<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>" charset="<?php bloginfo('charset'); ?>" />
 		<meta name="generator" content="WordPress <?php bloginfo('version'); ?>"/>
 		<title><?php wp_title( '|', true, 'right' ); ?></title>
-		
 		<?php 
 				//get theme options here
 				if(get_option('busiprof_theme_options')!='')
@@ -31,13 +30,13 @@
 			<link   rel="shortcut icon" href="<?php echo get_template_directory_uri();?>/images/fevicon.icon">
 			<?php } ?>
 				<link rel="profile" href="http://gmpg.org/xfn/11" />
-				<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
+				<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" media="screen" />
 	
 				<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 				<div class="container">
-						<div class="navbar" style="margin-bottom: 0px;">
+						<div class="navbar" id="busimenu">
 								<div class="navbar-inner">
 								<div class="container">
 									<a data-target=".navbar-responsive-collapse" data-toggle="collapse" class="btn btn-navbar">
@@ -50,7 +49,7 @@
 								<?php 	if($busiprof_current_options['upload_image']!='') { ?>
 								
 								<a href="<?php echo home_url( '/' ); ?>" class="brand">
-								<img src="<?php echo $busiprof_current_options['upload_image']; ?>"  height="40" width="110" alt="Logo" class="logo-img" />
+								<img src="<?php echo $busiprof_current_options['upload_image']; ?>"  alt="Logo" class="logo-img" />
 								</a>
 								 
 								<?php   } else { ?>
@@ -74,6 +73,4 @@
 								</div>
 								</div><!-- /navbar-inner -->
 						</div>
-
 				</div>	
-<!----Header End----->

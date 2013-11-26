@@ -1,23 +1,10 @@
-<?php //wp_die();
- if ( function_exists( 'add_image_size' ) ) { 
-
-	
+<?php 
 	 //normal post type 
-	 add_image_size('recent-blog-thumb',80,80,false);
-	 
-	 //slider post type
-	 //add_image_size('index-slider-thumb',366,155,false);
-	
-
-	 
-	
-}
-
+	 add_image_size('recent-blog-thumb',80,80,false); 
 
 //code for normal post types
 add_filter( 'intermediate_image_sizes', 'busiprof_size');
 function busiprof_size($sizes){
-
 //wp_die();
   if(isset($_REQUEST['post_id'])){
     $type = get_post_type($_REQUEST['post_id']);
@@ -29,8 +16,6 @@ function busiprof_size($sizes){
 		else if($type=='page'  &&  $value != 'page-image'){
             unset($sizes[$key]);
         }
-	
-	
     }
     return $sizes;
 }

@@ -4,7 +4,7 @@ A Free Blue colored Business Blog theme that supports Primary menu's , Primary s
 It has a perfect design that's great for any Business/Firms  Blogs who wants a new look for their site. Three page templates Home ,Blog and Contact Page. 
 BusiProf supports featured slider managed from Theme Option Panel.
 
-Author: Priyanshu Mittal,Hari Malya,Shahid Mansuri and Vibhor Purandare.
+Author: Priyanshu Mittal,Hari Maliya,Shahid Mansuri and Vibhor Purandare.
 Theme Homepage Url: http://www.webriti.com/demo/wp/appointment
 
 About:

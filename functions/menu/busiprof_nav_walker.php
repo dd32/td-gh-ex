@@ -1,13 +1,6 @@
 <?php
-/** nav-menu-walker.php
- 
- */
-
-
-class busiprof_nav_walker extends Walker_Nav_Menu 
-
-{
-	
+/** nav-menu-walker.php */
+class busiprof_nav_walker extends Walker_Nav_Menu {	
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat("\t", $depth);
 		$output .= "\n$indent<ul class=\"dropdown-menu\">\n";
@@ -97,3 +90,4 @@ function busiprof_nav_menu_css_class( $classes ) {
 	return $classes;
 }
 add_filter( 'nav_menu_css_class', 'busiprof_nav_menu_css_class' );
+?>

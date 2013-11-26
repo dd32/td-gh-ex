@@ -11,15 +11,11 @@
 */
 ?>
 <?php  get_template_part('banner', 'header') ; 
-
 	$image_uri=get_template_directory_uri(). '/images' ;?>
 <!-- Main_area -->
 	<div class="container">
-		<div class="row-fluid">
-		
-			<!-- Main_content -->
-			<div class="span8 blog_left">
-			
+		<div class="row-fluid"><!-- Main_content -->
+			<div class="span8 blog_left">			
 				<div class="blog_section" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<?php  the_post(); ?>
 					<h2 class="blog_section_title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
@@ -45,12 +41,11 @@
 						$args=array('before' => '<li>', ' after' => '</li>');
 						wp_link_pages($args); ?></ul>
 					</div>
-				<?php endif;?>	
-								
+				<?php endif;?>									
 			</div>
 			<?php get_sidebar(); ?>
 		</div>
-</div>
+	</div>
 <!-- Footer -->
 <?php get_footer(); ?>
 <!-- /Footer -->

@@ -2,8 +2,8 @@
 * Theme Name: Busiprof
 * Theme URI: http://www.webriti.com/index.php/lite/busiprof-premium-wordpress-theme/
 * Description: Multi Purpose WordPress Responsive Theme. 
-* Version: 1.2
-* Author: priyanshu.mittal,vibhorp,harimaliya
+* Version: 1.3
+* Author: priyanshu.mittal,vibhorp
 * Author URI: http://www.webriti.com
 * Tags: white,full-width-template, threaded-comments,custom-menu,two-columns,translation-ready
 * License: GNU General Public License v3.0
@@ -141,12 +141,9 @@ font-family: OpenSans-Regular;
   .nav-collapse .dropdown-menu a:focus {
     background-color: #559ddb;
   }
-  
+ #busimenu{margin-bottom: 0px;} 
 /* ---------Busiprof All Css------- */
-.logo-img{
- height:40px;
-
-}
+.logo-img{height:40px;width:110px;}
 .header_top_slide{
     background: #222629;
     color: #ffffff;
@@ -175,6 +172,7 @@ font-family: OpenSans-Regular;
 	
 	
 }
+.busi_slider_image{height: 400px; width: 100%;}
 .slider_desc{
 	bottom: 50px;
     position: absolute;
@@ -796,7 +794,7 @@ li {list-style-type: none;}
 	color: #6A6A6A;
 }
 .pagination_blog ul li.page_links a:hover	{	color:#FFFFFF;	}
-.pagination_blog ul li a:hover
+.pagination_blog ul li a:hover,.pagination_blog ul li a.active
 {	color:#3e8bcd; border:1px solid #4493d8; color:#FFFFFF;
 	background-color: #5ca2df; box-shadow:inset 1px 1px 1px #89c9f6;  
    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#5ca2df), to(#297ac1));
@@ -1237,13 +1235,13 @@ li {list-style-type: none;}
 }
 
 .rss_about a {
-    background: url("images/rss_ic1.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+    background: url("images/so_ic.png") no-repeat scroll center center rgba(0, 0, 0, 0);
     float: left;
     height: 50px;
     width: 50px;
 }
 .rss_about a:hover
-{	background:url("images/rss_ic1_ho.png") no-repeat center;
+{	background:url("images/so_ic_ho.png") no-repeat center;
 }
 .contact_left_ic_img {
     float: left;
