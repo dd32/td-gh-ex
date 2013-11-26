@@ -2,6 +2,7 @@
 require_once locate_template('themeoptions/options/add-fields/slides_link/field_slides_link.php');
 require_once locate_template('themeoptions/options/add-fields/slides_icon/field_slides_icon.php');
 define( 'LAYOUT_PATH', get_template_directory() . '/assets/css/skins/' );
+define( 'OPTIONS_PATH', get_template_directory_uri() . '/themeoptions/options/' );
 
 $args = array();
 
@@ -185,8 +186,8 @@ $sections[] = array(
             'title' => __('Site Layout Style', 'virtue'), 
             'subtitle' => __('Select Boxed or Wide Site Layout Style', 'virtue'),
             'options' => array(
-                    'wide' => array('alt' => 'Wide Layout', 'img' => ReduxFramework::$_url.'options/img/1c.png'),
-                    'boxed' => array('alt' => 'Boxed Layout', 'img' => ReduxFramework::$_url.'options/img/3cm.png'),
+                    'wide' => array('alt' => 'Wide Layout', 'img' => OPTIONS_PATH.'img/1c.png'),
+                    'boxed' => array('alt' => 'Boxed Layout', 'img' => OPTIONS_PATH.'img/3cm.png'),
                 ),
             'default' => 'wide',
             ),
@@ -197,9 +198,9 @@ $sections[] = array(
             'title' => __('Footer Widget Layout', 'virtue'), 
             'subtitle' => __('Select how many columns for footer widgets', 'virtue'),
             'options' => array(
-                    'fourc' => array('alt' => 'Four Column Layout', 'img' => ReduxFramework::$_url.'options/img/footer-widgets-4.png'),
-                    'threec' => array('alt' => 'Three Column Layout', 'img' => ReduxFramework::$_url.'options/img/footer-widgets-3.png'),
-                    'twoc' => array('alt' => 'Two Column Layout', 'img' => ReduxFramework::$_url.'options/img/footer-widgets-2.png'),
+                    'fourc' => array('alt' => 'Four Column Layout', 'img' => OPTIONS_PATH.'img/footer-widgets-4.png'),
+                    'threec' => array('alt' => 'Three Column Layout', 'img' => OPTIONS_PATH.'img/footer-widgets-3.png'),
+                    'twoc' => array('alt' => 'Two Column Layout', 'img' => OPTIONS_PATH.'img/footer-widgets-2.png'),
                 ),
             'default' => 'fourc',
             ),
@@ -215,9 +216,9 @@ $sections[] = array(
             'title' => __('Logo Layout', 'virtue'), 
             'subtitle' => __('Choose how you want your logo to be laid out', 'virtue'),
             'options' => array(
-                    'logoleft' => array('alt' => 'Logo Left Layout', 'img' => ReduxFramework::$_url.'options/img/logo_layout_01.png'),
-                    'logohalf' => array('alt' => 'Logo Half Layout', 'img' => ReduxFramework::$_url.'options/img/logo_layout_03.png'),
-                    'logocenter' => array('alt' => 'Logo Center Layout', 'img' => ReduxFramework::$_url.'options/img/logo_layout_02.png'),
+                    'logoleft' => array('alt' => 'Logo Left Layout', 'img' => OPTIONS_PATH.'img/logo_layout_01.png'),
+                    'logohalf' => array('alt' => 'Logo Half Layout', 'img' => OPTIONS_PATH.'img/logo_layout_03.png'),
+                    'logocenter' => array('alt' => 'Logo Center Layout', 'img' => OPTIONS_PATH.'img/logo_layout_02.png'),
                 ),
             'default' => 'logoleft',
             ),
@@ -641,8 +642,8 @@ $sections[] = array(
             'title' => __('Display a sidebar on the Home Page?', 'virtue'), 
             'subtitle' => __('This determines if there is a sidebar on the home page.', 'virtue'),
             'options' => array(
-                    'full' => array('alt' => 'Full Layout', 'img' => ReduxFramework::$_url.'options/img/1col.png'),
-                    'sidebar' => array('alt' => 'Sidebar Layout', 'img' => ReduxFramework::$_url.'options/img/2cr.png'),
+                    'full' => array('alt' => 'Full Layout', 'img' => OPTIONS_PATH.'img/1col.png'),
+                    'sidebar' => array('alt' => 'Sidebar Layout', 'img' => OPTIONS_PATH.'img/2cr.png'),
                 ),
             'default' => 'full',
             ),
@@ -777,8 +778,8 @@ $sections[] = array(
             'title' => __('Display the sidebar on shop archives?', 'virtue'), 
             'subtitle' => __('This determines if there is a sidebar on the shop and category pages.', 'virtue'),
             'options' => array(
-                    'full' => array('alt' => 'Full Layout', 'img' => ReduxFramework::$_url.'options/img/1col.png'),
-                    'sidebar' => array('alt' => 'Sidebar Layout', 'img' => ReduxFramework::$_url.'options/img/2cr.png'),
+                    'full' => array('alt' => 'Full Layout', 'img' => OPTIONS_PATH.'img/1col.png'),
+                    'sidebar' => array('alt' => 'Sidebar Layout', 'img' => OPTIONS_PATH.'img/2cr.png'),
                 ),
             'default' => 'full',
             ),
@@ -1556,7 +1557,7 @@ $sections[] = array(
         array(
             'id'=>'post_summery_default',
             'type' => 'select',
-            'title' => __('Blog Post Summery Default', 'virtue'), 
+            'title' => __('Blog Post Summary Default', 'virtue'), 
             'options' => array('text' => 'Text', 'img_portrait' => 'Portrait Image', 'img_landscape' => 'Landscape Image', 'slider_portrait' => 'Portrait Image Slider' , 'slider_landscape' => 'Landscape Image Slider'),
             'width' => 'width:60%',
             'default' => 'text',

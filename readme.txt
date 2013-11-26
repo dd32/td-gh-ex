@@ -48,6 +48,15 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 1.7.8 =
+* Add text domain for "by"
+* Fix for Subversion
+* Fix theme options server error
+* Fix issue with gallery not working
+* Fix issue with rating showing on 
+* Fix Issue with themeoptions freezing
+
+
 = Version: 1.7.7 =
 * Fixed Issue with frontpage.php
 * Removed tracking file and System Info file

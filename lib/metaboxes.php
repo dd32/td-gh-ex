@@ -114,11 +114,12 @@ function virtue_metaboxes( array $meta_boxes ) {
 				'type' => 'text_small',
 			),
 			array(
-				'name'    => __("Post Summery", 'virtue' ),
+				'name'    => __("Post Summary", 'virtue' ),
 				'desc'    => '',
 				'id'      => $prefix . 'post_summery',
 				'type'    => 'select',
 				'options' => array(
+					array( 'name' => __('Default', 'virtue' ), 'value' => 'default', ),
 					array( 'name' => __('Text', 'virtue' ), 'value' => 'text', ),
 					array( 'name' => __('Portrait Image', 'virtue'), 'value' => 'img_portrait', ),
 					array( 'name' => __('Landscape Image', 'virtue'), 'value' => 'img_landscape', ),
@@ -491,7 +492,7 @@ $meta_boxes[] = array(
 				'id'      => $prefix . 'blog_summery',
 				'type'    => 'select',
 				'options' => array(
-					array( 'name' => __('Summery', 'virtue'), 'value' => 'summery', ),
+					array( 'name' => __('Summary', 'virtue'), 'value' => 'summery', ),
 					array( 'name' => __('Full', 'virtue'), 'value' => 'full', ),
 				),
 			),

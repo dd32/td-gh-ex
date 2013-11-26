@@ -135,8 +135,8 @@ function kadence_gallery($attr) {
 
   return $output;
 }
-  global $smof_data;
-if(isset($smof_data['virtue_gallery']) && $smof_data['virtue_gallery'] == '1')  {
+  global $virtue;
+if(isset($virtue['virtue_gallery']) && $virtue['virtue_gallery'] == '1')  {
   remove_shortcode('gallery');
   add_shortcode('gallery', 'kadence_gallery');
 } 
