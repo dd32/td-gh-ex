@@ -1,7 +1,7 @@
 /*
 Theme Name: Asteria Lite
 Description: Asteria Lite is a clean responsive theme with a beautiful slider, Narrow and Wide Layout Option, 10 Social Icons and 3 page templates - Full width page, Left sidebar page and a Blog page Template. The theme also allows you to design your site logo with 600+ fonts. The Theme also has a Maintenance Mode feature, Beautiful Gallery feature, Custom CSS feature, Import/Export feature and is fully compatible with Woocommerce and Contact Form 7 Plugin. It also comes with Ajax pagination feature which means you can navigate through posts without page refresh. The theme is SEO Friendly and has plenty of user-friendly options. The theme is translation ready and fully translated into French, Italian, German, Spanish, and Chinese. Asteria Lite is suitable for any types of website - corporate, portfolio, business, blog. Get Free Support without registration on http://www.towfiqi.com/forums/forum/asteria-lite
-Version: 0.2
+Version: 0.3
 Theme URI: http://www.towfiqi.com/asteria-lite-free-wordpress-theme.html
 Author: Towfiq I.
 Author URI: http://www.towfiqi.com/
@@ -313,6 +313,13 @@ a img.aligncenter {display: block;margin-left: auto;margin-right: auto}
 
 .single_metainfo:empty{ display:none;}
 .post_foot{ margin-bottom:15px;}
+
+/*MESSAGE BOX*/
+.lgn_scs{ width:94%; background:#c8ffd3; border:1px solid #98f1a9; padding:2% 2% 2% 4%;  color:#3f834c; clear:both; margin:15px 0;}
+.lgn_info{ width:94%; background:#c5eaf5; border:1px solid #8ac7e8; padding:2% 2% 2% 4%; color:#469cc0; clear:both; margin:15px 0;}
+.lgn_wng{ width:94%; background:#f7e0b6; border:1px solid #ebc887; padding:2% 2% 2% 4%;  color:#af7a18; clear:both; margin:15px 0;}
+.lgn_err{ width:94%; background:#ffd0cc; border:1px solid #e49a94; padding:2% 2% 2% 4%; color:#b04840; clear:both; margin:15px 0;}
+
 
 /*NEXT PREVIOUS POSTS*/
 #ast_nextprev{ background:#fff;width:100%; float:left; margin-top:30px;}

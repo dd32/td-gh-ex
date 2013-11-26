@@ -330,10 +330,9 @@ function asteria_is_mobile() {
 /* -----------------------------------------------------------------------------
     Underconstruction / Maintenance Mode
 ----------------------------------------------------------------------------- */
-global $asteria;
-if(!empty($asteria['offline_id'])){
 		function asteria_under_contruction(){
-		
+		global $asteria;
+		if(!empty($asteria['offline_id'])){		
 			// if user is logged in, don't show the construction page
 			if ( is_user_logged_in() ) {
 				return;
@@ -359,8 +358,9 @@ if(!empty($asteria['offline_id'])){
 			die();
 		
 		}
-add_action( 'template_redirect', 'asteria_under_contruction' );
 }
+add_action( 'template_redirect', 'asteria_under_contruction' );
+
 
 
 /* -----------------------------------------------------------------------------
