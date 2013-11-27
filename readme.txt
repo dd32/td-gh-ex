@@ -59,3 +59,6 @@ Version 1.2
 
 Version 1.2.1
 * Added WooCommerce Sidebar for WooCommerce plugin template
+
+Version 1.2.1.1
+* Fixed error without WooCommerce plugin from version 1.2.1

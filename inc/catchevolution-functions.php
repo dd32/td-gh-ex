@@ -472,6 +472,10 @@ function catchevolution_body_classes( $classes ) {
     $options = $catchevolution_options_settings;	
 	$themeoption_layout = $options['sidebar_layout'];
 	
+	if ( !is_active_sidebar( 'catchevolution_woocommerce_sidebar' ) && ( class_exists( 'Woocommerce' ) && is_woocommerce() ) ) {
+		$classes[] = 'woocommerce-nosidebar';
+	}
+	
 	if ( has_nav_menu( 'top', 'catchevolution' ) && !empty ( $header_logo ) ) { 
 		$classes[] = 'has-header-top menu-logo';
 	}

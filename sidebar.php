@@ -16,7 +16,7 @@ do_action( 'catchevolution_before_secondary' );
 
 	global $post;
 	
-	if( $post) {
+	if ( $post ) {
  		if ( is_attachment() ) { 
 			$parent = $post->post_parent;
 			$layout = get_post_meta( $parent,'catchevolution-sidebarlayout', true );
@@ -25,10 +25,13 @@ do_action( 'catchevolution_before_secondary' );
 		}
 	}
 	
-	if( empty( $layout ) || ( !is_page() && !is_single() ) ) {
+	if ( empty( $layout ) || ( !is_page() && !is_single() ) ) {
 		$layout='default';
 	}
 	
+	if ( !is_active_sidebar( 'catchevolution_woocommerce_sidebar' ) && ( class_exists( 'Woocommerce' ) && is_woocommerce() ) ) {
+		$layout = 'no-sidebar';
+	}
 	
 	global $catchevolution_options_settings;
 	$options = $catchevolution_options_settings;
@@ -44,7 +47,7 @@ do_action( 'catchevolution_before_secondary' );
 			 */
 			do_action( 'catchevolution_before_widget' );
 			
-			if ( is_woocommerce() && is_active_sidebar( 'catchevolution_woocommerce_sidebar' ) ) :
+			if ( is_active_sidebar( 'catchevolution_woocommerce_sidebar' ) && ( class_exists( 'Woocommerce' ) && is_woocommerce() ) ) :
 				dynamic_sidebar( 'catchevolution_woocommerce_sidebar' ); 
           	elseif ( is_active_sidebar( 'sidebar-1' ) ) : 
 				dynamic_sidebar( 'sidebar-1' );

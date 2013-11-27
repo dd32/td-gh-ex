@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Evolution\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-27 22:59+0545\n"
-"PO-Revision-Date: 2013-11-27 22:59+0545\n"
+"POT-Creation-Date: 2013-11-28 01:28+0545\n"
+"PO-Revision-Date: 2013-11-28 01:28+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -138,7 +138,7 @@ msgstr "Los comentarios estan cerrados."
 #: ../content-gallery.php:16 ../content-gallery.php:48 ../content-image.php:15
 #: ../content-link.php:16 ../content-page.php:13 ../content-quote.php:14
 #: ../content-status.php:15 ../content.php:27 ../content.php:31
-#: ../content.php:63 ../inc/catchevolution-functions.php:626
+#: ../content.php:63 ../inc/catchevolution-functions.php:630
 #, php-format
 msgid "Permalink to %s"
 msgstr "Enlace permanente a %s"
@@ -442,123 +442,123 @@ msgstr ""
 "\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel="
 "\"author\">%7$s</a></span></span>"
 
-#: ../inc/catchevolution-functions.php:531
+#: ../inc/catchevolution-functions.php:535
 msgid "ID"
 msgstr "ID"
 
-#: ../inc/catchevolution-functions.php:800
+#: ../inc/catchevolution-functions.php:804
 msgid "Name"
 msgstr "Nombre"
 
-#: ../inc/catchevolution-functions.php:802
+#: ../inc/catchevolution-functions.php:806
 msgid "Email"
 msgstr "Email"
 
-#: ../inc/catchevolution-functions.php:915
-#: ../inc/catchevolution-functions.php:1089
+#: ../inc/catchevolution-functions.php:919
+#: ../inc/catchevolution-functions.php:1093
 #, php-format
 msgid "%s in Facebook"
 msgstr "%s en Facebook"
 
-#: ../inc/catchevolution-functions.php:920
-#: ../inc/catchevolution-functions.php:1094
+#: ../inc/catchevolution-functions.php:924
+#: ../inc/catchevolution-functions.php:1098
 #, php-format
 msgid "%s in Twitter"
 msgstr "%s en Twitter"
 
-#: ../inc/catchevolution-functions.php:925
-#: ../inc/catchevolution-functions.php:1099
+#: ../inc/catchevolution-functions.php:929
+#: ../inc/catchevolution-functions.php:1103
 #, php-format
 msgid "%s in Google+"
 msgstr "%s en Google+"
 
-#: ../inc/catchevolution-functions.php:930
-#: ../inc/catchevolution-functions.php:1104
+#: ../inc/catchevolution-functions.php:934
+#: ../inc/catchevolution-functions.php:1108
 #, php-format
 msgid "%s in Linkedin"
 msgstr "%s en Linkedin"
 
-#: ../inc/catchevolution-functions.php:935
-#: ../inc/catchevolution-functions.php:1109
+#: ../inc/catchevolution-functions.php:939
+#: ../inc/catchevolution-functions.php:1113
 #, php-format
 msgid "%s in Pinterest"
 msgstr "%s en Pinterest"
 
-#: ../inc/catchevolution-functions.php:940
-#: ../inc/catchevolution-functions.php:1114
+#: ../inc/catchevolution-functions.php:944
+#: ../inc/catchevolution-functions.php:1118
 #, php-format
 msgid "%s in YouTube"
 msgstr "%s en YouTube"
 
-#: ../inc/catchevolution-functions.php:945
-#: ../inc/catchevolution-functions.php:1119
+#: ../inc/catchevolution-functions.php:949
+#: ../inc/catchevolution-functions.php:1123
 #, php-format
 msgid "%s in Vimeo"
 msgstr "%s en Vimeo"
 
-#: ../inc/catchevolution-functions.php:950
-#: ../inc/catchevolution-functions.php:990
-#: ../inc/catchevolution-functions.php:1124
-#: ../inc/catchevolution-functions.php:1164
+#: ../inc/catchevolution-functions.php:954
+#: ../inc/catchevolution-functions.php:994
+#: ../inc/catchevolution-functions.php:1128
+#: ../inc/catchevolution-functions.php:1168
 #, php-format
 msgid "%s in Slideshare"
 msgstr "%s en Slideshare"
 
-#: ../inc/catchevolution-functions.php:955
-#: ../inc/catchevolution-functions.php:1129
+#: ../inc/catchevolution-functions.php:959
+#: ../inc/catchevolution-functions.php:1133
 #, php-format
 msgid "%s in Foursquare"
 msgstr "%s en Foursquare"
 
-#: ../inc/catchevolution-functions.php:960
-#: ../inc/catchevolution-functions.php:1134
+#: ../inc/catchevolution-functions.php:964
+#: ../inc/catchevolution-functions.php:1138
 #, php-format
 msgid "%s in Flickr"
 msgstr "%s en Flickr"
 
-#: ../inc/catchevolution-functions.php:965
-#: ../inc/catchevolution-functions.php:1139
+#: ../inc/catchevolution-functions.php:969
+#: ../inc/catchevolution-functions.php:1143
 #, php-format
 msgid "%s in Tumblr"
 msgstr "%s en Tumblr"
 
-#: ../inc/catchevolution-functions.php:970
-#: ../inc/catchevolution-functions.php:1144
+#: ../inc/catchevolution-functions.php:974
+#: ../inc/catchevolution-functions.php:1148
 #, php-format
 msgid "%s in deviantART"
 msgstr "%s en deviantART"
 
-#: ../inc/catchevolution-functions.php:975
-#: ../inc/catchevolution-functions.php:1149
+#: ../inc/catchevolution-functions.php:979
+#: ../inc/catchevolution-functions.php:1153
 #, php-format
 msgid "%s in Dribbble"
 msgstr "%s en Dribbble"
 
-#: ../inc/catchevolution-functions.php:980
-#: ../inc/catchevolution-functions.php:1154
+#: ../inc/catchevolution-functions.php:984
+#: ../inc/catchevolution-functions.php:1158
 #, php-format
 msgid "%s in WordPress"
 msgstr "%s en WordPress"
 
-#: ../inc/catchevolution-functions.php:985
-#: ../inc/catchevolution-functions.php:1159
+#: ../inc/catchevolution-functions.php:989
+#: ../inc/catchevolution-functions.php:1163
 #, php-format
 msgid "%s in RSS"
 msgstr "%s en RSS"
 
-#: ../inc/catchevolution-functions.php:995
-#: ../inc/catchevolution-functions.php:1169
+#: ../inc/catchevolution-functions.php:999
+#: ../inc/catchevolution-functions.php:1173
 #, php-format
 msgid "%s in Instagram"
 msgstr "%s en Instagram"
 
-#: ../inc/catchevolution-functions.php:1000
-#: ../inc/catchevolution-functions.php:1174
+#: ../inc/catchevolution-functions.php:1004
+#: ../inc/catchevolution-functions.php:1178
 #, php-format
 msgid "%s in Skype"
 msgstr "%s en Skype"
 
-#: ../inc/catchevolution-functions.php:1306
+#: ../inc/catchevolution-functions.php:1310
 msgid "Footer menu"
 msgstr "Menu del Footer"
 
@@ -602,73 +602,73 @@ msgstr "Sidebar en Tercera Columna"
 msgid "Header Right Sidebar"
 msgstr "Sidebar derecho del Header"
 
-#: ../inc/catchevolution-widgets.php:47
+#: ../inc/catchevolution-widgets.php:48
 msgid "WooCommerce Sidebar"
 msgstr "WooCommerce Sidebar"
 
-#: ../inc/catchevolution-widgets.php:57
+#: ../inc/catchevolution-widgets.php:59
 msgid "Footer Area One"
 msgstr "Area Uno del Footer"
 
-#: ../inc/catchevolution-widgets.php:59 ../inc/catchevolution-widgets.php:70
-#: ../inc/catchevolution-widgets.php:81
+#: ../inc/catchevolution-widgets.php:61 ../inc/catchevolution-widgets.php:72
+#: ../inc/catchevolution-widgets.php:83
 msgid "An optional widget area for your site footer"
 msgstr "Un area de widget opcional para el Footer de su pagina"
 
-#: ../inc/catchevolution-widgets.php:68
+#: ../inc/catchevolution-widgets.php:70
 msgid "Footer Area Two"
 msgstr "Area Dos del Footer"
 
-#: ../inc/catchevolution-widgets.php:79
+#: ../inc/catchevolution-widgets.php:81
 msgid "Footer Area Three"
 msgstr "Area Tres del Footer"
 
-#: ../inc/catchevolution-widgets.php:109
+#: ../inc/catchevolution-widgets.php:111
 msgid "Use this widget to add any type of Advertisement as a widget."
 msgstr ""
 "Utilice este widget para añadir cualquier tipo de anuncio como un widget. "
 
-#: ../inc/catchevolution-widgets.php:110
+#: ../inc/catchevolution-widgets.php:112
 msgid "1. Catch Evolution Adspace Widget"
 msgstr "1. Catch Evolution - Adspace Widget"
 
-#: ../inc/catchevolution-widgets.php:128 ../inc/catchevolution-widgets.php:253
-#: ../inc/catchevolution-widgets.php:332
+#: ../inc/catchevolution-widgets.php:130 ../inc/catchevolution-widgets.php:255
+#: ../inc/catchevolution-widgets.php:334
 msgid "Title (optional):"
 msgstr "Titulo (opcional):"
 
-#: ../inc/catchevolution-widgets.php:133
+#: ../inc/catchevolution-widgets.php:135
 msgid "Ad Code:"
 msgstr "Código de anuncio:"
 
-#: ../inc/catchevolution-widgets.php:139
+#: ../inc/catchevolution-widgets.php:141
 msgid "Image Url:"
 msgstr "Url de la imagen:"
 
-#: ../inc/catchevolution-widgets.php:143
+#: ../inc/catchevolution-widgets.php:145
 msgid "Link URL:"
 msgstr "URL del Link:"
 
-#: ../inc/catchevolution-widgets.php:147
+#: ../inc/catchevolution-widgets.php:149
 msgid "Open Link in New Window"
 msgstr "Abrir enlace en una ventana nueva"
 
-#: ../inc/catchevolution-widgets.php:151
+#: ../inc/catchevolution-widgets.php:153
 msgid "Alt text:"
 msgstr "Alt text:"
 
-#: ../inc/catchevolution-widgets.php:239
+#: ../inc/catchevolution-widgets.php:241
 msgid ""
 "Use this widget to add Social Icons from Social Icons Settings as a widget. "
 msgstr ""
 "Utilice este widget para añadir Iconos Sociales de Configuracion de Iconos "
 "Sociales como un widget."
 
-#: ../inc/catchevolution-widgets.php:240
+#: ../inc/catchevolution-widgets.php:242
 msgid "2. Catch Evolution Social Widget"
 msgstr "2. Catch Evolution - Widget Social"
 
-#: ../inc/catchevolution-widgets.php:318
+#: ../inc/catchevolution-widgets.php:320
 msgid ""
 "Use this widget to add Social Icons from Social Icons Settings & Search  as "
 "a widget. "
@@ -676,7 +676,7 @@ msgstr ""
 "Utilice este widget para añadir iconos sociales de Ajustes de Iconos "
 "Sociales&Busqueda como un widget."
 
-#: ../inc/catchevolution-widgets.php:319
+#: ../inc/catchevolution-widgets.php:321
 msgid "3. Catch Evolution Social & Seach Widget"
 msgstr "3. Catch Evolution Widget Social & Widget de Busqueda"
 
