@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Evolution\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-31 01:41+0545\n"
-"PO-Revision-Date: 2013-10-31 01:41+0545\n"
+"POT-Creation-Date: 2013-11-27 22:59+0545\n"
+"PO-Revision-Date: 2013-11-27 22:59+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: Catch Themes <info@catchinternet.com>\n"
 "Language: en\n"
@@ -570,71 +570,75 @@ msgid "Header Right Sidebar"
 msgstr ""
 
 #: ../inc/catchevolution-widgets.php:47
+msgid "WooCommerce Sidebar"
+msgstr ""
+
+#: ../inc/catchevolution-widgets.php:57
 msgid "Footer Area One"
 msgstr ""
 
-#: ../inc/catchevolution-widgets.php:49 ../inc/catchevolution-widgets.php:60
-#: ../inc/catchevolution-widgets.php:71
+#: ../inc/catchevolution-widgets.php:59 ../inc/catchevolution-widgets.php:70
+#: ../inc/catchevolution-widgets.php:81
 msgid "An optional widget area for your site footer"
 msgstr ""
 
-#: ../inc/catchevolution-widgets.php:58
+#: ../inc/catchevolution-widgets.php:68
 msgid "Footer Area Two"
 msgstr ""
 
-#: ../inc/catchevolution-widgets.php:69
+#: ../inc/catchevolution-widgets.php:79
 msgid "Footer Area Three"
 msgstr ""
 
-#: ../inc/catchevolution-widgets.php:99
+#: ../inc/catchevolution-widgets.php:109
 msgid "Use this widget to add any type of Advertisement as a widget."
 msgstr ""
 
-#: ../inc/catchevolution-widgets.php:100
+#: ../inc/catchevolution-widgets.php:110
 msgid "1. Catch Evolution Adspace Widget"
 msgstr ""
 
-#: ../inc/catchevolution-widgets.php:118 ../inc/catchevolution-widgets.php:243
-#: ../inc/catchevolution-widgets.php:322
+#: ../inc/catchevolution-widgets.php:128 ../inc/catchevolution-widgets.php:253
+#: ../inc/catchevolution-widgets.php:332
 msgid "Title (optional):"
 msgstr ""
 
-#: ../inc/catchevolution-widgets.php:123
+#: ../inc/catchevolution-widgets.php:133
 msgid "Ad Code:"
 msgstr ""
 
-#: ../inc/catchevolution-widgets.php:129
+#: ../inc/catchevolution-widgets.php:139
 msgid "Image Url:"
 msgstr ""
 
-#: ../inc/catchevolution-widgets.php:133
+#: ../inc/catchevolution-widgets.php:143
 msgid "Link URL:"
 msgstr ""
 
-#: ../inc/catchevolution-widgets.php:137
+#: ../inc/catchevolution-widgets.php:147
 msgid "Open Link in New Window"
 msgstr ""
 
-#: ../inc/catchevolution-widgets.php:141
+#: ../inc/catchevolution-widgets.php:151
 msgid "Alt text:"
 msgstr ""
 
-#: ../inc/catchevolution-widgets.php:229
+#: ../inc/catchevolution-widgets.php:239
 msgid ""
 "Use this widget to add Social Icons from Social Icons Settings as a widget. "
 msgstr ""
 
-#: ../inc/catchevolution-widgets.php:230
+#: ../inc/catchevolution-widgets.php:240
 msgid "2. Catch Evolution Social Widget"
 msgstr ""
 
-#: ../inc/catchevolution-widgets.php:308
+#: ../inc/catchevolution-widgets.php:318
 msgid ""
 "Use this widget to add Social Icons from Social Icons Settings & Search  as "
 "a widget. "
 msgstr ""
 
-#: ../inc/catchevolution-widgets.php:309
+#: ../inc/catchevolution-widgets.php:319
 msgid "3. Catch Evolution Social & Seach Widget"
 msgstr ""
 

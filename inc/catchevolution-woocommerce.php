@@ -21,6 +21,3 @@ function catchevolution_woocommerce_end() {
 }
 endif; //catchevolution_woocommerce_end
 add_action('woocommerce_after_main_content', 'catchevolution_woocommerce_end', 15);
-
-//Remove the WooCommerce Sidebar
-remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10);

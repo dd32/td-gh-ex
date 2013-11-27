@@ -44,7 +44,13 @@ do_action( 'catchevolution_before_secondary' );
 			 */
 			do_action( 'catchevolution_before_widget' );
 			
-          	if ( is_active_sidebar( 'sidebar-1' ) ) : dynamic_sidebar( 'sidebar-1' ); endif; ?>
+			if ( is_woocommerce() && is_active_sidebar( 'catchevolution_woocommerce_sidebar' ) ) :
+				dynamic_sidebar( 'catchevolution_woocommerce_sidebar' ); 
+          	elseif ( is_active_sidebar( 'sidebar-1' ) ) : 
+				dynamic_sidebar( 'sidebar-1' );
+			else :
+				echo '<!-- No Widget in Sidebar -->';
+			endif; ?>
 	
  			<?php 
 			/** 

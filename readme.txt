@@ -56,3 +56,6 @@ Version 1.1.1
 
 Version 1.2
 * Added Spanish translation es_ES.po and es_ES.mo
+
+Version 1.2.1
+* Added WooCommerce Sidebar for WooCommerce plugin template
