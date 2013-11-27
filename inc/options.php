@@ -13,6 +13,7 @@ function b3theme_sanitize_options($arr) {
 		'site_title_enabled' => 'Y',
 		'site_description_enabled' => 'Y',
 		'navbar_brand' => 'Project Name',
+		'navbar_enable' => 'Y',
 		'copyright' => date('Y ') . get_option('blogname'),
 		'show_home' => 'N',
 		'disable_comment_page' => 'N',
@@ -195,15 +196,13 @@ function b3theme_admin_init() {
 }
 
 function b3theme_option_input($option_key, $name = '', $type = 'text', $default = '', $options = array()) {
-	global $b3theme_options;
-
 	switch ($type) {
 		case 'radio':
 			echo '<label>' . $name . '</label>';
 			$arr = $options ? $options : array('Y' => __('Yes', 'b3theme'), 'N' => __('No', 'b3theme'));
 			foreach ($arr as $key => $value ) {
 				echo ' <input name="b3theme_options[' .$option_key . ']" type="radio" value="'. $key . '" '
-					. ($b3theme_options[$option_key] == $key ? 'checked' : ''). '/>'. $value . '&nbsp;';  
+					. (b3theme_option($option_key) == $key ? 'checked' : ''). '/>'. $value . '&nbsp;';
 			}
 			break;
 
@@ -211,27 +210,27 @@ function b3theme_option_input($option_key, $name = '', $type = 'text', $default 
 			echo '<input name="b3theme_options[' .$option_key . ']" type="hidden" value="N" />';
 			echo '<label>' . $name . '</label>';
 			echo ' <input name="b3theme_options[' .$option_key . ']" type="checkbox" value="Y" '
-				. ('Y' == $b3theme_options[$option_key] ? ' checked' : ''). '/>';  
+				. ('Y' == b3theme_option($option_key) ? ' checked' : ''). '/>';  
 			break;
 
 		case 'color':
 				echo '<label>' . $name . '</label>';
 				echo '<input name="b3theme_options[' .$option_key . ']" class="b3theme-color-option" data-default-color="'
-					. $default . '" type="text" value="'. $b3theme_options[$option_key] . '" />';        
+					. $default . '" type="text" value="'. b3theme_option($option_key) . '" />';
 		break;
 
 		case 'text':
 			echo '<label>' . $name . '</label>';
-			echo '<input name="b3theme_options[' .$option_key . ']" type="text" value="'. $b3theme_options[$option_key] . '" />';    
+			echo '<input name="b3theme_options[' .$option_key . ']" type="text" value="'. b3theme_option($option_key) . '" />';
 		break;
 
 		case 'hidden':
-			echo '<input name="b3theme_options[' .$option_key . ']" type="hidden" value="'. $b3theme_options[$option_key] . '" />';    
+			echo '<input name="b3theme_options[' .$option_key . ']" type="hidden" value="'. b3theme_option($option_key) . '" />';
 		break;
 
 		default:
 			echo '<label>' . $name . '</label>';
-			echo '<input name="b3theme_options[' .$option_key . ']" type="text" value="'. $b3theme_options[$option_key] . '" />';  
+			echo '<input name="b3theme_options[' .$option_key . ']" type="text" value="'. b3theme_option($option_key) . '" />';  
 	}
 }
 
@@ -283,7 +282,9 @@ function b3theme_settings_page() {
 			<div> <?php b3theme_option_input('logo_enabled', __('Display logo', 'b3theme'), 'checkbox'); ?> </div>
 			<div> <?php b3theme_option_input('site_title_enabled', __('Display site title?', 'b3theme'), 'checkbox'); ?> </div>
 			<div> <?php b3theme_option_input('site_description_enabled', __('Display site description?', 'b3theme'), 'checkbox'); ?></div>
-			<div> <?php b3theme_option_input('navbar_brand', __('Navigation title', 'b3theme'), 'text'); ?></div>
+			<div> <?php b3theme_option_input('navbar_brand', __('Menu Bar title', 'b3theme'), 'text'); ?></div>
+			<div> <?php b3theme_option_input('navbar_enable', __('Enable Menu Bar', 'b3theme'), 'checkbox'); ?></div>
+
 			<div> <?php b3theme_option_input('copyright', __('Copyright text', 'b3theme'), 'text'); ?></div>
 			<div> <?php b3theme_option_input('carousel', __('Homepage carousel', 'b3theme'), 'radio', 'demo',
 				array('Y' => __('Yes', 'b3theme'), 'N' => __('No', 'b3theme'), 'demo' => __('Demo', 'b3theme'),)); ?></div>
@@ -366,7 +367,7 @@ function b3theme_settings_page() {
 			<h3><?php _e('Backup/Restore Settings', 'b3theme'); ?></h3>
 			<div><label><?php _e('Export Settings', 'b3theme'); ?></label><a class="button button-secondary" href="themes.php?page=b3theme_settings&amp;noheader=1&amp;action=b3theme_save_file"><?php _e('Save as File', 'b3theme'); ?></a></div>
 			<p>&nbsp;</p>
-			<div><input type="file" name="b3theme_upload_settings" />
+			<div><?php _e('Import', 'b3theme'); ?>:<br /> <input type="file" name="b3theme_upload_settings" />
 				<input class="button button-primary" type="button" value="<?php _e('Upload and Apply', 'b3theme'); ?>" onclick="b3theme_upload();" />
 			</div>
 			<p>&nbsp;</p>			

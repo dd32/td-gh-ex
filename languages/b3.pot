@@ -1,0 +1,547 @@
+# Copyright (C) 2013 Andrey K.
+# This file is distributed under the GNU General Public License v3.0.
+msgid ""
+msgstr ""
+"Project-Id-Version: B3 1.2.3\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tags/b3\n"
+"POT-Creation-Date: 2013-11-27 14:51:38+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr ""
+
+#: 404.php:27
+msgid "Most Used Categories"
+msgstr ""
+
+#. translators: %1$s: smiley
+
+#: 404.php:44
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#: archive.php:32
+msgid "Author: %s"
+msgstr ""
+
+#: archive.php:37
+msgid "Day: %s"
+msgstr ""
+
+#: archive.php:40
+msgid "Month: %s"
+msgstr ""
+
+#: archive.php:43
+msgid "Year: %s"
+msgstr ""
+
+#: archive.php:46
+msgid "Asides"
+msgstr ""
+
+#: archive.php:49
+msgid "Images"
+msgstr ""
+
+#: archive.php:52
+msgid "Videos"
+msgstr ""
+
+#: archive.php:55
+msgid "Quotes"
+msgstr ""
+
+#: archive.php:58
+msgid "Links"
+msgstr ""
+
+#: archive.php:61
+msgid "Archives"
+msgstr ""
+
+#: comments.php:29
+msgctxt "comments title"
+msgid "One comment on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:36 comments.php:56
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:37 comments.php:57
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:38 comments.php:58
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:68
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:79
+msgid "Name"
+msgstr ""
+
+#: comments.php:86
+msgid "Email"
+msgstr ""
+
+#: comments.php:93
+msgid "Website"
+msgstr ""
+
+#: comments.php:101
+msgctxt "noun"
+msgid "Comment"
+msgstr ""
+
+#: comments.php:104
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+
+#: comments.php:108
+msgid "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of this account\">Log out?</a>"
+msgstr ""
+
+#: comments.php:111
+msgid "Your email address will not be published."
+msgstr ""
+
+#: comments.php:113
+msgid "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags and attributes: %s"
+msgstr ""
+
+#: content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: content-none.php:20
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: content-none.php:24
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: content-none.php:29
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: content-page.php:19 content-single.php:21 content.php:36 image.php:60
+msgid "Pages:"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+
+#: content-page.php:24 content-single.php:64 content.php:69 image.php:66
+#: inc/template-tags.php:70 inc/template-tags.php:89
+msgid "Edit"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+
+#: content-single.php:30 content.php:48
+msgid ", "
+msgstr ""
+
+#: content.php:34
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: content.php:66
+msgid "Leave a comment"
+msgstr ""
+
+#: content.php:66
+msgid "1 Comment"
+msgstr ""
+
+#: content.php:66
+msgid "% Comments"
+msgstr ""
+
+#: footer.php:23
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: footer.php:24
+msgid "Theme %1$s by %2$s."
+msgstr ""
+
+#: functions.php:13
+msgid "B3 Theme settings"
+msgstr ""
+
+#: functions.php:34
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:88
+msgid "Home"
+msgstr ""
+
+#: functions.php:183
+msgid "Sidebar 1"
+msgstr ""
+
+#: functions.php:188
+msgid "Top Sidebar"
+msgstr ""
+
+#: functions.php:196
+msgid "Bottom Sidebar"
+msgstr ""
+
+#: functions.php:381
+msgid "You have no slides yet. You can <a href=\"%1$s\">add your slides</a> or activate demo slides. The optimum image width/height ratio is %2$s, the best image size: %3$s."
+msgstr ""
+
+#: functions.php:403
+msgid "All theme settings will be replaced by default dettings. Continue?"
+msgstr ""
+
+#: functions.php:404
+msgid "Theme settings will be replaced by settings from the uploaded file. Continue?"
+msgstr ""
+
+#: functions.php:405
+msgid "This slide will be removed. Continue?"
+msgstr ""
+
+#: functions.php:406 inc/options.php:335
+msgid "Slide"
+msgstr ""
+
+#: functions.php:407 inc/options.php:354
+msgid "Link"
+msgstr ""
+
+#: functions.php:408 inc/options.php:342
+msgid "Image URL"
+msgstr ""
+
+#: functions.php:409 inc/options.php:349
+msgid "Description"
+msgstr ""
+
+#: functions.php:410 inc/options.php:338
+msgid "Title"
+msgstr ""
+
+#: functions.php:411 inc/options.php:357
+msgid "Alt text"
+msgstr ""
+
+#: functions.php:412 inc/options.php:346
+msgid "Choose"
+msgstr ""
+
+#: functions.php:413
+msgid "Choose Image"
+msgstr ""
+
+#: functions.php:414
+msgid "Please specify image URL for each slide or remove unnecessary slides."
+msgstr ""
+
+#: image.php:27
+msgid "size <a href=\"%2$s\"> %3$s &times; %4$s</a>"
+msgstr ""
+
+#: image.php:38
+msgid "<span class=\"meta-nav\">&larr;</span> Previous"
+msgstr ""
+
+#: image.php:39
+msgid "Next <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: inc/extras.php:57
+msgid "Page %s"
+msgstr ""
+
+#: inc/options.php:202 inc/options.php:290
+msgid "Yes"
+msgstr ""
+
+#: inc/options.php:202 inc/options.php:290
+msgid "No"
+msgstr ""
+
+#: inc/options.php:242
+msgid "Theme settings have been updated."
+msgstr ""
+
+#: inc/options.php:245
+msgid "Theme settings have been reset."
+msgstr ""
+
+#: inc/options.php:248
+msgid "Theme settings have been imported from the uploded file."
+msgstr ""
+
+#: inc/options.php:252
+msgid "Error: theme settings import failed."
+msgstr ""
+
+#: inc/options.php:264
+msgid "B3 Custom Settings"
+msgstr ""
+
+#: inc/options.php:270 inc/options.php:281
+msgid "Site Branding"
+msgstr ""
+
+#: inc/options.php:271 inc/options.php:295
+msgid "Custom Colors"
+msgstr ""
+
+#: inc/options.php:272 inc/options.php:304
+msgid "Page Structure"
+msgstr ""
+
+#: inc/options.php:273 inc/options.php:316
+msgid "Posts Look"
+msgstr ""
+
+#: inc/options.php:274 inc/options.php:325
+msgid "Slides"
+msgstr ""
+
+#: inc/options.php:275
+msgid "Backup/Restore"
+msgstr ""
+
+#: inc/options.php:276
+msgid "Display All"
+msgstr ""
+
+#: inc/options.php:282
+msgid "Display logo"
+msgstr ""
+
+#: inc/options.php:283
+msgid "Display site title?"
+msgstr ""
+
+#: inc/options.php:284
+msgid "Display site description?"
+msgstr ""
+
+#: inc/options.php:285
+msgid "Menu Bar title"
+msgstr ""
+
+#: inc/options.php:286
+msgid "Enable Menu Bar"
+msgstr ""
+
+#: inc/options.php:288
+msgid "Copyright text"
+msgstr ""
+
+#: inc/options.php:289
+msgid "Homepage carousel"
+msgstr ""
+
+#: inc/options.php:290
+msgid "Demo"
+msgstr ""
+
+#: inc/options.php:291
+msgid "Display credits"
+msgstr ""
+
+#: inc/options.php:296
+msgid "Text color"
+msgstr ""
+
+#: inc/options.php:297
+msgid "Headers H1...H6 Color"
+msgstr ""
+
+#: inc/options.php:298
+msgid "Link color"
+msgstr ""
+
+#: inc/options.php:299
+msgid "Navigation bar color"
+msgstr ""
+
+#: inc/options.php:300
+msgid "Navigation link color"
+msgstr ""
+
+#: inc/options.php:305
+msgid "Main sidebar"
+msgstr ""
+
+#: inc/options.php:306
+msgid "Left"
+msgstr ""
+
+#: inc/options.php:306
+msgid "Right"
+msgstr ""
+
+#: inc/options.php:307
+msgid "Top sidebar"
+msgstr ""
+
+#: inc/options.php:308
+msgid "Bottom sidebar"
+msgstr ""
+
+#: inc/options.php:309
+msgid "Disable comments on pages"
+msgstr ""
+
+#: inc/options.php:310
+msgid "Widget as panel"
+msgstr ""
+
+#: inc/options.php:311
+msgid "Post as panel"
+msgstr ""
+
+#: inc/options.php:312
+msgid "Home link (in pages menu)"
+msgstr ""
+
+#: inc/options.php:317
+msgid "Excerpts in archives"
+msgstr ""
+
+#: inc/options.php:318
+msgid "Featured images in excerpts"
+msgstr ""
+
+#: inc/options.php:319
+msgid "Display post date"
+msgstr ""
+
+#: inc/options.php:320
+msgid "Display post author"
+msgstr ""
+
+#: inc/options.php:321
+msgid "Rounded images"
+msgstr ""
+
+#: inc/options.php:363
+msgid "Add new slide"
+msgstr ""
+
+#: inc/options.php:367
+msgid "Backup/Restore Settings"
+msgstr ""
+
+#: inc/options.php:368
+msgid "Export Settings"
+msgstr ""
+
+#: inc/options.php:368
+msgid "Save as File"
+msgstr ""
+
+#: inc/options.php:370
+msgid "Import"
+msgstr ""
+
+#: inc/options.php:371
+msgid "Upload and Apply"
+msgstr ""
+
+#: inc/options.php:375
+msgid "Reset Options"
+msgstr ""
+
+#: inc/options.php:385
+msgid "Save Settings"
+msgstr ""
+
+#: inc/options.php:393
+msgid "Any questions? Look %1$s."
+msgstr ""
+
+#: inc/template-tags.php:38
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr ""
+
+#: inc/template-tags.php:39
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr ""
+
+#: inc/template-tags.php:44
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr ""
+
+#: inc/template-tags.php:48
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: inc/template-tags.php:70
+msgid "Pingback:"
+msgstr ""
+
+#: inc/template-tags.php:80
+msgid "%s <span class=\"says\">says:</span>"
+msgstr ""
+
+#: inc/template-tags.php:86
+msgctxt "1: date, 2: time"
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: inc/template-tags.php:93
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr ""
+
+#: searchform.php:10
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
+#. Theme Name of the plugin/theme
+msgid "B3"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://andrey.ws/b3theme-theme"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Responsive customizable theme based on Bootstrap 3 framework. Three widget areas, changeable colors and page look, export/import settings, translation ready."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Andrey K."
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://andrey.ws/"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Wide (No sidebar)"
+msgstr ""

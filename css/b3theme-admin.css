@@ -17,18 +17,7 @@
 #b3theme_options_form h3 {
 	margin-top : 0;
 }
-#headimg {
-	background-repeat : no-repeat;
-	height : 160px;
-}
-#headimg h1, #headimg #desc {
-	margin-left : 200px;
-}
 
-body.appearance_page_custom-header form table.form-table + h3,
-body.appearance_page_custom-header form table.form-table + h3 + table {
-	display : none !important ;
-}
 .b3theme-settings-tabs li {
 	display : inline-block;
 	margin-right : 5px;

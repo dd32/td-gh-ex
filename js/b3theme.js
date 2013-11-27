@@ -36,14 +36,18 @@ jQuery(document).ready(function($){
 	$('#submit').addClass('btn btn-default btn-lg spacer-top');
 	$('.wp-caption').addClass('thumbnail');
 	b3theme_slide_height();
-	$(window).resize(function(){b3theme_slide_height()});
-	$('.carousel').carousel({interval: 5000});
-	$('.carousel').carousel('cycle');
-
-/* responsive video :) */
 	$('.entry-content iframe, .widget iframe, .entry-content object, .widget object, .entry-content embed, .widget embed, .entry-content video, .widget video')
 		.each(function(index, elem){
 			b3theme_video_size(elem);
 	});
+	$(window).resize(function(){
+		b3theme_slide_height();
+		$('.entry-content iframe, .widget iframe, .entry-content object, .widget object, .entry-content embed, .widget embed, .entry-content video, .widget video')
+		.each(function(index, elem){
+			b3theme_video_size(elem);
+		});
+	});
+	$('.carousel').carousel({interval: 5000});
+	$('.carousel').carousel('cycle');
 
 });

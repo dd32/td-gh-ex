@@ -28,10 +28,9 @@
 			echo '<a title="' . get_option('blogname') . '" href="' . esc_url(home_url('/'))
 				. '"><img class="site-logo img-responsive" src="';
 			header_image();
-			echo '" alt="'. get_option('blogname') .' logo" /></a>';
-		} ?>
+			echo '" alt="'. get_option('blogname') .' logo" width="' . get_custom_header()->width . '" height="' . get_custom_header()->height . '" /></a>';
+		}
 
-<?php
 		if ('Y' == b3theme_option('site_title_enabled')) { ?>
 			<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
 			<?php
@@ -46,6 +45,7 @@
 	<?php if ('Y' == b3theme_option('sidebar_top')) { get_sidebar('top'); } ?>
 
 </div>
+<?php if ('N' != b3theme_option('navbar_enable')) { ?>
 		<div class="navbar navbar-default <?php
 	echo (b3theme_option('navbar_color') && '#F8F8F8' != b3theme_option('navbar_color')) ? 'navbar-b3theme' : ''; ?>">
 			<div class="container">
@@ -73,10 +73,10 @@ $params = array(
 	$menu = str_replace('class="sub-menu"', 'class="dropdown-menu"', $menu);
 	echo $menu;
 	?>
-				</div><!--/.nav-collapse -->
+				</div>
 			</div>
 		</div>
-
+<?php } ?>
 	</header><!-- #masthead -->
 
 <?php
