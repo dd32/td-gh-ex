@@ -291,6 +291,27 @@ array( "type" => "begintab",
 
 /* END MENU FONT */ 
 
+/* START CONTENT FONT */ 
+
+	array( "type" => "start",
+	       "val" => "Contents font",
+	       "name" => __( "Contents font","wip")),
+
+	array( "name" => __( "Contents font size","wip"),
+	       "desc" => __( "Select a size for the contents (articles and pages)","wip"),
+	       "id" => $shortname."_content_font_size",
+	       "type" => "select",
+		   "options" => $fontsize,
+	       "std" => "14px"),
+		   
+	array( "type" => "save-button",
+	       "value" => "Save",
+	       "class" => "Menu font"),
+
+	array( "type" => "end"),
+
+/* END CONTENT FONT */ 
+
 /* START HEADLINE FONT SIZES */ 
 	   
 	array( "type" => "start",

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-24 10:50+0100\n"
-"PO-Revision-Date: 2013-10-24 10:52+0100\n"
+"POT-Creation-Date: 2013-11-28 14:10+0100\n"
+"PO-Revision-Date: 2013-11-28 14:16+0100\n"
 "Last-Translator: Alessandro <info@wpinprogress.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -12,7 +12,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;gettext;gettext_noop;_e\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.5.3\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:11
@@ -31,9 +31,14 @@ msgstr "Tag"
 msgid "Category"
 msgstr "Categoria"
 
-#: archive.php:49 home-blog.php:29
+#: archive.php:49 index.php:33
 msgid "Sorry, no posts matched into "
 msgstr "Spiacente, nessun articolo trovato."
+
+#: archive.php:83 index.php:69 sidebar.php:14 template-left-sidebar.php:60
+#: template-right-sidebar.php:60
+msgid "Calendar"
+msgstr "Calendario"
 
 #: comments.php:5 core/post-formats/aside.php:27
 #: core/post-formats/audio.php:27 core/post-formats/gallery.php:27
@@ -103,48 +108,43 @@ msgstr "Proudly powered by %s"
 msgid "<span>Search </span> results for"
 msgstr "<span>Risultati </span> della ricerca per"
 
-#: socialbuttons.php:10
-msgid "en_EN"
-msgstr "it_IT"
+#: core/add-widgets.php:25
+msgid "This sidebar will be shown for the homepage"
+msgstr "Questa sidebar verrà visualizzata nella homepage"
 
-#: socialbuttons.php:19 socialbuttons.php:27
-msgid "en"
-msgstr "it"
-
-#: core/core.php:44
+#: core/core.php:49
 #, php-format
 msgid "Page %s"
 msgstr "Page %s"
 
-#: core/core.php:243
+#: core/core.php:252
 msgid "Read More"
 msgstr "Continua"
 
-#: core/metaboxes-fields.php:5 core/metaboxes-fields.php:25
-#: core/admin/panel.php:19
+#: core/metaboxes-fields.php:5 core/admin/panel.php:19
 msgid "General Settings"
 msgstr "Impostazioni Generali"
 
-#: core/metaboxes-fields.php:10 core/metaboxes-fields.php:30
+#: core/metaboxes-fields.php:10
 msgid "Template"
 msgstr "Template"
 
-#: core/metaboxes-fields.php:11 core/metaboxes-fields.php:31
+#: core/metaboxes-fields.php:11
 msgid "Select a template for this page"
 msgstr "Seleziona un layout per le categorie."
 
-#: core/metaboxes-fields.php:15 core/metaboxes-fields.php:35
-#: core/admin/option/options.php:66 core/admin/option/options.php:76
+#: core/metaboxes-fields.php:15 core/admin/option/options.php:66
+#: core/admin/option/options.php:77
 msgid "Full Width"
 msgstr "Piena pagina"
 
-#: core/metaboxes-fields.php:16 core/metaboxes-fields.php:36
-#: core/admin/option/options.php:77
+#: core/metaboxes-fields.php:16 core/admin/option/options.php:67
+#: core/admin/option/options.php:78
 msgid "Left Sidebar"
 msgstr "Sidebar a sinistra"
 
-#: core/metaboxes-fields.php:17 core/metaboxes-fields.php:37
-#: core/admin/option/options.php:78
+#: core/metaboxes-fields.php:17 core/admin/option/options.php:68
+#: core/admin/option/options.php:79
 msgid "Right Sidebar"
 msgstr "Sidebar a destra"
 
@@ -152,11 +152,11 @@ msgstr "Sidebar a destra"
 msgid "General"
 msgstr "Generali"
 
-#: core/admin/option/options.php:11 core/admin/option/options.php:255
+#: core/admin/option/options.php:11 core/admin/option/options.php:249
 msgid "Fonts"
 msgstr "Fonts"
 
-#: core/admin/option/options.php:11 core/admin/option/options.php:375
+#: core/admin/option/options.php:11 core/admin/option/options.php:390
 msgid "Colors"
 msgstr "Colori"
 
@@ -216,381 +216,373 @@ msgstr "Layout per la Homepage"
 msgid "If you don't select a single page, select a layout for homepage"
 msgstr "Se non hai impostato, come homepage, una pagina statica"
 
-#: core/admin/option/options.php:67
-msgid "Blog Sidebar"
-msgstr "Sidebar archivio"
-
-#: core/admin/option/options.php:71
+#: core/admin/option/options.php:72
 msgid "Category Layout"
 msgstr "Layout categoria"
 
-#: core/admin/option/options.php:72
+#: core/admin/option/options.php:73
 msgid "Select a layout for category pages"
 msgstr "Seleziona un layout per le categorie."
 
-#: core/admin/option/options.php:82
+#: core/admin/option/options.php:83
 msgid "Comments"
 msgstr "Commenti"
 
-#: core/admin/option/options.php:83
+#: core/admin/option/options.php:84
 msgid "You want to view the comments after articles?"
 msgstr "Vuoi visualizzare i commenti dopo gli articoli?"
 
-#: core/admin/option/options.php:89
-msgid "Social Buttons"
-msgstr "Pulsanti di condivizione"
-
 #: core/admin/option/options.php:90
-msgid "You want to view the social buttons after articles?"
-msgstr "Vuoi visualizzare i pulsanti di condivisione dopo gli articoli?"
-
-#: core/admin/option/options.php:96
 msgid "Custom css"
 msgstr "Css personalizzato"
 
-#: core/admin/option/options.php:97
+#: core/admin/option/options.php:91
 msgid "Insert your custom css code"
 msgstr "Inserisci il tuo codice css personalizzato."
 
-#: core/admin/option/options.php:114
+#: core/admin/option/options.php:108
 msgid "Header"
 msgstr "Testata"
 
-#: core/admin/option/options.php:116
+#: core/admin/option/options.php:110
 msgid "Upload Custom Logo"
 msgstr "Carica un logo personalizzato"
 
-#: core/admin/option/options.php:117
+#: core/admin/option/options.php:111
 msgid "Upload a custom logo"
 msgstr "Carica una un logo personalizzato"
 
-#: core/admin/option/options.php:123
+#: core/admin/option/options.php:117
 msgid "Upload Custom Favicon"
 msgstr "Carica una favicon personalizzata."
 
-#: core/admin/option/options.php:124
+#: core/admin/option/options.php:118
 msgid "Upload a custom favicon"
 msgstr "Carica una favicon personalizzata"
 
-#: core/admin/option/options.php:142
+#: core/admin/option/options.php:136
 msgid "Footer"
 msgstr "Footer"
 
-#: core/admin/option/options.php:144
+#: core/admin/option/options.php:138
 msgid "Copyright Text"
 msgstr "Testo del copyright"
 
-#: core/admin/option/options.php:145
+#: core/admin/option/options.php:139
 msgid "Insert copyright text"
 msgstr "Inserisci il testo per il copyright"
 
-#: core/admin/option/options.php:150
+#: core/admin/option/options.php:144
 msgid "Facebook Url"
 msgstr "Url Facebook"
 
-#: core/admin/option/options.php:151
+#: core/admin/option/options.php:145
 msgid "Insert Facebook Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Facebook, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/option/options.php:156 core/admin/option/options.php:162
+#: core/admin/option/options.php:150 core/admin/option/options.php:156
 msgid "Twitter Url"
 msgstr "Url Twitter"
 
-#: core/admin/option/options.php:157
+#: core/admin/option/options.php:151
 msgid "Insert Twitter Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Twitter, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/option/options.php:163
+#: core/admin/option/options.php:157
 msgid "Insert Flickr Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Flickr, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/option/options.php:168
+#: core/admin/option/options.php:162
 msgid "Google Url"
 msgstr "Url Google"
 
-#: core/admin/option/options.php:169
+#: core/admin/option/options.php:163
 msgid "Insert Google Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Google, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/option/options.php:174
+#: core/admin/option/options.php:168
 msgid "Linkedin Url"
 msgstr "Url Linkedin"
 
-#: core/admin/option/options.php:175
+#: core/admin/option/options.php:169
 msgid "Insert Linkedin Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Linkedin, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/option/options.php:180
+#: core/admin/option/options.php:174
 msgid "Myspace Url"
 msgstr "Url Myspace"
 
-#: core/admin/option/options.php:181
+#: core/admin/option/options.php:175
 msgid "Insert Myspace Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Myspace, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/option/options.php:186
+#: core/admin/option/options.php:180
 msgid "Pinterest Url"
 msgstr "Url Pinterest"
 
-#: core/admin/option/options.php:187
+#: core/admin/option/options.php:181
 msgid "Insert Pinterest Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Pinterest, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/option/options.php:192
+#: core/admin/option/options.php:186
 msgid "Tumblr Url"
 msgstr "Url Tumblr"
 
-#: core/admin/option/options.php:193
+#: core/admin/option/options.php:187
 msgid "Insert Tumblr Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Tumblr, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/option/options.php:198
+#: core/admin/option/options.php:192
 msgid "Youtube Url"
 msgstr "Url Youtube"
 
-#: core/admin/option/options.php:199
+#: core/admin/option/options.php:193
 msgid "Insert Youtube Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Youtube, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/option/options.php:204
+#: core/admin/option/options.php:198
 msgid "Youtube Vimeo"
 msgstr "Url Vimeo"
 
-#: core/admin/option/options.php:205
+#: core/admin/option/options.php:199
 msgid "Insert Vimeo Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Vimeo, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/option/options.php:210
+#: core/admin/option/options.php:204
 msgid "Skype Url"
 msgstr "Url Skype"
 
-#: core/admin/option/options.php:211
+#: core/admin/option/options.php:205
 msgid "Insert Skype Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Skype, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/option/options.php:216
+#: core/admin/option/options.php:210
 msgid "Email Address"
 msgstr "Indirizzo email"
 
-#: core/admin/option/options.php:217
+#: core/admin/option/options.php:211
 msgid "Insert Email Address (empty if you want to hide the button)"
 msgstr ""
 "Inserisci la tua email, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/option/options.php:222
+#: core/admin/option/options.php:216
 msgid "Feed Rss Button"
 msgstr "Pulsante Feed Rss"
 
-#: core/admin/option/options.php:223
+#: core/admin/option/options.php:217
 msgid "You want display the Feed Rss button?"
 msgstr "Vuoi visualizzare il pulsante dei Feed Rss"
 
-#: core/admin/option/options.php:257
+#: core/admin/option/options.php:251
 msgid "Font size"
 msgstr "Grandezza del font"
 
-#: core/admin/option/options.php:258
+#: core/admin/option/options.php:252
 msgid "Select a size for logo"
 msgstr "Seleziona una grandezza per il logo"
 
-#: core/admin/option/options.php:264
+#: core/admin/option/options.php:258
 msgid "Description font size"
 msgstr "Grandezza per la descrizione del logo"
 
-#: core/admin/option/options.php:265
+#: core/admin/option/options.php:259
 msgid "Select a size for logo description"
 msgstr "Seleziona una grandezza per la descrizione del logo"
 
-#: core/admin/option/options.php:283
+#: core/admin/option/options.php:277
 msgid "Menu font"
 msgstr "Font per il menu"
 
-#: core/admin/option/options.php:285
+#: core/admin/option/options.php:279
 msgid "Menu size"
 msgstr "Grandezza del menu"
 
-#: core/admin/option/options.php:286
+#: core/admin/option/options.php:280
 msgid "Select a size for menu"
 msgstr "Seleziona una grandezza per il menu"
 
-#: core/admin/option/options.php:304
+#: core/admin/option/options.php:298
+msgid "Contents font"
+msgstr "Font per i contenuti"
+
+#: core/admin/option/options.php:300
+msgid "Contents font size"
+msgstr "Grandezza del font per i contenuti"
+
+#: core/admin/option/options.php:301
+msgid "Select a size for the contents (articles and pages)"
+msgstr "Seleziona la grandezza per il font dei contenuti (articoli e pagine)"
+
+#: core/admin/option/options.php:319
 msgid "Headline font sizes"
 msgstr "Grandezza del font per i titoli"
 
-#: core/admin/option/options.php:306
+#: core/admin/option/options.php:321
 msgid "H1 headline"
 msgstr "Elementi H1"
 
-#: core/admin/option/options.php:307
+#: core/admin/option/options.php:322
 msgid "Select a size for H1 elements"
 msgstr "Seleziona una grandezza per gli elementi H1"
 
-#: core/admin/option/options.php:313
+#: core/admin/option/options.php:328
 msgid "H2 headline"
 msgstr "Elementi H2"
 
-#: core/admin/option/options.php:314
+#: core/admin/option/options.php:329
 msgid "Select a size for H2 elements"
 msgstr "Seleziona una grandezza per gli elementi H2"
 
-#: core/admin/option/options.php:320
+#: core/admin/option/options.php:335
 msgid "H3 headline"
 msgstr "Elementi H3"
 
-#: core/admin/option/options.php:321
+#: core/admin/option/options.php:336
 msgid "Select a size for H3 elements"
 msgstr "Seleziona una grandezza per gli elementi H3"
 
-#: core/admin/option/options.php:327
+#: core/admin/option/options.php:342
 msgid "H4 headline"
 msgstr "\"\"Elementi H4"
 
-#: core/admin/option/options.php:328
+#: core/admin/option/options.php:343
 msgid "Select a size for H4 elements"
 msgstr "Seleziona una grandezza per gli elementi H4"
 
-#: core/admin/option/options.php:334
+#: core/admin/option/options.php:349
 msgid "H5 headline"
 msgstr "Elementi H5"
 
-#: core/admin/option/options.php:335
+#: core/admin/option/options.php:350
 msgid "Select a size for H5 elements"
 msgstr "Seleziona una grandezza per gli elementi H5"
 
-#: core/admin/option/options.php:341
+#: core/admin/option/options.php:356
 msgid "H6 headline"
 msgstr "Elementi H6"
 
-#: core/admin/option/options.php:342
+#: core/admin/option/options.php:357
 msgid "Select a size for H6 elements"
 msgstr "Seleziona una grandezza per gli elementi H6"
 
-#: core/admin/option/options.php:377
+#: core/admin/option/options.php:392
 msgid "Text color"
 msgstr "Colore del testo."
 
-#: core/admin/option/options.php:378
+#: core/admin/option/options.php:393
 msgid "Select a color for general text"
 msgstr "Seleziona un colore per il colore del testo generale."
 
-#: core/admin/option/options.php:383
+#: core/admin/option/options.php:398
 msgid "Copyright color"
 msgstr "Colore per il copyright"
 
-#: core/admin/option/options.php:384
+#: core/admin/option/options.php:399
 msgid "Select a color for copyright text"
 msgstr "Seleziona un colore per il testo del copyright."
 
-#: core/admin/option/options.php:389
+#: core/admin/option/options.php:404
 msgid "Link color"
 msgstr "Colore link"
 
-#: core/admin/option/options.php:390
+#: core/admin/option/options.php:405
 msgid "Select a color for link"
 msgstr "Seleziona un colore per i link"
 
-#: core/admin/option/options.php:395
+#: core/admin/option/options.php:410
 msgid "Link color hover"
 msgstr "Colore link al passaggio del mouse"
 
-#: core/admin/option/options.php:396
+#: core/admin/option/options.php:411
 msgid "Select a color for link hover"
 msgstr "Seleziona un colore per i link al passaggio del mouse"
 
-#: core/admin/option/options.php:401
+#: core/admin/option/options.php:416
 msgid "Border color"
 msgstr "Colore dei bordi"
 
-#: core/admin/option/options.php:402
+#: core/admin/option/options.php:417
 msgid "Select a color for borders"
 msgstr "Seleziona un colore per i bordi."
 
-#: core/admin/option/options.php:434
-msgid "Body Background"
-msgstr "Sfondo principale"
-
-#: core/admin/option/options.php:436 core/admin/option/options.php:502
-msgid "Color"
-msgstr "Colore"
-
-#: core/admin/option/options.php:437
-msgid "Select a color for body background."
-msgstr "Seleziona un colore per il colore di sfondo."
-
-#: core/admin/option/options.php:442 core/admin/option/options.php:508
-msgid "Default image background"
-msgstr "Immagine di default per lo sfondo"
-
-#: core/admin/option/options.php:443
-msgid "Select a image for body background."
-msgstr "Carica un'immagine come sfondo principale."
-
-#: core/admin/option/options.php:449 core/admin/option/options.php:450
-#: core/admin/option/options.php:455 core/admin/option/options.php:515
-#: core/admin/option/options.php:516 core/admin/option/options.php:520
-msgid "Repeat"
-msgstr "Ripeti"
-
-#: core/admin/option/options.php:456 core/admin/option/options.php:521
-msgid "No repeat"
-msgstr "Nessuna ripetizione"
-
-#: core/admin/option/options.php:457 core/admin/option/options.php:522
-msgid "Repeat orizzontal"
-msgstr "Ripeti orizzontalmente"
-
-#: core/admin/option/options.php:458 core/admin/option/options.php:523
-msgid "Repeat vertical"
-msgstr "Ripeti verticalmente"
-
-#: core/admin/option/options.php:462 core/admin/option/options.php:463
-#: core/admin/option/options.php:527 core/admin/option/options.php:528
-msgid "Background Position"
-msgstr "Posizione dell'immagine di background"
-
-#: core/admin/option/options.php:478 core/admin/option/options.php:479
-#: core/admin/option/options.php:543 core/admin/option/options.php:544
-msgid "Background Attachment"
-msgstr "Tipo di attaccamento dello sfondo"
-
-#: core/admin/option/options.php:500
+#: core/admin/option/options.php:451
 msgid "Footer Background"
 msgstr "Sfondo del footer"
 
-#: core/admin/option/options.php:503
+#: core/admin/option/options.php:453
+msgid "Color"
+msgstr "Colore"
+
+#: core/admin/option/options.php:454
 msgid "Select a color for footer background."
 msgstr "Seleziona un colore per il colore del footer."
 
-#: core/admin/option/options.php:509
+#: core/admin/option/options.php:459
+msgid "Default image background"
+msgstr "Immagine di default per lo sfondo"
+
+#: core/admin/option/options.php:460
 msgid "Select a image for footer background."
 msgstr "Carica un'immagine come sfondo del footer."
+
+#: core/admin/option/options.php:466 core/admin/option/options.php:467
+#: core/admin/option/options.php:471
+msgid "Repeat"
+msgstr "Ripeti"
+
+#: core/admin/option/options.php:472
+msgid "No repeat"
+msgstr "Nessuna ripetizione"
+
+#: core/admin/option/options.php:473
+msgid "Repeat orizzontal"
+msgstr "Ripeti orizzontalmente"
+
+#: core/admin/option/options.php:474
+msgid "Repeat vertical"
+msgstr "Ripeti verticalmente"
+
+#: core/admin/option/options.php:478 core/admin/option/options.php:479
+msgid "Background Position"
+msgstr "Posizione dell'immagine di background"
+
+#: core/admin/option/options.php:494 core/admin/option/options.php:495
+msgid "Background Attachment"
+msgstr "Tipo di attaccamento dello sfondo"
 
 #: core/post-formats/aside.php:29
 msgid "Aside"
 msgstr "Disgressione"
+
+#: core/post-formats/aside.php:48 core/post-formats/audio.php:48
+#: core/post-formats/gallery.php:48 core/post-formats/link.php:48
+#: core/post-formats/quote.php:48 core/post-formats/standard.php:48
+#: core/post-formats/video.php:48
+msgid "Categories: "
+msgstr "Categorie: "
 
 #: core/post-formats/audio.php:29
 msgid "Audio"
@@ -615,6 +607,30 @@ msgstr "Video"
 #: core/widgets/search_widget.php:59
 msgid "Search here"
 msgstr "Cerca"
+
+#~ msgid "en_EN"
+#~ msgstr "it_IT"
+
+#~ msgid "en"
+#~ msgstr "it"
+
+#~ msgid "Blog Sidebar"
+#~ msgstr "Sidebar archivio"
+
+#~ msgid "Social Buttons"
+#~ msgstr "Pulsanti di condivizione"
+
+#~ msgid "You want to view the social buttons after articles?"
+#~ msgstr "Vuoi visualizzare i pulsanti di condivisione dopo gli articoli?"
+
+#~ msgid "Body Background"
+#~ msgstr "Sfondo principale"
+
+#~ msgid "Select a color for body background."
+#~ msgstr "Seleziona un colore per il colore di sfondo."
+
+#~ msgid "Select a image for body background."
+#~ msgstr "Carica un'immagine come sfondo principale."
 
 #~ msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 #~ msgstr "Devi prima <a href=\"%s\">loggarti </a> per postare un commento."
@@ -838,9 +854,6 @@ msgstr "Cerca"
 
 #~ msgid "Layout"
 #~ msgstr "Layout"
-
-#~ msgid "Content"
-#~ msgstr "Contenuto"
 
 #~ msgid "Style"
 #~ msgstr "Stile del tema"

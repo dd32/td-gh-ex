@@ -85,6 +85,13 @@
 
 /* =================== END NAV STYLE =================== */
 
+/* =================== BEGIN CONTENT STYLE =================== */
+
+	if (suevafree_setting('suevafree_content_font_size')) 
+		echo ".article p, .article li, .article address, .article dd, .article blockquote, .article td, .article th { font-size:".suevafree_setting('suevafree_content_font_size')."}"; 
+
+/* =================== END NAV STYLE =================== */
+
 /* =================== START TITLE STYLE =================== */
 
 	if (suevafree_setting('suevafree_h1_font_size')) 

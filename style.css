@@ -4,7 +4,7 @@ Theme URI: http://themeinprogress.com/sueva/
 Description: Sueva is a free responsive clean and corporate Tumblelog  WordPress Theme. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10 and uses the most modern technologies like HTML5 and CSS3.
 Author: ThemeinProgress.
 Author URI: http://themeinprogress.com
-Version: 1.2.5
+Version: 1.2.6
 Tags: gray, light, black, orange, blue, white, two-columns, right-sidebar, left-sidebar, custom-background, custom-menu, threaded-comments, full-width-template, theme-options 
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -176,7 +176,9 @@ span.error {
 	float:none;
 	position:relative;
 	display: block;
+	line-height: 1.6em;
 }
+
 .button:hover {
 	background:#d14a2b;
 	color:#fff;
@@ -661,7 +663,6 @@ nav#mainmenu ul ul li ul:before {
 	text-align:center;
 }
 
-
 /* START COMMENT   */
 
 .commentlist { 
@@ -694,7 +695,8 @@ nav#mainmenu ul ul li ul:before {
 	position:relative; 
 	margin-left:110px;
 	border-left:solid 1px #ddd;
-	padding:0 0 0 15px
+	padding:0 0 0 15px;
+	font-size:14px;
 }
 
 .comment-container .comment-date { 
@@ -736,10 +738,16 @@ h3#reply-title, h3.comments {
 h3#reply-title small, .logged-in-as { 
 	font-family: 'Abel',Verdana, Geneva, sans-serif;
 	font-weight: normal;
-	font-size: 14px;
+	font-size: 14px !important;
 	font-weight: bold;
 	text-transform: uppercase;
 	margin:-20px 0 40px 0;
+}
+
+.form-allowed-tags,
+p.categories,
+.comment-text p {
+	font-size: 14px !important;
 }
 
 /* END COMMENT  */
