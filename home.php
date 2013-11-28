@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Blog
+
  *Theme Name	: BusiProf
  * @file           blog.php
  * @package        Busiprof

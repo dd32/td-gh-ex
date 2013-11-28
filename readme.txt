@@ -1,7 +1,7 @@
 BusiProf Theme README.
 
 A Free Blue colored Business Blog theme that supports Primary menu's , Primary sidebar,Four widgets area at the footer region  etc. 
-It has a perfect design that's great for any Business/Firms  Blogs who wants a new look for their site. Three page templates Home ,Blog and Contact Page. 
+It has a perfect design that's great for any Business/Firms  Blogs who wants a new look for their site. Two beautifully designed page templates Home Page and Blog Page. 
 BusiProf supports featured slider managed from Theme Option Panel.
 
 Author: Priyanshu Mittal,Hari Maliya,Shahid Mansuri and Vibhor Purandare.

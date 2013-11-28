@@ -66,6 +66,19 @@
 										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri('template_directory').'/functions/theme_options/images/cross.png' ?> " /></p></td>
 										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri('template_directory').'/functions/theme_options/images/icon_check.png' ?> " /></p></td>
 									</tr>
+									
+									
+									
+									
+										
+									<tr>
+										<td>&nbsp;</td>
+										<td><p><b> <?php _e('Contact Form Template','busi_prof'); ?></b><span class="icon help" style="float:right">
+										<span class="tooltip"><?php  _e('Premium version comes with a beautiful contact page template. ','busi_prof');?></span></span> </p></td>
+										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri('template_directory').'/functions/theme_options/images/cross.png' ?> " /></p></td>
+										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri('template_directory').'/functions/theme_options/images/icon_check.png' ?> " /></p></td>
+									</tr>
+									
 									<tr>
 										<td>&nbsp;</td>
 										<td><p><b> <?php _e('Services Template','busi_prof'); ?></b><span class="icon help" style="float:right">
