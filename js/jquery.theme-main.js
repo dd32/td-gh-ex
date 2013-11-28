@@ -84,7 +84,29 @@ jQuery(function($){
             updatePosition();
             return false;
         } );
-    });
+    } );
+
+    // The menu hover effects
+    $('#masthead')
+        .on('mouseenter', '.main-navigation ul li', function(){
+            var $$ = $(this);
+            var $ul = $$.find('> ul');
+            $ul.css({
+                'display' : 'block',
+                'opacity' : 0
+            }).clearQueue().animate({opacity: 1}, 250);
+            $ul.data('final-opacity', 1);
+        } )
+        .on('mouseleave', '.main-navigation ul li', function(){
+            var $$ = $(this);
+            var $ul = $$.find('> ul');
+            $ul.clearQueue().animate( {opacity: 0}, 250, function(){
+                if($ul.data('final-opacity') == 0) {
+                    $ul.css('display', 'none');
+                }
+            });
+            $ul.data('final-opacity', 0);
+        } );
 
     // The search bar
     var isSearchHover = false;

@@ -2,8 +2,8 @@
 # This file is distributed under the GNU General Public License 2.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: vantage 1.1.4\n"
-"POT-Creation-Date: 2013-11-13T13:23:21+02:00\n"
+"Project-Id-Version: vantage 1.1.5\n"
+"POT-Creation-Date: 2013-11-28T16:35:00+02:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -33,13 +33,13 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-msgid "Permalink to %s"
-msgstr ""
-
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
 msgid "Pages:"
+msgstr ""
+
+msgid "Permalink to %s"
 msgstr ""
 
 msgid "dismiss"
@@ -1175,6 +1175,21 @@ msgid "Site Title Font"
 msgstr ""
 
 msgid "Heading Font"
+msgstr ""
+
+msgid "Page Title Size"
+msgstr ""
+
+msgid "Page Title Color"
+msgstr ""
+
+msgid "Content Size"
+msgstr ""
+
+msgid "Content Color"
+msgstr ""
+
+msgid "Content Heading Color"
 msgstr ""
 
 msgid "Header Padding"

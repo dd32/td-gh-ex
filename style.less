@@ -662,13 +662,10 @@ body.responsive {
 
 		/* Second level menu items */
 		ul {
-			.transition(0.35s);
 			.box-shadow(~"0 1px 2px rgba(0,0,0,0.15)");
 
 			background: #464646;
-			visibility: hidden;
-            opacity:0;
-			pointer-events: none;
+			display: none;
 
 			position: absolute;
 			top: 100%;
@@ -701,9 +698,7 @@ body.responsive {
 
 		li:hover {
 			> ul {
-				visibility: visible !important;
-				opacity:1 !important;
-				pointer-events: auto !important;
+				display: block;
 			}
 		}
 	}
@@ -929,7 +924,6 @@ article.page{
 			a {
 				color: inherit;
 				text-decoration: none;
-				font-weight: bold;
 			}
 		}
 
@@ -1178,16 +1172,15 @@ article.page{
 	}
 
 	.gallery{
-		margin: 25px 0 !important;
+		margin: 15px 0 25px 0;
 
 		.gallery-item{
-			margin-bottom: 0 !important;
-			margin-top: 0 !important;
+			margin-bottom: 0;
 		}
 
 		.gallery-icon{
 			line-height: 0;
-			margin-bottom: 0 !important;
+			margin-bottom: 0;
 		}
 
 		img{
@@ -1195,8 +1188,8 @@ article.page{
 		}
 
 		.gallery-caption{
-			margin: 10px !important;
-			padding-left: 0 !important;
+			margin: 10px;
+			padding-left: 0;
 		}
 	}
 
@@ -1223,6 +1216,11 @@ article.page{
 		.box-sizing(border-box);
 
 		text-align: center;
+
+		&.aligncenter {
+			margin-left: auto;
+			margin-right: auto;
+		}
 	}
 
 	.wp-caption:first-child{
@@ -1234,13 +1232,13 @@ article.page{
 	}
 
 	.alignleft {
-	/* This is also styled on a global level */
-		margin: 0 0 1.5em 1.5em;
+		/* This is also styled on a global level */
+		margin: 0 1.5em 1.5em 0;
 	}
 
 	.alignright {
-	/* This is also styled on a global level */
-		margin: 0 1.5em 1.5em 0;
+		/* This is also styled on a global level */
+		margin: 0 0 1.5em 1.5em;
 	}
 
 	img.wp-smiley {
@@ -1329,6 +1327,7 @@ article.page{
 			text-decoration: none;
 		}
 	}
+
 }
 
 /* =Navigation
