@@ -412,14 +412,12 @@ display:none;
 
 
 .slider-thumb-container{
-top: 626px;
-overflow: hidden; 
-
+overflow: hidden;
+bottom:0em;
 margin:0px auto;
 height:155px;
-
 padding-top:19px;
-display:block;  
+display:block;
 z-index:1;
 }
 .thumb-img-container
@@ -448,12 +446,12 @@ z-index:1;
     z-index: 0;
 }
 
-
+/*
 .slidesDescription
 {
 bottom:79.6%;
 }
-
+*/
 
  
   }

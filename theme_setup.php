@@ -1,15 +1,39 @@
 <?php 
-	add_action( 'after_setup_theme', 'spa_the_theme_setup' );
-//if (!function_exists('spa_the_theme_setup')):
+add_action( 'after_setup_theme', 'spa_the_theme_setup_fnction' );
+function spa_the_theme_setup_fnction()
+	{
+	// setup admin pannel defual data for index page
+		$spa_theme_options=spa_the_theme_setup(); 
+		add_option('spa_theme_options',$spa_theme_options);
+	//Add THEME SUPPORT
+	add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'automatic-feed-links' );
+	add_editor_style();
+	//Register NAV MENUS
+	register_nav_menus(
+    array( 'header-menu' => __('Header Menu','sis_spa'),
+	       'footer-menu' => __('Footer Menu','sis_spa')
+	     )
+	);
+	}
 
+// admin restore options page
+	add_action('spa_restore_data', 'spasalon_restore_data_function', 5 );		
+	function spasalon_restore_data_function()
+	{	
+		$spa_theme_options = spa_the_theme_setup();
+		update_option('spa_theme_options',$spa_theme_options);
+		
+	}
+	
 function spa_the_theme_setup() /*function declear*/
 {
 	 $template_uri=get_template_directory_uri();
 	load_theme_textdomain( 'sis_spa', get_template_directory() . '/languages' );
 
-	$spa_theme_options=array(
+	return $spa_theme_options=array(
 								 //home page setting option
-							
+									'front_page'  => 'yes',
 								   'line_one' =>__('Our','sis_spa'),
 								   'line_two'=>__('Refreshed','sis_spa'),
 								 'description'=>__('Donec justo odio, lobortis eget congue sed, rutrum sit amet mauris. Curabitur sed lectus nulla.
@@ -64,14 +88,22 @@ function spa_the_theme_setup() /*function declear*/
 								  'product5_title'=>__('Product 5','sis_spa'),
 								  'product5_image'=>$template_uri.'/images/default/home_product_thumb.jpg',
 								   
-							
-									
+								'address_heading' => __('Spa Salon','sis_spa'),
+								'address_line_one' => __('8901 Marmora Road,','sis_spa'),
+								'address_line_two' =>__('Industrial Area,','sis_spa'),
+								'address_line_three' =>__('IN','sis_spa'),
+								'email'=>'themes@webriti.com',
+								'phone_no1'=>'+1800559658',
+								'phone_no2'=>'+1800559658',
+								'fax' => '+1800559658',
+								'open_time_heading' =>__('Opening Hours','sis_spa'),
+								
 								'footer_tagline' => __('Copyright 2013. All Rights Reserved by ','sis_spa'),
 								'upload_image'=>'',
 								'height'=>'60',
 								'width'=>'250',
 								'upload_image_favicon'=>'',
-					            
+					            'spa_custom_css'=>'',
 								'tagline_title'=>__('Treatment we are offering','sis_spa'),
 							'tagline_contents'=>__('In commodo pulvinar metus, id tristique massa ultrices at. Nulla auctor turpis ut mi pulvinar eu accumsan risus sagittis. Mauris nunc ligula, ullamcorper vitae accumsan eu, 
 congue in nulla. Cras hendrerit mi quis nisi semper in sodales nisl faucibus. Sed quis quam eu ante ornare hendrerit.','sis_spa'),
@@ -111,19 +143,10 @@ congue in nulla. Cras hendrerit mi quis nisi semper in sodales nisl faucibus. Se
 																		'color_sidebar_widget_titles' => '#4A4849',
 																		'font_family_sidebar_widget_titles' => 'roboto',
 																		'font_style_sidebar_widget_titles' => 'Normal'
-																	 ),	
+																	 ),
+								'week_ends'=>'11:00 AM &ndash; 19:00 PM',
+								'week_days'=>'11:00 AM &ndash; 18:00 PM',											
 	);
-add_option('spa_theme_options',$spa_theme_options); 
-   
-add_theme_support( 'post-thumbnails' );
-add_theme_support( 'automatic-feed-links' );
-
-add_editor_style();
-register_nav_menus(
-    array( 'header-menu' => __('Header Menu','sis_spa'),
-	       'footer-menu' => __('Footer Menu','sis_spa')
-	     )
-  );
-
+	add_option('spa_theme_options',$spa_theme_options); 
 }
 ?>

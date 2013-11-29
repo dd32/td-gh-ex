@@ -1,0 +1,933 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Spasalon\n"
+"POT-Creation-Date: 2013-11-19 13:42+0530\n"
+"PO-Revision-Date: 2013-11-19 13:43+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;_e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: ../404.php:15
+msgid "Unfortunately, the page you tried accessing could not be retrieved. "
+msgstr ""
+
+#: ../404.php:18
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: ../archive.php:8
+msgid "Daily Archives:"
+msgstr ""
+
+#: ../archive.php:10
+msgid "Monthly Archives:"
+msgstr ""
+
+#: ../archive.php:12
+msgid "Yearly Archives:"
+msgstr ""
+
+#: ../archive.php:14
+msgid "Blog Archives"
+msgstr ""
+
+#: ../archive.php:28 ../author.php:46 ../blog.php:24 ../category.php:21
+#: ../index.php:25 ../page.php:24 ../search.php:19 ../single.php:23
+msgid "Leave a comment"
+msgstr ""
+
+#: ../archive.php:28 ../author.php:46 ../blog.php:24 ../category.php:21
+#: ../index.php:25 ../page.php:24 ../search.php:19 ../single.php:23
+msgid "1 Comment"
+msgstr ""
+
+#: ../archive.php:28 ../author.php:46 ../blog.php:24 ../category.php:21
+#: ../index.php:25 ../page.php:24 ../search.php:19 ../single.php:23
+msgid "% Comments"
+msgstr ""
+
+#: ../author.php:12
+msgid "Author Archives: "
+msgstr ""
+
+#: ../author.php:28
+#, php-format
+msgid "About %s"
+msgstr ""
+
+#: ../blog.php:37 ../index.php:41 ../page.php:31 ../single.php:30
+msgid "Pages:"
+msgstr ""
+
+#: ../category.php:9
+msgid "Category  Archives:"
+msgstr ""
+
+#: ../comments.php:2
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#: ../comments.php:12 ../comments.php:22
+msgid "Comment navigation"
+msgstr ""
+
+#: ../comments.php:13 ../comments.php:23
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: ../comments.php:14 ../comments.php:24
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: ../comments.php:28
+msgid ""
+"<p style=\"color: #f22853; font-family:roboto;font-size:14px;\">comments are "
+"closed</p>"
+msgstr ""
+
+#: ../comments.php:32
+msgid "You must be"
+msgstr ""
+
+#: ../comments.php:32
+msgid "logged in"
+msgstr ""
+
+#: ../comments.php:32
+msgid "to post a comment."
+msgstr ""
+
+#: ../comments.php:53
+msgid "Logged in as "
+msgstr ""
+
+#: ../comments.php:53
+msgid " Log out?"
+msgstr ""
+
+#: ../contact.php:13
+msgid "CONTACT INFO"
+msgstr ""
+
+#: ../contact.php:88
+msgid "Your Name"
+msgstr ""
+
+#: ../contact.php:90
+msgid "Email*"
+msgstr ""
+
+#: ../contact.php:92
+msgid "Subject"
+msgstr ""
+
+#: ../contact.php:94
+msgid "Your Message"
+msgstr ""
+
+#: ../contact.php:99
+msgid "Submit"
+msgstr ""
+
+#: ../contact.php:124
+msgid "Free phone:"
+msgstr ""
+
+#: ../contact.php:125
+msgid "Telephone:"
+msgstr ""
+
+#: ../contact.php:126
+msgid "Fax:"
+msgstr ""
+
+#: ../contact.php:129
+msgid "Eamil:"
+msgstr ""
+
+#: ../contact.php:137
+msgid "Week-Days"
+msgstr ""
+
+#: ../contact.php:138
+msgid "Week-Ends"
+msgstr ""
+
+#: ../contact.php:145 ../index-slider.php:25 ../pink-header.php:26
+#: ../option_pannel/spa_home.php:1
+msgid "Call us on"
+msgstr ""
+
+#: ../footer.php:21
+msgid "Spasalon  Theme by"
+msgstr ""
+
+#: ../footer.php:21
+msgid "webriti.com"
+msgstr ""
+
+#: ../functions.php:21
+msgid "Post navigation"
+msgstr ""
+
+#: ../functions.php:22
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr ""
+
+#: ../functions.php:23
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: ../functions.php:47
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: ../functions.php:68
+msgid " Sidebar"
+msgstr ""
+
+#: ../functions.php:70
+msgid "The primary widget area"
+msgstr ""
+
+#: ../pink-header.php:15
+msgid "GET YOURSELF"
+msgstr ""
+
+#: ../pink-header.php:17
+msgid "REFRESHED"
+msgstr ""
+
+#: ../pink-header.php:22
+msgid ""
+" Banner Description Donec justo odio, lobortis eget congue sed, rutrum sit "
+"amet mauris. Curabitur sed lectus nulla. Curabitur sed lectus nulla.lobortis "
+"eget congue sed, rutrum sit amet mauris. Curabitur sed lectus nulla rutrum "
+"sit amet mauris "
+msgstr ""
+
+#: ../search.php:7
+msgid "Search Results for:"
+msgstr ""
+
+#: ../search.php:28
+msgid "Nothing Found"
+msgstr ""
+
+#: ../search.php:30
+msgid ""
+"Sorry, but nothing matched your search criteria. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: ../theme_setup.php:28
+msgid "Our"
+msgstr ""
+
+#: ../theme_setup.php:29
+msgid "Refreshed"
+msgstr ""
+
+#: ../theme_setup.php:30
+msgid ""
+"Donec justo odio, lobortis eget congue sed, rutrum sit amet mauris. "
+"Curabitur sed lectus nulla.\n"
+"             Curabitur sed lectus nulla.lobortis eget congue sed, rutrum sit "
+"amet mauris. Curabitur sed \n"
+"             lectus nulla rutrum sit amet mauris"
+msgstr ""
+
+#: ../theme_setup.php:40
+msgid "Spa Treatment"
+msgstr ""
+
+#: ../theme_setup.php:42 ../theme_setup.php:49 ../theme_setup.php:55
+#: ../theme_setup.php:61
+msgid ""
+"Pellentesque habitant morbi tristique senectus \n"
+"                                                      et netus et malesuada "
+"fames ac turpis egestas \n"
+"                                                    In in massa urna, vitae "
+"vestibulum orci. yoursb\n"
+"                                                     Maecenas quis est sed "
+"mauris..."
+msgstr ""
+
+#: ../theme_setup.php:47
+msgid "Detox Treatment"
+msgstr ""
+
+#: ../theme_setup.php:53
+msgid "Facial Treatment"
+msgstr ""
+
+#: ../theme_setup.php:59
+msgid "Other Treatment"
+msgstr ""
+
+#: ../theme_setup.php:67
+msgid "Product 1"
+msgstr ""
+
+#: ../theme_setup.php:70
+msgid "Product 2"
+msgstr ""
+
+#: ../theme_setup.php:73
+msgid "Product 3"
+msgstr ""
+
+#: ../theme_setup.php:76
+msgid "Product 4"
+msgstr ""
+
+#: ../theme_setup.php:79
+msgid "Product 5"
+msgstr ""
+
+#: ../theme_setup.php:82
+msgid "Spa Salon"
+msgstr ""
+
+#: ../theme_setup.php:83
+msgid "8901 Marmora Road"
+msgstr ""
+
+#: ../theme_setup.php:84
+msgid "Industrial Area"
+msgstr ""
+
+#: ../theme_setup.php:85
+msgid "IN"
+msgstr ""
+
+#: ../theme_setup.php:90
+msgid "Opening Hours"
+msgstr ""
+
+#: ../theme_setup.php:93
+msgid "Copyright 2013. All Rights Reserved by "
+msgstr ""
+
+#: ../theme_setup.php:99
+msgid "Treatment we are offering"
+msgstr ""
+
+#: ../theme_setup.php:100
+msgid ""
+"In commodo pulvinar metus, id tristique massa ultrices at. Nulla auctor "
+"turpis ut mi pulvinar eu accumsan risus sagittis. Mauris nunc ligula, "
+"ullamcorper vitae accumsan eu, \n"
+"congue in nulla. Cras hendrerit mi quis nisi semper in sodales nisl "
+"faucibus. Sed quis quam eu ante ornare hendrerit."
+msgstr ""
+
+#: ../theme_setup.php:102
+msgid "Spasalon Our product rang"
+msgstr ""
+
+#: ../theme_setup.php:103
+msgid ""
+"A SpaSalon Produc Heading Title In commodo pulvinar metus, id tristique "
+"massa ultrices at. Nulla auctor turpis ut mi pulvinar eu accumsan risus "
+"sagittis. Mauris nunc ligula, ullamcorper vitae accumsan eu, congue in "
+"nulla. Cras hendrerit mi quis nisi semper in sodales nisl faucibus. Sed quis "
+"quam eu ante ornare hendrerit. "
+msgstr ""
+
+#: ../theme_setup.php:147
+msgid "Header Menu"
+msgstr ""
+
+#: ../theme_setup.php:148
+msgid "Footer Menu"
+msgstr ""
+
+#: ../functions/comment/comment.php:11
+msgid "Reply"
+msgstr ""
+
+#: ../functions/comment/comment.php:32
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: ../functions/Excerpt/excerpt_length.php:89
+msgid "Read More"
+msgstr ""
+
+#: ../functions/Menu_Walker/default_menu_walker.php:23
+#: ../option_pannel/spa_options_pannel.php:156
+#: ../option_pannel/spa_options_pannel.php:173
+msgid "Home"
+msgstr ""
+
+#: ../functions/meta/metabox.php:21
+msgid "Banner Description"
+msgstr ""
+
+#: ../functions/meta/metabox.php:24
+msgid "Banner Heading One"
+msgstr ""
+
+#: ../functions/meta/metabox.php:27
+msgid "Banner Heading Two"
+msgstr ""
+
+#: ../option_pannel/help.php:6
+msgid "If you have any question or need support then feel free to contact us "
+msgstr ""
+
+#: ../option_pannel/help.php:6
+msgid "via the"
+msgstr ""
+
+#: ../option_pannel/help.php:6
+msgid "WordPress Support Forums"
+msgstr ""
+
+#: ../option_pannel/help.php:12
+msgid "Click here to open the Support Document"
+msgstr ""
+
+#: ../option_pannel/help.php:16
+msgid ""
+"Upgrade to the premium to get access to Additional features like Mutiple "
+"Page Templates , HomePage Sliders, Custom Widget etc."
+msgstr ""
+
+#: ../option_pannel/spa_contact_page.php:1
+msgid "Contact Page Information"
+msgstr ""
+
+#: ../option_pannel/spa_contact_page.php:1
+msgid "Company Name"
+msgstr ""
+
+#: ../option_pannel/spa_contact_page.php:1
+msgid "Enter Company Name"
+msgstr ""
+
+#: ../option_pannel/spa_contact_page.php:1
+msgid "Company Address Details"
+msgstr ""
+
+#: ../option_pannel/spa_contact_page.php:1
+msgid "Enter address line one"
+msgstr ""
+
+#: ../option_pannel/spa_contact_page.php:1
+msgid "Address Details Line 2"
+msgstr ""
+
+#: ../option_pannel/spa_contact_page.php:1
+msgid "Enter address line Two"
+msgstr ""
+
+#: ../option_pannel/spa_contact_page.php:1
+msgid "Address Details Line 3"
+msgstr ""
+
+#: ../option_pannel/spa_contact_page.php:1
+msgid "Enter address line Three"
+msgstr ""
+
+#: ../option_pannel/spa_contact_page.php:1
+msgid "Contact Details"
+msgstr ""
+
+#: ../option_pannel/spa_contact_page.php:1
+msgid "Phone Number"
+msgstr ""
+
+#: ../option_pannel/spa_contact_page.php:1
+msgid "Enter Phone Number"
+msgstr ""
+
+#: ../option_pannel/spa_contact_page.php:1
+msgid "Add Fax Number "
+msgstr ""
+
+#: ../option_pannel/spa_contact_page.php:1
+msgid "Enter Fax Number"
+msgstr ""
+
+#: ../option_pannel/spa_contact_page.php:1
+msgid "Add Email "
+msgstr ""
+
+#: ../option_pannel/spa_contact_page.php:1
+msgid "Enter Email"
+msgstr ""
+
+#: ../option_pannel/spa_contact_page.php:1
+msgid "Opening Hours Information"
+msgstr ""
+
+#: ../option_pannel/spa_contact_page.php:1
+msgid "Service Hours Title"
+msgstr ""
+
+#: ../option_pannel/spa_contact_page.php:1
+msgid "Opening Hours in Weekdays"
+msgstr ""
+
+#: ../option_pannel/spa_contact_page.php:1
+msgid "Opening Hours Timings in Weekdays"
+msgstr ""
+
+#: ../option_pannel/spa_contact_page.php:1
+msgid "Opening Hours in Weekends"
+msgstr ""
+
+#: ../option_pannel/spa_contact_page.php:1
+msgid "Opening Hours Timings in Weekends"
+msgstr ""
+
+#: ../option_pannel/spa_contact_page.php:1
+#: ../option_pannel/spa_footer_customization.php:1
+#: ../option_pannel/spa_general_settings.php:1 ../option_pannel/spa_home.php:1
+#: ../option_pannel/spa_typography.php:1
+msgid "Save Changes"
+msgstr ""
+
+#: ../option_pannel/spa_contact_page.php:1
+#: ../option_pannel/spa_footer_customization.php:1
+#: ../option_pannel/spa_general_settings.php:1 ../option_pannel/spa_home.php:1
+#: ../option_pannel/spa_typography.php:1
+msgid "Restore Defaults"
+msgstr ""
+
+#: ../option_pannel/spa_contact_page.php:1
+#: ../option_pannel/spa_footer_customization.php:1
+#: ../option_pannel/spa_general_settings.php:1 ../option_pannel/spa_home.php:1
+#: ../option_pannel/spa_typography.php:1
+msgid "Data reset sucessfully"
+msgstr ""
+
+#: ../option_pannel/spa_contact_page.php:1
+#: ../option_pannel/spa_footer_customization.php:1
+#: ../option_pannel/spa_general_settings.php:1 ../option_pannel/spa_home.php:1
+#: ../option_pannel/spa_typography.php:1
+msgid "Data save sucessfully"
+msgstr ""
+
+#: ../option_pannel/spa_footer_customization.php:1
+msgid "Footer Copyrights"
+msgstr ""
+
+#: ../option_pannel/spa_footer_customization.php:1
+msgid "Footer Tagline"
+msgstr ""
+
+#: ../option_pannel/spa_footer_customization.php:1
+#: ../option_pannel/spa_typography.php:1
+msgid "Enter home project title one"
+msgstr ""
+
+#: ../option_pannel/spa_general_settings.php:1
+msgid "Settings"
+msgstr ""
+
+#: ../option_pannel/spa_general_settings.php:1
+msgid "Custom Logo"
+msgstr ""
+
+#: ../option_pannel/spa_general_settings.php:1
+msgid "The placeholder image that will be used as a custom logo"
+msgstr ""
+
+#: ../option_pannel/spa_general_settings.php:1
+msgid "Header Logo Height"
+msgstr ""
+
+#: ../option_pannel/spa_general_settings.php:1
+msgid "The height of the header logo image."
+msgstr ""
+
+#: ../option_pannel/spa_general_settings.php:1
+msgid "Header Logo width"
+msgstr ""
+
+#: ../option_pannel/spa_general_settings.php:1
+msgid "The width of the header logo image."
+msgstr ""
+
+#: ../option_pannel/spa_general_settings.php:1
+msgid "Custom Favicon"
+msgstr ""
+
+#: ../option_pannel/spa_general_settings.php:1
+msgid ""
+"The placeholder image that will be used if a featured image isnt specified."
+msgstr ""
+
+#: ../option_pannel/spa_general_settings.php:1
+msgid "Custom CSS"
+msgstr ""
+
+#: ../option_pannel/spa_general_settings.php:1
+msgid "Enter your Custom css"
+msgstr ""
+
+#: ../option_pannel/spa_general_settings.php:1
+msgid "Enter Custom CSS Code For Example: #service { color:#000;}"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Custome Static Front Page"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Do you want display Static Front Page: "
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Yes"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "front page option"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "No"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Shows Custom Static Front Page"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Pink Highlight Strip "
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Line One"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Enter line one"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Line Two"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Enter line two"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Enter call us no"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Description"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Enter description"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Home Top Feature "
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Upload Feature Image"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid ""
+"The placeholder image that will be used as a FullWidth Featured On Home page"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Home Feature Thumbstrip setting "
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Upload First Thumb Image"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid ""
+"The placeholder image that will be used below the FullWidth Feature as "
+"featured Thumb"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Upload Second Thumb Image"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Upload Third Thumb Image"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Home Page Tegline "
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Tagline Title"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Tagline title"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Tagline Content"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Home page Four Services Section "
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "First Service Title"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Upload First Service Image"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "The placeholder image that will be used as a Service Image on Home Page"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "First Service Content"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Second Service Title"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Upload Second Service Image"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Second Service Content"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Enter service content"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Third Service Title"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Enter service title"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Upload Third Service Image"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Third Service Content"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Fourth Service Title"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Fourth Service Content"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Entert servce content"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Home page  Products Section "
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Product Heading Title"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Product Heading Content"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "First Product Title"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Upload First Product Image"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "The placeholder image that will be used as Product Image on home page"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Second Product Title"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Upload Second Product Image"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Third Product Title"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Upload Third Product Image"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Fourth Product Title"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Upload Fourth Product Image"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Fifth Product Title"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Upload Fifth Product Image"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Tagline Settings"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1 ../option_pannel/spa_typography.php:1
+msgid "px"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Product Heading Settings"
+msgstr ""
+
+#: ../option_pannel/spa_home.php:1
+msgid "Select product heading setting"
+msgstr ""
+
+#: ../option_pannel/spa_options_pannel.php:8
+msgid "Upgrade to Spasalon Pro!"
+msgstr ""
+
+#: ../option_pannel/spa_options_pannel.php:45
+msgid "Customize theme with intutive option panel."
+msgstr ""
+
+#: ../option_pannel/spa_options_pannel.php:54
+msgid "Translate the theme into your own language."
+msgstr ""
+
+#: ../option_pannel/spa_options_pannel.php:63
+msgid "Customize the Home Page by adding you own Images and Text."
+msgstr ""
+
+#: ../option_pannel/spa_options_pannel.php:71
+msgid "Showcase your most important services with the Home Page Slider."
+msgstr ""
+
+#: ../option_pannel/spa_options_pannel.php:79
+msgid "Number of Page Templates which come with the Theme"
+msgstr ""
+
+#: ../option_pannel/spa_options_pannel.php:88
+msgid "Showcase the team behind your business with About Us Template."
+msgstr ""
+
+#: ../option_pannel/spa_options_pannel.php:97
+msgid ""
+"Showcase different services which your business offers.It is available in "
+"single column and two column layout"
+msgstr ""
+
+#: ../option_pannel/spa_options_pannel.php:106
+msgid "Showcase different products which you offer."
+msgstr ""
+
+#: ../option_pannel/spa_options_pannel.php:118
+msgid "Customize the sidebar with the included widgets"
+msgstr ""
+
+#: ../option_pannel/spa_options_pannel.php:126
+msgid "Get our fast and friendly support."
+msgstr ""
+
+#: ../option_pannel/spa_options_pannel.php:157
+msgid "General"
+msgstr ""
+
+#: ../option_pannel/spa_options_pannel.php:158
+#: ../option_pannel/spa_options_pannel.php:183
+msgid "Typography"
+msgstr ""
+
+#: ../option_pannel/spa_options_pannel.php:159
+#: ../option_pannel/spa_options_pannel.php:187
+msgid "Footer Custmization"
+msgstr ""
+
+#: ../option_pannel/spa_options_pannel.php:160
+#: ../option_pannel/spa_options_pannel.php:191
+msgid "Contact Page Settings"
+msgstr ""
+
+#: ../option_pannel/spa_options_pannel.php:161
+msgid "Help & Support"
+msgstr ""
+
+#: ../option_pannel/spa_options_pannel.php:165
+msgid "This theme recommends the following plugin: "
+msgstr ""
+
+#: ../option_pannel/spa_options_pannel.php:165
+msgid "appointment calendar"
+msgstr ""
+
+#: ../option_pannel/spa_options_pannel.php:178
+msgid "General Settings"
+msgstr ""
+
+#: ../option_pannel/spa_options_pannel.php:195
+msgid "Help and Support"
+msgstr ""
+
+#: ../option_pannel/spa_typography.php:1
+msgid "Style Menus"
+msgstr ""
+
+#: ../option_pannel/spa_typography.php:1
+msgid "Post Title"
+msgstr ""
+
+#: ../option_pannel/spa_typography.php:1
+msgid "Post Excerpt"
+msgstr ""
+
+#: ../option_pannel/spa_typography.php:1
+msgid "Post Meta"
+msgstr ""
+
+#: ../option_pannel/spa_typography.php:1
+msgid "Sidebar Widgte Title"
+msgstr ""

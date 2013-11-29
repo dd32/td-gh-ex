@@ -1,13 +1,12 @@
 <?php
-/**
-	Template Name: Featured Home
-*/
-if ( 'posts' == get_option( 'show_on_front' ) ) {
-    include( get_home_template() );
-} else {
-    // Custom content markup goes here
+$is_front_page = get_option('spa_theme_options');
 
- get_header(); $current_options=get_option('spa_theme_options');
+if ( 'posts' == get_option( 'show_on_front') && $is_front_page['front_page'] != 'yes' ) {
+get_template_part('index');
+}
+else { 
+get_header(); 
+$current_options=get_option('spa_theme_options');
 get_template_part('index', 'slider') ;
 ?>
 <div class="container">	  

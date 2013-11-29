@@ -368,7 +368,7 @@ added by akhlesh  */
 	 .flexslider .slides img {
     width: 100%;
     display: block;
-	height:100%;
+	height:auto;
 }  /*  added by akhlesh */
 }
 
@@ -376,7 +376,7 @@ added by akhlesh  */
   .flexslider .slides img {
     width: 100%;
     display: block;
-	height:100%;
+	height:auto;
 }  /*  added by akhlesh */
 
    #container {

@@ -94,5 +94,4 @@ function spa_new_excerpt_length($length) {
     return 40;
 }
 add_filter('excerpt_length', 'spa_new_excerpt_length');
-
 ?>

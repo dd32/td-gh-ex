@@ -1,6 +1,6 @@
- <!-- Footer  --> 
- <?php $current_options=get_option('spa_theme_options'); 
- 
+<?php $current_options=get_option('spa_theme_options'); 
+   if($current_options['spa_custom_css']!='')
+			{ echo "<style type='text/css'>".$current_options['spa_custom_css']."</style>"; }
 
   if(is_home()){ } 
   
@@ -9,11 +9,6 @@
 <div class="footer-blank">
 </div>
 <?php }?>
-
-
-
-
-
 
 <!------End of Footer Spacer Div---->
 <!-- Footer -->
@@ -50,8 +45,3 @@
 <?php wp_footer();?>
 </body>
 </html>
- 
- 
- 
- 
- 

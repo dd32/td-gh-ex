@@ -1,7 +1,5 @@
- <?php $service_data=get_option('spa_theme_options');
-    // print_r($service_data);
- ?> 
-  <div class="container">	  
+<?php $service_data=get_option('spa_theme_options');?> 
+<div class="container">	  
       <div class="row">
           
         <div class="span3">
@@ -80,8 +78,5 @@
    <!-- close of spa services section -->
    <div class="spacer">
     </div>
- 
-
-		  
 </div>	
 </div>		   

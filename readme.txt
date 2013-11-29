@@ -4,7 +4,7 @@ Beautifully designed WordPress theme  that supports Custom Menu's , Primary Side
 It has a pixel perfect design that's great for any beauty salon, health related websites who wants a new look for their site. Three page templates Blog, Full Widht Page and Contact Page. 
 
 Spasalon has very creatively designed home page.
-Author: Priyanshu Mittal, Shahid Mansuri, Vibhore Purandey and Akhilesh Nagar.
+Author: Priyanshu Mittal, Shahid Mansuri, Vibhor Purandare and Akhilesh Nagar.
 
 
 The CSS, XHTML and design is released under GPL:
@@ -57,6 +57,11 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
+@version1.2.6
+1.)IE 8+ Competible
+2.)Removd WhiteSpaces
+3.)Option Panel JS enabled.
+4.)Custom Css Box Added. 
 @veriosn 1.2.5
 1.Small Changes fixed.
 @veriosn 1.2.4

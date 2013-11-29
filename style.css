@@ -1,16 +1,15 @@
- /*!
+/*!
 * Theme Name: Spasalon
 * Description: A responsive theme for SPA SALON and BEAUTY SALON type of business that uses multiple nav menus, right-sidebar,Featured Slider and Beautifully designed home page all manage via option panel.
 It has a pixel-perfect design that is great for any health care ,salons , spas etc related services who wants a new look for their site.
-* Version: 1.2.5
+* Version: 1.2.6
 * Author: priyanshu.mittal,vibhorp,harimaliya
 * Author URI: http://www.webriti.com
 * Tags: pink, white, full-width-template, threaded-comments, right-sidebar, one-column, two-columns, fixed-width, custom-menu, sticky-post, theme-options, translation-ready
 * License: GNU General Public License v3.0
 * License URI: http://www.gnu.org/licenses/gpl-3.0.html
-*
 * Copyright (c) 2013 webriti. All rights reserved.
-* Theme URI: http://webriti.com/demo/wp/spasalon/
+* Theme URI: http://www.webriti.com/index.php/spasalon/
 */
 
 
@@ -59,8 +58,8 @@ margin-top:15px; width:auto; margin-left:25px;
 }
 .home_service_img{
 	display: block;
-/* 	height: 240px; */
-    height:157px;
+/* 	height: 240px; Heght auto for reponsive issue got in support forum;*/
+    height:auto;
 	width:100%;
 	margin-bottom: 25px;
 }
@@ -136,7 +135,18 @@ margin-top:15px; width:auto; margin-left:25px;
 }
 
 /* Products Thumbnail css here for Home Page----------------------------------------------------------------------------------Shahid */
-
+#slidedescription{margin-top:15px;width:auto;margin-left:20px;}
+#pink_strip{margin-top:20px;margin-left:5px; width:auto;}
+#banner_desc{margin-top:20px;}
+#post_single{margin: 0px;}
+#product_slide{padding:0px;}
+#slide_desc{margin-top:20px;}
+.slide_content{height:auto;position:relative;}
+#comment {color: #f22853; font-family:roboto;font-size:14px;} 
+#spa_form{margin-left:0px;}
+#spa_address_area{margin-top: 10px margin-left:0px;}
+#menu_position{position: static;}
+#spa_search_form_btn{float: right;}
 .home_products_bg{
 	background: #ffffff;
 }
@@ -165,6 +175,7 @@ margin-top:15px; width:auto; margin-left:25px;
 	font-size: 13px;
 	padding: 5px 20px 0;
 }
+
 /* Pinkstrip Container Css -----------------------------------------------------------------------------------------------------*/
 
 
@@ -242,13 +253,7 @@ margin-top:15px; width:auto; margin-left:25px;
 	padding: 0px;
 }
 
-
-
-
-
-
-   
- }   
+}   
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px)  { 
 
@@ -738,7 +743,7 @@ border-bottom: 1px solid #EAE7E4;
     border-top: 1px solid #E9E9E9;
     margin-bottom: 0px;
     padding-bottom: 0px;
-    padding-top: 31px;
+    padding-top: 31px;margin-left:0px;
 }
 
 .contact-add{
@@ -1892,7 +1897,7 @@ ul.redarrow, ul.arrow, ul.upper {
     color: #FFFFFF;
     cursor: pointer;
 }
-.pagi ul > li > a:hover, .pagi ul > li > a:focus, .pagi ul > .active > a, .pagi ul > .active > span {
+.pagi ul > li > a:hover, .pagi ul > li > a.active, .pagi ul > li > a:focus, .pagi ul > .active > a, .pagi ul > .active > span {
     background-color: #EE395F;
 	color: #ffffff;
 }
@@ -2443,8 +2448,8 @@ blockquote.nu p {
 	position: absolute;
 	left: 0px;
 	right: 0px;
-/* 	top: 473px; */
-	top: 626px;
+
+	bottom: 0em;
 	z-index: 1; 
     overflow: hidden; 
 	margin:0px auto;
@@ -2521,7 +2526,7 @@ blockquote.nu p {
 @media (min-width: 1025px) and (max-width: 1152px) { 
 
 .slider-thumb-container{
-top: 627.6px;
+bottom: 0em;
 }
 
 
