@@ -157,7 +157,7 @@
 				<a href="#spasalon-option-general"  class="nav-tab"  id="spasalon-option-general-tab"><?php _e("General",'sis_spa') ; ?></a>
 				<a href="#spasalon-option-typography" class="nav-tab" id="spasalon-option-typography-tab"><?php _e("Typography",'sis_spa') ; ?></a>
 				<a href="#spasalon-option-footercustmization" class="nav-tab" id="spasalon-option-footercustmization-tab"><?php _e("Footer Custmization",'sis_spa') ; ?></a>
-                <a href="#spasalon-option-contactsettings" class="nav-tab" id="spasalon-option-contactsettings-tab"><?php _e("Contact Page Settings",'sis_spa') ; ?></a>
+                
 				<a href="#spasalon-help" class="nav-tab" id="spasalon-help-tab"><?php _e("Help & Support",'sis_spa') ; ?></a>
 			</h2>
 			<div class="updated" > 
@@ -187,10 +187,7 @@
 							<h3><?php _e("Footer Custmization",'sis_spa') ; ?></h3><br>
 							<?php require_once('spa_footer_customization.php')?>
 						</div>
-						<div class="postbox group" style="width:962px;display: none; background:white" id="spasalon-option-contactsettings"  >
-							<h3><?php _e("Contact Page Settings",'sis_spa') ; ?></h3><br>
-							<?php require_once('spa_contact_page.php')?>
-						</div>
+						
                         <div class="postbox group" style="width:962px;display: none; background:white" id="spasalon-help"  >
 							<h3><?php _e("Help and Support",'sis_spa') ; ?></h3><br>
 							<?php require_once('help.php')?>
