@@ -48,6 +48,16 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 1.8.1 =
+* Currupt File Issue
+
+= Version: 1.8.0 =
+* Add import old options support
+* Fix issue with mobile slider
+* Fix issue with portfolio type not working on home layout
+* Add option for more portfolio items in carousel
+* Add default setting for metaboxes
+
 = Version: 1.7.8 =
 * Add text domain for "by"
 * Fix for Subversion

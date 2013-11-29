@@ -1,6 +1,6 @@
 			<?php  global $virtue; ?>
-			<?php if(isset($virtue['mobile_slider'])) { 
-				$mobile_slider = $virtue['mobile_slider'];
+			<?php if(isset($virtue['mobile_switch'])) { 
+				$mobile_slider = $virtue['mobile_switch'];
 			} else {
 				$mobile_slider = '';
 			}

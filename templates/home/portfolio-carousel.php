@@ -1,15 +1,15 @@
 
 <div class="home-portfolio home-margin carousel_outerrim home-padding">
-		<?php global $virtue; if(isset($virtue['portfolio_title'])) {$porttitle = $virtue['portfolio_title'];} else { $porttitle = __('Featured Projects', 'virtue'); } ?>
+		<?php global $virtue; if(isset($virtue['portfolio_title'])) {$porttitle = $virtue['portfolio_title'];} else { $porttitle = __('Featured Projects', 'virtue'); }
+		if(!empty($virtue['home_portfolio_carousel_count'])) {$hp_pcount = $virtue['home_portfolio_carousel_count'];} else {$hp_pcount = '6';} ?>
 		<div class="clearfix"><h3 class="hometitle"><?php echo $porttitle; ?></h3></div>
 		<?php  if(!empty($virtue['portfolio_type'])) {
-							$port_cat = get_term_by ('id',$virtue_premium['portfolio_type'],'portfolio-type');
+							$port_cat = get_term_by ('id',$virtue['portfolio_type'],'portfolio-type');
 							$portfolio_category = $port_cat -> slug;
 						} else {
 							$portfolio_category = '';
 						}
-				if(isset($virtue['porfolio_show_type'])) {$portfolio_item_types = $virtue['porfolio_show_type'];} else {$portfolio_item_types = '';}
-					if($portfolio_category == "All") {$portfolio_category = '';}
+				if(isset($virtue['portfolio_show_type'])) {$portfolio_item_types = $virtue['portfolio_show_type'];} else {$portfolio_item_types = '';}
 					   		if(kadence_display_sidebar()) {
 					   		 	$columnnum = 's-twocolumn'; $slidewidth = 365; $slideheight = 365;
 					   		 }else {
@@ -28,7 +28,7 @@
 					'order' => 'ASC',
 					'post_type' => 'portfolio',
 					'portfolio-type'=>$portfolio_category,
-					'posts_per_page' => '6'));
+					'posts_per_page' => $hp_pcount));
 					$count =0;
 					?>
 					<?php if ( $wp_query ) : 

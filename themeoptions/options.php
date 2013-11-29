@@ -26,7 +26,294 @@ $alt_stylesheet_path = LAYOUT_PATH;
 // For use with a tab example below
 $tabs = array();
 
-ob_start();
+    ob_start();
+
+?>
+<div id="" class="">
+       
+        <h4><?php echo __('Copy and Paste this code into the theme options import feature', 'virtue');?></h4>
+     <?php $thenewoptions = get_option('virtue');
+     if(!empty($thenewoptions['import_old']) && $thenewoptions['import_old'] == 1) {
+        if(!empty($thenewoptions['old_options_child'])) {
+            $locateoldoptions = 'theme_mods_'.$thenewoptions['old_options_child'];
+        } else {
+            $locateoldoptions = 'theme_mods_virtue';
+        }
+     $old_options = get_option($locateoldoptions); if(!empty($old_options)) {
+     if(isset($old_options['introduction'])) {unset($old_options['introduction']);}
+     if(isset($old_options['0'])) {unset($old_options['0']);}
+     if(isset($old_options['info_blog_settings'])) {unset($old_options['info_blog_settings']);}
+     if(isset($old_options['info_portfolio_settings'])) {unset($old_options['info_portfolio_settings']);}
+     if(isset($old_options['info_shop_settings'])) {unset($old_options['info_shop_settings']);}
+     if(isset($old_options['info_main_backgroun'])) {unset($old_options['info_main_backgroun']);}
+     if(isset($old_options['info_topbar_background'])) {unset($old_options['info_topbar_background']);}
+     if(isset($old_options['info_header_background'])) {unset($old_options['info_header_background']);}
+     if(isset($old_options['info_menu_background'])) {unset($old_options['info_menu_background']);}
+     if(isset($old_options['info_feature_background'])) {unset($old_options['info_feature_background']);}
+     if(isset($old_options['info_footer_background'])) {unset($old_options['info_footer_background']);}
+     if(isset($old_options['info_body_background'])) {unset($old_options['info_body_background']);}
+     if(isset($old_options['Info_header_Font'])) {unset($old_options['Info_header_Font']);}
+     if(isset($old_options['smof_init'])) {unset($old_options['smof_init']);}
+     if(isset($old_options['Info_Menu_mobile_Font'])) {unset($old_options['Info_Menu_mobile_Font']);}
+     if(isset($old_options['info_basic_styling'])) {unset($old_options['info_basic_styling']);}
+     if(isset($old_options['info_language'])) {unset($old_options['info_language']);}
+     if(isset($old_options['info_breadcrumbs'])) {unset($old_options['info_breadcrumbs']);}
+     if(isset($old_options['info_product_best_settings'])) {unset($old_options['info_product_best_settings']);}
+     if(isset($old_options['Info_home_slider'])) {unset($old_options['Info_home_slider']);}
+     if(isset($old_options['info_topbar_settings'])) {unset($old_options['info_topbar_settings']);}
+     if(isset($old_options['info_product_settings'])) {unset($old_options['info_product_settings']);}
+     if(isset($old_options['info_sidebars'])) {unset($old_options['info_sidebars']);}
+     if(isset($old_options['info_mobile_slider'])) {unset($old_options['info_mobile_slider']);}
+     if(isset($old_options['info_iconmenu_settings'])) {unset($old_options['info_iconmenu_settings']);}
+     if(isset($old_options['info_product_feat_settings'])) {unset($old_options['info_product_feat_settings']);}
+     if(isset($old_options['info_product_sale_settings'])) {unset($old_options['info_product_sale_settings']);}
+     if(isset($old_options['info_portfolio_full_settings'])) {unset($old_options['info_portfolio_full_settings']);}
+     if(isset($old_options['info_page_content'])) {unset($old_options['info_page_content']);}
+     if(isset($old_options['info_mobile_background'])) {unset($old_options['info_mobile_background']);}
+     if(isset($old_options['Info_Menu_primary_Font'])) {unset($old_options['Info_Menu_primary_Font']);}
+     if(isset($old_options['Info_body_Font'])) {unset($old_options['Info_body_Font']);}
+     if(isset($old_options['Info_Menu_Font'])) {unset($old_options['Info_Menu_Font']);}
+     if(isset($old_options['Info_Menu_Secondary_Font'])) {unset($old_options['Info_Menu_Secondary_Font']);}
+     if(isset($old_options['info_portfolio_grid'])) {unset($old_options['info_portfolio_grid']);}
+     if(isset($old_options['info_custom_carousel_settings'])) {unset($old_options['info_custom_carousel_settings']);}
+     if(isset($old_options['sidebars_widgets'])) {unset($old_options['sidebars_widgets']);}
+     if(isset($old_options['font_logo_style']['size'])) {
+            $old_options['font_logo_style']['font-size'] = $old_options['font_logo_style']['size'];
+            unset($old_options['font_logo_style']['size']);
+        }
+        if(isset($old_options['font_logo_style']['height'])) {
+            $old_options['font_logo_style']['line-height'] = $old_options['font_logo_style']['height'];
+            unset($old_options['font_logo_style']['height']);
+        }
+        if(isset($old_options['font_logo_style']['style'])) {unset($old_options['font_logo_style']['style']);}
+        if(isset($old_options['font_logo'])) {
+            $old_options['font_logo_style']['font-family'] = $old_options['font_logo'];
+            unset($old_options['font_logo']);
+        }
+        // tagline font
+        if(isset($old_options['font_tagline_style']['size'])) {
+            $old_options['font_tagline_style']['font-size'] = $old_options['font_tagline_style']['size'];
+            unset($old_options['font_tagline_style']['size']);
+        }
+        if(isset($old_options['font_tagline_style']['height'])) {
+            $old_options['font_tagline_style']['line-height'] = $old_options['font_tagline_style']['height'];
+            unset($old_options['font_tagline_style']['height']);
+        }
+      if(isset($old_options['font_tagline_style']['style'])) {
+          unset($old_options['font_tagline_style']['style']);
+      }
+        if(isset($old_options['font_tagline'])) {
+            $old_options['font_tagline_style']['font-family'] = $old_options['font_tagline'];
+            unset($old_options['font_tagline']);
+        }
+        // H1 font
+        if(isset($old_options['font_h1']['size'])) {
+            $old_options['font_h1']['font-size'] = $old_options['font_h1']['size'];
+            unset($old_options['font_h1']['size']);
+        }
+        if(isset($old_options['font_h1']['height'])) {
+            $old_options['font_h1']['line-height'] = $old_options['font_h1']['height'];
+            unset($old_options['font_h1']['height']);
+        }
+        if(isset($old_options['font_h1']['style'])) {
+          unset($old_options['font_h1']['style']);
+      }
+        if(isset($old_options['font_header'])) {
+            $old_options['font_h1']['font-family'] = $old_options['font_header'];
+            $old_options['font_h2']['font-family'] = $old_options['font_header'];
+            $old_options['font_h3']['font-family'] = $old_options['font_header'];
+            $old_options['font_h4']['font-family'] = $old_options['font_header'];
+            $old_options['font_h5']['font-family'] = $old_options['font_header'];
+            unset($old_options['font_header']);
+        }
+        // H2 font
+        if(isset($old_options['font_h2']['size'])) {
+            $old_options['font_h2']['font-size'] = $old_options['font_h2']['size'];
+        }
+        if(isset($old_options['font_h2']['height'])) {
+            $old_options['font_h2']['line-height'] = $old_options['font_h2']['height'];
+        }
+        if(isset($old_options['font_h2']['style'])) {
+         unset($old_options['font_h2']['style']);
+        }
+        // H3 font
+        if(isset($old_options['font_h3']['size'])) {
+            $old_options['font_h3']['font-size'] = $old_options['font_h3']['size'];
+            unset($old_options['font_h3']['size']);
+        }
+        if(isset($old_options['font_h3']['height'])) {
+            $old_options['font_h3']['line-height'] = $old_options['font_h3']['height'];
+            unset($old_options['font_h3']['height']);
+        }
+        if(isset($old_options['font_h3']['style'])) {
+        unset($old_options['font_h3']['style']);
+        }
+        // H4 font
+        if(isset($old_options['font_h4']['size'])) {
+            $old_options['font_h4']['font-size'] = $old_options['font_h4']['size'];
+            unset($old_options['font_h4']['size']);
+        }
+        if(isset($old_options['font_h4']['height'])) {
+            $old_options['font_h4']['line-height'] = $old_options['font_h4']['height'];
+            unset($old_options['font_h4']['height']);
+        }
+        if(isset($old_options['font_h4']['style'])) {
+          unset($old_options['font_h4']['style']);
+        }
+        // H5 font
+        if(isset($old_options['font_h5']['size'])) {
+            $old_options['font_h5']['font-size'] = $old_options['font_h5']['size'];
+            unset($old_options['font_h5']['size']);
+        }
+        if(isset($old_options['font_h5']['height'])) {
+            $old_options['font_h5']['line-height'] = $old_options['font_h5']['height'];
+            unset($old_options['font_h5']['height']);
+        }
+        if(isset($old_options['font_h5']['style'])) {
+          unset($old_options['font_h5']['style']);
+        }
+        // Body font
+        if(isset($old_options['font_p']['size'])) {
+            $old_options['font_p']['font-size'] = $old_options['font_p']['size'];
+            unset($old_options['font_p']['size']);
+        }
+        if(isset($old_options['font_p']['height'])) {
+            $old_options['font_p']['line-height'] = $old_options['font_p']['height'];
+            unset($old_options['font_p']['height']);
+        }
+        if(isset($old_options['font_p']['style'])) {
+          unset($old_options['font_p']['style']);
+        }
+        if(isset($old_options['font_body'])) {
+          $old_options['font_p']['font-family'] = $old_options['font_body'];
+          unset($old_options['font_body']);
+        }
+        // Menu font
+        if(isset($old_options['font_primary_menu']['size'])) {
+            $old_options['font_primary_menu']['font-size'] = $old_options['font_primary_menu']['size'];
+            unset($old_options['font_primary_menu']['size']);
+        }
+        if(isset($old_options['font_primary_menu']['height'])) {
+            $old_options['font_primary_menu']['line-height'] = $old_options['font_primary_menu']['height'];
+            unset($old_options['font_primary_menu']['height']);
+        }
+        if(isset($old_options['font_primary_menu']['style'])) { unset($old_options['font_primary_menu']['style']); }
+        if(isset($old_options['font_menu'])) {
+            $old_options['font_primary_menu']['font-family'] = $old_options['font_menu'];
+            $old_options['font_secondary_menu']['font-family'] = $old_options['font_menu'];
+             $old_options['font_mobile_menu']['font-family'] = $old_options['font_menu'];
+            unset($old_options['font_menu']);
+        }
+        // Secondary Menu font
+        if(isset($old_options['font_secondary_menu']['size'])) {
+            $old_options['font_secondary_menu']['font-size'] = $old_options['font_secondary_menu']['size'];
+            unset($old_options['font_secondary_menu']['size']);
+        }
+        if(isset($old_options['font_secondary_menu']['height'])) {
+            $old_options['font_secondary_menu']['line-height'] = $old_options['font_secondary_menu']['height'];
+            unset($old_options['font_secondary_menu']['height']);
+        }
+        if(isset($old_options['font_secondary_menu']['style'])) { unset($old_options['font_secondary_menu']['style']); }
+        // Mobile Menu font
+        if(isset($old_options['font_mobile_menu']['size'])) {
+            $old_options['font_mobile_menu']['font-size'] = $old_options['font_mobile_menu']['size'];
+            unset($old_options['font_mobile_menu']['size']);
+        }
+        if(isset($old_options['font_mobile_menu']['height'])) {
+            $old_options['font_mobile_menu']['line-height'] = $old_options['font_mobile_menu']['height'];
+            unset($old_options['font_mobile_menu']['height']);
+        }
+        if(isset($old_options['font_mobile_menu']['style'])) {
+          $old_options['font_mobile_menu']['font-style'] = $old_options['font_mobile_menu']['style'];
+          unset($old_options['font_mobile_menu']['style']);
+        }
+        // IMAGES 
+        // Logo upload
+        $site_url = get_site_url();
+        if(isset($old_options['logo_upload'])) {
+            $old_options['x1_virtue_logo_upload']['url'] = str_replace('[site_url]', $site_url, $old_options['logo_upload']);
+            unset($old_options['logo_upload']);
+
+        }
+        if(isset($old_options['x2logo_upload'])) {
+            $old_options['x2_virtue_logo_upload']['url'] = str_replace('[site_url]', $site_url, $old_options['x2logo_upload']);
+            unset($old_options['x2logo_upload']);
+        }
+        //banner
+        if(isset($old_options['banner_upload'])) {
+            $old_options['virtue_banner_upload']['url'] = str_replace('[site_url]', $site_url, $old_options['banner_upload']);
+            unset($old_options['banner_upload']);
+        }
+        //content bg
+        if(isset($old_options['content_bg_img'])) {
+            $old_options['bg_content_bg_img']['url'] = str_replace('[site_url]', $site_url, $old_options['content_bg_img']);
+            unset($old_options['content_bg_img']);
+        }
+        //header bg
+        if(isset($old_options['header_bg_img'])) {
+            $old_options['bg_header_bg_img']['url'] = str_replace('[site_url]', $site_url, $old_options['header_bg_img']);
+            unset($old_options['header_bg_img']);
+        }
+        //topbar bg
+        if(isset($old_options['topbar_bg_img'])) {
+            $old_options['bg_topbar_bg_img']['url'] = str_replace('[site_url]', $site_url, $old_options['topbar_bg_img']);
+            unset($old_options['topbar_bg_img']);
+        }
+        //menu bg
+        if(isset($old_options['menu_bg_img'])) {
+            $old_options['bg_menu_bg_img']['url'] = str_replace('[site_url]', $site_url, $old_options['menu_bg_img']);
+            unset($old_options['menu_bg_img']);
+        }
+        //mobile bg
+        if(isset($old_options['mobile_bg_img'])) {
+            $old_options['bg_mobile_bg_img']['url'] = str_replace('[site_url]', $site_url, $old_options['mobile_bg_img']);
+            unset($old_options['mobile_bg_img']);
+        }
+        //footer bg
+        if(isset($old_options['footer_bg_img'])) {
+            $old_options['bg_footer_bg_img']['url'] = str_replace('[site_url]', $site_url, $old_options['footer_bg_img']);
+            unset($old_options['footer_bg_img']);
+        }
+        //boxed bg
+        if(isset($old_options['boxed_bg_img'])) {
+            $old_options['bg_boxed_bg_img']['url'] = str_replace('[site_url]', $site_url, $old_options['boxed_bg_img']);
+            unset($old_options['boxed_bg_img']);
+        }
+        //custom_favicon
+        if(isset($old_options['custom_favicon'])) {
+            $old_options['virtue_custom_favicon']['url'] = str_replace('[site_url]', $site_url, $old_options['custom_favicon']);
+            unset($old_options['custom_favicon']);
+        }
+        // Sidebars
+        if(isset($old_options['c_sidebars'])) {
+            $sidebarlist = array();
+            $i = 1;
+            foreach ($old_options['c_sidebars'] as $sidebar) {
+                if(empty($sidebar['title'])) {$sidebar['title'] = 'sidebar'.$i;}
+                $sidebarlist[] = $sidebar['title'];
+                $i++; 
+            }
+            $old_options['cust_sidebars'] = $sidebarlist;
+            unset($old_options['c_sidebars']);
+        }
+        if(isset($old_options['backups'])) {
+            unset($old_options['backups']);
+        }
+        $old_options['redux-backup'] = '1';
+
+            ?>
+                <textarea class="large-text noUpdate" style="min-height:200px;"><?php print_r(json_encode( $old_options)); ?></textarea>
+                <?php } else {
+                    echo '<textarea>'.__('There are no previous options', 'virtue').'</textarea>';
+                }
+                }
+                ?>
+</div>
+
+<?php
+$item_info = ob_get_contents();
+    
+ob_end_clean();
 
 
 // BEGIN Sample Config
@@ -728,6 +1015,16 @@ $sections[] = array(
             'subtitle' => __('Leave blank to select all types', 'virtue'),
             'width' => 'width:60%',
             //'desc' => __('This is the description field, again good for additional info.', 'virtue'),
+            ),
+         array(
+            'id'=>'home_portfolio_carousel_count',
+            'type' => 'slider', 
+            'title' => __('Choose how many portfolio items are in carousel', 'virtue'),
+            //'desc'=> __('Note: does not work if images are smaller than max.', 'virtue'),
+            "default"       => "6",
+            "min"       => "4",
+            "step"      => "1",
+            "max"       => "12",
             ),
          array(
             'id'=>'portfolio_show_type',
@@ -1604,7 +1901,33 @@ $sections[] = array(
     ),
 );
 
-        
+$sections[] = array(
+        'icon' => 'icon-upload',
+        'icon_class' => 'icon-large',
+        'title' => __('Theme Update Import', 'virtue'),
+        'desc' => __('If updating from version 1.5.6 or earlier use this script to update your theme options.', 'virtue'),
+        'fields' => array(
+                array(
+                'id'=>'import_old',
+                'type' => 'switch', 
+                'title' => __('Turn on and save to start script', 'virtue'),
+                'subtitle' => '',
+                "default" => 0,
+                ),
+                array(
+                'id'=>'old_options_child',
+                'type' => 'text',
+                'title' => __('If using a child theme enter child theme folder', 'virtue'),
+                'subtitle' => '',
+                'default' => ''
+                ),
+               array(
+                'id'=>'raw_new_info',
+                'type' => 'raw',
+                'content' => $item_info,
+                )
+            ),   
+        );
 $tabs = array();
 
 
