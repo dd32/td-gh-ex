@@ -1,9 +1,4 @@
 
-<div id="top-bar">Let's get ready for Christmas! Visit fimply.de on November 29th and check out our great Black Friday Sale!</div>
-
-
-
-
 <div id="blogtitle">Fimply</div>
 <div id="blogdescription">Here you can find other themes from us.</div>
 
@@ -11,7 +6,7 @@
 <div id="theme">
 <img class="screenshot" src="http://fimply.de/dl/e-mail-screen.png" width="600">
 <div id="name">elegantWhite Pro</div>
-<div id="info">elegantWhite Pro is the Pro-version of our famous WordPress theme elegantWhite. It comes with a lot of great new features like drop-down menus, custom color schemes or layout options. It's one of the cheapest and best WordPress themes on the planet! Get it now for just 7.99$!
+<div id="info">elegantWhite Pro is the Pro-version of our famous WordPress theme elegantWhite. It comes with a lot of great new features like drop-down menus, custom color schemes or layout options. It's one of the cheapest and best WordPress themes on the planet! Get it now for just 9.99$!
 
 <p><a href="http://fimply.de/elegantwhitepro" target="_blank">Go to the Fimply Store</a></p></div>
 
