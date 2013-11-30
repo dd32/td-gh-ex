@@ -126,22 +126,24 @@ jQuery(document).ready(function($) {
 	
 		//remove other elements crested in <head>
 		$('.' + _linkclass).remove();
-		//replace spaces with "+" sign
-		var the_font = family.replace(/\s+/g, '+');
-		if (google) {
-			//add reference to google font family
-			var link = 'http://fonts.googleapis.com/css?family=' + the_font;
-			if (style) {
-				link += ':' + style.replace(/\-/g, " ");
-			}
-			if (script) {
-				link += '&subset=' + script;
-			}
-			$('head').append('<link href="' + link + '" rel="stylesheet" type="text/css" class="' + _linkclass + '">');
-			$('#' + mainID + ' .redux-typography-google').val(true);
-		} else {
-			$('#' + mainID + ' .redux-typography-google').val(false);
-		}
+                if (family !== null) {
+                        //replace spaces with "+" sign
+                        var the_font = family.replace(/\s+/g, '+');
+                        if (google) {
+                                //add reference to google font family
+                                var link = 'http://fonts.googleapis.com/css?family=' + the_font;
+                                if (style) {
+                                        link += ':' + style.replace(/\-/g, " ");
+                                }
+                                if (script) {
+                                        link += '&subset=' + script;
+                                }
+                                $('head').append('<link href="' + link + '" rel="stylesheet" type="text/css" class="' + _linkclass + '">');
+                                $('#' + mainID + ' .redux-typography-google').val(true);
+                        } else {
+                                $('#' + mainID + ' .redux-typography-google').val(false);
+                        }
+                }
 		$('#' + mainID + ' .typography-preview').css('font-size', size + units);
 		$('#' + mainID + ' .typography-preview').css('font-style', "normal");
 		
