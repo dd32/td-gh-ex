@@ -23,9 +23,23 @@ function custom_theme_options() {
           'id'        => 'general_help',
           'title'     => 'Documentation',
           'content'   => '
-			<p>First, a friendly warning: Please remember that the "Reset Options" button resets <strong>ALL</strong> options. That means, if you reset your styling options, all your custom sidebars and other settings will be reset as well.</p>
-			<p><i>Frequently Asked Questions:</i></p>
-			<p><strong>Q: Styling options do not work, why?</strong> &mdash; A: Make sure that the dynamic.css file has server permissions set to chmod 0777, so that it is writable. You may also need to empty cache.</p>
+			<h1>Hueman</h1>
+			<p>Thanks for using this theme! First, a friendly warning: Please remember that the "Reset Options" button resets <strong>ALL</strong> options. That means, if you reset your styling options, all your custom sidebars and other settings will be reset as well.</p>
+			<h3>Frequently Asked Questions</h3>
+			<p><i>Q: My old thumbnails have different sizes, why?</i> &mdash; A: Thumbnails uploaded before changing theme will not be automatically re-cropped. To fix this, you need to run the <a target="_blank" href="http://wordpress.org/plugins/regenerate-thumbnails/">Regenerate Thumbnails</a> plugin once.</p>
+			<p><i>Q: I did not use featured images before and have many posts, what do I do?</i> &mdash; A: Use the <a target="_blank" href="http://wordpress.org/plugins/easy-add-thumbnail/">Easy Add Thumbnail</a> plugin to automatically make the first image uploaded to each post a featured image.</p>
+			<p><i>Q: Why is my featured image not appearing on the single post page?</i> &mdash; A: You need to use the "Image" format option for it to show up, as not everyone wants to show the featured image at the top for the "Standard" post format.</p>
+			<p><i>Q: My gallery format post shows images twice, why?</i> &mdash; A: This is because you insert a standard gallery into the post itself. This is not needed, as the gallery format post will auto-display attached images in the slider above.</p>
+			<p><i>Q: How do I make the homepage slider auto-progress?</i> &mdash; A: In /inc/featured.php change <i>slideshow: false</i> to true.</p>
+			<h3>Dynamic Styles</h3>
+			<p>The dynamic styles will be added directly to the head of your theme. This is according to WordPress best practices, but if you do not want it printed out there, simply inspect the code of your page with the styling options set. Copy the CSS from head into your custom.css file, and disable dynamic styling.</p>
+			<h3>Before Theme Updates</h3>
+			<ol>
+				<li>Backup your custom.css file if you have used it, it will be overwritten and needs to be re-added after the update.</li>
+				<li>Backup your additional language files if you have created/modified any, they will be removed and needs to be re-added after the update.</li>
+				<li>Backup any other custom code.</li>
+			</ol>
+			<p>If you are using a <a target="_blank" href="http://codex.wordpress.org/Child_Themes">child theme</a>, this is not required.</p>
 		'
         )
       )
@@ -72,6 +86,20 @@ function custom_theme_options() {
 /* ------------------------------------ */
 	'settings'        => array(
 		
+		// General: Custom CSS
+		array(
+			'id'		=> 'custom',
+			'label'		=> 'Custom Stylesheet',
+			'desc'		=> 'Load your custom styles [ <strong>custom.css</strong> ]<br /><i>Note: You must backup this file before a theme update. Consider using a <a target="_blank" href="http://codex.wordpress.org/Child_Themes">child theme</a> instead</i>',
+			'type'		=> 'checkbox',
+			'section'	=> 'general',
+			'choices'	=> array(
+				array( 
+					'value' => '1',
+					'label' => 'Enable'
+				)
+			)
+		),
 		// General: Responsive Layout
 		array(
 			'id'		=> 'responsive',
@@ -83,20 +111,6 @@ function custom_theme_options() {
 				array( 
 					'value' => '1',
 					'label' => 'Disable'
-				)
-			)
-		),
-		// General: Custom CSS
-		array(
-			'id'		=> 'custom',
-			'label'		=> 'Custom Stylesheet',
-			'desc'		=> 'Load your custom styles [ <strong>custom.css</strong> ]',
-			'type'		=> 'checkbox',
-			'section'	=> 'general',
-			'choices'	=> array(
-				array( 
-					'value' => '1',
-					'label' => 'Enable'
 				)
 			)
 		),
@@ -921,6 +935,93 @@ function custom_theme_options() {
 				)
 			)
 		),
+		// Styling: Enable
+		array(
+			'id'		=> 'dynamic-styles',
+			'label'		=> 'Dynamic Styles',
+			'desc'		=> 'Turn styling options on and off',
+			'type'		=> 'checkbox',
+			'section'	=> 'styling',
+			'choices'	=> array(
+				array( 
+					'value' => '1',
+					'label' => 'Enable to use the options below'
+				)
+			)
+		),
+		// General: Boxed Layout
+		array(
+			'id'		=> 'boxed',
+			'label'		=> 'Boxed Layout',
+			'desc'		=> 'Use a boxed layout. Good for background images',
+			'type'		=> 'checkbox',
+			'section'	=> 'styling',
+			'choices'	=> array(
+				array( 
+					'value' => '1',
+					'label' => 'Enable'
+				)
+			)
+		),
+		// Styling: Font
+		array(
+			'id'		=> 'font',
+			'label'		=> 'Font',
+			'desc'		=> 'Select font for the theme',
+			'type'		=> 'select',
+			'std'		=> '30',
+			'section'	=> 'styling',
+			'choices'	=> array(
+				array( 
+					'value' => 'titillium-web',
+					'label' => 'Titillium Web, Latin (Self-hosted)'
+				),
+				array( 
+					'value' => 'titillium-web-ext',
+					'label' => 'Titillium Web, Latin-Ext (Google Fonts)'
+				),
+				array( 
+					'value' => 'droid-serif',
+					'label' => 'Droid Serif, Latin (Google Fonts)'
+				),
+				array( 
+					'value' => 'source-sans-pro',
+					'label' => 'Source Sans Pro, Latin-Ext (Google Fonts)'
+				),
+				array( 
+					'value' => 'lato',
+					'label' => 'Lato, Latin (Google Fonts)'
+				),
+				array( 
+					'value' => 'ubuntu',
+					'label' => 'Ubuntu, Latin-Ext (Google Fonts)'
+				),
+				array( 
+					'value' => 'roboto-condensed',
+					'label' => 'Roboto Condensed, Latin-Ext (Google Fonts)'
+				),
+				array( 
+					'value' => 'roboto-condensed-cyr',
+					'label' => 'Roboto Condensed, Latin / Cyrillic-Ext (Google Fonts)'
+				),
+				array( 
+					'value' => 'open-sans',
+					'label' => 'Open Sans, Latin-Ext (Google Fonts)'
+				),
+				array( 
+					'value' => 'open-sans-cyr',
+					'label' => 'Open Sans, Latin / Cyrillic-Ext (Google Fonts)'
+				),
+				array( 
+					'value' => 'arial',
+					'label' => 'Arial'
+				),
+				array( 
+					'value' => 'georgia',
+					'label' => 'Georgia'
+				)
+			)
+		),
 		// Styling: Container Width
 		array(
 			'id'			=> 'container-width',
@@ -1008,7 +1109,7 @@ function custom_theme_options() {
 			'std'			=> '60',
 			'type'			=> 'numeric-slider',
 			'section'		=> 'styling',
-			'min_max_step'	=> '40,120,1'
+			'min_max_step'	=> '40,200,1'
 		),
 		// Styling: Image Border Radius
 		array(
@@ -1027,110 +1128,6 @@ function custom_theme_options() {
 			'desc'		=> 'Set background color and/or upload your own background image',
 			'type'		=> 'background',
 			'section'	=> 'styling'
-		),
-		// Styling: CSS Output
-		array(
-			'id'		=> 'dynamic-output',
-			'label'		=> 'Dynamic CSS',
-			'desc'		=> 'This auto-generated CSS code is added to the [ <strong>dynamic.css</strong> ] file<br /><i>Warning: Do not remove, change or edit this code in any way. Just let it be :-)</i>',
-			'type'		=> 'css',
-			'section'	=> 'styling',
-			'rows'		=> '2',
-			'std'		=> '
-.container-inner { max-width: {{container-width}}px; }
-
-.sidebar .widget { padding-left: {{sidebar-padding}}px; padding-right: {{sidebar-padding}}px; padding-top: {{sidebar-padding}}px; }
-
-img { -webkit-border-radius: {{image-border-radius}}px; border-radius: {{image-border-radius}}px; }
-
-.site-title a img { max-height: {{logo-max-height}}px; }
-
-body { {{body-background}} }
-
-::selection { background-color: {{color-1}}; }
-::-moz-selection { background-color: {{color-1}}; }
-
-a,
-.themeform label .required,
-#flexslider-featured .flex-direction-nav .flex-next:hover,
-#flexslider-featured .flex-direction-nav .flex-prev:hover,
-.post-hover:hover .post-title a,
-.post-title a:hover,
-.s1 .post-nav li a:hover i,
-.content .post-nav li a:hover i,
-.post-related a:hover,
-.s1 .widget_rss ul li a,
-#footer .widget_rss ul li a,
-.s1 .widget_calendar a,
-#footer .widget_calendar a,
-.s1 .alx-tab .tab-item-category a,
-.s1 .alx-posts .post-item-category a,
-.s1 .alx-tab li:hover .tab-item-title a,
-.s1 .alx-tab li:hover .tab-item-comment a,
-.s1 .alx-posts li:hover .post-item-title a,
-#footer .alx-tab .tab-item-category a,
-#footer .alx-posts .post-item-category a,
-#footer .alx-tab li:hover .tab-item-title a,
-#footer .alx-tab li:hover .tab-item-comment a,
-#footer .alx-posts li:hover .post-item-title a,
-.comment-tabs li.active a,
-.comment-awaiting-moderation,
-.child-menu a:hover,
-.child-menu .current_page_item > a,
-.wp-pagenavi a { color: {{color-1}}; }
-
-.themeform input[type="submit"],
-.themeform button[type="submit"],
-.s1 .sidebar-top,
-.s1 .sidebar-toggle,
-#flexslider-featured .flex-control-nav li a.flex-active,
-.post-tags a:hover,
-.s1 .widget_calendar caption,
-#footer .widget_calendar caption,
-.author-bio .bio-avatar:after,
-.commentlist li.bypostauthor > .comment-body:after { background-color: {{color-1}}; }
-
-.post-format .format-container { border-color: {{color-1}}; }
-
-.s1 .alx-tabs-nav li.active a,
-#footer .alx-tabs-nav li.active a,
-.comment-tabs li.active a,
-.wp-pagenavi a:hover,
-.wp-pagenavi a:active,
-.wp-pagenavi span.current { border-bottom-color: {{color-1}}!important; }
-
-.s2 .post-nav li a:hover i,
-.s2 .widget_rss ul li a,
-.s2 .widget_calendar a,
-.s2 .alx-tab .tab-item-category a,
-.s2 .alx-posts .post-item-category a,
-.s2 .alx-tab li:hover .tab-item-title a,
-.s2 .alx-tab li:hover .tab-item-comment a,
-.s2 .alx-posts li:hover .post-item-title a { color: {{color-2}}; }
-
-.s2 .sidebar-top,
-.s2 .sidebar-toggle,
-.post-comments,
-.jp-play-bar,
-.jp-volume-bar-value,
-.s2 .widget_calendar caption { background-color: {{color-2}}; }
-
-.s2 .alx-tabs-nav li.active a { border-bottom-color: {{color-2}}; }
-.post-comments span:before { border-right-color: {{color-2}}; }
-
-.search-expand,
-#nav-topbar.nav-container { background-color: {{color-topbar}}; }
-@media only screen and (min-width: 720px) {
-	#nav-topbar .nav ul { background-color: {{color-topbar}}; }
-}
-
-#header { background-color: {{color-header}}; }
-@media only screen and (min-width: 720px) {
-	#nav-header .nav ul { background-color: {{color-header}}; }
-}
-
-#footer-bottom { background-color: {{color-footer}}; }
-'
 		)
 	)
 );

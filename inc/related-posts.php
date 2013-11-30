@@ -1,10 +1,11 @@
 <?php $related = alx_related_posts(); ?>
 
+<?php if ( $related->have_posts() ): ?>
+
 <h4 class="heading">
 	<i class="fa fa-hand-o-right"></i><?php _e('You may also like...','hueman'); ?>
 </h4>
 
-<?php if ( $related->have_posts() ): ?>
 <ul class="related-posts group">
 	
 	<?php while ( $related->have_posts() ) : $related->the_post(); ?>

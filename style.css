@@ -1,7 +1,7 @@
 /*
 Theme Name: Hueman
 Theme URI: http://alxmedia.se/themes/hueman/
-Version: 1.1.3
+Version: 1.1.4
 Description: <a href="http://alxmedia.se/themes/hueman/">Hueman</a> is a responsive 100% high resolution theme for blogs and magazines. Unique toggle sidebars results in a great reading experience for both tablet and mobile. The feature list is long: Unlimited topbar, header, footer and accent colors, unlimited widget areas, 0-2 sidebars to the left or right that can be uniquely specified for each page or post, 300px / 220px fixed width sidebars, 0-4 footer widget columns, almost zero layout images, related posts and post nav, featured story or slider, 10 post formats, good SEO, 3 flexible custom widgets, localisation support, social links, logo upload and many more useful admin panel features.
 Author: Alexander Agnarson
 Author URI: http://alxmedia.se
@@ -216,6 +216,13 @@ h1, h2, h3, h4, h5, h6 { color: #444; font-weight: 600; -ms-word-wrap: break-wor
 .main-inner { position: relative; min-height: 600px; /* instead of sticky footer */ }
 .pad { padding: 30px 30px 20px; }
 
+/* boxed */
+.boxed #wrapper { max-width: 1380px; margin: 0 auto;
+-webkit-box-shadow: 6px 0 0 rgba(0,0,0,0.04), -6px 0 0 rgba(0,0,0,0.04);
+box-shadow: 6px 0 0 rgba(0,0,0,0.04), -6px 0 0 rgba(0,0,0,0.04); }
+.boxed .container { padding: 0; }
+.boxed #page { background: #eaeaea; padding-bottom: 5px; }
+
 /*  base : layout columns
 /* ------------------------------------ */
 .col-1c .sidebar,
@@ -320,10 +327,10 @@ box-shadow: inset 0 -1px 0 rgba(255,255,255,0.1); }
 
 /*  common : fonts
 /* ------------------------------------ */
-body, input, textarea, button, select, label { font-family: "Titillium Web", Arial, sans-serif; }
+body, input, textarea, button, select, label { font-family: "Titillium", Arial, sans-serif; }
 
 @font-face {
-    font-family: 'Titillium Web';
+    font-family: 'Titillium';
     src: url('fonts/titillium-light-webfont.eot');
     src: url('fonts/titillium-light-webfont.svg#titillium-light-webfont') format('svg'),
          url('fonts/titillium-light-webfont.eot?#iefix') format('embedded-opentype'),
@@ -334,7 +341,7 @@ body, input, textarea, button, select, label { font-family: "Titillium Web", Ari
 }
 
 @font-face {
-    font-family: 'Titillium Web';
+    font-family: 'Titillium';
     src: url('fonts/titillium-lightitalic-webfont.eot');
     src: url('fonts/titillium-lightitalic-webfont.svg#titillium-lightitalic-webfont') format('svg'),
          url('fonts/titillium-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
@@ -345,7 +352,7 @@ body, input, textarea, button, select, label { font-family: "Titillium Web", Ari
 }
 
 @font-face {
-    font-family: 'Titillium Web';
+    font-family: 'Titillium';
     src: url('fonts/titillium-regular-webfont.eot');
     src: url('fonts/titillium-regular-webfont.svg#titillium-regular-webfont') format('svg'),
          url('fonts/titillium-regular-webfont.eot?#iefix') format('embedded-opentype'),
@@ -356,7 +363,7 @@ body, input, textarea, button, select, label { font-family: "Titillium Web", Ari
 }
 
 @font-face {
-    font-family: 'Titillium Web';
+    font-family: 'Titillium';
     src: url('fonts/titillium-regularitalic-webfont.eot');
     src: url('fonts/titillium-regularitalic-webfont.svg#titillium-regular-webfont') format('svg'),
          url('fonts/titillium-regularitalic-webfont.eot?#iefix') format('embedded-opentype'),
@@ -367,7 +374,7 @@ body, input, textarea, button, select, label { font-family: "Titillium Web", Ari
 }
 
 @font-face {
-    font-family: 'Titillium Web';
+    font-family: 'Titillium';
     src: url('fonts/titillium-semibold-webfont.eot');
     src: url('fonts/titillium-semibold-webfont.svg#titillium-semibold-webfont') format('svg'),
          url('fonts/titillium-semibold-webfont.eot?#iefix') format('embedded-opentype'),
@@ -550,8 +557,8 @@ box-shadow: 0 0 2px rgba(255,255,255,0.4);
 #header .container-inner { position: relative; }
 
 .site-title { font-size: 42px; font-weight: 600; letter-spacing: -0.5px; float: left; line-height: 60px; padding: 10px 0; }
-.site-title a { display: block; color: #fff; float: left; max-width: 100%; white-space: nowrap; }
-.site-title a img { float: left; display: block; max-width: 100%; max-height: 60px; height: auto; padding: 0; margin: 0 auto; -webkit-border-radius: 0; border-radius: 0; }
+.site-title a { display: block; color: #fff; max-width: 100%; }
+.site-title a img { display: block; max-width: 100%; max-height: 60px; height: auto; padding: 0; margin: 0 auto; -webkit-border-radius: 0; border-radius: 0; }
 .site-description { font-size: 16px; font-style: italic; color: #fff; color: rgba(255,255,255,0.5); float: left; margin-left: 20px; line-height: 60px; padding: 10px 0; }
 .site-image { display: block; margin: 0 auto; max-height: 400px; }
 
@@ -581,9 +588,9 @@ box-shadow: inset 1px 0 0 rgba(255,255,255,0.06); }
 
 @media only screen and (min-width: 1025px) {
 	/* fixed nav */
-	.topbar-enabled #header { padding-top: 50px; }
-	#nav-topbar.nav-container { position: fixed; top: 0; width: 100%; z-index: 999; }
-	.admin-bar #nav-topbar.nav-container { top: 28px; }
+	.full-width.topbar-enabled #header { padding-top: 50px; }
+	.full-width #nav-topbar.nav-container { position: fixed; top: 0; left: 0; right: 0; width: 100%; z-index: 999; }
+	.full-width.admin-bar #nav-topbar.nav-container { top: 28px; }
 }
 
 @media only screen and (min-width: 720px) {
@@ -1047,7 +1054,7 @@ box-shadow: inset 0 1px 0 rgba(255,255,255,0.25); }
 /* ------------------------------------------------------------------------- *
  *  Widgets
 /* ------------------------------------------------------------------------- */
-.widget { color: #777; font-size: 15px; }
+.widget { color: #777; font-size: 15px; overflow: hidden; }
 .widget a { color: #777; }
 .widget a:hover { color: #444; }
 .widget > h3 { font-size: 15px; font-weight: 400; text-transform: uppercase; margin-bottom: 6px; }
