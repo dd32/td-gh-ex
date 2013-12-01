@@ -294,7 +294,7 @@ array( "type" => "begintab",
 /* START CONTENT FONT */ 
 
 	array( "type" => "start",
-	       "val" => "Contents font",
+	       "id" => "Contents font",
 	       "name" => __( "Contents font","wip")),
 
 	array( "name" => __( "Contents font size","wip"),
