@@ -3,7 +3,7 @@
  * The sidebar containing the secondary widget area, displays on posts and pages.
  *
  * @package	Anarcho Notepad
- * @since	2.1.4
+ * @since	2.1.5
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013, Arthur Gareginyan
  * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
@@ -23,11 +23,7 @@
 <!--ABOUT BOX-->
 <div class="about-box">
   <p>
-    <?php if(get_locale() == 'ru_RU') { ?>
-    <?php echo get_theme_mod('about_box_ru'); ?>
-    <?php } else { ?>
-    <?php echo get_theme_mod('about_box_eng'); ?>
-    <?php } ?>
+    <?php echo sanitize_text_field(get_theme_mod('about_box')); ?>
   </p>
 </div>
 <!--END-ABOUT BOX-->

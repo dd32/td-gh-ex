@@ -89,6 +89,7 @@ Everything else used in this theme has been created by me, especially for "Anarc
 	2.1.2   (2013.11.01) -  Minor additions and fixes
 	2.1.3   (2013.11.18) -  Minor additions and fixes
 	2.1.4   (2013.11.22) -  Minor additions and fixes
+        2.1.5   (2013.12.2)  -  Minor additions and fixes
 
 == Contact & Issues for Anarcho Notepad ==
 

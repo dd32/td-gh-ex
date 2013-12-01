@@ -3,7 +3,7 @@
  * The Header for our theme.
  *
  * @package	Anarcho Notepad
- * @since	2.1.4
+ * @since	2.1.5
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013, Arthur Gareginyan
  * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
@@ -33,6 +33,8 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
+	<?php echo esc_html(get_theme_mod('script_header')); ?>
+
 	<?php wp_head(); ?>
 
 </head>
@@ -47,13 +49,13 @@
 	  <a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 	   <?php $header_image = get_header_image();
 		if ( !empty( $header_image ) ) : ?>
-	    		<img
-	      			class="logo"
-	      			src="<?php header_image(); ?>" 
-	      			height="<?php echo get_custom_header()->height; ?>" 
-	      			width="<?php echo get_custom_header()->width; ?>" 
-	      			alt="<?php bloginfo('name'); ?>" 
-	    />
+			<img
+				class="logo"
+				src="<?php esc_url(header_image()); ?>" 
+				height="<?php echo esc_attr(get_custom_header()->height); ?>" 
+				width="<?php echo esc_attr(get_custom_header()->width); ?>" 
+				alt="<?php bloginfo('name'); ?>" 
+			/>
 <?php endif; ?>
 
 	    <h1 class="site-title"><?php bloginfo('name'); ?></h1>

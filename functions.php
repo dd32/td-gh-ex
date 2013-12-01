@@ -3,7 +3,7 @@
  * Anarcho Notepad functions and definitions.
  *
  * @package	Anarcho Notepad
- * @since	2.1.4
+ * @since	2.1.5
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013, Arthur Gareginyan
  * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
@@ -17,13 +17,13 @@ function anarcho_notepad_setup() {
         global $content_width;
 
 	// Localization Init
-	function load_language() {
+	function anarcho_load_language() {
 	  $currentLocale = get_locale();
 	  if (!empty($currentLocale)) {
 		load_theme_textdomain( 'anarcho-notepad', get_template_directory() . '/languages' );
 	  }
 	}
-	load_language();
+	anarcho_load_language();
 
         // This feature enables Custom Backgrounds.
 	add_theme_support( 'custom-background', array(
@@ -58,11 +58,11 @@ function anarcho_notepad_setup() {
 	));
 
         // This feature enables menu.
-        function register_anarcho_menus() {
+        function anarcho_register_menus() {
 		register_nav_menus( array(
 			'primary' => __( 'Primary', 'anarcho-notepad' ) ));
 	}
-	add_action( 'init', 'register_anarcho_menus' );
+	add_action( 'init', 'anarcho_register_menus' );
 
 	// This feature enables Link Manager in Admin page.
 	global $wp_version;
@@ -82,8 +82,8 @@ if ( is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" )
 
 add_action('customize_register', function($wp_customize){
 
-//class Customize_Textarea_Control
-class Customize_Textarea_Control extends WP_Customize_Control {
+//class Anarcho_Customize_Textarea_Control
+class Anarcho_Customize_Textarea_Control extends WP_Customize_Control {
 		public $type = 'textarea';
 		public function render_content() { ?>
         		<label>
@@ -99,18 +99,19 @@ class Customize_Textarea_Control extends WP_Customize_Control {
 	'priority'			=> 1, ));
 
 		// About Box in column
-		$wp_customize->add_setting( 'about_box_eng', array(
-			'default'			=> 'Paste here small text about You and/or about site', ));
-		$wp_customize->add_control( new Customize_Textarea_Control( $wp_customize, 'about_box_eng', array(
+		$wp_customize->add_setting( 'about_box', array(
+			'default'			=> __( 'Paste here small text about You and/or about site', 'anarcho-notepad' ),
+		));
+		$wp_customize->add_control( new Anarcho_Customize_Textarea_Control( $wp_customize, 'about_box', array(
 			'priority'			=> 1,
 		        'label'				=> 'About box',
 		        'section'			=> 'meta_section',
-			'settings'			=> 'about_box_eng', )));
+			'settings'			=> 'about_box', )));
 
 		// Copyright after post
 		$wp_customize->add_setting( 'copyright_post', array(
 			'default'			=> 'Copyright &copy; 2013. All rights reserved.', ));
-		$wp_customize->add_control( new Customize_Textarea_Control( $wp_customize, 'copyright_post', array(
+		$wp_customize->add_control( new Anarcho_Customize_Textarea_Control( $wp_customize, 'copyright_post', array(
 			'priority'			=> 3,
 			'label'				=> __( 'Copyright after post', 'anarcho-notepad' ),
 			'section'			=> 'meta_section',
@@ -118,8 +119,8 @@ class Customize_Textarea_Control extends WP_Customize_Control {
 
 		// Site-info in footer
 		$wp_customize->add_setting( 'site-info', array(
-			'default'			=> 'Copyright &copy 2013. All rights reserved.'));
-		$wp_customize->add_control( new Customize_Textarea_Control( $wp_customize, 'site-info', array(
+			'default'			=> 'Copyright &copy; 2013. All rights reserved.'));
+		$wp_customize->add_control( new Anarcho_Customize_Textarea_Control( $wp_customize, 'site-info', array(
 			'priority'			=> 4,
 		        'label'				=> __( 'Site-info in footer', 'anarcho-notepad' ),
 		        'section'			=> 'meta_section',
@@ -169,28 +170,28 @@ class Customize_Textarea_Control extends WP_Customize_Control {
 	'priority'			=> 3, ));
 
 		$wp_customize->add_setting( 'script_header');
-		$wp_customize->add_control( new Customize_Textarea_Control( $wp_customize, 'script_header', array(
+		$wp_customize->add_control( new Anarcho_Customize_Textarea_Control( $wp_customize, 'script_header', array(
 			'priority'			=> 1,
 		        'label'				=> __( 'Scripts in to header', 'anarcho-notepad' ),
 		        'section'			=> 'scripts_section',
 			'settings'			=> 'script_header', )));
 
                 $wp_customize->add_setting( 'script_before_post');
-                $wp_customize->add_control( new Customize_Textarea_Control( $wp_customize, 'script_before_post', array(
+                $wp_customize->add_control( new Anarcho_Customize_Textarea_Control( $wp_customize, 'script_before_post', array(
 			'priority'			=> 2,
                         'label'                         => __( 'Scripts before post', 'anarcho-notepad' ),
                         'section'                       => 'scripts_section',
                         'settings'                      => 'script_before_post', )));
 
                 $wp_customize->add_setting( 'script_after_post');
-                $wp_customize->add_control( new Customize_Textarea_Control( $wp_customize, 'script_after_post', array(
+                $wp_customize->add_control( new Anarcho_Customize_Textarea_Control( $wp_customize, 'script_after_post', array(
 			'priority'			=> 3,
                         'label'                         => __( 'Scripts after post', 'anarcho-notepad' ),
                         'section'                       => 'scripts_section',
                         'settings'                      => 'script_after_post', )));
 
                 $wp_customize->add_setting( 'script_footer');
-                $wp_customize->add_control( new Customize_Textarea_Control( $wp_customize, 'script_footer', array(
+                $wp_customize->add_control( new Anarcho_Customize_Textarea_Control( $wp_customize, 'script_footer', array(
 			'priority'			=> 4,
                         'label'                         => __( 'Scripts in to footer', 'anarcho-notepad' ),
                         'section'                       => 'scripts_section',
@@ -778,14 +779,14 @@ function anarcho_theme_options_add_page() {
 /*****************END-Theme Information Page****************************/
 
 // Add IE conditional HTML5 shim to header
-function add_ie_html5_shim () {
+function anarcho_add_ie_html5_shim () {
      global $is_IE;
      if ($is_IE)
     	echo '<!--[if lt IE 9]>';
     	echo '<script src="', get_template_directory_uri() .'/js/html5.js"></script>';
     	echo '<![endif]-->';
 }
-add_action('wp_head', 'add_ie_html5_shim');
+add_action('wp_head', 'anarcho_add_ie_html5_shim');
 
 // Adds a custom default avatar
 function anarcho_avatar( $avatar_defaults ) {
@@ -796,17 +797,17 @@ function anarcho_avatar( $avatar_defaults ) {
 add_filter( 'avatar_defaults', 'anarcho_avatar' );
 
 // Enable comment_reply
-function include_comment_reply() {
+function anarcho_include_comment_reply() {
 	if ( is_singular() ) wp_enqueue_script( "comment-reply" );
 }
-add_action( 'wp_enqueue_scripts', 'include_comment_reply' );
+add_action( 'wp_enqueue_scripts', 'anarcho_include_comment_reply' );
 
 // Include Font-Awesome styles
-function include_font_awesome_styles() {
+function anarcho_include_font_awesome_styles() {
     wp_register_style( 'font_awesome_styles', get_template_directory_uri() . '/fonts/font-awesome-4.0.0/font-awesome.min.css', 'screen' );
     wp_enqueue_style( 'font_awesome_styles' );
 }
-add_action( 'wp_enqueue_scripts', 'include_font_awesome_styles' );
+add_action( 'wp_enqueue_scripts', 'anarcho_include_font_awesome_styles' );
 
 // Enable smoothscroll.js
 function include_smoothscroll_script() {
