@@ -5,7 +5,7 @@ if ( ! isset( $content_width ) ) {
 }
 
 
-$activetab_version = '0.5.8';
+$activetab_version = '0.5.9';
 
 
 if ( ! function_exists( 'activetab_enqueue_scripts_and_styles' ) ) :
@@ -181,7 +181,7 @@ if ( ! function_exists( 'activetab_comments' ) ) :
 							}
 						?>
 						<?php comment_author_link(); ?>
-						<?php edit_comment_link( '<span class="btn btn-small"><i class="icon-pencil"></i> '.__( 'Edit', 'activetab' ).'</span>', '<span class="edit-link '.$comment->comment_type.'-edit-link">', '</span>' ); ?>
+						<?php edit_comment_link( '<span class="btn btn-default btn-small"><i class="icon-pencil"></i> '.__( 'Edit', 'activetab' ).'</span>', '<span class="edit-link '.$comment->comment_type.'-edit-link">', '</span>' ); ?>
 					</p>
 					<?php
 				break;
@@ -217,7 +217,7 @@ if ( ! function_exists( 'activetab_comments' ) ) :
 								echo '<span class="comment-meta-item comment-meta-item-author fn"><i class="icon-user" title="'.esc_attr( __( 'Author', 'activetab' ) ).'"></i> '.get_comment_author_link().$post_author_label.'</span> ';
 								echo '<span class="comment-meta-item comment-meta-item-date"><i class="icon-calendar" title="'.esc_attr( __( 'Published', 'activetab' ) ).'"></i> <a href="'.esc_url( get_comment_link( $comment->comment_ID ) ).'"><time pubdate datetime="'.get_comment_time( 'c' ).'" title="'.get_comment_time().'">'.get_comment_date().'</time></a></span>';
 
-								edit_comment_link( '<span class="btn btn-small"><i class="icon-pencil"></i> '.__( 'Edit', 'activetab' ).'</span>', '<span class="edit-link comment-edit-link">', '</span>' );
+								edit_comment_link( '<span class="btn btn-default btn-small"><i class="icon-pencil"></i> '.__( 'Edit', 'activetab' ).'</span>', '<span class="edit-link comment-edit-link">', '</span>' );
 
 								echo '</div> <!-- /.comment-meta -->';
 								?>
@@ -232,7 +232,7 @@ if ( ! function_exists( 'activetab_comments' ) ) :
 						<div class="comment-content"><?php comment_text(); ?></div>
 
 						<div class="reply">
-							<?php comment_reply_link( array_merge( $args, array( 'reply_text' => '<span class="btn btn-small"><i class="icon-comment"></i> '.__( 'Reply', 'activetab' ).'</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+							<?php comment_reply_link( array_merge( $args, array( 'reply_text' => '<span class="btn btn-default btn-small"><i class="icon-comment"></i> '.__( 'Reply', 'activetab' ).'</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 						</div> <!-- /.reply -->
 					</article> <!-- /#comment-<?php comment_ID(); ?> -->
 
