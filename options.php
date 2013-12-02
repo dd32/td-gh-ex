@@ -31,11 +31,13 @@ function avedontheme_options() {
 	);
 
 	$navbar_body_padding = array(
-		'50px' => __('50px', 'avedon_theme_options'),
-		'75px' => __('75px', 'avedon_theme_options'),
+		'20px' => __('20px', 'avedon_theme_options'),
+		'40px' => __('40px', 'avedon_theme_options'),
+		'60px' => __('60px', 'avedon_theme_options'),
+		'80px' => __('80px', 'avedon_theme_options'),
 		'100px' => __('100px', 'avedon_theme_options'),
-		'125px' => __('125px', 'avedon_theme_options'),
-		'150px' => __('150px', 'avedon_theme_options')
+		'120px' => __('120px', 'avedon_theme_options'),
+		'140px' => __('140px', 'avedon_theme_options')
 	);
 
 	$images_number = array(
@@ -132,7 +134,7 @@ function avedontheme_options() {
 		'name' => __('Fixed Navbar Padding', 'avedon_theme_options'),
 		'desc' => __('Select the fixed menu padding - to allow for larger menus (applies to fixed menus on large width screensize).', 'avedon_theme_options'),
 		'id' => 'navbar_padding',
-		'std' => '150px',
+		'std' => '140px',
 		'type' => 'select',
 		'options' => $navbar_body_padding);
 
@@ -173,12 +175,14 @@ function avedontheme_options() {
 		'name' => __('General Link Color', 'avedon_theme_options'),
 		'desc' => __('Set the color of your content links.', 'avedon_theme_options'),
 		'id' => 'link_color',
+		'std' => '#666666',
 		'type' => 'color' );
 
 	$options[] = array(
 		'name' => __('Button Text Color', 'avedon_theme_options'),
 		'desc' => __('Set the color of text on your buttons.', 'avedon_theme_options'),
 		'id' => 'button_text_color',
+		'std' => '#4BAAD3',
 		'type' => 'color' );
 
 
@@ -210,13 +214,14 @@ function avedontheme_options() {
 		'name' => __('Bottom Background Color', 'avedon_theme_options'),
 		'desc' => __('Select the background color for your bottom content.', 'avedon_theme_options'),
 		'id' => 'bottom_color',
-		'std' => '#212121',
+		'std' => '#F5F5F5',
 		'type' => 'color' );
 
 	$options[] = array(
 		'name' => __('Bottom Text Color', 'avedon_theme_options'),
 		'desc' => __('Set the color of your middle text.', 'avedon_theme_options'),
 		'id' => 'bottom_text_color',
+		'std' => '#333333',
 		'type' => 'color' );
 
 	$options[] = array(
@@ -541,7 +546,7 @@ function avedontheme_options() {
 
 	$options[] = array(
 		'name' => __('Avedon Wordpress Theme', 'avedon_theme_options'),
-		'desc' => __('<p>Avedon is a Wordpress Theme designed to utilize a lot of technologies that much brighter folks have built (see below). Any and all respect should be given to them. Haeck Design is always available for projects, but since it is a theme - support cant be guaranteed. That said, we will always do our best to respond to functional issues in a timely manner.</p><p>Please note that the dropdown menu only supports one level of dropdowns.</p><hr /><h4>Demo</h4><p>http://demo.haeckdesign.com/avedon/</p><hr /><h4>Support</h4><p>http://code.google.com/p/avedon/</p><hr /><h4>Purchase Advanced Version</h4><p>Buy an advanced version of the Avedon theme by visiting our demo page and clicking the "buy" button.</p><hr /><h4>Credits</h4><ul class="line"><li>For more information regarding Bootstrap, please refer to http://getbootstrap.com</li><li>For more information regarding Supersize, please refer to BuildInternet.com</li><li>For more information regarding Wordpress, please refer to the Wordpress Codex</li></ul>', 'avedon_theme_options'),
+		'desc' => __('<p>Avedon is a Wordpress Theme designed to utilize a lot of technologies that much brighter folks have built (see below). Any and all respect should be given to them. Haeck Design is always available for projects, but since it is a theme - support cant be guaranteed. That said, we will always do our best to respond to functional issues in a timely manner.<hr /><h4>Demo</h4><p>http://demo.haeckdesign.com/avedon/</p><hr /><h4>Support</h4><p>http://code.google.com/p/avedon/</p><hr /><h4>Purchase Advanced Version</h4><p>Buy an advanced version of the Avedon theme by visiting our demo page and clicking the "buy" button.</p><hr /><h4>Credits</h4><ul class="line"><li>For more information regarding Bootstrap, please refer to http://getbootstrap.com</li><li>For more information regarding Supersize, please refer to BuildInternet.com</li><li>For more information regarding Wordpress, please refer to the Wordpress Codex</li></ul>', 'avedon_theme_options'),
 		'type' => 'info');
 
 	return $options;

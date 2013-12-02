@@ -2,7 +2,7 @@
 
 Contributors: Matthew Haeck
 Tags: bootstrap, responsive, wordpress theme
-Stable tag: 1.09
+Stable tag: 1.10
 License: GPLv3
 
 Avedon Theme - http://code.google.com/p/avedon/
@@ -13,16 +13,17 @@ Copyright: Haeck Design, http://haeckdesign.com/
 
 == Description ==
 
-Avedon's framework is primarily built on a Bootstrap theme. The background image rotator is a javascript developed by Build Internet. If you like the functionality we certainly suggest tossing them a little "social support". The typographic options are provided by Google Fonts, which is an absolute must for any designer.
+Avedon's framework is built using Bootstrap (Twitter). The background image rotator is a javascript developed by Build Internet. If you like the functionality we certainly suggest tossing them a little "social support". The typographic options are provided by Google Fonts, which is an absolute must for any designer.
 
 Although donations are certainly welcome, the best way you can support our work is to purchase the Avedon Advanced theme. Once you've purchased Avedon Advanced you will receive a download with the enhanced theme which includes...
 
-- A built in Twitter feed
 - Additional SuperSized background images (up to 12)
 - Social Sharing Functions (Facebook Likes, Google +1, and Tweets w/ Asynchronous loading)
 - Meta Data Inclusions (Automatic Open Graph Meta and Google Analytics tracker)
 - Newsletter updates (so you can receive theme updates and operational tutorials)
 
+
+If you need help migrating to Bootstrap 3, please refer to - http://getbootstrap.com/getting-started/#migration
 
 == Frequently Asked Questions ==
 
@@ -47,11 +48,14 @@ Sidenote: We may respond a little quicker to folks who leave glowing reviews and
 
 Initial Release
 
+== Version 1.1 ==
+
+Transitoned to BootStrap 3
 
 
 == Licenses (See license.txt for full license information) ==
 
-Bootstrap V2.3.2	http://getbootstrap.com
+Bootstrap V3.0.2	http://getbootstrap.com
 License: 			Apache License v2.0 - http://www.apache.org/licenses/
 Copyright: 			Twitter, Inc, twitter.com
 
@@ -71,6 +75,6 @@ Icon Set:			Font Awesome - http://fortawesome.github.com/Font-Awesome/
 License:    		SIL OFL 1.1 / MIT License - http://scripts.sil.org/OFL - http://opensource.org/licenses/mit-license.html
 Copyright:			Dave Gandy - https://twitter.com/davegandy
 
-Social Icon Set:	HaeckDesign - http://haeckdesign.com/freebies
+Social Icon Set:	HaeckDesign - http://haeckdesign.com/freebies/icons/get-social-icon-set
 License:            SIL OFL 1.1 / MIT License - http://scripts.sil.org/OFL - http://opensource.org/licenses/mit-license.html
 Copyright:          Matthew Haeck - http://www.matthewhaeck.com

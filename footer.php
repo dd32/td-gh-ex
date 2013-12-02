@@ -1,45 +1,49 @@
 <?php
 /**
  * @subpackage Avedon
- * @since Avedon 1.09
+ * @since Avedon 1.10
  */
 ?>
 
 <?php if ( ! dynamic_sidebar( 'pitch-content' ) ); ?>
-<?php if ( ! dynamic_sidebar( 'bottom-content' ) ); ?>
+<?php if ( ! dynamic_sidebar( 'middle-content' ) ); ?>
 
-<div id="bottom" class="row-fluid">
-<div class="span10 offset1 thirds">
-<div class="row-fluid">
+<footer id="footer"><div class="container">
 
-<div class="span4">
+<div class="col-xs-12 col-md-4">
 <?php if ( ! dynamic_sidebar( 'bottom-left' ) ): ?>
-<div class="widget widget_text"><div class="textwidget"><h4 class="widget-title">About Us...</h4><i class="subicon avedonicon-code"></i><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p></div></div>
+<div class="widget widget_text"><div class="textwidget"><h4 class="widget-title">About Us...</h4><i class="subicon glyphicon glyphicon-flag"></i><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud labore et dolore magna exercitation.</p></div></div>
 <?php endif; ?>
 </div>
 
-<div class="span4">
+<div class="col-xs-12 col-md-4">
 <?php if ( ! dynamic_sidebar( 'bottom-middle' ) ): ?>
-<div class="widget widget_text"><div class="textwidget"><h4 class="widget-title">Our Location</h4><i class="subicon avedonicon-map-marker"></i><ul><li><b>Address: </b> 25, Lorem Lis, California, US</li><li><b>Phone: </b> 800 123 3456</li><li><b>Fax: </b> 800 123 3456</li><li><b>Email: </b> info@anybiz.com</li></ul></div></div>
+<div class="widget widget_text"><div class="textwidget"><h4 class="widget-title">Our Location</h4><i class="subicon glyphicon glyphicon-map-marker"></i><ul><li><b>Address: </b> 25 Lorem Lis, Raleigh, NC USA</li><li><b>Phone: </b> 800 123 3456</li><li><b>Fax: </b> 800 123 3456</li><li><b>Email: </b> info@anybiz.com</li></ul></div></div>
 <?php endif; ?>
 </div>
 
-<div class="span4">
+<div class="col-xs-12 col-md-4">
 <?php if ( ! dynamic_sidebar( 'bottom-right' ) ): ?>
-<div class="widget widget_text"><div class="textwidget"><h4 class="widget-title">Subscribe</h4><i class="subicon avedonicon-picture"></i><p class="margin-bottom-10">Subscribe to our newsletter and stay up to date!</p><form class="form-inline"><input class="input-medium" placeholder="Your email" type="text">&nbsp;<button type="submit" class="btn btn-inverse">Go</button></form></div></div>
+<div class="widget widget_text"><div class="textwidget"><h4 class="widget-title">Subscribe</h4><i class="subicon glyphicon glyphicon-envelope"></i><p class="margin-bottom-10">Subscribe to our newsletter and stay up to date!</p>
+
+
+<div class="input-group">
+<input type="text" class="form-control">
+<span class="input-group-btn"><button class="btn btn-default" type="button">Go!</button></span>
+</div>
+
+</form></div></div>
 <?php endif; ?>
 </div>
 
-<div class="row-fluid"><div class="span12">
+<div class="col-xs-12">
 <?php if ( ! dynamic_sidebar( 'footer-content' ) ); ?>
-</div></div>
+</div>
 
-</div></div></div>
-
-<footer id="foot" class="row-fluid"><div class="span10 offset1">
-<span class="span11"><?php echo of_get_option('footer_text', 'no entry'); ?></span>
-<span class="span1 pull-right totop hidden-phone"><a href="#"><i class="avedonicon-chevron-up"></i></a></span>
-</div></footer>
+<span class="col-md-11"><?php echo of_get_option('footer_text', 'no entry'); ?></span>
+<span class="col-md-1 pull-right totop hidden-sm"><a href="#"><i class="glyphicon glyphicon-chevron-up"></i></a></span>
+</div>
+</footer>
 
 <?php if ( of_get_option('show_supersize') ) { get_template_part('helper/super'); } ?>
 <?php wp_footer(); ?>

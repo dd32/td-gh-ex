@@ -1,15 +1,16 @@
 <?php
+
 /**
  * @subpackage Avedon
- * @since Avedon 1.09
+ * @since Avedon 1.10
  */
 
 get_header(); ?>
 
-<div id="primary" class="row-fluid">
-<div class="span6 offset1">
-<div class="subhead">
-<h1 id="overview">
+<div id="primary" class="container">
+<div class="col-md-8">
+<div class="container panel panel-default">
+<h1 id="text-large">
 <?php
 if ( is_day() ) {
 printf( __( 'Daily Archives: %s', 'avedon' ), '<span>' . get_the_date() . '</span>' );
@@ -25,13 +26,13 @@ $tag_description = tag_description();
 if ( $tag_description )
 echo apply_filters( 'tag_archive_meta', '<div class="tag-archive-meta">' . $tag_description . '</div>' );
 } elseif ( is_category() ) {
-printf( __( 'Category Archives: %s', 'avedon' ), '<span>' . single_cat_title( '', false ) . '</span>' );
+printf( __( 'Category Archives: %s', 'avedon' ), '' . single_cat_title( '', false ) . '' );
 
 /* OPTIONAL CATEGORY DESCRIPTION */
 $category_description = category_description();
 if ( $category_description )
 echo '</h1>';
-echo apply_filters( 'category_archive_meta', '<div class="category-archive-meta">' . $category_description . '</div>' );
+echo apply_filters( 'category_archive_meta', '<span class="category-archive-meta">' . $category_description . '</span>' );
 } else {
 echo '</h1>';
 _e( 'Blog Archives', 'avedon' );
@@ -42,17 +43,17 @@ _e( 'Blog Archives', 'avedon' );
 
 <?php get_posts(); while (have_posts()) : the_post(); ?>
 
-<div <?php post_class(); ?>>
-<a href="<?php the_permalink(); ?>" title="<?php the_title();?>" class="span11"><h3><?php the_title();?></h3></a>
-<span class="comment-count span1 hidden-phone"><?php comments_number('0','1','%'); ?></span>
-<p class="meta span12"><?php echo avedon_posted_on();?></p>
-<div class="row-fluid"><div class="span12">
+<div class="container panel panel-default">
+<div class="row panel-heading">
+<a href="<?php the_permalink(); ?>" title="<?php the_title();?>" class="col-xs-11"><h3 class="panel-title"><?php the_title();?></h3></a>
+<span class="badge col-xs-1"><?php comments_number('0','1','%'); ?></span>
+</div>
+<span class="meta"><?php echo avedon_posted_on();?></span>
+
 <?php if ( has_post_thumbnail() ) ?>
 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-<?php the_post_thumbnail( 'primary-post-thumbnail', array('class' => 'span3 teasepic'));?></a>
-<?php the_excerpt();?>
-</div>
-</div>
+<?php the_post_thumbnail( 'primary-post-thumbnail', array('class' => 'thumbnail col-xs-12 col-md-3 img-responsive'));?></a>
+<span class="panel-body"><?php the_excerpt();?></span>
 </div>
 
 <?php endwhile; ?>

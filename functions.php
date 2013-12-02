@@ -64,18 +64,18 @@ global $wp_query;
 ?>
 
 <?php if ( is_single() ) : ?>
-<ul class="pager">
-<?php previous_post_link( '<li class="previous">%link</li>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'avedon' ) . '</span> %title' ); ?>
-<?php next_post_link( '<li class="next">%link</li>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'avedon' ) . '</span>' ); ?>
+<ul class="well pager btn-group btn-group-justified">
+<?php previous_post_link( '<li class="previous col-md-6">%link</li>', '<i class="glyphicon glyphicon-chevron-left"></i> %title' ); ?>
+<?php next_post_link( '<li class="next col-md-6">%link</li>', '%title <i class="glyphicon glyphicon-chevron-right"></i>' ); ?>
 </ul>
 <?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : ?>
-<ul class="subpager row-fluid">
+<ul class="btn-group btn-group-justified">
 <?php if ( get_next_posts_link() ) : ?>
-<li class="btn next span6"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'avedon' ) ); ?></li>
+<li class="btn btn-default next col-md-6"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'avedon' ) ); ?></li>
 <?php endif; ?>
 
 <?php if ( get_previous_posts_link() ) : ?>
-<li class="btn previous span6"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'avedon' ) ); ?></li>
+<li class="btn btn-default previous col-md-6"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'avedon' ) ); ?></li>
 <?php endif; ?>
 </ul>
 <?php endif; ?>
@@ -91,7 +91,6 @@ function custom_excerpt_length( $length ) {
 	return 30;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
-
 
 
 /* Register Widgets */
@@ -130,18 +129,18 @@ function avedon_widgets_init() {
     'name' => 'Call to Action',
     'id'   => 'pitch-content',
     'description'   => 'Under content, over middle - Best used for call to action..',
-    'before_widget' => '<div id="pitch" class="row-fluid"><div id="%1$s" class="span10 offset1 widget %2$s">',
+    'before_widget' => '<div id="pitch" class="container"><div id="%1$s" class="container widget %2$s">',
     'after_widget'  => '</div></div>',
-    'before_title'  => '<h5>',
-    'after_title'   => '</h5>'
+    'before_title'  => '<h4>',
+    'after_title'   => '</h4>'
   ));
 
     register_sidebar(array(
     'name' => 'Middle Content',
-    'id'   => 'bottom-content',
+    'id'   => 'middle-content',
     'description'   => 'Below content, above the footer.',
-    'before_widget' => '<div id="mid" class="row-fluid"><div id="%1$s" class="span10 offset1 widget %2$s">',
-    'after_widget'  => '</div></div>',
+    'before_widget' => '<div id="middle"><div id="%1$s" class="container"><div class="container col-xs-12 widget %2$s">',
+    'after_widget'  => '</div></div></div>',
     'before_title'  => '<h4>',
     'after_title'   => '</h4>'
   ));
@@ -216,7 +215,7 @@ endif;
 
 function avedon_excerpt($more) {
        global $post;
-  return '...&nbsp; &nbsp;<a href="'. get_permalink($post->ID) . '" class="btn btn-small">Continue Reading</a>';
+  return '<a href="'. get_permalink($post->ID) . '" class="btn btn-default btn-sm pull-right">Continue Reading</a>';
 }
 add_filter('excerpt_more', 'avedon_excerpt');
 
@@ -291,7 +290,6 @@ function avedon_post_thumbnail_check() {
 
 function avedon_breadcrumbs() {
 
-  $delimiter = '<li class="divider">/</li>';
   $home = 'Home'; // text for the 'Home' link
   $before = '<li class="active">'; // tag before the current crumb
   $after = '</li>'; // tag after the current crumb
@@ -302,7 +300,7 @@ function avedon_breadcrumbs() {
 
     global $post;
     $homeLink = home_url();
-    echo '<li><a href="' . $homeLink . '">' . $home . '</a></li> ' . $delimiter . ' ';
+    echo '<li><a href="' . $homeLink . '">' . $home . '</a></li>';
 
     if ( is_category() ) {
       global $wp_query;
@@ -310,16 +308,16 @@ function avedon_breadcrumbs() {
       $thisCat = $cat_obj->term_id;
       $thisCat = get_category($thisCat);
       $parentCat = get_category($thisCat->parent);
-      if ($thisCat->parent != 0) echo(get_category_parents($parentCat, TRUE, ' ' . $delimiter . ' '));
+      if ($thisCat->parent != 0) echo(get_category_parents($parentCat, TRUE, ''));
       echo $before . 'Archive by category "' . single_cat_title('', false) . '"' . $after;
 
     } elseif ( is_day() ) {
-      echo '<li><a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a></li> ' . $delimiter . ' ';
-      echo '<li><a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a></li> ' . $delimiter . ' ';
+      echo '<li><a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a></li>';
+      echo '<li><a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a></li>';
       echo $before . get_the_time('d') . $after;
 
     } elseif ( is_month() ) {
-      echo '<li><a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a></li> ' . $delimiter . ' ';
+      echo '<li><a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a></li>';
       echo $before . get_the_time('F') . $after;
 
     } elseif ( is_year() ) {
@@ -329,12 +327,11 @@ function avedon_breadcrumbs() {
       if ( get_post_type() != 'post' ) {
         $post_type = get_post_type_object(get_post_type());
         $slug = $post_type->rewrite;
-        echo '<li><a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a></li> ' . $delimiter . ' ';
+        echo '<li><a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a></li>';
         echo $before . get_the_title() . $after;
       } else {
         $cat = get_the_category(); $cat = $cat[0];
         echo $before . get_category_parents($cat, TRUE, $after);
-		echo $delimiter;
         echo $before . get_the_title() . $after;
       }
 
@@ -345,8 +342,8 @@ function avedon_breadcrumbs() {
     } elseif ( is_attachment() ) {
       $parent = get_post($post->post_parent);
       $cat = get_the_category($parent->ID); $cat = $cat[0];
-      echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-      echo '<li><a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a></li> ' . $delimiter . ' ';
+      echo get_category_parents($cat, TRUE);
+      echo '<li><a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a></li>';
       echo $before . get_the_title() . $after;
 
     } elseif ( is_page() && !$post->post_parent ) {
@@ -361,7 +358,7 @@ function avedon_breadcrumbs() {
         $parent_id  = $page->post_parent;
       }
       $breadcrumbs = array_reverse($breadcrumbs);
-      foreach ($breadcrumbs as $crumb) echo $crumb . ' ' . $delimiter . ' ';
+      foreach ($breadcrumbs as $crumb) echo $crumb . '';
       echo $before . get_the_title() . $after;
 
     } elseif ( is_search() ) {
@@ -402,8 +399,8 @@ wp_enqueue_script( 'comment-reply' );
 
 if (of_get_option('show_supersize') ) {
 wp_enqueue_script( 'jqueryeasing', get_template_directory_uri() .'/js/jquery.easing.min.js', array('jquery'), '1.0', true );
-wp_enqueue_script( 'supersized', get_template_directory_uri() .'/js/supersized.3.2.7.min.js', '1.0', true  );
-wp_enqueue_script( 'supersizedshutter', get_template_directory_uri() .'/js/supersized.shutter.min.js', '1.0', true );
+wp_enqueue_script( 'supersized', get_template_directory_uri() .'/js/supersized.3.2.7.js', '1.0', true  );
+wp_enqueue_script( 'supersizedshutter', get_template_directory_uri() .'/js/supersized.shutter.js', '1.0', true );
 wp_enqueue_style( 'supercss', get_template_directory_uri() .'/css/supersized.css', '1.0', true  );
 }
 

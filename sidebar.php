@@ -1,12 +1,12 @@
 <?php
 /**
  * @subpackage Avedon
- * @since Avedon 1.09
+ * @since Avedon 1.10
  */
 ?>
 
-<div id="side" class="span4 offset-1">
-<div class="well sidebar-nav">
+<div id="side" class="col-md-4">
+<div class="sidebar-nav">
 
 <?php
 if ( is_front_page()) { if ( ! dynamic_sidebar( 'home-right' ) ); }

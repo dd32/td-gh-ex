@@ -1,7 +1,7 @@
 <?php if ( of_get_option('show_supersize') ) { ?>
 <?php $multicheck = of_get_option('super_array'); if ($multicheck) {
-if (!empty($multicheck['scrollarrows'])) { echo '<a id="prevslide" class="circled avedonicon-chevron-left"></a><a id="nextslide" class="circled avedonicon-chevron-right"></a>'; } else {};
-echo '<div id="controls-wrapper" class="load-item row-fluid"><div id="controls" class="span10 offset1">';
+if (!empty($multicheck['scrollarrows'])) { echo '<a id="prevslide" class="circled glyphicon glyphicon-chevron-left"><i class="visuallyhidden">Previous Slide</i></a><a id="nextslide" class="circled glyphicon glyphicon-chevron-right"><i class="visuallyhidden">Next Slide</i></a>'; } else {};
+echo '<div id="controls-wrapper" class="load-item row"><div id="controls" class="span10 offset1">';
 if (!empty($multicheck['slidecount'])) { echo '<div id="slidecounter"><span class="slidenumber"></span> / <span class="totalslides"></span></div>'; } else {};
 if (!empty($multicheck['slidecaption'])) { echo '<div id="slidecaption"></div>'; } else {};
 if (!empty($multicheck['slidelist'])) { echo '<ul id="slide-list"></ul>'; } else {};
