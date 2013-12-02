@@ -1,24 +1,26 @@
-<?php if(!defined('ABSPATH')) exit; //Exit if accessed directly
-get_header();
-	get_template_part('navigation'); ?>
-	<!-- Body -->
-    <div id="body">
-    	<div class="row">
-        	<div id="content" class="col width-75">
-            	<?php if(have_posts()) : ?>
-                	<h1 class="search-title">Search results for "<i><?php the_search_query() ?></i>"</h1>
-                	<?php while(have_posts()) : the_post();   
-						get_template_part('content', get_post_format()); 
-					endwhile;
-                    get_pagination();
-            	else :
-                    get_template_part('not-found');
-                endif; ?>
-            </div>
-            <div id="sidebar" class="col width-25 last">
+<?php get_header(); ?>
+		<?php get_template_part('navigation'); ?>
+    	<!-- BODY -->
+    	<div id="body">
+        	<div class="container row">
+            	<!-- HEADING -->
+            	<h1 class="large search-results">Search</h1>
+                <!-- HEADING END -->
+            	<!-- CONTENT -->
+            	<div id="content" class="col width-75">
+					<?php if (have_posts()) :
+                        while (have_posts()) : the_post();
+							get_template_part('content', get_post_format());                        
+                        	comments_template();
+                        endwhile;
+						autoadjust_pagination();
+					else :
+						get_template_part('not-found');
+					endif; ?>
+                </div>
+                <!-- CONTENT END -->
 				<?php get_sidebar(); ?>
             </div>
         </div>
-    </div>
-	<!-- Body end -->
+        <!-- BODY END --> 
 <?php get_footer(); ?>

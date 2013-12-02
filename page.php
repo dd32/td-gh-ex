@@ -1,35 +1,34 @@
-<?php if(!defined('ABSPATH')) exit; //Exit if accessed directly
-get_header();
-	get_template_part('navigation');
-	get_breadcrumbs(); ?>
-	<!-- Body -->
-    <div id="body">
-    	<div class="row">
-        	<div id="main" class="col width-75">
-            	<?php if(have_posts()) :
-					while(have_posts()) : the_post(); ?>      
-                        <!-- Entry -->
-                        <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                            <div class="entry">
-                                <?php if(has_post_thumbnail()) : the_post_thumbnail(); endif; ?>
-                                <div class="content clearfix">
+<?php get_header(); ?>
+		<?php get_template_part('navigation'); ?>
+    	<!-- BODY -->
+    	<div id="body">
+        	<div class="container row">
+            	<!-- CONTENT -->
+            	<div id="content" class="col width-75">
+					<?php if (have_posts()) :
+                        while (have_posts()) : the_post(); ?>
+                            <!-- ENTRY NO:<?php the_ID(); ?> -->
+                            <div id="entry-<?php the_ID(); ?>" <?php post_class(); ?>>
+                                <?php autoadjust_entry_thumbnail(); ?>
+                                <div class="entry">
+                                    <?php autoadjust_entry_edit(); ?>
                                     <h1 class="title"><?php the_title(); ?></h1>
-                                    <?php the_content(); ?>
+                                    <?php the_content(__('Continue Reading &rarr;', 'autoadjust'));
+                                    wp_link_pages(array('before' => '<div class="pagination">'.__('Pages:', 'autoadjust'), 'after' => '</div>'));
+                                    autoadjust_entry_after(); ?>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Entry end -->
-						<?php
-                        comments_template(); 
-					endwhile;
-            	else :
-                    get_template_part('not-found');
-                endif; ?>
-            </div>
-            <div id="sidebar" class="col width-25 last">
+                            <!-- ENTRY NO:<?php the_ID(); ?> END -->                     
+                        	<?php comments_template();
+                        endwhile;
+						autoadjust_pagination();
+					else :
+						get_template_part('not-found');
+					endif; ?>
+                </div>
+                <!-- CONTENT END -->
 				<?php get_sidebar(); ?>
             </div>
         </div>
-    </div>
-	<!-- Body end -->
+        <!-- BODY END --> 
 <?php get_footer(); ?>

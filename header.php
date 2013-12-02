@@ -1,66 +1,46 @@
-<?php if(!defined('ABSPATH')) exit; //Exit if accessed directly ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html <?php language_attributes(); ?>>
 <head>
-<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title><?php wp_title('-', true, 'right'); ?><?php bloginfo('name'); ?></title>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<title><?php bloginfo('name') . wp_title('-', true, 'left'); ?></title>
+<link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-<?php
-get_favicon();
-wp_enqueue_style('theme-style', get_stylesheet_uri(), false, '1.1.0');
-if(is_singular()) wp_enqueue_script("comment-reply");
+<?php wp_enqueue_style('autoadjust-style', get_stylesheet_uri(), false, '1.1.1');
 wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
+<!-- CONTAINER -->
 <div id="container">
-	<?php if(has_nav_menu('top_menu')) : ?>
-        <!-- Top -->
-        <div id="top">
-            <div class="row">
-                <div class="col width-100 last">
-					<?php wp_nav_menu(array(
-                        'theme_location'  => 'top_menu',
-                        'menu'            => '',
-                        'container'       => '',
-                        'container_class' => '',
-                        'container_id'    => '',
-                        'menu_class'      => 'menu',
-                        'menu_id'         => '',
-                        'echo'            => true,
-                        'fallback_cb'     => '',
-                        'before'          => '',
-                        'after'           => '',
-                        'link_before'     => '',
-                        'link_after'      => '',
-                        'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                        'depth'           => 0,
-                        'walker'          => ''
+	<div class="row">
+		<?php if(has_nav_menu('top-menu', 'autoadjust')) : ?>
+            <!-- TOP -->
+            <div id="top">
+                <div class="container row">
+                    <?php wp_nav_menu(array(
+                        'container'			=> false,
+                        'fallback_cb'		=> false,
+                        'items_wrap'		=> '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                        'menu_id'			=> 'top-menu',
+						'menu_class'		=> 'horizontal-aligned-menu last col width-100',
+                        'theme_location'	=> 'top-menu'
                     )); ?>
                 </div>
             </div>
-        </div>
-        <!-- Top end -->
-    <?php endif; ?>
-	<!-- Header -->
-    <div id="header">
-    	<div class="row">
-        	<div id="logo" class="col width-50">
-            	<?php if(get_header_image() != '') : ?>
-					<img src="<?php header_image(); ?>"
-                    	height="<?php echo get_custom_header()->height; ?>"
-                        width="<?php echo get_custom_header()->width; ?>"
-                        alt=""
-					/>
-				<?php elseif(!get_header_image()) : ?>
-                    <div class="name"><?php bloginfo('name'); ?></div>
-                    <div class="description"><?php bloginfo('description'); ?></div>
+            <!-- TOP END -->
+        <?php endif; ?>
+    	<!-- HEADER -->
+    	<div id="header">
+        	<div class="container row">
+                <div class="col width-50">
+                    <?php autoadjust_get_logo(); ?>
+                </div>
+                <?php if(is_active_sidebar('header-widgets')) : ?>
+                	<div class="last col width-50">
+                    	<?php dynamic_sidebar('header-widgets'); ?>
+                    </div>
 				<?php endif; ?>
             </div>
-            <div class="col width-50 last">
-            	 <?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('header_1')) : endif; ?> 
-            </div>
         </div>
-    </div>
-	<!-- Header end -->
+        <!-- HEADER END -->

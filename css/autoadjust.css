@@ -1,0 +1,954 @@
+/*                  MAIN STRUCTURE - CONTAINER                  
+--------------------------------------------------------------- */
+
+/* CONTAINER
+--------------------------------------------------------------- */
+#container {
+	overflow:hidden;
+}
+#container .container {
+	margin:0 auto;
+	padding:0 20px;
+	max-width:940px;
+	width:100%;
+}
+
+/*                     MAIN STRUCTURE - TOP                     
+--------------------------------------------------------------- */
+
+/* TOP
+--------------------------------------------------------------- */
+#top {
+	background:rgb(51,51,51);
+	background:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzMzMzMzMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxYTFhMWEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background:-moz-linear-gradient(top,  rgb(51,51,51) 0%, rgb(26,26,26) 100%);
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(51,51,51)), color-stop(100%,rgb(26,26,26)));
+	background:-webkit-linear-gradient(top,  rgb(51,51,51) 0%,rgb(26,26,26) 100%);
+	background:-o-linear-gradient(top,  rgb(51,51,51) 0%,rgb(26,26,26) 100%);
+	background:-ms-linear-gradient(top,  rgb(51,51,51) 0%,rgb(26,26,26) 100%);
+	background:linear-gradient(to bottom,  rgb(51,51,51) 0%,rgb(26,26,26) 100%);
+	border-bottom:solid 1px rgb(0,0,0);
+	color:rgb(204,204,204);
+	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#1a1a1a',GradientType=0 );
+	text-shadow:0 1px rgb(0,0,0);
+}
+
+/* TOP (HYPERLINK)
+--------------------------------------------------------------- */
+#top a,
+#top a:active,
+#top a:link,
+#top a:visited {
+	color:rgb(204,204,204);
+	text-decoration:none;
+}
+#top a:hover {
+	color:rgb(255,255,255);
+	text-decoration:none;
+}
+
+/* TOP - TOP-MENU
+--------------------------------------------------------------- */
+#top #top-menu {
+	line-height:30px;
+	text-align:right;
+}
+#top #top-menu a {
+	margin-left:10px;
+}
+
+/*                    MAIN STRUCTURE - HEADER                   
+--------------------------------------------------------------- */
+
+/* HEADER
+--------------------------------------------------------------- */
+#header {
+	background:rgb(1,152,241);
+	background:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAxOThmMSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMTViOTEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background:-moz-linear-gradient(top,  rgb(1,152,241) 0%, rgb(1,91,145) 100%);
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(1,152,241)), color-stop(100%,rgb(1,91,145)));
+	background:-webkit-linear-gradient(top,  rgb(1,152,241) 0%,rgb(1,91,145) 100%);
+	background:-o-linear-gradient(top,  rgb(1,152,241) 0%,rgb(1,91,145) 100%);
+	background:-ms-linear-gradient(top,  rgb(1,152,241) 0%,rgb(1,91,145) 100%);
+	background:linear-gradient(to bottom,  rgb(1,152,241) 0%,rgb(1,91,145) 100%);
+	border-top:solid 1px rgb(103,193,247);
+	color:rgb(230,245,254);
+	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#0198f1', endColorstr='#015b91',GradientType=0 );	
+	padding-top:20px;
+	text-shadow:0 1px rgb(0,61,96);
+}
+
+/* HEADER (HYPERLINK)
+--------------------------------------------------------------- */
+#header a,
+#header a:active,
+#header a:link,
+#header a:visited {
+	color:rgb(230,245,254);
+	display:inline-block;
+	text-decoration:none;
+}
+#header a:hover {
+	color:rgb(255,255,255);
+	text-decoration:none;
+}
+
+/* HEADER - LOGO
+--------------------------------------------------------------- */
+#header .logo {
+	margin-bottom:20px;
+}
+#header .logo img {
+	max-height:58px;
+	max-width:300px;
+}
+#header .logo .name {
+	font-size:32px;
+	font-weight:700;
+	line-height:32px;
+}
+#header .logo .description {
+	font-size:16px;
+	line-height:16px;
+	margin-top:10px;
+}
+
+/* HEADER - WIDGET
+--------------------------------------------------------------- */
+#header .widget {
+	background:none;
+	background:rgba(0,0,0,.1);
+	text-align:center;
+}
+
+/*                  MAIN STRUCTURE - NAVIGATION                 
+--------------------------------------------------------------- */
+
+/* NAVIGATION
+--------------------------------------------------------------- */
+#navigation {
+	margin-bottom:20px;
+}
+
+/* NAVIGATION - PRIMARY MENU
+--------------------------------------------------------------- */
+#navigation #primary-menu {
+	background:rgb(1,91,145);
+	border-top:solid 1px rgb(1,122,193);
+	color:rgb(230,245,254);
+	line-height:50px;	
+	max-height:50px;
+	text-shadow:0 1px rgb(0,61,96);
+}
+
+#navigation #primary-menu .menu-item a,
+#navigation #primary-menu .menu-item a:active,
+#navigation #primary-menu .menu-item a:link,
+#navigation #primary-menu .menu-item a:visited {
+	color:rgb(230,245,254);
+	padding:0 10px;
+	text-decoration:none;
+}
+#navigation #primary-menu .menu-item a:hover {
+	color:rgb(255,255,255);
+	text-decoration:none;
+}
+#navigation #primary-menu .menu-item:hover,
+#navigation #primary-menu .current-menu-item.menu-item a {
+	background:rgb(1,91,145);
+	background:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAxNWI5MSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDRjNzgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background:-moz-linear-gradient(top,  rgb(1,91,145) 0%, rgb(0,76,120) 100%);
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(1,91,145)), color-stop(100%,rgb(0,76,120)));
+	background:-webkit-linear-gradient(top,  rgb(1,91,145) 0%,rgb(0,76,120) 100%);
+	background:-o-linear-gradient(top,  rgb(1,91,145) 0%,rgb(0,76,120) 100%);
+	background:-ms-linear-gradient(top,  rgb(1,91,145) 0%,rgb(0,76,120) 100%);
+	background:linear-gradient(to bottom,  rgb(1,91,145) 0%,rgb(0,76,120) 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#015b91', endColorstr='#004c78',GradientType=0 );
+}
+#navigation #primary-menu .sub-menu {
+	background:rgb(0,76,120);
+}
+#navigation #primary-menu .sub-menu .menu-item {
+	line-height:30px;
+}
+
+/* NAVIGATION - SECONDARY MENU 
+--------------------------------------------------------------- */
+#navigation #secondary-menu {
+	background:rgb(255,255,255);
+	border-bottom:solid 1px;
+	line-height:30px;
+	text-align:left;
+	text-shadow:0 1px rgb(204,204,204);
+}
+#navigation #secondary-menu a {
+	margin-right:10px;
+	text-decoration:none;
+}
+#navigation #secondary-menu a:hover {
+	text-decoration:none;
+}
+
+/*                     MAIN STRUCTURE - BODY                    
+--------------------------------------------------------------- */
+
+/* BODY
+--------------------------------------------------------------- */
+#body {}
+
+/* BODY - HEADINGS
+--------------------------------------------------------------- */
+#body h1.small,
+#body h1.medium,
+#body h1.large {
+	color:rgb(51,51,51);
+	color:rgba(0,0,0,.8);
+	margin-bottom:10px;	
+}
+#body h1.small {
+	font-size:12px;
+	line-height:12px;
+}
+#body h1.medium {
+	font-size:22px;
+	line-height:22px;
+}
+#body h1.large {
+	font-size:32px;
+	line-height:32px;
+}
+
+/*                   MAIN STRUCTURE - CONTENT                   
+--------------------------------------------------------------- */
+
+/* CONTENT
+--------------------------------------------------------------- */
+#content {}
+
+/* CONTENT (HYPERLINK)
+--------------------------------------------------------------- */
+#content a,
+#content a:active,
+#content a:link,
+#content a:visited {}
+#content a:hover {}
+
+/* CONTENT - PAGES, POSTS & PRODUCTS
+--------------------------------------------------------------- */
+#content .page,
+#content .post,
+#content .product {
+	background:rgb(255,255,255);
+	border:solid 1px;
+	margin-bottom:20px;
+}
+
+/* CONTENT -  THUMBNAIL
+--------------------------------------------------------------- */
+#content .thumbnail {}
+#content .thumbnail img {
+	max-height:500px;
+	width:100%;
+}
+
+/* CONTENT - ENTRY */
+#content .entry {
+	padding:10px;
+}
+
+/* CONTENT - ENTRY - TITLE
+--------------------------------------------------------------- */
+#content .entry h1.title {
+	color:rgb(0,76,120);
+	font-size:32px;
+	line-height:32px;
+	margin-bottom:10px;
+}
+
+/* CONTENT - ENTRY - TITLE (HYPERLINK)
+--------------------------------------------------------------- */
+#content .entry h1.title a,
+#content .entry h1.title a:active,
+#content .entry h1.title a:link,
+#content .entry h1.title a:visited {
+	color:rgb(0,76,120);
+	text-decoration:none;
+}
+#content .entry h1.title a:hover {
+	color:rgb(51,51,51);
+	color:rgba(0,0,0,.8);
+	text-decoration:none;
+}
+
+/* CONTENT - ENTRY - EDIT
+--------------------------------------------------------------- */
+#content .entry .edit {
+	float:right;
+	font-size:16px;
+	font-weight:700;
+	line-height:32px;
+	margin-left:10px;
+}
+
+/* CONTENT - ENTRY - EDIT (HYPERLINK)
+--------------------------------------------------------------- */
+#content .entry .edit a,
+#content .entry .edit a:active,
+#content .entry .edit a:link,
+#content .entry .edit a:visited {
+	color:rgb(51,51,51);
+	color:rgba(0,0,0,.8);
+	text-decoration:none;
+}
+#content .entry .edit a:hover {
+	color:rgb(255,0,0);
+	text-decoration:none;
+}
+
+/* CONTENT - ENTRY - BEFORE
+--------------------------------------------------------------- */
+#content .entry .before {
+	margin-bottom:10px;
+}
+
+/* CONTENT - ENTRY - BEFORE (HYPERLINK)
+--------------------------------------------------------------- */
+#content .entry .before a,
+#content .entry .before a:active,
+#content .entry .before a:link,
+#content .entry .before a:visited {
+	color:rgb(51,51,51);
+	color:rgba(0,0,0,.8);
+	font-weight:700;
+	text-decoration:none;
+}
+#content .entry .before a:hover {
+	color:rgb(153,153,153);
+	color:rgba(0,0,0,.4);
+	text-decoration:none;
+}
+
+/* CONTENT - ENTRY - BEFORE - AUTHOR
+--------------------------------------------------------------- */
+#content .entry .before .author {
+	margin-right:3px;
+}
+
+/* CONTENT - ENTRY - BEFORE - DATE
+--------------------------------------------------------------- */
+#content .entry .before .date {}
+
+/* CONTENT - ENTRY - MORE LINK (HYPERLINK)
+--------------------------------------------------------------- */
+#content .entry a.more-link,
+#content .entry a.more-link:active,
+#content .entry a.more-link:link,
+#content .entry a.more-link:visited {
+	display:inline-block;
+	font-weight:700;
+	margin-top:10px;
+	text-decoration:none;
+}
+#content .entry a.more-link:hover {
+	text-decoration:none;
+}
+
+/* CONTENT - ENTRY - AFTER
+--------------------------------------------------------------- */
+#content .entry .after {
+	margin-top:10px;
+}
+
+/* CONTENT - ENTRY - AFTER (HYPERLINK)
+--------------------------------------------------------------- */
+#content .entry .after a,
+#content .entry .after a:active,
+#content .entry .after a:link,
+#content .entry .after a:visited {
+	color:rgb(51,51,51);
+	color:rgba(0,0,0,.8);
+	font-style:italic;
+	font-weight:400;
+	text-decoration:none;
+}
+#content .entry .after a:hover {
+	color:rgb(153,153,153);
+	color:rgba(0,0,0,.4);
+	text-decoration:none;
+}
+
+/* CONTENT - ENTRY - AFTER - COMMENTS, TAGS & CATEGORIES
+--------------------------------------------------------------- */
+#content .entry .after .comments,
+#content .entry .after .tags,
+#content .entry .after .categories {
+	background-position:left;
+	background-repeat:no-repeat;
+	line-height:18px;
+	margin-right:10px;
+}
+
+/* CONTENT - ENTRY - AFTER - COMMENTS
+--------------------------------------------------------------- */
+#content .entry .after .comments {
+	background-image:url(../images/icons/entry/comments.png);
+	padding-left:28px;
+}
+
+/* CONTENT - ENTRY - AFTER - TAGS
+--------------------------------------------------------------- */
+#content .entry .after .tags {
+	background-image:url(../images/icons/entry/tags.png);
+	padding-left:27px;
+}
+
+/* CONTENT - ENTRY - AFTER - CATEGORIES
+--------------------------------------------------------------- */
+#content .entry .after .categories {
+	background-image:url(../images/icons/entry/categories.png);
+	padding-left:26px;
+}
+
+/*                    MAIN STRUCTURE - ASIDE                    
+--------------------------------------------------------------- */
+
+/* ASIDE
+--------------------------------------------------------------- */
+#aside {}
+
+/* ASIDE (HYPERLINK)
+--------------------------------------------------------------- */
+#aside a,
+#aside a:active,
+#aside a:link,
+#aside a:visited {}
+#aside a:hover {}
+
+/* ASIDE - WIDGET
+--------------------------------------------------------------- */
+#aside .widget {
+	background:rgb(255,255,255);
+	border:solid 1px;
+}
+
+/*                   MAIN STRUCTURE - FOOTER                    
+--------------------------------------------------------------- */
+
+/* FOOTER
+--------------------------------------------------------------- */
+#footer {
+	background:rgb(35,35,35);
+	color:rgb(204,204,204);
+	margin-bottom:20px;
+	padding-top:20px;
+	text-shadow:0 1px rgb(0,0,0);
+}
+
+/* FOOTER (HYPERLINK)
+--------------------------------------------------------------- */
+#footer a,
+#footer a:active,
+#footer a:link,
+#footer a:visited {
+	color:rgb(204,204,204);
+	text-decoration:none;
+}
+#footer a:hover {
+	color:rgb(255,255,255);
+	text-decoration:none;
+}
+
+/* FOOTER - WIDGET
+--------------------------------------------------------------- */
+#footer .widget {
+	float:left;
+	width:25%;
+}
+
+/* FOOTER - WIDGET - TITLE
+--------------------------------------------------------------- */
+#footer .widget h1.title {
+	border-bottom:solid 1px rgb(0,0,0);
+	padding-bottom:10px;
+	-webkit-box-shadow:0 -1px 0 rgb(204,204,204) inset;
+	   -moz-box-shadow:0 -1px 0 rgb(204,204,204) inset;
+			box-shadow:0 -1px 0 rgb(204,204,204) inset;
+}
+
+/* FOOTER - WIDGET - LISTS
+--------------------------------------------------------------- */
+#footer .widget ol,
+#footer .widget ul,
+#footer .widget li {
+	list-style:none;
+	margin:0;
+}
+
+/* FOOTER - FOOTER-MENU
+--------------------------------------------------------------- */
+#footer #footer-menu {
+	background:rgba(0,0,0,.2);
+	line-height:36px;
+	margin-bottom:22px;
+	padding:0 10px;
+	text-align:left;
+}
+#footer #footer-menu a {
+	margin-right:10px;
+}
+
+
+/*                   MAIN STRUCTURE - BOTTOM                    
+--------------------------------------------------------------- */
+
+/* BOTTOM
+--------------------------------------------------------------- */
+#bottom {
+	margin-bottom:20px;
+	text-shadow:none;
+	text-shadow:0 1px rgba(0,0,0,.3);
+}
+
+/* BOTTOM (HYPERLINK)
+--------------------------------------------------------------- */
+#bottom a,
+#bottom a:active,
+#bottom a:link,
+#bottom a:visited {
+	text-decoration:none;
+}
+#bottom a:hover {
+	color:rgb(51,51,51);
+	color:rgba(0,0,0,.8);
+	text-decoration:none;
+}
+
+/* BOTTOM - BOTTOM-MENU
+--------------------------------------------------------------- */
+#bottom #bottom-menu {
+	line-height:16px;
+	text-align:left;
+}
+#bottom #bottom-menu a {
+	margin-right:10px;
+}
+
+/* BOTTOM - LEGAL
+--------------------------------------------------------------- */
+#bottom .legal {
+	text-align:right;
+}
+
+/*                    WORDPRESS FUNCTIONALITY                   
+--------------------------------------------------------------- */
+
+/* COMMENTS
+--------------------------------------------------------------- */
+#comments {}
+
+/* COMMENTS (HYPERLINKS)
+--------------------------------------------------------------- */
+#comments a,
+#comments a:active,
+#comments a:link,
+#comments a:visited {
+	text-decoration:none;
+}
+#comments a:hover {
+	text-decoration:none;
+}
+
+/* COMMENTS - TITLES
+--------------------------------------------------------------- */
+#comments h1.title,
+#comments h1.comments-closed {
+	font-size:18px;
+	line-height:18px;
+	margin-bottom:20px;
+	text-align:center;
+}
+
+/* COMMENTS - COMMENT LIST
+--------------------------------------------------------------- */
+#comments ol.comment-list {}
+#comments ol.comment-list li {
+	list-style:none;
+}
+
+/* COMMENTS - COMMENT LIST - COMMENT BODY
+--------------------------------------------------------------- */
+#comments ol.comment-list li.comment .comment-body,
+#comments ol.comment-list li.pingback {
+	background:rgb(255,255,255); 
+	border:solid 1px;
+	margin-bottom:20px;
+	min-height:100px;
+	padding:10px;
+	position:relative;
+}
+
+/* COMMENTS - COMMENT LIST - VCARD
+--------------------------------------------------------------- */
+#comments ol.comment-list .vcard {
+	font-size:22px;
+	line-height:22px;
+	margin-bottom:10px;
+}
+#comments ol.comment-list .vcard .says {
+	font-size:18px;
+	font-style:italic;
+	line-height:22px;
+}
+
+/* COMMENTS - COMMENT LIST - VCARD (HYPERLINKS)
+--------------------------------------------------------------- */
+#comments ol.comment-list .vcard a,
+#comments ol.comment-list .vcard a:active,
+#comments ol.comment-list .vcard a:link,
+#comments ol.comment-list .vcard a:visited {
+	color:rgb(51,51,51);
+	color:rgba(0,0,0,.8);
+	text-decoration:none;
+}
+#comments ol.comment-list .vcard a:hover {
+	color:rgb(0,76,120);
+	text-decoration:none;
+}
+
+/* COMMENTS - COMMENT LIST - GRAVATAR 
+--------------------------------------------------------------- */
+#comments ol.comment-list .vcard img {
+	float:right;
+	margin:0 0 10px 10px;
+	max-height:100px;
+	max-width:100px;
+}
+
+/* COMMENTS - COMMENT LIST - COMMENT META
+--------------------------------------------------------------- */
+#comments ol.comment-list .commentmetadata {
+	display:inline-block;
+	margin-bottom:10px;
+}
+
+/* COMMENTS - COMMENT LIST - COMMENT META (HYPERLINKS)
+--------------------------------------------------------------- */
+#comments ol.comment-list .commentmetadata a,
+#comments ol.comment-list .commentmetadata a:active,
+#comments ol.comment-list .commentmetadata a:link,
+#comments ol.comment-list .commentmetadata a:visited {
+	color:rgb(51,51,51);
+	color:rgba(0,0,0,.8);
+	text-decoration:none;
+}
+#comments ol.comment-list .commentmetadata a:hover {
+	color:rgb(153,153,153);
+	color:rgba(0,0,0,.4);
+	text-decoration:none;
+}
+
+/* COMMENTS - COMMENT LIST - COMMENT EDIT LINK
+--------------------------------------------------------------- */
+#comments ol.comment-list a.comment-edit-link,
+#comments ol.comment-list a.comment-edit-link:active,
+#comments ol.comment-list a.comment-edit-link:link,
+#comments ol.comment-list a.comment-edit-link:visited {
+	color:rgb(51,51,51);
+	color:rgba(0,0,0,.8);
+	font-weight:700;
+	text-decoration:none;
+}
+#comments ol.comment-list a.comment-edit-link:hover {
+	color:rgb(255,0,0);
+	text-decoration:none;
+}
+
+/* COMMENTS - COMMENT LIST - COMMENT REPLY
+--------------------------------------------------------------- */
+#comments ol.comment-list .reply {
+	bottom:10px;
+}
+#comments ol.comment-list .reply a.comment-reply-link,
+#comments ol.comment-list .reply a.comment-reply-link:active,
+#comments ol.comment-list .reply a.comment-reply-link:link,
+#comments ol.comment-list .reply a.comment-reply-link:visited {
+	display:inline-block;
+	font-weight:700;
+	margin-top:10px;
+	text-decoration:none;
+}
+#comments ol.comment-list .reply a.comment-reply-link:hover {
+	color:rgb(255,0,0);
+	text-decoration:none;
+}
+
+/* COMMENTS - COMMENT LIST - CHILD COMMENTS
+--------------------------------------------------------------- */
+#comments ol.comment-list ul.children {
+	margin-left:50px;
+}
+
+/* COMMENTS - COMMENT LIST - POST AUTHOR COMMENT
+--------------------------------------------------------------- */
+#comments ol.comment-list li.bypostauthor > .comment-body {}
+
+/* ESSENTIALS - ALIGNMENT
+--------------------------------------------------------------- */
+.alignnone {
+	margin:5px 20px 20px 0;
+}
+.aligncenter, 
+div.aligncenter {
+	display: block;
+	margin:5px auto 20px auto;
+}
+.alignright {
+	float: right;
+	margin:5px 0 20px 20px;
+}
+.alignleft {
+	float: left;
+	margin:5px 20px 20px 0;
+}
+.aligncenter {
+	display: block;
+	margin:5px auto;
+}
+a img.alignright {
+	float: right;
+	margin:5px 0 20px 20px;
+}
+a img.alignnone {
+	margin:5px 20px 20px 0;
+}
+a img.alignleft {
+	float:left;
+	margin:5px 20px 20px 0;
+}
+a img.aligncenter {
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+/* ESSENTIALS - GALLERY CAPTION
+--------------------------------------------------------------- */
+.gallery-caption {
+	font-size:12px;
+	margin:0 0 12px;
+}
+
+/* ESSENTIALS - CAPTION
+--------------------------------------------------------------- */
+.wp-caption {
+	border:solid 1px;
+	max-width:100%;
+	padding:10px;
+	text-align:center;
+	text-shadow:0 1px 0 rgb(255,255,255);	
+}
+.wp-caption img {
+	border:none;
+	height:auto;
+	margin:0;
+	padding:0;
+	width:auto;
+}
+.wp-caption p.wp-caption-text {
+	margin:0;
+	padding-top:10px;
+}
+img.wp-smiley {
+	vertical-align: middle;
+}
+
+/* ESSENTIALS - RSS WIDGET
+--------------------------------------------------------------- */
+.rsswidget img {
+	float:left;
+	margin-right:10px;
+}
+
+/* JETPACK
+--------------------------------------------------------------- */
+.infinite-loader,
+#infinite-handle {
+	display:table;
+	margin:0 auto 20px auto;
+}
+#infinite-handle span {
+	border:solid 1px;
+	color:rgb(51,51,51);
+	margin:0;
+	padding:10px 20px;
+	text-shadow:0 1px rgb(255,255,255);
+	
+    /* BORDER RADIUS */
+    -webkit-border-radius:5px;	
+	   -moz-border-radius:5px;
+       		border-radius:5px;
+			
+	/* BOX SHADOW */
+	-webkit-box-shadow:0 1px rgb(255,255,255) inset;
+	   -moz-box-shadow:0 1px rgb(255,255,255) inset;
+			box-shadow:0 1px rgb(255,255,255) inset;
+}
+
+/* RESPOND
+--------------------------------------------------------------- */
+#respond {
+	border:solid 1px;
+	margin-bottom:20px;
+	padding:10px;
+}
+
+/* RESPOND - TITLE
+--------------------------------------------------------------- */
+#respond h3#reply-title.comment-reply-title {
+	font-size:18px;
+	line-height:18px;
+	margin-bottom:10px;
+}
+
+/* RESPOND - FORM
+--------------------------------------------------------------- */
+#respond input {
+	margin-bottom:10px;
+}
+#respond input#submit {
+	margin:0;
+}
+
+/* RESPOND - COMMENT NOTE
+--------------------------------------------------------------- */
+#respond .comment-notes {
+	margin-bottom:10px;
+}
+
+/* RESPOND - ALLOWED TAGS
+--------------------------------------------------------------- */
+#respond .form-allowed-tags {
+	margin-top:10px;
+}
+
+/* RESPOND - CANCEL COMMENT REPLY LINK
+--------------------------------------------------------------- */
+#respond #cancel-comment-reply-link {
+	float:right;
+	line-height:22px;
+}
+#respond a#cancel-comment-reply-link {
+	color:rgb(255,0,0);
+}
+#respond a#cancel-comment-reply-link:hover {
+	color:rgb(153,0,0);
+}
+
+/* STICKY
+--------------------------------------------------------------- */
+.sticky {}
+
+@media screen and (max-width:690px) {
+	
+	/*                    MAIN STRUCTURE - HEADER                   
+	--------------------------------------------------------------- */
+	
+	/* HEADER - LOGO
+	--------------------------------------------------------------- */
+	#header .logo img {
+		margin:0 auto;
+	}
+	#header .logo {
+		text-align:center;
+	}
+	
+	/*                  MAIN STRUCTURE - NAVIGATION                 
+	--------------------------------------------------------------- */
+	
+	/* NAVIGATION - PRIMARY MENU
+	--------------------------------------------------------------- */
+	#navigation #primary-menu {
+		padding:10px 0;
+	}	
+	#navigation #primary-menu ul.drop-down-menu select {
+		color:rgb(255,255,255);
+		display:block;
+		
+		/* BACKGROUND GRADIENT */
+		background:rgb(1,91,145);
+		background:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAxNWI5MSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDRjNzgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+		background:-moz-linear-gradient(top,  rgb(1,91,145) 0%, rgb(0,76,120) 100%);
+		background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(1,91,145)), color-stop(100%,rgb(0,76,120)));
+		background:-webkit-linear-gradient(top,  rgb(1,91,145) 0%,rgb(0,76,120) 100%);
+		background:-o-linear-gradient(top,  rgb(1,91,145) 0%,rgb(0,76,120) 100%);
+		background:-ms-linear-gradient(top,  rgb(1,91,145) 0%,rgb(0,76,120) 100%);
+		background:linear-gradient(to bottom,  rgb(1,91,145) 0%,rgb(0,76,120) 100%);
+		filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#015b91', endColorstr='#004c78',GradientType=0 );
+		
+	}
+	#navigation #primary-menu ul.drop-down-menu select option {
+		background:rgb(0,76,120);
+	}
+	
+	/*                   MAIN STRUCTURE - FOOTER                    
+	--------------------------------------------------------------- */
+	
+	/* FOOTER - WIDGET
+	--------------------------------------------------------------- */
+	#footer .widget {
+		float:none;
+		width:100%;
+	}
+}
+
+@media screen and (max-width:690px) {
+	/*                    MAIN STRUCTURE - HEADER                   
+	--------------------------------------------------------------- */
+	
+	/* HEADER - LOGO
+	--------------------------------------------------------------- */
+	#header .logo img {
+		margin:0 auto;
+	}
+	#header .logo {
+		text-align:center;
+	}
+	
+	/*                  MAIN STRUCTURE - NAVIGATION                 
+	--------------------------------------------------------------- */
+	
+	/* NAVIGATION - PRIMARY MENU
+	--------------------------------------------------------------- */
+	#navigation #primary-menu {
+		padding:10px 0;
+	}	
+	#navigation #primary-menu ul.drop-down-menu select {
+		color:rgb(255,255,255);
+		display:block;
+		
+		/* BACKGROUND GRADIENT */
+		background:rgb(1,91,145);
+		background:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAxNWI5MSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDRjNzgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+		background:-moz-linear-gradient(top,  rgb(1,91,145) 0%, rgb(0,76,120) 100%);
+		background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(1,91,145)), color-stop(100%,rgb(0,76,120)));
+		background:-webkit-linear-gradient(top,  rgb(1,91,145) 0%,rgb(0,76,120) 100%);
+		background:-o-linear-gradient(top,  rgb(1,91,145) 0%,rgb(0,76,120) 100%);
+		background:-ms-linear-gradient(top,  rgb(1,91,145) 0%,rgb(0,76,120) 100%);
+		background:linear-gradient(to bottom,  rgb(1,91,145) 0%,rgb(0,76,120) 100%);
+		filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#015b91', endColorstr='#004c78',GradientType=0 );
+		
+	}
+	#navigation #primary-menu ul.drop-down-menu select option {
+		background:rgb(0,76,120);
+	}
+	
+	/*                   MAIN STRUCTURE - FOOTER                    
+	--------------------------------------------------------------- */
+	
+	/* FOOTER - WIDGET
+	--------------------------------------------------------------- */
+	#footer .widget {
+		float:none;
+		width:100%;
+	}
+}
