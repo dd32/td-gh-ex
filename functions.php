@@ -15,11 +15,11 @@
 	add_filter( 'ot_show_pages', '__return_false' );
 	add_filter( 'ot_show_new_layout', '__return_false' );
 	add_filter( 'ot_theme_mode', '__return_true' );
-	load_template( trailingslashit( get_template_directory() ) . 'option-tree/ot-loader.php' );
+	load_template( get_template_directory() . '/option-tree/ot-loader.php' );
 	
 	// Load theme options and meta boxes
-	load_template( trailingslashit( get_template_directory() ) . 'functions/theme-options.php' );
-	load_template( trailingslashit( get_template_directory() ) . 'functions/meta-boxes.php' );
+	load_template( get_template_directory() . '/functions/theme-options.php' );
+	load_template( get_template_directory() . '/functions/meta-boxes.php' );
 
 	
 /* ------------------------------------------------------------------------- *
@@ -27,15 +27,15 @@
 /* ------------------------------------------------------------------------- */
 	
 	// Load custom widgets
-	load_template( trailingslashit( get_template_directory() ) . 'functions/widgets/alx-tabs.php' );
-	load_template( trailingslashit( get_template_directory() ) . 'functions/widgets/alx-video.php' );
-	load_template( trailingslashit( get_template_directory() ) . 'functions/widgets/alx-posts.php' );
+	load_template( get_template_directory() . '/functions/widgets/alx-tabs.php' );
+	load_template( get_template_directory() . '/functions/widgets/alx-video.php' );
+	load_template( get_template_directory() . '/functions/widgets/alx-posts.php' );
 	
 	// Load dynamic styles
-	load_template( trailingslashit( get_template_directory() ) . 'functions/dynamic-styles.php' );
+	load_template( get_template_directory() . '/functions/dynamic-styles.php' );
 	
 	// Load TGM plugin activation
-	load_template( trailingslashit( get_template_directory() ) . 'functions/class-tgm-plugin-activation.php' );
+	load_template( get_template_directory() . '/functions/class-tgm-plugin-activation.php' );
 	
 	// Content width
 	if ( !isset( $content_width ) ) $content_width = 720;
@@ -307,19 +307,19 @@ if ( ! function_exists( 'alx_social_links' ) ) {
 				foreach( $links as $item ) {
 					
 					// Build each separate html-section only if set
-					if ( isset ($item['title']) && !empty($item['title']) ) 
+					if ( isset($item['title']) && !empty($item['title']) ) 
 						{ $title = 'title="' .$item['title']. '"'; } else $title = '';
-					if ( isset ($item['social-link']) && !empty($item['social-link']) ) 
+					if ( isset($item['social-link']) && !empty($item['social-link']) ) 
 						{ $link = 'href="' .$item['social-link']. '"'; } else $link = '';
-					if ( isset ($item['social-target']) && !empty($item['social-target']) ) 
+					if ( isset($item['social-target']) && !empty($item['social-target']) ) 
 						{ $target = 'target="' .$item['social-target']. '"'; } else $target = '';
-					if ( isset ($item['social-icon']) && !empty($item['social-icon']) ) 
+					if ( isset($item['social-icon']) && !empty($item['social-icon']) ) 
 						{ $icon = 'class="fa ' .$item['social-icon']. '"'; } else $icon = '';
-					if ( isset ($item['social-color']) && !empty($item['social-color']) ) 
+					if ( isset($item['social-color']) && !empty($item['social-color']) ) 
 						{ $color = 'style="color: ' .$item['social-color']. ';"'; } else $color = '';
 					
 					// Put them together
-					if ( isset ($item['title']) && !empty($item['title']) ) {
+					if ( isset($item['title']) && !empty($item['title']) && isset($item['social-icon']) && !empty($item['social-icon']) && ($item['social-icon'] !='fa-') ) {
 						echo '<li><a class="social-tooltip '.$item['title'].'" '.$title.' '.$link.' '.$target.'><i '.$icon.' '.$color.'></i></a></li>';
 					}
 				}
@@ -490,7 +490,9 @@ if ( ! function_exists( 'alx_custom_sidebars' ) ) {
 			
 			if ( !empty( $sidebars ) ) {
 				foreach( $sidebars as $sidebar ) {
-					register_sidebar(array('name' => ''.$sidebar['title'].'','id' => ''.$sidebar['id'].'','before_widget' => '<div id="%1$s" class="widget %2$s">','after_widget' => '</div>','before_title' => '<h3>','after_title' => '</h3>'));
+					if ( isset($sidebar['title']) && !empty($sidebar['title']) && isset($sidebar['id']) && !empty($sidebar['id']) && ($sidebar['id'] !='sidebar-') ) {
+						register_sidebar(array('name' => ''.$sidebar['title'].'','id' => ''.$sidebar['id'].'','before_widget' => '<div id="%1$s" class="widget %2$s">','after_widget' => '</div>','before_title' => '<h3>','after_title' => '</h3>'));
+					}
 				}
 			}
 		}	
@@ -825,7 +827,7 @@ if ( ! function_exists( 'alx_plugins' ) ) {
 			array(
 				'name' 				=> 'Responsive Lightbox',
 				'slug' 				=> 'light',
-				'source'			=> get_stylesheet_directory() . '/functions/plugins/light.zip',
+				'source'			=> get_template_directory() . '/functions/plugins/light.zip',
 				'required'			=> false,
 				'force_activation' 	=> false,
 				'force_deactivation'=> false,
