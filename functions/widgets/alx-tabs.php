@@ -387,7 +387,11 @@ class AlxTabs extends WP_Widget {
 
 /*  Register widget
 /* ------------------------------------ */
+if ( ! function_exists( 'alx_register_widget_tabs' ) ) {
+
 	function alx_register_widget_tabs() { 
 		register_widget( 'AlxTabs' );
 	}
-	add_action( 'widgets_init', 'alx_register_widget_tabs' );
+	
+}
+add_action( 'widgets_init', 'alx_register_widget_tabs' );

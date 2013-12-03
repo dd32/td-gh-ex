@@ -175,7 +175,11 @@ class AlxPosts extends WP_Widget {
 
 /*  Register widget
 /* ------------------------------------ */
+if ( ! function_exists( 'alx_register_widget_posts' ) ) {
+
 	function alx_register_widget_posts() { 
 		register_widget( 'AlxPosts' );
 	}
-	add_action( 'widgets_init', 'alx_register_widget_posts' );
+	
+}
+add_action( 'widgets_init', 'alx_register_widget_posts' );

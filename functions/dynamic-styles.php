@@ -5,6 +5,8 @@
 
 /*  Convert hexadecimal to rgb
 /* ------------------------------------ */
+if ( ! function_exists( 'alx_hex2rgb' ) ) {
+
 	function alx_hex2rgb( $hex, $array=false ) {
 		$hex = str_replace("#", "", $hex);
 
@@ -21,11 +23,15 @@
 		$rgb = array( $r, $g, $b );
 		if ( !$array ) { $rgb = implode(",", $rgb); }
 		return $rgb;
-	}	
+	}
+	
+}	
 
 
 /*  Google fonts
 /* ------------------------------------ */
+if ( ! function_exists( 'alx_google_fonts' ) ) {
+
 	function alx_google_fonts () {
 		if ( ot_get_option('dynamic-styles') ) {
 			if ( ot_get_option( 'font' ) == 'titillium-web-ext' ) { echo '<link href="http://fonts.googleapis.com/css?family=Titillium+Web:400,400italic,300italic,300,600&subset=latin,latin-ext" rel="stylesheet" type="text/css">'. "\n"; }
@@ -38,12 +44,16 @@
 			if ( ot_get_option( 'font' ) == 'open-sans' ) { echo '<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,600&subset=latin,latin-ext" rel="stylesheet" type="text/css">'. "\n"; }
 			if ( ot_get_option( 'font' ) == 'open-sans-cyr' ) { echo '<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,600&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">'. "\n"; }
 		}
-	}
-	add_action( 'wp_head', 'alx_google_fonts', 2 );
+	}	
+	
+}
+add_action( 'wp_head', 'alx_google_fonts', 2 );	
 
 
 /*  Dynamic css output
 /* ------------------------------------ */
+if ( ! function_exists( 'alx_dynamic_css' ) ) {
+
 	function alx_dynamic_css() {
 		if ( ot_get_option('dynamic-styles') ) {
 		
@@ -214,4 +224,6 @@ a,
 			echo $styles;		
 		}
 	}
-	add_action( 'wp_head', 'alx_dynamic_css', 100 );
+	
+}
+add_action( 'wp_head', 'alx_dynamic_css', 100 );

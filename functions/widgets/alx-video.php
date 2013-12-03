@@ -110,7 +110,11 @@ class AlxVideo extends WP_Widget {
 
 /*  Register widget
 /* ------------------------------------ */
+if ( ! function_exists( 'alx_register_widget_video' ) ) {
+
 	function alx_register_widget_video() { 
 		register_widget( 'AlxVideo' );
 	}
-	add_action( 'widgets_init', 'alx_register_widget_video' );
+	
+}
+add_action( 'widgets_init', 'alx_register_widget_video' );
