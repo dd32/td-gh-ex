@@ -102,35 +102,41 @@ function rockers_custom_excerpt_more($output) {
 add_filter( 'get_the_excerpt', 'rockers_custom_excerpt_more' );
 
 function rockers_widgets_init() {
-    register_sidebar( array(
-        'name' => __( 'Main Sidebar', 'rockers' ),
-        'id' => 'sidebar-1',
-        'description' => __( 'This widget will appears on posts and pages except on our optional Front page template.', 'rockers' ),
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget' => '</aside>',
-        'before_title' => '<h3 class="widget-title">',
-        'after_title' => '</h3>',
-    ) );
+    register_sidebar( 
+        array(
+            'name' => __( 'Main Sidebar', 'rockers' ),
+            'id' => 'sidebar-1',
+            'description' => __( 'This widget will appears on posts and pages except on our optional Front page template.', 'rockers' ),
+            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+            'after_widget' => '</aside>',
+            'before_title' => '<h3 class="widget-title">',
+            'after_title' => '</h3>',
+        ) 
+    );
 
-    register_sidebar( array(
-        'name' => __( 'First Front Page Widget Area', 'rockers' ),
-        'id' => 'sidebar-2',
-        'description' => __( 'This widget will appears when using the optional Front page template with a page set as Static Front page.', 'rockers' ),
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget' => '</aside>',
-        'before_title' => '<h3 class="widget-title">',
-        'after_title' => '</h3>',
-    ) );
+    register_sidebar( 
+        array(
+            'name' => __( 'First Front Page Widget Area', 'rockers' ),
+            'id' => 'sidebar-2',
+            'description' => __( 'This widget will appears when using the optional Front page template with a page set as Static Front page.', 'rockers' ),
+            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+            'after_widget' => '</aside>',
+            'before_title' => '<h3 class="widget-title">',
+            'after_title' => '</h3>',
+        ) 
+    );
 
-    register_sidebar( array(
-        'name' => __( 'Second Front Page Widget Area', 'rockers' ),
-        'id' => 'sidebar-3',
-        'description' => __( 'This widget will appears when using the optional Front Page template with a page set as Static Front Page.', 'rockers' ),
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget' => '</aside>',
-        'before_title' => '<h3 class="widget-title">',
-        'after_title' => '</h3>',
-    ) );
+    register_sidebar( 
+        array(
+            'name' => __( 'Second Front Page Widget Area', 'rockers' ),
+            'id' => 'sidebar-3',
+            'description' => __( 'This widget will appears when using the optional Front Page template with a page set as Static Front Page.', 'rockers' ),
+            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+            'after_widget' => '</aside>',
+            'before_title' => '<h3 class="widget-title">',
+            'after_title' => '</h3>',
+        ) 
+    );
 }
 add_action( 'widgets_init', 'rockers_widgets_init' );
 
@@ -140,8 +146,10 @@ if ( ! function_exists( 'rockers_content_nav' ) ) :
         if ( $wp_query->max_num_pages > 1 ) : ?>
             <nav id="<?php echo $nav_id; ?>" class="navigation">
                 <h3 class="accessibility"><?php _e( 'Post navigation', 'rockers' ); ?></h3>
-                <div class="prev-link alignleft"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'rockers' ) ); ?></div>
-                <div class="next-link alignright"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'rockers' ) ); ?></div>
+                <ul>
+                    <li class="prev-link alignleft"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'rockers' ) ); ?></li>
+                    <li class="next-link alignright"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'rockers' ) ); ?></li>
+                </ul>
             </nav>
         <?php endif;
     }
