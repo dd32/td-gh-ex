@@ -1,8 +1,12 @@
   Theme : Hueman (wordpress.org release)
-Version : 1.1.5
+Version : 1.1.6
  Author : Alexander "Alx" Agnarson - http://alxmedia.se
 
-December 3 2013 - 1.1.5
+December 3 2013 - 1.1.6
+===========================================================
+- Code cleanup
+
+December 2 2013 - 1.1.5
 ===========================================================
 - Added empty title/id/icon checks for social links and widget areas
 - Added star indication for admin comments
