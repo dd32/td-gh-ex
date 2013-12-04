@@ -63,7 +63,7 @@ if ( ! function_exists( 'alx_dynamic_css' ) ) {
 			
 			// start output
 			$styles = '<style type="text/css">'."\n";
-			$styles .= '/* Dynamic CSS: For no styles in head, copy and put the css below in your custom.css, disable dynamic styles */'."\n";		
+			$styles .= '/* Dynamic CSS: For no styles in head, copy and put the css below in your child theme\'s style.css, disable dynamic styles */'."\n";		
 			
 			// google fonts
 			if ( ot_get_option( 'font' ) == 'titillium-web-ext' ) { $styles .= 'body, input, textarea, button, select, label { font-family: "Titillium Web", Arial, sans-serif; }'."\n"; }
@@ -200,22 +200,8 @@ a,
 				$styles .= 'img { -webkit-border-radius: '.ot_get_option('image-border-radius').'px; border-radius: '.ot_get_option('image-border-radius').'px; }'."\n";
 			}
 			// body background
-			if ( ot_get_option('body-background') != '' ) {
-				
-				$body_background = ot_get_option('body-background');
-				$body_color = $body_background['background-color'];
-				$body_image = $body_background['background-image'];
-				$body_position = $body_background['background-position'];
-				$body_attachment = $body_background['background-attachment'];
-				$body_repeat = $body_background['background-repeat'];
-				
-				if ( $body_image ) {
-					$styles .= 'body { background: '.$body_color.' url('.$body_image.') '.$body_attachment.' '.$body_position.' '.$body_repeat.'; }'."\n";
-				} elseif ( $body_background['background-color'] ) {
-					$styles .= 'body { background-color: '.$body_color.'; }'."\n";
-				} else {
-					$styles .= '';
-				}
+			if ( ot_get_option('body-background') != '#eaeaea' ) {
+				$styles .= 'body { background-color: '.ot_get_option('body-background').'; }'."\n";
 			}
 			
 			$styles .= '</style>'."\n";

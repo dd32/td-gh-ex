@@ -1,14 +1,18 @@
   Theme : Hueman (wordpress.org release)
-Version : 1.1.7
+Version : 1.1.8
  Author : Alexander "Alx" Agnarson - http://alxmedia.se
 
-December 3 2013 - 1.1.7
+December 4 2013 - 1.1.8
 ===========================================================
-- Code cleanup
+- Added sample child theme download to help dropdown
+- (wordpress.org release) Removed custom.css file, as required
+- (wordpress.org release) Removed non-standard header image option, as required
+- (wordpress.org release) Removed non-standard background image option, as required
 
-December 3 2013 - 1.1.6
+December 3 2013 - 1.1.6 & 1.1.7
 ===========================================================
-- Code cleanup
+- Moved add_action and add_filter outside of function_exists
+- Added function_exists to functions registering custom widgets
 
 December 2 2013 - 1.1.5
 ===========================================================

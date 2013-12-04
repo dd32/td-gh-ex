@@ -30,16 +30,16 @@ function custom_theme_options() {
 			<p><i>Q: I did not use featured images before and have many posts, what do I do?</i> &mdash; A: Use the <a target="_blank" href="http://wordpress.org/plugins/easy-add-thumbnail/">Easy Add Thumbnail</a> plugin to automatically make the first image uploaded to each post a featured image.</p>
 			<p><i>Q: Why is my featured image not appearing on the single post page?</i> &mdash; A: You need to use the "Image" format option for it to show up, as not everyone wants to show the featured image at the top for the "Standard" post format.</p>
 			<p><i>Q: My gallery format post shows images twice, why?</i> &mdash; A: This is because you insert a standard gallery into the post itself. This is not needed, as the gallery format post will auto-display attached images in the slider above.</p>
+			<p><i>Q: My slider gallery includes images I only want to show in the content below</i> &mdash; A: The gallery format will always show all attached images. For it to not show up, go to Media > Add New and upload it there. Then go back to the post and add it.</p>
 			<p><i>Q: How do I make the homepage slider auto-progress?</i> &mdash; A: In /inc/featured.php change <i>slideshow: false</i> to true.</p>
 			<h3>Dynamic Styles</h3>
-			<p>The dynamic styles will be added directly to the head of your theme. This is according to WordPress best practices, but if you do not want it printed out there, simply inspect the code of your page with the styling options set. Copy the CSS from head into your custom.css file, and disable dynamic styling.</p>
-			<h3>Before Theme Updates</h3>
-			<ol>
-				<li>Backup your custom.css file if you have used it, it will be overwritten and needs to be re-added after the update.</li>
-				<li>Backup your additional language files if you have created/modified any, they will be removed and needs to be re-added after the update.</li>
-				<li>Backup any other custom code.</li>
-			</ol>
-			<p>If you are using a <a target="_blank" href="http://codex.wordpress.org/Child_Themes">child theme</a>, this is not required.</p>
+			<p>The dynamic styles will be added directly to the head of your theme. This is according to WordPress best practices, but if you do not want it printed out there, simply inspect the code of your page with the styling options set. Copy the CSS from head into your child theme\'s style.css file, and disable dynamic styling.</p>
+			<h3>Theme Customization</h3>
+			<p>When modifiying the theme you should always use a child theme, otherwise your customized files will be removed/overwritten when you update the theme. Download the sample child theme below and upload it via admin. Then activate your child theme and start customizing it!</p>
+			<ul>
+				<li>Read more how to use a child theme <a target="_blank" href="http://codex.wordpress.org/Child_Themes">here</a>.</li>
+				<li>Download the Hueman sample child theme <a href="https://github.com/AlxMedia/hueman-child/archive/master.zip">here</a>.</li>
+			</ul>
 		'
         )
       )
@@ -86,20 +86,6 @@ function custom_theme_options() {
 /* ------------------------------------ */
 	'settings'        => array(
 		
-		// General: Custom CSS
-		array(
-			'id'		=> 'custom',
-			'label'		=> 'Custom Stylesheet',
-			'desc'		=> 'Load your custom styles [ <strong>custom.css</strong> ]<br /><i>Note: You must backup this file before a theme update. Consider using a <a target="_blank" href="http://codex.wordpress.org/Child_Themes">child theme</a> instead</i>',
-			'type'		=> 'checkbox',
-			'section'	=> 'general',
-			'choices'	=> array(
-				array( 
-					'value' => '1',
-					'label' => 'Enable'
-				)
-			)
-		),
 		// General: Responsive Layout
 		array(
 			'id'		=> 'responsive',
@@ -329,14 +315,6 @@ function custom_theme_options() {
 					'label' => 'Disable'
 				)
 			)
-		),
-		// Header: Header Image
-		array(
-			'id'		=> 'header-image',
-			'label'		=> 'Header Image',
-			'desc'		=> 'Upload a header image. This will disable header title and description',
-			'type'		=> 'upload',
-			'section'	=> 'header'
 		),
 		// Footer: Widget Columns
 		array(
@@ -953,7 +931,7 @@ function custom_theme_options() {
 		array(
 			'id'		=> 'boxed',
 			'label'		=> 'Boxed Layout',
-			'desc'		=> 'Use a boxed layout. Good for background images',
+			'desc'		=> 'Use a boxed layout',
 			'type'		=> 'checkbox',
 			'section'	=> 'styling',
 			'choices'	=> array(
@@ -1125,8 +1103,9 @@ function custom_theme_options() {
 		array(
 			'id'		=> 'body-background',
 			'label'		=> 'Body Background',
-			'desc'		=> 'Set background color and/or upload your own background image',
-			'type'		=> 'background',
+			'desc'		=> 'Set background color',
+			'std'		=> '#eaeaea',
+			'type'		=> 'colorpicker',
 			'section'	=> 'styling'
 		)
 	)
