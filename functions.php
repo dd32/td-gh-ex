@@ -13,6 +13,23 @@
  * @link     http://www.cyberchimps.com/
  */
 
+// Theme check function to determine whether the them is free or pro.
+if( !function_exists( 'cyberchimps_theme_check' ) ) {
+	function cyberchimps_theme_check() {
+		$level = 'free';
+
+		return $level;
+	}
+}
+
+//Theme Name
+function ifeature_options_theme_name() {
+	$text = 'iFeature';
+	
+	return $text;
+}
+add_filter( 'cyberchimps_current_theme_name', 'ifeature_options_theme_name', 1 );
+
 // Load Core
 require_once( get_template_directory() . '/cyberchimps/init.php' );
 
@@ -106,22 +123,6 @@ function cyberchimps_next_previous_posts() {
 
 add_action( 'cyberchimps_after_content', 'cyberchimps_next_previous_posts' );
 
-if( !function_exists( 'cyberchimps_theme_check' ) ) :
-// core options customization Names and URL's
-//Pro or Free has to stay prepended with cyberchimps_
-	function cyberchimps_theme_check() {
-		$level = 'free';
-
-		return $level;
-	}
-endif;
-//Theme Name
-function ifeature_options_theme_name() {
-	$text = 'iFeature';
-
-	return $text;
-}
-
 //Doc's URL
 function ifeature_options_documentation_url() {
 	$url = 'http://cyberchimps.com/guides/c-free/';
@@ -136,7 +137,6 @@ function ifeature_options_support_forum() {
 	return $url;
 }
 
-add_filter( 'cyberchimps_current_theme_name', 'ifeature_options_theme_name', 1 );
 add_filter( 'cyberchimps_documentation', 'ifeature_options_documentation_url' );
 add_filter( 'cyberchimps_support_forum', 'ifeature_options_support_forum' );
 
