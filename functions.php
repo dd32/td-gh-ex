@@ -186,6 +186,8 @@ if ( ! function_exists( 'alx_layout_class' ) ) {
 if ( ! function_exists( 'alx_sidebar_dual' ) ) {
 	
 	function alx_sidebar_dual() {
+		global $post;
+		
 		if ( 
 			( is_home() && ( 
 				( ot_get_option('layout-home') =='col-3cm' ) || 
@@ -225,6 +227,14 @@ if ( ! function_exists( 'alx_sidebar_dual' ) ) {
 		)
 		{ get_template_part('sidebar-2'); }
 		
+		elseif ( 
+			( is_page() || is_single() ) && (
+			( get_post_meta($post->ID,'_layout',true) == 'col-3cm' ) ||
+			( get_post_meta($post->ID,'_layout',true) == 'col-3cl' ) ||
+			( get_post_meta($post->ID,'_layout',true) == 'col-3cr' ) )
+		)
+		{ get_template_part('sidebar-2'); }
+		
 		elseif (
 			( ot_get_option('layout-global') =='col-3cm' ) || 
 			( ot_get_option('layout-global') =='col-3cl' ) || 
@@ -259,7 +269,7 @@ if ( ! function_exists( 'alx_sidebar_primary' ) ) {
 			wp_reset_postdata();
 			global $post;
 			// Get meta
-			$meta = get_post_meta($post->ID,'_sidebar_primary',TRUE);
+			$meta = get_post_meta($post->ID,'_sidebar_primary',true);
 			if ( $meta ) { $sidebar = $meta; }
 		}
 
@@ -293,7 +303,7 @@ if ( ! function_exists( 'alx_sidebar_secondary' ) ) {
 			wp_reset_postdata();
 			global $post;
 			// Get meta
-			$meta = get_post_meta($post->ID,'_sidebar_secondary',TRUE);
+			$meta = get_post_meta($post->ID,'_sidebar_secondary',true);
 			if ( $meta ) { $sidebar = $meta; }
 		}
 

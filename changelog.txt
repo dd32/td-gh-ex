@@ -1,6 +1,10 @@
   Theme : Hueman (wordpress.org release)
-Version : 1.1.8
+Version : 1.1.9
  Author : Alexander "Alx" Agnarson - http://alxmedia.se
+
+December 4 2013 - 1.1.9
+===========================================================
+- Fixed bug with hidden sidebar-2 when specific page or post layout is set to 2 sidebars, when global is 1 or 0
 
 December 4 2013 - 1.1.8
 ===========================================================
