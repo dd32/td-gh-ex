@@ -58,6 +58,10 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version
+1. Added security to the titles
+2. favicon misspelled corrected
+3. home.php removed...
 @version 1.0.3
 @version 1.0.2
 1. Tag lien linked to home 

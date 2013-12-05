@@ -26,7 +26,7 @@
 				</div>				   
 			  <?php $defalt_arg =array('class' => "blog_section_img" )?>
 				<?php if(has_post_thumbnail()):?>
-				<a  href="<?php the_permalink(); ?>"title="<?php the_title(); ?>"><?php the_post_thumbnail('', $defalt_arg); ?>
+				<a  href="<?php the_permalink(); ?>"title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail('', $defalt_arg); ?>
 				</a>
 			 <?php endif;?>
 				<div class="blog_con_mn"> <?php  the_content( __( 'Read More' , 'busi_prof' ) ); ?></div>

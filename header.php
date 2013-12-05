@@ -27,7 +27,7 @@
 		 if($busiprof_current_options['upload_image_favicon']!=''){?>
 				<link rel="shortcut icon" href="<?php  echo $busiprof_current_options['upload_image_favicon']; ?>" /> 
 			<?php } else {?>	
-			<link   rel="shortcut icon" href="<?php echo get_template_directory_uri();?>/images/fevicon.icon">
+			<link   rel="shortcut icon" href="<?php echo get_template_directory_uri();?>/images/favicon.ico">
 			<?php } ?>
 				<link rel="profile" href="http://gmpg.org/xfn/11" />
 				<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" media="screen" />
