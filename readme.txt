@@ -6,6 +6,12 @@ You can directly contact us: http://www.wrock.org/promax
 also suggestion are welcome
 
 
+--------------------------------------------------------
+How to Install theme: if you are getting any error or don't know intallation then read below tutorial
+http://www.wrock.org/documentation-install-wordpress-premium-theme-without-data-loss/
+
+--------------------------------------------------------
+
 --------------------------ProMax------------------------
 Features:
 
@@ -30,7 +36,14 @@ Custom Css:
 
 == Change log ==
 
-= 1.3.1 =
+= 1.3.5 =
+*Added shadow to posts make it stylish
+*Font size customize
+*Some premium features added
+*Removed js folder no need of that in free version
+*Fixed other issues
+
+= 1.3 =
 *Fixed thumbnail quality
 *Footer copyright text update
 

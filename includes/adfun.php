@@ -11,18 +11,10 @@
 <div id="bottom-menu-4">
 	<?php if ( !dynamic_sidebar('Bottom Menu 4') ) : ?>
 	<?php endif; ?>
-</div> <!-- end div #bottom-menu-right -->
-</div> <!-- end div #bottom-menu-inner -->
-</div> <!-- end div #bottom-menu -->
-<!-- END BOTTOM-MENU -->
-	<!-- BEGIN FOOTER -->
+</div> </div> </div>
 	<div id="footer">
 	<div id="footer-inner" class="clearfix">
-				<?php _e('Copyright &#169;', 'promax'); ?>  <?php echo date('Y');?> <a href="<?php echo esc_url(home_url());?>/" title="<?php bloginfo('name');?>" ><?php bloginfo('name');?></a><?php _e('. All rights reserved.', 'promax'); ?><?php _e('Powered by', 'promax'); ?> <a href="http://wordpress.org/"><?php _e('WordPress', 'promax'); ?></a><?php _e('. Designed by ', 'promax'); ?><a href="<?php echo esc_url( __( 'http://www.wrock.org/promax', 'promax' ) ); ?>" title="<?php esc_attr_e( 'Wrock.Org', 'promax' ); ?>"><?php printf( __( 'ProMax Theme %s', 'promax' ),''); ?></a>
-
-	
-
-
+	   <?php _e('Copyright &#169;', 'promax'); ?>  <?php echo date('Y');?> <a href="<?php echo esc_url(home_url());?>/" title="<?php bloginfo('name');?>" ><?php bloginfo('name');?></a><?php _e('. All rights reserved.', 'promax'); ?><?php _e('Powered by', 'promax'); ?> <a href="http://wordpress.org/"><?php _e('WordPress', 'promax'); ?></a><?php _e('. Designed by ', 'promax'); ?><a href="<?php echo esc_url( __( 'http://www.wrock.org/product/promax-premium-theme/', 'promax' ) ); ?>" title="<?php esc_attr_e( 'Wrock.Org', 'promax' ); ?>"><?php printf( __( 'ProMax Theme %s', 'promax' ),''); ?></a>
 	</div> <!-- end div #footer-inner -->
 	</div> <!-- end div #footer -->
 	<!-- END FOOTER -->

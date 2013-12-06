@@ -7,18 +7,18 @@
 				<?php if (have_posts()) : ?>
 				<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>					
 				<?php /* If this is a category archive */ if (is_category()) { ?>		
-				<?php promax_breadcrumbs(); ?>
+				<?php if ( of_get_option('promax_bread' ) =='1') { echo promax_breadcrumbs(); } ?>
 				<?php /* If this is a tag archive */  } elseif( is_tag() ) { ?>
-				<?php promax_breadcrumbs(); ?>
+				<?php if ( of_get_option('promax_bread' ) =='1') { echo promax_breadcrumbs(); } ?>
 				<?php /* If this is a daily archive */ } elseif (is_day()) { ?>		<?php _e('Archive for', 'promax'); ?> <?php the_time('F jS, Y'); ?>
 				<?php /* If this is a monthly archive */ } elseif (is_month()) { ?>
-				<?php promax_breadcrumbs(); ?>
+				<?php if ( of_get_option('promax_bread' ) =='1') { echo promax_breadcrumbs(); } ?>
 				<?php /* If this is a yearly archive */ } elseif (is_year()) { ?>
-				<?php promax_breadcrumbs(); ?>
+				<?php if ( of_get_option('promax_bread' ) =='1') { echo promax_breadcrumbs(); } ?>
 				<?php /* If this is a search */ } elseif (is_search()) { ?>
-				<?php promax_breadcrumbs(); ?>
+				<?php if ( of_get_option('promax_bread' ) =='1') { echo promax_breadcrumbs(); } ?>
 				<?php /* If this is an author archive */ } elseif (is_author()) { ?>
-				<?php promax_breadcrumbs(); ?>
+				<?php if ( of_get_option('promax_bread' ) =='1') { echo promax_breadcrumbs(); } ?>
 				<?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?> <?php _e('Blog Archives', 'promax'); ?> <?php } ?>
 				<?php while(have_posts())  : the_post(); ?>
 				

@@ -16,7 +16,6 @@
 	<div id="header">
     <div id="header-inner" class="clearfix">
 		<div id="logo">
-			
 <?php if (of_get_option( 'promax_logo' )): ?>
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo of_get_option( 'promax_logo' ); ?>" height="" width="" alt=""/></a>
       			<?php else : ?>        

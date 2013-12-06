@@ -2,7 +2,7 @@
 <div id="page">
 	<?php if (of_get_option('promax_latest' ) =='1' ) {load_template(get_template_directory() . '/includes/ltposts.php'); } ?>
 	<div id="page-inner" class="clearfix">
-		<div id="content"><?php promax_breadcrumbs(); ?>
+		<div id="content"><?php if ( of_get_option('promax_bread' ) =='1') { echo promax_breadcrumbs(); } ?>
 <?php if(have_posts()) : ?>
 <?php while(have_posts())  : the_post(); ?>
 
@@ -86,11 +86,11 @@ endif;
 
 <div class="gap"></div><?php if (of_get_option('promax_author' ) =='1' ) {load_template(get_template_directory() . '/includes/author.php'); } ?>
 
-
+<?php if ( of_get_option('promax_links' ) =='on') { ?>
 		<div id="single-nav" class="clearfix">
 			<div id="single-nav-left"><?php previous_image_link('thumbnail'); ?></div>
 		<div id="single-nav-right"><?php next_image_link('thumbnail'); ?></div>
-        </div>
+        </div>		<?php } ?>
         <!-- END single-nav -->
 		
 			<div class="comments">	<?php comments_template(); ?>	</div> <!-- end div .comments -->	

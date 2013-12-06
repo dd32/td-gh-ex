@@ -113,21 +113,28 @@ width: 10em;
 background: #FDF9F1;
 
 }
-.tesingh{background: #E4DEDE;
-color: #56205C;}
-.tesingh li{background-image: url("../images/wrock.ico");
-padding-left: 28px;
+.tesingh{background: #B76CA9;
+color: #FFF !important;
+box-shadow: 0 1px 3px 0 #B5B5B5;
+-moz-box-shadow: 0 1px 3px 0 #b5b5b5;
+-webkit-box-shadow: 0 1px 3px 0 #B5B5B5;}
+.tesingh li{padding-left: 28px;
 background-repeat: no-repeat;
-list-style: none;}
+font-size: 13px;
+font-weight: bold;
+line-height: 20px;
+float: left;
+width: 45%;}
 
 .buypred a{color: #FFF;text-decoration: none;}
-.buypred {float: right;background-color: #FFB30D;
+.buypred {float: left;background-color: #FFB30D;
 background: -webkit-gradient(linear, left top, left bottom, from(#157BAA), to(#145576));
 background: -webkit-linear-gradient(#157BAA, #145576);
 background: -moz-linear-gradient(center top, #157baa 0%, #145576 100%);
 background: -moz-gradient(center top, #157baa 0%, #145576 100%);
 border: 1px solid #0B3A50;
 color: #FFF;
+margin-bottom: 8px;
 font-family: "Amaranth", Arial, sans-serif;
 font-style: italic;
 font-size: 18px;

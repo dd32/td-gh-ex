@@ -2,9 +2,9 @@
 Theme Name: ProMax
 Theme URI: http://www.wrock.org/promax
 Description: ProMax Theme is best WordPress theme design for personal and business uses with full features and SEO Optimize.This WordPress Theme can easily adapts on your mobile and desktop or any other device. Theme comes with lots of customization and connect social media like Facebook, Google+, twitter, YouTube and Adsense ready It supports all the awesome WordPress features completely free theme for blogging.
-Version: 1.3.1
+Version: 1.3.5
 Author: wrock.org by Sandy
-Author URI: http://www.wrock.org/about
+Author URI: http://www.wrock.org/about/
 Tags: black, blue, white, light, custom-menu, custom-header, custom-background, one-column, two-columns, right-sidebar, theme-options, threaded-comments, sticky-post
 Text Domain: Promax
 License: GNU General Public License v3 or later
@@ -277,9 +277,7 @@ div .fb_reset {
 /* ===================== images ===================== */
 img, img a {
 	border: none;
-	width: auto;
-	height: auto;
-	max-width: 98%;
+	max-width: 100%;
 	vertical-align: middle;
 }
 .alignleft {
@@ -547,7 +545,7 @@ width: auto;
 #pronav  ul li.current-menu-item  a{color: #333;}
 ul.catnav li a{padding:5px 10px;}	
 #pronav  ul li.current-menu-item  ,#pronav  ul li a:hover { background: #E9E9E9;
-color: #333; }
+color: #333 !important; }
 #pronav .secondary ul li.current-menu-item, #pronav .secondary >ul >li a:hover {background:#E9E9E9;opacity: 1; }
 #pronav  ul li.dropme a{background: #418cd1;} 
 #pronav  ul ul {position: absolute;left: -999em;width: 212px;z-index:99999;border:0;margin-left:-1px;background: none;border-bottom: none;}
@@ -601,7 +599,7 @@ border-right: none;}
 }
 
 #header {
-	height: 100px;
+	height: 110px;
 	background: transparent;
 	position: relative;
 	z-index: 100;
@@ -712,9 +710,10 @@ background: #FFF;
 }
 
 .thumbnail img{
-width: 98% !important;
+width: 100% !important;
+max-width: 100% !important;
 height: 190px;
-padding: 0px 0px 10px 5px;
+padding: 0px 0px 10px 0px;
 }
 /* ===================== post-slider ===================== */
 .post-slider {
@@ -818,60 +817,37 @@ font-size: 30px;
 }
 
 /*============Post Table===============*/
-#pagecont table {
-width: 95%;
-color: #666;
-font-size: 12px;
-text-shadow: 1px 1px 0px #FFF;
-background: #EAEBEC;
-margin: 20px;
-border: #CCC 1px solid;
-}
-#pagecont table tr {
-text-align: center;
-padding-left: 20px;
-}
-#pagecont table th {
-padding: 9px 15px 9px 25px;
-background: #418cd1;
-font-size: 20px;
-color: #FFF;
-text-shadow: none;
-text-align: left;
-}
-#pagecont table tr td {
-padding: 6px 15px;
-border-top: 1px solid #FFF;
-border-bottom: 1px solid #E0E0E0;
-background: #fff
-}
-#content table {
+
+#pagecont table, #singlecontent table {
 width: 95%;
 color: #666;
 border-collapse: collapse;
 font-size: 12px;
 text-shadow: 1px 1px 0px #FFF;
-background: #EAEBEC;
 margin: 20px;
 border: #CCC 1px solid;
 }
-#content table tr {
+#pagecont table tr, #singlecontent table tr {
 text-align: center;
 padding-left: 20px;
 }
-#content table th {
-padding: 2px;
-background: #418cd1;
+#pagecont table th, #singlecontent table th {
+padding: 10px;
+background: #418CD1;
 color: #FFF;
 text-shadow: none;
+font-size: 15px;
 text-align: left;
 }
-#content table tr td {
-text-align: center;
-padding: 2px;
+#pagecont table tr:hover, #singlecontent table tr:hover{
+background:#edf6f9;}
+#pagecont table tr td , #singlecontent table tr td {
+padding: 6px 4px;
+padding-left: 15px;
 vertical-align: middle;
-border: 1px solid #000;
+border-bottom: 1px solid #E0E0E0;
 }
+
 
 
 table {
@@ -891,10 +867,21 @@ tbody{
 	font: inherit;
 	vertical-align: baseline;
 }
+.imag{
+float: left;
+margin-right: 3%;
+width: 30%;
+overflow: hidden;
+margin-bottom: 3%;
+border-bottom: 1px solid #DDD;
+height: 335px;
+box-shadow: 0 1px 3px 0 #B5B5B5; -moz-box-shadow: 0 1px 3px 0 #b5b5b5; -webkit-box-shadow: 0 1px 3px 0 #B5B5B5;
 
+}
 .entry {
-padding: 18px 0px 0px 0px;
+padding: 18px 5px 0px 5px;
 font-size: 13px;
+
 }
 .entry a {
 	text-decoration: underline;
@@ -929,15 +916,7 @@ font-size: 11px;
 margin: 11px 0;
 display: inline;
 }
-.imag{
-float: left;
-margin-right: 5%;
-width: 28%;
-overflow: hidden;
-margin-bottom: 3%;
-border-bottom: 1px solid #DDD;
-height: 338px;
-}
+
 .homecat {
 position: absolute;
 background: #4DD247;
@@ -952,9 +931,9 @@ color: #fff;
 .entry-title a{
 padding-bottom: 10px;
 color: #333;
-font-weight: bold;
 }
-h2.entry-title {font-size: 18px;}
+h2.entry-title {font-size: 22px;padding: 0px 5px 0px 5px;}
+
 .entry-title a:hover{
 text-decoration: underline;
 }
@@ -1361,7 +1340,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover  {
 }
 /* ===================== bottom-menu ===================== */
  #footerads{
-	padding:30px;
+	padding:12px;
 }
 #bottom-menu {
 z-index: 1;
@@ -1628,15 +1607,15 @@ ol.commentlist li ol {
 #commentform p {
 }
 #commentform #email {
-	width: 400px;
+	width: 55%;
 	margin-left: 36px;
 }
 #commentform #author {
-	width: 400px;
+	width: 55%;
 	margin-left: 36px;
 }
 #commentform #url {
-	width: 400px;
+	width: 55%;
 	margin-left: 34px;
 }
 #commentform small {
@@ -1766,109 +1745,4 @@ border-bottom: 1px solid #DDD;
 font-weight: bold;
 }
 
-/*===================== responsive ===================*/
-@media only screen and (min-width: 480px) {
-/* == INTERMEDIATE: Menu == */
 
-#navigation-wrapper, .nav ul a, .nav ul {
-
-}
-.nav ul {
-
-}
-.nav a, .next-post a{
-
-}
-.nav li:first-child a{
-	margin-left:0;
-}
-.nav li:last-child  a{
-	margin-right:0;
-}
-/* == INTERMEDIATE: IE Fixes == */
-.nav ul li{
-	display:inline;
-}
-
-}
-
-.nav{
-	width:100%;
-
-}
-.nav select {
-	display: none;
-
-}
-@media (max-width: 960px) {
-.nav ul     {
-	display: none;
-}
-
-.nav select {
-	display: inline-block;
-	width: 100%;
-	font-size: 22px;
-}
-#author-bio {font-size: 10px;
-}
-a {font-size: 11px;}
-#pagecont {
-	width:100% !important;
-	font-size: 22px;
-	line-height: 2;}
-#content {
-	width:100% !important;
-	font-size: 22px;
-	line-height: 2;}
-.postmeta_box {
-	font-size: 18px !important;
-	line-height: 2;
-}
-
-#footer-right {
-	float: none !important;
-	width: auto !important;
-}
-#footer-left{
-	float: none !important;
-	width: auto !important;
-}
-
-.entry {
-font-size:10px;}
-.readmore{
-padding:0;
-font-size: 8px;}
-h1 {
-font-size:15px;
-line-height: 2;
-}
-h2 {
-font-size:14px;
-}
-h3 {
-font-size:13px;
-}
-
-
-#header #logo img{
-width: 100%;
-}
-.ltl{width: 95%;margin-top: 80px;}
-#bottom-menu, #TopMenuSocial, .pages, .backtop, .spicesocialwidget, .postmeta_box, .dots, #banner-top, #pronav{display: none;}
-.wp-pagenavi{font-size: 5px; padding:5px;margin: 0px;}
-#pagenavi a{font-size: 5px;padding: 5px; margin: 0px;}
-.authmt{position: relative;}
-.imag{float: none;width: 95%;height: auto;}
-body{
-font-size: 10px !important;
-line-height: 2 !important;
-}
-#commentform p {
-font-size:10px;
-}
-#sidebar{width: 100% !important;
-font-size: 14px;
-line-height: 2;}
-}

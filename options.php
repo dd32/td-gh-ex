@@ -107,20 +107,32 @@ function optionsframework_options() {
 	$imagepath =  get_template_directory_uri() . '/images/';
 
 	$options = array();
-
+$options[] = array(
+		'desc' => '<h2 style="color: #FFF !important;">Upgrade to Premium Theme & Enable Full Features!</h2>
+		<li>SEO Optimized WordPress Theme.</li>
+		<li><a href="https://developers.google.com/speed/pagespeed/insights">Page Speed</a> Optimize for better result.</li>
+		<li>Color Customize of theme.</li>
+		<li>Custom Widgets and Functions.</li>
+		<li>Social Media Integration.</li>
+		<li>Responsive Website Design.</li>
+		<li>Different Website Layout to Select.</li>
+		<li>Many of Other customize feature for your blog or webiste.</li>
+		<p><span class="buypre"><a href="http://www.wrock.org/product/promax-premium-theme/">Upgrade Now</a></span><span class="buypred"><a href="http://www.wrock.org/shop/">Shop More Themes !</a></span></p>',
+		'class' => 'tesingh',
+		'type' => 'info');
 	$options[] = array(
 		'name' => __('Basic Settings', 'promax'),
 		'type' => 'heading');
 		
 	$options[] = array(
 		'name' => __('Custom Favicon URL', 'promax'),
-		'desc' => __('Enter Favicon Image URL Specify a 16px x 16px image in .ico format .', 'promax'),
+		'desc' => __('Enter Favicon Image URL Specify a 16px by 16px image in .ico format .', 'promax'),
 		'id' => 'promax_favicon',
 		'std' => '',
 		'type' => 'text');
 	$options[] = array(
 		'name' => __('Upload Site Logo', 'promax'),
-		'desc' => __('Upload Website Logo "max height = 50px" and max width= 184px" to fit here. Note you can upload any size it will automatic resize .', 'promax'),
+		'desc' => __('Upload Website Logo to fit here. Note you can upload any size it will automatic resize .', 'promax'),
 		'id' => 'promax_logo',
 		'type' => 'upload');
 
@@ -206,19 +218,8 @@ $options[] = array(
             'type' => 'textarea');	
 		
 $options[] = array(
-		'name' => __('Upgrade to Premium', 'promax'),
+		'name' => __('Upgrade to Premium', 'magazine'),
 		'type' => 'heading');
-		$options[] = array(
-		'desc' => '<b>Buy Premium version now via PayPal and enable all features Today!</b><span class="buypre"><a href="http://www.wrock.org/promax/">Upgrade Now</a></span>
-		<li>SEO Optimized WordPress Theme.</li>
-		<li><a href="https://developers.google.com/speed/pagespeed/insights">Page Speed</a> Optimize for better result.</li>
-		<li>Custom Widgets and Functions.</li>
-		<li>Responsive Website Design.</li>
-		<li>Many of Other customize feature for your blog or webiste.</li><span class="buypred"><a href="http://www.wrock.org/contact-us">Already Paid or Donated !</a></span>
-		For more info and Theme Home Page <a href="http://www.wrock.org/promax/">http://www.wrock.org/promax/</a>',
-		'class' => 'tesingh',
-		'type' => 'info');
-		
 				
 		$options[] = array(
 		'desc' => '<span class="pre-title">New Features</span>', 
@@ -241,7 +242,20 @@ $options[] = array(
 		'name' => __('Excerpt Length (Number of words display in post description)', 'promax'),
 		'desc' => __('Number of words display in every post description Default is 45.', 'promax'),
 		'id' => 'promax_excerp',
-		'std' => '45',
+		'std' => '25',
+		'class' => 'mini',
+		'type' => 'text');
+		$options[] = array(
+		'name' => __('Numbers of Latest and Populat posts to display)', 'promax'),
+		'desc' => __('<b>For Latest Posts</b>', 'promax'),
+		'id' => 'promax_latestpostnumber',
+		'std' => '5',
+		'class' => 'mini',
+		'type' => 'text');
+		$options[] = array(
+		'desc' => __('<b>For Popular Posts</b>', 'promax'),
+		'id' => 'promax_popularpostnumber',
+		'std' => '5',
 		'class' => 'mini',
 		'type' => 'text');
 		$options[] = array(
@@ -255,8 +269,20 @@ $options[] = array(
 						'off' => 'Hide'
 						));
 		
-		$options[] = array(
-		'name' =>  __('Change Background', 'promax'),
+		$options[] = array(	
+		'name' =>  __('Customize Theme Background', 'promax'),
+		'desc' => __('Header Background color.', 'promax'),
+		'id' => 'promax_headerbg',
+		'std' => '#343434',
+		'type' => 'color' );
+		
+		$options[] = array(	
+		'desc' => __('Footer Widget background color.', 'promax'),
+		'id' => 'promax_ftwidget',
+		'std' => '#343434',
+		'type' => 'color' );
+		
+		$options[] = array(	
 		'desc' => __('Change the background CSS Color or Image.', 'promax'),
 		'id' => 'promax_bg',
 		'std' => $background_default,
@@ -272,23 +298,64 @@ $options[] = array(
 		'id' => 'promax_linkhover',
 		'std' => '#FD4326',
 		'type' => 'color' );
+		
 		$options[] = array(
 		'name' => __('Main Navigation Colors', 'promax'),
-		'desc' => __('Navigation bottom border color.', 'promax'),
-		'id' => 'promax_botborder',
-		'std' => '#FD4326',
-		'type' => 'color' );
-		$options[] = array(
 		'desc' => __('Main Naigation Background.', 'promax'),
 		'id' => 'promax_mainnavibg',
-		'std' => '#333333',
+		'std' => '#5B89B8',
 		'type' => 'color' );
-		
 		$options[] = array(
 		'desc' => __('Main Navigation hover Color.', 'promax'),
 		'id' => 'promax_mainnavilinkcolor',
-		'std' => '#FD4326',
+		'std' => '#333333',
 		'type' => 'color' );
+		
+		$options[] = array(	
+		'desc' => __('Categories Navigation color.', 'promax'),
+		'id' => 'promax_botborder',
+		'std' => '#ffffff',
+		'type' => 'color' );
+		
+		$options[] = array(	
+		'desc' => __('Categories Navigation Hover color.', 'promax'),
+		'id' => 'promax_topnavibgcolorh',
+		'std' => '#E9E9E9',
+		'type' => 'color' );
+		
+		$options[] = array(
+		'name' => __('Edit Categories & date/author stamp from thumbnail', 'promax'),
+		'desc' => __('Show or Hode Date & Author Stamp from Thumbnain in index and other archive pages .', 'promax'),
+		'id' => 'promax_authstamp',
+		'std' => 'on',
+		'type' => 'radio',
+		'options' => array(
+						'on' => 'Show',
+						'off' => 'Hide'
+						));
+		$options[] = array(				
+		'desc' => __('Display Shadow of every post on main page .', 'promax'),
+		'id' => 'promax_imagshadow',
+		'std' => 'on',
+		'type' => 'radio',
+		'options' => array(
+						'on' => 'Show',
+						'off' => 'Hide'
+						));
+		$options[] = array(				
+		'desc' => __('Show or Hode Categories Button from Thumbnain in index and other archive pages .', 'promax'),
+		'id' => 'promax_homecat',
+		'std' => 'on',
+		'type' => 'radio',
+		'options' => array(
+						'on' => 'Show',
+						'off' => 'Hide'
+						));
+		$options[] = array(
+		'desc' => __('Categories Background Color Change.', 'promax'),
+		'id' => 'promax_homecatbg',
+		'std' => '#4DD247',
+		'type' => 'color' );		
 	
 		$options[] = array(
 		'name' => __('Page Number Navigation Color Chnage ', 'promax'),
@@ -299,12 +366,28 @@ $options[] = array(
 		$options[] = array(
 			'desc' => __('Change backgroud color of other pages.', 'promax'),
 		'id' => 'promax_pageanvia',
-		'std' => '#FD4326',
+		'std' => '#5B89B8',
 		'type' => 'color' );
 		$options[] = array(
 		'desc' => __('Numbers text Color Change.', 'promax'),
 		'id' => 'promax_pageanvilink',
 		'std' => '#ffffff',
+		'type' => 'color' );
+		$options[] = array(
+		'name' => __('Other customize color & design', 'promax'),
+		'desc' => __('Sidebar Widget hading background Color change', 'promax'),
+		'id' => 'promax_sidebarbg',
+		'std' => '#7EA8D3',
+		'type' => 'color' );
+		$options[] = array(
+		'desc' => __('Latest Post widget Link Color', 'promax'),
+		'id' => 'promax_latesta',
+		'std' => '#4DD247',
+		'type' => 'color' );
+		$options[] = array(
+		'desc' => __('<b>Recent Posts and Breadcrumb</b> background Color change', 'promax'),
+		'id' => 'promax_posthd',
+		'std' => '#DC3030',
 		'type' => 'color' );
 		
 		$options[] = array( 'name' => __('Customize Theme Fonts', 'promax'),
@@ -328,21 +411,7 @@ $options[] = array(
 						'off' => 'Hide'
 						));
 				
-		$options[] = array(
-		'name' => __('Edit Categories', 'promax'),
-		'desc' => __('Show or Hode Categories Button .', 'promax'),
-		'id' => 'promax_countinue',
-		'std' => 'on',
-		'type' => 'radio',
-		'options' => array(
-						'on' => 'Show',
-						'off' => 'Hide'
-						));
-		$options[] = array(
-		'desc' => __('Categories Background Color Change.', 'promax'),
-		'id' => 'promax_readmorecolor',
-		'std' => '#4DD247',
-		'type' => 'color' );					
+					
 		$options[] = array(
 		'name' => "Website layout",
 		'desc' => "Select Images for Website layout.",
@@ -432,8 +501,10 @@ $options[] = array(
 		$options[] = array(
 		    'desc' => 'Paste Ad code for single post it show ads below post title and before content.',
             'id' => 'promax_ftarea',
-            'std' => '&#169; 2013 Designed by: <a href="http://www.wrock.org/promax" title="wRock.Org">wRock.Org</a> | Powered by <a href="http://wordpress.org/"><strong> WordPress</strong></a>',
-            'type' => 'textarea');				
+            'std' => 'Copyright  &#169; 2013 Designed by: <a href="http://www.wrock.org/promax" title="wRock.Org">wRock.Org</a> | Powered by <a href="http://wordpress.org/"> WordPress</a>',
+            'type' => 'textarea');		
 
+		
+		
 	return $options;
 }

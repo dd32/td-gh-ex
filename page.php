@@ -9,12 +9,13 @@
 						<h1><?php the_title(); ?></h1>
 						<div id="metad"><span class="postmeta_box">
 		<?php get_template_part('/includes/postmeta'); ?><?php edit_post_link('Edit', ' &#124; ', ''); ?>
-	</span></div>
-							<div class="entry" class="clearfix">
+	</span></div>							<div class="entry" class="clearfix">
 																
 								<?php the_content(); ?>
 								<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'promax' ), 'after' => '</div>' ) ); ?>
 							</div> <!-- end div .entry -->
+								<div class="gap"></div><?php if (of_get_option('promax_author' ) =='1' ) {load_template(get_template_directory() . '/includes/author.php'); } ?>
+
 									<div class="comments">
 								<?php comments_template(); ?>
 							</div> <!-- end div .comments -->
