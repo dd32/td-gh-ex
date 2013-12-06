@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: B3 v1.2.3\n"
+"Project-Id-Version: B3 v1.2.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-11-27 14:34:58+0000\n"
+"PO-Revision-Date: 2013-12-05 22:57:19+0000\n"
 "Last-Translator: Andrey K. <andrey271@bigmir.net>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -96,16 +96,6 @@ msgstr "Ссылки"
 #@ b3theme
 msgid "Archives"
 msgstr "Архивы"
-
-#: b3/comments.php:29
-#, php-format
-#@ b3theme
-msgctxt "comments title"
-msgid "One comment on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
-msgstr[0] "%1$s комментарий на &ldquo;%2$s&rdquo"
-msgstr[1] "%1$s комментария на &ldquo;%2$s&rdquo;"
-msgstr[2] "%1$s комментариев на &ldquo;%2$s&rdquo;"
 
 #: b3/comments.php:36
 #: b3/comments.php:56
@@ -695,13 +685,13 @@ msgstr "Заголовок меню"
 msgid "Enable Menu Bar"
 msgstr "Включить панель меню"
 
-#: l18n/pomo/sample/app.php:56
+#: dev/l18n/pomo/sample/app.php:56
 #, php-format
 #@ default
 msgid "Welcome %s!"
 msgstr ""
 
-#: l18n/pomo/sample/app.php:58
+#: dev/l18n/pomo/sample/app.php:58
 #, php-format
 #@ b3theme
 msgid "You have one new message."
@@ -710,38 +700,38 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: l18n/pomo/sample/app.php:60
+#: dev/l18n/pomo/sample/app.php:60
 #@ side
 msgid "A string with low priority!"
 msgstr ""
 
-#: l18n/pomo/sample/app.php:62
+#: dev/l18n/pomo/sample/app.php:62
 #@ default
 msgid "Bye\n"
 msgstr ""
 
 #. Not gettexted string WP_I18N_CONFIG
-#: l18n/t/data/not-gettexted-0-result.php:11
-#: l18n/t/data/not-gettexted-0-work.php:11
+#: dev/l18n/t/data/not-gettexted-0-result.php:11
+#: dev/l18n/t/data/not-gettexted-0-work.php:11
 #@ {php-code}
 msgid "Translation: There doesn't seem to be a <code>wp-config.php</code> file. I need this before we can get started. Need more help? <a href='http://codex.wordpress.org/Editing_wp-config.php'>We got it</a>. You can create a <code>wp-config.php</code> file through a web interface, but this doesn't work for all server setups. The safest way is to manually create the file.</p><p><a href='%s' class='button'>Create a Configuration File</a>"
 msgstr ""
 
 #. Not gettexted string WP_I18N_ERROR
-#: l18n/t/data/not-gettexted-0-result.php:11
-#: l18n/t/data/not-gettexted-0-work.php:11
+#: dev/l18n/t/data/not-gettexted-0-result.php:11
+#: dev/l18n/t/data/not-gettexted-0-work.php:11
 #@ {php-code}
 msgid "Translation: WordPress &rsaquo; Error"
 msgstr ""
 
 #. Not gettexted string WP_I18N_CONFIG
-#: l18n/t/data/not-gettexted-0.php:11
+#: dev/l18n/t/data/not-gettexted-0.php:11
 #@ {php-code}
 msgid " There doesn't seem to be a <code>wp-config.php</code> file. I need this before we can get started. Need more help? <a href='http://codex.wordpress.org/Editing_wp-config.php'>We got it</a>. You can create a <code>wp-config.php</code> file through a web interface, but this doesn't work for all server setups. The safest way is to manually create the file.</p><p><a href='%s' class='button'>Create a Configuration File</a>"
 msgstr ""
 
 #. Not gettexted string WP_I18N_ERROR
-#: l18n/t/data/not-gettexted-0.php:11
+#: dev/l18n/t/data/not-gettexted-0.php:11
 #@ {php-code}
 msgid "WordPress &rsaquo; Error"
 msgstr ""
@@ -750,4 +740,14 @@ msgstr ""
 #@ b3theme
 msgid "Import"
 msgstr "Импорт"
+
+#: b3/comments.php:29
+#, php-format
+#@ b3theme
+msgctxt "comments title"
+msgid "One comment on &laquo;%2$s&raquo;"
+msgid_plural "%1$s comments on &laquo;%2$s&raquo;"
+msgstr[0] "%1$s комментарий на &laquo;%2$s&raquo;"
+msgstr[1] "%1$s комментария на &laquo;%2$s&raquo;"
+msgstr[2] "%1$s комментариев на &laquo;%2$s&raquo;"
 

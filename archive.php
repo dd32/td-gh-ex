@@ -17,13 +17,13 @@ get_header(); ?>
 			<header class="page-header">
 				<h1 class="page-title">
 					<?php
-						if ( is_category() ) :
+						if ( is_category() ) {
 							single_cat_title();
-
-						elseif ( is_tag() ) :
-
+						}
+						elseif ( is_tag() ) {
 							single_tag_title();
-						elseif ( is_author() ) :
+						}
+						elseif ( is_author() ) {
 
 							/* Queue the first post, that way we know
 							 * what author we're dealing with (if that is the case).
@@ -32,35 +32,40 @@ get_header(); ?>
 							printf( __('Author: %s', 'b3theme'), '<span class="vcard">' . get_the_author() . '</span>');
 /* Since we called the_post() above, we need to rewind the loop back. */
 							rewind_posts();
-
-						elseif ( is_day() ) :
+						}
+						elseif ( is_day() ) {
 							printf( __('Day: %s', 'b3theme'), '<span>' . get_the_date() . '</span>');
-
-						elseif ( is_month() ) :
+						}
+						elseif ( is_month() ) {
 							printf( __('Month: %s', 'b3theme'), '<span>' . get_the_date('F Y') . '</span>');
-
-						elseif ( is_year() ) :
+						}
+						elseif ( is_year() ) {
 							printf( __('Year: %s', 'b3theme'), '<span>' . get_the_date('Y') . '</span>');
-
-						elseif ( is_tax('post_format', 'post-format-aside') ) :
+						}
+						elseif ( is_tax('post_format', 'post-format-aside') ) {
 							_e('Asides', 'b3theme');
-
-						elseif ( is_tax('post_format', 'post-format-image') ) :
+						}
+						elseif ( is_tax('post_format', 'post-format-image') ) {
 							_e('Images', 'b3theme');
-
-						elseif ( is_tax('post_format', 'post-format-video') ) :
+						}
+						elseif ( is_tax('post_format', 'post-format-video') ) {
 							_e('Videos', 'b3theme');
-
-						elseif ( is_tax('post_format', 'post-format-quote') ) :
+						}
+						elseif ( is_tax('post_format', 'post-format-quote') ) {
 							_e('Quotes', 'b3theme');
-
-						elseif ( is_tax('post_format', 'post-format-link') ) :
+						}
+						elseif ( is_tax('post_format', 'post-format-link') ) {
 							_e('Links', 'b3theme');
-
-						else :
+						}
+						elseif ( is_tax() ) {
+							single_term_title();
+						}
+						elseif ( is_post_type_archive() ) {
+							post_type_archive_title();
+						}
+						else {
 							_e('Archives', 'b3theme');
-
-						endif;
+						}
 					?>
 				</h1>
 				<?php
