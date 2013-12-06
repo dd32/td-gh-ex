@@ -1,3 +1,5 @@
+				</div><!--/.main-inner-->
+			</div><!--/.main-->
 		</div><!--/.container-inner-->
 	</div><!--/.container-->
 

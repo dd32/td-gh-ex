@@ -1,6 +1,16 @@
   Theme : Hueman (wordpress.org release)
-Version : 1.1.9
+Version : 1.2.0
  Author : Alexander "Alx" Agnarson - http://alxmedia.se
+
+December 6 2013 - 1.2.0
+===========================================================
+- Made all additional function files pluggable for child themes
+- Moved layout class to body_class
+- Moved main and main-inner divs from templates to header and footer
+- Added auto disable for custom wp_title if SEO by Yoast plugin is installed
+- Added basic WooCommerce support
+- Added option to disable category and/or date for AlxTabs and AlxPosts widgets
+- Updated language files
 
 December 4 2013 - 1.1.9
 ===========================================================

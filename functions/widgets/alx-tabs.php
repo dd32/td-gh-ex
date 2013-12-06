@@ -102,9 +102,9 @@ class AlxTabs extends WP_Widget {
 					<?php } ?>
 					
 					<div class="tab-item-inner group">
-						<p class="tab-item-category"><?php the_category(' / '); ?></p>
+						<?php if($instance['tabs_category']) { ?><p class="tab-item-category"><?php the_category(' / '); ?></p><?php } ?>
 						<p class="tab-item-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></p>
-						<p class="tab-item-date"><?php the_time('j M, Y'); ?></p>
+						<?php if($instance['tabs_date']) { ?><p class="tab-item-date"><?php the_time('j M, Y'); ?></p><?php } ?>
 					</div>
 					
 				</li>
@@ -152,9 +152,9 @@ class AlxTabs extends WP_Widget {
 					<?php } ?>
 					
 					<div class="tab-item-inner group">
-						<p class="tab-item-category"><?php the_category(' / '); ?></p>
+						<?php if($instance['tabs_category']) { ?><p class="tab-item-category"><?php the_category(' / '); ?></p><?php } ?>
 						<p class="tab-item-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></p>
-						<p class="tab-item-date"><?php the_time('j M, Y'); ?></p>
+						<?php if($instance['tabs_date']) { ?><p class="tab-item-date"><?php the_time('j M, Y'); ?></p><?php } ?>
 					</div>
 					
 				</li>
@@ -215,6 +215,8 @@ class AlxTabs extends WP_Widget {
 	public function update($new,$old) {
 		$instance = $old;
 		$instance['title'] = strip_tags($new['title']);
+		$instance['tabs_category'] = $new['tabs_category']?1:0;
+		$instance['tabs_date'] = $new['tabs_date']?1:0;
 	// Recent posts
 		$instance['recent_enable'] = $new['recent_enable']?1:0;
 		$instance['recent_thumbs'] = $new['recent_thumbs']?1:0;
@@ -246,6 +248,8 @@ class AlxTabs extends WP_Widget {
 		// Default widget settings
 		$defaults = array(
 			'title' 			=> '',
+			'tabs_category' 	=> 1,
+			'tabs_date' 		=> 1,
 		// Recent posts
 			'recent_enable' 	=> 1,
 			'recent_thumbs' 	=> 1,
@@ -286,6 +290,16 @@ class AlxTabs extends WP_Widget {
 		</p>
 		
 		<hr>
+		<p>
+			<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('tabs_category'); ?>" name="<?php echo $this->get_field_name('tabs_category'); ?>" <?php checked( (bool) $instance["tabs_category"], true ); ?>>
+			<label for="<?php echo $this->get_field_id('tabs_category'); ?>">Show categories</label>
+		</p>
+		<p>
+			<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('tabs_date'); ?>" name="<?php echo $this->get_field_name('tabs_date'); ?>" <?php checked( (bool) $instance["tabs_date"], true ); ?>>
+			<label for="<?php echo $this->get_field_id('tabs_date'); ?>">Show dates</label>
+		</p>
+		
+		<hr>
 		<h4>Recent Posts</h4>
 		
 		<p>
@@ -294,7 +308,7 @@ class AlxTabs extends WP_Widget {
 		</p>
 		<p>
 			<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('recent_thumbs'); ?>" name="<?php echo $this->get_field_name('recent_thumbs'); ?>" <?php checked( (bool) $instance["recent_thumbs"], true ); ?>>
-			<label for="<?php echo $this->get_field_id('recent_thumbs'); ?>">Enable thumbnails</label>
+			<label for="<?php echo $this->get_field_id('recent_thumbs'); ?>">Show thumbnails</label>
 		</p>	
 		<p>
 			<label style="width: 55%; display: inline-block;" for="<?php echo $this->get_field_id("recent_num"); ?>">Items to show</label>
@@ -314,7 +328,7 @@ class AlxTabs extends WP_Widget {
 		</p>
 		<p>
 			<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('popular_thumbs'); ?>" name="<?php echo $this->get_field_name('popular_thumbs'); ?>" <?php checked( (bool) $instance["popular_thumbs"], true ); ?>>
-			<label for="<?php echo $this->get_field_id('popular_thumbs'); ?>">Enable thumbnails</label>
+			<label for="<?php echo $this->get_field_id('popular_thumbs'); ?>">Show thumbnails</label>
 		</p>	
 		<p>
 			<label style="width: 55%; display: inline-block;" for="<?php echo $this->get_field_id("popular_num"); ?>">Items to show</label>
@@ -344,7 +358,7 @@ class AlxTabs extends WP_Widget {
 		</p>
 		<p>
 			<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('comments_avatars'); ?>" name="<?php echo $this->get_field_name('comments_avatars'); ?>" <?php checked( (bool) $instance["comments_avatars"], true ); ?>>
-			<label for="<?php echo $this->get_field_id('comments_avatars'); ?>">Enable avatars</label>
+			<label for="<?php echo $this->get_field_id('comments_avatars'); ?>">Show avatars</label>
 		</p>
 		<p>
 			<label style="width: 55%; display: inline-block;" for="<?php echo $this->get_field_id("comments_num"); ?>">Items to show</label>

@@ -70,7 +70,7 @@ class AlxPosts extends WP_Widget {
 			<div class="post-item-inner group">
 				<?php if($instance['posts_category']) { ?><p class="post-item-category"><?php the_category(' / '); ?></p><?php } ?>
 				<p class="post-item-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></p>
-				<p class="post-item-date"><?php the_time('j M, Y'); ?></p>
+				<?php if($instance['posts_date']) { ?><p class="post-item-date"><?php the_time('j M, Y'); ?></p><?php } ?>
 			</div>
 			
 		</li>
@@ -91,6 +91,7 @@ class AlxPosts extends WP_Widget {
 	// Posts
 		$instance['posts_thumb'] = $new['posts_thumb']?1:0;
 		$instance['posts_category'] = $new['posts_category']?1:0;
+		$instance['posts_date'] = $new['posts_date']?1:0;
 		$instance['posts_num'] = strip_tags($new['posts_num']);
 		$instance['posts_cat_id'] = strip_tags($new['posts_cat_id']);
 		$instance['posts_orderby'] = strip_tags($new['posts_orderby']);
@@ -107,6 +108,7 @@ class AlxPosts extends WP_Widget {
 		// Posts
 			'posts_thumb' 		=> 1,
 			'posts_category'	=> 1,
+			'posts_date'		=> 1,
 			'posts_num' 		=> '4',
 			'posts_cat_id' 		=> '0',
 			'posts_orderby' 	=> 'date',
@@ -129,16 +131,22 @@ class AlxPosts extends WP_Widget {
 		</p>
 		
 		<hr>
+		<p>
+			<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('posts_category'); ?>" name="<?php echo $this->get_field_name('posts_category'); ?>" <?php checked( (bool) $instance["posts_category"], true ); ?>>
+			<label for="<?php echo $this->get_field_id('posts_category'); ?>">Show categories</label>
+		</p>
+		<p>
+			<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('posts_date'); ?>" name="<?php echo $this->get_field_name('posts_date'); ?>" <?php checked( (bool) $instance["posts_date"], true ); ?>>
+			<label for="<?php echo $this->get_field_id('posts_date'); ?>">Show dates</label>
+		</p>
+
+		<hr>
 		<h4>List Posts</h4>
 		
 		<p>
 			<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('posts_thumb'); ?>" name="<?php echo $this->get_field_name('posts_thumb'); ?>" <?php checked( (bool) $instance["posts_thumb"], true ); ?>>
 			<label for="<?php echo $this->get_field_id('posts_thumb'); ?>">Show thumbnails</label>
-		</p>
-		<p>
-			<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('posts_category'); ?>" name="<?php echo $this->get_field_name('posts_category'); ?>" <?php checked( (bool) $instance["posts_category"], true ); ?>>
-			<label for="<?php echo $this->get_field_id('posts_category'); ?>">Show categories</label>
-		</p>		
+		</p>	
 		<p>
 			<label style="width: 55%; display: inline-block;" for="<?php echo $this->get_field_id("posts_num"); ?>">Items to show</label>
 			<input style="width:20%;" id="<?php echo $this->get_field_id("posts_num"); ?>" name="<?php echo $this->get_field_name("posts_num"); ?>" type="text" value="<?php echo absint($instance["posts_num"]); ?>" size='3' />

@@ -61,3 +61,5 @@
 	
 	<div class="container" id="page">
 		<div class="container-inner">
+			<div class="main">
+				<div class="main-inner group">

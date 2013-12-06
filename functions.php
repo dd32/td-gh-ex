@@ -3,34 +3,50 @@
  *  Custom functions
 /* ------------------------------------------------------------------------- */
 	
-	// Add your custom functions here, or use a child theme
+	// Use a child theme instead of placing custom functions here
 	// http://codex.wordpress.org/Child_Themes
 
 
 /* ------------------------------------------------------------------------- *
- *  OptionTree admin panel & framework integration
+ *  OptionTree framework integration: Use in theme mode
 /* ------------------------------------------------------------------------- */
 	
-	// Use in theme mode
 	add_filter( 'ot_show_pages', '__return_false' );
 	add_filter( 'ot_show_new_layout', '__return_false' );
 	add_filter( 'ot_theme_mode', '__return_true' );
 	load_template( get_template_directory() . '/option-tree/ot-loader.php' );
-	
-	// Load theme options and meta boxes
-	load_template( get_template_directory() . '/functions/theme-options.php' );
-	load_template( get_template_directory() . '/functions/meta-boxes.php' );
 
 	
 /* ------------------------------------------------------------------------- *
+ *  Load theme files
+/* ------------------------------------------------------------------------- */	
+
+if ( ! function_exists( 'alx_load' ) ) {
+	
+	function alx_load() {	
+		// Load theme options and meta boxes
+		load_template( get_template_directory() . '/functions/theme-options.php' );
+		load_template( get_template_directory() . '/functions/meta-boxes.php' );
+		
+		// Load custom widgets
+		load_template( get_template_directory() . '/functions/widgets/alx-tabs.php' );
+		load_template( get_template_directory() . '/functions/widgets/alx-video.php' );
+		load_template( get_template_directory() . '/functions/widgets/alx-posts.php' );
+
+		// Load dynamic styles
+		load_template( get_template_directory() . '/functions/dynamic-styles.php' );
+		
+		// Load TGM plugin activation
+		load_template( get_template_directory() . '/functions/class-tgm-plugin-activation.php' );
+	}
+	
+}
+add_action( 'after_setup_theme', 'alx_load' );	
+
+
+/* ------------------------------------------------------------------------- *
  *  Base functionality
 /* ------------------------------------------------------------------------- */
-	
-	// Load dynamic styles
-	load_template( get_template_directory() . '/functions/dynamic-styles.php' );
-	
-	// Load TGM plugin activation
-	load_template( get_template_directory() . '/functions/class-tgm-plugin-activation.php' );
 	
 	// Content width
 	if ( !isset( $content_width ) ) { $content_width = 720; }
@@ -40,8 +56,7 @@
 /* ------------------------------------ */
 if ( ! function_exists( 'alx_setup' ) ) {
 	
-	function alx_setup()
-	{
+	function alx_setup() {
 		// Load theme languages
 		load_theme_textdomain( 'hueman', get_template_directory().'/languages' );
 		
@@ -54,6 +69,9 @@ if ( ! function_exists( 'alx_setup' ) ) {
 		// Enable post format support
 		add_theme_support( 'post-formats', array( 'audio', 'aside', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video' ) );
 		
+		// Declare WooCommerce support
+		add_theme_support( 'woocommerce' );
+		
 		// Thumbnail sizes
 		add_image_size( 'thumb-small', 160, 160, true );
 		add_image_size( 'thumb-medium', 520, 245, true );
@@ -64,34 +82,18 @@ if ( ! function_exists( 'alx_setup' ) ) {
 			'topbar' => 'Topbar',
 			'header' => 'Header',
 			'footer' => 'Footer',
-		) );		
+		) );
 	}
 	
 }
 add_action( 'after_setup_theme', 'alx_setup' );
-
-
-/*  Load custom widgets
-/* ------------------------------------ */
-if ( ! function_exists( 'alx_widgets' ) ) {
-	
-	function alx_widgets()  
-	{
-		load_template( get_template_directory() . '/functions/widgets/alx-tabs.php' );
-		load_template( get_template_directory() . '/functions/widgets/alx-video.php' );
-		load_template( get_template_directory() . '/functions/widgets/alx-posts.php' );
-	}
-	
-}
-add_action( 'after_setup_theme', 'alx_widgets' );
 
 	
 /*  Register sidebars
 /* ------------------------------------ */	
 if ( ! function_exists( 'alx_sidebars' ) ) {
 
-	function alx_sidebars()
-	{
+	function alx_sidebars() {
 		register_sidebar(array( 'name' => 'Primary','id' => 'primary','description' => "Normal full width sidebar", 'before_widget' => '<div id="%1$s" class="widget %2$s">','after_widget' => '</div>','before_title' => '<h3>','after_title' => '</h3>'));
 		register_sidebar(array( 'name' => 'Secondary','id' => 'secondary','description' => "Normal full width sidebar", 'before_widget' => '<div id="%1$s" class="widget %2$s">','after_widget' => '</div>','before_title' => '<h3>','after_title' => '</h3>'));
 		register_sidebar(array( 'name' => 'Footer 1','id' => 'footer-1', 'description' => "Widetized footer", 'before_widget' => '<div id="%1$s" class="widget %2$s">','after_widget' => '</div>','before_title' => '<h3>','after_title' => '</h3>'));
@@ -108,8 +110,7 @@ add_action( 'widgets_init', 'alx_sidebars' );
 /* ------------------------------------ */	
 if ( ! function_exists( 'alx_scripts' ) ) {
 	
-	function alx_scripts()  
-	{
+	function alx_scripts() {
 		wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/js/jquery.flexslider.min.js', array( 'jquery' ),'', false );
 		wp_enqueue_script( 'jplayer', get_template_directory_uri() . '/js/jquery.jplayer.min.js', array( 'jquery' ),'', true );
 		wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ),'', true );
@@ -124,8 +125,7 @@ add_action( 'wp_enqueue_scripts', 'alx_scripts' );
 /* ------------------------------------ */	
 if ( ! function_exists( 'alx_styles' ) ) {
 	
-	function alx_styles() 
-	{
+	function alx_styles() {
 		wp_enqueue_style( 'style', get_stylesheet_uri() );
 		if ( !ot_get_option('responsive') ) { wp_enqueue_style( 'responsive', get_template_directory_uri().'/responsive.css' ); }
 		wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/fonts/font-awesome.min.css' );
@@ -143,7 +143,7 @@ add_action( 'wp_enqueue_scripts', 'alx_styles' );
 /* ------------------------------------ */
 if ( ! function_exists( 'alx_layout_class' ) ) {
 	
-	function alx_layout_class() {
+	function alx_layout_class( $classes ) {
 		// Default layout
 		$layout = 'col-3cm';
 		$default = 'col-3cm';
@@ -154,7 +154,7 @@ if ( ! function_exists( 'alx_layout_class' ) ) {
 			wp_reset_postdata();
 			global $post;
 			// Get meta
-			$meta = get_post_meta($post->ID,'_layout',TRUE);
+			$meta = get_post_meta($post->ID,'_layout',true);
 			// Get if set and not set to inherit
 			if ( isset($meta) && !empty($meta) && $meta != 'inherit' ) { $layout = $meta; }
 			// Else check for page-global / single-global
@@ -174,11 +174,13 @@ if ( ! function_exists( 'alx_layout_class' ) ) {
 		// Global option
 		else $layout = ot_get_option('layout-global',''.$default.'');
 		
-		// Return layout
-		return $layout;
+		// Return layout classes
+		$classes[] = $layout;
+		return $classes;
 	}
 	
 }
+add_filter( 'body_class', 'alx_layout_class' );
 	
 
 /*  Dual sidebars? Get sidebar-2 template
@@ -384,8 +386,8 @@ if ( ! function_exists( 'alx_page_title' ) ) {
 	function alx_page_title() {
 		global $post;
 
-		$heading = get_post_meta($post->ID,'_heading',TRUE);
-		$subheading = get_post_meta($post->ID,'_subheading',TRUE);
+		$heading = get_post_meta($post->ID,'_heading',true);
+		$subheading = get_post_meta($post->ID,'_subheading',true);
 		$title = $heading?$heading:the_title();
 		if($subheading) {
 			$title = $title.' <span>'.$subheading.'</span>';
@@ -430,9 +432,9 @@ if ( ! function_exists( 'alx_related_posts' ) ) {
 
 		// Define shared post arguments
 		$args = array(
-			'no_found_rows'				=> TRUE,
-			'update_post_meta_cache'	=> FALSE,
-			'update_post_term_cache'	=> FALSE,
+			'no_found_rows'				=> true,
+			'update_post_meta_cache'	=> false,
+			'update_post_term_cache'	=> false,
 			'ignore_sticky_posts'		=> 1,
 			'orderby'					=> 'rand',
 			'post__not_in'				=> array($post->ID),
@@ -441,7 +443,7 @@ if ( ! function_exists( 'alx_related_posts' ) ) {
 		// Related by categories
 		if ( ot_get_option('related-posts') == 'categories' ) {
 			
-			$cats = get_post_meta($post->ID, 'related-cat', TRUE);
+			$cats = get_post_meta($post->ID, 'related-cat', true);
 			
 			if ( !$cats ) {
 				$cats = wp_get_post_categories($post->ID, array('fields'=>'ids'));
@@ -453,7 +455,7 @@ if ( ! function_exists( 'alx_related_posts' ) ) {
 		// Related by tags
 		if ( ot_get_option('related-posts') == 'tags' ) {
 		
-			$tags = get_post_meta($post->ID, 'related-tag', TRUE);
+			$tags = get_post_meta($post->ID, 'related-tag', true);
 			
 			if ( !$tags ) {
 				$tags = wp_get_post_tags($post->ID, array('fields'=>'ids'));
@@ -461,7 +463,7 @@ if ( ! function_exists( 'alx_related_posts' ) ) {
 			} else {
 				$args['tag_slug__in'] = explode(',', $tags);
 			}
-			if ( !$tags ) { $break = TRUE; }
+			if ( !$tags ) { $break = true; }
 		}
 		
 		$query = !isset($break)?new WP_Query($args):new WP_Query;
@@ -532,7 +534,7 @@ if ( ! function_exists( 'alx_get_featured_post_ids' ) ) {
 			'numberposts'	=> ot_get_option('featured-posts-count')
 		);
 		$posts = get_posts($args);
-		if ( !$posts ) return FALSE;
+		if ( !$posts ) return false;
 		foreach ( $posts as $post )
 			$ids[] = $post->ID;
 		return $ids;
@@ -566,7 +568,7 @@ if ( ! function_exists( 'alx_wp_title' ) ) {
 
 	function alx_wp_title( $title ) {
 		// Do not filter for RSS feed / if SEO plugin installed
-		if ( is_feed() || class_exists('All_in_One_SEO_Pack') )
+		if ( is_feed() || class_exists('All_in_One_SEO_Pack') || class_exists('wpSEO') )
 			return $title;
 		if ( is_front_page() ) { 
 			$title = bloginfo('name'); echo ' - '; bloginfo('description'); 
@@ -866,3 +868,19 @@ if ( ! function_exists( 'alx_plugins' ) ) {
 	
 }
 add_action( 'tgmpa_register', 'alx_plugins' );
+
+
+/*  WooCommerce basic support
+/* ------------------------------------ */
+function alx_wc_wrapper_start() {
+	echo '<section class="content">';
+	echo '<div class="pad">';
+}
+function alx_wc_wrapper_end() {
+	echo '</div>';
+	echo '</section>';
+}
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+add_action('woocommerce_before_main_content', 'alx_wc_wrapper_start', 10);
+add_action('woocommerce_after_main_content', 'alx_wc_wrapper_end', 10);
