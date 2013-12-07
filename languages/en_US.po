@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Hueman\n"
-"POT-Creation-Date: 2013-12-06 18:38+0100\n"
-"PO-Revision-Date: 2013-12-06 18:38+0100\n"
+"POT-Creation-Date: 2013-12-07 15:24+0100\n"
+"PO-Revision-Date: 2013-12-07 15:24+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: English\n"
@@ -64,15 +64,15 @@ msgstr ""
 msgid "To search type and hit enter"
 msgstr ""
 
-#: ../sidebar-2.php:4 ../sidebar.php:14
+#: ../sidebar-2.php:5 ../sidebar.php:9
 msgid "Expand Sidebar"
 msgstr ""
 
-#: ../sidebar-2.php:9
+#: ../sidebar-2.php:10
 msgid "More"
 msgstr ""
 
-#: ../sidebar.php:19
+#: ../sidebar.php:14
 msgid "Follow:"
 msgstr ""
 

@@ -16,7 +16,7 @@
 	add_filter( 'ot_theme_mode', '__return_true' );
 	load_template( get_template_directory() . '/option-tree/ot-loader.php' );
 
-	
+
 /* ------------------------------------------------------------------------- *
  *  Load theme files
 /* ------------------------------------------------------------------------- */	
@@ -51,7 +51,7 @@ add_action( 'after_setup_theme', 'alx_load' );
 	// Content width
 	if ( !isset( $content_width ) ) { $content_width = 720; }
 
-	
+
 /*  Theme setup
 /* ------------------------------------ */
 if ( ! function_exists( 'alx_setup' ) ) {
@@ -88,12 +88,12 @@ if ( ! function_exists( 'alx_setup' ) ) {
 }
 add_action( 'after_setup_theme', 'alx_setup' );
 
-	
+
 /*  Register sidebars
 /* ------------------------------------ */	
 if ( ! function_exists( 'alx_sidebars' ) ) {
 
-	function alx_sidebars() {
+	function alx_sidebars()	{
 		register_sidebar(array( 'name' => 'Primary','id' => 'primary','description' => "Normal full width sidebar", 'before_widget' => '<div id="%1$s" class="widget %2$s">','after_widget' => '</div>','before_title' => '<h3>','after_title' => '</h3>'));
 		register_sidebar(array( 'name' => 'Secondary','id' => 'secondary','description' => "Normal full width sidebar", 'before_widget' => '<div id="%1$s" class="widget %2$s">','after_widget' => '</div>','before_title' => '<h3>','after_title' => '</h3>'));
 		register_sidebar(array( 'name' => 'Footer 1','id' => 'footer-1', 'description' => "Widetized footer", 'before_widget' => '<div id="%1$s" class="widget %2$s">','after_widget' => '</div>','before_title' => '<h3>','after_title' => '</h3>'));
@@ -105,7 +105,7 @@ if ( ! function_exists( 'alx_sidebars' ) ) {
 }
 add_action( 'widgets_init', 'alx_sidebars' );
 
-	
+
 /*  Enqueue javascript
 /* ------------------------------------ */	
 if ( ! function_exists( 'alx_scripts' ) ) {
@@ -120,7 +120,7 @@ if ( ! function_exists( 'alx_scripts' ) ) {
 }
 add_action( 'wp_enqueue_scripts', 'alx_scripts' ); 
 
-	
+
 /*  Enqueue css
 /* ------------------------------------ */	
 if ( ! function_exists( 'alx_styles' ) ) {
@@ -135,6 +135,29 @@ if ( ! function_exists( 'alx_styles' ) ) {
 add_action( 'wp_enqueue_scripts', 'alx_styles' );
 
 
+/*  Custom sidebars
+/* ------------------------------------ */
+if ( ! function_exists( 'alx_custom_sidebars' ) ) {
+
+	function alx_custom_sidebars() {
+		if ( !ot_get_option('sidebar-areas') =='' ) {
+			
+			$sidebars = ot_get_option('sidebar-areas', array());
+			
+			if ( !empty( $sidebars ) ) {
+				foreach( $sidebars as $sidebar ) {
+					if ( isset($sidebar['title']) && !empty($sidebar['title']) && isset($sidebar['id']) && !empty($sidebar['id']) && ($sidebar['id'] !='sidebar-') ) {
+						register_sidebar(array('name' => ''.$sidebar['title'].'','id' => ''.strtolower($sidebar['id']).'','before_widget' => '<div id="%1$s" class="widget %2$s">','after_widget' => '</div>','before_title' => '<h3>','after_title' => '</h3>'));
+					}
+				}
+			}
+		}
+	}
+	
+}
+add_action( 'widgets_init', 'alx_custom_sidebars' );
+
+
 /* ------------------------------------------------------------------------- *
  *  Template functions
 /* ------------------------------------------------------------------------- */	
@@ -143,7 +166,7 @@ add_action( 'wp_enqueue_scripts', 'alx_styles' );
 /* ------------------------------------ */
 if ( ! function_exists( 'alx_layout_class' ) ) {
 	
-	function alx_layout_class( $classes ) {
+	function alx_layout_class() {
 		// Default layout
 		$layout = 'col-3cm';
 		$default = 'col-3cm';
@@ -174,79 +197,12 @@ if ( ! function_exists( 'alx_layout_class' ) ) {
 		// Global option
 		else $layout = ot_get_option('layout-global',''.$default.'');
 		
-		// Return layout classes
-		$classes[] = $layout;
-		return $classes;
+		// Return layout class
+		return $layout;
 	}
 	
 }
-add_filter( 'body_class', 'alx_layout_class' );
-	
 
-/*  Dual sidebars? Get sidebar-2 template
-/* ------------------------------------ */
-if ( ! function_exists( 'alx_sidebar_dual' ) ) {
-	
-	function alx_sidebar_dual() {
-		global $post;
-		
-		if ( 
-			( is_home() && ( 
-				( ot_get_option('layout-home') =='col-3cm' ) || 
-				( ot_get_option('layout-home') =='col-3cl' ) || 
-				( ot_get_option('layout-home') =='col-3cr' ) )
-			) ||
-			( is_single() && ( 
-				( ot_get_option('layout-single') =='col-3cm' ) || 
-				( ot_get_option('layout-single') =='col-3cl' ) || 
-				( ot_get_option('layout-single') =='col-3cr' ) )
-			) ||
-			( is_archive() && ( 
-				( ot_get_option('layout-archive') =='col-3cm' ) || 
-				( ot_get_option('layout-archive') =='col-3cl' ) || 
-				( ot_get_option('layout-archive') =='col-3cr' ) )
-			) ||
-			( is_category() && ( 
-				( ot_get_option('layout-archive-category') =='col-3cm' ) || 
-				( ot_get_option('layout-archive-category') =='col-3cl' ) || 
-				( ot_get_option('layout-archive-category') =='col-3cr' ) )
-			) ||
-			( is_search() && ( 
-				( ot_get_option('layout-search') =='col-3cm' ) || 
-				( ot_get_option('layout-search') =='col-3cl' ) || 
-				( ot_get_option('layout-search') =='col-3cr' ) )
-			) ||
-			( is_404() && ( 
-				( ot_get_option('layout-404') =='col-3cm' ) || 
-				( ot_get_option('layout-404') =='col-3cl' ) || 
-				( ot_get_option('layout-404') =='col-3cr' ) )
-			) ||
-			( is_page() && ( 
-				( ot_get_option('layout-page') =='col-3cm' ) || 
-				( ot_get_option('layout-page') =='col-3cl' ) || 
-				( ot_get_option('layout-page') =='col-3cr' ) )
-			) 
-		)
-		{ get_template_part('sidebar-2'); }
-		
-		elseif ( 
-			( is_page() || is_single() ) && (
-			( get_post_meta($post->ID,'_layout',true) == 'col-3cm' ) ||
-			( get_post_meta($post->ID,'_layout',true) == 'col-3cl' ) ||
-			( get_post_meta($post->ID,'_layout',true) == 'col-3cr' ) )
-		)
-		{ get_template_part('sidebar-2'); }
-		
-		elseif (
-			( ot_get_option('layout-global') =='col-3cm' ) || 
-			( ot_get_option('layout-global') =='col-3cl' ) || 
-			( ot_get_option('layout-global') =='col-3cr' )
-		)
-		{ get_template_part('sidebar-2'); }
-	}
-	
-}
-	
 
 /*  Dynamic sidebar primary
 /* ------------------------------------ */
@@ -280,7 +236,7 @@ if ( ! function_exists( 'alx_sidebar_primary' ) ) {
 	}
 	
 }
-	
+
 
 /*  Dynamic sidebar secondary
 /* ------------------------------------ */
@@ -351,7 +307,7 @@ if ( ! function_exists( 'alx_social_links' ) ) {
 	
 }
 
-	
+
 /*  Site name/logo
 /* ------------------------------------ */
 if ( ! function_exists( 'alx_site_title' ) ) {
@@ -377,8 +333,8 @@ if ( ! function_exists( 'alx_site_title' ) ) {
 	}
 	
 }
-	
-	
+
+
 /*  Page title
 /* ------------------------------------ */
 if ( ! function_exists( 'alx_page_title' ) ) {
@@ -397,7 +353,7 @@ if ( ! function_exists( 'alx_page_title' ) ) {
 	}
 	
 }
-	
+
 
 /*  Blog title
 /* ------------------------------------ */
@@ -421,7 +377,7 @@ if ( ! function_exists( 'alx_blog_title' ) ) {
 	
 }
 
-	
+
 /*  Related posts
 /* ------------------------------------ */
 if ( ! function_exists( 'alx_related_posts' ) ) {
@@ -471,8 +427,8 @@ if ( ! function_exists( 'alx_related_posts' ) ) {
 	}
 	
 }
-	
-	
+
+
 /*  Get images attached to post
 /* ------------------------------------ */
 if ( ! function_exists( 'alx_post_images' ) ) {
@@ -496,33 +452,6 @@ if ( ! function_exists( 'alx_post_images' ) ) {
 	
 }
 
-	
-/* ------------------------------------------------------------------------- *
- *  Admin panel functions
-/* ------------------------------------------------------------------------- */		
-
-/*  Custom sidebars
-/* ------------------------------------ */
-if ( ! function_exists( 'alx_custom_sidebars' ) ) {
-
-	function alx_custom_sidebars() {
-		if ( !ot_get_option('sidebar-areas') =='' ) {
-			
-			$sidebars = ot_get_option('sidebar-areas', array());
-			
-			if ( !empty( $sidebars ) ) {
-				foreach( $sidebars as $sidebar ) {
-					if ( isset($sidebar['title']) && !empty($sidebar['title']) && isset($sidebar['id']) && !empty($sidebar['id']) && ($sidebar['id'] !='sidebar-') ) {
-						register_sidebar(array('name' => ''.$sidebar['title'].'','id' => ''.strtolower($sidebar['id']).'','before_widget' => '<div id="%1$s" class="widget %2$s">','after_widget' => '</div>','before_title' => '<h3>','after_title' => '</h3>'));
-					}
-				}
-			}
-		}
-	}
-	
-}
-add_action( 'widgets_init', 'alx_custom_sidebars' );
-
 
 /*  Get featured post ids
 /* ------------------------------------ */
@@ -543,6 +472,10 @@ if ( ! function_exists( 'alx_get_featured_post_ids' ) ) {
 }
 
 
+/* ------------------------------------------------------------------------- *
+ *  Admin panel functions
+/* ------------------------------------------------------------------------- */		
+
 /*  Post formats script
 /* ------------------------------------ */
 if ( ! function_exists( 'alx_post_formats_script' ) ) {
@@ -556,11 +489,30 @@ if ( ! function_exists( 'alx_post_formats_script' ) ) {
 	
 }
 add_action( 'admin_enqueue_scripts', 'alx_post_formats_script');
-	
-	
+
+
 /* ------------------------------------------------------------------------- *
  *  Filters
 /* ------------------------------------------------------------------------- */
+
+/*  Body class
+/* ------------------------------------ */
+if ( ! function_exists( 'alx_body_class' ) ) {
+
+	function alx_body_class( $classes ) {
+		$classes[] = alx_layout_class();
+		if ( has_nav_menu('topbar') ) {	$classes[] = 'topbar-enabled'; }
+		if ( !ot_get_option( 'boxed' ) ) { $classes[] = 'full-width'; }
+		if ( ot_get_option( 'boxed' ) ) { $classes[] = 'boxed'; }
+		if ( ot_get_option( 'mobile-sidebar-hide' ) == 's1' ) { $classes[] = 'mobile-sidebar-hide-s1'; }
+		if ( ot_get_option( 'mobile-sidebar-hide' ) == 's2' ) { $classes[] = 'mobile-sidebar-hide-s2'; }
+		if ( ot_get_option( 'mobile-sidebar-hide' ) == 's1-s2' ) { $classes[] = 'mobile-sidebar-hide'; }
+		return $classes;
+	}
+	
+}
+add_filter( 'body_class', 'alx_body_class' );
+
 
 /*  Site title
 /* ------------------------------------ */
@@ -582,7 +534,7 @@ if ( ! function_exists( 'alx_wp_title' ) ) {
 }
 add_filter( 'wp_title', 'alx_wp_title' );
 
-	
+
 /*  Custom rss feed
 /* ------------------------------------ */
 if ( ! function_exists( 'alx_feed_link' ) ) {
@@ -598,7 +550,7 @@ if ( ! function_exists( 'alx_feed_link' ) ) {
 }
 add_filter( 'feed_link', 'alx_feed_link', 10, 2 );
 
-	
+
 /*  Custom favicon
 /* ------------------------------------ */
 if ( ! function_exists( 'alx_favicon' ) ) {
@@ -612,24 +564,6 @@ if ( ! function_exists( 'alx_favicon' ) ) {
 }
 add_filter( 'wp_head', 'alx_favicon' );
 
-	
-/*  Body class
-/* ------------------------------------ */
-if ( ! function_exists( 'alx_body_class' ) ) {
-
-	function alx_body_class( $classes ) {
-		if ( has_nav_menu('topbar') ) {	$classes[] = 'topbar-enabled'; }
-		if ( !ot_get_option( 'boxed' ) ) { $classes[] = 'full-width'; }
-		if ( ot_get_option( 'boxed' ) ) { $classes[] = 'boxed'; }
-		if ( ot_get_option( 'mobile-sidebar-hide' ) == 's1' ) { $classes[] = 'mobile-sidebar-hide-s1'; }
-		if ( ot_get_option( 'mobile-sidebar-hide' ) == 's2' ) { $classes[] = 'mobile-sidebar-hide-s2'; }
-		if ( ot_get_option( 'mobile-sidebar-hide' ) == 's1-s2' ) { $classes[] = 'mobile-sidebar-hide'; }
-		return $classes;
-	}
-	
-}
-add_filter( 'body_class', 'alx_body_class' );
-
 
 /*  Excerpt ending
 /* ------------------------------------ */
@@ -642,7 +576,7 @@ if ( ! function_exists( 'alx_excerpt_more' ) ) {
 }
 add_filter( 'excerpt_more', 'alx_excerpt_more' );
 
-	
+
 /*  Excerpt length
 /* ------------------------------------ */
 if ( ! function_exists( 'alx_excerpt_length' ) ) {
@@ -654,7 +588,7 @@ if ( ! function_exists( 'alx_excerpt_length' ) ) {
 }
 add_filter( 'excerpt_length', 'alx_excerpt_length', 999 );
 
-	
+
 /*  Add wmode transparent to media embeds
 /* ------------------------------------ */
 if ( ! function_exists( 'alx_embed_wmode_transparent' ) ) {
@@ -671,7 +605,7 @@ if ( ! function_exists( 'alx_embed_wmode_transparent' ) ) {
 }
 add_filter( 'embed_oembed_html', 'alx_embed_wmode_transparent', 10, 3 );
 
-	
+
 /*  Add responsive container to embeds
 /* ------------------------------------ */	
 if ( ! function_exists( 'alx_embed_html' ) ) {
@@ -712,7 +646,7 @@ add_filter( 'image_resize_dimensions', 'alx_thumbnail_upscale', 10, 6 );
 /* ------------------------------------ */
 add_filter( 'widget_text', 'do_shortcode' );
 
-	
+
 /*  Browser detection body_class() output
 /* ------------------------------------ */
 if ( ! function_exists( 'alx_browser_body_class' ) ) {
@@ -783,7 +717,7 @@ if ( ! function_exists( 'alx_pre_get_posts' ) ) {
 }
 add_action( 'pre_get_posts', 'alx_pre_get_posts' );
 
-	
+
 /*  Script for no-js / js class
 /* ------------------------------------ */
 if ( ! function_exists( 'alx_html_js_class' ) ) {
@@ -795,7 +729,7 @@ if ( ! function_exists( 'alx_html_js_class' ) ) {
 }
 add_action( 'wp_head', 'alx_html_js_class', 1 );
 
-	
+
 /*  IE js header
 /* ------------------------------------ */
 if ( ! function_exists( 'alx_ie_js_header' ) ) {
@@ -810,7 +744,7 @@ if ( ! function_exists( 'alx_ie_js_header' ) ) {
 }
 add_action( 'wp_head', 'alx_ie_js_header' );
 
-	
+
 /*  IE js footer
 /* ------------------------------------ */
 if ( ! function_exists( 'alx_ie_js_footer' ) ) {
@@ -823,7 +757,7 @@ if ( ! function_exists( 'alx_ie_js_footer' ) ) {
 	
 }
 add_action( 'wp_footer', 'alx_ie_js_footer', 20 );	
-	
+
 
 /*  TGM plugin activation
 /* ------------------------------------ */
