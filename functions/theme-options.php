@@ -428,7 +428,7 @@ function custom_theme_options() {
 		// Layout : Home
 		array(
 			'id'		=> 'layout-home',
-			'label'		=> 'Posts Home',
+			'label'		=> 'Home',
 			'desc'		=> '[ <strong>is_home</strong> ] Posts homepage layout',
 			'std'		=> 'inherit',
 			'type'		=> 'radio-image',
@@ -917,7 +917,7 @@ function custom_theme_options() {
 		array(
 			'id'		=> 'dynamic-styles',
 			'label'		=> 'Dynamic Styles',
-			'desc'		=> 'Turn styling options on and off',
+			'desc'		=> 'Turn styling options on / off',
 			'type'		=> 'checkbox',
 			'section'	=> 'styling',
 			'choices'	=> array(
@@ -1033,7 +1033,7 @@ function custom_theme_options() {
 		array(
 			'id'		=> 'color-1',
 			'label'		=> 'Primary Color',
-			'desc'		=> 'Set the primary accent color of your theme<br /><i>Default: #3b8dbd</i>',
+			'desc'		=> '<i>Default: #3b8dbd</i>',
 			'std'		=> '#3b8dbd',
 			'type'		=> 'colorpicker',
 			'section'	=> 'styling',
@@ -1043,37 +1043,37 @@ function custom_theme_options() {
 		array(
 			'id'		=> 'color-2',
 			'label'		=> 'Secondary Color',
-			'desc'		=> 'Set the secondary accent color of your theme<br /><i>Default: #82b965</i>',
+			'desc'		=> '<i>Default: #82b965</i>',
 			'std'		=> '#82b965',
 			'type'		=> 'colorpicker',
 			'section'	=> 'styling',
 			'class'		=> ''
 		),
-		// Styling: Topbar Color
+		// Styling: Topbar Background
 		array(
 			'id'		=> 'color-topbar',
-			'label'		=> 'Topbar Color',
-			'desc'		=> 'Topbar menu and search<br /><i>Default: #26272b</i>',
+			'label'		=> 'Topbar Background',
+			'desc'		=> '<i>Default: #26272b</i>',
 			'std'		=> '#26272b',
 			'type'		=> 'colorpicker',
 			'section'	=> 'styling',
 			'class'		=> ''
 		),
-		// Styling: Header Color
+		// Styling: Header Background
 		array(
 			'id'		=> 'color-header',
-			'label'		=> 'Header Color',
-			'desc'		=> 'Header background<br /><i>Default: #33363b</i>',
+			'label'		=> 'Header Background',
+			'desc'		=> '<i>Default: #33363b</i>',
 			'std'		=> '#33363b',
 			'type'		=> 'colorpicker',
 			'section'	=> 'styling',
 			'class'		=> ''
 		),
-		// Styling: Footer Color
+		// Styling: Footer Background
 		array(
 			'id'		=> 'color-footer',
-			'label'		=> 'Footer Color',
-			'desc'		=> 'Footer background<br /><i>Default: #33363b</i>',
+			'label'		=> 'Footer Background',
+			'desc'		=> '<i>Default: #33363b</i>',
 			'std'		=> '#33363b',
 			'type'		=> 'colorpicker',
 			'section'	=> 'styling',
@@ -1083,7 +1083,7 @@ function custom_theme_options() {
 		array(
 			'id'			=> 'logo-max-height',
 			'label'			=> 'Header Logo Image Max-height',
-			'desc'			=> 'When you upload your logo image it should have the double height of this to be high resolution.',
+			'desc'			=> 'Your logo image should have the double height of this to be high resolution',
 			'std'			=> '60',
 			'type'			=> 'numeric-slider',
 			'section'		=> 'styling',
@@ -1093,7 +1093,7 @@ function custom_theme_options() {
 		array(
 			'id'			=> 'image-border-radius',
 			'label'			=> 'Image Border Radius',
-			'desc'			=> 'Give your thumbnails and layout images pretty rounded corners',
+			'desc'			=> 'Give your thumbnails and layout images rounded corners',
 			'std'			=> '0',
 			'type'			=> 'numeric-slider',
 			'section'		=> 'styling',
@@ -1103,7 +1103,7 @@ function custom_theme_options() {
 		array(
 			'id'		=> 'body-background',
 			'label'		=> 'Body Background',
-			'desc'		=> 'Set background color',
+			'desc'		=> '<i>Default: #eaeaea</i>',
 			'std'		=> '#eaeaea',
 			'type'		=> 'colorpicker',
 			'section'	=> 'styling'

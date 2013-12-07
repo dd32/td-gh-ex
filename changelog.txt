@@ -1,6 +1,10 @@
   Theme : Hueman (wordpress.org release)
-Version : 1.2.3
+Version : 1.2.4
  Author : Alexander "Alx" Agnarson - http://alxmedia.se
+
+December 7 2013 - 1.2.4
+===========================================================
+- Simplified some admin panel descriptions
 
 December 7 2013 - 1.2.3
 ===========================================================
