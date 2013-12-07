@@ -33,7 +33,7 @@
 					
 						<?php } ?>
 					<?php } ?>
-				</div>
+				</div><!--/.pad-->
 				
 			</div><!--/.container-inner-->
 		</section><!--/.container-->	
@@ -43,7 +43,7 @@
 			<nav class="nav-container group" id="nav-footer">
 				<div class="nav-toggle"><i class="fa fa-bars"></i></div>
 				<div class="nav-text"><!-- put your mobile menu text here --></div>
-				<div class="nav-wrap"><?php wp_nav_menu( array('theme_location'=>'footer','menu_class'=>'nav container group','container'=>'','menu_id'=>'','fallback_cb'=>FALSE) ); ?></div>
+				<div class="nav-wrap"><?php wp_nav_menu( array('theme_location'=>'footer','menu_class'=>'nav container group','container'=>'','menu_id'=>'','fallback_cb'=>false) ); ?></div>
 			</nav><!--/#nav-footer-->
 		<?php endif; ?>
 		
@@ -74,7 +74,7 @@
 						</div><!--/#credit-->
 						<?php endif; ?>
 						
-					</div>
+					</div><!--/.pad-->
 					
 					<div class="grid one-half last">	
 						<?php alx_social_links() ; ?>

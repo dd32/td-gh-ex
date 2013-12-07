@@ -20,7 +20,7 @@
 		<div class="post-meta group">
 			<p class="post-category"><?php the_category(' / '); ?></p>
 			<p class="post-date"><?php the_time('j M, Y'); ?></p>
-		</div>
+		</div><!--/.post-meta-->
 		
 		<h2 class="post-title">
 			<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a>

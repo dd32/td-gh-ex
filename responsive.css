@@ -172,15 +172,15 @@
 	
 	/* 3 column, content left */
 	.col-3cl .main-inner { background: url(img/sidebar/s-right-dual-full-collapse-40.png) repeat-y right; padding-right: 80px; }
-	.col-3cl .s2 { margin-right: -40px; }
 	.col-3cl .s1 { margin-right: -80px; }
-	.s2-expand.col-3cl .s2 { right: 40px; }
+	.col-3cl .s2 { margin-right: -40px; }
+	.col-3cl.s2-expand .s2 { right: 40px; }
 	
 	/* 3 column, content right */
 	.col-3cr .main-inner { background: url(img/sidebar/s-left-dual-full-collapse-40.png) repeat-y left; padding-left: 80px; }
-	.col-3cr .s2 { margin-left: -40px; }
 	.col-3cr .s1 { margin-left: -80px; }
-	.s2-expand.col-3cr .s2 { left: 40px; }
+	.col-3cr .s2 { margin-left: -40px; }
+	.col-3cr.s2-expand .s2 { left: 40px; }
 	
 	/* layout */
 	.container { padding: 0; }

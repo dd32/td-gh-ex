@@ -7,7 +7,7 @@
 		<ul class="meta-single group">
 			<li class="category"><?php the_category(' <span>/</span> '); ?></li>
 			<li class="comments"><a href="<?php comments_link(); ?>"><i class="fa fa-comments-o"></i><?php comments_number( '0', '1', '%' ); ?></a></li>
-		</ul><!--/.post-meta-->
+		</ul>
 		
 	<?php elseif ( is_page() ): ?>
 		<h2><?php echo alx_page_title(); ?></h2>

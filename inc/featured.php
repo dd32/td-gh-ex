@@ -2,9 +2,9 @@
 // Query featured entries
 $featured = new WP_Query(
 	array(
-		'no_found_rows'				=> FALSE,
-		'update_post_meta_cache'	=> FALSE,
-		'update_post_term_cache'	=> FALSE,
+		'no_found_rows'				=> false,
+		'update_post_meta_cache'	=> false,
+		'update_post_term_cache'	=> false,
 		'ignore_sticky_posts'		=> 1,
 		'posts_per_page'			=> ot_get_option('featured-posts-count'),
 		'cat'						=> ot_get_option('featured-category')
@@ -16,7 +16,8 @@ $featured = new WP_Query(
 	
 	<?php while ( $featured->have_posts() ): $featured->the_post(); ?>
 	<div class="featured">
-		<div class="post-hover">
+		<div <?php post_class('post-hover'); ?>>
+			
 			<div class="post-thumbnail">
 				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 					<?php if ( has_post_thumbnail() ): ?>
@@ -36,7 +37,7 @@ $featured = new WP_Query(
 			<div class="post-meta group">
 				<p class="post-category"><?php the_category(' / '); ?></p>
 				<p class="post-date"><?php the_time('j M, Y'); ?></p>
-			</div>
+			</div><!--/.post-meta-->
 			
 			<h2 class="post-title">
 				<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a>
@@ -47,6 +48,7 @@ $featured = new WP_Query(
 				<?php the_excerpt(); ?>
 			</div><!--/.entry-->
 			<?php endif; ?>
+			
 		</div>
 	</div>
 	<?php endwhile; ?>	
@@ -81,7 +83,8 @@ $featured = new WP_Query(
 	<div class="flexslider featured" id="flexslider-featured">
 		<ul class="slides">				
 			<?php while ( $featured->have_posts() ): $featured->the_post(); ?>
-			<li class="post-hover">
+			<li <?php post_class('post-hover'); ?>>
+				
 				<div class="post-thumbnail">
 					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 						<?php if ( has_post_thumbnail() ): ?>
@@ -101,7 +104,7 @@ $featured = new WP_Query(
 				<div class="post-meta group">
 					<p class="post-category"><?php the_category(' / '); ?></p>
 					<p class="post-date"><?php the_time('j M, Y'); ?></p>
-				</div>
+				</div><!--/.post-meta-->
 				
 				<h2 class="post-title">
 					<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a>

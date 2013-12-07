@@ -22,7 +22,7 @@
 			<nav class="nav-container group" id="nav-topbar">
 				<div class="nav-toggle"><i class="fa fa-bars"></i></div>
 				<div class="nav-text"><!-- put your mobile menu text here --></div>
-				<div class="nav-wrap container"><?php wp_nav_menu(array('theme_location'=>'topbar','menu_class'=>'nav container-inner group','container'=>'','menu_id' => '','fallback_cb'=> FALSE)); ?></div>
+				<div class="nav-wrap container"><?php wp_nav_menu(array('theme_location'=>'topbar','menu_class'=>'nav container-inner group','container'=>'','menu_id' => '','fallback_cb'=> false)); ?></div>
 				
 				<div class="container">
 					<div class="container-inner">		
@@ -50,7 +50,7 @@
 					<nav class="nav-container group" id="nav-header">
 						<div class="nav-toggle"><i class="fa fa-bars"></i></div>
 						<div class="nav-text"><!-- put your mobile menu text here --></div>
-						<div class="nav-wrap container"><?php wp_nav_menu(array('theme_location'=>'header','menu_class'=>'nav container-inner group','container'=>'','menu_id' => '','fallback_cb'=> FALSE)); ?></div>
+						<div class="nav-wrap container"><?php wp_nav_menu(array('theme_location'=>'header','menu_class'=>'nav container-inner group','container'=>'','menu_id' => '','fallback_cb'=> false)); ?></div>
 					</nav><!--/#nav-header-->
 				<?php endif; ?>
 				
