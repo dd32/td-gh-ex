@@ -341,7 +341,7 @@ if ( ! function_exists( 'alx_social_links' ) ) {
 					
 					// Put them together
 					if ( isset($item['title']) && !empty($item['title']) && isset($item['social-icon']) && !empty($item['social-icon']) && ($item['social-icon'] !='fa-') ) {
-						echo '<li><a class="social-tooltip '.$item['title'].'" '.$title.' '.$link.' '.$target.'><i '.$icon.' '.$color.'></i></a></li>';
+						echo '<li><a class="social-tooltip" '.$title.' '.$link.' '.$target.'><i '.$icon.' '.$color.'></i></a></li>';
 					}
 				}
 				echo '</ul>';
@@ -513,11 +513,11 @@ if ( ! function_exists( 'alx_custom_sidebars' ) ) {
 			if ( !empty( $sidebars ) ) {
 				foreach( $sidebars as $sidebar ) {
 					if ( isset($sidebar['title']) && !empty($sidebar['title']) && isset($sidebar['id']) && !empty($sidebar['id']) && ($sidebar['id'] !='sidebar-') ) {
-						register_sidebar(array('name' => ''.$sidebar['title'].'','id' => ''.$sidebar['id'].'','before_widget' => '<div id="%1$s" class="widget %2$s">','after_widget' => '</div>','before_title' => '<h3>','after_title' => '</h3>'));
+						register_sidebar(array('name' => ''.$sidebar['title'].'','id' => ''.strtolower($sidebar['id']).'','before_widget' => '<div id="%1$s" class="widget %2$s">','after_widget' => '</div>','before_title' => '<h3>','after_title' => '</h3>'));
 					}
 				}
 			}
-		}	
+		}
 	}
 	
 }

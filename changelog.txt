@@ -1,6 +1,11 @@
   Theme : Hueman (wordpress.org release)
-Version : 1.2.1
+Version : 1.2.2
  Author : Alexander "Alx" Agnarson - http://alxmedia.se
+
+December 7 2013 - 1.2.2
+===========================================================
+- Removed social icon title from being added as class in markup
+- Added forced lowercase letters on custom sidebar IDs
 
 December 7 2013 - 1.2.1
 ===========================================================
