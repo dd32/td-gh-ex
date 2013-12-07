@@ -2,10 +2,10 @@
 Theme Name: activetab
 Theme URI: http://web-profile.com.ua/wordpress/themes/activetab/
 Description: Responsive clean theme. More info at http://web-profile.com.ua/activetab/
-Version: 0.5.9
+Version: 1.0
 Author: webvitaly
 Author URI: http://web-profile.com.ua/wordpress/
-Tags: gray, white, light, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: gray, white, light, one-column, two-columns, right-sidebar, flexible-width, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, clean
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl.html
 */
@@ -26,7 +26,6 @@ body {
 	padding: 20px 20px;
 	background: #fff;
 	border: 1px solid #e6e6e6;
-	/*box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);*/
 }
 
 .site-container {
@@ -87,7 +86,7 @@ blockquote, q {
 }
 
 /* ========== table ========== */
-table { /* tables still need 'cellspacing="0"' in the markup */
+table {
 	border-collapse: separate;
 	border-spacing: 0;
 	width: 100%;
@@ -140,8 +139,7 @@ a:link {
 	text-decoration: underline;
 }
 a:visited {
-	color: #333;
-	/*color: #551A8B;*/
+	color: #333; /*color: #551A8B;*/
 }
 a:hover {
 	/*color: #06e;*/
@@ -854,50 +852,7 @@ table#wp-calendar td, table#wp-calendar th {
 	a:after{ /* print URL after links */
 		content: " (" attr(href) ") ";
 	}
-	/*a[href$=".jpg"]:after { content: ""; }
-	a[href$=".jpeg"]:after { content: ""; }
-	a[href$=".png"]:after { content: ""; }
-	a[href$=".gif"]:after { content: ""; }
-	a[href$=".tiff"]:after { content: ""; }
-	a[href$=".tif"]:after { content: ""; }*/
 }
-
-
-/* ========== link extended ========== */
-/* Add " (pdf)" or other text after links that go to files, commented because it could looks bad if link to file is wrapping the image */
-/*a[href$=".pdf"]:after { content: " [pdf document]"; }
-a[href$=".doc"]:after { content: " [doc document]"; }
-a[href$=".docx"]:after { content: " [docx document]"; }
-a[href$=".ppt"]:after { content: " [ppt PowerPoint presentation]"; }
-a[href$=".pps"]:after { content: " [pps PowerPoint show]"; }
-a[href$=".xls"]:after { content: " [xls excel spreadsheet]"; }
-a[href$=".rtf"]:after { content: " [rtf rich text format]"; }
-a[href$=".txt"]:after { content: " [txt text]"; }
-a[href$=".zip"]:after { content: " [zip archive]"; }
-a[href$=".rar"]:after { content: " [rar archive]"; }
-a[href$=".7z"]:after { content: " [7z archive]"; }
-a[href$=".gz"]:after { content: " [gz archive]"; }
-a[href$=".tgz"]:after { content: " [tgz archive]"; }
-a[href$=".mp3"]:after { content: " [mp3 audio]"; }
-a[href$=".ogg"]:after { content: " [ogg audio]"; }
-a[href$=".wav"]:after { content: " [wav audio]"; }
-a[href$=".avi"]:after { content: " [avi video]"; }
-a[href$=".mpg"]:after { content: " [mpg video]"; }
-a[href$=".mpeg"]:after { content: " [mpeg video]"; }
-a[href$=".mp4"]:after { content: " [mp4 video]"; }
-a[href$=".wmv"]:after { content: " [wmv video]"; }
-a[href$=".wov"]:after { content: " [wov video]"; }
-a[href$=".exe"]:after { content: " [exe executable]"; }*/
-/* link on images should be without extension
-a[href$=".jpg"]:after { content: " [jpg image]"; }
-a[href$=".jpeg"]:after { content: " [jpeg image]"; }
-a[href$=".png"]:after { content: " [png image]"; }
-a[href$=".gif"]:after { content: " [gif image]"; }
-a[href$=".tiff"]:after { content: " [tiff image]"; }
-a[href$=".tif"]:after { content: " [tif image]"; }*/
-/* If file size specified as data attribute, use that too (does not work) */
-/*a[href$=".pdf"][data-size]:after { content: " (pdf, " attr(data-size) ")"; }*/
-/*a[href^="mailto:"]:after { content: " [email]"; }*/
 
 
 .search-submit-button {
@@ -931,7 +886,6 @@ a[href$=".tif"]:after { content: " [tif image]"; }*/
 	line-height: 16px;
 	color: #555;
 	padding: 20px 0 0 0;
-	/*margin: 0 20px -20px 20px;*/
 	border-top: 1px solid #EDEDED;
 }
 .site-footer p, .site-footer li {

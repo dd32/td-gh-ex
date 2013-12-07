@@ -1,10 +1,10 @@
 === activetab ===
 Contributors: webvitaly
 Donate link: http://web-profile.com.ua/donate/
-Tags: gray, white, light, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: gray, white, light, one-column, two-columns, right-sidebar, flexible-width, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, clean
 Requires at least: 3.4
 Tested up to: 3.7.1
-Stable tag: 0.5.9
+Stable tag: 1.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -12,7 +12,7 @@ Responsive clean theme. More info at http://web-profile.com.ua/activetab/
 
 == Description ==
 
-* responsive (flexible-width)
+* responsive and clean
 * two columns, right sidebar, fixed or static multi-level drop down menu
 * widget-ready sidebar and footer areas
 * 2 extra page templates: "full width (no sidebar)" and "redirect to first subpage"
@@ -42,6 +42,10 @@ FAQ:
 
 
 == Changelog ==
+
+= 1.0 - 2013-12-07 =
+* updated Bootstrap v.3.0.3
+* added 'responsive-layout' and 'fluid-layout' tags
 
 = 0.5.9 - 2013-12-01 =
 * bug fixing
