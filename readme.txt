@@ -36,7 +36,7 @@ Custom Css:
 
 == Change log ==
 
-= 1.3.5 =
+= 1.3.6 =
 *Added shadow to posts make it stylish
 *Font size customize
 *Some premium features added
