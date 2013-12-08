@@ -70,7 +70,7 @@
 						
 						<?php if ( !ot_get_option( 'credit' ) ): ?>
 						<div id="credit">
-							<p><?php _e('Powered by','hueman'); ?> <a href="http://wordpress.org">WordPress</a>. <?php _e('Designed by','hueman'); ?> <a href="http://alxmedia.se">Alx</a>.</p>
+							<p><?php _e('Powered by','hueman'); ?> <a href="http://wordpress.org">WordPress</a>. <?php _e('Theme by','hueman'); ?> <a href="http://alxmedia.se">Alx</a>.</p>
 						</div><!--/#credit-->
 						<?php endif; ?>
 						

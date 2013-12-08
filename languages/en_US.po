@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Hueman\n"
-"POT-Creation-Date: 2013-12-07 15:24+0100\n"
-"PO-Revision-Date: 2013-12-07 15:24+0100\n"
+"POT-Creation-Date: 2013-12-08 21:51+0100\n"
+"PO-Revision-Date: 2013-12-08 21:51+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: English\n"
@@ -16,8 +16,8 @@ msgstr ""
 
 #: ../404.php:14
 msgid ""
-"The page you trying to reach does not exist, or has been moved. Please use "
-"the menus or the search box to find what you are looking for."
+"The page you are trying to reach does not exist, or has been moved. Please "
+"use the menus or the search box to find what you are looking for."
 msgstr ""
 
 #: ../comments.php:7
@@ -49,7 +49,7 @@ msgid "Powered by"
 msgstr ""
 
 #: ../footer.php:73
-msgid "Designed by"
+msgid "Theme by"
 msgstr ""
 
 #: ../search.php:10
