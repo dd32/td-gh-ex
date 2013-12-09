@@ -25,13 +25,13 @@ function catchevolution_add_custom_box() {
 
 add_action( 'add_meta_boxes', 'catchevolution_add_custom_box' );
 
-
+ 
 global $sidebar_layout;
 $sidebar_layout = array(
 	'default-sidebar' => array(
 		'id'		=> 'catchevolution-sidebarlayout',
 		'value' 	=> 'default',
-		'label' 	=> __( 'Default Layout Set in <a href="'.get_bloginfo('url').'/wp-admin/admin.php?page=theme_options" target="_blank">Theme Settings</a>', 'catchevolution' ),
+		'label' 	=> sprintf( __( 'Default Layout Set in <a href="%s">Theme Settings</a>', 'catchevolution' ), esc_url( get_bloginfo( 'url' ).'/wp-admin/admin.php?page=theme_options' ) ),
 		'thumbnail' => ' '
 	),
 	'right-sidebar' => array(

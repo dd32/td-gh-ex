@@ -2,11 +2,12 @@
 * by the Catch Themes team, http://catchthemes.com/
 
 == ABOUT Catch Evolution==
-Catch Evolution is a beautifully sleek creation of Catch Themes. It exudes a clean and super sharp look. It comes with a whole set of interesting, rich features and flexible theme options. Built on HTML5, CSS3, it has a responsive design which lets the content automatically adapt to the screen's size on different devices. Catch Evolution looks striking in a bigger screen. The layout is wider, bigger and luxuriously spacious. This theme is easily customizable with an advanced theme options panel. It supports popular plugins such as Jetpack, WordPress SEO by Yoast, WP-PageNavi, Contact Form 7, WooCommerce and many more. It is also translation ready and should you need support with this theme, please go to http://catchthemes.com/support/
+Catch Evolution is a beautifully sleek creation of Catch Themes. It exudes a clean and super sharp look. It comes with a whole set of interesting, rich features and flexible theme options. Built on HTML5, CSS3, it has a responsive design which lets the content automatically adapt to the screen's size on different devices. Catch Evolution looks striking in a bigger screen. The layout is wider, bigger and luxuriously spacious. This theme is easily customizable with an advanced theme options panel. It supports popular plugins such as Jetpack, WordPress SEO by Yoast, WP-PageNavi, Contact Form 7, WooCommerce and many more. It is also translation ready and currently translated in Spanish and French. If you need support with this theme, please go to http://catchthemes.com/support/
 
 == Translation ==
 Catch Evolution theme is translation ready.
 Added Translation for Spanish by Ruben Ramos Fernandez (batmovil69@hotmail.com)
+Added Translation for French by Sebastian Chamusard (admin78@orange.fr)
 
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
@@ -62,3 +63,6 @@ Version 1.2.1
 
 Version 1.2.1.1
 * Fixed error without WooCommerce plugin from version 1.2.1
+
+Version 1.3
+* Added French translation fr_FR.po and fr_FR.mo

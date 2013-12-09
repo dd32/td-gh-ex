@@ -4,9 +4,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Evolution\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-28 01:28+0545\n"
-"PO-Revision-Date: 2013-11-28 01:28+0545\n"
-"Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
+"POT-Creation-Date: 2013-12-10 00:59+0545\n"
+"PO-Revision-Date: 2013-12-10 00:59+0545\n"
+"Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchinternet.com>\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.6.1\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:14
@@ -534,7 +534,8 @@ msgid "Catch Evolution Options"
 msgstr ""
 
 #: ../inc/catchevolution-metabox.php:34
-msgid "Default Layout Set in <a href=\""
+#, php-format
+msgid "Default Layout Set in <a href=\"%s\">Theme Settings</a>"
 msgstr ""
 
 #: ../inc/catchevolution-metabox.php:40
