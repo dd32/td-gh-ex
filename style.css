@@ -4,7 +4,7 @@ Theme URI: http://catchthemes.com/themes/catchbox
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
 Description: Catch Box is simple, lightweight, box shaped, and adaptable WordPress Theme for bloggers and professionals. It is based on HTML5, CSS3 and Responsive Web Design to view in various devices. 10 Best Reasons to use Catch Box Theme. 1. Responsive Web Design, 2. Custom Menus (Primary, Secondary and Footer menus), 3. Theme Options for light, dark, blue, green, red and brown color scheme, custom link colors, three layout choices, two content choices between excerpt and content option in homepage, feed redirection, custom css styles, 4. Featured Sliders where you can define number of slides and post IDs, 5. Social Links (Facebook, Twitter, RSS, Linkedin, Pinterest, etc), 6. Webmaster Tools (Google, Yahoo and Bing site verification ID, Header and Footer codes), 7. Custom Backgrounds, 8. Custom Header, 9. Catchbox Adspace widget to add any type of Advertisements, and 10. Support popular plugins. Multilingual Ready (WPML) and also currently translated in Brazilian Portuguese, Spanish, Danish, Germany, French, Polish, Czech, Croatian, Italian, Swedish, Russian, Arabic, Serbian, Dutch and Persian. Theme Support at http://catchthemes.com/support/
-Version: 2.8.3
+Version: 2.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: dark, light, blue, white, black, gray, green, red, brown, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
@@ -240,6 +240,10 @@ body, input, textarea {
 	font: 15px "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: 300;
 	line-height: 1.625;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;	
 }
 body {
 	background: #ccc;
@@ -661,7 +665,7 @@ a:hover {
 #branding #searchform {
 	position: absolute;
 	top: 2.8em;
-	right: 3%;
+	right: 0;
 	text-align: right;
 }
 #branding #searchform div {
@@ -770,6 +774,9 @@ a:hover {
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
 }
+#main .article {
+	word-wrap: break-word;
+}
 .entry-title {
 	clear: both;
 	color: #222;
@@ -808,28 +815,27 @@ a:hover {
 .page .entry-content {
 	padding: 1em 0 0;
 }
-.hentry h1 {
+.entry-content h1 {
     font-size: 26px;
 }
-.hentry h2 {
+.entry-content h2 {
     font-size: 24px;
 }
-.hentry h3 {
+.entry-content h3 {
     font-size: 22px;
     font-weight: bold;
 	margin: 0 0 0.8125em;
 }
-.hentry h4 {
+.entry-content h4 {
     font-size: 20px;
     margin: 0 0 0.5em;
 }
-.hentry h5 {
+.entry-content h5 {
     font-size: 18px;
 }
-.hentry h6 {
+.entry-content h6 {
     font-size: 16px;
 }
-
 .entry-content h1,
 .entry-content h2,
 .comment-content h1,
@@ -1118,20 +1124,6 @@ object {
 	font-weight: bold;
 	margin: 5px 0 10px;
 }
-
-/* Comments link */
-.entry-header .comments-link a {
-
-}
-.entry-header .comments-link a:hover,
-.entry-header .comments-link a:focus,
-.entry-header .comments-link a:active {
-
-}
-.entry-header .comments-link .leave-reply {
-
-}
-
 /* Featured Slider */
 #slider {
     background-color: #555;
@@ -1162,7 +1154,6 @@ object {
 	background: none;
 	border: none;
 }
-
 #slider-wrap .featured-text {
     color: #FFFFFF;
     padding: 0 11px 10px;
@@ -1174,7 +1165,7 @@ object {
 	 max-width:33px;
 	 height:auto;
 	 width:100%;
- }
+}
 #nav-slider .nav-previous, 
 #nav-slider .nav-next {
     cursor: pointer;
@@ -2406,7 +2397,6 @@ p.comment-form-comment {
 	float: right;
 }
 
-
 /* Three Footer Widget Areas */
 #supplementary.three .widget-area {
     float: left;
@@ -2629,7 +2619,8 @@ img#wpstats {
 
 /* =Responsive Structure
 ----------------------------------------------- */
-/* Smaller than standard 1060 (devices and browsers) */
+
+/* Smaller than standard 1060 (devices and browsers) ----------- */
 @media screen and (max-width: 1060px) {
   #page {
     max-width: 900px;
@@ -2640,8 +2631,19 @@ img#wpstats {
   }
 }
 
+/* iPad (landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+	#page {
+		width: 960px;
+		max-width: 98%;
+	}
+}
+
+/* iPad Portrait and other Smaller then standard 960 (devices and browsers) ----------- */
 @media screen and (max-width: 960px) {
-	/*  ipad */
 	#page {
 		max-width: 708px;
 	}
@@ -2715,134 +2717,6 @@ img#wpstats {
 		margin-right: 0;
 		width: auto;
 	}	
-}
-	
-@media screen and (max-width: 767px) {
-	/*  small tablet */
-	#page {
-		max-width: 480px;
-	}
-	/* @media (max-width: 650px) Reduce font-sizes for better readability on smaller devices */
-	body {
-   		padding: 0;
-	}
-	body, input, textarea {
-		font-size: 13px;
-	}
-	#branding,
-	#site-generator {
-		border-radius: 0;
-	}
-	input#s {
-		font-size: 16px;
-	}
-	#main,
-	#supplementary {
-		padding-top: 1em;
-	}
-	#header-content {
-		padding: 2em 0 6em;
-		text-align: center;
-	}
-	.logo-wrap {
-		float: none;
-		text-align: center;
-	}
-	#site-title {
-		font-size: 28px;
-		line-height: 38px;
-	}
-	#branding #searchform {
-		bottom: 2em;
-		position: absolute;
-		right: 0;
-		text-align: center;
-		top: auto;
-		width: 100%;
-	}
-	#branding #s {
-		float: none;
-	}
-	#access ul {
-		font-size: 12px;
-	}
-	#nav-slider .nav-previous,
-	#nav-slider .nav-next {
-		top: 82px;
-	}
-	#slider, 
-	.hentry, 
-	.no-results, 
-	#author-info, 
-	#disqus_thread, 
-	#content .error404,
-	#nav-below,
-	.widget,
-	#supplementary .widget {
-		margin-bottom: 1em;
-	}
-	#content nav {
-		padding-bottom: 1em;
-	}
-	article.intro .entry-content {
-		font-size: 12px;
-	}
-	.entry-title {
-		font-size: 21px;
-	}
-	.featured-post .entry-title {
-		font-size: 14px;
-	}
-	.singular .entry-title {
-		font-size: 28px;
-	}
-	.entry-meta {
-		font-size: 12px;
-	}
-	blockquote {
-		margin: 0;
-	}
-	blockquote.pull {
-		font-size: 17px;
-	}
-	/* Floated content doesn't work well at this size */
-	.alignleft,
-	.alignright {
-		float: none;
-		margin-left: 0;
-		margin-right: 0;
-	}
-	/* Make sure the post-post navigation doesn't collide with anything */
-	#nav-single {
-		display: block;
-	}
-	.singular .hentry {
-		padding: 2em 5%;
-	}
-	.singular.page .hentry {
-		padding: 2em 5%;
-	}
-	.widget_search #s {
-		width: 89%;
-	}
-	/* Talking avatars take up too much room at this size */
-	.commentlist .children li.comment .comment-meta {
-		margin-left: 16%;
-	}
-	.commentlist > li.comment,
-	.commentlist > li.pingback {
-		margin-left: 0 !important;
-	}
-	.commentlist .avatar {
-
-	}
-	.commentlist .children .avatar {
-		background: none;
-		left: 2.2em;
-		padding: 0;
-		position: absolute;
-		top: 2.2em;
-	}
 	/* Menu */
 	#access .menu-header-container,
 	#access-secondary .menu-secondary-container,
@@ -2866,10 +2740,7 @@ img#wpstats {
 		float: none;
 	}	
 	.tinynav {
-		background-image: none;
-		background-color: transparent;
-		background-position: right center;
-		background-repeat: no-repeat;
+		background: url("images/menu.png") right 1px no-repeat;
 		border: none;
 		color: #fff;
 		display: block;
@@ -2881,9 +2752,130 @@ img#wpstats {
 	}	
 	.tinynav2 {
 		color: #373737;
-	}
+	}	
 	.tinynav option {
 		color: #000;
+	}	
+}
+
+/* Smaller then standard 767 (devices and browsers) ----------- */
+@media screen and (max-width: 767px) {
+	body {
+   		padding: 0;
+	}
+	#page, 
+	.one-column #page {
+		width: 480px;
+		margin-bottom: 0.5em;
+	}
+	#branding,
+	#site-generator {
+		border-radius: 0;
+	}
+	.logo-wrap {
+		float: none;
+		text-align: center;
+	}
+	#sidebar-header-right {
+		margin-top: 2em;	
+	}
+	#sidebar-header-right, 
+	#sidebar-header-right .widget,
+	#branding #s {
+		float: none;
+	}
+	#sidebar-header-top,
+	#sidebar-header-right {
+		text-align: center;
+		width: 100%;
+	}	
+	input#s {
+		font-size: 16px;
+	}
+	#main,
+	#supplementary {
+		padding-top: 1em;
+	}
+	#slider.slider-fullwidth {
+		margin-bottom: 1em;
+	}
+	#header-content {
+		padding: 2em 0 6em;
+		text-align: center;
+	}
+	#branding #searchform {
+		bottom: 2em;
+		right: 0;
+		text-align: center;
+		top: auto;
+		width: 100%;
+	}
+	#nav-slider .nav-previous,
+	#nav-slider .nav-next {
+		top: 82px;
+	}
+	#slider.slider-fullwidth  #nav-slider .nav-previous,
+	#slider.slider-fullwidth  #nav-slider .nav-next {
+		top: 20%;
+	}	
+	#slider, 
+	.hentry, 
+	.no-results, 
+	#author-info, 
+	#disqus_thread, 
+	#content .error404,
+	#nav-below,
+	.widget,
+	#supplementary .widget {
+		margin-bottom: 1em;
+	}
+	#content nav,
+	.home #content nav,
+	.archive #content nav {
+		padding-bottom: 1em;
+	}
+	/* Reposition the site title and description slightly */
+	#site-title {
+		padding: 0;
+	}
+	#site-title,
+	#site-description {
+		margin-right: 0;
+	}
+	/* Floated content doesn't work well at this size */
+	.alignleft,
+	.alignright {
+		float: none;
+		margin-left: 0;
+		margin-right: 0;
+	}
+	/* Make sure the post-post navigation doesn't collide with anything */
+	#nav-single {
+		display: block;
+	}
+	.no-sidebar .hentry {
+		padding: 2em 5%;
+	}
+	.no-sidebar.page .hentry {
+		padding: 2em 5%;
+	}
+	.widget_search #s {
+		width: 89%;
+	}
+	/* Talking avatars take up too much room at this size */
+	.commentlist .children li.comment .comment-meta {
+		margin-left: 16%;
+	}
+	.commentlist > li.comment,
+	.commentlist > li.pingback {
+		margin-left: 0 !important;
+	}
+	.commentlist .children .avatar {
+		background: none;
+		left: 2.2em;
+		padding: 0;
+		position: absolute;
+		top: 2.2em;
 	}
 	/* Pagination */
 	#content #infinite-handle {
@@ -2895,18 +2887,17 @@ img#wpstats {
 	.page-link span,
 	.page-link a span {
 		height: 25px;
-		font-size:12px;
+		font-size: 12px;
 		line-height: 24px;
-		padding:0 10px;
+		padding: 0 10px;
 	}	
 	#nav-below .wp-pagenavi a, 
 	#nav-below .wp-pagenavi span,
 	.page-link span {
 		margin: 0 0 0 5px;
 	}	
-	
 	/* Use the available space in the smaller comment form */
-	.singular #respond {
+	.no-sidebar #comments {
     	width: auto;
 	}
 	#respond input[type="text"] {
@@ -2916,39 +2907,102 @@ img#wpstats {
 	#respond .comment-form-email .required {
 		left: 95%;
 	}
-	.social-profile {
+	#site-generator .social-profile {
 		float: none;
+		margin-right: 0;
+		padding-bottom: 0;
 		text-align: center;
 	}
 	.social-profile ul li {
 		display: inline-block;
 		float: none;
-		margin: 0 0 10px 10px;
+		margin: 0 0 5px 10px;
+	}
+	#site-generator {
+		padding: 1em 0.5em;	
 	}
 	#site-generator .copyright, #site-generator .powered {
 		display: block;
-		margin-left: 3%;
+		margin: 0;
 		float: none;
 		text-align: center;
-		width: 97%;
+		width: 100%;
+	}	
+	.woocommerce #content ul.products li {
+		margin-right: 0;
+		width: 100%;
 	}
-}
-@media (max-device-width: 767px) {	
-	.tinynav {
-		background-image: url("images/select-arrow.png");
+	.woocommerce #content .product a.added_to_cart {
+		clear: both;
+		display: block;
 	}
-}
-@media screen and (max-width: 479px) {
-	/*  iphone */
-	#page {
-		max-width: 320px;
+	#main .woocommerce .col-1,
+	#main .woocommerce .col-2 {
+		width: 100%;
 	}
+	/* Font Size */
+	body,
+	button,
+	input,
+	select,
+	textarea {
+		font-size: 14px;
+	}	
 	#site-title {
-		font-size: 26px;
-		line-height: 36px;
+		font-size: 28px;
+		line-height: 38px;
 	}
-	#site-description {
+	#access ul {
 		font-size: 12px;
+	}
+	blockquote {
+		margin: 0;
+	}
+	article.intro .entry-content,
+	article.intro .entry-summary {
+		font-size: 12px;
+	}
+	.entry-title {
+		font-size: 21px;
+	}
+	.featured-post .entry-title {
+		font-size: 14px;
+	}
+	blockquote.pull {
+		font-size: 14px;
+	}	
+	.no-sidebar .entry-title {
+		font-size: 28px;
+	}
+	.entry-meta {
+		font-size: 12px;
+	}	
+	#site-generator {
+		font-size: 11px;
+	}	
+}
+
+/* iPhone (landscape) ----------- */
+@media only screen 
+and (min-width: 480px) 
+and (max-width: 767px) {
+	body {
+		padding-top: 1em;
+	}
+	#page,
+	.one-column #page {
+		width: 450px;
+	}	
+	#page {
+		margin-bottom: 1em;
+	}
+}
+
+/* iPhone Portrait and other Smaller then standard 479 (devices and browsers) ----------- */
+@media screen and (max-width: 479px) {
+	#page,
+	.one-column #page {
+		width: 320px;
 	}
 	#content .gallery-columns-2 .gallery-item {
 		width: 45%;
@@ -2960,8 +3014,32 @@ img#wpstats {
 	}
 	#nav-slider .nav-previous,
 	#nav-slider .nav-next {
-		top: 57px;
+		display: none;
 	}
+	/* Controllers */
+	#controllers {
+		display: block;
+	}
+	#controllers {
+		text-align:center;
+		padding: 5px 0 15px;
+		line-height:0;
+	}
+	#controllers a {
+		width: 12px;
+		height: 12px;
+		margin: 0 3px;
+		overflow: hidden;
+		display: inline-block;
+		background-color: #b7b7b7;	
+		-webkit-border-radius: 6px;
+		-moz-border-radius: 6px;
+		border-radius: 6px;
+		text-indent: -9999px;
+	}
+	#controllers a:hover, #controllers a.active {
+		background-color:#000;
+	}	
 	.widget_search #s {
 		width: 85%;
 	}
@@ -2973,12 +3051,28 @@ img#wpstats {
 	.commentlist .children li.comment .comment-meta {
 		margin-left: 22%;
 	}
-	#site-generator .copyright, #site-generator .powered {
-		font-size: 9px;
+	/* Font Size */
+	body,
+	button,
+	input,
+	select,
+	textarea {
+		font-size: 14px;
+	}	
+	#site-title {
+		font-size: 26px;
+		line-height: 36px;
+	}
+	#site-description {
+		font-size: 12px;
+	}	
+	#site-generator {
+		font-size: 10px;
 	}
 }
+
+/* Smaller then standard 319 (devices and browsers) ----------- */
 @media screen and (max-width: 319px) {
-	/* small phone */
 	#page {
 		max-width: 100%;
 	}
@@ -2997,10 +3091,14 @@ img#wpstats {
 	.widget_search #s {
 		width: 80%;
 	}
-	#nav-slider .nav-previous,
-	#nav-slider .nav-next {
-		top: 45px;
-	}	
+	.entry-content img, 
+	.comment-content img,
+	img.size-full,
+	img.size-large,
+	img.wp-post-image {
+		max-width: 92%;
+   	 	padding: 3%;
+	}		
 }
 
 
@@ -3186,8 +3284,10 @@ img#wpstats {
 	margin-right: 3%;
 }
 
+
 /* =Contactform7 
 ----------------------------------------------- */
+
 #content span.wpcf7-not-valid-tip {
     background: none repeat scroll 0 0 transparent;
     border: 0 none;

@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box 2.7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-25 02:06+0545\n"
-"PO-Revision-Date: 2013-10-25 02:06+0545\n"
+"POT-Creation-Date: 2013-12-09 23:40+0545\n"
+"PO-Revision-Date: 2013-12-09 23:40+0545\n"
 "Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
 "Language-Team: D'CLIC, L Capronnier <contact@dclic.info, lcapronnier@yahoo."
 "Com>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.6.1\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:14
@@ -143,7 +143,7 @@ msgstr "Les commentaires sont désactivés."
 #: ../content-aside.php:16 ../content-featured.php:14
 #: ../content-gallery.php:16 ../content-gallery.php:48 ../content-image.php:15
 #: ../content-link.php:16 ../content-quote.php:14 ../content-status.php:15
-#: ../content.php:15 ../content.php:19 ../content.php:47 ../functions.php:852
+#: ../content.php:15 ../content.php:19 ../content.php:47 ../functions.php:854
 #, php-format
 msgid "Permalink to %s"
 msgstr "Permalien pour %s"
@@ -171,7 +171,7 @@ msgstr "%"
 
 #: ../content-aside.php:33 ../content-gallery.php:32 ../content-image.php:27
 #: ../content-link.php:33 ../content-quote.php:35 ../content-status.php:34
-#: ../content.php:55 ../functions.php:399
+#: ../content.php:55 ../functions.php:400
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Lire la suite <span class=\"meta-nav\">&rarr;</span>"
 
@@ -203,8 +203,8 @@ msgstr "<b>%</b> réponses"
 #: ../content-aside.php:50 ../content-featured.php:51
 #: ../content-gallery.php:96 ../content-image.php:74 ../content-link.php:50
 #: ../content-page.php:27 ../content-quote.php:78 ../content-single.php:64
-#: ../content-status.php:51 ../content.php:100 ../functions.php:646
-#: ../functions.php:674 ../image.php:97
+#: ../content-status.php:51 ../content.php:100 ../functions.php:648
+#: ../functions.php:676 ../image.php:97
 msgid "Edit"
 msgstr "Modifier"
 
@@ -275,7 +275,7 @@ msgstr ""
 "par </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%4$s\" "
 "title=\"%5$s\" rel=\"author\">%6$s</a></span></span>"
 
-#: ../content-image.php:45 ../functions.php:712
+#: ../content-image.php:45 ../functions.php:714
 #, php-format
 msgid "View all posts by %s"
 msgstr "Voir tous les articles par %s"
@@ -375,61 +375,61 @@ msgstr "Montagne"
 msgid "Page %s"
 msgstr "Page %s"
 
-#: ../functions.php:467
+#: ../functions.php:469
 msgid "Main Sidebar"
 msgstr "Colonne latérale"
 
-#: ../functions.php:476
+#: ../functions.php:478
 msgid "Footer Area One"
 msgstr "Zone 1 de pied de page"
 
-#: ../functions.php:478 ../functions.php:488 ../functions.php:498
+#: ../functions.php:480 ../functions.php:490 ../functions.php:500
 msgid "An optional widget area for your site footer"
 msgstr "Une zone optionelle pour le pied de page de votre site"
 
-#: ../functions.php:486
+#: ../functions.php:488
 msgid "Footer Area Two"
 msgstr "Zone 2 de pied de page"
 
-#: ../functions.php:496
+#: ../functions.php:498
 msgid "Footer Area Three"
 msgstr "Zone 3 de pied de page"
 
-#: ../functions.php:530 ../functions.php:559 ../single.php:15
+#: ../functions.php:532 ../functions.php:561 ../single.php:15
 msgid "Post navigation"
 msgstr "Navigation"
 
-#: ../functions.php:538 ../functions.php:567
+#: ../functions.php:540 ../functions.php:569
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> Articles plus anciens"
 
-#: ../functions.php:539 ../functions.php:568
+#: ../functions.php:541 ../functions.php:570
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Articles plus récents <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../functions.php:646
+#: ../functions.php:648
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: ../functions.php:663
+#: ../functions.php:665
 #, php-format
 msgid "%1$s on %2$s <span class=\"says\">said:</span>"
 msgstr "%1$s dans %2$s <span class=\"says\">a dit :</span>"
 
-#: ../functions.php:669
+#: ../functions.php:671
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s à %2$s"
 
-#: ../functions.php:678
+#: ../functions.php:680
 msgid "Your comment is awaiting moderation."
 msgstr "Votre commentaire est en attente de modération."
 
-#: ../functions.php:687
+#: ../functions.php:689
 msgid "Reply <span>&darr;</span>"
 msgstr "Répondre <span>&darr;</span>"
 
-#: ../functions.php:706
+#: ../functions.php:708
 #, php-format
 msgid ""
 "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel="
@@ -444,64 +444,64 @@ msgstr ""
 "class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" "
 "rel=\"author\">%7$s</a></span></span>"
 
-#: ../functions.php:764
+#: ../functions.php:766
 msgid "ID"
 msgstr "ID"
 
-#: ../functions.php:974
+#: ../functions.php:976
 msgid "Name"
 msgstr "Nom"
 
-#: ../functions.php:976
+#: ../functions.php:978
 msgid "Email"
 msgstr "E-mail"
 
-#: ../functions.php:1342
+#: ../functions.php:1345
 msgid "Primary menu"
 msgstr "Menu principal"
 
-#: ../functions.php:1344 ../functions.php:1377
+#: ../functions.php:1347 ../functions.php:1380
 msgid "Skip to primary content"
 msgstr "Aller au contenu principal"
 
-#: ../functions.php:1345 ../functions.php:1378
+#: ../functions.php:1348 ../functions.php:1381
 msgid "Skip to secondary content"
 msgstr "Aller au contenu secondaire"
 
-#: ../functions.php:1375
+#: ../functions.php:1378
 msgid "Secondary menu"
 msgstr "Menu secondaire"
 
-#: ../functions.php:1397
+#: ../functions.php:1400
 msgid "Copyright &copy;"
 msgstr "Copyright &copy;"
 
-#: ../functions.php:1401
+#: ../functions.php:1404
 msgid ". All Rights Reserved."
 msgstr ". Tous Droits Réservés."
 
-#: ../functions.php:1404
+#: ../functions.php:1407
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: ../functions.php:1404
+#: ../functions.php:1407
 msgid "Powered by WordPress"
 msgstr "Propulsé par WordPress "
 
-#: ../functions.php:1404
+#: ../functions.php:1407
 #, php-format
 msgid "Powered by %s"
 msgstr "Propulsé par %s"
 
-#: ../functions.php:1406 ../inc/theme-options.php:654
+#: ../functions.php:1409 ../inc/theme-options.php:654
 msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
-#: ../functions.php:1406
+#: ../functions.php:1409
 msgid "Theme Catch Box by Catch Themes"
 msgstr "Thème Catch Box par Catch Themes"
 
-#: ../functions.php:1406
+#: ../functions.php:1409
 #, php-format
 msgid "Theme: %s"
 msgstr "Thème: %s"

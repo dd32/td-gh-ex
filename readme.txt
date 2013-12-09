@@ -350,3 +350,15 @@ Version 2.8.2
 Version 2.8.3
 * Added Brown Color Scheme
 * Changed the Theme Screenshot
+
+Version 2.9
+* Added missing !function_exists() for continue reading link
+* Added initial-scale=1 in viewport content
+* Added responsive design css for iPad and iPhone landscape view
+* Fixed Secondary menu option in responsive design
+* Fixed CSS Issues
+** Fixed RTL
+** Fixed overflow long title
+** Removed duplicate colour code for title
+** Fixed heading font sizes overwriting page/post title 
+* Replaced responsive menu icon

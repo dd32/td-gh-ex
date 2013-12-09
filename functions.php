@@ -392,12 +392,14 @@ function catchbox_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'catchbox_excerpt_length' );
 
 
+if ( ! function_exists( 'catchbox_continue_reading_link' ) ) :
 /**
  * Returns a "Continue Reading" link for excerpts
  */
 function catchbox_continue_reading_link() {
 	return ' <a class="more-link" href="'. esc_url( get_permalink() ) . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'catchbox' ) . '</a>';
 }
+endif;
 
 
 /**
@@ -1318,6 +1320,7 @@ if ( ! function_exists( 'catchbox_header_search' ) ) :
  */
 function catchbox_header_search() { 
 
+	// Getting data from Theme Options
 	$options = catchbox_get_theme_options();
     
 	if ( $options ['disable_header_search'] == 0 ) :
@@ -1371,7 +1374,7 @@ function catchbox_header_menu() { ?>
 			$menuclass = "mobile-disable";
 		endif;
 		?>
-		<nav id="access-secondary" role="navigation">
+        <nav id="access-secondary" class="<?php echo $menuclass; ?>"  role="navigation">
 			<h3 class="assistive-text"><?php _e( 'Secondary menu', 'catchbox' ); ?></h3>
 				<?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?>
 				<div class="skip-link"><a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to primary content', 'catchbox' ); ?>"><?php _e( 'Skip to primary content', 'catchbox' ); ?></a></div>
