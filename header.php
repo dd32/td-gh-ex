@@ -60,6 +60,14 @@ if ($bfa_ata['favicon_file'] != "") {
 </head>
 <body <?php body_class(); ?><?php bfa_incl('html_inserts_body_tag'); ?>>
 <?php bfa_incl('html_inserts_body_top'); ?>
+
+<?php if ($bfa_ata['full_width_header'] == "Yes") { ?>
+		<!-- Full Width Header -->
+		<div id="header" class="full-width">
+		<?php echo bfa_header_config(); ?>
+		</div>
+		<!-- / Full Width Header -->
+<?php } ?>
 <div id="wrapper">
 <div id="container">
 <table id="layout" border="0" cellspacing="0" cellpadding="0">
@@ -70,6 +78,9 @@ if ($bfa_ata['favicon_file'] != "") {
 <?php if ( $right_col2 == "on" ) { ?><col class="colthree-inner" /><?php } ?>
 <?php if ( $right_col == "on" ) { ?><col class="colthree" /><?php } ?>
 </colgroup> 
+
+<?php if ($bfa_ata['full_width_header'] == "No") { ?>
+
 	<tr>
 
 		<!-- Header -->
@@ -81,7 +92,7 @@ if ($bfa_ata['favicon_file'] != "") {
 		<!-- / Header -->
 
 	</tr>
-
+<?php } ?>
 	<!-- Main Body -->	
 	<tr id="bodyrow">
 

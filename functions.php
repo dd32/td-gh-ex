@@ -1,5 +1,5 @@
 <?php
-$bfa_ata_version = "3.7.12";
+$bfa_ata_version = "3.7.13";
 
 // Load translation file above
 load_theme_textdomain('atahualpa');
@@ -137,7 +137,7 @@ if ( is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" )
 
 function bfa_footer_output($footer_content) {
 	global $bfa_ata;
-	$footer_content .= '<br />Powered by <a href="http://wordpress.org/">WordPress</a> &amp; <a href="http://forum.bytesforall.com/">Atahualpa</a>';
+//	$footer_content .= '<br />Powered by <a href="http://wordpress.org/">WordPress</a> &amp; <a href="http://forum.bytesforall.com/">Atahualpa</a>';
 	return $footer_content;
 }
 
@@ -987,5 +987,11 @@ function bfa_is_pagetemplate_active($pagetemplate = '') {
 		return 0;
 	}
 }
+function pa_admin_area_favicon() {
+$favicon_url = get_bloginfo('url') . '/wp-content/themes/atahualpa/images/favicon/6-favicon.ico';
+echo '
+<link rel="shortcut icon" href="' . $favicon_url . '" />';
+}
+add_action('admin_head', 'pa_admin_area_favicon');
 
 ?>

@@ -210,9 +210,10 @@ table#layout {
 ---------- HEADER ---------------------------------------------------
 ------------------------------------------------------------------ */
 
-
+div#header.full-width {width: 100%;}
 /*-------------------- HEADER CONTAINER -------------------*/
 
+div#header,
 td#header {
 	width: auto;
 	padding: 0;
@@ -521,16 +522,20 @@ td#middle {
 /* ------------------------------------------------------------------
 ---------- FOOTER ---------------------------------------------------
 ------------------------------------------------------------------ */
+div#footer.full-width {width: 100%;}
 
+div#footer,
 td#footer {
 	width: auto;
 	<?php bfa_incl('footer_style') ?>
 	}
 
+div#footer a:link, div#footer a:visited, div#footer a:active,
 td#footer a:link, td#footer a:visited, td#footer a:active {
 	<?php bfa_incl('footer_style_links') ?>
 	}
 
+div#footer a:hover,
 td#footer a:hover {
 	<?php bfa_incl('footer_style_links_hover') ?>
 	}
