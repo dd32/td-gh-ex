@@ -221,7 +221,7 @@
 	#footer-bottom { text-align: center; }
 	#footer-bottom #footer-logo { margin-left: auto; margin-right: auto; }
 	#footer-bottom .social-links { float: none; }
-	#footer-bottom .social-links li { margin-left: 4; margin-right: 4px; }
+	#footer-bottom .social-links li { margin-left: 4px; margin-right: 4px; }
 	
 	/* comments */
 	.comment-tabs { font-size: 13px; }
