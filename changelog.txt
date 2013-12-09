@@ -1,5 +1,8 @@
 *** application Changelog ***
 
+10-12-2013 - version 1.3.9
+* Footer.php file edited. get_option changed to of_get_option to fix a footer link bug.
+
 19-08-2013 - version 1.3.8
 * Remove function_exists() conditional wrapper from has_post_thumbnail() from loop.php and template-blog.php file.
 
