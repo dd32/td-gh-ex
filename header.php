@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-<title><?php bloginfo('name') . wp_title('-', true, 'left'); ?></title>
+<title><?php wp_title('|', true, 'right'); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <?php wp_enqueue_style('autoadjust-style', get_stylesheet_uri(), false, '1.1.1');

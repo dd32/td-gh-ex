@@ -5,8 +5,9 @@ Thank you for downloading Autoadjust!
 Autoadjust uses a tried and tested fluid rows and columns system
 that instantly adapts your website for comfortable viewing on mobile
 and other portable devices as well as on a desktop or any other
-viewing environment. The theme includes 5 menu positions, 3 widget
-areas, style sheet editor and is compatible with Jetpack.
+viewing environment. The theme includes 5 menu positions - with the
+primary menu offering support for dropdown menusm, 3 widget areas,
+style sheet editor and is compatible with Jetpack.
 
 Version:1.1.1
 Author:Andrew "Drew" Dyer

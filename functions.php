@@ -105,6 +105,29 @@ if(!function_exists('autoadjust_widgets_init')):
 	}
 endif;
 
+/* TITLE FILTER
+--------------------------------------------------------------- */
+function autoadjust_wp_title($title, $sep) {
+	global $paged, $page;
+	if (is_feed()) :
+		return $title;
+	endif;
+	
+	$title .= get_bloginfo( 'name' );
+
+	$site_description = get_bloginfo('description', 'display');
+	if ($site_description && (is_home() || is_front_page())) :
+		$title = "$title $sep $site_description";
+	endif;
+	
+	if ($paged >= 2 || $page >= 2) :
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'autoadjust' ), max( $paged, $page ) );
+	endif;
+	
+	return $title;
+}
+add_filter('wp_title', 'autoadjust_wp_title', 10, 2);
+
 
 /* GET LOGO
 --------------------------------------------------------------- */
@@ -232,6 +255,7 @@ function autoadjust_enqueue_comment_reply() {
 		wp_enqueue_script('comment-reply'); 
 	}
 }
+add_action('wp_enqueue_scripts', 'autoadjust_enqueue_comment_reply');
 
 
 ?>

@@ -1,3 +1,10 @@
+/* Autoadjust JS Library v1.0.0
+
+License:GNU General Public License v3 or later
+License URI:license.txt
+
+Copyright (C) 2013 Andrew Dyer */
+
 /* TRANSFORM DROP DOWN MENU INTO SELECT MENU 
 --------------------------------------------------------------- */
 (function($) {

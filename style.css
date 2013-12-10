@@ -4,10 +4,12 @@ Theme URI:http://drewdyer.co.uk/autoadjust/
 
 Description:Autoadjust uses a tried and tested fluid rows and columns system that instantly adapts your website for comfortable viewing on mobile and other portable devices as well as on a desktop or any other viewing environment. The theme includes 5 menu positions, 3 widget areas, style sheet editor and is compatible with Jetpack.
 
-Version:1.1.1
-Author:Andrew "Drew" Dyer
+Version:1.1.2
+Author:Andrew Dyer
 Author URI:http://drewdyer.co.uk/
 Tags:blue, gray, one-column, two-columns, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments
+
+Textdomain:autoadjust 
 
 License:GNU General Public License v3 or later
 License URI:license.txt
@@ -92,6 +94,7 @@ html,body {
 h1,h2,h3,h4,h5,h6 {
 	display:block;
 	font-weight:700;
+	word-wrap:break-word;
 }
 h1 {
 	font-size:38px;
@@ -160,7 +163,11 @@ ul {
 }
 ol ol,ul ul,
 ol ul,ul ol {
-	margin-left:25px;
+	margin-left:10px;
+}
+ul ul {
+	list-style:circle;
+	list-style-position:inside;
 }
 li {
 	display:list-item;
@@ -781,7 +788,6 @@ a.twitter.button:hover {
 	zoom:1;
 }
 
-
 /* GRADIENTS - LIGHT GREY
 --------------------------------------------------------------- */
 .light-grey-gradient,
@@ -970,6 +976,15 @@ ul.horizontal-aligned-menu li.menu-item {
 	margin:0;
 }
 
+/* PADDED BOX
+--------------------------------------------------------------- */
+.padded-box {
+	background:rgb(255,255,255);
+	border:solid 1px;
+	margin-bottom:20px;
+	padding:10px;
+}
+
 /* PAGINATION
 --------------------------------------------------------------- */
 .pagination {
@@ -1033,7 +1048,8 @@ input[type='button']:hover,
 input[type='submit'],
 input[type='submit']:hover,
 .pagination div a,
-h1.large.results {
+h1.large.results,
+.padded-box {
 	/* BACKGROUND CLIP */
 	-webkit-background-clip:padding;
 	   -moz-background-clip:padding;	
@@ -1063,7 +1079,8 @@ Automatically responds to the bg colour of the container div.
 #comments ol.comment-list li.comment .comment-body,
 #comments ol.comment-list li.pingback,
 #respond,
-#footer {
+#footer,
+.padded-box {
 	/* FALLBACK COLOURISATION */
 	-webkit-box-shadow:0 5px 5px -5px rgb(178,178,178);	
 	   -moz-box-shadow:0 5px 5px -5px rgb(178,178,178);	

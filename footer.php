@@ -36,7 +36,7 @@
                         'theme_location'	=> 'bottom-menu'
                     )); ?>
                     <div class="last col width-40">
-                    	<div class="legal">Powered by <strong><a href="http://wordpress.org">WordPress</a></strong>, Theme by <strong><a href="http://drewdyer.co.uk">Drew Dyer</a></strong></div>
+                    	<div class="legal">Powered by <strong><a href="http://wordpress.org">WordPress</a></strong>, Theme by <strong><a href="http://drewdyer.co.uk">Andrew Dyer</a></strong></div>
                     </div>
                 </div>
             </div>
