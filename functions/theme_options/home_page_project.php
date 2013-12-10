@@ -100,10 +100,6 @@
 				</span>
 			</p>
 			<input class="inputwidth" type="hidden" value="<?php if($current_options['project_one_url']!='') { echo esc_attr($current_options['project_one_url']); } ?>" id="project_one_url" name="project_one_url" size="36" />
-			<!--<p><h4 class="heading"><?php _e('Project Tagline','busi_prof');?></h4>
-				<input class="inputwidth" type="text" value="<?php if($current_options['project_one_url']!='') { echo esc_attr($current_options['project_one_url']); } ?>" id="project_one_url" name="project_one_url" size="36" />
-				<span id="explaincolor"><?php  _e('Enter project one url','busi_prof');?>.</span>				
-			</p> -->
 		</div>	
 	</div>
 	

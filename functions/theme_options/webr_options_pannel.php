@@ -3,7 +3,7 @@
 		 <!-- header div is start -->
 		<div id="busiprof-themepromo" style="width:97%;color:#FFFFFF;margin-right:10px;">
 			<div id="company-logo" style="float:right;margin-top:2px; font-size:18px;color:#000000;text-shadow:#fff 0px 1px 0, #000 0 -1px 0;">
-				<center><strong><?php _e('Busiprof Lite By','busi_prof');?></strong></center>&nbsp;<a href="http://www.webriti.com/" target="_blank"><img src="<?php echo get_template_directory_uri('template_directory').'/functions/theme_options/images/png.png' ?> " /></a>
+				<center><strong><?php _e('Busiprof Lite By','busi_prof');?></strong></center>&nbsp;<a href="http://www.webriti.com/" target="_blank"><img src="<?php echo get_template_directory_uri().'/functions/theme_options/images/png.png' ?> " /></a>
 			</div>
 			<h2 style="margin-bottom:10px;"><?php _e("Upgrade to Busiprof Pro!",'busi_prof') ; ?></h2>            
 			<div id="pro-connect" style="margin-bottom:5px;padding:5px;">
@@ -11,7 +11,7 @@
 				<a class="btn btn-large btn-info" href="http://wordpress.org/themes/busiprof" target="_blank"><strong><?php _e('Rate Busiprof','busi_prof'); ?></strong></a>
 				<div id="myModal" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="background:transparent;border:0px;">
 					<div class="modal-header" style="border:0px;">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true" ><img src="<?php echo get_template_directory_uri('template_directory').'/functions/theme_options/images/close_256.png' ?> " /></button>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true" ><img src="<?php echo get_template_directory_uri().'/functions/theme_options/images/close_256.png' ?> " /></button>
 						<h4 id="myModalLabel"></h4>
 					</div>
 					<div class="modal-body" align="center" style="color:#333333;margin:0px;" align="center">	
@@ -30,27 +30,27 @@
 								<tbody>
 									<tr style="height:6px;">
 										<td>&nbsp;</td><td><p><b><?php _e('Intuitive Option Panel','busi_prof'); ?></b><span class="icon help" style="float:right"><span class="tooltip"><?php  _e('Customize theme with intutive option panel.','busi_prof');?></span></span></p></td>
-										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri('template_directory').'/functions/theme_options/images/icon_check.png' ?> " /></p></td>
-										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri('template_directory').'/functions/theme_options/images/icon_check.png' ?> " /></p></td>
+										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri().'/functions/theme_options/images/icon_check.png' ?> " /></p></td>
+										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri().'/functions/theme_options/images/icon_check.png' ?> " /></p></td>
 									</tr>
 									<tr>
 										<td>&nbsp;</td><td><p><b><?php _e('Translation Ready','busi_prof'); ?></b><span class="icon help" style="float:right"><span class="tooltip"><?php  _e('Translate the theme into your own language.','busi_prof');?></span></span></p></td>
-										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri('template_directory').'/functions/theme_options/images/icon_check.png' ?> " /></p></td>
-										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri('template_directory').'/functions/theme_options/images/icon_check.png' ?> " /></p></td>
+										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri().'/functions/theme_options/images/icon_check.png' ?> " /></p></td>
+										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri().'/functions/theme_options/images/icon_check.png' ?> " /></p></td>
 									</tr>
 									<tr>
 										<td>&nbsp;</td>
 										<td><p><b><?php _e('Customizable Home Page','busi_prof'); ?></b><span class="icon help" style="float:right">
 										<span class="tooltip"><?php  _e('Customize the Home Page by adding you own Images and Text.','busi_prof');?></span></span></p></td>
-										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri('template_directory').'/functions/theme_options/images/icon_check.png' ?> " /></p></td>
-										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri('template_directory').'/functions/theme_options/images/icon_check.png' ?> " /></p></td>
+										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri().'/functions/theme_options/images/icon_check.png' ?> " /></p></td>
+										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri().'/functions/theme_options/images/icon_check.png' ?> " /></p></td>
 									</tr>
 									<tr>
 										<td>&nbsp;</td>
 										<td><p><b><?php _e('Responsive Home Page Slider','busi_prof'); ?></b><span class="icon help" style="float:right">
 										<span class="tooltip"><?php  _e('Showcase your most important services with the Home Page Slider.','busi_prof');?></span></span> </p></td>
-										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri('template_directory').'/functions/theme_options/images/cross.png' ?> " /></p></td>
-										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri('template_directory').'/functions/theme_options/images/icon_check.png' ?> " /></p></td>
+										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri().'/functions/theme_options/images/cross.png' ?> " /></p></td>
+										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri().'/functions/theme_options/images/icon_check.png' ?> " /></p></td>
 									</tr>
 									<tr>
 										<td>&nbsp;</td>
@@ -63,8 +63,8 @@
 										<td>&nbsp;</td>
 										<td><p><b> <?php _e('About Us Template','busi_prof'); ?></b><span class="icon help" style="float:right">
 										<span class="tooltip"><?php  _e('Showcase the team behind your business with About Us Template.','busi_prof');?></span></span></p></td>
-										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri('template_directory').'/functions/theme_options/images/cross.png' ?> " /></p></td>
-										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri('template_directory').'/functions/theme_options/images/icon_check.png' ?> " /></p></td>
+										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri().'/functions/theme_options/images/cross.png' ?> " /></p></td>
+										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri().'/functions/theme_options/images/icon_check.png' ?> " /></p></td>
 									</tr>
 									
 									
@@ -75,30 +75,30 @@
 										<td>&nbsp;</td>
 										<td><p><b> <?php _e('Contact Form Template','busi_prof'); ?></b><span class="icon help" style="float:right">
 										<span class="tooltip"><?php  _e('Premium version comes with a beautiful contact page template. ','busi_prof');?></span></span> </p></td>
-										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri('template_directory').'/functions/theme_options/images/cross.png' ?> " /></p></td>
-										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri('template_directory').'/functions/theme_options/images/icon_check.png' ?> " /></p></td>
+										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri().'/functions/theme_options/images/cross.png' ?> " /></p></td>
+										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri().'/functions/theme_options/images/icon_check.png' ?> " /></p></td>
 									</tr>
 									
 									<tr>
 										<td>&nbsp;</td>
 										<td><p><b> <?php _e('Services Template','busi_prof'); ?></b><span class="icon help" style="float:right">
 										<span class="tooltip"><?php  _e('Showcase different services which your business offers.It is available in single column and two column layout','busi_prof');?></span></span> </p></td>
-										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri('template_directory').'/functions/theme_options/images/cross.png' ?> " /></p></td>
-										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri('template_directory').'/functions/theme_options/images/icon_check.png' ?> " /></p></td>
+										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri().'/functions/theme_options/images/cross.png' ?> " /></p></td>
+										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri().'/functions/theme_options/images/icon_check.png' ?> " /></p></td>
 									</tr>
 									<tr>
 										<td>&nbsp;</td>
 										<td><p><b> <?php _e('Portfolio Template','busi_prof'); ?></b> <span class="icon help" style="float:right">
 										<span class="tooltip"><?php  _e('Showcase your work with Postfolio Template. Available in 2, 3 & 4 Column Layout.','busi_prof');?></span></span></p></td>
-										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri('template_directory').'/functions/theme_options/images/cross.png' ?> " /></p></td>
-										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri('template_directory').'/functions/theme_options/images/icon_check.png' ?> " /></p></td>
+										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri().'/functions/theme_options/images/cross.png' ?> " /></p></td>
+										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri().'/functions/theme_options/images/icon_check.png' ?> " /></p></td>
 									</tr>
 									<tr>
 										<td>&nbsp;</td>
 										<td><p><b> <?php _e('Custom Widgets','busi_prof'); ?></b><span class="icon help" style="float:right">
 										<span class="tooltip"><?php  _e('Customize the sidebar with the included widgets','busi_prof');?></span></span> </p></td>
-										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri('template_directory').'/functions/theme_options/images/cross.png' ?> " /></p></td>
-										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri('template_directory').'/functions/theme_options/images/icon_check.png' ?> " /></p></td>
+										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri().'/functions/theme_options/images/cross.png' ?> " /></p></td>
+										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri().'/functions/theme_options/images/icon_check.png' ?> " /></p></td>
 									</tr>
 									<tr>
 										<td>&nbsp;</td>
@@ -110,8 +110,8 @@
 									<tr class="alert alert-info">
 										<td>&nbsp;</td>
 										<td style="text-align: center;"><p> <?php _e('Get the Premium Version','busi_prof'); ?></p></td>
-										<td style="text-align: center;"><img src="<?php echo get_template_directory_uri('template_directory').'/functions/theme_options/images/arrow1.png' ?> " /></td>
-										<td style="text-align: center;"><a class="btn  btn-danger" href="http://www.webriti.com/index.php/busiprof/" target = "_blank"> <strong>Get the Premium Version</strong></a></td>
+										<td style="text-align: center;"><img src="<?php echo get_template_directory_uri().'/functions/theme_options/images/arrow1.png' ?> " /></td>
+										<td style="text-align: center;"><a class="btn  btn-danger" href="http://www.webriti.com/index.php/busiprof/" target = "_blank"> <strong><?php _e('Get the Premium Version','busi_prof');?></strong></a></td>
 									</tr>
 								</tbody>
 							</table>    

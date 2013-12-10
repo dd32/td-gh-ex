@@ -27,7 +27,7 @@
 					</div>
 					<?php $defalt_arg =array('class' => "blog_section_img" )?>
 					<?php if(has_post_thumbnail()):?>
-					<div class="blog_section_img">
+					<div >
 					<a href="<?php the_permalink(); ?>"title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail('', $defalt_arg); ?></a>
 					</div>
 					<?php endif;?>

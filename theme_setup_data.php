@@ -2,7 +2,7 @@
 /*---------------------------------------------------------------------------------*
  * @file           theme_stup_data.php
  * @package        Busiprof
- * @copyright      2013 Appointment
+ * @copyright      2013 Webriti
  * @license        license.txt
  * @filesource     wp-content/themes/Busiprof/theme_setup_data.php
  *	Admin  & front end defual data file 

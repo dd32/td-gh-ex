@@ -5,7 +5,6 @@ It has a perfect design that's great for any Business/Firms  Blogs who wants a n
 BusiProf supports featured slider managed from Theme Option Panel.
 
 Author: Priyanshu Mittal,Hari Maliya,Shahid Mansuri and Vibhor Purandare.
-Theme Homepage Url: http://www.webriti.com/demo/wp/appointment
 
 About:
 BusiProf a theme for business, consultancy firms etc  by Priyanshu Mittal (Author URI: http://www.webriti.com). 
@@ -13,9 +12,9 @@ BusiProf a theme for business, consultancy firms etc  by Priyanshu Mittal (Autho
 The CSS, XHTML and design is released under GPL:
 http://www.opensource.org/licenses/gpl-license.php
 
-Feel free to use as you please. I would be very pleased if you could keep the Auther-link in the footer. Thanks and enjoy.
+Feel free to use as you please. I would be very pleased if you could keep the Author-link in the footer. Thanks and enjoy.
 
-Appoinment supports Custom Menu, Widgets and 
+Busiprof supports Custom Menu, Widgets and 
 the following extra features:
 
  - Pre-installed menu and content colors
@@ -58,7 +57,20 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
-@version
+
+@version 1.3.5
+1) Favicon issue: We have removed the default favicon.
+2) Removed the code from Header
+3) Escaping of home_url() now done with esc_url() function
+4) Removed home12.php. It was an oversight on our part.
+5) Copyright label is now same throughout the theme.
+6) the_title_attribute issues fixed for category.php and index.php
+7) Issue with get_template_directory_uri() has been fixed
+8) Style.css textdomain changed as suggested
+9) Contact form file removed from the Theme
+10) References to Appointment theme removed.
+
+@version 1.1
 1. Added security to the titles
 2. favicon misspelled corrected
 3. home.php removed...

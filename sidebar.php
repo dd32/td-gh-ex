@@ -5,7 +5,7 @@
  * @file           sidebar.php
  * @package        Busiprof
  * @author         Priyanshu Mittal
- * @copyright      2013 Appointment
+ * @copyright      2013 Webriti
  * @license        license.txt
  * @filesource     wp-content/themes/Busiprof/sidebar.php
 */

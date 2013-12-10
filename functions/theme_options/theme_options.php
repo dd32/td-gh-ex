@@ -2,9 +2,9 @@
 /*
  * @file           theme_option.php
  * @package        Busiprof
- * @copyright      2013 Appointment
+ * @copyright      2013 Webriti
  * @license        license.txt
- * @filesource     wp-content/themes/Busiprof/functions/theme_option.php
+ * @filesource     wp-content/themes/Busiprof/functions/theme_options.php
 */	
 ?>
 <?php

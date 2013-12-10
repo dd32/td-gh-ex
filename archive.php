@@ -43,7 +43,12 @@
 				<div class="blog_con_mn"><?php  the_content( __( 'Read More' , 'busi_prof' ) ); ?></div>
 				<?php endwhile;?>	
 			</div>
-			<?php busiprof_pagination() ;?> 
+			<div class="pagination_blog">	
+		<ul>
+			<li class="paginanext"><?php previous_posts_link(); ?></li>
+			<li class="paginanext"><?php next_posts_link(); ?></li>
+		</ul>
+	</div>
 			</div>
 			<?php get_sidebar();?>
 	</div><!--blog_right_bg_mn_con-->

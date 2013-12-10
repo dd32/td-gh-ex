@@ -3,7 +3,7 @@
  * @file           comment-function.php
  * @package        Busiprof
  * @author         Priyanshu Mittal
- * @copyright      2013 Webrit
+ * @copyright      2013 Webriti
  * @license        license.txt
  * @filesource     wp-content/themes/Busiprof/comment-function.php
 */	

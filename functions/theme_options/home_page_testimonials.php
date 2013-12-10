@@ -70,7 +70,7 @@
 				<input class="inputwidth" type="text" value="<?php if($current_options['testimonials_image_one']!='') { echo esc_attr($current_options['testimonials_image_one']); } ?>" id="testimonials_image_one" name="testimonials_image_one" size="36" class="upload has-file"/>
 				<input type="button" id="upload_button" value="Custom Logo" class="upload_image_button" class="upload_button" />
 				<span class="icon help">
-					<span class="tooltip"><?php  _e('image must be in 60 X 250','busi_prof');?></span></span>
+					<span class="tooltip"><?php  _e('Image must be in 60 X 250','busi_prof');?></span></span>
 				</span>
 				
 			</p>

@@ -61,7 +61,7 @@ if(isset($_POST['busiprof_settings_save_1']))
 	<?php wp_nonce_field('busiprof_customization_nonce_gernalsetting','busiprof_gernalsetting_nonce_customization'); ?>
 	<div class="postbox" id="Basic_setting_1">
 		<div title="Click to toggle" class="handlediv"><br></div>
-		<h3 class="hndle"><span><?php _e('Custome Static Front Page','sis_spa');?><span class="postbox-title-action">
+		<h3 class="hndle"><span><?php _e('Custom Static Front Page','sis_spa');?><span class="postbox-title-action">
 		</h3>
 		<div class="inside">
 			<p><h4 class="heading"><?php _e('Do you want display Static Front Page: ','sis_spa');?></h4>
@@ -90,9 +90,9 @@ if(isset($_POST['busiprof_settings_save_1']))
 			
 			<p><h4 class="heading"><?php _e('Custom Favicon','busi_prof'); ?></h4>
 				<input class="inputwidth" type="text" value="<?php if($current_options['upload_image_favicon']!='') { echo esc_attr($current_options['upload_image_favicon']); } ?>" name="upload_image_favicon" size="36" class="upload has-file"/>
-				<input type="button" value="Custom Fevicon" class="upload_image_button" id="upload_button">
+				<input type="button" value="Custom Favicon" class="upload_image_button" id="upload_button">
 				<span class="icon help">
-					<span class="tooltip"><?php _e('Fevico Icon Use .ico files or 32 X 32 px','busi_prof')?></span>
+					<span class="tooltip"><?php _e('Favicon Icon Use .ico files or 32 X 32 px','busi_prof')?></span>
 				</span>
 			</p>	
 			

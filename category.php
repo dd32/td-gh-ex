@@ -9,14 +9,21 @@
 						<h2><a href="<?php the_permalink(); ?>"title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 						<?php $defalt_arg =array('class' => "blog_section_img" )?>
 							<?php if(has_post_thumbnail()):?>
-							<a href="<?php the_permalink(); ?>"title="<?php the_title(); ?>"><?php the_post_thumbnail('', $defalt_arg); ?></a>
+							<a href="<?php the_permalink(); ?>"title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail('', $defalt_arg); ?></a>
 							<?php endif;?>
 							<br>
 						<p><?php the_content( __( 'Read More' , 'busi_prof' ) );?></p>
 				</div>
             </div>
-			<?php endwhile;?>		 
+			<?php endwhile;?>
+			<div class="pagination_blog">	
+		<ul>
+			<li class="paginanext"><?php previous_posts_link(); ?></li>
+			<li class="paginanext"><?php next_posts_link(); ?></li>
+		</ul>
+	</div>
 			</div>
+
 			<?php get_sidebar();?>
 		</div>
 </div>

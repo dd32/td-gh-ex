@@ -16,11 +16,13 @@ define('WEBRITI_THEME_FUNCTIONS_PATH',WEBRITI_TEMPLATE_DIR.'/functions');
 	//Files for custom - defaults menus
 	require( WEBRITI_THEME_FUNCTIONS_PATH. '/menu/busiprof_nav_walker.php' );
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/menu/default_menu_walker.php' );	
-	require(WEBRITI_THEME_FUNCTIONS_PATH . '/Pagination/webriti_pagination.php' );
+	
 	require( WEBRITI_THEME_FUNCTIONS_PATH .'/resize_image/resize_image.php' );	
 	require_once( WEBRITI_THEME_FUNCTIONS_PATH .'/commentbox/comment-function.php');
 //content width
 if ( ! isset( $content_width ) ) $content_width = 900;
+
+
 //wp title tag starts here
 
 function busiprof_head( $title, $sep ) {

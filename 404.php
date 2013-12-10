@@ -4,7 +4,7 @@
  * @file           404.php
  * @package        Busiprof
  * @author         Priyanshu Mittal
- * @copyright      2013 Appointment
+ * @copyright      2013 Webriti
  * @license        license.txt
  * @filesource     wp-content/themes/Busiprof/404.php
 */
