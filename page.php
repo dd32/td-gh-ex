@@ -1,7 +1,7 @@
 <?php
 /**
  * @subpackage Avedon
- * @since Avedon 1.10
+ * @since Avedon 1.11
  */
 
 get_header(); ?>
@@ -10,7 +10,6 @@ get_header(); ?>
 <div class="col-md-8">
 <?php avedon_breadcrumbs();?>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
 
 <div id="post-<?php the_ID(); ?>" <?php post_class('panel panel-default single-entry'); ?>>
 <div class="panel-heading">
@@ -25,9 +24,7 @@ get_header(); ?>
 <div class="panel-body">
 <?php the_content(); ?>
 <?php wp_link_pages(array('before' => '<p class="paginate-post"><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
-</div>
-
-</div>
+</div></div>
 
 <?php comments_template(); ?>
 

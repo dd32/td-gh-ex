@@ -522,20 +522,6 @@ function avedontheme_options() {
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('Supersize Image - Six', 'avedon_theme_options'),
-		'desc' => __('Sixth Supersize image.', 'avedon_theme_options'),
-		'id' => 'radio_image_six',
-		'class' => 'hidden',
-		'type' => 'upload');
-
-	$options[] = array(
-		'name' => __('', 'avedon_theme_options'),
-		'desc' => __('Supersize Image Six - Credit', 'avedon_theme_options'),
-		'id' => 'radio_image_six_credit',
-		'class' => 'hidden',
-		'type' => 'text');
-
-	$options[] = array(
 		'name' => __('', 'avedon_theme_options'),
 		'desc' => __('Supersize is a fullsize background rotator. Be sure that no other backgrounds are set and include your images in sequential order as you would like them to appear. The theme will check to ensure Supersize scripts are enabled, read the number of images, then pull them and rotate as your settings determine.', 'avedon_theme_options'),
 		'type' => 'info');

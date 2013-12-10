@@ -2,10 +2,10 @@
 <style>
 
 <?php $typography = of_get_option('header_font'); if ($typography) {
-echo 'h1, h2, h3, h4, h5, h6, .home .tiptop div b { font-family: ' . $typography['face']. '; font-size:'.$typography['size'] . '; font-style: ' . $typography['style'] . '; color:'.$typography['color'].'; } .home .post .btn .btn-default a, .archive .post .btn .btn-default a, .socialcount > li > a, #pitch { font-family: ' . $typography['face']. '; } .circled.avedonicon-chevron-left, .circled.avedonicon-chevron-right, .dropdown-menu .glyphicon {color:'.$typography['color'].';} .sticky .badge, .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {background-color:'.$typography['color'].';background:'.$typography['color'].';}' ; } ?>
+echo 'h1, h2, h3, h4, h5, h6, .home .tiptop div b { font-family: ' . $typography['face']. '; font-size:'.$typography['size'] . '; font-style: ' . $typography['style'] . '; color:'.$typography['color'].'; } .home .post .btn .btn-default a, .archive .post .btn .btn-default a, .socialcount > li > a { font-family: ' . $typography['face']. '; } .circled.avedonicon-chevron-left, .circled.avedonicon-chevron-right, .dropdown-menu .glyphicon {color:'.$typography['color'].';} .sticky .badge, .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {background-color:'.$typography['color'].';background:'.$typography['color'].';}' ; } ?>
 
 <?php $typography = of_get_option('menu_font'); if ($typography) {
-echo '#main-menu .dropdown-toggle, #main-menu .dropdown-toggle a, .navbar-brand { font-family: ' . $typography['face']. '; font-size:'.$typography['size'] . '; font-style: ' . $typography['style'] . '; color:'.$typography['color'].'; } #controls-wrapper, .navbar-inverse .navbar-brand, .navbar-inverse .nav > li > a, .socialbox a:hover {color:'. $typography['color'].'; }  '; } ?>
+echo '#main-menu .dropdown-toggle, #main-menu > .menu-item, #main-menu .dropdown-toggle a, .navbar-brand { font-family: ' . $typography['face']. '; font-size:'.$typography['size'] . '; font-style: ' . $typography['style'] . '; color:'.$typography['color'].'; } #controls-wrapper, .navbar-inverse .navbar-brand, .navbar-inverse .nav > li > a, .socialbox a:hover {color:'. $typography['color'].'; }  '; } ?>
 
 <?php $color = of_get_option('header_color');
 if ($color) { echo 'nav.navbar, #foot, #wrap #controls-wrapper, #wrap .circled.glyphicon-chevron-left, #wrap .circled.glyphicon-chevron-right { background: ' . of_get_option('header_color') . ' ;}' ; } ?>

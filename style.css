@@ -1,10 +1,10 @@
-/*
+x/*
 Theme Name: Avedon
 Theme URI: http://code.google.com/p/avedon/
 Description: Avedon's framework is built using Twitter Bootstrap. It features a 100% responsive grid, retina ready font based icons, a clean layout, and much more. Avedon has been minimally coded (to improve speed), but also features several easy to use options including a full page rotating background image.
 Author: Matthew Haeck
 Author URI: http://haeckdesign.com/
-Version: 1.10
+Version: 1.11
 License: GPL3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: black, blue, gray, white, dark, light, two-columns, right-sidebar, flexible-width, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, microformats, post-formats, theme-options, threaded-comments, photoblogging
@@ -15,7 +15,6 @@ Avedon is licensed under the GPL 3.
 Avedon is based on Bootstrap by Twitter.
 See readme.txt for all license information.
 */
-
 
 
 
@@ -39,9 +38,8 @@ See readme.txt for all license information.
 }
 
 #primary .col-xs-11  {margin-top: 0;padding-left: 0;}
-#primary .post .meta {padding-left: 5px;padding-right: 5px;}
 #primary .post .container img {margin-right: 15px;}
-#primary .btn-group-justified {padding-left: 0;}
+#primary .btn-group-justified {padding: 10px 0;}
 #primary .panel .panel-title {line-height: 1.4em;margin-top: 2px;}
 #primary pre, #primary code, #primary pre code  {
   white-space: pre-wrap;
@@ -172,6 +170,7 @@ a, a:hover, a:focus, #primary a:focus, #primary a:hover { text-decoration: none;
 }
 
 #primary, #primary .panel .panel-title { -ms-word-wrap: break-word; word-wrap: break-word; }
+#primary .panel a .panel-title:hover {cursor: pointer;}
 .container .breadcrumb > li {
   display: inline;
 }
@@ -186,6 +185,7 @@ body#wrap .navbar-fixed-top + #primary { padding-top: 60px; }
 .navbar-header a.btn {
 	float: right;
 }
+.navbar-fixed-bottom + #primary {margin-top: 15px;}
 
 
 
@@ -193,14 +193,19 @@ body#wrap .navbar-fixed-top + #primary { padding-top: 60px; }
 
 .single-entry img,
 .single-entry div.wp-caption img,
-#primary img,
 .col-md-4 img,
-.col-md-4 form select {
+.col-md-4 form select,
+#primary img,
+#pitch img,
+#middle img,
+#footer img {
     height: auto;
     max-width: 100%;
     margin-bottom: 10px;
 }
 .wp-caption { max-width: 100% }
+img.alignright, .alignright img { margin-left: 15px; }
+img.alignleft, .alignleft img { margin-right: 15px; }
 .alignright { float: right }
 .alignleft { float: left }
 .aligncenter { float: none }
@@ -232,6 +237,13 @@ body#wrap .navbar-fixed-top + #primary { padding-top: 60px; }
 .search #searchform {
 	padding-bottom: 15px;
 }
+.search .container .panel-body,
+.home .container .panel-body {
+    padding-bottom: 5px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 5px;
+}
 
 
 /* Wrapper for page content to push down footer */
@@ -254,7 +266,6 @@ body#wrap .navbar-fixed-top + #primary { padding-top: 60px; }
 
 /* Set the fixed height of the footer here */
 #footer {
-    background-color: #F5F5F5;
     height: 100%;
     padding-bottom: 25px;
     padding-top: 20px;
@@ -303,7 +314,10 @@ footer .col-xs-12 h4,
 .widget_categories,
 .widget_pages,
 .widget_nav_menu,
-.widget_calendar {
+.widget_calendar,
+.widget_rss,
+.widget_text,
+.widget_tag_cloud {
   padding-left: 0;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -321,7 +335,11 @@ footer .col-xs-12 h4,
 #footer .widget_archive,
 #footer .widget_categories,
 #footer .widget_pages,
-#footer .widget_nav_menu {
+#footer .widget_nav_menu,
+#footer .widget_calendar,
+#footer .widget_rss,
+#footer .widget_text,
+#footer .widget_tag_cloud {
   padding-left: 0;
   margin-bottom: 0;
   margin-top: 0;
@@ -878,6 +896,9 @@ body {
   border-color: #3278b3;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff428bca', endColorstr='#ff3278b3', GradientType=0);
 }
+.reply .list-group-item {
+	padding: 4px;
+}
 
 .panel {
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -893,12 +914,6 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#ffe8e8e8', GradientType=0);
 }
 .home .panel-default > .panel-heading,
-.single .panel-default > .panel-heading {
-    margin-bottom: 0;
-    margin-left: -10px;
-    margin-right: -10px;
-    margin-top: 0;
-}
 .archive .panel-default > .panel-heading {
     margin-bottom: 0;
     margin-left: -15px;

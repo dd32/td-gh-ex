@@ -111,7 +111,7 @@ function avedon_widgets_init() {
     'name' => 'Page Sidebar',
     'id' => 'sidebar-page',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
-    'after_widget' => "</div>",
+    'after_widget' => '</div>',
     'before_title' => '<h4 class="widget-title">',
     'after_title' => '</h4>',
   ) );
@@ -120,7 +120,7 @@ function avedon_widgets_init() {
     'name' => 'Posts Sidebar',
     'id' => 'sidebar-posts',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
-    'after_widget' => "</div>",
+    'after_widget' => '</div>',
     'before_title' => '<h4 class="widget-title">',
     'after_title' => '</h4>',
   ) );
@@ -128,7 +128,7 @@ function avedon_widgets_init() {
     register_sidebar(array(
     'name' => 'Call to Action',
     'id'   => 'pitch-content',
-    'description'   => 'Under content, over middle - Best used for call to action..',
+    'description'   => 'Under content, over middle - Best used for call to action.',
     'before_widget' => '<div id="pitch" class="container"><div id="%1$s" class="container widget %2$s">',
     'after_widget'  => '</div></div>',
     'before_title'  => '<h4>',

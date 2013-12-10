@@ -1,7 +1,7 @@
 <?php
 /**
  * @subpackage Avedon
- * @since Avedon 1.10
+ * @since Avedon 1.11
  */
 
 get_header(); ?>
@@ -28,7 +28,9 @@ get_header(); ?>
 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
 <?php the_post_thumbnail( 'primary-post-thumbnail', array('class' => 'thumbnail col-md-3 img-responsive'));?></a>
 <div class="panel-body"><?php the_excerpt();?></div>
-</div>
+</div></div>
+
+<?php get_sidebar(); ?>
 
 <?php endwhile; ?>
 <?php else : ?>
@@ -43,7 +45,6 @@ get_header(); ?>
 
 <?php avedon_content_nav( 'nav-below' ); ?>
 
-</div>
+</div></div>
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

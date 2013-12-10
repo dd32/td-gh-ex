@@ -1,7 +1,7 @@
 <?php
 /**
  * @subpackage Avedon
- * @since Avedon 1.10
+ * @since Avedon 1.11
  */
 
 get_header(); ?>

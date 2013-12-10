@@ -1,6 +1,7 @@
 <?php if ( of_get_option('show_supersize') ) { ?>
 <?php $multicheck = of_get_option('super_array'); if ($multicheck) {
-if (!empty($multicheck['scrollarrows'])) { echo '<a id="prevslide" class="circled glyphicon glyphicon-chevron-left"><i class="visuallyhidden">Previous Slide</i></a><a id="nextslide" class="circled glyphicon glyphicon-chevron-right"><i class="visuallyhidden">Next Slide</i></a>'; } else {};
+if (!empty($multicheck['scrollarrows'])) { echo '<a id="prevslide" class="circled avedonadvicon-chevron-left"></a><a id="nextslide" class="circled avedonadvicon-chevron-right"></a>'; } else {};
+if (!empty($multicheck['progbar'])) { echo '<div id="progress-back" class="load-item"><div id="progress-bar"></div></div>'; } else {};
 echo '<div id="controls-wrapper" class="load-item row"><div id="controls" class="span10 offset1">';
 if (!empty($multicheck['slidecount'])) { echo '<div id="slidecounter"><span class="slidenumber"></span> / <span class="totalslides"></span></div>'; } else {};
 if (!empty($multicheck['slidecaption'])) { echo '<div id="slidecaption"></div>'; } else {};
@@ -16,6 +17,7 @@ $.supersized({
 <?php
 $multicheck = of_get_option('super_array');
 if (!empty($multicheck['autoplay'])) { echo 'autoplay: 1, '; };
+if (!empty($multicheck['progbar'])) { echo 'progress_bar: 1, '; };
 if (!empty($multicheck['randomimgs'])) { echo 'random: 1, '; };
 ?>
 
