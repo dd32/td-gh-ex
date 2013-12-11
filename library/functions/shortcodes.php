@@ -55,7 +55,7 @@ function travelify_wp_link() {
  * @return string
  */
 function travelify_colorawesome_link() {
-   return '<a href="'.esc_url( 'http://colorawesomeness.com/themes/travelify/' ).'" target="_blank" title="'.esc_attr__( 'Color Awesomeness', 'travelify' ).'" ><span>'.__( 'Color Awesomeness', 'travelify') .'</span></a>';
+   return '<a href="'.esc_url( 'http://colorlib.com/wp/travelify/' ).'" target="_blank" title="'.esc_attr__( 'Colorlib', 'travelify' ).'" ><span>'.__( 'Colorlib', 'travelify') .'</span></a>';
 }
 
 ?>

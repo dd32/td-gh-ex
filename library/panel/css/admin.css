@@ -207,6 +207,7 @@ a.support {
 }
 .theme-option-link img {
 	max-width: 230px;
+	height: 26px;
 }
 div.updated,div.error {
 	margin: 80px 0 !important;
@@ -215,4 +216,8 @@ div.updated,div.error {
 .option-content li {
 	list-style: disc;
 	margin-left: 30px;
+}
+
+.updated.travelify-rateme {
+    display: none;
 }

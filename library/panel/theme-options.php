@@ -122,18 +122,18 @@ function travelify_theme_options_do_page() {
 
    		<div class="theme-option-header">
 			<div class="theme-option-block clearfix">
-		<div class="theme-option-title"><h2><?php _e( 'Theme Options by', 'travelify' ); ?></h2></div><div class="theme-option-link"><a href="<?php echo esc_url( __( 'http://colorawesomeness.com/', 'travelify' ) ); ?>" title="<?php esc_attr_e( 'ColorAwesomeness', 'travelify' ); ?>" target="_blank"><img src="<?php echo get_template_directory_uri() . '/library/panel/images/logo.png'; ?>" alt="'<?php _e( 'ColorAwesomeness', 'travelify' ); ?>" /></a> </div>
+		<div class="theme-option-title"><h2><?php _e( 'Theme Options by', 'travelify' ); ?></h2></div><div class="theme-option-link"><a href="http://colorlib.com/" title="Colorlib" target="_blank"><img src="<?php echo get_template_directory_uri() . '/library/panel/images/logo.png'; ?>" alt="'<?php _e( 'Colorlib', 'travelify' ); ?>" /></a> </div>
 			<div id="social-share">
-		    	<div class="fb-like" data-href="https://www.facebook.com/ColorAwesomeness" data-send="false" data-layout="button_count" data-width="90" data-show-faces="true"></div>
-		    	<div class="tw-follow" >		<a href="https://twitter.com/ColorAwesomenes" class="twitter-follow-button" data-show-count="false">Follow @ColorAwesomenes</a></div>
+		    	<div class="fb-like" data-href="https://www.facebook.com/colorlib" data-send="false" data-layout="button_count" data-width="90" data-show-faces="true"></div>
+		    	<div class="tw-follow" >		<a href="https://twitter.com/colorlib" class="twitter-follow-button" data-show-count="false">Follow @colorlib</a></div>
 			</div>	
 			    <div id="theme-support">
                     <ul>
-                    	<li><a class="button" href="<?php echo esc_url(__('http://wordpress.org/support/view/theme-reviews/travelify?filter=5','travelify')); ?>" title="<?php esc_attr_e('Rate this Theme', 'travelify'); ?>" target="_blank"><?php printf(__('Rate this Theme','travelify')); ?></a></li>
-						<li><a class="button" href="<?php echo esc_url(__('http://colorawesomeness.com/themes/support/travelify/','travelify')); ?>" title="<?php esc_attr_e('Theme Instruction', 'travelify'); ?>" target="_blank"><?php printf(__('Theme Instructions','travelify')); ?></a></li>
-                                                <li><a class="button" href="<?php echo esc_url(__('http://ColorAwesomeness.com/themes/contact-us/','travelify')); ?>" title="<?php esc_attr_e('Support Forum', 'travelify'); ?>" target="_blank"><?php printf(__('Support','travelify')); ?></a></li>
-                        <li><a class="button" href="<?php echo esc_url(__('http://www.facebook.com/ColorAwesomeness','travelify')); ?>" title="<?php esc_attr_e('Like Catch Themes on Facebook', 'travelify'); ?>" target="_blank"><?php printf(__('Facebook','travelify')); ?></a></li>
-                        <li><a class="button" href="<?php echo esc_url(__('http://twitter.com/ColorAwesomenes/','travelify')); ?>" title="<?php esc_attr_e('Follow Catch Themes on Twitter', 'travelify'); ?>" target="_blank"><?php printf(__('Twitter','travelify')); ?></a></li>
+                    	<li><a class="button" href="http://wordpress.org/support/view/theme-reviews/travelify?filter=5" title="<?php esc_attr_e('Rate this Theme', 'travelify'); ?>" target="_blank"><?php printf(__('Rate this Theme','travelify')); ?></a></li>
+						<li><a class="button" href="http://colorlib.com/wp/support/travelify/" title="<?php esc_attr_e('Theme Instruction', 'travelify'); ?>" target="_blank"><?php printf(__('Theme Instructions','travelify')); ?></a></li>
+                        <li><a class="button" href="http://colorlib.com/wp/forums/" title="<?php esc_attr_e('Support Forum', 'travelify'); ?>" target="_blank"><?php printf(__('Support','travelify')); ?></a></li>
+                        <li><a class="button" href="http://www.facebook.com/colorlib" title="Like Colorlib on Facebook" target="_blank"><?php printf(__('Facebook','travelify')); ?></a></li>
+                        <li><a class="button" href="http://twitter.com/colorlib/" title="Follow Colrolib on Twitter" target="_blank"><?php printf(__('Twitter','travelify')); ?></a></li>
                     </ul>
                 </div>
 			</div>
@@ -497,7 +497,7 @@ function travelify_theme_options_do_page() {
 													);
 					?>
 					<table class="form-table">
-						<p><?php _e( 'Enter URLs for your social networks e.g.', 'travelify' ); ?> https://twitter.com/ColorAwesomenes</p>
+						<p><?php _e( 'Enter URLs for your social networks e.g.', 'travelify' ); ?> https://twitter.com/colorlib</p>
 						<tbody>
 						<?php
 						foreach( $social_links as $key => $value ) {
@@ -519,34 +519,6 @@ function travelify_theme_options_do_page() {
 
 				<!-- Option for Design Settings -->
 				<div id="other">
-					<div class="option-container">
-						<h3 class="option-toggle"><a href="#"><?php _e( 'Custom Scripts', 'travelify' ); ?></a></h3>
-						<div class="option-content inside">
-							<table class="form-table">
-								<tbody>       
-									<tr>
-										<th scope="row"><?php _e( 'Code to display on Header', 'travelify' ); ?></th>
-										<td>
-										<textarea name="travelify_theme_options[customscripts_header]" id="customscripts" rows="7" cols="80" ><?php echo esc_html( $options[ 'customscripts_header' ] ); ?></textarea>
-										</td>
-									</tr>
-									<tr>
-										<td></td><td><?php _e('Note: Enter your custom header script (i.e., analytics, social button scripts). ', 'travelify' ); ?></td>
-									</tr>
-									<tr>
-										<th scope="row"><?php _e('Code to display on Footer', 'travelify' ); ?></th>
-										<td>
-										<textarea name="travelify_theme_options[customscripts_footer]" id="customscripts" rows="7" cols="80" ><?php echo esc_html( $options[ 'customscripts_footer' ] ); ?></textarea>
-										</td>
-									</tr>
-									<tr>
-										<td></td><td><?php _e( 'Note: Enter your custom footer script (i.e., analytics, social button scripts). ', 'travelify' ); ?></td>
-									</tr>
-								</tbody>
-							</table>
-							<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'travelify' ); ?>" /></p> 
-						</div><!-- .option-content -->
-					</div><!-- .option-container -->
 					<div class="option-container">
 						<h3 class="option-toggle"><a href="#"><?php _e( 'Custom CSS (Advanced)', 'travelify' ); ?></a></h3>
 						<div class="option-content inside"> 
@@ -707,15 +679,7 @@ function travelify_theme_options_validate( $options ) {
 	if ( isset( $input['custom_css'] ) ) {
 		$input_validated['custom_css'] = wp_kses_stripslashes($input['custom_css']);
 	}
-        
-	//Webmaster Tool Verification
-	if( isset( $input[ 'customscripts_header' ] ) ) {
-		$input_validated[ 'customscripts_header' ] = wp_kses_stripslashes( $input[ 'customscripts_header' ] );
-	}
-	if( isset( $input[ 'customscripts_footer' ] ) ) {
-		$input_validated[ 'customscripts_footer' ] = wp_kses_stripslashes( $input[ 'customscripts_footer' ] );    
-	}       
-    
+            
 	// Layout settings verification
 	if( isset( $input[ 'reset_layout' ] ) ) {
 		$input_validated[ 'reset_layout' ] = $input[ 'reset_layout' ];

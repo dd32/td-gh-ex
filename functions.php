@@ -47,6 +47,7 @@ function travelify_setup() {
 
 	/** Load Shortcodes */
 	require( get_template_directory() . '/library/functions/shortcodes.php' );
+	require( get_template_directory() . '/library/functions/rateme.php' );
 
 	/** Load Structure */
 	require( get_template_directory() . '/library/structure/header-extensions.php' );

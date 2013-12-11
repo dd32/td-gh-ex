@@ -1,10 +1,10 @@
 === Travelify ===
 Theme Name: Travelify
-Theme URI: http://colorawesomeness.com/themes/travelify/
-Author: Color Awesomeness
-Author URI: http://colorawesomeness.com/
-Description: Travelify is a clan, simple and fully responsive WordPress WooCommerce theme that looks awesome on any device. It adjusts automatically to any screen size including tablets and smartphones as well as Retina displays. Theme is built using HTML5 / CSS3 and is SEO friendly. This WordPress theme was built with travel, adventures, languages and nature in mind but it can be used for anything so be creative and unleash its full potential in blogging, eCommerce, business and other websites. Along the awesome design this theme is customizable via a simple but yet powerful theme options. Some of the nicest features are featured post slider, social icons, custom logo, translation ready and many more. This theme out-of-the-box plays nicely with WooCommerce, Breadcrumb NavXT, WP-PageNavi, Contact Form 7 and other popular plugins. Theme available in English, French, German, Hungarian, Italian, Spanish, Dutch and Chinese.
-Version: 1.3.7
+Theme URI: http://colorlib.com/wp/travelify/
+Author: Colorlib
+Author URI: http://colorlib.com/
+Description: Travelify is a clan, simple and fully responsive WordPress WooCommerce theme that looks awesome on any device. It adjusts automatically to any screen size including tablets and smartphones as well as Retina displays. Theme is built using HTML5 / CSS3 and is SEO friendly. This WordPress theme was built with travel, adventures, languages and nature in mind but it can be used for anything so be creative and unleash its full potential in blogging, eCommerce, business and other websites. Along the awesome design this theme is customizable via a simple but yet powerful theme options. Some of the nicest features are featured post slider, social icons, custom logo, translation ready and many more. This theme out-of-the-box plays nicely with WooCommerce, Breadcrumb NavXT, WP-PageNavi, Contact Form 7 and other popular plugins. Theme available in English, French, German, Hungarian, Italian, Spanish, Dutch, Hebrew, Slovak and Chinese.
+Version: 1.4.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, light, green , custom-background, custom-header, custom-menu, flexible-width, featured-images, full-width-template, left sidebar, right sidebar, one-column, two columns, three-columns, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready 
@@ -79,10 +79,26 @@ This theme features 3 different blog templates.
 You can select these templates via Page Attributes when creating new page inside WordPress Dashboard.
 
 == Other Options ==
-For more instruction you can visit the support page of Travelify at http://colorawesomeness.com/themes/support/travelify/
-If you have still any other questions about the theme you can email at info@colorawesomeness.com for free support.
+For more instruction you can visit the support page of Travelify at http://colorlib.com/wp/support/travelify/
+If you have still any other questions about the theme you can email at info@colorlib.com for free support.
 
 == Change Log ==
+
+= 1.4.0 =
+	* Added Slovak translation thanks to Lukas Kostensky (www.kostensky.eu)
+	* Added Hebrew translation thanks to Nitzan Eini
+	* Updated translation files 
+	* Improved RTL support
+	* Added WooCommerce left sidebar support
+	* Fixed dropdown menu for more than 3 submenus
+	* Changed theme credits
+	* Removed active title link from single posts
+	* Removed custom scripts from header and footer (plugin territory)
+	* Other tweaks and improvements
+
+= 1.3.7 =
+	* Dutch translation thanks to Sietze Kuiper
+	* Optimization for Disqus
 
 = 1.3.7 =
 	* Dutch translation thanks to Sietze Kuiper

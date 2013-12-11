@@ -1,17 +1,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Travelify\n"
-"POT-Creation-Date: 2013-07-31 21:17+0200\n"
-"PO-Revision-Date: 2013-08-05 19:13+0800\n"
-"Last-Translator: Seamwills <seamwill@gmail.com>\n"
+"POT-Creation-Date: 2013-12-11 22:49+0200\n"
+"PO-Revision-Date: 2013-12-11 23:05+0200\n"
+"Last-Translator: Aigars Silkalns <a.silkalns@gmail.com>\n"
 "Language-Team: Color Awesomeness <info@colorawesomeness.com>\n"
-"Language: English\n"
+"Language: zh\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.6.2\n"
 "X-Poedit-KeywordsList: __;esc_attr_e;_e\n"
 "X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:11
@@ -84,37 +85,53 @@ msgstr "评论已关闭"
 msgid "Primary Menu"
 msgstr "主菜单"
 
-#: library/functions/functions.php:382 library/panel/theme-options.php:290
-msgid "Left Sidebar"
-msgstr "左边栏"
-
-#: library/functions/functions.php:384
-msgid "Shows widgets at Left side."
-msgstr "在左侧显示小工具"
-
-#: library/functions/functions.php:393 library/panel/theme-options.php:294
-msgid "Right Sidebar"
-msgstr "右边栏"
-
-#: library/functions/functions.php:395
-msgid "Shows widgets at Right side."
-msgstr "在右侧显示小工具"
-
-#: library/functions/functions.php:404
-msgid "Footer"
-msgstr "页脚"
-
-#: library/functions/functions.php:406
-msgid "Shows widgets at footer."
-msgstr "在页脚显示小工具"
-
-#: searchform.php:7
+#: searchform.php:7 searchform.php:8
 msgid "Search"
 msgstr "搜索"
 
-#: library/functions/functions.php:316 library/functions/functions.php:330
+#: library/functions/functions.php:296 library/functions/functions.php:310
 msgid "Navigation"
 msgstr "导航"
+
+#: library/functions/functions.php:362 library/panel/theme-options.php:290
+msgid "Left Sidebar"
+msgstr "左边栏"
+
+#: library/functions/functions.php:364
+msgid "Shows widgets at Left side."
+msgstr "在左侧显示小工具"
+
+#: library/functions/functions.php:373 library/panel/theme-options.php:294
+msgid "Right Sidebar"
+msgstr "右边栏"
+
+#: library/functions/functions.php:375
+msgid "Shows widgets at Right side."
+msgstr "在右侧显示小工具"
+
+#: library/functions/functions.php:384
+msgid "Footer"
+msgstr "页脚"
+
+#: library/functions/functions.php:386
+msgid "Shows widgets at footer."
+msgstr "在页脚显示小工具"
+
+#: library/functions/rateme.php:19
+#, php-format
+msgid ""
+"Thank you for using Travelify! If you like the theme, please consider giving "
+"it a <a target=\"_blank\" href=\"%s\">high rating on WordPress.org</a>. "
+"Thank you! <a href=\"%s\">(hide this message)</a>"
+msgstr ""
+
+#: library/functions/shortcodes.php:49
+msgid "WordPress"
+msgstr ""
+
+#: library/functions/shortcodes.php:58 library/panel/theme-options.php:125
+msgid "Colorlib"
+msgstr ""
 
 #: library/panel/metaboxes.php:16
 msgid ""
@@ -169,25 +186,34 @@ msgid "Rate this Theme"
 msgstr "为本主题投票"
 
 #: library/panel/theme-options.php:133
+#, fuzzy
+msgid "Theme Instruction"
+msgstr "主题说明"
+
+#: library/panel/theme-options.php:133
 msgid "Theme Instructions"
 msgstr "主题说明"
+
+#: library/panel/theme-options.php:134
+#, fuzzy
+msgid "Support Forum"
+msgstr "技术支持"
 
 #: library/panel/theme-options.php:134
 msgid "Support"
 msgstr "技术支持"
 
+#: library/panel/theme-options.php:135
+msgid "Facebook"
+msgstr ""
+
+#: library/panel/theme-options.php:136
+msgid "Twitter"
+msgstr ""
+
 #: library/panel/theme-options.php:151
 msgid "Settings saved."
 msgstr "设置已保存"
-
-#: library/panel/theme-options.php:200 library/panel/theme-options.php:232
-#: library/panel/theme-options.php:264 library/panel/theme-options.php:309
-#: library/panel/theme-options.php:347 library/panel/theme-options.php:380
-#: library/panel/theme-options.php:418 library/panel/theme-options.php:476
-#: library/panel/theme-options.php:515 library/panel/theme-options.php:547
-#: library/panel/theme-options.php:566
-msgid "Save All Changes"
-msgstr "保存所有变更"
 
 #: library/panel/theme-options.php:157
 msgid "Main Options"
@@ -213,6 +239,11 @@ msgstr "标题选项"
 msgid "Header Logo"
 msgstr "标题 Logo"
 
+#: library/panel/theme-options.php:174
+#, fuzzy
+msgid "Upload Logo"
+msgstr "标题 Logo"
+
 #: library/panel/theme-options.php:178 library/panel/theme-options.php:223
 #: library/panel/theme-options.php:255
 msgid "Preview"
@@ -234,6 +265,14 @@ msgstr "仅标题文字"
 msgid "Disable"
 msgstr "禁用"
 
+#: library/panel/theme-options.php:200 library/panel/theme-options.php:232
+#: library/panel/theme-options.php:264 library/panel/theme-options.php:309
+#: library/panel/theme-options.php:347 library/panel/theme-options.php:380
+#: library/panel/theme-options.php:418 library/panel/theme-options.php:476
+#: library/panel/theme-options.php:515 library/panel/theme-options.php:538
+msgid "Save All Changes"
+msgstr "保存所有变更"
+
 #: library/panel/theme-options.php:205
 msgid "Favicon Options"
 msgstr "Favicon 选项"
@@ -250,6 +289,11 @@ msgstr "勾选以禁用"
 #: library/panel/theme-options.php:215
 msgid "Favicon URL"
 msgstr "Favicon 地址（URL)"
+
+#: library/panel/theme-options.php:218
+#, fuzzy
+msgid "Upload Favicon"
+msgstr "禁用 Favicon"
 
 #: library/panel/theme-options.php:219
 msgid ""
@@ -273,6 +317,11 @@ msgstr "禁用网页剪辑图标"
 #: library/panel/theme-options.php:247
 msgid "Web Clip Icon URL"
 msgstr "网页剪辑地址（URL）"
+
+#: library/panel/theme-options.php:250
+#, fuzzy
+msgid "Upload Web Clip Icon"
+msgstr "禁用网页剪辑图标"
 
 #: library/panel/theme-options.php:251
 msgid "Web Clip works as shortcut to website on iOS devices home screen"
@@ -425,6 +474,11 @@ msgstr "禁用滑块"
 msgid "Transition Effect:"
 msgstr "过渡特效"
 
+#: library/panel/theme-options.php:454 library/panel/theme-options.php:506
+#, php-format
+msgid "%s"
+msgstr ""
+
 #: library/panel/theme-options.php:462
 msgid "Transition Delay"
 msgstr "过渡延迟"
@@ -442,36 +496,18 @@ msgid "Enter URLs for your social networks e.g."
 msgstr "输入您的社交网络地址（URL），比如："
 
 #: library/panel/theme-options.php:523
-msgid "Custom Scripts"
-msgstr "自定义脚本"
-
-#: library/panel/theme-options.php:528
-msgid "Code to display on Header"
-msgstr "要显示在 Header 中的代码"
-
-#: library/panel/theme-options.php:534 library/panel/theme-options.php:543
-msgid ""
-"Note: Enter your custom header script (i.e., analytics, social button "
-"scripts). "
-msgstr "提示：输入您的自定义 Header 脚本（比如：analytics，社交按钮脚本）"
-
-#: library/panel/theme-options.php:537
-msgid "Code to display on Footer"
-msgstr "要显示在 Footer 中的代码"
-
-#: library/panel/theme-options.php:551
 msgid "Custom CSS (Advanced)"
 msgstr "自定义样式表（CSS）（高级）"
 
-#: library/panel/theme-options.php:556
+#: library/panel/theme-options.php:528
 msgid "Enter your custom CSS styles."
 msgstr "输入您的自定义样式（CSS）"
 
-#: library/panel/theme-options.php:557
+#: library/panel/theme-options.php:529
 msgid "This CSS will overwrite the CSS of style.css file."
 msgstr "这里的 CSS 将会覆盖 style.css 文件中的样式"
 
-#: library/panel/theme-options.php:561
+#: library/panel/theme-options.php:533
 msgid "Make sure you know what you are doing."
 msgstr "请确认您知道您在做什么"
 
@@ -529,6 +565,10 @@ msgstr "没发现任何文章"
 #: library/structure/content-extensions.php:667
 msgid "Pages:"
 msgstr "页面："
+
+#: library/structure/content-extensions.php:289
+msgid ", "
+msgstr ""
 
 #: library/structure/content-extensions.php:486
 #: library/structure/content-extensions.php:597
@@ -595,3 +635,17 @@ msgstr "页面 %s"
 #: library/structure/header-extensions.php:428
 msgid "Search Results"
 msgstr "搜索结果"
+
+#~ msgid "Custom Scripts"
+#~ msgstr "自定义脚本"
+
+#~ msgid "Code to display on Header"
+#~ msgstr "要显示在 Header 中的代码"
+
+#~ msgid ""
+#~ "Note: Enter your custom header script (i.e., analytics, social button "
+#~ "scripts). "
+#~ msgstr "提示：输入您的自定义 Header 脚本（比如：analytics，社交按钮脚本）"
+
+#~ msgid "Code to display on Footer"
+#~ msgstr "要显示在 Footer 中的代码"

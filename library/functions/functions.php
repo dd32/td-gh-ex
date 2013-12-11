@@ -23,6 +23,10 @@ function travelify_scripts_styles_method() {
 	 */
 	wp_enqueue_style( 'travelify_style', get_stylesheet_uri() );
 
+	if( is_rtl() ) {
+		wp_enqueue_style( 'travelify-rtl-style', get_template_directory_uri() . '/rtl.css', false );
+	}
+
 	/**
 	 * Adds JavaScript to pages with the comment form to support
 	 * sites with threaded comments (when in use).
@@ -212,30 +216,6 @@ function travelify_internal_css() {
 	echo $travelify_internal_css;
 }
 
-
-/****************************************************************************************/
-
-add_action('wp_footer', 'travelify_footercode');
-/**
- * Footer custom scripts
- */
-function travelify_footercode() { 
-    
-   $travelify_footercode = '';
-	if ( ( !$travelify_footercode = get_transient( 'travelify_footercode' ) )  ) {
-
-		global $travelify_theme_options_settings;
-		$options = $travelify_theme_options_settings;
-
-		// custom scripts footer code
-		if ( !empty( $options['customscripts_footer'] ) ) {  
-		$travelify_footercode .=  $options[ 'customscripts_footer' ] ;
-		}
-
-		set_transient( 'travelify_footercode', $travelify_footercode, 86940 );
-	}
-	echo $travelify_footercode;
-}
 
 /****************************************************************************************/
 

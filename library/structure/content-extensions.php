@@ -192,7 +192,7 @@ function travelify_theloop_for_page() {
 
 			<header class="entry-header">
     			<h2 class="entry-title">
-    				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php the_title(); ?></a>
+    				<?php the_title(); ?>
     			</h2><!-- .entry-title -->
   			</header>
 
@@ -263,7 +263,7 @@ function travelify_theloop_for_single() {
 
 			<header class="entry-header">
     			<h2 class="entry-title">
-    				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php the_title(); ?></a>
+    				<?php the_title(); ?>
     			</h2><!-- .entry-title -->
   			</header>
 
