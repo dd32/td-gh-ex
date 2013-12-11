@@ -11,11 +11,13 @@
              
 			<div class="span12 copyright" >
     
-                 <?php if (novalite_setting('wip_copyright_text')): ?>
-                	<p> <?php echo stripslashes(novalite_setting('wip_copyright_text')); ?> </p>
+				<?php if (novalite_setting('wip_copyright_text')): ?>
+                   <?php echo stripslashes(novalite_setting('wip_copyright_text')); ?>
                 <?php else: ?>
-                	<p> Copyright <?php echo get_bloginfo("name"); ?> <?php echo date("Y"); ?> - Powered by <a href="http://www.wpinprogress.com/" target="_blank">WP in Progress</a> </p>
-            	<?php endif; ?>
+                  <?php _e('Copyright','wip'); ?> <?php echo get_bloginfo("name"); ?> <?php echo date("Y"); ?> 
+                <?php endif; ?> 
+                | <?php _e('Theme by','wip'); ?> <a href="http://www.themeinprogress.com/" target="_blank">Theme in Progress</a> |
+                <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'wip' ) ); ?>" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'wip' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'wip' ), 'WordPress' ); ?></a>
     
 			</div>
                 
