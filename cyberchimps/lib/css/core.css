@@ -109,12 +109,15 @@ a.symbol {
 	border: 1px solid #333333;
 	border-radius: 4px;
 	background: #444444;
-	box-shadow: 2px 2px 0 #cccccc;
 	color: white;
 	text-decoration: none;
 	text-shadow: 1px 1px 0 #111111;
 	font-size: 3em;
 	line-height: 0.6;
+}
+
+a.symbol:hover {
+	text-decoration: none;
 }
 
 .default-icons a.symbol {
@@ -127,7 +130,6 @@ a.symbol {
 	background: -o-linear-gradient(top, #eeeeee 0%, #cccccc 100%);
 	background: -ms-linear-gradient(top, #eeeeee 0%, #cccccc 100%);
 	background: linear-gradient(to bottom, #eeeeee 0%, #cccccc 100%);
-	box-shadow: 2px 2px 0 #ededed;
 	color: #555555;
 	text-shadow: 1px 1px 0 #ffffff;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#cccccc', GradientType=0);
@@ -137,7 +139,6 @@ a.symbol {
 	margin-right: 0;
 	border: none;
 	background: none;
-	box-shadow: none;
 	color: #555555;
 	text-shadow: 2px 2px rgba(204, 204, 204, 0.5);
 	font-size: 3.5em;
@@ -152,7 +153,6 @@ a.symbol {
 	border: 1px solid #cccccc;
 	border-radius: 4px;
 	background: #eeeeee;
-	box-shadow: 2px 2px 0 #ededed;
 	color: #ffffff;
 	text-shadow: 1px 1px rgba(85, 85, 85, 0.5);
 }
@@ -161,7 +161,6 @@ a.symbol {
 	border: 1px solid #cccccc;
 	border-radius: 50%;
 	background: #eeeeee;
-	box-shadow: 2px 2px 0 #ededed;
 	color: #ffffff;
 	text-shadow: 1px 1px rgba(85, 85, 85, 0.5);
 }
