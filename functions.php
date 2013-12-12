@@ -38,8 +38,8 @@ if(!function_exists('autoadjust_setup')):
 		add_theme_support('custom-header', array(
 			'default-image'		=> get_template_directory_uri() . '/images/default-logo.png',
 			'random-default'	=> false,
-			'width'				=> 320,
-			'height'			=> 107,
+			'width'				=> 250,
+			'height'			=> 150,
 			'flex-height'		=> true,
 			'flex-width'		=> true,
 			'header-text'		=> false,

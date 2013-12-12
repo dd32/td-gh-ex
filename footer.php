@@ -21,27 +21,27 @@
                     <!-- FOOTER MENU END -->
                 <?php endif; ?>
             </div>
-            <!-- FOOTER END -->
-		<?php endif;
-        if(has_nav_menu('bottom-menu', 'autoadjust')) : ?>        
-            <!-- BOTTOM -->
-            <div id="bottom">
-                <div class="container row">
-                    <?php wp_nav_menu(array(
+            <!-- FOOTER END -->  
+    	<?php endif; ?>
+        <!-- BOTTOM -->
+        <div id="bottom">
+            <div class="container row">
+                <div class="last col width-40">
+                    <div class="legal">Powered by <strong><a href="http://wordpress.org">WordPress</a></strong>, Theme by <strong><a href="http://drewdyer.co.uk">Andrew Dyer</a></strong></div>
+                </div>
+				<?php if(has_nav_menu('bottom-menu', 'autoadjust')) : 
+                    wp_nav_menu(array(
                         'container'			=> false,
                         'fallback_cb'		=> false,
                         'items_wrap'		=> '<ul id="%1$s" class="%2$s">%3$s</ul>',
                         'menu_id'			=> 'bottom-menu',
-						'menu_class'		=> 'horizontal-aligned-menu col width-60',
+                        'menu_class'		=> 'horizontal-aligned-menu col width-60',
                         'theme_location'	=> 'bottom-menu'
-                    )); ?>
-                    <div class="last col width-40">
-                    	<div class="legal">Powered by <strong><a href="http://wordpress.org">WordPress</a></strong>, Theme by <strong><a href="http://drewdyer.co.uk">Andrew Dyer</a></strong></div>
-                    </div>
-                </div>
+                    ));
+                endif; ?>
             </div>
-            <!-- BOTTOM END -->
-        <?php endif; ?>
+        </div>
+        <!-- BOTTOM END -->
     </div>
 </div>
 <!-- CONTAINER END -->
