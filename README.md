@@ -27,6 +27,17 @@ Bundled Resources
 Change Log
 ---------------
 
+#### 1.1.6
+* Fixed header resizing for header widget area.
+* Fixed bug that occurred when using a large widget in the header area.
+* Added way for child themes to specify their own masthead and footer files.
+* Added a different masthead layout - with logo in the menu.
+* Small WordPress 3.8 fixes.
+* WooCommerce CSS fixes.
+* Premium: Fixed customizer setting for footer widgets.
+* Premium: Improved mobile navigation.
+
+
 #### 1.1.5
 * Fixed image margins.
 * Fixed image with caption center alignment.

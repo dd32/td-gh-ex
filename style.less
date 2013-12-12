@@ -7,7 +7,7 @@ Description: Vantage is a flexible multipurpose theme. It's strength lies in its
 Version: trunk
 License: GNU General Public License 2.0
 License URI: license.txt
-Tags: flexible-width, custom-background, custom-menu, featured-images, theme-options, threaded-comments, translation-ready, black, white, light, one-column, two-columns, full-width-template
+Tags: responsive-layout, fluid-layout, custom-background, custom-menu, featured-images, theme-options, threaded-comments, translation-ready, black, white, light, one-column, two-columns, full-width-template
 
 spritemapper.sprite_dirs = images/sprites
 spritemapper.output_css = style.sprites.css
@@ -376,7 +376,6 @@ header#masthead {
 		padding-bottom: 45px;
 
 		a {
-			color: inherit;
 			text-decoration: none;
 		}
 
@@ -415,27 +414,27 @@ header#masthead {
 			position: absolute;
 			right: 0;
 			top: 0;
+			overflow: hidden;
 
 			.box-sizing(border-box);
 
 			/* Center align layout. Based on old CSS3 spec, so update when new spec is available */
 
-			display:-ms-flexbox;
 			-ms-flex-pack:center;
 			-ms-flex-align:center;
+			display:-ms-flexbox;
 
-			display:-moz-box;
 			-moz-box-pack:center;
 			-moz-box-align:center;
+			display:-moz-box;
 
-			display:-webkit-box;
 			-webkit-box-pack:center;
 			-webkit-box-align:center;
+			display:-webkit-box;
 
 			display:box;
 			box-pack:center;
 			box-align:center;
-
 
 			aside.widget {
 				margin-bottom: 0;
@@ -446,6 +445,23 @@ header#masthead {
 			.widget-title {
 				font-weight: bold;
 				margin-bottom: 5px;
+			}
+		}
+	}
+
+	&.masthead-logo-in-menu {
+		.logo {
+			float: left;
+			padding: 12px 0;
+			margin-right: 15px;
+
+			> * {
+				display: block;
+			}
+
+			> img {
+				max-height: 35px;
+				width: auto;
 			}
 		}
 	}
@@ -531,6 +547,29 @@ body.no-sidebar #primary {
 					height: auto;
 				}
 			}
+
+			&.masthead-logo-in-menu {
+				.logo {
+					margin-left: 20px;
+				}
+
+				.main-navigation .menu-mobilenav-container ul {
+					margin-right: 0;
+					li {
+						float: right;
+
+						a {
+							padding-left: 20px;
+							padding-right: 20px;
+						}
+
+					}
+				}
+
+				#search-icon-icon {
+					display: none;
+				}
+			}
 		}
 	}
 }
@@ -548,6 +587,8 @@ body.no-sidebar #primary {
 
 					img {
 						margin: 0 auto;
+						padding-top: 0px !important;
+						padding-bottom: 0px !important;
 					}
 				}
 
@@ -567,6 +608,12 @@ body.no-sidebar #primary {
 					padding-top: 0 !important;
 					padding-bottom: 0 !important;
 					height: auto;
+
+					.widget{
+						display: block;
+						margin: 0 auto;
+						float: none;
+					}
 				}
 
 			}
@@ -633,6 +680,19 @@ body.responsive {
 	background: #343538;
 	font-size: 13px;
 	position: relative;
+
+	/* Font awesome icons */
+	[class^="icon-"] {
+		display: inline-block;
+		margin-right: 15px;
+		font-size: 16px;
+		line-height: 0.5em;
+		color: #CCCCCC;
+	}
+
+	a:hover [class^="icon-"] {
+		color: #FFFFFF;
+	}
 
 	ul {
 		list-style: none;
@@ -715,25 +775,11 @@ body.responsive {
 	&.sticky {
 		.box-shadow(~"0 2px 1px rgba(0,0,0,0.15)");
 	}
-
-	/* Font awesome icons */
-	[class^="icon-"] {
-		display: inline-block;
-		margin-right: 15px;
-		font-size: 16px;
-		line-height: 0.5em;
-		color: #CCCCCC;
-	}
-
-	a:hover [class^="icon-"] {
-		color: #FFFFFF;
-	}
 }
 
 body.has-menu-search .main-navigation ul {
 	margin-right: 59px;
 }
-
 
 /* Handle the navigation slightly differently on mobile devices */
 
@@ -759,6 +805,17 @@ body.mobile-device {
 		margin-right: 10px;
 		min-width: 1em;
 	}
+}
+
+.mobile-nav-icon {
+	font-family: 'FontAwesome';
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.mobile-nav-icon:before {
+	font-size: 14px;
+	content: "\f00b";
 }
 
 #search-icon {

@@ -139,12 +139,14 @@ jQuery(function($){
 
     // The sticky menu
     if( $('nav.site-navigation.primary').hasClass('use-sticky-menu') && !$('body').hasClass('mobile-device')) {
+
+        var adminBarHeight = $('body').hasClass('admin-bar') ? $('#wpadminbar').outerHeight() : 0;
         var $mc = null;
         var resetStickyMenu = function(){
             var $$ = $('nav.site-navigation.primary');
 
             // Work out the current position
-            if( $$.position().top <= $(window).scrollTop() + ( $('body').hasClass('admin-bar') ? 28 : 0 ) ) {
+            if( $$.position().top <= $(window).scrollTop() + adminBarHeight ) {
 
                 if($mc == null){
                     $mc = $$;
@@ -153,7 +155,7 @@ jQuery(function($){
                     $mc.css({
                         'position' : 'fixed',
                         'width' : $$.outerWidth(),
-                        'top' : $('body').hasClass('admin-bar') ? 28 : 0,
+                        'top' : adminBarHeight,
                         'left' : $$.position().left,
                         'z-index' : 998
                     }).addClass('sticky').insertAfter($$);
@@ -215,13 +217,23 @@ jQuery(function($){
         })
     }
 
-    // Resize the header
+    // Resize the header widget area
     $('#header-sidebar').each(function(){
         var $$ = $(this);
-        var padding = ( $$.outerHeight() - $$.find('.widget').outerHeight() ) / 2;
-        $$.css({
-            'padding-top' : padding,
-            'padding-bottom' : padding
-        })
+        var padding = ( $$.outerHeight() - $$.find('> *').outerHeight() ) / 2;
+
+        if(padding > 15) {
+            $$.css({
+                'padding-top' : padding,
+                'padding-bottom' : padding
+            });
+        }
+        else{
+            padding = -padding + 15;
+            $('header#masthead .logo > *').css({
+                'padding-top' : padding,
+                'padding-bottom' : padding
+            });
+        }
     })
 });

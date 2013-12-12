@@ -2,8 +2,8 @@
 # This file is distributed under the GNU General Public License 2.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: vantage 1.1.5\n"
-"POT-Creation-Date: 2013-11-28T16:35:00+02:00\n"
+"Project-Id-Version: vantage 1.1.6\n"
+"POT-Creation-Date: 2013-12-12T20:37:05+02:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -796,6 +796,18 @@ msgstr ""
 msgid "Use a special responsive menu for small screen devices."
 msgstr ""
 
+msgid "Masthead Layout"
+msgstr ""
+
+msgid "Change which header area layout you're using."
+msgstr ""
+
+msgid "Footer Layout"
+msgstr ""
+
+msgid "Change which footer area layout you're using."
+msgstr ""
+
 msgid "Responsive Menu"
 msgstr ""
 
@@ -1090,7 +1102,7 @@ msgstr ""
 msgid "Save CSS"
 msgstr ""
 
-msgid "Navigate"
+msgid "Menu"
 msgstr ""
 
 msgid "Back"
@@ -1160,9 +1172,6 @@ msgid "Contact Form"
 msgstr ""
 
 msgid "Fonts"
-msgstr ""
-
-msgid "Menu"
 msgstr ""
 
 msgid "Page"
