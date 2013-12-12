@@ -413,7 +413,7 @@ background: #dddddd url(../img/bg_darker_still.png) repeat !important;
 }
 .redux-group-tab .form-table tr th{
 	font-weight:bold;
-	font-size:1.1em;
+	font-size: 14px;
 	width:40% !important;
 	padding:20px 5px 20px 0px;
 }
@@ -627,8 +627,8 @@ width: 200px;
 	}
 }
 //icons 
-#redux-container .icon-large, #redux-container .icon-large:before {
-	font-size: 20px;
+.icon-large {
+	font-size: 16px;
 }
 .redux-screenshot{
 	max-width: 300px;
@@ -698,21 +698,17 @@ width: 200px;
 
 
 #redux-intro-text {
-	display: block;
-	background: #00b5e2;
-	border: 0;
-	border-bottom: 0;
-	border-width: 0 1px 1px;
-	-moz-box-shadow: none;
-	-webkit-box-shadow: none;
-	box-shadow: none;
+	display: none;
+	background: #f3f3f3;
+	border: solid #d8d8d8;	
+	border-bottom: 1px solid #d8d8d8;
+	border-width:0px 1px 1px 1px;
+	-moz-box-shadow: inset 0 1px 0 #fcfcfc;
+	-webkit-box-shadow: inset 0 1px 0 #fcfcfc;
+	box-shadow: inset 0 1px 0 #fcfcfc;
 	padding: 3px;
-	padding: 10px;
-	color: #fff
+	padding: 10px 10px;
 }
-#redux-intro-text a {
-	color: #fff
-	}
 
 #redux-intro-text p {
 	margin: 0px;
@@ -760,7 +756,10 @@ box-shadow: inset 0 1px 0 #fcfcfc;
 }
 
 
-
+#redux-container .sorter ul li {
+	line-height: 40px;
+	font-size: 14px;
+}
 #redux-header {
 	background:#444;
 	background:#444 url(../img/bg_head.png) repeat;
@@ -790,6 +789,7 @@ box-shadow: inset 0 1px 0 #fcfcfc;
 	color:#eee;
 }
 #redux-header #kad_logo_header {
+	display: block;
 	float: right;
 	margin:6px 16px 0;
 	height: 41px;

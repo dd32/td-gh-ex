@@ -109,13 +109,15 @@ Template Name: Contact
 	}
 
 	if(!isset($hasError)) {
-		$emailTo = get_option('tz_email');
-		if (!isset($emailTo) || ($emailTo == '') ){
+		if (isset($virtue['contact_email'])) {
 			$emailTo = $virtue['contact_email'];
+		} else {
+			$emailTo = get_option('admin_email');
 		}
-		$subject = '[Website Contact] From '.$name;
-		$body = "Name: $name \n\nEmail: $email \n\nComments: $comments";
-		$headers = 'From: '.$name.' <'.$emailTo.'>' . "\r\n" . 'Reply-To: ' . $email;
+		$sitename = get_bloginfo('name');
+		$subject = '['.$sitename . __(" Contact", "virtue").']'. __("From", "virtue"). $name;
+		$body = __('Name', 'virtue').": $name \n\nEmail: $email \n\nComments: $comments";
+		$headers = __("From", "virtue").': '.$name.' <'.$emailTo.'>' . "\r\n" . 'Reply-To: ' . $email;
 
 		wp_mail($emailTo, $subject, $body, $headers);
 		$emailSent = true;

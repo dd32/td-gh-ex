@@ -48,8 +48,17 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
-= Version: 1.8.1 =
-* Currupt File Issue
+= Version: 1.8.3 =
+* Add options to order portfolio items on the home page.
+* Add options to order portfolio items on the portfolio gird page.
+* Update google fonts
+* Add video size option
+
+= Version: 1.8.2 =
+* Fix issue with video
+* Fix issue with custom css
+* Fix issue with contact forum
+* Remove the activation script to transfer options.
 
 = Version: 1.8.0 =
 * Add import old options support

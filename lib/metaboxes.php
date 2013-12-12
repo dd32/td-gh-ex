@@ -347,6 +347,18 @@ $meta_boxes[] = array(
                 'type' => 'imag_select_taxonomy',
                 'taxonomy' => 'portfolio-type',
             ),
+            array(
+				'name'    => __('Order Items By', 'virtue'),
+				'desc'    => '',
+				'id'      => $prefix . 'portfolio_order',
+				'type'    => 'select',
+				'options' => array(
+					array( 'name' => __('Menu Order', 'virtue'), 'value' => 'menu_order', ),
+					array( 'name' => __('Title', 'virtue'), 'value' => 'title', ),
+					array( 'name' => __('Date', 'virtue'), 'value' => 'date', ),
+					array( 'name' => __('Random', 'virtue'), 'value' => 'rand', ),
+				),
+			),
 			array(
 				'name'    => __('Items per Page', 'virtue'),
 				'desc'    => __('How many portfolio items per page', 'virtue'),

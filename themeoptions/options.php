@@ -798,7 +798,6 @@ $sections[] = array(
             'type' => 'textarea',
             'title' => __('Video Embed Code', 'virtue'), 
             'subtitle' => __('If your using a video on the home page place video embed code here.', 'virtue'),
-            'validate' => 'html', //see http://codex.wordpress.org/Function_Reference/wp_kses_post
             'default' => ''
             ),
          ),
@@ -910,7 +909,6 @@ $sections[] = array(
             'type' => 'textarea',
             'title' => __('Video Embed Code', 'virtue'), 
             'subtitle' => __('If your using a video on the home page place video embed code here.', 'virtue'),
-            'validate' => 'html', //see http://codex.wordpress.org/Function_Reference/wp_kses_post
             'default' => '',
             'required' => array('mobile_switch','=','1'),
             ),
@@ -1020,11 +1018,19 @@ $sections[] = array(
             'id'=>'home_portfolio_carousel_count',
             'type' => 'slider', 
             'title' => __('Choose how many portfolio items are in carousel', 'virtue'),
-            //'desc'=> __('Note: does not work if images are smaller than max.', 'virtue'),
             "default"       => "6",
             "min"       => "4",
             "step"      => "1",
             "max"       => "12",
+            ),
+         array(
+            'id'=>'home_portfolio_order',
+            'type' => 'select',
+            'title' => __('Portfolio Carousel Order by', 'virtue'), 
+            'subtitle' => __("Choose how the portfolio items should be ordered in the carousel.", 'virtue'),
+            'options' => array('menu_order' => 'Menu Order','title' => 'Title','date' => 'Date','rand' => 'Random'),
+            'default' => 'menu_order',
+            'width' => 'width:60%',
             ),
          array(
             'id'=>'portfolio_show_type',
@@ -1842,8 +1848,6 @@ $sections[] = array(
             'type' => 'textarea',
             'title' => __('Footer Copyright Text', 'virtue'), 
             'subtitle' => __('Write your own copyright text here. You can use the following shortcodes in your footer text: [copyright] [site-name] [the-year]', 'virtue'),
-            //'desc' => __('This is the description field, again good for additional info.', 'virtue'),
-            'validate' => 'html', //see http://codex.wordpress.org/Function_Reference/wp_kses_post
             'default' => '[copyright] [the-year] [site-name] [theme-credit]',
             ),
         array(
@@ -1896,7 +1900,6 @@ $sections[] = array(
             'type' => 'textarea',
             'title' => __('Custom CSS', 'virtue'), 
             'subtitle' => __('Quickly add some CSS to your theme by adding it to this block.', 'virtue'),
-            'validate' => 'css',
             ),
     ),
 );

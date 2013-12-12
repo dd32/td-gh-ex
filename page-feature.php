@@ -17,7 +17,8 @@ Template Name: Feature
 				else if ($headoption == 'video') {
 					?>
 					 <section class="postfeat container">
-				          <div class="videofit">
+					 	<?php global $post; $swidth = get_post_meta( $post->ID, '_kad_posthead_width', true ); if (!empty($swidth)) $slidewidth = $swidth; else $slidewidth = 1170; ?>
+				          <div class="videofit" style="max-width:<?php echo $slidewidth;?>px; margin-left: auto; margin-right:auto;">
 				              <?php global $post; $video = get_post_meta( $post->ID, '_kad_post_video', true ); echo $video; ?>
 				          </div>
 				        </section>
