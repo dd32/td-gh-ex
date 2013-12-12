@@ -5,7 +5,7 @@ Theme URI: http://schwarttzy.com/shop/semper-fi/
 
 Description: Dedicate to my Grandfather's Bravery in WWII, Semper Fi has a high quality newspaper feeling to it. From hidden luxurious floral patterns, to images that create the nostalgia of finely crafted paper, incredibly detailed shadowing, but most importantly, Semper Fi has the ability to respond to any width screen. From 300 pixels wide, all the way to 1920 and beyond, images, galleries, quotes, text, and titles all move fluidly to respond to any thing you throw at it.
 
-Version: 2.2
+Version: 2.3
 
 Author: Eric Schwarz
 
@@ -34,6 +34,7 @@ h1, h2, h3, h4, h5, h6 {clear: both;}
 html {overflow-y:scroll; font-size:100%; -webkit-text-size-adjust:100%; -ms-text-size-adjust: 100%;}
 a:focus {outline:thin dotted;}
 img {border:0; -ms-interpolation-mode:bicubic;}
+select {max-width:100%;}
 
 /* Ready, Set? Begin!
 -------------------------------------------------------------- */
@@ -45,7 +46,8 @@ body {
 	color:#111;
 	font:normal 107% adobe-text-pro, Cambria, Georgia, "Times New Roman", Times, serif;
 	text-align:center;
-	text-shadow:0 0 2px rgba(238, 238, 238, 0.85);}
+	text-shadow:0 0 2px rgba(238, 238, 238, 0.85);
+    word-wrap:break-word;}
 	
 body.custom-background {background:none;}
 
@@ -114,7 +116,7 @@ a:hover {color: #555;}
 #single>li h6, #comments>li h6{font-size:1.33em;}
 #single>li p {margin:0 0 1em;}
 
-.featured_image {border-bottom:1px solid #111; height:auto; margin:0 0 .5em; padding:0 0 .5em; width:100%;}
+.featured_image {border-bottom:1px solid #111; height:auto; margin:0 0 .5em; max-height:35em; padding:0 0 .5em; width:100%;}
 .under {max-height:12.5em; margin:0 0 .3em; overflow:hidden; position:relative; width:100%;}
 .under img {height:auto; width:100%;}
 .over {background:rgba(0, 0, 0, 0.08); height:100%; position:absolute; top:0; width:100%;}
@@ -506,12 +508,14 @@ dt.gallery-icon:after {content:"";}
 .gallery-item img {width:100%; height:auto;}
 .left {float:left}
 .right {float:right}
-.wp-caption{
+.wp-caption {
 	background:rgba(0, 0, 0, 0.2);
 	box-shadow:1px 1px 1px rgba(0, 0, 0, 0.1);
-	margin:.5em;
-	padding:1em 1em .5em;
+	margin:.5em 1%;
+	max-width:95%;
+	padding:1em 2.5% .5em;
 	text-align:center;}
+.wp-caption img {max-width:95% !important;}
 .wp-caption.alignright {float:right;}
 .wp-caption.alignleft {float:left;}
 .wp-caption img{margin:0 auto;}
@@ -575,18 +579,7 @@ ul.tweets .timesince {background:url(images/tweet.png) center left no-repeat; cl
        url('fonts/fontello2.ttf') format('truetype'),
        url('fonts/fontello2.svg#fontello') format('svg');
   font-weight: normal;
-  font-style: normal;
-}
-/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
-/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
-/*
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  @font-face {
-    font-family: 'fontello';
-    src: url('../font/fontello.svg?80441364#fontello') format('svg');
-  }
-}
-*/
+  font-style: normal;}
  
  [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: "fontello";

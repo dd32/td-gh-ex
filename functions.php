@@ -80,14 +80,15 @@ function semperfi_comment_list_pings( $comment ) {
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>"><?php echo comment_author_link(); ?></li>
 <?php }
 
-// Wrap Video with a DIV for a CSS Resposive Video
-function wrap_embed_with_div($html, $url, $attr) { 
-	// YouTube isn't in here because it provides sufficient mark-ups to just use their html elements
-	if (preg_match("/vimeo/", $html)) { return '<div class="video-container">' . $html . '</div>'; }
-	if (preg_match("/wordpress.tv/", $html)) { return '<div class="video-container">' . $html . '</div>'; } }
-	// Don't see your video host in here? Just add it in, make sure you have the forward slash marks
+// Wrap Video in a DIV so that videos width and height become reponsive using CSS
+function wrap_embed_with_div($html, $url, $attr) {
+	if (preg_match("/youtu.be/", $html) || preg_match("/youtube.com/", $html) || preg_match("/vimeo/", $html) || preg_match("/wordpress.tv/", $html) || preg_match("/v.wordpress.com/", $html)) { 
+        // Don't see your video host in here? Just add it in, make sure you have the forward slash marks
+            $html = '<div class="video-container">' . $html . "</div>"; }
+            return $html;}
 
 add_filter('embed_oembed_html', 'wrap_embed_with_div', 10, 3);
+
 
 // Sets the post excerpt length to 250 characters
 function semperfi_excerpt_length($length) {
@@ -134,14 +135,10 @@ if (!is_admin())
 if (!function_exists('semperfi_js')) {
 	function semperfi_js() {
 			// JS at the bottom for fast page loading
-			wp_enqueue_script('semperfi-jquery-easing', get_template_directory_uri() . '/js/jquery.easing.js', array('jquery'), '1.3', true);
-            wp_enqueue_script('semperfi-menu-scrolling', get_template_directory_uri() . '/js/jquery.menu.scrolling.js', array('jquery'), '1', true);
-			wp_enqueue_script('semperfi-scripts', get_template_directory_uri() . '/js/jquery.fittext.js', array('jquery'), '1.0', true);
-			wp_enqueue_script('semperfi-fittext', get_template_directory_uri() . '/js/jquery.fittext.sizing.js', array('jquery'), '1', true);  } }
-
-// Redirect to the theme options Page after theme is activated
-if ( is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" )
-	wp_redirect( 'themes.php?page=theme_options' ); 
+			wp_enqueue_script('semperfi-jquery-easing', get_template_directory_uri() . '/js/jquery.easing.js', array('jquery'), '1', true);
+			wp_enqueue_script('semperfi-scripts', get_template_directory_uri() . '/js/jquery.fittext.js', array('jquery'), '2', true);
+			wp_enqueue_script('semperfi-fittext', get_template_directory_uri() . '/js/jquery.fittext.sizing.js', array('jquery'), '2', true);
+            wp_enqueue_script('semperfi-menu-scrolling', get_template_directory_uri() . '/js/jquery.menu.scrolling.js', array('jquery'), '1', true);  } }
 
 // WordPress Widgets start right here.
 function semperfi_widgets_init() {
@@ -178,77 +175,68 @@ function semperfi_admin_link() {
 
 add_action( 'admin_bar_menu', 'SemperFi_admin_link', 113 );
 
-// The follow code adds a box to posts and pages to upload images for custom backgrounds
-add_action( 'add_meta_boxes', 'featured_background_add_meta_box' );
-function featured_background_add_meta_box() {
-	add_meta_box( 'featured_background1', 'Featured Background Image', 'featured_background_met_box', 'post', 'side', 'high' ); }
 
-add_action( 'add_meta_boxes', 'featured_background_box' );
-function featured_background_box() {
-	add_meta_box( 'featured_background1', 'Featured Background Image', 'featured_background_met_box', 'page', 'side', 'high' ); }
+// Adds a meta box to the post editing screen
+add_action( 'add_meta_boxes', 'prfx_custom_meta' );
+function prfx_custom_meta() {
+    add_meta_box( 'prfx_meta', __( 'Featured Background', 'prfx-textdomain' ), 'prfx_meta_callback', 'post', 'side' );
+    add_meta_box( 'prfx_meta', __( 'Featured Background', 'prfx-textdomain' ), 'prfx_meta_callback', 'page', 'side' ); }
 
-// Create the meta box and populate it with the options
-function featured_background_met_box( $post ) {
-	$values = get_post_custom( $post->ID );
-	$featured_background = isset( $values['meta-image'] ) ? esc_attr( $values['meta-image'][0] ) : '';
-	wp_nonce_field( 'featured_background_meta_box_nonce', 'meta_box_nonce' );
-	?>
+
+// Outputs the content of the meta box
+function prfx_meta_callback( $post ) {
+    wp_nonce_field( basename( __FILE__ ), 'prfx_nonce' );
+    $prfx_stored_meta = get_post_meta( $post->ID );
+	if (!empty($prfx_stored_meta['featured-background'][0]) ) $featured_background = $prfx_stored_meta['featured-background'][0];
+    ?>
 
 	<p>
-	<label for="meta-image" class="example-row-title" style="text-align:justify;">Try to keep this image size smaller than 400kb and a resolution around 1920 by 1080.<br><br></label>
-    <?php if (empty($featured_background)): else: ?><img alt="Featured Background Image" src="<?php echo $featured_background; ?>" style="box-shadow:0 0 .05em rgba(19,19,19,.5); height:auto; width:100%;"><?php endif; ?>
-	<input type="text" name="meta-image" id="meta-image" value="<?php echo $featured_background; ?>" style="width:100%;" />  
-	<input type="button" id="meta-image-button" class="button" value="Select Image" style="float:right; margin:.5em 0 0;" />
-	</p>
-	<div style="clear:both"></div><?php }
+	<label for="featured-background" class="prfx-row-title" style="text-align:justify;">The ideal image size is smaller than 400kb and a resolution around 1920 by 1080 pixels.<br><br></label>
+	<?php if (!empty($featured_background)): ?><img alt="Featured Background Image" src="<?php echo $featured_background; ?>" style="box-shadow:0 0 .05em rgba(19,19,19,.5); height:auto; width:100%;"><?php endif; ?>
+		<input type="text" name="featured-background" id="featured-background" value="<?php if ( isset ( $featured_background ) ) echo $featured_background; ?>" style="margin:0 0 .5em; width:100%;" />
+		<input type="button" id="featured-background-button" class="button" value="<?php _e( 'Choose or Upload an Image', 'prfx-textdomain' )?>" style="margin:0 0 .25em; width:100%;" />
+	</p> <?php }
 
-// Save the data that is entered into the fields
-function featured_background_meta_box_save( $post_id ) {
-
-	// Bail if we're doing an auto save
-	if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
-
-	// if our nonce isn't there, or we can't verify it, bail
-	if( !isset( $_POST['meta_box_nonce'] ) || !wp_verify_nonce( $_POST['meta_box_nonce'], 'featured_background_meta_box_nonce' ) ) return;
-
-	// if our current user can't edit this post, bail
-	if( !current_user_can( 'edit_post' ) ) return;
-
-	// now we can actually save the data
-	$allowed = array( 
-		'a' => array( // on allow a tags
-			'href' => array()));// and those anchords can only have href attribute
-	
-	// Probably a good idea to make sure your data is set
-	if( isset( $_POST['meta-image'] ) )
-		update_post_meta( $post_id, 'meta-image', wp_kses( $_POST['meta-image'], $allowed ) ); }
-
-add_action( 'save_post', 'featured_background_meta_box_save' );
 
 // Loads the image management javascript
-function example_image_enqueue() {
-    global $typenow;
-    if( ($typenow == 'post') || ($typenow == 'page') ) {
-        wp_enqueue_media();
- 
-        // Registers and enqueues the required javascript.
-        wp_register_script( 'meta-image', get_template_directory_uri() . '/meta-image.js', array( 'jquery' ) );
-        wp_localize_script( 'meta-image', 'meta_image',
-            array(
-                'title' => 'Choose or Upload a File',
-                'button' => 'Use this file',
-            )
-        );
-        wp_enqueue_script( 'meta-image' );
-    } // End if
-} // End example_image_enqueue()
-add_action( 'admin_enqueue_scripts', 'example_image_enqueue' );
+add_action( 'admin_enqueue_scripts', 'enqueue_featured_background' );
 
-// Checks for input and saves if needed
-if( isset( $_POST[ 'meta-image' ] ) ) {
-    update_post_meta( $post_id, 'meta-image', $_POST[ 'meta-image' ] ); }
+function enqueue_featured_background() {
+	global $typenow;
+    if(($typenow == 'post' ) || ($typenow == 'page' )) {
+
+        // This function loads in the required files for the media manager.
+        wp_enqueue_media();
+
+        // Register, localize and enqueue our custom JS.
+        wp_register_script( 'enqueue-featured-background', get_template_directory_uri() . '/js/featured-background.js', array( 'jquery' ), '1', true );
+        wp_localize_script( 'enqueue-featured-background', 'js_array_featured_background',
+            array(
+                'title' => 'Upload or choose an image for the Featured Background',
+                'button' =>'Use as Featured Background') );
+        wp_enqueue_script( 'enqueue-featured-background' ); } }
+
+
+// Saves the custom meta input
+add_action( 'save_post', 'prfx_meta_save' );
+function prfx_meta_save( $post_id ) {
+ 
+    // Checks save status
+    $is_autosave = wp_is_post_autosave( $post_id );
+    $is_revision = wp_is_post_revision( $post_id );
+    $is_valid_nonce = ( isset( $_POST[ 'prfx_nonce' ] ) && wp_verify_nonce( $_POST[ 'prfx_nonce' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
+ 
+    // Exits script depending on save status
+    if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
+        return; }
+	
+	// Checks for input and saves if needed
+	if( isset( $_POST[ 'featured-background' ] ) ) {
+    	update_post_meta( $post_id, 'featured-background', $_POST[ 'featured-background' ] ); } }
+
 
 // Sets up the Customize.php for Semper Fi (More to come)
+add_action('customize_register', 'semperfi_customize');
 function semperfi_customize($wp_customize) {
 
 	// Before we begin let's create a textarea input
@@ -260,7 +248,7 @@ function semperfi_customize($wp_customize) {
 			<label>
 			<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 			<textarea rows="1" style="width:100%;" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
-			</label> <?php } }
+			</label><?php } }
 			
 	// The Standard Sections for Theme Custimizer
 	$wp_customize->add_section( 'meta_section', array(
@@ -907,10 +895,10 @@ function semperfi_customize($wp_customize) {
 		'settings'				=> 'contentfontstyle_setting',
 		'type'					=> 'select',
 		'choices'				=> $google_font_array, )); }
-	
-add_action('customize_register', 'semperfi_customize');
+
 		
 // Inject the Customizer Choices into the Theme
+add_action('wp_head', 'semperfi_inline_css', 16);
 function semperfi_inline_css() {
 		
 		echo '<!-- Custom Font Styles -->' . "\n";
@@ -924,7 +912,8 @@ function semperfi_inline_css() {
 // Inject the Customizer Choices into the Theme
 		echo '<!-- Custom CSS Styles -->' . "\n";
         echo '<style type="text/css" media="screen">' . "\n";
-        $featured_background = get_post_meta( get_the_ID(), 'meta-image', true ); if (!empty($featured_background)) echo 'body {background-image:url(' . $featured_background . ');' . "\n";
+        if (is_page() || is_single()) $featured_background = get_post_meta( get_queried_object_ID(), 'featured-background', true ); if (!empty($featured_background)) echo '   body.custom-background {background-image:url(' . $featured_background . '); background-size:cover;}' . "\n";
+        if (is_page()) echo '<!-- ' . $featured_background . ' -->';
 		if ( (get_theme_mod('backgroundsize_setting') != 'auto') && (get_theme_mod('backgroundsize_setting') != '') ) echo '	body.custom-background {background-size:' . get_theme_mod('backgroundsize_setting') . ';}' . "\n";
 		if ( (get_theme_mod('backgroundpaper_setting') != 'auto') && (get_theme_mod('backgroundpaper_setting') != '') )echo '	#margin {background-image:url(' . get_template_directory_uri() . '/images/' . get_theme_mod('backgroundpaper_setting') . '.png);}' . "\n";
 		if ( (get_option('bannerimage_setting') != 'blue.png') && (get_option('bannerimage_setting') != '') ) echo '	#header {background: bottom url(' . get_template_directory_uri() . '/images/' . get_option('bannerimage_setting') .  ');}'. "\n";
@@ -957,306 +946,168 @@ function semperfi_inline_css() {
 
 		echo '</style>' . "\n";
 		echo '<!-- End Custom CSS -->' . "\n";
-		echo "\n";
-		
-		if ( ( ( get_theme_mod('google_webmaster_tool_setting') != '' ) && ( get_theme_mod('google_webmaster_tool_setting') != 'For example mine is "gN9drVvyyDUFQzMSBL8Y8-EttW1pUDtnUypP-331Kqh"' ) ) || ( ( get_theme_mod('google_analytics_setting') != '' ) && ( get_theme_mod('google_analytics_setting') != 'For example mine is "UA-9335180-X"' ) ) ) {
-			echo '<!-- Google Analytics & Webtool -->' . "\n";
-			if ( ( get_theme_mod('google_webmaster_tool_setting') != '' ) && ( get_theme_mod('google_webmaster_tool_setting') != 'For example mine is "gN9drVvyyDUFQzMSBL8Y8-EttW1pUDtnUypP-331Kqh"' ) ) echo '<meta name="google-site-verification" content="' .  get_theme_mod('google_webmaster_tool_setting') . '" />' . "\n";
-			if ( ( get_theme_mod('google_analytics_setting') != '' ) && ( get_theme_mod('google_analytics_setting') != 'For example mine is "UA-9335180-X"' ) ) {
-			echo '<script type="text/javascript">' . "\n"; 
-			echo '	var _gaq = _gaq || [];' . "\n"; 
-			echo "	_gaq.push(['_setAccount', '" .  get_theme_mod('google_analytics_setting') . "']);" . "\n"; 
-			echo "	_gaq.push(['_trackPageview']);" . "\n\n"; 
-			echo "	(function() {" . "\n"; 
-			echo "	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;" . "\n"; 
-			echo "	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';" . "\n"; 
-			echo "	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);" . "\n"; 
-			echo "	})();" . "\n\n"; 
-			echo "</script>" . "\n";  }
-			echo '<!-- End Google Analytics & Webtool -->' . "\n";
-			echo "\n"; } }
+		echo "\n";  }
 
-add_action('wp_head', 'semperfi_inline_css');
 
 // Add some CSS so I can Style the Theme Options Page
-function semperfi_admin_enqueue_scripts( $hook_suffix ) {
-	wp_enqueue_style('semperfi-theme-options', get_template_directory_uri() . '/theme-options.css', false, '1.0');}
-
 add_action('admin_print_styles-appearance_page_theme_options', 'semperfi_admin_enqueue_scripts');
-	
+function semperfi_admin_enqueue_scripts( $hook_suffix ) {
+	wp_enqueue_style('semperfi-theme-information-css', get_template_directory_uri() . '/theme-options.css', false, '1.0');}
+
+
 // Create the Theme Information page (Theme Options)
+add_action('admin_menu', 'semperfi_theme_options_add_page');
 function semperfi_theme_options_do_page() { ?>
     
     <div class="cover">
     
-    <div id="header">
-    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/customize.png">
+    <ul id="spacing"></ul>
+    
+    <div class="contain">
+            
+        <div id="header">
+		
+			<div class="themetitle">
+				<a href="http://schwarttzy.com/shop/semper-fi/" target="_blank" ><h1><?php $my_theme = wp_get_theme(); echo $my_theme->get( 'Name' ); ?></h1>
+				<span>- v<?php $my_theme = wp_get_theme(); echo $my_theme->get( 'Version' ); ?></span></a>
+			</div>
+            
+            
+			<div class="upgrade">
+                <a href="http://schwarttzy.com/shop/semper-fi/" target="_blank" ><h2>Upgrade Semper Fi</h2></a>
+            </div>
+		
+    	</div>
+            
+        <ul class="info_bar">
+			<li><a href="#description">Description</a></li>
+			<li><a href="#customizing">Customizing</a></li>
+			<li><a href="#features">Features</a></li>
+			<li><a href="#faq">FAQ</a></li>
+			<!-- <li><a href="#screenshots">Screen Shots</a></li> -->
+			<li><a href="#changelog">Changelog</a></li>
+			<li><a href="#support">Support</a></li>
+		</ul>
+        
+        <div id="main">
+            
+            <div id="customizing" class="information">
+                <h3>Customizing</h3>
+                <p>Basically all I have right now is <a href="https://www.youtube.com/watch?v=IU__-ipUxxc" target="_blank">this video</a> on YouTube. I know the video is a little out dated, but this will change soon. Also, I would embed the video, but regrettably people wiser than me have said that it will introduce security issues. In the future I plan to add more stuff here, but for now I just need to get the theme approved.</p>
+            </div>
+            
+            <div id="features" class="information">
+                <h3>Features</h3>
+                <ul>
+                    <li>100% Responsive WordPress Theme</li>
+                    <li>Clean and Beautiful Stylized HTML, CSS, JavaScript</li>
+                    <li>Change the site Title and Slogan Colors</li>
+                    <li>Upload Your Own Background Image</li>
+                    <li>Adjust the opacity of the Content from 0 to 100% in 5% intervails</li>
+                    <li>Adjust the opacity of the Sidebar from 0 to 100% in 5% intervails</li>
+                    <li>Adjust Color of the Background for Content</li>
+                    <li>Adjust Color of the Background for Sidebar</li>
+                    <li>Multiple Menu Banner Images to Choose From</li>
+                    <li>Control wether or not the "Previous" & "Next" shows</li>
+                    <li>Adjust the spacing between the top of the page and content</li>
+                    <li>Comments on Pages only, Posts only, Both, or Nones</li>
+                    <li>Featured Background Image unique to a post or page</li>
+                    <li>Choose from 100's of Google fonts for the Title and Slogan</li>
+                </ul>
+                <p>Don't see a feature the theme needs? <a href="http://schwarttzy.com/contact-me/" target="_blank">Contact me</a> about it.</p>
+                <h3>Feature of the Semper Fi Upgrade</h3>
+                <ul>
+                    <li>Easily remove the footer with the link to my website</li>
+                    <li>Favicon on Your Website</li>
+                    <li>Change the Hyper Link Color</li>
+                    <li>Change the Link Colors in the Menu</li>
+                    <li>Change the Font Color in the Content</li>
+                    <li>Upload Your Own Logo in either the Header or above Content</li>
+                    <li>Upload Your Own Custom Banner Image</li>
+                    <li>Upload your own image for the Background</li>
+                    <li>Basic Google Meta for Analytics & Webmaster Verification</li>
+                    <li>More to come!</li>
+                </ul>
+            </div>
+            
+            <div id="faq" class="information">
+                <h3>FAQ</h3>
+                <p><b>How do I remove the "Good Old Fashioned Hand Written code by Eric J. Schwarz"</b></p>
+                <p>According to the WordPress.org I'm allowed to include one credit link, which you can read about <a href="http://make.wordpress.org/themes/guidelines/guidelines-license-theme-name-credit-links-up-sell-themes/" target="_blank">here</a>. I use this link to spread the word about my coding skills in the hopes I'll get some jobs. Anyway, you can dig through the code and remove it by hand but if you upgrade to the lastest version it will come right back. It's not really a big deal to do it by hand each time I release an update. However if you want to support my theme and get the Semper Fi upgrade, it's just a simple "On or Off" option in the "Theme Customizer."</p>
+                <p><b>More FAQ's coming soon!</b></p>
+            </div>
+            
+            <!--- <div id="screenshots" class="information">
+                <h3>I'll take some screen shots</h3>
+            </div> -->
+            
+            <div id="changelog" class="information">
+                <h3>The Changelog</h3>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Version</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <th>2.3</th>
+                            <td>The Theme Information page was changed to something more professional looking and easierto navigate. Fixed some issues with CSS problems with video not displaying correctly, wp-caption issues, etc. Added in the ablity to choose a differnet background image for a post or page.</td>
+                        </tr>
+                        <tr>
+                            <th>2.1</th>
+                            <td>Sorry about not updating as much lately I just don't have the money to spend the time on this theme as much as I would like too. Anyway, I added in editor CSS so that it easier to know what the text, photos, list, and any other HTML element will actually look like on the website. Social icon open up a new tab for browsing.</td>
+                        </tr>
+                        <tr>
+                            <th>1.9</th>
+                            <td>Forgot a bit of code in the CSS that would just waste bandwidth.</td>
+                        </tr>
+                        <tr>
+                            <th>1.7</th>
+                            <td>Added code to the theme so that search engines can understand when a post was published. Brought back featured images into individual posts and pages, but you have to enable from the theme customizer. Dropped some code I thought I would use but never got around to it. Finally I fixed the google analytics, not sure what happened, but it is back along with adding site verification.</td>
+                        </tr>
+                        <tr>
+                            <th>1.6</th>
+                            <td>Fixed the issue where comments wouldn't display.</td>
+                        </tr>
+                        <tr>
+                            <th>1.5</th>
+                            <td>Fixed an issue with comments, SEO plugins, and add complete control over commenting.</td>
+                        </tr>
+                        <tr>
+                            <th>1.4</th>
+                            <td>Minor fixes that show up in the header the theme options are blank.</td>
+                        </tr>
+                        <tr>
+                            <th>1.3</th>
+                            <td>Included Google Web Fonts for the Title, Slogan, Menu, Post Title, and Content. I also cleaned up the "Theme Customizer" menu so that it makes more sense.</td>
+                        </tr>
+                        <tr>
+                            <th>.9</th>
+                            <td>Just a mix up in the code that would cause some errors in version .8</td>
+                        </tr>
+                    </tbody>
+                </table> 
+            </div>
+            
+            <div id="support" class="information">
+                <h3>Support Information</h3>
+                <p>If you happen to have issues with plugins, writing posts, customizing the theme, and basically anything just shoot me an email on <a href="http://schwarttzy.com/contact-me/" target="_blank">this page</a> I setup for contacting me.</p>
+                <p>I have a <a href="https://twitter.com/Schwarttzy" target="_blank">Twitter</a> account, but all I really use it for is posting information on updates to my themes. So if you looking for a new feature, you may be in luck. I'm not really sure what to do with Twitter, but I know a lot of people use it, which I why I have one.</p>
+                <p>Your always welcome to use the "<a href="http://wordpress.org/support/theme/semper-fi-lite" target="_blank">Support</a>" forums on WordPress.org for any questions or problems, I just don't check it as often because I don't recieve email notifications on new posts or replies there.</p>
+            </div>
+        
+            <div id="description" class="information">
+                <h3>Description</h3>
+                <p>If you're having trouble with using the WordPress Theme <?php $my_theme = wp_get_theme(); echo $my_theme->get( 'Name' )?> and need some help, <a href="http://schwarttzy.com/contact-me/" target="_blank">contact me</a> about it. But I recommend taking a look at <a href="https://www.youtube.com/watch?v=IU__-ipUxxc" target="_blank">this video</a> before sending me an email. The video is kind of getting old, but it will show everything there is to customizing the theme "<?php $my_theme = wp_get_theme(); echo $my_theme->get( 'Name' )?>."</p>
+                <p>Now that I have covered contacting me and linked a how to video for you, I would like to thank you for downloading and installing this theme. I hope that you enjoy it. I also hope that I can continue to create more beautiful themes like this for years to come, but that requires your help. I have created this Theme, and others, free of charge. And while I'm not looking to get rich, I really like creating <a href="http://profiles.wordpress.org/Schwarttzy/" target="_blank">these themes</a> for you guys.</p>
+                <p>So if you're interested in supporting my work, I can offer you an <a href="http://schwarttzy.com/shop/semper-fi/" target="_blank" >upgrade to Semper-Fi Lite</a>. I have already included a few more features, some of which I'm not allowed include in the free version, and I also offer to write additional code to customize the theme for you. Even if the code will be unique to your website.</p>
+                <p>Eric Schwarz<br><a href="http://schwarttzy.com/" targe="_blank">http://schwarttzy.com/</a></p>                
+            </div>
+        
+        </div>
+            
     </div>
     
-    <div id="banner"></div>
+    <ul id="finishing"></ul>
     
-    <div id="center">
-	<div id="floatfix">
-
-	<div class="reading">
-    <div class="spacing"></div>
-    <h3 class="title"><span>Please Read</br>This Page!</span>Thanks for using Semper Fi Lite!</h3>
-	<span class="content"><p>Thank you for downloading and installing the WordPress Theme "Semper Fi Lite." I hope that you enjoy it and that I can continue to create these beautiful themes for years to come. But, if you could take a moment and become acutely aware that I have created this Theme and other themes free of charge, and while I'm not looking to get Rich, I really like creating these themes for you guys. Which is why I offer additional customization of "Semper Fi Lite" when you support me and install the standard version, "Semper Fi." If you're interested in supporting my work, or need some of the addition features in "Semper Fi" head on over to <a href="http://schwarttzy.com/shop/semper-fi/">this page</a>.</p>
-    <p>Incase you happen to have any issues, questions, comments, or a requests for features with "Semper Fi Lite," you can contact me through E-Mail with the form on <a href="http://schwarttzy.com/contact-me/">this page</a>.</p>
-    <p>Thank you again,</br><a href="http://schwarttzy.com/about-2/">Eric J. Schwarz</a></p>
-	</span>
-    <h3 class="title">Customizing Semper Fi</h3>
-    <span class="content">
-    There are more Features than this old video shows now.
-    <p><span class='embed-youtube' style='text-align:center; display: block;'><iframe class='youtube-player' type='text/html' width='1100' height='649' src='http://www.youtube.com/embed/IU__-ipUxxc?version=3&#038;rel=1&#038;fs=1&#038;showsearch=0&#038;showinfo=1&#038;iv_load_policy=1&#038;wmode=transparent' frameborder='0'></iframe></span></p>
-	</span>
-    <h3 class="title">Features</h3>
-    <span class="content">
-    <table>
-        <tbody>
-        <tr>
-        <th class="justify">Semper Fi Theme Features</th>
-        <th>Lite</th>
-        <th>Standard</th>
-        </tr>
-        <tr>
-        <td class="justify">100% Responsive WordPress Theme</td>
-        <td>&#9733;</td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Clean and Beautiful Stylized HTML, CSS, JavaScript</td>
-        <td>&#9733;</td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Featured Images for Posts &amp; Pages</td>
-        <td>&#9733;</td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Change the site Title and Slogan Colors</td>
-        <td>&#9733;</td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Google Analytics & Site Verification</td>
-        <td>&#9733;</td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Upload Your Own Background Image</td>
-        <td>&#9733;</td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Choose from 4 different Background Paper Images</td>
-        <td>&#9733;</td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Upload your own Background for the Paper Image</td>
-        <td></td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Multiple Menu Banner Images to Choose</td>
-        <td>&#9733;</td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Google Web Fonts for Title, Slogan, Post Title, and Content</td>
-        <td>&#9733;</td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Upload Your Own Custom Banner Image</td>
-        <td>&#9733;</td>
-        <td>&#9733;</td>
-        </tr>
-        </tr>
-        <tr>
-        <td class="justify">Comments on Pages only, Posts only, Both, or None</td>
-        <td>&#9733;</td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Option to have dates on posts to not display.</td>
-        <td>&#9733;</td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Option for Social Icons in the menu.</td>
-        <td>&#9733;</td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Option for search bar in menu.</td>
-        <td>&#9733;</td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Upload Your Header Image as inline logo or banner like.</td>
-        <td></td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Upload Your Own Logo</td>
-        <td></td>
-        <td>&#9733;</td>
-        </tr>
-		<tr>
-        <td class="justify">Change the Link Colors in the Menu</td>
-        <td></td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Choose you own Hyper Link Color</td>
-        <td></td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Favicon to be Easily Implemented on Your Website</td>
-        <td></td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">The Ability to use Custom Fonts from Typekit</td>
-        <td></td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify">Remove my Mark from the Footer with the click of one button, instead of digging through the code to remove it.</td>
-        <td></td>
-        <td>&#9733;</td>
-        </tr>
-		<tr>
-        <td class="justify">Personal Support on Technical Issues You May Run Into</td>
-        <td></td>
-        <td>&#9733;</td>
-        </tr>
-        </tbody>
-	</table>
-    <p>Don't see a feature that you want, maybe theres plugin that doesn't work right, <a href="http://schwarttzy.com/contact-me/">send me an Email about it</a>.</p>
-	</span>
-    <h3 class="title">Semper Fi Lite Version Information</h3>
-    <span class="content">
-    <table>
-        <tbody>
-        <tr>
-        <th>Version</th>
-        <th class="justify"></th>
-        </tr>
-        <tr>
-        <td>2.1</td>
-        <td class="justify">Created one of the most demanded feature of all time, custom backgrounds. I call it "Featured Background," because you can now upload or select any image to be a background unique to any page or post.</td>
-        </tr>
-        <tr>
-        <td>2.1</td>
-        <td class="justify">Sorry about not updating as much lately I just don't have the money to spend the time on this theme as much as I would like too. Anyway, I added in editor CSS so that it easier to know what the text, photos, list, and any other HTML element will actually look like on the website. Social icon open up a new tab for browsing.</td>
-        </tr>
-        <tr>
-        <td>1.9</td>
-        <td class="justify">Forgot a bit of code in the CSS that would just waste bandwidth.</td>
-        </tr>
-        <tr>
-        <td>1.7</td>
-        <td class="justify">Added code to the theme so that search engines can understand when a post was published. Brought back featured images into individual posts and pages, but you have to enable from the theme customizer. Dropped some code I thought I would use but never got around to it. Finally I fixed the google analytics, not sure what happened, but it is back along with adding site verification.</td>
-        </tr>
-        <tr>
-        <td>1.6</td>
-        <td class="justify">Fixed the issue where comments wouldn't display.</td>
-        </tr>
-        <tr>
-        <td>1.5</td>
-        <td class="justify">Fixed an issue with comments, SEO plugins, and add complete control over commenting.</td>
-        </tr>
-        <tr>
-        <td>1.4</td>
-        <td class="justify">Minor fixes that show up in the header the theme options are blank.</td>
-        </tr>
-        <tr>
-        <td>1.3</td>
-        <td class="justify">Included Google Web Fonts for the Title, Slogan, Menu, Post Title, and Content. I also cleaned up the "Theme Customizer" menu so that it makes more sense.</td>
-        </tr>
-        <tr>
-        <td>.9</td>
-        <td class="justify">Just a mix up in the code that would cause some errors in version .8</td>
-        </tr>
-        <tr>
-        <td>.8</td>
-        <td class="justify">Decided to rewrite the theme over again, completely from scratch, after having an amazing thought. The responsive website movement is because the vast number of different size resolutions of screen that we view the content. This amazing thought came to me that I could base everything off of em, which is the average width of one letter on your screen. Unlike using pixels to decide how the website displays where you have no idea what the end users font size is, using em give you a relatively good idea. Doing it this way I have optimized the readability of website based on how the user want to view the website. I also cleaned some code up to lighten the load on browsers and bring a more unified experience whether you're using Chrome, Firefox, or Internet Explorer.</td>
-        </tr>
-        <tr>
-        <td>.7</td>
-        <td class="justify">Small update to add in a new feature and rewrite some of the code. The new feature allows for someone to choose from 4 different choices for the white background that looks like paper. This feature is located under the "Background" tab on the "<a href="<?php echo home_url(); ?>/wp-admin/customize.php">Theme Customizer</a> Page." As for the rewrite of the code, I decided to have the Style.CSS file leave partially unfinished and have the default choice, or the choices currently chosen, finish the file Style.CSS with the missing code in the Header of the page. By choosing to leave the code out, browsers such as in firefox, chrome, IE, etc. will only see the CSS code once and won't have to write over and duplicate entries. Basically it keeps things lighter and cleaner.</td>
-        </tr>
-        <td>.6</td>
-        <td class="justify">Quick update to add some more features to the theme along with a better "Theme Information" page. It is now possible to choose one of three different banners on the <a href="<?php echo home_url(); ?>/wp-admin/customize.php">Theme Customizer</a> page. I plan to add even more choices in the future for the banner, and on a side note you can upload you own with Semper Fi. Added in the ablity to easily change the color on Site Title and also the Site Slogan on the <a href="<?php echo home_url(); ?>/wp-admin/customize.php">Theme Customizer</a> page too. I have removed the file "theme-options.php" from the theme and the that was in there has been move to the file "functions.php" which is in the same folder. Finally the javascript file "background-size-preview.js" which handled the background changing on the <a href="<?php echo home_url(); ?>/wp-admin/customize.php">Theme Customizer</a> has been rename to "customizer.js" becuase it makes more sense since adding a bunch of code.</td>
-        </tr>
-        <td>.5</td>
-        <td class="justify">The initial release.</td>
-        </tr>
-        </tbody>
-	</table>
-	</span>
-    <h3 class="title">Semper Fi Version Information</h3>
-    <span class="content">
-    <table>
-        <tbody>
-        <tr>
-        <th>Version</th>
-        <td class="justify"></td>
-        </tr>
-        <tr>
-        <td>9</td>
-        <td class="justify">Same code as Semper Fi Lite 2.2</td>
-        </tr>
-        <tr>
-        <td>8</td>
-        <td class="justify">This is just a small update, looking forward to more just don't have money to spend the time right now. Logo's can now be put into the title inline with the header text by just changing the customizer option "How should the logo display." I also included an editor CSS so that it easier to know what the text, photos, list, and any other HTML element will actually look like on the website live. Some fixes for Apple products becuase they lack the font Impact. Social icon open up in a new tab. Menu code is much cleaner now too.</td>
-        </tr>
-        <tr>
-        <td>7</td>
-        <td class="justify">Same stuff as in 1.7 Semper Fi Lite, but special stuff for you guys soon.</td>
-        </tr>
-        <tr>
-        <td>6</td>
-        <td class="justify">Same stuff as in 1.5 Semper Fi Lite.</td>
-        </tr>
-        <tr>
-        <td>5</td>
-        <td class="justify">I have add the option to Upload a Header Image, a Banner Logo, Just the menu at the top or bottom, Google Web Fonts, orgainzed the "Theme Customizer Menu," adjust the margin from the top of the page to content, and fixed a bunch errors &amp; issues. I wasn't able to have the sidebar make it into this update, but will be in the next update coming soon. </td>
-        </tr>
-        <tr>
-        <td>4</td>
-        <td class="justify">Semper Fi, the standard version received a similar update to "Lite" in .9 including the same new features and small rewrite of some code. Theres no real difference between the two except for the additional features.</td>
-        </tr>
-        <tr>
-        <td>3</td>
-        <td class="justify">Semper Fi, the standard version received a similar update to "Lite" in .7 including the same new features and small rewrite of some code. It too now includes 4 different choices for the white background that looks like paper, but unlike "Lite" the standard version of Semper Fi allows you upload your own image also. Semper Fi also had the same rewrite of code so that the code basically leaves Style.CSS uncomplete and has the final bit of code added in the header based on either the default choices, or the ones currently chosen in <a href="<?php echo home_url(); ?>/wp-admin/customize.php">Theme Customizer</a>. All in all the point is to reduce the footprint of code, and the possibility of downloading unnecessary content.</td>
-        </tr>
-        <td>2</td>
-        <td class="justify">This is the first update after the initial release of the “Lite” version of “Semper Fi” and includes a bunch of changes for the better. Both “Semper Fi” and “Semper Fi Lite” now use Theme Customizer instead of Theme Options to customize the page, allowing for the administrator to visually see the changes to the website before the changes take effect in real time. I have included all the promised functionality into the theme with this update, except for a custom logo which will be in future update. Which means you can change the color on the Links, Menu, Title, and Slogan for now, and more in the future. This update also includes the ablitiy to choose from the three standard options for the banner, but unquie to the Semper Fi you can upload your own image for the banner, where as you can't in Lite. Finally, with this update I have added in the ablity for you quickly remove the footer that says "Good Old Fasioned Hand Written Code by Eric J. Schwarz" from the theme.</td>
-        </tr>
-        <td>1.1</td>
-        <td class="justify">The initial release.</td>
-        </tr>
-        </tbody>
-	</table>
-	</span>
-    <h3 class="title">About the Theme Semper Fi</h3>
-	<span class="content"><p>I dedicate this theme to my Grandfather, Eldon Schwarz, for his strength and courage in WWII. He is the sole survivor of the crew aboard the B17 Flying Fortress #44-6349, of the 483rd Bombardment Group, in the 840th Bomb Squadron and a prisoner of war from August 7, 1943 to November 5, 1945. I miss you Grandpa.</p>
-    <p>This theme began with me reading a newspaper from May 8, 1945. Just holding it I could sense that a lot time and planning went into simple things like font, layout, and especially choosing the paper's material. I marveled at the quality that clearly went into this paper. Even with how old the newspaper was, it makes modern newspapers just seem like a mere shadow of themselves clinging to their former glory.</p>
-    <p>Because of that I decided that I had to create a theme that feels like a newspaper, rich with details and fine quality. From hidden luxurious floral patterns, images that create the nostalgia of finely crafted paper, to incredibly detailed shadowing, but most importantly, the ability to respond to any width screen. "Semper Fi" is a completely flexible theme able to stretch from 300 pixels wide, all the way to 1920 and beyond. Images, galleries, quotes, text, titles, they all move fluidly to respond to any thing you through at it.</p>
-    </span>
-	</div>
-    
-    </div>
-    </div>
-    
-    </div>
-<?php }
-add_action('admin_menu', 'semperfi_theme_options_add_page');
-
-?>
+    </div><?php } ?>
