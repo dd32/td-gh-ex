@@ -57,6 +57,10 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
+@version 1.2.9
+1. Added new tags responsive-layout
+@version 1.2.8
+Theme Uri Removed
 @version1.2.6
 1.)IE 8+ Competible
 2.)Removd WhiteSpaces
