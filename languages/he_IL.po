@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Travelify\n"
 "POT-Creation-Date: 2013-12-11 22:55+0200\n"
-"PO-Revision-Date: 2013-12-11 23:02+0200\n"
+"PO-Revision-Date: 2013-12-13 10:41+0200\n"
 "Last-Translator: Aigars Silkalns <a.silkalns@gmail.com>\n"
 "Language-Team: Color Awesomeness <info@colorawesomeness.com>\n"
 "Language: he\n"
@@ -115,14 +115,6 @@ msgstr ""
 
 #: library/functions/functions.php:386
 msgid "Shows widgets at footer."
-msgstr ""
-
-#: library/functions/rateme.php:19
-#, php-format
-msgid ""
-"Thank you for using Travelify! If you like the theme, please consider giving "
-"it a <a target=\"_blank\" href=\"%s\">high rating on WordPress.org</a>. "
-"Thank you! <a href=\"%s\">(hide this message)</a>"
 msgstr ""
 
 #: library/functions/shortcodes.php:49

@@ -116,14 +116,6 @@ msgstr ""
 msgid "Shows widgets at footer."
 msgstr ""
 
-#: library/functions/rateme.php:19
-#, php-format
-msgid ""
-"Thank you for using Travelify! If you like the theme, please consider giving "
-"it a <a target=\"_blank\" href=\"%s\">high rating on WordPress.org</a>. "
-"Thank you! <a href=\"%s\">(hide this message)</a>"
-msgstr ""
-
 #: library/functions/shortcodes.php:49
 msgid "WordPress"
 msgstr ""
