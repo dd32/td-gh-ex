@@ -14,41 +14,37 @@
 
 class TC_404 {
 
+    //Access any method or var of the class with classname::$instance -> var or method():
+    static $instance;
+
     function __construct () {
-        add_action  ( '__404'                   , array( $this , 'tc_content_404' ));
+        self::$instance =& $this;
+        //404 content
+        add_action  ( '__loop'                      , array( $this , 'tc_404_content' ));
     }
 
 
-    function tc_content_404() {
+
     /**
      * The template part for displaying error 404 page content
      *
      * @package Customizr
      * @since Customizr 3.0
      */
-    
-    ?>
+    function tc_404_content() {
+        if ( !is_404() )
+            return;
+        
+        
 
-        <?php global $content_class ?>
-
-        <div class="tc-content <?php echo $content_class; ?> format-quote">
-
-            <div class="entry-content format-icon">
-
-                <blockquote><p><?php _e( 'Speaking the Truth in times of universal deceit is a revolutionary act.' , 'customizr' ) ?></p>
-                <cite><?php _e( 'George Orwell' , 'customizr' ) ?></cite>
-                </blockquote>
-
-                <p><?php _e( 'Sorry, but the requested page is not found. You might try a search below.' , 'customizr' ); ?></p>
-
-                <?php get_search_form(); ?>
-
-            </div>
-
-            <hr class="featurette-divider">
-            
-        </div><!--content -->
-    <?php
+        echo apply_filters( 'tc_404_content',
+            sprintf('<div class="%1$s"><div class="entry-content %2$s">%3$s</div>%4$s</div>',
+                apply_filters( 'tc_404_wrapper_class', 'tc-content span12 format-quote' ),
+                apply_filters( 'tc_404_content_icon', 'format-icon' ),
+                TC_init::$instance -> content_404,
+                apply_filters( 'tc_no_results_separator', '<hr class="featurette-divider '.current_filter().'">' )
+            )
+        );
     }
 
 }//end of class

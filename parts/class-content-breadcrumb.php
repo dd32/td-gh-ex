@@ -16,49 +16,45 @@
 
 class TC_breadcrumb {
 
+    //Access any method or var of the class with classname::$instance -> var or method():
+    static $instance;
+
     function __construct () {
-        add_action( '__breadcrumb'					, array( $this , 'tc_get_breadcrumb' ));
+        self::$instance =& $this;
+        add_action( '__before_main_container'			, array( $this , 'tc_breadcrumb_display' ), 20 );
     }
 
     
-	 /**
-      * 
-      * @package Customizr
-      * @since Customizr 1.0 
-     */
-    function tc_get_breadcrumb() {
+	/**
+    * 
+    * @package Customizr
+    * @since Customizr 1.0 
+    */
+    function tc_breadcrumb_display() {
+	  	if(  !apply_filters( 'tc_show_breadcrumb' , 1 == tc__f( '__get_option' , 'tc_breadcrumb') && !tc__f('__is_home') ) )
+	      return;
 
-	      $__options         = tc__f ( '__options' );
+	  	$args = array(
+		  'container'  => 'div' , // div, nav, p, etc.
+		  'separator'  => '&raquo;' ,
+		  'before'     => false,
+		  'after'      => false,
+		  'front_page' => true,
+		  'show_home'  => __( 'Home' , 'customizr' ),
+		  'network'    => false,
+		  'echo'       => true
+	  	);
 
-	      //get the default layout
-	        $tc_breadcrumb 			= $__options['tc_breadcrumb'];
-	        if( $tc_breadcrumb != 1)
-	          return;
-	      $args = array(
-	      'container'  => 'div' , // div, nav, p, etc.
-	      'separator'  => '&raquo;' ,
-	      'before'     => false,
-	      'after'      => false,
-	      'front_page' => true,
-	      'show_home'  => __( 'Home' , 'customizr' ),
-	      'network'    => false,
-	      'echo'       => true
-	      );
-
-	      //do not display breadcrumb on home page
-	      if ( tc__f('__is_home') ) {
-	        return;
-	       }
-	        ?>
-	        <div class="tc-hot-crumble container" role="navigation">
-	          <div class="row">
-	            <div class="span12">
-	            <?php $this -> tc_breadcrumb_trail( $args); ?>
-	            </div>
-	          </div>
-	        </div>
-	        <?php
+	  	echo apply_filters( 
+	  			'tc_breadcrumb_display' , 
+				sprintf('<div class="tc-hot-crumble container" role="navigation"><div class="row"><div class="%1$s">%2$s</div></div></div>',
+					apply_filters( 'tc_breadcrumb_class', 'span12' ),
+					$this -> tc_breadcrumb_trail( $args)
+				)
+	  	);
     }
+
+
 
      /**
 	 * Breadcrumb Trail - A breadcrumb menu script for WordPress.
@@ -317,7 +313,7 @@ class TC_breadcrumb {
 			elseif ( 'page' !== $post_type ) {
 
 				/* If $front has been set, add it to the $path. */
-				if ( isset( $post_type_object) && $post_type_object->rewrite['with_front'] && $wp_rewrite->front )
+				if ( isset( $post_type_object) && isset($post_type_object->rewrite['with_front']) && $post_type_object->rewrite['with_front'] && $wp_rewrite->front )
 					$path .= trailingslashit( $wp_rewrite->front );
 
 				/* If there's a slug, add it to the $path. */
@@ -433,7 +429,7 @@ class TC_breadcrumb {
 				$post_type_object = get_post_type_object( get_query_var( 'post_type' ) );
 
 				/* If $front has been set, add it to the $path. */
-				if ( $post_type_object->rewrite['with_front'] && $wp_rewrite->front )
+				if ( isset($post_type_object->rewrite['with_front']) && $post_type_object->rewrite['with_front'] && $wp_rewrite->front )
 					$path .= trailingslashit( $wp_rewrite->front );
 
 				/* If there's a slug, add it to the $path. */

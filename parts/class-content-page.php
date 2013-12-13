@@ -14,9 +14,13 @@
 
 class TC_page {
 
+    //Access any method or var of the class with classname::$instance -> var or method():
+    static $instance;
+
     function __construct () {
+        self::$instance =& $this;
         //pages templates
-        add_action  ( '__page'                  , array( $this , 'tc_content_page' ));
+        add_action ( '__loop'                       , array( $this , 'tc_page_content' ));
     }
 
 
@@ -27,31 +31,38 @@ class TC_page {
      * @package Customizr
      * @since Customizr 3.0
      */
-    
-    function tc_content_page() {
-        ?>
-        <header>
-             <?php if(!is_front_page()) : ?>
-                 <?php 
-                    printf( '<h1 class="entry-title format-icon">%1$s %2$s</h1>' ,
-                        get_the_title(),
-                        ((is_user_logged_in()) && current_user_can('edit_pages')) ? '<span class="edit-link btn btn-inverse btn-mini"><a class="post-edit-link" href="'.get_edit_post_link().'" title="'.__( 'Edit page' , 'customizr' ).'">'.__( 'Edit page' , 'customizr' ).'</a></span>' : ''
-                    ); 
-                ?>
-                <hr class="featurette-divider">
-             <?php endif; ?>
-        </header>
+    function tc_page_content() {
+        if ( 'page' != tc__f('__post_type') || !is_singular() || tc__f( '__is_home_empty') )
+            return;
+        
+        
+        
 
+        ob_start();
+
+        do_action( '__before_content' );
+        ?>
+        
         <div class="entry-content">
-            <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>' , 'customizr' ) ); ?>
+            <?php 
+                the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>' , 'customizr' ) );
+                wp_link_pages( array( 
+                    'before'        => '<div class="btn-toolbar page-links"><div class="btn-group">' . __( 'Pages:' , 'customizr' ), 
+                    'after'         => '</div></div>',
+                    'link_before'   => '<button class="btn btn-small">',
+                    'link_after'    => '</button>',
+                    'separator'     => '',
+                    ) 
+                );
+            ?>
         </div>
 
-           <?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:' , 'customizr' ), 'after' => '</div>' ) ); ?>
+        <?php 
+        do_action( '__after_content' );
 
-        <footer class="entry-meta">
-
-        </footer><!-- .entry-meta -->
-        <?php
+        $html = ob_get_contents();
+        ob_end_clean();
+        echo apply_filters( 'tc_page_content', $html );
     }
 
 }//end of class

@@ -14,44 +14,41 @@
 
 class TC_admin_init {
 
+    //Access any method or var of the class with classname::$instance -> var or method():
+    static $instance;
+
     function __construct () {
-         global $wp_version;
-          //check WP version to include customizer functions, must be >= 3.4
-         if (version_compare( $wp_version, '3.4' , '>=' ) ) {
 
-              //require_once( TC_BASE.'inc/admin/tc_customize.php' );
+      self::$instance =& $this;
 
-            tc__( 'admin' , 'customize' );
+       global $wp_version;
+        //check WP version to include customizer functions, must be >= 3.4
+       if (version_compare( $wp_version, '3.4' , '>=' ) ) {
 
-          }
+          //require_once( TC_BASE.'inc/admin/tc_customize.php' );
+          TC___::$instance -> tc__( array ('admin' => array( array( 'inc/admin' , 'customize'))) );
 
-          else {
-              //redirect to an upgrade message page on activation if version < 3.4
-              add_action ( 'admin_menu'                      , array( $this , 'tc_add_fallback_page' ));
-              add_action ( 'admin_init'                      , array( $this , 'tc_theme_activation_fallback' ));
-          }
-          
-         //load the meta boxes
-          add_action ( 'admin_init'                          , array( $this , 'tc_load_meta_boxes' ));
+        }
 
-          //add welcome page in menu
-          add_action ( 'admin_menu'                          , array( $this , 'tc_add_welcome_page' ));
+        else {
+            //adds an information page if version < 3.4
+            add_action ( 'admin_menu'                      , array( $this , 'tc_add_fallback_page' ));
+        }
+        
+       //load the meta boxes
+        add_action ( 'admin_init'                          , array( $this , 'tc_load_meta_boxes' ));
 
-          //add help button to admin bar
-          add_action ( 'wp_before_admin_bar_render'          , array( $this , 'tc_add_help_button' ));
+        //add welcome page in menu
+        add_action ( 'admin_menu'                          , array( $this , 'tc_add_welcome_page' ));
 
-          //Redirect on activation (first activation only)
-          add_action ( 'admin_init'                          , array( $this , 'tc_theme_activation' ));
+        //add help button to admin bar
+        add_action ( 'wp_before_admin_bar_render'          , array( $this , 'tc_add_help_button' ));
 
-          //enqueue additional styling for admin screens
-          add_action ( 'admin_init'                          , array( $this , 'tc_admin_style' ));
+        //enqueue additional styling for admin screens
+        add_action ( 'admin_init'                          , array( $this , 'tc_admin_style' ));
 
-          add_filter('upgrader_post_install'                 , array( $this , 'tc_redirect_after_update' ), 1000);
-
-          remove_filter('upgrader_post_install'              , array( $this , 'tc_redirect_after_update' ), 1100);
-
-          //changelog
-          add_action ( 'changelog'                           , array( $this , 'tc_extract_changelog' ));
+        //changelog
+        add_action ( 'changelog'                           , array( $this , 'tc_extract_changelog' ));
     }
 
 
@@ -64,27 +61,8 @@ class TC_admin_init {
     */
     function tc_load_meta_boxes()  {
        //loads meta boxes
-          tc__( 'admin' , 'meta_boxes' );
+          TC___::$instance -> tc__( array ('admin' => array( array( 'inc/admin' , 'meta_boxes'))) );
     }
-
-
-
-
-
-   /**
-    *  On activation, redirect on an upgrade WordPress page if version < 3.4
-    * @package Customizr
-    * @since Customizr 1.1
-    */
-    function tc_theme_activation_fallback()  {
-        global $pagenow;
-        if ( is_admin() && 'themes.php' == $pagenow && isset( $_GET['activated'] ) ) 
-        {
-          #redirect to options page
-          header( 'Location: '.admin_url().'themes.php?page=upgrade_wp.php' ) ;
-        }
-    }
-
 
 
 
@@ -130,30 +108,6 @@ class TC_admin_init {
 
 
 
-
-  /**
-  *  On activation, redirect on the welcome panel page
-  * @package Customizr
-  * @since Customizr 1.0
-  */
-  function tc_theme_activation()
-  {
-    global $pagenow;
-    if ( is_admin() && 'themes.php' == $pagenow && isset( $_GET['activated'] ) ) 
-    {
-      #set frontpage to display_posts
-      //update_option( 'show_on_front' , 'posts' );
-
-      #set max number of posts to 10
-      //update_option( 'posts_per_page' , 10);
-
-      #redirect to welcome page
-      header( 'Location: '.admin_url().'themes.php?page=welcome.php' ) ;
-
-    }
-  }
-
-
    /**
    * Add fallback admin page.
    * @package Customizr
@@ -182,7 +136,7 @@ class TC_admin_init {
          $wp_admin_bar->add_menu( array(
            'parent' => 'top-secondary', // Off on the right side
            'id' => 'tc-customizr-help' ,
-           'title' =>  __( 'Customizr Help' , 'customizr' ),
+           'title' =>  __( 'Help' , 'customizr' ),
            'href' => admin_url( 'themes.php?page=welcome.php&help=true' ),
            'meta'   => array(
               'title'  => __( 'Need help with Customizr? Click here!', 'customizr' ),
@@ -200,22 +154,8 @@ class TC_admin_init {
    */
     function tc_welcome_panel() {
       
-      //CHECK IF WE ARE UPGRADING
-      $is_upgrade = false;
-
-      if ( isset($_GET['action']) ) {
-        if ( $_GET['action'] == 'customizr-update' ) {
-          $is_upgrade = true;
-        }
-      }
 
       $is_help = isset($_GET['help'])  ?  true : false;
-
-      //CHECK IF WE ARE USING A CHILD THEME
-      //get WP_Theme object of customizr
-      $tc_theme                     = wp_get_theme();
-      //define a boolean if using a child theme
-      $is_child                     = $tc_theme -> parent();
 
       ?>
       <div class="wrap about-wrap">
@@ -227,34 +167,31 @@ class TC_admin_init {
             <h1><?php printf( __( 'Welcome to Customizr %s','customizr' ), CUSTOMIZR_VER ); ?></h1>
           <?php endif; ?>
 
-        <?php  if ($is_upgrade) : ?>
 
-          <div class="about-text tc-welcome">
-            <?php printf( __( 'Thank you for updating to the latest version! Customizr %1$s has more features, is safer and more stable than ever <a href="#customizr-changelog">(see changelog)</a> to help you build an awesome website. Watch the <a href="#introduction">introduction video</a> and find inspiration in the <a href="#showcase">showcase</a>.<br/> Enjoy it! ','customizr' ),
-            CUSTOMIZR_VER
-            ); ?>
-            <a class="twitter-share-button" href="http://twitter.com/share" data-url="<?php echo TC_WEBSITE ?>customizr/" data-text="I just upgraded my WordPress site with the Customizr Theme version <?php echo CUSTOMIZR_VER?>!">Tweet it!</a>
-          </div>
-        
-        <?php elseif ($is_help) : ?>
+        <?php if ($is_help) : ?>
           <div class="changelog">
             <div class="about-text tc-welcome">
-            <?php printf( __( 'You can start by watching the <a href="#introduction">introduction video</a> or by reading <a href="%1$scustomizr" target="_blank">the documentation</a>.<br/> If you don\'t find an answer to your issue, don\'t panic! Since Customizr is used by a growing community of webmasters reporting bugs and making continuous improvements, you will probably find a solution to your problem either in the FAQ or in the user forum.','customizr' ),
-             TC_WEBSITE
+            <?php printf( __( 'You can start by watching the <a href="%1$s" target="_blank">introduction video</a> or by reading <a href="%2$s" target="_blank">the documentation</a>.<br/> If you don\'t find an answer to your issue, don\'t panic! Since Customizr is used by a growing community of webmasters reporting bugs and making continuous improvements, you will probably find a solution to your problem either in the FAQ or in the user forum.','customizr' ),
+             TC_WEBSITE, 
+             TC_WEBSITE.'customizr'
              ); ?>
              </div>
-            <div class="feature-section col three-col">
+            <div class="feature-section col two-col">
               <div>
                  <br/>
                   <a class="button-secondary customizr-help" title="documentation" href="<?php echo TC_WEBSITE ?>customizr" target="_blank"><?php _e( 'Read the documentation','customizr' ); ?></a>
               </div>
-              <div>
+              <div class="last-feature">
                 <br/>
                   <a class="button-secondary customizr-help" title="faq" href="<?php echo TC_WEBSITE ?>customizr/faq" target="_blank"><?php _e( 'Check the FAQ','customizr' ); ?></a>
                </div>
+            </div><!-- .two-col -->
+            <div class="feature-section col two-col">
+               <div>
+                  <a class="button-secondary customizr-help" title="code snippets" href="<?php echo TC_WEBSITE ?>code-snippets/" target="_blank"><?php _e( 'Code snippets','customizr' ); ?></a>
+              </div>
                <div class="last-feature">
-                <br/>
-                  <a class="button-secondary customizr-help" title="faq" href="http://wordpress.org/support/theme/customizr" target="_blank"><?php _e( 'Discuss in the user forum','customizr' ); ?></a>
+                  <a class="button-secondary customizr-help" title="forum" href="http://wordpress.org/support/theme/customizr" target="_blank"><?php _e( 'Discuss in the user forum','customizr' ); ?></a>
                </div>
             </div><!-- .two-col -->
           </div><!-- .changelog -->
@@ -262,18 +199,15 @@ class TC_admin_init {
         <?php else: ?>
         
           <div class="about-text tc-welcome">
-            <?php printf( __( 'Thank you for using Customizr! Customizr %1$s has more features, is safer and more stable than ever <a href="#customizr-changelog">(see the changelog)</a> to help you build an awesome website. Watch the <a href="#introduction">introduction video</a> and find inspiration in the <a href="#showcase">showcase</a>.<br/>Enjoy it! ','customizr' ),
-             CUSTOMIZR_VER 
+            <?php printf( __( 'Thank you for using Customizr! Customizr %1$s has more features, is safer and more stable than ever <a href="#customizr-changelog">(see the changelog)</a> to help you build an awesome website. Watch the <a href="%2$s" target="_blank">introduction video</a> and find inspiration in the <a href="#showcase">showcase</a>.<br/>Enjoy it! ','customizr' ),
+             CUSTOMIZR_VER,
+             TC_WEBSITE
              ); ?>
-             <a class="twitter-share-button" href="http://twitter.com/share" data-url="<?php echo TC_WEBSITE ?>customizr/" data-text="My WordPress website is built with the Customizr Theme version <?php echo CUSTOMIZR_VER ?>!">Tweet it!</a></div>
+          </div>
         
         <?php endif; ?>
 
-        <div id="tweetBtn">
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-        </div>
-
-        <?php if ($is_child) : ?>
+        <?php if ( TC___::$instance -> tc_is_child() ) : ?>
           <div class="changelog point-releases"></div>
 
           <div class="tc-upgrade-notice">
@@ -294,8 +228,8 @@ class TC_admin_init {
          <div class="feature-section col three-col">
 
             <div>
-              <h3><?php _e( 'We need coffee...','customizr' ); ?></h3>
-              <p><?php  _e( 'Either you are using Customizr for personal or business purposes, <strong>we do our best do make it the perfect free theme for you</strong>.<br /> Any kind of sponsorship will be appreciated!','customizr' ) ?></br>
+              <h3><?php _e( 'We need sponsors!','customizr' ); ?></h3>
+              <p><?php  _e( '<strong>We do our best do make Customizr the perfect free theme for you!</strong><br/> Please help support it\'s continued development with a donation of $20, $50, or even $100.','customizr' ) ?></br>
 
                 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8CTH6YFDBQYGU" target="_blank" rel="nofollow"><img class="tc-donate" src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif" alt="Make a donation for Customizr" /></a>
               </p>
@@ -309,47 +243,26 @@ class TC_admin_init {
 
             <div class="last-feature">
               <h3><?php _e( 'Follow us','customizr' ); ?></h3>
-              <p class="tc-follow"><a href="<?php echo TC_WEBSITE ?>" target="_blank"><img src="<?php echo TC_BASE_URL.'inc/admin/img/tc.png' ?>" alt="Themes and co" /></a></p>
+              <p class="tc-follow"><a href="<?php echo TC_WEBSITE.'blog' ?>" target="_blank"><img src="<?php echo TC_BASE_URL.'inc/admin/img/tc.png' ?>" alt="Themes and co" /></a></p>
               <!-- Place this tag where you want the widget to render. -->
-              <div class="g-follow" data-annotation="bubble" data-height="24" data-href="//plus.google.com/102674909694270155854" data-rel="author"></div>
-
-              <!-- Place this tag after the last widget tag. -->
-              <script type="text/javascript">
-                (function() {
-                  var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-                  po.src = 'https://apis.google.com/js/plusone.js';
-                  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-                })();
-              </script>
-            </div>
 
         </div><!-- .feature-section -->
       </div><!-- .changelog -->
 
       <div id="showcase" class="changelog">
-        <h3><?php _e('New : Customizr showcase' ,'customizr') ?></h3>
+        <h3 style="text-align:right"><?php _e('Customizr Showcase' ,'customizr') ?></h3>
 
-        <div class="feature-section images-stagger-right">
-           <a class="" title="Visit the showcase" href="<?php echo TC_WEBSITE ?>customizr/showcase/" target="_blank"><img alt="Customizr Showcase" src="<?php echo TC_BASE_URL.'inc/admin/img/mu2.jpg' ?>" class=""></a>
-          <h4><?php _e('Find inspiration for your next Customizr based website!' ,'customizr') ?></h4>
-          <p><?php _e('This showcase aims to show what can be done with Customizr and helping other users to find inspiration for their webdesign.' , 'customizr') ?>
+        <div class="feature-section images-stagger-left">
+           <a class="" title="<?php _e('Visit the showcase','customizr') ?>" href="<?php echo TC_WEBSITE ?>customizr/showcase/" target="_blank"><img alt="Customizr Showcase" src="<?php echo TC_BASE_URL.'inc/admin/img/mu2.png' ?>" class=""></a>
+          <h4 style="text-align: right"><?php _e('Find inspiration for your next Customizr based website!' ,'customizr') ?></h4>
+          <p style="text-align: right"><?php _e('This showcase aims to show what can be done with Customizr and helping other users to find inspiration for their web design.' , 'customizr') ?>
           </p>
-          <p><?php _e('Do you think you made an awesome website that can inspire people? Submitting a site for review is quick and easy to do.' , 'customizr') ?></br>
+          <p style="text-align: right"><?php _e('Do you think you made an awesome website that can inspire people? Submitting a site for review is quick and easy to do.' , 'customizr') ?></br>
           </p>
-          <p style="text-align:center">    
-              <a class="button-primary review-customizr" title="Visit the showcase" href="<?php echo TC_WEBSITE ?>customizr/showcase/" target="_blank">Visit the showcase &raquo;</a>
+          <p style="text-align:right">    
+              <a class="button-primary review-customizr" title="<?php _e('Visit the showcase','customizr') ?>" href="<?php echo TC_WEBSITE ?>customizr/showcase/" target="_blank"><?php _e('Visit the showcase','customizr') ?> &raquo;</a>
           </p>
         </div>
-      </div>
-
-      <div id="introduction" class="changelog">
-
-        <h3><?php _e( 'Discover Customizr : quick video introduction' , 'customizr' ); ?></h3>
-          
-          <div style="text-align:center">
-            <iframe width="853" height="480" src="//www.youtube.com/embed/Hj7lGnZgwQs" frameborder="0" allowfullscreen></iframe>
-          </div>
-
       </div>
 
       <div id="customizr-changelog" class="changelog">
@@ -384,35 +297,6 @@ class TC_admin_init {
 
 
 
-  /**
-   * Redirect after update of Customizr
-   * @package Customizr
-   * @since Customizr 3.0.5
-   */
-    function tc_redirect_after_update() {
-      //check context
-      if ( !isset($_GET['action']) ) {
-        return false;
-      }
-      
-      if ( !isset($_GET['theme']) ) {
-        return false;
-      }
-
-      //is_customizr_upgrade ?
-      if ( $_GET['action'] == 'upgrade-theme' && $_GET['theme'] == 'customizr') {
-        show_message( '<span class="hide-if-no-js">' . sprintf( __( 'Welcome to the new version of Customizr. You will be redirected to the About screen. If not, click <a href="%1$s">here</a>.' ), esc_url( self_admin_url( 'themes.php?page=welcome.php&action=customizr-update' ) ) ) . '</span>' );
-        ?>
-          <script type="text/javascript">
-          window.location = '<?php echo self_admin_url( 'themes.php?page=welcome.php&action=customizr-update' ); ?>';
-          </script>
-        <?php
-      }
-
-    }
-
-
-
 
     /**
    * Extract changelog of latest version from readme.txt file
@@ -421,7 +305,15 @@ class TC_admin_init {
    */
     function tc_extract_changelog() {
       
-      $stylelines = explode("\n", implode('', file(TC_BASE_URL."/readme.txt")));
+      if( !file_exists(TC_BASE."readme.txt") ) {
+        return;
+      }
+      if( !is_readable(TC_BASE."readme.txt") ) {
+        echo '<p>The changelog in readme.txt is not readable.</p>';
+        return;
+      }
+      
+      $stylelines = explode("\n", implode('', file(TC_BASE."readme.txt")));
       $read = false;
       $i = 0;
 

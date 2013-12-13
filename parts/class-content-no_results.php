@@ -14,37 +14,35 @@
 
 class TC_no_results {
 
+    //Access any method or var of the class with classname::$instance -> var or method():
+    static $instance;
+
     function __construct () {
-        add_action  ( '__no_result'             , array( $this , 'tc_content_no_result' ));
+        self::$instance =& $this;
+        add_action  ( '__loop'                        , array( $this , 'tc_no_result_content' ));
     }
 
 
 
     /**
-     * The template part for displaying no search results
+     * Rendering the no search results
      *
      * @package Customizr
      * @since Customizr 3.0
      */
-    function tc_content_no_result() {
-        ?>
-        <?php global $content_class ?>
-
-        <div class="tc-content <?php echo $content_class; ?> format-quote">
-
-            <div class="entry-content format-icon">
-
-                <blockquote><p><?php _e( 'Success is the ability to go from one failure to another with no loss of enthusiasm...' , 'customizr' ) ?></p>
-                <cite><?php _e( 'Sir Winston Churchill' , 'customizr' ) ?></cite>
-                </blockquote>
-                <p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.' , 'customizr' ); ?></p>
-                <?php get_search_form(); ?>
-            </div>
-
-            <hr class="featurette-divider">
-
-        </div><!--content -->
-        <?php
+    function tc_no_result_content() {
+        global $wp_query;
+        if ( !is_search() || (is_search() && 0 != $wp_query -> post_count) )
+            return;
+        
+        echo apply_filters( 'tc_404_content',
+            sprintf('<div class="%1$s"><div class="entry-content %2$s">%3$s</div>%4$s</div>',
+                apply_filters( 'tc_no_results_wrapper_class', 'tc-content span12 format-quote' ),
+                apply_filters( 'tc_no_results_content_icon', 'format-icon' ),
+                TC_init::$instance -> content_no_results,
+                apply_filters( 'tc_no_results_separator', '<hr class="featurette-divider '.current_filter().'">' ) 
+            )
+        );
     }
 
 }//end of class
