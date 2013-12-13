@@ -1,0 +1,213 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: SimplyBlack v1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2013-12-12 23:45:48+0000\n"
+"Last-Translator: Guido van der Leest\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: Dutch\n"
+"X-Poedit-Country: NETHERLANDS\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: 404.php:9
+#: search.php:26
+#@ SimplyBlack
+msgid "Nothing Found"
+msgstr "Niets gevonden"
+
+#: 404.php:10
+#: archive.php:37
+#: index.php:29
+#: search.php:27
+#@ SimplyBlack
+msgid "Sorry, no posts matched your criteria."
+msgstr "Sorry, er zijn helaas geen berichten gevonden."
+
+#: archive.php:12
+#@ SimplyBlack
+msgid "Archive"
+msgstr "Archief"
+
+#: archive.php:14
+#@ SimplyBlack
+msgid "Daily Archives"
+msgstr "Dag Archieven"
+
+#: archive.php:16
+#@ SimplyBlack
+msgid "Monthly Archives"
+msgstr "Maand Archieven"
+
+#: archive.php:18
+#@ SimplyBlack
+msgid "Yearly Archives"
+msgstr "Jaar Archieven"
+
+#: archive.php:20
+#@ SimplyBlack
+msgid "Author Archives"
+msgstr "Auteur Archieven"
+
+#: archive.php:22
+#@ SimplyBlack
+msgid "Tag Archives"
+msgstr "Tag Archieven"
+
+#: archive.php:27
+#: index.php:18
+#: search.php:15
+#@ SimplyBlack
+msgid "Permalink to "
+msgstr "Permalink naar "
+
+#: archive.php:28
+#: index.php:20
+#: search.php:16
+#: single.php:15
+#@ SimplyBlack
+msgid "Posted on "
+msgstr "Geplaatst op "
+
+#: archive.php:41
+#: index.php:33
+#: search.php:33
+#@ SimplyBlack
+msgid "&laquo; Older posts"
+msgstr "&laquo; Oudere berichten"
+
+#: archive.php:42
+#: index.php:34
+#: search.php:34
+#@ SimplyBlack
+msgid "Newer posts &raquo;"
+msgstr "Nieuwere berichten &raquo;"
+
+#: functions.php:110
+#@ SimplyBlack
+msgid "Primary Sidebar"
+msgstr "Hoofd Sidebar"
+
+#: functions.php:112
+#: functions.php:122
+#: functions.php:132
+#: functions.php:142
+#@ SimplyBlack
+msgid "Select widgets from the right-hand side."
+msgstr "Selecteer widgets van de rechterkant."
+
+#: functions.php:156
+#@ SimplyBlack
+msgid "Read More &raquo;"
+msgstr "Lees Meer &raquo;"
+
+#: functions.php:173
+#@ SimplyBlack
+msgid "Boats"
+msgstr "Boten"
+
+#: index.php:12
+#@ SimplyBlack
+msgid "Featured post"
+msgstr "Aanbevolen bericht"
+
+#: page-full.php:20
+#: page.php:19
+#: single.php:28
+#@ SimplyBlack
+msgid "Edit"
+msgstr "Bewerk"
+
+#: search.php:11
+#, php-format
+#@ SimplyBlack
+msgid "Search Results for: %s"
+msgstr "Zoekresultaat voor: %s"
+
+#: single.php:20
+#@ SimplyBlack
+msgid "Posted in "
+msgstr "Geplaatst in "
+
+#: comments.php:37
+#@ SimplyBlack
+msgid "&laquo; Older Comments"
+msgstr "&laquo; Oudere Reacties"
+
+#: comments.php:38
+#@ SimplyBlack
+msgid "Newer Comments &raquo;"
+msgstr "Nieuwere Reacties &raquo;"
+
+#: functions.php:120
+#@ SimplyBlack
+msgid "Footer Sidebar Right"
+msgstr "Footer Sidebar Rechts"
+
+#: functions.php:140
+#@ SimplyBlack
+msgid "Footer Sidebar Left"
+msgstr "Footer Sidebar Links"
+
+#: functions.php:18
+#@ SimplyBlack
+msgid "Primary Navigation"
+msgstr "Hoofdmenu"
+
+#: comments.php:18
+#, php-format
+#@ SimplyBlack
+msgid "1 response on %2$s"
+msgid_plural "%1$s responses on %2$s"
+msgstr[0] "1 reactie op %2$s"
+msgstr[1] "%1$s reacties op %2$s"
+
+#: functions.php:58
+#: functions.php:64
+#@ SimplyBlack
+msgid "Logo"
+msgstr "Logo"
+
+#: archive.php:29
+#: index.php:21
+#: search.php:17
+#, php-format
+#@ SimplyBlack
+msgid "1 response"
+msgid_plural "%1$s responses"
+msgstr[0] "1 reactie"
+msgstr[1] "%1$s reacties"
+
+#: archive.php:28
+#: index.php:20
+#: search.php:16
+#: single.php:15
+#@ SimplyBlack
+msgid "By "
+msgstr "Door "
+
+#: functions.php:130
+#@ SimplyBlack
+msgid "Footer Sidebar Middle"
+msgstr "Footer Sidebar Midden"
+
+#: functions.php:60
+#@ SimplyBlack
+msgid "Upload a logo to replace blogname and description in header"
+msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
+
+#: comments.php:43
+#@ SimplyBlack
+msgid "Comments are closed"
+msgstr "Reageren is niet mogelijk"
+

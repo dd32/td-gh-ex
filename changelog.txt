@@ -1,0 +1,7 @@
+CHANGELOG
+=========
+
+SimplyBlack version 1.0 - december 2013 
+- first stable release
+
+
