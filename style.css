@@ -4,7 +4,7 @@ Author: SiteOrigin
 Author URI: http://siteorigin.com/
 Theme URI: http://siteorigin.com/theme/vantage/
 Description: Vantage is a flexible multipurpose theme. It's strength lies in its tight integration with some powerful plugins like Page Builder for responsive page layouts, MetaSlider for big beautiful sliders and WooCommerce to help you sell online. Vantage is fully responsive and retina ready. Use it to start a business site, portfolio or online store.
-Version: 1.1.6
+Version: 1.1.7
 License: GNU General Public License 2.0
 License URI: license.txt
 Tags: responsive-layout, fluid-layout, custom-background, custom-menu, featured-images, theme-options, threaded-comments, translation-ready, black, white, light, one-column, two-columns, full-width-template
@@ -1061,7 +1061,7 @@ body.mobile-device .main-navigation li:hover ul {
 	width: 17px;
 	height: 17px;
 	
-	background: url('images/sprites-1-1-6.png') no-repeat -84px 0;
+	background: url('images/sprites-1-1-7.png') no-repeat 0 -27px;
 	display: block;
 	margin-left: -8.5px;
 	margin-top: -8px;
@@ -1072,7 +1072,7 @@ body.mobile-device .main-navigation li:hover ul {
 }
 
 #search-icon #search-icon-icon:hover .icon {
-	background: url('images/sprites-1-1-6.png') no-repeat -66px 0;
+	background: url('images/sprites-1-1-7.png') no-repeat 0 -45px;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
@@ -2080,7 +2080,7 @@ body.layout-full {
 	width: 48px;
 	height: 48px;
 	
-	background: url('images/sprites-1-1-6.png') no-repeat -66px -18px;
+	background: url('images/sprites-1-1-7.png') no-repeat -84px -27px;
 	opacity: 0;
 	-ms-transform: scale(0, 0);
 	-webkit-transform: scale(0, 0);
@@ -2234,17 +2234,17 @@ body.layout-full {
 	width: 14px;
 	height: 14px;
 	
-	background: url('images/sprites-1-1-6.png') no-repeat -102px 0;
+	background: url('images/sprites-1-1-7.png') no-repeat 0 -63px;
 	cursor: pointer;
 	display: block;
 }
 
 .flexslider .flex-control-paging li a.flex-active {
-	background: url('images/sprites-1-1-6.png') no-repeat -117px 0;
+	background: url('images/sprites-1-1-7.png') no-repeat 0 -78px;
 }
 
 .flexslider .flex-control-paging li a:hover {
-	background: url('images/sprites-1-1-6.png') no-repeat -102px 0;
+	background: url('images/sprites-1-1-7.png') no-repeat 0 -63px;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
@@ -2260,7 +2260,7 @@ body.layout-full {
 	}
 
 	.flexslider .flex-control-paging li a:hover {
-		background: url('images/sprites-1-1-6.png') no-repeat -102px 0;
+		background: url('images/sprites-1-1-7.png') no-repeat 0 -63px;
 		background-size: 14px 14px;
 	}
 
@@ -2294,13 +2294,13 @@ body.layout-full {
 .flexslider .flex-direction-nav li a.flex-prev {
 	left: 0;
 	
-	background: url('images/sprites-1-1-6.png') no-repeat -33px 0;
+	background: url('images/sprites-1-1-7.png') no-repeat -18px -9px;
 }
 
 .flexslider .flex-direction-nav li a.flex-next {
 	right: 0;
 	
-	background: url('images/sprites-1-1-6.png') no-repeat 0 0;
+	background: url('images/sprites-1-1-7.png') no-repeat -51px -9px;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
@@ -2689,7 +2689,7 @@ body.layout-full {
 	width: 5px;
 	height: 8px;
 	
-	background: url('images/sprites-1-1-6.png') no-repeat -132px 0;
+	background: url('images/sprites-1-1-7.png') no-repeat 0 0;
 	display: inline-block;
 	margin-left: 3px;
 }
@@ -3147,11 +3147,11 @@ body.layout-full {
 }
 
 .vantage-carousel-title a.next {
-	background: url('images/sprites-1-1-6.png') no-repeat -115px -18px;
+	background: url('images/sprites-1-1-7.png') no-repeat -84px -9px;
 }
 
 .vantage-carousel-title a.previous {
-	background: url('images/sprites-1-1-6.png') no-repeat -133px -18px;
+	background: url('images/sprites-1-1-7.png') no-repeat 0 -9px;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
