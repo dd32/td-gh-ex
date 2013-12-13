@@ -48,6 +48,10 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 1.8.4 =
+* Updated Screenshot for wordpress 3.8
+* Updated tag for wordpress 3.8
+
 = Version: 1.8.3 =
 * Add options to order portfolio items on the home page.
 * Add options to order portfolio items on the portfolio gird page.

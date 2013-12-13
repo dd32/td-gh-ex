@@ -101,8 +101,8 @@ Template Name: Portfolio Grid
                 </div> <!--portfoliowrapper-->
                                     
                     <?php if ($wp_query->max_num_pages > 1) : ?>
-                            <?php if(function_exists('wp_pagenavi')) { ?>
-                            <?php wp_pagenavi(); ?>   
+                            <?php if(function_exists('kad_wp_pagenavi')) { ?>
+                            <?php kad_wp_pagenavi(); ?>   
                             <?php } else { ?>      
                             <nav id="post-nav" class="pager">
                                 <div class="previous"><?php next_posts_link(__('&larr; Older posts', 'virtue')); ?></div>

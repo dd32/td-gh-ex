@@ -32,7 +32,7 @@ function hex2rgb($hex) {
 }
 
 ///Page Navigation
-	function wp_pagenavi() {
+	function kad_wp_pagenavi() {
   global $wp_query, $wp_rewrite;
   $pages = '';
   $max = $wp_query->max_num_pages;

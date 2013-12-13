@@ -2,7 +2,6 @@
 /*-----------------------------------------------------------------------------------*/
 /* Include Theme Functions */
 /*-----------------------------------------------------------------------------------*/
-//require_once locate_template('/lib/activation.php');      			// Theme activation
 require_once locate_template('/themeoptions/framework.php');        // Options framework
 require_once locate_template('/themeoptions/options.php');     		// Options framework
 require_once locate_template('/lib/utils.php');           			// Utility functions
