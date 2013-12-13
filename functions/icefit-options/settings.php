@@ -56,7 +56,16 @@ function boldr_settings_template() {
 			'desc'          => 'Upload your own logo',
 			'id'            => 'logo',
 			'type'          => 'image',
-			'default'       => get_template_directory_uri() .'/img/logo.png',
+			'default'       => '',
+		);
+
+		$settings_options[] = array(
+			'name'          => 'Site Title',
+			'desc'          => 'Choose "display title" if you want to use a text-based title instead of an uploaded logo.',
+			'id'            => 'header_title',
+			'type'          => 'radio',
+			'default'       => 'Use Logo',
+			'values'		=> array ('Use Logo', 'Display Title'),
 		);
 
 		$settings_options[] = array(
@@ -65,6 +74,33 @@ function boldr_settings_template() {
 			'id'            => 'favicon',
 			'type'          => 'image',
 			'default'       => '',
+		);
+
+		$settings_options[] = array(
+			'name'          => 'Display Tagline',
+			'desc'          => 'Display your site description (tagline) on the right side of the header.',
+			'id'            => 'header_tagline',
+			'type'          => 'radio',
+			'default'       => 'Off',
+			'values'		=> array ('Off', 'On'),
+		);
+
+		$settings_options[] = array(
+			'name'          => 'Blog Index Shows',
+			'desc'          => 'Choose what content to display on Main Blog page and archives',
+			'id'            => 'blog_index_shows',
+			'type'          => 'radio',
+			'default'       => 'Excerpt',
+			'values'		=> array ('Excerpt', 'Full content'),
+		);
+
+		$settings_options[] = array(
+			'name'          => __('Responsive mode', 'boldr'),
+			'desc'          => __('Turn this setting off if you want your site to be unresponsive.', 'boldr'),
+			'id'            => 'responsive_mode',
+			'type'          => 'radio',
+			'default'       => 'on',
+			'values'		=> array ('on', 'off'),
 		);
 
 	$settings_options[] = array('type' => 'end_menu');
