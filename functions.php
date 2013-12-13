@@ -3,7 +3,7 @@
  * Anarcho Notepad functions and definitions.
  *
  * @package	Anarcho Notepad
- * @since	2.1.5
+ * @since	2.1.6
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013, Arthur Gareginyan
  * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
@@ -31,12 +31,14 @@ function anarcho_notepad_setup() {
 
 	// This feature enables Custom Header.
 	add_theme_support( 'custom-header', array(
-	  'flex-width'    => true,
-	  'width'         => 500,
-	  'flex-height'    => true,
-	  'height'        => 150,
-	  //'default-image' => get_template_directory_uri() . '/images/logotype.jpg',
-	  'uploads'       => true,
+	  'flex-width'    	   => true,
+	  'width'         	   => 500,
+	  'flex-height'    	   => true,
+	  'height'        	   => 150,
+	  //'default-text-color'     => '#e5e5e5',
+	  'header-text'            => true,
+	  //'default-image' 	   => get_template_directory_uri() . '/images/logotype.jpg',
+	  'uploads'       	   => true,
 	) );
 
         // This feature enables Featured Images (also known as post thumbnails).
@@ -598,7 +600,7 @@ var tit=document.title,c=0;function writetitle(){document.title=tit.substring(0,
 			echo	".site-description {font-family: '" . $x . "';}" . "\n";
 			echo '</style>' . "\n";
 		}
-		/* End Custom Font Styles */
+		/* End - Custom Font Styles */
 
 	?><style type="text/css"><?php
 
@@ -613,13 +615,25 @@ var tit=document.title,c=0;function writetitle(){document.title=tit.substring(0,
 			}
 		<?php
 		}
-		/* End Has the text been hidden? */
+		/* End - Has the text been hidden? */
 
-		/* If the user has set a custom color for the text, use that. */
+		/* If the user has set a custom color for the text in the customizer, use that. */
 		?>
-		.site-title a { color: <?php echo get_option('title_color'); ?>; }
+		.site-title { color: <?php echo get_option('title_color'); ?>; }
 		.site-description { color: <?php echo get_option('tagline_color'); ?>; }
 		<?php
+		/* End - If the user has set a custom color for the text in the customizer, use that. */
+
+		/* If the user has set a custom color for the text in admin panel, use that. */
+	       	/*if ( 'blank' != get_header_textcolor() ) {
+    		?>
+        		.site-title,
+        		.site-description {
+            			color: #<?php echo get_header_textcolor(); ?>;
+       		 	}
+		<?php
+		}*/
+		/*End - If the user has set a custom color for the text in admin panel, use that. */
 
 	?></style><?php
 
@@ -902,6 +916,7 @@ function anarcho_breadcrumbs() {
 // END-Breadcrumbs
 
 // Page Navigation
+/* Display navigation to next/previous set of posts when applicable. */
 function anarcho_page_nav() {
  if(get_theme_mod('enable_page-nav') == '1') {
   global $wp_query, $wp_rewrite;
@@ -920,6 +935,29 @@ function anarcho_page_nav() {
   if ($total == 1 && $max > 0) $pages = '<span class="pages-nav">' . __('Page ', 'anarcho-notepad') . $current . __(' of the ', 'anarcho-notepad') . $max . '</span>'."\r\n";
   echo $pages . paginate_links($a);
   if ($max > 0) echo '</nav><br/>';
+ }
+ else {
+	global $wp_query;
+
+	// Don't print empty markup if there's only one page.
+	if ( $wp_query->max_num_pages < 2 )
+		return;
+	?>
+	<nav class="navigation paging-navigation" role="navigation">
+		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'anarcho-notepad' ); ?></h1>
+		<div class="nav-links">
+
+			<?php if ( get_next_posts_link() ) : ?>
+			<div class="nav-previous"><?php next_posts_link( __( '<i class="fa fa-arrow-left"></i> Older posts', 'anarcho-notepad' ) ); ?></div>
+			<?php endif; ?>
+
+			<?php if ( get_previous_posts_link() ) : ?>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <i class="fa fa-arrow-right"></i>', 'anarcho-notepad' ) ); ?></div>
+			<?php endif; ?>
+
+		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+	<?php
  }
 }
 // END-Page Navigation
@@ -1033,4 +1071,5 @@ function anarcho_comment_form($anarcho_defaults) {
 }
 add_filter('comment_form_defaults', 'anarcho_comment_form');
 // END-Comments-Form
+
 ?>

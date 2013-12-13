@@ -3,7 +3,7 @@
  * The template for displaying the footer.
  *
  * @package	Anarcho Notepad
- * @since	2.1.5
+ * @since	2.1.6
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013, Arthur Gareginyan
  * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
@@ -23,7 +23,7 @@
 <?php }  ?>
 </div>
 
-<?php echo esc_html(get_theme_mod('script_footer')); ?>
+<?php echo get_theme_mod('script_footer'); ?>
 
 <a id="back-top" href="#top"><i class="fa fa-arrow-up fa-lg"></i></a>
 

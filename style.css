@@ -2,7 +2,7 @@
 Theme Name: Anarcho Notepad
 Theme URI: http://mycyberuniverse.tk/anarcho-notepad.html
 Description: Inspired by the idea of anarchy, I designed this theme for your personal blogs and diaries. Anarcho Notepad can be easily customized. It utilizes latest HTML 5, CSS3 and wordpress native functions for creating the awesomeness that looks good on every browser. I’m constantly adding new features to this theme to allow you to personalize it to your own needs. If you want a new feature or just want to be able to change something just ask me and I would be happy to add it for you. I would like to thank you for your support, visit the Theme URI for the update history, and Enjoy!
-Version: 2.1.5
+Version: 2.1.6
 Author: Arthur (Berserkr) Gareginyan
 Author URI: http://mycyberuniverse.tk/author.html
 Tags: white, light, two-columns, right-sidebar, flexible-width, custom-background, theme-options, threaded-comments, translation-ready
@@ -27,6 +27,8 @@ Text Domain: anarcho-notepad
 
 section, article, header, footer, nav, aside, hgroup {
 	display: block; }
+
+[hidden] { display: none; }
 
 /* Links
 -------------------------------------------------------------- */
@@ -99,20 +101,15 @@ body {
 	margin-left: 4%;
 	overflow: hidden;
 	word-wrap: break-word; }
-.logo {
-	position: fixed; }
-.site-title  {
+#title a { color: #e5e5e5; }
+.logo { position: absolute; }
+.site-title {
 	font-size: 300%;
-	color: #e5e5e5;
 	line-height: 0.8;
 	margin: 0;
 	text-align: center;
 	position: relative;
 	padding: 58px 0 10px; }
-.site-title  a {
-	color: #e5e5e5; }
-.site-title  a:hover {
-	text-decoration:none; }
 .site-description {
 	font-size:120%;
 	color: #9b9b9b;
@@ -763,6 +760,16 @@ img.alignleft {
 	border-radius: 10px; }
 /* End-Breadcrumbs */
 
+/* Navigation
+-------------------------------------------------------------- */
+.nav-links {
+	color: #000000;
+	font-size: 20px;
+	font-style: italic;
+	font-weight: 300;
+	padding: 20px 0; }
+/* End-Navigation */
+
 /* Page Navigation
 -------------------------------------------------------------- */
 #page-nav {
@@ -781,16 +788,16 @@ img.alignleft {
 #page-nav a:hover,
 #page-nav span.current { border-color: #BFBFBF; }
 #page-nav span.current { font-weight: bold; }
+.paging-navigation .nav-links {
+	margin: 0 auto;
+	max-width: 1040px; }
+.paging-navigation .nav-previous {
+	float: left; }
+.paging-navigation .nav-next { text-align: right; }
 /* End-Page Navigation */
 
 /* Post Navigation
 -------------------------------------------------------------- */
-.post-navigation {
-	color: #000000;
-	font-size: 20px;
-	font-style: italic;
-	font-weight: 300;
-	padding: 20px 0; }
 .post-navigation .nav-links {
 	margin: 0 auto;
 	max-width: 1040px; }

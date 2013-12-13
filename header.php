@@ -3,7 +3,7 @@
  * The Header for our theme.
  *
  * @package	Anarcho Notepad
- * @since	2.1.5
+ * @since	2.1.6
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013, Arthur Gareginyan
  * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
@@ -33,7 +33,7 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-	<?php echo esc_html(get_theme_mod('script_header')); ?>
+	<?php echo get_theme_mod('script_header'); ?>
 
 	<?php wp_head(); ?>
 
@@ -47,6 +47,7 @@
 
 	<div id="title">
 	  <a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+
 	   <?php $header_image = get_header_image();
 		if ( !empty( $header_image ) ) : ?>
 			<img
@@ -56,10 +57,11 @@
 				width="<?php echo esc_attr(get_custom_header()->width); ?>" 
 				alt="<?php bloginfo('name'); ?>" 
 			/>
-<?php endif; ?>
+	   <?php endif; ?>
 
 	    <h1 class="site-title"><?php bloginfo('name'); ?></h1>
 	    <h2 class="site-description"><?php bloginfo('description'); ?></h2>
+
 	  </a>
 	</div>
 

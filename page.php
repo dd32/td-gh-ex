@@ -3,7 +3,7 @@
  * The template for displaying all pages.
  *
  * @package	Anarcho Notepad
- * @since	2.1.5
+ * @since	2.1.6
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013, Arthur Gareginyan
  * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
@@ -33,9 +33,6 @@
     </article>
     <?php comments_template(); ?>
     <?php endwhile; ?>
-
-    <div class="post-nav">
-    </div>
 
     <?php else : ?>
 

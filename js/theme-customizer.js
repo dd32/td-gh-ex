@@ -12,7 +12,7 @@
 	// Update the site title in real time...
 	wp.customize( 'blogname', function( value ) {
 		value.bind( function( newval ) {
-			$( '.site-title a' ).html( newval );
+			$( '.site-title' ).html( newval );
 		} );
 	} );
 	
@@ -26,7 +26,7 @@
 	//Update site title color in real time...
 	wp.customize( 'title_color', function( value ) {
 		value.bind( function( newval ) {
-			$('.site-title a').css('color', newval );
+			$('.site-title').css('color', newval );
 		} );
 	} );
 

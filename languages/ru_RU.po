@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Anarcho Notepad v2.1.5\n"
+"Project-Id-Version: Anarcho Notepad v2.1.6\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-08-20 20:42+0300\n"
-"PO-Revision-Date: 2013-11-28 04:55:12+0000\n"
+"PO-Revision-Date: 2013-12-08 15:09:32+0000\n"
 "Last-Translator: Arthur Gareginyan aka Brute9000 <arthurgareginyan@gmail.com>\n"
 "Language-Team: Arthur Gareginyan aka Brute9000 <arthurgareginyan@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -30,22 +30,22 @@ msgstr ""
 msgid "Category: "
 msgstr "Рубрика: "
 
-#: functions.php:920
+#: functions.php:929
 #@ anarcho-notepad
 msgid "Page "
 msgstr "Страница "
 
-#: functions.php:920
+#: functions.php:929
 #@ anarcho-notepad
 msgid " of the "
 msgstr " из "
 
-#: functions.php:917
+#: functions.php:926
 #@ anarcho-notepad
 msgid "Previous page"
 msgstr "Предыдущяя страница"
 
-#: functions.php:918
+#: functions.php:927
 #@ anarcho-notepad
 msgid "Next page"
 msgstr "Следующая страница"
@@ -91,7 +91,7 @@ msgid "Put here your scripts"
 msgstr "Поместите сюда свои скрипты"
 
 #: functions.php:854
-#: functions.php:882
+#: functions.php:891
 #@ anarcho-notepad
 msgid "You&apos;re currently reading "
 msgstr "Вы читаете "
@@ -116,22 +116,17 @@ msgstr "Архив по месяцам "
 msgid "Archive by year "
 msgstr "Архив по годам "
 
-#: functions.php:884
-#@ anarcho-notepad
-msgid "Search results for "
-msgstr "Мскать по слову "
-
-#: functions.php:886
+#: functions.php:895
 #@ anarcho-notepad
 msgid "Archive by tag "
 msgstr "Архив по тегам "
 
-#: functions.php:890
+#: functions.php:899
 #@ anarcho-notepad
 msgid "Articles posted by "
 msgstr "Статьи  опубликованные  "
 
-#: functions.php:892
+#: functions.php:901
 #@ anarcho-notepad
 msgid "You got it "
 msgstr ""
@@ -191,85 +186,85 @@ msgstr ""
 msgid "Comments are closed."
 msgstr "Комментирование закрыто."
 
-#: functions.php:966
+#: functions.php:975
 #@ anarcho-notepad
 msgid "Pingback:"
 msgstr ""
 
-#: functions.php:966
+#: functions.php:975
 #@ anarcho-notepad
 msgid "(Edit)"
 msgstr "(Редактировать)"
 
-#: functions.php:981
+#: functions.php:990
 #@ anarcho-notepad
 msgid "Post author"
 msgstr ""
 
 #. translators: 1: date, 2: time
-#: functions.php:987
+#: functions.php:996
 #, php-format
 #@ anarcho-notepad
 msgid "%1$s at %2$s"
 msgstr "%1$s в %2$s"
 
-#: functions.php:993
+#: functions.php:1002
 #@ anarcho-notepad
 msgid "Your comment is awaiting moderation."
 msgstr "Ваш комментарий ждёт модерации."
 
-#: functions.php:998
+#: functions.php:1007
 #@ anarcho-notepad
 msgid "Edit"
 msgstr "Редактировать"
 
-#: functions.php:1002
+#: functions.php:1011
 #@ anarcho-notepad
 msgid "Reply"
 msgstr "Ответить"
 
-#: functions.php:1019
+#: functions.php:1028
 #@ anarcho-notepad
 msgid "Name:"
 msgstr "Имя:"
 
-#: functions.php:1020
+#: functions.php:1029
 #@ anarcho-notepad
 msgid "Name"
 msgstr "Имя"
 
-#: functions.php:1021
+#: functions.php:1030
 #@ anarcho-notepad
 msgid "Email:"
 msgstr "Email:"
 
-#: functions.php:1022
+#: functions.php:1031
 #@ anarcho-notepad
 msgid "Email"
 msgstr "Email"
 
-#: functions.php:1023
+#: functions.php:1032
 #@ anarcho-notepad
 msgid "Website:"
 msgstr "Вебсайт:"
 
-#: functions.php:1024
+#: functions.php:1033
 #@ anarcho-notepad
 msgid "Website"
 msgstr "Вебсайт"
 
-#: functions.php:1028
+#: functions.php:1037
 #@ anarcho-notepad
 msgctxt "noun"
 msgid "Comment:"
 msgstr "Комментарий:"
 
-#: functions.php:1028
+#: functions.php:1037
 #@ anarcho-notepad
 msgid "Comment"
 msgstr "Комментарий"
 
-#: functions.php:1030
+#: functions.php:1039
 #@ anarcho-notepad
 msgid "Leave a Comment"
 msgstr "Оставьте комментарий"
@@ -434,19 +429,19 @@ msgstr "Скрипты после поста"
 msgid "Scripts in to footer"
 msgstr "Скрипты в footer"
 
-#: functions.php:940
+#: functions.php:949
 #@ anarcho-notepad
 msgid "Post navigation"
 msgstr ""
 
-#: functions.php:943
+#: functions.php:952
 #, php-format
 #@ anarcho-notepad
 msgctxt "Previous post link"
 msgid "<i class=\"fa fa-arrow-left\"></i> %title"
 msgstr ""
 
-#: functions.php:944
+#: functions.php:953
 #, php-format
 #@ anarcho-notepad
 msgctxt "Next post link"
@@ -468,4 +463,9 @@ msgstr "Основное"
 #@ anarcho-notepad
 msgid "Paste here small text about You and/or about site"
 msgstr "Впишите сюда небольшой текст о себе и/или о сайте"
+
+#: functions.php:893
+#@ anarcho-notepad
+msgid "Search"
+msgstr "Поиск"
 
