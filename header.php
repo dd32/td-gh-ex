@@ -51,6 +51,7 @@
 		<!-- #header -->
 
 		<div id="pre-header">
+		<div class="wrap-safari">
 	    	<div id="pre-header-core" class="main-navigation">
   
 			<?php if ( has_nav_menu( 'pre_header_menu' ) ) : ?>
@@ -61,6 +62,7 @@
 
 			<?php /* Header Search */ thinkup_input_headersearch(); ?>
 
+		</div>
 		</div>
 		</div>
 		<!-- #pre-header -->

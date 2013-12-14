@@ -92,7 +92,6 @@ if (!class_exists('ReduxFramework_slides')) {
                     if (!isset($slide['slide_image_height'][$x])) $slide['slide_image_height'] = '';
                     if (!isset($slide['slide_image_width'])) $slide['slide_image_width'] = '';
 
-                    if ($slide['slide_title'] != '' && isset($slide['slide_title'])) {
                         echo '<div class="redux-slides-accordion-group"><h3><span class="redux-slides-header">' . $slide['slide_title'] . '</span></h3><div>';
 
                         $hide = '';
@@ -118,9 +117,9 @@ if (!class_exists('ReduxFramework_slides')) {
                         echo '</div>' . "\n";
 
                         echo '<ul id="' . $this->field['id'] . '-ul" class="redux-multi-text">';
-                        echo '<li><input type="text" id="' . $this->field['id'] . '-slide_title_' . $x . '" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][slide_title]" value="' . esc_attr($slide['slide_title']) . '" class="regular-text slide-title" placeholder="Image Title (Required)" /></li>';
-//                        echo '<li><textarea name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][slide_description]" id="' . $this->field['id'] . '-slide_description_' . $x . '" placeholder="Description" class="large-text" rows="6">' . esc_attr($slide['slide_description']) . '</textarea></li>';
-                        echo '<li><input type="text" id="' . $this->field['id'] . '-slide_url_' . $x . '" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][slide_url]" value="' . esc_attr($slide['slide_url']) . '" class="regular-text" placeholder="Slide Link (optional)" /></li>';
+                        echo '<li><input type="text" id="' . $this->field['id'] . '-slide_title_' . $x . '" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][slide_title]" value="' . esc_attr($slide['slide_title']) . '" placeholder="Title" class="regular-text slide-title" /></li>';
+                        echo '<li><textarea name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][slide_description]" id="' . $this->field['id'] . '-slide_description_' . $x . '" placeholder="Description" class="large-text" rows="6">' . esc_attr($slide['slide_description']) . '</textarea></li>';
+                        echo '<li><input type="text" id="' . $this->field['id'] . '-slide_url_' . $x . '" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][slide_url]" value="' . esc_attr($slide['slide_url']) . '" class="regular-text" /></li>';
                         echo '<li><input type="hidden" class="slide-sort" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][slide_sort]" id="' . $this->field['id'] . '-slide_sort_' . $x . '" value="' . $slide['slide_sort'] . '" />';
                         echo '<li><input type="hidden" class="upload-id" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][slide_image_id]" id="' . $this->field['id'] . '-slide_image_id_' . $x . '" value="' . $slide['slide_image_id'] . '" />';
                         echo '<input type="hidden" class="upload" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][slide_image_url]" id="' . $this->field['id'] . '-slide_image_url_' . $x . '" value="' . $slide['slide_image_url'] . '" readonly="readonly" />';
@@ -129,7 +128,6 @@ if (!class_exists('ReduxFramework_slides')) {
                         echo '<li><a href="javascript:void(0);" class="button deletion redux-slides-remove">' . __('Delete Slide', 'redux-framework') . '</a></li>';
                         echo '</ul></div></div>';
                         $x++;
-                    }
                 }
             }
 
@@ -155,9 +153,9 @@ if (!class_exists('ReduxFramework_slides')) {
                 echo '</div>' . "\n";
 
                 echo '<ul id="' . $this->field['id'] . '-ul" class="redux-multi-text">';
-                echo '<li><input type="text" id="' . $this->field['id'] . '-slide_title_' . $x . '" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][slide_title]" value="" class="regular-text slide-title" placeholder="Image Title (required)" /></li>';
-//                echo '<li><textarea name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][slide_description]" id="' . $this->field['id'] . '-slide_description_' . $x . '" placeholder="Description" class="large-text" rows="6"></textarea></li>';
-                echo '<li><input type="text" id="' . $this->field['id'] . '-slide_url_' . $x . '" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][slide_url]" value="" class="regular-text" placeholder="Slide Link (optional)" /></li>';
+                echo '<li><input type="text" id="' . $this->field['id'] . '-slide_title_' . $x . '" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][slide_title]" value="" placeholder="Title" class="regular-text slide-title" /></li>';
+                echo '<li><textarea name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][slide_description]" id="' . $this->field['id'] . '-slide_description_' . $x . '" placeholder="Description" class="large-text" rows="6"></textarea></li>';
+                echo '<li><input type="text" id="' . $this->field['id'] . '-slide_url_' . $x . '" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][slide_url]" value="" class="regular-text" /></li>';
                 echo '<li><input type="hidden" class="slide-sort" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][slide_sort]" id="' . $this->field['id'] . '-slide_sort_' . $x . '" value="' . $x . '" />';
                 echo '<li><input type="hidden" class="upload-id" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][slide_image_id]" id="' . $this->field['id'] . '-slide_image_id_' . $x . '" value="" />';
                 echo '<input type="hidden" class="upload" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][slide_image_url]" id="' . $this->field['id'] . '-slide_image_url_' . $x . '" value="" readonly="readonly" />';

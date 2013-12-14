@@ -39,9 +39,7 @@ global $thinkup_general_sitedescription;
 function blog_favicon() {
 global $thinkup_general_faviconlink;
 
-	if ( empty( $thinkup_general_faviconlink ) ) {
-		echo '<link rel="Shortcut Icon" type="image/x-icon" href="' . get_template_directory_uri() . '/images/logo/favicon.ico" />';
-	} else {
+	if ( ! empty( $thinkup_general_faviconlink ) ) {
 		echo '<link rel="Shortcut Icon" type="image/x-icon" href="' . $thinkup_general_faviconlink . '" />';
 	}	
 }
@@ -64,7 +62,7 @@ global $thinkup_project_layout;
 global $post;
 $_thinkup_meta_layout = get_post_meta( $post->ID, '_thinkup_meta_layout', true );
 
-	if ( is_home() or site_url( '/' ) == thinkup_url_current() ) {	
+	if ( is_front_page() or is_thinkuphome() ) {
 		if ( $thinkup_homepage_layout == "option1" or empty( $thinkup_homepage_layout ) ) {		
 			echo '';
 		} else if ( $thinkup_homepage_layout == "option2" ) {
@@ -168,7 +166,7 @@ $_thinkup_meta_layout = get_post_meta( $post->ID, '_thinkup_meta_layout', true )
 
 do_action('thinkup_sidebar_html');
 
-	if ( is_home() or site_url( '/' ) == thinkup_url_current() ) {	
+	if ( is_front_page() or is_thinkuphome() ) {	
 		if ( $thinkup_homepage_layout == "option1" or empty( $thinkup_homepage_layout ) ) {		
 				echo '';
 		} else if ( $thinkup_homepage_layout == "option2" ) {
@@ -275,7 +273,7 @@ global $post;
 $_thinkup_meta_layout = get_post_meta( $post->ID, '_thinkup_meta_layout', true );
 $_thinkup_meta_sidebars = get_post_meta( $post->ID, '_thinkup_meta_sidebars', true );
 
-	if ( site_url( '/' ) == thinkup_url_current() ) {	
+	if ( is_front_page() or is_thinkuphome() ) {
 			$output = $thinkup_homepage_sidebars;
 	} else if ( is_page() ) {	
 		if ( empty( $_thinkup_meta_layout ) or $_thinkup_meta_layout == 'option1' or $_thinkup_meta_sidebars == 'Select a sidebar:' ) {
@@ -353,13 +351,13 @@ global $post;
 // Add custom intro section [Extend for more options in future update]
 function thinkup_custom_intro() {
 
-	if ( ! is_home() and site_url( '/' ) !== thinkup_url_current() ) {
-		echo	'<div id="intro" class="option1"><div id="intro-core">',
+	if ( ! is_home() and ! is_thinkuphome() ) {
+		echo	'<div id="intro" class="option1"><div class="wrap-safari"><div id="intro-core">',
 				'<h1 class="page-title"><span>',
 				thinkup_title_select(),
 				'</span></h1>',
 				thinkup_input_breadcrumbswitch(),
-				'</div></div>';
+				'</div></div></div>';
 	} else {
 		echo '';
 	}
@@ -509,7 +507,7 @@ $_thinkup_meta_customcss = get_post_meta( $post->ID, '_thinkup_meta_customcss', 
 				$thinkup_general_customcss . "\n",
 				'</style>' . "\n";
 	}
-	if ( site_url( '/' ) !== thinkup_url_current() and ! empty( $_thinkup_meta_customcss ) ) {
+	if ( ! is_front_page() and ! is_thinkuphome() and ! empty( $_thinkup_meta_customcss ) ) {
 		echo 	"\n" .'<style type="text/css">' . "\n",
 				$_thinkup_meta_customcss . "\n",
 				'</style>' . "\n";

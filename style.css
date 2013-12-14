@@ -3,11 +3,11 @@ Theme Name: Engrave (Lite)
 Theme URI: http://www.thinkupthemes.com/free/engrave-lite/
 Author: ThinkUpThemes
 Author URI: http://www.ThinkUpThemes.com
-Description: Engrave Lite is the free version of the multi-purpose professional theme ideal for a business or blog website. The theme has a responsive layout, HD retina ready and comes with 600+ Google Fonts which can easily be selected directly from the theme options panel. The theme also comes with a full width easy to use slider. Easily add a logo to your site and create a beautiful homepage using the built-in homepage layout.
-Version: 1.4.7
+Description: Engrave Lite is the free version of the multi-purpose professional theme ideal for a business or blog website. The theme has a responsive layout, HD retina ready and comes with a powerful theme options panel with can be used to make awesome changes without touching any code. The theme also comes with a full width easy to use slider. Easily add a logo to your site and create a beautiful homepage using the built-in homepage layout.
+Version: 1.4.8
 License: GNU General Public License
 License URI: /licenses/license.txt
-Tags: black, dark, one-column, two-columns, right-sidebar, left-sidebar, fixed-width, flexible-width, custom-header, custom-menu, flexible-width, full-width-template, theme-options, threaded-comments, editor-style, featured-images, post-formats, sticky-post, translation-ready
+Tags: black, dark, red, one-column, two-columns, right-sidebar, left-sidebar, fixed-layout, responsive-layout, fluid-layout, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, editor-style, featured-images, post-formats, sticky-post, translation-ready
 */
 
 /*  TABLE OF CONTENTS
@@ -43,23 +43,8 @@ Tags: black, dark, one-column, two-columns, right-sidebar, left-sidebar, fixed-w
 	-Portfolio
 	-Project
 11. IE STYLES
-12. MISC
-13. THEME SKINS
-	-Default
-	-Aqua
-	-Black
-	-Blue
-	-Blue (Dark)
-	-Blue (Deep)
-	-Brown
-	-Green (Dark)
-	-Green (Light)
-	-Metal
-	-Pink
-	-Purple
-	-Red
-	-Red (Dark)
-	-Yellow
+12. SAFARI STYLES
+13. MISC
 */
 
 /* ---------------------------------------------------------------------------------------
@@ -844,8 +829,13 @@ li.pag-next {
 }
 
 /* Responsive ThinkUpSlider */
+#slider .slides {
+	height: 0;
+	margin: 0;
+}
 #slider .rslides {
 	margin: 0;
+	overflow: hidden;
 }
 .rslides li {
 	width: 100%;
@@ -866,11 +856,11 @@ li.pag-next {
 	position: relative;
 }
 #slider .rslides-inner li {
-	height: 100%;
+	height: auto;
 	list-style: none;
 }
 #slider .rslides-container {
-	padding: 20px 10px 0;
+	padding: 20px 10px;
 }
 #slider .rslides-container.full-width {
 	padding: 0;
@@ -961,6 +951,65 @@ li.pag-next {
 #slider .rslides_tabs li.rslides_here a {
 	background: #333;
 	background: rgba(0, 0, 0, 0.7)
+}
+
+/* Responsive ThinkUpSlider - Content */
+#slider .rslides-content {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	padding: 0 10px;
+}
+#slider .rslides-content-inner {
+	display: table;
+	width: 100%;
+	max-width: 960px;
+	height: 100%;
+	margin: 0 auto;
+}
+#slider .featured {
+	display: table-cell;
+	vertical-align: middle;
+}
+#slider .featured-title {
+	margin-bottom: 15px;
+}
+#slider .featured-title span {
+	display: inline-block;
+	color: #FFF;
+	text-transform: uppercase;
+	font-weight: normal;
+	font-size: 36px;
+	line-height: 1;
+	background: #333;
+	background: rgba(0, 0, 0, 0.5);
+	padding: 10px;
+}
+#slider .featured-excerpt p {
+	margin-bottom: 10px;
+}
+#slider .featured-excerpt span {
+	display: inline-block;
+	color: #FFF;
+	font-size: 20px;
+	padding: 5px 10px;
+	background: #333;
+	background: rgba(0, 0, 0, 0.5);
+}
+#slider .featured-link a {
+	display: inline-block;
+	color: #FFF;
+	font-size: 16px;
+	font-weight: bold;
+	text-decoration: none;
+	background: #EC4C4C;
+	padding: 7px 25px;
+	margin: 10px 0;
+}
+#slider .featured-link a:hover {
+	background: #333;
+	background: rgba(0, 0, 0, 0.5);
 }
 
 
@@ -1344,6 +1393,7 @@ ul.pricing-table:after,
 }
 #footer-core h3 {
 	color: white;
+	font-size: 13px;
 	font-weight: bold;
 	text-transform: uppercase;
 	padding-bottom: 5px;
@@ -2672,10 +2722,10 @@ li.pingback a {
 
 /* =Portfolio (styling code in style-portfolio.css)
 --------------------------------------------------------------------------------------- */
-.column-1 { width: 100%;    padding: 5px 0.75%; }
-.column-2 { width: 50%;     padding: 5px 0.75%; }
-.column-3 { width: 33.333%; padding: 5px 0.625%; }
-.column-4 { width: 25%;     padding: 5px 0.625%; }
+.column-1 { width: 100%;    padding: 5px; }
+.column-2 { width: 50%;     padding: 5px; }
+.column-3 { width: 33.333%; padding: 5px; }
+.column-4 { width: 25%;     padding: 5px; }
 
 .column-1,
 .column-2,
@@ -2756,7 +2806,7 @@ h4.project-title {
 
 
 /* ---------------------------------------------------------------------------------------
-	11. IE STYLES
+	11. SAFARI STYLES
 --------------------------------------------------------------------------------------- */
 #ie8 .entry-content img,
 #ie8 .widget img,
@@ -2769,14 +2819,22 @@ h4.project-title {
 
 
 /* ---------------------------------------------------------------------------------------
-	12. MISC
+	12. SAFARI STYLES
 --------------------------------------------------------------------------------------- */
+
+/* Fix 100% table width issue on Safari */
+.wrap-safari {
+	display: block; 
+	height: 100%; 
+	max-width: 960px; 
+	margin: 0 auto;
+}
 
 
 /* ---------------------------------------------------------------------------------------
-	13. THEME SKINS
+	13. MISC
 --------------------------------------------------------------------------------------- */
 
-
-/* =Default
---------------------------------------------------------------------------------------- */
+.hidden {
+    display: none;
+}

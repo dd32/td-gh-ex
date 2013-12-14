@@ -97,7 +97,6 @@ function thinkup_reduxvariables() {
 	//  1.4.     Footer.
 	$GLOBALS['thinkup_footer_layout']                       = thinkup_var ( 'thinkup_footer_layout' );
 	$GLOBALS['thinkup_footer_widgetswitch']                 = thinkup_var ( 'thinkup_footer_widgetswitch' );
-	$GLOBALS['thinkup_footer_copyright']                    = thinkup_var ( 'thinkup_footer_copyright' );
 
 	//  1.5.1.   Blog - Main page.
 	$GLOBALS['thinkup_blog_layout']                         = thinkup_var ( 'thinkup_blog_layout' );
@@ -118,43 +117,7 @@ function thinkup_reduxvariables() {
 
 	//  1.10.    Search engine optimization. - PREMIUM FEATURE
 
-	//  1.11.     Typography.
-	$GLOBALS['thinkup_font_bodyswitch']                     = thinkup_var ( 'thinkup_font_bodyswitch' );
-	$GLOBALS['thinkup_font_bodystandard']                   = thinkup_var ( 'thinkup_font_bodystandard' );
-	$GLOBALS['thinkup_font_bodygoogle']                     = thinkup_var ( 'thinkup_font_bodygoogle' );
-	$GLOBALS['thinkup_font_bodyheadingswitch']              = thinkup_var ( 'thinkup_font_bodyheadingswitch' );
-	$GLOBALS['thinkup_font_bodyheadingstandard']            = thinkup_var ( 'thinkup_font_bodyheadingstandard' );
-	$GLOBALS['thinkup_font_bodyheadinggoogle']              = thinkup_var ( 'thinkup_font_bodyheadinggoogle' );
-	$GLOBALS['thinkup_font_preheaderswitch']                = thinkup_var ( 'thinkup_font_preheaderswitch' );
-	$GLOBALS['thinkup_font_preheaderstandard']              = thinkup_var ( 'thinkup_font_preheaderstandard' );
-	$GLOBALS['thinkup_font_preheadergoogle']                = thinkup_var ( 'thinkup_font_preheadergoogle' );
-	$GLOBALS['thinkup_font_mainheaderswitch']               = thinkup_var ( 'thinkup_font_mainheaderswitch' );
-	$GLOBALS['thinkup_font_mainheaderstandard']             = thinkup_var ( 'thinkup_font_mainheaderstandard' );
-	$GLOBALS['thinkup_font_mainheadergoogle']               = thinkup_var ( 'thinkup_font_mainheadergoogle' );
-	$GLOBALS['thinkup_font_footerheadingswitch']            = thinkup_var ( 'thinkup_font_footerheadingswitch' );
-	$GLOBALS['thinkup_font_footerheadingstandard']          = thinkup_var ( 'thinkup_font_footerheadingstandard' );
-	$GLOBALS['thinkup_font_footerheadinggoogle']            = thinkup_var ( 'thinkup_font_footerheadinggoogle' );
-	$GLOBALS['thinkup_font_mainfooterswitch']               = thinkup_var ( 'thinkup_font_mainfooterswitch' );
-	$GLOBALS['thinkup_font_mainfooterstandard']             = thinkup_var ( 'thinkup_font_mainfooterstandard' );
-	$GLOBALS['thinkup_font_mainfootergoogle']               = thinkup_var ( 'thinkup_font_mainfootergoogle' );
-	$GLOBALS['thinkup_font_postfooterswitch']               = thinkup_var ( 'thinkup_font_postfooterswitch' );
-	$GLOBALS['thinkup_font_postfooterstandard']             = thinkup_var ( 'thinkup_font_postfooterstandard' );
-	$GLOBALS['thinkup_font_postfootergoogle']               = thinkup_var ( 'thinkup_font_postfootergoogle' );
-	$GLOBALS['thinkup_font_bodysize']                       = thinkup_var ( 'thinkup_font_bodysize' );
-	$GLOBALS['thinkup_font_h1size']                         = thinkup_var ( 'thinkup_font_h1size' );
-	$GLOBALS['thinkup_font_h2size']                         = thinkup_var ( 'thinkup_font_h2size' );
-	$GLOBALS['thinkup_font_h3size']                         = thinkup_var ( 'thinkup_font_h3size' );
-	$GLOBALS['thinkup_font_h4size']                         = thinkup_var ( 'thinkup_font_h4size' );
-	$GLOBALS['thinkup_font_h5size']                         = thinkup_var ( 'thinkup_font_h5size' );
-	$GLOBALS['thinkup_font_h6size']                         = thinkup_var ( 'thinkup_font_h6size' );
-	$GLOBALS['thinkup_font_sidebarsize']                    = thinkup_var ( 'thinkup_font_sidebarsize' );
-	$GLOBALS['thinkup_font_preheadersize']                  = thinkup_var ( 'thinkup_font_preheadersize' );
-	$GLOBALS['thinkup_font_preheadersubsize']               = thinkup_var ( 'thinkup_font_preheadersubsize' );
-	$GLOBALS['thinkup_font_mainheadersize']                 = thinkup_var ( 'thinkup_font_mainheadersize' );
-	$GLOBALS['thinkup_font_mainheadersubsize']              = thinkup_var ( 'thinkup_font_mainheadersubsize' );
-	$GLOBALS['thinkup_font_footerheadingsize']              = thinkup_var ( 'thinkup_font_footerheadingsize' );
-	$GLOBALS['thinkup_font_mainfootersize']                 = thinkup_var ( 'thinkup_font_mainfootersize' );
-	$GLOBALS['thinkup_font_postfootersize']                 = thinkup_var ( 'thinkup_font_postfootersize' );
+	//  1.11.     Typography. - PREMIUM FEATURE
 
 	//  1.12.     Custom styling. - PREMIUM FEATURE
 

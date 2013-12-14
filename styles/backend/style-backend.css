@@ -149,15 +149,6 @@ border-bottom: none;
 	width: 16px;
 	height: 16px
 }
-.ui-state-default .ui-icon {
-	background-image: url(http://demo.reduxframework.com/wp-content/plugins/redux-framework/ReduxCore/assets/css/vendor/jquery-ui-bootstrap/images/ui-icons_888888_256x240.png);
-	background-position: -16px -128px;
-}
-.ui-state-active .ui-icon {
-	background-image: url(http://demo.reduxframework.com/wp-content/plugins/redux-framework/ReduxCore/assets/css/vendor/jquery-ui-bootstrap/images/ui-icons_888888_256x240.png);
-	background-position: -48px -128px;
-}
-
 
 /* Social Media */
 #redux-container #section-thinkup_header_facebooklink,

@@ -18,10 +18,10 @@ global $thinkup_homepage_sliderpresetwidth;
 
 $thinkup_class_fullwidth = NULL;
 
-	if ( is_home() or site_url( '/' ) == thinkup_url_current() ) {
+	if ( is_front_page() or is_thinkuphome() ) {
 		if ( empty( $thinkup_homepage_sliderswitch ) or $thinkup_homepage_sliderswitch == 'option1' ) {
 
-			if ( $thinkup_homepage_sliderpresetwidth == '1' ) {
+			if ( empty( $thinkup_homepage_sliderpresetwidth ) or $thinkup_homepage_sliderpresetwidth == '1' ) {
 				$thinkup_class_fullwidth = ' full-width';
 			}
 			echo '<div id="slider"><div id="slider-core">',
@@ -32,13 +32,36 @@ $thinkup_class_fullwidth = NULL;
 					echo '<li><img src="' . get_template_directory_uri() . '/images/transparent.png" style="background: url(' . get_template_directory_uri() . '/images/slideshow/slide_demo3.png) no-repeat center; background-size: cover;" alt="Demo Image" /></li>';
 				} else if (isset($thinkup_homepage_sliderpreset) && is_array($thinkup_homepage_sliderpreset)) {
 					foreach ($thinkup_homepage_sliderpreset as $slide) {
-						if ( ! empty( $slide['slide_url'] ) ) {
-							echo '<li><a href="' . $slide['slide_url'] . '">',
-								'<img src="' . get_template_directory_uri() . '/images/transparent.png" style="background: url(' . $slide['slide_image_url'] . ') no-repeat center; background-size: cover;" alt="' . $slide['slide_title'] . '" />',
-								'</a></li>';
-						} else {
-							echo '<li><img src="' . get_template_directory_uri() . '/images/transparent.png" style="background: url(' . $slide['slide_image_url'] . ') no-repeat center; background-size: cover;" alt="' . $slide['slide_title'] . '" /></li>';
-						}
+						echo '<li>',
+							 '<img src="' . get_template_directory_uri() . '/images/transparent.png" style="background: url(' . $slide['slide_image_url'] . ') no-repeat center; background-size: cover;" alt="' . $slide['slide_title']. '" />',
+							 '<div class="rslides-content">',
+ 							 '<div class="wrap-safari">',
+							 '<div class="rslides-content-inner">',
+							 '<div class="featured">';
+							 
+								if ( ! empty( $slide['slide_title'] ) ) {
+									echo '<div class="featured-title">',
+										 '<span>' . $slide['slide_title'] . '</span>',
+										 '</div>';
+								}
+								if ( ! empty( $slide['slide_description'] ) ) {
+									$slide_description = str_replace( '<p>', '<p><span>', wpautop( $slide['slide_description'] ));
+									$slide_description = str_replace( '</p>', '</span></p>', $slide_description );
+									echo '<div class="featured-excerpt">',
+										 $slide_description,
+										 '</div>';
+								}
+								if ( ! empty( $slide['slide_url'] ) ) {
+									echo '<div class="featured-link">',
+										 '<a href="' . $slide['slide_url'] . '">Read More</a>',
+										 '</div>';
+								}
+
+						 echo '</div>',
+							  '</div>',
+							  '</div>',
+							  '</div>',
+							  '</li>';
 					}
 				}
 			echo '</ul></div></div>',
@@ -59,10 +82,12 @@ global $thinkup_homepage_sliderswitch;
 global $thinkup_homepage_sliderpresetwidth;
 global $thinkup_homepage_sliderpresetheight;
 
-	if ( is_home() or site_url( '/' ) == thinkup_url_current() ) {
+	if ( empty( $thinkup_homepage_sliderpresetheight ) ) $thinkup_homepage_sliderpresetheight = '350';
+
+	if ( is_front_page() or is_thinkuphome() ) {
 		if ( empty( $thinkup_homepage_sliderswitch ) or $thinkup_homepage_sliderswitch == 'option1' ) {
 		echo 	"\n" .'<style type="text/css">' . "\n",
-			'#slider .rslides { height: ' . $thinkup_homepage_sliderpresetheight . 'px; max-height: ' . $thinkup_homepage_sliderpresetheight . 'px; }' . "\n",
+			'#slider .rslides, #slider .rslides li { height: ' . $thinkup_homepage_sliderpresetheight . 'px; max-height: ' . $thinkup_homepage_sliderpresetheight . 'px; }' . "\n",
 			'#slider .rslides img { height: 100%; max-height: ' . $thinkup_homepage_sliderpresetheight . 'px; }' . "\n",
 			'</style>' . "\n";
 		}
@@ -76,7 +101,7 @@ global $post;
 $_thinkup_meta_slider = get_post_meta( $post->ID, '_thinkup_meta_slider', true );
 $_thinkup_meta_slidername = get_post_meta( $post->ID, '_thinkup_meta_slidername', true );
 
-	if ( ! is_home() and site_url( '/' ) !== thinkup_url_current() and $_thinkup_meta_slider == 'on' ) {
+	if ( ! is_front_page() and ! is_thinkuphome() and $_thinkup_meta_slider == 'on' ) {
 
 		echo	'<div id="slider"><div id="slider-core">',
 				do_shortcode( $_thinkup_meta_slidername ),
@@ -130,7 +155,7 @@ global $thinkup_homepage_section3_link;
 	if ( !empty( $thinkup_homepage_section3_link ) ) $thinkup_homepage_section3_link = get_page_link( $thinkup_homepage_section3_link );
 
 
-	if ( is_home() or site_url( '/' ) == thinkup_url_current() ) {
+	if ( is_front_page() or is_thinkuphome() ) {
 		if ( empty( $thinkup_homepage_sectionswitch ) or $thinkup_homepage_sectionswitch == '1' ) {
 
 		echo '<div id="section-home"><div id="section-home-inner">';
@@ -188,7 +213,7 @@ global $thinkup_homepage_introactionlink;
 global $thinkup_homepage_introactionpage;
 global $thinkup_homepage_introactioncustom;
 
-	if ( $thinkup_homepage_introswitch == '1' and ( is_home() or site_url( '/' ) == thinkup_url_current() ) and ! empty( $thinkup_homepage_introaction ) ) {
+	if ( $thinkup_homepage_introswitch == '1' and ( is_front_page() or is_thinkuphome() ) and ! empty( $thinkup_homepage_introaction ) ) {
 		echo '<div id="introaction"><div id="introaction-core">';
 		if (empty( $thinkup_homepage_introactionbutton ) ) {
 			if ( empty( $thinkup_homepage_introactionteaser ) ) {

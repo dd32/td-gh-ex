@@ -470,7 +470,7 @@ function setup_framework_options(){
 	);
 
 	/*-----------------------------------------------------------------------------------
-	 	2.	Home Settings				
+	 	2.1.	Home Settings				
 	-----------------------------------------------------------------------------------*/
 
 	$sections[] = array(
@@ -560,8 +560,81 @@ function setup_framework_options(){
 				'id'=>'info_page_structure',
 				'type'=>'info',
 				'style'=>'help',
-				'desc' => __( '<span class="redux-title">Homepage Content</span>', 'redux-framework')
-				),								
+				'desc' => __( '<span class="redux-title">Call To Action - Intro</span>', 'redux-framework')
+				),				
+
+			array(
+				'title' => __('Message', 'redux-framework'), 
+				'desc' => __('Check to enable intro on home page.', 'redux-framework'),
+				'id'=>'thinkup_homepage_introswitch',
+				'type' => 'checkbox',
+				'default' => '0'// 1 = on | 0 = off
+				),				
+
+			array(
+				'subtitle' => __('Enter a <strong>main</strong> message.<br /><br />This will be one of the first messages your visitors see. Use this to get their attention.', 'redux-framework'),
+				'id'=>'thinkup_homepage_introaction',
+				'type' => 'textarea',
+				'validate' => 'html', //see http://codex.wordpress.org/Function_Reference/wp_kses_post
+				),
+
+			array(
+				'subtitle' => __('Enter a <strong>teaser</strong> message. <br /><br />Use this to provide more details about what you offer.', 'redux-framework'),
+				'id'=>'thinkup_homepage_introactionteaser',
+				'type' => 'textarea',
+				'validate' => 'html', //see http://codex.wordpress.org/Function_Reference/wp_kses_post
+				),
+
+			array(
+				'title' => __('Button Text', 'redux-framework'), 
+				'subtitle' => __('Input text to display on the action button.', 'redux-framework'),
+				'id'=>'thinkup_homepage_introactionbutton',
+				'type' => 'text',
+				'validate' => 'html', //see http://codex.wordpress.org/Function_Reference/wp_kses_post
+				),				
+
+			array(
+				'title' => __('Link', 'redux-framework'), 
+				'subtitle' => __('Specify whether the action button should link to a page on your site, out to external webpage or disable the link altogether.', 'redux-framework'),
+				'id'=>'thinkup_homepage_introactionlink',
+				'type' => 'radio',
+				'options' => array( 
+					'option1' => 'Link to a Page',
+					'option2' => 'Specify Custom link',
+					'option3' => 'Disable Link'
+					),
+				),
+
+			array(
+				'title' => __('Link to a page', 'redux-framework'), 
+				'subtitle' => __('Select a target page for action button link.', 'redux-framework'),
+				'id'=>'thinkup_homepage_introactionpage',
+				'type' => 'select',
+				'data' => 'pages',
+				),
+
+			array(
+				'title' => __('Custom link', 'redux-framework'),
+				'subtitle' => __('Input a custom url for the action button link.<br>Add http:// if linking to an external webpage.', 'redux-framework'),
+				'id'=>'thinkup_homepage_introactioncustom',
+				'type' => 'text',
+				'validate' => 'url',
+				),
+
+		)
+	);
+
+
+	/*-----------------------------------------------------------------------------------
+	 	2.2.	Home Content				
+	-----------------------------------------------------------------------------------*/
+
+	$sections[] = array(
+		'title' => __('Homepage (Content)', 'redux-framework'),
+		'desc' => __('<span class="redux-title">Display Pre-Designed Homepage Layout</span>', 'redux-framework'),
+		'icon_class' => 'icon-large',
+		'icon' => 'pencil',
+		'fields' => array(
 
 			array(
 				'title' => __('Enable Pre-Made Homepage ', 'redux-framework'), 
@@ -669,72 +742,6 @@ function setup_framework_options(){
 				'data' => 'pages',
 				'fold' => array('thinkup_homepage_sectionswitch'=>1),
 			),
-
-			array(
-				'id'=>'info_page_structure',
-				'type'=>'info',
-				'style'=>'help',
-				'desc' => __( '<span class="redux-title">Call To Action - Intro</span>', 'redux-framework')
-				),				
-
-			array(
-				'title' => __('Message', 'redux-framework'), 
-				'desc' => __('Check to enable intro on home page.', 'redux-framework'),
-				'id'=>'thinkup_homepage_introswitch',
-				'type' => 'checkbox',
-				'default' => '0'// 1 = on | 0 = off
-				),				
-
-			array(
-				'subtitle' => __('Enter a <strong>main</strong> message.<br /><br />This will be one of the first messages your visitors see. Use this to get their attention.', 'redux-framework'),
-				'id'=>'thinkup_homepage_introaction',
-				'type' => 'textarea',
-				'validate' => 'html', //see http://codex.wordpress.org/Function_Reference/wp_kses_post
-				),
-
-			array(
-				'subtitle' => __('Enter a <strong>teaser</strong> message. <br /><br />Use this to provide more details about what you offer.', 'redux-framework'),
-				'id'=>'thinkup_homepage_introactionteaser',
-				'type' => 'textarea',
-				'validate' => 'html', //see http://codex.wordpress.org/Function_Reference/wp_kses_post
-				),
-
-			array(
-				'title' => __('Button Text', 'redux-framework'), 
-				'subtitle' => __('Input text to display on the action button.', 'redux-framework'),
-				'id'=>'thinkup_homepage_introactionbutton',
-				'type' => 'text',
-				'validate' => 'html', //see http://codex.wordpress.org/Function_Reference/wp_kses_post
-				),				
-
-			array(
-				'title' => __('Link', 'redux-framework'), 
-				'subtitle' => __('Specify whether the action button should link to a page on your site, out to external webpage or disable the link altogether.', 'redux-framework'),
-				'id'=>'thinkup_homepage_introactionlink',
-				'type' => 'radio',
-				'options' => array( 
-					'option1' => 'Link to a Page',
-					'option2' => 'Specify Custom link',
-					'option3' => 'Disable Link'
-					),
-				),
-
-			array(
-				'title' => __('Link to a page', 'redux-framework'), 
-				'subtitle' => __('Select a target page for action button link.', 'redux-framework'),
-				'id'=>'thinkup_homepage_introactionpage',
-				'type' => 'select',
-				'data' => 'pages',
-				),
-
-			array(
-				'title' => __('Custom link', 'redux-framework'),
-				'subtitle' => __('Input a custom url for the action button link.<br>Add http:// if linking to an external webpage.', 'redux-framework'),
-				'id'=>'thinkup_homepage_introactioncustom',
-				'type' => 'text',
-				'validate' => 'url',
-				),
-
 		)
 	);
 
@@ -1063,14 +1070,6 @@ function setup_framework_options(){
 				'default' => '0'// 1 = on | 0 = off
 				),
 
-			array(
-				'title' => __('Copyright Text', 'redux-framework'), 
-				'subtitle' => __('Add custom copyright text.<br />Leave blank to display default message.', 'redux-framework'),
-				'id'=>'thinkup_footer_copyright',
-				'type' => 'text',
-				'validate' => 'html', //see http://codex.wordpress.org/Function_Reference/wp_kses_post
-				),
-
 		)
 	);
 
@@ -1168,308 +1167,18 @@ function setup_framework_options(){
 
 
 	/*-----------------------------------------------------------------------------------
-	 	9.	Notification Bar
+	 	9.	Notification Bar - PREMIUM FEATURE
 	-----------------------------------------------------------------------------------*/
 
 
 	/*-----------------------------------------------------------------------------------
-	 	11.	Search Engine Optimisation
+	 	11.	Search Engine Optimisation - PREMIUM FEATURE
 	-----------------------------------------------------------------------------------*/
 
 
 	/*-----------------------------------------------------------------------------------
-	 	12.	Typography
-	-----------------------------------------------------------------------------------*/					
-
-		$sections[] = array(
-		'title' => __('Typography', 'redux-framework'),
-		'desc' => __('<span class="redux-title">Control Font Family</span>', 'redux-framework'),
-		'icon' => 'font',
-		'icon_class' => 'icon-large',
-		'fields' => array(
-
-			array(
-				'title' => __('Body Font', 'redux-framework'), 
-				'desc' => __('Check to use Google fonts.', 'redux-framework'),
-				'id'=>'thinkup_font_bodyswitch',
-				'type' => 'checkbox',
-				'default' => '0'// 1 = on | 0 = off
-				),
-
-			array(
-				'subtitle' => __('Select a "Standard Font" for body text.<br />This will <strong>NOT</strong> affect text in header or footer areas.', 'redux-framework'),
-				'id'=>'thinkup_font_bodystandard',
-				'type' => 'select',
-				'data' => 'standardfont',
-				),
-
-			array(
-				'subtitle' => __('Select a "Google Font" for body text.<br />This will <strong>NOT</strong> affect text in header or footer areas.', 'redux-framework'),
-				'id'=>'thinkup_font_bodygoogle',
-				'type' => 'select',
-				'data' => 'googlefont',
-				),
-
-			array(
-				'title' => __('Body Headings', 'redux-framework'), 
-				'desc' => __('Check to use Google fonts.', 'redux-framework'),
-				'id'=>'thinkup_font_bodyheadingswitch',
-				'type' => 'checkbox',
-				'default' => '0'// 1 = on | 0 = off
-				),
-
-			array(
-				'subtitle' => __('Select a "Standard Font" for header text.<br />This will <strong>NOT</strong> affect text in header or footer areas.', 'redux-framework'),
-				'id'=>'thinkup_font_bodyheadingstandard',
-				'type' => 'select',
-				'data' => 'standardfont',
-				),
-
-			array(
-				'subtitle' => __('Select a "Google Font" for header text.<br />This will <strong>NOT</strong> affect text in header or footer areas.', 'redux-framework'),
-				'id'=>'thinkup_font_bodyheadinggoogle',
-				'type' => 'select',
-				'data' => 'googlefont',
-				),
-
-			array(
-				'title' => __('Pre Header Menu', 'redux-framework'), 
-				'desc' => __('Check to use Google fonts.', 'redux-framework'),
-				'id'=>'thinkup_font_preheaderswitch',
-				'type' => 'checkbox',
-				'default' => '0'// 1 = on | 0 = off
-				),
-
-			array(
-				'subtitle' => __('Select a "Standard Font" for pre header text.', 'redux-framework'),
-				'id'=>'thinkup_font_preheaderstandard',
-				'type' => 'select',
-				'data' => 'standardfont',
-				),
-
-			array(
-				'subtitle' => __('Select a "Google Font" for pre header text.', 'redux-framework'),
-				'id'=>'thinkup_font_preheadergoogle',
-				'type' => 'select',
-				'data' => 'googlefont',
-				),
-
-			array(
-				'title' => __('Main Header Menu', 'redux-framework'), 
-				'desc' => __('Check to use Google fonts.', 'redux-framework'),
-				'id'=>'thinkup_font_mainheaderswitch',
-				'type' => 'checkbox',
-				'default' => '0'// 1 = on | 0 = off
-				),
-
-			array(
-				'subtitle' => __('Select a "Standard Font" for main header text.', 'redux-framework'),
-				'id'=>'thinkup_font_mainheaderstandard',
-				'type' => 'select',
-				'data' => 'standardfont',
-				),
-
-			array(
-				'subtitle' => __('Select a "Google Font" for main header text.', 'redux-framework'),
-				'id'=>'thinkup_font_mainheadergoogle',
-				'type' => 'select',
-				'data' => 'googlefont',
-				),
-
-			array(
-				'title' => __('Footer Headings', 'redux-framework'), 
-				'desc' => __('Check to use Google fonts.', 'redux-framework'),
-				'id'=>'thinkup_font_footerheadingswitch',
-				'type' => 'checkbox',
-				'default' => '0'// 1 = on | 0 = off
-				),
-
-			array(
-				'subtitle' => __('Select a "Standard Font" for body text.', 'redux-framework'),
-				'id'=>'thinkup_font_footerheadingstandard',
-				'type' => 'select',
-				'data' => 'standardfont',
-				),
-
-			array(
-				'subtitle' => __('Select a "Google Font" for body text.', 'redux-framework'),
-				'id'=>'thinkup_font_footerheadinggoogle',
-				'type' => 'select',
-				'data' => 'googlefont',
-				),
-
-			array(
-				'title' => __('Main Footer Menu', 'redux-framework'), 
-				'desc' => __('Check to use Google fonts.', 'redux-framework'),
-				'id'=>'thinkup_font_mainfooterswitch',
-				'type' => 'checkbox',
-				'default' => '0'// 1 = on | 0 = off
-				),
-
-			array(
-				'subtitle' => __('Select a "Standard Font" for footer menu text.', 'redux-framework'),
-				'id'=>'thinkup_font_mainfooterstandard',
-				'type' => 'select',
-				'data' => 'standardfont',
-				),
-
-			array(
-				'subtitle' => __('Select a "Google Font" for footer menu text.', 'redux-framework'),
-				'id'=>'thinkup_font_mainfootergoogle',
-				'type' => 'select',
-				'data' => 'googlefont',
-				),
-
-			array(
-				'title' => __('Post Footer Menu', 'redux-framework'), 
-				'desc' => __('Check to use Google fonts.', 'redux-framework'),
-				'id'=>'thinkup_font_postfooterswitch',
-				'type' => 'checkbox',
-				'default' => '0'// 1 = on | 0 = off
-				),
-
-			array(
-				'subtitle' => __('Select a "Standard Font" for post footer text.', 'redux-framework'),
-				'id'=>'thinkup_font_postfooterstandard',
-				'type' => 'select',
-				'data' => 'standardfont',
-				),
-
-			array(
-				'subtitle' => __('Select a "Google Font" for post footer text.', 'redux-framework'),
-				'id'=>'thinkup_font_postfootergoogle',
-				'type' => 'select',
-				'data' => 'googlefont',
-				),
-
-			array(
-				'id'=>'info_page_structure',
-				'type'=>'info',
-				'style'=>'help',
-				'desc' => __( '<span class="redux-title">Control Font Size<span>', 'redux-framework')
-				),
-
-			array(
-				'title' => __('Body Font', 'redux-framework'), 
-				'subtitle' => __('Specify the body font size.', 'redux-framework'),
-				'id'=>'thinkup_font_bodysize',
-				'type' => 'select',
-				'data' => 'fontsize',
-				),				
-
-			array(
-				'title' => __('H1 Heading', 'redux-framework'), 
-				'subtitle' => __('Specify the h1 heading font size.', 'redux-framework'),
-				'id'=>'thinkup_font_h1size',
-				'type' => 'select',
-				'data' => 'fontsize',
-				),
-
-			array(
-				'title' => __('H2 Heading', 'redux-framework'), 
-				'subtitle' => __('Specify the h2 heading font size.', 'redux-framework'),
-				'id'=>'thinkup_font_h2size',
-				'type' => 'select',
-				'data' => 'fontsize',
-				),				
-
-			array(
-				'title' => __('H3 Heading', 'redux-framework'), 
-				'subtitle' => __('Specify the h3 heading font size.', 'redux-framework'),
-				'id'=>'thinkup_font_h3size',
-				'type' => 'select',
-				'data' => 'fontsize',
-				),				
-
-			array(
-				'title' => __('H4 Heading', 'redux-framework'), 
-				'subtitle' => __('Specify the h4 heading font size.', 'redux-framework'),
-				'id'=>'thinkup_font_h4size',
-				'type' => 'select',
-				'data' => 'fontsize',
-				),				
-
-			array(
-				'title' => __('H5 Heading', 'redux-framework'), 
-				'subtitle' => __('Specify the h5 heading font size.', 'redux-framework'),
-				'id'=>'thinkup_font_h5size',
-				'type' => 'select',
-				'data' => 'fontsize',
-				),
-
-			array(
-				'title' => __('H6 Heading', 'redux-framework'), 
-				'subtitle' => __('Specify the h6 heading font size.', 'redux-framework'),
-				'id'=>'thinkup_font_h6size',
-				'type' => 'select',
-				'data' => 'fontsize',
-				),				
-
-			array(
-				'title' => __('Sidebar Widget Heading', 'redux-framework'), 
-				'subtitle' => __('Specify the sidebar widget heading font size.', 'redux-framework'),
-				'id'=>'thinkup_font_sidebarsize',
-				'type' => 'select',
-				'data' => 'fontsize',
-				),				
-
-			array(
-				'title' => __('Pre Header Menu', 'redux-framework'), 
-				'subtitle' => __('Specify the pre header font size.', 'redux-framework'),
-				'id'=>'thinkup_font_preheadersize',
-				'type' => 'select',
-				'data' => 'fontsize',
-				),				
-
-			array(
-				'title' => __('Pre Header Menu (Dropdown)', 'redux-framework'), 
-				'subtitle' => __('Specify the pre header dropdown font size.', 'redux-framework'),
-				'id'=>'thinkup_font_preheadersubsize',
-				'type' => 'select',
-				'data' => 'fontsize',
-				),				
-
-			array(
-				'title' => __('Main Header Menu', 'redux-framework'), 
-				'subtitle' => __('Specify the main header font size.', 'redux-framework'),
-				'id'=>'thinkup_font_mainheadersize',
-				'type' => 'select',
-				'data' => 'fontsize',
-				),				
-
-			array(
-				'title' => __('Main Header Menu (Dropdown)', 'redux-framework'), 
-				'subtitle' => __('Specify the main header dropdown font size.', 'redux-framework'),
-				'id'=>'thinkup_font_mainheadersubsize',
-				'type' => 'select',
-				'data' => 'fontsize',
-				),				
-
-			array(
-				'title' => __('Footer Headings', 'redux-framework'), 
-				'subtitle' => __('Specify the footer heading font size.', 'redux-framework'),
-				'id'=>'thinkup_font_footerheadingsize',
-				'type' => 'select',
-				'data' => 'fontsize',
-				),				
-
-			array(
-				'title' => __('Main Footer Menu', 'redux-framework'), 
-				'subtitle' => __('Specify the main footer font size.', 'redux-framework'),
-				'id'=>'thinkup_font_mainfootersize',
-				'type' => 'select',
-				'data' => 'fontsize',
-				),				
-
-			array(
-				'title' => __('Post Footer Menu', 'redux-framework'), 
-				'subtitle' => __('Specify the post footer font size.', 'redux-framework'),
-				'id'=>'thinkup_font_postfootersize',
-				'type' => 'select',
-				'data' => 'fontsize',
-				),				
-		)
-	);	
+	 	12.	Typography - PREMIUM FEATURE
+	-----------------------------------------------------------------------------------*/
 
 
 	/*-----------------------------------------------------------------------------------

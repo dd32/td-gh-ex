@@ -116,6 +116,11 @@
 		margin-bottom: 5px;
 	}
 
+	/* Featured Slider */
+	#slider .featured-excerpt {
+		display: none;
+	}
+
 	/* Portfolio */
 
 	/* Single Post Share */
@@ -168,10 +173,13 @@
 		margin-bottom: 5px;
 	}
 
-	/* Slider */
-	.tp-leftarrow.large,
-	.tp-rightarrow.large {
-		display: none;
+	/* Featured Slider */
+	#slider .featured-title span {
+		font-size: 20px;
+	}
+	#slider .featured-link a {
+		padding: 3px 15px;
+		margin: 0px;
 	}
 
 	/* Portfolio */

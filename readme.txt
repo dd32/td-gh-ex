@@ -100,6 +100,16 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.4.8
+- New:     Responsive-layout and red theme tags added.
+- Fixed:   Slider shows on default settings.
+- Fixed:   Favicon is opt in and disabled by default.
+- Fixed:   Intro width corrected to display properly on Safari.
+- Fixed:   Pre-header menu Fixed to display properly on Safari.
+- Fixed:   slider height corrected to display properly on Safari.
+- Removed: Typography option removed.
+- Removed: Footer credit cannot be removed.
+
 Version 1.4.7
 - Fixed:   Page links for homepage content boxes.
 

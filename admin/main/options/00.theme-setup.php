@@ -376,7 +376,7 @@ add_filter( 'wp_page_menu_args', 'home_page_menu_args' );
 //	ADD FUNCTION TO GET CURRENT PAGE URL
 //----------------------------------------------------------------------------------
 
-function thinkup_url_current() {
+function is_thinkuphome() {
 	$pageURL = 'http';
 	if( isset($_SERVER["HTTPS"]) ) {
 		if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
@@ -387,7 +387,16 @@ function thinkup_url_current() {
 	} else {
 		$pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
 	}
-	return $pageURL;
+	$pageURL = rtrim($pageURL, '/') . '/';
+
+	$pageURL = str_replace( "www.", "", $pageURL );
+	$siteURL = str_replace( "www.", "", site_url( '/' ) );
+
+	if ( $pageURL == $siteURL ) {
+		return true;
+	} else {
+		return false;
+	}
 }
 
 
