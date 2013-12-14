@@ -33,6 +33,10 @@ The exceptions to this license are as follows:
 
 
 # Changelog
+= 3.1.4 =
+* fixed : (css) featured pages : another responsive thumbnails alignment for max-width: 979px
+
+
 = 3.1.3 =
 * fixed : (css) featured pages : responsive thumbnails alignment
 
