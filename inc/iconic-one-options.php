@@ -27,7 +27,7 @@ add_action( 'admin_menu', 'iconic_one_options_theme_menu' );
 function iconic_one_options_display() { 
 ?> 
     <!-- Create a header in the default WordPress 'wrap' container --> 
-    <div class="wrap"style='border:1px solid #e1e1e1; padding:20px;min-width:750px; max-width:960px;'> 
+    <div class="wrap"style='background:#FFFFFF;border:1px solid #e1e1e1; padding:20px;min-width:750px; max-width:960px;'> 
   
 	<div class="header" style="margin-bottom:10px;">   
        <div class="hleft" style="float:left;width:50%;">
@@ -37,7 +37,7 @@ function iconic_one_options_display() {
 						<a href="http://themonic.com/iconic-one-pro/">
 						<img style='margin-left:0px;' src="<?php echo get_template_directory_uri(); ?>/img/themonic.png" alt="Iconic One"></a>
 					</p>
-					<div class="hotitle" style='background: #fff; padding:5px; margin-top:10px;'><h1>Thank You for Choosing Iconic One</h1></div>
+					<div class="hotitle" style='background: #fff; padding:5px; margin-top:10px; line-height:1.2;'><h1>Thank You for Choosing Iconic One</h1></div>
 				
 			</div>
 			<div style="float:right;width:41%;">
@@ -45,38 +45,19 @@ function iconic_one_options_display() {
 			</div>
 	</div>
 <div style="clear:both;">
-<div style="background:#F7F08F;float:right;padding:25px 40px 25px 15px;;margin:10px;max-width:320px;">
-<h3>Donation and Customization</h3>
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<table>
-<tr><td><input type="hidden" name="on0" value="Support Packages">Optional</td></tr><tr><td><select name="os0">
-	<option value="Donate -">Donate - $2.00 USD</option>
-	<option value="Donate - (1 customizations)">Donate - (1 customizations) $10.00 USD</option>
-	<option value="Donate (2 customizations)">Donate (2 customizations) $17.00 USD</option>
-	<option value="Donate (3 customizations)">Donate (3 customizations) $25.00 USD</option>
-	<option value="Pagespeed optimization + 5 customizations">Pagespeed optimization + 5 customizations $75.00 USD</option>
-</select> </td></tr>
-<tr><td><input type="hidden" name="on1" value="Blog URL(optional)">Blog URL(optional)</td></tr><tr><td><input type="text" name="os1" maxlength="200"></td></tr>
-</table>
-<input type="hidden" name="currency_code" value="USD">
-<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
-">
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
-</form>
+<div style="background:#FFFFFF;float:right;padding:30px 0px 0px 40px; border-left:1px solid #e1e1e1; margin:10px;max-width:41%;">
+<img style='margin-left:0px;' src="http://demo.themonic.com/io-pro/wp-content/uploads/2013/07/logo.png" alt="">
+<h3><a style="text-decoration:none;" href="http://demo.themonic.com/io-pro/">Pro Version Demo</a></h3>
+<h3><a style="text-decoration:none;" href="http://themonic.com/iconic-one-pro/">Pro Version Features</a></h3>
+<a href="http://themonic.com/plans-and-pricing/"><img style='margin-left:0px;' src="<?php echo get_template_directory_uri(); ?>/img/iopbuy.png" alt=""></a>
 
-We will refund the full amount if you are not happy 
-with the customization without asking any questions.<br .../><br .../>
-After payment, <a href="mailto:support@themonic.com?Subject=Iconic One Customization">send an email</a> with your customization details. Use the same Paypal email from which you made the payment else include 
-the transaction ID.<br .../>
+<br .../>
 </div>
-<h2>Getting Started</h2> 
+<h2>Iconic One Quick Start Guide</h2> 
 <h3><a style="text-decoration:none;" href="http://demo.themonic.com/io/">Official Demo</a> for reference.</h3>
-<h4>Responsive Menu - Important! - Update: 28th July 2013 - It will now work automagically.</h4> 
-This is the first step: Configure the Main Navigation menu by
-going to Appearance -> Menus. Create a custom menu by the name of 'top', or simply rename your existing menu to 'top'.
-Make sure that under Primary Menu 'top' is selected, Navigation Menu responsiveness won't work otherwise.
+<h4>Responsive Menu - Important! - Update: Dec 14 2013.</h4> 
+This is the first step: Configure the Main Navigation menu for mobile view by
+going to Appearance -> Menus. Create your WordPress menu as per your requirement and select it as <b>primary menu</b>, Navigation Menu responsiveness won't work otherwise.
 <h4>Using Live Customizer - for logo upload, colors etc.</h4> 
 <h2>Starting from version 1.2 you can access the live customizer from the <b>Appearance menu >> Customize Iconic One.</b></h2>
 Alternatively you can go through the Live Customizer ( http://yourdomain.com/wp-admin/customize.php )

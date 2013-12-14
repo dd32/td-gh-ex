@@ -1,5 +1,17 @@
 Changelog for Iconic One WordPress Responsive Theme | Visit http://themonic.com/iconic-one/ for latest version
 
+-------------- December 2013 ----------------
+
+12/14/13  - Iconic One Version 1.3
+
+* Theme start page made compatible with WordPress 3.8
+* Footer Fix for large text in the footer boxes
+* Logo responsiveness fix in case of big logos 
+* Header area fixes in mobile view
+* Better and wide mobile menu
+* Much improved display compatibility on Internet Explorer, based on user feedback
+* Updated start page with pro version details
+
 -------------- August 2013 ----------------
 
 08/27/13  - Iconic One Version 1.2.3
