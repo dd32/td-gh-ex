@@ -33,6 +33,13 @@ The exceptions to this license are as follows:
 
 
 # Changelog
+= 3.1.1 =
+* added : (language) Turkish : thanks to <a href="http://www.ahmethakanergun.com/">Ahmet Hakan Ergün</a>
+* added : (css) customizer : some styling
+* fixed : (css) post thumbnails : minor alignment issues
+* fixed : (php) translations in customizer for dropdown lists
+
+
 = 3.1.0 =
 * added : (language) Hungarian : thanks to Ferencz Székely
 * added : (php) Site title : filter on the tag

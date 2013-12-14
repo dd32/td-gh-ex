@@ -223,7 +223,6 @@ class TC_header_main {
 
       		<div class="navbar notresp row-fluid pull-left">
       			<div class="navbar-inner" role="navigation">
-      				<?php  ?>
       				<div class="row-fluid">
             			<?php 
             				do_action( '__navbar' ); //hook of social, tagline, menu, ordered by priorities 10, 20, 30 

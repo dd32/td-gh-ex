@@ -139,15 +139,11 @@ class TC_slider {
   function tc_slider_display() {
     global $wp_query;
 
-    //prevent the main ID override when creating a new query. (only if it is included in the main loop but who knows...)
-    if ( !apply_filters( 'tc_show_slider' , !is_404() && !is_archive() && !is_search() ) )
-      return;
-
     //gets the front slider if any
     $tc_front_slider              = tc__f( '__get_option' , 'tc_front_slider' );
 
-    //check if home and slider is set
-    if ( tc__f('__is_home') && !$tc_front_slider )
+    //when do we display a slider? By default only for home (if a slider is defined), pages and posts (including custom post types) 
+    if ( ! apply_filters( 'tc_show_slider' , !is_404() && !is_archive() && !is_search() || ( tc__f('__is_home') && $tc_front_slider ) ) )
       return;
     
     //gets the actual page id if we are displaying the posts page
@@ -156,16 +152,19 @@ class TC_slider {
 
     //gets the current slider id
     $slider_name_id               = ( tc__f('__is_home') && $tc_front_slider ) ? $tc_front_slider : esc_attr( get_post_meta( $queried_id, $key = 'post_slider_key' , $single = true ) );
+    $slider_name_id               = apply_filters( 'tc_slider_name_id', $slider_name_id , $queried_id);
 
     //is the slider set to on for the queried id?
     $slider_active                = ( tc__f('__is_home') && $tc_front_slider ) ? true : esc_attr(get_post_meta( $queried_id, $key = 'post_slider_check_key' , $single = true ));
+    $slider_active                = apply_filters( 'tc_slider_active_status', $slider_active , $queried_id);
 
     if ( isset( $slider_active) && !$slider_active )
       return;
 
     //gets slider options if any
     $layout_value                 = tc__f('__is_home') ? tc__f( '__get_option' , 'tc_slider_width' ) : esc_attr(get_post_meta( $queried_id, $key = 'slider_layout_key' , $single = true ));
-
+    $layout_value                 = apply_filters( 'tc_slider_layout', $layout_value, $queried_id );
+    
     //declares the layout vars
     $layout_class                 = ( 0 == $layout_value ) ? 'container' : '';
     $img_size                     = ( 0 == $layout_value ) ? 'slider' : 'slider-full';
@@ -179,12 +178,7 @@ class TC_slider {
     
     ob_start();
     ?>
-
-    <?php   ?>
-
     <div id="customizr-slider" class="<?php echo $layout_class ?> carousel slide">
-
-      <?php  ?>
 
         <div class="carousel-inner">
               

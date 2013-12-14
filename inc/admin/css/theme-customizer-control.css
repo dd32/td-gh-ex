@@ -4,22 +4,48 @@
 .control-section .accordion-section-title:after {
 	top: 7px;
 }
+#customize-theme-controls h3.accordion-section-title {
+	font-family: 'Raleway', sans-serif;
+	font-size: 16px;
+}
+#customize-theme-controls .control-section:hover .accordion-section-title, #customize-theme-controls .control-section .accordion-section-title:hover, #customize-theme-controls .control-section.open .accordion-section-title, #customize-theme-controls .control-section .accordion-section-title:focus {
+	background: #2EA2CC;
+	-webkit-box-shadow: inset 0 1px 0 rgba(120, 200, 230, 0.6);
+	box-shadow: inset 0 1px 0 rgba(120, 200, 230, 0.6);
+	color: #FFF!important;
+	-webkit-transition-property: border,background,color;
+	-moz-transition-property: border,background,color;
+	transition-property: border,background,color;
+	-webkit-transition-duration: .05s;
+	-moz-transition-duration: .05s;
+	transition-duration: .05s;
+	-webkit-transition-timing-function: ease-in-out;
+	-moz-transition-timing-function: ease-in-out;
+	transition-timing-function: ease-in-out;
+}
+#customize-theme-controls .control-section:hover .accordion-section-title::after, #customize-theme-controls .control-section .accordion-section-title:hover::after, #customize-theme-controls .control-section.open .accordion-section-title::after, #customize-theme-controls .control-section .accordion-section-title:focus::after {
+	color: #FFF;
+}
 .customize-control-checkbox label {
 	line-height: 16px;
 }
+.customize-control-title {
+	color: #2E2E2E;
+}
 .tc-customizr-title {
 	color: #21759B;
-	font-family: Georgia, Times, 'Times New Roman' , serif;
 	text-transform: uppercase;
 	text-shadow: 0 1px 0 #FFF;
 	margin: 1em 0em 0em 0em;
+	font-size: 15px!important;
 }
 .tc-after-button {
 	border-color: white;
 	margin-top:15px;
 }
 .tc-emphasize {
-	line-height: 1em;
+	line-height: 1.2em;
+	color: #2E2E2E;
 }
 i.tc-notice {
 	display: block;

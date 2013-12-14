@@ -113,7 +113,6 @@ class TC_post_list {
           <?php if (!get_post_format()) :  // Only display Excerpts for lists of posts with format different than quote, status, link, aside ?>
               
               <section class="entry-summary">
-                <?php  ?>
                   <?php if ( !$tc_show_post_list_excerpt ) : ?>
                     <?php the_content(); ?>
                   <?php else : ?>

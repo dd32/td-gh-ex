@@ -154,12 +154,10 @@ class TC_admin_init {
    */
     function tc_welcome_panel() {
       
-
       $is_help = isset($_GET['help'])  ?  true : false;
 
       ?>
       <div class="wrap about-wrap">
-        <?php  ?>
         
           <?php if ($is_help) : ?>
             <h1 class="need-help-title"><?php _e( 'Need help with Customizr ?','customizr' ) ?></h1>

@@ -56,8 +56,6 @@ class TC_post_navigation {
         <?php echo apply_filters( 'tc_singular_nav_separator' , '<hr class="featurette-divider '.current_filter().'">'); ?>
 
         <nav id="<?php echo $html_id; ?>" class="navigation" role="navigation">
-          
-          <?php  ?>
 
             <h3 class="assistive-text">
               <?php echo apply_filters( 'tc_singular_nav_title', __( 'Post navigation' , 'customizr' ) ) ; ?>
@@ -91,8 +89,6 @@ class TC_post_navigation {
       <?php elseif ( $wp_query->max_num_pages > 1 && !is_404() && !tc__f( '__is_home_empty') ) : ?>
 
         <nav id="<?php echo $html_id; ?>" class="navigation" role="navigation">
-          
-          <?php  ?>
 
           <h3 class="assistive-text">
             <?php echo apply_filters( 'tc_list_nav_title', __( 'Post navigation' , 'customizr' ) ) ; ?>

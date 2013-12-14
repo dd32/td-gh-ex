@@ -71,7 +71,6 @@ class TC_sidebar {
        
       <div class="<?php echo $class  ?>">
          <div id="<?php echo $position ?>" class="widget-area" role="complementary">
-          <?php  ?>
              <?php if ( is_active_sidebar( $position ) ) : ?>
                 <?php do_action( '__before_' .$position. '_sidebar' );##hook of social icons ?>
                 <?php get_sidebar( $position ) ?>
@@ -110,7 +109,6 @@ class TC_sidebar {
       ?>
       
         <aside class="social-block widget widget_social">
-          <?php  ?>
           <h3 class="widget-title"><?php _e( 'Social links' , 'customizr' ) ?></h3>
           <?php echo tc__f( '__get_socials' ) ?>
         </aside>

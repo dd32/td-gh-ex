@@ -34,14 +34,19 @@ class TC_404 {
     function tc_404_content() {
         if ( !is_404() )
             return;
-        
-        
+
+        $content_404    = TC_init::$instance -> content_404;
 
         echo apply_filters( 'tc_404_content',
             sprintf('<div class="%1$s"><div class="entry-content %2$s">%3$s</div>%4$s</div>',
                 apply_filters( 'tc_404_wrapper_class', 'tc-content span12 format-quote' ),
                 apply_filters( 'tc_404_content_icon', 'format-icon' ),
-                TC_init::$instance -> content_404,
+                sprintf('<blockquote><p>%1$s</p><cite>%2$s</cite></blockquote><p>%3$s</p>%4$s',
+                              call_user_func( '__' , $content_404['quote'] , 'customizr' ),
+                              call_user_func( '__' , $content_404['author'] , 'customizr' ),
+                              call_user_func( '__' , $content_404['text'] , 'customizr' ),
+                              get_search_form( $echo = false )
+                ),
                 apply_filters( 'tc_no_results_separator', '<hr class="featurette-divider '.current_filter().'">' )
             )
         );

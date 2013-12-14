@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Customizr 3.0.8\n"
-"POT-Creation-Date: 2013-12-14 14:23+0100\n"
-"PO-Revision-Date: 2013-12-14 14:23+0100\n"
+"Project-Id-Version: Customizr 1.1.5\n"
+"POT-Creation-Date: 2013-12-14 15:10+0100\n"
+"PO-Revision-Date: 2013-12-14 15:11+0100\n"
 "Last-Translator: Nico <contact@themesandco.com>\n"
 "Language-Team: Nicolas G. <contact@themesandco.com>\n"
-"Language: Swedish\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,177 +18,178 @@ msgstr ""
 
 #: ../comments.php:29
 msgid "Leave a Comment"
-msgstr "Lämna en kommentar"
+msgstr "Bir Yorum Yapın"
 
 #: ../inc/class-fire-init.php:47 ../inc/class-fire-init.php:48
 msgid "Right sidebar"
-msgstr "Höger sidofält"
+msgstr "Sağ kenar çubuğu"
 
 #: ../inc/class-fire-init.php:53 ../inc/class-fire-init.php:54
 msgid "Left sidebar"
-msgstr "Vänster sidofält"
+msgstr "Sol kenar çubuğu"
 
 #: ../inc/class-fire-init.php:59 ../inc/class-fire-init.php:60
 msgid "2 sidebars : Right and Left"
-msgstr "2 sidofält: Höger och vänster"
+msgstr ""
 
 #: ../inc/class-fire-init.php:65 ../inc/class-fire-init.php:66
 msgid "No sidebars : full width layout"
-msgstr "Inga sidofält: Full bredd layout"
+msgstr ""
 
 #: ../inc/class-fire-init.php:78
 msgid "Blue"
-msgstr "Blå"
+msgstr "Mavi"
 
 #: ../inc/class-fire-init.php:79
 msgid "Green"
-msgstr "Grön"
+msgstr "Yeşil"
 
 #: ../inc/class-fire-init.php:80
 msgid "Yellow"
-msgstr "Gul"
+msgstr "Sarı"
 
 #: ../inc/class-fire-init.php:81
 msgid "Orange"
-msgstr "Orange"
+msgstr "Turuncu"
 
 #: ../inc/class-fire-init.php:82
 msgid "Red"
-msgstr "Röd"
+msgstr "Kırmızı"
 
 #: ../inc/class-fire-init.php:83
 msgid "Purple"
-msgstr "Lila"
+msgstr "Mor"
 
 #: ../inc/class-fire-init.php:84
 msgid "Grey"
-msgstr "Grå"
+msgstr "Gri"
 
 #: ../inc/class-fire-init.php:85
 msgid "Black"
-msgstr "Svart"
+msgstr "Siyah"
 
 #: ../inc/class-fire-init.php:95
 msgid "Suscribe to my rss feed"
-msgstr "Prenumerera på min rss feed"
+msgstr "RSS beslememe abone olun"
 
 #: ../inc/class-fire-init.php:96
 msgid "RSS feed (default is the wordpress feed)"
-msgstr "RSS feed (defalt är wordpress feed)"
+msgstr "RSS beslemesi (varsayılan wordpress beslemesi)"
 
 #: ../inc/class-fire-init.php:100
 msgid "Follow me on Twitter"
-msgstr ""
+msgstr "Beni Twitter'da Takip Edin"
 
 #: ../inc/class-fire-init.php:101
 msgid "Twitter profile url"
-msgstr "Twitter profil url"
+msgstr "Twitter profil URL'si"
 
 #: ../inc/class-fire-init.php:105
 msgid "Follow me on Facebook"
-msgstr ""
+msgstr "Beni Facebook'ta takip edin"
 
 #: ../inc/class-fire-init.php:106
 msgid "Facebook profile url"
-msgstr "Facebook profil url"
+msgstr "Facebook profil URL'si"
 
 #: ../inc/class-fire-init.php:110
 msgid "Follow me on Google+"
-msgstr ""
+msgstr "Beni Google +'ta takip edin"
 
 #: ../inc/class-fire-init.php:111
 msgid "Google+ profile url"
-msgstr "Google+ profil url"
+msgstr "Google + profil URL'si"
 
 #: ../inc/class-fire-init.php:115
 msgid "Follow me on Instagram"
-msgstr ""
+msgstr "Beni Instagram'da takip edin"
 
 #: ../inc/class-fire-init.php:116
 msgid "Instagram profile url"
-msgstr "Instagram profil url"
+msgstr "Instagram profil URL'si"
 
 #: ../inc/class-fire-init.php:120
 msgid "Follow me on WordPress"
-msgstr ""
+msgstr "Beni WordPress'te takip edin"
 
 #: ../inc/class-fire-init.php:121
 msgid "WordPress profile url"
-msgstr "WordPress profil url"
+msgstr "WordPress profil URL'si"
 
 #: ../inc/class-fire-init.php:125
 msgid "Follow me on Youtube"
-msgstr ""
+msgstr "Beni Youtube'da takip edin"
 
 #: ../inc/class-fire-init.php:126
 msgid "Youtube profile url"
-msgstr "Youtube profil url"
+msgstr "Youtube profil URL'si"
 
 #: ../inc/class-fire-init.php:130
 msgid "Pin me on Pinterest"
-msgstr ""
+msgstr "Beni Pinterest'te iğneleyin"
 
 #: ../inc/class-fire-init.php:131
 msgid "Pinterest profile url"
-msgstr "Pinterest profil url"
+msgstr "Pinterest profil URL'si"
 
 #: ../inc/class-fire-init.php:135
 msgid "Follow me on Github"
-msgstr ""
+msgstr "Beni Github'da takip edin"
 
 #: ../inc/class-fire-init.php:136
 msgid "Github profile url"
-msgstr "Github profil url"
+msgstr "Github profil URL'si"
 
 #: ../inc/class-fire-init.php:140
 msgid "Follow me on Dribbble"
-msgstr ""
+msgstr "Beni Dribbble'da takip edin"
 
 #: ../inc/class-fire-init.php:141
 msgid "Dribbble profile url"
-msgstr "Dribbble profil url"
+msgstr "Dribbble profil URL'si"
 
 #: ../inc/class-fire-init.php:145
 msgid "Follow me on LinkedIn"
-msgstr ""
+msgstr "Beni LinkedIn'de takip edin"
 
 #: ../inc/class-fire-init.php:146
 msgid "LinkedIn profile url"
-msgstr "LinkedIn profil url"
+msgstr "LinkedIn profil URL'si"
 
 #: ../inc/class-fire-init.php:159
 msgid "Right Sidebar"
-msgstr "Höger sidofält"
+msgstr "Sağ kenar çubuğu"
 
 #: ../inc/class-fire-init.php:160 ../inc/class-fire-init.php:164
 msgid "Appears on posts, static pages, archives and search pages"
-msgstr "Visas i inlägg, statiska sidor, arkiv och söksidor"
+msgstr "Gönderilerde, sabit sayfalarda, arşiv ve arama sayfalarında görünür"
 
 #: ../inc/class-fire-init.php:163
 msgid "Left Sidebar"
-msgstr "Vänster sidofält"
+msgstr "Sol kenar çubuğu"
 
 #: ../inc/class-fire-init.php:173
 msgid "Footer Widget Area One"
-msgstr "Sidfot widget område ett"
+msgstr "Birinci Altbilgi Aracı Alanı "
 
 #: ../inc/class-fire-init.php:174 ../inc/class-fire-init.php:178
 #: ../inc/class-fire-init.php:182
 msgid "Just use it as you want !"
-msgstr "Använd den som du vill!"
+msgstr "İstediğiniz gibi kullanın !"
 
 #: ../inc/class-fire-init.php:177
 msgid "Footer Widget Area Two"
-msgstr "Sidfot widget område två"
+msgstr "İkinci Altbilgi Aracı Alanı"
 
 #: ../inc/class-fire-init.php:181
 msgid "Footer Widget Area Three"
-msgstr "Sidfot widget område tre"
+msgstr "Üçüncü Altbilgi Aracı Alanı"
 
 #: ../inc/class-fire-init.php:206
 msgid "Speaking the Truth in times of universal deceit is a revolutionary act."
 msgstr ""
-"Tala sanning i tider av universellt bedrägeri är en revolutionär handling."
+"Sahtekarlığın evrensel düzeyde hakim olduğu dönemlerde, gerçeği söylemek "
+"devrimci bir eylemdir."
 
 #: ../inc/class-fire-init.php:207
 msgid "George Orwell"
@@ -198,460 +199,468 @@ msgstr "George Orwell"
 msgid ""
 "Sorry, but the requested page is not found. You might try a search below."
 msgstr ""
-"Ledsen, men den begärda sidan kan inte hittas. Du kan prova en sökning nedan."
+"Üzgünüz, fakat aradığınız sayfa bulunamadı. Aşağıda yeniden aramayı "
+"deneyebilirsiniz."
 
 #: ../inc/class-fire-init.php:215
 msgid ""
 "Success is the ability to go from one failure to another with no loss of "
 "enthusiasm..."
 msgstr ""
-"Framgång är förmågan att gå från ett misslyckande till ett annat med "
-"bibehållen entusiasm..."
+"Başarı, başarısızlıktan başarısızlığa heyecanını kaybetmeden gitmekle "
+"gelir..."
 
 #: ../inc/class-fire-init.php:216
 msgid "Sir Winston Churchill"
-msgstr "Sir Winston Churchill"
+msgstr "Sör Winston Churchill"
 
 #: ../inc/class-fire-init.php:217
 msgid ""
 "Sorry, but nothing matched your search criteria. Please try again with some "
 "different keywords."
 msgstr ""
-"Tyvärr, men ingenting matchade dina sökkriterier. Vänligen försök igen med "
-"några andra nyckelord."
+"Üzgünüz, fakat arama kriterlerinize uygun sonuç bulunamadı. Lütfen farklı "
+"kelimelerle tekrar deneyin."
 
 #: ../inc/class-fire-init.php:225 ../inc/class-fire-init.php:234
 msgid "Customizr is a clean responsive theme"
-msgstr "Customizr är ett rent responsivt tema"
+msgstr "Customizr sade ve esnek bir temadır"
 
 #: ../inc/class-fire-init.php:226
 msgid "Let your creativity speak and easily customiz'it the way you want!"
-msgstr "Låt din kreativitet tala och enkelt anpassa det på det sätt du vill!"
+msgstr "Yaratıcılığını konuştur ve Customizr'ı istediğin gibi tasarla!"
 
 #: ../inc/class-fire-init.php:227
 msgid "Learn more"
-msgstr "Lär dig mer"
+msgstr "Daha fazla bilgi"
 
 #: ../inc/class-fire-init.php:239 ../inc/class-fire-init.php:248
 msgid "Style your WordPress site live!"
-msgstr "Styla din WordPress webbplats live!"
+msgstr "WordPress siteni canlı biçimlendir!"
 
 #: ../inc/class-fire-init.php:240
 msgid ""
 "Many layout and design options are available from the WordPress customizer "
 "screen : see your changes live !"
 msgstr ""
-"Många alternativ för layout och design är tillgängliga från WordPress "
-"Customizer skärmen: se dina ändringar live!"
+"WordPress biçimlendirme ekranında birçok yerleşim ve tasarım seçeneği "
+"mevcut: Değişikliklerini anında gör!"
 
 #: ../inc/class-fire-init.php:241
 msgid "Just try it!"
-msgstr "Bara prova den!"
+msgstr "Şimdi deneyin!"
 
 #: ../inc/class-fire-init.php:253 ../inc/class-fire-init.php:262
 msgid "Create beautiful sliders"
-msgstr "Skapa vackra sliders"
+msgstr "Gözalıcı slayt oynatıcılar oluşturun"
 
 #: ../inc/class-fire-init.php:254
 msgid ""
 "Customizr comes with a cool slider generator : add a slider to any post or "
 "page!"
 msgstr ""
-"Customizr kommer med en cool slide generator: lägg en slide för varje inlägg "
-"eller sida!"
+"Customizr çok havalı bir slayt oluşturucuyla gelir: Herhangi bir gönderiye "
+"veya sayfaya bir slayt oynatıcı ekleyin!"
 
 #: ../inc/class-fire-init.php:255
 msgid "Discover the features"
-msgstr "Upptäck funktionerna"
+msgstr "Özellikleri keşfedin!"
 
 #: ../inc/class-fire-init.php:320
 msgid "Main Menu"
-msgstr "Huvudmeny"
+msgstr "Ana Menü"
 
 #: ../inc/class-fire-utils.php:298
 #, php-format
 msgid "Page %s"
-msgstr "Sida %s"
+msgstr "Sayfa %s"
 
+# this is a special pronunciation. Customize means in Turkish : "Özelleştirmek". But it does not mean anything about this theme. So that it should be left as original or uses in my translate "CustomizEdin", which is exact meaning of "Customiz'It"
 #: ../inc/admin/class-admin-customize.php:53
 msgid "Customiz'it!"
-msgstr "Customiz'it!"
+msgstr "CustomizEdin!"
 
 #: ../inc/admin/class-admin-customize.php:56
 msgid "Customize your website at any time!"
-msgstr "Anpassa din webbplats när som helst!"
+msgstr "İnternet sitenizi istediğiniz zaman özelleştirin!"
 
 #: ../inc/admin/class-admin-customize.php:145
 msgid "&mdash; No slider &mdash;"
-msgstr "&mdash; Ingen slider &mdash;"
+msgstr "&mdash; Slayt Oynatıcı Yok &mdash;"
 
 #: ../inc/admin/class-admin-customize.php:146
 msgid "&mdash; Demo Slider &mdash;"
-msgstr "&mdash; Demo Slider &mdash;"
+msgstr "&mdash; Örnek Slayt Oynatıcı &mdash;"
 
 #: ../inc/admin/class-admin-customize.php:188
 msgid "Home featured page one"
-msgstr "Utvald sida ett"
+msgstr "Ana Sayfa, birinci öne çıkan sayfa"
 
 #: ../inc/admin/class-admin-customize.php:189
 msgid "Home featured page two"
-msgstr "Utvald sida två"
+msgstr "Ana Sayfa, ikinci öne çıkan sayfa"
 
 #: ../inc/admin/class-admin-customize.php:190
 msgid "Home featured page three"
-msgstr "Utvald sida tre"
+msgstr "Ana Sayfa, üçüncü öne çıkan sayfa"
 
 #: ../inc/admin/class-admin-customize.php:193
 msgid "Featured text one (200 car. max)"
-msgstr "Utvald text ett (200 tecken max)"
+msgstr "Birinci öne çıkan yazı (En Fazla 200 kar.)"
 
 #: ../inc/admin/class-admin-customize.php:194
 msgid "Featured text two (200 car. max)"
-msgstr "Utvald text två (200 tecken max)"
+msgstr "İkinci öne çıkan yazı (En Fazla 200 kar.)"
 
 #: ../inc/admin/class-admin-customize.php:195
 msgid "Featured text three (200 car. max)"
-msgstr "Utvald text tre (200 tecken max)"
+msgstr "Üçüncü öne çıkan yazı (En Fazla 200 kar.)"
 
 #: ../inc/admin/class-admin-customize.php:230
 msgid ""
 "You need to select a page first. Leave this field empty if you want to use "
 "the page excerpt."
 msgstr ""
-"Du måste välja en sida först. Lämna det här fältet tomt om du vill använda "
-"ett utdrag från sidan."
+"Öncelikle bir sayfa seçmelisiniz. Sayfa alıntısı kullanmak istiyorsanız bu "
+"alanı boş bırakın."
 
 #: ../inc/admin/class-admin-customize.php:292
 msgid "Skin"
-msgstr "Skal"
+msgstr "Dış görünüm"
 
 #: ../inc/admin/class-admin-customize.php:294
 msgid "Select a skin for Customizr"
-msgstr "Välj skal för Customizr"
+msgstr "Customizr için bir dış görünüm seçin"
 
 #: ../inc/admin/class-admin-customize.php:298
 msgid "Logo &amp; Favicon"
-msgstr "Logotyp &amp; Favicon"
+msgstr "Logo ve Favicon"
 
 #: ../inc/admin/class-admin-customize.php:300
 msgid "Set up logo and favicon options"
-msgstr "Ställ in logotyp och favicon alternativ"
+msgstr "Logo ve Favicon ayarlarını belirleyin"
 
 #: ../inc/admin/class-admin-customize.php:304
 msgid "Front Page"
-msgstr "Förstasidan"
+msgstr "Ön sayfa"
 
 #: ../inc/admin/class-admin-customize.php:306
 msgid "Set up front page options"
-msgstr "Ställ in alternativ för förstasidan"
+msgstr "Ön sayfa ayarlarını belirleyin"
 
 #: ../inc/admin/class-admin-customize.php:310
 msgid "Pages &amp; Posts Layout"
-msgstr "Sidor &amp; inläggs layout"
+msgstr "Sayfa ve Gönderi Yerleşimleri"
 
 #: ../inc/admin/class-admin-customize.php:312
 msgid "Set up layout options"
-msgstr "Ställ in layout alternativ"
+msgstr "Yerleşim ayarlarını belirleyin."
 
 #: ../inc/admin/class-admin-customize.php:316
 msgid "Comments"
-msgstr "Kommentarer"
+msgstr "Yorumlar"
 
 #: ../inc/admin/class-admin-customize.php:318
 msgid "Set up comments options"
-msgstr "Ställ in alternativ för kommentarer"
+msgstr "Yorum ayarlarını belirleyin"
 
 #: ../inc/admin/class-admin-customize.php:322
 #: ../parts/class-content-sidebar.php:112
 msgid "Social links"
-msgstr "Sociala länkar"
+msgstr "Sosyal bağlantılar"
 
 #: ../inc/admin/class-admin-customize.php:324
 msgid "Set up your social links"
-msgstr "Ställ in dina sociala länkar"
+msgstr "Sosyal bağlantı ayarlarınızı belirleyin"
 
 #: ../inc/admin/class-admin-customize.php:328
 msgid "Images"
-msgstr "Bilder"
+msgstr "Görseller"
 
 #: ../inc/admin/class-admin-customize.php:330
 msgid "Various images settings"
-msgstr ""
+msgstr "Çeşitli görsel ayarları"
 
 #: ../inc/admin/class-admin-customize.php:334
 msgid "Links"
-msgstr ""
+msgstr "Bağlantılar"
 
 #: ../inc/admin/class-admin-customize.php:336
 msgid "Various links settings"
-msgstr ""
+msgstr "Çeşitli bağlantı ayarları"
 
 #: ../inc/admin/class-admin-customize.php:340
 msgid "Custom CSS"
-msgstr "Anpassad CSS"
+msgstr "Özel CSS"
 
 #: ../inc/admin/class-admin-customize.php:342
 msgid "Add your own CSS"
-msgstr "Lägg till din egen CSS"
+msgstr "Kendi CSS'inizi ekleyin"
 
 #: ../inc/admin/class-admin-customize.php:346
 msgid "Dev Tools (advanced users)"
-msgstr "Utvecklingsverktyg (avancerade användare)"
+msgstr "Geliştirici Araçları (ileri düzey kullanıcılar için)"
 
 #: ../inc/admin/class-admin-customize.php:348
 msgid "Enable/disable the Dev Tools"
-msgstr "Slå på/slå av utvecklingsverktygen"
+msgstr "Geliştrici ayarlarını: Etkinleştirin/Devre Dışı bırakın"
 
 #: ../inc/admin/class-admin-customize.php:380
 msgid "Manage menus"
-msgstr "Hantera menyer"
+msgstr "Menüleri yönetin"
 
 #: ../inc/admin/class-admin-customize.php:386
 msgid "Select a submenu expansion option"
-msgstr ""
+msgstr "Bir altmenü genişleme ayarı seçin"
 
 #: ../inc/admin/class-admin-customize.php:390
 msgid "Expand submenus on click"
-msgstr ""
+msgstr "Altmenüleri üzerine tıklanınca genişlet"
 
 #: ../inc/admin/class-admin-customize.php:391
 msgid "Expand submenus on hover"
-msgstr ""
+msgstr "Altmenüleri üzerine gelince genişlet"
 
 #: ../inc/admin/class-admin-customize.php:406
 msgid "Choose a predefined skin"
-msgstr "Välj ett fördefinierat skal"
+msgstr "Önceden tanımlanmış bir dış görünüm seçin"
 
 #: ../inc/admin/class-admin-customize.php:415
 msgid "Display top border"
-msgstr "Visa översta gränsen (top border)"
+msgstr "Üst kenarlığı göster"
 
 #: ../inc/admin/class-admin-customize.php:419
 msgid "Uncheck this option to remove the colored top border."
 msgstr ""
-"Kryssa ur detta alternativ för att ta bort den överst färgade gränsen (top "
-"border)."
+"Renkli üst kenarlığı devredışı bırakmak için bu seçenekten işareti kaldırın."
 
 #: ../inc/admin/class-admin-customize.php:432
 msgid "Logo Upload (supported formats : .jpg, .png, .gif)"
-msgstr "Logo uppladdning (supportade format : .jpg, .png, .gif)"
+msgstr "Logo Yükleyin (desteklenen formatlar: .jpg, .png, .gif)"
 
 #: ../inc/admin/class-admin-customize.php:439
 msgid "Force logo dimensions to max-width:250px and max-height:100px"
-msgstr "Tvinga logotyp dimensioner till max-bredd:250px och max-höjd:100px"
+msgstr ""
+"Logo boyutlarını max-width:250px ve max-height:100px olarak düzeltmeye "
+"zorlayın"
 
 #: ../inc/admin/class-admin-customize.php:455
 msgid "Favicon Upload (supported formats : .ico, .png, .gif)"
-msgstr "Favicon uppladdning (supportade format : .ico, .png, .gif)"
+msgstr "Favicon Yükleyin (desteklenen formatlar: .ico, .png, .gif)"
 
 #: ../inc/admin/class-admin-customize.php:471
 msgid "Choose content and layout"
-msgstr "Välj innehåll och layout"
+msgstr "İçerik ve yerleşimi seçin"
 
 #: ../inc/admin/class-admin-customize.php:479
 msgid "Front page displays"
-msgstr "Förstasidan visar"
+msgstr "Ön sayfa görünümleri"
 
 #: ../inc/admin/class-admin-customize.php:484
 msgid "Don't show any posts or page"
-msgstr "Visa inga inlägg eller sidor"
+msgstr "Hiçbir gönderi veya sayfayı gösterme"
 
 #: ../inc/admin/class-admin-customize.php:485
 msgid "Your latest posts"
-msgstr "Dina senaste inlägg"
+msgstr "Son gönderileriniz"
 
 #: ../inc/admin/class-admin-customize.php:486
 msgid "A static page"
-msgstr "En statisk sida"
+msgstr "Sabit bir sayfa"
 
 #: ../inc/admin/class-admin-customize.php:492
 msgid "Front page"
-msgstr "Förstasida"
+msgstr "Ön sayfa"
 
 #: ../inc/admin/class-admin-customize.php:500
 msgid "Posts page"
-msgstr "Inläggssida"
+msgstr "Gönderi sayfası"
 
 #: ../inc/admin/class-admin-customize.php:509
 msgid "Set up the front page layout"
-msgstr "Ställ in titelsidans layout"
+msgstr "Ön sayfa yerleşim ayarlarını belirleyin"
 
 #: ../inc/admin/class-admin-customize.php:520
 msgid "Slider options"
-msgstr "Slider alternativ"
+msgstr "Slayt oynatıcı ayarları"
 
 #: ../inc/admin/class-admin-customize.php:521
 msgid "Select front page slider"
-msgstr "Välj förstasidans slider"
+msgstr "Ön sayfa slayt oynatıcısı seçin"
 
 #: ../inc/admin/class-admin-customize.php:533
 msgid "Full width slider"
-msgstr "Full bredd slider"
+msgstr "Tam genişlikli slayt oynatıcısı"
 
 #: ../inc/admin/class-admin-customize.php:552
 msgid "Delay between each slides"
-msgstr "Fördröjning mellan varje slide"
+msgstr "Her bir slayt arası gecikme"
 
 #: ../inc/admin/class-admin-customize.php:557
 msgid "in ms : 1000ms = 1s"
-msgstr "i ms : 1000ms = 1s"
+msgstr "ms : 1000ms = 1s"
 
 #: ../inc/admin/class-admin-customize.php:565
 msgid "Featured pages options"
-msgstr "Alternativ för utvalda sidor"
+msgstr "Öne çıkan sayfa ayarları"
 
 #: ../inc/admin/class-admin-customize.php:566
 msgid "Display home featured pages area"
-msgstr "Visa området utvalda sidor på förstasidan"
+msgstr "Ana Sayfa'da özel sayfa alanlarını göster"
 
 #: ../inc/admin/class-admin-customize.php:570
 msgid "Enable"
-msgstr "Aktivera"
+msgstr "Etkinleştirin"
 
 #: ../inc/admin/class-admin-customize.php:571
 msgid "Disable"
-msgstr "Inaktivera"
+msgstr "Devredışı bırakın"
 
 #: ../inc/admin/class-admin-customize.php:580
 msgid "Show images"
-msgstr "Visa bilder"
+msgstr "Görselleri göster"
 
 #: ../inc/admin/class-admin-customize.php:583
 msgid ""
 "The images are set with the \"featured image\" of each pages (in the page "
 "edit screen). Uncheck the option above to disable the featured page images."
 msgstr ""
-"Bilderna sätts med \"Utvald bild \" på varje sida (på sidan redigera sidan). "
-"Bocka av alternativet ovan för att inaktivera de utvalda bilderna på sidan."
+"Görseller her sayfadaki \"öne çıkan görsel\" bölümünden ayarlanmaktadır. Öne "
+"çıkan sayfa görseli özelliğini ipral etmek için yukarıdaki seçeneği kaldırın."
 
 #: ../inc/admin/class-admin-customize.php:589
 msgid "Read more &raquo;"
-msgstr "Läs mer &raquo;"
+msgstr "Devamını oku &raquo;"
 
 #: ../inc/admin/class-admin-customize.php:591
 msgid "Button text"
-msgstr "Knapptext"
+msgstr "Düğme yazısı"
 
 #: ../inc/admin/class-admin-customize.php:612
 msgid "Display Breadcrumb"
-msgstr "Visa navigation (breadcrumb)"
+msgstr "Breadcrumblar'ı Göster"
 
 #: ../inc/admin/class-admin-customize.php:622
 msgid "Choose the global default layout"
-msgstr "Välj global default layout"
+msgstr "Varsayılan genel yerleşim ayarlarını seçin"
 
 #: ../inc/admin/class-admin-customize.php:633
 msgid "Force default layout everywhere"
-msgstr "Tvinga default layout överallt"
+msgstr "Her yerde varsayılan yerleşim için zorla"
 
 #: ../inc/admin/class-admin-customize.php:636
 msgid ""
 "This option will override the specific layouts on all posts/pages, including "
 "the front page."
 msgstr ""
-"Detta alternativ kommer att åsidosätta de särskilda layouter på alla "
-"inlägg / sidor, inklusive den främre sidan."
+"Bu seçenek tüm gönderilerde/sayfalarda ve ön sayfada, özelleştirilmiş "
+"yerleşim ayarlarının üzerine yazılacaktır."
 
 #: ../inc/admin/class-admin-customize.php:643
 msgid "Choose the posts default layout"
-msgstr "Välj default layout för inlägg"
+msgstr "Varsayılan gönderi yerleşim ayarlarını seçin"
 
 #: ../inc/admin/class-admin-customize.php:655
 msgid "Maximum number of posts per page"
-msgstr "Maximalt antal av inlägg per sida"
+msgstr "Her sayfada görüntülenecek en fazla gönderi adeti"
 
 #: ../inc/admin/class-admin-customize.php:666
 msgid "Select the length of posts in lists (home, search, archives, ...)"
-msgstr ""
+msgstr "Gönderi listesi uzunluğunu seçin (ana sayfa, arama, arşiv, ...)"
 
 #: ../inc/admin/class-admin-customize.php:670
 msgid "Display the excerpt"
-msgstr ""
+msgstr "Alıntıları gösterin"
 
 #: ../inc/admin/class-admin-customize.php:671
 msgid "Display the full content"
-msgstr ""
+msgstr "Tüm içeriği gösterin"
 
 #: ../inc/admin/class-admin-customize.php:679
 msgid "Choose the pages default layout"
-msgstr "Välj default layout för sidor"
+msgstr "Varsayılan sayfa yerleşim ayarlarını seçin"
 
 #: ../inc/admin/class-admin-customize.php:699
 msgid "Enable comments on pages"
-msgstr "Aktivera kommentarer på sidor"
+msgstr "Sayfalarda yorumları etkinleştir"
 
 #: ../inc/admin/class-admin-customize.php:702
 msgid ""
 "This option will enable comments on pages. You can disable comments for a "
 "single page in the quick edit mode of the page list screen."
 msgstr ""
-"Detta alternativ gör det möjligt för kommentarer på sidorna. Du kan "
-"inaktivera kommentarer för en enda sida i snabbredigeringarläge på sidan "
-"alla sidor."
+"Bu ayar tüm sayfalarda yorumları etkinleştirecektir. Tek bir sayfa için "
+"yorumları sayfa görüntüleme ekranındaki hızlı düzenleme seçeneğinden "
+"değiştirebilirsiniz."
 
 #: ../inc/admin/class-admin-customize.php:716
 msgid "Social links in header"
-msgstr "Sociala länkar i sidhuvudet"
+msgstr "Üstbilgi sosyal bağlantıları"
 
 #: ../inc/admin/class-admin-customize.php:725
 msgid "Social links in left sidebar"
-msgstr "Sociala länkar i vänster sidofält"
+msgstr "Sol kenar çubuğu sosyal bağlantıları"
 
 #: ../inc/admin/class-admin-customize.php:734
 msgid "Social links in right sidebar"
-msgstr "Sociala länkar i höger sidofält"
+msgstr "Sağ kenar çubuğu sosyal bağlantıları"
 
 #: ../inc/admin/class-admin-customize.php:743
 msgid "Social links in footer"
-msgstr "Sociala länkar i sidfoten"
+msgstr "Altbilgi sosyal bağlantıları"
 
 #: ../inc/admin/class-admin-customize.php:764
 msgid "Enable/disable lightbox effect on images"
-msgstr "Slå på/av lightbox effekt på bilder"
+msgstr ""
+"Görseller üzerindeki lightbox efektlerini etkinleştirin/devre dışı bırakın"
 
 #: ../inc/admin/class-admin-customize.php:767
 msgid ""
 "If enabled, this option activate a popin window whith a zoom effect when an "
 "image is clicked. This will not apply to image gallery."
 msgstr ""
-"Om aktiverad, kommer detta alternativ att aktivera ett popup-fönster med en "
-"zoomeffekt när en bild klickas. Detta kommer inte att gälla för "
-"bildgallerier."
+"Bu efekt eğer etkinleştirilirse, bir görsele tıklanrığında yakınlaştırma "
+"efektli bir pencere açılacaktır. Bu tüm görsel galerisi için uygulanmaz."
 
 #: ../inc/admin/class-admin-customize.php:773
 msgid "Autoscale images on zoom"
-msgstr "Autoskala bilder vid zoom"
+msgstr "Yakınlaştırma anında dörselleri otomatik ölçeklendir"
 
 #: ../inc/admin/class-admin-customize.php:776
 msgid ""
 "If enabled, this option will force images to fit the screen on lightbox zoom."
 msgstr ""
-"Om aktiverad, kommer detta alternativ att tvinga bilderna att passa skärmen "
-"vid lightbox zoom."
+"Bu efekt eğer etkinleştirilirse, görselleri ligtbox yakınlaştırmasında "
+"ekrana sığdırmaya zorlayacaktır."
 
 #: ../inc/admin/class-admin-customize.php:782
 msgid "Enable/disable retina support"
-msgstr ""
+msgstr "Retina desteğini etkinleştirin/devre dışı bırakın"
 
 #: ../inc/admin/class-admin-customize.php:785
 msgid ""
 "If enabled, your website will include support for high resolution devices."
 msgstr ""
+"Eğer etkinleştirilirse, internet sayfanız yüksek çözünürlüklü cihazlara da "
+"destek verecektir."
 
 #: ../inc/admin/class-admin-customize.php:798
 msgid "Enable/disable smooth scroll on click"
-msgstr ""
+msgstr "Tıklama anında akıcı kaydırmayı etkinleştirin/devre dışı bırakın"
 
 #: ../inc/admin/class-admin-customize.php:801
 msgid ""
 "If enabled, this option activates a smooth page scroll when clicking on a "
 "link to an anchor of the same page."
 msgstr ""
+"Eğer etkinleştirilirse, bu seçenek aynı sayfadaki bağlantıya tıklandığında "
+"akıcı kaydırmayı aktif hale getirecektir."
 
 #: ../inc/admin/class-admin-customize.php:814
 msgid "Add your custom css here and design live! (for advanced users)"
 msgstr ""
-"Lägg till din egen CSS här och designa live! (för avancerade användare)"
+"Buradan özelleştirilmiş CSS dosyanızı ekleyin ve anında tasarlayın! (ileri "
+"düzey kullanıcılar içindir)"
 
 #: ../inc/admin/class-admin-customize.php:817
 msgid ""
@@ -659,32 +668,32 @@ msgid ""
 "style.css file : it will not be deleted during theme updates. You can also "
 "paste your custom css in the style.css file of a child theme."
 msgstr ""
-"Använd alltid det här fältet för att lägga till din egen CSS istället för "
-"att redigera direkt i style.css filen: det kommer inte att tas bort under "
-"temats uppdateringar. Du kan också klistra in egen CSS i style.css i ett "
-"barn-tema."
+"Özelleştirilmiş CSS dosyalarınızı eklerken, style.css dosyanızı doğrudan "
+"düzenlemek yerine her zaman bu alanı kullanın: bu alan tema "
+"güncellemelerinde silinmeyecektir. Ayrıca özelleştirilmiş CSSlerinizi bir "
+"alt temanın style.css dosyası içerisine yapıştırabilirsiniz."
 
 #: ../inc/admin/class-admin-meta_boxes.php:89
 msgid "Layout Options"
-msgstr "Layout alternativ"
+msgstr "Yerleşim Ayarları"
 
 #: ../inc/admin/class-admin-meta_boxes.php:97
 #: ../inc/admin/class-admin-meta_boxes.php:469
 msgid "Slider Options"
-msgstr "Slider alternativ"
+msgstr "Slayt Oynatıcı Ayarları"
 
 #: ../inc/admin/class-admin-meta_boxes.php:165
 #, php-format
 msgid "Default %1$s layout is set to : %2$s"
-msgstr "Default %1$s layout är satt till : %2$s"
+msgstr "Varsayılan %1$s yerleşimi %2$s olarak ayarlanmıştır"
 
 #: ../inc/admin/class-admin-meta_boxes.php:165
 msgid "pages"
-msgstr "sidor"
+msgstr "sayfalar"
 
 #: ../inc/admin/class-admin-meta_boxes.php:165
 msgid "posts"
-msgstr "inlägg"
+msgstr "gönderiler"
 
 #: ../inc/admin/class-admin-meta_boxes.php:170
 msgid ""
@@ -692,13 +701,13 @@ msgid ""
 "\"</i>, you must unchecked this option to enable a specific layout for this "
 "post."
 msgstr ""
-"Du har kryssat för <i>\"Tvinga global default layout för alla inlägg och "
-"sidor \"</ i>, du måste avmarkera det här alternativet för att aktivera en "
-"specifik layout för det här inlägget."
+"<i>\"Varsayılan genel yerleşim ayarlarını tüm gönderiler ve sayfalar için "
+"uygula\"</i> seçeneğini seçmişsiniz, bu gönderi için özelleştirilmiş "
+"yerleşimleri etkinleştirmek için bu seçeneği kaldırmalısınız"
 
 #: ../inc/admin/class-admin-meta_boxes.php:171
 msgid "Change layout options"
-msgstr "Byt layout alternativ"
+msgstr "Yerleşim ayarlarını değiştir"
 
 #: ../inc/admin/class-admin-meta_boxes.php:175
 #, php-format
@@ -707,68 +716,70 @@ msgid ""
 "right sidebars. The default layouts can be defined in the WordPress "
 "customizer screen %2$s.<br />"
 msgstr ""
-"Du kan definera en specifik layout för %1$s med hjälp av fördefinerade "
-"vänster och höger sidofält. De förinställda layouterna kan defineras i "
-"WordPress Customizer screen %2$s.<br />"
+"%1$s için ön tanımlı sol ve sağ kenar çubuklarını kullanarak özelleştirilmiş "
+"yerleşim tanımlamalısınız. Varsayılan yerleşimler WordPress düzenleme ekranı "
+"%2$s'da tanımlanmıştır."
 
 #: ../inc/admin/class-admin-meta_boxes.php:176
 #: ../inc/admin/class-admin-meta_boxes.php:181
 msgid "this page"
-msgstr "denna sida"
+msgstr "bu sayfa"
 
 #: ../inc/admin/class-admin-meta_boxes.php:176
 #: ../inc/admin/class-admin-meta_boxes.php:181
 msgid "this post"
-msgstr "detta inlägg"
+msgstr "bu gönderi"
 
 #: ../inc/admin/class-admin-meta_boxes.php:177
 msgid "here"
-msgstr "här"
+msgstr "burada"
 
 #: ../inc/admin/class-admin-meta_boxes.php:180
 #, php-format
 msgid "Select a specific layout for %1$s"
-msgstr "Välj en specifik layout för %1$s"
+msgstr "%1$s için özelleştirilmiş bir yerleşim seçin."
 
 #: ../inc/admin/class-admin-meta_boxes.php:184
 #, php-format
 msgid "Default layout %1s"
-msgstr "Default layout %1s"
+msgstr "Varsayılan yerleşim %1s"
 
 #: ../inc/admin/class-admin-meta_boxes.php:226
 msgid "Add a slider to this post/page"
-msgstr "Lägg till en slider för denna sida/inlägg"
+msgstr "Bu gönderiye/sayfaya bir slayt oynatıcı ekleyin"
 
 #: ../inc/admin/class-admin-meta_boxes.php:290
 #: ../inc/admin/class-admin-meta_boxes.php:676
 msgid "Choose a slider"
-msgstr "Välj en slider"
+msgstr "Bir slayt oynatıcı seçin"
 
 #: ../inc/admin/class-admin-meta_boxes.php:297
 #: ../inc/admin/class-admin-meta_boxes.php:691
 msgid "&mdash; Select a slider &mdash; "
-msgstr "&mdash; Välj en slider &mdash; "
+msgstr "&mdash; Bir slayt oynatıcı seç &mdash; "
 
 #: ../inc/admin/class-admin-meta_boxes.php:302
 msgid ""
 "To create a new slider : open the media library, edit your images and add "
 "them to your new slider."
 msgstr ""
-"Om du vill skapa en ny slider: öppnar mediebiblioteket, redigera dina bilder "
-"och lägga till dem till din nya slider."
+"Yeni bir slayt oynatıcı oluşturmak için: ortam kütüphanesini açın, "
+"görsellerinizi düzenleyin ve yeni slayt oynatıcınıza ekleyin."
 
 #: ../inc/admin/class-admin-meta_boxes.php:306
 msgid "Delay between each slides in milliseconds (default : 5000 ms)"
-msgstr "Fördröjning mellan varje slide i millisekunder (default: 5000 ms)"
+msgstr ""
+"Her bir slayt arasındaki gecikme zamanı, milisaniye cinsinden (varsayılan : "
+"5000 ms)"
 
 #: ../inc/admin/class-admin-meta_boxes.php:313
 msgid "Slider Layout : set the slider in full width"
-msgstr "Slider layout: Sätt slider till full bredd"
+msgstr "Slayt Oynatıcı Yerleşimi: slayt oynatıcıyı tam genişliğe ayarla"
 
 #: ../inc/admin/class-admin-meta_boxes.php:330
 #: ../inc/admin/class-admin-meta_boxes.php:700
 msgid "Delete this slider"
-msgstr "Ta bort denna slider"
+msgstr "Bu slayt oynatıcıyı sil"
 
 #: ../inc/admin/class-admin-meta_boxes.php:335
 #: ../inc/admin/class-admin-meta_boxes.php:704
@@ -776,13 +787,13 @@ msgid ""
 "The slider will be deleted permanently (images, call to actions and link "
 "will be kept)."
 msgstr ""
-"Slider kommer att tas bort permanent (bilder, åtgärder och länkar kommer att "
-"behållas)."
+"Slayt oynatıcı kalıcı olarak silinecektir (görseller, duyurular ve "
+"bağlantılar saklanacaktır)."
 
 #: ../inc/admin/class-admin-meta_boxes.php:338
 #: ../inc/admin/class-admin-meta_boxes.php:707
 msgid "Delete slider"
-msgstr "Ta bort slider"
+msgstr "Slayt oynatıcıyı sil"
 
 #: ../inc/admin/class-admin-meta_boxes.php:346
 #: ../inc/admin/class-controls.php:137
@@ -790,81 +801,81 @@ msgid ""
 "You haven't create any slider yet. Go to the media library, edit your images "
 "and add them to your sliders."
 msgstr ""
-"Du har inte skapa någon slider ännu. Gå till mediabiblioteket, redigera dina "
-"bilder och lägga till dem i din slider."
+"Henüz hiç bir slayt oynatıcı oluşturmamışsınız. Ortam kütüphanesine gidin, "
+"görsellerinizi düzenleyin ve slayt oynatıcınıza ekleyin."
 
 #: ../inc/admin/class-admin-meta_boxes.php:498
 msgid "Add to a slider"
-msgstr "Lägg till i slider"
+msgstr "Slayt oynatıcıya ekle"
 
 #: ../inc/admin/class-admin-meta_boxes.php:500
 msgid "Add to a slider (create one if needed)"
-msgstr "Lägg till i slider (skapa en om det behövs)"
+msgstr "Slayt oynatıcıya ekle (gerek varsa yeni bir tane oluştur.)"
 
 #: ../inc/admin/class-admin-meta_boxes.php:633
 msgid "Title text (80 car. max length)"
-msgstr "Titeltext (80 tecken max längd)"
+msgstr "Başlık yazısı (En fazla 80 kar.)"
 
 #: ../inc/admin/class-admin-meta_boxes.php:640
 msgid "Description text (below the title, 250 car. max length)"
-msgstr "Beskrivningstext (under titeln, 250 tecken max längd)"
+msgstr "Açıklama yazısı (başlığın altında, En fazla 250 kar.)"
 
 #: ../inc/admin/class-admin-meta_boxes.php:647
 msgid "Title and text color"
-msgstr "Titel och text färg"
+msgstr "Başlık ve yazı rengi"
 
 #: ../inc/admin/class-admin-meta_boxes.php:655
 msgid "Button text (80 car. max length)"
-msgstr "Knapptext (80 tecken max längd)"
+msgstr "Düğme yazısı (En fazla 80 kar.)"
 
 #: ../inc/admin/class-admin-meta_boxes.php:662
 msgid "Choose a linked page or post (among the last 100)."
-msgstr "Välj en länkad sida eller inlägg (bland de senaste 100)."
+msgstr "Bağlantılı bir sayfa veya gönderi seçin (son 100'ü arasından)"
 
 #: ../inc/admin/class-admin-meta_boxes.php:667
 msgid "No link"
-msgstr "Ingen länk"
+msgstr "Bağlantı yok"
 
 #: ../inc/admin/class-admin-meta_boxes.php:697
 #: ../inc/admin/class-admin-meta_boxes.php:728
 msgid "Add a slider"
-msgstr "Lägg till slider"
+msgstr "Slayt oynatıcı ekleyin"
 
 #: ../inc/admin/class-admin-meta_boxes.php:726
 msgid ""
 "You haven't create any slider yet. Write a slider name and click on the "
 "button to add you first slider."
 msgstr ""
-"Du har inte skapat någon slider ännu. Skriv ett slidernamn och klicka på "
-"knappen för att lägga till din första slider."
+"Henüz hiç bir slayt oynatıcı oluşturmamışsınız. Bir slayt oynatıcı adı yazın "
+"ve ilk slayt oynatıcınızı eklemek için düğmeye tıklayın."
 
 #: ../inc/admin/class-admin-meta_boxes.php:843
 msgid ""
 "This slider has not slides to show. Go to the media library and start adding "
 "images to it."
 msgstr ""
-"Denna slider har inga slides att visa. Gå till mediebiblioteket och börja "
-"lägga bilder till den."
+"Bu slayt oynatıcının gösterilecek hiç bir slaytı yok. Ortam kütüphanesine "
+"gidin ve görsellerinizi eklemeye başlayın."
 
 #: ../inc/admin/class-admin-meta_boxes.php:853
 msgid "Slide Image"
-msgstr "Slide bild"
+msgstr "Slayt Görseli"
 
 #: ../inc/admin/class-admin-meta_boxes.php:854
 msgid "Title"
-msgstr "Titel"
+msgstr "Başlık"
 
 #: ../inc/admin/class-admin-meta_boxes.php:855
 msgid "Slide Text"
-msgstr "Slide text"
+msgstr "Slayt Yazısı"
 
 #: ../inc/admin/class-admin-meta_boxes.php:856
 msgid "Button Text"
-msgstr "Knapptext"
+msgstr "Düğme Yazısı"
 
 #: ../inc/admin/class-admin-meta_boxes.php:857
 msgid "Button Link"
-msgstr "Knapplänk"
+msgstr "Düğme Bağlantısı"
 
 #: ../inc/admin/class-admin-meta_boxes.php:858
 #: ../parts/class-content-breadcrumb.php:595
@@ -875,59 +886,59 @@ msgstr "Knapplänk"
 #: ../parts/class-content-headings.php:240
 #: ../parts/class-content-slider.php:239
 msgid "Edit"
-msgstr "Redigera"
+msgstr "Düzenleyin"
 
 #: ../inc/admin/class-admin-meta_boxes.php:899
 msgid "No Image Selected"
-msgstr "Ingen bild markerad"
+msgstr "Hiç Bir Görsel Seçilmedi"
 
 #: ../inc/admin/class-admin-meta_boxes.php:925
 msgid "Edit this slide"
-msgstr "Redigera slide"
+msgstr "Bu slaytı düzenleyin"
 
 #: ../inc/admin/class-admin-meta_boxes.php:927
 msgid "Current slide"
-msgstr "Nuvarande slide"
+msgstr "Mevcut slayt"
 
 #: ../inc/admin/class-controls.php:137
 msgid "Create a slider"
-msgstr "Skapa en slider"
+msgstr "Bir slayt oynatıcı oluşturun"
 
 #: ../inc/admin/class-fire-admin_init.php:77
 #: ../inc/admin/class-fire-admin_init.php:78
 msgid "Upgrade WP"
-msgstr "Uppgradera WP"
+msgstr "WP'i güncelleyin"
 
 #: ../inc/admin/class-fire-admin_init.php:97
 msgid "This theme requires WordPress 3.4+"
-msgstr "Detta tema kräver WordPress 3.4+"
+msgstr "Bu tema WordPress 3.4 sürümü ve üstünü gerektirir."
 
 #: ../inc/admin/class-fire-admin_init.php:100
 #: ../inc/admin/class-fire-admin_init.php:101
 msgid "Upgrade Wordpress Now"
-msgstr "Uppgradera WordPress nu"
+msgstr "WordPress'i Şimdi Güncelleyin."
 
 #: ../inc/admin/class-fire-admin_init.php:118
 #: ../inc/admin/class-fire-admin_init.php:119
 msgid "About Customizr"
-msgstr "Om Customizr"
+msgstr "Customizr Hakkında"
 
 #: ../inc/admin/class-fire-admin_init.php:139
 msgid "Help"
-msgstr "Hjälp"
+msgstr "Yardım"
 
 #: ../inc/admin/class-fire-admin_init.php:142
 msgid "Need help with Customizr? Click here!"
-msgstr "Behöver du hjälp med Customizr? Klicka här!"
+msgstr "Customizr hakkında yardıma mı ihtiyacınız var? Buraya tıklayın!"
 
 #: ../inc/admin/class-fire-admin_init.php:163
 msgid "Need help with Customizr ?"
-msgstr "Behöver du hjälp med Customizr?"
+msgstr "Customizr ile ilgili yardıma mı ihtiyacınız var?"
 
 #: ../inc/admin/class-fire-admin_init.php:165
 #, php-format
 msgid "Welcome to Customizr %s"
-msgstr "Välkommen till Customizr %s"
+msgstr "Customizr'a Hoşgeldin %s"
 
 #: ../inc/admin/class-fire-admin_init.php:172
 #, php-format
@@ -939,29 +950,29 @@ msgid ""
 "reporting bugs and making continuous improvements, you will probably find a "
 "solution to your problem either in the FAQ or in the user forum."
 msgstr ""
-"Du kan börja med att tittat på <a href=\"%1$s\" target=\"_blank"
-"\">introduktionsvideon</a> eller genom att läsa <a href=\"%2$s\" target="
-"\"_blank\">dokumentationen</a>.<br/> Om du inte hittar ett svar på ditt "
-"problem, få inte panik! Eftersom Customizr används av en växande gemenskap "
-"av webmasters som rapporterar buggar och gör ständiga förbättringar, kommer "
-"du förmodligen hitta en lösning på ditt problem antingen i FAQ eller i "
-"användarforumet."
+" <a href=\"%1$s\" target=\"_blank\">Giriş</a> videosunu izleyerek ya da <a "
+"href=\"%2$s\" target=\"_blank\">dökümanları</a> okuyarak başlayabilirsin.<br/"
+"> Eğer aradığın konuyla ilgili bir cevap bulamazsan endişelenme! Customizr "
+"her geçen gün genişleyen ve hataları raporlayan, sürekli ilerlemeler "
+"kaydeden bir web geliştirici topluluğu tarafından kullanıldığı için, "
+"sorununa mutlaka bir çözüm bulacaksın. Aksi takdirde SSS sayfamızı ve "
+"kullanıcı forumumuzu ziyaret edebilirsin. "
 
 #: ../inc/admin/class-fire-admin_init.php:180
 msgid "Read the documentation"
-msgstr "Läs dokumentationen"
+msgstr "Belgeleri okuyun"
 
 #: ../inc/admin/class-fire-admin_init.php:184
 msgid "Check the FAQ"
-msgstr "Kontrollera FAQ"
+msgstr "SSS'ye göz atın."
 
 #: ../inc/admin/class-fire-admin_init.php:189
 msgid "Code snippets"
-msgstr ""
+msgstr "Kod parçacıkları"
 
 #: ../inc/admin/class-fire-admin_init.php:192
 msgid "Discuss in the user forum"
-msgstr "Diskutera i användarforumet"
+msgstr "Kullanıcı forumunda tartışın"
 
 #: ../inc/admin/class-fire-admin_init.php:200
 #, php-format
@@ -972,11 +983,12 @@ msgid ""
 "\" target=\"_blank\">introduction video</a> and find inspiration in the <a "
 "href=\"#showcase\">showcase</a>.<br/>Enjoy it! "
 msgstr ""
-"Tack för att du använder Customizr! Customizr %1$s har fler funktioner, är "
-"säkrare och stabilare än någonsin <a href=\"#customizr-changelog\">(se "
-"ändringsloggen)</a> för att hjälpa dig att bygga en fantastisk hemsida. "
-"Titta på <a href=\"%2$s\" target=\"_blank\">introduktionsvideon</a> och "
-"hitta inspiration i  <a href=\"#showcase\">showcasen</a>.<br/>Njut av det! "
+"Customizr'ı tercih ettiğiniz için teşekkür ederiz! Customizr %1$s harika "
+"websiteleri oluşturmakta size yardımcı olmak için her zamankinden daha fazla "
+"özelliğe sahip, güvenli ve daha kararlı <a href=\"#customizr-changelog\">"
+"(değişimlere gözatın)</a>. <a href=\"%2$s\" target=\"_blank\">Giriş</a> "
+"videosunu izleyin ve <a href=\"#showcase\">vitrin</a>'den ilham alın.<br/> "
+"Tadını çıkarın!"
 
 #: ../inc/admin/class-fire-admin_init.php:214
 #, php-format
@@ -984,12 +996,13 @@ msgid ""
 "You are using a child theme of Customizr %1$s : always check the %2$s after "
 "upgrading to see if a function or a template has been deprecated."
 msgstr ""
-"Du använder ett barn tema Customizr %1$s: kontrollera alltid %2$s efter "
-"uppgradering för att se om en funktion eller en mall har utfasats."
+"Şu an Customizr %1$s'ın alt temalarından birisini kullanıyorsunuz. Her "
+"güncellemeden sonra, %2$s için yeni bir fonksiyon veya temanın önerilip "
+"önerilmediğini kontrol edin. "
 
 #: ../inc/admin/class-fire-admin_init.php:229
 msgid "We need sponsors!"
-msgstr "Vi behöver sponsorer!"
+msgstr "Sponsorlara ihtiyacımız var!"
 
 #: ../inc/admin/class-fire-admin_init.php:230
 msgid ""
@@ -997,101 +1010,101 @@ msgid ""
 "strong><br/> Please help support it's continued development with a donation "
 "of $20, $50, or even $100."
 msgstr ""
-"<strong> Vi gör vårt bästa för att göra Customizr till det perfekta "
-"gratistemat för dig! </ strong> <br/> Snälla bidra till att stödja den "
-"fortsatta utvecklingen med en donation på €20, €50, och €100."
+"<strong>Customizr'ı kusursuz ve ücretsiz bir tema yapabilmek için elimizden "
+"geldiğinin en iyisini yapıyoruz!</strong><br/>Lütfen, geliştirmenin devam "
+"etmesi için $20, $50 ve hatta $100'lık bağışlarla desteğe devam edin."
 
 #: ../inc/admin/class-fire-admin_init.php:237
 msgid "Happy user of Customizr?"
-msgstr "Glad användare av Customizr?"
+msgstr "Customizr'ın mutlu bir kullanıcısı mısınız?"
 
 #: ../inc/admin/class-fire-admin_init.php:238
 msgid ""
 "If you are happy with the theme, say it on wordpress.org and give Customizr "
 "a nice review! <br />(We are addicted to your feedbacks...)"
 msgstr ""
-"Om du är nöjd med temat, säg det på wordpress.org och ge Customizr en "
-"trevlig recension! <br /> (Vi är beroende av era återkopplingar ...)"
+"Eğer temadan memnunsanuz, wordpress.org internet sitesinde Customizr ile "
+"ilgili naif bir yazı yazın! <br/>(Geri dönüşlerinizle yaşıyoruz...)"
 
 #: ../inc/admin/class-fire-admin_init.php:243
 msgid "Follow us"
-msgstr "Följ oss"
+msgstr "Bizi takip edin"
 
 #: ../inc/admin/class-fire-admin_init.php:251
 msgid "Customizr Showcase"
-msgstr "Customizr Showcase"
+msgstr "Customizr Vitrini"
 
 #: ../inc/admin/class-fire-admin_init.php:254
 #: ../inc/admin/class-fire-admin_init.php:261
 msgid "Visit the showcase"
-msgstr ""
+msgstr "Vitrini ziyaret edin"
 
 #: ../inc/admin/class-fire-admin_init.php:255
 msgid "Find inspiration for your next Customizr based website!"
-msgstr "Hitta inspiration till din nästa Customizr baserad webbplats!"
+msgstr "Bir sonraki Customizr temalı internet siteniz için ilham alın!"
 
 #: ../inc/admin/class-fire-admin_init.php:256
 msgid ""
 "This showcase aims to show what can be done with Customizr and helping other "
 "users to find inspiration for their web design."
 msgstr ""
-"Denna presentation syftar till att visa vad som kan göras med Customizr och "
-"hjälpa andra användare att hitta inspiration till sin webbdesign."
+"Bu vitrinin amacı Customizr ile neler yapılabileceğini göstermek ve diğer "
+"kullanıclara internet siteleri için aradıkları ilhamı verebilmektir."
 
 #: ../inc/admin/class-fire-admin_init.php:258
 msgid ""
 "Do you think you made an awesome website that can inspire people? Submitting "
 "a site for review is quick and easy to do."
 msgstr ""
-"Tror du att du gjort en fantastisk hemsida som kan inspirera människor? "
-"Skicka in en webbplats för granskning är snabb och enkel att göra."
+"İnsanları etkileyecek bir site mi yaptığınızı düşünüyorsunuz? Bunun için "
+"incelenecek siteyi sunmak hızlı ve kolay bir yoldur."
 
 #: ../inc/admin/class-fire-admin_init.php:268
 #, php-format
 msgid "Changelog in version %1$s"
-msgstr "Ändringslog för version %1$s"
+msgstr "%1$s sürümü için değişim günüğü"
 
 #: ../inc/admin/class-fire-admin_init.php:277
 msgid "Go to Dashboard &rarr; Home"
-msgstr "Gå till Adminpanel &rarr; Hem"
+msgstr "Başlangıca gidin &rarr; Ana Sayfa"
 
 #: ../inc/admin/class-fire-admin_init.php:277
 msgid "Go to Dashboard"
-msgstr "Gå till Adminpanel"
+msgstr "Başlangıca gidin"
 
 #: ../parts/class-content-attachment.php:44
 msgid "&larr; Previous"
-msgstr "&larr; Föregående"
+msgstr "&larr; Önceki"
 
 #: ../parts/class-content-attachment.php:45
 msgid "Next &rarr;"
-msgstr "Nästa &rarr;"
+msgstr "Sonraki &rarr;"
 
 #: ../parts/class-content-breadcrumb.php:43
 #: ../parts/class-content-breadcrumb.php:102
 msgid "Home"
-msgstr "Hem"
+msgstr "Ana Sayfa"
 
 #: ../parts/class-content-breadcrumb.php:99
 msgid "Browse:"
-msgstr "Bläddra:"
+msgstr "Gözat"
 
 #: ../parts/class-content-breadcrumb.php:479
 msgid "g:i a"
-msgstr "g:i a"
+msgstr ""
 
 #: ../parts/class-content-breadcrumb.php:482
 #, php-format
 msgid "Minute %1$s"
-msgstr "Minut %1$s"
+msgstr "%1$s Dakika"
 
 #: ../parts/class-content-breadcrumb.php:482
 msgid "i"
-msgstr "i"
+msgstr ""
 
 #: ../parts/class-content-breadcrumb.php:485
 msgid "g a"
-msgstr "g a"
+msgstr ""
 
 #: ../parts/class-content-breadcrumb.php:496
 #: ../parts/class-content-breadcrumb.php:506
@@ -1100,108 +1113,108 @@ msgstr "g a"
 #: ../parts/class-content-breadcrumb.php:528
 #: ../parts/class-content-breadcrumb.php:727
 msgid "Y"
-msgstr "Y"
+msgstr ""
 
 #: ../parts/class-content-breadcrumb.php:497
 #: ../parts/class-content-breadcrumb.php:518
 #: ../parts/class-content-breadcrumb.php:520
 #: ../parts/class-content-breadcrumb.php:731
 msgid "F"
-msgstr "F"
+msgstr ""
 
 #: ../parts/class-content-breadcrumb.php:500
 #: ../parts/class-content-breadcrumb.php:502
 #: ../parts/class-content-breadcrumb.php:735
 msgid "d"
-msgstr "d"
+msgstr ""
 
 #: ../parts/class-content-breadcrumb.php:509
 #: ../parts/class-content-breadcrumb.php:511
 #, php-format
 msgid "Week %1$s"
-msgstr "Vecka %1$s"
+msgstr "%1$s Hafta"
 
 #: ../parts/class-content-breadcrumb.php:537
 #: ../parts/class-content-breadcrumb.php:539
 #, php-format
 msgid "Search results for &quot;%1$s&quot;"
-msgstr "Sökresultat för &quot;%1$s&quot;"
+msgstr "&quot;%1$s&quot; için arama sonuçları"
 
 #: ../parts/class-content-breadcrumb.php:544
 msgid "404 Not Found"
-msgstr "404 Kunde inte hittas"
+msgstr "404 Sayfa Bulunamadı"
 
 #: ../parts/class-content-breadcrumb.php:549
 #: ../parts/class-content-breadcrumb.php:551
 #, php-format
 msgid "Page %d"
-msgstr "Sida %d"
+msgstr "Sayfa %d"
 
 #: ../parts/class-content-breadcrumb.php:620
 msgid "Split"
-msgstr "Dela"
+msgstr "Ayır"
 
 #: ../parts/class-content-breadcrumb.php:624
 msgid "Merge"
-msgstr "Sammanfoga"
+msgstr "Birleştir"
 
 #: ../parts/class-content-comments.php:65
 #, php-format
 msgid "One thought on &ldquo;%2$s&rdquo;"
-msgstr "En tanke om &ldquo;%2$s&rdquo;"
+msgstr "&ldquo;%2$s&rdquo; üzerine bir düşünce"
 
 #: ../parts/class-content-comments.php:124
 msgid "Pingback:"
-msgstr "Pingback:"
+msgstr ""
 
 #: ../parts/class-content-comments.php:124
 msgid "(Edit)"
-msgstr "(Redigera)"
+msgstr "(Düzenle)"
 
 #: ../parts/class-content-comments.php:149
 msgid "Reply"
-msgstr "Svara"
+msgstr "Yanıtlayın"
 
 #: ../parts/class-content-comments.php:156
 msgid "Post author"
-msgstr "Inläggsförfattare"
+msgstr "Gönderi yazarı"
 
 #: ../parts/class-content-comments.php:163
 #, php-format
 msgid "%1$s at %2$s"
-msgstr "%1$s vid %2$s"
+msgstr ""
 
 #: ../parts/class-content-comments.php:168
 msgid "Your comment is awaiting moderation."
-msgstr "Din kommentar väntar på moderering."
+msgstr "Yorumunuz onay bekliyor."
 
 #: ../parts/class-content-comments.php:198
 msgid "Comment navigation"
-msgstr "Kommentar navigering"
+msgstr "Yorum gezintisi"
 
 #: ../parts/class-content-comments.php:204
 msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
-msgstr "<span class=\"meta-nav\">&larr;</span> Äldre inlägg"
+msgstr "<span class=\"meta-nav\">&larr;</span> Eski Yorumlar"
 
 #: ../parts/class-content-comments.php:212
 msgid "Newer Comments <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Nyare inlägg <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Yeni Yorumlar <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../parts/class-content-comments.php:244
 msgid "Comments are closed."
-msgstr "Kommentarer är stängda."
+msgstr "Yorumlar kapalı"
 
 #: ../parts/class-content-featured_pages.php:123
 msgid "Customizer screen"
-msgstr "Customizr skärm"
+msgstr "Düzenleme ekranı"
 
 #: ../parts/class-content-featured_pages.php:123
 msgid " here"
-msgstr " här"
+msgstr " burada"
 
 #: ../parts/class-content-featured_pages.php:127
 msgid "Featured page"
-msgstr "Utvald sida"
+msgstr "Öne çıkan sayfa"
 
 #: ../parts/class-content-featured_pages.php:130
 #, php-format
@@ -1209,114 +1222,116 @@ msgid ""
 "Featured page description text : use the page excerpt or set your own custom "
 "text in the Customizr screen%s."
 msgstr ""
-"Utvald sida beskrivande textt : använd utdrag från sidan eller sätt din egen "
-"text i Customizr screen%s."
+"Öne çıkan sayfa açıklama yazısı: sayfa alıntısını kullanın ya da Customizr "
+"ekranından %s kendi özelleştirilmiş yazınını yazın."
 
 #: ../parts/class-content-gallery.php:194
 msgid "Missing Attachment"
-msgstr "Bifogad fil saknas"
+msgstr "Eksik Ekler"
 
 #: ../parts/class-content-headings.php:46
 msgid "Ooops, page not found"
-msgstr "Ooops, sidan hittades inte"
+msgstr "Üzgünüz, sayfa bulunamadı!"
 
 #: ../parts/class-content-headings.php:55
 msgid "No"
-msgstr "Inga"
+msgstr "Hayır"
 
 #: ../parts/class-content-headings.php:56
 msgid "Search Results for :"
-msgstr ""
+msgstr "Arama Sonucu : "
 
 #: ../parts/class-content-headings.php:68
 msgid "Author Archives :"
-msgstr ""
+msgstr "Yazar Arşivi :"
 
 #: ../parts/class-content-headings.php:82 ../parts/class-content-post.php:98
 #, php-format
 msgid "About %s"
-msgstr "Om %s"
+msgstr "%s hakkında"
 
 #: ../parts/class-content-headings.php:94
 msgid "Category Archives :"
-msgstr ""
+msgstr "Kategori Arşivi :"
 
 #: ../parts/class-content-headings.php:110
 msgid "Tag Archives :"
-msgstr ""
+msgstr "Etiket Arşivi :"
 
 #: ../parts/class-content-headings.php:122
 #, php-format
 msgid "Daily Archives: %s"
-msgstr "Dagsarkiv: %s"
+msgstr "Günlük Arşiv: %s"
 
 #: ../parts/class-content-headings.php:122
 msgid "Archives"
-msgstr "Arkiv"
+msgstr "Arşiv"
 
 #: ../parts/class-content-headings.php:123
 #, php-format
 msgid "Monthly Archives: %s"
-msgstr "Månadsarkiv: %s"
+msgstr "Aylık Arşiv: %s"
 
 #: ../parts/class-content-headings.php:124
 #, php-format
 msgid "Yearly Archives: %s"
-msgstr "Årsarkiv: %s"
+msgstr "Yıllık Arşiv: %s"
 
 #: ../parts/class-content-headings.php:210
 #: ../parts/class-content-headings.php:216
 msgid "{no title} Read the post &raquo;"
-msgstr "{ingen titel} Läs inlägget &raquo;"
+msgstr "{başlık yok} Gönderiyi oku &raquo;"
 
 #: ../parts/class-content-headings.php:215
 #, php-format
 msgid "Permalink to %s"
-msgstr "Permalänk till %s"
+msgstr "%s için kalıcı link"
 
 #: ../parts/class-content-headings.php:233
 msgid "Comment(s) on"
-msgstr "Kommentar(er) på"
+msgstr "Yorumlar"
 
 #: ../parts/class-content-page.php:48 ../parts/class-content-post.php:53
 #: ../parts/class-content-post_list.php:132
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Fortsätt läsa <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Okumaya devam edin <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../parts/class-content-page.php:50 ../parts/class-content-post.php:54
 #: ../parts/class-content-post_list.php:133
 msgid "Pages:"
-msgstr "Sidor:"
+msgstr "Sayfalar:"
 
 #: ../parts/class-content-post.php:102
 #, php-format
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Visa alla inlägg av %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+"%s tarafından gönderilen tüm gönderileri gör <span class=\"meta-nav\">&rarr;"
+"</span>"
 
 #: ../parts/class-content-post_metas.php:54
 msgid "Published"
-msgstr ""
+msgstr "Yayınlanmış"
 
 #: ../parts/class-content-post_metas.php:57
 msgid "at dimensions"
-msgstr ""
+msgstr "boyutlarında"
 
 #: ../parts/class-content-post_metas.php:57
 msgid "Link to full-size image"
-msgstr "Redigera sida"
+msgstr "Tam-boyutlu görsele bağlantı"
 
 #: ../parts/class-content-post_metas.php:58
 msgid "in"
-msgstr ""
+msgstr "içinde"
 
 #: ../parts/class-content-post_metas.php:58
 msgid "Return to "
-msgstr ""
+msgstr "Şuraya gidin"
 
 #: ../parts/class-content-post_metas.php:80
 #, php-format
 msgid "View all posts by %s"
-msgstr "Visa alla inlägg av %s"
+msgstr "%s tarafından gönderilen tüm gönderileri gör"
 
 #: ../parts/class-content-post_metas.php:87
 #, php-format
@@ -1324,8 +1339,8 @@ msgid ""
 "This entry was posted in %1$s and tagged %2$s on %3$s<span class=\"by-author"
 "\"> by %4$s</span>."
 msgstr ""
-"Det här inlägget postades som %1$s och taggades %2$s den %3$s<span class="
-"\"by-author\"> av %4$s</span>."
+"Bu gönderi %1$s kategorisine %2$s etiketiyle %3$s tarihinde <span class=\"by-"
+"author\">%4$s</span> tarafından gönderildi."
 
 #: ../parts/class-content-post_metas.php:89
 #, php-format
@@ -1333,190 +1348,133 @@ msgid ""
 "This entry was posted in %1$s on %3$s<span class=\"by-author\"> by %4$s</"
 "span>."
 msgstr ""
-"Det här inlägget postades som %1$s den %3$s<span class=\"by-author\"> av "
-"%4$s</span>."
+"Bu gönderi %1$s kategorisine %3$s<span class=\"by-author\"> tarihinde %4$s "
+"tarafından gönderildi</span>."
 
 #: ../parts/class-content-post_metas.php:91
 #, php-format
 msgid "This entry was posted on %3$s<span class=\"by-author\"> by %4$s</span>."
 msgstr ""
-"Det här inlägget postades som %3$s<span class=\"by-author\"> av %4$s</span>."
+"Bu gönderi %3$s<span class=\"by-author\"> tarihinde %4$s</span> tarafından "
+"gönderildi."
 
 #: ../parts/class-content-post_metas.php:136
 #: ../parts/class-content-post_metas.php:168
 #, php-format
 msgid "View all posts in %s"
-msgstr "Visa alla inlägg i %s"
+msgstr "%s'deki tüm gönderileri gör"
 
 #: ../parts/class-content-post_navigation.php:61
 #: ../parts/class-content-post_navigation.php:94
 msgid "Post navigation"
-msgstr "Inlägg navigering"
+msgstr "Gönderi gezintisi"
 
 #: ../parts/class-content-post_navigation.php:104
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr "<span class=\"meta-nav\">&larr;</span> Äldre inlägg"
+msgstr "<span class=\"meta-nav\">&larr;</span> Eski gönderiler"
 
 #: ../parts/class-content-post_navigation.php:117
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Nyare inlägg <span class=\"meta-nav\">&rarr;</span>"
+msgstr "<span class=\"meta-nav\">&larr;</span> Yeni gönderiler"
 
 #: ../parts/class-footer-footer_main.php:176
 msgid "Back to top"
-msgstr "Åter till toppen"
+msgstr "Başa dön"
 
 #: ../parts/class-header-header_main.php:151
 msgid "Back Home"
-msgstr "Åter till startsidan"
+msgstr "Ana Sayfa'ya dön"
 
 #: ../parts/class-header-menu.php:49
 msgid "Add a menu"
-msgstr "Lägg till en meny"
+msgstr "Menü ekle"
 
 #~ msgid "Two sidebars"
-#~ msgstr "Två sidofält"
+#~ msgstr "İki kenar çubuğu"
 
 #~ msgid "Full Width"
-#~ msgstr "Full bredd"
-
-#~ msgid "Developer Box"
-#~ msgstr "Utvecklingsbox"
-
-#~ msgid "Only visible for logged in users with an admin profile."
-#~ msgstr "Endast synlig för inloggade användare med en admin profil."
-
-#~ msgid ""
-#~ "If enabled, this option displays a draggable information box to help you "
-#~ "develop or debug your Customizr based website."
-#~ msgstr ""
-#~ "Om aktiverad, visas detta alternativ en dragbar informationsruta som "
-#~ "hjälper dig att utveckla eller felsöka din Customizr-baserade webbplats."
-
-#~ msgid "Developer tooltips"
-#~ msgstr "Utvecklare verktygstips"
-
-#~ msgid ""
-#~ "If enabled, this option displays clickable contextual tooltips right "
-#~ "inside your website."
-#~ msgstr ""
-#~ "Om aktiverad, visas detta alternativ klickbara kontextuella verktygstips "
-#~ "direkt i din webbplats."
-
-#~ msgid "Tip icon color"
-#~ msgstr "Tip icon färg"
-
-#~ msgid "New! Customizr Developer Tools"
-#~ msgstr "Nytt! Customizr utvecklingsverktyg"
-
-#~ msgid "Easily drill down into Customizr code with the dev tools!"
-#~ msgstr "Borra enkelt ner dig i Customizr kod med utvecklingsverktyg!"
-
-#~ msgid ""
-#~ "A new section called \"Dev Tools\" has been added to the customizer "
-#~ "options.<br/> There you will find two optional new features : <br/"
-#~ "><strong>-The developer box</strong> : this draggable box is a developer "
-#~ "dashboard allowing you to have an overview of your theme settings "
-#~ "(plugins, custom post types, theme options,...) and providing useful "
-#~ "informations for debug and development : a loading timeline of any pages, "
-#~ "contextual data ( like conditional tags and query), the hook's structure "
-#~ "of the theme and a note section about the code logic of Customizr.<br/"
-#~ "><strong>-The embedded tooltips</strong> : this option displays clickable "
-#~ "(and draggable) contextual tooltips right inside your website. They help "
-#~ "you understand which part of the php code handles any front-end block or "
-#~ "element. The informations provided are : class -> method, hook, file, "
-#~ "function description and possible filter.<br/><br/><i>Those tools are "
-#~ "only displayed to logged in users with an admin capability profile.</i>"
-#~ msgstr ""
-#~ "Ett nytt avsnitt som heter  \"Utvecklingsverktyg \" har lagts till "
-#~ "Customizr alternativen <br/> Där hittar du två valfria nya funktioner:. "
-#~ "<br/> <strong>-Utvecklare box </ strong>: denna dragbara låda är en "
-#~ "utvecklaringsdashboard så att du kan få en överblick över ditt tema "
-#~ "inställningar (plugins, anpassade inlägg typer, tema alternativ, ...) och "
-#~ "ge användbara informationer för debug och utveckling: en "
-#~ "laddningstidslinje av några sidor, kontextuella uppgifter (som "
-#~ "villkorliga taggar och frågor), strukturen av temat och en anteckning i "
-#~ "avsnittet om kodlogiken i Customizr <br/> <strong>-Inbäddade verktygstips "
-#~ "</ strong>: detta alternativ visar klickbar (och flyttbara) kontextuella "
-#~ "verktygstips direkt i din hemsida. De hjälper dig att förstå vilken del "
-#~ "av PHP-koden som hanterar alla front-end block eller element. Den "
-#~ "medföljande information är: klass -> metod, krok, fil, "
-#~ "funktionsbeskrivning och eventuella filter <br/> <i> Dessa verktyg visas "
-#~ "bara för inloggade användare med en admin behörighetsprofil.</ i>"
-
-#~ msgid "Edit page"
-#~ msgstr "Redigera sida"
-
-#~ msgid ""
-#~ "Thank you for updating to the latest version! Customizr %1$s has more "
-#~ "features, is safer and more stable than ever <a href=\"#customizr-"
-#~ "changelog\">(see changelog)</a> to help you build an awesome website. "
-#~ "Watch the <a href=\"#introduction\">introduction video</a> and find "
-#~ "inspiration in the <a href=\"#showcase\">showcase</a>.<br/> Enjoy it! "
-#~ msgstr ""
-#~ "Tack för att uppdatera till den senaste versionen! Customizr %1$s har "
-#~ "fler funktioner, är säkrare och stabilare än någonsin <a href="
-#~ "\"#customizr-changelog\"> (se ändringslog) </ a> för att hjälpa dig att "
-#~ "bygga en fantastisk hemsida. Titta på <a href=\"#introduction"
-#~ "\">introduktionsvideon</a> och hitta inspiration i <a href=\"#showcase"
-#~ "\">showcasen</a>.<br/>Njut av det!"
-
-#~ msgid "Discover Customizr : quick video introduction"
-#~ msgstr "Upptäck Customizr: snabb videointroduktion"
-
-#~ msgid ""
-#~ "Welcome to the new version of Customizr. You will be redirected to the "
-#~ "About screen. If not, click <a href=\"%1$s\">here</a>."
-#~ msgstr ""
-#~ "Välkommen till den nya versionen av Customizr. Du kommer att omdirigeras "
-#~ "till skärmen Om. Om inte, klicka <a href=\"%1$s\"> här </ a>."
-
-#~ msgid ""
-#~ "<span class=\"meta-prep meta-prep-entry-date\">Published </span> <span "
-#~ "class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\">%2$s</"
-#~ "time></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s "
-#~ "&times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel="
-#~ "\"gallery\">%8$s</a>."
-#~ msgstr ""
-#~ "<span class=\"meta-prep meta-prep-entry-date\">Publicerad </span> <span "
-#~ "class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\">%2$s</"
-#~ "time></span> på <a href=\"%3$s\" title=\"Länka till fullstor bild\">%4$s "
-#~ "&times; %5$s</a> in <a href=\"%6$s\" title=\"Åter till %7$s\" rel="
-#~ "\"gallery\">%8$s</a>."
-
-#~ msgid "Logo Upload"
-#~ msgstr "Ladda upp logotyp"
-
-#~ msgid "Favicon Upload"
-#~ msgstr "Ladda upp favicon"
-
-#~ msgid "We need coffee..."
-#~ msgstr "Vi behöver kaffe..."
-
-#~ msgid ""
-#~ "Either you are using Customizr for personal or business purposes, "
-#~ "<strong>we do our best do make it the perfect free theme for you</strong>."
-#~ "<br /> Any kind of sponsorship will be appreciated!"
-#~ msgstr ""
-#~ "Antingen du använder Customizr för personliga eller yrkesmässiga ändamål, "
-#~ "<strong> vi gör vårt bästa för att göra det till det perfekta gratistema "
-#~ "för dig</ strong>. <br /> Varje form av sponsring kommer att uppskattas!"
-
-#~ msgid "&larr; Older Comments"
-#~ msgstr "&larr; Äldre kommentarer"
-
-#~ msgid "Newer Comments &rarr;"
-#~ msgstr "Nyare kommentarer &rarr;"
+#~ msgstr "Tam genişlik"
 
 #, fuzzy
-#~ msgid "Learn more &raquo;"
-#~ msgstr "Läs mer &raquo;"
+#~ msgid "Ajust the slider size"
+#~ msgstr "Texte de description (sous le titre) de la diapositive"
 
 #, fuzzy
 #~ msgid "Choose a font"
-#~ msgstr "Välj en slider"
+#~ msgstr "Choisir une page"
 
-#~ msgid "Plugins compatibility"
-#~ msgstr "Plugins kompatibilitet"
+#~ msgid "Slide Entry"
+#~ msgstr "Diapositive"
 
-#~ msgid "Ensure Customizr compatibilty with some plugins"
-#~ msgstr "Säkerställ Customizr kompatibilitet med vissa plugins"
+#~ msgid "Edit Slide Entry"
+#~ msgstr "Modifier la diapositive"
+
+#~ msgid "Search Slide Entries"
+#~ msgstr "Rechercher dans les diapositives"
+
+#~ msgid "Edit Slider Name"
+#~ msgstr "Modifier le nom du diporama"
+
+#~ msgid "Front Page Widget Area One"
+#~ msgstr "Première zone de widgets de page d'accueil"
+
+#~ msgid "Front Page Widget Area Two"
+#~ msgstr "Deuxième zone de widgets de page d'accueil"
+
+#~ msgid "Front Page Widget Area Three"
+#~ msgstr "Troisième zone de widgets de page d'accueil"
+
+#~ msgid "If this field is empty, it will display an excerpt of the page."
+#~ msgstr "Si le champ est vide, un extrait de la page est affiché."
+
+#~ msgid "Force logo to fit in the left header block"
+#~ msgstr "Forcer le redimensionnement du logo dans le bloc gauche du header"
+
+#~ msgid ""
+#~ "Force default layout for all posts and pages (including front page and "
+#~ "pages/posts with a specific layout)"
+#~ msgstr ""
+#~ "Forcer la structure par défaut pour toutes les pages du sites (y compris "
+#~ "la page d'accueil ainsi que les pages et billets qui ont une structure "
+#~ "spécifique)"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "1"
+#~ msgstr "1"
+
+#~ msgid "%"
+#~ msgstr "%"
+
+#~ msgid "Manage widgets"
+#~ msgstr "Gérer les widgets"
+
+#~ msgid "Right"
+#~ msgstr "Droite"
+
+#~ msgid "Left"
+#~ msgstr "Gauche"
+
+#~ msgid "View details &raquo;"
+#~ msgstr "Voir les détails &raquo;"
+
+#~ msgid "Length of the excerpt (default 200)"
+#~ msgstr "Longueur de l'extrait (200 car. par défaut)"
+
+#~ msgid "Theme Options"
+#~ msgstr "Options du thème"
+
+#~ msgid "Layout Settings"
+#~ msgstr "Réglages de la structure de page"
+
+#~ msgid " checked=\"checked\""
+#~ msgstr " "
+
+#~ msgid "Sample Checkbox"
+#~ msgstr "Exemple"
+
+#~ msgid ""
+#~ "Appears on posts and pages except the optional Front Page template, which "
+#~ "has its own widgets"
+#~ msgstr "Affichée dans les posts et les pages, hormis l"

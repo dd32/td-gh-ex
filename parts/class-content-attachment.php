@@ -44,8 +44,6 @@ class TC_attachment {
             <span class="previous-image"><?php previous_image_link( false, __( '&larr; Previous' , 'customizr' ) ); ?></span>
             <span class="next-image"><?php next_image_link( false, __( 'Next &rarr;' , 'customizr' ) ); ?></span>
         </nav><!-- #image-navigation -->
-
-        <?php  ?>  
           
         <section class="entry-content">
 

@@ -52,13 +52,15 @@ class TC_widgets {
 
         //fills the $args array and registers sidebars
         foreach ( TC_init::$instance -> widgets as $id => $infos) {
-            foreach ( $default as $key => $value ) {
+            foreach ( $default as $key => $default_value ) {
               if ('id' == $key ) {
                 $args[$key] = $id;
               }
+              else if ( 'name' == $key || 'description' == $key) {
+                $args[$key] = !isset($infos[$key]) ? $default_value : call_user_func( '__' , $infos[$key] , 'customizr' );
+              }
               else {
-
-                $args[$key] = !isset($infos[$key]) ? $value : $infos[$key];
+                $args[$key] = !isset($infos[$key]) ? $default_value : $infos[$key];
               }
             }
           //registers sidebars

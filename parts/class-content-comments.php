@@ -120,7 +120,6 @@ class TC_comments {
         // Display trackbacks differently than normal comments.
       ?>
       <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-        <?php  ?>
         <article id="comment-<?php comment_ID(); ?>" class="comment">
           <p><?php _e( 'Pingback:' , 'customizr' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)' , 'customizr' ), '<span class="edit-link btn btn-success btn-mini">' , '</span>' ); ?></p>
         </article>

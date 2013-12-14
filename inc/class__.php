@@ -1,37 +1,46 @@
 <?php
 /**
 * This is where Customizr starts. This file defines and loads the theme's components :
-* 1) A global option array
-* 2) A function tc__f() used everywhere in the theme and simply adding optional arguments to WP built-in apply_filters()
-* 3) Constants : CUSTOMIZR_VER, TC_BASE, TC_BASE_CHILD, TC_BASE_URL, TC_BASE_URL_CHILD, THEMENAME, TC_WEBSITE
-* 4) Default filtered values : images sizes, skins, featured pages, social networks, widgets, post list layout
-* 5) Text Domain
-* 6) Theme supports : editor style, automatic-feed-links, post formats, navigation menu, post-thumbnails, retina support
-* 7) Plugins compatibility : jetpack, bbpress, qtranslate, woocommerce and more to come
-* 8) Default filtered options for the customizer
-* 9) Customizr theme's hooks API : every front end components are rendered with action and filter hooks which makes Customizr entirely and very easily...customizable ;-)
+* 1) A function tc__f() used everywhere in the theme, extension of WP built-in apply_filters()
+* 2) Constants : CUSTOMIZR_VER, TC_BASE, TC_BASE_CHILD, TC_BASE_URL, TC_BASE_URL_CHILD, THEMENAME, TC_WEBSITE
+* 3) Default filtered values : images sizes, skins, featured pages, social networks, widgets, post list layout
+* 4) Text Domain
+* 5) Theme supports : editor style, automatic-feed-links, post formats, navigation menu, post-thumbnails, retina support
+* 6) Plugins compatibility : jetpack, bbpress, qtranslate, woocommerce and more to come
+* 7) Default filtered options for the customizer
+* 8) Customizr theme's hooks API : front end components are rendered with action and filter hooks
 * 
-* The php files are loaded with an automatic scan of the theme folder which also instanciates the different classes by group.
-* All classes files (except the class__.php file which loads the other) are named with the following convention : class-[instance-group]-[class-name].php
-* The instanciations are made with a singleton factory using this method :  TC__::tc__( [instance-group] , [class-name] ).
+* The method TC__::tc__() loads the php files and instanciates all theme's classes.
+* All classes files (except the class__.php file which loads the other) are named with the following convention : class-[group]-[class_name].php
 * 
-* For the rest, Customizr is heavily based on a custom filter and action hooks API, extending WordPress built-in API, which makes customization easy as breeze! ;-)
-* More on hooks in WordPress here : http://codex.wordpress.org/Plugin_API)
+* The theme is entirely built on an extensible filter and action hooks API, which makes customizations easy as breeze, without ever needing to modify the core structure.
+* Customizr's code can be compared to a collection of plugins that can be enable, disable or extend.
+* 
+* More informations about Customizr API of hooks here : http://www.themesandco.com/customizr/hooks-api
 */
 
 
 
 /**
-* Allows WP apply_filter() function to accept up to 4 optional arguments
-* Used everywhere in Customizr
+* The tc__f() function is an extension of WP built-in apply_filters() where the $value param becomes optional.
+* It is shorter than the original apply_filters() and only used on already defined filters.
+* 
+* By convention in Customizr, filter hooks are used as follow :
+* 1) declared with add_filters in class constructors (mainly) to hook on WP built-in callbacks or create "getters" used everywhere
+* 2) declared with apply_filters in methods to make the code extensible for developers
+* 3) accessed with tc__f() to return values (while front end content is handled with action hooks)
+* 
+* Used everywhere in Customizr. Can pass up to five variables to the filter callback.
 *
 * @since Customizr 3.0
 */
 if( !function_exists( 'tc__f' )) :
-    function tc__f ( $filter , $arg1 = null , $arg2 = null , $arg3 = null, $arg4 = null) {
-       return apply_filters( $filter , $arg1 , $arg2 , $arg3, $arg4 );
+    function tc__f ( $tag , $value = null , $arg_one = null , $arg_two = null , $arg_three = null , $arg_four = null , $arg_five = null) {
+       return apply_filters( $tag , $value , $arg_one , $arg_two , $arg_three , $arg_four , $arg_five );
     }
 endif;
+
+
 
 
 /**
@@ -58,16 +67,17 @@ class TC___ {
 
         self::$instance =& $this;
 
+        //this is the structure of the Customizr code : groups => ('path' , 'class_suffix')
         $this -> tc_core = apply_filters( 'tc_core',
                         array(
                             'fire'      =>   array(
-                                            array('inc' , 'init'),
-                                            array('inc' , 'ressources'),
-                                            array('inc' , 'utils'),
-                                            array('inc' , 'widgets'),
-                                            array('inc/admin' , 'admin_init'),
+                                            array('inc' , 'init'),//defines default values (layout, socials, default slider...) and theme supports (after_setup_theme)
+                                            array('inc' , 'ressources'),//loads style and scripts
+                                            array('inc' , 'utils'),//those are helpers used everywhere
+                                            array('inc' , 'widgets'),//widget factory
+                                            array('inc/admin' , 'admin_init'),//fires the customizer and the metaboxes for slider and layout
                                         ),
-                            
+                            //the following files/classes define the action hooks for front end rendering : header, main content, footer
                             'header'    =>   array(
                                             array('parts' , 'header_main'),
                                             array('parts' , 'menu'),
@@ -97,7 +107,7 @@ class TC___ {
                         )//end of array                         
         );//end of filter
         
-        /* GET INFORMATIONS FROM STYLE.CSS */
+        /* GETS INFORMATIONS FROM STYLE.CSS */
         // get themedata version wp 3.4+
         if( function_exists( 'wp_get_theme' ) )
           {
@@ -178,7 +188,7 @@ class TC___ {
     * Checks if we use a child theme. Uses a deprecated WP functions (get_theme_data) for versions <3.4
     * @return boolean
     * 
-    * @since     Customizr 3.0.11
+    * @since  Customizr 3.0.11
     */
     function tc_is_child() {
         // get themedata version wp 3.4+

@@ -128,7 +128,7 @@ class TC_meta_boxes {
           //Generates layouts select list array
           $layouts              = array();
           foreach ( TC_init::$instance -> global_layout as $key => $value ) {
-            $layouts[$key]      = $value['metabox'];
+            $layouts[$key]      = call_user_func( '__' , $value['metabox'] , 'customizr' );
           }
 
           //by default we apply the global default layout

@@ -1,5 +1,5 @@
 /*
- * Customizr v3.1.0
+ * Customizr v3.1.1
  *
  * Licensed under the GNU General Public License v2 or later
  * http://www.gnu.org/licenses/gpl-2.0.html
@@ -6161,6 +6161,12 @@ article.format-link .format-icon:before {
   font-size: 2em;
   content: "\1F4C1";
 }
+.safari .archive.category .archive-header .format-icon:before {
+  font-family: 'genericons';
+  top: 8px;
+  font-size: 1.5em;
+  content: '\f301';
+}
 .archive.tag .archive-header .format-icon:before {
   font-family: 'genericons';
   content: "\f302";
@@ -6271,6 +6277,9 @@ h2.comments-title:before {
 .navbar {
   float: right;
   margin-bottom: 5px;
+}
+.navbar-inner {
+  min-height: 43px;
 }
 /* Remove border and change up box shadow for more contrast */
 
@@ -10010,12 +10019,16 @@ p {
     width: 100px;
     height: 100px;
     top: -46px;
-    left: -56px;
+    left: -78px;
   }
   .span6.article-container .thumb-wrapper img,
   .span9.article-container .thumb-wrapper img,
   .span12.article-container .thumb-wrapper img {
     max-width: 190px;
+  }
+  .thumb-wrapper {
+    height: 200px;
+    max-width: 131px;
   }
   .tc-content .thumb-wrapper img {
     right: 0px;
@@ -10086,6 +10099,9 @@ p {
   .tc-content .thumb-wrapper img {
     right: -4px;
   }
+  .thumb-wrapper {
+    max-width: 200px;
+  }
   .span6.article-container .round-div,
   .span9.article-container .round-div,
   .span12.article-container .round-div {
@@ -10096,9 +10112,6 @@ p {
   }
   .navbar-inner .social-block {
     padding: 0px 0px 0px 0px;
-  }
-  .navbar .btn-navbar {
-    margin-top: 6px;
   }
   .social-block a {
     padding-right: 10px;

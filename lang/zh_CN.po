@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Customizr 1.1.5\n"
-"POT-Creation-Date: 2013-12-13 22:41+0100\n"
-"PO-Revision-Date: 2013-12-13 22:41+0100\n"
+"POT-Creation-Date: 2013-12-14 14:23+0100\n"
+"PO-Revision-Date: 2013-12-14 14:23+0100\n"
 "Last-Translator: Nico <contact@themesandco.com>\n"
 "Language-Team: Nicolas G. <contact@themesandco.com>\n"
 "Language: Français\n"
@@ -20,22 +20,21 @@ msgstr ""
 msgid "Leave a Comment"
 msgstr "发表评论"
 
-#: ../inc/class-fire-init.php:48
+#: ../inc/class-fire-init.php:47 ../inc/class-fire-init.php:48
 msgid "Right sidebar"
 msgstr "右边栏"
 
-#: ../inc/class-fire-init.php:54
+#: ../inc/class-fire-init.php:53 ../inc/class-fire-init.php:54
 msgid "Left sidebar"
 msgstr "左边栏"
 
-#: ../inc/class-fire-init.php:60
-msgid "Two sidebars"
-msgstr "双边栏"
+#: ../inc/class-fire-init.php:59 ../inc/class-fire-init.php:60
+msgid "2 sidebars : Right and Left"
+msgstr "双边栏：左边和右边"
 
-#: ../inc/class-fire-init.php:66
-#, fuzzy
-msgid "Full Width"
-msgstr "满页宽度"
+#: ../inc/class-fire-init.php:65 ../inc/class-fire-init.php:66
+msgid "No sidebars : full width layout"
+msgstr "无侧边栏：满页宽度样式"
 
 #: ../inc/class-fire-init.php:78
 msgid "Blue"
@@ -203,67 +202,67 @@ msgid ""
 "Sorry, but the requested page is not found. You might try a search below."
 msgstr "抱歉，您申请的页面没找到，您可以在下方尝试搜索。"
 
-#: ../inc/class-fire-init.php:216
+#: ../inc/class-fire-init.php:215
 msgid ""
 "Success is the ability to go from one failure to another with no loss of "
 "enthusiasm..."
 msgstr "成功就是具备从在失败中也不放弃的精神。"
 
-#: ../inc/class-fire-init.php:217
+#: ../inc/class-fire-init.php:216
 msgid "Sir Winston Churchill"
 msgstr "温斯顿・邱吉尔爵士"
 
-#: ../inc/class-fire-init.php:218
+#: ../inc/class-fire-init.php:217
 msgid ""
 "Sorry, but nothing matched your search criteria. Please try again with some "
 "different keywords."
 msgstr "对不起，但是没有找到符合您搜索词汇的内容。请使用其他搜索词汇再次尝试。"
 
-#: ../inc/class-fire-init.php:228 ../inc/class-fire-init.php:237
+#: ../inc/class-fire-init.php:225 ../inc/class-fire-init.php:234
 msgid "Customizr is a clean responsive theme"
 msgstr "Customizr 是一个清新交互的主题"
 
-#: ../inc/class-fire-init.php:229
+#: ../inc/class-fire-init.php:226
 msgid "Let your creativity speak and easily customiz'it the way you want!"
 msgstr "让您的的创造力得到个性化的展现！"
 
-#: ../inc/class-fire-init.php:230
+#: ../inc/class-fire-init.php:227
 #, fuzzy
 msgid "Learn more"
 msgstr "了解更多"
 
-#: ../inc/class-fire-init.php:242 ../inc/class-fire-init.php:251
+#: ../inc/class-fire-init.php:239 ../inc/class-fire-init.php:248
 #, fuzzy
 msgid "Style your WordPress site live!"
 msgstr "个性定制您的网站并同时查看效果"
 
-#: ../inc/class-fire-init.php:243
+#: ../inc/class-fire-init.php:240
 msgid ""
 "Many layout and design options are available from the WordPress customizer "
 "screen : see your changes live !"
 msgstr ""
 "在WordPress中的个性化定制中很多样式和设计选项都可用，等着看您的网站成果啦！"
 
-#: ../inc/class-fire-init.php:244
+#: ../inc/class-fire-init.php:241
 #, fuzzy
 msgid "Just try it!"
 msgstr "开始动手做吧！"
 
-#: ../inc/class-fire-init.php:256 ../inc/class-fire-init.php:265
+#: ../inc/class-fire-init.php:253 ../inc/class-fire-init.php:262
 msgid "Create beautiful sliders"
 msgstr "创建美丽的滑块"
 
-#: ../inc/class-fire-init.php:257
+#: ../inc/class-fire-init.php:254
 msgid ""
 "Customizr comes with a cool slider generator : add a slider to any post or "
 "page!"
 msgstr "Customizr 中包含一个很酷的滑块生成器：添加滑块到任何文章和页面！"
 
-#: ../inc/class-fire-init.php:258
+#: ../inc/class-fire-init.php:255
 msgid "Discover the features"
 msgstr "发现特色功能"
 
-#: ../inc/class-fire-init.php:323
+#: ../inc/class-fire-init.php:320
 #, fuzzy
 msgid "Main Menu"
 msgstr "主菜单"
@@ -366,7 +365,7 @@ msgid "Set up comments options"
 msgstr "配置样式选项"
 
 #: ../inc/admin/class-admin-customize.php:322
-#: ../parts/class-content-sidebar.php:114
+#: ../parts/class-content-sidebar.php:112
 msgid "Social links"
 msgstr "社会化链接"
 
@@ -890,9 +889,9 @@ msgstr "按钮链接"
 #: ../parts/class-content-breadcrumb.php:628
 #: ../parts/class-content-breadcrumb.php:643
 #: ../parts/class-content-breadcrumb.php:671
-#: ../parts/class-content-comments.php:158
+#: ../parts/class-content-comments.php:157
 #: ../parts/class-content-headings.php:240
-#: ../parts/class-content-slider.php:244
+#: ../parts/class-content-slider.php:239
 msgid "Edit"
 msgstr "编辑"
 
@@ -946,17 +945,17 @@ msgstr "帮助"
 msgid "Need help with Customizr? Click here!"
 msgstr "需要获得关于 Customizr 的帮助吗？点击此处！"
 
-#: ../inc/admin/class-fire-admin_init.php:165
+#: ../inc/admin/class-fire-admin_init.php:163
 #, fuzzy
 msgid "Need help with Customizr ?"
 msgstr "需要获得关于 Customizr 的帮助吗？点击此处！"
 
-#: ../inc/admin/class-fire-admin_init.php:167
+#: ../inc/admin/class-fire-admin_init.php:165
 #, fuzzy, php-format
 msgid "Welcome to Customizr %s"
 msgstr "欢迎来到 Customizr %s"
 
-#: ../inc/admin/class-fire-admin_init.php:174
+#: ../inc/admin/class-fire-admin_init.php:172
 #, php-format
 msgid ""
 "You can start by watching the <a href=\"%1$s\" target=\"_blank"
@@ -973,24 +972,24 @@ msgstr ""
 "reporting bugs and making continuous improvements, you will probably find a "
 "solution to your problem either in the FAQ or in the user forum."
 
-#: ../inc/admin/class-fire-admin_init.php:182
+#: ../inc/admin/class-fire-admin_init.php:180
 #, fuzzy
 msgid "Read the documentation"
 msgstr "阅读帮助文档"
 
-#: ../inc/admin/class-fire-admin_init.php:186
+#: ../inc/admin/class-fire-admin_init.php:184
 msgid "Check the FAQ"
 msgstr "查看FAQ"
 
-#: ../inc/admin/class-fire-admin_init.php:191
+#: ../inc/admin/class-fire-admin_init.php:189
 msgid "Code snippets"
 msgstr "代码片段"
 
-#: ../inc/admin/class-fire-admin_init.php:194
+#: ../inc/admin/class-fire-admin_init.php:192
 msgid "Discuss in the user forum"
 msgstr "加入用户论坛讨论"
 
-#: ../inc/admin/class-fire-admin_init.php:202
+#: ../inc/admin/class-fire-admin_init.php:200
 #, php-format
 msgid ""
 "Thank you for using Customizr! Customizr %1$s has more features, is safer "
@@ -1005,7 +1004,7 @@ msgstr ""
 "href=\"#showcase\">showcase</a>找到与您志同道合的朋友。<a href=\"#showcase"
 "\">showcase</a>.<br/>尽情享用吧！"
 
-#: ../inc/admin/class-fire-admin_init.php:216
+#: ../inc/admin/class-fire-admin_init.php:214
 #, php-format
 msgid ""
 "You are using a child theme of Customizr %1$s : always check the %2$s after "
@@ -1014,11 +1013,11 @@ msgstr ""
 "您正在使用 Customizr %1$s 的一个子主题：记得在更新后查看e %2$s 以确保某项功能"
 "或模板内容被弃用。"
 
-#: ../inc/admin/class-fire-admin_init.php:231
+#: ../inc/admin/class-fire-admin_init.php:229
 msgid "We need sponsors!"
 msgstr "我们需要您的资助！"
 
-#: ../inc/admin/class-fire-admin_init.php:232
+#: ../inc/admin/class-fire-admin_init.php:230
 msgid ""
 "<strong>We do our best do make Customizr the perfect free theme for you!</"
 "strong><br/> Please help support it's continued development with a donation "
@@ -1027,11 +1026,11 @@ msgstr ""
 "<strong> 为帮助您建设网站，我们竭尽全力开发 Customizr ，使它接近完美！</"
 "strong><br/>请同我们一道维系该项目。你可以选择给我们捐助 $20，$50，或者$100。"
 
-#: ../inc/admin/class-fire-admin_init.php:239
+#: ../inc/admin/class-fire-admin_init.php:237
 msgid "Happy user of Customizr?"
 msgstr "你是 Customizr 的满意用户吗？"
 
-#: ../inc/admin/class-fire-admin_init.php:240
+#: ../inc/admin/class-fire-admin_init.php:238
 msgid ""
 "If you are happy with the theme, say it on wordpress.org and give Customizr "
 "a nice review! <br />(We are addicted to your feedbacks...)"
@@ -1039,25 +1038,25 @@ msgstr ""
 "如果您对此主题满意的话，请在 WordPress.org上给 Customizr 一个积极的评论吧！"
 "(我们将会再接再厉以期达到您的期望...)"
 
-#: ../inc/admin/class-fire-admin_init.php:245
+#: ../inc/admin/class-fire-admin_init.php:243
 #, fuzzy
 msgid "Follow us"
 msgstr "关注我"
 
-#: ../inc/admin/class-fire-admin_init.php:253
+#: ../inc/admin/class-fire-admin_init.php:251
 msgid "Customizr Showcase"
 msgstr "Customizr 网站展示"
 
-#: ../inc/admin/class-fire-admin_init.php:256
-#: ../inc/admin/class-fire-admin_init.php:263
+#: ../inc/admin/class-fire-admin_init.php:254
+#: ../inc/admin/class-fire-admin_init.php:261
 msgid "Visit the showcase"
 msgstr "访问展示中心"
 
-#: ../inc/admin/class-fire-admin_init.php:257
+#: ../inc/admin/class-fire-admin_init.php:255
 msgid "Find inspiration for your next Customizr based website!"
 msgstr "寻求下一个 Customizr 网站灵感"
 
-#: ../inc/admin/class-fire-admin_init.php:258
+#: ../inc/admin/class-fire-admin_init.php:256
 msgid ""
 "This showcase aims to show what can be done with Customizr and helping other "
 "users to find inspiration for their web design."
@@ -1065,22 +1064,22 @@ msgstr ""
 "此展示页面的目的是想人们展示通过Customizr能够做到什么样的事情并起到鼓励他人的"
 "作用"
 
-#: ../inc/admin/class-fire-admin_init.php:260
+#: ../inc/admin/class-fire-admin_init.php:258
 msgid ""
 "Do you think you made an awesome website that can inspire people? Submitting "
 "a site for review is quick and easy to do."
 msgstr "觉得你的网站够漂亮，能够带动其他人吗？提交你的网站给大家看看吧"
 
-#: ../inc/admin/class-fire-admin_init.php:270
+#: ../inc/admin/class-fire-admin_init.php:268
 #, fuzzy, php-format
 msgid "Changelog in version %1$s"
 msgstr " %1$s版本变更记录"
 
-#: ../inc/admin/class-fire-admin_init.php:279
+#: ../inc/admin/class-fire-admin_init.php:277
 msgid "Go to Dashboard &rarr; Home"
 msgstr "去后台仪表盘 &rarr; 主页"
 
-#: ../inc/admin/class-fire-admin_init.php:279
+#: ../inc/admin/class-fire-admin_init.php:277
 msgid "Go to Dashboard"
 msgstr "进入仪表盘"
 
@@ -1178,44 +1177,44 @@ msgstr "合并"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgstr "One thought on &ldquo;%2$s&rdquo;"
 
-#: ../parts/class-content-comments.php:125
+#: ../parts/class-content-comments.php:124
 msgid "Pingback:"
 msgstr "广播:"
 
-#: ../parts/class-content-comments.php:125
+#: ../parts/class-content-comments.php:124
 msgid "(Edit)"
 msgstr "（编辑）"
 
-#: ../parts/class-content-comments.php:150
+#: ../parts/class-content-comments.php:149
 msgid "Reply"
 msgstr "回复"
 
-#: ../parts/class-content-comments.php:157
+#: ../parts/class-content-comments.php:156
 msgid "Post author"
 msgstr "文章作者"
 
-#: ../parts/class-content-comments.php:164
+#: ../parts/class-content-comments.php:163
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s 于 %2$s"
 
-#: ../parts/class-content-comments.php:169
+#: ../parts/class-content-comments.php:168
 msgid "Your comment is awaiting moderation."
 msgstr "您的评论正在等待审核"
 
-#: ../parts/class-content-comments.php:199
+#: ../parts/class-content-comments.php:198
 msgid "Comment navigation"
 msgstr "评论导航"
 
-#: ../parts/class-content-comments.php:205
+#: ../parts/class-content-comments.php:204
 msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
 msgstr "<span class=\"meta-nav\">&larr;</span> 旧评论"
 
-#: ../parts/class-content-comments.php:213
+#: ../parts/class-content-comments.php:212
 msgid "Newer Comments <span class=\"meta-nav\">&rarr;</span>"
 msgstr "新评论 <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../parts/class-content-comments.php:245
+#: ../parts/class-content-comments.php:244
 msgid "Comments are closed."
 msgstr "评论已经关闭"
 
@@ -1314,12 +1313,12 @@ msgid "Comment(s) on"
 msgstr "评论开启"
 
 #: ../parts/class-content-page.php:48 ../parts/class-content-post.php:53
-#: ../parts/class-content-post_list.php:133
+#: ../parts/class-content-post_list.php:132
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "继续阅读 <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../parts/class-content-page.php:50 ../parts/class-content-post.php:54
-#: ../parts/class-content-post_list.php:134
+#: ../parts/class-content-post_list.php:133
 msgid "Pages:"
 msgstr "页面"
 
@@ -1381,20 +1380,20 @@ msgstr "此文章发表于%3$s<span class=\"by-author\"> by %4$s</span>."
 msgid "View all posts in %s"
 msgstr "参看所有文章 %s"
 
-#: ../parts/class-content-post_navigation.php:63
-#: ../parts/class-content-post_navigation.php:98
+#: ../parts/class-content-post_navigation.php:61
+#: ../parts/class-content-post_navigation.php:94
 msgid "Post navigation"
 msgstr "文章导航"
 
-#: ../parts/class-content-post_navigation.php:108
+#: ../parts/class-content-post_navigation.php:104
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> 旧文章"
 
-#: ../parts/class-content-post_navigation.php:121
+#: ../parts/class-content-post_navigation.php:117
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "新文章 <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../parts/class-footer-footer_main.php:177
+#: ../parts/class-footer-footer_main.php:176
 msgid "Back to top"
 msgstr "回到顶端"
 
@@ -1408,11 +1407,12 @@ msgstr "首页"
 msgid "Add a menu"
 msgstr "添加一个菜单"
 
-#~ msgid "2 sidebars : Right and Left"
-#~ msgstr "双边栏：左边和右边"
+#~ msgid "Two sidebars"
+#~ msgstr "双边栏"
 
-#~ msgid "No sidebars : full width layout"
-#~ msgstr "无侧边栏：满页宽度样式"
+#, fuzzy
+#~ msgid "Full Width"
+#~ msgstr "满页宽度"
 
 #, fuzzy
 #~ msgid "Custom featured page "

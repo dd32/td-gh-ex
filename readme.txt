@@ -33,6 +33,12 @@ The exceptions to this license are as follows:
 
 
 #######################  Changelog ######################
+= 3.1.1 =
+* added : (language) Turkish : thanks to <a href="http://www.ahmethakanergun.com/">Ahmet Hakan Ergün</a>
+* added : (css) customizer : some styling
+* fixed : (css) post thumbnails : minor alignment issues
+* fixed : (php) translations in customizer for dropdown lists
+
 = 3.1.0 =
 * added : (language) Hungarian : thanks to Ferencz Székely
 * added : (php) Woocommerce : full compatibility
@@ -83,6 +89,7 @@ The exceptions to this license are as follows:
 * updated : (lang) ar : Thanks to Ramez Bdiwi
 * updated : (lang) ca_ES : Thanks to Jaume Albaigès
 * updated : (lang) ru_RU : Thanks to <a href="http://bootwalksnews.com/" target="_blank">Evgeny Sudakov</a>
+* removed : (php) Dev Tools : the developer tools have been removed from the theme for perfomances issues.
 
 
 = 3.0.15 =

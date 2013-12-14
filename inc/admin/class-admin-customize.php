@@ -102,7 +102,7 @@ class TC_customize {
 		foreach ( $files as $file) {
 	        if ( $file[0] != '.' && !is_dir($path.$file) ) {
 	        	if ( substr( $file, -4) == '.css' ) {
-	        		$skin_list[$file] = isset($default_skin_list[$file]) ? $default_skin_list[$file] : substr_replace( $file , '' , -4 , 4);
+	        		$skin_list[$file] = isset($default_skin_list[$file]) ?  call_user_func( '__' , $default_skin_list[$file] , 'customizr' ) : substr_replace( $file , '' , -4 , 4);
 	        	}
 	        }
 	    }//endforeach
@@ -252,7 +252,7 @@ class TC_customize {
 										'default'       	=> ( isset($data['default']) && !is_null($data['default']) ) ? $data['default'] : null ,
 										'sanitize_callback' => array( $this , 'tc_sanitize_url' ),
 										'control'			=> 'TC_controls' ,
-										'label'    			=> ( isset($data['option_label']) ) ? $data['option_label'] : $key,
+										'label'    			=> ( isset($data['option_label']) ) ? call_user_func( '__' , $data['option_label'] , 'customizr' ) : $key,
 										'section'  			=> 'tc_social_settings' ,
 										'type'     			=> 'url',
 										'priority'      	=> $priority
@@ -1048,7 +1048,35 @@ class TC_customize {
 		        	'FPControls' => array_merge( $fp_controls , $page_dropdowns , $text_fields )
 		        )
         );
+
+		//adds some nice google fonts to the customizer
+        wp_enqueue_style(
+          'customizer-google-fonts', 
+          $this-> tc_customizer_gfonts_url(), 
+          array(), 
+          null 
+        );
 	}
+
+	/**
+	* Builds Google Fonts url
+	* @package Customizr
+	* @since Customizr 3.1.1
+	*/
+	function tc_customizer_gfonts_url() {
+      //declares the google font vars
+      $fonts_url          = '';
+      $font_families      = apply_filters( 'tc_customizer_google_fonts' , array('Raleway') );
+
+      $query_args         = array(
+          'family' => implode( '|', $font_families ),
+          //'subset' => urlencode( 'latin,latin-ext' ),
+      );
+
+      $fonts_url          = add_query_arg( $query_args, "//fonts.googleapis.com/css" );
+
+      return $fonts_url;
+    }
 
 
 	/**

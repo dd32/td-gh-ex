@@ -465,14 +465,14 @@ class TC_utils {
                                 )
                 ),
                 esc_url( $__options[$key]),
-                isset($data['link_title']) ? $data['link_title'] : '' ,
+                isset($data['link_title']) ?  call_user_func( '__' , $data['link_title'] , 'customizr' ) : '' ,
                 ( $key == 'tc_rss' ) ? '' : $target,
                 apply_filters( 'tc_additional_social_attributes', '' , $key),
                 ( isset($data['custom_icon_url']) && !empty($data['custom_icon_url']) ) ? sprintf('<img src="%1$s" width="%2$s" height="%3$s" alt="%4$s"/>',
                                                         $data['custom_icon_url'],
                                                         $width,
                                                         $height,
-                                                        isset($data['link_title']) ? $data['link_title'] : ''
+                                                        isset($data['link_title']) ? call_user_func( '__' , $data['link_title'] , 'customizr' ) : ''
                                                       ) : ''
             );
         }

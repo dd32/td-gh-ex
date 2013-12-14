@@ -56,7 +56,6 @@ class TC_footer_main {
 		?>
 			<div class="container footer-widgets <?php echo $skin_class ?>">
 				<div class="row widget-area" role="complementary">
-					<?php  ?>
 					
 					<?php foreach ( TC_init::$instance -> footer_widgets as $key => $area )  : ?>
 

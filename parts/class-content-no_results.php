@@ -35,14 +35,21 @@ class TC_no_results {
         if ( !is_search() || (is_search() && 0 != $wp_query -> post_count) )
             return;
         
-        echo apply_filters( 'tc_404_content',
+        $content_no_results    = TC_init::$instance -> content_no_results;
+
+        echo apply_filters( 'tc_no_result_content',
             sprintf('<div class="%1$s"><div class="entry-content %2$s">%3$s</div>%4$s</div>',
                 apply_filters( 'tc_no_results_wrapper_class', 'tc-content span12 format-quote' ),
                 apply_filters( 'tc_no_results_content_icon', 'format-icon' ),
-                TC_init::$instance -> content_no_results,
+                sprintf('<blockquote><p>%1$s</p><cite>%2$s</cite></blockquote><p>%3$s</p>%4$s',
+                              call_user_func( '__' , $content_no_results['quote'] , 'customizr' ),
+                              call_user_func( '__' , $content_no_results['author'] , 'customizr' ),
+                              call_user_func( '__' , $content_no_results['text'] , 'customizr' ),
+                              get_search_form( $echo = false )
+                ),
                 apply_filters( 'tc_no_results_separator', '<hr class="featurette-divider '.current_filter().'">' ) 
-            )
-        );
+            )//end sprintf
+        );//end filter
     }
 
 }//end of class

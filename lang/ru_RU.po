@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Customizr 1.1.5\n"
-"POT-Creation-Date: 2013-12-13 22:41+0100\n"
-"PO-Revision-Date: 2013-12-13 22:41+0100\n"
+"POT-Creation-Date: 2013-12-14 14:23+0100\n"
+"PO-Revision-Date: 2013-12-14 14:23+0100\n"
 "Last-Translator: Nico <contact@themesandco.com>\n"
 "Language-Team: Nicolas G. <contact@themesandco.com>\n"
 "Language: Français\n"
@@ -20,21 +20,21 @@ msgstr ""
 msgid "Leave a Comment"
 msgstr "Оставьте комментарий"
 
-#: ../inc/class-fire-init.php:48
+#: ../inc/class-fire-init.php:47 ../inc/class-fire-init.php:48
 msgid "Right sidebar"
 msgstr "Правый сайдбар"
 
-#: ../inc/class-fire-init.php:54
+#: ../inc/class-fire-init.php:53 ../inc/class-fire-init.php:54
 msgid "Left sidebar"
 msgstr "Левый сайдбар"
 
-#: ../inc/class-fire-init.php:60
-msgid "Two sidebars"
-msgstr "Два сайдбара"
+#: ../inc/class-fire-init.php:59 ../inc/class-fire-init.php:60
+msgid "2 sidebars : Right and Left"
+msgstr "2 сайдбара: слева и справа"
 
-#: ../inc/class-fire-init.php:66
-msgid "Full Width"
-msgstr "Во всю ширину"
+#: ../inc/class-fire-init.php:65 ../inc/class-fire-init.php:66
+msgid "No sidebars : full width layout"
+msgstr "Без сайдбаров: во всю ширину"
 
 #: ../inc/class-fire-init.php:78
 msgid "Blue"
@@ -200,7 +200,7 @@ msgstr ""
 "Очень жаль, но запрашиваемая вами страница не найдена. Вы можете попробывать "
 "ниже."
 
-#: ../inc/class-fire-init.php:216
+#: ../inc/class-fire-init.php:215
 msgid ""
 "Success is the ability to go from one failure to another with no loss of "
 "enthusiasm..."
@@ -208,11 +208,11 @@ msgstr ""
 "Успех - это способность выдерживать одну неудачу за другой не теряя при этом "
 "энтузиазма..."
 
-#: ../inc/class-fire-init.php:217
+#: ../inc/class-fire-init.php:216
 msgid "Sir Winston Churchill"
 msgstr "Сэр Винстон Черчилль"
 
-#: ../inc/class-fire-init.php:218
+#: ../inc/class-fire-init.php:217
 msgid ""
 "Sorry, but nothing matched your search criteria. Please try again with some "
 "different keywords."
@@ -220,24 +220,24 @@ msgstr ""
 "Очень жаль, но соответствий введённым вами критериям не нашлось. Попробуйте "
 "другие слова."
 
-#: ../inc/class-fire-init.php:228 ../inc/class-fire-init.php:237
+#: ../inc/class-fire-init.php:225 ../inc/class-fire-init.php:234
 msgid "Customizr is a clean responsive theme"
 msgstr "Customizr - это удобная тема хорошо выглядящая на любых девайсах!"
 
-#: ../inc/class-fire-init.php:229
+#: ../inc/class-fire-init.php:226
 msgid "Let your creativity speak and easily customiz'it the way you want!"
 msgstr ""
 "Дайте волю своему воображению! Вместе с customiz'it у тебя всё получится!"
 
-#: ../inc/class-fire-init.php:230
+#: ../inc/class-fire-init.php:227
 msgid "Learn more"
 msgstr "Узнать больше!"
 
-#: ../inc/class-fire-init.php:242 ../inc/class-fire-init.php:251
+#: ../inc/class-fire-init.php:239 ../inc/class-fire-init.php:248
 msgid "Style your WordPress site live!"
 msgstr "Стилизуйте Ваш WordPress сайт быстрее!"
 
-#: ../inc/class-fire-init.php:243
+#: ../inc/class-fire-init.php:240
 msgid ""
 "Many layout and design options are available from the WordPress customizer "
 "screen : see your changes live !"
@@ -245,15 +245,15 @@ msgstr ""
 "Многие изменения в расположении объектов и опций доступны в панели "
 "Костомайзера в WordPress: наблюдайте за изменениями в реальном времени!"
 
-#: ../inc/class-fire-init.php:244
+#: ../inc/class-fire-init.php:241
 msgid "Just try it!"
 msgstr "Просто попробуй!"
 
-#: ../inc/class-fire-init.php:256 ../inc/class-fire-init.php:265
+#: ../inc/class-fire-init.php:253 ../inc/class-fire-init.php:262
 msgid "Create beautiful sliders"
 msgstr "Создай красивейший слайдер!"
 
-#: ../inc/class-fire-init.php:257
+#: ../inc/class-fire-init.php:254
 msgid ""
 "Customizr comes with a cool slider generator : add a slider to any post or "
 "page!"
@@ -261,11 +261,11 @@ msgstr ""
 "Customizr  идёт с крутым генератором слайдеров: добавь слайдер в любой пост "
 "и на любую страницу!"
 
-#: ../inc/class-fire-init.php:258
+#: ../inc/class-fire-init.php:255
 msgid "Discover the features"
 msgstr "Узнай больше!"
 
-#: ../inc/class-fire-init.php:323
+#: ../inc/class-fire-init.php:320
 msgid "Main Menu"
 msgstr "Главное Меню"
 
@@ -363,7 +363,7 @@ msgid "Set up comments options"
 msgstr "Опции комментариев"
 
 #: ../inc/admin/class-admin-customize.php:322
-#: ../parts/class-content-sidebar.php:114
+#: ../parts/class-content-sidebar.php:112
 msgid "Social links"
 msgstr "Линки соцсетей"
 
@@ -871,9 +871,9 @@ msgstr "Линк кнопки"
 #: ../parts/class-content-breadcrumb.php:628
 #: ../parts/class-content-breadcrumb.php:643
 #: ../parts/class-content-breadcrumb.php:671
-#: ../parts/class-content-comments.php:158
+#: ../parts/class-content-comments.php:157
 #: ../parts/class-content-headings.php:240
-#: ../parts/class-content-slider.php:244
+#: ../parts/class-content-slider.php:239
 msgid "Edit"
 msgstr "Править"
 
@@ -920,16 +920,16 @@ msgstr "Помощь"
 msgid "Need help with Customizr? Click here!"
 msgstr "Нужна помощь с Customizr? Кликните здесь!"
 
-#: ../inc/admin/class-fire-admin_init.php:165
+#: ../inc/admin/class-fire-admin_init.php:163
 msgid "Need help with Customizr ?"
 msgstr "Нужна помощь с  Customizr ?"
 
-#: ../inc/admin/class-fire-admin_init.php:167
+#: ../inc/admin/class-fire-admin_init.php:165
 #, php-format
 msgid "Welcome to Customizr %s"
 msgstr "Добро пожаловать в  Customizr %s"
 
-#: ../inc/admin/class-fire-admin_init.php:174
+#: ../inc/admin/class-fire-admin_init.php:172
 #, php-format
 msgid ""
 "You can start by watching the <a href=\"%1$s\" target=\"_blank"
@@ -946,23 +946,23 @@ msgstr ""
 "проблемы и баги на пользовательском форуме, многие решения Вы сможете найти "
 "там или проверте FAQ.  "
 
-#: ../inc/admin/class-fire-admin_init.php:182
+#: ../inc/admin/class-fire-admin_init.php:180
 msgid "Read the documentation"
 msgstr "Читайте документацию"
 
-#: ../inc/admin/class-fire-admin_init.php:186
+#: ../inc/admin/class-fire-admin_init.php:184
 msgid "Check the FAQ"
 msgstr "Посмотрите FAQ"
 
-#: ../inc/admin/class-fire-admin_init.php:191
+#: ../inc/admin/class-fire-admin_init.php:189
 msgid "Code snippets"
 msgstr "Сниппеты кода"
 
-#: ../inc/admin/class-fire-admin_init.php:194
+#: ../inc/admin/class-fire-admin_init.php:192
 msgid "Discuss in the user forum"
 msgstr "Обсудите на форуме"
 
-#: ../inc/admin/class-fire-admin_init.php:202
+#: ../inc/admin/class-fire-admin_init.php:200
 #, php-format
 msgid ""
 "Thank you for using Customizr! Customizr %1$s has more features, is safer "
@@ -978,7 +978,7 @@ msgstr ""
 "видео</a> и находите вдохновение на <a href=\"#showcase\">шоукейсе</a>.<br/> "
 "Наслаждайтесь!"
 
-#: ../inc/admin/class-fire-admin_init.php:216
+#: ../inc/admin/class-fire-admin_init.php:214
 #, php-format
 msgid ""
 "You are using a child theme of Customizr %1$s : always check the %2$s after "
@@ -987,11 +987,11 @@ msgstr ""
 "Вы используете дочернюю тему Customizr %1$s :  всегда проверяйте %2$s после "
 "обновления на предмет устаревания функции или файла шаблона."
 
-#: ../inc/admin/class-fire-admin_init.php:231
+#: ../inc/admin/class-fire-admin_init.php:229
 msgid "We need sponsors!"
 msgstr "Требуются спонсоры!"
 
-#: ../inc/admin/class-fire-admin_init.php:232
+#: ../inc/admin/class-fire-admin_init.php:230
 msgid ""
 "<strong>We do our best do make Customizr the perfect free theme for you!</"
 "strong><br/> Please help support it's continued development with a donation "
@@ -1001,11 +1001,11 @@ msgstr ""
 "бесплатным шаблоном для Вас!</strong><br/> Пожалуйста, помогите в разработке "
 "шаблона переводом в $20, $50  или даже в $100."
 
-#: ../inc/admin/class-fire-admin_init.php:239
+#: ../inc/admin/class-fire-admin_init.php:237
 msgid "Happy user of Customizr?"
 msgstr "Счастливый обладатель Customizr?"
 
-#: ../inc/admin/class-fire-admin_init.php:240
+#: ../inc/admin/class-fire-admin_init.php:238
 msgid ""
 "If you are happy with the theme, say it on wordpress.org and give Customizr "
 "a nice review! <br />(We are addicted to your feedbacks...)"
@@ -1013,24 +1013,24 @@ msgstr ""
 "Если Вы довольны данным шаблоном, скажите об этом на wordpress.org, опишите "
 "свой Customizr! <br /> (Мы любим фидбеки...) "
 
-#: ../inc/admin/class-fire-admin_init.php:245
+#: ../inc/admin/class-fire-admin_init.php:243
 msgid "Follow us"
 msgstr "Следите за нами"
 
-#: ../inc/admin/class-fire-admin_init.php:253
+#: ../inc/admin/class-fire-admin_init.php:251
 msgid "Customizr Showcase"
 msgstr "Customizer шоукейс"
 
-#: ../inc/admin/class-fire-admin_init.php:256
-#: ../inc/admin/class-fire-admin_init.php:263
+#: ../inc/admin/class-fire-admin_init.php:254
+#: ../inc/admin/class-fire-admin_init.php:261
 msgid "Visit the showcase"
 msgstr "Посмотрите шоукейс"
 
-#: ../inc/admin/class-fire-admin_init.php:257
+#: ../inc/admin/class-fire-admin_init.php:255
 msgid "Find inspiration for your next Customizr based website!"
 msgstr "Найдите вдохновение для Вашего следующего Customizr сайта!"
 
-#: ../inc/admin/class-fire-admin_init.php:258
+#: ../inc/admin/class-fire-admin_init.php:256
 msgid ""
 "This showcase aims to show what can be done with Customizr and helping other "
 "users to find inspiration for their web design."
@@ -1038,7 +1038,7 @@ msgstr ""
 "Эти примеры призваны показать, что можно делать с Customizr и вдохновить "
 "вебдизайнеров на новые свершения."
 
-#: ../inc/admin/class-fire-admin_init.php:260
+#: ../inc/admin/class-fire-admin_init.php:258
 msgid ""
 "Do you think you made an awesome website that can inspire people? Submitting "
 "a site for review is quick and easy to do."
@@ -1046,16 +1046,16 @@ msgstr ""
 "Вы считаете, что Вы сделали потрясающий сайт, который сможет впечатлить "
 "всех? Предложить свой сайт для выставки примеров быстро и просто."
 
-#: ../inc/admin/class-fire-admin_init.php:270
+#: ../inc/admin/class-fire-admin_init.php:268
 #, php-format
 msgid "Changelog in version %1$s"
 msgstr "Журнал изменений в версии %1$s"
 
-#: ../inc/admin/class-fire-admin_init.php:279
+#: ../inc/admin/class-fire-admin_init.php:277
 msgid "Go to Dashboard &rarr; Home"
 msgstr "В панель опций  &rarr; На главную"
 
-#: ../inc/admin/class-fire-admin_init.php:279
+#: ../inc/admin/class-fire-admin_init.php:277
 msgid "Go to Dashboard"
 msgstr "В панель опций"
 
@@ -1150,44 +1150,44 @@ msgstr "Соединить"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgstr "Мысль на тему &ldquo;%2$s&rdquo;"
 
-#: ../parts/class-content-comments.php:125
+#: ../parts/class-content-comments.php:124
 msgid "Pingback:"
 msgstr "Пингбак:"
 
-#: ../parts/class-content-comments.php:125
+#: ../parts/class-content-comments.php:124
 msgid "(Edit)"
 msgstr "(Править)"
 
-#: ../parts/class-content-comments.php:150
+#: ../parts/class-content-comments.php:149
 msgid "Reply"
 msgstr "Ответить"
 
-#: ../parts/class-content-comments.php:157
+#: ../parts/class-content-comments.php:156
 msgid "Post author"
 msgstr "От автора"
 
-#: ../parts/class-content-comments.php:164
+#: ../parts/class-content-comments.php:163
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s  в %2$s"
 
-#: ../parts/class-content-comments.php:169
+#: ../parts/class-content-comments.php:168
 msgid "Your comment is awaiting moderation."
 msgstr "Ваш комментарий на модерации."
 
-#: ../parts/class-content-comments.php:199
+#: ../parts/class-content-comments.php:198
 msgid "Comment navigation"
 msgstr "Навигация по комментариям"
 
-#: ../parts/class-content-comments.php:205
+#: ../parts/class-content-comments.php:204
 msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
 msgstr "<span class=\"meta-nav\">&larr;</span> Старые комментарии"
 
-#: ../parts/class-content-comments.php:213
+#: ../parts/class-content-comments.php:212
 msgid "Newer Comments <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Новые комментарии  <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../parts/class-content-comments.php:245
+#: ../parts/class-content-comments.php:244
 msgid "Comments are closed."
 msgstr "Комментарии закрыты"
 
@@ -1279,12 +1279,12 @@ msgid "Comment(s) on"
 msgstr "Комментарий (ии) к"
 
 #: ../parts/class-content-page.php:48 ../parts/class-content-post.php:53
-#: ../parts/class-content-post_list.php:133
+#: ../parts/class-content-post_list.php:132
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Продолжить чтение <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../parts/class-content-page.php:50 ../parts/class-content-post.php:54
-#: ../parts/class-content-post_list.php:134
+#: ../parts/class-content-post_list.php:133
 msgid "Pages:"
 msgstr "Страницы:"
 
@@ -1348,20 +1348,20 @@ msgstr ""
 msgid "View all posts in %s"
 msgstr "Смотреть все посты в %s"
 
-#: ../parts/class-content-post_navigation.php:63
-#: ../parts/class-content-post_navigation.php:98
+#: ../parts/class-content-post_navigation.php:61
+#: ../parts/class-content-post_navigation.php:94
 msgid "Post navigation"
 msgstr "Навигация по постам"
 
-#: ../parts/class-content-post_navigation.php:108
+#: ../parts/class-content-post_navigation.php:104
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> Старые посты"
 
-#: ../parts/class-content-post_navigation.php:121
+#: ../parts/class-content-post_navigation.php:117
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Новые посты  <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../parts/class-footer-footer_main.php:177
+#: ../parts/class-footer-footer_main.php:176
 msgid "Back to top"
 msgstr "На верх"
 
@@ -1373,11 +1373,11 @@ msgstr "Назад на главную"
 msgid "Add a menu"
 msgstr "Добавить меню"
 
-#~ msgid "2 sidebars : Right and Left"
-#~ msgstr "2 сайдбара: слева и справа"
+#~ msgid "Two sidebars"
+#~ msgstr "Два сайдбара"
 
-#~ msgid "No sidebars : full width layout"
-#~ msgstr "Без сайдбаров: во всю ширину"
+#~ msgid "Full Width"
+#~ msgstr "Во всю ширину"
 
 #~ msgid "Custom featured page "
 #~ msgstr "Страница на главной "

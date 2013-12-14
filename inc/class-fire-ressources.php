@@ -96,15 +96,14 @@ class TC_ressources {
 		$autoscale 			= ( 1 == tc__f( '__get_option' , 'tc_fancybox_autoscale') ) ? true : false ;
 
         //carousel options
-        //gets slider options if any
-	    $slidername       	= get_post_meta( tc__f('__ID') , $key = 'post_slider_key' , $single = true );
-	    $sliderdelay      	= get_post_meta( tc__f('__ID') , $key = 'slider_delay_key' , $single = true );
+        //gets slider options if any for home/front page or for others posts/pages
+	    $js_slidername       = tc__f('__is_home') ? tc__f( '__get_option' , 'tc_front_slider' ) : get_post_meta( tc__f('__ID') , $key = 'post_slider_key' , $single = true );
+	    $js_sliderdelay      = tc__f('__is_home') ? tc__f( '__get_option' , 'tc_slider_delay' ) : get_post_meta( tc__f('__ID') , $key = 'slider_delay_key' , $single = true );
 	      
-		//gets the slider id and delay options for home/front page
-		if ( tc__f('__is_home') ) {
-		    $slidername     = tc__f( '__get_option' , 'tc_front_slider' );
-		    $sliderdelay    = tc__f( '__get_option' , 'tc_slider_delay' );
-		}
+		//add those to filters
+		$js_slidername 		= apply_filters( 'tc_js_slider_name', $js_slidername , tc__f('__ID') );
+		$js_sliderdelay 	= apply_filters( 'tc_js_slider_delay' , $js_sliderdelay, tc__f('__ID') );
+
 		//creates a filter for stop-on-hover option
 		$sliderhover		= apply_filters( 'tc_stop_slider_hover', true );
 
@@ -119,14 +118,15 @@ class TC_ressources {
 		wp_localize_script( 
 	        'tc-scripts', 
 	        'TCParams', 
-		        array(
-		          	'FancyBoxState' 		=> $tc_fancybox,
-		          	'FancyBoxAutoscale' 	=> $autoscale,
-		          	'SliderName' 			=> $slidername,
-		          	'SliderDelay' 			=> $sliderdelay,
-		          	'SliderHover'			=> $sliderhover,
-		          	'SmoothScroll'			=> $smooth_scroll ? 'easeOutExpo' : 'linear'
-		        )
+		        apply_filters('tc_js_params' , array(
+			          	'FancyBoxState' 		=> $tc_fancybox,
+			          	'FancyBoxAutoscale' 	=> $autoscale,
+			          	'SliderName' 			=> $js_slidername,
+			          	'SliderDelay' 			=> $js_sliderdelay,
+			          	'SliderHover'			=> $sliderhover,
+			          	'SmoothScroll'			=> $smooth_scroll ? 'easeOutExpo' : 'linear'
+		        	)
+		       	)//end of filter
          );
 
 
