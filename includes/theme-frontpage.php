@@ -7,8 +7,69 @@
  * @subpackage Functions
  */
 
+if ( ! function_exists( 'mantra_frontpage_css' ) ) :
+function mantra_frontpage_css() {
+	$mantra_options= mantra_get_theme_options();
+	foreach ($mantra_options as $key => $value) { ${"$key"} = $value; }
+	ob_start();
+	echo '<style type="text/css">/* Mantra frontpage CSS */'; ?>
+<?php if ($mantra_fronthideheader) {?> #branding {display:none;} <?php }
+	  if ($mantra_fronthidemenu) {?> #access {display:none;} <?php }
+  	  if ($mantra_fronthidewidget) {?> #colophon {display:none;} <?php }
+	  if ($mantra_fronthidefooter) {?> #footer2 {display:none;} <?php }
+      if ($mantra_fronthideback) {?> #main {background:none;} <?php } ?>
 
- if ( ! function_exists( 'mantra_frontpage_generator' ) ) :
+.slider-wrapper { display:block; float:none; width:100%; margin:0 auto; }
+
+#slider{
+	max-width:<?php echo $mantra_fpsliderwidth ?>px ;
+	height:<?php echo $mantra_fpsliderheight ?>px ;
+	margin:30px auto 20px; display:block; float:none;
+	border:<?php echo $mantra_fpsliderborderwidth.'px solid '.$mantra_fpsliderbordercolor; ?>; }
+
+#front-text1 h1, #front-text2 h1 { display:block; float:none; margin:35px auto; text-align:center; font-size:32px;
+	clear:both; line-height:32px; font-weight:bold; color:<?php echo $mantra_fronttitlecolor; ?>; }
+
+#front-text2 h1{ font-size:28px; line-height:28px; margin-top:0px; margin-bottom:25px; }
+
+#frontpage blockquote { width:88%; max-width:88% !important; margin-bottom:20px;
+	font-size:16px; line-height:22px; color:#444; }
+
+#frontpage #front-text4 blockquote { font-size:14px; line-height:18px; color:#666; }
+
+#frontpage blockquote:before, #frontpage blockquote:after { content:none; }
+
+#front-columns > div { display:block; width:<?php
+switch ($mantra_nrcolumns) {
+    case 0: break;
+	case 1: echo "95"; break;
+    case 2: echo "45"; break;
+    case 3: echo "29"; break;
+    case 4: echo "21"; break;
+} ?>%; height:auto; margin-left:2%; margin-right:2%; margin-bottom:10px; float:left; }
+
+.column-image { height:<?php echo $mantra_colimageheight ?>px; border:3px solid #eee; }
+
+.theme-default .nivo-controlNav {margin-left:0;}
+<?php
+switch($mantra_fpslidernav):
+    case "Bullets": break;
+	case "Numbers": ?>
+.theme-default .nivo-controlNav {bottom:-40px;}
+.theme-default .nivo-controlNav a { background: none; text-decoration:underline; text-indent:0; }
+<?php break;
+    case "None": ?>
+.theme-default .nivo-controlNav { display:none; }
+<?php break;
+endswitch; 
+    echo "</style>\n";
+	$mantra_presentation_page_styling = ob_get_contents();
+	ob_end_clean();
+	return $mantra_presentation_page_styling;
+} // mantra_frontpage_css()
+endif;
+
+if ( ! function_exists( 'mantra_frontpage_generator' ) ) :
 // Front page generator
 function mantra_frontpage_generator() {
 $mantra_options= mantra_get_theme_options();
@@ -46,114 +107,6 @@ foreach ($mantra_options as $key => $value) {
 		});
 	</script>
 
-<style type="text/css">
-
-<?php if ($mantra_fronthideheader) {?> #branding {display:none;} <?php }
-	  if ($mantra_fronthidemenu) {?> #access {display:none;} <?php }
-  	  if ($mantra_fronthidewidget) {?> #colophon {display:none;} <?php }
-	  if ($mantra_fronthidefooter) {?> #footer2 {display:none;} <?php }
-      if ($mantra_fronthideback) {?> #main {background:none;} <?php } ?>
-
-.slider-wrapper {
-display:block;
-float:none;
-width:100%;
-margin:0 auto;
-}
-
-#slider{
-	max-width:<?php echo $mantra_fpsliderwidth ?>px ;
-	height:<?php echo $mantra_fpsliderheight ?>px ;
-	margin:30px auto 20px;
-	display:block;
-	float:none;
-	border:<?php echo $mantra_fpsliderborderwidth.'px solid '.$mantra_fpsliderbordercolor; ?>;
-}
-
-#front-text1 h1, #front-text2 h1{
-	display:block;
-	float:none;
-	margin:35px auto;
-	text-align:center;
-	font-size:32px;
-	clear:both;
-	line-height:32px;
-	font-weight:bold;
-	color:<?php echo $mantra_fronttitlecolor; ?>;
-}
-
- #front-text2 h1{
-	font-size:28px;
-	line-height:28px;
-	margin-top:0px;
-	margin-bottom:25px;
-}
-
-#frontpage blockquote {
-	width:88% ;
-	max-width:88% !important;
-	margin-bottom:20px;
-	font-size:16px;
-	line-height:22px;
-	color:#444;
-}
-
-#frontpage #front-text4 blockquote {
-	font-size:14px;
-	line-height:18px;
-	color:#666;
-}
-
-#frontpage blockquote:before, #frontpage blockquote:after {
-	content:none;
-}
-
-#front-columns > div {
-display:block;
-width:<?php
-switch ($mantra_nrcolumns) {
-    case 0:
-        break;
-	case 1:
-        echo "95";
-		break;
-    case 2:
-        echo "45";
-		break;
-    case 3:
-        echo "29";
-        break;
-    case 4:
-        echo "21";
-        break;
-} ?>%;
-height:auto;
-margin-left:2%;margin-right:2%;
-margin-bottom:10px;
-float:left;
-}
-
-.column-image {
-	height:<?php echo $mantra_colimageheight ?>px;
-	border:3px solid #eee;
-}
-
-.theme-default .nivo-controlNav {margin-left:0;}
-
-<?php if ($mantra_fpslidernav!="Bullets") {
-	if ($mantra_fpslidernav=="Numbers") {?>
-
-.theme-default .nivo-controlNav {bottom:-40px;}
-.theme-default .nivo-controlNav a {
-    background: none;
-	text-decoration:underline;
-	text-indent:0;
-}
-<?php } else if ($mantra_fpslidernav=="None") {?>
-.theme-default .nivo-controlNav {display:none;}
-
-<?php } } ?>
-</style>
 <div id="frontpage">
 <?php
 

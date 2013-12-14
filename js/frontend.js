@@ -65,7 +65,8 @@ jQuery(".socialicons").hover(
 });
 
 
-/*! http://tinynav.viljamis.com v1.03 by @viljamis */
+/*! http://tinynav.viljamis.com v1.03 by @viljamis 
+    mod 0.1.1 by cryout creations */
 (function ($, window, i) {
   $.fn.tinyNav = function (options) {
 
@@ -133,7 +134,8 @@ jQuery(".socialicons").hover(
 
       }
 
-	$('option[value="'+document.location+'"]').attr("selected","selected");
+	var current_url = location.protocol + '//' + location.host + location.pathname;
+	$('option[value="'+current_url+'"]').attr("selected","selected");
 
     });
 

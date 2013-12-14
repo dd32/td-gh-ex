@@ -56,9 +56,10 @@ function mantra_styles_echo() {
 	
 	foreach ($mantra_options as $key => $value) { ${"$key"} = $value ;}
 	
-	echo mantra_custom_styles();
+	echo preg_replace("/[\n\r\t\s]+/"," " ,mantra_custom_styles())."\n";
+	if(($mantra_frontpage=="Enable")&&is_front_page()) { echo preg_replace("/[\n\r\t\s]+/"," " ,mantra_frontpage_css())."\n";}
 	if($mantra_mobile=="Enable") {wp_enqueue_style( 'mantra-mobile'); echo mantra_mobile_meta();}
-	echo mantra_customcss();
+	echo preg_replace("/[\n\r\t\s]+/"," " ,mantra_customcss())."\n";
 } 
 
 add_action('wp_head', 'mantra_styles_echo');
@@ -66,7 +67,7 @@ add_action('wp_head', 'mantra_styles_echo');
 		
 // JS loading and hook into wp_enque_scripts
 
-	add_action('wp_head', 'mantra_customjs' );
+add_action('wp_head', 'mantra_customjs' );
 		
 
 

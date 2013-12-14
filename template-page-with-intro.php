@@ -29,22 +29,19 @@ Template Name: Category page with intro
 	<hr>
 	<br />
 	<?php 
-           // replace $slub with get_the_title() in the line below if you want to get posts based
-           // on category name instead of slug  ?>
-	<?php 
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-		if (is_numeric($slug)&&($slug>0)): 
-			query_posts('cat='.$slug.'&post_status=publish,future&orderby=date&order=desc&posts_per_page='.get_option('posts_per_page').'&paged=' . $paged); 
-		else: 
-			query_posts('category_name='.$slug.'&post_status=publish,future&orderby=date&order=desc&posts_per_page='.get_option('posts_per_page').'&paged=' . $paged); 
-		endif; 
+	if (is_numeric($slug)&&($slug>0)): 
+		$the_query = new WP_Query( 'cat='.$slug.'&post_status=publish&orderby=date&order=desc&posts_per_page='.get_option('posts_per_page').'&paged=' . $paged ); 
+	else: 
+		$the_query = new WP_Query( 'category_name='.$slug.'&post_status=publish&orderby=date&order=desc&posts_per_page='.get_option('posts_per_page').'&paged=' . $paged ); 
+	endif; 
+	/* Start the Loop */ 
+	while ( $the_query->have_posts() ) : $the_query->the_post();
+		global $more; $more=0; // more gets lost inside page templates
+		get_template_part( 'content', get_post_format() ); 
+	endwhile;
+	if($mantra_pagination=="Enable") mantra_pagination($the_query->max_num_pages); else mantra_content_nav( 'nav-below' );	
 	?>
-	<?php /* Start the Loop */ ?>
-		<?php while ( have_posts() ) : the_post(); ?>
-		<?php global $more; $more=0; ?>
-		<?php get_template_part( 'content', get_post_format() ); ?>
-		<?php endwhile; ?>
-		<?php if($mantra_pagination=="Enable") mantra_pagination(); else mantra_content_nav( 'nav-below' ); ?>
 		
 	</div><!-- #content -->
 	

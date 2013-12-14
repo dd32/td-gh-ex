@@ -32,15 +32,9 @@
 	body.mobile #access .menu-header, body.mobile div.menu { width:95%; }
 	body.mobile #primary, body.mobile #secondary { width:100%; height:auto !important; }
 
-	body.mobile .slider-wrapper { width:95%; }
-	body.mobile #slider, body.mobile #slider img { width:100%; }
-	body.mobile #front-columns > div { width:45%; }
-	body.mobile #front-columns .column-image, body.mobile #front-columns .column-image img { height:inherit; }
-
 	body.mobile #content img, body.mobile content article.post img, body.mobile #content article .wp-caption, body.mobile article embed {
           max-width:90% !important; }
 	body.mobile #access { /*background:#ddd;*/ }
-	body.mobile #column3 { clear:left; }
 	body.mobile #slider { width:auto; height:auto; }
 	body.mobile #footer-widget-area .widget-title { background:none !important; padding-left:10px; }
 	body.mobile .widget-title { -moz-border-radius:0; -webkit-border-radius:0; border-radius:0; }
