@@ -1,7 +1,7 @@
 <?php
 /**
  * @subpackage Avedon
- * @since Avedon 1.11
+ * @since Avedon 1.12
 */
 ?>
 
@@ -43,7 +43,7 @@
 <?php if ( of_get_option('mapicon') ) { ?>
 <a href='<?php echo of_get_option('mapicon'); ?>' class="visible-xs navbar-toggle navbar-btn glyphicon glyphicon-map-marker" title="Map"><span class="visuallyhidden">Map</span></a><?php } ?>
 <?php if ( of_get_option('phoneicon') ) { ?>
-<a href='tel:<?php echo of_get_option('phoneicon'); ?>' class="visible-xs navbar-toggle glyphicon glyphicon-phone-alt" title="Call Now."><span class="visuallyhidden">Phone</span></a><?php } ?>
+<a href='tel:<?php echo of_get_option('phoneicon'); ?>' class="visible-xs navbar-toggle navbar-btn glyphicon glyphicon-phone-alt" title="Call Now."><span class="visuallyhidden">Phone</span></a><?php } ?>
 
 </div>
 

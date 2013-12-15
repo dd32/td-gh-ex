@@ -1,12 +1,12 @@
 <?php
 /**
  * @subpackage Avedon
- * @since Avedon 1.11
+ * @since Avedon 1.12
  */
 
 get_header(); ?>
 
-<div id="primary"  class="container">
+<div id="primary" class="container">
 <div class="col-md-8">
 <div class="container panel panel-default">
 <?php $text = of_get_option('headertext'); if ($text) { echo '<h1 class="text-large">' . of_get_option('headertext') . '</h1>'; }; ?>

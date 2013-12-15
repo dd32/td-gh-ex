@@ -2,7 +2,7 @@
 
 Contributors: Matthew Haeck
 Tags: bootstrap, responsive, wordpress theme
-Stable tag: 1.11
+Stable tag: 1.12
 License: GPLv3
 
 Avedon Theme - http://code.google.com/p/avedon/
@@ -48,7 +48,7 @@ Sidenote: We may respond a little quicker to folks who leave glowing reviews and
 
 Initial Release
 
-== Version 1.11 ==
+== Version 1.12 ==
 
 Transitoned to BootStrap 3
 
@@ -56,25 +56,25 @@ Transitoned to BootStrap 3
 == Licenses (See license.txt for full license information) ==
 
 Bootstrap V3.0.2	http://getbootstrap.com
-License: 			Apache License v2.0 - http://www.apache.org/licenses/
-Copyright: 			Twitter, Inc, twitter.com
+License:	Apache License v2.0 - http://www.apache.org/licenses/
+Copyright:	Twitter, Inc, twitter.com
 
-BootstrapWP:		http://bootstrapwp.rachelbaker.me/
-License:			GNU GPL3 - http://www.gnu.org/licenses/gpl-3.0.html
-Copyright:			Rachael Baker - http://rachelbaker.me/
+BootstrapWP:	http://bootstrapwp.rachelbaker.me/
+License:	GNU GPL3 - http://www.gnu.org/licenses/gpl-3.0.html
+Copyright:	Rachael Baker - http://rachelbaker.me/
 
-jQuery Easing v1.3: http://gsgd.co.uk/sandbox/jquery/easing/
-License: 			BSD License - http://www.gnu.org/licenses/license-list.html#OriginalBSD
-Copyright: 			George McGinley Smith, gsgd.co.uk/
+jQuery Easing v1.3:	http://gsgd.co.uk/sandbox/jquery/easing/
+License:	BSD License - http://www.gnu.org/licenses/license-list.html#OriginalBSD
+Copyright:	George McGinley Smith, gsgd.co.uk/
 
-IcoMoon App: 		http://icomoon.io/app
-License: 			MIT License - http://opensource.org/licenses/MIT
-Copyright: 			Keyamoon, http://keyamoon.com/
+IcoMoon App:	http://icomoon.io/app
+License:	MIT License - http://opensource.org/licenses/MIT
+Copyright:	Keyamoon, http://keyamoon.com/
 
-Icon Set:			Font Awesome - http://fortawesome.github.com/Font-Awesome/
-License:    		SIL OFL 1.1 / MIT License - http://scripts.sil.org/OFL - http://opensource.org/licenses/mit-license.html
-Copyright:			Dave Gandy - https://twitter.com/davegandy
+Icon Set:	Font Awesome - http://fortawesome.github.com/Font-Awesome/
+License:	SIL OFL 1.1 / MIT License - http://scripts.sil.org/OFL - http://opensource.org/licenses/mit-license.html
+Copyright:	Dave Gandy - https://twitter.com/davegandy
 
 Social Icon Set:	HaeckDesign - http://haeckdesign.com/freebies/icons/get-social-icon-set
-License:            SIL OFL 1.1 / MIT License - http://scripts.sil.org/OFL - http://opensource.org/licenses/mit-license.html
-Copyright:          Matthew Haeck - http://www.matthewhaeck.com
+License:	SIL OFL 1.1 / MIT License - http://scripts.sil.org/OFL - http://opensource.org/licenses/mit-license.html
+Copyright:	Matthew Haeck - http://www.matthewhaeck.com
