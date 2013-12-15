@@ -33,6 +33,10 @@ The exceptions to this license are as follows:
 
 
 # Changelog
+= 3.1.5 =
+* fixed : (php) child themes bug : child theme users can now override the Customizr files with same path/name.php.
+
+
 = 3.1.4 =
 * fixed : (css) featured pages : another responsive thumbnails alignment for max-width: 979px
 

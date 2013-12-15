@@ -34,9 +34,6 @@ class TC_ressources {
 	 * @since Customizr 1.1
 	 */
 	  function tc_enqueue_customizr_styles() {
-	  	 //record for debug
-      	
-      	
 	    wp_register_style( 
 	      'customizr-skin' ,
 	      TC_init::$instance -> tc_active_skin(),
@@ -72,9 +69,6 @@ class TC_ressources {
 	 * @since Customizr 1.0
 	 */
 	 function tc_enqueue_customizr_scripts() {
-	  	//record for debug
-	  	
-
 	    //wp scripts
 	  	if ( is_singular() && get_option( 'thread_comments' ) ) {
 		    wp_enqueue_script( 'comment-reply' );
@@ -159,8 +153,6 @@ class TC_ressources {
      * @since Customizr 2.0.7
      */
     function tc_write_custom_css() {
-    	//record for debug
-    	
         $tc_custom_css      	= esc_html( tc__f( '__get_option' , 'tc_custom_css') );
         $tc_top_border      	= esc_attr( tc__f( '__get_option' , 'tc_top_border') );
         ?>

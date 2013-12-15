@@ -199,8 +199,15 @@ class TC___ {
 
         foreach ( $load as $group => $files ) {
             foreach ($files as $path_suffix ) {
-               require_once ( TC_BASE . $path_suffix[0] . '/class-' . $group . '-' .$path_suffix[1] .'.php') ;
-               $classname = 'TC_' . $path_suffix[1];
+                //checks if a child theme is used and if the required file has to be overriden
+                if ( $this -> tc_is_child() && file_exists( TC_BASE_CHILD . $path_suffix[0] . '/class-' . $group . '-' .$path_suffix[1] .'.php') ) {
+                    require_once ( TC_BASE_CHILD . $path_suffix[0] . '/class-' . $group . '-' .$path_suffix[1] .'.php') ;
+                }
+                else {
+                    require_once ( TC_BASE . $path_suffix[0] . '/class-' . $group . '-' .$path_suffix[1] .'.php') ;
+                }
+                
+                $classname = 'TC_' . $path_suffix[1];
                 if( !isset( $instances[ $classname ] ) ) 
                 {
                     $instances[ $classname ] = class_exists($classname)  ? new $classname : '';

@@ -340,12 +340,6 @@ class TC_customize {
 																			'title'			=>	__( 'Custom CSS' , 'customizr' ),
 																			'priority'		=>	200,
 																			'description'	=>	__( 'Add your own CSS' , 'customizr' ),
-										),
-
-										'tc_debug_section'					=> array(
-																			'title'			=>	__( 'Dev Tools (advanced users)' , 'customizr' ),
-																			'priority'		=>	210,
-																			'description'	=>	__( 'Enable/disable the Dev Tools' , 'customizr' ),
 										)
 						)
 

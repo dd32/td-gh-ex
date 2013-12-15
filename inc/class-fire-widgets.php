@@ -30,9 +30,6 @@ class TC_widgets {
       * @since Customizr 3.0 
       */
       function tc_widgets_factory() {
-
-        
-
         //default Customizr filtered args
         $default                  = apply_filters( 'tc_default_widget_args' ,
                                   array(
@@ -50,7 +47,7 @@ class TC_widgets {
         //declares the arguments array
         $args                     = array();
 
-        //fills the $args array and registers sidebars
+        //fills in the $args array and registers sidebars
         foreach ( TC_init::$instance -> widgets as $id => $infos) {
             foreach ( $default as $key => $default_value ) {
               if ('id' == $key ) {

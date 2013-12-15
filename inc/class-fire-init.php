@@ -287,9 +287,6 @@ class TC_init {
      */
 
     function tc_customizr_setup() {
-      //record for debug
-      
-
       /* Set default content width for post images and media. */
       global $content_width;
       if( ! isset( $content_width ) )   { $content_width = 1170; }

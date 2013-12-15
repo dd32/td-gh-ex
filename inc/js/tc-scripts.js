@@ -76,11 +76,13 @@ jQuery(document).ready(function () {
         }),
 
 
-        //Detecting browser with CSS
-        // Chrome is Webkit, but Webkit is also Safari.
-        //alert($.browser.msie);
-        a.browser.chrome ? a("body").addClass("chrome") : a.browser.webkit ? a("body").addClass("safari") : a.browser.msie && a("body").addClass("ie"),
-
+        //Detects browser with CSS
+        // Chrome is Webkit, but Webkit is also Safari. If browser = ie + strips out the .0 suffix
+        a.browser.chrome ? a("body").addClass("chrome") : a.browser.webkit ? a("body").addClass("safari") : ( a.browser.msie || '8.0' === a.browser.version || '9.0' === a.browser.version || '10.0' === a.browser.version || '11.0' === a.browser.version ) && a("body").addClass("ie").addClass("ie" + a.browser.version.replace(/[.0]/g, '')),
+        
+        //Adds version if browser = ie
+        a("body").hasClass("ie") && a("body").addClass(a.browser.version),
+        
         //Detect layout and reorder content divs
         a(window).on("load", function () {
             function i() {
