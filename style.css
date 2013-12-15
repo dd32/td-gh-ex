@@ -1,14 +1,14 @@
 /*
 Theme Name: SimplyBlack
-Theme URI: http://www.guidovanderleest.nl/SimplyBlack
-Version: 1.1
+Theme URI: http://www.guidovanderleest.nl/simplyblack
+Version: 1.2
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: SimplyBlack is a free, basic, clean, minimalistic, responsive, mobile friendly, WordPress theme. Primary sidebar, 3 widget-area's in footer, custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settings page, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
-Tags: one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, fluid-layout, custom-background, custom-header, custom-menu, featured-images, white, black, translation-ready
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: SimplyBlack
+Tags: one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, fluid-layout, custom-background, custom-header, custom-menu, featured-images, white, black, light, dark, translation-ready
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: simplyblack
 
 SimplyBlack, Copyright 2013, Guido van der Leest
 SimplyBlack is licensed under the GPL
@@ -77,8 +77,8 @@ table {
 /* GENERAL */
 body {background: #f2f2f2; font-family: 'Open Sans', sans-serif; font-size:1em; color:#000; line-height:1.5em;}
 #container {max-width: 960px; background:#fff; border: 1px solid #ccc; margin: 10px auto 10px; padding: 20px; text-align: left; word-wrap: break-word;}
-#content {width: 60%; float:left; padding: 0 0 20px; word-wrap: break-word;}
-#content-full {max-width: 920px; float:left; word-wrap: break-word;}
+#content {width: 60%; float:left; padding: 10px 0 20px; word-wrap: break-word;}
+#content-full {max-width: 920px; float:left; padding: 10px 0 20px; word-wrap: break-word;}
 
 h1 {font-size:3.0em; line-height:1.2em;}
 h2 {font-size:2.5em; line-height:1.2em;}
@@ -115,7 +115,7 @@ select {max-width:100%;}
 
 
 /* HEADER */
-#header {margin:0; padding: 0 0 20px; background:none;}
+#header {margin:0; padding: 0 0 10px; background:none; border-bottom:1px solid #ccc;}
 #header:after {content:''; display:block; clear:both;}
 #header .header-img {width: 100%; height: auto;}
 #header .logo {float:left; text-align:left; padding: 0 0 10px;}
@@ -135,9 +135,9 @@ select {max-width:100%;}
 
 
 /* HEADER SUBMENU */
-.nav-head ul ul {display:none; position: absolute; top: 100%; padding: 0 0 5px; background: #333; z-index:999; }
-.nav-head ul ul ul {display:none; position: absolute; top: 30%; left: 100%; background: #333;}
-.nav-head ul ul a {width:10em;background: #333; }
+.nav-head ul ul {display:none; position: absolute; top: 100%; padding: 0;}
+.nav-head ul ul ul {display:none; position: absolute; top: 30%; left: 100%;}
+.nav-head ul ul a {width:12em; background: #333; color:#fff; z-index:999;}
 .nav-head ul li:hover > ul {display:block;}
 .nav-head ul li ul li {margin:0;}
 
@@ -209,7 +209,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto;}
 
 
 /* SIDEBAR AND WIDGETS */
-#sidebar {width: 35%; float: right; margin:0; padding:0; word-wrap: break-word;}
+#sidebar {width: 35%; float: right; margin:0; padding:10px 0 0; word-wrap: break-word;}
 .widget {padding:0 0 10px; margin: 0 0 20px; border-bottom:1px solid #ccc;}
 .widget a {color:#000;}
 .widgettitle {background:#000; color:#fff; padding:5px 10px; margin:10px 0;}
@@ -231,7 +231,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto;}
 	#container {width: 94%; padding:10px;}
 	#content, #content-full {width:100%;}
 	#header .logo {max-width:100%; padding: 10px 0; text-align:center;}
-	#header .header-img {width: 100%; height: auto;}
+	#header .header-img {width: 100%; padding: 10px 0 0; height: auto;}
 	#sidebar {width:100%; border:0; padding:0; float:left;}
 	#footer {width:100%; border:0;}
 	.footer-right, .footer-middle, .footer-left {width:100%; border:0; padding:0; margin:0; float:left;} 
