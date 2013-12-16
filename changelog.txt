@@ -1,6 +1,14 @@
 Changelog for Iconic One WordPress Responsive Theme | Visit http://themonic.com/iconic-one/ for latest version
 
 -------------- December 2013 ----------------
+
+12/16/13  - Iconic One Version 1.3.2
+
+
+* Minor sidebar style fix
+* Updated screenshot to higher resolution for WordPress 3.8
+
+
 12/14/13  - Iconic One Version 1.3.1
 
 * Changed tag to fuild layout as per WordPress 3.8
