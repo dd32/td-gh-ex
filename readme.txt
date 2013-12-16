@@ -90,15 +90,14 @@ The following opensource projects, graphics, fonts, API's or other files as list
            Licence:     GPL
            Licence URL: http://www.gnu.org/licenses/gpl.html
 
-    [1.11] Item:        Masonry
-           Item URL:    https://github.com/desandro/masonry
-           Licence:     MIT
-           Licence URL: http://opensource.org/licenses/mit-license.html
-
 
 -----------------------------------------------------------------------------
 	Changelog
 -----------------------------------------------------------------------------
+
+Version 1.4.9
+- Updated: Core Masonry code now being used. Removed external file.
+- Updated: is_thinkup() code replaced. Where required replaced with is_front_page().
 
 Version 1.4.8
 - New:     Responsive-layout and red theme tags added.

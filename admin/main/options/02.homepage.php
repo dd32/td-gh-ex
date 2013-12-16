@@ -18,7 +18,7 @@ global $thinkup_homepage_sliderpresetwidth;
 
 $thinkup_class_fullwidth = NULL;
 
-	if ( is_front_page() or is_thinkuphome() ) {
+	if ( is_front_page() ) {
 		if ( empty( $thinkup_homepage_sliderswitch ) or $thinkup_homepage_sliderswitch == 'option1' ) {
 
 			if ( empty( $thinkup_homepage_sliderpresetwidth ) or $thinkup_homepage_sliderpresetwidth == '1' ) {
@@ -84,7 +84,7 @@ global $thinkup_homepage_sliderpresetheight;
 
 	if ( empty( $thinkup_homepage_sliderpresetheight ) ) $thinkup_homepage_sliderpresetheight = '350';
 
-	if ( is_front_page() or is_thinkuphome() ) {
+	if ( is_front_page() ) {
 		if ( empty( $thinkup_homepage_sliderswitch ) or $thinkup_homepage_sliderswitch == 'option1' ) {
 		echo 	"\n" .'<style type="text/css">' . "\n",
 			'#slider .rslides, #slider .rslides li { height: ' . $thinkup_homepage_sliderpresetheight . 'px; max-height: ' . $thinkup_homepage_sliderpresetheight . 'px; }' . "\n",
@@ -94,20 +94,6 @@ global $thinkup_homepage_sliderpresetheight;
 	}
 }
 add_action( 'wp_head','thinkup_input_sliderhomeflex', '13' );
-
-// Add Slider - Inner Page
-function thinkup_input_sliderpage() {
-global $post;
-$_thinkup_meta_slider = get_post_meta( $post->ID, '_thinkup_meta_slider', true );
-$_thinkup_meta_slidername = get_post_meta( $post->ID, '_thinkup_meta_slidername', true );
-
-	if ( ! is_front_page() and ! is_thinkuphome() and $_thinkup_meta_slider == 'on' ) {
-
-		echo	'<div id="slider"><div id="slider-core">',
-				do_shortcode( $_thinkup_meta_slidername ),
-				'</div></div>';
-	}
-}
 
 
 //----------------------------------------------------------------------------------
@@ -155,7 +141,7 @@ global $thinkup_homepage_section3_link;
 	if ( !empty( $thinkup_homepage_section3_link ) ) $thinkup_homepage_section3_link = get_page_link( $thinkup_homepage_section3_link );
 
 
-	if ( is_front_page() or is_thinkuphome() ) {
+	if ( is_front_page() ) {
 		if ( empty( $thinkup_homepage_sectionswitch ) or $thinkup_homepage_sectionswitch == '1' ) {
 
 		echo '<div id="section-home"><div id="section-home-inner">';
@@ -213,7 +199,7 @@ global $thinkup_homepage_introactionlink;
 global $thinkup_homepage_introactionpage;
 global $thinkup_homepage_introactioncustom;
 
-	if ( $thinkup_homepage_introswitch == '1' and ( is_front_page() or is_thinkuphome() ) and ! empty( $thinkup_homepage_introaction ) ) {
+	if ( $thinkup_homepage_introswitch == '1' and is_front_page() and ! empty( $thinkup_homepage_introaction ) ) {
 		echo '<div id="introaction"><div id="introaction-core">';
 		if (empty( $thinkup_homepage_introactionbutton ) ) {
 			if ( empty( $thinkup_homepage_introactionteaser ) ) {

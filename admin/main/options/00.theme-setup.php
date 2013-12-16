@@ -131,7 +131,7 @@ $thinkup_general_breadcrumbdelimeter = thinkup_var ( 'thinkup_general_breadcrumb
 	$url_month   =   get_month_link($arc_year,$arc_month);
 
 	// Display breadcumbs if NOT the home page
-	if ( !is_home() ) {
+	if ( !is_front_page() ) {
 		echo '<div id="breadcrumbs"><div id="breadcrumbs-core">';
 		global $post, $cat;
 		$homeLink = home_url( '/' );
@@ -370,34 +370,6 @@ function home_page_menu_args( $args ) {
 	return $args;
 }
 add_filter( 'wp_page_menu_args', 'home_page_menu_args' );
-
-
-//----------------------------------------------------------------------------------
-//	ADD FUNCTION TO GET CURRENT PAGE URL
-//----------------------------------------------------------------------------------
-
-function is_thinkuphome() {
-	$pageURL = 'http';
-	if( isset($_SERVER["HTTPS"]) ) {
-		if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
-	}
-	$pageURL .= "://";
-	if ($_SERVER["SERVER_PORT"] != "80") {
-		$pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
-	} else {
-		$pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
-	}
-	$pageURL = rtrim($pageURL, '/') . '/';
-
-	$pageURL = str_replace( "www.", "", $pageURL );
-	$siteURL = str_replace( "www.", "", site_url( '/' ) );
-
-	if ( $pageURL == $siteURL ) {
-		return true;
-	} else {
-		return false;
-	}
-}
 
 
 //----------------------------------------------------------------------------------

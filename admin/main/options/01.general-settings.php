@@ -62,7 +62,7 @@ global $thinkup_project_layout;
 global $post;
 $_thinkup_meta_layout = get_post_meta( $post->ID, '_thinkup_meta_layout', true );
 
-	if ( is_front_page() or is_thinkuphome() ) {
+	if ( is_front_page() ) {
 		if ( $thinkup_homepage_layout == "option1" or empty( $thinkup_homepage_layout ) ) {		
 			echo '';
 		} else if ( $thinkup_homepage_layout == "option2" ) {
@@ -86,7 +86,7 @@ $_thinkup_meta_layout = get_post_meta( $post->ID, '_thinkup_meta_layout', true )
 		} else if ( $_thinkup_meta_layout == 'option4' ) {
 			wp_enqueue_style ( 'sidebarright' );
 		}
-	} else if ( is_archive() and ! is_post_type_archive( 'portfolio' ) ) {
+	} else if ( is_blog() and ! is_post_type_archive( 'portfolio' ) ) {
 		if ( $thinkup_blog_layout == "option1" or empty( $thinkup_blog_layout ) ) {		
 			echo '';
 		} else if ( $thinkup_blog_layout == "option2" ) {
@@ -166,7 +166,7 @@ $_thinkup_meta_layout = get_post_meta( $post->ID, '_thinkup_meta_layout', true )
 
 do_action('thinkup_sidebar_html');
 
-	if ( is_front_page() or is_thinkuphome() ) {	
+	if ( is_front_page() ) {	
 		if ( $thinkup_homepage_layout == "option1" or empty( $thinkup_homepage_layout ) ) {		
 				echo '';
 		} else if ( $thinkup_homepage_layout == "option2" ) {
@@ -190,7 +190,7 @@ do_action('thinkup_sidebar_html');
 		} else if ( $_thinkup_meta_layout == 'option4' ) {
 			echo get_sidebar(); 
 		}
-	} else if ( is_archive() and ! is_post_type_archive( 'portfolio' ) ) {
+	} else if ( is_blog() and ! is_post_type_archive( 'portfolio' ) ) {
 		if ( $thinkup_blog_layout == "option1" or empty( $thinkup_blog_layout ) ) {		
 			echo '';
 		} else if ( $thinkup_blog_layout == "option2" ) {
@@ -273,7 +273,7 @@ global $post;
 $_thinkup_meta_layout = get_post_meta( $post->ID, '_thinkup_meta_layout', true );
 $_thinkup_meta_sidebars = get_post_meta( $post->ID, '_thinkup_meta_sidebars', true );
 
-	if ( is_front_page() or is_thinkuphome() ) {
+	if ( is_front_page() ) {
 			$output = $thinkup_homepage_sidebars;
 	} else if ( is_page() ) {	
 		if ( empty( $_thinkup_meta_layout ) or $_thinkup_meta_layout == 'option1' or $_thinkup_meta_sidebars == 'Select a sidebar:' ) {
@@ -281,7 +281,7 @@ $_thinkup_meta_sidebars = get_post_meta( $post->ID, '_thinkup_meta_sidebars', tr
 		} else {
 			$output = $_thinkup_meta_sidebars;
 		}
-	} else if ( is_archive() ) {	
+	} else if ( is_blog() and ! is_post_type_archive( 'portfolio' ) ) {	
 		$output = $thinkup_blog_sidebars;
 	} else if ( is_post_type_archive( 'portfolio' ) ) {	
 		$output = $thinkup_portfolio_sidebars;
@@ -343,6 +343,8 @@ global $post;
 		printf( __( 'Yearly Archives: %s', 'lan-thinkupthemes' ), get_the_date( 'Y' ) );
 	} elseif ( is_post_type_archive( 'portfolio' ) ) {
 		printf( __( 'Portfolio', 'lan-thinkupthemes' ) );
+	} elseif ( is_blog() ) {
+		printf( __( 'Blog', 'lan-thinkupthemes' ) );
 	} else {
 		printf( __( '%s', 'lan-thinkupthemes' ), get_the_title() );
 	}
@@ -351,7 +353,7 @@ global $post;
 // Add custom intro section [Extend for more options in future update]
 function thinkup_custom_intro() {
 
-	if ( ! is_home() and ! is_thinkuphome() ) {
+	if ( ! is_front_page() ) {
 		echo	'<div id="intro" class="option1"><div class="wrap-safari"><div id="intro-core">',
 				'<h1 class="page-title"><span>',
 				thinkup_title_select(),
@@ -500,16 +502,10 @@ function thinkup_custom_css() {
 global $thinkup_general_customcss;
 
 global $post;
-$_thinkup_meta_customcss = get_post_meta( $post->ID, '_thinkup_meta_customcss', true );
 
 	if ( ! empty( $thinkup_general_customcss ) ) {
 		echo 	"\n" .'<style type="text/css">' . "\n",
 				$thinkup_general_customcss . "\n",
-				'</style>' . "\n";
-	}
-	if ( ! is_front_page() and ! is_thinkuphome() and ! empty( $_thinkup_meta_customcss ) ) {
-		echo 	"\n" .'<style type="text/css">' . "\n",
-				$_thinkup_meta_customcss . "\n",
 				'</style>' . "\n";
 	}
 }

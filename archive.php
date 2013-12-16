@@ -9,7 +9,7 @@ get_header(); ?>
 
 			<?php if( have_posts() ): ?>
 
-				<div id="container" class="portfolio-wrapper js-masonry">
+				<div id="container" class="portfolio-wrapper">
 
 				<?php while( have_posts() ): the_post(); ?>
 
