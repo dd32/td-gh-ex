@@ -31,7 +31,7 @@
 </div>
 
 <div class="ads468-60">
-<?php echo sanitize_text_field(adt_get_option('adt_a468x60')); ?>
+<?php echo adt_get_option('adt_a468x60'); ?>
 </div>
 
 </div>
@@ -44,7 +44,7 @@
 
 <?php if (adt_get_option('adt_a728x15_top', '') != '' ): ?>
 <div class="ads-728-15-top">			  
-<?php echo sanitize_text_field(adt_get_option('adt_a728x15_top')); ?>
+<?php echo adt_get_option('adt_a728x15_top'); ?>
 </div>
 <?php endif; ?>
 

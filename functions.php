@@ -1,8 +1,9 @@
 <?php  
+error_reporting(0);
 if ( ! function_exists( 'adt_get_option' ) ) :	
   function adt_get_option($Aoption_name, $default = null)
   {
-    return strip_tags(stripslashes(get_option($Aoption_name, $default)));
+    return stripslashes(get_option($Aoption_name, $default));
   };
 endif;
 if ( ! function_exists( 'adt_enqueue_comment_reply' ) ) :	
