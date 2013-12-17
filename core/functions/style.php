@@ -59,6 +59,9 @@
 /* =================== BEGIN LOGO STYLE =================== */
 
 	$logostyle = '';
+	/* Logo Font */
+	if (novalite_setting('wip_logo_font')) 
+		$logostyle .= "font-family:'".novalite_setting('wip_logo_font')."',Verdana, Geneva, sans-serif;"; 
 
 	/* Logo Font Size */
 	if (novalite_setting('wip_logo_font_size')) 
@@ -73,13 +76,21 @@
 
 	$navstyle = '';
 
+	/* Nav Font */
+	if (novalite_setting('wip_menu_font')) 
+		$navstyle .= "font-family:'".novalite_setting('wip_menu_font')."',Verdana, Geneva, sans-serif;"; 
+
 	/* Nav  Font Size */
 	if (novalite_setting('wip_menu_font_size')) 
 		$navstyle .= "font-size:".novalite_setting('wip_menu_font_size').";"; 
 	
+	/* Nav  Font Color */
+	if (novalite_setting('wip_menu_font_color')) 
+		$navstyle .= "color:".novalite_setting('wip_menu_font_color').";"; 
+	
 	if ($navstyle)
-		echo 'nav#mainmenu ul li a, nav#mainmenu ul ul li a { '.$navstyle.' } ';
-		
+		echo 'nav#mainmenu ul li a { '.$navstyle.' } ';
+
 /* =================== END NAV STYLE =================== */
 
 /* =================== BEGIN CONTENT STYLE =================== */
@@ -91,6 +102,14 @@
 /* =================== END CONTENT STYLE =================== */
 
 /* =================== START TITLE STYLE =================== */
+
+	$titlestyle = '';
+
+	if (novalite_setting('wip_titles_font')) 
+		$titlestyle .= "font-family:'".novalite_setting('wip_titles_font')."',Verdana, Geneva, sans-serif;"; 
+	
+	if ($titlestyle)
+		echo 'h1.title, h2.title, h3.title, h4.title, h5.title, h6.title, h1, h2, h3, h4, h5, h6  { '.$titlestyle.' } ';
 
 	if (novalite_setting('wip_h1_font_size')) 
 		echo "h1 {font-size:".novalite_setting('wip_h1_font_size')."; }"; 

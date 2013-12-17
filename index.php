@@ -1,6 +1,8 @@
 <?php 
 
-	get_header();
+	get_header(); 
+	
+	novalite_header_content();
 	
 	get_template_part('home-blog');
 	
