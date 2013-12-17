@@ -271,7 +271,7 @@ class Asteroid_Theme_Options {
 				break;
 
 			case 'textarea':
-				echo '<textarea class="' . $field_class . '" id="' . $id . '" name="asteroid_options[' . $id . ']" placeholder="' . $std . '" rows="8" cols="88" wrap="off">' . wp_htmledit_pre( $options[$id] ) . '</textarea>';
+				echo '<textarea class="' . $field_class . '" id="' . $id . '" name="asteroid_options[' . $id . ']" placeholder="' . $std . '" rows="8" cols="64" wrap="off">' . wp_htmledit_pre( $options[$id] ) . '</textarea>';
 				
 				if ( $desc != '' )
 					echo '<br /><span class="description">' . $desc . '</span>';
@@ -279,7 +279,7 @@ class Asteroid_Theme_Options {
 				break;
 
 			case 'textarea-css':
-				echo '<textarea class="' . $field_class . '" id="' . $id . '" name="asteroid_options[' . $id . ']" placeholder="' . $std . '" rows="18" cols="95" wrap="off">' . wp_htmledit_pre( $options[$id] ) . '</textarea>';
+				echo '<textarea class="' . $field_class . '" id="' . $id . '" name="asteroid_options[' . $id . ']" placeholder="' . $std . '" rows="18" cols="72" wrap="off">' . wp_htmledit_pre( $options[$id] ) . '</textarea>';
 				
 				if ( $desc != '' )
 					echo '<br /><span class="description">' . $desc . '</span>';
@@ -553,14 +553,6 @@ class Asteroid_Theme_Options {
 			'std'     => 0
 		);
 
-		$this->settings['ast_widget_header'] = array(
-			'section' => 'widget-areas',
-			'title'   => __( 'Header', 'asteroid' ),
-			'desc'    => __( 'Allow widgets on the Header', 'asteroid' ),
-			'type'    => 'checkbox',
-			'std'     => 0
-		);
-
 		$this->settings['ast_widget_below_menu'] = array(
 			'section' => 'widget-areas',
 			'title'   => __( 'Below Menu', 'asteroid' ),
@@ -590,7 +582,7 @@ class Asteroid_Theme_Options {
 			'title'   => __( 'Before Post', 'asteroid' ),
 			'desc'    => __( 'Allow widgets to show after the post-title.', 'asteroid' ),
 			'type'    => 'checkbox',
-			'std'     => 0
+			'std'     => 1
 		);	
 
 		$this->settings['ast_widget_before_post_content'] = array(
@@ -598,7 +590,7 @@ class Asteroid_Theme_Options {
 			'title'   => __( 'Before Post - Content', 'asteroid' ),
 			'desc'    => __( 'Allow widgets to show before the post-content.', 'asteroid' ),
 			'type'    => 'checkbox',
-			'std'     => 0
+			'std'     => 1
 		);
 
 		$this->settings['ast_widget_after_post_content'] = array(
@@ -606,7 +598,7 @@ class Asteroid_Theme_Options {
 			'title'   => __( 'After Post - Content', 'asteroid' ),
 			'desc'    => __( 'Allow widgets to show after the post-content.', 'asteroid' ),
 			'type'    => 'checkbox',
-			'std'     => 0 
+			'std'     => 1 
 		);
 
 		$this->settings['ast_widget_after_post'] = array(
@@ -614,7 +606,7 @@ class Asteroid_Theme_Options {
 			'title'   => __( 'After Post', 'asteroid' ),
 			'desc'    => __( 'Allow widgets to show at the post-footer.', 'asteroid' ),
 			'type'    => 'checkbox',
-			'std'     => 0
+			'std'     => 1
 		);
 
 		/* Custom CSS

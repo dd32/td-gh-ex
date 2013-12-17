@@ -18,6 +18,10 @@ custom header images, backgrounds, menus, full-width page templates and more.
 JSColor - A lightweight Javascript color-picker maintained by Jan Odvárko.
 
 == CHANGELOG ==
+Version 1.1.5
+	* WordPress 3.8 theme adjustments.
+	* New screenshot size.
+
 Version 1.1.4
 	* Moved various functions to after_setup_theme action hook.
 	* Added theme hooks.

@@ -34,9 +34,6 @@ caption, th, td {text-align: right;}
     background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAKCAQAAADMDLw1AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABUSURBVHjaXM47DkBQEAXQE72VqK1Fq9KyAoU16tCJRUhkFC++t5nJyc1khDtFCMFNlfFLtd32ps4hzA8N0r6kkSH3TUD/bl3nW2H9P9GY/kSZ6BwAGzs2R4E8VLkAAAAASUVORK5CYII=");
 }
 
-#nav-search #nav-s, #nav-search #nav-searchsubmit,
-#below-menu {float: right;}
-
 .widget-footer-3 {	
     float: right;
 	margin: 10px 10px 10px 0;
@@ -45,8 +42,6 @@ caption, th, td {text-align: right;}
 .sitemap-template {padding: 20px 30px 30px 0;}
 .sitemap-template > ul .children {padding-left: 0; padding-right: 14px;}
 
-.blog-view .entry-date, .blog-view .entry-author {float: left; }
-
 .blog-view .entry-thumbnail {float: right; margin-left: 8px; margin-right: 0;}
 .blog-view .entry-thumbnail img {float: right;}
 
@@ -54,15 +49,20 @@ caption, th, td {text-align: right;}
     float: left;
 	margin: 0 0 4px 4px;
 }
-.blog-comment-links .reply-link {float: left;}
-.blog-comment-links .comment-count {float: right;}
 
+.blog-view .entry-date,
+.blog-view .entry-author,
+.blog-comment-links .reply-link ,
 .post-edit-link,	
 .single-view .entry-date,
-.single-view .entry-author {float: left;}
-
-.previous-link {float: right;}
+.single-view .entry-author,
 .next-link {float: left;}
+
+#nav-search #nav-s,
+#nav-search #nav-searchsubmit,
+#below-menu,
+.blog-comment-links .comment-count,
+.previous-link {float: right;}
 
 blockquote {border-left: none; border-right: 6px solid #666;}
 blockquote cite {float: left;}
@@ -78,17 +78,16 @@ blockquote cite {float: left;}
 }
 
 #comments-wrap .children {margin: 8px 30px 0 0;}
-#comments-wrap .comment-author {float: right;}
-#comments-wrap .comment-meta {float: left;}
-#comments-wrap .reply a {float: left;}
-#comments-wrap .comment-body .says {display: none;}
-#cancel-comment-reply-link {float: left;}
-
-#searchform #s, #searchform #searchsubmit {float: right;}
-#nav-search {float: left;}
-
+#comments-wrap .comment-author,
+#searchform #s,
+#searchform #searchsubmit,
 .bbp-login-form .bbp-login-links a {float: right;}
+#comments-wrap .comment-meta,
+#comments-wrap .reply a,
+#cancel-comment-reply-link,
+#nav-search,
 .bbp-login-form .bbp-submit-wrapper {float: left;}
+#comments-wrap .comment-body .says {display: none;}
 
 @media screen and (max-width:900px){
 	#nav-search {float: right;}
