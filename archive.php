@@ -66,9 +66,9 @@
         <section id="sidebar" class="pin-article span4">
             <div class="sidebar-box">
     
-                <?php if ( is_active_sidebar('home_sidebar_area') ) { 
+                <?php if ( is_active_sidebar('category-sidebar-area') ) { 
                 
-                    dynamic_sidebar('home_sidebar_area');
+                    dynamic_sidebar('category-sidebar-area');
                 
                 } else { 
                     
