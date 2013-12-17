@@ -117,7 +117,7 @@ h2.title, #poststuff h2 {
 #tabs li a { 
 	color:#606060; 
 	text-decoration:none; 
-	padding:10px; 
+	padding:9px; 
 	display:block;
 	text-align:center; 
 	-webkit-transition: all .3s ease; 	
