@@ -32,7 +32,7 @@
 		add_theme_support( 'post-thumbnails' ); 
 
 	// Resize mode thumbnails
-		set_post_thumbnail_size( 570, 430 ); 
+		set_post_thumbnail_size( 570, 450 ); 
 
 
 	// This feature adds RSS feed links to html head 
@@ -43,7 +43,7 @@
 		add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
 
 	// Background color
-		$args = array( 'default-color' => 'f2f2f2', 
+		$args = array( 'default-color' => '000000', 
 		); 
 		add_theme_support( 'custom-background', $args ); 
 
