@@ -76,9 +76,9 @@ function rockers_admin_header_style() { ?>
 function rockers_admin_header_image() { ?>
     <div id="headimg">
         <?php if ( ! display_header_text() ) 
-            $style = ' style="display:none;"';
+            $style = ' style="display: none;"';
         else 
-            $style = ' style="color:#' . get_header_textcolor() . ';"'; ?>
+            $style = ' style="color: #' . get_header_textcolor() . ';"'; ?>
         <h1><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo esc_attr( get_bloginfo( 'name' ) ); ?></a></h1>
         <h2 id="desc"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></h2>
         <?php $header_image = get_header_image();

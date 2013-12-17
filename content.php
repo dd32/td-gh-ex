@@ -9,27 +9,27 @@
                 <h1 class="post-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'rockers' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
             <?php endif; ?>
         </header>
-        <?php if ( is_search() ) : ?>
+        <?php if ( is_search() || is_home() || is_front_page() ) : ?>
             <div class="post-summary">
                 <?php the_excerpt(); ?>
             </div>
         <?php else : ?>
-        <div class="post-content">
-            <?php the_content( __( '<p>Continue reading <span class="meta-nav">&rarr;</span></p>', 'rockers' ) );
-            wp_link_pages( 
-                array( 
-                    'before' => '<div id="numbered-pagination">' . __( 'Pages:', 'rockers' ), 
-                    'after' => '</div>',
-                    'link_before' => '<span>',
-                    'link_after' => '</span>'
-                )
-            );
-            if ( ! is_front_page() || ! is_home() || ! is_tag() && comments_open() ) : ?>
-                <div class="comments-link">
-                    <?php comments_popup_link( '<span class="leave-reply">' . __( 'Leave a reply', 'rockers' ) . '</span>', __( '1 Reply', 'rockers' ), __( '% Replies', 'rockers' ) ); ?>
-                </div>
-            <?php endif; ?>
-        </div>
+            <div class="post-content">
+                <?php the_content( __( '<p>Continue reading <span class="meta-nav">&rarr;</span></p>', 'rockers' ) );
+                wp_link_pages( 
+                    array( 
+                        'before' => '<div id="numbered-pagination">' . __( 'Pages:', 'rockers' ), 
+                        'after' => '</div>',
+                        'link_before' => '<span>',
+                        'link_after' => '</span>'
+                    )
+                );
+                if ( ! is_front_page() || ! is_home() || ! is_tag() && comments_open() ) : ?>
+                    <div class="comments-link">
+                        <?php comments_popup_link( '<span class="leave-reply">' . __( 'Leave a reply', 'rockers' ) . '</span>', __( '1 Reply', 'rockers' ), __( '% Replies', 'rockers' ) ); ?>
+                    </div>
+                <?php endif; ?>
+            </div>
         <?php endif; ?>
         <footer class="post-meta">
             <?php rockers_entry_meta();

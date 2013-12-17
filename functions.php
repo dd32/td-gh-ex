@@ -73,19 +73,20 @@ function rockers_wp_title( $title, $sep ) {
 }
 add_filter( 'wp_title', 'rockers_wp_title', 10, 2 );
 
-function rockers_page_menu_args($args) {
+function rockers_page_menu_args( $args ) {
     $args['show_home'] = true;
     return $args;
 }
 add_filter( 'wp_page_menu_args', 'rockers_page_menu_args' );
 
-function rockers_excerpt_length($length) {
+function rockers_excerpt_length( $length ) {
     return 35;
 }
 add_filter( 'excerpt_length', 'rockers_excerpt_length' );
 
 function rockers_continue_reading_link() {
-    return ' <p>' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'rockers' ) . '</p>';
+    global $post;
+    return ' <p>' . __( '<a href="'. get_permalink( $post->ID ) . '" title="' . __( 'Continue reading', 'rockers' ) . '">Continue reading <span class="meta-nav">&rarr;</span></a>', 'rockers' ) . '</p>';
 }
 
 function rockers_auto_excerpt_more( $more ) {
@@ -93,8 +94,8 @@ function rockers_auto_excerpt_more( $more ) {
 }
 add_filter( 'excerpt_more', 'rockers_auto_excerpt_more' );
 
-function rockers_custom_excerpt_more($output) {
-    if (has_excerpt() && ! is_attachment() ) {
+function rockers_custom_excerpt_more( $output ) {
+    if ( has_excerpt() && ! is_attachment() ) {
         $output .= rockers_continue_reading_link();
     }
     return $output;
