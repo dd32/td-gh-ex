@@ -3,7 +3,7 @@
  * The template for displaying all single posts.
  *
  * @package	Anarcho Notepad
- * @since	2.1.6
+ * @since	2.1.7
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013, Arthur Gareginyan
  * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
@@ -28,7 +28,7 @@
       <div class="post-inner">
         <div class="date-tab"><span class="month"><?php the_time('F'); ?></span><span class="day"><?php the_time('j'); ?></span></div>
 		<?php the_post_thumbnail(); ?>
-		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'anarcho-notepad' ) ); ?>
+		<?php the_content( __( 'Continue reading', 'anarcho-notepad' ) ); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-links"><span>' . __( 'Pages:', 'anarcho-notepad' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) ); ?>
       </div>
 

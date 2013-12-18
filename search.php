@@ -3,7 +3,7 @@
  * The template for displaying Search Results pages.
  *
  * @package	Anarcho Notepad
- * @since	2.1.6
+ * @since	2.1.7
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013, Arthur Gareginyan
  * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
@@ -19,7 +19,7 @@
 
 <div id="center">
 
-<h1><?php printf( __( 'Search Results for: %s', 'anarcho-notepad' ), get_search_query() ); ?></h1>
+<h1><?php printf( 'Search Results for: %s', get_search_query() ); ?></h1>
 
   <?php if (have_posts()) : ?>
   <?php while (have_posts()) : the_post(); ?>
@@ -28,10 +28,10 @@
       <div class="post-inner">
 
         <a href="<?php the_permalink(); ?>"><div class="date-tab"><span class="month"><?php the_time('F') ?></span><span class="day"><?php the_time('j') ?></span></div></a>
-        
+
 		<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 
-		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'anarcho-notepad' ) ); ?>
+		<?php the_content( __( 'Continue reading', 'anarcho-notepad' ) ); ?>
       </div>
       <div class="meta"><?php _e('Category: ', 'anarcho-notepad'); ?><?php the_category(', ') ?></div>
                 </article>

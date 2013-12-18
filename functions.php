@@ -3,7 +3,7 @@
  * Anarcho Notepad functions and definitions.
  *
  * @package	Anarcho Notepad
- * @since	2.1.6
+ * @since	2.1.7
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013, Arthur Gareginyan
  * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
@@ -17,13 +17,7 @@ function anarcho_notepad_setup() {
         global $content_width;
 
 	// Localization Init
-	function anarcho_load_language() {
-	  $currentLocale = get_locale();
-	  if (!empty($currentLocale)) {
-		load_theme_textdomain( 'anarcho-notepad', get_template_directory() . '/languages' );
-	  }
-	}
-	anarcho_load_language();
+	load_theme_textdomain( 'anarcho-notepad', get_template_directory() . '/languages' );
 
         // This feature enables Custom Backgrounds.
 	add_theme_support( 'custom-background', array(
@@ -60,16 +54,11 @@ function anarcho_notepad_setup() {
 	));
 
         // This feature enables menu.
-        function anarcho_register_menus() {
-		register_nav_menus( array(
+	register_nav_menus( array(
 			'primary' => __( 'Primary', 'anarcho-notepad' ) ));
-	}
-	add_action( 'init', 'anarcho_register_menus' );
 
 	// This feature enables Link Manager in Admin page.
-	global $wp_version;
-	if ( version_compare( $wp_version, '3.5', '>=' ) )
-	    add_filter( 'pre_option_link_manager_enabled', '__return_true' );
+	add_filter( 'pre_option_link_manager_enabled', '__return_true' );
 
         // Add Callback for Custom TinyMCE editor stylesheets. (editor-style.css)
         add_editor_style();
@@ -765,7 +754,7 @@ function anarcho_theme_options_do_page() { ?>
             <div class="site-link">
               <h3><?php _e('Happy to enjoy the Anarcho-Notepad?', 'anarcho-notepad');?></h3>
               <p><?php _e('If you are content this template, tell about it at wordpress.org, describe your Anarcho-Notepad! ', 'anarcho-notepad');?><br><?php _e(' I love the feedbacks ... ', 'anarcho-notepad');?><br>
-              <a class="button-primary review-customizr" title="Visit the site of theme" href="http://mycyberuniverse.tk/anarcho-notepad" target="_blank"><?php _e('Visit the site of theme &raquo;', 'anarcho-notepad');?></a></p>
+              <a class="button-primary review-customizr" title="Visit the site of theme" href="http://mycyberuniverse.tk/anarcho-notepad" target="_blank"><?php _e('Visit the site of theme', 'anarcho-notepad');?></a></p>
             </div><!--<div class="site-link">-->
 
             <div class="follow">
@@ -865,11 +854,11 @@ function anarcho_breadcrumbs() {
  } else {
 	$cat = get_the_category(); $cat = $cat[0];
 	echo ' ' . get_category_parents($cat, TRUE, ' ' . $delimiter . ' ') . ' ';
-	echo $before . __('You&apos;re currently reading ', 'anarcho-notepad') . '"' . get_the_title() . '"' .  $after;
+	echo $before . __('You currently reading ', 'anarcho-notepad') . '"' . get_the_title() . '"' .  $after;
  }
- } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
+/* } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
 	$post_type = get_post_type_object(get_post_type());
-	echo $before . $post_type->labels->singular_name . $after;
+	echo $before . $post_type->labels->singular_name . $after;*/
  } elseif ( is_attachment() ) {
 	$parent_id  = $post->post_parent;
 	$breadcrumbs = array();
@@ -893,7 +882,7 @@ function anarcho_breadcrumbs() {
  }
 	$breadcrumbs = array_reverse($breadcrumbs);
 	foreach ($breadcrumbs as $crumb) echo ' ' . $crumb . ' ' . $delimiter . ' ';
-	echo $before . __('You&apos;re currently reading ', 'anarcho-notepad') . '"' . get_the_title() . '"' . $after;
+	echo $before . __('You currently reading ', 'anarcho-notepad') . '"' . get_the_title() . '"' . $after;
  } elseif ( is_search() ) {
 	echo $before . __('Search results for ', 'anarcho-notepad') . '"' . get_search_query() . '"' . $after;
  } elseif ( is_tag() ) {
@@ -948,11 +937,11 @@ function anarcho_page_nav() {
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<i class="fa fa-arrow-left"></i> Older posts', 'anarcho-notepad' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( '<i class="fa fa-arrow-left"></i> Older posts' ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <i class="fa fa-arrow-right"></i>', 'anarcho-notepad' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( 'Newer posts <i class="fa fa-arrow-right"></i>' ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
@@ -978,8 +967,8 @@ function anarcho_post_nav() {
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'anarcho-notepad' ); ?></h1>
 		<div class="nav-links">
 
-			<?php previous_post_link( '%link', _x( '<i class="fa fa-arrow-left"></i> %title', 'Previous post link', 'anarcho-notepad' ) ); ?>
-			<?php next_post_link( '%link', _x( '%title <i class="fa fa-arrow-right"></i>', 'Next post link', 'anarcho-notepad' ) ); ?>
+			<?php previous_post_link( '%link', '<i class="fa fa-arrow-left"></i> %title' ); ?>
+			<?php next_post_link( '%link', '%title <i class="fa fa-arrow-right"></i>' ); ?>
 
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -1022,7 +1011,7 @@ function anarcho_comment( $comment, $args, $depth ) {
 						esc_url( get_comment_link( $comment->comment_ID ) ),
 						get_comment_time( 'c' ),
 						/* translators: 1: date, 2: time */
-						sprintf( __( '%1$s at %2$s', 'anarcho-notepad' ), get_comment_date(), get_comment_time() )
+						sprintf( '%1$s at %2$s', get_comment_date(), get_comment_time() )
 					);
 				?>
 			</header><!-- .comment-meta -->

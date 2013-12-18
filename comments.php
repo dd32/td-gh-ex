@@ -3,7 +3,7 @@
  * The template for displaying Comments.
  *
  * @package	Anarcho Notepad
- * @since	2.1.6
+ * @since	2.1.7
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013, Arthur Gareginyan
  * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
@@ -28,7 +28,7 @@ if ( post_password_required() )
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
-				printf( _n( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'anarcho-notepad' ),
+				printf( '%1$s thoughts on &ldquo;%2$s&rdquo;',
 					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
 			?>
 		</h2>
@@ -40,8 +40,8 @@ if ( post_password_required() )
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below" class="navigation" role="navigation">
 			<h1 class="assistive-text section-heading"><?php _e( 'Comment navigation', 'anarcho-notepad' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'anarcho-notepad' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'anarcho-notepad' ) ); ?></div>
+			<div class="nav-previous"><?php previous_comments_link( '&larr; Older Comments' ); ?></div>
+			<div class="nav-next"><?php next_comments_link( 'Newer Comments &rarr;' ); ?></div>
 		</nav>
 		<?php endif; // check for comment navigation ?>
 

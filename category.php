@@ -3,7 +3,7 @@
  * The template for displaying Category pages.
  *
  * @package	Anarcho Notepad
- * @since	2.1.6
+ * @since	2.1.7
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013, Arthur Gareginyan
  * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
@@ -26,7 +26,7 @@
 
 		<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 
-		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'anarcho-notepad' ) ); ?>
+		<?php the_content( __( 'Continue reading', 'anarcho-notepad' ) ); ?>
       </div>
       <div class="meta"><?php _e('Category: ', 'anarcho-notepad'); ?><?php the_category(', ') ?> |  <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?></div>
     </article>
