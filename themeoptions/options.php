@@ -1805,7 +1805,14 @@ $sections[] = array(
             'width' => 'width:60%',
             'title' => __('All Projects Portfolio Page', 'virtue'), 
             'subtitle' => __('This sets the link in every single portfolio page. *note: You still have to set the page template to portfolio.', 'virtue'),
-            ), 
+            ),
+        array(
+            'id'=>'portfolio_comments',
+            'type' => 'switch', 
+            'title' => __('Allow Comments on Portfolio Posts', 'virtue'),
+            'subtitle' => __('Turn on to allow Comments on Portfolio posts', 'virtue'),
+            "default" => 0,
+            ),
     	array(
             'id'=>'hide_image_border',
             'type' => 'switch', 

@@ -48,6 +48,13 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 1.8.5 =
+* Fix Latest Post Slider
+* Add Ajax cart
+* Fix Portfolio Img Alt
+* Add Portfolio Comments
+* Fix Portfolio Carousel with Sidebar
+
 = Version: 1.8.4 =
 * Updated Screenshot for wordpress 3.8
 * Updated tag for wordpress 3.8

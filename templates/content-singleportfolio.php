@@ -44,6 +44,7 @@
 				$valueclass = '';
 				$slidewidth_d = 670;
 			 	}
+			 	$portfolio_margin = '';
 		if (!empty($imgheight)) { $slideheight = $imgheight; } else { $slideheight = 450; } 
 		if (!empty($imgwidth)) { $slidewidth = $imgwidth; } else { $slidewidth = $slidewidth_d; } 
 		 ?>
@@ -61,9 +62,10 @@
                     					if ($attachments) {
 											foreach ($attachments as $attachment) {
 												$attachment_url = wp_get_attachment_url($attachment , 'full');
+												$caption = get_post($attachment)->post_excerpt;
 												$image = aq_resize($attachment_url, $slidewidth, $slideheight, true);
 													if(empty($image)) {$image = $attachment_url;}
-												echo '<li><a href="'.$attachment_url.'" rel="lightbox"><img src="'.$image.'"/></a></li>';
+												echo '<li><a href="'.$attachment_url.'" rel="lightbox" title="'.$caption.'"><img src="'.$image.'" alt="'.$caption.'"/></a></li>';
 											}
 										}
                     			} else {
@@ -99,7 +101,9 @@
 					<div class="videofit">
                   <?php global $post; $video = get_post_meta( $post->ID, '_kad_post_video', true ); echo $video; ?>
                   </div>
-				<?php } else {					
+				<?php } else if ($ppost_type == 'none') {
+					 $portfolio_margin = "kad_portfolio_nomargin";
+				} else {					
 							$post_id = get_post_thumbnail_id();
 							$img_url = wp_get_attachment_url( $post_id);
 							$image = aq_resize( $img_url, $slidewidth, $slideheight, true ); //resize & crop the image
@@ -108,14 +112,14 @@
                                 <?php if($image) : ?>
                                     <div class="imghoverclass">
                                     	<a href="<?php echo $img_url ?>" rel="lightbox" class="lightboxhover">
-                                    		<img src="<?php echo $image ?>" alt="<?php the_title(); ?>" />
+                                    		<img src="<?php echo $image ?>" alt="<?php echo get_post($post_id)->post_excerpt; ?>" />
                                     	</a>
                                     </div>
                                 <?php endif; ?>
 				<?php } ?>
         </div><!--imgclass -->
   		<div class="<?php echo $textclass; ?>">
-		    <div class="entry-content <?php echo $entryclass; ?>">
+		    <div class="entry-content <?php echo $entryclass; ?> <?php echo $portfolio_margin; ?>">
 		      <?php the_content(); ?>
 		  </div>
 	    		<div class="<?php echo $valueclass; ?>">
@@ -147,7 +151,9 @@
       <?php wp_link_pages(array('before' => '<nav id="page-nav" class="wp-pagenavi"><p>' . __('Pages:', 'virtue'), 'after' => '</p></nav>')); ?>
       <?php global $post; $portfolio_carousel_recent = get_post_meta( $post->ID, '_kad_portfolio_carousel_recent', true ); if ($portfolio_carousel_recent == 'similar') { get_template_part('templates/similarportfolio', 'carousel'); } else if ($portfolio_carousel_recent == 'recent') { get_template_part('templates/recentportfolio', 'carousel');} ?>
     </footer>
-    <?php comments_template('/templates/comments.php'); ?>
+    <?php global $virute; if(isset($virtue['portfolio_comments']) && $virtue['portfolio_comments'] == 1) { 
+    comments_template('/templates/comments.php'); 
+	} ?>
   </article>
 <?php endwhile; ?>
 </div>

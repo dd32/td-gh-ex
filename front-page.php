@@ -24,8 +24,8 @@
 				else if ($slider == "thumbs") {
 					get_template_part('templates/home/thumb', 'slider');
 				}
-				else if ($slider == "fullwidth") {
-					get_template_part('templates/home/fullwidth', 'slider');
+				else if ($slider == "latest") {
+					get_template_part('templates/home/latest', 'slider');
 				}
 				else if ($slider == "video") {
 					get_template_part('templates/home/video', 'block');
