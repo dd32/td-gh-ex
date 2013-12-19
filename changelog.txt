@@ -1,6 +1,10 @@
   Theme : Hueman (wordpress.org release)
-Version : 1.2.8
+Version : 1.2.9
  Author : Alexander "Alx" Agnarson - http://alxmedia.se
+
+December 19 2013 - 1.2.9
+===========================================================
+- Updated to the new fluid-layout and fixed-layout WordPress css tags
 
 December 18 2013 - 1.2.8
 ===========================================================
