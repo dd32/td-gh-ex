@@ -79,9 +79,9 @@ class AlxVideo extends WP_Widget {
 
 	<style>
 	.widget .widget-inside .alx-options-video .postform { width: 100%; }
-	.widget .widget-inside .alx-options-video p { margin-bottom: 0.3em; }
-	.widget .widget-inside .alx-options-video hr { border: none; border-bottom: 2px solid #ddd; margin: 1em 0; }
-	.widget .widget-inside .alx-options-video h4 { margin-bottom:0.665em; }
+	.widget .widget-inside .alx-options-video p { margin: 3px 0; }
+	.widget .widget-inside .alx-options-video hr { margin: 20px 0 10px; }
+	.widget .widget-inside .alx-options-video h4 { margin-bottom: 10px; }
 	</style>
 	
 	<div class="alx-options-video">
@@ -90,7 +90,6 @@ class AlxVideo extends WP_Widget {
 			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($instance["title"]); ?>" />
 		</p>
 		
-		<hr>
 		<h4>Responsive Video</h4>
 	
 		<p>

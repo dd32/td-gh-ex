@@ -278,9 +278,9 @@ class AlxTabs extends WP_Widget {
 
 	<style>
 	.widget .widget-inside .alx-options-tabs .postform { width: 100%; }
-	.widget .widget-inside .alx-options-tabs p { margin-bottom: 0.3em; }
-	.widget .widget-inside .alx-options-tabs hr { border: none; border-bottom: 2px solid #ddd; margin: 1em 0; }
-	.widget .widget-inside .alx-options-tabs h4 { margin-bottom:0.665em; }
+	.widget .widget-inside .alx-options-tabs p { margin: 3px 0; }
+	.widget .widget-inside .alx-options-tabs hr { margin: 20px 0 10px; }
+	.widget .widget-inside .alx-options-tabs h4 { margin-bottom: 10px; }
 	</style>
 	
 	<div class="alx-options-tabs">
@@ -288,18 +288,7 @@ class AlxTabs extends WP_Widget {
 			<label for="<?php echo $this->get_field_id('title'); ?>">Title:</label>
 			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($instance["title"]); ?>" />
 		</p>
-		
-		<hr>
-		<p>
-			<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('tabs_category'); ?>" name="<?php echo $this->get_field_name('tabs_category'); ?>" <?php checked( (bool) $instance["tabs_category"], true ); ?>>
-			<label for="<?php echo $this->get_field_id('tabs_category'); ?>">Show categories</label>
-		</p>
-		<p>
-			<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('tabs_date'); ?>" name="<?php echo $this->get_field_name('tabs_date'); ?>" <?php checked( (bool) $instance["tabs_date"], true ); ?>>
-			<label for="<?php echo $this->get_field_id('tabs_date'); ?>">Show dates</label>
-		</p>
-		
-		<hr>
+
 		<h4>Recent Posts</h4>
 		
 		<p>
@@ -392,6 +381,21 @@ class AlxTabs extends WP_Widget {
 			<label style="width: 55%; display: inline-block;" for="<?php echo $this->get_field_id("order_tags"); ?>">Tags</label>
 			<input class="widefat" style="width:20%;" type="text" id="<?php echo $this->get_field_id("order_tags"); ?>" name="<?php echo $this->get_field_name("order_tags"); ?>" value="<?php echo $instance["order_tags"]; ?>" />
 		</p>
+		
+		<hr>
+		<h4>Tab Info</h4>
+		
+		<p>
+			<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('tabs_category'); ?>" name="<?php echo $this->get_field_name('tabs_category'); ?>" <?php checked( (bool) $instance["tabs_category"], true ); ?>>
+			<label for="<?php echo $this->get_field_id('tabs_category'); ?>">Show categories</label>
+		</p>
+		<p>
+			<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('tabs_date'); ?>" name="<?php echo $this->get_field_name('tabs_date'); ?>" <?php checked( (bool) $instance["tabs_date"], true ); ?>>
+			<label for="<?php echo $this->get_field_id('tabs_date'); ?>">Show dates</label>
+		</p>
+		
+		<hr>
+		
 	</div>
 <?php
 

@@ -119,9 +119,9 @@ class AlxPosts extends WP_Widget {
 
 	<style>
 	.widget .widget-inside .alx-options-posts .postform { width: 100%; }
-	.widget .widget-inside .alx-options-posts p { margin-bottom: 0.3em; }
-	.widget .widget-inside .alx-options-posts hr { border: none; border-bottom: 2px solid #ddd; margin: 1em 0; }
-	.widget .widget-inside .alx-options-posts h4 { margin-bottom:0.665em; }
+	.widget .widget-inside .alx-options-posts p { margin: 3px 0; }
+	.widget .widget-inside .alx-options-posts hr { margin: 20px 0 10px; }
+	.widget .widget-inside .alx-options-posts h4 { margin-bottom: 10px; }
 	</style>
 	
 	<div class="alx-options-posts">
@@ -130,17 +130,6 @@ class AlxPosts extends WP_Widget {
 			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($instance["title"]); ?>" />
 		</p>
 		
-		<hr>
-		<p>
-			<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('posts_category'); ?>" name="<?php echo $this->get_field_name('posts_category'); ?>" <?php checked( (bool) $instance["posts_category"], true ); ?>>
-			<label for="<?php echo $this->get_field_id('posts_category'); ?>">Show categories</label>
-		</p>
-		<p>
-			<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('posts_date'); ?>" name="<?php echo $this->get_field_name('posts_date'); ?>" <?php checked( (bool) $instance["posts_date"], true ); ?>>
-			<label for="<?php echo $this->get_field_id('posts_date'); ?>">Show dates</label>
-		</p>
-
-		<hr>
 		<h4>List Posts</h4>
 		
 		<p>
@@ -173,6 +162,20 @@ class AlxPosts extends WP_Widget {
 			  <option value="1 day ago"<?php selected( $instance["posts_time"], "1 day ago" ); ?>>Past 24 hours</option>
 			</select>	
 		</p>
+		
+		<hr>
+		<h4>Post Info</h4>
+		
+		<p>
+			<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('posts_category'); ?>" name="<?php echo $this->get_field_name('posts_category'); ?>" <?php checked( (bool) $instance["posts_category"], true ); ?>>
+			<label for="<?php echo $this->get_field_id('posts_category'); ?>">Show categories</label>
+		</p>
+		<p>
+			<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('posts_date'); ?>" name="<?php echo $this->get_field_name('posts_date'); ?>" <?php checked( (bool) $instance["posts_date"], true ); ?>>
+			<label for="<?php echo $this->get_field_id('posts_date'); ?>">Show dates</label>
+		</p>
+
+		<hr>
 
 	</div>
 <?php

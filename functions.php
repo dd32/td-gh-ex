@@ -23,7 +23,10 @@
 
 if ( ! function_exists( 'alx_load' ) ) {
 	
-	function alx_load() {	
+	function alx_load() {
+		// Load theme languages
+		load_theme_textdomain( 'hueman', get_template_directory().'/languages' );
+		
 		// Load theme options and meta boxes
 		load_template( get_template_directory() . '/functions/theme-options.php' );
 		load_template( get_template_directory() . '/functions/meta-boxes.php' );
@@ -56,10 +59,7 @@ add_action( 'after_setup_theme', 'alx_load' );
 /* ------------------------------------ */
 if ( ! function_exists( 'alx_setup' ) ) {
 	
-	function alx_setup() {
-		// Load theme languages
-		load_theme_textdomain( 'hueman', get_template_directory().'/languages' );
-		
+	function alx_setup() {	
 		// Enable automatic feed links
 		add_theme_support( 'automatic-feed-links' );
 		
@@ -135,7 +135,7 @@ if ( ! function_exists( 'alx_styles' ) ) {
 add_action( 'wp_enqueue_scripts', 'alx_styles' );
 
 
-/*  Custom sidebars
+/*  Register custom sidebars
 /* ------------------------------------ */
 if ( ! function_exists( 'alx_custom_sidebars' ) ) {
 
@@ -279,8 +279,8 @@ if ( ! function_exists( 'alx_social_links' ) ) {
 	function alx_social_links() {
 		if ( !ot_get_option('social-links') =='' ) {
 			$links = ot_get_option('social-links', array());
-				if ( !empty( $links ) ) {
-					echo '<ul class="social-links">';	
+			if ( !empty( $links ) ) {
+				echo '<ul class="social-links">';	
 				foreach( $links as $item ) {
 					
 					// Build each separate html-section only if set
@@ -297,7 +297,7 @@ if ( ! function_exists( 'alx_social_links' ) ) {
 					
 					// Put them together
 					if ( isset($item['title']) && !empty($item['title']) && isset($item['social-icon']) && !empty($item['social-icon']) && ($item['social-icon'] !='fa-') ) {
-						echo '<li><a class="social-tooltip" '.$title.' '.$link.' '.$target.'><i '.$icon.' '.$color.'></i></a></li>';
+						echo '<li><a rel="nofollow" class="social-tooltip" '.$title.' '.$link.' '.$target.'><i '.$icon.' '.$color.'></i></a></li>';
 					}
 				}
 				echo '</ul>';
