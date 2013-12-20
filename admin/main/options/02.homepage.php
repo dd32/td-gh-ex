@@ -26,7 +26,7 @@ $thinkup_class_fullwidth = NULL;
 			}
 			echo '<div id="slider"><div id="slider-core">',
 			     '<div class="rslides-container' . $thinkup_class_fullwidth . '"><div class="rslides-inner"><ul class="slides">';
-				if ( empty( $thinkup_homepage_sliderpreset[0]['slide_image_url'] ) ) {				 
+				if ( ! isset( $thinkup_homepage_sliderpreset[0] ) or empty( $thinkup_homepage_sliderpreset[0]['slide_image_url'] ) ) {				 
 					echo '<li><img src="' . get_template_directory_uri() . '/images/transparent.png" style="background: url(' . get_template_directory_uri() . '/images/slideshow/slide_demo1.png) no-repeat center; background-size: cover;" alt="Demo Image" /></li>';
 					echo '<li><img src="' . get_template_directory_uri() . '/images/transparent.png" style="background: url(' . get_template_directory_uri() . '/images/slideshow/slide_demo2.png) no-repeat center; background-size: cover;" alt="Demo Image" /></li>';
 					echo '<li><img src="' . get_template_directory_uri() . '/images/transparent.png" style="background: url(' . get_template_directory_uri() . '/images/slideshow/slide_demo3.png) no-repeat center; background-size: cover;" alt="Demo Image" /></li>';

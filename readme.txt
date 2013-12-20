@@ -95,6 +95,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.4.91
+- Fixed:   Slider checks adjusted - php error message fixed.
+
 Version 1.4.9
 - Updated: Core Masonry code now being used. Removed external file.
 - Updated: is_thinkup() code replaced. Where required replaced with is_front_page().
