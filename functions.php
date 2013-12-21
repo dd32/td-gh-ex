@@ -21,7 +21,7 @@
 	// Custom header	
 		$args = array(		
 		'width' => 960,
-		'height' => 220,
+		'height' => 300,
 		'default-image' => get_template_directory_uri() . '/images/boats.jpg',
 		'header-text' => false,
 		'uploads' => true,

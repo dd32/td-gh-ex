@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: SimplyBlack v1.3\n"
+"Project-Id-Version: SimplyBlack v1.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-12-12 23:45:48+0000\n"
+"PO-Revision-Date: 2013-12-21 17:24:43+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -123,7 +123,7 @@ msgstr "Aanbevolen bericht"
 
 #: page-full.php:20
 #: page.php:19
-#: single.php:28
+#: single.php:29
 #@ SimplyBlack
 msgid "Edit"
 msgstr "Bewerk"
@@ -134,7 +134,7 @@ msgstr "Bewerk"
 msgid "Search Results for: %s"
 msgstr "Zoekresultaat voor: %s"
 
-#: single.php:20
+#: single.php:21
 #@ SimplyBlack
 msgid "Posted in "
 msgstr "Geplaatst in "
@@ -181,6 +181,7 @@ msgstr "Logo"
 #: archive.php:29
 #: index.php:21
 #: search.php:17
+#: single.php:16
 #, php-format
 #@ SimplyBlack
 msgid "1 response"
@@ -210,4 +211,9 @@ msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
 #@ SimplyBlack
 msgid "Comments are closed"
 msgstr "Reageren is niet mogelijk"
+
+#: functions.php:292
+#@ default
+msgid "There is no excerpt because this is a protected post."
+msgstr ""
 
