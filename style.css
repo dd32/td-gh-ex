@@ -5,7 +5,7 @@ Theme URI: http://themeinprogress.com/nova/
 Description: Nova is a responsive clean Tumblog Wordpress Theme, based on Bootstrap framework. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10 and uses the most modern technologies like Html5 and Css3.
 Author: Theme in Progress.
 Author URI: http://themeinprogress.com
-Version: 1.0.3
+Version: 1.0.4
 Tags: blue, green, orange, purple, red, yellow, light, two-columns, left-sidebar, right-sidebar, photoblogging, custom-background, post-formats, theme-options, translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -286,13 +286,14 @@ nav#mainmenu {
 	position:relative; 
 	width:100%;
 	min-height:120px;
+	word-wrap: break-word;
 }
 
 nav#mainmenu ul { 
 	list-style:none; 
 	margin:0; 
 	display:inline-block;
-
+	max-width:100%;
 }
 
 nav#mainmenu ul li {
@@ -301,7 +302,8 @@ nav#mainmenu ul li {
 	display:block;
 	text-align:right;
 	padding:0;
-	margin-bottom:-5px
+	margin-bottom:-5px;
+	max-width:100%;
 }
 
 nav#mainmenu ul li a { 
@@ -1557,11 +1559,13 @@ nav#mainmenu ul.menu {
 	-webkit-border-radius: 0px;
 	-moz-border-radius: 0px;
 	border-radius: 0px;
+	word-wrap: break-word
 }
 
 .tinynav option {
 	padding:5px 0;
 	border-bottom:solid 1px #333;
+	word-wrap: break-word
 }
 
 #header select.select-menu {
