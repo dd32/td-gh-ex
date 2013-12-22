@@ -1,6 +1,13 @@
   Theme : Hueman (wordpress.org release)
-Version : 1.2.9
+Version : 1.3.0
  Author : Alexander "Alx" Agnarson - http://alxmedia.se
+
+December 22 2013 - 1.3.0
+===========================================================
+- Updated screenshot.png to larger size for WP 3.8 - all images are now CC0 (GPL-compatible)
+- Added nofollow to footer credit links
+- Fixed footer widget boxes to only show in admin if enabled
+- Optimized font css
 
 December 19 2013 - 1.2.9
 ===========================================================

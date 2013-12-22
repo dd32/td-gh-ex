@@ -66,15 +66,15 @@ if ( ! function_exists( 'alx_dynamic_css' ) ) {
 			$styles .= '/* Dynamic CSS: For no styles in head, copy and put the css below in your child theme\'s style.css, disable dynamic styles */'."\n";		
 			
 			// google fonts
-			if ( ot_get_option( 'font' ) == 'titillium-web-ext' ) { $styles .= 'body, input, textarea, button, select, label { font-family: "Titillium Web", Arial, sans-serif; }'."\n"; }
-			if ( ot_get_option( 'font' ) == 'droid-serif' ) { $styles .= 'body, input, textarea, button, select, label { font-family: "Droid Serif", sans-serif; }'."\n"; }
-			if ( ot_get_option( 'font' ) == 'source-sans-pro' ) { $styles .= 'body, input, textarea, button, select, label { font-family: "Source Sans Pro", Arial, sans-serif; }'."\n"; }
-			if ( ot_get_option( 'font' ) == 'lato' ) { $styles .= 'body, input, textarea, button, select, label { font-family: "Lato", Arial, sans-serif; }'."\n"; }
-			if ( ot_get_option( 'font' ) == 'ubuntu' ) { $styles .= 'body, input, textarea, button, select, label { font-family: "Ubuntu", Arial, sans-serif; }'."\n"; }	
-			if ( ( ot_get_option( 'font' ) == 'roboto-condensed' ) || ( ot_get_option( 'font' ) == 'roboto-condensed-cyr' ) ) { $styles .= 'body, input, textarea, button, select, label { font-family: "Roboto Condensed", Arial, sans-serif; }'."\n"; }			
-			if ( ( ot_get_option( 'font' ) == 'open-sans' ) || ( ot_get_option( 'font' ) == 'open-sans-cyr' ) )	{ $styles .= 'body, input, textarea, button, select, label { font-family: "Open Sans", Arial, sans-serif; }'."\n"; }
-			if ( ot_get_option( 'font' ) == 'arial' ) { $styles .= 'body, input, textarea, button, select, label { font-family: Arial, sans-serif; }'."\n"; }
-			if ( ot_get_option( 'font' ) == 'georgia' ) { $styles .= 'body, input, textarea, button, select, label { font-family: Georgia, serif; }'."\n"; }
+			if ( ot_get_option( 'font' ) == 'titillium-web-ext' ) { $styles .= 'body { font-family: "Titillium Web", Arial, sans-serif; }'."\n"; }
+			if ( ot_get_option( 'font' ) == 'droid-serif' ) { $styles .= 'body { font-family: "Droid Serif", sans-serif; }'."\n"; }
+			if ( ot_get_option( 'font' ) == 'source-sans-pro' ) { $styles .= 'body { font-family: "Source Sans Pro", Arial, sans-serif; }'."\n"; }
+			if ( ot_get_option( 'font' ) == 'lato' ) { $styles .= 'body { font-family: "Lato", Arial, sans-serif; }'."\n"; }
+			if ( ot_get_option( 'font' ) == 'ubuntu' ) { $styles .= 'body { font-family: "Ubuntu", Arial, sans-serif; }'."\n"; }	
+			if ( ( ot_get_option( 'font' ) == 'roboto-condensed' ) || ( ot_get_option( 'font' ) == 'roboto-condensed-cyr' ) ) { $styles .= 'body { font-family: "Roboto Condensed", Arial, sans-serif; }'."\n"; }			
+			if ( ( ot_get_option( 'font' ) == 'open-sans' ) || ( ot_get_option( 'font' ) == 'open-sans-cyr' ) )	{ $styles .= 'body { font-family: "Open Sans", Arial, sans-serif; }'."\n"; }
+			if ( ot_get_option( 'font' ) == 'arial' ) { $styles .= 'body { font-family: Arial, sans-serif; }'."\n"; }
+			if ( ot_get_option( 'font' ) == 'georgia' ) { $styles .= 'body { font-family: Georgia, serif; }'."\n"; }
 			
 			// container width
 			if ( ot_get_option('container-width') != '1380' ) {			

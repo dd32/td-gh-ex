@@ -1,8 +1,8 @@
 /*
 Theme Name: Hueman
 Theme URI: http://alxmedia.se/themes/hueman/
-Version: 1.2.9
-Description: <a href="http://alxmedia.se/themes/hueman/">Hueman</a> is a responsive 100% high resolution theme for blogs and magazines. Unique toggle sidebars results in a great reading experience for both tablet and mobile. The feature list is long: Unlimited topbar, header, footer and accent colors, unlimited widget areas, 0-2 sidebars to the left or right that can be uniquely specified for each page or post, 300px / 220px fixed width sidebars, 0-4 footer widget columns, almost zero layout images, related posts and post nav, featured story or slider, 10 post formats, good SEO, 3 flexible custom widgets, localisation support, social links, logo upload and many more useful admin panel features.
+Version: 1.3.0
+Description: <a href="http://alxmedia.se/themes/hueman/">Hueman</a> is a responsive 100% high resolution theme for blogs and magazines. Unique toggle sidebars give a great browsing and reading experience on both tablet and mobile. The feature list is long: Unlimited topbar, header, footer and accent colors, unlimited widget areas, 0-2 sidebars to the left or right that can be uniquely specified for each page or post, 300px / 220px fixed width sidebars, 0-4 footer widget columns, almost zero layout images, related posts and post nav, featured story or slider, 10 post formats, good SEO, 3 flexible custom widgets, localisation support, social links, logo upload and many more useful admin panel features.
 Author: Alexander Agnarson
 Author URI: http://alxmedia.se
 Tags: light, one-column, two-columns, three-columns, right-sidebar, left-sidebar, fluid-layout, fixed-layout, custom-colors, custom-menu, featured-images, flexible-header, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
@@ -73,8 +73,64 @@ strong { font-weight: 600; }
 /* ------------------------------------ */
 .fa { width: 1em; text-align: center; }
 
+/*  base : fonts
+/* ------------------------------------ */
+body { font-family: "Titillium", Arial, sans-serif; }
+
+@font-face {
+	font-family: 'Titillium';
+	src: url('fonts/titillium-light-webfont.eot');
+	src: url('fonts/titillium-light-webfont.svg#titillium-light-webfont') format('svg'),
+		 url('fonts/titillium-light-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/titillium-light-webfont.woff') format('woff'),
+		 url('fonts/titillium-light-webfont.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Titillium';
+	src: url('fonts/titillium-lightitalic-webfont.eot');
+	src: url('fonts/titillium-lightitalic-webfont.svg#titillium-lightitalic-webfont') format('svg'),
+		 url('fonts/titillium-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/titillium-lightitalic-webfont.woff') format('woff'),
+		 url('fonts/titillium-lightitalic-webfont.ttf') format('truetype');
+	font-weight: 300;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Titillium';
+	src: url('fonts/titillium-regular-webfont.eot');
+	src: url('fonts/titillium-regular-webfont.svg#titillium-regular-webfont') format('svg'),
+		 url('fonts/titillium-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/titillium-regular-webfont.woff') format('woff'),
+		 url('fonts/titillium-regular-webfont.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Titillium';
+	src: url('fonts/titillium-regularitalic-webfont.eot');
+	src: url('fonts/titillium-regularitalic-webfont.svg#titillium-regular-webfont') format('svg'),
+		 url('fonts/titillium-regularitalic-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/titillium-regularitalic-webfont.woff') format('woff'),
+		 url('fonts/titillium-regularitalic-webfont.ttf') format('truetype');
+	font-weight: 400;
+	font-style: italic;
+}
+@font-face {
+    font-family: 'Titillium';
+    src: url('fonts/titillium-semibold-webfont.eot');
+    src: url('fonts/titillium-semibold-webfont.svg#titillium-semibold-webfont') format('svg'),
+         url('fonts/titillium-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/titillium-semibold-webfont.woff') format('woff'),
+         url('fonts/titillium-semibold-webfont.ttf') format('truetype');
+	font-weight: 600;
+	font-style: normal;
+}
+
 /*  base : forms
 /* ------------------------------------ */
+input, textarea, button, select, label { font-family: inherit; }
 .themeform input,
 .themeform textarea,
 .themeform button,
@@ -322,65 +378,6 @@ box-shadow: inset 0 -1px 0 rgba(255,255,255,0.1); }
 /* ------------------------------------------------------------------------- *
  *  Common Elements
 /* ------------------------------------------------------------------------- */
-
-/*  common : fonts
-/* ------------------------------------ */
-body, input, textarea, button, select, label { font-family: "Titillium", Arial, sans-serif; }
-
-@font-face {
-    font-family: 'Titillium';
-    src: url('fonts/titillium-light-webfont.eot');
-    src: url('fonts/titillium-light-webfont.svg#titillium-light-webfont') format('svg'),
-         url('fonts/titillium-light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/titillium-light-webfont.woff') format('woff'),
-         url('fonts/titillium-light-webfont.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Titillium';
-    src: url('fonts/titillium-lightitalic-webfont.eot');
-    src: url('fonts/titillium-lightitalic-webfont.svg#titillium-lightitalic-webfont') format('svg'),
-         url('fonts/titillium-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/titillium-lightitalic-webfont.woff') format('woff'),
-         url('fonts/titillium-lightitalic-webfont.ttf') format('truetype');
-    font-weight: 300;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Titillium';
-    src: url('fonts/titillium-regular-webfont.eot');
-    src: url('fonts/titillium-regular-webfont.svg#titillium-regular-webfont') format('svg'),
-         url('fonts/titillium-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/titillium-regular-webfont.woff') format('woff'),
-         url('fonts/titillium-regular-webfont.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Titillium';
-    src: url('fonts/titillium-regularitalic-webfont.eot');
-    src: url('fonts/titillium-regularitalic-webfont.svg#titillium-regular-webfont') format('svg'),
-         url('fonts/titillium-regularitalic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/titillium-regularitalic-webfont.woff') format('woff'),
-         url('fonts/titillium-regularitalic-webfont.ttf') format('truetype');
-    font-weight: 400;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Titillium';
-    src: url('fonts/titillium-semibold-webfont.eot');
-    src: url('fonts/titillium-semibold-webfont.svg#titillium-semibold-webfont') format('svg'),
-         url('fonts/titillium-semibold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/titillium-semibold-webfont.woff') format('woff'),
-         url('fonts/titillium-semibold-webfont.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-}
 
 /*  common : responsive videos
 /* ------------------------------------ */
