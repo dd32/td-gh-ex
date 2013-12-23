@@ -24,7 +24,7 @@
 					    <div class="media-body">
 						 <h4><a  class="blog-heading" href="<?php the_permalink(); ?>"title="<?php the_title(); ?>"><?php the_title(); ?></a>
 						 </h4>
-					     <div class="blog_content"> <p><?php echo get_the_other_excerpt();?></p></div><br>
+					     <div class="blog_content"> <p><?php echo spa_get_the_other_excerpt();?></p></div><br>
 						</div>
 					</div><?php endwhile;?>		 
 						 
