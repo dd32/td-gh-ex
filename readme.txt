@@ -4,8 +4,7 @@ Aura is distributed under the terms of the GNU GPL
 
 === BASIC INFORMATION ===
 
-This theme does not contain drop-down menus and theme options. A Pro Version with this features is already planned. 
-
+This theme does not contain drop-down menus and theme options.
 
 
 === TWITTER ===
