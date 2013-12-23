@@ -13,7 +13,7 @@ get_header(); ?>
 	<section id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 
-	<?php if ( have_posts() ) : ?>
+			<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
 				<h1 class="page-title">
@@ -67,47 +67,36 @@ get_header(); ?>
 					?>
 				</h1>
 				<?php
-					if ( is_category() ) :
-						// show an optional category description
-						$category_description = category_description();
-						if ( ! empty( $category_description ) ) :
-							echo apply_filters( 'category_archive_meta', '<div class="taxonomy-description">' . $category_description . '</div>' );
+					if ( is_category() || is_tag() ) :
+						// Show an optional term description.
+						$term_description = term_description();
+						if ( ! empty( $term_description ) ) :
+							printf( '<div class="taxonomy-description">%s</div>', $term_description );
 						endif;
-
-					elseif ( is_tag() ) :
-						// show an optional tag description
-						$tag_description = tag_description();
-						if ( ! empty( $tag_description ) ) :
-							echo apply_filters( 'tag_archive_meta', '<div class="taxonomy-description">' . $tag_description . '</div>' );
-						endif;
-
 					endif;
 				?>
 			</header><!-- .page-header -->
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php
+					while ( have_posts() ) :
+						the_post();
 
-				<?php
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to overload this in a child theme then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'content', get_post_format() );
-				?>
+						/* Include the Post-Format-specific template for the content.
+						 * If you want to overload this in a child theme then include a file
+						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+						 */
+						get_template_part( 'content', get_post_format() );
+					endwhile;
+					untitled_content_nav( 'nav-below' );
+				else :
+					get_template_part( 'no-results', 'archive' );
 
-			<?php endwhile; ?>
+				endif;
+			?>
 
-			<?php untitled_content_nav( 'nav-below' ); ?>
+			</div><!-- #content -->
+		</section><!-- #primary -->
 
-		<?php else : ?>
-
-			<?php get_template_part( 'no-results', 'archive' ); ?>
-
-		<?php endif; ?>
-
-			</div><!-- #content .site-content -->
-		</section><!-- #primary .content-area -->
-
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+<?php
+get_sidebar();
+get_footer();

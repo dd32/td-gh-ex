@@ -44,6 +44,28 @@ body {
 	float: left;
 }
 
+
+/* =Featured Content and mini carousel
+----------------------------------------------- */
+
+#featured-content.flexslider .slides .hentry {
+	text-align: left;
+}
+
+#featured-content.flexslider .slides .hentry {
+	left: 0;
+	right: auto;
+}
+
+#featured-content.flexslider{
+	direction: ltr;
+}
+
+.minislides{
+	direction: ltr;
+}
+
+
 /* =Featured image styles
 ----------------------------------------------- */
 
@@ -194,7 +216,7 @@ body {
 	color: #fff;
 	font-size: 14px;
 	margin: 0;
-	padding: 0 14px 0 0;
+	padding: 0 0 0 14px;
 	font-family: genericons, arial;
 	vertical-align: middle;
 }

@@ -161,26 +161,6 @@ function untitled_categorized_blog() {
 	}
 }
 
-// add class if post has thumbnail
-function untitled_has_thumb_class($classes) {
-	global $post;
-	if( has_post_thumbnail($post->ID) ) { $classes[] = 'post-thumb'; }
-
-		return $classes;
-}
-add_filter( 'post_class', 'untitled_has_thumb_class' );
-
-if ( is_active_sidebar( 'sidebar-1' ) ) :
-	// Add specific CSS class by filter
-	add_filter( 'body_class','untitled_class_name' );
-	function untitled_class_name( $classes ) {
-		// add 'class-name' to the $classes array
-		$classes[] = 'widget-area';
-		// return the $classes array
-		return $classes;
-	}
-endif;
-
 /**
  * Flush out the transients used in untitled_categorized_blog
  *
@@ -192,3 +172,18 @@ function untitled_category_transient_flusher() {
 }
 add_action( 'edit_category', 'untitled_category_transient_flusher' );
 add_action( 'save_post', 'untitled_category_transient_flusher' );
+
+// add class if post has thumbnail
+function untitled_has_thumb_class( $classes ) {
+	if ( has_post_thumbnail() ) {
+		$classes[] = 'post-thumb';
+	}
+
+	return $classes;
+}
+add_filter( 'post_class', 'untitled_has_thumb_class' );
+
+function untitled_class_name( $classes ) {
+	_deprecated_function( __FUNCTION__, '1.1' );
+	return $classes;
+}

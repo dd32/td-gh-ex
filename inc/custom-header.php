@@ -11,7 +11,7 @@
  */
 function untitled_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'untitled_custom_header_args', array(
-		'default-text-color'     => 'fff',
+		'header-text'            => false,
 		'width'                  => 290,
 		'height'                 => 30,
 		'flex-width'             => true,
@@ -75,16 +75,13 @@ function untitled_admin_header_style() {
 ?>
 	<style type="text/css">
 	.appearance_page_custom-header #headimg {
-		background: #000000;
+		background: #000;
 		border: none;
 		font-family: 'arvo', sans-serif;
 		padding: 0 0 0 30px;
 		text-align: left;
 		max-width: 290px;
 		max-height: 30px;
-	}
-	#headimg h1,
-	#description {
 	}
 	#headimg h1 {
 		color: #fff;
@@ -93,16 +90,13 @@ function untitled_admin_header_style() {
 		line-height: 1.7em;
 		margin: 0;
 		padding: 0;
-		font-family:'arvo', georgia;
-		text-transform:uppercase;
-		letter-spacing:1px;
+		font-family: 'arvo', georgia;
+		text-transform: uppercase;
+		letter-spacing: 1px;
 	}
 	#headimg h1 a {
 		color: #fff;
 		text-decoration: none;
-	}
-	#description {
-		display:none;
 	}
 	#headimg img {
 		width: auto;
@@ -122,15 +116,12 @@ if ( ! function_exists( 'untitled_admin_header_image' ) ) :
  * @since untitled 1.0
  */
 function untitled_admin_header_image() {
-	$style        = sprintf( ' style="color:#%s;"', get_header_textcolor() );
-	$header_image = get_header_image();
 ?>
 	<div id="headimg">
-		<?php if ( ! empty( $header_image ) ) : ?>
-		<img src="<?php echo esc_url( $header_image ); ?>" alt="" />
+		<?php if ( get_header_image() ) : ?>
+		<img src="<?php header_image(); ?>" alt="" />
 		<?php else : ?>
-		<h1 class="displaying-header-text"><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-		<div class="displaying-header-text" id="desc"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></div>
+		<h1 class="displaying-header-text"><a id="name" onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 		<?php endif; ?>
 	</div>
 <?php

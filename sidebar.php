@@ -4,9 +4,9 @@
  *
  * @package untitled
  */
-?>
-<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
-	<div id="secondary" class="widget-area" role="complementary">
-		<?php dynamic_sidebar( 'sidebar-1' ); ?>
-	</div><!-- #secondary .widget-area -->
-<?php endif; ?>
+
+if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+<div id="secondary" class="widget-area" role="complementary">
+	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+</div><!-- #secondary -->
+<?php endif;

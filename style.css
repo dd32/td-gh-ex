@@ -1,13 +1,13 @@
 /*
 Theme Name: Untitled
 Theme URI: http://theme.wordpress.com/themes/untitled/
+Description: A nice bold theme. Features full-bleed featured posts and featured images, a fixed header, and subtle CSS3 transitions.
+Version: 1.1.1
 Author: Automattic
-Author URI: http://automattic.com/
-Description: A nice bold theme. Features full-bleed featured posts and featured images, infinite scroll, and subtle CSS3 transitions.
-Version: 1.0.4
-License: GNU General Public License
-License URI: license.txt
-Tags: black, white, one-column, right-sidebar, two-columns, flexible-width, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, full-width-template, post-formats, rtl-language-support, sticky-post, translation-ready
+Author URI: http://theme.wordpress.com/
+License: GPL v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: black, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, full-width-template, one-column, post-formats, right-sidebar, rtl-language-support, sticky-post, translation-ready, two-columns, white
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -208,8 +208,10 @@ b,
 strong {
 	font-weight: bold;
 }
+cite,
 dfn,
-em, i {
+em,
+i {
 	font-style: italic;
 }
 blockquote {
@@ -830,6 +832,9 @@ body.page-template-page-full-width-php.widget-area .site-content{
 .error404 #main{
 	margin:30px auto;
 }
+.not-found{
+	margin: 30px 0;
+}
 .single #main{
 	position: relative;
 }
@@ -1090,7 +1095,7 @@ img.size-full {
 	border: 1px solid #ccc;
 	margin-bottom: 1.5em;
 	padding: 1%;
-	max-width: 98%;
+	max-width: 97.7%;
 }
 .wp-caption img {
 	display: block;
@@ -1167,7 +1172,7 @@ object {
 .single .sharedaddy{
 	margin: 30px 0;
 }
-.sd-title{
+.sd-title {
 	color: #000 !important;
 	font-family: georgia !important;
 }
@@ -1245,7 +1250,7 @@ object {
 	color: #777;
 	border-bottom: 1px solid #e5e5e5;
 }
-.comment-author a { 
+.comment-author a {
 	color: #333;
 }
 .comment-meta a:hover{

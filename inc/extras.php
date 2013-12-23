@@ -29,26 +29,13 @@ function untitled_body_classes( $classes ) {
 		$classes[] = 'group-blog';
 	}
 
+	if ( is_active_sidebar( 'sidebar-1' ) ) {
+		$classes[] = 'widget-area';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'untitled_body_classes' );
-
-/**
- * Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
- *
- * @since untitled 1.0
- */
-function untitled_enhanced_image_navigation( $url, $id ) {
-	if ( ! is_attachment() && ! wp_attachment_is_image( $id ) )
-		return $url;
-
-	$image = get_post( $id );
-	if ( ! empty( $image->post_parent ) && $image->post_parent != $id )
-		$url .= '#main';
-
-	return $url;
-}
-add_filter( 'attachment_link', 'untitled_enhanced_image_navigation', 10, 2 );
 
 /**
  * Filters wp_title to print a neat <title> tag based on what is being viewed.
@@ -76,3 +63,8 @@ function untitled_wp_title( $title, $sep ) {
 	return $title;
 }
 add_filter( 'wp_title', 'untitled_wp_title', 10, 2 );
+
+function untitled_enhanced_image_navigation( $url, $id ) {
+	_deprecated_function( __FUNCTION__, '1.1' );
+	return $url;
+}

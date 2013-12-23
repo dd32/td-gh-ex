@@ -30,4 +30,4 @@
 
 		<?php endif; ?>
 	</div><!-- .entry-content -->
-</article><!-- #post-0 .post .no-results .not-found -->
+</article><!-- #post-0 -->

@@ -49,3 +49,21 @@ To take advantage of the full-bleed featured post slider (requires WordPress.com
 4. Enter the name of a tag.
 5. Click the blue “Save Changes” button at the bottom.
 6. Once a tag name has been saved, posts having this tag will appear in the featured content section. You can specify an image to be displayed with each post by setting a Featured Images.
+
+== Changelog ==
+
+= 1.1 - Dec 06 2013 =
+* Fixed cite styling.
+* Ensured captioned images don't overflow the content container.
+* General code cleanup and optimization.
+* Added parent class to .carousel to avoid conflict with Gallery widget and Flexslider.
+* Removed no longer needed background nav image that returns a 404.
+* Updated author in footer and stylesheet.
+* Added featured image support to Pages as well as Posts.
+* Removed obsolete header text options.
+
+= 1.0.4 - Jul 08 2013 =
+* Something was updated here too.
+
+= 1.0.3 - Jun 04 2013 =
+* Initial release.

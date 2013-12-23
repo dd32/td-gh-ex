@@ -5,62 +5,118 @@
  * @package untitled
  */
 
-get_header();  ?>
+$mini_query = new WP_Query( array(
+	'posts_per_page' => 18,
+	'post__not_in'	 =>	array( get_the_ID() ),
+) );
 
-	<?php if ( '' != get_the_post_thumbnail() ) { ?>
+
+get_header();
+
+if ( '' != get_the_post_thumbnail() ) : ?>
 	<div class="singleimg"><?php the_post_thumbnail( 'slider-img' ); ?></div>
-		<div class="minislides">
-  			<div class="carousel">
-  			<ul class="slides">
-  			<?php
-				$currentID = get_the_ID();
-				$mini_args = array(
-					'posts_per_page' => 18,
-					'post__not_in'	=>	array( $currentID ),
-				);
+	<div class="minislides">
+		<div class="carousel">
+			<ul class="slides">
+				<?php
+					while ( $mini_query->have_posts() ) :
+						$mini_query->the_post();
+				?>
+				<li>
+					<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_post_thumbnail( 'thumbnail-img' ); ?></a>
+				</li>
+				<?php
+					endwhile;
 
-				$count = 0; // Set up a variable to count the number of posts so that we can break them up into rows
-
-				$mini_query = new WP_Query( $mini_args );
-
-				while ( $mini_query->have_posts() ) : $mini_query->the_post();
-				if ( '' != get_the_post_thumbnail() ) :
-				$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumbnail-img' ); // get the thumbnail image
-							?>
-    		<li><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'untitled' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_post_thumbnail( 'thumbnail-img' ); ?></a></li>
-			<?php
-			endif;
-    // Reset the post data
-    wp_reset_postdata();
-			endwhile;
-			?></ul>
-
+					// Reset the post data
+					wp_reset_postdata();
+				?>
+			</ul>
 		</div>
 	</div>
 
-	<?php } ?>
+<?php endif; ?>
 
 	<div id="single-main" class="site-main">
-
 		<div id="single-primary" class="content-area">
 			<div id="content" class="site-content" role="main">
 
-			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php get_template_part( 'content', 'single' ); ?>
-
-				<?php untitled_content_nav( 'nav-below' ); ?>
-
 				<?php
-					// If comments are open or we have at least one comment, load up the comment template
-					if ( comments_open() || '0' != get_comments_number() )
-						comments_template( '', true );
+					while ( have_posts() ) :
+						the_post();
 				?>
 
-			<?php endwhile; // end of the loop. ?>
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-			</div><!-- #content .site-content -->
-		</div><!-- #primary .content-area -->
+					<header class="entry-header">
+						<div class="entry-meta">
+							<?php untitled_posted_on(); ?>
+						</div><!-- .entry-meta -->
+						<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
+					</header><!-- .entry-header -->
 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+					<div class="entry-content">
+						<?php
+							the_content();
+							wp_link_pages( array(
+								'before' => '<div class="page-links">' . __( 'Pages:', 'untitled' ),
+								'after'  => '</div>',
+							) );
+						?>
+					</div><!-- .entry-content -->
+
+					<footer class="entry-meta">
+						<?php
+							/* translators: used between list items, there is a space after the comma */
+							$category_list = get_the_category_list( __( ', ', 'untitled' ) );
+
+							/* translators: used between list items, there is a space after the comma */
+							$tag_list = get_the_tag_list( '', __( ', ', 'untitled' ) );
+
+							if ( ! untitled_categorized_blog() ) :
+								// This blog only has 1 category so we just need to worry about tags in the meta text
+								if ( '' != $tag_list ) :
+									$meta_text = __( 'This entry was tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'untitled' );
+								else :
+									$meta_text = __( 'Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'untitled' );
+								endif;
+
+							else :
+								// But this blog has loads of categories so we should probably display them here
+								if ( '' != $tag_list ) :
+									$meta_text = __( 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'untitled' );
+								else :
+									$meta_text = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'untitled' );
+								endif;
+
+							endif; // end check for categories on this blog
+
+							printf(
+								$meta_text,
+								$category_list,
+								$tag_list,
+								get_permalink(),
+								the_title_attribute( 'echo=0' )
+							);
+
+							edit_post_link( __( 'Edit', 'untitled' ), '<span class="edit-link">', '</span>' );
+						?>
+					</footer><!-- .entry-meta -->
+				</article><!-- #post-## -->
+
+				<?php
+						untitled_content_nav( 'nav-below' );
+
+						// If comments are open or we have at least one comment, load up the comment template
+						if ( comments_open() || '0' != get_comments_number() ) :
+							comments_template();
+						endif;
+					endwhile;
+				?>
+
+			</div><!-- #content -->
+		</div><!-- #primary -->
+
+<?php
+get_sidebar();
+get_footer();
