@@ -1,13 +1,13 @@
 /*
 Theme Name: Shipyard
 Theme URI: http://www.guidovanderleest.nl/shipyard
-Version: 1.6
+Version: 1.7
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
-Description: Shipyard is a free, basic, clean, minimalistic, responsive, mobile friendly, WordPress theme. No theme settings page, no fancy options, no slideshow, this one only has the basic options. Custom header-image, full width page-template and dropdown navigation are included. Enjoy. 
-Tags: one-column, two-columns, right-sidebar, fixed-width, flexible-width, custom-header, custom-menu, white, gray, orange, translation-ready
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Description: Shipyard is a free, basic, clean, minimalistic, responsive, mobile friendly, WordPress theme. Primary sidebar, 2 widget-area's in footer, custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settings page, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
+Tags: one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, fluid-layout, custom-background, custom-header, custom-menu, featured-images, white, gray, orange, light, translation-ready
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: shipyard
 
 Shipyard, Copyright 2013, Guido van der Leest
@@ -96,6 +96,7 @@ big {font-size: 1.5em;}
 pre {margin: 5px 0; border: 1px solid #ccc; padding:5px; word-wrap: break-word;}
 code, cite, em, abbr, acronym, q {font-style:italic;}
 blockquote, address {padding:5px; font-size:1.2em; font-style:italic;}
+p {margin:0 0 20px;}
 
 table {margin:10px; border-collapse:collapse;}
 table, th, td {border: 1px solid #ccc; padding:5px;}
@@ -117,9 +118,9 @@ select {max-width:100%;}
 #header {margin:0; padding: 0 0 10px; background:none;}
 #header:after {content:''; display:block; clear:both;}
 #header .header-img {width: 100%; height: auto;}
-#header .logo {float:left; text-align:left;}
+#header .logo {width:100%; float:left; text-align:left; padding: 0 0 10px;}
 #header .logo h1 a:hover {text-decoration:none; color:#333;}
-#header .logo h3 {padding:10px 0;}
+#header .logo h3 {padding:10px 20px 5px;}
 
 
 /* HEADER MENU */
@@ -132,36 +133,43 @@ select {max-width:100%;}
 
 
 /* HEADER SUBMENU */
-.nav-head ul ul {display:none; position: absolute; top: 100%; left: -5px; background: #f2f2f2; z-index:999; }
-.nav-head ul ul ul {display:none; position: absolute; top: 30%; left: 100%; background: #f8f8f8;}
-.nav-head ul ul a {width:10em;}
+.nav-head ul ul {display:none; position: absolute; top: 100%; padding: 0;}
+.nav-head ul ul ul {display:none; position: absolute; top: 30%; left: 100%;}
+.nav-head ul ul a {width:12em; background: #f2f2f2; z-index:999;}
 .nav-head ul li:hover > ul {display:block;}
+.nav-head ul li ul li {margin:0;}
 
 
-/* PAGE AND POST */
+/* PAGE */
 .page-title {margin: 0; padding: 0 0 10px;}
+.pagelink {clear:both; margin:20px 0 10px;}
+.edit-link {display:block; clear:both; margin:10px 0; padding: 5px; border:1px solid #f26535; border-radius:5px;-moz-border-radius:5px;}
+
+
+/* POST */
 .entry-title {margin: 0; padding: 0;}
 .entry-title a:hover {color:#333; text-decoration:none;}
 .excerpt {margin: 0 0 20px; padding:0 0 60px; border-bottom:1px solid #ccc;}
 .sticky {text-align:center; clear:both; color:#333; background: #f2f2f2; margin: 10px 0 10px; padding:5px; border:1px solid #f26535; border-radius:5px;-moz-border-radius:5px;}
 .postmetadata {margin:20px 0; padding:5px; background: #f2f2f2; border:1px solid #ccc; border-radius:5px;-moz-border-radius:5px;}
-.edit-link {display:block; clear:left; margin:10px 0; padding: 5px; border:1px solid #f26535; border-radius:5px;-moz-border-radius:5px;}
 a.moretag {float:right; border:0; -webkit-appearance:none;	border-radius:5px;-moz-border-radius:5px; margin:25px 0 0; padding: 2px 5px; background: #333; color:#fff;}
 a.moretag:hover {background: #f26535; text-decoration:none;}
 .post-nav {padding: 5px 0;}
 .post-nav:after {content:''; display:block; clear:both;}
 .nav-prev {float:left;}
 .nav-next{float:right;}
-.pagelink {clear:left; margin:20px 0 10px;}
 
 
 /* IMAGE AND VIDEO */
 embed, iframe, object, video {max-width:100%;}
 img {max-width:100%; height:auto;}
 
+img.alignright {float:right; margin:0 0 1em 1em;}
+img.alignleft {float:left; margin:0 1em 1em 0;}
+img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-bottom:1em;}
 .alignright {float:right; margin:0 0 1em 1em;}
 .alignleft {float:left; margin:0 1em 1em 0;}
-.aligncenter {display: block; margin-left: auto; margin-right: auto;}
+.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-bottom:1em;}
 
 .wp-caption {background:none; max-width: 100%;}
 .wp-caption-text {text-align:center; word-wrap: break-word;}
@@ -178,11 +186,11 @@ img {max-width:100%; height:auto;}
 
 
 /* COMMENTS */
-#comments {width:95%; word-wrap: break-word;}
-.comment {padding: 0 0 20px;}
-.comment-list {list-style:none; clear:left; padding:10px; margin:20px 0; background:#f2f2f2; border:1px solid #ccc; border-radius:5px;-moz-border-radius:5px; font-weight:normal;}
-#comments .children {list-style:none; background: #f8f8f8; padding:10px;}
-.no-comments {clear:left; margin:20px 0; padding:5px; background: #f2f2f2; border:1px solid #ccc; border-radius:5px;-moz-border-radius:5px;}
+#comments {clear:both; word-wrap: break-word;}
+#comments a {color:#000;}
+#comments .comment-list {list-style:none; background:#f2f2f2; border:1px solid #ccc; font-weight:normal; margin: 20px 0; padding: 20px; border-radius:5px;-moz-border-radius:5px;}
+#comments .children {list-style:none; background: #f8f8f8; padding: 20px;}
+.no-comments {clear:both; margin:20px 0; padding:5px 10px; background: #f2f2f2; border:1px solid #ccc; border-radius:5px;-moz-border-radius:5px;}
 .comment-notes, .form-allowed-tags {font-size:0.75em; padding:10px 0;}
 .comments-title, .comment-reply-title {font-size: 1.5em;} 
 .bypostauthor {color:#333;}
@@ -209,11 +217,12 @@ img {max-width:100%; height:auto;}
 
 
 /* Mobile */
-@media screen and (max-width: 600px) { 
+@media screen and (max-width: 767px) { 
 	body {font-size:1em; line-height:1.2em;}
 	#container {width: 94%; padding:10px;}
 	#content, #content-full {width:100%;}
-	#header .logo {padding: 0 10px; text-align:center;}
+	#header .logo {width:100%; padding: 10px 0; text-align:center;}
+	#header .logo h3 {padding:0;}
 	#header .header-img {width: 100%; height: auto;}
 	#sidebar {width:100%; border:0; padding:0; float:left;}
 	#footer {width:100%;}

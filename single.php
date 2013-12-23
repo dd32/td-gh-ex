@@ -12,7 +12,8 @@
 	<?php while (have_posts()) : the_post(); ?>
 		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 			<h3 class="page-title"><?php the_title(); ?></h3>
-			<h5 class="postmetadata"><?php _e('Posted on ', 'shipyard'); ?><?php echo get_the_date(); ?> | <?php _e('Posted by ', 'shipyard'); ?> <?php the_author_posts_link() ?> </h5>
+			<h5 class="postmetadata"><?php _e('Posted on ', 'shipyard'); ?><a href="<?php the_permalink(); ?>"><?php echo get_the_date(); ?></a> | <?php _e('By ', 'shipyard'); ?> 
+			<?php the_author_posts_link() ?> | <?php printf( _n( '1 response', '%1$s responses', get_comments_number(), 'shipyard' ), number_format_i18n( get_comments_number() ) ); ?></h5>
 	
 			<?php the_content(); ?>
 			<div class="pagelink"><?php wp_link_pages(); ?></div>

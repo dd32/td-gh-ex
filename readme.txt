@@ -2,7 +2,7 @@ INSTALLATION
 ============
 
 1. Extract shipyard.zip and upload the theme folder via FTP to your wp-content/themes/ directory, or login into WordPress Dashboard > Appearance > Install Themes.
-2. Go to your WordPress Admin Dashboard > Appearance > Themes and select this theme to activate.
+2. Go to your WordPress Dashboard > Appearance > Themes and select this theme to activate.
 3. Once activated, you're ready to use it.
 
 
@@ -15,19 +15,37 @@ To set a static homepage login into WordPress Dashboard > Settings > Reading and
 HOW TO CHANGE HEADER IMAGE
 ==========================
 You can change the header-image via WordPress Dashboard > Appearance > Header. I advice you to use a header-image of 960px wide and 350px high. 
-The default header (boats.jpg) is from my private collection and is licensed under the GPL.
+
+
+HOW TO SET LOGO
+===============
+You can add your own logo in stead of blogname and description via  WordPress Dashboard > Appearance > Customize.
+
+
+HOW TO CHANGE BACKGROUND
+========================
+You can add your own background(image) via  WordPress Dashboard > Appearance > Background.
 
 
 HOW TO SET MENU
 ===============
 Shipyard offers a menu that can contain subpages (2 levels deep).
-You can set menu via WordPress Dashboard > Appearance > Menu's and select the menu you want.
+You can create and set menu via WordPress Dashboard > Appearance > Menu's.
 
 
 TRANSLATION
 ===========
 This theme is translation-ready (Dutch translation included). 
 You can translate this into your own language using for example plugin Codestyling Localization: http://wordpress.org/plugins/codestyling-localization/
+
+
+THEME IMAGES
+============
+Item: boats.jpg
+Copyright author: Guido van der Leest
+Author URI: http://www.guidovanderleest.nl
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 
 CREDITS

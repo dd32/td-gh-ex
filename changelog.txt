@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+Shipyard version 1.7 - january 2014
+- added custom background and custom logo function (check readme file for instructions)
+- added several adjustments in file header
+- added metadata (comments number) to post listing and single post
+- added new screenshot
+- a bunch of other minor adjustments in stylesheet (navigation, img alignment, mobile stylesheet, etc)
+
+
 Shipyard version 1.6 - november 2013 
 - added wp_title function in functions.php
 - other minor adjustments in functions.php

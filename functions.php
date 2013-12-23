@@ -32,7 +32,7 @@
 		add_theme_support( 'post-thumbnails' ); 
 
 	// Resize mode thumbnails
-		set_post_thumbnail_size( 350, 200 ); 
+		set_post_thumbnail_size( 570, 450 ); 
 
 
 	// This feature adds RSS feed links to html head 
@@ -42,8 +42,32 @@
 	// Switches default core markup for search form, comment form, and comments to output valid HTML5
 		add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
 
+	// Background color
+		$args = array( 'default-color' => 'f2f2f2', 
+		); 
+		add_theme_support( 'custom-background', $args ); 
+
 	}
 	add_action( 'after_setup_theme', 'shipyard_setup' ); 
+
+
+// Theme Customizer (option to add logo)
+	function shipyard_theme_customizer( $wp_customize ) { 
+
+		$wp_customize->add_section( 'shipyard_logo_section' , array( 
+		'title' => __( 'Logo', 'shipyard' ), 
+		'priority' => 30, 
+		'description' => __( 'Upload a logo to replace blogname and description in header', 'shipyard' ),
+		) );
+		$wp_customize->add_setting( 'shipyard_logo' );
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'shipyard_logo', array( 
+		'label' => __( 'Logo', 'shipyard' ), 
+		'section' => 'shipyard_logo_section', 
+		'settings' => 'shipyard_logo', 
+		) ) );
+
+	} 
+	add_action('customize_register', 'shipyard_theme_customizer');
 
 
 // Add blogname to wp_title
