@@ -14,44 +14,11 @@ $featured = new WP_Query(
 
 <?php if ( is_home() && !is_paged() && ( ot_get_option('featured-posts-count') =='1') ): // No slider if 1 post is featured ?>
 	
-	<?php while ( $featured->have_posts() ): $featured->the_post(); ?>
 	<div class="featured">
-		<div <?php post_class('post-hover'); ?>>
-			
-			<div class="post-thumbnail">
-				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-					<?php if ( has_post_thumbnail() ): ?>
-						<?php the_post_thumbnail('thumb-large'); ?>
-					<?php else: ?>
-						<img src="<?php echo get_template_directory_uri(); ?>/img/thumb-medium.png" alt="<?php the_title(); ?>" />
-					<?php endif; ?>
-					<?php if ( has_post_format('video') && !is_sticky() ) echo'<span class="thumb-icon"><i class="fa fa-play"></i></span>'; ?>
-					<?php if ( has_post_format('audio') && !is_sticky() ) echo'<span class="thumb-icon"><i class="fa fa-volume-up"></i></span>'; ?>
-					<?php if ( is_sticky() ) echo'<span class="thumb-icon"><i class="fa fa-star"></i></span>'; ?>
-				</a>
-				<?php if ( !ot_get_option( 'comment-count' ) ): ?>
-					<a class="post-comments" href="<?php comments_link(); ?>"><span><i class="fa fa-comments-o"></i><?php comments_number( '0', '1', '%' ); ?></span></a>
-				<?php endif; ?>
-			</div><!--/.post-thumbnail-->
-
-			<div class="post-meta group">
-				<p class="post-category"><?php the_category(' / '); ?></p>
-				<p class="post-date"><?php the_time('j M, Y'); ?></p>
-			</div><!--/.post-meta-->
-			
-			<h2 class="post-title">
-				<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-			</h2><!--/.post-title-->
-			
-			<?php if (ot_get_option('excerpt-length') != '0'): ?>
-			<div class="entry excerpt">				
-				<?php the_excerpt(); ?>
-			</div><!--/.entry-->
-			<?php endif; ?>
-			
-		</div>
-	</div>
-	<?php endwhile; ?>	
+		<?php while ( $featured->have_posts() ): $featured->the_post(); ?>
+			<?php get_template_part('content-featured'); ?>
+		<?php endwhile; ?>	
+	</div><!--/.featured-->
 	
 <?php elseif ( is_home() && !is_paged() && ( ot_get_option('featured-posts-count') !='0') ): // Show slider if posts are not 1 or 0 ?>
 	
@@ -63,6 +30,7 @@ $featured = new WP_Query(
 				var image = firstImage.get(0);
 				if (image.complete || image.readyState == 'complete' || image.readyState == 4) {
 					clearInterval(checkforloaded);
+					
 					jQuery('#flexslider-featured').flexslider({
 						animation: "slide",
 						useCSS: false, // Fix iPad flickering issue
@@ -75,50 +43,20 @@ $featured = new WP_Query(
 						smoothHeight: true,
 						touch: false
 					});
+					
 				}
 			}, 20);
 		});
 	</script>
 		
-	<div class="flexslider featured" id="flexslider-featured">
+	<div class="featured flexslider" id="flexslider-featured">
 		<ul class="slides">				
 			<?php while ( $featured->have_posts() ): $featured->the_post(); ?>
-			<li <?php post_class('post-hover'); ?>>
-				
-				<div class="post-thumbnail">
-					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-						<?php if ( has_post_thumbnail() ): ?>
-							<?php the_post_thumbnail('thumb-large'); ?>
-						<?php else: ?>
-							<img src="<?php echo get_template_directory_uri(); ?>/img/thumb-medium.png" alt="<?php the_title(); ?>" />
-						<?php endif; ?>
-						<?php if ( has_post_format('video') && !is_sticky() ) echo'<span class="thumb-icon"><i class="fa fa-play"></i></span>'; ?>
-						<?php if ( has_post_format('audio') && !is_sticky() ) echo'<span class="thumb-icon"><i class="fa fa-volume-up"></i></span>'; ?>
-						<?php if ( is_sticky() ) echo'<span class="thumb-icon"><i class="fa fa-star"></i></span>'; ?>
-					</a>
-					<?php if ( !ot_get_option( 'comment-count' ) ): ?>
-					<a class="post-comments" href="<?php comments_link(); ?>"><span><i class="fa fa-comments-o"></i><?php comments_number( '0', '1', '%' ); ?></span></a>
-					<?php endif; ?>
-				</div><!--/.post-thumbnail-->
-
-				<div class="post-meta group">
-					<p class="post-category"><?php the_category(' / '); ?></p>
-					<p class="post-date"><?php the_time('j M, Y'); ?></p>
-				</div><!--/.post-meta-->
-				
-				<h2 class="post-title">
-					<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-				</h2><!--/.post-title-->
-				
-				<?php if (ot_get_option('excerpt-length') != '0'): ?>
-				<div class="entry excerpt">				
-					<?php the_excerpt(); ?>
-				</div><!--/.entry-->
-				<?php endif; ?>
-
+			<li>	
+				<?php get_template_part('content-featured'); ?>
 			</li>
 			<?php endwhile; ?>			
 		</ul>
-	</div><!--/.flexslider-->
+	</div><!--/.featured-->
 	
 <?php endif; ?>
