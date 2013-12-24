@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+OneColumn Version 1.6 - january 2014
+- added custom background and custom logo function (check readme file for instructions)
+- added several adjustments in file header
+- added metadata (comments number) to post listing and single post
+- added new screenshot
+- a bunch of other minor adjustments in stylesheet (navigation, img alignment, mobile stylesheet, etc)
+
+
 OneColumn version 1.5 - november 2013
 - First stable release
 

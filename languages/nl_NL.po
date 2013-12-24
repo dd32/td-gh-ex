@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: OneColumn v1.5\n"
+"Project-Id-Version: OneColumn v1.6\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-10-28 20:10:02+0000\n"
+"PO-Revision-Date: 2013-12-23 16:55:03+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Textdomain-Support: yes"
 
 #: 404.php:10
-#: search.php:25
+#: search.php:26
 #@ onecolumn
 msgid "Nothing Found"
 msgstr "Niets gevonden"
@@ -29,7 +29,7 @@ msgstr "Niets gevonden"
 #: 404.php:11
 #: archive.php:36
 #: index.php:28
-#: search.php:26
+#: search.php:27
 #@ onecolumn
 msgid "Sorry, no posts matched your criteria."
 msgstr "Sorry, er zijn helaas geen berichten gevonden."
@@ -72,7 +72,7 @@ msgid "Permalink to "
 msgstr "Permalink naar "
 
 #: archive.php:28
-#: index.php:20
+#: index.php:19
 #: search.php:16
 #: single.php:15
 #@ onecolumn
@@ -80,40 +80,38 @@ msgid "Posted on "
 msgstr "Geplaatst op "
 
 #: archive.php:28
-#: index.php:20
-#: single.php:15
 #@ onecolumn
 msgid "Posted by "
 msgstr "Geplaatst door "
 
 #: archive.php:40
 #: index.php:32
-#: search.php:31
+#: search.php:33
 #@ onecolumn
 msgid "&laquo; Older posts"
 msgstr "&laquo; Oudere berichten"
 
 #: archive.php:41
 #: index.php:33
-#: search.php:32
+#: search.php:34
 #@ onecolumn
 msgid "Newer posts &raquo;"
 msgstr "Nieuwere berichten &raquo;"
 
-#: functions.php:75
-#: functions.php:85
-#: functions.php:96
-#: functions.php:106
+#: functions.php:128
+#: functions.php:138
+#: functions.php:149
+#: functions.php:159
 #@ onecolumn
 msgid "Select widgets from the right-hand side."
 msgstr "Selecteer widgets van de rechterkant."
 
-#: functions.php:120
+#: functions.php:173
 #@ onecolumn
 msgid "Read More &raquo;"
 msgstr "Lees Meer &raquo;"
 
-#: functions.php:137
+#: functions.php:41
 #@ onecolumn
 msgid "Boats"
 msgstr "Boten"
@@ -124,7 +122,7 @@ msgid "Featured post"
 msgstr "Aanbevolen bericht"
 
 #: page.php:19
-#: single.php:28
+#: single.php:29
 #@ onecolumn
 msgid "Edit"
 msgstr "Bewerk"
@@ -135,7 +133,7 @@ msgstr "Bewerk"
 msgid "Search Results for: %s"
 msgstr "Zoekresultaat voor: %s"
 
-#: single.php:20
+#: single.php:21
 #@ onecolumn
 msgid "Posted in "
 msgstr "Geplaatst in "
@@ -155,17 +153,17 @@ msgstr "Nieuwere Reacties &raquo;"
 msgid "Comments are closed."
 msgstr "Reageren is niet mogelijk."
 
-#: functions.php:94
+#: functions.php:147
 #@ onecolumn
 msgid "Footer Sidebar Right"
 msgstr "Footer Sidebar Rechts"
 
-#: functions.php:104
+#: functions.php:157
 #@ onecolumn
 msgid "Footer Sidebar Left"
 msgstr "Footer Sidebar Links"
 
-#: functions.php:19
+#: functions.php:21
 #@ onecolumn
 msgid "Primary Navigation"
 msgstr "Hoofdmenu"
@@ -178,13 +176,41 @@ msgid_plural "%1$s responses on %2$s"
 msgstr[0] "1 reactie op %2$s"
 msgstr[1] "%1$s reacties op %2$s"
 
-#: functions.php:73
+#: functions.php:126
 #@ onecolumn
 msgid "Homepage Sidebar Right"
 msgstr "Homepage Sidebar Rechts"
 
-#: functions.php:83
+#: functions.php:136
 #@ onecolumn
 msgid "Homepage Sidebar Left"
 msgstr "Homepage Sidebar Links"
+
+#: functions.php:74
+#: functions.php:80
+#@ onecolumn
+msgid "Logo"
+msgstr "Logo"
+
+#: functions.php:76
+#@ onecolumn
+msgid "Upload a logo to replace blogname and description in header"
+msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
+
+#: index.php:19
+#: search.php:16
+#: single.php:15
+#@ onecolumn
+msgid "By "
+msgstr "Door "
+
+#: index.php:20
+#: search.php:17
+#: single.php:16
+#, php-format
+#@ onecolumn
+msgid "1 response"
+msgid_plural "%1$s responses"
+msgstr[0] "1 reactie"
+msgstr[1] "%1$s reacties"
 

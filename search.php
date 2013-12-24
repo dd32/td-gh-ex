@@ -13,7 +13,8 @@
 			
 	<?php while ( have_posts() ) : the_post(); ?>
 		<h3 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to ', 'onecolumn'); ?><?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
-		<h5 class="postmetadata"> <?php _e('Posted on ', 'onecolumn'); ?><?php echo get_the_date(); ?></h5>
+		<h5 class="postmetadata"><?php _e('Posted on ', 'onecolumn'); ?><a href="<?php the_permalink(); ?>"><?php echo get_the_date(); ?></a> | <?php _e('By ', 'onecolumn'); ?> 
+		<?php the_author_posts_link() ?> | <?php printf( _n( '1 response', '%1$s responses', get_comments_number(), 'onecolumn' ), number_format_i18n( get_comments_number() ) ); ?></h5>
 
 	<?php if ( has_post_thumbnail() ) { 
 		the_post_thumbnail(); 
