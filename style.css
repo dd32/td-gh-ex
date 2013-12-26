@@ -1,11 +1,11 @@
 /*
 Theme Name: DarkOrange
 Theme URI: http://www.guidovanderleest.nl/darkorange
-Version: 1.3
+Version: 1.4
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
-Description: DarkOrange is a free, basic, clean, minimalistic, responsive, mobile friendly, WordPress theme. Primary sidebar, homepage sidebar, 2 widget-area's in footer, custom header-image, full width page-template and dropdown navigation are included. Besides this no theme settings page, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
-Tags: one-column, two-columns, right-sidebar, fixed-width, flexible-width, custom-header, custom-menu, dark, white, gray, orange, translation-ready
+Description: DarkOrange is a free, basic, clean, minimalistic, responsive, mobile friendly, WordPress theme. Primary sidebar, homepage sidebar, 2 widget-area's in footer, custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settings page, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
+Tags: one-column, two-columns, right-sidebar, fixed-width, responsive-layout, fluid-layout, custom-background, custom-header, custom-menu, featured-images, dark, white, gray, orange, translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: darkorange
@@ -78,7 +78,7 @@ table {
 body {background: #f2f2f2; font-family: 'Open Sans', sans-serif; font-size:1em; color:#333; line-height:1.5em;}
 #container {max-width: 1200px; background:#fff; border: 0; margin: 10px auto 10px; padding:0; text-align: left; word-wrap: break-word;}
 #content {width: 55%; float:left; padding: 20px 0 40px 40px; word-wrap: break-word;}
-#content-full {max-width: 1120px; float:left; padding: 20px 40px 40px; word-wrap: break-word;}
+#content-full {width: 100%; float:left; padding: 20px 0 40px; word-wrap: break-word;}
 
 h1 {font-size:3.0em; line-height:1.2em;}
 h2 {font-size:2.5em; line-height:1.2em;}
@@ -116,18 +116,18 @@ select {max-width:100%;}
 
 /* HEADER */
 #pre-header {margin:0; padding:0;}
-#header {margin: 0 40px 20px; padding:0; background:none; border-bottom:1px solid #eee;}
+#header {margin: 0 40px 10px; padding:0 0 10px; background:none; border-bottom:1px solid #eee;}
 #header:after {content:''; display:block; clear:both;}
-#header .header-image {width: 56%; float:left; margin: 0 0 20px; padding:0 30px 0 0;}
+#header .header-image {width: 56%; float:left; margin: 0; padding:0 30px 0 0;}
 #header .header-img {width: 100%; height: auto; padding:10px; border:1px solid #eee; border-radius:5px;-moz-border-radius:5px;}
-#header .logo {padding: 20px 0;}
+#header .logo {width:100%; padding: 20px 0;}
 #header .logo h1 {text-align:left; font-weight:bold;}
 #header .logo h1 a:hover {text-decoration:none; color:#333;}
 #header .logo h4 {padding:10px 20px 0; text-align:center; font-style:italic;}
 
 
 /* HEADER MENU */
-.nav-head {background:#444; margin:0 0 10px; clear:both; padding:15px 20px; font-size:1em; line-height:1.2em; text-align:left;}
+.nav-head {background:#444; margin:0 0 10px; clear:both; padding:15px 20px; font-size:1em; text-align:left;}
 .nav-head select {display:none;}
 .nav-head ul {padding:0; margin: 0;}
 .nav-head ul li {list-style-type: none; display: inline-block; position: relative;}
@@ -136,13 +136,15 @@ select {max-width:100%;}
 
 
 /* HEADER SUBMENU */
-.nav-head ul ul {display:none; position: absolute; top: 100%; left: -5px; background: #333; z-index:999; }
-.nav-head ul ul ul {display:none; position: absolute; top: 30%; left: 100%; background: #555;}
-.nav-head ul ul a {width:10em;}
+.nav-head ul ul {display:none; position: absolute; top: 100%; padding: 0;}
+.nav-head ul ul ul {display:none; position: absolute; top: 30%; left: 100%;}
+.nav-head ul ul a {width:12em; background: #333; z-index:999;}
 .nav-head ul li:hover > ul {display:block;}
+.nav-head ul li ul li {margin:0;}
 
 
 /* PAGE */
+.article {padding: 0 40px 0;}
 .page-title {margin: 0; padding: 0 0 20px;}
 .pagelink {clear:both; margin:20px 0 10px;}
 .edit-link {display:block; clear:both; margin:10px 0; padding: 5px 20px; border:1px solid #ff6600; border-radius:5px;-moz-border-radius:5px;}
@@ -151,26 +153,29 @@ select {max-width:100%;}
 /* POST */
 .entry-title {margin: 0; padding: 0;}
 .entry-title a:hover {color:#333; text-decoration:none;}
-.excerpt {margin: 0 0 20px; padding:0 0 70px; border-bottom:1px solid #eee;}
+.excerpt {margin: 0 0 20px; padding:0 0 60px;}
 .sticky {text-align:center; clear:both; color:#333; background: #f2f2f2; margin: 10px 0 10px; padding:5px; border:1px solid #ff6600; border-radius:5px;-moz-border-radius:5px;}
-.postmetadata {margin:20px 0; padding:5px 20px; clear:both; background: #f2f2f2; border:1px solid #ccc; border-radius:5px;-moz-border-radius:5px;}
+.postmetadata {margin:20px 0; padding:5px 10px; clear:both; background: #f2f2f2; border:1px solid #ccc; border-radius:5px;-moz-border-radius:5px;}
 a.moretag {float:right; border:0; -webkit-appearance:none;	border-radius:5px;-moz-border-radius:5px; margin:25px 0 0; padding: 2px 5px; background: #333; color:#fff;}
 a.moretag:hover {background: #ff6600; text-decoration:none;}
 .post-nav {clear:both; padding: 5px 0;}
 .post-nav:after {content:''; display:block; clear:both;}
 .nav-prev {float:left;}
 .nav-next{float:right;}
-.post-home {width: 42%; float: left; margin: 0; padding:0;}
-.post-home.left {clear:left; margin:0 80px 0 0;}
+.post-home {width: 44%; float: left; margin:0 0 20px; padding:12px; border:1px solid #eee; border-radius:5px;-moz-border-radius:5px;}
+.post-home.left {clear:left; margin:0 20px 20px 0;}
 
 
 /* IMAGE AND VIDEO */
 embed, iframe, object, video {max-width:100%;}
 img {max-width:100%; height:auto;}
 
+img.alignright {float:right; margin:0 0 1em 1em;}
+img.alignleft {float:left; margin:0 1em 1em 0;}
+img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-bottom:1em;}
 .alignright {float:right; margin:0 0 1em 1em;}
 .alignleft {float:left; margin:0 1em 1em 0;}
-.aligncenter {display: block; margin-left: auto; margin-right: auto;}
+.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-bottom:1em;}
 
 .wp-caption {background:none; max-width: 100%;}
 .wp-caption-text {text-align:center; word-wrap: break-word;}
@@ -187,19 +192,19 @@ img {max-width:100%; height:auto;}
 
 
 /* COMMENTS */
-#comments {width:95%; clear:both; word-wrap: break-word;}
-.comment {padding: 0 0 20px;}
-.comment-list {list-style:none; padding:20px; margin:20px 0; background:#f2f2f2; border:1px solid #ccc; border-radius:5px;-moz-border-radius:5px; font-weight:normal;}
-#comments .children {list-style:none; background: #f8f8f8; padding:20px;}
-.no-comments {clear:both; margin:20px 0; padding:5px; background: #f2f2f2; border:1px solid #eee; border-radius:5px;-moz-border-radius:5px;}
+#comments {clear:both; word-wrap: break-word;}
+#comments .comment-list {list-style:none; background:#f2f2f2; border:1px solid #ccc; font-weight:normal; margin: 20px 0; padding: 20px;}
+#comments .children {list-style:none; background: #f8f8f8; padding: 20px;}
+.no-comments {clear:both; margin:20px 0; padding:5px 10px; background: #f2f2f2; border:1px solid #ccc;}
 .comment-notes, .form-allowed-tags {font-size:0.75em; padding:10px 0;}
 .comments-title, .comment-reply-title {font-size: 1.5em;} 
-.bypostauthor {color:#333;}
+.bypostauthor {color:#000;}
 
 #respond {padding:10px 0; clear:both;}
 #commentform label {margin: 0 0 10px; font-family: 'Open Sans', sans-serif; line-height:1.5em; font-size:1em; display:block;}
 #commentform textarea, #commentform input {width: 90%; padding:5px;}
 #commentform input[type="submit"]{width:9em; margin:10px 0 0;} 
+
 
 
 /* SIDEBAR AND WIDGETS */
@@ -210,7 +215,7 @@ img {max-width:100%; height:auto;}
 
 
 /* HOMEPAGE SIDEBAR */
-#header .homepage {width: 35%; float: right; margin:0 0 20px; padding:0; word-wrap: break-word;}
+#header .homepage {width: 35%; float: right; margin:0; padding:0; word-wrap: break-word;}
 
 
 /* FOOTER */
@@ -224,20 +229,21 @@ img {max-width:100%; height:auto;}
 
 
 /* Mobile */
-@media screen and (max-width: 600px) { 
+@media screen and (max-width: 767px) { 
 	body {font-size:1em; line-height:1.2em;}
 	#container {width: 94%; padding:10px; margin:0;}
 	#content, #content-full {width:100%; margin:0; padding:15px 0 15px; border:0;}
 	#header {margin:0; padding:0 10px; border-bottom:1px solid #ccc;}
-	#header .logo {padding:0; margin: 0 0 10px;}
+	#header .logo {padding:0; margin: 0 0 10px; text-align:center;}
 	#header .logo h1, #header .logo h4 {text-align:center; padding:0; margin:0;}
 	#header .header-image {width:100%; border:0; padding:0; float:left;}
 	#header .header-img {width: 98%; height: auto; padding:3px; margin:0 auto 0; border:1px solid #ccc;}
 	#header .homepage {width:100%; border:0; padding:0; float:left;} 
-	.post-home, .post-home.left {width: 100%; float: left; margin:0;}
+	.article {padding:0;}
+	.post-home, .post-home.left {width: 100%; float: left; margin:0; padding:0; border:0;}
 	#sidebar {width:100%; border:0; padding:15px 0 0; float:left;}
-	.widget {padding:0 0 5px; margin: 0 0 5px; border-bottom: 1px solid #ccc;}
-	.widgettitle {padding:0; margin:0;}
+	.widget {padding:0 0 5px; margin: 0 0 5px; border:0;}
+	.widgettitle {padding:0; margin:10px 0;}
 	#footer {width:100%;}
 	#footer .widget {border:0; margin:10px 0; padding:0;}
 	#footer .widgettitle {padding:0; margin:0 0 10px;}

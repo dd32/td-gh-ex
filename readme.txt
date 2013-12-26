@@ -17,13 +17,31 @@ I recommend to display an even amount of posts on the homepage, because posts ar
 HOW TO CHANGE HEADER IMAGE
 ==========================
 You can change the header-image via WordPress Dashboard > Appearance > Header. I advice you to use a header-image of 650px wide and 450px high. 
-The default header (boats.jpg) is from my private collection and is licensed under the GPL.
 
 
 HOW TO SET MENU
 ===============
 DarkOrange offers a menu that can contain subpages (2 levels deep).
-You can set menu via WordPress Dashboard > Appearance > Menu's and select the menu you want.
+You can create and set menu via WordPress Dashboard > Appearance > Menu's.
+
+
+HOW TO SET LOGO
+===============
+You can add your own logo in stead of blogname and description via  WordPress Dashboard > Appearance > Customize.
+
+
+HOW TO CHANGE BACKGROUND
+========================
+You can add your own background(image) via  WordPress Dashboard > Appearance > Background.
+
+
+THEME IMAGES
+============
+Item: boats.jpg
+Copyright author: Guido van der Leest
+Author URI: http://www.guidovanderleest.nl
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 
 TRANSLATION

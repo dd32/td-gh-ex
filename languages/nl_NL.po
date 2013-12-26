@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: DarkOrange v1.2\n"
+"Project-Id-Version: DarkOrange v1.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-11-24 11:11:04+0000\n"
+"PO-Revision-Date: 2013-12-24 22:37:03+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,15 +21,15 @@ msgstr ""
 "X-Textdomain-Support: yes"
 
 #: 404.php:9
-#: search.php:25
+#: search.php:26
 #@ darkorange
 msgid "Nothing Found"
 msgstr "Niets gevonden"
 
 #: 404.php:10
 #: archive.php:36
-#: index.php:35
-#: search.php:26
+#: index.php:36
+#: search.php:27
 #@ darkorange
 msgid "Sorry, no posts matched your criteria."
 msgstr "Sorry, er zijn helaas geen berichten gevonden."
@@ -65,7 +65,7 @@ msgid "Tag Archives"
 msgstr "Tag Archieven"
 
 #: archive.php:27
-#: index.php:22
+#: index.php:23
 #: search.php:15
 #@ darkorange
 msgid "Permalink to "
@@ -80,52 +80,50 @@ msgid "Posted on "
 msgstr "Geplaatst op "
 
 #: archive.php:28
-#: index.php:24
-#: single.php:15
 #@ darkorange
 msgid "Posted by "
 msgstr "Geplaatst door "
 
 #: archive.php:40
-#: index.php:39
-#: search.php:32
+#: index.php:40
+#: search.php:33
 #@ darkorange
 msgid "&laquo; Older posts"
 msgstr "&laquo; Oudere berichten"
 
 #: archive.php:41
-#: index.php:40
-#: search.php:33
+#: index.php:41
+#: search.php:34
 #@ darkorange
 msgid "Newer posts &raquo;"
 msgstr "Nieuwere berichten &raquo;"
 
-#: functions.php:88
+#: functions.php:113
 #@ darkorange
 msgid "Primary Sidebar"
 msgstr "Hoofd Sidebar"
 
-#: functions.php:90
-#: functions.php:100
-#: functions.php:110
-#: functions.php:120
+#: functions.php:115
+#: functions.php:125
+#: functions.php:135
+#: functions.php:145
 #@ darkorange
 msgid "Select widgets from the right-hand side."
 msgstr "Selecteer widgets van de rechterkant."
 
-#: functions.php:134
+#: functions.php:159
 #@ darkorange
 msgid "Read More &raquo;"
 msgstr "Lees Meer &raquo;"
 
-#: functions.php:151
+#: functions.php:176
 #@ darkorange
 msgid "Boats"
 msgstr "Boten"
 
-#: page-full.php:20
+#: page-full.php:21
 #: page.php:19
-#: single.php:28
+#: single.php:29
 #@ darkorange
 msgid "Edit"
 msgstr "Bewerk"
@@ -136,7 +134,7 @@ msgstr "Bewerk"
 msgid "Search Results for: %s"
 msgstr "Zoekresultaat voor: %s"
 
-#: single.php:20
+#: single.php:21
 #@ darkorange
 msgid "Posted in "
 msgstr "Geplaatst in "
@@ -156,12 +154,12 @@ msgstr "Nieuwere Reacties &raquo;"
 msgid "Comments are closed."
 msgstr "Reageren is niet mogelijk."
 
-#: functions.php:108
+#: functions.php:133
 #@ darkorange
 msgid "Footer Sidebar Right"
 msgstr "Footer Sidebar Rechts"
 
-#: functions.php:118
+#: functions.php:143
 #@ darkorange
 msgid "Footer Sidebar Left"
 msgstr "Footer Sidebar Links"
@@ -179,23 +177,41 @@ msgid_plural "%1$s responses on %2$s"
 msgstr[0] "1 reactie op %2$s"
 msgstr[1] "%1$s reacties op %2$s"
 
-#: functions.php:98
+#: functions.php:123
 #@ darkorange
 msgid "Homepage Sidebar"
 msgstr "Homepage Sidebar"
 
-#: index.php:18
+#: index.php:19
 #@ darkorange
 msgid "Featured post"
 msgstr "Aanbevolen bericht"
 
-#: header.php:48
+#: functions.php:60
+#: functions.php:66
 #@ darkorange
-msgid "Please add a header-image via your Dashboard"
-msgstr "Voeg svp header-afbeelding toe via je Dashboard"
+msgid "Logo"
+msgstr "Logo"
 
-#: header.php:59
+#: functions.php:62
 #@ darkorange
-msgid "Please add a widget via your Dashboard"
-msgstr "Voeg svp widget toe via je Dashboard"
+msgid "Upload a logo to replace blogname and description in header"
+msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
+
+#: index.php:24
+#: search.php:16
+#: single.php:15
+#@ darkorange
+msgid "By "
+msgstr "Door "
+
+#: index.php:25
+#: search.php:17
+#: single.php:16
+#, php-format
+#@ darkorange
+msgid "1 response"
+msgid_plural "%1$s responses"
+msgstr[0] "1 reactie"
+msgstr[1] "%1$s reacties"
 

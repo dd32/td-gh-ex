@@ -34,19 +34,20 @@
 
 <div id="header">
 
-	<div class="logo">
-		<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> </h1>
-		<h4><?php bloginfo('description'); ?></h4> 
+	<div class="logo"> 
+		<?php if ( get_theme_mod( 'darkorange_logo' ) ) : ?> 
+			<a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'><img src='<?php echo esc_url( get_theme_mod( 'darkorange_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'></a> 
+		<?php else : ?> 
+			<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> </h1>
+			<h4><?php bloginfo('description'); ?></h4> 
+		<?php endif; ?>
 	</div>
 
 	<div class="header-image"> 
 		<?php if ( is_home() || is_front_page() ) {?> 
 		<?php if ( get_header_image() ) {?> 
 				<img src="<?php echo get_header_image(); ?>" class="header-img" alt="" />
-		<?php } 
-			else{ 
-				echo __( 'Please add a header-image via your Dashboard', 'darkorange' );
-			} ?>
+		<?php } ?>
 		<?php } ?> 
 	</div>
 
@@ -54,10 +55,7 @@
 		<?php if ( is_home() || is_front_page() ) {?> 
 		<?php if ( is_active_sidebar( 'homepage' ) ) {?> 
 			<?php dynamic_sidebar( 'homepage' ); ?>
-		<?php } 
-		else{ 
-			echo __( 'Please add a widget via your Dashboard', 'darkorange' );
-		} ?>
+		<?php } ?>
  		<?php } ?> 
 
 	</div>

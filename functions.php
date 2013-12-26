@@ -5,7 +5,7 @@
 
 // Set width without the padding
 if ( ! isset( $content_width ) )
-	$content_width = 660;
+	$content_width = 500;
 
 
 // Sets up theme defaults and registers various WordPress features that DarkOrange supports
@@ -33,7 +33,13 @@ if ( ! isset( $content_width ) )
 		add_theme_support( 'post-thumbnails' ); 
 
 	// Resize mode thumbnails
-		set_post_thumbnail_size( 350, 200 ); 
+		set_post_thumbnail_size( 500, 400 ); 
+
+
+	// Background color
+		$args = array( 'default-color' => 'f2f2f2', 
+		); 
+		add_theme_support( 'custom-background', $args ); 
 
 
 	// This feature adds RSS feed links to html head 
@@ -45,6 +51,25 @@ if ( ! isset( $content_width ) )
 
 	}
 	add_action( 'after_setup_theme', 'darkorange_setup' ); 
+
+
+// Theme Customizer (option to add logo)
+	function darkorange_theme_customizer( $wp_customize ) { 
+
+		$wp_customize->add_section( 'darkorange_logo_section' , array( 
+		'title' => __( 'Logo', 'darkorange' ), 
+		'priority' => 30, 
+		'description' => __( 'Upload a logo to replace blogname and description in header', 'darkorange' ),
+		) );
+		$wp_customize->add_setting( 'darkorange_logo' );
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'darkorange_logo', array( 
+		'label' => __( 'Logo', 'darkorange' ), 
+		'section' => 'darkorange_logo_section', 
+		'settings' => 'darkorange_logo', 
+		) ) );
+
+	} 
+	add_action('customize_register', 'darkorange_theme_customizer');
 
 
 
