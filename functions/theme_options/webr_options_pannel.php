@@ -126,7 +126,7 @@
 				<a href="#busiprof-option-homepage"  class="nav-tab nav-tab-active" id="busiprof-option-homepage-tab"><?php _e("Home Page",'busi_prof');?></a>
 				<a href="#busiprof-option-homeproject"  class="nav-tab"  id="busiprof-option-homeproject-tab"><?php _e("Home Project",'busi_prof');?></a>
 				<a href="#busiprof-option-testimonials" class="nav-tab" id="busiprof-option-testimonials-tab"><?php _e("Home Testmonials",'busi_prof')?></a>
-				<!----<a href="#busiprof-option-contactform" class="nav-tab" id="busiprof-option-contactform-tab"><?php // _e("Contact Form",'busi_prof');?></a>---->
+				<a href="#busiprof-option-footer" class="nav-tab" id="busiprof-option--tab"><?php _e("Footer Customisation",'busi_prof');?></a>
 				<a href="#busiprof-option-help" class="nav-tab" id="busiprof-option-help-tab"><?php _e("Help and Support",'busi_prof');?></a>
 			</h2>
 			<div id="busiprof_optionsframework-metabox" class="metabox-holder">
@@ -146,10 +146,10 @@
 							<h3><?php _e("Home Page Testimonials",'busi_prof');?></h3><br>
 							<?php require_once('home_page_testimonials.php')?>
 						</div>
-						<!---<div class="postbox group" style="display: none; background:white" id="busiprof-option-contactform"  >
-							<h3><?php //_e("Contact Form",'busi_prof');?></h3><br>
-							<?php //require_once('home_page_contact_form.php')?>
-						</div>--->
+						<div class="postbox group" style="display: none; background:white" id="busiprof-option-footer"  >
+							<h3><?php _e("Footer Customisation",'busi_prof');?></h3><br>
+							<?php require_once('footer_customisation.php')?>
+						</div>
 						<div class="postbox group" style="display: none; background:white" id="busiprof-option-help"  >
 							<h3><?php _e("Help and Support",'busi_prof');?></h3><br>
 							<?php require_once('help.php')?>

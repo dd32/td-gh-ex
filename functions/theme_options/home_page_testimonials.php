@@ -28,7 +28,7 @@
 			$current_options['recent_blog_title'] = sanitize_text_field($_POST['recent_blog_title']);
 			$current_options['recent_blog_description'] = sanitize_text_field($_POST['recent_blog_description']);
 			
-			update_option('busiprof_theme_options' , $current_options);
+			update_option('busiprof_theme_options' ,stripslashes_deep($current_options));
 		}
      }
 	if($_POST['busiprof_settings_save_3'] == 2) 
@@ -80,13 +80,13 @@
 					<span class="tooltip"><?php  _e('Enter testimominals','busi_prof');?></span></span>
 				</span>
 			</p>
-			<p><h4 class="heading"><?php _e('Testimonials name','busi_prof');?></h4>
+			<p><h4 class="heading"><?php _e('Testimonials By','busi_prof');?></h4>
 				<input class="inputwidth" type="text" value="<?php if($current_options['testimonials_name_one']!='') { echo esc_attr($current_options['testimonials_name_one']); } ?>" id="testimonials_name_one" name="testimonials_name_one" size="36" />
 				<span class="icon help">
-					<span class="tooltip"><?php  _e('Enter Testimonials name','busi_prof');?></span></span>
+					<span class="tooltip"><?php  _e('Testimonials By','busi_prof');?></span></span>
 				</span>
 			</p>
-			<p><h4 class="heading"><?php _e('Testimonials Designation','busi_prof');?></h4>
+			<p><h4 class="heading"><?php _e('Testimonials Author Designation','busi_prof');?></h4>
 				<input class="inputwidth" type="text" value="<?php if($current_options['testimonials_designation_one']!='') { echo esc_attr($current_options['testimonials_designation_one']); } ?>" id="testimonials_designation_one" name="testimonials_designation_one" size="36" />
 				<span class="icon help">
 					<span class="tooltip"><?php  _e('Enter Testimonials designation','busi_prof');?></span></span>
@@ -113,13 +113,13 @@
 					<span class="tooltip"><?php  _e('Enter Testimonials descriptions','busi_prof');?></span></span>
 				</span>
 			</p>
-			<p><h4 class="heading"><?php _e('Testimonials name','busi_prof');?></h4>
+			<p><h4 class="heading"><?php _e('Testimonials By','busi_prof');?></h4>
 				<input class="inputwidth" type="text" value="<?php if($current_options['testimonials_name_two']!='') { echo esc_attr($current_options['testimonials_name_two']); } ?>" id="testimonials_name_two" name="testimonials_name_two" size="36" />
 				<span class="icon help">
-					<span class="tooltip"><?php  _e('Enter testimonials name','busi_prof');?></span></span>
+					<span class="tooltip"><?php  _e('Testimonials By','busi_prof');?></span></span>
 				</span>
 			</p>
-			<p><h4 class="heading"><?php _e('Testimonials Designation','busi_prof');?></h4>
+			<p><h4 class="heading"><?php _e('Testimonials Author Designation','busi_prof');?></h4>
 				<input class="inputwidth" type="text" value="<?php if($current_options['testimonials_designation_two']!='') { echo esc_attr($current_options['testimonials_designation_two']); } ?>" id="testimonials_designation_two" name="testimonials_designation_two" size="36" />
 				<span class="icon help">
 					<span class="tooltip"><?php  _e('Enter testimonials designations','busi_prof');?></span></span>

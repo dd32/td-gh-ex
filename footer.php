@@ -63,8 +63,7 @@
 					<div class="span8">
 					<?php _e(' Powered by ', 'busi_prof'); ?>
 					<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'busi_prof' ) ); ?>"><?php _e('WordPress', 'busi_prof'); ?></a>
-					<?php bloginfo(); ?> <?php echo date( 'Y' ); ?>. <?php _e( 'Designed by', 'busi_prof' ); ?> 
-					<a href="<?php echo esc_url( __( 'http://www.webriti.com/','busi_prof' ) ); ?>"><?php _e( 'Webriti ', 'busi_prof' ); ?></a>
+					<?php echo $current_options['busiprof_copy_rights_text'] ; ?><?php if($current_options['footer_designedby'] != '' ) { ?>&nbsp;<a target="_blank" rel="nofollow" href="<?php echo $current_options['footer_url'] ?>"><?php echo $current_options['footer_designedby'] ?></a><?php } ?>
 					</div>
 				</div>
 		   </div>

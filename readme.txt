@@ -57,7 +57,9 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
-
+@version 1.3.6
+1. Magic Quotes Issue Resolved.
+2. NoFollow Added in footer.php
 @version 1.3.5
 1) Favicon issue: We have removed the default favicon.
 2) Removed the code from Header

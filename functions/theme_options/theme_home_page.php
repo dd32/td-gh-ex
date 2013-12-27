@@ -45,7 +45,7 @@ if(isset($_POST['busiprof_settings_save_1']))
 			$current_options['service_title_four'] = sanitize_text_field($_POST['service_title_four']);
 			$current_options['service_text_four'] = sanitize_text_field($_POST['service_text_four']);
 		
-		update_option('busiprof_theme_options' , $current_options);
+		update_option('busiprof_theme_options' , stripslashes_deep($current_options));
 		}
      }	
 	 if($_POST['busiprof_settings_save_1'] == 2) 
@@ -174,13 +174,13 @@ if(isset($_POST['busiprof_settings_save_1']))
 			<p><h4 class="heading"><?php _e('More Service Button text','busi_prof');?></h4>				
 				<input class="inputwidth" type="text" value="<?php if($current_options['service_button_value']!='') { echo esc_attr($current_options['service_button_value']); } ?>" id="service_button_value" name="service_button_value" size="36" />
 				<span class="icon help">
-					<span class="tooltip"><?php  _e('Enter the Service Heading Two','busi_prof');?></span>
+					<span class="tooltip"><?php  _e('Enter the Title for More Service Button','busi_prof');?></span>
 				</span>
 			</p>
 			<p><h4 class="heading"><?php _e('More Service Button Link','busi_prof');?></h4>				
 				<input class="inputwidth" type="text" value="<?php if($current_options['service_link_btn']!='') { echo esc_attr($current_options['service_link_btn']); } ?>" id="service_link_btn" name="service_link_btn" size="36" />
 				<span class="icon help">
-					<span class="tooltip"><?php  _e('Enter the Service Heading Two','busi_prof');?></span>
+					<span class="tooltip"><?php  _e('Enter the URL for More Services button','busi_prof');?></span>
 				</span>
 			</p>
 		</div>	
@@ -195,7 +195,7 @@ if(isset($_POST['busiprof_settings_save_1']))
 				<input class="inputwidth" type="text" value="<?php if($current_options['service_icon_one']!='') { echo esc_attr($current_options['service_icon_one']); } ?>" id="service_icon_one" name="service_icon_one" size="36" />
 				<input  type="button" id="upload_button" value="Select Image" class="upload_image_button"  />
 				<span class="icon help">
-					<span class="tooltip"><?php  _e('Enter Description for Tagline','busi_prof');?></span></span>
+					<span class="tooltip"><?php  _e('Insert Icon for Service One [35X34 px]','busi_prof');?></span></span>
 				</span>
 			</p>
 				
@@ -224,7 +224,7 @@ if(isset($_POST['busiprof_settings_save_1']))
 				<input class="inputwidth" type="text" value="<?php if($current_options['service_icon_two']!='') { echo esc_attr($current_options['service_icon_two']); } ?>" id="service_icon_two" name="service_icon_two" size="36" />
 				<input  type="button" id="upload_button" value="Select Image" class="upload_image_button"  />
 				<span class="icon help">
-					<span class="tooltip"><?php  _e('Enter the service heading two','busi_prof');?></span></span>
+					<span class="tooltip"><?php  _e('Insert Icon for Service Two [35X34 px]','busi_prof');?></span></span>
 				</span>
 			</p>
 				
@@ -252,7 +252,7 @@ if(isset($_POST['busiprof_settings_save_1']))
 				<input class="inputwidth" type="text" value="<?php if($current_options['service_icon_three']!='') { echo esc_attr($current_options['service_icon_three']); } ?>" id="service_icon_three" name="service_icon_three" size="36" />
 				<input  type="button" id="upload_button" value="Select Image" class="upload_image_button"  />
 				<span class="icon help">
-					<span class="tooltip"><?php  _e('Enter the service heading three','busi_prof');?></span></span>
+					<span class="tooltip"><?php  _e('Insert Icon for Service Three [35X34 px]','busi_prof');?></span></span>
 				</span>
 			</p>
 				
@@ -281,7 +281,7 @@ if(isset($_POST['busiprof_settings_save_1']))
 				<input class="inputwidth" type="text" value="<?php if($current_options['service_icon_four']!='') { echo esc_attr($current_options['service_icon_four']); } ?>" id="service_icon_four" name="service_icon_four" size="36" />
 				<input  type="button" id="upload_button" value="Select Image" class="upload_image_button"  />
 				<span class="icon help">
-					<span class="tooltip"><?php  _e('Enter the serive heading four','busi_prof');?></span></span>
+					<span class="tooltip"><?php  _e('Insert Icon for Service Four [35X34 px]','busi_prof');?></span></span>
 				</span>
 			</p>
 				
