@@ -58,7 +58,7 @@ class TC_sidebar {
         return;
 
       //gets the global layout settings
-      $global_layout        = TC_init::$instance -> global_layout;
+      $global_layout        = apply_filters( 'tc_global_layout' , TC_init::$instance -> global_layout );
       $sidebar_layout       = $global_layout[$screen_layout];
 
       //defines the sidebar wrapper class
@@ -81,7 +81,7 @@ class TC_sidebar {
 
       <?php
       $html = ob_get_contents();
-      ob_end_clean();
+      if ($html) ob_end_clean();
       echo apply_filters( 'tc_sidebar_display', $html, $sidebar_layout, $position );
     }//end of function
 
@@ -115,7 +115,7 @@ class TC_sidebar {
 
       <?php
       $html = ob_get_contents();
-      ob_end_clean();
+      if ($html) ob_end_clean();
       echo apply_filters( 'tc_social_in_sidebar', $html );
     }
 

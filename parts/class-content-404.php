@@ -35,7 +35,7 @@ class TC_404 {
         if ( !is_404() )
             return;
 
-        $content_404    = TC_init::$instance -> content_404;
+        $content_404    = apply_filters( 'tc_404', TC_init::$instance -> content_404 );
 
         echo apply_filters( 'tc_404_content',
             sprintf('<div class="%1$s"><div class="entry-content %2$s">%3$s</div>%4$s</div>',

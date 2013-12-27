@@ -43,7 +43,7 @@ class TC_featured_pages {
           return;
 
     		//gets the featured pages array and sets the fp layout
-    		$fp_ids                         = TC_init::$instance -> fp_ids;
+    		$fp_ids                         = apply_filters( 'tc_featured_pages_ids' , TC_init::$instance -> fp_ids);
         $fp_nb                          = count($fp_ids);
         $fp_per_row                     = apply_filters( 'tc_fp_per_line', 3 );
         
@@ -96,7 +96,7 @@ class TC_featured_pages {
 
        <?php
         $html = ob_get_contents();
-        ob_end_clean();
+        if ($html) ob_end_clean();
         echo apply_filters( 'tc_fp_block_display' , $html, $args );
 	   }
 
@@ -223,30 +223,38 @@ class TC_featured_pages {
                    $fp_img
                 );
               }//end if image enabled check
-          
-              printf('<%1$s>%2$s</%1$s>',
-                apply_filters( 'tc_fp_title_tag' , 'h2' ),
-                $featured_page_title
-                );
+              
 
-              printf('<p class="fp-text-%1$s">%2$s</p>',
-                $fp_single_id,
-                $text
+              //title block
+              $tc_fp_title_block  = sprintf('<%1$s>%2$s</%1$s>',
+                                  apply_filters( 'tc_fp_title_tag' , 'h2' ),
+                                  $featured_page_title
               );
+              echo apply_filters( 'tc_fp_title_block' , $tc_fp_title_block , $featured_page_title );
 
-              printf('<a class="%1$s" href="%2$s" title="%3$s">%4$s</a>',
-                apply_filters( 'tc_fp_button_class' , 'btn btn-primary fp-button', $fp_single_id ),
-                $featured_page_link,
-                $featured_page_title,
-                apply_filters( 'tc_fp_button_text' , esc_attr( tc__f( '__get_option' , 'tc_featured_page_button_text') ) , $fp_single_id )
+              //text block
+              $tc_fp_text_block   = sprintf('<p class="fp-text-%1$s">%2$s</p>',
+                                  $fp_single_id,
+                                  $text
               );
+              echo apply_filters( 'tc_fp_text_block' , $tc_fp_text_block , $fp_single_id , $text);
+
+              //button block
+              $tc_fp_button_block = sprintf('<a class="%1$s" href="%2$s" title="%3$s">%4$s</a>',
+                                  apply_filters( 'tc_fp_button_class' , 'btn btn-primary fp-button', $fp_single_id ),
+                                  $featured_page_link,
+                                  $featured_page_title,
+                                  apply_filters( 'tc_fp_button_text' , esc_attr( tc__f( '__get_option' , 'tc_featured_page_button_text') ) , $fp_single_id )
+              );
+              echo apply_filters( 'tc_fp_button_block' , $tc_fp_button_block , $featured_page_link , $featured_page_title , $fp_single_id );
+
             ?>
 
           </div><!-- /.widget-front -->
           
           <?php
           $html = ob_get_contents();
-          ob_end_clean();
+          if ($html) ob_end_clean();
           return apply_filters( 'tc_fp_single_display' , $html, $fp_single_id, $show_img, $fp_img, $featured_page_link, $featured_page_title, $text );
       }//end of function
 

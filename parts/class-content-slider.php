@@ -39,7 +39,7 @@ class TC_slider {
 
     //returns the default slider if requested
     if ( 'demo' == $slider_name_id )
-      return TC_init::$instance -> default_slides;
+      return apply_filters( 'tc_default_slides', TC_init::$instance -> default_slides );
 
     //if not demo, we get slides from options
     $all_sliders              = tc__f('__get_option' , 'tc_sliders');
@@ -259,7 +259,7 @@ class TC_slider {
             
       <?php
       $html = ob_get_contents();
-      ob_end_clean();
+      if ($html) ob_end_clean();
       echo apply_filters( 'tc_slider_display', $html );
     }
 

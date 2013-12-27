@@ -12,7 +12,7 @@
 * @license      http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 
-class TC_ressources {
+class TC_resources {
 
     //Access any method or var of the class with classname::$instance -> var or method():
     static $instance;
@@ -112,15 +112,15 @@ class TC_ressources {
 		wp_localize_script( 
 	        'tc-scripts', 
 	        'TCParams', 
-		        apply_filters('tc_js_params' , array(
-			          	'FancyBoxState' 		=> $tc_fancybox,
-			          	'FancyBoxAutoscale' 	=> $autoscale,
-			          	'SliderName' 			=> $js_slidername,
-			          	'SliderDelay' 			=> $js_sliderdelay,
-			          	'SliderHover'			=> $sliderhover,
-			          	'SmoothScroll'			=> $smooth_scroll ? 'easeOutExpo' : 'linear'
-		        	)
-		       	)//end of filter
+	        apply_filters('tc_js_front_end_params' , array(
+		          	'FancyBoxState' 		=> $tc_fancybox,
+		          	'FancyBoxAutoscale' 	=> $autoscale,
+		          	'SliderName' 			=> $js_slidername,
+		          	'SliderDelay' 			=> $js_sliderdelay,
+		          	'SliderHover'			=> $sliderhover,
+		          	'SmoothScroll'			=> $smooth_scroll ? 'easeOutExpo' : 'linear'
+	        	)
+	       	)//end of filter
          );
 
 

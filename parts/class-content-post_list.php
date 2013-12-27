@@ -51,7 +51,7 @@ class TC_post_list {
       $thumb_data                     = $this -> tc_get_post_list_thumbnail();
 
       //gets the filtered post list layout
-      $layout                         = TC_init::$instance -> post_list_layout;
+      $layout                         = apply_filters( 'tc_post_list_layout', TC_init::$instance -> post_list_layout );
 
       //when do we display the thumbnail ?
       //1) there must be a thumbnail
@@ -240,12 +240,12 @@ class TC_post_list {
           return;
 
         //handles the case when the image dimensions are too small
-        $thumb_size                 = TC_init::$instance -> tc_thumb_size;
+        $thumb_size                 = apply_filters( 'tc_thumb_size' , TC_init::$instance -> tc_thumb_size );
         $no_effect_class            = ( isset($thumb_data[0]) && isset($thumb_data[1]) && ( $thumb_data[1] < $thumb_size['width']) ) ? 'no-effect' : '';
         $no_effect_class            = apply_filters( 'tc_no_round_thumb', $no_effect_class );
 
         //default hover effect
-        $thumb_wrapper              = sprintf('<div class="thumb-wrapper %1$s"><a class="round-div %1$s" href="%2$s" title="%3$s"></a><div class="round-div"></div>%4$s</div>',
+        $thumb_wrapper              = sprintf('<div class="thumb-wrapper %1$s"><div class="round-div"></div><a class="round-div %1$s" href="%2$s" title="%3$s"></a>%4$s</div>',
                                       $no_effect_class,
                                       get_permalink( get_the_ID() ),
                                       get_the_title( get_the_ID() ),

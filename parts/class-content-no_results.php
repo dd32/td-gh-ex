@@ -35,7 +35,7 @@ class TC_no_results {
         if ( !is_search() || (is_search() && 0 != $wp_query -> post_count) )
             return;
         
-        $content_no_results    = TC_init::$instance -> content_no_results;
+        $content_no_results    = apply_filters( 'tc_no_results', TC_init::$instance -> content_no_results );
 
         echo apply_filters( 'tc_no_result_content',
             sprintf('<div class="%1$s"><div class="entry-content %2$s">%3$s</div>%4$s</div>',

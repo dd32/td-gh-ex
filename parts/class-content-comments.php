@@ -78,27 +78,24 @@ class TC_comments {
       * @since Customizr 3.0
      */
       function tc_comment_list() {
-        
-      	
-
         ob_start();
           ?>
     
-        		<ul class="commentlist">
-        			<?php wp_list_comments( array( 'callback' => array ( $this , 'tc_comment_callback' ) , 'style' => 'ul' ) ); ?>
-        		</ul><!-- .commentlist -->
+            <ul class="commentlist">
+              <?php wp_list_comments( array( 'callback' => array ( $this , 'tc_comment_callback' ) , 'style' => 'ul' ) ); ?>
+            </ul><!-- .commentlist -->
 
-      		<?php
+          <?php
 
         $html = ob_get_contents();
-        ob_end_clean();
+        if ($html) ob_end_clean();
         echo apply_filters( 'tc_comment_list' , $html );
-    	}
+      }
 
 
 
 
-  	 /**
+     /**
       * Template for comments and pingbacks.
       *
       *
@@ -113,6 +110,8 @@ class TC_comments {
       //get user defined max comment depth
       $max_comments_depth = get_option('thread_comments_depth');
       $max_comments_depth = isset( $max_comments_depth ) ? $max_comments_depth : 5;
+
+      ob_start();
 
       switch ( $comment->comment_type ) :
         case 'pingback' :
@@ -134,6 +133,9 @@ class TC_comments {
           <?php
             //when do we display the comment content?
             $tc_show_comment_content = 1 == get_option( 'thread_comments' ) && ($depth < $max_comments_depth) && comments_open();
+
+            //gets the comment text => filter parameter!
+            $comment_text = get_comment_text( $comment->comment_ID , $args );
 
             printf('<article class="comment"><div class="%1$s"><div class="%2$s">%3$s</div><div class="%4$s">%5$s %6$s %7$s %8$s</div></div></article>',
                 apply_filters( 'tc_comment_wrapper_class', 'row-fluid' ),
@@ -167,9 +169,9 @@ class TC_comments {
                 ( '0' == $comment->comment_approved ) ? sprintf('<p class="comment-awaiting-moderation">%1$s</p>',
                   __( 'Your comment is awaiting moderation.' , 'customizr' )                                  
                   ) : '',
-
+               
                 sprintf('<section class="comment-content comment">%1$s</section>',
-                  get_comment_text()
+                  apply_filters( 'comment_text', $comment_text, $comment, $args )
                   )
               );//end printf
           ?>
@@ -177,6 +179,10 @@ class TC_comments {
       <?php
         break;
       endswitch; // end comment_type check
+
+      $html = ob_get_contents();
+      if ($html) ob_end_clean();
+      echo apply_filters( 'tc_comment_callback' , $html, $comment, $args, $depth, $max_comments_depth );
     }
 
 

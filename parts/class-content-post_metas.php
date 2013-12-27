@@ -101,15 +101,13 @@ class TC_post_metas {
                     $author
                 );
             }//endif attachment
-
-            
             ?>
 
         </div><!-- .entry-meta -->
 
         <?php
         $html = ob_get_contents();
-        ob_end_clean();
+        if ($html) ob_end_clean();
         echo apply_filters( 'tc_post_metas', $html );
     }
 

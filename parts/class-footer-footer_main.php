@@ -43,7 +43,8 @@ class TC_footer_main {
     	
     	//checks if there's at least one active widget area in footer.php.php
     	$status 					= false;
-    	foreach ( TC_init::$instance -> footer_widgets as $key => $area ) {
+    	$footer_widgets 			= apply_filters( 'tc_footer_widgets', TC_init::$instance -> footer_widgets );
+    	foreach ( $footer_widgets as $key => $area ) {
     		$status = is_active_sidebar( $key ) ? true : $status;
     	}
 		if ( !$status )
@@ -57,7 +58,7 @@ class TC_footer_main {
 			<div class="container footer-widgets <?php echo $skin_class ?>">
 				<div class="row widget-area" role="complementary">
 					
-					<?php foreach ( TC_init::$instance -> footer_widgets as $key => $area )  : ?>
+					<?php foreach ( $footer_widgets as $key => $area )  : ?>
 
 						<?php if ( is_active_sidebar( $key ) ) : ?>
 							
@@ -72,7 +73,7 @@ class TC_footer_main {
 			</div><!--.footer-widgets -->
 		<?php
 		$html = ob_get_contents();
-        ob_end_clean();
+        if ($html) ob_end_clean();
         echo apply_filters( 'tc_widgets_footer', $html );
 	}//end of function
 
@@ -105,7 +106,7 @@ class TC_footer_main {
       	</div><!-- .colophon -->
     	<?php
     	$html = ob_get_contents();
-        ob_end_clean();
+        if ($html) ob_end_clean();
         echo apply_filters( 'tc_colophon_display', $html );
     }
 
