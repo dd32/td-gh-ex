@@ -22,7 +22,7 @@
 				{ echo $current_options['footer_widgets_enabled']= sanitize_text_field($_POST['footer_widgets_enabled']); } 
 				else { echo $current_options['footer_widgets_enabled']="off"; } 
 				
-				update_option('rambo_theme_options',$current_options);
+				update_option('rambo_theme_options',stripslashes_deep($current_options));
 			}
 		}	
 		if($_POST['rambo_settings_save_6'] == 2) 

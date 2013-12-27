@@ -92,7 +92,7 @@
 						<td>&nbsp;</td>
 						<td><p> <?php _e('Get the Premium Version','rambo'); ?></p></td>
 						<td><img src="<?php echo get_template_directory_uri().'/functions/theme_options/images/arrow1.png' ?> " /></td>
-						<td><a class="btn  btn-danger" href="http://webriti.com/demo/wp/rambo/" target = "_blank"> <strong><?php _e('Get the Premium Version','rambo');?></strong></a></td>
+						<td><a class="btn  btn-danger" href="http://webriti.com/rambo/" target = "_blank"> <strong><?php _e('Get the Premium Version','rambo');?></strong></a></td>
 						</tr>
 						</tbody>
 					</table>    

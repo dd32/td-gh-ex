@@ -19,7 +19,7 @@
 				else
 				{ echo $current_options['rambo_texttitle']="off"; } 
 				
-				update_option('rambo_theme_options',$current_options);
+				update_option('rambo_theme_options',stripslashes_deep($current_options));
 			}
 		}	
 		if($_POST['rambo_settings_save_1'] == 2) 
