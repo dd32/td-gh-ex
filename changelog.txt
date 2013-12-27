@@ -1,11 +1,14 @@
   Theme : Hueman (wordpress.org release)
-Version : 1.3.2
+Version : 1.3.3
  Author : Alexander "Alx" Agnarson - http://alxmedia.se
+
+December 27 2013 - 1.3.3
+===========================================================
+- Removed incorrect fix for bbpress page titles/images
 
 December 27 2013 - 1.3.2
 ===========================================================
 - Added missing "says:" language string for tabs widget
-- Fixed bbpress page titles and removed bbpress page images
 - Added direct links and search IDs to CC0 images used in screenshot.png to readme.txt
 
 December 24 2013 - 1.3.1
