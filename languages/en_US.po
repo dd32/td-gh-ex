@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Hueman\n"
-"POT-Creation-Date: 2013-12-08 21:51+0100\n"
-"PO-Revision-Date: 2013-12-08 21:51+0100\n"
+"POT-Creation-Date: 2013-12-27 14:39+0100\n"
+"PO-Revision-Date: 2013-12-27 14:39+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: English\n"
@@ -102,6 +102,10 @@ msgstr ""
 
 #: ../functions/widgets/alx-tabs.php:30
 msgid "Tags"
+msgstr ""
+
+#: ../functions/widgets/alx-tabs.php:185
+msgid "says:"
 msgstr ""
 
 #: ../inc/page-title.php:19

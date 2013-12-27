@@ -3,7 +3,7 @@
 	<?php if ( is_home() ) : ?>
 		<h2><?php echo alx_blog_title(); ?></h2>
 
-	<?php elseif ( is_single() ): ?>
+	<?php elseif ( is_single() && !is_bbpress() ): ?>
 		<ul class="meta-single group">
 			<li class="category"><?php the_category(' <span>/</span> '); ?></li>
 			<li class="comments"><a href="<?php comments_link(); ?>"><i class="fa fa-comments-o"></i><?php comments_number( '0', '1', '%' ); ?></a></li>
@@ -39,7 +39,10 @@
 			
 	<?php elseif ( is_year() ): ?>
 		<h1><i class="fa fa-calendar"></i><?php _e('Yearly Archive:','hueman'); ?> <span><?php echo get_the_time('Y'); ?></span></h1>
-		
+	
+	<?php else: ?>
+		<h2><?php the_title(); ?></h2>
+	
 	<?php endif; ?>
 
 </div><!--/.page-title-->

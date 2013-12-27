@@ -39,6 +39,34 @@ Copyright: Accademia di Belle Arti di Urbino, http://campivisivi.net
 
 CC0-licensed (GPL-compatible) images from http://pixabay.com/ and http://unsplash.com/
 
+Left sidebar, top to bottom:
+
+1. unsplash - http://bit.ly/18NNxqe
+2. pixabay ID 210801
+3. pixabay ID 164985
+4. pixabay ID 181744
+5. pixabay ID 205220
+6. pixabay ID 74570
+7. pixabay ID 122694
+8. pixabay ID 97433
+
+Content, top to bottom, left to right:
+
+1. pixabay ID 74570
+2. unsplash - http://bit.ly/18NNxqe
+3. pixabay ID 166705
+4. pixabay ID 68827
+5. pixabay ID 171732
+
+Right sidebar, top to bottom:
+
+1. pixabay ID 9950
+2. pixabay ID 181744
+3. pixabay ID 122705
+4. pixabay ID 195684
+5. pixabay ID 83810
+6. pixabay ID 18279
+
 
 /*  Other Licenses
 /* ------------------------------------ */

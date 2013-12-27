@@ -1,4 +1,4 @@
-<?php if ( has_post_thumbnail() ): ?>
+<?php if ( has_post_thumbnail() && !is_bbpress() ): ?>
 <div class="page-image">
 	<div class="image-container">
 		<?php the_post_thumbnail('thumb-large'); ?>
