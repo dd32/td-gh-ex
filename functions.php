@@ -3,7 +3,7 @@
  * Anarcho Notepad functions and definitions.
  *
  * @package	Anarcho Notepad
- * @since	2.1.7
+ * @since	2.1.8
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013, Arthur Gareginyan
  * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
@@ -44,14 +44,6 @@ function anarcho_notepad_setup() {
 
 	// Add HTML5 elements
 	add_theme_support( 'html5', array( 'comment-list', 'search-form', 'comment-form', ) );
-
-	// This feature enables sidebar.
-	register_sidebar(array(
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' => '</aside>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>',
-	));
 
         // This feature enables menu.
 	register_nav_menus( array(
@@ -790,6 +782,17 @@ function anarcho_add_ie_html5_shim () {
     	echo '<![endif]-->';
 }
 add_action('wp_head', 'anarcho_add_ie_html5_shim');
+
+// This feature enables sidebar.
+function anarcho_widgets_init() {
+	register_sidebar(array(
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>',
+	));
+}
+add_action( 'widgets_init', 'anarcho_widgets_init' );
 
 // Adds a custom default avatar
 function anarcho_avatar( $avatar_defaults ) {

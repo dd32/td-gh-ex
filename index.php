@@ -3,7 +3,7 @@
  * The main template file.
  *
  * @package	Anarcho Notepad
- * @since	2.1.7
+ * @since	2.1.8
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013, Arthur Gareginyan
  * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
