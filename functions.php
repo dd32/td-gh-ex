@@ -27,9 +27,8 @@ if ( ! function_exists( 'adt_template_setup' ) ) :
 	$locale = get_locale();
 	$locale_file = get_template_directory() . "/languages/$locale.php";
 	if (is_readable($locale_file ))
-	  require_once($locale_file);	
-	  
-    $adt_favicon_url = get_template_directory_uri().'/img/favicon.png';	
+	  require_once($locale_file);
+    
     $adt_footer_text = '&copy;'.date('Y').' <a href="'.get_home_url().'">'.get_bloginfo('name').'</a>.'
       .' Powered by <a href="http://wordpress.org">WordPress</a>.';	  
 
@@ -90,6 +89,21 @@ if ( ! function_exists( 'adt_template_setup' ) ) :
 endif;
   
   add_action('after_setup_theme', 'adt_template_setup');
+  
+
+function adt_filter_wp_title( $title ) {
+	global $page, $paged;
+    $site_name = get_bloginfo( 'name' );
+    $filtered_title = $site_name . $title;
+      return $filtered_title;
+	  $site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) )
+		echo " | $site_description";
+		if ( $paged >= 2 || $page >= 2 )
+		echo ' | ' . sprintf( __( 'Page %s', 'adsticle' ), max( $paged, $page ) ); 
+}
+
+add_filter( 'wp_title', 'adt_filter_wp_title' );	
   
   
 if ( ! function_exists( 'adt_ilc_farbtastic_script' ) ) :	
@@ -425,7 +439,7 @@ name="<?php echo $Aname; ?>" value="<?php echo sanitize_text_field(get_option($A
 					<br/>
 					<span class="description"> 
 					<?php printf(__('<a href="%s" target="_blank">Upload your favicon</a> using WordPress Media Library and insert its URL here', 
-					  'adsticle'), home_url().'/wp-admin/media-new.php'); ?>
+					  'adsticle'), esc_url(home_url()).'/wp-admin/media-new.php'); ?>
 					</span><br/><br/>
 					<img src="<?php echo sanitize_text_field(adt_get_option('adt_favicon_url', $adt_favicon_url)); ?>" alt=""/>
 					</td>

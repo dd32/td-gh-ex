@@ -2,18 +2,10 @@
 <html <?php language_attributes(); ?>>
 <head profile="http://gmpg.org/xfn/11">
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
-<title><?php 
-    global $page, $paged;?>
+<title> 
  <?php wp_title('|',true,'left'); ?>
 
-	 <?php 
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		echo " | $site_description";
-		
-	if ( $paged >= 2 || $page >= 2 )
-		echo ' | ' . sprintf( __( 'Page %s', 'adsticle' ), max( $paged, $page ) ); 
-?></title>
+</title>
 <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
@@ -26,7 +18,7 @@
 <div class="header">
 
 <div class="title">
-<h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+<h1><a href="<?php echo esc_url(home_url()); ?>"><?php bloginfo('name'); ?></a></h1>
 <span><?php bloginfo('description'); ?></span>
 </div>
 

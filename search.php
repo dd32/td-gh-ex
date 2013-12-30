@@ -10,7 +10,7 @@ get_header(); ?>
 				?>
 <?php else : ?>
 <div class="post" >
-    <?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'newsmin' ); ?>
+    <?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'adsticle' ); ?>
 </div>
 <?php endif; ?>
 			
