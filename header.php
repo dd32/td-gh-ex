@@ -8,7 +8,9 @@
 </title>
 <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-
+	<?php if( adt_get_option('adt_favicon_url') ) { ?>
+		<link rel="shortcut icon" href="<?php echo adt_get_option('adt_favicon_url'); ?>" title="Favicon" />
+	<?php } ?>
 <?php wp_head(); ?> 
 </head><?php flush(); ?>
 <body <?php body_class(); ?>>

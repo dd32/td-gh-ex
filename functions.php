@@ -22,7 +22,6 @@ if ( ! function_exists( 'adt_template_setup' ) ) :
 	
     if ( ! isset( $content_width ) ) 
       $content_width = 630;
-  
 	load_theme_textdomain('adsticle', get_template_directory() . '/languages');
 	$locale = get_locale();
 	$locale_file = get_template_directory() . "/languages/$locale.php";
