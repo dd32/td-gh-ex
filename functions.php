@@ -632,8 +632,6 @@ function discover_of_styles() {
 add_action('wp_print_styles', 'discover_of_styles');
 
 /** redirect */
-if ( is_admin() && isset($_GET['activated'] ) && $pagenow ==	"themes.php" )
-	wp_redirect( 'themes.php?page=options-framework');
 
 // include panel file.
 if ( !function_exists( 'optionsframework_init' ) ) {

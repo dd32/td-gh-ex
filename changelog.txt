@@ -1,5 +1,8 @@
 *** discover Changelog ***
 
+31-12-2013 - version 1.7.17
+*Redirect to theme options upon activation removed
+
 17-12-2013 - version 1.7.16
 *template-left-sidebar.php added
 

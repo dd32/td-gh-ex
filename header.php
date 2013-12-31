@@ -26,7 +26,7 @@
 	<div id="header_container">
 	
 		<!--header-->
-	<div class="row">	
+	<div class="row">
 		<div class="twelve columns">
 	
 <?php $header_image = get_header_image();
@@ -42,7 +42,7 @@
 
 	
 	<!--top menu-->
-			<div id="menu_container" >
+			<div id="menu_container">
 		
 		<?php $navcheck = '' ; ?>
 	
