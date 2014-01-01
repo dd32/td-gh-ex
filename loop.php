@@ -20,7 +20,7 @@
 			
 			<div class="meta-data">
 			
-			<?php agency_posted_on(); ?> in <?php the_category(', '); ?> | <?php comments_popup_link( __( 'Leave a comment', 'agency' ), __( '1 Comment', 'agency' ), __( '% Comments', 'agency' ) ); ?>
+			<?php agency_posted_on(); ?> <?php _e('in', 'agency'); ?> <?php the_category(', '); ?> | <?php comments_popup_link( __( 'Leave a comment', 'agency' ), __( '1 Comment', 'agency' ), __( '% Comments', 'agency' ) ); ?>
 			
 			</div><!--meta data end-->
 			<div class="clear"></div>
@@ -35,10 +35,10 @@
 			
 	<?php else : ?>
 	
- 	<?php if ( has_post_thumbnail() ) { the_post_thumbnail(array(620,240), array("class" => "alignleft post_thumbnail")); } ?>
+ 	<?php if ( has_post_thumbnail() ) { ?> <div class="entry-thumbnail"> <?php the_post_thumbnail(array(620,240)); ?> </div> <?php } ?>
 	
 	
-			<?php the_content( __( '<span class="read-more">Read More</span>', 'agency' ) ); ?>
+			<?php the_content( '<span class="read-more">'.__('Read More', 'agency').'</span>' ); ?>
 			<div class="clear"></div>
 			<?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'agency' ), 'after' => '' ) ); ?>
 	<?php endif; ?>

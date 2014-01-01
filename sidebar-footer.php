@@ -1,4 +1,4 @@
-<div id="footer-bar1">
+<div id="footer-bar1" class="large-3 columns">
 <?php if ( is_active_sidebar( 'first-footer-widget-area' ) ) { ?>
 					<ul class="xoxo">
 						<?php dynamic_sidebar( 'first-footer-widget-area' ); ?>
@@ -7,7 +7,7 @@
 					<?php } else { ?>
 			
 			<ul class="xoxo">
-						<li class="widget-container"><h3 class="widget-title">Meta</h3>			<ul>
+						<li class="widget-container"><h3 class="widget-title">Meta</h3>	<ul>
 			<li>Site Admin</li>			<li>Log out</li>
 			<li>Entries <abbr title="Really Simple Syndication">RSS</abbr></li>
 			<li>Comments <abbr title="Really Simple Syndication">RSS</abbr></li>
@@ -20,7 +20,7 @@
 
 
 
-<div id="footer-bar2">
+<div id="footer-bar2" class="large-3 columns">
 <?php if ( is_active_sidebar( 'second-footer-widget-area' ) ) { ?>
 					<ul class="xoxo">
 						<?php dynamic_sidebar( 'second-footer-widget-area' ); ?>
@@ -34,7 +34,7 @@
 </div><!--footer 2 end-->
 
 
-<div id="footer-bar3">
+<div id="footer-bar3" class="large-3 columns">
 <?php if ( is_active_sidebar( 'third-footer-widget-area' ) ) { ?>
 					<ul class="xoxo">
 						<?php dynamic_sidebar( 'third-footer-widget-area' ); ?>
@@ -48,7 +48,7 @@
 <?php } ?>
 </div><!--footer 3 end-->
 
-<div id="footer-bar4">
+<div id="footer-bar4" class="large-3 columns">
 <?php if ( is_active_sidebar( 'fourth-footer-widget-area' ) ) { ?>
 					<ul class="xoxo">
 						<?php dynamic_sidebar( 'fourth-footer-widget-area' ); ?>

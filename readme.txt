@@ -1,7 +1,6 @@
 === agency ===
 Author: Manishg
 Tags: black,threaded-comments,light,two-columns,theme-options
-Requires at least: WP 3.0
 
 == Description ==
 

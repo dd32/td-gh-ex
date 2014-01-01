@@ -2,16 +2,29 @@
 /* OptionsFramework Admin Styles */
 /*-------------------------------------------------------------------------------------------*/
 #go_pro {
-    width: 770px;
+    width: 730px;
     border-radius: 6px;
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
-    padding: 10px;
-    background:#1b1b1b;
-    color: #fff;
+    padding: 5px;
+    background:#ffffff;
+    color: #000000;
 	margin: 15px;
     margin-left: 0;
+	line-height: 21px;
 }
+
+#go_help {
+    width: 730px;
+	border: 1px solid #dddddd;
+    padding: 5px;
+    background:#ffffff;
+    color: #777777;
+	margin: 10px;
+    margin-left: 0;
+	line-height: 21px;
+}
+
 #go_pro a{
     color: #0084FF;
 }

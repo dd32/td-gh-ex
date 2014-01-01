@@ -1,9 +1,21 @@
 <?php get_header(); ?>
+
+	<div id="subhead_container">
+		
+		<div class="row">
+
+		<div class="large-12 columns">
+		
+		<h1><?php the_title(); ?></h1>
+			
+			</div>	
+			
+	</div></div>
 	
 		<!--content-->
-		<div id="content_container">
+		<div class="row" id="content_container">
 			
-			<div id="content">
+			<!--left col--><div class="large-8 columns">
 		
 				<div id="left-col">
 		
@@ -17,20 +29,18 @@
 						<?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'agency' ), 'after' => '' ) ); ?>
 						
 					</div><!--post-entry end-->
-					
-					<?php if(of_get_option('comment_page') != "off") { ?>
+
 					<?php comments_template( '', true ); ?>
-					<?php } ?>
+
 
 <?php endwhile; ?>
-</div> <!--left-col end-->
+	</div> <!--left-col end-->
+</div> <!--column end-->
 
 <?php get_sidebar(); ?>
 
-	</div> 
 </div>
 <!--content end-->
-	
-</div>
-<!--wrapper end-->
+		
+
 <?php get_footer(); ?>

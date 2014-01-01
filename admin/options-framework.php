@@ -210,11 +210,11 @@ function optionsframework_page() {
 	settings_errors();
 	?>
 	
-	 <div id="go_pro">
-            <h1>Go for Pro Version!</h1>
-            <p>This is a free version of agency. Get your own copy of professional version if you need to setup your theme like a website with homepage Slider , Full width page template, Forum support and much more. <a href="http://antthemes.com/?page_id=2019" agency="blank">Click Here to Learn More Now</a> </p>
-
-        </div>
+	 <div id="go_help">
+            <p><b>Need Help:</b> <a href="http://antthemes.com/?page_id=56" target="blank">Support Forum</a></p>
+<p><b>Important Note</b>= How to setup Home/front-page with out Blog =
+Create a new page by going to pages - Add New. Then on right side, in page attributes - Template, select Home as the page template and name your page Home(or anything). And publish the page. Then go to Settings - Reading - select a static page as frontpage display option. Select Home as Front page option.</p>
+        </div>	
     
 	<div class="wrap">
     <?php screen_icon( 'themes' ); ?>
@@ -233,6 +233,12 @@ function optionsframework_page() {
 			<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options' ); ?>" />
             <input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!' , 'agency' ) ); ?>' );" />
             <div class="clear"></div>
+			
+	 <div id="go_pro">
+            <h1>Go for Pro Version!</h1>
+            <p>This is a free version of agency. Get your own copy of professional version if you need to setup your theme with Unlimited homepage Slides , Full width page template, Forum support and much more. <a href="http://antthemes.com/?page_id=2019" agency="blank">Click Here to Learn More Now</a> </p>
+
+        </div>			
 		</div>
 	</form>
 </div> <!-- / #container -->

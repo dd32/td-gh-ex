@@ -52,19 +52,19 @@ endif;
  *
  * @package agency_s
  */
-function agency_s_custom_header_setup() {
+function agency_custom_header_setup() {
 	$args = array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 220,
 		'height'                 => 75,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'agency_s_header_style',
-		'admin-head-callback'    => 'agency_s_admin_header_style',
-		'admin-preview-callback' => 'agency_s_admin_header_image',
+		'wp-head-callback'       => 'agency_header_style',
+		'admin-head-callback'    => 'agency_admin_header_style',
+		'admin-preview-callback' => 'agency_admin_header_image',
 	);
 
-	$args = apply_filters( 'agency_s_custom_header_args', $args );
+	$args = apply_filters( 'agency_custom_header_args', $args );
 
 	if ( function_exists( 'wp_get_theme' ) ) {
 		add_theme_support( 'custom-header', $args );
@@ -77,7 +77,7 @@ function agency_s_custom_header_setup() {
 		add_custom_image_header( $args['wp-head-callback'], $args['admin-head-callback'], $args['admin-preview-callback'] );
 	}
 }
-add_action( 'after_setup_theme', 'agency_s_custom_header_setup' );
+add_action( 'after_setup_theme', 'agency_custom_header_setup' );
 
 
 /**
@@ -105,13 +105,13 @@ if ( ! function_exists( 'get_custom_header' ) ) {
 	}
 }
 
-if ( ! function_exists( 'agency_s_header_style' ) ) :
+if ( ! function_exists( 'agency_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog
  *
  * @see _s_custom_header_setup().
  */
-function agency_s_header_style() {
+function agency_header_style() {
 
 	// If no custom options for text are set, let's bail
 	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
@@ -144,13 +144,13 @@ function agency_s_header_style() {
 }
 endif; // _s_header_style
 
-if ( ! function_exists( 'agency_s_admin_header_style' ) ) :
+if ( ! function_exists( 'agency_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
  * @see _s_custom_header_setup().
  */
-function agency_s_admin_header_style() {
+function agency_admin_header_style() {
 ?>
 	<style type="text/css">
 	.appearance_page_custom-header #headimg {
@@ -172,13 +172,13 @@ function agency_s_admin_header_style() {
 }
 endif; // _s_admin_header_style
 
-if ( ! function_exists( 'agency_s_admin_header_image' ) ) :
+if ( ! function_exists( 'agency_admin_header_image' ) ) :
 /**
  * Custom header image markup displayed on the Appearance > Header admin panel.
  *
  * @see agency_s_custom_header_setup().
  */
-function agency_s_admin_header_image() { ?>
+function agency_admin_header_image() { ?>
 	<div id="headimg">
 		<?php
 		if ( 'blank' == get_header_textcolor() || '' == get_header_textcolor() )
@@ -207,7 +207,8 @@ add_filter('get_comments_number', 'agency_comment_count', 0);
 function agency_comment_count( $count ) {
 	if ( ! is_admin() ) {
 	global $id;
-	$comments_by_type = &separate_comments(get_comments('status=approve&post_id=' . $id));
+	$get_comments_status= get_comments('status=approve&post_id=' . $id);
+	$comments_by_type = separate_comments($get_comments_status);
 	return count($comments_by_type['comment']);
 } else {
 return $count;
@@ -492,10 +493,20 @@ function agency_of_register_js() {
 	
 		wp_register_script('superfish', get_template_directory_uri() . '/js/superfish.js', 'jquery', '1.0', TRUE);
 		wp_register_script('agency_custom', get_template_directory_uri() . '/js/jquery.custom.js', 'jquery', '1.0', TRUE);
+		wp_register_script('fitvids', get_template_directory_uri() . '/js/jquery.fitvids.js', 'jquery', '1.0', TRUE);
+		wp_register_script('selectnav', get_template_directory_uri() . '/js/selectnav.js', 'jquery', '0.1', TRUE);
+		wp_register_script('flexslider', get_template_directory_uri() . '/js/jquery.flexslider.js', 'jquery', '2.1', TRUE);
+		wp_register_script('modernizr', get_template_directory_uri() . '/js/modernizr.js', 'jquery', '2.6.1', false);
+		wp_register_script('responsive', get_template_directory_uri() . '/js/responsive-scripts.js', 'jquery', '1.2.1', TRUE);		
 	
 		wp_enqueue_script('jquery');
 		wp_enqueue_script('superfish');
 		wp_enqueue_script('agency_custom');
+		wp_enqueue_script('fitvids');
+		wp_enqueue_script('flexslider');		
+		wp_enqueue_script('selectnav');
+		wp_enqueue_script('modernizr');
+		wp_enqueue_script('responsive');		
 	}
 }
 add_action('wp_enqueue_scripts', 'agency_of_register_js');
@@ -507,14 +518,16 @@ add_action('wp_print_scripts', 'agency_of_single_scripts');
 
 function agency_of_styles() {
 		wp_register_style( 'superfish', get_template_directory_uri() . '/css/superfish.css' );
+		wp_register_style( 'flexslider', get_template_directory_uri() . '/css/flexslider.css' );
+		wp_register_style( 'foundation', get_template_directory_uri() . '/css/foundation.css' );		
 		
 		wp_enqueue_style( 'superfish' );
+		wp_enqueue_style( 'flexslider' );		
+		wp_enqueue_style( 'foundation' );		
 }
 add_action('wp_enqueue_scripts', 'agency_of_styles');
 
 /** redirect */
-if ( is_admin() && isset($_GET['activated'] ) && $pagenow ==	"themes.php" )
-	wp_redirect( 'themes.php?page=options-framework');
 
 // include panel file.
 if ( !function_exists( 'optionsframework_init' ) ) {

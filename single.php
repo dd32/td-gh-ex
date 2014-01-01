@@ -1,15 +1,28 @@
 <?php get_header(); ?>
-
-	<!--content-->
-<div id="content_container">
 	
-	<div id="content">
+	<div id="subhead_container">
 		
-		<div id="left-col">
+		<div class="row">
 
-			<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>	
+		<div class="large-12 columns">
+		
+		<h1><?php the_title(); ?></h1>
+			
+			</div>	
+			
+	</div></div>
 
-			<div class="post-entry">
+		<!--content-->
+		<div class="row" id="content_container">
+			
+			<!--left col--><div class="large-8 columns">
+		
+				<div id="left-col">
+		
+
+				<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+					
+					<div class="post-entry">
 
 			<div class="meta-data">
 			
@@ -25,28 +38,23 @@
 						<?php the_tags('Social tagging: ',' > '); ?>
 						
 				 <nav id="nav-single"> <span class="nav-previous">
-            <?php previous_post_link(__( '%link', '<span class="meta-nav">&larr;</span> Previous Post ') ); ?>
+            <?php previous_post_link( '%link', '<span class="meta-nav">&larr;</span> Previous Post '); ?>
             </span> <span class="nav-next">
-            <?php next_post_link(__( '%link', 'Next Post <span class="meta-nav">&rarr;</span>') ); ?>
+            <?php next_post_link( '%link', 'Next Post <span class="meta-nav">&rarr;</span>'); ?>
             </span> </nav>
 						
 					</div><!--post-entry end-->
-	
-
-				<?php comments_template( '', true ); ?>
+					
+					<?php comments_template( '', true ); ?>
 
 <?php endwhile; ?>
-
-</div> <!--left-col end-->
+	</div> <!--left-col end-->
+</div> <!--column end-->
 
 <?php get_sidebar(); ?>
 
-
-	</div> 
 </div>
 <!--content end-->
-	
-</div>
-<!--wrapper end-->
+		
 
 <?php get_footer(); ?>

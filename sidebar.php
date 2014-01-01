@@ -1,7 +1,5 @@
 		<!--right-col-->
-		<div id="right-col">
-		
-		<img src="<?php echo get_template_directory_uri(); ?>/images/sidebar-top.png" alt="" />
+		<div class="large-4 columns">
 			
 				<!--sidebar-->
 				<div id="sidebar">
@@ -28,9 +26,5 @@
 <?php endif; ?>
 
 				</div><!--sb end-->
-				
-				<div class="clear"></div>
-				
-<img src="<?php echo get_template_directory_uri(); ?>/images/sidebar-bottom.png" alt="" />
 				
 			</div> <!--right-col-->

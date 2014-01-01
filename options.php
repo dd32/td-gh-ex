@@ -151,53 +151,44 @@ function optionsframework_options() {
 						"desc" => "Paste here the link of the page or post.",
 						"id" => "box_link3",
 						"std" => "",
-						"type" => "text");	
-						
-	$options[] = array( "name" => "Homepage Box 4 heading",
-						"desc" => "Heading for homepage box4.",
-						"id" => "box_head4",
-						"std" => "",
-						"type" => "text");
-						
-	$options[] = array( "name" => "Homepage Box 4 text",
-						"desc" => "Textarea for homepage box4.",
-						"id" => "box_text4",
-						"std" => "",
-						"type" => "textarea");
-						
-	$options[] = array( "name" => "Homepage Box 4 thumbnail image",
-						"desc" => "215px x 80px exact. Upload your image for homepage box 4.",
-						"id" => "box_image4",
-						"type" => "upload");						
-						
-	$options[] = array( "name" => "Homepage Box 4 link",
-						"desc" => "Paste here the link of the page or post.",
-						"id" => "box_link4",
-						"std" => "",
-						"type" => "text");																											
+						"type" => "text");																			
 															
 						
 	$options[] = array( "name" => "Slider Settings",
 						"type" => "heading");
+
+	$options[] = array( "name" => "Slider caption 1",
+						"desc" => "Caption for the slider.",
+						"id" => "slider_head1",
+						"std" => "",
+						"type" => "text");		
 						
-	$options[] = array( "name" => "Slider image",
-						"desc" => "963px x 350px exact. Upload your image for homepage slider.",
-						"id" => "slider_image",
+	$options[] = array( "name" => "Slider image 1",
+						"desc" => "970px x 350px exact. Upload your image for homepage slider.",
+						"id" => "slider_image1",
 						"type" => "upload");
 						
 	$options[] = array( "name" => "Slider image link",
 						"desc" => "Paste here the link of the page or post.",
-						"id" => "slider_link",
+						"id" => "slider_link1",
 						"std" => "",
-						"type" => "text");					
+						"type" => "text");
 						
-	$options[] = array( "name" => "Blog Settings",
-						"type" => "heading");
+	$options[] = array( "name" => "Slider caption 2",
+						"desc" => "Caption for the slider.",
+						"id" => "slider_head2",
+						"std" => "",
+						"type" => "text");						
 						
-	$options[] = array( "name" => "Blog Exclude Categories",
-						"desc" => "Specify a comma seperated list of category IDs (eg: 1,4,8) or slugs that you would like to exclude from your blog page (eg: uncategorized).",
-						"id" => "exclude_cat",
-						"std" => "",						
+	$options[] = array( "name" => "Slider image 2",
+						"desc" => "970px x 350px exact. Upload your image for homepage slider.",
+						"id" => "slider_image2",
+						"type" => "upload");
+						
+	$options[] = array( "name" => "Slider image link",
+						"desc" => "Paste here the link of the page or post.",
+						"id" => "slider_link2",
+						"std" => "",
 						"type" => "text");						
 						
 	$options[] = array( "name" => "Footer Settings",
@@ -208,26 +199,6 @@ function optionsframework_options() {
 						"id" => "footer_cr",
 						"std" => "",
 						"type" => "text");
-						
-	$options[] = array( "name" => "Style Settings",
-						"type" => "heading");
-						
-	$options[] = array( "name" => "Custom CSS",
-						"desc" => "Add css to modify the theme here instead of adding it to style.css file.",
-						"id" => "custom_css",
-						"std" => "",
-						"type" => "textarea");									
-						
-	$options[] = array( "name" => "Other Settings",
-						"type" => "heading");
-						
-	$options[] = array( "name" => "Comment on page",
-						"desc" => "Select option to display comments on page.",
-						"id" => "comment_page",
-						"std" => "on",
-						"type" => "select",
-						"class" => "mini", //mini, tiny, small
-						"options" => $comment_page_array);														
 															
 	return $options;
 }
