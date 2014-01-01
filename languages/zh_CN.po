@@ -1,0 +1,346 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-01 23:55+0800\n"
+"PO-Revision-Date: 2014-01-01 23:56+0800\n"
+"Last-Translator: 皇家元林 <i@hjyl.org>\n"
+"Language-Team: hjyl.org <i@hjyl.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../archive.php:11 ../index.php:10 ../single.php:10
+msgid "Featured"
+msgstr "置顶"
+
+#: ../archive.php:31 ../index.php:30 ../page.php:27 ../single.php:34
+msgid "Posted by"
+msgstr "Posted by"
+
+#: ../archive.php:34 ../index.php:33 ../single.php:37
+msgid "Posted in"
+msgstr "Posted in"
+
+#: ../archive.php:37 ../comments.php:5 ../index.php:36
+msgid "Leave a reply"
+msgstr "回复"
+
+#: ../archive.php:37 ../comments.php:5 ../index.php:36
+msgid "<b>1</b> Reply"
+msgstr "<b>1</b>条评论"
+
+#: ../archive.php:37 ../comments.php:5 ../index.php:36
+msgid "<b>%</b> Replies"
+msgstr "<b>%</b>条评论"
+
+#: ../archive.php:40 ../index.php:39 ../page.php:33 ../single.php:40
+msgid "Edit"
+msgstr "编辑"
+
+#: ../archive.php:69 ../index.php:68 ../page.php:63 ../single.php:84
+msgid "Nothing Found"
+msgstr "什么都没有"
+
+#: ../archive.php:73 ../index.php:72 ../page.php:67 ../single.php:88
+msgid ""
+"Apologies, but no results were found for the requested archive. Perhaps "
+"searching will help find a related post."
+msgstr "抱歉，这里没有你要找的，你可以试试搜搜。。"
+
+#: ../comments.php:2
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr "此文密码保护。键入你的密码才能看所有的评论。"
+
+#: ../comments.php:9
+msgid "Previous"
+msgstr "上一页"
+
+#: ../comments.php:9
+msgid "Next"
+msgstr "下一页"
+
+#: ../comments.php:20
+#, php-format
+msgid "Welcome <strong>%s</strong>"
+msgstr "欢迎回来 <strong>%s</strong>"
+
+#: ../comments.php:23 ../comments.php:27
+msgid "(Toggle)"
+msgstr "(打开)"
+
+#: ../comments.php:28
+msgid "(Close)"
+msgstr "(关闭)"
+
+#: ../comments.php:47
+msgid "Name"
+msgstr "名字"
+
+#: ../comments.php:47 ../comments.php:48
+msgid "(required)"
+msgstr "(必填)"
+
+#: ../comments.php:48
+msgid "Email"
+msgstr "邮箱"
+
+#: ../comments.php:49
+msgid "Website"
+msgstr "网站"
+
+#: ../comments.php:54
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "你必须 <a href=\"%s\">登录</a> 才能发布评论。"
+
+#: ../comments.php:55
+#, php-format
+msgid ""
+"Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
+"this account\">Log out?</a>"
+msgstr ""
+"<a href=\"%1$s\">%2$s</a>已登录。 <a href=\"%3$s\" title=\"登出账户\">退出？"
+"</a>"
+
+#: ../comments.php:60
+msgid "Leave a Reply"
+msgstr "回复"
+
+#: ../comments.php:61
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr "回复 %s"
+
+#: ../comments.php:62
+msgid "Cancel reply"
+msgstr "取消回复"
+
+#: ../comments.php:63
+msgid "Post Comment"
+msgstr "发布评论"
+
+#: ../functions.php:136
+msgid "Primary Navigation"
+msgstr "主要导航"
+
+#: ../functions.php:137
+msgid "Mobile Navigation"
+msgstr "手机导航"
+
+#: ../functions.php:143 ../sidebar.php:4
+msgid "Home"
+msgstr "首页"
+
+#: ../functions.php:144
+msgid "Just For Three Widgets"
+msgstr "只支持三个边栏"
+
+#: ../functions.php:151 ../sidebar.php:22
+msgid "Single"
+msgstr "文章页"
+
+#: ../functions.php:158 ../sidebar.php:25
+msgid "Other"
+msgstr "其他页"
+
+#: ../header.php:18
+#, php-format
+msgid "Page %1$s of %2$s"
+msgstr "Page %1$s of %2$s"
+
+#: ../header.php:18
+msgid "search : "
+msgstr "搜索："
+
+#: ../header.php:18
+msgid "404 Error"
+msgstr "404错误"
+
+#: ../header.php:18
+msgid "Posts About "
+msgstr "文章列表关于"
+
+#: ../page.php:21 ../single.php:27
+msgid "Pages:"
+msgstr "页面："
+
+#: ../page.php:30
+msgid "Last Updated"
+msgstr "Last Updated"
+
+#: ../searchform.php:2
+msgid "Search..."
+msgstr "搜索..."
+
+#: ../sidebar.php:6
+msgid "Archives"
+msgstr "归档"
+
+#: ../sidebar.php:13
+msgid "Meta"
+msgstr "管理"
+
+#: ../single.php:58
+msgid "Previous: %title"
+msgstr "上一篇: %title"
+
+#: ../single.php:59
+msgid "Next: %title"
+msgstr "下一篇: %title"
+
+#: ../inc/oloComment.php:68
+#, php-format
+msgid "%s "
+msgstr "%s "
+
+#: ../inc/oloComment.php:69
+#, php-format
+msgid "<cite id=\"commentmeta\">%1$s</cite>"
+msgstr "<cite id=\"commentmeta\">%1$s</cite>"
+
+#: ../inc/oloComment.php:113 ../inc/oloComment.php:126
+#: ../inc/oloComment.php:129
+msgid "Invalid comment status."
+msgstr "评论状态错误."
+
+#: ../inc/oloComment.php:123
+msgid "Sorry, comments are closed for this item."
+msgstr "对不起，此文评论关闭."
+
+#: ../inc/oloComment.php:132
+msgid "Password Protected"
+msgstr "密码保护"
+
+#: ../inc/oloComment.php:159
+msgid "Sorry, you must be logged in to post a comment."
+msgstr "对不起，你必须登录之后才能发布评论."
+
+#: ../inc/oloComment.php:166
+msgid "Error: please fill the required fields (name, email)."
+msgstr "错误：请填写必填部分（名字，邮箱）."
+
+#: ../inc/oloComment.php:168
+msgid "Error: please enter a valid email address."
+msgstr "错误：请填写正确的邮箱地址."
+
+#: ../inc/oloComment.php:172
+msgid "Error: please type a comment."
+msgstr "错误：请填上一段评论."
+
+#: ../inc/oloComment.php:180
+msgid ""
+"Duplicate comment detected; it looks as though you&#8217;ve already said "
+"that!"
+msgstr "检查有重复评论；你好像刚刚评论过了！"
+
+#: ../inc/oloComment.php:189
+msgid "You are posting comments too quickly.  Slow down."
+msgstr "你评论太快了。淡定。"
+
+#: ../inc/oloComment.php:224
+#, php-format
+msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">says:</span>"
+msgstr "<cite class=\"fn\">%s</cite> <span class=\"says\">说:</span>"
+
+#: ../inc/oloComment.php:227
+msgid "Your comment is awaiting moderation."
+msgstr "你的评论正在等待审核。"
+
+#: ../inc/oloComment.php:229
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s 在 %2$s"
+
+#: ../inc/oloComment.php:229
+msgid "(Edit)"
+msgstr "（编辑）"
+
+#: ../inc/theme_inc.php:34 ../inc/theme_inc.php:38
+msgid "olo Options"
+msgstr "olo主题设置"
+
+#: ../inc/theme_inc.php:152
+msgid "Save Changes"
+msgstr "保存设置"
+
+#~ msgid "Theme Update"
+#~ msgstr "主题升级"
+
+#~ msgid "olo Update"
+#~ msgstr "olo主题升级"
+
+#~ msgid "olo Can be Updated!"
+#~ msgstr "olo主题可以升级啦！"
+
+#~ msgid "This Version"
+#~ msgstr "此版本"
+
+#~ msgid "Please Update to"
+#~ msgstr "请升级到"
+
+#~ msgid "Download And Update"
+#~ msgstr "下载并升级"
+
+#~ msgid "Notice:Please backup before update!"
+#~ msgstr "提醒：请在升级前备份！"
+
+#~ msgid "Download olo"
+#~ msgstr "下载olo主题"
+
+#~ msgid "Updates:"
+#~ msgstr "升级："
+
+#~ msgid "Recent Posts"
+#~ msgstr "最新文章"
+
+#~ msgid "Blogroll"
+#~ msgstr "友情链接"
+
+#~ msgid "WordPress Themes"
+#~ msgstr "WordPress主题"
+
+#~ msgid "Archive"
+#~ msgstr "归档"
+
+#~ msgid "About Me"
+#~ msgstr "关于我"
+
+#~ msgid "Comments:"
+#~ msgstr "评论："
+
+#~ msgid "1 Reply"
+#~ msgstr "1条评论"
+
+#~ msgid "% Replies"
+#~ msgstr "%条评论"
+
+#~ msgid "(will not be published)"
+#~ msgstr "(将不会被公开)"
+
+#~ msgid "required"
+#~ msgstr "必填"
+
+#~ msgid "Views:"
+#~ msgstr "浏览："
+
+#~ msgid "SiteMap"
+#~ msgstr "网站地图"
+
+#~ msgid "Sorry, you can't be verified."
+#~ msgstr "抱歉，你不能被验证。"
+
+#~ msgid "post list : "
+#~ msgstr "文章列表："
+
+#~ msgid "<span class=\"meta-nav\">&larr;</span> Previous"
+#~ msgstr "<span class=\"meta-nav\">&larr;</span> 上一篇"
+
+#~ msgid "Next <span class=\"meta-nav\">&rarr;</span>"
+#~ msgstr "下一篇 <span class=\"meta-nav\">&rarr;</span>"
