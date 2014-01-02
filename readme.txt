@@ -1,15 +1,15 @@
 === Bandana ===
 
 Contributors: DesignOrbital.com
-Tags: dark, clean, two-columns, right-sidebar, fixed-width, custom-background, custom-header, custom-menu, featured-images, sticky-post, theme-options, translation-ready, threaded-comments
-Requires at least: 3.5
-Tested up to: 3.5
+Requires at least: 3.6
+Tested up to: 3.8
 
-== Description ==
+== Primary Menu ==
 
-Bandana is a clean, simple and dark fashion WordPress theme with a lot of features like a custom menu, widgetized sidebar, threaded comments, custom background, featured images, custom header and many other. Bandana is tested in the modern browsers like Firefox, IE, Safari, Opera and Chrome. It is fully optimized for SEO and translation ready.
+- "Primary Menu" will work best for six to eight menu items at top level.
+- "Primary Menu" supports Five level nested menu depth including top level.
 
-== Note ==
+== Help ==
 
 See the "Help" tab in the "Bandana Options" admin page for license, changelog and other informations.
 

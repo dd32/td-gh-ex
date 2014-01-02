@@ -27,4 +27,3 @@ function bandana_theme_setup() {
 function bandana_add_image_sizes() {
 	add_image_size( 'featured', 580, 350, true );
 }
-?>

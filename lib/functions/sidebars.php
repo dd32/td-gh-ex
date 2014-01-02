@@ -46,4 +46,3 @@ function bandana_sidebars() {
 	/* Return the sidebars. */
 	return $sidebars;
 }
-?>

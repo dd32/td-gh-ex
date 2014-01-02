@@ -15,7 +15,7 @@ function bandana_primary_menu_cb() {
           'container_class' => 'primary-container', 
           'theme_location' => 'bandana-primary-menu',
           'menu_class' => 'sf-menu1',
-          'depth' => 0,
+          'depth' => 5,
           'fallback_cb' => 'bandana_primary_menu_cb'
                   
       );

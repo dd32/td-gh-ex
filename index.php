@@ -21,7 +21,7 @@
       
       <?php endif; ?>
       
-      <?php get_template_part( 'loop-nav' ); ?>
+      <?php bandana_loop_nav(); ?>
     
     </div> <!-- end #content -->
   </div> <!-- end .grid_10 -->

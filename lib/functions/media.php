@@ -8,6 +8,9 @@ add_action( 'wp_enqueue_scripts', 'bandana_enqueue_scripts' );
 /** Register JavaScript and Stylesheet files for the framework. */
 function bandana_register_scripts() {
 
+	/** Register the 'Superfish Plugin' scripts. */
+	wp_register_script( 'bandana-js-superfish', esc_url( BANDANA_JS_URI . 'superfish/superfish-combine.min.js' ), array( 'jquery' ), '1.5.9', true );
+	
 	/** Register the 'common' scripts. */
 	wp_register_script( 'bandana-js-common', esc_url( BANDANA_JS_URI . 'common.js' ), array( 'jquery' ), '1.0', true );
 	
@@ -15,8 +18,8 @@ function bandana_register_scripts() {
 	wp_register_style( 'bandana-css-960', esc_url( BANDANA_CSS_URI . '960.css' ) );
 	
 	/** Register Google Fonts. */
-	$google_ssl = is_ssl()? 'https' : 'http';
-	wp_register_style( 'bandana-google-fonts', esc_url( $google_ssl . '://fonts.googleapis.com/css?family=PT+Sans|Radley' ) );
+	$protocol = is_ssl()? 'https' : 'http';
+	wp_register_style( 'bandana-google-fonts', esc_url( $protocol . '://fonts.googleapis.com/css?family=Open+Sans|Radley' ) );
 }
 
 /** Tells WordPress to load the scripts needed for the framework using the wp_enqueue_script() function. */
@@ -27,6 +30,9 @@ function bandana_enqueue_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
+	/** Load the 'Superfish Plugin' scripts. */
+	wp_enqueue_script( 'bandana-js-superfish' );
+	
 	/** Load the 'common' scripts. */
 	wp_enqueue_script( 'bandana-js-common' );
 	
@@ -36,17 +42,3 @@ function bandana_enqueue_scripts() {
 	/** Load Google Fonts. */
 	wp_enqueue_style( 'bandana-google-fonts' );
 }
-
-/** Analytic Code */
-add_action( 'wp_footer', 'bandana_analytic_code_init' );
-function bandana_analytic_code_init() {
-	
-	$bandana_options = bandana_get_settings();
-	
-	if( $bandana_options['bandana_analytic'] == 1 ) :	
-	echo htmlspecialchars_decode ( $bandana_options['bandana_analytic_code'] );	
-	echo '<!-- end analytic-code -->';	
-	endif;
-
-}
-?>

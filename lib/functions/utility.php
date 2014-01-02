@@ -114,12 +114,11 @@ function bandana_link_pages() {
 function bandana_post_style() {
 	
 	$bandana_options = bandana_get_settings();
-	
-	if( $bandana_options['bandana_post_style'] == 'excerpt' ):		
+	if( $bandana_options['bandana_post_style'] == 'excerpt' ) {	
 		the_excerpt();	
-	else:		
-		the_content( __( 'Read More', 'bandana' ) . ' <span class="meta-nav">&rarr;</span>' );	
-	endif;
+	} else {		
+		the_content();	
+	}
 
 }
 
@@ -127,13 +126,11 @@ function bandana_post_style() {
 function bandana_featured_image() {
 	
 	$bandana_options = bandana_get_settings();
-	
-	if( $bandana_options['bandana_post_style'] != 'excerpt' ):		
+	if( $bandana_options['bandana_featured_image_control'] == 'no' ) {
 		return;
-	endif;
+	}
 	
-	$img = bandana_get_image( array( 'format' => 'html', 'size' => 'featured', 'attr' => array( 'class' => 'entry-image' ) ) );
-	
+	$img = bandana_get_image( array( 'format' => 'html', 'size' => 'featured', 'mode' => $bandana_options['bandana_featured_image_control'], 'attr' => array( 'class' => 'entry-image' ) ) );
 	if( empty( $img ) ):		
 		return;
 	endif;
@@ -151,7 +148,7 @@ function bandana_loop_nav() {
 		
 		$bandana_options = bandana_get_settings();
 		
-		if ( $bandana_options['bandana_post_nav_style'] == 'numeric' ) :		
+		if ( $bandana_options['bandana_nav_style'] == 'numeric' ) :		
 			
 			bandana_loop_nav_numeric();		
 		
@@ -309,27 +306,29 @@ function bandana_footer_init() {
 	
 	/** Theme Data & Settings */
 	$bandana_theme_data = bandana_theme_data();
-	$bandana_options = bandana_get_settings();	
-	
+	$bandana_options = bandana_get_settings();
+
 	/** Footer Copyright Logic */
-	$bandana_copyright_code = '&copy; Copyright '. date( 'Y' ) .' - <a href="'. home_url( '/' ) .'">'. get_bloginfo( 'name' ) .'</a>';
-	if( $bandana_options['bandana_copyright'] == 1 ) {
+	$bandana_copyright_code = '&copy; Copyright '. date( 'Y' ) .' - <a href="'. esc_url( home_url( '/' ) ) .'">'. get_bloginfo( 'name' ) .'</a>';
+	if( $bandana_options['bandana_copyright_control'] == 1 ) {
 		
 		$bandana_copyright_code = '&nbsp;';
-		if( !empty( $bandana_options['bandana_copyright_code'] ) ) {
-			$bandana_copyright_code = wp_specialchars_decode( $bandana_options['bandana_copyright_code'], ENT_QUOTES );
+		if( ! empty( $bandana_options['bandana_copyright'] ) ) {
+			$bandana_copyright_code = wp_specialchars_decode( $bandana_options['bandana_copyright'], ENT_QUOTES );
 		}
 	
 	}
 	
-	//$bandana_copyright_code = ( $bandana_options['bandana_copyright'] == 1 )
-
 ?>
-<div class="grid_5">
-  <?php echo $bandana_copyright_code; ?>
+<div class="grid_10 alpha">
+  <div class="copyright_inside">
+    <?php echo $bandana_copyright_code; ?>
+  </div>
 </div>
-<div class="grid_11">
-  <?php printf( __( '%s Theme by', 'bandana' ), $bandana_theme_data['Name'] ); ?> <a href="<?php echo $bandana_theme_data['AuthorURI']; ?>" title="DesignOrbital">DesignOrbital</a> &sdot; <a href="http://wordpress.org/" title="WordPress">WordPress</a>
+<div class="grid_6 omega">
+  <div class="credit_inside">
+    <a href="<?php echo $bandana_theme_data['ThemeURI']; ?>" title="Bandana Theme">Bandana Theme</a> &sdot; <?php _e( 'Powered by', 'bandana' ); ?> <a href="http://wordpress.org/" title="WordPress">WordPress</a>
+  </div>
 </div>
 <?php	
 }
@@ -484,4 +483,3 @@ function bandana_custom_excerpt_more( $output ) {
 
 /** Remove WP Gallery CSS */
 add_filter( 'use_default_gallery_style', '__return_false' );
-?>

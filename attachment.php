@@ -21,8 +21,6 @@
       
       <?php endif; ?>
       
-      <?php get_template_part( 'loop-nav' ); ?>
-    
     </div> <!-- end #content -->
   </div> <!-- end .grid_10 -->
   

@@ -2,10 +2,35 @@
 /* Adds theme support for WordPress 'featured images'. */
 add_theme_support( 'post-thumbnails' );
 
-/** Bandana Get Image Id */
-function bandana_get_image_id( $num = 0 ) {
+/** Bandana Get Image Id Manual */
+function bandana_get_image_id_manual( $num = 0 ) {
+	
+	/** Global Object */
 	global $post;
+	
+	/** WordPress Featured Image Set In the Post - Manual */
+	if ( has_post_thumbnail() && ( $num === 0 ) ) {			
+		return get_post_thumbnail_id();		
+	}
+	
+	return false;
 
+}
+
+/** Bandana Get Image Id Auto */
+function bandana_get_image_id_auto( $num = 0 ) {
+	
+	/** Global Object */
+	global $post;
+	
+	/** Manual Check At Priority */
+	$id = bandana_get_image_id_manual( $num );
+	
+	if( ! empty( $id ) ) {
+		return $id;
+	}
+	
+	/** Start Manual Mode */
 	$image_ids = array_keys(
 		get_children(
 			array(
@@ -27,33 +52,30 @@ function bandana_get_image_id( $num = 0 ) {
 
 /** Bandana Get Image*/
 function bandana_get_image( $args = array() ) {
-	
-	global $post;
 
 	/** Arguments */
-	$defaults = array( 'format' => 'html', 'size' => 'full', 'num' => 0, 'attr' => '' );	
+	$defaults = array( 'format' => 'html', 'size' => 'full', 'mode' => 'auto', 'num' => 0, 'attr' => '' );	
 	$args = wp_parse_args( $args, $defaults );
-
-	/** WordPress built-in method */
-	if ( has_post_thumbnail() && ( $args['num'] === 0 ) ) {
-		
-		$id = get_post_thumbnail_id();
-		$html = wp_get_attachment_image( $id, $args['size'], false, $args['attr'] );
-		list( $url ) = wp_get_attachment_image_src( $id, $args['size'], false, $args['attr'] );
 	
+	/** Featured Image Id */
+	$id = '';
+	if( $args['mode'] == 'manual' ) {		
+		$id = bandana_get_image_id_manual( $args['num'] );			
+	} else {	
+		$id = bandana_get_image_id_auto( $args['num'] );	
 	}
 	
-	/** Grab the first attachment image */		
-	else {
-		
-		$id = bandana_get_image_id( $args['num'] );
-		$html = wp_get_attachment_image( $id, $args['size'], false, $args['attr'] );
-		list( $url ) = wp_get_attachment_image_src( $id, $args['size'], false, $args['attr'] );
-	
+	/** ID Validation */
+	if( empty( $id ) ) {
+		return false;
 	}
+	
+	/** Featured Image Logic */
+	$html = wp_get_attachment_image( $id, $args['size'], false, $args['attr'] );
+	list( $url ) = wp_get_attachment_image_src( $id, $args['size'], false, $args['attr'] );
 
 	/** Source path, relative to the root */
-	$src = str_replace( home_url(), '', $url );
+	$src = str_replace( esc_url( home_url() ), '', $url );
 
 	/** Output Logic */
 	if ( strtolower( $args['format'] ) == 'html' ) {
@@ -64,12 +86,11 @@ function bandana_get_image( $args = array() ) {
 		$output = $src;
 	}
 
-	/** return FALSE if $url is blank */
+	/** return false if $url is blank */
 	if ( empty( $url ) ) {
-		$output = FALSE;
+		$output = false;
 	}
 
 	/** return output */
 	return $output;
 }
-?>

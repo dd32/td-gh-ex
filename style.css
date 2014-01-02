@@ -4,8 +4,8 @@ Theme URI: http://designorbital.com/bandana/
 Author: DesignOrbital.com
 Author URI: http://designorbital.com/
 Description: Bandana is a clean, simple and dark fashion WordPress theme with a lot of features like a custom menu, widgetized sidebar, threaded comments, custom background, featured images, custom header and many other. Bandana is tested in the modern browsers like Firefox, IE, Safari, Opera and Chrome. It is fully optimized for SEO and translation ready.
-Version: 1.0
-Tags: dark, two-columns, right-sidebar, fixed-width, custom-background, custom-header, custom-menu, featured-images, sticky-post, theme-options, translation-ready, threaded-comments
+Version: 1.1
+Tags: black, pink, dark, two-columns, right-sidebar, fixed-layout, custom-background, custom-header, custom-menu, featured-images, sticky-post, theme-options, translation-ready, threaded-comments
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 */
@@ -186,7 +186,7 @@ body {
 	color: #FF4178;
 }
 
-#footer .grid_11 {
+#footer .credit_inside {
 	text-align: right;
 }
 
@@ -957,6 +957,7 @@ dl.gallery-item img {
 	font-size: 36px; 
 	line-height: 42px; 
 	margin-bottom: 18px;
+	word-wrap: break-word;
 }
 
 .entry-title-single {}
@@ -983,6 +984,7 @@ dl.gallery-item img {
 
 .entry-content {
 	margin: 0 0 20px 0;
+	word-wrap: break-word;
 }
 
 /**

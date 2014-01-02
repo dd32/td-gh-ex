@@ -9,4 +9,3 @@ function bandana_register_menus() {
 	register_nav_menu( 'bandana-primary-menu', __( 'Bandana Primary Menu', 'bandana' ) );
 	
 }
-?>
