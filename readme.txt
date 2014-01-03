@@ -57,6 +57,11 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
+@ Version: 1.3.1
+1.Streepslashes_deep() for magic quotes issue resolved.
+2. Rel="nofollow" added in footer.php . 
+@ Version: 1.3
+1.Theme URI added.
 @version 1.2.9
 1. Added new tags responsive-layout
 @version 1.2.8

@@ -88,17 +88,10 @@ function spa_the_theme_setup() /*function declear*/
 								  'product5_title'=>__('Product 5','sis_spa'),
 								  'product5_image'=>$template_uri.'/images/default/home_product_thumb.jpg',
 								   
-								'address_heading' => __('Spa Salon','sis_spa'),
-								'address_line_one' => __('8901 Marmora Road,','sis_spa'),
-								'address_line_two' =>__('Industrial Area,','sis_spa'),
-								'address_line_three' =>__('IN','sis_spa'),
-								'email'=>'themes@webriti.com',
-								'phone_no1'=>'+1800559658',
-								'phone_no2'=>'+1800559658',
-								'fax' => '+1800559658',
-								'open_time_heading' =>__('Opening Hours','sis_spa'),
+								'footer_url' => 'http://www.webriti.com',
+								'footer_tagline' => __('&copy; 2013. All Rights Reserved by ','sis_spa'),
+								'footer_designedby' =>__('webriti','sis_spa'),
 								
-								'footer_tagline' => __('Copyright 2013. All Rights Reserved by ','sis_spa'),
 								'upload_image'=>'',
 								'height'=>'60',
 								'width'=>'250',
@@ -144,8 +137,7 @@ congue in nulla. Cras hendrerit mi quis nisi semper in sodales nisl faucibus. Se
 																		'font_family_sidebar_widget_titles' => 'roboto',
 																		'font_style_sidebar_widget_titles' => 'Normal'
 																	 ),
-								'week_ends'=>'11:00 AM &ndash; 19:00 PM',
-								'week_days'=>'11:00 AM &ndash; 18:00 PM',											
+																		
 	);
 	add_option('spa_theme_options',$spa_theme_options); 
 }
