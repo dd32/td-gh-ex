@@ -15,20 +15,30 @@
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
     
-    <?php
-		$images = get_children( array( 'post_parent' => $post->ID, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order', 'order' => 'ASC' ) );
-		if ( $images ) :
-			$total_images = count( $images );
-			$image = array_shift( $images );
-			$image_img_tag = wp_get_attachment_url( $image->ID, array(640, 480), false, array( 'style' => 'position:absolute', 'onload' => 'thumb_img_onload(this)') );
-	?>
+    <?php if( has_shortcode( $post->post_content, 'gallery' ) ) : ?>
+		<?php 
+                $gallery = get_post_gallery( $post, false );
+                $ids = explode( ",", $gallery['ids'] );
+                $total_images = 0;
+                foreach( $ids as $id ) {
+                    $title = get_post_field('post_title', $id);
+                    $meta = get_post_field('post_excerpt', $id);
+                    $link = wp_get_attachment_url( $id );
+                    $image  = wp_get_attachment_image( $id, array(640, 480) );
+                    $total_images++;
+                    
+					if ($total_images == 1) {
+						$first_img = $link;
+					}
+                }    
+        ?>
 
-	<div class="imgthumb" style="background-image:url(<?php echo $image_img_tag; ?>)">
+
+	<div class="imgthumb" style="background-image:url(<?php echo $first_img; ?>)">
 		<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 	</div><!-- .gallery-thumb -->
 
-	
-	<?php endif; ?>
+    
 
 	<?php if ( is_search() ) : // Only display Excerpts for search pages ?>
 	<div class="entry-summary post_content">
@@ -52,5 +62,5 @@
 	</div><!-- .entry-content -->
 	<?php endif; ?>
 
-	
+	<?php endif; ?>
 </article><!-- #post-<?php the_ID(); ?> -->

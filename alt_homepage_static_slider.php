@@ -29,8 +29,37 @@ get_header(); ?>
 				  ?> data-cycle-pause-on-hover="true">
             
             
-            <?php while ( have_posts() ) : the_post();    
+            <?php while ( have_posts() ) : the_post(); ?>
+            
+            <?php if ( has_shortcode( $post->post_content, 'gallery' ) )  : ?>
+            
+			<?php 
+            $gallery = get_post_gallery( $post, false );
+            $ids = explode( ",", $gallery['ids'] );
+            $hasgallery = 1;
+            
+            foreach( $ids as $id ) {
+                $title = get_post_field('post_title', $id);
+                $meta = get_post_field('post_excerpt', $id);
+                $link = wp_get_attachment_url( $id );
+                $image  = wp_get_attachment_image( $id, array( 1000, 640 ));	
+            ?>
+            
+            <div class="slides">
+            
+              <div id="post-<?php the_ID(); ?>" <?php post_class('post-theme'); ?>>
+              
+                  <div class="slide-thumb" style="background-image:url(<?php echo $link; ?>)"></div>
+                    
+              </div>
+            
+            </div><!-- .slides -->  
+            
+            <?php } ?>
+            
+            <?php else : ?>
 
+			<?php
 			 $args = array(
 			   'post_type' => 'attachment',
 			   'numberposts' => -1,
@@ -54,11 +83,13 @@ get_header(); ?>
 					 ?>
                      <div class="no-slide-image"><?php _e('Images added to this page will appear here', 'attorney'); ?></div>
                      <?php
-				 }
+				 } ?>
 				 
- 			endwhile; ?>
+			<?php endif; ?>
+				 
+ 			<?php endwhile; ?>
             
-			<?php $content = attorney_content(-1); ?>
+			<?php $content = attorney_content(40); ?>
 			<?php $content = preg_replace(array('{<a[^>]*><img}','{/></a>}'), array('<img','/>'), $content); ?>
             <?php $content = preg_replace('/<img[^>]+./', '', $content); ?>
             <?php $content = preg_replace('#<p>\s*+(<br\s*/*>)?\s*</p>#i', '', $content); ?>

@@ -43,6 +43,8 @@ get_header(); ?>
                     
                     <div class="slides">
                       <div id="post-<?php the_ID(); ?>" <?php post_class('post-theme'); ?>>
+                      
+                      
                          <?php if ( has_post_thumbnail()) : ?>
                             <div class="slide-thumb" style="background-image:url(<?php $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array(1000, 640), false, '' ); echo $src[0]; ?>)"></div>
                          <?php else : ?>

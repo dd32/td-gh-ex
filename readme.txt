@@ -55,6 +55,11 @@ This theme is bundled with Cycle2
 =================================
 CHANGELOG
 =================================
+Version 1.0.6
+ * added an optional, top-level custom nav menu in the footer 
+ * updated the content-gallery.php template
+ * updated the alt_homepage w/ static slider template, added the option to use gallery images as slider images
+ 
 Version 1.0.5
  * added mailto icon to the social media buttons
  * modified the css for the menu dropdown on mobile screens, the submenu items now display as indented menu links

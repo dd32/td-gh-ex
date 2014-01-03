@@ -31,6 +31,7 @@ function attorney_setup() {
 	 */
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'attorney' ),
+		'secondary' => __('Footer Menu', 'attorney')
 	) );
 
 	add_theme_support('post-thumbnails'); 
@@ -401,6 +402,19 @@ function attorney_main_nav() {
     		'theme_location' => 'primary', /* where in the theme it's assigned */
     		'container_class' => 'menu', /* container class */
     		'fallback_cb' => 'attorney_main_nav_fallback' /* menu fallback */
+    	)
+    );
+}
+endif;
+
+if ( ! function_exists( 'attorney_footer_nav' ) ) :
+function attorney_footer_nav() {
+	// display the wp3 menu if available
+    wp_nav_menu( 
+    	array( 
+    		'theme_location' => 'secondary', /* where in the theme it's assigned */
+    		'container_class' => 'footer-menu', /* container class */
+    		'fallback_cb' => false,
     	)
     );
 }
