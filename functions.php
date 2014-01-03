@@ -52,8 +52,9 @@
 		
 		add_theme_support( 'post-thumbnails' ); //supports featured image
 		add_theme_support( 'automatic-feed-links' ); //feed links enabled
-		add_theme_support( 'custom-header');		
-		
+		//add_theme_support( 'custom-header');		
+		//add_theme_support( 'custom-background') ;
+		//add_editor_style() ;
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menu( 'primary', __( 'Primary Menu', 'rambo' ) );
 		

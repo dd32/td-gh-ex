@@ -85,7 +85,9 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 abase
-
+Version: 1.0.2
+->Default CSS enqueued in scripts.php
+->Screenshot size changed  
 @Version 1.0
 released
 

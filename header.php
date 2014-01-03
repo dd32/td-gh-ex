@@ -19,7 +19,6 @@
 	if($rambo_current_options['upload_image_favicon']!='')
 		{ ?><link rel="shortcut icon" href="<?php  echo $rambo_current_options['upload_image_favicon']; ?>" /> 
 		<?php } ?>	
-	<link rel="stylesheet" href="<?php echo WEBRITI_TEMPLATE_DIR_URI; ?>/css/default.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" media="screen" />
 	
 	<?php wp_head(); ?>

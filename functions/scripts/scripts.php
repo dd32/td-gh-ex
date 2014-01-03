@@ -18,6 +18,9 @@ function rambo_scripts()
 	wp_enqueue_style ('docs',WEBRITI_TEMPLATE_DIR_URI .'/css/docs.css'); //docs css
 	wp_enqueue_style ('font',WEBRITI_TEMPLATE_DIR_URI.'/css/font/font.css'); // font css
 	
+	/*Default CSS*/
+	wp_enqueue_style ('default-css',WEBRITI_TEMPLATE_DIR_URI .'/css/default.css');
+	
 	/*Flex Slider Css */
 	wp_enqueue_style ('flex_css',WEBRITI_TEMPLATE_DIR_URI.'/css/flex_css/flexslider.css');// Flex Slider CSS
 	//Template Color Scheme Js
