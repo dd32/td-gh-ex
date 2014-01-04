@@ -35,12 +35,14 @@ foreach ($home_blocks as $key=>$value) {
 	//Front Page Posts
     break;
     case 'posts': ?>
-    <div class="home_blocks">
-	<?php if ( asteria_is_mobile() && (!empty($asteria['hide_mob_frontposts'])) ) { ?>
-    <?php }else{ ?>
-	<?php get_template_part('layout'.$asteria['front_layout_id'].''); ?>
-    <?php } ?>
-    </div>
+    <div class="home_blocks"><?php $homeposts = $asteria['home_sort_id']; if(!empty($homeposts['posts'])){ ?>
+        <!--Latest Posts-->
+            <?php if ( asteria_is_mobile() && (!empty($asteria['hide_mob_frontposts'])) ) { ?>
+            <?php }else{ ?>
+            <?php get_template_part('layout'.$asteria['front_layout_id'].''); ?>
+            <?php } ?>
+        <!--Latest Posts END-->
+        <?php } ?></div>
  
     <?php
     break;

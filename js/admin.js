@@ -8,7 +8,7 @@ jQuery(window).ready(function() {
 	
 	//Frontpage Settings Submenu
 	jQuery('#2_section_group').prepend('<ul class="front_sub"><li class="active block_trigger">Blocks</li><li class="welcome_trigger">Welcome Text</li><li class="posts_trigger">Frontpage Posts</li><li class="map_trigger">Location Map</li><li class="callaction_trigger">Call to Action</li><li class="frontwdgt_trigger">Frontpage Widgets</li></ul>')
-	jQuery('.tr_asteria-block1_text_id, .tr_asteria-block1_icon, .tr_asteria-block1_textarea_id, .tr_asteria-block2_text_id, .tr_asteria-block2_icon, .tr_asteria-block2_textarea_id, .tr_asteria-block3_text_id, .tr_asteria-block3_icon, .tr_asteria-block3_textarea_id, .tr_asteria-block4_text_id, .tr_asteria-block4_icon, .tr_asteria-block4_textarea_id').addClass('ast_blocks');
+	jQuery('.tr_asteria-block1_text_id, .tr_asteria-block1_icon, .tr_asteria-block1_textarea_id, .tr_asteria-block1_link_id, .tr_asteria-block2_text_id, .tr_asteria-block2_icon, .tr_asteria-block2_textarea_id, .tr_asteria-block2_link_id, .tr_asteria-block3_text_id, .tr_asteria-block3_icon, .tr_asteria-block3_textarea_id, .tr_asteria-block3_link_id, .tr_asteria-block4_text_id, .tr_asteria-block4_icon, .tr_asteria-block4_textarea_id, .tr_asteria-block4_link_id').addClass('ast_blocks');
 	jQuery('.tr_asteria-welcm_textarea_id, .tr_asteria-welcome_color_id').addClass('ast_welcome');
 	jQuery('.tr_asteria-posts_title_id, .tr_asteria-front_layout_id, .tr_asteria-enable_cat, .tr_asteria-posts_cat_id, .tr_asteria-n_posts_field_id').addClass('ast_posts');	
 	jQuery('#map-info').addClass('ast_map');

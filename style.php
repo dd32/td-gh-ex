@@ -138,9 +138,9 @@ body .social_buttons div i, body .social_buttons div a{color:<?php echo $asteria
 
 /*SECONDARY ELEMENT*/
 .header4 #topmenu ul li:hover, .nivo-caption .sld_layout1 p, .banner .sld_layout1 p, .acc-sld_layout2 p, .header4 #topmenu .sub-menu, .acc-sld_layout1 p{ border-color:<?php echo $asteria['sec_color_id']; ?>!important;}
-#topmenu ul li ul li a:hover, .nivo-caption .sld_layout1 h3 a, .nivo-controlNav a.active, .banner .sld_layout1 h3 a, .acc-sld_layout1 h3 a, .tab.active, .thn_post_wrap .more-link:hover, .moretag:hover, #submit, .page_tt, #searchsubmit, .contact_submit input, .pad_menutitle, .to_top:hover, .page-numbers:hover, .ast_pagenav .current, .progrssn, #simple-menu{background-color:<?php echo $asteria['sec_color_id']; ?>!important;}
+#topmenu ul li ul li a:hover, .nivo-caption .sld_layout1 h3 a, .nivo-controlNav a.active, .banner .sld_layout1 h3 a, .acc-sld_layout1 h3 a, .tab.active, .thn_post_wrap .more-link:hover, .moretag:hover, #submit, .page_tt, #searchsubmit, .contact_submit input, .pad_menutitle, .to_top:hover, .page-numbers:hover, .ast_pagenav .current, .progrssn, #simple-menu, .wpcf7-submit{background-color:<?php echo $asteria['sec_color_id']; ?>!important;}
 
-.nivo-caption p a, .banner .sld_layout1 p a, .banner .sld_layout2 p a, .banner .wrap-sld_layout3 p a, .acord_text p a, .lay2 h2 a, .lay3 h2 a, .lay4 h2 a, .lay5 .postitle a, #ast_nextprev .ast-prev:hover .left_arro i, #ast_nextprev .ast-next:hover .right_arro i, .rel_content a, #reply-title small a, .logged-in-as a, .thn_post_wrap a:link, .thn_post_wrap a:visited, .single_metainfo a i:hover, .edit_wrap i:hover, .single_post .postitle, #sidebar .widget .widgettitle, #sidebar .widget .widgettitle a, #home_widgets .widget a:link, #home_widgets .widget a:visited, #home_widgets .widget .thn_wgt_tt, #sidebar .widget .thn_wgt_tt, #footer .widget .thn_wgt_tt, .widget_calendar td a, .astwt_iframe a, .ast_countdown li, .ast_biotxt a, .ast_bio .ast_biotxt h3, .search_term h2, .author_right h2, .author_right a, #contact_block .widgettitle, #contact_block a:link, #contact_block a:visited, .copytext a, .ast_maintanace .logo h1 a, #ast_nextprev .ast-prev:hover .left_arro i, #ast_nextprev .ast-next:hover .right_arro i, .single_metainfo a:hover, .post_meta a:hover, .social_buttons div a:hover i, .social_buttons div a:hover{color:<?php echo $asteria['sec_color_id']; ?>!important;}
+.nivo-caption p a, .banner .sld_layout1 p a, .banner .sld_layout2 p a, .banner .wrap-sld_layout3 p a, .acord_text p a, .lay2 h2 a, .lay3 h2 a, .lay4 h2 a, .lay5 .postitle a, #ast_nextprev .ast-prev:hover .left_arro i, #ast_nextprev .ast-next:hover .right_arro i, .rel_content a, #reply-title small a, .logged-in-as a, .thn_post_wrap a:link, .thn_post_wrap a:visited, .single_metainfo a i:hover, .edit_wrap i:hover, .single_post .postitle, #sidebar .widget .widgettitle, #sidebar .widget .widgettitle a, #home_widgets .widget a:link, #home_widgets .widget a:visited, #home_widgets .widget .thn_wgt_tt, #sidebar .widget .thn_wgt_tt, #footer .widget .thn_wgt_tt, .widget_calendar td a, .astwt_iframe a, .ast_countdown li, .ast_biotxt a, .ast_bio .ast_biotxt h3, .search_term h2, .author_right h2, .author_right a, #contact_block .widgettitle, #contact_block a:link, #contact_block a:visited, .copytext a, .ast_maintanace .logo h1 a, #ast_nextprev .ast-prev:hover .left_arro i, #ast_nextprev .ast-next:hover .right_arro i, .single_metainfo a:hover, .post_meta a:hover, .social_buttons div a:hover i, .social_buttons div a:hover, .widgets p a, .tagcloud a, .text_block a:link, .text_block a:visited{color:<?php echo $asteria['sec_color_id']; ?>!important;}
 
 .rel_content .rel_more:hover{border-color: transparent transparent <?php echo $asteria['sec_color_id']; ?> transparent!important;}
 .tab.active .tab_arrow{border-color: <?php echo $asteria['sec_color_id']; ?> transparent transparent transparent!important;}
@@ -157,9 +157,12 @@ body .social_buttons div i, body .social_buttons div a{color:<?php echo $asteria
 /*Leave a Reply Text Color*/
 .comments_template #comments, #comments_ping, #reply-title, .related_h3{ color:<?php echo $asteria['leavreplytxt_color_id']; ?>!important;}
 
+/*Footer Social Color*/
+.head_soc a{color:<?php echo $asteria['social_color_id']; ?>!important;}
+
 /*------------------------------------TEXT COLORS------------------------------------------*/
 /*Body Text Color*/
-body, .single_metainfo, .single_post .single_metainfo a, .post_meta a{color:<?php echo $asteria['primtxt_color_id']; ?>!important;}
+body, .single_metainfo, .single_post .single_metainfo a, .post_meta a, .midrow_blocks a{color:<?php echo $asteria['primtxt_color_id']; ?>!important;}
 
 /*Text Color on Secondary Element*/
 #submit, #searchsubmit, .page_tt, body #topmenu ul li ul li a:hover, .tab a.active, #ast_nextprev .ast-prev:hover .left_arro, #ast_nextprev .ast-next:hover .right_arro, .page-numbers:hover, .more-link, .moretag, #simple-menu, #simple-menu i{color:<?php echo $asteria['sectxt_color_id']; ?>!important;}

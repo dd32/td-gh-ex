@@ -121,9 +121,9 @@ if (!class_exists('ReduxFramework_slides')) {
                         echo '</div>' . "\n";
 
                         echo '<ul id="' . $this->field['id'] . '-ul" class="redux-multi-text">';
-                        echo '<li><input type="text" id="' . $this->field['id'] . '-slide_title_' . $x . '" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][slide_title]" value="' . esc_attr($slide['slide_title']) . '" class="full-text slide-title" /></li>';
+                        echo '<li><input type="text" id="' . $this->field['id'] . '-slide_title_' . $x . '" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][slide_title]" value="' . esc_attr($slide['slide_title']) . '" placeholder="'.__('Title (Required)', 'redux-framework').'" class="full-text slide-title" /></li>';
                         echo '<li><textarea name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][slide_description]" id="' . $this->field['id'] . '-slide_description_' . $x . '" placeholder="'.__('Description', 'redux-framework').'" class="large-text" rows="6">' . esc_attr($slide['slide_description']) . '</textarea></li>';
-                        echo '<li><input type="text" id="' . $this->field['id'] . '-slide_url_' . $x . '" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][slide_url]" value="' . esc_attr($slide['slide_url']) . '" class="full-text" /></li>';
+                        echo '<li><input type="text" id="' . $this->field['id'] . '-slide_url_' . $x . '" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][slide_url]" placeholder="'.__('Link', 'redux-framework').'" value="' . esc_attr($slide['slide_url']) . '" class="full-text" /></li>';
 						//New Field by Towfiq: 
 						echo '<li class="ast_trigger"><label>'.__('Slide Text Layout', 'redux-framework').'</lable><br /><br /><a class="sldcont1 astbtn">layout1</a><a class="sldcont2 astbtn">layout2</a><a class="sldcont3 astbtn">layout3</a><input type="hidden" id="' . $this->field['id'] . '-slide_content_' . $x . '" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][slide_content_id]" value="' . esc_attr($slide['slide_content_id']) . '" class="full-text ast_content" /></li>';
 						//echo '<li></li>';

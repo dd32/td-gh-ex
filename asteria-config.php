@@ -419,12 +419,24 @@ function setup_framework_options(){
 				'data' => 'elusive',//Must provide key => value pairs for select options
 				'default' => 'fa-camera'
 				),
-
+				
+			array(
+				'id'=>'block1_link_id',
+				'type' => 'text',
+				'title' => __('Block 1 Link', 'asteria')
+				),
+				
 			array(
 				'id'=>'block1_textarea_id',
 				'type' => 'editor',
 				'title' => __('Block 1 Content', 'asteria'), 
 				'default' => 'Lorem ipsum dolor sit amet, consectetur  dol adipiscing elit. Nam nec rhoncus risus. In ultrices lacinia ipsum, posuere faucibus velit bibe.',
+				),
+
+				
+			array(
+				'id'=>'block1_dvd',
+				'type' => 'divide'
 				),
 				
 			array(
@@ -443,11 +455,18 @@ function setup_framework_options(){
 				),
 
 			array(
+				'id'=>'block2_link_id',
+				'type' => 'text',
+				'title' => __('Block 2 Link', 'asteria')
+				),
+				
+			array(
 				'id'=>'block2_textarea_id',
 				'type' => 'editor',
 				'title' => __('Block 1 Content', 'asteria'), 
 				'default' => 'Lorem ipsum dolor sit amet, consectetur  dol adipiscing elit. Nam nec rhoncus risus. In ultrices lacinia ipsum, posuere faucibus velit bibe.',
 				),
+
 				
 			array(
 				'id'=>'block3_text_id',
@@ -463,14 +482,21 @@ function setup_framework_options(){
 				'data' => 'elusive',//Must provide key => value pairs for select options
 				'default' => 'fa-signal'
 				),
-
+				
+			array(
+				'id'=>'block3_link_id',
+				'type' => 'text',
+				'title' => __('Block 3 Link', 'asteria')
+				),
+				
 			array(
 				'id'=>'block3_textarea_id',
 				'type' => 'editor',
 				'title' => __('Block 3 Content', 'asteria'), 
 				'default' => 'Lorem ipsum dolor sit amet, consectetur  dol adipiscing elit. Nam nec rhoncus risus. In ultrices lacinia ipsum, posuere faucibus velit bibe.',
 				),
-				
+
+
 			array(
 				'id'=>'block4_text_id',
 				'type' => 'text',
@@ -485,7 +511,13 @@ function setup_framework_options(){
 				'data' => 'elusive',
 				'default' => 'fa-cogs'
 				),
-
+				
+			array(
+				'id'=>'block4_link_id',
+				'type' => 'text',
+				'title' => __('Block 4 Link', 'asteria')
+				),
+				
 			array(
 				'id'=>'block4_textarea_id',
 				'type' => 'editor',
@@ -659,12 +691,6 @@ function setup_framework_options(){
 				'validate' => 'color',
 				),
 
-				
-				////
-			array(
-				'id'=>'style_dvd',
-				'type' => 'divide'
-				),
 			//Text Colors	
 			array(
 				'id'=>'primtxt_color_id',
@@ -690,6 +716,14 @@ function setup_framework_options(){
 				'default' => '#333333',
 				'transparent' => false,
 				'validate' => 'color',
+				),
+				
+
+				
+				////
+			array(
+				'id'=>'style_dvd',
+				'type' => 'divide'
 				),
 				
 			array(

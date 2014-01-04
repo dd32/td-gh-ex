@@ -183,7 +183,6 @@ jQuery('.home_tabs .center, .lay4').waypoint(function() {
 
 
 //Mobile Menu
-if (jQuery(window).width() < 768) {
 	//jQuery("#topmenu").attr("id","sidr");
 	var padmenu = jQuery("#simple-menu").html();
 	jQuery('#simple-menu').sidr({
@@ -197,7 +196,7 @@ if (jQuery(window).width() < 768) {
 		preventDefaultEvents: false;
 		
 });
-}
+
 
 //NivoSlider Navigation Bug Fix
 if (jQuery(window).width() < 480) {

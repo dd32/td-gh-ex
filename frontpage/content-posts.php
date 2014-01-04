@@ -1,5 +1,5 @@
 <?php global $asteria;?>
-<?php $posts = $asteria['home_sort_id']; if(!empty($posts['posts'])){ ?>
+<?php $homeposts = $asteria['home_sort_id']; if(!empty($homeposts['posts'])){ ?>
 <!--Latest Posts-->
 	<?php if ( asteria_is_mobile() && (!empty($asteria['hide_mob_frontposts'])) ) { ?>
     <?php }else{ ?>
