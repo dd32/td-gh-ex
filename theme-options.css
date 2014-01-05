@@ -2,10 +2,10 @@
  * Styles for theme info page.
  *
  * @package	Anarcho Notepad
- * @since	2.15
+ * @since	2.2
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright © 2013-2014, Arthur Gareginyan
- * @link      	http://mycyberuniverse.com/anarcho-notepad.html
+ * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
  * @license   	http://www.gnu.org/licenses/gpl-3.0.html
  */
 
@@ -16,16 +16,6 @@
 	     url('fonts/forum/Forum.woff') format('woff'),
 	     url('fonts/forum/Forum.ttf') format('truetype'),
 	     url('fonts/forum/Forum.svg#Forum') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'FontAwesome';
-	src: url('fonts/font-awesome-4.0.0/fonts/fontawesome-webfont.eot');
-	src: url('fonts/font-awesome-4.0.0/fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
-	     url('fonts/font-awesome-4.0.0/fonts/fontawesome-webfont.woff') format('woff'),
-	     url('fonts/font-awesome-4.0.0/fonts/fontawesome-webfont.ttf') format('truetype'),
-	     url('fonts/font-awesome-4.0.0/fonts/fontawesome-webfont.svg#Forum') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -44,7 +34,7 @@
 	width: 99%; }
 .cover h4 {
 	text-align: center;
-	font-size:2em;
+	font-size:1.6em;
 	line-height:normal;
 	-family: sans-serif;
 	clear:both; }
@@ -94,27 +84,22 @@
 	line-height: 150%;
 	text-align: justify;
 	text-shadow: 0 0 1px #AAA; }
-#page .content p {
-	font-size: 100%; }
-
-#page .content ul {
-	list-style: inherit;
-	padding: 0 0 0 40px; }
-
 #page .welcome {
 	font-size: 90%;
 	line-height: 150%;
 	color: #333;
 	text-align: justify;
 	text-shadow: 0 0 1px #AAA; }
-#page .content h3  {
-	font-size: 2em;
-	line-height: 1px;
-	text-align: center; }
-#page .content h4  {
-	font-size: 1.3em;
-	line-height: 1px;
-	text-align: center; }
+#page .content h4:first-child  { margin:0 0 1.5em; }
+#page .content h4:first-child a {
+	color:#111;
+	font-weight:normal; }
+#page .content h4:first-child a:hover { color:#444; }
+#page .content h4:first-child span { font-size: .6em;
+	line-height:.9em;
+	float:right;
+	padding:.20em;
+	text-align:center; }
 #page .content table {
 	text-align:left;
 	width:100%;
@@ -146,16 +131,12 @@ tbody tr:nth-child(odd) {
 	font-size: 100%;
 	line-height: 110%; }
 #sidebar .donate {
-	border-bottom: 1px solid gray; }
-#sidebar .donate p {
-	font-size: 120%; }
-#sidebar .comment {
+	border-bottom: 1px solid gray;
+	margin-bottom: 40p }
+#sidebar .site-link {
 	border-bottom: 1px solid gray;
 	margin-bottom: 40p }
 #sidebar .follow {
 	border-bottom: 1px solid gray;
 	margin-bottom: 40p }
-#sidebar .follow p {
-	font-size: 30px;
-	letter-spacing: 8px; }
 @media only screen and (max-width:700px), only screen and (max-device-width : 700px){ #page>li { width:85%; } }

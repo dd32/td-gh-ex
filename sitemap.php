@@ -5,10 +5,10 @@
  * Template Name: Sitemap Page
  *
  * @package	Anarcho Notepad
- * @since	2.6
+ * @since	2.2
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013-2014, Arthur Gareginyan
- * @link      	http://mycyberuniverse.com/anarcho-notepad.html
+ * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
  * @license   	http://www.gnu.org/licenses/gpl-3.0.html
  */
 ?>
@@ -22,39 +22,39 @@
   <?php while (have_posts()) : the_post(); ?>
 
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-      <h1><?php the_title(); ?></h1>
+      <h3><?php the_title(); ?></h3>
       <div class="post-inner">
 
 	<?php the_post_thumbnail(); ?>
 
 <!-- HTML Sitemap -->
 <div class="html-sitemap">
-   <!-- <h2><?php _e('Author(s):', 'anarcho-notepad'); ?></h2>
+   <!-- <h2>Author(s):</h2>
     <ul class="sitemap-authors">
-    <?php
+    <?php 
        wp_list_authors('exclude_admin=1&optioncount=1');
     ?>
     </ul>-->
-
-    <h2><?php _e('Pages:', 'anarcho-notepad'); ?></h2>
+         
+    <h2>Pages:</h2>
     <ul class="sitemap-pages">
     <?php
-      wp_list_pages('exclude=889&title_li='); //***Exclude page Id, separated. I excluded the sitemap of this blog (page_ID=889).
+      wp_list_pages('exclude=889&title_li='); //***Exclude page Id, separated by comma. I excluded the sitemap of this blog (page_ID=889).
     ?>
-    </ul>
-
-    <h2><?php _e('Posts:', 'anarcho-notepad'); ?></h2>
+    </ul> 
+      
+    <h2>Posts:</h2>
     <ul>
     <?php
-    $cats = get_categories('exclude='); //***Exclude categories by ID, separated if you like.
-
-    foreach ($cats as $cat) {?>
-      <li class="category"><h3><span class="grey"><?php _e('Category: ', 'anarcho-notepad'); ?></span><?php echo $cat->cat_name; ?></h3>
-      <ul class="cat-posts">
-      <?php
+    $cats = get_categories('exclude='); //***Exclude categories by ID, separated by comma if you like.
+     
+    foreach ($cats as $cat) {
+      echo '<li class="category">'."\n".'<h3><span class="grey">Category: </span>'.$cat->cat_name.'</h3>'."\n";
+      echo '<ul class="cat-posts">'."\n";
+       
       $query = new WP_Query( array( 'posts_per_page' => '-1' ) ); //-1 shows all posts per category. 1 to show most recent post.
 
-      while ($query->have_posts()): $query->the_post();
+      while ($query->have_posts()): $query->the_post(); 
 
          $category = get_the_category();
          //Display a post once, even if it is in multiple categories/subcategories. Lists the post in the first Category displayed.
@@ -64,22 +64,22 @@
        <?php } //endif
         endwhile; //endwhile
        ?>
-      </ul>
+      </ul> 
       </li>
     <?php } ?>
     </ul>
-    <?php
-    wp_reset_query();
-    ?>
-    <h2><?php _e('Archives:', 'anarcho-notepad'); ?></h2>
-    <ul class="sitemap-archives">
-    <?php
-      wp_get_archives('type=monthly&show_post_count=true');
-    ?>
-    </ul>
+    <?php 
+    wp_reset_query(); 
+    ?>   
+    <h2>Archives:</h2>   
+    <ul class="sitemap-archives">   
+    <?php 
+      wp_get_archives('type=monthly&show_post_count=true'); 
+    ?>   
+    </ul>     
 </div>
 <!-- END -->
-
+        
       </div>
     </article>
     <?php endwhile; ?>
