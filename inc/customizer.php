@@ -17,24 +17,22 @@ function accessiblezen_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 	$wp_customize->get_setting( 'background_color' )->transport = 'postMessage';
-	$wp_customize->get_setting('displayblogname')->transport='postMessage';
-	$wp_customize->get_setting('show_more_posts_link')->transport='postMessage';
 	
 	// Hide the site/blog description
 	$wp_customize->add_setting( 'displayblogname', array(
-		'default'	=> '1',
 		'sanitize_callback' => 'displayblogname_sanitize_checkbox',
 		'capability' => 'edit_theme_options',
 	) );
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'displayblogname', array(
-	'label'	=> __( 'Display Site Tagline', 'accessiblezen' ),
-	'section'    => 'title_tagline',
-	'settings'	=> 'displayblogname',
+	'label'	=> __( 'Hide Site Tagline', 'accessiblezen' ),
+	'section'  => 'title_tagline',
+	'settings' => 'displayblogname',
 	'type'     => 'checkbox',
 ) ) );
 
-function displayblogname_sanitize_checkbox( $input ) {
-    if ( $input == 1 ) {
+function displayblogname_sanitize_checkbox( $displayblognameinput ) {
+
+    if ( $displayblognameinput == 1 ) {
         return 1;
     } else {
         return '';
@@ -63,14 +61,14 @@ function displayblogname_sanitize_checkbox( $input ) {
 		),
 ) ) );
 
-function accessiblezen_post_content_sanitize_radio_buttons( $input ) {
+function accessiblezen_post_content_sanitize_radio_buttons( $postcontentinput ) {
     $valid = array(
         'option1'	=> 'Excerpts',
 		'option2'	=> 'Full content',
     );
  
-    if ( array_key_exists( $input, $valid ) ) {
-        return $input;
+    if ( array_key_exists( $postcontentinput, $valid ) ) {
+        return $postcontentinput;
     } else {
         return '';
     }
@@ -96,9 +94,9 @@ $wp_customize->add_control(
 		)
 	);
 
-function accessiblezen_sanitize_dropdown_integer( $input ) {
-    if( is_numeric( $input ) ) {
-        return intval( $input );
+function accessiblezen_sanitize_dropdown_integer( $dropdownintegerinput ) {
+    if( is_numeric( $dropdownintegerinput ) ) {
+        return intval( $dropdownintegerinput );
     }
 }
 
@@ -126,3 +124,28 @@ function modify_customize_preview_page_script() {
 }
 // Action will load script to customizer.php only.
 add_action( 'customize_controls_print_footer_scripts', 'modify_customize_preview_page_script' );
+
+/**
+ * Add contextual help to the Themes screens.
+ *
+ * @since accessiblezen 1.0
+ *
+ * @return void
+ */
+function accessiblezen_contextual_help() {
+	if ( 'admin_head-edit.php' === current_filter() && 'post' !== $GLOBALS['typenow'] ) {
+		return;
+	}
+
+	get_current_screen()->add_help_tab( array(
+		'id'      => 'accessiblezen',
+		'title'   => __( 'Accessible Zen', 'accessiblezen' ),
+		'content' =>
+			'<ul>' .
+				'<li>' . sprintf( __( 'Accessible Zen uses the WordPress Theme Customizer to allow you to adjust several settings, including showing/hiding the site tagline, displaying post excerpts and much more. Get started customizing the theme under <a href="%s">Appearance &rarr; Customize</a>.', 'accessiblezen' ), admin_url( 'customize.php' ) ) . '</li>' .
+				'<li>' . sprintf( __( 'If you have questions about the theme, want to suggest a new feature or need support, visit the <a href="%s">Accessible Zen support forum</a>.', 'accessiblezen' ), 'http://wordpress.org/support/theme/accessible-zen' ) . '</li>' .
+				'<li>' . sprintf( __( 'For in-depth documentation on Accessible Zen, see the file bundled with the theme called <code>accessible-zen-documentation</code>, or view it <a href="%s">in the Github repository</a>.', 'accessiblezen' ), 'https://github.com/davidakennedy/accessible-zen/blob/master/accessible-zen-documentation.md' ) . '</li>' .
+			'</ul>',
+	) );
+}
+add_action( 'admin_head-themes.php', 'accessiblezen_contextual_help' );
