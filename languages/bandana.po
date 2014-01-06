@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Bandana 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-02 19:01+0500\n"
-"PO-Revision-Date: 2014-01-02 19:01+0500\n"
+"POT-Creation-Date: 2014-01-06 17:16+0500\n"
+"PO-Revision-Date: 2014-01-06 17:16+0500\n"
 "Last-Translator: DesignOrbital <designorbital@live.com>\n"
 "Language-Team: DesignOrbital <designorbital@live.com>\n"
 "Language: en_US\n"
@@ -318,26 +318,30 @@ msgid "%1$s Theme Settings"
 msgstr ""
 
 #: lib/admin/page.php:14
+msgid "Our Premium Themes"
+msgstr ""
+
+#: lib/admin/page.php:15
 msgid "Our Free Themes"
 msgstr ""
 
-#: lib/admin/page.php:20 lib/admin/page.php:59
+#: lib/admin/page.php:21 lib/admin/page.php:60
 msgid "Save Changes"
 msgstr ""
 
-#: lib/admin/page.php:28
+#: lib/admin/page.php:29
 msgid "Blog Settings"
 msgstr ""
 
-#: lib/admin/page.php:29
+#: lib/admin/page.php:30
 msgid "Post Settings"
 msgstr ""
 
-#: lib/admin/page.php:30
+#: lib/admin/page.php:31
 msgid "Footer Settings"
 msgstr ""
 
-#: lib/admin/page.php:31
+#: lib/admin/page.php:32
 msgid "General Settings"
 msgstr ""
 

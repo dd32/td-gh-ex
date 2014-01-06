@@ -277,7 +277,7 @@ function bandana_loop_nav_singular_attachment() {
 
 /** Bandana Author */
 function bandana_author() {
-if ( get_the_author_meta( 'description' ) && is_multi_author() ) :	
+if ( get_the_author_meta( 'description' ) ) :	
 ?>
 <div id="author-info" class="clearfix">
   

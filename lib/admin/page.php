@@ -11,6 +11,7 @@
   <?php settings_errors(); ?>
   
   <div id="bandana-pro-wrapper">
+    <a href="http://designorbital.com/" class="button button-primary button-hero" target="_blank"><?php _e( 'Our Premium Themes', 'bandana' ); ?></a>
     <a href="http://designorbital.com/free-wordpress-themes/" class="button button-hero" target="_blank"><?php _e( 'Our Free Themes', 'bandana' ); ?></a>
   </div>
   
