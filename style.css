@@ -4,7 +4,7 @@ Theme URI: http://hostmarks.com/theme/
 Author: Hostmarks.com
 Author URI: http://hostmarks.com/
 Description: Hostmarks is a very clean and simple blog theme. It features a clean layout with contemporary typography, and the ability to customize all the principle theme colors right from the customization menu. Of course it is fully responsive, supports custom menus and widgets and comes with an alternative blog page template as well as a plain full page template for static content.
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-menu, sticky-post, microformats, rtl-language-support, translation-ready, full-width-template, post-formats
@@ -1410,6 +1410,11 @@ POSTS & CONTENT STYLES
 			text-transform: uppercase;
 			text-decoration: none;
 		}
+			.grid-box .more-link {
+				margin-top: 20px;
+				width: 104px;
+			}
+			
 			.more-link:hover {
 				color: #222;
 			}
@@ -2789,6 +2794,182 @@ footer[role=contentinfo] {
 .colortxt {
 	color: #ff9700;
 }
+
+/******************************************************************
+GRID BOX STYLES
+******************************************************************/
+#grid-wrap {
+	position: relative;
+	width: 106%;
+	margin-bottom: 20px;
+	margin-left: -2%;
+	margin-right: -2%;
+	margin-top: -20px;
+}
+	html.no-csstransforms #grid-wrap {
+		margin-top: 40px;
+	}
+
+#grid-wrap.menu-full {
+	position: relative;
+	width: 104%;
+	margin-left: -1.5%;
+	margin-right: -1.5%;
+}
+
+.grid-box {
+	position: relative;
+	display: inline-block;
+	float: left;
+	width: 27%;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 2% 3%;
+	border-bottom: 1px solid #ececec;
+}
+	html.no-csstransforms .grid-box {
+		margin: 0 18px 40px;
+	}
+	
+	#grid-wrap.menu-full .grid-box {
+		width: 21.75%;
+	}
+	
+	.grid-box article {
+		padding: 0 0 30px;
+		margin: 0;
+		border: 0 !important;
+	}
+
+.grid-box .entry-meta {
+	
+}
+
+.grid-box .entry-title a,
+.grid-box .entry-title a:hover {
+	
+}
+
+.grid-box .entry-header {
+	margin-bottom: 20px; /* for ie8 & below */
+	margin-bottom: 2rem;
+}
+
+.grid-box .entry-title,
+body.page .grid-box .entry-title {
+	font-size: 21px; /* for ie8 & below */
+	font-size: 2.1rem;
+	line-height: 26px; /* for ie8 & below */
+	line-height: 2.6rem;
+	letter-spacing: 1px; /* for ie8 & below */
+	letter-spacing: 0.1rem;
+	-webkit-text-stroke: 0.012rem #000;
+}
+
+.grid-box .post-content {
+	margin-bottom: 20px; /* for ie8 & below */
+	margin-bottom: 2rem;
+	font-size: 14px; /* for ie8 & below */
+	font-size: 1.4rem;
+}
+	.grid-box .post-content p:last-child {
+		margin-bottom: 0;
+	}
+
+.grid-box .entry-content {
+	margin-bottom: 20px; /* for ie8 & below */
+	margin-bottom: 2rem;
+}
+	
+	.grid-box .format-aside .entry-content,
+	.grid-box .format-status .entry-content {
+		font-style: italic;
+		margin: 0 0 24px;
+	}
+	
+	.grid-box .format-video video, 
+	.grid-box .format-video object,
+	.grid-box .format-video embed,
+	.grid-box .format-video iframe {
+		max-height: 185px;
+		min-height: 185px;
+	}
+		.grid-box .vid-wrapper video {
+			min-width: 100%;	
+		}
+	
+	.grid-box .post-content blockquote { 
+		font-style: italic;
+		line-height: 26px; /* for ie8 & below */ 
+		line-height: 2.6rem;
+		margin: 10px 0 5px 35px; /* for ie8 & below */
+		margin: 1rem 0 0.5rem 3.5rem; 
+	}
+	
+	.grid-box .post-content blockquote:before { 
+		font-size: 50px; /* for ie8 & below */ 
+		font-size: 5.0rem;
+		text-indent: -35px; /* for ie8 & below */
+		text-indent: -3.5rem;
+		margin-top: 12px; /* for ie8 & below */ 
+		margin-top: 1.2rem; 
+		float: left;
+		opacity: 0.2; 
+	}
+
+	.grid-box article[id*=post-] footer.entry-meta {
+		margin: 0 0 10px;
+		overflow: hidden;
+	}
+		.grid-box article[id*=post-] footer.entry-meta a {
+			
+		}
+	
+	.grid-box .format-aside footer.entry-meta {
+		text-align: left;
+	}
+	
+.grid-box .imgthumb {
+	margin: 0 0 20px 0;
+	overflow: hidden;
+	height: 100%;
+}
+	.grid-box .imgthumb img {
+		min-width: 100%;
+		max-width: 100%;
+		height: auto;
+		width: auto;
+		border: 0;
+	}
+
+
+.grid-box-noimg { 
+	background-color: #eee;
+	position: relative;
+	text-align: center;
+	height: 185px;
+	outline: none;
+	margin: 0 0 15px 0;
+}
+	.grid-box-noimg p {
+		width: 100%;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		-moz-transform: translate(-50%, -50%);
+		-webkit-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		-o-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	}
+	
+		html.no-borderradius .grid-box-noimg p {
+			left: 0;
+			top: 45%;	
+		}
+
 	
 /******************************************************************
 MEDIA QUERIES & DEVICE STYLES
@@ -3016,6 +3197,14 @@ URL: http://stuffandnonsense.co.uk/projects/320andup/
 		margin-right: 0;
 	}
 	
+	.grid-box .format-video video, 
+	.grid-box .format-video object,
+	.grid-box .format-video embed,
+	.grid-box .format-video iframe {
+		min-height: 130px;
+		max-height: 130px;
+	}
+	
 }
 	
 
@@ -3154,6 +3343,8 @@ URL: http://stuffandnonsense.co.uk/projects/320andup/
 		min-height: 26rem;
 	}
 	
+	
+	
 	.gallery img {
 		max-width: 85%;
 	}
@@ -3182,6 +3373,22 @@ URL: http://stuffandnonsense.co.uk/projects/320andup/
 	#respond #url, 
 	#respond #comment {
 		width: 100%;
+	}
+	
+	#grid-wrap {
+		margin-top: -30px;
+	}
+	
+	.grid-box {
+		width: 40%;
+		margin: 5%;
+	}
+	
+	.grid-box .format-video video, 
+	.grid-box .format-video object,
+	.grid-box .format-video embed,
+	.grid-box .format-video iframe {
+		min-height: 130px;
 	}
 }
 
@@ -3223,6 +3430,8 @@ URL: http://stuffandnonsense.co.uk/projects/320andup/
 		font-size: 30px; /* for ie8 & below */ 
 		font-size: 3.0rem;
 	}
+	
+		
 
 		body.page .entry-title, 
 		body.single .entry-title, 
@@ -3241,6 +3450,12 @@ URL: http://stuffandnonsense.co.uk/projects/320andup/
 	body.page .theme-post-type-content-th .entry-title {
 		font-size: 30px; /* for ie8 & below */
 		font-size: 3rem;
+	}
+	
+	body.page .grid-box .entry-title {
+		font-size: 21px; /* for ie8 & below */
+		font-size: 2.1rem;
+		line-height: 1.1;
 	}
 	
 	.single-theme .theme-post-type .entry-title,
@@ -3268,6 +3483,18 @@ URL: http://stuffandnonsense.co.uk/projects/320andup/
 	
 	.commentlist li[class*=depth-] {
 		margin-left: 0;
+	}
+	
+	.grid-box {
+		width: 88%;
+		margin: 5%;
+	}
+	
+	.grid-box .format-video video, 
+	.grid-box .format-video object,
+	.grid-box .format-video embed,
+	.grid-box .format-video iframe {
+		min-height: 180px;
 	}
 }
 
@@ -3336,6 +3563,13 @@ URL: http://stuffandnonsense.co.uk/projects/320andup/
 		font-size: 12px;
 		padding: 10px 16px;
 		letter-spacing: 2px;
+	}
+	
+	.grid-box .format-video video, 
+	.grid-box .format-video object,
+	.grid-box .format-video embed,
+	.grid-box .format-video iframe {
+		min-height: 130px;
 	}
 }
 

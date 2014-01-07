@@ -46,6 +46,9 @@ This theme is bundled with Modernizr
 =================================
 CHANGELOG
 =================================
+Version 1.0.2
+ * Added an Alt_Homepage template w/c features a masonry layout for posts.
+ 
 Version 1.0.1
  * Added a theme customizer option to display the Footer widget section on all pages
  * Removed the "Full-width, w/ footer widgets" page template
