@@ -5,7 +5,7 @@ if ( ! isset( $content_width ) ) {
 }
 
 
-$activetab_version = '1.0';
+$activetab_version = '1.1';
 
 
 if ( ! function_exists( 'activetab_enqueue_scripts_and_styles' ) ) :
@@ -224,7 +224,7 @@ if ( ! function_exists( 'activetab_comments' ) ) :
 							</div> <!-- /.comment-author /.vcard -->
 
 							<?php if ( $comment->comment_approved == '0' ) : ?>
-								<p><em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'activetab' ); ?></em></p>
+								<div class="alert alert-warning"><?php _e( 'Your comment is awaiting moderation.', 'activetab' ); ?></div>
 							<?php endif; ?>
 
 						</header><!-- /.comment-meta -->

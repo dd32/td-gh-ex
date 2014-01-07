@@ -3,8 +3,8 @@ Contributors: webvitaly
 Donate link: http://web-profile.com.ua/donate/
 Tags: gray, white, light, one-column, two-columns, right-sidebar, flexible-width, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, clean
 Requires at least: 3.4
-Tested up to: 3.7.1
-Stable tag: 1.0
+Tested up to: 3.8
+Stable tag: 1.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -42,6 +42,10 @@ FAQ:
 
 
 == Changelog ==
+
+= 1.1 - 2014-01-07 =
+* optimize images for faster loading
+* bug fixing
 
 = 1.0 - 2013-12-07 =
 * updated Bootstrap v.3.0.3
@@ -148,8 +152,9 @@ FAQ:
 
 == Other Notes ==
 
-activetab theme, copyright 2013 web-profile.com.ua
+activetab theme, copyright 2014 web-profile.com.ua
 activetab theme is distributed under the terms of the GNU GPL
+
 
 = Bundled Resources: =
 
@@ -158,6 +163,7 @@ activetab theme is distributed under the terms of the GNU GPL
 * [Pixabay](http://pixabay.com/) public domain images
 * [Font Awesome](http://fortawesome.github.io/Font-Awesome/) licensed under [open source and GPL compatible license](http://fortawesome.github.io/Font-Awesome/license/)
 * [RSS-feed icon](http://www.feedicons.com/) is free to use
+
 
 = Images used: =
 
