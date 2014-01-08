@@ -1,8 +1,8 @@
 <?php $icons = array(
-    array('icon_o' => 'icon-pencil', 'link' => 'http://themes.kadencethemes.com/virtue/', 'title' => 'Clean Design'),
-    array('icon_o' => 'icon-mobile-phone', 'link' => 'http://themes.kadencethemes.com/virtue/', 'title' => 'Responsive'),
-    array('icon_o' => 'icon-cogs', 'link' => 'http://themes.kadencethemes.com/virtue/', 'title' => 'Tons of Options'),
-    array('icon_o' => 'icon-shopping-cart', 'link' => 'http://themes.kadencethemes.com/virtue/', 'title' => 'Ecommerce'),
+    array('icon_o' => 'icon-pencil', 'link' => 'http://themes.kadencethemes.com/virtue/', 'title' => 'Clean Design', 'url' => '', 'description' => ''),
+    array('icon_o' => 'icon-mobile-phone', 'link' => 'http://themes.kadencethemes.com/virtue/', 'title' => 'Responsive', 'url' => '', 'description' => ''),
+    array('icon_o' => 'icon-cogs', 'link' => 'http://themes.kadencethemes.com/virtue/', 'title' => 'Tons of Options', 'url' => '', 'description' => ''),
+    array('icon_o' => 'icon-shopping-cart', 'link' => 'http://themes.kadencethemes.com/virtue/', 'title' => 'Ecommerce', 'url' => '', 'description' => ''),
     ); 
  $iconcount = count($icons);
                 if(kadence_display_sidebar()) {

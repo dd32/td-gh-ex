@@ -85,5 +85,6 @@
         <?php do_action('comment_form', $post->ID); ?>
       </form>
     <?php endif; ?>
+    <?php endif; ?>
   </section><!-- /#respond -->
 <?php endif; ?>

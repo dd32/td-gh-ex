@@ -48,6 +48,11 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 1.9.7 =
+* Always notice things right after you update.
+* Fix comments.
+
+
 = Version: 1.9.5 =
 * Update Theme Options, Various Speed improvments
 * Add Logo Alt
