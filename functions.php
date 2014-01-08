@@ -100,8 +100,6 @@ add_action( 'wp_enqueue_scripts', 'busiprof_scripts' );
 		
 		add_theme_support( 'post-thumbnails' ); //supports featured image
 		add_theme_support( 'automatic-feed-links' ); //feed links enabled
-		add_theme_support( 'custom-header');
-		add_theme_support( 'custom-background') ;
 		do_action('busiprof_init');//load admin pannal file	
 		
 		// setup admin pannel defual data for index page

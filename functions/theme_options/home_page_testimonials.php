@@ -27,7 +27,7 @@
 			
 			$current_options['recent_blog_title'] = sanitize_text_field($_POST['recent_blog_title']);
 			$current_options['recent_blog_description'] = sanitize_text_field($_POST['recent_blog_description']);
-			
+					
 			update_option('busiprof_theme_options' ,stripslashes_deep($current_options));
 		}
      }

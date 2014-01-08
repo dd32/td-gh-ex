@@ -1,6 +1,7 @@
 <?php
 		get_header();
 		$current_options=get_option('busiprof_theme_options');
+		
 ?>	<div class="container">
 			<?php if($current_options['service_heading_one']!='') {?>
 		<div class="services_top_mn">

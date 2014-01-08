@@ -44,7 +44,7 @@ if(isset($_POST['busiprof_settings_save_1']))
 			$current_options['service_icon_four'] = sanitize_text_field($_POST['service_icon_four']);
 			$current_options['service_title_four'] = sanitize_text_field($_POST['service_title_four']);
 			$current_options['service_text_four'] = sanitize_text_field($_POST['service_text_four']);
-		
+					
 		update_option('busiprof_theme_options' , stripslashes_deep($current_options));
 		}
      }	
