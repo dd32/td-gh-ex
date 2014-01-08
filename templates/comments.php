@@ -48,6 +48,9 @@
 
 <?php if (comments_open()) : ?>
   <section id="respond">
+     <?php if ( did_action( 'jetpack_comments_loaded' ) ) : ?>
+    <?php comment_form(); ?>
+    <?php else: ?>
     <h3><?php comment_form_title(__('Leave a Reply', 'virtue'), __('Leave a Reply to %s', 'virtue')); ?></h3>
     <p class="cancel-comment-reply"><?php cancel_comment_reply_link(); ?></p>
     <?php if (get_option('comment_registration') && !is_user_logged_in()) : ?>

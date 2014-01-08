@@ -22,8 +22,9 @@
 if( !defined( 'ABSPATH' ) ) exit;
 
 // Don't duplicate me!
-if( class_exists( 'ReduxFramework_ace_editor' ) ) return;
-class ReduxFramework_border extends ReduxFramework{	
+if( class_exists( 'ReduxFramework_border' ) ) return;
+
+class ReduxFramework_border extends ReduxFramework {	
 	
 	/**
 	 * Field Constructor.
@@ -34,10 +35,10 @@ class ReduxFramework_border extends ReduxFramework{
 	*/
 	function __construct($field = array(), $value ='', $parent){
 		
-		parent::__construct($parent->sections, $parent->args);
+		parent::__construct( $parent->sections, $parent->args );
+		$this->parent = $parent;
 		$this->field = $field;
 		$this->value = $value;
-		//$this->render();
 		
 	}//function
 	
@@ -193,8 +194,8 @@ class ReduxFramework_border extends ReduxFramework{
 
 		wp_enqueue_script(
 			'redux-field-border-js', 
-			ReduxFramework::$_url.'inc/fields/border/field_border.min.js', 
-			array('jquery', 'select2-js', 'jquery-numeric'),
+			ReduxFramework::$_url.'inc/fields/border/field_border.js', 
+			array('jquery', 'select2-js', 'redux-vendor'),
 			time(),
 			true
 		);
@@ -211,9 +212,10 @@ class ReduxFramework_border extends ReduxFramework{
 
     public function output() {
 
-        if ( !isset($this->field['output']) || empty( $this->field['output'] ) ) {
-            return;
-        }    
+		if ( ( !isset( $this->field['output'] ) || !is_array( $this->field['output'] ) ) && !isset( $this->field['compiler'] ) || !is_array( $this->field['compiler'] ) ) {
+			return;
+		}
+
         $cleanValue = array(
             'top' => !empty( $this->value['border-top'] ) ? $this->value['border-top'] : 'inherit',
             'right' => !empty( $this->value['border-right'] ) ? $this->value['border-right'] : 'inherit',
@@ -222,25 +224,31 @@ class ReduxFramework_border extends ReduxFramework{
             'color' => !empty( $this->value['border-color'] ) ? $this->value['border-color'] : 'inherit',
             'style' => !empty( $this->value['border-style'] ) ? $this->value['border-style'] : 'inherit'
         );
+
+        $style = "";
     	
 		//absolute, padding, margin
-        $keys = implode(",", $this->field['output']);
-        $style = '<style type="text/css" class="redux-'.$this->field['type'].'">';
-            $style .= $keys."{";
-	            if ( !isset( $this->field['all'] ) || $this->field['all'] != true ) {
-					foreach($cleanValue as $key=>$value) {
-		            	if ($key == "color" || $key == "style" ) {
-		            		continue;
-		            	}
-                        $style .= 'border-' . $key . ':' . $value . ' '.$cleanValue['style'] . ' '. $cleanValue['color'] . ';';
-		            }            	
-	            } else {
-	            	$style .= 'border:' . $value['top'] . ' ' . $cleanValue['style'] . ' '. $cleanValue['color'] .';';
-	            }
-            
-            $style .= '}';
-        $style .= '</style>';
-        echo $style;
+        if ( !isset( $this->field['all'] ) || $this->field['all'] != true ) {
+			foreach($cleanValue as $key=>$value) {
+            	if ($key == "color" || $key == "style" ) {
+            		continue;
+            	}
+                $style .= 'border-' . $key . ':' . $value . ' '.$cleanValue['style'] . ' '. $cleanValue['color'] . ';';
+            }            	
+        } else {
+        	$style .= 'border:' . $value['top'] . ' ' . $cleanValue['style'] . ' '. $cleanValue['color'] .';';
+        }
+
+		if ( !empty( $this->field['output'] ) && is_array( $this->field['output'] ) ) {
+			$keys = implode(",", $this->field['output']);
+			$this->parent->outputCSS .= $keys . "{" . $style . '}';
+		}
+
+		if ( !empty( $this->field['compiler'] ) && is_array( $this->field['compiler'] ) ) {
+			$keys = implode(",", $this->field['compiler']);
+			$style = $keys . "{" . $style . '}';
+			$this->parent->compilerCSS .= $keys . "{" . $style . '}';
+		}		
         
     }	
 	

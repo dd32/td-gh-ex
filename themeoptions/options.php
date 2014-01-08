@@ -1,33 +1,37 @@
 <?php
-require_once locate_template('themeoptions/options/add-fields/slides_link/field_slides_link.php');
-require_once locate_template('themeoptions/options/add-fields/slides_icon/field_slides_icon.php');
 define( 'LAYOUT_PATH', get_template_directory() . '/assets/css/skins/' );
 define( 'OPTIONS_PATH', get_template_directory_uri() . '/themeoptions/options/' );
 
-$args = array();
+// BEGIN Config
 
-$alt_stylesheet_path = LAYOUT_PATH;
-            $alt_stylesheets = array();
-            
-            if ( is_dir($alt_stylesheet_path) ) 
-            {
-                if ($alt_stylesheet_dir = opendir($alt_stylesheet_path) ) 
-                { 
-                    while ( ($alt_stylesheet_file = readdir($alt_stylesheet_dir)) !== false ) 
-                    {
-                        if(stristr($alt_stylesheet_file, ".css") !== false)
-                        {
-                            $alt_stylesheets[$alt_stylesheet_file] = $alt_stylesheet_file;
-                        }
-                    }    
+if ( !class_exists( "ReduxFramework" ) ) {
+        return;
+} 
+
+if ( !class_exists( "Redux_Framework_Virtue_config" ) ) {
+        class Redux_Framework_Virtue_config {
+          public $args = array();
+                public $sections = array();
+                public $theme;
+                public $ReduxFramework;
+
+                public function __construct( ) {
+                  // Create the sections and fields
+                  $this->setSections();
+                  // Set the default arguments
+                  $this->setArguments();
+                  $this->ReduxFramework = new ReduxFramework($this->sections, $this->args);
                 }
-            }
-	    
+
+                public function setSections() {
+
+                $alt_stylesheet_path = LAYOUT_PATH;
+$alt_stylesheets = array(); 
+if ( is_dir($alt_stylesheet_path) ) {if ($alt_stylesheet_dir = opendir($alt_stylesheet_path) ) {while ( ($alt_stylesheet_file = readdir($alt_stylesheet_dir)) !== false ) {if(stristr($alt_stylesheet_file, ".css") !== false) {$alt_stylesheets[$alt_stylesheet_file] = $alt_stylesheet_file;}}}}
+
 // For use with a tab example below
-$tabs = array();
 
     ob_start();
-
 ?>
 <div id="" class="">
        
@@ -315,147 +319,7 @@ $item_info = ob_get_contents();
     
 ob_end_clean();
 
-
-// BEGIN Sample Config
-
-// Setting dev mode to true allows you to view the class settings/info in the panel.
-// Default: true
-$args['dev_mode'] = false;
-
-// Set the icon for the dev mode tab.
-// If $args['icon_type'] = 'image', this should be the path to the icon.
-// If $args['icon_type'] = 'iconfont', this should be the icon name.
-// Default: info-sign
-//$args['dev_mode_icon'] = 'info-sign';
-
-// Set the class for the dev mode tab icon.
-// This is ignored unless $args['icon_type'] = 'iconfont'
-// Default: null
-$args['dev_mode_icon_class'] = 'icon-large';
-
-// Set a custom option name. Don't forget to replace spaces with underscores!
-$args['opt_name'] = 'virtue';
-
-// Setting system info to true allows you to view info useful for debugging.
-// Default: false
-//$args['system_info'] = true;
-
-
-// Set the icon for the system info tab.
-// If $args['icon_type'] = 'image', this should be the path to the icon.
-// If $args['icon_type'] = 'iconfont', this should be the icon name.
-// Default: info-sign
-//$args['system_info_icon'] = 'info-sign';
-
-// Set the class for the system info tab icon.
-// This is ignored unless $args['icon_type'] = 'iconfont'
-// Default: null
-$args['system_info_icon_class'] = 'icon-large';
-
-$theme = wp_get_theme();
-
-$args['display_name'] = $theme->get('Name');
-//$args['database'] = "theme_mods_expanded";
-$args['display_version'] = $theme->get('Version');
-
-// If you want to use Google Webfonts, you MUST define the api key.
-$args['google_api_key'] = 'AIzaSyALkgUvb8LFAmrsczX56ZGJx-PPPpwMid0';
-
-// Define the starting tab for the option panel.
-// Default: '0';
-//$args['last_tab'] = '0';
-
-// Define the option panel stylesheet. Options are 'standard', 'custom', and 'none'
-// If only minor tweaks are needed, set to 'custom' and override the necessary styles through the included custom.css stylesheet.
-// If replacing the stylesheet, set to 'none' and don't forget to enqueue another stylesheet!
-// Default: 'standard'
-//$args['admin_stylesheet'] = 'none';
-
-// Setup custom links in the footer for share icons
-$args['share_icons']['facebook'] = array(
-    'link' => 'https://www.facebook.com/KadenceThemes',
-    'title' => 'Follow Kadence Themes on Facebook', 
-    'img' => ReduxFramework::$_url . 'assets/img/social/Facebook.png'
-);
-
-// Enable the import/export feature.
-// Default: true
-//$args['show_import_export'] = false;
-
-// Set the icon for the import/export tab.
-// If $args['icon_type'] = 'image', this should be the path to the icon.
-// If $args['icon_type'] = 'iconfont', this should be the icon name.
-// Default: refresh
-$args['import_icon'] = 'hdd';
-
-// Set the class for the import/export tab icon.
-// This is ignored unless $args['icon_type'] = 'iconfont'
-// Default: null
-$args['import_icon_class'] = 'icon-large';
-
-// Set a custom menu icon.
-//$args['menu_icon'] = '';
-
-// Set a custom title for the options page.
-// Default: Options
-$args['menu_title'] = __('Theme Options', 'virtue');
-
-// Set a custom page title for the options page.
-// Default: Options
-$args['page_title'] = __('Theme Options', 'virtue');
-
-// Set a custom page slug for options page (wp-admin/themes.php?page=***).
-// Default: redux_options
-$args['page_slug'] = 'kad_options';
-
-$args['default_show'] = false;
-$args['default_mark'] = '';
-
-// Set a custom page capability.
-// Default: manage_options
-//$args['page_cap'] = 'manage_options';
-
-// Set the menu type. Set to "menu" for a top level menu, or "submenu" to add below an existing item.
-// Default: menu
-$args['page_type'] = 'submenu';
-
-// Set the parent menu.
-// Default: themes.php
-// A list of available parent menus is available at http://codex.wordpress.org/Function_Reference/add_submenu_page#Parameters
-//$args['page_parent'] = 'options_general.php';
-
-// Set a custom page location. This allows you to place your menu where you want in the menu order.
-// Must be unique or it will override other items!
-// Default: null
-//$args['page_position'] = null;
-
-// Set a custom page icon class (used to override the page icon next to heading)
-$args['page_icon'] = "kad_logo_header";
-
-// Set the icon type. Set to "iconfont" for Elusive Icon, or "image" for traditional.
-// Redux no longer ships with standard icons!
-// Default: iconfont
-//$args['icon_type'] = 'image';
-
-// Disable the panel sections showing as submenu items.
-// Default: true
-//$args['allow_sub_menu'] = false;
-    
-
-
- $args['intro_text'] = 'Upgrade to <a href="http://kadencethemes.com/product/virtue-premium-theme/" target="_blank" >Virtue Premium</a> for more great features. Over 50 more theme options, premium sliders and carousels, breadcrumbs, custom post types and much much more!';
-
-// Add content after the form.
-//$args['footer_text'] = '<div style="text-align:center; margin-bottom:20px; padding:20px; border:2px solid #999; font-size:16px;">Welcome to Virtue Theme! Upgrade to <a href="http://kadencethemes.com/product/virtue-premium-theme/" target="_blank" >Virtue Premium</a> for more great Features and Premium sliders.<div style="display:block; font-size:10px; max-width:600px; margin: 0 auto;">Revolution Slider, Product Carousel, Testimonial Post Type, Staff Post Type, Filterable Portfolio, Shop Slider Options, Carousel Slider, over 50 more Theme Options, Custom Breadcrumbs, more Skins, Custom Carousels and more!</div></div>';
-
-// Set footer/credit line.
-$args['footer_credit'] = __('Thank you for using the Virtue Theme by <a href="http://kadencethemes.com/" target="_blank">Kadence Themes</a>.', 'virtue');
-
-
-$sections = array();
-
-
-$sections[] = array(
+$this->sections[] = array(
     'title' => __('Main Settings', 'virtue'),
     'header' => '',
     'desc' => "<div class='redux-info-field'><h3>".__('Welcome to Virtue Theme Options', 'virtue')."</h3>
@@ -652,7 +516,7 @@ $sections[] = array(
             ),
          ),
 );
-$sections[] = array(
+$this->sections[] = array(
     'icon' => 'icon-cogs',
     'icon_class' => 'icon-large',
     'title' => __('Topbar Settings', 'virtue'),
@@ -708,7 +572,7 @@ $sections[] = array(
             ),
         ),
 );
-$sections[] = array(
+$this->sections[] = array(
     'icon' => 'icon-picture',
     'icon_class' => 'icon-large',
     'title' => __('Slider Settings', 'virtue'),
@@ -721,7 +585,7 @@ $sections[] = array(
             'subtitle' => __("If you don't want an image slider on your home page choose none.", 'virtue'),
             //'desc' => __('This is the description field, again good for additional info.', 'virtue'),
             'options' => array('none' => 'None','flex' => 'Flex Slider','thumbs' => 'Thumb Slider','latest' => 'Latest Posts', 'video' => 'Video'),
-            'default' => 'none',
+            'default' => '',
             'width' => 'width:60%',
             ),
         array(
@@ -803,7 +667,7 @@ $sections[] = array(
          ),
 );
 
-$sections[] = array(
+$this->sections[] = array(
     'icon' => 'icon-tablet',
     'icon_class' => 'icon-large',
     'title' => __('Mobile Slider', 'virtue'),
@@ -914,7 +778,7 @@ $sections[] = array(
             ),
          ),
 );
-$sections[] = array(
+$this->sections[] = array(
     'icon' => 'icon-home',
     'icon_class' => 'icon-large',
     'title' => __('Home Layout', 'virtue'),
@@ -979,7 +843,7 @@ $sections[] = array(
             'type' => 'slider', 
             'title' => __('Choose How many posts on Homepage', 'virtue'),
             //'desc'=> __('Note: does not work if images are smaller than max.', 'virtue'),
-            "default"       => "2",
+            "default"       => "4",
             "min"       => "2",
             "step"      => "2",
             "max"       => "8",
@@ -1068,7 +932,7 @@ $sections[] = array(
 
     ),
 );
-$sections[] = array(
+$this->sections[] = array(
     'icon' => 'icon-shopping-cart',
     'icon_class' => 'icon-large',
     'title' => __('Shop Settings', 'virtue'),
@@ -1198,7 +1062,7 @@ $sections[] = array(
             ),
     ),
 );
-$sections[] = array(
+$this->sections[] = array(
     'icon' => 'icon-pencil',
     'icon_class' => 'icon-large',
     'title' => __('Basic Styling', 'virtue'),
@@ -1252,7 +1116,7 @@ $sections[] = array(
             ),
       ),
 );
-$sections[] = array(
+$this->sections[] = array(
     'icon' => 'icon-edit',
     'icon_class' => 'icon-large',
     'title' => __('Advanced Styling', 'virtue'),
@@ -1535,7 +1399,7 @@ $sections[] = array(
             ),
     ),
 );
-$sections[] = array(
+$this->sections[] = array(
     'icon' => 'icon-text-width',
     'icon_class' => 'icon-large',
     'title' => __('Typography', 'virtue'),
@@ -1698,7 +1562,7 @@ $sections[] = array(
             ),
 	),
 );
-$sections[] = array(
+$this->sections[] = array(
     'icon' => 'icon-reorder',
     'icon_class' => 'icon-large',
     'title' => __('Menu Settings', 'virtue'),
@@ -1792,7 +1656,7 @@ $sections[] = array(
 		),
 );
 
-$sections[] = array(
+$this->sections[] = array(
     'icon' => 'icon-wrench',
     'icon_class' => 'icon-large',
     'title' => __('Misc Settings', 'virtue'),
@@ -1819,6 +1683,15 @@ $sections[] = array(
             'title' => __('Hide Image Border', 'virtue'),
             'subtitle' => __('Choose to show or hide image border', 'virtue'),
             "default" => 0,
+            ),
+      array(
+            'id'=>'blog_archive_full',
+            'type' => 'select',
+            'title' => __('Blog Archive', 'virtue'), 
+            'subtitle' => __("Choose to show full post or post excerpt.", 'virtue'),
+            'options' => array('summery' => 'Post Excerpt','full' => 'Full'),
+            'default' => 'summery',
+            'width' => 'width:60%',
             ),
     	array(
             'id'=>'close_comments',
@@ -1896,7 +1769,7 @@ $sections[] = array(
             ),
     ),
 );
-$sections[] = array(
+$this->sections[] = array(
     'icon' => 'icon-code',
     'icon_class' => 'icon-large',
     'title' => __('Advanced Settings', 'virtue'),
@@ -1911,7 +1784,7 @@ $sections[] = array(
     ),
 );
 
-$sections[] = array(
+$this->sections[] = array(
         'icon' => 'icon-upload',
         'icon_class' => 'icon-large',
         'title' => __('Theme Update Import', 'virtue'),
@@ -1938,11 +1811,40 @@ $sections[] = array(
                 )
             ),   
         );
-$tabs = array();
+}
+          public function setArguments() {
+            $theme = wp_get_theme();
+            $this->args = array(
+            'dev_mode' => false,
+            'dev_mode_icon_class' => 'icon-large',
+            'opt_name' => 'virtue',
+            'system_info_icon_class' => 'icon-large',
+            'display_name' => $theme->get('Name'),
+            'display_version' => $theme->get('Version'),
+            'google_api_key' => 'AIzaSyALkgUvb8LFAmrsczX56ZGJx-PPPpwMid0',
+            'import_icon' => 'hdd',
+            'import_icon_class' => 'icon-large',
+            'menu_title' => __('Theme Options', 'virtue'),
+            'page_title' => __('Theme Options', 'virtue'),
+            'page_slug' => 'kad_options',
+            'default_show' => false,
+            'default_mark' => '',
+            'page_type' => 'submenu',
+            'page_icon' => "kad_logo_header",
+            'footer_credit' => __('Thank you for using the Virtue Theme by <a href="http://kadencethemes.com/" target="_blank">Kadence Themes</a>.', 'virtue'),
+            );
+           $this->args['intro_text'] = 'Upgrade to <a href="http://kadencethemes.com/product/virtue-premium-theme/" target="_blank" >Virtue Premium</a> for more great features. Over 50 more theme options, premium sliders and carousels, breadcrumbs, custom post types and much much more!';
+           $this->args['share_icons']['facebook'] = array(
+            'link' => 'https://www.facebook.com/KadenceThemes',
+            'title' => 'Follow Kadence Themes on Facebook', 
+            'icon' => 'icon-facebook',
+            );
 
+          }
+     }
+        new Redux_Framework_Virtue_config();
 
-global $ReduxFramework;
-$ReduxFramework = new ReduxFramework($sections, $args, $tabs);
+}
 
 
 

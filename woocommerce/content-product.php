@@ -11,7 +11,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-global $product, $woocommerce_loop;
+global $product, $woocommerce_loop, $virtue;
 
 // Store loop count we're currently on
 if ( empty( $woocommerce_loop['loop'] ) )
@@ -38,7 +38,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 $classes[] = 'grid_item';
 $classes[] = 'product_item';
 $classes[] = 'clearfix';
-if(isset($virtue_premium['product_img_resize']) && $virtue_premium['product_img_resize'] == 0) {
+if(isset($virtue['product_img_resize']) && $virtue['product_img_resize'] == 0) {
 	$resizeimage = 0;
 } else {
 	$resizeimage = 1;
@@ -82,14 +82,13 @@ if(isset($virtue_premium['product_img_resize']) && $virtue_premium['product_img_
 
 			<?php // echo woocommerce_template_loop_product_thumbnail($post, $product, $size); ?>
 			<?php if($resizeimage == 1) { 
-				if ( has_post_thumbnail() ) {
+					if ( has_post_thumbnail() ) {
 					$product_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); 
 					$product_image_url = $product_image[0]; 
 					$image_product = aq_resize($product_image_url, $productimgwidth, $productimgheight, true);
 	            	if(empty($image_product)) {$image_product = $product_image_url;} ?> 
 	            	 <img width="<?php echo $productimgwidth;?>" height="<?php echo $productimgheight;?>" src="<?php echo $image_product;?>" class="attachment-shop_catalog wp-post-image" alt="<?php the_title();?>">
-	            	 <?php
-        		} elseif ( woocommerce_placeholder_img_src() ) {
+	            	 <?php } elseif ( woocommerce_placeholder_img_src() ) {
 		             echo woocommerce_placeholder_img( 'shop_catalog' );
 		             }  
 			} else { 

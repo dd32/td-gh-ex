@@ -47,18 +47,18 @@ if(isset($virtue['menu_margin_top'])) {
 if(!empty($virtue['primary_color'])) {
   $primaryrgb = hex2rgb($virtue['primary_color']); 
   $color_primary = '.home-message:hover {background-color:'.$virtue['primary_color'].'; background-color: rgba('.$primaryrgb[0].', '.$primaryrgb[1].', '.$primaryrgb[2].', 0.6);}
-  nav.woocommerce-pagination ul li a:hover, .wp-pagenavi a:hover, .accordion-heading .accordion-toggle.open {border-color: '.$virtue['primary_color'].';}
+  nav.woocommerce-pagination ul li a:hover, .wp-pagenavi a:hover, .panel-heading .accordion-toggle, .variations .kad_radio_variations label:hover, .variations .kad_radio_variations label.selectedValue {border-color: '.$virtue['primary_color'].';}
   a, #nav-main ul.sf-menu ul li a:hover, .product_price ins .amount, .price ins .amount, .color_primary, .primary-color, #logo a.brand, #nav-main ul.sf-menu a:hover,
-  .woocommerce-message:before, .woocommerce-info:before, #nav-second ul.sf-menu a:hover, .footerclass a:hover, .posttags a:hover, .subhead a:hover {color: '.$virtue['primary_color'].';}
-  .widget_price_filter .ui-slider .ui-slider-handle, .product_item .kad_add_to_cart:hover, .product_item.hidetheaction:hover .kad_add_to_cart:hover, .kad-btn-primary, .woocommerce-message .button,
-  .widget_layered_nav_filters ul li a, .widget_layered_nav ul li.chosen a,
-  .product-category.grid_item a:hover h5, #containerfooter .menu li a:hover, .bg_primary, .portfolionav a:hover, .home-iconmenu a:hover, p.demo_store, .topclass, 
-  #commentform .form-submit #submit {background: '.$virtue['primary_color'].';}';
+  .woocommerce-message:before, .woocommerce-info:before, #nav-second ul.sf-menu a:hover, .footerclass a:hover, .posttags a:hover, .subhead a:hover, .nav-trigger-case:hover .kad-menu-name, 
+  .nav-trigger-case:hover .kad-navbtn, #kadbreadcrumbs a:hover, #wp-calendar a {color: '.$virtue['primary_color'].';}
+  .widget_price_filter .ui-slider .ui-slider-handle, .product_item .kad_add_to_cart:hover, .product_item.hidetheaction:hover .kad_add_to_cart:hover, .kad-btn-primary, html .woocommerce-page .widget_layered_nav ul.yith-wcan-label li a:hover, html .woocommerce-page .widget_layered_nav ul.yith-wcan-label li.chosen a,
+  .product-category.grid_item a:hover h5, .woocommerce-message .button, .widget_layered_nav_filters ul li a, .widget_layered_nav ul li.chosen a, .wpcf7 input.wpcf7-submit, .yith-wcan .yith-wcan-reset-navigation,
+  #containerfooter .menu li a:hover, .bg_primary, .portfolionav a:hover, .home-iconmenu a:hover, p.demo_store, .topclass, #commentform .form-submit #submit, .kad-hover-bg-primary:hover, .variations .kad_radio_variations label.selectedValue, .login .form-row .button {background: '.$virtue['primary_color'].';}';
 } else {
   $color_primary = '';
 }
 if(!empty($virtue['primary20_color'])) {
-  $color_primary30 =  'a:hover {color: '.$virtue['primary20_color'].';} .kad-btn-primary:hover, .widget_layered_nav_filters ul li a:hover, .widget_layered_nav ul li.chosen a:hover, .woocommerce-message .button:hover, #commentform .form-submit #submit:hover, .product_item.hidetheaction:hover .kad_add_to_cart {background: '.$virtue['primary20_color'].';}';
+  $color_primary30 =  'a:hover {color: '.$virtue['primary20_color'].';}  .kad-btn-primary:hover, .login .form-row .button:hover, .yith-wcan .yith-wcan-reset-navigation:hover, .wpcf7 input.wpcf7-submit:hover, .widget_layered_nav_filters ul li a:hover, .widget_layered_nav ul li.chosen a:hover, .woocommerce-message .button:hover, #commentform .form-submit #submit:hover, .product_item.hidetheaction:hover .kad_add_to_cart {background: '.$virtue['primary20_color'].';}';
 } else {
   $color_primary30 = '';
 }

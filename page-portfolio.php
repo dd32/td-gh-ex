@@ -33,6 +33,7 @@ Template Name: Portfolio Grid
                    <?php global $post; $portfolio_item_excerpt = get_post_meta( $post->ID, '_kad_portfolio_item_excerpt', true ); $portfolio_item_types = get_post_meta( $post->ID, '_kad_portfolio_item_types', true );  ?>
                    <?php $crop = true; ?>
                    <?php global $post; $portfolio_cropheight = get_post_meta( $post->ID, '_kad_portfolio_img_crop', true ); if ($portfolio_cropheight != '') $imgheight = $portfolio_cropheight; ?>
+                   <?php $portfolio_lightbox = get_post_meta( $post->ID, '_kad_portfolio_lightbox', true ); if ($portfolio_lightbox == 'yes'){$plb = true;} else {$plb = false;}?>
                <div id="portfoliowrapper" class="<?php echo $columnnum; ?>"> 
    
             <?php 
@@ -82,6 +83,7 @@ Template Name: Portfolio Grid
 	                                       <img src="<?php echo $image ?>" alt="<?php the_title(); ?>" class="lightboxhover" style="display: block;">
 	                                       </a> 
 	                                </div>
+	                                <?php if($plb) {?><a href="<?php echo $thumbnailURL; ?>" class="kad_portfolio_lightbox_link" title="<?php the_title();?>" rel="lightbox"><i class="icon-search"></i></a><?php }?>
                            				<?php $image = null; $thumbnailURL = null;?>
                            <?php }  ?>
               	<a href="<?php the_permalink() ?>" class="portfoliolink">

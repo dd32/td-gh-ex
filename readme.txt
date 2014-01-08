@@ -48,6 +48,19 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 1.9.5 =
+* Update Theme Options, Various Speed improvments
+* Add Logo Alt
+* Fix css for forms, and checkout
+* Add support for icons in top menu
+* Add lightbox option to portfolio grid
+* Add full post option to archive.php
+* Fix product image size issue
+* Update portfolio post icon
+* Allow for jetpack comments
+* Add defaults for home page
+
+
 = Version: 1.8.5 =
 * Fix Latest Post Slider
 * Add Ajax cart

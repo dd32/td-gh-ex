@@ -402,6 +402,16 @@ $meta_boxes[] = array(
 				'type' => 'checkbox',
 				'std'  => '1'
 			),
+			array(
+				'name'    => __('Add Lightbox link in the top right of each item', 'virtue'),
+				'desc'    => '',
+				'id'      => $prefix . 'portfolio_lightbox',
+				'type'    => 'select',
+				'options' => array(
+					array( 'name' => __('No', 'virtue'), 'value' => 'no', ),
+					array( 'name' => __('Yes', 'virtue'), 'value' => 'yes', ),
+				),
+			),
 				
 			));
 

@@ -1,10 +1,10 @@
 			<?php  global $virtue; ?>
-			<?php if(isset($virtue['mobile_switch'])) { 
+			<?php if(!empty($virtue['mobile_switch'])) { 
 				$mobile_slider = $virtue['mobile_switch'];
 			} else {
 				$mobile_slider = '';
 			}
-			if(isset($virtue['choose_slider'])) {
+			if(!empty($virtue['choose_slider'])) {
 				$slider = $virtue['choose_slider'];
 			} else {
 				$slider = 'mock_flex';
@@ -39,7 +39,7 @@
    		<div class="row">
           <div class="main <?php echo kadence_main_class(); ?>" role="main">
 
-      	<?php if(isset($virtue['homepage_layout']['enabled'])) { $layout = $virtue['homepage_layout']['enabled']; } else {$layout = array("block_one" => "block_one", "block_four" => "block_four"); }
+      	<?php if(isset($virtue['homepage_layout']['enabled'])) { $layout = $virtue['homepage_layout']['enabled']; } else {$layout = array("block_twenty" => "block_twenty", "block_five" => "block_five"); }
 
 				if ($layout):
 
@@ -100,6 +100,9 @@
 						break; 
 						case 'block_seven':
 								get_template_part('templates/home/icon', 'menu');		 
+						break;
+						case 'block_twenty':
+								get_template_part('templates/home/icon', 'menumock');		 
 						break;  
 					    }
 
