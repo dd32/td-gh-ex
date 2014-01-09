@@ -24,8 +24,7 @@ function rambo_scripts()
 	/*Flex Slider Css */
 	wp_enqueue_style ('flex_css',WEBRITI_TEMPLATE_DIR_URI.'/css/flex_css/flexslider.css');// Flex Slider CSS
 	//Template Color Scheme Js
-	wp_enqueue_script('jquery',WEBRITI_TEMPLATE_DIR_URI.'/js/jquery.js');
-	wp_enqueue_script('bootstrap',WEBRITI_TEMPLATE_DIR_URI.'/js/menu/bootstrap.min.js');
+	wp_enqueue_script('bootstrap',WEBRITI_TEMPLATE_DIR_URI.'/js/menu/bootstrap.min.js',array('jquery'));
 	wp_enqueue_script('menu',WEBRITI_TEMPLATE_DIR_URI.'/js/menu/menu.js'); 
 	wp_enqueue_script('Bootstrap-transtiton',WEBRITI_TEMPLATE_DIR_URI.'/js/bootstrap-transition.js');
 }
