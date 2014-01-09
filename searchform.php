@@ -3,10 +3,10 @@
  * The template for displaying Searchform (HTML5).
  *
  * @package	Anarcho Notepad
- * @since	2.5
- * @author	Arthur "Berserkr" Gareginyan <arthurgareginyan@gmail.com>
- * @copyright 	Copyright (c) 2013-2016, Arthur Gareginyan
- * @link      	http://mycyberuniverse.com/anarcho-notepad.html
+ * @since	2.3
+ * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
+ * @copyright 	Copyright (c) 2013-2014, Arthur Gareginyan
+ * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
  * @license   	http://www.gnu.org/licenses/gpl-3.0.html
  */
 ?>
