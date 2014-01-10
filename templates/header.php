@@ -27,7 +27,7 @@
                     <ul class="kad-cart-total">
                       <li>
                       <a class="cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping cart', 'woocommerce'); ?>">
-                          <i class="icon-shopping-cart" style="padding-right:5px;"></i> <?php _e('Your Cart', 'woocommerce');?> - <?php echo $woocommerce->cart->get_cart_total(); ?>
+                          <i class="icon-shopping-cart" style="padding-right:5px;"></i> <?php _e('Your Cart', 'virtue');?> - <?php echo $woocommerce->cart->get_cart_total(); ?>
                       </a>
                     </li>
                   </ul>

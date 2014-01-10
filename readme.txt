@@ -48,6 +48,10 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 1.9.8 =
+* Move text domain to the top of functions
+* Fix cart icon not showing
+
 = Version: 1.9.7 =
 * Always notice things right after you update.
 * Fix comments.

@@ -74,11 +74,10 @@ function woocommerce_category_image() {
 add_filter('add_to_cart_fragments', 'kad_woocommerce_header_add_to_cart_fragment');
 function kad_woocommerce_header_add_to_cart_fragment( $fragments ) {
     global $woocommerce;
-     $carttext = __('Your Cart', 'virtue');
     ob_start(); ?>
 
     <a class="cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping cart', 'virtue'); ?>">
-        <i class="icon-basket" style="padding-right:5px;"></i> <?php echo $carttext; ?> - <?php echo $woocommerce->cart->get_cart_total(); ?>
+        <i class="icon-shopping-cart" style="padding-right:5px;"></i>  <?php _e('Your Cart', 'virtue');?> - <?php echo $woocommerce->cart->get_cart_total(); ?>
     </a>
     <?php
     $fragments['a.cart-contents'] = ob_get_clean();

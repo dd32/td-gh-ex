@@ -3,8 +3,6 @@
  * virtue initial setup and constants
  */
 function kadence_setup() {
-  // Make theme available for translation
-  load_theme_textdomain('virtue', get_template_directory() . '/lang');
 
   // Register wp_nav_menu() menus (http://codex.wordpress.org/Function_Reference/register_nav_menus)
   register_nav_menus(array(

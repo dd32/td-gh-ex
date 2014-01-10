@@ -2,6 +2,7 @@
 /*-----------------------------------------------------------------------------------*/
 /* Include Theme Functions */
 /*-----------------------------------------------------------------------------------*/
+load_theme_textdomain('virtue', get_template_directory() . '/lang');
 require_once locate_template('/themeoptions/framework.php');        // Options framework
 require_once locate_template('/themeoptions/options.php');     		// Options framework
 require_once locate_template('/lib/utils.php');           			// Utility functions
