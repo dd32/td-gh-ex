@@ -1,0 +1,248 @@
+/*
+Theme Name: PrivateBusiness
+Theme URI: http://www.guidovanderleest.nl/privatebusiness
+Version: 1.0
+Author: Guido van der Leest
+Author URI: http://www.guidovanderleest.nl
+Description: PrivateBusiness is a free, basic, clean, minimalistic, responsive, mobile friendly, WordPress theme for Private or Business website. Primary sidebar, 2 widget-areas underneath header-image, 2 widget-area's in footer, custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settings page, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
+Tags: one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, fluid-layout, custom-background, custom-header, custom-menu, featured-images, white, blue, light, gray, translation-ready
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: privatebusiness
+
+PrivateBusiness, Copyright 2014, Guido van der Leest
+PrivateBusiness is licensed under the GPL
+*/
+
+
+/* RESET STYLESHEET 
+Source: http://meyerweb.com/eric/tools/css/reset
+Copyright author: Eric Meyer
+Author URI: http://meyerweb.com/ 
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* GENERAL */
+body {background: #eee; font-family: 'Open Sans', sans-serif; font-size:0.9em; color:#333; line-height:1.5em;}
+#container {max-width: 1200px; background:#fff; border:0; margin: 10px auto 10px; padding: 20px 0 0; text-align: left; word-wrap: break-word;}
+#content {width: 55%; float:left; padding: 20px 20px; word-wrap: break-word;}
+#content-full {width: 100%; float:left; padding:20px 0; word-wrap: break-word;}
+
+h1 {font-size:3.0em; line-height:1.2em;}
+h2 {font-size:2.5em; line-height:1.2em;}
+h3 {font-size:2.0em; line-height:1.5em;}
+h4 {font-size:1.5em; line-height:1.5em;}
+h5 {font-size:1.0em; line-height:2em;}
+h6 {font-size:0.75em; line-height:2em;}
+
+a {text-decoration:none; color:#0066ff;}
+a:hover {text-decoration:underline;}
+
+strong {font-weight: bold;}
+small {font-size:0.75em;}
+big {font-size: 1.5em;}
+pre {margin: 5px 0; border: 1px solid #ccc; background: #f8f8f8; padding:10px; word-wrap: break-word;}
+code, cite, em, abbr, acronym, q {font-style:italic;}
+blockquote, address {padding:5px; font-size:1.2em; line-height:1.5em; font-style:italic;}
+p {margin:0 0 20px;}
+
+table {margin:10px; border-collapse:collapse;}
+table, th, td {border: 1px solid #ccc; padding:5px 10px;}
+
+ul {list-style: square; margin: 2px 0 2px 15px;}
+li {margin: 0 0 0 10px;}
+ol {list-style: decimal; margin: 2px 0 2px 15px;}
+dl {margin: 10px;}
+dt {margin: 0; font-size:1.25em; font-weight:bold;}
+dd {margin: 0 0 0 10px;}
+
+input, select, textarea {border:1px solid #ccc; padding: 2px; background: none;font-size:1em; font-family: 'Open Sans', sans-serif;}
+input[type="submit"]{cursor:pointer;	border:0; -webkit-appearance:none; padding:2px 10px; background: #0066ff; color:#fff;}
+input[type="submit"]:hover {background: #333;}
+select {max-width:100%;}
+
+
+/* HEADER */
+#header-first {margin:0; padding: 0 20px 0; background:none;}
+#header-first:after {content:''; display:block; clear:both;}
+#header-first .logo {width:100%; float:left; text-align:left; padding: 0 0 10px;}
+#header-first .logo h1 a:hover {text-decoration:none; color:#333;}
+#header-first .logo h4 {padding:5px 20px 5px;}
+
+#header-second {margin:0; padding:0; background:none;}
+#header-second:after {content:''; display:block; clear:both;}
+#header-second .header-img {width: 100%; height: auto; margin:0; padding:0;}
+
+
+/* HEADER MENU */
+.nav-head {background:#0066ff;margin:10px 0 0; clear:both; padding:10px 10px; border:0; text-align:left;}
+.nav-head select {display:none;}
+.nav-head ul {padding:0; margin:0;}
+.nav-head ul li {list-style-type: none; display: inline-block; position: relative;}
+.nav-head ul li a {text-decoration: none; color: #fff; background: none; padding: 5px 10px; display: inline-block;}
+.nav-head ul li a:hover {text-decoration:underline;}
+
+
+/* HEADER SUBMENU */
+.nav-head ul ul {display:none; position: absolute; top: 100%; padding: 0;}
+.nav-head ul ul ul {display:none; position: absolute; top: 30%; left: 100%;}
+.nav-head ul ul a {width:12em; background: #333; color: #fff; z-index:999;}
+.nav-head ul li:hover > ul {display:block;}
+.nav-head ul li ul li {margin:0;}
+
+
+/* HOMEPAGE WIDGET AREA */
+#header-widgets {width: 100%; margin:0 auto 0; padding:0; background:none;}
+#header-widgets:after {content:''; display:block; clear:both;}
+.home-left {float: left; margin: 0 0 0 20px; padding: 0; width: 46%; word-wrap: break-word;}
+.home-right {float: right; margin: 0 20px 0 0; padding:0; width: 46%; word-wrap: break-word;}
+.header-widgets-border {clear:both; border-bottom:2px solid #0066ff;}
+
+
+/* PAGE */
+.article {padding: 0 20px 0;}
+.page-title {margin: 0; padding: 0 0 10px;}
+.pagelink {clear:both; margin:20px 0 10px;}
+.edit-link {display:block; clear:both; text-align:center; margin:10px 0; padding: 5px; background: #0066ff; border:0;}
+.edit-link a {color:#fff;}
+
+
+/* POST */
+.entry-title {margin: 0; padding: 0;}
+.entry-title a:hover {color:#333; text-decoration:none;}
+.excerpt {margin: 0 0 20px; padding:0 0 60px; border-bottom:1px solid #0066ff;}
+.sticky {text-align:center; clear:both; color:#fff; background: #0066ff; margin: 10px 0 10px; padding:5px; border:0;}
+.postmetadata {margin:20px 0; padding:5px; background: #f8f8f8; border:1px solid #ccc;}
+a.moretag {float:right; border:0; -webkit-appearance:none;	margin:25px 0 0; padding: 2px 10px; background: #0066ff; color:#fff;}
+a.moretag:hover {background: #333; text-decoration:none;}
+.post-nav {padding: 5px 0;}
+.post-nav:after {content:''; display:block; clear:both;}
+.nav-prev {float:left;}
+.nav-next{float:right;}
+
+
+/* IMAGE AND VIDEO */
+embed, iframe, object, video {max-width:100%;}
+img {max-width:100%; height:auto;}
+
+img.alignright {float:right; margin:0 0 1em 1em;}
+img.alignleft {float:left; margin:0 1em 1em 0;}
+img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-bottom:1em;}
+.alignright {float:right; margin:0 0 1em 1em;}
+.alignleft {float:left; margin:0 1em 1em 0;}
+.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-bottom:1em;}
+
+.wp-caption {background:none; max-width: 100%;}
+.wp-caption-text {text-align:center; word-wrap: break-word;}
+
+.gallery dl, .gallery dt, .gallery dd {margin:0; padding:0;}
+.gallery-caption {background:none; max-width: 100%;}
+.gallery-caption-text {text-align:center; word-wrap: break-word;}
+
+
+/* SEARCHFORM */
+.search-form {padding:10px 0;}
+.search-field {width:50%;}
+.screen-reader-text {display:none;}
+
+
+/* COMMENTS */
+#comments {clear:both; word-wrap: break-word;}
+#comments .comment-list {list-style:none; background:#f8f8f8; border:1px solid #ccc; font-weight:normal; margin: 20px 0; padding: 20px;}
+#comments .children {list-style:none; background: #f8f8f8; padding: 20px;}
+.no-comments {clear:both; margin:20px 0; padding:5px 10px; background: #f8f8f8; border:1px solid #ccc;}
+.comment-notes, .form-allowed-tags {font-size:0.75em; padding:10px 0;}
+.comments-title, .comment-reply-title {font-size: 1.5em;} 
+.bypostauthor {color:#333;}
+
+#respond {padding:10px 0; clear:both;}
+#commentform label {margin: 0 0 10px; font-family: 'Open Sans', sans-serif; display:block;}
+#commentform textarea, #commentform input {width: 90%; padding:5px;}
+#commentform input[type="submit"]{width:9em; margin:5px 0 0;} 
+
+
+/* SIDEBAR AND WIDGETS */
+#sidebar {width: 35%; float: right; margin:20px 20px 0 0; padding:0; word-wrap: break-word;}
+.widget {padding:15px 15px 15px; margin: 20px 0 20px; background: #f8f8f8; border:1px solid #ccc;}
+.widgettitle {margin:0 0 10px;}
+#wp-calendar {width:90%;}
+
+
+/* FOOTER */
+#footer {clear:both; background:none; color:#333; padding:10px 0 0; border-top:2px solid #0066ff;}
+#footer .site-info {text-align:center; clear:both; padding:10px 0; background:#0066ff; color:#fff; border:0;}
+#footer .site-info a{color:#fff;}
+
+.footer-left {float: left; width: 46%; margin: 0 0 0 20px; padding:0; word-wrap: break-word;}
+.footer-right {float: right; width: 46%; margin: 0 20px 0 0; padding:0; word-wrap: break-word;}
+
+
+/* Mobile */
+@media screen and (max-width: 767px) { 
+	body {font-size:1em; line-height:1.2em;}
+	#container {width: 94%; padding:10px; margin:0 auto 0;}
+	#content, #content-full {width:100%; padding:10px 0;}
+	#header-first .logo {padding: 10px 0; text-align:center;}
+	#header-first .logo h4 {padding:0;}
+	#header-second .header-img {width: 100%; height: auto;}
+	#sidebar {width:100%; border:0; margin:0; padding:0; float:left;}
+	#footer {width:100%; padding:10px 0 0;}
+	.article {padding:0;}
+	.widget {margin: 15px 0 15px;}
+	.home-right, .home-left, .footer-right, .footer-left {width:100%; border:0; margin:0; padding:0; float:left;} 
+	.nav-head ul {display: none;} 
+	.nav-head {padding:0; border:0;}
+	.nav-head select {display: block; width: 100%; height: 35px; margin: 0 auto 0; font-family: 'Open Sans', sans-serif; font-size: 1em; line-height: 1.2em; color: #fff; background:#0066ff; border:0;}
+}

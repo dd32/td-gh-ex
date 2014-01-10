@@ -1,0 +1,7 @@
+CHANGELOG
+=========
+
+PrivateBusiness version 1.0 - january 2014 
+- first stable release
+
+
