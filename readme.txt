@@ -49,6 +49,10 @@ Virtue Theme Uses:
 = Theme Name: Virtue =
 
 = Version: 1.9.8 =
+* Remove Ace Editor
+* Add it_IT translation.
+
+= Version: 1.9.8 =
 * Move text domain to the top of functions
 * Fix cart icon not showing
 
