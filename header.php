@@ -77,7 +77,7 @@
 
 
 	<?php if ( is_active_sidebar( 'homepage-right' ) || is_active_sidebar( 'homepage-left' ) ) : ?>
-		<div class="header-widgets-border"></div>
+		<div class="widgetarea-border"></div>
 	<?php endif;?>
 
 </div>

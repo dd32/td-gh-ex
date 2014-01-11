@@ -1,7 +1,7 @@
 /*
 Theme Name: PrivateBusiness
 Theme URI: http://www.guidovanderleest.nl/privatebusiness
-Version: 1.0
+Version: 1.1
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: PrivateBusiness is a free, basic, clean, minimalistic, responsive, mobile friendly, WordPress theme for Private or Business website. Primary sidebar, 2 widget-areas underneath header-image, 2 widget-area's in footer, custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settings page, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
@@ -148,7 +148,6 @@ select {max-width:100%;}
 #header-widgets:after {content:''; display:block; clear:both;}
 .home-left {float: left; margin: 0 0 0 20px; padding: 0; width: 46%; word-wrap: break-word;}
 .home-right {float: right; margin: 0 20px 0 0; padding:0; width: 46%; word-wrap: break-word;}
-.header-widgets-border {clear:both; border-bottom:2px solid #0066ff;}
 
 
 /* PAGE */
@@ -157,6 +156,7 @@ select {max-width:100%;}
 .pagelink {clear:both; margin:20px 0 10px;}
 .edit-link {display:block; clear:both; text-align:center; margin:10px 0; padding: 5px; background: #0066ff; border:0;}
 .edit-link a {color:#fff;}
+.widgetarea-border {clear:both; height:3px; background: #0066ff;}
 
 
 /* POST */
@@ -221,7 +221,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 
 
 /* FOOTER */
-#footer {clear:both; background:none; color:#333; padding:10px 0 0; border-top:2px solid #0066ff;}
+#footer {clear:both; background:none; color:#333; padding:0; }
 #footer .site-info {text-align:center; clear:both; padding:10px 0; background:#0066ff; color:#fff; border:0;}
 #footer .site-info a{color:#fff;}
 
