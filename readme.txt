@@ -1,5 +1,7 @@
 adamos is a responsive, highly customizable theme.
 
+theme instructions can be found at: http://www.templateexpress.com/adamos-theme-instructions/
+
 
 Customizing theme
 -------------------------------------------
