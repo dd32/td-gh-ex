@@ -2,7 +2,7 @@
 Thanks for Downloading Optimize theme
 --------------------------------------------------------
 I made this for free to use if you find any bug or error please
-You can directly contact us: http://www.wrock.org/seo-optimized
+You can directly contact us: http://www.wrock.org/forums/
 also suggestion are welcome
 
 
@@ -29,13 +29,18 @@ Custom Css:
 
 
 == Change log ==
+= 1.4.5 =
+*Fixed top banner size
+*Updated theme option to new version
+*Added site description
+*Fixed other issues
+
 = 1.4.1=
 *Option panel updated to new version
 *Premium version also available
 *Logo upload and other option now access from theme panel
 *Latest post widget added to sidebar
 *Added Arrow if drop down menu
-
 
 = 1.2=
 *Removed plugin territory functions

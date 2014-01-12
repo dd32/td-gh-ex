@@ -1,10 +1,10 @@
 /*
 Theme Name: Optimize
-Author: wrock.org by Sandy
-Author URI: http://www.wrock.org/about
+Author: wRock.org by Sandy
+Author URI: http://www.wrock.org
 Theme URI: http://www.wrock.org/seo-optimized-wordpress-theme/
 Description: Optimize as name tells every thing completely optimized for search you will get 90+ page speed H1 and H2 Title Tags on page and posts. Google Adsense ready template show ads in single post, header or below navigation and widget as well. This is fully optimize style best for any kind of personal blog or business website it comes with Responsive design to increase mobile friendly.Fully featured control panel that support favicon link.
-Version: 1.4.1
+Version: 1.4.5
 Tags: black, white, light, custom-menu, custom-header, custom-background, one-column, two-columns, right-sidebar, theme-options, threaded-comments, sticky-post
 Text Domain: optimize
 License: GNU General Public License v3 or later
@@ -502,7 +502,8 @@ font-size: 16px;
 	display: inline;
 	margin-top: 17px;
 }
-
+h2.site-description{font-size: 20px;
+line-height: 27px;}
 #single-nav  {
 border-top: 1px solid;
 }
@@ -942,14 +943,8 @@ max-width: 95%;
 margin-bottom: -10px;
 }
 #ltpost {
-	padding: 10px 0px 0px 10px;
 	clear: both;
-	box-shadow: 0 1px 3px 0 #B5B5B5;
-	-moz-box-shadow: 0 1px 3px 0 #b5b5b5;
-	-webkit-box-shadow: 0 1px 3px 0 #B5B5B5;
-	border: 1px solid #DDD;
 	margin-bottom: 10px;
-	background: #FFF;
 }
 #ads {
 	padding: 5px 0 0 13px;
@@ -1098,11 +1093,11 @@ html ul.tabs li.active, html ul.tabs li.active a:hover  {
 	background: #f5f5f5;
 }
 /* ===================== footer ===================== */
- #footerads{
+ #myban{
 margin-top: 2%;
 word-wrap: break-word;
-max-width: 470px;
-max-height: 70px;
+max-width: 730px;
+max-height: 92px;
 float: right;
 overflow: hidden;
 }
@@ -1433,100 +1428,4 @@ border: 1px solid;
 	font-weight: 700;
 	margin: 10px 0;
 	float: left;
-}
-
-/*===================== responsive ===================*/
-@media only screen and (min-width: 480px) {
-/* == INTERMEDIATE: Menu == */
-
-#navigation-wrapper, .nav ul a, .nav ul {
-
-}
-.nav ul {
-
-}
-.nav a, .next-post a{
-
-}
-.nav li:first-child a{
-	margin-left:0;
-}
-.nav li:last-child  a{
-	margin-right:0;
-}
-/* == INTERMEDIATE: IE Fixes == */
-.nav ul li{
-	display:inline;
-}
-
-}
-
-.nav{
-	width:100%;
-
-}
-.nav select {
-	display: none;
-
-}
-@media (max-width: 960px) {
-.nav ul     {
-	display: none;
-}
-.nav select {
-	display: inline-block;
-	width: 100%;
-	font-size: 22px;
-}
-#pagecont {
-	width:100% !important;
-	font-size: 22px;
-	line-height: 2;}
-#content {
-	width:100% !important;
-	font-size: 22px;
-	line-height: 2;}
-.postmeta_box {
-	font-size: 18px !important;
-	line-height: 2;
-}
-h2 {
-	font-size: 28px !important;
-	line-height: 2;
-}
-#top-menu {
-	display: none;
-}
-#bottom-menu{
-	display: none;
-}
-#search {
-	display: none !important;}
-	
- #footerads{
-display: none;
-}
-#footer-right {
-	float: none !important;
-	width: auto !important;
-}
-#footer-left{
-	float: none !important;
-	width: auto !important;
-}
-.backtop {
-	display: none;
-}
-#search{
-	display: none !important;
-}
-body{
-font-size: 22px !important;
-line-height: 2 !important;
-}
-
-
-#sidebar{
-display: none !important;
-}
 }

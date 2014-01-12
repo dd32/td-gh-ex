@@ -20,11 +20,10 @@
       			<?php else : ?>        
             <h1 class="site-title">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
           <?php endif; ?>
 		</div>		
-<div id="footerads">
-<?php if ( of_get_option('optimize_ad1') <> "" ) { echo stripslashes(of_get_option('optimize_ad1')); } ?>
-</div>
+<?php echo'<div id="myban">'; if ( of_get_option('optimize_ad1') <> "" ) { echo stripslashes(of_get_option('optimize_ad1')); } echo'</div>'; ?>
     </div> <!-- end div #header-inner -->
 	</div> <!-- end div #header -->
 

@@ -1,14 +1,9 @@
 <?php
-ob_start();
-if ( ! function_exists( 'optionsframework_init' ) ) {
-	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
-	require_once dirname( __FILE__ ) . '/inc/options-framework.php';
-}
+define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
+require_once dirname( __FILE__ ) . '/inc/options-framework.php';
 include_once('baztro.php');
 
 function optimize_scripts() {
-
-	wp_enqueue_script('topnavi', get_template_directory_uri().'/js/topnavi.js', array('jquery'), '1.0', false );
 	wp_enqueue_style( 'optimize-style', get_stylesheet_uri() );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
@@ -163,5 +158,4 @@ function optimize_wp_title( $title, $sep ) {
 }
 add_filter( 'wp_title', 'optimize_wp_title', 10, 2 );
 
-ob_clean();
 ?>

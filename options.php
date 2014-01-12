@@ -22,7 +22,7 @@ function optionsframework_option_name() {
  *
  * If you are making your theme translatable, you should replace 'optimize'
  * with the actual text domain for your theme.  Read more:
- * http://codex.wordpress.org/Function_Reference/load_theme_textdomain
+ * http://codex.wordpress.org/Function_Reference/load_theme_optimize
  */
 
 function optionsframework_options() {
@@ -54,7 +54,7 @@ function optionsframework_options() {
 	
 
 	// Background Defaults
-	$background_default = array(
+	$background_defaults = array(
 		'color' => '#ffffff',
 		'image' => '',
 		'repeat' => 'repeat',
@@ -107,7 +107,19 @@ function optionsframework_options() {
 	$imagepath =  get_template_directory_uri() . '/images/';
 
 	$options = array();
-
+$options[] = array(
+		'desc' => '<h2 style="color: #FFF !important;">Upgrade to Premium Theme & Enable Full Features!</h2>
+		<li>SEO Optimized WordPress Theme.</li>
+		<li><a href="https://developers.google.com/speed/pagespeed/insights" target="_blank">Page Speed</a> Optimize for better result.</li>
+		<li>Color Customize of theme.</li>
+		<li>Custom Widgets and Functions.</li>
+		<li>Social Media Integration.</li>
+		<li>Responsive Website Design.</li>
+		<li>Different Website Layout to Select.</li>
+		<li>Many of Other customize feature for your blog or webiste.</li>
+		<p><span class="buypre"><a href="http://www.wrock.org/product/optimize-premium-theme/" target="_blank">Upgrade Now</a></span><span class="buypred"><a href="http://www.wrock.org/shop/" target="_blank">Shop More Themes !</a></span></p>',
+		'class' => 'tesingh',
+		'type' => 'info');
 	$options[] = array(
 		'name' => __('Basic Settings', 'optimize'),
 		'type' => 'heading');
@@ -120,7 +132,7 @@ function optionsframework_options() {
 		'type' => 'text');
 	$options[] = array(
 		'name' => __('Upload Site Logo', 'optimize'),
-		'desc' => __('Upload Website Logo "max height = 50px" and max width= 184px" to fit here. Note you can upload any size it will automatic resize .', 'optimize'),
+		'desc' => __('Upload Website Logo here. Note you can upload any size it will automatic resize .', 'optimize'),
 		'id' => 'optimize_logo',
 		'type' => 'upload');
 
@@ -153,6 +165,12 @@ $options[] = array(
 $options[] = array(
 		'name' => __('Ads Management', 'optimize'),
 		'type' => 'heading');
+	 $options[] = array(
+		'name' => __( 'AD Code For Top Baner', 'optimize' ),
+		'desc' => __('Paste Ad Code for top banner.', 'optimize'),
+            'id' => 'optimize_ad1',
+            'std' => '',
+            'type' => 'textarea');
 	$options[] = array(
 		'name' => __('Paste Ads code below navigation', 'optimize'),
 		'desc' => __('Activate Ads Space Below Navigation and put code in below test field.', 'optimize'),
@@ -165,27 +183,12 @@ $options[] = array(
             'id' => 'optimize_ad2',
             'std' => '',
             'type' => 'textarea');
-     $options[] = array(
-		'name' => __( 'AD Code For Top Baner', 'optimize' ),
-		'desc' => __('Paste Ad Code for top banner.', 'optimize'),
-            'id' => 'optimize_ad1',
-            'std' => '',
-            'type' => 'textarea');	
+   	
 		
 $options[] = array(
-		'name' => __('Upgrade to Premium', 'optimize'),
+		'name' => __('Premium Feature', 'optimize'),
 		'type' => 'heading');
-		$options[] = array(
-		'desc' => '<b>Buy Premium version now via PayPal and enable all features Today!</b><span class="buypre"><a href="http://www.wrock.org/seo-optimized-wordpress-theme/">Upgrade Now</a></span>
-		<li>SEO Optimized WordPress Theme.</li>
-		<li><a href="https://developers.google.com/speed/pagespeed/insights">Page Speed</a> Optimize for better result.</li>
-		<li>Custom Widgets and Functions.</li>
-		<li>Responsive Website Design.</li>
-		<li>Many of Other customize feature for your blog or webiste.</li><span class="buypred"><a href="http://www.wrock.org/contact-us">Already Paid or Donated !</a></span>
-		For more info and Theme Home Page <a href="http://www.wrock.org/seo-optimized-wordpress-theme/">http://www.wrock.org/seo-optimized-wordpress-theme/</a>',
-		'class' => 'tesingh',
-		'type' => 'info');
-		
+			
 				
 		$options[] = array(
 		'desc' => '<span class="pre-title">New Features</span>', 
@@ -197,6 +200,19 @@ $options[] = array(
 		'id' => 'optimize_popular',
 		'std' => '0',
 		'type' => 'checkbox');
+		$options[] = array(
+		'name' => __('Numbers of Latest and Populat posts to display)', 'optimize'),
+		'desc' => __('<b>For Latest Posts</b>', 'optimize'),
+		'id' => 'optimize_latestpostnumber',
+		'std' => '5',
+		'class' => 'mini',
+		'type' => 'text');
+		$options[] = array(
+		'desc' => __('<b>For Popular Posts</b>', 'optimize'),
+		'id' => 'optimize_popularpostnumber',
+		'std' => '5',
+		'class' => 'mini',
+		'type' => 'text');
 		$options[] = array(
 		'name' => __('Social Share Buttons with count', 'optimize'),
 		'desc' => __('Display social share buttons with count below post title.', 'optimize'),
@@ -221,7 +237,7 @@ $options[] = array(
 		'name' =>  __('Change Background', 'optimize'),
 		'desc' => __('Change the background CSS Color or Image.', 'optimize'),
 		'id' => 'optimize_bg',
-		'std' => $background_default,
+		'std' => $background_defaults,
 		'type' => 'background' );
 		$options[] = array(
 		'name' => __('Change Link Color', 'optimize'),
