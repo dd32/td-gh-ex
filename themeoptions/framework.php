@@ -514,9 +514,9 @@ if( !class_exists( 'ReduxFramework' ) ) {
             $data = apply_filters( 'redux/options/'.$this->args['opt_name'].'/wordpress_data/'.$type.'/', $data ); // REMOVE LATER
             $data = apply_filters( 'redux/options/'.$this->args['opt_name'].'/data/'.$type, $data ); 
 
-            if ( empty( $data ) && isset( $this->wp_data[$type.implode( '-' , $args )] ) ) {
-                $data = $this->wp_data[$type.implode( '-' , $args )];
-            }
+            //if ( empty( $data ) && isset( $this->wp_data[$type.implode( '-' , $args )] ) ) {
+           //     $data = $this->wp_data[$type.implode( '-' , $args )];
+           // }
 
 			if ( empty($data) && !empty($type) ) {
    
@@ -560,7 +560,7 @@ if( !class_exists( 'ReduxFramework' ) ) {
                             $args['args'] = array();
                         }                        
                         $terms = get_terms($taxonomies, $args['args']); // this will get nothing
-                        if (!empty($terms)) {       
+                        if  (!empty($terms) && !is_wp_error( $terms )) {       
                             foreach ( $terms as $term ) {
                                 $data[$term->term_id] = $term->name;
                             }//foreach
@@ -645,7 +645,7 @@ if( !class_exists( 'ReduxFramework' ) ) {
 					}//if			
 				}//if
                 
-                $this->wp_data[$type.implode( '-' , $args )] = $data;
+                //$this->wp_data[$type.implode( '-' , $args )] = $data;
 
 			}//if
             

@@ -48,7 +48,11 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
-= Version: 1.9.8 =
+= Version: 1.9.9.5 =
+* Fix theme options errors.
+* Add ru_RU translation.
+
+= Version: 1.9.9 =
 * Remove Ace Editor
 * Add it_IT translation.
 
