@@ -151,7 +151,7 @@ class Vantage_CircleIcon_Widget extends WP_Widget {
 		</p>
         <p>
             <label for="<?php echo $this->get_field_id('all_linkable') ?>">
-                <input type="checkbox" id="<?php echo $this->get_field_id('all_linkable') ?>" name="<?php echo $this->get_field_name('all_linkable') ?>" <?php checked($instance['all_linkable']) ?> />
+                <input type="checkbox" id="<?php echo $this->get_field_id('all_linkable') ?>" name="<?php echo $this->get_field_name('all_linkable') ?>" <?php checked( $instance['all_linkable'] ) ?> />
                 <?php _e('Link title and icon to "More URL"', 'vantage') ?>
             </label>
         </p>
@@ -168,6 +168,7 @@ class Vantage_CircleIcon_Widget extends WP_Widget {
 
 	public function update( $new_instance, $old_instance ) {
 		$new_instance['box'] = !empty($new_instance['box']);
+		$new_instance['all_linkable'] = !empty($new_instance['all_linkable']);
 		return $new_instance;
 	}
 }
@@ -278,11 +279,11 @@ class Vantage_Social_Media_Widget extends WP_Widget{
 
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id('title') ?>"><?php _e('Title') ?></label><br/>
+			<label for="<?php echo $this->get_field_id('title') ?>"><?php _e('Title', 'vantage') ?></label><br/>
 			<input type="text" name="<?php echo $this->get_field_name('title') ?>" id="<?php echo $this->get_field_id('title') ?>" value="<?php echo esc_attr($instance['title']) ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id('size') ?>"><?php _e('Icon Size') ?></label><br/>
+			<label for="<?php echo $this->get_field_id('size') ?>"><?php _e('Icon Size', 'vantage') ?></label><br/>
 			<select id="<?php echo $this->get_field_id('size') ?>" name="<?php echo $this->get_field_name('size') ?>">
 				<?php foreach($sizes as $id => $name) : ?>
 					<option value="<?php echo esc_attr($id) ?>" <?php selected($instance['size'], $id) ?>><?php echo esc_html($name) ?></option>
@@ -303,7 +304,7 @@ class Vantage_Social_Media_Widget extends WP_Widget{
 		?>
 		<p>
 			<input type="checkbox" name="<?php echo $this->get_field_name('new_window') ?>" id="<?php echo $this->get_field_id('new_window') ?>" <?php checked($instance['new_window']) ?> />
-			<label for="<?php echo $this->get_field_id('new_window') ?>"><?php _e('Open in New Window') ?></label>
+			<label for="<?php echo $this->get_field_id('new_window') ?>"><?php _e('Open in New Window', 'vantage') ?></label>
 
 		</p>
 		<?php
