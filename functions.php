@@ -432,14 +432,6 @@ function wp_barrister_footer_nav() {
 }
 endif;
 
-if ( ! function_exists( 'wp_barrister_enqueue_comment_reply' ) ) :
-	function wp_barrister_enqueue_comment_reply() {
-			if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-					wp_enqueue_script( 'comment-reply' );
-			}
-	 }
-endif;
-add_action( 'comment_form_before', 'wp_barrister_enqueue_comment_reply' );
 
 if ( ! function_exists( 'wp_barrister_page_menu_args' ) ) :
 	function wp_barrister_page_menu_args( $args ) {
@@ -894,15 +886,16 @@ add_filter( 'jt_default_backgrounds', 'wp_barrister_default_backgrounds' );
 /**
  * Enqueue scripts & styles
  */
-if ( ! function_exists( 'wp_barrister_custom_scripts' ) ) :
-	function wp_barrister_custom_scripts() {
-		wp_register_script( 'imagesloaded', get_template_directory_uri() . '/library/js/imagesloaded.pkgd.min.js');
-		wp_register_script( 'cycle2', get_template_directory_uri() . '/library/js/jquery.cycle2.min.js' );
-		wp_register_script( 'masonry', get_template_directory_uri() . '/library/js/masonry.pkgd.min.js' );
-		wp_enqueue_script( 'wp_barrister_custom_js', get_template_directory_uri() . '/library/js/scripts.js', array( 'jquery', 'imagesloaded', 'cycle2', 'masonry' ), '1.0.0' );
-		wp_enqueue_style( 'wp_barrister_style', get_stylesheet_uri() );
+function wp_barrister_custom_scripts() {
+	wp_register_script( 'imagesloaded', get_template_directory_uri() . '/library/js/imagesloaded.pkgd.min.js');
+	wp_register_script( 'cycle2', get_template_directory_uri() . '/library/js/jquery.cycle2.min.js' );
+	wp_register_script( 'masonry', get_template_directory_uri() . '/library/js/masonry.pkgd.min.js' );
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
 	}
-endif;
+	wp_enqueue_script( 'wp_barrister_custom_js', get_template_directory_uri() . '/library/js/scripts.js', array( 'jquery', 'imagesloaded', 'cycle2', 'masonry' ), '1.0.0' );
+	wp_enqueue_style( 'wp_barrister_style', get_stylesheet_uri() );
+}
 add_action('wp_enqueue_scripts', 'wp_barrister_custom_scripts');
 
 
@@ -948,7 +941,7 @@ function wp_barrister_register_required_plugins() {
 		array(
 			'name'     				=> 'WP Barrister People CPT', // The plugin name
 			'slug'     				=> 'wp-barrister-people-cpt', // The plugin slug (typically the folder name)
-			'source'   				=> get_stylesheet_directory() . '/library/plugin/wp-barrister-people-cpt.zip', // The plugin source
+			'source'   				=> get_template_directory_uri() . '/library/plugin/wp-barrister-people-cpt.zip', // The plugin source
 			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
 			'version' 				=> '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
 			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch

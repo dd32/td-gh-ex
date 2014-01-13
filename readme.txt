@@ -13,11 +13,15 @@ The theme is fully responsive and comes with many out of the box customization o
 
 This theme is compatible with Wordpress Version 3.4 and above and it supports the new theme customization API (https://codex.wordpress.org/Theme_Customization_API).
 
-The background patterns used are from http://www.succodesign.it. All other image graphics and icons bundled with this theme are created by the author and licensed under the GPL.
-
 Supported browsers: Firefox, Opera, Chrome, Safari and IE9+ (Some css3 styles like shadows, rounder corners and 2D transform are not supported by IE8 and below).
 
 For free themes support, please contact us http://wpdevshed.com/contact/
+
+============================================
+Images and Graphics Copyright/License Info
+============================================
+ * The background patterns (library/images/backgrounds) used in this theme are from http://www.succodesign.it and are free for personal and commercial use. Please refer to this page for license - http://www.succodesign.it/en/2011/03/geometric-patterns-high-resolution/ (Succo Design is created by Gabriele Malaspina - http://www.gabrielemalaspina.com/)
+ * All other image graphics and icons bundled with this theme are created by the author (WP Dev Shed) and licensed under the GNU GPL.
 
 
 ============================================
@@ -102,5 +106,10 @@ This theme is bundled with WP Barrister "People" CPT Plugin
 =================================
 CHANGELOG
 =================================
+Version 1.0.1
+ * Fixed Theme URI in styles.css
+ * Some php error and code fixes
+ * Footer credit updated
+ 
 Version 1.0
  * First public release

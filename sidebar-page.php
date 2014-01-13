@@ -44,20 +44,20 @@
                 <aside id="popular-posts" class="widget">
 					<div class="widget-title"><?php _e( 'Popular Posts', 'wp-barrister' ); ?></div>
 					<ul>
-						<?php $pc = new WP_Query( array(
+						<?php $wp_barrister_pop_post = new WP_Query( array(
 							'orderby' => 'comment_count',
 							'posts_per_page' => 10,
 							'ignore_sticky_posts' => 1
 						) ); ?>
 						 
-						<?php while ($pc->have_posts()) : $pc->the_post(); ?>
+						<?php while ($wp_barrister_pop_post->have_posts()) : $wp_barrister_pop_post->the_post(); ?>
                         
                         <li>
                             <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php if(the_title( '', '', false ) !='') the_title(); else _e( 'Untitled', 'wp-barrister' ); ?></a>
                         </li>
  
 						<?php endwhile; ?>
-                        <?php wp_reset_query(); ?>
+                        <?php wp_reset_postdata(); ?>
                     </ul>
 				</aside>
 

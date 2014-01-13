@@ -14,7 +14,7 @@ get_header(); ?>
             </div>
         </div>
     	<?php endwhile; ?>
-        <?php wp_reset_query(); ?>
+        <?php wp_reset_postdata(); ?>
     <?php endif; ?>
 
     <div id="content" class="people-main clearfix">
@@ -66,7 +66,7 @@ get_header(); ?>
 							wp_barrister_content_nav( 'nav-below' );
 				}?>
                 
-                <?php wp_reset_query(); ?>
+                <?php wp_reset_postdata(); ?>
 
 			<?php else : ?>
 
