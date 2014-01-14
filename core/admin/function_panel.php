@@ -108,7 +108,7 @@ function alhenalite_message ()
 
 function alhenalite_getpremium() {	?>
 
-	<a href="http://www.themeinprogress.com/?ref=panel" target="_blank" >
+	<a href="http://www.themeinprogress.com/alhena/?ref=panel" target="_blank" >
     	<img src="http://www.themeinprogress.com/images/alhenapremium.jpg" alt="Get Premium" style="margin:15px auto" />
     </a>
 

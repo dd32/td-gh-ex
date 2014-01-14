@@ -73,7 +73,7 @@
 				));
 
                 the_widget( 'WP_Widget_Calendar',
-				array("title"=> __('Calendar')),
+				array("title"=> __('Calendar','wip')),
 				array('before_widget' => '<div class="widget-box">',
 					  'after_widget'  => '</div>',
 					  'before_title'  => '<header class="title"><div class="line"><h3>',
