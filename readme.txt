@@ -20,8 +20,7 @@ For free themes support, please contact us http://wpdevshed.com/contact/
 ============================================
 Images and Graphics Copyright/License Info
 ============================================
- * The background patterns (library/images/backgrounds) used in this theme are from http://www.succodesign.it and are free for personal and commercial use. Please refer to this page for license - http://www.succodesign.it/en/2011/03/geometric-patterns-high-resolution/ (Succo Design is created by Gabriele Malaspina - http://www.gabrielemalaspina.com/)
- * All other image graphics and icons bundled with this theme are created by the author (WP Dev Shed) and licensed under the GNU GPL.
+ * All the image graphics and icons bundled with this theme are created by the author (WP Dev Shed) and licensed under the GNU GPL.
 
 
 ============================================
@@ -106,6 +105,10 @@ This theme is bundled with WP Barrister "People" CPT Plugin
 =================================
 CHANGELOG
 =================================
+Version 1.0.2
+ * Resolved the missing images issue in media library when setting a featured image
+ * Removed the default background images options
+ 
 Version 1.0.1
  * Fixed Theme URI in styles.css
  * Some php error and code fixes

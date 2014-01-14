@@ -44,7 +44,7 @@ function wp_barrister_setup() {
 		// Background color default
 		'default-color' => '8d8c8c',
 		// Background image default
-		'default-image' => get_template_directory_uri() . '/library/images/backgrounds/bg1.png',
+		'default-image' => '',
 		'wp-head-callback' => '_custom_background_cb'
 	);
 	add_theme_support('custom-background', $barrister_custom_background );
@@ -637,22 +637,7 @@ add_action( 'save_post', 'wp_barrister_category_transient_flusher' );
  */
 add_filter( 'use_default_gallery_style', '__return_false' );
 
-/**
- * Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
- */
-if ( ! function_exists( 'wp_barrister_enhanced_image_navigation' ) ) :
-	function wp_barrister_enhanced_image_navigation( $url ) {
-		global $post, $wp_rewrite;
-	
-		$id = (int) $post->ID;
-		$object = get_post( $id );
-		if ( wp_attachment_is_image( $post->ID ) && ( $wp_rewrite->using_permalinks() && ( $object->post_parent > 0 ) && ( $object->post_parent != $id ) ) )
-			$url = $url . '#main';
-	
-		return $url;
-	}
-endif;
-add_filter( 'attachment_link', 'wp_barrister_enhanced_image_navigation' );
+
 
 /**
  * The Pagination Function
@@ -837,51 +822,6 @@ endif;
 add_action('wp_enqueue_scripts', 'wp_barrister_modernizr_script');
 
 
-/**
- * Extend the background image customize control
- */
-if ( ! function_exists( 'wp_barrister_customize_register' ) ) :
-	function wp_barrister_customize_register( $wp_customize ) {
-	
-		/* Remove the WordPress background image control. */
-		$wp_customize->remove_control( 'background_image' );
-	
-		/* Load our custom background image control. */
-		require_once( trailingslashit( get_template_directory() ) . '/library/class/customize-control-background-image.php' );
-	
-		/* Add our custom background image control. */
-		
-		$wp_customize->add_control( new JT_Customize_Control_Background_Image( $wp_customize ) );
-		$wp_customize->add_setting( 'background_attachment', array(
-            'default'        => 'fixed',
-            'theme_supports' => 'custom-background',
-        ) );
-		
-	}
-endif;
-add_action( 'customize_register', 'wp_barrister_customize_register' );
-
-
-/**
- * Register the new default customizer backgrounds
- */
-if ( ! function_exists( 'wp_barrister_default_backgrounds' ) ) :
-	function wp_barrister_default_backgrounds( $backgrounds ) {
-	
-		$backgrounds['bg2'] = array(
-			'url'           => '%s/library/images/backgrounds/bg2.png',
-			'thumbnail_url' => '%s/library/images/backgrounds/bg2-thumb.png',
-		);
-	
-		$backgrounds['bg3'] = array(
-			'url'           => '%s/library/images/backgrounds/bg3.png',
-			'thumbnail_url' => '%s/library/images/backgrounds/bg3-thumb.png',
-		);
-
-		return $backgrounds;
-	}
-endif;
-add_filter( 'jt_default_backgrounds', 'wp_barrister_default_backgrounds' );
 
 /**
  * Enqueue scripts & styles
