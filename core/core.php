@@ -302,15 +302,15 @@ function suevafree_my_gallery_style() {
 add_filter( 'gallery_style', 'suevafree_my_gallery_style', 99 );
 
 /*-----------------------------------------------------------------------------------*/
-/* Thematic dropdown options */
+/* Dropdown options */
 /*-----------------------------------------------------------------------------------*/ 
 
-function suevafree_childtheme_dropdown_options($dropdown_options) {
-	$dropdown_options = '<script type="text/javascript" src="'. get_bloginfo('stylesheet_directory') .'/scripts/thematic-dropdowns.js"></script>';
+function suevafree_dropdown_options($dropdown_options) {
+	$dropdown_options = '<script type="text/javascript" src="'. get_stylesheet_directory_uri().'/scripts/thematic-dropdowns.js"></script>';
 	return $dropdown_options;
 }
 
-add_filter('thematic_dropdown_options','suevafree_childtheme_dropdown_options');
+add_filter('thematic_dropdown_options','suevafree_dropdown_options');
 
 
 /*-----------------------------------------------------------------------------------*/

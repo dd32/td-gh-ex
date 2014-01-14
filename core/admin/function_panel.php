@@ -15,7 +15,7 @@ function suevafree_add_script() {
      wp_enqueue_style( "thickbox" );
      add_thickbox();
 
-	 $file_dir = get_bloginfo('template_directory')."/core/admin/include";
+	 $file_dir = get_template_directory_uri()."/core/admin/include";
 	 
 	 wp_enqueue_script( 'jquery.custom', $file_dir.'/js/jquery.custom.js',array('jquery','media-upload','thickbox'),'1.0',true ); 
 	 wp_enqueue_script( 'wip_on_off', $file_dir.'/js/wip_on_off.js','3.5', true); 
@@ -105,7 +105,7 @@ function suevafree_themeoption() {
 
 function suevafree_getpremium() {	?>
 
-	<a href="http://www.themeinprogress.com/?ref=panel" target="_blank" >
+	<a href="http://www.themeinprogress.com/sueva/?ref=panel" target="_blank" >
     	<img src="http://www.themeinprogress.com/images/suevapremium.jpg" alt="Get Premium" style="margin:15px auto" />
     </a>
 
