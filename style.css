@@ -4,7 +4,7 @@ Author: Alberto Ramacciotti
 Author URI: http://ramacciotti.altervista.org
 Theme URI: http://ramacciotti.altervista.org/archives/articles/rockers-wordpress-theme
 Description: Rockers is a responsive theme for bloggers with a clean design.
-Version: 2.1
+Version: 2.2
 License: GNU General Public License v2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -609,10 +609,6 @@ label ~ .required {
 
 .author.archive .author-avatar {
     margin-top: 0;
-}
-
-html {
-    background: url(i/top.png) repeat-x 0 0;
 }
 
 body {

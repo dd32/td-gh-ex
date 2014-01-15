@@ -28,8 +28,7 @@
                     array( 
                         'container' => '',
                         'theme_location' => 'menu', 
-                        'menu_class' => 'menu',
-                        'depth' => 1
+                        'menu_class' => 'menu'
                     )
                 ); ?>
             </nav>

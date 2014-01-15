@@ -1,7 +1,7 @@
 <?php 
 function rockers_custom_header_setup() {
     $args = array( 
-        'default-text-color' => 'fff',
+        'default-text-color' => '000000',
         'default-image' => '',
         'height' => 300,
         'width' => 960,
@@ -14,7 +14,27 @@ function rockers_custom_header_setup() {
         'admin-preview-callback' => 'rockers_admin_header_image',
     );
     add_theme_support( 'custom-header', $args );
+
+    $cb_args = array(
+        'default-color' => 'fafbff',
+        'default-image' => '%s/i/bg.png',
+        'wp-head-callback' => 'rockers_cb'
+    ); 
+
+    function rockers_cb() { ?>
+        <style type="text/css">
+            body {
+                background-color: #<?php echo get_background_color(); ?>;
+                background-image: url('<?php echo get_background_image(); ?>');
+                background-position: 0 0;
+                background-repeat: repeat-x;
+            }
+        </style>
+    <?php }
+
+    add_theme_support( 'custom-background', $cb_args );
 }
+
 add_action( 'after_setup_theme', 'rockers_custom_header_setup' );
 
 function rockers_header_style() {

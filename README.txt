@@ -3,7 +3,7 @@ Contributors: Alberto Ramacciotti ( http://ramacciotti.altervista.org )
 Tags: two-columns, left-sidebar, light, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, threaded-comments, featured-images, sticky-post, translation-ready, post-formats, rtl-language-support, threaded-comments
 Requires at least: 3.0
 Tested up to: 3.7.1
-Version: 2.0.9
+Version: 2.2
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -73,4 +73,7 @@ http://ramacciotti.altervista.org/magazzino/wp-themes/rockers-screenshot.png
 * Fixed bugs
 
 = 2.1 =
+* Fixed bugs
+
+= 2.2 =
 * Fixed bugs
