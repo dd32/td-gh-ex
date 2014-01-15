@@ -16,6 +16,7 @@ function b3theme_sanitize_options($arr) {
 		'navbar_enable' => 'Y',
 		'copyright' => date('Y ') . get_option('blogname'),
 		'show_home' => 'N',
+		'reduce_404_page' => 'N',
 		'disable_comment_page' => 'N',
 		'sidebar_main' => 'right',
 		'sidebar_top' => 'Y',
@@ -24,6 +25,7 @@ function b3theme_sanitize_options($arr) {
 		'panel_post' => 'N',
 		'carousel' => 'demo',
 		'image_rounded' => 'N',
+		'paginate_links' => 'next',
 		'credits' => 'Y',
 		'post_thumbnail' => 'Y',
 		'post_date' => 'Y',
@@ -310,6 +312,8 @@ function b3theme_settings_page() {
 			<div> <?php b3theme_option_input('panel_widget', __('Widget as panel', 'b3theme'), 'checkbox') ?></div>
 			<div> <?php b3theme_option_input('panel_post', __('Post as panel', 'b3theme'), 'checkbox') ?></div>
 			<div> <?php b3theme_option_input('show_home', __('Home link (in pages menu)', 'b3theme'), 'checkbox') ?></div>
+			<div> <?php b3theme_option_input('reduce_404_page', __('Reduce &quot;Not Found&quot; page', 'b3theme'), 'checkbox') ?></div>
+
 		</div>
 
 		<div class="b3theme-settings-section b3theme-posts-look">
@@ -319,6 +323,8 @@ function b3theme_settings_page() {
 			<div> <?php b3theme_option_input('post_date', __('Display post date', 'b3theme'), 'checkbox') ?></div>
 			<div> <?php b3theme_option_input('post_author', __('Display post author', 'b3theme'), 'checkbox') ?></div>
 			<div> <?php b3theme_option_input('image_rounded', __('Rounded images', 'b3theme'), 'checkbox') ?></div>
+			<div> <?php b3theme_option_input('paginate_links', __('Blog pagination', 'b3theme'), 'radio', 'next',
+				array('next' => __('Older/Newer', 'b3theme'), 'number' => __('Numbers', 'b3theme'),) ) ?></div>
 		</div>
 
 		<div class="b3theme-settings-section b3theme-slides">

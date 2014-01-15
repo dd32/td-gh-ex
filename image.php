@@ -54,12 +54,8 @@ get_header(); ?>
 						<?php endif; ?>
 					</div><!-- .entry-attachment -->
 
-					<?php
-						the_content();
-						wp_link_pages( array(
-							'before' => '<div class="page-links">' . __('Pages:', 'b3theme'),
-							'after'  => '</div>',
-						) );
+					<?php the_content(); ?>
+					<?php wp_link_pages; ?>
 					?>
 				</div><!-- .entry-content -->
 

@@ -277,6 +277,8 @@ function b3theme_options_css() {
 	}
 	if ($css = b3theme_option('link_hover_color')) {
 		$out .= 'a:hover {color:'. $css . ';} ';
+		$out .= 'ul.pagination li.active span, ul.pagination li.active span:hover {background-color:'
+			. $css . '; border: solid 1px '. $css . ';} ';
 	}
 	if (($css = b3theme_option('navbar_color')) && '#F8F8F8' != $css) {
 		$color2 =  b3theme_option('navbar_color2');
@@ -311,7 +313,7 @@ function b3theme_post_class($classes) {
 
 function b3theme_content_wrap_class() {
 	$classes = array();
-	if ( 'Y'==b3theme_option('panel_post') || is_sticky() && !is_paged() ) {
+	if ( 'Y'==b3theme_option('panel_post') || !is_404() && is_sticky() && !is_paged() ) {
 		$classes[]= 'panel';
 	}
 	if ($classes) {
@@ -425,6 +427,26 @@ function b3theme_ie_conditional() { ?>
 }
 
 add_action('wp_head', 'b3theme_ie_conditional');
+
+function b3theme_wp_link_pages_link($link) {
+	$active = '';
+	if ( !strpos($link, '</a>')) {
+		$active = ' class="active"';
+		$link = '<span>' . $link . '<span class="sr-only">(current)</span></span>';
+	}
+	$link = '<li'. $active. '>' . $link . '</li>';
+	return $link;
+}
+
+function b3theme_wp_link_pages_args($args) {
+	$args['before'] = '<div class="text-center"><ul class="pagination"><li class="disabled"><span>' . __('Pages:', 'b3theme') . '</span></li>';
+	$args['after']  = '</ul></div>';
+	$args['separator'] = '';
+	return $args;
+}
+
+add_filter('wp_link_pages_link', 'b3theme_wp_link_pages_link');
+add_filter('wp_link_pages_args', 'b3theme_wp_link_pages_args');
 
 require B3THEME_PATH . '/inc/custom-header.php';
 require B3THEME_PATH . '/inc/template-tags.php';

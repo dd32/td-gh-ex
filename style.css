@@ -1,10 +1,10 @@
 /*
 Theme Name: B3
-Theme URI: http://andrey.ws/b3theme-theme
+Theme URI: http://andrey.ws/b3-theme
 Author: Andrey K.
 Author URI: http://andrey.ws/
 Description: Responsive customizable theme based on Bootstrap 3 framework. Three widget areas, changeable colors and page look, export/import settings, translation ready.
-Version: 1.2.4
+Version: 1.2.5
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: b3theme
@@ -22,7 +22,7 @@ B3 Theme, including demo images (C) 2013 andreyk http://profiles.wordpress.org/a
 B3 is distributed under the terms of the GNU General Public License v3.0
 
 B3 theme is based on Underscores theme quick start pack http://underscores.me/ (C) 2012-2013 Automattic, Inc.
-and Bootstrap 3 framework http://getbootstrap.com/ (Apache License v2.0)
+and Bootstrap 3 framework http://getbootstrap.com/ (Apache License v2.0, (C) 2013 Twitter, Inc.)
 
 IE8 compatibility is achieved by using of Respond.js https://github.com/scottjehl/respond (MIT/BSD license)
 and HTML5 Shiv http://code.google.com/p/html5shiv/ (MIT/GPL2 Licensed)
@@ -192,3 +192,5 @@ article, .widget {
 }
 
 .mejs-audio {margin-bottom: 20px;}
+
+.pagination li {display: inline-block; margin: 0;}

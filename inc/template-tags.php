@@ -14,7 +14,6 @@ if ( !function_exists('b3theme_content_nav') ) :
 function b3theme_content_nav( $nav_id ) {
 	global $wp_query, $post;
 
-	// Don't print empty markup on single pages if there's nowhere to navigate.
 	if ( is_single() ) {
 		$previous = ( is_attachment() ) ? get_post( $post->post_parent ) : get_adjacent_post( false, '', true );
 		$next = get_adjacent_post( false, '', false );
@@ -23,36 +22,69 @@ function b3theme_content_nav( $nav_id ) {
 			return;
 	}
 
-	// Don't print empty markup in archives if there's only one page.
 	if ( $wp_query->max_num_pages < 2 && ( is_home() || is_archive() || is_search() ) )
 		return;
 
 	$nav_class = ( is_single() ) ? 'post-navigation' : 'paging-navigation';
 
-	?>
-	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>"><ul class="pager">
-
-
-	<?php if ( is_single() ) : // navigation links for single posts ?>
-
+	if ( is_single() ) { // navigation links for single posts ?>
+		<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>"><ul class="pager">
 		<?php previous_post_link('<li class="previous">%link</li>', '<span class="meta-nav">' . _x('&larr;', 'Previous post link', 'b3theme') . '</span> %title'); ?>
+	
 		<?php next_post_link('<li class="next">%link</li>', '%title <span class="meta-nav">' . _x('&rarr;', 'Next post link', 'b3theme') . '</span>'); ?>
+		</ul></nav> <?php
 
-	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
-
-		<?php if ( get_next_posts_link() ) : ?>
-		<li class="previous"><?php next_posts_link( __('<span class="meta-nav">&larr;</span> Older posts', 'b3theme') ); ?></li>
-		<?php endif; ?>
-
-		<?php if ( get_previous_posts_link() ) : ?>
-		<li class="next"><?php previous_posts_link( __('Newer posts <span class="meta-nav">&rarr;</span>', 'b3theme') ); ?></li>
-		<?php endif; ?>
-
-	<?php endif; ?>
-	</ul></nav><!-- #<?php echo esc_html( $nav_id ); ?> -->
-	<?php
+	} elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) {
+		// navigation links for home, archive, and search pages ?>
+			<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>">
+				<?php
+					if ( 'number' == b3theme_option('paginate_links') ) {
+						b3theme_blog_pager();
+					}	else { ?>
+						<ul class="pager">
+						<?php
+						if ( get_next_posts_link() ) { ?>
+							<li class="previous"><?php next_posts_link( __('<span class="meta-nav">&larr;</span> Older posts', 'b3theme') ); ?></li>	<?php
+						} 
+						if ( get_previous_posts_link() ) { ?>
+								<li class="next"><?php previous_posts_link( __('Newer posts <span class="meta-nav">&rarr;</span>', 'b3theme') ); ?></li> <?php
+						} ?>
+						</ul> <?php					
+					} ?>
+				</nav> <?php	
+				}
 }
 endif; // b3theme_content_nav
+
+function b3theme_blog_pager() {
+	global $wp_query;
+	$pp= get_option('posts_per_page');
+	$total= ceil( $wp_query->found_posts / $pp );
+	if ($total<=1) return '';
+
+	preg_match('/([^ ]+)([^a-z])page(\/|d=)([0-9]+)([^ ]{0,})$/', get_next_posts_page_link(), $res);
+	$current= ($res[4]==1 || $res[4]=='' || $res[4]==0)?1:($res[4]-1);
+
+	$links = paginate_links( array(
+		'show_all' => false,
+		'total'=> $total ,
+		'current' => $current,
+		'base'=> $res[1].'%_%',
+		'format' => $res[2] . 'page' . $res[3] . '%#%' . $res[5],
+		'prev_next' => true,
+		'end_size' => 2,
+		'mid_size' => 2,
+		'prev_text' => '<span class="glyphicon glyphicon-chevron-left"></span>',
+		'next_text' => '<span class="glyphicon glyphicon-chevron-right"></span>',
+		'type' => 'array',
+	) );
+	
+	foreach ($links as $i => $link) {
+		$active = strpos($link, 'span') == 1 && !strpos($link, '"page-numbers dots"') ? ' class="active"' : '';
+		$links[$i] = '<li' . $active . '>' . $link . '</li>';
+	}
+	echo '<div class="text-center"><ul class="pagination">' . implode('', $links) . '</ul></div>';
+}
 
 if ( ! function_exists('b3theme_comment') ) :
 /**

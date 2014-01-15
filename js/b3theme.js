@@ -28,7 +28,7 @@ function b3theme_video_size(elem) {
 }
 
 jQuery(document).ready(function($){
-	$('.widget img').addClass('img-responsive');
+	$('.widget img').not('.wp-smiley').addClass('img-responsive');
 	$('.entry-content table').addClass('table table-bordered');
 	$('.widget select').parent().addClass('form-group');
 	$('.widget select').addClass('form-control').addClass('spacer-top');

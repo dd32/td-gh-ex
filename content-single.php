@@ -16,12 +16,7 @@
 
 	<div class="entry-content clearfix">
 		<?php the_content(); ?>
-		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __('Pages:', 'b3theme'),
-				'after'  => '</div>',
-			) );
-		?>
+		<?php wp_link_pages(); ?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-meta">

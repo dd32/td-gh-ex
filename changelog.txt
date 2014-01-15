@@ -1,25 +1,25 @@
 === Changelog ===
 
+== 1.2.5 ==
+
+* Added: Bootstrap styling for <!--nextpage--> (wp_link_pages)
+* New option: older-newer or numbered blog pagination
+* New option: extended or minified Not Found page
+* Fixed: img.wp-smiley styling in widgets
+* Minor change in theme options css
 
 == 1.2.4 ==
 
 * Fixed: a typo in comments.php
-
 * Added: adjusted titles for term and custom post type archive in archive.php
-
 * Update Bootstrap version to 3.0.3
 
 
 == 1.2.3 ==
 
  * b3theme_admin_enqueue_scripts - uses appearance_page_b3theme_settings hook_suffix now
-
  * Removed: auto-insert default theme settings
-
  * Removed: b3theme_custom_background_args, b3theme_custom_header_args hooks; also inc/custom-header.php has been refined
-
  * Added: b3theme.pot
-
  * Added: Menu Bar on/off option
-
  * Small css fix to get large resized images height proper in ie8

@@ -32,10 +32,7 @@
 			}
 			else {
 				the_content( __('Continue reading <span class="meta-nav">&rarr;</span>', 'b3theme') );
-				wp_link_pages( array(
-					'before' => '<div class="page-links">' . __('Pages:', 'b3theme'),
-					'after'  => '</div>',
-				));
+				wp_link_pages();
 			}
 		?>
 	</div><!-- .entry-content -->

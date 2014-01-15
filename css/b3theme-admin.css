@@ -2,7 +2,12 @@
 	display : inline-block;
 	width : 180px;
 	height : 30px;
+	line-height : 24px;
 	margin-right : 10px;
+}
+#b3theme_options_form .b3theme-custom-colors label {
+	height : 40px;
+	line-height : auto;
 }
 #b3theme_options_form label.slide-textarea-label {
 	height : auto;
@@ -17,7 +22,6 @@
 #b3theme_options_form h3 {
 	margin-top : 0;
 }
-
 .b3theme-settings-tabs li {
 	display : inline-block;
 	margin-right : 5px;

@@ -9,9 +9,11 @@
 ?>
 
 	</div><!-- #content -->
-
-	<?php if ('Y' == b3theme_option('sidebar_bottom')) { get_sidebar('bottom'); } ?>
-
+	<?php
+	if ( 'Y' == b3theme_option('sidebar_bottom') && (!is_404() || is_404() && 'Y' != b3theme_option('reduce_404_page')) ) {
+		get_sidebar('bottom');
+	}
+	?>
 	<footer id="colophon" class="site-footer text-center spacer-all" role="contentinfo">
 		<div class="site-info center">
 			<?php

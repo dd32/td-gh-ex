@@ -6,7 +6,7 @@ Author URI: http://andrey.ws/
 License: GNU General Public License v3.0
 Tags: light, white, two-columns, right-sidebar, left-sidebar, fixed-width, custom-background, custom-header, custom-menu, featured-images, theme-options, translation-ready, threaded-comments
 Requires at least: 3.5
-Tested up to: 3.7.1
+Tested up to: 3.8
 
 == Description ==
 
@@ -37,6 +37,8 @@ of all site pages. Multi-level dropdown works.
 * Page commenting on/off
 * Rounded or usual images in posts
 * Excerpts and post thumbnail in archives on/off
+* Older-newer or numbered blog pagination
+* Extended or minified Not Found page
 
 == Export/Import Theme Settins ==
 
@@ -72,7 +74,7 @@ B3 is distributed under the terms of the GNU GPL v3.0
 
 Works used in B3:
 
-* Bootstrap 3 javascript and CSS http://getbootstrap.com/ (Apache License v2.0)
+* Bootstrap 3 javascript and CSS http://getbootstrap.com/ (Apache License v2.0, (C) 2013 Twitter, Inc.)
 * Respond.js for MSIE8 compatibility: https://github.com/scottjehl/respond (MIT/BSD license)
 * HTML5 Shiv for HTML5 support in MSIE: http://code.google.com/p/html5shiv/ (MIT/GPL2 Licensed)
 * Underscores theme quick start pack http://underscores.me/ (GPLv2 or later, (C) 2012-2013 Automattic, Inc.)
