@@ -2,6 +2,15 @@
 <div id="blogtitle">Fimply</div>
 <div id="blogdescription">Here you can find other themes from us.</div>
 
+<div id="theme">
+<img class="screenshot" src="http://fimply.de/img/tautira_banner@2x.png" width="584">
+<div id="name"><b>[NEW]</b> Tautira</div>
+<div id="info">Tautira is a Premium Business Theme - it's very easy to create a professional website with it. We integrated Jetpack by WordPress.com for the first time in one of our themes, so it gets even more powerful. Tautira looks great on every device because of its Responsive Design.
+
+<p><a href="http://fimply.de/tautira" target="_blank">Go to the Fimply Store</a></p></div>
+
+</div>
+
 
 <div id="theme">
 <img class="screenshot" src="http://fimply.de/dl/e-mail-screen.png" width="600">
