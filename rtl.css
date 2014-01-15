@@ -46,3 +46,12 @@ ul.default-wp-page li.next {
 span.meta-nav {
 	display: none;
 }
+#main-nav li {
+    float: right;
+}
+.hgroup-right {
+    float: left;
+}
+#site-logo {
+    float: right;
+}

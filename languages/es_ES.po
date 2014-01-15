@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Travelify\n"
 "POT-Creation-Date: 2013-12-11 22:52+0200\n"
-"PO-Revision-Date: 2013-12-13 10:40+0200\n"
-"Last-Translator: Aigars Silkalns <a.silkalns@gmail.com>\n"
+"PO-Revision-Date: 2013-12-30 20:24+0100\n"
+"Last-Translator: Mohamed Ziata (WaKeMaTTa) <m.ziata@hotmail.com>\n"
 "Language-Team: Color Awesomeness <info@colorawesomeness.com>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.2\n"
+"X-Generator: Poedit 1.6.3\n"
 "X-Poedit-KeywordsList: __;esc_attr_e;_e\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: 404.php:11
 msgid "Error 404 - Page NOT Found"
-msgstr "Error 404 - Página  NO encontrada"
+msgstr "Error 404 - Página  NO Encontrada"
 
 #: 404.php:14
 msgid "It seems we can't find what you're looking for."
@@ -121,11 +121,11 @@ msgstr "Muestra widgets en el pie de página"
 
 #: library/functions/shortcodes.php:49
 msgid "WordPress"
-msgstr ""
+msgstr "WordPress"
 
 #: library/functions/shortcodes.php:58 library/panel/theme-options.php:125
 msgid "Colorlib"
-msgstr ""
+msgstr "Colorlib"
 
 #: library/panel/metaboxes.php:16
 msgid ""
@@ -182,7 +182,7 @@ msgstr "Dale un puntaje a este tema"
 
 #: library/panel/theme-options.php:133
 msgid "Theme Instruction"
-msgstr ""
+msgstr "Instruciones del Tema"
 
 #: library/panel/theme-options.php:133
 msgid "Theme Instructions"
@@ -190,7 +190,7 @@ msgstr "Instrucciones del tema"
 
 #: library/panel/theme-options.php:134
 msgid "Support Forum"
-msgstr ""
+msgstr "Foro de Apoyo"
 
 #: library/panel/theme-options.php:134
 msgid "Support"
@@ -198,11 +198,11 @@ msgstr "Soporte"
 
 #: library/panel/theme-options.php:135
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: library/panel/theme-options.php:136
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: library/panel/theme-options.php:151
 msgid "Settings saved."
@@ -234,7 +234,7 @@ msgstr "Logo del encabezado"
 
 #: library/panel/theme-options.php:174
 msgid "Upload Logo"
-msgstr ""
+msgstr "Subir Logo"
 
 #: library/panel/theme-options.php:178 library/panel/theme-options.php:223
 #: library/panel/theme-options.php:255
@@ -283,9 +283,8 @@ msgid "Favicon URL"
 msgstr "URL del Favicon"
 
 #: library/panel/theme-options.php:218
-#, fuzzy
 msgid "Upload Favicon"
-msgstr "favicon"
+msgstr "Subir Favicon"
 
 #: library/panel/theme-options.php:219
 msgid ""
@@ -312,7 +311,7 @@ msgstr "URL del icono Web Clip"
 
 #: library/panel/theme-options.php:250
 msgid "Upload Web Clip Icon"
-msgstr ""
+msgstr "Subir un Icono de Web Clip"
 
 #: library/panel/theme-options.php:251
 msgid "Web Clip works as shortcut to website on iOS devices home screen"
@@ -477,7 +476,7 @@ msgstr "Efecto de transición"
 #: library/panel/theme-options.php:454 library/panel/theme-options.php:506
 #, php-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: library/panel/theme-options.php:462
 msgid "Transition Delay"
@@ -558,7 +557,7 @@ msgstr "Leer más"
 #: library/structure/content-extensions.php:606
 #: library/structure/content-extensions.php:718
 msgid "No Posts Found."
-msgstr "Non  se han encontrado artículos"
+msgstr "Non se han encontrado artículos."
 
 #: library/structure/content-extensions.php:207
 #: library/structure/content-extensions.php:301
@@ -568,7 +567,7 @@ msgstr "Páginas"
 
 #: library/structure/content-extensions.php:289
 msgid ", "
-msgstr ""
+msgstr ","
 
 #: library/structure/content-extensions.php:486
 #: library/structure/content-extensions.php:597
@@ -617,7 +616,7 @@ msgstr "Responder"
 
 #: library/structure/footer-extensions.php:35
 msgid "Copyright &copy;"
-msgstr "Copyright &copia;"
+msgstr "Copyright &copy;"
 
 #: library/structure/footer-extensions.php:35
 msgid "Theme by"

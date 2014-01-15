@@ -1,55 +1,56 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Travelify\n"
-"POT-Creation-Date: 2013-12-11 22:55+0200\n"
-"PO-Revision-Date: 2013-12-13 10:41+0200\n"
-"Last-Translator: Aigars Silkalns <a.silkalns@gmail.com>\n"
+"POT-Creation-Date: 2013-07-31 21:17+0200\n"
+"PO-Revision-Date: 2013-12-30 20:51+0100\n"
+"Last-Translator: Laszlo Espadas <kw@kardiweb.org>\n"
 "Language-Team: Color Awesomeness <info@colorawesomeness.com>\n"
-"Language: hu\n"
+"Language: English\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.2\n"
+"X-Generator: Poedit 1.5.7\n"
 "X-Poedit-KeywordsList: __;esc_attr_e;_e\n"
 "X-Poedit-Basepath: .\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Hungarian\n"
+"X-Poedit-Country: HUNGARY\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:11
 msgid "Error 404 - Page NOT Found"
-msgstr "404-es hiba - Az oldal NEM található"
+msgstr "404 hiba - A keresett oldal nem található"
 
 #: 404.php:14
 msgid "It seems we can't find what you're looking for."
-msgstr "Úgy tűnik, nem találjuk, amit kerestél."
+msgstr "Nincs találat"
 
 #: 404.php:15
 msgid "This might be because:"
-msgstr "Tán azért, mert:"
+msgstr "Lehetséges, hogy"
 
 #: 404.php:17
 msgid "You have typed the web address incorrectly"
-msgstr "Érvénytelen web-címet írtál be"
+msgstr "Nem létezik a keresett oldal"
 
 #: 404.php:18
 msgid "The page you were looking for may have been moved, updated or deleted."
-msgstr "Az oldal, amit keresel talán elköltözött, módosítva vagy törölve lett."
+msgstr "Az oldal módosítva vagy törölve lett."
 
 #: 404.php:20
 msgid "Please try the following:"
-msgstr "Kérlek, próbáld meg ezt:"
+msgstr "Esetleg egy próbát megér:"
 
 #: 404.php:22
 msgid "Check for a mis-typed URL error"
-msgstr "Hibásan begépelt web-cím (URL) megvizsgálása"
+msgstr "Hibásan begépelt hivatkozás (URL) megvizsgálása"
 
 #: 404.php:23
 msgid "Press the refresh button on your browser."
-msgstr "Klikkelj a \"Frissítés\"-re a böngésződben"
+msgstr "Kattintás a \"Frissítés\" gombra a böngészőben"
 
 #: 404.php:24
 msgid "Go back to"
-msgstr "Menj vissza ide: "
+msgstr "Vissza"
 
 #: 404.php:24
 msgid "Homepage"
@@ -85,54 +86,44 @@ msgstr "Hozzászólások lezárva."
 msgid "Primary Menu"
 msgstr "Elsődleges menü"
 
-#: searchform.php:7 searchform.php:8
-msgid "Search"
-msgstr "Keresés"
-
-#: library/functions/functions.php:296 library/functions/functions.php:310
-msgid "Navigation"
-msgstr "Navigáció"
-
-#: library/functions/functions.php:362 library/panel/theme-options.php:290
+#: library/functions/functions.php:382
+#: library/panel/theme-options.php:290
 msgid "Left Sidebar"
 msgstr "Baloldali sáv"
 
-#: library/functions/functions.php:364
+#: library/functions/functions.php:384
 msgid "Shows widgets at Left side."
 msgstr "Mutasd a widgeteket a bal oldalon."
 
-#: library/functions/functions.php:373 library/panel/theme-options.php:294
+#: library/functions/functions.php:393
+#: library/panel/theme-options.php:294
 msgid "Right Sidebar"
 msgstr "Jobboldali sáv"
 
-#: library/functions/functions.php:375
+#: library/functions/functions.php:395
 msgid "Shows widgets at Right side."
 msgstr "Mutasd a widgeteket a jobb oldalon."
 
-#: library/functions/functions.php:384
+#: library/functions/functions.php:404
 msgid "Footer"
 msgstr "Lábrész"
 
-#: library/functions/functions.php:386
+#: library/functions/functions.php:406
 msgid "Shows widgets at footer."
 msgstr "A widgetek mutatása a lábrészben"
 
-#: library/functions/shortcodes.php:49
-msgid "WordPress"
-msgstr ""
+#: searchform.php:7
+msgid "Search"
+msgstr "Keresés"
 
-#: library/functions/shortcodes.php:58 library/panel/theme-options.php:125
-msgid "Colorlib"
-msgstr ""
+#: library/functions/functions.php:316
+#: library/functions/functions.php:330
+msgid "Navigation"
+msgstr "Navigáció"
 
 #: library/panel/metaboxes.php:16
-msgid ""
-"Select layout for this specific Page only ( Note: This setting only reflects "
-"if page Template is set as Default Template and Blog Type Templates.)"
-msgstr ""
-"Válassz egy kinézetet csak ehhez az egy Oldalhol (Megjegyzés: Ez a beállítás "
-"csak akkor működik, ha az oldal sablon vagy Alap Sablon, vagy Blog-típusú "
-"Sablon.)"
+msgid "Select layout for this specific Page only ( Note: This setting only reflects if page Template is set as Default Template and Blog Type Templates.)"
+msgstr "Válassz egy kinézetet csak ehhez az egy Oldalhol (Megjegyzés: Ez a beállítás csak akkor működik, ha az oldal sablon vagy Alap Sablon, vagy Blog-típusú Sablon.)"
 
 #: library/panel/metaboxes.php:22
 msgid "Select layout for this specific Post only"
@@ -154,7 +145,8 @@ msgstr "Ne legyen oldalsáv"
 msgid "No sidebar, Full Width"
 msgstr "Ne legyen oldalsáv, Teljes szélesség"
 
-#: library/panel/metaboxes.php:53 library/panel/theme-options.php:286
+#: library/panel/metaboxes.php:53
+#: library/panel/theme-options.php:286
 msgid "No Sidebar, One Column"
 msgstr "Ne legyen oldalsáv, Egy Oszlop"
 
@@ -166,7 +158,8 @@ msgstr "Bal oldali sáv"
 msgid "Right sidebar"
 msgstr "Jobb oldali sáv"
 
-#: library/panel/theme-options.php:92 library/panel/theme-options.php:93
+#: library/panel/theme-options.php:92
+#: library/panel/theme-options.php:93
 msgid "Theme Options"
 msgstr "Sablon-opciók"
 
@@ -179,32 +172,30 @@ msgid "Rate this Theme"
 msgstr "Értékeld ezt a Sablont"
 
 #: library/panel/theme-options.php:133
-msgid "Theme Instruction"
-msgstr ""
-
-#: library/panel/theme-options.php:133
 msgid "Theme Instructions"
 msgstr "Utasítások a Sablonhoz"
-
-#: library/panel/theme-options.php:134
-msgid "Support Forum"
-msgstr ""
 
 #: library/panel/theme-options.php:134
 msgid "Support"
 msgstr "Támogatás"
 
-#: library/panel/theme-options.php:135
-msgid "Facebook"
-msgstr ""
-
-#: library/panel/theme-options.php:136
-msgid "Twitter"
-msgstr ""
-
 #: library/panel/theme-options.php:151
 msgid "Settings saved."
 msgstr "Beállítások mentve."
+
+#: library/panel/theme-options.php:200
+#: library/panel/theme-options.php:232
+#: library/panel/theme-options.php:264
+#: library/panel/theme-options.php:309
+#: library/panel/theme-options.php:347
+#: library/panel/theme-options.php:380
+#: library/panel/theme-options.php:418
+#: library/panel/theme-options.php:476
+#: library/panel/theme-options.php:515
+#: library/panel/theme-options.php:547
+#: library/panel/theme-options.php:566
+msgid "Save All Changes"
+msgstr "Minden beállítás mentése."
 
 #: library/panel/theme-options.php:157
 msgid "Main Options"
@@ -216,7 +207,7 @@ msgstr "Kiemelt vetítés"
 
 #: library/panel/theme-options.php:159
 msgid "Social Links"
-msgstr "Szociális linkek"
+msgstr "Közösségi hivatkozások"
 
 #: library/panel/theme-options.php:160
 msgid "Other"
@@ -226,15 +217,13 @@ msgstr "Egyéb"
 msgid "Header Options"
 msgstr "Fejrész beállítások"
 
-#: library/panel/theme-options.php:171 library/panel/theme-options.php:181
+#: library/panel/theme-options.php:171
+#: library/panel/theme-options.php:181
 msgid "Header Logo"
 msgstr "Fejrész logó"
 
-#: library/panel/theme-options.php:174
-msgid "Upload Logo"
-msgstr ""
-
-#: library/panel/theme-options.php:178 library/panel/theme-options.php:223
+#: library/panel/theme-options.php:178
+#: library/panel/theme-options.php:223
 #: library/panel/theme-options.php:255
 msgid "Preview"
 msgstr "Előnézet"
@@ -255,14 +244,6 @@ msgstr "Csak fejrész szöveg"
 msgid "Disable"
 msgstr "Kikapcsolás"
 
-#: library/panel/theme-options.php:200 library/panel/theme-options.php:232
-#: library/panel/theme-options.php:264 library/panel/theme-options.php:309
-#: library/panel/theme-options.php:347 library/panel/theme-options.php:380
-#: library/panel/theme-options.php:418 library/panel/theme-options.php:476
-#: library/panel/theme-options.php:515 library/panel/theme-options.php:538
-msgid "Save All Changes"
-msgstr "Minden beállítás mentése."
-
 #: library/panel/theme-options.php:205
 msgid "Favicon Options"
 msgstr "Favicon opciók"
@@ -271,7 +252,8 @@ msgstr "Favicon opciók"
 msgid "Disable Favicon"
 msgstr "Favicon kikapcsolása"
 
-#: library/panel/theme-options.php:212 library/panel/theme-options.php:244
+#: library/panel/theme-options.php:212
+#: library/panel/theme-options.php:244
 #: library/panel/theme-options.php:430
 msgid "Check to disable"
 msgstr "Jelöld be a kikapcsoláshoz"
@@ -280,17 +262,9 @@ msgstr "Jelöld be a kikapcsoláshoz"
 msgid "Favicon URL"
 msgstr "A favicon címe (URL)"
 
-#: library/panel/theme-options.php:218
-#, fuzzy
-msgid "Upload Favicon"
-msgstr "favicon"
-
 #: library/panel/theme-options.php:219
-msgid ""
-"Favicon is this tiny icon you see beside URL in your browser address bar"
-msgstr ""
-"A favicon az a piciny képecske, amit a böngésződben a webcím (URL) előtt "
-"láthatsz"
+msgid "Favicon is this tiny icon you see beside URL in your browser address bar"
+msgstr "A favicon az a piciny képecske, amit a böngésződben a webcím (URL) előtt láthatsz"
 
 #: library/panel/theme-options.php:226
 msgid "favicon"
@@ -307,10 +281,6 @@ msgstr "Web Clip Icon kikapcsolása"
 #: library/panel/theme-options.php:247
 msgid "Web Clip Icon URL"
 msgstr "Web Clip Icon címe (URL)"
-
-#: library/panel/theme-options.php:250
-msgid "Upload Web Clip Icon"
-msgstr ""
 
 #: library/panel/theme-options.php:251
 msgid "Web Clip works as shortcut to website on iOS devices home screen"
@@ -337,12 +307,8 @@ msgid "No Sidebar, Full Width"
 msgstr "Nincs oldalsáb, teljes szélesség"
 
 #: library/panel/theme-options.php:300
-msgid ""
-"This will set the default layout style. However, you can choose different "
-"layout for each page via editor"
-msgstr ""
-"Itt állítod be az alapértelmezett elrendezést. Persze, a szerkesztőben "
-"minden oldalnak saját elrendezést adhatsz."
+msgid "This will set the default layout style. However, you can choose different layout for each page via editor"
+msgstr "Itt állítod be az alapértelmezett elrendezést. Persze, a szerkesztőben minden oldalnak saját elrendezést adhatsz."
 
 #: library/panel/theme-options.php:301
 msgid "Reset Layout"
@@ -386,9 +352,7 @@ msgid "Homepage posts categories:"
 msgstr "Nyitó oldali bejegyzések kategóriái: "
 
 #: library/panel/theme-options.php:360
-msgid ""
-"Only posts that belong to the categories selected here will be displayed on "
-"the front page."
+msgid "Only posts that belong to the categories selected here will be displayed on the front page."
 msgstr "Csak ezen kategóriák Bejegyzései jelennek meg a anyitó oldalon."
 
 #: library/panel/theme-options.php:365
@@ -396,12 +360,8 @@ msgid "--Disabled--"
 msgstr "--Kikapcsolva--"
 
 #: library/panel/theme-options.php:375
-msgid ""
-"You may select multiple categories by holding down the CTRL (Windows) or cmd "
-"(Mac)."
-msgstr ""
-"Kijelölhetsz több kategóriát is, ha lenyomva tartod a CTRL (Windows) vagy a "
-"cmd (Mac) gombot."
+msgid "You may select multiple categories by holding down the CTRL (Windows) or cmd (Mac)."
+msgstr "Kijelölhetsz több kategóriát is, ha lenyomva tartod a CTRL (Windows) vagy a cmd (Mac) gombot."
 
 #: library/panel/theme-options.php:388
 msgid "Featured Post/Page Slider Options"
@@ -409,8 +369,7 @@ msgstr "Kiemelt Bejegyzés / Oldal vetítési opciók"
 
 #: library/panel/theme-options.php:392
 msgid "Exclude Slider post from Homepage posts?"
-msgstr ""
-"Kihagyjuk a Vetítésben szereplő Bejegyzéseket a nyitó oldali felsorolásból?"
+msgstr "Kihagyjuk a Vetítésben szereplő Bejegyzéseket a nyitó oldali felsorolásból?"
 
 #: library/panel/theme-options.php:394
 msgid "Check to exclude"
@@ -437,21 +396,12 @@ msgid "Create Post or Page and add featured image to it."
 msgstr "Készíts Bejegyzést vagy Oldalt és addj hozzá kedvenc képet. "
 
 #: library/panel/theme-options.php:414
-msgid ""
-"Add all the Post ID that you want to use in the featured slider. Post ID can "
-"be found at All Posts table in last column"
-msgstr ""
-"Add meg itt az összed Bejegyzés azonosítóját (ID), amit a kiemelt vetítésben "
-"akarsz használni. A Bejegyzés azonosítók az \"Összes Bejegyzés\" táblázat "
-"utolsó oszlopában vannak."
+msgid "Add all the Post ID that you want to use in the featured slider. Post ID can be found at All Posts table in last column"
+msgstr "Add meg itt az összed Bejegyzés azonosítóját (ID), amit a kiemelt vetítésben akarsz használni. A Bejegyzés azonosítók az \"Összes Bejegyzés\" táblázat utolsó oszlopában vannak."
 
 #: library/panel/theme-options.php:415
-msgid ""
-"Featured Slider will show featured images, Title and excerpt of the "
-"respected added post IDs."
-msgstr ""
-"A kiemelt vetítés a kedvenc képeket, a címet és a rövid tartalmat mutatja a "
-"megadott Bejegyzés-azonosítókhoz."
+msgid "Featured Slider will show featured images, Title and excerpt of the respected added post IDs."
+msgstr "A kiemelt vetítés a kedvenc képeket, a címet és a rövid tartalmat mutatja a megadott Bejegyzés-azonosítókhoz."
 
 #: library/panel/theme-options.php:416
 msgid "The recommended image size is"
@@ -469,16 +419,12 @@ msgstr "A vetítés kikapcsolása"
 msgid "Transition Effect:"
 msgstr "Átmenet-beállítás"
 
-#: library/panel/theme-options.php:454 library/panel/theme-options.php:506
-#, php-format
-msgid "%s"
-msgstr ""
-
 #: library/panel/theme-options.php:462
 msgid "Transition Delay"
 msgstr "Egy kép mutatása"
 
-#: library/panel/theme-options.php:465 library/panel/theme-options.php:472
+#: library/panel/theme-options.php:465
+#: library/panel/theme-options.php:472
 msgid "second(s)"
 msgstr "másodperc"
 
@@ -491,18 +437,35 @@ msgid "Enter URLs for your social networks e.g."
 msgstr "Add meg a szociális hálózati azonosítódat (URL), pl. "
 
 #: library/panel/theme-options.php:523
+msgid "Custom Scripts"
+msgstr "Egyéni utasítás-sor"
+
+#: library/panel/theme-options.php:528
+msgid "Code to display on Header"
+msgstr "A Fej-ben megjelenítendő kód"
+
+#: library/panel/theme-options.php:534
+#: library/panel/theme-options.php:543
+msgid "Note: Enter your custom header script (i.e., analytics, social button scripts). "
+msgstr "Megjegyzés: Add meg a Fej-ben megjelenítendő kódot (pl. analízis, szociális gomb kódja)."
+
+#: library/panel/theme-options.php:537
+msgid "Code to display on Footer"
+msgstr "A Lábrészben megjelenítendő kód."
+
+#: library/panel/theme-options.php:551
 msgid "Custom CSS (Advanced)"
 msgstr "Egyedi CSS (Haladóknak)"
 
-#: library/panel/theme-options.php:528
+#: library/panel/theme-options.php:556
 msgid "Enter your custom CSS styles."
 msgstr "Add meg az egyedi CSS stílusokat."
 
-#: library/panel/theme-options.php:529
+#: library/panel/theme-options.php:557
 msgid "This CSS will overwrite the CSS of style.css file."
 msgstr "Ez a CSS felülírja a style.css file-ban megadottakat. "
 
-#: library/panel/theme-options.php:533
+#: library/panel/theme-options.php:561
 msgid "Make sure you know what you are doing."
 msgstr "Csak akkor, ha tudod, mit csinálsz!"
 
@@ -560,10 +523,6 @@ msgstr "Nem találtunk Bejegyzést"
 #: library/structure/content-extensions.php:667
 msgid "Pages:"
 msgstr "Oldalak: "
-
-#: library/structure/content-extensions.php:289
-msgid ", "
-msgstr ""
 
 #: library/structure/content-extensions.php:486
 #: library/structure/content-extensions.php:597
@@ -629,20 +588,5 @@ msgstr "Oldal %s"
 
 #: library/structure/header-extensions.php:428
 msgid "Search Results"
-msgstr "A keresés eredménye"
+msgstr "Eredmény"
 
-#~ msgid "Custom Scripts"
-#~ msgstr "Egyéni utasítás-sor"
-
-#~ msgid "Code to display on Header"
-#~ msgstr "A Fej-ben megjelenítendő kód"
-
-#~ msgid ""
-#~ "Note: Enter your custom header script (i.e., analytics, social button "
-#~ "scripts). "
-#~ msgstr ""
-#~ "Megjegyzés: Add meg a Fej-ben megjelenítendő kódot (pl. analízis, "
-#~ "szociális gomb kódja)."
-
-#~ msgid "Code to display on Footer"
-#~ msgstr "A Lábrészben megjelenítendő kód."
