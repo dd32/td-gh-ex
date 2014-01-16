@@ -1,5 +1,6 @@
-<ul>
-<?php if ( !function_exists('dynamic_sidebar')
-        || !dynamic_sidebar('Footer-Sidebar 4') ) : ?>
+<aside>
+<?php if ( ! dynamic_sidebar( __( 'Sidebar 4' , 'northern' ) ) ) : ?>
 <?php endif; ?>
-</ul>
+</aside>
+
+

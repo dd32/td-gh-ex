@@ -2,70 +2,43 @@
 get_header();
 ?>
 
+<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-<?php $i =(''); ?>
+<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+<h2 class="storytitle"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+<?php the_post_thumbnail('thumbnail'); ?>
 
-<section class="column-left">
-<?php if (have_posts()) : while(have_posts()) : $i++; if(($i % 2) == 0) : $wp_query->next_post(); else : the_post(); ?>
-
-<article <?php post_class() ?> id="post-<?php the_ID(); ?>">    
-<h3 class="storytitle"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
-<?php
-if ( function_exists('has_post_thumbnail') && has_post_thumbnail() ) {
-the_post_thumbnail();
-}
-?>
-<section class="meta">
-<?php edit_post_link(__('Edit This', 'nwc')); ?>
+<div class="meta">
+<?php edit_post_link(__('Edit This', 'northern')); ?>
 <ul>
-<li><?php printf(_e("Publish on:", 'nwc')); ?> <a href="<?php the_permalink() ?>" rel="bookmark"><?php echo the_time("l - d F Y"); ?></a></li>
-<li><?php printf(_e("Categories:", 'nwc')); ?> <?php the_category(', ') ?> <?php the_tags(__('Tags:&nbsp;', 'nwc'), ' , ' , ''); ?></li>
+<li><?php northern_the_breadcrumb(); ?></li>
+<li><?php _e("Published on:", 'northern'); ?> <a href="<?php the_permalink() ?>" rel="bookmark"><?php echo the_time("l - d F Y"); ?></a></li>
+<li><?php _e("Categories:", 'northern'); ?> <?php the_category(', ') ?> <?php the_tags(__('Tags:&nbsp;', 'northern'), ' , ' , ''); ?></li>
 </ul>
-</section>
-<?php the_content(__('(more...)', 'nwc')); ?>
-<section class="commentlink">
+</div>
+
+<?php the_content(__('(more...)', 'northern')); ?>
+
+<div class="commentlink">
 <?php wp_link_pages(); ?>
-<?php comments_popup_link(__('No Comments', 'nwc'), __('1 Comment', 'nwc'), __('% Comments', 'nwc'), '', __('Comments are closed.', 'nwc') ); ?>
-</section>
+<?php comments_popup_link(__('No Comments', 'northern'), __('1 Comment', 'northern'), __('% Comments', 'northern'), '', __('Comments are closed.', 'northern') ); ?>
+</div>
+
 </article>
 
-<?php endif; endwhile; else: ?>
-<?php endif; ?>
+<?php endwhile; endif; ?>
+
+<section class="pagenav">
+<?php northern_pagenavi() ?>
 </section>
 
-<?php $i = 0; rewind_posts(); ?>
+<?php comments_template( '', true ); ?>
 
-<section class="column-right">
-<?php if (have_posts()) : while(have_posts()) : $i++; if(($i % 2) !== 0) : $wp_query->next_post(); else : the_post(); ?>
-<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
-<h3 class="storytitle"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
-<?php
-if ( function_exists('has_post_thumbnail') && has_post_thumbnail() ) {
-the_post_thumbnail();
-}
-?>
-<section class="meta">
-<?php edit_post_link(__('Edit This', 'nwc')); ?>
-<ul>
-<li><?php printf(_e("Publish on:", 'nwc')); ?> <a href="<?php the_permalink() ?>" rel="bookmark"><?php echo the_time("l - d F Y"); ?></a></li>
-<li><?php printf(_e("Categories:", 'nwc')); ?> <?php the_category(', ') ?> <?php the_tags(__('Tags:&nbsp;', 'nwc'), ' , ' , ''); ?></li>
-</ul>
-</section>
-<?php the_content(__('(more...)', 'nwc')); ?>
-<section class="commentlink">
-<?php wp_link_pages(); ?>
-<?php comments_popup_link(__('No Comments', 'nwc'), __('1 Comment', 'nwc'), __('% Comments', 'nwc'), '', __('Comments are closed.', 'nwc') ); ?>
-</section>
-</article>
-
-<?php endif; endwhile; else: ?>
-<?php endif; ?>
 </section>
 
-<?php comments_template(); ?>
-
-<section id="pagenav">
-<?php posts_nav_link(' - ') ?>
-</section>
+<?php get_sidebar(''); ?>
+<?php get_sidebar('2'); ?>
+<?php get_sidebar('3'); ?>
+<?php get_sidebar('4'); ?>
 
 <?php get_footer(); ?>

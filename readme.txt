@@ -1,11 +1,10 @@
 === Suffusion ===
 Author: Kai Ackermann
-Tags: gray, two-columns, flexible-width, translation-ready 
-Tested up to: WP 3.3.1
+Tags: custom-background, custom-menu, editor-style, fluid-layout, one-column, sticky-post, threaded-comments, translation-ready 
+
+Tested up to: WP 3.8.1-alpha
 
 == Description ==
-The whole layout is built up liquid.
-On the front page layout has two columns.
-If the page is smaller than 480 pixel, the layout is displayed in one column.
+Northern-Web-Coders is a responsive HTML5/CSS3 theme. It uses an Ubuntu font. A horizontal version of 'Superfish' jQuery drop-down menu is built in, which supports touch devices. Custom Menu and backgrounds. Translation ready.
 
 

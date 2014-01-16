@@ -2,9 +2,16 @@
 get_header();
 ?>
 
+<h4 class="page-title">
+<?php
+    if ( is_day() ) : printf( __( 'Daily Archiv: %s', 'northern' ), get_the_date('l - d F Y') );
+	elseif ( is_month() ) : printf( __( 'Monthly Archiv: %s', 'northern' ), get_the_date('F, Y') );
+	elseif ( is_year() ) : printf( __( 'Yearly Archiv: %s', 'northern' ), get_the_date( 'Y' ) );
+    endif;
+?>
+</h4>
+
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 <h2 class="storytitle"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
@@ -30,11 +37,11 @@ get_header();
 
 <?php endwhile; endif; ?>
 
-<?php comments_template( '', true ); ?> 
-        
 <section class="pagenav">
-<span class="previous"><?php previous_post_link('%link'); ?></span> - <span class="next"><?php next_post_link('%link'); ?></span>
+<?php northern_pagenavi() ?>
 </section>
+
+<?php comments_template( '', true ); ?>
 
 </section>
 
