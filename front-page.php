@@ -22,7 +22,10 @@ else {
 		<!---Slider Section of Index Page---->
 		<?php get_template_part('index', 'slider') ;?>
 		<!---Service Section of index Page---->
-		<?php get_template_part('index', 'services') ;?>
+		<?php if($current_options['enable_services']=="on") {
+		get_template_part('index', 'services') ;
+		}
+		?>
 		<!---Projects Section of index Page---->
 		<?php get_template_part('index', 'projects') ;?>
 		<?php get_template_part('index', 'testimonials') ;?>

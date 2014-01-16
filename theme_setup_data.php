@@ -92,7 +92,8 @@
 				
 				'footer_designedby' =>__('webriti','busi_prof'),
 				'footer_url' => 'http://www.webriti.com',
-					
+				
+				'enable_services' => 'on',
 				);
 	}
 ?>

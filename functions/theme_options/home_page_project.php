@@ -35,6 +35,7 @@
 			$current_options['project_thumb_four'] = sanitize_text_field($_POST['project_thumb_four']);
 			$current_options['project_text_four'] = sanitize_text_field($_POST['project_text_four']);
 			$current_options['project_four_url'] = sanitize_text_field($_POST['project_four_url']);
+						
 			update_option('busiprof_theme_options' , stripslashes_deep($current_options));
 		}
      }

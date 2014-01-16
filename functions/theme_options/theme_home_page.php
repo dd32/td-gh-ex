@@ -44,7 +44,11 @@ if(isset($_POST['busiprof_settings_save_1']))
 			$current_options['service_icon_four'] = sanitize_text_field($_POST['service_icon_four']);
 			$current_options['service_title_four'] = sanitize_text_field($_POST['service_title_four']);
 			$current_options['service_text_four'] = sanitize_text_field($_POST['service_text_four']);
-					
+			// services  section enabled yes ya no
+				if($_POST['enable_services'])
+				{ echo $current_options['enable_services']= sanitize_text_field($_POST['enable_services']); } 
+				else { echo $current_options['enable_services']="off"; }
+		
 		update_option('busiprof_theme_options' , stripslashes_deep($current_options));
 		}
      }	
@@ -152,6 +156,8 @@ if(isset($_POST['busiprof_settings_save_1']))
 		<h3 class="hndle"><span><?php _e('Service Heading','busi_prof');?><span class="postbox-title-action">
 		</h3>
 		<div class="inside">
+			<p><h4 class="heading"><?php _e('Enable Services on Front-Page ','busi_prof');?><input type="checkbox" <?php if($current_options['enable_services']=='on') echo "checked='checked'"; ?> id="enable_services" name="enable_services" >&nbsp;&nbsp;<span class="icon help"><span class="tooltip"><?php  _e('Enable Services On Home Page','busi_prof');?></span></span></h4>
+			</p>
 			<p><h4 class="heading"><?php _e('Service Heading One','busi_prof');?></h4>
 				<input type="text" class="inputwidth" name="service_heading_one" id="service_heading_one" value="<?php if($current_options['service_heading_one']!='') { echo esc_attr($current_options['service_heading_one']); } ?>"/>
 				<span class="icon help">
