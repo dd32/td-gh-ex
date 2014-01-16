@@ -85,6 +85,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 abase
+@Version: 1.0.4
+->Added font references.
 @Version: 1.0.3
 ->Removed jquery,Used Wp's jQuery.
 @Version: 1.0.2

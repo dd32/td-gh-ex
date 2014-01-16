@@ -26,7 +26,7 @@ function theme_data_setup()
 			'home_slider_enabled'=>'on',
 			'home_custom_image' => $slide_image_uri,								
 			'home_image_title' => __('Theme Feature Goes Here!','rambo'),
-			'home_image_description' => __('Furniot makes content easy to view on any device with any resolution. You may check this with resizing. Fully Responsive Theme Amazing Design.','rambo'),	
+			'home_image_description' => __('Rambo makes content easy to view on any device with any resolution. You may check this with resizing. Fully Responsive Theme Amazing Design.','rambo'),	
 			
 			// service
 			'home_service_enabled'=>'on',

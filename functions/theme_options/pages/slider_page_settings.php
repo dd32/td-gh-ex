@@ -28,7 +28,7 @@
 			$current_options['home_slider_enabled']="on";
 			$current_options['home_custom_image']=$slide_image_uri;
 			$current_options['home_image_title']="Fully Responsive Theme !";
-			$current_options['home_image_description']="Furniot makes content easy to view on any device with any resolution. You may check this with resizing. Fully Responsive Theme Amazing Design.";
+			$current_options['home_image_description']="Rambo makes content easy to view on any device with any resolution. You may check this with resizing. Fully Responsive Theme Amazing Design.";
 			update_option('rambo_theme_options',$current_options);
 		}
 	}  ?>
