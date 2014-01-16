@@ -594,22 +594,6 @@ add_action( 'save_post', 'hostmarks_category_transient_flusher' );
  */
 add_filter( 'use_default_gallery_style', '__return_false' );
 
-/**
- * Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
- */
-if ( ! function_exists( 'hostmarks_enhanced_image_navigation' ) ) :
-	function hostmarks_enhanced_image_navigation( $url ) {
-		global $post, $wp_rewrite;
-	
-		$id = (int) $post->ID;
-		$object = get_post( $id );
-		if ( wp_attachment_is_image( $post->ID ) && ( $wp_rewrite->using_permalinks() && ( $object->post_parent > 0 ) && ( $object->post_parent != $id ) ) )
-			$url = $url . '#main';
-	
-		return $url;
-	}
-endif;
-add_filter( 'attachment_link', 'hostmarks_enhanced_image_navigation' );
 
 /**
  * The Pagination Function

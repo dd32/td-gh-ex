@@ -46,6 +46,10 @@ This theme is bundled with Modernizr
 =================================
 CHANGELOG
 =================================
+Version 1.0.3
+ * removed a function that sometimes causes all the images in the media library to not display at all when setting a featured image
+ * replaced the screenshot with 880x660 size
+ 
 Version 1.0.2
  * Added an Alt_Homepage template w/c features a masonry layout for posts.
  
