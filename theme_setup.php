@@ -39,7 +39,7 @@ function spa_the_theme_setup() /*function declear*/
 								 'description'=>__('Donec justo odio, lobortis eget congue sed, rutrum sit amet mauris. Curabitur sed lectus nulla.
              Curabitur sed lectus nulla.lobortis eget congue sed, rutrum sit amet mauris. Curabitur sed 
              lectus nulla rutrum sit amet mauris','sis_spa'),
-								  'call_us'=>'963 6063 526',
+								  'call_us'=>'995 0348 952',
 							  	 'home_feature'=> $template_uri.'/images/default/home_banner.jpg',
 							   
 								 'first_thumb_image'=>$template_uri.'/images/default/home_thumb.jpg',
