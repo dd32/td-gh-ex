@@ -2,7 +2,7 @@
 Theme Name: Northern-Web-Coders
 Theme URI: http://northern-web-coders.de/test/wordpress/
 Description: Northern-Web-Coders is a responsive HTML5/CSS3 theme. It uses an Ubuntu font. A horizontal version of 'Superfish' jQuery drop-down menu is built in, which supports touch devices. Custom Menu and backgrounds. Translation ready.
-Version: 2.7
+Version: 2.7.1
 Author: Kai Ackermann | jaman
 Author URI: http://www.design-coding.de
 License: GNU General Public License v2.0
@@ -99,7 +99,8 @@ header#header em
 {
     font-size: 14px;
     font-style: italic;
-    margin-bottom: 10px;
+    margin: 0 0 10px 15px;
+    color: #fff
 }
 
 #content h2.storytitle
