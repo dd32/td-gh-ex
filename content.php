@@ -38,7 +38,7 @@
 				the_category( ', ' );
 			endif; // if this post aren't page ?> 
 		</h2>
-		<?php the_post_thumbnail();
+		<?php the_post_thumbnail( 'post-featured-image' );
 		do_action( 'archy_post_caption' ); ?>
 	</header><!-- .entry-header -->
 	<?php if ( is_search() ) : // is search() ?>

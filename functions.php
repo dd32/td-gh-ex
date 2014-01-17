@@ -57,7 +57,7 @@ function archy_setup() {
 	add_editor_style();
 	// Custom image size for featured images
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 542, 9999 );
+	add_image_size( 'post-featured-image', 542, 9999 );
 	// image size for slider
 	add_image_size( 'slide', 940, 344, true );
 	// image size for attachment
