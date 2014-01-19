@@ -8,11 +8,11 @@
  */
 ?>
 <?php 
-	$feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+	$aadya_feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
 ?>
 
 <div class="single-post-feat-image">	
-	<img src="<?php echo $feat_image;?>" class="img-responsive"/>
+	<img src="<?php echo $aadya_feat_image;?>" class="img-responsive"/>
 </div>	
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

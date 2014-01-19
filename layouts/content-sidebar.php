@@ -1,6 +1,6 @@
-<?php $col =  aadya_get_content_cols(); ?>
+<?php $aadya_col =  aadya_get_content_cols(); ?>
 <!-- Main Blog Content -->
-<div class="col-xs-12 col-sm-8 col-md-<?php echo $col;?>" role="content">
+<div class="col-xs-12 col-sm-8 col-md-<?php echo $aadya_col;?>" role="content">
 <div id="primary" class="site-content post-content">
 <?php if ( have_posts() ) : ?>
 	<?php /* Start the Loop */ ?>
@@ -12,6 +12,6 @@
 <?php get_template_part( 'content', 'noresults' ); ?>	
 <?php endif; // end have_posts() check ?>	
 </div><!-- #primary -->
-</div> <!-- .col-md-<?php echo $col;?> .content -->
+</div> <!-- .col-md-<?php echo $aadya_col;?> .content -->
 <!-- End Main Content -->
 <?php get_sidebar(); ?>

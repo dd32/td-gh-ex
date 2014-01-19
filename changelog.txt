@@ -3,3 +3,7 @@
 
 version 1.0.0		2013-12-26
 * Initial Version
+
+version 1.0.1		2014-01-19
+* Changed screeshot size
+* Updated few variables with theme-slug

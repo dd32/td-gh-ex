@@ -16,10 +16,10 @@
 
 get_header(); ?>
 <?php
-$layout = of_get_option('page_layouts');
-if(isset($layout)) {
+$aadya_layout = of_get_option('page_layouts');
+if(isset($aadya_layout)) {
 	//load template as per settings
-	switch($layout) {
+	switch($aadya_layout) {
 		case "full-width":
 			get_template_part( 'layouts/full', 'width' ); 
 			break;

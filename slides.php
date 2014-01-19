@@ -1,33 +1,33 @@
 <?php
 	$imagepath =  get_template_directory_uri() . '/images/';
 	
-	$slider_img_1 = of_get_option('slider_img_1'); if(($slider_img_1 == "")) unset($slider_img_1);
-	$slider_img_2 = of_get_option('slider_img_2'); if(($slider_img_2 == "")) unset($slider_img_2);
-	$slider_img_3 = of_get_option('slider_img_3'); if(($slider_img_3 == "")) unset($slider_img_3);
-	$slider_img_4 = of_get_option('slider_img_4'); if(($slider_img_4 == "")) unset($slider_img_4);	
+	$aadya_slider_img_1 = of_get_option('slider_img_1'); if(($aadya_slider_img_1 == "")) unset($aadya_slider_img_1);
+	$aadya_slider_img_2 = of_get_option('slider_img_2'); if(($aadya_slider_img_2 == "")) unset($aadya_slider_img_2);
+	$aadya_slider_img_3 = of_get_option('slider_img_3'); if(($aadya_slider_img_3 == "")) unset($aadya_slider_img_3);
+	$aadya_slider_img_4 = of_get_option('slider_img_4'); if(($aadya_slider_img_4 == "")) unset($aadya_slider_img_4);	
 	
-	$heading_1 = trim(of_get_option('slider_image_heading_1')); if(($heading_1 == "")) unset($heading_1);
-	$heading_2 = trim(of_get_option('slider_image_heading_2')); if(($heading_2 == "")) unset($heading_2);
-	$heading_3 = trim(of_get_option('slider_image_heading_3')); if(($heading_3 == "")) unset($heading_3);
-	$heading_4 = trim(of_get_option('slider_image_heading_4'));	if(($heading_4 == "")) unset($heading_4);	
+	$aadya_heading_1 = trim(of_get_option('slider_image_heading_1')); if(($aadya_heading_1 == "")) unset($aadya_heading_1);
+	$aadya_heading_2 = trim(of_get_option('slider_image_heading_2')); if(($aadya_heading_2 == "")) unset($aadya_heading_2);
+	$aadya_heading_3 = trim(of_get_option('slider_image_heading_3')); if(($aadya_heading_3 == "")) unset($aadya_heading_3);
+	$aadya_heading_4 = trim(of_get_option('slider_image_heading_4'));	if(($aadya_heading_4 == "")) unset($aadya_heading_4);	
 	
-	$caption_1 = trim(of_get_option('slider_image_caption_1')); if(($caption_1 == "")) unset($caption_1);
-	$caption_2 = trim(of_get_option('slider_image_caption_2')); if(($caption_2 == "")) unset($caption_2);
-	$caption_3 = trim(of_get_option('slider_image_caption_3')); if(($caption_3 == "")) unset($caption_3);
-	$caption_4 = trim(of_get_option('slider_image_caption_4')); if(($caption_4 == "")) unset($caption_4);	
+	$aadya_caption_1 = trim(of_get_option('slider_image_caption_1')); if(($aadya_caption_1 == "")) unset($aadya_caption_1);
+	$aadya_caption_2 = trim(of_get_option('slider_image_caption_2')); if(($aadya_caption_2 == "")) unset($aadya_caption_2);
+	$aadya_caption_3 = trim(of_get_option('slider_image_caption_3')); if(($aadya_caption_3 == "")) unset($aadya_caption_3);
+	$aadya_caption_4 = trim(of_get_option('slider_image_caption_4')); if(($aadya_caption_4 == "")) unset($aadya_caption_4);	
 	
-	$button_1 = trim(of_get_option('slider_image_button_1')); if(($button_1 == "")) unset($button_1);
-	$button_2 = trim(of_get_option('slider_image_button_2')); if(($button_2 == "")) unset($button_2);
-	$button_3 = trim(of_get_option('slider_image_button_3')); if(($button_3 == "")) unset($button_3);
-	$button_4 = trim(of_get_option('slider_image_button_4')); if(($button_4 == "")) unset($button_4);		
+	$aadya_button_1 = trim(of_get_option('slider_image_button_1')); if(($aadya_button_1 == "")) unset($aadya_button_1);
+	$aadya_button_2 = trim(of_get_option('slider_image_button_2')); if(($aadya_button_2 == "")) unset($aadya_button_2);
+	$aadya_button_3 = trim(of_get_option('slider_image_button_3')); if(($aadya_button_3 == "")) unset($aadya_button_3);
+	$aadya_button_4 = trim(of_get_option('slider_image_button_4')); if(($aadya_button_4 == "")) unset($aadya_button_4);		
 	
-	$link_1 = trim(of_get_option('slider_image_button_1_link')); if(($link_1 == "")) unset($link_1);
-	$link_2 = trim(of_get_option('slider_image_button_2_link')); if(($link_2 == "")) unset($link_2);
-	$link_3 = trim(of_get_option('slider_image_button_3_link')); if(($link_3 == "")) unset($link_3);
-	$link_4 = trim(of_get_option('slider_image_button_4_link')); if(($link_4 == "")) unset($link_4);	
+	$aadya_link_1 = trim(of_get_option('slider_image_button_1_link')); if(($aadya_link_1 == "")) unset($aadya_link_1);
+	$aadya_link_2 = trim(of_get_option('slider_image_button_2_link')); if(($aadya_link_2 == "")) unset($aadya_link_2);
+	$aadya_link_3 = trim(of_get_option('slider_image_button_3_link')); if(($aadya_link_3 == "")) unset($aadya_link_3);
+	$aadya_link_4 = trim(of_get_option('slider_image_button_4_link')); if(($aadya_link_4 == "")) unset($aadya_link_4);	
 	
 ?>    
-<?php if(isset($slider_img_1) || isset($slider_img_2) || isset($slider_img_3) || isset($slider_img_4)) :?>	
+<?php if(isset($aadya_slider_img_1) || isset($aadya_slider_img_2) || isset($aadya_slider_img_3) || isset($aadya_slider_img_4)) :?>	
 	<!-- Carousel
     ================================================== -->
 	<div class="slider">
@@ -36,91 +36,95 @@
 	
 	  <!-- Indicators -->
       <ol class="carousel-indicators">
-	  <?php if(isset($slider_img_1)): ?>
+	  <?php if(isset($aadya_slider_img_1)): ?>
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 	  <?php endif;?>	
-	  <?php if(isset($slider_img_2)): ?>
+	  <?php if(isset($aadya_slider_img_2)): ?>
         <li data-target="#myCarousel" data-slide-to="1"></li>
 	  <?php endif;?>
-	  <?php if(isset($slider_img_3)): ?>
+	  <?php if(isset($aadya_slider_img_3)): ?>
         <li data-target="#myCarousel" data-slide-to="2"></li>
 	  <?php endif;?>
-	  <?php if(isset($slider_img_4)): ?>
+	  <?php if(isset($aadya_slider_img_4)): ?>
         <li data-target="#myCarousel" data-slide-to="3"></li>
 	  <?php endif;?>
       </ol>
 
       <div class="carousel-inner">	  
-		<?php if(isset($slider_img_1)): ?>
+		<?php if(isset($aadya_slider_img_1)): ?>
         <div class="item active">
-          <img src="<?php echo esc_url($slider_img_1);?>" alt="" class="img-responsive">
+          <img src="<?php echo esc_url($aadya_slider_img_1);?>" alt="" class="img-responsive">
           <div class="container">
             <div class="carousel-caption">
-			  <?php if(isset($heading_1)): ?>	
-              <h1><?php echo $heading_1;?></h1>
+			  <?php if(isset($aadya_heading_1)): ?>	
+              <h1><?php echo $aadya_heading_1;?></h1>
 			  <?php endif;?>
-			  <?php if(isset($caption_1)): ?>	
-              <p><?php echo $caption_1; ?></p>
+			  <?php if(isset($aadya_caption_1)): ?>	
+              <p><?php echo $aadya_caption_1; ?></p>
 			  <?php endif;?>
-			  <?php if(isset($link_1)): ?>
-              <p><a class="btn btn-large btn-primary" href="<?php echo get_permalink( $link_1); ?>"><?php echo $button_1; ?></a></p>
+			  <?php if(isset($aadya_link_1)): ?>
+              <p class="hidden-xs hidden-sm"><a class="btn btn-large btn-primary" href="<?php echo get_permalink( $aadya_link_1); ?>"><?php echo $aadya_button_1; ?></a></p>
+			  <p class="visible-xs visible-sm"><a class="btn btn-xs btn-primary" href="<?php echo get_permalink( $aadya_link_1); ?>"><?php echo $aadya_button_1; ?></a></p>
 			  <?php endif;?>
             </div>
           </div>
         </div>
 		<?php endif;?>
 		
-		<?php if(isset($slider_img_2)): ?>
+		<?php if(isset($aadya_slider_img_2)): ?>
         <div class="item">
-          <img src="<?php echo esc_url($slider_img_2);?>" alt="" class="img-responsive">
+          <img src="<?php echo esc_url($aadya_slider_img_2);?>" alt="" class="img-responsive">
           <div class="container">
             <div class="carousel-caption">
-			  <?php if(isset($heading_2)): ?>	
-              <h1><?php echo $heading_2;?></h1>
+			  <?php if(isset($aadya_heading_2)): ?>	
+              <h1><?php echo $aadya_heading_2;?></h1>
 			  <?php endif;?>
-			  <?php if(isset($caption_2)): ?>	
-              <p><?php echo $caption_2; ?></p>
+			  <?php if(isset($aadya_caption_2)): ?>	
+              <p><?php echo $aadya_caption_2; ?></p>
 			  <?php endif;?>
-			  <?php if(isset($link_2)): ?>
-              <p><a class="btn btn-large btn-primary" href="<?php echo get_permalink( $link_2); ?>"><?php echo $button_2; ?></a></p>
+			  <?php if(isset($aadya_link_2)): ?>
+              <p class="hidden-xs hidden-sm"><a class="btn btn-large btn-primary" href="<?php echo get_permalink( $aadya_link_2); ?>"><?php echo $aadya_button_2; ?></a></p>
+			  <p class="visible-xs visible-sm"><a class="btn btn-xs btn-primary" href="<?php echo get_permalink( $aadya_link_2); ?>"><?php echo $aadya_button_2; ?></a></p>
 			  <?php endif;?>
             </div>
           </div>
         </div>
 		<?php endif;?>
 
-		<?php if(isset($slider_img_3)): ?>
+		<?php if(isset($aadya_slider_img_3)): ?>
         <div class="item">
-          <img src="<?php echo esc_url($slider_img_3);?>" alt="" class="img-responsive">
+          <img src="<?php echo esc_url($aadya_slider_img_3);?>" alt="" class="img-responsive">
           <div class="container">
             <div class="carousel-caption">
-			  <?php if(isset($heading_3)): ?>	
-              <h1><?php echo $heading_3;?></h1>
+			  <?php if(isset($aadya_heading_3)): ?>	
+              <h1><?php echo $aadya_heading_3;?></h1>
 			  <?php endif;?>
-			  <?php if(isset($caption_3)): ?>	
-              <p><?php echo $caption_3; ?></p>
+			  <?php if(isset($aadya_caption_3)): ?>	
+              <p><?php echo $aadya_caption_3; ?></p>
 			  <?php endif;?>
-			  <?php if(isset($link_3)): ?>
-              <p><a class="btn btn-large btn-primary" href="<?php echo get_permalink( $link_3); ?>"><?php echo $button_3; ?></a></p>
+			  <?php if(isset($aadya_link_3)): ?>
+              <p class="hidden-xs hidden-sm"><a class="btn btn-large btn-primary" href="<?php echo get_permalink( $aadya_link_3); ?>"><?php echo $aadya_button_3; ?></a></p>
+			  <p class="visible-xs visible-sm"><a class="btn btn-xs btn-primary" href="<?php echo get_permalink( $aadya_link_3); ?>"><?php echo $aadya_button_3; ?></a></p>
 			  <?php endif;?>
             </div>
           </div>
         </div>
 		<?php endif;?>
 
-		<?php if(isset($slider_img_4)): ?>
+		<?php if(isset($aadya_slider_img_4)): ?>
         <div class="item">
-          <img src="<?php echo esc_url($slider_img_4);?>" alt="" class="img-responsive">
+          <img src="<?php echo esc_url($aadya_slider_img_4);?>" alt="" class="img-responsive">
           <div class="container">
             <div class="carousel-caption">
-			  <?php if(isset($heading_4)): ?>	
-              <h1><?php echo $heading_4;?></h1>
+			  <?php if(isset($aadya_heading_4)): ?>	
+              <h1><?php echo $aadya_heading_4;?></h1>
 			  <?php endif;?>
-			  <?php if(isset($caption_4)): ?>	
-              <p><?php echo $caption_4; ?></p>
+			  <?php if(isset($aadya_caption_4)): ?>	
+              <p><?php echo $aadya_caption_4; ?></p>
 			  <?php endif;?>
-			  <?php if(isset($link_4)): ?>
-              <p><a class="btn btn-large btn-primary" href="<?php echo get_permalink( $link_4); ?>"><?php echo $button_4; ?></a></p>
+			  <?php if(isset($aadya_link_4)): ?>
+              <p class="hidden-xs hidden-sm"><a class="btn btn-large btn-primary" href="<?php echo get_permalink( $aadya_link_4); ?>"><?php echo $aadya_button_4; ?></a></p>
+			  <p class="visible-xs visible-sm"><a class="btn btn-xs btn-primary" href="<?php echo get_permalink( $aadya_link_4); ?>"><?php echo $aadya_button_4; ?></a></p>
 			  <?php endif;?>
             </div>
           </div>

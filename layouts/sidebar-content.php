@@ -1,7 +1,7 @@
-<?php $col =  aadya_get_content_cols();?>	
+<?php $aadya_col =  aadya_get_content_cols();?>	
 <?php get_sidebar('left'); ?>
 <!-- Main Blog Content -->
-<div class="col-xs-12 col-sm-8 col-md-<?php echo $col;?>" role="content">
+<div class="col-xs-12 col-sm-8 col-md-<?php echo $aadya_col;?>" role="content">
 <div id="primary" class="site-content post-content">
 <?php if ( have_posts() ) : ?>
 	<?php /* Start the Loop */ ?>

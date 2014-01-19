@@ -14,8 +14,8 @@ get_header(); ?>
 	$divclass = (of_get_option('front_page_widget_section_count')=='4') ? '3' : '4';
 	$mysidebars = wp_get_sidebars_widgets();
 	$total_widgets = count( $mysidebars['aadya_front_page_widget_row_one'] );
-	if($total_widgets <= 3) $cols = 4;
-	else $cols = 3;
+	if($total_widgets <= 3) $aadya_cols = 4;
+	else $aadya_cols = 3;
 
 ?>
 <?php if ( is_active_sidebar( 'aadya_front_page_widget_row_one' ) ) : ?>

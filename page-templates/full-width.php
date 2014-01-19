@@ -10,10 +10,10 @@
 
 get_header(); ?>
 <?php 
-	$col =  aadya_get_content_cols(); 
-	$col = 12; //we have to override this to achieve the 2 column effect
+	$aadya_col =  aadya_get_content_cols(); 
+	$aadya_col = 12; //we have to override this to achieve the 2 column effect
 ?>	
-<div class="col-md-<?php echo $col;?>" role="content">
+<div class="col-md-<?php echo $aadya_col;?>" role="content">
 	<div id="primary" class="site-content">
 		<div id="content" role="main">
 
@@ -25,6 +25,6 @@ get_header(); ?>
 
 		</div><!-- #content -->
 	</div><!-- #primary -->
-</div> <!-- .col-md-<?php echo $col;?> .content -->	
+</div> <!-- .col-md-<?php echo $aadya_col;?> .content -->	
 <?php get_footer(); ?>
 

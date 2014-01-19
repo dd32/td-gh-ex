@@ -9,23 +9,23 @@
  * @since Aadya 1.0.0
  */
 ?>
-<?php $col =  aadya_get_sidebar_cols(); 
-$layout = of_get_option('page_layouts');
-if($layout == "content-sidebar") {
-	$smcol = 4;
-} elseif($layout == "sidebar-content-sidebar" || $layout == "content-sidebar-sidebar") {
-	$smcol = 3;
+<?php $aadya_col =  aadya_get_sidebar_cols(); 
+$aadya_layout = of_get_option('page_layouts');
+if($aadya_layout == "content-sidebar") {
+	$aadya_smcol = 4;
+} elseif($aadya_layout == "sidebar-content-sidebar" || $aadya_layout == "content-sidebar-sidebar") {
+	$aadya_smcol = 3;
 }
 
 if(is_page_template('page-templates/sidebar-content.php') || is_page_template('page-templates/content-sidebar.php')) {
-	$smcol = 4;
+	$aadya_smcol = 4;
 } else if (is_page_template('page-templates/sidebar-content-sidebar.php') || is_page_template('page-templates/content-sidebar-sidebar.php')) {
-	$smcol = 3;
+	$aadya_smcol = 3;
 }
 
 ?>
 <!-- Sidebar -->
-<div class="col-xs-12 col-sm-<?php echo $smcol;?> col-md-<?php echo $col;?> sidebar-right">
+<div class="col-xs-12 col-sm-<?php echo $aadya_smcol;?> col-md-<?php echo $aadya_col;?> sidebar-right">
 <div id="secondary">	
 <?php if ( dynamic_sidebar('aadya_sidebar_right') ) : elseif( current_user_can( 'edit_theme_options' ) ) : ?>
 	<h5><?php _e( 'No widgets found.', 'aadya' ); ?></h5>

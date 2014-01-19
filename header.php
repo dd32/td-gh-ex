@@ -34,27 +34,27 @@
 	<div id="content-wrap">	
 	
 	<?php 
-		$site_logo = of_get_option('site_logo');
-		$header =  get_header_textcolor();	
-		$header_background = of_get_option('header_background');
+		$aadya_site_logo = of_get_option('site_logo');
+		$aadya_header =  get_header_textcolor();	
+		$aadya_header_background = of_get_option('header_background');
 		
 		//check and get if any header image set from WP Settings
 		$wp_header_image = get_header_image();		
-		if(empty($header_background) && !empty($wp_header_image)):
-			$header_background = get_header_image();
+		if(empty($aadya_header_background) && !empty($wp_header_image)):
+			$aadya_header_background = get_header_image();
 		endif;
 		
 	?>	
-	<?php if ( $header !== "blank" ) : ?>
+	<?php if ( $aadya_header !== "blank" ) : ?>
 		<header class="site-header" role="banner"> 	
 
 
 		<div class="container">		
 		 <div class="row logo-row">
 		  <div class="col-sm-4 col-md-4 pull-left">
-			<?php if ( $site_logo != '' ) : ?>
-			<a href="<?php echo esc_url( home_url( '/' )); ?>"><img src="<?php echo esc_url($site_logo); ?>" alt="<?php bloginfo('description'); ?>" class="img-responsive" /></a>
-			<?php elseif($site_logo == '' || !isset($site_logo)): ?>
+			<?php if ( $aadya_site_logo != '' ) : ?>
+			<a href="<?php echo esc_url( home_url( '/' )); ?>"><img src="<?php echo esc_url($aadya_site_logo); ?>" alt="<?php bloginfo('description'); ?>" class="img-responsive" /></a>
+			<?php elseif($aadya_site_logo == '' || !isset($aadya_site_logo)): ?>
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1><h6><?php bloginfo( 'description' ); ?></h6>
 			
 			<?php endif; ?>					
