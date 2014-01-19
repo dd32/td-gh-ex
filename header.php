@@ -39,14 +39,6 @@
 <h1><a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>">
 <?php bloginfo('name'); ?></a></h1>
 <em><?php bloginfo('description'); ?></em>
-
-<?php
-// Check to see if the header image has been removed
-$header_image = get_header_image();
-if ( ! empty( $header_image ) ) :
-?>
-<img src="<?php header_image(); ?>" id="headerpic" width="<?php echo HEADER_IMAGE_WIDTH; ?>px" height="<?php echo HEADER_IMAGE_HEIGHT; ?>px" alt="" />
-<?php endif; // end check for removed header image ?>
 </header>
 
 <input type="checkbox" id="isexpanded" />
