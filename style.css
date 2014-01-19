@@ -1,11 +1,11 @@
 /*
 Theme Name: PrivateBusiness
 Theme URI: http://www.guidovanderleest.nl/privatebusiness
-Version: 1.1
+Version: 1.2
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: PrivateBusiness is a free, basic, clean, minimalistic, responsive, mobile friendly, WordPress theme for Private or Business website. Primary sidebar, 2 widget-areas underneath header-image, 2 widget-area's in footer, custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settings page, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
-Tags: one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, fluid-layout, custom-background, custom-header, custom-menu, featured-images, white, blue, light, gray, translation-ready
+Tags: one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, fluid-layout, full-width-template, custom-background, custom-header, custom-menu, featured-images, white, blue, light, gray, translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: privatebusiness
@@ -77,7 +77,7 @@ table {
 /* GENERAL */
 body {background: #eee; font-family: 'Open Sans', sans-serif; font-size:0.9em; color:#333; line-height:1.5em;}
 #container {max-width: 1200px; background:#fff; border:0; margin: 10px auto 10px; padding: 20px 0 0; text-align: left; word-wrap: break-word;}
-#content {width: 55%; float:left; padding: 20px 20px; word-wrap: break-word;}
+#content {width: 58%; float:left; padding: 20px 0 20px 2%; word-wrap: break-word;}
 #content-full {width: 100%; float:left; padding:20px 0; word-wrap: break-word;}
 
 h1 {font-size:3.0em; line-height:1.2em;}
@@ -115,11 +115,11 @@ select {max-width:100%;}
 
 
 /* HEADER */
-#header-first {margin:0; padding: 0 20px 0; background:none;}
+#header-first {margin:0; padding: 0 2% 0; background:none;}
 #header-first:after {content:''; display:block; clear:both;}
 #header-first .logo {width:100%; float:left; text-align:left; padding: 0 0 10px;}
 #header-first .logo h1 a:hover {text-decoration:none; color:#333;}
-#header-first .logo h4 {padding:5px 20px 5px;}
+#header-first .logo h4 {padding:5px 2% 5px;}
 
 #header-second {margin:0; padding:0; background:none;}
 #header-second:after {content:''; display:block; clear:both;}
@@ -146,8 +146,8 @@ select {max-width:100%;}
 /* HOMEPAGE WIDGET AREA */
 #header-widgets {width: 100%; margin:0 auto 0; padding:0; background:none;}
 #header-widgets:after {content:''; display:block; clear:both;}
-.home-left {float: left; margin: 0 0 0 20px; padding: 0; width: 46%; word-wrap: break-word;}
-.home-right {float: right; margin: 0 20px 0 0; padding:0; width: 46%; word-wrap: break-word;}
+.home-left {float: left; margin: 0 0 0 2%; padding: 0; width: 46%; word-wrap: break-word;}
+.home-right {float: right; margin: 0 2% 0 0; padding: 0; width: 46%; word-wrap: break-word;}
 
 
 /* PAGE */
@@ -156,14 +156,13 @@ select {max-width:100%;}
 .pagelink {clear:both; margin:20px 0 10px;}
 .edit-link {display:block; clear:both; text-align:center; margin:10px 0; padding: 5px; background: #0066ff; border:0;}
 .edit-link a {color:#fff;}
-.widgetarea-border {clear:both; height:3px; background: #0066ff;}
 
 
 /* POST */
 .entry-title {margin: 0; padding: 0;}
 .entry-title a:hover {color:#333; text-decoration:none;}
 .excerpt {margin: 0 0 20px; padding:0 0 60px; border-bottom:1px solid #0066ff;}
-.sticky {text-align:center; clear:both; color:#fff; background: #0066ff; margin: 10px 0 10px; padding:5px; border:0;}
+.sticky {text-align:center; clear:both; color:#fff; background: #0066ff; margin: 0 0 10px; padding:5px; border:0;}
 .postmetadata {margin:20px 0; padding:5px; background: #f8f8f8; border:1px solid #ccc;}
 a.moretag {float:right; border:0; -webkit-appearance:none;	margin:25px 0 0; padding: 2px 10px; background: #0066ff; color:#fff;}
 a.moretag:hover {background: #333; text-decoration:none;}
@@ -200,8 +199,9 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 
 /* COMMENTS */
 #comments {clear:both; word-wrap: break-word;}
-#comments .comment-list {list-style:none; background:#f8f8f8; border:1px solid #ccc; font-weight:normal; margin: 20px 0; padding: 20px;}
-#comments .children {list-style:none; background: #f8f8f8; padding: 20px;}
+#comments .comment-list {list-style:none; background:#f8f8f8; border:1px solid #ccc; font-weight:normal; margin: 20px 0; padding: 0 15px 0;}
+#comments .children {list-style:none; background: #f8f8f8; padding: 0 0 0 15px;}
+.comment-body {border-left:2px solid #0066ff; padding: 0 0 0 15px; margin:20px 0;}
 .no-comments {clear:both; margin:20px 0; padding:5px 10px; background: #f8f8f8; border:1px solid #ccc;}
 .comment-notes, .form-allowed-tags {font-size:0.75em; padding:10px 0;}
 .comments-title, .comment-reply-title {font-size: 1.5em;} 
@@ -214,10 +214,11 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 
 
 /* SIDEBAR AND WIDGETS */
-#sidebar {width: 35%; float: right; margin:20px 20px 0 0; padding:0; word-wrap: break-word;}
+#sidebar {width: 34%; float: right; margin:0 2% 0 0; padding:0; word-wrap: break-word;}
 .widget {padding:15px 15px 15px; margin: 20px 0 20px; background: #f8f8f8; border:1px solid #ccc;}
 .widgettitle {margin:0 0 10px;}
 #wp-calendar {width:90%;}
+.widgetarea-border {clear:both; height:3px; background: #0066ff;}
 
 
 /* FOOTER */
@@ -225,8 +226,8 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 #footer .site-info {text-align:center; clear:both; padding:10px 0; background:#0066ff; color:#fff; border:0;}
 #footer .site-info a{color:#fff;}
 
-.footer-left {float: left; width: 46%; margin: 0 0 0 20px; padding:0; word-wrap: break-word;}
-.footer-right {float: right; width: 46%; margin: 0 20px 0 0; padding:0; word-wrap: break-word;}
+.footer-left {float: left; width: 46%; margin: 0 0 0 2%; padding: 0; word-wrap: break-word;}
+.footer-right {float: right; width: 46%; margin: 0 2% 0 0; padding: 0; word-wrap: break-word;}
 
 
 /* Mobile */
@@ -235,10 +236,13 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 	#container {width: 94%; padding:10px; margin:0 auto 0;}
 	#content, #content-full {width:100%; padding:10px 0;}
 	#header-first .logo {padding: 10px 0; text-align:center;}
-	#header-first .logo h4 {padding:0;}
+	#header-first .logo h1 {font-size:2em;}
+	#header-first .logo h4 {padding:0; font-size:1.3em;}
 	#header-second .header-img {width: 100%; height: auto;}
 	#sidebar {width:100%; border:0; margin:0; padding:0; float:left;}
 	#footer {width:100%; padding:10px 0 0;}
+	.entry-title, .page-title, .widgettitle {font-size:1.3em;}
+	.comment-body {border:0; padding:0;}
 	.article {padding:0;}
 	.widget {margin: 15px 0 15px;}
 	.home-right, .home-left, .footer-right, .footer-left {width:100%; border:0; margin:0; padding:0; float:left;} 
