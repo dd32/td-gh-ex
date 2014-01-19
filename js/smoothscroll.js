@@ -1,26 +1,17 @@
 /*
- * Smooth scroll v1.2 | @agareginyan | GPL v3 Licensed
- *
- * Copyright (c) 2019, Space X-Chimp ( https://www.spacexchimp.com ).
- * All Rights Reserved.
- */
+ Smooth scroll v1.0 | @agareginyan | GPL v3 Licensed
+*/
 
-
-jQuery(document).ready(function($) {
-
-    $('.scroll-to-top').hide();
-
-    $(window).scroll(function() {
+jQuery(document).ready(function($){
+	$(window).scroll(function(){
         if ($(this).scrollTop() < 200) {
-            $('.scroll-to-top') .fadeOut();
+			$('#back-top') .fadeOut();
         } else {
-            $('.scroll-to-top') .fadeIn();
+			$('#back-top') .fadeIn();
         }
     });
-
-    $('.scroll-to-top').on('click', function() {
-        $('html, body').animate({scrollTop:0}, 'fast');
-        return false;
-    });
-
+	$('#back-top').on('click', function(){
+		$('html, body').animate({scrollTop:0}, 'fast');
+		return false;
+		});
 });
