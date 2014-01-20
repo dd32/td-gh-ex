@@ -45,6 +45,7 @@ function optionsframework_rolescheck () {
 		// If the user can edit theme options, let the fun begin!
 		add_action( 'admin_menu', 'optionsframework_add_page');
 		add_action( 'admin_init', 'optionsframework_init' );
+		add_action( 'admin_init', 'optionsframework_mlu_init' );
 	}
 }
 
@@ -169,6 +170,7 @@ function optionsframework_add_page() {
 
 function optionsframework_load_styles() {
 	wp_enqueue_style('admin-style', OPTIONS_FRAMEWORK_DIRECTORY.'css/admin-style.css');
+	wp_enqueue_style('color-picker', OPTIONS_FRAMEWORK_DIRECTORY.'css/colorpicker.css');
 }	
 
 /* Loads the javascript */
@@ -180,6 +182,7 @@ function optionsframework_load_scripts() {
 	
 	// Enqueued scripts
 	wp_enqueue_script('jquery-ui-core');
+	wp_enqueue_script('color-picker', OPTIONS_FRAMEWORK_DIRECTORY.'js/colorpicker.js', array('jquery'));
 	wp_enqueue_script('options-custom', OPTIONS_FRAMEWORK_DIRECTORY.'js/options-custom.js', array('jquery'));
 }
 
@@ -209,9 +212,12 @@ function optionsframework_page() {
 	
 	 <div id="go_help">
             <p><b>Need Help:</b> <a href="http://antthemes.com/?page_id=56" target="blank">Support Forum</a></p>
+<p><b>Important Note</b>= How to setup Home/front-page with out Blog =
+Create a new page by going to pages - Add New. Then on right side, in page attributes - Template, select Home as the page template and name your page Home(or anything). And publish the page. Then go to Settings - Reading - select a static page as frontpage display option. Select Home as Front page option.</p>
         </div>	
     
 	<div class="wrap">
+    <?php screen_icon( 'themes' ); ?>
     <h2 class="nav-tab-wrapper">
         <?php echo $return[1]; ?>
     </h2>

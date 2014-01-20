@@ -2,10 +2,10 @@
 Theme Name: agency
 Theme URI: http://antthemes.com/?page_id=2019
 Description: A very neat and clean black and white responsive business theme. The theme supports widgets. And features theme-options, threaded-comments and multi-level dropdown menu. A simple and neat typography.
-Version: 1.2.10
+Version: 1.2.2
 Author: Manishg
 Author URI: http://antthemes.com/
-Tags: black,threaded-comments,light,two-columns,white
+Tags: black,threaded-comments,light,two-columns,theme-options,white
 License: GNU General Public License, v2 (or newer)
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  *
@@ -61,11 +61,11 @@ License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
 #header_container{
 	margin: 0 auto;
-	background: #000;
+	background: url(images/main-bg.png) repeat-x;
 }
 
 #header {
-	
+	width:964px;
 	margin: 0 auto;
 	padding-bottom: 35px;
 }

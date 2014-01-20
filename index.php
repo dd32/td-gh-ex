@@ -7,7 +7,11 @@
 		<div class="row">
 
 		<div class="large-12 columns">
-	
+		
+		
+ <?php
+
+    ?>
 			
 <h1><?php if ( is_category() ) {
 		single_cat_title();
