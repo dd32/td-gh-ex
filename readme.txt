@@ -2,7 +2,7 @@
 
 Theme Name: Unite
 Theme URI: http://colorlib.com/wp/unite/
-Version: 1.0
+Version: 1.0.1
 Tested up to: WP 3.8
 
 Author: Aigars Silkalns
@@ -59,6 +59,9 @@ If you dismiss this notice, you can install those plugins later via Appearance->
 Theme documentation is available on http://colorlib.com/wp/support/unite
 
 /*========= Changelog =========*/
+
+= 1.0.1 - 20.01.2014 =
+* Moved translation files to the right folder
 
 = 1.0 - 20.01.2014 =
 Initial release
