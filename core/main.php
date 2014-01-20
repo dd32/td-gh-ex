@@ -242,7 +242,7 @@ if ( is_admin() && isset($_GET['activated'] ) && $pagenow == 'themes.php' ) {
 		
 		$skins = array( 
 		
-		"wip_skins" => "light_turquoise", 
+		"wip_skins" => "turquoise", 
 		
 		"wip_logo_font" => "Montez", 
 		"wip_logo_font_size" => "55px", 
@@ -260,28 +260,28 @@ if ( is_admin() && isset($_GET['activated'] ) && $pagenow == 'themes.php' ) {
 		"wip_link_color" => "#48c9b0", 
 		"wip_link_color_hover" => "#1abc9c",
 	
-		"wip_header_text_color" => "#616161",
-		"wip_subheader_text_color" => "#616161",
+		"wip_header_text_color" => "#ffffff",
+		"wip_subheader_text_color" => "#ffffff",
 	
-		"wip_bottom_text_color" => "#616161",
-		"wip_social_icons_color" => "#dddddd",
+		"wip_bottom_text_color" => "#ffffff",
+		"wip_social_icons_color" => "#333333",
 		"wip_social_icons_hover" => "#ffffff",
-		"wip_copyright_text_color" => "#616161",
+		"wip_copyright_text_color" => "#ffffff",
 	
 		"wip_body_background" => "/images/background/patterns/pattern12.jpg",
 		"wip_body_background_repeat" => "repeat",
 		"wip_body_background_color" => "#f3f3f3",
 	
-		"wip_header_background_color" => "#ffffff",
-		"wip_subheader_background_color" => "#f1f1f1",
-		"wip_header_border_color" => "#dddddd",
+		"wip_header_background_color" => "#262626",
+		"wip_subheader_background_color" => "#212121",
+		"wip_header_border_color" => "#333333",
 	
-		"wip_bottom_background_color" => "#ffffff",
-		"wip_socialbox_background_color" => "#f1f1f1",
-		"wip_footer_background_color" => "#ffffff",
-		"wip_bottom_border_color" => "#dddddd",
+		"wip_bottom_background_color" => "#262626",
+		"wip_socialbox_background_color" => "#212121",
+		"wip_footer_background_color" => "#262626",
+		"wip_bottom_border_color" => "#333333",
 	
-		"wip_home" => "full",
+		"wip_home" => "right-sidebar",
 		"wip_category_layout" => "full",
 		"wip_search_layout" => "full",
 		
@@ -313,20 +313,25 @@ function novalite_template($id) {
 	$span = $template["full"];
 	$sidebar =  "full";
 
-	if ( is_search() ) {
+	if ( ( is_search() ) && ( novalite_setting('wip_search_layout')) ) {
 		
 		$span = $template[novalite_setting('wip_search_layout')];
 		$sidebar =  novalite_setting('wip_search_layout');
 			
-	} else if ( (is_category()) || (is_tag()) || (is_tax()) || (is_month()) ) {
+	} else if ( ( (is_category()) || (is_tag()) || (is_tax()) || (is_month()) ) && ( novalite_setting('wip_category_layout')) ) {
 		
 		$span = $template[novalite_setting('wip_category_layout')];
 		$sidebar =  novalite_setting('wip_category_layout');
 			
-	} else if (is_home()) {
+	} else if ( ( is_home() ) && ( novalite_setting('wip_home')) ) {
 		
 		$span = $template[novalite_setting('wip_home')];
 		$sidebar =  novalite_setting('wip_home');
+			
+	} else if ( ( is_home() ) && ( !novalite_setting('wip_home')) ) {
+		
+		$span = $template["right-sidebar"];
+		$sidebar =  "right-sidebar";
 			
 	} else if (novalite_postmeta('wip_template')) {
 		

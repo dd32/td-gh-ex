@@ -99,7 +99,7 @@ function novalite_message () {
 	
 function novalite_getpremium() {	?>
 
-	<a href="http://www.themeinprogress.com/?ref=panel" target="_blank" >
+	<a href="http://www.themeinprogress.com/nova/?ref=panel" target="_blank" >
     	<img src="http://www.themeinprogress.com/images/novapremium.jpg" alt="Get Premium" style="margin:15px auto" />
     </a>
 

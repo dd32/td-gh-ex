@@ -5,7 +5,7 @@ Theme URI: http://themeinprogress.com/nova/
 Description: Nova is a responsive clean Tumblog Wordpress Theme, based on Bootstrap framework. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10 and uses the most modern technologies like Html5 and Css3.
 Author: Theme in Progress.
 Author URI: http://themeinprogress.com
-Version: 1.0.4
+Version: 1.0.5
 Tags: blue, green, orange, purple, red, yellow, light, two-columns, left-sidebar, right-sidebar, photoblogging, custom-background, post-formats, theme-options, translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -220,24 +220,24 @@ a.btn {
 	margin:0 0 50px 0;
 	padding:0;
 	min-height:120px;
-	background:#fff; 
-	border-bottom:solid 1px #ddd;
+	background:#262626; 
+	border-bottom:solid 1px #333333;
 }
 
 #subheader {
 	width:100%; 
-	background:#f1f1f1;
+	background:#212121;
 	padding:50px 0; 
 	color:#fff;
 	position:relative;
 	margin-top:-50px;
 	margin-bottom:50px;
-	border-bottom:solid 1px #ddd;
+	border-bottom:solid 1px #333333;
 }
 
 #subheader p,
 #subheader h1 {
-	color:#616161;
+	color:#fff;
 	font-size:32px;
 	font-family:'Yanone Kaffeesatz',Verdana, Geneva, sans-serif;
 	font-weight:300;
@@ -245,7 +245,7 @@ a.btn {
 
 #subheader p a,
 #subheader h1 a {
-	color:#616161;
+	color:#fff;
 }
 
 /* ================= LOGO ================= */
@@ -256,12 +256,12 @@ a.btn {
 	padding:0; 
 	text-align:left;
 	margin: 45px 0;
-	word-wrap: break-word
+	word-wrap: break-word;
 } 
 #logo a { 
 	font-family:'Montez',Verdana, Geneva, sans-serif ; 
 	font-size:55px; 
-	color:#616161 ; 
+	color:#fff ; 
 	text-decoration:none; 
 	text-align:left;
 	-webkit-transition: all .3s ease;
@@ -284,7 +284,6 @@ nav#mainmenu {
 	padding:0; 
 	text-align:right;
 	position:relative; 
-	width:100%;
 	min-height:120px;
 	word-wrap: break-word;
 }
@@ -293,32 +292,35 @@ nav#mainmenu ul {
 	list-style:none; 
 	margin:0; 
 	display:inline-block;
-	max-width:100%;
+	position:relative;
+	width:100%;	
 }
 
 nav#mainmenu ul li {
-	float:left; 
+	display:inline-block;
 	position:relative; 
-	display:block;
-	text-align:right;
+	text-align:left;
 	padding:0;
 	margin-bottom:-5px;
+	word-wrap: break-word;
+	width:auto;
 	max-width:100%;
 }
+
 
 nav#mainmenu ul li a { 
 	text-decoration:none; 
 	display:block; 
 	font-family:'Oxygen',Verdana, Geneva, sans-serif;
 	z-index:1; 
-	padding:50px 15px;
-	color:#616161; 
+	padding:50px 0 50px 30px;
+	color:#fff; 
 	font-size:14px; 
 	-webkit-transition: all .3s linear; 
 	-moz-transition: all .3s linear; 
 	-o-transition: all .3s linear; 
 	position:relative;
-	text-transform:uppercase;
+	text-transform:uppercase;	
 }
 
 nav#mainmenu ul li a:hover,
@@ -342,16 +344,16 @@ nav#mainmenu ul ul {
 	position: absolute; 
 	top:120px; 
 	left:0; 
-	background:#fff ; 
+	background:#262626 ; 
 	z-index:1000;
 	width:100%;
 	z-index:1000;
 	margin-top:0;
 	min-width:211px;
-	border-top:solid 1px #fff;
-	border-left:solid 1px #ddd;
-	border-right:solid 1px #ddd;
-	border-bottom:solid 1px #ddd;
+	border-top:solid 1px #262626;
+	border-left:solid 1px #333333;
+	border-right:solid 1px #333333;
+	border-bottom:solid 1px #333333;
 }
 
 nav#mainmenu ul ul li { 
@@ -367,15 +369,14 @@ nav#mainmenu ul ul li a{
 	text-decoration:none; 
 	text-align:left; 
 	display:block; 
-	border-bottom:solid 1px #ddd;
-	border-none:none;
+	border-bottom:solid 1px #333333;
 	height:14px;
 	padding:15px;
 	margin:0;
 	font-family:'Oxygen',Verdana, Geneva, sans-serif; 
 	text-transform:inherit; 
 	text-shadow:inherit; 
-	color:#616161; 
+	color:#fff; 
 	line-height:1.8em;
 	min-height: inherit;
 	height:auto;
@@ -408,14 +409,14 @@ nav#mainmenu ul ul li ul:before {
 /* ================= BOTTOM AND FOOTER ================= */
 
 .bottom_widget { 
-	background:#fff;
-	border-top:solid 1px #ddd;
+	background:#262626;
+	border-top:solid 1px #333333;
 }
 
 .bottom_socials { 
-	background:#f1f1f1;
+	background:#212121;
 	padding: 25px 0;
-	border-top:solid 1px #ddd;
+	border-top:solid 1px #333333;
 }
 
 .bottom_widget .widget-box {
@@ -423,9 +424,9 @@ nav#mainmenu ul ul li ul:before {
 }
 
 #footer { 
-	background:#fff;
+	background:#262626;
 	color:#333;
-	border-top:solid 1px #ddd;
+	border-top:solid 1px #333333;
 }
 
 .bottom ul, 
@@ -493,7 +494,7 @@ nav#mainmenu ul ul li ul:before {
 #footer td,
 #footer th,
 #footer .textwidget { 
-	color:#616161;
+	color:#fff;
 }
 
 #sidebar a:hover , 
@@ -553,7 +554,7 @@ nav#mainmenu ul ul li ul:before {
 #footer td,
 #footer th,
 #footer .textwidget { 
-	color:#616161;
+	color:#fff;
 }
 
 #footer .copyright {
@@ -1332,6 +1333,10 @@ article .overlay-image {
 .bottom_widget .widget-box li{
 	padding:0 0 5px 0;
 	border-bottom:solid 1px #ddd;
+}
+
+.bottom_widget .widget-box li{
+	border-bottom:solid 1px #333333;
 }
 
 #sidebar ul li:last-of-type{

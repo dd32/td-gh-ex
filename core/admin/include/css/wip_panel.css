@@ -117,7 +117,7 @@ h2.title, #poststuff h2 {
 #tabs li a { 
 	color:#606060; 
 	text-decoration:none; 
-	padding:9px; 
+	padding:10px; 
 	display:block;
 	text-align:center; 
 	-webkit-transition: all .3s ease; 	
@@ -129,6 +129,10 @@ h2.title, #poststuff h2 {
 	font-size:16px; 
 	text-shadow:0px 1px 1px #fff;
 	margin:0 5px 0 0;
+}
+
+body.version-3-8 #tabs li a {
+	padding:9px;
 }
 #tabs.metaboxes li a { 
 	padding:9px; 
@@ -147,6 +151,12 @@ h2.title, #poststuff h2 {
 	color:#007fa6;
 	display:block;
 	border-bottom: solid 1px #fff;
+}
+
+body.version-3-8 #tabs li a:hover, 
+body.version-3-8 #tabs li.ui-tabs-active a, 
+body.version-3-8 #tabs li.ui-state-active a {
+	border-bottom: solid 1px #f1f1f1;
 }
 #tabs.metaboxes li a:hover, 
 #tabs.metaboxes li.ui-tabs-active a, 

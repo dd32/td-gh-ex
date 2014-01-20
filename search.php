@@ -26,15 +26,14 @@
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         
         
-                        <div class="pin-article span12">
+                        <div class="pin-article <?php echo novalite_template('span'); ?>">
                 
                             <?php do_action('novalite_postformat'); ?>
                     
                             <div style="clear:both"></div>
-                        
+
                         </div>
                         
-                
                 <?php endwhile; else:  ?>
         
                         <div class="pin-article <?php echo novalite_template('span'); ?>">
@@ -57,7 +56,7 @@
                             </article>
                             
                             <div style="clear:both"></div>
-                        
+							
                         </div>
                         
                 <?php endif; ?>
@@ -114,11 +113,9 @@
         <?php endif; ?>
 
     </div>
+    							<?php get_template_part('pagination'); ?>
+                        
+
 </div>
 
-<?php
-	
-	get_template_part('pagination');
-	get_footer(); 
-
-?>
+<?php get_footer(); ?>
