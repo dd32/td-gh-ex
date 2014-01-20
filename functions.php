@@ -51,6 +51,20 @@
 	add_action( 'after_setup_theme', 'privatebusiness_setup' ); 
 
 
+// Theme Options Page
+	function register_privatebusiness_menu_page(){ 
+		add_theme_page('PrivateBusiness', 'PrivateBusiness', 'manage_options', 'privatebusiness', 'privatebusiness_options' ); 
+ 	} 
+	add_action( 'admin_menu', 'register_privatebusiness_menu_page' ); 
+
+	function privatebusiness_options() { 
+		if (!current_user_can('manage_options')) { 
+			wp_die( __('You do not have permission to access this page', 'privatebusiness' ) ); 
+			} 
+			include 'theme-options.php'; 
+		}
+
+
 // Theme Customizer (option to add logo)
 	function privatebusiness_theme_customizer( $wp_customize ) { 
 

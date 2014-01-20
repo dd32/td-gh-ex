@@ -6,31 +6,9 @@ INSTALLATION
 3. Once activated, you're ready to use it.
 
 
-HOW TO SET HOMEPAGE
-===================
-You can use the default homepage (displaying posts) or set a static page as homepage. 
-To set a static homepage login into WordPress Dashboard > Settings > Reading and select the page you want.
-
-
-HOW TO CHANGE HEADER IMAGE
-==========================
-You can change the header-image via WordPress Dashboard > Appearance > Header. I advice you to use a header-image of 1200px wide and 350px high. 
-
-
-HOW TO SET LOGO
-===============
-You can add your own logo in stead of blogname and description via  WordPress Dashboard > Appearance > Customize.
-
-
-HOW TO CHANGE BACKGROUND
-========================
-You can add your own background(image) via  WordPress Dashboard > Appearance > Background.
-
-
-HOW TO SET MENU
-===============
-PrivateBusiness offers a menu that can contain subpages (2 levels deep).
-You can create and set menu via WordPress Dashboard > Appearance > Menu's.
+THEME OPTIONSPAGE
+=================
+You can set all theme options via WordPress Dashboard > Appearance
 
 
 TRANSLATION

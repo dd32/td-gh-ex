@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: PrivateBusiness v1.2\n"
+"Project-Id-Version: PrivateBusiness v1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-01-10 12:09:58+0000\n"
+"PO-Revision-Date: 2014-01-20 22:55:02+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,15 +21,15 @@ msgstr ""
 "X-Textdomain-Support: yes"
 
 #: 404.php:9
-#: search.php:26
+#: search.php:28
 #@ privatebusiness
 msgid "Nothing Found"
 msgstr "Niets gevonden"
 
 #: 404.php:10
-#: archive.php:37
-#: index.php:29
-#: search.php:27
+#: archive.php:39
+#: index.php:30
+#: search.php:29
 #@ privatebusiness
 msgid "Sorry, no posts matched your criteria."
 msgstr "Sorry, er zijn helaas geen berichten gevonden."
@@ -71,48 +71,48 @@ msgstr "Tag Archieven"
 msgid "Permalink to "
 msgstr "Permalink naar "
 
-#: archive.php:28
-#: index.php:20
-#: search.php:16
-#: single.php:15
+#: archive.php:30
+#: index.php:21
+#: search.php:18
+#: single.php:16
 #@ privatebusiness
 msgid "Posted on "
 msgstr "Geplaatst op "
 
-#: archive.php:41
-#: index.php:33
-#: search.php:33
+#: archive.php:43
+#: index.php:34
+#: search.php:35
 #@ privatebusiness
 msgid "&laquo; Older posts"
 msgstr "&laquo; Oudere berichten"
 
-#: archive.php:42
-#: index.php:34
-#: search.php:34
+#: archive.php:44
+#: index.php:35
+#: search.php:36
 #@ privatebusiness
 msgid "Newer posts &raquo;"
 msgstr "Nieuwere berichten &raquo;"
 
-#: functions.php:110
+#: functions.php:124
 #@ privatebusiness
 msgid "Primary Sidebar"
 msgstr "Hoofd Sidebar"
 
-#: functions.php:112
-#: functions.php:122
-#: functions.php:132
-#: functions.php:142
-#: functions.php:152
+#: functions.php:126
+#: functions.php:136
+#: functions.php:146
+#: functions.php:156
+#: functions.php:166
 #@ privatebusiness
 msgid "Select widgets from the right-hand side."
 msgstr "Selecteer widgets van de rechterkant."
 
-#: functions.php:166
+#: functions.php:180
 #@ privatebusiness
 msgid "Read More &raquo;"
 msgstr "Lees Meer &raquo;"
 
-#: functions.php:183
+#: functions.php:197
 #@ privatebusiness
 msgid "Boats"
 msgstr "Boten"
@@ -122,9 +122,9 @@ msgstr "Boten"
 msgid "Featured post"
 msgstr "Aanbevolen bericht"
 
-#: page-full.php:20
+#: page-full.php:21
 #: page.php:19
-#: single.php:29
+#: single.php:30
 #@ privatebusiness
 msgid "Edit"
 msgstr "Bewerk"
@@ -135,7 +135,7 @@ msgstr "Bewerk"
 msgid "Search Results for: %s"
 msgstr "Zoekresultaat voor: %s"
 
-#: single.php:21
+#: single.php:22
 #@ privatebusiness
 msgid "Posted in "
 msgstr "Geplaatst in "
@@ -155,12 +155,12 @@ msgstr "Nieuwere Reacties &raquo;"
 msgid "Comments are closed"
 msgstr "Reageren is niet mogelijk"
 
-#: functions.php:140
+#: functions.php:154
 #@ privatebusiness
 msgid "Footer Sidebar Right"
 msgstr "Footer Sidebar Rechts"
 
-#: functions.php:150
+#: functions.php:164
 #@ privatebusiness
 msgid "Footer Sidebar Left"
 msgstr "Footer Sidebar Links"
@@ -178,29 +178,29 @@ msgid_plural "%1$s responses on %2$s"
 msgstr[0] "1 reactie op %2$s"
 msgstr[1] "%1$s reacties op %2$s"
 
-#: functions.php:58
-#: functions.php:64
+#: functions.php:72
+#: functions.php:78
 #@ privatebusiness
 msgid "Logo"
 msgstr "Logo"
 
-#: functions.php:60
+#: functions.php:74
 #@ privatebusiness
 msgid "Upload a logo to replace blogname and description in header"
 msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
 
-#: archive.php:28
-#: index.php:20
-#: search.php:16
-#: single.php:15
+#: archive.php:30
+#: index.php:21
+#: search.php:18
+#: single.php:16
 #@ privatebusiness
 msgid "By "
 msgstr "Door "
 
-#: archive.php:29
-#: index.php:21
-#: search.php:17
-#: single.php:16
+#: archive.php:31
+#: index.php:22
+#: search.php:19
+#: single.php:17
 #, php-format
 #@ privatebusiness
 msgid "1 response"
@@ -208,12 +208,80 @@ msgid_plural "%1$s responses"
 msgstr[0] "1 reactie"
 msgstr[1] "%1$s reacties"
 
-#: functions.php:120
+#: functions.php:134
 #@ privatebusiness
 msgid "Homepage Sidebar Right"
 msgstr "Homepage Sidebar Rechts"
 
-#: functions.php:130
+#: functions.php:62
+#@ privatebusiness
+msgid "You do not have permission to access this page"
+msgstr "Je hebt geen rechten om deze pagina te bezoeken"
+
+#: functions.php:144
 #@ privatebusiness
 msgid "Homepage Sidebar Left"
 msgstr "Homepage Sidebar Links"
+
+#: theme-options.php:9
+#@ privatebusiness
+msgid "Theme Options"
+msgstr "Thema Instellingen"
+
+#: theme-options.php:12
+#@ privatebusiness
+msgid "Welcome on the theme options page. On this page you can set all options this theme offers. Enjoy."
+msgstr "Welkom op de thema instellingenpagina. Op deze pagina kun je alle opties instellen die dit thema heeft. Veel plezier."
+
+#: theme-options.php:17
+#: theme-options.php:23
+#@ privatebusiness
+msgid "Description"
+msgstr "Beschrijving"
+
+#: theme-options.php:18
+#: theme-options.php:24
+#@ privatebusiness
+msgid "What to do"
+msgstr "Wat te doen"
+
+#: theme-options.php:29
+#@ privatebusiness
+msgid "For setting menu"
+msgstr "Om menu in te stellen"
+
+#: theme-options.php:30
+#: theme-options.php:34
+#: theme-options.php:38
+#: theme-options.php:42
+#: theme-options.php:46
+#: theme-options.php:50
+#@ privatebusiness
+msgid "click here"
+msgstr "klik hier"
+
+#: theme-options.php:33
+#@ privatebusiness
+msgid "For setting static homepage"
+msgstr "Om statische startpagina in te stellen"
+
+#: theme-options.php:37
+#@ privatebusiness
+msgid "For setting header-image"
+msgstr "Om header-afbeelding in te stellen"
+
+#: theme-options.php:41
+#@ privatebusiness
+msgid "For setting logo"
+msgstr "Om logo in te stellen"
+
+#: theme-options.php:45
+#@ privatebusiness
+msgid "For setting background (image)"
+msgstr "Om achtergrond (afbeelding) in te stellen"
+
+#: theme-options.php:49
+#@ privatebusiness
+msgid "For setting widgets"
+msgstr "Om widgets in te stellen"
+
