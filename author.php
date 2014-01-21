@@ -5,7 +5,7 @@
  * Template Name: Author page
  *
  * @package	Anarcho Notepad
- * @since	2.4
+ * @since	2.4.1
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013-2014, Arthur Gareginyan
  * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
@@ -29,8 +29,8 @@
     <?php else : ?>
 
 	<div class="no-results">
-		<h1>Not Found</h1>
-		<p>Sorry, but you are looking for something that isn't here.</p>
+		<h1><?php _e('Not Found', 'anarcho-notepad'); ?></h1>
+		<p><?php _e('Sorry, but you are looking for something that isn\'t here.', 'anarcho-notepad'); ?></p>
 	</div>
 
 

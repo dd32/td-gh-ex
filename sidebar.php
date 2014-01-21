@@ -3,7 +3,7 @@
  * The sidebar containing the secondary widget area, displays on posts and pages.
  *
  * @package	Anarcho Notepad
- * @since	2.4
+ * @since	2.4.1
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013-2014, Arthur Gareginyan
  * @link      	http://mycyberuniverse.tk/anarcho-notepad.html

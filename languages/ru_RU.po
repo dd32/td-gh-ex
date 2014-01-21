@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Anarcho Notepad v2.4\n"
+"Project-Id-Version: Anarcho Notepad v2.4.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-08-20 20:42+0300\n"
-"PO-Revision-Date: 2014-01-19 04:54:27+0000\n"
+"PO-Revision-Date: 2014-01-21 20:21:38+0000\n"
 "Last-Translator: Arthur Gareginyan aka Brute9000 <arthurgareginyan@gmail.com>\n"
 "Language-Team: Arthur Gareginyan aka Brute9000 <arthurgareginyan@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -25,6 +25,7 @@ msgstr ""
 #: home.php:33
 #: index.php:35
 #: page.php:34
+#: page_without_date.php:34
 #: search.php:37
 #@ anarcho-notepad
 msgid "Category: "
@@ -313,6 +314,7 @@ msgid "Site-info in footer"
 msgstr "Инфо о сайте в футере"
 
 #: single.php:37
+#: sitemap.php:39
 #@ anarcho-notepad
 msgid "Pages:"
 msgstr "Страницы:"
@@ -372,6 +374,7 @@ msgstr "Навигация по постам"
 #: home.php:30
 #: index.php:32
 #: page.php:31
+#: page_without_date.php:31
 #: search.php:35
 #: single.php:36
 #@ anarcho-notepad
@@ -640,4 +643,58 @@ msgstr "Если Вы довольны данной темой, скажите �
 #@ anarcho-notepad
 msgid "Leave a comment"
 msgstr "Оставить отзыв"
+
+#: archive.php:43
+#: author.php:32
+#: category.php:42
+#: home.php:42
+#: index.php:48
+#: page.php:42
+#: page_without_date.php:42
+#: single.php:60
+#@ anarcho-notepad
+msgid "Not Found"
+msgstr "Не найдено"
+
+#: archive.php:44
+#: author.php:33
+#: category.php:43
+#: home.php:43
+#: index.php:49
+#: page.php:43
+#: page_without_date.php:43
+#: single.php:61
+#@ anarcho-notepad
+msgid "Sorry, but you are looking for something that isn't here."
+msgstr ""
+
+#: sitemap.php:32
+#@ anarcho-notepad
+msgid "Author(s):"
+msgstr "Автор(ы):"
+
+#: sitemap.php:46
+#@ anarcho-notepad
+msgid "Posts:"
+msgstr "Посты:"
+
+#: sitemap.php:74
+#@ anarcho-notepad
+msgid "Archives:"
+msgstr "Архивы:"
+
+#: footer.php:27
+#@ anarcho-notepad
+msgid "queries in"
+msgstr "запросов за"
+
+#: footer.php:27
+#@ anarcho-notepad
+msgid "seconds"
+msgstr "секунд"
+
+#: footer.php:27
+#@ anarcho-notepad
+msgid "mb"
+msgstr "мб"
 

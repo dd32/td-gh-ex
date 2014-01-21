@@ -3,7 +3,7 @@
  * The template for displaying the footer.
  *
  * @package	Anarcho Notepad
- * @since	2.4
+ * @since	2.4.1
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013-2014, Arthur Gareginyan
  * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
@@ -24,7 +24,7 @@
 <br/>
 
 <?php if(get_theme_mod('show_info_line') == '1') {  ?>
-	<?php echo get_num_queries(); ?> queries in <?php timer_stop(1); ?> seconds / <?php echo round(memory_get_usage()/1024/1024, 2); ?> mb<br/>
+	<?php echo get_num_queries(); ?> <?php _e('queries in', 'anarcho-notepad'); ?> <?php timer_stop(1); ?> <?php _e('seconds', 'anarcho-notepad'); ?> / <?php echo round(memory_get_usage()/1024/1024, 2); ?> <?php _e('mb', 'anarcho-notepad'); ?><br/>
 <?php }  ?>
 </div>
 
