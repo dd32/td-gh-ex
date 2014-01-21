@@ -105,6 +105,9 @@ This theme is bundled with WP Barrister "People" CPT Plugin
 =================================
 CHANGELOG
 =================================
+Version 1.0.3
+ * removed the bundled "People" custom post type plugin and used the one uploaded to WPORG repository instead (People Profile CPT)
+ 
 Version 1.0.2
  * Resolved the missing images issue in media library when setting a featured image
  * Removed the default background images options

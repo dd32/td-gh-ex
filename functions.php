@@ -877,18 +877,12 @@ function wp_barrister_register_required_plugins() {
 	 */
 	$plugins = array(
 
-		// This is an example of how to include a plugin pre-packaged with a theme
+		// This is an example of how to include a plugin from the WordPress Plugin Repository
 		array(
-			'name'     				=> 'WP Barrister People CPT', // The plugin name
-			'slug'     				=> 'wp-barrister-people-cpt', // The plugin slug (typically the folder name)
-			'source'   				=> get_template_directory_uri() . '/library/plugin/wp-barrister-people-cpt.zip', // The plugin source
+			'name'     				=> 'People Profile CPT', // The plugin name
+			'slug'     				=> 'people-profile-cpt', // The plugin slug (typically the folder name)
 			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
-			'version' 				=> '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
-			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
-			'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
-			'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
 		),
-
 
 	);
 
