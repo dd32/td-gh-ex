@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: DarkOrange v1.4\n"
+"Project-Id-Version: DarkOrange v1.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-12-24 22:37:03+0000\n"
+"PO-Revision-Date: 2014-01-21 22:17:07+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -27,8 +27,8 @@ msgid "Nothing Found"
 msgstr "Niets gevonden"
 
 #: 404.php:10
-#: archive.php:36
-#: index.php:36
+#: archive.php:37
+#: index.php:35
 #: search.php:27
 #@ darkorange
 msgid "Sorry, no posts matched your criteria."
@@ -65,63 +65,58 @@ msgid "Tag Archives"
 msgstr "Tag Archieven"
 
 #: archive.php:27
-#: index.php:23
+#: index.php:22
 #: search.php:15
 #@ darkorange
 msgid "Permalink to "
 msgstr "Permalink naar "
 
 #: archive.php:28
-#: index.php:24
+#: index.php:23
 #: search.php:16
 #: single.php:15
 #@ darkorange
 msgid "Posted on "
 msgstr "Geplaatst op "
 
-#: archive.php:28
-#@ darkorange
-msgid "Posted by "
-msgstr "Geplaatst door "
-
-#: archive.php:40
-#: index.php:40
+#: archive.php:41
+#: index.php:39
 #: search.php:33
 #@ darkorange
 msgid "&laquo; Older posts"
 msgstr "&laquo; Oudere berichten"
 
-#: archive.php:41
-#: index.php:41
+#: archive.php:42
+#: index.php:40
 #: search.php:34
 #@ darkorange
 msgid "Newer posts &raquo;"
 msgstr "Nieuwere berichten &raquo;"
 
-#: functions.php:113
+#: functions.php:127
 #@ darkorange
 msgid "Primary Sidebar"
 msgstr "Hoofd Sidebar"
 
-#: functions.php:115
-#: functions.php:125
-#: functions.php:135
-#: functions.php:145
+#: functions.php:129
+#: functions.php:139
+#: functions.php:149
+#: functions.php:159
 #@ darkorange
 msgid "Select widgets from the right-hand side."
 msgstr "Selecteer widgets van de rechterkant."
 
-#: functions.php:159
+#: functions.php:173
 #@ darkorange
 msgid "Read More &raquo;"
 msgstr "Lees Meer &raquo;"
 
-#: functions.php:176
+#: functions.php:190
 #@ darkorange
 msgid "Boats"
 msgstr "Boten"
 
-#: page-full.php:21
+#: page-full.php:22
 #: page.php:19
 #: single.php:29
 #@ darkorange
@@ -154,12 +149,12 @@ msgstr "Nieuwere Reacties &raquo;"
 msgid "Comments are closed."
 msgstr "Reageren is niet mogelijk."
 
-#: functions.php:133
+#: functions.php:147
 #@ darkorange
 msgid "Footer Sidebar Right"
 msgstr "Footer Sidebar Rechts"
 
-#: functions.php:143
+#: functions.php:157
 #@ darkorange
 msgid "Footer Sidebar Left"
 msgstr "Footer Sidebar Links"
@@ -177,35 +172,37 @@ msgid_plural "%1$s responses on %2$s"
 msgstr[0] "1 reactie op %2$s"
 msgstr[1] "%1$s reacties op %2$s"
 
-#: functions.php:123
+#: functions.php:137
 #@ darkorange
 msgid "Homepage Sidebar"
 msgstr "Homepage Sidebar"
 
-#: index.php:19
+#: index.php:18
 #@ darkorange
 msgid "Featured post"
 msgstr "Aanbevolen bericht"
 
-#: functions.php:60
-#: functions.php:66
+#: functions.php:74
+#: functions.php:80
 #@ darkorange
 msgid "Logo"
 msgstr "Logo"
 
-#: functions.php:62
+#: functions.php:76
 #@ darkorange
 msgid "Upload a logo to replace blogname and description in header"
 msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
 
-#: index.php:24
+#: archive.php:28
+#: index.php:23
 #: search.php:16
 #: single.php:15
 #@ darkorange
 msgid "By "
 msgstr "Door "
 
-#: index.php:25
+#: archive.php:29
+#: index.php:24
 #: search.php:17
 #: single.php:16
 #, php-format
@@ -214,4 +211,71 @@ msgid "1 response"
 msgid_plural "%1$s responses"
 msgstr[0] "1 reactie"
 msgstr[1] "%1$s reacties"
+
+#: theme-options.php:9
+#@ darkorange
+msgid "Theme Options"
+msgstr "Thema Instellingen"
+
+#: theme-options.php:12
+#@ darkorange
+msgid "Welcome on the theme options page. On this page you can set all options this theme offers. Enjoy."
+msgstr "Welkom op de thema instellingenpagina. Op deze pagina kun je alle opties instellen die dit thema heeft. Veel plezier."
+
+#: theme-options.php:17
+#: theme-options.php:23
+#@ darkorange
+msgid "Description"
+msgstr "Beschrijving"
+
+#: theme-options.php:18
+#: theme-options.php:24
+#@ darkorange
+msgid "What to do"
+msgstr "Wat te doen"
+
+#: theme-options.php:30
+#: theme-options.php:34
+#: theme-options.php:38
+#: theme-options.php:42
+#: theme-options.php:46
+#: theme-options.php:50
+#@ darkorange
+msgid "click here"
+msgstr "klik hier"
+
+#: functions.php:64
+#@ darkorange
+msgid "You do not have permission to access this page"
+msgstr "Je hebt geen rechten om deze pagina te bezoeken"
+
+#: theme-options.php:29
+#@ darkorange
+msgid "For setting menu"
+msgstr "Om menu in te stellen"
+
+#: theme-options.php:33
+#@ darkorange
+msgid "For setting static homepage"
+msgstr "Om statische startpagina in te stellen"
+
+#: theme-options.php:37
+#@ darkorange
+msgid "For setting header-image"
+msgstr "Om header-afbeelding in te stellen"
+
+#: theme-options.php:41
+#@ darkorange
+msgid "For setting logo"
+msgstr "Om logo in te stellen"
+
+#: theme-options.php:45
+#@ darkorange
+msgid "For setting background (image)"
+msgstr "Om achtergrond (afbeelding) in te stellen"
+
+#: theme-options.php:49
+#@ darkorange
+msgid "For setting widgets"
+msgstr "Om widgets in te stellen"
 

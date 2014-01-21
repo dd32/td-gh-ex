@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+DarkOrange version 1.5 - february 2014
+- added theme options page
+- added several adjustments for better responsive layout
+- a bunch of other minor adjustments in stylesheet
+
 DarkOrange version 1.4 - january 2014
 - added custom background and custom logo function (check readme file for instructions)
 - added several adjustments in file header

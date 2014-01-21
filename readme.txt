@@ -1,38 +1,18 @@
 INSTALLATION
 ============
 
-1. Extract darkorange.zip and upload the theme folder via FTP to your wp-content/themes/ directory, or login into WordPress Dashboard > Appearance > Install Themes.
+1. Extract darkorange.zip and upload the theme folder via FTP to your wp-content/themes/ directory, or login into WordPress Dashboard > Appearance > Themes.
 2. Go to your WordPress Admin Dashboard > Appearance > Themes and select this theme to activate.
 3. Once activated, you're ready to use it.
 
-
-HOW TO SET HOMEPAGE
-===================
-You can use the default homepage (displaying posts) or set a static page as homepage. 
-To set a static homepage login into WordPress Dashboard > Settings > Reading and select the page you want.
-Because of the limited height of header, you should only display a few widgets in the homepage sidebar.
-I recommend to display an even amount of posts on the homepage, because posts are displayed in 2 columns.
+THEME OPTIONSPAGE
+=================
+You can set all theme options via WordPress Dashboard > Appearance
 
 
-HOW TO CHANGE HEADER IMAGE
-==========================
-You can change the header-image via WordPress Dashboard > Appearance > Header. I advice you to use a header-image of 650px wide and 450px high. 
-
-
-HOW TO SET MENU
-===============
-DarkOrange offers a menu that can contain subpages (2 levels deep).
-You can create and set menu via WordPress Dashboard > Appearance > Menu's.
-
-
-HOW TO SET LOGO
-===============
-You can add your own logo in stead of blogname and description via  WordPress Dashboard > Appearance > Customize.
-
-
-HOW TO CHANGE BACKGROUND
-========================
-You can add your own background(image) via  WordPress Dashboard > Appearance > Background.
+HEADER-IMAGE
+============
+I advice you to use a header-image of 650px wide and 450px high. 
 
 
 THEME IMAGES

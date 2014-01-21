@@ -33,7 +33,7 @@ if ( ! isset( $content_width ) )
 		add_theme_support( 'post-thumbnails' ); 
 
 	// Resize mode thumbnails
-		set_post_thumbnail_size( 500, 400 ); 
+		set_post_thumbnail_size( 500, 450 ); 
 
 
 	// Background color
@@ -51,6 +51,20 @@ if ( ! isset( $content_width ) )
 
 	}
 	add_action( 'after_setup_theme', 'darkorange_setup' ); 
+
+
+// Theme Options Page
+	function register_darkorange_menu_page(){ 
+		add_theme_page('DarkOrange', 'DarkOrange', 'manage_options', 'darkorange', 'darkorange_options' ); 
+ 	} 
+	add_action( 'admin_menu', 'register_darkorange_menu_page' ); 
+
+	function darkorange_options() { 
+		if (!current_user_can('manage_options')) { 
+			wp_die( __('You do not have permission to access this page', 'darkorange' ) ); 
+			} 
+			include 'theme-options.php'; 
+		}
 
 
 // Theme Customizer (option to add logo)
@@ -77,7 +91,7 @@ if ( ! isset( $content_width ) )
 	function darkorange_scripts() {
 		if (!is_admin()) { 
 			wp_enqueue_style( 'style', get_stylesheet_uri() );
-			wp_enqueue_script( 'nav', get_stylesheet_directory_uri() . '/js/nav.js', array( 'jquery' ) );
+			wp_enqueue_script( 'nav', get_template_directory_uri() . '/js/nav.js', array( 'jquery' ) );
 		}
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 			wp_enqueue_script( 'comment-reply' );
