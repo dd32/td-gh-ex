@@ -513,7 +513,6 @@ add_action( 'wp_enqueue_scripts', 'novalite_scripts_styles' );
 /* FUNCTIONS */
 /*-----------------------------------------------------------------------------------*/ 
 
-novalite_require('/core/widgets/');
 novalite_require('/core/templates/');
 novalite_require('/core/classes/');
 novalite_require('/core/functions/');

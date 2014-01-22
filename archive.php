@@ -88,7 +88,7 @@
                         } else { 
                             
                             the_widget( 'WP_Widget_Calendar',
-                            array("title"=> __('Calendar')),
+                            array("title"=> __('Calendar','wip')),
                                 array('before_widget' => '<div class="pin-article span4"><div class="article">',
                                       'after_widget'  => '</div></div>',
                                       'before_title'  => '<h3 class="title">',

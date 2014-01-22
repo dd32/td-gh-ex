@@ -79,7 +79,7 @@
                     } else { 
                             
                    		the_widget( 'WP_Widget_Calendar',
-                    	array("title"=> __('Calendar')),
+                    	array("title"=> __('Calendar','wip')),
                         	array('before_widget' => '<div class="pin-article span4"><div class="article">',
 								  'after_widget'  => '</div></div>',
 								  'before_title'  => '<h3 class="title">',
@@ -88,7 +88,7 @@
                         );
             
                         the_widget( 'WP_Widget_Archives','',
-                    	array("title"=> __('Calendar')),
+                    	array("title"=> __('Archives','wip')),
                         	array('before_widget' => '<div class="pin-article span4"><div class="article">',
 								  'after_widget'  => '</div></div>',
 								  'before_title'  => '<h3 class="title">',
@@ -97,7 +97,7 @@
                         );
             
                         the_widget( 'WP_Widget_Categories','',
-                    	array("title"=> __('Calendar')),
+                    	array("title"=> __('Categories','wip')),
                         	array('before_widget' => '<div class="pin-article span4"><div class="article">',
 								  'after_widget'  => '</div></div>',
 								  'before_title'  => '<h3 class="title">',
