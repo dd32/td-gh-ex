@@ -21,7 +21,30 @@ add_theme_support( 'custom-background', array( 'default-color' => '444' ) );
 
 
 
+function northern_wp_title( $title, $sep ) {
+	global $paged, $page;
 
+	if ( is_feed() ) {
+		return $title;
+	}
+
+	// Add the site name.
+	$title .= get_bloginfo( 'name' );
+
+	// Add the site description for the home/front page.
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) ) {
+		$title = "$title $sep $site_description";
+	}
+
+	// Add a page number if necessary.
+	if ( $paged >= 2 || $page >= 2 ) {
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'northern' ), max( $paged, $page ) );
+	}
+
+	return $title;
+}
+add_filter( 'wp_title', 'northern_wp_title', 10, 2 );
 
 
 function northern_widgets_init() {
@@ -94,11 +117,11 @@ if ( $wp_rewrite->using_permalinks() )
     $pagination['add_args'] = array( 's' => get_query_var( 's' ) );
     echo paginate_links( $pagination );
 }
-
+  
 function northern_the_breadcrumb() {
     echo(_e("You are here:", 'northern'));
 	echo ' <a href="';
-	echo home_url();
+	echo esc_url( home_url() );
 	echo '">';
 	bloginfo('name');
 	echo "</a> ";
@@ -128,7 +151,7 @@ function northern_enqueue_scripts() {
 	if (!is_admin()) {
 	  wp_register_script('superfish', get_template_directory_uri() . '/js/superfish.js');
       wp_register_script('northern-custom', get_template_directory_uri() . '/js/northern-custom.js');
-      wp_register_script( 'html5-shim', 'http://html5shim.googlecode.com/svn/trunk/html5.js', array( 'jquery' ), '1', false );
+      wp_register_script( 'html5-shim', get_template_directory_uri() . '/js/html5.js', array( 'jquery' ), '1', false );
       wp_enqueue_script('jquery');
 	  wp_enqueue_script('superfish');
       wp_enqueue_script('northern-custom');

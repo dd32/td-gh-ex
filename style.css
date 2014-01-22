@@ -2,7 +2,7 @@
 Theme Name: Northern-Web-Coders
 Theme URI: http://northern-web-coders.de/test/wordpress/
 Description: Northern-Web-Coders is a responsive HTML5/CSS3 theme. It uses an Ubuntu font. A horizontal version of 'Superfish' jQuery drop-down menu is built in, which supports touch devices. Custom Menu and backgrounds. Translation ready.
-Version: 2.7.2
+Version: 2.7.3
 Author: Kai Ackermann | jaman
 Author URI: http://www.design-coding.de
 License: GNU General Public License v2.0
@@ -29,8 +29,8 @@ body
 
 #wrapper
 {
-    width: 100%;
-    clear: both;  
+    width: 100%; 
+    clear: both;   
 }
 
 section.column-left
@@ -85,7 +85,6 @@ header#header h1 a
     color: #ff9f00;
 }
 
-
 header#header em
 {
     font-size: 12px;
@@ -131,7 +130,6 @@ header#header em
 #content .sticky
 {
     border: 5px solid #797F8F;
-
 }
 
 #content .meta
@@ -167,7 +165,6 @@ header#header em
 
 #content h2.storytitle a
 {
-
     text-decoration: none;
 }
 
@@ -225,7 +222,6 @@ header#header em
     font-size: 9px;
 }
 
-
 #content ul, #content ol
 {
     font-size: 13px;
@@ -236,7 +232,6 @@ header#header em
 {
     margin-bottom: 5px;
     font-size: 13px;
-    clear: both;
 }
 
 #content a, #content code, #content pre
@@ -318,8 +313,7 @@ header#header em
 {
     text-decoration: none;
     font-size: 13px; 
-    color: #fff;
-    
+    color: #fff;    
 }
 
 #content section.pagenav a:hover,
@@ -344,8 +338,7 @@ aside .textwidget
 {
     background: #fff;
     padding: 0 12px 12px 12px;
-    margin-bottom: 15px;
-    
+    margin-bottom: 15px;    
 }
 
 aside .textwidget p
@@ -372,7 +365,6 @@ aside form#searchform
     padding: 15px;
     background: #fff;
     height: 24px;
-
 }
 
 aside form#searchform label.screen-reader-text
@@ -410,9 +402,7 @@ aside select
     line-height: 1;
     border: 0;
     height: 45px;
-
 }
-
 
 aside ul
 {
@@ -420,7 +410,6 @@ aside ul
     padding: 0px 25px 16px 25px;
     color: #464646;
     background: #fff;
-
 }
 
 aside ul ul.children
@@ -623,8 +612,8 @@ margin-top: 0;
 
 /*images*/
 img{
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 70%;
+    max-height: 70%;
     height: auto;
     padding: 2px;
     margin: 2px;
@@ -633,7 +622,8 @@ img{
 }
 
 .alignnone {
-    margin: 5px 20px 20px 0;
+    margin: 5px 24px 12px 0;
+    display: block;
 }
 
 .aligncenter, div.aligncenter {
@@ -656,53 +646,13 @@ img{
     margin: 5px auto 5px auto;
 }
 
-a img.alignright {
-    float:right;
-    margin: 5px 0 20px 20px;
-}
-
-a img.alignnone {
-    margin: 5px 20px 20px 0;
-}
-
-a img.alignleft {
-    float:left;
-    margin: 5px 20px 20px 0;
-}
-
-a img.aligncenter {
-    display: block;
-    margin-left: auto;
-    margin-right: auto
-}
-
 .wp-caption {
-    background: #FAFAFA;
-    border: 1px solid #DFDFDF;
-    max-width: 96%; /* Image does not overflow the content area */
-    padding: 7px 5px 12px;
-    text-align: center;
-    clear: both;
-}
-
-.wp-caption.alignnone {
-    margin: 5px 20px 20px 0;
-}
-
-.wp-caption.alignleft {
-    margin: 5px 20px 20px 0;
-}
-
-.wp-caption.alignright {
-    margin: 5px 0 20px 20px;
+    max-width: 100%;
 }
 
 .wp-caption img {
-    border: 0 none;
     height: auto;
-    margin:0;
     max-width: 98.5%;
-    padding:0;
     width: auto;
 }
 
@@ -711,18 +661,6 @@ a img.aligncenter {
     line-height:17px;
     margin:0;
     padding:0 4px 5px;
-}
-
-.alignnone
-{
-    display: block;
-    margin-bottom: 12px;
-    margin-right: 24px;
-}
-
-.wp-caption.alignnone
-{
-    margin: 5px 20px 20px 0;
 }
 
 img.wp-smiley
@@ -787,7 +725,6 @@ ol.commentlist li.trackback
 {
     width: calc(100% - 11px);
     -webkit-width:calc(100% - 11px);
-
 }
 
 ol.commentlist li.comment div ol,
@@ -1028,13 +965,6 @@ span.required
     display: inline;
 }
 
-nav {
-
-    width: 100%;
-  
-     
-}
-
 /*** ESSENTIAL STYLES ***/
 nav div.menu ul,
 nav div.menu ul *,
@@ -1214,9 +1144,6 @@ ol.commentlist li.trackback
     -webkit-width:calc(100% - 10px);
 }
 
-
-
-
 #respond
 {
     width:calc(100% - 25px);
@@ -1226,11 +1153,6 @@ ol.commentlist li.trackback
 
 img{
     max-width: 98%;
-}
-
-nav {
-    float: left;
-    width:100%;
 }
 
 #wrapper
