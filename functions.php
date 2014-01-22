@@ -5,7 +5,7 @@
 
 // Set width without the padding
 if ( ! isset( $content_width ) )
-	$content_width = 500;
+	$content_width = 650;
 
 
 // Sets up theme defaults and registers various WordPress features that DarkOrange supports

@@ -1,7 +1,7 @@
 /*
 Theme Name: DarkOrange
 Theme URI: http://www.guidovanderleest.nl/darkorange
-Version: 1.5
+Version: 1.6
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: DarkOrange is a free, basic, clean, minimalistic, responsive, mobile friendly, WordPress theme. Primary sidebar, homepage sidebar, 2 widget-area's in footer, custom header-image, custom background, display logo or blogname and description, full width page-template, dropdown navigation and a simple theme optionspage are included. Besides this no fancy options, no slideshow, this one only has the basic options. Enjoy. 
@@ -245,6 +245,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 	.article {padding:0;}
 	.entry-title, .page-title, .widgettitle {font-size:1.3em;}
 	.post-home, .post-home.left {width: 100%; float: left; margin:0; padding:0; border:0;}
+	.comment-body {border:0; padding:0;}
 	#sidebar {width:100%; border:0; padding:15px 0 0; float:left;}
 	.widget {padding:0 0 5px; margin:0 0 5px; border:0;}
 	.widgettitle {padding:0; margin:10px 0;}

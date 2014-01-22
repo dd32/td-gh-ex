@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: DarkOrange v1.5\n"
+"Project-Id-Version: DarkOrange v1.6\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: 2014-01-21 22:17:07+0000\n"
