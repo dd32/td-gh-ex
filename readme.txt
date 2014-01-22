@@ -4,7 +4,7 @@ Donate link: http://web-profile.com.ua/donate/
 Tags: gray, white, light, one-column, two-columns, right-sidebar, flexible-width, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, clean
 Requires at least: 3.4
 Tested up to: 3.8
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -42,6 +42,10 @@ FAQ:
 
 
 == Changelog ==
+
+= 1.2 - 2014-01-23 =
+* use new default WordPress classes 'page_item_has_children' and 'menu-item-has-children' instead of adding custom ones
+* added 9 new templates (sitemap, archives: all, yearly, monthly, weekly, daily, categories, tags, post-by-post)
 
 = 1.1 - 2014-01-07 =
 * optimize images for faster loading

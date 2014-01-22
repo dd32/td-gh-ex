@@ -1,8 +1,5 @@
 jQuery(function($){ // wait while jQuery loads (document-ready)
 
-	$('.nav-menu ul.sub-menu').parent('li').addClass('has-subpages'); // add class for adding arrow
-	$('.nav-menu ul.children').parent('li').addClass('has-subpages'); // add class for adding arrow
-
 	$('input#submit').addClass('btn btn-primary'); // add styles for submit button in comments
 
 	$('table#wp-calendar').addClass('table table-condensed'); // add styles for calendar

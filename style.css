@@ -2,11 +2,11 @@
 Theme Name: activetab
 Theme URI: http://web-profile.com.ua/wordpress/themes/activetab/
 Description: Responsive clean theme. More info at http://web-profile.com.ua/activetab/
-Version: 1.1
+Version: 1.2
 Author: webvitaly
 Author URI: http://web-profile.com.ua/wordpress/
 Tags: gray, white, light, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
-License: GNU General Public License v3
+License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 */
 
@@ -101,7 +101,7 @@ table th, table td {
 	padding: 8px;
 	text-align: left;
 	vertical-align: top;
-	border-top: 1px solid #dddddd;
+	border-top: 1px solid #ddd;
 }
 table th {
 	font-weight: bold;
@@ -118,7 +118,7 @@ table thead:first-child tr:first-child td {
 	border-top: 0;
 }
 table tbody + tbody {
-	border-top: 2px solid #dddddd;
+	border-top: 2px solid #ddd;
 }
 table table {
 	background-color: #ffffff;
@@ -400,8 +400,8 @@ input[type="text"], input[type="email"], input[type="url"], select, textarea {
 	line-height: 1.428571429;
 	color: #555555;
 	vertical-align: middle;
-	background-color: #ffffff;
-	border: 1px solid #cccccc;
+	background-color: #fff;
+	border: 1px solid #ccc;
 	border-radius: 4px;
 }
 input[type="submit"], input[type="button"], button {
@@ -569,7 +569,7 @@ input[type="submit"], input[type="button"], button {
 
 
 article.hentry {
-	border-bottom: 1px solid #aaa;
+	border-bottom: 2px solid #ddd;
 	margin-right: 0;
 	padding-bottom: 20px;
 	margin-bottom: 20px;
@@ -639,10 +639,12 @@ body.admin-bar .navbar-fixed-top { /* move menu below admin-bar */
 .site-navigation .nav-menu li li a {
 	padding: 8px 12px;
 }
-.nav-menu > ul > li.has-subpages > a {
+.nav-menu > ul > li.page_item_has_children > a,
+.nav-menu > ul > li.menu-item-has-children > a {
 	position: relative;
 }
-.nav-menu > ul > li.has-subpages > a:after { /* adding "to-bottom" arrow */
+.nav-menu > ul > li.page_item_has_children > a:after,
+.nav-menu > ul > li.menu-item-has-children > a:after { /* adding "to-bottom" arrow */
 	content: "";
 	position: absolute;
 	display: block;
@@ -659,10 +661,12 @@ body.admin-bar .navbar-fixed-top { /* move menu below admin-bar */
 	border-right: 4px solid transparent;
 	border-top: 4px solid #999;
 }
-.nav-menu > ul li.has-subpages li.has-subpages > a {
+.nav-menu > ul li.page_item_has_children li.page_item_has_children > a,
+.nav-menu > ul li.menu-item-has-children li.menu-item-has-children > a {
 	position: relative;
 }
-.nav-menu > ul li.has-subpages li.has-subpages > a:after { /* adding "to-right" arrow */
+.nav-menu > ul li.page_item_has_children li.page_item_has_children > a:after,
+.nav-menu > ul li.menu-item-has-children li.menu-item-has-children > a:after { /* adding "to-right" arrow */
 	content: "";
 	position: absolute;
 	display: block;
@@ -676,7 +680,8 @@ body.admin-bar .navbar-fixed-top { /* move menu below admin-bar */
 	border-bottom: 4px solid transparent;
 	border-left: 4px solid #999;
 }
-.nav-menu > ul.pull-right li.has-subpages li.has-subpages > a:after, .nav-menu > ul.pull-right li.has-subpages li.has-subpages > .menu-item:after { /* adding "to-left" arrow */
+.nav-menu > ul.pull-right li.page_item_has_children li.page_item_has_children > a:after,
+.nav-menu > ul.pull-right li.menu-item-has-children li.menu-item-has-children > .menu-item:after { /* adding "to-left" arrow */
 	right: auto;
 	left: 2px;
 	border-top: 4px solid transparent; /* magic arrow */
@@ -775,7 +780,7 @@ body.admin-bar .navbar-fixed-top { /* move menu below admin-bar */
 	opacity: 0.8;
 }
 .site-logo-title {
-	border-bottom: 1px solid #aaa;
+	border-bottom: 1px solid #ddd;
 	padding-bottom: 20px;
 	margin-bottom: 20px;
 }
@@ -886,7 +891,7 @@ table#wp-calendar td, table#wp-calendar th {
 	line-height: 16px;
 	color: #555;
 	padding: 20px 0 0 0;
-	border-top: 1px solid #EDEDED;
+	border-top: 1px solid #ddd;
 }
 .site-footer p, .site-footer li {
 	font-size: 12px;
