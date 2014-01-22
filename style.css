@@ -2,7 +2,7 @@
 Theme Name: Northern-Web-Coders
 Theme URI: http://northern-web-coders.de/test/wordpress/
 Description: Northern-Web-Coders is a responsive HTML5/CSS3 theme. It uses an Ubuntu font. A horizontal version of 'Superfish' jQuery drop-down menu is built in, which supports touch devices. Custom Menu and backgrounds. Translation ready.
-Version: 2.7.3
+Version: 2.7.4
 Author: Kai Ackermann | jaman
 Author URI: http://www.design-coding.de
 License: GNU General Public License v2.0
@@ -59,9 +59,9 @@ aside
     float: left;
     width:24%;
     margin: 0.5%;
-    background: #fff;  -webkit-box-shadow: 0 8px 6px -6px #2E2F2F888;
-    -moz-box-shadow: 0 8px 6px -6px #2E2F2F888;
-    box-shadow: 0 8px 6px -6px #2E2F2F888;
+    background: #fff;  -webkit-box-shadow: 0 8px 6px -6px #2E2F2F;
+    -moz-box-shadow: 0 8px 6px -6px #2E2F2F;
+    box-shadow: 0 8px 6px -6px #2E2F2F;
     -moz-border-radius: 10px 10px;
     -webkit-border-radius:  10px 10px;
     border-radius:  10px 10px;
@@ -119,9 +119,9 @@ header#header em
     margin: 0 0 20px 0;
     padding: 10px 25px 20px 15px;
     background:  #FAFAFA;    
-    -webkit-box-shadow: 0 8px 6px -6px #2E2F2F888;
-	-moz-box-shadow: 0 8px 6px -6px #2E2F2F888;
-	box-shadow: 0 8px 6px -6px #2E2F2F888;
+    -webkit-box-shadow: 0 8px 6px -6px #2E2F2F;
+	-moz-box-shadow: 0 8px 6px -6px #2E2F2F;
+	box-shadow: 0 8px 6px -6px #2E2F2F;
 	-moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     border-radius: 10px;
@@ -708,9 +708,9 @@ ol.commentlist li.trackback
     -moz-border-radius: 15px;
     border-radius: 15px;
     -webkit-border-radius: 15px;
-    -webkit-box-shadow: 0 8px 6px -6px #2E2F2F888;
-	-moz-box-shadow: 0 8px 6px -6px #2E2F2F888;
-	box-shadow: 0 8px 6px -6px #2E2F2F888;
+    -webkit-box-shadow: 0 8px 6px -6px #2E2F2F;
+	-moz-box-shadow: 0 8px 6px -6px #2E2F2F;
+	box-shadow: 0 8px 6px -6px #2E2F2F;
     padding: 15px 15px 0 15px;
     margin-left: -20px;
     list-style: none;
@@ -770,9 +770,9 @@ div.reply
     -moz-border-radius: 15px;
     border-radius: 15px;
     -webkit-border-radius: 15px;
-    -webkit-box-shadow: 0 8px 6px -6px #2E2F2F888;
-	-moz-box-shadow: 0 8px 6px -6px #2E2F2F888;
-	box-shadow: 0 8px 6px -6px #2E2F2F888;
+    -webkit-box-shadow: 0 8px 6px -6px #2E2F2F;
+	-moz-box-shadow: 0 8px 6px -6px #2E2F2F;
+	box-shadow: 0 8px 6px -6px #2E2F2F;
 }
 
 #respond input
@@ -947,9 +947,9 @@ a.comment-reply-link {
 nav.comment-navigation
 {
     background: #E3E3E3;
-    -webkit-box-shadow: 0 0 0 0 #2E2F2F888;
-	-moz-box-shadow: 0 0 0 0 #2E2F2F888;
-	box-shadow: 0 0 0 0 #2E2F2F888;
+    -webkit-box-shadow: 0 0 0 0 #2E2F2F;
+	-moz-box-shadow: 0 0 0 0 #2E2F2F;
+	box-shadow: 0 0 0 0 #2E2F2F;
 	border: 0;
 	margin: 10px 0 15px 3px;
 }
