@@ -57,6 +57,8 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.3.6.3
+1.Array merge added.
 @version 1.3.6.2
 1.Enable/Disable Option Added for Services on Home Page .using Option Panel.
 @version 1.3.6.1

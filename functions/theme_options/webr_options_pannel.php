@@ -47,6 +47,13 @@
 									</tr>
 									<tr>
 										<td>&nbsp;</td>
+										<td><p><b><?php _e('Front Page Layout Manager','busi_prof'); ?></b><span class="icon help" style="float:right">
+										<span class="tooltip"><?php  _e('Drag and Drop option for front page layout manager.','busi_prof');?></span></span></p></td>
+										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri().'/functions/theme_options/images/cross.png' ?> " /></p></td>
+										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri().'/functions/theme_options/images/icon_check.png' ?> " /></p></td>
+									</tr>
+									<tr>
+										<td>&nbsp;</td>
 										<td><p><b><?php _e('Responsive Home Page Slider','busi_prof'); ?></b><span class="icon help" style="float:right">
 										<span class="tooltip"><?php  _e('Showcase your most important services with the Home Page Slider.','busi_prof');?></span></span> </p></td>
 										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri().'/functions/theme_options/images/cross.png' ?> " /></p></td>

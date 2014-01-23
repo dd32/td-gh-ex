@@ -95,5 +95,16 @@
 				
 				'enable_services' => 'on',
 				);
+				$current_theme_options = get_option('busiprof_theme_options'); 		
+				if($current_theme_options)
+				{ 	
+					$busiprof_theme_options = array_merge($busiprof_theme_options, $current_theme_options);
+					update_option('busiprof_theme_options',$busiprof_theme_options);				
+				}
+				else
+				{
+					add_option('busiprof_theme_options',$busiprof_theme_options); 
+				}
 	}
 ?>
+	

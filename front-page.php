@@ -17,7 +17,8 @@ get_template_part('index');
 }
 else {	
 		get_header();
-		$current_options=get_option('busiprof_theme_options'); ?>
+		$current_options=get_option('busiprof_theme_options');
+		?>
 
 		<!---Slider Section of Index Page---->
 		<?php get_template_part('index', 'slider') ;?>
