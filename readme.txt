@@ -48,6 +48,12 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 1.9.9.6 =
+* Move virtuetoolkit to repository.
+* Remove edd_license
+* Remove typo
+* Add font fix.
+
 = Version: 1.9.9.5 =
 * Fix theme options errors.
 * Add ru_RU translation.

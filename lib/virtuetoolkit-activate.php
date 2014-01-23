@@ -12,13 +12,10 @@ function kadence_register_required_plugins() {
 	$plugins = array(
 		array(
 			'name'     				=> 'Virtue Toolkit', // The plugin name
-			'slug'     				=> 'virtue_toolkit', // The plugin slug (typically the folder name)
-			'source'   				=> get_stylesheet_directory() . '/lib/plugins/virtue_toolkit.zip', // The plugin source
+			'slug'     				=> 'virtue-toolkit', // The plugin slug (typically the folder name)
 			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
-			'version' 				=> '1.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
 			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
 			'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
-			'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
 		)
 	);
 
