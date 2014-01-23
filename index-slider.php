@@ -18,7 +18,7 @@
 			 
 					<div class="span6"  id="slide_desc"><p> <?php echo ($current_options['description']); ?></p>
 					</div>
-					<div class=" spa_tag"><span><?php _e( "Call us on", 'sis_spa' ); ?><p><?php echo $current_options['call_us']; ?></p></span>
+					<div class=" spa_tag"><span><?php echo $current_options['call_us_text']; ?><p><?php echo $current_options['call_us']; ?></p></span>
 					</div> 
                 </div>
 				</div>

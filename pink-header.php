@@ -23,7 +23,7 @@
 			</div>
 		<div class="spa_tag">
 		<span>
-			<?php _e( "Call us on", 'sis_spa' ); ?>
+			<?php echo $current_options['call_us_text']; ?>
 			<p> <?php echo $call_us ?></p>
 		</span>
 			
