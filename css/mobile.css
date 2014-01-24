@@ -3,7 +3,7 @@ Theme Name: olo
 Theme URI: http://hjyl.org/wordpress-theme-olo/
 Author: 皇家元林
 Author URI: http://hjyl.org/
-Description: 基于HTML5+CSS3+canvas制作蓝色WordPress主题
+Description: Blue WordPress Theme based as HTML5 + CSS3.
 Version: 1.0
 Tags: hjyl.org, HTML5, CSS3, three-column, wp-nav-menu, widget, theme-option, fixed-width
 */
@@ -11,7 +11,7 @@ Tags: hjyl.org, HTML5, CSS3, three-column, wp-nav-menu, widget, theme-option, fi
 /* =Reset CSS.= */
 *{margin:0;padding:0;}
 html, body, div, span, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, address, cite, code,del, dfn, em, img, ins, kbd, q, samp,small, strong, sub, sup, var,b, i,dl, dt, dd, ol, ul, li, fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video{	margin:0;padding:0;border:0;list-style:none;outline: 0;font-size: 100%;vertical-align: baseline;}
-body{text-align:center;font-size:13px;font-family:Consolas,Microsoft YaHei,Helvetica,Georgia,Arial,sans-serif,'宋体';color:#000;word-wrap: break-word;position:relative;background:#12629C;}
+body{text-align:center;font-size:13px;font-family:Consolas,Microsoft YaHei,Helvetica,Georgia,Arial,sans-serif,'宋体';color:#000;word-wrap: break-word;position:relative;background:#0A385A;background-image: -moz-linear-gradient(left, rgba(17, 94, 151, 1), rgba(10, 56, 90, 1), rgba(3, 18, 29, 1));background-image: -webkit-linear-gradient(left, rgba(17, 94, 151, 1), rgba(10, 56, 90, 1), rgba(3, 18, 29, 1));background-image: -o-linear-gradient(left, rgba(17, 94, 151, 1), rgba(10, 56, 90, 1), rgba(3, 18, 29, 1));background-image: -ms-linear-gradient(left, rgba(17, 94, 151, 1), rgba(10, 56, 90, 1), rgba(3, 18, 29, 1));}
 article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {display: block;}
 a{text-decoration:none;color:#383838;}
 a:hover{text-decoration:underline;color:#227EC0;}

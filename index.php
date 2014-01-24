@@ -28,10 +28,10 @@
 					<footer>
 						<span class="author">
 							<?php _e('Posted by', 'olo'); ?> <?php the_author_posts_link(); ?>
-						</span>·
+						</span> - 
 						<span class="cat-links">
 							<?php _e('Posted in', 'olo'); ?> <?php the_category(', '); ?>
-						</span>·
+						</span> - 
 						<span class="comments-views">
 						<?php comments_popup_link( __( 'Leave a reply', 'olo' ), __( '<b>1</b> Reply', 'olo' ), __( '<b>%</b> Replies', 'olo' ) ); ?>
 						</span>

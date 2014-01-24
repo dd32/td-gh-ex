@@ -43,6 +43,7 @@
 				</script>
 			<?php endif; ?>
 <?php 
+		$aria_req = ( $req ? " aria-required='true'" : '' );
        	$fields =  array(
             'author' => '<div id="comment-author-info"><p class="comment-form-author"><input id="author" name="author" type="text" value="'.esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /><label for="author">' . __( 'Name', 'olo' ) . '</label> ' . ( $req ? '<span class="required">' . __( '(required)', 'olo' ) . '</span>' : '' ).'</p>',
             'email'  => '<p class="comment-form-email"><input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /><label for="email">' . __( 'Email', 'olo' ) . '</label>'. ( $req ? '<span class="required">' . __( '(required)', 'olo' ) . '</span>' : '' ).'</p>',
@@ -51,8 +52,8 @@
         $comment_form_args = array(
           	'fields'               => apply_filters( 'comment_form_default_fields', $fields ),
             'comment_field'        => '<p class="comment-form-comment"><textarea aria-required="true" rows="8" cols="70%" name="comment" id="comment" onkeydown="if(event.ctrlKey){if(event.keyCode==13){document.getElementById(\'submit\').click();return false}};"></textarea></p>',
-            'must_log_in'          => '<p class="must-log-in">' .  sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
-            'logged_in_as'         => '<p class="logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
+            'must_log_in'          => '<p class="must-log-in">' .  sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( ) ) ) ) . '</p>',
+            'logged_in_as'         => '<p class="logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) ) ) . '</p>',
             'comment_notes_before' => null,
             'comment_notes_after'  => null,
             'id_form'              => 'commentform',
@@ -66,7 +67,7 @@
  ?>
 	</ol>
 
-<?php /*输出自定义Trackbacks和Pingbacks*/ foreach($comments as $comment){if(get_comment_type() != 'comment' && $comment->comment_approved != '0'){ $havepings = 1; break; }}if($havepings == 1) : ?>
+<?php /*output Trackbacks and Pingbacks*/ $havepings="pingback"; foreach($comments as $comment){if(get_comment_type() != 'comment' && $comment->comment_approved != '0'){ $havepings = 1; break; }}if($havepings == 1) : ?>
 <div id="trackbacks-pingbacks" class="border">
 	<h3>Pingbacks:</h3>
 		<ul id="pinglist"><?php wp_list_comments('type=pings&per_page=0&callback=custom_pings'); ?></ul>

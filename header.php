@@ -14,9 +14,18 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
+<title><?php
+	global $page, $paged;
+	// Add a page number if necessary:
+	if ( is_paged() )
+		echo sprintf( __('Page %1$s of %2$s', ''), intval( get_query_var('paged')), $wp_query->max_num_pages).' - ';
 
-<title><?php if ( is_paged() ){ ?><?php printf( __('Page %1$s of %2$s', ''), intval( get_query_var('paged')), $wp_query->max_num_pages); ?> - <?php } ?><?php if ( is_home() ) { ?><?php bloginfo('name'); ?><?php } ?><?php if ( is_search() ) { ?><?php _e('search : ', ''); ?>"<?php echo $s; ?>"<?php } ?><?php if ( is_404() ) { ?><?php _e('404 Error', ''); ?><?php } ?><?php if ( is_author() ) { ?><?php _e('Posts About ', ''); ?><?php the_author(); ?><?php } ?><?php if ( is_single() ) { ?><?php wp_title(''); ?><?php } ?><?php if ( is_page() ) { ?><?php wp_title(''); ?><?php } ?><?php if ( is_category() ) { ?><?php single_cat_title(); ?><?php } ?><?php if ( is_year() ) { ?><?php the_time('Y'); ?><?php } ?><?php if ( is_month() ) { ?><?php the_time('F, Y'); ?><?php } ?><?php if ( is_day() ) { ?><?php the_time('F j, Y'); ?><?php } ?><?php if ( is_tag() ) { ?><?php single_tag_title(); ?><?php } ?></title>
+	wp_title('');
 
+	// Add the blog name.
+	if(is_home() && is_front_page()) bloginfo( 'name' );
+
+	?></title>
 <?php
 if (is_home()){
 	$description = get_option('description');
@@ -40,8 +49,8 @@ if (is_home()){
 	$keywords = get_option('keywords');
 }
 ?>
-	<meta name="keywords" content="<?php echo $keywords; ?>" />
-	<meta name="description" content="<?php echo $description; ?>" />
+<meta name="keywords" content="<?php echo $keywords; ?>" />
+<meta name="description" content="<?php echo $description; ?>" />
 <link rel="icon" type="image/gif" href="<?php echo home_url(); ?>/favicon.gif">
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -65,3 +74,4 @@ if (is_home()){
 		<?php get_search_form(); ?>
 	</header>
 	<div class="clear"></div>
+	

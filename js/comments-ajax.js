@@ -1,25 +1,23 @@
 /**
- * WordPress jQuery-Ajax-Comments v1.3 by Willin Kan.
- * URI: http://kan.willin.org/?p=1271
- * for WP3.5+ | modified version URI: http://mufeng.me/wordpress3-5-willin-ajax-comment.html
+ * WordPress jQuery-Ajax-Comments
  */
 jQuery(document).ready(function($) {
 	var $commentform = $('#commentform'),
-		edit_mode = '1', // 再編輯模式 ( '1'=開; '0'=不開 )
+		edit_mode = '1', // edit mode ( '1'=Y; '0'=N )
 		ajax_url = $commentform.attr("action").replace("wp-comments-post.php", ""),
-		pic_sb = ajax_url + 'wp-admin/images/wpspin_light.gif', // 提交 icon
-		pic_no = ajax_url + 'wp-admin/images/no.png',      // 錯誤 icon
-		pic_ys = ajax_url + 'wp-admin/images/yes.png',     // 成功 icon
-		txt1 = '<div id="loading"><img src="' + pic_sb + '" style="vertical-align:middle;" alt=""/> 正在提交, 请稍候...</div>',
+		pic_sb = ajax_url + 'wp-admin/images/wpspin_light.gif', // submit icon
+		pic_no = ajax_url + 'wp-admin/images/no.png',      // error icon
+		pic_ys = ajax_url + 'wp-admin/images/yes.png',     // succeed icon
+		txt1 = '<div id="loading"><img src="' + pic_sb + '" style="vertical-align:middle;" alt=""/> '+ajaxL10n.txt1+'</div>',
 		txt2 = '<div id="error">#</div>',
-		txt3 = '"><img src="' + pic_ys + '" style="vertical-align:middle;" alt=""/> 提交成功',
-		edt1 = ', 刷新页面之前可以<a rel="nofollow" class="comment-reply-link" href="#edit" onclick=\'return addComment.moveForm("',
-		edt2 = ')\'>再编辑</a>',
-		cancel_edit = '取消编辑',
+		txt3 = '"><img src="' + pic_ys + '" style="vertical-align:middle;" alt=""/> '+ajaxL10n.txt3+'',
+		edt1 = ', '+ajaxL10n.edt1+' <a rel="nofollow" class="comment-reply-link" href="#edit" onclick=\'return addComment.moveForm("',
+		edt2 = ')\'>'+ajaxL10n.edt2+'</a>',
+		cancel_edit = ajaxL10n.cancel_edit,
 		edit, 
 		num = 0,
 		comm_array =[],
-		$comments = $('#comments-title span a'), // 評論數的 ID
+		$comments = $('#comments-title span a'), // comment num ID
 		$cancel = $('#cancel-comment-reply-link'),
 		cancel_text = $cancel.text(),
 		$submit = $('#commentform #submit'); $submit.attr('disabled', false),

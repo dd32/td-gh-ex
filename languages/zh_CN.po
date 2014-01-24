@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-01 23:55+0800\n"
-"PO-Revision-Date: 2014-01-01 23:56+0800\n"
+"POT-Creation-Date: 2014-01-17 22:23+0800\n"
+"PO-Revision-Date: 2014-01-17 22:25+0800\n"
 "Last-Translator: 皇家元林 <i@hjyl.org>\n"
 "Language-Team: hjyl.org <i@hjyl.org>\n"
 "MIME-Version: 1.0\n"
@@ -39,7 +39,8 @@ msgstr "<b>1</b>条评论"
 msgid "<b>%</b> Replies"
 msgstr "<b>%</b>条评论"
 
-#: ../archive.php:40 ../index.php:39 ../page.php:33 ../single.php:40
+#: ../archive.php:40 ../functions.php:70 ../index.php:39 ../page.php:33
+#: ../single.php:40
 msgid "Edit"
 msgstr "编辑"
 
@@ -79,28 +80,28 @@ msgstr "(打开)"
 msgid "(Close)"
 msgstr "(关闭)"
 
-#: ../comments.php:47
+#: ../comments.php:48
 msgid "Name"
 msgstr "名字"
 
-#: ../comments.php:47 ../comments.php:48
+#: ../comments.php:48 ../comments.php:49
 msgid "(required)"
 msgstr "(必填)"
 
-#: ../comments.php:48
+#: ../comments.php:49
 msgid "Email"
 msgstr "邮箱"
 
-#: ../comments.php:49
+#: ../comments.php:50
 msgid "Website"
 msgstr "网站"
 
-#: ../comments.php:54
+#: ../comments.php:55
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr "你必须 <a href=\"%s\">登录</a> 才能发布评论。"
 
-#: ../comments.php:55
+#: ../comments.php:56
 #, php-format
 msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
@@ -109,63 +110,75 @@ msgstr ""
 "<a href=\"%1$s\">%2$s</a>已登录。 <a href=\"%3$s\" title=\"登出账户\">退出？"
 "</a>"
 
-#: ../comments.php:60
-msgid "Leave a Reply"
-msgstr "回复"
-
 #: ../comments.php:61
+msgid "Leave a Reply"
+msgstr "发表评论"
+
+#: ../comments.php:62
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr "回复 %s"
 
-#: ../comments.php:62
+#: ../comments.php:63
 msgid "Cancel reply"
 msgstr "取消回复"
 
-#: ../comments.php:63
+#: ../comments.php:64
 msgid "Post Comment"
 msgstr "发布评论"
 
-#: ../functions.php:136
+#: ../footer.php:5
+msgid "http://hjyl.org/"
+msgstr "http://hjyl.org/"
+
+#: ../functions.php:69
+msgid "Before Refresh, you can"
+msgstr "刷新之前，你可以"
+
+#: ../functions.php:71
+msgid "Cancel Editing"
+msgstr "取消编辑"
+
+#: ../functions.php:72
+msgid "Wait a moment..."
+msgstr "请稍候..."
+
+#: ../functions.php:73
+msgid "Good Comment"
+msgstr "提交成功"
+
+#: ../functions.php:130
+msgid "Copy and Specify"
+msgstr "转载请注明"
+
+#: ../functions.php:146
 msgid "Primary Navigation"
 msgstr "主要导航"
 
-#: ../functions.php:137
+#: ../functions.php:147
 msgid "Mobile Navigation"
 msgstr "手机导航"
 
-#: ../functions.php:143 ../sidebar.php:4
+#: ../functions.php:153 ../sidebar.php:4
 msgid "Home"
 msgstr "首页"
 
-#: ../functions.php:144
+#: ../functions.php:154
 msgid "Just For Three Widgets"
 msgstr "只支持三个边栏"
 
-#: ../functions.php:151 ../sidebar.php:22
+#: ../functions.php:161 ../sidebar.php:22
 msgid "Single"
 msgstr "文章页"
 
-#: ../functions.php:158 ../sidebar.php:25
+#: ../functions.php:168 ../sidebar.php:25
 msgid "Other"
 msgstr "其他页"
 
-#: ../header.php:18
+#: ../header.php:21
 #, php-format
 msgid "Page %1$s of %2$s"
 msgstr "Page %1$s of %2$s"
-
-#: ../header.php:18
-msgid "search : "
-msgstr "搜索："
-
-#: ../header.php:18
-msgid "404 Error"
-msgstr "404错误"
-
-#: ../header.php:18
-msgid "Posts About "
-msgstr "文章列表关于"
 
 #: ../page.php:21 ../single.php:27
 msgid "Pages:"
@@ -187,6 +200,54 @@ msgstr "归档"
 msgid "Meta"
 msgstr "管理"
 
+#: ../single.php:43
+msgid "Share to Sina"
+msgstr "分享到新浪微博"
+
+#: ../single.php:43
+msgid "WeiBo"
+msgstr "新浪微博"
+
+#: ../single.php:44
+msgid "Share to QQ"
+msgstr "分享到腾讯微博"
+
+#: ../single.php:44
+msgid "QQ"
+msgstr "腾讯微博"
+
+#: ../single.php:45
+msgid "Share to douban"
+msgstr "分享到豆瓣"
+
+#: ../single.php:45
+msgid "DouBan"
+msgstr "豆瓣"
+
+#: ../single.php:46
+msgid "Share to QQ space"
+msgstr "分享到QQ空间"
+
+#: ../single.php:46
+msgid "QQ Space"
+msgstr "QQ空间"
+
+#: ../single.php:47
+msgid "Share to RenRen"
+msgstr "分享到人人网"
+
+#: ../single.php:47
+msgid "RenRen"
+msgstr "人人网"
+
+#: ../single.php:48
+msgid "Share to Twitter"
+msgstr "分享到Twitter"
+
+#: ../single.php:48
+msgid "Twitter"
+msgstr "Twitter"
+
 #: ../single.php:58
 msgid "Previous: %title"
 msgstr "上一篇: %title"
@@ -195,80 +256,163 @@ msgstr "上一篇: %title"
 msgid "Next: %title"
 msgstr "下一篇: %title"
 
-#: ../inc/oloComment.php:68
+#: ../inc/oloComment.php:40
+msgid "Reply me When reply"
+msgstr "有人回复时邮件通知我"
+
+#: ../inc/oloComment.php:66
 #, php-format
 msgid "%s "
 msgstr "%s "
 
-#: ../inc/oloComment.php:69
+#: ../inc/oloComment.php:67
 #, php-format
 msgid "<cite id=\"commentmeta\">%1$s</cite>"
 msgstr "<cite id=\"commentmeta\">%1$s</cite>"
 
-#: ../inc/oloComment.php:113 ../inc/oloComment.php:126
-#: ../inc/oloComment.php:129
+#: ../inc/oloComment.php:107 ../inc/oloComment.php:120
+#: ../inc/oloComment.php:123
 msgid "Invalid comment status."
 msgstr "评论状态错误."
 
-#: ../inc/oloComment.php:123
+#: ../inc/oloComment.php:117
 msgid "Sorry, comments are closed for this item."
 msgstr "对不起，此文评论关闭."
 
-#: ../inc/oloComment.php:132
+#: ../inc/oloComment.php:126
 msgid "Password Protected"
 msgstr "密码保护"
 
-#: ../inc/oloComment.php:159
+#: ../inc/oloComment.php:153
 msgid "Sorry, you must be logged in to post a comment."
 msgstr "对不起，你必须登录之后才能发布评论."
 
-#: ../inc/oloComment.php:166
+#: ../inc/oloComment.php:160
 msgid "Error: please fill the required fields (name, email)."
 msgstr "错误：请填写必填部分（名字，邮箱）."
 
-#: ../inc/oloComment.php:168
+#: ../inc/oloComment.php:162
 msgid "Error: please enter a valid email address."
 msgstr "错误：请填写正确的邮箱地址."
 
-#: ../inc/oloComment.php:172
+#: ../inc/oloComment.php:166
 msgid "Error: please type a comment."
 msgstr "错误：请填上一段评论."
 
-#: ../inc/oloComment.php:180
+#: ../inc/oloComment.php:174
 msgid ""
 "Duplicate comment detected; it looks as though you&#8217;ve already said "
 "that!"
 msgstr "检查有重复评论；你好像刚刚评论过了！"
 
-#: ../inc/oloComment.php:189
+#: ../inc/oloComment.php:183
 msgid "You are posting comments too quickly.  Slow down."
 msgstr "你评论太快了。淡定。"
 
-#: ../inc/oloComment.php:224
+#: ../inc/oloComment.php:218
 #, php-format
 msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">says:</span>"
 msgstr "<cite class=\"fn\">%s</cite> <span class=\"says\">说:</span>"
 
-#: ../inc/oloComment.php:227
+#: ../inc/oloComment.php:221
 msgid "Your comment is awaiting moderation."
 msgstr "你的评论正在等待审核。"
 
-#: ../inc/oloComment.php:229
+#: ../inc/oloComment.php:223
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s 在 %2$s"
 
-#: ../inc/oloComment.php:229
+#: ../inc/oloComment.php:223
 msgid "(Edit)"
 msgstr "（编辑）"
 
-#: ../inc/theme_inc.php:34 ../inc/theme_inc.php:38
+#: ../inc/theme_inc.php:25
+msgid "Options take effect."
+msgstr "设置已保存。"
+
+#: ../inc/theme_inc.php:33 ../inc/theme_inc.php:37
 msgid "olo Options"
 msgstr "olo主题设置"
 
-#: ../inc/theme_inc.php:152
+#: ../inc/theme_inc.php:41
+msgid "SEO Option"
+msgstr "SEO优化："
+
+#: ../inc/theme_inc.php:43
+msgid "meta tags"
+msgstr "meta标签设置"
+
+#: ../inc/theme_inc.php:46
+msgid "keywords[comma-separated, no more than 100 characters]"
+msgstr "关键词keywords 「以英文逗号隔开，建议不超过100字包括字符」"
+
+#: ../inc/theme_inc.php:49
+msgid "description, no more than 150 characters."
+msgstr "描述description 「建议不超过150字包括符号」"
+
+#: ../inc/theme_inc.php:59
+msgid "Gravatar Cache Option"
+msgstr "头像缓存功能"
+
+#: ../inc/theme_inc.php:61
+msgid "Enable Gravatar cache. If host not supported,cancel it."
+msgstr "启用图片缓存功能。若空间不支持，取消这项。"
+
+#: ../inc/theme_inc.php:61
+msgid ""
+"Before Enable Gravatar cache, Create a folder named avatar, and upload "
+"default.jpg"
+msgstr "注意启用前，在WordPress根目录建立avatar文件夹，并上传default.jpg"
+
+#: ../inc/theme_inc.php:69
+msgid "336 x 280 AD"
+msgstr "336×280 广告"
+
+#: ../inc/theme_inc.php:71
+msgid "Single Right AD"
+msgstr "文章左侧广告"
+
+#: ../inc/theme_inc.php:81 ../inc/theme_inc.php:93
+msgid "468 x 60 AD"
+msgstr "468×60 广告"
+
+#: ../inc/theme_inc.php:83
+msgid "Single bottom AD"
+msgstr "文章底部广告"
+
+#: ../inc/theme_inc.php:95
+msgid "Archive Top AD"
+msgstr "归档顶部广告"
+
+#: ../inc/theme_inc.php:105
+msgid "Home Links on bottom"
+msgstr "首页底部链接显示"
+
+#: ../inc/theme_inc.php:115
+msgid "All Links on bottom"
+msgstr "全站底部链接"
+
+#: ../inc/theme_inc.php:125
+msgid "ICP No."
+msgstr "备案号"
+
+#: ../inc/theme_inc.php:134
+msgid "Stat Code"
+msgstr "统计代码"
+
+#: ../inc/theme_inc.php:141
 msgid "Save Changes"
 msgstr "保存设置"
+
+#~ msgid "search : "
+#~ msgstr "搜索："
+
+#~ msgid "404 Error"
+#~ msgstr "404错误"
+
+#~ msgid "Posts About "
+#~ msgstr "文章列表关于"
 
 #~ msgid "Theme Update"
 #~ msgstr "主题升级"
@@ -305,9 +449,6 @@ msgstr "保存设置"
 
 #~ msgid "WordPress Themes"
 #~ msgstr "WordPress主题"
-
-#~ msgid "Archive"
-#~ msgstr "归档"
 
 #~ msgid "About Me"
 #~ msgstr "关于我"

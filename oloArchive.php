@@ -19,11 +19,11 @@ get_header(); ?>
                 $mon_tmp = get_the_time('n');     
                 $y=$year; $m=$mon;     
                 if ($mon != $mon_tmp && $mon > 0) $output .= '</div></div>';     
-                if ($year != $year_tmp) { // 输出年份     
+                if ($year != $year_tmp) { // output year    
                     $year = $year_tmp;     
                     $all[$year] = array();     
                 }     
-                if ($mon != $mon_tmp) { // 输出月份     
+                if ($mon != $mon_tmp) { // output month     
                     $mon = $mon_tmp;     
                     array_push($all[$year], $mon);     
                     $output .= "<div class='archive-title' id='arti-$year-$mon'><h3>$year-$mon</h3><div class='archives archives-$mon' data-date='$year-$mon'>";     
@@ -36,7 +36,7 @@ get_header(); ?>
                 
             $html = "";     
             $year_now = date("Y");     
-            foreach($all as $key => $value){// 输出 左侧年份表     
+            foreach($all as $key => $value){// output left year    
                 $html .= "<li class='year' id='year-$key'><a href='#' class='year-toogle' id='yeto-$key'>$key</a><ul class='monthall'>";     
                 for($i=12; $i>0; $i--){     
                     if($key == $year_now && $i > $value[0]) continue;     

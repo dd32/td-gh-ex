@@ -32,7 +32,7 @@
 						<p class="tags"><i class="fa fa-tags"></i><?php the_tags(); ?></p>
 						<span class="author">
 							<?php _e('Posted by', 'olo'); ?> <?php the_author_posts_link(); ?>
-						</span>·
+						</span> - 
 						<span class="cat-links">
 							<?php _e('Posted in', 'olo'); ?> <?php the_category(', '); ?>
 						</span>
@@ -40,12 +40,12 @@
 						<?php edit_post_link( __( 'Edit', 'olo' ), '<span class="edit-link">', '</span>' ); ?>
 						<div class="post-share">
 							<ul class="post-shareul clearfix">
-								<li class="post-shareli"><a href="http://service.weibo.com/share/share.php?title=<?php the_title(); ?>&url=<?php the_permalink(); ?>" class="post-sharea psa-weibo" target="_blank" rel="nofollow" title="分享到新浪微博">新浪微博</a></li>
-								<li class="post-shareli"><a href="http://v.t.qq.com/share/share.php?title=<?php the_title(); ?>&url=<?php the_permalink(); ?>&site=<?php echo home_url();?>" class="post-sharea psa-qqweibo" target="_blank" rel="nofollow" title="分享到腾讯微博">腾讯微博</a></li>
-								<li class="post-shareli"><a href="http://www.douban.com/recommend/?url=<?php the_permalink(); ?>&title=<?php the_title(); ?>" class="post-sharea psa-douban" target="_blank" rel="nofollow" title="分享到豆瓣">豆瓣网</a></li>
-								<li class="post-shareli"><a href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=<?php the_permalink(); ?>&title=<?php the_title(); ?>" class="post-sharea psa-qzone" target="_blank" rel="nofollow" title="分享到QQ空间">QQ空间</a></li>
-								<li class="post-shareli"><a href="http://share.renren.com/share/buttonshare?link=<?php the_permalink(); ?>&title=<?php the_title(); ?>" class="post-sharea psa-renren" target="_blank" rel="nofollow" title="分享到人人网">人人网</a></li>
-								<li class="post-shareli"><a href="http://twitter.com/share?url=<?php the_permalink(); ?>&text=<?php the_title(); ?>" class="post-sharea psa-twitter" target="_blank" rel="nofollow" title="分享到Twitter">Twitter</a></li>
+								<li class="post-shareli"><a href="http://service.weibo.com/share/share.php?title=<?php the_title(); ?>&url=<?php the_permalink(); ?>" class="post-sharea psa-weibo" target="_blank" rel="nofollow" title="<?php _e('Share to Sina', 'olo'); ?>"><?php _e('WeiBo', 'olo'); ?></a></li>
+								<li class="post-shareli"><a href="http://v.t.qq.com/share/share.php?title=<?php the_title(); ?>&url=<?php the_permalink(); ?>&site=<?php echo home_url();?>" class="post-sharea psa-qqweibo" target="_blank" rel="nofollow" title="<?php _e('Share to QQ', 'olo'); ?>"><?php _e('QQ', 'olo'); ?></a></li>
+								<li class="post-shareli"><a href="http://www.douban.com/recommend/?url=<?php the_permalink(); ?>&title=<?php the_title(); ?>" class="post-sharea psa-douban" target="_blank" rel="nofollow" title="<?php _e('Share to douban', 'olo'); ?>"><?php _e('DouBan', 'olo'); ?></a></li>
+								<li class="post-shareli"><a href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=<?php the_permalink(); ?>&title=<?php the_title(); ?>" class="post-sharea psa-qzone" target="_blank" rel="nofollow" title="<?php _e('Share to QQ space', 'olo'); ?>"><?php _e('QQ Space', 'olo'); ?></a></li>
+								<li class="post-shareli"><a href="http://share.renren.com/share/buttonshare?link=<?php the_permalink(); ?>&title=<?php the_title(); ?>" class="post-sharea psa-renren" target="_blank" rel="nofollow" title="<?php _e('Share to RenRen', 'olo'); ?>"><?php _e('RenRen', 'olo'); ?></a></li>
+								<li class="post-shareli"><a href="http://twitter.com/share?url=<?php the_permalink(); ?>&text=<?php the_title(); ?>" class="post-sharea psa-twitter" target="_blank" rel="nofollow" title="<?php _e('Share to Twitter', 'olo'); ?>"><?php _e('Twitter', 'olo'); ?></a></li>
 							</ul>
 						</div>
 					</footer>

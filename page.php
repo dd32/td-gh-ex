@@ -25,7 +25,7 @@
 					<footer>
 						<span class="author">
 							<?php _e('Posted by', 'olo'); ?> <?php the_author_posts_link(); ?>
-						</span>·
+						</span> - 
 						<span class="last-updated">
 							<?php if ((get_the_modified_time('Y')*365+get_the_modified_time('z')) > (get_the_time('Y')*365+get_the_time('z'))) : ?><?php _e('Last Updated', 'olo'); ?>: <?php the_modified_time('Y-m-j h:s'); ?><?php else : ?><?php echo null; ?><?php endif; ?>
 						</span>
