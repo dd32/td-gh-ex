@@ -20,6 +20,7 @@
 	<?php endwhile; ?>
 
 	<h4><?php edit_post_link( __( 'Edit', 'darkorange' ), '<span class="edit-link">', '</span>' ) ?></h4>
+
 </div>	
 
 </div>	

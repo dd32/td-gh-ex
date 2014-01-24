@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: DarkOrange v1.6\n"
+"Project-Id-Version: DarkOrange v1.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-01-21 22:17:07+0000\n"
+"PO-Revision-Date: 2014-01-24 18:05:42+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,15 +21,15 @@ msgstr ""
 "X-Textdomain-Support: yes"
 
 #: 404.php:9
-#: search.php:26
+#: search.php:27
 #@ darkorange
 msgid "Nothing Found"
 msgstr "Niets gevonden"
 
 #: 404.php:10
-#: archive.php:37
-#: index.php:35
-#: search.php:27
+#: archive.php:38
+#: index.php:36
+#: search.php:28
 #@ darkorange
 msgid "Sorry, no posts matched your criteria."
 msgstr "Sorry, er zijn helaas geen berichten gevonden."
@@ -79,46 +79,46 @@ msgstr "Permalink naar "
 msgid "Posted on "
 msgstr "Geplaatst op "
 
-#: archive.php:41
-#: index.php:39
-#: search.php:33
-#@ darkorange
-msgid "&laquo; Older posts"
-msgstr "&laquo; Oudere berichten"
-
 #: archive.php:42
 #: index.php:40
 #: search.php:34
 #@ darkorange
+msgid "&laquo; Older posts"
+msgstr "&laquo; Oudere berichten"
+
+#: archive.php:43
+#: index.php:41
+#: search.php:35
+#@ darkorange
 msgid "Newer posts &raquo;"
 msgstr "Nieuwere berichten &raquo;"
 
-#: functions.php:127
+#: functions.php:78
 #@ darkorange
 msgid "Primary Sidebar"
 msgstr "Hoofd Sidebar"
 
-#: functions.php:129
-#: functions.php:139
-#: functions.php:149
-#: functions.php:159
+#: functions.php:80
+#: functions.php:90
+#: functions.php:100
+#: functions.php:110
 #@ darkorange
 msgid "Select widgets from the right-hand side."
 msgstr "Selecteer widgets van de rechterkant."
 
-#: functions.php:173
+#: functions.php:142
 #@ darkorange
 msgid "Read More &raquo;"
 msgstr "Lees Meer &raquo;"
 
-#: functions.php:190
+#: functions.php:168
 #@ darkorange
 msgid "Boats"
 msgstr "Boten"
 
 #: page-full.php:22
 #: page.php:19
-#: single.php:29
+#: single.php:30
 #@ darkorange
 msgid "Edit"
 msgstr "Bewerk"
@@ -129,7 +129,7 @@ msgstr "Bewerk"
 msgid "Search Results for: %s"
 msgstr "Zoekresultaat voor: %s"
 
-#: single.php:21
+#: single.php:22
 #@ darkorange
 msgid "Posted in "
 msgstr "Geplaatst in "
@@ -149,12 +149,12 @@ msgstr "Nieuwere Reacties &raquo;"
 msgid "Comments are closed."
 msgstr "Reageren is niet mogelijk."
 
-#: functions.php:147
+#: functions.php:98
 #@ darkorange
 msgid "Footer Sidebar Right"
 msgstr "Footer Sidebar Rechts"
 
-#: functions.php:157
+#: functions.php:108
 #@ darkorange
 msgid "Footer Sidebar Left"
 msgstr "Footer Sidebar Links"
@@ -164,15 +164,7 @@ msgstr "Footer Sidebar Links"
 msgid "Primary Navigation"
 msgstr "Hoofdmenu"
 
-#: comments.php:18
-#, php-format
-#@ darkorange
-msgid "1 response on %2$s"
-msgid_plural "%1$s responses on %2$s"
-msgstr[0] "1 reactie op %2$s"
-msgstr[1] "%1$s reacties op %2$s"
-
-#: functions.php:137
+#: functions.php:88
 #@ darkorange
 msgid "Homepage Sidebar"
 msgstr "Homepage Sidebar"
@@ -182,13 +174,13 @@ msgstr "Homepage Sidebar"
 msgid "Featured post"
 msgstr "Aanbevolen bericht"
 
-#: functions.php:74
-#: functions.php:80
+#: functions.php:191
+#: functions.php:197
 #@ darkorange
 msgid "Logo"
 msgstr "Logo"
 
-#: functions.php:76
+#: functions.php:193
 #@ darkorange
 msgid "Upload a logo to replace blogname and description in header"
 msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
@@ -200,17 +192,6 @@ msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
 #@ darkorange
 msgid "By "
 msgstr "Door "
-
-#: archive.php:29
-#: index.php:24
-#: search.php:17
-#: single.php:16
-#, php-format
-#@ darkorange
-msgid "1 response"
-msgid_plural "%1$s responses"
-msgstr[0] "1 reactie"
-msgstr[1] "%1$s reacties"
 
 #: theme-options.php:9
 #@ darkorange
@@ -244,7 +225,7 @@ msgstr "Wat te doen"
 msgid "click here"
 msgstr "klik hier"
 
-#: functions.php:64
+#: functions.php:181
 #@ darkorange
 msgid "You do not have permission to access this page"
 msgstr "Je hebt geen rechten om deze pagina te bezoeken"
@@ -278,4 +259,36 @@ msgstr "Om achtergrond (afbeelding) in te stellen"
 #@ darkorange
 msgid "For setting widgets"
 msgstr "Om widgets in te stellen"
+
+#: archive.php:30
+#: index.php:25
+#: search.php:18
+#: single.php:17
+#@ darkorange
+msgid "Leave a response"
+msgstr "Plaats reactie"
+
+#: archive.php:30
+#: index.php:25
+#: search.php:18
+#: single.php:17
+#@ darkorange
+msgid "1 response"
+msgstr "1 reactie"
+
+#: archive.php:30
+#: index.php:25
+#: search.php:18
+#: single.php:17
+#@ darkorange
+msgid "% responses"
+msgstr "% reacties"
+
+#: comments.php:18
+#, php-format
+#@ darkorange
+msgid "1 response on %2$s"
+msgid_plural "%1$s responses on %2$s"
+msgstr[0] "1 reactie op %2$s"
+msgstr[1] "%1$s reacties op %2$s"
 

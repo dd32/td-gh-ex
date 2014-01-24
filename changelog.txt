@@ -1,8 +1,10 @@
 CHANGELOG
 =========
 
-DarkOrange version 1.6 - february 2014
+DarkOrange version 1.7 - february 2014
 - added theme options page
+- added html5 support in older browsers (functions file)
+- added comments link to metadata in post
 - added several adjustments for better responsive layout
 - a bunch of other minor adjustments in stylesheet
 

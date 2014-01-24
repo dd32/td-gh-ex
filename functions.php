@@ -5,7 +5,7 @@
 
 // Set width without the padding
 if ( ! isset( $content_width ) )
-	$content_width = 650;
+	$content_width = 675;
 
 
 // Sets up theme defaults and registers various WordPress features that DarkOrange supports
@@ -33,58 +33,21 @@ if ( ! isset( $content_width ) )
 		add_theme_support( 'post-thumbnails' ); 
 
 	// Resize mode thumbnails
-		set_post_thumbnail_size( 500, 450 ); 
-
+		set_post_thumbnail_size( 675, 550 ); 
 
 	// Background color
 		$args = array( 'default-color' => 'f2f2f2', 
 		); 
 		add_theme_support( 'custom-background', $args ); 
 
-
 	// This feature adds RSS feed links to html head 
 		add_theme_support( 'automatic-feed-links' );
-
 
 	// Switches default core markup for search form, comment form, and comments to output valid HTML5
 		add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
 
 	}
 	add_action( 'after_setup_theme', 'darkorange_setup' ); 
-
-
-// Theme Options Page
-	function register_darkorange_menu_page(){ 
-		add_theme_page('DarkOrange', 'DarkOrange', 'manage_options', 'darkorange', 'darkorange_options' ); 
- 	} 
-	add_action( 'admin_menu', 'register_darkorange_menu_page' ); 
-
-	function darkorange_options() { 
-		if (!current_user_can('manage_options')) { 
-			wp_die( __('You do not have permission to access this page', 'darkorange' ) ); 
-			} 
-			include 'theme-options.php'; 
-		}
-
-
-// Theme Customizer (option to add logo)
-	function darkorange_theme_customizer( $wp_customize ) { 
-
-		$wp_customize->add_section( 'darkorange_logo_section' , array( 
-		'title' => __( 'Logo', 'darkorange' ), 
-		'priority' => 30, 
-		'description' => __( 'Upload a logo to replace blogname and description in header', 'darkorange' ),
-		) );
-		$wp_customize->add_setting( 'darkorange_logo' );
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'darkorange_logo', array( 
-		'label' => __( 'Logo', 'darkorange' ), 
-		'section' => 'darkorange_logo_section', 
-		'settings' => 'darkorange_logo', 
-		) ) );
-
-	} 
-	add_action('customize_register', 'darkorange_theme_customizer');
-
 
 
 // Enqueues scripts and styles for front-end
@@ -107,18 +70,6 @@ if ( ! isset( $content_width ) )
 		}
 	}  	
 	add_action('wp_enqueue_scripts', 'darkorange_fonts');
-
-
-// Add blogname to wp_title
-	function darkorange_wp_title( $title ) { 
-		global $page, $paged; 
-		if ( is_feed() ) 
-		return $title; 
-	
-		$filtered_title = $title . get_bloginfo( 'name' ); 
-			return $filtered_title; 
-	}
-	add_filter( 'wp_title', 'darkorange_wp_title' ); 
 
 
 // Sidebars
@@ -167,6 +118,24 @@ function darkorange_widgets_init() {
 	add_action( 'widgets_init', 'darkorange_widgets_init' );
 
 
+// Resize homepage thumbnails
+	if ( function_exists( 'add_image_size' ) ) { 
+		add_image_size( 'homepage', 500, 450 ); 
+	}
+
+
+// Add blogname to wp_title
+	function darkorange_wp_title( $title ) { 
+		global $page, $paged; 
+		if ( is_feed() ) 
+		return $title; 
+	
+		$filtered_title = $title . get_bloginfo( 'name' ); 
+			return $filtered_title; 
+	}
+	add_filter( 'wp_title', 'darkorange_wp_title' ); 
+
+
 // Replaces the excerpt "more" text by a link 
 	function darkorange_excerpt_more($more) { 
 		global $post; 
@@ -182,6 +151,15 @@ function darkorange_widgets_init() {
 	add_filter( "the_excerpt", "darkorange_excerpt" );
 
 
+// Add html5 support for older IE version 
+	function darkorange_html5_shim () { 
+		echo '<!--[if lt IE 9]>'; 
+		echo '<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>'; 
+		echo '<![endif]-->'; 
+		} 
+	add_action('wp_head', 'darkorange_html5_shim');
+
+
 // Default header
 	register_default_headers( array(
 	'boats' => array(
@@ -190,4 +168,38 @@ function darkorange_widgets_init() {
 		'description' => __( 'Boats', 'darkorange' )
 		)
 	) );
+
+
+// Theme Options Page
+	function register_darkorange_menu_page(){ 
+		add_theme_page('DarkOrange', 'DarkOrange', 'manage_options', 'darkorange', 'darkorange_options' ); 
+ 	} 
+	add_action( 'admin_menu', 'register_darkorange_menu_page' ); 
+
+	function darkorange_options() { 
+		if (!current_user_can('manage_options')) { 
+			wp_die( __('You do not have permission to access this page', 'darkorange' ) ); 
+			} 
+			include 'theme-options.php'; 
+		}
+
+
+// Theme Customizer (option to add logo)
+	function darkorange_theme_customizer( $wp_customize ) { 
+
+		$wp_customize->add_section( 'darkorange_logo_section' , array( 
+		'title' => __( 'Logo', 'darkorange' ), 
+		'priority' => 30, 
+		'description' => __( 'Upload a logo to replace blogname and description in header', 'darkorange' ),
+		) );
+		$wp_customize->add_setting( 'darkorange_logo' );
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'darkorange_logo', array( 
+		'label' => __( 'Logo', 'darkorange' ), 
+		'section' => 'darkorange_logo_section', 
+		'settings' => 'darkorange_logo', 
+		) ) );
+
+	} 
+	add_action('customize_register', 'darkorange_theme_customizer');
+
 ?>
