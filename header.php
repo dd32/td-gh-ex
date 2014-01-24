@@ -17,7 +17,7 @@ wp_head();
 <body <?php body_class(); ?>>
 
 <header id="header">    
-<h1><a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>">
+<h1><a href="<?php echo esc_url( home_url() ); ?>" title="<?php bloginfo('name'); ?>">
 <?php bloginfo('name'); ?></a></h1>
 <em><?php bloginfo('description'); ?></em>
 </header>
