@@ -48,6 +48,9 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 1.9.9.7 =
+* Very Very small fix with portfolio carousel.
+
 = Version: 1.9.9.6 =
 * Move virtuetoolkit to repository.
 * Remove edd_license

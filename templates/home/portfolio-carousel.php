@@ -2,7 +2,7 @@
 <div class="home-portfolio home-margin carousel_outerrim home-padding">
 		<?php global $virtue; if(isset($virtue['portfolio_title'])) {$porttitle = $virtue['portfolio_title'];} else { $porttitle = __('Featured Projects', 'virtue'); }
 		if(!empty($virtue['home_portfolio_carousel_count'])) {$hp_pcount = $virtue['home_portfolio_carousel_count'];} else {$hp_pcount = '6';} 
-		if(!empty($virtue_premium['home_portfolio_order'])) {$hp_orderby = $virtue_premium['home_portfolio_order'];} else {$hp_orderby = 'menu_order';}
+		if(!empty($virtue['home_portfolio_order'])) {$hp_orderby = $virtue['home_portfolio_order'];} else {$hp_orderby = 'menu_order';}
 		if($hp_orderby == 'menu_order') {$p_order = 'ASC';} else {$p_order = 'DESC';} ?>
 		<div class="clearfix"><h3 class="hometitle"><?php echo $porttitle; ?></h3></div>
 		<?php  if(!empty($virtue['portfolio_type'])) {
