@@ -13,13 +13,14 @@
 		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 			<h3 class="page-title"><?php the_title(); ?></h3>
 
-			<h5 class="postmetadata"><?php _e('Posted on ', 'privatebusiness'); ?><a href="<?php the_permalink(); ?>"><?php echo get_the_date(); ?></a> | <?php _e('By ', 'privatebusiness'); ?> 
-			<?php the_author_posts_link() ?> | <?php printf( _n( '1 response', '%1$s responses', get_comments_number(), 'privatebusiness' ), number_format_i18n( get_comments_number() ) ); ?></h5>
+		<h5 class="postmetadata"><?php _e('Posted on ', 'privatebusiness'); ?><a href="<?php the_permalink(); ?>"><?php echo get_the_date(); ?></a> | <?php _e('By ', 'privatebusiness'); ?> 
+		<?php the_author_posts_link(); ?> <?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : echo '|'; ?>
+		<?php comments_popup_link( __( 'Leave a response', 'privatebusiness' ), __( '1 response', 'privatebusiness' ), __( '% responses', 'privatebusiness' ) ); ?><?php endif; ?></h5>
 	
 			<?php the_content(); ?>
 			<div class="pagelink"><?php wp_link_pages(); ?></div>
 			
-			<h5 class="postmetadata"><?php _e('Posted in ', 'privatebusiness'); ?> <?php the_category(', '); ?> | <?php the_tags('Tags: '); ?></h5>
+			<h5 class="postmetadata"><?php _e('Posted in ', 'privatebusiness'); ?> <?php the_category(', '); ?> <?php if(has_tag() ) : echo '|'; ?> <?php the_tags('Tags: '); ?> <?php endif; ?></h5>
 		</div>
 
 		<?php comments_template(); ?>

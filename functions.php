@@ -8,7 +8,7 @@
 
 	// Set width without the padding
 		if ( ! isset( $content_width ) )
-		$content_width = 650;
+		$content_width = 675;
 
 	// Make theme available for translation
 		load_theme_textdomain('privatebusiness', get_template_directory() . '/languages');  
@@ -32,7 +32,7 @@
 		add_theme_support( 'post-thumbnails' ); 
 
 	// Resize mode thumbnails
-		set_post_thumbnail_size( 650, 450 ); 
+		set_post_thumbnail_size( 675, 550 ); 
 
 
 	// This feature adds RSS feed links to html head 
@@ -49,39 +49,6 @@
 
 	}
 	add_action( 'after_setup_theme', 'privatebusiness_setup' ); 
-
-
-// Theme Options Page
-	function register_privatebusiness_menu_page(){ 
-		add_theme_page('PrivateBusiness', 'PrivateBusiness', 'manage_options', 'privatebusiness', 'privatebusiness_options' ); 
- 	} 
-	add_action( 'admin_menu', 'register_privatebusiness_menu_page' ); 
-
-	function privatebusiness_options() { 
-		if (!current_user_can('manage_options')) { 
-			wp_die( __('You do not have permission to access this page', 'privatebusiness' ) ); 
-			} 
-			include 'theme-options.php'; 
-		}
-
-
-// Theme Customizer (option to add logo)
-	function privatebusiness_theme_customizer( $wp_customize ) { 
-
-		$wp_customize->add_section( 'privatebusiness_logo_section' , array( 
-		'title' => __( 'Logo', 'privatebusiness' ), 
-		'priority' => 30, 
-		'description' => __( 'Upload a logo to replace blogname and description in header', 'privatebusiness' ),
-		) );
-		$wp_customize->add_setting( 'privatebusiness_logo' );
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'privatebusiness_logo', array( 
-		'label' => __( 'Logo', 'privatebusiness' ), 
-		'section' => 'privatebusiness_logo_section', 
-		'settings' => 'privatebusiness_logo', 
-		) ) );
-
-	} 
-	add_action('customize_register', 'privatebusiness_theme_customizer');
 
 
 // Add blogname to wp_title
@@ -197,5 +164,47 @@
 		'description' => __( 'Boats', 'privatebusiness' )
 		)
 	) );
+
+
+// Add html5 support for older IE version 
+	function darkorange_html5_shim () { 
+		echo '<!--[if lt IE 9]>'; 
+		echo '<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>'; 
+		echo '<![endif]-->'; 
+		} 
+	add_action('wp_head', 'darkorange_html5_shim');
+
+
+// Theme Options Page
+	function register_privatebusiness_menu_page(){ 
+		add_theme_page('PrivateBusiness', 'PrivateBusiness', 'manage_options', 'privatebusiness', 'privatebusiness_options' ); 
+ 	} 
+	add_action( 'admin_menu', 'register_privatebusiness_menu_page' ); 
+
+	function privatebusiness_options() { 
+		if (!current_user_can('manage_options')) { 
+			wp_die( __('You do not have permission to access this page', 'privatebusiness' ) ); 
+			} 
+			include 'theme-options.php'; 
+		}
+
+
+// Theme Customizer (option to add logo)
+	function privatebusiness_theme_customizer( $wp_customize ) { 
+
+		$wp_customize->add_section( 'privatebusiness_logo_section' , array( 
+		'title' => __( 'Logo', 'privatebusiness' ), 
+		'priority' => 30, 
+		'description' => __( 'Upload a logo to replace blogname and description in header', 'privatebusiness' ),
+		) );
+		$wp_customize->add_setting( 'privatebusiness_logo' );
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'privatebusiness_logo', array( 
+		'label' => __( 'Logo', 'privatebusiness' ), 
+		'section' => 'privatebusiness_logo_section', 
+		'settings' => 'privatebusiness_logo', 
+		) ) );
+
+	} 
+	add_action('customize_register', 'privatebusiness_theme_customizer');
 
 ?>

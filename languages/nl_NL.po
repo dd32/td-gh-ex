@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: PrivateBusiness v1.3\n"
+"Project-Id-Version: PrivateBusiness v1.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-01-20 22:55:02+0000\n"
+"PO-Revision-Date: 2014-01-25 22:54:31+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,15 +21,15 @@ msgstr ""
 "X-Textdomain-Support: yes"
 
 #: 404.php:9
-#: search.php:28
+#: search.php:29
 #@ privatebusiness
 msgid "Nothing Found"
 msgstr "Niets gevonden"
 
 #: 404.php:10
-#: archive.php:39
-#: index.php:30
-#: search.php:29
+#: archive.php:40
+#: index.php:31
+#: search.php:30
 #@ privatebusiness
 msgid "Sorry, no posts matched your criteria."
 msgstr "Sorry, er zijn helaas geen berichten gevonden."
@@ -79,40 +79,40 @@ msgstr "Permalink naar "
 msgid "Posted on "
 msgstr "Geplaatst op "
 
-#: archive.php:43
-#: index.php:34
-#: search.php:35
-#@ privatebusiness
-msgid "&laquo; Older posts"
-msgstr "&laquo; Oudere berichten"
-
 #: archive.php:44
 #: index.php:35
 #: search.php:36
 #@ privatebusiness
+msgid "&laquo; Older posts"
+msgstr "&laquo; Oudere berichten"
+
+#: archive.php:45
+#: index.php:36
+#: search.php:37
+#@ privatebusiness
 msgid "Newer posts &raquo;"
 msgstr "Nieuwere berichten &raquo;"
 
-#: functions.php:124
+#: functions.php:91
 #@ privatebusiness
 msgid "Primary Sidebar"
 msgstr "Hoofd Sidebar"
 
-#: functions.php:126
-#: functions.php:136
-#: functions.php:146
-#: functions.php:156
-#: functions.php:166
+#: functions.php:93
+#: functions.php:103
+#: functions.php:113
+#: functions.php:123
+#: functions.php:133
 #@ privatebusiness
 msgid "Select widgets from the right-hand side."
 msgstr "Selecteer widgets van de rechterkant."
 
-#: functions.php:180
+#: functions.php:147
 #@ privatebusiness
 msgid "Read More &raquo;"
 msgstr "Lees Meer &raquo;"
 
-#: functions.php:197
+#: functions.php:164
 #@ privatebusiness
 msgid "Boats"
 msgstr "Boten"
@@ -124,7 +124,7 @@ msgstr "Aanbevolen bericht"
 
 #: page-full.php:21
 #: page.php:19
-#: single.php:30
+#: single.php:31
 #@ privatebusiness
 msgid "Edit"
 msgstr "Bewerk"
@@ -135,7 +135,7 @@ msgstr "Bewerk"
 msgid "Search Results for: %s"
 msgstr "Zoekresultaat voor: %s"
 
-#: single.php:22
+#: single.php:23
 #@ privatebusiness
 msgid "Posted in "
 msgstr "Geplaatst in "
@@ -155,12 +155,12 @@ msgstr "Nieuwere Reacties &raquo;"
 msgid "Comments are closed"
 msgstr "Reageren is niet mogelijk"
 
-#: functions.php:154
+#: functions.php:121
 #@ privatebusiness
 msgid "Footer Sidebar Right"
 msgstr "Footer Sidebar Rechts"
 
-#: functions.php:164
+#: functions.php:131
 #@ privatebusiness
 msgid "Footer Sidebar Left"
 msgstr "Footer Sidebar Links"
@@ -178,13 +178,13 @@ msgid_plural "%1$s responses on %2$s"
 msgstr[0] "1 reactie op %2$s"
 msgstr[1] "%1$s reacties op %2$s"
 
-#: functions.php:72
-#: functions.php:78
+#: functions.php:196
+#: functions.php:202
 #@ privatebusiness
 msgid "Logo"
 msgstr "Logo"
 
-#: functions.php:74
+#: functions.php:198
 #@ privatebusiness
 msgid "Upload a logo to replace blogname and description in header"
 msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
@@ -197,28 +197,17 @@ msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
 msgid "By "
 msgstr "Door "
 
-#: archive.php:31
-#: index.php:22
-#: search.php:19
-#: single.php:17
-#, php-format
-#@ privatebusiness
-msgid "1 response"
-msgid_plural "%1$s responses"
-msgstr[0] "1 reactie"
-msgstr[1] "%1$s reacties"
-
-#: functions.php:134
+#: functions.php:101
 #@ privatebusiness
 msgid "Homepage Sidebar Right"
 msgstr "Homepage Sidebar Rechts"
 
-#: functions.php:62
+#: functions.php:186
 #@ privatebusiness
 msgid "You do not have permission to access this page"
 msgstr "Je hebt geen rechten om deze pagina te bezoeken"
 
-#: functions.php:144
+#: functions.php:111
 #@ privatebusiness
 msgid "Homepage Sidebar Left"
 msgstr "Homepage Sidebar Links"
@@ -284,4 +273,28 @@ msgstr "Om achtergrond (afbeelding) in te stellen"
 #@ privatebusiness
 msgid "For setting widgets"
 msgstr "Om widgets in te stellen"
+
+#: archive.php:32
+#: index.php:23
+#: search.php:20
+#: single.php:18
+#@ privatebusiness
+msgid "Leave a response"
+msgstr "Plaats een reactie"
+
+#: archive.php:32
+#: index.php:23
+#: search.php:20
+#: single.php:18
+#@ privatebusiness
+msgid "% responses"
+msgstr "% reacties"
+
+#: archive.php:32
+#: index.php:23
+#: search.php:20
+#: single.php:18
+#@ privatebusiness
+msgid "1 response"
+msgstr "1 reactie"
 

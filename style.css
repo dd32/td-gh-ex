@@ -1,7 +1,7 @@
 /*
 Theme Name: PrivateBusiness
 Theme URI: http://www.guidovanderleest.nl/privatebusiness
-Version: 1.3
+Version: 1.4
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: PrivateBusiness is a free, basic, clean, minimalistic, responsive, mobile friendly, WordPress theme for Private or Business website. Primary sidebar, 2 widget-areas underneath header-image, 2 widget-area's in footer, custom header-image, custom background, display logo or blogname and description, full width page-template, dropdown navigation and a simple theme optionspage are included. Besides this no fancy options, no slideshow, this one only has the basic options. Enjoy. 
@@ -133,6 +133,7 @@ select {max-width:100%;}
 .nav-head ul li {list-style-type: none; display: inline-block; position: relative;}
 .nav-head ul li a {text-decoration: none; color: #fff; background: none; padding: 5px 10px; display: inline-block;}
 .nav-head ul li a:hover {text-decoration:underline;}
+.menu .current_page_item > a, .menu .current_page_parent > a {text-decoration:underline;}
 
 
 /* HEADER SUBMENU */
@@ -154,8 +155,7 @@ select {max-width:100%;}
 .article {padding: 0 2% 0;}
 .page-title {margin: 0; padding: 0 0 10px;}
 .pagelink {clear:both; margin:20px 0 10px;}
-.edit-link {display:block; clear:both; text-align:center; margin:10px 0; padding: 5px; background: #0066ff; border:0;}
-.edit-link a {color:#fff;}
+.edit-link {display:block; clear:both; text-align:center; margin:10px 0; padding: 5px; background: none; border:1px solid #ccc;}
 
 
 /* POST */
@@ -241,7 +241,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 	#header-second .header-img {width: 100%; height: auto;}
 	#sidebar {width:100%; border:0; margin:0; padding:0; float:left;}
 	#footer {width:100%; padding:10px 0 0;}
-	.entry-title, .page-title, .widgettitle {font-size:1.3em;}
+	.entry-title, .page-title, .widgettitle, .comments-title {font-size:1.3em;}
 	.comment-body {border:0; padding:0;}
 	.article {padding:0;}
 	.widget {margin: 15px 0 15px;}
