@@ -1,0 +1,7 @@
+CHANGELOG
+=========
+
+GridBulletin version 1.0 - february 2014 
+- first stable release
+
+
