@@ -2,85 +2,69 @@
 /**
  * The template for displaying all single posts.
  *
- * @package     Anarcho Notepad
- * @since       2.48
- * @author      Space X-Chimp
- * @copyright   Copyright (c) 2013-2021, Space X-Chimp
- * @link        https://www.spacexchimp.com/themes/anarcho-notepad.html
- * @license     http://www.gnu.org/licenses/gpl-3.0.html
+ * @package	Anarcho Notepad
+ * @since	2.5
+ * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
+ * @copyright 	Copyright (c) 2013-2014, Arthur Gareginyan
+ * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
+ * @license   	http://www.gnu.org/licenses/gpl-3.0.html
  */
 ?>
 
 <?php get_header(); ?>
 
 <section id="content" role="main">
-    <div class="col01">
+  <div class="col01">
 
-        <?php spacexchimp_theme_breadcrumbs(); ?>
+  <?php anarcho_breadcrumbs(); ?>
 
-        <?php if ( have_posts() ) : ?>
-        <?php while ( have_posts() ) : the_post(); ?>
+  <?php if (have_posts()) : ?>
+  <?php while (have_posts()) : the_post(); ?>
 
-        <div class="before-posts">
-            <?php echo spacexchimp_theme_sanitize_scripts( get_theme_mod('scripts_before_posts') ); ?>
-        </div>
+    <div class="before-posts"><?php echo get_theme_mod('scripts_before_posts'); ?></div>
 
-        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-            <?php spacexchimp_theme_date_tag(); ?>
+      <?php anarcho_ribbons(); ?>
 
-            <h1 class="post-title">
-                <?php the_title(); ?>
-            </h1>
+      <h1><?php the_title(); ?></h1>
+      <div class="post-inner">
 
-            <div class="post-inner">
+		<div class="beginning-posts"><?php echo get_theme_mod('scripts_beginning_posts'); ?></div>
 
-                <div class="beginning-posts">
-                    <?php echo spacexchimp_theme_sanitize_scripts( get_theme_mod('scripts_beginning_posts') ); ?>
-                </div>
+		<?php the_post_thumbnail(); ?>
+		<?php the_content( __( 'Continue reading', 'anarcho-notepad' ) ); ?>
+		<?php wp_link_pages( array( 'before' => '<div class="page-links"><span>' . __( 'Pages:', 'anarcho-notepad' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) ); ?>
+      </div>
 
-                <?php the_post_thumbnail(); ?>
-                <?php the_content( __( 'Continue reading', 'anarcho-notepad' ) ); ?>
-                <?php wp_link_pages( array( 'before' => '<div class="page-links"><span>' . __( 'Pages:', 'anarcho-notepad' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) ); ?>
+      <div class="after-posts"><?php echo get_theme_mod('scripts_after_posts'); ?></div>
 
-                <div class="end-posts">
-                    <?php echo spacexchimp_theme_sanitize_scripts( get_theme_mod('scripts_end_posts') ); ?>
-                </div>
+      <p class="tagsandcopy"><?php the_tags(); ?><br/>
+      <?php echo esc_html(get_theme_mod('copyright_post')); ?></p>
 
-            </div>
+      <div class="meta">
+	<?php _e('Posted ', 'anarcho-notepad'); the_date(get_option('m.d.Y')); _e(' by ', 'anarcho-notepad'); the_author(); _e(' in category ', 'anarcho-notepad'); the_category(', '); ?><br/>
 
-            <p class="tagsandcopy">
-                <?php the_tags(); ?>
-                <br>
-                <?php
-                    $spacexchimp_theme_copy_post = __( 'Copyright 2021. All rights reserved.', 'anarcho-notepad' );
-                    echo wp_kses_post( get_theme_mod( 'copyright_post', $spacexchimp_theme_copy_post ) );
-                ?>
-            </p>
+        <?php if ( ( get_the_author_meta( 'description' ) != '' ) ) esc_html(get_template_part( 'author-bio' )); ?>
+      </div>
 
-            <?php spacexchimp_theme_entry_meta(); ?>
-            <?php spacexchimp_theme_post_nav(); ?>
+      <?php anarcho_post_nav(); ?>
 
-            <div class="after-posts">
-                <?php echo spacexchimp_theme_sanitize_scripts( get_theme_mod('scripts_after_posts') ); ?>
-            </div>
+      <div class="end-posts"><?php echo get_theme_mod('scripts_end_posts'); ?></div>
 
-        </article>
+    </article>
+    <?php comments_template(); ?>
+    <?php endwhile; ?>
+    <?php else : ?>
+	<div class="no-results">
+		<h1><?php _e('Not Found', 'anarcho-notepad'); ?></h1>
+		<p><?php _e('Sorry, but you are looking for something that isn\'t here.', 'anarcho-notepad'); ?></p>
+	</div>
+    <?php endif; ?>
 
-        <?php comments_template(); ?>
+  </div>
 
-        <?php endwhile; ?>
-
-        <?php else : ?>
-            <?php spacexchimp_theme_not_found(); ?>
-        <?php endif; ?>
-
-    </div>
-
-    <?php get_sidebar(); ?>
-
-</section>
-
-<br clear="all">
+   <?php get_sidebar(); ?>
+</section><br clear="all" />
 
 <?php get_footer(); ?>
