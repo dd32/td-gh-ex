@@ -1,0 +1,759 @@
+# Copyright (C) 2014 Athenea Theme
+# This file is distributed under the same license as the WordPress package.
+msgid ""
+msgstr ""
+"Project-Id-Version: athenea\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
+"POT-Creation-Date: 2013-12-19 02:31:31+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-01-27 11:55+0100\n"
+"Last-Translator: Miguel Angel <miguel@ibermega.com>\n"
+"Language-Team: IBERMEGA digital <soporte@ibermega.com>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: en\n"
+"X-Generator: Poedit 1.6.2\n"
+"X-Poedit-KeywordsList: _s;__;_x;_e\n"
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:19
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+
+#: 404.php:27
+msgid "Most Used Categories"
+msgstr ""
+
+#. translators: %1$s: smiley
+#: 404.php:44
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#: archive.php:31
+msgid "Author: %s"
+msgstr ""
+
+#: archive.php:39
+msgid "Day: %s"
+msgstr ""
+
+#: archive.php:42
+msgid "Month: %s"
+msgstr ""
+
+#: archive.php:42
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: archive.php:45
+msgid "Year: %s"
+msgstr ""
+
+#: archive.php:45
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: archive.php:48
+msgid "Asides"
+msgstr ""
+
+#: archive.php:51
+msgid "Galleries"
+msgstr ""
+
+#: archive.php:54
+msgid "Images"
+msgstr ""
+
+#: archive.php:57
+msgid "Videos"
+msgstr ""
+
+#: archive.php:58
+msgid "Video"
+msgstr ""
+
+#: archive.php:60
+msgid "Quotes"
+msgstr ""
+
+#: archive.php:63
+msgid "Links"
+msgstr ""
+
+#: archive.php:66
+msgid "Statuses"
+msgstr ""
+
+#: archive.php:69
+msgid "Audios"
+msgstr ""
+
+#: archive.php:72
+msgid "Chats"
+msgstr ""
+
+#: archive.php:75 sidebar.php:17
+msgid "Archives"
+msgstr ""
+
+#: comments.php:30
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:37 comments.php:57
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:38 comments.php:58
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:39 comments.php:59
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:69
+msgid "Comments are closed."
+msgstr ""
+
+#: content-none.php:13
+msgid "Nothing Found"
+msgstr ""
+
+#: content-none.php:19
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: content-none.php:23
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: content-none.php:28
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: content-page.php:18 content-single.php:20 content.php:27
+msgid "Pages:"
+msgstr ""
+
+#: content-page.php:23 content-single.php:60 content.php:61
+#: inc/template-tags.php:81 inc/template-tags.php:100
+msgid "Edit"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: content-single.php:29 content-single.php:32 content.php:38 content.php:48
+msgid ", "
+msgstr ""
+
+#: content-single.php:37
+msgid ""
+"This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
+"\">permalink</a>."
+msgstr ""
+
+#: content-single.php:39
+msgid "Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+
+#: content-single.php:45
+msgid ""
+"This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
+"rel=\"bookmark\">permalink</a>."
+msgstr ""
+
+#: content-single.php:47
+msgid ""
+"This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
+"\">permalink</a>."
+msgstr ""
+
+#: content.php:24
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: content.php:42
+msgid "Posted in %1$s"
+msgstr ""
+
+#: content.php:52
+msgid "Tagged %1$s"
+msgstr ""
+
+#: content.php:58
+msgid "Leave a comment"
+msgstr ""
+
+#: content.php:58
+msgid "1 Comment"
+msgstr ""
+
+#: content.php:58
+msgid "% Comments"
+msgstr ""
+
+#: footer.php:16
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: footer.php:18
+msgid "Theme: %1$s by %2$s."
+msgstr ""
+
+#: functions.php:45
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:65
+msgid "Sidebar"
+msgstr ""
+
+#: header.php:31
+msgid "Menu"
+msgstr ""
+
+#: header.php:32
+msgid "Skip to content"
+msgstr ""
+
+#: inc/extras.php:63
+msgid "Page %s"
+msgstr ""
+
+#: inc/template-tags.php:23
+msgid "Posts navigation"
+msgstr ""
+
+#: inc/template-tags.php:27
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr ""
+
+#: inc/template-tags.php:31
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: inc/template-tags.php:56
+msgid "Post navigation"
+msgstr ""
+
+#: inc/template-tags.php:59
+msgctxt "Previous post link"
+msgid "<span class=\"meta-nav\">&larr;</span> %title"
+msgstr ""
+
+#: inc/template-tags.php:60
+msgctxt "Next post link"
+msgid "%title <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: inc/template-tags.php:81
+msgid "Pingback:"
+msgstr ""
+
+#: inc/template-tags.php:91
+msgid "%s <span class=\"says\">says:</span>"
+msgstr ""
+
+#: inc/template-tags.php:97
+msgctxt "1: date, 2: time"
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: inc/template-tags.php:104
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: inc/template-tags.php:145
+msgid ""
+"<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by "
+"%2$s</span>"
+msgstr ""
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr ""
+
+#: searchform.php:10
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:11
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
+
+#: searchform.php:13
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
+
+#: sidebar.php:24
+msgid "Search"
+msgstr ""
+
+#: sidebar.php:24
+msgid "Search:"
+msgstr ""
+
+#: sidebar.php:24
+msgid "Meta"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "athenea"
+msgstr "athenea"
+
+#. Theme URI of the plugin/theme
+msgid "http://ibermega.com/"
+msgstr "http://ibermega.com/"
+
+#. Author of the plugin/theme
+msgid "IBERMEGA digital"
+msgstr "IBERMEGA digital"
+
+#. Theme Options/theme
+msgid "Athenea Options"
+msgstr ""
+
+#. Theme Options/theme
+msgid "Restore Defaults"
+msgstr ""
+
+#. Theme Options/theme
+msgid "Default options restored."
+msgstr ""
+
+#. Theme Options/theme
+msgid "Save Options"
+msgstr ""
+
+#. Theme Options/theme
+msgid "Options saved."
+msgstr ""
+
+#. Theme Options/theme
+msgid "Remove"
+msgstr ""
+
+#. Theme Options/theme
+msgid "Upload"
+msgstr ""
+
+#. Theme Options/theme
+msgid "Logos"
+msgstr ""
+
+#. Theme Options/theme
+msgid "Logos Trademark"
+msgstr ""
+
+#. Theme Options/theme
+msgid ""
+"Select the logo to be shown on the web with a maximum size of 292px wide."
+msgstr ""
+
+#. Theme Options/theme
+msgid "Favicon"
+msgstr ""
+
+#. Theme Options/theme
+msgid "No file chosen"
+msgstr ""
+
+#. Theme Options/theme
+msgid "Choose a Favicon in png with a maximum size of 64 x 64 px."
+msgstr ""
+
+#. Theme Options/theme
+msgid "Featured sections"
+msgstr ""
+
+#. Theme Options/theme
+msgid "BLOCK RIGHT"
+msgstr ""
+
+#. Theme Options/theme
+msgid "Title"
+msgstr ""
+
+#. Theme Options/theme
+msgid "Add your first highlighted section here."
+msgstr ""
+
+#. Theme Options/theme
+msgid "Brief description."
+msgstr ""
+
+#. Theme Options/theme
+msgid "Sign in options on topic and write a brief description."
+msgstr ""
+
+#. Theme Options/theme
+msgid "Button Text"
+msgstr ""
+
+#. Theme Options/theme
+msgid "Read More"
+msgstr ""
+
+#. Theme Options/theme
+msgid "URL Button"
+msgstr ""
+
+#. Theme Options/theme
+msgid ""
+"Select an image to display. The image must be transparent gif or png "
+"background"
+msgstr ""
+
+#. Theme Options/theme
+msgid "CENTRAL BLOCK"
+msgstr ""
+
+#. Theme Options/theme
+msgid "Continue with the second highlighted section."
+msgstr ""
+
+#. Theme Options/theme
+msgid "BLOCK LEFT"
+msgstr ""
+
+#. Theme Options/theme
+msgid "And finally, the third section highlighted."
+msgstr ""
+
+#. Theme Options/theme
+msgid "BODY CENTRAL BLOC"
+msgstr ""
+
+#. Theme Options/theme
+msgid "Who is the company"
+msgstr ""
+
+#. Theme Options/theme
+msgid ""
+"A brief description of your business in this area of the website is the best "
+"option for visitors. Insert a text descripctivo y call the attention of your "
+"potential in the first minute."
+msgstr ""
+
+#. Theme Options/theme
+msgid "Learn more"
+msgstr ""
+
+#. Theme Options/theme
+msgid "Social Icons"
+msgstr ""
+
+#. Theme Options/theme
+msgid "Activate"
+msgstr ""
+
+#. Theme Options/theme
+msgid "Deactivate"
+msgstr ""
+
+#. Theme Options/theme
+msgid "Enter the full URL."
+msgstr ""
+
+#. Theme Options/theme
+msgid "Analytics and SEO"
+msgstr ""
+
+#. Theme Options/theme
+msgid "Google Analytics"
+msgstr ""
+
+#. Theme Options/theme
+msgid "Google Analytics ID. Insert only the code as in the example."
+msgstr ""
+
+#. Theme Options/theme
+msgid ""
+"Google Analytics Domain without www. Enter the domain as shown in the "
+"verification code and installing Analytics."
+msgstr ""
+
+#. Theme Options/theme
+msgid "Webmaster Tools (Google)"
+msgstr ""
+
+#. Theme Options/theme
+msgid ""
+"ID google-site-verification. Log in to Google Webmasters to get the code and "
+"insert it into this field."
+msgstr ""
+
+#. Theme Options/theme
+msgid "Designs"
+msgstr ""
+
+#. Theme Options/theme
+msgid "Theme Design"
+msgstr ""
+
+#. Theme Options/theme
+msgid "Choose a layout for your website"
+msgstr ""
+
+#. Theme Options/theme
+msgid "Contact"
+msgstr ""
+
+#. Theme Options/theme
+msgid ""
+"Contact Details. Insert into your pages or entries the following shortcode "
+"to display the Contact Form: [iberthemeform]"
+msgstr ""
+
+#. Theme Options/theme
+msgid "Company Name"
+msgstr ""
+
+#. Theme Options/theme
+msgid "Company S.A."
+msgstr ""
+
+#. Theme Options/theme
+msgid ""
+"CIF/NIF/NIE (tax id). Mandatory for companies in the European Community."
+msgstr ""
+
+#. Theme Options/theme
+msgid "B123456789"
+msgstr ""
+
+#. Theme Options/theme
+msgid "Address"
+msgstr ""
+
+#. Theme Options/theme
+msgid "New Burlington St, 123"
+msgstr ""
+
+#. Theme Options/theme
+msgid "Postal Code"
+msgstr ""
+
+#. Theme Options/theme
+msgid "W1B 5NF"
+msgstr ""
+
+#. Theme Options/theme
+msgid "City"
+msgstr ""
+
+#. Theme Options/theme
+msgid "London"
+msgstr ""
+
+#. Theme Options/theme
+msgid "Country"
+msgstr ""
+
+#. Theme Options/theme
+msgid "United Kingdom"
+msgstr ""
+
+#. Theme Options/theme
+msgid "Phone"
+msgstr ""
+
+#. Theme Options/theme
+msgid "9XX 123 456"
+msgstr "9XX 123 456"
+
+#. Theme Options/theme
+msgid "E-Mail contact"
+msgstr ""
+
+#. Theme Options/theme
+msgid "office@company.com"
+msgstr ""
+
+#. Theme Options/Donative
+msgid "Do you like the theme Athenea?"
+msgstr ""
+
+#. Theme Options/Donative
+msgid "Buy me a coffee!"
+msgstr ""
+
+#. Theme Options/Donative
+msgid ""
+"Help us keep working for you on the update of this issue and the "
+"improvement. You can make a donation to your choice or collaboration with "
+"the developer :-)"
+msgstr ""
+
+#. Theme Options/Donative
+msgid "Voluntary donation"
+msgstr ""
+
+#. Theme Options/Donative
+msgid "Collaborate"
+msgstr ""
+
+#. Theme Options/Donative
+msgid "for Coffee €0,80 EUR"
+msgstr ""
+
+#. Theme Options/Donative
+msgid "for Coca-Cola €1,20 EUR"
+msgstr ""
+
+#. Theme Options/Donative
+msgid "for Beer €1,45 EUR"
+msgstr ""
+
+#. Theme Options/Donative
+msgid "for a Burger €2,00 EUR"
+msgstr ""
+
+#. Theme Options/Donative
+msgid "All €5,45 EUR"
+msgstr ""
+
+#. Theme Options/Donative
+msgid "Opinion"
+msgstr ""
+
+#. Theme Options/Donative
+msgid "Very good"
+msgstr ""
+
+#. Theme Options/Donative
+msgid "Good"
+msgstr ""
+
+#. Theme Options/Donative
+msgid "Not bad"
+msgstr ""
+
+#. Theme Options/Donative
+msgid "Keep working"
+msgstr ""
+
+#. Theme Options/Donative
+msgid "Athenea Documentation"
+msgstr ""
+
+#. Contact Form
+msgid "Contact Form"
+msgstr ""
+
+#. Contact Form
+msgid "Name"
+msgstr ""
+
+#. Contact Form
+msgid "Full name"
+msgstr ""
+
+#. Contact Form
+msgid "E-Mail"
+msgstr ""
+
+#. Contact Form
+msgid "E-mail"
+msgstr ""
+
+#. Contact Form
+msgid "Subject"
+msgstr ""
+
+#. Contact Form
+msgid "Accept"
+msgstr ""
+
+#. Contact Form
+msgid "Accept the Privacy Policy."
+msgstr ""
+
+#. Contact Form
+msgid "Send"
+msgstr ""
+
+#. Contact Form
+msgid "They have contacted from their website"
+msgstr ""
+
+#. Contact Form
+msgid "en"
+msgstr ""
+
+#. Contact Form pages
+msgid ""
+"<div class=\"alert alert-success\"><h3>Message Received</h3>Thank you for "
+"contacting us.<br><br>Our systems are processing your message and reply you "
+"as soon as possible.<br><br><b>Thanks for your attention</b></div>"
+msgstr ""
+
+#. Portada
+msgid "Continue reading &raquo;&raquo;"
+msgstr ""
+
+#. Footer
+msgid "Footer A"
+msgstr ""
+
+#. Footer
+msgid "Footer B"
+msgstr ""
+
+#. Footer
+msgid "Footer C"
+msgstr ""
+
+#. Footer
+msgid "Footer D"
+msgstr ""
+
+#. Footer
+msgid "Athenea Contact"
+msgstr ""
+
+#. Footer
+msgid "Top"
+msgstr ""
+
+#. Comments
+msgid "Comments"
+msgstr "Comentarios"
+
+#. Comments
+msgid ""
+"You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags "
+"and attributes: %s"
+msgstr ""
+
+#. Comments
+msgid "Leave a reply"
+msgstr ""
+
+#. Comments
+msgid "Leave a reply to %s"
+msgstr ""
+
+#. Comments
+msgid "Reply <span>&darr;</span>"
+msgstr ""
