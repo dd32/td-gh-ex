@@ -21,6 +21,7 @@ var uploadparent = 0;
             if ( _custom_media  ) {
               // jQuery('.custom_media_id').val(attachment.id); 		  
                uploadparent.find('.slideimages').val(attachment.url);
+			   uploadparent.find('.imagebox').attr('src',attachment.url);
               // jQuery('.custom_media_image').attr('src',attachment.url).css('display','block');   
             } else {
                 return _orig_send_attachment.apply( button_id, [props, attachment] );

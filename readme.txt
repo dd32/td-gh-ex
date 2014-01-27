@@ -18,6 +18,7 @@ The Mantra Theme uses:
 
 Translations credits:
 Chinese (Simplified) - Lín Xuan Li
+Czech - Satapouch 
 Danish - IT-Fidusen
 Dutch - Tim De Keyser
 French - Luc Capronnier, Ikiu91

@@ -141,25 +141,25 @@ global $mantra_defaults;
 	if($input['mantra_googlefont']) {
 	$mantra_googlefont2 = $input['mantra_googlefont'];
 	$mantra_googlefont2=  preg_replace( '/\s+/', '+', $mantra_googlefont2 );
-	$mantra_googlefont2= "http://fonts.googleapis.com/css?family=".$mantra_googlefont2;
+	$mantra_googlefont2= "//fonts.googleapis.com/css?family=".$mantra_googlefont2;
 	$input['mantra_googlefont2'] = $mantra_googlefont2;
      } else $input['mantra_googlefont2'] = '';
 	if($input['mantra_googlefonttitle']) {
 	$mantra_googlefonttitle2 = $input['mantra_googlefonttitle'];
 	$mantra_googlefonttitle2=  preg_replace( '/\s+/', '+', $mantra_googlefonttitle2 );
-	$mantra_googlefonttitle2= "http://fonts.googleapis.com/css?family=".$mantra_googlefonttitle2;
+	$mantra_googlefonttitle2= "//fonts.googleapis.com/css?family=".$mantra_googlefonttitle2;
 	$input['mantra_googlefonttitle2'] = $mantra_googlefonttitle2;
      } else $input['mantra_googlefonttitle2'] = '';
 	if($input['mantra_googlefontside']) {
 	$mantra_googlefontside2 = $input['mantra_googlefontside'];
 	$mantra_googlefontside2=  preg_replace( '/\s+/', '+', $mantra_googlefontside2 );
-	$mantra_googlefontside2= "http://fonts.googleapis.com/css?family=".$mantra_googlefontside2;
+	$mantra_googlefontside2= "//fonts.googleapis.com/css?family=".$mantra_googlefontside2;
 	$input['mantra_googlefontside2'] = $mantra_googlefontside2;
      } else $input['mantra_googlefontside2'] = '';
 	if($input['mantra_googlefontsubheader']) {
 	$mantra_googlefontsubheader2 = $input['mantra_googlefontsubheader'];
 	$mantra_googlefontsubheader2=  preg_replace( '/\s+/', '+', $mantra_googlefontsubheader2 );
-	$mantra_googlefontsubheader2= "http://fonts.googleapis.com/css?family=".$mantra_googlefontsubheader2;
+	$mantra_googlefontsubheader2= "//fonts.googleapis.com/css?family=".$mantra_googlefontsubheader2;
 	$input['mantra_googlefontsubheader2'] = $mantra_googlefontsubheader2;
      } else $input['mantra_googlefontsubheader2'] = '';
 

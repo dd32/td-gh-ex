@@ -5,7 +5,7 @@
 
 function mantra_export_options(){
 
-    ob_clean();
+    if (ob_get_contents()) ob_clean();
 	
 	/* Check authorisation */
 	$authorised = true;

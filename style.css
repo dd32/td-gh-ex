@@ -4,10 +4,10 @@
  * Description: Mantra is a do-it-yourself WordPress theme, featuring a pack of over 100 customization options and easy to use tweaks capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (1,2 or 3 columns), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 35 font-families plus all Google Fonts), text and header sizes, post metas, post excerpts, post formats, header and background images, custom menus, 27 social media links and icons, pins, bullets and much much more. With a fully responsive layout,a customizable showcase presentation page, animated slider, magazine and blog layouts, 8 widget areas, modern graphics and an easy and intuitive admin section, you can start creating your dream site right now.
  * Author: Cryout Creations
  * Author URI: http://www.cryoutcreations.eu
- * Version: 2.3.2
+ * Version: 2.3.3
  * License: GNU General Public License v2.0
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
- * Tags: black, red, blue, white, silver, light, dark, one-column, two-columns, three-columns, right-sidebar, left-sidebar, flexible-width, fixed-width, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, front-page-post-form, full-width-template,  microformats, post-formats, rtl-language-support,  sticky-post, theme-options, threaded-comments, translation-ready
+ * Tags: black, red, blue, white, silver, light, dark, one-column, two-columns, three-columns, right-sidebar, left-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, front-page-post-form, full-width-template,  microformats, post-formats, rtl-language-support,  sticky-post, theme-options, threaded-comments, translation-ready
  *
  * Copyright (c) 2011-2013 Cryout Creations
  * http://www.cryoutcreations.eu
@@ -710,6 +710,7 @@ font-size:1.9em;
 }
 .entry-content tr {
 	background-color:#FFF;
+    vertical-align:top;
 }
 .entry-content .alternate {
 	background-color:#FFF;
@@ -725,6 +726,7 @@ font-size:1.9em;
 .entry-content tr td {
 	border-top: 1px solid #e7e7e7;
 	padding: 6px 24px;
+	vertical-align:top;
 }
 .entry-content tr.odd td {
 	background: #f2f7fc;
@@ -1289,6 +1291,7 @@ article.format-chat h3.entry-format, article.format-aside h3.entry-format { disp
     background: none !important;
     border: 0 !important;
     vertical-align: middle;
+	width:auto !important;
 }
 
 
@@ -2632,6 +2635,9 @@ a.short-button-color:hover, a.short-button-light:hover, a.short-button-dark:hove
 /* sociable compat */ .entry-content .sociable ul li { background: none; padding-left: 2px; }
 /* woocommerce compat */ .woocommerce .product .entry-summary { clear:none; }
 /* video fix */ #content embed, #content iframe {max-width:100%;}
-
+/* a bit of captcha fixes */ 
+#recaptcha_widget_div { display:block; float:none; clear:both; }
+.math-captcha-form { display:block; float:none; clear:both; } 
+.cptch_block { display:block; float:none; clear:both; } 
 
 /* FIN! */

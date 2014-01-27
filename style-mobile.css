@@ -168,7 +168,7 @@ body, #content p, #content ul, #content ol,#content code, #content pre, #content
 		font-size: 12px !important;
 	}
 
-	#site-title a{
+	#site-title span a{
 		font-size: 18px;
 		line-height:18px;
 	}
