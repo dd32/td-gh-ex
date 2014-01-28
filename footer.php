@@ -1,10 +1,11 @@
 <div id="footer"> 
 	<p>
-&copy; Copyright <?php echo date('Y'); ?> - <?php bloginfo('name'); ?>. All Rights Reserved
-|
-<a href="http://wordpress.org/extend/themes/quickpress" title="QuickPress">QuickPress</a> Design. 
+&copy; Copyright <?php echo date('Y'); ?> - <?php bloginfo('name'); ?> 
+&nbsp;
+&bull;
+&nbsp;
+<a href="http://www.quickonlinethemes.com/wordpress/quickpress/" title="QuickPress WordPress Theme">QuickPress Theme</a> powered by <a href="http://wordpress.org">WordPress</a> 
 </p>
-
 </div>
 </div>
  		<?php wp_footer(); ?>
