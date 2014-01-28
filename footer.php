@@ -14,29 +14,11 @@
 ?>
        	<div class="widget_section">
             <div class="container">
-				<div class="row-fluid">
-                   <?php if(is_active_sidebar('first-footer-widget-area','second-footer-widget-area','third-footer-widget-area','fourth-footer-widget-area')):?>
-						<?php if ( is_active_sidebar( 'first-footer-widget-area' ) ) : ?>
-							  <div class="span3">
-								<?php dynamic_sidebar( 'first-footer-widget-area' ); ?>
-							  </div>
-							<?php endif; ?>                                
-                            <?php if ( is_active_sidebar( 'second-footer-widget-area' ) ) : ?> 
-                              <div class="span3">
-                              <?php dynamic_sidebar( 'second-footer-widget-area' ); ?>
-                              </div>
-                          	<?php endif; ?>      
-							<?php if ( is_active_sidebar( 'third-footer-widget-area' ) ) : ?>
-                               <div class="span3">
-                             <?php dynamic_sidebar( 'third-footer-widget-area' ); ?>
-                               </div>
-							<?php endif; ?>
-							<?php if ( is_active_sidebar( 'fourth-footer-widget-area' ) ) : ?>
-                               <div class="span3">
-                             <?php dynamic_sidebar( 'fourth-footer-widget-area' ); ?>
-                               </div>
-							<?php endif; ?>
-						<?php else : ?>
+				<div class="row-fluid">                  
+						<?php if ( is_active_sidebar( 'footer-widget-area' ))
+						{  
+							dynamic_sidebar('footer-widget-area' );   
+						} else { ?>
 						<div class="span3"> 
 						<?php the_widget('WP_Widget_Archives'); ?>
                         </div>
@@ -49,7 +31,7 @@
 						<div class="span3">
                          <?php  the_widget('WP_Widget_Pages'); ?>
 						</div>
-                    <?php endif; ?>
+                    <?php }  ?>
                 </div>	
 			</div>
         </div><!--closing of the footer widgets area-->

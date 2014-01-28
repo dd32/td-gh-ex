@@ -12,9 +12,7 @@
 	<?php return;endif;?>
          <?php if ( have_comments() ) : ?>		
          <div class="row-fluid comment_mn">	
-			<?php 
-				  printf( _n( '<h3>Comment on <span>%2$s</span></h3>', '<h3 style="color: #f22853;">%1$s thoughts on &ldquo;%2$s&rdquo;</h3>', get_comments_number(), 'busi_prof' ),
-					number_format_i18n( get_comments_number() ),  get_the_title()  );?>					
+			<h3><?php _e('Comment','bus_prof');?> <span>(<?php echo get_comments_number();?>)</span></h3>				
 					<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :  ?>		
 		<nav id="comment-nav-above">
 			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'busi_prof' ); ?></h1>

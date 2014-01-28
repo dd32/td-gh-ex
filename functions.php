@@ -20,7 +20,7 @@ define('WEBRITI_THEME_FUNCTIONS_PATH',WEBRITI_TEMPLATE_DIR.'/functions');
 	require( WEBRITI_THEME_FUNCTIONS_PATH .'/resize_image/resize_image.php' );	
 	require_once( WEBRITI_THEME_FUNCTIONS_PATH .'/commentbox/comment-function.php');
 //content width
-if ( ! isset( $content_width ) ) $content_width = 900;
+if ( ! isset( $content_width ) ) $content_width = 720;
 
 
 //wp title tag starts here
@@ -140,44 +140,13 @@ register_sidebar( array(
 	) );
 
 register_sidebar( array(
-		'name' => __( 'First Footer Widget Area', 'busi_prof' ),
-		'id' => 'first-footer-widget-area',
+		'name' => __( 'Footer Widget Area', 'busi_prof' ),
+		'id' => 'footer-widget-area',
 		'description' => __( 'The first footer widget area', 'busi_prof' ),
-		'before_widget' => '<div id="%1$s" class="sidebar_widget">',
-		'after_widget' => '</div><div class=""></div>',
-		'before_title' => '<h2>',
-		'after_title' => '</h2>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Second Footer Widget Area', 'busi_prof' ),
-		'id' => 'second-footer-widget-area',
-		'description' => __( 'The second footer widget area', 'busi_prof' ),
-		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+		'before_widget' => '<div  class="span3">',
 		'after_widget' => '</div>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Third Footer Widget Area', 'busi_prof' ),
-		'id' => 'third-footer-widget-area',
-		'description' => __( 'The third footer widget area', 'busi_prof' ),
-		'before_widget' => '<divid="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
-	) );	
-	
-	register_sidebar( array(
-		'name' => __( 'Fourth Footer Widget Area', 'busi_prof' ),
-		'id' => 'fourth-footer-widget-area',
-		'description' => __( 'The fourth footer widget area', 'busi_prof' ),
-		'before_widget' => '<divid="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
+		//'before_title' => '<h2 class="widgettitle">',
+		//'after_title' => '</h2>',
 	) );
 }	                     
-
 ?>

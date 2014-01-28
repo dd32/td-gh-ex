@@ -57,6 +57,8 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.3.6.4
+->>Issue Raised by Sanjiv Saha,Removed ['widgets managed']['Deceaded Content Wudth:720 ']
 @version 1.3.6.3
 1.Array merge added.
 @version 1.3.6.2
