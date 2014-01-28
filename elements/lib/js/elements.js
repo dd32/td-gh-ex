@@ -16,7 +16,7 @@
 
 /*	Boxes element make all the same height */
 
-jQuery(document).ready(function ($) {
+jQuery(window).load(function ($) {
 
 	if ($(window).width() > 767) {
 		setTimeout(function () {

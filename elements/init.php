@@ -39,6 +39,7 @@ add_action( 'wp_enqueue_scripts', 'cyberchimps_add_elements_style', 30 );
 // Set directory path
 $directory_path = get_template_directory();
 
+require_once( $directory_path . '/elements/parallax.php' );
 require_once( $directory_path . '/elements/portfolio-lite.php' );
 require_once( $directory_path . '/elements/slider-lite.php' );
 require_once( $directory_path . '/elements/boxes.php' );

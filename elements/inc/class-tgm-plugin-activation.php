@@ -371,7 +371,7 @@ if( !class_exists( 'TGM_Plugin_Activation' ) ) {
 				<?php $plugin_table->prepare_items(); ?>
 
 				<?php if( isset( $this->message ) ) {
-					_e( wp_kses_post( $this->message ), 'tgmpa' );
+					wp_kses_post( $this->message );
 				} ?>
 
 				<form id="tgmpa-plugins" action="" method="post">

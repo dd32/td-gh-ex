@@ -308,7 +308,7 @@ function cyberchimps_portfolio_lite_content() {
 
 				<!-- Portfolio 1 -->
 				<li id="portfolio_wrap" class="span3">
-					<div class="portfolio_item">
+					<div class="portfolio-item">
 						<a href='<?php echo esc_url( $portfolio_link1 ); ?>' <?php echo esc_attr( $portfolio_rel1 ); ?> title='<?php echo esc_attr( $caption1 ); ?>'><img
 								src='<?php echo esc_url( $img1 ); ?>' alt='Image 1'/>
 
@@ -319,7 +319,7 @@ function cyberchimps_portfolio_lite_content() {
 
 				<!-- Portfolio 2 -->
 				<li id="portfolio_wrap" class="span3">
-					<div class="portfolio_item">
+					<div class="portfolio-item">
 						<a href='<?php echo esc_url( $portfolio_link2 ); ?>' <?php echo esc_attr( $portfolio_rel2 ); ?> title='<?php echo esc_attr( $caption2 ); ?>'><img
 								src='<?php echo esc_url( $img2 ); ?>' alt='Image 1'/>
 
@@ -330,7 +330,7 @@ function cyberchimps_portfolio_lite_content() {
 
 				<!-- Portfolio 3 -->
 				<li id="portfolio_wrap" class="span3">
-					<div class="portfolio_item">
+					<div class="portfolio-item">
 						<a href='<?php echo esc_url( $portfolio_link3 ); ?>' <?php echo esc_attr( $portfolio_rel3 ); ?> title='<?php echo esc_attr( $caption3 ); ?>'><img
 								src='<?php echo esc_url( $img3 ); ?>' alt='Image 1'/>
 
@@ -341,7 +341,7 @@ function cyberchimps_portfolio_lite_content() {
 
 				<!-- Portfolio 4 -->
 				<li id="portfolio_wrap" class="span3">
-					<div class="portfolio_item">
+					<div class="portfolio-item">
 						<a href='<?php echo esc_url( $portfolio_link4 ); ?>' <?php echo esc_attr( $portfolio_rel4 ); ?> title='<?php echo esc_attr( $caption4 ); ?>'><img
 								src='<?php echo esc_url( $img4 ); ?>' alt='Image 1'/>
 
