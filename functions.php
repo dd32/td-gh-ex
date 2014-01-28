@@ -1,6 +1,6 @@
 <?php
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.5.15' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.5.16' );
 define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://updates.siteorigin.com' );
 
 include get_template_directory() . '/extras/premium/premium.php';
@@ -414,3 +414,21 @@ function origami_set_is_blog_archive($new) {
 	global $origami_is_blog_archive;
 	$origami_is_blog_archive = $new;
 }
+
+if( !function_exists('origami_header_image') ) :
+function origami_header_image(){
+
+	$header = get_custom_header();
+
+	echo '<img src="' . esc_url( $header->url ) .  '"';
+	if(!empty($header->height)) {
+		echo ' height="' . $header->height . '"';
+	}
+	if(!empty($header->width)) {
+		echo ' width="' . $header->width . '"';
+	}
+
+	echo ' alt="' . esc_attr( get_bloginfo('name') ) . '" />';
+
+}
+endif;

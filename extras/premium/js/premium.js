@@ -6,7 +6,7 @@ jQuery( function ( $ ) {
     var minPrice = Number( $('#theme-upgrade input[name=variable_pricing_custom]').attr('min') );
 
     // Handle clicking the play button
-    $('#theme-upgrade #click-to-play').click(function(){
+    $('#theme-upgrade #click-to-play').click(function(e){
         // Open the Vimeo video in a new window
         window.open($(this).attr('href'), 'videowindow', 'width=640,height=362,resizeable,scrollbars');
         return false;
