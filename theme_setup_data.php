@@ -13,7 +13,7 @@ function theme_data_setup()
 	$slide_image_uri =WEBRITI_TEMPLATE_DIR_URI .'/images/default/slide/slide.png';
 	return $rambo_theme_options=array(
 			//Logo and Fevicon header			
-			'front_page'  => 'on',
+			
 			'rambo_stylesheet'=>'default.css',			
 			'upload_image_logo'=>'',
 			'height'=>'50',
@@ -23,7 +23,7 @@ function theme_data_setup()
 			'webrit_custom_css'=>'',
 			
 			//Home image section 	
-			'home_slider_enabled'=>'on',
+			'home_banner_enabled'=>'on',
 			'home_custom_image' => $slide_image_uri,								
 			'home_image_title' => __('Theme Feature Goes Here!','rambo'),
 			'home_image_description' => __('Rambo makes content easy to view on any device with any resolution. You may check this with resizing. Fully Responsive Theme Amazing Design.','rambo'),	

@@ -27,9 +27,10 @@ get_template_part('banner','strip'); ?>
 					<p><?php the_content( __( 'Read More' , 'rambo' ) );?></p>
 					</div>
 				</div>
-				<?php endwhile;?>		 
-			</div>
+			</div>	
+			<?php endwhile;?>		 
 		</div>
 		<?php get_sidebar();?>
+		</div>
 </div>
 <?php  get_footer(); ?>

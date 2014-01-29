@@ -7,7 +7,7 @@
 			if ( empty($_POST) || !wp_verify_nonce($_POST['rambo_gernalsetting_nonce_customization'],'rambo_customization_nonce_gernalsetting') )
 			{  print 'Sorry, your nonce did not verify.';	exit; }
 			else  
-			{	$current_options['front_page'] = sanitize_text_field($_POST['front_page']);			
+			{			
 				$current_options['upload_image_logo']=sanitize_text_field($_POST['upload_image_logo']);			
 				$current_options['height']=sanitize_text_field($_POST['height']);
 				$current_options['width']=sanitize_text_field($_POST['width']);
@@ -24,7 +24,7 @@
 		}	
 		if($_POST['rambo_settings_save_1'] == 2) 
 		{
-			$current_options['front_page'] = "on" ;		
+				
 			$current_options['upload_image_logo']="";
 			$current_options['height']=50;
 			$current_options['width']=150;
@@ -39,8 +39,8 @@
 	<form method="post" id="rambo_theme_options_1">
 		<?php wp_nonce_field('rambo_customization_nonce_gernalsetting','rambo_gernalsetting_nonce_customization'); ?>
 		<div class="section">
-			<h3><?php _e('Enable Front Page','rambo'); ?>  </h3>
-			<input type="checkbox" <?php if($current_options['front_page']=='on') echo "checked='checked'"; ?> id="front_page" name="front_page" > <span class="explain"><?php _e('Enable front page .','rambo'); ?></span>
+			<h3><?php _e('Home to Enable Theme Specific Homepage ?','rambo'); ?>  </h3>
+			<span class="explain" id="explain"><b><?php _e(' Create a New Page with the Template "Business Home Page. Then assign it as Front Page in the WordPress Settings -> Reading Settings.','rambo'); ?></b></span>
 		</div>			
 		<div class="section">
 			<h3><?php _e('Custom Logo','rambo'); ?>

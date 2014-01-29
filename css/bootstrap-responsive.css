@@ -1112,6 +1112,5 @@
 and (min-device-width : 481px) 
 and (max-device-width : 800px) {
 /* Styles */
-.slider_con{display:none;}
+.banner_con{display:none;}
 }
-

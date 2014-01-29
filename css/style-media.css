@@ -1,8 +1,5 @@
 /* -----Add additional css created by Shahid----- */
 @media (max-width: 480px) {
-.main_slider {
-	/* height: 100%; */
-	}
 .team_bg {
     margin-bottom: 30px;
 	}
@@ -32,7 +29,7 @@
 .para_img_pull{
 	margin: 0px !important;
 	}	
-.slider_con {
+.banner_con {
     display: none;
 	}
 .sidebar_widget {
@@ -56,7 +53,7 @@
 .featured_port_projects{
 	margin-bottom: 40px;
 	}	
-.slider_con {
+.banner_con {
     display: none;
 	}
 .sidebar_widget {

@@ -1,5 +1,5 @@
 <div class="block ui-tabs-panel deactive" id="option-ui-id-2" >
-	<h2><?php _e('Slider Settings','rambo');?></h2><hr>	
+	<h2><?php _e('Home Banner Settings','rambo');?></h2><hr>	
 	<?php $current_options = get_option('rambo_theme_options');
 	if(isset($_POST['rambo_settings_save_2']))
 	{	
@@ -13,10 +13,10 @@
 				$current_options['home_image_title']=sanitize_text_field($_POST['home_image_title']);
 				$current_options['home_image_description']=sanitize_text_field($_POST['home_image_description']);
 				
-				// slider section enabled yes ya on
-				if($_POST['home_slider_enabled'])
-				{ echo $current_options['home_slider_enabled']= sanitize_text_field($_POST['home_slider_enabled']); } 
-				else { echo $current_options['home_slider_enabled']="off"; } 
+				// home_banner section enabled yes OR no
+				if($_POST['home_banner_enabled'])
+				{ echo $current_options['home_banner_enabled']= sanitize_text_field($_POST['home_banner_enabled']); } 
+				else { echo $current_options['home_banner_enabled']="off"; } 
 			
 				
 				update_option('rambo_theme_options',stripslashes_deep($current_options));
@@ -25,7 +25,7 @@
 		if($_POST['rambo_settings_save_2'] == 2) 
 		{
 			$slide_image_uri =WEBRITI_TEMPLATE_DIR_URI .'/images/default/slide/slide.png';
-			$current_options['home_slider_enabled']="on";
+			$current_options['home_banner_enabled']="on";
 			$current_options['home_custom_image']=$slide_image_uri;
 			$current_options['home_image_title']="Fully Responsive Theme !";
 			$current_options['home_image_description']="Rambo makes content easy to view on any device with any resolution. You may check this with resizing. Fully Responsive Theme Amazing Design.";
@@ -36,7 +36,7 @@
 		<?php wp_nonce_field('rambo_customization_nonce_gernalsetting','rambo_gernalsetting_nonce_customization'); ?>
 		<div class="section">
 			<h3><?php _e('Banner in Front page','rambo'); ?>  </h3>
-			<input type="checkbox" <?php if($current_options['home_slider_enabled']=='on') echo "checked='checked'"; ?> id="home_slider_enabled" name="home_slider_enabled" > <span class="explain"><?php _e('Enable Banner on front page.','rambo'); ?></span>
+			<input type="checkbox" <?php if($current_options['home_banner_enabled']=='on') echo "checked='checked'"; ?> id="home_banner_enabled" name="home_banner_enabled" > <span class="explain"><?php _e('Enable Banner on front page.','rambo'); ?></span>
 		</div>					
 		<div class="section">
 			<h3><?php _e('Banner Image','rambo'); ?>

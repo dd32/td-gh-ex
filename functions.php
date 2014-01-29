@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
 * @Theme Name	:	rambo
 * @file         :	functions.php
@@ -21,9 +21,7 @@
 	
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/commentbox/comment-function.php' ); //for comments
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/widget/custom-sidebar.php' ); //for widget register
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/resize_image/resize_image.php' ); //for widget register	
-			
-	global $resetno; //user for reset function
+	
 	//content width
 	if ( ! isset( $content_width ) ) $content_width = 770;	
 	
@@ -52,9 +50,8 @@
 		
 		add_theme_support( 'post-thumbnails' ); //supports featured image
 		add_theme_support( 'automatic-feed-links' ); //feed links enabled
-		//add_theme_support( 'custom-header');		
-		//add_theme_support( 'custom-background') ;
-		//add_editor_style() ;
+		add_image_size('blog1_section_img',270,260,true);
+		add_image_size('blog2_section_img',770,300,true);		
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menu( 'primary', __( 'Primary Menu', 'rambo' ) );
 		

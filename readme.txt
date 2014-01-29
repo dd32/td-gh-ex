@@ -84,7 +84,9 @@ Support
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
-abase
+ChangLog
+@Version: 1.0.5
+Some Small bug fixed.
 @Version: 1.0.4
 ->Added font references.
 @Version: 1.0.3

@@ -35,8 +35,8 @@
 				<!--most 1 tabs header_page_settings --> 
 				<?php require_once('pages/header_page_settings.php'); ?>
 				
-				<!--most 2 tabs slider_page_settings --> 
-				<?php require_once('pages/slider_page_settings.php'); ?>
+				<!--most 2 tabs Home Banner Settings --> 
+				<?php require_once('pages/home_page_banner_settings.php'); ?>
 				
 				<!--most 3 tabs service_page_settings --> 
 				<?php require_once('pages/service_page_settings.php'); ?>

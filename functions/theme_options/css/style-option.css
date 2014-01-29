@@ -347,6 +347,7 @@
     width: auto;
 	margin-left:10px;
 }
+#explain { font-size:14px !important; }
 #content .section h3 {
     font-size: 1.1em;
     margin-bottom: 5px;

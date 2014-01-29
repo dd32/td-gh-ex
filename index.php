@@ -38,7 +38,6 @@ $image_uri= WEBRITI_TEMPLATE_DIR_URI. '/images' ;
 					</span><?php } ?>
 					<a href="<?php the_permalink(); ?>" class="blog_section_readmore pull-right"><?php _e('Read more...','rambo');?></a>
 					</p>
-				
 					</div>
 				</div>
 			</div>

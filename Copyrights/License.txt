@@ -1,5 +1,6 @@
 *Rambo Resources 
 ->	Images are used in the theme as place holder images are taken from dummyimage.com 
+	The Images are licensed under MIT.You can redistribute it.
 	URl: http://dummyimage.com/1400x470/f2e6f2/000333 (Slide Image)
 	URI : http://dummyimage.com/270x170/f2e6f2/000333 (Portfolio Projects)
 	
