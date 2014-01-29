@@ -115,19 +115,23 @@ function bicubic_comment( $comment, $args, $depth ) {
 
 // filter the page title
 function bicubic_wp_title( $title, $sep ) {
-	global $paged, $page;
-	if ( is_feed() )
-		return $title;
-	// add the site name.
-	$title .= get_bloginfo( 'name' );
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title $sep $site_description";
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'bicubic' ), max( $paged, $page ) );
-	return $title;
+		global $paged, $page;
+		if ( is_feed() )
+			return $title;
+		// add the site name.
+		$title .= get_bloginfo( 'name' );
+		// Add the site description for the home/front page.
+		$site_description = get_bloginfo( 'description', 'display' );
+		if ( $site_description && ( is_home() || is_front_page() ) )
+			$title = "$title $sep $site_description";
+		// Add a page number if necessary.
+		if ( $paged >= 2 || $page >= 2 )
+			$title = "$title $sep " . sprintf( __( 'Page %s', 'bicubic' ), max( $paged, $page ) );
+		if ( $title == '' ) {
+		 	return 'Untitled';
+		} else {	
+			return $title;
+		}
 }
 
 // function for ie
