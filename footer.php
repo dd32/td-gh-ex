@@ -41,7 +41,7 @@
 </div>
 
 	<div class="site-info">
-		Copyright <?php echo date('Y'); ?>  <a href="<?php echo home_url() ; ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> - 
+		Copyright <?php echo date('Y'); ?>  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> - 
 		<a href="http://wordpress.org" title="WordPress Blog Platform">Proudly powered by WordPress</a>
 	</div>
 

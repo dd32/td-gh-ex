@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: GridBulletin v1.0\n"
+"Project-Id-Version: GridBulletin v1.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-01-26 14:43:29+0000\n"
+"PO-Revision-Date: 2014-01-27 18:38:14+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -93,23 +93,23 @@ msgstr "&laquo; Oudere berichten"
 msgid "Newer posts &raquo;"
 msgstr "Nieuwere berichten &raquo;"
 
-#: functions.php:94
+#: functions.php:96
 #@ gridbulletin
 msgid "Primary Sidebar"
 msgstr "Hoofd Sidebar"
 
-#: functions.php:96
-#: functions.php:106
-#: functions.php:116
-#: functions.php:126
-#: functions.php:136
-#: functions.php:146
-#: functions.php:156
+#: functions.php:98
+#: functions.php:108
+#: functions.php:118
+#: functions.php:128
+#: functions.php:138
+#: functions.php:148
+#: functions.php:158
 #@ gridbulletin
 msgid "Select widgets from the right-hand side."
 msgstr "Selecteer widgets van de rechterkant."
 
-#: functions.php:201
+#: functions.php:197
 #@ gridbulletin
 msgid "Boats"
 msgstr "Boten"
@@ -167,13 +167,13 @@ msgid_plural "%1$s responses on %2$s"
 msgstr[0] "1 reactie op %2$s"
 msgstr[1] "%1$s reacties op %2$s"
 
-#: functions.php:224
-#: functions.php:230
+#: functions.php:206
+#: functions.php:212
 #@ gridbulletin
 msgid "Logo"
 msgstr "Logo"
 
-#: functions.php:226
+#: functions.php:208
 #@ gridbulletin
 msgid "Upload a logo to replace blogname and description in header"
 msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
@@ -202,102 +202,35 @@ msgstr "Plaats reactie"
 msgid "% responses"
 msgstr "% reacties"
 
-#: functions.php:104
+#: functions.php:106
 #@ gridbulletin
 msgid "Footer Right"
 msgstr "Footer Rechts"
 
-#: functions.php:114
+#: functions.php:116
 #@ gridbulletin
 msgid "Footer Middle"
 msgstr "Footer Midden"
 
-#: functions.php:124
+#: functions.php:126
 #@ gridbulletin
 msgid "Footer Left"
 msgstr "Footer Links"
 
-#: functions.php:134
+#: functions.php:136
 #@ gridbulletin
 msgid "Footer Home Right"
 msgstr "Footer Home Rechts"
 
-#: functions.php:144
+#: functions.php:146
 #@ gridbulletin
 msgid "Footer Home Middle"
 msgstr "Footer Home Midden"
 
-#: functions.php:154
+#: functions.php:156
 #@ gridbulletin
 msgid "Footer Home Left"
 msgstr "Footer Home Links"
-
-#: theme-options.php:9
-#@ gridbulletin
-msgid "Theme Options"
-msgstr "Thema Instellingen"
-
-#: theme-options.php:12
-#@ gridbulletin
-msgid "Welcome on the theme options page. On this page you can set all options this theme offers. Enjoy."
-msgstr "Welkom op de thema instellingenpagina. Op deze pagina kun je alle opties instellen die dit thema heeft. Veel plezier."
-
-#: theme-options.php:17
-#: theme-options.php:23
-#@ gridbulletin
-msgid "Description"
-msgstr "Beschrijving"
-
-#: theme-options.php:18
-#: theme-options.php:24
-#@ gridbulletin
-msgid "What to do"
-msgstr "Wat te doen"
-
-#: theme-options.php:30
-#: theme-options.php:34
-#: theme-options.php:38
-#: theme-options.php:42
-#: theme-options.php:46
-#: theme-options.php:50
-#@ gridbulletin
-msgid "click here"
-msgstr "klik hier"
-
-#: functions.php:214
-#@ gridbulletin
-msgid "You do not have permission to access this page"
-msgstr "Je hebt geen rechten om deze pagina te bezoeken"
-
-#: theme-options.php:29
-#@ gridbulletin
-msgid "For setting menu"
-msgstr "Om menu in te stellen"
-
-#: theme-options.php:33
-#@ gridbulletin
-msgid "For setting static homepage"
-msgstr "Om statische startpagina in te stellen"
-
-#: theme-options.php:37
-#@ gridbulletin
-msgid "For setting header-image"
-msgstr "Om header-afbeelding in te stellen"
-
-#: theme-options.php:41
-#@ gridbulletin
-msgid "For setting logo"
-msgstr "Om logo in te stellen"
-
-#: theme-options.php:45
-#@ gridbulletin
-msgid "For setting background (image)"
-msgstr "Om achtergrond (afbeelding) in te stellen"
-
-#: theme-options.php:49
-#@ gridbulletin
-msgid "For setting widgets"
-msgstr "Om widgets in te stellen"
 
 #: archive.php:49
 #: index.php:32

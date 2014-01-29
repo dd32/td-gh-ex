@@ -37,6 +37,8 @@
 	// Resize thumbnails
 		set_post_thumbnail_size( 650, 550 ); 
 
+	// Resize homepage, archive and search thumbnails
+		add_image_size( 'homepage', 250, 250 ); 
 
 	// This feature adds RSS feed links to html head 
 		add_theme_support( 'automatic-feed-links' );
@@ -52,6 +54,15 @@
 
 	}
 	add_action( 'after_setup_theme', 'gridbulletin_setup' ); 
+
+
+// Add html5 support for older IE version 
+	function gridbulletin_html5() { 
+		echo '<!--[if lt IE 9]>'. "\n"; 
+		echo '<script src="' . esc_url( get_template_directory_uri() . '/js/ie.js' ) . '"></script>'. "\n"; 
+		echo '<![endif]-->'. "\n"; 
+		} 
+	add_action( 'wp_head', 'gridbulletin_html5' ); 
 
 
 // Enqueues scripts and styles for front-end
@@ -170,27 +181,11 @@
 	add_filter( 'excerpt_length', 'gridbulletin_excerpt_length', 999 ); 
 
 
-
 // Add class to the excerpt 
 	function gridbulletin_excerpt( $excerpt ) {
     		return str_replace('<p', '<p class="excerpt"', $excerpt);
 		}
 	add_filter( "the_excerpt", "gridbulletin_excerpt" );
-
-
-// Resize homepage thumbnails
-	if ( function_exists( 'add_image_size' ) ) { 
-		add_image_size( 'homepage', 250, 250 ); 
-	}
-
-
-// Add html5 support for older IE version 
-	function gridbulletin_html5_shim () { 
-		echo '<!--[if lt IE 9]>'; 
-		echo '<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>'; 
-		echo '<![endif]-->'; 
-		} 
-	add_action('wp_head', 'gridbulletin_html5_shim');
 
 
 // Default header
@@ -201,20 +196,6 @@
 		'description' => __( 'Boats', 'gridbulletin' )
 		)
 	) );
-
-
-// Theme Options Page
-	function register_gridbulletin_menu_page(){ 
-		add_theme_page('GridBulletin', 'GridBulletin', 'manage_options', 'gridbulletin', 'gridbulletin_options' ); 
- 	} 
-	add_action( 'admin_menu', 'register_gridbulletin_menu_page' ); 
-
-	function gridbulletin_options() { 
-		if (!current_user_can('manage_options')) { 
-			wp_die( __('You do not have permission to access this page', 'gridbulletin' ) ); 
-			} 
-			include 'theme-options.php'; 
-		}
 
 
 // Theme Customizer (option to add logo)

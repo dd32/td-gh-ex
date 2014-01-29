@@ -1,10 +1,10 @@
 /*
 Theme Name: GridBulletin
 Theme URI: http://www.guidovanderleest.nl/gridbulletin
-Version: 1.0
+Version: 1.1
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
-Description: GridBulletin is a free, basic, clean, minimalistic, responsive, mobile friendly, WordPress theme in bulletin board layout. Grid layout on homepage and archive page, primary sidebar, 3 widget-area's in footer, custom header-image, custom background, display logo or blogname and description, full width page-template, dropdown navigation and a simple theme optionspage are included. Besides this no fancy options, no slideshow, this one only has the basic options. Enjoy. 
+Description: GridBulletin is a free, basic, clean, minimalistic, responsive, mobile friendly, WordPress theme in bulletin board layout. Grid layout on homepage and archive page, primary sidebar, 3 widget-area's in footer, custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settings page, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
 Tags: one-column, two-columns, four-columns, right-sidebar, fixed-layout, responsive-layout, fluid-layout, full-width-template, custom-background, custom-header, custom-menu, featured-images, white, blue, orange, light, editor-style, translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -252,8 +252,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 	#sidebar {width:100%; border:0; margin:0; padding:0; float:left;}
 	#footer {width:100%;}
 	.article, .article-full {padding:0; margin:0; border:0; background:none;}
-	.entry-title, .entry-title-grid, .page-title, .widgettitle, .comments-title {font-size:1.3em;}
-	.entry-title-grid {text-align:left;}
+	.entry-title, .entry-title-grid, .page-title, .widgettitle, .comments-title {font-size:1.3em; text-align:left;}
 	.comment-body {border:0; padding:0;}
 	.widget {margin: 15px 0 15px;}
 	.post-home, .post-home.left, .post-home.right {width:100%; border:0; margin:10px 0; padding:0; float:left; background:none;} 
