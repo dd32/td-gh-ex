@@ -2,7 +2,7 @@
 Theme Name: QuickPress
 Theme URI: http://www.quickonlinethemes.com/wordpress/quickpress/
 Description: A lightweight, 2-3 columns, widget ready, SEO optimized, fast loading, easy to customize WordPress theme.
-Version: 1.7
+Version: 1.7.1
 Author: QuickOnlineThemes
 Author URI: http://www.quickonlinethemes.com/
 Tags: white, blue, gray, silver, light, two-columns, three-columns, right-sidebar, fixed-layout, responsive-layout, threaded-comments, sticky-post, custom-background
@@ -453,8 +453,10 @@ border-bottom: 1px solid #eee;
 
 /* Begin Form Elements
 ------------------------------------- */
-#searchform  {
+.header-search {
 float:right;
+}
+#searchform  {
 }
 #searchform #s {
 border: 1px solid #999;
@@ -840,7 +842,7 @@ width: 95%;
 }
 
 @media screen and (max-width: 600px) {
-#searchform {
+.header-search {
 float:none;  
 display:block;
 }

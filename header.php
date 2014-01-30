@@ -13,7 +13,7 @@
 <body <?php body_class(); ?>>
 <div id="page">
 <div id="header">
-<div class="searchform" >
+<div class="searchform header-search" >
 <!-- Search --> 
 <?php get_search_form(); ?>
 </div>
