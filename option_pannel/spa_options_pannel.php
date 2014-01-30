@@ -65,7 +65,7 @@
                     <td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri('template_directory').'/option_pannel/images/icon_check.png' ?> " /></p></td>
                     <td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri('template_directory').'/option_pannel/images/icon_check.png' ?> " /></p></td>
                 </tr>
-    <tr>
+				<tr>
                     <td>&nbsp;</td>
                     <td><p><b>Responsive Home Page Slider</b><span class="icon help" style="float:right">
 					<span class="tooltip"><?php  _e('Showcase your most important services with the Home Page Slider.','sis_spa');?></span></span> </p></td>
