@@ -25,13 +25,26 @@ register_sidebar(array(
         'before_title' => '<h4>',
         'after_title' => '</h4>',
 )); 
+register_sidebar(array(
+        'name' => __( 'Nav Menu', 'quickpic' ),
+        'id' => 'nav-menu',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '',
+        'after_title' => '',
+));
 }
 add_action( 'init', 'quickpic_widgets_init' );
-
 /* Add feeds */
 add_theme_support('automatic-feed-links');
-  
-
+// Custom Background 
+$args = array(
+	'default-color' => '444444',
+	'default-image' => get_template_directory_uri() . '/images/background.jpg',
+);
+add_theme_support( 'custom-background', $args );
+// post thumbnails
+add_theme_support('post-thumbnails');
 /* Title filter */
 function quick_title( $title ) {
     // Get the Site Name
@@ -42,9 +55,7 @@ function quick_title( $title ) {
     return $filtered_title;
 }
 add_filter( 'wp_title', 'quick_title');
-
 /* Content width */
 if ( ! isset( $content_width ) )
 	$content_width = 540;
-
 ?>
