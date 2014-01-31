@@ -68,9 +68,28 @@ function unite_wp_title( $title, $sep ) {
 add_filter( 'wp_title', 'unite_wp_title', 10, 2 );
 
 
+// Mark Posts/Pages as Untiled when no title is used
+add_filter( 'the_title', 'unite_title' );
+
+function unite_title( $title ) {
+  if ( $title == '' ) {
+    return 'Untitled';
+  } else {
+    return $title;
+  }
+}
+
 // Add Filters
 
 add_filter('widget_text', 'do_shortcode'); // Allow shortcodes in Dynamic Sidebar
+
+// Prevent page scroll when clicking the more link
+
+function unite_remove_more_link_scroll( $link ) {
+  $link = preg_replace( '|#more-[0-9]+|', '', $link );
+  return $link;
+}
+add_filter( 'the_content_more_link', 'unite_remove_more_link_scroll' );
 
 /**
  * Sets the authordata global when viewing an author archive.
@@ -142,25 +161,25 @@ function unite_add_custom_table_class( $content ) {
 }
 
 //Display social links
-function colorlib_social(){
+function unite_social(){
   $output = '<div id="social" class="social">';
-  $output .= colorlib_social_item(of_get_option('social_facebook'), 'Facebook', 'facebook');
-  $output .= colorlib_social_item(of_get_option('social_twitter'), 'Twitter', 'twitter');
-  $output .= colorlib_social_item(of_get_option('social_google'), 'Google Plus', 'google-plus');
-  $output .= colorlib_social_item(of_get_option('social_youtube'), 'YouTube', 'youtube');
-  $output .= colorlib_social_item(of_get_option('social_linkedin'), 'LinkedIn', 'linkedin');
-  $output .= colorlib_social_item(of_get_option('social_pinterest'), 'Pinterest', 'pinterest');
-  $output .= colorlib_social_item(of_get_option('social_feed'), 'Feed', 'rss');
-  $output .= colorlib_social_item(of_get_option('social_tumblr'), 'Tumblr', 'tumblr');
-  $output .= colorlib_social_item(of_get_option('social_flickr'), 'Flickr', 'flickr');
-  $output .= colorlib_social_item(of_get_option('social_instagram'), 'Instagram', 'instagram');
-  $output .= colorlib_social_item(of_get_option('social_dribbble'), 'Dribbble', 'dribbble');
-  $output .= colorlib_social_item(of_get_option('social_skype'), 'Skype', 'skype');
+  $output .= unite_social_item(of_get_option('social_facebook'), 'Facebook', 'facebook');
+  $output .= unite_social_item(of_get_option('social_twitter'), 'Twitter', 'twitter');
+  $output .= unite_social_item(of_get_option('social_google'), 'Google Plus', 'google-plus');
+  $output .= unite_social_item(of_get_option('social_youtube'), 'YouTube', 'youtube');
+  $output .= unite_social_item(of_get_option('social_linkedin'), 'LinkedIn', 'linkedin');
+  $output .= unite_social_item(of_get_option('social_pinterest'), 'Pinterest', 'pinterest');
+  $output .= unite_social_item(of_get_option('social_feed'), 'Feed', 'rss');
+  $output .= unite_social_item(of_get_option('social_tumblr'), 'Tumblr', 'tumblr');
+  $output .= unite_social_item(of_get_option('social_flickr'), 'Flickr', 'flickr');
+  $output .= unite_social_item(of_get_option('social_instagram'), 'Instagram', 'instagram');
+  $output .= unite_social_item(of_get_option('social_dribbble'), 'Dribbble', 'dribbble');
+  $output .= unite_social_item(of_get_option('social_skype'), 'Skype', 'skype');
   $output .= '</div>';
   echo $output;
 }
 
-function colorlib_social_item($url, $title = '', $icon = ''){
+function unite_social_item($url, $title = '', $icon = ''){
   if($url != ''):
     $output = '<a class="social-profile" href="'.$url.'" target="_blank" title="'.$title.'">';
     if($icon != '') $output .= '<span class="social_icon fa fa-'.$icon.'"></span>';
@@ -169,9 +188,9 @@ function colorlib_social_item($url, $title = '', $icon = ''){
   endif;
 }
 
-// the footer menu (should you choose to use one)
+// footer menu (should you choose to use one)
 function unite_footer_links() {
-        // display the WP3 menu if available
+        // display the WordPress Custom Menu if available
         wp_nav_menu(array(
                 'container' => '',                              // remove nav container
                 'container_class' => 'footer-links clearfix',   // class of container (should you choose to use it)
@@ -303,7 +322,7 @@ function unite_options_display_sidebar() { ?>
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
 
-  <div id="optionsframework-metabox" class="metabox-holder">
+  <div id="optionsframework-sidebar" class="metabox-holder">
     <div id="optionsframework" class="postbox">
         <h3><?php _e('Support and Documentation','unite') ?></h3>
           <div class="inside">
@@ -342,13 +361,6 @@ function unite_register_required_plugins() {
    * If the source is NOT from the .org repo, then source is also required.
    */
   $plugins = array(
-
-    // Download Options Framework from WordPress Plugin Repository
-    array(
-      'name'    => 'Option Framework',
-      'slug'    => 'options-framework',
-      'required'  => true,
-    ),
 
     // Download Bootstrap Slider Plugin from WordPress Plugin Repository
     array(
@@ -399,39 +411,4 @@ function unite_register_required_plugins() {
 
   tgmpa( $plugins, $config );
 
-}
-
-/*
- * This one shows/hides the an option when a checkbox is clicked.
- *
- */
-
-add_action( 'optionsframework_custom_scripts', 'optionsframework_custom_scripts' );
-
-function optionsframework_custom_scripts() { ?>
-
-<script type="text/javascript">
-jQuery(document).ready(function() {
-
-  jQuery('#example_showhidden').click(function() {
-      jQuery('#section-example_text_hidden').fadeToggle(400);
-  });
-
-  if (jQuery('#example_showhidden:checked').val() !== undefined) {
-    jQuery('#section-example_text_hidden').show();
-  }
-
-  jQuery('#showhidden_slideroptions').click(function() {
-      jQuery('#section-slider_options').fadeToggle(400);
-  });
-  
-  if (jQuery('#showhidden_slideroptions:checked').val() !== undefined) {
-    jQuery('#section-slider_options').show();
-  }
-
-});
-</script>
-
-
-<?php
 }

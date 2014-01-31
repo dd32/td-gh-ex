@@ -1,10 +1,10 @@
 <?php
-/*
-Template Name: Homepage
-*/
-?>
+    
+    if ( get_option( 'show_on_front' ) == 'posts' ) {
+        get_template_part( 'index' );
+    } elseif ( 'page' == get_option( 'show_on_front' ) ) {
 
-<?php get_header(); ?>
+ get_header(); ?>
 
 	<div id="primary" class="content-area col-sm-12 col-md-12">
 		<main id="main" class="site-main" role="main">
@@ -27,15 +27,15 @@ Template Name: Homepage
 					<div class="home-widget-area">
 
 						<div class="col-sm-6 col-md-4 home-widget">
-							<?php dynamic_sidebar('home1'); ?>
+							<?php if( is_active_sidebar('home1') ) dynamic_sidebar( 'home1' ); ?> 
 						</div>
 
 						<div class="col-sm-6 col-md-4 home-widget">	
-							<?php dynamic_sidebar('home2'); ?>
+							<?php if( is_active_sidebar('home2') ) dynamic_sidebar( 'home2' ); ?> 
 						</div>	
 						
 						<div class="col-sm-6 col-md-4 home-widget">
-							<?php dynamic_sidebar('home3');  ?>
+							<?php if( is_active_sidebar('home3') ) dynamic_sidebar( 'home3' ); ?> 
 						</div>	
 						
 					</div>
@@ -52,4 +52,7 @@ Template Name: Homepage
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_footer(); ?>
+<?php 
+	get_footer(); 
+}
+?>

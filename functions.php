@@ -121,15 +121,15 @@ add_filter( 'get_search_form', 'unite_wpsearch' );
  */
 function unite_scripts() {
 
-    wp_enqueue_style( 'unite-bootstrap', get_template_directory_uri() . '/inc/css/bootstrap.css' );
+    wp_enqueue_style( 'unite-bootstrap', get_template_directory_uri() . '/inc/css/bootstrap.min.css' );
 
     wp_enqueue_style( 'unite-icons', get_template_directory_uri().'/inc/css/font-awesome.min.css' );
 
 	wp_enqueue_style( 'unite-style', get_stylesheet_uri() );
 
-	wp_enqueue_script('unite-bootstrapjs', get_template_directory_uri().'/inc/js/bootstrap.js', array('jquery') );
+	wp_enqueue_script('unite-bootstrapjs', get_template_directory_uri().'/inc/js/bootstrap.min.js', array('jquery') );
 
-	wp_enqueue_script( 'unite-bootstrapwp', get_template_directory_uri() . '/inc/js/bootstrap-wp.js', array('jquery') );
+	wp_enqueue_script( 'unite-functions', get_template_directory_uri() . '/inc/js/main.min.js', array('jquery') );
 
 	wp_enqueue_script( 'unite-skip-link-focus-fix', get_template_directory_uri() . '/inc/js/skip-link-focus-fix.js', array(), '20130115', true );
 
@@ -140,26 +140,14 @@ function unite_scripts() {
 add_action( 'wp_enqueue_scripts', 'unite_scripts' );
 
 /*
- * Helper function to return the theme option value. If no value has been saved, it returns $default.
- * Needed because options are saved as serialized strings.
+ * Loads the Options Panel
  *
- * This code allows the theme to work without errors if the Options Framework plugin has been disabled.
+ * If you're loading from a child theme use stylesheet_directory
+ * instead of template_directory
  */
-if ( !function_exists( 'of_get_option' ) ) {
-function of_get_option($name, $default = false) {
-	$optionsframework_settings = get_option('optionsframework');
-	// Gets the unique option id
-	$option_name = $optionsframework_settings['id'];
-	if ( get_option($option_name) ) {
-		$options = get_option($option_name);
-	}
-	if ( isset($options[$name]) ) {
-		return $options[$name];
-	} else {
-		return $default;
-	}
-}
-}
+
+define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/admin/' );
+require_once dirname( __FILE__ ) . '/inc/admin/options-framework.php';
 
 /**
  * Implement the Custom Header feature.

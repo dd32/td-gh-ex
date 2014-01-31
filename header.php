@@ -38,7 +38,7 @@
 				<h4 class="site-description"><?php bloginfo( 'description' ); ?></h4>
 			</div>
 			<div class="social-header col-md-6">
-				<?php colorlib_social(); // Social icons in header ?>
+				<?php unite_social(); // Social icons in header ?>
 			</div>
 
 		</header><!-- #masthead -->
@@ -54,10 +54,9 @@
 		            </button>
 
 		        </div>
-
-		        <?php
+		        
+				<?php
 		            wp_nav_menu( array(
-		                'menu'              => 'primary',
 		                'theme_location'    => 'primary',
 		                'depth'             => 2,
 		                'container'         => 'div',

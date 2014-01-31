@@ -27,6 +27,3 @@ jQuery(document).ready(function(){
 	jQuery(document.body).show();
 
 });
-
-
-

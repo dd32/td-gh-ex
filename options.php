@@ -51,7 +51,7 @@ function optionsframework_options() {
 
         // Typography Defaults
         $typography_defaults = array(
-                'size' => '14px',
+                'size' => '15px',
                 'face' => 'Helvetica Neue',
                 'style' => 'normal',
                 'color' => '#6B6B6B' );

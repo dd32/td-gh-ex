@@ -4,7 +4,7 @@ Theme URI: http://colorlib.com/wp/unite
 Author: Colorlib
 Author URI: http://colorlib.com/wp/
 Description: Unite is a clean, modern and fully responsive WordPress wedding theme built using Bootstrap 3 which makes it optimized for tablets and mobile. It is a highly customizable theme with unlimited color variations that can be tweaked via simple yet powerful Theme Options.  Theme has a built-in Popular Posts Widget, Infinite Scroll (powered by Jatpack) and translation support.  Theme features fancy image slider, SEO friendly structure, logo support, social links and widgetized homepage.  This theme was built to be used for wedding related websites but can be tweaked to be used as any other image-centric blog such as travel. 
-Version: 1.0.1
+Version: 1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: unite
@@ -454,6 +454,23 @@ li.recentcomments {
 /* =Navigation
 ----------------------------------------------- */
 
+.site-main [class*="navigation"] a,
+.more-link {
+	border: 1px solid #DDD;
+	padding: 6px 12px;
+	border-radius: 4px;
+	display: block;
+}
+.site-main [class*="navigation"] a:hover,
+.more-link:hover {
+    color: #fff;
+    background: #54397E;
+    text-decoration: none;
+}
+.more-link {
+    float: right;
+    margin: 10px 0;
+}
 .site-main [class*="navigation"] {
 	margin: 0 0 1.5em;
 	overflow: hidden;
@@ -613,6 +630,13 @@ p.logged-in-as {
     word-wrap: break-word;
     white-space: inherit;
 }
+.comment-respond label {
+    display: block;
+    font-weight: normal;
+}
+.comment-respond .required {
+    color: #C7254E;
+}
 /* =Post styling
 ----------------------------------------------- */
 .entry-meta a {
@@ -639,23 +663,6 @@ p.logged-in-as {
     font-size: 52px;
     font-weight: 100;
     color: #54397E;
-}
-.site-main [class*="navigation"] a,
-.more-link {
-	border: 1px solid #DDD;
-	padding: 6px 12px;
-	border-radius: 4px;
-	display: block;
-}
-.site-main [class*="navigation"] a:hover,
-.more-link:hover {
-    color: #fff;
-    background: #54397E;
-    text-decoration: none;
-}
-.more-link {
-    float: right;
-    margin: 10px 0;
 }
 .btn.btn-primary.read-more {
     float: right;
@@ -691,7 +698,9 @@ hr.section-divider:after {
   margin-left: -20px;
   font-size: 30px;
 }
-
+.entry-content {
+	margin: 0;
+}
 /* =Attachment styling
 ----------------------------------------------- */
 #image-navigation .nav-previous a,
@@ -730,6 +739,7 @@ hr.section-divider:after {
 #colophon {
     background-color: #54397E;
     padding: 10px 0;
+    margin-top: 20px;
 }
 .site-info a {
     color: #eee;
@@ -810,6 +820,9 @@ hr.section-divider:after {
     background: rgba(0, 0, 0,0.4);
     padding: 15px;
     max-width: 50%;
+}
+.carousel {
+    margin-bottom: 20px;
 }
 @media screen and (min-width: 768px) {
   .carousel-indicators {
