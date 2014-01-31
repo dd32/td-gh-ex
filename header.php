@@ -1,4 +1,4 @@
-<?php?><!DOCTYPE html>
+<!DOCTYPE html>
 
 <html <?php language_attributes(); ?>
 
@@ -96,10 +96,10 @@
 							));
 							
 						} ?>
-						
-						<div class="clear"></div>
-						
+												
 					 </ul>
+					 
+					 <div class="clear"></div>
 					 
 					 <ul class="mobile-menu">
 					

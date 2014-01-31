@@ -1,7 +1,7 @@
 /*---------------------------------------------------------------------------------
 
 	Theme Name: Hemingway
-	Version: 1.02
+	Version: 1.03
 	Description: Hemingway is a clean, simple and beautiful theme for bloggers. Features responsive design, retina-ready assets, custom widgets (video, Flickr and Dribbble), archive page template and translation-ready code.
 	Tags: black, dark, white, green, two-columns, fluid-layout, responsive-layout, custom-header, custom-menu, featured-images, flexible-header, post-formats, sticky-post, threaded-comments, translation-ready
 	Author: Anders Norén
@@ -290,6 +290,8 @@ a.more-link {
 	font-weight: 300;
 	z-index: 1000;
 }
+
+.blog-menu >li:last-child:after { content: none; }
 
 .blog-menu a {
 	display: block;
