@@ -141,7 +141,9 @@ if ( ! function_exists( 'wp_barrister_theme_customizer' ) ) :
 			'description' => __( 'Upload a logo to replace the default site name in the header', 'wp-barrister' ),
 		) );
 		
-		$wp_customize->add_setting( 'wp_barrister_logo' );
+		$wp_customize->add_setting( 'wp_barrister_logo', array (
+			'sanitize_callback' => 'esc_url_raw',
+		) );
 		
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'wp_barrister_logo', array(
 			'label'    => __( 'Choose your logo (ideal width is 100-300px and ideal height is 40-100px)', 'wp-barrister' ),
@@ -152,6 +154,7 @@ if ( ! function_exists( 'wp_barrister_theme_customizer' ) ) :
 		/* link color */
 		$wp_customize->add_setting( 'wp_barrister_theme_color', array (
 			'default' => '#e31d1a',
+			'sanitize_callback' => 'sanitize_hex_color',
 		) );
 		
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'wp_barrister_theme_color', array(
@@ -168,7 +171,9 @@ if ( ! function_exists( 'wp_barrister_theme_customizer' ) ) :
 			'description' => __( 'Optional social media buttons in the header', 'wp-barrister' ),
 		) );
 		
-		$wp_customize->add_setting( 'wp_barrister_facebook' );
+		$wp_customize->add_setting( 'wp_barrister_facebook', array (
+			'sanitize_callback' => 'esc_url_raw',
+		) );
 		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wp_barrister_facebook', array(
 			'label'    => __( 'Enter your Facebook url', 'wp-barrister' ),
@@ -177,7 +182,9 @@ if ( ! function_exists( 'wp_barrister_theme_customizer' ) ) :
 			'priority'    => 101,
 		) ) );
 	
-		$wp_customize->add_setting( 'wp_barrister_twitter' );
+		$wp_customize->add_setting( 'wp_barrister_twitter', array (
+			'sanitize_callback' => 'esc_url_raw',
+		) );
 		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wp_barrister_twitter', array(
 			'label'    => __( 'Enter your Twitter url', 'wp-barrister' ),
@@ -186,7 +193,9 @@ if ( ! function_exists( 'wp_barrister_theme_customizer' ) ) :
 			'priority'    => 102,
 		) ) );
 		
-		$wp_customize->add_setting( 'wp_barrister_google' );
+		$wp_customize->add_setting( 'wp_barrister_google', array (
+			'sanitize_callback' => 'esc_url_raw',
+		) );
 		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wp_barrister_google', array(
 			'label'    => __( 'Enter your Google+ url', 'wp-barrister' ),
@@ -195,7 +204,9 @@ if ( ! function_exists( 'wp_barrister_theme_customizer' ) ) :
 			'priority'    => 103,
 		) ) );
 		
-		$wp_customize->add_setting( 'wp_barrister_pinterest' );
+		$wp_customize->add_setting( 'wp_barrister_pinterest', array (
+			'sanitize_callback' => 'esc_url_raw',
+		) );
 		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wp_barrister_pinterest', array(
 			'label'    => __( 'Enter your Pinterest url', 'wp-barrister' ),
@@ -204,7 +215,9 @@ if ( ! function_exists( 'wp_barrister_theme_customizer' ) ) :
 			'priority'    => 104,
 		) ) );
 		
-		$wp_customize->add_setting( 'wp_barrister_linkedin' );
+		$wp_customize->add_setting( 'wp_barrister_linkedin', array (
+			'sanitize_callback' => 'esc_url_raw',
+		) );
 		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wp_barrister_linkedin', array(
 			'label'    => __( 'Enter your Linkedin url', 'wp-barrister' ),
@@ -213,7 +226,9 @@ if ( ! function_exists( 'wp_barrister_theme_customizer' ) ) :
 			'priority'    => 105,
 		) ) );
 		
-		$wp_customize->add_setting( 'wp_barrister_youtube' );
+		$wp_customize->add_setting( 'wp_barrister_youtube', array (
+			'sanitize_callback' => 'esc_url_raw',
+		) );
 		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wp_barrister_youtube', array(
 			'label'    => __( 'Enter your Youtube url', 'wp-barrister' ),
@@ -222,7 +237,9 @@ if ( ! function_exists( 'wp_barrister_theme_customizer' ) ) :
 			'priority'    => 106,
 		) ) );
 		
-		$wp_customize->add_setting( 'wp_barrister_tumblr' );
+		$wp_customize->add_setting( 'wp_barrister_tumblr', array (
+			'sanitize_callback' => 'esc_url_raw',
+		) );
 		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wp_barrister_tumblr', array(
 			'label'    => __( 'Enter your Tumblr url', 'wp-barrister' ),
@@ -231,7 +248,9 @@ if ( ! function_exists( 'wp_barrister_theme_customizer' ) ) :
 			'priority'    => 107,
 		) ) );
 		
-		$wp_customize->add_setting( 'wp_barrister_instagram' );
+		$wp_customize->add_setting( 'wp_barrister_instagram', array (
+			'sanitize_callback' => 'esc_url_raw',
+		) );
 		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wp_barrister_instagram', array(
 			'label'    => __( 'Enter your Instagram url', 'wp-barrister' ),
@@ -240,7 +259,9 @@ if ( ! function_exists( 'wp_barrister_theme_customizer' ) ) :
 			'priority'    => 108,
 		) ) );
 		
-		$wp_customize->add_setting( 'wp_barrister_flickr' );
+		$wp_customize->add_setting( 'wp_barrister_flickr', array (
+			'sanitize_callback' => 'esc_url_raw',
+		) );
 		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wp_barrister_flickr', array(
 			'label'    => __( 'Enter your Flickr url', 'wp-barrister' ),
@@ -249,7 +270,9 @@ if ( ! function_exists( 'wp_barrister_theme_customizer' ) ) :
 			'priority'    => 109,
 		) ) );
 		
-		$wp_customize->add_setting( 'wp_barrister_vimeo' );
+		$wp_customize->add_setting( 'wp_barrister_vimeo', array (
+			'sanitize_callback' => 'esc_url_raw',
+		) );
 		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wp_barrister_vimeo', array(
 			'label'    => __( 'Enter your Vimeo url', 'wp-barrister' ),
@@ -258,7 +281,9 @@ if ( ! function_exists( 'wp_barrister_theme_customizer' ) ) :
 			'priority'    => 110,
 		) ) );
 		
-		$wp_customize->add_setting( 'wp_barrister_yelp' );
+		$wp_customize->add_setting( 'wp_barrister_yelp', array (
+			'sanitize_callback' => 'esc_url_raw',
+		) );
 		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wp_barrister_yelp', array(
 			'label'    => __( 'Enter your Yelp url', 'wp-barrister' ),
@@ -267,7 +292,9 @@ if ( ! function_exists( 'wp_barrister_theme_customizer' ) ) :
 			'priority'    => 111,
 		) ) );
 		
-		$wp_customize->add_setting( 'wp_barrister_avvo' );
+		$wp_customize->add_setting( 'wp_barrister_avvo', array (
+			'sanitize_callback' => 'esc_url_raw',
+		) );
 		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wp_barrister_avvo', array(
 			'label'    => __( 'Enter your Avvo url', 'wp-barrister' ),
@@ -276,7 +303,9 @@ if ( ! function_exists( 'wp_barrister_theme_customizer' ) ) :
 			'priority'    => 112,
 		) ) );
 		
-		$wp_customize->add_setting( 'wp_barrister_rss' );
+		$wp_customize->add_setting( 'wp_barrister_rss', array (
+			'sanitize_callback' => 'esc_url_raw',
+		) );
 		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wp_barrister_rss', array(
 			'label'    => __( 'Enter your RSS url', 'wp-barrister' ),
@@ -285,7 +314,9 @@ if ( ! function_exists( 'wp_barrister_theme_customizer' ) ) :
 			'priority'    => 113,
 		) ) );
 		
-		$wp_customize->add_setting( 'wp_barrister_email' );
+		$wp_customize->add_setting( 'wp_barrister_email', array (
+			'sanitize_callback' => 'is_email',
+		) );
 		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wp_barrister_email', array(
 			'label'    => __( 'Enter your Email', 'wp-barrister' ),
@@ -301,7 +332,9 @@ if ( ! function_exists( 'wp_barrister_theme_customizer' ) ) :
 			'description' => __( 'Option to disable the semi transparent shadow/gradient at the top of the page background.', 'wp-barrister' ),
 		) );
 		
-		$wp_customize->add_setting( 'wp_barrister_shadow' );
+		$wp_customize->add_setting( 'wp_barrister_shadow', array (
+			'sanitize_callback' => 'wp_barrister_sanitize_checkbox',
+		) );
 		
 		$wp_customize->add_control('page_shadow', array(
 			'settings' => 'wp_barrister_shadow',
@@ -317,7 +350,9 @@ if ( ! function_exists( 'wp_barrister_theme_customizer' ) ) :
 			'description' => __( 'Option to disable the search box in header.', 'wp-barrister' ),
 		) );
 		
-		$wp_customize->add_setting( 'wp_barrister_search' );
+		$wp_customize->add_setting( 'wp_barrister_search', array (
+			'sanitize_callback' => 'wp_barrister_sanitize_checkbox',
+		) );
 		
 		$wp_customize->add_control('header_search', array(
 			'settings' => 'wp_barrister_search',
@@ -334,7 +369,9 @@ if ( ! function_exists( 'wp_barrister_theme_customizer' ) ) :
 			'description' => __( 'Adjust the behavior of the background image slider on Alt_Homepage.', 'wp-barrister' ),
 		) );
 		
-		$wp_customize->add_setting( 'wp_barrister_slider_speed' );
+		$wp_customize->add_setting( 'wp_barrister_slider_speed', array (
+			'sanitize_callback' => 'wp_barrister_sanitize_integer',
+		) );
 		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wp_barrister_slider_speed', array(
 			'label'    => __( 'Animation Speed in Seconds', 'wp-barrister' ),
@@ -342,7 +379,9 @@ if ( ! function_exists( 'wp_barrister_theme_customizer' ) ) :
 			'settings' => 'wp_barrister_slider_speed',
 		) ) );
 		
-		$wp_customize->add_setting( 'wp_barrister_slider_timeout' );
+		$wp_customize->add_setting( 'wp_barrister_slider_timeout', array (
+			'sanitize_callback' => 'wp_barrister_sanitize_integer',
+		) );
 		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wp_barrister_slider_timeout', array(
 			'label'    => __( 'Time Out (Interval) in Seconds', 'wp-barrister' ),
@@ -357,7 +396,9 @@ if ( ! function_exists( 'wp_barrister_theme_customizer' ) ) :
 			'description' => __( 'Option to show/hide the author bio in the posts.', 'wp-barrister' ),
 		) );
 		
-		$wp_customize->add_setting( 'wp_barrister_author_bio' );
+		$wp_customize->add_setting( 'wp_barrister_author_bio', array (
+			'sanitize_callback' => 'wp_barrister_sanitize_checkbox',
+		) );
 		
 		 $wp_customize->add_control('author_bio', array(
 			'settings' => 'wp_barrister_author_bio',
@@ -369,6 +410,28 @@ if ( ! function_exists( 'wp_barrister_theme_customizer' ) ) :
 	}
 endif;
 add_action('customize_register', 'wp_barrister_theme_customizer');
+
+/**
+ * Sanitize checkbox
+ */
+if ( ! function_exists( 'wp_barrister_sanitize_checkbox' ) ) :
+	function wp_barrister_sanitize_checkbox( $input ) {
+		if ( $input == 1 ) {
+			return 1;
+		} else {
+			return '';
+		}
+	}
+endif;
+
+/**
+ * Sanitize integer input
+ */
+if ( ! function_exists( 'wp_barrister_sanitize_integer' ) ) :
+	function wp_barrister_sanitize_integer( $input ) {
+		return absint($input);
+	}
+endif;
 
 
 /**
@@ -645,70 +708,28 @@ add_filter( 'use_default_gallery_style', '__return_false' );
 if ( ! function_exists( 'wp_barrister_pagination' ) ) :
 	function wp_barrister_pagination() {
 	
-		if( is_singular() )
-			return;
-	
-		global $wp_query;
-	
-		/** Stop execution if there's only 1 page */
-		if( $wp_query->max_num_pages <= 1 )
-			return;
-	
-		$paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
-		$max   = intval( $wp_query->max_num_pages );
-	
-		/**	Add current page to the array */
-		if ( $paged >= 1 )
-			$links[] = $paged;
-	
-		/**	Add the pages around the current page to the array */
-		if ( $paged >= 3 ) {
-			$links[] = $paged - 1;
-			$links[] = $paged - 2;
+		global $wp_query;  
+		  
+		$total_pages = $wp_query->max_num_pages;  
+		  
+		if ($total_pages > 1){  
+		  
+		  $current_page = max(1, get_query_var('paged'));  
+			
+		  echo '<div class="pagination">';  
+			
+		  echo paginate_links(array(  
+			  'base' => get_pagenum_link(1) . '%_%',  
+			  'format' => '/page/%#%',  
+			  'current' => $current_page,  
+			  'total' => $total_pages,  
+			  'prev_text' => __('&lsaquo; Prev', 'wp-barrister'),  
+			  'next_text' => __('Next &rsaquo;', 'wp-barrister')  
+			));  
+		  
+		  echo '</div>';  
+			
 		}
-	
-		if ( ( $paged + 2 ) <= $max ) {
-			$links[] = $paged + 2;
-			$links[] = $paged + 1;
-		}
-	
-		echo '<div class="pagination"><ul>' . "\n";
-	
-		/**	Previous Post Link */
-		if ( get_previous_posts_link() )
-			printf( '<li>%s</li>' . "\n", get_previous_posts_link() );
-	
-		/**	Link to first page, plus ellipses if necessary */
-		if ( ! in_array( 1, $links ) ) {
-			$class = 1 == $paged ? ' class="active"' : '';
-	
-			printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( 1 ) ), '1' );
-	
-			if ( ! in_array( 2, $links ) )
-				echo '<li>&hellip;</li>';
-		}
-	
-		/**	Link to current page, plus 2 pages in either direction if necessary */
-		sort( $links );
-		foreach ( (array) $links as $link ) {
-			$class = $paged == $link ? ' class="active"' : '';
-			printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $link ) ), $link );
-		}
-	
-		/**	Link to last page, plus ellipses if necessary */
-		if ( ! in_array( $max, $links ) ) {
-			if ( ! in_array( $max - 1, $links ) )
-				echo '<li>&hellip;</li>' . "\n";
-	
-			$class = $paged == $max ? ' class="active"' : '';
-			printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), $max );
-		}
-	
-		/**	Next Post Link */
-		if ( get_next_posts_link() )
-			printf( '<li>%s</li>' . "\n", get_next_posts_link() );
-	
-		echo '</ul></div>' . "\n";
 	
 	}
 endif;
@@ -822,6 +843,14 @@ endif;
 add_action('wp_enqueue_scripts', 'wp_barrister_modernizr_script');
 
 
+/**
+ * Ignore Sticky
+ */
+ 
+function wp_barrister_ignore_sticky($query) {
+	$query->set( 'ignore_sticky_posts', 1 );
+}
+add_action('pre_get_posts', 'wp_barrister_ignore_sticky');
 
 /**
  * Enqueue scripts & styles
@@ -841,7 +870,7 @@ add_action('wp_enqueue_scripts', 'wp_barrister_custom_scripts');
 
 /**
  *
- * This script will prompt the users to install the plugin required to
+ * This script will prompt the users to install the plugin recommended to
  * enable custom post type for this theme.
  *
  * @package	   TGM-Plugin-Activation
@@ -859,9 +888,9 @@ add_action('wp_enqueue_scripts', 'wp_barrister_custom_scripts');
  */
 require_once dirname( __FILE__ ) . '/library/class/class-tgm-plugin-activation.php';
 
-add_action( 'tgmpa_register', 'wp_barrister_register_required_plugins' );
+add_action( 'tgmpa_register', 'wp_barrister_register_recommended_plugins' );
 /**
- * Register the required plugins for this theme.
+ * Register the recommended plugins for this theme.
  *
  * The variable passed to tgmpa_register_plugins() should be an array of plugin
  * arrays.
@@ -869,7 +898,7 @@ add_action( 'tgmpa_register', 'wp_barrister_register_required_plugins' );
  * This function is hooked into tgmpa_init, which is fired within the
  * TGM_Plugin_Activation class constructor.
  */
-function wp_barrister_register_required_plugins() {
+function wp_barrister_register_recommended_plugins() {
 
 	/**
 	 * Array of plugin arrays. Required keys are name and slug.
@@ -901,26 +930,26 @@ function wp_barrister_register_required_plugins() {
 		'default_path' 		=> '',                         	// Default absolute path to pre-packaged plugins
 		'parent_menu_slug' 	=> 'themes.php', 				// Default parent menu slug
 		'parent_url_slug' 	=> 'themes.php', 				// Default parent URL slug
-		'menu'         		=> 'install-required-plugins', 	// Menu slug
+		'menu'         		=> 'install-recommended-plugins', 	// Menu slug
 		'has_notices'      	=> true,                       	// Show admin notices or not
 		'is_automatic'    	=> true,					   	// Automatically activate plugins after installation or not
 		'message' 			=> '',							// Message to output right before the plugins table
 		'strings'      		=> array(
-			'page_title'                       			=> __( 'Install Required Plugins', 'wp-barrister' ),
+			'page_title'                       			=> __( 'Install Recommended Plugins', 'wp-barrister' ),
 			'menu_title'                       			=> __( 'Install Plugins', 'wp-barrister' ),
 			'installing'                       			=> __( 'Installing Plugin: %s', 'wp-barrister' ), // %1$s = plugin name
 			'oops'                             			=> __( 'Something went wrong with the plugin API.', 'wp-barrister' ),
-			'notice_can_install_required'     			=> _n_noop( 'To enable the "Poeple" custom post type, this theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.' ), // %1$s = plugin name(s)
+			'notice_can_install_required'     			=> _n_noop( 'To enable the "Poeple" custom post type, this theme recommends the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.' ), // %1$s = plugin name(s)
 			'notice_can_install_recommended'			=> _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.' ), // %1$s = plugin name(s)
 			'notice_cannot_install'  					=> _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.' ), // %1$s = plugin name(s)
-			'notice_can_activate_required'    			=> _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.' ), // %1$s = plugin name(s)
+			'notice_can_activate_required'    			=> _n_noop( 'The following plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.' ), // %1$s = plugin name(s)
 			'notice_can_activate_recommended'			=> _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.' ), // %1$s = plugin name(s)
 			'notice_cannot_activate' 					=> _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.' ), // %1$s = plugin name(s)
 			'notice_ask_to_update' 						=> _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.' ), // %1$s = plugin name(s)
 			'notice_cannot_update' 						=> _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.' ), // %1$s = plugin name(s)
 			'install_link' 					  			=> _n_noop( 'Begin installing plugin', 'Begin installing plugins' ),
 			'activate_link' 				  			=> _n_noop( 'Activate installed plugin', 'Activate installed plugins' ),
-			'return'                           			=> __( 'Return to Required Plugins Installer', 'wp-barrister' ),
+			'return'                           			=> __( 'Return to Recommended Plugins Installer', 'wp-barrister' ),
 			'plugin_activated'                 			=> __( 'Plugin activated successfully.', 'wp-barrister' ),
 			'complete' 									=> __( 'All plugins installed and activated successfully. %s', 'wp-barrister' ), // %1$s = dashboard link
 			'nag_type'									=> 'updated' // Determines admin notice type - can only be 'updated' or 'error'

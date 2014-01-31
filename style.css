@@ -6,7 +6,7 @@ Author URI: http://wpdevhsed.com/
 Description: WP Barrister is a corporate theme. It is especially well suited to professional services companies who want to profile their staff. It comes bundled with our optional People profile plugin which makes it easy to deploy an attractive staff profile page with links to individual staff profiles including images, biographies and social media links.
 
 The theme is fully responsive and comes with many out of the box customization options inluding the ability to easily set your own logo, change the default theme colors, choose from a range of background images or upload your own, or choose an alternative home page layout with dedicated widget area and background slider. Of course you can also use it as a regular blog template as well. The default home page design features a contemporary mason style layout.
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-menu, sticky-post, microformats, rtl-language-support, translation-ready, full-width-template, post-formats
@@ -1754,12 +1754,9 @@ PAGE NAVI STYLES
 	text-align: center;
 	text-transform: uppercase;
 }
-
-.pagination li {
-	display: inline;
-}
 	 
-.pagination li a {
+.pagination a.page-numbers,
+.pagination span.page-numbers.current {
 	display: inline-block;
 	margin: 2px 2px 2px 0; /* for ie8 & below */
 	margin: 0.2rem 0.2rem 0.2rem 0;
@@ -1771,15 +1768,8 @@ PAGE NAVI STYLES
 	background-color: #e5e5e5;
 }
 	 
-.pagination li a:hover {
-	
-	color: #fff;
-	background-color: #e31d1a;
-}
-	 
-.pagination li.active a {
-	padding: 6px 9px 5px 9px; /* for ie8 & below */
-	padding: 0.6rem 0.9rem 0.5rem 0.9rem;
+.pagination .page-numbers:hover,
+.pagination span.page-numbers.current {
 	color: #fff;
 	background-color: #e31d1a;
 }
@@ -3868,4 +3858,3 @@ PRINT STYLES
 	}
 
 }
-

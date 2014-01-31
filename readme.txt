@@ -73,15 +73,6 @@ This theme is bundled with Masonry
  * Masonry is a JavaScript grid layout library. It works by placing elements in optimal position based on available vertical space, sort of like a mason fitting stones in a wall.
  * Released under the MIT license. (http://desandro.mit-license.org/)
  * Copyright David DeSandro (http://desandro.com/)
-
-
-=============================================================
-This theme is bundled with Customize Control Background Image
-=============================================================
- * Customize Control Background Image v0.1.0 (http://justintadlock.com/archives/2013/10/13/registering-multiple-default-backgrounds)
- * Extends the WordPress background image customize control class, which allows a theme to register multiple default backgrounds for the user to choose from.
- * Copyright (c) 2013, Justin Tadlock <justin@justintadlock.com>
- * GNU General Public License v2.0 (http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
  
 
 ================================================
@@ -92,19 +83,17 @@ This theme is bundled with TGM-Plugin-Activation
  * Copyright (c) 2012, Thomas Griffin (thomas@thomasgriffinmedia.com)
  * http://opensource.org/licenses/gpl-2.0.php GPL v2 or later
  
-
-==========================================================
-This theme is bundled with WP Barrister "People" CPT Plugin
-==========================================================
- * WP Barrister People CPT v1.0 (http://wpdevshed.com/themes/wp-barrister/)
- * Creates "People" custom post type exclusively for this (WP Barrister) theme.
- * Copyright (c) 2013, WP Dev Shed (http://wpdevshed.com/)
- * GNU General Public License v2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
- 
  
 =================================
 CHANGELOG
 =================================
+Version 1.0.4
+ * wp_barrister_pagination() now supports core paginate_links() function
+ * used a proper secondary query in index.php and people-post-type-main.php
+ * plugin activation script now refers to Plugins as recommended, not required
+ * used pre_get_posts to filter main query to ignore sticky posts
+ * added sanitize callbacks to customizer settings
+ 
 Version 1.0.3
  * removed the bundled "People" custom post type plugin and used the one uploaded to WPORG repository instead (People Profile CPT)
  

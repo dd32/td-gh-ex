@@ -21,7 +21,6 @@ get_header(); ?>
 
         <?php if (post_type_exists('people')) : ?>
         	<?php 
-				$sticky = get_option("sticky_posts");
 				if ( get_query_var('paged') ) {
                         $paged = get_query_var('paged');
                 } elseif ( get_query_var('page') ) {
@@ -29,23 +28,21 @@ get_header(); ?>
                 } else {
                         $paged = 1;
                 }
-				
-				$temp = $wp_query;
- 				$wp_query = null;
-				$wp_query = new WP_Query();
-				$wp_query->query( array(
+
+				$args = array(
 					'orderby' => 'title',
 					'order' => 'ASC',
 					'post_type' => 'people',
 					'people_category' => '',
 					'paged' => $paged
-				));
+				);
+				$people_query = new WP_Query($args);
 			?>
             
-			<?php if ( $wp_query->have_posts() ) : ?>
+			<?php if ($people_query->have_posts() ) : ?>
             	<div id="grid-wrap" class="clearfix">
 				<?php /* Start the Loop */ ?>
-				<?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
+				<?php while ( $people_query->have_posts() ) : $people_query->the_post(); ?>
 				  	<div class="grid-box">
                     
 					<?php

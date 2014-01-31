@@ -35,7 +35,7 @@ get_header(); ?>
 				$title = get_post_field('post_title', $id);
 				$meta = get_post_field('post_excerpt', $id);
 				$link = wp_get_attachment_url( $id );
-				$image  = wp_get_attachment_image( $id, "full");	
+				$image  = wp_get_attachment_image( $id, "full");
 			?>
             
             <div class="slides">  
