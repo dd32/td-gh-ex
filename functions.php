@@ -8,7 +8,7 @@
 
 	// Set width without the padding
 		if ( ! isset( $content_width ) )
-		$content_width = 675;
+		$content_width = 700;
 
 	// Make theme available for translation
 		load_theme_textdomain('privatebusiness', get_template_directory() . '/languages');  
@@ -17,6 +17,9 @@
 		register_nav_menus( 
 		array( 'primary' => __( 'Primary Navigation', 'privatebusiness' ), 
 	 	) ); 
+
+	// Add editor styles
+		add_editor_style( array( 'custom-editor-style.css' ) );
 
 	// Custom header	
 		$args = array(		
@@ -32,7 +35,7 @@
 		add_theme_support( 'post-thumbnails' ); 
 
 	// Resize mode thumbnails
-		set_post_thumbnail_size( 675, 550 ); 
+		set_post_thumbnail_size( 700, 550 ); 
 
 
 	// This feature adds RSS feed links to html head 
@@ -49,6 +52,15 @@
 
 	}
 	add_action( 'after_setup_theme', 'privatebusiness_setup' ); 
+
+
+// Add html5 support for older IE version 
+	function privatebusiness_html5() { 
+		echo '<!--[if lt IE 9]>'. "\n"; 
+		echo '<script src="' . esc_url( get_template_directory_uri() . '/js/ie.js' ) . '"></script>'. "\n"; 
+		echo '<![endif]-->'. "\n"; 
+		} 
+	add_action( 'wp_head', 'privatebusiness_html5' ); 
 
 
 // Add blogname to wp_title
@@ -164,29 +176,6 @@
 		'description' => __( 'Boats', 'privatebusiness' )
 		)
 	) );
-
-
-// Add html5 support for older IE version 
-	function darkorange_html5_shim () { 
-		echo '<!--[if lt IE 9]>'; 
-		echo '<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>'; 
-		echo '<![endif]-->'; 
-		} 
-	add_action('wp_head', 'darkorange_html5_shim');
-
-
-// Theme Options Page
-	function register_privatebusiness_menu_page(){ 
-		add_theme_page('PrivateBusiness', 'PrivateBusiness', 'manage_options', 'privatebusiness', 'privatebusiness_options' ); 
- 	} 
-	add_action( 'admin_menu', 'register_privatebusiness_menu_page' ); 
-
-	function privatebusiness_options() { 
-		if (!current_user_can('manage_options')) { 
-			wp_die( __('You do not have permission to access this page', 'privatebusiness' ) ); 
-			} 
-			include 'theme-options.php'; 
-		}
 
 
 // Theme Customizer (option to add logo)

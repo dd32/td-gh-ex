@@ -7,13 +7,13 @@
 <?php get_header(); ?>
 <div id="content">
 
+	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
 	<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
 		<div class="sticky">
 			<h4><?php _e( 'Featured post', 'privatebusiness' ); ?></h4>
 		</div>
-		<?php endif; ?>
-
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+	<?php endif; ?>
 
 		<h3 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to ', 'privatebusiness'); ?>
 		<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>

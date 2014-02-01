@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-PrivateBusiness version 1.4 - february 2014 
+PrivateBusiness version 1.5 - february 2014 
 - first stable release
 
 
