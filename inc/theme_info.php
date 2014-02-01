@@ -6,7 +6,7 @@
  * @since	2.5
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013-2014, Arthur Gareginyan
- * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
+ * @link      	http://mycyberuniverse.com/anarcho-notepad.html
  * @license   	http://www.gnu.org/licenses/gpl-3.0.html
  */
 
@@ -26,7 +26,7 @@ function anarcho_theme_options_do_page() { ?>
       <div class="content">
 
 	<div class="welcome"><i><?php _e('Thank you for using "Anarcho Notepad"! The "Anarcho Notepad" now even more opportunities, it is safer and more stable than ever! Enjoy! ', 'anarcho-notepad');?></i>
-	<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://mycyberuniverse.tk/anarcho-notepad.html" data-text="My WordPress website is built with the #Anarcho-Notepad Theme version 2.4!" data-related="AGareginyan">Tweet</a>
+	<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://mycyberuniverse.com/anarcho-notepad.html" data-text="My WordPress website is built with the #Anarcho-Notepad!" data-related="AGareginyan">Tweet</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	<p><a name="fb_share" type="icon"
    share_url="http://mycyberuniverse/anarcho-notepad.html"></a>

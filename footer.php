@@ -6,7 +6,7 @@
  * @since	2.5
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013-2014, Arthur Gareginyan
- * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
+ * @link      	http://mycyberuniverse.com/anarcho-notepad.html
  * @license   	http://www.gnu.org/licenses/gpl-3.0.html
  */
 ?>
@@ -19,7 +19,7 @@
 <?php echo esc_html(get_theme_mod('site-info')); ?><br/>
 
 <?php if(get_theme_mod('disable_anarcho_copy') == '0') {  ?>
-	WordPress theme <a href="http://wordpress.org/themes/anarcho-notepad">"Anarcho Notepad"</a> designed and engineered by <a href="http://mycyberuniverse.tk/author.html">Arthur (Berserkr) Gareginyan</a><br/>
+	WordPress theme <a href="http://wordpress.org/themes/anarcho-notepad">"Anarcho Notepad"</a> designed and engineered by <a href="http://mycyberuniverse.com/author.html">Arthur (Berserkr) Gareginyan</a><br/>
 <?php }  ?>
 <br/>
 
