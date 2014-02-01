@@ -95,7 +95,7 @@
 			<?php wp_nav_menu( array( 
 								'theme_location' => 'primary', 
 								'menu_class' => 'nav navbar-nav', 
-								'depth' =>2,
+								'depth' =>4,
 								'container' => false, 
 								'fallback_cb' => false, 
 								'walker' => new wp_bootstrap_navwalker() ) ); ?>	

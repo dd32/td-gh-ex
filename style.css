@@ -4,7 +4,7 @@ Theme URI: http://www.opencodez.com/free-themes/aadya/
 Author: Opencodez Team
 Author URI: http://www.opencodez.com
 Description: The Aadya theme for WordPress developed on top of Twitter Bootstrap Framework 3.0. The theme is fully responsive and can be viewed on any device. With 5 different layouts for posts and pages, Aadya theme is uniquely positioned for any business or personal website. The theme has 12 widget areas, 2 strategic menu locations, nicely designed and customizable footer with its own widget areas. In addition to this the theme provieds with 5 pre-installed widgets for FrontPage Marketing Text, FrontPage Marketeing Thumbnails, Author Profile, Social Icon Box and Google Custom Search Engine.
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: light, blue, white, one-column, two-columns, three-columns, right-sidebar,left-sidebar, responsive-layout, custom-background, custom-header, custom-menu, featured-images, flexible-header, full-width-template, sticky-post, theme-options, translation-ready, custom-colors, threaded-comments
@@ -686,6 +686,13 @@ border-radius:0px;
 
 .bypostauthor{
 }
+
+.dropdown-submenu{position:relative;}
+.dropdown-submenu>.dropdown-menu{top:0;left:100%;margin-top:-6px;margin-left:-1px;-webkit-border-radius:0 6px 6px 6px;-moz-border-radius:0 6px 6px 6px;border-radius:0 6px 6px 6px;}
+/*.dropdown-submenu:hover>.dropdown-menu{display:block;}*/
+.dropdown-submenu>a:after{display:block;content:" ";float:right;width:0;height:0;border-color:transparent;border-style:solid;border-width:5px 0 5px 5px;border-left-color:#cccccc;margin-top:5px;margin-right:-10px;}
+.dropdown-submenu:hover>a:after{border-left-color:#ffffff;}
+.dropdown-submenu.pull-left{float:none;}.dropdown-submenu.pull-left>.dropdown-menu{left:-100%;margin-left:10px;-webkit-border-radius:6px 0 6px 6px;-moz-border-radius:6px 0 6px 6px;border-radius:6px 0 6px 6px;}
 
 /* Hide WP Stats Smily at bottom of page */
 img#wpstats{display:none}

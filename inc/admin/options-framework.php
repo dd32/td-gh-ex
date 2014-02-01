@@ -269,7 +269,7 @@ function optionsframework_page() {
 		<p class="small">After payment, send us an email with details of your customization using the form available <a href="http://www.opencodez.com/support/" title="Contact Opencodez Support" target="_blank">here</a>. Use the same Paypal email from which you made the payment else include the transaction ID.</p>
 		</div>
 		<div id="paypal_buy">
-		<h2><a href="http://demo.opencodez.com/aadya/">Official Theme Demo</a></h2>
+		<h2><a href="http://demo.opencodez.com/aadya/" title="Official Theme Demo" target="_blank">Official Theme Demo</a></h2>
 		</div>
 </div>
 <!--End - www.opencodez.com -->

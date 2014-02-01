@@ -775,23 +775,34 @@ function aadya_wp_footer() {
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.js" type="text/javascript"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/respond.min.js" type="text/javascript"></script>
 	<![endif]-->
+	<!-- Bootstrap 3 dont have core support to multilevel menu, we need this JS to implement that -->
+	<script src="<?php echo get_template_directory_uri(); ?>/js/theme-menu.js" type="text/javascript"></script>
 	<?php
-		//Add this piece of JS only when Slider/carousel template is used.
-		if(is_page_template('page-templates/front-page-with-slider.php')):
-		?>
-		<script type='text/javascript'>
-		$('.carousel').carousel();
-		</script>
-		<?php	
-		endif;
+		
 }
 add_action( 'wp_footer', 'aadya_wp_footer',100);
 
-
+add_filter('the_excerpt','aadya_excerpt');
+function aadya_excerpt(){
+	global $post;
+	$link='<span class="readmore"><a href="'.get_permalink().'" > Read More +</a></span>';
+	$excerpt=get_the_excerpt();		
+	if ( preg_match('/<!--more(.*?)?-->/', $post->post_content) ) {	
+		echo $excerpt.$link;
+	} else {
+		echo $excerpt;
+	}
+}
 function aadya_excerpt_read_more($text) {
-   return '  <span class="readmore"><a href="'.get_permalink().'" >Read More +</a></span>';
+   return '  <span class="readmore"><a href="'.get_permalink().'" > Read More +</a></span>';
 }
 add_filter('excerpt_more', 'aadya_excerpt_read_more');
+
+add_filter( 'the_content_more_link', 'my_more_link', 10, 2 );
+
+function my_more_link( $more_link, $more_link_text ) {
+	return str_replace( $more_link_text, 'Continue reading &rarr;', $more_link );
+}
 
 function aadya_custom_excerpt_length($length) {
 	return 85;
