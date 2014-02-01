@@ -267,7 +267,7 @@ function hemingway_comment( $comment, $args, $depth ) {
 			
 				<?php if ( '0' == $comment->comment_approved ) : ?>
 				
-					<p class="comment-awaiting-moderation"><?php __( 'Your comment is awaiting moderation.', 'hemingway' ); ?></p>
+					<p class="comment-awaiting-moderation"><?php _e( 'Awaiting moderation', 'hemingway' ); ?></p>
 					
 				<?php endif; ?>
 			

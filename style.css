@@ -1,7 +1,7 @@
 /*---------------------------------------------------------------------------------
 
 	Theme Name: Hemingway
-	Version: 1.03
+	Version: 1.04
 	Description: Hemingway is a clean, simple and beautiful theme for bloggers. Features responsive design, retina-ready assets, custom widgets (video, Flickr and Dribbble), archive page template and translation-ready code.
 	Tags: black, dark, white, green, two-columns, fluid-layout, responsive-layout, custom-header, custom-menu, featured-images, flexible-header, post-formats, sticky-post, threaded-comments, translation-ready
 	Author: Anders Norén
@@ -26,9 +26,10 @@
 	8.	Comments
 	9.	Pagination
 	10.	Page & Page Templates
-	11.	Footer
-	12.	Credits
-	13. Responsive
+	11.	Sidebar
+	12.	Footer
+	13. Credits
+	14.	Responsive
 
 ----------------------------------------------------------------------------------- */
 
@@ -130,6 +131,7 @@ img {
 
 /* Transitions --------------------------------------- */
 
+
 body a {
 	-webkit-transition: all 0.1s ease-in-out;
 	 -moz-transition: all 0.1s ease-in-out;
@@ -218,6 +220,7 @@ a.more-link {
 /*	3. Header
 /* -------------------------------------------------------------------------------- */
 
+
 .header-cover { overflow-y: hidden; }
 
 .header {
@@ -277,7 +280,7 @@ a.more-link {
 .blog-menu li { position: relative; }
 .blog-menu > li { float: left; }
 
-.blog-menu > li:after {
+.blog-menu > li:before {
 	content: "/";
 	display: block;
 	position: absolute;
@@ -291,7 +294,7 @@ a.more-link {
 	z-index: 1000;
 }
 
-.blog-menu >li:last-child:after { content: none; }
+.blog-menu >li:last-child:before { content: none; }
 
 .blog-menu a {
 	display: block;
@@ -364,7 +367,7 @@ a.more-link {
 .blog-menu ul > .has-children:hover::after { border-right-color: #FFF; }
 
 .blog-menu ul li { 	
-	width: 225px; 
+	width: 240px; 
 	background: #1d1d1d;
 }
 
@@ -391,7 +394,7 @@ a.more-link {
 
 .blog-menu ul li:hover > ul {
 	top: 0;
-	left: 225px;
+	left: 240px;
 	margin-left: 0;
 }
 
@@ -411,7 +414,9 @@ a.more-link {
 .post:last-child,
 .page:last-child { padding-bottom: 0; border-bottom: 0; margin-bottom: 0; }
 
-/* featured-media */
+
+/* Featured media --------------------------------------- */
+
 
 .featured-media { 
 	position: relative;
@@ -435,10 +440,12 @@ a.more-link {
 	top: 5%;
 	right: 0;
 	padding: 8px 10px;
-	border-radius: 4px 0 0 4px;
+	border-radius: 3px 0 0 3px;
+	-webkit-border-radius: 3px 0 0 3px;
+	-moz-border-radius: 3px 0 0 3px;
 	background: #1abc9c;
 	color: #FFF;
-	font-size: 0.75em;
+	font-size: 0.7em;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	z-index: 10;
@@ -472,7 +479,7 @@ a.more-link {
 }
 
 
-/* post-header */
+/* Post header --------------------------------------- */
 
 .post-header { margin-bottom: 6%; }
 
@@ -541,6 +548,7 @@ a.more-link:hover {
 /* -------------------------------------------------------------------------------- */
 /*	6. Single post
 /* -------------------------------------------------------------------------------- */
+
 
 .post-meta-bottom {
 	margin-top: 10%;
@@ -766,6 +774,7 @@ code, kbd, pre {
 
 /* Post media --------------------------------------- */
 
+
 img.alignleft,
 .alignleft img,
 img.aligncenter,
@@ -897,7 +906,7 @@ li > div.comment {
 	border-bottom: 1px solid #EEE; 
 }
 
-.commentlist > li:last-child > div.comment:last-child { border-bottom: none; padding-bottom: 0; }
+.commentlist > li:first-child > div.comment:first-child { border-top: 1px solid #EEE; padding-top: 25px; }
 
 .children > li > div.comment { padding-left: 10%; }
 .children .children > li > div.comment { padding-left: 20%; }
@@ -992,23 +1001,27 @@ li > div.comment {
 .comment-meta-content p a:hover { color: #1abc9c; }
 
 .comment-awaiting-moderation {
-	margin-left: 100px;
-	margin-bottom: 1em;
+	position: absolute;
+	right: 0;
+	top: 4px;
 	font-weight: bold;
-	display: inline-block;
+	display: block;
 	padding: 10px;
 	background: #CCC;
 	border-radius: 3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
-	font-size: 0.8em;
+	font-size: 0.8rem;
 	color: #FFF;
+	text-transform: uppercase;
+	letter-spacing: 1px;
 }
 
 .comment-awaiting-moderation:hover { background: #2d2d2d; }
 
 
 /* Comment nav below --------------------------------------- */
+
 
 .comment-nav-below {
 	margin-top: 10%;
@@ -1020,7 +1033,9 @@ li > div.comment {
 
 .comment-nav-below a { color: #666; }
 
+
 /* Comment content --------------------------------------- */
+
 
 .comment-content {
 	margin-left: 70px;
@@ -1040,13 +1055,17 @@ li > div.comment {
 	text-transform: none;
 }
 
+
 /* Respond --------------------------------------- */
+
 
 .comment+.comment-respond {
 	padding-bottom: 10%;
 	border-bottom: 4px solid #EEE;
 	margin-bottom: 10%;
 }
+
+.comment-respond { border-top: 0; padding-top: 0; }
 
 #reply-title { margin-bottom: 20px; }
 
@@ -1199,7 +1218,9 @@ li > div.comment {
 	border-bottom: 2px solid #EEE;
 }
 
+
 /* Archive nav --------------------------------------- */
+
 
 .archive-nav { margin-top: 15%; }
 
@@ -1221,7 +1242,8 @@ li > div.comment {
 /* -------------------------------------------------------------------------------- */
 
 
-/* search */
+/* Search --------------------------------------- */
+
 
 .post-content .searchform { position: relative; }
 
@@ -1268,8 +1290,44 @@ li > div.comment {
 }
 
 
+/* Archives template --------------------------------------- */
+
+
+.archive-col { font-size: 0.9em; }
+
+.page-template-template-archives-php .post-content ul {
+	margin-left: 0;
+	list-style: none;
+}
+
+.page-template-template-archives-php .post-content ul li { margin-bottom: 0; line-height: 130%; }
+
+.page-template-template-archives-php .post-content ul li a {
+	display: block;
+	border-bottom: 1px solid #EEE;
+	padding: 8px 0;
+}
+
+.page-template-template-archives-php .post-content ul li:last-child a { border-bottom: none; }
+
+.page-template-template-archives-php .post-content ul.children li:first-child a { border-bottom: 1px solid #EEE; }
+
+.page-template-template-archives-php .post-content ul li a span { color: #999; }
+
+.page-template-template-archives-php .post-content ul li a:hover {
+	text-decoration: none;
+	color: #666;
+}
+
+.page-template-template-archives-php .post-content ul li a:hover {
+	background-color: #F9F9F9;
+	padding-left: 12px;
+}
+
+
+
 /* -------------------------------------------------------------------------------- */
-/*	10. Sidebar
+/*	11. Sidebar
 /* -------------------------------------------------------------------------------- */
 
 
@@ -1311,19 +1369,20 @@ li > div.comment {
 	margin-bottom: 1em;
 }
 
-.widget-content li ul { padding-left: 8px; }
-
 .widget-content ul li {
-	padding: 8px 0;
+	padding: 10px 0;
 	border-top: 1px solid #EEE;
 	line-height: 130%;
 }
 
+.widget-content li ul > li:first-child { margin-top: 10px; }
+.widget-content .page_item_has_children { padding-bottom: 0; }
+
+.widget-content li ul li { padding-left: 15px; }
+
 .widget-content ul li .post-date { margin-left: 5px; color: #999; }
 
-.widget-content ul li:first-child { border-top: 0; }
-
-.widget-content ul li:hover { padding-left: 8px; }
+.widget-content > ul > li:first-child { border-top: 0; }
 
 
 /* Widget search --------------------------------------- */
@@ -1382,6 +1441,7 @@ li > div.comment {
 	width: 100%;
 	max-width: 100%;
 	text-align: center;
+	font-size: 0.9em;
 }
 
 #wp-calendar a { color: #1abc9c; }
@@ -1456,8 +1516,6 @@ li > div.comment {
 }
 
 
-
-
 /* Widget Flickr --------------------------------------- */
 
 
@@ -1506,7 +1564,7 @@ li > div.comment {
 
 
 /* -------------------------------------------------------------------------------- */
-/*	11. Footer
+/*	12. Footer
 /* -------------------------------------------------------------------------------- */
 
 
@@ -1523,7 +1581,7 @@ li > div.comment {
 .column:first-child { margin-left: 0; }
 
 
-/* footer widgets */
+/* Footer widgets --------------------------------------- */
 
 
 .footer .widget { border-bottom-color: rgba(255,255,255,0.1) }
@@ -1534,7 +1592,11 @@ li > div.comment {
 
 .footer .widget-content ul li { border-top-color: rgba(255,255,255,0.1); }
 
-/* widget search */
+.footer .widget-content > ul > li:first-child { border-top: none; }
+
+
+/* Widget search --------------------------------------- */
+
 
 .footer .widget_search #s:focus { 
 	outline: none; 
@@ -1544,8 +1606,17 @@ li > div.comment {
 }
 
 
+/* Widget calendar --------------------------------------- */
+
+
+#wp-calendar caption,
+#wp-calendar thead { border-bottom-color: rgba(255,255,255,0.1); }
+#wp-calendar tfoot { border-top-color: rgba(255,255,255,0.1); }
+
+
+
 /* -------------------------------------------------------------------------------- */
-/*	12. Credits
+/*	13. Credits
 /* -------------------------------------------------------------------------------- */
 
 
@@ -1568,15 +1639,16 @@ li > div.comment {
 
 
 /* -------------------------------------------------------------------------------- */
-/*	13. Responsive
+/*	14. Responsive
 /* -------------------------------------------------------------------------------- */
+
 
 @media (max-width: 1040px) {
 
 
 	body { font-size: 16px; }
 	
-	/* structure */
+	/* Structure --------------------------------------- */
 	
 	.wrapper { 	margin-top: 7.5%; }
 
@@ -1587,7 +1659,7 @@ li > div.comment {
 
 	body { font-size: 18px; } 
 
-	/* structure */
+	/* Structure --------------------------------------- */
 
 	.content,
 	.sidebar {
@@ -1602,7 +1674,7 @@ li > div.comment {
 	
 	.footer { margin-top: 60px; }
 	
-	/* navigation */	
+	/* Navigation --------------------------------------- */
 	
 	.navigation-inner { max-width: 100%; }
 			
@@ -1755,7 +1827,7 @@ li > div.comment {
 		border-color: #089D80;
 	}
 	
-	/* pagination */
+	/* Pagination --------------------------------------- */
 	
 	.archive-nav { margin-top: 60px; }
 
@@ -1768,15 +1840,12 @@ li > div.comment {
 	
 	/* Header --------------------------------------- */
 	
-	
 	.header.section { padding: 60px 0; }
 	
 	.blog-info { padding: 20px; }
 	.blog-description:before { margin: 15px auto; }
 	
-	
 	/* Main content --------------------------------------- */
-	
 	
 	.post {
 		padding-bottom: 30px;
@@ -1880,34 +1949,27 @@ li > div.comment {
 	
 	body { font-size: 15px; }
 	
-	/* header */
+	/* Header --------------------------------------- */
 	
 	.header.section { padding: 30px 0; }
 	
-	/* post */
+	/* Post --------------------------------------- */
 	
 	.post-title { font-size: 1.75em; }
-	
-	/* single post */
-	
-	.featured-media img {
-		border-radius: 0;
-		-moz-border-radius: 0;
-		-webkit-border-radius: 0;
-	}
 	
 	.media-caption-container {
 		position: static;
 		top: auto;
 		left: auto;
 		width: 100%;
-		margin: 0;
+		margin: -3px 0 0 0;
 	}
 	
 	.media-caption {
-		border-radius: 0;
-		-webkit-border-radius: 0;
-		-moz-border-radius: 0;
+		padding: 10px;
+		border-radius: 0 0 4px 4px;
+		-webkit-border-radius: 0 0 4px 4px;
+		-moz-border-radius: 0 0 4px 4px;
 		background: #EEE;
 		color: #666;
 		width: 100%;
@@ -1915,6 +1977,8 @@ li > div.comment {
 	
 	.media-caption:hover { background: #EEE; color: #666; }
 	
+	/* Single post --------------------------------------- */
+		
 	.post-cat-tags p { display: block; }
 	.post-cat-tags p:last-child { margin-left: 0; margin-top: 10px; }
 	
@@ -1931,11 +1995,11 @@ li > div.comment {
 	.single .post-nav .post-nav-newer { margin-top: 20px; }	
 	.single .post-nav .post-nav-newer h5 { text-align: left; }
 	
-	/* comments */
+	/* Comments --------------------------------------- */
 	
 	.comment-content { margin-left: 0; }
 	
-	/* pagination */
+	/* Pagination --------------------------------------- */
 	
 	.archive-nav { margin-top: 40px; }
 	
@@ -1945,23 +2009,9 @@ li > div.comment {
 	.archive-nav span,
 	.comment-nav-below span { display: none; }
 	
-	/* footer */
+	/* Footer --------------------------------------- */
 	
 	.footer { margin-top: 40px; }
 	
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

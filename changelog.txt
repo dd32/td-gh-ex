@@ -1,3 +1,9 @@
+Version 1.04 (2014-02-01)
+-------------------------
+- Fixed styling for the archive template
+- Cleaned up style.css, fixed section numbering
+– Misc bug fixes
+
 Version 1.03 (2014-01-31)
 -------------------------
 - Added larger screenshot.png to account for high DPI displays
