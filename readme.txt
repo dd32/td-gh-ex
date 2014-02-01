@@ -57,8 +57,11 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.3.6.5
+1.Widgets design issue fixed.
+2.Added in header 'IE=edge'
 @version 1.3.6.4
-->>Issue Raised by Sanjiv Saha,Removed ['widgets managed']['Deceaded Content Wudth:720 ']
+->>Issue Raised by Sanjiv Saha,Removed ['widgets managed']['Deceaded Content Width:720 ']
 @version 1.3.6.3
 1.Array merge added.
 @version 1.3.6.2

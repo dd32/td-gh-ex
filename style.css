@@ -2,7 +2,7 @@
 * Theme Name: Busiprof
 * Theme URI: http://www.webriti.com/index.php/lite/busiprof-premium-wordpress-theme/
 * Description: A Blue colored Business theme which is ideal for creating a corporate / business website. It boasts of 2 beautifully designed page templates , Home and Blog Page. It supports custom widgets and comes with a widgetized Footer Area.  
-* Version: 1.3.6.4
+* Version: 1.3.6.5
 * Author: priyanshu.mittal,vibhorp
 * Author URI: http://www.webriti.com
 * Tags: white,blue, full-width-template, threaded-comments,custom-menu,two-columns,translation-ready, theme-options, sticky-post
@@ -437,7 +437,7 @@ font-family: OpenSans-Regular;
 }
 .widget_section h2 {
     color: #FFFFFF;
-    float: left;
+   /*float: left;*/
     font-family: 'montserratregular';
     font-size: 18px;
     font-weight: normal;
@@ -1711,3 +1711,10 @@ dd {margin-left: 10px;font-size: 17.5px;}
 .project_feature_img{	width:100%;	}
 .blog_con_mn h2 a {color: #545A5D;}
 .widget_section ul li a {color: #A5A9AC;}
+#wp-calendar thead tr th {
+border: 0px;
+padding: 5px 5px 5px 5px;
+font-family: 'DroidSansRegular';
+font-size: 14px;
+}
+.sidebar .tagcloud,.sidebar .textwidget{padding-left: 18px;}
