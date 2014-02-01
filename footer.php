@@ -3,7 +3,7 @@
  * The template for displaying the footer.
  *
  * @package	Anarcho Notepad
- * @since	2.5
+ * @since	2.5.2
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013-2014, Arthur Gareginyan
  * @link      	http://mycyberuniverse.com/anarcho-notepad.html
@@ -19,7 +19,7 @@
 <?php echo esc_html(get_theme_mod('site-info')); ?><br/>
 
 <?php if(get_theme_mod('disable_anarcho_copy') == '0') {  ?>
-	WordPress theme <a href="http://wordpress.org/themes/anarcho-notepad">"Anarcho Notepad"</a> designed and engineered by <a href="http://mycyberuniverse.com/author.html">Arthur (Berserkr) Gareginyan</a><br/>
+	<a href="http://wordpress.org/themes/anarcho-notepad">Theme "Anarcho Notepad" designed and engineered by Arthur (Berserkr) Gareginyan.</a><br/>
 <?php }  ?>
 <br/>
 
