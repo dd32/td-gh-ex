@@ -2,7 +2,7 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package Blue Sky
+ * @package Blue Planet
  */
 ?>
 
@@ -18,10 +18,10 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'blue-sky' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'blue-planet' ),
 				'after'  => '</div>',
 			) );
 		?>
 	</div><!-- .entry-content -->
-	<?php edit_post_link( __( 'Edit', 'blue-sky' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
+	<?php edit_post_link( __( 'Edit', 'blue-planet' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
 </article><!-- #post-## -->

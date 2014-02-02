@@ -1,20 +1,19 @@
 <?php
 /**
- * @package Blue Sky
- * @since Blue Sky 1.0
+ * @package Blue Planet
+ * @since Blue Planet 1.0.0
  */
 
 /**
  * Set the default values for all the settings. If no user-defined values
  * is available for any setting, these defaults will be used.
  */
-global $bluesky_options_defaults;
-$bluesky_options_defaults = array(
+global $blueplanet_options_defaults;
+$blueplanet_options_defaults = array(
 		'custom_favicon'               => '',
 		'custom_css'                   => '*{outline:none;}',
 		'feedburner_url'               => '',
 		'flg_enable_goto_top'          => '0',
-		'custom_logo'                  => '',
 		'banner_background_color'      => '#00ADB3',
 		'search_placeholder'           => 'Search here...',
 		'flg_hide_search_box'          => '1',
@@ -44,7 +43,6 @@ $bluesky_options_defaults = array(
 		'slider_caption_2'             => '1',
 		'transition_delay_2'           => 4,
 		'transition_length_2'          => 1,
-		'tracking_code'                => '',
 		'javascript_header'            => '',
 		'javascript_footer'            => '',
 		'social_facebook'              => '',
@@ -56,7 +54,7 @@ $bluesky_options_defaults = array(
 		'social_vimeo'                 => '',
 		'social_flickr'                => '',
 		'social_tumblr'                => '',
-		'social_dribble'               => '',
+		'social_dribbble'              => '',
 		'social_deviantart'            => '',
 		'social_wordpress'             => '',
 		'social_rss'                   => '',
@@ -65,14 +63,18 @@ $bluesky_options_defaults = array(
 		'social_skype'                 => '',
 		'social_500px'                 => '',
 		'social_weibo'                 => '',
+		'social_email'                 => '',
+		'social_forrst'                => '',
+		'social_stumbleupon'           => '',
+		'social_digg'                  => '',
 );
-global $bluesky_options_settings;
-$bluesky_options_settings = bluesky_options_set_defaults( $bluesky_options_defaults );
+global $blueplanet_options_settings;
+$blueplanet_options_settings = blueplanet_options_set_defaults( $blueplanet_options_defaults );
 
-function bluesky_options_set_defaults( $bluesky_options_defaults ) {
-	if(!get_option('bs_options')){
-		add_option('bs_options', $bluesky_options_defaults);
+function blueplanet_options_set_defaults( $blueplanet_options_defaults ) {
+	if(!get_option('blueplanet_options')){
+		add_option('blueplanet_options', $blueplanet_options_defaults);
 	}
-	$bluesky_options_settings = array_merge( $bluesky_options_defaults, (array) get_option( 'bs_options', array() ) );
-	return $bluesky_options_settings;
+	$blueplanet_options_settings = array_merge( $blueplanet_options_defaults, (array) get_option( 'blueplanet_options', array() ) );
+	return $blueplanet_options_settings;
 }

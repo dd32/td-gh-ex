@@ -1,11 +1,11 @@
 <?php
 /**
- * @package Blue Sky
+ * @package Blue Planet
  */
 ?>
 <?php
-global $bluesky_options_settings;
-$bs_options = $bluesky_options_settings;
+global $blueplanet_options_settings;
+$bp_options = $blueplanet_options_settings;
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
@@ -13,7 +13,7 @@ $bs_options = $bluesky_options_settings;
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php blue_sky_posted_on(); ?>
+			<?php blue_planet_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
@@ -25,9 +25,9 @@ $bs_options = $bluesky_options_settings;
 	<?php else : ?>
 	<div class="entry-content">
 
-		<?php if('excerpt' == $bs_options['content_layout']  ) : ?>
+		<?php if('excerpt' == $bp_options['content_layout']  ) : ?>
 				<?php if ( has_post_thumbnail()) : ?>
-				<div class="bs-thumbnail-wrapper">
+				<div class="bp-thumbnail-wrapper">
 				   <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
 				   <?php the_post_thumbnail('full', array('class'=> 'img-responsive')); ?>
 				   </a>
@@ -37,11 +37,11 @@ $bs_options = $bluesky_options_settings;
 
 
         <?php else:?>
-        	<?php if ( 'excerpt-thumb' == $bs_options['content_layout']  ): ?>
+        	<?php if ( 'excerpt-thumb' == $bp_options['content_layout']  ): ?>
         		<div class="et-row row ">
         			<div class="et-row-left col-md-5 col-sm-5 col-xs-12">
 	        			<?php if ( has_post_thumbnail()) : ?>
-        				<div class="bs-thumbnail-wrapper excerpt-thumb">
+        				<div class="bp-thumbnail-wrapper excerpt-thumb">
         					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
         						<?php the_post_thumbnail('homepage-thumb'); ?>
         					</a>
@@ -57,16 +57,16 @@ $bs_options = $bluesky_options_settings;
 	        <?php else: ?>
 
 		        	<?php if ( has_post_thumbnail()) : ?>
-		        		<div class="bs-thumbnail-wrapper">
+		        		<div class="bp-thumbnail-wrapper">
 		        			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
 		        				<?php the_post_thumbnail(); ?>
 		        			</a>
 		        		</div>
 		        	<?php endif; ?>
-					 		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'blue-sky' ) ); ?>
+					 		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'blue-planet' ) ); ?>
 							<?php
 								wp_link_pages( array(
-									'before' => '<div class="page-links">' . __( 'Pages:', 'blue-sky' ),
+									'before' => '<div class="page-links">' . __( 'Pages:', 'blue-planet' ),
 									'after'  => '</div>',
 								) );
 							?>
@@ -82,8 +82,8 @@ $bs_options = $bluesky_options_settings;
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 			<?php
 				/* translators: used between list items, there is a space after the comma */
-				$categories_list = get_the_category_list( __( ', ', 'blue-sky' ) );
-				if ( $categories_list && blue_sky_categorized_blog() ) :
+				$categories_list = get_the_category_list( __( ', ', 'blue-planet' ) );
+				if ( $categories_list && blue_planet_categorized_blog() ) :
 			?>
 				<?php
 				if (!empty($categories_list)) {
@@ -95,7 +95,7 @@ $bs_options = $bluesky_options_settings;
 
 			<?php
 				/* translators: used between list items, there is a space after the comma */
-				$tags_list = get_the_tag_list( '', __( ', ', 'blue-sky' ) );
+				$tags_list = get_the_tag_list( '', __( ', ', 'blue-planet' ) );
 				if ( $tags_list ) :
 
 			?>
@@ -113,11 +113,11 @@ $bs_options = $bluesky_options_settings;
 		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
 			<?php
 			echo '<span class="comments">';
-			echo comments_popup_link( __('0 comment','blue-sky'), __('1 comment','blue-sky'), __('% comments','blue-sky') );
+			echo comments_popup_link( __('0 comment','blue-planet'), __('1 comment','blue-planet'), __('% comments','blue-planet') );
 			echo '</span>';
 			?>
 		<?php endif; ?>
 
-		<?php edit_post_link( __( 'Edit', 'blue-sky' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'blue-planet' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->

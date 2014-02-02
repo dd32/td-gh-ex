@@ -6,7 +6,7 @@
 
 get_header(); ?>
 
-<section id="primary" class="content-area col-md-8 col-sm-12 col-xs-12 <?php echo bs_layout_setup_class(); ?>">
+<section id="primary" class="content-area col-md-8 col-sm-12 col-xs-12 <?php echo blue_planet_layout_setup_class(); ?>">
 
     <main id="main" class="site-main" role="main">
         <?php
@@ -48,7 +48,7 @@ get_header(); ?>
                         get_template_part( 'content', get_post_format() );
                 ?>
             <?php endwhile; ?>
-            <?php blue_sky_paging_nav(); ?>
+            <?php blue_planet_paging_nav(); ?>
             <?php $wp_query = $temp_query  ; ?>
 
         <?php else : ?>

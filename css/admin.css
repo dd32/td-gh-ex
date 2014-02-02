@@ -1,19 +1,19 @@
-#bs-tab-container .form-table label.box{
+#bp-tab-container .form-table label.box{
     float: left;
 }
-#bs-tab-container .form-table input[type="radio"]{
+#bp-tab-container .form-table input[type="radio"]{
     margin:0px 5px 0px 0px;
 }
-#bs-tab-container .form-table span.radio-text{
+#bp-tab-container .form-table span.radio-text{
     padding:0px 20px 0px 0px;
 }
-#bs-tab-container ul {
+#bp-tab-container ul {
     list-style: none;
     padding:0;
     margin:0;
     border-bottom: 1px #DFDFDF  solid;
 }
-#bs-tab-container ul li{
+#bp-tab-container ul li{
     display: inline;
     border: solid;
     border-color: #DFDFDF #DFDFDF #FFFFFF;
@@ -25,31 +25,31 @@
     height: auto;
     overflow: hidden;
 }
-#bs-tab-container ul li.ui-tabs-active{
+#bp-tab-container ul li.ui-tabs-active{
     background: white;
     border-width: 1px;
     color: #464646;
 }
-#bs-tab-container ul li.ui-tabs-active a{
+#bp-tab-container ul li.ui-tabs-active a{
     color: #464646;
 }
-#bs-tab-container .panel-container{
+#bp-tab-container .panel-container{
     clear: both;
     margin-top:2px;
     padding: 10px;
 }
-#bs-tab-container ul li a {
+#bp-tab-container ul li a {
     font-weight: bold;
     outline: none;
     padding: 4px 10px 6px;
-    color: #AAAAAA;
+    color: #888888;
     display: inline-block;
     text-decoration: none;
     text-shadow: 0 1px 0 #FFFFFF;
     font-size: 14px;
     line-height: 24px;
 }
-#bs-tab-container ul li a:hover {
+#bp-tab-container ul li a:hover {
     color: #D54E21;
 }
 #icon-options-general{

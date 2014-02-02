@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features
  *
- * @package Blue Sky
+ * @package Blue Planet
  */
 
 /**
@@ -13,11 +13,11 @@
  * @param array $args Configuration arguments.
  * @return array
  */
-function blue_sky_page_menu_args( $args ) {
+function blue_planet_page_menu_args( $args ) {
 	$args['show_home'] = true;
 	return $args;
 }
-add_filter( 'wp_page_menu_args', 'blue_sky_page_menu_args' );
+add_filter( 'wp_page_menu_args', 'blue_planet_page_menu_args' );
 
 /**
  * Adds custom classes to the array of body classes.
@@ -25,7 +25,7 @@ add_filter( 'wp_page_menu_args', 'blue_sky_page_menu_args' );
  * @param array $classes Classes for the body element.
  * @return array
  */
-function blue_sky_body_classes( $classes ) {
+function blue_planet_body_classes( $classes ) {
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
@@ -33,7 +33,7 @@ function blue_sky_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'blue_sky_body_classes' );
+add_filter( 'body_class', 'blue_planet_body_classes' );
 
 /**
  * Filters wp_title to print a neat <title> tag based on what is being viewed.
@@ -42,7 +42,7 @@ add_filter( 'body_class', 'blue_sky_body_classes' );
  * @param string $sep Optional separator.
  * @return string The filtered title.
  */
-function blue_sky_wp_title( $title, $sep ) {
+function blue_planet_wp_title( $title, $sep ) {
 	global $page, $paged;
 
 	if ( is_feed() ) {
@@ -60,12 +60,12 @@ function blue_sky_wp_title( $title, $sep ) {
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 ) {
-		$title .= " $sep " . sprintf( __( 'Page %s', 'blue-sky' ), max( $paged, $page ) );
+		$title .= " $sep " . sprintf( __( 'Page %s', 'blue-planet' ), max( $paged, $page ) );
 	}
 
 	return $title;
 }
-add_filter( 'wp_title', 'blue_sky_wp_title', 10, 2 );
+add_filter( 'wp_title', 'blue_planet_wp_title', 10, 2 );
 
 //custom
 
@@ -74,8 +74,8 @@ remove_action('wp_head', 'wp_generator');
 
 
 //Messgae to show in the Featured Image Meta box
-add_filter( 'admin_post_thumbnail_html', 'bs_featured_image_instruction');
-function bs_featured_image_instruction( $content ) {
+add_filter( 'admin_post_thumbnail_html', 'blue_planet_featured_image_instruction');
+function blue_planet_featured_image_instruction( $content ) {
     $content .= '<strong>Recommended image sizes</strong><br/>';
     $content .= '<br/>Secondary Slider : 720px X 350px';
     return $content;

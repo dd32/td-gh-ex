@@ -1,13 +1,13 @@
 <?php
-global $bluesky_options_settings;
-$bs_options = $bluesky_options_settings;
-// showpre($bs_options);
+global $blueplanet_options_settings;
+$bp_options = $blueplanet_options_settings;
+// showpre($bp_options);
 /**
  * The Header for our theme.
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
- * @package Blue Sky
+ * @package Blue Planet
  */
 ?><!DOCTYPE html>
 <!--[if IE 7]>
@@ -26,9 +26,9 @@ $bs_options = $bluesky_options_settings;
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-<?php  if( !empty( $bs_options['custom_favicon']  ) ) :?>
+<?php  if( !empty( $bp_options['custom_favicon']  ) ) :?>
 <link rel="shortcut icon"
-href="<?php echo $bs_options['custom_favicon']; ?>" />
+href="<?php echo $bp_options['custom_favicon']; ?>" />
 <?php  endif;?>
 
  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -49,14 +49,14 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 
     <?php
     //
-    do_action( 'bluesky_after_body_open' );
+    do_action( 'blue_planet_after_body_open' );
     //
     ?>
     <div class="container">
     <div class="container-open-wrapper">
     <?php
     //
-    do_action( 'bluesky_after_container_open' );
+    do_action( 'blue_planet_after_container_open' );
     //
     ?>
     </div>
@@ -65,7 +65,7 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 
     <?php
     //
-    do_action( 'bluesky_after_page_open' );
+    do_action( 'blue_planet_after_page_open' );
     //
     ?>
 
@@ -73,22 +73,22 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
 
     <?php
     //
-    do_action( 'bluesky_after_masthead_open' );
+    do_action( 'blue_planet_after_masthead_open' );
     //
     ?>
 
     <?php
     //
-    do_action( 'bluesky_before_masthead_close' );
+    do_action( 'blue_planet_before_masthead_close' );
     //
     ?>
 	</header><!-- #masthead -->
     <?php
     //
-    do_action( 'bluesky_after_masthead_close' );
+    do_action( 'blue_planet_after_masthead_close' );
     //
     ?>
-    <nav role="navigation" class="bluesky-nav" id="site-navigation">
+    <nav role="navigation" class="blueplanet-nav" id="site-navigation">
         <a title="Skip to content" href="#content" class="assistive-text">Skip to content</a>
 
         <?php if ( ! dynamic_sidebar( 'sidebar-top-menu' ) ) :?>
@@ -98,8 +98,6 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
             'menu'              => 'primary',
             'theme_location'    => 'primary',
             'depth'             => 0,
-                                // 'container'         => 'div',
-                                // 'container_class'   => 'collapse navbar-collapse navbar-ex1-collapse',
             'menu_class'        => 'nav-menu',
             'menu_id'         => 'menu-top',
             )
@@ -115,7 +113,7 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
     <div id="content" class="site-content"  style="margin-top:10px;">
     <?php
     //
-    do_action( 'bluesky_after_content_open' );
+    do_action( 'blue_planet_after_content_open' );
     //
     ?>
 

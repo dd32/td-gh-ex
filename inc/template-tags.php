@@ -4,31 +4,31 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package Blue Sky
+ * @package Blue Planet
  */
 
-if ( ! function_exists( 'blue_sky_paging_nav' ) ) :
+if ( ! function_exists( 'blue_planet_paging_nav' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
  *
  * @return void
  */
-function blue_sky_paging_nav() {
+function blue_planet_paging_nav() {
 	// Don't print empty markup if there's only one page.
 	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
 		return;
 	}
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'blue-sky' ); ?></h1>
+		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'blue-planet' ); ?></h1>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'blue-sky' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'blue-planet' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'blue-sky' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'blue-planet' ) ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
@@ -37,13 +37,13 @@ function blue_sky_paging_nav() {
 }
 endif;
 
-if ( ! function_exists( 'blue_sky_post_nav' ) ) :
+if ( ! function_exists( 'blue_planet_post_nav' ) ) :
 /**
  * Display navigation to next/previous post when applicable.
  *
  * @return void
  */
-function blue_sky_post_nav() {
+function blue_planet_post_nav() {
 	// Don't print empty markup if there's nowhere to navigate.
 	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
 	$next     = get_adjacent_post( false, '', false );
@@ -53,11 +53,11 @@ function blue_sky_post_nav() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'blue-sky' ); ?></h1>
+		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'blue-planet' ); ?></h1>
 		<div class="nav-links">
 
-			<?php previous_post_link( '%link', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', 'blue-sky' ) ); ?>
-			<?php next_post_link(     '%link', _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link',     'blue-sky' ) ); ?>
+			<?php previous_post_link( '%link', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', 'blue-planet' ) ); ?>
+			<?php next_post_link(     '%link', _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link',     'blue-planet' ) ); ?>
 
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -65,20 +65,20 @@ function blue_sky_post_nav() {
 }
 endif;
 
-if ( ! function_exists( 'blue_sky_comment' ) ) :
+if ( ! function_exists( 'blue_planet_comment' ) ) :
 /**
  * Template for comments and pingbacks.
  *
  * Used as a callback by wp_list_comments() for displaying the comments.
  */
-function blue_sky_comment( $comment, $args, $depth ) {
+function blue_planet_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 
 	if ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ) : ?>
 
 	<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
 		<div class="comment-body">
-			<?php _e( 'Pingback:', 'blue-sky' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'blue-sky' ), '<span class="edit-link">', '</span>' ); ?>
+			<?php _e( 'Pingback:', 'blue-planet' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'blue-planet' ), '<span class="edit-link">', '</span>' ); ?>
 		</div>
 
 	<?php else : ?>
@@ -88,20 +88,20 @@ function blue_sky_comment( $comment, $args, $depth ) {
 			<footer class="comment-meta">
 				<div class="comment-author vcard">
 					<?php if ( 0 != $args['avatar_size'] ) { echo get_avatar( $comment, $args['avatar_size'] ); } ?>
-					<?php printf( __( '%s <span class="says">says:</span>', 'blue-sky' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+					<?php printf( __( '%s <span class="says">says:</span>', 'blue-planet' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
 				</div><!-- .comment-author -->
 
 				<div class="comment-metadata">
 					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 						<time datetime="<?php comment_time( 'c' ); ?>">
-							<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'blue-sky' ), get_comment_date(), get_comment_time() ); ?>
+							<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'blue-planet' ), get_comment_date(), get_comment_time() ); ?>
 						</time>
 					</a>
-					<?php edit_comment_link( __( 'Edit', 'blue-sky' ), '<span class="edit-link">', '</span>' ); ?>
+					<?php edit_comment_link( __( 'Edit', 'blue-planet' ), '<span class="edit-link">', '</span>' ); ?>
 				</div><!-- .comment-metadata -->
 
 				<?php if ( '0' == $comment->comment_approved ) : ?>
-				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'blue-sky' ); ?></p>
+				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'blue-planet' ); ?></p>
 				<?php endif; ?>
 			</footer><!-- .comment-meta -->
 
@@ -123,13 +123,13 @@ function blue_sky_comment( $comment, $args, $depth ) {
 	<?php
 	endif;
 }
-endif; // ends check for blue_sky_comment()
+endif; // ends check for blue_planet_comment()
 
-if ( ! function_exists( 'blue_sky_posted_on' ) ) :
+if ( ! function_exists( 'blue_planet_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
-function blue_sky_posted_on() {
+function blue_planet_posted_on() {
 	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
@@ -142,7 +142,7 @@ function blue_sky_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	printf( __( '<span class="posted-on">%1$s</span><span class="byline">%2$s</span>', 'blue-sky' ),
+	printf( __( '<span class="posted-on">%1$s</span><span class="byline">%2$s</span>', 'blue-planet' ),
 		sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
 			esc_url( get_day_link(get_post_time('Y'), get_post_time('m'), get_post_time('j')) ),
 			$time_string
@@ -154,18 +154,18 @@ function blue_sky_posted_on() {
 	);
 	echo '<span class="comments">';
 	echo '<a href="'.get_comments_link().'">';
-	echo comments_number( __('0 comment','blue-sky'), __('1 comment','blue-sky'), __('% comments','blue-sky') );
+	echo comments_number( __('0 comment','blue-planet'), __('1 comment','blue-planet'), __('% comments','blue-planet') );
 	echo "</a>";
 	echo '</span>';
 
-	edit_post_link( __( 'Edit', 'blue-sky' ), '<span class="edit-link">', '</span>' );
+	edit_post_link( __( 'Edit', 'blue-planet' ), '<span class="edit-link">', '</span>' );
 }
 endif;
 
 /**
  * Returns true if a blog has more than 1 category.
  */
-function blue_sky_categorized_blog() {
+function blue_planet_categorized_blog() {
 	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
@@ -179,20 +179,20 @@ function blue_sky_categorized_blog() {
 	}
 
 	if ( '1' != $all_the_cool_cats ) {
-		// This blog has more than 1 category so blue_sky_categorized_blog should return true.
+		// This blog has more than 1 category so blue_planet_categorized_blog should return true.
 		return true;
 	} else {
-		// This blog has only 1 category so blue_sky_categorized_blog should return false.
+		// This blog has only 1 category so blue_planet_categorized_blog should return false.
 		return false;
 	}
 }
 
 /**
- * Flush out the transients used in blue_sky_categorized_blog.
+ * Flush out the transients used in blue_planet_categorized_blog.
  */
-function blue_sky_category_transient_flusher() {
+function blue_planet_category_transient_flusher() {
 	// Like, beat it. Dig?
 	delete_transient( 'all_the_cool_cats' );
 }
-add_action( 'edit_category', 'blue_sky_category_transient_flusher' );
-add_action( 'save_post',     'blue_sky_category_transient_flusher' );
+add_action( 'edit_category', 'blue_planet_category_transient_flusher' );
+add_action( 'save_post',     'blue_planet_category_transient_flusher' );

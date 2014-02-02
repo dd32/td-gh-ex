@@ -1,12 +1,12 @@
 jQuery(document).ready(function($) {
 
-    $('.bs-color-field').wpColorPicker({
+    $('.bp-color-field').wpColorPicker({
 
     });
 
     var targetfield, image_url;
 
-    jQuery('.bs_upload_button').click(function() {
+    jQuery('.bp_upload_button').click(function() {
 
         targetfield = jQuery(this).prev('.upload-url');
 
@@ -25,7 +25,7 @@ jQuery(document).ready(function($) {
         tb_remove();
     }
 
-    jQuery('#bs-tab-container').tabs({
+    jQuery('#bp-tab-container').tabs({
 
         active: $.cookie('activetab'),
 

@@ -8,25 +8,25 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package Blue Sky
+ * @package Blue Planet
  */
 
 get_header(); ?>
 <?php
-global $bluesky_options_settings;
-$bs_options = $bluesky_options_settings;
+global $blueplanet_options_settings;
+$bp_options = $blueplanet_options_settings;
 ?>
 
-	<div id="primary" class="content-area col-md-8 col-sm-12 col-xs-12 <?php echo bs_layout_setup_class(); ?>">
+	<div id="primary" class="content-area col-md-8 col-sm-12 col-xs-12 <?php echo blue_planet_layout_setup_class(); ?>">
     <?php
     //
-    do_action( 'bluesky_after_primary_open' );
+    do_action( 'blue_planet_after_primary_open' );
     //
     ?>
 		<main id="main" class="site-main" role="main">
         <?php
         //
-        do_action( 'bluesky_after_main_open' );
+        do_action( 'blue_planet_after_main_open' );
         //
         ?>
 
@@ -45,7 +45,7 @@ $bs_options = $bluesky_options_settings;
 
 			<?php endwhile; ?>
 
-			<?php blue_sky_paging_nav(); ?>
+			<?php blue_planet_paging_nav(); ?>
 
 		<?php else : ?>
 
@@ -55,7 +55,7 @@ $bs_options = $bluesky_options_settings;
 
         <?php
         //
-        do_action( 'bluesky_before_main_close' );
+        do_action( 'blue_planet_before_main_close' );
         //
         ?>
 
@@ -63,7 +63,7 @@ $bs_options = $bluesky_options_settings;
 
         <?php
         //
-        do_action( 'bluesky_before_primary_close' );
+        do_action( 'blue_planet_before_primary_close' );
         //
         ?>
 

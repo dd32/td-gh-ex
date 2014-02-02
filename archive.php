@@ -4,12 +4,12 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package Blue Sky
+ * @package Blue Planet
  */
 
 get_header(); ?>
 
-	<section id="primary" class="content-area col-md-8 col-sm-12 col-xs-12 <?php echo bs_layout_setup_class(); ?>">
+	<section id="primary" class="content-area col-md-8 col-sm-12 col-xs-12 <?php echo blue_planet_layout_setup_class(); ?>">
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
@@ -28,7 +28,7 @@ get_header(); ?>
 							 * what author we're dealing with (if that is the case).
 							*/
 							the_post();
-							printf( __( 'Author: %s', 'blue-sky' ), '<span class="vcard">' . get_the_author() . '</span>' );
+							printf( __( 'Author: %s', 'blue-planet' ), '<span class="vcard">' . get_the_author() . '</span>' );
 							/* Since we called the_post() above, we need to
 							 * rewind the loop back to the beginning that way
 							 * we can run the loop properly, in full.
@@ -36,31 +36,31 @@ get_header(); ?>
 							rewind_posts();
 
 						elseif ( is_day() ) :
-							printf( __( 'Day: %s', 'blue-sky' ), '<span>' . get_the_date() . '</span>' );
+							printf( __( 'Day: %s', 'blue-planet' ), '<span>' . get_the_date() . '</span>' );
 
 						elseif ( is_month() ) :
-							printf( __( 'Month: %s', 'blue-sky' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
+							printf( __( 'Month: %s', 'blue-planet' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
 
 						elseif ( is_year() ) :
-							printf( __( 'Year: %s', 'blue-sky' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
+							printf( __( 'Year: %s', 'blue-planet' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
 
 						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-							_e( 'Asides', 'blue-sky' );
+							_e( 'Asides', 'blue-planet' );
 
 						elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-							_e( 'Images', 'blue-sky');
+							_e( 'Images', 'blue-planet');
 
 						elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-							_e( 'Videos', 'blue-sky' );
+							_e( 'Videos', 'blue-planet' );
 
 						elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-							_e( 'Quotes', 'blue-sky' );
+							_e( 'Quotes', 'blue-planet' );
 
 						elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-							_e( 'Links', 'blue-sky' );
+							_e( 'Links', 'blue-planet' );
 
 						else :
-							_e( 'Archives', 'blue-sky' );
+							_e( 'Archives', 'blue-planet' );
 
 						endif;
 					?>
@@ -87,7 +87,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php blue_sky_paging_nav(); ?>
+			<?php blue_planet_paging_nav(); ?>
 
 		<?php else : ?>
 

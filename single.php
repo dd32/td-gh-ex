@@ -2,19 +2,19 @@
 /**
  * The Template for displaying all single posts.
  *
- * @package Blue Sky
+ * @package Blue Planet
  */
 
 get_header(); ?>
 
-	<div id="primary" class="content-area col-md-8 col-sm-12 col-xs-12 <?php echo bs_layout_setup_class(); ?>">
+	<div id="primary" class="content-area col-md-8 col-sm-12 col-xs-12 <?php echo blue_planet_layout_setup_class(); ?>">
 		<main id="main" class="site-main" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<?php get_template_part( 'content', 'single' ); ?>
 
-			<?php blue_sky_post_nav(); ?>
+			<?php blue_planet_post_nav(); ?>
 
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template

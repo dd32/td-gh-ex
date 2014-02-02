@@ -2,7 +2,7 @@
 /**
  * The template for displaying 404 pages (Not Found).
  *
- * @package Blue Sky
+ * @package Blue Planet
  */
 
 get_header(); ?>
@@ -14,11 +14,11 @@ get_header(); ?>
 
 			<section class="error-404 not-found">
 				<header class="page-header">
-					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'blue-sky' ); ?></h1>
+					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'blue-planet' ); ?></h1>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
-					<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'blue-sky' ); ?></p>
+					<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'blue-planet' ); ?></p>
 
 					<?php get_search_form(); ?>
 
