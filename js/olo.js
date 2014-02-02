@@ -4,13 +4,7 @@ $('#oloUp').click(function(){
 		$body.animate({scrollTop:0},400);
 });
 }); 
-function up(){
-   $wd = $(window);
-   $wd.scrollTop($wd.scrollTop() - 1);
-   fq = setTimeout("up()", 50);
-}
-
-$(document).ready( function() {
+jQuery(document).ready(function($){
 	var h1 = $(".oloPosts").height();
 	var h2 = $("#oloContainer #oloWidget").height();
 

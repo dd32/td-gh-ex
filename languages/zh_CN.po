@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-17 22:23+0800\n"
-"PO-Revision-Date: 2014-01-17 22:25+0800\n"
+"POT-Creation-Date: 2014-02-02 22:46+0800\n"
+"PO-Revision-Date: 2014-02-02 22:47+0800\n"
 "Last-Translator: 皇家元林 <i@hjyl.org>\n"
 "Language-Team: hjyl.org <i@hjyl.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,36 +19,36 @@ msgstr ""
 msgid "Featured"
 msgstr "置顶"
 
-#: ../archive.php:31 ../index.php:30 ../page.php:27 ../single.php:34
+#: ../archive.php:31 ../index.php:33 ../page.php:27 ../single.php:34
 msgid "Posted by"
 msgstr "Posted by"
 
-#: ../archive.php:34 ../index.php:33 ../single.php:37
+#: ../archive.php:34 ../index.php:36 ../single.php:37
 msgid "Posted in"
 msgstr "Posted in"
 
-#: ../archive.php:37 ../comments.php:5 ../index.php:36
+#: ../archive.php:37 ../comments.php:5 ../index.php:39
 msgid "Leave a reply"
 msgstr "回复"
 
-#: ../archive.php:37 ../comments.php:5 ../index.php:36
+#: ../archive.php:37 ../comments.php:5 ../index.php:39
 msgid "<b>1</b> Reply"
 msgstr "<b>1</b>条评论"
 
-#: ../archive.php:37 ../comments.php:5 ../index.php:36
+#: ../archive.php:37 ../comments.php:5 ../index.php:39
 msgid "<b>%</b> Replies"
 msgstr "<b>%</b>条评论"
 
-#: ../archive.php:40 ../functions.php:70 ../index.php:39 ../page.php:33
+#: ../archive.php:40 ../functions.php:74 ../index.php:42 ../page.php:33
 #: ../single.php:40
 msgid "Edit"
 msgstr "编辑"
 
-#: ../archive.php:69 ../index.php:68 ../page.php:63 ../single.php:84
+#: ../archive.php:69 ../index.php:71 ../page.php:63 ../single.php:84
 msgid "Nothing Found"
 msgstr "什么都没有"
 
-#: ../archive.php:73 ../index.php:72 ../page.php:67 ../single.php:88
+#: ../archive.php:73 ../index.php:75 ../page.php:67 ../single.php:88
 msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
 "searching will help find a related post."
@@ -127,53 +127,57 @@ msgstr "取消回复"
 msgid "Post Comment"
 msgstr "发布评论"
 
-#: ../footer.php:5
+#: ../footer.php:5 ../functions.php:196
 msgid "http://hjyl.org/"
 msgstr "http://hjyl.org/"
 
-#: ../functions.php:69
+#: ../functions.php:73
 msgid "Before Refresh, you can"
 msgstr "刷新之前，你可以"
 
-#: ../functions.php:71
+#: ../functions.php:75
 msgid "Cancel Editing"
 msgstr "取消编辑"
 
-#: ../functions.php:72
+#: ../functions.php:76
 msgid "Wait a moment..."
 msgstr "请稍候..."
 
-#: ../functions.php:73
+#: ../functions.php:77
 msgid "Good Comment"
 msgstr "提交成功"
 
-#: ../functions.php:130
+#: ../functions.php:132
 msgid "Copy and Specify"
 msgstr "转载请注明"
 
-#: ../functions.php:146
+#: ../functions.php:148
 msgid "Primary Navigation"
 msgstr "主要导航"
 
-#: ../functions.php:147
+#: ../functions.php:149
 msgid "Mobile Navigation"
 msgstr "手机导航"
 
-#: ../functions.php:153 ../sidebar.php:4
+#: ../functions.php:155 ../sidebar.php:4
 msgid "Home"
 msgstr "首页"
 
-#: ../functions.php:154
-msgid "Just For Three Widgets"
-msgstr "只支持三个边栏"
-
-#: ../functions.php:161 ../sidebar.php:22
+#: ../functions.php:162
 msgid "Single"
 msgstr "文章页"
 
-#: ../functions.php:168 ../sidebar.php:25
+#: ../functions.php:169
 msgid "Other"
 msgstr "其他页"
+
+#: ../functions.php:196
+msgid "http://wpa.qq.com/msgrd?v=3&uin=4953363&site=qq&menu=yes"
+msgstr "http://wpa.qq.com/msgrd?v=3&uin=4953363&site=qq&menu=yes"
+
+#: ../functions.php:196
+msgid "mailto:i@hjyl.org"
+msgstr "mailto:i@hjyl.org"
 
 #: ../header.php:21
 #, php-format
@@ -404,6 +408,9 @@ msgstr "统计代码"
 #: ../inc/theme_inc.php:141
 msgid "Save Changes"
 msgstr "保存设置"
+
+#~ msgid "Just For Three Widgets"
+#~ msgstr "只支持三个边栏"
 
 #~ msgid "search : "
 #~ msgstr "搜索："

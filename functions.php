@@ -13,22 +13,30 @@ if ( is_readable($locale_file) )
 
 //Add background for theme
 add_theme_support('custom-background');
-add_theme_support( "custom-header" );
 
-//post-thumbnails
-if(function_exists('add_theme_support')){
-    add_theme_support( 'post-thumbnails' );
-}
-if ( has_post_thumbnail()) {the_post_thumbnail();}
-
-//editor style
-add_editor_style('editor.css');
-
-//for forbidden wordpress version displayed
-remove_action('wp_head','wp_generator');
+//Add custom-header for logo
+$olo_logo = array(
+	'default-image'          => TPLDIR.'/images/logo.gif',
+	'random-default'         => false,
+	'width'                  => 100,
+	'height'                 => 100,
+	'header-text'            => false,
+	'uploads'                => true,
+);
+add_theme_support( 'custom-header', $olo_logo );
 
 // Add default posts and comments RSS feed links to head
 add_theme_support( 'automatic-feed-links' );
+
+//post-thumbnails
+add_theme_support( 'post-thumbnails' );
+add_image_size('index', 70, 50);
+
+//editor style
+add_editor_style('css/editor.css');
+
+//for forbidden wordpress version displayed
+remove_action('wp_head','wp_generator');
 
 //forbidden wptexturize
 remove_filter('the_content', 'wptexturize');
@@ -54,17 +62,13 @@ if ( ! isset( $content_width ) )
 add_action('wp_enqueue_scripts', 'olo_script');
 function olo_script() {
 	if( !IsMobile ){
-		wp_enqueue_style( 'olo', get_stylesheet_uri(),  array(), '20140121', false);
+		wp_enqueue_style( 'olo', get_stylesheet_uri(),  array(), '20140202', false);
 	}else{
-		wp_enqueue_style('mobile', TPLDIR . '/mobile.css', array(), '20140121', 'screen');
+		wp_enqueue_style('mobile', TPLDIR . '/css/mobile.css', array(), '20140202', false);
 	}
-	//del l10n.js
-	wp_deregister_script( 'l10n' );	
-	wp_deregister_script( 'jquery' );
-	wp_register_script( 'jquery', 'https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.10.2.min.js', array(), '20140121', false);
-	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'olo', TPLDIR . '/js/olo.js', array(), '20140121', true);
-	wp_enqueue_script( 'comments-ajax', TPLDIR . '/js/comments-ajax.js', array(), '20140121', true);
+	wp_enqueue_script('jquery');
+	wp_enqueue_script( 'olo', TPLDIR . '/js/olo.js', array(), '20140202', true);
+	wp_enqueue_script( 'comments-ajax', TPLDIR . '/js/comments-ajax.js', array(), '20140202', true);
 	wp_localize_script('comments-ajax', 'ajaxL10n', array(
 		'edt1' => __('Before Refresh, you can','olo'),
 		'edt2' => __('Edit','olo'),
@@ -73,11 +77,11 @@ function olo_script() {
 		'txt3' => __('Good Comment','olo')
 	));
 	
-	if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
+	if ( is_singular() && comments_open() ) wp_enqueue_script( 'comment-reply' );
 			
 	if( is_page('archives') ){
-		wp_enqueue_script( 'archives', TPLDIR . '/js/archives.js', array(), '20140121', false);
-		wp_enqueue_style( 'archives', TPLDIR . '/css/archives.css', array(), '20140121', 'screen');
+		wp_enqueue_script( 'archives', TPLDIR . '/js/archives.js', array(), '20140202', false);
+		wp_enqueue_style( 'archives', TPLDIR . '/css/archives.css', array(), '20140202', 'screen');
 	};
 }
 
@@ -146,10 +150,9 @@ add_filter('category_description', 'deletehtml');
 	) );
 
 // Add sidebar
-if ( function_exists('register_sidebar') ){
+function olo_widgets(){
     register_sidebar(array(
 		'name'=>''.__('Home', 'olo').'',
-		'description'   => ''.__('Just For Three Widgets', 'olo').'',
         'before_widget' => '<li id="%1$s" class="widget %2$s">',
         'after_widget' => '</li>',
         'before_title' => '<h2><span class="star">',
@@ -169,7 +172,9 @@ if ( function_exists('register_sidebar') ){
         'before_title' => '<h2><span class="star">',
         'after_title' => '</span></h2>',
     ));
-	}
+}
+add_action( 'widgets_init', 'olo_widgets' );
+
 function olo_login() {      
 echo '<link rel="stylesheet" tyssspe="text/css" href="' .TPLDIR. '/css/login.css" />'; }      
 add_action('login_head', 'olo_login');  
@@ -188,16 +193,8 @@ function custom_loginlogo_url($url) { return ''.home_url().''; }
 //add author information 
 add_filter('admin_footer_text', 'olo_admin_footer');
 function olo_admin_footer() {
-	echo '<a target="_blank" href="http://hjyl.org/">hjyl.org</a> - hjyl.org (QQ: <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=4953363&site=qq&menu=yes">4953363</a> Email: <a href="mailto:i@hjyl.org">i@hjyl.org</a>) - <a target="_blank" href="http://hjyl.org/">hjyl.org</a>';
+	echo '<a target="_blank" href="'.esc_url( __( 'http://hjyl.org/', 'olo' ) ).'">hjyl.org</a> - hjyl.org (QQ: <a target="_blank" href="'.esc_url( __( 'http://wpa.qq.com/msgrd?v=3&uin=4953363&site=qq&menu=yes', 'olo' ) ).'">4953363</a> Email: <a href="'.esc_url( __( 'mailto:i@hjyl.org', 'olo' ) ).'">i@hjyl.org</a>) - <a target="_blank" href="'.esc_url( __( 'http://hjyl.org/', 'olo' ) ).'">hjyl.org</a>';
 }
-
-//reload posts on home
-function posts_on_homepage( $query ) {
-    if ( $query->is_home() && $query->is_main_query() ) {
-        $query->set( 'posts_per_page', '5' );
-    }
-}
-add_action( 'pre_get_posts', 'posts_on_homepage' );
 
   /*Custom parts*/
  include (get_template_directory() . '/inc/theme_inc.php'); 

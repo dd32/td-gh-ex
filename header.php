@@ -20,7 +20,7 @@
 	if ( is_paged() )
 		echo sprintf( __('Page %1$s of %2$s', ''), intval( get_query_var('paged')), $wp_query->max_num_pages).' - ';
 
-	wp_title('');
+	wp_title('', true, '');
 
 	// Add the blog name.
 	if(is_home() && is_front_page()) bloginfo( 'name' );
@@ -51,7 +51,6 @@ if (is_home()){
 ?>
 <meta name="keywords" content="<?php echo $keywords; ?>" />
 <meta name="description" content="<?php echo $description; ?>" />
-<link rel="icon" type="image/gif" href="<?php echo home_url(); ?>/favicon.gif">
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php if (is_archive() && ($paged > 1)&& ($paged < $wp_query->max_num_pages)) { ?>
@@ -65,13 +64,13 @@ if (is_home()){
 </head>
 <body <?php body_class(); ?> id="olo">
 	<header id="oloLogo">
-		<h1><a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a></h1>
+		<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php bloginfo('name'); ?>"></a></h1>
+		<?php get_search_form(); ?>
 		<?php if(!IsMobile) { ?>
 		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => 'nav', 'container_id' => 'oloMenu' ) ); ?>
 		<?php }else{ ?>
 		<?php wp_nav_menu( array( 'theme_location' => 'mobile', 'container' => 'nav', 'container_id' => 'oloMenu' ) ); ?>
 		<?php } ?>
-		<?php get_search_form(); ?>
 	</header>
 	<div class="clear"></div>
 	

@@ -22,6 +22,9 @@
 					</header>
 					
 					<section class="oloEntry">
+					<?php if ( has_post_thumbnail() ) { ?>
+						<?php the_post_thumbnail( 'index' ); ?>
+					<?php } ?>
 						<?php the_excerpt(); ?>
 					</section>
 					

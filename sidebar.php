@@ -19,11 +19,9 @@
 					</li>
 				<?php endif; ?>
 			<?php } elseif( is_single() ) { ?>
-				<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar(''.__('Single', 'olo').'') ) : ?>
-				<?php endif; ?>
+				<?php dynamic_sidebar( 'Single' ); ?>
 			<?php } else { ?>
-				<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar(''.__('Other', 'olo').'') ) : ?>
-				<?php endif; ?>
+				<?php dynamic_sidebar( 'Other' ); ?>
 			<?php } ?>
 		</ul>
 	</aside><!-- #oloWidget-->
