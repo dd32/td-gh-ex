@@ -1,7 +1,7 @@
 /*---------------------------------------------------------------------------------
 
 	Theme Name: Hemingway
-	Version: 1.04
+	Version: 1.05
 	Description: Hemingway is a clean, simple and beautiful theme for bloggers. Features responsive design, retina-ready assets, custom widgets (video, Flickr and Dribbble), archive page template and translation-ready code.
 	Tags: black, dark, white, green, two-columns, fluid-layout, responsive-layout, custom-header, custom-menu, featured-images, flexible-header, post-formats, sticky-post, threaded-comments, translation-ready
 	Author: Anders Norén
@@ -132,7 +132,8 @@ img {
 /* Transitions --------------------------------------- */
 
 
-body a {
+body a,
+.post-tags a::after {
 	-webkit-transition: all 0.1s ease-in-out;
 	 -moz-transition: all 0.1s ease-in-out;
 	 -ms-transition: all 0.1s ease-in-out;
@@ -411,6 +412,8 @@ a.more-link {
 	margin-bottom: 10%;
 }
 
+.single-post .post,
+.single-page .post,
 .post:last-child,
 .page:last-child { padding-bottom: 0; border-bottom: 0; margin-bottom: 0; }
 
@@ -555,19 +558,69 @@ a.more-link:hover {
 	position: relative;
 }
 
-.post-cat-tags {
+.post-categories {
 	font-size: 0.85em; 
 	font-weight: 400;
 	color: #999;
+	line-height: 120%;
 }
 
-.post-cat-tags p { display: inline-block; line-height: 120%; }
-.post-cat-tags p:nth-child(1) { margin-right: 15px; }
-.post-cat-tags p:nth-child(2) { margin-top: 10px; }
+.post-categories span { font-weight: 700; }
+.post-categories a:hover { text-decoration: underline; }
 
-.post-cat-tags span { font-weight: 700; }
+.post-tags { margin-top: 20px; }
 
-.post-cat-tags a:hover { text-decoration: underline; }
+.post-tags a {
+	position: relative;
+	font-size: 12px;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #FFF;
+	display: inline-block;
+	padding: 6px;
+	margin-left: 20px;
+	background: #767676;
+	border-radius: 0 2px 2px 0;
+	-moz-border-radius: 0 2px 2px 0;
+	-webkit-border-radius: 0 2px 2px 0;
+}
+
+.post-tags a:first-child { margin-left: 12px; }
+
+.post-tags a::after {
+	border-top: 12px solid transparent;
+	border-right: 12px solid #767676;
+	border-bottom: 12px solid transparent;
+	content: "";
+	height: 0;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	width: 0;
+}
+
+.post-tags a:before {
+	content: "";
+	display: block;
+	position: absolute;
+	left: -4px;
+	top: 50%;
+	margin-top: -2px;
+	width: 4px;
+	height: 4px;
+	background: #FFF;
+	border-radius: 99px;
+	-moz-border-radius: 99px;
+	-webkit-border-radius: 99px;
+	z-index: 10;
+}
+
+.post-tags a:hover {
+	background: #1abc9c;
+	color: #FFF;
+}
+
+.post-tags a:hover:after { border-right-color: #1abc9c; }
 
 .post-nav {
 	font-size: 0.95em;
@@ -584,6 +637,17 @@ a.more-link:hover {
 	max-width: 49%;
 	color: #666;
 }
+
+.post-nav h5 {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 0.7em;
+	color: #999;
+	margin-bottom: 7px;
+	font-weight: 700;
+}
+
+.post-nav-newer h5 { text-align: right; }
 
 .post-nav-newer,
 a.post-nav-newer { float: right; }
@@ -654,6 +718,7 @@ a.post-nav-newer { float: right; }
 	padding: 1.1em;
 	color: #666;
 	background: #EEE;
+	background: rgba(0,0,0,0.2);
 	font-family: 'Raleway', 'Helvetica Neue', sans-serif;
 }
 

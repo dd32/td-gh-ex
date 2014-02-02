@@ -1,8 +1,15 @@
+Version 1.05 (2014-02-02)
+-------------------------
+- Cleaned up post-meta-bottom
+- Misc bug fixes
+
+
 Version 1.04 (2014-02-01)
 -------------------------
 - Fixed styling for the archive template
 - Cleaned up style.css, fixed section numbering
 – Misc bug fixes
+
 
 Version 1.03 (2014-01-31)
 -------------------------

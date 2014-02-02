@@ -140,24 +140,23 @@
 					<div class="clear"></div>
 					
 					<div class="post-meta-bottom">
-					
-						<div class="post-cat-tags">							
-													
-							<p><span><?php _e('Categories:', 'hemingway'); ?></span> <?php the_category(', '); ?></p>
-							
-							<?php if( has_tag()) { ?><p><span><?php _e('Tags:', 'hemingway'); ?></span> <?php the_tags('', ', '); ?></p><?php } ?>
-							
-						</div> <!-- /post-cat-tags -->
-					
+																		
+						<p class="post-categories"><span><?php _e('Categories:', 'hemingway'); ?></span> <?php the_category(', '); ?></p>
+						
+						<?php if( has_tag()) { ?><p class="post-tags"><?php the_tags('', ''); ?></p><?php } ?>
+						
+						<div class="clear"></div>
+												
 						<div class="post-nav">
 													
 							<?php
 							$prev_post = get_previous_post();
 							if (!empty( $prev_post )): ?>
-								
+							
 								<a class="post-nav-older" title="<?php _e('Previous post:', 'hemingway'); echo ' ' . get_the_title($prev_post); ?>" href="<?php echo get_permalink( $prev_post->ID ); ?>">
-																
-								&laquo; <?php echo get_the_title($prev_post); ?>
+								
+								<h5><?php _e('Previous post', 'hemingway'); ?></h5>																
+								<?php echo get_the_title($prev_post); ?>
 								
 								</a>
 						
@@ -167,9 +166,10 @@
 							$next_post = get_next_post();
 							if (!empty( $next_post )): ?>
 								
-								<a class="post-nav-newer" title="<?php _e('Next post:', 'hemingway'); echo ' ' . get_the_title($next_post); ?>" href="<?php echo get_permalink( $next_post->ID ); ?>;">
-																
-								<?php echo get_the_title($next_post); ?> &raquo;
+								<a class="post-nav-newer" title="<?php _e('Next post:', 'hemingway'); echo ' ' . get_the_title($next_post); ?>" href="<?php echo get_permalink( $next_post->ID ); ?>">
+								
+								<h5><?php _e('Next post', 'hemingway'); ?></h5>							
+								<?php echo get_the_title($next_post); ?>
 								
 								</a>
 						
@@ -189,7 +189,7 @@
 				
 				<?php endif; ?>    
 		
-				</div> <!-- /post -->
+			</div> <!-- /post -->
 			
 		</div> <!-- /posts -->
 	
@@ -199,6 +199,6 @@
 	
 	<div class="clear"></div>
 	
-	</div> <!-- /wrapper -->
+</div> <!-- /wrapper -->
 		
 <?php get_footer(); ?>
