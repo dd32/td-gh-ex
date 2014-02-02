@@ -1,7 +1,7 @@
 INSTALLATION
 ============
 
-1. Extract shipyard.zip and upload the theme folder via FTP to your wp-content/themes/ directory, or login into WordPress Dashboard > Appearance > Install Themes.
+1. Extract shipyard.zip and upload the theme folder via FTP to your wp-content/themes/ directory, or login into WordPress Dashboard > Appearance > Themes.
 2. Go to your WordPress Dashboard > Appearance > Themes and select this theme to activate.
 3. Once activated, you're ready to use it.
 

@@ -8,13 +8,15 @@
 <div id="content">
 
 	<?php if ( have_posts() ) : ?>
-		<h3 class="page-title"><?php printf( __( 'Search Results for: %s', 'shipyard' ), '<span>' . get_search_query() . '</span>' ); ?></h3>
+		<h4 class="page-title"><?php printf( __( 'Search Results for: %s', 'shipyard' ), '<span>' . get_search_query() . '</span>' ); ?></h4>
 			
 			
 	<?php while ( have_posts() ) : the_post(); ?>
-		<h3 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to ', 'shipyard'); ?><?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+		<h4 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to ', 'shipyard'); ?><?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h4>
+
 		<h5 class="postmetadata"><?php _e('Posted on ', 'shipyard'); ?><a href="<?php the_permalink(); ?>"><?php echo get_the_date(); ?></a> | <?php _e('By ', 'shipyard'); ?> 
-		<?php the_author_posts_link() ?> | <?php printf( _n( '1 response', '%1$s responses', get_comments_number(), 'shipyard' ), number_format_i18n( get_comments_number() ) ); ?></h5>
+		<?php the_author_posts_link(); ?> <?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : echo '|'; ?>
+		<?php comments_popup_link( __( 'Leave a response', 'shipyard' ), __( '1 response', 'shipyard' ), __( '% responses', 'shipyard' ) ); ?><?php endif; ?></h5>
 
 	<?php if ( has_post_thumbnail() ) { 
 		the_post_thumbnail(); 

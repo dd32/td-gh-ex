@@ -18,6 +18,9 @@
 		array( 'primary' => __( 'Primary Navigation', 'shipyard' ), 
 	 	) ); 
 
+	// Add editor styles
+		add_editor_style( array( 'custom-editor-style.css' ) );
+
 	// Custom header	
 		$args = array(		
 		'width' => 960,
@@ -51,23 +54,13 @@
 	add_action( 'after_setup_theme', 'shipyard_setup' ); 
 
 
-// Theme Customizer (option to add logo)
-	function shipyard_theme_customizer( $wp_customize ) { 
-
-		$wp_customize->add_section( 'shipyard_logo_section' , array( 
-		'title' => __( 'Logo', 'shipyard' ), 
-		'priority' => 30, 
-		'description' => __( 'Upload a logo to replace blogname and description in header', 'shipyard' ),
-		) );
-		$wp_customize->add_setting( 'shipyard_logo' );
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'shipyard_logo', array( 
-		'label' => __( 'Logo', 'shipyard' ), 
-		'section' => 'shipyard_logo_section', 
-		'settings' => 'shipyard_logo', 
-		) ) );
-
-	} 
-	add_action('customize_register', 'shipyard_theme_customizer');
+// Add html5 support for older IE version 
+	function shipyard_html5() { 
+		echo '<!--[if lt IE 9]>'. "\n"; 
+		echo '<script src="' . esc_url( get_template_directory_uri() . '/js/ie.js' ) . '"></script>'. "\n"; 
+		echo '<![endif]-->'. "\n"; 
+		} 
+	add_action( 'wp_head', 'shipyard_html5' ); 
 
 
 // Add blogname to wp_title
@@ -86,7 +79,7 @@
 	function shipyard_scripts() {
 		if (!is_admin()) { 
 			wp_enqueue_style( 'style', get_stylesheet_uri() );
-			wp_enqueue_script( 'nav', get_stylesheet_directory_uri() . '/js/nav.js', array( 'jquery' ) );
+			wp_enqueue_script( 'nav', get_template_directory_uri() . '/js/nav.js', array( 'jquery' ) );
 		}
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 			wp_enqueue_script( 'comment-reply' );
@@ -97,7 +90,7 @@
 // Register Google Fonts
 	function shipyard_fonts() { 
 		if (! is_admin() ) { 
-			wp_register_style('googleFonts', 'http://fonts.googleapis.com/css?family=Open+Sans' ); 		
+			wp_register_style('googleFonts', '//fonts.googleapis.com/css?family=Open+Sans' ); 		
 				wp_enqueue_style( 'googleFonts'); 	
 		}
 	}  	
@@ -163,5 +156,24 @@
 		'description' => __( 'Boats', 'shipyard' )
 		)
 	) );
+
+
+// Theme Customizer (option to add logo)
+	function shipyard_theme_customizer( $wp_customize ) { 
+
+		$wp_customize->add_section( 'shipyard_logo_section' , array( 
+		'title' => __( 'Logo', 'shipyard' ), 
+		'priority' => 30, 
+		'description' => __( 'Upload a logo to replace blogname and description in header', 'shipyard' ),
+		) );
+		$wp_customize->add_setting( 'shipyard_logo' );
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'shipyard_logo', array( 
+		'label' => __( 'Logo', 'shipyard' ), 
+		'section' => 'shipyard_logo_section', 
+		'settings' => 'shipyard_logo', 
+		) ) );
+
+	} 
+	add_action('customize_register', 'shipyard_theme_customizer');
 
 ?>

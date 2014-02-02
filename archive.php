@@ -9,23 +9,26 @@
 
 	<?php if (have_posts()) : $count = 0; ?>
 		<?php if (is_category()) { ?>
-			<h3 class="page-title"><?php _e('Archive', 'shipyard'); ?> | <?php echo single_cat_title(); ?></h3> 
+			<h4 class="page-title"><?php _e('Archive', 'shipyard'); ?> | <?php echo single_cat_title(); ?></h4> 
 		<?php } elseif (is_day()) { ?>
-			<h3 class="page-title"><?php _e('Daily Archives', 'shipyard'); ?> | <?php echo get_the_date(); ?></h3>
+			<h4 class="page-title"><?php _e('Daily Archives', 'shipyard'); ?> | <?php echo get_the_date(); ?></h4>
 		<?php } elseif (is_month()) { ?>
-			<h3 class="page-title"><?php _e('Monthly Archives', 'shipyard'); ?> | <?php echo get_the_date('F Y'); ?></h3>
+			<h4 class="page-title"><?php _e('Monthly Archives', 'shipyard'); ?> | <?php echo get_the_date('F Y'); ?></h4>
 		<?php } elseif (is_year()) { ?>
-			<h3 class="page-title"><?php _e('Yearly Archives', 'shipyard'); ?> | <?php echo get_the_date('Y'); ?></h3>
+			<h4 class="page-title"><?php _e('Yearly Archives', 'shipyard'); ?> | <?php echo get_the_date('Y'); ?></h4>
 		<?php } elseif (is_author()) { ?>
-			<h3 class="page-title"><?php _e('Author Archives', 'shipyard'); ?></h3>
+			<h4 class="page-title"><?php _e('Author Archives', 'shipyard'); ?></h4>
 		<?php } elseif (is_tag()) { ?>
-			<h3 class="page-title"><?php _e('Tag Archives', 'shipyard'); ?> | <?php echo single_tag_title('', true); ?></h3>
+			<h4 class="page-title"><?php _e('Tag Archives', 'shipyard'); ?> | <?php echo single_tag_title('', true); ?></h4>
 	<?php } ?>
 
             
 	<?php while (have_posts()) : the_post(); $count++; ?>
-		<h3 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to ', 'shipyard'); ?><?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
-		<h5 class="postmetadata"><?php _e('Posted on ', 'shipyard'); ?><a href="<?php the_permalink(); ?>"><?php echo get_the_date(); ?></a> | <?php _e('Posted by ', 'shipyard'); ?> <?php the_author_posts_link() ?></h5>
+		<h4 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to ', 'shipyard'); ?><?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h4>
+
+		<h5 class="postmetadata"><?php _e('Posted on ', 'shipyard'); ?><a href="<?php the_permalink(); ?>"><?php echo get_the_date(); ?></a> | <?php _e('By ', 'shipyard'); ?> 
+		<?php the_author_posts_link(); ?> <?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : echo '|'; ?>
+		<?php comments_popup_link( __( 'Leave a response', 'shipyard' ), __( '1 response', 'shipyard' ), __( '% responses', 'shipyard' ) ); ?><?php endif; ?></h5>
 
 	<?php if ( has_post_thumbnail() ) { 
 		the_post_thumbnail(); 
