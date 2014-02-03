@@ -1,7 +1,7 @@
 /*---------------------------------------------------------------------------------
 
 	Theme Name: Hemingway
-	Version: 1.06
+	Version: 1.07
 	Description: Hemingway is a clean, simple and beautiful two-column theme for bloggers. Features responsive design, retina-ready assets, custom widgets (video, Flickr and Dribbble), page templates and translation-ready code.
 	Tags: black, dark, white, green, two-columns, fluid-layout, responsive-layout, custom-header, custom-menu, featured-images, flexible-header, post-formats, sticky-post, threaded-comments, translation-ready
 	Author: Anders Norén
@@ -536,7 +536,12 @@ a.more-link:hover {
 }
 
 
-/* Post formats --------------------------------------- */
+/* Post format aside --------------------------------------- */
+
+
+.blog .format-aside .post-meta,
+.archive .format-aside .post-meta,
+.search .format-aside .post-meta { text-align: center; }
 
 .blog .format-aside .post-content,
 .archive .format-aside .post-content,
@@ -544,11 +549,57 @@ a.more-link:hover {
 	padding: 20px;
 	background: #EEE;
 	margin-top: 20px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
 }
 
-.blog .format-aside .post-meta,
-.archive .format-aside .post-meta,
-.search .format-aside .post-meta { text-align: center; }
+
+/* Post format quote --------------------------------------- */
+
+
+.blog .format-quote .post-meta,
+.archive .format-quote .post-meta,
+.search .format-quote .post-meta { text-align: center; }
+
+.blog .format-quote .post-content,
+.archive .format-quote .post-content,
+.search .format-quote .post-content {
+	margin-top: 20px;
+	padding: 40px;
+	background: #262626;
+	color: #FFF;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+.blog .format-quote .post-content blockquote,
+.archive .format-quote .post-content blockquote,
+.search .format-quote .post-content blockquote {
+	background: none;
+	color: #FFF;
+	padding: 0;
+	font-size: 1.25em;
+	margin-bottom: 0;
+}
+
+.blog .format-quote .post-content blockquote p,
+.archive .format-quote .post-content blockquote p,
+.search .format-quote .post-content blockquote p {
+	text-align: center;
+}
+
+.blog .format-quote .post-content blockquote cite,
+.archive .format-quote .post-content blockquote cite,
+.search .format-quote .post-content blockquote cite {
+	display: block;
+	text-align: center;
+	color: rgba(255,255,255,0.75);
+	font-size: 1rem;
+	font-weight: 400;
+}
+
 
 
 /* -------------------------------------------------------------------------------- */
@@ -734,6 +785,7 @@ a.post-nav-newer { float: right; }
 .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 {
 	margin: 50px 0 20px;
 	color: #444;
+	line-height: 120%;
 }
 
 .post-content h1 { font-size: 2em; font-weight: 700; }
@@ -764,9 +816,9 @@ a.post-nav-newer { float: right; }
 
 .post-content blockquote {
 	padding: 1.1em;
+	line-height: 150%;
 	color: #666;
 	background: #EEE;
-	background: rgba(0,0,0,0.1);
 	font-family: 'Raleway', 'Helvetica Neue', sans-serif;
 }
 
@@ -1172,7 +1224,7 @@ li > div.comment {
 /* Respond --------------------------------------- */
 
 
-.comment+.comment-respond {
+.comment + .comment-respond {
 	padding-bottom: 10%;
 	border-bottom: 4px solid #EEE;
 	margin-bottom: 10%;
@@ -1287,6 +1339,7 @@ li > div.comment {
 	border: none;
 	background: #1D1D1D;
 	color: #FFF;
+	font-family: 'Lato', sans-serif;
 	font-size: 0.925rem;
 	border-radius: 4px;
 	-moz-border-radius: 4px;
@@ -1329,6 +1382,8 @@ li > div.comment {
 	display: inline-block;
 	text-transform: uppercase;
 	font-size: 0.9em;
+	letter-spacing: 1px;
+	font-weight: 700;
 	color: #999;
 	padding-bottom: 5px;
 	border-bottom: 2px solid #EEE;
@@ -1837,7 +1892,6 @@ li > div.comment {
 		height: 57px;
 		width: 32px;
 		padding: 20px 0px;
-		background: #1d1d1d;
 	}
 	
 	.toggle:hover { cursor: pointer; }
@@ -1852,7 +1906,7 @@ li > div.comment {
 		width: 24px;
 		height: 3px;
 		margin-top: 4px;
-		background: #777;
+		background: #666;
 	}
 	
 	.nav-toggle .bar:first-child { margin-top: 0; }
@@ -1873,7 +1927,7 @@ li > div.comment {
 		border-radius: 999px;
 		-moz-border-radius: 999px;
 		-webkit-border-radius: 999px;
-		background: #777;
+		background: #555;
 	}
 	
 	.search-toggle .glass {
@@ -1892,7 +1946,7 @@ li > div.comment {
 		width: 14px;
 		top: 36px;
 		left: 0px;
-		background: #777;
+		background: #555;
 		border-radius: 2px 0 0 2px;
 		-moz-border-radius: 2px 0 0 2px;
 		-webkit-border-radius: 2px 0 0 2px;
@@ -2000,8 +2054,8 @@ li > div.comment {
 	/* Main content --------------------------------------- */
 	
 	.post {
-		padding-bottom: 30px;
-		margin-bottom: 30px;
+		padding-bottom: 35px;
+		margin-bottom: 35px;
 	}
 	
 	.post:last-child { padding-bottom: 0; border-bottom: none; margin-bottom: 0; }
@@ -2010,15 +2064,31 @@ li > div.comment {
 	
 	.post-header { margin-bottom: 25px; }
 	
-	.post-author { display: none; }
-	.post-header .date-sep:nth-of-type(2) { display: none; }
+	.post-title { margin-bottom: 12px; }
 	
+	.post-meta-bottom { margin-top: 40px; }
+	
+	/* Post content --------------------------------------- */
+	
+	.post-content h1,
+	.post-content h2,
+	.post-content h3,
+	.post-content h4,
+	.post-content h5,
+	.post-content h6 {
+		margin-top: 30px;
+		margin-bottom: 10px;
+	}
+		
 	/* Comments --------------------------------------- */
 	
-	.comments,
-	.comment-respond { padding-top: 30px; margin-top: 30px; }
+	.comments { padding-top: 40px; margin-top: 40px; }
+	.comment-respond { margin-top: 40px; }
+	
+	.post + .comment-respond { padding-top: 40px; }
 	
 	.comments-title, #reply-title { font-size: 1.5em; }
+	.comments-title { margin-bottom: 20px; }
 	
 	.comment-meta-content { padding-top: 9px; }
 	
@@ -2109,6 +2179,9 @@ li > div.comment {
 	
 	.post-title { font-size: 1.75em; }
 	
+	.post-author { display: none; }
+	.post-header .date-sep:nth-of-type(2) { display: none; }
+	
 	.media-caption-container {
 		position: static;
 		top: auto;
@@ -2134,20 +2207,42 @@ li > div.comment {
 	.post-cat-tags p { display: block; }
 	.post-cat-tags p:last-child { margin-left: 0; margin-top: 10px; }
 	
-	.single .post-nav { padding: 20px 0; font-size: 1em; }
+	.single .post-nav { padding: 0; font-size: 1em; }
 	
 	.single .post-nav a,
 	.single .post-nav .post-nav-newer { 
 		max-width: 100%;
 		float: none; 
 		text-align: left;
-		padding: 0;
+		padding: 20px 0;
 	}
 	
-	.single .post-nav .post-nav-newer { padding-top: 20px; border-top: 1px solid #EEE; margin-top: 20px; }	
+	.single .post-nav .post-nav-newer { border-top: 1px solid #EEE; }	
 	.single .post-nav .post-nav-newer h5 { text-align: left; }
 	
+	/* Post formats --------------------------------------- */
+	
+	.blog .format-quote .post-content,
+	.archive .format-quote .post-content,
+	.search .format-quote .post-content {
+		padding: 20px;
+	}
+	
+	.blog .format-quote .post-content blockquote,
+	.archive .format-quote .post-content blockquote,
+	.search .format-quote .post-content blockquote {
+		font-size: 1em;
+	}
+	
+	.blog .format-quote .post-content blockquote cite,
+	.archive .format-quote .post-content blockquote cite,
+	.search .format-quote .post-content blockquote cite {
+		font-size: 0.75rem;
+	}
+	
 	/* Comments --------------------------------------- */
+	
+	.comment-meta-content { margin-left: 65px; }
 	
 	.comment-content { margin-left: 0; }
 	

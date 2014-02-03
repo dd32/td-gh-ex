@@ -63,9 +63,7 @@
 <div class="post-content">
 	    		            			            	                                                                                            
 	<?php the_content(); ?>
-	
-	<div class="clear"></div>
-			
+				
 	<?php wp_link_pages(); ?>
 				        
 </div> <!-- /post-content -->

@@ -15,7 +15,7 @@ function hemingway_setup() {
 	add_theme_support( 'post-thumbnails' ); add_image_size( 'post-image', 676, 9999 );
 	
 	// Post formats
-	add_theme_support( 'post-formats', array( 'video', 'aside' ) );
+	add_theme_support( 'post-formats', array( 'video', 'aside', 'quote' ) );
 
 	// Custom header (logo)
 	$custom_header_args = array( 'width' => 1280, 'height' => 400, 'header-text' => false );
@@ -50,7 +50,7 @@ add_action( 'wp_enqueue_scripts', 'hemingway_load_javascript_files' );
 // Enqueue styles
 function hemingway_load_style() {
 	if ( !is_admin() )
-	    wp_register_style('hemingway_googleFonts', 'http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Raleway:600,500,400' );
+	    wp_register_style('hemingway_googleFonts', 'http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Raleway:700,400' );
 		wp_register_style('hemingway_style', get_stylesheet_uri() );
 		
 	    wp_enqueue_style( 'hemingway_googleFonts' );
