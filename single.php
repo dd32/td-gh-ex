@@ -141,7 +141,7 @@
 					
 					<div class="post-meta-bottom">
 																		
-						<p class="post-categories"><span><?php _e('Categories:', 'hemingway'); ?></span> <?php the_category(', '); ?></p>
+						<p class="post-categories"><span class="category-icon"><span class="front-flap"></span></span> <?php the_category(', '); ?></p>
 						
 						<?php if( has_tag()) { ?><p class="post-tags"><?php the_tags('', ''); ?></p><?php } ?>
 						

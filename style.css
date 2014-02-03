@@ -1,8 +1,8 @@
 /*---------------------------------------------------------------------------------
 
 	Theme Name: Hemingway
-	Version: 1.05
-	Description: Hemingway is a clean, simple and beautiful theme for bloggers. Features responsive design, retina-ready assets, custom widgets (video, Flickr and Dribbble), archive page template and translation-ready code.
+	Version: 1.06
+	Description: Hemingway is a clean, simple and beautiful two-column theme for bloggers. Features responsive design, retina-ready assets, custom widgets (video, Flickr and Dribbble), page templates and translation-ready code.
 	Tags: black, dark, white, green, two-columns, fluid-layout, responsive-layout, custom-header, custom-menu, featured-images, flexible-header, post-formats, sticky-post, threaded-comments, translation-ready
 	Author: Anders Norén
 	Author URI: http://www.andersnoren.se
@@ -160,7 +160,9 @@ input#s,
 .widget_recent_entries a,
 .search-toggle.active .metal,
 .search-toggle.active .handle,
-a.more-link {
+a.more-link,
+.dribbble-shot img,
+.flickr_badge_image a img {
 	-webkit-transition: all 0.2s ease-in-out;
 	 -moz-transition: all 0.2s ease-in-out;
 	 -ms-transition: all 0.2s ease-in-out;
@@ -499,7 +501,6 @@ a.more-link {
 -webkit-hyphens: auto;
    -moz-hyphens: auto;
         hyphens: auto;
-
 }
 
 .post-title,
@@ -523,7 +524,9 @@ a.more-link {
 	padding: 10px 18px;
 	color: #FFF;
 	font-size: 0.85em;
-	border-radius: 4px;
+	border-radius: 4px; 
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
 }
 
 a.more-link:hover { 
@@ -559,16 +562,66 @@ a.more-link:hover {
 }
 
 .post-categories {
+	position: relative;
 	font-size: 0.85em; 
 	font-weight: 400;
 	color: #999;
 	line-height: 120%;
+	padding-left: 36px;
 }
 
-.post-categories span { font-weight: 700; }
+.category-icon,
+.category-icon:after,
+.front-flap,
+.front-flap:after {
+	display: block;
+	position: absolute;
+}
+
+.category-icon {
+	left: 0;
+	top: 2px;
+	width: 24px;
+	height: 16px;
+	background: #727272;
+	border-radius: 0 2px 2px 2px;
+	-moz-border-radius: 0 2px 2px 2px;
+	-webkit-border-radius: 0 2px 2px 2px;
+}
+
+.category-icon:after {
+	content: "";
+	width: 12px;
+	height: 3px;
+	top: -3px;
+	left: 0px;
+	background: #727272;
+	border-radius: 1px 1px 0 0;
+	-moz-border-radius: 1px 1px 0 0;
+	-webkit-border-radius: 1px 1px 0 0;
+}
+
+.front-flap {
+	height: 13px;
+	width: 22px;
+	bottom: -1px;
+	right: -2px;
+	background: #727272;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border: 1px solid #FFF;
+	transform: skew(-25deg,0deg);
+	-ms-transform: skew(-25deg,0deg);
+	-webkit-transform: skew(-25deg,0deg);
+}
+
 .post-categories a:hover { text-decoration: underline; }
 
-.post-tags { margin-top: 20px; }
+.post-tags { 
+	margin-top: 20px; 
+	margin-left: 12px;
+}
 
 .post-tags a {
 	position: relative;
@@ -578,14 +631,13 @@ a.more-link:hover {
 	color: #FFF;
 	display: inline-block;
 	padding: 6px;
-	margin-left: 20px;
+	margin-bottom: 5px;
+	margin-right: 20px;
 	background: #767676;
 	border-radius: 0 2px 2px 0;
 	-moz-border-radius: 0 2px 2px 0;
 	-webkit-border-radius: 0 2px 2px 0;
 }
-
-.post-tags a:first-child { margin-left: 12px; }
 
 .post-tags a::after {
 	border-top: 12px solid transparent;
@@ -660,11 +712,7 @@ a.post-nav-newer { float: right; }
 /* -------------------------------------------------------------------------------- */
 
 
-.post-content { 
-	font-size: 1.075em; 
-	-ms-word-wrap: break-word;
-	word-wrap: break-word;
-}
+.post-content { font-size: 1.075em; }
 
 .post-content a:hover { text-decoration: underline; }
 
@@ -718,7 +766,7 @@ a.post-nav-newer { float: right; }
 	padding: 1.1em;
 	color: #666;
 	background: #EEE;
-	background: rgba(0,0,0,0.2);
+	background: rgba(0,0,0,0.1);
 	font-family: 'Raleway', 'Helvetica Neue', sans-serif;
 }
 
@@ -1138,6 +1186,8 @@ li > div.comment {
 
 #respond .content-section-right {
 	border-radius: 0 0 4px 4px;
+	-moz-border-radius: 0 0 4px 4px;
+	-webkit-border-radius: 0 0 4px 4px;
 	border-top: 1px solid #EEE;
 	z-index: 12;
 }
@@ -1161,7 +1211,11 @@ li > div.comment {
 	line-height: 150%;
 }
 
-#respond code { border-radius: 2px; -moz-border-radius: 2px; -webkit-border-radius: 2px; }
+#respond code { 
+	border-radius: 2px; 
+	-moz-border-radius: 2px; 
+	-webkit-border-radius: 2px; 
+}
 
 .comment-notes,
 .logged-in-as {
@@ -1196,9 +1250,6 @@ li > div.comment {
 	padding: 2%;
 	margin: 0;
 	width: 100%;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	border: 1px solid #EEE;
 }
 
@@ -1238,8 +1289,8 @@ li > div.comment {
 	color: #FFF;
 	font-size: 0.925rem;
 	border-radius: 4px;
-	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
 }
 
 .content .button:hover,
@@ -1323,6 +1374,8 @@ li > div.comment {
 	font-family: 'Lato', sans-serif;
 	font-size: 1rem;
 	border-radius: 3px 0 0 3px;
+	-moz-border-radius: 3px 0 0 3px;
+	-webkit-border-radius: 3px 0 0 3px;
 }
 
 .post-content .searchform #s:focus { 
@@ -1346,6 +1399,8 @@ li > div.comment {
 	font-size: 0.8rem;
 	font-family: 'Lato', sans-serif;
 	border-radius: 0 3px 3px 0;
+	-moz-border-radius: 0 3px 3px 0;
+	-webkit-border-radius: 0 3px 3px 0;
 }
 
 .post-content .searchform #searchsubmit:hover {
@@ -1466,6 +1521,8 @@ li > div.comment {
 	font-family: 'Lato', sans-serif;
 	font-size: 1rem;
 	border-radius: 3px 0 0 3px;
+	-moz-border-radius: 3px 0 0 3px;
+	-webkit-border-radius: 3px 0 0 3px;
 }
 
 .widget_search #s:focus { 
@@ -1489,6 +1546,8 @@ li > div.comment {
 	font-size: 0.8rem;
 	font-family: 'Lato', sans-serif;
 	border-radius: 0 3px 3px 0;
+	-moz-border-radius: 0 3px 3px 0;
+	-webkit-border-radius: 0 3px 3px 0;
 }
 
 .widget_search #searchsubmit:hover {
@@ -1605,6 +1664,14 @@ li > div.comment {
 	margin-left: 0;
 }
 
+.flickr_badge_image img {
+	display: block;
+	padding: 5px;
+	background: #EEE;
+}
+
+.flickr_badge_image a:hover img { background: #1abc9c; }
+
 .widgetmore a {
 	display: block;
 	clear: both;
@@ -1626,6 +1693,14 @@ li > div.comment {
 }
 
 .dribbble-shot:nth-child(2n) { margin-right: 0; }
+
+.dribbble-shot img {
+	display: block;
+	padding: 5px;
+	background: #EEE;
+}
+
+.dribbble-shot:hover img { background: #1abc9c; }
 
 
 /* -------------------------------------------------------------------------------- */
@@ -1678,6 +1753,12 @@ li > div.comment {
 #wp-calendar thead { border-bottom-color: rgba(255,255,255,0.1); }
 #wp-calendar tfoot { border-top-color: rgba(255,255,255,0.1); }
 
+
+.footer .flickr_badge_image img,
+.footer .dribbble-shot img { background: rgba(255,255,255,0.1); }
+
+.footer .flickr_badge_image a:hover img,
+.footer .dribbble-shot:hover img { background: #1abc9c; }
 
 
 /* -------------------------------------------------------------------------------- */
@@ -1813,6 +1894,8 @@ li > div.comment {
 		left: 0px;
 		background: #777;
 		border-radius: 2px 0 0 2px;
+		-moz-border-radius: 2px 0 0 2px;
+		-webkit-border-radius: 2px 0 0 2px;
 		-webkit-transform:rotate(-45deg);
 	}
 	
@@ -1862,6 +1945,8 @@ li > div.comment {
 		color: #444;
 		border: none;
 		border-radius: 4px 0 0 4px;
+		-moz-border-radius: 4px 0 0 4px;
+		-webkit-border-radius: 4px 0 0 4px;
 		margin: 0;
 	}
 	
@@ -1884,6 +1969,8 @@ li > div.comment {
 		font-size: 0.8rem;
 		font-family: 'Lato', sans-serif;
 		border-radius: 0 4px 4px 0;
+		-moz-border-radius: 0 4px 4px 0;
+		-webkit-border-radius: 0 4px 4px 0;
 	}
 	
 	.blog-search #searchsubmit:hover { 
@@ -2033,8 +2120,8 @@ li > div.comment {
 	.media-caption {
 		padding: 10px;
 		border-radius: 0 0 4px 4px;
-		-webkit-border-radius: 0 0 4px 4px;
 		-moz-border-radius: 0 0 4px 4px;
+		-webkit-border-radius: 0 0 4px 4px;
 		background: #EEE;
 		color: #666;
 		width: 100%;
@@ -2057,7 +2144,7 @@ li > div.comment {
 		padding: 0;
 	}
 	
-	.single .post-nav .post-nav-newer { margin-top: 20px; }	
+	.single .post-nav .post-nav-newer { padding-top: 20px; border-top: 1px solid #EEE; margin-top: 20px; }	
 	.single .post-nav .post-nav-newer h5 { text-align: left; }
 	
 	/* Comments --------------------------------------- */

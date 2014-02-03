@@ -67,7 +67,7 @@ function hemingway_sidebar_reg() {
 	register_sidebar(array(
 	  'name' => __( 'Footer A', 'hemingway' ),
 	  'id' => 'footer-a',
-	  'description' => __( 'Widgets in this area will be shown in the first column in the footer.', 'hemingway' ),
+	  'description' => __( 'Widgets in this area will be shown in the left column in the footer.', 'hemingway' ),
 	  'before_title' => '<h3 class="widget-title">',
 	  'after_title' => '</h3>',
 	  'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
@@ -76,7 +76,7 @@ function hemingway_sidebar_reg() {
 	register_sidebar(array(
 	  'name' => __( 'Footer B', 'hemingway' ),
 	  'id' => 'footer-b',
-	  'description' => __( 'Widgets in this area will be shown in the second column in the footer.', 'hemingway' ),
+	  'description' => __( 'Widgets in this area will be shown in the middle column in the footer.', 'hemingway' ),
 	  'before_title' => '<h3 class="widget-title">',
 	  'after_title' => '</h3>',
 	  'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
@@ -85,7 +85,7 @@ function hemingway_sidebar_reg() {
 	register_sidebar(array(
 	  'name' => __( 'Footer C', 'hemingway' ),
 	  'id' => 'footer-c',
-	  'description' => __( 'Widgets in this area will be shown in the third column in the footer.', 'hemingway' ),
+	  'description' => __( 'Widgets in this area will be shown in the right column in the footer.', 'hemingway' ),
 	  'before_title' => '<h3 class="widget-title">',
 	  'after_title' => '</h3>',
 	  'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
