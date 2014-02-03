@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying search forms in IBERMEGA free
+ * The template for displaying search forms in Athenea
  *
  * @package Athenea
  */

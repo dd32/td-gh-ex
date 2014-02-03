@@ -179,7 +179,7 @@
 <div class="container">
    <div class="row transbody">
 	<?php
-      $portada = new WP_Query('showposts=5');
+      $portada = new WP_Query('showposts');
       while ($portada->have_posts()) : $portada->the_post();
       $do_not_duplicate = $post->ID;
     ?>   

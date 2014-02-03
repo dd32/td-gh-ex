@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2014-01-27 13:20+0100\n"
+"PO-Revision-Date: 2014-02-03 18:32+0100\n"
 "Last-Translator: Miguel Angel <miguel@ibermega.com>\n"
 "Language-Team: IBERMEGA digital <soporte@ibermega.com>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -646,24 +646,24 @@ msgid "Collaborate"
 msgstr "Colaborar"
 
 #. Theme Options/Donative
-msgid "for Coffee €0,80 EUR"
-msgstr "para un Café €0,80 EUR"
+msgid "for Coffee &#8364;0,80 EUR"
+msgstr "para un Café &#8364;0,80 EUR"
 
 #. Theme Options/Donative
-msgid "for Coca-Cola €1,20 EUR"
-msgstr "para una Coca-Cola €1,20 EUR"
+msgid "for Coca-Cola &#8364;1,20 EUR"
+msgstr "para una Coca-Cola &#8364;1,20 EUR"
 
 #. Theme Options/Donative
-msgid "for Beer €1,45 EUR"
-msgstr "para una Cerveza €1,45 EUR"
+msgid "for Beer &#8364;1,45 EUR"
+msgstr "para una Cerveza &#8364;1,45 EUR"
 
 #. Theme Options/Donative
-msgid "for a Burger €2,00 EUR"
-msgstr "para una Hamburguesa €2,00 EUR"
+msgid "for a Burger &#8364;2,00 EUR"
+msgstr "para una Hamburguesa &#8364;2,00 EUR"
 
 #. Theme Options/Donative
-msgid "All €5,45 EUR"
-msgstr "todo lo anterior €5,45 EUR"
+msgid "All &#8364;5,45 EUR"
+msgstr "todo lo anterior &#8364;5,45 EUR"
 
 #. Theme Options/Donative
 msgid "Opinion"

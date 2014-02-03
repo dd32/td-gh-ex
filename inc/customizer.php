@@ -1,6 +1,6 @@
 <?php
 /**
- * IBERMEGA free Theme Customizer
+ * Athenea Theme Customizer
  *
  * @package Athenea
  */

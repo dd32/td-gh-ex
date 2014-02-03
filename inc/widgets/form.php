@@ -66,8 +66,6 @@ class atheneaform_widget extends WP_Widget {
 <!-- atheneaform -->
 <form role="form" enctype="multipart/form-data" action="https://paneles.gestiondecuenta.com/comprobar-formulario/" method="POST" id="formGenGdc">
 
-  <h5><?php _e( 'Contact Form', 'athenea' ); ?></h5>
-  
   <div class="form-group">
     <label for="<?php _e( 'Name', 'athenea' ); ?>">
       <span class="glyphicon glyphicon-user"></span> <?php _e( 'Name', 'athenea' ); ?>  

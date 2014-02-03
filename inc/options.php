@@ -8,12 +8,7 @@ function optionsframework_option_name() {
 	$optionsframework_settings['id'] = $themename;
 	update_option( 'optionsframework', $optionsframework_settings );
 }
-
-
-
 function optionsframework_options() {
-
-    $options = array();
 	
 /**********************************************************************/
 /************** DESIGN

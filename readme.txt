@@ -2,11 +2,11 @@
 
 Theme Name: Athenea
 Theme URI: http://www.ibermega.com/themes/athenea
-Version: 1.0.0
+Version: 1.0.1
 Requires at least: 3.0.1
 Tested up to: 3.8.1
 Author: Miguel Angel Rico
-Author URI: http://www.ibermega.com/themes/
+Author URI: http://www.ibermega.com
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 -------------------------------------------------------
@@ -27,7 +27,7 @@ Theme Athenea uses:
 
 /*========= Description =========*/
 
-Athena is a theme for business or personal desktop and mobile fully configurable devices multitude of designs. It features front-page editable from theme options, also has contact form shortcode and widget. Athena is a completely free theme with premium features in future releases.
+Athenea is a theme for business or personal desktop and mobile fully configurable devices multitude of designs. It features front-page editable from theme options, also has contact form shortcode and widget. Athenea is a completely free theme with premium features in future releases.
 
 For questions, comments or bug reports, please go to WordPress forums (http://wordpress.org/support/). 
 
@@ -58,12 +58,12 @@ Alternatively you can download the file, unzip it and move the unzipped contents
 
 For documentation go to http://www.ibermega.com/themes/athenea
 
-== Upgrade Notice ==
-
-= 1.0.0 =
-* First official version.
 
 == Changelog ==
-= 1.0.0 - 27.01.2014 =
 
+= 1.0.1 - 04.02.2014 =
+* Minor bug fixes in the first version
+* Removed the templates folder and its contents as it was not necessary
+
+= 1.0.0 - 27.01.2014 =
 * Launch.

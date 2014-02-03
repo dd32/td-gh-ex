@@ -1,6 +1,6 @@
 <?php
 /**
- * IBERMEGA free functions and definitions
+ * Athenea functions and definitions
  *
  * @package Athenea
  */
@@ -25,7 +25,7 @@ function athenea_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on IBERMEGA free, use a find and replace
+	 * If you're building a theme based on Athenea, use a find and replace
 	 * to change 'athenea' to the name of your theme in all the template files
 	 */
 	load_theme_textdomain( 'athenea', get_template_directory() . '/languages' );
@@ -39,6 +39,8 @@ function athenea_setup() {
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
+	
+	add_editor_style();
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -46,7 +48,7 @@ function athenea_setup() {
 	) );
 
 	// Enable support for Post Formats.
-	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
+	//add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 
 	// Setup the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'athenea_custom_background_args', array(
@@ -141,10 +143,10 @@ function athenea_scripts() {
 	/** Cambio de design  */
 	if ( !is_admin() ) {
 	  if ( of_get_option('unique_design', 'design-red' ) == 'design-red' ) {
-		  wp_enqueue_style( 'athenea-red', get_template_directory_uri() . '/inc/dist/css/athenea-red.css' );
+		  wp_enqueue_style( 'athenea-red', get_template_directory_uri() . '/inc/dist/css/athenea-red-min.css' );
 		  wp_enqueue_style('athenea-red');
 	  } else {
-		  wp_enqueue_style( 'athenea-blue', get_template_directory_uri() . '/inc/dist/css/athenea-blue.css' );
+		  wp_enqueue_style( 'athenea-blue', get_template_directory_uri() . '/inc/dist/css/athenea-blue-min.css' );
 		  wp_enqueue_style('athenea-blue');
 	  }
 	}
@@ -166,7 +168,7 @@ function athenea_comment_form_defaults( $defaults ) {
 	return wp_parse_args( array(
 		'comment_field'			=>	'<div class="control-group"><label class="control-label" for="comment">' . __( 'Comment', 'athenea' ) . '</label><div class="controls"><textarea class="form-control" id="comment" name="comment" rows="8" aria-required="true"></textarea></div></div>',
 		'comment_notes_before'	=>	'',
-		'comment_notes_after'	=>	'<div class="form-allowed-tags control-group"><label class="control-label">' . sprintf( __( 'You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags and attributes: %s', 'athenea' ), '</label><div class="controls"><pre>' . allowed_tags() . '</pre></div>' ) . '</div>
+		'comment_notes_after'	=>	'<div class="form-allowed-tags control-group"><label class="control-label">' . sprintf( _x( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s', 'athenea' ), '</label><div class="controls"><pre>' . allowed_tags() . '</pre></div>' ) . '</div>
 									 <div class="form-actions">',
 		'title_reply'			=>	'<legend>' . __( 'Leave a reply', 'athenea' ) . '</legend>',
 		'title_reply_to'		=>	'<legend>' . __( 'Leave a reply to %s', 'athenea' ). '</legend>',
@@ -236,7 +238,7 @@ function athenea_comment( $comment, $args, $depth ) {
 	
 				</footer><!-- .comment-meta -->
 	
-				<div class="comment-content span<?php echo $span; ?>">
+				<div class="conmment">
 					<?php
 					comment_text();
 					comment_reply_link( array_merge( $args, array(
@@ -264,7 +266,7 @@ endif; // ends check for athenea_comment()
  * @return	string
  */
 function athenea_comment_form_top() {
-	echo '<div class="form-horizontal">';
+	echo '<div class="alert alert-warning">';
 }
 add_action( 'comment_form_top', 'athenea_comment_form_top' );
 
@@ -381,6 +383,31 @@ function athenea_print_ie_scripts() {
 add_action( 'wp_head', 'athenea_print_ie_scripts', 11 );
 
 /**
+ * Adds Google Analytics specific scripts
+ *
+ * @author	IBERMEGA digital
+ * @since	1.0.2 - 03.02.2014
+ *
+ * @return	void
+ */
+function athenea_print_analytics_scripts() {
+?>
+<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', '<?php echo of_get_option('athenea_analitics','no entry'); ?>']);
+  _gaq.push(['_setDomainName', '<?php echo of_get_option('athenea_analidom','no entry'); ?>']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<?php
+}
+add_action( 'wp_footer', 'athenea_print_analytics_scripts', 11 );
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
@@ -419,13 +446,13 @@ require get_template_directory() . '/inc/widgets/form.php';
 
 	// Agrega paginas del formulario y recibido
 	global $wpdb;
-	
-	$dashboard_check = get_page_by_title('Form Contact');
-	$author_check = get_page_by_title('Message Received');
-	$dashboard_check_id = $dashboard_check ->ID;
-	$author_check_id = $author_check ->ID;
+
+	$form_page = get_page_by_title('Form Contact');
+	$message_page = get_page_by_title('Message Received');
+	$form_check_id = $form_page ->ID;
+	$message_check_id = $message_page ->ID;
 	//Formulario
-	$dashboard_page = array(
+	$form_page = array(
 		'post_type' => 'page',
 		'post_name' => 'form-contact',
 		'post_title' => 'Form Contact',
@@ -438,7 +465,7 @@ require get_template_directory() . '/inc/widgets/form.php';
 		'post_category' => array(1),
 	);
 	//Recibido
-	$author_page = array(
+	$message_page = array(
 		'post_type' => 'page',
 		'post_name' => 'message-received',
 		'post_title' => 'Message Received',
@@ -450,17 +477,17 @@ require get_template_directory() . '/inc/widgets/form.php';
 		'menu_order'   => 78,
 		'post_category' => array(1),
 	);
-	if(!isset($dashboard_check_id)){
-		wp_insert_post($dashboard_page);
-		$dashboard_page_data = get_page_by_title('Form Contact');
-		$dashboard_page_id = $dashboard_page_data ->ID;
-		update_post_meta($dashboard_page_id, '_wp_page_template','dashboard.php');
+	if(!isset($form_check_id)){
+		wp_insert_post($form_page);
+		$form_page_data = get_page_by_title('Form Contact');
+		$form_page_id = $form_page_data ->ID;
+		update_post_meta($form_page_id, '_wp_page_template','dashboard.php');
 	}
-	if(!isset($author_check_id)){
-		wp_insert_post($author_page);
-		$author_page_data = get_page_by_title('Message Received');
-		$author_page_id = $author_page_data ->ID;
-		update_post_meta($author_page_id, '_wp_page_template','dashboard.php');
+	if(!isset($message_check_id)){
+		wp_insert_post($message_page);
+		$message_page_data = get_page_by_title('Message Received');
+		$message_page_id = $message_page_data ->ID;
+		update_post_meta($message_page_id, '_wp_page_template','dashboard.php');
 	}
 
 /**
@@ -471,11 +498,9 @@ if ( !function_exists( 'optionsframework_init' ) ) {
     require_once dirname( __FILE__ ) . '/inc/options-framework.php';
 }
 
-/* Donativos */
 add_action('optionsframework_custom_scripts', 'optionsframework_custom_scripts');
 
 function optionsframework_custom_scripts() { ?>
-
 <script type="text/javascript">
 jQuery(document).ready(function() {
 
@@ -489,10 +514,10 @@ jQuery(document).ready(function() {
 
 });
 </script>
-
 <?php
 }
 
+/* Donativos */
 // Athenea opciones con sidebar
 add_action( 'optionsframework_after','athenea_options_display_sidebar' );
 
@@ -513,11 +538,11 @@ function athenea_options_display_sidebar() { ?>
       
       <input type="hidden" name="on0" value="Collaboration"><br>
       <select name="os0">
-          <option value="for Coffee"><?php esc_attr_e( 'for Coffee €0,80 EUR', 'athenea' ); ?></option>
-          <option value="for Coca-Cola"><?php esc_attr_e( 'for Coca-Cola €1,20 EUR', 'athenea' ); ?></option>
-          <option value="for Beer"><?php esc_attr_e( 'for Beer €1,45 EUR', 'athenea' ); ?></option>
-          <option value="for a Burger"><?php esc_attr_e( 'for a Burger €2,00 EUR', 'athenea' ); ?></option>
-          <option value="All"><?php esc_attr_e( 'All €5,45 EUR', 'athenea' ); ?></option>
+          <option value="for Coffee"><?php esc_attr_e( 'for Coffee &#8364;0,80 EUR', 'athenea' ); ?></option>
+          <option value="for Coca-Cola"><?php esc_attr_e( 'for Coca-Cola &#8364;1,20 EUR', 'athenea' ); ?></option>
+          <option value="for Beer"><?php esc_attr_e( 'for Beer &#8364;1,45 EUR', 'athenea' ); ?></option>
+          <option value="for a Burger"><?php esc_attr_e( 'for a Burger &#8364;2,00 EUR', 'athenea' ); ?></option>
+          <option value="All"><?php esc_attr_e( 'All &#8364;5,45 EUR', 'athenea' ); ?></option>
       </select><br>
       <input type="hidden" name="on1" value="Opinion"><?php esc_attr_e( 'Opinion', 'athenea' ); ?><br>
       <select name="os1">

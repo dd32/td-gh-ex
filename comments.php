@@ -19,8 +19,8 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
-
-<div id="comments" class="comments-area alert alert-warning" style="padding:0px 40px 0 40px">
+<p>&nbsp;</p>
+<div id="comments" class="comments-area alert alert-warning" style="padding:0px 20px 0 20px">
 
 	<?php // You can start editing here -- including this comment! ?>
 
@@ -34,7 +34,7 @@ if ( post_password_required() ) {
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-above" class="comment-navigation" role="navigation">
-			<h3 class="screen-reader-text"><?php _e( 'Comment navigation', 'athenea' ); ?></h3>
+			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'athenea' ); ?></h1>
 			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'athenea' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'athenea' ) ); ?></div>
 		</nav><!-- #comment-nav-above -->
@@ -54,7 +54,7 @@ if ( post_password_required() ) {
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below" class="comment-navigation" role="navigation">
-			<h3 class="screen-reader-text"><?php _e( 'Comment navigation', 'athenea' ); ?></h3>
+			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'athenea' ); ?></h1>
 			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'athenea' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'athenea' ) ); ?></div>
 		</nav><!-- #comment-nav-below -->
