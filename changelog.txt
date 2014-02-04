@@ -1,6 +1,16 @@
 CHANGELOG
 =========
 
+SimplyBlack version 1.6 - february 2014
+- added html5 support for IE8 and older
+- added editor styles for page and post
+- added comments link to metadata in post
+- added several adjustments for better responsive layout
+- changed layout menubar
+- fixed issue in full width page template
+- added translation to footer site info
+- a bunch of other minor adjustments in stylesheet
+
 SimplyBlack version 1.5 - december 2013 
 - first stable release
 

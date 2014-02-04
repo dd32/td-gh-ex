@@ -16,7 +16,7 @@
 
 	<?php endwhile; ?>
 
-	<h4><?php edit_post_link( __( 'Edit', 'SimplyBlack' ), '<span class="edit-link">', '</span>' ) ?></h4>
+	<h5><?php edit_post_link( __( 'Edit', 'simplyblack' ), '<span class="edit-link">', '</span>' ) ?></h5>
 </div>		
 	
 <?php get_sidebar(); ?>

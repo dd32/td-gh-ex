@@ -1,7 +1,7 @@
 INSTALLATION
 ============
 
-1. Extract SimplyBlack.zip and upload the theme folder via FTP to your wp-content/themes/ directory, or login into WordPress Dashboard > Appearance > Install Themes.
+1. Extract SimplyBlack.zip and upload the theme folder via FTP to your wp-content/themes/ directory, or login into WordPress Dashboard > Appearance > Themes.
 2. Go to your WordPress Dashboard > Appearance > Themes and select this theme to activate.
 3. Once activated, you're ready to use it.
 
@@ -15,6 +15,7 @@ To set a static homepage login into WordPress Dashboard > Settings > Reading and
 HOW TO CHANGE HEADER IMAGE
 ==========================
 You can change the header-image via WordPress Dashboard > Appearance > Header. 
+I advice you to use a header-image of 960px wide and 300px high. 
 
 
 HOW TO SET LOGO
