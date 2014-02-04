@@ -94,3 +94,13 @@ if (!function_exists('sanitize_hex_color')) {
 		return null;
 	}
 }
+
+if (!function_exists('dumb_css_sanitize')) {
+	function dumb_css_sanitize( $css ) {
+		$css = str_replace( '<=', '<=', $css );
+		$css = wp_kses_split( $css, array(), array() );
+		$css = str_replace( '>', '>', $css );
+		$css = strip_tags( $css );
+		return $css;
+	}
+}

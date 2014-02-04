@@ -375,15 +375,15 @@ $blueplanet_options = $blueplanet_options_settings;
                                 </th>
                                 <td>
                                     <label>
-                                        <input type="radio" name="blueplanet_options[slider_status]" id="slider_statusr"  value="home"
+                                        <input type="radio" name="blueplanet_options[slider_status]" id="slider_status"  value="home"
                                         <?php checked($blueplanet_options['slider_status'], 'home') ?>><?php _e("Home page Only", 'blue-planet'); ?>
                                     </label>
                                     <label>
-                                        <input type="radio" name="blueplanet_options[slider_status]" id="slider_statusr"  value="all"
+                                        <input type="radio" name="blueplanet_options[slider_status]" id="slider_status"  value="all"
                                         <?php checked($blueplanet_options['slider_status'], 'all') ?>><?php _e("All pages", 'blue-planet'); ?>
                                     </label>
                                     <label>
-                                        <input type="radio" name="blueplanet_options[slider_status]" id="slider_statusr"  value="none"
+                                        <input type="radio" name="blueplanet_options[slider_status]" id="slider_status"  value="none"
                                         <?php checked($blueplanet_options['slider_status'], 'none') ?>><?php _e("Disable", 'blue-planet'); ?>
                                     </label>
 
