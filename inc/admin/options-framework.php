@@ -260,7 +260,7 @@ function optionsframework_page() {
 	
 <!--This part is added by Pavan Solapure - www.opencodez.com -->	
 <div id="optionsframework-metabox" class="metabox-holder" style="float:right">	
-		<div id="paypal_buy"><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+		<div id="paypal_buy"><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
 		<h2>Donation and Customization</h2>
 		<div class="pp-field-group">
 		<select name="os0"><option value="Donate -">Donate - $2.00 USD</option><option value="1 Customizations -">1 Customizations - $8.00 USD</option><option value="2 Customizations -">2 Customizations - $15.00 USD</option></select></div>
