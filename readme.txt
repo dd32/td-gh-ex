@@ -3,8 +3,8 @@
 Contributors: Iceable
 Tags: black, blue, white, light, two-columns, right-sidebar, flexible-width, custom-header, custom-background, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.5
-Tested up to: 3.8
-Stable tag: 1.1.22
+Tested up to: 3.8.1
+Stable tag: 1.1.23
 
 == ABOUT BOLDR LITE ==
 
@@ -60,12 +60,17 @@ Your translation files will be added to the next update. Don't forget to leave y
 
 == CHANGELOG ==
 
+= 1.1.23 =
+February 4th, 2014
+* Added "Support and Feedback" in theme options
+* Tested with WordPress 3.8.1
+
 = 1.1.22 =
-January 16th, 2013
+January 16th, 2014
 * Added pt_BR translation files (kindly provided by Rafael de Oliveira Stephano)
 
 = 1.1.21 =
-January 2nd, 2013
+January 2nd, 2014
 * Updated tags for WordPress 3.8: fixed-layout and responsive-layout
 * Updated screenshot to 880x660px for WordPress 3.8
 

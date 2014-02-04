@@ -123,6 +123,21 @@ function boldr_settings_machine($options) {
 							</ul>';
 			$output .= '<a href="http://www.iceablethemes.com/shop/boldr-pro/?utm_source=lite_theme&utm_medium=go_pro&utm_campaign=boldr_lite" class="button-primary" target="_blank">Learn More and Upgrade Now!</a>';
 		}
+		elseif ( $arg['type'] == "support_feedback" )
+		{
+			$output .= '<h3>Get Support</h3>'."\n";
+			$output .= '<p>Have a question? Need help?</p>';
+			$output .= '<p><a href="http://www.iceablethemes.com/forums/forum/free-support-forum/boldr-lite/?utm_source=lite_theme&utm_medium=support_forums&utm_campaign=boldr_lite" target="_blank" class="button-primary">Visit the free BoldR Lite support forums</a></p>';		
+
+			$output .= '<h3>Give Feedback</h3>'."\n";
+			$output .= '<p>Like this theme? We\'d love to hear your feedback!</p>';
+			$output .= '<p><a href="http://wordpress.org/support/view/theme-reviews/boldr-lite" target="_blank" class="button-primary">Rate and review BoldR Lite at WordPress.org</a></p>';		
+
+			$output .= '<h3>Get social!</h3>'."\n";
+			$output .= '<p>Follow and like IceableThemes!</p>';
+			$output .= '<p id="social"></p>';
+ 
+		}
 		elseif ( $arg['type'] == "end_menu" )
 		{
 			$output .= '</div>';
