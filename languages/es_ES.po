@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CPO Framework 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-30 09:36+0100\n"
-"PO-Revision-Date: 2013-09-30 09:36+0100\n"
+"POT-Creation-Date: 2014-02-04 12:58+0100\n"
+"PO-Revision-Date: 2014-02-04 13:00+0100\n"
 "Last-Translator: CPO <mvicedo@cpo.es>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -178,7 +178,7 @@ msgstr "Un Comentario"
 msgid "%1$s Comments"
 msgstr "%1$s Comentarios"
 
-#: .././core/general.php:368
+#: .././core/general.php:367 .././core/general.php:401
 msgid "Go To..."
 msgstr "Ir A..."
 
@@ -266,38 +266,50 @@ msgid "(Select a Page...)"
 msgstr "(Selecciona una Página...)"
 
 #: .././includes/metadata/data_general.php:14
+msgid "None"
+msgstr "(Ninguno)"
+
+#: .././includes/metadata/data_general.php:15
+msgid "In The Homepage Slider"
+msgstr "En El Pase de Diapositivas"
+
+#: .././includes/metadata/data_general.php:16
+msgid "In The Homepage Boxes"
+msgstr "En Los Bloques De Inicio"
+
+#: .././includes/metadata/data_general.php:22
 msgid "Fixed"
 msgstr "Fijo"
 
-#: .././includes/metadata/data_general.php:15
+#: .././includes/metadata/data_general.php:23
 msgid "Boxed"
 msgstr "Caja"
 
 #: .././includes/metadata/data_metaboxes.php:11
-msgid "Featured Post"
-msgstr "Entrada Destacada"
+msgid "Display Title"
+msgstr "Mostrar Título"
 
 #: .././includes/metadata/data_metaboxes.php:12
-msgid "Specifies whether this post appears in the homepage slider."
+msgid ""
+"Specifies whether the title header and breadcrumb navigation is displayed. "
+"Useful for creating landing pages."
 msgstr ""
-"Determina si esta entrada aparece en el pase de diapositivas de la página de "
-"inicio."
+"Determina si el título y la navegación de migas de pan se muestran. Útil "
+"para crear landing pages."
+
+#: .././includes/metadata/data_metaboxes.php:18
+msgid "Featured Item"
+msgstr "Elemento Destacado"
+
+#: .././includes/metadata/data_metaboxes.php:19
+msgid "Specifies whether this item is featured in the homepage."
+msgstr "Determina si esta entrada aparece en la página de inicio."
 
 #: .././includes/metadata/data_metaboxes.php:26
-msgid "Featured Page"
-msgstr "Página Destacada"
-
-#: .././includes/metadata/data_metaboxes.php:27
-msgid "Specifies whether this page appears in the homepage feature listing."
-msgstr ""
-"Determina si esta página aparece en los bloques de contenido de la página de "
-"inicio."
-
-#: .././includes/metadata/data_metaboxes.php:33
 msgid "Featured Icon"
 msgstr "Icono Destacado"
 
-#: .././includes/metadata/data_metaboxes.php:34
+#: .././includes/metadata/data_metaboxes.php:27
 msgid "Sets an icon to be used as the featured image."
 msgstr "Especifica un icono para que sea utilizado en la página de inicio."
 
@@ -672,6 +684,17 @@ msgstr "Página de Skype"
 msgid "Enter the URL of your Skype page to display a link in the site."
 msgstr ""
 "Introduce la URL de tu perfil de Skype para mostrar un enlace en el sitio."
+
+#~ msgid "Featured Post"
+#~ msgstr "Entrada Destacada"
+
+#~ msgid "Featured Page"
+#~ msgstr "Página Destacada"
+
+#~ msgid "Specifies whether this page appears in the homepage feature listing."
+#~ msgstr ""
+#~ "Determina si esta página aparece en los bloques de contenido de la página "
+#~ "de inicio."
 
 #~ msgid ""
 #~ "Theme designed by <a href=\"http://www.cpothemes.com\">CPOThemes</a>."
@@ -1214,9 +1237,6 @@ msgstr ""
 #~ "Determina el número de columnas de las mini características en la página "
 #~ "de inicio."
 
-#~ msgid "Homepage Slider"
-#~ msgstr "Pase de Diapositivas de Inicio"
-
 #~ msgid "Specifies the slideshow displayed on the homepage."
 #~ msgstr "Especifica el pase de diapositivas mostrado en la página de inicio."
 
@@ -1667,9 +1687,6 @@ msgstr ""
 #~ msgid "Here you can add CSS rules to modify the login page as you need to."
 #~ msgstr "Aquí puedes añadir reglas CSS para modificar la página de acceso."
 
-#~ msgid "None"
-#~ msgstr "(Ninguno)"
-
 #~ msgid "Menu of Children Pages"
 #~ msgstr "Menú de Subpáginas"
 
@@ -1684,9 +1701,6 @@ msgstr ""
 
 #~ msgid "Sans Serif Fonts"
 #~ msgstr "Fuentes Sans Serif"
-
-#~ msgid "Display Fonts"
-#~ msgstr "Fuentes Display"
 
 #~ msgid "Handwritten Fonts"
 #~ msgstr "Fuentes Caligráficas"

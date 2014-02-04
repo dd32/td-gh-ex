@@ -2,13 +2,8 @@
 
 <?php if(have_posts()) while(have_posts()): the_post(); ?>
 
-<div id="pagetitle" class="pagetitle">
-	<div class="container">
-		<?php cpotheme_breadcrumb(); ?>
-		<h1 class="title"><?php the_title(); ?></h1>
-	</div>
-</div>
-		
+<?php if(get_post_meta(get_the_ID(), 'page_title', true) != 0) get_template_part('element', 'page-header'); ?>
+
 <div id="main" class="main">
 	<div class="container">
 		<section id="content" class="content <?php cpotheme_sidebar_position(); ?>">

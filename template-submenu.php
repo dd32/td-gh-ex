@@ -7,7 +7,7 @@
 
 <?php if(have_posts()) while(have_posts()): the_post(); ?>
 
-<?php get_template_part('element', 'page-header'); ?>
+<?php if(get_post_meta(get_the_ID(), 'page_title', true) != 0) get_template_part('element', 'page-header'); ?>
 	
 <div id="main" class="main">
 	<div class="container">
