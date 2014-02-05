@@ -19,7 +19,7 @@
 					<section class="oloEntry">
 						<?php the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<nav class="page-link"><span>' . __( 'Pages:', 'olo' ) . '</span>', 'after' => '</nav>' ) ); ?>
-						<figure id="adxx"><?php echo get_option('adxx'); ?></figure>
+						<?php if (get_option('olo_ad')!='') { ?><figure id="adxx"><?php echo get_option('adxx'); ?></figure><?php } ?>
 					</section>
 					
 					<footer>
@@ -36,25 +36,6 @@
 				
 				<?php comments_template( '', true ); ?>
 				<?php endwhile; ?>
-					
-					<nav class="oloNav">
-						<?php
-							if(function_exists('wp_page_numbers')) {
-								wp_page_numbers();
-							}
-							elseif(function_exists('wp_pagenavi')) {
-								wp_pagenavi();
-							} else {
-							global $wp_query;
-							$total_pages = $wp_query->max_num_pages;
-							if ( $total_pages > 1 ) {
-								echo '<div class="page_navi">';
-									par_pagenavi(4);
-								echo '</div>';
-								}
-							}
-						?>
-					</nav>
 
 			<?php else : ?>
 

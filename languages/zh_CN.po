@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-02 22:46+0800\n"
-"PO-Revision-Date: 2014-02-02 22:47+0800\n"
+"POT-Creation-Date: 2014-02-05 22:03+0800\n"
+"PO-Revision-Date: 2014-02-05 22:04+0800\n"
 "Last-Translator: 皇家元林 <i@hjyl.org>\n"
 "Language-Team: hjyl.org <i@hjyl.org>\n"
 "MIME-Version: 1.0\n"
@@ -44,11 +44,11 @@ msgstr "<b>%</b>条评论"
 msgid "Edit"
 msgstr "编辑"
 
-#: ../archive.php:69 ../index.php:71 ../page.php:63 ../single.php:84
+#: ../archive.php:69 ../index.php:71 ../page.php:44 ../single.php:66
 msgid "Nothing Found"
 msgstr "什么都没有"
 
-#: ../archive.php:73 ../index.php:75 ../page.php:67 ../single.php:88
+#: ../archive.php:73 ../index.php:75 ../page.php:48 ../single.php:70
 msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
 "searching will help find a related post."
@@ -127,7 +127,7 @@ msgstr "取消回复"
 msgid "Post Comment"
 msgstr "发布评论"
 
-#: ../footer.php:5 ../functions.php:196
+#: ../footer.php:5 ../functions.php:202
 msgid "http://hjyl.org/"
 msgstr "http://hjyl.org/"
 
@@ -147,42 +147,38 @@ msgstr "请稍候..."
 msgid "Good Comment"
 msgstr "提交成功"
 
-#: ../functions.php:132
+#: ../functions.php:136
 msgid "Copy and Specify"
 msgstr "转载请注明"
 
-#: ../functions.php:148
+#: ../functions.php:152
 msgid "Primary Navigation"
 msgstr "主要导航"
 
-#: ../functions.php:149
+#: ../functions.php:153
 msgid "Mobile Navigation"
 msgstr "手机导航"
 
-#: ../functions.php:155 ../sidebar.php:4
+#: ../functions.php:159 ../sidebar.php:4
 msgid "Home"
 msgstr "首页"
 
-#: ../functions.php:162
+#: ../functions.php:166
 msgid "Single"
 msgstr "文章页"
 
-#: ../functions.php:169
+#: ../functions.php:173
 msgid "Other"
 msgstr "其他页"
 
-#: ../functions.php:196
-msgid "http://wpa.qq.com/msgrd?v=3&uin=4953363&site=qq&menu=yes"
-msgstr "http://wpa.qq.com/msgrd?v=3&uin=4953363&site=qq&menu=yes"
-
-#: ../functions.php:196
+#: ../functions.php:202
 msgid "mailto:i@hjyl.org"
 msgstr "mailto:i@hjyl.org"
 
-#: ../header.php:21
+#: ../header.php:35
 #, php-format
-msgid "Page %1$s of %2$s"
-msgstr "Page %1$s of %2$s"
+msgid "Page %s"
+msgstr "第 %s 页"
 
 #: ../page.php:21 ../single.php:27
 msgid "Pages:"
@@ -331,83 +327,125 @@ msgstr "%1$s 在 %2$s"
 msgid "(Edit)"
 msgstr "（编辑）"
 
-#: ../inc/theme_inc.php:25
-msgid "Options take effect."
-msgstr "设置已保存。"
-
-#: ../inc/theme_inc.php:33 ../inc/theme_inc.php:37
+#: ../inc/theme_inc.php:4 ../inc/theme_inc.php:38 ../inc/theme_inc.php:42
 msgid "olo Options"
 msgstr "olo主题设置"
 
-#: ../inc/theme_inc.php:41
-msgid "SEO Option"
-msgstr "SEO优化："
+#: ../inc/theme_inc.php:30
+msgid "Options take effect."
+msgstr "设置已保存。"
 
-#: ../inc/theme_inc.php:43
+#: ../inc/theme_inc.php:46
+msgid "SEO Option"
+msgstr "SEO优化"
+
+#: ../inc/theme_inc.php:48
 msgid "meta tags"
 msgstr "meta标签设置"
 
-#: ../inc/theme_inc.php:46
+#: ../inc/theme_inc.php:50
+msgid "Enable SEO."
+msgstr "启用SEO功能"
+
+#: ../inc/theme_inc.php:51
 msgid "keywords[comma-separated, no more than 100 characters]"
 msgstr "关键词keywords 「以英文逗号隔开，建议不超过100字包括字符」"
 
-#: ../inc/theme_inc.php:49
+#: ../inc/theme_inc.php:54
 msgid "description, no more than 150 characters."
 msgstr "描述description 「建议不超过150字包括符号」"
 
-#: ../inc/theme_inc.php:59
+#: ../inc/theme_inc.php:64
 msgid "Gravatar Cache Option"
 msgstr "头像缓存功能"
 
-#: ../inc/theme_inc.php:61
+#: ../inc/theme_inc.php:66
 msgid "Enable Gravatar cache. If host not supported,cancel it."
 msgstr "启用图片缓存功能。若空间不支持，取消这项。"
 
-#: ../inc/theme_inc.php:61
+#: ../inc/theme_inc.php:66
 msgid ""
 "Before Enable Gravatar cache, Create a folder named avatar, and upload "
 "default.jpg"
 msgstr "注意启用前，在WordPress根目录建立avatar文件夹，并上传default.jpg"
 
-#: ../inc/theme_inc.php:69
+#: ../inc/theme_inc.php:74
+msgid "Custom login theme"
+msgstr "自定义后台登录风格"
+
+#: ../inc/theme_inc.php:76
+msgid "Enable Custom login theme. "
+msgstr "启用自定义后台登录风格"
+
+#: ../inc/theme_inc.php:76
+msgid "If modify, See css/login.css and images/logo.gif"
+msgstr "如果修改，请参见css/login.css 和 images/logo.gif"
+
+#: ../inc/theme_inc.php:84
+msgid "AD Plugin Enable"
+msgstr "广告插件"
+
+#: ../inc/theme_inc.php:86
+msgid "Enable AD Plugin. "
+msgstr "启用广告插件"
+
+#: ../inc/theme_inc.php:86
+msgid "The option controls the Ads as followed, including links on bottom."
+msgstr "此选项控制下面所有的广告，包括底部链接"
+
+#: ../inc/theme_inc.php:94
 msgid "336 x 280 AD"
 msgstr "336×280 广告"
 
-#: ../inc/theme_inc.php:71
+#: ../inc/theme_inc.php:96
 msgid "Single Right AD"
 msgstr "文章左侧广告"
 
-#: ../inc/theme_inc.php:81 ../inc/theme_inc.php:93
+#: ../inc/theme_inc.php:106 ../inc/theme_inc.php:118
 msgid "468 x 60 AD"
 msgstr "468×60 广告"
 
-#: ../inc/theme_inc.php:83
+#: ../inc/theme_inc.php:108
 msgid "Single bottom AD"
 msgstr "文章底部广告"
 
-#: ../inc/theme_inc.php:95
+#: ../inc/theme_inc.php:120
 msgid "Archive Top AD"
 msgstr "归档顶部广告"
 
-#: ../inc/theme_inc.php:105
+#: ../inc/theme_inc.php:130
 msgid "Home Links on bottom"
 msgstr "首页底部链接显示"
 
-#: ../inc/theme_inc.php:115
+#: ../inc/theme_inc.php:140
 msgid "All Links on bottom"
 msgstr "全站底部链接"
 
-#: ../inc/theme_inc.php:125
+#: ../inc/theme_inc.php:150
 msgid "ICP No."
 msgstr "备案号"
 
-#: ../inc/theme_inc.php:134
+#: ../inc/theme_inc.php:152
+msgid "Enable ICP "
+msgstr "显示备案号"
+
+#: ../inc/theme_inc.php:160
 msgid "Stat Code"
 msgstr "统计代码"
 
-#: ../inc/theme_inc.php:141
+#: ../inc/theme_inc.php:162
+msgid "Enable Stat Code "
+msgstr "启用统计代码"
+
+#: ../inc/theme_inc.php:168
 msgid "Save Changes"
 msgstr "保存设置"
+
+#~ msgid "Page %1$s of %2$s"
+#~ msgstr "Page %1$s of %2$s"
+
+#~ msgid "http://wpa.qq.com/msgrd?v=3&uin=4953363&site=qq&menu=yes"
+#~ msgstr "http://wpa.qq.com/msgrd?v=3&uin=4953363&site=qq&menu=yes"
 
 #~ msgid "Just For Three Widgets"
 #~ msgstr "只支持三个边栏"

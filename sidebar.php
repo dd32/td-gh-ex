@@ -1,7 +1,7 @@
 	<aside id="oloWidget">
 		<ul>
 			<?php if (is_home()) { ?>
-				<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar(''.__('Home', 'olo').'') ) : ?>
+				<?php if ( !dynamic_sidebar(''.__('Home', 'olo').'') ) : ?>
 					<li id="archives" class="widget">
 						<h3 class="widget-title"><?php _e( 'Archives', 'olo' ); ?></h3>
 						<ul>

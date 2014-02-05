@@ -15,17 +15,27 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
 <title><?php
+	/*
+	 * Print the <title> tag based on what is being viewed.
+	 */
 	global $page, $paged;
-	// Add a page number if necessary:
-	if ( is_paged() )
-		echo sprintf( __('Page %1$s of %2$s', ''), intval( get_query_var('paged')), $wp_query->max_num_pages).' - ';
 
-	wp_title('', true, '');
+	wp_title( '|', true, 'right' );
 
 	// Add the blog name.
-	if(is_home() && is_front_page()) bloginfo( 'name' );
+	bloginfo( 'name' );
+
+	// Add the blog description for the home/front page.
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) )
+		echo " | $site_description";
+
+	// Add a page number if necessary:
+	if ( $paged >= 2 || $page >= 2 )
+		echo ' | ' . sprintf( __( 'Page %s', 'olo' ), max( $paged, $page ) );
 
 	?></title>
+<?php if (get_option('olo_seo')!='') { ?>
 <?php
 if (is_home()){
 	$description = get_option('description');
@@ -51,6 +61,7 @@ if (is_home()){
 ?>
 <meta name="keywords" content="<?php echo $keywords; ?>" />
 <meta name="description" content="<?php echo $description; ?>" />
+<?php } ?>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php if (is_archive() && ($paged > 1)&& ($paged < $wp_query->max_num_pages)) { ?>

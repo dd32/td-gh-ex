@@ -53,22 +53,22 @@ if ( ! isset( $content_width ) )
     ) as $xx)
     remove_action('wp_head',$xx);
     //rel="category" or rel="category tag",
-    function the_category_filter($thelist){
+    function olo_category_filter($thelist){
         return preg_replace('/rel=".*?"/','rel="tag"',$thelist);
     }  
-    add_filter('the_category','the_category_filter');
+    add_filter('the_category','olo_category_filter');
 	
 // Enqueue style-file, if it exists.
 add_action('wp_enqueue_scripts', 'olo_script');
 function olo_script() {
 	if( !IsMobile ){
-		wp_enqueue_style( 'olo', get_stylesheet_uri(),  array(), '20140202', false);
+		wp_enqueue_style( 'olo', get_stylesheet_uri(),  array(), '20140205', false);
 	}else{
-		wp_enqueue_style('mobile', TPLDIR . '/css/mobile.css', array(), '20140202', false);
+		wp_enqueue_style('mobile', TPLDIR . '/css/mobile.css', array(), '20140205', false);
 	}
 	wp_enqueue_script('jquery');
-	wp_enqueue_script( 'olo', TPLDIR . '/js/olo.js', array(), '20140202', true);
-	wp_enqueue_script( 'comments-ajax', TPLDIR . '/js/comments-ajax.js', array(), '20140202', true);
+	wp_enqueue_script( 'olo', TPLDIR . '/js/olo.js', array(), '20140205', true);
+	wp_enqueue_script( 'comments-ajax', TPLDIR . '/js/comments-ajax.js', array(), '20140205', true);
 	wp_localize_script('comments-ajax', 'ajaxL10n', array(
 		'edt1' => __('Before Refresh, you can','olo'),
 		'edt2' => __('Edit','olo'),
@@ -80,13 +80,18 @@ function olo_script() {
 	if ( is_singular() && comments_open() ) wp_enqueue_script( 'comment-reply' );
 			
 	if( is_page('archives') ){
-		wp_enqueue_script( 'archives', TPLDIR . '/js/archives.js', array(), '20140202', false);
-		wp_enqueue_style( 'archives', TPLDIR . '/css/archives.css', array(), '20140202', 'screen');
+		wp_enqueue_script( 'archives', TPLDIR . '/js/archives.js', array(), '20140205', false);
+		wp_enqueue_style( 'archives', TPLDIR . '/css/archives.css', array(), '20140205', 'screen');
 	};
+	if(is_404()){
+		wp_enqueue_style( '4041', 'http://fonts.googleapis.com/css?family=Press+Start+2P', array(), '20140205', 'screen');
+		wp_enqueue_style( '4042', 'http://fonts.googleapis.com/css?family=Oxygen:700', array(), '20140205', 'screen');
+		wp_enqueue_style( '4043', TPLDIR . '/css/404.css', array(), '20140205', 'screen');
+	}
 }
 
-/*editor begin*/
-function add_more_buttons($buttons) {  
+//Add editor buttons
+function olo_buttons($buttons) {  
 $buttons[] = 'fontsizeselect';  
 $buttons[] = 'styleselect';  
 $buttons[] = 'fontselect';  
@@ -101,11 +106,10 @@ $buttons[] = 'backcolor';
 $buttons[] = 'visualaid';  
 return $buttons;  
 }  
-add_filter("mce_buttons_3", "add_more_buttons");
-/*editor end*/
+add_filter("mce_buttons_3", "olo_buttons");
 
 //par_pagenavi	
-function par_pagenavi($range = 9){
+function olo_pagenavi($range = 9){
 	global $paged, $wp_query;
 	$max_page = '';
 	if ( !$max_page ) {$max_page = $wp_query->max_num_pages;}
@@ -136,12 +140,12 @@ function olo_copyright($content) {
 add_filter('the_content', 'olo_copyright');
 
 //del p tag and newline
-function deletehtml($description) { 
+function olo_deletehtml($description) { 
 $description = trim($description); 
 $description = strip_tags($description,""); 
 return ($description);
 }
-add_filter('category_description', 'deletehtml');
+add_filter('category_description', 'olo_deletehtml');
 
 // Add menu
 	register_nav_menus( array(
@@ -175,7 +179,8 @@ function olo_widgets(){
 }
 add_action( 'widgets_init', 'olo_widgets' );
 
-function olo_login() {      
+if (get_option('olo_login')!='') {
+function olo_login() {
 echo '<link rel="stylesheet" tyssspe="text/css" href="' .TPLDIR. '/css/login.css" />'; }      
 add_action('login_head', 'olo_login');  
 	
@@ -187,16 +192,17 @@ function olo_login_logo() {
 }
 
 //define the url of logo
-add_filter( 'login_headerurl', 'custom_loginlogo_url' );
-function custom_loginlogo_url($url) { return ''.home_url().''; }
+add_filter( 'login_headerurl', 'olo_custom_loginlogo_url' );
+function olo_custom_loginlogo_url($url) { return ''.home_url().''; }
+}
 
 //add author information 
 add_filter('admin_footer_text', 'olo_admin_footer');
 function olo_admin_footer() {
-	echo '<a target="_blank" href="'.esc_url( __( 'http://hjyl.org/', 'olo' ) ).'">hjyl.org</a> - hjyl.org (QQ: <a target="_blank" href="'.esc_url( __( 'http://wpa.qq.com/msgrd?v=3&uin=4953363&site=qq&menu=yes', 'olo' ) ).'">4953363</a> Email: <a href="'.esc_url( __( 'mailto:i@hjyl.org', 'olo' ) ).'">i@hjyl.org</a>) - <a target="_blank" href="'.esc_url( __( 'http://hjyl.org/', 'olo' ) ).'">hjyl.org</a>';
+	echo '<a target="_blank" href="'.esc_url( __( 'http://hjyl.org/', 'olo' ) ).'">hjyl.org</a> - HJYL (QQ: 4953363 Email: <a href="'.esc_url( __( 'mailto:i@hjyl.org', 'olo' ) ).'">i@hjyl.org</a>) - <a target="_blank" href="'.esc_url( __( 'http://hjyl.org/', 'olo' ) ).'">hjyl.org</a>';
 }
 
-  /*Custom parts*/
- include (get_template_directory() . '/inc/theme_inc.php'); 
- include (get_template_directory() . '/inc/oloComment.php'); 
+//Load Custom parts
+ require( dirname( __FILE__ ) . '/inc/theme_inc.php' );
+ require( dirname( __FILE__ ) . '/inc/oloComment.php' );
 ?>

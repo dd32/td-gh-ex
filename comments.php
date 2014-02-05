@@ -19,7 +19,7 @@
 
 				<p class="comment-welcomeback"><?php printf(__('Welcome <strong>%s</strong>', 'olo'), $comment_author); ?>
 				
-				<a href="javascript:toggleCommentAuthorInfo();" id="toggle-comment-author-info">
+				<a href="javascript:olo_toggleCommentAuthorInfo();" id="toggle-comment-author-info">
 					<?php _e('(Toggle)', 'olo'); ?>
 				</a>
 
@@ -27,7 +27,7 @@
 					var changeMsg = "<?php echo  esc_js( __('(Toggle)', 'olo') ); ?>";
 					var closeMsg = "<?php echo esc_js( __('(Close)', 'olo') ); ?>";
 					
-					function toggleCommentAuthorInfo() {
+					function olo_toggleCommentAuthorInfo() {
 						jQuery('#comment-author-info').slideToggle('slow', function(){
 							if ( jQuery('#comment-author-info').css('display') == 'none' ) {
 								jQuery('#toggle-comment-author-info').text(changeMsg);

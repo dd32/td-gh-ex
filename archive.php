@@ -2,16 +2,16 @@
 <div id="oloContainer">
 	<div id="oloContent">
 		<div class="oloPosts">
-		<figure id="adxx"><?php echo get_option('adxxx'); ?></figure>
+		<?php if (get_option('olo_ad')!='') { ?><figure id="adxx"><?php echo get_option('adxxx'); ?></figure><?php } ?>
 			<?php if(have_posts()) : ?>
 			<?php while(have_posts()) : the_post(); ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<header>
 						<?php if ( is_sticky() ) : ?>
-								<h2>[<?php printf(__('Featured', 'olo')) ; ?>]<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+								<h2>[<?php printf(__('Featured', 'olo')) ; ?>]<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array( 'before' => '', 'after' => '' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 							
 						<?php else : ?>
-						<h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+						<h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array( 'before' => '', 'after' => '' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 						<?php endif; ?>
 						<div class="date">
 							<span class="binds"></span>
@@ -55,7 +55,7 @@
 							$total_pages = $wp_query->max_num_pages;
 							if ( $total_pages > 1 ) {
 								echo '<div class="page_navi">';
-									par_pagenavi(4);
+									olo_pagenavi(4);
 								echo '</div>';
 								}
 							}
