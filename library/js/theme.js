@@ -45,7 +45,8 @@
 	}
 
     // Arc the site title
-    $( '#site-title a' ).arctext( { radius: theme_js_vars.arc } );
+    if ( theme_js_vars.arc )
+        $( '#site-title a' ).arctext( { radius: theme_js_vars.arc } );
 
     // Set up jumbo header image
     if ( $card.length ) {

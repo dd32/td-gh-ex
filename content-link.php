@@ -8,7 +8,7 @@
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<h3 class="post-format"><?php _e( '<i class="fa fa-link"></i> Link', 'arcade' ); ?></h3>
 
-	    <div class="entry-content">
+		<div class="entry-content clearfix">
 		    <?php the_content( __( 'Read more', 'arcade') ); ?>
 	    </div><!-- .entry-content -->
 

@@ -8,7 +8,7 @@
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	    <?php get_template_part( 'content', 'header' ); ?>
 
-	    <div class="entry-content">
+		<div class="entry-content clearfix">
 	        <?php
 			if( has_post_thumbnail() && ! is_single() )
 				the_post_thumbnail( 'full', array( 'class' => 'alignnone' ) );

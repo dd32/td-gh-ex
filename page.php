@@ -21,7 +21,7 @@ get_header();
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 						<h1 class="entry-title"><?php the_title(); ?></h1>
 
-					    <div class="entry-content">
+					    <div class="entry-content clearfix">
 						    <?php the_content( __( 'Read more', 'arcade') ); ?>
 					    </div><!-- .entry-content -->
 

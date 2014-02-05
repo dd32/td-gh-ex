@@ -4,20 +4,7 @@ class Bavotasan_Preview_Pro {
 	private $theme_name = 'Arcade';
 
 	public function __construct() {
-		add_action( 'admin_bar_menu', array( $this, 'admin_bar_menu' ), 5 );
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
-	}
-
-	/**
-	 * Add a 'Preview Pro' menu item to the admin bar
-	 *
-	 * This function is attached to the 'admin_bar_menu' action hook.
-	 *
-	 * @since 1.0.0
-	 */
-	public function admin_bar_menu( $wp_admin_bar ) {
-	    if ( current_user_can( 'edit_theme_options' ) && is_admin_bar_showing() )
-	    	$wp_admin_bar->add_node( array( 'parent' => 'bavotasan_toolbar', 'id' => 'preview_pro', 'title' => __( 'Upgrade to full version', 'arcade' ), 'href' => esc_url( admin_url( 'themes.php?page=bavotasan_preview_pro' ) ) ) );
 	}
 
 	/**

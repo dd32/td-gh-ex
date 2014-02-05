@@ -8,7 +8,7 @@
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	    <?php get_template_part( 'content', 'header' ); ?>
 
-	    <div class="entry-content">
+		<div class="entry-content clearfix">
 	        <?php the_content( __( 'Read more', 'arcade') ); ?>
 	    </div><!-- .entry-content -->
 

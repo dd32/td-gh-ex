@@ -23,7 +23,7 @@
 
 	    get_template_part( 'content', 'header' ); ?>
 
-	    <div class="entry-content">
+	    <div class="entry-content clearfix">
 		    <?php
 			if ( is_singular() )
 			    the_content( __( 'Read more', 'arcade') );

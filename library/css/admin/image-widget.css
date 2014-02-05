@@ -111,3 +111,7 @@
 	#customize-control-layout .separate {
 		background-position: 0 -168px;
 	}
+
+p.description.more-top {
+    margin-top: 8px;
+}

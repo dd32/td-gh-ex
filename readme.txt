@@ -60,4 +60,9 @@ License: [[http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL|SIL O
 
 == CHANGELOG ==
 
+02/04/2014 v1.0.1
+* Added instructions for arc radius and option to remove
+* Added clearfix to entry content and entry footer
+* Updated language file
+
 Public Release 02/03/2014

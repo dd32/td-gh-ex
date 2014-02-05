@@ -143,23 +143,6 @@ function bavotasan_styles() {
 	<?php
 }
 
-add_action( 'admin_bar_menu', 'bavotasan_admin_bar_menu', 999 );
-/**
- * Add menu item to toolbar
- *
- * This function is attached to the 'admin_bar_menu' action hook.
- *
- * @param	array $wp_admin_bar
- *
- * @since 2.0.4
- */
-function bavotasan_admin_bar_menu( $wp_admin_bar ) {
-    if ( current_user_can( 'edit_theme_options' ) && is_admin_bar_showing() ) {
-    	$wp_admin_bar->add_node( array( 'id' => 'bavotasan_toolbar', 'title' => BAVOTASAN_THEME_NAME, 'href' => admin_url( 'customize.php' ) ) );
-		$wp_admin_bar->add_node( array( 'parent' => 'bavotasan_toolbar', 'id' => 'documentation_faqs', 'title' => __( 'Documentation & FAQs', 'arcade' ), 'href' => 'https://themes.bavotasan.com/documentation', 'meta' => array( 'target' => '_blank' ) ) );
-	}
-}
-
 add_action( 'wp_enqueue_scripts', 'bavotasan_add_js' );
 if ( ! function_exists( 'bavotasan_add_js' ) ) :
 /**

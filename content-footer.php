@@ -5,7 +5,7 @@
  * @since 1.0.6
  */
  ?>
-	<footer class="entry">
+	<footer class="clearfix">
 	    <?php
 	    if ( is_single() ) wp_link_pages( array( 'before' => '<p id="pages">' . __( 'Pages:', 'arcade' ) ) );
 	    edit_post_link( __( '(edit)', 'arcade' ), '<p class="edit-link">', '</p>' );

@@ -37,6 +37,20 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	    }
 	}
 
+    class Bavotasan_Text_Description_Control extends WP_Customize_Control {
+        public $description;
+
+	    public function render_content() {
+			?>
+			<label>
+				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+                <input type="text" value="<?php echo esc_attr( $this->value() ); ?>" <?php $this->link(); ?> />
+            </label>
+            <p class="description more-top"><?php echo ( $this->description ); ?></p>
+			<?php
+        }
+    }
+
 	class Bavotasan_Icon_Select_Control extends WP_Customize_Control {
 		public function render_content() {
 			?>
@@ -79,7 +93,6 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 
 class Bavotasan_Customizer {
 	public function __construct() {
-		add_action( 'admin_bar_menu', array( $this, 'admin_bar_menu' ), 2 );
 		add_action( 'customize_register', array( $this, 'customize_register' ) );
 		add_action( 'customize_controls_print_styles', array( $this, 'customize_controls_print_styles' ) );
 	}
@@ -88,18 +101,6 @@ class Bavotasan_Customizer {
 		wp_enqueue_script( 'bavotasan_image_widget', BAVOTASAN_THEME_URL . '/library/js/admin/image-widget.js', array( 'jquery' ), '', true );
 		wp_enqueue_style( 'bavotasan_image_widget_css', BAVOTASAN_THEME_URL . '/library/css/admin/image-widget.css' );
 		wp_enqueue_style( 'font_awesome', '//netdna.bootstrapcdn.com/font-awesome/' . FONT_AWESOME_VERSION . '/css/font-awesome.css' );
-	}
-
-	/**
-	 * Add a 'customize' menu item to the admin bar
-	 *
-	 * This function is attached to the 'admin_bar_menu' action hook.
-	 *
-	 * @since 1.0.0
-	 */
-	public function admin_bar_menu( $wp_admin_bar ) {
-	    if ( current_user_can( 'edit_theme_options' ) && is_admin_bar_showing() )
-	    	$wp_admin_bar->add_node( array( 'parent' => 'bavotasan_toolbar', 'id' => 'customize_theme', 'title' => __( 'Theme Options', 'arcade' ), 'href' => admin_url( 'customize.php' ) ) );
 	}
 
 	/**
@@ -120,12 +121,12 @@ class Bavotasan_Customizer {
 			'capability' => 'edit_theme_options',
 		) );
 
-		$wp_customize->add_control( 'bavotasan_arc', array(
-			'label' => __( 'Site Title Arc', 'arcade' ),
+		$wp_customize->add_control( new Bavotasan_Text_Description_Control( $wp_customize, 'arc', array(
+			'label' => __( 'Arc Radius', 'arcade' ),
 			'section' => 'title_tagline',
 			'settings' => 'arcade_basic_theme_options[arc]',
-			'type' => 'text',
-		) );
+			'description' => __( 'The space and rotation for each letter will be calculated using the arc radius and the width of the site title. Leave blank for no arc.', 'arcade' ),
+		) ) );
 
 		$wp_customize->add_setting( 'arcade_basic_theme_options[header_icon]', array(
 			'default' => $bavotasan_theme_options['header_icon'],
