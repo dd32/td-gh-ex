@@ -7,7 +7,8 @@
 <div id="footer">
 	
 	<div class="site-info">
-		Copyright &copy; <?php echo date('Y'); ?>  <a href="<?php echo home_url() ; ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> - <a href="http://wordpress.org" title="WordPress Blog Platform">Proudly powered by WordPress</a>
+		<?php _e('Copyright', 'onecolumn'); ?> <?php echo date('Y'); ?>  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> - 
+		<a href="http://wordpress.org" title="<?php _e('WordPress Blog Platform', 'onecolumn'); ?>"><?php _e('Proudly powered by WordPress', 'onecolumn'); ?></a>
 	</div>
 
 </div>

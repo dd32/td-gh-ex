@@ -11,16 +11,16 @@
 		if ( ! isset( $content_width ) )
 			$content_width = 880;
 
-
 	// Make theme available for translation
 		load_theme_textdomain('onecolumn', get_template_directory() . '/languages');  
-
 
 	// Register Menu
 		register_nav_menus( 
 		array( 'primary' => __( 'Primary Navigation', 'onecolumn' ), 
 	 	) ); 
 
+	// Add editor styles
+		add_editor_style( array( 'custom-editor-style.css' ) );
 
 	// Custom header	
 		$args = array(		
@@ -32,7 +32,6 @@
 		);	
 		add_theme_support( 'custom-header', $args );
 
-
 	// Default header
 		register_default_headers( array(
 		'boats' => array(
@@ -42,24 +41,19 @@
 			)
 		) );
 
-
 	// Post thumbnails
 		add_theme_support( 'post-thumbnails' ); 
 
-
 	// Resize mode thumbnails
-		set_post_thumbnail_size( 880, 500 ); 
-
+		set_post_thumbnail_size( 880, 550 ); 
 
 	// Background color
 		$args = array( 'default-color' => 'fff', 
 		); 
 		add_theme_support( 'custom-background', $args ); 
 
-
 	// This feature adds RSS feed links to html head 
 		add_theme_support( 'automatic-feed-links' );
-
 
 	// Switches default core markup for search form, comment form, and comments to output valid HTML5
 		add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
@@ -68,23 +62,13 @@
 	add_action( 'after_setup_theme', 'onecolumn_setup' ); 
 
 
-// Theme Customizer (option to add logo)
-	function onecolumn_theme_customizer( $wp_customize ) { 
-
-		$wp_customize->add_section( 'onecolumn_logo_section' , array( 
-		'title' => __( 'Logo', 'onecolumn' ), 
-		'priority' => 30, 
-		'description' => __( 'Upload a logo to replace blogname and description in header', 'onecolumn' ),
-		) );
-		$wp_customize->add_setting( 'onecolumn_logo' );
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'onecolumn_logo', array( 
-		'label' => __( 'Logo', 'onecolumn' ), 
-		'section' => 'onecolumn_logo_section', 
-		'settings' => 'onecolumn_logo', 
-		) ) );
-
-	} 
-	add_action('customize_register', 'onecolumn_theme_customizer');
+// Add html5 support for older IE version 
+	function onecolumn_html5() { 
+		echo '<!--[if lt IE 9]>'. "\n"; 
+		echo '<script src="' . esc_url( get_template_directory_uri() . '/js/ie.js' ) . '"></script>'. "\n"; 
+		echo '<![endif]-->'. "\n"; 
+		} 
+	add_action( 'wp_head', 'onecolumn_html5' ); 
 
 
 // Add blogname to wp_title
@@ -103,7 +87,7 @@
 	function onecolumn_scripts() {
 		if (!is_admin()) { 
 			wp_enqueue_style( 'style', get_stylesheet_uri() );
-			wp_enqueue_script( 'nav', get_stylesheet_directory_uri() . '/js/nav.js', array( 'jquery' ) );
+			wp_enqueue_script( 'nav', get_template_directory_uri() . '/js/nav.js', array( 'jquery' ) );
 		}
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 			wp_enqueue_script( 'comment-reply' );
@@ -182,5 +166,24 @@
     		return str_replace('<p', '<p class="excerpt"', $excerpt);
 		}
 	add_filter( "the_excerpt", "onecolumn_excerpt" );
+
+
+// Theme Customizer (option to add logo)
+	function onecolumn_theme_customizer( $wp_customize ) { 
+
+		$wp_customize->add_section( 'onecolumn_logo_section' , array( 
+		'title' => __( 'Logo', 'onecolumn' ), 
+		'priority' => 30, 
+		'description' => __( 'Upload a logo to replace blogname and description in header', 'onecolumn' ),
+		) );
+		$wp_customize->add_setting( 'onecolumn_logo' );
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'onecolumn_logo', array( 
+		'label' => __( 'Logo', 'onecolumn' ), 
+		'section' => 'onecolumn_logo_section', 
+		'settings' => 'onecolumn_logo', 
+		) ) );
+
+	} 
+	add_action('customize_register', 'onecolumn_theme_customizer');
 
 ?>
