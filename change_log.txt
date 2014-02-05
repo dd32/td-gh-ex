@@ -1,0 +1,8 @@
+Version 1.0
+
+	i) Initial Release
+	
+Version 1.0.1
+
+	i)  Fixed readme.txt file
+	ii) Fixed Header background control

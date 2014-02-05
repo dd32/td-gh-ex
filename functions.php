@@ -87,8 +87,7 @@ function RedPro_setup() {
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
-		'primary'   => __( 'Main Menu', 'RedPro' ),
-		'secondary' => __( 'Secondary menu in left sidebar', 'RedPro' ),
+		'primary'   => __( 'Main Menu', 'RedPro' ),		
 	) );
 
 	/*
