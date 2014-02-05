@@ -8,7 +8,7 @@ Template Name: No sidebar template
 
 <div class="wrapper section-inner">						
 
-	<div class="content section-inner">
+	<div class="content center">
 	
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			
