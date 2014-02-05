@@ -65,7 +65,7 @@ function blue_planet_validate_options($input){
     $input['social_skype']       = esc_url_raw($input['social_skype']);
     $input['social_500px']       = esc_url_raw($input['social_500px']);
     $input['social_weibo']       = esc_url_raw($input['social_weibo']);
-    $input['social_email']       = ( is_email($input['social_email'] ) ) ? sanitize_text_field($input['social_email']):'';
+    $input['social_email']       = sanitize_email($input['social_email']);
     $input['social_forrst']      = esc_url_raw($input['social_forrst']);
     $input['social_stumbleupon'] = esc_url_raw($input['social_stumbleupon']);
     $input['social_digg']        = esc_url_raw($input['social_digg']);
