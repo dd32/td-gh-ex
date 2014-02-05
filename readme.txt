@@ -5,7 +5,7 @@ Theme URI: http://fasterthemes.com/themes/RedPro
 Author: Faster Themes
 Author URI: http://fasterthemes.com/
 
-Version: 1.0.1
+Version: 1.0.2
 
 == Theme Description ==
 RedPro is simple, lightweight and adaptable WordPress Theme for bloggers and professionals. It is Responsive Web Design to view in various devices. Reasons to use RedPro Theme : Responsive Web Design, Custom Menu, Easy Theme Options for social Links (Facebook, Twitter etc) and easy to change sidebar postion. 

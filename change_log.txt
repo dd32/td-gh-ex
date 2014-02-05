@@ -6,3 +6,7 @@ Version 1.0.1
 
 	i)  Fixed readme.txt file
 	ii) Fixed Header background control
+
+Version 1.0.2
+
+	i)  Typo fixes in custom-header.php

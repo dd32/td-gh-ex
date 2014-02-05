@@ -1,16 +1,13 @@
 <?php
 /**
- * Implement Custom Header functionality for Twenty Fourteen
+ * Implement Custom Header functionality for RedPro Theme
  *
  * @package WordPress
- * @subpackage Twenty_Fourteen
- * @since Twenty Fourteen 1.0
+ * @subpackage RedPro
  */
 
 /**
  * Set up the WordPress core custom header settings.
- *
- * @since Twenty Fourteen 1.0
  *
  * @uses redpro_header_style()
  * @uses redpro_admin_header_style()
@@ -94,7 +91,6 @@ if ( ! function_exists( 'redpro_admin_header_style' ) ) :
  *
  * @see redpro_custom_header_setup()
  *
- * @since Twenty Fourteen 1.0
  */
 function redpro_admin_header_style() {
 ?>
@@ -129,7 +125,6 @@ if ( ! function_exists( 'redpro_admin_header_image' ) ) :
  *
  * @see redpro_custom_header_setup()
  *
- * @since Twenty Fourteen 1.0
  */
 function redpro_admin_header_image() {
 ?>
