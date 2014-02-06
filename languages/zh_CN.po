@@ -2,53 +2,54 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-05 22:03+0800\n"
-"PO-Revision-Date: 2014-02-05 22:04+0800\n"
+"POT-Creation-Date: 2014-02-06 11:22+0800\n"
+"PO-Revision-Date: 2014-02-06 11:22+0800\n"
 "Last-Translator: 皇家元林 <i@hjyl.org>\n"
 "Language-Team: hjyl.org <i@hjyl.org>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.6.3\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../archive.php:11 ../index.php:10 ../single.php:10
+#: ../archive.php:10 ../index.php:10 ../single.php:10
 msgid "Featured"
 msgstr "置顶"
 
-#: ../archive.php:31 ../index.php:33 ../page.php:27 ../single.php:34
+#: ../archive.php:30 ../index.php:33 ../page.php:26 ../single.php:32
 msgid "Posted by"
 msgstr "Posted by"
 
-#: ../archive.php:34 ../index.php:36 ../single.php:37
+#: ../archive.php:33 ../index.php:36 ../single.php:35
 msgid "Posted in"
 msgstr "Posted in"
 
-#: ../archive.php:37 ../comments.php:5 ../index.php:39
+#: ../archive.php:36 ../comments.php:5 ../index.php:39
 msgid "Leave a reply"
 msgstr "回复"
 
-#: ../archive.php:37 ../comments.php:5 ../index.php:39
+#: ../archive.php:36 ../comments.php:5 ../index.php:39
 msgid "<b>1</b> Reply"
 msgstr "<b>1</b>条评论"
 
-#: ../archive.php:37 ../comments.php:5 ../index.php:39
+#: ../archive.php:36 ../comments.php:5 ../index.php:39
 msgid "<b>%</b> Replies"
 msgstr "<b>%</b>条评论"
 
-#: ../archive.php:40 ../functions.php:74 ../index.php:42 ../page.php:33
-#: ../single.php:40
+#: ../archive.php:39 ../functions.php:91 ../index.php:42 ../page.php:32
+#: ../single.php:38
 msgid "Edit"
 msgstr "编辑"
 
-#: ../archive.php:69 ../index.php:71 ../page.php:44 ../single.php:66
+#: ../archive.php:68 ../index.php:71 ../page.php:43 ../single.php:54
 msgid "Nothing Found"
 msgstr "什么都没有"
 
-#: ../archive.php:73 ../index.php:75 ../page.php:48 ../single.php:70
+#: ../archive.php:72 ../index.php:75 ../page.php:47 ../single.php:58
 msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
 "searching will help find a related post."
@@ -127,47 +128,56 @@ msgstr "取消回复"
 msgid "Post Comment"
 msgstr "发布评论"
 
+#: ../footer.php:4
+msgid "http://wordpress.org/"
+msgstr "http://wordpress.org/"
+
 #: ../footer.php:5 ../functions.php:202
 msgid "http://hjyl.org/"
 msgstr "http://hjyl.org/"
 
-#: ../functions.php:73
+#: ../functions.php:48
+#, php-format
+msgid "Page %s"
+msgstr "第 %s 页"
+
+#: ../functions.php:90
 msgid "Before Refresh, you can"
 msgstr "刷新之前，你可以"
 
-#: ../functions.php:75
+#: ../functions.php:92
 msgid "Cancel Editing"
 msgstr "取消编辑"
 
-#: ../functions.php:76
+#: ../functions.php:93
 msgid "Wait a moment..."
 msgstr "请稍候..."
 
-#: ../functions.php:77
+#: ../functions.php:94
 msgid "Good Comment"
 msgstr "提交成功"
 
-#: ../functions.php:136
+#: ../functions.php:153
 msgid "Copy and Specify"
 msgstr "转载请注明"
 
-#: ../functions.php:152
+#: ../functions.php:169
 msgid "Primary Navigation"
 msgstr "主要导航"
 
-#: ../functions.php:153
+#: ../functions.php:170
 msgid "Mobile Navigation"
 msgstr "手机导航"
 
-#: ../functions.php:159 ../sidebar.php:4
+#: ../functions.php:176 ../sidebar.php:4
 msgid "Home"
 msgstr "首页"
 
-#: ../functions.php:166
+#: ../functions.php:183
 msgid "Single"
 msgstr "文章页"
 
-#: ../functions.php:173
+#: ../functions.php:190
 msgid "Other"
 msgstr "其他页"
 
@@ -175,16 +185,11 @@ msgstr "其他页"
 msgid "mailto:i@hjyl.org"
 msgstr "mailto:i@hjyl.org"
 
-#: ../header.php:35
-#, php-format
-msgid "Page %s"
-msgstr "第 %s 页"
-
-#: ../page.php:21 ../single.php:27
+#: ../page.php:21 ../single.php:26
 msgid "Pages:"
 msgstr "页面："
 
-#: ../page.php:30
+#: ../page.php:29
 msgid "Last Updated"
 msgstr "Last Updated"
 
@@ -200,59 +205,11 @@ msgstr "归档"
 msgid "Meta"
 msgstr "管理"
 
-#: ../single.php:43
-msgid "Share to Sina"
-msgstr "分享到新浪微博"
-
-#: ../single.php:43
-msgid "WeiBo"
-msgstr "新浪微博"
-
-#: ../single.php:44
-msgid "Share to QQ"
-msgstr "分享到腾讯微博"
-
-#: ../single.php:44
-msgid "QQ"
-msgstr "腾讯微博"
-
-#: ../single.php:45
-msgid "Share to douban"
-msgstr "分享到豆瓣"
-
-#: ../single.php:45
-msgid "DouBan"
-msgstr "豆瓣"
-
 #: ../single.php:46
-msgid "Share to QQ space"
-msgstr "分享到QQ空间"
-
-#: ../single.php:46
-msgid "QQ Space"
-msgstr "QQ空间"
-
-#: ../single.php:47
-msgid "Share to RenRen"
-msgstr "分享到人人网"
-
-#: ../single.php:47
-msgid "RenRen"
-msgstr "人人网"
-
-#: ../single.php:48
-msgid "Share to Twitter"
-msgstr "分享到Twitter"
-
-#: ../single.php:48
-msgid "Twitter"
-msgstr "Twitter"
-
-#: ../single.php:58
 msgid "Previous: %title"
 msgstr "上一篇: %title"
 
-#: ../single.php:59
+#: ../single.php:47
 msgid "Next: %title"
 msgstr "下一篇: %title"
 
@@ -327,119 +284,135 @@ msgstr "%1$s 在 %2$s"
 msgid "(Edit)"
 msgstr "（编辑）"
 
-#: ../inc/theme_inc.php:4 ../inc/theme_inc.php:38 ../inc/theme_inc.php:42
+#: ../inc/theme_inc.php:4 ../inc/theme_inc.php:26 ../inc/theme_inc.php:30
 msgid "olo Options"
 msgstr "olo主题设置"
 
-#: ../inc/theme_inc.php:30
+#: ../inc/theme_inc.php:18
 msgid "Options take effect."
 msgstr "设置已保存。"
 
-#: ../inc/theme_inc.php:46
-msgid "SEO Option"
-msgstr "SEO优化"
-
-#: ../inc/theme_inc.php:48
-msgid "meta tags"
-msgstr "meta标签设置"
-
-#: ../inc/theme_inc.php:50
-msgid "Enable SEO."
-msgstr "启用SEO功能"
-
-#: ../inc/theme_inc.php:51
-msgid "keywords[comma-separated, no more than 100 characters]"
-msgstr "关键词keywords 「以英文逗号隔开，建议不超过100字包括字符」"
-
-#: ../inc/theme_inc.php:54
-msgid "description, no more than 150 characters."
-msgstr "描述description 「建议不超过150字包括符号」"
-
-#: ../inc/theme_inc.php:64
+#: ../inc/theme_inc.php:34
 msgid "Gravatar Cache Option"
 msgstr "头像缓存功能"
 
-#: ../inc/theme_inc.php:66
+#: ../inc/theme_inc.php:36
 msgid "Enable Gravatar cache. If host not supported,cancel it."
 msgstr "启用图片缓存功能。若空间不支持，取消这项。"
 
-#: ../inc/theme_inc.php:66
+#: ../inc/theme_inc.php:36
 msgid ""
 "Before Enable Gravatar cache, Create a folder named avatar, and upload "
 "default.jpg"
 msgstr "注意启用前，在WordPress根目录建立avatar文件夹，并上传default.jpg"
 
-#: ../inc/theme_inc.php:74
-msgid "Custom login theme"
-msgstr "自定义后台登录风格"
-
-#: ../inc/theme_inc.php:76
-msgid "Enable Custom login theme. "
-msgstr "启用自定义后台登录风格"
-
-#: ../inc/theme_inc.php:76
-msgid "If modify, See css/login.css and images/logo.gif"
-msgstr "如果修改，请参见css/login.css 和 images/logo.gif"
-
-#: ../inc/theme_inc.php:84
-msgid "AD Plugin Enable"
-msgstr "广告插件"
-
-#: ../inc/theme_inc.php:86
-msgid "Enable AD Plugin. "
-msgstr "启用广告插件"
-
-#: ../inc/theme_inc.php:86
-msgid "The option controls the Ads as followed, including links on bottom."
-msgstr "此选项控制下面所有的广告，包括底部链接"
-
-#: ../inc/theme_inc.php:94
-msgid "336 x 280 AD"
-msgstr "336×280 广告"
-
-#: ../inc/theme_inc.php:96
-msgid "Single Right AD"
-msgstr "文章左侧广告"
-
-#: ../inc/theme_inc.php:106 ../inc/theme_inc.php:118
-msgid "468 x 60 AD"
-msgstr "468×60 广告"
-
-#: ../inc/theme_inc.php:108
-msgid "Single bottom AD"
-msgstr "文章底部广告"
-
-#: ../inc/theme_inc.php:120
-msgid "Archive Top AD"
-msgstr "归档顶部广告"
-
-#: ../inc/theme_inc.php:130
-msgid "Home Links on bottom"
-msgstr "首页底部链接显示"
-
-#: ../inc/theme_inc.php:140
-msgid "All Links on bottom"
-msgstr "全站底部链接"
-
-#: ../inc/theme_inc.php:150
+#: ../inc/theme_inc.php:44
 msgid "ICP No."
 msgstr "备案号"
 
-#: ../inc/theme_inc.php:152
+#: ../inc/theme_inc.php:46
 msgid "Enable ICP "
 msgstr "显示备案号"
 
-#: ../inc/theme_inc.php:160
-msgid "Stat Code"
-msgstr "统计代码"
-
-#: ../inc/theme_inc.php:162
-msgid "Enable Stat Code "
-msgstr "启用统计代码"
-
-#: ../inc/theme_inc.php:168
+#: ../inc/theme_inc.php:52
 msgid "Save Changes"
 msgstr "保存设置"
+
+#~ msgid "Share to Sina"
+#~ msgstr "分享到新浪微博"
+
+#~ msgid "WeiBo"
+#~ msgstr "新浪微博"
+
+#~ msgid "Share to QQ"
+#~ msgstr "分享到腾讯微博"
+
+#~ msgid "QQ"
+#~ msgstr "腾讯微博"
+
+#~ msgid "Share to douban"
+#~ msgstr "分享到豆瓣"
+
+#~ msgid "DouBan"
+#~ msgstr "豆瓣"
+
+#~ msgid "Share to QQ space"
+#~ msgstr "分享到QQ空间"
+
+#~ msgid "QQ Space"
+#~ msgstr "QQ空间"
+
+#~ msgid "Share to RenRen"
+#~ msgstr "分享到人人网"
+
+#~ msgid "RenRen"
+#~ msgstr "人人网"
+
+#~ msgid "Share to Twitter"
+#~ msgstr "分享到Twitter"
+
+#~ msgid "Twitter"
+#~ msgstr "Twitter"
+
+#~ msgid "SEO Option"
+#~ msgstr "SEO优化"
+
+#~ msgid "meta tags"
+#~ msgstr "meta标签设置"
+
+#~ msgid "Enable SEO."
+#~ msgstr "启用SEO功能"
+
+#~ msgid "keywords[comma-separated, no more than 100 characters]"
+#~ msgstr "关键词keywords 「以英文逗号隔开，建议不超过100字包括字符」"
+
+#~ msgid "description, no more than 150 characters."
+#~ msgstr "描述description 「建议不超过150字包括符号」"
+
+#~ msgid "Custom login theme"
+#~ msgstr "自定义后台登录风格"
+
+#~ msgid "Enable Custom login theme. "
+#~ msgstr "启用自定义后台登录风格"
+
+#~ msgid "If modify, See css/login.css and images/logo.gif"
+#~ msgstr "如果修改，请参见css/login.css 和 images/logo.gif"
+
+#~ msgid "AD Plugin Enable"
+#~ msgstr "广告插件"
+
+#~ msgid "Enable AD Plugin. "
+#~ msgstr "启用广告插件"
+
+#~ msgid "The option controls the Ads as followed, including links on bottom."
+#~ msgstr "此选项控制下面所有的广告，包括底部链接"
+
+#~ msgid "336 x 280 AD"
+#~ msgstr "336×280 广告"
+
+#~ msgid "Single Right AD"
+#~ msgstr "文章左侧广告"
+
+#~ msgid "468 x 60 AD"
+#~ msgstr "468×60 广告"
+
+#~ msgid "Single bottom AD"
+#~ msgstr "文章底部广告"
+
+#~ msgid "Archive Top AD"
+#~ msgstr "归档顶部广告"
+
+#~ msgid "Home Links on bottom"
+#~ msgstr "首页底部链接显示"
+
+#~ msgid "All Links on bottom"
+#~ msgstr "全站底部链接"
+
+#~ msgid "Stat Code"
+#~ msgstr "统计代码"
+
+#~ msgid "Enable Stat Code "
+#~ msgstr "启用统计代码"
 
 #~ msgid "Page %1$s of %2$s"
 #~ msgstr "Page %1$s of %2$s"

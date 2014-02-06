@@ -35,8 +35,25 @@ add_image_size('index', 70, 50);
 //editor style
 add_editor_style('css/editor.css');
 
-//for forbidden wordpress version displayed
-remove_action('wp_head','wp_generator');
+//////// olo Title Tag (Themes are REQUIRED to use 'wp_title' filter, to filter wp_title() )
+function olo_wp_title($title, $sep) {
+	global $paged, $page;
+	if ( is_feed() ) {
+		return $title;
+	}
+	// Add the site name.
+	$title .= get_bloginfo( 'name' );
+	// Add a page number if necessary:
+	if ( is_paged() ){
+		echo sprintf( __( 'Page %s', 'olo' ), max( $paged, $page ) )."$sep";
+	}
+	// Add the blog name.
+	if(is_home() && is_front_page()) {
+		return $title;
+	}
+	return $title;
+}
+add_filter( 'wp_title', 'olo_wp_title', 10, 2 );
 
 //forbidden wptexturize
 remove_filter('the_content', 'wptexturize');
@@ -62,13 +79,13 @@ if ( ! isset( $content_width ) )
 add_action('wp_enqueue_scripts', 'olo_script');
 function olo_script() {
 	if( !IsMobile ){
-		wp_enqueue_style( 'olo', get_stylesheet_uri(),  array(), '20140205', false);
+		wp_enqueue_style( 'olo', get_stylesheet_uri(),  array(), '20140206', false);
 	}else{
-		wp_enqueue_style('mobile', TPLDIR . '/css/mobile.css', array(), '20140205', false);
+		wp_enqueue_style('mobile', TPLDIR . '/css/mobile.css', array(), '20140206', false);
 	}
 	wp_enqueue_script('jquery');
-	wp_enqueue_script( 'olo', TPLDIR . '/js/olo.js', array(), '20140205', true);
-	wp_enqueue_script( 'comments-ajax', TPLDIR . '/js/comments-ajax.js', array(), '20140205', true);
+	wp_enqueue_script( 'olo', TPLDIR . '/js/olo.js', array(), '20140206', true);
+	wp_enqueue_script( 'comments-ajax', TPLDIR . '/js/comments-ajax.js', array(), '20140206', true);
 	wp_localize_script('comments-ajax', 'ajaxL10n', array(
 		'edt1' => __('Before Refresh, you can','olo'),
 		'edt2' => __('Edit','olo'),
@@ -80,13 +97,13 @@ function olo_script() {
 	if ( is_singular() && comments_open() ) wp_enqueue_script( 'comment-reply' );
 			
 	if( is_page('archives') ){
-		wp_enqueue_script( 'archives', TPLDIR . '/js/archives.js', array(), '20140205', false);
-		wp_enqueue_style( 'archives', TPLDIR . '/css/archives.css', array(), '20140205', 'screen');
+		wp_enqueue_script( 'archives', TPLDIR . '/js/archives.js', array(), '20140206', false);
+		wp_enqueue_style( 'archives', TPLDIR . '/css/archives.css', array(), '20140206', 'screen');
 	};
 	if(is_404()){
-		wp_enqueue_style( '4041', 'http://fonts.googleapis.com/css?family=Press+Start+2P', array(), '20140205', 'screen');
-		wp_enqueue_style( '4042', 'http://fonts.googleapis.com/css?family=Oxygen:700', array(), '20140205', 'screen');
-		wp_enqueue_style( '4043', TPLDIR . '/css/404.css', array(), '20140205', 'screen');
+		wp_enqueue_style( '4041', 'http://fonts.googleapis.com/css?family=Press+Start+2P', array(), '20140206', 'screen');
+		wp_enqueue_style( '4042', 'http://fonts.googleapis.com/css?family=Oxygen:700', array(), '20140206', 'screen');
+		wp_enqueue_style( '4043', TPLDIR . '/css/404.css', array(), '20140206', 'screen');
 	}
 }
 
@@ -178,23 +195,6 @@ function olo_widgets(){
     ));
 }
 add_action( 'widgets_init', 'olo_widgets' );
-
-if (get_option('olo_login')!='') {
-function olo_login() {
-echo '<link rel="stylesheet" tyssspe="text/css" href="' .TPLDIR. '/css/login.css" />'; }      
-add_action('login_head', 'olo_login');  
-	
-//change CSS on admin page
-add_action('login_head', 'olo_login_logo');
-//change the logo on admin page
-function olo_login_logo() { 
-	echo '<style type="text/css">h1 a{background-image:url('.TPLDIR.'/images/logo.gif) !important; }</style>';
-}
-
-//define the url of logo
-add_filter( 'login_headerurl', 'olo_custom_loginlogo_url' );
-function olo_custom_loginlogo_url($url) { return ''.home_url().''; }
-}
 
 //add author information 
 add_filter('admin_footer_text', 'olo_admin_footer');

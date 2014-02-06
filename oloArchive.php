@@ -6,7 +6,6 @@ get_header(); ?>
 <div id="oloContainer">
 	<div id="oloContent">
 		<div class="oloPosts">
-		<figure id="adxx"><?php echo get_option('adxxx'); ?></figure>
 <div id="archives">     
         <div id="archives-content">     
         <?php      

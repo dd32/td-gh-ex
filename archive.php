@@ -2,7 +2,6 @@
 <div id="oloContainer">
 	<div id="oloContent">
 		<div class="oloPosts">
-		<?php if (get_option('olo_ad')!='') { ?><figure id="adxx"><?php echo get_option('adxxx'); ?></figure><?php } ?>
 			<?php if(have_posts()) : ?>
 			<?php while(have_posts()) : the_post(); ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

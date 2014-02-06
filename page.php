@@ -19,7 +19,6 @@
 					<section class="oloEntry">
 						<?php the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<nav class="page-link"><span>' . __( 'Pages:', 'olo' ) . '</span>', 'after' => '</nav>' ) ); ?>
-						<?php if (get_option('olo_ad')!='') { ?><figure id="adxx"><?php echo get_option('adxx'); ?></figure><?php } ?>
 					</section>
 					
 					<footer>
