@@ -3,8 +3,8 @@ Contributors: webvitaly
 Donate link: http://web-profile.com.ua/donate/
 Tags: gray, white, light, one-column, two-columns, right-sidebar, flexible-width, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, clean
 Requires at least: 3.4
-Tested up to: 3.8
-Stable tag: 1.2
+Tested up to: 3.8.1
+Stable tag: 1.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -39,119 +39,6 @@ Responsive clean theme. More info at http://web-profile.com.ua/activetab/
 FAQ:
 * Q: Is it good that many sites use Bootstrap?
 * A: Yes. Users get used and stick to one design and it will be easy to use the site for them.
-
-
-== Changelog ==
-
-= 1.2 - 2014-01-23 =
-* use new default WordPress classes 'page_item_has_children' and 'menu-item-has-children' instead of adding custom ones
-* added 9 new templates (sitemap, archives: all, yearly, monthly, weekly, daily, categories, tags, post-by-post)
-
-= 1.1 - 2014-01-07 =
-* optimize images for faster loading
-* bug fixing
-
-= 1.0 - 2013-12-07 =
-* updated Bootstrap v.3.0.3
-* added 'responsive-layout' and 'fluid-layout' tags
-
-= 0.5.9 - 2013-12-01 =
-* bug fixing
-
-= 0.5.8 - 2013-11-10 =
-* updated Bootstrap v.3.0.2
-* bug fixing
-
-= 0.5.7 - 2013-11-03 =
-* updated Bootstrap v.3.0.1
-* bug fixing
-
-= 0.5.6 - 2013-10-15 =
-* bug fixing
-
-= 0.5.5 - 2013-09-17 =
-* updated license to GPLv3
-
-= 0.5.4 - 2013-09-15 =
-* updated Bootstrap v.3
-* updated theme structure for Bootstrap v.3
-
-= 0.4.7 - 2013-07-26 =
-* option added: favicon upload (favicon shown in frontend and admin sections)
-
-= 0.4.6 - 2013-07-21 =
-* bug fixing
-* added German translation (thanks to 'vkr' - http://wordpress.org/support/profile/vkr)
-
-= 0.4.5 - 2013-07-13 =
-* bug fixing
-* update Hebrew translation
-
-= 0.4.4 - 2013-07-12 =
-* bug fixing
-* update screenshot.png
-
-= 0.4.3 - 2013-07-07 =
-* added Russian translation
-
-= 0.4.2 - 2013-07-05 =
-* options added: menu_position_type (fixed or static)
-* options removed: show_sidebar_site_title, show_sidebar_site_description
-
-= 0.4.1 - 2013-07-02 =
-* update screenshot.png
-* update header images (progressive for smooth loading)
-
-= 0.4.0 - 2013-07-01 =
-* bug fixing
-* option added: excerpt_or_full_content_in_list
-
-= 0.3.9 - 2013-06-26 =
-* added Hebrew translation (thanks to '00avi00' - http://wordpress.org/support/profile/00avi00)
-
-= 0.3.8 - 2013-06-26 =
-* bug fixing
-
-= 0.3.7 - 2013-06-26 =
-* bug fixing
-* added .pot file for translation
-* added Ukrainian translation
-
-= 0.3.6 - 2013-06-21 =
-* bug fixing
-* options added: code_head, code_footer
-* options removed: code_head_css, code_head_js
-
-= 0.3.5 - 2013-06-21 =
-* bug fixing
-* options added: code_head_css, code_head_js
-
-= 0.3.4 - 2013-06-19 =
-* Options Framework ver.1.6 added
-* options added: logo_url, show_site_title, show_site_description, show_sidebar_site_title, show_sidebar_site_description
-* bug fixing
-* Font Awesome updated
-
-= 0.3.3 - 2013-06-13 =
-* bug fixing
-* Font Awesome updated
-
-= 0.3.2 - 2013-06-06 =
-* bug fixing
-* Font Awesome added
-
-= 0.3.1 - 2013-05-23 =
-* bug fixing
-
-= 0.3.0 - 2013-05-22 =
-* bug fixing
-* updating scripts
-
-= 0.2.9 - 2013-05-12 =
-* responsive design
-
-= 0.2.8 - 2013-05-02 =
-* initial approved release
 
 
 == Other Notes ==
