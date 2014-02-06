@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: DarkOrange v1.7\n"
+"Project-Id-Version: DarkOrange v1.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-01-24 18:05:42+0000\n"
+"PO-Revision-Date: 2014-02-02 12:23:14+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -93,15 +93,15 @@ msgstr "&laquo; Oudere berichten"
 msgid "Newer posts &raquo;"
 msgstr "Nieuwere berichten &raquo;"
 
-#: functions.php:78
+#: functions.php:84
 #@ darkorange
 msgid "Primary Sidebar"
 msgstr "Hoofd Sidebar"
 
-#: functions.php:80
-#: functions.php:90
-#: functions.php:100
-#: functions.php:110
+#: functions.php:86
+#: functions.php:96
+#: functions.php:106
+#: functions.php:116
 #@ darkorange
 msgid "Select widgets from the right-hand side."
 msgstr "Selecteer widgets van de rechterkant."
@@ -149,12 +149,12 @@ msgstr "Nieuwere Reacties &raquo;"
 msgid "Comments are closed."
 msgstr "Reageren is niet mogelijk."
 
-#: functions.php:98
+#: functions.php:104
 #@ darkorange
 msgid "Footer Sidebar Right"
 msgstr "Footer Sidebar Rechts"
 
-#: functions.php:108
+#: functions.php:114
 #@ darkorange
 msgid "Footer Sidebar Left"
 msgstr "Footer Sidebar Links"
@@ -164,7 +164,7 @@ msgstr "Footer Sidebar Links"
 msgid "Primary Navigation"
 msgstr "Hoofdmenu"
 
-#: functions.php:88
+#: functions.php:94
 #@ darkorange
 msgid "Homepage Sidebar"
 msgstr "Homepage Sidebar"
@@ -174,13 +174,13 @@ msgstr "Homepage Sidebar"
 msgid "Featured post"
 msgstr "Aanbevolen bericht"
 
-#: functions.php:191
-#: functions.php:197
+#: functions.php:177
+#: functions.php:183
 #@ darkorange
 msgid "Logo"
 msgstr "Logo"
 
-#: functions.php:193
+#: functions.php:179
 #@ darkorange
 msgid "Upload a logo to replace blogname and description in header"
 msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
@@ -192,73 +192,6 @@ msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
 #@ darkorange
 msgid "By "
 msgstr "Door "
-
-#: theme-options.php:9
-#@ darkorange
-msgid "Theme Options"
-msgstr "Thema Instellingen"
-
-#: theme-options.php:12
-#@ darkorange
-msgid "Welcome on the theme options page. On this page you can set all options this theme offers. Enjoy."
-msgstr "Welkom op de thema instellingenpagina. Op deze pagina kun je alle opties instellen die dit thema heeft. Veel plezier."
-
-#: theme-options.php:17
-#: theme-options.php:23
-#@ darkorange
-msgid "Description"
-msgstr "Beschrijving"
-
-#: theme-options.php:18
-#: theme-options.php:24
-#@ darkorange
-msgid "What to do"
-msgstr "Wat te doen"
-
-#: theme-options.php:30
-#: theme-options.php:34
-#: theme-options.php:38
-#: theme-options.php:42
-#: theme-options.php:46
-#: theme-options.php:50
-#@ darkorange
-msgid "click here"
-msgstr "klik hier"
-
-#: functions.php:181
-#@ darkorange
-msgid "You do not have permission to access this page"
-msgstr "Je hebt geen rechten om deze pagina te bezoeken"
-
-#: theme-options.php:29
-#@ darkorange
-msgid "For setting menu"
-msgstr "Om menu in te stellen"
-
-#: theme-options.php:33
-#@ darkorange
-msgid "For setting static homepage"
-msgstr "Om statische startpagina in te stellen"
-
-#: theme-options.php:37
-#@ darkorange
-msgid "For setting header-image"
-msgstr "Om header-afbeelding in te stellen"
-
-#: theme-options.php:41
-#@ darkorange
-msgid "For setting logo"
-msgstr "Om logo in te stellen"
-
-#: theme-options.php:45
-#@ darkorange
-msgid "For setting background (image)"
-msgstr "Om achtergrond (afbeelding) in te stellen"
-
-#: theme-options.php:49
-#@ darkorange
-msgid "For setting widgets"
-msgstr "Om widgets in te stellen"
 
 #: archive.php:30
 #: index.php:25
@@ -291,4 +224,19 @@ msgid "1 response on %2$s"
 msgid_plural "%1$s responses on %2$s"
 msgstr[0] "1 reactie op %2$s"
 msgstr[1] "%1$s reacties op %2$s"
+
+#: footer.php:30
+#@ darkorange
+msgid "Copyright"
+msgstr "Copyright"
+
+#: footer.php:31
+#@ darkorange
+msgid "WordPress Blog Platform"
+msgstr "WordPress Blog Platform"
+
+#: footer.php:31
+#@ darkorange
+msgid "Proudly powered by WordPress"
+msgstr "Proudly powered by WordPress"
 

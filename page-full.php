@@ -19,7 +19,7 @@
 
 	<?php endwhile; ?>
 
-	<h4><?php edit_post_link( __( 'Edit', 'darkorange' ), '<span class="edit-link">', '</span>' ) ?></h4>
+	<h5><?php edit_post_link( __( 'Edit', 'darkorange' ), '<span class="edit-link">', '</span>' ) ?></h5>
 
 </div>	
 

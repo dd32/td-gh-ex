@@ -1,9 +1,15 @@
 CHANGELOG
 =========
 
+DarkOrange version 1.8 - february 2014
+- removed theme options page because this page only lists the available options
+- added editor styles for page and post
+- added translation to footer site info
+- a bunch of other minor adjustments in stylesheet
+
 DarkOrange version 1.7 - february 2014
 - added theme options page
-- added html5 support in older browsers (functions file)
+- added html5 support for IE8 and older
 - added comments link to metadata in post
 - added several adjustments for better responsive layout
 - a bunch of other minor adjustments in stylesheet

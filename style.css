@@ -1,10 +1,10 @@
 /*
 Theme Name: DarkOrange
 Theme URI: http://www.guidovanderleest.nl/darkorange
-Version: 1.7
+Version: 1.8
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
-Description: DarkOrange is a free, basic, clean, minimalistic, responsive, mobile friendly, WordPress theme. Primary sidebar, homepage sidebar, 2 widget-area's in footer, custom header-image, custom background, display logo or blogname and description, full width page-template, dropdown navigation and a simple theme optionspage are included. Besides this no fancy options, no slideshow, this one only has the basic options. Enjoy.
+Description: DarkOrange is a free, basic, clean, minimalistic, responsive, mobile friendly, WordPress theme. Primary sidebar, homepage sidebar, 2 widget-area's in footer, custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy.
 Tags: one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, fluid-layout, full-width-template, custom-background, custom-header, custom-menu, featured-images, dark, white, gray, orange, translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -99,7 +99,7 @@ blockquote, address {padding:5px; font-size:1.2em; font-style:italic;}
 p {margin:0 0 10px;}
 
 table {margin:10px; border-collapse:collapse;}
-table, th, td {border: 1px solid #ccc; padding:5px;}
+table, th, td {border: 1px solid #ccc; padding:10px;}
 
 ul {list-style: square; margin: 2px 0 2px 15px;}
 li {margin: 0 0 0 10px;}
@@ -118,7 +118,7 @@ select {max-width:100%;}
 #pre-header {margin:0; padding:0;}
 #header {margin: 0 4% 10px; padding:0 0 10px; background:none; border-bottom:1px solid #eee;}
 #header:after {content:''; display:block; clear:both;}
-#header .header-image {width: 60%; float:left; margin: 0; padding:0;}
+#header .image-homepage {width: 60%; float:left; margin: 0; padding:0;}
 #header .header-img {width: 96%; height: auto; padding:2%; border:1px solid #eee; border-radius:5px;-moz-border-radius:5px;}
 #header .logo {width:100%; padding: 20px 0;}
 #header .logo h1 {text-align:left; font-weight:bold;}
@@ -127,11 +127,11 @@ select {max-width:100%;}
 
 
 /* HEADER MENU */
-.nav-head {background:#444; margin:0 0 10px; clear:both; padding:15px 2%; font-size:1em; text-align:left;}
+.nav-head {background:#444; margin:0 0 10px; clear:both; padding:0 10px; font-size:1em; text-align:left;}
 .nav-head select {display:none;}
 .nav-head ul {padding:0; margin: 0;}
 .nav-head ul li {list-style-type: none; display: inline-block; position: relative;}
-.nav-head ul li a {text-decoration: none; color: #ff6600; background: none; padding: 5px 10px; display: inline-block;}
+.nav-head ul li a {text-decoration: none; color: #ff6600; background: none; padding: 15px 10px; display: inline-block;}
 .nav-head ul li a:hover {text-decoration:underline;}
 .menu .current_page_item > a, .menu .current_page_parent > a {text-decoration:underline;}
 
@@ -139,7 +139,7 @@ select {max-width:100%;}
 /* HEADER SUBMENU */
 .nav-head ul ul {display:none; position: absolute; top: 100%; padding: 0;}
 .nav-head ul ul ul {display:none; position: absolute; top: 30%; left: 100%;}
-.nav-head ul ul a {width:12em; background: #333; z-index:999;}
+.nav-head ul ul a {width:12em; padding: 5px 10px; background: #333; z-index:999;}
 .nav-head ul li:hover > ul {display:block;}
 .nav-head ul li ul li {margin:0;}
 
@@ -198,14 +198,14 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 #comments .children {list-style:none; background: #f8f8f8; padding: 0 0 0 15px;}
 .comment-body {border-left:2px solid #ec6500; padding: 0 0 0 15px; margin:20px 0;}
 .no-comments {clear:both; margin:20px 0; padding:5px 10px; background: #f8f8f8; border:1px solid #ccc; border-radius:5px;-moz-border-radius:5px;}
-.comment-notes, .form-allowed-tags {font-size:0.75em; padding:10px 0;}
+.comment-notes, .form-allowed-tags {font-size:0.75em; padding:5px 0;}
 .comments-title, .comment-reply-title {font-size: 1.5em;} 
 .bypostauthor {color:#333;}
 
 #respond {padding:10px 0; clear:both;}
 #commentform label {margin: 0 0 10px; font-family: 'Open Sans', sans-serif; display:block;}
 #commentform textarea, #commentform input {width: 90%; padding:5px;}
-#commentform input[type="submit"]{width:9em; margin:5px 0 0;} 
+#commentform input[type="submit"]{width:9em; margin:0;} 
 
 
 /* SIDEBAR AND WIDGETS */
@@ -216,7 +216,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 
 
 /* HOMEPAGE SIDEBAR */
-#header .homepage {width: 36%; float: right; margin:0; padding:0; word-wrap: break-word;}
+#header .sidebar-homepage {width: 36%; float: right; margin:0; padding:0; word-wrap: break-word;}
 
 
 /* FOOTER */
@@ -234,16 +234,15 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 	body {font-size:1em; line-height:1.2em;}
 	#container {width: 94%; padding:10px; margin:0;}
 	#content, #content-full {width:100%; margin:0; padding:15px 0 15px; border:0;}
-	#pre-header {margin:0; padding:0;}
 	#header {margin:0; padding:0; border-bottom:1px solid #ccc;}
 	#header .logo {padding:0; margin: 0 0 10px; text-align:center;}
 	#header .logo h1 {text-align:center; padding:0; margin:0;font-size:2em;}
 	#header .logo h4 {text-align:center; padding:0; margin:0;font-size:1.3em;}
-	#header .header-image {width:100%; border:0; padding:0; float:left;}
+	#header .image-homepage {width:100%; border:0; padding:0; float:left;}
 	#header .header-img {width: 98%; height: auto; padding:3px; margin:0 auto 0; border:1px solid #ccc;}
-	#header .homepage {width:100%; border:0; padding:0; float:left;} 
+	#header .sidebar-homepage {width:100%; border:0; padding:0; float:left;} 
 	.article {padding:0;}
-	.entry-title, .page-title, .widgettitle {font-size:1.3em;}
+	.entry-title, .page-title, .widgettitle, .comments-title {font-size:1.3em;}
 	.post-home, .post-home.left {width: 100%; float: left; margin:0; padding:0; border:0;}
 	.comment-body {border:0; padding:0;}
 	#sidebar {width:100%; border:0; padding:15px 0 0; float:left;}

@@ -19,6 +19,9 @@ if ( ! isset( $content_width ) )
 		array( 'primary' => __( 'Primary Navigation', 'darkorange' ), 
 	 	) ); 
 
+	// Add editor styles
+		add_editor_style( array( 'custom-editor-style.css' ) );
+
 	// Custom header	
 		$args = array(		
 		'width' => 650,
@@ -34,6 +37,9 @@ if ( ! isset( $content_width ) )
 
 	// Resize mode thumbnails
 		set_post_thumbnail_size( 675, 550 ); 
+
+	// Resize homepage thumbnails
+		add_image_size( 'homepage', 500, 450 ); 
 
 	// Background color
 		$args = array( 'default-color' => 'f2f2f2', 
@@ -118,12 +124,6 @@ function darkorange_widgets_init() {
 	add_action( 'widgets_init', 'darkorange_widgets_init' );
 
 
-// Resize homepage thumbnails
-	if ( function_exists( 'add_image_size' ) ) { 
-		add_image_size( 'homepage', 500, 450 ); 
-	}
-
-
 // Add blogname to wp_title
 	function darkorange_wp_title( $title ) { 
 		global $page, $paged; 
@@ -168,20 +168,6 @@ function darkorange_widgets_init() {
 		'description' => __( 'Boats', 'darkorange' )
 		)
 	) );
-
-
-// Theme Options Page
-	function register_darkorange_menu_page(){ 
-		add_theme_page('DarkOrange', 'DarkOrange', 'manage_options', 'darkorange', 'darkorange_options' ); 
- 	} 
-	add_action( 'admin_menu', 'register_darkorange_menu_page' ); 
-
-	function darkorange_options() { 
-		if (!current_user_can('manage_options')) { 
-			wp_die( __('You do not have permission to access this page', 'darkorange' ) ); 
-			} 
-			include 'theme-options.php'; 
-		}
 
 
 // Theme Customizer (option to add logo)

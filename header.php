@@ -43,7 +43,7 @@
 		<?php endif; ?>
 	</div>
 
-	<div class="header-image"> 
+	<div class="image-homepage"> 
 		<?php if ( is_home() || is_front_page() ) {?> 
 		<?php if ( get_header_image() ) {?> 
 				<img src="<?php echo get_header_image(); ?>" class="header-img" alt="" />
@@ -51,7 +51,7 @@
 		<?php } ?> 
 	</div>
 
-	<div class="homepage"> 
+	<div class="sidebar-homepage"> 
 		<?php if ( is_home() || is_front_page() ) {?> 
 		<?php if ( is_active_sidebar( 'homepage' ) ) {?> 
 			<?php dynamic_sidebar( 'homepage' ); ?>
