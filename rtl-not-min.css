@@ -99,12 +99,12 @@ td {
     margin-left: auto;
 }
 
-#respond h3#reply-title #cancel-comment-reply-link {
+#respond #reply-title #cancel-comment-reply-link {
     margin-right: 10px;
     margin-left: auto;
 }
 
-label ~ span.required {
+label ~ .required {
     float: right;
     margin: -18px -16px 0 0;
 }

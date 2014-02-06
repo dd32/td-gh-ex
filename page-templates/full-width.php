@@ -7,7 +7,7 @@ get_header(); ?>
         <?php while ( have_posts() ) : the_post();
             get_template_part( 'content', 'page' );
             if ( ! is_front_page() || ! is_home() || ! is_tag() && comments_open() ) : 
-                comments_template( '', true );
+                comments_template( '', TRUE );
             endif;
         endwhile; ?>
     </div>

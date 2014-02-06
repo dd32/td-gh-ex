@@ -26,18 +26,33 @@
                 );
                 if ( ! is_front_page() || ! is_home() || ! is_tag() && comments_open() ) : ?>
                     <div class="comments-link">
-                        <?php comments_popup_link( '<span class="leave-reply">' . __( 'Leave a reply', 'rockers' ) . '</span>', __( '1 Reply', 'rockers' ), __( '% Replies', 'rockers' ) ); ?>
+                        <?php comments_popup_link( 
+                            '<span class="leave-reply">' . __( 'Leave a reply', 'rockers' ) . '</span>', 
+                            __( '1 Reply', 'rockers' ), 
+                            __( '% Replies', 'rockers' ) 
+                        ); ?>
                     </div>
                 <?php endif; ?>
             </div>
         <?php endif; ?>
         <footer class="post-meta">
             <?php rockers_entry_meta();
-            edit_post_link( __( 'Edit', 'rockers' ), '<span class="edit-link">', '</span>' );
-            if ( is_singular() && get_the_author_meta( 'description' ) && is_multi_author() ) : ?>
+            edit_post_link( 
+                __( 'Edit', 'rockers' ), 
+                '<span class="edit-link">', 
+                '</span>' 
+            );
+            if ( 
+                is_singular() && 
+                get_the_author_meta( 'description' ) && 
+                is_multi_author() 
+            ) : ?>
                 <div class="author-info">
                     <div class="author-avatar">
-                        <?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'rockers_author_bio_avatar_size', 68 ) ); ?>
+                        <?php echo get_avatar( 
+                            get_the_author_meta( 'user_email' ), 
+                            apply_filters( 'rockers_author_bio_avatar_size', 68 ) 
+                        ); ?>
                     </div>
                     <div class="author-description">
                         <h2><?php printf( __( 'About %s', 'rockers' ), get_the_author() ); ?></h2>

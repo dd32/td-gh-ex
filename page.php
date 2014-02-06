@@ -1,9 +1,9 @@
 <?php get_header(); ?>
-    <div id="content">
+    <section id="content">
         <?php while ( have_posts() ) : the_post();
             get_template_part( 'content', 'page' );
             comments_template( '', TRUE);
         endwhile; ?>
-    </div>
+    </section>
 <?php get_sidebar();
 get_footer(); ?>
