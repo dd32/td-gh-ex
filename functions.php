@@ -118,8 +118,8 @@ function olo_pagenavi(){
 	'end_size'     => 1,
 	'mid_size'     => 2,
 	'prev_next'    => True,
-	'prev_text'    => __('« Previous'),
-	'next_text'    => __('Next »'),
+	'prev_text'    => __('<< Previous', 'olo'),
+	'next_text'    => __('Next >>', 'olo'),
 	'type'         => 'plain',
 	'add_args'     => False,
 	'add_fragment' => ''

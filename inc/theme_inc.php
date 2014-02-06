@@ -73,7 +73,7 @@ function olo_theme_options_do_page() {
 					<div class="postbox" id="sm_pnres">
 								<h3 class="hndle"><span><?php _e('Donation','olo'); ?></span></h3>
 								<div class="inside" style="margin:0;padding-top:10px;background-color:#ffffe0;">
-										<?php printf(__('Created, Developed and maintained by %s . If you feel my work is useful and want to support the development of more free resources, you can donate me. Thank you very much!','olo'), '<a href="http://hjyl.org">HJYL</a>'); ?>
+										<?php printf(__('Created, Developed and maintained by %s . If you feel my work is useful and want to support the development of more free resources, you can donate me. Thank you very much!','olo'), '<a href="'.esc_url( __( 'http://hjyl.org/', 'olo' ) ).'">HJYL</a>'); ?>
 											<br /><br />
 											<table>
 											<td>
@@ -81,13 +81,13 @@ function olo_theme_options_do_page() {
 												<input type="hidden" name="cmd" value="_xclick">
 												<input type="hidden" name="business" value="i@hjyl.org">
 												<input type="hidden" name="item_name" value="olo WordPress Theme">
-												<input type="hidden" name="charset" value="utf-8″ >
+												<input type="hidden" name="charset" value="utf-8" >
 												<input type="hidden" name="currency_code" value="USD">
-												<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif" border="0″ name="submit" alt="Make payments with PayPal – it’s fast, free and secure!">
+												<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
 											</form>
 											</td>
 											<td>
-											<a href="http://me.alipay.com/hjyl"><?php _e('Alipay', 'olo'); ?></a>
+											<a href="<?php echo esc_url( __( 'http://me.alipay.com/hjyl', 'olo' ) ); ?>"><?php _e('Alipay', 'olo'); ?></a>
 											</td>
 											</table>
 								</div>
