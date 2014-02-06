@@ -2,15 +2,15 @@
 
 function olo_options() {
 add_theme_page( __( 'olo Options', 'olo' ), __( 'olo Options', 'olo' ), 'edit_theme_options', 'theme_options', 'olo_form' );
-add_action( 'admin_init', 'register_mysettings' );
+add_action( 'admin_init', 'olo_register_settings' );
 }
 
-function register_mysettings() {
+function olo_register_settings() {
 
 	//register our settings
-	register_setting( 'olo-settings', 'icp');
-	register_setting( 'olo-settings', 'gravatar');		
-	register_setting( 'olo-settings', 'olo_icp');	
+	register_setting( 'olo-settings', 'olo_icp');
+	register_setting( 'olo-settings', 'is_olo_gravatar');		
+	register_setting( 'olo-settings', 'is_olo_icp');	
 }
 
 function olo_form(){
@@ -33,7 +33,7 @@ fieldset legend {font-size: 14px;padding: 0 5px;}
 				<tr valign="top">
 					<th scope="row"><?php _e('Gravatar Cache Option', 'olo'); ?>: </th>
 					<td>
-						<input name="gravatar" type="checkbox" id="7" value="1" <?php checked(get_option('gravatar'), 1 ); ?>/><?php _e('Enable Gravatar cache. If host not supported,cancel it.', 'olo'); ?> <span style="color:red;"><?php _e('Before Enable Gravatar cache, Create a folder named avatar, and upload default.jpg', 'olo'); ?></span></td>
+						<input name="is_olo_gravatar" type="checkbox" id="7" value="1" <?php checked(get_option('is_olo_gravatar'), 1 ); ?>/><?php _e('Enable Gravatar cache. If host not supported,cancel it.', 'olo'); ?> <span style="color:red;"><?php _e('Before Enable Gravatar cache, Create a folder named avatar, and upload default.jpg', 'olo'); ?></span></td>
 				</tr>
 			</tbody>
 		</table>
@@ -43,21 +43,21 @@ fieldset legend {font-size: 14px;padding: 0 5px;}
 				<tr valign="top">
 					<th scope="row"><?php _e('ICP No.', 'olo'); ?>: </th>
 					<td>
-						<input name="olo_icp" type="checkbox" id="7" value="1" <?php checked(get_option('olo_icp'), 1 ); ?>/><?php _e('Enable ICP ', 'olo'); ?><br/><br/>
-						<input type="text" style="width:30em;" name="icp" value="<?php echo esc_attr(get_option('icp')); ?>" /></td>
+						<input name="is_olo_icp" type="checkbox" id="7" value="1" <?php checked(get_option('is_olo_icp'), 1 ); ?>/><?php _e('Enable ICP ', 'olo'); ?><br/><br/>
+						<input type="text" style="width:30em;" name="olo_icp" value="<?php echo esc_attr(get_option('olo_icp')); ?>" /></td>
 				</tr>
 			</tbody>
 		</table>
 		
-<p class="submit"><input type="submit" value="<?php _e('Save Changes', 'olo') ?>" name="save" id="button-primary" /></p>
+<p class="submit"><input type="submit" value="<?php _e('Save Changes', 'olo') ?>" name="save" class="button-primary" /></p>
 </form>
 </fieldset>
 <?php
 }
 add_action('admin_menu', 'olo_options');
 
-if (get_option('gravatar')!='') {
-function my_avatar($avatar) {
+if (get_option('is_olo_gravatar')!='') {
+function olo_avatar($avatar) {
 	$tmp = strpos($avatar, 'http');
 	$g = substr($avatar, $tmp, strpos($avatar, "'", $tmp) - $tmp);
 	$tmp = strpos($g, 'avatar/') + 7;
@@ -71,6 +71,6 @@ function my_avatar($avatar) {
 	if ( filesize($e) < 500 ) copy($w.'/avatar/default.jpg', $e);
 	return $avatar;
 }
-add_filter('get_avatar', 'my_avatar');
+add_filter('get_avatar', 'olo_avatar');
 }
 ?>

@@ -1,17 +1,17 @@
 <?php
-/* comment_mail_notify v1.0 by willin kan.  */
-function comment_mail_notify($comment_id) {
+/* olo_comment_mail_notify v1.0 by willin kan.  */
+function olo_comment_mail_notify($comment_id) {
   $admin_notify = '1'; // email to admin ( '1'=Y ; '0'=N )
   $admin_email = get_bloginfo ('admin_email'); 
   $comment = get_comment($comment_id);
   $comment_author_email = trim($comment->comment_author_email);
   $parent_id = $comment->comment_parent ? $comment->comment_parent : '';
   global $wpdb;
-  if ($wpdb->query("Describe {$wpdb->comments} comment_mail_notify") == '')
-    $wpdb->query("ALTER TABLE {$wpdb->comments} ADD COLUMN comment_mail_notify TINYINT NOT NULL DEFAULT 0;");
-  if (($comment_author_email != $admin_email && isset($_POST['comment_mail_notify'])) || ($comment_author_email == $admin_email && $admin_notify == '1'))
-    $wpdb->query("UPDATE {$wpdb->comments} SET comment_mail_notify='1' WHERE comment_ID='$comment_id'");
-  $notify = $parent_id ? get_comment($parent_id)->comment_mail_notify : '0';
+  if ($wpdb->query("Describe {$wpdb->comments} olo_comment_mail_notify") == '')
+    $wpdb->query("ALTER TABLE {$wpdb->comments} ADD COLUMN olo_comment_mail_notify TINYINT NOT NULL DEFAULT 0;");
+  if (($comment_author_email != $admin_email && isset($_POST['olo_comment_mail_notify'])) || ($comment_author_email == $admin_email && $admin_notify == '1'))
+    $wpdb->query("UPDATE {$wpdb->comments} SET olo_comment_mail_notify='1' WHERE comment_ID='$comment_id'");
+  $notify = $parent_id ? get_comment($parent_id)->olo_comment_mail_notify : '0';
   $spam_confirmed = $comment->comment_approved;
   if ($parent_id != '' && $spam_confirmed != 'spam' && $notify == '1') {
     $wp_email = 'no-reply@' . preg_replace('#^www\.#', '', strtolower($_SERVER['SERVER_NAME'])); 
@@ -34,17 +34,17 @@ function comment_mail_notify($comment_id) {
     //echo 'mail to ', $to, '<br/> ' , $subject, $message; // for testing
   }
 }
-add_action('comment_post', 'comment_mail_notify');
+add_action('comment_post', 'olo_comment_mail_notify');
 /* auto yes */
-function add_checkbox() {
-  echo '<input type="checkbox" name="comment_mail_notify" id="comment_mail_notify" value="comment_mail_notify" checked="checked" style="margin:10px 0;" /><label for="comment_mail_notify">'.__('Reply me When reply', 'olo').'</label>';
+function olo_checkbox() {
+  echo '<input type="checkbox" name="olo_comment_mail_notify" id="olo_comment_mail_notify" value="olo_comment_mail_notify" checked="checked" style="margin:10px 0;" /><label for="olo_comment_mail_notify">'.__('Reply me When reply', 'olo').'</label>';
 }
-add_action('comment_form', 'add_checkbox');
+add_action('comment_form', 'olo_checkbox');
 // -- END ----------------------------------------
 
 //comment
 if ( ! function_exists( 'comment' ) ) :
-function comment( $comment, $args, $depth ) {
+function olo_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	global $commentcount;
 	if(!$commentcount) { 
@@ -81,7 +81,7 @@ function comment( $comment, $args, $depth ) {
 
 <?php break;endswitch;}endif;
 //pingback and trackback
-function custom_pings($comment, $args, $depth) {
+function olo_pings($comment, $args, $depth) {
     $GLOBALS['comment'] = $comment;
     if('pingback' == get_comment_type()) $pingtype = 'Pingback';
     else $pingtype = 'Trackback';
@@ -90,8 +90,8 @@ function custom_pings($comment, $args, $depth) {
         <?php comment_author_link(); ?> - <?php echo $pingtype; ?> on <?php echo mysql2date('Y-m-d', $comment->comment_date); ?>
 <?php }
 
-add_action('init', 'ajax_comment');
-function ajax_comment(){
+add_action('init', 'olo_ajax_comment');
+function olo_ajax_comment(){
 /**
  * WordPress jQuery-Ajax-Comments
  */
@@ -104,7 +104,7 @@ function ajax_comment(){
 
 		if ( empty($post->comment_status) ) {
 			do_action('comment_id_not_found', $comment_post_ID);
-			ajax_comment_err(__('Invalid comment status.', 'olo')); 
+			olo_ajax_comment_err(__('Invalid comment status.', 'olo')); 
 		}
 
 		// get_post_status() will get the parent status for attachments.
@@ -114,16 +114,16 @@ function ajax_comment(){
 
 		if ( !comments_open($comment_post_ID) ) {
 			do_action('comment_closed', $comment_post_ID);
-			ajax_comment_err(__('Sorry, comments are closed for this item.', 'olo')); 
+			olo_ajax_comment_err(__('Sorry, comments are closed for this item.', 'olo')); 
 		} elseif ( 'trash' == $status ) {
 			do_action('comment_on_trash', $comment_post_ID);
-			ajax_comment_err(__('Invalid comment status.', 'olo')); 
+			olo_ajax_comment_err(__('Invalid comment status.', 'olo')); 
 		} elseif ( !$status_obj->public && !$status_obj->private ) {
 			do_action('comment_on_draft', $comment_post_ID);
-			ajax_comment_err(__('Invalid comment status.', 'olo')); 
+			olo_ajax_comment_err(__('Invalid comment status.', 'olo')); 
 		} elseif ( post_password_required($comment_post_ID) ) {
 			do_action('comment_on_password_protected', $comment_post_ID);
-			ajax_comment_err(__('Password Protected', 'olo')); 
+			olo_ajax_comment_err(__('Password Protected', 'olo')); 
 		} else {
 			do_action('pre_comment_on_post', $comment_post_ID);
 		}
@@ -150,20 +150,20 @@ function ajax_comment(){
 			}
 		} else {
 			if ( get_option('comment_registration') || 'private' == $status )
-				ajax_comment_err(__('Sorry, you must be logged in to post a comment.', 'olo'));
+				olo_ajax_comment_err(__('Sorry, you must be logged in to post a comment.', 'olo'));
 		}
 
 		$comment_type = '';
 
 		if ( get_option('require_name_email') && !$user->exists() ) {
 			if ( 6 > strlen($comment_author_email) || '' == $comment_author )
-				ajax_comment_err( __('Error: please fill the required fields (name, email).', 'olo') );
+				olo_ajax_comment_err( __('Error: please fill the required fields (name, email).', 'olo') );
 			elseif ( !is_email($comment_author_email))
-				ajax_comment_err( __('Error: please enter a valid email address.','olo' ) );
+				olo_ajax_comment_err( __('Error: please enter a valid email address.','olo' ) );
 		}
 
 		if ( '' == $comment_content )
-			ajax_comment_err( __('Error: please type a comment.', 'olo') );
+			olo_ajax_comment_err( __('Error: please type a comment.', 'olo') );
 
 
 		// ADD: whether comment more 
@@ -171,7 +171,7 @@ function ajax_comment(){
 		if ( $comment_author_email ) $dupe .= "OR comment_author_email = '$comment_author_email' ";
 		$dupe .= ") AND comment_content = '$comment_content' LIMIT 1";
 		if ( $wpdb->get_var($dupe) ) {
-			ajax_comment_err(__('Duplicate comment detected; it looks as though you&#8217;ve already said that!', 'olo'));
+			olo_ajax_comment_err(__('Duplicate comment detected; it looks as though you&#8217;ve already said that!', 'olo'));
 		}
 
 		// ADD: whether comment too fast
@@ -180,7 +180,7 @@ function ajax_comment(){
 		$time_newcomment  = mysql2date('U', current_time('mysql', 1), false);
 		$flood_die = apply_filters('comment_flood_filter', false, $time_lastcomment, $time_newcomment);
 		if ( $flood_die ) {
-			ajax_comment_err(__('You are posting comments too quickly.  Slow down.', 'olo'));
+			olo_ajax_comment_err(__('You are posting comments too quickly.  Slow down.', 'olo'));
 			}
 		}
 
@@ -229,7 +229,7 @@ function ajax_comment(){
 }
 
 // ADD: for error
-function ajax_comment_err($a) { 
+function olo_ajax_comment_err($a) { 
     header('HTTP/1.0 500 Internal Server Error');
 	header('Content-Type: text/plain;charset=UTF-8');
     echo $a;

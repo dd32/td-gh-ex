@@ -15,33 +15,6 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
 <title><?php wp_title( ' - ', true, 'right' ); ?></title>
-<?php if (get_option('olo_seo')!='') { ?>
-<?php
-if (is_home()){
-	$description = get_option('description');
-	$keywords = get_option('keywords');
-} elseif (is_single()){
-    if ($post->post_excerpt) {
-        $description     = $post->post_excerpt;
-    } else {
-        $description = substr(strip_tags($post->post_content),0,220);
-    }
-    $keywords = "";      
-    $tags = wp_get_post_tags($post->ID);
-    foreach ($tags as $tag ) {
-        $keywords = $keywords . $tag->name . ", ";
-    }
-} elseif ( is_category() ) {
-	$description = category_description();
-    $keywords = get_option('keywords');
-}else{
-	$description = get_option('description');
-	$keywords = get_option('keywords');
-}
-?>
-<meta name="keywords" content="<?php echo $keywords; ?>" />
-<meta name="description" content="<?php echo $description; ?>" />
-<?php } ?>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php if (is_archive() && ($paged > 1)&& ($paged < $wp_query->max_num_pages)) { ?>
