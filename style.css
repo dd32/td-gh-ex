@@ -7,7 +7,7 @@ Author URI: http://d5creation.com/
 
 Description: The D5 Socialia theme for WordPress is sophisticated, lightweight, and adaptable. This theme is better for Social Organizations basically for the organizations working for Climate Change, Disaster Management, Natural Resources Management, Environment, Environmental Management, Social Works, Social Deveopemnt, Cultural Organizations etc. It can also be used for Personal or Company Websites. You Can find a Live Demo of D5 Socialia Theme in this link <a href="http://demo.d5creation.com/wp/themes/d5socialia/" target="_blank">http://demo.d5creation.com/wp/themes/d5socialia.</a>. Before Installing or Updating you must read the Readme File of this Theme.
 
-Version: 2.0
+Version: 2.1
 
 Tags: green, orange, dark, light, white, black, one-column, two-columns, right-sidebar, fixed-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options
 
@@ -1145,85 +1145,6 @@ h3.arc-src span {
 	text-align:left;
 }
 
-/* .... Sign In ......
--------------------------------------------------- */
-
-ul.lboxd {
-	padding: 0;
-	margin: 0;
-	float:right;
-	margin: 5px 30px 0 0;
-	border-right: 1px solid #9EEEFA;
-	border-left: 1px solid #0BB1D5;	
-}
-
-ul.lboxd a {
-	color:#FF6600;	
-}
-
-ul.lboxd li {
-    border-left: 1px solid #9EEEFA;
-    border-right: 1px solid #0BB1D5;
-    float: left;
-    list-style: none outside none;
-    padding: 0 10px;
-    position: relative;
-}
-
-ul.lboxd li:hover > ul {
-	display: block;
-}
-
-ul.lboxd li ul {
-	display: none;
-	position: absolute;
-	left: 0;
-	z-index:10001;
-	border-radius: 10px;
-	padding: 5px;
-	width: 220px;
-	border: 1px solid #CCCCCC;
-	background: #ECF6FD;
-	transition: all 2s;
-	-moz-transition:  all 2s;  
-	-o-transition: all 2s;
-	-webkit-transition: all 2s;
-}
-
-ul.lboxd li ul {
-	display: none;
-	position: absolute;
-	left: 0;
-	z-index:10001;
-	border-radius: 10px;
-	padding: 5px;
-	width: 220px;
-	border: 1px solid #CCCCCC;
-	background: #ECF6FD;
-	transition: all 2s;
-	-moz-transition:  all 2s;  
-	-o-transition: all 2s;
-	-webkit-transition: all 2s;
-}
-
-ul.lboxd ul:hover {
-	background: #CCCCCC;
-}
-
-
-ul.lboxd li ul li {
-	border: none;
-}
-
-ul.lboxd input[type="password"],
-ul.lboxd input[type="text"],
-ul.lboxd input[type="submit"]
- {
-    width: 180px;;
-	display:block;
-}
-
-
 /*.... Comments ......
 -------------------------------------------------- */
 
@@ -1400,45 +1321,7 @@ a.comment-reply-link {
 }
 
 
-/*..... Others 
--------------------------------------------------- */
 
-h2#client-text.post-title {
-	opacity: 0.7;
-    padding: 30px 0 0;
-    text-align: center;
-}
-
-#client {
-	display:table;
-	display:block\9;
-	margin: 20px auto;
-}
-
-#client img {
-	margin: 0 13px;
-    max-height: 100px;
-    vertical-align: middle;
-    width: 100px;
-}
-
-
-.fpage-quote {
-    background: #158E09;
-    border-radius: 10px;
-    font-size: 11px;
-    font-weight: normal;
-    padding: 1%;
-    width: 97%;
-}
-.fpage-quote q, .fpage-quote q:before, .fpage-quote q:after { background: none; border: none; color: #FFFFFF; }
-.middle-full .arrow-down { width: 0; height: 0; border-left: 15px solid transparent; border-right: 15px solid transparent; border-top: 15px solid #158E09; margin: 0 0 0 30px; }
-
-.middle-full .customers-comment-slide  .bx-controls-direction a { top: 0; margin-top: -45px; text-align: left; color: transparent; }
-.middle-full .customers-comment-slide  .bx-controls-direction a.bx-prev  { left: auto; right: 50px;  } 
-.middle-full .customers-comment-slide  .bx-controls-direction a.bx-next  { right:10px; left: auto; } 
-.middle-full .customers-comment-slide  .bx-wrapper .bx-viewport {  }
-  
 /* =Media Print
 -------------------------------------------------------------- */
 @media print {
