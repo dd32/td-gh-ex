@@ -1,47 +1,42 @@
 <?php
-/**
- * The Footer widget areas.
- * A D5 Creation Theme
- 
- */
-?>
+/* Socialia Theme's Footer Sidebar Area
+	Copyright: 2012-2014, D5 Creation, www.d5creation.com
+	Based on the Simplest D5 Framework for WordPress
+	Since Socialia 2.0
+*/
 
-<?php
-	/* The footer widget area is triggered if any of the areas
-	 * have widgets. So let's check that first.
-	 *
-	 * If none of the sidebars have widgets, then let's bail early.
-	 */
 	if (   ! is_active_sidebar( 'sidebar-3'  )
 		&& ! is_active_sidebar( 'sidebar-4' )
 		&& ! is_active_sidebar( 'sidebar-5'  )
 		&& ! is_active_sidebar( 'sidebar-6'  )
 	)
 		return;
+		
 	// If we get this far, we have widgets. Let do this.
 ?>
-<div id="supplementary" <?php d5socialia_footer_sidebar_class(); ?>>
+<div id="footer-sidebar">
 	<?php if ( is_active_sidebar( 'sidebar-3' ) ) : ?>
-	<div id="first" class="widget-area" role="complementary">
+	<div class="first-footer-widget">
 		<?php dynamic_sidebar( 'sidebar-3' ); ?>
 	</div><!-- #first .widget-area -->
 	<?php endif; ?>
 
 	<?php if ( is_active_sidebar( 'sidebar-4' ) ) : ?>
-	<div id="second" class="widget-area" role="complementary">
+	<div class="footer-widgets">
 		<?php dynamic_sidebar( 'sidebar-4' ); ?>
 	</div><!-- #second .widget-area -->
 	<?php endif; ?>
 
 	<?php if ( is_active_sidebar( 'sidebar-5' ) ) : ?>
-	<div id="third" class="widget-area" role="complementary">
+	<div class="footer-widgets">
 		<?php dynamic_sidebar( 'sidebar-5' ); ?>
 	</div><!-- #third .widget-area -->
 	<?php endif; ?>
     
     <?php if ( is_active_sidebar( 'sidebar-6' ) ) : ?>
-	<div id="fourth" class="widget-area" role="complementary">
+	<div class="footer-widgets">
 		<?php dynamic_sidebar( 'sidebar-6' ); ?>
-	</div><!-- #third .widget-area -->
+	</div><!-- #fourth .widget-area -->
 	<?php endif; ?>
-</div><!-- #supplementary -->
+</div><!-- #footerwidget -->
+

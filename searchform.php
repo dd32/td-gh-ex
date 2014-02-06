@@ -1,12 +1,14 @@
 <?php
-/**
- * The template for displaying search forms in D5 Socialia
- * A D5 Creation Theme
- 
- */
+/* Socialia Theme's Search Form
+	Copyright: 2012-2014, D5 Creation, www.d5creation.com
+	Based on the Simplest D5 Framework for WordPress
+	Since Socialia 2.0
+*/
 ?>
-	<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-		<label for="s" class="assistive-text"><?php _e( 'Search', 'd5socialia' ); ?></label>
-		<input type="text" class="field" name="s" id="s" placeholder="<?php esc_attr_e( 'Search', 'd5socialia' ); ?>" />
-		<input type="submit" class="submit" name="submit" id="searchsubmit" value="<?php esc_attr_e( 'Search', 'd5socialia' ); ?>" />
+
+
+<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+		<label for="s" class="assistive-text"></label>
+		<input type="text" class="field" name="s" id="s" placeholder="<?php echo of_get_option('sth','Your Search Text Here'); ?>" />
+		<input type="submit" class="submit" name="submit" id="searchsubmit" value="<?php echo of_get_option('src','Search'); ?>" />
 	</form>

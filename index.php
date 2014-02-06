@@ -1,56 +1,42 @@
-<?php
-/**
- * The main template file.
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- * Learn more: http://d5creation.com
- *
- * A D5 Creation Theme
- */
+<?php 
+/* 	Socialia Theme's Index Page to hsow Blog Posts
+	Copyright: 2012-2014, D5 Creation, www.d5creation.com
+	Based on the Simplest D5 Framework for WordPress
+	Since Socialia 2.0
+*/
 
 get_header(); ?>
+<div id="content">
+ <?php if (have_posts()) : while (have_posts()) : the_post();?>
+<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+ <h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
+ <?php echo  of_get_option ('postedby', 'Posted by'); ?>: <b><?php the_author_posts_link() ?></b> | <?php echo  of_get_option ('postedon', 'Posted on'); ?>: <b><?php the_time('F j, Y'); ?></b>
+ <div class="entrytext"><?php the_post_thumbnail(); ?>
+ <?php socialia_content(); ?>
+ <div class="clear"> </div>
+ <?php  wp_link_pages( array( 'before' => '<div class="page-link"><span>' . of_get_option ('pages', 'Pages'). ': </span>', 'after' => '</div>' ) ); ?>
+ <div class="postmetadata"><?php echo  of_get_option ('postedin', 'Posted in'); ?> <?php the_category(', ') ?> | <?php edit_post_link('Edit', '', ' | '); ?>  <?php comments_popup_link(of_get_option ('nocomments', 'No Comments') . ' &#187;', of_get_option ('1comment', 'One Comment') . ' &#187;', '% ' . of_get_option ('comments', 'Comments') . ' &#187;'); ?> <?php the_tags('<br />' .  of_get_option ('tags', 'Tags') . ': ', ', ', '<br />'); ?></div>
+ </div></div>
+ <div class="content-ver-sep"></div><br />
+ <?php endwhile; ?>
 
-		<div id="primary">
-			<div id="content" role="main">
-
-			<?php if ( have_posts() ) : ?>
-
-				<?php d5socialia_content_nav( 'nav-above' ); ?>
-
-				<?php /* Start the Loop */ ?>
-				<?php while ( have_posts() ) : the_post(); ?>
-
-					<?php get_template_part( 'content', get_post_format() ); ?>
-
-				<?php endwhile; ?>
-
-				<?php d5socialia_content_nav( 'nav-below' ); ?>
-
-			<?php else : ?>
-
-				<article id="post-0" class="post no-results not-found">
-					<header class="entry-header">
-						<h1 class="entry-title"><?php _e( 'Nothing Found', 'd5socialia' ); ?></h1>
-					</header><!-- .entry-header -->
-
-					<div class="entry-content">
-                    
-                    
-						<p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'd5socialia' ); ?></p>
-						<?php get_search_form(); ?>
-					</div><!-- .entry-content -->
-				</article><!-- #post-0 -->
-
-			<?php endif; ?>
-
-			</div><!-- #content -->
-            
-
-            
-		</div><!-- #primary -->
+<div id="page-nav">
+<div class="alignleft"><?php previous_posts_link('&laquo;  ' . of_get_option('pe3', 'Previous Entries') ) ?></div>
+<div class="alignright"><?php next_posts_link(of_get_option('ne3', 'Next Entries') .' &raquo;') ?></div>
+</div>
+  
+ 
+ <?php else: ?>
+ 
+ <h1 class="arc-post-title"><?php echo of_get_option('swcf', 'Sorry, we could not find anything that matched your search.'); ?></h1>
+		
+		<h3 class="arc-src"><span><?php echo of_get_option('yctas', 'You Can Try Another Search...'); ?></span></h3>
+		<?php get_search_form(); ?><br />
+		<p><a href="<?php echo home_url(); ?>">&laquo; <?php echo of_get_option('orhp', 'Or Return to the Home Page'); ?></a></p><br />
+		 
+<?php endif; ?>
+ 
+</div>
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

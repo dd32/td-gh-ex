@@ -1,8 +1,23 @@
-= D5 Socialia =
+----------------------------------
+Socialia Theme
+----------------------------------
+Version: 	2.0
+Developer: 	D5 Creation
+Author URI: 	http://d5creation.com
 
-* by D5 Creation, http://d5creation.com/
+Donation Link: 	http://d5creation.com/donate/
 
-== ABOUT D5 Socialia ==
+Copyright: 	D5 Creation
+License: 	GNU General Public License v2 or later
+License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
 
-D5 Socialia is A Derivative of Twenty Eleven Theme by The WordPress Team. D5 Creation modified the files of the original Twenty Eleven Theme.
+This Product is provided "as is" with no warranty or liabilities of D5 Creation. All the PHP Code, Images and other particulars included with this product are licensed under the same GPL or Compatible License.
+
+images/slides/(1).jpg - (12).jpg: Theme Images are Licensed under Public Domain CC0, Source: http://pixabay.com/
+
+
+------------------------------------
+Important for Version 2.0
+======================
+The 2.0 Version is a Major Version which is used almost all new code from the Previous Versions. This version is using the same Framework that other Themes of D5 Creation is using. So, please keep a backup of the Previous Theme before updating. Thus you can go back to the previous if you feel anything wrong with this new version. This version has introduced many new features like Theme Options where you can add the Slide Images, Social Links from the Theme Options.
 

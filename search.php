@@ -1,55 +1,49 @@
-<?php
-/**
- * The template for displaying Search Results pages.
- * A D5 Creation Theme
- 
- */
+<?php 
+/* Socialia Theme's Search Page
+	Copyright: 2012-2014, D5 Creation, www.d5creation.com
+	Based on the Simplest D5 Framework for WordPress
+	Since Socialia 2.0
+*/
 
 get_header(); ?>
 
-		<section id="primary">
-			<div id="content" role="main">
-
-			<?php if ( have_posts() ) : ?>
-
-				<header class="page-header">
-					<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'd5socialia' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-				</header>
-
-				<?php d5socialia_content_nav( 'nav-above' ); ?>
-
-				<?php /* Start the Loop */ ?>
-				<?php while ( have_posts() ) : the_post(); ?>
-
-					<?php
-						/* Include the Post-Format-specific template for the content.
-						 * If you want to overload this in a child theme then include a file
-						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-						 */
-						get_template_part( 'content', get_post_format() );
-					?>
-
-				<?php endwhile; ?>
-
-				<?php d5socialia_content_nav( 'nav-below' ); ?>
-
-			<?php else : ?>
-
-				<article id="post-0" class="post no-results not-found">
-					<header class="entry-header">
-						<h1 class="entry-title"><?php _e( 'Nothing Found', 'd5socialia' ); ?></h1>
-					</header><!-- .entry-header -->
-
-					<div class="entry-content">
-						<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'd5socialia' ); ?></p>
-						<?php get_search_form(); ?>
-					</div><!-- .entry-content -->
-				</article><!-- #post-0 -->
-
-			<?php endif; ?>
-
-			</div><!-- #content -->
-		</section><!-- #primary -->
-
-<?php get_sidebar(); ?>
+	<?php if (have_posts()) : ?>
+		<div id="content">
+        <h1 class="arc-post-title"><?php echo of_get_option('srslt', 'Search Results'); ?></h1>
+		
+		<?php $counter = 0; ?>
+		<?php query_posts($query_string . "&posts_per_page=20"); ?>
+		<?php while (have_posts()) : the_post();
+			if($counter == 0) {
+				$numposts = $wp_query->found_posts; // count # of search results ?>
+				<h3 class="arc-src"><span><?php echo of_get_option('strm', 'Search Term'); ?>: </span><?php the_search_query(); ?></h3>
+				<h3 class="arc-src"><span><?php echo of_get_option('nosrc', 'Number of Results'); ?>: </span><?php echo $numposts; ?></h3><br />
+				<?php } //endif ?>
+			
+				<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+				<p class="postmetadataw"><?php echo of_get_option('edate', 'Entry Date'); ?>: <b><?php the_time('F j, Y'); ?></b></p>
+				<h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
+				<div class="content-ver-sep"></div>
+  				<div class="entrytext">
+ <?php the_post_thumbnail('thumbnail'); ?>
+ <?php socialia_content(); ?>
+ <div class="clear"> </div>
+ <div class="up-bottom-border">
+ 				<p class="postmetadata"><?php edit_post_link('Edit', '', ' | '); ?>  <?php comments_popup_link(of_get_option ('nocomments', 'No Comments') . ' &#187;', of_get_option ('1comment', 'One Comment') . ' &#187;', '% ' . of_get_option ('comments', 'Comments') . ' &#187;'); ?> <?php the_tags('<br />' .  of_get_option ('tags', 'Tags') . ': ', ', ', '<br />'); ?></p>
+ 				</div></div></div>
+				
+		<?php $counter++; ?>
+ 		
+		<?php endwhile; ?>
+		</div>		
+		<?php get_sidebar(); ?>
+        <?php else: ?>
+		<br /><br /><h1 class="arc-post-title"><?php echo of_get_option('swcf', 'Sorry, we could not find anything that matched your search.'); ?></h1>
+		
+		<h3 class="arc-src"><span><?php echo of_get_option('yctas', 'You Can Try Another Search...'); ?></span></h3>
+		<?php get_search_form(); ?>
+		<p><a href="<?php echo home_url(); ?>">&laquo; <?php echo of_get_option('orhp', 'Or Return to the Home Page'); ?></a></p><br />
+		
+	<?php endif; ?>
+	
 <?php get_footer(); ?>
