@@ -77,7 +77,6 @@ function blue_planet_setup() {
     	}
 
         if ( is_admin() && $pagenow =="themes.php" &&  isset($_REQUEST['page']) &&  'theme_options' == $_REQUEST['page']  ){
-            wp_enqueue_style('jquery');
             wp_enqueue_style( 'wp-color-picker' );
             wp_enqueue_style('thickbox');
 
@@ -152,7 +151,6 @@ function blue_planet_scripts() {
     wp_enqueue_style( 'blue-planet-style-bootstrap', get_stylesheet_directory_uri().'/css/bootstrap.min.css', false ,'3.0.0' );
     wp_enqueue_style( 'blue-planet-style-responsive', get_stylesheet_directory_uri().'/css/responsive.css', false ,'' );
 
-        wp_enqueue_script('jquery');
         wp_enqueue_script('bootstrap-script',get_stylesheet_directory_uri().'/js/bootstrap.min.js', array('jquery'),'3.0.0', TRUE);
 
 

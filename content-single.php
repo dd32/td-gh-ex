@@ -38,10 +38,10 @@
 			$tag_list = get_the_tag_list( '', __( ', ', 'blue-planet' ) );
 
 			if (!empty($category_list)) {
-				echo '<span class="bs-category">'.$category_list.'</span>';
+				echo '<span class="bp-category">'.$category_list.'</span>';
 			}
 			if (!empty($tag_list)) {
-				echo '<span class="bs-tags">'.$tag_list.'</span>';
+				echo '<span class="bp-tags">'.$tag_list.'</span>';
 			}
 
 		?>

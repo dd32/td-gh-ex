@@ -1,7 +1,6 @@
 <?php
 global $blueplanet_options_settings;
 $bp_options = $blueplanet_options_settings;
-// showpre($bp_options);
 /**
  * The Header for our theme.
  *
@@ -36,12 +35,6 @@ href="<?php echo $bp_options['custom_favicon']; ?>" />
           <script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.js"></script>
           <script src="<?php echo get_template_directory_uri(); ?>/js/respond.min.js"></script>
         <![endif]-->
- <style>
-/*
-ul.nav li.dropdown:hover > ul.dropdown-menu{
-    display: block;
-}*/
- </style>
 <?php wp_head(); ?>
 </head>
 
@@ -89,7 +82,7 @@ ul.nav li.dropdown:hover > ul.dropdown-menu{
     //
     ?>
     <nav role="navigation" class="blueplanet-nav" id="site-navigation">
-        <a title="Skip to content" href="#content" class="assistive-text">Skip to content</a>
+        <a title="Skip to content" href="#content" class="assistive-text"><?php _e('Skip to content', 'blue-planet'); ?></a>
 
         <?php if ( ! dynamic_sidebar( 'sidebar-top-menu' ) ) :?>
 
