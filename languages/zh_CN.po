@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-06 17:27+0800\n"
-"PO-Revision-Date: 2014-02-06 17:27+0800\n"
+"POT-Creation-Date: 2014-02-07 02:33+0800\n"
+"PO-Revision-Date: 2014-02-07 02:33+0800\n"
 "Last-Translator: 皇家元林 <i@hjyl.org>\n"
 "Language-Team: hjyl.org <i@hjyl.org>\n"
 "Language: zh_CN\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.6.3\n"
+"X-Generator: Poedit 1.5.7\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../archive.php:10 ../index.php:10 ../single.php:10
@@ -45,11 +45,19 @@ msgstr "<b>%</b>条评论"
 msgid "Edit"
 msgstr "编辑"
 
-#: ../archive.php:68 ../index.php:71 ../page.php:43 ../single.php:54
+#: ../archive.php:56 ../index.php:59
+msgid "&laquo; Previous page"
+msgstr "&laquo; 前一页"
+
+#: ../archive.php:56 ../index.php:59
+msgid "Next page &raquo;"
+msgstr "下一页 &raquo;"
+
+#: ../archive.php:66 ../index.php:69 ../page.php:43 ../single.php:54
 msgid "Nothing Found"
 msgstr "什么都没有"
 
-#: ../archive.php:72 ../index.php:75 ../page.php:47 ../single.php:58
+#: ../archive.php:70 ../index.php:73 ../page.php:47 ../single.php:58
 msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
 "searching will help find a related post."
@@ -132,11 +140,11 @@ msgstr "发布评论"
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: ../footer.php:5 ../functions.php:202
+#: ../footer.php:5
 msgid "http://hjyl.org/"
 msgstr "http://hjyl.org/"
 
-#: ../functions.php:48
+#: ../functions.php:70
 #, php-format
 msgid "Page %s"
 msgstr "第 %s 页"
@@ -157,33 +165,37 @@ msgstr "请稍候..."
 msgid "Good Comment"
 msgstr "提交成功"
 
-#: ../functions.php:153
-msgid "Copy and Specify"
+#: ../functions.php:121
+msgid "« Previous"
+msgstr "上一页"
+
+#: ../functions.php:122
+msgid "Next »"
+msgstr "下一页"
+
+#: ../functions.php:133
+msgid "CopyRights"
 msgstr "转载请注明"
 
-#: ../functions.php:169
+#: ../functions.php:140
 msgid "Primary Navigation"
 msgstr "主要导航"
 
-#: ../functions.php:170
+#: ../functions.php:141
 msgid "Mobile Navigation"
 msgstr "手机导航"
 
-#: ../functions.php:176 ../sidebar.php:4
+#: ../functions.php:147 ../sidebar.php:4
 msgid "Home"
 msgstr "首页"
 
-#: ../functions.php:183
+#: ../functions.php:154
 msgid "Single"
 msgstr "文章页"
 
-#: ../functions.php:190
+#: ../functions.php:161
 msgid "Other"
 msgstr "其他页"
-
-#: ../functions.php:202
-msgid "mailto:i@hjyl.org"
-msgstr "mailto:i@hjyl.org"
 
 #: ../page.php:21 ../single.php:26
 msgid "Pages:"
@@ -213,110 +225,156 @@ msgstr "上一篇: %title"
 msgid "Next: %title"
 msgstr "下一篇: %title"
 
-#: ../inc/oloComment.php:40
-msgid "Reply me When reply"
-msgstr "有人回复时邮件通知我"
-
-#: ../inc/oloComment.php:66
+#: ../inc/oloComment.php:23
 #, php-format
 msgid "%s "
 msgstr "%s "
 
-#: ../inc/oloComment.php:67
+#: ../inc/oloComment.php:24
 #, php-format
 msgid "<cite id=\"commentmeta\">%1$s</cite>"
 msgstr "<cite id=\"commentmeta\">%1$s</cite>"
 
-#: ../inc/oloComment.php:107 ../inc/oloComment.php:120
-#: ../inc/oloComment.php:123
+#: ../inc/oloComment.php:64 ../inc/oloComment.php:77 ../inc/oloComment.php:80
 msgid "Invalid comment status."
 msgstr "评论状态错误."
 
-#: ../inc/oloComment.php:117
+#: ../inc/oloComment.php:74
 msgid "Sorry, comments are closed for this item."
 msgstr "对不起，此文评论关闭."
 
-#: ../inc/oloComment.php:126
+#: ../inc/oloComment.php:83
 msgid "Password Protected"
 msgstr "密码保护"
 
-#: ../inc/oloComment.php:153
+#: ../inc/oloComment.php:110
 msgid "Sorry, you must be logged in to post a comment."
 msgstr "对不起，你必须登录之后才能发布评论."
 
-#: ../inc/oloComment.php:160
+#: ../inc/oloComment.php:117
 msgid "Error: please fill the required fields (name, email)."
 msgstr "错误：请填写必填部分（名字，邮箱）."
 
-#: ../inc/oloComment.php:162
+#: ../inc/oloComment.php:119
 msgid "Error: please enter a valid email address."
 msgstr "错误：请填写正确的邮箱地址."
 
-#: ../inc/oloComment.php:166
+#: ../inc/oloComment.php:123
 msgid "Error: please type a comment."
 msgstr "错误：请填上一段评论."
 
-#: ../inc/oloComment.php:174
+#: ../inc/oloComment.php:131
 msgid ""
 "Duplicate comment detected; it looks as though you&#8217;ve already said "
 "that!"
 msgstr "检查有重复评论；你好像刚刚评论过了！"
 
-#: ../inc/oloComment.php:183
+#: ../inc/oloComment.php:140
 msgid "You are posting comments too quickly.  Slow down."
 msgstr "你评论太快了。淡定。"
 
-#: ../inc/oloComment.php:218
+#: ../inc/oloComment.php:175
 #, php-format
 msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">says:</span>"
 msgstr "<cite class=\"fn\">%s</cite> <span class=\"says\">说:</span>"
 
-#: ../inc/oloComment.php:221
+#: ../inc/oloComment.php:178
 msgid "Your comment is awaiting moderation."
 msgstr "你的评论正在等待审核。"
 
-#: ../inc/oloComment.php:223
+#: ../inc/oloComment.php:180
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s 在 %2$s"
 
-#: ../inc/oloComment.php:223
+#: ../inc/oloComment.php:180
 msgid "(Edit)"
 msgstr "（编辑）"
 
-#: ../inc/theme_inc.php:4 ../inc/theme_inc.php:26 ../inc/theme_inc.php:30
-msgid "olo Options"
-msgstr "olo主题设置"
+#: ../inc/theme_inc.php:7
+msgid "Show ICP No."
+msgstr "显示备案号"
 
-#: ../inc/theme_inc.php:18
-msgid "Options take effect."
-msgstr "设置已保存。"
+#: ../inc/theme_inc.php:8
+msgid "Enable ICP"
+msgstr "启用"
 
-#: ../inc/theme_inc.php:34
-msgid "Gravatar Cache Option"
-msgstr "头像缓存功能"
-
-#: ../inc/theme_inc.php:36
-msgid "Enable Gravatar cache. If host not supported,cancel it."
-msgstr "启用图片缓存功能。若空间不支持，取消这项。"
-
-#: ../inc/theme_inc.php:36
-msgid ""
-"Before Enable Gravatar cache, Create a folder named avatar, and upload "
-"default.jpg"
-msgstr "注意启用前，在WordPress根目录建立avatar文件夹，并上传default.jpg"
-
-#: ../inc/theme_inc.php:44
+#: ../inc/theme_inc.php:17
 msgid "ICP No."
 msgstr "备案号"
 
-#: ../inc/theme_inc.php:46
-msgid "Enable ICP "
-msgstr "显示备案号"
+#: ../inc/theme_inc.php:18
+msgid "Put your ICP No. here."
+msgstr "这里填写你的备案号"
 
-#: ../inc/theme_inc.php:52
-msgid "Save Changes"
+#: ../inc/theme_inc.php:35
+msgid "Theme Options"
+msgstr "主题设置"
+
+#: ../inc/theme_inc.php:68
+#, php-format
+msgid "%1$s Theme Options"
+msgstr "%1$s 主题设置"
+
+#: ../inc/theme_inc.php:74
+msgid "Donation"
+msgstr "捐助"
+
+#: ../inc/theme_inc.php:76
+#, php-format
+msgid ""
+"Created, Developed and maintained by %s . If you feel my work is useful and "
+"want to support the development of more free resources, you can donate me. "
+"Thank you very much!"
+msgstr ""
+"本主题由%s开发和维护，如果你觉得还不错，并想支持开发更多免费资源，你可以给我"
+"捐助。非常感谢你的支持！"
+
+#: ../inc/theme_inc.php:90
+msgid "Alipay"
+msgstr "支付宝捐赠"
+
+#: ../inc/theme_inc.php:102
+msgid "General settings"
+msgstr "常规设置"
+
+#: ../inc/theme_inc.php:182
+msgid "Save Options"
 msgstr "保存设置"
+
+#: ../inc/theme_inc.php:186
+msgid "Reset All Settings"
+msgstr "重置所有设置"
+
+#: ../inc/theme_inc.php:186
+msgid "Click OK to reset. Any settings will be lost!"
+msgstr "点击‘确定’重置。所有设置将被丢失！"
+
+#~ msgid "Copy and Specify"
+#~ msgstr "转载请注明"
+
+#~ msgid "mailto:i@hjyl.org"
+#~ msgstr "mailto:i@hjyl.org"
+
+#~ msgid "Reply me When reply"
+#~ msgstr "有人回复时邮件通知我"
+
+#~ msgid "Options take effect."
+#~ msgstr "设置已保存。"
+
+#~ msgid "Gravatar Cache Option"
+#~ msgstr "头像缓存功能"
+
+#~ msgid "Enable Gravatar cache. If host not supported,cancel it."
+#~ msgstr "启用图片缓存功能。若空间不支持，取消这项。"
+
+#~ msgid ""
+#~ "Before Enable Gravatar cache, Create a folder named avatar, and upload "
+#~ "default.jpg"
+#~ msgstr "注意启用前，在WordPress根目录建立avatar文件夹，并上传default.jpg"
+
+#~ msgid "Save Changes"
+#~ msgstr "保存设置"
 
 #~ msgid "Share to Sina"
 #~ msgstr "分享到新浪微博"
@@ -353,9 +411,6 @@ msgstr "保存设置"
 
 #~ msgid "Twitter"
 #~ msgstr "Twitter"
-
-#~ msgid "SEO Option"
-#~ msgstr "SEO优化"
 
 #~ msgid "meta tags"
 #~ msgstr "meta标签设置"

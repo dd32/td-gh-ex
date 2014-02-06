@@ -1,76 +1,198 @@
 <?php
-
-function olo_options() {
-add_theme_page( __( 'olo Options', 'olo' ), __( 'olo Options', 'olo' ), 'edit_theme_options', 'theme_options', 'olo_form' );
-add_action( 'admin_init', 'olo_register_settings' );
+//////// Theme Options
+function olo_theme_options_items() {
+	$items = array (
+		array(
+			'id' => 'is_olo_icp',
+			'name' => __('Show ICP No.', 'olo'),
+			'desc' => __('Enable ICP', 'olo'),
+			'std'    => '',
+			'hr'     => '1',
+			'nTable' => '',
+			'nTitle' => '',
+			'type'   => 'checkbox'
+		),
+		array(
+			'id'     => 'olo_icp',
+			'name'   => __('ICP No.', 'olo'),
+			'desc'   => __('Put your ICP No. here.', 'olo'),
+			'std'    => '',
+			'hr'     => '',
+			'nTable' => '',
+			'nTitle' => '',
+			'type'   => ''
+		)
+	);
+	return $items;
 }
 
-function olo_register_settings() {
-
-	//register our settings
-	register_setting( 'olo-settings', 'olo_icp');
-	register_setting( 'olo-settings', 'is_olo_gravatar');		
-	register_setting( 'olo-settings', 'is_olo_icp');	
+add_action( 'admin_init', 'olo_theme_options_init' );
+add_action( 'admin_menu', 'olo_theme_options_add_page' );
+function olo_theme_options_init(){
+	register_setting( 'olo_options', 'olo_theme_options', 'olo_options_validate' );
 }
+function olo_theme_options_add_page() {
+	add_theme_page( __( 'Theme Options', 'olo' ), __( 'Theme Options', 'olo' ), 'edit_theme_options', 'theme_options', 'olo_theme_options_do_page' );
+}
+function olo_default_options() {
+	$options = get_option( 'olo_theme_options' );
+	foreach ( olo_theme_options_items() as $item ) {
+		if ( ! isset( $options[$item['id']] ) ) {
+			if ( !empty($item['std']) )
+				$options[$item['id']] = $item['std'];
+			else
+				$options[$item['id']] = '';
+		}
+	}
+	update_option( 'olo_theme_options', $options );
+}
+add_action( 'init', 'olo_default_options' );
+function olo_theme_options_do_page() {
+	if ( ! isset( $_REQUEST['settings-updated'] ) )
+		$_REQUEST['settings-updated'] = false;
+	if( isset( $_REQUEST['action'])&&('reset' == $_REQUEST['action']) ) {
+		delete_option( 'olo_theme_options' );
+		olo_default_options();
+	}
+?>
+	<div class="wrap olo_wrap">
 
-function olo_form(){
-global $themename;
-if ( !empty($_REQUEST['settings-updated']) && $_REQUEST['settings-updated'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.'' .__('Options take effect.', 'olo').'</strong></p></div>';
- ?>
-<style>
-fieldset {border: 1px solid #DDDDDD;border-radius: 5px 5px 5px 5px;margin: 5px 0 10px;padding: 0 15px;}
-fieldset legend {font-size: 14px;padding: 0 5px;}
-</style>
+		<style>
+			.olo_wrap label{cursor:text;}
+			.has-sidebar-content{overflow:hidden;}
+			.stuffbox h3{border-bottom:1px solid #e5e5e5;}
+			.form-table, .form-table td, .form-table th, .form-table td p, .form-wrap label{font-size:12px;}
+		</style>
 
- <div class="icon32" id="icon-themes"><br></div>
-<h2><?php _e('olo Options', 'olo'); ?></h2>
-<form method="post" action="options.php">
-<?php settings_fields('olo-settings'); ?>
-<fieldset>
-<legend><?php _e('olo Options', 'olo'); ?></legend>
-		<table class="form-table">
-			<tbody>
-				<tr valign="top">
-					<th scope="row"><?php _e('Gravatar Cache Option', 'olo'); ?>: </th>
-					<td>
-						<input name="is_olo_gravatar" type="checkbox" id="7" value="1" <?php checked(get_option('is_olo_gravatar'), 1 ); ?>/><?php _e('Enable Gravatar cache. If host not supported,cancel it.', 'olo'); ?> <span style="color:red;"><?php _e('Before Enable Gravatar cache, Create a folder named avatar, and upload default.jpg', 'olo'); ?></span></td>
-				</tr>
-			</tbody>
-		</table>
-		
-		<table class="form-table">
-			<tbody>
-				<tr valign="top">
-					<th scope="row"><?php _e('ICP No.', 'olo'); ?>: </th>
-					<td>
-						<input name="is_olo_icp" type="checkbox" id="7" value="1" <?php checked(get_option('is_olo_icp'), 1 ); ?>/><?php _e('Enable ICP ', 'olo'); ?><br/><br/>
-						<input type="text" style="width:30em;" name="olo_icp" value="<?php echo esc_attr(get_option('olo_icp')); ?>" /></td>
-				</tr>
-			</tbody>
-		</table>
-		
-<p class="submit"><input type="submit" value="<?php _e('Save Changes', 'olo') ?>" name="save" class="button-primary" /></p>
-</form>
-</fieldset>
+		<?php screen_icon(); ?>
+		<h2><?php echo sprintf( __( '%1$s Theme Options', 'olo' ), wp_get_theme() ); ?></h2>
+		<?php settings_errors(); ?>
+		<div id="poststuff" class="metabox-holder has-right-sidebar">
+			<div class="inner-sidebar">
+				<div style="position:relative;" class="meta-box-sortabless ui-sortable" id="side-sortables">
+					<div class="postbox" id="sm_pnres">
+								<h3 class="hndle"><span><?php _e('Donation','olo'); ?></span></h3>
+								<div class="inside" style="margin:0;padding-top:10px;background-color:#ffffe0;">
+										<?php printf(__('Created, Developed and maintained by %s . If you feel my work is useful and want to support the development of more free resources, you can donate me. Thank you very much!','olo'), '<a href="http://hjyl.org">HJYL</a>'); ?>
+											<br /><br />
+											<table>
+											<td>
+											<form name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+												<input type="hidden" name="cmd" value="_xclick">
+												<input type="hidden" name="business" value="i@hjyl.org">
+												<input type="hidden" name="item_name" value="olo WordPress Theme">
+												<input type="hidden" name="charset" value="utf-8″ >
+												<input type="hidden" name="currency_code" value="USD">
+												<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif" border="0″ name="submit" alt="Make payments with PayPal – it’s fast, free and secure!">
+											</form>
+											</td>
+											<td>
+											<a href="http://me.alipay.com/hjyl"><?php _e('Alipay', 'olo'); ?></a>
+											</td>
+											</table>
+								</div>
+						</div>
+				</div>
+			</div>
+			<div class="has-sidebar-content" id="post-body-content">
+				<form method="post" action="options.php">
+					<?php settings_fields( 'olo_options' ); ?>
+					<?php $options = get_option( 'olo_theme_options' ); ?>
+					<div class="stuffbox" style="padding-bottom:10px;">
+						<h3><label for="link_url"><?php _e( 'General settings', 'olo' ); ?></label></h3>
+						<div class="inside">
+							<table class="form-table">
+							<?php foreach (olo_theme_options_items() as $item) {
+							
+								$olo_name = $item['name'];
+								$olo_form_name = 'olo_theme_options['.$item['id'].']';
+								$olo_value = !empty($options[$item['id']]) ? $options[$item['id']] : $item['std'];
+								$checked = $olo_value ? ' checked="checked"' : '';
+							?>
+
+								<?php if ($item['type'] == 'checkbox') { ?>
+								
+		<?php if ($item['nTable']) { ?>
+							</table>
+						</div>
+					</div>
+					<div class="stuffbox" style="padding-bottom:10px;">
+						<h3><label for="link_url"><?php echo $item['nTitle']; ?></label></h3>
+						<div class="inside">
+							<table class="form-table">
+		<?php } ?>
+									<tr valign="top">
+										<th scope="row"><strong><?php echo $olo_name; ?></strong></th>
+										<td>
+											<input name="<?php echo $olo_form_name; ?>" type="checkbox" value="true" <?php echo $checked; ?> />
+											<label class="description" for="<?php echo $olo_form_name; ?>"><?php echo $item['desc']; ?></label>
+										</td>
+									</tr>
+									<?php if ($item['hr']) echo '<tr valign="top"><th style="margin:0;padding:0;border-bottom:1px solid #ddd;"> </th><td style="margin:0;padding:0;border-bottom:1px solid #ddd;"> </td></tr>'; ?>
+
+								<?php } elseif ($item['type'] == 'code') { ?>
+								
+		<?php if ($item['nTable']) { ?>
+							</table>
+						</div>
+					</div>
+					<div class="stuffbox" style="padding-bottom:10px;">
+						<h3><label for="link_url"><?php echo $item['nTitle']; ?></label></h3>
+						<div class="inside">
+							<table class="form-table">
+		<?php } ?>
+									<tr valign="top">
+										<th scope="row"><strong><?php echo $olo_name; ?></strong></th>
+										<td>
+											<textarea name="<?php echo $olo_form_name; ?>" type="code" cols="65%" rows="4"><?php echo $olo_value; ?></textarea>
+											<br/>
+											<label class="description" for="<?php echo $olo_form_name; ?>"><?php echo $item['desc']; ?></label>
+										</td>
+									</tr>
+									<?php if ($item['hr']) echo '<tr valign="top"><th style="margin:0;padding:0;border-bottom:1px solid #ddd;"> </th><td style="margin:0;padding:0;border-bottom:1px solid #ddd;"> </td></tr>'; ?>
+
+								<?php } else { ?>
+								
+		<?php if ($item['nTable']) { ?>
+							</table>
+						</div>
+					</div>
+					<div class="stuffbox" style="padding-bottom:10px;">
+						<h3><label for="link_url"><?php echo $item['nTitle']; ?></label></h3>
+						<div class="inside">
+							<table class="form-table">
+		<?php } ?>
+									<tr valign="top">
+										<th scope="row"><strong><?php echo $olo_name; ?></strong></th>
+										<td>
+											<input name="<?php echo $olo_form_name; ?>" type="text" value="<?php echo $olo_value; ?>" size="40" />
+											<br/>
+											<label class="description" for="<?php echo $olo_form_name; ?>"><?php echo $item['desc']; ?></label>
+										</td>
+									</tr>
+									<?php if ($item['hr']) echo '<tr valign="top"><th style="margin:0;padding:0;border-bottom:1px solid #ddd;"> </th><td style="margin:0;padding:0;border-bottom:1px solid #ddd;"> </td></tr>'; ?>
+
+								<?php } ?>
+
+							<?php } ?>
+							</table>
+						</div>
+					</div>
+					<p class="submit" style="margin:0;padding:0;">
+						<input type="submit" class="button-primary" value="<?php _e( 'Save Options', 'olo' ); ?>" />
+					</p>
+				</form>
+				<form method="post" style="position:relative;margin:0;padding:0;">
+					<input class="button" name="reset" type="submit" value="<?php _e('Reset All Settings','olo'); ?>" onclick="return confirm('<?php _e('Click OK to reset. Any settings will be lost!', 'olo'); ?>');" style="position:absolute;left:120px;top:-28px;" />
+					<input type="hidden" name="action" value="reset" />
+				</form>
+			</div>
+		</div>
+	</div>
 <?php
 }
-add_action('admin_menu', 'olo_options');
 
-if (get_option('is_olo_gravatar')!='') {
-function olo_avatar($avatar) {
-	$tmp = strpos($avatar, 'http');
-	$g = substr($avatar, $tmp, strpos($avatar, "'", $tmp) - $tmp);
-	$tmp = strpos($g, 'avatar/') + 7;
-	$f = substr($g, $tmp, strpos($g, "?", $tmp) - $tmp);
-	$w = home_url();
-	$e = ABSPATH .'avatar/'. $f .'.jpg';
-	$t = 1209600;
-	if ( !is_file($e) || (time() - filemtime($e)) > $t ) {
-	copy(htmlspecialchars_decode($g), $e);
-	} else $avatar = strtr($avatar, array($g => $w.'/avatar/'.$f.'.jpg'));
-	if ( filesize($e) < 500 ) copy($w.'/avatar/default.jpg', $e);
-	return $avatar;
+function olo_options_validate($input) {
+	return apply_filters( 'olo_options_validate', $input);
 }
-add_filter('get_avatar', 'olo_avatar');
-}
-?>
+

@@ -53,12 +53,10 @@
 							elseif(function_exists('wp_pagenavi')) {
 								wp_pagenavi();
 							} else {
-							global $wp_query;
-							$total_pages = $wp_query->max_num_pages;
-							if ( $total_pages > 1 ) {
-								echo '<div class="page_navi">';
-									olo_pagenavi(4);
-								echo '</div>';
+								global $wp_query;
+								$total_pages = $wp_query->max_num_pages;
+								if ( $total_pages > 1 ) {
+										posts_nav_link(' | ', __('&laquo; Previous page','olo'), __('Next page &raquo;','olo'));
 								}
 							}
 						?>

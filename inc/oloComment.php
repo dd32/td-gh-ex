@@ -1,47 +1,4 @@
 <?php
-/* olo_comment_mail_notify v1.0 by willin kan.  */
-function olo_comment_mail_notify($comment_id) {
-  $admin_notify = '1'; // email to admin ( '1'=Y ; '0'=N )
-  $admin_email = get_bloginfo ('admin_email'); 
-  $comment = get_comment($comment_id);
-  $comment_author_email = trim($comment->comment_author_email);
-  $parent_id = $comment->comment_parent ? $comment->comment_parent : '';
-  global $wpdb;
-  if ($wpdb->query("Describe {$wpdb->comments} olo_comment_mail_notify") == '')
-    $wpdb->query("ALTER TABLE {$wpdb->comments} ADD COLUMN olo_comment_mail_notify TINYINT NOT NULL DEFAULT 0;");
-  if (($comment_author_email != $admin_email && isset($_POST['olo_comment_mail_notify'])) || ($comment_author_email == $admin_email && $admin_notify == '1'))
-    $wpdb->query("UPDATE {$wpdb->comments} SET olo_comment_mail_notify='1' WHERE comment_ID='$comment_id'");
-  $notify = $parent_id ? get_comment($parent_id)->olo_comment_mail_notify : '0';
-  $spam_confirmed = $comment->comment_approved;
-  if ($parent_id != '' && $spam_confirmed != 'spam' && $notify == '1') {
-    $wp_email = 'no-reply@' . preg_replace('#^www\.#', '', strtolower($_SERVER['SERVER_NAME'])); 
-    $to = trim(get_comment($parent_id)->comment_author_email);
-    $subject = 'You have reply from [' . get_option('blogname') . '].';
-    $message = '
-    <div style="background-color:#eef2fa; border:1px solid #d8e3e8; color:#111; padding:0 15px; -moz-border-radius:5px; -webkit-border-radius:5px; -khtml-border-radius:5px;">
-      <p>' . trim(get_comment($parent_id)->comment_author) . ', Hello!</p>
-      <p>Old comment on <<' . get_the_title($comment->comment_post_ID) . '>>:<br />'
-       . trim(get_comment($parent_id)->comment_content) . '</p>
-      <p>' . trim($comment->comment_author) . ' New reply:<br />'
-       . trim($comment->comment_content) . '<br /></p>
-      <p>Click <a href="' . htmlspecialchars(get_comment_link($parent_id)) . '"> to View the full content</a></p>
-      <p>Welcome back to <a href="' . home_url() . '">' . get_option('blogname') . '</a></p>
-      <p>(This mail from system, do not reply this.)</p>
-    </div>';
-    $from = "From: \"" . get_option('blogname') . "\" <$wp_email>";
-    $headers = "$from\nContent-Type: text/html; charset=" . get_option('blog_charset') . "\n";
-    wp_mail( $to, $subject, $message, $headers );
-    //echo 'mail to ', $to, '<br/> ' , $subject, $message; // for testing
-  }
-}
-add_action('comment_post', 'olo_comment_mail_notify');
-/* auto yes */
-function olo_checkbox() {
-  echo '<input type="checkbox" name="olo_comment_mail_notify" id="olo_comment_mail_notify" value="olo_comment_mail_notify" checked="checked" style="margin:10px 0;" /><label for="olo_comment_mail_notify">'.__('Reply me When reply', 'olo').'</label>';
-}
-add_action('comment_form', 'olo_checkbox');
-// -- END ----------------------------------------
-
 //comment
 if ( ! function_exists( 'comment' ) ) :
 function olo_comment( $comment, $args, $depth ) {
