@@ -2,21 +2,25 @@
  * Theme Name: Appointment
  * Description: A responsive theme for all type of business that uses multiple nav menus, several sidebars,Featured Slider and Custom post layouts. 
  It has a pixel-perfect design that's great for any blogger who wants a new look for their site. The theme is built using twitter bootstrap
- * Version: 1.4.2
- * Author: Priyanshu Mittal, Shahid Mansuri, Akhilesh Nagar and Vibhor Purandare
- * Tags: orange, white, full-width-template, threaded-comments, microformats,two-columns,  right-sidebar, fixed-width, sticky-post, custom-background, custom-menu,translation-ready
- * License: GNU General Public License v2.0
- * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * Version: 1.4.3
+ * Author: webriti
+ * Tags: orange, white, full-width-template, threaded-comments, microformats,two-columns,  right-sidebar, fluid-layout, sticky-post, custom-background, custom-menu,translation-ready, responsive-layout
+ * License: GNU General Public License v3.0 and above
+ * License URI: http://www.gnu.org/licenses/quick-guide-gplv3.html
  * Appointment is distributed under the terms of the GNU GPL
- * Copyright (c) 2013 Appointment.
+ * Copyright (c) 2014 Appointment.
  * Text Domain: appointment
  * Theme URI: http://www.webriti.com/index.php/wordpress/appointment-wordpress-theme/
  * Author URI: http://www.webriti.com
  */
-
-
-
 /* Navbar Menus Style */
+
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+    background-color: #EE6528;
+    color: #FFFFFF;
+    outline: 0 none;
+    text-decoration: none;
+}
 .navbar-inner {
   min-height: 40px;
   padding-right: 0px;
@@ -923,18 +927,16 @@ left: -70px;
 .search_btn { margin-bottom:0px  !important;}
 
 /* textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input */
-
-
+/*
 li {
     line-height: 20px;
     list-style-image: none;
     list-style-position: outside;
     list-style-type: none;
 } 
+css  sidebar*/
 
-/*css  sidebar*/
-
-
+.widget ul li {list-style-type: none;}
 
 .widget ul li a ,.app-widget ul li a
 {   color: #99A0A4;
@@ -1049,4 +1051,18 @@ article.sticky .featured-post {
 .children li ul, .children li ul li{
 	padding-left: 15px;
 }
-
+#comment_apt{color: #f22853; margin-bottom: 30px; margin-top:20px;}
+.app-page-content{width:100%;}
+.wp-caption {
+max-width: 100%;
+padding: 4px;
+}
+#recentcomments li a {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 0 none;
+    float: none;
+    text-decoration: none;
+	border-bottom: 1px dotted #B4BFC5;
+}
+.app-page-content ul {margin: 0 0 1.714285714rem;list-style: disc outside;}
+.app-page-content li {margin: 0 0 0 2.571428571rem;} 

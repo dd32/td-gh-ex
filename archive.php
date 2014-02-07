@@ -2,17 +2,13 @@
 /**
  * Archive Template
  *
- *
  * @file           archive.php
  * @package        Appointment
- * @author         Priyanshu Mittal,Shahid Mansuri and Akhilesh Nagar
- * @copyright      2013 Appointment
+ * @author         webriti
+ * @copyright      2014 Appointment
  * @license        license.txt
- * @version        Release: 1.1
  * @filesource     wp-content/themes/appoinment/archive.php
  */
-
-
 ?>
 
 
@@ -50,9 +46,7 @@ get_template_part('orange','header');
                  
                    <?php    while(have_posts()): the_post();?>
                       
-                     <h3><a  class="blog_title-anchor" href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to ', 'appointment' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php $title = get_the_title();
-    if (strlen($title) == 0)  _e('no title','appointment'); 
-	else  echo $title; ?></a></h3>
+                     <h3><a  class="blog_title-anchor" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 					    <ul class="the-icons clearfix">
 						
 						<li><i class="icon-calendar"></i> <?php the_time('M j,Y');?></li>
@@ -80,36 +74,17 @@ get_template_part('orange','header');
                      </div><!--pagination_blog-->
 					 <?php endif;?>
 					<div class="blog_bot_mn">
-						
-						<button class="btn appo_btn" type="button">	<a href="<?php the_permalink(); ?>" class="blog_rdmore"> <?php _e('Read More','appointment'); ?> </a></button>
-<p class="tag-element"> <?php the_tags('<b>'.__('Tags:','appointment').'</b>','');?> </p>
+					<button class="btn appo_btn" type="button">	<a href="<?php the_permalink(); ?>" class="blog_rdmore"> <?php _e('Read More','appointment'); ?> </a>
+					</button>
+					<p class="tag-element"> <?php the_tags('<b>'.__('Tags:','appointment').'</b>','');?></p>
 					</div><!--blog_bot_mn-->
-				<!--blog_row_mn-->
-				
-				<?php endwhile;?>		 
-				 <?php 
-				global $wp_query;
-				// post pagination
-				$args = array(
-	'base'         => add_query_arg( 'paged', '%#%' ),
-	'format'       => '',
-	'total'		   => $wp_query->max_num_pages,
-	'current'      => 0,
-	'show_all'     => true,
-	'end_size'     => 1,
-	'mid_size'     => 1,
-	'prev_next'    => True,
-	//'prev_text'    => __('« Previous'),
-	//'next_text'    => __('Next »'),
-	'type'         => 'list',
-	'add_args'     => False,
-	'add_fragment' => ''
-); ?>
-<?php if($wp_query->max_num_pages != 1 ):?>
-   <div class="pagination"><?php _e("Scroll More Posts:",'appointment') ?><?php echo paginate_links( $args ); ?> </div>
-   <?php endif;?>
-			
-            	
+					<?php endwhile;?>		 
+					<div class="pagination">	
+					<ul>
+					<li><?php previous_posts_link(); ?></li>
+					<li><?php next_posts_link(); ?></li>
+					</ul>
+					</div>	
 				</div>
 				<?php get_sidebar();?>
 			</div>
@@ -117,5 +92,4 @@ get_template_part('orange','header');
 			</div><!--blog_right_bg_mn_con-->
         </div><!--page_wi-->
 
-    <?php get_footer();?>
-    
+<?php get_footer();?>

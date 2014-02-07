@@ -1,11 +1,14 @@
 <?php
 /**
- * The template for displaying 404 pages (Not Found).
- *
- * @package WordPress
- * @subpackage Spa salon
- * 
- */?>
+ * 404 Template
+ * @file           404.php
+ * @package        Appointment
+ * @author         webriti
+ * @copyright      2014 Appointment
+ * @license        license.txt
+ * @filesource     wp-content/themes/appoinment/404.php
+ */
+?>
 <!---Pink Strip----->
 <?php 
 get_header();

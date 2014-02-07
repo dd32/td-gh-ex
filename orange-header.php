@@ -1,4 +1,15 @@
-	<!-- Header Strip -->
+<?php
+/**
+ * Orange Banner
+ * @file           orange-header.php
+ * @package        Appointment
+ * @author         webriti
+ * @copyright      2014 Appointment
+ * @license        license.txt
+ * @filesource     wp-content/themes/appoinment/orange-header.php
+ */
+?>
+<!-- Header Strip -->
 	<div class="hero-unit-small">
 		<div class="container">
 			<div class="row-fluid about_space">

@@ -17,12 +17,4 @@ jQuery('.upload_image_button').click(function() {
 };
     return false;
 });
-
-
-
-
 });
-
-
-
-

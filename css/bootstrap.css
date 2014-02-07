@@ -2976,7 +2976,7 @@ table th[class*="span"],
   background-image: linear-gradient(to bottom, #0088cc, #0077b3);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
-} comment by shahid*/
+} comment by shahid
 
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
@@ -2992,7 +2992,7 @@ table th[class*="span"],
   background-repeat: repeat-x;
   outline: 0;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
-}
+}*/
 
 .dropdown-menu > .disabled > a,
 .dropdown-menu > .disabled > a:hover,

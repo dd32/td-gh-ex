@@ -62,6 +62,9 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ============================Change Log================================
+@Version: 1.4.3
+1. No Follow Added in footer.
+2. Some more new small changes.
 @version 1.4.2
 1. Commented code in the walker class which creating menu related bug.
 @version 1.4.1
