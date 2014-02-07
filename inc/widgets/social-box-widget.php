@@ -113,22 +113,22 @@ class aadya_socialiconbox_widget extends WP_Widget {
 											  
 			$instance['title'] = strip_tags(stripslashes($new_instance['title']));
 			$instance['show_facebook_icon'] = $new_instance['show_facebook_icon'] ? 1 : 0;
-			$instance['facebook_profile'] = $new_instance['facebook_profile'];
+			$instance['facebook_profile'] = esc_url_raw($new_instance['facebook_profile']);
 			
 			$instance['show_twitter_icon'] = $new_instance['show_twitter_icon'] ? 1 : 0;
-			$instance['twitter_profile'] = $new_instance['twitter_profile'];			
+			$instance['twitter_profile'] = esc_url_raw($new_instance['twitter_profile']);			
 
 			$instance['show_googleplus_icon'] = $new_instance['show_googleplus_icon'] ? 1 : 0;
-			$instance['googleplus_profile'] = $new_instance['googleplus_profile'];		
+			$instance['googleplus_profile'] = esc_url_raw($new_instance['googleplus_profile']);		
 
 			$instance['show_linkedin_icon'] = $new_instance['show_linkedin_icon'] ? 1 : 0;
-			$instance['linkedin_profile'] = $new_instance['linkedin_profile'];		
+			$instance['linkedin_profile'] = esc_url_raw($new_instance['linkedin_profile']);		
 
 			$instance['show_pinterest_icon'] = $new_instance['show_pinterest_icon'] ? 1 : 0;
-			$instance['pinterest_profile'] = $new_instance['pinterest_profile'];	
+			$instance['pinterest_profile'] = esc_url_raw($new_instance['pinterest_profile']);	
 
 			$instance['show_rss_icon'] = $new_instance['show_rss_icon'] ? 1 : 0;
-			$instance['rss_profile'] = $new_instance['rss_profile'];	
+			$instance['rss_profile'] = esc_url_raw($new_instance['rss_profile']);	
 			
 			$instance['icon_style'] = $new_instance['icon_style'];	
 

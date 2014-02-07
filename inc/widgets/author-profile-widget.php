@@ -68,7 +68,7 @@ class aadya_author_profile_widget extends WP_Widget {
 			$instance = $old;
 			$instance['title'] = strip_tags( $new['title'] );
 			$instance['short_profile'] = wp_kses_stripslashes($new['short_profile']);
-			$instance['image'] =  $new['image'];
+			$instance['image'] =  esc_url($new['image']);
 			$instance['thumbnail'] = $new['thumbnail'];
 			$instance['action_url'] = esc_url_raw($new['action_url']);
 			$instance['action_label'] = wp_kses_stripslashes($new['action_label']);

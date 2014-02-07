@@ -83,11 +83,6 @@ function aadya_setup() {
 }
 add_action( 'after_setup_theme', 'aadya_setup' );
 
-
-
-//Google Custom Search Widget
-require(get_template_directory() . '/inc/widgets/google-cse-widget.php');
-
 //Social Icon Box
 require(get_template_directory() . '/inc/widgets/social-box-widget.php');
 
