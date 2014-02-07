@@ -27,7 +27,7 @@ $bp_options = $blueplanet_options_settings;
 
 <?php  if( !empty( $bp_options['custom_favicon']  ) ) :?>
 <link rel="shortcut icon"
-href="<?php echo $bp_options['custom_favicon']; ?>" />
+href="<?php echo esc_url($bp_options['custom_favicon']); ?>" />
 <?php  endif;?>
 
  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -88,7 +88,6 @@ href="<?php echo $bp_options['custom_favicon']; ?>" />
 
         <?php
         wp_nav_menu( array(
-            'menu'              => 'primary',
             'theme_location'    => 'primary',
             'depth'             => 0,
             'menu_class'        => 'nav-menu',

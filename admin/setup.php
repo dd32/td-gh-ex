@@ -30,10 +30,10 @@ function blue_planet_validate_options($input){
     //General settings validation
     $input['custom_favicon'] = esc_url_raw($input['custom_favicon']);
     $input['feedburner_url'] = esc_url_raw($input['feedburner_url']);
-    $input['custom_css']     = dumb_css_sanitize($input['custom_css']);
+    $input['custom_css']     = blue_planet_dumb_css_sanitize($input['custom_css']);
 
     //Header settings validation
-    $input['banner_background_color'] = sanitize_hex_color($input['banner_background_color']);
+    $input['banner_background_color'] = blue_planet_sanitize_hex_color($input['banner_background_color']);
     $input['banner_background_color'] = (!empty($input['banner_background_color']))?$input['banner_background_color']:'#00adb3';
     $input['search_placeholder']      = sanitize_text_field($input['search_placeholder']);
 

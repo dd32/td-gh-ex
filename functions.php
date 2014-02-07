@@ -14,7 +14,7 @@ define('BS_SHORT_NAME', 'bsk');
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 640; /* pixels */
+	$content_width = 730; /* pixels */
 }
 
 if ( ! function_exists( 'blue_planet_setup' ) ) :
@@ -39,7 +39,6 @@ function blue_planet_setup() {
 	add_theme_support( 'automatic-feed-links' );
 
     // Add support for custom backgrounds
-	// WordPress 3.4+
 	add_theme_support( 'custom-background' );
 
 	/*
@@ -47,9 +46,7 @@ function blue_planet_setup() {
 	 *
 	 */
 	add_theme_support( 'post-thumbnails' );
-    if ( function_exists( 'add_image_size' ) ) {
-        add_image_size( 'homepage-thumb', 285, 215, true ); //(cropped)
-    }
+    add_image_size( 'homepage-thumb', 285, 215, true ); //(cropped)
 
 	// This theme uses wp_nav_menu()
 	register_nav_menus( array(
@@ -71,10 +68,6 @@ function blue_planet_setup() {
 
     //Redirect to Theme Options Page on Activation
 	global $pagenow;
-
-        if ( is_admin() && isset($_GET['activated'] ) && $pagenow =="themes.php" ) {
-            wp_redirect( 'themes.php?page=theme_options' );
-    	}
 
         if ( is_admin() && $pagenow =="themes.php" &&  isset($_REQUEST['page']) &&  'theme_options' == $_REQUEST['page']  ){
             wp_enqueue_style( 'wp-color-picker' );

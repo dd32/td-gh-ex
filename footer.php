@@ -33,13 +33,12 @@ $bp_options = $blueplanet_options_settings;
 		<div class="site-info">
             <?php
                             wp_nav_menu( array(
-                                'menu'              => 'footer',
                                 'theme_location'    => 'footer',
                                 'depth'             => 1,
                                 'container'         => 'div',
                                 'container_class'   => 'footer-nav-wrapper',
                                 'menu_class'        => 'footer-nav',
-                                'fallback_cb'        => '',
+                                'fallback_cb'       => '',
                                 'link_after'        => '<span class="pipe">|</span>',
                                 )
                             );

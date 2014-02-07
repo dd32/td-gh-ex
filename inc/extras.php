@@ -74,16 +74,16 @@ remove_action('wp_head', 'wp_generator');
 
 
 //Messgae to show in the Featured Image Meta box
-add_filter( 'admin_post_thumbnail_html', 'blue_planet_featured_image_instruction');
 function blue_planet_featured_image_instruction( $content ) {
     $content .= '<strong>Recommended image sizes</strong><br/>';
     $content .= '<br/>Secondary Slider : 720px X 350px';
     return $content;
 }
+add_filter( 'admin_post_thumbnail_html', 'blue_planet_featured_image_instruction');
 //////////////
 
-if (!function_exists('sanitize_hex_color')) {
-	function sanitize_hex_color( $color ) {
+if (!function_exists('blue_planet_sanitize_hex_color')) {
+	function blue_planet_sanitize_hex_color( $color ) {
 		if ( '' === $color )
 			return '';
 
@@ -95,8 +95,8 @@ if (!function_exists('sanitize_hex_color')) {
 	}
 }
 
-if (!function_exists('dumb_css_sanitize')) {
-	function dumb_css_sanitize( $css ) {
+if (!function_exists('blue_planet_dumb_css_sanitize')) {
+	function blue_planet_dumb_css_sanitize( $css ) {
 		$css = str_replace( '<=', '<=', $css );
 		$css = wp_kses_split( $css, array(), array() );
 		$css = str_replace( '>', '>', $css );

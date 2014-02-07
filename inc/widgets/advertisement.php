@@ -32,9 +32,9 @@ class BP_Advertisement_Widget  extends WP_Widget {
             echo $adcode;
         }
         else {
-            echo '<a href="' . $href . '" ';
+            echo '<a href="' . esc_url($href) . '" ';
             echo ($target)?' target="_blank"':'';
-            echo ' ><img src="'. $image . '" alt="' . $alt . '" /></a>';
+            echo ' ><img src="'. esc_url($image) . '" alt="' . esc_attr( $alt ) . '" /></a>';
         }
 
         echo $after_widget;

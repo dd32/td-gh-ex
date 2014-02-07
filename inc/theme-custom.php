@@ -11,11 +11,11 @@ function blue_planet_slider_js_starter(){
         jQuery(document).ready(function($){
             if(jQuery().nivoSlider) {
                 $('#bp-main-slider').nivoSlider({
-                    directionNav: <?php echo ($bp_options["direction_nav"])  ; ?>,
+                    directionNav: <?php echo esc_attr($bp_options["direction_nav"])  ; ?>,
                     manualAdvance: '<?php echo !($bp_options["slider_autoplay"])  ; ?>',
-                    effect: '<?php echo $bp_options["transition_effect"];?>',
-                    pauseTime: <?php echo ($bp_options["transition_delay"]) * 1000 ; ?>,
-                    animSpeed: <?php echo ($bp_options["transition_length"]) * 1000 ; ?>
+                    effect: '<?php echo esc_attr($bp_options["transition_effect"]);?>',
+                    pauseTime: <?php echo (esc_attr($bp_options["transition_delay"]) ) * 1000 ; ?>,
+                    animSpeed: <?php echo ( esc_attr( $bp_options["transition_length"]) )* 1000 ; ?>
                 });
             }
         });
@@ -31,12 +31,12 @@ function blue_planet_slider_js_starter(){
         jQuery(document).ready(function($){
             if(jQuery().nivoSlider) {
                 $('#bp-secondary-slider').nivoSlider({
-                    controlNav: <?php echo ($bp_options["control_nav_2"])  ; ?>,
-                    directionNav: <?php echo ($bp_options["direction_nav_2"])  ; ?>,
+                    controlNav: <?php echo esc_attr($bp_options["control_nav_2"])  ; ?>,
+                    directionNav: <?php echo esc_attr($bp_options["direction_nav_2"])  ; ?>,
                     manualAdvance: '<?php echo !($bp_options["slider_autoplay_2"])  ; ?>',
-                    effect: '<?php echo $bp_options["transition_effect_2"];?>',
-                    pauseTime: <?php echo ($bp_options["transition_delay_2"]) * 1000 ; ?>,
-                    animSpeed: <?php echo ($bp_options["transition_length_2"]) * 1000 ; ?>
+                    effect: '<?php echo esc_attr( $bp_options["transition_effect_2"] );?>',
+                    pauseTime: <?php echo ( esc_attr( $bp_options["transition_delay_2"]) )* 1000 ; ?>,
+                    animSpeed: <?php echo ( esc_attr( $bp_options["transition_length_2"]) )* 1000 ; ?>
                 });
             }
         });
@@ -77,14 +77,10 @@ function blue_planet_add_scripts_footer(){
         ?>
         <script type='text/javascript'>
         /* <![CDATA[ */
-        <?php echo $bp_options['javascript_footer'];?>
+        <?php echo esc_js( $bp_options['javascript_footer'] ) ;?>
          /* ]]> */
         </script>
         <?php
-    }
-    // Tracking Code
-    if( !empty( $bp_options['tracking_code']  ) ){
-        echo $bp_options['tracking_code'];
     }
 }
 
@@ -103,7 +99,7 @@ function blue_planet_add_scripts_header(){
         ?>
         <script type='text/javascript'>
         /* <![CDATA[ */
-        <?php echo $bp_options['javascript_header'];?>
+        <?php echo esc_js( $bp_options['javascript_header'] ) ;?>
          /* ]]> */
         </script>
         <?php
@@ -116,7 +112,7 @@ function blue_planet_excerpt_readmore($more) {
     global $post;
     global $blueplanet_options_settings;
     $bp_options = $blueplanet_options_settings;
-    return '... <a href="'. get_permalink($post->ID) . '" class="readmore">' .$bp_options['read_more_text']  . '</a>';
+    return '... <a href="'. esc_url( get_permalink($post->ID) ) . '" class="readmore">' . esc_attr( $bp_options['read_more_text'] )  . '</a>';
 
 }
 
@@ -126,7 +122,7 @@ add_filter('excerpt_more', 'blue_planet_excerpt_readmore');
 function blue_planet_custom_excerpt_length( $length ){
     global $blueplanet_options_settings;
     $bp_options = $blueplanet_options_settings;
-    return $bp_options['excerpt_length'];
+    return esc_attr( $bp_options['excerpt_length'] ) ;
 }
 add_filter( 'excerpt_length', 'blue_planet_custom_excerpt_length', 999 );
 
@@ -137,8 +133,8 @@ function blue_planet_add_secondary_slider_function(){
     $bp_options = $blueplanet_options_settings;
 
     if('none' != $bp_options['slider_status_2'] &&  is_home() ) {
-        $slider_category_2 = $bp_options['slider_category_2'];
-        $number_of_slides_2 = $bp_options['number_of_slides_2'];
+        $slider_category_2 = esc_attr( $bp_options['slider_category_2'] );
+        $number_of_slides_2 = esc_attr( $bp_options['number_of_slides_2'] );
         $args = array(
             'cat' => $slider_category_2,
             'posts_per_page' => $number_of_slides_2,
@@ -212,7 +208,7 @@ function blue_planet_custom_css(){
         return;
     }
     $output = '<style type="text/css" media="screen">' . "\n";
-    $output .= $bp_options['custom_css'];
+    $output .= esc_textarea( $bp_options['custom_css'] ) ;
     $output .= '</style>';
     echo $output;
 }
@@ -229,7 +225,7 @@ function blue_planet_rss_redirect() {
 
 
     if (isset($bp_options['feed_url']) && '' != $bp_options['feed_url']) {
-        $url = 'Location: '.$bp_options['feed_url'];
+        $url = 'Location: '.esc_url( $bp_options['feed_url'] ) ;
         if ( is_feed() && !preg_match('/feedburner|feedvalidator/i', $_SERVER['HTTP_USER_AGENT']))
         {
             header($url);
@@ -246,7 +242,7 @@ function blue_planet_copyright_text_content(){
     if( empty( $bp_options['copyright_text'])  ){
         return;
     }
-    echo '<div class="copyright">'.$bp_options['copyright_text'].'</div>';
+    echo '<div class="copyright">' . esc_html( $bp_options['copyright_text'] ) . '</div>';
 }
 add_action('blue_planet_credits', 'blue_planet_copyright_text_content');
 
@@ -282,14 +278,14 @@ function blue_planet_add_main_slider(){
                                 <?php if( empty( $main_slider_image[$i] ) ) continue; ?>
 
                                 <?php if( !empty( $bp_options['main_slider_url'][$i] ) ) : ?>
-                                    <?php echo '<a href="'.$bp_options['main_slider_url'][$i]
+                                    <?php echo '<a href="'.esc_url($bp_options['main_slider_url'][$i])
                                         .'" '.(  (1 == $bp_options['main_slider_new_tab'][$i] ) ? ' target="_blank" ' : '' ).' >'; ?>
                                 <?php endif; ?>
 
 
-                                <?php echo '<img src="'.$main_slider_image[$i].'" '; ?>
+                                <?php echo '<img src="'.esc_url($main_slider_image[$i]).'" '; ?>
                                 <?php if( !empty( $bp_options['main_slider_caption'][$i] ) ) : ?>
-                                    <?php echo ' title="'. $bp_options['main_slider_caption'][$i] .'" ';  ?>
+                                    <?php echo ' title="'. esc_attr($bp_options['main_slider_caption'][$i]) .'" ';  ?>
                                 <?php endif; ?>
                                 <?php echo '/>'; ?>
 
@@ -405,7 +401,7 @@ function blue_planet_goto_top()
         wp_enqueue_style('blue-planet-goto-top-style',
             get_stylesheet_directory_uri(). '/thirdparty/goto-top/goto-top.css' );
 
-        echo '<a href="#" class="scrollup">Scroll</a>';
+        echo '<a href="#" class="scrollup">'. __('Scroll', 'blue-planet') . '</a>';
 
         wp_enqueue_script('blue-planet-goto-top-script',
             get_stylesheet_directory_uri().'/thirdparty/goto-top/goto-top.js',
@@ -458,7 +454,7 @@ function blue_planet_header_style_custom(){
     global $blueplanet_options_settings;
     $bp_options = $blueplanet_options_settings;
     echo '<style type="text/css">';
-    echo 'header#masthead{background-color: '.$bp_options['banner_background_color'].';}';
+    echo 'header#masthead{background-color: '.esc_attr($bp_options['banner_background_color']).';}';
     echo '</style>';
 
 }
