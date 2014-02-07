@@ -97,7 +97,6 @@ require(get_template_directory() . '/inc/widgets/author-profile-widget.php');
 
 
 function aadya_load_custom_widgets() {
-	register_widget( 'aadya_googlecse_widget' );	
 	register_widget( 'aadya_socialiconbox_widget' );	
 	register_widget( 'aadya_frontpage_thumbnail_text_widget' );	
 	register_widget( 'aadya_frontpage_featured_text_widget' );	
