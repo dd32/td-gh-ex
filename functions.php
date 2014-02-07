@@ -144,7 +144,8 @@ function olo_copyright($content) {
 // Add sidebar
 function olo_widgets(){
     register_sidebar(array(
-		'name'=>''.__('Home', 'olo').'',
+		'name' =>''.__('Home', 'olo').'',
+		'id' => 'home',
         'before_widget' => '<li id="%1$s" class="widget %2$s">',
         'after_widget' => '</li>',
         'before_title' => '<h2><span class="star">',
@@ -152,6 +153,7 @@ function olo_widgets(){
     ));
     register_sidebar(array(
 		'name'=>''.__('Single', 'olo').'',
+		'id' => 'single',
         'before_widget' => '<li id="%1$s" class="widget %2$s">',
         'after_widget' => '</li>',
         'before_title' => '<h2><span class="star">',
@@ -159,6 +161,7 @@ function olo_widgets(){
     ));
 	register_sidebar(array(
 		'name'=>''.__('Other', 'olo').'',
+		'id' => 'other',
         'before_widget' => '<li id="%1$s" class="widget %2$s">',
         'after_widget' => '</li>',
         'before_title' => '<h2><span class="star">',

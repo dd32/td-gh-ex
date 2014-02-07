@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-07 02:33+0800\n"
-"PO-Revision-Date: 2014-02-07 02:33+0800\n"
+"POT-Creation-Date: 2014-02-07 19:09+0800\n"
+"PO-Revision-Date: 2014-02-07 19:09+0800\n"
 "Last-Translator: 皇家元林 <i@hjyl.org>\n"
 "Language-Team: hjyl.org <i@hjyl.org>\n"
 "Language: zh_CN\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.6.3\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../archive.php:10 ../index.php:10 ../single.php:10
@@ -140,7 +140,7 @@ msgstr "发布评论"
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: ../footer.php:5
+#: ../footer.php:5 ../inc/theme_inc.php:76
 msgid "http://hjyl.org/"
 msgstr "http://hjyl.org/"
 
@@ -166,11 +166,11 @@ msgid "Good Comment"
 msgstr "提交成功"
 
 #: ../functions.php:121
-msgid "« Previous"
+msgid "<< Previous"
 msgstr "上一页"
 
 #: ../functions.php:122
-msgid "Next »"
+msgid "Next >>"
 msgstr "下一页"
 
 #: ../functions.php:133
@@ -185,15 +185,15 @@ msgstr "主要导航"
 msgid "Mobile Navigation"
 msgstr "手机导航"
 
-#: ../functions.php:147 ../sidebar.php:4
+#: ../functions.php:147
 msgid "Home"
 msgstr "首页"
 
-#: ../functions.php:154
+#: ../functions.php:155
 msgid "Single"
 msgstr "文章页"
 
-#: ../functions.php:161
+#: ../functions.php:163
 msgid "Other"
 msgstr "其他页"
 
@@ -331,6 +331,10 @@ msgstr ""
 "捐助。非常感谢你的支持！"
 
 #: ../inc/theme_inc.php:90
+msgid "http://me.alipay.com/hjyl"
+msgstr "http://me.alipay.com/hjyl"
+
+#: ../inc/theme_inc.php:90
 msgid "Alipay"
 msgstr "支付宝捐赠"
 
@@ -349,6 +353,12 @@ msgstr "重置所有设置"
 #: ../inc/theme_inc.php:186
 msgid "Click OK to reset. Any settings will be lost!"
 msgstr "点击‘确定’重置。所有设置将被丢失！"
+
+#~ msgid "« Previous"
+#~ msgstr "上一页"
+
+#~ msgid "Next »"
+#~ msgstr "下一页"
 
 #~ msgid "Copy and Specify"
 #~ msgstr "转载请注明"

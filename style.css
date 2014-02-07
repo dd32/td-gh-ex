@@ -6,7 +6,7 @@ Author URI: http://hjyl.org/
 Description: Blue WordPress Theme based as HTML5 + CSS3.
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Version: 1.7
+Version: 1.8
 Tags: blue, two-columns, theme-options, custom-menu, right-sidebar, editor-style, sticky-post, fixed-layout
 */
 @import url("css/font-awesome.min.css");
@@ -445,8 +445,7 @@ body > header{
 	background-size:		13px, 29px, 37px, 53px;
 }
 .oloPosts,
-.post,
-#olo .page,
+#olo article,
 #nav-single{
 	position:relative;
 }
@@ -456,8 +455,7 @@ body > header{
 	width: 3px;
 }
 .oloPosts:before,
-.post:before,
-#olo .page:before,
+#olo article:before,
 .oloEntry:before ,
 #comments > .depth-1 > .comment:before ,
 #comments-title span:before,
@@ -470,15 +468,13 @@ body > header{
 	position: absolute;
 	top: 0;
 }
-.post,
-#olo .page {
+#olo article {
 	border-bottom: 1px solid #DDDDDD;
 	margin: 0 0 1em;
 	overflow: hidden;
 	padding: 0 0 1em;
 }
-.post:before ,
-#olo .page:before,
+#olo article:before,
 #comments > .depth-1 > .comment:before,
 #comments-title span:before ,
 #reply-title:before,
@@ -491,8 +487,7 @@ body > header{
 	margin: 53px 0 0 -16px;
 	width: 9px;
 }
-.post:hover:before,
-#olo .page:hover:before,
+#olo article:hover:before,
 #comments > .depth-1:hover > .comment:before,
 #comments-title:hover:before,
 #comments-title:hover span:before,
@@ -589,10 +584,8 @@ body > header{
 	position:relative;
 	margin:10px 0;
 }
-.post header h2,
-.post footer,
-#olo .page header h2,
-#olo .page footer,
+#olo article header h2,
+#olo article footer,
 .oloPosts .nopassword,
 #trackbacks-pingbacks{
 	float:right;

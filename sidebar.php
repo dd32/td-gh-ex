@@ -1,7 +1,7 @@
 	<aside id="oloWidget">
 		<ul>
 			<?php if (is_home()) { ?>
-				<?php if ( !dynamic_sidebar(''.__('Home', 'olo').'') ) : ?>
+				<?php if ( !dynamic_sidebar('home') ) : ?>
 					<li id="archives" class="widget">
 						<h3 class="widget-title"><?php _e( 'Archives', 'olo' ); ?></h3>
 						<ul>
@@ -19,9 +19,9 @@
 					</li>
 				<?php endif; ?>
 			<?php } elseif( is_single() ) { ?>
-				<?php dynamic_sidebar( 'Single' ); ?>
+				<?php dynamic_sidebar( 'single' ); ?>
 			<?php } else { ?>
-				<?php dynamic_sidebar( 'Other' ); ?>
+				<?php dynamic_sidebar( 'other' ); ?>
 			<?php } ?>
 		</ul>
 	</aside><!-- #oloWidget-->

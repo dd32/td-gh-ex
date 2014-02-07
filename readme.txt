@@ -19,3 +19,4 @@ olo has theme options page:Go into your Wordpress Admin, navigate to 'Appearance
 * Chinese (zh_CN): HJYL
 
 == Changelog ==
+2014.02.07  Fix css, e.g: .post, .page, article instead.
