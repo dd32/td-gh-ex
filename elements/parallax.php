@@ -57,7 +57,7 @@ if ( !class_exists( 'CyberchimpsParallax' ) ) {
 		public function cyberchimps_parallax_scripts() {
 
 			// Add parallax js library.
-			wp_enqueue_script( 'parallax-js', get_template_directory_uri() . '/elements/lib/js/jquery.parallax.js', array( 'jquery' ) );
+			wp_enqueue_script( 'parallax-js', get_template_directory_uri() . '/elements/lib/js/jquery.parallax.min.js', array( 'jquery' ) );
 		}
 
 		/**
