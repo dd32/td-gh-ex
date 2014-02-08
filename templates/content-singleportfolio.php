@@ -26,23 +26,23 @@
 						 $imgheight = get_post_meta( $post->ID, '_kad_posthead_height', true );
 						 $imgwidth = get_post_meta( $post->ID, '_kad_posthead_width', true );
 		if($layout == 'above')  {
-				$imgclass = 'span12';
+				$imgclass = 'col-md-12';
 				$textclass = 'pcfull clearfix';
-				$entryclass = 'span8';
-				$valueclass = 'span4';
-				$slidewidth_d = 1170;
+				$entryclass = 'col-md-8';
+				$valueclass = 'col-md-4';
+				$slidewidth_d = 1140;
 		} elseif ($layout == 'three')  {
-				$imgclass = 'span12';
+				$imgclass = 'col-md-12';
 				$textclass = 'pcfull clearfix';
-				$entryclass = 'span12';
-				$valueclass = 'span12';
-				$slidewidth_d = 1170;
+				$entryclass = 'col-md-12';
+				$valueclass = 'col-md-12';
+				$slidewidth_d = 1140;
 			} else {
-				$imgclass = 'span7';
-				$textclass = 'span5 pcside';
+				$imgclass = 'col-md-7';
+				$textclass = 'col-md-5 pcside';
 				$entryclass = '';
 				$valueclass = '';
-				$slidewidth_d = 670;
+				$slidewidth_d = 653;
 			 	}
 			 	$portfolio_margin = '';
 		if (!empty($imgheight)) { $slideheight = $imgheight; } else { $slideheight = 450; } 

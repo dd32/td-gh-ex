@@ -77,7 +77,9 @@ function kadence_title() {
       single_cat_title();
     }
   } elseif (is_search()) {
+
     printf(__('Search Results for %s', 'virtue'), get_search_query());
+      
   } elseif (is_404()) {
     _e('Not Found', 'virtue');
   } else {

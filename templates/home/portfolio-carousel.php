@@ -1,4 +1,3 @@
-
 <div class="home-portfolio home-margin carousel_outerrim home-padding">
 		<?php global $virtue; if(isset($virtue['portfolio_title'])) {$porttitle = $virtue['portfolio_title'];} else { $porttitle = __('Featured Projects', 'virtue'); }
 		if(!empty($virtue['home_portfolio_carousel_count'])) {$hp_pcount = $virtue['home_portfolio_carousel_count'];} else {$hp_pcount = '6';} 
@@ -12,15 +11,11 @@
 							$portfolio_category = '';
 						}
 				if(isset($virtue['portfolio_show_type'])) {$portfolio_item_types = $virtue['portfolio_show_type'];} else {$portfolio_item_types = '';}
-					   		if(kadence_display_sidebar()) {
-					   		 	$columnnum = 's-twocolumn'; $slidewidth = 365; $slideheight = 365;
-					   		 }else {
-					   		 	$columnnum = 'threecolumn'; $slidewidth = 370; $slideheight = 370;
-					   		 }
-					   		?>
-
+					   		 	$itemsize = 'tcol-lg-4 tcol-md-4 tcol-sm-4 tcol-xs-6 tcol-ss-12'; $slidewidth = 366; $slideheight = 366; $md = 3; $sm = 3; $xs = 2; $ss = 1; 
+					   		 	?>
 		<div class="home-margin fredcarousel">
-		<div id="portfolio-carousel" class="clearfix <?php echo $columnnum; ?>">
+		<div id="hport_carouselcontainer" class="rowtight fadein-carousel">
+		<div id="portfolio-carousel" class="clearfix">
 		<?php 
 				$temp = $wp_query; 
 				  $wp_query = null; 
@@ -36,9 +31,8 @@
 					<?php if ( $wp_query ) : 
 							 
 					while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
-
-					<div class="grid_item portfolio_item all postclass">
-					
+					<div class="<?php echo $itemsize; ?>">
+						<div class="grid_item portfolio_item postclass">
                         <?php if (has_post_thumbnail( $post->ID ) ) {
 									$image_url = wp_get_attachment_image_src( 
 									get_post_thumbnail_id( $post->ID ), 'full' ); 
@@ -60,6 +54,7 @@
                     </div>
                 </a>
                 </div>
+                </div>
                     
 					<?php endwhile; else: ?>
 					<li class="error-not-found"><?php _e('Sorry, no portfolio entries found.', 'virtue');?></li>
@@ -72,8 +67,66 @@
                     ?>
                     <?php wp_reset_query(); ?>
                 </div>
-<div class="clearfix"></div>
+ </div>
+ <div class="clearfix"></div>
             <a id="prevport_portfolio" class="prev_carousel icon-chevron-left" href="#"></a>
 			<a id="nextport_portfolio" class="next_carousel icon-chevron-right" href="#"></a>
 </div> <!-- fred Carousel-->
 </div> <!--featclass -->
+<script type="text/javascript">
+	 jQuery( window ).load(function () {
+	 	var $wcontainer = jQuery('#hport_carouselcontainer');
+	 	var $container = jQuery('#portfolio-carousel');
+	 				setWidths();
+	 				$container.carouFredSel({
+							scroll: {items:1,easing: "swing", duration: 700, pauseOnHover : true},
+							auto: {play: true, timeoutDuration: 9000},
+							prev: '#prevport_portfolio',
+							next: '#nextport_portfolio',
+							pagination: false,
+							swipe: true,
+								items: {visible: null
+								}
+						});
+	 					var resizeTimer;
+						jQuery(window).resize(function() {
+						clearTimeout(resizeTimer);
+						resizeTimer = setTimeout(portfolioCarousel, 100);
+						});
+		 				function portfolioCarousel() {
+						// set the widths on resize
+						$container.trigger("destroy");
+						setWidths();
+							$container.carouFredSel({
+										scroll: {items:1,easing: "swing", duration: 700, pauseOnHover : true},
+								auto: {play: true, timeoutDuration: 9000},
+								prev: '#prevport_portfolio',
+								next: '#nextport_portfolio',
+								pagination: false,
+								swipe: true,
+									items: {visible: null
+									}
+							});
+						};
+					function getUnitWidth() {
+					var width;
+					if(jQuery(window).width() <= 480) {
+					width = $wcontainer.width() / <?php echo $ss;?>;
+					} else if(jQuery(window).width() <= 768) {
+					width = $wcontainer.width() / <?php echo $xs;?>;
+					} else if(jQuery(window).width() <= 990) {
+					width = $wcontainer.width() / <?php echo $sm;?>;
+					} else {
+					width = $wcontainer.width() / <?php echo $md;?>;
+					}
+					return width;
+					}
+
+					// set all the widths to the elements
+					function setWidths() {
+					var unitWidth = getUnitWidth() -1;
+					$container.children().css({ width: unitWidth });
+					}
+
+});
+</script>	

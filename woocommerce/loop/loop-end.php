@@ -13,7 +13,7 @@
              	var $container = jQuery('#product_masonry');
 					// initialize
 					$container.masonry({
-					  itemSelector: '.product_item'
+					  itemSelector: '.kad_product'
 					});
 				});
 					</script>

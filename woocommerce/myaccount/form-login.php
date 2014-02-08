@@ -19,7 +19,7 @@ global $woocommerce; ?>
 
 <div class="row" id="customer_login">
 
-	<div class="span6">
+	<div class="col-md-6">
 
 <?php endif; ?>
 
@@ -55,7 +55,7 @@ global $woocommerce; ?>
 
 	</div>
 
-	<div class="span6">
+	<div class="col-md-6">
 
 		<h2><?php _e( 'Register', 'woocommerce' ); ?></h2>
 		<form method="post" class="register">

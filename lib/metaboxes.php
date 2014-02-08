@@ -109,7 +109,7 @@ function virtue_metaboxes( array $meta_boxes ) {
 			),
 			array(
 				'name' => __("Max Image/Slider Width", 'virtue' ),
-				'desc' => __("Default is: 770 or 1170 on fullwidth posts <b>(Note: just input number, example: 650, does not apply to carousel slider)</b>", 'virtue' ),
+				'desc' => __("Default is: 770 or 1140 on fullwidth posts <b>(Note: just input number, example: 650, does not apply to carousel slider)</b>", 'virtue' ),
 				'id'   => $prefix . 'posthead_width',
 				'type' => 'text_small',
 			),
@@ -220,6 +220,7 @@ $meta_boxes[] = array(
 					array( 'name' => __('Image', 'virtue'), 'value' => 'image', ),
 					array( 'name' => __('Image Slider', 'virtue'), 'value' => 'flex', ),
 					array( 'name' => __('Video', 'virtue'), 'value' => 'video', ),
+					array( 'name' => __('None', 'virtue'), 'value' => 'none', ),
 				),
 			),
 			array(
@@ -230,7 +231,7 @@ $meta_boxes[] = array(
 			),
 			array(
 				'name' => __("Max Image/Slider Width", 'virtue' ),
-				'desc' => __("Default is: 670 or 1170 on <b>above</b> or <b>three row</b> layouts (Note: just input number, example: 650)</b>", 'virtue' ),
+				'desc' => __("Default is: 670 or 1140 on <b>above</b> or <b>three row</b> layouts (Note: just input number, example: 650)</b>", 'virtue' ),
 				'id'   => $prefix . 'posthead_width',
 				'type' => 'text_small',
 			),
@@ -428,7 +429,7 @@ $meta_boxes[] = array(
 			
 			array(
 				'name'    => __('Feature Options', 'virtue'),
-				'desc'    => __('If image slider make sure images uploaded are at least 1170px wide.', 'virtue'),
+				'desc'    => __('If image slider make sure images uploaded are at least 1140px wide.', 'virtue'),
 				'id'      => $prefix . 'page_head',
 				'type'    => 'select',
 				'options' => array(
@@ -445,7 +446,7 @@ $meta_boxes[] = array(
 			),
 			array(
 				'name' => __("Max Image/Slider Width", 'virtue' ),
-				'desc' => __("Default is: 1170 <b>(Note: just input number, example: 650, does not apply to Carousel slider)</b>", 'virtue' ),
+				'desc' => __("Default is: 1140 <b>(Note: just input number, example: 650, does not apply to Carousel slider)</b>", 'virtue' ),
 				'id'   => $prefix . 'posthead_width',
 				'type' => 'text_small',
 			),

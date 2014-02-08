@@ -17,7 +17,7 @@ Template Name: Feature
 				else if ($headoption == 'video') {
 					?>
 					 <section class="postfeat container">
-					 	<?php global $post; $swidth = get_post_meta( $post->ID, '_kad_posthead_width', true ); if (!empty($swidth)) $slidewidth = $swidth; else $slidewidth = 1170; ?>
+					 	<?php global $post; $swidth = get_post_meta( $post->ID, '_kad_posthead_width', true ); if (!empty($swidth)) $slidewidth = $swidth; else $slidewidth = 1140; ?>
 				          <div class="videofit" style="max-width:<?php echo $slidewidth;?>px; margin-left: auto; margin-right:auto;">
 				              <?php global $post; $video = get_post_meta( $post->ID, '_kad_post_video', true ); echo $video; ?>
 				          </div>
@@ -26,7 +26,7 @@ Template Name: Feature
 				}
 				else if ($headoption == 'image') {
                 global $post; $height = get_post_meta( $post->ID, '_kad_posthead_height', true ); if (!empty($height)) $slideheight = $height; else $slideheight = 400; 
-                          $swidth = get_post_meta( $post->ID, '_kad_posthead_width', true ); if (!empty($swidth)) $slidewidth = $swidth; else $slidewidth = 1170;   
+                          $swidth = get_post_meta( $post->ID, '_kad_posthead_width', true ); if (!empty($swidth)) $slidewidth = $swidth; else $slidewidth = 1140;   
                           $uselightbox = get_post_meta( $post->ID, '_kad_feature_img_lightbox', true ); if (!empty($uselightbox)) $lightbox = $uselightbox; else $lightbox = 'yes';             
                     $thumb = get_post_thumbnail_id();
                     $img_url = wp_get_attachment_url( $thumb,'full' ); 

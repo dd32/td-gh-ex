@@ -17,7 +17,7 @@ if ( get_option('woocommerce_enable_shipping_calc')=='no' || ! $woocommerce->car
 
 <?php do_action( 'woocommerce_before_shipping_calculator' ); ?>
 
-<form class="shipping_calculator span5" action="<?php echo esc_url( $woocommerce->cart->get_cart_url() ); ?>" method="post">
+<form class="shipping_calculator col-md-5" action="<?php echo esc_url( $woocommerce->cart->get_cart_url() ); ?>" method="post">
 
 	<h3><a href="#" class="shipping-calculator-button"><?php _e( 'Calculate Shipping', 'woocommerce' ); ?> <span>&darr;</span></a></h3>
 

@@ -1,7 +1,7 @@
 <div class="sliderclass">
   <?php  global $virtue; 
          if(isset($virtue['slider_size'])) {$slideheight = $virtue['slider_size'];} else { $slideheight = 400; }
-        if(isset($virtue['slider_size_width'])) {$slidewidth = $virtue['slider_size_width'];} else { $slidewidth = 1170; }
+        if(isset($virtue['slider_size_width'])) {$slidewidth = $virtue['slider_size_width'];} else { $slidewidth = 1140; }
         if(isset($virtue['slider_captions'])) { $captions = $virtue['slider_captions']; } else {$captions = '';}
         if(isset($virtue['home_slider'])) {$slides = $virtue['home_slider']; } else {$slides = '';}
                 ?>

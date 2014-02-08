@@ -12,10 +12,10 @@ define('POST_EXCERPT_LENGTH', 40);
 function kadence_main_class() {
   if (kadence_display_sidebar()) {
     // Classes on pages with the sidebar
-    $class = 'span8';
+    $class = 'col-lg-9 col-md-8';
   } else {
     // Classes on full width pages
-    $class = 'span12';
+    $class = 'col-md-12';
   }
 
   return $class;
@@ -25,7 +25,7 @@ function kadence_main_class() {
  * .sidebar classes
  */
 function kadence_sidebar_class() {
-  return 'span4';
+  return 'col-lg-3 col-md-4';
 }
 
 /**
@@ -42,7 +42,7 @@ function kadence_display_sidebar() {
       );
   } else {
   $sidebar_config = new Kadence_Sidebar(
-    array('kadence_sidebar_on_blog_post','kadence_sidebar_on_blog_page','is_404','kadence_sidebar_on_home_page', array('is_singular', array('portfolio'))
+    array('kadence_sidebar_on_blog_post','kadence_sidebar_on_blog_page','is_404','kadence_sidebar_on_home_page', array('is_singular', array('portfolio')), array('is_tax', array('portfolio-type'))
       ),
     array('page-fullwidth.php','page-feature.php','page-portfolio.php','page-staff-grid.php','page-testimonial-grid.php','page-contact.php')
   );

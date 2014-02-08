@@ -63,16 +63,16 @@
             <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php __('Log out of this account', 'virtue'); ?>"><?php _e('Log out &raquo;', 'virtue'); ?></a>
           </p>
         <?php else : ?>
-        <div class="row-fluid">
-          <div class="span4">
+        <div class="row">
+          <div class="col-md-4">
             <label for="author"><?php _e('Name', 'virtue'); if ($req) _e(' <span>*</span>', 'virtue'); ?></label>
             <input type="text" class="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" <?php if ($req) echo 'aria-required="true"'; ?>>
           </div>
-          <div class="span4">
+          <div class="col-md-4">
             <label for="email"><?php _e('Email (will not be published)', 'virtue'); if ($req) _e(' <span>*</span>', 'virtue'); ?></label>
             <input type="email" class="text" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" <?php if ($req) echo 'aria-required="true"'; ?>>
           </div>
-          <div class="span4">
+          <div class="col-md-4">
             <label for="url"><?php _e('Website', 'virtue'); ?></label>
             <input type="url" class="text" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>">
           </div>

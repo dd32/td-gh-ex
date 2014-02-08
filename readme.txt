@@ -21,7 +21,7 @@ Virtue Theme Uses:
 * Photos on example_slider by Benjamin Ritner (licensed under GNU General Public License v2.0 or later)
 * FontAwesome by Dave Gandy (http://fontawesome.io) licensed under the SIL OFL 1.1 (http://scripts.sil.org/OFL)
 * FlexSlider by WooThemes under the GPLv2 license (http://www.gnu.org/licenses/gpl-2.0.html)
-* Star Font and Woocommerce Templates by Woothemes for Woocommerce (licensed under GNU General Public License v2.0 or later)
+* Star Font, icons image folder and Woocommerce Templates by Woothemes for Woocommerce (licensed under GNU General Public License v2.0 or later)
 * Theme aspects derived from RootsTheme (http://www.rootstheme.com/) licensed under MIT license, http://www.opensource.org/licenses/mit-license.php
 * Redux Options Framework (http://reduxframework.com/) licensed under GNU General Public License v3.0
 * Google Fonts (available through Google web Fonts: http://www.google.com/fonts/), licensed under Apache License Version 2
@@ -47,6 +47,17 @@ Virtue Theme Uses:
 -------------------------------------------------------
 
 = Theme Name: Virtue =
+
+= Version: 2.0.0 =
+* Fix Portfolio type template.
+* Update Theme Options.
+* Remove bootstrap  2 css replace with bootstrap 3 css.
+* Update all template files for bootstrap classes.
+* Updated all theme css for bootstrap 3.
+* Update WP Gallery.
+* Update Woocommerce in prep for 2.1
+* Update contact page.
+* Update bootstrap js.
 
 = Version: 1.9.9.7 =
 * Very Very small fix with portfolio carousel.

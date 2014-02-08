@@ -261,11 +261,11 @@ background: #dddddd url(../img/bg_darker_still.png) repeat !important;
 }
 
 
-#redux-sidebar,
+.redux-sidebar,
 .redux-main{
 	min-height:300px;
 }
-#redux-sidebar{
+.redux-sidebar{
 	width:200px;
 	float: left;
 }
@@ -314,20 +314,20 @@ background: #dddddd url(../img/bg_darker_still.png) repeat !important;
 }
 
 
-#redux-sidebar #redux-group-menu{
+.redux-sidebar .redux-group-menu{
 	margin-top:0px;
 }
-#redux-sidebar #redux-group-menu li{
+.redux-sidebar .redux-group-menu li{
 	margin:0px;
 }
-#redux-sidebar #redux-group-menu li.divide{
+.redux-sidebar .redux-group-menu li.divide{
 	padding:0px;
 	border-width: 1px 0px 1px 0px;
 	border-style: solid;
     border-bottom-color: #E7E7E7;
     border-top-color: #F9F9F9;
 }
-#redux-sidebar #redux-group-menu li a{
+.redux-sidebar .redux-group-menu li a{
 	display:block;
 	padding: 12px 8px;
 	background: transparent;
@@ -343,10 +343,10 @@ background: #dddddd url(../img/bg_darker_still.png) repeat !important;
   -webkit-transition: none;
 	transition: none;
 }
-#redux-sidebar #redux-group-menu li a.custom-tab{
+.redux-sidebar .redux-group-menu li a.custom-tab{
 	background: #f6f6f6;
 }
-#redux-sidebar #redux-group-menu li a img{
+.redux-sidebar .redux-group-menu li a img{
 	width: 16px;
 	height: 16px;
 	/*vertical-align:middle;
@@ -355,22 +355,22 @@ background: #dddddd url(../img/bg_darker_still.png) repeat !important;
 	position: absolute;
 	left: 15px;
 }
-#redux-sidebar #redux-group-menu li.active a:hover{
+.redux-sidebar .redux-group-menu li.active a:hover{
 	color: #00b5e2;
 }
-#redux-sidebar #redux-group-menu li a:hover{
+.redux-sidebar .redux-group-menu li a:hover{
 	background:#eeeeee;
 	width:184px;
 	color: #00b5e2;
 	margin-right:-2px;
 	opacity: 1;
 }
-#redux-sidebar #redux-group-menu li a:hover i{
+.redux-sidebar .redux-group-menu li a:hover i{
 
 }
 
 
-#redux-sidebar #redux-group-menu li.active a{
+.redux-sidebar .redux-group-menu li.active a{
 	background:#FCFCFC;
 	color: #444444;
 	width:184px;
@@ -738,7 +738,7 @@ box-shadow: inset 0 1px 0 #fcfcfc;
 }
 
 
-.redux-container #expand_options{
+.redux-container .expand_options{
 	cursor: pointer;
 	display: block;
 	height: 22px;
@@ -752,9 +752,9 @@ box-shadow: inset 0 1px 0 #fcfcfc;
 	-moz-border-radius: 2px;
 	border-radius: 2px;
 }
-.redux-container  #expand_options { background: url(../img/toggle_tabs.png) no-repeat -2px -26px; }
-.redux-container #expand_options.expanded { background: url(../img/toggle_tabs.png) no-repeat -2px -1px; }
-.redux-container #expand_options:hover {
+.redux-container  .expand_options { background: url(../img/toggle_tabs.png) no-repeat -2px -26px; }
+.redux-container .expand_options.expanded { background: url(../img/toggle_tabs.png) no-repeat -2px -1px; }
+.redux-container .expand_options:hover {
 	border-color: #888;
 }
 .redux-container .redux-container-sorter ul h3 {
@@ -1107,7 +1107,7 @@ img {
 }
 
 @media screen and (max-width : 1124px) {
-	#redux-sidebar{
+	.redux-sidebar{
 		width:42px;
 	}
 
@@ -1140,10 +1140,10 @@ img {
 	.redux-group-tab-link-a:hover > span{
 		display: block;
 	}
-	#redux-sidebar #redux-group-menu li a,
-	#redux-sidebar #redux-group-menu li a:hover,
-	#redux-sidebar #redux-group-menu li.active a,
-	#redux-sidebar #redux-group-menu li.active a:hover{
+	.redux-sidebar .redux-group-menu li a,
+	.redux-sidebar .redux-group-menu li a:hover,
+	.redux-sidebar .redux-group-menu li.active a,
+	.redux-sidebar .redux-group-menu li.active a:hover{
 		width:auto;
 	}
 	

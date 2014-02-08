@@ -402,7 +402,7 @@ $this->sections[] = array(
             'font-size'=>true,
             'line-height'=>true,
             //'word-spacing'=>false, // Defaults to false
-            'all_styles' => true,
+            //'all_styles' => true,
             'color'=>true,
             'preview'=>true, // Disable the previewer
             'output' => array('header #logo a.brand', ".logofont"),
@@ -915,6 +915,15 @@ $this->sections[] = array(
             //'desc' => __('This field will store all slides values into a multidimensional array to use into a foreach loop.', 'virtue')
         ), 
            array(
+            'id'=>'home_icon_menu_column',
+            'type' => 'slider', 
+            'title' => __('Choose how many columns in each row', 'virtue'),
+            "default"       => "3",
+            "min"       => "2",
+            "step"      => "1",
+            "max"       => "6",
+            ),
+           array(
             'id'=>'info_page_content',
             'type' => 'info',
             'desc' => __('Page Content Options', 'virtue'),
@@ -993,7 +1002,7 @@ $this->sections[] = array(
             'font-size'=>true,
             'line-height'=>true,
             //'word-spacing'=>false, // Defaults to false
-            'all_styles' => true,
+            //'all_styles' => true,
             'color'=>true,
             'preview'=>true, // Disable the previewer
             'output' => array('.product_item .product_details h5'),
@@ -1418,7 +1427,7 @@ $this->sections[] = array(
             'font-size'=>true,
             'line-height'=>true,
             //'word-spacing'=>false, // Defaults to false
-            'all_styles' => true,
+            //'all_styles' => true,
             'color'=>true,
             'preview'=>true, // Disable the previewer
             'output' => array('h1'),
@@ -1443,7 +1452,7 @@ $this->sections[] = array(
             'font-size'=>true,
             'line-height'=>true,
             //'word-spacing'=>false, // Defaults to false
-            'all_styles' => true,
+            //'all_styles' => true,
             'color'=>true,
             'preview'=>true, // Disable the previewer
             'output' => array('h2'),
@@ -1468,7 +1477,7 @@ $this->sections[] = array(
             'font-size'=>true,
             'line-height'=>true,
             //'word-spacing'=>false, // Defaults to false
-            'all_styles' => true,
+            //'all_styles' => true,
             'color'=>true,
             'preview'=>true, // Disable the previewer
             'output' => array('h3'),
@@ -1493,7 +1502,7 @@ $this->sections[] = array(
             'font-size'=>true,
             'line-height'=>true,
             //'word-spacing'=>false, // Defaults to false
-            'all_styles' => true,
+            //'all_styles' => true,
             'color'=>true,
             'preview'=>true, // Disable the previewer
             'output' => array('h4'),
@@ -1518,7 +1527,7 @@ $this->sections[] = array(
             'font-size'=>true,
             'line-height'=>true,
             //'word-spacing'=>false, // Defaults to false
-            'all_styles' => true,
+            //'all_styles' => true,
             'color'=>true,
             'preview'=>true, // Disable the previewer
             'output' => array('h5'),
@@ -1581,7 +1590,7 @@ $this->sections[] = array(
             'font-size'=>true,
             'line-height'=>true,
             //'word-spacing'=>false, // Defaults to false
-            'all_styles' => true,
+            //'all_styles' => true,
             'color'=>true,
             'preview'=>true, // Disable the previewer
             'output' => array('#nav-main ul.sf-menu a'),
@@ -1611,7 +1620,7 @@ $this->sections[] = array(
             'font-size'=>true,
             'line-height'=>true,
             //'word-spacing'=>false, // Defaults to false
-            'all_styles' => true,
+            //'all_styles' => true,
             'color'=>true,
             'preview'=>true, // Disable the previewer
             'output' => array('#nav-second ul.sf-menu a'),
@@ -1641,7 +1650,7 @@ $this->sections[] = array(
             'font-size'=>true,
             'line-height'=>true,
             //'word-spacing'=>false, // Defaults to false
-            'all_styles' => true,
+            //'all_styles' => true,
             'color'=>true,
             'preview'=>true, // Disable the previewer
             'output' => array('.kad-nav-inner .kad-mnav, .kad-mobile-nav .kad-nav-inner li a', '.nav-trigger-case'),
@@ -1850,7 +1859,7 @@ $this->sections[] = array(
 
 function addAndOverridePanelCSS() {
   wp_dequeue_style( 'redux-css' );
-  wp_register_style('redux-custom-css', get_template_directory_uri() . '/themeoptions/options/css/style.css', false, null);    
+  wp_register_style('redux-custom-css', get_template_directory_uri() . '/themeoptions/options/css/style.css', false, 200);    
   wp_enqueue_style('redux-custom-css');
   wp_dequeue_style( 'redux-elusive-icon' );
   wp_dequeue_style( 'redux-elusive-icon-ie7' );

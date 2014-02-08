@@ -1,6 +1,6 @@
  <?php global $post; $headcontent = get_post_meta( $post->ID, '_kad_blog_head', true );
    $height = get_post_meta( $post->ID, '_kad_posthead_height', true ); if (!empty($height)) $slideheight = $height; else $slideheight = 400; 
-    $swidth = get_post_meta( $post->ID, '_kad_posthead_width', true ); if (!empty($swidth)) $slidewidth = $swidth; else $slidewidth = 1170; 
+    $swidth = get_post_meta( $post->ID, '_kad_posthead_width', true ); if (!empty($swidth)) $slidewidth = $swidth; else $slidewidth = 1140; 
      ?>
           <article <?php post_class(); ?>>
            <?php if ($headcontent == 'flex') { ?>
@@ -64,25 +64,10 @@
                       <div class="imghoverclass"><a href="<?php echo $img_url ?>" rel="lightbox[pp_gal]" class="lightboxhover"><img src="<?php echo $image ?>" alt="<?php the_title(); ?>" /></a></div>
                     <?php endif; ?>
         <?php } ?>
-    <div class="postmeta">
-                                  <div class="postdate bg-lightgray headerfont">
-                                    <span class="postday"><?php echo get_the_date('j'); ?></span>
-                                    <?php echo get_the_date('M Y');?>
-                                  </div>
-                                    
-    </div>
+    <?php get_template_part('templates/post', 'date'); ?> 
     <header>
       <a href="<?php the_permalink() ?>"><h1 class="entry-title"><?php the_title(); ?></h1></a>
-      <div class="subhead">
-                                  <span class="postauthortop">
-                                    <i class="icon-user"></i> <?php echo __('by', 'virtue');?> <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author"><?php echo get_the_author() ?></a> |
-                                  </span>
-                                  <?php $post_category = get_the_category($post->ID); if ( $post_category==true ) { ?>  <span class="postedintop"><i class="icon-folder-open"></i> <?php _e('posted in:', 'virtue'); ?> <?php the_category(', ') ?></span> <?php }?>
-                                  |
-                                <span class="postcommentscount">
-                                  <i class="icon-comments-alt"></i> <?php comments_number( '0', '1', '%' ); ?>
-                                </span>
-      </div>
+      <?php get_template_part('templates/entry', 'meta-subhead'); ?>
     </header>
     <div class="entry-content">
       <?php the_content(); ?>

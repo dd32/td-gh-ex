@@ -20,18 +20,13 @@ if ( empty( $woocommerce_loop['loop'] ) )
 // Store column count for displaying the grid
 if ( empty( $woocommerce_loop['columns'] ) )
 	$woocommerce_loop['columns'] = apply_filters( 'loop_shop_columns', 4 );
-
+if ($woocommerce_loop['columns'] == '3'){ $itemsize = 'tcol-md-4 tcol-sm-4 tcol-xs-6 tcol-ss-12'; $catimgwidth = 367;} else {$itemsize = 'tcol-md-3 tcol-sm-4 tcol-xs-6 tcol-ss-12'; $catimgwidth = 270;}
 // Increase loop count
 $woocommerce_loop['loop']++;
-$catimgwidth = 270;
 $catimgheight = 130;
 ?>
-<div class="product-category grid_item <?php
-    if ( ( $woocommerce_loop['loop'] - 1 ) % $woocommerce_loop['columns'] == 0 || $woocommerce_loop['columns'] == 1)
-        echo ' kad-first';
-	if ( $woocommerce_loop['loop'] % $woocommerce_loop['columns'] == 0 )
-		echo ' kad-last';
-	?>">
+<div class="<?php echo $itemsize; ?>">
+<div class="product-category grid_item">
 
 	<?php do_action( 'woocommerce_before_subcategory', $category ); ?>
 
@@ -79,4 +74,5 @@ $catimgheight = 130;
 
 	<?php do_action( 'woocommerce_after_subcategory', $category ); ?>
 
+	</div>
 </div>

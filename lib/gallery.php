@@ -40,7 +40,7 @@ function kadence_gallery($attr) {
     'icontag'    => '',
     'captiontag' => '',
     'columns'    => 3,
-    'size'       => 'large',
+    'size'       => 'full',
     'include'    => '',
     'exclude'    => ''
   ), $attr));
@@ -75,64 +75,32 @@ function kadence_gallery($attr) {
     }
     return $output;
   }
- if(kadence_display_sidebar()) {  
-        if ($columns == 4) {
-           $output .= '<ul class="s-fourcolumn gallery kad-light-gallery clearfix">';
-           $imgsize = 172;
-        } elseif ($columns == 2) {
-          $output .= '<ul class="s-twocolumn gallery kad-light-gallery clearfix">';
-          $imgsize = 365;
-        } elseif ($columns == 5) {
-          $output .= '<ul class="s-fivecolumn gallery kad-light-gallery clearfix">';
-          $imgsize = 134;
-        } elseif ($columns == 6) {
-          $output .= '<ul class="s-sixcolumn gallery kad-light-gallery clearfix">';
-          $imgsize = 120;
-        } elseif ($columns == 7) {
-          $output .= '<ul class="s-sevencolumn gallery kad-light-gallery clearfix">';
-          $imgsize = 120;
-        } else {
-          $output .= '<ul class="s-threecolumn gallery kad-light-gallery clearfix">';
-          $imgsize = 236;
-        }
-  } else {
-        if ($columns == 4) {
-           $output .= '<ul class="fourcolumn gallery kad-light-gallery clearfix">';
-           $imgsize = 270;
-        } elseif ($columns == 5) {
-          $output .= '<ul class="fivecolumn gallery kad-light-gallery clearfix">';
-          $imgsize = 214;
-        } elseif ($columns == 6) {
-          $output .= '<ul class="sixcolumn gallery kad-light-gallery clearfix">';
-          $imgsize = 175;
-        } elseif ($columns == 7) {
-          $output .= '<ul class="sevencolumn gallery kad-light-gallery clearfix">';
-          $imgsize = 147;
-        }  elseif ($columns == 2) {
-          $output .= '<ul class="twocolumn gallery kad-light-gallery clearfix">';
-          $imgsize = 556;
-        } else {
-          $output .= '<ul class="threecolumn gallery kad-light-gallery clearfix">';
-          $imgsize = 370;
-        }
-  }
+ $gallery_rn = (rand(10,100));
+
+ $output .= '<div id="kad-wp-gallery'.$gallery_rn.'" class="kad-wp-gallery kad-light-wp-gallery clearfix rowtight">';
+    
+    if ($columns == '2') {$itemsize = 'tcol-lg-6 tcol-md-6 tcol-sm-6 tcol-xs-12 tcol-ss-12'; $imgsize = 559;} 
+    else if ($columns == '3'){ $itemsize = 'tcol-lg-4 tcol-md-4 tcol-sm-4 tcol-xs-6 tcol-ss-12'; $imgsize = 366;} 
+    else if ($columns == '6'){ $itemsize = 'tcol-lg-2 tcol-md-2 tcol-sm-3 tcol-xs-4 tcol-ss-6'; $imgsize = 240;}
+    else if ($columns == '8' || $columns == '9' || $columns == '7'){ $itemsize = 'tcol-lg-2 tcol-md-2 tcol-sm-3 tcol-xs-4 tcol-ss-4'; $imgsize = 230;}
+    else if ($columns == '12' || $columns == '11'){ $itemsize = 'tcol-lg-1 tcol-md-1 tcol-sm-2 tcol-xs-2 tcol-ss-3'; $imgsize = 240;} 
+    else if ($columns == '5'){ $itemsize = 'tcol-lg-25 tcol-md-25 tcol-sm-3 tcol-xs-4 tcol-ss-6';} 
+    else {$itemsize = 'tcol-lg-3 tcol-md-3 tcol-sm-4 tcol-xs-6 tcol-ss-12'; $imgsize = 269;}
+
   $i = 0;
   foreach ($attachments as $id => $attachment) {
     $attachment_url = wp_get_attachment_url($id);
-    $image = aq_resize($attachment_url, $imgsize, $imgsize, true);
+      $image = aq_resize($attachment_url, $imgsize, $imgsize, true);
+        if(empty($image)) {$image = $attachment_url;}
     $link = isset($attr['link']) && 'post' == $attr['link'] ? wp_get_attachment_link($id, $size, true, false) : wp_get_attachment_link($id, $size, false, false);
 
-    $output .= '<li class="grid_item"><a href="'.$attachment_url.'" rel="lightbox[pp_gal]" class="lightboxhover" title="'.$attachment->post_excerpt.'">
+    $output .= '<div class="'.$itemsize.'"><div class="grid_item gallery_item"><a href="'.$attachment_url.'" rel="lightbox[pp_gal]" class="lightboxhover">
                           <img src="'.$image.'" alt="'.$attachment->post_excerpt.'" class="light-dropshaddow"/>
                         </a>';
-    if (trim($attachment->post_excerpt)) {
-      $output .= '<div class="caption hidden">' . wptexturize($attachment->post_excerpt) . '</div>';
-    }
-    $output .= '</li>';
+    $output .= '</div></div>';
   }
-
-  $output .= '</ul>';
-
+  $output .= '</div>';
+  
   return $output;
 }
   global $virtue;

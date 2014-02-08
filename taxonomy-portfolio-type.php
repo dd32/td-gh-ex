@@ -13,22 +13,11 @@
 		  </div>
 		  <?php get_search_form(); ?>
 		<?php endif; ?>
-		<?php $columnnum = 'threecolumn'; $slidewidth = 370; $slideheight = 370; $sliderheight = 370; ?>
-		<div id="portfoliowrapper" class="<?php echo $columnnum; ?>"> 
+		<?php $itemsize = 'tcol-md-4 tcol-sm-4 tcol-xs-6 tcol-ss-12'; $slidewidth = 366; $slideheight = 366; $md = 3; $sm = 3; $xs = 2; $ss = 1; ?>
+		<div id="portfoliowrapper" class="rowtight">
 		<?php while (have_posts()) : the_post(); ?>
-
-		  <?php $terms = get_the_terms( $post->ID, 'portfolio-type' );
-						if ( $terms && ! is_wp_error( $terms ) ) : 
-							$links = array();
-							foreach ( $terms as $term ) 
-							{$links[] = $term->name;}
-						$links = str_replace(' ', '-', $links);	
-							$tax = join( " ", $links );		
-						else :	
-							$tax = '';	
-						endif;
-						?>
-                	<div class="grid_item portfolio_item <?php echo strtolower($tax); ?> all postclass">
+		<div class="<?php echo $itemsize;?>">
+                	<div class="grid_item portfolio_item postclass">
 					
                         <?php global $post; $postsummery = get_post_meta( $post->ID, '_kad_post_summery', true );
 						     if ($postsummery == 'slider') { ?>
@@ -95,7 +84,9 @@
               		<div class="piteminfo">   
                           <h5><?php the_title();?></h5>
                     </div>
+
                 </a>
+                </div>
                 </div>
 		<?php endwhile; ?>
                 </div> <!--portfoliowrapper-->
@@ -115,28 +106,4 @@
                       $wp_query = null; 
                     ?>
                     <?php wp_reset_query(); ?>
-<script type="text/javascript">
-	   		 		
-				 	// Portfolio initialize isotope
-					jQuery(document).ready(function ($) {	
-						var $container = $('#portfoliowrapper');
-						$container.imagesLoaded( function(){$container.isotope({animationEngineString: 'best-available'});});
-					$('#filters a').click(function(){var selector = $(this).attr('data-filter'); $container.isotope({ filter: selector }); return false; });	
-					$(window).resize(function() { setTimeout(function() {$container.isotope('reLayout');}, 200);});	
-										
-					var $optionSets = $('#options .option-set'),
-          				$optionLinks = $optionSets.find('a');	
-					$optionLinks.click(function(){
-					var $this = $(this);
-					// don't proceed if already selected
-					if ( $this.hasClass('selected') ) {
-					  return false;
-					}
-					var $optionSet = $this.parents('.option-set');
-					$optionSet.find('.selected').removeClass('selected');
-					$this.addClass('selected');
-					});
-					
-});
-				</script>
 </div><!-- /.main -->

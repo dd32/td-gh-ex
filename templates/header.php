@@ -3,7 +3,7 @@
   <section id="topbar" class="topclass">
     <div class="container">
       <div class="row">
-        <div class="span6 kad-topbar-left">
+        <div class="col-md-6 kad-topbar-left">
           <div class="topbarmenu clearfix">
           <?php if (has_nav_menu('topbar_navigation')) :
               wp_nav_menu(array('theme_location' => 'topbar_navigation', 'menu_class' => 'sf-menu'));
@@ -33,19 +33,19 @@
                   </ul>
                 <?php } } }?>
           </div>
-        </div><!-- close span6 --> 
-        <div class="span6 kad-topbar-right">
+        </div><!-- close col-md-6 --> 
+        <div class="col-md-6 kad-topbar-right">
           <div id="topbar-search" class="topbar-widget">
             <?php if(kadence_display_topbar_widget()) { if(is_active_sidebar('topbarright')) { dynamic_sidebar(__('Topbar Widget', 'virtue')); } 
               } else { if(kadence_display_top_search()) {get_search_form();} 
           } ?>
         </div>
-        </div> <!-- close span6-->
+        </div> <!-- close col-md-6-->
       </div> <!-- Close Row -->
     </div> <!-- Close Container -->
   </section>
 <?php endif; ?>
-<?php global $virtue; if(isset($virtue['logo_layout']) && ($virtue['logo_layout'] == 'logocenter')) {$logocclass = 'span12'; $menulclass = 'span12';} else {$logocclass = 'span4'; $menulclass = 'span8';} ?>
+<?php global $virtue; if(isset($virtue['logo_layout']) && ($virtue['logo_layout'] == 'logocenter')) {$logocclass = 'col-md-12'; $menulclass = 'col-md-12';} else {$logocclass = 'col-md-4'; $menulclass = 'col-md-8';} ?>
   <div class="container">
     <div class="row">
           <div class="<?php echo $logocclass; ?>  clearfix kad-header-left">

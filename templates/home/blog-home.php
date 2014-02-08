@@ -1,5 +1,5 @@
 <div class="home_blog home-margin clearfix home-padding">
-	<?php if(kadence_display_sidebar()) {$postwidthclass = 'span8';} else {$postwidthclass = 'span6';}
+	<?php if(kadence_display_sidebar()) {$home_sidebar = true; $img_width = 407; $postwidthclass = 'col-md-6 col-sm-6 home-sidebar';} else {$home_sidebar = false; $img_width = 270; $postwidthclass = 'col-md-6 col-sm-6';}
 	global $virtue; if(isset($virtue['blog_title'])) { $btitle = $virtue['blog_title'];} else { $btitle = __('Latest from the Blog', 'virtue'); } ?>
 		<div class="clearfix"><h3 class="hometitle"><?php echo $btitle; ?></h3></div>
 	<div class="row">
@@ -22,16 +22,18 @@
 					if ( $wp_query ) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
 				<div class="<?php echo $postwidthclass; ?> clearclass<?php echo ($xyz++%2); ?>">
 				  	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	                    <div class="row">
+	                    <div class="rowtight">
 	                    			<?php 
 	                    			if (has_post_thumbnail( $post->ID ) ) {
-	                    				if($postwidthclass == 'span8') {$textsize = 'span5';} else {$textsize = 'span3';}
+	                    				if($home_sidebar == true) {$textsize = 'tcol-md-12 tcol-sm-12 tcol-ss-12'; $imagesize = 'tcol-md-12 tcol-sm-12 tcol-ss-12';} else {$textsize = 'tcol-md-7 tcol-sm-12 tcol-ss-12'; $imagesize = 'tcol-md-5 tcol-sm-12 tcol-ss-12';}
 										$image_url = wp_get_attachment_image_src( 
 											get_post_thumbnail_id( $post->ID ), 'full' ); 
 										$thumbnailURL = $image_url[0]; 
-									$image = aq_resize($thumbnailURL, 270, 270, true);
-										if(empty($image)) {$image = $thumbnailURL; } ?>
-								 <div class="span3">
+								
+									$image = aq_resize($thumbnailURL, $img_width, 270, true);
+									if(empty($image)) { $image = $thumbnailURL; }
+							 ?>
+								 <div class="<?php echo $imagesize;?>">
 									 <div class="imghoverclass">
 		                           		<a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
 		                           			<img src="<?php echo $image ?>" alt="<?php the_title(); ?>" class="iconhover" style="display:block;">
@@ -40,7 +42,7 @@
 		                         </div>
 
                            		<?php $image = null; $thumbnailURL = null; ?> 
-                           		<?php } else { if($postwidthclass == 'span8') {$textsize = 'span8';} else {$textsize = 'span6';}} ?>
+                           		<?php } else { $textsize = 'tcol-md-12 tcol-ss-12';} ?>
 	                       		<div class="<?php echo $textsize;?> postcontent">
 	                       			<div class="postmeta color_gray">
 				                        	<div class="postdate bg-lightgray headerfont">

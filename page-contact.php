@@ -115,7 +115,7 @@ Template Name: Contact
 			$emailTo = get_option('admin_email');
 		}
 		$sitename = get_bloginfo('name');
-		$subject = '['.$sitename . __(" Contact", "virtue").']'. __("From", "virtue"). $name;
+		$subject = '['.$sitename . __(" Contact", "virtue").'] '. __("From ", "virtue"). $name;
 		$body = __('Name', 'virtue').": $name \n\nEmail: $email \n\nComments: $comments";
 		$headers = __("From", "virtue").': '.$name.' <'.$emailTo.'>' . "\r\n" . 'Reply-To: ' . $email;
 
@@ -142,14 +142,14 @@ Template Name: Contact
    		<div class="row">
    		<?php global $post; $form = get_post_meta( $post->ID, '_kad_contact_form', true );
       	if ($form == 'yes') { ?>
-	  		<div id="main" class="span6" role="main"> 
+	  		<div id="main" class="col-md-6" role="main"> 
 	  	<?php } else { ?>
-      		<div id="main" class="span12" role="main">
+      		<div id="main" class="col-md-12" role="main">
       <?php } ?>
       <?php get_template_part('templates/content', 'page'); ?>
       </div>
       <?php if ($form == 'yes') { ?>
-      		<div class="contactformcase span6">
+      		<div class="contactformcase col-md-6">
       			<?php global $post; $contactformtitle = get_post_meta( $post->ID, '_kad_contact_form_title', true ); if ($contactformtitle != '') { 
       				echo '<h3>'. $contactformtitle .'</h3>';
       			} ?>

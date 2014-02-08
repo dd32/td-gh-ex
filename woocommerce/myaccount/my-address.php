@@ -39,7 +39,7 @@ $col = 1;
 
 <?php foreach ( $get_addresses as $name => $title ) : ?>
 
-	<div class="span6 address">
+	<div class="col-md-6 address">
 		<header class="title">
 			<h3><?php echo $title; ?></h3>
 			<a href="<?php echo esc_url( add_query_arg('address', $name, get_permalink(woocommerce_get_page_id( 'edit_address' ) ) ) ); ?>" class="edit"><?php _e( 'Edit', 'woocommerce' ); ?></a>

@@ -14,8 +14,8 @@ if(isset($virtue['product_simg_resize']) && $virtue['product_simg_resize'] == 0)
 	$presizeimage = 0;
 } else {
 	$presizeimage = 1;
-	$productimgwidth = 468;
-	$productimgheight = 468;
+	$productimgwidth = 458;
+	$productimgheight = 458;
 }
 
 ?>

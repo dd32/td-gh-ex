@@ -44,7 +44,7 @@ if( !class_exists( 'ReduxFramework_media' ) ) {
          */
         function __construct( $field = array(), $value ='', $parent ) {
         
-          parent::__construct( $parent->sections, $parent->args );
+          //parent::__construct( $parent->sections, $parent->args );
           $this->parent = $parent;
           $this->field = $field;
           $this->value = $value;
@@ -115,11 +115,11 @@ if( !class_exists( 'ReduxFramework_media' ) ) {
 
             $placeholder = isset($this->field['placeholder']) ? $this->field['placeholder'] : __('No media selected','redux-framework');
 
-            echo '<input placeholder="' . $placeholder .'" type="text" class="' . $hide . 'upload ' . $this->field['class'] . '" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][url]" id="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][url]" value="' . $this->value['url'] . '" readonly="readonly" />';
-            echo '<input type="hidden" class="upload-id ' . $this->field['class'] . '" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][id]" id="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][id]" value="' . $this->value['id'] . '" />';
-            echo '<input type="hidden" class="upload-height" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][height]" id="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][height]" value="' . $this->value['height'] . '" />';
-            echo '<input type="hidden" class="upload-width" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][width]" id="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][width]" value="' . $this->value['width'] . '" />';
-            echo '<input type="hidden" class="upload-thumbnail" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][thumbnail]" id="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][thumbnail]" value="' . $this->value['thumbnail'] . '" />';
+            echo '<input placeholder="' . $placeholder .'" type="text" class="' . $hide . 'upload ' . $this->field['class'] . '" name="' . $this->field['name'] . '[url]" id="' . $this->parent->args['opt_name'] . '[' . $this->field['id'] . '][url]" value="' . $this->value['url'] . '" readonly="readonly" />';
+            echo '<input type="hidden" class="upload-id ' . $this->field['class'] . '" name="' . $this->field['name'] . '[id]" id="' . $this->parent->args['opt_name'] . '[' . $this->field['id'] . '][id]" value="' . $this->value['id'] . '" />';
+            echo '<input type="hidden" class="upload-height" name="' . $this->field['name'] . '[height]" id="' . $this->parent->args['opt_name'] . '[' . $this->field['id'] . '][height]" value="' . $this->value['height'] . '" />';
+            echo '<input type="hidden" class="upload-width" name="' . $this->field['name'] . '[width]" id="' . $this->parent->args['opt_name'] . '[' . $this->field['id'] . '][width]" value="' . $this->value['width'] . '" />';
+            echo '<input type="hidden" class="upload-thumbnail" name="' . $this->field['name'] . '[thumbnail]" id="' . $this->parent->args['opt_name'] . '[' . $this->field['id'] . '][thumbnail]" value="' . $this->value['thumbnail'] . '" />';
 
             //Preview
             $hide = '';
@@ -169,13 +169,21 @@ if( !class_exists( 'ReduxFramework_media' ) ) {
     		 * @since  Redux_Framework 3.1.1
     		 * 
     		 */
-    		function localize() {
+    		function localize($field, $value = "") {
                 
-          if ( !isset( $this->field['mode'] ) ) {
-            $this->field['mode'] = "image";
-          }
+          $params = array();
 
-          return array( 'mode' => $this->field['mode'] );
+          if ( !isset( $field['mode'] ) ) {
+            $field['mode'] = "image";
+          }          
+          $params['mode'] = $field['mode'];
+
+          if ( empty( $value ) ) {
+            $value = $this->value;
+          }   
+          $params['val'] = $value;
+
+          return $params;
           
     		}        
 

@@ -29,13 +29,19 @@ Template Name: Portfolio Grid
 					?>
       
 
-                   <?php global $post; $portfolio_column = get_post_meta( $post->ID, '_kad_portfolio_columns', true ); if ($portfolio_column == '1') { $columnnum = 'onecolumn'; $imgwidth = 1150; $imgheight = 643; $sliderheight = 643;} else if ($portfolio_column == '2') {$columnnum = 'twocolumn'; $imgwidth = 565; $imgheight = 565; $sliderheight = 565;} else if ($portfolio_column == '3'){ $columnnum = 'threecolumn'; $imgwidth = 370; $imgheight = 370; $sliderheight = 370;} else {$columnnum = 'fourcolumn'; $imgwidth = 272; $imgheight = 272; $sliderheight = 272;}   ?> 
-                   <?php global $post; $portfolio_item_excerpt = get_post_meta( $post->ID, '_kad_portfolio_item_excerpt', true ); $portfolio_item_types = get_post_meta( $post->ID, '_kad_portfolio_item_types', true );  ?>
+                   <?php 
+                   global $post; $portfolio_column = get_post_meta( $post->ID, '_kad_portfolio_columns', true ); 
+		                   if ($portfolio_column == '2') {$itemsize = 'tcol-md-6 tcol-sm-6 tcol-xs-12 tcol-ss-12'; $slidewidth = 559; $slideheight = 559; $md = 2; $sm = 2; $xs = 1; $ss = 1;} 
+		                   else if ($portfolio_column == '3'){ $itemsize = 'tcol-md-4 tcol-sm-4 tcol-xs-6 tcol-ss-12'; $slidewidth = 366; $slideheight = 366; $md = 3; $sm = 3; $xs = 2; $ss = 1;} 
+		                   else if ($portfolio_column == '6'){ $itemsize = 'tcol-md-2 tcol-sm-3 tcol-xs-4 tcol-ss-6'; $slidewidth = 240; $slideheight = 240; $md = 6; $sm = 4; $xs = 3; $ss = 2;} 
+		                   else if ($portfolio_column == '5'){ $itemsize = 'tcol-md-25 tcol-sm-3 tcol-xs-4 tcol-ss-6'; $slidewidth = 240; $slideheight = 240; $md = 5; $sm = 4; $xs = 3; $ss = 2;} 
+		                   else {$itemsize = 'tcol-md-3 tcol-sm-4 tcol-xs-6 tcol-ss-12'; $slidewidth = 269; $slideheight = 269; $md = 4; $sm = 3; $xs = 2; $ss = 1;}
+		            ?> 
+                   <?php $portfolio_item_excerpt = get_post_meta( $post->ID, '_kad_portfolio_item_excerpt', true ); $portfolio_item_types = get_post_meta( $post->ID, '_kad_portfolio_item_types', true );  ?>
                    <?php $crop = true; ?>
-                   <?php global $post; $portfolio_cropheight = get_post_meta( $post->ID, '_kad_portfolio_img_crop', true ); if ($portfolio_cropheight != '') $imgheight = $portfolio_cropheight; ?>
+                   <?php $portfolio_cropheight = get_post_meta( $post->ID, '_kad_portfolio_img_crop', true ); if ($portfolio_cropheight != '') $slideheight = $portfolio_cropheight; ?>
                    <?php $portfolio_lightbox = get_post_meta( $post->ID, '_kad_portfolio_lightbox', true ); if ($portfolio_lightbox == 'yes'){$plb = true;} else {$plb = false;}?>
-               <div id="portfoliowrapper" class="<?php echo $columnnum; ?>"> 
-   
+               <div id="portfoliowrapper" class="rowtight">    
             <?php 
 				$temp = $wp_query; 
 				  $wp_query = null; 
@@ -54,29 +60,24 @@ Template Name: Portfolio Grid
 					while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
                     <?php
 						$terms = get_the_terms( $post->ID, 'portfolio-type' );
-								
 						if ( $terms && ! is_wp_error( $terms ) ) : 
 							$links = array();
-
-							foreach ( $terms as $term ) 
-							{
-								$links[] = $term->name;
-							}
+								foreach ( $terms as $term ) { $links[] = $term->name;}
+							$links = preg_replace("/[^a-zA-Z 0-9]+/", " ", $links);
 							$links = str_replace(' ', '-', $links);	
 							$tax = join( " ", $links );		
 						else :	
 							$tax = '';	
 						endif;
 						?>
-                	<div class="grid_item portfolio_item <?php echo strtolower($tax); ?> all postclass">
+                	<div class="<?php echo $itemsize;?> <?php echo strtolower($tax); ?> all kad_portfolio_fade_in">
+                	<div class="portfolio_item grid_item postclass">
 						<?php 		if (has_post_thumbnail( $post->ID ) ) {
 									$image_url = wp_get_attachment_image_src( 
 									get_post_thumbnail_id( $post->ID ), 'full' ); 
 									$thumbnailURL = $image_url[0]; 
-									if ($crop == true) { $image = aq_resize($thumbnailURL, $imgwidth, $imgheight, true); 
-										if(empty($image)) {$image = $thumbnailURL; }}
-									else { $image = aq_resize($thumbnailURL, $imgwidth, $imgheight, false);
-									  	if(empty($image)) {$image = $thumbnailURL; } }?>
+									$image = aq_resize($thumbnailURL, $slidewidth, $slideheight, true);
+									  	if(empty($image)) {$image = $thumbnailURL; } ?>
 
 									<div class="imghoverclass">
 	                                       <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
@@ -94,7 +95,7 @@ Template Name: Portfolio Grid
                     </div>
                 </a>
                 </div>
-                    
+                    </div>
 					<?php endwhile; else: ?>
 					 
 					<li class="error-not-found"><?php _e('Sorry, no portfolio entries found.', 'virtue');?></li>

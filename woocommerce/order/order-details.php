@@ -107,7 +107,7 @@ $order = new WC_Order( $order_id );
 
 <div class="row addresses">
 
-	<div class="span6">
+	<div class="col-md-6">
 
 <?php endif; ?>
 
@@ -124,7 +124,7 @@ $order = new WC_Order( $order_id );
 
 	</div><!-- /.col-1 -->
 
-	<div class="span6">
+	<div class="col-md-6">
 
 		<header class="title">
 			<h3><?php _e( 'Shipping Address', 'woocommerce' ); ?></h3>

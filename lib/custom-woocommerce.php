@@ -14,7 +14,11 @@ function woocommerce_support() {
 if (class_exists('woocommerce')) {
 
   // Disable WooCommerce styles
-  define('WOOCOMMERCE_USE_CSS', false);
+  if ( version_compare( WOOCOMMERCE_VERSION, "2.1" ) >= 0 ) {
+  add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+  } else {
+    define( 'WOOCOMMERCE_USE_CSS', false );
+  }
   // Disable WooCommerce Lightbox
   update_option( 'woocommerce_enable_lightbox', false );
     
@@ -57,21 +61,21 @@ if ( ! function_exists( 'wooframework_related_products' ) ) {
     }
   }
 }
-add_action( 'woocommerce_archive_description', 'woocommerce_category_image', 2 );
+//add_action( 'woocommerce_archive_description', 'woocommerce_category_image', 2 );
 function woocommerce_category_image() {
     if ( is_product_category() ){
       global $wp_query;
       $cat = $wp_query->get_queried_object();
       $thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
       $image = wp_get_attachment_url( $thumbnail_id );
-      global $virtue; if( isset( $virtue[ 'shop_layout' ] ) && $virtue[ 'shop_layout' ] == "sidebar" ) {$cat_width = 770;} else {$cat_width = 1170;}
+      global $virtue; if( isset( $virtue[ 'shop_layout' ] ) && $virtue[ 'shop_layout' ] == "sidebar" ) {$cat_width = 770;} else {$cat_width = 1140;}
       $sizeimage = aq_resize($image, $cat_width, 300, true);
       if ( $image ) {
         echo '<div class="cat_main_img"><img src="' . $sizeimage . '" alt="" /></div>';
     }
   }
 }
-add_filter('add_to_cart_fragments', 'kad_woocommerce_header_add_to_cart_fragment');
+//add_filter('add_to_cart_fragments', 'kad_woocommerce_header_add_to_cart_fragment');
 function kad_woocommerce_header_add_to_cart_fragment( $fragments ) {
     global $woocommerce;
     ob_start(); ?>

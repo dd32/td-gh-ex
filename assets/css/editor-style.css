@@ -383,7 +383,7 @@ pre code {
 }
 /* Added for Theme Columns */
 
-div.span11 {
+div.col-md-11, div.span11 {
 border: 3px dashed #eee;
 background: #fff;
 width: 91%;
@@ -394,7 +394,7 @@ float:left;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
-div.span10 {
+div.col-md-10, div.span10 {
 border: 3px dashed #eee;
 background: #fff;
 width: 83%;
@@ -405,7 +405,7 @@ float:left;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
-div.span9 {
+div.col-md-9, div.span9 {
 border: 3px dashed #eee;
 background: #fff;
 width: 74.5%;
@@ -416,7 +416,7 @@ float:left;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
-div.span8 {
+div.col-md-8, div.span8 {
 border: 3px dashed #eee;
 background: #fff;
 width: 66.6%;
@@ -427,7 +427,7 @@ float:left;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
-div.span7 {
+div.col-md-7, div.span7 {
 border: 3px dashed #eee;
 background: #fff;
 width: 58%;
@@ -438,7 +438,7 @@ float:left;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
-div.span6 {
+div.col-md-6, div.span6 {
 border: 3px dashed #eee;
 background: #fff;
 width: 50%;
@@ -449,7 +449,7 @@ float:left;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
-div.span5 {
+div.col-md-5, div.span5 {
 border: 3px dashed #eee;
 background: #fff;
 width: 41%;
@@ -460,7 +460,7 @@ float:left;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
-div.span4 {
+div.col-md-4, div.span4 {
 border: 3px dashed #eee;
 background: #fff;
 width: 33.3%;
@@ -471,7 +471,7 @@ float:left;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
         }
-div.span3 {
+div.col-md-3, div.span3 {
 border: 3px dashed #eee;
 background: #fff;
 width: 25%;
@@ -482,7 +482,7 @@ float:left;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
-div.span2 {
+div.col-md-2, div.span2 {
 border: 3px dashed #eee;
 background: #fff;
 width: 16%;
@@ -493,7 +493,7 @@ float:left;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
-div.span1 {
+div.col-md-1, div.span1 {
 border: 3px dashed #eee;
 background: #fff;
 width: 8%;
@@ -581,6 +581,6 @@ height: 150px;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
-[class*="span"] a img {width: 98%;
+[class*="col-md"] a img {width: 98%;
 height: auto;
 }

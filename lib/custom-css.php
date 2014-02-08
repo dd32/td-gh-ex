@@ -53,12 +53,12 @@ if(!empty($virtue['primary_color'])) {
   .nav-trigger-case:hover .kad-navbtn, #kadbreadcrumbs a:hover, #wp-calendar a {color: '.$virtue['primary_color'].';}
   .widget_price_filter .ui-slider .ui-slider-handle, .product_item .kad_add_to_cart:hover, .product_item.hidetheaction:hover .kad_add_to_cart:hover, .kad-btn-primary, html .woocommerce-page .widget_layered_nav ul.yith-wcan-label li a:hover, html .woocommerce-page .widget_layered_nav ul.yith-wcan-label li.chosen a,
   .product-category.grid_item a:hover h5, .woocommerce-message .button, .widget_layered_nav_filters ul li a, .widget_layered_nav ul li.chosen a, .wpcf7 input.wpcf7-submit, .yith-wcan .yith-wcan-reset-navigation,
-  #containerfooter .menu li a:hover, .bg_primary, .portfolionav a:hover, .home-iconmenu a:hover, p.demo_store, .topclass, #commentform .form-submit #submit, .kad-hover-bg-primary:hover, .variations .kad_radio_variations label.selectedValue, .login .form-row .button {background: '.$virtue['primary_color'].';}';
+  #containerfooter .menu li a:hover, .bg_primary, .portfolionav a:hover, .home-iconmenu a:hover, p.demo_store, .topclass, #commentform .form-submit #submit, .kad-hover-bg-primary:hover, .variations .kad_radio_variations label.selectedValue, .login .form-row .button, #payment #place_order, .checkout-button {background: '.$virtue['primary_color'].';}';
 } else {
   $color_primary = '';
 }
 if(!empty($virtue['primary20_color'])) {
-  $color_primary30 =  'a:hover {color: '.$virtue['primary20_color'].';}  .kad-btn-primary:hover, .login .form-row .button:hover, .yith-wcan .yith-wcan-reset-navigation:hover, .wpcf7 input.wpcf7-submit:hover, .widget_layered_nav_filters ul li a:hover, .widget_layered_nav ul li.chosen a:hover, .woocommerce-message .button:hover, #commentform .form-submit #submit:hover, .product_item.hidetheaction:hover .kad_add_to_cart {background: '.$virtue['primary20_color'].';}';
+  $color_primary30 =  'a:hover {color: '.$virtue['primary20_color'].';} .kad-btn-primary:hover, .login .form-row .button:hover, .yith-wcan .yith-wcan-reset-navigation:hover, .wpcf7 input.wpcf7-submit:hover, .widget_layered_nav_filters ul li a:hover, .widget_layered_nav ul li.chosen a:hover, #payment #place_order:hover, .checkout-button:hover, .woocommerce-message .button:hover, #commentform .form-submit #submit:hover, .product_item.hidetheaction:hover .kad_add_to_cart {background: '.$virtue['primary20_color'].';}';
 } else {
   $color_primary30 = '';
 }

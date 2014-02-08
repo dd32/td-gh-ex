@@ -29,11 +29,11 @@ $args = array(
 
 $products = new WP_Query( $args );
 
-$woocommerce_loop['columns'] 	= apply_filters( 'woocommerce_cross_sells_columns', 2 );
+$woocommerce_loop['columns'] 	= apply_filters( 'woocommerce_cross_sells_columns', 3 );
 
 if ( $products->have_posts() ) : ?>
 
-	<div class="cross-sells">
+	<div class="cross-sells col-md-7">
 
 		<h2><?php _e( 'You may be interested in&hellip;', 'woocommerce' ) ?></h2>
 
