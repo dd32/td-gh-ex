@@ -2,7 +2,21 @@
 * by the Catch Themes team, http://catchthemes.com/
 
 == ABOUT Catch Box==
-Catch Box is simple, lightweight, box shaped, and adaptable WordPress Theme for bloggers and professionals. It is based on HTML5, CSS3 and Responsive Web Design to view in various devices. 10 Best Reasons to use Catch Box Theme. 1. Responsive Web Design, 2. Custom Menus (Primary, Secondary and Footer menus), 3. Theme Options for light or dark or blue color scheme, custom link colors, three layout choices, two content choices between excerpt and content option in homepage, feed redirection, custom css styles, 4. Featured Sliders where you can define number of slides and post IDs, 5. Social Links (Facebook, Twitter, RSS, Linkedin, Pinterest, etc), 6. Webmaster Tools (Google, Yahoo and Bing site verification ID, Header and Footer codes), 7. Custom Backgrounds, 8. Custom Header, 9. Catchbox Adspace widget to add any type of Advertisements, and 10. Support popular plugins. Multilingual Ready (WPML) and also currently translated in Brazilian Portuguese, Spanish, Danish, Germany, French, Polish, Czech, Croatian, Italian, Swedish, Russian, Arabic, Serbian, Dutch and Persian. Free Support Forum at http://catchthemes.com/support-forum/forum/catch-box-public/
+Catch Box is simple, lightweight, box shaped, and adaptable WordPress Theme for bloggers and professionals. It is based on HTML5, CSS3 and Responsive Web Design to view in various devices. 10 Best Reasons to use Catch Box Theme. 1. Responsive Web Design, 2. Custom Menus (Primary, Secondary and Footer menus), 3. Theme Options for light or dark or blue color scheme, custom link colors, three layout choices, two content choices between excerpt and content option in homepage, feed redirection, custom css styles, 4. Featured Sliders where you can define number of slides and post IDs, 5. Social Links (Facebook, Twitter, RSS, Linkedin, Pinterest, etc), 6. Webmaster Tools (Google, Yahoo and Bing site verification ID, Header and Footer codes), 7. Custom Backgrounds, 8. Custom Header, 9. Catchbox Adspace widget to add any type of Advertisements, and 10. Support popular plugins. Multilingual Ready (WPML) and also currently translated in Brazilian Portuguese, Spanish, Danish, Germany, French, Polish, Czech, Croatian, Italian, Swedish, Russian, Arabic, Serbian, Dutch, Persian and Slovak. Free Support Forum at http://catchthemes.com/support-forum/forum/catch-box-public/
+
+== License ==
+Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 2, see file license.txt
+
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+Catch Box WordPress Theme, Copyright 2013 Catchthemes.com
+Catch Box is distributed under the terms of the GNU General Public License v2 
+
+Catch Box is a derivative of the Twenty Eleven theme by the WordPress team:
+http://wordpress.org/themes/twentyeleven
+Copyright: Automattic, automattic.com
+Licensed under GPLv2 or later
 
 == Translation ==
 Catch Box theme is translation ready. 
@@ -22,6 +36,7 @@ Added Translation for Serbian by Tomo Popovic (Email: tp0x45@gmail.com)
 Added Translation for Dutch by Alain Baudrez (Email: a.baudrez@gmail.com)
 Added translation for Persian by Ali Akbar Kaviani (Email: persian@wiki10.net)
 Added translation for Hungarian by Szentpétery István (Email: szempy@gmail.com)
+Added translation for Slovak by Michal Kralik (Email: ja@michalkralik.sk)
 
 == Menus ===
 There are 3 Menus registered in this theme. Primary, Secondary and Footer menu. 
@@ -116,7 +131,7 @@ Version 1.2
 * Added language translation file es_ES.po and es_ES.mo files
 * Replaced get_stylesheet_directory_uri to get_template_directory_uri
 * Added flexibility to height and width of Header Image (Logo)
-* Replaced the default menu to responsive inout menu for mobile devices.
+* Replaced the default menu to responsive input menu for mobile devices.
 
 Version 1.2.1
 * Fixed the Featured Image size to match with iPad display
@@ -362,3 +377,12 @@ Version 2.9
 ** Removed duplicate colour code for title
 ** Fixed heading font sizes overwriting page/post title 
 * Replaced responsive menu icon
+
+Version 2.9.1
+* Added Slovak translation sk_SK.po and sk_SK.mo
+* Fixed translation by replacing simplecatch with catchbox in Theme Options panel
+* Fixed mobile menu item text css in dark color scheme
+* Removed Redirect to Theme Options Page on Activation as per new theme review guideline
+* Removed depurated functions add_custom_image_header() and add_custom_background()
+* Replaced theme screenshot file to match with WordPress 3.8
+* Updated theme Tag Filter in style.css

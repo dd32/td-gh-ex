@@ -4,9 +4,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box 2.7.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-09 23:40+0545\n"
-"PO-Revision-Date: 2013-12-09 23:40+0545\n"
-"Last-Translator: Sakin Shrestha <sakin@catchinternet.com>\n"
+"POT-Creation-Date: 2014-02-09 09:15+0545\n"
+"PO-Revision-Date: 2014-02-09 09:15+0545\n"
+"Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Szempy <szempy@gmail.com>\n"
 "Language: hu_HU\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.1\n"
+"X-Generator: Poedit 1.6.4\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:14
@@ -142,7 +142,7 @@ msgstr "Hozzászólások lezárva."
 #: ../content-aside.php:16 ../content-featured.php:14
 #: ../content-gallery.php:16 ../content-gallery.php:48 ../content-image.php:15
 #: ../content-link.php:16 ../content-quote.php:14 ../content-status.php:15
-#: ../content.php:15 ../content.php:19 ../content.php:47 ../functions.php:854
+#: ../content.php:15 ../content.php:19 ../content.php:47 ../functions.php:836
 #, php-format
 msgid "Permalink to %s"
 msgstr "Elérési útvonal %s"
@@ -170,7 +170,7 @@ msgstr "%"
 
 #: ../content-aside.php:33 ../content-gallery.php:32 ../content-image.php:27
 #: ../content-link.php:33 ../content-quote.php:35 ../content-status.php:34
-#: ../content.php:55 ../functions.php:400
+#: ../content.php:55 ../functions.php:382
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Tovább <span class=\"meta-nav\">&rarr;</span>"
 
@@ -202,8 +202,8 @@ msgstr "<b>%</b> Hozzászólás"
 #: ../content-aside.php:50 ../content-featured.php:51
 #: ../content-gallery.php:96 ../content-image.php:74 ../content-link.php:50
 #: ../content-page.php:27 ../content-quote.php:78 ../content-single.php:64
-#: ../content-status.php:51 ../content.php:100 ../functions.php:648
-#: ../functions.php:676 ../image.php:97
+#: ../content-status.php:51 ../content.php:100 ../functions.php:630
+#: ../functions.php:658 ../image.php:97
 msgid "Edit"
 msgstr "Szerkesztés"
 
@@ -274,7 +274,7 @@ msgstr ""
 "szerző </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%4$s"
 "\" title=\"%5$s\" rel=\"author\">%6$s</a></span></span>"
 
-#: ../content-image.php:45 ../functions.php:714
+#: ../content-image.php:45 ../functions.php:696
 #, php-format
 msgid "View all posts by %s"
 msgstr "Összes bejegyzés megjelenítése %stől"
@@ -360,78 +360,78 @@ msgstr "Másodlagos Menü"
 msgid "Footer Menu"
 msgstr "Lábléc Menü"
 
-#: ../functions.php:198
+#: ../functions.php:186
 msgid "Garden"
 msgstr "Kert"
 
-#: ../functions.php:204
+#: ../functions.php:192
 msgid "Flower"
 msgstr "Virág"
 
-#: ../functions.php:210
+#: ../functions.php:198
 msgid "Mountain"
 msgstr "Hegy"
 
-#: ../functions.php:368
+#: ../functions.php:350
 #, php-format
 msgid "Page %s"
 msgstr "%s Oldal"
 
-#: ../functions.php:469
+#: ../functions.php:451
 msgid "Main Sidebar"
 msgstr "Fő oldalsáv"
 
-#: ../functions.php:478
+#: ../functions.php:460
 msgid "Footer Area One"
 msgstr "Első Lábléc Terület"
 
-#: ../functions.php:480 ../functions.php:490 ../functions.php:500
+#: ../functions.php:462 ../functions.php:472 ../functions.php:482
 msgid "An optional widget area for your site footer"
 msgstr "Egy opcionális widget terület az oldalad láblécének"
 
-#: ../functions.php:488
+#: ../functions.php:470
 msgid "Footer Area Two"
 msgstr "Második Lábléc Terület"
 
-#: ../functions.php:498
+#: ../functions.php:480
 msgid "Footer Area Three"
 msgstr "Harmadik Lábléc Terület"
 
-#: ../functions.php:532 ../functions.php:561 ../single.php:15
+#: ../functions.php:514 ../functions.php:543 ../single.php:15
 msgid "Post navigation"
 msgstr "Hozzászólás navigáció"
 
-#: ../functions.php:540 ../functions.php:569
+#: ../functions.php:522 ../functions.php:551
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> Régebbi hozzászólások"
 
-#: ../functions.php:541 ../functions.php:570
+#: ../functions.php:523 ../functions.php:552
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Újabb hozzászólások <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../functions.php:648
+#: ../functions.php:630
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: ../functions.php:665
+#: ../functions.php:647
 #, php-format
 msgid "%1$s on %2$s <span class=\"says\">said:</span>"
 msgstr "%1$s ekkor %2$s <span class=\"says\">ezt mondta:</span>"
 
-#: ../functions.php:671
+#: ../functions.php:653
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s ekkor %2$s"
 
-#: ../functions.php:680
+#: ../functions.php:662
 msgid "Your comment is awaiting moderation."
 msgstr "A hozzászólása moderálásra vár."
 
-#: ../functions.php:689
+#: ../functions.php:671
 msgid "Reply <span>&darr;</span>"
 msgstr "Válasz <span>&darr;</span>"
 
-#: ../functions.php:708
+#: ../functions.php:690
 #, php-format
 msgid ""
 "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel="
@@ -446,64 +446,64 @@ msgstr ""
 "span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title="
 "\"%6$s\" rel=\"author\">%7$s</a></span></span>"
 
-#: ../functions.php:766
+#: ../functions.php:748
 msgid "ID"
 msgstr "ID"
 
-#: ../functions.php:976
+#: ../functions.php:958
 msgid "Name"
 msgstr "Név"
 
-#: ../functions.php:978
+#: ../functions.php:960
 msgid "Email"
 msgstr "Emailcím"
 
-#: ../functions.php:1345
+#: ../functions.php:1327
 msgid "Primary menu"
 msgstr "Elsődleges menü"
 
-#: ../functions.php:1347 ../functions.php:1380
+#: ../functions.php:1329 ../functions.php:1362
 msgid "Skip to primary content"
 msgstr "Tovább az elsődleges tartalomra"
 
-#: ../functions.php:1348 ../functions.php:1381
+#: ../functions.php:1330 ../functions.php:1363
 msgid "Skip to secondary content"
 msgstr "Tovább az másodlagos tartalomra"
 
-#: ../functions.php:1378
+#: ../functions.php:1360
 msgid "Secondary menu"
 msgstr "Másodlegos menü"
 
-#: ../functions.php:1400
+#: ../functions.php:1382
 msgid "Copyright &copy;"
 msgstr "Copyright &copy;"
 
-#: ../functions.php:1404
+#: ../functions.php:1386
 msgid ". All Rights Reserved."
 msgstr ". Minden szerzői jog fenntartva."
 
-#: ../functions.php:1407
+#: ../functions.php:1389
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: ../functions.php:1407
+#: ../functions.php:1389
 msgid "Powered by WordPress"
 msgstr "Powered by WordPress"
 
-#: ../functions.php:1407
+#: ../functions.php:1389
 #, php-format
 msgid "Powered by %s"
 msgstr "Powered by %s"
 
-#: ../functions.php:1409 ../inc/theme-options.php:654
+#: ../functions.php:1391 ../inc/theme-options.php:654
 msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
-#: ../functions.php:1409
+#: ../functions.php:1391
 msgid "Theme Catch Box by Catch Themes"
 msgstr "Catch Box téma Catch Themes-től"
 
-#: ../functions.php:1409
+#: ../functions.php:1391
 #, php-format
 msgid "Theme: %s"
 msgstr "Téma: %s"
@@ -533,44 +533,6 @@ msgstr ""
 "span> itt <a href=\"%3$s\" title=\"Link a teljes méretű képhez\">%4$s "
 "&times; %5$s</a> ebbe <a href=\"%6$s\" title=\"Vissza %7$s\" rel=\"gallery\">"
 "%8$s</a>"
-
-#: ../search.php:15
-#, php-format
-msgid "Search Results for: %s"
-msgstr "A keresés eredménye: % s"
-
-#: ../search.php:43
-msgid ""
-"Sorry, but nothing matched your search criteria. Please try again with some "
-"different keywords."
-msgstr ""
-"Sajnálom, de semmi nem felelt meg a megadott keresési feltételeknek. Kérjük, "
-"próbálja meg újra más kulcsszavakkal."
-
-#: ../searchform.php:11
-msgid "Search"
-msgstr "Keresés"
-
-#: ../sidebar.php:28
-msgid "Archives"
-msgstr "Archívum"
-
-#: ../sidebar.php:37
-msgid "Meta"
-msgstr "Meta"
-
-#: ../single.php:16
-msgid "<span class=\"meta-nav\">&larr;</span> Previous"
-msgstr "<span class=\"meta-nav\">&larr;</span> Előző"
-
-#: ../single.php:17
-msgid "Next <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Következő <span class=\"meta-nav\">&rarr;</span>"
-
-#: ../tag.php:16
-#, php-format
-msgid "Tag Archives: %s"
-msgstr "Archívum címkék: %s"
 
 #: ../inc/theme-options.php:104
 msgid "Favicon URL"
@@ -1055,3 +1017,41 @@ msgstr "Link URL:"
 #: ../inc/widgets.php:57
 msgid "Alt text:"
 msgstr "Alternatív szöveg:"
+
+#: ../search.php:15
+#, php-format
+msgid "Search Results for: %s"
+msgstr "A keresés eredménye: % s"
+
+#: ../search.php:43
+msgid ""
+"Sorry, but nothing matched your search criteria. Please try again with some "
+"different keywords."
+msgstr ""
+"Sajnálom, de semmi nem felelt meg a megadott keresési feltételeknek. Kérjük, "
+"próbálja meg újra más kulcsszavakkal."
+
+#: ../searchform.php:11
+msgid "Search"
+msgstr "Keresés"
+
+#: ../sidebar.php:28
+msgid "Archives"
+msgstr "Archívum"
+
+#: ../sidebar.php:37
+msgid "Meta"
+msgstr "Meta"
+
+#: ../single.php:16
+msgid "<span class=\"meta-nav\">&larr;</span> Previous"
+msgstr "<span class=\"meta-nav\">&larr;</span> Előző"
+
+#: ../single.php:17
+msgid "Next <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Következő <span class=\"meta-nav\">&rarr;</span>"
+
+#: ../tag.php:16
+#, php-format
+msgid "Tag Archives: %s"
+msgstr "Archívum címkék: %s"

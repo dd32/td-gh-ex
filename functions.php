@@ -125,10 +125,7 @@ function catchbox_setup() {
 	// WordPress 3.4+
 	if ( function_exists( 'get_custom_header') ) {
 		add_theme_support( 'custom-background' );
-	} else {
-		// Backward Compatibility for WordPress Version 3.3
-		add_custom_background();
-	}
+	} 
 
 	/**
      * This feature enables post-thumbnail support for a theme.
@@ -178,16 +175,7 @@ function catchbox_setup() {
 			// Admin preview style callback
 			'admin-preview-callback'	=> 'catchbox_admin_header_image'
 		) );
-	} else {
-		// Backward Compatibility for WordPress Version 3.3
-
-		// Add a way for the custom header to be styled in the admin panel that controls
-		// custom headers. See catchbox_admin_header_style(), below.
-		
-		add_custom_image_header( 'catchbox_header_style', 'catchbox_admin_header_style', 'catchbox_admin_header_image' );
-	}
-
-	// ... and thus ends the changeable header business.
+	} 
 
 	// Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI.
 	register_default_headers( array(
@@ -210,12 +198,6 @@ function catchbox_setup() {
 			'description' => __( 'Mountain', 'catchbox' )
 		),
 	) );
-	
-	//Redirect to Theme Options Page on Activation
-	global $pagenow;
-	if ( is_admin() && isset($_GET['activated'] ) && $pagenow =="themes.php" ) {
-		wp_redirect( 'themes.php?page=theme_options' );
-	}	
 
 }
 endif; // catchbox_setup

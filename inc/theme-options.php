@@ -21,7 +21,7 @@ function catchbox_admin_enqueue_scripts( $hook_suffix ) {
 	wp_enqueue_style( 'catchbox-theme-options', get_template_directory_uri() . '/inc/theme-options.css', false, '2011-04-28' );
 	wp_enqueue_script( 'catchbox-theme-options', get_template_directory_uri() . '/inc/theme-options.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable', 'farbtastic' ), '2011-06-10' );
 	wp_enqueue_style( 'farbtastic' );
-	wp_enqueue_script( 'simplecatch_upload', get_template_directory_uri().'/inc/add_image_scripts.js', array( 'jquery','media-upload','thickbox' ) );
+	wp_enqueue_script( 'catchbox_upload', get_template_directory_uri().'/inc/add_image_scripts.js', array( 'jquery','media-upload','thickbox' ) );
 	wp_enqueue_style( 'thickbox' );
 }
 add_action( 'admin_print_styles-appearance_page_theme_options', 'catchbox_admin_enqueue_scripts' );
@@ -259,7 +259,7 @@ function catchbox_settings_field_favicon() {
 	$options = catchbox_get_theme_options();
 	?>
 	<input class="upload-url" type="text" name="catchbox_theme_options[fav_icon]" id="fav-icon" size="65" value="<?php if ( isset( $options[ 'fav_icon' ] ) ) echo esc_attr( $options[ 'fav_icon'] ); ?>" />
-    <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Add/Change Favicon','simplecatch' );?>" />
+    <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Add/Change Favicon','catchbox' );?>" />
 	<?php
 }
 
@@ -273,7 +273,7 @@ function catchbox_settings_field_webclip() {
 	$options = catchbox_get_theme_options();
 	?>
 	<input class="upload-url" type="text" name="catchbox_theme_options[web_clip]" id="web-clip" size="65" value="<?php if ( isset( $options[ 'web_clip' ] ) ) echo esc_attr( $options[ 'web_clip'] ); ?>" />
-    <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Add/Change Web Clip Icon','simplecatch' );?>" />
+    <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Add/Change Web Clip Icon','catchbox' );?>" />
 	<?php
 }
 
@@ -942,7 +942,7 @@ function catchbox_theme_options_render_page() {
                                             </td>
                                         </tr>
                                         <tr>
-                                        	<td></td><td><?php _e( 'Note: Here you can put scripts from Google, Facebook, Add This etc. which will load on footer', 'simplecatch' ); ?></td>
+                                        	<td></td><td><?php _e( 'Note: Here you can put scripts from Google, Facebook, Add This etc. which will load on footer', 'catchbox' ); ?></td>
                                    	 	</tr>
                                     </tbody>
                                 </table>

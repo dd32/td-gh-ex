@@ -89,6 +89,9 @@ a {
 	background: -webkit-linear-gradient(#383838, #272727);
 	border-bottom: 1px solid #222;
 }
+.tinynav option {
+    color: #bbb;
+}
 
 /* =Content
 ----------------------------------------------- */

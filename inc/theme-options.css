@@ -373,3 +373,7 @@ a.readmore:hover {
 	opacity: 1;
 	-moz-opacity: 1;
 }
+
+#catchthemes .form-table th {
+    padding-left: 20px;
+}
