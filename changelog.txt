@@ -1,3 +1,8 @@
+Version 1.09 (2014-02-09)
+-------------------------
+- Fixed alignment on post-nav-newer
+
+
 Version 1.08 (2014-02-05)
 -------------------------
 - Misc bug fixes
