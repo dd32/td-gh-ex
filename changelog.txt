@@ -1,3 +1,8 @@
+Version 1.10 (2014-02-09)
+-------------------------
+- Fixed a styling issue with align-left and align-right @600px
+
+
 Version 1.09 (2014-02-09)
 -------------------------
 - Fixed alignment on post-nav-newer
