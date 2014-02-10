@@ -10,13 +10,11 @@
 	$all_videos.not( 'object object' ).each( function() {
 		var $video = $(this);
 
-		if ( $video.parents( 'object' ).length ) {
+		if ( $video.parents( 'object' ).length )
 			return;
-		}
 
-		if ( ! $video.prop( 'id' ) ) {
+		if ( ! $video.prop( 'id' ) )
 			$video.attr( 'id', 'rvw' + Math.floor( Math.random() * 999999 ) );
-		}
 
 		$video
 			.wrap( '<div class="responsive-video-wrapper" style="padding-top: ' + ( $video.attr( 'height' ) / $video.attr( 'width' ) * 100 ) + '%" />' )
@@ -24,42 +22,32 @@
 			.removeAttr( 'width' );
 	} );
 
+	// Image anchor
+	$( 'a:has(img)' ).addClass( 'image-anchor' );
+
 	$( 'a[href="#"]' ).click( function(e) {
 		e.preventDefault();
 	} );
 
 	// Shortcode
-	if ( arcade_basic_vars.carousel ) {
-		var autoplay = ( arcade_basic_vars.autoplay ) ? '' : 'pause';
+	if ( theme_js_vars.carousel ) {
+		var autoplay = ( theme_js_vars.autoplay ) ? '' : 'pause';
 		$( '.carousel' ).carousel( autoplay );
 	}
 
-	if ( arcade_basic_vars.tooltip ) {
+	if ( theme_js_vars.tooltip )
 		$( 'a[rel="tooltip"]' ).tooltip();
-	}
 
-	if ( arcade_basic_vars.tabs ) {
+	if ( theme_js_vars.tabs ) {
 		$( '.nav-tabs a' ).click( function(e) {
 			e.preventDefault();
 			$(this).tab( 'show' );
 		} );
 	}
 
-	$( '#site-navigation' ).find( '.dropdown-toggle' ).click( function(e) {
-		e.preventDefault();
-
-		$( '#site-navigation' ).find( 'li' ).not( $(this).parents() ).removeClass( 'open' );
-		$(this).parent().toggleClass( 'open' );
-	} );
-
     // Arc the site title
-    if ( 0 != arcade_basic_vars.arc ) {
-        $( '#site-title a' ).arctext( {
-        	radius: arcade_basic_vars.arc,
-        	rotate: is_rtl,
-        	fitText	: arcade_basic_vars.fittext
-        } );
-    }
+    if ( theme_js_vars.arc )
+        $( '#site-title a' ).arctext( { radius: theme_js_vars.arc, rotate: is_rtl } );
 
     // Set up jumbo header image
     if ( $card.length ) {
@@ -77,11 +65,10 @@
 			} )
 			.trigger( 'resize.title-card' )
 			.scroll( function () {
-				if ( $window.scrollTop() >= ( $more_site.data( 'scroll-to' ) - 50 ) ) {
+				if ( $window.scrollTop() >= ( $more_site.data( 'scroll-to' ) - 50 ) )
 					$( '#site-navigation' ).addClass( 'black' );
-				} else {
+				else
 					$( '#site-navigation' ).removeClass( 'black' );
-				}
 			} );
 
         $card.fillsize( '> img.header-img' );

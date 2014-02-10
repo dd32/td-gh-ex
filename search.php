@@ -16,19 +16,19 @@ get_header(); ?>
 							global $wp_query;
 						    $num = $wp_query->found_posts;
 							printf( '%1$s "%2$s"',
-							    $num . __( ' search results for', 'arcade-basic'),
+							    $num . __( ' search results for', 'arcade'),
 							    get_search_query()
 							);
 						?></h1>
         			</header>
         			<?php
         			while ( have_posts() ) : the_post();
-        				get_template_part( 'template-parts/content', get_post_format() );
+        				get_template_part( 'content', get_post_format() );
         			endwhile;
 
-        			the_posts_navigation();
+        			bavotasan_pagination();
         		else :
-        			get_template_part( 'template-parts/content', 'none' );
+        			get_template_part( 'content', 'none' );
         		endif;
         		?>
         	</section><!-- #primary.c8 -->
