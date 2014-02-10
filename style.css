@@ -5,7 +5,7 @@ Author: Sampression
 Author URI: http://www.sampression.com 
 Description: Sampression Lite is a minimalist, fully responsive, retina ready, translation ready, clean theme, perfect for blogging. It's lightweight responsive design allows this theme to adapt across a range of screen sizes. Besides an elegant design, Sampression Lite features customizable menus and widgets, supports custom header color and image, custom background color and image, along with a threaded comments section. It supports sticky notes with special effects and allows for the best placement of feature images on posts. It is a full fledged theme with easily customizable theme option page.
 
-Version: 1.4
+Version: 1.4.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, orange, green, one-column, two-columns, flexible-width, custom-menu, featured-image-header, featured-images, post-formats, sticky-post, theme-options, threaded-comments, right-sidebar
@@ -182,7 +182,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 /* #Basic WordPress Classes
 ================================================== */
 /* Aligns, prev next links */
-	.alignnone{float:left; padding-right:10px; padding-right:1.0rem; padding-top:5px; padding-top:0.5rem; padding-bottom:5px; padding-bottom:0.5rem;}
+	.alignnone{ padding-right:10px; padding-right:1.0rem; padding-top:5px; padding-top:0.5rem; padding-bottom:5px; padding-bottom:0.5rem;}
 	.alignleft {float:left;}
 	.alignright {float:right;}
 	.aligncenter, div.aligncenter {	display: block;	margin-left: auto;	margin-right: auto;}
@@ -355,7 +355,7 @@ table {
 	}
 table td, table th {
 	border:1px solid #eee; border:0.1rem solid #eee;
-	padding:5px; padding:5rem;
+	padding:5px; padding:0.5rem;
 	} 
 table th {
 	font-weight:bold;
@@ -466,13 +466,19 @@ body {
 	}
 a#logo-area:link {
 	text-decoration:none;
+        vertical-align: middle;
+        display: inline-block;
 	}
 img.logo-img{
-    float: left;
+        float: left;
 	display:inline;
 	margin-right:10px;
 	margin-right:1rem;
 }
+.logo-txt{
+        vertical-align: middle;
+        display: inline-block;
+        }
 #logo-wrapper .logo-txt  {
 	overflow:hidden;
 	float:left;
@@ -491,7 +497,11 @@ img.logo-img{
 	}
 #content .bypostauthor {
 }
-
+#header .container .seven.columns {
+        float: right;
+        margin: 0 0 10px; 
+        }
+        
 /** Top Nav **/
 #top-nav ul {
 	margin:0 0 20px ; margin:0 0 2.0rem ;

@@ -146,8 +146,6 @@
 		'exclude'=>  array( 1, 2, 3) //exclude by category id
 		); */
 		$categories = get_categories($args);
-		
-        $categories = get_categories();
         foreach($categories as $category):
         ?>
         <li><a href="javascript:void(0);" data-filter=".<?php echo $category->slug; ?>" id="<?php echo $category->slug; ?>" class="filter-data"><span></span><?php echo $category->name; ?></a></li>

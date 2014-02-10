@@ -36,10 +36,12 @@ function sampression_admin_enqueue_scripts() {
 	}
 
 function sampression_admin_enqueue_styles() {
-	/* register */
+        /* register */
 	wp_register_style( 'sampression-theme-options-css', get_template_directory_uri() . '/includes/theme-options/theme-options.css', array(), '1.4', 'screen' );
+        wp_register_style('thickbox', get_template_directory_uri() . 'wp-includes/js/thickbox/thickbox.css', false, false, 'screen');
 	/* enqueue */
 	wp_enqueue_style('sampression-theme-options-css');
+        wp_enqueue_style('thickbox');
 }
 
 /*=======================================================================
@@ -278,13 +280,13 @@ function sampression_options_tabs() { ?>
         	<li class="group">
             <label for="get_facebook"><?php _e('Facebook','sampression'); ?></label>
             <input type="text" name="get_facebook" id="get_facebook" class="input-text" value="<?php echo stripslashes(get_option('opt_get_facebook')); ?>" />
-            <p class="note"><em><?php _e('Insert your Facebook ID only, For eg. <strong>xyz</strong> from http://facebook.com/<strong>xyz</strong>', 'sampression'); ?></em></p>
+            <p class="note"><em><?php _e('Insert the full URL of your Facebook ID, For eg.  http://facebook.com/xyz', 'sampression'); ?></em></p>
         	</li>
             
             <li class="group">
             <label for="get_twitter"><?php _e('Twitter','sampression'); ?></label>
             <input type="text" name="get_twitter" id="get_twitter" class="input-text" value="<?php echo stripslashes(get_option('opt_get_twitter')); ?>" />
-            <p class="note"><em><?php _e('Insert your Twitter ID only, For eg. <strong>xyz</strong> from http://twitter.com/<strong>xyz</strong>', 'sampression'); ?></em></p>
+            <p class="note"><em><?php _e('Insert the full URL of your Twitter ID, For eg. http://twitter.com/xyz', 'sampression'); ?></em></p>
         	</li>
             
             <li class="group">
@@ -296,7 +298,7 @@ function sampression_options_tabs() { ?>
 			<li class="group">
             <label for="get_youtube"><?php _e('YouTube','sampression'); ?></label>
             <input type="text" name="get_youtube" id="get_youtube" class="input-text" value="<?php echo stripslashes(get_option('opt_get_youtube')); ?>" />
-            <p class="note"><em><?php _e('Insert the full URL of your YouTube Channel, For eg. https://www.youtube.com/user/<strong>xyz</strong>', 'sampression'); ?></em></p>
+            <p class="note"><em><?php _e('Insert the full URL of your YouTube Channel, For eg. https://www.youtube.com/user/xyz', 'sampression'); ?></em></p>
         	</li>
 			
             <li class="group">
