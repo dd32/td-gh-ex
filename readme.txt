@@ -4,8 +4,8 @@ Author URI: https://github.com/bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
 Tags: two-column, left-sidebar, custom-menu, featured-images, sticky-post, threaded-comments, translation-ready, pagination, image-slider, white, blue, gray.
 Requires at least: 3.4
-Tested up to: 3.8
-Stable tag: 1.1
+Tested up to: 3.8.1
+Stable tag: 1.2
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -101,13 +101,20 @@ You can display Custom Header image by adding it via 'Appearances' > 'Header' me
 
 == Changelog ==
 
+= v1.2 - 09.02.2014 =
+* Update : We updated all functionality for wordpress 3.8.1.
+* Bugfix: We fixed the bug with deregister core-bundled scripts.
+
 = v1.1 - 17.01.2014 =
-Custom thumbnail size is added. 
+* NEW: Custom thumbnail size is added. 
 
 = v1.0 =
 Ability to use the Archy theme in your site.
 
 == Upgrade Notice ==
+
+= v1.2 =
+We updated all functionality for wordpress 3.8.1. We fixed the bug with deregister core-bundled scripts.
 
 = v1.1 =
 Custom thumbnail size is removed. 

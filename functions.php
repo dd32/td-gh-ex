@@ -19,7 +19,7 @@
  * For more information on hooks, actions, and filters, @link http://codex.wordpress.org/Plugin_API
  *
  * @subpackage Archy
- * @since Archy 1.0
+ * @since Archy 1.2
  */
 
 /**
@@ -74,15 +74,8 @@ function archy_register_scripts() {
 	// threaded comments (when in use).
 	if ( is_singular() && comments_open() )
 		wp_enqueue_script( 'comment-reply' );
-	wp_enqueue_script( 'jquery' );
-	wp_deregister_script( 'jquery-ui-core' );
-	wp_enqueue_script( 'jquery-ui-core', get_site_url() . '/wp-includes/js/jquery/ui/jquery.ui.core.min.js' );
-	wp_deregister_script( 'jquery-effects-core' );
-	wp_enqueue_script( 'jquery-effects-core', get_site_url() . '/wp-includes/js/jquery/ui/jquery.ui.effect.min.js' );
-	wp_deregister_script( 'jquery-effects-drop' );
-	wp_enqueue_script( 'jquery-effects-drop', get_site_url() . '/wp-includes/js/jquery/ui/jquery.ui.effect-drop.min.js' );
 	// Adds functions realized on script.js
-	wp_enqueue_script( 'archy-script', get_template_directory_uri() . '/js/script.js' );
+	wp_enqueue_script( 'archy-script', get_template_directory_uri() . '/js/script.js', array( 'jquery', 'jquery-ui-core', 'jquery-effects-core', 'jquery-effects-drop' ) );
 	//Detect plugin. For use on Front End only.
 	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 	// Adds script oriented for http://wordpress.org/plugins/gallery-plugin/ and http://bestwebsoft.com/plugin/portfolio-plugin/

@@ -5,7 +5,7 @@
  * The area of the page that contains comments and the comment form.
  *
  * @subpackage Archy
- * @since Archy 1.0
+ * @since Archy 1.2
  */
 
 /*

@@ -5,7 +5,7 @@
  * Contains footer content and the closing of the #wrapper, .archy-main-site-container and .archy-main-site div elements.
  *
  * @subpackage Archy
- * @since Archy 1.0
+ * @since Archy 1.2
  */
 ?>
 		</div><?php // end wrapper ?>

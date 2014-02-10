@@ -7,7 +7,7 @@
  * 'pages' on your WordPress site will use a different template.
  *
  * @subpackage Archy
- * @since Archy 1.0
+ * @since Archy 1.2
  */
 get_header();
 get_sidebar(); ?>
