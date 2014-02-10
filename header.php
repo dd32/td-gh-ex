@@ -43,7 +43,7 @@
 				
 				<div class="group pad">
 					<?php echo alx_site_title(); ?>
-					<?php if ( !ot_get_option('site-description') ): ?><p class="site-description"><?php bloginfo( 'description' ); ?></p><?php endif; ?>
+					<?php if ( ot_get_option('site-description') != 'off' ): ?><p class="site-description"><?php bloginfo( 'description' ); ?></p><?php endif; ?>
 				</div>
 				
 				<?php if (has_nav_menu('header')): ?>

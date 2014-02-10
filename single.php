@@ -33,7 +33,7 @@
 		
 		<?php the_tags('<p class="post-tags"><span>'.__('Tags:','hueman').'</span> ','','</p>'); ?>
 		
-		<?php if ( !ot_get_option( 'author-bio' ) && get_the_author_meta( 'description' ) ): ?>
+		<?php if ( ( ot_get_option( 'author-bio' ) != 'off' ) && get_the_author_meta( 'description' ) ): ?>
 			<div class="author-bio">
 				<div class="bio-avatar"><?php echo get_avatar(get_the_author_meta('user_email'),'128'); ?></div>
 				<p class="bio-name"><?php the_author_meta('display_name'); ?></p>

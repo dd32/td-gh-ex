@@ -1,6 +1,15 @@
   Theme : Hueman (wordpress.org release)
-Version : 1.3.6
+Version : 1.3.7
  Author : Alexander "Alx" Agnarson - http://alxmedia.se
+
+February 10 2014 - 1.3.7
+===========================================================
+- Updated to OptionTree 2.3.0
+- Changed checkbox options to the new on-off toggle
+- Added additional Google fonts
+- Added styling option to recolor the header menu area
+- Added option to disable featured image placeholders - @fran-kee (via GitHub)
+- Updated help dropdown information and included theme documentation with the theme
 
 January 29 2014 - 1.3.6
 ===========================================================
