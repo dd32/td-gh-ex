@@ -44,8 +44,8 @@ function hex2rgb($hex) {
   $total = 1;
   $args['mid_size'] = 3;
   $args['end_size'] = 1;
-  $args['prev_text'] = '«';
-  $args['next_text'] = '»';
+  $args['prev_text'] = '&laquo;';
+  $args['next_text'] = '&raquo';
  
   if ($max > 1) echo '<div class="wp-pagenavi">';
  	if ($total == 1 && $max > 1)

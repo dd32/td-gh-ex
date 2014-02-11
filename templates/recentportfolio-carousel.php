@@ -18,18 +18,18 @@
 						<div class="<?php echo $itemsize; ?>">
 							<div class="grid_item portfolio_item all postclass">
 								<?php if (has_post_thumbnail( $post->ID ) ) {
-									$image_url = wp_get_attachment_image_src( 
-									get_post_thumbnail_id( $post->ID ), 'full' ); 
-									$thumbnailURL = $image_url[0]; 
-									 $image = aq_resize($thumbnailURL, $slidewidth, $slideheight, true);
-										if(empty($image)) {$image = $thumbnailURL;} }?>
-									<div class="imghoverclass">
-	                                       <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
-	                                       <img src="<?php echo $image ?>" alt="<?php the_title(); ?>" class="lightboxhover" style="display: block;">
-	                                       </a> 
-	                                </div>
-                           				<?php $image = null; $thumbnailURL = null;?>
-                           <?php } ?>
+										$image_url = wp_get_attachment_image_src( 
+										get_post_thumbnail_id( $post->ID ), 'full' ); 
+										$thumbnailURL = $image_url[0]; 
+										 $image = aq_resize($thumbnailURL, $slidewidth, $slideheight, true);
+											if(empty($image)) {$image = $thumbnailURL;}?>
+										<div class="imghoverclass">
+		                                       <a href="<?php the_permalink();  ?>" title="<?php the_title(); ?>">
+		                                       <img src="<?php echo $image ?>" alt="<?php the_title(); ?>" class="lightboxhover" style="display: block;">
+		                                       </a> 
+		                                </div>
+	                           				<?php $image = null; $thumbnailURL = null;?>
+                           			<?php } ?>
               				<a href="<?php the_permalink() ?>" class="portfoliolink">
               					<div class="piteminfo">   
                           			<h5><?php the_title();?></h5>
