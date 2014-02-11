@@ -3,7 +3,7 @@
  * The template for displaying image attachments
  *
  * @subpackage Archy
- * @since Archy 1.2
+ * @since Archy 1.3
  */
 get_header();
 get_sidebar(); ?>

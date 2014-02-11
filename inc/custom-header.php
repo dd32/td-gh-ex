@@ -5,7 +5,7 @@
  * See http://codex.wordpress.org/Custom_Headers
  *
  * @subpackage Archy
- * @since Archy 1.2
+ * @since Archy 1.3
  *
  * Set up the WordPress core custom header arguments and settings.
  *

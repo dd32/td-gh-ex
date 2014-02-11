@@ -3,7 +3,7 @@
  * The template for displaying all single posts
  *
  * @subpackage Archy
- * @since Archy 1.2
+ * @since Archy 1.3
  */
 get_header();
 get_sidebar(); ?>

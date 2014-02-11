@@ -3,7 +3,7 @@
  * The template for displaying 404 pages (Not Found)
  *
  * @subpackage Archy
- * @since Archy 1.2
+ * @since Archy 1.3
  */
 get_header();
 get_sidebar(); ?>

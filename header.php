@@ -5,7 +5,7 @@
  * Displays all of the <head> section and everything up till <div id="wrapper">
  *
  * @subpackage Archy
- * @since Archy 1.2
+ * @since Archy 1.3
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -38,7 +38,7 @@
 				<div class="archy-site-header-container archy-clearfix">
 					<div class="archy-site-header-container-group">
 						<hgroup class="archy-site-title-desctiption">
-							<h1 class="archy-site-title"><a href="<?php echo home_url(); ?>"><?php echo strtoupper( bloginfo( 'name' ) ); ?></a></h1>
+							<h1 class="archy-site-title"><a href="<?php echo esc_url( home_url() ); ?>"><?php echo bloginfo( 'name' ); ?></a></h1>
 							<h2 class="archy-site-description"><?php bloginfo( 'description' ); ?></h2>
 						</hgroup>
 						<nav id="navigation" class="archy-main-navigation">
