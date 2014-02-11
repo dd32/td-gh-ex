@@ -57,8 +57,13 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@ Version: 1.3.6.6
+1.Add new theme option for webriti premium themes.
+2.Add new tab for subscriber in theme option panel.
+3.Small White Space Removed in theme_setup.php .
+
 @version 1.3.6.5
-1.Widgets design issue fixed.
+1.Widgets desing issue fixed.
 2.Added in header 'IE=edge'
 @version 1.3.6.4
 ->>Issue Raised by Sanjiv Saha,Removed ['widgets managed']['Deceaded Content Width:720 ']

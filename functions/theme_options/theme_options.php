@@ -24,4 +24,6 @@ function busiprof_option_panal_function ()
 	require_once('css/tooltip_css.php');
 	require_once('webr_options_pannel.php');
 }
+// Premium theme option panel
+require_once('webriti/webriti_theme.php');
 ?>

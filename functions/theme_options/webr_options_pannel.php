@@ -73,11 +73,6 @@
 										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri().'/functions/theme_options/images/cross.png' ?> " /></p></td>
 										<td style="text-align: center;"><p><img src="<?php echo get_template_directory_uri().'/functions/theme_options/images/icon_check.png' ?> " /></p></td>
 									</tr>
-									
-									
-									
-									
-										
 									<tr>
 										<td>&nbsp;</td>
 										<td><p><b> <?php _e('Contact Form Template','busi_prof'); ?></b><span class="icon help" style="float:right">
@@ -135,6 +130,7 @@
 				<a href="#busiprof-option-testimonials" class="nav-tab" id="busiprof-option-testimonials-tab"><?php _e("Home Testmonials",'busi_prof')?></a>
 				<a href="#busiprof-option-footer" class="nav-tab" id="busiprof-option--tab"><?php _e("Footer Customisation",'busi_prof');?></a>
 				<a href="#busiprof-option-help" class="nav-tab" id="busiprof-option-help-tab"><?php _e("Help and Support",'busi_prof');?></a>
+				<a href="#busiprof-option-subscriber" class="nav-tab" id="busiprof-option-subscriber-tab"><?php _e("Join Our Newsletter",'busi_prof');?></a>
 			</h2>
 			<div id="busiprof_optionsframework-metabox" class="metabox-holder">
 				<div id="busiprof_optionsframework" class="postbox">
@@ -160,6 +156,10 @@
 						<div class="postbox group" style="display: none; background:white" id="busiprof-option-help"  >
 							<h3><?php _e("Help and Support",'busi_prof');?></h3><br>
 							<?php require_once('help.php')?>
+						</div>
+						<div class="postbox group" style="display: none; background:white" id="busiprof-option-subscriber"  >
+							<h3><?php _e("Join Our Newsletter",'busi_prof');?></h3><br>
+							<?php require_once('webriti/subscriber.php')?>
 						</div>
 				</div>
 			</div>
