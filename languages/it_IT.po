@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2014-02-03 18:32+0100\n"
+"PO-Revision-Date: 2014-02-10 11:36+0100\n"
 "Last-Translator: Miguel Angel <miguel@ibermega.com>\n"
 "Language-Team: IBERMEGA digital <soporte@ibermega.com>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -498,38 +498,6 @@ msgid "Enter the full URL."
 msgstr "Inserire l'URL completo."
 
 #. Theme Options/theme
-msgid "Analytics and SEO"
-msgstr "Analytics e SEO"
-
-#. Theme Options/theme
-msgid "Google Analytics"
-msgstr "Google Analytics"
-
-#. Theme Options/theme
-msgid "Google Analytics ID. Insert only the code as in the example."
-msgstr "Google Analytics ID. Inserire solo il codice come nell'esempio."
-
-#. Theme Options/theme
-msgid ""
-"Google Analytics Domain without www. Enter the domain as shown in the "
-"verification code and installing Analytics."
-msgstr ""
-"Google Analytics dominio senza www. Inserisci il dominio come mostrato nel "
-"codice di verifica e l'installazione di Analytics."
-
-#. Theme Options/theme
-msgid "Webmaster Tools (Google)"
-msgstr "Strumenti per i Webmaster (Google)"
-
-#. Theme Options/theme
-msgid ""
-"ID google-site-verification. Log in to Google Webmasters to get the code and "
-"insert it into this field."
-msgstr ""
-"ID google-site-verification. Accedere a Google Webmaster per ottenere il "
-"codice e inserirlo in questo campo."
-
-#. Theme Options/theme
 msgid "Designs"
 msgstr "Designs"
 
@@ -546,12 +514,8 @@ msgid "Contact"
 msgstr "Contatto"
 
 #. Theme Options/theme
-msgid ""
-"Contact Details. Insert into your pages or entries the following shortcode "
-"to display the Contact Form: [iberthemeform]"
-msgstr ""
-"Dettagli di contatto. Inserire nelle vostre pagine o voci la seguente "
-"shortcode per visualizzare il modulo di contatto: [iberthemeform]"
+msgid "Contact Details."
+msgstr "Dettagli di contatto."
 
 #. Theme Options/theme
 msgid "Company Name"
@@ -690,61 +654,6 @@ msgstr "Continuare a lavorare"
 msgid "Athenea Documentation"
 msgstr "Athenea Documentazione"
 
-#. Contact Form
-msgid "Contact Form"
-msgstr "Modulo di contatto"
-
-#. Contact Form
-msgid "Name"
-msgstr "Nome"
-
-#. Contact Form
-msgid "Full name"
-msgstr "Nome e cognome"
-
-#. Contact Form
-msgid "E-Mail"
-msgstr "E-Mail"
-
-#. Contact Form
-msgid "E-mail"
-msgstr "E-mail"
-
-#. Contact Form
-msgid "Subject"
-msgstr "Soggetto"
-
-#. Contact Form
-msgid "Accept"
-msgstr "Accettare"
-
-#. Contact Form
-msgid "Accept the Privacy Policy."
-msgstr "Accettare la Privacy Policy."
-
-#. Contact Form
-msgid "Send"
-msgstr "Inviare"
-
-#. Contact Form
-msgid "They have contacted from their website"
-msgstr "Essi hanno contattato dal loro sito"
-
-#. Contact Form
-msgid "en"
-msgstr "it"
-
-#. Contact Form pages
-msgid ""
-"<div class=\"alert alert-success\"><h3>Message Received</h3>Thank you for "
-"contacting us.<br><br>Our systems are processing your message and reply you "
-"as soon as possible.<br><br><b>Thanks for your attention</b></div>"
-msgstr ""
-"<div class=\"alert alert-success\"> <h3> messaggio ricevuto </ h3> Grazie "
-"per averci contattato. <br> nostri sistemi elaborano il messaggio e lo "
-"risponderemo appena possibile. <br > <br> <b> Grazie per la vostra "
-"attenzione </ b> </ div>"
-
 #. Portada
 msgid "Continue reading &raquo;&raquo;"
 msgstr "Continua la lettura »»"
@@ -773,6 +682,10 @@ msgstr "Athenea Contatto"
 msgid "Top"
 msgstr "Superiore"
 
+#. Footer
+msgid "Theme designed by"
+msgstr "Tema progettato da"
+
 #. Comments
 msgid "Comments"
 msgstr "Comments"
@@ -796,3 +709,27 @@ msgstr "Lascia una risposta a %s"
 #. Comments
 msgid "Reply <span>&darr;</span>"
 msgstr "Rispondi <span> ↓ </ span>"
+
+#. Comments
+msgid "Comment"
+msgstr "Commento"
+
+#: Comments
+msgid "required"
+msgstr "richiesto"
+
+#: Comments
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "Devi essere <a href=\"%s\">registrati</a> per lasciare un commento."
+
+#: Comments
+msgid ""
+"Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
+"this account\">Log out?</a>"
+msgstr ""
+"Registrato come <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Esci da "
+"questo account\">Esci?</a>"
+
+#: Comments
+msgid "will not be published"
+msgstr "non sarà pubblicato"

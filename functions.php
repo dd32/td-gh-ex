@@ -21,32 +21,18 @@ if ( ! function_exists( 'athenea_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function athenea_setup() {
-
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on Athenea, use a find and replace
-	 * to change 'athenea' to the name of your theme in all the template files
-	 */
+    // Make theme available for translation.
 	load_theme_textdomain( 'athenea', get_template_directory() . '/languages' );
-
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
-
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
-	 */
+	// Enable support for Post Thumbnails on posts and pages.
 	add_theme_support( 'post-thumbnails' );
-	
+	// Add theme support for custom CSS in the TinyMCE visual editor
 	add_editor_style();
-
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'athenea' ),
 	) );
-
 	// Enable support for Post Formats.
 	//add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 
@@ -59,9 +45,8 @@ function athenea_setup() {
 endif; // athenea_setup
 add_action( 'after_setup_theme', 'athenea_setup' );
 
-/**
- * Register widgetized area and update sidebar with default widgets.
- */
+
+// Register widgetized area and update sidebar with default widgets.
 function athenea_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'athenea' ),
@@ -111,36 +96,13 @@ function athenea_widgets_init() {
 }
 add_action( 'widgets_init', 'athenea_widgets_init' );
 
-/**
- * Enqueue scripts and styles.
- */
-function athenea_scripts() {
-	
-	wp_enqueue_script( 'jquery');
-	
+// Enqueue scripts and styles.
+function athenea_scripts_styles() {
 	wp_enqueue_style( 'athenea-style', get_stylesheet_uri() );
-
-	wp_enqueue_script( 'athenea-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
-
-	wp_enqueue_script( 'athenea-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_style('bootstrap', get_template_directory_uri().'/inc/dist/css/bootstrap.min.css', false, '3.0.3', false, array('all'));
+	wp_enqueue_style('genericons', get_template_directory_uri().'/inc/dist/genericons/genericons.css', false, array('all'));
 	
-    wp_register_script('bootstrap', get_template_directory_uri().'/inc/dist/js/bootstrap.min.js', false, '3.0.3', true, array('all'));
-    wp_enqueue_script('bootstrap');
-   
-    wp_register_style('bootstrap', get_template_directory_uri().'/inc/dist/css/bootstrap.min.css', false, '3.0.3', false, array('all'));
-    wp_enqueue_style('bootstrap');
-   
-    wp_register_script('athenea-menu', get_template_directory_uri().'/js/athenea.js', false, '3.0.3', false, array('all'));
-    wp_enqueue_script('athenea-menu');
-	
-	wp_register_style('genericons', get_template_directory_uri().'/inc/dist/genericons/genericons.css', false, '3.0.3', false, array('all'));
-    wp_enqueue_style('genericons');
-   
-   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-	
-	/** Cambio de design  */
+	/** Design change  */
 	if ( !is_admin() ) {
 	  if ( of_get_option('unique_design', 'design-red' ) == 'design-red' ) {
 		  wp_enqueue_style( 'athenea-red', get_template_directory_uri() . '/inc/dist/css/athenea-red-min.css' );
@@ -151,61 +113,111 @@ function athenea_scripts() {
 	  }
 	}
 	
+	wp_enqueue_script( 'athenea-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'athenea-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script('bootstrap', get_template_directory_uri().'/inc/dist/js/bootstrap.min.js', false, '3.0.3', true, array('all'));
+	wp_enqueue_script('athenea-menu', get_template_directory_uri().'/js/athenea.js', false, array('all'));
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
 }
-add_action( 'wp_enqueue_scripts', 'athenea_scripts' );
+add_action( 'wp_enqueue_scripts', 'athenea_scripts_styles' );
+
+// Adds IE specific scripts
+function athenea_print_ie_scripts() {
+?>
+<!--[if lt IE 9]>
+ <script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.min.js" type="text/javascript"></script>
+ <script src="<?php echo get_template_directory_uri(); ?>/js/respond.min.js" type="text/javascript"></script>
+<![endif]-->
+<?php
+}
+add_action( 'wp_head', 'athenea_print_ie_scripts', 11 );
+
 
 /**
- * Filters comments_form() default arguments
+ * Custom functions that act independently of the theme templates
  *
- * @author	IBERMEGA digital
- * @since	1.7.0 - 16.06.2012
+ * Eventually, some of the functionality here could be replaced by core features
  *
- * @param	array	$defaults
- *
- * @return	array
+ * @package Athenea
  */
+
+// Name
+function athenea_comment_form_field_author( $html ) {
+	$commenter	=	wp_get_current_commenter();
+	$req		=	get_option( 'require_name_email' );
+	$aria_req	=	( $req ? " aria-required='true'" : '' );
+	
+	return	'<div class="comment-form-author control-group">
+				<label for="author">' . __( 'Name', 'athenea' ) . '</label>
+				<div class="controls">
+					<input id="author" name="author" type="text" value="' . esc_attr(  $commenter['comment_author'] ) . '" class="form-control"' . $aria_req . ' />
+					' . ( $req ? '<p class="help-inline"><span class="required">' . __('required', 'athenea') . '</span></p>' : '' ) . '
+				</div>
+			</div>';
+}
+add_filter( 'comment_form_field_author', 'athenea_comment_form_field_author');
+
+
+// E-Mail
+function athenea_comment_form_field_email( $html ) {
+	$commenter	=	wp_get_current_commenter();
+	$req		=	get_option( 'require_name_email' );
+	$aria_req	=	( $req ? " aria-required='true'" : '' );
+	
+	return	'<div class="comment-form-email control-group">
+				<label for="email">' . __( 'Email', 'athenea' ) . '</label>
+				<div class="controls">
+					<input id="email" name="email" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" class="form-control"' . $aria_req . ' />
+					<p class="help-inline">' . ( $req ? '<span class="required">' . __('required', 'athenea') . '</span>, ' : '' ) . __( 'will not be published', 'athenea' ) . '</p>
+				</div>
+			</div>';
+}
+add_filter( 'comment_form_field_email', 'athenea_comment_form_field_email');
+
+
+// Website
+function athenea_comment_form_field_url( $html ) {
+	$commenter	=	wp_get_current_commenter();
+	
+	return	'<div class="comment-form-url control-group">
+				<label for="url">' . __( 'Website', 'athenea' ) . '</label>
+				<div class="controls">
+					<input id="url" name="url" type="url" value="' . esc_attr(  $commenter['comment_author_url'] ) . '" class="form-control" />
+				</div>
+			</div>';
+}
+add_filter( 'comment_form_field_url', 'athenea_comment_form_field_url');
+
+// Comment
 function athenea_comment_form_defaults( $defaults ) {
 	return wp_parse_args( array(
-		'comment_field'			=>	'<div class="control-group"><label class="control-label" for="comment">' . __( 'Comment', 'athenea' ) . '</label><div class="controls"><textarea class="form-control" id="comment" name="comment" rows="8" aria-required="true"></textarea></div></div>',
+		'comment_field'			=>	'<div class="form-group control-group"><label for="comment">' . __( 'Comment', 'athenea' ) . '</label><textarea class="form-control" id="comment" name="comment" rows="5" aria-required="true"></textarea></div>',
 		'comment_notes_before'	=>	'',
-		'comment_notes_after'	=>	'<div class="form-allowed-tags control-group"><label class="control-label">' . sprintf( _x( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s', 'athenea' ), '</label><div class="controls"><pre>' . allowed_tags() . '</pre></div>' ) . '</div>
-									 <div class="form-actions">',
+		'comment_notes_after'	=>	'' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s', 'athenea' ), '<pre>' . allowed_tags() . '</pre>' ) . '<div class="form-actions">',	 
 		'title_reply'			=>	'<legend>' . __( 'Leave a reply', 'athenea' ) . '</legend>',
-		'title_reply_to'		=>	'<legend>' . __( 'Leave a reply to %s', 'athenea' ). '</legend>',
-		'must_log_in'			=>	'<div class="must-log-in control-group controls">' . sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'athenea' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( get_the_ID() ) ) ) ) . '</div>',
+		'title_reply_to'		=>	'<legend>' . __( 'Leave a reply to %s', 'athenea' ). '</legend>',	
+		'must_log_in'			=>	'<div class="must-log-in control-group controls">' . sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'athenea' ), 
+		wp_login_url( apply_filters( 'the_permalink', get_permalink( get_the_ID() ) ) ) ) . '</div>',
 		'logged_in_as'			=>	'<div class="logged-in-as control-group controls">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'athenea' ), admin_url( 'profile.php' ), wp_get_current_user()->display_name, wp_logout_url( apply_filters( 'the_permalink', get_permalink( get_the_ID() ) ) ) ) . '</div>',
 	), $defaults );
 }
 add_filter( 'comment_form_defaults', 'athenea_comment_form_defaults' );
 
 
+// Template for comments and pingbacks.
 if ( ! function_exists( 'athenea_comment' ) ) :
-/**
- * Template for comments and pingbacks.
- *
- * To override this walker in a child theme without modifying the comments template
- * simply create your own athenea_comment(), and that function will be used instead.
- *
- * Used as a callback by wp_list_comments() for displaying the comments.
- *
- * @author	IBERMEGA digital
- * @since	1.0.0 - 10.10.2013
- *
- * @param	object	$comment	Comment data object.
- * @param	array	$args
- * @param	int		$depth		Depth of comment in reference to parents.
- *
- * @return	void
- */
+ 
 function athenea_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	if ( 'pingback' == $comment->comment_type OR 'trackback' == $comment->comment_type ) : ?>
 	
-		<li id="li-comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
-			<p class="row">
-				<strong class="ping-label span1"><?php _e( 'Pingback:', 'athenea' ); ?></strong>
-				<span class="span7"><?php comment_author_link(); edit_comment_link( __( 'Edit', 'athenea' ), '<span class="sep">&nbsp;</span><span class="edit-link label">', '</span>' ); ?></span>
-			</p>
+	<li id="li-comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
+      <p class="row">
+	  <strong class="ping-label span1"><?php _e( 'Pingback:', 'athenea' ); ?></strong>
+	  <span class="span7"><?php comment_author_link(); edit_comment_link( __( 'Edit', 'athenea' ), '<span class="sep">&nbsp;</span><span class="edit-link label">', '</span>' ); ?></span>
+      </p>
 	
 	<?php else:
 		$offset	=	$depth - 1;
@@ -254,264 +266,72 @@ function athenea_comment( $comment, $args, $depth ) {
 endif; // ends check for athenea_comment()
 
 
-/**
- * Adds markup to the comment form which is needed to make it work with Bootstrap
- * needs
- *
- * @author	IBERMEGA digital
- * @since	1.0.0 - 10.10.2013
- *
- * @param	string	$html
- *
- * @return	string
- */
+// Styling a form box
 function athenea_comment_form_top() {
-	echo '<div class="alert alert-warning">';
+	echo '<div class="conmment_formu">';
 }
 add_action( 'comment_form_top', 'athenea_comment_form_top' );
 
 
-/**
- * Adds markup to the comment form which is needed to make it work with Bootstrap
- * needs
- *
- * @author	IBERMEGA digital
- * @since	1.0.0 - 10.10.2013
- *
- * @param	string	$html
- *
- * @return	string
- */
+// Close box style form
 function athenea_comment_form() {
 	echo '</div></div>';
 }
 add_action( 'comment_form', 'athenea_comment_form' );
 
 
-/**
- * Custom author form field for the comments form
- *
- * @author	IBERMEGA digital
- * @since	1.0.0 - 10.10.2013
- *
- * @param	string	$html
- *
- * @return	string
- */
-function athenea_comment_form_field_author( $html ) {
-	$commenter	=	wp_get_current_commenter();
-	$req		=	get_option( 'require_name_email' );
-	$aria_req	=	( $req ? " aria-required='true'" : '' );
-	
-	return	'<div class="comment-form-author control-group">
-				<label for="author" class="control-label">' . __( 'Name', 'athenea' ) . '</label>
-				<div class="controls">
-					<input id="author" name="author" type="text" value="' . esc_attr(  $commenter['comment_author'] ) . '" class="form-control"' . $aria_req . ' />
-					' . ( $req ? '<p class="help-inline"><span class="required">' . __('required', 'athenea') . '</span></p>' : '' ) . '
-				</div>
-			</div>';
-}
-add_filter( 'comment_form_field_author', 'athenea_comment_form_field_author');
-
-
-/**
- * Custom HTML5 email form field for the comments form
- *
- * @author	IBERMEGA digital
- * @since	1.0.0 - 10.10.2013
- *
- * @param	string	$html
- *
- * @return	string
- */
-function athenea_comment_form_field_email( $html ) {
-	$commenter	=	wp_get_current_commenter();
-	$req		=	get_option( 'require_name_email' );
-	$aria_req	=	( $req ? " aria-required='true'" : '' );
-	
-	return	'<div class="comment-form-email control-group">
-				<label for="email" class="control-label">' . __( 'Email', 'athenea' ) . '</label>
-				<div class="controls">
-					<input id="email" name="email" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" class="form-control"' . $aria_req . ' />
-					<p class="help-inline">' . ( $req ? '<span class="required">' . __('required', 'athenea') . '</span>, ' : '' ) . __( 'will not be published', 'athenea' ) . '</p>
-				</div>
-			</div>';
-}
-add_filter( 'comment_form_field_email', 'athenea_comment_form_field_email');
-
-
-/**
- * Custom HTML5 url form field for the comments form
- *
- * @author	IBERMEGA digital
- * @since	1.0.0 - 10.10.2013
- *
- * @param	string	$html
- *
- * @return	string
- */
-function athenea_comment_form_field_url( $html ) {
-	$commenter	=	wp_get_current_commenter();
-	
-	return	'<div class="comment-form-url control-group">
-				<label for="url" class="control-label">' . __( 'Website', 'athenea' ) . '</label>
-				<div class="controls">
-					<input id="url" name="url" type="url" value="' . esc_attr(  $commenter['comment_author_url'] ) . '" class="form-control" />
-				</div>
-			</div>';
-}
-add_filter( 'comment_form_field_url', 'athenea_comment_form_field_url');
-
-/**
- * Adds IE specific scripts
- * 
- * Respond.js has to be loaded after Theme styles
- *
- * @author	IBERMEGA digital
- * @since	1.7.0 - 11.06.2012
- *
- * @return	void
- */
-function athenea_print_ie_scripts() {
-	?>
-	<!--[if lt IE 9]>
-		<script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.min.js" type="text/javascript"></script>
-		<script src="<?php echo get_template_directory_uri(); ?>/js/respond.min.js" type="text/javascript"></script>
-	<![endif]-->
-	<?php
-}
-add_action( 'wp_head', 'athenea_print_ie_scripts', 11 );
-
-/**
- * Adds Google Analytics specific scripts
- *
- * @author	IBERMEGA digital
- * @since	1.0.2 - 03.02.2014
- *
- * @return	void
- */
-function athenea_print_analytics_scripts() {
-?>
-<script>
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', '<?php echo of_get_option('athenea_analitics','no entry'); ?>']);
-  _gaq.push(['_setDomainName', '<?php echo of_get_option('athenea_analidom','no entry'); ?>']);
-  _gaq.push(['_trackPageview']);
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-<?php
-}
-add_action( 'wp_footer', 'athenea_print_analytics_scripts', 11 );
-
-/**
- * Implement the Custom Header feature.
- */
+// Implement the Custom Header feature.
 require get_template_directory() . '/inc/custom-header.php';
 
-/**
- * Custom template tags for this theme.
- */
+function athenea_print_imghead_style() { ?>
+<style type="text/css">
+<?php if ( get_header_image() ) : ?>
+#imgHead {
+background: url(<?php header_image(); ?>) no-repeat center bottom fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+height: 200px;
+width: 100%;
+z-index:-999;
+top:0px;
+bottom:0px;
+left:0px;
+padding: 20px 0px 10px 0px;
+}
+<?php endif; ?>
+</style>
+<?php }
+add_action( 'wp_head', 'athenea_print_imghead_style' );
+
+// Custom template tags for this theme.
 require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Custom functions that act independently of the theme templates.
- */
+// Custom functions that act independently of the theme templates.
 require get_template_directory() . '/inc/extras.php';
-
-/**
- * Customizer additions.
- */
+// Customizer additions.
 require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
+// Load Jetpack compatibility file.
 require get_template_directory() . '/inc/jetpack.php';
-
-/* Estilo del menu con bootstrap */
+// Estilo del menu con bootstrap
 require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
-
-/* Agregar widget de Formulario de Contacto */
-require get_template_directory() . '/inc/widgets/form.php';
-
-
-/**
- * Implementar menu de shortcodes y pagina de contacto
- */
-	require_once( get_template_directory() . '/inc/form.php' );
-
-	// Agrega paginas del formulario y recibido
-	global $wpdb;
-
-	$form_page = get_page_by_title('Form Contact');
-	$message_page = get_page_by_title('Message Received');
-	$form_check_id = $form_page ->ID;
-	$message_check_id = $message_page ->ID;
-	//Formulario
-	$form_page = array(
-		'post_type' => 'page',
-		'post_name' => 'form-contact',
-		'post_title' => 'Form Contact',
-		'post_content'  => '[iberthemeform]',
-		'post_status' => 'publish',
-		'post_author' => 1,
-		'comment_status' => 'closed',
-		'ping_status'   => 'closed',
-		'menu_order'   => 77,
-		'post_category' => array(1),
-	);
-	//Recibido
-	$message_page = array(
-		'post_type' => 'page',
-		'post_name' => 'message-received',
-		'post_title' => 'Message Received',
-		'post_content'  => __( '<div class=\"alert alert-success\"><h3>Message Received</h3>Thank you for contacting us.<br><br>Our systems are processing your message and reply you as soon as possible.<br><br><b>Thanks for your attention</b></div>', 'athenea' ),
-		'post_status' => 'publish',
-		'post_author' => 1,
-		'comment_status' => 'closed',
-		'ping_status'   => 'closed',
-		'menu_order'   => 78,
-		'post_category' => array(1),
-	);
-	if(!isset($form_check_id)){
-		wp_insert_post($form_page);
-		$form_page_data = get_page_by_title('Form Contact');
-		$form_page_id = $form_page_data ->ID;
-		update_post_meta($form_page_id, '_wp_page_template','dashboard.php');
-	}
-	if(!isset($message_check_id)){
-		wp_insert_post($message_page);
-		$message_page_data = get_page_by_title('Message Received');
-		$message_page_id = $message_page_data ->ID;
-		update_post_meta($message_page_id, '_wp_page_template','dashboard.php');
-	}
-
-/**
- * Add optionsframework
- */
+// Add optionsframework
 if ( !function_exists( 'optionsframework_init' ) ) {
     define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
     require_once dirname( __FILE__ ) . '/inc/options-framework.php';
 }
-
 add_action('optionsframework_custom_scripts', 'optionsframework_custom_scripts');
 
-function optionsframework_custom_scripts() { ?>
+function optionsframework_custom_scripts()
+{ ?>
 <script type="text/javascript">
 jQuery(document).ready(function() {
-
 	jQuery('#example_showhidden').click(function() {
   		jQuery('#section-example_text_hidden').fadeToggle(400);
 	});
-
 	if (jQuery('#example_showhidden:checked').val() !== undefined) {
 		jQuery('#section-example_text_hidden').show();
 	}
-
 });
 </script>
 <?php
@@ -567,7 +387,7 @@ function athenea_options_display_sidebar() { ?>
       <img alt="" border="0" src="https://www.paypalobjects.com/es_ES/i/scr/pixel.gif" width="1" height="1">
       </form>
       </div>
-      <p><strong><a href="http://www.ibermega.com/themes/athenea"><?php _e('Athenea Documentation','athenea'); ?></a></strong></p>
+      <p><strong><a href="<?php echo esc_url( __( 'http://www.ibermega.com/themes/athenea/', 'athenea' ) ); ?>"><?php _e('Athenea Documentation','athenea'); ?></a></strong></p>
       </div>
     </div>
   </div>

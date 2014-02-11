@@ -39,63 +39,48 @@
         <div class="col-md-4">
         <address>
          <small>
-		  <!-- 1 -->
 		   <?php if (of_get_option('address_1') != '') { ?>
            <strong><?php echo stripslashes(of_get_option('address_1')); ?></strong>
            <?php } else { ?>
            <strong><?php _e( 'Company S.A.', 'athenea' ); ?></strong>
            <?php } ?>
-          <!-- #1 -->
-          
-          <!-- 2 -->
+
 		   <?php if (of_get_option('address_2') != '') { ?>
            - <strong>CIF:</strong> <?php echo stripslashes(of_get_option('address_2')); ?><br>
            <?php } else { ?>
            - <strong>CIF:</strong> <?php _e( 'B123456789', 'athenea' ); ?><br>
            <?php } ?>
-          <!-- #2 -->
-          
-          <!-- 3 -->
+
 		   <?php if (of_get_option('address_3') != '') { ?>
            <?php echo stripslashes(of_get_option('address_3')); ?>
            <?php } else { ?>
            <?php _e( 'New Burlington St, 123', 'athenea' ); ?>
            <?php } ?>
-          <!-- #3 -->
-          
-          <!-- 4 -->
+
 		   <?php if (of_get_option('address_4') != '') { ?>
            - CP: <?php echo stripslashes(of_get_option('address_4')); ?>
            <?php } else { ?>
            - CP: <?php _e( 'W1B 5NF', 'athenea' ); ?>
            <?php } ?>
-          <!-- #4 -->
-          
-          <!-- 5 -->
+
 		   <?php if (of_get_option('address_5') != '') { ?>
            <?php echo stripslashes(of_get_option('address_5')); ?><br>
            <?php } else { ?>
            <?php _e( 'London', 'athenea' ); ?><br>
            <?php } ?>
-          <!-- #5 -->
-          
-          <!-- 6 -->
+
 		   <?php if (of_get_option('address_6') != '') { ?>
            <?php echo stripslashes(of_get_option('address_6')); ?>
            <?php } else { ?>
            <?php _e( 'United Kingdom', 'athenea' ); ?>
            <?php } ?>
-          <!-- #6 -->
-          
-          <!-- 7 -->
+
 		   <?php if (of_get_option('address_7') != '') { ?>
            - <abbr title="<?php _e( 'Phone', 'athenea' ); ?>">Tel:</abbr> <?php echo stripslashes(of_get_option('address_7')); ?><br>
            <?php } else { ?>
            - <abbr title="<?php _e( 'Phone', 'athenea' ); ?>">Tel:</abbr> <?php _e( '9XX 123 456', 'athenea' ); ?><br>
            <?php } ?>
-          <!-- #7 -->
-          
-          <!-- 8 --> 
+
            <p><a href="mailto:<?php
               if (of_get_option('address_8') != '') {
               echo stripslashes(of_get_option('address_8'));
@@ -103,24 +88,24 @@
               echo "#";
               }
            ?>">
-           <span><?php
+           <?php
               if (of_get_option('address_8') != '') {
                    echo of_get_option('address_8');
                } else {
                    _e( 'office@company.com', 'athenea' );
                }
-           ?></span></a></p><!-- #8 -->
+           ?></a></p>
          </small>
         </address>
         </div><!-- /.col-md-4 -->
         <div class="col-md-4">
           <ul class="list-inline text-center">
-            <li id="<?php echo of_get_option('athenea_face','no entry'); ?>"><a href="<?php echo of_get_option('athenea_facebook','no entry'); ?>" class="genericon-facebook" title="Facebook" target="_blank" rel="nofollow"></a></li>
-            <li id="<?php echo of_get_option('athenea_twit','no entry'); ?>"><a href="<?php echo of_get_option('athenea_twitter','no entry'); ?>" class="genericon-twitter" title="Twitter" target="_blank" rel="nofollow"></a></li>
-            <li id="<?php echo of_get_option('athenea_yout','no entry'); ?>"><a href="<?php echo of_get_option('athenea_youtube','no entry'); ?>" class="genericon-youtube" title="YouTube" target="_blank" rel="nofollow"></a></li>
-            <li id="<?php echo of_get_option('athenea_vime','no entry'); ?>"><a href="<?php echo of_get_option('athenea_vimeo','no entry'); ?>" class="genericon-vimeo" title="Vimeo" target="_blank" rel="nofollow"></a></li>
-            <li id="<?php echo of_get_option('athenea_fee','no entry'); ?>"><a href="<?php echo of_get_option('athenea_feed','no entry'); ?>" class="genericon-feed" title="Feed" target="_blank" rel="nofollow"></a></li>
-            <li id="<?php echo of_get_option('athenea_goog','no entry'); ?>"><a href="<?php echo of_get_option('athenea_google','no entry'); ?>" class="genericon-googleplus" title="Google+" target="_blank" rel="nofollow"></a></li>
+            <li id="<?php if ( of_get_option('athenea_face') !='' ) { ?><?php echo of_get_option('athenea_face'); ?><?php } else { ?><?php echo __('N', 'athenea'); ?><?php } ?>"><a href="<?php if ( of_get_option('athenea_facebook') !='' ) { ?><?php echo of_get_option('athenea_facebook'); ?><?php } else { ?><?php echo __('#', 'athenea'); ?><?php } ?>" class="genericon-facebook" title="Facebook" target="_blank" rel="nofollow"></a></li>
+            <li id="<?php if ( of_get_option('athenea_twit') !='' ) { ?><?php echo of_get_option('athenea_twit'); ?><?php } else { ?><?php echo __('N', 'athenea'); ?><?php } ?>"><a href="<?php if ( of_get_option('athenea_twitter') !='' ) { ?><?php echo of_get_option('athenea_twitter'); ?><?php } else { ?><?php echo __('#', 'athenea'); ?><?php } ?>" class="genericon-twitter" title="Twitter" target="_blank" rel="nofollow"></a></li>
+            <li id="<?php if ( of_get_option('athenea_yout') !='' ) { ?><?php echo of_get_option('athenea_yout'); ?><?php } else { ?><?php echo __('N', 'athenea'); ?><?php } ?>"><a href="<?php if ( of_get_option('athenea_youtube') !='' ) { ?><?php echo of_get_option('athenea_youtube'); ?><?php } else { ?><?php echo __('#', 'athenea'); ?><?php } ?>" class="genericon-youtube" title="YouTube" target="_blank" rel="nofollow"></a></li>
+            <li id="<?php if ( of_get_option('athenea_vime') !='' ) { ?><?php echo of_get_option('athenea_vime'); ?><?php } else { ?><?php echo __('N', 'athenea'); ?><?php } ?>"><a href="<?php if ( of_get_option('athenea_vimeo') !='' ) { ?><?php echo of_get_option('athenea_vimeo'); ?><?php } else { ?><?php echo __('#', 'athenea'); ?><?php } ?>" class="genericon-vimeo" title="Vimeo" target="_blank" rel="nofollow"></a></li>
+            <li id="<?php if ( of_get_option('athenea_fee') !='' ) { ?><?php echo of_get_option('athenea_fee'); ?><?php } else { ?><?php echo __('Y', 'athenea'); ?><?php } ?>"><a href="<?php if ( of_get_option('athenea_feed') !='' ) { ?><?php echo of_get_option('athenea_feed'); ?><?php } else { ?><?php echo __('#', 'athenea'); ?><?php } ?>" class="genericon-feed" title="Feed" target="_blank" rel="nofollow"></a></li>
+            <li id="<?php if ( of_get_option('athenea_goog') !='' ) { ?><?php echo of_get_option('athenea_goog'); ?><?php } else { ?><?php echo __('N', 'athenea'); ?><?php } ?>"><a href="<?php if ( of_get_option('athenea_google') !='' ) { ?><?php echo of_get_option('athenea_google'); ?><?php } else { ?><?php echo __('#', 'athenea'); ?><?php } ?>" class="genericon-googleplus" title="Google Plus" target="_blank" rel="nofollow"></a></li>
           </ul>
         </div><!-- /.col-md-4 -->
         <div class="col-md-4 text-center">

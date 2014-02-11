@@ -88,7 +88,7 @@ function optionsframework_options() {
 		'type' => 'text');
 	$options[] = array(
 		 'desc' => __('Select an image to display. The image must be transparent gif or png background', 'athenea'),
-		 'std' => 'principal_1e',
+		 'std' => '',
 		 'id'   => 'principal_1e',
 		 'type' => 'upload');
 	
@@ -200,65 +200,65 @@ function optionsframework_options() {
 	$options[] = array(
 		'name' => __('Facebook', 'athenea'),
 		'id' => 'athenea_face',
-		'std' => 'Y',
+		'std' => 'N',
 		'type' => 'radio',
 		'options' => $test_array);
 	$options[] = array(
 		'desc' => __('Enter the full URL.', 'athenea'),
 		'id' => 'athenea_facebook',
-		'std' => '#',
+		'std' => '',
 		'class' => 'form-signin',
 		'type' => 'text');	
 	// Twitter
 	$options[] = array(
 		'name' => __('Twitter', 'athenea'),
 		'id' => 'athenea_twit',
-		'std' => 'Y',
+		'std' => 'N',
 		'type' => 'radio',
 		'options' => $test_array);
 	$options[] = array(
 		'desc' => __('Enter the full URL.', 'athenea'),
 		'id' => 'athenea_twitter',
-		'std' => '#',
+		'std' => '',
 		'class' => 'form-signin',
 		'type' => 'text');
 	// YouTube
 	$options[] = array(
 		'name' => __('YouTube', 'athenea'),
 		'id' => 'athenea_yout',
-		'std' => 'Y',
+		'std' => 'N',
 		'type' => 'radio',
 		'options' => $test_array);
 	$options[] = array(
 		'desc' => __('Enter the full URL.', 'athenea'),
 		'id' => 'athenea_youtube',
-		'std' => '#',
+		'std' => '',
 		'class' => 'form-signin',
 		'type' => 'text');
 	// Vimeo
 	$options[] = array(
 		'name' => __('Vimeo', 'athenea'),
 		'id' => 'athenea_vime',
-		'std' => 'Y',
+		'std' => 'N',
 		'type' => 'radio',
 		'options' => $test_array);
 	$options[] = array(
 		'desc' => __('Enter the full URL.', 'athenea'),
 		'id' => 'athenea_vimeo',
-		'std' => '#',
+		'std' => '',
 		'class' => 'form-signin',
 		'type' => 'text');
 	// Google+
 	$options[] = array(
 		'name' => __('Google +', 'athenea'),
 		'id' => 'athenea_goog',
-		'std' => 'Y',
+		'std' => 'N',
 		'type' => 'radio',
 		'options' => $test_array);
 	$options[] = array(
 		'desc' => __('Enter the full URL.', 'athenea'),
 		'id' => 'athenea_google',
-		'std' => '#',
+		'std' => '',
 		'class' => 'form-signin',
 		'type' => 'text');
 	// Feed
@@ -271,38 +271,7 @@ function optionsframework_options() {
 	$options[] = array(
 		'desc' => __('Enter the full URL.', 'athenea'),
 		'id' => 'athenea_feed',
-		'std' => '#',
-		'class' => 'form-signin',
-		'type' => 'text');
-		
-/**********************************************************************/
-/************** SEO
-/**********************************************************************/	
-	$options[] = array( 
-		 'name' => __('Analytics and SEO', 'athenea'),
-		 'type' => 'heading');	
-	
-	// ID Google Analytics
-	$options[] = array(
-		'name' => __('Google Analytics', 'athenea'),
-		'desc' => __('Google Analytics ID. Insert only the code as in the example.', 'athenea'),
-		'id' => 'athenea_analitics',
-		'std' => 'UA-24955109-1',
-		'class' => 'form-signin',
-		'type' => 'text');
-	$options[] = array(
-		'desc' => __('Google Analytics Domain without www. Enter the domain as shown in the verification code and installing Analytics.', 'athenea'),
-		'id' => 'athenea_analidom',
-		'std' => 'ibermega.com',
-		'class' => 'form-signin',
-		'type' => 'text');
-		
-	// Webmaster Tools
-	$options[] = array(
-		'name' => __('Webmaster Tools (Google)', 'athenea'),
-		'desc' => __('ID google-site-verification. Log in to Google Webmasters to get the code and insert it into this field.', 'athenea'),
-		'id' => 'athenea_webmaster',
-		'std' => 'fjdg9yT9mZWC23C0HGdWu3nhqkIcWFNQNVLHoSl8eoU',
+		'std' => '',
 		'class' => 'form-signin',
 		'type' => 'text');
 		
@@ -316,7 +285,7 @@ function optionsframework_options() {
 	
 	// Datos de Contacto
 	$options[] = array(
-		'name' => __('Contact Details. Insert into your pages or entries the following shortcode to display the Contact Form: [iberthemeform]', 'athenea'),
+		'name' => __('Contact Details.', 'athenea'),
 		'desc' => __('Company Name', 'athenea'),
 		'id' => 'address_1',
 		'std' => __('', 'athenea'),

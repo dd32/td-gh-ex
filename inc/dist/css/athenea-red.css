@@ -68,7 +68,24 @@
 #N{display:none}
 #Y{display:true}
 .entry-title{font-size:36px}
-.site-title{font-size:48px; margin-top:10px; margin-bottom:10px}
+@media screen and (max-width: 1920px) {
+    .site-title {
+	font-size:52px;
+	}
+}
+@media screen and (max-width: 768px) {
+    .site-title {
+	font-size:44px;
+	}
+}
+@media screen and (max-width: 568px) {
+    .site-title {
+	font-size:32px;text-align: center;
+	}
+}
+.entry-title{font-size:36px}@media screen and (max-width:1920px){ .site-title{font-size:52px}} @media screen and (max-width:768px){ .site-title{font-size:44px}} @media screen and (max-width:568px){ .site-title{font-size:32px;text-align:center}} .site-description{font-size:26px}
+
+.entry-title-head{font-size:36px}@media screen and (max-width:1920px){ .site-title-head{font-size:52px}} @media screen and (max-width:768px){ .site-title-head{font-size:44px}} @media screen and (max-width:568px){ .site-title-head{font-size:32px;text-align:center}} .site-description-head{font-size:26px}
 a, a:hover, a:link{text-decoration:none}
 .site-description{font-size:26px}
 .transbody{background-color:#FFF; filter:alpha(opacity=97); -khtml-opacity:0.97; -moz-opacity:0.97; opacity:0.97; -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=97)"; margin-bottom:30px; padding-top:20px; -webkit-border-radius:10px; padding-bottom:20px}
@@ -171,8 +188,8 @@ ul ul, ol ul, ul ol, ol ol{margin-bottom:0}
 .list-inline{padding-left:0; list-style:none}
 .list-inline>li{display:inline-block; padding-right:5px; padding-left:5px}
 .list-inline>li:first-child{padding-left:0}
-.formathead{margin-bottom:20px; padding-top:0px; border-top-width:7px; border-top-style:solid; border-top-color:#900; width:100%}
-.site-branding{margin-top:30px; margin-bottom:30px}
+.formathead{margin-bottom:0px;padding-top:0px;border-top-width:7px;border-top-style:solid;border-top-color:#900;width:100%}
+.site-branding{margin-top:0px;margin-bottom:0px}
 #site-navigation{height:10px}
 #menuf{padding:0; height:52px; border-bottom-width:7px; border-bottom-style:solid; border-bottom-color:#fff; background-color:#680c33; filter:alpha(opacity=97); -khtml-opacity:0.97; -moz-opacity:0.97; opacity:0.97; -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=97)"; box-shadow:#333 0px 0px 50px; font-size:16px}
 #menuf li a{padding:0 10px; line-height:52px; background-color:#680c33; color:#dadada}
@@ -186,3 +203,54 @@ ul ul, ol ul, ul ol, ol ol{margin-bottom:0}
 .genericon-feed:before{content:'\f413';        display:inline-block;        -webkit-font-smoothing:antialiased;        font:normal 32px/1 'Genericons';        vertical-align:middle; color:#fbd7c8}
 .genericon-googleplus:before{content:'\f206';        display:inline-block;        -webkit-font-smoothing:antialiased;        font:normal 32px/1 'Genericons';        vertical-align:middle; color:#fbd7c8}
 .genericon-collapse:before{content:'\f435';        display:inline-block;        -webkit-font-smoothing:antialiased;        font:normal 48px/1 'Genericons'; vertical-align:middle; color:#fff}
+
+/* Estilo de la caja completa en comentarios */
+.comments-area {
+	background-color: #fafafa;
+	padding-top: 10px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	border: 1px solid #e5e5e5;
+	border-radius: 7px;
+	filter: alpha(opacity=87);
+	-khtml-opacity: 0.87;
+	-moz-opacity: 0.87;
+	opacity: 0.87;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=87)";
+	margin-bottom: 20px;
+}
+.comments-area a {
+	color:#000;
+	text-shadow:#dadada 0px 1px 0px;
+}
+.comments-area a:hover {
+	color:#555;
+	text-shadow:#dadada 0px 1px 0px;
+}
+/* Estilo de cada comentario */
+.conmment {
+	background-color: #ffffff;
+	font-size: 14px;
+	color: #999;
+	padding: 10px;
+	margin-right: 30px;
+	margin-bottom: 30px;
+	border: 1px solid #ccc;
+	border-radius: 7px;
+}
+/* Caja del formulario */
+.conmment_formu {
+	background-color: #e8f7ec;
+	font-size: 14px;
+	color: #000;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #e5e5e5;
+	border-radius: 7px;
+}
+.conmment_formu label {
+	color:#000;
+	text-shadow:#dadada 0px 1px 0px;
+}
+.required {color:#F00;}

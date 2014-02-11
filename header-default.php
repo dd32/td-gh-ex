@@ -25,17 +25,18 @@
 <div id="page" class="hfeed site">
 <?php do_action( 'before' ); ?>	
 <div class="navbar-wrapper">
-  <div class="formathead">
+  <div class="formathead formathead_imagn">
     <div class="site-branding">
-      <div id="imgHead">
-        <div class="container">
+      <div class="container">
+       <div class="row">
+        <div class="col-xs-12">
           <h1 class="site-title">
-          <span class="glyphicon glyphicon-globe"></span> 
-          <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo( 'description' ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a><br>
-          <small><?php bloginfo( 'description' ); ?></small>         
+            <span class="glyphicon glyphicon-globe"></span> 
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo( 'description' ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
           </h1>
-        </div><!-- #container -->  
-      </div>
+        </div>
+       </div><!-- #row -->     
+      </div><!-- #container -->
     </div><!-- #site-branding -->
 	<header id="masthead" class="site-header" role="banner">
      <nav class="navbar navbar-inverse navbar-static-top" role="navigation">

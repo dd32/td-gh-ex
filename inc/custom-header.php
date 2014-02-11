@@ -12,7 +12,7 @@
 	<?php endif; // End header image check. ?>
 
  *
- * @package Athenea
+ * @package _s
  */
 
 /**
@@ -22,14 +22,14 @@
  * @uses athenea_admin_header_style()
  * @uses athenea_admin_header_image()
  *
- * @package Athenea
+ * @package _s
  */
 function athenea_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'athenea_custom_header_args', array(
 		'default-image'          => '',
-		'default-text-color'     => 'ffffff',
-		'width'                  => 1500,
-		'height'                 => 250,
+		'default-text-color'     => '660000',
+		'width'                  => 1000,
+		'height'                 => 300,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'athenea_header_style',
 		'admin-head-callback'    => 'athenea_admin_header_style',
@@ -72,22 +72,9 @@ function athenea_header_style() {
 		.site-title a,
 		.site-description {
 			color: #<?php echo $header_text_color; ?>;
-			text-decoration:none;
 		}
-		.site-title a:hover,
-		.site-description {
-			color: #ddd;
-		}
-		.formathead_imagn{
-		  <?php if ( get_header_image() !='' ) { ?>
-			  background: url(<?php header_image(); ?>) no-repeat center top;
-			  <?php } else { ?>
-			   background: url(<?php echo get_template_directory_uri(); ?>/images/head-acrop.jpg) no-repeat center top; 
-		  <?php } ?>	
-        }
 	<?php endif; ?>
 	</style>
-
 	<?php
 }
 endif; // athenea_header_style

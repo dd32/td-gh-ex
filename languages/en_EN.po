@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2014-02-03 18:32+0100\n"
+"PO-Revision-Date: 2014-02-10 11:35+0100\n"
 "Last-Translator: Miguel Angel <miguel@ibermega.com>\n"
 "Language-Team: IBERMEGA digital <soporte@ibermega.com>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -476,34 +476,6 @@ msgid "Enter the full URL."
 msgstr ""
 
 #. Theme Options/theme
-msgid "Analytics and SEO"
-msgstr ""
-
-#. Theme Options/theme
-msgid "Google Analytics"
-msgstr ""
-
-#. Theme Options/theme
-msgid "Google Analytics ID. Insert only the code as in the example."
-msgstr ""
-
-#. Theme Options/theme
-msgid ""
-"Google Analytics Domain without www. Enter the domain as shown in the "
-"verification code and installing Analytics."
-msgstr ""
-
-#. Theme Options/theme
-msgid "Webmaster Tools (Google)"
-msgstr ""
-
-#. Theme Options/theme
-msgid ""
-"ID google-site-verification. Log in to Google Webmasters to get the code and "
-"insert it into this field."
-msgstr ""
-
-#. Theme Options/theme
 msgid "Designs"
 msgstr ""
 
@@ -520,9 +492,7 @@ msgid "Contact"
 msgstr ""
 
 #. Theme Options/theme
-msgid ""
-"Contact Details. Insert into your pages or entries the following shortcode "
-"to display the Contact Form: [iberthemeform]"
+msgid "Contact Details."
 msgstr ""
 
 #. Theme Options/theme
@@ -657,57 +627,6 @@ msgstr ""
 msgid "Athenea Documentation"
 msgstr ""
 
-#. Contact Form
-msgid "Contact Form"
-msgstr ""
-
-#. Contact Form
-msgid "Name"
-msgstr ""
-
-#. Contact Form
-msgid "Full name"
-msgstr ""
-
-#. Contact Form
-msgid "E-Mail"
-msgstr ""
-
-#. Contact Form
-msgid "E-mail"
-msgstr ""
-
-#. Contact Form
-msgid "Subject"
-msgstr ""
-
-#. Contact Form
-msgid "Accept"
-msgstr ""
-
-#. Contact Form
-msgid "Accept the Privacy Policy."
-msgstr ""
-
-#. Contact Form
-msgid "Send"
-msgstr ""
-
-#. Contact Form
-msgid "They have contacted from their website"
-msgstr ""
-
-#. Contact Form
-msgid "en"
-msgstr ""
-
-#. Contact Form pages
-msgid ""
-"<div class=\"alert alert-success\"><h3>Message Received</h3>Thank you for "
-"contacting us.<br><br>Our systems are processing your message and reply you "
-"as soon as possible.<br><br><b>Thanks for your attention</b></div>"
-msgstr ""
-
 #. Portada
 msgid "Continue reading &raquo;&raquo;"
 msgstr ""
@@ -736,6 +655,10 @@ msgstr ""
 msgid "Top"
 msgstr ""
 
+#. Footer
+msgid "Theme designed by"
+msgstr ""
+
 #. Comments
 msgid "Comments"
 msgstr ""
@@ -756,4 +679,26 @@ msgstr ""
 
 #. Comments
 msgid "Reply <span>&darr;</span>"
+msgstr ""
+
+#. Comments
+msgid "Comment"
+msgstr ""
+
+#: Comments
+msgid "required"
+msgstr ""
+
+#: Comments
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+
+#: Comments
+msgid ""
+"Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
+"this account\">Log out?</a>"
+msgstr ""
+
+#: Comments
+msgid "will not be published"
 msgstr ""

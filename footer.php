@@ -13,10 +13,10 @@
      <div class="row">
       <div class="col-xs-8">
         <?php do_action( 'athenea_credits' ); ?>
-        &copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?><br>
-        <a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Proudly powered by %s', 'athenea' ), 'WordPress' ); ?> <div alt="f205" class="genericon genericon-wordpress"></div></a>
+        Copyright &copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?><br>
+        <?php printf( __( 'Proudly powered by %s', 'athenea' ), '<a href="http://www.wordpress.org/" title="WordPress"><div alt="f205" class="genericon genericon-wordpress"></div> WordPress</a>' ); ?>
         <span class="sep"> | </span>
-        <?php printf( __( 'Theme: %1$s by %2$s.', 'athenea' ), 'Athenea', '<a href="http://www.ibermega.com/" rel="designer">IBERMEGA digital</a>' ); ?>
+        <a href="<?php echo esc_url( __( 'http://www.ibermega.com/', 'athenea' ) ); ?>"><?php _e('Theme designed by','athenea'); ?> <?php _e('IBERMEGA digital','athenea'); ?></a>
       </div>
       <div class="col-xs-4">
       <a href="#toop" class="scroller pull-right" data-section="#page" title="<?php _e( 'Top', 'athenea' ); ?>"><span class="genericon-collapse"></span></a>
