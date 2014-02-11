@@ -3,7 +3,7 @@ Theme Name: Redesign
 
 Theme URI: http://redesign.toth-illustration.com
 
-Description: Redesign is a simple, clean and highly visible theme. It has transparent graphic elements and colorful post formats. The Redesign theme is responsive, and easy to read in handheld units. The range is from desktop size to flipped iPhone. The theme is suitable for blogging or businesses. Not based on any other WP theme. It's made from scratch.
+Description: Redesign is a simple, clean and highly visible theme. It has transparent graphic elements and colorful post formats. The Redesign theme is responsive, and easy to read in handheld units. The range is from desktop size to flipped smartphone. The theme is suitable for blogging or businesses. Not based on any other WP theme. It's made from scratch.
 
 - Transparent graphics.
 - Choose from several transparent color post formats.
@@ -19,7 +19,7 @@ Resource All graphic objects, example: img/background.png, img/favicon.ico
 
 Author: Robert Toth
 Author URI: http://toth-illustration.com
-Version: 1.2.2
+Version: 1.2.3
 Copyright: Robert Toth, http://toth-illustration.com
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -158,6 +158,10 @@ body{
 	padding:0px;
 	text-align: left;
 	background-image:url('img/tbg80.png');
+	-webkit-border-radius: 4px; 
+	-moz-border-radius: 4px; 
+  	border-radius: 4px;
+
 }
 
 #content{
@@ -170,6 +174,7 @@ body{
 
 .error404 #content{
 	padding:20px;
+	min-height:500px;
 }
 
 .archive .entry{
@@ -233,6 +238,11 @@ h2{
 	padding:0px;
 }
 
+#topmenu li{
+	float:right;
+	position:relative;
+}
+
 #primmenu{
 	width:100%;
 	display:block;
@@ -241,11 +251,6 @@ h2{
 	margin:0px;
 	padding:0px;
 	background-image:url('img/btbg20.png');
-}
-
-#topmenu li{
-	float:right;
-	position:relative;
 }
 
 #primmenu li{
@@ -258,6 +263,10 @@ h2{
 	text-decoration:none;
     	padding:5px 20px;
     	font-weight:bold;
+}
+
+.nav ul{
+	list-style:none;
 }
 
 .nav ul ul{
@@ -486,6 +495,9 @@ select {
 	border: none;
 	padding-left:5px;
 	background-image: url('img/btbg30.png');
+	-webkit-border-radius: 4px; 
+	-moz-border-radius: 4px; 
+  	border-radius: 4px;
 
 }
 
@@ -511,7 +523,8 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
         font-size:100%;
-	background-image:url('img/btbg30.png');
+	background-image:url('img/btbg50.png');
+	color:#FFF;
 }
 
 input[type="submit"]:active {
@@ -574,10 +587,8 @@ ol.commentlist li.odd{
 	background-image:url('img/btbg10.png');
 }
 
-ol.commentlist li.even{ 
-}
-
-.commentlist li.bypostauthor{
+ol.commentlist li.bypostauthor{
+	background-image:url('img/orange-bg20.png');
 }
 
 ol.commentlist .pingback,
@@ -587,12 +598,18 @@ ol.commentlist .trackback {
 
 ol.commentlist li.comment ul li{ 
 	list-style:square;
-	margin-left:20px;
+	margin-left:10px;
 }
 
 ol.commentlist li.comment ol li{ 
 	list-style:decimal;
-	margin-left:20px;
+	margin-left:10px;
+}
+
+.commentlist li .avatar {
+	float: right;
+	border: none;
+	margin: 2px;
 }
 
 /*FOOTER*/
