@@ -53,7 +53,7 @@ function spa_the_theme_setup() /*function declear*/
 													Curabitur lectus nulla rutrum sit amet mauris','sis_spa'),
 								
 								'call_us'=>'995 0348 952',
-								'call_us_text'=>'Call us on',	
+								'call_us_text'=>'Call us on',									
 								 
 							  	'home_feature'=> $template_uri.'/images/default/home_banner.jpg',							   
 								'first_thumb_image'=>$template_uri.'/images/default/home_thumb.jpg',

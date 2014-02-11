@@ -8,8 +8,6 @@
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
 
- 
- 
 .clearfix {
   *zoom: 1;
 }
@@ -237,14 +235,6 @@
   .row-fluid .controls-row [class*="span"] + [class*="span"] {
     margin-left: 2.564102564102564%;
   }
-  /* Added this class .row-fluid .span12 by Shahid */
-  .row-fluid .span13 {
-    width: 20%;
-    *width: 20%;
-	margin: 0px;
-    *margin: 0px;
-  }/* Close here */
-  
   .row-fluid .span12 {
     width: 100%;
     *width: 99.94680851063829%;
@@ -458,8 +448,7 @@
     width: 56px;
   }
   .thumbnails {
-/*     margin-left: -30px; commeted by akhlesh*/
-     margin-left: 0px;
+    margin-left: -30px;
   }
   .thumbnails > li {
     margin-left: 30px;
@@ -811,6 +800,7 @@
 }
 
 @media (max-width: 767px) {
+	
   body {
     padding-right: 20px;
     padding-left: 20px;
@@ -1012,9 +1002,9 @@
     padding: 9px 15px;
     font-weight: bold;
     color: #777777;
-    -webkit-border-radius: 3px;
+    /* -webkit-border-radius: 3px;
        -moz-border-radius: 3px;
-            border-radius: 3px;
+            border-radius: 3px; Shahid */
   }
   .nav-collapse .btn {
     padding: 4px 10px 4px;
@@ -1118,10 +1108,9 @@
     overflow: visible !important;
   }
 }
-
-@media (max-width: 767px){
-.carousel .row .span3 {
-float: left;
-width: 20%;
-}
+@media only screen 
+and (min-device-width : 481px) 
+and (max-device-width : 800px) {
+/* Styles */
+.banner_con{display:none;}
 }

@@ -57,8 +57,12 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
+@ Version: 1.3.5
+1.Add new theme option for webriti themes.
+2.Add new tab for subscriber in theme option panel.
+
 @ Version: 1.3.4
-1.Call us on  Text Setting in option panel.
+1.Call On US Text Setting in OP.
 @ Version: 1.3.3
 1. Add new feature merge new option data and existing option data.
 

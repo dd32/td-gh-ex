@@ -159,6 +159,7 @@
 				<a href="#spasalon-option-footercustmization" class="nav-tab" id="spasalon-option-footercustmization-tab"><?php _e("Footer Custmization",'sis_spa') ; ?></a>
                 
 				<a href="#spasalon-help" class="nav-tab" id="spasalon-help-tab"><?php _e("Help & Support",'sis_spa') ; ?></a>
+				<a href="#spasalon-subscribe" class="nav-tab" id="spasalon-subscribe-tab"><?php _e("Subscribe a New Letter",'sis_spa') ; ?></a>
 			</h2>
 			<div class="updated" > 
 				<p><strong></strong></p>
@@ -177,8 +178,7 @@
 						<div class="group" style="width:962px;display: none; background:white" id="spasalon-option-general" >
 						<h3><?php _e("General Settings",'sis_spa') ; ?></h3><br>
 							<?php require_once('spa_general_settings.php'); ?>						
-						</div>
-						
+						</div>						
 						<div class="postbox group" style="width:962px;display: none; background:white" id="spasalon-option-typography" >
 							<h3><?php _e("Typography",'sis_spa') ; ?></h3><br>
 							<?php require_once('spa_typography.php')?>
@@ -186,12 +186,16 @@
 						<div class="postbox group" style="width:962px;display: none; background:white" id="spasalon-option-footercustmization"  >
 							<h3><?php _e("Footer Custmization",'sis_spa') ; ?></h3><br>
 							<?php require_once('spa_footer_customization.php')?>
-						</div>
-						
+						</div>						
                         <div class="postbox group" style="width:962px;display: none; background:white" id="spasalon-help"  >
 							<h3><?php _e("Help and Support",'sis_spa') ; ?></h3><br>
 							<?php require_once('help.php')?>
 						</div>
+						<div class="postbox group" style="width:962px;display: none; background:white" id="spasalon-subscribe"  >
+							<h3><?php _e("Subscribe a New Letter",'sis_spa') ; ?></h3><br>
+							<?php require_once('subscribe.php')?>
+						</div>
+						
                         
 				</div>
 			</div>
