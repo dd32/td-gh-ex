@@ -31,7 +31,7 @@
 					<?php if ( $wp_query ) : 
 							 
 					while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
-					<div class="<?php echo $itemsize; ?>">
+					<div class="<?php echo $itemsize; ?> kad_portfolio_item">
 						<div class="grid_item portfolio_item postclass">
                         <?php if (has_post_thumbnail( $post->ID ) ) {
 									$image_url = wp_get_attachment_image_src( 
@@ -41,7 +41,7 @@
 									 if(empty($image)) {$image = $thumbnailURL; } ?>
 
 									<div class="imghoverclass">
-	                                       <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
+	                                       <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>" class="kad_portfolio_link">
 	                                       <img src="<?php echo $image ?>" alt="<?php the_title(); ?>" class="lightboxhover" style="display: block;">
 	                                       </a> 
 	                                </div>
@@ -108,6 +108,18 @@
 									}
 							});
 						};
+						$container.swipe({
+							excludedElements: "button, input, select, textarea, .noSwipe",
+							swipeLeft: function() {
+							    $container.trigger('next', 1);
+							  },
+							  swipeRight: function() {
+							    $container.trigger('prev', 1);
+							  },
+					        tap: function(event, target) {
+					                window.open(jQuery(target).closest('.kad_portfolio_item').find('.kad_portfolio_link').attr('href'), '_self');
+					              }
+					            });
 					function getUnitWidth() {
 					var width;
 					if(jQuery(window).width() <= 480) {

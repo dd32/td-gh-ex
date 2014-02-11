@@ -356,6 +356,7 @@ class Kadence_Social_Widget extends WP_Widget {
     if (!isset($instance['pinterest'])) { $instance['pinterest'] = ''; }
     if (!isset($instance['dribbble'])) { $instance['dribbble'] = ''; }
     if (!isset($instance['linkedin'])) { $instance['linkedin'] = ''; }
+    if (!isset($instance['tumblr'])) { $instance['tumblr'] = ''; }
     if (!isset($instance['rss'])) { $instance['rss'] = ''; }
 
     echo $before_widget;
@@ -377,6 +378,7 @@ class Kadence_Social_Widget extends WP_Widget {
 <?php if(!empty($instance['pinterest'])):?><a href="<?php echo esc_url($instance['pinterest']); ?>" class="pinterest_link" title="Pinterest" target="_blank" rel="tooltip" data-placement="top" data-original-title="Pinterest"><i class="icon-pinterest"></i></a><?php endif;?>
 <?php if(!empty($instance['dribbble'])):?><a href="<?php echo esc_url($instance['dribbble']); ?>" class="dribbble_link" title="Dribbble" target="_blank" rel="tooltip" data-placement="top" data-original-title="Dribbble"><i class="icon-dribbble"></i></a><?php endif;?>
 <?php if(!empty($instance['linkedin'])):?><a href="<?php echo esc_url($instance['linkedin']); ?>" class="linkedin_link" title="LinkedIn" target="_blank" rel="tooltip" data-placement="top" data-original-title="LinkedIn"><i class="icon-linkedin"></i></a><?php endif;?>
+<?php if(!empty($instance['tumblr'])):?><a href="<?php echo esc_url($instance['tumblr']); ?>" class="tumblr_link" title="Tumblr" target="_blank" rel="tooltip" data-placement="top" data-original-title="Tumblr"><i class="icon-tumblr"></i></a><?php endif;?>
 <?php if(!empty($instance['rss'])):?><a href="<?php echo esc_url($instance['rss']); ?>" class="rss_link" title="RSS" target="_blank" rel="tooltip" data-placement="top" data-original-title="RSS"><i class="icon-rss-sign"></i></a><?php endif;?>
     </div>
   <?php
@@ -399,6 +401,7 @@ class Kadence_Social_Widget extends WP_Widget {
     $instance['pinterest'] = strip_tags($new_instance['pinterest']);
     $instance['dribbble'] = strip_tags($new_instance['dribbble']);
     $instance['linkedin'] = strip_tags($new_instance['linkedin']);
+    $instance['tumblr'] = strip_tags($new_instance['tumblr']);
     $instance['rss'] = strip_tags($new_instance['rss']);
     $this->flush_widget_cache();
 
@@ -426,6 +429,7 @@ class Kadence_Social_Widget extends WP_Widget {
     $pinterest = isset($instance['pinterest']) ? esc_attr($instance['pinterest']) : '';
     $dribbble = isset($instance['dribbble']) ? esc_attr($instance['dribbble']) : '';
     $linkedin = isset($instance['linkedin']) ? esc_attr($instance['linkedin']) : '';
+    $tumblr = isset($instance['tumblr']) ? esc_attr($instance['tumblr']) : '';
     $rss = isset($instance['rss']) ? esc_attr($instance['rss']) : '';
   ?>
   <p>
@@ -471,6 +475,10 @@ class Kadence_Social_Widget extends WP_Widget {
     <p>
       <label for="<?php echo esc_attr($this->get_field_id('linkedin')); ?>"><?php _e('Linkedin:', 'virtue'); ?></label>
       <input class="widefat" id="<?php echo esc_attr($this->get_field_id('linkedin')); ?>" name="<?php echo esc_attr($this->get_field_name('linkedin')); ?>" type="text" value="<?php echo esc_attr($linkedin); ?>" />
+    </p>
+    <p>
+      <label for="<?php echo esc_attr($this->get_field_id('tumblr')); ?>"><?php _e('Tumblr:', 'virtue'); ?></label>
+      <input class="widefat" id="<?php echo esc_attr($this->get_field_id('tumblr')); ?>" name="<?php echo esc_attr($this->get_field_name('tumblr')); ?>" type="text" value="<?php echo esc_attr($tumblr); ?>" />
     </p>
     <p>
       <label for="<?php echo esc_attr($this->get_field_id('rss')); ?>"><?php _e('RSS:', 'virtue'); ?></label>
