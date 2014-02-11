@@ -13,6 +13,7 @@
  * @since vantage 1.0
  */
 function vantage_theme_settings(){
+
 	siteorigin_settings_add_section( 'logo', __('Logo', 'vantage' ) );
 	siteorigin_settings_add_section( 'layout', __('Layout', 'vantage' ) );
 	siteorigin_settings_add_section( 'home', __('Home', 'vantage' ) );
@@ -55,8 +56,23 @@ function vantage_theme_settings(){
 			'boxed' => __('Boxed', 'vantage'),
 			'full' => __('Full Width', 'vantage'),
 		),
-		'description' => __('Use a special responsive menu for small screen devices.', 'vantage')
-	));
+		'description' => __('Change the width of the bounding box.', 'vantage')
+	) );
+
+	siteorigin_settings_add_field('layout', 'masthead', 'select', __('Masthead Layout', 'vantage'), array(
+		'options' => siteorigin_settings_template_part_names('parts/masthead', 'Part Name'),
+		'description' => __("Change which header area layout you're using.", 'vantage')
+	) );
+
+	siteorigin_settings_add_field('layout', 'menu', 'select', __('Masthead Menu', 'vantage'), array(
+		'options' => siteorigin_settings_template_part_names('parts/menu', 'Part Name'),
+		'description' => __("Choose how the masthead menu is displayed.", 'vantage')
+	) );
+
+	siteorigin_settings_add_field('layout', 'footer', 'select', __('Footer Layout', 'vantage'), array(
+		'options' => siteorigin_settings_template_part_names('parts/footer', 'Part Name'),
+		'description' => __("Change which footer area layout you're using.", 'vantage')
+	) );
 
 	/**
 	 * Navigation settings
@@ -147,7 +163,7 @@ function vantage_theme_settings(){
 			'large' => __('Large', 'vantage'),
 			'icon' => __('Small Icon', 'vantage'),
 		),
-		'description' => __('Show the featured image on a post single page.', 'vantage')
+		'description' => __('Size of the featured image in the blog post archives.', 'vantage')
 	) );
 
 	/**
@@ -196,6 +212,8 @@ function vantage_theme_setting_defaults($defaults){
 
 	$defaults['layout_responsive'] = true;
 	$defaults['layout_bound'] = 'full';
+	$defaults['layout_masthead'] = '';
+	$defaults['layout_footer'] = '';
 
 	$defaults['navigation_responsive_menu'] = true;
 	$defaults['navigation_responsive_menu_text'] = '';

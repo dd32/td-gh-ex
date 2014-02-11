@@ -1,9 +1,9 @@
-# Copyright SiteOrigin (c) 2013
+# Copyright SiteOrigin (c) 2014
 # This file is distributed under the GNU General Public License 2.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: vantage 1.1.1\n"
-"POT-Creation-Date: 2013-10-21T17:29:17+02:00\n"
+"Project-Id-Version: vantage 1.1.10\n"
+"POT-Creation-Date: 2014-02-11T10:09:46+02:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -33,16 +33,13 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-msgid "Permalink to %s"
-msgstr ""
-
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
 msgid "Pages:"
 msgstr ""
 
-msgid "SiteOrigin Themes"
+msgid "Permalink to %s"
 msgstr ""
 
 msgid "dismiss"
@@ -559,6 +556,15 @@ msgstr ""
 msgid "Upload Media"
 msgstr ""
 
+msgid "Theme Widgets"
+msgstr ""
+
+msgid "Widgets"
+msgstr ""
+
+msgid "You can enable/disable any widgets you need."
+msgstr ""
+
 msgid "%s Order Code"
 msgstr ""
 
@@ -727,6 +733,24 @@ msgstr ""
 msgid "Wide Grey"
 msgstr ""
 
+msgid "Top Border Color"
+msgstr ""
+
+msgid "Bottom Border Color"
+msgstr ""
+
+msgid "Background Color"
+msgstr ""
+
+msgid "Background Image"
+msgstr ""
+
+msgid "Repeat Background Image"
+msgstr ""
+
+msgid "No Bottom Margin"
+msgstr ""
+
 msgid "Logo"
 msgstr ""
 
@@ -787,10 +811,31 @@ msgstr ""
 msgid "Full Width"
 msgstr ""
 
-msgid "Use a special responsive menu for small screen devices."
+msgid "Change the width of the bounding box."
+msgstr ""
+
+msgid "Masthead Layout"
+msgstr ""
+
+msgid "Change which header area layout you're using."
+msgstr ""
+
+msgid "Masthead Menu"
+msgstr ""
+
+msgid "Choose how the masthead menu is displayed."
+msgstr ""
+
+msgid "Footer Layout"
+msgstr ""
+
+msgid "Change which footer area layout you're using."
 msgstr ""
 
 msgid "Responsive Menu"
+msgstr ""
+
+msgid "Use a special responsive menu for small screen devices."
 msgstr ""
 
 msgid "Responsive Menu Text"
@@ -889,6 +934,9 @@ msgstr ""
 msgid "Small Icon"
 msgstr ""
 
+msgid "Size of the featured image in the blog post archives."
+msgstr ""
+
 msgid "Ajax Comments"
 msgstr ""
 
@@ -941,6 +989,9 @@ msgid "<span class=\"byline\"> by <span class=\"author vcard\"><a class=\"url fn
 msgstr ""
 
 msgid "View all posts by %s"
+msgstr ""
+
+msgid "%s Logo"
 msgstr ""
 
 msgid "Category Archives: %s"
@@ -1081,7 +1132,7 @@ msgstr ""
 msgid "Save CSS"
 msgstr ""
 
-msgid "Navigate"
+msgid "Menu"
 msgstr ""
 
 msgid "Back"
@@ -1153,12 +1204,6 @@ msgstr ""
 msgid "Fonts"
 msgstr ""
 
-msgid "Menu"
-msgstr ""
-
-msgid "Widgets"
-msgstr ""
-
 msgid "Page"
 msgstr ""
 
@@ -1171,13 +1216,31 @@ msgstr ""
 msgid "Heading Font"
 msgstr ""
 
+msgid "Page Title Size"
+msgstr ""
+
+msgid "Page Title Color"
+msgstr ""
+
+msgid "Content Size"
+msgstr ""
+
+msgid "Content Color"
+msgstr ""
+
+msgid "Content Heading Color"
+msgstr ""
+
 msgid "Header Padding"
 msgstr ""
 
-msgid "Link Color"
+msgid "Center Logo"
 msgstr ""
 
-msgid "Link Hover Color"
+msgid "Content Link Color"
+msgstr ""
+
+msgid "Content Link Hover Color"
 msgstr ""
 
 msgid "Background"
@@ -1210,6 +1273,12 @@ msgstr ""
 msgid "Icon Hover Color"
 msgstr ""
 
+msgid "Current Page Background"
+msgstr ""
+
+msgid "Current Page Text"
+msgstr ""
+
 msgid "Search Icon Background"
 msgstr ""
 
@@ -1220,6 +1289,9 @@ msgid "Search Input Text"
 msgstr ""
 
 msgid "Menu Item Padding"
+msgstr ""
+
+msgid "Header Widget Menu Border Color"
 msgstr ""
 
 msgid "Circle Icon Widget Background"
@@ -1238,6 +1310,9 @@ msgid "Page Background"
 msgstr ""
 
 msgid "Page Background Image"
+msgstr ""
+
+msgid "Image Shadow and Rounding"
 msgstr ""
 
 msgid "Footer Background"
@@ -1295,6 +1370,9 @@ msgid "Small"
 msgstr ""
 
 msgid "Search Results for: %s"
+msgstr ""
+
+msgid "Demo Slide"
 msgstr ""
 
 msgid "Upgrade To Vantage Premium"

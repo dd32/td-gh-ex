@@ -27,6 +27,71 @@ Bundled Resources
 Change Log
 ---------------
 
+#### 1.1.10 (under development)
+* Added support for a custom menu widget in the header widget area.
+* Added support for advanced row styles in Page Builder 1.4.4.
+* Premium: Added customization for the menu widget in the header widget area.
+* Premium: Fixed customizer live preview.
+
+#### 1.1.9
+* Fixed header widget resizing.
+* Minor typo fixes.
+* Fixed responsive layout for circle icon post loop.
+* Premium: Added customization for logo centering and removing content image drop shadow.
+* Premium: Added customisation for current menu item.
+* Premium: Fixed icon hover color customize.
+
+#### 1.1.8
+* Fixed circle icon widget issue.
+* Meta Slider compatibility fix.
+* Improved WooCommerce responsive.
+* Fixed CSS for WooCommerce checkout to make it responsive.
+* Added CSS for WooCommerce product list widgets.
+* Fixed logo spacing with logo in menu and boxed layout combination.
+* Added right margin to header widgets when there are more than 1.
+* Added missing translation text domains.
+
+#### 1.1.7
+* Fixed issue in settings section of admin.
+
+#### 1.1.6
+* Fixed header resizing for header widget area.
+* Fixed bug that occurred when using a large widget in the header area.
+* Added way for child themes to specify their own masthead and footer files.
+* Added a different masthead layout - with logo in the menu.
+* Small WordPress 3.8 fixes.
+* WooCommerce CSS fixes.
+* Premium: Fixed customizer setting for footer widgets.
+* Premium: Improved mobile navigation.
+
+
+#### 1.1.5
+* Fixed image margins.
+* Fixed image with caption center alignment.
+* Fixed WordPress gallery layout.
+* Fixed content width.
+* Fixed intermittent problem with menu hovers.
+* Premium: Added more customization options.
+
+#### 1.1.4
+* Fixed Circle Icon widget clash with FontAwesome CSS.
+* Small changes to premium upgrade page.
+* Fixed some invalid HTML.
+* Various CSS fixes and responsive improvements.
+* Premium: Fixed Twitter share.
+
+#### 1.1.3
+* Fixed RSS icon CSS.
+* Fixed double pagination on category pages.
+* Fixed alignment of social icons for responsive layout.
+* Fixed search pagination.
+* Added maximum logo width to prevent overflow.
+* Removed iframe from premium upgrade page.
+* Minor CSS fixes.
+
+#### 1.1.2
+* Premium: Fixed auto updates system.
+
 #### 1.1.1
 * Fixed Social widget to improve display in header on boxed layout.
 * Fixed archive posts view.

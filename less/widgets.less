@@ -294,7 +294,7 @@
 		}
 
 		/* The different icon positions */
-		&.icon-position-top {
+		&.circle-icon-position-top {
 			padding-top: @icon_size + 10px;
 
 			.circle-icon {
@@ -304,7 +304,7 @@
 			}
 		}
 
-		&.icon-position-bottom {
+		&.circle-icon-position-bottom {
 			padding-bottom: (@icon_size) + 10px;
 
 			.circle-icon {
@@ -314,7 +314,7 @@
 			}
 		}
 
-		&.icon-position-left {
+		&.circle-icon-position-left {
 			text-align: left;
 			padding-left: (@icon_size) + 10px;
 
@@ -325,7 +325,7 @@
 			}
 		}
 
-		&.icon-position-right {
+		&.circle-icon-position-right {
 			text-align: left;
 			padding-right: (@icon_size) + 10px;
 
@@ -357,7 +357,7 @@
 		}
 
 		/* The different icon positions */
-		&.icon-position-top {
+		&.circle-icon-position-top {
 			padding-top: @icon_size + 10px;
 
 			.circle-icon {
@@ -367,7 +367,7 @@
 			}
 		}
 
-		&.icon-position-bottom {
+		&.circle-icon-position-bottom {
 			padding-bottom: (@icon_size) + 10px;
 
 			.circle-icon {
@@ -377,7 +377,7 @@
 			}
 		}
 
-		&.icon-position-left {
+		&.circle-icon-position-left {
 			text-align: left;
 			padding-left: (@icon_size) + 10px;
 
@@ -388,7 +388,7 @@
 			}
 		}
 
-		&.icon-position-right {
+		&.circle-icon-position-right {
 			text-align: left;
 			padding-right: (@icon_size) + 10px;
 
@@ -418,7 +418,7 @@
 		}
 
 		/* The different icon positions */
-		&.icon-position-top {
+		&.circle-icon-position-top {
 			padding-top: @icon_size + 10px;
 
 			.circle-icon {
@@ -428,7 +428,7 @@
 			}
 		}
 
-		&.icon-position-bottom {
+		&.circle-icon-position-bottom {
 			padding-bottom: (@icon_size) + 10px;
 
 			.circle-icon {
@@ -438,7 +438,7 @@
 			}
 		}
 
-		&.icon-position-left {
+		&.circle-icon-position-left {
 			text-align: left;
 			padding-left: (@icon_size) + 10px;
 
@@ -449,7 +449,7 @@
 			}
 		}
 
-		&.icon-position-right {
+		&.circle-icon-position-right {
 			text-align: left;
 			padding-right: (@icon_size) + 10px;
 
@@ -515,7 +515,6 @@
 		float: left;
 		margin-right: 4px;
 
-		background: green;
 		position: relative;
 
 		width: 36px;
@@ -564,35 +563,135 @@
 		&.social-media-icon-google-plus {
 			.social-button-style(#f80000);
 		}
+		&.social-media-icon-rss {
+			.social-button-style(#ff9200);
+		}
 
 	}
 }
+
+@media (max-width:680px) {
+	body.responsive {
+		.widget_vantage-social-media {
+			text-align: center;
+
+			.social-media-icon {
+				display: inline-block;
+				float:none;
+			}
+		}
+	}
+}
+
+/* =Custom Menu Widget in Header Area
+----------------------------------------------- */
+
+#header-sidebar {
+	.widget_nav_menu {
+		ul.menu {
+			margin: 0;
+
+			> li{
+				list-style: none;
+				display: inline-block;
+				margin-right: 20px;
+				position: relative;
+
+				&:last-child {
+					margin-right: 0;
+				}
+
+				> a {
+					display: block;
+					text-decoration: none;
+					color: #555555;
+					font-weight: 500;
+					padding: 0.75em 0;
+					line-height: 1em;
+				}
+
+				ul.sub-menu {
+					display: none;
+					position: absolute;
+					margin: 0;
+					z-index:100;
+
+					border: 1px solid #E6E6E6;
+
+					.box-shadow(~"0 1px 1px rgba(0,0,0,0.1)");
+
+					top: 2.5em;
+					left: -10px;
+					background: white;
+
+
+					li {
+						position: relative;
+						list-style: none;
+						width: 160px;
+						.box-sizing(border-box);
+						padding: 10px 10px;
+
+						a {
+							display: block;
+							text-decoration: none;
+							color: #777777;
+						}
+					}
+
+					ul {
+						display: none;
+						top: -1px;
+						left: 160px;
+					}
+				}
+
+				> ul.sub-menu {
+					border-top: 2px solid #00bcff;
+				}
+			}
+
+			li:hover {
+				> ul.sub-menu {
+					display: block;
+				}
+			}
+		}
+	}
+}
+
 
 /* =Some row styling for page builder
 ----------------------------------------------- */
 
 .panel-row-style{
 	.clearfix();
+	margin: 0 -20px;
+	padding: 25px 20px;
+	background-position: center center;
+	background-repeat: no-repeat;
 }
 
 .panel-row-style-wide-grey {
 	background: #F6F6F6;
 	border-top: 1px solid #DDDDDD;
 	border-bottom: 1px solid #DDDDDD;
-	margin: 0 -20px;
-	padding: 25px 20px;
 }
 
-.layout-full .panel-row-style-wide-grey {
+.layout-full .panel-row-style {
 	margin: 0 -1000px;
 	padding: 25px 1000px 25px 1000px;
 }
 
 @media (max-width:680px) {
 	body.responsive.layout-boxed {
-		.panel-row-style-wide-grey {
+		.panel-row-style {
 			margin: 0 -35px;
 			padding: 25px 35px;
 		}
 	}
+}
+
+.panel-grid-cell .flexslider {
+	margin-bottom: 0;
 }

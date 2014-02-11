@@ -7,7 +7,7 @@
  * @license GPL 2.0
  */
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.1.1' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.1.10' );
 define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://updates.siteorigin.com' );
 
 if( file_exists( get_template_directory() . '/premium/functions.php' ) ){
@@ -89,8 +89,11 @@ function vantage_setup() {
 	));
 
 	global $content_width, $vantage_site_width;
-	if ( ! isset( $content_width ) ) $content_width = 789; /* pixels */
-	if ( ! isset( $vantage_site_width ) ) $vantage_site_width = 1080; /* pixels */
+	if ( ! isset( $content_width ) ) $content_width = 720; /* pixels */
+
+	if ( ! isset( $vantage_site_width ) ) {
+		$vantage_site_width = siteorigin_setting('layout_bound') == 'full' ? 1080 : 1010;
+	}
 }
 endif; // vantage_setup
 add_action( 'after_setup_theme', 'vantage_setup' );
