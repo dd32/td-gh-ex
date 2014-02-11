@@ -36,6 +36,9 @@ Custom Css:
 
 == Change log ==
 
+= 1.3.7 =
+*Updated Option Framework
+*Fixed Logo and Banned ads issue
 = 1.3.6 =
 *Added shadow to posts make it stylish
 *Font size customize

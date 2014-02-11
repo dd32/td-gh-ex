@@ -51,14 +51,6 @@ function optionsframework_options() {
 		'five' => '1'
 	);
 	
-	
-
-	// Background Defaults
-	$background_default = array(
-		'color' => '#ffffff',
-		'image' => '',
-		'repeat' => 'repeat',
-		'attachment'=>'scroll' );
 
 	// Typography Defaults
 	$typography_defaults = array(
@@ -145,13 +137,13 @@ $options[] = array(
 
 	$options[] = array(
 		'name' => __('Show Latest Posts Below Navigation', 'promax'),
-		'desc' => __('Show 5 Latest Posts with Thumbnail.', 'promax'),
+		'desc' => __('Show 5 Latest Posts with Thumbnail (Only Premium User Customize).', 'promax'),
 		'id' => 'promax_latest',
 		'std' => '1',
 		'type' => 'checkbox');
 	$options[] = array(
 		'name' => __('Show Popular Posts in Sidebar', 'promax'),
-		'desc' => __('Check the box to Show Popular Posts with Thumbnail in Sidebar.', 'promax'),
+		'desc' => __('Check the box to Show Popular Posts with Thumbnail in Sidebar (Only Premium User Customize).', 'promax'),
 		'id' => 'promax_popular',
 		'std' => '1',
 		'type' => 'checkbox');
@@ -218,7 +210,7 @@ $options[] = array(
             'type' => 'textarea');	
 		
 $options[] = array(
-		'name' => __('Upgrade to Premium', 'magazine'),
+		'name' => __('Premium Features', 'magazine'),
 		'type' => 'heading');
 				
 		$options[] = array(
@@ -282,11 +274,7 @@ $options[] = array(
 		'std' => '#343434',
 		'type' => 'color' );
 		
-		$options[] = array(	
-		'desc' => __('Change the background CSS Color or Image.', 'promax'),
-		'id' => 'promax_bg',
-		'std' => $background_default,
-		'type' => 'background' );
+	
 		$options[] = array(
 		'name' => __('Change Link Color', 'promax'),
 		'desc' => __('Select Links Color.', 'promax'),
@@ -322,7 +310,16 @@ $options[] = array(
 		'id' => 'promax_topnavibgcolorh',
 		'std' => '#E9E9E9',
 		'type' => 'color' );
-		
+		$options[] = array(
+		'desc' => __('<b>Latest Posts and Breadcrumb</b> background Color change', 'promax'),
+		'id' => 'promax_posthd',
+		'std' => '#DC3030',
+		'type' => 'color' );
+		$options[] = array(
+		    'desc' => 'Change Text of Latest Post.',
+            'id' => 'promax_latestchange',
+            'std' => 'Latest Posts',
+            'type' => 'text');	
 		$options[] = array(
 		'name' => __('Edit Categories & date/author stamp from thumbnail', 'promax'),
 		'desc' => __('Show or Hode Date & Author Stamp from Thumbnain in index and other archive pages .', 'promax'),

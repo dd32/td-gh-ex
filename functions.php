@@ -1,22 +1,10 @@
 <?php
 ob_start();
-/*
- * Loads the Options Panel
- *
- * If you're loading from a child theme use stylesheet_directory
- * instead of template_directory
- */
-
-if ( ! function_exists( 'optionsframework_init' ) ) {
-	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
-	require_once dirname( __FILE__ ) . '/inc/options-framework.php';
-}
+define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
+require_once dirname( __FILE__ ) . '/inc/options-framework.php';
 include_once('baztro.php');
 function promax_scripts() {
-	wp_enqueue_script('topnavi', get_template_directory_uri().'/js/topnavi.js', array('jquery'), '1.0', false );
 	wp_enqueue_style( 'promax-style', get_stylesheet_uri() );
-	
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -96,37 +84,17 @@ function promax_post_meta_data() {
 	);
 }
 
-/* Enable support for post-thumbnails ********************************************/
-		
-	// If we want to ensure that we only call this function if
-	// the user is working with WP 2.9 or higher,
-	// let's instead make sure that the function exists first
 	
 function promax_theme_setup() { 
 		if ( function_exists( 'add_theme_support' ) ) { 
 		add_theme_support( 'post-thumbnails' );
 	}	
-		add_image_size( 'defaultthumb', 240, 190 , true );
-		add_image_size( 'popularpost', 340, 135 , true );
+		add_image_size( 'defaultthumb', 240, 190 );
+		add_image_size( 'popularpost', 340, 135 );
 
-	
-		/**
-         * promax translations.
-         * Add your files into /languages/ directory.
-		 * @see http://codex.wordpress.org/Function_Reference/load_theme_textdomain
-         */
+
 	    load_theme_textdomain('promax', get_template_directory() . '/languages');
-		/**
-         * Add callback for custom editor stylesheets. (editor-style.css)
-         * @see http://codex.wordpress.org/Function_Reference/add_editor_style
-         */
-		 
         add_editor_style();
-		
-		/**
-         * This feature enables post and comment RSS feed links to head.
-         * @see http://codex.wordpress.org/Function_Reference/add_theme_support#Feed_Links
-         */
         add_theme_support('automatic-feed-links');
 		}
 		register_nav_menus(
@@ -135,7 +103,9 @@ function promax_theme_setup() {
  				'primary' => __('Primary', 'promax'),
 				)		
 		);
-	
+	$args = array( 'default-color' => 'ffffff', 
+		); 
+		add_theme_support( 'custom-background', $args ); 
 	add_action( 'after_setup_theme', 'promax_theme_setup' );
 	
 

@@ -2,12 +2,12 @@
 Theme Name: ProMax
 Theme URI: http://www.wrock.org/promax/
 Description: ProMax Theme is best WordPress theme design for personal and business uses with full features and SEO Optimize.This WordPress Theme can easily adapts on your mobile and desktop or any other device. Theme comes with lots of customization and connect social media like Facebook, Google+, twitter, YouTube and Adsense ready It supports all the awesome WordPress features completely free theme for blogging.
-Version: 1.3.6
-Author: wrock.org by Sandy
-Author URI: http://www.wrock.org/about/
-Tags: black, blue, white, light, custom-menu, custom-header, custom-background, one-column, two-columns, right-sidebar, theme-options, threaded-comments, sticky-post
-Text Domain: Promax
-License: GNU General Public License v3 or later
+Version: 1.3.7
+Author: wRock.org by Sandy
+Author URI: http://www.wrock.org/
+Tags: black, blue, white, light, red, green, custom-menu, custom-header, custom-background, one-column, two-columns, right-sidebar, theme-options, threaded-comments, sticky-post, translation-ready, editor-style, featured-images, responsive-layout
+Text Domain: promax
+License: GNU General Public License v2
 License URI: license.txt
 Copyright (C) 2011-2013 sandy, This program is distributed free, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
@@ -620,12 +620,11 @@ border-right: none;}
 	margin: 0;
 	margin-top: 10px;
 	height: 88px;
+	width: 480px;
 	overflow: hidden;
 }
 #header #logo img {
-	max-width: 470px;
 	margin-left: 0;
-	max-height: 88px
 }
 #banner-top a{
 	color:#fff;

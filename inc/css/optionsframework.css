@@ -1,26 +1,43 @@
 /* Options Framework Admin Styles */
 #optionsframework .controls .of-typography-face{
 display: none;}
-h4 {
+#optionsframework h4 {
 font-size: 1.13em !important;
 margin: 1em 0 !important;
 }
 .basicsettings-tab{background-image: url("../images/tools.png");
 background-repeat: no-repeat;
-background-position: 2% 7px;
+background-position: 3% 10px;
+padding-left: 25px !important;}
+.homepage-tab{background-image: url("../images/home.png");
+background-repeat: no-repeat;
+background-position: 3% 10px;
 padding-left: 25px !important;}
 .socialmedia-tab{background-image: url("../images/graph.png");
 background-repeat: no-repeat;
-background-position: 2% 7px;
+background-position: 3% 10px;
 padding-left: 25px !important;}
 .customstyling-tab{background-image: url("../images/style.png");
 background-repeat: no-repeat;
-background-position: 2% 7px;
+background-position: 3% 10px;
 padding-left: 25px !important;}
 .adsmanagement-tab{background-image: url("../images/layout.png");
 background-repeat: no-repeat;
-background-position: 2% 7px;
+background-position: 3% 10px;
 padding-left: 25px !important;}
+
+.tesingh{background: #B76CA9;
+color: #FFF !important;
+box-shadow: 0 1px 3px 0 #B5B5B5;
+-moz-box-shadow: 0 1px 3px 0 #b5b5b5;
+-webkit-box-shadow: 0 1px 3px 0 #B5B5B5;}
+.tesingh li{padding-left: 28px;
+background-repeat: no-repeat;
+font-size: 13px;
+font-weight: bold;
+line-height: 20px;
+float: left;
+width: 45%;}
 
 .pre-title{
 font-size: 20px;
@@ -30,6 +47,17 @@ background: #CF506A;
 border-top-right-radius: 55px;
 padding-right: 38%;
 padding-left: 38%;
+padding-top: 5px;
+padding-bottom: 5px;
+}
+.pre-titlehome{
+font-size: 20px;
+color: #F1F1F1;
+font-weight: bold;
+background: #53CAA9;
+border-top-right-radius: 55px;
+padding-right: 38%;
+padding-left: 25%;
 padding-top: 5px;
 padding-bottom: 5px;
 }
@@ -113,18 +141,6 @@ width: 10em;
 background: #FDF9F1;
 
 }
-.tesingh{background: #B76CA9;
-color: #FFF !important;
-box-shadow: 0 1px 3px 0 #B5B5B5;
--moz-box-shadow: 0 1px 3px 0 #b5b5b5;
--webkit-box-shadow: 0 1px 3px 0 #B5B5B5;}
-.tesingh li{padding-left: 28px;
-background-repeat: no-repeat;
-font-size: 13px;
-font-weight: bold;
-line-height: 20px;
-float: left;
-width: 45%;}
 
 .buypred a{color: #FFF;text-decoration: none;}
 .buypred {float: left;background-color: #FFB30D;
@@ -180,6 +196,10 @@ text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.3);
 display: inline-block;
 text-align: center;
 width: auto;
+}
+.updated {
+	max-width: 764px;
+	margin-bottom: 0 !important;
 }
 .updated {
 	max-width: 764px;
