@@ -62,6 +62,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ============================Change Log================================
+@Version: 1.4.4
+1.Webriti Admin Menu and subscribe from added.
 @Version: 1.4.3
 1. No Follow Added in footer.
 2. Some more new small changes.

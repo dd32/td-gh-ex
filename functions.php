@@ -11,15 +11,13 @@
  ?>
 <?php
 		define('WEBRITI_TEMPLATE_DIR',get_template_directory());
-		define('WEBRITI_THEME_FUNCTIONS_PATH',WEBRITI_TEMPLATE_DIR.'/functions');
-		
-		
-		require_once( WEBRITI_THEME_FUNCTIONS_PATH .' /comments.php');
-		
+		define('WEBRITI_THEME_FUNCTIONS_PATH',WEBRITI_TEMPLATE_DIR.'/functions');		
+		require_once( WEBRITI_THEME_FUNCTIONS_PATH .' /comments.php');		
 		require_once( WEBRITI_THEME_FUNCTIONS_PATH .' /menu/appointment_nav_walker.php');
 		require_once( WEBRITI_THEME_FUNCTIONS_PATH. '/menu/default_menu_walker.php');
 		require_once ( WEBRITI_THEME_FUNCTIONS_PATH .'/Excerpt/excerpt_length.php' );// code for limit the length of excerpt
 		require_once( WEBRITI_THEME_FUNCTIONS_PATH .' /sidebar/reg_sidebar.php');
+		require_once( WEBRITI_THEME_FUNCTIONS_PATH .' /webriti/webriti_theme.php'); //admin page subscriber from
 		
 	
 	if ( ! isset( $content_width ) ) $content_width = 700;
