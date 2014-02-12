@@ -3,7 +3,7 @@
  * The template for displaying Search Results pages
  *
  * @subpackage Archy
- * @since Archy 1.3
+ * @since Archy 1.4
  */
 get_header();
 get_sidebar(); ?>

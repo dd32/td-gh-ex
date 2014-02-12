@@ -5,7 +5,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: two-column, left-sidebar, custom-menu, featured-images, sticky-post, threaded-comments, translation-ready, pagination, image-slider, white, blue, gray.
 Requires at least: 3.4
 Tested up to: 3.8.1
-Stable tag: 1.3
+Stable tag: 1.4
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -101,6 +101,9 @@ You can display Custom Header image by adding it via 'Appearances' > 'Header' me
 
 == Changelog ==
 
+= v1.4 - 11.02.2014 =
+* Bugfix: Created archy.pot file without any translation.
+
 = v1.3 - 10.02.2014 =
 * NEW : Added .pot file in 'languages' folder.
 * Bugfix: We escaped all url output.
@@ -116,6 +119,9 @@ You can display Custom Header image by adding it via 'Appearances' > 'Header' me
 Ability to use the Archy theme in your site.
 
 == Upgrade Notice ==
+
+= v1.4 =
+Created archy.pot file without any translation.
 
 = v1.3 =
 Added .pot file in 'languages' folder. We escaped all url output.

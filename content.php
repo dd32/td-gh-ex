@@ -5,7 +5,7 @@
  * Used for both single and index/archive/search.
  *
  * @subpackage Archy
- * @since Archy 1.3
+ * @since Archy 1.4
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

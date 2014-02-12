@@ -19,7 +19,7 @@
  * For more information on hooks, actions, and filters, @link http://codex.wordpress.org/Plugin_API
  *
  * @subpackage Archy
- * @since Archy 1.3
+ * @since Archy 1.4
  */
 
 /**

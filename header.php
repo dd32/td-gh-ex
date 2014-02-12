@@ -5,7 +5,7 @@
  * Displays all of the <head> section and everything up till <div id="wrapper">
  *
  * @subpackage Archy
- * @since Archy 1.3
+ * @since Archy 1.4
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>

@@ -7,7 +7,7 @@
  * If no active widgets are in this sidebar, hide it completely.
  *
  * @subpackage Archy
- * @since Archy 1.3
+ * @since Archy 1.4
  */
 ?>
 <div id="secondary" class="widget-area">
