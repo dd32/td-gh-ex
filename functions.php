@@ -3,16 +3,11 @@
 	define('IsMobile', wp_is_mobile());
 	define('TPLDIR', get_template_directory_uri());
 
-// for /languages/
-load_theme_textdomain( 'olo', get_template_directory() . '/languages' );
-
-$locale = get_locale();
-$locale_file = get_template_directory() . "/languages/$locale.php";
-if ( is_readable($locale_file) )
-	require_once($locale_file);
-
 add_action( 'after_setup_theme', 'olo_setup' );
 function olo_setup(){
+	// for /languages/
+	load_theme_textdomain( 'olo', get_template_directory() . '/languages' );
+
 	//set content width for video
 	global $content_width;
 	if ( ! isset( $content_width ) )
@@ -23,6 +18,10 @@ function olo_setup(){
 	
 	//post-thumbnails
 	add_theme_support( 'post-thumbnails' );
+	add_image_size('index', 70, 50);
+	
+	//editor style
+	add_editor_style('css/editor.css');
 	
 	// Add default posts and comments RSS feed links to head
 	add_theme_support( 'automatic-feed-links' );
@@ -49,13 +48,13 @@ function olo_setup(){
 		'uploads'                => true,
 	);
 	add_theme_support( 'custom-header', $olo_logo );
+	
+	// Add menu
+	register_nav_menus( array(
+		'primary' => __( 'Primary Navigation','olo'),
+		'mobile' => __( 'Mobile Navigation', 'olo'),
+	) );
 };
-
-//post-thumbnails
-add_image_size('index', 70, 50);
-
-//editor style
-add_editor_style('css/editor.css');
 
 //olo Title Tag
 function olo_wp_title($title, $sep) {
@@ -79,13 +78,12 @@ function olo_wp_title($title, $sep) {
 // Enqueue style-file, if it exists.
 function olo_script() {
 	if( !IsMobile ){
-		wp_enqueue_style( 'olo', get_stylesheet_uri(),  array(), '20140207', false);
+		wp_enqueue_style( 'olo', get_stylesheet_uri(),  array(), '20140212', false);
 	}else{
-		wp_enqueue_style('mobile', TPLDIR . '/css/mobile.css', array(), '20140207', false);
-	}
-	wp_enqueue_script('jquery');
-	wp_enqueue_script( 'olo', TPLDIR . '/js/olo.js', array(), '20140207', true);
-	wp_enqueue_script( 'comments-ajax', TPLDIR . '/js/comments-ajax.js', array(), '20140207', true);
+		wp_enqueue_style('mobile', TPLDIR . '/css/mobile.css', array(), '20140212', false);
+	};
+	wp_enqueue_script( 'olo', TPLDIR . '/js/olo.js', array(), '20140212', true);
+	wp_enqueue_script( 'comments-ajax', TPLDIR . '/js/comments-ajax.js', array(), '20140212', true);
 	wp_localize_script('comments-ajax', 'ajaxL10n', array(
 		'edt1' => __('Before Refresh, you can','olo'),
 		'edt2' => __('Edit','olo'),
@@ -97,13 +95,13 @@ function olo_script() {
 	if ( is_singular() && comments_open() ) wp_enqueue_script( 'comment-reply' );
 			
 	if( is_page('archives') ){
-		wp_enqueue_script( 'archives', TPLDIR . '/js/archives.js', array(), '20140207', false);
-		wp_enqueue_style( 'archives', TPLDIR . '/css/archives.css', array(), '20140207', 'screen');
+		wp_enqueue_script( 'archives', TPLDIR . '/js/archives.js', array(), '20140212', false);
+		wp_enqueue_style( 'archives', TPLDIR . '/css/archives.css', array(), '20140212', 'screen');
 	};
 	if(is_404()){
-		wp_enqueue_style( '4041', 'http://fonts.googleapis.com/css?family=Press+Start+2P', array(), '20140207', 'screen');
-		wp_enqueue_style( '4042', 'http://fonts.googleapis.com/css?family=Oxygen:700', array(), '20140207', 'screen');
-		wp_enqueue_style( '4043', TPLDIR . '/css/404.css', array(), '20140207', 'screen');
+		wp_enqueue_style( '4041', 'http://fonts.googleapis.com/css?family=Press+Start+2P', array(), '20140212', 'screen');
+		wp_enqueue_style( '4042', 'http://fonts.googleapis.com/css?family=Oxygen:700', array(), '20140212', 'screen');
+		wp_enqueue_style( '4043', TPLDIR . '/css/404.css', array(), '20140212', 'screen');
 	}
 }
 
@@ -134,12 +132,6 @@ function olo_copyright($content) {
 	}
 	return $content;
 }
-
-// Add menu
-	register_nav_menus( array(
-		'primary' => __( 'Primary Navigation','olo'),
-		'mobile' => __( 'Mobile Navigation', 'olo'),
-	) );
 
 // Add sidebar
 function olo_widgets(){

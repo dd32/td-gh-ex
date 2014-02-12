@@ -192,7 +192,16 @@ function olo_theme_options_do_page() {
 <?php
 }
 
-function olo_options_validate($input) {
-	return apply_filters( 'olo_options_validate', $input);
+//	Sanitize and validate input. Accepts an array, return a sanitized array.
+function olo_options_validate( $input ) {
+	global $select_options, $radio_options;
+
+	// Say our text option must be safe text with no HTML tags
+	$input['sometext'] = wp_filter_nohtml_kses( $input['sometext'] );
+
+	// Say our textarea option must be safe text with the allowed tags for posts
+	$input['sometextarea'] = wp_filter_post_kses( $input['sometextarea'] );
+
+	return $input;
 }
 
