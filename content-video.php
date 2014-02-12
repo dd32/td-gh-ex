@@ -39,8 +39,7 @@
 		 $args=array('before' => '<li>'.__('Pages:','appointment'),'after' => '</li>');
 		 wp_link_pages($args); ?></ul>
 		</div>
-		<?php endif;?>
-		
+		<?php endif;?>		
 		<div class="blog_bot_mn">
 			<span> <?php the_tags('<b>Tags:</b>','');?> </span>
 		</div><!--blog_bot_mn-->	

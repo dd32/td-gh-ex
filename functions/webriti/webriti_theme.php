@@ -1,14 +1,11 @@
 <?php
 add_action('admin_menu', 'webriti_admin_menu_pannel');  
-
 function webriti_admin_menu_pannel() {
-
 	$page2=add_theme_page( 'webriti_themes', 'Webriti Themes', 'edit_theme_options', 'webriti_themes', 'webriti_themes_function' );	
 	//add_action('admin_print_styles-'.$page2, 'webriti_theme_admin_enqueue_script');	
 	wp_enqueue_style('responsive',get_template_directory_uri().'/functions/webriti/css/bootstrap-responsive.css'); 
 	wp_enqueue_style('bootstrap',get_template_directory_uri().'/functions/webriti/css/webriti_theme.css'); 
 }
-
 function webriti_themes_function() {
 ?>
 <div class="wrap">
@@ -74,8 +71,7 @@ function webriti_themes_function() {
 							<p><?php _e('All of our Theme contain Responsive frameworks that adapt to Mobile Devices.','appointment'); ?> </p>
 						</div>						
 						<a target="_blank" href="http://webriti.com/rambo/" class="buy btn btn-primary webrit_button"><?php _e('Buy Rambo Pro','appointment'); ?></a>
-						<a target="_blank" href="http://webriti.com/demo/wp/rambo/" class="free btn btn-success webrit_button"><?php _e('View Demo','appointment'); ?></a>
-						
+						<a target="_blank" href="http://webriti.com/demo/wp/rambo/" class="free btn btn-success webrit_button"><?php _e('View Demo','appointment'); ?></a>						
 					</div>				
 			</div>
 			<div class="row-fluid webriti-container" >				

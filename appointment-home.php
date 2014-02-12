@@ -31,11 +31,8 @@ get_template_part('index','slider'); ?>
 			<li><?php previous_posts_link(); ?></li>
 			<li><?php next_posts_link(); ?></li>
 			</ul>
-			</div>
-			
-			
-			</div><!--appo_main_content-->
-			
+			</div>		
+			</div><!--appo_main_content-->			
 			<!-- sidebar section -->
 		<?php get_sidebar();?>	  
 		</div>

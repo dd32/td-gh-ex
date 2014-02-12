@@ -62,6 +62,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ============================Change Log================================
+@Version: 1.4.5
+1.Fixed whitespace issue.
 @Version: 1.4.4
 1.Webriti Admin Menu and subscribe from added.
 @Version: 1.4.3

@@ -22,8 +22,8 @@
 			<?php the_content(__( 'Continue reading <span class="meta-nav">&rarr;</span>', 'appointment' ) ); ?>
 			</div>
 			<div class="pagination">
-			<ul><?php 
-					 $args=array('before' => '<li>'.__('Pages:','appointment'),'after' => '</li>');
-					 wp_link_pages($args); ?>
-			</ul>
+				<ul><?php 
+						 $args=array('before' => '<li>'.__('Pages:','appointment'),'after' => '</li>');
+						 wp_link_pages($args); ?>
+				</ul>
 			</div>

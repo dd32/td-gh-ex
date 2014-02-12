@@ -10,54 +10,33 @@
  * @filesource     wp-content/themes/appoinment/archive.php
  */
 ?>
-
-
-
 <?php get_header();
-
 get_template_part('orange','header');
-?>
-
-    
-		<div class="container">
-			<div class="row-fluid">
-			
-			<div class="span12 main_space">
-			
-             <div class="span8 appo_main_content">
-                  
+?><div class="container">
+			<div class="row-fluid">			
+			<div class="span12 main_space">			
+             <div class="span8 appo_main_content">                  
                 <div class="row-fluid appo_blog_post">
-				<h3 class="main_title">
-                          
-							 	<?php if ( is_day() ) : ?>
-							 
-							<?php  _e( "Daily Archives:", 'appointment' ); echo (get_the_date()); ?>
-							<?php elseif ( is_month() ) : ?>
-								<?php  _e( "Monthly Archives:", 'appointment' ); echo (get_the_date( 'F Y' )); ?>
-							<?php elseif ( is_year() ) : ?>
-								<?php  _e( "Yearly Archives:", 'appointment' );  echo (get_the_date( 'Y' )); ?>
-							 <?php else : ?>
-								<?php _e( "Blog Archives", 'appointment' ); ?>
-                 
-			                <?php endif; ?>
-                </h3>
-			   
-                </div><!--page_blog_row_mn-->
-                 
-                   <?php    while(have_posts()): the_post();?>
-                      
+				<h3 class="main_title">                          
+					<?php if ( is_day() ) : ?>							 
+					<?php  _e( "Daily Archives:", 'appointment' ); echo (get_the_date()); ?>
+					<?php elseif ( is_month() ) : ?>
+						<?php  _e( "Monthly Archives:", 'appointment' ); echo (get_the_date( 'F Y' )); ?>
+					<?php elseif ( is_year() ) : ?>
+						<?php  _e( "Yearly Archives:", 'appointment' );  echo (get_the_date( 'Y' )); ?>
+					 <?php else : ?>
+						<?php _e( "Blog Archives", 'appointment' ); ?>                 
+					<?php endif; ?>
+                </h3>			   
+                </div><!--page_blog_row_mn-->                 
+                   <?php    while(have_posts()): the_post();?>                      
                      <h3><a  class="blog_title-anchor" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-					    <ul class="the-icons clearfix">
-						
+					<ul class="the-icons clearfix">						
 						<li><i class="icon-calendar"></i> <?php the_time('M j,Y');?></li>
-
 						<li><i class="icon-comment"></i>  <?php  comments_popup_link( __( 'Leave a comment', 'appointment' ),__( '1 Comment', 'appointment' ), __( 'Comments', 'appointment' ),'name' ); ?></li>
-
 						<li><i class="icon-edit"></i><?php edit_post_link( __( 'Edit', 'appointment' ), '<span class="meta-sep"></span> <span class="name">', '</span>' ); ?></li>
-
 					 <li><i class="icon-ok-circle">  </i></li> <li><?php the_category(); ?><li>
-						</ul>	
-                      
+					</ul>                      
                       <?php if(has_post_thumbnail()):?>					
 					<div class="blog_img">
 						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >

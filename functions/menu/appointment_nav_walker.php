@@ -7,9 +7,7 @@ class appointment_nav_walker extends Walker_Nav_Menu {
 	}
 	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
-
 		$class_names = $value = '';
-
 		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
 		$classes[] = 'menu-item-' . $item->ID;
 		if ($args->has_children && $depth > 0) {
@@ -86,8 +84,6 @@ class appointment_nav_walker extends Walker_Nav_Menu {
 function appointment_nav_menu_css_class( $classes ) {
 	if ( in_array('current-menu-item', $classes ) OR in_array( 'current-menu-ancestor', $classes ) )
 		$classes[]	=	'active';
-
 	return $classes;
 }
-add_filter( 'nav_menu_css_class', 'appointment_nav_menu_css_class' );
-?>
+add_filter( 'nav_menu_css_class', 'appointment_nav_menu_css_class' ); ?>

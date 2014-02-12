@@ -2,8 +2,6 @@
 //code for register sidebar
 add_action( 'widgets_init', 'appointment_widgets_init');
 function appointment_widgets_init() {
-
-
 /*sidebar*/
 register_sidebar( array(
 		'name' => __( ' Sidebar', 'appointment' ),
@@ -15,7 +13,6 @@ register_sidebar( array(
 		'after_title' => '</h2>',
 	) );
 /*footer sidebar*/
-
 register_sidebar( array(
 		'name' => __( 'Footer Widget Area', 'appointment' ),
 		'id' => 'footer-widget-area',
