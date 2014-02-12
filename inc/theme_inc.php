@@ -7,7 +7,7 @@ function olo_theme_options_items() {
 			'name' => __('Show ICP No.', 'olo'),
 			'desc' => __('Enable ICP', 'olo'),
 			'std'    => '',
-			'hr'     => '1',
+			'hr'     => '',
 			'nTable' => '',
 			'nTitle' => '',
 			'type'   => 'checkbox'
@@ -107,7 +107,6 @@ function olo_theme_options_do_page() {
 								$olo_name = $item['name'];
 								$olo_form_name = 'olo_theme_options['.$item['id'].']';
 								$olo_value = !empty($options[$item['id']]) ? $options[$item['id']] : $item['std'];
-								$checked = $olo_value ? ' checked="checked"' : '';
 							?>
 
 								<?php if ($item['type'] == 'checkbox') { ?>
@@ -124,7 +123,7 @@ function olo_theme_options_do_page() {
 									<tr valign="top">
 										<th scope="row"><strong><?php echo $olo_name; ?></strong></th>
 										<td>
-											<input name="<?php echo $olo_form_name; ?>" type="checkbox" value="true" <?php echo $checked; ?> />
+											<input name="<?php echo $olo_form_name; ?>" type="checkbox" value="1" <?php checked($olo_value, 1); ?> />
 											<label class="description" for="<?php echo $olo_form_name; ?>"><?php echo $item['desc']; ?></label>
 										</td>
 									</tr>
@@ -194,13 +193,10 @@ function olo_theme_options_do_page() {
 
 //	Sanitize and validate input. Accepts an array, return a sanitized array.
 function olo_options_validate( $input ) {
-	global $select_options, $radio_options;
-
-	// Say our text option must be safe text with no HTML tags
-	$input['sometext'] = wp_filter_nohtml_kses( $input['sometext'] );
-
-	// Say our textarea option must be safe text with the allowed tags for posts
-	$input['sometextarea'] = wp_filter_post_kses( $input['sometextarea'] );
+	// Our first value is either 0 or 1
+	$input['is_olo_icp'] = ( $input['is_olo_icp'] == 1 ? 1 : 0 );
+	// must be safe text with no HTML tags
+	$input['olo_icp'] =  wp_filter_nohtml_kses($input['olo_icp']);
 
 	return $input;
 }
