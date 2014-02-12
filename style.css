@@ -2,7 +2,7 @@
 Theme Name: ProMax
 Theme URI: http://www.wrock.org/promax/
 Description: ProMax Theme is best WordPress theme design for personal and business uses with full features and SEO Optimize.This WordPress Theme can easily adapts on your mobile and desktop or any other device. Theme comes with lots of customization and connect social media like Facebook, Google+, twitter, YouTube and Adsense ready It supports all the awesome WordPress features completely free theme for blogging.
-Version: 1.3.7
+Version: 1.3.8
 Author: wRock.org by Sandy
 Author URI: http://www.wrock.org/
 Tags: black, blue, white, light, red, green, custom-menu, custom-header, custom-background, one-column, two-columns, right-sidebar, theme-options, threaded-comments, sticky-post, translation-ready, editor-style, featured-images, responsive-layout
@@ -599,7 +599,7 @@ border-right: none;}
 }
 
 #header {
-	height: 110px;
+	height: auto;
 	background: transparent;
 	position: relative;
 	z-index: 100;
@@ -619,7 +619,6 @@ border-right: none;}
 	display: inline;
 	margin: 0;
 	margin-top: 10px;
-	height: 88px;
 	width: 480px;
 	overflow: hidden;
 }

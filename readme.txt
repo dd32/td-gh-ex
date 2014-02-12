@@ -36,7 +36,7 @@ Custom Css:
 
 == Change log ==
 
-= 1.3.7 =
+= 1.3.8 =
 *Updated Option Framework
 *Fixed Logo and Banned ads issue
 = 1.3.6 =

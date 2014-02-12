@@ -100,16 +100,16 @@ function optionsframework_options() {
 
 	$options = array();
 $options[] = array(
-		'desc' => '<h2 style="color: #FFF !important;">Upgrade to Premium Theme & Enable Full Features!</h2>
+		'desc' => sprintf( __( '<h2 style="color: #FFF !important;">Upgrade to Premium Theme & Enable Full Features!</h2>
 		<li>SEO Optimized WordPress Theme.</li>
-		<li><a href="https://developers.google.com/speed/pagespeed/insights">Page Speed</a> Optimize for better result.</li>
+		<li><a href="https://developers.google.com/speed/pagespeed/insights">Page Speed</a>Optimize for better result.</li>
 		<li>Color Customize of theme.</li>
 		<li>Custom Widgets and Functions.</li>
 		<li>Social Media Integration.</li>
 		<li>Responsive Website Design.</li>
 		<li>Different Website Layout to Select.</li>
-		<li>Many of Other customize feature for your blog or webiste.</li>
-		<p><span class="buypre"><a href="http://www.wrock.org/product/promax-premium-theme/">Upgrade Now</a></span><span class="buypred"><a href="http://www.wrock.org/shop/">Shop More Themes !</a></span></p>',
+		<li>Many of Other customize feature for your blog or website.</li>
+		<p><span class="buypre"><a href="http://www.wrock.org/product/promax-premium-theme/">Upgrade Now</a></span><span class="buypred"><a href="http://www.wrock.org/shop/">Shop More Themes !</a></span></p>'),'promax'),
 		'class' => 'tesingh',
 		'type' => 'info');
 	$options[] = array(
