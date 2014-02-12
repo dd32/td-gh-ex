@@ -95,7 +95,7 @@ class aadya_frontpage_thumbnail_text_widget extends WP_Widget {
 			$instance['title'] = strip_tags( $new['title'] );
 			$instance['headline'] = wp_kses_stripslashes($new['headline']);
 			$instance['tagline'] = wp_kses_stripslashes($new['tagline']);
-			$instance['image'] =  esc_url_raw($new['image']);
+			$instance['image'] =  $new['image'];
 			$instance['thumbnail'] = $new['thumbnail'];
 			$instance['action_url'] = esc_url_raw($new['action_url']);
 			$instance['action_label'] = wp_kses_stripslashes($new['action_label']);
