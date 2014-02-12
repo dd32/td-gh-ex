@@ -3,7 +3,7 @@ add_action('admin_menu', 'webriti_admin_menu_pannel');
 
 function webriti_admin_menu_pannel() {
 
-	$$page2=add_theme_page( 'webriti_themes', 'Webriti Themes', 'edit_theme_options', 'webriti_themes', 'webriti_themes_function' );	
+	$page2=add_theme_page( 'webriti_themes', 'Webriti Themes', 'edit_theme_options', 'webriti_themes', 'webriti_themes_function' );	
 	//add_action('admin_print_styles-'.$page2, 'webriti_theme_admin_enqueue_script');	
 	wp_enqueue_style('responsive',get_template_directory_uri().'/functions/theme_options/webriti/css/bootstrap-responsive.css'); 
 	wp_enqueue_style('bootstrap',get_template_directory_uri().'/functions/theme_options/webriti/css/webriti_theme.css'); 
