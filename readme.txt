@@ -57,6 +57,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
+@ Version: 1.3.6
+1.Small Fix for sub-menus in Nav_walker Class.
 @ Version: 1.3.5
 1.Add new theme option for webriti themes.
 2.Add new tab for subscriber in theme option panel.
