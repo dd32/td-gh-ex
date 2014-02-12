@@ -274,12 +274,12 @@ $blueplanet_options = $blueplanet_options_settings;
                                 </th>
                                 <td>
                                     <label title="right-sidebar" class="box">
-                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/right-sidebar.png" alt="Content-Sidebar"><br />
+                                        <img src="<?php echo get_template_directory_uri(); ?>/images/right-sidebar.png" alt="Content-Sidebar"><br />
                                         <input type="radio" name="blueplanet_options[default_layout]" id="right-sidebar"  value="right-sidebar" <?php checked($blueplanet_options['default_layout'], 'right-sidebar') ?>>
                                         <?php _e("Right Sidebar", 'blue-planet'); ?>
                                     </label>
                                     <label title="left-sidebar" class="box">
-                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/left-sidebar.png" alt="Sidebar-Content"><br />
+                                            <img src="<?php echo get_template_directory_uri(); ?>/images/left-sidebar.png" alt="Sidebar-Content"><br />
                                             <input type="radio" name="blueplanet_options[default_layout]" id="left-sidebar"  value="left-sidebar" <?php checked($blueplanet_options['default_layout'], 'left-sidebar') ?>><?php _e("Left Sidebar", 'blue-planet'); ?>
                                         </label>
                                 </td>

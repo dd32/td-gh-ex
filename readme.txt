@@ -19,9 +19,16 @@ Blue Planet WordPress Theme, Copyright 2013 nilambar.net
 Blue Planet is distributed under the terms of the GNU General Public License v3
 
 == Tags ==
-dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, translation-ready
 
 == Changelog ==
+
+Version 1.0.6
+* Bugfix: Child theme not working [URL modified for including parent CSS and JS files]
+
+Version 1.0.5
+* Theme live at WordPress.org
+
 Version 1.0.0
 * Initial Submission to WordPress.org
 

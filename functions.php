@@ -76,11 +76,11 @@ function blue_planet_setup() {
             wp_enqueue_script('media-upload');
             wp_enqueue_script('thickbox');
 
-            wp_enqueue_style('blue-planet-admin-styles-common',get_stylesheet_directory_uri(). '/css/admin.css' );
+            wp_enqueue_style('blue-planet-admin-styles-common',get_template_directory_uri(). '/css/admin.css' );
 
-            wp_enqueue_script('blue-planet-cookies-script', get_stylesheet_directory_uri().'/js/jquery.cookie.js',
+            wp_enqueue_script('blue-planet-cookies-script', get_template_directory_uri().'/js/jquery.cookie.js',
                     array('jquery', 'jquery-ui-tabs','media-upload','thickbox'));
-            wp_enqueue_script('blue-planet-admin-script', get_stylesheet_directory_uri().'/js/admin.js',
+            wp_enqueue_script('blue-planet-admin-script', get_template_directory_uri().'/js/admin.js',
                     array('jquery', 'jquery-ui-tabs','media-upload','thickbox','blue-planet-cookies-script','wp-color-picker'));
 	}
 
@@ -141,10 +141,10 @@ function blue_planet_scripts() {
     $bp_options = $blueplanet_options_settings;
 
     wp_enqueue_style( 'blue-planet-style', get_stylesheet_uri() );
-    wp_enqueue_style( 'blue-planet-style-bootstrap', get_stylesheet_directory_uri().'/css/bootstrap.min.css', false ,'3.0.0' );
-    wp_enqueue_style( 'blue-planet-style-responsive', get_stylesheet_directory_uri().'/css/responsive.css', false ,'' );
+    wp_enqueue_style( 'blue-planet-style-bootstrap', get_template_directory_uri().'/css/bootstrap.min.css', false ,'3.0.0' );
+    wp_enqueue_style( 'blue-planet-style-responsive', get_template_directory_uri().'/css/responsive.css', false ,'' );
 
-        wp_enqueue_script('bootstrap-script',get_stylesheet_directory_uri().'/js/bootstrap.min.js', array('jquery'),'3.0.0', TRUE);
+        wp_enqueue_script('bootstrap-script',get_template_directory_uri().'/js/bootstrap.min.js', array('jquery'),'3.0.0', TRUE);
 
 
 	wp_enqueue_script( 'blue-planet-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
@@ -156,22 +156,22 @@ function blue_planet_scripts() {
 	}
     if( 'none' != $bp_options['slider_status'] || 'none' != $bp_options['slider_status_2']){
         //nivo
-        wp_enqueue_style( 'nivo-slider-style', get_stylesheet_directory_uri().'/thirdparty/nivoslider/nivo-slider.css', false ,'3.2' );
-        wp_enqueue_style( 'nivo-slider-style-theme', get_stylesheet_directory_uri().'/thirdparty/nivoslider/themes/default/default.css', false ,'3.2' );
-        wp_enqueue_script('nivo-slider-script',get_stylesheet_directory_uri().'/thirdparty/nivoslider/jquery.nivo.slider.pack.js', array('jquery'),'3.2', TRUE);
+        wp_enqueue_style( 'nivo-slider-style', get_template_directory_uri().'/thirdparty/nivoslider/nivo-slider.css', false ,'3.2' );
+        wp_enqueue_style( 'nivo-slider-style-theme', get_template_directory_uri().'/thirdparty/nivoslider/themes/default/default.css', false ,'3.2' );
+        wp_enqueue_script('nivo-slider-script',get_template_directory_uri().'/thirdparty/nivoslider/jquery.nivo.slider.pack.js', array('jquery'),'3.2', TRUE);
 
 
 
     }
 
     //meanmenu
-    wp_enqueue_style( 'meanmenu-style', get_stylesheet_directory_uri().'/thirdparty/meanmenu/meanmenu.min.css', false ,'2.0.6' );
-    wp_enqueue_script('meanmenu-script',get_stylesheet_directory_uri().'/thirdparty/meanmenu/jquery.meanmenu.min.js', array('jquery'),'2.0.6', TRUE);
+    wp_enqueue_style( 'meanmenu-style', get_template_directory_uri().'/thirdparty/meanmenu/meanmenu.min.css', false ,'2.0.6' );
+    wp_enqueue_script('meanmenu-script',get_template_directory_uri().'/thirdparty/meanmenu/jquery.meanmenu.min.js', array('jquery'),'2.0.6', TRUE);
 
 
 
     //theme custom
-    wp_enqueue_script('blue-planet-theme-script-custom',get_stylesheet_directory_uri().'/js/custom.js', array('jquery'),'1.0', TRUE);
+    wp_enqueue_script('blue-planet-theme-script-custom',get_template_directory_uri().'/js/custom.js', array('jquery'),'1.0', TRUE);
 }
 add_action( 'wp_enqueue_scripts', 'blue_planet_scripts' );
 

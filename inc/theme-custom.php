@@ -399,12 +399,12 @@ function blue_planet_goto_top()
     if ($bp_options['flg_enable_goto_top']) {
 
         wp_enqueue_style('blue-planet-goto-top-style',
-            get_stylesheet_directory_uri(). '/thirdparty/goto-top/goto-top.css' );
+            get_template_directory_uri(). '/thirdparty/goto-top/goto-top.css' );
 
         echo '<a href="#" class="scrollup">'. __('Scroll', 'blue-planet') . '</a>';
 
         wp_enqueue_script('blue-planet-goto-top-script',
-            get_stylesheet_directory_uri().'/thirdparty/goto-top/goto-top.js',
+            get_template_directory_uri().'/thirdparty/goto-top/goto-top.js',
                 array('jquery'));
     }
 }
