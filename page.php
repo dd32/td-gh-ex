@@ -24,7 +24,7 @@
 		</div>
         <?php endwhile; ?><div class="clear"> </div>
 	<?php edit_post_link('Edit', '<p>', '</p>'); ?>
-	<?php if (of_get_option ('cpage', '' ) != '1' ): if (comments_open( $post->ID ) == true ): comments_template('', true); endif; endif;?>
+	<?php comments_template('', true); ?>
 	<?php else: ?>
 		<p>Sorry, no pages matched your criteria.</p>
 	<?php endif; ?>

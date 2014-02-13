@@ -106,6 +106,7 @@
 	}
 	
 	add_action('wp_head', 'smartia_custom_code');
+
 	
 //	function tied to the excerpt_more filter hook.
 	function smartia_excerpt_length( $length ) {
@@ -119,13 +120,13 @@
 	
 	function smartia_excerpt_more($more) {
        global $post;
-	return '<a href="'. get_permalink($post->ID) . '" class="read-more">' . of_get_option('readmore', 'Read More ...') . '</a>';
+	return '<a href="'. get_permalink($post->ID) . '" class="read-more">Read More ...</a>';
 	}
 	add_filter('excerpt_more', 'smartia_excerpt_more');
 
 // Content Type Showing
 	function smartia_content() {
-	the_content('<span class="read-more">' . of_get_option('readmore', 'Read More ...') . '</span>');
+	the_content('<span class="read-more">Read More ...</span>');
 	}
 
 //	Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link

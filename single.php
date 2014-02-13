@@ -33,7 +33,7 @@ get_header(); ?>
           	            
           <!-- End the Loop. -->          
         	
-			<?php if (of_get_option ('cpost', '' ) != '1' ): if (comments_open( $post->ID ) == true ): comments_template('', true); endif; endif;?>
+			<?php comments_template('', true); ?>
             
 </div>			
 <?php get_sidebar(); ?>

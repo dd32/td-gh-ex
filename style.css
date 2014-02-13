@@ -7,9 +7,9 @@ Author URI: http://d5creation.com/
 
 Description: D5 Smartia theme for WordPress is sophisticated, lightweight, adaptable and Responsive . You can use D5 Smartia for Black and White looking Smart Blogging, Personal or Corporate Websites. 
 
-Version: 2.0
+Version: 2.1
 
-Tags: blue, dark, light, white, black, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-colors, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options
+Tags: blue, dark, light, white, black, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options
 
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -1386,42 +1386,6 @@ a.comment-reply-link {
 
 /*..... Others 
 -------------------------------------------------- */
-
-h2#client-text.post-title {
-	opacity: 0.7;
-    padding: 30px 0 0;
-    text-align: center;
-}
-
-#client {
-	display:table;
-	display:block\9;
-	margin: 20px auto;
-}
-
-#client img {
-	margin: 0 13px;
-    max-height: 100px;
-    vertical-align: middle;
-    width: 100px;
-}
-
-
-.fpage-quote {
-    background: #111111;
-    border-radius: 10px;
-    font-size: 12px;
-    font-weight: normal;
-    padding: 1%;
-    width: 97%;
-}
-.fpage-quote q, .fpage-quote q:before, .fpage-quote q:after { background: none; border: none; color: #FFFFFF; }
-.middle-full .arrow-down { width: 0; height: 0; border-left: 15px solid transparent; border-right: 15px solid transparent; border-top: 15px solid #111111; margin: 0 0 0 30px; }
-
-.middle-full .customers-comment-slide  .bx-controls-direction a { top: 0; margin-top: -45px; text-align: left; color: transparent; }
-.middle-full .customers-comment-slide  .bx-controls-direction a.bx-prev  { left: auto; right: 50px;  } 
-.middle-full .customers-comment-slide  .bx-controls-direction a.bx-next  { right:10px; left: auto; } 
-
 div, ul, li, img, a, p, ol, textarea, input, button {
 	-moz-transition:  all 2s;    /* FF3.7+ */  
 	-o-transition: all 2s;      /* Opera 10.5 */ 

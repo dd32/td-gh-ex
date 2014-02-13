@@ -52,7 +52,7 @@ wp_head(); ?>
               
         <!-- Site Main Menu Goes Here -->
         <nav id="smartia-main-menu">
-		<?php if ( has_nav_menu( 'main-menu' ) ) :  wp_nav_menu( array( 'theme_location' => 'main-menu' )); else: wp_page_menu(); endif;  if (of_get_option ('sbox-check', '1') == '1'): get_search_form(); endif; ?>
+		<?php if ( has_nav_menu( 'main-menu' ) ) :  wp_nav_menu( array( 'theme_location' => 'main-menu' )); else: wp_page_menu(); endif;  get_search_form(); ?>
         </nav><div class="clear"> </div>
       
       </div><!-- header -->
