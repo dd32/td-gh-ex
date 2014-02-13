@@ -25,7 +25,7 @@ if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 wp_head(); 
 ?>
 <script type="text/javascript">
-    $(function() {
+    jQuery(function($) {
 		/* Mobile */
 				
 		$("#menu-trigger").on("click", function(){
@@ -43,13 +43,6 @@ wp_head();
 <header class="header">
   <div class="navbar navbar-inverse " role="navigation">
     <div class="container">
-    <?php if ( get_header_image() ) : ?>
-	<div id="site-header">
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-			<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
-		</a>
-	</div>
-	<?php endif; ?>
       <div class="navbar-header">
         <button id="menu-trigger" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
         <a class="navbar-brand head_title" href="<?php echo site_url(); ?>">

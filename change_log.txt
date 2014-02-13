@@ -10,3 +10,10 @@ Version 1.0.1
 Version 1.0.2
 
 	i)  Typo fixes in custom-header.php
+
+Version 2.0
+    i)  Fixes in function.php file
+    ii) Fixes in style.css
+    iii) Other small typo fixes	
+	
+	

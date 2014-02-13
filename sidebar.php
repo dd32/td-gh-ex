@@ -5,7 +5,7 @@
 <!--</div>-->
 <!--end / sidebar--> 
 <script>
-$(document).ready(function() {
+jQuery(document).ready(function($) {
 	 $('.sidebar > aside').find('ul').addClass('list-unstyled widget-list');
 });
 </script> 

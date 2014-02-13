@@ -4,7 +4,7 @@ Theme URI: http://fasterthemes.com/themes/RedPro
 Author: Faster Themes
 Author URI: http://fasterthemes.com/
 Description: RedPro is a Twitter bootstrap based responsive Wordpress theme which can be used for personal or corporate websites.
-Version: 1.0.2
+Version: 2.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: Red,left-sidebar,right-sidebar,one-column, two-columns, fluid-layout, responsive-layout,full-width-template,theme-options
@@ -131,6 +131,14 @@ button, input, select, textarea {
 	margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
 	vertical-align: baseline; /* Improves appearance and consistency in all browsers */
  *vertical-align: middle; /* Improves appearance and consistency in all browsers */
+}
+select {
+        max-width: 275px !important;
+        padding: 5px;
+        margin-top: 15px !important;
+        white-space: normal; 
+        word-wrap: break-word; 
+        overflow: auto;
 }
 button, input {
 	line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
@@ -585,7 +593,6 @@ h1 small {
 }
 .feature-thumbnail-large img {
 	width: 100%;
-	margin-top: 15px;
 }
 .post-meta {
 	margin-bottom: 20px;
@@ -719,6 +726,11 @@ a.more:hover {
 .widget-search {
 	margin-top: 50px;
 }
+.textwidget option {
+        white-space: normal; 
+        word-wrap: break-word; 
+        overflow: auto;
+}
 .search-form {
 	width: 100%;
 	float: left;
@@ -753,9 +765,8 @@ a.more:hover {
 }
 .widget-list {
 	background: #eeeeee;
-	border: 1px solid rgba(0,0,0,0.2);
-	margin: 0 0 1.5em 0;
-	padding: 15px !important;
+	margin: 0 0 0 0;
+	padding: 5px 0px 0px 15px !important;
 }
 .widget-list li {
 	margin-bottom: 5px;
