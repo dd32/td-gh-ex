@@ -3,12 +3,12 @@ Theme Name: enrichmg
 Author: Terry East
 Author URI: http://enricchicreative.com
 Description: Magazine format suitable for professional association website. Custom static frontpage and landing page sandbox layouts. HTML5/CSS3 Responsive Design.
-Version: 1.1 
+Version: 1.1.1 
 License: GNU General Public License v2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: enrichmg
 Domain Path: /languages/
-Tags: black, white, red, one-column, two-columns, right-sidebar, editor-style, responsive-layout, custom-header, flexible-header, custom-background, featured-images, custom-menu, post-formats, sticky-post, threaded-comments, translation-ready
+Tags: black, white, red, one-column, two-columns, right-sidebar, editor-style, responsive-layout, custom-header, custom-background, featured-images, custom-menu, post-formats, sticky-post, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -392,25 +392,28 @@ a:active {
 /* =Menu
 ----------------------------------------------- */
 
-
-.main-navigation {
-    margin:0;
-    
-}
-
 .main-navigation ul {
-    list-style:none;
-    border:1px solid white;
-    display:block;
-   
+    list-style:none;  
+    display:block;   
 }
 
+.main-navigation li {
+	border-top:1px solid white;
+}
+
+.main-navigation li a:hover {
+	background-color:#ffffff;
+}
+.main-navigation li a:hover {
+	color:#000000;
+	width:100%;
+}
 .main-navigation ul a {
     text-decoration:none;
     color:#ffffff;
 }
 
-.main-navigation ul.nav-menu > li.current_page_item > a{
+.main-navigation ul.nav-menu > li.current_page_item > a {
     color:#ef3d42;
 }
 
@@ -421,16 +424,23 @@ a:active {
 ul.nav-menu li > ul.sub-menu {
     display:block;
 }
- 
-ul.nav-menu li:hover > a {
-    background-color:#ffffff;
-    color:#000000;
-   
+
+aside .menu {
+	font-size:.65em;
+}
+aside li {
+	list-style-type:none;
 }
 
+aside .menu a {
+	text-decoration:none;
+}
 
-ul.nav-menu li:hover ul li {
-    background-color:#000000;
+#secondary aside li.current-menu-item > a {
+	color:#ef3d42;
+}
+#secondary aside .menu li a:hover {
+        color:#ef3d42;
 }
 
 /* Small menu */
@@ -442,6 +452,7 @@ ul.nav-menu li:hover ul li {
 @media screen {
 	.menu-toggle {
         display:block;
+	color:#ffffff;
     }
 	.main-navigation ul {
 		display: none;
@@ -538,42 +549,6 @@ object {
 	max-width: 100%;
 }
 
-
-/* =Navigation
------------------------------------------------ */
-/*
-.site-main [class*="navigation"] {
-	margin: 0 0 1.5em;
-	overflow: hidden;
-}
-[class*="navigation"] .nav-previous {
-	float: left;
-	width: 50%;
-}
-[class*="navigation"] .nav-next {
-	float: right;
-	text-align: right;
-	width: 50%;
-}
-*/
-/* =Navigation
------------------------------------------------ */
-
-.site-content [class*="navigation"] {
-	margin: 0 0 2.5em;
-	/*overflow: hidden;*/
-}
-[class*="navigation"] .nav-previous {
-	float: left;
-	width: 50%;
-	margin-bottom:2em;
-}
-[class*="navigation"] .nav-next {
-	float: right;
-	text-align: right;
-	width: 50%;
-        margin-bottom:2em;
-}
 
 /* =Comments
 ----------------------------------------------- */

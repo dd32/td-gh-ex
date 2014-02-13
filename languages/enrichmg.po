@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: enrichmg\n"
-"POT-Creation-Date: 2014-02-12 14:24-0800\n"
-"PO-Revision-Date: 2014-02-12 14:25-0800\n"
+"POT-Creation-Date: 2014-02-12 20:54-0800\n"
+"PO-Revision-Date: 2014-02-12 20:55-0800\n"
 "Last-Translator: enricchi creative <terryeast@enricchicreative.com>\n"
 "Language-Team: enricchi creative\n"
 "Language: English\n"
@@ -62,11 +62,11 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: ../header.php:39
-msgid "Menu"
+#: ../header.php:40
+msgid " Menu"
 msgstr ""
 
-#: ../header.php:43
+#: ../header.php:42
 msgid "Skip to content"
 msgstr ""
 
