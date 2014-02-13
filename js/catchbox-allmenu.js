@@ -92,7 +92,7 @@ jQuery(function () {
   // Seondary Menu
   jQuery('#access-secondary .menu').tinyNav({
 	active: 'current-menu-item',
-	header: 'Seondary Menu'
+	header: 'Secondary Menu'
   });  
   
    // Footer Menu

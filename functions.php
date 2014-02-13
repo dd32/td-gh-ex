@@ -1349,7 +1349,7 @@ function catchbox_header_menu() { ?>
 		
 	<?php if ( has_nav_menu( 'secondary', 'catchbox' ) ) {
 		// Check is footer menu is enable or not
-		$options = get_option( 'catchbox_options' );
+		$options = catchbox_get_theme_options();
 		if ( !empty ($options ['enable_menus'] ) ) :
 			$menuclass = "mobile-enable";
 		else :

@@ -383,6 +383,12 @@ Version 2.9.1
 * Fixed translation by replacing simplecatch with catchbox in Theme Options panel
 * Fixed mobile menu item text css in dark color scheme
 * Removed Redirect to Theme Options Page on Activation as per new theme review guideline
-* Removed depurated functions add_custom_image_header() and add_custom_background()
+* Removed depreciated functions add_custom_image_header() and add_custom_background()
 * Replaced theme screenshot file to match with WordPress 3.8
 * Updated theme Tag Filter in style.css
+
+Version 2.9.2
+* Fixed menu and slider nav css issue by changing z-index value
+* Fixed typo in Menu script for Secondary text. Special thanks to @flamenco for reporting bug
+* Fixed Secondary menu display issue in responsive design
+* Fixed Germany translation
