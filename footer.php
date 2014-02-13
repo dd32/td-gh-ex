@@ -1,37 +1,24 @@
 <?php
-/**
- * The template for displaying the footer.
- *
- * Contains the closing of the id=main div and all content after
- *
- * @D5 Creation
- * @Modified on Twenty_Eleven
- 
- */
+/* 	Smartia Theme's Footer
+	Copyright: 2012-2014, D5 Creation, www.d5creation.com
+	Based on the Simplest D5 Framework for WordPress
+	Since Smartia 2.0
+*/
 ?>
 
-	</div><!-- #main -->
 
-	<footer id="colophon" role="contentinfo">
 
-			<?php
-				/* A sidebar in the footer? Yep. You can can customize
-				 * your footer with three columns of widgets.
-				 */
-				if ( ! is_404() )
-					get_sidebar( 'footer' );
-			?>
 
-			<div id="site-generator">
-				         
-&copy; Copyright <script type="text/javascript">document.write(new Date().getFullYear())</script>: <?php bloginfo('name'); ?>, All Rights Reserved. &nbsp;
+</div> <!-- conttainer -->
+<div id="footer">
 
-<strong>D5 Smartia</strong> Theme by: <a href="http://d5creation.com" target="_blank"><img  width="30px" src="<?php echo get_template_directory_uri(); ?>/images/d5logofooter.png" /> <strong>D5 Creation</strong></a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a> 
-			</div>
-	</footer><!-- #colophon -->
-</div><!-- #page -->
-
+<?php
+   	get_sidebar( 'footer' );
+?>
+<div id="creditline"><?php echo of_get_option('copyright', '&copy; ' . date("Y"). ': ' . get_bloginfo( 'name' ) . ', All Rights Reserved'); ?> <span class="credit">| Smartia Theme by: <a href="http://d5creation.com" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/d5logofooter.png" /> D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a></span></div>
+</div> <!-- footer -->
+</div> <!-- site container -->
+<div class=" clear"> </div>
 <?php wp_footer(); ?>
-
 </body>
 </html>
