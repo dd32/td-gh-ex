@@ -27,6 +27,9 @@
 				else if ($slider == "latest") {
 					get_template_part('templates/home/latest', 'slider');
 				}
+				else if ($slider == "carousel") {
+					get_template_part('templates/home/carousel', 'slider');
+				}
 				else if ($slider == "video") {
 					get_template_part('templates/home/video', 'block');
 				}

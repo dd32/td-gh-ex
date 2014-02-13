@@ -14,7 +14,7 @@
 					   		 	$itemsize = 'tcol-lg-4 tcol-md-4 tcol-sm-4 tcol-xs-6 tcol-ss-12'; $slidewidth = 366; $slideheight = 366; $md = 3; $sm = 3; $xs = 2; $ss = 1; 
 					   		 	?>
 		<div class="home-margin fredcarousel">
-		<div id="hport_carouselcontainer" class="rowtight fadein-carousel">
+		<div id="hport_carouselcontainer" class="rowtight">
 		<div id="portfolio-carousel" class="clearfix">
 		<?php 
 				$temp = $wp_query; 

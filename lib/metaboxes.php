@@ -202,7 +202,7 @@ $meta_boxes[] = array(
 			
 			array(
 				'name'    => __('Project Layout', 'virtue'),
-				'desc'    => '<a href="#" rel="lightbox" target="_new" >Whats the difference?</a>',
+				'desc'    => '<a href="http://docs.kadencethemes.com/virtue/#portfolio_posts" target="_new" >Whats the difference?</a>',
 				'id'      => $prefix . 'ppost_layout',
 				'type'    => 'radio_inline',
 				'options' => array(
@@ -219,6 +219,7 @@ $meta_boxes[] = array(
 				'options' => array(
 					array( 'name' => __('Image', 'virtue'), 'value' => 'image', ),
 					array( 'name' => __('Image Slider', 'virtue'), 'value' => 'flex', ),
+					array( 'name' => __('Carousel Slider', 'virtue'), 'value' => 'carousel', ),
 					array( 'name' => __('Video', 'virtue'), 'value' => 'video', ),
 					array( 'name' => __('None', 'virtue'), 'value' => 'none', ),
 				),

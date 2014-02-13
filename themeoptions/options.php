@@ -584,7 +584,7 @@ $this->sections[] = array(
             'title' => __('Choose a Home Image Slider', 'virtue'), 
             'subtitle' => __("If you don't want an image slider on your home page choose none.", 'virtue'),
             //'desc' => __('This is the description field, again good for additional info.', 'virtue'),
-            'options' => array('none' => 'None','flex' => 'Flex Slider','thumbs' => 'Thumb Slider','latest' => 'Latest Posts', 'video' => 'Video'),
+            'options' => array('none' => 'None','flex' => 'Flex Slider','thumbs' => 'Thumb Slider', 'carousel' => 'Carousel Slider','latest' => 'Latest Posts', 'video' => 'Video'),
             'default' => '',
             'width' => 'width:60%',
             ),

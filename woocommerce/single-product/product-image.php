@@ -4,8 +4,9 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     2.0.3
+ * @version     2.0.14
  */
+
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -31,7 +32,9 @@ if(isset($virtue['product_simg_resize']) && $virtue['product_simg_resize'] == 0)
 					if(empty($image_url)) {$image_url = $product_image_url;} 
 					$image = '<img width="'.$productimgwidth.'" height="'.$productimgheight.'" src="'.$image_url.'" class="attachment-shop_single wp-post-image" title="'.esc_attr( get_the_title( get_post_thumbnail_id() ) ).'">';
 			} else {
-			$image       		= get_the_post_thumbnail( $post->ID, apply_filters( 'single_product_large_thumbnail_size', 'shop_single' ) );
+			$image       		= get_the_post_thumbnail( $post->ID, apply_filters( 'single_product_large_thumbnail_size', 'shop_single' ), array(
+				'title' => $image_title
+				) );
 			}
 			$image_title 		= esc_attr( get_the_title( get_post_thumbnail_id() ) );
 			$image_link  		= wp_get_attachment_url( get_post_thumbnail_id() );

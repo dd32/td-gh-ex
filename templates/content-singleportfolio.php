@@ -96,8 +96,115 @@
 			                });
 			      </script>
               </div> <!--Flex Slides-->
-				<?php }
-				else if ($ppost_type == 'video') { ?>
+              <?php } else if ($ppost_type == 'carousel') { ?>
+					
+					 <div id="imageslider" class="loading carousel_outerrim">
+					    <div class="carousel_slider_outer fredcarousel fadein-carousel" style="overflow:hidden; max-width:<?php echo $slidewidth;?>px; height: <?php echo $slideheight;?>px; margin-left: auto; margin-right:auto;">
+					        <div class="carousel_slider kad-light-gallery">
+					            <?php global $post;
+                          		$image_gallery = get_post_meta( $post->ID, '_kad_image_gallery', true );
+                          		if(!empty($image_gallery)) {
+                    				$attachments = array_filter( explode( ',', $image_gallery ) );
+                    					if ($attachments) {
+										foreach ($attachments as $attachment) {
+											$attachment_url = wp_get_attachment_url($attachment , 'full');
+											$caption = get_post($attachment)->post_excerpt;
+					                    	$image = aq_resize($attachment_url, null, $slideheight, false, false);
+					                    	if(empty($image)) {$image = array($attachment_url, $slidewidth, $slideheight);} 
+					                        echo '<div class="carousel_gallery_item" style="float:left; display: table; position: relative; text-align: center; margin: 0; width:auto; height:'.$image[2].'px;">';
+					                        echo '<div class="carousel_gallery_item_inner" style="vertical-align: middle; display: table-cell;">';
+					                        echo '<a href="'.$attachment_url.'" rel="lightbox" title="'.$caption.'">';
+					                        echo '<img src="'.$image[0].'" width="'.$image[1].'" height="'.$image[2].'" />';
+					                        echo '</a>'; ?>
+					                      </div>
+					                    </div>
+					                  <?php } ?>
+					                  <?php } ?>
+					                  <?php } ?>
+					            </div>
+					            <div class="clearfix"></div>
+					              <a id="prevport_carouselslider" class="prev_carousel icon-arrow-left" href="#"></a>
+					              <a id="nextport_carouselslider" class="next_carousel icon-arrow-right" href="#"></a>
+					          </div> <!--fredcarousel-->
+					  </div><!--Container-->
+					  <script type="text/javascript">
+                jQuery( window ).load(function () {
+                    var $wcontainer = jQuery('.carousel_slider_outer');
+                    var $container = jQuery('.carousel_slider_outer .carousel_slider');
+                      var align = 'center';
+                      var carheight = <?php echo $slideheight; ?>;
+                          setWidths();
+                          $container.carouFredSel({
+                              width: '100%',
+                              height: carheight,
+                              align: align,
+                              auto: {play: true, timeoutDuration: 9000},
+                              scroll: {
+                                items : 1,
+                                easing: 'quadratic'
+                              },
+                              items: {
+                                visible: 1,
+                                width: 'variable'
+                              },
+                              prev: '.carousel_slider_outer .prev_carousel',
+                              next: '.carousel_slider_outer .next_carousel',
+                              swipe: {
+                                onMouse: false,
+                                onTouch: true
+                              },
+                              onCreate: function() {
+                                jQuery('.carousel_slider').css('positon','static');
+                              }
+                            });
+                            var cresizeTimer;
+                            jQuery(window).resize(function() {
+                            clearTimeout(cresizeTimer);
+                            cresizeTimer = setTimeout(carouselSlider, 100);
+                            });
+                            function carouselSlider() {
+                            // set the widths on resize
+                            $container.trigger("destroy");
+                            setWidths();
+                              $container.carouFredSel({
+                                 width: '100%',
+                                  height: carheight,
+                                  align: align,
+                                  auto: {play: true, timeoutDuration: 9000},
+                                  scroll: {
+                                    items : 1,
+                                    easing: 'quadratic'
+                                  },
+                                  items: {
+                                    visible: 1,
+                                    width: 'variable'
+                                  },
+                                  prev: '.carousel_slider_outer .prev_carousel',
+                                  next: '.carousel_slider_outer .next_carousel',
+                                  swipe: {
+                                    onMouse: false,
+                                    onTouch: true
+                                  },
+                                });
+                            };
+                          $wcontainer.animate({'opacity' : 1});
+                          $wcontainer.css({ height: 'auto' });
+                          $wcontainer.parent().removeClass('loading');
+                          // set all the widths to the elements
+                          function setWidths() {
+                            var unitWidth = $container.width();
+                            $container.children().css({ width: unitWidth });
+                            if(jQuery(window).width() <= 768) {
+                            carheight = null;
+                            $container.children().css({ height: 'auto' });
+                          }
+                        }
+
+                });
+                
+              </script> 
+				<?php 
+				} else if ($ppost_type == 'video') { ?>
 					<div class="videofit">
                   <?php global $post; $video = get_post_meta( $post->ID, '_kad_post_video', true ); echo $video; ?>
                   </div>

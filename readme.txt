@@ -47,6 +47,9 @@ Virtue Theme Uses:
 -------------------------------------------------------
 
 = Theme Name: Virtue =
+= Version: 2.0.3 =
+* Last updates for woocommerce 2.1
+* Added Carousel Slider to Portfolio Posts and Home Page
 
 = Version: 2.0.2 =
 * Fix Minor Portfolio Grid issue
