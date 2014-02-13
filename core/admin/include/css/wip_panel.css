@@ -56,9 +56,6 @@
 	background: #f1f1f1;
 	color:#616161;
 	border:solid 1px #ddd;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
 	width:94%; 
 	margin:15px 0; 
 	padding:2%; 
@@ -133,6 +130,11 @@ h2.title, #poststuff h2 {
 	height:37px; 
 	border-bottom:solid 1px #ccc;
 }
+
+body.wp-8 #tabs ul {
+	height:39px; 
+}
+
 #tabs.metaboxes { 
 	width:100%;
 }
@@ -167,10 +169,6 @@ h2.title, #poststuff h2 {
 	margin:0 5px 0 0;
 }
 
-body.version-3-8 #tabs li a {
-	padding:9px;
-}
-
 #tabs.metaboxes li a { 
 	padding:9px; 
 	font-size:14px
@@ -183,18 +181,18 @@ body.version-3-8 #tabs li a {
 	font-size:14px;
 }
 
+body.wp-8 #tabs li a:hover, 
+body.wp-8 #tabs li.ui-tabs-active a, 
+body.wp-8 #tabs li.ui-state-active a {
+	border-bottom: solid 1px #f1f1f1;
+}
+
 #tabs li a:hover, 
 #tabs li.ui-tabs-active a, 
 #tabs li.ui-state-active a {
 	color:#007fa6;
 	display:block;
 	border-bottom: solid 1px #fff;
-}
-
-body.version-3-8 #tabs li a:hover, 
-body.version-3-8 #tabs li.ui-tabs-active a, 
-body.version-3-8 #tabs li.ui-state-active a {
-	border-bottom: solid 1px #f1f1f1;
 }
 
 #tabs.metaboxes li a:hover, 

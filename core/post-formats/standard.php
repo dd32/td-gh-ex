@@ -26,7 +26,7 @@ alhenalite_thumbnail('blog','pin-container'); ?>
             
         <?php endif; ?>
         
-        <span class="entry-standard"><i class="icon-edit"></i>Article</span>
+        <span class="entry-standard"><i class="icon-edit"></i> <?php _e( "Article","wip"); ?> </span>
         
     </div>
 

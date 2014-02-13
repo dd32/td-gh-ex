@@ -8,7 +8,23 @@
  * This source file is subject to the GNU GENERAL PUBLIC LICENSE (GPL 3.0)
  * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
  */
- 
+
+/*-----------------------------------------------------------------------------------*/
+/* Admin class */
+/*-----------------------------------------------------------------------------------*/   
+
+function alhenalite_admin_body_class( $classes ) {
+	
+	global $wp_version;
+	
+	if ( ( $wp_version >= 3.8 ) && ( is_admin()) ) {
+		$classes .= 'wp-8';
+	}
+		return $classes;
+}
+	
+add_filter( 'admin_body_class', 'alhenalite_admin_body_class' );
+
 /*-----------------------------------------------------------------------------------*/
 /* Localize theme */
 /*-----------------------------------------------------------------------------------*/   

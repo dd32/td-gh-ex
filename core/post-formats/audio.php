@@ -26,7 +26,7 @@ alhenalite_thumbnail('blog','pin-container'); ?>
             
         <?php endif; ?>
         
-        <span class="entry-standard"><i class="icon-music"></i>Audio</span>
+        <span class="entry-standard"><i class="icon-music"></i> <?php _e( "Audio","wip"); ?> </span>
         
     </div>
 
