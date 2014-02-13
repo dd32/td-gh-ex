@@ -8,9 +8,9 @@
  */
  
 // Bringing up Sampression Theme Option page after install
-if ( is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" ) {
-	wp_redirect( 'themes.php?page=sampression-options' );
-}
+//if ( is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" ) {
+//	wp_redirect( 'themes.php?page=sampression-options' );
+//}
 
 /*=======================================================================
  * Function to build theme options

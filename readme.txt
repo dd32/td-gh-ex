@@ -5,7 +5,7 @@ Theme URI: http://www.sampression.com/sampression-lite/
 Author: Sampression
 Author URI: http://www.sampression.com
 
-Version: 1.4.1
+Version: 1.4.1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -127,10 +127,10 @@ Version 1.4
 = Improved: Various code optimizations
 
 
-Version 1.4.1
+Version 1.4.1.1
 = Added: CSS for header section
 
-= Fixed: Logo/icons media uploader issue
+= Fixed: Logo/icons popup issue
 = Fixed: Various CSS Fixing
 
 = Improved: Code optimizations
