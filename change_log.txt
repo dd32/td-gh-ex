@@ -16,4 +16,7 @@ Version 2.0
     ii) Fixes in style.css
     iii) Other small typo fixes	
 	
+Version 2.01
+    i)  Fixed missing custom header code
+	
 	
