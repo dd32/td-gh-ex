@@ -1,0 +1,134 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: enrichmg\n"
+"POT-Creation-Date: 2014-02-12 14:24-0800\n"
+"PO-Revision-Date: 2014-02-12 14:25-0800\n"
+"Last-Translator: enricchi creative <terryeast@enricchicreative.com>\n"
+"Language-Team: enricchi creative\n"
+"Language: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;_e;_n:1,2;_x:1,2c;_ex:1,2c\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: ../404.php:16
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: ../404.php:21
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+
+#: ../404.php:29
+msgid "Most Used Categories"
+msgstr ""
+
+#: ../archive.php:48
+msgid "Asides"
+msgstr ""
+
+#: ../archive.php:51
+msgid "Images"
+msgstr ""
+
+#: ../archive.php:54
+msgid "Videos"
+msgstr ""
+
+#: ../archive.php:57
+msgid "Quotes"
+msgstr ""
+
+#: ../archive.php:60
+msgid "Links"
+msgstr ""
+
+#: ../archive.php:63 ../sidebar-nosidebar.php:18 ../sidebar.php:18
+msgid "Archives"
+msgstr ""
+
+#: ../comments.php:36 ../comments.php:56
+msgid "Comment navigation"
+msgstr ""
+
+#: ../comments.php:68
+msgid "Comments are closed."
+msgstr ""
+
+#: ../header.php:39
+msgid "Menu"
+msgstr ""
+
+#: ../header.php:43
+msgid "Skip to content"
+msgstr ""
+
+#: ../image.php:73
+msgid ""
+"Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond"
+"\" title=\"Post a comment\">post a comment</a>."
+msgstr ""
+
+#: ../image.php:75
+msgid "Both comments and trackbacks are currently closed."
+msgstr ""
+
+#: ../no-results.php:13
+msgid "Nothing Found"
+msgstr ""
+
+#: ../no-results.php:23
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: ../no-results.php:28
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: ../searchform.php:10 ../searchform.php:11
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
+#: ../sidebar-nosidebar.php:25 ../sidebar.php:25
+msgid "Meta"
+msgstr ""
+
+#: ../inc/template-tags.php:34
+msgid "Post navigation"
+msgstr ""
+
+#: ../inc/template-tags.php:38
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr ""
+
+#: ../inc/template-tags.php:39
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr ""
+
+#: ../inc/template-tags.php:71
+msgid "Pingback:"
+msgstr ""
+
+#: ../inc/template-tags.php:87
+#, php-format
+msgctxt "1: date, 2: time"
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: ../inc/template-tags.php:94
+msgid "Your comment is awaiting moderation."
+msgstr ""
