@@ -1,7 +1,7 @@
 ----------------------------------
 Smartia Theme
 ----------------------------------
-Version: 	2.1
+Version: 	2.2
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
@@ -17,7 +17,7 @@ bannerad.jpg, images/slides/(1).jpg - (2).jpg: Images are Licensed under Public 
 
 
 ------------------------------------
-Important for Version 2.1
+Important for Version 2.2
 ====================================
 The 2.0 Version is a Major Version which is used almost all new code from the Previous Versions. This version is using the same Framework that other Themes of D5 Creation is using. So, please keep a backup of the Previous Theme before updating. Thus you can go back to the previous if you feel anything wrong with this new version. This version has introduced many new features like Theme Options where you can add the Slide Images, Social Links from the Theme Options.
 
