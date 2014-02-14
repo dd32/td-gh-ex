@@ -21,7 +21,7 @@
  <?php wp_link_pages(array('before' => '<p><strong>' . of_get_option ('pages', 'Pages'). ': </strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
  </div><div class="clear"> </div>
  <?php edit_post_link('Edit', '<p>', '</p>'); ?>
-<?php comments_template('', true);?>
+<?php comments_template(); ?> 
  <?php endwhile; endif; ?>
  
 

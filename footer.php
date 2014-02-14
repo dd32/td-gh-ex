@@ -6,9 +6,6 @@
 */
 ?>
 
-
-
-
 </div> <!-- conttainer -->
 <div id="footer">
 

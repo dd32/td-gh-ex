@@ -24,7 +24,7 @@
 		</div>
         <?php endwhile; ?><div class="clear"> </div>
 	<?php edit_post_link('Edit', '<p>', '</p>'); ?>
-	<?php comments_template('', true); ?>
+	<?php comments_template(); ?> 
 	<?php else: ?>
 		<p>Sorry, no pages matched your criteria.</p>
 	<?php endif; ?>

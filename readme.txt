@@ -1,7 +1,7 @@
 ----------------------------------
 Smartia Theme
 ----------------------------------
-Version: 	2.2
+Version: 	2.3
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 

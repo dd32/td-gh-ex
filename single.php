@@ -33,7 +33,7 @@ get_header(); ?>
           	            
           <!-- End the Loop. -->          
         	
-			<?php comments_template('', true); ?>
+			<?php comments_template(); ?> 
             
 </div>			
 <?php get_sidebar(); ?>

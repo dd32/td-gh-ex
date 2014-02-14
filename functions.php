@@ -13,10 +13,9 @@
 	if ( ! isset( $content_width ) ) $content_width = 584;
 
 // Load the D5 Framework Optios Page
-	if ( !function_exists( 'optionsframework_init' ) ) {
 	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
 	require_once dirname( __FILE__ ) . '/inc/options-framework.php';
-	}
+
 
 // 	Tell WordPress for wp_title in order to modify document title content
 	function smartia_filter_wp_title( $title ) {
@@ -46,23 +45,6 @@
 	);
 	add_theme_support( 'custom-background', $smartia_custom_background );
 	
-// 	WordPress 3.4 Custom Header Support				
-	$smartia_custom_header = array(
-	'default-image'          => get_template_directory_uri() . '/images/logo.png',
-	'random-default'         => false,
-	'width'                  => 300,
-	'height'                 => 90,
-	'flex-height'            => false,
-	'flex-width'             => false,
-	'default-text-color'     => '000000',
-	'header-text'            => false,
-	'uploads'                => false,
-	'wp-head-callback' 		 => '',
-	'admin-head-callback'    => '',
-	'admin-preview-callback' => ''
-	);
-	add_theme_support( 'custom-header', $smartia_custom_header );
-
 
 // 	Functions for adding script
 	function smartia_enqueue_scripts() {
@@ -79,13 +61,8 @@
 	wp_enqueue_script( 'animate-color', get_template_directory_uri() . '/js/jquery.animate-colors-min.js' );
 	wp_enqueue_script( 'skitter-easing', get_template_directory_uri() . '/js/jquery.easing.1.3.js');
 	wp_enqueue_style ('skitter-style', get_template_directory_uri() . '/css/skitter.styles.css');
-
-
-	
 	}
 	add_action( 'wp_enqueue_scripts', 'smartia_enqueue_scripts' );
-
-
 
 // 	Functions for adding some custom code within the head tag of site
 	function smartia_custom_code() {
@@ -209,8 +186,3 @@
         }
     }
 	
-//	Remove WordPress Custom Header Support for the theme smartia
-	remove_theme_support('custom-header');
-	
-//	Remove WordPress Custom Background Support for the theme smartia
-//	remove_theme_support('custom-background');
