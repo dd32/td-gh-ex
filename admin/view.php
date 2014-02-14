@@ -229,7 +229,8 @@ $blueplanet_options = $blueplanet_options_settings;
                                     </label>
                                 </th>
                                 <td>
-                                    <textarea name="blueplanet_options[copyright_text]" cols="90" rows="8"><?php echo esc_attr($blueplanet_options['copyright_text']); ?></textarea>
+                                <input  type="text" name="blueplanet_options[copyright_text]"
+                                            value="<?php echo esc_attr($blueplanet_options ['copyright_text']); ?>" class="regular-text"  />
                                 </td>
                             </tr>
                             <tr valign="top">

@@ -21,7 +21,46 @@ Blue Planet is distributed under the terms of the GNU General Public License v3
 == Tags ==
 dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, translation-ready
 
+== List of Action Hooks ==
+=== Since 1.0.0 ===
+- blue_planet_after_body_open()
+- blue_planet_after_container_open()
+- blue_planet_after_page_open()
+- blue_planet_after_masthead_open()
+- blue_planet_before_masthead_close()
+- blue_planet_after_masthead_close()
+- blue_planet_after_content_open()
+- blue_planet_after_primary_open()
+- blue_planet_after_main_open()
+- blue_planet_before_main_close()
+- blue_planet_before_primary_close()
+- blue_planet_before_secondary_open()
+- blue_planet_after_secondary_open()
+- blue_planet_before_widget()
+- blue_planet_after_widget()
+- blue_planet_before_secondary_close()
+- blue_planet_before_content_close()
+- blue_planet_after_content_close()
+- blue_planet_after_footer_open()
+- blue_planet_credits()
+- blue_planet_before_footer_close()
+- blue_planet_before_page_close()
+- blue_planet_before_container_close()
+
+
+== List of Filter Hooks ==
+=== Since 1.0.0 ===
+- blue_planet_filter_read_more_content()
+- blue_planet_filter_excerpt_length()
+- blue_planet_filter_copyright_text_content()
+- blue_planet_filter_social_sites()
+
 == Changelog ==
+
+Version 1.0.7
+* Bug fixes
+* Filters added 
+* Child theme compatible
 
 Version 1.0.6
 * Bugfix: Child theme not working [URL modified for including parent CSS and JS files]
