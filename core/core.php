@@ -1,6 +1,22 @@
 <?php
 
 /*-----------------------------------------------------------------------------------*/
+/* Admin class */
+/*-----------------------------------------------------------------------------------*/   
+
+function suevafree_admin_body_class( $classes ) {
+	
+	global $wp_version;
+	
+	if ( ( $wp_version >= 3.8 ) && ( is_admin()) ) {
+		$classes .= 'wp-8';
+	}
+		return $classes;
+}
+	
+add_filter( 'admin_body_class', 'suevafree_admin_body_class' );
+
+/*-----------------------------------------------------------------------------------*/
 /* Post formats */
 /*-----------------------------------------------------------------------------------*/   
 
@@ -244,16 +260,16 @@ add_filter( 'wp_get_attachment_link', 'suevafree_prettyPhoto', 10, 6);
 
 /*-----------------------------------------------------------------------------------*/
 /* Custom excerpt more */
-/*-----------------------------------------------------------------------------------*/   
-
+/*-----------------------------------------------------------------------------------*/
+   
 function suevafree_new_excerpt_more( $more ) {
 	
 	global $post;
-	return '<a class="button" href="'.get_permalink($post->ID).'" title="More">  ' . __( "Read More","wip") . ' </a>';
+	return '<a class="button" href="'.get_permalink($post->ID).'" title="More"> ' . __( "Read More","wip") . ' </a>';
 }
 
 add_filter('excerpt_more', 'suevafree_new_excerpt_more');
-
+add_filter( 'the_content_more_link', 'suevafree_new_excerpt_more' );
 
 /*-----------------------------------------------------------------------------------*/
 /* Localize theme */

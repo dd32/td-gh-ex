@@ -2,17 +2,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-28 14:10+0100\n"
-"PO-Revision-Date: 2013-11-28 14:16+0100\n"
+"POT-Creation-Date: 2014-02-14 11:51+0100\n"
+"PO-Revision-Date: 2014-02-14 11:52+0100\n"
 "Last-Translator: Alessandro <info@wpinprogress.com>\n"
 "Language-Team: \n"
+"Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;gettext;gettext_noop;_e\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.5.3\n"
+"X-Generator: Poedit 1.6.3\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:11
@@ -112,12 +113,12 @@ msgstr "<span>Risultati </span> della ricerca per"
 msgid "This sidebar will be shown for the homepage"
 msgstr "Questa sidebar verrà visualizzata nella homepage"
 
-#: core/core.php:49
+#: core/core.php:65
 #, php-format
 msgid "Page %s"
 msgstr "Page %s"
 
-#: core/core.php:252
+#: core/core.php:268
 msgid "Read More"
 msgstr "Continua"
 
@@ -245,20 +246,20 @@ msgid "Header"
 msgstr "Testata"
 
 #: core/admin/option/options.php:110
-msgid "Upload Custom Logo"
-msgstr "Carica un logo personalizzato"
+msgid "Custom Logo"
+msgstr "Logo personalizzato"
 
 #: core/admin/option/options.php:111
-msgid "Upload a custom logo"
-msgstr "Carica una un logo personalizzato"
+msgid "Insert the url of your custom logo"
+msgstr "Inserisci l'url del tuo logo"
 
 #: core/admin/option/options.php:117
-msgid "Upload Custom Favicon"
-msgstr "Carica una favicon personalizzata."
+msgid "Custom Favicon"
+msgstr "Favicon personalizzata."
 
 #: core/admin/option/options.php:118
-msgid "Upload a custom favicon"
-msgstr "Carica una favicon personalizzata"
+msgid "Insert the url of your custom favicon"
+msgstr "Inserisci l'url della tua favicon"
 
 #: core/admin/option/options.php:136
 msgid "Footer"
@@ -608,6 +609,15 @@ msgstr "Video"
 msgid "Search here"
 msgstr "Cerca"
 
+#~ msgid "Upload Custom Logo"
+#~ msgstr "Carica un logo personalizzato"
+
+#~ msgid "Upload a custom logo"
+#~ msgstr "Carica una un logo personalizzato"
+
+#~ msgid "Upload a custom favicon"
+#~ msgstr "Carica una favicon personalizzata"
+
 #~ msgid "en_EN"
 #~ msgstr "it_IT"
 
@@ -702,9 +712,6 @@ msgstr "Cerca"
 #~ msgid "Soundcloud"
 #~ msgstr "Soundcloud"
 
-#~ msgid "Insert the url of your track"
-#~ msgstr "Inserisci l'url del tuo brano."
-
 #~ msgid "Link Options"
 #~ msgstr "Opzioni Link"
 
@@ -780,9 +787,6 @@ msgstr "Cerca"
 
 #~ msgid "Masonry Three Columns"
 #~ msgstr "Masonry Tre Colonne"
-
-#~ msgid "Custom Logo"
-#~ msgstr "Logo personalizzato"
 
 #~ msgid "You want to upload a custom logo?"
 #~ msgstr "Vuoi caricare un logo personalizzato?"
