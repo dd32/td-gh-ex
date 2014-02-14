@@ -4,13 +4,9 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta name="author" content="">
 <?php $options = get_option( 'faster_theme_options' ); ?>
 <link rel="shortcut icon" href="<?php if($options['fevicon'] != ''){echo $options['fevicon'];}else{ echo get_template_directory_uri().'/images/favicon.ico';} ?>">
-<title>RedPro
-<?php wp_title( '|', true, 'left' ); ?>
-</title>
+<title><?php wp_title(); ?></title>
 
 <!-- Just for debugging purposes. Don't actually copy this line! -->
 <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -20,10 +16,7 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
-<?php 
-if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
-wp_head(); 
-?>
+<?php wp_head(); ?>
 <script type="text/javascript">
     jQuery(function($) {
 		/* Mobile */
@@ -86,4 +79,3 @@ wp_head();
   <!--end / nav--> 
 </header>
 <!--end / header--> 
-<!--end / page-title-->

@@ -19,4 +19,10 @@ Version 2.0
 Version 2.01
     i)  Fixed missing custom header code
 	
+Version 2.02
+    i)   Cleaning header.php code
+	ii)  Removing Typo errors
+	iii) Fixing functions.php Error.
+	
+	
 	

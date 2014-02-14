@@ -217,6 +217,7 @@ function RedPro_scripts_styles() {
 	wp_enqueue_style('style', get_template_directory_uri() . '/style.css', '', '1.0');
 	wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.css', '', '3.0.3');
 	wp_enqueue_script('RedPro', get_template_directory_uri() . '/js/RedPro.js', '', '1.0');
+	if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 }
 add_action( 'wp_enqueue_scripts', 'RedPro_scripts_styles' );
 
@@ -358,7 +359,7 @@ function RedPro_paginate_links( $args = '' ) {
 				$page_links[] = "<li><a class='page-numbers custom_page_link' href='" . esc_url( apply_filters( 'RedPro_paginate_links', $link ) ) . "'>$n_display</a></li>";
 				$dots = true;
 			elseif ( $dots && !$show_all ) :
-				$page_links[] = '<li><span class="page-numbers dots custom_page_link">' . __e( '&hellip;','RedPro' ) . '</span><li>';
+				$page_links[] = '<li><span class="page-numbers dots custom_page_link">' . _e( '&hellip;','RedPro' ) . '</span><li>';
 				$dots = false;
 			endif;
 		endif;

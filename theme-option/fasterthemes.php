@@ -85,7 +85,7 @@ function fastertheme_framework_page(){
           		</div>
                 
                 <div id="section-logo" class="section section-upload ">
-            		<h4 class="heading">Fevicon Icon</h4>
+            		<h4 class="heading">Favicon</h4>
             		<div class="option">
               			<div class="controls">
                 			<input id="logo" class="upload" type="text" name="faster_theme_options[fevicon]" 
