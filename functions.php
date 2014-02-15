@@ -631,7 +631,46 @@ function discover_of_styles() {
 }
 add_action('wp_print_styles', 'discover_of_styles');
 
-/** redirect */
+// WooCommerce
+
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
+add_action('woocommerce_before_main_content', 'discover_wrapper_start', 10);
+add_action('woocommerce_after_main_content', 'discover_wrapper_end', 10);
+
+function discover_wrapper_start() {
+  echo '	<div id="subhead_container">
+		<div class="row">
+		<div class="twelve columns">
+		<h1><?php the_title(); ?>
+  </h1>
+  </div>
+  </div>
+  </div>
+  <!--content-->
+  <div class="row" id="content_container"> 
+    <!--left col-->
+    <div class="eight columns">
+      <div id="left-col">
+        <div class="post-entry">';
+}
+          
+function discover_wrapper_end() {
+          echo '
+          <div class="clear"></div>
+          ';
+          wp_link_pages( array( 'before' => '' . __( 'Pages:', 'discover' ), 'after' => '' ) );
+          echo ' </div>
+        <!--post-entry end--> 
+      </div>
+      <!--left-col end--> 
+    </div>
+    <!--column end-->';
+    get_sidebar();
+    echo '</div>
+  <!--content end-->';
+}
 
 // include panel file.
 if ( !function_exists( 'optionsframework_init' ) ) {

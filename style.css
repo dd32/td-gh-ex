@@ -2,7 +2,7 @@
 Theme Name: discover
 Theme URI: http://antthemes.com/?page_id=1963
 Description: A very neat and clean orange and white business theme. The theme is fully responsive that looks great on any device. The theme supports widgets. And features theme-options, threaded-comments and multi-level dropdown menu. A simple and neat typography. Uses WordPress custom menu, header image, and background. discover is WooCommerce Compatible. Get free support on http://antthemes.com/forum
-Version: 1.7.17
+Version: 1.7.18
 Author: Manishg
 Author URI: http://antthemes.com/
 Tags: orange,threaded-comments,light,two-columns,theme-options,white
@@ -1362,7 +1362,7 @@ a img.aligncenter {
 
 .button.alt { color: #fff !important; }
 
-.woocommerce #payment ul.payment_methods li, .woocommerce-page #payment ul.payment_methods li {
+.woocommerce #payment ul.payment_methods li, .woocommerce-page #payment ul.payment_methods li, .woocommerce-pagination ul li {
 	background: none;
 	list-style: none;
 	padding-left: 0;
