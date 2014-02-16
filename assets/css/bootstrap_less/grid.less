@@ -9,7 +9,7 @@
 }
 
 // mobile first defaults
-.row, .row-fluid {
+.row, .row-fluid, .col2-set {
   .make-row();
 }
 
@@ -25,6 +25,8 @@
   .span9,
   .span10,
   .span11,
+  .col2-set .col-1,
+  .col2-set .col-2,
 .col-ss-1,
 .col-ss-2,
 .col-ss-3,
@@ -271,6 +273,8 @@
   .span9,
   .span10,
   .span11,
+  .col2-set .col-1,
+  .col2-set .col-2,
   .col-md-1,
   .col-md-2,
   .col-md-25,
@@ -291,13 +295,13 @@
   .col-md-3, .span3  { width: percentage((3 / @grid-columns)); }
   .col-md-4, .span4  { width: percentage((4 / @grid-columns)); }
   .col-md-5, .span5  { width: percentage((5 / @grid-columns)); }
-  .col-md-6, .span6  { width: percentage((6 / @grid-columns)); }
+  .col-md-6, .span6, .col2-set .col-1, .col2-set .col-2 { width: percentage((6 / @grid-columns)); }
   .col-md-7, .span7  { width: percentage((7 / @grid-columns)); }
   .col-md-8, .span8  { width: percentage((8 / @grid-columns)); }
   .col-md-9, .span9  { width: percentage((9 / @grid-columns)); }
   .col-md-10, .span10 { width: percentage((10/ @grid-columns)); }
   .col-md-11, .span11 { width: percentage((11/ @grid-columns)); }
-  .col-md-12, .span12 { width: 100%; }
+  .col-md-12, .span12, .woocommerce form .form-row-wide, .woocommerce-page form .form-row-wide { width: 100%; }
 
   // Push and pull columns for source order changes
   .col-md-push-0  { left: auto; }
