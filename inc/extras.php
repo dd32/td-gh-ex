@@ -84,12 +84,17 @@ function unite_title( $title ) {
 add_filter('widget_text', 'do_shortcode'); // Allow shortcodes in Dynamic Sidebar
 
 // Prevent page scroll when clicking the more link
-
 function unite_remove_more_link_scroll( $link ) {
   $link = preg_replace( '|#more-[0-9]+|', '', $link );
   return $link;
 }
 add_filter( 'the_content_more_link', 'unite_remove_more_link_scroll' );
+
+// Change default "Read More" button when using the_excerpt
+function unite_excerpt_more( $more ) {
+  return ' <a class="more-link" href="'. get_permalink( get_the_ID() ) . '">Continue reading <i class="fa fa-chevron-right"></i></a>';
+}
+add_filter( 'excerpt_more', 'unite_excerpt_more' );
 
 /**
  * Sets the authordata global when viewing an author archive.
@@ -257,7 +262,7 @@ if (!function_exists('get_unite_theme_options'))  {
         echo 'a:active {color: '.of_get_option('link_active_color', '#000').';}';
       }
       if ( of_get_option('element_color')) {
-        echo '.btn-primary, .label-primary {background-color: '.of_get_option('element_color', '#000').'; border-color: '.of_get_option('element_color', '#000').';} hr.section-divider:after, .entry-meta .fa { color: '.of_get_option('element_color', '#000').'}';
+        echo '.btn-primary, .label-primary, .carousel-caption h4 {background-color: '.of_get_option('element_color', '#000').'; border-color: '.of_get_option('element_color', '#000').';} hr.section-divider:after, .entry-meta .fa { color: '.of_get_option('element_color', '#000').'}';
       }
       if ( of_get_option('element_color_hover')) {
         echo '.btn-primary:hover, .label-primary[href]:hover, .label-primary[href]:focus, #infinite-handle span:hover, .btn.btn-primary.read-more:hover, .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .site-main [class*="navigation"] a:hover, .more-link:hover, #image-navigation .nav-previous a:hover, #image-navigation .nav-next a:hover  { background-color: '.of_get_option('element_color_hover', '#000').'; border-color: '.of_get_option('element_color_hover', '#000').'; }';

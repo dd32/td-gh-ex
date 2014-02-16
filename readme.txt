@@ -2,7 +2,7 @@
 
 Theme Name: Unite
 Theme URI: http://colorlib.com/wp/unite/
-Version: 1.1
+Version: 1.2
 Tested up to: WP 3.8
 
 Author: Aigars Silkalns
@@ -60,6 +60,15 @@ If you dismiss this notice, you can install those plugins later via Appearance->
 Theme documentation is available on http://colorlib.com/wp/support/unite
 
 /*========= Changelog =========*/
+
+= 1.2 - 15.02.2014 =
+* Added options to chose between full-content "the_content" and excerpt "the_excerpt" setup via Them Options.
+* Added option to choose between Left and Right sidebar
+* Added option to change image slider title color. Now part of "Element Background Color"
+* Improved "Continue Reading" button
+* Updated translation files
+* Other small CSS tweaks
+* Removed unused layout options and replaced with a simpler Bootstrap alternatives.
 
 = 1.1 - 31.01.2014 =
 * Options Framework  is now part of the theme and is no longer installed as plugin

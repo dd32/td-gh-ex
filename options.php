@@ -24,8 +24,14 @@ function optionsframework_option_name() {
  */
 
 function optionsframework_options() {
-	
-       // Test data
+
+	    // Option to switch between the_excerpt and the_content 
+		$blog_layout = array('1' => __('Display full content for each post', 'unite'),'2' => __('Display excerpt for each post', 'unite'));
+       	
+		// Color schemes
+		$site_layout = array('pull-left' => __('Right Sidebar', 'unite'),'pull-right' => __('Left Sidebar', 'unite'));
+
+       	// Test data
         $test_array = array(
                 'one' => __('One', 'options_framework_theme'),
                 'two' => __('Two', 'options_framework_theme'),
@@ -108,6 +114,20 @@ function optionsframework_options() {
 
 		$options[] = array( 'name' => __('Main', 'unite'),
 							'type' => 'heading');
+		
+		$options[] = array( 'name' => __('Home Page Settings', 'unite'),
+							'id' => 'blog_settings',
+							'std' => '1',
+							'type' => 'select',
+							'options' => $blog_layout);	
+
+		$options[] = array( "name" => __('Website Layout Options', 'unite'),
+							"desc" => __('Choose between Left and Right sidebar options to be used as default', 'unite'),
+							"id" => "site_layout",
+							"std" => "pull-left",
+							"type" => "select",
+							"class" => "mini",
+							"options" => $site_layout);
 
 		$options[] = array( 'name' => __('Element color', 'unite'),
 							'desc' => __('Default used if no color is selected', 'unite'),

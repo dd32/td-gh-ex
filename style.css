@@ -4,7 +4,7 @@ Theme URI: http://colorlib.com/wp/unite
 Author: Colorlib
 Author URI: http://colorlib.com/wp/
 Description: Unite is a clean, modern and fully responsive WordPress wedding theme built using Bootstrap 3 which makes it optimized for tablets and mobile. It is a highly customizable theme with unlimited color variations that can be tweaked via simple yet powerful Theme Options.  Theme has a built-in Popular Posts Widget, Infinite Scroll (powered by Jatpack) and translation support.  Theme features fancy image slider, SEO friendly structure, logo support, social links and widgetized homepage.  This theme was built to be used for wedding related websites but can be tweaked to be used as any other image-centric blog such as travel. 
-Version: 1.1
+Version: 1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: unite
@@ -144,7 +144,7 @@ textarea {
 	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
 	padding-left: 3px;
 	vertical-align: top; /* Improves readability and alignment in all browsers */
-	width: 98%;
+	width: 100%;
 }
 
 
@@ -805,6 +805,7 @@ hr.section-divider:after {
 /* =Slider
 ----------------------------------------------- */
 .carousel-caption h4 {
+	background: #54397e;
     background: rgba(84, 57, 126,0.7);
     padding: 15px;
     color: #fff;
@@ -817,7 +818,8 @@ hr.section-divider:after {
     padding-bottom: 20px;
 }
 .carousel-caption p {
-    background: rgba(0, 0, 0,0.4);
+	background: #555;
+    background: rgba(0, 0, 0,0.5);
     padding: 15px;
     max-width: 50%;
 }
