@@ -1,3 +1,8 @@
+Version 1.13 (2014-02-16)
+-------------------------
+- Added post thumbnail support for page and template-nosidebar
+
+
 Version 1.12 (2014-02-13)
 -------------------------
 - Fixed meta tag http-equiv

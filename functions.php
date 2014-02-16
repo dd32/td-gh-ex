@@ -12,7 +12,8 @@ function hemingway_setup() {
 	add_theme_support( 'custom-background' );
 		
 	// Post thumbnails
-	add_theme_support( 'post-thumbnails' ); add_image_size( 'post-image', 676, 9999 );
+	add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
+	add_image_size( 'post-image', 676, 9999 );
 	
 	// Post formats
 	add_theme_support( 'post-formats', array( 'video', 'aside', 'quote' ) );

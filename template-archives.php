@@ -15,6 +15,30 @@ Template Name: Archive template
 			<div class="post">
 			
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+				
+					<?php if ( has_post_thumbnail() ) : ?>
+					
+					<div class="featured-media">
+					
+						<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>">
+						
+							<?php the_post_thumbnail('post-image'); ?>
+							
+							<?php if ( !empty(get_post(get_post_thumbnail_id())->post_excerpt) ) : ?>
+											
+								<div class="media-caption-container">
+								
+									<p class="media-caption"><?php echo get_post(get_post_thumbnail_id())->post_excerpt; ?></p>
+									
+								</div>
+								
+							<?php endif; ?>
+							
+						</a>
+								
+					</div> <!-- /featured-media -->
+						
+				<?php endif; ?>
 													
 					<div class="post-header">
 												
