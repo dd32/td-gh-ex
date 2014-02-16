@@ -40,15 +40,14 @@ get_header(); ?>
 		<?php while (have_posts()) : the_post(); ?>
 		
 			<div <?php post_class(); ?>>
-				<p class="postmetadataw"><?php echo  of_get_option ('postedby', 'Posted by'); ?>: <?php the_author_posts_link() ?> | on <?php the_time('F j, Y'); ?></p>
-                <h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
+				<h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
 				<div class="content-ver-sep"> </div>	
 				<div class="entrytext"><?php the_post_thumbnail('thumbnail'); ?>
   <?php sunrain_content(); ?>
 				</div>
 				<div class="clear"> </div>
                 <div class="up-bottom-border">
-				<p class="postmetadata"><?php echo  of_get_option ('postedin', 'Posted in'); ?> <?php the_category(', ') ?> | <?php edit_post_link('Edit', '', ' | '); ?>  <?php comments_popup_link(of_get_option ('nocomments', 'No Comments') . ' &#187;', of_get_option ('1comment', 'One Comment') . ' &#187;', '% ' . of_get_option ('comments', 'Comments') . ' &#187;'); ?> <?php the_tags('<br />' .  of_get_option ('tags', 'Tags') . ': ', ', ', '<br />'); ?></p>
+				<?php sunrain_post_meta(); ?>
 				</div>
             
 		                
@@ -69,7 +68,7 @@ get_header(); ?>
 		<?php get_search_form(); ?>
 		<p><a href="<?php echo home_url(); ?>" title="Browse the Home Page">&laquo; <?php echo of_get_option('orhp', 'Or Return to the Home Page'); ?></a></p><br />
 		<h2 class="post-title-color"><?php echo of_get_option('ycvffc', 'You can also Visit the Following. These are the Featured Contents'); ?></h2>
-		<div class="content-ver-sep"></div><br />
+		<div class="content-ver-sep"></div></div>
 		<?php get_template_part( 'featured-box' ); ?>
 
 	<?php endif; ?>

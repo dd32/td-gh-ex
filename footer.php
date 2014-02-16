@@ -30,7 +30,7 @@
 
 </div> <!-- footer-content -->
 </div> <!-- footer -->
-<div id="topdirection"><a href="#">ˆ</a></div>
+<div id="topdirection"><a href="#">^</a></div>
 <div class="clear"> </div>
 <?php wp_footer(); ?>
 </body>

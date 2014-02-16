@@ -15,7 +15,7 @@ get_header(); ?>
 <p><a href="<?php echo home_url(); ?>" title="Browse the Home Page">&laquo; <?php echo of_get_option('orhp', 'Or Return to the Home Page'); ?></a></p><br /><br />
 
 <h2 class="post-title-color"><?php echo of_get_option('ycvffc', 'You can also Visit the Following. These are the Featured Contents'); ?></h2>
-<div class="content-ver-sep"></div><br />
+<div class="content-ver-sep"></div></div>
 <?php get_template_part( 'featured-box' ); ?>
  
 <?php get_footer(); ?>

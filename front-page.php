@@ -53,7 +53,7 @@ endif; ?>
 </div></div>
 
 <h1 id="heading2"><?php echo of_get_option('heading_text2', 'WordPress is web <em>software</em> you can use to create websits! '); ?></h1>
-<p class="heading-desc2"><?php echo of_get_option('heading_des2', 'The core software is built by hundreds of community volunteers, and when you are ready for more there are thousands of plugins and themes available to transform your site into almost anything you can imagine. Over 60 million people have chosen WordPress to power the place on the web they call "home" <em>— we would love you to join the family.</em>'); ?></p>
+<p class="heading-desc2"><?php echo of_get_option('heading_des2', 'The core software is built by hundreds of community volunteers, and when you are ready for more there are thousands of plugins and themes available to transform your site into almost anything you can imagine. Over 60 million people have chosen WordPress to power the place on the web they call "home" <em>- we would love you to join the family.</em>'); ?></p>
 
 <?php get_template_part( 'featured-box' ); ?> 
 

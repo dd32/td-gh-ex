@@ -10,11 +10,8 @@ get_header(); ?>
 <div id="container">
 <div id="content">
 
-<?php
-$args = array( 'post_type'=> 'post', 'paged' => ( get_query_var('paged') ? get_query_var('paged') : 1 ) );
-query_posts( $args ); 
-
-if (have_posts()) : while (have_posts()) : the_post();?>
+<?php  global $more; $more = 0;
+$wp_query = new WP_Query(array( 'type' => 'post', 'paged' => ( get_query_var('paged') ? get_query_var('paged') : 1 ) )); if ( $wp_query->have_posts()) : while ($wp_query->have_posts()) : $wp_query->the_post();  ?>
 <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
  <?php sunrain_post_date(); ?><div class="post-container">		
  <h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>

@@ -96,7 +96,7 @@ function optionsframework_options() {
 		'name' => 'Front Page Heading 02 Description', 
 		'desc' => 'Input your heading description here. Please limit it within 100 Letters.', 
 		'id' => 'heading_des2',
-		'std' => 'The core software is built by hundreds of community volunteers, and when you are ready for more there are thousands of plugins and themes available to transform your site into almost anything you can imagine. Over 60 million people have chosen WordPress to power the place on the web they call "home" <em>— we would love you to join the family.</em>',
+		'std' => 'The core software is built by hundreds of community volunteers, and when you are ready for more there are thousands of plugins and themes available to transform your site into almost anything you can imagine. Over 60 million people have chosen WordPress to power the place on the web they call "home" <em>- we would love you to join the family.</em>',
 		'type' => 'text' );
 
 	$options[] = array(
@@ -157,6 +157,42 @@ function optionsframework_options() {
 		'type' => 'text' );
 
 	}
+	
+	$options[] = array(
+		'desc' => '<span class="featured-area-title">Social Links</span>', 
+		'type' => 'info');
+
+	$options[] = array(
+		'name' => 'Google Plus Link', 
+		'desc' => 'Input your Google Plus URL here.', 
+		'id' => 'gplus-link',
+		'std' => '#',
+		'type' => 'text');	
+		
+	$options[] = array(
+		'name' => 'Picassa Web Album Link', 
+		'desc' => 'Input your Picassa URL here.', 
+		'id' => 'picassa-link',
+		'std' => '#',
+		'type' => 'text');
+	
+	$options[] = array(
+		'name' => 'Linked In Link', 
+		'desc' => 'Input your Linked In URL here.', 
+		'id' => 'li-link',
+		'std' => '#',
+		'type' => 'text');
+
+	$options[] = array(
+		'name' => 'Feed or Blog Link', 
+		'desc' => 'Input your Feed or Blog URL here.', 
+		'id' => 'feed-link',
+		'std' => '#',
+		'type' => 'text');
+		
+	
+	
+	
 	
 // Slider Settings
 	$options[] = array(

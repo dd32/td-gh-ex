@@ -107,13 +107,13 @@
 	
 	function sunrain_excerpt_more($more) {
     global $post;
-	return '<a href="'. get_permalink($post->ID) . '" class="read-more">Read More<span>›</span></a>';
+	return '<a href="'. get_permalink($post->ID) . '" class="read-more">Read More<span> ></span></a>';
 	}
 	add_filter('excerpt_more', 'sunrain_excerpt_more');
 	
 	// Content Type Showing
 	function sunrain_content() {
-	if (( of_get_option('contype', '1') != '2' ) || is_page() || is_single() ) : the_content('<span class="read-more">Read More<span>›</span></span>');
+	if (( of_get_option('contype', '1') != '2' ) || is_page() || is_single() ) : the_content('<span class="read-more">Read More<span> ></span></span>');
 	else: the_excerpt();
 	endif;	
 	}
