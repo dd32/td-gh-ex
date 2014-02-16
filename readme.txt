@@ -17,6 +17,9 @@ License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Blue Planet WordPress Theme, Copyright 2013 nilambar.net
 Blue Planet is distributed under the terms of the GNU General Public License v3
+The exceptions to license are as follows:
+- Nivo Slider is released under the MIT license
+- jquery.meanmenu.js released by Chris Wharton (https://github.com/meanthemes/meanMenu)
 
 == Tags ==
 dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, translation-ready

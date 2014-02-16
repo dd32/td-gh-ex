@@ -4,7 +4,7 @@ Theme URI: http://wordpress.org/themes/blue-planet
 Author: Nilambar Sharma
 Author URI: http://nilambar.net
 Description: Blue Planet is a beautiful and sleek responsive theme for your awesome WordPress website. Features - Cross browser compatible, Two columns or One column layout, Responsive Design, Custom menus, Featured slider, Social Icons, Theme options, Custom CSS, Translation ready
-Version: 1.0.7.1
+Version: 1.0.7.2
 License: GNU General Public License
 License URI: license.txt
 Text Domain: blue-planet
@@ -1189,7 +1189,8 @@ main#main p{
         display: block;
         line-height: 2.181818182;
         padding: 8px 10px;
-        width: 180px;
+        width: auto;
+        min-width: 200px;
         white-space: normal;
     }
     .blueplanet-nav li ul li a:hover {
