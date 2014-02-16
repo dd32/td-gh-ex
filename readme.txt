@@ -5,7 +5,7 @@
 Blue Planet is a beautiful and sleek theme for your awesome WordPress website. It exudes a clean and super sharp look. It comes with a whole set of interesting, rich features and flexible theme options. Built on HTML5, CSS3, it has a responsive design which lets the content automatically adapt to the screen's size on different devices. This theme is easily customizable with an advanced theme options panel. It supports popular plugins such as Jetpack, WordPress SEO by Yoast, WP-PageNavi, Contact Form 7 and many more. It is also translation ready. If you need support with this theme, please go to http://wordpress.org/support/theme/blue-planet
 
 == Navigation ==
-Two menu positions are available. One is Primary menu. It is such designed that first priority would go to widget menu. If there is no menu in the widget area, selected menu will be displayed. Even menu is not selected, then default menu will be displayed provided by 'wp_page_menu'.   
+Two menu positions are available. One is Primary menu. It is such designed that first priority would go to widget menu. If there is no menu in the widget area, selected menu will be displayed. Even menu is not selected, then default menu will be displayed provided by 'wp_page_menu()' function.   
 Another menu 'Footer Menu' is for the footer area.
 
 == Translation ==

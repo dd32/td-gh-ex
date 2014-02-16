@@ -14,11 +14,11 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<div class="bp-thumbnail-wrapper">
-		<?php if ( has_post_thumbnail() ) {
-				the_post_thumbnail();
-		} ?>
-		</div>
+		<?php if ( has_post_thumbnail() ) { ?>
+			<div class="bp-thumbnail-wrapper">
+					<?php the_post_thumbnail(); ?>
+			</div>
+		<?php } ?>
 
 		<?php the_content(); ?>
 		<?php
