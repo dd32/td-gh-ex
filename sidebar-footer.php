@@ -15,28 +15,21 @@
 	// If we get this far, we have widgets. Let do this.
 ?>
 <div id="footer-sidebar">
-	<?php if ( is_active_sidebar( 'sidebar-3' ) ) : ?>
-	<div class="first-footer-widget">
-		<?php dynamic_sidebar( 'sidebar-3' ); ?>
-	</div><!-- #first .widget-area -->
-	<?php endif; ?>
-
-	<?php if ( is_active_sidebar( 'sidebar-4' ) ) : ?>
-	<div class="footer-widgets">
-		<?php dynamic_sidebar( 'sidebar-4' ); ?>
-	</div><!-- #second .widget-area -->
-	<?php endif; ?>
-
-	<?php if ( is_active_sidebar( 'sidebar-5' ) ) : ?>
-	<div class="footer-widgets">
-		<?php dynamic_sidebar( 'sidebar-5' ); ?>
-	</div><!-- #third .widget-area -->
-	<?php endif; ?>
+		<div class="first-footer-widget">
+		<?php if ( is_active_sidebar( 'sidebar-3' ) ) : dynamic_sidebar( 'sidebar-3' ); endif; ?>
+    	</div><!-- #first .widget-area -->
+        
+		<div class="footer-widgets">
+		<?php if ( is_active_sidebar( 'sidebar-4' ) ) : dynamic_sidebar( 'sidebar-4' );  endif; ?>
+		</div><!-- #second .widget-area -->
     
-    <?php if ( is_active_sidebar( 'sidebar-6' ) ) : ?>
-	<div class="footer-widgets">
-		<?php dynamic_sidebar( 'sidebar-6' ); ?>
-	</div><!-- #fourth .widget-area -->
-	<?php endif; ?>
+    	<div class="footer-widgets">
+		<?php if ( is_active_sidebar( 'sidebar-5' ) ) : dynamic_sidebar( 'sidebar-5' ); endif; ?>
+    	</div><!-- #third .widget-area -->
+    
+      	<div class="footer-widgets">
+    	<?php if ( is_active_sidebar( 'sidebar-6' ) ) : dynamic_sidebar( 'sidebar-6' ); endif; ?>
+    	</div><!-- #fourth .widget-area -->
+    
 </div><!-- #footerwidget -->
 

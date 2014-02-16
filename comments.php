@@ -5,11 +5,7 @@
 	Since Smartia 2.0  
 */
 
-	if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
-		die ('Please do not load this page directly. Thanks!');
-	if ( post_password_required() ) { ?>
-<p class="nocomments"><?php echo of_get_option('ppp1', 'This post is password protected. Enter the password to view comments.'); ?></p>
-<?php
+	if ( post_password_required() ) {
 		return;
 	}
 ?>
