@@ -1,3 +1,8 @@
+Version 1.18 (2014-02-17)
+-------------------------
+- Another update to the theme description (sorry, theme reviewers)
+
+
 Version 1.16 (2014-02-17)
 -------------------------
 - Minor change to the theme description
