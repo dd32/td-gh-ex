@@ -67,6 +67,9 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/catch
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 
 == Changelog ==
+Version 0.3
+* Fixed UTF character issue in style.css theme description 
+
 Version 0.2
 * Re-uploading in WordPress.org as the previous ticket got empty
 
