@@ -35,7 +35,7 @@
 							
 								<h3 class="blog-description"><?php echo esc_attr( get_bloginfo( 'description' ) ); ?></h3>
 								
-							<?php endif; ?>
+							<?php } ?>
 						
 						</div> <!-- /blog-info -->
 									
