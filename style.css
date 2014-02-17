@@ -1,7 +1,7 @@
 /*---------------------------------------------------------------------------------
 
 	Theme Name: Hemingway
-	Version: 1.13
+	Version: 1.14
 	Description: Hemingway is a clean, beautiful and responsive two-column theme for bloggers. Features responsive design, retina-ready assets, custom widgets (video, Flickr and Dribbble), page templates and translation-ready code. Included languages: Swedish/svenska.
 	Tags: black, dark, white, green, two-columns, fluid-layout, responsive-layout, custom-header, custom-menu, featured-images, flexible-header, post-formats, sticky-post, threaded-comments, translation-ready
 	Author: Anders Norén
@@ -313,9 +313,11 @@ a.more-link,
 .blog-menu a:hover,
 .blog-menu .current_menu_item a { color: #FFF; }
 
-.blog-menu > .has-children a { padding-right: 35px; }
+.blog-menu > .has-children a,
+.blog-menu > .page_item_has_children a { padding-right: 35px; }
 
-.blog-menu > .has-children::after {
+.blog-menu > .has-children::after,
+.blog-menu > .page_item_has_children::after {
 	content: "";
 	display: block;
 	border: 5px solid transparent;
@@ -327,7 +329,8 @@ a.more-link,
 	margin-top: -2px;
 }
 
-.blog-menu > .has-children:hover::after { border-top-color: #FFF; }
+.blog-menu > .has-children:hover::after,
+.blog-menu > .page_item_has_children:hover::after { border-top-color: #FFF; }
 
 .blog-menu li:hover a {
 	background-color: #1D1D1D;
@@ -357,7 +360,8 @@ a.more-link,
     display: block;
 }
 
-.blog-menu ul > .has-children::after {
+.blog-menu ul > .has-children::after,
+.blog-menu ul > .page_item_has_children::after {
 	content: "";
 	display: block;
 	border: 6px solid transparent;
@@ -369,7 +373,8 @@ a.more-link,
 	margin-top: -5px;
 }
 
-.blog-menu ul > .has-children:hover::after { border-right-color: #FFF; }
+.blog-menu ul > .has-children:hover::after,
+.blog-menu ul > .page_item_has_children:hover::after { border-right-color: #FFF; }
 
 .blog-menu ul li { 	
 	width: 240px; 

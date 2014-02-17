@@ -100,8 +100,8 @@
 					<div id="meta" class="widget widget_text">
 						<div class="widget-content">
 						
-							<h3 class="widget-title"><?php _e( "Add some widgets, won't you?", "hemingway" ); ?></h3>
-							<p><?php _e( "This message is displayed because you haven't added any widgets to the footer yet. You can do so in the settings page at Appearance > Widgets.", "hemingway" ); ?></p>
+							<h3 class="widget-title"><?php _e( "Text widget", "hemingway" ); ?></h3>
+							<p><?php _e( "These widgets are displayed because you haven't added any widgets of your own yet. You can do so at Appearance > Widgets in the WordPress settings.", "hemingway" ); ?></p>
 			                
 						</div>
 	                </div>
