@@ -1,6 +1,10 @@
 *** discover Changelog ***
 
-15-02-2014 - version 1.2.3
+17-02-2014 - version 1.7.19
+*if ( function_exists( 'wp_get_theme' ) ) { - removed
+*if ( ! function_exists( 'get_custom_header' ) ) { - removed
+
+15-02-2014 - version 1.7.18
 * Made compatible with woocommerce version 2.1
 
 31-12-2013 - version 1.7.17
