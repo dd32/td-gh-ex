@@ -1,3 +1,8 @@
+Version 1.15 (2014-02-17)
+-------------------------
+- Added font-smoothing to bdoy to make sure that the WordPress.org theme demo renders the theme correctly
+
+
 Version 1.14 (2014-02-17)
 -------------------------
 - Fixed the meta tag to be HTML 5 compliant
