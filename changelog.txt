@@ -1,3 +1,8 @@
+Version 1.22 (2014-02-17)
+-------------------------
+- Fixed tag cloud styling
+
+
 Version 1.21 (2014-02-17)
 -------------------------
 - Fixed a bug in the condititional statement from the last update
