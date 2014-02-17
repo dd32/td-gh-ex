@@ -67,6 +67,9 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/catch
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 
 == Changelog ==
+Version 0.2
+* Re-uploading in WordPress.org as the previous ticket got empty
+
 Version 0.1
 * Initial release in http://catchthemes.com
 * Submitted theme for review in http://wordpress.org
