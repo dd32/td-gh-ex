@@ -24,11 +24,11 @@
 	III) The Default Background Image (images/background.jpg) is under public domain: http://wallbox.ru/wallpaper/9422/#.UnLDFNQhCRs
 	IV) The images bullet.gif, notepad-back.gif, pages-back.gif, pages-bottom.gif, postit-back.gif, postit-upper.gif, recent-posts-bottom.gif, links_box.gif, about_box.gif are under the General Public License. http://www.evaneckard.com/
 	V) The images anarchy-symbol-big.jpg, anarchy-symbol.jpg and anarchy-symbol.png is under public domain: http://www.layoutsparks.com/1/213916/anarchy-perfect-black-A-31000.html
-	VI) The images line.gif, outer-back.png, outer-back-search.png and notepad-bottom.png has been created by me and under AGPLv3 license.
+	VI) The images line.gif, outer-back.png, outer-back-search.png and notepad-bottom.png has been created by me and under GPLv3 license.
 	VII) The file html5.js present in the "/js" folder are under the MIT/GPL2 Licnese. https://github.com/aFarkas/html5shiv
-	VIII) The files theme-customizer.js and smoothscroll.js present in the "/js" folder has been created by me and under the AGPLv3 Licnese.
+	VIII) The files theme-customizer.js and smoothscroll.js present in the "/js" folder has been created by me and under the GPLv3 Licnese.
 
-Everything else used in this theme has been created by me, especially for "Anarcho Notepad" theme and is distributed under AGPLv3 license.
+Everything else used in this theme has been created by me, especially for "Anarcho Notepad" theme and is distributed under GPLv3 license.
 
 == Installing Anarcho Notepad Manually (FTP) ==
 
@@ -52,7 +52,7 @@ Everything else used in this theme has been created by me, especially for "Anarc
 
 		5. To activate the Theme click the Activate "Anarcho Notepad" link in the top right.
 
-		6. After which Anarcho Notepad will automatically redirect you to the Theme Options Page for further customization for your theme.
+		6. Then you need to go to the Appearance > Customize for further customization of your theme.
 
 	Your selection should immediately become active.
 
@@ -103,10 +103,12 @@ Everything else used in this theme has been created by me, especially for "Anarc
                                 fixed : stretch of the background images.
                                 fixed : many more minor fixes and changes.
         2.4.1   (2014.1.22)  -  Minor additions and fixes
-        2.5     (2014.1.27)  -  added : the ability to change the font entries.
+        2.5     (2014.1.27)  -  added : the ability to change the font of entries.
                                 fixed : many more minor fixes and changes.
         2.5.1   (2014.2.1)   -  Minor additions and fixes
         2.5.2   (2014.2.1)   -  Minor additions and fixes
+        2.6     (2014.2.17)  -  added : the ability to change the font size of entries.
+                                fixed : many more minor fixes and changes.
 
 == Contact & Issues for Anarcho Notepad ==
 

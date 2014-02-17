@@ -3,7 +3,7 @@
  * Theme Customizer support
  *
  * @package	Anarcho Notepad
- * @since	2.5
+ * @since	2.6
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013-2014, Arthur Gareginyan
  * @link      	http://mycyberuniverse.com/anarcho-notepad.html
@@ -101,13 +101,13 @@ class Anarcho_Customize_Textarea_Control extends WP_Customize_Control {
 		        'label'				=> __( 'Disable box "What is this place?"', 'anarcho-notepad' ),
 		        'section'			=> 'stuff_section', ));
 
-		// Disable box "Frends & inks"
+		// Disable box "Frends & Links"
 		$wp_customize->add_setting('disable_links_box', array(
 			'default'        		=> '0' ));
 		$wp_customize->add_control( 'disable_links_box', array(
 			'priority'			=> 4,
 		        'type'				=> 'checkbox',
-		        'label'				=> __( 'Disable box "Frends & inks"', 'anarcho-notepad' ),
+		        'label'				=> __( 'Disable box "Frends & Links"', 'anarcho-notepad' ),
 		        'section'			=> 'stuff_section', ));
 
 		// Disable Red Data Ribbons
@@ -223,6 +223,29 @@ class Anarcho_Customize_Textarea_Control extends WP_Customize_Control {
 	'title'				=> __( 'Post', 'anarcho-notepad' ),
 	'priority'			=> 10, ));
 
+	// Create an Array for font size
+	$font_size_array = array(
+		'Default'           		=> 'Default',
+		'80%'           		=> '80%',
+		'90%'           		=> '90%',
+		'100%'           		=> '100%',
+		'110%'           		=> '110%',
+		'120%'           		=> '120%',
+		'130%'           		=> '130%',
+		'140%'           		=> '140%',
+		'150%'           		=> '150%');
+
+	// Enable font size for posts
+	$wp_customize->add_setting( 'post_font_size', array(
+		'Default'           		=> 'Default',
+		'control'           		=> 'select',));
+	$wp_customize->add_control( 'post_font_size', array(
+		'label'					=> __('Font size of posts', 'anarcho-notepad'),
+		'priority'				=> 1,
+		'section'				=> 'post_section',
+		'settings'				=> 'post_font_size',
+		'type'					=> 'select',
+		'choices'				=> $font_size_array, ));
 
 	// Create an Array with a ton of Google Fonts
 	$google_font_array = array(
@@ -662,6 +685,12 @@ var tit=document.title,c=0;function writetitle(){document.title=tit.substring(0,
 			echo	"#content .col01 .post-inner {font-family: '" . $x . "';}" . "\n";
 			echo '</style>' . "\n";
 		}
+                if ( ( get_theme_mod('post_font_size') != 'Default' ) && ( get_theme_mod('post_font_size') != '' ) ) {
+                        echo '<style type="text/css" media="screen">' . "\n";
+                        $x = get_theme_mod('post_font_size');
+                        echo    "#content .col01 .post-inner {font-size: " . $x . ";}" . "\n";
+                        echo '</style>' . "\n";
+                }
 		/* End - Custom Font Styles */
 
 	?><style type="text/css"><?php
@@ -724,6 +753,7 @@ var tit=document.title,c=0;function writetitle(){document.title=tit.substring(0,
 		if ( get_theme_mod('disable_paper_search') == '1') {
 		$outer_back=get_template_directory_uri() . '/images/outer-back.png';
 		?>
+			#title { height: 80%; }
 			.logo { margin-top: 4%; }
 			.site-title { margin-top: 4%; }
 			.site-header {

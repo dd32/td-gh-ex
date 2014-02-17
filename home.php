@@ -25,9 +25,9 @@
       <h1><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h1>
       <div class="post-inner">
 
-	<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+		<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 
-	<?php the_content( __( 'Continue reading', 'anarcho-notepad' ) ); ?>
+		<?php the_content( __( 'Continue reading', 'anarcho-notepad' ) ); ?>
 
       </div>
       <div class="meta"><?php _e('Category: ', 'anarcho-notepad'); ?><?php the_category(', ') ?></div>

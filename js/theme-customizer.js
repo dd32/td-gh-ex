@@ -23,7 +23,12 @@
 			$( '.site-description' ).html( newval );
 		} );
 	} );
-
+        // Update the font of posts in real time...
+        wp.customize( 'post_font_size', function( value ) {
+                value.bind( function( newval ) {
+                        $( '#content .col01 .post-inner' ).html( newval );
+                } );
+        } );
 
   // Title & Description & Background Color
 	// Update site Title color in real time...
