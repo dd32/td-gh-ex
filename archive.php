@@ -1,50 +1,105 @@
 <?php
 /**
- * The template for displaying archive pages.
+ * The template for displaying Archive pages.
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package Base WP
+ * @package base
  */
 
 get_header(); ?>
 
-    <header class="page-header">
-        <?php
-            the_archive_title( '<h1 class="page-title">', '</h1>' );
-            the_archive_description( '<div class="taxonomy-description">', '</div>' );
-        ?>
-    </header><!-- .page-header -->
+	<section id="primary" class="content-area twelve columns">
+		<main id="main" class="site-main" role="main">
 
-    <div id="primary" class="content-area">
-        <main id="main" class="site-main" role="main">
-        <?php
-        if ( have_posts() ) : ?>
+		<?php if ( have_posts() ) : ?>
 
-            <?php
-            /* Start the Loop */
-            while ( have_posts() ) : the_post();
+			<header class="page-header">
+				<h1 class="page-title">
+					<?php
+						if ( is_category() ) :
+							single_cat_title();
 
-                /*
-                 * Include the Post-Format-specific template for the content.
-                 * If you want to override this in a child theme, then include a file
-                 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                 */
-                get_template_part( 'template-parts/content', get_post_format() );
+						elseif ( is_tag() ) :
+							single_tag_title();
 
-            endwhile;
+						elseif ( is_author() ) :
+							printf( __( 'Author: %s', 'base' ), '<span class="vcard">' . get_the_author() . '</span>' );
 
-            igthemes_posts_navigation();
+						elseif ( is_day() ) :
+							printf( __( 'Day: %s', 'base' ), '<span>' . get_the_date() . '</span>' );
 
-        else :
+						elseif ( is_month() ) :
+							printf( __( 'Month: %s', 'base' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'base' ) ) . '</span>' );
 
-            get_template_part( 'template-parts/content', 'none' );
+						elseif ( is_year() ) :
+							printf( __( 'Year: %s', 'base' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'base' ) ) . '</span>' );
 
-        endif; ?>
+						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
+							_e( 'Asides', 'base' );
 
-        </main><!-- #main -->
-    </div><!-- #primary -->
+						elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
+							_e( 'Galleries', 'base');
 
-<?php
-get_sidebar();
-get_footer();
+						elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
+							_e( 'Images', 'base');
+
+						elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
+							_e( 'Videos', 'base' );
+
+						elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
+							_e( 'Quotes', 'base' );
+
+						elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
+							_e( 'Links', 'base' );
+
+						elseif ( is_tax( 'post_format', 'post-format-status' ) ) :
+							_e( 'Statuses', 'base' );
+
+						elseif ( is_tax( 'post_format', 'post-format-audio' ) ) :
+							_e( 'Audios', 'base' );
+
+						elseif ( is_tax( 'post_format', 'post-format-chat' ) ) :
+							_e( 'Chats', 'base' );
+
+						else :
+							_e( 'Archives', 'base' );
+
+						endif;
+					?>
+				</h1>
+				<?php
+					// Show an optional term description.
+					$term_description = term_description();
+					if ( ! empty( $term_description ) ) :
+						printf( '<div class="taxonomy-description">%s</div>', $term_description );
+					endif;
+				?>
+			</header><!-- .page-header -->
+
+			<?php /* Start the Loop */ ?>
+			<?php while ( have_posts() ) : the_post(); ?>
+
+				<?php
+					/* Include the Post-Format-specific template for the content.
+					 * If you want to override this in a child theme, then include a file
+					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+					 */
+					get_template_part( 'content', get_post_format() );
+				?>
+
+			<?php endwhile; ?>
+
+			<?php base_paging_nav(); ?>
+
+		<?php else : ?>
+
+			<?php get_template_part( 'content', 'none' ); ?>
+
+		<?php endif; ?>
+
+		</main><!-- #main -->
+	</section><!-- #primary -->
+
+<?php get_sidebar(); ?>
+<?php get_footer(); ?>

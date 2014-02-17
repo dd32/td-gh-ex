@@ -1,49 +1,43 @@
 <?php
 /**
- * The header for our theme.
+ * The Header for our theme.
  *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
+ * Displays all of the <head> section and everything up till <div id="content">
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package Base WP
+ * @package base
  */
-
-?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-    <meta charset="<?php bloginfo( 'charset' ); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="profile" href="http://gmpg.org/xfn/11">
-    <?php wp_head(); ?>
+<meta charset="<?php bloginfo( 'charset' ); ?>">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title><?php wp_title( '|', true, 'right' ); ?></title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300' rel='stylesheet' type='text/css'>
+<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<div id="page" class="site">
-    <a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'base-wp' ); ?></a>
-
-    <header id="masthead" class="site-header" <?php apply_filters('igthemes_header_image_filter', 'igthemes_header_image' ); ?> role="banner">
-        <div class="header-content">
-            <?php
-            /**
-             * Functions hooked in to igthemes_before_content
-             */
-            do_action( 'igthemes_header' ); ?>
-        </div>
-    </header><!-- #masthead -->
-
-    <?php
-    /**
-     * Functions hooked in to igthemes_before_content
-     */
-    do_action( 'igthemes_before_content' ); ?>
-
-    <div id="content" class="site-content">
-
-    <?php
-    /**
-     * Functions hooked in to igthemes_content_top
-     */
-    do_action( 'igthemes_content_top' ); ?>
+<div id="page" class="hfeed site">
+	<?php do_action( 'before' ); ?>
+	<header id="masthead" class="site-header" role="banner">
+		<div class="site-branding container">
+        <div class="wide branding">
+		<?php if ( of_get_option('logo_uploader') ) : ?>
+       		<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" id="site-logo" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"> 		
+            <img src="<?php echo of_get_option('logo_uploader'); ?>" alt="<?php echo esc_attr( bloginfo( 'name' )); ?>"></a></h1>
+		<?php else : ?>
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+		<?php endif; ?>
+        </div><!-- #wide branding-->
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<h1 class="menu-toggle"><?php _e( 'Menu', 'base' ); ?></h1>
+			<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'base' ); ?></a>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+		</nav><!-- #site-navigation -->
+       </div><!-- #site-branding -->
+	</header><!-- #masthead -->
+	<div class="wide contenitor">
+	<div id="content" class="site-content container">

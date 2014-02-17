@@ -1,13 +1,18 @@
 <?php
 /**
- * Base WP functions and definitions.
+ * base functions and definitions
  *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
- * @package Base WP
+ * @package base
  */
 
-if ( ! function_exists( 'base_wp_setup' ) ) :
+/**
+ * Set the content width based on the theme's design and stylesheet.
+ */
+if ( ! isset( $content_width ) ) {
+	$content_width = 960; /* pixels */
+}
+
+if ( ! function_exists( 'base_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -15,221 +20,324 @@ if ( ! function_exists( 'base_wp_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function base_wp_setup() {
-    /*
+function base_setup() {
+
+	/*
 	 * Make theme available for translation.
-	 * If you're building a theme based on this theme, use a find and replace
-	 * to change 'base-wp' to the name of your theme in all the template files.
+	 * Translations can be filed in the /languages/ directory.
+	 * If you're building a theme based on base, use a find and replace
+	 * to change 'base' to the name of your theme in all the template files
 	 */
-    load_theme_textdomain( 'base-wp' );
+	load_theme_textdomain( 'base', get_template_directory() . '/languages' );
 
-    // Add default posts and comments RSS feed links to head.
-    add_theme_support( 'automatic-feed-links' );
+	// Add default posts and comments RSS feed links to head.
+	add_theme_support( 'automatic-feed-links' );
 
-    /*
-     * Let WordPress manage the document title.
-     * By adding theme support, we declare that this theme does not use a
-     * hard-coded <title> tag in the document head, and expect WordPress to
-     * provide it for us.
-     */
-    add_theme_support( 'title-tag' );
+	/*
+	 * Enable support for Post Thumbnails on posts and pages.
+	 *
+	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+	 */
+	add_theme_support( 'post-thumbnails' );
 
-    /*
-     * Enable support for Post Thumbnails on posts and pages.
-     *
-     * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-     */
-    add_theme_support( 'post-thumbnails' );
+	// This theme uses wp_nav_menu() in one location.
+	register_nav_menus( array(
+		'primary' => __( 'Primary Menu', 'base' ),
+	) );
 
-    // This theme uses wp_nav_menu() in one location.
-    register_nav_menus( array(
-        'primary' => esc_html__( 'Primary', 'base-wp' ),
-        'header-menu' => esc_html__( 'Header Menu', 'base-wp' ),
-    ) );
+	// Enable support for Post Formats.
+	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
+	
+	// Custom header support.
+	add_theme_support( 'custom-header' );
+	
+	// Allows theme developers to link a custom stylesheet file to the TinyMCE visual editor.
+	function base_add_editor_styles() {
+    add_editor_style( 'custom-editor-style.css' );
+	}
+	add_action( 'init', 'base_add_editor_styles' );
+	
+	// Setup the WordPress core custom background feature.
+	add_theme_support( 'custom-background', apply_filters( 'base_custom_background_args', array(
+		'default-color' => 'f9f9f9',
+		'default-image' => '',
+	) ) );
 
-    /*
-     * Switch default core markup for search form, comment form, and comments
-     * to output valid HTML5.
-     */
-    add_theme_support( 'html5', array(
-        'search-form',
-        'comment-form',
-        'comment-list',
-        'gallery',
-        'caption',
-    ) );
-
-    // Set up the WordPress core custom background feature.
-    add_theme_support( 'custom-background', apply_filters( 'base_wp_custom_background_args', array(
-        'default-color' => 'fafafa',
-        'default-image' => '',
-    ) ) );
-
-    // Custom logo support.
-    add_theme_support( 'custom-logo' );
-    
-    // Add theme support for selective refresh for widgets.
-	add_theme_support( 'customize-selective-refresh-widgets' );
+	// Enable support for HTML5 markup.
+	add_theme_support( 'html5', array( 'comment-list', 'search-form', 'comment-form', ) );
 }
-endif;
-add_action( 'after_setup_theme', 'base_wp_setup' );
+endif; // base_setup
+add_action( 'after_setup_theme', 'base_setup' );
 
 /**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
+ * Register widgetized area and update sidebar with default widgets.
  */
-function base_wp_content_width() {
-    $GLOBALS['content_width'] = apply_filters( 'base_wp_content_width', 1140 );
+function base_widgets_init() {
+	register_sidebar( array(
+		'name'          => __( 'Sidebar', 'base' ),
+		'id'            => 'sidebar-1',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );	
+// Area footer 1, located in the footer. Empty by default.
+	register_sidebar( array(
+		'name' => __( 'First Footer Widget Area', 'base' ),
+		'id' => 'first-footer-widget-area',
+		'description' => __( 'The first footer widget area', 'base' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+// Area footer 2, located in the footer. Empty by default.
+	register_sidebar( array(
+		'name' => __( 'Second Footer Widget Area', 'base' ),
+		'id' => 'second-footer-widget-area',
+		'description' => __( 'The second footer widget area', 'base' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+// Area footer 3, located in the footer. Empty by default.
+	register_sidebar( array(
+		'name' => __( 'Third Footer Widget Area', 'base' ),
+		'id' => 'third-footer-widget-area',
+		'description' => __( 'The third footer widget area', 'base' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+// Area footer 4, located in the footer. Empty by default.
+	register_sidebar( array(
+		'name' => __( 'Fourth Footer Widget Area', 'base' ),
+		'id' => 'fourth-footer-widget-area',
+		'description' => __( 'The fourth footer widget area', 'base' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
 }
-add_action( 'after_setup_theme', 'base_wp_content_width', 0 );
-
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function base_wp_widgets_init() {
-    register_sidebar( array(
-        'name'          => esc_html__( 'Sidebar', 'base-wp' ),
-        'id'            => 'sidebar-1',
-        'description'   => esc_html__( 'Add widgets here.', 'base-wp' ),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
-    ) );
-    register_sidebar( array(
-        'name'          => esc_html__( 'Header widget area', 'base-wp' ),
-        'id'            => 'header-widget',
-        'description'   => esc_html__( 'Add widgets here.', 'base-wp' ),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h3 class="widget-title">',
-        'after_title'   => '</h3>',
-    ) );
-    for ( $i = 1; $i <= intval( 4 ); $i++ ) {
-        register_sidebar( array(
-            'name' 				=> sprintf( __( 'Footer %d', 'base-wp' ), $i ),
-            'id' 				=> sprintf( 'footer-%d', $i ),
-            'description' 		=> sprintf( esc_html__( 'Widgetized Footer Region %d.','base-wp' ), $i ),
-            'before_widget'     => '<section id="%1$s" class="widget %2$s">',
-            'after_widget' 		=> '</section>',
-            'before_title' 		=> '<h3 class="widget-title">',
-            'after_title' 		=> '</h3>',
-            )
-        );
-    }
-    if( is_edd_activated() || is_woocommerce_activated() ) {
-        register_sidebar( array(
-            'name'          => esc_html__( 'Shop widget area', 'base-wp' ),
-            'id'            => 'sidebar-shop',
-            'description'   => esc_html__( 'Add widgets here.', 'base-wp' ),
-            'before_widget' => '<section id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</section>',
-            'before_title'  => '<h3 class="widget-title">',
-            'after_title'   => '</h3>',
-        ) );
-    }
-
-}
-add_action( 'widgets_init', 'base_wp_widgets_init' );
-
+add_action( 'widgets_init', 'base_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
+function base_scripts() {
+	wp_enqueue_style( 'base-style', get_stylesheet_uri() );
+	
+	wp_enqueue_style( 'skeleton', get_template_directory_uri().'/css/skeleton.css' );
+	
+	wp_enqueue_style( 'layout', get_template_directory_uri().'/css/layout.css' );
 
-function base_wp_scripts() {
-    wp_enqueue_style( 'base-wp-style', get_stylesheet_uri() );
+	wp_enqueue_script( 'base-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
-    wp_enqueue_script( 'base-wp-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'base-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	
+	wp_enqueue_script( 'sticky-nav', get_stylesheet_directory_uri() . '/js/sticky-nav.js', array( 'jquery' ), '', true );
 
-    wp_enqueue_script( 'base-wp-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '1.0.10', true );
-
-    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-        wp_enqueue_script( 'comment-reply' );
-    }
-    wp_enqueue_script( 'base-wp-theme', get_template_directory_uri() . '/js/theme.js', array('jquery'), '1.0', true );
-
-    //conditional ie scripts
-    global $wp_scripts;
-    wp_enqueue_script('igthemes-ie9',
-                 get_template_directory_uri() . '/js/ie-fix.js',
-                 array(),
-                 '1.0',
-                 false );
-    wp_enqueue_script('igthemes-ie9');
-    wp_script_add_data('igthemes-ie9', 'conditional', 'lt IE 9');
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
 }
-add_action( 'wp_enqueue_scripts', 'base_wp_scripts' );
+add_action( 'wp_enqueue_scripts', 'base_scripts' );
 
-//Gooogle fonts
-function base_wp_google_fonts() {
-        wp_enqueue_style( 'base-wp-fonts', '//fonts.googleapis.com/css?family='. apply_filters( 'igthemes_google_font', 'Open+Sans:300,300i,400,400i,700,700i&subset=latin-ext'));
+function base_wp_head(){
+	?>
+	<!--[if lt IE 9]>
+		<script src="<?php echo get_template_directory_uri(); ?>/js/modernizr.js" type="text/javascript"></script>
+	<![endif]-->
+	<?php
 }
+add_action('wp_head', 'base_wp_head');
 
-add_action( 'wp_enqueue_scripts', 'base_wp_google_fonts' );
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Custom functions that act independently of the theme templates.
+ */
+require get_template_directory() . '/inc/extras.php';
 
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/admin/options/customizer.php';
-/**
- * Welcome screen.
- */
-require get_template_directory() . '/inc/admin/welcome/welcome-screen.php';
-/**
- * TGM.
- */
-require get_template_directory() . '/inc/admin/tgm/tgm-plugins.php';
+require get_template_directory() . '/inc/customizer.php';
 
 /**
- * Template functions an actionss.
+ * Load Jetpack compatibility file.
  */
-require get_template_directory() . '/inc/render/template-functions.php';
-require get_template_directory() . '/inc/render/template-tags.php';
-require get_template_directory() . '/inc/render/extras.php';
-//structure
-require get_template_directory() . '/inc/render/structure/header.php';
-require get_template_directory() . '/inc/render/structure/content-top.php';
-require get_template_directory() . '/inc/render/structure/footer.php';
-require get_template_directory() . '/inc/render/structure/loop.php';
-require get_template_directory() . '/inc/render/structure/post.php';
-require get_template_directory() . '/inc/render/structure/page.php';
-//plugins
-require get_template_directory() . '/inc/plugins/jetpack/jetpack-funtions.php';
-require get_template_directory() . '/inc/plugins/beaver-builder/bbuilder-functions.php';
+require get_template_directory() . '/inc/jetpack.php';
 
-/*----------------------------------------------------------------------
-# EDD SUPPORT
-------------------------------------------------------------------------*/
-if ( ! function_exists( 'is_edd_activated' ) ) {
-    function is_edd_activated() {
-        return class_exists( 'Easy_Digital_Downloads' ) ? true : false;
+/* 
+ * Option panel
+ */
+define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
+require_once dirname( __FILE__ ) . '/inc/options-framework.php';
+
+/*
+ * This is an example of how to add custom scripts to the options panel.
+ * This one shows/hides the an option when a checkbox is clicked.
+ *
+ * You can delete it if you not using that option
+ */
+
+add_action( 'optionsframework_custom_scripts', 'optionsframework_custom_scripts' );
+
+function optionsframework_custom_scripts() { ?>
+
+<script type="text/javascript">
+jQuery(document).ready(function() {
+
+jQuery('#example_showhidden').click(function() {
+  jQuery('#section-example_text_hidden').fadeToggle(400);
+});
+
+if (jQuery('#example_showhidden:checked').val() !== undefined) {
+jQuery('#section-example_text_hidden').show();
+}
+
+});
+</script>
+
+<?php
+}
+
+/*
+ * Options panel Customizer.
+ */
+if ( !function_exists( 'of_get_option' ) ) {
+function of_get_option($name, $default = false) {
+$optionsframework_settings = get_option('optionsframework');
+// Gets the unique option id
+$option_name = $optionsframework_settings['id'];
+if ( get_option($option_name) ) {
+$options = get_option($option_name);
+}
+if ( isset($options[$name]) ) {
+return $options[$name];
+} else {
+return $default;
+}
+}
+}
+
+/*
+ * Pagination.
+ */ 
+function base_numeric_posts_nav() {
+
+	if( is_singular() )
+		return;
+
+	global $wp_query;
+
+	/** Stop execution if there's only 1 page */
+	if( $wp_query->max_num_pages <= 1 )
+		return;
+
+	$paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
+	$max   = intval( $wp_query->max_num_pages );
+
+	/**	Add current page to the array */
+	if ( $paged >= 1 )
+		$links[] = $paged;
+
+	/**	Add the pages around the current page to the array */
+	if ( $paged >= 3 ) {
+		$links[] = $paged - 1;
+		$links[] = $paged - 2;
+	}
+
+	if ( ( $paged + 2 ) <= $max ) {
+		$links[] = $paged + 2;
+		$links[] = $paged + 1;
+	}
+
+	echo '<div class="navigation"><ul>' . "\n";
+
+	/**	Previous Post Link */
+	if ( get_previous_posts_link() )
+		printf( '<li>%s</li>' . "\n", get_previous_posts_link() );
+
+	/**	Link to first page, plus ellipses if necessary */
+	if ( ! in_array( 1, $links ) ) {
+		$class = 1 == $paged ? ' class="active"' : '';
+
+		printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( 1 ) ), '1' );
+
+		if ( ! in_array( 2, $links ) )
+			echo '<li>&#8230;</li>';
+	}
+
+	/**	Link to current page, plus 2 pages in either direction if necessary */
+	sort( $links );
+	foreach ( (array) $links as $link ) {
+		$class = $paged == $link ? ' class="active"' : '';
+		printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $link ) ), $link );
+	}
+
+	/**	Link to last page, plus ellipses if necessary */
+	if ( ! in_array( $max, $links ) ) {
+		if ( ! in_array( $max - 1, $links ) )
+			echo "<li>&#8230;</li>" . "\n";
+
+		$class = $paged == $max ? ' class="active"' : '';
+		printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), $max );
+	}
+
+	/**	Next Post Link */
+	if ( get_next_posts_link() )
+		printf( '<li>%s</li>' . "\n", get_next_posts_link() );
+
+	echo '</ul></div>' . "\n";
+
+}
+
+/*
+ * Breadcrumb
+ */ 
+function BaseBreadcrumb() {
+	echo '<div class="basebreadcrumb">';
+    if (!is_home()) {
+        echo '<a href="';
+        echo home_url();
+        echo '">';
+        echo 'Home';
+        echo "</a> &#187; ";
+        if (is_category() || is_single()) {
+            the_category('title_li=');
+            if (is_single()) {
+                echo " &#187; ";
+                the_title();
+            }
+        } elseif (is_page()) {
+            echo the_title();
+        }
     }
-}
-if (is_edd_activated()) {
-    require get_template_directory() . '/inc/plugins/edd/edd-functions.php';
+	echo '</div>';
 }
 
-/*----------------------------------------------------------------------
-# WOOCOMMERCE SUPPORT
-------------------------------------------------------------------------*/
-add_action( 'after_setup_theme', 'igthemes_woocommerce_support' );
-function igthemes_woocommerce_support() {
-    add_theme_support( 'woocommerce' );
+
+/*
+ * Woocommerce support.
+ */
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
+add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
+
+function my_theme_wrapper_start() {
+  echo '<section id="main" class="twelve columns">';
 }
 
-// Check if woocommerce is active and prevent fatal error
-if ( ! function_exists( 'is_woocommerce_activated' ) ) {
-    function is_woocommerce_activated() {
-        return class_exists( 'woocommerce' ) ? true : false;
-    }
+function my_theme_wrapper_end() {
+  echo '</section>';
 }
 
-if (is_woocommerce_activated()) {
-    require get_template_directory() . '/inc/plugins/woocommerce/wc-functions.php';
-}

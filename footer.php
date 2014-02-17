@@ -2,39 +2,24 @@
 /**
  * The template for displaying the footer.
  *
- * Contains the closing of the #content div and all content after.
+ * Contains the closing of the #content div and all content after
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package Base WP
+ * @package base
  */
-
 ?>
-    <?php
-    /**
-     * Functions hooked in to igthemes_content_bottom
-     *
-     * @hooked
-     */
-    do_action( 'igthemes_content_bottom' ); ?>
 
-    </div><!-- #content -->
-
-    <?php
-    /**
-     * Functions hooked in to igthemes_after_content
-     *
-     * @hooked
-     */
-    do_action( 'igthemes_after_content' ); ?>
-
-    <footer id="colophon" class="site-footer" role="contentinfo">
-       <?php
-       /**
-       * Functions hooked in to igthemes_before_content
-       */
-       do_action( 'igthemes_footer' ); ?>
-    </footer><!-- #colophon -->
+	</div><!-- #content -->
+	</div><!-- wide contenitor-->
+	<footer id="colophon" class="site-footer" role="contentinfo">
+  		 <div class="widget-footer container">
+   			<?php get_sidebar( 'footer' ); ?>
+   		</div><!-- .widget-footer -->
+		<div class="site-info container">
+			<?php do_action( 'base_credits' ); ?>
+			<?php echo of_get_option('footer_text', '' ); ?><span class="sep"> | </span>
+			<?php printf( __('Theme by <a href="%s">iografica.it</a>', 'base'), 'http://iogrfica.it'); ?>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
