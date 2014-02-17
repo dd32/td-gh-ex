@@ -53,8 +53,7 @@
 	 <?php  if ($navcheck == '') { ?>
 	
 	<ul id="nav">
-
-<li <?php if (is_home()) { echo " class=\"current_page_item\""; } ?>><a href="<?php echo esc_url(home_url()); ?>" title="Home"><?php _e( 'Home', 'agency' ); ?></a></li>		
+		
 		<?php wp_list_pages('title_li=&sort_column=menu_order'); ?>
 
 	</ul>
