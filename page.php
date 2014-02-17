@@ -23,9 +23,22 @@
 
 		<div id="page-container" <?php post_class("left with-sidebar"); ?>>
 
-				<?php the_content(); ?>
-				<br class="clear" />
-				<?php edit_post_link(__('Edit', 'boldr'), '<span class="editlink">', '</span><br class="clear" />'); ?>
+				<?php the_content();
+
+					$args = array(
+						'before'           => '<br class="clear" /><div class="paged_nav">' . __('Pages:', 'icefit'),
+						'after'            => '</div>',
+						'link_before'      => '<span>',
+						'link_after'       => '</span>',
+						'next_or_number'   => 'number',
+						'nextpagelink'     => __('Next page', 'icefit'),
+						'previouspagelink' => __('Previous page', 'icefit'),
+						'pagelink'         => '%',
+						'echo'             => 1
+					);
+					wp_link_pages( $args );
+				?><br class="clear" /><?php
+				edit_post_link(__('Edit', 'boldr'), '<span class="editlink">', '</span><br class="clear" />'); ?>
 				<br class="clear" />
 			<?php	// Display comments section only if comments are open or if there are comments already.
 				if ( comments_open() || get_comments_number()!=0 ) : ?>

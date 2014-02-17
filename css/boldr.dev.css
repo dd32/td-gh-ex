@@ -955,7 +955,7 @@ h3.entry-title {
 	margin-left: 85px;
 }
 
-.paged_nav {
+#page-container .paged_nav {
 	margin-bottom: 20px;
 	line-height: 30px;
 	font-family: 'Oswald', Helvetica, Arial, Verdana, sans-serif;
