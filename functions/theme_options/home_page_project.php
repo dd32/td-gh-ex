@@ -35,8 +35,11 @@
 			$current_options['project_thumb_four'] = sanitize_text_field($_POST['project_thumb_four']);
 			$current_options['project_text_four'] = sanitize_text_field($_POST['project_text_four']);
 			$current_options['project_four_url'] = sanitize_text_field($_POST['project_four_url']);
+			// projects  section enabled yes ya no
+				if($_POST['enable_projects'])
+				{ echo $current_options['enable_projects']= sanitize_text_field($_POST['enable_projects']); } 
+				else { echo $current_options['enable_projects']="off"; }			
 				
-						
 			update_option('busiprof_theme_options' , stripslashes_deep($current_options));
 		}
      }
@@ -55,6 +58,8 @@
 		<h3 class="hndle"><span><?php _e('Recent Projects','busi_prof');?><span class="postbox-title-action">
 		</h3>
 		<div class="inside">
+			<p><h4 class="heading"><?php _e('Enable Projects on Front-Page ','busi_prof');?><input type="checkbox" <?php if($current_options['enable_projects']=='on') echo "checked='checked'"; ?> id="enable_projects" name="enable_projects" >&nbsp;&nbsp;<span class="icon help"><span class="tooltip"><?php  _e('Enable Projects On Home Page','busi_prof');?></span></span></h4>
+			</p>
 			<p><h4 class="heading"><?php _e('Home Project Heading One','busi_prof');?></h4>
 				<input class="inputwidth" type="text" value="<?php if($current_options['home_project_heading_one']!='') { echo esc_attr($current_options['home_project_heading_one']); } ?>" id="home_project_heading_one" name="home_project_heading_one" size="36" />
 				<span class="icon help">

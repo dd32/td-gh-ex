@@ -92,7 +92,7 @@ add_action( 'wp_enqueue_scripts', 'busiprof_scripts' );
  *
  * @since BusiProf 1.0
  */
-	global $resetno;
+	global $busiprof_resetno;
 	add_action( 'after_setup_theme', 'busiprof_setup' ); 
 	function busiprof_setup()
 	{	// Load text domain for translation-ready
@@ -104,7 +104,18 @@ add_action( 'wp_enqueue_scripts', 'busiprof_scripts' );
 		
 		// setup admin pannel defual data for index page
 		$busiprof_theme_options=Theme_Setup_data(); 
-		add_option('busiprof_theme_options',$busiprof_theme_options); 
+		$current_theme_options = get_option('busiprof_theme_options'); 						
+		if($current_theme_options)
+		{ 	
+			$busiprof_theme_options = array_merge($busiprof_theme_options, $current_theme_options);
+			update_option('busiprof_theme_options',$busiprof_theme_options);				
+		}
+		else
+		{
+			add_option('busiprof_theme_options',$busiprof_theme_options); 
+		}
+		
+		//add_option('busiprof_theme_options',$busiprof_theme_options); 
 		// This theme uses wp_nav_menu() in one location.
 	register_nav_menu( 'primary', __( 'Primary Menu', 'busi_prof' ) );
 	}
@@ -118,10 +129,10 @@ add_action( 'wp_enqueue_scripts', 'busiprof_scripts' );
 	}
 	
 	// admin restore options page
-	add_action('Busiprof_restore_data', 'Busiprof_restore_data_function', $resetno );		
-	function Busiprof_restore_data_function($resetno)
+	add_action('Busiprof_restore_data', 'Busiprof_restore_data_function', $busiprof_resetno );		
+	function Busiprof_restore_data_function($busiprof_resetno)
 	{	
-		$busiprof_theme_options = Theme_Setup_data($resetno);
+		$busiprof_theme_options = Theme_Setup_data($busiprof_resetno);
 		update_option('busiprof_theme_options',$busiprof_theme_options);
 		
 	}	
