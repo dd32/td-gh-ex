@@ -25,6 +25,13 @@ if ( !class_exists( 'CyberchimpsParallax' ) ) {
 
 		protected static $instance;
 		public $options;
+		public $slider_parallax_toggle;
+		public $slider_parallax_image;
+		public $portfolio_parallax_toggle;
+		public $portfolio_parallax_image;
+		public $boxes_parallax_toggle;
+		public $boxes_parallax_image;
+		public $body_parallax_toggle;
 
 		/* Static Singleton Factory Method */
 		public static function instance() {
@@ -44,11 +51,24 @@ if ( !class_exists( 'CyberchimpsParallax' ) ) {
 		protected function __construct() {
 			$this->options = get_option( 'cyberchimps_options' );
 			add_action( 'wp_enqueue_scripts', array( $this, 'cyberchimps_parallax_scripts' ) );
-			add_action( 'carousel_section', array( $this, 'render_display' ) );
 			add_action( 'wp_footer', array( $this, 'cyberchimps_parallax_render' ) );
 
 			add_filter( 'cyberchimps_field_filter', array( $this, 'cyberchimps_parallax_fields' ) );
 
+			// Set slider options
+			$this->slider_parallax_toggle = ( isset( $this->options['cyberchimps_blog_slider_parallax'] ) ) ? $this->options['cyberchimps_blog_slider_parallax'] : 1;
+			$this->slider_parallax_image  = ( isset( $this->options['cyberchimps_blog_slider_parallax_image'] ) ) ? $this->options['cyberchimps_blog_slider_parallax_image'] : get_template_directory_uri() . '/images/parallax/sun.jpg';
+
+			// Set portfolio parallax options.
+			$this->portfolio_parallax_toggle = ( isset( $this->options['cyberchimps_blog_portfolio_parallax'] ) ) ? $this->options['cyberchimps_blog_portfolio_parallax'] : 1;
+			$this->portfolio_parallax_image  = ( isset( $this->options['cyberchimps_blog_portfolio_parallax_image'] ) ) ? $this->options['cyberchimps_blog_portfolio_parallax_image'] : get_template_directory_uri() . '/images/parallax/trees.jpg';
+
+			// Get boxes parallax options.
+			$this->boxes_parallax_toggle = ( isset( $this->options['cyberchimps_blog_boxes_parallax'] ) ) ? $this->options['cyberchimps_blog_boxes_parallax'] : 1;
+			$this->boxes_parallax_image  = ( isset( $this->options['cyberchimps_blog_boxes_parallax_image'] ) ) ? $this->options['cyberchimps_blog_boxes_parallax_image'] : get_template_directory_uri() . '/images/parallax/rocks.jpg';
+
+			// Get boxes parallax options.
+			$this->body_parallax_toggle = ( isset( $this->options['cyberchimps_body_parallax'] ) ) ? $this->options['cyberchimps_body_parallax'] : 1;
 		}
 
 		/**
@@ -153,51 +173,36 @@ if ( !class_exists( 'CyberchimpsParallax' ) ) {
 
 // Set parallax to individual elements by checking toggle.
 		public function cyberchimps_parallax_render() {
-
-			// Get slider parallax options.
-			$slider_parallax_toggle = $this->options['cyberchimps_blog_slider_parallax'];
-			$slider_parallax_image  = $this->options['cyberchimps_blog_slider_parallax_image'];
-
-			// Get portfolio parallax options.
-			$portfolio_parallax_toggle = $this->options['cyberchimps_blog_portfolio_parallax'];
-			$portfolio_parallax_image  = $this->options['cyberchimps_blog_portfolio_parallax_image'];
-
-			// Get boxes parallax options.
-			$boxes_parallax_toggle = $this->options['cyberchimps_blog_boxes_parallax'];
-			$boxes_parallax_image  = $this->options['cyberchimps_blog_boxes_parallax_image'];
-
-			// Get boxes parallax options.
-			$body_parallax_toggle = $this->options['cyberchimps_body_parallax'];
 			?>
 			<script>
 				jQuery(document).ready(function () {
 					<?php
 					// Add parallax to slider.
-					if( $slider_parallax_toggle && $slider_parallax_image ) { ?>
+					if( $this->slider_parallax_toggle && $this->slider_parallax_image ) { ?>
 					jQuery('#slider_lite_section').css({
-						'background-image': 'url("<?php echo $slider_parallax_image;?>")',
+						'background-image': 'url("<?php echo $this->slider_parallax_image;?>")',
 						'background-size': '100%'
 					});
 					jQuery('#slider_lite_section').parallax('50%', 0.5);
 					<?php }
 					// Add parallax to portfolio.
-					if( $portfolio_parallax_toggle && $portfolio_parallax_image ) { ?>
+					if( $this->portfolio_parallax_toggle && $this->portfolio_parallax_image ) { ?>
 					jQuery('#portfolio_lite_section').css({
-						'background-image': 'url("<?php echo $portfolio_parallax_image;?>")',
+						'background-image': 'url("<?php echo $this->portfolio_parallax_image;?>")',
 						'background-size': '100%'
 					});
 					jQuery('#portfolio_lite_section').parallax('50%', 0.5);
 					<?php }
 					// Add parallax to boxes.
-					if( $boxes_parallax_toggle && $boxes_parallax_image ) { ?>
+					if( $this->boxes_parallax_toggle && $this->boxes_parallax_image ) { ?>
 					jQuery('#boxes_lite_section').css({
-						'background-image': 'url("<?php echo $boxes_parallax_image;?>")',
+						'background-image': 'url("<?php echo $this->boxes_parallax_image;?>")',
 						'background-size': '100%'
 					});
 					jQuery('#boxes_lite_section').parallax('50%', 0.5);
 					<?php }
 					// Add parallax to body.
-					if( $body_parallax_toggle ) { ?>
+					if( $this->body_parallax_toggle ) { ?>
 					jQuery('body').parallax('50%', -0.5);
 					<?php } ?>
 

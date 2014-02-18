@@ -158,6 +158,15 @@ function cyberchimps_slider_lite_content() {
 		</div>
 	</div>
 	<!-- row-fluid -->
+	
+	<script type="text/javascript">
+		jQuery(document).ready(function () {
+
+			// Initialize the slider.
+			jQuery('.carousel').carousel();
+		});
+	</script>
+			
 <?php
 }
 
