@@ -13,6 +13,7 @@ function spa_admin_menu_pannel() {
 	function spasalon_spa_option_panal_function()
 	{
 		require_once ( get_template_directory() . '/option_pannel/css/tooltip_css.php' );
+		wp_enqueue_script('spa-optionpanal-jquery',get_template_directory_uri('template_directory').'/option_pannel/js/spa-optionpanal-jquery.js',array('farbtastic'));
 		require_once('spa_options_pannel.php');
 	}
 	
@@ -35,13 +36,12 @@ function spa_admin_menu_pannel() {
 		wp_enqueue_style( 'wpb_option_pannel', get_template_directory_uri() . '/option_pannel/css/spa_option_pannel.css' );
 		wp_enqueue_script( 'wpb_option_pannel', get_template_directory_uri() . '/option_pannel/js/spa_option_pannel.js');
 		wp_enqueue_script('my-upload',get_bloginfo('template_directory').'/option_pannel/js/media-upload-script.js',array('media-upload','thickbox'));
+		
 		// color 	
 		wp_enqueue_style('thickbox');
-		wp_enqueue_style('farbtasticss',get_bloginfo('template_directory').'/option_pannel/css/farbtasticss.css');
-		wp_enqueue_style('spa-bootstrap',get_bloginfo('template_directory').'/option_pannel/css/assets/css/spa-bootstrap.css');
-	}
-	
-
-	
+		wp_enqueue_style('farbtasticss',get_template_directory_uri().'/option_pannel/css/farbtasticss.css');
+		wp_enqueue_style('spa-bootstrap',get_template_directory_uri().'/option_pannel/css/assets/css/spa-bootstrap.css');
+		wp_enqueue_script('my-color-picker-script', get_template_directory_uri().'/option_pannel/js/my-color-picker-script.js', array( 'wp-color-picker' ), false, true );
+	}	
 } 
 ?>
