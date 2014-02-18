@@ -58,12 +58,7 @@
 														
 			<?php elseif (strpos($videourl,'.mp4') !== false) : ?>
 				
-				<video controls>
-				
-					<source src="<?php echo $videourl ?>" type="video/mp4">
-					<?php _e('Your browser does not support the video tag.', 'hemingway'); ?>
-					
-				</video>
+				[video src="<?php echo $videourl; ?>"]
 					
 			<?php endif; ?>
 			

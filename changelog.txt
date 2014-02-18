@@ -1,3 +1,8 @@
+Version 1.26 (2014-02-18)
+-------------------------
+- Fixed an issue with iframes
+
+
 Version 1.25 (2014-02-18)
 -------------------------
 - Fixed a bug with custom header images
