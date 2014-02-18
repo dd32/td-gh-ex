@@ -13,8 +13,9 @@
 				        $matches
 				    );
 				$id = $matches[1];
-				 
-				echo '<iframe width="1136" height="568" src="http://www.youtube.com/embed/' . $id . '?autoplay=0" allowfullscreen></iframe>' ?>
+				
+				$youtube_url = 'http://www.youtube.com/embed/' . $id . '?autoplay=0'; 
+				printf( '<iframe width="1136" height="568" src="%s" allowfullscreen></iframe>', esc_url( $youtube_url ) ); ?>
 				
 			<?php elseif (strpos($videourl,'vimeo') !== false) : ?>
 			
@@ -25,9 +26,10 @@
 				        $matches
 				    );
 				$id = $matches[1];
-				 
-				echo '<iframe width="1136" height="568" src="http://player.vimeo.com/video/' . $id . '" allowfullscreen></iframe>' ?>
 				
+				$vimeo_url = 'http://player.vimeo.com/video/' . $id; 
+				printf( '<iframe width="1136" height="568" src="%s" allowfullscreen></iframe>', esc_url( $vimeo_url ) ); ?>
+				 				
 			<?php elseif (strpos($videourl,'dailymotion') !== false) : ?>
 			
 				<?php $url = $videourl;
@@ -37,9 +39,10 @@
 				        $matches
 				    );
 				$id = $matches[1];
-				 
-				echo '<iframe width="1136" height="568" src="http://www.dailymotion.com/embed/video/' . $id . '" allowfullscreen></iframe>' ?>
 				
+				$dailymotion_url = 'http://www.dailymotion.com/embed/video/' . $id; 
+				printf( '<iframe width="1136" height="568" src="%s" allowfullscreen></iframe>', esc_url( $dailymotion_url ) ); ?>
+				 				
 			<?php elseif (strpos($videourl,'kickstarter') !== false) : ?>
 			
 				<?php $url = $videourl;
@@ -49,8 +52,9 @@
 				        $matches
 				    );
 				$id = $matches[1];
-				 
-				echo '<iframe width="1136" height="568" src="http://www.kickstarter.com/projects/' . $id . '/widget/video.html" allowfullscreen></iframe>' ?>
+				
+				$kickstarter_url = 'http://www.kickstarter.com/projects/' . $id . '/widget/video.html'; 
+				printf( '<iframe width="1136" height="568" src="%s" allowfullscreen></iframe>', esc_url( $kickstarter_url ) ); ?>
 														
 			<?php elseif (strpos($videourl,'.mp4') !== false) : ?>
 				
