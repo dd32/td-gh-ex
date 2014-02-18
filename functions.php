@@ -135,6 +135,15 @@ function athenea_print_ie_scripts() {
 add_action( 'wp_head', 'athenea_print_ie_scripts', 11 );
 
 
+// Add Favicon
+function athenea_favicon() {
+?>
+<link rel="shortcut icon" href="<?php if ( of_get_option('athenea_favicon') !='' ) { ?><?php echo of_get_option('athenea_favicon'); ?><?php } ?>">
+<?php
+}
+add_action( 'wp_head', 'athenea_favicon' );
+
+
 /**
  * Custom functions that act independently of the theme templates
  *

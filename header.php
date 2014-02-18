@@ -16,7 +16,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<link rel="shortcut icon" href="<?php if ( of_get_option('athenea_favicon') !='' ) { ?><?php echo of_get_option('athenea_favicon'); ?><?php } else { ?><?php echo get_template_directory_uri(); ?>/images/favicon.png<?php } ?>">
 <link href='http://fonts.googleapis.com/css?family=Nunito:300|Aclonica' rel='stylesheet' type='text/css'>
 <?php wp_head(); ?>
 </head>
@@ -29,8 +28,7 @@
     <div class="site-branding">
       <div id="imgHead">
         <div class="container">
-          <h1 class="site-title">
-          <span class="glyphicon glyphicon-globe"></span> 
+          <h1 class="site-title"> 
           <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo( 'description' ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a><br>
           <small><?php bloginfo( 'description' ); ?></small>         
           </h1>
