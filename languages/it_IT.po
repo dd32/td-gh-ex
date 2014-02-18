@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Base v1.0\n"
+"Project-Id-Version: Base WP v1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-02-17 12:56:35+0000\n"
+"PO-Revision-Date: 2014-02-18 11:06:28+0000\n"
 "Last-Translator: iografica <info@iografica.it>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -263,12 +263,6 @@ msgstr "1 Commento"
 msgid "% Comments"
 msgstr "% Commenti"
 
-#: footer.php:20
-#, php-format
-#@ base
-msgid "Theme by <a href=\"%s\">iografica.it</a>"
-msgstr "Tema realizzato da  <a href=\"%s\">iografica.it</a>"
-
 #: functions.php:45
 #@ base
 msgid "Primary Menu"
@@ -319,12 +313,12 @@ msgstr "Quarta Footer Widget Area"
 msgid "The fourth footer widget area"
 msgstr "La quarta area widget del footer"
 
-#: header.php:36
+#: header.php:38
 #@ base
 msgid "Menu"
 msgstr ""
 
-#: header.php:37
+#: header.php:39
 #@ base
 msgid "Skip to content"
 msgstr "Vai al contenuto"
@@ -529,7 +523,7 @@ msgstr ""
 msgid "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by %2$s</span>"
 msgstr "<span class=\"posted-on\">Pubblicato in %1$s</span><span class=\"byline\"> da %2$s</span>"
 
-#: options.php:67
+#: options.php:61
 #@ base
 msgid "Logo Upload"
 msgstr ""
@@ -545,8 +539,15 @@ msgstr "Risultati ricerca per: %s"
 msgid "Meta"
 msgstr ""
 
-#: options.php:84
+#: footer.php:18
+#, php-format
 #@ base
-msgid "Footer Text"
-msgstr "Testo Footer"
+msgid "Theme: %1$s by %2$s &#169; 2013"
+msgstr "Tema: %1$s realizzato da %2$s &#169; 2013"
+
+#: footer.php:20
+#, php-format
+#@ base
+msgid "%1$s WordPress theme is licensed under the GPL."
+msgstr "%1$s WordPress theme usa la licenza GPL."
 

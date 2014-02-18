@@ -1,3 +1,9 @@
+/**
+ * sticky-nav.js
+ *
+ * Fixed nav on scroll. You can view source file on: http://jsfiddle.net/T6nZe/ 
+ */
+
 jQuery(document).ready(function($) {
 	var $filter = $('.main-navigation');
 	var $filterSpacer = $('<div />', {
