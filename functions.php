@@ -18,10 +18,15 @@ function hemingway_setup() {
 	// Post formats
 	add_theme_support( 'post-formats', array( 'video', 'aside', 'quote' ) );
 
-	// Custom header (logo)
-	$custom_header_args = array( 'width' => 1280, 'height' => 400, 'header-text' => false );
-	add_theme_support( 'custom-header', $custom_header_args );
-	
+	// Custom header
+	$args = array(
+		'width'         => 1280,
+		'height'        => 416,
+		'default-image' => get_template_directory_uri() . '/images/header.jpg',
+		'uploads'       => true
+	);
+	add_theme_support( 'custom-header', $args );
+
 	// Add nav menu
 	register_nav_menu( 'primary', 'Primary Menu' );
 	

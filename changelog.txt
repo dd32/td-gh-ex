@@ -1,3 +1,8 @@
+Version 1.25 (2014-02-18)
+-------------------------
+- Fixed a bug with custom header images
+
+
 Version 1.24 (2014-02-18)
 -------------------------
 - Fixed a security glitch allowing users to enter js in the video post format url
