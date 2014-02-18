@@ -26,7 +26,7 @@ function optionsframework_options() {
 
 	// Test data
 	
-	$options[] = array( "name" => "Logo and footer",
+	$options[] = array( "name" => "Logo",
 		"type" => "heading" );
 	
 	$options['logo_uploader'] = array(
@@ -34,12 +34,6 @@ function optionsframework_options() {
 		"desc" => "Upload your logo.",
 		"id" => "logo_uploader",
 		"type" => "upload" );
-
-	$options['Footer_text'] = array(
-		"name" => "Footer Text",
-		"id" => "Footer_text",
-		"std" => "Text to display in footer",
-		"type" => "text" );
 return $options;
 }
 
@@ -76,25 +70,5 @@ function options_theme_customizer_register($wp_customize) {
 		'label' => $options['logo_uploader']['name'],
 		'section' => 'options_theme_customizer_logo',
 		'settings' => 'options_theme_customizer[logo_uploader]'
-	) ) );
-
-	/* Footer text */
-	
-	$wp_customize->add_section( 'options_theme_customizer_footer', array(
-		'title' => __( 'Footer Text', 'base' ),
-		'priority' => 110
-	) );
-	
-	$wp_customize->add_setting( 'options_theme_customizer[footer_text]', array(
-		'default' => $options['footer_text']['std'],
-		'type' => 'option'
-	) );
-	
-	$wp_customize->add_control( 'options_theme_customizer_footer_text', array(
-		'label' => $options['footer_text']['name'],
-		'section' => 'options_theme_customizer_footer',
-		'settings' => 'options_theme_customizer[footer_text]',
-		'type' => $options['footer_text']['type']
-	) );
-	
+	) ) );	
 }

@@ -9,7 +9,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 960; /* pixels */
+	$content_width = 700; /* pixels */
 }
 
 if ( ! function_exists( 'base_setup' ) ) :
@@ -49,7 +49,7 @@ function base_setup() {
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 	
 	// Custom header support.
-	add_theme_support( 'custom-header' );
+	//add_theme_support( 'custom-header' );
 	
 	// Allows theme developers to link a custom stylesheet file to the TinyMCE visual editor.
 	function base_add_editor_styles() {
@@ -139,6 +139,8 @@ function base_scripts() {
 	wp_enqueue_script( 'base-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 	
 	wp_enqueue_script( 'sticky-nav', get_stylesheet_directory_uri() . '/js/sticky-nav.js', array( 'jquery' ), '', true );
+	
+	 wp_enqueue_style( 'google-webfonts', 'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300' );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
