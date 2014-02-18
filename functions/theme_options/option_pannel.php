@@ -9,14 +9,13 @@ function rambo_admin_enqueue_script()
 	wp_enqueue_script('tab',get_template_directory_uri().'/functions/theme_options/js/option-panel-js.js',array('media-upload','thickbox'));
 	wp_enqueue_style('thickbox');
 	wp_enqueue_style('option',get_template_directory_uri().'/functions/theme_options/css/style-option.css');
-	
+	wp_enqueue_style('comp-chart',get_template_directory_uri().'/functions/theme_options/css/comp-chart.css');
 	//upgrade to pro css and js	
 	wp_enqueue_script( 'bootstrap-modal', get_template_directory_uri() . '/functions/theme_options/js/bootstrap-modal.js');
 	wp_enqueue_style('upgrade',get_template_directory_uri().'/functions/theme_options/css/upgrade-pro.css');
 }
 function rambo_option_panal_function()
-{	// upgradepro banner
-	require_once('upgradepro.php'); 
+{	
 	// option panel
 	require_once('webriti_option_pannel.php');
 }

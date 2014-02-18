@@ -13,6 +13,8 @@
 .icon.latest_news_section{	background-image: url(../images/option-icon-ads.png); }
 .icon.social_media_links{	background-image: url(../images/option-icon-media.png); }
 .icon.footer{	background-image: url(../images/option-icon-footer.png); }
+.icon.upgrade{	background-image: url(../images/btn-tumblog-note.png); }
+
 
 /******* Option panel tabs style start ***********/
 #options_tabs { width:100%;}

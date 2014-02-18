@@ -1,6 +1,6 @@
 <div class="wrap" id="framework_wrap">   		
     <div id="content_wrap">
-		<div class="webriti-header">
+		<div class="webriti-header webriti-themepromo">
 			<h2><a href="http://www.webriti.com/"><img class="logo_webriti" src="<?php echo get_template_directory_uri(); ?>/functions/theme_options/images/png.png"></a></h2>
 		</div>
 		<div class="webriti-submenu">		
@@ -29,7 +29,10 @@
 					</li>
 					<li>
 						<div class="arrow"><div></div></div><a href="#" id="ui-id-7"><span class="icon social_media_links"></span><?php _e('Social media links','rambo');?></a>
-					</li>										
+					</li>
+					<li>
+						<div class="arrow"><div></div></div><a href="#" id="ui-id-8"><span class="icon upgrade"></span><?php _e('Upgrade To Premium','rambo');?></a>
+					</li>	
 					<div id="nav-shadow"></div>
                 </ul>				
 				<!--most 1 tabs header_page_settings --> 
@@ -46,7 +49,8 @@
 				
 				<!--most 7 tabs home_page_settings --> 
 				<?php require_once('pages/footer_social_media_settings.php'); ?>			
-				
+				<!--most 8 tabs home_page_settings --> 
+				<?php require_once('pages/UpgradeToPro.php'); ?>
 			</div>		
         </div>
 		<div class="webriti-submenu" id="webriti_submenu">			
