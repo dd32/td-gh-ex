@@ -2,7 +2,7 @@
 /**
  * The default template for displaying content
  *
- * Used for both single and index/archive/search.
+ * Used for both single and index/featured.
  *
  * @package WordPress
  * @subpackage i-transform
@@ -57,7 +57,7 @@
         
 
             <div class="entry-summary">
-                <?php the_excerpt( $more_link_text , $strip_teaser ); ?>
+                <?php the_excerpt(); ?>
             </div><!-- .entry-summary -->
 
         </div>

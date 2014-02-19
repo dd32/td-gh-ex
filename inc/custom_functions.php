@@ -11,7 +11,7 @@ function itransform_social_icons () {
 		$socio_list .= '<ul class="social">';	
 		foreach ( $services as $service ) :
 			
-			$active[$service] = of_get_option ('itrans_social_'.$service);
+			$active[$service] = esc_url( of_get_option ('itrans_social_'.$service) );
 			if ($active[$service]) { 
 				$socio_list .= '<li><a href="'.$active[$service].'" title="'.$service.'" target="_blank"><i class="socico genericon-'.$service.'"></i></a></li>';
 				$siciocount++;

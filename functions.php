@@ -39,8 +39,6 @@ if ( ! isset( $content_width ) )
 /**
  * i-transform only works in WordPress 3.6 or later.
  */
-if ( version_compare( $GLOBALS['wp_version'], '3.6-alpha', '<' ) )
-	require get_template_directory() . '/inc/back-compat.php';
 
 /**
  * i-transform setup.
@@ -102,6 +100,12 @@ function itransform_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 604, 270, true );
+
+	/*
+	 * additional Image sizes.
+	 */
+	add_image_size( 'category-thumb', 300, 300, true ); //300 pixels wide (and unlimited height)
+	add_image_size( 'homepage-thumb', 220, 220, true ); //(cropped)	
 
 	// This theme uses its own gallery styles.
 	add_filter( 'use_default_gallery_style', '__return_false' );
@@ -291,84 +295,31 @@ if ( ! function_exists( 'itransform_paging_nav' ) ) :
  * @return void
  */
 function itransform_paging_nav() {
+	
 	global $wp_query;
 
 	// Don't print empty markup if there's only one page.
 	if ( $wp_query->max_num_pages < 2 )
 		return;
 	?>
+    <?php
+		$big = 999999999; // need an unlikely integer
+		$args = array(
+			'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
+			'format' => '?paged=%#%',
+			'current' => max( 1, get_query_var('paged') ),
+			'total' => $wp_query->max_num_pages,
+			'type' => 'list',
+			'prev_text' => '<span class="text">&laquo; ' . __( 'Previous', 'itransform' ) . '</span>',
+			'next_text' => '<span class="text">' . __( 'Next', 'itransform' ) . ' &raquo;</span>'					
+		);
+	?>				    
 	<nav class="navigation paging-navigation" role="navigation">
 		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'itransform' ); ?></h1>
 		<div class="nav-links">
-
-			<?php           
-            if( is_singular() )
-                    return;
-            
-                global $wp_query;
-            
-                /** Stop execution if there's only 1 page */
-                if( $wp_query->max_num_pages <= 1 )
-                    return;
-            
-                $paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
-                $max   = intval( $wp_query->max_num_pages );
-            
-                /**	Add current page to the array */
-                if ( $paged >= 1 )
-                    $links[] = $paged;
-            
-                /**	Add the pages around the current page to the array */
-                if ( $paged >= 3 ) {
-                    $links[] = $paged - 1;
-                    $links[] = $paged - 2;
-                }
-            
-                if ( ( $paged + 2 ) <= $max ) {
-                    $links[] = $paged + 2;
-                    $links[] = $paged + 1;
-                }
-            
-                echo '<div class="navigation"><ul>' . "\n";
-            
-                /**	Previous Post Link */
-                if ( get_previous_posts_link() )
-                    printf( '<li>%s</li>' . "\n", get_previous_posts_link() );
-            
-                /**	Link to first page, plus ellipses if necessary */
-                if ( ! in_array( 1, $links ) ) {
-                    $class = 1 == $paged ? ' class="active"' : '';
-            
-                    printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( 1 ) ), '1' );
-            
-                    if ( ! in_array( 2, $links ) )
-                        echo '<li>…</li>';
-                }
-            
-                /**	Link to current page, plus 2 pages in either direction if necessary */
-                sort( $links );
-                foreach ( (array) $links as $link ) {
-                    $class = $paged == $link ? ' class="active"' : '';
-                    printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $link ) ), $link );
-                }
-            
-                /**	Link to last page, plus ellipses if necessary */
-                if ( ! in_array( $max, $links ) ) {
-                    if ( ! in_array( $max - 1, $links ) )
-                        echo '<li>…</li>' . "\n";
-            
-                    $class = $paged == $max ? ' class="active"' : '';
-                    printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), $max );
-                }
-            
-                /**	Next Post Link */
-                if ( get_next_posts_link() )
-                    printf( '<li>%s</li>' . "\n", get_next_posts_link() );
-            
-                echo '</ul></div>' . "\n";
-            
-            ?>             
-
+            <div id="posts-nav" class="navigation">
+				<?php echo paginate_links( $args ); ?>
+            </div><!-- #posts-nav -->
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
 	<?php
@@ -649,29 +600,20 @@ include get_template_directory() . '/inc/custom_functions.php';
 /*	changing default Excerpt length 
 /*-----------------------------------------------------------------------------------*/ 
 
-function my_excerpt_length($length) {
+function itransform_excerpt_length($length) {
 	return 24;
 }
-add_filter('excerpt_length', 'my_excerpt_length');
+add_filter('excerpt_length', 'itransform_excerpt_length');
 
 
 /*-----------------------------------------------------------------------------------*/
 /*	changing changing default read more text 
 /*-----------------------------------------------------------------------------------*/ 
-function new_excerpt_more($more) {
+function itransform_excerpt_more($more) {
        global $post;
 	return '<a class="moretag" href="'. get_permalink($post->ID) . '">'. __( 'Read More...', 'itransform' ). '</a>';
 }
-add_filter('excerpt_more', 'new_excerpt_more');
-
-
-/*-----------------------------------------------------------------------------------*/
-/*	Adding additional image sizes 
-/*-----------------------------------------------------------------------------------*/ 
-if ( function_exists( 'add_image_size' ) ) { 
-	add_image_size( 'category-thumb', 300, 300, true ); //300 pixels wide (and unlimited height)
-	add_image_size( 'homepage-thumb', 220, 220, true ); //(cropped)
-}
+add_filter('excerpt_more', 'itransform_excerpt_more');
 
 
 

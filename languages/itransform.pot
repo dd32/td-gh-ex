@@ -147,17 +147,40 @@ msgstr ""
 
 #. #-#-#-#-#  twentythirteen.pot (Twenty Thirteen 1.1)  #-#-#-#-#
 #. Author URI of the plugin/theme
+
 #: footer.php:19
+msgid "Copyright &copy;"
+msgstr ""
+
+#: footer.php:22
 msgid "http://wordpress.org/"
 msgstr ""
 
-#: footer.php:19
+#: footer.php:22
 msgid "Semantic Personal Publishing Platform"
 msgstr ""
 
-#: footer.php:19
+#: footer.php:23
 msgid "Powered by %s"
 msgstr ""
+
+#: footer.php:26
+msgid "http://www.templatesnext.org/"
+msgstr ""
+
+#: footer.php:26
+msgid "web development and design"
+msgstr ""
+
+#: footer.php:27
+msgid "templatesnext"
+msgstr ""
+
+#: footer.php:22
+msgid ", Designed and Developed by "
+msgstr ""
+
+
 
 #: functions.php:97
 msgid "Navigation Menu"
@@ -209,6 +232,14 @@ msgstr ""
 
 #: functions.php:280
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: functions.php:315
+msgid "Next"
+msgstr ""
+
+#: functions.php:314
+msgid "Previous"
 msgstr ""
 
 #: functions.php:308

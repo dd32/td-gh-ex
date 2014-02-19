@@ -154,8 +154,8 @@ class Options_Framework_Admin {
         	<div class="promo-inner">
                 <h3>Support</h3>
                 <div class="inside">
-                    <p><b><a href="http://templatesnext.org/itrans/" target="_blank">i-transform Demo</a></b></p>
-                    <p>The best way to contact me with <b>support questions</b> and <b>bug reports</b> is via our <a href="http://facebook.com/templatesnext/" target="_blank">facebook page</a>.</p>
+                    <p><b><a href="<?php esc_attr_e( 'http://templatesnext.org/itrans/', 'textdomain' ); ?>" target="_blank">i-transform Demo</a></b></p>
+                    <p>The best way to contact me with <b>support questions</b> and <b>bug reports</b> is via our <a href="<?php esc_attr_e( 'http://facebook.com/templatesnext/', 'textdomain' ); ?>" target="_blank">facebook page</a>.</p>
                 </div>
             </div>
         </div>

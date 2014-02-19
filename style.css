@@ -4,10 +4,10 @@ Theme URI: http://templatesnext.org/itrans/
 Author: templatesnext team
 Author URI: http://templatesnext.org/
 Description: The i-transform theme for WordPress is developed using a populer theme "Twenty Thirteen" giving you all the features if Twenty Thirteen plus several additional features like easy to use admin theme admin options, featured post section, 5 color schemes, etc.
-Version: 1.2
+Version: 1.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: black, red, green, purple, white, yellow, light, blue, one-column, two-columns, right-sidebar, fluid-layout, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready
+Tags: black, red, green, purple, white, yellow, light, blue, one-column, two-columns, right-sidebar, fluid-layout, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, sticky-post, translation-ready
 Text Domain: itransform
 
 This theme, like WordPress, is licensed under the GPL.
@@ -950,10 +950,11 @@ img.wp-smiley,
 	color: #141412;
 	display: block;
 	float: left;
-	width: 280px;
+	min-width: 80px;
+	max-width: 420px;
 	margin: 0 auto;
 	min-height: 80px;
-	padding: 0 20px;
+	padding: 0 0px 0px 20px;
 	text-decoration: none;
 	vertical-align: middle;
 }
@@ -961,7 +962,7 @@ img.wp-smiley,
 .site-header .home-link span {
 	height: 80px;
 	vertical-align: middle;
-	display: table-cell;	
+	display: table-cell;
 }
 
 .site-header .home-link img {
@@ -978,13 +979,28 @@ img.wp-smiley,
 	font-weight: bold;
 	line-height: 1;
 	margin: 0;
-	padding: 16px 0 0px;
+	padding: 16px 0px 0px 0px;
 }
 
 .site-description {
 	font: 300 normal 16px "Open Sans", Helvetica, sans-serif;
 	margin: 0;
 }
+
+
+div.headerwrap a.home-link {
+	overflow: hidden;
+}
+div.headerwrap div.headerinnerwrap > span#site-titlendesc {
+	display: block;
+	float: left;
+}
+div.headerwrap .navbar {
+	display: block;
+	float: left;
+	padding-left: 20px;
+}
+
 
 
 /**
@@ -1110,10 +1126,8 @@ ul.nav-container ul a:hover,
 
 /* Navbar */
 .navbar {
-	background-color: #f7f5e7;
 	margin: 0 auto;
 	max-width: 1600px;
-	width: 100%;
 }
 
 .site-header .search-form {
@@ -2430,14 +2444,14 @@ footer.entry-meta {
  */
 
 .attachment .hentry {
-	background-color: #e8e5ce;
-	margin: 0;
-	padding: 0;
+	background-color: #ececec;
+	padding-left: 2.5%;
+	padding-right: 2.5%;
 }
 
 .attachment .entry-header {
 	margin-bottom: 0;
-	max-width: 1040px;
+	max-width: 1600px;
 	padding: 30px 0;
 }
 
@@ -2457,10 +2471,14 @@ footer.entry-meta {
 .attachment .entry-meta {
 	clear: none;
 	color: inherit;
-	float: right;
-	max-width: 604px;
+	float: left;
+	max-width: 1600px;
 	padding: 9px 0 0;
-	text-align: right;
+	text-align: left;
+}
+
+.image-attachment div.attachment img {
+	max-width: 100%!important;
 }
 
 .hentry.attachment:not(.image-attachment) .entry-meta {
@@ -2603,6 +2621,9 @@ footer.entry-meta {
 	padding: 0px;
 }
 
+.paging-navigation #posts-nav > span,
+.paging-navigation #posts-nav > a,
+.paging-navigation div.navigation > ul > li > span,
 .paging-navigation div.navigation > ul > li a {
 	display: inline-block;
 	padding: 6px;
@@ -2614,9 +2635,13 @@ footer.entry-meta {
 	text-align: center;	
 }
 
-.paging-navigation div.navigation > ul > li.active {}
 
+.paging-navigation #posts-nav > span:hover,
+.paging-navigation #posts-nav > a:hover,
+.paging-navigation #posts-nav > span.current,
+.paging-navigation #posts-nav > a.current,
 .paging-navigation div.navigation > ul > li a:hover,
+.paging-navigation div.navigation > ul > li > span.current,
 .paging-navigation div.navigation > ul > li.active > a {
 	color: #3787be;
 	border-color: #3787be;

@@ -16,10 +16,16 @@
 
 			<div class="site-info">
                 <div class="copyright">
-                	Copyright &copy; <?php bloginfo( 'name' ); ?>
+                	<?php esc_attr_e( 'Copyright &copy;', 'itransform' ); ?>  <?php bloginfo( 'name' ); ?>
                 </div>            
             	<div class="credit-info">
-					<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'itransform' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'itransform' ); ?>"><?php printf( __( 'Powered by %s', 'itransform' ), 'WordPress' ); ?></a>, Designed and Developed by <a href="http://www.templatesnext.org/" title="web development and design">templatesnext</a>
+					<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'itransform' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'itransform' ); ?>">
+						<?php printf( __( 'Powered by %s', 'itransform' ), 'WordPress' ); ?>
+                    </a>
+                    <?php printf( __( ', Designed and Developed by', 'itransform' )); ?> 
+                    <a href="<?php echo esc_url( __( 'http://www.templatesnext.org/', 'itransform' ) ); ?>">
+                   		<?php printf( __( 'templatesnext', 'itransform' ) ); ?>
+                    </a>
                 </div>
 
 			</div><!-- .site-info -->

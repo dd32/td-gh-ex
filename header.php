@@ -81,6 +81,7 @@
                             <?php get_search_form(); ?>
                         </div>
                     </div><!-- #navbar -->
+                    <div class="clear"></div>
                 </div>
             </header><!-- #masthead -->
         </div>

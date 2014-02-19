@@ -42,6 +42,15 @@ msgstr ""
 msgid "Options saved."
 msgstr ""
 
+#: includes/class-options-framework-admin.php:157
+msgid "http://templatesnext.org/itrans/"
+msgstr ""
+
+#: includes/class-options-framework-admin.php:158
+msgid "http://facebook.com/templatesnext/"
+msgstr ""
+
+
 #: includes/class-options-media-uploader.php:63
 msgid "No file chosen"
 msgstr ""
