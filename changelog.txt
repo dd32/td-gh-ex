@@ -1,4 +1,13 @@
 Changelog -----------------------------------
+version:1.163
+	Add
+		raindrops_comments_link()
+			separate from raindrops_posted_on()
+		filter hook raindrops_portfolio_nav
+	Modify
+		sidebar-default.php WAI-AREA role value change from complementary to navigation
+----------------------------------------------
+Changelog -----------------------------------
 version:1.162
 	Modify 
 		Link text: The Continue Reading link, when theme option accessibility settings true
