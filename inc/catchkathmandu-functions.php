@@ -139,7 +139,7 @@ function catchkathmandu_favicon() {
    		$options = $catchkathmandu_options_settings;
 		
 		echo '<!-- refreshing cache -->';
-		if ( $options[ 'remove_favicon' ] == "0" ) :
+		if ( empty( $options[ 'remove_favicon' ] ) ) :
 			// if not empty fav_icon on theme options
 			if ( !empty( $options[ 'fav_icon' ] ) ) :
 				$catchkathmandu_favicon = '<link rel="shortcut icon" href="'.esc_url( $options[ 'fav_icon' ] ).'" type="image/x-icon" />'; 	
@@ -419,6 +419,10 @@ add_action('wp_head', 'catchkathmandu_inline_css');
  * Filters wp_title to print a neat <title> tag based on what is being viewed.
  *
  * @since Catch Kathmandu 1.0
+ *
+ * @param string $title Default title text for current view.
+ * @param string $sep Optional separator.
+ * @return string The filtered title.
  */
 function catchkathmandu_wp_title( $title, $sep ) {
 	global $page, $paged;
@@ -436,7 +440,7 @@ function catchkathmandu_wp_title( $title, $sep ) {
 
 	// Add a page number if necessary.
 	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'responsive' ), max( $paged, $page ) );
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'catchkathmandu' ), max( $paged, $page ) );
 
 	return $title;
 }
@@ -1763,7 +1767,7 @@ add_action( 'catchkathmandu_before_hgroup_wrap', 'catchkathmandu_header_top', 10
  *
  * @uses web_clip and remove_web_clip 
  * @get the data value of image from theme options
- * @display favicon
+ * @display webclip icons
  *
  * @uses default Web Click Icon if web_clip field on theme options is empty
  *
@@ -1780,11 +1784,11 @@ function catchkathmandu_web_clip() {
 		
 		echo '<!-- refreshing cache -->';
 		if ( empty( $options[ 'remove_web_clip' ] ) ) :
-			// if not empty fav_icon on theme options
+			// if not empty web_clip on theme options
 			if ( !empty( $options[ 'web_clip' ] ) ) :
 				$catchkathmandu_web_clip = '<link rel="apple-touch-icon-precomposed" href="'.esc_url( $options[ 'web_clip' ] ).'" />'; 	
 			else:
-				// if empty fav_icon on theme options, display default fav icon
+				// if empty web_clip on theme options, display default webclip icon
 				$catchkathmandu_web_clip = '<link rel="apple-touch-icon-precomposed" href="'. get_template_directory_uri() .'/images/apple-touch-icon.png" />';
 			endif;
 		endif;
@@ -1794,7 +1798,7 @@ function catchkathmandu_web_clip() {
 	echo $catchkathmandu_web_clip ;	
 } // catchkathmandu_web_clip
 
-//Load Favicon in Header Section
+//Load webclip icon in Header Section
 add_action( 'wp_head', 'catchkathmandu_web_clip' );
 
 

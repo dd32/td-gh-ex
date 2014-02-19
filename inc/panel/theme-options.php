@@ -149,7 +149,9 @@ function catchkathmandu_theme_options_do_page() {
                     <li><a href="#homepagesettings"><?php _e( 'Homepage Settings', 'catchkathmandu' );?></a></li>
                     <li><a href="#slidersettings"><?php _e( 'Featured Slider', 'catchkathmandu' );?></a></li>
                     <li><a href="#sociallinks"><?php _e( 'Social Links', 'catchkathmandu' );?></a></li>
-                    <li><a href="#webmaster"><?php _e( 'Tools', 'catchkathmandu' );?></a></li>
+                    <?php if ( current_user_can( 'unfiltered_html' ) ) : ?>
+                    	<li><a href="#webmaster"><?php _e( 'Tools', 'catchkathmandu' );?></a></li>
+                   	<?php endif; ?>
                 </ul><!-- .tabsNavigation #mainNav -->
                    
                    
@@ -1327,7 +1329,7 @@ function catchkathmandu_theme_options_do_page() {
                                                     
 				</div><!-- #sociallinks -->
                 
-                
+               <?php if ( current_user_can( 'unfiltered_html' ) ) : ?>
                 <!-- Options for Webmaster Tools -->
                 <div id="webmaster">               
                     <div id="header-footer-codes" class="option-container">
@@ -1355,6 +1357,7 @@ function catchkathmandu_theme_options_do_page() {
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->  
                 </div><!-- #webmaster -->
+                <?php endif; ?>
 
             </div><!-- #catchkathmandu_ad_tabs -->
 		</form>

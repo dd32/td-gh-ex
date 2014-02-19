@@ -24,18 +24,7 @@
 <!--<![endif]-->
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
-    <title>
-    <?php
-    if ( defined( 'WPSEO_VERSION' ) ) {
-        // WordPress SEO is activated
-            wp_title();
-    
-    } else { 
-        // WordPress SEO is not activated
-        wp_title( '&#124;', true, 'right' );
-    }
-    ?>
-    </title>
+    <title><?php wp_title( '&#124;', true, 'right' ); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<!--[if lt IE 9]>
