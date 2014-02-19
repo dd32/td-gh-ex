@@ -101,5 +101,28 @@ jQuery(document).ready(function($){
 	$('.grid-box .format-video object').wrap('<div class="vid-wrapper"></div>');
 	
 	$('.grid-box .format-video video').wrap('<div class="vid-wrapper"></div>');
+	
+	
+	// Fix for Safari
+	
+	var fixSafariMargin = function() {
+		var gridwidth = $('.grid-box').width(); // get width of .grid-box
+		var hmargin = gridwidth * -0.105;
+		// check if the browser is Safari
+		if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {                  
+			$('.grid-box .vid-wrapper').css('margin-left', hmargin+'px');  // apply the calculated margin to .grid-box
+			$('.grid-box .vid-wrapper').css('margin-right', hmargin+'px'); 
+			$('footer[role=contentinfo]').css('display', 'block');
+			$('#site-generator').css('display', 'block');
+			$('#site-generator').css('padding-top', '25px');
+		}
+	}
+	
+	fixSafariMargin();
+	
+	$(window).resize(function() {
+		fixSafariMargin();
+	});
+	
 
 });

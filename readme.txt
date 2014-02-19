@@ -87,6 +87,11 @@ This theme is bundled with TGM-Plugin-Activation
 =================================
 CHANGELOG
 =================================
+Version 1.0.5
+ * added jquery fix for the footer issue in Safari
+ * removed the bundled Masonry script and enqueued the built-in WP script instead (jquery-masonry), this also fixes the grid boxes layout issue on Safari
+ * added unminified version of imagesLoaded script
+ 
 Version 1.0.4
  * wp_barrister_pagination() now supports core paginate_links() function
  * used a proper secondary query in index.php and people-post-type-main.php
