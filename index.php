@@ -25,21 +25,20 @@ get_header(); ?>
  <?php endwhile; ?>
 
 <div id="page-nav">
-<div class="alignleft"><?php previous_posts_link('&laquo;  ' . of_get_option('pe3', 'Previous Entries') ) ?></div>
-<div class="alignright"><?php next_posts_link(of_get_option('ne3', 'Next Entries') .' &raquo;') ?></div>
+<div class="alignleft"><?php previous_posts_link('&laquo;  Previous Entries' ) ?></div>
+<div class="alignright"><?php next_posts_link('Next Entries &raquo;') ?></div>
 </div>
   
  
  <?php else: ?>
  
- <h1 class="arc-post-title"><?php echo of_get_option('swcf', 'Sorry, we could not find anything that matched your search.'); ?></h1>
-		
-		<h3 class="arc-src"><span><?php echo of_get_option('yctas', 'You Can Try Another Search...'); ?></span></h3>
+ 		<h1 class="arc-post-title">Sorry, we could not find anything that matched your search.</h1>
+		<h3 class="arc-src"><span>You Can Try Another Search...</span></h3>
 		<?php get_search_form(); ?>
-		<p><a href="<?php echo home_url(); ?>" title="Browse the Home Page">&laquo; <?php echo of_get_option('orhp', 'Or Return to the Home Page'); ?></a></p><br />
-		<h2 class="post-title-color"><?php echo of_get_option('ycvffc', 'You can also Visit the Following. These are the Featured Contents'); ?></h2>
-		<div class="content-ver-sep"></div><br />
-		<?php get_template_part( 'featured-box' ); ?> 
+		<p><a href="<?php echo home_url(); ?>" title="Browse the Home Page">&laquo; Or Return to the Home Page</a></p><br />
+		<h2 class="post-title-color">You can also Visit the Following. These are the Featured Contents</h2>
+		<div class="content-ver-sep"></div></div>
+		<?php get_template_part( 'featured-box' ); ?>
  
 <?php endif; ?>
  

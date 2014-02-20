@@ -4,8 +4,6 @@
 	Based on the Simplest D5 Framework for WordPress
 	Since SunRain 1.0
 */
-  
-  	register_nav_menus( array( 'main-menu' => "Main Menu", 'top-menu' => "Top Menu" ) );
 
 //	Set the content width based on the theme's design and stylesheet.
 	if ( ! isset( $content_width ) ) $content_width = 584;
@@ -21,20 +19,22 @@
     return $filtered_title;
 	}
 	add_filter( 'wp_title', 'sunrain_filter_wp_title' );
+	
+	function sunrain_setup() {
+	register_nav_menus( array( 'main-menu' => "Main Menu", 'top-menu' => "Top Menu" ) );
 
 // 	Tell WordPress for the Feed Link
 	add_editor_style();
 	add_theme_support( 'automatic-feed-links' );
 	
 // 	This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images
-	if ( function_exists( 'add_theme_support' ) ) { 
+	
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 150, 150, true ); // default Post Thumbnail dimensions (cropped)
-
 	// additional image sizes
 	// delete the next line if you do not need additional image sizes
 	add_image_size( 'category-thumb', 300, 9999 ); //300 pixels wide (and unlimited height)
-	}
+
 	
 // 	WordPress 3.4 Custom Background Support	
 	$sunrain_custom_background = array( 'default-color' => 'ffffff', 'default-image'          => get_template_directory_uri() . '/images/back1.png', );
@@ -56,6 +56,8 @@
 	'admin-preview-callback' => '',
 	);
 	add_theme_support( 'custom-header', $sunrain_custom_header );
+	}
+	add_action( 'after_setup_theme', 'sunrain_setup' );
 
 // 	Functions for adding script
 	function sunrain_enqueue_scripts() { 
@@ -135,7 +137,7 @@
 // 	Post Meta design
 	function sunrain_post_meta() { ?>
 	<div class="post-meta"> <span class="post-edit"> <?php edit_post_link('Edit'); ?></span> <span class="post-author"> <?php the_author_posts_link(); ?> </span>
-	<span class="post-tag"> <?php the_tags('<span class="post-tag-icon"></span>' , ', '); ?> </span> <span class="post-category"> <?php the_category(', '); ?> </span> <span class="post-comments"> <?php comments_popup_link(of_get_option ('nocomments', 'No Comments') . ' &#187;', of_get_option ('1comment', 'One Comment') . ' &#187;', '% ' . of_get_option ('comments', 'Comments') . ' &#187;'); ?> </span>
+	<span class="post-tag"> <?php the_tags('<span class="post-tag-icon"></span>' , ', '); ?> </span> <span class="post-category"> <?php the_category(', '); ?> </span> <span class="post-comments"> <?php comments_popup_link('No Comments &#187;', 'One Comment &#187;', '% Comments &#187;'); ?> </span>
 	</div> 
 	
 	<?php

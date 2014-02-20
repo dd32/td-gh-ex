@@ -24,8 +24,8 @@
  <?php endwhile; endif; ?>
 
 <div id="page-nav">
-<div class="alignleft"><?php previous_posts_link('&laquo;  ' . of_get_option('pe3', 'Previous Entries') ) ?></div>
-<div class="alignright"><?php next_posts_link(of_get_option('ne3', 'Next Entries') .' &raquo;') ?></div>
+<div class="alignleft"><?php previous_posts_link('&laquo;  Previous Entries' ) ?></div>
+	<div class="alignright"><?php next_posts_link('Next Entries &raquo;') ?></div>
 </div>
 </div>
 <?php get_sidebar();  ?>

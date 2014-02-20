@@ -12,7 +12,7 @@
 
 <div id="commentsbox">
 <?php if ( have_comments() ) : ?>
-	<h2 class="comments"><?php comments_number(of_get_option ('nocomments', 'No Comments') . '', of_get_option ('1comment', 'One Comment'), '% ' . of_get_option ('comments', 'Comments') . '' );  echo ' ' . of_get_option ('to2', ' to'); ?> <a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
+	<h2 class="comments"><?php comments_number('No Comments', 'One Comment', '% Comments' );?>to  <a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2><?php the_title();?></a></h2>
 	<ol class="commentlist">
 		<?php wp_list_comments( array( 'avatar_size' => '200' )  ); ?>
 	</ol>
@@ -26,7 +26,7 @@
 	</div>
 <?php else : ?>
 	<?php if ( ! comments_open() && ! is_page() ) : ?>
-		<p class="watermark"><?php echo of_get_option ('cac', 'Comments are Closed'); ?></p>
+		<p class="watermark">Comments are Closed</p>
 	<?php endif; ?>
 <?php endif; ?>
 <?php if ( comments_open() ) : ?>

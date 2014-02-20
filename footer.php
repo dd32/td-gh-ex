@@ -16,10 +16,10 @@
 <div id="footer-content">
 
 <div id="social">
-<a href="<?php echo of_get_option('gplus-link', '#'); ?>" class="gplus-link" target="_blank"></a>
-<a href="<?php echo of_get_option('picassa-link', '#'); ?>" class="picassa-link" target="_blank"></a>
-<a href="<?php echo of_get_option('li-link', '#'); ?>" class="li-link" target="_blank"></a>
-<a href="<?php echo of_get_option('feed-link', '#'); ?>" class="feed-link" target="_blank"></a>
+<a href="<?php echo esc_url(of_get_option('gplus-link', '#')); ?>" class="gplus-link" target="_blank"></a>
+<a href="<?php echo esc_url(of_get_option('picassa-link', '#')); ?>" class="picassa-link" target="_blank"></a>
+<a href="<?php echo esc_url(of_get_option('li-link', '#')); ?>" class="li-link" target="_blank"></a>
+<a href="<?php echo esc_url(of_get_option('feed-link', '#')); ?>" class="feed-link" target="_blank"></a>
 </div>
 
 <?php
