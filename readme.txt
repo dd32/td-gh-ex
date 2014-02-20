@@ -5,9 +5,9 @@ Theme URI: http://www.sampression.com/sampression-lite/
 Author: Sampression
 Author URI: http://www.sampression.com
 
-Version: 1.4.1.1
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.4.1.2
+License: The MIT License (MIT)
+License URI: http://mit-license.org
 */
 
 == Theme Description ==
@@ -135,6 +135,8 @@ Version 1.4.1.1
 
 = Improved: Code optimizations
 
+Version 1.4.1.2
+= Changed: Theme is now distributed under MIT license.
 
  == Child Theme Support ===
  Sampresson Lite supports child themes. Please use child themes for customization of "Sampression Lite". For further reading: http://codex.wordpress.org/Child_Themes.
