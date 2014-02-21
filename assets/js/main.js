@@ -2,6 +2,7 @@
 */
 jQuery(document).ready(function ($) {
 		$("[rel=tooltip]").tooltip();
+		$('[data-toggle=tooltip]').tooltip();
 		$("[rel=popover]").popover();
 		//$('.collapse').collapse()
 		$('#authorTab a').click(function (e) {e.preventDefault(); $(this).tab('show'); });

@@ -13,7 +13,7 @@
               <ul>
                 <?php global $virtue; $top_icons = $virtue['topbar_icon_menu'];
                 foreach ($top_icons as $top_icon) {
-                  echo '<li><a href="'.$top_icon['link'].'" title="'.$top_icon['title'].'" rel="tooltip" data-placement="bottom" data-original-title="'.$top_icon['title'].'">';
+                  echo '<li><a href="'.$top_icon['link'].'" title="'.$top_icon['title'].'" data-toggle="tooltip" data-placement="bottom" data-original-title="'.$top_icon['title'].'">';
                   if($top_icon['url'] != '') echo '<img src="'.$top_icon['url'].'"/>' ; else echo '<i class="'.$top_icon['icon_o'].'"></i>';
                   echo '</a></li>';
                 } ?>

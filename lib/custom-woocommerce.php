@@ -75,7 +75,7 @@ function woocommerce_category_image() {
     }
   }
 }
-//add_filter('add_to_cart_fragments', 'kad_woocommerce_header_add_to_cart_fragment');
+add_filter('add_to_cart_fragments', 'kad_woocommerce_header_add_to_cart_fragment');
 function kad_woocommerce_header_add_to_cart_fragment( $fragments ) {
     global $woocommerce;
     ob_start(); ?>

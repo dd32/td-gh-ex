@@ -48,6 +48,13 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 2.0.5 =
+* Add back ajax cart
+* Qtranslate issue
+* Add pt language file (almost empty)
+* Topbar Menu z-index update.
+* Make last menu item move left
+
 = Version: 2.0.4 =
 * Fix my account issues with woocommerce 2.1
 * Remove some woocommere template files.
