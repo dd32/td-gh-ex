@@ -120,7 +120,7 @@
 	endif;	
 	}
 	
-	function sunrain_creditline() { echo '<span class="credit">| SunRain Theme by: <a href="http://d5creation.com" target="_blank"><img  src="' . get_template_directory_uri() . '/images/d5logofooter.png" /> D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a></span>'; }
+	function sunrain_creditline() { $sunain_theme_data = wp_get_theme(); $sunain_author_uri = $sunain_theme_data->get( 'AuthorURI' ); echo '<span class="credit">| SunRain Theme by: <a href="'. $sunain_author_uri .'" target="_blank"><img  src="' . get_template_directory_uri() . '/images/d5logofooter.png" /> D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a></span>'; }
 
 //	Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link
 	function sunrain_page_menu_args( $args ) {

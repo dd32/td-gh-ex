@@ -17,10 +17,15 @@ function optionsframework_options() {
 	$options[] = array(
 		'name' => 'General Options', 
 		'type' => 'heading');
+	
+	$sunain_theme_data = wp_get_theme(); 
+	$sunain_author_uri = $sunain_theme_data->get( 'AuthorURI' );
+	$sunain_theme_uri = $sunain_theme_data->get( 'ThemeURI' );
+	$sunain_author_uri_clean = parse_url($sunain_author_uri, PHP_URL_HOST);
 		
 	$options[] = array(
-		'desc' => '<div class="infohead"><span class="donation">If you like this FREE Theme You can consider for a small Donation to us. Your Donation will be spent for the Disadvantaged Children and Students. You can visit our <a href="http://d5creation.com/donate/" target="_blank"><strong>DONATION PAGE</strong></a> and Take your decision.</span><br /><br /><span class="donation"> We appreciate an <a href="http://wordpress.org/support/view/theme-reviews/sunrain" target="_blank">Honest Review</a> of this Theme if you Love our Work.</span><br /> 
-		<span class="donation">Need More Features and Options including Unlimited Slides, Slide Items, Links and 100+ Advanced Features? Try <a href="http://d5creation.com/theme/sunrain/" target="_blank"><strong>SunRain Extend</strong></a>.</span><br /> <br /><span class="donation"> You can Visit the SunRain Extend Demo <a href="http://demo.d5creation.com/wp/themes/sunrain/" target="_blank"><strong>Here</strong></a>.</span><a href="http://d5creation.com/theme/sunrain/" target="_blank" class="extendlink"> </a></div>',
+		'desc' => '<div class="infohead"><span class="donation">If you like this FREE Theme You can consider for a small Donation to us. Your Donation will be spent for the Disadvantaged Children and Students. You can visit our <a href="'.$sunain_author_uri.'donate/" target="_blank"><strong>DONATION PAGE</strong></a> and Take your decision.</span><br /><br /><span class="donation"> We appreciate an <a href="http://wordpress.org/support/view/theme-reviews/sunrain" target="_blank">Honest Review</a> of this Theme if you Love our Work.</span><br /> 
+		<span class="donation">Need More Features and Options including Unlimited Slides, Slide Items, Links and 100+ Advanced Features? Try <a href="'.$sunain_theme_uri.'" target="_blank"><strong>SunRain Extend</strong></a>.</span><br /> <br /><span class="donation"> You can Visit the SunRain Extend Demo <a href="http://demo.'.$sunain_author_uri_clean.'/wp/themes/sunrain/" target="_blank"><strong>Here</strong></a>.</span><a href="'.$sunain_theme_uri.'" target="_blank" class="extendlink"> </a></div>',
 		'type' => 'info');
 	
 	$options[] = array(
@@ -191,17 +196,14 @@ function optionsframework_options() {
 		'type' => 'text');
 		
 	
-	
-	
-	
 // Slider Settings
 	$options[] = array(
 		'name' => 'Slider', 
 		'type' => 'heading');
 		
 	$options[] = array(
-		'desc' => '<div class="infohead"><span class="donation">If you like this FREE Theme You can consider for a small Donation to us. Your Donation will be spent for the Disadvantaged Children and Students. You can visit our <a href="http://d5creation.com/donate/" target="_blank"><strong>DONATION PAGE</strong></a> and Take your decision.</span><br /><br /><span class="donation"> We appreciate an <a href="http://wordpress.org/support/view/theme-reviews/sunrain" target="_blank">Honest Review</a> of this Theme if you Love our Work.</span><br /> 
-		<span class="donation">Need More Features and Options including Unlimited Slides, Slide Items, Links and 100+ Advanced Features? Try <a href="http://d5creation.com/theme/sunrain/" target="_blank"><strong>SunRain Extend</strong></a>.</span><br /> <br /><span class="donation"> You can Visit the SunRain Extend Demo <a href="http://demo.d5creation.com/wp/themes/sunrain/" target="_blank"><strong>Here</strong></a>.</span><a href="http://d5creation.com/theme/sunrain/" target="_blank" class="extendlink"> </a></div>',
+		'desc' => '<div class="infohead"><span class="donation">If you like this FREE Theme You can consider for a small Donation to us. Your Donation will be spent for the Disadvantaged Children and Students. You can visit our <a href="'.$sunain_author_uri.'donate/" target="_blank"><strong>DONATION PAGE</strong></a> and Take your decision.</span><br /><br /><span class="donation"> We appreciate an <a href="http://wordpress.org/support/view/theme-reviews/sunrain" target="_blank">Honest Review</a> of this Theme if you Love our Work.</span><br /> 
+		<span class="donation">Need More Features and Options including Unlimited Slides, Slide Items, Links and 100+ Advanced Features? Try <a href="'.$sunain_theme_uri.'" target="_blank"><strong>SunRain Extend</strong></a>.</span><br /> <br /><span class="donation"> You can Visit the SunRain Extend Demo <a href="http://demo.'.$sunain_author_uri_clean.'/wp/themes/sunrain/" target="_blank"><strong>Here</strong></a>.</span><a href="'.$sunain_theme_uri.'" target="_blank" class="extendlink"> </a></div>',
 		'type' => 'info');
 		
 	$options[] = array(
