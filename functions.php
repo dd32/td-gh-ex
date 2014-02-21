@@ -309,7 +309,7 @@ function BaseBreadcrumb() {
 	echo '<div class="basebreadcrumb">';
     if (!is_home()) {
         echo '<a href="';
-        echo home_url();
+        echo 'home_url()';
         echo '">';
         echo 'Home';
         echo "</a> &#187; ";
@@ -335,11 +335,11 @@ remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wra
 add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
 add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
 
-function my_theme_wrapper_start() {
+function base_wrapper_start() {
   echo '<section id="main" class="twelve columns">';
 }
 
-function my_theme_wrapper_end() {
+function base_wrapper_end() {
   echo '</section>';
 }
 

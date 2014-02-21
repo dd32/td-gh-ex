@@ -4,12 +4,16 @@ Theme URI: http://www.iografica.it/prodotto/base-wp/
 Author: Iografica.it
 Author URI: http://iografica.it/
 Description: A simple basic business and blog theme
-Version: 1.01
-License: GNU General Public License
-License URI: license.txt
+Version: 1.02
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: base
 Domain Path: /languages/
 Tags: white, orange, one-column, two-columns, right-sidebar, responsive-layout, full-width-template, post-formats, sticky-post, theme-options, translation-ready, custom-background, featured-images, custom-menu
+
+Base WP WordPress Theme, Copyright (C) 2014 iografica.it
+Base WP WordPress theme is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
 */
 
 /*--------------------------------------------------------------
@@ -367,8 +371,8 @@ textarea {
 	margin-top:1em;
 }
 .site-description{
-	color: #ddd;
-	font-size:1.2em;
+	color: #aaa;
+	font-size:1.25em;
 }
 /*--------------------------------------------------------------
 5.1 Links
