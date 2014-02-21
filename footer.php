@@ -15,10 +15,15 @@
    			<?php get_sidebar( 'footer' ); ?>
    		</div><!-- .widget-footer -->
 		<div class="site-info">
-        	<?php printf( __( 'Theme: %1$s by %2$s &#169; 2013', 'base' ), 'Base WP', '<a href="http://iografica.it/" rel="designer">Iografica.it</a>' ); ?>
-            <span class="sep"> | </span>
-            <?php printf( __( '%1$s WordPress theme is licensed under the GPL.', 'base' ), 'Base WP' ); ?>
-		</div><!-- .site-info -->
+		<?php esc_attr_e( '&copy;', 'base' ); ?> <?php _e( date( 'Y' ) ); ?> <a href="<?php echo esc_url(home_url( '/' )) ?>" target="_blank" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+		<?php bloginfo( 'name' ); ?>
+        </a>        
+        <span class="sep"> | </span>		 
+		<?php printf( __( 'Theme: %1$s by %2$s ', 'base' ), 'Base WP', '<a href="http://iografica.it/" rel="designer">iografica.it</a>' ); ?>
+        <span class="sep"> | </span>
+		<?php printf( __( 'Powered by ', 'base' )); ?><a href="http://wordpress.org/" rel="generator">
+		<?php printf( __( '%s', 'base' ), 'WordPress' ); ?></a>             
+        </div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

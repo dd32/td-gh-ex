@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Base WP v1.0\n"
+"Project-Id-Version: Base WP v1.01\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-02-18 11:06:28+0000\n"
+"PO-Revision-Date: 2014-02-21 11:05:53+0000\n"
 "Last-Translator: iografica <info@iografica.it>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -540,14 +540,24 @@ msgid "Meta"
 msgstr ""
 
 #: footer.php:18
-#, php-format
 #@ base
-msgid "Theme: %1$s by %2$s &#169; 2013"
-msgstr "Tema: %1$s realizzato da %2$s &#169; 2013"
+msgid "&copy;"
+msgstr ""
 
-#: footer.php:20
+#: footer.php:22
 #, php-format
 #@ base
-msgid "%1$s WordPress theme is licensed under the GPL."
-msgstr "%1$s WordPress theme usa la licenza GPL."
+msgid "Theme: %1$s by %2$s "
+msgstr "Tema: %1$s realizzato da %2$s "
+
+#: footer.php:24
+#@ base
+msgid "Powered by "
+msgstr ""
+
+#: footer.php:25
+#, php-format
+#@ base
+msgid "%s"
+msgstr ""
 

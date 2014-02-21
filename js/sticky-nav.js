@@ -1,7 +1,9 @@
 /**
  * sticky-nav.js
  *
- * Fixed nav on scroll. You can view source file on: http://jsfiddle.net/T6nZe/ 
+ * License: GNU General Public License v2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * 
  */
 
 jQuery(document).ready(function($) {
