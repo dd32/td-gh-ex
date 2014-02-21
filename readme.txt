@@ -2,7 +2,7 @@
 
 Theme Name: Athenea
 Theme URI: http://www.ibermega.com/themes/athenea
-Version: 1.0.3
+Version: 1.0.4
 Requires at least: 3.0.1
 Tested up to: 3.8.1
 Author: Miguel Angel Rico
@@ -59,6 +59,9 @@ For documentation go to http://www.ibermega.com/themes/athenea
 
 
 == Changelog ==
+
+= 1.0.4 - 21.02.2014 =
+* Update theme images.
 
 = 1.0.3 - 19.02.2014 =
 * Resolved minor mistakes prescribed by the reviewer.
