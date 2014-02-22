@@ -21,7 +21,7 @@
 		<?php if (has_post_thumbnail()) :
 			the_post_thumbnail('homepage-thumb');	
 			  else: ?>
-			<img src="<?php echo get_stylesheet_directory_uri()."/images/dthumb.png"; ?>">  
+			<img src="<?php echo get_template_directory_uri()."/images/dthumb.png"; ?>">  
 			<?php
 		endif; 
 		?>

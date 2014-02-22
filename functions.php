@@ -51,11 +51,6 @@ function akasse_widgets_init() {
 }
 add_action( 'widgets_init', 'akasse_widgets_init' );
 
-if ( !function_exists( 'optionsframework_init' ) ) {
-	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
-	require_once dirname( __FILE__ ) . '/inc/options-framework.php';
-}
-
 add_action('optionsframework_custom_scripts', 'akasse_custom_scripts');
 
 function akasse_custom_scripts() { ?>
