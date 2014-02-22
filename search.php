@@ -1,17 +1,9 @@
 <?php
-
 /**
-
  * The template for displaying Search Results pages.
-
  *
-
  */
-
-
-
 get_header(); ?>
-
 <div class="main-container">
   <div class="container"> 
     
@@ -28,15 +20,10 @@ get_header(); ?>
           <h2 class="post-title"><a href="#"></a> </h2>
           <figure class="feature-thumbnail-large">
             <?php 
-
         $id = get_the_ID();
-
         $feat_image = wp_get_attachment_url(get_post_thumbnail_id($id)); 
-
 		if($feat_image!='')
-
 		{
-
 		?>
             <a href="<?php echo $feat_image ?>"> <img src="<?php echo $feat_image ?>" class="img-responsive" alt="<?php echo get_the_title();?>" /> </a>
             <?php } ?>
@@ -54,25 +41,15 @@ get_header(); ?>
               </div>
               <div class="post-category"> POST IN:
                 <?php  
-
 					$the_cat = get_the_category();  
-
 					$count=0;  
-
 					if ($the_cat) {  
-
 						foreach($the_cat as $cat) {  
-
 							$count++;  
-
 							echo '<a href="'.get_category_link($cat->cat_ID).'">'.$cat->cat_name.'</a>';  
-
 							if( $count == 1 ) break;  
-
 						}  
-
 					}  
-
 			    ?>
                 <?php echo get_category_link($category[0]->term_id ); ?>"><?php echo $category[0]->cat_name; ?></div>
               <div class="post-author"> BY:
@@ -92,16 +69,16 @@ get_header(); ?>
           
         </article>
         <?php endwhile; 
-
 	  else:
-
 			echo'<h2>No Results Found</h2>';
-
 	  ?>
         <?php endif; ?>
         
         <!--end / article--> 
-        
+         <nav class="redpro-nav">
+                <span class="redpro-nav-previous"><?php previous_posts_link(); ?></span>
+                <span class="redpro-nav-next"><?php next_posts_link(); ?></span>
+			</nav>
       </div>
       
       <!--end / main-->

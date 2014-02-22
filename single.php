@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-
 <div class="page-title">
   <div class="container">
     <div class="row">
@@ -27,6 +26,10 @@
           <?php while ( have_posts() ) : the_post(); ?>
           <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <div class="post-meta">
+            <nav class="redpro-nav">
+                <span class="redpro-nav-previous"><?php previous_post_link(); ?></span>
+                <span class="redpro-nav-next"><?php next_post_link(); ?></span>
+			</nav><!-- .nav-single -->
               <div class="post-date"> <span class="day"><?php echo get_the_time('d'); ?></span> <span class="month"><?php echo get_the_time('M'); ?></span> </div>
               <!--end / post-date-->
               <div class="post-meta-author">
@@ -63,16 +66,9 @@
               
             </div>
             <figure class="feature-thumbnail-large">
-              <?php /*
-			$feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
-			if($feat_image!="") { ?>
-            
-          	<a href="<?php echo $feat_image;?>">
-            	<img src="<?php echo $feat_image;?>" class="img-responsive" alt="<?php echo get_the_title();?>" />
-            </a>
-          <?php } */
-		   the_post_thumbnail();
-		  ?>
+              <?php 
+			   the_post_thumbnail();
+			  ?>
             </figure>
             <div class="post-content">
               <?php the_content(); 
@@ -91,6 +87,7 @@
       </div>
       <!--end / main-->
       <?php endwhile; // end of the loop. ?>
+      				
       <div class="col-md-3 col-md-offset-1 sidebar">
       	<?php get_sidebar(); ?>
       </div>

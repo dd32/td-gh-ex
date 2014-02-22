@@ -7,7 +7,6 @@ if (!defined('ABSPATH'))
  * @package RedPro
  */
 get_header(); ?>
-
 <div class="page-title">
   <div class="container">
     <div class="row">
@@ -96,6 +95,10 @@ get_header(); ?>
         <?php endif; ?>
         
         <!--end / article--> 
+         <nav class="redpro-nav">
+                <span class="redpro-nav-previous"><?php previous_posts_link(); ?></span>
+                <span class="redpro-nav-next"><?php next_posts_link(); ?></span>
+			</nav>
       </div>
       <!--end / main-->
       <div class="col-md-3 col-md-offset-1 sidebar">

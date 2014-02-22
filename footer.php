@@ -1,21 +1,15 @@
 </div>
-
 <footer class="footer">
   <div class="container">
     <div class="row">
       <?php 
-
 		$options = get_option( 'faster_theme_options' ); 
 		$social = '';
 		if($options['fburl'] != ''){ $facebook_link = $options['fburl']; $social = 'provided'; }/*else{ $facebook_link = 'https://www.facebook.com/faster.themes'; }*/
-
 		if($options['twitter'] != ''){ $twitter_link = $options['twitter']; $social = 'provided';}/*else{ $twitter_link = 'https://twitter.com/FasterThemes'; }*/
-
 		?>
       <?php if ( is_active_sidebar( 'footer-sidebar' ) ) : 
-
 		 		dynamic_sidebar( 'footer-sidebar' ); 
-
 				?>
       <aside class="col-md-3 footer-separator" id="follow_us">
         <h6>Follow Us</h6>
@@ -26,58 +20,35 @@
         </ul>
         <div class="copyright"> <span>
           <?php 
-
 									if($options['footertext'] != '')
-
 									{
-
 										echo $options['footertext'];
-
 									}else{
-
-										echo "Powered by <a href='http://wordpress.org' target='_blank'>WORDPRESS</a>.";
-
+										echo "Powered by <a href='http://wordpress.org' target='_blank'>WordPress</a>.";
 										echo "<br />";
-
 										echo "Theme by <a href='http://fasterthemes.com' target='_blank'>FasterThemes.</a>";				
-
 									}
-
 									?>
           </span> </div>
       </aside>
       <?php
-
 			  	else: 
-
 		?>
       <aside class="col-md-3 footer-separator widget_recent_entries" id="recent-posts-3">
         <h6>Recent Post</h6>
         <ul>
           <?php
-
 						$args = array(
-
 							'numberposts' => 5,
-
 							'orderby' => 'post_date',
-
 							'order' => 'DESC',
-
 							'post_type' => 'post',
-
 							'post_status' => 'draft, publish, future, pending, private',
-
 						);
-
 						$recent_posts = wp_get_recent_posts($args);
-
 						foreach( $recent_posts as $recent ){
-
 							echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="Look '.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> </li> ';
-
 						}
-
 						?>
         </ul>
       </aside>
@@ -85,21 +56,13 @@
         <h6>Recent Comments</h6>
         <ul id="recentcomments">
           <?php
-
 						$args = array(
-
 							'number' => 5,
-
 						);
-
 						$comments = get_comments($args);
-
 						foreach( $comments as $comment ){
-
 							echo '<li class="recentcomments"><a href="'.get_comments_link($comment->comment_post_ID).'" title="'.esc_attr($comment->comment_content).'" >'.$comment->comment_author.' on '.get_the_title($comment->comment_post_ID).'</a> </li> ';
-
 						}
-
 						?>
         </ul>
       </aside>
@@ -117,23 +80,14 @@
         <?php endif; //social provider ?>
         <div class="copyright"> <span>
           <?php 
-
 									if($options['footertext'] != '')
-
 									{
-
 										echo $options['footertext'];
-
 									}else{
-
-										echo "Powered by <a href='http://wordpress.org' target='_blank'>Wordpress</a>.";
-
+										echo "Powered by <a href='http://wordpress.org' target='_blank'>WordPress</a>.";
 										echo "<br />";
-
 										echo "Theme by <a href='http://fasterthemes.com' target='_blank'>FasterThemes.</a>";				
-
 									}
-
 									?>
           </span> </div>
       </aside>
@@ -141,8 +95,6 @@
     </div>
   </div>
 </footer>
-
 <!--end / footer-->
-
 <?php wp_footer(); ?>
 </body></html>

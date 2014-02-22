@@ -1,15 +1,9 @@
 <?php 
-
 /*
-
  * Template Name: Left Sidebar
-
 */
-
 get_header();
-
 ?>
-
 <div class="page-title">
   <div class="container">
     <div class="row">
@@ -26,9 +20,7 @@ get_header();
     </div>
   </div>
 </div>
-
 <!--end / page-title-->
-
 <div class="main-container">
   <div class="container"> 
     
@@ -42,19 +34,13 @@ get_header();
         <article class="post">
           <?php while ( have_posts() ) : the_post(); ?>
           <?php 
-
 			$feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
-
 			if($feat_image!="")
-
 			{
-
 			?>
           <figure class="feature-thumbnail-large"> <a href="<?php echo $feat_image;?>"> <img src="<?php echo $feat_image;?>" class="img-responsive" alt="<?php echo get_the_title();?>" /> </a> </figure>
           <?php
-
 		  }
-
 		  ?>
           <div class="post-content">
             <?php the_content(); ?>

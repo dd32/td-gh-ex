@@ -3,7 +3,6 @@
  * The template for displaying Comments.
  *
  */
-
 /*
  * If the current post is protected by a password and
  * the visitor has not yet entered the password we will
@@ -14,7 +13,6 @@ if ( post_password_required() )
 ?>
 <div class="clearfix"></div>
 <div id="comments" class="comments-area">
-
 	<?php if ( have_comments() ) : 	?>
     <h2 class="comments-title">
 		<?php
@@ -51,5 +49,4 @@ if ( post_password_required() )
 				  );
 	?>
 	<?php comment_form($args); ?>
-
 </div><!-- #comments .comments-area -->
