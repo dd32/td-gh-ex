@@ -109,6 +109,7 @@ Everything else used in this theme has been created by me, especially for "Anarc
         2.5.2   (2014.2.1)   -  Minor additions and fixes
         2.6     (2014.2.17)  -  added : the ability to change the font size of entries.
                                 fixed : many more minor fixes and changes.
+        2.7     (2014.2.23)  -  Minor additions and fixes
 
 == Contact & Issues for Anarcho Notepad ==
 

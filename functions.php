@@ -3,7 +3,7 @@
  * Anarcho Notepad functions and definitions.
  *
  * @package	Anarcho Notepad
- * @since	2.6
+ * @since	2.7
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013-2014, Arthur Gareginyan
  * @link      	http://mycyberuniverse.com/anarcho-notepad.html
@@ -405,5 +405,29 @@ function anarcho_comment_form($anarcho_defaults) {
 add_filter('comment_form_defaults', 'anarcho_comment_form');
 // END-Comments-Form
 // END-Comments
+
+// Creates a nicely formatted and more specific title element text
+// for output in head of document, based on current view.
+function anarcho_wp_title( $title, $sep ) {
+	global $paged, $page;
+
+	if ( is_feed() )
+		return $title;
+
+	// Add the site name.
+	$title .= get_bloginfo( 'name' );
+
+	// Add the site description for the home/front page.
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) )
+		$title = "$title $sep $site_description";
+
+	// Add a page number if necessary.
+	if ( $paged >= 2 || $page >= 2 )
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'anarcho-notepad' ), max( $paged, $page ) );
+
+	return $title;
+}
+add_filter( 'wp_title', 'anarcho_wp_title', 10, 2 );
 
 ?>

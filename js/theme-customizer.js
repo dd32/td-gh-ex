@@ -1,5 +1,5 @@
 /*
- Theme Customizer live preview v1.0 | @agareginyan | GPL v3 Licensed
+ Theme Customizer live preview v1.1 | @agareginyan | GPL v3 Licensed
 
  This file adds some LIVE to the Theme Customizer live preview. To leverage
  this, set your custom settings to 'postMessage' and then add your handling
@@ -23,6 +23,13 @@
 			$( '.site-description' ).html( newval );
 		} );
 	} );
+
+        // Update the font of posts in real time...
+        wp.customize( 'post_font', function( value ) {
+                value.bind( function( newval ) {
+                        $( '#content .col01 .post-inner' ).html( newval );
+                } );
+
         // Update the font of posts in real time...
         wp.customize( 'post_font_size', function( value ) {
                 value.bind( function( newval ) {

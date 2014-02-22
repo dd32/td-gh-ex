@@ -52,7 +52,7 @@
 <?php if(get_theme_mod('disable_recent_sticker') == '0') {  ?>
 <div class="recent-posts-upper"></div>
  <nav class="recent-posts">
-    <?php $query = new WP_Query( array( 'posts_per_page' => '9' ) ); ?>
+    <?php $query = new WP_Query( array( 'posts_per_page' => '10' ) ); ?>
     <?php while ($query->have_posts()): $query->the_post(); ?>
     <ul>
        <li>

@@ -3,7 +3,7 @@
  * Theme Customizer support
  *
  * @package	Anarcho Notepad
- * @since	2.6
+ * @since	2.7
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013-2014, Arthur Gareginyan
  * @link      	http://mycyberuniverse.com/anarcho-notepad.html
@@ -678,7 +678,7 @@ var tit=document.title,c=0;function writetitle(){document.title=tit.substring(0,
 			echo '</style>' . "\n";
 		}
 		if ( ( get_theme_mod('post_font') != 'Default' ) && ( get_theme_mod('post_font') != '' ) ) {
-			echo "<link href='http://fonts.googleapis.com/css?family=" . get_theme_mod('taglinefontstyle_setting') . "' rel='stylesheet' type='text/css'>"  . "\n";
+			echo "<link href='http://fonts.googleapis.com/css?family=" . get_theme_mod('post_font') . "' rel='stylesheet' type='text/css'>"  . "\n";
 			echo '<style type="text/css" media="screen">' . "\n";
 			$x = get_theme_mod('post_font');
 			$x = preg_replace('/[^a-zA-Z0-9]+/', ' ', $x);
