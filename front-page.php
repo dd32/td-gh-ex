@@ -36,7 +36,7 @@ get_header(); ?>
 			</div>
 			<?php $j++;
 		endwhile; 
-		wp_reset_query();
+		wp_reset_postdata();
 		?>
 	</div>
 

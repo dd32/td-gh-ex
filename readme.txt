@@ -15,7 +15,8 @@ External resources linked to the theme.
 Resources packed within the theme. 
 * Genericons by Joen Asmussen http://genericons.com/
   Licensed under the GPL, version 2 or later http://www.gnu.org/licenses/old-licenses/gpl-2.0.html).
-* Image used as deafault header image(s) is/are from public domain http://unsplash.com/
+* Image used as deafault header image(s) and used in the screenshot are from public domain http://unsplash.com/
+* Custom js file is our own creation and is licensed under the same license as this theme.
 
 All other resources and theme elements are licensed under the [GNU GPL](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 or later.
 
@@ -65,3 +66,8 @@ and we will include it within the theme from next version update.
 
 = Version 1.0 =
 * All brand new. 
+
+= Vesion 1.0.1 =
+* Backtotop js file and related part removed.
+* Replaced wp_reset_query with wp_reset_postdata for front page. 
+* Custom js (our own creation) is licensed under the same license as this theme. 
