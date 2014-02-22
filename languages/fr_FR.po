@@ -2,16 +2,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Evolution\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-10 00:59+0545\n"
-"PO-Revision-Date: 2013-12-10 00:59+0545\n"
+"POT-Creation-Date: 2014-02-22 09:37+0545\n"
+"PO-Revision-Date: 2014-02-22 09:37+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
-"Language-Team: \n"
+"Language-Team: Catch Themes Team <info@catchthemes.com>\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n>1;\n"
-"X-Generator: Poedit 1.6.1\n"
+"X-Generator: Poedit 1.6.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
 "_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
@@ -409,51 +409,15 @@ msgstr ""
 "in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</a>"
 
 # @ catchevolution
-#: search.php:15
-#, php-format
-msgid "Search Results for: %s"
-msgstr "Résultats de la recherche pour: %s"
-
-# @ catchevolution
-#: search.php:43
-msgid ""
-"Sorry, but nothing matched your search criteria. Please try again with some "
-"different keywords."
-msgstr ""
-"Désolé, mais rien ne correspond à vos critères de recherche. Essayez, s'il "
-"vous plaît, de nouveau avec des mots-clés différents."
-
-# @ catchevolution
-#: searchform.php:17
-msgid "Search"
-msgstr "Recherche"
-
-# @ catchevolution
-#: single.php:15 inc/catchevolution-functions.php:303
-msgid "Post navigation"
-msgstr "Navigation des posts"
-
-# @ catchevolution
-#: single.php:16
-msgid "<span class=\"meta-nav\">&larr;</span> Previous"
-msgstr "<span class=\"meta-nav\">&larr;</span> Précédent"
-
-# @ catchevolution
-#: single.php:17
-msgid "Next <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Suivant <span class=\"meta-nav\">&rarr;</span>"
-
-# @ catchevolution
-#: tag.php:16
-#, php-format
-msgid "Tag Archives: %s"
-msgstr "Archives des Tags: %s"
-
-# @ catchevolution
 #: inc/catchevolution-functions.php:101
 #, php-format
 msgid "Page %s"
 msgstr "Page %s"
+
+# @ catchevolution
+#: inc/catchevolution-functions.php:303 single.php:15
+msgid "Post navigation"
+msgstr "Navigation des posts"
 
 # @ catchevolution
 #: inc/catchevolution-functions.php:311
@@ -546,7 +510,7 @@ msgid "No sidebar"
 msgstr "Pas de sidebar"
 
 # @ catchevolution
-#: inc/catchevolution-metabox.php:58 inc/panel/theme-options.php:445
+#: inc/catchevolution-metabox.php:58 inc/panel/theme-options.php:447
 msgid "Three Columns"
 msgstr "Trois colonnes"
 
@@ -663,22 +627,22 @@ msgid "3. Catch Evolution Social & Seach Widget"
 msgstr "3. Catch Evolution Social & Seach Widget"
 
 # @ catchevolution
-#: inc/custom-header.php:495
+#: inc/custom-header.php:470
 msgid "Primary menu"
 msgstr "Premier menu"
 
 # @ catchevolution
-#: inc/custom-header.php:497 inc/custom-header.php:530
+#: inc/custom-header.php:472 inc/custom-header.php:505
 msgid "Skip to primary content"
 msgstr "Passer au contenu principal"
 
 # @ catchevolution
-#: inc/custom-header.php:498 inc/custom-header.php:531
+#: inc/custom-header.php:473 inc/custom-header.php:506
 msgid "Skip to secondary content"
 msgstr "Passer au contenu secondaire"
 
 # @ catchevolution
-#: inc/custom-header.php:528
+#: inc/custom-header.php:503
 msgid "Secondary menu"
 msgstr "Second menu"
 
@@ -765,7 +729,7 @@ msgid "https://www.facebook.com/catchthemes/"
 msgstr "https://www.facebook.com/catchthemes/"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:132 inc/panel/theme-options.php:689
+#: inc/panel/theme-options.php:132 inc/panel/theme-options.php:691
 msgid "Facebook"
 msgstr "Facebook"
 
@@ -775,7 +739,7 @@ msgid "https://twitter.com/catchthemes/"
 msgstr "https://twitter.com/catchthemes/"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:133 inc/panel/theme-options.php:694
+#: inc/panel/theme-options.php:133 inc/panel/theme-options.php:696
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -800,295 +764,295 @@ msgid "Social Links"
 msgstr "Liens socials"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:146
+#: inc/panel/theme-options.php:147
 msgid "Webmaster Tools"
 msgstr "Outils Webmaster"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:153
+#: inc/panel/theme-options.php:155
 msgid "Favicon Options"
 msgstr "Options des Favicon"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:158
+#: inc/panel/theme-options.php:160
 msgid "Disable Favicon?"
 msgstr "Désactiver Favicon?"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:160 inc/panel/theme-options.php:199
-#: inc/panel/theme-options.php:239 inc/panel/theme-options.php:251
-#: inc/panel/theme-options.php:280 inc/panel/theme-options.php:285
-#: inc/panel/theme-options.php:343
+#: inc/panel/theme-options.php:162 inc/panel/theme-options.php:201
+#: inc/panel/theme-options.php:241 inc/panel/theme-options.php:253
+#: inc/panel/theme-options.php:282 inc/panel/theme-options.php:287
+#: inc/panel/theme-options.php:345
 msgid "Check to disable"
 msgstr "Cochez pour désactiver"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:163
+#: inc/panel/theme-options.php:165
 msgid "Fav Icon URL:"
 msgstr "Favicon URL"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:174 inc/panel/theme-options.php:213
+#: inc/panel/theme-options.php:176 inc/panel/theme-options.php:215
 msgid "Preview: "
 msgstr "Voir:"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:192
+#: inc/panel/theme-options.php:194
 msgid "Web Clip Icon Options"
 msgstr "Options Web Clip Icon"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:197
+#: inc/panel/theme-options.php:199
 msgid "Disable Web Clip Icon?"
 msgstr "Désactiver Web Clip Icon?"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:202
+#: inc/panel/theme-options.php:204
 msgid "Web Clip Icon URL:"
 msgstr "Web Clip Icon URL:"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:232
+#: inc/panel/theme-options.php:234
 msgid "Header Options"
 msgstr "Options de l'en-tête"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:237
+#: inc/panel/theme-options.php:239
 msgid "Disable Header?"
 msgstr "Désactiver l'en-tête?"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:243
+#: inc/panel/theme-options.php:245
 msgid "Change Custom Header Image (Buddha)?"
 msgstr "Changez l'Image d'En-tête (Bouddha) ?"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:245
+#: inc/panel/theme-options.php:247
 msgid "Click here to change header image"
 msgstr "Cliquez ici pour changer l'image d'en-tête"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:249
+#: inc/panel/theme-options.php:251
 msgid "Disable Header Logo?"
 msgstr "Désactiver le logo d'en-tête?"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:254
+#: inc/panel/theme-options.php:256
 msgid "Logo url:"
 msgstr "Logo url:"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:266
+#: inc/panel/theme-options.php:268
 msgid "Preview:"
 msgstr "Voir:"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:278
+#: inc/panel/theme-options.php:280
 msgid "Disable Site Title?"
 msgstr "Désactiver le titre du site?"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:283
+#: inc/panel/theme-options.php:285
 msgid "Disable Site Description (Tagline)?"
 msgstr "Désactiver la description du site (Tagline)?"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:288
+#: inc/panel/theme-options.php:290
 msgid "Move Site Title and Tagline?"
 msgstr "Déplacer le titre et tagline?"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:290
+#: inc/panel/theme-options.php:292
 msgid "Check to move before the Logo"
 msgstr "Cochez pour déplacer avant le logo"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:293
+#: inc/panel/theme-options.php:295
 msgid "Seperate Logo and Site Details?"
 msgstr "Séparer le logo et les détails du site?"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:295
+#: inc/panel/theme-options.php:297
 msgid "Check to move down"
 msgstr "Cochez pour déplacer en bas"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:298
+#: inc/panel/theme-options.php:300
 msgid "Enable Header Right Sidebar?"
 msgstr "Activez sidebar droite d'en-tête?"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:300
+#: inc/panel/theme-options.php:302
 msgid "Just add Widgets in Header Right Sidebar"
 msgstr "Ajoutez Widgets dans sidebar d'en-tête droite"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:312
+#: inc/panel/theme-options.php:314
 msgid "Menu Options"
 msgstr "Options menu"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:317
+#: inc/panel/theme-options.php:319
 msgid "Menu Tutorial from WordPress.com"
 msgstr "Tutoriel du menu de WP"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:319
+#: inc/panel/theme-options.php:321
 msgid "http://en.support.wordpress.com/menus/"
 msgstr "http://en.support.wordpress.com/menus/"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:319
+#: inc/panel/theme-options.php:321
 msgid "Click Here to Read Menu Tutorial"
 msgstr "Cliquez ici pour lire le tutoriel"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:323
+#: inc/panel/theme-options.php:325
 msgid "Create Menu"
 msgstr "Créer un menu"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:325
+#: inc/panel/theme-options.php:327
 msgid "Click Here to Create Menu"
 msgstr "Cliquez ici pour créer un menu"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:329
+#: inc/panel/theme-options.php:331
 msgid "Assign Menu to Respective Location"
 msgstr "Assignez le menu à un emplacement respectif"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:331
+#: inc/panel/theme-options.php:333
 msgid "Click Here to Assign Menu Location"
 msgstr "Cliquez ici pour assigner l'emplacement de menu"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:335
+#: inc/panel/theme-options.php:337
 msgid "Add Menu in Header Right Sidebar"
 msgstr "Ajouter un menu dans l'en-tête de sidebar droite"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:337
+#: inc/panel/theme-options.php:339
 msgid "Add Menu Widget in Header Right Sidebar"
 msgstr "Ajouter un widget menu dans l'en-tête sidebar droite"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:341
+#: inc/panel/theme-options.php:343
 msgid "Disable Primary & Secondary Menu?"
 msgstr "Désactiver le 1er et 2nd menu?"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:353
+#: inc/panel/theme-options.php:355
 msgid "Search Options"
 msgstr "Options de recherche"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:358
+#: inc/panel/theme-options.php:360
 msgid "Default Display Text in Search"
 msgstr "Texte d'Affichage par défaut dans Recherche"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:371
+#: inc/panel/theme-options.php:373
 msgid "Color Options"
 msgstr "Options des couleurs"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:376
+#: inc/panel/theme-options.php:378
 msgid "Default Color Scheme"
 msgstr "Combinaison des couleurs par défaut"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:380
+#: inc/panel/theme-options.php:382
 msgid "Light"
 msgstr "Clair"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:384
+#: inc/panel/theme-options.php:386
 msgid "Dark"
 msgstr "Sombre"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:392
+#: inc/panel/theme-options.php:394
 msgid "Main Background Color:"
 msgstr "Couleur Principale de Fond :"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:397
+#: inc/panel/theme-options.php:399
 msgid "Click Here to change Main Background Image/Color"
 msgstr "Cliquez Ici pour changer l'image/Couleur de fond"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:404
+#: inc/panel/theme-options.php:406
 msgid "Site Title Color:"
 msgstr "Couleur du titre du site:"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:409
+#: inc/panel/theme-options.php:411
 msgid "Click Here to change Site Title Color"
 msgstr "Cliquez ici pour changer le couleur du titre"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:421
+#: inc/panel/theme-options.php:423
 msgid "Layout Options"
 msgstr "Options de la disposition"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:426
+#: inc/panel/theme-options.php:428
 msgid "Default Layout"
 msgstr "Disposition par défaut"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:430
+#: inc/panel/theme-options.php:432
 msgid "Right Sidebar"
 msgstr "Sidebar de droite"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:435
+#: inc/panel/theme-options.php:437
 msgid "Left Sidebar"
 msgstr "Sidebar de gauche"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:440
+#: inc/panel/theme-options.php:442
 msgid "No Sidebar"
 msgstr "Pas de sidebar"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:451
+#: inc/panel/theme-options.php:453
 msgid "Content Layout"
 msgstr "Disposition du contenu"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:455
+#: inc/panel/theme-options.php:457
 msgid "Excerpt/Blog Display"
 msgstr "Affichage d'Extrait/Blog"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:459
+#: inc/panel/theme-options.php:461
 msgid "Full Content Display"
 msgstr "Affichage du contenu complet"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:466
+#: inc/panel/theme-options.php:468
 msgid "Reset Layout?"
 msgstr "Reset disposition?"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:468 inc/panel/theme-options.php:528
+#: inc/panel/theme-options.php:470 inc/panel/theme-options.php:530
 msgid "Check to reset"
 msgstr "Cochez pour reseter"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:477
+#: inc/panel/theme-options.php:479
 msgid "Homepage / Frontpage Category Setting"
 msgstr "Configuration Page d'accueil et catégories de première page"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:483
+#: inc/panel/theme-options.php:485
 msgid "Front page posts categories:"
 msgstr "Affiche catégories 1ère page"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:485
+#: inc/panel/theme-options.php:487
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on "
 "the front page."
@@ -1097,209 +1061,209 @@ msgstr ""
 "en 1ère page."
 
 # @ catchevolution
-#: inc/panel/theme-options.php:490
+#: inc/panel/theme-options.php:492
 msgid "--Disabled--"
 msgstr "--Désactiver--"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:501
+#: inc/panel/theme-options.php:503
 msgid "You may select multiple categories by holding down the CTRL key."
 msgstr ""
 "Vous pouvez choisir des catégories multiples par le maintien la touche CTRL-."
 
 # @ catchevolution
-#: inc/panel/theme-options.php:511
+#: inc/panel/theme-options.php:513
 msgid "Excerpt / More Tag Settings"
 msgstr "Config balise Excerpt/More"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:516
+#: inc/panel/theme-options.php:518
 msgid "More Tag Text"
 msgstr "Texte de la balise \\\"More\\\""
 
 # @ catchevolution
-#: inc/panel/theme-options.php:521
+#: inc/panel/theme-options.php:523
 msgid "Excerpt length(words)"
 msgstr "Longueur de la balise \\\"Excerpt\\\" (mots)"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:526
+#: inc/panel/theme-options.php:528
 msgid "Reset?"
 msgstr "Annuler?"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:537
+#: inc/panel/theme-options.php:539
 msgid "Feed Redirect"
 msgstr "Flux de redirection"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:542
+#: inc/panel/theme-options.php:544
 msgid "Feed Redirect URL"
 msgstr "URL du flux de redirection"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:543
+#: inc/panel/theme-options.php:545
 msgid "Add in the Feedburner URL"
 msgstr "Ajouter Feedburner URL"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:553
+#: inc/panel/theme-options.php:555
 msgid "Custom CSS"
 msgstr "Personnaliser CSS"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:558
+#: inc/panel/theme-options.php:560
 msgid "Enter your custom CSS styles."
 msgstr "Entrer votre personnalisation CSS styles."
 
 # @ catchevolution
-#: inc/panel/theme-options.php:565
+#: inc/panel/theme-options.php:567
 msgid "CSS Tutorial from W3Schools."
 msgstr "Tutoriel CSS "
 
 # @ catchevolution
-#: inc/panel/theme-options.php:567
+#: inc/panel/theme-options.php:569
 msgid "http://www.w3schools.com/css/default.asp"
 msgstr "http://www.w3schools.com/css/default.asp"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:567
+#: inc/panel/theme-options.php:569
 msgid "Click Here to Read"
 msgstr "Cliquez ici pour lire"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:581
+#: inc/panel/theme-options.php:583
 msgid "Slider Options"
 msgstr "Options du slider"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:585
+#: inc/panel/theme-options.php:587
 msgid "Enable Sidebar"
 msgstr "Activer sidebar"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:589
+#: inc/panel/theme-options.php:591
 msgid "Homepage / Frontpage"
 msgstr "Page d'accueil/1ère page"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:593
+#: inc/panel/theme-options.php:595
 msgid "Entire Site"
 msgstr "Site entier"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:597
+#: inc/panel/theme-options.php:599
 msgid "Disable"
 msgstr "Désactiver"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:602
+#: inc/panel/theme-options.php:604
 msgid "Number of Slides"
 msgstr "Nombre de slides"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:608
+#: inc/panel/theme-options.php:610
 msgid "Transition Effect:"
 msgstr "Effets de transition:"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:612
+#: inc/panel/theme-options.php:614
 msgid "fade"
 msgstr "Effacer"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:613
+#: inc/panel/theme-options.php:615
 msgid "wipe"
 msgstr "Essuyer"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:614
+#: inc/panel/theme-options.php:616
 msgid "scrollUp"
 msgstr "Rouleau haut"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:615
+#: inc/panel/theme-options.php:617
 msgid "scrollDown"
 msgstr "Rouleau bas"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:616
+#: inc/panel/theme-options.php:618
 msgid "scrollLeft"
 msgstr "Rouleau gauche"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:617
+#: inc/panel/theme-options.php:619
 msgid "scrollRight"
 msgstr "Rouleau droit"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:618
+#: inc/panel/theme-options.php:620
 msgid "blindX"
 msgstr "blindX"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:619
+#: inc/panel/theme-options.php:621
 msgid "blindY"
 msgstr "blindY"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:620
+#: inc/panel/theme-options.php:622
 msgid "blindZ"
 msgstr "blindZ"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:621
+#: inc/panel/theme-options.php:623
 msgid "cover"
 msgstr "cover"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:622
+#: inc/panel/theme-options.php:624
 msgid "shuffle"
 msgstr "Aléatoire"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:627
+#: inc/panel/theme-options.php:629
 msgid "Transition Delay"
 msgstr "Délai de transition"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:630 inc/panel/theme-options.php:637
+#: inc/panel/theme-options.php:632 inc/panel/theme-options.php:639
 msgid "second(s)"
 msgstr "En seconde(s)"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:634
+#: inc/panel/theme-options.php:636
 msgid "Transition Length"
 msgstr "Longueur de transition"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:647
+#: inc/panel/theme-options.php:649
 msgid "Featured Post Slider Options"
 msgstr "Option du Slider post représenté"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:651
+#: inc/panel/theme-options.php:653
 msgid "Exclude Slider post from Homepage posts?"
 msgstr "Exclure le Slider post de la page d'accueil?"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:653
+#: inc/panel/theme-options.php:655
 msgid "Check to exclude"
 msgstr "Cochez pour exclure"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:658
+#: inc/panel/theme-options.php:660
 msgid "Featured Slider Post #"
 msgstr "Slider post représenté #"
 
 # @ default
 # @ catchevolution
-#: inc/panel/theme-options.php:660
+#: inc/panel/theme-options.php:662
 msgid "Click Here To Edit"
 msgstr "Cliquez ici pour éditer"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:666
+#: inc/panel/theme-options.php:668
 msgid ""
 "Note: Here You can put your Post IDs which displays on Homepage as slider."
 msgstr ""
@@ -1307,118 +1271,118 @@ msgstr ""
 "la page d'accueil."
 
 # @ catchevolution
-#: inc/panel/theme-options.php:678
+#: inc/panel/theme-options.php:680
 msgid "Enable Social Icons in Header Right Sidebar?"
 msgstr "Activez les icône socials sur l'en-tête de la sidebar droite"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:680
+#: inc/panel/theme-options.php:682
 msgid "Just add Catch Evolution Social Widget in Header Right Sidebar"
 msgstr ""
 "Ajouter le widget social Catch Evolution dans l'en-tête de la sidebar droite"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:684
+#: inc/panel/theme-options.php:686
 msgid "Enable Social Icons in Footer?"
 msgstr "Activer les icônes sociales dans le pied de page?"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:686
+#: inc/panel/theme-options.php:688
 msgid "Check to enable"
 msgstr "Cochez pour activer"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:699
+#: inc/panel/theme-options.php:701
 msgid "Google+"
 msgstr "Google+"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:704
+#: inc/panel/theme-options.php:706
 msgid "Pinterest"
 msgstr "Pinterest"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:709
+#: inc/panel/theme-options.php:711
 msgid "Youtube"
 msgstr "Youtube"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:714
+#: inc/panel/theme-options.php:716
 msgid "Vimeo"
 msgstr "Vimeo"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:720
+#: inc/panel/theme-options.php:722
 msgid "Linkedin"
 msgstr "Linkedin"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:725
+#: inc/panel/theme-options.php:727
 msgid "AIM"
 msgstr "AIM"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:730
+#: inc/panel/theme-options.php:732
 msgid "MySpace"
 msgstr "MySpace"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:735
+#: inc/panel/theme-options.php:737
 msgid "Flickr"
 msgstr "Flickr"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:740
+#: inc/panel/theme-options.php:742
 msgid "Tumblr"
 msgstr "Tumblr"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:745
+#: inc/panel/theme-options.php:747
 msgid "deviantART"
 msgstr "deviantART"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:750
+#: inc/panel/theme-options.php:752
 msgid "Dribbble"
 msgstr "Dribbble"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:755 inc/panel/theme-options.php:1170
+#: inc/panel/theme-options.php:757 inc/panel/theme-options.php:1174
 msgid "WordPress"
 msgstr "WordPress"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:760
+#: inc/panel/theme-options.php:762
 msgid "RSS"
 msgstr "RSS"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:765
+#: inc/panel/theme-options.php:767
 msgid "Slideshare"
 msgstr "Slideshare"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:770
+#: inc/panel/theme-options.php:772
 msgid "Instagram"
 msgstr "Instagram"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:775
+#: inc/panel/theme-options.php:777
 msgid "Skype"
 msgstr "Skype"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:787
+#: inc/panel/theme-options.php:790
 msgid "Header and Footer Codes"
 msgstr "Codes En-tête et pied de page"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:792
+#: inc/panel/theme-options.php:795
 msgid "Code to display on Header"
 msgstr "Code pour affichage sur en-tête"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:798
+#: inc/panel/theme-options.php:801
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
@@ -1427,12 +1391,12 @@ msgstr ""
 "chargera sur l'En-tête"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:801
+#: inc/panel/theme-options.php:804
 msgid "Code to display on Footer"
 msgstr "Code pour affichage sur pied de page"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:808
+#: inc/panel/theme-options.php:811
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"
@@ -1441,11 +1405,47 @@ msgstr ""
 "chargera sur le pied de page"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:1149
+#: inc/panel/theme-options.php:1153
 msgid "Y"
 msgstr "Y"
 
 # @ catchevolution
-#: inc/panel/theme-options.php:1180
+#: inc/panel/theme-options.php:1184
 msgid "Catch Evolution"
 msgstr "Catch Evolution"
+
+# @ catchevolution
+#: search.php:15
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Résultats de la recherche pour: %s"
+
+# @ catchevolution
+#: search.php:43
+msgid ""
+"Sorry, but nothing matched your search criteria. Please try again with some "
+"different keywords."
+msgstr ""
+"Désolé, mais rien ne correspond à vos critères de recherche. Essayez, s'il "
+"vous plaît, de nouveau avec des mots-clés différents."
+
+# @ catchevolution
+#: searchform.php:17
+msgid "Search"
+msgstr "Recherche"
+
+# @ catchevolution
+#: single.php:16
+msgid "<span class=\"meta-nav\">&larr;</span> Previous"
+msgstr "<span class=\"meta-nav\">&larr;</span> Précédent"
+
+# @ catchevolution
+#: single.php:17
+msgid "Next <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Suivant <span class=\"meta-nav\">&rarr;</span>"
+
+# @ catchevolution
+#: tag.php:16
+#, php-format
+msgid "Tag Archives: %s"
+msgstr "Archives des Tags: %s"

@@ -31,7 +31,7 @@ $sidebar_layout = array(
 	'default-sidebar' => array(
 		'id'		=> 'catchevolution-sidebarlayout',
 		'value' 	=> 'default',
-		'label' 	=> sprintf( __( 'Default Layout Set in <a href="%s">Theme Settings</a>', 'catchevolution' ), esc_url( get_bloginfo( 'url' ).'/wp-admin/admin.php?page=theme_options' ) ),
+		'label' 	=> sprintf( __( 'Default Layout Set in <a href="%s">Theme Settings</a>', 'catchevolution' ), esc_url( admin_url( 'themes.php?page=theme_options' ) ) ),
 		'thumbnail' => ' '
 	),
 	'right-sidebar' => array(

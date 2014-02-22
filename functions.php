@@ -130,13 +130,9 @@ function catchevolution_setup() {
 	) );
 
 	// Add support for custom backgrounds	
-	// WordPress 3.4+
 	if ( function_exists( 'get_custom_header') ) {
 		add_theme_support( 'custom-background' );
-	} else {
-		// Backward Compatibility for WordPress Version 3.3
-		add_custom_background();
-	}
+	} 
 
 	/**
      * This feature enables post-thumbnail support for a theme.
@@ -152,13 +148,7 @@ function catchevolution_setup() {
 	
 	if ( function_exists('catchevolution_woocommerce' ) ) { 
  		catchevolution_woocommerce();
-    }
-	
-	//Redirect to Theme Options Page on Activation
-	global $pagenow;
-	if ( is_admin() && isset($_GET['activated'] ) && $pagenow =="themes.php" ) {
-		wp_redirect( 'themes.php?page=theme_options' );
-	}		
+    }	
 
 }
 endif; // catchevolution_setup

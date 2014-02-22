@@ -143,7 +143,9 @@ function catchevolution_theme_options_do_page() {
                     <li><a href="#themeoptions"><?php _e( 'Theme Options', 'catchevolution' );?></a></li>
                     <li><a href="#slidersettings"><?php _e( 'Featured Post Slider', 'catchevolution' );?></a></li>
                     <li><a href="#sociallinks"><?php _e( 'Social Links', 'catchevolution' );?></a></li>
-                    <li><a href="#webmaster"><?php _e( 'Webmaster Tools', 'catchevolution' );?></a></li>
+                    <?php if ( current_user_can( 'unfiltered_html' ) ) : ?>
+                    	<li><a href="#webmaster"><?php _e( 'Webmaster Tools', 'catchevolution' );?></a></li>
+                   	<?php endif; ?>
                 </ul><!-- .tabsNavigation #mainNav -->
                    
                 <!-- Option for Theme Options -->
@@ -782,38 +784,40 @@ function catchevolution_theme_options_do_page() {
                     </div><!-- .option-container -->
                 </div><!-- #sociallinks -->
                 
-              	<div id="webmaster">
-                    <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Header and Footer Codes', 'catchevolution' ); ?></a></h3>
-                        <div class="option-content inside">
-                            <table class="form-table">  
-                                <tbody>       
-                                    <tr>
-                                        <th scope="row"><?php _e( 'Code to display on Header', 'catchevolution' ); ?></th>
-                                        <td>
-                                        <textarea name="catchevolution_options[analytic_header]" id="analytics" rows="7" cols="80" ><?php echo esc_html( $options[ 'analytic_header' ] ); ?></textarea>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td></td><td><?php _e('Note: Here you can put scripts from Google, Facebook etc. which will load on Header', 'catchevolution' ); ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"><?php _e('Code to display on Footer', 'catchevolution' ); ?></th>
-                                        <td>
-                                         <textarea name="catchevolution_options[analytic_footer]" id="analytics" rows="7" cols="80" ><?php echo esc_html( $options[ 'analytic_footer' ] ); ?></textarea>
-                             
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td></td><td><?php _e( 'Note: Here you can put scripts from Google, Facebook, Add This etc. which will load on footer', 'catchevolution' ); ?></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            
-                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchevolution' ); ?>" /></p> 
-                        </div><!-- .option-content -->
-                    </div><!-- .option-container -->  
-                </div><!-- #webmaster -->
+                <?php if ( current_user_can( 'unfiltered_html' ) ) : ?>
+                    <div id="webmaster">
+                        <div class="option-container">
+                            <h3 class="option-toggle"><a href="#"><?php _e( 'Header and Footer Codes', 'catchevolution' ); ?></a></h3>
+                            <div class="option-content inside">
+                                <table class="form-table">  
+                                    <tbody>       
+                                        <tr>
+                                            <th scope="row"><?php _e( 'Code to display on Header', 'catchevolution' ); ?></th>
+                                            <td>
+                                            <textarea name="catchevolution_options[analytic_header]" id="analytics" rows="7" cols="80" ><?php echo esc_html( $options[ 'analytic_header' ] ); ?></textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td><td><?php _e('Note: Here you can put scripts from Google, Facebook etc. which will load on Header', 'catchevolution' ); ?></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><?php _e('Code to display on Footer', 'catchevolution' ); ?></th>
+                                            <td>
+                                             <textarea name="catchevolution_options[analytic_footer]" id="analytics" rows="7" cols="80" ><?php echo esc_html( $options[ 'analytic_footer' ] ); ?></textarea>
+                                 
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td><td><?php _e( 'Note: Here you can put scripts from Google, Facebook, Add This etc. which will load on footer', 'catchevolution' ); ?></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                
+                                <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchevolution' ); ?>" /></p> 
+                            </div><!-- .option-content -->
+                        </div><!-- .option-container -->  
+                    </div><!-- #webmaster -->
+              	<?php endif; ?>      
 
             </div><!-- #catchevolution_ad_tabs -->
 		</form>

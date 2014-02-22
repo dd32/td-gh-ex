@@ -12,7 +12,6 @@
  * Sets up the WordPress core custom header arguments and settings.
  *
  * @uses add_theme_support() to register support for 3.4 and up.
- * @uses add_custom_image_header() to register support for below 3.4
  * @uses catchevolution_header_style() to style front-end.
  * @uses catchevolution_admin_header_style() to style wp-admin form.
  * @uses catchevolution_admin_header_image() to add custom markup to wp-admin form.
@@ -47,22 +46,9 @@ function catchevolution_custom_header_setup() {
 
 	$args = apply_filters( 'custom-header', $args );
 
+	// Add support for custom header
 	if ( function_exists( 'wp_get_theme' ) ) {
-		// For WordPress 3.4+
 		add_theme_support( 'custom-header', $args );
-	} else {
-		// Compat: Versions of WordPress prior to 3.4.
-		define( 'HEADER_TEXTCOLOR',    $args['default-text-color'] );
-		define( 'HEADER_IMAGE',        $args['default-image'] );
-		define( 'HEADER_IMAGE_WIDTH',  $args['width'] );
-		define( 'HEADER_IMAGE_HEIGHT', $args['height'] );
-		
-		// We'll be using post thumbnails for custom header images for logos.
-		// We want them to be the size of the header image that we just defined
-		// Larger images will be auto-cropped to fit, smaller ones will be ignored. See header.php.
-		set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, false );
-		
-		add_custom_image_header( $args['wp-head-callback'], $args['admin-head-callback'], $args['admin-preview-callback'] );
 	}
 }
 add_action( 'after_setup_theme', 'catchevolution_custom_header_setup' );
@@ -307,17 +293,6 @@ function catchevolution_logo() {
 		else {
 			$classses = 'clear';
 		}
-		
-		/*
-		if ( empty( $sitedetails ) && ( 'blank' == $text_color ) ) {
-			$catchevolution_logo .= '<div id="site-logo" class="title-disable">';
-		}
-		elseif ( empty( $sitedetails ) && ( 'blank' != $text_color ) ) {
-			$catchevolution_logo .= '<div id="site-logo" class="title-right">';
-		}
-		else {
-			$catchevolution_logo .= '<div id="site-logo" class="title-left">';
-		}*/
 		
 		$catchevolution_logo .= '<div id="site-logo" class="' . $classses . '">';
 			

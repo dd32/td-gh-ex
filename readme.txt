@@ -2,12 +2,13 @@
 * by the Catch Themes team, http://catchthemes.com/
 
 == ABOUT Catch Evolution==
-Catch Evolution is a beautifully sleek creation of Catch Themes. It exudes a clean and super sharp look. It comes with a whole set of interesting, rich features and flexible theme options. Built on HTML5, CSS3, it has a responsive design which lets the content automatically adapt to the screen's size on different devices. Catch Evolution looks striking in a bigger screen. The layout is wider, bigger and luxuriously spacious. This theme is easily customizable with an advanced theme options panel. It supports popular plugins such as Jetpack, WordPress SEO by Yoast, WP-PageNavi, Contact Form 7, WooCommerce and many more. It is also translation ready and currently translated in Spanish and French. If you need support with this theme, please go to http://catchthemes.com/support/
+Catch Evolution is a beautifully sleek creation of Catch Themes. It exudes a clean and super sharp look. It comes with a whole set of interesting, rich features and flexible theme options. Built on HTML5, CSS3, it has a responsive design which lets the content automatically adapt to the screen's size on different devices. Catch Evolution looks striking in a bigger screen. The layout is wider, bigger and luxuriously spacious. This theme is easily customizable with an advanced theme options panel. It supports popular plugins such as Jetpack, WordPress SEO by Yoast, WP-PageNavi, Contact Form 7, WooCommerce and many more. It is also translation ready and currently translated in Spanish, French and Swedish. If you need support with this theme, please go to http://catchthemes.com/support/
 
 == Translation ==
 Catch Evolution theme is translation ready.
 Added Translation for Spanish by Ruben Ramos Fernandez (batmovil69@hotmail.com)
 Added Translation for French by Sebastian Chamusard (admin78@orange.fr)
+Added Translation for Swedish by Andre Fahlstrom (admin@andrefahlstrom.se)
 
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
@@ -23,7 +24,7 @@ This theme shows the post id of the posts in the all posts table in the dashboar
 There are 4 Menus registered in this theme. Fixed Header Top, Primary, Secondary and Footer menu.Fixed Header Top, Primary and Secondary menu is dull drop down menu while the Footer menu displays only parent menu and no drop down.Only Primary Menu and Fixed Header Top menus are visible in responsive mobile devices
 
 == Tags ==
-dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, threaded-comments, flexible-header, three-columns
 
 == Installation ==
 1. Primary: Login to your wp-admin area and go to Appearance -> Themes. Select Install tab and click on Upload link. Select theme .zip and ckick on Install now button. If you have any errors, use alternate method.
@@ -66,3 +67,12 @@ Version 1.2.1.1
 
 Version 1.3
 * Added French translation fr_FR.po and fr_FR.mo
+
+Version 1.4
+* Added Swedish translation sv_SE.po and sv_SE.mo
+* Added user capability condition for header and footer codes 
+* Fixed footer social icons margin issue
+* Replaced theme screenshot file to match with WordPress 3.8
+* Removed Redirect to Theme Options Page on Activation as per new theme review guideline
+* Removed depreciated functions add_custom_image_header() and add_custom_background()
+* Updated theme Tag Filter in style.css
