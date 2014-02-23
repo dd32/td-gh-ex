@@ -10,33 +10,12 @@
  */
 ?>
 
-<article>
-	<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
-	<div class="featured-post">
-		<?php _e( 'Featured post', 'awakening' ); ?>
-	</div>
-	<?php endif; ?>
+<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
+
 	<header class="entry-header">
 		<hgroup>
 			<h1><?php the_title(); ?></h1>			
-			<div class="post-meta"><?php
-						printf( __( '<span class="post_date">%2$s by %3$s', 'awakening' ),'meta-prep meta-prep-author',
-						sprintf( '<a href="%1$s" title="%2$s" rel="bookmark">%3$s</a></span>',
-						get_permalink(),
-						esc_attr( get_the_time() ),
-						get_the_date()
-						),
-						sprintf( '<a class="url fn n" href="%1$s" title="%2$s">%3$s</a>',
-						get_author_posts_url( get_the_author_meta( 'ID' ) ),
-						sprintf( esc_attr__( 'View all posts by %s', 'awakening' ), get_the_author() ),
-						get_the_author()
-						)
-						);
-					?>     
-				<div class="right postcomments">
-					<span class="post_comment"><a href="<?php the_permalink() ?>#comments"><?php comments_number(__('No comments', 'awakening'),__('One comment','awakening'),__('% comments','awakening')); ?></a></span>
-				</div>				
-			</div> 
+			<?php awakening_entry_meta(); ?>
 		</hgroup>
 	</header>
 	
@@ -44,9 +23,14 @@
 	<?php the_content(); ?>
 	</div><!-- .entry-content -->
 	
+	
+	
 	<footer class="entry-meta">
 	
+		<?php get_template_part('author-box'); ?>	
+	
 		<p><?php wp_link_pages(); ?></p>
+		<!--
 		<hr/>
 		<div class="row cat-tag-info">
 		<div class="large-6 columns" >
@@ -60,8 +44,10 @@
 		</span>
 		</div>
 		</div>
-			
-		<?php get_template_part('author-box'); ?>		
+		-->	
+				
+		
+	
 		
 		<?php comments_template( '', true ); ?>
 	</footer>

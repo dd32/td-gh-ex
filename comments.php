@@ -1,117 +1,76 @@
+<?php function awakening_comments($comment, $args, $depth) {
+	$GLOBALS['comment'] = $comment; ?>
+	<li <?php comment_class(); ?>>
+		<article id="comment-<?php comment_ID(); ?>">
+			<header class="comment-author">
+				<?php echo get_avatar($comment,$size='48'); ?>
+				<div class="author-meta">
+					<?php printf(__('<cite class="fn">%s</cite>', 'awakening'), get_comment_author_link()) ?>
+					<time datetime="<?php echo comment_date('c') ?>"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ) ?>"><?php printf(__('%1$s', 'awakening'), get_comment_date(),  get_comment_time()) ?></a></time>
+					<?php edit_comment_link(__('(Edit)', 'awakening'), '', '') ?>
+				</div>
+			</header>
+			
+			<?php if ($comment->comment_approved == '0') : ?>
+       			<div class="notice">
+					<p class="bottom"><?php _e('Your comment is awaiting moderation.', 'awakening') ?></p>
+          		</div>
+			<?php endif; ?>
+			
+			<section class="comment">
+				<?php comment_text() ?>
+				<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+			</section>
+
+		</article>
+<?php } ?>
+
 <?php
-/**
- * The template for displaying Comments.
- *
- * The area of the page that contains both current comments
- * and the comment form. The actual display of comments is
- * handled by a callback to awakening_comment() which is
- * located in the functions.php file.
- *
- * @package Awakening
- * @subpackage Awakening
- * @since Awakening 1.0
- */
+// Do not delete these lines
+	if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
+		die (__('Please do not load this page directly. Thanks!', 'awakening'));
 
-/*
- * If the current post is protected by a password and
- * the visitor has not yet entered the password we will
- * return early without loading the comments.
- */
-if ( post_password_required() )
-	return;
+	if ( post_password_required() ) { ?>
+	<section id="comments">
+		<div class="notice">
+			<p class="bottom"><?php _e('This post is password protected. Enter the password to view comments.', 'awakening'); ?></p>
+		</div>
+	</section>
+	<?php
+		return;
+	}
 ?>
-
-<div id="comments" class="comments-area">
-
-	<?php // You can start editing here -- including this comment! ?>
-
-	<?php if ( have_comments() ) : ?>
-		<h5 class="comments-title">
-			<?php
-				printf( _n( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'awakening' ),
-					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
-			?>
-		</h5>
+<?php // You can start editing here. Customize the respond form below ?>
+<?php if ( have_comments() ) : ?>
+	<section id="comments">
+		<h3><?php comments_number(__('No Responses to', 'awakening'), __('One Response to', 'awakening'), __('% Responses to', 'awakening') ); ?> &#8220;<?php the_title(); ?>&#8221;</h3>
 		<ol class="commentlist">
-			<?php wp_list_comments( array( 'callback' => 'awakening_comment', 'style' => 'ol' ) ); ?>
-		</ol><!-- .commentlist -->
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav id="comment-nav-below" class="navigation" role="navigation">
-			<h1 class="assistive-text section-heading"><?php _e( 'Comment navigation', 'awakening' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'awakening' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'awakening' ) ); ?></div>
-		</nav>
-		<?php endif; // check for comment navigation ?>
+		<?php wp_list_comments('type=comment&callback=awakening_comments'); ?>
+		
+		</ol>
+		<footer>
+			<nav id="comments-nav">
+				<div class="comments-previous"><?php previous_comments_link( __( '&larr; Older comments', 'awakening' ) ); ?></div>
+				<div class="comments-next"><?php next_comments_link( __( 'Newer comments &rarr;', 'awakening' ) ); ?></div>
+			</nav>
+		</footer>
+	</section>
+<?php else : // this is displayed if there are no comments so far ?>
+	<?php if ( comments_open() ) : ?>
+	<?php else : // comments are closed ?>
+	<!--
+	<section id="comments">
+		<div class="notice">
+			<p class="bottom"><?php _e('Comments are closed.', 'awakening') ?></p>
+		</div>
+	</section>
+	-->
+	<?php endif; ?>
+<?php endif; ?>
+<?php if ( comments_open() ) : ?>
 
-		<?php
-		/* If there are no comments and comments are closed, let's leave a note.
-		 * But we only want the note on posts and pages that had comments in the first place.
-		 */
-		if ( ! comments_open() && get_comments_number() ) : ?>
-		<p class="nocomments"><?php _e( 'Comments are closed.' , 'awakening' ); ?></p>
-		<?php endif; ?>
+<section id="respond">
+ <?php comment_form(); ?> 
+</section>
 
-	<?php endif; // have_comments() ?>
-	
-	<?php 
-	
-	$commenter = wp_get_current_commenter();
-	$req = get_option( 'require_name_email' );
-	$aria_req = ( $req ? " aria-required='true'" : '' );
-	
-	$comment_args = array( 'title_reply'=>'Speak Your Mind',
-
-	'fields' => apply_filters( 'comment_form_default_fields', 
-				array(
-
-				'author' => '<div class="row collapse">
-								<div class="small-3 large-2 columns">
-									<span class="prefix">Name ' . ($req ? '<span>*</span>' : '' ). '</span>
-								</div>
-								<div class="small-9 large-7 columns left">
-									<input id="author" name="author" type="text" size="35" placeholder="Enter your Name" value="' . esc_attr( $commenter['comment_author'] ) . '"' . $aria_req . '/>
-								</div>
-							</div>', 		
-
-				'email' => '<div class="row collapse">
-								<div class="small-3 large-2 columns">
-									<span class="prefix">Email ' . ($req ? '<span>*</span>' : '' ). '</span>
-								</div>
-								<div class="small-9 large-7 columns left">
-									<input d="email" name="email" type="text" size="35" placeholder="Enter your Email" value="' . esc_attr( $commenter['comment_author_email'] ) . '"' . $aria_req . '/>
-								</div>
-							</div>', 		
-							
-				'url' => '<div class="row collapse">
-								<div class="small-3 large-2 columns">
-									<span class="prefix">Website ' . '</span>
-								</div>
-								<div class="small-9 large-7 columns left">
-									<input d="url" name="url" type="text" size="35" placeholder="Enter your Website (Optional)" value="' . esc_attr( $commenter['comment_author_url'] ) . '"' . $aria_req . '/>
-								</div>
-							</div>', 	
-
-							
-
-		 ) ),
-	
-		'comment_field' => '<div class="row">
-								<div class="large-12 columns">									
-									<textarea id="comment" name="comment" placeholder=""  aria-required="true" rows="7" cols="60"></textarea>
-								</div>
-							</div>',	
-
-		'comment_notes_after' => '<p id="allowed_tags" class="small"><strong>XHTML:</strong> You can use these tags: <code>'. allowed_tags() .'</code></p>',
-
-	);
-?>
-<div class="row" role="commentform">
-<div class="large-10 columns">
-<?php	
-	comment_form($comment_args); 
-?>
-</div>
-</div> <!--.row commentform-->
-
-
-</div><!-- #comments .comments-area -->
+<?php endif; // if you delete this the sky will fall on your head ?>

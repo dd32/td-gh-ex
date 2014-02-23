@@ -8,36 +8,9 @@
  */
 
 get_header(); ?>
-
 <?php 
-	$layout = of_get_option('page_layouts'); 
-	$col=9; 
-	$side_bar_to_display = "right";
-	if(isset($layout)) {
-		switch($layout) {
-			case "full-width":
-				$col=12; 
-				$side_bar_to_display = "none";
-				break;
-			case "sidebar-content":
-				$col=9; 
-				$side_bar_to_display = "left";
-				break;
-			case "content-sidebar":
-				$col=9; 
-				$side_bar_to_display = "right";
-				break;
-			case "content-sidebar-sidebar":	
-			case "sidebar-sidebar-content":	
-			case "sidebar-content-sidebar":	
-				$col=6; 
-				$side_bar_to_display = "both";	
-				break;
-			default:
-				$col=9; 
-				$side_bar_to_display = "right";
-		}		
-	}
+	$cols = awakening_get_columns_settings(); 
+	$layout = $cols['layout'];
 ?>
 
 <?php	
@@ -49,7 +22,7 @@ get_header(); ?>
 	}
 ?>
 
-<div class="large-<?php echo $col;?> columns" role="content">
+<div class="large-<?php echo $cols['content'];?> columns" role="content">
 	<div id="primary" class="site-content">
 		<div id="content" role="main">
 
@@ -74,7 +47,7 @@ get_header(); ?>
 
 		</div><!-- #content -->
 	</div><!-- #primary -->
-</div> <!-- .large-<?php echo $col;?> columns .content -->	
+</div> <!-- .large-<?php echo $cols['content'];?> columns .content -->	
 
 <?php
 	if($layout ==  "content-sidebar-sidebar") {

@@ -14,7 +14,31 @@
 
 get_header(); ?>
 
-<div class="large-9 columns" role="content">
+<?php
+ if(is_front_page()) {	
+	get_template_part( 'page-templates/front', 'page' );
+ } else {
+?> 
+ 
+<?php 
+	$cols = awakening_get_columns_settings();
+	$layout = $cols['layout']; 
+?>
+<?php
+	if($layout ==  "sidebar-sidebar-content") {
+		get_sidebar('left');
+		get_sidebar();
+	}	
+?>
+
+<?php
+	if($layout ==  "sidebar-content-sidebar") {
+		get_sidebar('left');
+	} else if($layout ==  "sidebar-content") {
+		get_sidebar();
+	}	
+?>
+<div class="large-<?php echo $cols['content'];?> columns" role="content">
 	<div id="primary" class="site-content">
 		<div id="content" role="main">
 
@@ -25,7 +49,18 @@ get_header(); ?>
 
 		</div><!-- #content -->
 	</div><!-- #primary -->
-</div><!-- .large-9 .column -->
-
-<?php get_sidebar(); ?>
+</div><!-- .large-<?php echo $cols['content'];?> .column -->
+<?php
+	if($layout ==  "content-sidebar-sidebar") {
+		get_sidebar('left');
+	}	
+?>
+<?php	
+	if($layout ==  "content-sidebar" || 
+	   $layout ==  "sidebar-content-sidebar" ||
+	   $layout ==  "content-sidebar-sidebar") {		
+		get_sidebar();
+	}
+?>
 <?php get_footer(); ?>
+<?php } ?>

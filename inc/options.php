@@ -110,25 +110,24 @@ function optionsframework_options() {
 		'type' => 'heading');
 		
 	$options[] = array(
-		'name' => __('Header Background', 'options_check'),
-		'desc' => __('If set this will be used as your sites header background.', 'options_check'),
-		'id' => 'header_background',
-		'type' => 'upload');	
+		'name' =>  __('Header Background', 'options_check'),
+		'desc' => __('Change the header background CSS.', 'options_check'),
+		'id' => 'site_header_background',
+		'std' => $background_defaults,
+		'type' => 'background' );			
 
+	$options[] = array(
+		'name' =>  __('Body Background', 'options_check'),
+		'desc' => __('Change the body background CSS.', 'options_check'),
+		'id' => 'body_background',
+		'std' => $background_defaults,
+		'type' => 'background' );			
+		
 	$options[] = array(
 		'name' => __('Site Logo', 'options_check'),
 		'desc' => __('If set this will be used as your sites logo.', 'options_check'),
 		'id' => 'site_logo',
 		'type' => 'upload');			
-		
-	$options[] = array(
-		'name' => __('Theme Layout', 'options_check'),
-		'desc' => __('This option allows you to set theme layout Boxed or Full Width/Wide.', 'options_check'),
-		'id' => 'theme_layout',
-		'std' => 'Boxed',
-		'type' => 'select',
-		'class' => 'mini', //mini, tiny, small
-		'options' => $theme_layout_array);			
 		
 	$options[] = array(
 		'name' => "Page Layout",
@@ -144,6 +143,14 @@ function optionsframework_options() {
 			'sidebar-sidebar-content' => $imagepath . 'sidebar-sidebar-content.png',
 			'content-sidebar-sidebar' => $imagepath . 'content-sidebar-sidebar.png')
 	);		
+	
+		
+	$options[] = array(
+		'name' => __('Display Search in Top Menu', 'options_check'),
+		'desc' => __('This option allows you to set whether you want a minified serach box in heade menu. Default is true.', 'options_check'),
+		'id' => 'show_search_in_top_menu',
+		'std' => '1',
+		'type' => 'checkbox');		
 	
 	$options[] = array(
 		'name' => __('Widget Areas in Extended Footer', 'options_check'),
@@ -167,59 +174,62 @@ function optionsframework_options() {
 		'type' => 'heading');	
 		
 	$options[] = array(
-		'name' => __('Settings for Slider on Home page', 'options_check'),
+		'name' => __('Display Slider on Home page / Front Page', 'options_check'),
 		'desc' => __('Check to display Slider. Defaults to true.', 'options_check'),
 		'id' => 'display_slider',
 		'std' => '1',
 		'type' => 'checkbox');
 		
-	$options[] = array(
-		'name' => __('Slider Image 1', 'options_check'),
-		'desc' => __('Set image for slider. Preferred size 1010x400', 'options_check'),
-		'id' => 'slider_img_1',
-		'type' => 'upload');
 		
-	$options[] = array(		
-		'desc' => __('Enter text here to be displayed in Caption of Image 1.', 'options_check'),
-		'id' => 'slider_image_caption_1',
-		'std' => 'Caption 1',
-		'type' => 'textarea');			
+	$options[] = array(
+		'name' => __('Settings for Slider', 'options_check'),
+		'desc' => __('Check to show next/prev controls on Slider. Defaults to true.', 'options_check'),
+		'id' => 'display_slider_control',
+		'std' => '1',
+		'type' => 'checkbox');		
+		
+	$options[] = array(
+		//'name' => __('Settings for Slider on Home page', 'options_check'),
+		'desc' => __('Check to show pager on Slider. Defaults to true.', 'options_check'),
+		'id' => 'display_slider_pager',
+		'std' => '1',
+		'type' => 'checkbox');		
 
 	$options[] = array(
-		'name' => __('Slider Image 2', 'options_check'),
-		'desc' => __('Set image for slider. Preferred size 1010x400', 'options_check'),
-		'id' => 'slider_img_2',
-		'type' => 'upload');
-		
-	$options[] = array(		
-		'desc' => __('Enter text here to be displayed in Caption of Image 2.', 'options_check'),
-		'id' => 'slider_image_caption_2',
-		'std' => 'Caption 2',
-		'type' => 'textarea');		
+		//'name' => __('Settings for Slider on Home page', 'options_check'),
+		'desc' => __('Check to Pause Slider on Mouse Hover. Defaults to false.', 'options_check'),
+		'id' => 'slider_pause_on_hover',
+		'std' => '0',
+		'type' => 'checkbox');		
 
-	$options[] = array(
-		'name' => __('Slider Image 3', 'options_check'),
-		'desc' => __('Set image for slider. Preferred size 1010x400', 'options_check'),
-		'id' => 'slider_img_3',
-		'type' => 'upload');	
+	$options[] = array(		
+		'name' => __('Slider Dimensions.', 'options_check'),
+		'desc' => __('Recommended : <b>1400,450</b>', 'options_check'),
+		'id' => 'slider_dimension',
+		'std' => '1400,450',
+		'type' => 'text');		
+
+	$options[] = array(		
+		'name' => __('Slide Transition Speed.', 'options_check'),
+		'desc' => __('This sets speed of image transition', 'options_check'),
+		'id' => 'slider_transition_speed',
+		'std' => '2000',
+		'type' => 'text');	
+
+	$options[] = array(		
+		'name' => __('Data Transition Speed - IN', 'options_check'),
+		'desc' => __('This sets speed of data in transition ', 'options_check'),
+		'id' => 'data_in_transition_speed',
+		'std' => '2500',
+		'type' => 'text');			
 		
 	$options[] = array(		
-		'desc' => __('Enter text here to be displayed in Caption of Image 3.', 'options_check'),
-		'id' => 'slider_image_caption_3',
-		'std' => 'Caption 3',
-		'type' => 'textarea');		
+		'name' => __('Data Transition Speed - OUT', 'options_check'),
+		'desc' => __('This sets speed of data out transition ', 'options_check'),
+		'id' => 'data_out_transition_speed',
+		'std' => '1000',
+		'type' => 'text');		
 		
-	$options[] = array(
-		'name' => __('Slider Image 4', 'options_check'),
-		'desc' => __('Set image for slider. Preferred size 1010x400', 'options_check'),
-		'id' => 'slider_img_4',
-		'type' => 'upload');	
-		
-	$options[] = array(		
-		'desc' => __('Enter text here to be displayed in Caption of Image 4.', 'options_check'),
-		'id' => 'slider_image_caption_4',
-		'std' => 'Caption 4',
-		'type' => 'textarea');		
 		
 	$options[] = array(
 		'name' => __('Blurb Settings - Following section allows you to configure your blurb on home page.', 'options_check'),
@@ -268,62 +278,7 @@ function optionsframework_options() {
 		'std' => '3',
 		'type' => 'select',
 		'class' => 'mini', //mini, tiny, small
-		'options' => $theme_footer_widgets);			
-		
-
-	//Settings for Social Tab		
-	$options[] = array(
-		'name' => __('Social', 'options_check'),
-		'type' => 'heading');		
-
-	$options[] = array(
-		'name' => __('Social Settings', 'options_check'),
-		'desc' => __('Check to display Social Icons in Footer.', 'options_check'),
-		'id' => 'display_social_icons',
-		'std' => '1',
-		'type' => 'checkbox');
-		
-	$options[] = array(
-		'name' => __('Facebook', 'options_check'),
-		'desc' => __('(e.g. http://www.facebook.com/your-user-name)', 'options_check'),
-		'id' => 'facebook_url',
-		'std' => '',
-		'type' => 'text');	
-		
-	$options[] = array(
-		'name' => __('Google Plus', 'options_check'),
-		'desc' => __('(eg. http://plus.google.com/your-user-name)', 'options_check'),
-		'id' => 'google_url',
-		'std' => '',
-		'type' => 'text');			
-		
-	$options[] = array(
-		'name' => __('Twitter', 'options_check'),
-		'desc' => __('(e.g. http://twitter.com/your-user-name)', 'options_check'),
-		'id' => 'twitter_url',
-		'std' => '',
-		'type' => 'text');		
-
-	$options[] = array(
-		'name' => __('LinkedIn', 'options_check'),
-		'desc' => __('(e.g. http://linkedin.com/your-user-name)', 'options_check'),
-		'id' => 'linkedin_url',
-		'std' => '',
-		'type' => 'text');		
-	
-	$options[] = array(
-		'name' => __('Pinterest', 'options_check'),
-		'desc' => __('(e.g. http://pinterest.com/your-user-name)', 'options_check'),
-		'id' => 'pinterest_url',
-		'std' => '',
-		'type' => 'text');		
-
-	$options[] = array(
-		'name' => __('RSS', 'options_check'),
-		'desc' => __('(e.g. http://rss.com/your-user-name)', 'options_check'),
-		'id' => 'rss_url',
-		'std' => '',
-		'type' => 'text');				
+		'options' => $theme_footer_widgets);		
 
 	return $options;
 }

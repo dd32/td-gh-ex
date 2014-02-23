@@ -11,8 +11,8 @@
  */
 ?>
 
-</div> <!-- #main-row -->
- 
+	</div> <!-- #main-row -->
+ </div> <!-- .container -->
 <!-- Footer -->
 <footer>
 
@@ -28,54 +28,23 @@
 		<div class="row" id="copyright-text">
 		
 			<div class="large-6 columns">
-				<div class="row">
-					<div class="large-12 columns left">
-						<?php 
-							wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_class' => 'inline-list', 'container' => false, 'fallback_cb' => 'awakening_page_menu' ) ); 
-						?>
-					</div>
-					<div class="large-12 columns left">
-						  <p class="copyright-text">
-						  <?php $copyright = of_get_option('copyright_text'); ?>
-						  <?php if(isset($copyright) && $copyright!=""){ 
-							echo $copyright; 
-						  } else {	  
-						  ?> 
-						  All Rights Reserved.
-						  <?php
-						  }
-						  ?> <span class="brand-note"> | Awakening by <a href="http://www.opencodez.com/" target="_blank">OpenCodez</a></span>
-						  </p>
-					</div>				
-				</div>				
+			<?php 
+				wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_class' => 'inline-list', 'container' => false, 'fallback_cb' => false ) ); 
+			?>			
 			</div>
 
 			<div class="large-6 columns">
-				<ul class="social-row inline-list right">				
-				<?php if(of_get_option('rss_url')!=''):?>
-					<li><a href="<?php echo of_get_option('rss_url');?>" alt="RSS" title="RSS" class="foundicon-rss"></a></li>
-				<?php endif;?>
-				
-				<?php if(of_get_option('facebook_url')!=''):?>
-					<li><a href="<?php echo of_get_option('facebook_url');?>" alt="Facebook" title="Facebook" class="foundicon-facebook"></a></li>
-				<?php endif;?>
-				
-				<?php if(of_get_option('twitter_url')!=''):?>
-					<li><a href="<?php echo of_get_option('twitter_url');?>" alt="Twitter" title="Twitter" class="foundicon-twitter"></a></li>
-				<?php endif;?>
-				
-				<?php if(of_get_option('google_url')!=''):?>
-					<li><a href="<?php echo of_get_option('google_url');?>" alt="Google Plus" title="Google Plus" class="foundicon-google-plus"></a></li>
-				<?php endif;?>					
-				
-				<?php if(of_get_option('pinterest_url')!=''):?>
-					<li><a href="<?php echo of_get_option('pinterest_url');?>" alt="Pinterest" title="Pinterest" class="foundicon-pinterest"></a></li>
-				<?php endif;?>
-				
-				<?php if(of_get_option('linkedin_url')!=''):?>	
-					<li><a href="<?php echo of_get_option('linkedin_url');?>" alt="Linkedin" title="Linkedin" class="foundicon-linkedin"></a></li>
-				<?php endif;?>				
-				</ul>	
+				<p class="copyright-text right">
+				<?php $copyright = of_get_option('copyright_text'); ?>
+				<?php if(isset($copyright) && $copyright!=""){ 
+				echo $copyright; 
+				} else {	  
+				?> 
+				&copy; All Rights Reserved.
+				<?php
+				}
+				?> <span class="brand-note"> | <a href="http://www.opencodez.com/" target="_blank">Opencodez Themes</a></span>
+				</p>
 			</div>		
 
 		</div>	

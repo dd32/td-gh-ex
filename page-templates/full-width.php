@@ -11,9 +11,11 @@
 get_header(); ?>
 
 
-
+<?php $cols = awakening_get_columns_settings(); ?>
 	<!-- Main Content -->	
-	<div class="large-12 columns" role="main">
+	<div class="large-<?php echo $cols['content'];?> columns" role="main">
+	<div id="primary" class="site-content">
+		<div id="content" role="main">		
 	<?php if ( have_posts() ) : ?>
 		<?php while ( have_posts() ) : the_post(); ?>			
 				<?php get_template_part( 'content', 'page' ); ?>
@@ -28,6 +30,8 @@ get_header(); ?>
 	<?php endif; ?>		
 	
 	<?php custom_pagination(); ?>
+		</div><!-- #content -->
+	</div><!-- #primary -->		
 	</div>	
 	<!-- End Main Content -->	
 

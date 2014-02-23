@@ -12,7 +12,26 @@
  */
 
 get_header(); ?>
-<div class="large-9 columns" role="content">
+<?php 
+	$cols = awakening_get_columns_settings();
+	$layout = $cols['layout']; 
+?>
+
+<?php
+	if($layout ==  "sidebar-sidebar-content") {
+		get_sidebar('left');
+		get_sidebar();
+	}	
+?>
+
+<?php
+	if($layout ==  "sidebar-content-sidebar") {
+		get_sidebar('left');
+	} else if($layout ==  "sidebar-content") {
+		get_sidebar();
+	}	
+?>
+<div class="large-<?php echo $cols['content'];?> columns" role="content" id="author-archive">
 	<section id="primary" class="site-content">
 		<div id="content" role="main">
 
@@ -27,10 +46,12 @@ get_header(); ?>
 				 */
 				the_post();
 			?>
-
+			<!--
 			<header class="archive-header">
 				<h1 class="archive-title"><?php printf( __( 'Author Archives: %s', 'awakening' ), '<span class="vcardo"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' ); ?></h1>
-			</header><!-- .archive-header -->
+			</header>
+			-->
+			<!-- .archive-header -->
 
 			<?php
 				/* Since we called the_post() above, we need to
@@ -39,21 +60,20 @@ get_header(); ?>
 				 */
 				rewind_posts();
 			?>
+<?php if ( get_the_author_meta( 'description' ) ) : ?>
+<div class="entry-author panel">
+	<div class="row">
+		<div class="large-3 columns">
+			<?php echo get_avatar( get_the_author_meta('user_email'), 95 ); ?>
+		</div>
+		<div class="large-9 columns">
+			<h4><?php the_author_posts_link(); ?></h4>
+			<p class="cover-description"><?php the_author_meta('description'); ?></p>
+		</div>
+	</div>
+</div>	
+<?php endif; ?>
 
-
-			<?php
-			// If a user has filled out their description, show a bio on their entries.
-			if ( get_the_author_meta( 'description' ) ) : ?>
-			<div class="author-info">
-				<div class="author-avatar">
-					<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'twentytwelve_author_bio_avatar_size', 60 ) ); ?>
-				</div><!-- .author-avatar -->
-				<div class="author-description">
-					<h2><?php printf( __( 'About %s', 'awakening' ), get_the_author() ); ?></h2>
-					<p><?php the_author_meta( 'description' ); ?></p>
-				</div><!-- .author-description	-->
-			</div><!-- .author-info -->
-			<?php endif; ?>
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -68,6 +88,17 @@ get_header(); ?>
 
 		</div><!-- #content -->
 	</section><!-- #primary -->
-</div><!-- .large-9 .columns -->
-<?php get_sidebar(); ?>
+</div><!-- .large-<?php echo $cols['content'];?> .columns -->
+<?php
+	if($layout ==  "content-sidebar-sidebar") {
+		get_sidebar('left');
+	}	
+?>
+<?php	
+	if($layout ==  "content-sidebar" || 
+	   $layout ==  "sidebar-content-sidebar" ||
+	   $layout ==  "content-sidebar-sidebar") {		
+		get_sidebar();
+	}
+?>
 <?php get_footer(); ?>

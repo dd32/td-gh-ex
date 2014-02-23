@@ -10,7 +10,7 @@
 ?>
 <?php
 
-class Feedburner_Widget extends WP_Widget {
+class awakening_feedburner_widget extends WP_Widget {
 
          public function __construct() {
 
@@ -21,61 +21,43 @@ class Feedburner_Widget extends WP_Widget {
 			$control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'widget-feedburner' );
 
 			/* Create the widget. */
-			$this->WP_Widget( 'widget-feedburner', __('Awakening Feedburner','awakening'), $widget_ops, $control_ops );					
+			$this->WP_Widget( 'widget-feedburner', __('(Awakening) Feedburner','awakening'), $widget_ops, $control_ops );					
         }
+		
+		/* Get Default values of fields. */
+		function widget_defaults() {
+			return array(
+				'title' => '',
+				'feedburner_unique_id' => '',				
+				'feedburner_title_text' => 'Email Newsletter',
+				'feedburner_sub_text' => "Sign up to receive email updates and to hear what's going on with our company!",
+				'feedburner_style' => ''
+			);
+		}			
 
         public function form( $instance ) {
-		
-			$instance = wp_parse_args( (array) $instance, array( 'feedburner_unique_id' => '', 'feedburner_style' => '',  'feedburner_title_text' => '', 'feedburner_sub_text' => ''));
+			$instance = wp_parse_args( (array) $instance, $this->widget_defaults());
 			
-			if ( isset( $instance[ 'feedburner_unique_id' ] ) ) {
-				$feedburner_unique_id = $instance[ 'feedburner_unique_id' ];
-			}
-			
-			if ( isset( $instance[ 'feedburner_style' ] ) ) {
-				$feedburner_style = $instance[ 'feedburner_style' ];
-			}	
-			
-			if ( isset( $instance[ 'feedburner_title_text' ] ) ) {
-				$feedburner_title_text = $instance[ 'feedburner_title_text' ];
-			}	
+			awakening_widget_field( $this, array ( 'ptag' => false, 'field' => 'feedburner_unique_id', 'desc' => __( 'Feedburner Id:', 'awakening' ),'type' => 'label'), $instance['feedburner_unique_id'] );
+			awakening_widget_field( $this, array ( 'ptag' => false, 'field' => 'feedburner_unique_id','type' => 'text'), $instance['feedburner_unique_id'] );
+			awakening_widget_field( $this, array ( 'field' => 'feedburner_unique_id', 'type' => 'label', 'desc' => __( '(e.g: opencodez) ', 'awakening' ) ) , '' );
 
-			if ( isset( $instance[ 'feedburner_sub_text' ] ) ) {
-				$feedburner_sub_text = $instance[ 'feedburner_sub_text' ];
-			}				
-			
-			$styles = array("style_1"=> "Style 1", "style_2" => "Style 2");	
-						
-			?>			
-		<p>  
-			<label for="<?php echo $this->get_field_id( 'feedburner_unique_id' ); ?>"><?php _e('Feedburner Id:', 'awakening'); ?></label>  
-			<input id="<?php echo $this->get_field_id( 'feedburner_unique_id' ); ?>" name="<?php echo $this->get_field_name( 'feedburner_unique_id' ); ?>" value="<?php echo $instance['feedburner_unique_id']; ?>" style="width:90%;" />  (e.g: opencodez)	
-		</p>  	
-		
-		<p>  
-			<label for="<?php echo $this->get_field_id( 'feedburner_title_text' ); ?>"><?php _e('Title Text:', 'awakening'); ?></label>  
-			<input id="<?php echo $this->get_field_id( 'feedburner_title_text' ); ?>" name="<?php echo $this->get_field_name( 'feedburner_title_text' ); ?>" value="<?php echo $instance['feedburner_title_text']; ?>" style="width:90%;" />  (e.g: Subscribe Via Email)	
-		</p> 		
-		
-		<p>  
-			<label for="<?php echo $this->get_field_id( 'feedburner_sub_text' ); ?>"><?php _e('Sub Text:', 'awakening'); ?></label>  
-			<input id="<?php echo $this->get_field_id( 'feedburner_sub_text' ); ?>" name="<?php echo $this->get_field_name( 'feedburner_sub_text' ); ?>" value="<?php echo $instance['feedburner_sub_text']; ?>" style="width:90%;" />  (e.g: Subscribe to our newsletter to get all the latest updates to your inbox..!)	
-		</p> 			
-		
-		<p>
-			<label for="<?php echo $this->get_field_id('feedburner_style'); ?>"><?php _e('Select Style:','awakening'); ?></label>
-			<select id="<?php echo $this->get_field_id('feedburner_style'); ?>" name="<?php echo $this->get_field_name('feedburner_style'); ?>">			
-		<?php
-			foreach ( $styles as $style_id => $style_name ) {
-				echo '<option value="' . $style_id . '"'
-					. selected( $feedburner_style, $style_id, false )
-					. '>'. $style_name . '</option>';
-			}
-		?>
-			</select>
-		</p>
-		
-			<?php
+			awakening_widget_field( $this, array ( 'ptag' => false, 'field' => 'feedburner_title_text', 'desc' => __( 'Title Text:', 'awakening' ),'type' => 'label'), $instance['feedburner_title_text'] );
+			awakening_widget_field( $this, array ( 'ptag' => false, 'field' => 'feedburner_title_text','type' => 'text'), $instance['feedburner_title_text'] );
+			awakening_widget_field( $this, array ( 'field' => 'feedburner_title_text', 'type' => 'label', 'desc' => __( '(e.g: Email Newsletter) ', 'awakening' ) ) , '' );
+
+			awakening_widget_field( $this, array ( 'ptag' => false, 'field' => 'feedburner_sub_text', 'desc' => __( 'Sub Text:', 'awakening' ),'type' => 'label'), $instance['feedburner_sub_text'] );
+			awakening_widget_field( $this, array ( 'ptag' => false, 'field' => 'feedburner_sub_text','type' => 'text'), $instance['feedburner_sub_text'] );
+			awakening_widget_field( $this, array ( 'field' => 'feedburner_sub_text', 'type' => 'label', 'desc' => __( "(e.g: Sign up to receive email updates and to hear what's going on with our company!)", 'awakening' ) ) , '' );
+
+			awakening_widget_field( $this, array ( 'field' => 'feedburner_style', 'type' => 'select', 
+												   'label' => __( 'Style: ', 'awakening' ),
+												   'options' => array (
+														array(	'key' => 'dark',
+																'name' => __( 'Dark', 'awakening' ) ),
+														array(	'key' => 'light',
+																'name' => __( 'Light', 'awakening' ) )
+													), 'class' => '' ), $instance['feedburner_style'] );
 			   
         }
 
@@ -98,38 +80,24 @@ class Feedburner_Widget extends WP_Widget {
 			$feedburner_sub_text = $instance['feedburner_sub_text'];
 			echo $before_widget;	
 			?>
-			
-			<div class="<?php echo "feedburner_".$feedburner_style; ?>">	
+			<div>
+		<!-- Begin FeedBurner Signup Form -->
+		<div id="<?php echo "optin_".$feedburner_style; ?>">
 			<form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=<?php echo $feedburner_unique_id; ?>', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">    
-			<div class="row">
-				<div class="large-12 columns ">				  
-				  <div class="row">		
-					<div class="large-12 columns">
-						<h6><?php echo $feedburner_title_text; ?></h6>
-						<p class="stext"><?php echo $feedburner_sub_text; ?></p>
-					 </div>
-				  </div>
-				 
-				  <div class="row">
-					<div class="large-12 columns">
-					  <input type="text" name="email"  class="email" placeholder="Enter your email address"/>
-					  <input type="hidden" value="<?php echo $feedburner_unique_id; ?>" name="uri"/>
-					  <input type="hidden" name="loc" value="en_US"/>
-					</div>
-				  </div>	
-				  <div class="row">
-					<div class="large-12 columns">
-						<div class="large-1 columns">&nbsp;</div>
-						<div class="large-10 columns">
-						<input type="submit" class="emailButton" name="submit" value="Signup Now!" />
-						</div>
-						<div class="large-1 columns">&nbsp;</div>
-					</div>	
-				  </div>
+				<h4><?php echo $feedburner_title_text; ?></h4>
+				<p><?php echo $feedburner_sub_text; ?></p>
+				<input type="text" size="25" value="Enter your name" name="name" class="name" id="mce-FNAME" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">
+				<input type="email" size="25" value="Enter your email" name="email" class="required email" id="mce-EMAIL" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">		
+				<input type="hidden" value="<?php echo $feedburner_unique_id; ?>" name="uri"/>
+				<input type="hidden" name="loc" value="en_US"/>	
+				<div class="clear">
+					<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+					<span>I take your privacy very seriously</span>
 				</div>
-				</div>  
-			</form>		
-			</div>	
+			</form>
+		</div>
+		</div>
+		<!-- End FeedBurner Signup Form -->						
 			<?php  
 			echo $after_widget;	
         }

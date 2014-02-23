@@ -18,8 +18,26 @@
  */
 
 get_header(); ?>
+<?php 
+	$cols = awakening_get_columns_settings();
+	$layout = $cols['layout']; 
+?>
 
-<div class="large-9 columns" role="content">
+<?php
+	if($layout ==  "sidebar-sidebar-content") {
+		get_sidebar('left');
+		get_sidebar();
+	}	
+?>
+
+<?php
+	if($layout ==  "sidebar-content-sidebar") {
+		get_sidebar('left');
+	} else if($layout ==  "sidebar-content") {
+		get_sidebar();
+	}	
+?>
+<div class="large-<?php echo $cols['content'];?> columns" role="content">
 	<section id="primary" class="site-content">
 		<div id="content" role="main">
 
@@ -59,7 +77,18 @@ get_header(); ?>
 
 		</div><!-- #content -->
 	</section><!-- #primary -->
-</div><!-- .large-9 .columns -->
+</div><!-- .large-<?php echo $cols['content'];?> .columns -->
 
-<?php get_sidebar(); ?>
+<?php
+	if($layout ==  "content-sidebar-sidebar") {
+		get_sidebar('left');
+	}	
+?>
+<?php	
+	if($layout ==  "content-sidebar" || 
+	   $layout ==  "sidebar-content-sidebar" ||
+	   $layout ==  "content-sidebar-sidebar") {		
+		get_sidebar();
+	}
+?>
 <?php get_footer(); ?>
