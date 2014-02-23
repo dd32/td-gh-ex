@@ -84,8 +84,6 @@ function awakening_setup() {
 }
 add_action( 'after_setup_theme', 'awakening_setup' );
 
-//Google Custom Search Widget
-require(get_template_directory() . '/inc/widgets/awakening-google-cse-widget.php');
 
 //Feedburner Widget
 require(get_template_directory() . '/inc/widgets/awakening-feedburner-widget.php');
@@ -100,7 +98,6 @@ require(get_template_directory() . '/inc/widgets/awakening-front-page-feature-te
 require(get_template_directory() . '/inc/widgets/awakening-slide-widget.php');	
 
 function awakening_load_custom_widgets() {
-	register_widget( 'awakening_googlecse_widget' );	
 	register_widget( 'awakening_socialiconbox_widget' );
 	register_widget( 'awakening_feedburner_widget' );
 	register_widget( 'awakening_frontpage_featured_text_widget' );

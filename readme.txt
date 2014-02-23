@@ -1,4 +1,4 @@
-Awakening 2.0.1
+Awakening 2.0.2
 ===============
 The Awakening theme for WordPress is a fully responsive theme developed on top 
 of <a href="http://foundation.zurb.com/">Foundation Framework 5</a> that looks great 
@@ -94,4 +94,6 @@ Revision History
 					Added Social Icon Box Widget
 					Added new Widget Front Page Text
 					
-2.0.1	2014-02-08	Minor CSS fixes				
+2.0.1	2014-02-08	Minor CSS fixes			
+
+2.0.2	2014-02-08	Removed Google CSE Widget			
