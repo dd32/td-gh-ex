@@ -67,7 +67,12 @@ and we will include it within the theme from next version update.
 = Version 1.0 =
 * All brand new. 
 
-= Vesion 1.0.1 =
+= Version 1.0.1 =
 * Backtotop js file and related part removed.
 * Replaced wp_reset_query with wp_reset_postdata for front page. 
 * Custom js (our own creation) is licensed under the same license as this theme. 
+
+= Version 1.0.2 =
+* Added dependency for custom.js file and loaded it in footer. 
+* Naming change for wrong theme textdomain. 
+* Naming change for featured page section in customizer. 

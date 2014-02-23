@@ -35,7 +35,7 @@ function radiate_register_theme_customizer( $wp_customize ) {
 	 
 	// rename existing section
 	$wp_customize->add_section( 'title_tagline' , array(
-		'title' => __('Site Title','mytheme'),
+		'title' => __('Site Title', 'radiate' ),
 		'priority' => 20
 	) );
 
@@ -103,7 +103,7 @@ function radiate_register_theme_customizer( $wp_customize ) {
 	);
 
 	$wp_customize->add_section(
-		'example_section_one',
+		'radiate_featured_section',
 		array(
 			'title'     => __( 'Front Page Featured Section', 'radiate' ),
 			'priority'  => 220
@@ -134,7 +134,7 @@ function radiate_register_theme_customizer( $wp_customize ) {
 			array(
 			'type' => 'dropdown-pages',
 			'label' => __( 'First featured page', 'radiate' ),
-			'section' => 'example_section_one',
+			'section' => 'radiate_featured_section',
 		)
 	);
 	$wp_customize->add_control(
@@ -142,7 +142,7 @@ function radiate_register_theme_customizer( $wp_customize ) {
 			array(
 			'type' => 'dropdown-pages',
 			'label' => __( 'Second featured page', 'radiate' ),
-			'section' => 'example_section_one',
+			'section' => 'radiate_featured_section',
 		)
 	);
 	$wp_customize->add_control(
@@ -150,7 +150,7 @@ function radiate_register_theme_customizer( $wp_customize ) {
 			array(
 			'type' => 'dropdown-pages',
 			'label' => __( 'Third featured page', 'radiate' ),
-			'section' => 'example_section_one',
+			'section' => 'radiate_featured_section',
 		)
 	);
 
