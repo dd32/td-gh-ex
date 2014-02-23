@@ -129,9 +129,9 @@
 
 .themetitle h1, .upgrade h2 {display:inline-block;}
 
-.themetitle a, .upgrade a {color:#FFF; text-shadow:.075em .075em 0 #000;}
+.themetitle a, .upgrade a h2  {color:#FFF; text-shadow:.05em .05em 0 #000;}
 
-.themetitle a:hover, .upgrade a:hover {color:#00b5e2;}
+.themetitle a:hover, .upgrade a:hover h2 {color:#00b5e2;}
 
 .info_bar {
 	background:rgba(203,203,203,.8);
