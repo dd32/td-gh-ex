@@ -306,11 +306,9 @@ function base_numeric_posts_nav() {
  * Breadcrumb
  */ 
 function BaseBreadcrumb() {
-	echo '<div class="basebreadcrumb">';
+    echo '<div class="basebreadcrumb">';
     if (!is_home()) {
-        echo '<a href="';
-        echo 'home_url()';
-        echo '">';
+        echo '<a href="'. esc_url(home_url('/')) .'">';
         echo 'Home';
         echo "</a> &#187; ";
         if (is_category() || is_single()) {
@@ -323,9 +321,8 @@ function BaseBreadcrumb() {
             echo the_title();
         }
     }
-	echo '</div>';
+        echo '</div>';
 }
-
 
 /*
  * Woocommerce support.
