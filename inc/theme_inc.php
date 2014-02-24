@@ -193,11 +193,12 @@ function olo_theme_options_do_page() {
 
 //	Sanitize and validate input. Accepts an array, return a sanitized array.
 function olo_options_validate( $input ) {
-	// Our first value is either 0 or 1
-	$input['is_olo_icp'] = ( $input['is_olo_icp'] == 1 ? 1 : 0 );
+
+	// Say our checkbox option must be a positive number
+	$input['is_olo_icp'] = absint( $input['is_olo_icp'] );
+	
 	// must be safe text with no HTML tags
-	$input['olo_icp'] =  wp_filter_nohtml_kses($input['olo_icp']);
+	$input['olo_icp'] = sanitize_text_field( $input['olo_icp'] );
 
 	return $input;
 }
-

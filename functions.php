@@ -56,6 +56,13 @@ function olo_setup(){
 	) );
 };
 
+//Custom wp_list_pages
+function olo_wp_list_pages(){
+	echo "<ul>";
+	echo wp_list_pages('title_li=&depth=1');
+	echo "</ul>";
+}
+
 //olo Title Tag
 function olo_wp_title($title, $sep) {
 	global $paged, $page;
@@ -78,12 +85,12 @@ function olo_wp_title($title, $sep) {
 // Enqueue style-file, if it exists.
 function olo_script() {
 	if( !IsMobile ){
-		wp_enqueue_style( 'olo', get_stylesheet_uri(),  array(), '20140212', false);
+		wp_enqueue_style( 'olo', get_stylesheet_uri(),  array(), '20140224', false);
 	}else{
-		wp_enqueue_style('mobile', TPLDIR . '/css/mobile.css', array(), '20140212', false);
+		wp_enqueue_style('mobile', TPLDIR . '/css/mobile.css', array(), '20140224', false);
 	};
-	wp_enqueue_script( 'olo', TPLDIR . '/js/olo.js', array(), '20140212', true);
-	wp_enqueue_script( 'comments-ajax', TPLDIR . '/js/comments-ajax.js', array(), '20140212', true);
+	wp_enqueue_script( 'olo', TPLDIR . '/js/olo.js', array(), '20140224', true);
+	wp_enqueue_script( 'comments-ajax', TPLDIR . '/js/comments-ajax.js', array(), '20140224', true);
 	wp_localize_script('comments-ajax', 'ajaxL10n', array(
 		'edt1' => __('Before Refresh, you can','olo'),
 		'edt2' => __('Edit','olo'),
@@ -95,13 +102,13 @@ function olo_script() {
 	if ( is_singular() && comments_open() ) wp_enqueue_script( 'comment-reply' );
 			
 	if( is_page('archives') ){
-		wp_enqueue_script( 'archives', TPLDIR . '/js/archives.js', array(), '20140212', false);
-		wp_enqueue_style( 'archives', TPLDIR . '/css/archives.css', array(), '20140212', 'screen');
+		wp_enqueue_script( 'archives', TPLDIR . '/js/archives.js', array(), '20140224', false);
+		wp_enqueue_style( 'archives', TPLDIR . '/css/archives.css', array(), '20140224', 'screen');
 	};
 	if(is_404()){
-		wp_enqueue_style( '4041', 'http://fonts.googleapis.com/css?family=Press+Start+2P', array(), '20140212', 'screen');
-		wp_enqueue_style( '4042', 'http://fonts.googleapis.com/css?family=Oxygen:700', array(), '20140212', 'screen');
-		wp_enqueue_style( '4043', TPLDIR . '/css/404.css', array(), '20140212', 'screen');
+		wp_enqueue_style( '4041', 'http://fonts.googleapis.com/css?family=Press+Start+2P', array(), '20140224', 'screen');
+		wp_enqueue_style( '4042', 'http://fonts.googleapis.com/css?family=Oxygen:700', array(), '20140224', 'screen');
+		wp_enqueue_style( '4043', TPLDIR . '/css/404.css', array(), '20140224', 'screen');
 	}
 }
 

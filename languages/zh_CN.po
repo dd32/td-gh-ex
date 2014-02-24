@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-12 18:21+0800\n"
-"PO-Revision-Date: 2014-02-12 18:21+0800\n"
+"POT-Creation-Date: 2014-02-24 22:37+0800\n"
+"PO-Revision-Date: 2014-02-24 22:37+0800\n"
 "Last-Translator: 皇家元林 <i@hjyl.org>\n"
 "Language-Team: hjyl.org <i@hjyl.org>\n"
 "Language: zh_CN\n"
@@ -40,7 +40,7 @@ msgstr "<b>1</b>条评论"
 msgid "<b>%</b> Replies"
 msgstr "<b>%</b>条评论"
 
-#: ../archive.php:39 ../functions.php:89 ../index.php:42 ../page.php:32
+#: ../archive.php:39 ../functions.php:96 ../index.php:42 ../page.php:32
 #: ../single.php:38
 msgid "Edit"
 msgstr "编辑"
@@ -136,6 +136,10 @@ msgstr "取消回复"
 msgid "Post Comment"
 msgstr "发布评论"
 
+#: ../comments.php:72
+msgid "Pingbacks"
+msgstr "引用通告"
+
 #: ../footer.php:4
 msgid "CopyRight"
 msgstr "CopyRight"
@@ -153,48 +157,48 @@ msgstr "主要导航"
 msgid "Mobile Navigation"
 msgstr "手机导航"
 
-#: ../functions.php:69
+#: ../functions.php:76
 #, php-format
 msgid "Page %s"
 msgstr "第 %s 页"
 
-#: ../functions.php:88
+#: ../functions.php:95
 msgid "Before Refresh, you can"
 msgstr "刷新之前，你可以"
 
-#: ../functions.php:90
+#: ../functions.php:97
 msgid "Cancel Editing"
 msgstr "取消编辑"
 
-#: ../functions.php:91
+#: ../functions.php:98
 msgid "Wait a moment..."
 msgstr "请稍候..."
 
-#: ../functions.php:92
+#: ../functions.php:99
 msgid "Good Comment"
 msgstr "提交成功"
 
-#: ../functions.php:119
+#: ../functions.php:126
 msgid "<< Previous"
 msgstr "上一页"
 
-#: ../functions.php:120
+#: ../functions.php:127
 msgid "Next >>"
 msgstr "下一页"
 
-#: ../functions.php:131
+#: ../functions.php:138
 msgid "CopyRights"
 msgstr "转载请注明"
 
-#: ../functions.php:139
+#: ../functions.php:146
 msgid "Home"
 msgstr "首页"
 
-#: ../functions.php:147
+#: ../functions.php:154
 msgid "Single"
 msgstr "文章页"
 
-#: ../functions.php:155
+#: ../functions.php:162
 msgid "Other"
 msgstr "其他页"
 
@@ -236,59 +240,59 @@ msgstr "%s "
 msgid "<cite id=\"commentmeta\">%1$s</cite>"
 msgstr "<cite id=\"commentmeta\">%1$s</cite>"
 
-#: ../inc/oloComment.php:64 ../inc/oloComment.php:77 ../inc/oloComment.php:80
+#: ../inc/oloComment.php:65 ../inc/oloComment.php:78 ../inc/oloComment.php:81
 msgid "Invalid comment status."
 msgstr "评论状态错误."
 
-#: ../inc/oloComment.php:74
+#: ../inc/oloComment.php:75
 msgid "Sorry, comments are closed for this item."
 msgstr "对不起，此文评论关闭."
 
-#: ../inc/oloComment.php:83
+#: ../inc/oloComment.php:84
 msgid "Password Protected"
 msgstr "密码保护"
 
-#: ../inc/oloComment.php:110
+#: ../inc/oloComment.php:111
 msgid "Sorry, you must be logged in to post a comment."
 msgstr "对不起，你必须登录之后才能发布评论."
 
-#: ../inc/oloComment.php:117
+#: ../inc/oloComment.php:118
 msgid "Error: please fill the required fields (name, email)."
 msgstr "错误：请填写必填部分（名字，邮箱）."
 
-#: ../inc/oloComment.php:119
+#: ../inc/oloComment.php:120
 msgid "Error: please enter a valid email address."
 msgstr "错误：请填写正确的邮箱地址."
 
-#: ../inc/oloComment.php:123
+#: ../inc/oloComment.php:124
 msgid "Error: please type a comment."
 msgstr "错误：请填上一段评论."
 
-#: ../inc/oloComment.php:131
+#: ../inc/oloComment.php:132
 msgid ""
 "Duplicate comment detected; it looks as though you&#8217;ve already said "
 "that!"
 msgstr "检查有重复评论；你好像刚刚评论过了！"
 
-#: ../inc/oloComment.php:140
+#: ../inc/oloComment.php:141
 msgid "You are posting comments too quickly.  Slow down."
 msgstr "你评论太快了。淡定。"
 
-#: ../inc/oloComment.php:175
+#: ../inc/oloComment.php:176
 #, php-format
 msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">says:</span>"
 msgstr "<cite class=\"fn\">%s</cite> <span class=\"says\">说:</span>"
 
-#: ../inc/oloComment.php:178
+#: ../inc/oloComment.php:179
 msgid "Your comment is awaiting moderation."
 msgstr "你的评论正在等待审核。"
 
-#: ../inc/oloComment.php:180
+#: ../inc/oloComment.php:181
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s 在 %2$s"
 
-#: ../inc/oloComment.php:180
+#: ../inc/oloComment.php:181
 msgid "(Edit)"
 msgstr "（编辑）"
 
@@ -347,15 +351,15 @@ msgstr "支付宝捐赠"
 msgid "General settings"
 msgstr "常规设置"
 
-#: ../inc/theme_inc.php:182
+#: ../inc/theme_inc.php:181
 msgid "Save Options"
 msgstr "保存设置"
 
-#: ../inc/theme_inc.php:186
+#: ../inc/theme_inc.php:185
 msgid "Reset All Settings"
 msgstr "重置所有设置"
 
-#: ../inc/theme_inc.php:186
+#: ../inc/theme_inc.php:185
 msgid "Click OK to reset. Any settings will be lost!"
 msgstr "点击‘确定’重置。所有设置将被丢失！"
 

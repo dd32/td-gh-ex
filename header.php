@@ -30,11 +30,13 @@
 	<header id="oloLogo">
 		<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php bloginfo('name'); ?>"></a></h1>
 		<?php get_search_form(); ?>
+		<nav id="oloMenu">
 		<?php if(!IsMobile) { ?>
-		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => 'nav', 'container_id' => 'oloMenu' ) ); ?>
+		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => 'olo_wp_list_pages', 'container' => false ) ); ?>
 		<?php }else{ ?>
-		<?php wp_nav_menu( array( 'theme_location' => 'mobile', 'container' => 'nav', 'container_id' => 'oloMenu' ) ); ?>
+		<?php wp_nav_menu( array( 'theme_location' => 'mobile', 'fallback_cb' => 'olo_wp_list_pages', 'container' => false ) ); ?>
 		<?php } ?>
+		</nav>
 	</header>
 	<div class="clear"></div>
 	

@@ -20,4 +20,8 @@ olo has theme options page:Go into your Wordpress Admin, navigate to 'Appearance
 
 == Changelog ==
 2014.02.07  Fix css, e.g: .post, .page, article instead.
-2014.02.12  modify copyright code in footer.php
+2014.02.12  modify copyright code in footer.php.
+2014.02.24	Fix some wrong CSS,
+			Add css to Pings,
+			Fix Sanitize and validate input in theme options,
+			Fix default Menu option.

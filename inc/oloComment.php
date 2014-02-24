@@ -44,7 +44,8 @@ function olo_pings($comment, $args, $depth) {
     else $pingtype = 'Trackback';
 ?>
     <li id="comment-<?php echo $comment->comment_ID ?>">
-        <?php comment_author_link(); ?> - <?php echo $pingtype; ?> on <?php echo mysql2date('Y-m-d', $comment->comment_date); ?>
+        [<?php echo $pingtype; ?>] <?php comment_author_link(); ?>
+		<span class="ping_time"><?php echo mysql2date('Y.m.d', $comment->comment_date); ?></span>
 <?php }
 
 add_action('init', 'olo_ajax_comment');

@@ -6,7 +6,7 @@ Author URI: http://hjyl.org/
 Description: Blue WordPress Theme based as HTML5 + CSS3.
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Version: 2.1
+Version: 2.2
 */
 @import url("font-awesome.min.css");
 /* =Reset CSS.= */
@@ -454,8 +454,7 @@ body > header{
 	background-size:		13px, 29px, 37px, 53px;
 }
 .oloPosts,
-.post,
-#olo .page,
+#olo article,
 #nav-single{
 	position:relative;
 }
@@ -465,30 +464,32 @@ body > header{
 	width: 3px;
 }
 .oloPosts:before,
-.post:before,
-#olo .page:before,
+#olo article:before,
 .oloEntry:before ,
 #comments > .depth-1 > .comment:before ,
 #comments-title span:before,
+#pings-title span:before,
+#pinglist li:before ,
 #reply-title:before,
 #nav-single  p:before,
-#comments-title span a:before,.post-share ul:before{
+#pings-title span a:before,
+#comments-title span a:before{
 	content: "";
 	left: 105px;
 	position: absolute;
 	top: 0;
 }
-.post,
-#olo .page {
+#olo article {
 	border-bottom: 1px solid #DDDDDD;
 	margin: 0 0 1em;
 	overflow: hidden;
 	padding: 0 0 1em;
 }
-.post:before ,
-#olo .page:before,
+#olo article:before ,
 #comments > .depth-1 > .comment:before,
 #comments-title span:before ,
+#pings-title span:before ,
+#pinglist li:before ,
 #reply-title:before,
 #nav-single  p:before{
 	background:#12629C;
@@ -499,11 +500,13 @@ body > header{
 	margin: 53px 0 0 -16px;
 	width: 9px;
 }
-.post:hover:before,
-#olo .page:hover:before,
+#olo article:hover:before,
 #comments > .depth-1:hover > .comment:before,
 #comments-title:hover:before,
 #comments-title:hover span:before,
+#pings-title:hover:before,
+#pings-title:hover span:before,
+#pinglist li:hover:before ,
 #respond:hover #reply-title:before,
 #nav-single  p:hover:before{
 	background: orange;
@@ -571,8 +574,8 @@ body > header{
 	box-shadow: 0 0 3px #ccc;
 }
 .oloEntry:before,
-#comments-title span a:before,
-.post-share ul:before {
+#pings-title span a:before,
+#comments-title span a:before {
 	background:#FFFFFF;
 	border-color: #E5E5E5;
 	border-style: solid;
@@ -595,10 +598,8 @@ body > header{
 	padding:10px;
 	position:relative;
 }
-.post header h2,
-.post footer,
-#olo .page header h2,
-#olo .page footer,
+#olo article header h2,
+#olo article footer,
 #archives-content {
 	margin:5px 0 5px 120px;
 }
@@ -735,26 +736,26 @@ ul.children .comment-body{
 	padding:5px 10px;
 	width:70%;
 }
-#comments-title{
+#comments-title, #pings-title{
 	position:relative;
 	margin:20px 0;
 }
-#comments-title span{
+#comments-title span, #pings-title span{
 	margin-left:120px;
 	padding:5px 10px;
 	background:#12629C;
 	border-radius:5px;
 }
-#comments-title span a{
+#comments-title span a, #pings-title span a{
 	position:relative;
 	color:#FFF;
 }
-#comments-title span a:before{
+#comments-title span a:before, #pings-title span a:before{
 	top:3px;
 	left:-16px;
 	background:#12629C;
 }
-#comments-title span:before{
+#comments-title span:before, #pings-title span:before{
 	margin:3px 0 0 -16px;
 }
 .comment-form-comment #comment{
@@ -800,6 +801,19 @@ ul.children .comment-body{
 #submit:hover {
 	background-color: #12629C;
 }
+#pinglist > li{
+	position:relative;
+	margin:10px 0 10px 120px;
+}
+.ping_time{
+	position:absolute;
+	top:0;
+	left:-115px;
+}
+#pinglist li:before {
+	margin: 0 0 0 -136px;
+}
+
 /*footer
 ---------------------*/
 body  > footer{
