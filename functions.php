@@ -41,11 +41,6 @@ function optimize_post_meta_data() {
 		)
 	);
 }
-/* Enable support for post-thumbnails ********************************************/
-		
-	// If we want to ensure that we only call this function if
-	// the user is working with WP 2.9 or higher,
-	// let's instead make sure that the function exists first
 	
 function optimize_theme_setup() { 
 		add_theme_support( 'post-thumbnails', array( 'post' ) ); // Add it for posts
@@ -58,7 +53,10 @@ function optimize_theme_setup() {
         add_theme_support('automatic-feed-links');
 		}
 		register_nav_menu( 'primary', __( 'Navigation Menu', 'optimize' ) );
-	
+	$args = array(
+	'default-color' => 'ffffff',
+);
+add_theme_support( 'custom-background', $args );
 	
 	add_action( 'after_setup_theme', 'optimize_theme_setup' );
 	

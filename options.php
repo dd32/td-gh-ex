@@ -108,16 +108,16 @@ function optionsframework_options() {
 
 	$options = array();
 $options[] = array(
-		'desc' => '<h2 style="color: #FFF !important;">Upgrade to Premium Theme & Enable Full Features!</h2>
+		'desc' => __('<h2 style="color: #FFF !important;">Upgrade to Premium Theme & Enable Full Features!</h2>
 		<li>SEO Optimized WordPress Theme.</li>
-		<li><a href="https://developers.google.com/speed/pagespeed/insights" target="_blank">Page Speed</a> Optimize for better result.</li>
+		<li>Page Speed Optimize for better result.</li>
 		<li>Color Customize of theme.</li>
 		<li>Custom Widgets and Functions.</li>
 		<li>Social Media Integration.</li>
 		<li>Responsive Website Design.</li>
 		<li>Different Website Layout to Select.</li>
 		<li>Many of Other customize feature for your blog or webiste.</li>
-		<p><span class="buypre"><a href="http://www.wrock.org/product/optimize-premium-theme/" target="_blank">Upgrade Now</a></span><span class="buypred"><a href="http://www.wrock.org/shop/" target="_blank">Shop More Themes !</a></span></p>',
+		<p><span class="buypre"><a href="http://www.wrock.org/product/optimize-premium-theme/" target="_blank">Upgrade Now</a></span><span class="buypred"><a href="http://www.wrock.org/shop/" target="_blank">Shop More Themes !</a></span></p>','effect'),
 		'class' => 'tesingh',
 		'type' => 'info');
 	$options[] = array(
@@ -126,10 +126,10 @@ $options[] = array(
 		
 	$options[] = array(
 		'name' => __('Custom Favicon URL', 'optimize'),
-		'desc' => __('Enter Favicon Image URL Specify a 16px x 16px image in .ico format .', 'optimize'),
+		'desc' => __('Enter Favicon Image URL Specify a 16px x 16px image.', 'optimize'),
 		'id' => 'optimize_favicon',
 		'std' => '',
-		'type' => 'text');
+		'type' => 'upload');
 	$options[] = array(
 		'name' => __('Upload Site Logo', 'optimize'),
 		'desc' => __('Upload Website Logo here. Note you can upload any size it will automatic resize .', 'optimize'),
@@ -179,7 +179,7 @@ $options[] = array(
 		'type' => 'textarea');
 	$options[] = array(
 		 'name' => __( 'AD Code For Single Post', 'optimize' ),
-            'desc' => 'Paste Ad code for single post it show ads below post title and before content.',
+            'desc' => __('Paste Ad code for single post it show ads below post title and before content.','optimize'),
             'id' => 'optimize_ad2',
             'std' => '',
             'type' => 'textarea');
@@ -201,7 +201,7 @@ $options[] = array(
 		'std' => '0',
 		'type' => 'checkbox');
 		$options[] = array(
-		'name' => __('Numbers of Latest and Populat posts to display)', 'optimize'),
+		'name' => __('Numbers of Latest and Popular posts to display)', 'optimize'),
 		'desc' => __('<b>For Latest Posts</b>', 'optimize'),
 		'id' => 'optimize_latestpostnumber',
 		'std' => '5',
@@ -222,7 +222,7 @@ $options[] = array(
 		
 		$options[] = array(
 		'name' => __('Responsive Website Design', 'optimize'),
-		'desc' => __('Enable Responsive Design for you website to increase exprience on Mobile Devices', 'optimize'),
+		'desc' => __('Enable Responsive Design for you website to increase experience on Mobile Devices', 'optimize'),
 		'id' => 'optimize_responsive',
 		'std' => '0',
 		'type' => 'checkbox');
@@ -252,7 +252,7 @@ $options[] = array(
 		'type' => 'color' );
 		
 		$options[] = array(
-		'desc' => __('Main Naigation Background.', 'optimize'),
+		'desc' => __('Main Navigation Background.', 'optimize'),
 		'id' => 'optimize_mainnavibg',
 		'std' => '#F5F5F5',
 		'type' => 'color' );
@@ -279,13 +279,13 @@ $options[] = array(
 						));
 		
 		$options[] = array(
-		'name' => __('Page Number Navigation Color Chnage ', 'optimize'),
+		'name' => __('Page Number Navigation Color Change ', 'optimize'),
 		'desc' => __('Change Current Page Background.', 'optimize'),
 		'id' => 'optimize_pageanvibg',
 		'std' => '#333333',
 		'type' => 'color' );
 		$options[] = array(
-			'desc' => __('Change backgroud color of other pages.', 'optimize'),
+			'desc' => __('Change background color of other pages.', 'optimize'),
 		'id' => 'optimize_pageanvia',
 		'std' => '#FD4326',
 		'type' => 'color' );
@@ -318,7 +318,7 @@ $options[] = array(
 				
 		$options[] = array(
 		'name' => __('Edit ""Continue reading" Button', 'optimize'),
-		'desc' => __('Show or Hode "Continue reading" or Read more Button  Button .', 'optimize'),
+		'desc' => __('Show or Hide "Continue reading" or Read more Button  Button .', 'optimize'),
 		'id' => 'optimize_countinue',
 		'std' => 'on',
 		'type' => 'radio',
@@ -364,7 +364,7 @@ $options[] = array(
 		'std' => '',
 		'type' => 'text');
 		$options[] = array(
-		'name' => __('Google Site varification', 'optimize'),
+		'name' => __('Google Site verification', 'optimize'),
 		'desc' => __('Enter your ID only.', 'optimize'),
 		'id' => 'optimize_googlevari',
 		'std' => '',
@@ -414,7 +414,7 @@ $options[] = array(
 						));
 		$options[] = array(
 		'name' => __('Show or Hide Copy Right Text', 'optimize'),
-		'desc' => __('Show or Hode Copyright Text and Link.', 'optimize'),
+		'desc' => __('Show or Hide Copyright Text and Link.', 'optimize'),
 		'id' => 'optimize_copyright',
 		'std' => 'on',
 		'type' => 'radio',

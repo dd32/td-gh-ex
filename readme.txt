@@ -13,7 +13,7 @@ Theme have many features like some main are listed below
 
 Theme option:
 -upload favicon from theme option by url
--Customize you site backgroud color or image
+-Customize you site background color or image
 -show 5 latest posts with thumbnail in right sidebar -activate from theme option > General settings
 -enable search from theme option > General settings
 
@@ -29,6 +29,14 @@ Custom Css:
 
 
 == Change log ==
+= 1.4.6 =
+*Menu Color customize
+*favicon upload option added
+*Resize post thumb to 175px
+*Random post at 404 page update to new codes
+*Long header text fixed
+*fixed long menu issue  
+
 = 1.4.5 =
 *Fixed top banner size
 *Updated theme option to new version
@@ -57,4 +65,4 @@ Custom Css:
 *Images into /images/ folder that's are created by me cat.png home.jpg, info.png, logo.png metaimg.png, quote.png, thumb.png are publish Under gpl v2
 *Fonts Monda: Copyright (c) 2012, vernon adams (vern@newtypography.co.uk)  This Font Software is licensed under the SIL Open Font License, Version 1.1. http://scripts.sil.org/OFL
 
-**This theme and file are created by me & publish under GPLv3
+**This theme and file are created by me & publish under GPL

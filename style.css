@@ -4,14 +4,14 @@ Author: wRock.org by Sandy
 Author URI: http://www.wrock.org
 Theme URI: http://www.wrock.org/seo-optimized-wordpress-theme/
 Description: Optimize as name tells every thing completely optimized for search you will get 90+ page speed H1 and H2 Title Tags on page and posts. Google Adsense ready template show ads in single post, header or below navigation and widget as well. This is fully optimize style best for any kind of personal blog or business website it comes with Responsive design to increase mobile friendly.Fully featured control panel that support favicon link.
-Version: 1.4.5
+Version: 1.4.6
 Tags: black, white, light, custom-menu, custom-header, custom-background, one-column, two-columns, right-sidebar, theme-options, threaded-comments, sticky-post
 Text Domain: optimize
-License: GNU General Public License v3 or later
+License: GNU General Public License v2
 License URI: license.txt
 Copyright (C) 2011-2013 sandy, This program is distributed free, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-Optimize WordPress theme, Copyright (C) 2013 wRock.Org
+Optimize WordPress theme, Copyright (C) 2014 wRock.Org
 Optimize WordPress theme is licensed under the GPL.
 
 */
@@ -74,7 +74,6 @@ a {
 }
 a:hover {
 	text-decoration: none;
-	opacity: 0.4;
 }
 h2 a {
 	color: #555;
@@ -353,8 +352,21 @@ img, img a {
   
 
 
+#navigation {
+	margin: 0 auto;
+	width: 100%;
+	z-index: 500;
+	
+}
+#navigation-inner {
+margin: 0 auto;
+width: 90%;
+position: relative;
+background: #6FA39B;
+min-width: 790px;
+}
  #navigation .secondary{
-	background: #F1F1F1;
+	background: #6FA39B;
 	margin-bottom: 5px;
  }
 #navigation  ul {
@@ -371,6 +383,7 @@ position: relative;
 display: block;
  padding: 0 18px;
 height: 35px;
+color:#fff;
 line-height: 48px;
 text-transform:uppercase;
 -webkit-transition: all 0.2s ease-in-out;
@@ -378,9 +391,9 @@ text-transform:uppercase;
 -o-transition: all 0.2s ease-in-out;
 transition: all 0.2s ease-in-out;
 }
-#navigation .secondary ul a{height: 40px;
-line-height: 42px;
-font-weight: bold;
+#navigation .secondary ul a{height: 46px;
+line-height: 45px;
+font-size:13px;
 }
 	 
 #navigation  ul li{
@@ -396,14 +409,15 @@ width: auto;
 #navigation  > .sub-menu{margin-left:0;}
 	#navigation  ul li:first-child  
 	#maganav ul  a{border-right:none;}
-  	#navigation  ul li.current-menu-item  a{color:#FFF;background: #F56262;}
+  	#navigation  ul li.current-menu-item  a{color:#FFF;background: #333;}
  	ul.catnav li a{padding:5px 10px;}	
   	#navigation  ul li.current-menu-item  ,#navigation  ul li a:hover { }
-	
+#navigation li:hover > a{background:#89D942;}
 	#navigation .secondary ul li.current-menu-item, #navigation .secondary >ul >li a:hover {}
-	
+#navigation .secondary ul li.current-menu-item {background:#89D942;}
+#navigation .secondary >ul >li a:hover {background:#89D942; }
 	#navigation  ul li.dropme a{background: #A09B9A;} 
-	#navigation  ul ul {position: absolute;left: -999em;width: 212px;z-index:99999;border:0;margin-left:-1px;background: none;border-bottom: none;}
+	#navigation  ul ul {position: absolute;left: -999em;width: 212px;z-index:99999;border:0;background: none;border-bottom: none;}
 	#navigation  ul ul a {
 width: 198px;
 height: 15px;
@@ -414,15 +428,14 @@ text-align: left;
 border-right: none;} 
 #navigation .secondary ul ul a{
 	padding: 0px 0px 2px 15px;
-	background: #F5F5F5;
-	box-shadow: 0 1px 3px 0 #B5B5B5;
--moz-box-shadow: 0 1px 3px 0 #b5b5b5;
--webkit-box-shadow: 0 1px 3px 0 #B5B5B5;
-color:#333;
+	background: #333;
+color:#fff;
+height:auto;
+line-height: 30px;
 }
 #navigation  ul ul a:hover {
 	opacity: 1;
-	background: #A5A5A5;
+	color:#89D942;
 }
 #navigation  ul ul ul {border-top:0;margin: -50px 0 0 212px;}
 #navigation  ul li li  { margin:0;border:0;}
@@ -455,13 +468,12 @@ font-size: 16px;
 	max-width: 75%;
 }
 #navigation .current_page_item {
-	background: #F56262;
+	background: #89D942;
 }
 .current-post-parent{
 	background: #A09B9A;
 }
 #header {
-	height: 120px;
 	background: transparent;
 	position: relative;
 	z-index: 100;
@@ -482,7 +494,7 @@ font-size: 16px;
 	margin: 0;
 	margin-top: 22px;
 	max-width: 470px;
-	max-height: 90px;
+	min-height: 90px;
 }
 #header #logo img {
 	max-width: 470px;
@@ -523,22 +535,6 @@ color:#333;
 	
 }
 
-#navigation {
-	margin: 0 auto;
-	width: 100%;
-	z-index: 500;
-	
-}
-#navigation-inner {
-margin: 0 auto;
-width: 90%;
-position: relative;
-background: #f5f5f5;
-min-width: 790px;
-box-shadow: 0 1px 3px 0 #B5B5B5;
--moz-box-shadow: 0 1px 3px 0 #b5b5b5;
--webkit-box-shadow: 0 1px 3px 0 #B5B5B5;
-}
 
 #page {
 	margin-top: 20px;
@@ -639,8 +635,8 @@ form#searchform input#s {
 .post .thumbnail img {
 	background: #fff;
 	padding: 0;
-	max-width: 150px;
-	max-height: 150px;
+	width: 175px;
+	height: 175px;
 }
 
 .post h1 {
@@ -1094,7 +1090,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover  {
 }
 /* ===================== footer ===================== */
  #myban{
-margin-top: 2%;
+margin-top: 1%;
 word-wrap: break-word;
 max-width: 730px;
 max-height: 92px;
@@ -1313,7 +1309,7 @@ ol.commentlist li ol {
 	line-height: 26px;
 }
 #commentform #submit{
-	background: #F56262;
+	background: #89D942;
 	cursor: pointer;
 	font-weight: bold;
 	font-size: 14px;

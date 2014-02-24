@@ -32,13 +32,6 @@
 
 
 	
-		function optimize_themefoot() {
-	if (of_get_option('optimize_ftarea') != '') {
-            echo '' . of_get_option('optimize_ftarea') . '' . "\n";
-        }
-	else {echo '&#169; 2013 Designed by: <a href="http://www.wrock.org/optimize" title="wRock.Org">wRock.Org</a> | Powered by <a href="http://wordpress.org/"><strong> WordPress</strong></a>' . "\n";
-	}	
-	}
 /* ----------------------------------------------------------------------------------- */
 /* Breadcrumbs Plugin
   /*----------------------------------------------------------------------------------- */

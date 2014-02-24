@@ -1,4 +1,4 @@
-<h4>Latest</h4>
+<h4><?php _e('Latest', 'optimize'); ?></h4>
 <div id="ltpost">
 <?php 
 							$the_query = new WP_Query('showposts=5&orderby=post_date&order=desc');
