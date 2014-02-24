@@ -708,19 +708,20 @@ add_filter( 'use_default_gallery_style', '__return_false' );
 if ( ! function_exists( 'wp_barrister_pagination' ) ) :
 	function wp_barrister_pagination() {
 	
-		global $wp_query;  
+		global $wp_query; 
+		
+		$big = 999999999;
 		  
 		$total_pages = $wp_query->max_num_pages;  
 		  
 		if ($total_pages > 1){  
 		  
-		  $current_page = max(1, get_query_var('paged'));  
+		  $current_page = max(1, get_query_var('paged'));
 			
 		  echo '<div class="pagination">';  
 			
 		  echo paginate_links(array(  
-			  'base' => get_pagenum_link(1) . '%_%',  
-			  'format' => '/page/%#%',  
+			  'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),  
 			  'current' => $current_page,  
 			  'total' => $total_pages,  
 			  'prev_text' => __('&lsaquo; Prev', 'wp-barrister'),  

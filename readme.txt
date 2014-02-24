@@ -87,6 +87,9 @@ This theme is bundled with TGM-Plugin-Activation
 =================================
 CHANGELOG
 =================================
+Version 1.0.6
+ * updated the wp_advocate_pagination function to fix the  double slash (//) appearing on the URL when hovering on the pagination links
+ 
 Version 1.0.5
  * added jquery fix for the footer issue in Safari
  * removed the bundled Masonry script and enqueued the built-in WP script instead (jquery-masonry), this also fixes the grid boxes layout issue on Safari
