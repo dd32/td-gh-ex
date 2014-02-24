@@ -78,10 +78,8 @@ $options = get_option( 'faster_theme_options' );
       <?php endwhile; endif; ?>
       <?php wp_reset_query();?>
       <ul class="pagecount">
-        <?php 
-		if (function_exists("RedPro_paginate"))
-   		 RedPro_paginate($archives_stories->max_num_pages); ?>
-		
+        <?php if (function_exists("RedPro_paginate"))
+   		 RedPro_paginate($query->max_num_pages); ?>		
       </ul>
       
       <!--end / article--> 

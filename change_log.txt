@@ -32,3 +32,6 @@ Version 2.03
 Version 2.04
     i)   Fixed Pagination.
     ii)  Typo fixing.
+	
+Version 2.05
+    i)   Fixed home.php variable issue.
