@@ -29,7 +29,7 @@ Custom Css:
 
 
 == Change log ==
-= 1.4.6 =
+= 1.4.7 =
 *Menu Color customize
 *favicon upload option added
 *Resize post thumb to 175px

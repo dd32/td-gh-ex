@@ -51,16 +51,7 @@ function optionsframework_options() {
 		'five' => '1'
 	);
 	
-	
 
-	// Background Defaults
-	$background_defaults = array(
-		'color' => '#ffffff',
-		'image' => '',
-		'repeat' => 'repeat',
-		'attachment'=>'scroll' );
-
-	// Typography Defaults
 	$typography_defaults = array(
 		'size' => '13px',
 		'face' => 'false',
@@ -233,12 +224,6 @@ $options[] = array(
 		'std' => '45',
 		'class' => 'mini',
 		'type' => 'text');
-		$options[] = array(
-		'name' =>  __('Change Background', 'optimize'),
-		'desc' => __('Change the background CSS Color or Image.', 'optimize'),
-		'id' => 'optimize_bg',
-		'std' => $background_defaults,
-		'type' => 'background' );
 		$options[] = array(
 		'name' => __('Change Link Color', 'optimize'),
 		'desc' => __('Select Links Color.', 'optimize'),
