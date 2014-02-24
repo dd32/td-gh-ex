@@ -4,58 +4,16 @@
 
 		<div class="featured-media">
 		
-			<?php if (strpos($videourl,'youtube') !== false) : ?>
+			<?php if (strpos($videourl,'.mp4') !== true) : ?>
 			
-				<?php $url = $videourl;
-				preg_match(
-				        '/[\\?\\&]v=([^\\?\\&]+)/',
-				        $url,
-				        $matches
-				    );
-				$id = $matches[1];
+				<?php 
 				
-				$youtube_url = 'http://www.youtube.com/embed/' . $id . '?autoplay=0'; 
-				printf( '<iframe width="1136" height="568" src="%s" allowfullscreen></iframe>', esc_url( $youtube_url ) ); ?>
-				
-			<?php elseif (strpos($videourl,'vimeo') !== false) : ?>
-			
-				<?php $url = $videourl;
-				preg_match(
-				        '/(\d+)/',
-				        $url,
-				        $matches
-				    );
-				$id = $matches[1];
-				
-				$vimeo_url = 'http://player.vimeo.com/video/' . $id; 
-				printf( '<iframe width="1136" height="568" src="%s" allowfullscreen></iframe>', esc_url( $vimeo_url ) ); ?>
-				 				
-			<?php elseif (strpos($videourl,'dailymotion') !== false) : ?>
-			
-				<?php $url = $videourl;
-				preg_match(
-				        '/video\/([^_]+)/',
-				        $url,
-				        $matches
-				    );
-				$id = $matches[1];
-				
-				$dailymotion_url = 'http://www.dailymotion.com/embed/video/' . $id; 
-				printf( '<iframe width="1136" height="568" src="%s" allowfullscreen></iframe>', esc_url( $dailymotion_url ) ); ?>
-				 				
-			<?php elseif (strpos($videourl,'kickstarter') !== false) : ?>
-			
-				<?php $url = $videourl;
-				preg_match(
-				        '/projects\/([^?]+)/',
-				        $url,
-				        $matches
-				    );
-				$id = $matches[1];
-				
-				$kickstarter_url = 'http://www.kickstarter.com/projects/' . $id . '/widget/video.html'; 
-				printf( '<iframe width="1136" height="568" src="%s" allowfullscreen></iframe>', esc_url( $kickstarter_url ) ); ?>
-														
+					$embed_code = wp_oembed_get($videourl); 
+					
+					echo $embed_code;
+					
+				?>
+																		
 			<?php elseif (strpos($videourl,'.mp4') !== false) : ?>
 				
 				[video src="<?php echo $videourl; ?>"]
