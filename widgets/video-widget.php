@@ -25,38 +25,19 @@ class hemingway_video_widget extends WP_Widget {
 			
 		} ?>
 			
-			<?php if (strpos($video_url,'youtube') !== false) : ?>
+			<?php if (strpos($videourl,'.mp4') !== true) : ?>
 			
-				<?php $url = $video_url;
-				preg_match(
-				        '/[\\?\\&]v=([^\\?\\&]+)/',
-				        $url,
-				        $matches
-				    );
-				$id = $matches[1];
-				 
-				echo '<iframe width="640" height="400" src="http://www.youtube.com/embed/' . $id . '?autoplay=0" frameborder="0" allowfullscreen></iframe>' ?>
+				<?php 
 				
-			<?php elseif (strpos($video_url,'vimeo') !== false) : ?>
-			
-				<?php $url = $video_url;
-				preg_match(
-				        '/(\d+)/',
-				        $url,
-				        $matches
-				    );
-				$id = $matches[1];
-				 
-				echo '<iframe width="640" height="300" src="http://player.vimeo.com/video/' . $id . '" frameborder="0" allowfullscreen></iframe>' ?>
-				
-			<?php elseif (strpos($video_url,'.mp4') !== false) : ?>
-				
-				<video controls>
-				
-					<source src="<?php echo $video_url ?>" type="video/mp4">
-					<?php _e('Your browser does not support the video tag.','hemingway'); ?>
+					$embed_code = wp_oembed_get($videourl); 
 					
-				</video>
+					echo $embed_code;
+					
+				?>
+														
+			<?php elseif (strpos($videourl,'.mp4') !== false) : ?>
+				
+				[video src="<?php echo $videourl; ?>"]
 					
 			<?php endif; ?>
 							

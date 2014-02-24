@@ -1,3 +1,8 @@
+Version 1.28 (2014-02-24)
+-------------------------
+- Replaced the embeds in video-widget.php with WordPress built-in oEmbed function
+
+
 Version 1.27 (2014-02-24)
 -------------------------
 - Replaced the embeds in content-video.php and single.php with WordPress built-in oEmbed function
