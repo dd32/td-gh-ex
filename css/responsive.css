@@ -1,3 +1,18 @@
+@media only screen and (min-width : 1025px) {
+     h1.site-title > a {
+         font-size: 120%;
+     }
+     h2.site-description{
+         font-size: 140%;
+     }
+     .header-image-wrapper .site-branding {
+         padding: 25px 15px;
+
+     }
+     .only-site-branding {
+         min-height: 130px;
+     }
+}
 @media only screen and (max-width:1024px){
 
 
@@ -9,6 +24,9 @@
     }
     #secondary{
         clear: both;
+    }
+    .only-site-branding {
+        min-height: 120px;
     }
 
 
@@ -40,6 +58,10 @@
 
     .footer-end-page  .social-wrapper a{
         margin-bottom: 5px;
+    }
+
+    .only-site-branding {
+        min-height: 100px;
     }
 
 

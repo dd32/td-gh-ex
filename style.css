@@ -4,7 +4,7 @@ Theme URI: http://wordpress.org/themes/blue-planet
 Author: Nilambar Sharma
 Author URI: http://nilambar.net
 Description: Blue Planet is a beautiful and sleek responsive theme for your awesome WordPress website. Features - Cross browser compatible, Two columns or One column layout, Responsive Design, Custom menus, Featured slider, Social Icons, Theme options, Custom CSS, Translation ready
-Version: 1.0.7.2
+Version: 1.0.7.3
 License: GNU General Public License
 License URI: license.txt
 Text Domain: blue-planet
@@ -660,17 +660,18 @@ header#masthead{
 }
 header#masthead div.site-branding{
     position: inherit;
-    width: 100%;
+    /*width: 100%;*/
 }
 header#masthead img {
     /*height: 100% !important;*/
     left: 0;
-    position: absolute;
+    position: inherit;
     top: 0;
     z-index: 99989;
 }
 h1.site-title{
-    margin : 10px;
+    margin : 10px 10px 5px 10px ;
+    font-size:25px;
 }
 h1.site-title > a{
     font-weight: normal;
@@ -681,9 +682,10 @@ h1.site-title > a:hover{
     color: #FFFFFF!important;
 }
 h2.site-description{
-    margin:10px 10px 10px 10px;
-    font-size: 140%;
+    margin:5px 10px 10px 10px;
+    font-size: 110%;
     font-style: italic;
+    /*margin-bottom:8px;*/
 }
 header#masthead > nav{
     border-radius: 0px;
@@ -696,7 +698,7 @@ header#masthead > nav{
 }
 .header-image-wrapper{
   position: relative;
-  height: 101%;
+  height: 100%;
   width: 100%;
   max-width: 1140px;
   overflow: hidden;
@@ -711,14 +713,18 @@ header#masthead > nav{
   position: absolute;
   vertical-align: middle;
   top:0;
+  padding:15px;
 }
 div.site-branding{
     float:left;
-    padding:30px 0px;
+    padding:20px 0px;
     position: absolute;
 }
+.header-image-wrapper div.site-branding{
+  margin-top:-14%;
+}
 #site-navigation{
-  margin-top: -1px;
+  /*margin-top: -1px;*/
 }
 /*SIDEBAR*/
 #secondary{

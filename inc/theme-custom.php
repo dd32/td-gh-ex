@@ -464,7 +464,7 @@ if ( ! function_exists( 'blue_planet_header_content_stuff' ) ) :
                 if ( ! empty( $header_image ) ) { ?>
                     <div class="header-image-wrapper">
 
-                            <img id="bs-header-image" src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" />
+                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img id="bs-header-image" src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" /></a>
                             <div class="site-branding">
                                 <div class="site-info">
                                     <h1 class="site-title">
