@@ -9,8 +9,7 @@ if($options['fevicon'] != '') {
 ?>
 <link rel="shortcut icon" href="<?php echo $options['fevicon'];?>">
 <?php } ?>
-<!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
       <script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.js"></script>
       <script src="<?php echo get_template_directory_uri(); ?>/js/respond.min.js"></script>
