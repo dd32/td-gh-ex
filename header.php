@@ -87,30 +87,14 @@
         </div>
         
         <!-- #Banner -->
-        <?php if ( is_home() && ! is_paged() ) : ?>
+        <?php if ( is_home() && ! is_paged() || is_front_page() ) : ?>
 			<?php itransform_ibanner_slider(); ?>
         <?php elseif ( ! is_front_page() ) : ?>
         <div class="iheader">
         	<div class="titlebar">
             	<h1>
-					<?php if ( is_page() || is_single() ) : ?>
-						<?php echo get_the_title(); ?>
-                    <?php elseif ( is_category() ) : ?>
-                    	<?php printf( __( 'Category Archives: %s', 'itransform' ), single_cat_title( '', false ) ); ?>
-                    <?php elseif ( is_archive() ) : ?>
-					<?php
-						if ( is_day() ) :
-							printf( __( 'Daily Archives: %s', 'itransform' ), get_the_date() );
-						elseif ( is_month() ) :
-							printf( __( 'Monthly Archives: %s', 'itransform' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'itransform' ) ) );
-						elseif ( is_year() ) :
-							printf( __( 'Yearly Archives: %s', 'itransform' ), get_the_date( _x( 'Y', 'yearly archives date format', 'itransform' ) ) );
-						else :
-							_e( 'Archives', 'itransform' );
-						endif;
-					?>
-                    <?php elseif ( is_search() ) : ?>  
-                    	<?php printf( __( 'Search Results for: %s', 'itransform' ), get_search_query() ); ?>
+					<?php if ( of_get_option('top_bar_phone') || itransform_social_icons() ) : ?>
+                    	<?php echo of_get_option('itrans_slogan'); ?>
                     <?php endif; ?>
                 </h1>
             </div>

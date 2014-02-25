@@ -59,42 +59,20 @@ jQuery(document).ready(function($) {
 	jQuery('div.nav-container > ul > li > a').append( '<span class="colorbar"></span>' );
     jQuery('div.nav-container ul > li').hover(function() {
         jQuery(this).children('ul.children,ul.sub-menu').stop(true, true).slideDown("fast");
-		console.log('yo');
     }, function(){
         jQuery(this).children('ul.children,ul.sub-menu').slideUp("fast");
-		console.log('yo');		
     });
 	
 	jQuery('.search-form').append( '<span class="searchico genericon-search"></span>' );
 	
 	
-	/* initiating the slider */
+	/* initiating the slider 
 	$('#da-slider').cslider({
 		autoplay	: true,
 		bgincrement	: 0,
 		interval    : 10000
 	});
-	
-	/* slider next previous buttons */
-	$( ".sldprev" ).click(function( event ) {
-		$( "span.da-arrows-prev" ).trigger( "click" );
-		event.preventDefault();
-	});
-	$( ".sldnext" ).click(function( event ) {
-		$( "span.da-arrows-next" ).trigger( "click" );
-		event.preventDefault();
-	});
-	
-	/* creating the slider navigation tabs */
-	var totalslide = 0;
-	if ($( ".da-slider > .da-slide" ).length > 0)
-	{
-		$( ".da-slider > .da-slide" ).each(function() {
-			totalslide = totalslide+1;
-		});
-		$(".da-dots > span").css("width", 100/totalslide+"%");
-		$(".da-dots > span").append('<span></span>');
-	}
+	*/
 	
 	/* adding class for no featured image posts */
 	$( "div.entry-nothumb" ).parent(".meta-img").addClass("no-image-meta");
@@ -270,7 +248,104 @@ jQuery(document).ready(function($) {
 		triggerOnce: true
 	});
 		
+		
+		
+		
+	/*
+	i-trans multi layer slider
+	*/
+	var slidetimer = null;
+	function startSetInterval() {
+		slidetimer = setInterval(function () {
+        	moveRight();
+    	}, 6000);
+	}
+	
+	startSetInterval();
+	
+	// hover behaviour
+	$('.ibanner #da-slider').hover(function() {
+	  	clearInterval(slidetimer);
+		console.log("stop timer");
+	},function() {
+	  	startSetInterval();
+	});
+	
+ 
+  	var theslider = $('#da-slider')
+	var slideCount = $('#da-slider .da-slide').length;
+	var slideWidth = $('#slider ul li').width();
+	var slideHeight = $('#slider ul li').height();
+	var sliderUlWidth = slideCount * slideWidth;
+	
 
+	var $slidernav	= $( '<nav class="da-dots"/>' );
+		
+		for( var i = 0; i < slideCount; ++i ) {
+				$slidernav.append( '<span/>' );			
+		}
+		$slidernav.appendTo( theslider );
+
+	
+	var currentslide = 1;	
+	
+    function moveLeft() {
+		if (currentslide > slideCount)
+		{
+			currentslide = 1;
+		}
+		
+		$('.da-slide-current').addClass('da-slide-toleft').removeClass('da-slide-current');
+		$('.da-slide:nth-child('+currentslide+')').removeClass('da-slide-toleft da-slide-toright da-slide-fromleft da-slide-fromright').addClass('da-slide-current da-slide-fromright');
+		$('.da-dots-current').removeClass('da-dots-current');
+		$('.da-dots span:nth-child('+currentslide+')').addClass('da-dots-current');
+		
+		currentslide = currentslide+1;		
+    };
+
+    function moveRight() {
+		if (currentslide > slideCount)
+		{
+			currentslide = 1;
+		}
+	
+		$('.da-slide-current').addClass('da-slide-toright').removeClass('da-slide-current');
+		$('.da-slide:nth-child('+currentslide+')').removeClass('da-slide-toleft da-slide-toright da-slide-fromleft da-slide-fromright').addClass('da-slide-current da-slide-fromleft');
+		$('.da-dots-current').removeClass('da-dots-current');
+		$('.da-dots span:nth-child('+currentslide+')').addClass('da-dots-current');
+		
+		currentslide = currentslide+1;
+    };
+	
+	$('.da-dots > span').click(function() {
+		var index = $(this).parent().find('> ' + this.tagName).index(this);
+		currentslide = index+1;
+		moveRight()
+	});	
+
+    $('.sldprev').click(function ( event ) {
+        moveLeft();
+		event.preventDefault();
+    });
+
+    $('.sldnext').click(function ( event ) {
+        moveRight();
+		event.preventDefault();
+    });
+	
+	
+	/* creating the slider navigation tabs */
+	var totalslide = 0;
+	if ($( ".da-slider > .da-slide" ).length > 0)
+	{
+		$( ".da-slider > .da-slide" ).each(function() {
+			totalslide = totalslide+1;
+		});
+		$(".da-dots > span").css("width", 100/totalslide+"%");
+		$(".da-dots > span").append('<span></span>');
+	}
+	
+	setTimeout(moveRight(),1000);	
 		
 })(jQuery);
 /**/

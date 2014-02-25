@@ -179,9 +179,6 @@ function itransform_scripts_styles() {
 	
 	// Loads JavaScript file with functionality specific to i-transform.
 	wp_enqueue_script( 'modernizer-custom', get_template_directory_uri() . '/js/modernizr.custom.js', array( 'jquery' ), '2014-01-13', true );
-
-	// Loads JavaScript file for the slider
-	wp_enqueue_script( 'itransform-slider-script', get_template_directory_uri() . '/js/jquery.cslider.js', array( 'jquery' ), '2014-01-13', true );	
 	
 	// Loads JavaScript file for scroll related functions and animations.
 	wp_enqueue_script( 'itransform-waypoint', get_template_directory_uri() . '/js/waypoints.min.js', array( 'jquery' ), '2014-01-13', true );

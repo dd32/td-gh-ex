@@ -100,10 +100,12 @@ function itransform_ibanner_slider () {
         echo '<div class="iheader front">';
         echo '    <div class="titlebar">';
         echo '        <h1>';
-						bloginfo( 'name' );
+						//bloginfo( 'name' );
+						echo of_get_option('itrans_slogan');
         echo '        </h1>';
 		echo ' 		  <h2>';
-			    		bloginfo( 'description' );
+			    		//bloginfo( 'description' );
+						//echo of_get_option('itrans_sub_slogan');
 		echo '		</h2>';
         echo '    </div>';
         echo '</div>';

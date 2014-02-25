@@ -28,7 +28,7 @@ are licensed under GNU General Public License version 2 or later, see file licen
 /*  Other Licenses
 /* ------------------------------------ */
 * The Font Genericons is licensed under GPL
-* The script jquery.cslider.js can be used freely in personal and commercial projects for more detail visit http://tympanus.net/codrops/licensing/
+* The style animate.css is licensed under MIT
 * The script jquery.sidr.min.js is licensed under MIT
 * The script modernizer.custom.js is dual licensed under MIT & BSD
 * The script waypoints.min.js is dual licensed under MIT & GPL
