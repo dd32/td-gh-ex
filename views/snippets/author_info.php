@@ -23,7 +23,11 @@
 </div><!-- .author-description -->
 <div class="row">
 	<div class="columns ten">
-<?php  smartlib_ext_user_profile_fields() ?>
+<?php
+        if(function_exists('smartlib_ext_user_profile_fields')){
+             smartlib_ext_user_profile_fields();
+        }
+        ?>
 	</div>
 	<div class="columns six">
 		<div class="author-link">
