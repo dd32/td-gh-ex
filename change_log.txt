@@ -38,3 +38,8 @@ Version 2.05
 
 Version 2.06
     i)   Fixed style.css and header.php.
+
+Version 2.07
+    i)   Fixes in header.php.
+	ii)  Fixes in functions.php
+	iii) Fixes in the localization of strings

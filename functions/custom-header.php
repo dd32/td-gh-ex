@@ -7,7 +7,7 @@
  * Set up the WordPress core custom header settings.
  *
  */
-function RedPro_custom_header_setup() {
+function redpro_custom_header_setup() {
 	/**
 	 *     @param array $args {
 	 *     An array of custom-header support arguments.
@@ -22,26 +22,26 @@ function RedPro_custom_header_setup() {
 	 *                                          the Appearance > Header screen.
 	 * }
 	 */
-	add_theme_support( 'custom-header', apply_filters( 'RedPro_custom_header_args', array(
+	add_theme_support( 'custom-header', apply_filters( 'redpro_custom_header_args', array(
 		'default-text-color'     => 'fff',
 		'width'                  => 1260,
 		'height'                 => 240,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'RedPro_header_style',
-		'admin-head-callback'    => 'RedPro_admin_header_style',
-		'admin-preview-callback' => 'RedPro_admin_header_image',
+		'wp-head-callback'       => 'redpro_header_style',
+		'admin-head-callback'    => 'redpro_admin_header_style',
+		'admin-preview-callback' => 'redpro_admin_header_image',
 	) ) );
 }
-add_action( 'after_setup_theme', 'RedPro_custom_header_setup' );
+add_action( 'after_setup_theme', 'redpro_custom_header_setup' );
 
-if ( ! function_exists( 'RedPro_header_style' ) ) :
+if ( ! function_exists( 'redpro_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog
  *
- * @see RedPro_custom_header_setup().
+ * @see redpro_custom_header_setup().
  *
  */
-function RedPro_header_style() {
+function redpro_header_style() {
 	$text_color = get_header_textcolor();
 
 	// If no custom color for text is set, let's bail.
@@ -50,7 +50,7 @@ function RedPro_header_style() {
 
 	// If we get this far, we have custom styles.
 	?>
-	<style type="text/css" id="RedPro-header-css">
+	<style type="text/css" id="redpro-header-css">
 	<?php
 		// Has the text been hidden?
 		if ( ! display_header_text() ) :
@@ -72,18 +72,18 @@ function RedPro_header_style() {
 	</style>
 	<?php
 }
-endif; // RedPro_header_style
+endif; // redpro_header_style
 
 
-if ( ! function_exists( 'RedPro_admin_header_style' ) ) :
+if ( ! function_exists( 'redpro_admin_header_style' ) ) :
 /**
  * Style the header image displayed on the Appearance > Header screen.
  *
- * @see RedPro_custom_header_setup()
+ * @see redpro_custom_header_setup()
  */
-function RedPro_admin_header_style() {
+function redpro_admin_header_style() {
 ?>
-	<style type="text/css" id="RedPro-admin-header-css">
+	<style type="text/css" id="redpro-admin-header-css">
 	.appearance_page_custom-header #headimg {
 		background-color: #000;
 		border: none;
@@ -106,15 +106,15 @@ function RedPro_admin_header_style() {
 	</style>
 <?php
 }
-endif; // RedPro_admin_header_style
+endif; // redpro_admin_header_style
 
-if ( ! function_exists( 'RedPro_admin_header_image' ) ) :
+if ( ! function_exists( 'redpro_admin_header_image' ) ) :
 /**
  * Create the custom header image markup displayed on the Appearance > Header screen.
  *
- * @see RedPro_custom_header_setup()
+ * @see redpro_custom_header_setup()
  */
-function RedPro_admin_header_image() {
+function redpro_admin_header_image() {
 ?>
 	<div id="headimg">
 		<?php if ( get_header_image() ) : ?>
@@ -124,4 +124,4 @@ function RedPro_admin_header_image() {
 	</div>
 <?php
 }
-endif; // RedPro_admin_header_image
+endif; // redpro_admin_header_image

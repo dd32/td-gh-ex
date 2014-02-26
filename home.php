@@ -43,15 +43,11 @@ $options = get_option( 'faster_theme_options' );
               <h5><a href="<?php the_permalink(); ?>">
                 <?php the_title(); ?>
                 </a></h5>
+             </div>
+              <?php redpro_entry_meta(); ?>
+              <div class="clear-fix"></div>
+			  <?php the_tags(); ?>
             </div>
-            <div class="post-category">
-              <?php $category = get_the_category();  ?>
-              POST IN: <a href="<?php echo get_category_link($category[0]->term_id ); ?>"><?php echo $category[0]->cat_name; ?></a> </div>
-            <div class="post-author"> BY:
-              <?php the_author_posts_link(); ?>
-            </div>
-            <div class="post-comment"> COMMENT: <a href="#"><?php echo get_comments_number(); ?></a> </div>
-          </div>
           
           <!--end / post-meta--> 
           
@@ -78,8 +74,8 @@ $options = get_option( 'faster_theme_options' );
       <?php endwhile; endif; ?>
       <?php wp_reset_query();?>
       <ul class="pagecount">
-        <?php if (function_exists("RedPro_paginate"))
-   		 RedPro_paginate($query->max_num_pages); ?>		
+        <?php if (function_exists("redpro_paginate"))
+   		 redpro_paginate($query->max_num_pages); ?>		
       </ul>
       
       <!--end / article--> 

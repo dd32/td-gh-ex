@@ -8,12 +8,12 @@ get_header(); ?>
     <div class="row">
       <div class="col-md-6  col-sm-6 ">
         <h1>
-          <?php RedPro_title() ?>
+          <?php redpro_title() ?>
         </h1>
       </div>
       <div class="col-md-6  col-sm-6 ">
         <ol class="breadcrumb  pull-right">
-          <?php RedPro_breadcrumbs(); ?>
+          <?php redpro_breadcrumbs(); ?>
         </ol>
       </div>
     </div>

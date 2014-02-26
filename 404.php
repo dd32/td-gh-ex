@@ -7,7 +7,7 @@
       </div>
       <div class="col-md-6  col-sm-6 ">
         <ol class="breadcrumb  pull-right">
-          <?php RedPro_breadcrumbs(); ?>
+          <?php redpro_breadcrumbs(); ?>
         </ol>
       </div>
     </div>
@@ -21,7 +21,7 @@
       <div class="col-md-8 main">
         <div class="page-content">
           <p class="error-message">
-            <?php _e( 'It looks like nothing was found at this location. May be try a search?', 'RedPro' ); ?>
+            <?php _e( 'It looks like nothing was found at this location. May be try a search?', 'redpro' ); ?>
           </p>
           <?php get_search_form(); ?>
         </div>

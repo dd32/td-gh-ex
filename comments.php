@@ -16,13 +16,13 @@ if ( post_password_required() )
 	<?php if ( have_comments() ) : 	?>
     <h2 class="comments-title">
 		<?php
-			printf( _n( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'RedPro' ),
+			printf( _n( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'redpro' ),
 				number_format_i18n( get_comments_number() ), get_the_title() );
 		?>
 	</h2>
     <ul class="">
     <?php	
-	wp_list_comments( array( 'callback' => 'RedPro_comment', 'style' => 'ul' ) ); ?>
+	wp_list_comments( array( 'callback' => 'redpro_comment', 'style' => 'ul' ) ); ?>
     </ul>
        <?php paginate_comments_links(); ?>     
 	<?php endif; // have_comments() ?>

@@ -12,7 +12,7 @@ get_header(); ?>
     <div class="row">
       <div class="col-md-8 main">
         <header class="page-header">
-          <h1><?php printf( __( 'Search Results for: %s', 'RedPro' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+          <h1><?php printf( __( 'Search Results for: %s', 'redpro' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
         </header>
         <?php if (have_posts() ) : ?>
         <?php while (have_posts()) : the_post(); ?>
@@ -39,23 +39,9 @@ get_header(); ?>
                   <?php the_title(); ?>
                   </a></h5>
               </div>
-              <div class="post-category"> POST IN:
-                <?php  
-					$the_cat = get_the_category();  
-					$count=0;  
-					if ($the_cat) {  
-						foreach($the_cat as $cat) {  
-							$count++;  
-							echo '<a href="'.get_category_link($cat->cat_ID).'">'.$cat->cat_name.'</a>';  
-							if( $count == 1 ) break;  
-						}  
-					}  
-			    ?>
-                <?php echo get_category_link($category[0]->term_id ); ?>"><?php echo $category[0]->cat_name; ?></div>
-              <div class="post-author"> BY:
-                <?php the_author_posts_link(); ?>
-              </div>
-              <div class="post-comment"> COMMENT: <a href="#"><?php echo get_comments_number(); ?></a> </div>
+              <?php redpro_entry_meta(); ?>
+              <div class="clear-fix"></div>
+			  <?php the_tags(); ?>
             </div>
             
             <!--end / post-meta--> 

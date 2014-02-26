@@ -8,13 +8,14 @@ get_header();
   <div class="container">
     <div class="row">
       <div class="col-md-6  col-sm-6 ">
-        <h1>Blog <small>
-          <?php RedPro_title() ?>
-          </small></h1>
+       <p class="redpro-post-title">Blog :
+          <span class="redpro-post-subtitle">
+          <?php redpro_title() ?>
+          </span></p>
       </div>
       <div class="col-md-6  col-sm-6 ">
         <ol class="breadcrumb  pull-right">
-          <?php RedPro_breadcrumbs(); ?>
+          <?php redpro_breadcrumbs(); ?>
         </ol>
       </div>
     </div>

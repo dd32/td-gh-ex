@@ -4,7 +4,7 @@ if (!defined('ABSPATH'))
     exit;
 /**
  * The template for displaying Category Archive pages. 
- * @package RedPro
+ * @package redpro
  */
 get_header(); ?>
 <div class="page-title">
@@ -17,7 +17,7 @@ get_header(); ?>
 		$archives_id = $archives[0]->cat_ID;
 	  ?>
         <?php if ( have_posts() ) : 
-	 		printf( __( '<h1>Archives : %s', 'RedPro' ), '<small>' . get_the_date('M-Y') . '</small></h1>' );
+	 		printf( __( '<p class="redpro-post-title">Archives : %s', 'redpro' ), '<span class="redpro-post-subtitle">' . get_the_date('M-Y') . '</span></p>' );
 		endif; ?>
       </div>
       <div class="col-md-6  col-sm-6 ">
@@ -42,7 +42,7 @@ get_header(); ?>
 <?php 
 					if (function_exists("ompj_pagination"))
 					 ompj_pagination($archives_stories->max_num_pages);
-					//echo RedPro_paginate_links($pagination); ?>
+					//echo redpro_paginate_links($pagination); ?>
           <figure class="feature-thumbnail-large">
             <?php 
 			$id = get_the_ID();
@@ -61,32 +61,12 @@ get_header(); ?>
             
             <div class="post-meta-author">
               <div class="post-author-name">
-                <h5><a href="<?php the_permalink(); ?>" title="View post <?php the_title(); ?>">
-                  <?php the_title(); ?>
-                  </a></h5>
-              </div>
-              <div class="post-category">
-                <?php $category = get_the_category();  ?>
-                POST IN:
-                <?php
-				$count_category=0;
-				foreach($category as $each_category):
-					if($count_category!=0):
-						echo ", ";
-					endif;
-				?>
-                <a href="<?php echo get_category_link($each_category->term_id ); ?>"><?php echo $each_category->cat_name; ?></a>
-                <?php
-				$count_category++;
-				endforeach;
-				?>
-              </div>
-              <div class="post-author"> BY:
-                <?php the_author_posts_link(); ?>
-              </div>
-              <div class="post-comment"> COMMENT: <a href="#"><?php echo get_comments_number(); ?></a> </div>
+                <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+               </div>
+              <?php redpro_entry_meta(); ?>
+              <div class="clear-fix"></div>
+			  <?php the_tags(); ?>
             </div>
-            <?php the_tags(); ?>
             <!--end / post-meta--> 
             
           </div>

@@ -10,7 +10,7 @@ get_header(); ?>
   <div class="container">
     <div class="row">
       <div class="col-md-6  col-sm-6 ">
-        <h1>Author : <small>All posts by <?php echo get_the_author();?></small></h1>
+        <p class="redpro-post-title">Author : <span class="redpro-post-subtitle">All posts by <?php echo get_the_author();?></span></p>
       </div>
       <div class="col-md-6  col-sm-6 ">
         <ol class="breadcrumb  pull-right">
@@ -37,32 +37,12 @@ get_header(); ?>
             
             <div class="post-meta-author">
               <div class="post-author-name">
-                <h5><a href="<?php the_permalink(); ?>" title="View post <?php the_title(); ?>">
-                  <?php the_title(); ?>
-                  </a></h5>
-              </div>
-              <div class="post-category">
-                <?php $category = get_the_category();  ?>
-                POST IN:
-                <?php
-				$count_category=0;
-				foreach($category as $each_category):
-					if($count_category!=0):
-						echo ", ";
-					endif;
-				?>
-                <a href="<?php echo get_category_link($each_category->term_id ); ?>"><?php echo $each_category->cat_name; ?></a>
-                <?php
-				$count_category++;
-				endforeach;
-				?>
-              </div>
-              <div class="post-author"> BY:
-                <?php the_author_posts_link(); ?>
-              </div>
-              <div class="post-comment"> COMMENT: <a href="#"><?php echo get_comments_number(); ?></a> </div>
+                <h5><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></h5>
+               </div>
+              <?php redpro_entry_meta(); ?>
+              <div class="clear-fix"></div>
+			  <?php the_tags(); ?>
             </div>
-            
             <!--end / post-meta--> 
             
           </div>

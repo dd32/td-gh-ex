@@ -1,14 +1,14 @@
 /*
-Theme Name: RedPro
-Theme URI: http://fasterthemes.com/themes/RedPro
+Theme Name: redpro
+Theme URI: http://fasterthemes.com/themes/redpro
 Author: Faster Themes
 Author URI: http://fasterthemes.com/
-Description: RedPro is a Twitter bootstrap based responsive Wordpress theme which can be used for personal or corporate websites.
-Version: 2.06
+Description: redpro is a Twitter bootstrap based responsive Wordpress theme which can be used for personal or corporate websites.
+Version: 2.07
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: Red,left-sidebar,right-sidebar,one-column, two-columns, fluid-layout, responsive-layout,full-width-template,theme-options
-Text Domain: RedPro
+Text Domain: redpro
 This theme, like WordPress, is licensed under the Faster Themes.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
@@ -216,6 +216,14 @@ textarea {
 .top-gutter {
 	margin-top: 65px;
 }
+.redpro-post-title {
+	font-size:40px;
+	margin-top:8px;
+	margin-bottom:0px;
+}
+.redpro-post-subtitle {
+	font-size: 55% !important;
+}
 .page-title {
 	float: left;
 	width: 100%;
@@ -272,6 +280,9 @@ h1 small {
 }
 .gallery-caption {
 	color: #4e0000;
+}
+.clear-fix {
+	clear: both;
 }
 /*============= E N D -- H E A D E R -- C S S ===========*/
 /*==================== M E N U -- C S S =============*/
@@ -614,7 +625,6 @@ h1 small {
 }
 .post-meta-author {
 	overflow: hidden;
-	text-transform: uppercase;
 	font-size: 12px;
 }
 .post-meta-author a {
@@ -1016,7 +1026,7 @@ a.twitter-icon:hover {
 .pagecount li {
 	width: 6%;
 }
-.RedPro_menu .sub-menu {
+.redpro_menu .sub-menu {
 	position: relative !important;
 }
 }
@@ -1097,7 +1107,7 @@ a.twitter-icon:hover {
 /*========= E N D -- E X T R A -- C S S ===========*/
 /* ========= A D D I T I O N A L -- C S S -- S T A R T S ============*/
 .row a {
-	font-weight: 800;
+	font-weight: 700;
 	color: #4E0000;
 }
 .row a:hover, a:focus {
