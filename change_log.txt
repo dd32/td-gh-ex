@@ -46,3 +46,6 @@ Version 2.07
 
 Version 2.08
     i)   Fixed style.css for social icon conflicts with pagination css.
+	
+Version 2.09
+    i)   Fixed WordPress name.
