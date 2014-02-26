@@ -1329,34 +1329,34 @@ function catchkathmandu_theme_options_do_page() {
                                                     
 				</div><!-- #sociallinks -->
                 
-               <?php if ( current_user_can( 'unfiltered_html' ) ) : ?>
-                <!-- Options for Webmaster Tools -->
-                <div id="webmaster">               
-                    <div id="header-footer-codes" class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Header and Footer Codes', 'catchkathmandu' ); ?></a></h3>
-                        <div class="option-content inside">
-                            <div class="row">
-                                <div class="col col-1">
-                                    <?php _e( 'Code to display on Header', 'catchkathmandu' ); ?>
-                                </div>
-                                <div class="col col-2">
-                                     <textarea name="catchkathmandu_options[analytic_header]" id="analytics" rows="7" cols="70" ><?php echo esc_html( $options[ 'analytic_header' ] ); ?></textarea><br /><span class="description"><?php _e('Note: Note: Here you can put scripts from Google, Facebook, Twitter, Add This etc. which will load on Header', 'catchkathmandu' ); ?></span>
-                                </div>
-                            </div><!-- .row -->                                                    
-                            <div class="row">
-                                <div class="col col-1">
-                                    <?php _e('Code to display on Footer', 'catchkathmandu' ); ?>
-                                </div>
-                                <div class="col col-2">
-                                     <textarea name="catchkathmandu_options[analytic_footer]" id="analytics" rows="7" cols="70" ><?php echo esc_html( $options[ 'analytic_footer' ] ); ?></textarea><br /><span class="description"><?php _e( 'Note: Here you can put scripts from Google, Facebook, Twitter, Add This etc. which will load on footer', 'catchkathmandu' ); ?></span>
-                                </div>
-                            </div><!-- .row -->
-                           	<div class="row">
-                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchkathmandu' ); ?>" />
-                          	</div><!-- .row --> 
-                        </div><!-- .option-content -->
-                    </div><!-- .option-container -->  
-                </div><!-- #webmaster -->
+          		<?php if ( current_user_can( 'unfiltered_html' ) ) : ?>
+                    <!-- Options for Webmaster Tools -->
+                    <div id="webmaster">               
+                        <div id="header-footer-codes" class="option-container">
+                            <h3 class="option-toggle"><a href="#"><?php _e( 'Header and Footer Codes', 'catchkathmandu' ); ?></a></h3>
+                            <div class="option-content inside">
+                                <div class="row">
+                                    <div class="col col-1">
+                                        <?php _e( 'Code to display on Header', 'catchkathmandu' ); ?>
+                                    </div>
+                                    <div class="col col-2">
+                                         <textarea name="catchkathmandu_options[analytic_header]" id="analytics" rows="7" cols="70" ><?php echo esc_html( $options[ 'analytic_header' ] ); ?></textarea><br /><span class="description"><?php _e('Note: Note: Here you can put scripts from Google, Facebook, Twitter, Add This etc. which will load on Header', 'catchkathmandu' ); ?></span>
+                                    </div>
+                                </div><!-- .row -->                                                    
+                                <div class="row">
+                                    <div class="col col-1">
+                                        <?php _e('Code to display on Footer', 'catchkathmandu' ); ?>
+                                    </div>
+                                    <div class="col col-2">
+                                         <textarea name="catchkathmandu_options[analytic_footer]" id="analytics" rows="7" cols="70" ><?php echo esc_html( $options[ 'analytic_footer' ] ); ?></textarea><br /><span class="description"><?php _e( 'Note: Here you can put scripts from Google, Facebook, Twitter, Add This etc. which will load on footer', 'catchkathmandu' ); ?></span>
+                                    </div>
+                                </div><!-- .row -->
+                                <div class="row">
+                                    <input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchkathmandu' ); ?>" />
+                                </div><!-- .row --> 
+                            </div><!-- .option-content -->
+                        </div><!-- .option-container -->  
+                    </div><!-- #webmaster -->
                 <?php endif; ?>
 
             </div><!-- #catchkathmandu_ad_tabs -->

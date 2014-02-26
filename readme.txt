@@ -67,11 +67,15 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/catch
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 
 == Changelog ==
+Version 0.5
+* Header Image, Favicon and WebClip icon changed to Catch Kathmandu design
+* Screenshot changed to show the new header image and review button
+* Demo link changed to review link at WordPress.org
+
 Version 0.4
 * Added user capability condition for header and footer codes 
 * Removed WordPress SEO plugin condition in header.php 
 * Changed Favicon default to disabled
-
 
 Version 0.3
 * Fixed UTF character issue in style.css theme description 
