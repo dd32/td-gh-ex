@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BoldR Lite 1.1\n"
-"POT-Creation-Date: 2013-10-02 10:30+0100\n"
-"PO-Revision-Date: 2013-10-02 10:30+0100\n"
+"POT-Creation-Date: 2014-02-26 16:27+0100\n"
+"PO-Revision-Date: 2014-02-26 16:27+0100\n"
 "Last-Translator: \n"
 "Language-Team: Iceable Themes <contact@iceablethemes.com>\n"
-"Language: en_US\n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,7 +23,7 @@ msgstr "404"
 msgid "Page Not Found"
 msgstr "Page Introuvable"
 
-#: ../404.php:22 ../index.php:115 ../page-full-width.php:43 ../page.php:43
+#: ../404.php:22 ../index.php:115 ../page-full-width.php:43 ../page.php:56
 #: ../single.php:136
 msgid "What you are looking for isn't here..."
 msgstr "Ce que vous cherchez n'est pas ici..."
@@ -35,7 +35,7 @@ msgstr "Peut-être qu'une recherche pourrait vous aider ?"
 #: ../comments.php:17
 msgid "This post is password protected. Enter the password to view comments."
 msgstr ""
-"Ce billet est protégé par un mot de passe. Veuillez entrer le mot de passe "
+"Cet article est protégé par un mot de passe. Veuillez entrer le mot de passe "
 "pour voir les commentaires."
 
 #: ../comments.php:24
@@ -59,7 +59,7 @@ msgstr "Commentaires suivants"
 msgid "Comments are closed."
 msgstr "Les commentaires sont fermés."
 
-#: ../footer.php:27
+#: ../footer.php:25
 msgid "Proudly powered by"
 msgstr "Fièrement propulsé par"
 
@@ -81,7 +81,7 @@ msgstr "Sidebar par défaut"
 msgid "Footer"
 msgstr "Pied de page"
 
-#: ../functions.php:295
+#: ../functions.php:291
 msgid "Read More"
 msgstr "Lire la suite"
 
@@ -137,7 +137,7 @@ msgstr "Commentaires Off"
 msgid "by "
 msgstr "par"
 
-#: ../index.php:72 ../page-full-width.php:28 ../page.php:28 ../single.php:40
+#: ../index.php:72 ../page-full-width.php:28 ../page.php:41 ../single.php:40
 msgid "Edit"
 msgstr "Éditer"
 
@@ -145,7 +145,7 @@ msgstr "Éditer"
 msgid "Posted in"
 msgstr "Publié dans"
 
-#: ../index.php:107 ../index.php:114 ../page-full-width.php:42 ../page.php:42
+#: ../index.php:107 ../index.php:114 ../page-full-width.php:42 ../page.php:55
 #: ../single.php:135
 msgid "Not Found"
 msgstr "Introuvable"
@@ -161,15 +161,27 @@ msgstr "Voulez-vous essayer une nouvelle recherche ?"
 
 #: ../index.php:123
 msgid "Previous Posts"
-msgstr "Billets précédents"
+msgstr "Articles précédents"
 
 #: ../index.php:126
 msgid "Next Posts"
-msgstr "Billets suivants"
+msgstr "Articles suivants"
+
+#: ../page.php:29 ../single.php:64
+msgid "Pages:"
+msgstr "Pages :"
+
+#: ../page.php:34 ../single.php:69
+msgid "Next page"
+msgstr "Page suivante"
+
+#: ../page.php:35 ../single.php:70
+msgid "Previous page"
+msgstr "Page précédente"
 
 #: ../sidebar.php:16
 msgid "Recent Posts"
-msgstr "Billets récents"
+msgstr "Articles récents"
 
 #: ../sidebar.php:22
 msgid "Archives"
@@ -178,18 +190,6 @@ msgstr "Archives"
 #: ../sidebar.php:28
 msgid "Meta"
 msgstr "Meta"
-
-#: ../single.php:64
-msgid "Pages:"
-msgstr "Pages :"
-
-#: ../single.php:69
-msgid "Next page"
-msgstr "Page suivante"
-
-#: ../single.php:70
-msgid "Previous page"
-msgstr "Page précédente"
 
 #: ../single.php:89
 msgid "Previous Image"
@@ -201,11 +201,11 @@ msgstr "Image suivante"
 
 #: ../single.php:98 ../single.php:121
 msgid "Previous Post"
-msgstr "Billet précédent"
+msgstr "Article précédent"
 
 #: ../single.php:101 ../single.php:124
 msgid "Next Post"
-msgstr "Billet suivant"
+msgstr "Article suivant"
 
 #: ../functions/icefit-options/settings.php:98
 msgid "Responsive mode"

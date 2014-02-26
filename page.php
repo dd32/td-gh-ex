@@ -25,18 +25,18 @@
 
 				<?php the_content();
 
-					$args = array(
-						'before'           => '<br class="clear" /><div class="paged_nav">' . __('Pages:', 'icefit'),
+					$boldr_link_pages_args = array(
+						'before'           => '<br class="clear" /><div class="paged_nav">' . __('Pages:', 'boldr'),
 						'after'            => '</div>',
 						'link_before'      => '<span>',
 						'link_after'       => '</span>',
 						'next_or_number'   => 'number',
-						'nextpagelink'     => __('Next page', 'icefit'),
-						'previouspagelink' => __('Previous page', 'icefit'),
+						'nextpagelink'     => __('Next page', 'boldr'),
+						'previouspagelink' => __('Previous page', 'boldr'),
 						'pagelink'         => '%',
 						'echo'             => 1
 					);
-					wp_link_pages( $args );
+					wp_link_pages( $boldr_link_pages_args );
 				?><br class="clear" /><?php
 				edit_post_link(__('Edit', 'boldr'), '<span class="editlink">', '</span><br class="clear" />'); ?>
 				<br class="clear" />
