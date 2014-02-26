@@ -85,6 +85,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
+@Version: 1.0.7
+Tag.php added and category bug fixed. 
 @Version: 1.0.6
 Comperison Tab added in options Panel.
 @Version: 1.0.5

@@ -1,17 +1,20 @@
 <?php   
 /**
 * @Theme Name	:	rambo
-* @file         :	category.php
+* @file         :	tag.php
 * @package      :	rambo
 * @author       :	webriti
 * @license      :	license.txt
-* @filesource   :	wp-content/themes/rambo/category.php
+* @filesource   :	wp-content/themes/rambo/tag.php
 */ 
 get_template_part('banner','strip'); ?>
 <div class="container"><!-- Main --> 
 		<div class="row-fluid">
         <div class="span8 Blog_main">
-			<h2><?php  _e( "Category  Archives:", 'rambo'); echo single_cat_title( '', false ); ?></h2>
+			<h2><?php  _e( "Tag  Archives:", 'rambo'); echo single_tag_title( '', false ); ?></h2>
+			<?php if ( tag_description() ) : // Show an optional tag description ?>
+				<p><?php echo tag_description(); ?></p>
+			<?php endif; ?>
 			<?php  while(have_posts()): the_post();?>
 			<div class="blog_single_post">
 				
