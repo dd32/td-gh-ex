@@ -57,6 +57,8 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version: 1.3.6.9
+1.Removed Confliction with Webriti Coming Soon. 
 @version: 1.3.6.8
 1.Added Enable/Disable checkbox for Projects on Home.
 @version: 1.3.6.7
