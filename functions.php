@@ -68,7 +68,7 @@ register_sidebar( array(
 		'name' => __( ' Sidebar', 'sis_spa' ),
 		'id' => 'sidebar-primary',
 		'description' => __( 'The primary widget area', 'sis_spa' ),
-		'before_widget' => ' <div>',
+		'before_widget' => '<div class="widget">',
 		'after_widget' => '</div>',
 		'before_title' => ' <div id="widget-title" class="span12"><h4 class="spa-widget-title">',
 		'after_title' => '</h4></div>',

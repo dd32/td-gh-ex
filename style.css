@@ -3,7 +3,7 @@
   Theme URI: http://webriti.com/spasalon-lite-description/
 * Description: A responsive theme for SPA SALON and BEAUTY SALON type of business that uses multiple nav menus, right-sidebar,Featured Slider and Beautifully designed home page all manage via option panel.
 It has a pixel-perfect design that is great for any health care ,salons , spas etc related services who wants a new look for their site.
-* Version: 1.3.7
+* Version: 1.3.8
 * Author: webriti
 * Author URI: http://www.webriti.com
 * Tags: pink, white, full-width-template, threaded-comments, right-sidebar, one-column, two-columns, fixed-layout, custom-menu, sticky-post, theme-options, translation-ready, responsive-layout
@@ -947,22 +947,31 @@ display: block;
 	height: 50px;
 }
 
-#widget-title {
-    
+#widget-title{    
     border-radius: 0 0 0 0;
     margin-bottom: 27px;
-    padding-left: 15px;
+	padding-left: 15px;
     padding-right: 10px;
 	margin-left: 0px;
 }
-.spa-widget-title {
+.spa-widget-title{
     color: #4a4849;
     font-family: roboto;
     font-size: 18px;
     font-style: normal;
     line-height: 30px;
+	padding-left: 15px;	
 }
-
+.widgettitle{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: #4a4849;
+    font-family: roboto;
+    font-size: 18px;
+    font-style: normal;
+    line-height: 30px;
+	padding-left: 15px;	
+}
 .sidebar-thumb{
 	/* margin-bottom: 22px; */
 	margin-left: 0px;
@@ -2954,7 +2963,7 @@ article.sticky .featured-post {
 
 #sidebar ul li a,.textwidget{ color:#7A8082; font-family:roboto;font-size:12px; }
 #sidebar ul li a:hover{ font-family:roboto;font-size:12px;}
-#sidebar ul { margin-bottom:25px; margin-left:0px;word-wrap:break-word;word-break:break-all; ms-word-wrap: break-word;}
+.widget_archive ul,#sidebar ul,.widget_categories ul,.widget_recent_comments  ul{ margin-bottom:25px; margin-left:0px;word-wrap:break-word;word-break:break-all; ms-word-wrap: break-word;}
 
 /*css for table*/
 

@@ -57,6 +57,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
+@ Version: 1.3.8
+1.WordPress Widgets managed.
 @ Version: 1.3.7
 1.Small bug fixed of typo color picker .
 @ Version: 1.3.6
