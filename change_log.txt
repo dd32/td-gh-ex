@@ -43,3 +43,6 @@ Version 2.07
     i)   Fixes in header.php.
 	ii)  Fixes in functions.php
 	iii) Fixes in the localization of strings
+
+Version 2.08
+    i)   Fixed style.css for social icon conflicts with pagination css.

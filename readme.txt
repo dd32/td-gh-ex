@@ -7,7 +7,7 @@ Theme URI: http://fasterthemes.com/themes/redpro
 Author: Faster Themes
 Author URI: http://fasterthemes.com/
 Description: redpro is a Twitter bootstrap based responsive Wordpress theme which can be used for personal or corporate websites.
-Version: 2.07
+Version: 2.08
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: Red,left-sidebar,right-sidebar,one-column, two-columns, fluid-layout, responsive-layout,full-width-template,theme-options
