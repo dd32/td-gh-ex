@@ -140,7 +140,7 @@ address a:hover{color:#FF9}
 .jumbotron_foot_sid h5, .jumbotron_foot_sid .h5{font-size:18px}
 }
 #colophon{padding:30px; background-color:#111; color:#555}
-#colophon a, a:hover{color:#FFF}
+#colophon a:hover{color:#FFF}
 h1, h2{font-family:"Aclonica",Helvetica,Arial,sans-serif; font-weight:500; line-height:1.1; color:inherit; text-shadow:#000 0px 0px 1px}
 h3{font-family:Arial,sans-serif; font-weight:bold; color:inherit; text-shadow:#dadada 0px 0px 1px}
 h4, h5, h6{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; font-weight:500; line-height:1.1; color:inherit; color:#ddd; text-shadow:#000 0px 0px 1px}

@@ -130,6 +130,7 @@ function athenea_print_ie_scripts() {
  <script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.min.js" type="text/javascript"></script>
  <script src="<?php echo get_template_directory_uri(); ?>/js/respond.min.js" type="text/javascript"></script>
 <![endif]-->
+<link href='http://fonts.googleapis.com/css?family=Nunito:300|Aclonica' rel='stylesheet' type='text/css'>
 <?php
 }
 add_action( 'wp_head', 'athenea_print_ie_scripts', 11 );
