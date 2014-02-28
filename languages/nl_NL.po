@@ -1,0 +1,260 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: BlueGray v1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2014-02-28 09:42:51+0000\n"
+"Last-Translator: Guido van der Leest\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: Dutch\n"
+"X-Poedit-Country: NETHERLANDS\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: 404.php:10
+#: search.php:30
+#@ bluegray
+msgid "Nothing Found"
+msgstr "Niets gevonden"
+
+#: 404.php:11
+#: archive.php:41
+#: index.php:32
+#: search.php:31
+#@ bluegray
+msgid "Sorry, no posts matched your criteria."
+msgstr "Sorry, er zijn helaas geen berichten gevonden."
+
+#: archive.php:13
+#@ bluegray
+msgid "Archive"
+msgstr "Archief"
+
+#: archive.php:15
+#@ bluegray
+msgid "Daily Archives"
+msgstr "Dag Archieven"
+
+#: archive.php:17
+#@ bluegray
+msgid "Monthly Archives"
+msgstr "Maand Archieven"
+
+#: archive.php:19
+#@ bluegray
+msgid "Yearly Archives"
+msgstr "Jaar Archieven"
+
+#: archive.php:21
+#@ bluegray
+msgid "Author Archives"
+msgstr "Auteur Archieven"
+
+#: archive.php:23
+#@ bluegray
+msgid "Tag Archives"
+msgstr "Tag Archieven"
+
+#: archive.php:28
+#: index.php:19
+#: search.php:16
+#@ bluegray
+msgid "Permalink to "
+msgstr "Permalink naar "
+
+#: archive.php:31
+#: index.php:22
+#: search.php:19
+#: single.php:17
+#@ bluegray
+msgid "Posted on "
+msgstr "Geplaatst op "
+
+#: archive.php:45
+#: index.php:36
+#: search.php:37
+#@ bluegray
+msgid "&laquo; Older posts"
+msgstr "&laquo; Oudere berichten"
+
+#: archive.php:46
+#: index.php:37
+#: search.php:38
+#@ bluegray
+msgid "Newer posts &raquo;"
+msgstr "Nieuwere berichten &raquo;"
+
+#: functions.php:103
+#@ bluegray
+msgid "Primary Sidebar"
+msgstr "Hoofd Sidebar"
+
+#: functions.php:105
+#: functions.php:115
+#: functions.php:125
+#: functions.php:136
+#: functions.php:146
+#: functions.php:156
+#: functions.php:166
+#@ bluegray
+msgid "Select widgets from the right-hand side."
+msgstr "Selecteer widgets van de rechterkant."
+
+#: functions.php:180
+#@ bluegray
+msgid "Read More &raquo;"
+msgstr "Lees Meer &raquo;"
+
+#: functions.php:197
+#@ bluegray
+msgid "Boats"
+msgstr "Boten"
+
+#: index.php:15
+#@ bluegray
+msgid "Featured post"
+msgstr "Aanbevolen bericht"
+
+#: page-full.php:21
+#: page.php:20
+#: single.php:32
+#@ bluegray
+msgid "Edit"
+msgstr "Bewerk"
+
+#: search.php:12
+#, php-format
+#@ bluegray
+msgid "Search Results for: %s"
+msgstr "Zoekresultaat voor: %s"
+
+#: single.php:24
+#@ bluegray
+msgid "Posted in "
+msgstr "Geplaatst in "
+
+#: comments.php:37
+#@ bluegray
+msgid "&laquo; Older Comments"
+msgstr "&laquo; Oudere Reacties"
+
+#: comments.php:38
+#@ bluegray
+msgid "Newer Comments &raquo;"
+msgstr "Nieuwere Reacties &raquo;"
+
+#: comments.php:43
+#@ bluegray
+msgid "Comments are closed"
+msgstr "Reageren is niet mogelijk"
+
+#: functions.php:144
+#@ bluegray
+msgid "Footer Sidebar Right"
+msgstr "Footer Sidebar Rechts"
+
+#: functions.php:164
+#@ bluegray
+msgid "Footer Sidebar Left"
+msgstr "Footer Sidebar Links"
+
+#: functions.php:18
+#@ bluegray
+msgid "Primary Navigation"
+msgstr "Hoofdmenu"
+
+#: comments.php:18
+#, php-format
+#@ bluegray
+msgid "1 response on %2$s"
+msgid_plural "%1$s responses on %2$s"
+msgstr[0] "1 reactie op %2$s"
+msgstr[1] "%1$s reacties op %2$s"
+
+#: functions.php:206
+#: functions.php:212
+#@ bluegray
+msgid "Logo"
+msgstr "Logo"
+
+#: functions.php:208
+#@ bluegray
+msgid "Upload a logo to replace blogname and description in header"
+msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
+
+#: archive.php:31
+#: index.php:22
+#: search.php:19
+#: single.php:17
+#@ bluegray
+msgid "By "
+msgstr "Door "
+
+#: functions.php:113
+#@ bluegray
+msgid "Homepage Sidebar Right"
+msgstr "Homepage Sidebar Rechts"
+
+#: functions.php:134
+#@ bluegray
+msgid "Homepage Sidebar Left"
+msgstr "Homepage Sidebar Links"
+
+#: archive.php:33
+#: index.php:24
+#: search.php:21
+#: single.php:19
+#@ bluegray
+msgid "Leave a response"
+msgstr "Plaats een reactie"
+
+#: archive.php:33
+#: index.php:24
+#: search.php:21
+#: single.php:19
+#@ bluegray
+msgid "% responses"
+msgstr "% reacties"
+
+#: archive.php:33
+#: index.php:24
+#: search.php:21
+#: single.php:19
+#@ bluegray
+msgid "1 response"
+msgstr "1 reactie"
+
+#: footer.php:44
+#@ bluegray
+msgid "Copyright"
+msgstr "Copyright"
+
+#: footer.php:45
+#@ bluegray
+msgid "WordPress Blog Platform"
+msgstr "WordPress Blog Platform"
+
+#: footer.php:45
+#@ bluegray
+msgid "Proudly powered by WordPress"
+msgstr "Proudly powered by WordPress"
+
+#: functions.php:123
+#@ bluegray
+msgid "Homepage Sidebar Middle"
+msgstr "Homepage Sidebar Midden"
+
+#: functions.php:154
+#@ bluegray
+msgid "Footer Sidebar Middle"
+msgstr "Footer Sidebar Midden"
+

@@ -1,0 +1,7 @@
+CHANGELOG
+=========
+
+BlueGray version 1.0 - march 2014 
+- first stable release
+
+
