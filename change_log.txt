@@ -49,3 +49,6 @@ Version 2.08
 	
 Version 2.09
     i)   Fixed WordPress name.
+
+Version 3.0
+    i)   Fixed pagination in mobile screens.
