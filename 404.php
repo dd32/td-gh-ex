@@ -5,7 +5,6 @@
 ?>
 
 <?php get_header(); ?>
-<div id="main-content">
 <div id="content">
 		<h3 class="page-title"><?php _e( 'Nothing Found', 'bluegray' ); ?></h3>
 			<p><?php _e('Sorry, no posts matched your criteria.', 'bluegray'); ?></p>

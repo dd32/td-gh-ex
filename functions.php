@@ -23,7 +23,7 @@
 
 	// Custom header	
 		$args = array(		
-		'width' => 1650,
+		'width' => 1700,
 		'height' => 400,
 		'default-image' => get_template_directory_uri() . '/images/boats.jpg',
 		'header-text' => false,

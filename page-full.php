@@ -6,7 +6,6 @@
 ?>
 
 <?php get_header(); ?>
-<div id="main-content">
 <div id="content-full">
 
 	<?php while ( have_posts() ) : the_post(); ?>

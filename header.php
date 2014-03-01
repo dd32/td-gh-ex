@@ -36,7 +36,6 @@
 				<h4><?php bloginfo('description'); ?></h4> 
 			<?php endif; ?>
 		</div>
-	
 	</div>
 
 	<div id="header-second">
@@ -52,8 +51,10 @@
 		<?php } ?> 
 	</div>
 
+<div id="main-content">
+
+	<?php if( is_home() || is_front_page() ) {?>
 	<?php if ( is_active_sidebar( 'homepage-right' ) || is_active_sidebar( 'homepage-middle' ) || is_active_sidebar( 'homepage-left' ) ) {?> 
-	<?php if( is_home() || is_front_page() ) :?>
 	<div id="header-widgets">
 
 		<div class="home-left"> 
@@ -83,5 +84,5 @@
 			<?php endif; ?> 
 		</div>
 	</div>
-	<?php endif;?>
+	<?php } ?>	
 	<?php } ?>

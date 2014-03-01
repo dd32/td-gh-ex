@@ -5,7 +5,6 @@
 ?>
 
 <?php get_header(); ?>
-<div id="main-content">
 <div id="content">
 
 	<?php if (have_posts()) : $count = 0; ?>

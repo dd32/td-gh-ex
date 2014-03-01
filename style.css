@@ -1,7 +1,7 @@
 /*
 Theme Name: BlueGray
 Theme URI: http://www.guidovanderleest.nl/bluegray
-Version: 1.0
+Version: 1.1
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: BlueGray is a free, basic, clean, minimalistic, responsive, mobile friendly, WordPress theme for Private or Business website. Primary sidebar, 3 widget-areas underneath header-image, 3 widget-area's in footer, full width custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
@@ -77,7 +77,7 @@ table {
 /* GENERAL */
 body {background: #eee; font-family: 'Open Sans', sans-serif; font-size:1em; color:#333; line-height:1.5em;}
 #container {width: 100%; border:0; margin:0; padding:0; word-wrap: break-word;}
-#main-content {max-width: 1200px; margin: 0 auto 0; padding:0; text-align: left; word-wrap: break-word;}
+#main-content {max-width: 1160px; margin: 0 auto 0; padding:0 20px 0; text-align: left; word-wrap: break-word;}
 #main-content:after {content:''; display:block; clear:both;}
 #content {width: 56%; float:left; padding: 20px 4% 20px 0; word-wrap: break-word;}
 #content-full {width: 100%; float:left; padding:20px 0; word-wrap: break-word;}
@@ -120,7 +120,7 @@ select {max-width:100%;}
 #footer input[type="submit"]:hover {background:#ddd; color:#333;}
 
 /* HEADER */
-#header-first {max-width:1200px;margin:0 auto 0; padding:0; background:none;}
+#header-first {max-width:1160px; margin:0 auto 0; padding:0 20px 0; background:none;}
 #header-first:after {content:''; display:block; clear:both;}
 #header-first .logo {width:100%; float:left; text-align:center; padding: 10px 0;}
 #header-first .logo h1 a:hover {text-decoration:none; color:#333;}
@@ -134,9 +134,9 @@ select {max-width:100%;}
 /* HEADER MENU */
 .nav-head {background:#333;margin:0; clear:both; padding:0; border:0;}
 .nav-head select {display:none;}
-.nav-head ul {max-width:1200px; margin:0 auto 0; padding:0; }
+.nav-head ul {max-width:1160px; margin:0 auto 0; padding:0 20px 0;}
 .nav-head ul li {list-style-type: none; display: inline-block; position: relative;}
-.nav-head ul li a {text-decoration: none; color: #ddd; background: none; padding: 10px 20px 10px 0; display: inline-block;}
+.nav-head ul li a {text-decoration: none; color: #ddd; background: none; padding: 10px 10px 10px; display: inline-block;}
 .nav-head ul li a:hover {text-decoration:underline;}
 .menu .current_page_item > a, .menu .current_page_parent > a {text-decoration:underline;}
 
@@ -150,7 +150,7 @@ select {max-width:100%;}
 
 
 /* HOMEPAGE WIDGET AREA */
-#header-widgets {max-width: 1200px; margin: 0 auto 0; padding:0; background:none; border-bottom:2px solid #00aaff;}
+#header-widgets {width: 100%; margin: 0 auto 0; padding:0; background:none; border-bottom:2px solid #ddd;}
 #header-widgets:after {content:''; display:block; clear:both;}
 
 .home-left {float: left; width: 32%; margin:20px 0 0; padding:0; word-wrap: break-word;}
@@ -229,7 +229,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 
 /* FOOTER */
 #footer {clear:both; width:100%; background:#333; color:#ddd; padding:0; margin:0;}
-#footer .footer-content {max-width:1200px; padding:0; margin:0 auto 0;}
+#footer .footer-content {max-width:1160px; padding:0 20px 0; margin:0 auto 0;}
 #footer .site-info {text-align:center; clear:both; padding:5px 0 20px; background:none; color:#ddd; border:0;}
 #footer .site-info a{color:#ddd;}
 
