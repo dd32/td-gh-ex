@@ -264,19 +264,18 @@ jQuery(document).ready(function($) {
 	startSetInterval();
 	
 	// hover behaviour
-	$('.ibanner #da-slider').hover(function() {
+	$('.ibanner #da-slider, .sldprev, .sldnext').hover(function() {
 	  	clearInterval(slidetimer);
 		console.log("stop timer");
 	},function() {
 	  	startSetInterval();
+		console.log("start timer");
 	});
 	
  
   	var theslider = $('#da-slider')
 	var slideCount = $('#da-slider .da-slide').length;
-	var slideWidth = $('#slider ul li').width();
-	var slideHeight = $('#slider ul li').height();
-	var sliderUlWidth = slideCount * slideWidth;
+	var clickstat = 0;
 	
 
 	var $slidernav	= $( '<nav class="da-dots"/>' );
@@ -318,18 +317,41 @@ jQuery(document).ready(function($) {
     };
 	
 	$('.da-dots > span').click(function() {
-		var index = $(this).parent().find('> ' + this.tagName).index(this);
-		currentslide = index+1;
-		moveRight()
+		if (clickstat == 0)
+		{
+			var index = $(this).parent().find('> ' + this.tagName).index(this);
+			currentslide = index+1;
+			moveRight();
+			clickstat = 1;			
+			setTimeout(function () {
+				clickstat = 0;
+			}, 1000);			
+		}
 	});	
 
     $('.sldprev').click(function ( event ) {
-        moveLeft();
+		if (clickstat == 0)
+		{		
+			moveLeft();
+			
+			clickstat = 1;			
+			setTimeout(function () {
+				clickstat = 0;
+			}, 1000);			
+		}
 		event.preventDefault();
     });
 
     $('.sldnext').click(function ( event ) {
-        moveRight();
+		if (clickstat == 0)
+		{		
+			moveRight();
+			
+			clickstat = 1;			
+			setTimeout(function () {
+				clickstat = 0;
+			}, 1000);
+		}
 		event.preventDefault();
     });
 	
@@ -344,7 +366,7 @@ jQuery(document).ready(function($) {
 		$(".da-dots > span").css("width", 100/totalslide+"%");
 		$(".da-dots > span").append('<span></span>');
 	}
-	
+
 	setTimeout(moveRight(),1000);	
 		
 })(jQuery);
