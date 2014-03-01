@@ -746,11 +746,13 @@ class Kadence_Image_Grid_Widget extends WP_Widget {
   }
 }
 
-function kad_widget_uploadScript(){
+function kadence_widget_uploadScript($hook){
+   if( 'widgets.php' != $hook )
+        return;
   wp_enqueue_media();
-  wp_enqueue_script('adsScript', get_template_directory_uri() . '/assets/js/widget_upload.js');
+  wp_enqueue_script('kadadsScript', get_template_directory_uri() . '/assets/js/widget_upload.js');
 }
-add_action('admin_enqueue_scripts', 'kad_widget_uploadScript');
+add_action('admin_enqueue_scripts', 'kadence_widget_uploadScript');
 
 class Simple_About_With_Image extends WP_Widget{
 

@@ -48,6 +48,9 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 2.0.7 =
+* Small Fix
+
 = Version: 2.0.6 =
 * Small css fix for author image
 * Update woocommerce template files
