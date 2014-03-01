@@ -1,7 +1,7 @@
 /*
 Theme Name: BlueGray
 Theme URI: http://www.guidovanderleest.nl/bluegray
-Version: 1.1
+Version: 1.2
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: BlueGray is a free, basic, clean, minimalistic, responsive, mobile friendly, WordPress theme for Private or Business website. Primary sidebar, 3 widget-areas underneath header-image, 3 widget-area's in footer, full width custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
@@ -110,13 +110,11 @@ dl {margin: 10px;}
 dt {margin: 0; font-size:1.25em; font-weight:bold;}
 dd {margin: 0 0 0 10px;}
 
-input, select, textarea {border:1px solid #ddd; padding: 2px; background: #f8f8f8;font-size:1em; font-family: 'Open Sans', sans-serif;}
+input, select, textarea {border:1px solid #ddd; padding: 2px; background: #f8f8f8; color:#333; font-size:1em; font-family: 'Open Sans', sans-serif;}
 input[type="submit"]{cursor:pointer;	border:0; -webkit-appearance:none; padding:2px 10px; background: #00aaff; color:#fff;}
 input[type="submit"]:hover {background: #333;}
 select {max-width:100%;}
 
-#footer input {color:#333;}
-#footer input[type="submit"]{color:#fff;}
 #footer input[type="submit"]:hover {background:#ddd; color:#333;}
 
 /* HEADER */
@@ -132,7 +130,7 @@ select {max-width:100%;}
 
 
 /* HEADER MENU */
-.nav-head {background:#333;margin:0; clear:both; padding:0; border:0;}
+.nav-head {background:#333; margin:0; clear:both; padding:0; border:0;}
 .nav-head select {display:none;}
 .nav-head ul {max-width:1160px; margin:0 auto 0; padding:0 20px 0;}
 .nav-head ul li {list-style-type: none; display: inline-block; position: relative;}
@@ -230,7 +228,7 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 /* FOOTER */
 #footer {clear:both; width:100%; background:#333; color:#ddd; padding:0; margin:0;}
 #footer .footer-content {max-width:1160px; padding:0 20px 0; margin:0 auto 0;}
-#footer .site-info {text-align:center; clear:both; padding:5px 0 20px; background:none; color:#ddd; border:0;}
+#footer .site-info {text-align:center; clear:both; padding:15px 0 15px; margin:0 auto 0; background:none; color:#ddd; border:0;}
 #footer .site-info a{color:#ddd;}
 
 
@@ -254,14 +252,15 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 	#header-first .logo h4 {padding:0; font-size:1.3em;}
 	#header-second .header-img {width: 100%; height: auto;}
 	#header-widgets {width:100%; border:0; margin:10px 0 0; padding:0;}
+	#footer .footer-content {width:100%; border:0; margin:0; padding:0;}
 	#sidebar {width:100%; border:0; margin:0; padding:0; float:left;}
 	#footer {width:100%; padding:10px 0 0;}
-	.entry-title, .page-title, .widgettitle, #footer .widgettitle, .comments-title {font-size:1.3em; text-align:left;}
+	.post-title, .single-post-title, .page-title, .archive-title, .widgettitle, #footer .widgettitle, .comments-title, .comment-reply-title {font-size:1.3em; text-align:left;}
 	.comment-body {border:0; padding:0;}
 	.home-right, .home-middle, .home-left {width:100%; border:0; margin:0; padding:0; float:left;} 
 	.footer-right, .footer-middle, .footer-left {width:100%; border:0; margin:0; padding:0; float:left;} 
 	.widget, #footer .widget {padding:5px 5% 5px; margin: 0 0 10px;} 
 	.nav-head ul {display: none;} 
-	.nav-head {padding:0; border:0;}
+	.nav-head {padding:0; margin:0; border:0;}
 	.nav-head select {display: block; width: 100%; height: 35px; margin: 0 auto 0; font-size: 1em; line-height: 1.2em; color: #fff; background:#333; border:0;}
 }

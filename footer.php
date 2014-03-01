@@ -9,6 +9,8 @@
 <div id="footer">
 <div class="footer-content">
 
+	<?php if ( is_active_sidebar( 'footer-right' ) || is_active_sidebar( 'footer-middle' ) || is_active_sidebar( 'footer-left' ) ) {?> 
+
 	<div class="footer-left"> 
 
 		<?php if ( is_active_sidebar( 'footer-left' ) ) : ?>
@@ -39,6 +41,7 @@
 		<?php endif; ?> 
 	</div>
 
+	<?php } ?>	
 
 	<div class="site-info">
 		<?php _e('Copyright', 'bluegray'); ?> <?php echo date('Y'); ?>  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> - 
