@@ -26,9 +26,21 @@ if (class_exists('woocommerce')) {
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
 // Redefine woocommerce_output_related_products()
-function woocommerce_output_related_products() {
-woocommerce_related_products(4,4); // Display 4 products in rows of 4
+function kad_woo_related_products_limit() {
+  global $product, $woocommerce;
+  $related = $product->get_related();
+  $args = array(
+    'post_type'           => 'product',
+    'no_found_rows'       => 1,
+    'posts_per_page'      => 4,
+    'ignore_sticky_posts'   => 1,
+    //'orderby'               => $orderby,
+    'post__in'              => $related,
+    'post__not_in'          => array($product->id)
+  );
+  return $args;
 }
+add_filter( 'woocommerce_related_products_args', 'kad_woo_related_products_limit' );
 // Number of products per page
 add_filter('loop_shop_per_page', 'wooframework_products_per_page');
 if (!function_exists('wooframework_products_per_page')) {

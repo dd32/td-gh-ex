@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Lite Virtue\n"
-"POT-Creation-Date: 2014-03-01 14:24-0700\n"
-"PO-Revision-Date: 2014-03-01 14:24-0700\n"
+"POT-Creation-Date: 2014-02-20 19:42-0700\n"
+"PO-Revision-Date: 2014-02-21 14:20-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: English\n"
@@ -128,7 +128,7 @@ msgstr ""
 
 #: ../lib/authorbox.php:6 ../lib/utils.php:60
 msgid "Latest Posts"
-msgstr ""
+msgstr "Últimos Posts"
 
 #: ../lib/authorbox.php:13 ../lib/authorbox.php:16 ../lib/authorbox.php:20
 #: ../lib/authorbox.php:24 ../lib/authorbox.php:28 ../lib/authorbox.php:32
@@ -386,7 +386,7 @@ msgstr ""
 
 #: ../lib/cleanup.php:182
 msgid "Continued"
-msgstr ""
+msgstr "leia mais"
 
 #: ../lib/comments.php:38 ../templates/comment.php:5
 #, php-format
@@ -401,11 +401,11 @@ msgstr ""
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../lib/custom-woocommerce.php:95 ../templates/header.php:29
+#: ../lib/custom-woocommerce.php:83 ../templates/header.php:29
 msgid "View your shopping cart"
 msgstr ""
 
-#: ../lib/custom-woocommerce.php:96 ../templates/header.php:30
+#: ../lib/custom-woocommerce.php:84 ../templates/header.php:30
 msgid "Your Cart"
 msgstr ""
 
@@ -1371,7 +1371,7 @@ msgstr ""
 
 #: ../templates/home/blog-home.php:74
 msgid "READ MORE"
-msgstr ""
+msgstr "leia mais"
 
 #: ../templates/home/portfolio-carousel.php:2
 msgid "Featured Projects"
@@ -2358,7 +2358,7 @@ msgid ""
 msgstr ""
 
 #: ../themeoptions/options.php:1745
-msgid "Blog Post Defaults"
+msgid "Blog Post Defualts"
 msgstr ""
 
 #: ../themeoptions/options.php:1750
@@ -2687,52 +2687,52 @@ msgstr ""
 msgid "Standard Fonts"
 msgstr ""
 
-#: ../themeoptions/inc/fields/typography/field_typography.php:183
 #: ../themeoptions/inc/fields/typography/field_typography.php:187
+#: ../themeoptions/inc/fields/typography/field_typography.php:191
 msgid "Font style"
 msgstr ""
 
-#: ../themeoptions/inc/fields/typography/field_typography.php:187
+#: ../themeoptions/inc/fields/typography/field_typography.php:191
 msgid "Style"
 msgstr ""
 
-#: ../themeoptions/inc/fields/typography/field_typography.php:213
+#: ../themeoptions/inc/fields/typography/field_typography.php:217
 msgid "Font subsets"
 msgstr ""
 
-#: ../themeoptions/inc/fields/typography/field_typography.php:214
+#: ../themeoptions/inc/fields/typography/field_typography.php:218
 msgid "Subsets"
 msgstr ""
 
-#: ../themeoptions/inc/fields/typography/field_typography.php:214
+#: ../themeoptions/inc/fields/typography/field_typography.php:218
 msgid "Font script"
 msgstr ""
 
-#: ../themeoptions/inc/fields/typography/field_typography.php:232
+#: ../themeoptions/inc/fields/typography/field_typography.php:236
 msgid "Size"
 msgstr ""
 
-#: ../themeoptions/inc/fields/typography/field_typography.php:241
+#: ../themeoptions/inc/fields/typography/field_typography.php:245
 msgid "Height"
 msgstr ""
 
-#: ../themeoptions/inc/fields/typography/field_typography.php:249
+#: ../themeoptions/inc/fields/typography/field_typography.php:253
 msgid "Word Spacing"
 msgstr ""
 
-#: ../themeoptions/inc/fields/typography/field_typography.php:257
+#: ../themeoptions/inc/fields/typography/field_typography.php:261
 msgid "Letter Spacing"
 msgstr ""
 
-#: ../themeoptions/inc/fields/typography/field_typography.php:271
+#: ../themeoptions/inc/fields/typography/field_typography.php:275
 msgid "Backup Font Family"
 msgstr ""
 
-#: ../themeoptions/inc/fields/typography/field_typography.php:291
+#: ../themeoptions/inc/fields/typography/field_typography.php:295
 msgid "Font color"
 msgstr ""
 
-#: ../themeoptions/inc/fields/typography/field_typography.php:618
+#: ../themeoptions/inc/fields/typography/field_typography.php:622
 msgid "Google Webfonts"
 msgstr ""
 
@@ -3147,6 +3147,14 @@ msgid_plural "Tags:"
 msgstr[0] ""
 msgstr[1] ""
 
+#: ../woocommerce/single-product/product-attributes.php:28
+msgid "Weight"
+msgstr ""
+
+#: ../woocommerce/single-product/product-attributes.php:37
+msgid "Dimensions"
+msgstr ""
+
 #: ../woocommerce/single-product/rating.php:23
 #, php-format
 msgid "Rated %s out of 5"
@@ -3204,3 +3212,6 @@ msgstr ""
 #: ../woocommerce/single-product/tabs/description.php:14
 msgid "Product Description"
 msgstr ""
+
+#~ msgid "Read More"
+#~ msgstr "leia mais"

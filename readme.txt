@@ -48,6 +48,13 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 2.0.6 =
+* Small css fix for author image
+* Update woocommerce template files
+* Qtranslate issue
+* Update google fonts to work on more server configurations
+* Fix for carousel on android
+
 = Version: 2.0.5 =
 * Add back ajax cart
 * Qtranslate issue

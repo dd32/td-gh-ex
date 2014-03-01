@@ -51,7 +51,7 @@ class kadence_Nav_Walker extends Walker_Nav_Menu {
 
     $item_output  = $args->before;
     $item_output .= '<a'. $attributes . '>'.$icon;
-    $item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $description . $args->link_after;
+    $item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) .  __($description)  . $args->link_after;
     $item_output .= '</a>';
     $item_output .= $args->after;
 

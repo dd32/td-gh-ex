@@ -1742,7 +1742,7 @@ $this->sections[] = array(
         array(
             'id'=>'info_blog_defaults',
             'type' => 'info',
-            'desc' => __('Blog Post Defualts', 'virtue'),
+            'desc' => __('Blog Post Defaults', 'virtue'),
             ),
         array(
             'id'=>'post_summery_default',

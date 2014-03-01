@@ -15,7 +15,7 @@
 					   		 	?>
 		<div class="home-margin fredcarousel">
 		<div id="hport_carouselcontainer" class="rowtight">
-		<div id="portfolio-carousel" class="clearfix">
+		<div id="portfolio-carousel" class="clearfix caroufedselclass">
 		<?php 
 				$temp = $wp_query; 
 				  $wp_query = null; 
@@ -108,18 +108,6 @@
 									}
 							});
 						};
-						$container.swipe({
-							excludedElements: "button, input, select, textarea, .noSwipe",
-							swipeLeft: function() {
-							    $container.trigger('next', 1);
-							  },
-							  swipeRight: function() {
-							    $container.trigger('prev', 1);
-							  },
-					        tap: function(event, target) {
-					                window.open(jQuery(target).closest('.kad_portfolio_item').find('.kad_portfolio_link').attr('href'), '_self');
-					              }
-					            });
 					function getUnitWidth() {
 					var width;
 					if(jQuery(window).width() <= 480) {
