@@ -177,7 +177,9 @@ function adventure_admin_link() {
 	$wp_admin_bar->add_menu( array( 'id' => 'Adventure_Information', 'title' => __('Theme Information', 'localize_adventure'), 'href' => admin_url( 'themes.php?page=theme_options' ) )); }
 
 // Load up the Localizer so that the theme can be translated
-load_theme_textdomain( 'adventure_localizer', TEMPLATEPATH.'/language' );
+add_action('after_setup_theme', 'my_theme_setup');
+function my_theme_setup(){
+    load_theme_textdomain('adventure_localizer', get_template_directory() . '/languages');}
 
 // The follow code adds a box to posts and pages to upload images for custom backgrounds
 add_action( 'add_meta_boxes', 'featured_background_add_meta_box' );
@@ -597,6 +599,7 @@ function adventure_customize($wp_customize) {
         'soundcloud_setting'            => __('The url link goes in here.', 'localize_adventure'),
         'taglinecolor_setting'		    => '#066ba0',
         'taglinefontstyle_setting'      => 'Default',
+        'tagline_rotation_setting'      => '-1.00',
         'titlecolor_setting'            => '#eee2d6',
         'titlefontstyle_setting'        => 'Default',
         'twitter_setting'               => __('The url link goes in here.', 'localize_adventure'),
@@ -659,6 +662,28 @@ function adventure_customize($wp_customize) {
 		'label'				=> __('Tagline Color', 'localize_adventure'),
 		'section'			=> 'title_tagline',
 		'settings'			=> 'taglinecolor_setting', )));
+    
+    // Rotation of The Tagline
+    $wp_customize->add_control('tagline_rotation_control', array(
+		'label'				=> __('Tagline Rotation', 'localize_adventure'),
+		'priority'			=> 1,
+		'section'			=> 'header_section',
+		'settings'			=> 'tagline_rotation_setting',
+		'type'				=> 'select',
+		'choices'			=> array(
+			'-2.00'			=> '-2.00&deg;',
+			'-1.75'			=> '-1.75&deg;',
+			'-1.50'			=> '-1.50&deg;',
+			'-1.25'			=> '-1.25&deg;',
+			'-1.00'			=> '-1.00&deg;',
+			'-0.75'			=> '-0.75&deg;',
+			'-0.50'			=> '-0.50&deg;',
+			'-0.25'			=> '-0.25&deg;',
+			'0.00'			=> '0.00&deg;',
+			'0.25'			=> '0.25&deg;',
+			'0.50'			=> '0.50&deg;',
+			'0.75'			=> '0.75&deg;',
+			'1.00'			=> '1.00&deg;', ), ));
 
 	// Choose the Different Images for the Banner
 	$wp_customize->add_control('themename_color_scheme', array(
@@ -1004,9 +1029,11 @@ function adventure_inline_css() {
         $featured_background = get_post_meta( get_the_ID(), 'meta-image', true ); if (!empty($featured_background)) echo 'body {background-image:url(' . $featured_background . ');}' . "\n";
 		if ( get_theme_mod('backgroundsize_setting') != 'auto' ) echo '	body.custom-background {background-size:' . get_theme_mod('backgroundsize_setting') . ';}' . "\n";
 		if ( get_theme_mod('backgroundcolor_setting') != '#b4b09d' ) echo '	.contents {background: rgba(' . $r . ',' . $g . ', ' . $b . ', ' .  get_theme_mod('contentbackground_setting') .  ');}' . "\n";
+        if ( get_theme_mod('backgroundcolor_setting') != '#b4b09d' ) echo ' @media only screen and (max-width:55em) { .contents {background: rgba(' . $r . ',' . $g . ', ' . $b . ', .95 );} }' . "\n";
 		if ( ( get_theme_mod('sidebarcolor_setting') != '#000000'  ) || ( get_theme_mod('sidebarbackground_setting') != '.50' ) ) echo '	aside {background: rgba(' . $rs . ',' . $gs . ', ' . $bs . ', ' .  get_theme_mod('sidebarbackground_setting') .  ');}' . "\n";
 		if ( get_theme_mod('titlecolor_setting') != '#eee2d6' ) echo '	.header h1 a {color:' . get_theme_mod('titlecolor_setting') . ';}' . "\n";
 		if ( get_theme_mod('taglinecolor_setting') != '#066ba0' ) echo '	.header h1 i {color:' . get_theme_mod('taglinecolor_setting') . ';}' . "\n";
+		if ( get_theme_mod('tagline_rotation_setting') != '-1.00' ) echo '	.header h1 i {-moz-transform:rotate(' . get_theme_mod('tagline_rotation_setting') . 'deg); transform:rotate(' . get_theme_mod('tagline_rotation_setting') . 'deg);}' . "\n";
 		if ( get_theme_mod('bannerimage_setting') != 'purple.png' ) echo '	.header {background: bottom url(' . get_template_directory_uri() . '/images/' . get_theme_mod('bannerimage_setting') .  ');}'. "\n";
 		if ( get_theme_mod('headerspacing_setting') != '18' ) echo '	.spacing {height:' . get_theme_mod('headerspacing_setting') . 'em;}'. "\n";
 		if ( get_theme_mod('menu_setting') == 'notitle' ) { echo '	.header {position: fixed;margin-top:0px;}' . "\n" . '	.admin-bar .header {margin-top:28px;}' . "\n" . '.header h1:first-child, .header h1:first-child i,  .header img:first-child {display: none;}' . "\n"; }
@@ -1062,11 +1089,12 @@ add_action('wp_head', 'adventure_inline_css');
 //	A safe way of adding javascripts to a WordPress generated page
 if (!function_exists('adventure_js')) {
 	function adventure_js() {
-			// JS at the bottom for fast page loading
-			wp_enqueue_script('adventure-jquery-easing', get_template_directory_uri() . '/js/jquery.easing.js', array('jquery'), '1.3', true);
-            wp_enqueue_script('adventure-menu-scrolling', get_template_directory_uri() . '/js/jquery.menu.scrolling.js', array('jquery'), '1', true);
-			wp_enqueue_script('adventure-scripts', get_template_directory_uri() . '/js/jquery.fittext.js', array('jquery'), '1.0', true);
-			wp_enqueue_script('adventure-fittext', get_template_directory_uri() . '/js/jquery.fittext.sizing.js', array('jquery'), '1', true);  } }
+        // JS at the bottom for fast page loading
+        wp_enqueue_script('adventure-menu-scrolling', get_template_directory_uri() . '/js/jquery.menu.scrolling.js', array('jquery'), '1.1', true);
+        wp_enqueue_script('adventure-main', get_template_directory_uri() . '/js/main.js', array('jquery'), '1.0', true);
+        wp_enqueue_script('adventure-jquery-easing', get_template_directory_uri() . '/js/jquery.easing.js', array('jquery'), '1.3', true);
+        wp_enqueue_script('adventure-scripts', get_template_directory_uri() . '/js/jquery.fittext.js', array('jquery'), '1.1', true);
+        wp_enqueue_script('adventure-doubletaptogo', get_template_directory_uri() . '/js/doubletaptogo.min.js', array('jquery'), '1.0', true); } }
 
 if (!is_admin()) add_action('wp_enqueue_scripts', 'adventure_js');
 
