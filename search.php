@@ -23,7 +23,7 @@
 			</div>
 		<?php endif; ?>
 
-		<h5 class="entry-title-grid"><a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to ', 'gridbulletin'); ?><?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h5>
+		<h5 class="post-title"><a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to ', 'gridbulletin'); ?><?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h5>
 
 		<?php if ( has_post_thumbnail() ) { 
 			the_post_thumbnail('homepage'); 

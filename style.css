@@ -1,7 +1,7 @@
 /*
 Theme Name: GridBulletin
 Theme URI: http://www.guidovanderleest.nl/gridbulletin
-Version: 1.1
+Version: 1.2
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: GridBulletin is a free, basic, clean, minimalistic, responsive, mobile friendly, WordPress theme in bulletin board layout. Grid layout on homepage and archive page, primary sidebar, 3 widget-area's in footer, custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settings page, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
@@ -127,11 +127,11 @@ select {max-width:100%;}
 
 
 /* HEADER MENU */
-.nav-head {background:#0066ff;margin:10px 0 0; clear:both; padding:5px 10px; text-align:left;}
+.nav-head {background:#0066ff;margin:10px 0 0; clear:both; padding:0; text-align:left;}
 .nav-head select {display:none;}
-.nav-head ul {padding:0; margin:0;}
+.nav-head ul {padding:0 10px; margin:0;}
 .nav-head ul li {list-style-type: none; display: inline-block; position: relative;}
-.nav-head ul li a {text-decoration: none; color: #fff; background: none; padding: 5px 10px; display: inline-block;}
+.nav-head ul li a {text-decoration: none; color: #fff; background: none; padding: 10px 10px; display: inline-block;}
 .nav-head ul li a:hover {text-decoration:underline;}
 .menu .current_page_item > a, .menu .current_page_parent > a {text-decoration:underline;}
 
@@ -139,7 +139,7 @@ select {max-width:100%;}
 /* HEADER SUBMENU */
 .nav-head ul ul {display:none; position: absolute; top: 100%; padding: 0;}
 .nav-head ul ul ul {display:none; position: absolute; top: 30%; left: 100%;}
-.nav-head ul ul a {width:12em; background: #ec6500; color: #fff; z-index:999;}
+.nav-head ul ul a {width:12em; background: #ec6500; color: #fff; padding: 5px 10px; z-index:999;}
 .nav-head ul li:hover > ul {display:block;}
 .nav-head ul li ul li {margin:0;}
 
@@ -153,8 +153,7 @@ select {max-width:100%;}
 
 
 /* POST */
-.entry-title {margin: 0; padding: 10px 0;}
-.entry-title-grid {clear:both; margin:5px 0 10px; text-align:center; line-height:1.5em; font-weight:bold;}
+.post-title {clear:both; margin:5px 0 10px; text-align:center; line-height:1.5em; font-weight:bold;}
 .excerpt {margin:0; padding:5px; background:none;}
 .sticky {text-align:center; clear:both; color:#fff; background: #ec6500; margin: 10px 0 10px; padding:5px; border:0;}
 .postmetadata-home {margin:10px 0 0; padding:2px 10px; background: #0066ff; color:#fff;}
@@ -210,15 +209,14 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 #comments .children {list-style:none; background: #f8f8f8; padding: 0 0 0 15px;}
 .comment-body {border-left:2px solid #ec6500; padding: 0 0 0 15px; margin:20px 0;}
 .no-comments {clear:both; margin:20px 0; padding:5px 10px; background: #f8f8f8; border:1px solid #ccc;}
-.comment-notes, .form-allowed-tags {font-size:0.75em; padding:10px 0;}
+.comment-notes, .form-allowed-tags {font-size:0.75em; padding:0;}
 .comments-title, .comment-reply-title {font-size: 1.5em;} 
 .bypostauthor {color:#333;}
 
-
-#respond {padding:10px 0; clear:both;}
-#commentform label {margin: 0 0 10px; font-family: 'Open Sans', sans-serif; display:block;}
+#respond {padding:0; margin:0; clear:both;}
+#commentform label {padding: 0 0 5px; display:block;}
 #commentform textarea, #commentform input {width: 90%; padding:5px;}
-#commentform input[type="submit"]{width:9em; margin:5px 0 0;} 
+#commentform input[type="submit"]{width:9em; margin:0;} 
 
 
 /* SIDEBAR AND WIDGETS */
@@ -235,30 +233,31 @@ img.aligncenter {display: block; margin-left: auto; margin-right: auto; margin-b
 #widgets-container {padding: 0 2%;}
 #widgets-container:after {content:''; display:block; clear:both;}
 
-.footer-left {float: left; width: 32%; margin: 0; padding:0; word-wrap: break-word;}
-.footer-middle {float: left; width: 32%; margin:0 2% 0; padding:0; word-wrap: break-word;}
-.footer-right {float: right; width: 32%; margin: 0; padding:0; word-wrap: break-word;}
+.footer-left {float: left; width: 32%; margin: 10px 0 0; padding:0; word-wrap: break-word;}
+.footer-middle {float: left; width: 32%; margin:10px 2% 0; padding:0; word-wrap: break-word;}
+.footer-right {float: right; width: 32%; margin: 10px 0 0; padding:0; word-wrap: break-word;}
 
 
 /* Mobile */
 @media screen and (max-width: 767px) { 
 	body {font-size:1em; line-height:1.2em;}
 	#container {width: 94%; padding:10px; margin:0 auto 0;}
-	#content, #content-full {width:100%; padding:10px 0; margin:10px 0; background:none;}
+	#content, #content-full {width:100%; padding:5px 0; margin:5px 0; background:none;}
 	#header-first .logo {padding: 10px 0; text-align:center;}
 	#header-first .logo h1 {font-size:2em;}
 	#header-first .logo h4 {padding:0; font-size:1.3em;}
 	#header-second .header-img {width: 100%; height: auto;}
 	#sidebar {width:100%; border:0; margin:0; padding:0; float:left;}
 	#footer {width:100%;}
+	#widgets-container {padding:0;}
 	.article, .article-full {padding:0; margin:0; border:0; background:none;}
-	.entry-title, .entry-title-grid, .page-title, .widgettitle, .comments-title {font-size:1.3em; text-align:left;}
+	.post-title, .page-title, .widgettitle, .comment-reply-title, .comments-title {font-size:1.3em; text-align:left;}
 	.comment-body {border:0; padding:0;}
-	.widget {margin: 15px 0 15px;}
-	.post-home, .post-home.left, .post-home.right {width:100%; border:0; margin:10px 0; padding:0; float:left; background:none;} 
-	.post-archive, .post-archive.left, .post-archive.right {width:100%; border:0; margin:10px 0; padding:0; float:left; background:none;} 
+	.widget {margin: 10px 0 10px;}
+	.post-home, .post-home.left, .post-home.right {width:100%; border:0; margin:5px 0 0; padding:0; float:left; background:none;} 
+	.post-archive, .post-archive.left, .post-archive.right {width:100%; border:0; margin:5px 0 0; padding:0; float:left; background:none;} 
 	.footer-right, .footer-middle, .footer-left {width:100%; border:0; margin:0; padding:0; float:left;} 
 	.nav-head ul {display: none;} 
 	.nav-head {padding:0; border:0;}
-	.nav-head select {display: block; width: 100%; height: 35px; margin: 0 auto 0; font-family: 'Open Sans', sans-serif; font-size: 1em; line-height: 1.2em; color: #fff; background:#ec6500; border:0;}
+	.nav-head select {display: block; width: 100%; height: 35px; margin: 0 auto 0; font-size: 1em; line-height: 1.2em; color: #fff; background:#ec6500; border:0;}
 }

@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: GridBulletin v1.1\n"
+"Project-Id-Version: GridBulletin v1.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-01-27 18:38:14+0000\n"
+"PO-Revision-Date: 2014-03-02 11:21:32+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -93,23 +93,23 @@ msgstr "&laquo; Oudere berichten"
 msgid "Newer posts &raquo;"
 msgstr "Nieuwere berichten &raquo;"
 
-#: functions.php:96
+#: functions.php:105
 #@ gridbulletin
 msgid "Primary Sidebar"
 msgstr "Hoofd Sidebar"
 
-#: functions.php:98
-#: functions.php:108
-#: functions.php:118
-#: functions.php:128
-#: functions.php:138
-#: functions.php:148
-#: functions.php:158
+#: functions.php:107
+#: functions.php:117
+#: functions.php:127
+#: functions.php:137
+#: functions.php:147
+#: functions.php:157
+#: functions.php:167
 #@ gridbulletin
 msgid "Select widgets from the right-hand side."
 msgstr "Selecteer widgets van de rechterkant."
 
-#: functions.php:197
+#: functions.php:196
 #@ gridbulletin
 msgid "Boats"
 msgstr "Boten"
@@ -167,13 +167,13 @@ msgid_plural "%1$s responses on %2$s"
 msgstr[0] "1 reactie op %2$s"
 msgstr[1] "%1$s reacties op %2$s"
 
-#: functions.php:206
-#: functions.php:212
+#: functions.php:205
+#: functions.php:211
 #@ gridbulletin
 msgid "Logo"
 msgstr "Logo"
 
-#: functions.php:208
+#: functions.php:207
 #@ gridbulletin
 msgid "Upload a logo to replace blogname and description in header"
 msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
@@ -202,32 +202,32 @@ msgstr "Plaats reactie"
 msgid "% responses"
 msgstr "% reacties"
 
-#: functions.php:106
+#: functions.php:115
 #@ gridbulletin
 msgid "Footer Right"
 msgstr "Footer Rechts"
 
-#: functions.php:116
+#: functions.php:125
 #@ gridbulletin
 msgid "Footer Middle"
 msgstr "Footer Midden"
 
-#: functions.php:126
+#: functions.php:135
 #@ gridbulletin
 msgid "Footer Left"
 msgstr "Footer Links"
 
-#: functions.php:136
+#: functions.php:145
 #@ gridbulletin
 msgid "Footer Home Right"
 msgstr "Footer Home Rechts"
 
-#: functions.php:146
+#: functions.php:155
 #@ gridbulletin
 msgid "Footer Home Middle"
 msgstr "Footer Home Midden"
 
-#: functions.php:156
+#: functions.php:165
 #@ gridbulletin
 msgid "Footer Home Left"
 msgstr "Footer Home Links"
@@ -239,4 +239,22 @@ msgstr "Footer Home Links"
 #@ gridbulletin
 msgid "1 response"
 msgstr "1 reactie"
+
+#: footer-home.php:44
+#: footer.php:44
+#@ gridbulletin
+msgid "Copyright"
+msgstr "Copyright"
+
+#: footer-home.php:45
+#: footer.php:45
+#@ gridbulletin
+msgid "WordPress Blog Platform"
+msgstr "WordPress Blog Platform"
+
+#: footer-home.php:45
+#: footer.php:45
+#@ gridbulletin
+msgid "Proudly powered by WordPress"
+msgstr "Proudly powered by WordPress"
 

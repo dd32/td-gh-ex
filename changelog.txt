@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+GridBulletin version 1.2 - march 2014 
+- added several adjustments for better responsive layout
+- added translation to footer site info
+- a bunch of other minor adjustments in stylesheet
+
 GridBulletin version 1.1 - february 2014 
 - first stable release
 

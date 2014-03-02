@@ -3,7 +3,7 @@
  * Theme functions and definitions.
  */
 
-// Sets up theme defaults and registers various WordPress features that gridbulletin supports
+// Sets up theme defaults and registers various WordPress features that GridBulletin supports
 	function gridbulletin_setup() { 
 
 	// Set width without the padding

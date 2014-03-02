@@ -41,8 +41,8 @@
 </div>
 
 	<div class="site-info">
-		Copyright <?php echo date('Y'); ?>  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> - 
-		<a href="http://wordpress.org" title="WordPress Blog Platform">Proudly powered by WordPress</a>
+		<?php _e('Copyright', 'gridbulletin'); ?> <?php echo date('Y'); ?>  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> - 
+		<a href="http://wordpress.org" title="<?php _e('WordPress Blog Platform', 'gridbulletin'); ?>"><?php _e('Proudly powered by WordPress', 'gridbulletin'); ?></a>
 	</div>
 
 </div>
