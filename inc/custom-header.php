@@ -47,38 +47,9 @@ function catchevolution_custom_header_setup() {
 	$args = apply_filters( 'custom-header', $args );
 
 	// Add support for custom header
-	if ( function_exists( 'wp_get_theme' ) ) {
-		add_theme_support( 'custom-header', $args );
-	}
+	add_theme_support( 'custom-header', $args );
 }
 add_action( 'after_setup_theme', 'catchevolution_custom_header_setup' );
-
-
-/**
- * Shiv for get_custom_header().
- *
- * get_custom_header() was introduced to WordPress
- * in version 3.4. To provide backward compatibility
- * with previous versions, we will define our own version
- * of this function.
- *
- * @todo Remove this function when WordPress 3.6 is released.
- * @return stdClass All properties represent attributes of the curent header image.
- *
- * @package Catch Everest
- * @since Catch Everest 1.1
- */
-
-if ( ! function_exists( 'get_custom_header' ) ) {
-	function get_custom_header() {
-		return (object) array(
-			'url'           => get_header_image(),
-			'thumbnail_url' => get_header_image(),
-			'width'         => HEADER_IMAGE_WIDTH,
-			'height'        => HEADER_IMAGE_HEIGHT,
-		);
-	}
-}
 
 
 if ( ! function_exists( 'catchevolution_header_style' ) ) :

@@ -4,15 +4,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Evolution\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-22 09:37+0545\n"
-"PO-Revision-Date: 2014-02-22 09:37+0545\n"
+"POT-Creation-Date: 2014-02-27 10:41+0545\n"
+"PO-Revision-Date: 2014-03-02 23:10+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: sv_SE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: __;_e;_x;_ex;_n;esc_attr_e;esc_attr__\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -36,8 +36,8 @@ msgid ""
 "You have typed the web address incorrectly, or the page you were looking for "
 "may have been moved, updated or deleted."
 msgstr ""
-"Du kan ha skrivit felaktig adress , eller den sida du söker kan ha flyttats, "
-"uppdateras eller tagits bort."
+"Du kan ha skrivit en felaktig adress , eller den sida du söker kan ha "
+"flyttats, uppdateras eller tagits bort."
 
 #: ../404.php:21
 msgid "Please try the following options instead:"
@@ -62,6 +62,7 @@ msgid "Monthly Archives: %s"
 msgstr "Månad Arkiv: %s"
 
 #: ../archive.php:24
+msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr "F Y"
 
@@ -70,7 +71,8 @@ msgstr "F Y"
 msgid "Yearly Archives: %s"
 msgstr "Årliga Arkiv: %s"
 
-#: ../archive.php:26 ../inc/panel/theme-options.php:1153
+#: ../archive.php:26
+msgctxt "yearly archives date format"
 msgid "Y"
 msgstr "Y"
 
@@ -116,7 +118,9 @@ msgstr ""
 #: ../comments.php:33
 #, php-format
 msgid "One thought on &ldquo;%2$s&rdquo;"
-msgstr "En tanke om &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "En tanke om &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s tankar om &ldquo;%2$s&rdquo;"
 
 #: ../comments.php:40 ../comments.php:60
 msgid "Comment navigation"
@@ -206,8 +210,8 @@ msgid ""
 "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
 "title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
-"Detta inlägg är postat i %1$s and taggat %2$s. Bokmärk <a href=\"%3$s\" "
-"title=\"Permalänken till %4$s\" rel=\"bookmark\">permalink</a>."
+"Detta inlägg är postat i %1$s och taggat %2$s. Bokmärk <a href=\"%3$s\" "
+"title=\"Permalänken till %4$s\" rel=\"bookmark\">permalänken</a>."
 
 #: ../content-featured.php:39
 #, php-format
@@ -216,7 +220,7 @@ msgid ""
 "\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
 "Detta inlägg är postat i %1$s. Bokmärk  <a href=\"%3$s\" title=\"Permalänken "
-"till %4$s\" rel=\"bookmark\">permalink</a>. "
+"till %4$s\" rel=\"bookmark\">permalänken</a>. "
 
 #: ../content-gallery.php:17
 msgid "Gallery"
@@ -225,7 +229,9 @@ msgstr "Galleri"
 #: ../content-gallery.php:47
 #, php-format
 msgid "This gallery contains <a %1$s>%2$s photo</a>."
-msgstr "Detta galleri innehåller <a %1$s>%2$s photo</a>."
+msgid_plural "This gallery contains <a %1$s>%2$s photos</a>."
+msgstr[0] "Detta album inneh&aring;ller <a %1$s>%2$s bild</a>"
+msgstr[1] "Detta album inneh&aring;ller <a %1$s>%2$s bilder</a>"
 
 #: ../content-gallery.php:72 ../content-image.php:56 ../content-quote.php:55
 #: ../content.php:95
@@ -284,7 +290,7 @@ msgid ""
 msgstr ""
 "Detta inlägg är postat i %1$s och taggat %2$s av <a href=\"%6$s\">%5$s</a>. "
 "Bokmärk <a href=\"%3$s\" title=\"Permalänken till %4$s\" rel=\"bookmark"
-"\">permalink</a>."
+"\">permalänken</a>."
 
 #: ../content-single.php:49
 #, php-format
@@ -293,7 +299,7 @@ msgid ""
 "href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
 "Detta inlägg är postat i %1$s av <a href=\"%6$s\">%5$s</a>. Bokmärk <a href="
-"\"%3$s\" title=\"Permalänken till %4$s\" rel=\"bookmark\">permalink</a>."
+"\"%3$s\" title=\"Permalänken till %4$s\" rel=\"bookmark\">permalänken</a>."
 
 #: ../content-single.php:51
 #, php-format
@@ -302,7 +308,7 @@ msgid ""
 "\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
 "Detta inlägg är postat av <a href=\"%6$s\">%5$s</a>. Bokmärk <a href=\"%3$s"
-"\" title=\"Permalänken till %4$s\" rel=\"bookmark\">permalink</a>."
+"\" title=\"Permalänken till %4$s\" rel=\"bookmark\">permalänken</a>."
 
 #: ../content-single.php:80
 #, php-format
@@ -319,7 +325,7 @@ msgstr "Utvalda"
 
 #: ../functions.php:126
 msgid "Fixed Header Top Menu"
-msgstr "Fast Toppmeny Sidhuvud"
+msgstr "Fixerad Toppmeny Sidhuvud"
 
 #: ../functions.php:127
 msgid "Primary Menu"
@@ -356,8 +362,8 @@ msgstr ""
 "<span class=\"meta-prep meta-prep-entry-date\">Publicerad </span> <span "
 "class=\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></"
 "span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; "
-"%5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</"
-"a>"
+"%5$s</a> in <a href=\"%6$s\" title=\"Återgå till %7$s\" rel=\"gallery\">"
+"%8$s</a>"
 
 #: ../inc/catchevolution-functions.php:101
 #, php-format
@@ -409,7 +415,7 @@ msgid ""
 msgstr ""
 "<span class=\"sep\">Postat den </span><a href=\"%1$s\" title=\"%2$s\" rel="
 "\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\">%4$s</time></"
-"a><span class=\"by-author\"> <span class=\"sep\"> by </span> <span class="
+"a><span class=\"by-author\"> <span class=\"sep\"> av </span> <span class="
 "\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel="
 "\"author\">%7$s</a></span></span>"
 
@@ -560,7 +566,7 @@ msgstr "Tre kolumner"
 
 #: ../inc/catchevolution-metabox.php:74
 msgid "Sidebar Layout Options"
-msgstr " Sidofält layoutalternativ"
+msgstr "Sidofält layoutalternativ"
 
 #: ../inc/catchevolution-widgets.php:17
 msgid "Main Sidebar"
@@ -580,7 +586,7 @@ msgstr "WooCommerce Sidfält"
 
 #: ../inc/catchevolution-widgets.php:59
 msgid "Footer Area One"
-msgstr "Sidfot Område Ett "
+msgstr "Sidfot Område Ett"
 
 #: ../inc/catchevolution-widgets.php:61 ../inc/catchevolution-widgets.php:72
 #: ../inc/catchevolution-widgets.php:83
@@ -611,7 +617,7 @@ msgstr "Titel (valfritt):"
 
 #: ../inc/catchevolution-widgets.php:135
 msgid "Ad Code:"
-msgstr "Ad Kod:"
+msgstr "Annons Kod:"
 
 #: ../inc/catchevolution-widgets.php:141
 msgid "Image Url:"
@@ -652,30 +658,30 @@ msgstr ""
 msgid "3. Catch Evolution Social & Seach Widget"
 msgstr "3. Catch Evolution Social & Sök Widget"
 
-#: ../inc/custom-header.php:470
+#: ../inc/custom-header.php:441
 msgid "Primary menu"
 msgstr "Primär meny"
 
-#: ../inc/custom-header.php:472 ../inc/custom-header.php:505
+#: ../inc/custom-header.php:443 ../inc/custom-header.php:476
 msgid "Skip to primary content"
 msgstr "Hoppa till huvudinnehåll"
 
-#: ../inc/custom-header.php:473 ../inc/custom-header.php:506
+#: ../inc/custom-header.php:444 ../inc/custom-header.php:477
 msgid "Skip to secondary content"
 msgstr "Hoppa till sekundärt innehåll"
 
-#: ../inc/custom-header.php:503
+#: ../inc/custom-header.php:474
 msgid "Secondary menu"
 msgstr "Sekundär meny"
 
 #: ../inc/panel/theme-options.php:37 ../inc/panel/theme-options.php:38
 #: ../inc/panel/theme-options.php:143
 msgid "Theme Options"
-msgstr "Tema Options"
+msgstr "Tema Inställningar"
 
 #: ../inc/panel/theme-options.php:100
 msgid "Options Saved"
-msgstr "Options Sparade"
+msgstr "Inställningar Sparade"
 
 #: ../inc/panel/theme-options.php:107
 msgid "http://facebook.com/catchthemes"
@@ -703,7 +709,7 @@ msgstr "http://catchthemes.com/themes/catch-evolution-pro/"
 
 #: ../inc/panel/theme-options.php:124
 msgid "Upgrade to Catch Evolution Pro"
-msgstr "Upgradera till Catch Evolution Pro"
+msgstr "Uppgradera till Catch Evolution Pro"
 
 #: ../inc/panel/theme-options.php:129
 msgid "http://catchthemes.com/donate/"
@@ -794,7 +800,7 @@ msgstr "Avaktivera Favicon?"
 #: ../inc/panel/theme-options.php:282 ../inc/panel/theme-options.php:287
 #: ../inc/panel/theme-options.php:345
 msgid "Check to disable"
-msgstr "Kryssa för att avaktivera"
+msgstr "Markera för att avaktivera"
 
 #: ../inc/panel/theme-options.php:165
 msgid "Fav Icon URL:"
@@ -840,8 +846,8 @@ msgid ""
 "Height 144px height, which will support High Resolution Devices like iPad "
 "Retina."
 msgstr ""
-"OBS: Web Clip Icon för Apple-enheter. Rekommenderad storlek - Bredd 144px "
-"och höjd 144px , vilket kommer att stödja högupplösta enheter som iPad "
+"Notering: Web Clip Icon för Apple-enheter. Rekommenderad storlek - Bredd "
+"144px och höjd 144px , vilket kommer att stödja högupplösta enheter som iPad "
 "Retina."
 
 #: ../inc/panel/theme-options.php:234
@@ -890,7 +896,7 @@ msgstr "Flytta Sidans Titel och Undertitel?"
 
 #: ../inc/panel/theme-options.php:292
 msgid "Check to move before the Logo"
-msgstr "Kryssa för att lägga före Loggan"
+msgstr "Markera för att lägga före Loggan"
 
 #: ../inc/panel/theme-options.php:295
 msgid "Seperate Logo and Site Details?"
@@ -898,7 +904,7 @@ msgstr "Separera Logotyp och Sidans Detaljer?"
 
 #: ../inc/panel/theme-options.php:297
 msgid "Check to move down"
-msgstr "Kryssa för att flytta ner"
+msgstr "Markera för att flytta ner"
 
 #: ../inc/panel/theme-options.php:300
 msgid "Enable Header Right Sidebar?"
@@ -946,7 +952,7 @@ msgstr "Tilldela Meny Placering"
 
 #: ../inc/panel/theme-options.php:333
 msgid "Click Here to Assign Menu Location"
-msgstr "Klicka Här för att Tilldela Meny Placering"
+msgstr "Klicka Här för att Tilldela Menyns Placering"
 
 #: ../inc/panel/theme-options.php:337
 msgid "Add Menu in Header Right Sidebar"
@@ -990,23 +996,23 @@ msgstr "Mörk"
 
 #: ../inc/panel/theme-options.php:394
 msgid "Main Background Color:"
-msgstr "Huvudbakgrundsfärg"
+msgstr "Bakgrundsfärg"
 
 #: ../inc/panel/theme-options.php:399
 msgid "Click Here to change Main Background Image/Color"
-msgstr "Klicka här för att ändra Huvudbakgrundsfärg bakgrundsbild / färg"
+msgstr "Klicka här för att ändra Bakgrundens Bild / Färg"
 
 #: ../inc/panel/theme-options.php:406
 msgid "Site Title Color:"
-msgstr "Sidans Titel Färg"
+msgstr "Sidans Bild för Sidhuvud"
 
 #: ../inc/panel/theme-options.php:411
 msgid "Click Here to change Site Title Color"
-msgstr "Klicka Här för att ändra Sidans Titel Färg"
+msgstr "Klicka Här för att ändra Bild för Sidhuvud"
 
 #: ../inc/panel/theme-options.php:423
 msgid "Layout Options"
-msgstr "Layout Alternativ"
+msgstr "Layout Inställningar"
 
 #: ../inc/panel/theme-options.php:428
 msgid "Default Layout"
@@ -1042,7 +1048,7 @@ msgstr "Återställ Layout?"
 
 #: ../inc/panel/theme-options.php:470 ../inc/panel/theme-options.php:530
 msgid "Check to reset"
-msgstr "Kryssa för återställning"
+msgstr "Markera för återställning"
 
 #: ../inc/panel/theme-options.php:479
 msgid "Homepage / Frontpage Category Setting"
@@ -1078,7 +1084,7 @@ msgstr "Mera Ettikett Text"
 
 #: ../inc/panel/theme-options.php:523
 msgid "Excerpt length(words)"
-msgstr "Utdrag längd (ord)"
+msgstr "Utdragets längd (ord)"
 
 #: ../inc/panel/theme-options.php:528
 msgid "Reset?"
@@ -1102,7 +1108,7 @@ msgstr "Anpassad CSS"
 
 #: ../inc/panel/theme-options.php:560
 msgid "Enter your custom CSS styles."
-msgstr "Ange anpassade CSS-stilar."
+msgstr "Lägg till anpassade CSS-stilar."
 
 #: ../inc/panel/theme-options.php:567
 msgid "CSS Tutorial from W3Schools."
@@ -1194,7 +1200,7 @@ msgstr "blanda"
 
 #: ../inc/panel/theme-options.php:629
 msgid "Transition Delay"
-msgstr " Övergång Fördröjning "
+msgstr "Övergång Fördröjning"
 
 #: ../inc/panel/theme-options.php:632 ../inc/panel/theme-options.php:639
 msgid "second(s)"
@@ -1206,7 +1212,7 @@ msgstr "Övergång Tid"
 
 #: ../inc/panel/theme-options.php:649
 msgid "Featured Post Slider Options"
-msgstr "Inställningar Bildspel Framhävda Inlägg"
+msgstr "Framhävda Inlägg Bildspel Inställningar"
 
 #: ../inc/panel/theme-options.php:653
 msgid "Exclude Slider post from Homepage posts?"
@@ -1214,7 +1220,7 @@ msgstr "Exkludera Bildspel Inlägg från Startsidans inlägg?"
 
 #: ../inc/panel/theme-options.php:655
 msgid "Check to exclude"
-msgstr "Kryssa för att exludera"
+msgstr "Markera för att exludera"
 
 #: ../inc/panel/theme-options.php:660
 msgid "Featured Slider Post #"
@@ -1228,7 +1234,8 @@ msgstr "Klicka Här för att Redigera"
 msgid ""
 "Note: Here You can put your Post IDs which displays on Homepage as slider."
 msgstr ""
-"Obs: Här kan du sätta dina inläggs-ID som ska visas som bildspel på hemsidan."
+"Notering: Här kan du sätta dina inläggs-ID som ska visas som bildspel på "
+"hemsidan."
 
 #: ../inc/panel/theme-options.php:680
 msgid "Enable Social Icons in Header Right Sidebar?"
@@ -1245,7 +1252,7 @@ msgstr "Aktivera Sociala Ikoner i Sidfoten?"
 
 #: ../inc/panel/theme-options.php:688
 msgid "Check to enable"
-msgstr "Kryssa för att aktivera"
+msgstr "Markera för att aktivera"
 
 #: ../inc/panel/theme-options.php:701
 msgid "Google+"
@@ -1324,18 +1331,24 @@ msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
 msgstr ""
-"Obs: Här kan du lägga skript från Google, Facebook etc som laddas i Headern"
+"Notering: Här kan du lägga skript från Google, Facebook etc som laddas i "
+"Headern"
 
 #: ../inc/panel/theme-options.php:804
 msgid "Code to display on Footer"
-msgstr "Kod för att lägga in i sidfot"
+msgstr "Kod att lägga in i sidfot"
 
 #: ../inc/panel/theme-options.php:811
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"
 msgstr ""
-"Obs: Här kan du lägga skript från Google, Facebook etc som laddas i sidfoten"
+"Notera: Här kan du lägga skript från Google, Facebook etc som laddas i "
+"sidfoten"
+
+#: ../inc/panel/theme-options.php:1153
+msgid "Y"
+msgstr "Y"
 
 #: ../inc/panel/theme-options.php:1184
 msgid "Catch Evolution"

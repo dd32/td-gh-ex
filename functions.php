@@ -130,9 +130,7 @@ function catchevolution_setup() {
 	) );
 
 	// Add support for custom backgrounds	
-	if ( function_exists( 'get_custom_header') ) {
-		add_theme_support( 'custom-background' );
-	} 
+	add_theme_support( 'custom-background' ); 
 
 	/**
      * This feature enables post-thumbnail support for a theme.

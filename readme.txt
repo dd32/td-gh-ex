@@ -76,3 +76,7 @@ Version 1.4
 * Removed Redirect to Theme Options Page on Activation as per new theme review guideline
 * Removed depreciated functions add_custom_image_header() and add_custom_background()
 * Updated theme Tag Filter in style.css
+
+Version 1.4.1
+* Remove backward compatibility check function_exists( 'get_custom_header') and function_exists( 'wp_get_theme' )
+* Update language files
