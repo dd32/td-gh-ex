@@ -123,6 +123,19 @@ function athenea_scripts_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'athenea_scripts_styles' );
 
+// Google Font
+function athenea_enqueue_css()
+{
+    $subsets = 'latin,latin-ext';
+    $protocol = is_ssl() ? 'https' : 'http';
+    $query_args = array(
+        'family' => 'Nunito:300|Aclonica',
+        'subset' => $subsets,
+    );
+    wp_enqueue_style( 'athenea-fonts', add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" ), array(), null );
+}
+add_action('wp_enqueue_scripts', 'athenea_enqueue_css');
+
 // Adds IE specific scripts
 function athenea_print_ie_scripts() {
 ?>
@@ -130,7 +143,6 @@ function athenea_print_ie_scripts() {
  <script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.min.js" type="text/javascript"></script>
  <script src="<?php echo get_template_directory_uri(); ?>/js/respond.min.js" type="text/javascript"></script>
 <![endif]-->
-<link href='http://fonts.googleapis.com/css?family=Nunito:300|Aclonica' rel='stylesheet' type='text/css'>
 <?php
 }
 add_action( 'wp_head', 'athenea_print_ie_scripts', 11 );

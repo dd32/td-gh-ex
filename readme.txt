@@ -2,7 +2,7 @@
 
 Theme Name: Athenea
 Theme URI: http://www.ibermega.com/themes/athenea
-Version: 1.0.5
+Version: 1.0.6
 Requires at least: 3.0.1
 Tested up to: 3.8.1
 Author: Miguel Angel Rico
@@ -59,6 +59,9 @@ For documentation go to http://www.ibermega.com/themes/athenea
 
 
 == Changelog ==
+
+= 1.0.6 - 01.03.2014 =
+* Fixed bug in google font
 
 = 1.0.5 - 27.02.2014 =
 * Google Font of header.php is removed and included in functions.php
