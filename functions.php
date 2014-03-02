@@ -101,6 +101,7 @@ function athenea_scripts_styles() {
 	wp_enqueue_style( 'athenea-style', get_stylesheet_uri() );
 	wp_enqueue_style('bootstrap', get_template_directory_uri().'/inc/dist/css/bootstrap.min.css', false, '3.0.3', false, array('all'));
 	wp_enqueue_style('genericons', get_template_directory_uri().'/inc/dist/genericons/genericons.css', false, array('all'));
+	wp_enqueue_style('athenea-fonts', '//fonts.googleapis.com/css?family=Nunito:300|Aclonica', array(), null );
 	
 	/** Design change  */
 	if ( !is_admin() ) {
@@ -122,19 +123,6 @@ function athenea_scripts_styles() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'athenea_scripts_styles' );
-
-// Google Font
-function athenea_enqueue_css()
-{
-    $subsets = 'latin,latin-ext';
-    $protocol = is_ssl() ? 'https' : 'http';
-    $query_args = array(
-        'family' => 'Nunito:300|Aclonica',
-        'subset' => $subsets,
-    );
-    wp_enqueue_style( 'athenea-fonts', add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" ), array(), null );
-}
-add_action('wp_enqueue_scripts', 'athenea_enqueue_css');
 
 // Adds IE specific scripts
 function athenea_print_ie_scripts() {
