@@ -4,7 +4,7 @@ Theme URI: http://design.altervista.org/thebox/
 Author: Fabio Rubioglio
 Author URI: http://design.altervista.org
 Description: Simple and minimal two columns theme: custom header, custom background, custom colors, post thumbnails, post formats
-Version: 1.1
+Version: 1.2
 License: GNU General Public License
 License URI: license.txt
 Tags: two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, custom-background, custom-menu, custom-colors, sticky-post, featured-images, post-formats, theme-options, translation-ready
@@ -678,7 +678,7 @@ hgroup h1 a {
 
 .main-navigation > .menu > ul > li.page_item_has_children > a:before,
 .main-navigation > div > ul > li.menu-item-has-children > a:before {
-	font-family: "thebox-icons" !important;
+	font-family: "icon-fonts" !important;
 	font-style: normal !important;
 	font-weight: normal !important;
 	font-variant: normal !important;
@@ -690,7 +690,7 @@ hgroup h1 a {
 	position: absolute;
 	right: 2px;
 	top: 18px;		
-	content: "b";
+	content: "i";
 	font-size: 14px;
 	width: 14px;
 	text-align: left;
