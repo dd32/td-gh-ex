@@ -4,7 +4,7 @@ Theme URI: http://design.altervista.org/thebox/
 Author: Fabio Rubioglio
 Author URI: http://design.altervista.org
 Description: Simple and minimal two columns theme: custom header, custom background, custom colors, post thumbnails, post formats
-Version: 1.2
+Version: 1.2.1
 License: GNU General Public License
 License URI: license.txt
 Tags: two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, custom-background, custom-menu, custom-colors, sticky-post, featured-images, post-formats, theme-options, translation-ready
@@ -830,7 +830,7 @@ hgroup h1 a {
 }
 
 .main-small-navigation > .menu > ul,
-.main-small-navigation > .menu-all-pages-container > ul {
+.main-small-navigation > div > .menu {
 	position: absolute;
 	width: 180px;
 	top: 40px;
@@ -841,20 +841,18 @@ hgroup h1 a {
 	z-index: 999;
 }
 
-.main-small-navigation .menu li,
-.main-small-navigation .menu-all-pages-container li {
+.main-small-navigation .menu li {
 	padding: 0;
 	list-style-type: none;
 }
 
-.main-small-navigation .menu ul ul,
-.main-small-navigation .menu-all-pages-container ul ul {
+.main-small-navigation .menu ul,
+.main-small-navigation .menu ul ul {
 	margin: 0;
 	padding: 0;
 }
 
-.main-small-navigation .menu ul ul li,
-.main-small-navigation .menu-all-pages-container ul ul li {
+.main-small-navigation .menu ul ul li {
 	padding: 0;
 }
 
@@ -1679,10 +1677,11 @@ h2.comments-title {
 	.entry-header h2 {
 	width: 100%;
 	max-width: 100%;
-	}
+	} 
 	.entry-time:before {
 	content: none;
 	}
+	.sticky .entry-time,
 	.entry-time {
 	float: none;
 	height: auto;
@@ -1692,6 +1691,8 @@ h2.comments-title {
 	font-weight: 400;
 	letter-spacing: normal;
 	text-align: left;
+	-webkit-border-radius: 0;
+	border-radius: 0;
 	}
 	.entry-time-day,
 	.entry-time-month {
