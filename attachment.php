@@ -19,6 +19,10 @@
                 <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
 				    <?php the_excerpt(); ?>
                 </a>
+                
+                <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+				    Continue Reading &#8594;
+                </a>
 
             </div>
 

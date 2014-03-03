@@ -104,7 +104,7 @@
 .contain>div {text-align:justify;}
 
 #header {
-    background: url(images/bg.jpg);
+    background: url(images/might.jpg);
     background-size:cover;
     height:16em;
     position:relative;}
@@ -129,9 +129,9 @@
 
 .themetitle h1, .upgrade h2 {display:inline-block;}
 
-.themetitle a, .upgrade a {color:#FFF; text-shadow:.075em .075em 0 #000;}
+.themetitle a, .upgrade a h2  {color:#FFF; text-shadow:.05em .05em 0 #000;}
 
-.themetitle a:hover, .upgrade a:hover {color:#00b5e2;}
+.themetitle a:hover, .upgrade a:hover h2 {color:#00b5e2;}
 
 .info_bar {
 	background:rgba(203,203,203,.8);
@@ -144,7 +144,7 @@
 .info_bar li {
     display:inline-block;
     font-size:1.2em;
-    margin:1em;}
+    margin:.75em .5em;}
 
 .info_bar a {
 	color:#0b6492;
