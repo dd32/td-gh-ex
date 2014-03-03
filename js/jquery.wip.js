@@ -3,16 +3,16 @@ jQuery.noConflict()(function($){
 /* ===============================================
    Mobile menu with Tinynav Plugin
    =============================================== */
-
-	if ( $('nav#mainmenu ul.menu .current-menu-item').length ) { 
 	
-		$('nav#mainmenu ul.menu').tinyNav({
+	if ( $('nav#mainmenu ul:first .current-menu-item').length ) { 
+	
+		$('nav#mainmenu ul:first').tinyNav({
 			active: 'current-menu-item',
 		});
 
 	} else {
 	
-		$('nav#mainmenu ul.menu').tinyNav({
+		$('nav#mainmenu ul:first').tinyNav({
 			header: 'Select an item',
 		});
 
