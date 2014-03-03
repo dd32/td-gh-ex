@@ -4,8 +4,14 @@
 
 		<div class="featured-media">
 		
-			<?php if (strpos($videourl,'.mp4') !== true) : ?>
-			
+			<?php if (strpos($videourl,'.mp4') !== false) : ?>
+				
+				<video controls>
+				  <source src="<?php echo $videourl; ?>" type="video/mp4">
+				</video>
+																		
+			<?php else : ?>
+				
 				<?php 
 				
 					$embed_code = wp_oembed_get($videourl); 
@@ -13,10 +19,6 @@
 					echo $embed_code;
 					
 				?>
-																		
-			<?php elseif (strpos($videourl,'.mp4') !== false) : ?>
-				
-				[video src="<?php echo $videourl; ?>"]
 					
 			<?php endif; ?>
 			
