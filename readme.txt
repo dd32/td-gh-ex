@@ -63,6 +63,15 @@ License: Public domain/No copyright
 
 == CHANGELOG ==
 
+03/05/2014 v1.0.3
+* Removed "From the Blog" when static front page is set
+* Updated archive meta
+* Added validation to front page
+* Fixed no arc bug
+* Added iframe max-width CSS
+* Fixed blog page loop bug
+* Syntax fix for header function
+
 02/05/2014 v1.0.2
 * Added microformats
 * Removed accessibility tag

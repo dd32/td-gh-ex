@@ -116,11 +116,15 @@ add_action( 'pre_get_posts', 'bavotasan_home_page_query' );
  */
 function bavotasan_home_page_query( $query ) {
 	if ( $query->is_home() && $query->is_main_query() ) {
+		if ( get_queried_object_id() == get_option('page_for_posts') )
+			return;
+
 		$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 		$per_page = get_option( 'posts_per_page' );
 		$offset = ( 1 < $paged ) ? ( 10 * ( $paged - 1 ) + 4 ) - $per_page : 0;
 		$show = ( 0 == $offset ) ? 4 : $per_page;
 
+		$query->set( 'ignore_sticky_posts', true );
 		$query->set( 'posts_per_page', $show );
 		$query->set( 'offset', $offset );
 	}
@@ -594,18 +598,13 @@ function bavotasan_nav_menu_args( $args ) {
  *
  * @since 1.0.0
  */
-function bnavotasan_header_images() {
-	global $bavotasan_slider;
+function bavotasan_header_images() {
 	$custom_image = ( is_singular() ) ? get_post_meta( get_the_ID(), 'arcade_basic_custom_image', true ) : '';
 
-	if ( is_singular() && ( ! empty( $custom_image ) || has_post_thumbnail() ) ) {
-		if ( $custom_image )
-			echo '<img src="' . esc_url( $custom_image ) . '" alt="" class="header-img" />';
-		else
-			the_post_thumbnail( 'full', array( 'class' => 'header-img' ) );
+	if ( $custom_image ) {
+		echo '<img src="' . esc_url( $custom_image ) . '" alt="" class="header-img" />';
 	} else {
-		$header_image = get_header_image();
-		if ( ! empty( $header_image ) ) :
+		if ( $header_image = get_header_image() ) :
 			?>
 			<img class="header-img" src="<?php header_image(); ?>" alt="" />
 			<?php

@@ -885,6 +885,10 @@ article.error404 {
 
 /* =Video
 -------------------------------------------------------------- */
+iframe {
+	max-width: 100%
+}
+
 .responsive-video-wrapper {
 	width: 100%;
 	position: relative;
@@ -1399,6 +1403,7 @@ article.error404 {
 .page-template-page-templatestemplate-grid-php main {
 	article {
 		padding-bottom: 0;
+		margin-bottom: 40px;
 	}
 }
 

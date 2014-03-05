@@ -70,7 +70,7 @@ $space_class = '';
 
     				<?php
     				// Header image section
-    				bnavotasan_header_images();
+    				bavotasan_header_images();
     				?>
 				</div>
 			</div>

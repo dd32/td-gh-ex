@@ -46,7 +46,7 @@
 	}
 
     // Arc the site title
-    if ( theme_js_vars.arc )
+    if ( 0 != theme_js_vars.arc )
         $( '#site-title a' ).arctext( { radius: theme_js_vars.arc, rotate: is_rtl } );
 
     // Set up jumbo header image

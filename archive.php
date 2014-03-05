@@ -40,21 +40,12 @@ get_header(); ?>
 							<?php endif; ?>
 						</h1><!-- .page-title -->
 						<?php
-						if ( is_category() ) :
-							if ( $category_description = category_description() )
-								echo '<h2 class="archive-meta">' . $category_description . '</h2>';
-						endif;
+						$description = term_description();
+						if ( is_author() )
+							$description = get_the_author_meta( 'description' );
 
-						if ( is_author() ) :
-							$curauth = ( get_query_var('author_name') ) ? get_user_by( 'slug', get_query_var( 'author_name' ) ) : get_userdata( get_query_var(' author' ) );
-							if ( ! empty( $curauth->description ) )
-								echo '<h2 class="archive-meta">' . $curauth->description . '</h2>';
-						endif;
-
-						if ( is_tag() ) :
-							if ( $tag_description = tag_description() )
-								echo '<h2 class="archive-meta">' . $tag_description . '</h2>';
-						endif;
+		                if ( $description )
+							printf( '<h2 class="archive-meta">%s</h2>', $description );
 						?>
 					</header><!-- #archive-header -->
 

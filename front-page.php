@@ -24,7 +24,7 @@ if ( 2 > $paged ) {
 				<div class="col-md-12">
 					<div class="home-jumbotron jumbotron">
 						<h1><?php echo apply_filters( 'the_title', html_entity_decode( $bavotasan_theme_options['jumbo_headline_title'] ) ); ?></h1>
-						<p class="lead"><?php echo wp_kses_post( html_entity_decode( $bavotasan_theme_options['jumbo_headline_text'] ) ); ?></p>
+						<p class="lead"><?php echo wp_filter_post_kses( html_entity_decode( $bavotasan_theme_options['jumbo_headline_text'] ) ); ?></p>
 					</div>
 				</div>
 			</div>
@@ -50,12 +50,14 @@ if ( 2 > $paged ) {
 	<div class="container from-the-blog">
 		<div class="row">
 			<div id="primary" <?php if ( 2 > $paged ) { ?>class="col-md-12 hfeed"<?php } else { bavotasan_primary_attr(); }; ?>>
-				<?php if ( 2 > $paged ) { ?>
-					<div class="page-header clearfix"><h1 class="pull-left"><?php _e( 'From the Blog', 'arcade' ); ?></h1><?php if ( 2 > $paged ) bavotasan_pagination(); ?></div>
-				<?php }
+                <?php
 				if ( have_posts() ) {
-					if ( 'page' != get_option('show_on_front') && 2 > $paged )
+					if ( 'page' != get_option('show_on_front') && 2 > $paged ) {
+                        ?>
+                        <div class="page-header clearfix"><h1 class="pull-left"><?php _e( 'From the Blog', 'arcade' ); ?></h1><?php bavotasan_pagination(); ?></div>
+                        <?php
 						echo '<div class="row">';
+                    }
 
 					while ( have_posts() ) : the_post();
 						if ( 'page' == get_option('show_on_front') ) { ?>
