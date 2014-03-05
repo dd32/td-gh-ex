@@ -335,10 +335,11 @@ function cpotheme_post_video($video_url){
 //Retrieve page number for the current post or page
 function cpotheme_current_page(){
 	$current_page = 1;
-	if(is_front_page())
-		if(get_query_var('page')) $current_page = get_query_var('page');
-	else
-		if(get_query_var('paged')) $current_page = get_query_var('paged');
+	if(is_front_page()){
+		if(get_query_var('page')) $current_page = get_query_var('page'); else $current_page = 1;
+	}else{
+		if(get_query_var('paged')) $current_page = get_query_var('paged'); else $current_page = 1;
+	}
 	return $current_page;
 }
 
