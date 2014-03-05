@@ -21,3 +21,6 @@ Changelog
 #### 1.05
 * Add custom header support.
 * Minor css fix.
+
+#### 1.06
+* Minor bug fix.

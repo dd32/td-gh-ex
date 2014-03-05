@@ -49,9 +49,6 @@ register_nav_menus( array(
 // Enable support for Post Formats.
 add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 	
-// Custom header support.
-add_theme_support( 'custom-header' );
-		
 // Allows theme developers to link a custom stylesheet file to the TinyMCE visual editor.
 function base_add_editor_styles() {
     add_editor_style( 'custom-editor-style.css' );
