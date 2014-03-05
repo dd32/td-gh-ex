@@ -217,20 +217,22 @@ function cyberchimps_portfolio_lite_content() {
 	else {
 
 		// Geting title option
-		$title_enable = cyberchimps_get_option( 'cyberchimps_blog_portfolio_title_toggle' );
-		$title        = cyberchimps_get_option( 'cyberchimps_blog_portfolio_title' );
+		$title_enable = cyberchimps_get_option( 'cyberchimps_blog_portfolio_title_toggle', 1 );
+		$title        = cyberchimps_get_option( 'cyberchimps_blog_portfolio_title', 'Portfolio' );
 
+		$portfolio_default_image = get_template_directory_uri() . '/cyberchimps/lib/images/portfolio.jpg';
+		
 		// Getting Image URL for each protfolio
-		$img1 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_one' );
-		$img2 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_two' );
-		$img3 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_three' );
-		$img4 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_four' );
+		$img1 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_one', $portfolio_default_image );
+		$img2 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_two', $portfolio_default_image );
+		$img3 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_three', $portfolio_default_image );
+		$img4 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_four', $portfolio_default_image );
 
 		// Getting caption for each protfolio
-		$caption1 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_one_caption' );
-		$caption2 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_two_caption' );
-		$caption3 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_three_caption' );
-		$caption4 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_four_caption' );
+		$caption1 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_one_caption', 'CyberChimps' );
+		$caption2 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_two_caption', 'CyberChimps' );
+		$caption3 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_three_caption', 'CyberChimps' );
+		$caption4 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_four_caption', 'CyberChimps' );
 
 		// Getting Custom URL toggle
 		$url_toggle1 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_link_toggle_one' );

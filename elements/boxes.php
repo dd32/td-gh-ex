@@ -26,20 +26,26 @@ add_action( 'boxes_lite', 'cyberchimps_boxes_lite_content' );
 // Defining content of the boxes-lite element
 function cyberchimps_boxes_lite_content() {
 
+	// Set directory uri
+	$directory_uri = get_template_directory_uri();
+	
 	// Getting Image URL for each box
-	$img1 = cyberchimps_get_option( 'cyberchimps_blog_boxes_lite_image_one' );
-	$img2 = cyberchimps_get_option( 'cyberchimps_blog_boxes_lite_image_two' );
-	$img3 = cyberchimps_get_option( 'cyberchimps_blog_boxes_lite_image_three' );
+	$img1 = cyberchimps_get_option( 'cyberchimps_blog_boxes_lite_image_one', $directory_uri . apply_filters( 'cyberchimps_boxes_lite_img1', '/elements/lib/images/boxes/slidericon.png' ) );
+	$img2 = cyberchimps_get_option( 'cyberchimps_blog_boxes_lite_image_two', $directory_uri . apply_filters( 'cyberchimps_boxes_lite_img2', '/elements/lib/images/boxes/blueprint.png' ) );
+	$img3 = cyberchimps_get_option( 'cyberchimps_blog_boxes_lite_image_three', $directory_uri . apply_filters( 'cyberchimps_boxes_lite_img3', '/elements/lib/images/boxes/docs.png' ) );
 
 	// Getting URL of custom link
 	$url1 = cyberchimps_get_option( 'cyberchimps_blog_boxes_link_url_one' );
 	$url2 = cyberchimps_get_option( 'cyberchimps_blog_boxes_link_url_two' );
 	$url3 = cyberchimps_get_option( 'cyberchimps_blog_boxes_link_url_three' );
 
+	$box_default_text = 'Alto ventos est coeptis utque fecit. Phoebe sine circumfuso arce. Tanto aliis. Matutinis cornua origo formaeque animal mundo. Chaos: fabricator. Natura mundo caesa addidit.
+        Cuncta habendum meis omni ille formaeque emicuit septemque et. Lege fecit aethere porrexerat gentes horrifer formas.';
+	
 	// Getting text for each box
-	$text1 = cyberchimps_get_option( 'cyberchimps_blog_boxes_lite_image_one_text' );
-	$text2 = cyberchimps_get_option( 'cyberchimps_blog_boxes_lite_image_two_text' );
-	$text3 = cyberchimps_get_option( 'cyberchimps_blog_boxes_lite_image_three_text' );
+	$text1 = cyberchimps_get_option( 'cyberchimps_blog_boxes_lite_image_one_text', $box_default_text );
+	$text2 = cyberchimps_get_option( 'cyberchimps_blog_boxes_lite_image_two_text', $box_default_text );
+	$text3 = cyberchimps_get_option( 'cyberchimps_blog_boxes_lite_image_three_text', $box_default_text );
 
 	?>
 
