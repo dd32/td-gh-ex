@@ -33,9 +33,9 @@
 
 	<?php 
 	
-	if ((is_home()) || (is_category()) || (is_page() )):
+	if ((is_home()) || (is_category()) || (is_page()) || (is_search()) ):
 		
-		the_excerpt(); 
+		suevafree_excerpt(); 
 	
 	else:
 

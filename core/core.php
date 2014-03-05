@@ -139,6 +139,31 @@ function suevafree_template($id) {
 }
 
 /*-----------------------------------------------------------------------------------*/
+/* Excerpt */
+/*-----------------------------------------------------------------------------------*/ 
+
+function suevafree_hide_excerpt_more() {
+	return '';
+}
+
+add_filter('the_content_more_link', 'suevafree_hide_excerpt_more');
+add_filter('excerpt_more', 'suevafree_hide_excerpt_more');
+
+function suevafree_excerpt() {
+	
+	global $post,$more;
+	$more = 0;
+	
+	if ($pos=strpos($post->post_content, '<!--more-->')): 
+		$output = '<p>'.strip_tags(get_the_content()).'<a class="button" href="'.get_permalink($post->ID).'" title="More">  ' . __( "Read More","wip") . ' </a></p>';
+	else:
+		$output = '<p>'.get_the_excerpt().'<a class="button" href="'.get_permalink($post->ID).'" title="More">  ' . __( "Read More","wip") . '</a></p>';
+	endif;
+	
+	echo $output;
+}
+
+/*-----------------------------------------------------------------------------------*/
 /* Request */
 /*-----------------------------------------------------------------------------------*/ 
 
@@ -257,19 +282,6 @@ function suevafree_prettyPhoto( $html, $id, $size, $permalink, $icon, $text ) {
 }
 
 add_filter( 'wp_get_attachment_link', 'suevafree_prettyPhoto', 10, 6);
-
-/*-----------------------------------------------------------------------------------*/
-/* Custom excerpt more */
-/*-----------------------------------------------------------------------------------*/
-   
-function suevafree_new_excerpt_more( $more ) {
-	
-	global $post;
-	return '<a class="button" href="'.get_permalink($post->ID).'" title="More"> ' . __( "Read More","wip") . ' </a>';
-}
-
-add_filter('excerpt_more', 'suevafree_new_excerpt_more');
-add_filter( 'the_content_more_link', 'suevafree_new_excerpt_more' );
 
 /*-----------------------------------------------------------------------------------*/
 /* Localize theme */
