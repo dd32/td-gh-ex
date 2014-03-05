@@ -24,7 +24,7 @@ function optionsframework_option_name() {
 
 function optionsframework_options() {
 
-	// Test data
+	// Logo upload
 	
 	$options[] = array( "name" => "Logo",
 		"type" => "heading" );
@@ -72,3 +72,26 @@ function options_theme_customizer_register($wp_customize) {
 		'settings' => 'options_theme_customizer[logo_uploader]'
 	) ) );	
 }
+
+/**
+ * Donation option
+ */
+
+add_action('optionsframework_after','base_options_after', 100);
+function base_options_after() { ?>
+	<div id="optionsframework-metabox" class="metabox-holder">
+	<div id="optionsframework" class="postbox">
+    <h3>Make a donation</h3>
+    <div class="inside">
+    <p>If you like the theme and wish to support the future development make a small donation.
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+	<input type="hidden" name="cmd" value="_s-xclick">
+	<input type="hidden" name="hosted_button_id" value="L3J7LWDAYRUH6">
+	<input type="image" src="https://www.paypalobjects.com/it_IT/IT/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - Il metodo rapido, affidabile e innovativo per pagare e farsi pagare.">
+<img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1">
+</form>    
+    </p>
+	</div>
+    </div>
+	</div>
+<?php }

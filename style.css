@@ -4,12 +4,12 @@ Theme URI: http://www.iografica.it/prodotto/base-wp/
 Author: Iografica.it
 Author URI: http://iografica.it/
 Description: A basic blog or business WordPress theme, based on _s with integration of skeleton 960 grid.
-Version: 1.04
+Version: 1.05
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: base
 Domain Path: /languages/
-Tags: white, orange, one-column, two-columns, right-sidebar, responsive-layout, full-width-template, post-formats, sticky-post, theme-options, translation-ready, custom-background, featured-images, custom-menu
+Tags: white, orange, one-column, two-columns, right-sidebar, responsive-layout, full-width-template, post-formats, sticky-post, theme-options, translation-ready, custom-background, featured-images, custom-menu, custom-header
 
 Base WP WordPress Theme, Copyright (C) 2014 iografica.it
 Base WP WordPress theme is licensed under the GPL.
@@ -306,6 +306,7 @@ input[type="search"] {
 	-webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
 	-moz-box-sizing:    content-box;
 	box-sizing:         content-box;
+	width: 95%;
 }
 input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
 	-webkit-appearance: none;
@@ -350,6 +351,9 @@ textarea {
 /*--------------------------------------------------------------
 5.0 Navigation
 --------------------------------------------------------------*/
+.header-image{
+	margin-bottom:-1.4em;
+}
 .site-header{
 	border-bottom: 1px solid #ccc;
 	-moz-box-shadow: 0px 1px 3px #ddd;
@@ -361,18 +365,15 @@ textarea {
 	border-bottom: 1px solid #eee;
 	text-align:center;
 	padding-bottom:1em;	
-	color: #ecf0f1;
 }
 
 .site-branding a {
-	color: #3498db;
 	text-decoration:none;	
 }
 .site-title, .site-title a {
 	margin-top:1em;
 }
 .site-description{
-	color: #aaa;
 	font-size:1.25em;
 }
 /*--------------------------------------------------------------
