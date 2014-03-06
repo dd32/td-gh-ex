@@ -1,3 +1,7 @@
+/**
+ * Theme functions file
+ */
+
 (function ($) {
 	"use strict";
 

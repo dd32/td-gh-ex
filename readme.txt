@@ -18,6 +18,14 @@ FlexSlider - GPLv2 License: https://github.com/woothemes/flexslider
 
 PhotoSwipe - MIT License: https://github.com/codecomputerlove/PhotoSwipe/blob/master/MIT-license.txt
 
+jQuery Cycle Plugin (with Transition Definitions) - Dual licensed under the MIT and GPL licenses: http://jquery.malsup.com/license.html
+
+HTML5 Shiv v3.6 - MIT/GPL2 Licensed: https://github.com/aFarkas/html5shiv
+
+noUiSlider -  http://refreshless.com/nouislider/ -> http://www.wtfpl.net/about/
+
+zurb / responsive-tables - MIT License: https://github.com/zurb/foundation/blob/master/LICENSE
+
 
 
 MaxFlat Core Features:
@@ -72,4 +80,6 @@ Limitations
 --------------------
 
 Sticky post should be used with images
+Photoswipe functionality works properly only with galleries which link to media file [GALLERY SETTINGS-> link to -> media file]
 Custom background color or image is displayed at a resolution higher than 1280 px
+

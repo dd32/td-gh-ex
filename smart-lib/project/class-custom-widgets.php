@@ -35,7 +35,7 @@ class Smart_Widget_Search extends Smart_Core_Widget {
 
 	function __construct() {
 
-		$widget_ops = array( 'classname' => 'smartlib_widget_search', 'description' => __( "A search form for your site", 'maxflat') );
+		$widget_ops = array( 'classname' => 'maxflat_widget_search', 'description' => __( "A search form for your site", 'maxflat') );
 		parent::__construct( 'search', __( ucfirst('maxflat') .'Search', 'maxflat'), $widget_ops );
 	}
 
@@ -86,9 +86,9 @@ class Smart_Widget_Recent_Posts extends Smart_Core_Widget {
 
 	function __construct() {
 
-		$widget_ops = array( 'classname' => 'smartlib_widget_recent_entries', 'description' => __( "The most recent posts on your site (extended contorls)", 'maxflat') );
+		$widget_ops = array( 'classname' => 'maxflat_widget_recent_entries', 'description' => __( "The most recent posts on your site (extended contorls)", 'maxflat') );
 		parent::__construct( 'smartlib-recent-posts', __( ucfirst('maxflat') .' Extended Recent Posts', 'maxflat'), $widget_ops );
-		$this->alt_option_name = 'widget_recent_entries_Smartlib';
+		$this->alt_option_name = 'widget_recent_entries_MAXFLAT';
 
 		add_action( 'save_post', array( $this, 'flush_widget_cache' ) );
 		add_action( 'deleted_post', array( $this, 'flush_widget_cache' ) );
@@ -144,10 +144,10 @@ class Smart_Widget_Recent_Posts extends Smart_Core_Widget {
 					else the_ID(); ?></a></h5>
 				</header>
 				<?php if ( $show_date ) : ?>
-				<?php smartlib_display_meta_post('date')?>
+				<?php maxflat_display_meta_post('date')?>
 				<?php endif; ?>
 					<?php if ( $show_post_author ) : ?>
-				  <?php smartlib_author_line() ?>
+				  <?php maxflat_author_line() ?>
 					<?php endif; ?>
 
 
@@ -240,8 +240,8 @@ class Smart_Widget_Recent_Posts extends Smart_Core_Widget {
 class Smart_Widget_One_Author extends Smart_Core_Widget {
 
 	function __construct() {
-		$widget_ops = array( 'classname' => 'smartlib_one_author', 'description' => __( "Short  info & avatar", 'maxflat') );
-		parent::__construct( 'smartlib_one-author', __( ucfirst('maxflat') .' One Author Profile', 'maxflat'), $widget_ops );
+		$widget_ops = array( 'classname' => 'maxflat_one_author', 'description' => __( "Short  info & avatar", 'maxflat') );
+		parent::__construct( 'maxflat_one-author', __( ucfirst('maxflat') .' One Author Profile', 'maxflat'), $widget_ops );
 		$this->alt_option_name = 'smartlib-one-author';
 
 		add_action( 'save_post', array( $this, 'flush_widget_cache' ) );
@@ -251,7 +251,7 @@ class Smart_Widget_One_Author extends Smart_Core_Widget {
 
 	function widget( $args, $instance ) {
 
-		wp_reset_query();
+		wp_reset_postdata();
 		$title = apply_filters( 'widget_title', $instance['title'] );
 
 		extract( $args );
@@ -345,7 +345,7 @@ class Smart_Widget_One_Author extends Smart_Core_Widget {
 	}
 
 	function flush_widget_cache() {
-		wp_cache_delete( 'smartlib_one_author', 'widget' );
+		wp_cache_delete( 'maxflat_one_author', 'widget' );
 	}
 }
 
@@ -363,7 +363,7 @@ class Smart_Widget_Social_Icons extends Smart_Core_Widget {
 	public $form_args;
 
 	function __construct() {
-		$widget_ops = array( 'classname' => 'smartlib_widget_social_icons', 'description' => __( "Add social profile icons", 'maxflat') );
+		$widget_ops = array( 'classname' => 'maxflat_widget_social_icons', 'description' => __( "Add social profile icons", 'maxflat') );
 		parent::__construct( 'smartlib-social-icons', __( ucfirst('maxflat') .'  Social Icons', 'maxflat'), $widget_ops );
 		$this->alt_option_name = 'smartlib-social-icons';
 
@@ -393,9 +393,9 @@ class Smart_Widget_Social_Icons extends Smart_Core_Widget {
 		<?php
 		foreach ( $this->form_args as $row ) {
 			if ( isset( $instance[$row] ) && ! empty( $instance[$row] ) && $row != 'title' ) {
-				$class_name = __SMARTLIB::layout()->get_awesome_icon_class($row .'_large');
+				$class_name = __MAXFLAT::layout()->get_awesome_icon_class($row .'_large');
 				?>
-				<li class="smartlib_social_<?php echo $row ?>"><a href="<?php echo $instance[$row]  ?>"><i class="<?php echo $class_name ?>"></i></a></li>
+				<li class="maxflat_social_<?php echo $row ?>"><a href="<?php echo $instance[$row]  ?>"><i class="<?php echo $class_name ?>"></i></a></li>
 				<?php
 			}
 		}?>
@@ -655,7 +655,7 @@ class Smart_Widget_Recent_Videos extends Smart_Core_Widget {
 					if('' != get_the_post_thumbnail()){
 ?>
 					<li>
-							<a href="<?php the_permalink(); ?>" class="smartlib-thumbnail-outer"><?php smartlib_get_format_ico('video') ?><?php the_post_thumbnail('medium-square') ?></a>
+							<a href="<?php the_permalink(); ?>" class="smartlib-thumbnail-outer"><?php maxflat_get_format_ico('video') ?><?php the_post_thumbnail('medium-square') ?></a>
 						</li>
 
 <?php
@@ -665,7 +665,7 @@ class Smart_Widget_Recent_Videos extends Smart_Core_Widget {
 
 		<?php
 		}
-		wp_reset_query();
+		wp_reset_postdata();
 	echo $after_widget; ?>
 	<?php
 	}
@@ -730,7 +730,7 @@ class Smart_Widget_Recent_Galleries extends Smart_Core_Widget{
 
 
 	function __construct() {
-		$widget_ops = array( 'classname' => 'smartlib_gallery_recent_widget', 'description' => __( "Displays last posts from the gallery post format", 'smartlib' ) );
+		$widget_ops = array( 'classname' => 'maxflat_gallery_recent_widget', 'description' => __( "Displays last posts from the gallery post format", 'smartlib' ) );
 		parent::__construct( 'smartlib-recent-gallery-widget', __( ucfirst('maxflat') .'  Recent Galleries', 'maxflat'), $widget_ops );
 		$this->alt_option_name = 'smartlib-gallery_recent_widget';
 
@@ -778,18 +778,18 @@ class Smart_Widget_Recent_Galleries extends Smart_Core_Widget{
 					?>
 
 							<?php
-							$featured_image = __SMARTLIB::layout()->get_featured_image( 'medium-square' );
+							$featured_image = __MAXFLAT::layout()->get_featured_image( 'medium-square' );
 							if ( '' != get_the_post_thumbnail() ) {
 								?>
 								<li>
-					<a href="<?php the_permalink(); ?>" class="smartlib-thumbnail-outer"><?php smartlib_get_format_ico('gallery') ?><?php the_post_thumbnail('medium-square') ?></a>
+					<a href="<?php the_permalink(); ?>" class="smartlib-thumbnail-outer"><?php maxflat_get_format_ico('gallery') ?><?php the_post_thumbnail('medium-square') ?></a>
 								</li>
 								<?php
 							}
 							else if ( ! empty( $featured_image ) ) {
 								?>
 									<li>
-						<a href="<?php the_permalink(); ?>" class="smartlib-thumbnail-outer"><?php smartlib_get_format_ico('gallery') ?><?php echo $featured_image ?></a></li>
+						<a href="<?php the_permalink(); ?>" class="smartlib-thumbnail-outer"><?php maxflat_get_format_ico('gallery') ?><?php echo $featured_image ?></a></li>
 								<?php
 
 							}
@@ -797,7 +797,7 @@ class Smart_Widget_Recent_Galleries extends Smart_Core_Widget{
 
 					<?php
 				}
-				wp_reset_query();
+				wp_reset_postdata();
 				?>
 			</ul>
 

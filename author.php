@@ -33,13 +33,13 @@ get_header(); ?>
         <div class="author-info">
 					<div class="author-avatar">
 						<?php
-						$user_image = get_the_author_meta( 'smartlib_profile_image',get_the_author_meta( 'ID' ) );
+						$user_image = get_the_author_meta( 'maxflat_profile_image',get_the_author_meta( 'ID' ) );
 						if(!empty($user_image)){
 							?>
 							<img src="<?php echo $user_image ?>" alt="<?php printf( __( 'About %s', 'maxflat' ), get_the_author() ); ?>" />
 							<?php
 						}else
-							echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'smartlib_author_bio_avatar_size', 68 ) ); ?>
+							echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'maxflat_author_bio_avatar_size', 68 ) ); ?>
 					</div>
             <!-- .author-avatar -->
             <div class="author-description">
@@ -56,7 +56,7 @@ get_header(); ?>
         <?php get_template_part('content','loop'); ?>
         <?php endwhile; ?>
 
-    <?php smartlib_list_pagination('nav-below'); ?>
+    <?php maxflat_list_pagination('nav-below'); ?>
 
     <?php else : ?>
     <?php get_template_part('content', 'none'); ?>

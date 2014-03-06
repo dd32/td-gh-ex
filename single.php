@@ -19,9 +19,9 @@ $category = get_the_category();
     }
     ?>
 
-    <?php smartlib_prev_next_post_navigation(); ?>
+    <?php maxflat_prev_next_post_navigation(); ?>
 
-	   <?php smartlib_get_related_post_box($category[0]->cat_ID, get_the_ID(), 8, 4); ?>
+	   <?php maxflat_get_related_post_box($category[0]->cat_ID, get_the_ID(), 8, 4); ?>
 
     <?php comments_template('', true); ?>
 

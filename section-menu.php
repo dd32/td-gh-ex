@@ -5,7 +5,7 @@
 		title="<?php esc_attr_e( 'Skip to content', 'maxflat' ); ?>"><?php _e( 'Skip to content', 'maxflat' ); ?></a>
 	<?php
 	//fixed menu option
-	$fixed = __SMARTLIB::option( 'smartlib_menu_fixed' );
+	$fixed = __MAXFLAT::option( 'maxflat_menu_fixed' );
 ?>
 <div class="maxflat-nav-menu <?php echo $fixed=='1'? ' fixed-menu':'' ?>">
 	<?php wp_nav_menu( array( 'theme_location' => 'categories', 'container' => false ) ); ?>

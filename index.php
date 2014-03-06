@@ -25,7 +25,7 @@ get_header(); ?>
 		<?php endif; ?>
 		<?php endwhile;
 
-        smartlib_list_pagination( 'nav-below' );
+        maxflat_list_pagination( 'nav-below' );
 
 	?>
 	<?php else : ?>

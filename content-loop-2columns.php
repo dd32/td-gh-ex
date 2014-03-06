@@ -9,14 +9,14 @@
 
         <header class="entry-header">
             <div class="top-meta">
-                <?php smartlib_category_line(); ?>
+                <?php maxflat_category_line(); ?>
             </div>
             <h2 class="entry-title">
                 <a href="<?php the_permalink(); ?>"
                    title="<?php echo esc_attr(sprintf(__('Permalink to %s', 'maxflat'), the_title_attribute('echo=0'))); ?>"
                    rel="bookmark"><?php the_title(); ?></a>
             </h2>
-					<?php smartlib_display_meta_post(); ?>
+					<?php maxflat_display_meta_post(); ?>
         </header>
         <!-- .entry-header -->
         <div class="row">
@@ -27,17 +27,17 @@
 
                 if ('' != get_the_post_thumbnail()) {
                     ?>
-                   <div class="smartlib-thumbnail-outer"><?php smartlib_get_format_ico($post_format) ?><a href="<?php the_permalink(); ?>"
+                   <div class="smartlib-thumbnail-outer"><?php maxflat_get_format_ico($post_format) ?><a href="<?php the_permalink(); ?>"
 																																										 title="<?php echo esc_attr(sprintf(__('Permalink to %s', 'maxflat'), the_title_attribute('echo=0'))); ?>"
 																																										 ><?php the_post_thumbnail('medium-square'); ?></a></div>
 
                     <?php
                 }elseif($post_format=='gallery'){
-									$featured_image = smartlib_featured_image('medium-square');
+									$featured_image = maxflat_featured_image('medium-square');
 									if(!empty($featured_image)){
 									?>
 
-									<div class="smartlib-thumbnail-outer"><?php smartlib_get_format_ico($post_format) ?><a href="<?php the_permalink(); ?>"
+									<div class="smartlib-thumbnail-outer"><?php maxflat_get_format_ico($post_format) ?><a href="<?php the_permalink(); ?>"
 																																												 title="<?php echo esc_attr(sprintf(__('Permalink to %s', 'maxflat'), the_title_attribute('echo=0'))); ?>"
 											><?php echo $featured_image ?></a></div>
 

@@ -13,10 +13,10 @@
  */
 
 
-function smartlib_breadcrumb(){
+function maxflat_breadcrumb(){
 	?>
 		<div class="smartlib-breadcrumb">
-	   <?php __SMARTLIB::layout()->get_the_bredcrumb(); ?>
+	   <?php __MAXFLAT::layout()->get_the_bredcrumb(); ?>
 		</div>
 	<?php
 }
@@ -26,7 +26,7 @@ function smartlib_breadcrumb(){
  *
  * @return mixed
  */
-function smartlib_logo(){
+function maxflat_logo(){
    if(is_front_page()){
 		 $header_tag = 'h1';
 	 }else{
@@ -34,14 +34,14 @@ function smartlib_logo(){
 	 }
   echo '<'.$header_tag.' class="smartlib-logo-header">';
 	?>
-    <a href="<?php echo  home_url( '/'  ); ?>"
+    <a href="<?php echo esc_url( home_url( '/' ) ); ?>"
 				 title="<?php echo  get_bloginfo( 'name', 'display' ) ; ?>"
 				 rel="home"
-				 class="smartlib-site-logo <?php echo ( strlen(__SMARTLIB::option('project_logo') ) > 0 ) ? 'image-logo' : ''; ?>">
+				 class="smartlib-site-logo <?php echo ( strlen(__MAXFLAT::option('project_logo') ) > 0 ) ? 'image-logo' : ''; ?>">
 				<?php
-				if ( strlen( __SMARTLIB::option('project_logo') ) > 0 ) {
+				if ( strlen( __MAXFLAT::option('project_logo') ) > 0 ) {
                     ?>
-                    <img src="<?php echo __SMARTLIB::option('project_logo'); ?>"
+                    <img src="<?php echo __MAXFLAT::option('project_logo'); ?>"
                          alt="<?php echo bloginfo( 'name' ); ?>" />
                 <?php
                 }
@@ -58,17 +58,17 @@ function smartlib_logo(){
  * @return mixed
  */
 
-function smartlib_get_header(){
-	return __SMARTLIB::layout()->get_site_header();
+function maxflat_get_header(){
+	return __MAXFLAT::layout()->get_site_header();
 }
 
 /**
 Prints HTML category line
  */
-function smartlib_category_line(){
+function maxflat_category_line(){
 	?>
 <span class="smartlib-category-line">
-	<?php echo __SMARTLIB::layout()->category_line(); ?>
+	<?php echo __MAXFLAT::layout()->category_line(); ?>
 </span>
 <?php
 
@@ -83,16 +83,16 @@ function smartlib_category_line(){
  *
  * @return mixed
  */
-function smartlib_list_pagination( $html_id){
-	return __SMARTLIB::layout()->pagination_nav( $html_id);
+function maxflat_list_pagination( $html_id){
+	return __MAXFLAT::layout()->pagination_nav( $html_id);
 }
 
 /**
  * Displays navigation to next/previous post on single  page.
  */
 
-function smartlib_prev_next_post_navigation(){
-	return __SMARTLIB::layout()->single_prev_next();
+function maxflat_prev_next_post_navigation(){
+	return __MAXFLAT::layout()->single_prev_next();
 }
 
 
@@ -100,8 +100,8 @@ function smartlib_prev_next_post_navigation(){
  * Modyfication wp_link_pages() - <!--nextpage--> pagination
  * @return mixed
  */
-function smartlib_custom_single_page_pagination(){
-	return __SMARTLIB::layout()->custom_wp_link_pages();
+function maxflat_custom_single_page_pagination(){
+	return __MAXFLAT::layout()->custom_wp_link_pages();
 }
 
 /**
@@ -114,16 +114,16 @@ function smartlib_custom_single_page_pagination(){
  *
  * @return mixed
  */
-function smartlib_comment_component( $comment, $args, $depth ){
-	return __SMARTLIB::layout()->comment_component( $comment, $args, $depth );
+function maxflat_comment_component( $comment, $args, $depth ){
+	return __MAXFLAT::layout()->comment_component( $comment, $args, $depth );
 }
 
 /**
  * Display Date in post loop
  * @return mixed
  */
-function smartlib_get_date(){
-    return __SMARTLIB::layout()->display_date();
+function maxflat_get_date(){
+    return __MAXFLAT::layout()->display_date();
 }
 
 /**
@@ -131,61 +131,8 @@ function smartlib_get_date(){
  * @param $size
  * @return mixed
  */
-function smartlib_get_featured_image($size){
-    return __SMARTLIB::layout()->get_featured_image($size);
-}
-function smartlib_social_buttons(){
-
-	$social_buttons_array = __SMARTLIB::layout()->prepare_social_buttons();
-	?>
-	<ul class="no-bullet smartlib-soical-widgets">
-		<?php
-		if ( isset($social_buttons_array['facebook']) && $social_buttons_array['facebook'] ) {
-			?>
-		<li>
-			<div class="fb-like" data-href="<?php the_permalink(); ?>" data-send="false" data-layout="box_count"
-					 data-width="60" data-show-faces="false"></div>
-		</li>
-		<?php
-		}
-
-		if ( isset($social_buttons_array['gplus']) && $social_buttons_array['gplus'] ) {
-
-			?>
-		<li>
-			<g:plusone size="tall"></g:plusone>
-		</li>
-		<?php
-		}
-
-		if ( isset($social_buttons_array['twiter']) && $social_buttons_array['twiter'] ) {
-			?>
-		<li>
-			<a href="https://twitter.com/share" style="width:50px" class="twitter-share-button" data-count="vertical"
-				 data-dnt="true">Tweet</a>
-			<script>!function (d, s, id) {
-				var js, fjs = d.getElementsByTagName(s)[0];
-				if (!d.getElementById(id)) {
-					js = d.createElement(s);
-					js.id = id;
-					js.src = "//platform.twitter.com/widgets.js";
-					fjs.parentNode.insertBefore(js, fjs);
-				}
-			}(document, "script", "twitter-wjs");</script>
-		</li>
-		<?php
-		}
-		if ( isset($social_buttons_array['pinterest']) && $social_buttons_array['pinterest'] ) {
-			?>
-		<li class="pinterest-button">
-			<a data-pin-config="above" href="//pinterest.com/pin/create/button/" data-pin-do="buttonBookmark"><img
-					src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
-		</li>
-		<?php
-		}
-		?>
-</ul>
-<?php
+function maxflat_get_featured_image($size){
+    return __MAXFLAT::layout()->get_featured_image($size);
 }
 
 /**
@@ -195,7 +142,7 @@ function smartlib_social_buttons(){
  *
  */
 
-function smartlib_ie_support()
+function maxflat_ie_support()
 {
 
     ?><!--[if IE 7]>
@@ -218,7 +165,7 @@ function smartlib_ie_support()
 /*
  * Return excerpt with limit
  */
-function smartlib_excerpt_max_charlength( $charlength ) {
+function maxflat_excerpt_max_charlength( $charlength ) {
 	$excerpt = get_the_excerpt();
 	$charlength ++;
 
@@ -247,8 +194,8 @@ function smartlib_excerpt_max_charlength( $charlength ) {
  *
  * @return string
  */
-function smartlib_option_custom_code_header(){
-	__SMARTLIB::option( 'custom_code_header');
+function maxflat_option_custom_code_header(){
+	__MAXFLAT::option( 'custom_code_header');
 
 }
 
@@ -256,7 +203,7 @@ function smartlib_option_custom_code_header(){
 Retrieves project_fixed_top bar option and get fixed class
  */
 function get_header_fixed_class(){
-	$fixed = __SMARTLIB::option( 'project_fixed_topbar' );
+	$fixed = __MAXFLAT::option( 'project_fixed_topbar' );
    echo $fixed=='1'? ' smartlib-fixed-top-bar':'';
 }
 
@@ -264,7 +211,7 @@ function get_header_fixed_class(){
  * Display lt ie7 info
  */
 
-function smartlib_lt_ie7_info() {
+function maxflat_lt_ie7_info() {
 	?>
 <!--[if lt IE 7]>
 <p class=chromeframe>Your browser is <em>ancient!</em> Upgrade to a
@@ -277,7 +224,7 @@ function smartlib_lt_ie7_info() {
 /**
  * Display search menu
  */
-function smartlib_searchmenu() {
+function maxflat_searchmenu() {
 	?>
 <ul id="top-switches" class="no-bullet right">
 	<li>
@@ -298,15 +245,15 @@ function smartlib_searchmenu() {
  * Display search form
  */
 
-function smartlib_searchform() {
+function maxflat_searchform() {
 	?>
 <form action="<?php echo home_url( '/' ); ?>" method="get" role="search" id="smartlib-top-search-container">
 	<div class="row">
 		<div class="columns sixteen mobile-four">
 			<input id="search-input" type="text" name="s"
-						 placeholder="<?php _e( 'Search for ...',  __SMARTLIB::domain() ); ?>" value="">
+						 placeholder="<?php _e( 'Search for ...',  __MAXFLAT::domain() ); ?>" value="">
 			<input class="button" id="top-searchsubmit" type="submit"
-						 value="<?php _e( 'Search', __SMARTLIB::domain() ); ?>">
+						 value="<?php _e( 'Search', __MAXFLAT::domain() ); ?>">
 		</div>
 	</div>
 
@@ -324,7 +271,7 @@ function smartlib_searchform() {
  *
 */
 
-function  smartlib_mobile_menu($args=array()){
+function  maxflat_mobile_menu($args=array()){
 
 
 
@@ -335,7 +282,7 @@ function  smartlib_mobile_menu($args=array()){
 
 	$args           = wp_parse_args( $args, $defaults );
 
-	$menu_item = __SMARTLIB::layout()->wp_nav_menu_select($args);
+	$menu_item = __MAXFLAT::layout()->wp_nav_menu_select($args);
 
 	if($menu_item){
 	?>
@@ -371,7 +318,7 @@ function  smartlib_mobile_menu($args=array()){
  */
 
 function check_position_of_component( $component, $side) {
-		return __SMARTLIB::layout()->check_position_of_component($component, $side);
+		return __MAXFLAT::layout()->check_position_of_component($component, $side);
 }
 
 /**
@@ -379,7 +326,7 @@ function check_position_of_component( $component, $side) {
  */
 
 function get_class_of_component( $component ) {
-	return __SMARTLIB::layout()->get_class_of_component($component);
+	return __MAXFLAT::layout()->get_class_of_component($component);
 }
 
 
@@ -389,15 +336,15 @@ function get_class_of_component( $component ) {
  *
  * @return mixed
  */
-function smartlib_featured_image($size= 'full' ) {
-	return __SMARTLIB::layout()->get_featured_image( $size  );
+function maxflat_featured_image($size= 'full' ) {
+	return __MAXFLAT::layout()->get_featured_image( $size  );
 }
 
 
 /**
  * Include the category specific template for the content
  */
-function smartlib_template_category_loop() {
+function maxflat_template_category_loop() {
 
 	$category_id     = get_query_var( 'cat' );
 	$category_option = get_option( 'category_' . $category_id );
@@ -419,8 +366,8 @@ function smartlib_template_category_loop() {
  * @return mixed
  */
 
-function smartlib_get_related_post_box( $category, $post_ID, $display_post_limit, $columns_per_slide = 4 ) {
-	$query =  __SMARTLIB::layout()->get_related_post_box($category, $post_ID, $display_post_limit, $columns_per_slide);
+function maxflat_get_related_post_box( $category, $post_ID, $display_post_limit, $columns_per_slide = 4 ) {
+	$query =  __MAXFLAT::layout()->get_related_post_box($category, $post_ID, $display_post_limit, $columns_per_slide);
 
 	$limit= $query->found_posts;
 	if ( $limit != 0) {
@@ -449,12 +396,12 @@ function smartlib_get_related_post_box( $category, $post_ID, $display_post_limit
 
 									<a href="<?php the_permalink(); ?>" class="smartlib-thumbnail-outer"
 										 title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'maxflat' ), the_title_attribute( 'echo=0' ) ) ); ?>"
-											><?php smartlib_get_format_ico($post_format) ?><?php the_post_thumbnail( 'medium-image-thumb' ); ?></a>
+											><?php maxflat_get_format_ico($post_format) ?><?php the_post_thumbnail( 'medium-image-thumb' ); ?></a>
 
 								<?php
 							}
 							elseif ( $post_format == 'gallery' ) {
-								$featured_image = smartlib_get_featured_image( 'medium-image-thumb' );
+								$featured_image = maxflat_get_featured_image( 'medium-image-thumb' );
 
 								if ( ! empty( $featured_image ) ) {
 									?>
@@ -462,7 +409,7 @@ function smartlib_get_related_post_box( $category, $post_ID, $display_post_limit
 
 										<a href="<?php the_permalink(); ?>" class="smartlib-thumbnail-outer"
 											 title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'maxflat' ), the_title_attribute( 'echo=0' ) ) ); ?>"
-												><?php smartlib_get_format_ico($post_format) ?><?php echo $featured_image ?></a>
+												><?php maxflat_get_format_ico($post_format) ?><?php echo $featured_image ?></a>
 
 									<?php
 								}
@@ -471,7 +418,7 @@ function smartlib_get_related_post_box( $category, $post_ID, $display_post_limit
 							?>
 							<h4><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h4>
 							<?php if ( empty( $featured_image ) && '' == get_the_post_thumbnail() ) { ?>
-						<?php smartlib_display_meta_post('author') ?>
+						<?php maxflat_display_meta_post('author') ?>
 							<?php } ?>
 						</div>
 
@@ -506,8 +453,8 @@ function smartlib_get_related_post_box( $category, $post_ID, $display_post_limit
  *
  * @return mixed
  */
-function smartlib_dynamic_sidebar_grid($index=1){
-	return __SMARTLIB::layout()->dynamic_sidebar_grid($index);
+function maxflat_dynamic_sidebar_grid($index=1){
+	return __MAXFLAT::layout()->dynamic_sidebar_grid($index);
 }
 
 /**
@@ -515,8 +462,8 @@ function smartlib_dynamic_sidebar_grid($index=1){
  *
  * @param $key_class
  */
-function smartlib_get_awesome_ico($key_class){
-		$class_name = __SMARTLIB::layout()->get_awesome_icon_class($key_class);
+function maxflat_get_awesome_ico($key_class){
+		$class_name = __MAXFLAT::layout()->get_awesome_icon_class($key_class);
 	  ?>
     <i class="<?php echo $class_name ?>"></i>
 		<?php
@@ -527,9 +474,9 @@ function smartlib_get_awesome_ico($key_class){
  *
  * @param $key_class
  */
-function smartlib_get_format_ico($key_class){
-	$class_name = __SMARTLIB::layout()->get_awesome_icon_class($key_class);
-	$formats_array = __SMARTLIB::layout()->get_promoted_formats();
+function maxflat_get_format_ico($key_class){
+	$class_name = __MAXFLAT::layout()->get_awesome_icon_class($key_class);
+	$formats_array = __MAXFLAT::layout()->get_promoted_formats();
 	if(in_array($key_class, $formats_array)){
 	?>
 		<span class="smartlib-format-ico"><i class="<?php echo $class_name ?>"></i></span>
@@ -543,12 +490,12 @@ function smartlib_get_format_ico($key_class){
  *
  * @param string $type author|category|date
  */
-function smartlib_display_meta_post($type='author'){
+function maxflat_display_meta_post($type='author'){
 	global $post;
 	?>
 
 <p class="meta-line">
-       <?php echo smartlib_get_date() ?>
+       <?php echo maxflat_get_date() ?>
 	<?php
 	$post_format = get_post_format( $post->ID );
 
@@ -557,14 +504,14 @@ function smartlib_display_meta_post($type='author'){
 	);
 	if(in_array($post_format, $speacial_formats )){
 		?>
-		<span class="meta-label smartlib-postformat-info"><?php smartlib_get_awesome_ico($post_format) ?> <?php echo ucfirst ($post_format) ?></span>
+		<span class="meta-label smartlib-postformat-info"><?php maxflat_get_awesome_ico($post_format) ?> <?php echo ucfirst ($post_format) ?></span>
 			<?php
 	}
 
 	if($type=='author'){
-		 smartlib_author_line();
+		 maxflat_author_line();
 	}else if($type=='category'){
-		smartlib_category_line();
+		maxflat_category_line();
 	}
 ?>
 
@@ -575,7 +522,7 @@ function smartlib_display_meta_post($type='author'){
 /*
  * Print author line
  */
-function smartlib_author_line(){
+function maxflat_author_line(){
 	?>
 <span class="meta-label meta-publisher vcard"><?php _e('Published by: ', 'maxflat') ?> <?php the_author_posts_link(); ?> </span>
 		<?php
@@ -584,10 +531,10 @@ function smartlib_author_line(){
 /**
  Prints tag line with HTML
  */
-function smartlib_entry_tags(){
+function maxflat_entry_tags(){
 	?>
 <?php if ( has_tag() ): ?>
-	<div class="smartlib-tags-article"> <?php smartlib_get_awesome_ico('tag_icon')?> <?php the_tags( __( 'Tags: ', 'maxflat' ), '  ' ); ?></div>
+	<div class="smartlib-tags-article"> <?php maxflat_get_awesome_ico('tag_icon')?> <?php the_tags( __( 'Tags: ', 'maxflat' ), '  ' ); ?></div>
 	<?php endif ?>
 		<?php
 }
@@ -595,30 +542,15 @@ function smartlib_entry_tags(){
 /**
  Prints leave replay button
  */
-function smartlib_replay_link(){
+function maxflat_replay_link(){
 	?>
 <div class="smartlib-comments-link">
 	<?php if ( comments_open() && is_single() ) { ?>
-	<?php comments_popup_link( __( 'Comment', 'maxflat' ) .'<i class="'.smartlib_get_awesome_ico('comments').'"></i></span>', __( '1 Reply', 'maxflat' ), __( '% Replies', 'maxflat' ) ); ?>
+	<?php comments_popup_link( __( 'Comment', 'maxflat' ) .'<i class="'.maxflat_get_awesome_ico('comments').'"></i></span>', __( '1 Reply', 'maxflat' ), __( '% Replies', 'maxflat' ) ); ?>
 	<?php } ?>
 </div>
 		<?php
 }
 
-/**
- * Custom form password
- *
- * @since MaxFlat 1.0
- *
- * @return string
- */
 
-function smartlib_password_form() {
-	global $post;
-	$label = 'pwbox-' . ( empty( $post->ID ) ? rand() : $post->ID );
-	$o     = '<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post" class="password-form"><div class="row"><div class="columns sixteen"><i class="icon-lock icon-left"></i>' . __( "To view this protected post, enter the password below:", 'maxflat') . '</div><label for="' . $label . '" class="columns four mobile-four">' . __( "Password:", 'maxflat') . ' </label><div class="columns eight mobile-four"><input name="post_password" id="' . $label . '" type="password" size="20" /></div><div class="columns four mobile-four"><input type="submit" name="Submit" value="' . esc_attr__( "Submit", 'maxflat') . '" /></div>
-    </div></form>
-    ';
-	return $o;
-}
 ?>

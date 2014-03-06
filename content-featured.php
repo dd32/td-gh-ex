@@ -5,7 +5,7 @@
 ?>
 <div class="smartlib-featured-post-box">
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-<?php smartlib_author_line(); ?>
+<?php maxflat_author_line(); ?>
         <header class="entry-header">
 
 
@@ -15,7 +15,7 @@
                    rel="bookmark"><?php the_title(); ?></a>
             </h3>
 
-					<?php smartlib_display_meta_post('data'); ?>
+					<?php maxflat_display_meta_post('data'); ?>
         </header>
         <!-- .entry-header -->
 

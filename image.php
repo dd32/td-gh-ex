@@ -71,7 +71,7 @@ get_header(); ?>
 					?>
 					<a href="<?php echo esc_url( $next_attachment_url ); ?>" title="<?php the_title_attribute(); ?>"
 						 rel="attachment"><?php
-						$attachment_size = apply_filters( 'smartlib_attachment_size', array( 960, 960 ) );
+						$attachment_size = apply_filters( 'maxflat_attachment_size', array( 960, 960 ) );
 						echo wp_get_attachment_image( $post->ID, $attachment_size );
 						?></a>
 

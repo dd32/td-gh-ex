@@ -6,7 +6,7 @@
 
 <?php
 
-$video_link = get_post_meta( $post->ID, '_smartlib_video_link', true );
+$video_link = get_post_meta( $post->ID, '_maxflat_video_link', true );
 
 
 	if ( ! empty( $video_link ) ) {

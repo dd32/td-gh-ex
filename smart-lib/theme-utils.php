@@ -1,5 +1,5 @@
 <?php
-class __SMARTLIB{
+class __MAXFLAT{
 	static public $project;
 
 	static function init(){

@@ -5,7 +5,7 @@
 
 get_header(); ?>
 
-<div id="content" class="<?php echo get_class_of_component('content', smartlib_option( 'smartlib_layout' )) ?>" role="main">
+<div id="content" class="<?php echo get_class_of_component('content') ?>" role="main">
 
     <?php if (have_posts()) : ?>
 
@@ -20,7 +20,7 @@ get_header(); ?>
         <?php get_template_part('content', 'loop'); ?>
         <?php endwhile; ?>
 
-    <?php smartlib_content_nav('nav-below'); ?>
+    <?php maxflat_prev_next_post_navigation(); ?>
 
     <?php else : ?>
 
@@ -40,8 +40,8 @@ get_header(); ?>
 
 </div><!-- #content -->
 <?php
-if(check_position_of_component('menu', 'right', smartlib_option( 'smartlib_layout' ))){
-	get_template_part('section', 'menu');
+if(check_position_of_component('menu', 'right')){
+    get_template_part('section', 'menu');
 }//if menu is large-1 the right side
 ?>
 </div><!-- #main -->
@@ -50,8 +50,8 @@ if(check_position_of_component('menu', 'right', smartlib_option( 'smartlib_layou
 
 <?php
 //add sidebar on the right side
-if(check_position_of_component('sidebar', 'right', smartlib_option( 'smartlib_layout' )))
-	get_sidebar();
+if(check_position_of_component('sidebar', 'right'))
+    get_sidebar();
 ?>
 </div><!-- #wrapper -->
 <?php get_footer(); ?>

@@ -1,4 +1,6 @@
-// Uploading files
+/**
+ * theme uploader script
+ */
 var file_frame;
 
 
@@ -31,7 +33,7 @@ jQuery('.smartlib-upload-user-photo-btn').live( 'click', function (event) {
 // We set multiple to false so only get one image from the uploader
 		attachment = file_frame.state().get('selection').first().toJSON();
 
-		jQuery('#smartlib_profile_image').val(attachment.url);
+		jQuery('#maxflat_profile_image').val(attachment.url);
 		jQuery('.smartlib-user-image-container').addClass('custom-image-outer');
 		jQuery('.smartlib-user-image-container img').attr('src', attachment.url);
 		jQuery('.smartlib-user-image-container img').removeAttr('style');

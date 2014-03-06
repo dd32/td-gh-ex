@@ -13,7 +13,7 @@ if (post_password_required())
 
     <?php if (have_comments()) : ?>
     <h3 class="smartlib-comments-title">
-        <span><?php echo smartlib_get_awesome_ico('comments') ?>
+        <span><?php echo maxflat_get_awesome_ico('comments') ?>
         <?php
         printf(_n('1 comment', '%1$s comments', get_comments_number(), 'maxflat'),
             number_format_i18n(get_comments_number()));
@@ -21,7 +21,7 @@ if (post_password_required())
     </h3>
 
     <ol class="commentlist">
-        <?php wp_list_comments(array('callback' => 'smartlib_comment_component', 'style' => 'ol')); ?>
+        <?php wp_list_comments(array('callback' => 'maxflat_comment_component', 'style' => 'ol')); ?>
     </ol><!-- .commentlist -->
 
     <?php if (get_comment_pages_count() > 1 && get_option('page_comments')) : // are there comments to navigate through ?>

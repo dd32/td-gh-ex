@@ -6,7 +6,7 @@
 
 	<?php
 
-$featured_image = smartlib_get_featured_image( 'wide-image' );
+$featured_image = maxflat_get_featured_image( 'wide-image' );
 
 
 if ('' != get_the_post_thumbnail() ) {

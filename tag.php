@@ -20,7 +20,7 @@ get_header();
 		<?php endif; ?>
 	</header><!-- .archive-header -->
 	<?php
-	$category_template = smartlib_template_category_loop();
+	$category_template = maxflat_template_category_loop();
 	?>
 	<div class="row smartlib-category-row <?php echo $category_template ?>">
 		<?php
@@ -64,7 +64,7 @@ get_header();
 		?>
 	</div>
 	<?php
-	smartlib_list_pagination('nav-below');
+	maxflat_list_pagination('nav-below');
 	?>
 
 	<?php else : ?>

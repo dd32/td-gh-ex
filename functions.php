@@ -21,7 +21,7 @@ require(get_template_directory() . '/smart-lib/load.php');
 /**
  * Initialize smart lib project object
  */
-__SMARTLIB::init();
+__MAXFLAT::init();
 
 
 
@@ -36,7 +36,7 @@ if (!isset($content_width))
  * Sets up theme defaults and registers the various WordPress features
  */
 
-function smartlib_setup(){
+function maxflat_setup(){
     /*
              * Load textdomain.
              */
@@ -85,13 +85,13 @@ function smartlib_setup(){
 
 }
 
-add_action('after_setup_theme', 'smartlib_setup');
+add_action('after_setup_theme', 'maxflat_setup');
 
 /**
  * Enqueues scripts and styles for front-end.
  *
  */
-function smartlib_scripts_styles()
+function maxflat_scripts_styles()
 {
 
     if (is_singular() && comments_open() && get_option('thread_comments'))
@@ -101,4 +101,4 @@ function smartlib_scripts_styles()
 
 }
 
-add_action('wp_enqueue_scripts', 'smartlib_scripts_styles');
+add_action('wp_enqueue_scripts', 'maxflat_scripts_styles');

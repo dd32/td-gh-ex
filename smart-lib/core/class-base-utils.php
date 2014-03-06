@@ -8,7 +8,7 @@ class Smart_Base_Utils{
 		$this->obj_project = $project;
     self::$project_domain = $this->obj_project->get_project_domain();
 
-		add_filter('wp_title', array($this, 'smartlib_wp_title') , '10', '2');
+		add_filter('wp_title', array($this, 'maxflat_wp_title') , '10', '2');
 		//add custom code - header
 		add_action('wp_head', array($this, 'custom_code_header'));
 		//add custom code - footer
@@ -30,7 +30,7 @@ class Smart_Base_Utils{
 	 *
 	 * @return string Filtered title.
 	 */
-	function smartlib_wp_title($title, $sep)
+	function maxflat_wp_title($title, $sep)
 	{
 	    global $paged, $page;
 

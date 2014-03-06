@@ -9,7 +9,7 @@
 		?>
 		<div class="social-and-image-container">
 			<div class="share-buttons-area social-column">
-				<?php smartlib_social_buttons(); ?>
+
 			</div>
 			<div class="comments-link">
 				<?php if ( comments_open() && is_single() ) { ?>
@@ -29,7 +29,7 @@
 	else {
 		?>
 		<div class="share-buttons-line">
-			<?php smartlib_social_buttons(); ?>
+
 		</div>
 		<?php
 	}

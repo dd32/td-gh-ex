@@ -1,7 +1,7 @@
 <?php
-add_action('admin_menu', 'smartlib_pro_menu');
+add_action('admin_menu', 'maxflat_pro_menu');
 
-function smartlib_pro_menu() {
+function maxflat_pro_menu() {
 add_theme_page('MaxFlat Premium', 'MaxFlat Premium', 'edit_theme_options', 'maxflat-premium', 'maxflat_function');
 }
 function maxflat_function(){
@@ -10,8 +10,8 @@ function maxflat_function(){
     <div id="icon-tools"class="icon32"><br></div>
     <h2>MaxFlat Premium</h2>
     <h3>Need extensive documentation and theme support? Learn more about MaxFlat Premium!</h3>
-    <p><a href="<?php _e('http://www.mojo-themes.com/item/maxflat-fully-responsive-flat-design-theme-for-blog-or-small-magazine/', 'maxflat') ?>">MaxFlat Premium</a> adds exciting new customization features to the Theme Customizer and other powerful customization tools like shortcodes or layout options. </p>
-    <div style="float: left; width: 50%"><p><img src="<?php _e('http://netbiel.pl/maxflat/files/theme-customizer-resize.jpg', 'maxflat') ?>" alt=""></p></div>
+    <p><a href="http://www.mojo-themes.com/item/maxflat-fully-responsive-flat-design-theme-for-blog-or-small-magazine/">MaxFlat Premium</a> adds exciting new customization features to the Theme Customizer and other powerful customization tools like shortcodes or layout options. </p>
+    <div style="float: left; width: 50%"><p><img src="<?php echo get_template_directory_uri();?>/smart-lib/img/theme-customizer-resize.jpg" alt=""></p></div>
     <div style="float: left; width: 40%; margin-left: 5%; ">
         <div id="submitdiv" class="postbox " style="margin-top: 40px;height: 265px;">
             <h3 class="hndle" style="padding: 9px 10px;"><span><strong>SmartAdapt Pro version</strong></span></h3>
@@ -30,7 +30,7 @@ function maxflat_function(){
                 </div>
 
 
-                <a href="<?php _e('http://www.mojo-themes.com/item/maxflat-fully-responsive-flat-design-theme-for-blog-or-small-magazine/', 'maxflat') ?>" class="button button-primary" style="clear: both; margin-top: 110px" target="_blank"><strong>More info &raquo;</strong></a>
+                <a href="http://www.mojo-themes.com/item/maxflat-fully-responsive-flat-design-theme-for-blog-or-small-magazine/" class="button button-primary" style="clear: both; margin-top: 110px" target="_blank"><strong>More info &raquo;</strong></a>
             </div>
 
         </div>

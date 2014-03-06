@@ -6,7 +6,7 @@
 
 	<?php
 
-   $featured_image =  smartlib_get_featured_image( 'medium-square' );
+   $featured_image =  maxflat_get_featured_image( 'medium-square' );
 
 	if ( '' != get_the_post_thumbnail() ) {
 		?>

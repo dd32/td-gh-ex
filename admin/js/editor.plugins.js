@@ -1,4 +1,6 @@
-
+/*
+ Theme editor script
+ */
 (function() {
 	tinymce.create('tinymce.plugins.smartlib', {
 		/**
@@ -35,21 +37,21 @@
 				if (hText !== null) {
 
 
-						shortcode = '[smartlib_pullquote]' + hText + '[/smartlib_pullquote]';
+						shortcode = '[maxflat_pullquote]' + hText + '[/maxflat_pullquote]';
 						ed.execCommand('mceInsertContent', 0, shortcode);
 
 				}
 			});
 
 			ed.addCommand('s_map', function() {
-					var shortcode = '[smartlib_map api_key="INSERT YOUR API KEY"  id="smartlib_map-1" coords="52.339381, 4.260405" zoom="5" type="satellite"]';
+					var shortcode = '[maxflat_map api_key="INSERT YOUR API KEY"  id="maxflat_map-1" coords="52.339381, 4.260405" zoom="5" type="satellite"]';
 					ed.execCommand('mceInsertContent', 0, shortcode);
 
 
 			});
 
 			ed.addCommand('s_video', function() {
-				var shortcode = '[smartlib_video from="-->You can choose: youtube, vimeo, dailymotion" id="Video ID eg. sdsd#545sd"]';
+				var shortcode = '[maxflat_video from="-->You can choose: youtube, vimeo, dailymotion" id="Video ID eg. sdsd#545sd"]';
 				ed.execCommand('mceInsertContent', 0, shortcode);
 
 

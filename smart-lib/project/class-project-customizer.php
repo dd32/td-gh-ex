@@ -114,9 +114,10 @@ class Smart_Project_Customizer{
         public $plugin_territory_sections = array(
             'colors',
             '_section_project_layout',
-            'smartlib_section_project_sidebar_resize',
+            'maxflat_section_project_sidebar_resize',
             '_section_project_social_buttons',
-            '_section_project_fonts'
+            '_section_project_fonts',
+            '_section_project_custom_code'
         );
 
 
@@ -207,7 +208,7 @@ class Smart_Project_Customizer{
 	public static function generate_layout_css(){
 
 		$width = self::get_project_option( 'project_layout_width' );
-    $sidebar_width = self::get_project_option(  'project_sidebar_resize' );
+        $sidebar_width = 340;
     //layout resize
 		$layout_width = ! empty($width)?$width:1280;
 		echo '@media only screen and (min-width: '.($layout_width+25).'px){'."\n";
@@ -227,12 +228,26 @@ class Smart_Project_Customizer{
 		echo '}'."\n";
 	}
 
-	/*Get single project option*/
+	/*Gets single project option*/
 
 	public static function get_project_option( $option_name ) {
 		$mod = get_option( self::$option_key );
 		return isset( $mod[$option_name] ) ? $mod[$option_name] : 0;
 	}
+
+    /**
+     * Get default value based on $option_key
+     * @static
+     * @param $option_key
+     * @return int
+     */
+    public static function get_default_option($option_key){
+        if(isset(self::$default_theme_options[self::$design_index][$option_key])){
+            return self::$default_theme_options[self::$design_index][$option_key];
+        }else{
+            return 0;
+        }
+    }
 
 	/*Get header font styles*/
 
@@ -269,8 +284,10 @@ class Smart_Project_Customizer{
 		foreach ( self::$font_variants as $key_section =>$css_line ) { //$row = project_general_fonts or project_headers_fonts
 
 				if ( isset( $display_fonts[$key_section] ) ) {
+                     if(isset($fonts[$display_fonts[$key_section]]['css'])){
+                         echo "\n" .$css_line .'{' .$fonts[$display_fonts[$key_section]]['css'].'}';
+                     }
 
-					echo "\n" .$css_line .'{' .$fonts[$display_fonts[$key_section]]['css'].'}';
 				}
 			}
 		echo "\n" . '</style>';
@@ -327,7 +344,7 @@ class Smart_Project_Customizer{
 
 		//add section: custom code
 
-		$wp_customize->add_section( $this->project_prefix.'_section_project_custom_code', array(
+		$wp_customize->add_section( '_section_project_custom_code', array(
 			'title'    => __( 'Custom Code', 'maxflat'),
 			'priority' => 80,
 		) );
@@ -338,6 +355,7 @@ class Smart_Project_Customizer{
 			'default'    => $defaults['title_tagline_footer'],
 			'type'       => 'option',
 			'capability' => 'edit_theme_options',
+            'sanitize_callback' => array($this, 'sanitize_string')
 		) );
 
 		$wp_customize->add_control( self::$option_key . '_title_tagline_footer', array(
@@ -354,6 +372,7 @@ class Smart_Project_Customizer{
 			'default'    => '1',
 			'type'       => 'option',
 			'capability' => 'edit_theme_options',
+            'sanitize_callback' => array($this, 'sanitize_pagination_posts')
 		) );
 
 
@@ -375,6 +394,7 @@ class Smart_Project_Customizer{
 			'default'    => $defaults['breadcrumb_separator'],
 			'type'       => 'option',
 			'capability' => 'edit_theme_options',
+            'sanitize_callback' => array($this, 'sanitize_breadcrumb_separator')
 		) );
 
 		$wp_customize->add_control( self::$option_key . '_breadcrumb_separator', array(
@@ -449,6 +469,7 @@ class Smart_Project_Customizer{
 			'default'    => $defaults['project_logo'],
 			'type'       => 'option',
 			'capability' => 'edit_theme_options',
+            'sanitize_callback' => array($this, 'sanitize_string')
 		) );
 
 
@@ -464,6 +485,7 @@ class Smart_Project_Customizer{
 			'default'    => $defaults['project_favicon'],
 			'type'       => 'option',
 			'capability' => 'edit_theme_options',
+            'sanitize_callback' => array($this, 'sanitize_string')
 		) );
 
 
@@ -477,33 +499,7 @@ class Smart_Project_Customizer{
 
 		//add costom code setting
 
-		$wp_customize->add_setting( self::$option_key . '[custom_code_header]', array(
-			'default'    => '',
-			'type'       => 'option',
-			'capability' => 'edit_theme_options',
-		) );
 
-		$wp_customize->add_setting( self::$option_key . '[custom_code_footer]', array(
-			'default'    => '',
-			'type'       => 'option',
-			'capability' => 'edit_theme_options',
-		) );
-
-		$wp_customize->add_control( new project_Customize_Textarea_Control( $wp_customize, self::$option_key . '_custom_code_header', array(
-			'label'      => __( 'Custom Scripts for Header [header.php]', 'maxflat'),
-			'section'    => $this->project_prefix.'_section_project_custom_code',
-			'capability' => 'edit_theme_options',
-			'settings'   => self::$option_key . '[custom_code_header]'
-
-		) ) );
-
-		$wp_customize->add_control( new project_Customize_Textarea_Control( $wp_customize, self::$option_key . '_custom_code_footer', array(
-			'label'      => __( 'Custom Scripts for Footer [footer.php]', 'maxflat'),
-			'section'    => $this->project_prefix.'_section_project_custom_code',
-			'capability' => 'edit_theme_options',
-			'settings'   => self::$option_key . '[custom_code_footer]'
-
-		) ) );
 
 		/*ADD PREMIUM SECTIONS*/
 		//add section: layout
@@ -517,6 +513,7 @@ class Smart_Project_Customizer{
 			'default'    => 1,
 			'type'       => 'option',
 			'capability' => 'edit_theme_options',
+            'sanitize_callback' => array($this, 'sanitize_project_layout')
 
 		) );
 
@@ -553,7 +550,7 @@ class Smart_Project_Customizer{
 		) );
    */
 		//add section sidebar
-		$wp_customize->add_section( 'smartlib_section_project_sidebar_resize', array(
+		$wp_customize->add_section( 'maxflat_section_project_sidebar_resize', array(
 			'title'    => __( 'Resize components', 'maxflat'),
 			'priority' => 60,
 		) );
@@ -562,14 +559,15 @@ class Smart_Project_Customizer{
 			'default'    => '1280',
 			'type'       => 'option',
 			'capability' => 'edit_theme_options',
+            'sanitize_callback'=> array($this, 'sanitize_project_layout_width')
 		) );
 
 
 
-		$wp_customize->add_control( new project_Customize_Range_Control( $wp_customize, 'smartlib_project_layout_width', array(
+		$wp_customize->add_control( new project_Customize_Range_Control( $wp_customize, 'maxflat_project_layout_width', array(
 			'settings' => self::$option_key . '[project_layout_width]',
 			'label'    => __( 'Layout Width ', 'maxflat'),
-			'section'  => 'smartlib_section_project_sidebar_resize',
+			'section'  => 'maxflat_section_project_sidebar_resize',
 			'type'     => 'text',
 
 		) ) );
@@ -586,6 +584,7 @@ class Smart_Project_Customizer{
             'default'    => $defaults['project_fonts']['project_general_fonts'],
 			'type'       => 'option',
 			'capability' => 'edit_theme_options',
+            'sanitize_callback' => array($this, 'sanitize_project_general_fonts')
 		) );
 
 		$wp_customize->add_control( self::$option_key . '_project_general_fonts', array(
@@ -601,6 +600,7 @@ class Smart_Project_Customizer{
             'default'    => $defaults['project_fonts']['project_header_fonts'],
 			'type'       => 'option',
 			'capability' => 'edit_theme_options',
+            'sanitize_callback' => array($this, 'sanitize_project_header_fonts')
 		) );
 
 		$wp_customize->add_control( self::$option_key . '_project_header_fonts', array(
@@ -638,9 +638,15 @@ class Smart_Project_Customizer{
 
 		) );
    */
-    /**
+
+
+
+
+     /**
      * ADD Pugin plugin_territory options  $this->plugin_territory
      */
+
+
 
         if($this->plugin_territory){
             $this->register_plugin_territory($wp_customize);
@@ -648,6 +654,78 @@ class Smart_Project_Customizer{
             $this->add_placeholder($wp_customize);
         }
 	}
+
+    /*Settings sanitization*/
+
+    /**
+     * SETTINGS SANITIZATION
+     */
+
+    /**
+     * @param $value
+     * @return string
+     */
+    function sanitize_breadcrumb_separator($value){
+        if(strlen($value)==0){
+            $value = self::get_default_option('breadcrumb_separator');
+        }
+        return (string)$value;
+    }
+
+    function sanitize_project_layout($value){
+        if(!in_array($value, array('1', '2', '3', '4'))){
+            $value = '1';
+        }
+
+        return $value;
+    }
+
+
+    function sanitize_pagination_posts($value){
+        if(!in_array($value, array('1', '2'))){
+            $value = '1';
+        }
+
+        return $value;
+    }
+
+    function sanitize_project_layout_width($value){
+        $value = (int)$value;
+
+        if($value<900 || $value>1280){
+            $value = 1280;
+        }
+
+        return $value;
+    }
+
+    function sanitize_project_general_fonts($value){
+        $fonts_array = self::get_project_available_fonts();
+        if(!array_key_exists($value,$fonts_array)){
+            $default_fonts = self::get_default_option('project_fonts');
+            $value = $default_fonts['project_general_fonts'];
+        }
+
+        return $value;
+
+    }
+
+    function sanitize_project_header_fonts($value){
+        $fonts_array = self::get_project_available_fonts();
+        if(!array_key_exists($value,$fonts_array)){
+            $default_fonts = self::get_default_option('project_fonts');
+            $value = $default_fonts['project_header_fonts'];
+        }
+
+        return $value;
+    }
+
+    function sanitize_string($value){
+        if(empty($value)){
+            $value = '';
+        }
+        return $value;
+    }
 
 
     public function register_plugin_territory($wp_customize){
@@ -785,9 +863,9 @@ class Smart_Project_Customizer{
             'capability' => 'edit_theme_options',
         ) );
 
-        $wp_customize->add_control( new project_Customize_Range_Control( $wp_customize,'smartlib_project_sidebar_resize', array(
+        $wp_customize->add_control( new project_Customize_Range_Control( $wp_customize,'maxflat_project_sidebar_resize', array(
             'label'      => __( 'Sidebar Width', 'maxflat'),
-            'section'    => 'smartlib_section_project_sidebar_resize',
+            'section'    => 'maxflat_section_project_sidebar_resize',
             'settings'   => self::$option_key . '[project_sidebar_resize]',
             'type'       => 'text',
 
@@ -807,6 +885,35 @@ class Smart_Project_Customizer{
             'choices'    => self::get_project_choices_fonts()
 
         ) );
+
+
+        $wp_customize->add_setting( self::$option_key . '[custom_code_header]', array(
+            'default'    => '',
+            'type'       => 'option',
+            'capability' => 'edit_theme_options',
+        ) );
+
+        $wp_customize->add_setting( self::$option_key . '[custom_code_footer]', array(
+            'default'    => '',
+            'type'       => 'option',
+            'capability' => 'edit_theme_options',
+        ) );
+
+        $wp_customize->add_control( new project_Customize_Textarea_Control( $wp_customize, self::$option_key . '_custom_code_header', array(
+            'label'      => __( 'Custom Scripts for Header [header.php]', 'maxflat'),
+            'section'    => '_section_project_custom_code',
+            'capability' => 'edit_theme_options',
+            'settings'   => self::$option_key . '[custom_code_header]'
+
+        ) ) );
+
+        $wp_customize->add_control( new project_Customize_Textarea_Control( $wp_customize, self::$option_key . '_custom_code_footer', array(
+            'label'      => __( 'Custom Scripts for Footer [footer.php]', 'maxflat'),
+            'section'    => '_section_project_custom_code',
+            'capability' => 'edit_theme_options',
+            'settings'   => self::$option_key . '[custom_code_footer]'
+
+        ) ) );
 
     }
 
@@ -834,26 +941,7 @@ class Smart_Project_Customizer{
       }
 
     }
-	/**
-	 * Live preview javascript
-	 *
-	 * @since  project 1.0
-	 * @return void
-	 */
-	public function customize_preview_js() {
 
-		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '.dev' : '';
-
-		wp_register_script(
-			self::$option_key . '-customizer',
-				get_template_directory_uri() . '/js/theme-customizer' . $suffix . '.js',
-			array( 'customize-preview' ),
-			FALSE,
-			TRUE
-		);
-
-		wp_enqueue_script( self::$option_key . '-customizer' );
-	}
 
 	/**
 	 * Get available fonts
@@ -1001,7 +1089,7 @@ class project_Customize_Range_Control extends WP_Customize_Control {
 
         public function render_content() {
             ?>
-        <li id="smartlib_customize_layout_placeholder" class="smartlib_customize_layout_placeholder">
+        <li id="maxflat_customize_layout_placeholder" class="maxflat_customize_layout_placeholder">
             <div class="smartlib-form-proversion-info-outer">
                 <div class="smartlib-form-proversion-info-inner"><a href="<?php _e('http://netbiel.pl/maxflat', 'maxflat') ?>" target="_blank" class="maxflat-proversion-link"><?php _e('Available in pro version &#187;', 'maxflat');?></a></div>
                 <div class="smartlib-color-readonly-image"></div>

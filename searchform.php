@@ -1,4 +1,4 @@
-<form role="search" method="get" id="searchform-content" action="<?php echo home_url('/'); ?>">
+<form role="search" method="get" id="searchform-content" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 
 
 

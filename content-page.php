@@ -18,7 +18,7 @@
 				<div class="entry-content">
 					<?php the_content(); ?>
 				</div>
-				<?php smartlib_custom_single_page_pagination(); ?>
+				<?php maxflat_custom_single_page_pagination(); ?>
 
 			</article>
 		</div>

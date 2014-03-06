@@ -20,11 +20,11 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php smartlib_lt_ie7_info(); //display info if IE lower than 7  ?>
+<?php maxflat_lt_ie7_info(); //display info if IE lower than 7  ?>
 <div class="top-bar-outer">
 	<?php
 	//fixed top bar option
-	$fixed = __SMARTLIB::option( 'project_fixed_topbar' );
+	$fixed = __MAXFLAT::option( 'project_fixed_topbar' );
 	?>
 
 <div id="top-bar" class="top-bar home-border<?php get_header_fixed_class(); ?>">
@@ -35,14 +35,14 @@
             /**
              * Add Theme logo : template_tags
              */
-            smartlib_logo()
+            maxflat_logo()
             ?>
     </div>
 
 
 		<div class="columns large-12 medium-13 small-10">
 			<!--falayout search menu-->
-			<?php smartlib_searchmenu(); //display search menu ?>
+			<?php maxflat_searchmenu(); //display search menu ?>
 
 			<nav id="top-navigation" class="left show-for-large-up">
 				<a class="maxflat-wai-info maxflat-skip-link" href="#content" title="<?php esc_attr_e( 'Skip to content', 'maxflat' ); ?>"><?php _e( 'Skip to content', 'maxflat' ); ?></a>
@@ -52,7 +52,7 @@
 	</div>
 	<div class="row">
 		<div class="columns large-16 smartlib-toggle-area" id="toggle-search">
-			<?php smartlib_searchform(); //display toggle form search  ?>
+			<?php maxflat_searchform(); //display toggle form search  ?>
 		</div>
 	</div>
 </div>
@@ -67,8 +67,8 @@
 	?>
 	<div id="page" role="main" class="<?php echo get_class_of_component('page') ?>">
 		<?php
-        smartlib_get_header(); //display header info or header image
-		    smartlib_breadcrumb();
+        maxflat_get_header(); //display header info or header image
+		    maxflat_breadcrumb();
 
 		?>
 		<div id="main" class="row">
@@ -76,7 +76,7 @@
 				<?php
 
 				//display mobile menu
-                    smartlib_mobile_menu(
+                    maxflat_mobile_menu(
 					array(
 						'theme_location' => 'categories'
 					)

@@ -6,22 +6,22 @@
 <div class="post-box">
 	<div class="row">
 		<div class="columns large-2 medium-2">
-			<?php smartlib_social_buttons(); ?>
-			<?php smartlib_replay_link(); ?>
-			<?php smartlib_entry_tags() ?>
+
+			<?php maxflat_replay_link(); ?>
+			<?php maxflat_entry_tags() ?>
 		</div>
 		<div class="columns large-14 medium-2">
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<header class="entry-header">
 					<h1 class="entry-title"><?php the_title(); ?></h1>
-					<?php smartlib_display_meta_post('date'); ?>
+					<?php maxflat_display_meta_post('date'); ?>
 				</header>
-				<?php echo get_avatar(get_the_author_meta('ID'), apply_filters('smartlib_status_avatar', '48')); ?>	<h5><?php the_author(); ?></h5>
+				<?php echo get_avatar(get_the_author_meta('ID'), apply_filters('maxflat_status_avatar', '48')); ?>	<h5><?php the_author(); ?></h5>
 
 				<div class="entry-content">
 					<?php the_content(); ?>
 				</div>
-				<?php smartlib_custom_single_page_pagination(); ?>
+				<?php maxflat_custom_single_page_pagination(); ?>
 				<footer class="entry-meta">
 					<?php if ( is_singular() && get_the_author_meta( 'description' ) && is_multi_author() ) : // If a user has filled out their description and this is a multi-author blog, show a bio on their entries. ?>
 					<div class="author-info">
