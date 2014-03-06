@@ -12,6 +12,7 @@
 	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
 	require_once dirname( __FILE__ ) . '/inc/options-framework.php';
 
+
 // 	Tell WordPress for wp_title in order to modify document title content
 	function sunrain_filter_wp_title( $title ) {
     $site_name = get_bloginfo( 'name' );
