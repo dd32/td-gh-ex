@@ -52,3 +52,9 @@ Version 2.09
 
 Version 3.0
     i)   Fixed pagination in mobile screens.
+
+Version 3.01
+    i)   FIXED CSS of Search widget.
+	ii)  Added optimized images and removed unused images.
+	iii) Remove commented code in style.css
+	

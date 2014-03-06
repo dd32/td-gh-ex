@@ -26,7 +26,7 @@
 									}else{
 										echo "Powered by <a href='http://wordpress.org' target='_blank'>WordPress</a>.";
 										echo "<br />";
-										echo "Theme by <a href='http://fasterthemes.com' target='_blank'>FasterThemes.</a>";				
+										echo "Theme by <a href='http://fasterthemes.com' target='_blank'>FasterThemes</a>.";				
 									}
 									?>
           </span> </div>
