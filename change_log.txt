@@ -61,4 +61,7 @@ Version 3.01
 Version 3.02
     i)  Fixed menu CSS and made "MAIN MENU" CSS same as PREVIEW or default menu.
 
+Version 3.03
+    i)  Fixed style.css and functions.php.
+
 	

@@ -322,12 +322,11 @@ endif;
  */
 function redpro_add_menuid ($page_markup) {
 preg_match('/^<div class=\"([a-z0-9-_]+)\">/i', $page_markup, $matches);
-$divclass = $matches[1];
-$toreplace = array('<div class="'.$divclass.'">', '</div>');
+$toreplace = array('<div class="navbar-collapse collapse top-gutter">', '</div>');
 $replace = array('<div class="navbar-collapse collapse top-gutter">', '</div>');
 $new_markup = str_replace($toreplace,$replace, $page_markup);
-$new_markup= preg_replace('/<ul/', '<ul class="nav navbar-nav navbar-right"', $new_markup);
-return $new_markup; }
+$new_markup= preg_replace('/<ul/', '<ul class="navbar-right menu-ommune"', $new_markup);
+return $new_markup; } //}
 add_filter('wp_page_menu', 'redpro_add_menuid');
 /**
  * redpro custom pagination for posts 
