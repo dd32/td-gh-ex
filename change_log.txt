@@ -57,4 +57,8 @@ Version 3.01
     i)   FIXED CSS of Search widget.
 	ii)  Added optimized images and removed unused images.
 	iii) Remove commented code in style.css
+
+Version 3.02
+    i)  Fixed menu CSS and made "MAIN MENU" CSS same as PREVIEW or default menu.
+
 	
