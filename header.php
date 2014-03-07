@@ -44,17 +44,14 @@ wp_head(); ?>
 			</a>
             <?php endif;?>
 		    <div class="nav-collapse collapse navbar-responsive-collapse ">
-            <?php   if ( has_nav_menu( 'header-menu' ) ):
-					wp_nav_menu( array(  'menu'   => 'header-menu',
+            <?php  wp_nav_menu( array(  'menu'   => 'header-menu',
 					'theme_location' => 'header-menu',
 					'menu_class' => 'nav',
 					'fallback_cb' => 'appointment_fallback_page_menu',
 					'walker' => new appointment_nav_walker()
 					)
 					);
-				else:
-		         wp_page_menu(array('show_home'=>'HOME','echo'=>false));
-				endif;  ?> 
+				?> 
 			</div><!-- /.nav-collapse -->
 		    </div>
         </div><!-- /navbar-inner -->
