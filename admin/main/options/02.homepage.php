@@ -77,7 +77,7 @@ $thinkup_class_fullwidth = NULL;
 }
 
 // Add ThinkUpSlider Height - Homepage
-function thinkup_input_sliderhomeflex() {
+function thinkup_input_sliderhomeheight() {
 global $thinkup_homepage_sliderswitch;
 global $thinkup_homepage_sliderpresetwidth;
 global $thinkup_homepage_sliderpresetheight;
@@ -93,7 +93,7 @@ global $thinkup_homepage_sliderpresetheight;
 		}
 	}
 }
-add_action( 'wp_head','thinkup_input_sliderhomeflex', '13' );
+add_action( 'wp_head','thinkup_input_sliderhomeheight', '13' );
 
 
 //----------------------------------------------------------------------------------

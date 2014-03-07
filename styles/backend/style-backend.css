@@ -341,7 +341,10 @@ border-bottom: none;
 #redux-sidebar #redux-group-menu li:nth-child(10) a:hover,
 #redux-sidebar #redux-group-menu li:nth-child(10).active a,
 #redux-sidebar #redux-group-menu li:nth-child(10).active a:hover {
-	color: #D62626;
+	opacity: 1;
+	color: #FFF;
+	background: #0067CE;
+	border: none;
 }
 #redux-main div:nth-child(10) .form-table {
 	display: none;

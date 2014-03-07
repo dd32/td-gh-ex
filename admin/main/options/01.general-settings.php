@@ -273,15 +273,21 @@ global $post;
 $_thinkup_meta_layout = get_post_meta( $post->ID, '_thinkup_meta_layout', true );
 $_thinkup_meta_sidebars = get_post_meta( $post->ID, '_thinkup_meta_sidebars', true );
 
-	if ( is_front_page() ) {
+	if ( is_front_page() ) {	
 			$output = $thinkup_homepage_sidebars;
-	} else if ( is_page() ) {	
+	} else if ( is_page() and ! is_page_template( 'template-blog.php' ) ) {
 		if ( empty( $_thinkup_meta_layout ) or $_thinkup_meta_layout == 'option1' or $_thinkup_meta_sidebars == 'Select a sidebar:' ) {
 				$output = $thinkup_general_sidebars;
 		} else {
 			$output = $_thinkup_meta_sidebars;
 		}
-	} else if ( is_blog() and ! is_post_type_archive( 'portfolio' ) ) {	
+	} else if ( is_page_template( 'template-blog.php' ) ) {
+		if ( empty( $_thinkup_meta_layout ) or $_thinkup_meta_layout == 'option1' or $_thinkup_meta_sidebars == 'Select a sidebar:' ) {
+				$output = $thinkup_blog_sidebars;
+		} else {
+			$output = $_thinkup_meta_sidebars;
+		}	
+	} else if ( is_blog() and ! is_single() and ! is_post_type_archive( 'portfolio' ) ) {
 		$output = $thinkup_blog_sidebars;
 	} else if ( is_post_type_archive( 'portfolio' ) ) {	
 		$output = $thinkup_portfolio_sidebars;
@@ -469,14 +475,16 @@ global $thinkup_general_breadcrumbswitch;
 global $post;
 $_thinkup_meta_breadcrumbs = get_post_meta( $post->ID, '_thinkup_meta_breadcrumbs', true );
 
-	if ( empty( $_thinkup_meta_breadcrumbs ) or $_thinkup_meta_breadcrumbs == 'option1' ) {
-		if ( $thinkup_general_breadcrumbswitch == '0' or empty( $thinkup_general_breadcrumbswitch ) ) {
-			echo '';
-		} else if ( $thinkup_general_breadcrumbswitch == '1' ) {
+	if( ! is_front_page() ) {
+		if ( empty( $_thinkup_meta_breadcrumbs ) or $_thinkup_meta_breadcrumbs == 'option1' ) {
+			if ( $thinkup_general_breadcrumbswitch == '0' or empty( $thinkup_general_breadcrumbswitch ) ) {
+				echo '';
+			} else if ( $thinkup_general_breadcrumbswitch == '1' ) {
+				wp_bac_breadcrumb();
+			}
+		} else if ( $_thinkup_meta_breadcrumbs == 'option2' ) {
 			wp_bac_breadcrumb();
 		}
-	} else if ( $_thinkup_meta_breadcrumbs == 'option2' ) {
-		wp_bac_breadcrumb();
 	}
 }
 

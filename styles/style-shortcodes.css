@@ -1,31 +1,162 @@
 /*  TABLE OF CONTENTS
-01. BUTTONS
-02. COLUMNS
-03. CONTACT FORMS
-04. DIVIDERS
-05. ICONS (COLORED)
-06. LIGHTBOX
-07. LISTS
-08. MAPS
-09. NOTIFICATION BOXES
-10. PRICING TABLES
-11. PROGRESS BARS
-12. SLIDESHOW
-13. SOCIAL MEDIA
-14. TABS
-15. TITLES
-16. TOGGLES
+01. ANIMATION
+02. BUTTONS
+03. CAROUSEL
+04. COLUMNS
+05. CONTACT FORMS
+06. DIVIDERS
+07. ICONS (COLORED)
+08. LIGHTBOX
+09. LISTS
+10. MAPS
+11. NOTIFICATION BOXES
+12. PRICING TABLES
+13. PROGRESS BARS
+14. SLIDESHOW
+15. SOCIAL MEDIA
+16. TABS
+17. TITLES
+18. TOGGLES
 */
 
+
 /* ---------------------------------------------------------------------------- */
-/*	01.	BUTTONS							 	*/
+/*	01.	ANIMATION							 	*/
+/* ---------------------------------------------------------------------------- */
+
+.anim-start-ltr,
+.anim-start-btt,
+.anim-start-ttb,
+.anim-start-rtl,
+.anim-start-stb {
+opacity: 0;
+}
+.anim-end-ltr,
+.anim-end-btt,
+.anim-end-ttb,
+.anim-end-rtl,
+.anim-end-stb {
+opacity: 1;
+}
+
+.anim-start-btt,
+.anim-start-ttb,
+.anim-end-btt,
+.anim-end-ttb {
+float: left;
+}
+
+.anim-end-ltr {
+	-webkit-animation: anim-ltr 0.8s 1 cubic-bezier(0.175, 0.885, 0.320, 1.275);
+	-moz-animation: anim-ltr 0.8s 1 cubic-bezier(0.175, 0.885, 0.320, 1.275);
+	-ms-animation: anim-ltr 0.8s 1 cubic-bezier(0.175, 0.885, 0.320, 1.275);
+	animation: anim-ltr 0.8s 1 cubic-bezier(0.175, 0.885, 0.320, 1.275);
+}
+.anim-end-btt {
+	-webkit-animation: anim-btt 0.8s 1 cubic-bezier(0.175, 0.885, 0.320, 1.275);
+	-moz-animation: anim-btt 0.8s 1 cubic-bezier(0.175, 0.885, 0.320, 1.275);
+	-ms-animation: anim-btt 0.8s 1 cubic-bezier(0.175, 0.885, 0.320, 1.275);
+	animation: anim-btt 0.8s 1 cubic-bezier(0.175, 0.885, 0.320, 1.275);
+}
+.anim-end-ttb {
+	-webkit-animation: anim-ttb 0.8s 1 cubic-bezier(0.175, 0.885, 0.320, 1.275);
+	-moz-animation: anim-ttb 0.8s 1 cubic-bezier(0.175, 0.885, 0.320, 1.275);
+	-ms-animation: anim-ttb 0.8s 1 cubic-bezier(0.175, 0.885, 0.320, 1.275);
+	animation: anim-ttb 0.8s 1 cubic-bezier(0.175, 0.885, 0.320, 1.275);
+}
+.anim-end-rtl {
+	-webkit-animation: anim-rtl 0.8s 1 cubic-bezier(0.175, 0.885, 0.320, 1.275);
+	-moz-animation: anim-rtl 0.8s 1 cubic-bezier(0.175, 0.885, 0.320, 1.275);
+	-ms-animation: anim-rtl 0.8s 1 cubic-bezier(0.175, 0.885, 0.320, 1.275);
+	animation: anim-rtl 0.8s 1 cubic-bezier(0.175, 0.885, 0.320, 1.275);
+}
+.anim-end-stb {
+	-webkit-animation: anim-stb 0.8s 1 cubic-bezier(0.175, 0.885, 0.320, 1.275);
+	-moz-animation: anim-stb 0.8s 1 cubic-bezier(0.175, 0.885, 0.320, 1.275);
+	-ms-animation: anim-stb 0.8s 1 cubic-bezier(0.175, 0.885, 0.320, 1.275);
+	animation: anim-stb 0.8s 1 cubic-bezier(0.175, 0.885, 0.320, 1.275);
+}
+
+/* Create left to right effect */
+@keyframes anim-ltr {
+    0% { transform:translate(-10%,0);opacity:0}
+    100%{ transform:translate(0,0);opacity:1}
+}
+@-moz-keyframes anim-ltr {
+    0% { -moz-transform:translate(-10%,0);opacity:0}
+    100%{-moz-transform:translate(0,0);opacity:1}
+}
+@-webkit-keyframes anim-ltr {
+    0% { -webkit-transform:translate(-10%,0);opacity:0}
+    100%{-webkit-transform:translate(0,0);opacity:1}
+}
+
+/* Create bottom to top effect */
+@keyframes anim-btt {
+    0% { transform:translate(0,10%);opacity:0}
+    100%{ transform:translate(0,0);opacity:1}
+}
+@-moz-keyframes anim-btt {
+    0% { -moz-transform:translate(0,10%);opacity:0}
+    100%{-moz-transform:translate(0,0);opacity:1}
+}
+@-webkit-keyframes anim-btt {
+    0% { -webkit-transform:translate(0,10%);opacity:0}
+    100%{-webkit-transform:translate(0,0);opacity:1}
+}
+
+/* Create top to bottom effect */
+@keyframes anim-ttb {
+    0% { transform:translate(0,-10%);opacity:0}
+    100%{ transform:translate(0,0);opacity:1}
+}
+@-moz-keyframes anim-ttb {
+    0% { -moz-transform:translate(0,-10%);opacity:0}
+    100%{-moz-transform:translate(0,0);opacity:1}
+}
+@-webkit-keyframes anim-ttb {
+    0% { -webkit-transform:translate(0,-10%);opacity:0}
+    100%{-webkit-transform:translate(0,0);opacity:1}
+}
+
+/* Create right to left effect */
+@keyframes anim-rtl {
+    0% { transform:translate(10%,0);opacity:0}
+    100%{ transform:translate(0,0);opacity:1}
+}
+@-moz-keyframes anim-rtl {
+    0% { -moz-transform:translate(10%,0);opacity:0}
+    100%{-moz-transform:translate(0,0);opacity:1}
+}
+@-webkit-keyframes anim-rtl {
+    0% { -webkit-transform:translate(10%,0);opacity:0}
+    100%{-webkit-transform:translate(0,0);opacity:1}
+}
+
+/* Create small to big effect */
+@keyframes anim-stb {
+    0% { transform: scale(0);opacity:0}
+    100%{ transform: scale(1);opacity:1}
+}
+@-moz-keyframes anim-stb {
+    0% { -moz-transform: scale(0);opacity:0}
+    100%{-moz-transform: scale(1);opacity:1}
+}
+@-webkit-keyframes anim-stb {
+    0% { -webkit-transform: scale(0);opacity:0}
+    100%{-webkit-transform: scale(1);opacity:1}
+}
+
+
+/* ---------------------------------------------------------------------------- */
+/*	02.	BUTTONS							 	*/
 /* ---------------------------------------------------------------------------- */
 .button          { display: inline-block; color: #FFF; text-align: center; line-height: 1.5; margin: 0 0.5em 1.2em 0; }
 .button:hover    { color: #FFF; }
 
 .button.small    { font-size: 0.9em; padding: 6px 14px; }
 .button.medium   { font-size: 1em;   padding: 8px 22px; }
-.button.large    { font-size: 1.4em; padding: 8px 26px; }
+.button.large    { font-size: 1.2em; padding: 8px 26px; }
 
 .button.aqua        { background-color: #008867; }
 .button.black       { background-color: #202020; }
@@ -47,9 +178,14 @@
 	-ms-border-radius: 3px;
 	-o-border-radius: 3px
 	border-radius: 3px;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-ms-box-shadow: none;
+	-o-box-shadow: none;
+	box-shadow: none;
 }
 .button.style1:hover {
-	background-color: #444;
+	background-color: #222;
 }
 
 .button.style2 {
@@ -86,7 +222,7 @@
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(255, 255, 255, 0.2)', endColorstr='rgba(255, 255, 255, 0)',GradientType=0)
 }
 .button.style3:hover {
-	background-color: #333;
+	background-color: #222;
 }
 
 .button.style4 {
@@ -104,7 +240,123 @@
 
 
 /* ---------------------------------------------------------------------------- */
-/*	02. COLUMNS								*/
+/*	02. CAROUSEL								*/
+/* ---------------------------------------------------------------------------- */
+
+.sc-carousel {
+	position: relative;
+	padding: 0 35px;
+}
+.sc-carousel ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.sc-carousel li {
+	padding: 0px 15px;
+	display: block;
+	float: left;
+}
+.sc-carousel .entry-header  {
+	position: relative;
+	margin-bottom: 20px;
+	display: inline-block;
+}
+.sc-carousel .entry-header img {
+	display: block;
+}
+
+.sc-carousel .entry-content h3 {
+	line-height: 1;
+}
+.sc-carousel .entry-content h3 a {
+	color: inherit;
+}
+.sc-carousel .entry-footer {
+	font-size: 90%;
+	border-top: 1px solid #EAEAEA;
+	padding-top: 10px;
+	margin-bottom: 20px;
+}
+.sc-carousel .entry-footer a {
+	color: inherit;
+}
+.sc-carousel .comment {
+	float: right;
+}
+.sc-carousel .comment i {
+	color: #C9C9C9;
+	font-size: larger;
+	margin-right: 10px
+}
+
+/* Image overlay effect - May vary by theme */
+.sc-carousel .image-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+}
+.sc-carousel .image-overlay-inner {
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+.sc-carousel .hover-icons {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+.sc-carousel .hover-link,
+.sc-carousel .hover-zoom {
+	text-align: center;
+	display: inline-block;
+	height: 50px;
+	width: 50px;
+}
+.sc-carousel .hover-zoom {
+	text-align: right;
+	margin-right: 10px;
+}
+.sc-carousel .hover-link {
+	height: 50px;
+	width: 50px;
+}
+
+/* Left and right navigation - May vary by theme */
+.sc-carousel a.prev,
+.sc-carousel a.next {
+	position: absolute;
+	top: 50%;
+	margin-top: -25px;	
+	background: #CACACA;
+	text-align: center;
+	width: 30px;
+	height: 30px;
+	display: block;
+}
+.sc-carousel a.prev { left: 0; }
+.sc-carousel a.next { right: 0; }
+.sc-carousel a.prev:hover,
+.sc-carousel a.next:hover {
+	background: #AAA;
+}
+.sc-carousel a.prev i,
+.sc-carousel a.next i {
+	color: #FFF;
+	font-size: 15px;
+	position: relative;
+	top: 6px;
+}
+.sc-carousel a.prev.disabled,
+.sc-carousel a.next.disabled {
+	cursor: default;
+}
+
+/* ---------------------------------------------------------------------------- */
+/*	04. COLUMNS								*/
 /* ---------------------------------------------------------------------------- */
 .one_half     {width: 48.7%; }
 .one_third    {width: 31.6%; }
@@ -169,7 +421,7 @@
 
 
 /* ---------------------------------------------------------------------------- */
-/*	03. CONTACT FORMS (CONTACT FORM 7)					*/
+/*	05. CONTACT FORMS (CONTACT FORM 7)					*/
 /* ---------------------------------------------------------------------------- */
 
 div.wpcf7-mail-sent-ok,
@@ -198,7 +450,7 @@ div.wpcf7-mail-sent-ok {
 
 
 /* ---------------------------------------------------------------------------- */
-/*	04. DIVIDERS								*/
+/*	06. DIVIDERS								*/
 /* ---------------------------------------------------------------------------- */
 .margin10 	{ padding: 5px 0px; }
 .margin20 	{ padding: 10px 0px; }
@@ -217,7 +469,7 @@ div.wpcf7-mail-sent-ok {
 	display:block;
 	border-bottom:1px solid #E6E6E6;
 }
-.divider 	{ margin:15px 0px; }
+.divider 	        { padding-top:15px; margin-bottom:15px;	}
 .divider-top 	{ padding-top:15px; margin-bottom:15px;	}
 .divider-top a 	{
 	position:absolute;
@@ -232,7 +484,7 @@ div.wpcf7-mail-sent-ok {
 
 
 /* ---------------------------------------------------------------------------- */
-/*	05. ICONS (COLORED)							*/
+/*	07. ICONS (COLORED)							*/
 /* ---------------------------------------------------------------------------- */
 .icontext:before,
 .icontext:after,
@@ -330,7 +582,7 @@ div.wpcf7-mail-sent-ok {
 
 
 /* ---------------------------------------------------------------------------- */
-/*	06. LIGHTBOX								*/
+/*	08. LIGHTBOX								*/
 /* ---------------------------------------------------------------------------- */
 .prettyPhoto { position: relative; display: inline-block; }
 .lightbox    { display: block; }
@@ -363,7 +615,7 @@ div.wpcf7-mail-sent-ok {
 
 
 /* ---------------------------------------------------------------------------- */
-/*	07. LISTS								*/
+/*	09. LISTS								*/
 /* ---------------------------------------------------------------------------- */
 ul.list 	{ list-style: none; margin: 3px 0px; }
 ul.list li	{ padding: 0px 0px 6px 25px; background: transparent no-repeat scroll 0 1px; }
@@ -386,7 +638,7 @@ ul.list.warning li             { background-image: url('../images/icons/lists/wa
 
 
 /* ---------------------------------------------------------------------------- */
-/*	08. MAPS								*/
+/*	10. MAPS								*/
 /* ---------------------------------------------------------------------------- */
 
 /* Comprehensive Google Map by Alexander Zagniotov */
@@ -395,10 +647,10 @@ ul.list.warning li             { background-image: url('../images/icons/lists/wa
 }
 
 /* ---------------------------------------------------------------------------- */
-/*	09. NOTIFICATION BOXES							*/
+/*	11. NOTIFICATION BOXES							*/
 /* ---------------------------------------------------------------------------- */
 .notification {
-	margin: 10px 0;
+	margin-bottom: 20px;
 	border: 1px solid rgba(0, 0, 0, 0.2);
 	text-shadow: 1px 1px 0 #FFF;
 	-webkit-box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5), inset 0 0 40px 0px rgba(0, 0, 0, 0.05);
@@ -427,7 +679,7 @@ ul.list.warning li             { background-image: url('../images/icons/lists/wa
 
 
 /* ---------------------------------------------------------------------------- */
-/*	10. PRICING TABLES							*/
+/*	12. PRICING TABLES							*/
 /* ---------------------------------------------------------------------------- */
 .pricing-table:before,
 .pricing-table:after { content:""; display:table; }
@@ -521,7 +773,7 @@ ul.list.warning li             { background-image: url('../images/icons/lists/wa
 
 
 /* ---------------------------------------------------------------------------- */
-/*	11. PROGRESS BARS							*/
+/*	13. PROGRESS BARS							*/
 /* ---------------------------------------------------------------------------- */
 .progress {
 	height: 28px;
@@ -547,7 +799,7 @@ span.bar-per {
 
 
 /* ---------------------------------------------------------------------------- */
-/*	12. SLIDESHOW								*/
+/*	14. SLIDESHOW								*/
 /* ---------------------------------------------------------------------------- */
 .slideshow .carousel-control {
 	border: none;
@@ -564,12 +816,12 @@ span.bar-per {
 
 
 /* ---------------------------------------------------------------------------- */
-/*	13. SOCIAL MEDIA							*/
+/*	15. SOCIAL MEDIA							*/
 /* ---------------------------------------------------------------------------- */
 
 
 /* ---------------------------------------------------------------------------- */
-/*	14. TABS								*/
+/*	16. TABS								*/
 /* ---------------------------------------------------------------------------- */
 .nav>li>a:hover,
 .nav>li>a:focus {
@@ -654,7 +906,7 @@ span.bar-per {
 
 
 /* ---------------------------------------------------------------------------- */
-/*	15. TITLES								*/
+/*	17. TITLES								*/
 /* ---------------------------------------------------------------------------- */
 
 .customtitle {
@@ -671,6 +923,15 @@ span.bar-per {
 	vertical-align: middle;
 	white-space: pre;
 }
+.customtitle.style0,
+.customtitle.style0 h1,
+.customtitle.style0 h2,
+.customtitle.style0 h3,
+.customtitle.style0 h4,
+.customtitle.style0 h5,
+.customtitle.style0 h6 {
+display: block;
+}
 .customtitle .title-div {
 	width: 100%;
 	display: table-cell;
@@ -681,29 +942,33 @@ span.bar-per {
 	display: block;
 }
 
-.customtitle .title-div-core.style1 {
+.customtitle.style1 .title-div-core {
 	border-top: 1px solid #E9E9E9;
 	height: 1px;
 }
-.customtitle .title-div-core.style2 {
+.customtitle.style2 .title-div-core {
 	border-top: 1px solid #E9E9E9;
 	border-bottom: 1px solid #E9E9E9;
 	height: 5px;
 }
-.customtitle .title-div-core.style3 {
+.customtitle.style3 .title-div-core {
 	border-top: 3px double #E9E9E9;
 	border-bottom: 1px solid #E9E9E9;
 	height: 1px;
 }
-.customtitle .title-div-core.style4 {
+.customtitle.style4 .title-div-core {
 	border-top: 3px double #E9E9E9;
 	border-bottom: 3px double #E9E9E9;
 	height: 1px
 }
+.customtitle.style5 span {
+	padding-bottom: 5px;
+	border-bottom: 2px solid #EEE;
+}
 
 
 /* ---------------------------------------------------------------------------- */
-/*	16. TOGGLES								*/
+/*	18. TOGGLES								*/
 /* ---------------------------------------------------------------------------- */
 .accordion-group {
 	margin-bottom: 3px;

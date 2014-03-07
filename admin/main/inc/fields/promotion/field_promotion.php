@@ -96,64 +96,55 @@ if( !class_exists( 'ReduxFramework_promotion' ) ) {
 
 		$customize_title = sprintf( __( 'Customize &#8220;%s&#8221;', 'redux-framework' ), $ct->display('Name') );
 
-            echo '</td></tr></table><div id="redux-promotion-field" class="' . $this->field['style'] . $this->field['class'] . '">';
+            echo '</td></tr></table>';
 
 				if ( $this->field['section'] == 'header' ) {
 
+					echo	'<div id="redux-promotion-field-header" class="' . $this->field['style'] . $this->field['class'] . '">';
+					
+					echo	'<div id="promotion-table">';
 					echo	'<div id="promotion-header">';
-					echo	'<p class="main-title">Upgrade &amp; Unlock Amazing Features</p>';
-					echo	'<p class="secondary-title">Get the most out of ' . str_replace( ' (Lite)', '', $item_name ) . ' with our Premium Themes Membership. Join today for only $85.</p>';
-					echo	'<a href="http://www.thinkupthemes.com/pricing/" target="_blank"><img src="' . get_stylesheet_directory_uri() . '/admin/main/assets/img/promotion/ThinkUpThemes_Promotion.png"></a>';
+					echo	'<p class="main-title">Upgrade for $28 (20% off)</p>';
+//					echo	'<p class="secondary-title">Never code again! Upgrade to use our page builder.<br />Now you can create amazing websites faster than ever before!</p>';
+					echo	'<a href="http://www.thinkupthemes.com/themes/engrave/" target="_blank" class="promotion-button">Upgrade Now</a>';
+//					echo	'<a href="http://www.thinkupthemes.com/pricing/" target="_blank"><img src="' . get_stylesheet_directory_uri() . '/admin/main/assets/img/promotion/ThinkUpThemes_Promotion.png"></a>';
 					echo	'</div>';
 
-					echo	'<div id="promotion-popular">';
-					echo	'<p class="main-title">Popular Themes</p>';
+					echo	'<div id="promotion-coupon">';
+					echo	'<a href="http://www.thinkupthemes.com/themes/engrave/" target="_blank">upgrade28<span>Normally $35. Use coupon at checkout.</span></a>';
+					echo	'</div>';
 					echo	'</div>';
 
+					echo	'<p class="main-title">So... Why upgrade?</p>';
+					echo	'<p class="secondary-title">We&#39;re glad you asked! Here&#39;s just some of the amazing features you&#39;ll get when you upgrade...</p>';
+					echo	'</div>';
 				}
 
 				if ( $this->field['section'] == 'main' ) {
 
+					echo	'<div id="redux-promotion-field-item" class="' . $this->field['style'] . $this->field['class'] . '">';
 					echo	'<div id="current-theme" class="' . esc_attr( $class ) . ' has-screenshot">';
 					echo	'<a href="' . $this->field['feat'] . '" class="promotion-image " title="' . esc_attr( $customize_title ) . '">';
 					echo	'<img src="' . $this->field['image'] . '" alt="Premium WordPress Theme - ' . $this->field['name'] . '" />';
 					echo	'</a>';
-
-					echo	'<h4>';
-					echo	$this->field['name'];
-					echo	'</h4>';
-
-					echo	'<div>';
-
-					echo	'<ul class="theme-info">';
-					echo	'<li>' . sprintf( __('By %s', 'redux-framework'), $ct->display('Author') ) . '</li>';
-					echo	'</ul>';
-
-					echo	'<p class="theme-description">' . $this->field['desc'] . '</p>';
-
-					echo	'<ul class="theme-button">';
-					echo	'<li><a href="' . $this->field['demo'] . '" target="_blank" class="blue" ><h4>Live Demo</h4></a></li>';
-					echo	'<li><a href="' . $this->field['feat'] . '" target="_blank" class="green" ><h4>Theme Features</h4></a></li>';
-					echo	'</ul>';
-
-					
 					echo	'</div>';
-
 					echo	'</div>';
 
 				}
 
 				if ( $this->field['section'] == 'footer' ) {
 
+					echo	'<div id="redux-promotion-field-footer" class="' . $this->field['style'] . $this->field['class'] . '">';
 					echo '<div id="promotion-footer">';
 					echo	'<ul class="theme-button">';
 					echo	'<li><a href="http://www.thinkupthemes.com/themes/" target="_blank" class="blue" ><h4>Browse All Themes</h4></a></li>';
 					echo	'</ul>';
 					echo '</div>';
+					echo '</div>';
 
 				}
 
-            echo '</div><table class="form-table no-border" style="margin-top: 0;"><tbody><tr><th></th><td>';
+            echo '<table class="form-table no-border" style="margin-top: 0;"><tbody><tr><th></th><td>';
         
         }
 

@@ -367,7 +367,10 @@ if( !class_exists( 'ReduxFramework' ) ) {
 						global $wp_registered_sidebars;
 						$of_sidebars = array();
 						foreach ( $wp_registered_sidebars as $sidebar ) {
-							$of_sidebars[] = $sidebar['name'];
+							if ( strpos( $sidebar['name'], 'Footer' ) !== false ) {
+							} else {
+								$of_sidebars[] = $sidebar['name'];;
+							}
 						}
 						foreach($of_sidebars as $sidebar) {
 		           			$data[$sidebar] = $sidebar;
@@ -1964,6 +1967,7 @@ if( !class_exists( 'ReduxFramework' ) ) {
             echo '<div id="info_bar">';
             echo '<a href="javascript:void(0);" id="expand_options">' . __( 'Expand', 'redux-framework' ) . '</a>';
             echo '<div class="redux-action_bar">';
+            echo '<a href="http://www.thinkupthemes.com/themes/engrave/" target="_blank" class="promotion-button">Upgrade Now</a>';
             submit_button( '', 'primary', 'redux_save', false );
             echo '&nbsp;';
             submit_button( __( 'Reset to Defaults', 'redux-framework' ), 'secondary', $this->args['opt_name'] . '[defaults]', false );
@@ -1998,7 +2002,7 @@ if( !class_exists( 'ReduxFramework' ) ) {
                     $icon = ( !isset( $section['icon'] ) ) ? '' : '<img src="' . $section['icon'] . '" /> ';
                 } else {
                     $icon_class = ( !isset( $section['icon_class'] ) ) ? '' : ' ' . $section['icon_class'];
-                    $icon = ( !isset( $section['icon'] ) ) ? '<i class="icon-cog' . $icon_class . '"></i> ' : '<i class="icon-' . $section['icon'] . $icon_class . '"></i> ';
+                    $icon = ( !isset( $section['icon'] ) ) ? '<i class="icon-cog' . $icon_class . '"></i> ' : '<i class="el-icon-' . $section['icon'] . $icon_class . '"></i> ';
                 }
 
 				if (isset($section['type']) && $section['type'] == "divide") {
@@ -2220,6 +2224,7 @@ if( !class_exists( 'ReduxFramework' ) ) {
             }
 
             echo '<div class="redux-action_bar">';
+            echo '<a href="http://www.thinkupthemes.com/themes/engrave/" target="_blank" class="promotion-button">Upgrade Now</a>';
             submit_button( '', 'primary', 'redux_save', false );
             echo '&nbsp;';
             submit_button( __( 'Reset to Defaults', 'redux-framework'), 'secondary', $this->args['opt_name'] . '[defaults]', false );

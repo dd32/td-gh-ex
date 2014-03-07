@@ -1192,7 +1192,7 @@ function setup_framework_options(){
 
 		$sections[] = array(
 		'title' => __('Support', 'redux-framework'),
-		'desc' => __('<span class="redux-title">Documentation</span><p>Please refer to the "ThinkUpThemes - Lite Documentation" file included with this theme for information on how to use the theme options. For premium support direct from the theme developers, or advice on customizations please <a href="http://www.thinkupthemes.com/pricing/" target="_blank">upgrade</a> to the Premium Theme Membership.</p></p>For support with SlideDeck 2 try the <a href="http://www.youtube.com/user/slidedeck" target="_blank">SlideDeck Youtube Channel</a> or watch this <a href="http://www.youtube.com/watch?v=l7eI9QBkXwY" target="_blank">short video tutorial</a>.</p>', 'redux-framework'),
+		'desc' => __('<span class="redux-title">Documentation</span><p>Please refer to the "ThinkUpThemes - Lite Documentation" file included with this theme for information on how to use the theme options. For premium support direct from the theme developers, or advice on customizations please <a href="http://www.thinkupthemes.com/themes/engrave/" target="_blank">upgrade</a> to the Premium Theme Membership.</p>', 'redux-framework'),
 		'icon' => 'user',
 		'icon_class' => 'icon-large',
 		'fields' => array(
@@ -1210,8 +1210,8 @@ function setup_framework_options(){
 	);
 
 		$sections[] = array(
-		'title' => __('Premium Themes', 'redux-framework'),
-		'icon' => 'shopping-cart',
+		'title' => __('Upgrade (20% off)', 'redux-framework'),
+		'icon' => 'arrow-up',
 		'icon_class' => 'icon-large',
 		'fields' => array(
 
@@ -1219,7 +1219,7 @@ function setup_framework_options(){
 				'section'=>'header',
 				'id'=>'promotion-header',
 				'type'=>'promotion',
-				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/ThinkUpThemes_Promotion.png.png',
+				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/1_trusted_team.png',
 				'name' => 'Alante',
 				'desc' => 'Alante is one of our best themes. Use this for any business or blog and give a professional image. Descriptions can even be added to the header menu making it easier for your customers to navigate through the site. With a drop shadow on the call to action and page titles this theme is a must have for any business.',
 				'demo' => 'http://demo.thinkupthemes.com/?theme=Alante',
@@ -1231,86 +1231,137 @@ function setup_framework_options(){
 				'section'=>'main',
 				'id'=>'theme-alante',
 				'type'=>'promotion',
-				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/screenshot-promotion-alante.png',
-				'name' => 'Alante',
-				'desc' => 'Alante is one of our best themes. Use this for any business or blog and give a professional image. Descriptions can even be added to the header menu making it easier for your customers to navigate through the site. With a drop shadow on the call to action and page titles this theme is a must have for any business.',
-				'demo' => 'http://demo.thinkupthemes.com/?theme=Alante',
-				'feat' => 'http://www.thinkupthemes.com/themes/alante/',
-				'join' => '',
-				),
-
-			array(
-				'section'=>'main',
-				'id'=>'theme-minamaze',
-				'type'=>'promotion',
-				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/screenshot-promotion-minamaze.png',
-				'name' => 'Minamaze',
-				'desc' => 'Give your visitors plenty of room to breathe with this amazing minimal design. Show off your company logo in prime position creating the best first impression. The call to actions are easy on the eye and are designed to maximize click-through.',
-				'demo' => 'http://demo.thinkupthemes.com/?theme=Minamaze',
-				'feat' => 'http://www.thinkupthemes.com/themes/minamaze/',
-				'join' => '',
-				),
-
-			array(
-				'section'=>'main',
-				'id'=>'theme-engrave',
-				'type'=>'promotion',
-				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/screenshot-promotion-engrave.png',
-				'name' => 'Engrave',
-				'desc' => 'A dark styled theme Engrave is simply visually stunning. The dark design is complimented with the colored buttons that show on hover. Plus the stunning blog and portfolio designs really set this theme apart from the rest.',
-				'demo' => 'http://demo.thinkupthemes.com/?theme=Engrave',
+				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/1_trusted_team.png',
 				'feat' => 'http://www.thinkupthemes.com/themes/engrave/',
-				'join' => '',
 				),
 
 			array(
 				'section'=>'main',
-				'id'=>'theme-evolution',
+				'id'=>'theme-alante',
 				'type'=>'promotion',
-				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/screenshot-promotion-evolution.png',
-				'name' => 'Evolution',
-				'desc' => 'Flat designs are becoming more popular, and Evolution has been built to be the most awesome flat theme around. The theme is cutting edge and uses the latest CSS3 and HTML5 technology to deliver a beautiful style.',
-				'demo' => 'http://demo.thinkupthemes.com/?theme=Evolution',
-				'feat' => 'http://www.thinkupthemes.com/themes/evolution/',
-				'join' => '',
+				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/2_page_builder.png',
+				'feat' => 'http://www.thinkupthemes.com/themes/engrave/',
 				),
 
 			array(
 				'section'=>'main',
-				'id'=>'theme-smart',
+				'id'=>'theme-alante',
 				'type'=>'promotion',
-				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/screenshot-promotion-smart.png',
-				'name' => 'Smart',
-				'desc' => 'A traditional corporate theme with a dark layout. Perfect for companies that want to show they mean business. Easily add your contact details so they show in the header on every page. We&#39;ve really made is easier than ever to get that professional design your business deserves!',
-				'demo' => 'http://demo.thinkupthemes.com/?theme=Smart',
-				'feat' => 'http://www.thinkupthemes.com/themes/smart/',
-				'join' => '',
+				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/3_shortcodes.png',
+				'feat' => 'http://www.thinkupthemes.com/themes/engrave/',
 				),
 
 			array(
 				'section'=>'main',
-				'id'=>'theme-office',
+				'id'=>'theme-alante',
 				'type'=>'promotion',
-				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/screenshot-promotion-office.png',
-				'name' => 'Office',
-				'desc' => 'A dark styled theme Engrave is simply visually stunning. The dark design is complimented with the colored buttons that show on hover. Plus the stunning blog and portfolio designs really set this theme apart from the rest.',
-				'demo' => 'http://demo.thinkupthemes.com/?theme=Office',
-				'feat' => 'http://www.thinkupthemes.com/themes/office/',
-				'join' => '',
+				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/4_typography.png',
+				'feat' => 'http://www.thinkupthemes.com/themes/engrave/',
 				),
 
 			array(
-				'section'=>'footer',
-				'id'=>'promotion-footer',
+				'section'=>'main',
+				'id'=>'theme-alante',
 				'type'=>'promotion',
-				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/screenshot-promotion-alante.png',
-				'name' => 'Alante',
-				'desc' => 'Alante is one of our best themes. Use this for any business or blog and give a professional image. Descriptions can even be added to the header menu making it easier for your customers to navigate through the site. With a drop shadow on the call to action and page titles this theme is a must have for any business.',
-				'demo' => 'http://demo.thinkupthemes.com/?theme=Alante',
-				'feat' => 'http://www.thinkupthemes.com/themes/alante/',
-				'join' => '',
+				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/5_premium_support.png',
+				'feat' => 'http://www.thinkupthemes.com/themes/engrave/',
 				),
 
+			array(
+				'section'=>'main',
+				'id'=>'theme-alante',
+				'type'=>'promotion',
+				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/6_parallax_pages.png',
+				'feat' => 'http://www.thinkupthemes.com/themes/engrave/',
+				),
+
+			array(
+				'section'=>'main',
+				'id'=>'theme-alante',
+				'type'=>'promotion',
+				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/7_site_layout.png',
+				'feat' => 'http://www.thinkupthemes.com/themes/engrave/',
+				),
+
+			array(
+				'section'=>'main',
+				'id'=>'theme-alante',
+				'type'=>'promotion',
+				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/8_backgrounds.png',
+				'feat' => 'http://www.thinkupthemes.com/themes/engrave/',
+				),
+
+			array(
+				'section'=>'main',
+				'id'=>'theme-alante',
+				'type'=>'promotion',
+				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/9_responsive.png',
+				'feat' => 'http://www.thinkupthemes.com/themes/engrave/',
+				),
+
+			array(
+				'section'=>'main',
+				'id'=>'theme-alante',
+				'type'=>'promotion',
+				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/10_retina_ready.png',
+				'feat' => 'http://www.thinkupthemes.com/themes/engrave/',
+				),
+
+			array(
+				'section'=>'main',
+				'id'=>'theme-alante',
+				'type'=>'promotion',
+				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/11_unlimited_colors.png',
+				'feat' => 'http://www.thinkupthemes.com/themes/engrave/',
+				),
+
+			array(
+				'section'=>'main',
+				'id'=>'theme-alante',
+				'type'=>'promotion',
+				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/12_translation_ready.png',
+				'feat' => 'http://www.thinkupthemes.com/themes/engrave/',
+				),
+
+			array(
+				'section'=>'main',
+				'id'=>'theme-alante',
+				'type'=>'promotion',
+				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/13_rtl_support.png',
+				'feat' => 'http://www.thinkupthemes.com/themes/engrave/',
+				),
+
+			array(
+				'section'=>'main',
+				'id'=>'theme-alante',
+				'type'=>'promotion',
+				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/14_portfolios.png',
+				'feat' => 'http://www.thinkupthemes.com/themes/engrave/',
+				),
+
+			array(
+				'section'=>'main',
+				'id'=>'theme-alante',
+				'type'=>'promotion',
+				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/15_infinite_sidebars.png',
+				'feat' => 'http://www.thinkupthemes.com/themes/engrave/',
+				),
+
+			array(
+				'section'=>'main',
+				'id'=>'theme-alante',
+				'type'=>'promotion',
+				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/16_seo_optimized.png',
+				'feat' => 'http://www.thinkupthemes.com/themes/engrave/',
+				),
+
+			array(
+				'section'=>'main',
+				'id'=>'theme-alante',
+				'type'=>'promotion',
+				'image' => get_stylesheet_directory_uri()  . '/admin/main/assets/img/promotion/17_demo_content.png',
+				'feat' => 'http://www.thinkupthemes.com/themes/engrave/',
+				),
 		)
 	);
 

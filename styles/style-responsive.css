@@ -23,7 +23,7 @@
 		float: none;
 		position: static;
 		text-align: center;	
-		padding: 20px 0;
+		margin: 10px 0;
 	}
 	#logo img,
 	#logo h1 {
@@ -85,7 +85,6 @@
 	#pre-header-links-inner,
 	#breadcrumbs,
 	#sidebar,
-	#family,
 	#intro.option3 .page-teaser,
 	#footer-menu,
 	.meta-author	{
@@ -367,9 +366,6 @@
 	}
 
 	/* Blog */
-	.blog-style1 .blog-icon {
-		display: none;
-	}
 
 	/* Single Post Share */
 	.comment-meta {

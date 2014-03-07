@@ -10,9 +10,10 @@
 
 						<?php thinkup_input_blogformat(); ?>
 
+						<?php think_input_blogtitle(); ?>
+							
 						<div class="entry-content">
-							<?php think_input_blogtitle(); ?>
-							<?php thinkup_input_blogtext(); ?>
+							<?php the_excerpt(); ?>
 							<?php thinkup_input_readmore(); ?>
 
 							<div class="entry-meta">
