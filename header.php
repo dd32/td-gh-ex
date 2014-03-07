@@ -18,6 +18,11 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php 
+	if ('top' == b3theme_option('navbar_location')) {
+		b3theme_navbar();
+	}
+?>
 <div id="page" class="hfeed site container">
 	<?php do_action('before_header'); ?>
 	<header id="masthead" class="site-header" role="banner">
@@ -45,38 +50,11 @@
 	<?php if ('Y' == b3theme_option('sidebar_top')) { get_sidebar('top'); } ?>
 
 </div>
-<?php if ('N' != b3theme_option('navbar_enable')) { ?>
-		<div class="navbar navbar-default <?php
-	echo (b3theme_option('navbar_color') && '#F8F8F8' != b3theme_option('navbar_color')) ? 'navbar-b3theme' : ''; ?>">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button><?php
-				if ($brand = b3theme_option('navbar_brand')) {
-					echo '<a class="navbar-brand" href="'. home_url() .'">'. $brand .'</a>';
-				} ?>
-				</div>
-				<div class="collapse navbar-collapse">
-						<?php
-$params = array(
-	'theme_location' => 'primary',
-	'container'      => false,
-	'fallback_cb' => 'b3theme_wp_page_menu',
-	'menu_class' => 'nav navbar-nav',
-	'echo' => false,
-	'walker' => new Tb3theme_Walker_Nav_Menu,
-);
-	$menu = wp_nav_menu($params);
-	$menu = str_replace('class="sub-menu"', 'class="dropdown-menu"', $menu);
-	echo $menu;
-	?>
-				</div>
-			</div>
-		</div>
-<?php } ?>
+<?php
+	if ( !in_array(b3theme_option('navbar_location'), array('disable', 'top')) ) {
+		b3theme_navbar();
+	}
+?>
 	</header><!-- #masthead -->
 
 <?php

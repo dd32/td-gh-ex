@@ -213,7 +213,7 @@ function b3theme_panel_widget_title($title) {
 		. $title . '</h3></div><div class="panel-body">';
 	}
 	else {
-		$out = $title ? '<h3 class="widget-title ">' . $title . '</h3>' : $title;
+		$out = $title;
 	}
 	return $out;
 }
@@ -222,7 +222,7 @@ function b3theme_panel_widget_title($title) {
 function b3theme_enqueue_scripts() {
 	global $wp_scripts;
 	wp_enqueue_script('bootstrap', apply_filters('b3theme_bootstrap_js', B3THEME_URI . '/bootstrap/js/bootstrap.min.js'),
-			array('jquery'), null, true);
+			array('jquery'), '3.1.1', true);
 // apply_filters - a way to implement bootstrap CDN by plugins.
 	wp_enqueue_script('b3theme',  B3THEME_URI . '/js/b3theme.js', array('jquery'), null, true);
 	if ( is_singular() && comments_open() && get_option('thread_comments') ) {
@@ -281,16 +281,44 @@ function b3theme_options_css() {
 			. $css . '; border: solid 1px '. $css . ';} ';
 	}
 	if (($css = b3theme_option('navbar_color')) && '#F8F8F8' != $css) {
-		$color2 =  b3theme_option('navbar_color2');
-		$g = 'linear-gradient(top, ' . $css . ', '. $color2 .')';
-		$gg = 'linear-gradient(to bottom, ' . $css . ', '. $color2 .')';
-		$out .= '.navbar-b3theme {background-color: '. $css . '; background-image: -webkit-' . $g
-			. '; background-image: -ms-' . $g . '; background-image: ' . $gg
-			.'; border: ' . b3theme_option('navbar_border') .' solid 1px;}';
+		$out .= '.navbar-b3theme {background-color: ' . $css . '; border: ' . b3theme_option('navbar_border') .' solid 1px;}';
+		if ('Y' == b3theme_option('navbar_gradient')) {
+			$color2 = b3theme_option('navbar_color2');
+			$g = 'linear-gradient(top, ' . $css . ', '. $color2 .')';
+			$gg = 'linear-gradient(to bottom, ' . $css . ', '. $color2 .')';
+			$out .= '.navbar-b3theme {background-image: -webkit-' . $g
+				. '; background-image: -ms-' . $g . '; background-image: ' . $gg . ';}';
+		}
 	}
 	if (($css = b3theme_option('navbar_link_color')) && '#777777' != $css) {
 		$out .= '.navbar-nav > li > a, .navbar-nav > li > a:visited, a.navbar-brand {color:'. $css . ' !important;} ';
 		$out .= '.navbar-nav > li > a:hover, a.navbar-brand:hover {color:'. b3theme_option('navbar_link_color2') . ' !important;} ';
+	}
+	$navbar_default = false;
+
+	switch (b3theme_option('navbar_location')) {
+		case 'default':
+			$navbar_default = true;
+			break;
+		case 'top':
+			$out .= '.navbar-b3theme {border-top: none; margin-bottom: 10px;}';
+			break;
+		case 'fixed-top':
+			$out .= 'body {padding-top: 61px;} .navbar-b3theme {border-top: none;}';
+			break;
+		case 'fixed-bottom':
+			$out .= 'body {padding-bottom: 50px;} .navbar-b3theme {border-bottom: none;}';
+			break;
+		case 'full-width':
+			$out .= '.navbar-b3theme {position: absolute; left: 0; width: 100%;} .site-header {margin-bottom: 67px;}';
+			break;			
+	}
+	if (!$navbar_default) {
+		$out .= '.navbar-b3theme {border-radius: 0; border-right: none; border-left: none;}';
+	}
+
+	if ( ($bgcolor = b3theme_option('page_bgcolor')) ) {
+		$out .= '#page {background: '.  $bgcolor .'}';
 	}
 	return $out;
 }
@@ -325,68 +353,76 @@ add_filter('post_class', 'b3theme_post_class');
 add_action('comment_form_before', 'b3theme_comment_form_before');
 add_action('comment_form_after', 'b3theme_comment_form_after');
 
-
-function b3theme_carousel() {
-	$case = b3theme_option('carousel');
-	if ('N' == $case) {
-		return;
-	}
-	else {
-			if ('Y' == $case) {
-				$slides = b3theme_option('slides');
-			}
-			else {
-				include B3THEME_PATH . '/inc/demo-slides.php';
-			}
-			if ( $total = count($slides) ) {
+if (!function_exists('b3theme_carousel')):
+	function b3theme_carousel() {
+		$case = b3theme_option('carousel');
+		if ('N' == $case) {
+			return;
+		}
+		else {
+				if ('Y' == $case) {
+					$slides = b3theme_option('slides');
+				}
+				else {
+					include B3THEME_PATH . '/inc/demo-slides.php';
+				}
+				if ( $total = count($slides) ) {
 ?>
-	<div id="b3theme-slider" class="carousel slide spacer-bottom" data-ride="carousel" >
+		<div id="b3theme-slider" class="carousel slide spacer-bottom" data-ride="carousel" >
 <?php if ( $total > 1 ) { ?>
-	<ol class="carousel-indicators">
+		<ol class="carousel-indicators">
 <?php
-				for($i=0; $i<$total; $i++) {
-					echo '<li data-target="#b3theme-slider" data-slide-to="' . $i . '" ' . ($i ? '' : 'class="active"') . '></li>';
-				} ?>
-	</ol>
+					for($i=0; $i<$total; $i++) {
+						echo '<li data-target="#b3theme-slider" data-slide-to="' . $i . '" ' . ($i ? '' : 'class="active"') . '></li>';
+					} ?>
+		</ol>
 <?php } ?>
-	<div class="carousel-inner clearfix" >
+		<div class="carousel-inner clearfix" >
 <?php
 
-		foreach ($slides as $c => $slide ) {
+			foreach ($slides as $c => $slide ) {
 ?>
-				<div class="item <?php echo ($c>1) ? '' : 'active'; ?>" >
-					<a href="<?php echo $slide['link'] ? $slide['link'] : '#'; ?>"><img style="width:100%;" src="<?php echo $slide['src']; ?>" alt="<?php echo $slide['alt'] ?>" /></a>
-					<div class="container">
-							<div class="carousel-caption">
-								<h1><a href="<?php echo $slide['link']; ?>"><?php echo apply_filters('the_title', $slide['title']); ?></a></h1>
-							<?php
-									echo '<div>' . apply_filters('the_content', $slide['content']) . '</div>';
-							?>
-							</div>
-					 </div>
-				</div>
+					<div class="item <?php echo ($c>1) ? '' : 'active'; ?>" >
+						<a href="<?php echo $slide['link'] ? $slide['link'] : '#'; ?>"><img style="width:100%;" src="<?php echo $slide['src']; ?>" alt="<?php echo $slide['alt'] ?>" /></a>
+						<div class="container">
+								<div class="carousel-caption">
+									<h1><a href="<?php echo $slide['link']; ?>"><?php echo apply_filters('the_title', $slide['title']); ?></a></h1>
+								<?php
+									if ('N' != b3theme_option('disable_slide_the_content')) {
+										$slide['content'] = apply_filters('the_content', $slide['content']);
+									}
+									if (is_multisite()) {
+										$slide['content'] = wp_kses_post($slide['content']);
+									}
+									echo '<div>' . $slide['content'] . '</div>';
+								?>
+								</div>
+						 </div>
+					</div>
 <?php
-
-		}
+	
+			}
 ?>
-				</div><!-- /.carousel-inner -->
-			<?php
-			if ($total>1) { ?>
-				<a class="left carousel-control" href="#b3theme-slider" data-slide="prev"><span class="glyphicon glyphicon-chevron-left icon-large"></span></a>
-				<a class="right carousel-control" href="#b3theme-slider" data-slide="next"><span class="glyphicon glyphicon-chevron-right glyphicon-large"></span></a>
-			 <?php
-			} ?>
-	</div>
+					</div><!-- /.carousel-inner -->
+				<?php
+				if ($total>1) { ?>
+					<a class="left carousel-control" href="#b3theme-slider" data-slide="prev"><span class="glyphicon glyphicon-chevron-left icon-large"></span></a>
+					<a class="right carousel-control" href="#b3theme-slider" data-slide="next"><span class="glyphicon glyphicon-chevron-right glyphicon-large"></span></a>
+				 <?php
+				} ?>
+		</div>
 <?php
-		} else {
-			echo '<div class="alert alert-warning text-center">';
-			printf( __('You have no slides yet. You can <a href="%1$s">add your slides</a> or activate demo slides. The optimum image width/height ratio is %2$s, the best image size: %3$s.', 'b3theme'),
-				admin_url('themes.php?page=b3theme_settings'),
-				'17:5', '1140 &times; 300 pixel');
-		echo '</div>';
+			} else {
+				echo '<div class="alert alert-warning text-center">';
+				printf( __('You have no slides yet. You can <a href="%1$s">add your slides</a> or activate demo slides. The optimum image width/height ratio is %2$s, the best image size: %3$s.', 'b3theme'),
+					admin_url('themes.php?page=b3theme_settings'),
+					'17:5', '1140 &times; 300 pixel');
+			echo '</div>';
+			}
 		}
 	}
-}
+
+endif;
 
 function b3theme_footer_script() {
 	if ('Y' == b3theme_option('image_rounded')) {
@@ -447,6 +483,43 @@ function b3theme_wp_link_pages_args($args) {
 
 add_filter('wp_link_pages_link', 'b3theme_wp_link_pages_link');
 add_filter('wp_link_pages_args', 'b3theme_wp_link_pages_args');
+
+function b3theme_navbar() { ?>
+	<nav class="navbar navbar-default <?php
+	if (b3theme_option('navbar_location') !== 'default') {
+		echo ' navbar-' . b3theme_option('navbar_location');
+	}
+	echo (b3theme_option('navbar_color') && '#F8F8F8' != b3theme_option('navbar_color')) ? ' navbar-b3theme' : ''; ?>" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button><?php
+				if ($brand = b3theme_option('navbar_brand')) {
+					echo '<a class="navbar-brand" href="'. home_url() .'">'. $brand .'</a>';
+				} ?>
+				</div>
+				<div class="collapse navbar-collapse">
+						<?php
+	$params = array(
+		'theme_location' => 'primary',
+		'container'      => false,
+		'fallback_cb' => 'b3theme_wp_page_menu',
+		'menu_class' => 'nav navbar-nav',
+		'echo' => false,
+		'walker' => new Tb3theme_Walker_Nav_Menu,
+	);
+	$menu = wp_nav_menu($params);
+	$menu = str_replace('class="sub-menu"', 'class="dropdown-menu"', $menu);
+	echo $menu;
+	?>
+				</div>
+			</div>
+	</nav>
+<?php
+}
 
 require B3THEME_PATH . '/inc/custom-header.php';
 require B3THEME_PATH . '/inc/template-tags.php';

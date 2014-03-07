@@ -1,5 +1,16 @@
 === Changelog ===
 
+== 1.2.6 ==
+
+* Main menu placement option (default, top, fixed-top, fixed-bottom, full-width);
+* Option disabling the_content filter for slides (to remove "share in social networks" buttons);
+* Page background color option;
+* Carousel switch moved to Slides tab;
+* b3theme_carousel function pluggable;
+* Update respond.js to 1.4.2;
+* Update Bootstrap to 3.1.1.
+
+
 == 1.2.5 ==
 
 * Added: Bootstrap styling for <!--nextpage--> (wp_link_pages)
@@ -7,6 +18,7 @@
 * New option: extended or minified Not Found page
 * Fixed: img.wp-smiley styling in widgets
 * Minor change in theme options css
+
 
 == 1.2.4 ==
 

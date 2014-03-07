@@ -56,7 +56,7 @@ function b3theme_remove_slide(i) {
 function b3theme_add_new_slide() {
 	var i = 0;
 	var html, id;
-	var after = '.b3theme-slides h3';
+	var after = '.b3theme-slides h3.edit-slides';
 	var slides = jQuery('.b3theme-slides > div');
 	slides.each(function(index, elem) {
 		id = jQuery(elem).attr('id');

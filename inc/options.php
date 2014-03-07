@@ -13,7 +13,8 @@ function b3theme_sanitize_options($arr) {
 		'site_title_enabled' => 'Y',
 		'site_description_enabled' => 'Y',
 		'navbar_brand' => 'Project Name',
-		'navbar_enable' => 'Y',
+		'navbar_location' => 'default',
+		'navbar_gradient' => 'Y',
 		'copyright' => date('Y ') . get_option('blogname'),
 		'show_home' => 'N',
 		'reduce_404_page' => 'N',
@@ -24,6 +25,7 @@ function b3theme_sanitize_options($arr) {
 		'panel_widget' => 'N', 
 		'panel_post' => 'N',
 		'carousel' => 'demo',
+		'disable_slide_the_content' => 'N',
 		'image_rounded' => 'N',
 		'paginate_links' => 'next',
 		'credits' => 'Y',
@@ -40,6 +42,7 @@ function b3theme_sanitize_options($arr) {
 		'navbar_border' => '',
 		'navbar_link_color' => '',
 		'navbar_link_color2' => '',
+		'page_bgcolor' => '',
 		'slides' => array(),
 	);
 
@@ -203,36 +206,36 @@ function b3theme_option_input($option_key, $name = '', $type = 'text', $default 
 			echo '<label>' . $name . '</label>';
 			$arr = $options ? $options : array('Y' => __('Yes', 'b3theme'), 'N' => __('No', 'b3theme'));
 			foreach ($arr as $key => $value ) {
-				echo ' <input name="b3theme_options[' .$option_key . ']" type="radio" value="'. $key . '" '
+				echo ' <input name="b3theme_options[' . $option_key . ']" type="radio" value="'. $key . '" '
 					. (b3theme_option($option_key) == $key ? 'checked' : ''). '/>'. $value . '&nbsp;';
 			}
 			break;
 
 		case 'checkbox':
-			echo '<input name="b3theme_options[' .$option_key . ']" type="hidden" value="N" />';
+			echo '<input name="b3theme_options[' . $option_key . ']" type="hidden" value="N" />';
 			echo '<label>' . $name . '</label>';
-			echo ' <input name="b3theme_options[' .$option_key . ']" type="checkbox" value="Y" '
+			echo ' <input name="b3theme_options[' . $option_key . ']" type="checkbox" value="Y" '
 				. ('Y' == b3theme_option($option_key) ? ' checked' : ''). '/>';  
 			break;
 
 		case 'color':
 				echo '<label>' . $name . '</label>';
-				echo '<input name="b3theme_options[' .$option_key . ']" class="b3theme-color-option" data-default-color="'
-					. $default . '" type="text" value="'. b3theme_option($option_key) . '" />';
+				echo '<input name="b3theme_options[' . $option_key . ']" class="b3theme-color-option" data-default-color="'
+					. $default . '" type="text" value="' . b3theme_option($option_key) . '" />';
 		break;
 
 		case 'text':
 			echo '<label>' . $name . '</label>';
-			echo '<input name="b3theme_options[' .$option_key . ']" type="text" value="'. b3theme_option($option_key) . '" />';
+			echo '<input name="b3theme_options[' . $option_key . ']" type="text" value="' . b3theme_option($option_key) . '" />';
 		break;
 
 		case 'hidden':
-			echo '<input name="b3theme_options[' .$option_key . ']" type="hidden" value="'. b3theme_option($option_key) . '" />';
+			echo '<input name="b3theme_options[' . $option_key . ']" type="hidden" value="' . b3theme_option($option_key) . '" />';
 		break;
 
 		default:
 			echo '<label>' . $name . '</label>';
-			echo '<input name="b3theme_options[' .$option_key . ']" type="text" value="'. b3theme_option($option_key) . '" />';  
+			echo '<input name="b3theme_options[' . $option_key . ']" type="text" value="' . b3theme_option($option_key) . '" />';  
 	}
 }
 
@@ -285,11 +288,12 @@ function b3theme_settings_page() {
 			<div> <?php b3theme_option_input('site_title_enabled', __('Display site title?', 'b3theme'), 'checkbox'); ?> </div>
 			<div> <?php b3theme_option_input('site_description_enabled', __('Display site description?', 'b3theme'), 'checkbox'); ?></div>
 			<div> <?php b3theme_option_input('navbar_brand', __('Menu Bar title', 'b3theme'), 'text'); ?></div>
-			<div> <?php b3theme_option_input('navbar_enable', __('Enable Menu Bar', 'b3theme'), 'checkbox'); ?></div>
-
+			<div> <?php
+				$nav_loc = array('default' => __('default', 'b3theme'), 'disable' => __('disable', 'b3theme'),
+					'top' => __('top', 'b3theme'), 'fixed-top' => __('fixed top', 'b3theme'),
+					'fixed-bottom' => __('fixed bottom', 'b3theme'), 'full-width' => __('full width', 'b3theme'));
+				b3theme_option_input('navbar_location', __('Menu Location', 'b3theme'), 'radio', 'default', $nav_loc) ?></div>
 			<div> <?php b3theme_option_input('copyright', __('Copyright text', 'b3theme'), 'text'); ?></div>
-			<div> <?php b3theme_option_input('carousel', __('Homepage carousel', 'b3theme'), 'radio', 'demo',
-				array('Y' => __('Yes', 'b3theme'), 'N' => __('No', 'b3theme'), 'demo' => __('Demo', 'b3theme'),)); ?></div>
 			<div> <?php b3theme_option_input('credits', __('Display credits', 'b3theme'), 'checkbox') ?></div>
 
 		</div>
@@ -298,9 +302,15 @@ function b3theme_settings_page() {
 			<div> <?php b3theme_option_input('text_color', __('Text color', 'b3theme'), 'color', '#333333'); ?></div>
 			<div> <?php b3theme_option_input('headers_color', __('Headers H1...H6 Color', 'b3theme'), 'color') ?></div>
 			<div> <?php b3theme_option_input('link_color', __('Link color', 'b3theme'), 'color') ?></div>
-			<div> <?php b3theme_option_input('navbar_color', __('Navigation bar color', 'b3theme'), 'color', '#F8F8F8'); ?></div>
+			<div> <?php b3theme_option_input('navbar_color', __('Menu bar color', 'b3theme'), 'color', '#F8F8F8'); ?></div>
+			<div> <?php b3theme_option_input('navbar_gradient', __('Menu bar gradient', 'b3theme'), 'checkbox'); ?></div>
+			
 			<div> <?php b3theme_option_input('navbar_link_color', __('Navigation link color', 'b3theme'), 'color', '#777777'); ?></div>
+
+			<div> <?php b3theme_option_input('page_bgcolor', __('Page background color', 'b3theme'), 'color', ''); ?></div>
+
 		</div>
+
 
 		<div class="b3theme-settings-section b3theme-page-structure">
 			<h3><?php _e('Page Structure', 'b3theme'); ?></h3>
@@ -329,6 +339,19 @@ function b3theme_settings_page() {
 
 		<div class="b3theme-settings-section b3theme-slides">
 			<h3><?php _e('Slides', 'b3theme');?></h3>
+
+
+			<p> <?php b3theme_option_input('carousel', __('Homepage carousel', 'b3theme'), 'radio', 'demo',
+				array('Y' => __('Yes', 'b3theme'), 'N' => __('No', 'b3theme'), 'demo' => __('Demo', 'b3theme'),)); ?></p>
+
+			<p> <?php
+				if (current_user_can('unfiltered_html')) {
+					b3theme_option_input('disable_slide_the_content', __('Disable &#39;the_content&#39; filter', 'b3theme'), 'checkbox');
+			}	?></p>
+
+			<h3 class="edit-slides"><?php _e('Edit Slides', 'b3theme');?></h3>
+
+
 			<input type="hidden" name="b3theme_options[slides][0]" value="dummy" />
 			<?php $slides = b3theme_option('slides');
 				if ( !$slides ) {
@@ -337,9 +360,9 @@ function b3theme_settings_page() {
 					);
 				}
 				foreach ($slides as $i => $slide) {
-					echo '<div id="slide-' . $i . '" ><h3><span class="space"> </span>'
+					echo '<div id="slide-' . $i . '" ><h4><span class="space"> </span>'
 						. __('Slide', 'b3theme') . ' #' . $i
-						. ' &nbsp; <a class="slide-remove" href="#" onclick="b3theme_remove_slide('. $i . ');">&times;</a></span></h3>';
+						. ' &nbsp; <a class="slide-remove" href="#" onclick="b3theme_remove_slide('. $i . ');">&times;</a></span></h4>';
 
 					echo '<p><label for="b3theme_options-slides-'. $i . '-title">'. __('Title', 'b3theme')
 						. '</label><input id="b3theme_options-slides-'. $i . '-title" type="text" name="b3theme_options[slides]['

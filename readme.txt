@@ -6,12 +6,12 @@ Author URI: http://andrey.ws/
 License: GNU General Public License v3.0
 Tags: light, white, two-columns, right-sidebar, left-sidebar, fixed-width, custom-background, custom-header, custom-menu, featured-images, theme-options, translation-ready, threaded-comments
 Requires at least: 3.5
-Tested up to: 3.8
+Tested up to: 3.8.1
 
 == Description ==
 
-B3 is responsive customizable theme based on Bootstrap 3 framework. Three
-widget areas, changeable colors and page look, export/import settings,
+B3 is responsive customizable multi-purpose theme based on Bootstrap 3 framework.
+Three widget areas, changeable colors and page look, export/import settings,
 custom logo and background, image carousel, translation ready.
 
 The content area is 3/4 of page width with sidebar of 1/4 on 980+ pixel
@@ -28,6 +28,7 @@ of all site pages. Multi-level dropdown works.
 
 * Show/hide logo, site name and description separately
 * Custom colors for main text, links, navigation bar and navigation links
+* Navigation bar variations: top, fixed-top, fixed-bottom, default, 100% width, none
 * Left or right sidebar
 * Top and bottom widget area on/off
 * Show/hide/demo image carousel on homepage
