@@ -4,7 +4,7 @@ Theme URI: http://andrey.ws/b3-theme
 Author: andreyk
 Author URI: http://andrey.ws/
 License: GNU General Public License v3.0
-Tags: light, white, two-columns, right-sidebar, left-sidebar, fixed-width, custom-background, custom-header, custom-menu, featured-images, theme-options, translation-ready, threaded-comments
+Tags: theme-options, two-columns, white, light, custom-colors, two-columns, one-column, left-sidebar, right-sidebar, fluid-layout, responsive-layout, custom-background, featured-images, rtl-language-support, sticky-post, translation-ready
 Requires at least: 3.5
 Tested up to: 3.8.1
 

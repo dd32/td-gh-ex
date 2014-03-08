@@ -1,5 +1,11 @@
 === Changelog ===
 
+== 1.2.7 ==
+
+* Theme tags list update (fluid-layout, responsive-layout);
+* Adjacent post links option: titles, previous/next, disable.
+
+
 == 1.2.6 ==
 
 * Main menu placement option (default, top, fixed-top, fixed-bottom, full-width);

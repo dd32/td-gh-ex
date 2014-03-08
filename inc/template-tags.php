@@ -15,6 +15,9 @@ function b3theme_content_nav( $nav_id ) {
 	global $wp_query, $post;
 
 	if ( is_single() ) {
+		if ('disable' == b3theme_option('prev_next_link'))
+			return;
+
 		$previous = ( is_attachment() ) ? get_post( $post->post_parent ) : get_adjacent_post( false, '', true );
 		$next = get_adjacent_post( false, '', false );
 
@@ -29,9 +32,22 @@ function b3theme_content_nav( $nav_id ) {
 
 	if ( is_single() ) { // navigation links for single posts ?>
 		<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>"><ul class="pager">
-		<?php previous_post_link('<li class="previous">%link</li>', '<span class="meta-nav">' . _x('&larr;', 'Previous post link', 'b3theme') . '</span> %title'); ?>
-	
-		<?php next_post_link('<li class="next">%link</li>', '%title <span class="meta-nav">' . _x('&rarr;', 'Next post link', 'b3theme') . '</span>'); ?>
+		<?php
+		if ($previous) {
+			$previous_text = '<span class="meta-nav">' . _x('&larr;', 'Previous post link', 'b3theme') . '</span> ';
+			$previous_text .= 'prev_next' == b3theme_option('prev_next_link') ?
+				__('Previous post', 'b3theme') : esc_html($previous->post_title);
+			previous_post_link('<li class="previous">%link</li>', $previous_text);
+		} ?>
+
+		<?php
+		if ($next) {
+			$next_text = 'prev_next' == b3theme_option('prev_next_link') ?
+				__('Next post', 'b3theme') : esc_html($next->post_title);
+			$next_text .= ' <span class="meta-nav">' . _x('&rarr;', 'Next post link', 'b3theme') . '</span>';
+			next_post_link('<li class="next">%link</li>', $next_text);
+		}
+		?>
 		</ul></nav> <?php
 
 	} elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) {

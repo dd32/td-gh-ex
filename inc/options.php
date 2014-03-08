@@ -27,6 +27,7 @@ function b3theme_sanitize_options($arr) {
 		'carousel' => 'demo',
 		'disable_slide_the_content' => 'N',
 		'image_rounded' => 'N',
+		'prev_next_link' => 'titles',
 		'paginate_links' => 'next',
 		'credits' => 'Y',
 		'post_thumbnail' => 'Y',
@@ -332,6 +333,11 @@ function b3theme_settings_page() {
 			<div> <?php b3theme_option_input('post_thumbnail', __('Featured images in excerpts', 'b3theme'), 'checkbox') ?></div>
 			<div> <?php b3theme_option_input('post_date', __('Display post date', 'b3theme'), 'checkbox') ?></div>
 			<div> <?php b3theme_option_input('post_author', __('Display post author', 'b3theme'), 'checkbox') ?></div>
+
+			<div> <?php b3theme_option_input('prev_next_link', __('Adjacent post links', 'b3theme'), 'radio', 'titles',
+				array('titles' => __('Titles', 'b3theme'), 'prev_next' => __('Next/Previous', 'b3theme'), 'disable' => __('Disable', 'b3theme'))
+			); ?></div>
+
 			<div> <?php b3theme_option_input('image_rounded', __('Rounded images', 'b3theme'), 'checkbox') ?></div>
 			<div> <?php b3theme_option_input('paginate_links', __('Blog pagination', 'b3theme'), 'radio', 'next',
 				array('next' => __('Older/Newer', 'b3theme'), 'number' => __('Numbers', 'b3theme'),) ) ?></div>
