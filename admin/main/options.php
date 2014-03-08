@@ -1210,7 +1210,7 @@ function setup_framework_options(){
 	);
 
 		$sections[] = array(
-		'title' => __('Upgrade (20% off)', 'redux-framework'),
+		'title' => __('Upgrade (10% off)', 'redux-framework'),
 		'icon' => 'arrow-up',
 		'icon_class' => 'icon-large',
 		'fields' => array(

@@ -95,6 +95,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.5.1
+- Updated: Offer updated to 10% off with value $31.
+
 Version 1.5.0
 - Fixed:   Responsive header menu now works on localhost correctly.
 - Updated: Auto sizing of logo image added.

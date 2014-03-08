@@ -95,7 +95,7 @@ function thinkup_frontscripts() {
 	wp_enqueue_style( 'font-awesome-min', get_template_directory_uri() . '/lib/extentions/font-awesome/css/font-awesome.min.css', '', '3.2.1' );
 	wp_enqueue_style( 'elusive-min', get_template_directory_uri() . '/lib/extentions/elusive-icons/elusive-webfont.css', '', '2.0' );
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/lib/extentions/bootstrap/css/bootstrap.min.css', '', '2.3.2' );
-	wp_enqueue_style( 'style', get_stylesheet_uri(), '', '1.5.0' );
+	wp_enqueue_style( 'style', get_stylesheet_uri(), '', '1.5.1' );
 	wp_enqueue_style( 'shortcodes', get_template_directory_uri() . '/styles/style-shortcodes.css', '', '1.1' );
 
 	// Add theme scripts

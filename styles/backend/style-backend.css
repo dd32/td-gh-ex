@@ -1,33 +1,6 @@
 /* Add Styling to Admin Area */
 
 /*----------------------------------------------------
-	SlideDeck 2 Messages
----------------------------------------------------- */
-.toplevel_page_slidedeck2 ul.wp-submenu li:nth-child(5),
-.toplevel_page_slidedeck2 ul.wp-submenu li:nth-child(6),
-#slidedeck-option-wrapper .slidedeck-license-key-wrapper,
-#slidedeck-types .upgrade-button-cta,
-#slidedeck_form .upgrade-button-cta,
-#slidedeck_lens_management .upgrade-button-cta,
-#slidedeck-choose-slide-type .slide-type.disabled,
-#slidedeck-lenses-wrapper .add-lens,
-#slidedeck-license-key-warning,
-#slidedeck-table .right,
-#slidedeck-manage-footer {
-	display: none;
-}
-#slidedeck-table-sort {
-	margin: 10px 0 !important;
-}
-#slidedeck-table .float-wrapper {
-	padding: 0 !important;
-}
-#slidedeck-types .upgrade-modal {
-	display: none !important;
-}
-
-
-/*----------------------------------------------------
 	REDUX CUSTOM STYLING
 ---------------------------------------------------- */
 
@@ -349,6 +322,15 @@ border-bottom: none;
 #redux-main div:nth-child(10) .form-table {
 	display: none;
 }
+
+
+/*---------------------------------------------------- 
+	HIDE META OPTION FROM SHORTCODE CATEGORIES LIST
+---------------------------------------------------- */
+#thinkupshortcodes-categories option[value="metaoptions"] {
+	display: none;
+}
+
 
 /*---------------------------------------------------- 
 	HIDE IN-DEVELOPMENT FEATURES

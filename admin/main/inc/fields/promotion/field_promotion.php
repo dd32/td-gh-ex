@@ -104,14 +104,14 @@ if( !class_exists( 'ReduxFramework_promotion' ) ) {
 					
 					echo	'<div id="promotion-table">';
 					echo	'<div id="promotion-header">';
-					echo	'<p class="main-title">Upgrade for $28 (20% off)</p>';
+					echo	'<p class="main-title">Upgrade for $31 (10% off)</p>';
 //					echo	'<p class="secondary-title">Never code again! Upgrade to use our page builder.<br />Now you can create amazing websites faster than ever before!</p>';
 					echo	'<a href="http://www.thinkupthemes.com/themes/engrave/" target="_blank" class="promotion-button">Upgrade Now</a>';
 //					echo	'<a href="http://www.thinkupthemes.com/pricing/" target="_blank"><img src="' . get_stylesheet_directory_uri() . '/admin/main/assets/img/promotion/ThinkUpThemes_Promotion.png"></a>';
 					echo	'</div>';
 
 					echo	'<div id="promotion-coupon">';
-					echo	'<a href="http://www.thinkupthemes.com/themes/engrave/" target="_blank">upgrade28<span>Normally $35. Use coupon at checkout.</span></a>';
+					echo	'<a href="http://www.thinkupthemes.com/themes/engrave/" target="_blank">engrave31<span>Normally $35. Use coupon at checkout.</span></a>';
 					echo	'</div>';
 					echo	'</div>';
 
