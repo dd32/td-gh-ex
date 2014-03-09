@@ -22,18 +22,21 @@
 #optionsframework .section .controls {
 	float: left;
 	min-width:350px;
-	width: 100%;
+	width: 54%;
 	padding-right:2%;
 }
 #optionsframework .section .explain {
-	max-width:100%;
+	max-width:38%;
 	float: left;
 	font-size: 12px;
 	line-height:16px;
 	color: #777;
 }
+#optionsframework .controls input[type=text] {
+	width:100%;
+}
 #optionsframework .section-checkbox .controls {
-	width: 50%;
+	width: 98%;
 }
 #optionsframework .section-checkbox .explain {
 	max-width:94%;
@@ -213,6 +216,7 @@
 #optionsframework .section:after {
 	clear: both;
 }
+
 .form-signin .form-signin-heading,.form-signin .checkbox {margin-bottom: 7px;}.form-signin input[type="text"] {font-size: 14px;height: auto;margin-bottom: 7px;padding: 12px 14px; width:80%}
 
 .nav-tab-wrapper {

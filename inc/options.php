@@ -28,8 +28,8 @@ function optionsframework_options() {
         'std' => "design-red",
         'type' => "images",
         'options' => array(
-            'design-blue' => $imagepath . 'blue.png',
-            'design-red' => $imagepath . 'red.png')
+            'design-red' => $imagepath . 'red.png',
+            'design-blue' => $imagepath . 'blue.png')
     );
 
 /**********************************************************************/
@@ -67,7 +67,6 @@ function optionsframework_options() {
 		'desc' => __('Title', 'athenea'),
 		'id' => 'principal_1a',
 		'std' => '',
-		'class' => 'form-signin',
 		'type' => 'text');
 	$options[] = array(
 		'desc' => __('Brief description.', 'athenea'),
@@ -78,13 +77,11 @@ function optionsframework_options() {
 		'desc' => __('Button Text', 'athenea'),
 		'id' => 'principal_1c',
 		'std' => '',
-		'class' => 'form-signin',
 		'type' => 'text');
 	$options[] = array(
 		'desc' => __('URL Button', 'athenea'),
 		'id' => 'principal_1d',
 		'std' => '',
-		'class' => 'form-signin',
 		'type' => 'text');
 	$options[] = array(
 		 'desc' => __('Select an image to display. The image must be transparent gif or png background', 'athenea'),
@@ -98,7 +95,6 @@ function optionsframework_options() {
 		'desc' => __('Titulo', 'athenea'),
 		'id' => 'principal_2a',
 		'std' => '',
-		'class' => 'form-signin',
 		'type' => 'text');
 	$options[] = array(
 		'desc' => __('Brief description.', 'athenea'),
@@ -109,13 +105,11 @@ function optionsframework_options() {
 		'desc' => __('Button Text', 'athenea'),
 		'id' => 'principal_2c',
 		'std' => '',
-		'class' => 'form-signin',
 		'type' => 'text');
 	$options[] = array(
 		'desc' => __('URL Button', 'athenea'),
 		'id' => 'principal_2d',
 		'std' => '',
-		'class' => 'form-signin',
 		'type' => 'text');
 	$options[] = array(
 		 'desc' => __('Select an image to display. The image must be transparent gif or png background', 'athenea'),
@@ -129,7 +123,6 @@ function optionsframework_options() {
 		'desc' => __('Title', 'athenea'),
 		'id' => 'principal_3a',
 		'std' => '',
-		'class' => 'form-signin',
 		'type' => 'text');
 	$options[] = array(
 		'desc' => __('Brief description.', 'athenea'),
@@ -140,13 +133,11 @@ function optionsframework_options() {
 		'desc' => __('Button Text', 'athenea'),
 		'id' => 'principal_3c',
 		'std' => '',
-		'class' => 'form-signin',
 		'type' => 'text');
 	$options[] = array(
 		'desc' => __('URL Button', 'athenea'),
 		'id' => 'principal_3d',
 		'std' => '',
-		'class' => 'form-signin',
 		'type' => 'text');
 	$options[] = array(
 		 'desc' => __('Select an image to display. The image must be transparent gif or png background', 'athenea'),
@@ -160,7 +151,6 @@ function optionsframework_options() {
 		'desc' => __('Title', 'athenea'),
 		'id' => 'present_1',
 		'std' => '',
-		'class' => 'form-signin',
 		'type' => 'text');
 	$options[] = array(
 		'desc' => __('Brief description.', 'athenea'),
@@ -171,13 +161,11 @@ function optionsframework_options() {
 		'desc' => __('Button Text', 'athenea'),
 		'id' => 'present_3',
 		'std' => '',
-		'class' => 'form-signin',
 		'type' => 'text');
 	$options[] = array(
 		'desc' => __('URL Button', 'athenea'),
 		'id' => 'present_4',
 		'std' => '',
-		'class' => 'form-signin',
 		'type' => 'text');
 	$options[] = array(
 		 'desc' => __('Select an image to display. The image must be transparent gif or png background', 'athenea'),
@@ -207,7 +195,6 @@ function optionsframework_options() {
 		'desc' => __('Enter the full URL.', 'athenea'),
 		'id' => 'athenea_facebook',
 		'std' => '',
-		'class' => 'form-signin',
 		'type' => 'text');	
 	// Twitter
 	$options[] = array(
@@ -220,7 +207,6 @@ function optionsframework_options() {
 		'desc' => __('Enter the full URL.', 'athenea'),
 		'id' => 'athenea_twitter',
 		'std' => '',
-		'class' => 'form-signin',
 		'type' => 'text');
 	// YouTube
 	$options[] = array(
@@ -233,7 +219,6 @@ function optionsframework_options() {
 		'desc' => __('Enter the full URL.', 'athenea'),
 		'id' => 'athenea_youtube',
 		'std' => '',
-		'class' => 'form-signin',
 		'type' => 'text');
 	// Vimeo
 	$options[] = array(
@@ -246,7 +231,6 @@ function optionsframework_options() {
 		'desc' => __('Enter the full URL.', 'athenea'),
 		'id' => 'athenea_vimeo',
 		'std' => '',
-		'class' => 'form-signin',
 		'type' => 'text');
 	// Google+
 	$options[] = array(
@@ -259,7 +243,6 @@ function optionsframework_options() {
 		'desc' => __('Enter the full URL.', 'athenea'),
 		'id' => 'athenea_google',
 		'std' => '',
-		'class' => 'form-signin',
 		'type' => 'text');
 	// Feed
 	$options[] = array(
@@ -272,7 +255,6 @@ function optionsframework_options() {
 		'desc' => __('Enter the full URL.', 'athenea'),
 		'id' => 'athenea_feed',
 		'std' => '',
-		'class' => 'form-signin',
 		'type' => 'text');
 		
 /**********************************************************************/
@@ -289,49 +271,41 @@ function optionsframework_options() {
 		'desc' => __('Company Name', 'athenea'),
 		'id' => 'address_1',
 		'std' => __('', 'athenea'),
-		'class' => 'form-signin',
 		'type' => 'text');
 	$options[] = array(
 		'desc' => __('CIF/NIF/NIE (tax id). Mandatory for companies in the European Community.', 'athenea'),
 		'id' => 'address_2',
 		'std' => '',
-		'class' => 'form-signin',
 		'type' => 'text');
 	$options[] = array(
 		'desc' => __('Address', 'athenea'),
 		'id' => 'address_3',
 		'std' => __('', 'athenea'),
-		'class' => 'form-signin',
 		'type' => 'text');
 	$options[] = array(
 		'desc' => __('Postal Code', 'athenea'),
 		'id' => 'address_4',
 		'std' => __('', 'athenea'),
-		'class' => 'form-signin',
 		'type' => 'text');
 	$options[] = array(
 		'desc' => __('City', 'athenea'),
 		'id' => 'address_5',
 		'std' => __('', 'athenea'),
-		'class' => 'form-signin',
 		'type' => 'text');
 	$options[] = array(
 		'desc' => __('Country', 'athenea'),
 		'id' => 'address_6',
 		'std' => __('', 'athenea'),
-		'class' => 'form-signin',
 		'type' => 'text');
 	$options[] = array(
 		'desc' => __('Phone', 'athenea'),
 		'id' => 'address_7',
 		'std' => __('', 'athenea'),
-		'class' => 'form-signin',
 		'type' => 'text');
 	$options[] = array(
 		'desc' => __('E-Mail contact', 'athenea'),
 		'id' => 'address_8',
 		'std' => __('', 'athenea'),
-		'class' => 'form-signin',
 		'type' => 'text');
 	
 	return $options;

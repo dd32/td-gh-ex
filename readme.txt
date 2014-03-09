@@ -60,6 +60,12 @@ For documentation go to http://www.ibermega.com/themes/athenea
 
 == Changelog ==
 
+= 1.0.8 - 09.03.2014 =
+* Corrects style on Topic Options by causing error in the fields.
+* The size of images in the Theme Options for better viewing is reduced.
+* Default header image is added and formatting text is given.
+* Author url Fixes in style.
+
 = 1.0.7 - 02.03.2014 =
 * Fixed bug in google font (enqueue_style)
 

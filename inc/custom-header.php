@@ -26,7 +26,7 @@
  */
 function athenea_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'athenea_custom_header_args', array(
-		'default-image'          => '',
+		'default-image'          => get_template_directory_uri() . '/images/head-acrop.jpg',
 		'default-text-color'     => '660000',
 		'width'                  => 1000,
 		'height'                 => 300,
