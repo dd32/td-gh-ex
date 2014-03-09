@@ -13,7 +13,7 @@ function alhenalite_after_content_function() {
 
 	if ((is_home()) || (is_category()) || (is_page() )):
 		
-		the_excerpt(); 
+		alhenalite_excerpt(); 
 	
 	else:
 	

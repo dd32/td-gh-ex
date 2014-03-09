@@ -101,24 +101,29 @@ add_filter( 'wp_get_attachment_link', 'alhenalite_prettyPhoto', 10, 6);
 
 
 /*-----------------------------------------------------------------------------------*/
-/* Custom excerpt more */
+/* Excerpt */
 /*-----------------------------------------------------------------------------------*/   
 
-function alhenalite_new_excerpt_more( $more ) {
-	
-	global $post;
-	
-	if (alhenalite_postmeta( 'wip_service_url' )):
-		$url = alhenalite_postmeta('wip_service_url' );
-	else:
-		$url = get_permalink($post->ID);
-	endif;
-	
-	return '<a class="button" href="'.$url.'" title="More">  ' . __( "Read More","wip") . ' </a>';
-
+function alhenalite_hide_excerpt_more() {
+	return '';
 }
 
-add_filter('excerpt_more', 'alhenalite_new_excerpt_more');
+add_filter('the_content_more_link', 'alhenalite_hide_excerpt_more');
+add_filter('excerpt_more', 'alhenalite_hide_excerpt_more');
+
+function alhenalite_excerpt() {
+	
+	global $post,$more;
+	$more = 0;
+	
+	if ($pos=strpos($post->post_content, '<!--more-->')): 
+		$output = '<p>'.strip_tags(get_the_content()).'<a class="button" href="'.get_permalink($post->ID).'" title="More">  ' . __( "Read More","wip") . ' </a></p>';
+	else:
+		$output = '<p>'.get_the_excerpt().'<a class="button" href="'.get_permalink($post->ID).'" title="More">  ' . __( "Read More","wip") . '</a></p>';
+	endif;
+	
+	echo $output;
+}
 
 
 /*-----------------------------------------------------------------------------------*/
