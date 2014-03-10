@@ -44,8 +44,7 @@ wp_head(); ?>
 			</a>
             <?php endif;?>
 		    <div class="nav-collapse collapse navbar-responsive-collapse ">
-            <?php  wp_nav_menu( array(  'menu'   => 'header-menu',
-					'theme_location' => 'header-menu',
+            <?php  wp_nav_menu( array( 'theme_location' => 'header-menu',
 					'menu_class' => 'nav',
 					'fallback_cb' => 'appointment_fallback_page_menu',
 					'walker' => new appointment_nav_walker()

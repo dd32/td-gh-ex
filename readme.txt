@@ -62,6 +62,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ============================Change Log================================
+@Version: 1.4.7
+1.Small Bug fixed.
 @Version: 1.4.6
 1.Default Menu Active added.
 @Version: 1.4.5
