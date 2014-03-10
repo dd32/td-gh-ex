@@ -57,6 +57,8 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version: 1.3.7
+1.Banner Strip Modified for 404 page. 
 @version: 1.3.6.9
 1.Removed Confliction with Webriti Coming Soon. 
 @version: 1.3.6.8

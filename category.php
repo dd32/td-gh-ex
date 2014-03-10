@@ -17,11 +17,11 @@
             </div>
 			<?php endwhile;?>
 			<div class="pagination_blog">	
-		<ul>
-			<li class="paginanext"><?php previous_posts_link(); ?></li>
-			<li class="paginanext"><?php next_posts_link(); ?></li>
-		</ul>
-	</div>
+				<ul>
+					<li class="paginanext"><?php previous_posts_link(); ?></li>
+					<li class="paginanext"><?php next_posts_link(); ?></li>
+				</ul>
+			</div>
 			</div>
 
 			<?php get_sidebar();?>
