@@ -48,6 +48,12 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 2.0.8 =
+* Update Google fonts
+* Fix for php 5.2
+* Update woocommerce file.
+* Add more space with custom css box in theme options
+
 = Version: 2.0.7 =
 * Small Fix
 

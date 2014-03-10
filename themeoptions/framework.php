@@ -1378,7 +1378,13 @@ if( !class_exists( 'ReduxFramework' ) ) {
             $this->get_options();
             $backup_options = $this->options;
             $backup_options['redux-backup'] = '1';
-            $content = json_encode( $backup_options, true );
+            //$content = json_encode( $backup_options, true );
+
+            if (version_compare(phpversion(), "5.3.0", ">=")) {
+                $content = json_encode( $backup_options, true ) ;
+            } else {
+                $content = json_encode( $backup_options ) ;
+            }
 
             if( isset( $_GET['action'] ) && $_GET['action'] == 'download_options' ) {
                 header( 'Content-Description: File Transfer' );
@@ -1429,7 +1435,14 @@ if( !class_exists( 'ReduxFramework' ) ) {
                 'sections' => $this->sections,
                 'options' => $this->options,
             );
-            $content = json_encode( $settings, true );
+            //$content = json_encode( $settings, true );
+
+            if (version_compare(phpversion(), "5.3.0", ">=")) {
+                $content = json_encode( $backup_options, true ) ;
+            } else {
+                $content = json_encode( $backup_options ) ;
+            }
+
 
             if( isset( $_GET['action'] ) && $_GET['action'] == 'download_settings' ) {
                 header( 'Content-Description: File Transfer' );
@@ -1861,7 +1874,13 @@ if( !class_exists( 'ReduxFramework' ) ) {
                 }
 
                 if ( !empty( $import ) ) {
-                    $imported_options = json_decode( htmlspecialchars_decode( $import ), true );
+                    if (version_compare(phpversion(), "5.3.0", ">=")) {
+                        $imported_options = json_decode( htmlspecialchars_decode( $import ), true );
+                    } else {
+                        $import = str_replace("\\/","/", $import);
+                        $import = str_replace('"','\\\\"',$import);
+                        $imported_options = json_decode( htmlspecialchars_decode($import) , true);
+                    }
                 }
 
                 if( !empty( $imported_options ) && is_array( $imported_options ) && isset( $imported_options['redux-backup'] ) && $imported_options['redux-backup'] == '1' ) {
@@ -2388,7 +2407,11 @@ if( !class_exists( 'ReduxFramework' ) ) {
                 $backup_options = $this->options;
                 $backup_options['redux-backup'] = '1';
                 echo '<textarea class="large-text noUpdate" id="redux-export-code" rows="8">';
-                print_r( json_encode( $backup_options, true ) );
+                if (version_compare(phpversion(), "5.3.0", ">=")) {
+                    print_r( json_encode( $backup_options, true ) );
+                } else {
+                    print_r( json_encode( $backup_options ) );
+                }
                 echo '</textarea>';
                 /** @noinspection PhpUndefinedConstantInspection */
                 echo '<input type="text" class="large-text noUpdate" id="redux-export-link-value" value="' . add_query_arg( array( 'feed' => 'redux_options_' . $this->args['opt_name'], 'secret' => md5( AUTH_KEY.SECURE_AUTH_KEY ) ), site_url() ) . '" />';
