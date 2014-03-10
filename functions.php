@@ -1,5 +1,4 @@
 <?php
-ob_start();
 define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
 require_once dirname( __FILE__ ) . '/inc/options-framework.php';
 include_once('baztro.php');
@@ -13,11 +12,6 @@ add_action( 'wp_enqueue_scripts', 'promax_scripts' );
 if ( ! isset( $content_width ) )
 	$content_width = 770;
 
-
-	/*
-	* Home Icon for Menu
-	*/
-	
 function promax_hdmenu() {	
 		echo '<ul>';
 		if ('page' != get_option('show_on_front')) {
@@ -229,6 +223,4 @@ function promax_wp_title( $title, $sep ) {
 	return $title;
 }
 add_filter( 'wp_title', 'promax_wp_title', 10, 2 );
-
-ob_clean();
 ?>

@@ -7,7 +7,7 @@ also suggestion are welcome
 
 
 --------------------------------------------------------
-How to Install theme: if you are getting any error or don't know intallation then read below tutorial
+How to Install theme: if you are getting any error or don't know installation then read below tutorial
 http://www.wrock.org/documentation-install-wordpress-premium-theme-without-data-loss/
 
 --------------------------------------------------------
@@ -19,7 +19,7 @@ Theme have many features like some main are listed below
 
 Theme option:
 -upload favicon from theme option by url
--Customize you site backgroud color or image
+-Customize you site background color or image
 -show 5 latest posts with thumbnail in right sidebar -activate from theme option > General settings
 -enable search from theme option > General settings
 
@@ -35,6 +35,11 @@ Custom Css:
 
 
 == Change log ==
+
+= 1.3.9 =
+*bug fixed 
+*menu code updated
+*option panel url info fixed
 
 = 1.3.8 =
 *Updated Option Framework

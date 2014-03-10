@@ -1,8 +1,8 @@
 /*
 Theme Name: ProMax
-Theme URI: http://www.wrock.org/promax/
+Theme URI: http://www.wrock.org/product/promax-premium-theme/
 Description: ProMax Theme is best WordPress theme design for personal and business uses with full features and SEO Optimize.This WordPress Theme can easily adapts on your mobile and desktop or any other device. Theme comes with lots of customization and connect social media like Facebook, Google+, twitter, YouTube and Adsense ready It supports all the awesome WordPress features completely free theme for blogging.
-Version: 1.3.8
+Version: 1.3.9
 Author: wRock.org by Sandy
 Author URI: http://www.wrock.org/
 Tags: black, blue, white, light, red, green, custom-menu, custom-header, custom-background, one-column, two-columns, right-sidebar, theme-options, threaded-comments, sticky-post, translation-ready, editor-style, featured-images, responsive-layout
@@ -408,18 +408,18 @@ width: auto;
 -moz-transition: all .3s;
 -o-transition: all .3s;
 -webkit-transition: all .3s;
-border-right: 1px solid #6C92B8;
 }
 #navigation  > .sub-menu{margin-left:0;}
 #navigation  ul li:first-child  
 #maganav ul  a{border-right:none;}
 #navigation  ul li.current-menu-item  a{color: #fff;}
 ul.catnav li a{padding:5px 10px;}	
+#navigation li:hover > a{background:#333;}
 #navigation  ul li.current-menu-item  ,#navigation  ul li a:hover {  }
 #navigation .secondary ul li.current-menu-item {background:#7EA8D3;opacity: 1; }
 #navigation .secondary >ul >li a:hover {background:#333;opacity: 1; }
 #navigation  ul li.dropme a{background: #418cd1;} 
-#navigation  ul ul {position: absolute;left: -999em;width: 212px;z-index:99999;border:0;margin-left:-1px;background: none;border-bottom: none;}
+#navigation  ul ul {position: absolute;left: -999em;width: 212px;z-index:99999;border:0;background: none;border-bottom: none;}
 #navigation  ul ul a {
 width: 198px;
 background-color: #5B89B8;
@@ -436,7 +436,23 @@ border-right: none;}
 #navigation  ul li:hover { opacity: 1;position:static;}
 #navigation  ul li:hover ul ul, #navigation  ul li:hover ul ul ul, #navigation  ul li:hover ul ul ul ul { left:-999em; }
 #navigation  ul li:hover ul, #navigation  ul li li:hover ul,#navigation  ul li li li:hover ul,#navigation  ul li li li li:hover ul { left:auto; }
+#navigation .current_page_item {
+	background: #333;
+}
 
+.nav li > a:after {
+font-size: 16px;
+    content: ' ▾';
+}
+
+.nav li > a:hover:after {
+font-size: 16px;
+    content: ' ▾';
+}
+
+.nav li > a:only-child:after {
+    content: '';
+}
 /*******************Pronav*************/
 #TopMenuSocial{float: right;
 margin-right: 5%;}
@@ -544,11 +560,12 @@ width: auto;
 #maganav ul  a{border-right:none;}
 #pronav  ul li.current-menu-item  a{color: #333;}
 ul.catnav li a{padding:5px 10px;}	
+#pronav li:hover > a{background:#E9E9E9;}
 #pronav  ul li.current-menu-item  ,#pronav  ul li a:hover { background: #E9E9E9;
 color: #333 !important; }
 #pronav .secondary ul li.current-menu-item, #pronav .secondary >ul >li a:hover {background:#E9E9E9;opacity: 1; }
 #pronav  ul li.dropme a{background: #418cd1;} 
-#pronav  ul ul {position: absolute;left: -999em;width: 212px;z-index:99999;border:0;margin-left:-1px;background: none;border-bottom: none;}
+#pronav  ul ul {position: absolute;left: -999em;width: 212px;z-index:99999;border:0;background: none;border-bottom: none;}
 #pronav  ul ul a {
 width: 198px;
 background-color: #E9E9E9;
@@ -612,6 +629,7 @@ border-right: none;}
 	margin: auto;
 	width: 90%;
 	position: relative;
+	min-height:100px;
 
 }
 #header #logo {

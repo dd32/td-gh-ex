@@ -100,18 +100,20 @@ function optionsframework_options() {
 
 	$options = array();
 $options[] = array(
-		'desc' => sprintf( __( '<h2 style="color: #FFF !important;">Upgrade to Premium Theme & Enable Full Features!</h2>
-		<li>SEO Optimized WordPress Theme.</li>
-		<li><a href="https://developers.google.com/speed/pagespeed/insights">Page Speed</a>Optimize for better result.</li>
-		<li>Color Customize of theme.</li>
-		<li>Custom Widgets and Functions.</li>
-		<li>Social Media Integration.</li>
-		<li>Responsive Website Design.</li>
-		<li>Different Website Layout to Select.</li>
-		<li>Many of Other customize feature for your blog or website.</li>
-		<p><span class="buypre"><a href="http://www.wrock.org/product/promax-premium-theme/">Upgrade Now</a></span><span class="buypred"><a href="http://www.wrock.org/shop/">Shop More Themes !</a></span></p>'),'promax'),
-		'class' => 'tesingh',
-		'type' => 'info');
+            'desc' => '<h2 style="color: #FFF !important;">' . esc_attr__( 'Upgrade to Premium Theme & Enable Full Features!', 'promax' ) . '</h2>
+            <li>' . esc_attr__( 'SEO Optimized WordPress Theme.', 'promax' ) . '</li>
+            <li>' . esc_attr__( 'More Slides for your slider.', 'promax' ) . '</li>
+            <li>' . esc_attr__( 'Theme Customization help & Support Forum.', 'promax' ) . '</li>
+            <li>' . esc_attr__( 'Page Speed Optimize for better result.', 'promax' ) . '</li>
+            <li>' . esc_attr__( 'Color Customize of theme.', 'promax' ) . '</li>
+            <li>' . esc_attr__( 'Custom Widgets and Functions.', 'promax' ) . '</li>
+            <li>' . esc_attr__( 'Social Media Integration.', 'promax' ) . '</li>
+            <li>' . esc_attr__( 'Responsive Website Design.', 'promax' ) . '</li>
+            <li>' . esc_attr__( 'Different Website Layout to Select.', 'promax' ) . '</li>
+            <li>' . esc_attr__( 'Many of Other customize feature for your blog or website.', 'promax' ) . '</li>
+            <p><span class="buypre"><a href="' . esc_url(__('http://www.wrock.org/product/promax-premium-theme/','promax')) . '" target="_blank">' . esc_attr__( 'Upgrade Now', 'promax' ) . '</a></span><span class="buypred"><a href="' . esc_url(__('http://www.wrock.org/shop/','promax')) . '" target="_blank">' . esc_attr__( 'Shop More Themes !', 'promax' ) . '</a></span></p>',
+            'class' => 'tesingh',
+            'type' => 'info');
 	$options[] = array(
 		'name' => __('Basic Settings', 'promax'),
 		'type' => 'heading');
@@ -226,7 +228,7 @@ $options[] = array(
 		
 		$options[] = array(
 		'name' => __('Responsive Website Design', 'promax'),
-		'desc' => __('Enable Responsive Design for you website to increase exprience on Mobile Devices', 'promax'),
+		'desc' => __('Enable Responsive Design for you website to increase experience on Mobile Devices', 'promax'),
 		'id' => 'promax_responsive',
 		'std' => '0',
 		'type' => 'checkbox');
@@ -289,7 +291,7 @@ $options[] = array(
 		
 		$options[] = array(
 		'name' => __('Main Navigation Colors', 'promax'),
-		'desc' => __('Main Naigation Background.', 'promax'),
+		'desc' => __('Main Navigation Background.', 'promax'),
 		'id' => 'promax_mainnavibg',
 		'std' => '#5B89B8',
 		'type' => 'color' );
@@ -322,7 +324,7 @@ $options[] = array(
             'type' => 'text');	
 		$options[] = array(
 		'name' => __('Edit Categories & date/author stamp from thumbnail', 'promax'),
-		'desc' => __('Show or Hode Date & Author Stamp from Thumbnain in index and other archive pages .', 'promax'),
+		'desc' => __('Show or Hide Date & Author Stamp from Thumbnail in index and other archive pages .', 'promax'),
 		'id' => 'promax_authstamp',
 		'std' => 'on',
 		'type' => 'radio',
@@ -340,7 +342,7 @@ $options[] = array(
 						'off' => 'Hide'
 						));
 		$options[] = array(				
-		'desc' => __('Show or Hode Categories Button from Thumbnain in index and other archive pages .', 'promax'),
+		'desc' => __('Show or Hide Categories Button from Thumbnail in index and other archive pages .', 'promax'),
 		'id' => 'promax_homecat',
 		'std' => 'on',
 		'type' => 'radio',
@@ -355,13 +357,13 @@ $options[] = array(
 		'type' => 'color' );		
 	
 		$options[] = array(
-		'name' => __('Page Number Navigation Color Chnage ', 'promax'),
+		'name' => __('Page Number Navigation Color Change ', 'promax'),
 		'desc' => __('Change Current Page Background.', 'promax'),
 		'id' => 'promax_pageanvibg',
 		'std' => '#333333',
 		'type' => 'color' );
 		$options[] = array(
-			'desc' => __('Change backgroud color of other pages.', 'promax'),
+			'desc' => __('Change background color of other pages.', 'promax'),
 		'id' => 'promax_pageanvia',
 		'std' => '#5B89B8',
 		'type' => 'color' );
@@ -496,10 +498,10 @@ $options[] = array(
 						'off' => 'Hide'
 						));
 		$options[] = array(
-		    'desc' => 'Paste Ad code for single post it show ads below post title and before content.',
+            'desc' => __('Paste Ad code for single post it show ads below post title and before content.','promax'),
             'id' => 'promax_ftarea',
-            'std' => 'Copyright  &#169; 2013 Designed by: <a href="http://www.wrock.org/promax" title="wRock.Org">wRock.Org</a> | Powered by <a href="http://wordpress.org/"> WordPress</a>',
-            'type' => 'textarea');		
+            'std' => esc_attr__( 'Copyright  &#169; 2013 Theme by: ', 'promax' ) . '<a href="' . esc_url(__('http://www.wrock.org/promax','promax')) . '" title="' . esc_attr__( 'wRock.Org', 'promax' ) . '">' . esc_attr__( 'wRock.Org', 'promax' ) . '</a>',
+            'type' => 'textarea');
 
 		
 		
