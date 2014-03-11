@@ -3,31 +3,36 @@
  * The template for displaying Search Results pages.
  *
  * @package rootstrap
- * @since WP RootStrap 1.1
  */
 
 get_header(); ?>
-	
-	<?php if ( have_posts() ) : ?>
+	<div id="content" class="site-content container">
+		<section id="primary" class="content-area col-sm-12 col-md-8 <?php echo rootstrap_get_option( 'site_layout' ); ?>">
+			<main id="main" class="site-main" role="main">
 
-		<header class="page-header">
-			<h2 class="page-title"><?php printf( __( 'Search Results for: %s', 'rootstrap' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
-		</header><!-- .page-header -->
+			<?php if ( have_posts() ) : ?>
 
-		<?php // start the loop. ?>
-		<?php while ( have_posts() ) : the_post(); ?>
+				<header class="page-header">
+					<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'rootstrap' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				</header><!-- .page-header -->
 
-			<?php get_template_part( 'content', 'search' ); ?>
+				<?php /* Start the Loop */ ?>
+				<?php while ( have_posts() ) : the_post(); ?>
 
-		<?php endwhile; ?>
+					<?php get_template_part( 'content', 'search' ); ?>
 
-		<?php rootstrap_content_nav( 'nav-below' ); ?>
+				<?php endwhile; ?>
 
-	<?php else : ?>
+				<?php rootstrap_paging_nav(); ?>
 
-		<?php get_template_part( 'no-results', 'search' ); ?>
+			<?php else : ?>
 
-	<?php endif; // end of loop. ?>
+				<?php get_template_part( 'content', 'none' ); ?>
+
+			<?php endif; ?>
+
+			</main><!-- #main -->
+		</section><!-- #primary -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

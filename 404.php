@@ -3,27 +3,54 @@
  * The template for displaying 404 pages (Not Found).
  *
  * @package rootstrap
- * @since WP RootStrap 1.1
  */
 
 get_header(); ?>
+	<div id="content" class="site-content container">
+		<div id="primary" class="content-area col-sm-12 col-md-8">
+			<main id="main" class="site-main" role="main">
 
-	<?php // add the class "panel" below here to wrap the content-padder in Bootstrap style ;) ?>	
-	<section class="content-padder error-404 not-found">
+				<section class="error-404 not-found">
+					<header class="page-header">
+						<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'rootstrap' ); ?></h1>
+					</header><!-- .page-header -->
 
-		<header class="page-header">
-			<h2 class="page-title"><?php _e( 'Oops! Something went wrong here.', 'rootstrap' ); ?></h2>
-		</header><!-- .page-header -->
+					<div class="page-content">
+						<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'rootstrap' ); ?></p>
 
-		<div class="page-content">
+						<?php get_search_form(); ?>
 
-			<p><?php _e( 'Nothing could be found at this location. Maybe try a search?', 'rootstrap' ); ?></p>
+						<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
 
-			<?php get_search_form(); ?>
+						<?php if ( rootstrap_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
+						<div class="widget widget_categories">
+							<h2 class="widgettitle"><?php _e( 'Most Used Categories', 'rootstrap' ); ?></h2>
+							<ul>
+							<?php
+								wp_list_categories( array(
+									'orderby'    => 'count',
+									'order'      => 'DESC',
+									'show_count' => 1,
+									'title_li'   => '',
+									'number'     => 10,
+								) );
+							?>
+							</ul>
+						</div><!-- .widget -->
+						<?php endif; ?>
 
-		</div><!-- .page-content -->
+						<?php
+						/* translators: %1$s: smiley */
+						$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'rootstrap' ), convert_smilies( ':)' ) ) . '</p>';
+						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
+						?>
 
-	</section><!-- .content-padder -->
-		
-<?php get_sidebar(); ?>
+						<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
+
+					</div><!-- .page-content -->
+				</section><!-- .error-404 -->
+
+			</main><!-- #main -->
+		</div><!-- #primary -->
+
 <?php get_footer(); ?>
