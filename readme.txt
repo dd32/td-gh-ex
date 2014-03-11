@@ -1,4 +1,4 @@
-------- WP RootStrap 1.2 -------
+------- WP RootStrap 1.2.1 -------
 
 -- Basanta Moharana, http://crayonux.com/
 
@@ -10,7 +10,7 @@ WP RootStrap is based on the _s (or Underscores) http://underscores.me/, (C) 201
 Bootstrap - Copyright 2012 Twitter, Inc
 http://www.apache.org/licenses/LICENSE-2.0
 Licensed under the Apache License v2.0 
--------* ABOUT WP RootStrap 1.2 *-------
+-------* ABOUT WP RootStrap 1.2.1 *-------
 
 Requires at least:	3.6.0
 Tested up to:		3.7.1
@@ -63,7 +63,7 @@ Afterwards you can continue theme setup and customization via WordPress Dashboar
 
 /*========= Changelog =========*/
 
-= 1.2
+= 1.2.1
 * Simplified rootstrap_social function 
 * Updated copyright information making it translatable
 * Popular post widget now uses wp_reset_postdata(); instead of wp_reset_query();

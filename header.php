@@ -24,7 +24,6 @@
 <!--[if IE]><?php if ( rootstrap_get_option( 'custom_favicon' ) ) { ?><link rel="shortcut icon" href="<?php echo rootstrap_get_option( 'custom_favicon' ); ?>" /><?php } ?><![endif]-->	
 
 <?php wp_head(); ?>
-
 </head>
 
 <body <?php body_class(); ?>>

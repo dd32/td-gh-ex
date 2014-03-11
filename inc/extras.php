@@ -436,11 +436,6 @@ add_action('wp_head','get_rootstrap_theme_options',10);
 add_action( 'rootstrap_after','rootstrap_options_display_sidebar' );
 
 function rootstrap_options_display_sidebar() { ?>
-  <!-- Twitter --> 
-  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-
-
   <div id="rootstrap-sidebar" class="metabox-holder">
     <div id="rootstrap" class="postbox">
         <h3><?php _e('Support and Documentation','rootstrap') ?></h3>

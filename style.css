@@ -22,7 +22,7 @@ Description: WP RootStrap is a flat and minimal design theme powered by TwitterB
 * Social icons
 * Call For Action
 
-Version: 1.2
+Version: 1.2.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: white, light, green,  three-columns, two-columns, right-sidebar, flexible-width, custom-menu, featured-images
@@ -647,6 +647,7 @@ li.recentcomments {
 }
 .navbar > .container .navbar-brand {
   color: #1FA67A; 
+  height: auto !important;
 }
 .navbar-default .navbar-nav > .open > a, 
 .navbar-default .navbar-nav > .open > a:hover,
@@ -728,6 +729,50 @@ li.recentcomments {
 .top-link {
 	background: #000;
 }
+.top-link ul {
+	margin: 0px;
+	padding: 5px 0px;
+	list-style-type: none;
+}
+.top-link ul li {
+	display: inline-block;
+	padding: 3px 10px;
+}
+.top-link ul li ul {
+	position: absolute;
+	display: none;
+}
+.top-link ul li a  {
+	color: #666;
+}
+.top-link ul li a:hover  {
+	color: #fff;
+}
+
+.footer-nav {
+	margin: 0px;
+	padding: 5px 0px;
+	list-style-type: none;
+}
+.footer-nav li {
+	display: inline-block;
+	padding: 3px 10px;
+}
+.footer-nav li ul {
+	position: absolute;
+	display: none;
+}
+.footer-nav li:hover ul {
+	position: absolute;
+	display: none !important;
+}
+.footer-nav li a  {
+	color: #666;
+}
+.footer-nav li a:hover  {
+	color: #fff;
+}
+
 #menu-secondarymenu {
 	margin: 0px;
 	padding: 5px 0px;
