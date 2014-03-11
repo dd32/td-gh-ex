@@ -8,7 +8,7 @@
 
 	// Set width without the padding
 		if ( ! isset( $content_width ) )
-		$content_width = 675;
+		$content_width = 650;
 
 	// Make theme available for translation
 		load_theme_textdomain('bluegray', get_template_directory() . '/languages');  
@@ -35,7 +35,7 @@
 		add_theme_support( 'post-thumbnails' ); 
 
 	// Resize mode thumbnails
-		set_post_thumbnail_size( 675, 550 ); 
+		set_post_thumbnail_size( 650, 550 ); 
 
 
 	// This feature adds RSS feed links to html head 
@@ -60,7 +60,7 @@
 		echo '<script src="' . esc_url( get_template_directory_uri() . '/js/ie.js' ) . '"></script>'. "\n"; 
 		echo '<![endif]-->'. "\n"; 
 		} 
-	add_action( 'wp_head', 'bluegray_html5' ); 
+	add_action('wp_enqueue_scripts', 'bluegray_html5'); 
 
 
 // Add blogname to wp_title

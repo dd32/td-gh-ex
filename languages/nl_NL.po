@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: BlueGray v1.2\n"
+"Project-Id-Version: BlueGray v1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-02-28 09:42:51+0000\n"
+"PO-Revision-Date: 2014-03-06 18:32:00+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,75 +20,75 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Textdomain-Support: yes"
 
-#: 404.php:10
-#: search.php:30
+#: 404.php:9
+#: search.php:29
 #@ bluegray
 msgid "Nothing Found"
 msgstr "Niets gevonden"
 
-#: 404.php:11
-#: archive.php:41
-#: index.php:32
-#: search.php:31
+#: 404.php:10
+#: archive.php:40
+#: index.php:31
+#: search.php:30
 #@ bluegray
 msgid "Sorry, no posts matched your criteria."
 msgstr "Sorry, er zijn helaas geen berichten gevonden."
 
-#: archive.php:13
+#: archive.php:12
 #@ bluegray
 msgid "Archive"
 msgstr "Archief"
 
-#: archive.php:15
+#: archive.php:14
 #@ bluegray
 msgid "Daily Archives"
 msgstr "Dag Archieven"
 
-#: archive.php:17
+#: archive.php:16
 #@ bluegray
 msgid "Monthly Archives"
 msgstr "Maand Archieven"
 
-#: archive.php:19
+#: archive.php:18
 #@ bluegray
 msgid "Yearly Archives"
 msgstr "Jaar Archieven"
 
-#: archive.php:21
+#: archive.php:20
 #@ bluegray
 msgid "Author Archives"
 msgstr "Auteur Archieven"
 
-#: archive.php:23
+#: archive.php:22
 #@ bluegray
 msgid "Tag Archives"
 msgstr "Tag Archieven"
 
-#: archive.php:28
-#: index.php:19
-#: search.php:16
+#: archive.php:27
+#: index.php:18
+#: search.php:15
 #@ bluegray
 msgid "Permalink to "
 msgstr "Permalink naar "
 
-#: archive.php:31
-#: index.php:22
-#: search.php:19
-#: single.php:17
+#: archive.php:30
+#: index.php:21
+#: search.php:18
+#: single.php:16
 #@ bluegray
 msgid "Posted on "
 msgstr "Geplaatst op "
 
-#: archive.php:45
-#: index.php:36
-#: search.php:37
+#: archive.php:44
+#: index.php:35
+#: search.php:36
 #@ bluegray
 msgid "&laquo; Older posts"
 msgstr "&laquo; Oudere berichten"
 
-#: archive.php:46
-#: index.php:37
-#: search.php:38
+#: archive.php:45
+#: index.php:36
+#: search.php:37
 #@ bluegray
 msgid "Newer posts &raquo;"
 msgstr "Nieuwere berichten &raquo;"
@@ -119,25 +119,25 @@ msgstr "Lees Meer &raquo;"
 msgid "Boats"
 msgstr "Boten"
 
-#: index.php:15
+#: index.php:14
 #@ bluegray
 msgid "Featured post"
 msgstr "Aanbevolen bericht"
 
-#: page-full.php:21
-#: page.php:20
-#: single.php:32
+#: page-full.php:20
+#: page.php:19
+#: single.php:31
 #@ bluegray
 msgid "Edit"
 msgstr "Bewerk"
 
-#: search.php:12
+#: search.php:11
 #, php-format
 #@ bluegray
 msgid "Search Results for: %s"
 msgstr "Zoekresultaat voor: %s"
 
-#: single.php:24
+#: single.php:23
 #@ bluegray
 msgid "Posted in "
 msgstr "Geplaatst in "
@@ -191,10 +191,10 @@ msgstr "Logo"
 msgid "Upload a logo to replace blogname and description in header"
 msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
 
-#: archive.php:31
-#: index.php:22
-#: search.php:19
-#: single.php:17
+#: archive.php:30
+#: index.php:21
+#: search.php:18
+#: single.php:16
 #@ bluegray
 msgid "By "
 msgstr "Door "
@@ -209,41 +209,41 @@ msgstr "Homepage Sidebar Rechts"
 msgid "Homepage Sidebar Left"
 msgstr "Homepage Sidebar Links"
 
-#: archive.php:33
-#: index.php:24
-#: search.php:21
-#: single.php:19
+#: archive.php:32
+#: index.php:23
+#: search.php:20
+#: single.php:18
 #@ bluegray
 msgid "Leave a response"
 msgstr "Plaats een reactie"
 
-#: archive.php:33
-#: index.php:24
-#: search.php:21
-#: single.php:19
+#: archive.php:32
+#: index.php:23
+#: search.php:20
+#: single.php:18
 #@ bluegray
 msgid "% responses"
 msgstr "% reacties"
 
-#: archive.php:33
-#: index.php:24
-#: search.php:21
-#: single.php:19
+#: archive.php:32
+#: index.php:23
+#: search.php:20
+#: single.php:18
 #@ bluegray
 msgid "1 response"
 msgstr "1 reactie"
 
-#: footer.php:44
+#: footer.php:47
 #@ bluegray
 msgid "Copyright"
 msgstr "Copyright"
 
-#: footer.php:45
+#: footer.php:48
 #@ bluegray
 msgid "WordPress Blog Platform"
 msgstr "WordPress Blog Platform"
 
-#: footer.php:45
+#: footer.php:48
 #@ bluegray
 msgid "Proudly powered by WordPress"
 msgstr "Proudly powered by WordPress"

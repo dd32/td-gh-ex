@@ -36,7 +36,7 @@ blockquote, address {padding:5px; font-size:1.2em; line-height:1.5em; font-style
 p {margin:0 0 20px;}
 
 table {margin:10px; border-collapse:collapse;}
-table, th, td {border: 1px solid #ddd; padding:5px 10px;}
+table, th, td {border: 1px solid #ddd; padding:10px;}
 
 ul {list-style: square; margin: 2px 0 2px 15px;}
 li {margin: 0 0 0 10px;}
