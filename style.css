@@ -1,7 +1,7 @@
 /*---------------------------------------------------------------------------------
 
 	Theme Name: Hemingway
-	Version: 1.29
+	Version: 1.30
 	Description: Hemingway is a clean, beautiful and responsive two-column theme for bloggers. Features responsive design, retina-ready assets, full-width header image with parallax scrolling effect, custom widgets (video, Flickr and Dribbble), page templates and translation-ready code. Included translations: Swedish/svenska.
 	Tags: black, dark, white, green, two-columns, fluid-layout, responsive-layout, custom-header, custom-menu, featured-images, flexible-header, post-formats, sticky-post, threaded-comments, translation-ready
 	Author: Anders Norén
@@ -300,7 +300,7 @@ a.more-link,
 	z-index: 1000;
 }
 
-.blog-menu >li:last-child:before { content: none; }
+.blog-menu > li:last-child:before { content: none; }
 
 .blog-menu a {
 	display: block;
@@ -347,13 +347,8 @@ a.more-link,
 .blog-menu ul {
 	position: absolute;
 	left: -9999px;
-	opacity: 0;
+	display: none;
 	z-index: 999;
-	-webkit-transition: opacity 0.1s ease-in-out;
-	 -moz-transition: opacity 0.1s ease-in-out;
-	 -ms-transition: opacity 0.1s ease-in-out;
-	 -o-transition: opacity 0.1s ease-in-out;
-	 transition: opacity 0.1s ease-in-out;
 }
 
 .blog-menu ul li {
@@ -397,6 +392,7 @@ a.more-link,
 .blog-menu li:hover > ul {
 	opacity: 1;
 	left: 0;
+	display: block;
 }
 
 

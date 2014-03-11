@@ -1,3 +1,8 @@
+Version 1.30 (2014-03-11)
+-------------------------
+- Fixed main-menu hover on tablets
+
+
 Version 1.28 (2014-02-24)
 -------------------------
 - Replaced the embeds in video-widget.php with WordPress built-in oEmbed function
