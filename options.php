@@ -115,7 +115,7 @@ function optionsframework_options() {
 		
 	$options[] = array( 
 		"name" => "Site header logo",
-		"desc" => "Height 280px, width 72px max. Upload logo for header",
+		"desc" => "Width 280px, height 72px max. Upload logo for header",
 		"id" => "itrans_logo_image",
 		"type" => "upload");
 		
@@ -138,7 +138,25 @@ function optionsframework_options() {
 			'green' => $imagepath . 'green.png',
 			'yellow' => $imagepath . 'yellow.png',			
 			'purple' => $imagepath . 'purple.png')
-	);		
+	);
+	
+	$options[] = array(
+		'name' => "Blog Posts Layout",
+		'desc' => "Choose blog posts layout (one column/two column)",
+		'id' => "itrans_blog_layout",
+		'std' => "onecol",
+		'type' => "images",
+		'options' => array(
+			'onecol' => $imagepath . 'onecol.png',		
+			'twocol' => $imagepath . 'twocol.png')
+	);	
+	
+	$options[] = array(
+		'name' => __('Additional style', 'itransform'),
+		'desc' => __('add extra style(CSS) codes here', 'itransform'),
+		'id' => 'itrans_extra_style',
+		'std' => '',
+		'type' => 'textarea');	
 				
 	$options[] = array(
 		'name' => __('Social Links ', 'itransform'),
@@ -221,7 +239,7 @@ function optionsframework_options() {
 
 	$options[] = array(
 		'name' => __('Slide1 Image', 'itransform'),
-		'desc' => __('', 'itransform'),
+		'desc' => __('Ideal image size width: 564px and height: 280px', 'itransform'),
 		'id' => 'itrans_slide1_image',
 		'std' => '',
 		'type' => 'upload');
@@ -257,7 +275,7 @@ function optionsframework_options() {
 
 	$options[] = array(
 		'name' => __('Slide2 Image', 'itransform'),
-		'desc' => __('', 'itransform'),
+		'desc' => __('Ideal image size width: 564px and height: 280px', 'itransform'),
 		'id' => 'itrans_slide2_image',
 		'std' => '',
 		'type' => 'upload');
@@ -294,7 +312,7 @@ function optionsframework_options() {
 
 	$options[] = array(
 		'name' => __('Slide3 Image', 'itransform'),
-		'desc' => __('', 'itransform'),
+		'desc' => __('Ideal image size width: 564px and height: 280px', 'itransform'),
 		'id' => 'itrans_slide3_image',
 		'std' => '',
 		'type' => 'upload');
@@ -331,7 +349,7 @@ function optionsframework_options() {
 
 	$options[] = array(
 		'name' => __('Slide4 Image', 'itransform'),
-		'desc' => __('', 'itransform'),
+		'desc' => __('Ideal image size width: 564px and height: 280px', 'itransform'),
 		'id' => 'itrans_slide4_image',
 		'std' => '',
 		'type' => 'upload');

@@ -2,16 +2,16 @@
 /* CSS Document */
 
 a {
-	color: #c44044;
+	color: #3787be;
 }
 
 a:visited {
-	color: #c44044;
+	color: #3787be;
 }
 
 input:focus,
 textarea:focus {
-	border: 1px solid #c44044;
+	border: 1px solid #3787be;
 }
 
 /* Buttons */
@@ -19,7 +19,7 @@ button,
 input[type="submit"],
 input[type="button"],
 input[type="reset"] {
-	background: #c44044; /* Old browsers */
+	background: #3787be; /* Old browsers */
 }
 
 .nav-container .current_page_item > a > span,
@@ -27,27 +27,27 @@ input[type="reset"] {
 .nav-container .current-menu-item > a span,
 .nav-container .current-menu-ancestor > a > span,
 .nav-container li a:hover span {
-	background-color: #c44044; /* variable color */
+	background-color: #3787be; /* variable color */
 }
 
 .nav-container li:hover > a,
 .nav-container li a:hover {
-	color: #c44044;
+	color: #3787be;
 }
 
 /* variable color */
 .nav-container .sub-menu,
 .nav-container .children {
 	border: 1px solid #e7e7e7;
-	border-top: 2px solid #c44044; /* variable color */
+	border-top: 2px solid #3787be; /* variable color */
 }
 
 .ibanner {
-	background-color: #c44044;
+	background-color: #3787be;
 }
 
 .ibanner {
-	background-color: #c44044;
+	background-color: #3787be;
 }
 
 /**//*
@@ -63,46 +63,46 @@ div.ibanner .da-slider .da-slide p {
 */
 
 .da-dots span.da-dots-current {
-	background-color: #c44044;
+	background-color: #3787be;
 }
 
 div#ft-post div.entry-thumbnail:hover > div.comments-link {
-	background-color: #c44044;
+	background-color: #3787be;
 }
 
 .entry-header h1.entry-title a:hover {
-	color: #c44044;
+	color: #3787be;
 }
 
 .entry-header > div.entry-meta a:hover {
-	color: #c44044;
+	color: #3787be;
 }
 
 .featured-area div.entry-summary > p > a.moretag:hover {
-	background-color: #c44044;
+	background-color: #3787be;
 }
 
 .site-content .post div.meta-img div.entry-thumbnail img {
-	border-top: 2px solid #c44044;
+	border-top: 2px solid #3787be;
 }
 
 .site-content div.entry-thumbnail .stickyonimg,
 .site-content div.entry-thumbnail .dateonimg {
-	background-color: #c44044;
+	background-color: #3787be;
 }
 
 .site-content div.entry-nothumb .stickyonimg,
 .site-content div.entry-nothumb .dateonimg {
-	background-color: #c44044;
+	background-color: #3787be;
 }
 
 .entry-meta a {
-	color: #c44044;
+	color: #3787be;
 }
 
 .entry-content a,
 .comment-content a {
-	color: #c44044;
+	color: #3787be;
 }
 
 .format-status .entry-content .page-links a,
@@ -110,8 +110,8 @@ div#ft-post div.entry-thumbnail:hover > div.comments-link {
 .format-chat .entry-content .page-links a,
 .format-quote .entry-content .page-links a,
 .page-links a {
-	background: #c44044;
-	border: 1px solid #c44044;
+	background: #3787be;
+	border: 1px solid #3787be;
 	color: #ffffff;
 }
 
@@ -122,75 +122,74 @@ div#ft-post div.entry-thumbnail:hover > div.comments-link {
 .format-chat .entry-content .page-links a:hover,
 .format-quote .entry-content .page-links a:hover,
 .page-links a:hover {
-	color: #c44044;
+	color: #3787be;
 }
 
 .iheader {
-	background: rgba(182,37,42,1);
-	background: -moz-linear-gradient(top, rgba(182,37,42,1) 0%, rgba(196,64,68,1) 20%, rgba(196,64,68,1) 79%, rgba(182,37,42,1) 100%);
-	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(182,37,42,1)), color-stop(20%, rgba(196,64,68,1)), color-stop(79%, rgba(196,64,68,1)), color-stop(100%, rgba(182,37,42,1)));
-	background: -webkit-linear-gradient(top, rgba(182,37,42,1) 0%, rgba(196,64,68,1) 20%, rgba(196,64,68,1) 79%, rgba(182,37,42,1) 100%);
-	background: -o-linear-gradient(top, rgba(182,37,42,1) 0%, rgba(196,64,68,1) 20%, rgba(196,64,68,1) 79%, rgba(182,37,42,1) 100%);
-	background: -ms-linear-gradient(top, rgba(182,37,42,1) 0%, rgba(196,64,68,1) 20%, rgba(196,64,68,1) 79%, rgba(182,37,42,1) 100%);
-	background: linear-gradient(to bottom, rgba(182,37,42,1) 0%, rgba(196,64,68,1) 20%, rgba(196,64,68,1) 79%, rgba(182,37,42,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b6252a', endColorstr='#b6252a', GradientType=0 );
-	
+	background: rgba(31,118,176,1);
+	background: -moz-linear-gradient(top, rgba(31,118,176,1) 0%, rgba(55,136,190,1) 30%, rgba(55,136,190,1) 69%, rgba(31,118,176,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(31,118,176,1)), color-stop(30%, rgba(55,136,190,1)), color-stop(69%, rgba(55,136,190,1)), color-stop(100%, rgba(31,118,176,1)));
+	background: -webkit-linear-gradient(top, rgba(31,118,176,1) 0%, rgba(55,136,190,1) 30%, rgba(55,136,190,1) 69%, rgba(31,118,176,1) 100%);
+	background: -o-linear-gradient(top, rgba(31,118,176,1) 0%, rgba(55,136,190,1) 30%, rgba(55,136,190,1) 69%, rgba(31,118,176,1) 100%);
+	background: -ms-linear-gradient(top, rgba(31,118,176,1) 0%, rgba(55,136,190,1) 30%, rgba(55,136,190,1) 69%, rgba(31,118,176,1) 100%);
+	background: linear-gradient(to bottom, rgba(31,118,176,1) 0%, rgba(55,136,190,1) 30%, rgba(55,136,190,1) 69%, rgba(31,118,176,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1f76b0', endColorstr='#1f76b0', GradientType=0 );
 }
 
 .iheader.front {
-	background-color: #c44044;
+	background-color: #3787be;
 }
 
 .navigation a {
-	color: #c44044;
+	color: #3787be;
 }
 
 .paging-navigation div.navigation > ul > li a:hover,
 .paging-navigation div.navigation > ul > li.active > a {
-	color: #c44044;
-	border-color: #c44044;
+	color: #3787be;
+	border-color: #3787be;
 }
 
 .comment-author .fn,
 .comment-author .url,
 .comment-reply-link,
 .comment-reply-login {
-	color: #c44044;
+	color: #3787be;
 }
 
 .comment-body a,
 .comment-meta,
 .comment-meta a {
-	color: #c44044;
+	color: #3787be;
 }
 
 .widget a:hover {
-	color: #c44044;
+	color: #3787be;
 }
 
 .widget_calendar a:hover {
-	background-color: #c44044;
+	background-color: #3787be;
 	color: #ffffff;	
 }
 
 .widget_calendar td#next a:hover,
 .widget_calendar td#prev a:hover {
-	background-color: #c44044;
+	background-color: #3787be;
 	color: #ffffff;		
 }
 
 .site-footer div.widget-area .widget a:hover {
-	color: #c44044;
+	color: #3787be;
 }
 
 .site-main div.widget-area .widget_calendar a:hover,
 .site-footer div.widget-area .widget_calendar a:hover {
-	background-color: #c44044;
+	background-color: #3787be;
 	color: #ffffff;		
 }
 
 .da-dots > span > span {
-	background-color: #c44044;
+	background-color: #3787be;
 }
 
 .widget a:visited,
@@ -200,13 +199,13 @@ div#ft-post div.entry-thumbnail:hover > div.comments-link {
 
 .widget a:hover,
 .entry-header h1.entry-title a:hover {
-	color: #c44044;
+	color: #3787be;
 }
 
 .error404 .page-title:before {
-	color: #c44044;
+	color: #3787be;
 }
 
 .format-status {
-	background-color: #c44044;
+	background-color: #3787be;
 }

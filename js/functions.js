@@ -154,6 +154,8 @@ jQuery(document).ready(function($) {
 	}
 
   	equalheight('.main article');
+	
+
 
 	/*
 	$(window).scroll(function(){
@@ -255,21 +257,27 @@ jQuery(document).ready(function($) {
 	i-trans multi layer slider
 	*/
 	var slidetimer = null;
+	var slidemove = 1;
 	function startSetInterval() {
+		if(slidemove==1){
 		slidetimer = setInterval(function () {
-        	moveRight();
+			moveRight();
     	}, 6000);
+		}
 	}
-	
-	startSetInterval();
+	if(slidemove==1){
+		startSetInterval();
+	}
 	
 	// hover behaviour
 	$('.ibanner #da-slider, .sldprev, .sldnext').hover(function() {
-	  	clearInterval(slidetimer);
-		console.log("stop timer");
+	  	slidemove = 0;
+		clearInterval(slidetimer);
+		//console.log("stop timer");
 	},function() {
-	  	startSetInterval();
-		console.log("start timer");
+	  	slidemove = 1;
+		startSetInterval();
+		//console.log("start timer");
 	});
 	
  

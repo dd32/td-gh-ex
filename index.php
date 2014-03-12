@@ -36,11 +36,13 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 		<?php if ( have_posts() ) :  ?>
+        	<div class="blog-columns">
 			<?php /* The loop normal posts */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
             	<?php if (in_array($post->ID, $do_not_duplicate)) continue; ?>
                	<?php get_template_part( 'content', get_post_format() ); ?>
 			<?php endwhile; ?>
+            </div>
 			<?php itransform_paging_nav(); ?>
 		<?php else : ?>
 			<?php get_template_part( 'content', 'none' ); ?>

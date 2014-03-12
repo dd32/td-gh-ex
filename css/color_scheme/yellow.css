@@ -169,19 +169,23 @@ div#ft-post div.entry-thumbnail:hover > div.comments-link {
 
 .widget_calendar a:hover {
 	background-color: #c4b041;
+	color: #ffffff;
 }
 
 .widget_calendar td#next a:hover,
 .widget_calendar td#prev a:hover {
 	background-color: #c4b041;
+	color: #ffffff;		
 }
 
 .site-footer div.widget-area .widget a:hover {
 	color: #c4b041;
 }
 
+.site-main div.widget-area .widget_calendar a:hover,
 .site-footer div.widget-area .widget_calendar a:hover {
 	background-color: #c4b041;
+	color: #ffffff;		
 }
 
 .da-dots > span > span {

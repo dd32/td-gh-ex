@@ -189,7 +189,9 @@ function itransform_scripts_styles() {
 	// Loads JavaScript file with functionality specific to i-transform.
 	wp_enqueue_script( 'itransform-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '2013-07-18', true );
 	
-	$color_scheme = of_get_option('itrans_color_scheme','red');
+	$color_scheme = of_get_option('itrans_color_scheme');
+	
+	$blog_layout = of_get_option('itrans_blog_layout');
 
 	// Add Source Sans Pro and Bitter fonts, used in the main stylesheet.
 	wp_enqueue_style( 'itransform-fonts', itransform_fonts_url(), array(), null );
@@ -211,10 +213,22 @@ function itransform_scripts_styles() {
 	
 	// color scheme files
 	wp_enqueue_style( 'itrans-color-scheme', get_template_directory_uri() . '/css/color_scheme/'.$color_scheme.'.css', array(), '2014-01-12' );	
+	
+	// blog posts layout style
+	if ( $blog_layout == 'twocol' ) {
+		wp_enqueue_style( 'itrans-blog-layout', get_template_directory_uri() . '/css/twocol-blog.css', array(), '2014-03-11' );	
+	}
 
 	// Loads the Internet Explorer specific stylesheet.
 	wp_enqueue_style( 'itransform-ie', get_template_directory_uri() . '/css/ie.css', array( 'itransform-style' ), '2013-07-18' );
 	wp_style_add_data( 'itransform-ie', 'conditional', 'lt IE 9' );
+	
+	
+	wp_enqueue_style( 'itrans-extra-stylesheet', get_template_directory_uri() . '/css/extra-style.css', array(), '2014-03-11' );
+	$custom_css = of_get_option( 'itrans_extra_style');
+	if ( $custom_css ) {
+		wp_add_inline_style( 'itrans-extra-stylesheet', $custom_css );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'itransform_scripts_styles' );
 

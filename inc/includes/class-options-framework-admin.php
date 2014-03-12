@@ -156,6 +156,7 @@ class Options_Framework_Admin {
                 <div class="inside">
                     <p><b><a href="<?php esc_attr_e( 'http://templatesnext.org/itrans/', 'textdomain' ); ?>" target="_blank">i-transform Demo</a></b></p>
                     <p>The best way to contact me with <b>support questions</b> and <b>bug reports</b> is via our <a href="<?php esc_attr_e( 'http://facebook.com/templatesnext/', 'textdomain' ); ?>" target="_blank">facebook page</a>.</p>
+                    <p>If you like i-transform please rate us at <a href="<?php esc_attr_e( 'http://wordpress.org/support/view/theme-reviews/i-transform', 'textdomain' ); ?>" target="_blank">WordPress.org</a> and like our <a href="<?php esc_attr_e( 'http://facebook.com/templatesnext/', 'textdomain' ); ?>" target="_blank">facebook page</a>. </p>
                 </div>
             </div>
         </div>

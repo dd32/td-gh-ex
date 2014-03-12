@@ -32,17 +32,19 @@
     	
         <?php if ( of_get_option('top_bar_phone') || itransform_social_icons() ) : ?>
     	<div id="utilitybar" class="utilitybar">
-        	<div class="socialicons">
-                <?php echo itransform_social_icons(); ?>
-            </div>
-            <?php if ( of_get_option('top_bar_phone') ) : ?>
-        	<div class="topphone">
-            	<i class="topbarico genericon-phone"></i>
+        	<div class="ubarinnerwrap">
+                <div class="socialicons">
+                    <?php echo itransform_social_icons(); ?>
+                </div>
                 <?php if ( of_get_option('top_bar_phone') ) : ?>
-					<?php _e('Call us : ','itransform'); ?> <?php echo of_get_option('top_bar_phone'); ?>
+                <div class="topphone">
+                    <i class="topbarico genericon-phone"></i>
+                    <?php if ( of_get_option('top_bar_phone') ) : ?>
+                        <?php _e('Call us : ','itransform'); ?> <?php echo of_get_option('top_bar_phone'); ?>
+                    <?php endif; ?>
+                </div>
                 <?php endif; ?>
-            </div>
-            <?php endif; ?>            
+            </div> 
         </div>
         <?php endif; ?>
         

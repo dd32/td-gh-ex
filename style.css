@@ -3,11 +3,11 @@ Theme Name: i-transform
 Theme URI: http://templatesnext.org/itrans/
 Author: templatesnext team
 Author URI: http://templatesnext.org/
-Description: The i-transform theme for WordPress is developed using a populer theme "Twenty Thirteen" giving you all the features if Twenty Thirteen plus several additional features like easy to use admin theme admin options, featured post section, 5 color schemes, etc.
-Version: 1.5
+Description: The i-transform theme for WordPress is developed using a populer theme "Twenty Thirteen" giving you all the features of Twenty Thirteen plus several additional features like easy to use admin theme options, featured post section, 5 color schemes, multiple blog layouts etc.
+Version: 1.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: black, red, green, purple, white, yellow, light, blue, one-column, two-columns, right-sidebar, fluid-layout, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, sticky-post, translation-ready
+Tags: black, red, green, purple, white, yellow, light, blue, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, sticky-post, theme-options, translation-ready
 Text Domain: itransform
 
 itransform WordPress Theme, Copyright 2014 WordPress.org
@@ -852,6 +852,11 @@ img.wp-smiley,
  * ----------------------------------------------------------------------------
  */
 
+.ubarinnerwrap {
+	margin: 0px auto;
+	max-width: 1600px;
+	padding: 0% 2.5%;
+}
 .utilitybar {
 	display: block;
 	border-bottom: 1px solid #e7e7e7;
@@ -3492,6 +3497,64 @@ footer.entry-meta {
 
 .go-top:hover span {
 	text-decoration: none;
+}
+
+/**
+*
+* header fix
+*/
+
+
+.site-header .home-link {
+	max-width: 560px;
+}
+
+
+div.headerwrap .navbar {
+    float: right;
+    margin-right: 32px;
+}
+
+.topsearch {
+	display: block;
+	float: right;
+	min-width: 32px;
+	height: 48px;
+	padding-top: 26px;
+	position: relative;
+}
+
+.site-header.fixeddiv div.topsearch {
+	padding-top: 0px;
+	margin-top: 0px;
+	top: auto;
+}
+
+.site-header .search-form {
+	position: relative;
+	right: auto;
+	bottom: auto;
+}
+
+.site-header div.headerinnerwrap .search-form {
+	top: auto;
+	bottom: auto;	
+}
+
+.site-header.fixeddiv div.headerinnerwrap .search-form {
+	margin-top: -4px;
+}
+
+.site-header.fixeddiv .search-form .search-field {
+	margin-top: 0px;
+}
+
+div.ibanner .da-img {
+	overflow: hidden;
+}
+
+div.ibanner .da-img img {
+	max-height: 100%;
 }
 			
 /**
