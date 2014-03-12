@@ -81,7 +81,7 @@
             <?php endif; ?>
             
             <?php if ( get_theme_mod( 'wp_barrister_email' ) ) : ?>
-            <a href="<?php echo esc_url( get_theme_mod( 'wp_barrister_email' ) ); ?>" class="social-em" title="<?php echo esc_url( get_theme_mod( 'wp_barrister_email' ) ); ?>"><?php _e('Email', 'wp-barrister') ?></a>
+            <a href="<?php _e('mailto:', 'wp-barrister'); echo sanitize_email( get_theme_mod( 'wp_barrister_email' ) ); ?>" class="social-em" title="<?php _e('mailto:', 'wp-barrister'); echo sanitize_email( get_theme_mod( 'wp_barrister_email' ) ); ?>"><?php _e('Email', 'wp-barrister') ?></a>
             <?php endif; ?>
 
         </div><!-- .social-media -->

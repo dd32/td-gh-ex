@@ -87,8 +87,13 @@ This theme is bundled with TGM-Plugin-Activation
 =================================
 CHANGELOG
 =================================
+Version 1.0.7
+ * modified the email social icon to use the correct mailto protocol instead of http
+ * replaced the 'is_email' with 'sanitize_email' for the email sanitize callback setting
+ * added google+ social icon to the people profile template (single view)
+
 Version 1.0.6
- * updated the wp_advocate_pagination function to fix the  double slash (//) appearing on the URL when hovering on the pagination links
+ * updated the pagination function to fix the  double slash (//) appearing on the URL when hovering on the pagination links
  
 Version 1.0.5
  * added jquery fix for the footer issue in Safari

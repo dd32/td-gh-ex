@@ -315,7 +315,7 @@ if ( ! function_exists( 'wp_barrister_theme_customizer' ) ) :
 		) ) );
 		
 		$wp_customize->add_setting( 'wp_barrister_email', array (
-			'sanitize_callback' => 'is_email',
+			'sanitize_callback' => 'sanitize_email',
 		) );
 		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wp_barrister_email', array(

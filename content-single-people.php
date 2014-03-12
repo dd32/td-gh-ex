@@ -32,6 +32,7 @@
 			  $linkedin = get_post_meta( $post->ID, 'linkedin', true );
 			  $twitter = get_post_meta( $post->ID, 'twitter', true );
 			  $facebook = get_post_meta( $post->ID, 'facebook', true );
+			  $googleplus = get_post_meta( $post->ID, 'googleplus', true );
 			  $mailto = get_post_meta( $post->ID, 'email', true );
 			  $avvo = get_post_meta( $post->ID, 'avvo', true );
 			?>
@@ -49,12 +50,16 @@
                 <a href="<?php echo esc_url($facebook); ?>" class="social-fb"><?php _e('Facebook', 'wp-barrister') ?></a>
                 <?php endif; ?>
                 
+                <?php if ( ! empty($googleplus) ) : ?>
+                <a href="<?php echo esc_url($googleplus); ?>" class="social-gp"><?php _e('Google+', 'wp-barrister') ?></a>
+                <?php endif; ?>
+                
                 <?php if ( ! empty($avvo) ) : ?>
                 <a href="<?php echo esc_url($avvo); ?>" class="social-av"><?php _e('Avvo', 'wp-barrister') ?></a>
                 <?php endif; ?>
                 
                 <?php if ( ! empty($mailto) ) : ?>
-                <a href="mailto:<?php echo sanitize_email($mailto); ?>" class="social-em"><?php _e('Mailto', 'wp-barrister') ?></a>
+                <a href="<?php _e('mailto:', 'wp-barrister'); echo sanitize_email($mailto); ?>" class="social-em"><?php _e('Mailto', 'wp-barrister') ?></a>
                 <?php endif; ?>
             </div>
 
