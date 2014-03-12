@@ -58,5 +58,9 @@ This theme is bundled with Modernizr
 =================================
 CHANGELOG
 =================================
+Version 1.0.1
+ * Updated screenshot
+ * Minor css tweaks
+ 
 Version 1.0
  * First public release

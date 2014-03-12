@@ -377,7 +377,7 @@ if ( ! function_exists( 'hardpressed_theme_customizer' ) ) :
 		
 		/* author bio in posts option */
 		$wp_customize->add_section( 'hardpressed_author_bio_section' , array(
-			'title'       => __( 'Display Author Bio', 'hardpressed' ),
+			'title'       => __( 'Disable Author Bio?', 'hardpressed' ),
 			'priority'    => 32,
 			'description' => __( 'Option to show/hide the author bio in the posts.', 'hardpressed' ),
 		) );
@@ -490,6 +490,7 @@ if ( ! function_exists( 'hardpressed_apply_color' ) ) :
 				background-color: <?php echo $hardpressed_meta_color; ?>;
 			}
 			
+			
 			<?php if ( get_theme_mod( 'hardpressed_meta_color_txt' ) ) { // Meta Text Color
 				$hardpressed_meta_color_txt = get_theme_mod( 'hardpressed_meta_color_txt' );
 			} else {
@@ -498,7 +499,6 @@ if ( ! function_exists( 'hardpressed_apply_color' ) ) :
 			.entry-meta-wrap div.entry-meta, .entry-meta-wrap div.entry-meta a, .footer-meta.fm2, .footer-meta.fm2 a, .post-content ol > li:before, .post-content ul > li:before, .commentlist a.comment-reply-link, .commentlist a.comment-reply-login, #respond #submit, .post-content form input[type=submit], .post-content form input[type=button] {
 				color: <?php echo $hardpressed_meta_color_txt; ?>;
 			}
-			
 			
 			
 			<?php if ( get_theme_mod( 'hardpressed_widget_color' ) ) {

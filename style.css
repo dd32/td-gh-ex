@@ -4,7 +4,7 @@ Theme URI: http://hostmarks.com/hardpressed-theme/
 Author: Hostmarks
 Author URI: http://hostmarks.com/
 Description: Hardpressed is an extremely versatile blogging style theme that uses featured images to highlite content and also gives you lots of control over the theme’s color scheme with no coding required. We’ve paid attention to content styles and it also has the usual support for custom menus and widgets as well as some handy features for linking to your social media profiles and optionally displaying author bios for each post.
-Version: 1.0
+Version: 1.0.1
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-menu, sticky-post, microformats, rtl-language-support, translation-ready, full-width-template, post-formats
@@ -2275,11 +2275,11 @@ body.page-template-full-width-php #respond-form {}
 
 #respond,
 .post-content form {
-	padding: 30px 6%;
 	background-color: #fff;
 }
 
 	#respond {
+		padding: 30px 6%;
 		position: relative;
 		clear: both;
 		margin: 90px 0 8%;
