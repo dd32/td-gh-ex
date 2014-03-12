@@ -107,15 +107,9 @@ function thebox_register_custom_background() {
 	);
 
 	$args = apply_filters( 'thebox_custom_background_args', $args );
-
-	if ( function_exists( 'wp_get_theme' ) ) {
-		add_theme_support( 'custom-background', $args );
-	} else {
-		define( 'BACKGROUND_COLOR', $args['default-color'] );
-		if ( ! empty( $args['default-image'] ) )
-			define( 'BACKGROUND_IMAGE', $args['default-image'] );
-		add_theme_support( 'custom-background' ) ;
-	}
+	
+	add_theme_support( 'custom-background', $args );
+	
 }
 add_action( 'after_setup_theme', 'thebox_register_custom_background' );
 
@@ -182,10 +176,10 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 
 /**
- * Implement Custom Colors feature
+ * Implement Custom Color feature
  */
 
-function thebox_custom_colors_register( $wp_customize ) {
+function thebox_custom_color_register( $wp_customize ) {
 	$colors = array();
 	
 	$colors[] = array(
@@ -218,7 +212,70 @@ function thebox_custom_colors_register( $wp_customize ) {
 	
 }
 
-add_action( 'customize_register', 'thebox_custom_colors_register' );
+add_action( 'customize_register', 'thebox_custom_color_register' );
+
+
+/**
+ * Add Custom CSS to Header
+ */
+
+function add_css_styles() { ?>
+
+
+<?php	
+	$color_primary = get_option('color_primary');
+?>
+
+<style type="text/css">
+	
+	.site-header .main-navigation,
+	#content input#submit:hover,
+	#content .entry-time,
+	#content button:hover,
+	#content input[type="button"]:hover,
+	#content input[type="reset"]:hover,
+	#content input[type="submit"]:hover {
+	background-color: <?php echo $color_primary; ?>;	
+	}
+	
+	.site-header .main-navigation ul ul a:hover,
+    .site-header .main-navigation ul ul a:focus,
+    .site-header h1.site-title a:hover,
+    #nav-below a,
+    #content .entry-title a:hover,
+    #content .entry-title a:focus,
+    #content .entry-title a:active,
+    #content .cat-links .icon-font,
+    #content .tags-links .icon-font,
+    #content .entry-content a,
+    #content .entry-meta a,
+    #content .comments-area a,
+    #content input#submit,
+    #content .page-title span,
+    #content button,
+	#content input[type="button"],
+	#content input[type="reset"],
+	#content input[type="submit"],
+	#content #tertiary td a { 
+    color: <?php echo $color_primary; ?>;
+    }
+   
+    #content .edit-link a,
+    #content input#submit,
+    #content .more-link,
+    #content button,
+	#content input[type="button"],
+	#content input[type="reset"],
+	#content input[type="submit"] {
+	border-color: <?php echo $color_primary; ?>;
+    }
+    
+</style>
+
+    <?php
+}
+
+add_action('wp_head', 'add_css_styles');
 
 
 /*

@@ -25,58 +25,6 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
 
-<?php	
-	$color_primary = get_option('color_primary');
-	$color_secondary = get_option('color_secondary');
-?>
-
-<style>
-
-	.site-header .main-navigation,
-	#content input#submit:hover,
-	#content .entry-time,
-	#content button:hover,
-	#content input[type="button"]:hover,
-	#content input[type="reset"]:hover,
-	#content input[type="submit"]:hover {
-    background-color: <?php echo $color_primary; ?>;
-    }
-    
-    .site-header .main-navigation ul ul a:hover,
-    .site-header .main-navigation ul ul a:focus,
-    .site-header h1.site-title a:hover,
-    #nav-below a,
-    #content .entry-title a:hover,
-    #content .entry-title a:focus,
-    #content .entry-title a:active,
-    #content .cat-links .icon-font,
-    #content .tags-links .icon-font,
-    #content .entry-content a,
-    #content .entry-meta a,
-    #content .comments-area a,
-    #content input#submit,
-    #content .page-title span,
-    #content button,
-	#content input[type="button"],
-	#content input[type="reset"],
-	#content input[type="submit"],
-	#content #tertiary td a { 
-    color: <?php echo $color_primary; ?>;
-    }
-   
-    #content .edit-link a,
-    #content input#submit,
-    #content .more-link,
-    #content button,
-	#content input[type="button"],
-	#content input[type="reset"],
-	#content input[type="submit"] {
-	border-color: <?php echo $color_primary; ?>;
-    }
-        
-</style>
-
-
 <?php wp_head(); ?>
 </head>
 
