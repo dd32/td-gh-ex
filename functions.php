@@ -242,11 +242,13 @@ function add_css_styles() { ?>
     .site-header .main-navigation ul ul a:focus,
     .site-header h1.site-title a:hover,
     #nav-below a,
+    #content a,
     #content .entry-title a:hover,
     #content .entry-title a:focus,
     #content .entry-title a:active,
     #content .cat-links .icon-font,
     #content .tags-links .icon-font,
+    #content .more-link,
     #content .entry-content a,
     #content .entry-meta a,
     #content .comments-area a,
@@ -256,13 +258,14 @@ function add_css_styles() { ?>
 	#content input[type="button"],
 	#content input[type="reset"],
 	#content input[type="submit"],
-	#content #tertiary td a { 
+	#content #tertiary td a,
+	#secondary a,
+	#secondary .widget_recent_comments a.url { 
     color: <?php echo $color_primary; ?>;
     }
    
     #content .edit-link a,
     #content input#submit,
-    #content .more-link,
     #content button,
 	#content input[type="button"],
 	#content input[type="reset"],
