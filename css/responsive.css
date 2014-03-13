@@ -325,7 +325,7 @@ and (orientation : landscape) {
 		float: right;
 		width: 70px;
 	}	
-	.sidebar-top #searchform {
+	.sidebar-top .widget_catchevolution_social_search_widget #searchform {
 		display: none;
 	}
 	#logo-wrap,

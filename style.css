@@ -4,7 +4,7 @@ Theme URI: http://catchthemes.com/themes/catch-evolution
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
 Description: Catch Evolution is a beautifully sleek creation of Catch Themes. It exudes a clean and super sharp look. It comes with a whole set of interesting, rich features and flexible theme options. Built on HTML5, CSS3, it has a responsive design which lets the content automatically adapt to the screen's size on different devices. Catch Evolution looks striking in a bigger screen. The layout is wider, bigger and luxuriously spacious. This theme is easily customizable with an advanced theme options panel. It supports popular plugins such as Jetpack, WordPress SEO by Yoast, WP-PageNavi, Contact Form 7, WooCommerce and many more. It is also translation ready and currently translated in Spanish, French and Swedish. If you need support with this theme, please go to http://catchthemes.com/support/
-Version: 1.4.1
+Version: 1.5
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Tags: dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, threaded-comments, flexible-header, three-columns
@@ -610,6 +610,7 @@ a:hover {
     font-weight: bold;
     line-height: 1.5;
     padding: 14px 15px;
+	white-space: nowrap;	
 }
 #fixed-header-top ul.menu > li a {
     color: #ddd;
@@ -656,6 +657,7 @@ a:hover {
     /* Firefox, other Gecko */
     box-sizing: border-box;
     /* Opera/IE 8+ */
+	white-space: normal;	
 }
 #fixed-header-top ul.menu ul li a:hover {
 	background: rgba(0, 0, 0, 0.8);
@@ -695,10 +697,16 @@ a:hover {
 	line-height: 3.5em;
     padding: 0 2em;
 	text-decoration: none;
+	white-space: nowrap;	
 }
 #header-menu ul.menu a,
 .sidebar-top .widget_nav_menu ul.menu a {
 	display: block;
+}
+#header-menu ul.menu ul li a,
+.sidebar-top .widget_nav_menu ul.menu ul li a,
+#colophon #access-footer ul.menu ul li a {
+	white-space: normal;	
 }
 #header-menu ul.menu ul,
 .sidebar-top .widget_nav_menu ul.menu ul {

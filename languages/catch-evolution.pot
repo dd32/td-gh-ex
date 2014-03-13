@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Evolution\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-22 09:36+0545\n"
-"PO-Revision-Date: 2014-03-02 23:10+0545\n"
+"POT-Creation-Date: 2014-03-13 22:01+0545\n"
+"PO-Revision-Date: 2014-03-13 22:02+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: en\n"
@@ -615,19 +615,19 @@ msgstr ""
 msgid "3. Catch Evolution Social & Seach Widget"
 msgstr ""
 
-#: ../inc/custom-header.php:470
+#: ../inc/custom-header.php:441
 msgid "Primary menu"
 msgstr ""
 
-#: ../inc/custom-header.php:472 ../inc/custom-header.php:505
+#: ../inc/custom-header.php:443 ../inc/custom-header.php:476
 msgid "Skip to primary content"
 msgstr ""
 
-#: ../inc/custom-header.php:473 ../inc/custom-header.php:506
+#: ../inc/custom-header.php:444 ../inc/custom-header.php:477
 msgid "Skip to secondary content"
 msgstr ""
 
-#: ../inc/custom-header.php:503
+#: ../inc/custom-header.php:474
 msgid "Secondary menu"
 msgstr ""
 

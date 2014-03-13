@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Catch Evolution\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-27 10:26+0545\n"
-"PO-Revision-Date: 2014-03-02 23:10+0545\n"
+"PO-Revision-Date: 2014-03-13 22:02+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes Team <info@catchthemes.com>\n"
 "Language: fr_FR\n"
@@ -54,12 +54,12 @@ msgstr ""
 #: archive.php:22
 #, php-format
 msgid "Daily Archives: %s"
-msgstr " Archives Quotidiennes: %s"
+msgstr "Archives Quotidiennes: %s"
 
 #: archive.php:24
 #, php-format
 msgid "Monthly Archives: %s"
-msgstr " Archives Mensuelles: %s"
+msgstr "Archives Mensuelles: %s"
 
 #: archive.php:24
 msgctxt "monthly archives date format"

@@ -14,8 +14,22 @@ Added Translation for Swedish by Andre Fahlstrom (admin@andrefahlstrom.se)
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Catch Evolution WordPress Theme, Copyright 2013 Catchthemes.com
+Catch Evolution WordPress Theme, Copyright 2012-2014 Catchthemes.com
 Catch Evolution is distributed under the terms of the GNU General Public License v3
+
+Images used in the demo site and the screenshot are from PixaBay.com and are released under the CC0 license
+The screenshot's visible images are as follow:
+1) http://pixabay.com/en/buddha-deity-himalayan-park-nepal-100706/ - header image
+2) http://pixabay.com/en/window-wooden-window-old-window-100934/ - 1st slider image
+3) http://pixabay.com/en/flower-flowers-nature-plant-orchid-179004/ - 2nd slider image
+
+Scripts used in the site are as below:
+1. Menu script is licensed under MIT license. URI: http://tinynav.viljamis.com
+2. Responsive Video script is licensed under WTFPL license. URI: https://github.com/davatron5000/FitVids.js/ 
+3. IE8 scrpt uses HTML5 script licensed under MIT/GPL2 and Placeholder script (https://github.com/mathiasbynens/jquery-placeholder) licensed under MIT
+4. jQuery Cookie script is licensed under MIT license. URI: https://github.com/carhartl/jquery-cookie
+5. Pngfix script is licensed under MIT license. URI: http://www.dillerdesign.com/experiment/DD_belatedPNG/
+
 
 == Post ID shown in the All Posts Table ==
 This theme shows the post id of the posts in the all posts table in the dashboard.This is added to help the users to use those ids in the Featured Post Slider Options.== Theme Support ==Theme support at http://catchthemes.com/support/
@@ -33,40 +47,17 @@ dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-si
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 
 == Changelog ==
-Version 1.0
-* Initial Submission to WordPress.org
+Version 1.5
+* Fixed responsive css which hides default search widget in header sidebar
+* Fixed menu white-spaces css issues
+* Update responsive menu script
+* Update responsive video script
+* Update slider script
+* Update IE script
 
-Version 1.0.1
-* Fixed long title overflow issue
-* Fixed custom header undefined index
-* Fixed Older/Newest entries navigation 
-* Removed unwanted color_picker.js and jetpack.php files
-
-Version 1.0.2
-* Fixed Undefined variable: headerimage in frontend
-
-Version 1.1
-* Added 3 column layout
-* Added Third Column Sidebar
-* Added content-sidebar-wrap div to support 3 column layout
-* Added catchevolution_before_contentsidebarwrap and catchevolution_after_contentsidebarwrap hook to support 3 column layout
-* Fixed Error 404 page search box
-
-Version 1.1.1
-* Added Open Link in New Window option in Catch Evolution Adspace Widget
-* Fixed Google Font script issue with default setting
-
-Version 1.2
-* Added Spanish translation es_ES.po and es_ES.mo
-
-Version 1.2.1
-* Added WooCommerce Sidebar for WooCommerce plugin template
-
-Version 1.2.1.1
-* Fixed error without WooCommerce plugin from version 1.2.1
-
-Version 1.3
-* Added French translation fr_FR.po and fr_FR.mo
+Version 1.4.1
+* Remove backward compatibility check function_exists( 'get_custom_header') and function_exists( 'wp_get_theme' )
+* Update language files
 
 Version 1.4
 * Added Swedish translation sv_SE.po and sv_SE.mo
@@ -77,6 +68,37 @@ Version 1.4
 * Removed depreciated functions add_custom_image_header() and add_custom_background()
 * Updated theme Tag Filter in style.css
 
-Version 1.4.1
-* Remove backward compatibility check function_exists( 'get_custom_header') and function_exists( 'wp_get_theme' )
-* Update language files
+Version 1.3
+* Added French translation fr_FR.po and fr_FR.mo
+
+Version 1.2.1.1
+* Fixed error without WooCommerce plugin from version 1.2.1
+
+Version 1.2.1
+* Added WooCommerce Sidebar for WooCommerce plugin template
+
+Version 1.2
+* Added Spanish translation es_ES.po and es_ES.mo
+
+Version 1.1.1
+* Added Open Link in New Window option in Catch Evolution Adspace Widget
+* Fixed Google Font script issue with default setting
+
+Version 1.1
+* Added 3 column layout
+* Added Third Column Sidebar
+* Added content-sidebar-wrap div to support 3 column layout
+* Added catchevolution_before_contentsidebarwrap and catchevolution_after_contentsidebarwrap hook to support 3 column layout
+* Fixed Error 404 page search box
+
+Version 1.0.2
+* Fixed Undefined variable: headerimage in frontend
+
+Version 1.0.1
+* Fixed long title overflow issue
+* Fixed custom header undefined index
+* Fixed Older/Newest entries navigation 
+* Removed unwanted color_picker.js and jetpack.php files
+
+Version 1.0
+* Initial Submission to WordPress.org
