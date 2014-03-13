@@ -2,7 +2,7 @@
 
 Theme Name: Athenea
 Theme URI: http://www.ibermega.com/themes/athenea
-Version: 1.0.7
+Version: 1.0.9
 Requires at least: 3.0.1
 Tested up to: 3.8.1
 Author: Miguel Angel Rico
@@ -59,6 +59,9 @@ For documentation go to http://www.ibermega.com/themes/athenea
 
 
 == Changelog ==
+
+= 1.0.9 - 13.03.2014 =
+* Se agregan 18 nuevos idiomas. The theme now has 25 languages: English, French, German, Spanish, Italian, Portuguese, Russian, Chinese, Estonian, Czech, Danish, Irish, Basque, Catalan, Galician, Dutch, Vietnamese, Hebrew, Greek, Turkish, Romanian, Korean, Polish, Arabic and Japanese.
 
 = 1.0.8 - 09.03.2014 =
 * Corrects style on Topic Options by causing error in the fields.

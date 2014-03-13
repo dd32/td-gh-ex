@@ -8,102 +8,104 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2014-03-13 18:36+0100\n"
+"PO-Revision-Date: 2014-03-13 17:15+0100\n"
 "Last-Translator: Miguel Angel <miguel@ibermega.com>\n"
 "Language-Team: IBERMEGA digital <soporte@ibermega.com>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: ko_KR\n"
 "X-Generator: Poedit 1.6.2\n"
 "X-Poedit-KeywordsList: _s;__;_x;_e\n"
 
 #: 404.php:15
 msgid "Oops! That page can&rsquo;t be found."
-msgstr ""
+msgstr "아차! 해당 페이지를 찾을 수 없습니다."
 
 #: 404.php:19
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
+"아무것도이 위치에서 찾을 수 없습니다 것 같습니다. 아마 아래 링크 중 하나 또"
+"는 검색을 시도?"
 
 #: 404.php:27
 msgid "Most Used Categories"
-msgstr ""
+msgstr "가장 많이 사용되는 카테고리"
 
 #. translators: %1$s: smiley
 #: 404.php:44
 msgid "Try looking in the monthly archives. %1$s"
-msgstr ""
+msgstr "월별 아카이브.에보고하려고 %1$s"
 
 #: archive.php:31
 msgid "Author: %s"
-msgstr ""
+msgstr "저자 : %s"
 
 #: archive.php:39
 msgid "Day: %s"
-msgstr ""
+msgstr "날짜 : %s"
 
 #: archive.php:42
 msgid "Month: %s"
-msgstr ""
+msgstr "월 : %s"
 
 #: archive.php:42
 msgctxt "monthly archives date format"
 msgid "F Y"
-msgstr ""
+msgstr "FY"
 
 #: archive.php:45
 msgid "Year: %s"
-msgstr ""
+msgstr "년도 : %s"
 
 #: archive.php:45
 msgctxt "yearly archives date format"
 msgid "Y"
-msgstr ""
+msgstr "Y"
 
 #: archive.php:48
 msgid "Asides"
-msgstr ""
+msgstr "잡담"
 
 #: archive.php:51
 msgid "Galleries"
-msgstr ""
+msgstr "갤러리"
 
 #: archive.php:54
 msgid "Images"
-msgstr ""
+msgstr "이미지"
 
 #: archive.php:57
 msgid "Videos"
-msgstr ""
+msgstr "동영상"
 
 #: archive.php:58
 msgid "Video"
-msgstr ""
+msgstr "비디오"
 
 #: archive.php:60
 msgid "Quotes"
-msgstr ""
+msgstr "인용 부호"
 
 #: archive.php:63
 msgid "Links"
-msgstr ""
+msgstr "링크"
 
 #: archive.php:66
 msgid "Statuses"
-msgstr ""
+msgstr "상태"
 
 #: archive.php:69
 msgid "Audios"
-msgstr ""
+msgstr "오디오"
 
 #: archive.php:72
 msgid "Chats"
-msgstr ""
+msgstr "채팅보관함"
 
 #: archive.php:75 sidebar.php:17
 msgid "Archives"
-msgstr ""
+msgstr "글 목록"
 
 #: comments.php:30
 msgctxt "comments title"
@@ -114,208 +116,222 @@ msgstr[1] ""
 
 #: comments.php:37 comments.php:57
 msgid "Comment navigation"
-msgstr ""
+msgstr "코멘트 탐색"
 
 #: comments.php:38 comments.php:58
 msgid "&larr; Older Comments"
-msgstr ""
+msgstr "← 이전 댓글"
 
 #: comments.php:39 comments.php:59
 msgid "Newer Comments &rarr;"
-msgstr ""
+msgstr "최근 댓글 →"
 
 #: comments.php:69
 msgid "Comments are closed."
-msgstr ""
+msgstr "댓글은 종료 되었습니다."
 
 #: content-none.php:13
 msgid "Nothing Found"
-msgstr ""
+msgstr "아무것도 찾을 수 없음"
 
 #: content-none.php:19
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
+"귀하의 첫 번째 게시물을 게시 할 준비가 되셨습니까? <a href=\"%1$s\">여기에서 "
+"시작하십시오</a>."
 
 #: content-none.php:23
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
+"미안하지만, 아무것도 검색 조건과 일치하지 않습니다. 일부 다른 키워드로 다시 "
+"시도해주십시오."
 
 #: content-none.php:28
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
+"우리가 당신이 찾고있는 것을 찾을 수있는 것 같다. 아마도 검색은 도움이 될 수 "
+"있습니다."
 
 #: content-page.php:18 content-single.php:20 content.php:27
 msgid "Pages:"
-msgstr ""
+msgstr "페이지 :"
 
 #: content-page.php:23 content-single.php:60 content.php:61
 #: inc/template-tags.php:81 inc/template-tags.php:100
 msgid "Edit"
-msgstr ""
+msgstr "편집"
 
 #. translators: used between list items, there is a space after the comma
 #: content-single.php:29 content-single.php:32 content.php:38 content.php:48
 msgid ", "
-msgstr ""
+msgstr ","
 
 #: content-single.php:37
 msgid ""
 "This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
 "\">permalink</a>."
 msgstr ""
+"이 항목은 적었습니다 %2$s . 즐겨 찾기에 <a href=\"%3$s\" rel=\"즐겨 찾기\"> "
+"댓글 주소로 가기 </a>."
 
 #: content-single.php:39
 msgid "Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
-msgstr ""
+msgstr "즐겨 찾기에 <a href=\"%3$s\" rel=\"즐겨 찾기\"> 댓글 주소로 가기 </a>."
 
 #: content-single.php:45
 msgid ""
 "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
 "rel=\"bookmark\">permalink</a>."
 msgstr ""
+"이 항목에 게시했습니다 %1$s 및 태그 %2$s . 즐겨 찾기에 <a href=\"%3$s\" rel="
+"\"즐겨 찾기\"> 댓글 주소로 가기 </a>."
 
 #: content-single.php:47
 msgid ""
 "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
 "\">permalink</a>."
 msgstr ""
+"이 항목에 게시했습니다 %1$s . 즐겨 찾기에 <a href=\"%3$s\" rel=\"즐겨 찾기"
+"\"> 댓글 주소로 가기 </a>."
 
 #: content.php:24
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "계속 읽기 <span class=\"meta-nav\"> → </span>"
 
 #: content.php:42
 msgid "Posted in %1$s"
-msgstr ""
+msgstr "에 배치하는 %1$s"
 
 #: content.php:52
 msgid "Tagged %1$s"
-msgstr ""
+msgstr "태그 %1$s"
 
 #: content.php:58
 msgid "Leave a comment"
-msgstr ""
+msgstr "댓글을 남겨 주세요"
 
 #: content.php:58
 msgid "1 Comment"
-msgstr ""
+msgstr "댓글 1개"
 
 #: content.php:58
 msgid "% Comments"
-msgstr ""
+msgstr "댓글 %"
 
 #: footer.php:16
 msgid "Proudly powered by %s"
-msgstr ""
+msgstr "자랑스럽게 의해 구동 %s"
 
 #: footer.php:18
 msgid "Theme: %1$s by %2$s."
-msgstr ""
+msgstr "주제 : %1$s 에 의해 %2$s ."
 
 #: functions.php:45
 msgid "Primary Menu"
-msgstr ""
+msgstr "기본 메뉴"
 
 #: functions.php:65
 msgid "Sidebar"
-msgstr ""
+msgstr "사이드바"
 
 #: header.php:31
 msgid "Menu"
-msgstr ""
+msgstr "메뉴"
 
 #: header.php:32
 msgid "Skip to content"
-msgstr ""
+msgstr "컨텐츠로 이동"
 
 #: inc/extras.php:63
 msgid "Page %s"
-msgstr ""
+msgstr "%s 페이지"
 
 #: inc/template-tags.php:23
 msgid "Posts navigation"
-msgstr ""
+msgstr "글 탐색"
 
 #: inc/template-tags.php:27
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr ""
+msgstr "<span class=\"meta-nav\">&larr;</span> 이전 글"
 
 #: inc/template-tags.php:31
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "최근 댓글 <span class=\"meta-nav\">&rarr;</span> "
 
 #: inc/template-tags.php:56
 msgid "Post navigation"
-msgstr ""
+msgstr "탐색을 게시"
 
 #: inc/template-tags.php:59
 msgctxt "Previous post link"
 msgid "<span class=\"meta-nav\">&larr;</span> %title"
-msgstr ""
+msgstr "<span class=\"meta-nav\"> ← </ SPAN> %t itle"
 
 #: inc/template-tags.php:60
 msgctxt "Next post link"
 msgid "%title <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "%t itle <span class=\"meta-nav\"> → </ SPAN>"
 
 #: inc/template-tags.php:81
 msgid "Pingback:"
-msgstr ""
+msgstr "Pingback:"
 
 #: inc/template-tags.php:91
 msgid "%s <span class=\"says\">says:</span>"
-msgstr ""
+msgstr "%s <span class=\"says\"> 말한다 : </ SPAN>"
 
 #: inc/template-tags.php:97
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
-msgstr ""
+msgstr " %2$s에서%1$s"
 
 #: inc/template-tags.php:104
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "댓글은 검토를 기다리는 중입니다."
 
 #: inc/template-tags.php:145
 msgid ""
 "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by "
 "%2$s</span>"
 msgstr ""
+"<span class=\"posted-on\">에 게시 %1$s </ SPAN> <span class=\"byline\">에 의"
+"해 %2$s </ SPAN>"
 
 #: search.php:16
 msgid "Search Results for: %s"
-msgstr ""
+msgstr "에 대한 검색 결과 : %s"
 
 #: searchform.php:10
 msgctxt "label"
 msgid "Search for:"
-msgstr ""
+msgstr "검색 결과:"
 
 #: searchform.php:11
 msgctxt "placeholder"
 msgid "Search &hellip;"
-msgstr ""
+msgstr "검색 ..."
 
 #: searchform.php:13
 msgctxt "submit button"
 msgid "Search"
-msgstr ""
+msgstr "{0}{/0}{1}검색 {/1}"
 
 #: sidebar.php:24
 msgid "Search"
-msgstr ""
+msgstr "{0}{/0}{1}검색 {/1}"
 
 #: sidebar.php:24
 msgid "Search:"
-msgstr ""
+msgstr "검색:"
 
 #: sidebar.php:24
 msgid "Meta"
-msgstr ""
+msgstr "그밖의 기능"
 
 #. Theme Name of the plugin/theme
 msgid "athenea"
@@ -331,122 +347,123 @@ msgstr "IBERMEGA digital"
 
 #. Theme Options/theme
 msgid "Athenea Options"
-msgstr ""
+msgstr "Athenea 옵션"
 
 #. Theme Options/theme
 msgid "Restore Defaults"
-msgstr ""
+msgstr "기본 설정값 복원"
 
 #. Theme Options/theme
 msgid "Default options restored."
-msgstr ""
+msgstr "기본 옵션은 복원."
 
 #. Theme Options/theme
 msgid "Save Options"
-msgstr ""
+msgstr "옵션을 저장"
 
 #. Theme Options/theme
 msgid "Options saved."
-msgstr ""
+msgstr "옵션 저장."
 
 #. Theme Options/theme
 msgid "Remove"
-msgstr ""
+msgstr "제거"
 
 #. Theme Options/theme
 msgid "Upload"
-msgstr ""
+msgstr "업로드"
 
 #. Theme Options/theme
 msgid "Logos"
-msgstr ""
+msgstr "로고"
 
 #. Theme Options/theme
 msgid "Logos Trademark"
-msgstr ""
+msgstr "로고 상표"
 
 #. Theme Options/theme
 msgid ""
 "Select the logo to be shown on the web with a maximum size of 292px wide."
-msgstr ""
+msgstr "292px 폭의 최대 크기로 웹에 표시되는 로고를 선택합니다."
 
 #. Theme Options/theme
 msgid "Favicon"
-msgstr ""
+msgstr "파비콘"
 
 #. Theme Options/theme
 msgid "No file chosen"
-msgstr ""
+msgstr "선택 어떤 파일이 없습니다"
 
 #. Theme Options/theme
 msgid "Choose a Favicon in png with a maximum size of 64 x 64 px."
-msgstr ""
+msgstr "64 X 64 (PX)의 최대 크기 PNG로의 파비콘을 선택합니다."
 
 #. Theme Options/theme
 msgid "Featured sections"
-msgstr ""
+msgstr "주요 섹션"
 
 #. Theme Options/theme
 msgid "BLOCK RIGHT"
-msgstr ""
+msgstr "BLOCK RIGHT"
 
 #. Theme Options/theme
 msgid "Title"
-msgstr ""
+msgstr "제목"
 
 #. Theme Options/theme
 msgid "Add your first highlighted section here."
-msgstr ""
+msgstr "여기에 첫 번째 강조 섹션을 추가합니다."
 
 #. Theme Options/theme
 msgid "Brief description."
-msgstr ""
+msgstr "간략한 설명."
 
 #. Theme Options/theme
 msgid "Sign in options on topic and write a brief description."
-msgstr ""
+msgstr "주제에 대한 옵션에 가입하고 간단한 설명을 작성합니다."
 
 #. Theme Options/theme
 msgid "Button Text"
-msgstr ""
+msgstr "버튼 텍스트"
 
 #. Theme Options/theme
 msgid "Read More"
-msgstr ""
+msgstr "자세히보기"
 
 #. Theme Options/theme
 msgid "URL Button"
-msgstr ""
+msgstr "URL 버튼"
 
 #. Theme Options/theme
 msgid ""
 "Select an image to display. The image must be transparent gif or png "
 "background"
 msgstr ""
+"표시 할 이미지를 선택합니다. 이미지는 투명 GIF 또는 PNG 배경이어야합니다"
 
 #. Theme Options/theme
 msgid "CENTRAL BLOCK"
-msgstr ""
+msgstr "중앙 BLOCK"
 
 #. Theme Options/theme
 msgid "Continue with the second highlighted section."
-msgstr ""
+msgstr "두 번째 강조 섹션을 계속합니다."
 
 #. Theme Options/theme
 msgid "BLOCK LEFT"
-msgstr ""
+msgstr "BLOCK LEFT"
 
 #. Theme Options/theme
 msgid "And finally, the third section highlighted."
-msgstr ""
+msgstr "그리고 마지막으로, 세 번째 섹션은 강조했다."
 
 #. Theme Options/theme
 msgid "BODY CENTRAL BLOC"
-msgstr ""
+msgstr "BODY CENTRAL BLOC"
 
 #. Theme Options/theme
 msgid "Who is the company"
-msgstr ""
+msgstr "이 회사는 누구인가"
 
 #. Theme Options/theme
 msgid ""
@@ -454,99 +471,102 @@ msgid ""
 "option for visitors. Insert a text descripctivo y call the attention of your "
 "potential in the first minute."
 msgstr ""
+"웹 사이트의이 지역에있는 귀하의 비즈니스에 대한 간단한 설명은 방문객을위한 최"
+"선의 방법입니다. Y는 첫 번째 분에 당신의 잠재적 인의주의를 환기 descripctivo "
+"텍스트를 삽입합니다."
 
 #. Theme Options/theme
 msgid "Learn more"
-msgstr ""
+msgstr "자세히 알아보기"
 
 #. Theme Options/theme
 msgid "Social Icons"
-msgstr ""
+msgstr "사회 아이콘"
 
 #. Theme Options/theme
 msgid "Activate"
-msgstr ""
+msgstr "활성화"
 
 #. Theme Options/theme
 msgid "Deactivate"
-msgstr ""
+msgstr "비활성화"
 
 #. Theme Options/theme
 msgid "Enter the full URL."
-msgstr ""
+msgstr "전체 URL을 입력합니다."
 
 #. Theme Options/theme
 msgid "Designs"
-msgstr ""
+msgstr "디자인"
 
 #. Theme Options/theme
 msgid "Theme Design"
-msgstr ""
+msgstr "테마 디자인"
 
 #. Theme Options/theme
 msgid "Choose a layout for your website"
-msgstr ""
+msgstr "귀하의 웹 사이트의 레이아웃을 선택"
 
 #. Theme Options/theme
 msgid "Contact"
-msgstr ""
+msgstr "연락처"
 
 #. Theme Options/theme
 msgid "Contact Details."
-msgstr ""
+msgstr "자세한 사항을 문의하십시오."
 
 #. Theme Options/theme
 msgid "Company Name"
-msgstr ""
+msgstr "회사 명"
 
 #. Theme Options/theme
 msgid "Company S.A."
-msgstr ""
+msgstr "회사 SA"
 
 #. Theme Options/theme
 msgid ""
 "CIF/NIF/NIE (tax id). Mandatory for companies in the European Community."
-msgstr ""
+msgstr "CIF / NIF / NIE (세금 ID). 유럽​​ 지역에서의 기업에 대한 필수."
 
 #. Theme Options/theme
 msgid "B123456789"
-msgstr ""
+msgstr "B123456789"
 
 #. Theme Options/theme
 msgid "Address"
-msgstr ""
+msgstr "주소"
 
 #. Theme Options/theme
 msgid "New Burlington St, 123"
-msgstr ""
+msgstr "새로운 벌링턴 세인트, 123"
 
 #. Theme Options/theme
 msgid "Postal Code"
-msgstr ""
+msgstr "우편번호"
 
 #. Theme Options/theme
 msgid "W1B 5NF"
-msgstr ""
+msgstr "W1B 5NF"
 
 #. Theme Options/theme
 msgid "City"
-msgstr ""
+msgstr "시"
 
 #. Theme Options/theme
 msgid "London"
-msgstr ""
+msgstr "런던"
 
 #. Theme Options/theme
 msgid "Country"
-msgstr ""
+msgstr "국가"
 
 #. Theme Options/theme
 msgid "United Kingdom"
-msgstr ""
+msgstr "영국"
 
 #. Theme Options/theme
 msgid "Phone"
-msgstr ""
+msgstr "휴대폰"
 
 #. Theme Options/theme
 msgid "9XX 123 456"
@@ -554,19 +574,19 @@ msgstr "9XX 123 456"
 
 #. Theme Options/theme
 msgid "E-Mail contact"
-msgstr ""
+msgstr "E-메일 연락처"
 
 #. Theme Options/theme
 msgid "office@company.com"
-msgstr ""
+msgstr "office@company.com"
 
 #. Theme Options/Donative
 msgid "Do you like the theme Athenea?"
-msgstr ""
+msgstr "당신이 테마에게 Athenea을 좋아하나요?"
 
 #. Theme Options/Donative
 msgid "Buy me a coffee!"
-msgstr ""
+msgstr "나에게 커피를 구입하세요!"
 
 #. Theme Options/Donative
 msgid ""
@@ -574,131 +594,137 @@ msgid ""
 "improvement. You can make a donation to your choice or collaboration with "
 "the developer :-)"
 msgstr ""
+"우리는이 문제의 업데이트와 개선에 당신을 위해 작업을 계속하는 데 도움이. 당신"
+"은 개발자 :-)를 가진 당신의 선택 또는 공동으로 기부를 할 수 있습니다"
 
 #. Theme Options/Donative
 msgid "Voluntary donation"
-msgstr ""
+msgstr "자발적 기부"
 
 #. Theme Options/Donative
 msgid "Collaborate"
-msgstr ""
+msgstr "공동"
 
 #. Theme Options/Donative
 msgid "for Coffee &#8364;0,80 EUR"
-msgstr ""
+msgstr "커피 €의 0,80의 EUR에 대한"
 
 #. Theme Options/Donative
 msgid "for Coca-Cola &#8364;1,20 EUR"
-msgstr ""
+msgstr "코카콜라 €의 1,20의 EUR에 대한"
 
 #. Theme Options/Donative
 msgid "for Beer &#8364;1,45 EUR"
-msgstr ""
+msgstr "맥주 €의 1.45에 EUR에 대한"
 
 #. Theme Options/Donative
 msgid "for a Burger &#8364;2,00 EUR"
-msgstr ""
+msgstr "버거 €의 2.00에 EUR에 대한"
 
 #. Theme Options/Donative
 msgid "All &#8364;5,45 EUR"
-msgstr ""
+msgstr "모든 € 5,45 EUR"
 
 #. Theme Options/Donative
 msgid "Opinion"
-msgstr ""
+msgstr "의견"
 
 #. Theme Options/Donative
 msgid "Very good"
-msgstr ""
+msgstr "아주 좋음"
 
 #. Theme Options/Donative
 msgid "Good"
-msgstr ""
+msgstr "좋음"
 
 #. Theme Options/Donative
 msgid "Not bad"
-msgstr ""
+msgstr "나쁜"
 
 #. Theme Options/Donative
 msgid "Keep working"
-msgstr ""
+msgstr "작업 계속"
 
 #. Theme Options/Donative
 msgid "Athenea Documentation"
-msgstr ""
+msgstr "Athenea 문서"
 
 #. Portada
 msgid "Continue reading &raquo;&raquo;"
-msgstr ""
+msgstr "읽기»계속»"
 
 #. Footer
 msgid "Footer A"
-msgstr ""
+msgstr "바닥 글"
 
 #. Footer
 msgid "Footer B"
-msgstr ""
+msgstr "바닥 글 B"
 
 #. Footer
 msgid "Footer C"
-msgstr ""
+msgstr "바닥 글 C"
 
 #. Footer
 msgid "Footer D"
-msgstr ""
+msgstr "바닥 글 D"
 
 #. Footer
 msgid "Athenea Contact"
-msgstr ""
+msgstr "Athenea 연락"
 
 #. Footer
 msgid "Top"
-msgstr ""
+msgstr "최상단"
 
 #. Footer
 msgid "Theme designed by"
-msgstr ""
+msgstr "에 의해 디자인 된 테마"
 
 #. Comments
 msgid "Comments"
-msgstr ""
+msgstr "비고"
 
 #. Comments
 msgid ""
 "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags "
 "and attributes: %s"
 msgstr ""
+"<abbr title=\"HyperText Markup Language\">HTML</abbr> 태그와 속성을 사용가"
+"능: %s"
 
 #. Comments
 msgid "Leave a reply"
-msgstr ""
+msgstr "회신을 남겨주"
 
 #. Comments
 msgid "Leave a reply to %s"
-msgstr ""
+msgstr "회신을 남겨 %s"
 
 #. Comments
 msgid "Reply <span>&darr;</span>"
-msgstr ""
+msgstr "댓글 <SPAN> ↓ </ SPAN>"
 
 #. Comments
 msgid "Comment"
-msgstr ""
+msgstr "코멘트"
 
 #: Comments
 msgid "required"
-msgstr ""
+msgstr "필수"
 
 #: Comments
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
-msgstr ""
+msgstr "댓글을 게시하기 위해 <a href=\"%s\">로그인</a>을 해야 합니다."
 
 #: Comments
 msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
 "this account\">Log out?</a>"
 msgstr ""
+"<a href=\"%1$s\">%2$s</a>으로 로그인. <a href=\"%3$s\" title=\"Log out of "
+"this account\">로그아웃?</a>"
 
 #: Comments
 msgid "will not be published"
-msgstr ""
+msgstr "간행하지 않을 것이다"

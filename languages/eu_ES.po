@@ -8,102 +8,104 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2014-03-13 18:36+0100\n"
+"PO-Revision-Date: 2014-03-13 16:44+0100\n"
 "Last-Translator: Miguel Angel <miguel@ibermega.com>\n"
 "Language-Team: IBERMEGA digital <soporte@ibermega.com>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: en\n"
+"Language: eu_ES\n"
 "X-Generator: Poedit 1.6.2\n"
 "X-Poedit-KeywordsList: _s;__;_x;_e\n"
 
 #: 404.php:15
 msgid "Oops! That page can&rsquo;t be found."
-msgstr ""
+msgstr "Oops! Orri hori ezin da aurkitu."
 
 #: 404.php:19
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
+"Bezalakorik ez zen kokaleku honetan aurkitu badirudi. Agian saiatu bilaketa "
+"baten azpiko estekak bat edo?"
 
 #: 404.php:27
 msgid "Most Used Categories"
-msgstr ""
+msgstr "Erabilitako Kategoriak gehienetan"
 
 #. translators: %1$s: smiley
 #: 404.php:44
 msgid "Try looking in the monthly archives. %1$s"
-msgstr ""
+msgstr "Saiatu hileko artxiboak. Bilatzen %1$s"
 
 #: archive.php:31
 msgid "Author: %s"
-msgstr ""
+msgstr "Egilea: %s"
 
 #: archive.php:39
 msgid "Day: %s"
-msgstr ""
+msgstr "Egunean: %s"
 
 #: archive.php:42
 msgid "Month: %s"
-msgstr ""
+msgstr "Hilabetean: %s"
 
 #: archive.php:42
 msgctxt "monthly archives date format"
 msgid "F Y"
-msgstr ""
+msgstr "FY"
 
 #: archive.php:45
 msgid "Year: %s"
-msgstr ""
+msgstr "Urtea: %s"
 
 #: archive.php:45
 msgctxt "yearly archives date format"
 msgid "Y"
-msgstr ""
+msgstr "Y"
 
 #: archive.php:48
 msgid "Asides"
-msgstr ""
+msgstr "Asides"
 
 #: archive.php:51
 msgid "Galleries"
-msgstr ""
+msgstr "Galeriak"
 
 #: archive.php:54
 msgid "Images"
-msgstr ""
+msgstr "Irudiak"
 
 #: archive.php:57
 msgid "Videos"
-msgstr ""
+msgstr "Bideoak"
 
 #: archive.php:58
 msgid "Video"
-msgstr ""
+msgstr "Video"
 
 #: archive.php:60
 msgid "Quotes"
-msgstr ""
+msgstr "Komatxo"
 
 #: archive.php:63
 msgid "Links"
-msgstr ""
+msgstr "Loturak"
 
 #: archive.php:66
 msgid "Statuses"
-msgstr ""
+msgstr "Estatus"
 
 #: archive.php:69
 msgid "Audios"
-msgstr ""
+msgstr "Audioak"
 
 #: archive.php:72
 msgid "Chats"
-msgstr ""
+msgstr "Hitzaldian"
 
 #: archive.php:75 sidebar.php:17
 msgid "Archives"
-msgstr ""
+msgstr "Artxiboak"
 
 #: comments.php:30
 msgctxt "comments title"
@@ -114,208 +116,222 @@ msgstr[1] ""
 
 #: comments.php:37 comments.php:57
 msgid "Comment navigation"
-msgstr ""
+msgstr "Iruzkin nabigazioa"
 
 #: comments.php:38 comments.php:58
 msgid "&larr; Older Comments"
-msgstr ""
+msgstr "← Older Comments"
 
 #: comments.php:39 comments.php:59
 msgid "Newer Comments &rarr;"
-msgstr ""
+msgstr "Komentarioak berriagoa →"
 
 #: comments.php:69
 msgid "Comments are closed."
-msgstr ""
+msgstr "Erantzunak itxita daude."
 
 #: content-none.php:13
 msgid "Nothing Found"
-msgstr ""
+msgstr "Ezer ez da aurkitu"
 
 #: content-none.php:19
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
+"Zure lehenengo post argitaratzeko prest? <a href=\"%1$s\"> Talde hemen </a> "
+"k."
 
 #: content-none.php:23
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
+"Sentitzen dut, baina ezer zure bilaketa-terminoak datorren. Saiatu berriro "
+"beste hitz batzuk."
 
 #: content-none.php:28
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
+"Badirudi ezin dugu zer bilatzen ari zaren aurkitu. Agian bilaketa lagun "
+"dezake."
 
 #: content-page.php:18 content-single.php:20 content.php:27
 msgid "Pages:"
-msgstr ""
+msgstr "Orriak:"
 
 #: content-page.php:23 content-single.php:60 content.php:61
 #: inc/template-tags.php:81 inc/template-tags.php:100
 msgid "Edit"
-msgstr ""
+msgstr "Editatu"
 
 #. translators: used between list items, there is a space after the comma
 #: content-single.php:29 content-single.php:32 content.php:38 content.php:48
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: content-single.php:37
 msgid ""
 "This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
 "\">permalink</a>."
 msgstr ""
+"Istorio hau etiketatu da %2$s . Laster-marka <a href=\"%3$s\" rel=\"laster-"
+"marka\"> permalink </a>."
 
 #: content-single.php:39
 msgid "Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
-msgstr ""
+msgstr "Laster-marka <a href=\"%3$s\" rel=\"laster-marka\"> permalink </a>."
 
 #: content-single.php:45
 msgid ""
 "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
 "rel=\"bookmark\">permalink</a>."
 msgstr ""
+"Istorio hau in %1$s eta egunean %2$s . Laster-marka <a href=\"%3$s\" rel="
+"\"laster-marka\"> permalink </a>."
 
 #: content-single.php:47
 msgid ""
 "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
 "\">permalink</a>."
 msgstr ""
+"Istorio hau izan zen %1$s . Laster-marka <a href=\"%3$s\" rel=\"laster-marka"
+"\"> permalink </a>."
 
 #: content.php:24
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "Jarraitu irakurtzen class=\"meta-nav\"> → </span>"
 
 #: content.php:42
 msgid "Posted in %1$s"
-msgstr ""
+msgstr "Posted in %1$s"
 
 #: content.php:52
 msgid "Tagged %1$s"
-msgstr ""
+msgstr "Egunean %1$s"
 
 #: content.php:58
 msgid "Leave a comment"
-msgstr ""
+msgstr "Iruzkin bat idatzi"
 
 #: content.php:58
 msgid "1 Comment"
-msgstr ""
+msgstr "1 iruzkin"
 
 #: content.php:58
 msgid "% Comments"
-msgstr ""
+msgstr "% Comments"
 
 #: footer.php:16
 msgid "Proudly powered by %s"
-msgstr ""
+msgstr "Harrotasunez powered by %s"
 
 #: footer.php:18
 msgid "Theme: %1$s by %2$s."
-msgstr ""
+msgstr "Gaia: %1$s by %2$s ."
 
 #: functions.php:45
 msgid "Primary Menu"
-msgstr ""
+msgstr "Lehen Menu"
 
 #: functions.php:65
 msgid "Sidebar"
-msgstr ""
+msgstr "Sidebar"
 
 #: header.php:31
 msgid "Menu"
-msgstr ""
+msgstr "Menua"
 
 #: header.php:32
 msgid "Skip to content"
-msgstr ""
+msgstr "Eduki nagusira joan"
 
 #: inc/extras.php:63
 msgid "Page %s"
-msgstr ""
+msgstr "Page %s"
 
 #: inc/template-tags.php:23
 msgid "Posts navigation"
-msgstr ""
+msgstr "Mezuak nabigazioa"
 
 #: inc/template-tags.php:27
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr ""
+msgstr "<span class=\"meta-nav\"> ← </ span> Mezu zaharragoak"
 
 #: inc/template-tags.php:31
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "Mezu berriagoak <span class=\"meta-nav\"> → </ span>"
 
 #: inc/template-tags.php:56
 msgid "Post navigation"
-msgstr ""
+msgstr "Bidaltzeko nabigazioa"
 
 #: inc/template-tags.php:59
 msgctxt "Previous post link"
 msgid "<span class=\"meta-nav\">&larr;</span> %title"
-msgstr ""
+msgstr "<span class=\"meta-nav\"> ← </ span> %t itle"
 
 #: inc/template-tags.php:60
 msgctxt "Next post link"
 msgid "%title <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "%t itle <span class=\"meta-nav\"> → </ span>"
 
 #: inc/template-tags.php:81
 msgid "Pingback:"
-msgstr ""
+msgstr "Pingback:"
 
 #: inc/template-tags.php:91
 msgid "%s <span class=\"says\">says:</span>"
-msgstr ""
+msgstr "%s <span class=\"says\"> dio: </ span>"
 
 #: inc/template-tags.php:97
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
-msgstr ""
+msgstr "%1$s at %2$s"
 
 #: inc/template-tags.php:104
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "Zure iruzkina moderazioaren zain dago."
 
 #: inc/template-tags.php:145
 msgid ""
 "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by "
 "%2$s</span>"
 msgstr ""
+"<span class=\"posted-on\"> Posted on %1$s </ span> class=\"byline\"> ek %2$s "
+"</ a>"
 
 #: search.php:16
 msgid "Search Results for: %s"
-msgstr ""
+msgstr "Bilaketaren emaitzak: %s"
 
 #: searchform.php:10
 msgctxt "label"
 msgid "Search for:"
-msgstr ""
+msgstr "Bilatu:"
 
 #: searchform.php:11
 msgctxt "placeholder"
 msgid "Search &hellip;"
-msgstr ""
+msgstr "Search ..."
 
 #: searchform.php:13
 msgctxt "submit button"
 msgid "Search"
-msgstr ""
+msgstr "Search"
 
 #: sidebar.php:24
 msgid "Search"
-msgstr ""
+msgstr "Search"
 
 #: sidebar.php:24
 msgid "Search:"
-msgstr ""
+msgstr "Bilaketa:"
 
 #: sidebar.php:24
 msgid "Meta"
-msgstr ""
+msgstr "Meta"
 
 #. Theme Name of the plugin/theme
 msgid "athenea"
@@ -331,122 +347,125 @@ msgstr "IBERMEGA digital"
 
 #. Theme Options/theme
 msgid "Athenea Options"
-msgstr ""
+msgstr "Aukerak Athenea"
 
 #. Theme Options/theme
 msgid "Restore Defaults"
-msgstr ""
+msgstr "Berrezarri lehenetsiak"
 
 #. Theme Options/theme
 msgid "Default options restored."
-msgstr ""
+msgstr "Aukerak lehenetsi zaharberritu."
 
 #. Theme Options/theme
 msgid "Save Options"
-msgstr ""
+msgstr "Gorde Aukerak"
 
 #. Theme Options/theme
 msgid "Options saved."
-msgstr ""
+msgstr "Aukerak gorde."
 
 #. Theme Options/theme
 msgid "Remove"
-msgstr ""
+msgstr "Kendu"
 
 #. Theme Options/theme
 msgid "Upload"
-msgstr ""
+msgstr "Kargatu"
 
 #. Theme Options/theme
 msgid "Logos"
-msgstr ""
+msgstr "Logoak"
 
 #. Theme Options/theme
 msgid "Logos Trademark"
-msgstr ""
+msgstr "Logos markaren"
 
 #. Theme Options/theme
 msgid ""
 "Select the logo to be shown on the web with a maximum size of 292px wide."
 msgstr ""
+"Hautatu logotipoaren web orrian erakutsiko dira 292px zabal gehienezko "
+"tamaina batekin."
 
 #. Theme Options/theme
 msgid "Favicon"
-msgstr ""
+msgstr "Favicon"
 
 #. Theme Options/theme
 msgid "No file chosen"
-msgstr ""
+msgstr "Ez da fitxategirik aukeratu"
 
 #. Theme Options/theme
 msgid "Choose a Favicon in png with a maximum size of 64 x 64 px."
-msgstr ""
+msgstr "Aukeratzen duen 64 x 64 px tamaina gehienez png in Favicon bat."
 
 #. Theme Options/theme
 msgid "Featured sections"
-msgstr ""
+msgstr "Featured atalak"
 
 #. Theme Options/theme
 msgid "BLOCK RIGHT"
-msgstr ""
+msgstr "BLOCK RIGHT"
 
 #. Theme Options/theme
 msgid "Title"
-msgstr ""
+msgstr "Izenburua"
 
 #. Theme Options/theme
 msgid "Add your first highlighted section here."
-msgstr ""
+msgstr "Gehitu zure nabarmendutako lehen atala hemen."
 
 #. Theme Options/theme
 msgid "Brief description."
-msgstr ""
+msgstr "Azalpen laburra."
 
 #. Theme Options/theme
 msgid "Sign in options on topic and write a brief description."
-msgstr ""
+msgstr "Sinatzeko gaia aukerak eta azalpen labur bat idaztea."
 
 #. Theme Options/theme
 msgid "Button Text"
-msgstr ""
+msgstr "Botoia Testua"
 
 #. Theme Options/theme
 msgid "Read More"
-msgstr ""
+msgstr "Gehiago irakurri"
 
 #. Theme Options/theme
 msgid "URL Button"
-msgstr ""
+msgstr "URL Button"
 
 #. Theme Options/theme
 msgid ""
 "Select an image to display. The image must be transparent gif or png "
 "background"
 msgstr ""
+"Hautatu irudi bat erakusteko. Irudian gif edo png gardena hondo izan behar du"
 
 #. Theme Options/theme
 msgid "CENTRAL BLOCK"
-msgstr ""
+msgstr "CENTRAL BLOCK"
 
 #. Theme Options/theme
 msgid "Continue with the second highlighted section."
-msgstr ""
+msgstr "Nabarmendu du bigarren atal honekin jarraitzeko."
 
 #. Theme Options/theme
 msgid "BLOCK LEFT"
-msgstr ""
+msgstr "BLOCK LEFT"
 
 #. Theme Options/theme
 msgid "And finally, the third section highlighted."
-msgstr ""
+msgstr "Eta azkenik, hirugarren atalean nabarmenduta."
 
 #. Theme Options/theme
 msgid "BODY CENTRAL BLOC"
-msgstr ""
+msgstr "BODY CENTRAL Bloc"
 
 #. Theme Options/theme
 msgid "Who is the company"
-msgstr ""
+msgstr "Nor da enpresaren"
 
 #. Theme Options/theme
 msgid ""
@@ -454,99 +473,102 @@ msgid ""
 "option for visitors. Insert a text descripctivo y call the attention of your "
 "potential in the first minute."
 msgstr ""
+"Zure negozioa azalpen laburra webgunearen arlo honetan bisitari aukera onena "
+"da. Testu descripctivo y zure potentzial arreta deitu zuen lehen minutuan."
 
 #. Theme Options/theme
 msgid "Learn more"
-msgstr ""
+msgstr "Argibide gehiago"
 
 #. Theme Options/theme
 msgid "Social Icons"
-msgstr ""
+msgstr "Social Icons"
 
 #. Theme Options/theme
 msgid "Activate"
-msgstr ""
+msgstr "Aktibatzeko"
 
 #. Theme Options/theme
 msgid "Deactivate"
-msgstr ""
+msgstr "Desaktibatzeko"
 
 #. Theme Options/theme
 msgid "Enter the full URL."
-msgstr ""
+msgstr "Idatzi fitxategiak."
 
 #. Theme Options/theme
 msgid "Designs"
-msgstr ""
+msgstr "Diseinuak"
 
 #. Theme Options/theme
 msgid "Theme Design"
-msgstr ""
+msgstr "Gaia Diseinua"
 
 #. Theme Options/theme
 msgid "Choose a layout for your website"
-msgstr ""
+msgstr "Aukeratu zure web diseinua"
 
 #. Theme Options/theme
 msgid "Contact"
-msgstr ""
+msgstr "Harremanetarako"
 
 #. Theme Options/theme
 msgid "Contact Details."
-msgstr ""
+msgstr "Harremanetan Xehetasunak."
 
 #. Theme Options/theme
 msgid "Company Name"
-msgstr ""
+msgstr "Enpresaren izena"
 
 #. Theme Options/theme
 msgid "Company S.A."
-msgstr ""
+msgstr "Enpresaren SA"
 
 #. Theme Options/theme
 msgid ""
 "CIF/NIF/NIE (tax id). Mandatory for companies in the European Community."
 msgstr ""
+"IFK / IFZ / AIZ (zerga id). Europako Erkidegoko enpresentzat derrigorrezkoa."
 
 #. Theme Options/theme
 msgid "B123456789"
-msgstr ""
+msgstr "B123456789"
 
 #. Theme Options/theme
 msgid "Address"
-msgstr ""
+msgstr "Helbidea"
 
 #. Theme Options/theme
 msgid "New Burlington St, 123"
-msgstr ""
+msgstr "New Burlington St, 123"
 
 #. Theme Options/theme
 msgid "Postal Code"
-msgstr ""
+msgstr "Postal Kodea"
 
 #. Theme Options/theme
 msgid "W1B 5NF"
-msgstr ""
+msgstr "W1B 5NF"
 
 #. Theme Options/theme
 msgid "City"
-msgstr ""
+msgstr "Hiria"
 
 #. Theme Options/theme
 msgid "London"
-msgstr ""
+msgstr "London"
 
 #. Theme Options/theme
 msgid "Country"
-msgstr ""
+msgstr "Herrialde"
 
 #. Theme Options/theme
 msgid "United Kingdom"
-msgstr ""
+msgstr "Erresuma Batua"
 
 #. Theme Options/theme
 msgid "Phone"
-msgstr ""
+msgstr "Telefono"
 
 #. Theme Options/theme
 msgid "9XX 123 456"
@@ -554,19 +576,19 @@ msgstr "9XX 123 456"
 
 #. Theme Options/theme
 msgid "E-Mail contact"
-msgstr ""
+msgstr "Emaila kontaktua"
 
 #. Theme Options/theme
 msgid "office@company.com"
-msgstr ""
+msgstr "office@company.com"
 
 #. Theme Options/Donative
 msgid "Do you like the theme Athenea?"
-msgstr ""
+msgstr "Ez gaia gogoko duzun Athenea?"
 
 #. Theme Options/Donative
 msgid "Buy me a coffee!"
-msgstr ""
+msgstr "Erosi zidan kafe bat!"
 
 #. Theme Options/Donative
 msgid ""
@@ -574,131 +596,139 @@ msgid ""
 "improvement. You can make a donation to your choice or collaboration with "
 "the developer :-)"
 msgstr ""
+"Laguntzeko gai honen eguneratzea eta hobetzea da zuretzat lanean jarraitu "
+"gurekin. Zure aukera edo lankidetza dohaintza bat egin dezakezu "
+"sustatzailearen :-) batera"
 
 #. Theme Options/Donative
 msgid "Voluntary donation"
-msgstr ""
+msgstr "Borondatezko dohaintza"
 
 #. Theme Options/Donative
 msgid "Collaborate"
-msgstr ""
+msgstr "Kolaboratu"
 
 #. Theme Options/Donative
 msgid "for Coffee &#8364;0,80 EUR"
-msgstr ""
+msgstr "Kafea € 0,80 euroren truke"
 
 #. Theme Options/Donative
 msgid "for Coca-Cola &#8364;1,20 EUR"
-msgstr ""
+msgstr "Coca-Cola € 1,20 euroren truke"
 
 #. Theme Options/Donative
 msgid "for Beer &#8364;1,45 EUR"
-msgstr ""
+msgstr "Garagardoa € 1,45 euroren truke"
 
 #. Theme Options/Donative
 msgid "for a Burger &#8364;2,00 EUR"
-msgstr ""
+msgstr "a Burger € 2,00 euroren truke"
 
 #. Theme Options/Donative
 msgid "All &#8364;5,45 EUR"
-msgstr ""
+msgstr "Guztiak € 5,45 EUR"
 
 #. Theme Options/Donative
 msgid "Opinion"
-msgstr ""
+msgstr "Iritzia"
 
 #. Theme Options/Donative
 msgid "Very good"
-msgstr ""
+msgstr "Oso ona"
 
 #. Theme Options/Donative
 msgid "Good"
-msgstr ""
+msgstr "Ona"
 
 #. Theme Options/Donative
 msgid "Not bad"
-msgstr ""
+msgstr "Ez dago gaizki"
 
 #. Theme Options/Donative
 msgid "Keep working"
-msgstr ""
+msgstr "Mantentzeko lan"
 
 #. Theme Options/Donative
 msgid "Athenea Documentation"
-msgstr ""
+msgstr "Dokumentazioa Athenea"
 
 #. Portada
 msgid "Continue reading &raquo;&raquo;"
-msgstr ""
+msgstr "Jarraitu irakurtzen »»"
 
 #. Footer
 msgid "Footer A"
-msgstr ""
+msgstr "Oina batek"
 
 #. Footer
 msgid "Footer B"
-msgstr ""
+msgstr "Oina B"
 
 #. Footer
 msgid "Footer C"
-msgstr ""
+msgstr "Oina C"
 
 #. Footer
 msgid "Footer D"
-msgstr ""
+msgstr "Oina D"
 
 #. Footer
 msgid "Athenea Contact"
-msgstr ""
+msgstr "Athenea Harremanetarako"
 
 #. Footer
 msgid "Top"
-msgstr ""
+msgstr "Nagusiak"
 
 #. Footer
 msgid "Theme designed by"
-msgstr ""
+msgstr "Ek diseinatu tematiko"
 
 #. Comments
 msgid "Comments"
-msgstr ""
+msgstr "Iruzkinak"
 
 #. Comments
 msgid ""
 "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags "
 "and attributes: %s"
 msgstr ""
+"<li Title=\"HyperText markatzeko Language\"> HTML horiek </ Abbr> etiketa "
+"erabili ahal izango duzu eta atributuak: %s"
 
 #. Comments
 msgid "Leave a reply"
-msgstr ""
+msgstr "Utzi erantzun bat"
 
 #. Comments
 msgid "Leave a reply to %s"
-msgstr ""
+msgstr "Utzi erantzun bat %s"
 
 #. Comments
 msgid "Reply <span>&darr;</span>"
-msgstr ""
+msgstr "Erantzun <span> ↓ </ span>"
 
 #. Comments
 msgid "Comment"
-msgstr ""
+msgstr "Iruzkin"
 
 #: Comments
 msgid "required"
-msgstr ""
+msgstr "beharrezkoa"
 
 #: Comments
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr ""
+"Izan behar duzu <a href=\"%s\"> hemen </a> saioa hasi iruzkin bat idazteko."
 
 #: Comments
 msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
 "this account\">Log out?</a>"
 msgstr ""
+"Bezala saioa hasita <a href=\"%1$s\"> %2$s </a>. <a href=\"%3$s\" title="
+"\"hasi kontu hau out \"> Saioa amaitu? </a>"
 
 #: Comments
 msgid "will not be published"
-msgstr ""
+msgstr "ez da argitaratuko"

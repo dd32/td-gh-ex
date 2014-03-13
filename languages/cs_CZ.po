@@ -8,102 +8,104 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2014-03-13 18:36+0100\n"
+"PO-Revision-Date: 2014-03-13 16:23+0100\n"
 "Last-Translator: Miguel Angel <miguel@ibermega.com>\n"
 "Language-Team: IBERMEGA digital <soporte@ibermega.com>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: en\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"Language: cs_CZ\n"
 "X-Generator: Poedit 1.6.2\n"
 "X-Poedit-KeywordsList: _s;__;_x;_e\n"
 
 #: 404.php:15
 msgid "Oops! That page can&rsquo;t be found."
-msgstr ""
+msgstr "Jejda! Že stránku nelze nalézt."
 
 #: 404.php:19
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
+"Vypadá to, že se nic nalezeno na tomto místě. Možná zkuste jeden z níže "
+"uvedených odkazů, nebo vyhledávání?"
 
 #: 404.php:27
 msgid "Most Used Categories"
-msgstr ""
+msgstr "Nejvíce využívané kategorie"
 
 #. translators: %1$s: smiley
 #: 404.php:44
 msgid "Try looking in the monthly archives. %1$s"
-msgstr ""
+msgstr "Zkuste hledat v měsíčních archivech. %1$s"
 
 #: archive.php:31
 msgid "Author: %s"
-msgstr ""
+msgstr "Autor: %s"
 
 #: archive.php:39
 msgid "Day: %s"
-msgstr ""
+msgstr "Den: %s"
 
 #: archive.php:42
 msgid "Month: %s"
-msgstr ""
+msgstr "Měsíc: %s"
 
 #: archive.php:42
 msgctxt "monthly archives date format"
 msgid "F Y"
-msgstr ""
+msgstr "FY"
 
 #: archive.php:45
 msgid "Year: %s"
-msgstr ""
+msgstr "Rok: %s"
 
 #: archive.php:45
 msgctxt "yearly archives date format"
 msgid "Y"
-msgstr ""
+msgstr "Y"
 
 #: archive.php:48
 msgid "Asides"
-msgstr ""
+msgstr "Asides"
 
 #: archive.php:51
 msgid "Galleries"
-msgstr ""
+msgstr "Galerie"
 
 #: archive.php:54
 msgid "Images"
-msgstr ""
+msgstr "Obrázky"
 
 #: archive.php:57
 msgid "Videos"
-msgstr ""
+msgstr "Videa"
 
 #: archive.php:58
 msgid "Video"
-msgstr ""
+msgstr "Přehrávač Videa"
 
 #: archive.php:60
 msgid "Quotes"
-msgstr ""
+msgstr "Citáty"
 
 #: archive.php:63
 msgid "Links"
-msgstr ""
+msgstr "Odkazy"
 
 #: archive.php:66
 msgid "Statuses"
-msgstr ""
+msgstr "Stavy"
 
 #: archive.php:69
 msgid "Audios"
-msgstr ""
+msgstr "Audio"
 
 #: archive.php:72
 msgid "Chats"
-msgstr ""
+msgstr "Chatování"
 
 #: archive.php:75 sidebar.php:17
 msgid "Archives"
-msgstr ""
+msgstr "Archiv"
 
 #: comments.php:30
 msgctxt "comments title"
@@ -114,208 +116,220 @@ msgstr[1] ""
 
 #: comments.php:37 comments.php:57
 msgid "Comment navigation"
-msgstr ""
+msgstr "Navigace komentáři"
 
 #: comments.php:38 comments.php:58
 msgid "&larr; Older Comments"
-msgstr ""
+msgstr "&larr; Starší komentáře"
 
 #: comments.php:39 comments.php:59
 msgid "Newer Comments &rarr;"
-msgstr ""
+msgstr "Novější Komentáře &rarr;"
 
 #: comments.php:69
 msgid "Comments are closed."
-msgstr ""
+msgstr "Komentáře jsou uzavřeny."
 
 #: content-none.php:13
 msgid "Nothing Found"
-msgstr ""
+msgstr "Nic nenalezeno"
 
 #: content-none.php:19
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
+"Připraveno k publikovat svůj první příspěvek? <a href=\"%1$s\"> Get zde "
+"začal </a>."
 
 #: content-none.php:23
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
+"Je nám líto, ale nic uzavřeno své vyhledávací termíny. Zkuste to prosím "
+"znovu s některými jiná klíčová slova."
 
 #: content-none.php:28
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
-msgstr ""
+msgstr "Zdá se, že nemůžete najít, co hledáte. Snad hledání vám může pomoci."
 
 #: content-page.php:18 content-single.php:20 content.php:27
 msgid "Pages:"
-msgstr ""
+msgstr "Stránky:"
 
 #: content-page.php:23 content-single.php:60 content.php:61
 #: inc/template-tags.php:81 inc/template-tags.php:100
 msgid "Edit"
-msgstr ""
+msgstr "Upravit"
 
 #. translators: used between list items, there is a space after the comma
 #: content-single.php:29 content-single.php:32 content.php:38 content.php:48
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: content-single.php:37
 msgid ""
 "This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
 "\">permalink</a>."
 msgstr ""
+"Tento záznam byl označen %2$s . Záložka <a href=\"%3$s\" rel=\"Záložka\"> "
+"trvalý odkaz </a>."
 
 #: content-single.php:39
 msgid "Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
-msgstr ""
+msgstr "Záložka <a href=\"%3$s\" rel=\"Záložka\"> trvalý odkaz </a>."
 
 #: content-single.php:45
 msgid ""
 "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
 "rel=\"bookmark\">permalink</a>."
 msgstr ""
+"Tento záznam byl zaslán v %1$s a označili %2$s . Záložka <a href=\"%3$s\" "
+"rel=\"Záložka\"> trvalý odkaz </a>."
 
 #: content-single.php:47
 msgid ""
 "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
 "\">permalink</a>."
 msgstr ""
+"Tento záznam byl zaslán v %1$s . Záložka <a href=\"%3$s\" rel=\"Záložka\"> "
+"trvalý odkaz </a>."
 
 #: content.php:24
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "Pokračovat ve čtení <span class=\"meta-nav\"> → </span>"
 
 #: content.php:42
 msgid "Posted in %1$s"
-msgstr ""
+msgstr "Publikováno v %1$s"
 
 #: content.php:52
 msgid "Tagged %1$s"
-msgstr ""
+msgstr "Tagged %1$s"
 
 #: content.php:58
 msgid "Leave a comment"
-msgstr ""
+msgstr "Zanechat komentář"
 
 #: content.php:58
 msgid "1 Comment"
-msgstr ""
+msgstr "1 komentář"
 
 #: content.php:58
 msgid "% Comments"
-msgstr ""
+msgstr "% komentářů"
 
 #: footer.php:16
 msgid "Proudly powered by %s"
-msgstr ""
+msgstr "Přináší vám %"
 
 #: footer.php:18
 msgid "Theme: %1$s by %2$s."
-msgstr ""
+msgstr "Téma: %1$s pomocí %2$s ."
 
 #: functions.php:45
 msgid "Primary Menu"
-msgstr ""
+msgstr "Primární Menu"
 
 #: functions.php:65
 msgid "Sidebar"
-msgstr ""
+msgstr "Sidebar"
 
 #: header.php:31
 msgid "Menu"
-msgstr ""
+msgstr "Nabídka"
 
 #: header.php:32
 msgid "Skip to content"
-msgstr ""
+msgstr "Přejít na obsah"
 
 #: inc/extras.php:63
 msgid "Page %s"
-msgstr ""
+msgstr "Strana %s"
 
 #: inc/template-tags.php:23
 msgid "Posts navigation"
-msgstr ""
+msgstr "Příspěvky navigace"
 
 #: inc/template-tags.php:27
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr ""
+msgstr "<span class=\"meta-nav\">&larr;</span> Starší příspěvky"
 
 #: inc/template-tags.php:31
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "Novější příspěvky <span class=\"meta-nav\">&rarr;</span>"
 
 #: inc/template-tags.php:56
 msgid "Post navigation"
-msgstr ""
+msgstr "Navigace příspěvků"
 
 #: inc/template-tags.php:59
 msgctxt "Previous post link"
 msgid "<span class=\"meta-nav\">&larr;</span> %title"
-msgstr ""
+msgstr "<span class=\"meta-nav\"> ← </ span> %t LAVA"
 
 #: inc/template-tags.php:60
 msgctxt "Next post link"
 msgid "%title <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "%t LAVA <span class=\"meta-nav\"> → </ span>"
 
 #: inc/template-tags.php:81
 msgid "Pingback:"
-msgstr ""
+msgstr "Nazpátek:"
 
 #: inc/template-tags.php:91
 msgid "%s <span class=\"says\">says:</span>"
-msgstr ""
+msgstr "%s <span class=\"says\">říká:</span>"
 
 #: inc/template-tags.php:97
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
-msgstr ""
+msgstr "%1$s na %2$s"
 
 #: inc/template-tags.php:104
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "Váš komentář čeká na schválení"
 
 #: inc/template-tags.php:145
 msgid ""
 "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by "
 "%2$s</span>"
 msgstr ""
+"<span class=\"posted-on\"> Publikováno na %1$s </ span> <span class=\"byline"
+"\"> od %2$s </ span>"
 
 #: search.php:16
 msgid "Search Results for: %s"
-msgstr ""
+msgstr "Výsledky hledání pro: %s"
 
 #: searchform.php:10
 msgctxt "label"
 msgid "Search for:"
-msgstr ""
+msgstr "Hledat:"
 
 #: searchform.php:11
 msgctxt "placeholder"
 msgid "Search &hellip;"
-msgstr ""
+msgstr "Hledat ..."
 
 #: searchform.php:13
 msgctxt "submit button"
 msgid "Search"
-msgstr ""
+msgstr "Hledání"
 
 #: sidebar.php:24
 msgid "Search"
-msgstr ""
+msgstr "Hledání"
 
 #: sidebar.php:24
 msgid "Search:"
-msgstr ""
+msgstr "Vyhledávání:"
 
 #: sidebar.php:24
 msgid "Meta"
-msgstr ""
+msgstr "Meta"
 
 #. Theme Name of the plugin/theme
 msgid "athenea"
@@ -331,122 +345,125 @@ msgstr "IBERMEGA digital"
 
 #. Theme Options/theme
 msgid "Athenea Options"
-msgstr ""
+msgstr "Athenea možnosti"
 
 #. Theme Options/theme
 msgid "Restore Defaults"
-msgstr ""
+msgstr "Obnovit výchozí"
 
 #. Theme Options/theme
 msgid "Default options restored."
-msgstr ""
+msgstr "Výchozí možnosti obnovit."
 
 #. Theme Options/theme
 msgid "Save Options"
-msgstr ""
+msgstr "Uložte Možnosti"
 
 #. Theme Options/theme
 msgid "Options saved."
-msgstr ""
+msgstr "Možnosti uloženy."
 
 #. Theme Options/theme
 msgid "Remove"
-msgstr ""
+msgstr "Odstraňte"
 
 #. Theme Options/theme
 msgid "Upload"
-msgstr ""
+msgstr "Odesílání"
 
 #. Theme Options/theme
 msgid "Logos"
-msgstr ""
+msgstr "Loga"
 
 #. Theme Options/theme
 msgid "Logos Trademark"
-msgstr ""
+msgstr "Loga ochranných známek"
 
 #. Theme Options/theme
 msgid ""
 "Select the logo to be shown on the web with a maximum size of 292px wide."
 msgstr ""
+"Vyberte logo, který se zobrazí na webu s maximální velikostí 292px široký."
 
 #. Theme Options/theme
 msgid "Favicon"
-msgstr ""
+msgstr "Favicon"
 
 #. Theme Options/theme
 msgid "No file chosen"
-msgstr ""
+msgstr "Vybrán žádný soubor"
 
 #. Theme Options/theme
 msgid "Choose a Favicon in png with a maximum size of 64 x 64 px."
-msgstr ""
+msgstr "Vyberte si Favicon v png o maximální velikosti 64 x 64 px."
 
 #. Theme Options/theme
 msgid "Featured sections"
-msgstr ""
+msgstr "Vybrané profily"
 
 #. Theme Options/theme
 msgid "BLOCK RIGHT"
-msgstr ""
+msgstr "BLOCK RIGHT"
 
 #. Theme Options/theme
 msgid "Title"
-msgstr ""
+msgstr "Název"
 
 #. Theme Options/theme
 msgid "Add your first highlighted section here."
-msgstr ""
+msgstr "Přidat první zvýrazněnou část zde."
 
 #. Theme Options/theme
 msgid "Brief description."
-msgstr ""
+msgstr "Stručný popis."
 
 #. Theme Options/theme
 msgid "Sign in options on topic and write a brief description."
-msgstr ""
+msgstr "Přihlásit se opcí na téma a napsat krátký popis."
 
 #. Theme Options/theme
 msgid "Button Text"
-msgstr ""
+msgstr "Button Text"
 
 #. Theme Options/theme
 msgid "Read More"
-msgstr ""
+msgstr "Čtěte více"
 
 #. Theme Options/theme
 msgid "URL Button"
-msgstr ""
+msgstr "URL Button"
 
 #. Theme Options/theme
 msgid ""
 "Select an image to display. The image must be transparent gif or png "
 "background"
 msgstr ""
+"Vyberte snímek, který chcete zobrazit. Obrázek musí být transparentní gif "
+"nebo png pozadí"
 
 #. Theme Options/theme
 msgid "CENTRAL BLOCK"
-msgstr ""
+msgstr "CENTRAL BLOCK"
 
 #. Theme Options/theme
 msgid "Continue with the second highlighted section."
-msgstr ""
+msgstr "Pokračovat ve druhém zvýrazněné části."
 
 #. Theme Options/theme
 msgid "BLOCK LEFT"
-msgstr ""
+msgstr "BLOK LEVÝ"
 
 #. Theme Options/theme
 msgid "And finally, the third section highlighted."
-msgstr ""
+msgstr "A konečně, třetí část zvýrazněna."
 
 #. Theme Options/theme
 msgid "BODY CENTRAL BLOC"
-msgstr ""
+msgstr "BODY CENTRAL BLOC"
 
 #. Theme Options/theme
 msgid "Who is the company"
-msgstr ""
+msgstr "Kdo je společnost"
 
 #. Theme Options/theme
 msgid ""
@@ -454,99 +471,103 @@ msgid ""
 "option for visitors. Insert a text descripctivo y call the attention of your "
 "potential in the first minute."
 msgstr ""
+"Stručný popis vašeho podnikání v této oblasti webové stránky, je nejlepší "
+"volbou pro návštěvníky. Vložení textu descripctivo y upozornil svého "
+"potenciálu v první minutě."
 
 #. Theme Options/theme
 msgid "Learn more"
-msgstr ""
+msgstr "Dozvědět se více"
 
 #. Theme Options/theme
 msgid "Social Icons"
-msgstr ""
+msgstr "Sociální ikony"
 
 #. Theme Options/theme
 msgid "Activate"
-msgstr ""
+msgstr "Aktivovat"
 
 #. Theme Options/theme
 msgid "Deactivate"
-msgstr ""
+msgstr "Deaktivovat"
 
 #. Theme Options/theme
 msgid "Enter the full URL."
-msgstr ""
+msgstr "Zadejte úplnou adresu URL."
 
 #. Theme Options/theme
 msgid "Designs"
-msgstr ""
+msgstr "Vzory"
 
 #. Theme Options/theme
 msgid "Theme Design"
-msgstr ""
+msgstr "Téma Design"
 
 #. Theme Options/theme
 msgid "Choose a layout for your website"
-msgstr ""
+msgstr "Vyberte rozvržení pro vaše webové stránky"
 
 #. Theme Options/theme
 msgid "Contact"
-msgstr ""
+msgstr "Kontakt"
 
 #. Theme Options/theme
 msgid "Contact Details."
-msgstr ""
+msgstr "Kontaktní údaje."
 
 #. Theme Options/theme
 msgid "Company Name"
-msgstr ""
+msgstr "Název společnosti"
 
 #. Theme Options/theme
 msgid "Company S.A."
-msgstr ""
+msgstr "Company SA"
 
 #. Theme Options/theme
 msgid ""
 "CIF/NIF/NIE (tax id). Mandatory for companies in the European Community."
 msgstr ""
+"CIF / NIF / NIE (DIČ). Povinné pro společnosti v Evropském společenství."
 
 #. Theme Options/theme
 msgid "B123456789"
-msgstr ""
+msgstr "B123456789"
 
 #. Theme Options/theme
 msgid "Address"
-msgstr ""
+msgstr "Adresa"
 
 #. Theme Options/theme
 msgid "New Burlington St, 123"
-msgstr ""
+msgstr "New Burlington St, 123"
 
 #. Theme Options/theme
 msgid "Postal Code"
-msgstr ""
+msgstr "PSČ"
 
 #. Theme Options/theme
 msgid "W1B 5NF"
-msgstr ""
+msgstr "W1B 5NF"
 
 #. Theme Options/theme
 msgid "City"
-msgstr ""
+msgstr "Město"
 
 #. Theme Options/theme
 msgid "London"
-msgstr ""
+msgstr "Londýn"
 
 #. Theme Options/theme
 msgid "Country"
-msgstr ""
+msgstr "Země"
 
 #. Theme Options/theme
 msgid "United Kingdom"
-msgstr ""
+msgstr "Spojené království"
 
 #. Theme Options/theme
 msgid "Phone"
-msgstr ""
+msgstr "Telefon"
 
 #. Theme Options/theme
 msgid "9XX 123 456"
@@ -554,19 +575,19 @@ msgstr "9XX 123 456"
 
 #. Theme Options/theme
 msgid "E-Mail contact"
-msgstr ""
+msgstr "E-mailový kontakt"
 
 #. Theme Options/theme
 msgid "office@company.com"
-msgstr ""
+msgstr "office@company.com"
 
 #. Theme Options/Donative
 msgid "Do you like the theme Athenea?"
-msgstr ""
+msgstr "Líbí se vám téma Athenea?"
 
 #. Theme Options/Donative
 msgid "Buy me a coffee!"
-msgstr ""
+msgstr "Kup mi kávu!"
 
 #. Theme Options/Donative
 msgid ""
@@ -574,131 +595,137 @@ msgid ""
 "improvement. You can make a donation to your choice or collaboration with "
 "the developer :-)"
 msgstr ""
+"Pomozte nám pokračovat v práci pro vás na aktualizace tohoto problému a "
+"zlepšení. Můžete si dar do svého výběru nebo spolupráci s developerem :-)"
 
 #. Theme Options/Donative
 msgid "Voluntary donation"
-msgstr ""
+msgstr "Dobrovolné dárcovství"
 
 #. Theme Options/Donative
 msgid "Collaborate"
-msgstr ""
+msgstr "Spolupracovat"
 
 #. Theme Options/Donative
 msgid "for Coffee &#8364;0,80 EUR"
-msgstr ""
+msgstr "pro kávu € 0,80 EUR"
 
 #. Theme Options/Donative
 msgid "for Coca-Cola &#8364;1,20 EUR"
-msgstr ""
+msgstr "Coca-Cola € 1,20 EUR"
 
 #. Theme Options/Donative
 msgid "for Beer &#8364;1,45 EUR"
-msgstr ""
+msgstr "pro pivo € 1,45 EUR"
 
 #. Theme Options/Donative
 msgid "for a Burger &#8364;2,00 EUR"
-msgstr ""
+msgstr "pro Burger € 2,00 EUR"
 
 #. Theme Options/Donative
 msgid "All &#8364;5,45 EUR"
-msgstr ""
+msgstr "Všechny € 5,45 EUR"
 
 #. Theme Options/Donative
 msgid "Opinion"
-msgstr ""
+msgstr "Názor"
 
 #. Theme Options/Donative
 msgid "Very good"
-msgstr ""
+msgstr "Velmi dobrý"
 
 #. Theme Options/Donative
 msgid "Good"
-msgstr ""
+msgstr "Dobré"
 
 #. Theme Options/Donative
 msgid "Not bad"
-msgstr ""
+msgstr "Není to špatné"
 
 #. Theme Options/Donative
 msgid "Keep working"
-msgstr ""
+msgstr "Pokračovat v práci"
 
 #. Theme Options/Donative
 msgid "Athenea Documentation"
-msgstr ""
+msgstr "Athenea Dokumentace"
 
 #. Portada
 msgid "Continue reading &raquo;&raquo;"
-msgstr ""
+msgstr "Pokračovat ve čtení »»"
 
 #. Footer
 msgid "Footer A"
-msgstr ""
+msgstr "Zápatí"
 
 #. Footer
 msgid "Footer B"
-msgstr ""
+msgstr "Zápatí B"
 
 #. Footer
 msgid "Footer C"
-msgstr ""
+msgstr "Zápatí C"
 
 #. Footer
 msgid "Footer D"
-msgstr ""
+msgstr "Zápatí D"
 
 #. Footer
 msgid "Athenea Contact"
-msgstr ""
+msgstr "Athenea Kontakt"
 
 #. Footer
 msgid "Top"
-msgstr ""
+msgstr "Nahoru"
 
 #. Footer
 msgid "Theme designed by"
-msgstr ""
+msgstr "Theme designed by"
 
 #. Comments
 msgid "Comments"
-msgstr ""
+msgstr "Poznámky"
 
 #. Comments
 msgid ""
 "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags "
 "and attributes: %s"
 msgstr ""
+"Můžete použít tyto <abbr title=\"HyperText Markup Language\"> HTML </ abbr> "
+"tagy a atributy: %s"
 
 #. Comments
 msgid "Leave a reply"
-msgstr ""
+msgstr "Zanechejte svou odpověď"
 
 #. Comments
 msgid "Leave a reply to %s"
-msgstr ""
+msgstr "Zanechat odpověď na %s"
 
 #. Comments
 msgid "Reply <span>&darr;</span>"
-msgstr ""
+msgstr "Odpovědět <span>&darr;</span>"
 
 #. Comments
 msgid "Comment"
-msgstr ""
+msgstr "Komentář"
 
 #: Comments
 msgid "required"
-msgstr ""
+msgstr "vyžadováno"
 
 #: Comments
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
-msgstr ""
+msgstr "Musíte být <a href=\"%s\"> přihlásit </a>, abyste mohl psát komentář."
 
 #: Comments
 msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
 "this account\">Log out?</a>"
 msgstr ""
+"Přihlášen jako <a href=\"%1$s\"> %2$s </a>. <a href=\"%3$s\" title=\"Log z "
+"tohoto účtu\"> Odhlásit? </a>"
 
 #: Comments
 msgid "will not be published"
-msgstr ""
+msgstr "nebude zveřejněna"

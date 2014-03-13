@@ -8,102 +8,104 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2014-03-13 18:36+0100\n"
+"PO-Revision-Date: 2014-03-13 16:57+0100\n"
 "Last-Translator: Miguel Angel <miguel@ibermega.com>\n"
 "Language-Team: IBERMEGA digital <soporte@ibermega.com>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: en\n"
+"Language: gl_ES\n"
 "X-Generator: Poedit 1.6.2\n"
 "X-Poedit-KeywordsList: _s;__;_x;_e\n"
 
 #: 404.php:15
 msgid "Oops! That page can&rsquo;t be found."
-msgstr ""
+msgstr "Ops! Esta páxina non se pode atopar."
 
 #: 404.php:19
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
+"Parece que nada se atopou neste lugar. Quizais proba un dos links abaixo ou "
+"unha procura?"
 
 #: 404.php:27
 msgid "Most Used Categories"
-msgstr ""
+msgstr "A maioría das categorías utilizadas"
 
 #. translators: %1$s: smiley
 #: 404.php:44
 msgid "Try looking in the monthly archives. %1$s"
-msgstr ""
+msgstr "Probe ollar nos arquivos mensuais. %1$s"
 
 #: archive.php:31
 msgid "Author: %s"
-msgstr ""
+msgstr "Autor: %s"
 
 #: archive.php:39
 msgid "Day: %s"
-msgstr ""
+msgstr "Día: %s"
 
 #: archive.php:42
 msgid "Month: %s"
-msgstr ""
+msgstr "Mes: %s"
 
 #: archive.php:42
 msgctxt "monthly archives date format"
 msgid "F Y"
-msgstr ""
+msgstr "FY"
 
 #: archive.php:45
 msgid "Year: %s"
-msgstr ""
+msgstr "Ano: %s"
 
 #: archive.php:45
 msgctxt "yearly archives date format"
 msgid "Y"
-msgstr ""
+msgstr "Y"
 
 #: archive.php:48
 msgid "Asides"
-msgstr ""
+msgstr "Apartes"
 
 #: archive.php:51
 msgid "Galleries"
-msgstr ""
+msgstr "Galerías"
 
 #: archive.php:54
 msgid "Images"
-msgstr ""
+msgstr "Imaxes"
 
 #: archive.php:57
 msgid "Videos"
-msgstr ""
+msgstr "Vídeos"
 
 #: archive.php:58
 msgid "Video"
-msgstr ""
+msgstr "Vídeo"
 
 #: archive.php:60
 msgid "Quotes"
-msgstr ""
+msgstr "Presupostos"
 
 #: archive.php:63
 msgid "Links"
-msgstr ""
+msgstr "Ligazóns"
 
 #: archive.php:66
 msgid "Statuses"
-msgstr ""
+msgstr "Status"
 
 #: archive.php:69
 msgid "Audios"
-msgstr ""
+msgstr "Audios"
 
 #: archive.php:72
 msgid "Chats"
-msgstr ""
+msgstr "Chat"
 
 #: archive.php:75 sidebar.php:17
 msgid "Archives"
-msgstr ""
+msgstr "Ficheiro"
 
 #: comments.php:30
 msgctxt "comments title"
@@ -114,208 +116,221 @@ msgstr[1] ""
 
 #: comments.php:37 comments.php:57
 msgid "Comment navigation"
-msgstr ""
+msgstr "Navegación Comentario"
 
 #: comments.php:38 comments.php:58
 msgid "&larr; Older Comments"
-msgstr ""
+msgstr "← Comentarios máis antigos"
 
 #: comments.php:39 comments.php:59
 msgid "Newer Comments &rarr;"
-msgstr ""
+msgstr "Recentes comentarios →"
 
 #: comments.php:69
 msgid "Comments are closed."
-msgstr ""
+msgstr "Os comentarios están pechados."
 
 #: content-none.php:13
 msgid "Nothing Found"
-msgstr ""
+msgstr "Non se atopou nada"
 
 #: content-none.php:19
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
+"Listo para publicar o seu primeiro post? <a href=\"%1$s\"> Comezar aquí </a>."
 
 #: content-none.php:23
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
+"Sentímolo, pero nada se atopou termos da súa busca. Por favor, inténteo de "
+"novo con algunhas palabras clave distintas."
 
 #: content-none.php:28
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
+"Parece que non pode atopar o que está a procurar. Quizais a investigación "
+"pode axudar."
 
 #: content-page.php:18 content-single.php:20 content.php:27
 msgid "Pages:"
-msgstr ""
+msgstr "Páxinas:"
 
 #: content-page.php:23 content-single.php:60 content.php:61
 #: inc/template-tags.php:81 inc/template-tags.php:100
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
 #. translators: used between list items, there is a space after the comma
 #: content-single.php:29 content-single.php:32 content.php:38 content.php:48
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: content-single.php:37
 msgid ""
 "This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
 "\">permalink</a>."
 msgstr ""
+"Esta entrada foi marcado %2$s . Bookmark a <a href=\"%3$s\" rel=\"etiqueta"
+"\">permalink</a>."
 
 #: content-single.php:39
 msgid "Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
-msgstr ""
+msgstr "Bookmark a <a href=\"%3$s\" rel=\"etiqueta\">permalink</a>."
 
 #: content-single.php:45
 msgid ""
 "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
 "rel=\"bookmark\">permalink</a>."
 msgstr ""
+"Esta entrada foi publicada en %1$s e marcou %2$s . Bookmark a <a href=\"%3$s"
+"\" rel=\"etiqueta\">permalink</a>."
 
 #: content-single.php:47
 msgid ""
 "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
 "\">permalink</a>."
 msgstr ""
+"Esta entrada foi publicada en %1$s . Bookmark a <a href=\"%3$s\" rel="
+"\"etiqueta\">permalink</a>."
 
 #: content.php:24
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "Continúe lendo <span class=\"meta-nav\"> → </span>"
 
 #: content.php:42
 msgid "Posted in %1$s"
-msgstr ""
+msgstr "Posta en %1$s"
 
 #: content.php:52
 msgid "Tagged %1$s"
-msgstr ""
+msgstr "Tagged %1$s"
 
 #: content.php:58
 msgid "Leave a comment"
-msgstr ""
+msgstr "Deixe un comentario"
 
 #: content.php:58
 msgid "1 Comment"
-msgstr ""
+msgstr "1 Comentario"
 
 #: content.php:58
 msgid "% Comments"
-msgstr ""
+msgstr "% Comentarios"
 
 #: footer.php:16
 msgid "Proudly powered by %s"
-msgstr ""
+msgstr "Orgullosos funciona %s"
 
 #: footer.php:18
 msgid "Theme: %1$s by %2$s."
-msgstr ""
+msgstr "Tema: %1$s por %2$s ."
 
 #: functions.php:45
 msgid "Primary Menu"
-msgstr ""
+msgstr "Menú principal"
 
 #: functions.php:65
 msgid "Sidebar"
-msgstr ""
+msgstr "Sidebar"
 
 #: header.php:31
 msgid "Menu"
-msgstr ""
+msgstr "Menú"
 
 #: header.php:32
 msgid "Skip to content"
-msgstr ""
+msgstr "Ir ao contido"
 
 #: inc/extras.php:63
 msgid "Page %s"
-msgstr ""
+msgstr "Páxina %s"
 
 #: inc/template-tags.php:23
 msgid "Posts navigation"
-msgstr ""
+msgstr "Navegación Mensaxes"
 
 #: inc/template-tags.php:27
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr ""
+msgstr "<span class=\"meta-nav\"> mensaxes ← </ span> máis vellos"
 
 #: inc/template-tags.php:31
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "Anotacións máis recentes <span class=\"meta-nav\"> → </ span>"
 
 #: inc/template-tags.php:56
 msgid "Post navigation"
-msgstr ""
+msgstr "Mensaxe navegación"
 
 #: inc/template-tags.php:59
 msgctxt "Previous post link"
 msgid "<span class=\"meta-nav\">&larr;</span> %title"
-msgstr ""
+msgstr "<span class=\"meta-nav\"> ← </ span> %t itle"
 
 #: inc/template-tags.php:60
 msgctxt "Next post link"
 msgid "%title <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "%t itle <span class=\"meta-nav\"> → </ span>"
 
 #: inc/template-tags.php:81
 msgid "Pingback:"
-msgstr ""
+msgstr "Pingback:"
 
 #: inc/template-tags.php:91
 msgid "%s <span class=\"says\">says:</span>"
-msgstr ""
+msgstr "%s <span class=\"says\"> di: </ span>"
 
 #: inc/template-tags.php:97
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
-msgstr ""
+msgstr "%1$s en %2$s"
 
 #: inc/template-tags.php:104
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "O seu comentario está agardando moderación."
 
 #: inc/template-tags.php:145
 msgid ""
 "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by "
 "%2$s</span>"
 msgstr ""
+"<span class=\"posted-on\"> Posta en %1$s </ span> <span class=\"byline\"> "
+"por %2$s </ a>"
 
 #: search.php:16
 msgid "Search Results for: %s"
-msgstr ""
+msgstr "Resultados da busca para: %s"
 
 #: searchform.php:10
 msgctxt "label"
 msgid "Search for:"
-msgstr ""
+msgstr "Buscar por:"
 
 #: searchform.php:11
 msgctxt "placeholder"
 msgid "Search &hellip;"
-msgstr ""
+msgstr "Buscar ..."
 
 #: searchform.php:13
 msgctxt "submit button"
 msgid "Search"
-msgstr ""
+msgstr "Buscar"
 
 #: sidebar.php:24
 msgid "Search"
-msgstr ""
+msgstr "Buscar"
 
 #: sidebar.php:24
 msgid "Search:"
-msgstr ""
+msgstr "Buscar:"
 
 #: sidebar.php:24
 msgid "Meta"
-msgstr ""
+msgstr "Meta"
 
 #. Theme Name of the plugin/theme
 msgid "athenea"
@@ -331,122 +346,125 @@ msgstr "IBERMEGA digital"
 
 #. Theme Options/theme
 msgid "Athenea Options"
-msgstr ""
+msgstr "ATHENEA Opcións"
 
 #. Theme Options/theme
 msgid "Restore Defaults"
-msgstr ""
+msgstr "Restore Defaults"
 
 #. Theme Options/theme
 msgid "Default options restored."
-msgstr ""
+msgstr "As opcións estándar restaurado."
 
 #. Theme Options/theme
 msgid "Save Options"
-msgstr ""
+msgstr "Salva Opcións"
 
 #. Theme Options/theme
 msgid "Options saved."
-msgstr ""
+msgstr "Opcións gardadas."
 
 #. Theme Options/theme
 msgid "Remove"
-msgstr ""
+msgstr "Eliminar"
 
 #. Theme Options/theme
 msgid "Upload"
-msgstr ""
+msgstr "Cargar"
 
 #. Theme Options/theme
 msgid "Logos"
-msgstr ""
+msgstr "Logos"
 
 #. Theme Options/theme
 msgid "Logos Trademark"
-msgstr ""
+msgstr "Logos Marcas"
 
 #. Theme Options/theme
 msgid ""
 "Select the logo to be shown on the web with a maximum size of 292px wide."
 msgstr ""
+"Seleccione o logo a ser amosado na web cun tamaño máximo de 292px de ancho."
 
 #. Theme Options/theme
 msgid "Favicon"
-msgstr ""
+msgstr "Favicon"
 
 #. Theme Options/theme
 msgid "No file chosen"
-msgstr ""
+msgstr "Non hai ningún ficheiro seleccionado"
 
 #. Theme Options/theme
 msgid "Choose a Favicon in png with a maximum size of 64 x 64 px."
-msgstr ""
+msgstr "Escolla un favicon en png cun tamaño máximo de 64 x 64 px."
 
 #. Theme Options/theme
 msgid "Featured sections"
-msgstr ""
+msgstr "Seccións destacadas"
 
 #. Theme Options/theme
 msgid "BLOCK RIGHT"
-msgstr ""
+msgstr "BLOQUE DEREITO"
 
 #. Theme Options/theme
 msgid "Title"
-msgstr ""
+msgstr "Título"
 
 #. Theme Options/theme
 msgid "Add your first highlighted section here."
-msgstr ""
+msgstr "Fai a súa primeira sección destaque aquí."
 
 #. Theme Options/theme
 msgid "Brief description."
-msgstr ""
+msgstr "Breve descrición."
 
 #. Theme Options/theme
 msgid "Sign in options on topic and write a brief description."
-msgstr ""
+msgstr "Entre as opcións de tema e escribir unha breve descrición."
 
 #. Theme Options/theme
 msgid "Button Text"
-msgstr ""
+msgstr "Button Text"
 
 #. Theme Options/theme
 msgid "Read More"
-msgstr ""
+msgstr "Ler máis"
 
 #. Theme Options/theme
 msgid "URL Button"
-msgstr ""
+msgstr "Botón URL"
 
 #. Theme Options/theme
 msgid ""
 "Select an image to display. The image must be transparent gif or png "
 "background"
 msgstr ""
+"Seleccione unha imaxe para mostrar. A imaxe debe ser gif transparente ou "
+"fondo png"
 
 #. Theme Options/theme
 msgid "CENTRAL BLOCK"
-msgstr ""
+msgstr "BLOQUE CENTRAL"
 
 #. Theme Options/theme
 msgid "Continue with the second highlighted section."
-msgstr ""
+msgstr "Continúe coa segunda sección destacada."
 
 #. Theme Options/theme
 msgid "BLOCK LEFT"
-msgstr ""
+msgstr "Bloque de Esquerda"
 
 #. Theme Options/theme
 msgid "And finally, the third section highlighted."
-msgstr ""
+msgstr "E, finalmente, a terceira sección destacada."
 
 #. Theme Options/theme
 msgid "BODY CENTRAL BLOC"
-msgstr ""
+msgstr "CORPO CENTRAL Bloc"
 
 #. Theme Options/theme
 msgid "Who is the company"
-msgstr ""
+msgstr "Quen é a empresa"
 
 #. Theme Options/theme
 msgid ""
@@ -454,99 +472,104 @@ msgid ""
 "option for visitors. Insert a text descripctivo y call the attention of your "
 "potential in the first minute."
 msgstr ""
+"Unha breve descrición da súa empresa nesta área do sitio web é a mellor "
+"opción para os visitantes. Insira un texto descripctivo y chamar a atención "
+"do seu potencial no primeiro minuto."
 
 #. Theme Options/theme
 msgid "Learn more"
-msgstr ""
+msgstr "Máis información"
 
 #. Theme Options/theme
 msgid "Social Icons"
-msgstr ""
+msgstr "Iconas Sociais"
 
 #. Theme Options/theme
 msgid "Activate"
-msgstr ""
+msgstr "Activar"
 
 #. Theme Options/theme
 msgid "Deactivate"
-msgstr ""
+msgstr "Desactivar"
 
 #. Theme Options/theme
 msgid "Enter the full URL."
-msgstr ""
+msgstr "Introduza a URL completa."
 
 #. Theme Options/theme
 msgid "Designs"
-msgstr ""
+msgstr "Deseños"
 
 #. Theme Options/theme
 msgid "Theme Design"
-msgstr ""
+msgstr "Tema do proxecto"
 
 #. Theme Options/theme
 msgid "Choose a layout for your website"
-msgstr ""
+msgstr "Escolla un esquema para a súa web"
 
 #. Theme Options/theme
 msgid "Contact"
-msgstr ""
+msgstr "Contacto"
 
 #. Theme Options/theme
 msgid "Contact Details."
-msgstr ""
+msgstr "Contacta detalles."
 
 #. Theme Options/theme
 msgid "Company Name"
-msgstr ""
+msgstr "Nome da empresa"
 
 #. Theme Options/theme
 msgid "Company S.A."
-msgstr ""
+msgstr "Company SA"
 
 #. Theme Options/theme
 msgid ""
 "CIF/NIF/NIE (tax id). Mandatory for companies in the European Community."
 msgstr ""
+"CIF / NIF / NIE (id impostos). Obrigatoria para as empresas da Comunidade "
+"Europea."
 
 #. Theme Options/theme
 msgid "B123456789"
-msgstr ""
+msgstr "B123456789"
 
 #. Theme Options/theme
 msgid "Address"
-msgstr ""
+msgstr "Enderezo"
 
 #. Theme Options/theme
 msgid "New Burlington St, 123"
-msgstr ""
+msgstr "New Burlington St, 123"
 
 #. Theme Options/theme
 msgid "Postal Code"
-msgstr ""
+msgstr "CP"
 
 #. Theme Options/theme
 msgid "W1B 5NF"
-msgstr ""
+msgstr "W1B 5NF"
 
 #. Theme Options/theme
 msgid "City"
-msgstr ""
+msgstr "Cidade"
 
 #. Theme Options/theme
 msgid "London"
-msgstr ""
+msgstr "Londres"
 
 #. Theme Options/theme
 msgid "Country"
-msgstr ""
+msgstr "País"
 
 #. Theme Options/theme
 msgid "United Kingdom"
-msgstr ""
+msgstr "Reino Unido"
 
 #. Theme Options/theme
 msgid "Phone"
-msgstr ""
+msgstr "Teléfono"
 
 #. Theme Options/theme
 msgid "9XX 123 456"
@@ -554,19 +577,19 @@ msgstr "9XX 123 456"
 
 #. Theme Options/theme
 msgid "E-Mail contact"
-msgstr ""
+msgstr "Contactar Correo-e"
 
 #. Theme Options/theme
 msgid "office@company.com"
-msgstr ""
+msgstr "office@company.com"
 
 #. Theme Options/Donative
 msgid "Do you like the theme Athenea?"
-msgstr ""
+msgstr "Che gusta o tema Athenea?"
 
 #. Theme Options/Donative
 msgid "Buy me a coffee!"
-msgstr ""
+msgstr "Compra-me un café!"
 
 #. Theme Options/Donative
 msgid ""
@@ -574,131 +597,138 @@ msgid ""
 "improvement. You can make a donation to your choice or collaboration with "
 "the developer :-)"
 msgstr ""
+"Axúdanos a seguir traballando para vostede na actualización deste problema e "
+"da mellora. Podes facer unha doazón para a súa elección ou colaboración co "
+"creador :-)"
 
 #. Theme Options/Donative
 msgid "Voluntary donation"
-msgstr ""
+msgstr "A doazón voluntaria"
 
 #. Theme Options/Donative
 msgid "Collaborate"
-msgstr ""
+msgstr "Colaborar"
 
 #. Theme Options/Donative
 msgid "for Coffee &#8364;0,80 EUR"
-msgstr ""
+msgstr "para o café € 0,80 EUR"
 
 #. Theme Options/Donative
 msgid "for Coca-Cola &#8364;1,20 EUR"
-msgstr ""
+msgstr "á Coca-Cola € 1,20 EUR"
 
 #. Theme Options/Donative
 msgid "for Beer &#8364;1,45 EUR"
-msgstr ""
+msgstr "para a cervexa € 1,45 EUR"
 
 #. Theme Options/Donative
 msgid "for a Burger &#8364;2,00 EUR"
-msgstr ""
+msgstr "a un Burger € 2,00 EUR"
 
 #. Theme Options/Donative
 msgid "All &#8364;5,45 EUR"
-msgstr ""
+msgstr "Todo € 5,45 EUR"
 
 #. Theme Options/Donative
 msgid "Opinion"
-msgstr ""
+msgstr "Opinión"
 
 #. Theme Options/Donative
 msgid "Very good"
-msgstr ""
+msgstr "Moi bo"
 
 #. Theme Options/Donative
 msgid "Good"
-msgstr ""
+msgstr "Bo"
 
 #. Theme Options/Donative
 msgid "Not bad"
-msgstr ""
+msgstr "Non é malo"
 
 #. Theme Options/Donative
 msgid "Keep working"
-msgstr ""
+msgstr "Continúe a traballar"
 
 #. Theme Options/Donative
 msgid "Athenea Documentation"
-msgstr ""
+msgstr "Athenea Documentación"
 
 #. Portada
 msgid "Continue reading &raquo;&raquo;"
-msgstr ""
+msgstr "Continúe lendo »»"
 
 #. Footer
 msgid "Footer A"
-msgstr ""
+msgstr "Rodapé A"
 
 #. Footer
 msgid "Footer B"
-msgstr ""
+msgstr "Rodapé B"
 
 #. Footer
 msgid "Footer C"
-msgstr ""
+msgstr "Rodapé C"
 
 #. Footer
 msgid "Footer D"
-msgstr ""
+msgstr "Rodapé D"
 
 #. Footer
 msgid "Athenea Contact"
-msgstr ""
+msgstr "Athenea Contacto"
 
 #. Footer
 msgid "Top"
-msgstr ""
+msgstr "Superior"
 
 #. Footer
 msgid "Theme designed by"
-msgstr ""
+msgstr "Tema deseñado por"
 
 #. Comments
 msgid "Comments"
-msgstr ""
+msgstr "Comentarios"
 
 #. Comments
 msgid ""
 "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags "
 "and attributes: %s"
 msgstr ""
+"Podes usar estes <abbr title=\"HyperText Markup Language\"> HTML </ abbr> "
+"etiquetas e atributos: %s"
 
 #. Comments
 msgid "Leave a reply"
-msgstr ""
+msgstr "Deixe unha resposta"
 
 #. Comments
 msgid "Leave a reply to %s"
-msgstr ""
+msgstr "Deixe unha resposta para %s"
 
 #. Comments
 msgid "Reply <span>&darr;</span>"
-msgstr ""
+msgstr "Responder <span> ↓ </ span>"
 
 #. Comments
 msgid "Comment"
-msgstr ""
+msgstr "Comentario"
 
 #: Comments
 msgid "required"
-msgstr ""
+msgstr "necesario"
 
 #: Comments
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
-msgstr ""
+msgstr "Ten que ser <a href=\"%s\"> sesión </a> para publicar un comentario."
 
 #: Comments
 msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
 "this account\">Log out?</a>"
 msgstr ""
+"Rexistrado como <a href=\"%1$s\"> %2$s </a>. <a href=\"%3$s\" title=\"Saír "
+"da conta\"> Saír </a>"
 
 #: Comments
 msgid "will not be published"
-msgstr ""
+msgstr "non será publicado"

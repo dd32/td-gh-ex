@@ -8,102 +8,104 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2014-03-13 18:36+0100\n"
+"PO-Revision-Date: 2014-03-13 16:35+0100\n"
 "Last-Translator: Miguel Angel <miguel@ibermega.com>\n"
 "Language-Team: IBERMEGA digital <soporte@ibermega.com>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: en\n"
+"Language: el_GR\n"
 "X-Generator: Poedit 1.6.2\n"
 "X-Poedit-KeywordsList: _s;__;_x;_e\n"
 
 #: 404.php:15
 msgid "Oops! That page can&rsquo;t be found."
-msgstr ""
+msgstr "Ωχ! Ότι η σελίδα δεν μπορεί να βρεθεί."
 
 #: 404.php:19
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
+"Δε μοιάζει με τίποτε βρέθηκε σε αυτή τη θέση. Ίσως δοκιμάστε ένα από τα "
+"παρακάτω συνδέσμους ή μια αναζήτηση;"
 
 #: 404.php:27
 msgid "Most Used Categories"
-msgstr ""
+msgstr "Οι περισσότεροι Μεταχειρισμένα Κατηγορίες"
 
 #. translators: %1$s: smiley
 #: 404.php:44
 msgid "Try looking in the monthly archives. %1$s"
-msgstr ""
+msgstr "Προσπαθήστε να αναζητούν στις μηνιαίες αρχεία. %1$s"
 
 #: archive.php:31
 msgid "Author: %s"
-msgstr ""
+msgstr "Συντάκτης: %s"
 
 #: archive.php:39
 msgid "Day: %s"
-msgstr ""
+msgstr "Ημέρα: %s"
 
 #: archive.php:42
 msgid "Month: %s"
-msgstr ""
+msgstr "Μήνας: %s"
 
 #: archive.php:42
 msgctxt "monthly archives date format"
 msgid "F Y"
-msgstr ""
+msgstr "FY"
 
 #: archive.php:45
 msgid "Year: %s"
-msgstr ""
+msgstr "Έτος: %s"
 
 #: archive.php:45
 msgctxt "yearly archives date format"
 msgid "Y"
-msgstr ""
+msgstr "Ν"
 
 #: archive.php:48
 msgid "Asides"
-msgstr ""
+msgstr "Παραλειπόμενα"
 
 #: archive.php:51
 msgid "Galleries"
-msgstr ""
+msgstr "Άλμπουμ"
 
 #: archive.php:54
 msgid "Images"
-msgstr ""
+msgstr "Εικόνες"
 
 #: archive.php:57
 msgid "Videos"
-msgstr ""
+msgstr "Βίντεο"
 
 #: archive.php:58
 msgid "Video"
-msgstr ""
+msgstr "Βίντεο"
 
 #: archive.php:60
 msgid "Quotes"
-msgstr ""
+msgstr "Αποσπάσματα"
 
 #: archive.php:63
 msgid "Links"
-msgstr ""
+msgstr "Σύνδεσμοι"
 
 #: archive.php:66
 msgid "Statuses"
-msgstr ""
+msgstr "Καταστάσεις"
 
 #: archive.php:69
 msgid "Audios"
-msgstr ""
+msgstr "Ήχοι"
 
 #: archive.php:72
 msgid "Chats"
-msgstr ""
+msgstr "Συζητήσεις"
 
 #: archive.php:75 sidebar.php:17
 msgid "Archives"
-msgstr ""
+msgstr "Αρχεία"
 
 #: comments.php:30
 msgctxt "comments title"
@@ -114,208 +116,223 @@ msgstr[1] ""
 
 #: comments.php:37 comments.php:57
 msgid "Comment navigation"
-msgstr ""
+msgstr "Σχόλιο πλοήγησης"
 
 #: comments.php:38 comments.php:58
 msgid "&larr; Older Comments"
-msgstr ""
+msgstr "← Παλιότερη Σχόλια"
 
 #: comments.php:39 comments.php:59
 msgid "Newer Comments &rarr;"
-msgstr ""
+msgstr "Νεότερα Σχόλια &rarr;"
 
 #: comments.php:69
 msgid "Comments are closed."
-msgstr ""
+msgstr "Η δυνατότητα σχολιασμού είναι απενεργοποιημένη."
 
 #: content-none.php:13
 msgid "Nothing Found"
-msgstr ""
+msgstr "Τίποτα δεν βρέθηκε"
 
 #: content-none.php:19
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
+"Έτοιμος να δημοσιεύσει την πρώτη θέση σας; <a href=\"%1$s\"> Ξεκινήστε εδώ </"
+"a>."
 
 #: content-none.php:23
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
+"Λυπούμαστε, αλλά τίποτα δεν ταιριάζουν δικούς σας όρους αναζήτησης. Παρακαλώ "
+"δοκιμάστε ξανά με κάποιες διαφορετικές λέξεις-κλειδιά."
 
 #: content-none.php:28
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
+"Φαίνεται ότι δεν μπορείτε να βρείτε αυτό που ψάχνετε. Ίσως αναζήτηση μπορεί "
+"να βοηθήσει."
 
 #: content-page.php:18 content-single.php:20 content.php:27
 msgid "Pages:"
-msgstr ""
+msgstr "Σελίδες:"
 
 #: content-page.php:23 content-single.php:60 content.php:61
 #: inc/template-tags.php:81 inc/template-tags.php:100
 msgid "Edit"
-msgstr ""
+msgstr "Επεξεργασία"
 
 #. translators: used between list items, there is a space after the comma
 #: content-single.php:29 content-single.php:32 content.php:38 content.php:48
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: content-single.php:37
 msgid ""
 "This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
 "\">permalink</a>."
 msgstr ""
+"Αυτή η καταχώρηση έχει επισημανθεί %2$s . Σελιδοδείκτης το <a href=\"%3$s\" "
+"rel=\" σελιδοδείκτης \"> permalink </a>."
 
 #: content-single.php:39
 msgid "Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
+"Σελιδοδείκτης το <a href=\"%3$s\" rel=\" σελιδοδείκτης \"> permalink </a>."
 
 #: content-single.php:45
 msgid ""
 "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
 "rel=\"bookmark\">permalink</a>."
 msgstr ""
+"Αυτή η εγγραφή δημοσιεύτηκε στο %1$s και με ετικέτα %2$s . Σελιδοδείκτης το "
+"<a href=\"%3$s\" rel=\" σελιδοδείκτης \"> permalink </a>."
 
 #: content-single.php:47
 msgid ""
 "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
 "\">permalink</a>."
 msgstr ""
+"Αυτή η εγγραφή δημοσιεύτηκε στο %1$s . Σελιδοδείκτης το <a href=\"%3$s\" rel="
+"\" σελιδοδείκτης \"> permalink </a>."
 
 #: content.php:24
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "Συνέχεια ανάγνωση <span class=\"meta-nav\"> → </ span>"
 
 #: content.php:42
 msgid "Posted in %1$s"
-msgstr ""
+msgstr "Καταχωρήθηκε στο %1$s"
 
 #: content.php:52
 msgid "Tagged %1$s"
-msgstr ""
+msgstr "Tagged %1$s"
 
 #: content.php:58
 msgid "Leave a comment"
-msgstr ""
+msgstr "Αφήστε ένα σχόλιο"
 
 #: content.php:58
 msgid "1 Comment"
-msgstr ""
+msgstr "1 Σχόλιο"
 
 #: content.php:58
 msgid "% Comments"
-msgstr ""
+msgstr "% Σχόλια"
 
 #: footer.php:16
 msgid "Proudly powered by %s"
-msgstr ""
+msgstr "Περήφανα powered by %s"
 
 #: footer.php:18
 msgid "Theme: %1$s by %2$s."
-msgstr ""
+msgstr "Θέμα: %1$s από %2$s ."
 
 #: functions.php:45
 msgid "Primary Menu"
-msgstr ""
+msgstr "Πρωτοβάθμια Μενού"
 
 #: functions.php:65
 msgid "Sidebar"
-msgstr ""
+msgstr "Sidebar"
 
 #: header.php:31
 msgid "Menu"
-msgstr ""
+msgstr "Μενού"
 
 #: header.php:32
 msgid "Skip to content"
-msgstr ""
+msgstr "Μετάβαση στο περιεχόμενο"
 
 #: inc/extras.php:63
 msgid "Page %s"
-msgstr ""
+msgstr "Σελίδα %s"
 
 #: inc/template-tags.php:23
 msgid "Posts navigation"
-msgstr ""
+msgstr "Μηνύματα πλοήγησης"
 
 #: inc/template-tags.php:27
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr ""
+msgstr "<span class=\"meta-nav\"> ← </ span> Παλαιότερες δημοσιεύσεις"
 
 #: inc/template-tags.php:31
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "Νεότερο θέσεις <span class=\"meta-nav\"> → </ span>"
 
 #: inc/template-tags.php:56
 msgid "Post navigation"
-msgstr ""
+msgstr "Δημοσίευση πλοήγησης"
 
 #: inc/template-tags.php:59
 msgctxt "Previous post link"
 msgid "<span class=\"meta-nav\">&larr;</span> %title"
-msgstr ""
+msgstr "<span class=\"meta-nav\"> ← </ span> %t λ ο ς"
 
 #: inc/template-tags.php:60
 msgctxt "Next post link"
 msgid "%title <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "%t λ ο <span class=\"meta-nav\"> → </ span>"
 
 #: inc/template-tags.php:81
 msgid "Pingback:"
-msgstr ""
+msgstr "Pingback:"
 
 #: inc/template-tags.php:91
 msgid "%s <span class=\"says\">says:</span>"
-msgstr ""
+msgstr "%s <span class=\"says\"> λέει: </ span>"
 
 #: inc/template-tags.php:97
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
-msgstr ""
+msgstr "%1$s σε %2$s"
 
 #: inc/template-tags.php:104
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "Το σχόλιό σας βρίσκεται υπό έγκριση."
 
 #: inc/template-tags.php:145
 msgid ""
 "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by "
 "%2$s</span>"
 msgstr ""
+"<span class=\"posted-on\"> Καταχωρήθηκε στις %1$s </ span> <span class="
+"\"byline\"> από %2$s </ span>"
 
 #: search.php:16
 msgid "Search Results for: %s"
-msgstr ""
+msgstr "Αποτελέσματα αναζήτησης για: %s"
 
 #: searchform.php:10
 msgctxt "label"
 msgid "Search for:"
-msgstr ""
+msgstr "Αναζήτηση για:"
 
 #: searchform.php:11
 msgctxt "placeholder"
 msgid "Search &hellip;"
-msgstr ""
+msgstr "Αναζήτηση ..."
 
 #: searchform.php:13
 msgctxt "submit button"
 msgid "Search"
-msgstr ""
+msgstr "Αναζήτηση"
 
 #: sidebar.php:24
 msgid "Search"
-msgstr ""
+msgstr "Αναζήτηση"
 
 #: sidebar.php:24
 msgid "Search:"
-msgstr ""
+msgstr "Αναζήτηση:"
 
 #: sidebar.php:24
 msgid "Meta"
-msgstr ""
+msgstr "Meta"
 
 #. Theme Name of the plugin/theme
 msgid "athenea"
@@ -331,122 +348,127 @@ msgstr "IBERMEGA digital"
 
 #. Theme Options/theme
 msgid "Athenea Options"
-msgstr ""
+msgstr "Αθηναία Επιλογές"
 
 #. Theme Options/theme
 msgid "Restore Defaults"
-msgstr ""
+msgstr "Επαναφορά προεπιλογών"
 
 #. Theme Options/theme
 msgid "Default options restored."
-msgstr ""
+msgstr "Προεπιλεγμένες επιλογές αποκατασταθεί."
 
 #. Theme Options/theme
 msgid "Save Options"
-msgstr ""
+msgstr "Αποθήκευση Επιλογές"
 
 #. Theme Options/theme
 msgid "Options saved."
-msgstr ""
+msgstr "Επιλογές σωθεί."
 
 #. Theme Options/theme
 msgid "Remove"
-msgstr ""
+msgstr "Αφαίρεση"
 
 #. Theme Options/theme
 msgid "Upload"
-msgstr ""
+msgstr "Φόρτωση"
 
 #. Theme Options/theme
 msgid "Logos"
-msgstr ""
+msgstr "Λογότυπα"
 
 #. Theme Options/theme
 msgid "Logos Trademark"
-msgstr ""
+msgstr "Λογότυπα εμπορικών σημάτων"
 
 #. Theme Options/theme
 msgid ""
 "Select the logo to be shown on the web with a maximum size of 292px wide."
 msgstr ""
+"Επιλέξτε το λογότυπο που θα εμφανίζεται στο διαδίκτυο με μέγιστο μέγεθος "
+"292px πλάτος."
 
 #. Theme Options/theme
 msgid "Favicon"
-msgstr ""
+msgstr "Favicon"
 
 #. Theme Options/theme
 msgid "No file chosen"
-msgstr ""
+msgstr "Δεν έχει επιλεγεί αρχείο"
 
 #. Theme Options/theme
 msgid "Choose a Favicon in png with a maximum size of 64 x 64 px."
-msgstr ""
+msgstr "Επιλέξτε ένα Favicon σε png, με μέγιστο μέγεθος 64 x 64 px."
 
 #. Theme Options/theme
 msgid "Featured sections"
-msgstr ""
+msgstr "Επιλεγμένες τμήματα"
 
 #. Theme Options/theme
 msgid "BLOCK RIGHT"
-msgstr ""
+msgstr "BLOCK ΔΕΞΙΑ"
 
 #. Theme Options/theme
 msgid "Title"
-msgstr ""
+msgstr "Τίτλο"
 
 #. Theme Options/theme
 msgid "Add your first highlighted section here."
-msgstr ""
+msgstr "Προσθέστε το πρώτο επιλεγμένο κομμάτι σας εδώ."
 
 #. Theme Options/theme
 msgid "Brief description."
-msgstr ""
+msgstr "Συνοπτική περιγραφή."
 
 #. Theme Options/theme
 msgid "Sign in options on topic and write a brief description."
 msgstr ""
+"Είσοδος επιλογές σχετικά με το θέμα και να γράψετε μια σύντομη περιγραφή."
 
 #. Theme Options/theme
 msgid "Button Text"
-msgstr ""
+msgstr "Κουμπί Κείμενο"
 
 #. Theme Options/theme
 msgid "Read More"
-msgstr ""
+msgstr "Διαβάστε περισσότερα"
 
 #. Theme Options/theme
 msgid "URL Button"
-msgstr ""
+msgstr "Κουμπί URL"
 
 #. Theme Options/theme
 msgid ""
 "Select an image to display. The image must be transparent gif or png "
 "background"
 msgstr ""
+"Επιλέξτε μια εικόνα για προβολή. Η εικόνα πρέπει να είναι διαφανές gif ή png "
+"φόντο"
 
 #. Theme Options/theme
 msgid "CENTRAL BLOCK"
-msgstr ""
+msgstr "ΚΕΝΤΡΙΚΗ BLOCK"
 
 #. Theme Options/theme
 msgid "Continue with the second highlighted section."
-msgstr ""
+msgstr "Συνεχίστε με το δεύτερο επιλεγμένο κομμάτι."
 
 #. Theme Options/theme
 msgid "BLOCK LEFT"
-msgstr ""
+msgstr "BLOCK ΑΡΙΣΤΕΡΑ"
 
 #. Theme Options/theme
 msgid "And finally, the third section highlighted."
-msgstr ""
+msgstr "Και τέλος, το τρίτο τμήμα τόνισε."
 
 #. Theme Options/theme
 msgid "BODY CENTRAL BLOC"
-msgstr ""
+msgstr "BODY CENTRAL BLOC"
 
 #. Theme Options/theme
 msgid "Who is the company"
-msgstr ""
+msgstr "Ποιος είναι η εταιρεία"
 
 #. Theme Options/theme
 msgid ""
@@ -454,99 +476,105 @@ msgid ""
 "option for visitors. Insert a text descripctivo y call the attention of your "
 "potential in the first minute."
 msgstr ""
+"Μια σύντομη περιγραφή της επιχείρησής σας σε αυτήν την περιοχή της "
+"ιστοσελίδας είναι η καλύτερη επιλογή για τους επισκέπτες. Εισάγετε ένα "
+"κείμενο descripctivo y επιστήσω την προσοχή των δυνατοτήτων σας από το πρώτο "
+"λεπτό."
 
 #. Theme Options/theme
 msgid "Learn more"
-msgstr ""
+msgstr "Μάθετε περισσότερα"
 
 #. Theme Options/theme
 msgid "Social Icons"
-msgstr ""
+msgstr "Κοινωνικής Εικόνες"
 
 #. Theme Options/theme
 msgid "Activate"
-msgstr ""
+msgstr "Ενεργοποίηση"
 
 #. Theme Options/theme
 msgid "Deactivate"
-msgstr ""
+msgstr "Απενεργοποίηση"
 
 #. Theme Options/theme
 msgid "Enter the full URL."
-msgstr ""
+msgstr "Πληκτρολογήστε την πλήρη διεύθυνση URL."
 
 #. Theme Options/theme
 msgid "Designs"
-msgstr ""
+msgstr "Σχέδια"
 
 #. Theme Options/theme
 msgid "Theme Design"
-msgstr ""
+msgstr "Σχεδιασμός θέμα"
 
 #. Theme Options/theme
 msgid "Choose a layout for your website"
-msgstr ""
+msgstr "Επιλέξτε μια διάταξη για την ιστοσελίδα σας"
 
 #. Theme Options/theme
 msgid "Contact"
-msgstr ""
+msgstr "Επικοινωνία"
 
 #. Theme Options/theme
 msgid "Contact Details."
-msgstr ""
+msgstr "Στοιχεία Επικοινωνίας."
 
 #. Theme Options/theme
 msgid "Company Name"
-msgstr ""
+msgstr "Όνομα εταιρείας"
 
 #. Theme Options/theme
 msgid "Company S.A."
-msgstr ""
+msgstr "Company SA"
 
 #. Theme Options/theme
 msgid ""
 "CIF/NIF/NIE (tax id). Mandatory for companies in the European Community."
 msgstr ""
+"CIF / NIF / NIE (ΑΦΜ). Υποχρεωτικές για τις εταιρείες στην Ευρωπαϊκή "
+"Κοινότητα."
 
 #. Theme Options/theme
 msgid "B123456789"
-msgstr ""
+msgstr "B123456789"
 
 #. Theme Options/theme
 msgid "Address"
-msgstr ""
+msgstr "Διεύθυνση"
 
 #. Theme Options/theme
 msgid "New Burlington St, 123"
-msgstr ""
+msgstr "Νέα Burlington St, 123"
 
 #. Theme Options/theme
 msgid "Postal Code"
-msgstr ""
+msgstr "Ταχυδρομικός Κώδικας"
 
 #. Theme Options/theme
 msgid "W1B 5NF"
-msgstr ""
+msgstr "W1B 5NF"
 
 #. Theme Options/theme
 msgid "City"
-msgstr ""
+msgstr "Πόλη"
 
 #. Theme Options/theme
 msgid "London"
-msgstr ""
+msgstr "Λονδίνο"
 
 #. Theme Options/theme
 msgid "Country"
-msgstr ""
+msgstr "Χώρα"
 
 #. Theme Options/theme
 msgid "United Kingdom"
-msgstr ""
+msgstr "Ηνωμένο Βασίλειο"
 
 #. Theme Options/theme
 msgid "Phone"
-msgstr ""
+msgstr "Τηλέφωνο"
 
 #. Theme Options/theme
 msgid "9XX 123 456"
@@ -554,19 +582,19 @@ msgstr "9XX 123 456"
 
 #. Theme Options/theme
 msgid "E-Mail contact"
-msgstr ""
+msgstr "Contact E-Mail"
 
 #. Theme Options/theme
 msgid "office@company.com"
-msgstr ""
+msgstr "office@company.com"
 
 #. Theme Options/Donative
 msgid "Do you like the theme Athenea?"
-msgstr ""
+msgstr "Σας αρέσει το θέμα Αθηναία;"
 
 #. Theme Options/Donative
 msgid "Buy me a coffee!"
-msgstr ""
+msgstr "Αγορά μου ένα καφέ!"
 
 #. Theme Options/Donative
 msgid ""
@@ -574,131 +602,139 @@ msgid ""
 "improvement. You can make a donation to your choice or collaboration with "
 "the developer :-)"
 msgstr ""
+"Βοηθήστε μας να συνεχίσουμε να εργαζόμαστε για σας σχετικά με την "
+"επικαιροποίηση του θέματος και τη βελτίωση. Μπορείτε να κάνετε μια δωρεά για "
+"την επιλογή ή τη συνεργασία σας με τον προγραμματιστή :-)"
 
 #. Theme Options/Donative
 msgid "Voluntary donation"
-msgstr ""
+msgstr "Εθελοντική αιμοδοσία"
 
 #. Theme Options/Donative
 msgid "Collaborate"
-msgstr ""
+msgstr "Συνεργάζομαι"
 
 #. Theme Options/Donative
 msgid "for Coffee &#8364;0,80 EUR"
-msgstr ""
+msgstr "για καφέ € 0,80 EUR"
 
 #. Theme Options/Donative
 msgid "for Coca-Cola &#8364;1,20 EUR"
-msgstr ""
+msgstr "για την Coca-Cola € 1,20 EUR"
 
 #. Theme Options/Donative
 msgid "for Beer &#8364;1,45 EUR"
-msgstr ""
+msgstr "για την μπύρα € 1,45 EUR"
 
 #. Theme Options/Donative
 msgid "for a Burger &#8364;2,00 EUR"
-msgstr ""
+msgstr "για ένα Burger € 2,00 EUR"
 
 #. Theme Options/Donative
 msgid "All &#8364;5,45 EUR"
-msgstr ""
+msgstr "Όλα € 5,45 EUR"
 
 #. Theme Options/Donative
 msgid "Opinion"
-msgstr ""
+msgstr "Γνώμη"
 
 #. Theme Options/Donative
 msgid "Very good"
-msgstr ""
+msgstr "Πολύ καλό"
 
 #. Theme Options/Donative
 msgid "Good"
-msgstr ""
+msgstr "Καλά"
 
 #. Theme Options/Donative
 msgid "Not bad"
-msgstr ""
+msgstr "Δεν είναι κακό"
 
 #. Theme Options/Donative
 msgid "Keep working"
-msgstr ""
+msgstr "Συνεχίσουμε να εργαζόμαστε"
 
 #. Theme Options/Donative
 msgid "Athenea Documentation"
-msgstr ""
+msgstr "Αθηναία Τεκμηρίωση"
 
 #. Portada
 msgid "Continue reading &raquo;&raquo;"
-msgstr ""
+msgstr "Συνεχίστε την ανάγνωση »»"
 
 #. Footer
 msgid "Footer A"
-msgstr ""
+msgstr "Τελικοί Α"
 
 #. Footer
 msgid "Footer B"
-msgstr ""
+msgstr "Τελικοί B"
 
 #. Footer
 msgid "Footer C"
-msgstr ""
+msgstr "Τελικοί C"
 
 #. Footer
 msgid "Footer D"
-msgstr ""
+msgstr "Τελικοί D"
 
 #. Footer
 msgid "Athenea Contact"
-msgstr ""
+msgstr "Αθηναία Επικοινωνία"
 
 #. Footer
 msgid "Top"
-msgstr ""
+msgstr "Κορυφή"
 
 #. Footer
 msgid "Theme designed by"
-msgstr ""
+msgstr "Θέμα σχεδιαστεί από"
 
 #. Comments
 msgid "Comments"
-msgstr ""
+msgstr "Σχόλια"
 
 #. Comments
 msgid ""
 "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags "
 "and attributes: %s"
 msgstr ""
+"Μπορείτε να χρησιμοποιήσετε αυτά τα <abbr title=\"HyperText Markup Language"
+"\"> HTML </ abbr> ετικέτες και χαρακτηριστικά: %s"
 
 #. Comments
 msgid "Leave a reply"
-msgstr ""
+msgstr "Αφήστε απάντηση"
 
 #. Comments
 msgid "Leave a reply to %s"
-msgstr ""
+msgstr "Αφήστε μια απάντηση στον/στην %s"
 
 #. Comments
 msgid "Reply <span>&darr;</span>"
-msgstr ""
+msgstr "Απάντηση <span> ↓ </ span>"
 
 #. Comments
 msgid "Comment"
-msgstr ""
+msgstr "Σχόλιο"
 
 #: Comments
 msgid "required"
-msgstr ""
+msgstr "απαιτείται"
 
 #: Comments
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr ""
+"Πρέπει να είστε <a href=\"%s\"> συνδεδεμένος </a> για να δημοσιεύσετε σχόλιο."
 
 #: Comments
 msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
 "this account\">Log out?</a>"
 msgstr ""
+"Είσοδος ως <a href=\"%1$s\"> %2$s </a>. <a href=\"%3$s\" title=\"Αποσύνδεση "
+"αυτού του λογαριασμού\"> Αποσύνδεση; </a>"
 
 #: Comments
 msgid "will not be published"
-msgstr ""
+msgstr "δεν θα δημοσιευθεί"

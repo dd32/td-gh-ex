@@ -8,102 +8,102 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2014-03-13 18:36+0100\n"
+"PO-Revision-Date: 2014-03-13 16:09+0100\n"
 "Last-Translator: Miguel Angel <miguel@ibermega.com>\n"
 "Language-Team: IBERMEGA digital <soporte@ibermega.com>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: zh\n"
 "X-Generator: Poedit 1.6.2\n"
 "X-Poedit-KeywordsList: _s;__;_x;_e\n"
 
 #: 404.php:15
 msgid "Oops! That page can&rsquo;t be found."
-msgstr ""
+msgstr "糟糕！该页面无法找到。"
 
 #: 404.php:19
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
-msgstr ""
+msgstr " 看起来这个位置没有内容，试试下面的链接或搜索一下或许有帮助。"
 
 #: 404.php:27
 msgid "Most Used Categories"
-msgstr ""
+msgstr "最常用的分类"
 
 #. translators: %1$s: smiley
 #: 404.php:44
 msgid "Try looking in the monthly archives. %1$s"
-msgstr ""
+msgstr "尝试在每月存档插查找。 %1$s"
 
 #: archive.php:31
 msgid "Author: %s"
-msgstr ""
+msgstr "作者： %s"
 
 #: archive.php:39
 msgid "Day: %s"
-msgstr ""
+msgstr "天： %s"
 
 #: archive.php:42
 msgid "Month: %s"
-msgstr ""
+msgstr "月份： %s"
 
 #: archive.php:42
 msgctxt "monthly archives date format"
 msgid "F Y"
-msgstr ""
+msgstr "F Y"
 
 #: archive.php:45
 msgid "Year: %s"
-msgstr ""
+msgstr "年份： %s"
 
 #: archive.php:45
 msgctxt "yearly archives date format"
 msgid "Y"
-msgstr ""
+msgstr "是"
 
 #: archive.php:48
 msgid "Asides"
-msgstr ""
+msgstr "Asides"
 
 #: archive.php:51
 msgid "Galleries"
-msgstr ""
+msgstr "画廊"
 
 #: archive.php:54
 msgid "Images"
-msgstr ""
+msgstr "图像"
 
 #: archive.php:57
 msgid "Videos"
-msgstr ""
+msgstr "视频"
 
 #: archive.php:58
 msgid "Video"
-msgstr ""
+msgstr "录像"
 
 #: archive.php:60
 msgid "Quotes"
-msgstr ""
+msgstr "引用"
 
 #: archive.php:63
 msgid "Links"
-msgstr ""
+msgstr "链接"
 
 #: archive.php:66
 msgid "Statuses"
-msgstr ""
+msgstr "状态"
 
 #: archive.php:69
 msgid "Audios"
-msgstr ""
+msgstr "音频"
 
 #: archive.php:72
 msgid "Chats"
-msgstr ""
+msgstr "聊天"
 
 #: archive.php:75 sidebar.php:17
 msgid "Archives"
-msgstr ""
+msgstr "存档"
 
 #: comments.php:30
 msgctxt "comments title"
@@ -114,208 +114,214 @@ msgstr[1] ""
 
 #: comments.php:37 comments.php:57
 msgid "Comment navigation"
-msgstr ""
+msgstr "评论导航"
 
 #: comments.php:38 comments.php:58
 msgid "&larr; Older Comments"
-msgstr ""
+msgstr "←较旧的评论"
 
 #: comments.php:39 comments.php:59
 msgid "Newer Comments &rarr;"
-msgstr ""
+msgstr "较新的评论→"
 
 #: comments.php:69
 msgid "Comments are closed."
-msgstr ""
+msgstr "评论被关闭。"
 
 #: content-none.php:13
 msgid "Nothing Found"
-msgstr ""
+msgstr "没有找到"
 
 #: content-none.php:19
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
+msgstr "准备好发表第一篇文章了吗？<a href=\"%1$s\">我们出发吧</a>。"
 
 #: content-none.php:23
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
-msgstr ""
+msgstr "抱歉，没有符合您搜索条件。请再次尝试一些不同的关键字。"
 
 #: content-none.php:28
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
-msgstr ""
+msgstr "看来我们不能找到你要找的内容。也许搜索可以提供帮助。"
 
 #: content-page.php:18 content-single.php:20 content.php:27
 msgid "Pages:"
-msgstr ""
+msgstr "页数："
 
 #: content-page.php:23 content-single.php:60 content.php:61
 #: inc/template-tags.php:81 inc/template-tags.php:100
 msgid "Edit"
-msgstr ""
+msgstr "编辑"
 
 #. translators: used between list items, there is a space after the comma
 #: content-single.php:29 content-single.php:32 content.php:38 content.php:48
 msgid ", "
-msgstr ""
+msgstr "，"
 
 #: content-single.php:37
 msgid ""
 "This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
 "\">permalink</a>."
 msgstr ""
+"本条目被标记%2$s 。书签的 <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
 
 #: content-single.php:39
 msgid "Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
-msgstr ""
+msgstr "书签的  <a href=\"%3$s\" rel=\"bookmark\">permalink</a>"
 
 #: content-single.php:45
 msgid ""
 "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
 "rel=\"bookmark\">permalink</a>."
 msgstr ""
+"此项目被张贴在%1$s和标记%2$s 。书签的 <a href=\"%3$s\" rel=\"bookmark"
+"\">permalink</a>"
 
 #: content-single.php:47
 msgid ""
 "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
 "\">permalink</a>."
 msgstr ""
+"此项目被张贴在%1$s 。书签的 <a href=\"%3$s\" rel=\"bookmark\">permalink</a>"
 
 #: content.php:24
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "继续阅读 <span class=\"meta-nav\">→</span>"
 
 #: content.php:42
 msgid "Posted in %1$s"
-msgstr ""
+msgstr "张贴在%1$s"
 
 #: content.php:52
 msgid "Tagged %1$s"
-msgstr ""
+msgstr "标签：%1$s"
 
 #: content.php:58
 msgid "Leave a comment"
-msgstr ""
+msgstr "发表评论"
 
 #: content.php:58
 msgid "1 Comment"
-msgstr ""
+msgstr "1条评论"
 
 #: content.php:58
 msgid "% Comments"
-msgstr ""
+msgstr "% 条评论"
 
 #: footer.php:16
 msgid "Proudly powered by %s"
-msgstr ""
+msgstr "由自豪地采用WordPress %s"
 
 #: footer.php:18
 msgid "Theme: %1$s by %2$s."
-msgstr ""
+msgstr "主题： %1$s由%2$s 。"
 
 #: functions.php:45
 msgid "Primary Menu"
-msgstr ""
+msgstr "主菜单"
 
 #: functions.php:65
 msgid "Sidebar"
-msgstr ""
+msgstr "侧边栏"
 
 #: header.php:31
 msgid "Menu"
-msgstr ""
+msgstr "菜单"
 
 #: header.php:32
 msgid "Skip to content"
-msgstr ""
+msgstr "跳至内容"
 
 #: inc/extras.php:63
 msgid "Page %s"
-msgstr ""
+msgstr "页%s"
 
 #: inc/template-tags.php:23
 msgid "Posts navigation"
-msgstr ""
+msgstr "文章导航"
 
 #: inc/template-tags.php:27
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr ""
+msgstr "<span class=\"meta-nav\">&larr;</span>较早文章"
 
 #: inc/template-tags.php:31
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "更新文章<span class=\"meta-nav\">&larr;</span>"
 
 #: inc/template-tags.php:56
 msgid "Post navigation"
-msgstr ""
+msgstr "文章导航"
 
 #: inc/template-tags.php:59
 msgctxt "Previous post link"
 msgid "<span class=\"meta-nav\">&larr;</span> %title"
-msgstr ""
+msgstr "<span class=\"meta-nav\">←</ SPAN> %t书名"
 
 #: inc/template-tags.php:60
 msgctxt "Next post link"
 msgid "%title <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "%t书名<span class=\"meta-nav\">→</ SPAN>"
 
 #: inc/template-tags.php:81
 msgid "Pingback:"
-msgstr ""
+msgstr "引用通告："
 
 #: inc/template-tags.php:91
 msgid "%s <span class=\"says\">says:</span>"
-msgstr ""
+msgstr "%s <span class=\"says\">说:</span>"
 
 #: inc/template-tags.php:97
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
-msgstr ""
+msgstr "%1$s 在 %2$s"
 
 #: inc/template-tags.php:104
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "您的评论正在等待审核。"
 
 #: inc/template-tags.php:145
 msgid ""
 "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by "
 "%2$s</span>"
 msgstr ""
+"<span class=\"posted-on\">发表于%1$s </ SPAN> <span class=\"byline\">由%2$s "
+"</ SPAN>"
 
 #: search.php:16
 msgid "Search Results for: %s"
-msgstr ""
+msgstr "%s 的搜索结果"
 
 #: searchform.php:10
 msgctxt "label"
 msgid "Search for:"
-msgstr ""
+msgstr "搜索"
 
 #: searchform.php:11
 msgctxt "placeholder"
 msgid "Search &hellip;"
-msgstr ""
+msgstr "搜索..."
 
 #: searchform.php:13
 msgctxt "submit button"
 msgid "Search"
-msgstr ""
+msgstr "搜索"
 
 #: sidebar.php:24
 msgid "Search"
-msgstr ""
+msgstr "搜索"
 
 #: sidebar.php:24
 msgid "Search:"
-msgstr ""
+msgstr "search"
 
 #: sidebar.php:24
 msgid "Meta"
-msgstr ""
+msgstr "标签"
 
 #. Theme Name of the plugin/theme
 msgid "athenea"
@@ -331,122 +337,122 @@ msgstr "IBERMEGA digital"
 
 #. Theme Options/theme
 msgid "Athenea Options"
-msgstr ""
+msgstr "资讯Athenea选项"
 
 #. Theme Options/theme
 msgid "Restore Defaults"
-msgstr ""
+msgstr "Restore Defaults"
 
 #. Theme Options/theme
 msgid "Default options restored."
-msgstr ""
+msgstr "默认选项恢复。"
 
 #. Theme Options/theme
 msgid "Save Options"
-msgstr ""
+msgstr "保存选项"
 
 #. Theme Options/theme
 msgid "Options saved."
-msgstr ""
+msgstr "选择保存。"
 
 #. Theme Options/theme
 msgid "Remove"
-msgstr ""
+msgstr "删除"
 
 #. Theme Options/theme
 msgid "Upload"
-msgstr ""
+msgstr "上传"
 
 #. Theme Options/theme
 msgid "Logos"
-msgstr ""
+msgstr "图标"
 
 #. Theme Options/theme
 msgid "Logos Trademark"
-msgstr ""
+msgstr "标志商标"
 
 #. Theme Options/theme
 msgid ""
 "Select the logo to be shown on the web with a maximum size of 292px wide."
-msgstr ""
+msgstr "选择要显示在网络上与292px宽的最大尺寸的标志。"
 
 #. Theme Options/theme
 msgid "Favicon"
-msgstr ""
+msgstr "网站图标"
 
 #. Theme Options/theme
 msgid "No file chosen"
-msgstr ""
+msgstr "没有选择文件"
 
 #. Theme Options/theme
 msgid "Choose a Favicon in png with a maximum size of 64 x 64 px."
-msgstr ""
+msgstr "选择与64×64像素的最大尺寸png格式一个图标。"
 
 #. Theme Options/theme
 msgid "Featured sections"
-msgstr ""
+msgstr "特色展区"
 
 #. Theme Options/theme
 msgid "BLOCK RIGHT"
-msgstr ""
+msgstr "右座"
 
 #. Theme Options/theme
 msgid "Title"
-msgstr ""
+msgstr "标题"
 
 #. Theme Options/theme
 msgid "Add your first highlighted section here."
-msgstr ""
+msgstr "添加你的第一个突出显示的部分在这里。"
 
 #. Theme Options/theme
 msgid "Brief description."
-msgstr ""
+msgstr "简要说明。"
 
 #. Theme Options/theme
 msgid "Sign in options on topic and write a brief description."
-msgstr ""
+msgstr "登录到主题选项，写一个简短的描述。"
 
 #. Theme Options/theme
 msgid "Button Text"
-msgstr ""
+msgstr "按钮文本"
 
 #. Theme Options/theme
 msgid "Read More"
-msgstr ""
+msgstr "阅读更多"
 
 #. Theme Options/theme
 msgid "URL Button"
-msgstr ""
+msgstr "URL按钮"
 
 #. Theme Options/theme
 msgid ""
 "Select an image to display. The image must be transparent gif or png "
 "background"
-msgstr ""
+msgstr "选择要显示的图像。图像必须是透明的gif或png背景"
 
 #. Theme Options/theme
 msgid "CENTRAL BLOCK"
-msgstr ""
+msgstr "中央块"
 
 #. Theme Options/theme
 msgid "Continue with the second highlighted section."
-msgstr ""
+msgstr "继续第二个突出部分。"
 
 #. Theme Options/theme
 msgid "BLOCK LEFT"
-msgstr ""
+msgstr "块左"
 
 #. Theme Options/theme
 msgid "And finally, the third section highlighted."
-msgstr ""
+msgstr "最后，在第三部分高亮显示。"
 
 #. Theme Options/theme
 msgid "BODY CENTRAL BLOC"
-msgstr ""
+msgstr "体中心BLOC"
 
 #. Theme Options/theme
 msgid "Who is the company"
-msgstr ""
+msgstr "谁是公司"
 
 #. Theme Options/theme
 msgid ""
@@ -454,99 +460,101 @@ msgid ""
 "option for visitors. Insert a text descripctivo y call the attention of your "
 "potential in the first minute."
 msgstr ""
+"您的企业在网站的这个区域的简要介绍，供游人最好的选择。插入一个文本"
+"descripctivoŸ叫你的潜在的关注，在第一分钟。"
 
 #. Theme Options/theme
 msgid "Learn more"
-msgstr ""
+msgstr "更多内容》"
 
 #. Theme Options/theme
 msgid "Social Icons"
-msgstr ""
+msgstr "社会图标"
 
 #. Theme Options/theme
 msgid "Activate"
-msgstr ""
+msgstr "激活"
 
 #. Theme Options/theme
 msgid "Deactivate"
-msgstr ""
+msgstr "Deactivate"
 
 #. Theme Options/theme
 msgid "Enter the full URL."
-msgstr ""
+msgstr "输入完整的URL。"
 
 #. Theme Options/theme
 msgid "Designs"
-msgstr ""
+msgstr "Designs "
 
 #. Theme Options/theme
 msgid "Theme Design"
-msgstr ""
+msgstr "主题设计"
 
 #. Theme Options/theme
 msgid "Choose a layout for your website"
-msgstr ""
+msgstr "选择适合你的网站布局"
 
 #. Theme Options/theme
 msgid "Contact"
-msgstr ""
+msgstr "接触类别号"
 
 #. Theme Options/theme
 msgid "Contact Details."
-msgstr ""
+msgstr "详细联系方式。"
 
 #. Theme Options/theme
 msgid "Company Name"
-msgstr ""
+msgstr "公司名称"
 
 #. Theme Options/theme
 msgid "Company S.A."
-msgstr ""
+msgstr "公司SA"
 
 #. Theme Options/theme
 msgid ""
 "CIF/NIF/NIE (tax id). Mandatory for companies in the European Community."
-msgstr ""
+msgstr "CIF / NIF /聂（税号）。强制要求企业在欧洲共同体。"
 
 #. Theme Options/theme
 msgid "B123456789"
-msgstr ""
+msgstr "B123456789"
 
 #. Theme Options/theme
 msgid "Address"
-msgstr ""
+msgstr "地址"
 
 #. Theme Options/theme
 msgid "New Burlington St, 123"
-msgstr ""
+msgstr "新的伯灵顿市，123"
 
 #. Theme Options/theme
 msgid "Postal Code"
-msgstr ""
+msgstr "邮政编码"
 
 #. Theme Options/theme
 msgid "W1B 5NF"
-msgstr ""
+msgstr "W1B 5NF"
 
 #. Theme Options/theme
 msgid "City"
-msgstr ""
+msgstr "城市"
 
 #. Theme Options/theme
 msgid "London"
-msgstr ""
+msgstr "作于伦敦"
 
 #. Theme Options/theme
 msgid "Country"
-msgstr ""
+msgstr "国家"
 
 #. Theme Options/theme
 msgid "United Kingdom"
-msgstr ""
+msgstr "英国"
 
 #. Theme Options/theme
 msgid "Phone"
-msgstr ""
+msgstr "手机"
 
 #. Theme Options/theme
 msgid "9XX 123 456"
@@ -554,19 +562,19 @@ msgstr "9XX 123 456"
 
 #. Theme Options/theme
 msgid "E-Mail contact"
-msgstr ""
+msgstr "E-Mail联系方式"
 
 #. Theme Options/theme
 msgid "office@company.com"
-msgstr ""
+msgstr "office@company.com"
 
 #. Theme Options/Donative
 msgid "Do you like the theme Athenea?"
-msgstr ""
+msgstr "你喜欢的主题资讯Athenea？"
 
 #. Theme Options/Donative
 msgid "Buy me a coffee!"
-msgstr ""
+msgstr "我买咖啡！"
 
 #. Theme Options/Donative
 msgid ""
@@ -574,131 +582,137 @@ msgid ""
 "improvement. You can make a donation to your choice or collaboration with "
 "the developer :-)"
 msgstr ""
+"帮助我们保持对这个问题的更新和改进为你工作。你可以捐款给你的选择或协作与开发"
+"商:-)"
 
 #. Theme Options/Donative
 msgid "Voluntary donation"
-msgstr ""
+msgstr "自愿捐款"
 
 #. Theme Options/Donative
 msgid "Collaborate"
-msgstr ""
+msgstr "合作"
 
 #. Theme Options/Donative
 msgid "for Coffee &#8364;0,80 EUR"
-msgstr ""
+msgstr "对于咖啡€0,80欧元"
 
 #. Theme Options/Donative
 msgid "for Coca-Cola &#8364;1,20 EUR"
-msgstr ""
+msgstr "可口可乐€1,20欧元"
 
 #. Theme Options/Donative
 msgid "for Beer &#8364;1,45 EUR"
-msgstr ""
+msgstr "啤酒€1,45欧元"
 
 #. Theme Options/Donative
 msgid "for a Burger &#8364;2,00 EUR"
-msgstr ""
+msgstr "一个汉堡€2,00 EUR"
 
 #. Theme Options/Donative
 msgid "All &#8364;5,45 EUR"
-msgstr ""
+msgstr "全部€5,45欧元"
 
 #. Theme Options/Donative
 msgid "Opinion"
-msgstr ""
+msgstr "意见"
 
 #. Theme Options/Donative
 msgid "Very good"
-msgstr ""
+msgstr "很好"
 
 #. Theme Options/Donative
 msgid "Good"
-msgstr ""
+msgstr "商品"
 
 #. Theme Options/Donative
 msgid "Not bad"
-msgstr ""
+msgstr "不错"
 
 #. Theme Options/Donative
 msgid "Keep working"
-msgstr ""
+msgstr "继续工作"
 
 #. Theme Options/Donative
 msgid "Athenea Documentation"
-msgstr ""
+msgstr "资讯Athenea文档"
 
 #. Portada
 msgid "Continue reading &raquo;&raquo;"
-msgstr ""
+msgstr "继续阅读»»"
 
 #. Footer
 msgid "Footer A"
-msgstr ""
+msgstr "页脚"
 
 #. Footer
 msgid "Footer B"
-msgstr ""
+msgstr "页脚乙"
 
 #. Footer
 msgid "Footer C"
-msgstr ""
+msgstr "页脚Ç"
 
 #. Footer
 msgid "Footer D"
-msgstr ""
+msgstr "页脚ð"
 
 #. Footer
 msgid "Athenea Contact"
-msgstr ""
+msgstr "资讯Athenea联系"
 
 #. Footer
 msgid "Top"
-msgstr ""
+msgstr "顶部"
 
 #. Footer
 msgid "Theme designed by"
-msgstr ""
+msgstr "主题的设计"
 
 #. Comments
 msgid "Comments"
-msgstr ""
+msgstr "备注"
 
 #. Comments
 msgid ""
 "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags "
 "and attributes: %s"
 msgstr ""
+"您可以使用这些<abbr title=\"HyperText标记Language\">的HTML </缩写>标签和属"
+"性： %s"
 
 #. Comments
 msgid "Leave a reply"
-msgstr ""
+msgstr "发表评论"
 
 #. Comments
 msgid "Leave a reply to %s"
-msgstr ""
+msgstr "对 %s发表评论"
 
 #. Comments
 msgid "Reply <span>&darr;</span>"
-msgstr ""
+msgstr "回复<SPAN>↓</ SPAN>"
 
 #. Comments
 msgid "Comment"
-msgstr ""
+msgstr "评论"
 
 #: Comments
 msgid "required"
-msgstr ""
+msgstr "必填项"
 
 #: Comments
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
-msgstr ""
+msgstr "登陆后<a href=\"%s\">logged in</a>才能发表评论。"
 
 #: Comments
 msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
 "this account\">Log out?</a>"
 msgstr ""
+"登陆在 <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"退出此账号？\">退"
+"出？</a"
 
 #: Comments
 msgid "will not be published"
-msgstr ""
+msgstr "不会被公开"

@@ -8,102 +8,104 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2014-03-13 18:36+0100\n"
+"PO-Revision-Date: 2014-03-13 16:39+0100\n"
 "Last-Translator: Miguel Angel <miguel@ibermega.com>\n"
 "Language-Team: IBERMEGA digital <soporte@ibermega.com>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: en\n"
+"Language: et_EE\n"
 "X-Generator: Poedit 1.6.2\n"
 "X-Poedit-KeywordsList: _s;__;_x;_e\n"
 
 #: 404.php:15
 msgid "Oops! That page can&rsquo;t be found."
-msgstr ""
+msgstr "Oops! See lehekülg ei ole võimalik leida."
 
 #: 404.php:19
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
+"Tundub, et midagi ei leitud selles kohas. Võibolla proovida ühte linkidest "
+"või otsi?"
 
 #: 404.php:27
 msgid "Most Used Categories"
-msgstr ""
+msgstr "Enamik Kasutatud Kategooriad"
 
 #. translators: %1$s: smiley
 #: 404.php:44
 msgid "Try looking in the monthly archives. %1$s"
-msgstr ""
+msgstr "Proovige vaadates igakuine arhiivi. %1$s"
 
 #: archive.php:31
 msgid "Author: %s"
-msgstr ""
+msgstr "Autor: %s"
 
 #: archive.php:39
 msgid "Day: %s"
-msgstr ""
+msgstr "Päeval: %s"
 
 #: archive.php:42
 msgid "Month: %s"
-msgstr ""
+msgstr "Kuu: %s"
 
 #: archive.php:42
 msgctxt "monthly archives date format"
 msgid "F Y"
-msgstr ""
+msgstr "F Y"
 
 #: archive.php:45
 msgid "Year: %s"
-msgstr ""
+msgstr "Aasta: %s"
 
 #: archive.php:45
 msgctxt "yearly archives date format"
 msgid "Y"
-msgstr ""
+msgstr "Y"
 
 #: archive.php:48
 msgid "Asides"
-msgstr ""
+msgstr "Asides"
 
 #: archive.php:51
 msgid "Galleries"
-msgstr ""
+msgstr "Pildid"
 
 #: archive.php:54
 msgid "Images"
-msgstr ""
+msgstr "Images"
 
 #: archive.php:57
 msgid "Videos"
-msgstr ""
+msgstr "Videos"
 
 #: archive.php:58
 msgid "Video"
-msgstr ""
+msgstr "Video"
 
 #: archive.php:60
 msgid "Quotes"
-msgstr ""
+msgstr "Quotes"
 
 #: archive.php:63
 msgid "Links"
-msgstr ""
+msgstr "Lingid"
 
 #: archive.php:66
 msgid "Statuses"
-msgstr ""
+msgstr "Staatused"
 
 #: archive.php:69
 msgid "Audios"
-msgstr ""
+msgstr "Audio"
 
 #: archive.php:72
 msgid "Chats"
-msgstr ""
+msgstr "Vestlused"
 
 #: archive.php:75 sidebar.php:17
 msgid "Archives"
-msgstr ""
+msgstr "Arhiiv"
 
 #: comments.php:30
 msgctxt "comments title"
@@ -114,208 +116,219 @@ msgstr[1] ""
 
 #: comments.php:37 comments.php:57
 msgid "Comment navigation"
-msgstr ""
+msgstr "Kommentaar navigatsioon"
 
 #: comments.php:38 comments.php:58
 msgid "&larr; Older Comments"
-msgstr ""
+msgstr "← Vanem Kommentaarid"
 
 #: comments.php:39 comments.php:59
 msgid "Newer Comments &rarr;"
-msgstr ""
+msgstr "Uuem Comments →"
 
 #: comments.php:69
 msgid "Comments are closed."
-msgstr ""
+msgstr "Kommentaarid on suletud."
 
 #: content-none.php:13
 msgid "Nothing Found"
-msgstr ""
+msgstr "Ei leitud midagi"
 
 #: content-none.php:19
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
+"Valmis avaldama oma esimene postitus? <a href=\"%1$s\"> Alustamine siin </a>."
 
 #: content-none.php:23
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
+"Vabandust, kuid midagi sobitada oma otsingu tingimusi. Palun proovige uuesti "
+"mõne erinevaid märksõnu."
 
 #: content-none.php:28
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
-msgstr ""
+msgstr "Tundub, me ei leia, mida te otsite. Võibolla otsivad aitab."
 
 #: content-page.php:18 content-single.php:20 content.php:27
 msgid "Pages:"
-msgstr ""
+msgstr "Leheküljed:"
 
 #: content-page.php:23 content-single.php:60 content.php:61
 #: inc/template-tags.php:81 inc/template-tags.php:100
 msgid "Edit"
-msgstr ""
+msgstr "Edit"
 
 #. translators: used between list items, there is a space after the comma
 #: content-single.php:29 content-single.php:32 content.php:38 content.php:48
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: content-single.php:37
 msgid ""
 "This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
 "\">permalink</a>."
 msgstr ""
+"See sisestus kodeeritud %2$s . Bookmark <a href=\"%3$s\" rel=\"järjehoidja"
+"\"> permalink </a>."
 
 #: content-single.php:39
 msgid "Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
-msgstr ""
+msgstr "Bookmark <a href=\"%3$s\" rel=\"järjehoidja\"> permalink </a>."
 
 #: content-single.php:45
 msgid ""
 "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
 "rel=\"bookmark\">permalink</a>."
 msgstr ""
+"See kirje oli postitatud %1$s ja märgistatud %2$s . Bookmark <a href=\"%3$s"
+"\" rel=\"järjehoidja\"> permalink </a>."
 
 #: content-single.php:47
 msgid ""
 "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
 "\">permalink</a>."
 msgstr ""
+"See kirje oli postitatud %1$s . Bookmark <a href=\"%3$s\" rel=\"järjehoidja"
+"\"> permalink </a>."
 
 #: content.php:24
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "Jätka lugemist <span class=\"meta-nav\"> → </span>"
 
 #: content.php:42
 msgid "Posted in %1$s"
-msgstr ""
+msgstr "Postitatud %1$s"
 
 #: content.php:52
 msgid "Tagged %1$s"
-msgstr ""
+msgstr "Kodeeritud %1$s"
 
 #: content.php:58
 msgid "Leave a comment"
-msgstr ""
+msgstr "Jäta kommentaar"
 
 #: content.php:58
 msgid "1 Comment"
-msgstr ""
+msgstr "1 Comment"
 
 #: content.php:58
 msgid "% Comments"
-msgstr ""
+msgstr "% Kommentaarid"
 
 #: footer.php:16
 msgid "Proudly powered by %s"
-msgstr ""
+msgstr "Proudly powered by %s"
 
 #: footer.php:18
 msgid "Theme: %1$s by %2$s."
-msgstr ""
+msgstr "Teema: %1$s poolt %2$s ."
 
 #: functions.php:45
 msgid "Primary Menu"
-msgstr ""
+msgstr "Esmane Menu"
 
 #: functions.php:65
 msgid "Sidebar"
-msgstr ""
+msgstr "Sidebar"
 
 #: header.php:31
 msgid "Menu"
-msgstr ""
+msgstr "Menüü"
 
 #: header.php:32
 msgid "Skip to content"
-msgstr ""
+msgstr "Otse sisu juurde"
 
 #: inc/extras.php:63
 msgid "Page %s"
-msgstr ""
+msgstr "Lehekülg %s"
 
 #: inc/template-tags.php:23
 msgid "Posts navigation"
-msgstr ""
+msgstr "Postitusi navigatsioon"
 
 #: inc/template-tags.php:27
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr ""
+msgstr "<span class=\"meta-nav\"> ← </ span> Vanemad postitused"
 
 #: inc/template-tags.php:31
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "Uuemad postitused <span class=\"meta-nav\"> → </ span>"
 
 #: inc/template-tags.php:56
 msgid "Post navigation"
-msgstr ""
+msgstr "Postitus Navigation"
 
 #: inc/template-tags.php:59
 msgctxt "Previous post link"
 msgid "<span class=\"meta-nav\">&larr;</span> %title"
-msgstr ""
+msgstr "<span class=\"meta-nav\"> ← </ span> %t JAOTIS"
 
 #: inc/template-tags.php:60
 msgctxt "Next post link"
 msgid "%title <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "%t JAOTIS <span class=\"meta-nav\"> → </ span>"
 
 #: inc/template-tags.php:81
 msgid "Pingback:"
-msgstr ""
+msgstr "Pingback:"
 
 #: inc/template-tags.php:91
 msgid "%s <span class=\"says\">says:</span>"
-msgstr ""
+msgstr "%s <span class=\"says\"> ütleb: </ span>"
 
 #: inc/template-tags.php:97
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
-msgstr ""
+msgstr "%1$s kell %2$s"
 
 #: inc/template-tags.php:104
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "Sinu kommentaar ootab mõõdukalt."
 
 #: inc/template-tags.php:145
 msgid ""
 "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by "
 "%2$s</span>"
 msgstr ""
+"<span class=\"posted-on\"> Postitatud %1$s </ span> <span class=\"byline\"> "
+"poolt %2$s </ span>"
 
 #: search.php:16
 msgid "Search Results for: %s"
-msgstr ""
+msgstr "Search Results for: %s"
 
 #: searchform.php:10
 msgctxt "label"
 msgid "Search for:"
-msgstr ""
+msgstr "Otsi:"
 
 #: searchform.php:11
 msgctxt "placeholder"
 msgid "Search &hellip;"
-msgstr ""
+msgstr "Otsi ..."
 
 #: searchform.php:13
 msgctxt "submit button"
 msgid "Search"
-msgstr ""
+msgstr "Otsing"
 
 #: sidebar.php:24
 msgid "Search"
-msgstr ""
+msgstr "Otsing"
 
 #: sidebar.php:24
 msgid "Search:"
-msgstr ""
+msgstr "Otsi:"
 
 #: sidebar.php:24
 msgid "Meta"
-msgstr ""
+msgstr "Meta"
 
 #. Theme Name of the plugin/theme
 msgid "athenea"
@@ -331,122 +344,122 @@ msgstr "IBERMEGA digital"
 
 #. Theme Options/theme
 msgid "Athenea Options"
-msgstr ""
+msgstr "ATHENEA juurde"
 
 #. Theme Options/theme
 msgid "Restore Defaults"
-msgstr ""
+msgstr "Restore Defaults"
 
 #. Theme Options/theme
 msgid "Default options restored."
-msgstr ""
+msgstr "Vaikimisi valikud taastada."
 
 #. Theme Options/theme
 msgid "Save Options"
-msgstr ""
+msgstr "Säästa juurde"
 
 #. Theme Options/theme
 msgid "Options saved."
-msgstr ""
+msgstr "Valikud salvestatud."
 
 #. Theme Options/theme
 msgid "Remove"
-msgstr ""
+msgstr "Eemalda"
 
 #. Theme Options/theme
 msgid "Upload"
-msgstr ""
+msgstr "Upload"
 
 #. Theme Options/theme
 msgid "Logos"
-msgstr ""
+msgstr "Logos"
 
 #. Theme Options/theme
 msgid "Logos Trademark"
-msgstr ""
+msgstr "Logos Trademark"
 
 #. Theme Options/theme
 msgid ""
 "Select the logo to be shown on the web with a maximum size of 292px wide."
-msgstr ""
+msgstr "Vali logo kuvatakse veebis maksimaalne suurus 292px lai."
 
 #. Theme Options/theme
 msgid "Favicon"
-msgstr ""
+msgstr "Favicon"
 
 #. Theme Options/theme
 msgid "No file chosen"
-msgstr ""
+msgstr "Faili ei valitud"
 
 #. Theme Options/theme
 msgid "Choose a Favicon in png with a maximum size of 64 x 64 px."
-msgstr ""
+msgstr "Vali favicon PNG, mille maksimaalne suurus on 64 x 64 px."
 
 #. Theme Options/theme
 msgid "Featured sections"
-msgstr ""
+msgstr "Soovitatavad lõigud"
 
 #. Theme Options/theme
 msgid "BLOCK RIGHT"
-msgstr ""
+msgstr "BLOCK RIGHT"
 
 #. Theme Options/theme
 msgid "Title"
-msgstr ""
+msgstr "Tiitel"
 
 #. Theme Options/theme
 msgid "Add your first highlighted section here."
-msgstr ""
+msgstr "Lisa oma esimeses esile jagu siin."
 
 #. Theme Options/theme
 msgid "Brief description."
-msgstr ""
+msgstr "Lühikirjeldus."
 
 #. Theme Options/theme
 msgid "Sign in options on topic and write a brief description."
-msgstr ""
+msgstr "Logi sisse valikuid teema ja kirjutage lühike kirjeldus."
 
 #. Theme Options/theme
 msgid "Button Text"
-msgstr ""
+msgstr "Button Tekst"
 
 #. Theme Options/theme
 msgid "Read More"
-msgstr ""
+msgstr "Loe edasi"
 
 #. Theme Options/theme
 msgid "URL Button"
-msgstr ""
+msgstr "URL Button"
 
 #. Theme Options/theme
 msgid ""
 "Select an image to display. The image must be transparent gif or png "
 "background"
-msgstr ""
+msgstr "Vali pilti näidata. Pilt peab olema läbipaistev gif või png tausta"
 
 #. Theme Options/theme
 msgid "CENTRAL BLOCK"
-msgstr ""
+msgstr "CENTRAL BLOCK"
 
 #. Theme Options/theme
 msgid "Continue with the second highlighted section."
-msgstr ""
+msgstr "Jätka teise esile tõstetud."
 
 #. Theme Options/theme
 msgid "BLOCK LEFT"
-msgstr ""
+msgstr "BLOCK LEFT"
 
 #. Theme Options/theme
 msgid "And finally, the third section highlighted."
-msgstr ""
+msgstr "Ja lõpuks kolmas lõik esile."
 
 #. Theme Options/theme
 msgid "BODY CENTRAL BLOC"
-msgstr ""
+msgstr "BODY CENTRAL BLOC"
 
 #. Theme Options/theme
 msgid "Who is the company"
-msgstr ""
+msgstr "Hetkel ettevõtte"
 
 #. Theme Options/theme
 msgid ""
@@ -454,99 +467,102 @@ msgid ""
 "option for visitors. Insert a text descripctivo y call the attention of your "
 "potential in the first minute."
 msgstr ""
+"Lühikirjeldus oma äri selles valdkonnas kodulehel on parim valik "
+"külalistele. Sisestage tekst descripctivo y helistada tähelepanu oma "
+"potentsiaali esimese minuti jooksul."
 
 #. Theme Options/theme
 msgid "Learn more"
-msgstr ""
+msgstr "Loe veel"
 
 #. Theme Options/theme
 msgid "Social Icons"
-msgstr ""
+msgstr "Sotsiaalne ikoonid"
 
 #. Theme Options/theme
 msgid "Activate"
-msgstr ""
+msgstr "Aktiveerima"
 
 #. Theme Options/theme
 msgid "Deactivate"
-msgstr ""
+msgstr "Deaktiveerima"
 
 #. Theme Options/theme
 msgid "Enter the full URL."
-msgstr ""
+msgstr "Sisestage täielik URL."
 
 #. Theme Options/theme
 msgid "Designs"
-msgstr ""
+msgstr "Designs"
 
 #. Theme Options/theme
 msgid "Theme Design"
-msgstr ""
+msgstr "Disain"
 
 #. Theme Options/theme
 msgid "Choose a layout for your website"
-msgstr ""
+msgstr "Vali kujundus oma veebilehel"
 
 #. Theme Options/theme
 msgid "Contact"
-msgstr ""
+msgstr "Kontak"
 
 #. Theme Options/theme
 msgid "Contact Details."
-msgstr ""
+msgstr "Kontaktandmed."
 
 #. Theme Options/theme
 msgid "Company Name"
-msgstr ""
+msgstr "Ettevõtte nimi"
 
 #. Theme Options/theme
 msgid "Company S.A."
-msgstr ""
+msgstr "Company SA"
 
 #. Theme Options/theme
 msgid ""
 "CIF/NIF/NIE (tax id). Mandatory for companies in the European Community."
-msgstr ""
+msgstr "CIF / NIF / NIE (maks id). Kohustuslik ettevõtteid Euroopa Ühendusega."
 
 #. Theme Options/theme
 msgid "B123456789"
-msgstr ""
+msgstr "B123456789"
 
 #. Theme Options/theme
 msgid "Address"
-msgstr ""
+msgstr "Aadress"
 
 #. Theme Options/theme
 msgid "New Burlington St, 123"
-msgstr ""
+msgstr "New Burlington St, 123"
 
 #. Theme Options/theme
 msgid "Postal Code"
-msgstr ""
+msgstr "Postiindeks"
 
 #. Theme Options/theme
 msgid "W1B 5NF"
-msgstr ""
+msgstr "W1B 5NF"
 
 #. Theme Options/theme
 msgid "City"
-msgstr ""
+msgstr "Linn"
 
 #. Theme Options/theme
 msgid "London"
-msgstr ""
+msgstr "London"
 
 #. Theme Options/theme
 msgid "Country"
-msgstr ""
+msgstr "Riik"
 
 #. Theme Options/theme
 msgid "United Kingdom"
-msgstr ""
+msgstr "Suurbritannia"
 
 #. Theme Options/theme
 msgid "Phone"
-msgstr ""
+msgstr "Telefon"
 
 #. Theme Options/theme
 msgid "9XX 123 456"
@@ -554,19 +570,19 @@ msgstr "9XX 123 456"
 
 #. Theme Options/theme
 msgid "E-Mail contact"
-msgstr ""
+msgstr "E-Mail kontakt"
 
 #. Theme Options/theme
 msgid "office@company.com"
-msgstr ""
+msgstr "office@company.com"
 
 #. Theme Options/Donative
 msgid "Do you like the theme Athenea?"
-msgstr ""
+msgstr "Kas sulle meeldib teema ATHENEA?"
 
 #. Theme Options/Donative
 msgid "Buy me a coffee!"
-msgstr ""
+msgstr "Osta mulle kohvi!"
 
 #. Theme Options/Donative
 msgid ""
@@ -574,131 +590,137 @@ msgid ""
 "improvement. You can make a donation to your choice or collaboration with "
 "the developer :-)"
 msgstr ""
+"Aita meil hoida teie jaoks töötab ajakohastamise kohta selles küsimuses ja "
+"parandamist. Võite teha annetuse oma valik või koostöös arendaja :-)"
 
 #. Theme Options/Donative
 msgid "Voluntary donation"
-msgstr ""
+msgstr "Vabatahtlik annetus"
 
 #. Theme Options/Donative
 msgid "Collaborate"
-msgstr ""
+msgstr "Koostööd tegema"
 
 #. Theme Options/Donative
 msgid "for Coffee &#8364;0,80 EUR"
-msgstr ""
+msgstr "Kohv 0,80 € EUR"
 
 #. Theme Options/Donative
 msgid "for Coca-Cola &#8364;1,20 EUR"
-msgstr ""
+msgstr "Coca-Cola 1,20 € EUR"
 
 #. Theme Options/Donative
 msgid "for Beer &#8364;1,45 EUR"
-msgstr ""
+msgstr "Õlu € 1,45 EUR"
 
 #. Theme Options/Donative
 msgid "for a Burger &#8364;2,00 EUR"
-msgstr ""
+msgstr "jaoks Burger € 2,00 EUR"
 
 #. Theme Options/Donative
 msgid "All &#8364;5,45 EUR"
-msgstr ""
+msgstr "Kõik 5,45 € EUR"
 
 #. Theme Options/Donative
 msgid "Opinion"
-msgstr ""
+msgstr "Arvamus"
 
 #. Theme Options/Donative
 msgid "Very good"
-msgstr ""
+msgstr "Väga hea"
 
 #. Theme Options/Donative
 msgid "Good"
-msgstr ""
+msgstr "Hea"
 
 #. Theme Options/Donative
 msgid "Not bad"
-msgstr ""
+msgstr "Pole paha"
 
 #. Theme Options/Donative
 msgid "Keep working"
-msgstr ""
+msgstr "Harjutage"
 
 #. Theme Options/Donative
 msgid "Athenea Documentation"
-msgstr ""
+msgstr "ATHENEA dokumentatsioon"
 
 #. Portada
 msgid "Continue reading &raquo;&raquo;"
-msgstr ""
+msgstr "Jätka lugemist »»"
 
 #. Footer
 msgid "Footer A"
-msgstr ""
+msgstr "Footer"
 
 #. Footer
 msgid "Footer B"
-msgstr ""
+msgstr "Footer B"
 
 #. Footer
 msgid "Footer C"
-msgstr ""
+msgstr "Footer C"
 
 #. Footer
 msgid "Footer D"
-msgstr ""
+msgstr "Footer D"
 
 #. Footer
 msgid "Athenea Contact"
-msgstr ""
+msgstr "ATHENEA Kontakt"
 
 #. Footer
 msgid "Top"
-msgstr ""
+msgstr "Populaarseimad"
 
 #. Footer
 msgid "Theme designed by"
-msgstr ""
+msgstr "Theme kujundas"
 
 #. Comments
 msgid "Comments"
-msgstr ""
+msgstr "Kommentaarid"
 
 #. Comments
 msgid ""
 "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags "
 "and attributes: %s"
 msgstr ""
+"Võid kasutada neid <abbr title=\"HyperText Markup Language\"> HTML </ abbr> "
+"sildid ja atribuudid: %s"
 
 #. Comments
 msgid "Leave a reply"
-msgstr ""
+msgstr "Jäta vastus"
 
 #. Comments
 msgid "Leave a reply to %s"
-msgstr ""
+msgstr "Jäta vastus, et %s"
 
 #. Comments
 msgid "Reply <span>&darr;</span>"
-msgstr ""
+msgstr "Vasta <span> ↓ </ span>"
 
 #. Comments
 msgid "Comment"
-msgstr ""
+msgstr "Kommentaar"
 
 #: Comments
 msgid "required"
-msgstr ""
+msgstr "nõutav"
 
 #: Comments
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
-msgstr ""
+msgstr "Sa pead olema <a href=\"%s\"> sisse </a>, et kommenteerida."
 
 #: Comments
 msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
 "this account\">Log out?</a>"
 msgstr ""
+"Sisse logitud kui <a href=\"%1$s\"> %2$s </a>. <a href=\"%3$s\" title=\"Logi "
+"välja sellest kontost\"> Logi välja? </a>"
 
 #: Comments
 msgid "will not be published"
-msgstr ""
+msgstr "ei avaldata"

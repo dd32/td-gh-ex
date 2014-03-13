@@ -8,102 +8,104 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2014-03-13 18:36+0100\n"
+"PO-Revision-Date: 2014-03-13 17:04+0100\n"
 "Last-Translator: Miguel Angel <miguel@ibermega.com>\n"
 "Language-Team: IBERMEGA digital <soporte@ibermega.com>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: en\n"
+"Language: he_IL\n"
 "X-Generator: Poedit 1.6.2\n"
 "X-Poedit-KeywordsList: _s;__;_x;_e\n"
 
 #: 404.php:15
 msgid "Oops! That page can&rsquo;t be found."
-msgstr ""
+msgstr "אופס! לא ניתן למצוא דף זה."
 
 #: 404.php:19
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
+"זה נראה כמו שום דבר שנמצא במיקום זה. אולי לנסות את אחד מהקישורים הבאים או "
+"חיפוש?"
 
 #: 404.php:27
 msgid "Most Used Categories"
-msgstr ""
+msgstr "רוב קטגוריות משומשות"
 
 #. translators: %1$s: smiley
 #: 404.php:44
 msgid "Try looking in the monthly archives. %1$s"
-msgstr ""
+msgstr "נסה לחפש בארכיונים %1$s"
 
 #: archive.php:31
 msgid "Author: %s"
-msgstr ""
+msgstr "%s"
 
 #: archive.php:39
 msgid "Day: %s"
-msgstr ""
+msgstr "%s"
 
 #: archive.php:42
 msgid "Month: %s"
-msgstr ""
+msgstr "%s"
 
 #: archive.php:42
 msgctxt "monthly archives date format"
 msgid "F Y"
-msgstr ""
+msgstr "פ.י."
 
 #: archive.php:45
 msgid "Year: %s"
-msgstr ""
+msgstr "%s"
 
 #: archive.php:45
 msgctxt "yearly archives date format"
 msgid "Y"
-msgstr ""
+msgstr "י"
 
 #: archive.php:48
 msgid "Asides"
-msgstr ""
+msgstr "הערות אגב"
 
 #: archive.php:51
 msgid "Galleries"
-msgstr ""
+msgstr "גלריות"
 
 #: archive.php:54
 msgid "Images"
-msgstr ""
+msgstr "תמונות"
 
 #: archive.php:57
 msgid "Videos"
-msgstr ""
+msgstr "סרטונים"
 
 #: archive.php:58
 msgid "Video"
-msgstr ""
+msgstr "סרטון"
 
 #: archive.php:60
 msgid "Quotes"
-msgstr ""
+msgstr "הצעות מחיר"
 
 #: archive.php:63
 msgid "Links"
-msgstr ""
+msgstr "קישורים"
 
 #: archive.php:66
 msgid "Statuses"
-msgstr ""
+msgstr "סטטוסים"
 
 #: archive.php:69
 msgid "Audios"
-msgstr ""
+msgstr "Audios"
 
 #: archive.php:72
 msgid "Chats"
-msgstr ""
+msgstr "שיחות"
 
 #: archive.php:75 sidebar.php:17
 msgid "Archives"
-msgstr ""
+msgstr "ארכיון"
 
 #: comments.php:30
 msgctxt "comments title"
@@ -114,208 +116,215 @@ msgstr[1] ""
 
 #: comments.php:37 comments.php:57
 msgid "Comment navigation"
-msgstr ""
+msgstr "ניווט תגובה"
 
 #: comments.php:38 comments.php:58
 msgid "&larr; Older Comments"
-msgstr ""
+msgstr "← תגובות ישנות יותר"
 
 #: comments.php:39 comments.php:59
 msgid "Newer Comments &rarr;"
-msgstr ""
+msgstr "תגובות חדשות יותר →"
 
 #: comments.php:69
 msgid "Comments are closed."
-msgstr ""
+msgstr "לא ניתן להגיב לכתבה זו."
 
 #: content-none.php:13
 msgid "Nothing Found"
-msgstr ""
+msgstr "לא! זה פשוט לא נמצא."
 
 #: content-none.php:19
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
+msgstr "מוכן לפרסם את ההודעה הראשונה שלך? <a href=\"%1$s\">התחל כאן</a>."
 
 #: content-none.php:23
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
+"מצטער, אבל שום דבר לא תאם את ביטויי החיפוש שלך. אנא נסה שוב עם כמה מילות "
+"מפתח שונות."
 
 #: content-none.php:28
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
-msgstr ""
+msgstr "נראה שאנחנו לא יכולים למצוא את מה שאתה מחפש. אולי חיפוש יכול לעזור."
 
 #: content-page.php:18 content-single.php:20 content.php:27
 msgid "Pages:"
-msgstr ""
+msgstr "עמודים:"
 
 #: content-page.php:23 content-single.php:60 content.php:61
 #: inc/template-tags.php:81 inc/template-tags.php:100
 msgid "Edit"
-msgstr ""
+msgstr "לערוך"
 
 #. translators: used between list items, there is a space after the comma
 #: content-single.php:29 content-single.php:32 content.php:38 content.php:48
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: content-single.php:37
 msgid ""
 "This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
 "\">permalink</a>."
-msgstr ""
+msgstr "רשומה זו %2$s סימנייה <a href=\"%3$s\" rel=\"סימנייה\">קישור קבוע</a>."
 
 #: content-single.php:39
 msgid "Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
-msgstr ""
+msgstr "סימנייה <a href=\"%3$s\" rel=\"סימנייה\">קישור קבוע</a>."
 
 #: content-single.php:45
 msgid ""
 "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
 "rel=\"bookmark\">permalink</a>."
 msgstr ""
+"רשומה זו פורסמה %1$s %2$s סימנייה <a href=\"%3$s\" rel=\"סימנייה\">קישור "
+"קבוע</a>."
 
 #: content-single.php:47
 msgid ""
 "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
 "\">permalink</a>."
 msgstr ""
+"רשומה זו פורסמה %1$s סימנייה <a href=\"%3$s\" rel=\"סימנייה\">קישור קבוע</a>."
 
 #: content.php:24
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "המשך <span class=\"meta-nav\"> → </span> קריאה"
 
 #: content.php:42
 msgid "Posted in %1$s"
-msgstr ""
+msgstr "פורסם %1$s"
 
 #: content.php:52
 msgid "Tagged %1$s"
-msgstr ""
+msgstr "%1$s"
 
 #: content.php:58
 msgid "Leave a comment"
-msgstr ""
+msgstr "השאירו תגובה"
 
 #: content.php:58
 msgid "1 Comment"
-msgstr ""
+msgstr "תגובה אחת"
 
 #: content.php:58
 msgid "% Comments"
-msgstr ""
+msgstr "% תגובות"
 
 #: footer.php:16
 msgid "Proudly powered by %s"
-msgstr ""
+msgstr "פועל בגאווה %s"
 
 #: footer.php:18
 msgid "Theme: %1$s by %2$s."
-msgstr ""
+msgstr "%1$s על %2$s"
 
 #: functions.php:45
 msgid "Primary Menu"
-msgstr ""
+msgstr "תפריט ראשי"
 
 #: functions.php:65
 msgid "Sidebar"
-msgstr ""
+msgstr "הסרגל הצידי"
 
 #: header.php:31
 msgid "Menu"
-msgstr ""
+msgstr "תפריט"
 
 #: header.php:32
 msgid "Skip to content"
-msgstr ""
+msgstr "מעבר לתוכן"
 
 #: inc/extras.php:63
 msgid "Page %s"
-msgstr ""
+msgstr "עמוד %s"
 
 #: inc/template-tags.php:23
 msgid "Posts navigation"
-msgstr ""
+msgstr "ניווט הודעות"
 
 #: inc/template-tags.php:27
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr ""
+msgstr "הודעות ← </ span> ישנות יותר <span class=\"meta-nav\">"
 
 #: inc/template-tags.php:31
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "פוסטים חדשים יותר <span class=\"meta-nav\"> → </ span>"
 
 #: inc/template-tags.php:56
 msgid "Post navigation"
-msgstr ""
+msgstr "פרסם ניווט"
 
 #: inc/template-tags.php:59
 msgctxt "Previous post link"
 msgid "<span class=\"meta-nav\">&larr;</span> %title"
-msgstr ""
+msgstr "<span class=\"meta-nav\"> </ span> %t itle"
 
 #: inc/template-tags.php:60
 msgctxt "Next post link"
 msgid "%title <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "%t itle <span class=\"meta-nav\"> → </ span>"
 
 #: inc/template-tags.php:81
 msgid "Pingback:"
-msgstr ""
+msgstr "פינגבאק:"
 
 #: inc/template-tags.php:91
 msgid "%s <span class=\"says\">says:</span>"
-msgstr ""
+msgstr "%s <span class=\"says\"> אומר: </ span>"
 
 #: inc/template-tags.php:97
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
-msgstr ""
+msgstr "%1$s ב %2$s"
 
 #: inc/template-tags.php:104
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "התגובה שלך ממתינה לאישור."
 
 #: inc/template-tags.php:145
 msgid ""
 "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by "
 "%2$s</span>"
 msgstr ""
+"<span class=\"posted-on\"> פורסם ב %1$s </ span> <span class=\"byline\"> "
+"%2$s </ span>"
 
 #: search.php:16
 msgid "Search Results for: %s"
-msgstr ""
+msgstr "תוצאות חיפוש %s"
 
 #: searchform.php:10
 msgctxt "label"
 msgid "Search for:"
-msgstr ""
+msgstr "חפש:"
 
 #: searchform.php:11
 msgctxt "placeholder"
 msgid "Search &hellip;"
-msgstr ""
+msgstr "חיפוש ..."
 
 #: searchform.php:13
 msgctxt "submit button"
 msgid "Search"
-msgstr ""
+msgstr "חיפוש"
 
 #: sidebar.php:24
 msgid "Search"
-msgstr ""
+msgstr "חיפוש"
 
 #: sidebar.php:24
 msgid "Search:"
-msgstr ""
+msgstr "חיפוש:"
 
 #: sidebar.php:24
 msgid "Meta"
-msgstr ""
+msgstr "Meta"
 
 #. Theme Name of the plugin/theme
 msgid "athenea"
@@ -331,122 +340,122 @@ msgstr "IBERMEGA digital"
 
 #. Theme Options/theme
 msgid "Athenea Options"
-msgstr ""
+msgstr "Athenea אפשרויות"
 
 #. Theme Options/theme
 msgid "Restore Defaults"
-msgstr ""
+msgstr "שחזר ברירות מחדל"
 
 #. Theme Options/theme
 msgid "Default options restored."
-msgstr ""
+msgstr "אפשרויות ברירת מחדל ישוחזרו."
 
 #. Theme Options/theme
 msgid "Save Options"
-msgstr ""
+msgstr "להציל את אפשרויות"
 
 #. Theme Options/theme
 msgid "Options saved."
-msgstr ""
+msgstr "אפשרויות הצילו."
 
 #. Theme Options/theme
 msgid "Remove"
-msgstr ""
+msgstr "הסר"
 
 #. Theme Options/theme
 msgid "Upload"
-msgstr ""
+msgstr "העלאה"
 
 #. Theme Options/theme
 msgid "Logos"
-msgstr ""
+msgstr "לוגוים"
 
 #. Theme Options/theme
 msgid "Logos Trademark"
-msgstr ""
+msgstr "סימני מסחר לוגוים"
 
 #. Theme Options/theme
 msgid ""
 "Select the logo to be shown on the web with a maximum size of 292px wide."
-msgstr ""
+msgstr "בחר את הלוגו שיוצג באינטרנט עם גודל מרבי של רחב 292px."
 
 #. Theme Options/theme
 msgid "Favicon"
-msgstr ""
+msgstr "Favicon"
 
 #. Theme Options/theme
 msgid "No file chosen"
-msgstr ""
+msgstr "לא נבחר קובץ"
 
 #. Theme Options/theme
 msgid "Choose a Favicon in png with a maximum size of 64 x 64 px."
-msgstr ""
+msgstr "בחר Favicon בpng עם גודל מרבי של 64 x 64 px."
 
 #. Theme Options/theme
 msgid "Featured sections"
-msgstr ""
+msgstr "קטעים נבחרים"
 
 #. Theme Options/theme
 msgid "BLOCK RIGHT"
-msgstr ""
+msgstr "גוש ימין"
 
 #. Theme Options/theme
 msgid "Title"
-msgstr ""
+msgstr "כותרת"
 
 #. Theme Options/theme
 msgid "Add your first highlighted section here."
-msgstr ""
+msgstr "הוספת הסעיף המודגש הראשון שלך כאן."
 
 #. Theme Options/theme
 msgid "Brief description."
-msgstr ""
+msgstr "תיאור קצר."
 
 #. Theme Options/theme
 msgid "Sign in options on topic and write a brief description."
-msgstr ""
+msgstr "כניסה אפשרויות בנושא ולכתוב תיאור קצר."
 
 #. Theme Options/theme
 msgid "Button Text"
-msgstr ""
+msgstr "טקסט לחצן"
 
 #. Theme Options/theme
 msgid "Read More"
-msgstr ""
+msgstr "קרא עוד"
 
 #. Theme Options/theme
 msgid "URL Button"
-msgstr ""
+msgstr "לחצן URL"
 
 #. Theme Options/theme
 msgid ""
 "Select an image to display. The image must be transparent gif or png "
 "background"
-msgstr ""
+msgstr "בחר תמונות להצגה. התמונה חייבת להיות gif השקוף או רקע png"
 
 #. Theme Options/theme
 msgid "CENTRAL BLOCK"
-msgstr ""
+msgstr "גוש מרכזי"
 
 #. Theme Options/theme
 msgid "Continue with the second highlighted section."
-msgstr ""
+msgstr "תמשיך עם הקטע המודגש השני."
 
 #. Theme Options/theme
 msgid "BLOCK LEFT"
-msgstr ""
+msgstr "BLOCK שמאלה"
 
 #. Theme Options/theme
 msgid "And finally, the third section highlighted."
-msgstr ""
+msgstr "ולבסוף, החלק השלישי מודגש."
 
 #. Theme Options/theme
 msgid "BODY CENTRAL BLOC"
-msgstr ""
+msgstr "הגוף המרכזי BLOC"
 
 #. Theme Options/theme
 msgid "Who is the company"
-msgstr ""
+msgstr "מי היא החברה"
 
 #. Theme Options/theme
 msgid ""
@@ -454,99 +463,101 @@ msgid ""
 "option for visitors. Insert a text descripctivo y call the attention of your "
 "potential in the first minute."
 msgstr ""
+"תיאור קצר של העסק שלך באזור זה של האתר הוא האפשרות הטובה ביותר עבור מבקרים. "
+"הכנס טקסט descripctivo y לקרוא את תשומת הלב של הפוטנציאל שלך בדקה הראשונה."
 
 #. Theme Options/theme
 msgid "Learn more"
-msgstr ""
+msgstr "למידע נוסף"
 
 #. Theme Options/theme
 msgid "Social Icons"
-msgstr ""
+msgstr "סמלים חברתיים"
 
 #. Theme Options/theme
 msgid "Activate"
-msgstr ""
+msgstr "הפעל"
 
 #. Theme Options/theme
 msgid "Deactivate"
-msgstr ""
+msgstr "בטל הפעלה"
 
 #. Theme Options/theme
 msgid "Enter the full URL."
-msgstr ""
+msgstr "הזן את כתובת האתר המלאה."
 
 #. Theme Options/theme
 msgid "Designs"
-msgstr ""
+msgstr "עיצובים"
 
 #. Theme Options/theme
 msgid "Theme Design"
-msgstr ""
+msgstr "נושאים של עיצוב"
 
 #. Theme Options/theme
 msgid "Choose a layout for your website"
-msgstr ""
+msgstr "בחר פריסה עבור האתר שלך"
 
 #. Theme Options/theme
 msgid "Contact"
-msgstr ""
+msgstr "איש/ת קשר"
 
 #. Theme Options/theme
 msgid "Contact Details."
-msgstr ""
+msgstr "פרטי יצירת קשר."
 
 #. Theme Options/theme
 msgid "Company Name"
-msgstr ""
+msgstr "שם החברה"
 
 #. Theme Options/theme
 msgid "Company S.A."
-msgstr ""
+msgstr "חברת ס.א."
 
 #. Theme Options/theme
 msgid ""
 "CIF/NIF/NIE (tax id). Mandatory for companies in the European Community."
-msgstr ""
+msgstr "CIF / הקרן החדשה / NIE (id מס). חובה לחברות בקהילה האירופית."
 
 #. Theme Options/theme
 msgid "B123456789"
-msgstr ""
+msgstr "B123456789"
 
 #. Theme Options/theme
 msgid "Address"
-msgstr ""
+msgstr "כתובת"
 
 #. Theme Options/theme
 msgid "New Burlington St, 123"
-msgstr ""
+msgstr "ברלינגטון סנט החדש, 123"
 
 #. Theme Options/theme
 msgid "Postal Code"
-msgstr ""
+msgstr "מיקוד"
 
 #. Theme Options/theme
 msgid "W1B 5NF"
-msgstr ""
+msgstr "W1B 5NF"
 
 #. Theme Options/theme
 msgid "City"
-msgstr ""
+msgstr "עיר"
 
 #. Theme Options/theme
 msgid "London"
-msgstr ""
+msgstr "לונדון"
 
 #. Theme Options/theme
 msgid "Country"
-msgstr ""
+msgstr "ארץ"
 
 #. Theme Options/theme
 msgid "United Kingdom"
-msgstr ""
+msgstr "בריטניה"
 
 #. Theme Options/theme
 msgid "Phone"
-msgstr ""
+msgstr "טלפון"
 
 #. Theme Options/theme
 msgid "9XX 123 456"
@@ -554,19 +565,19 @@ msgstr "9XX 123 456"
 
 #. Theme Options/theme
 msgid "E-Mail contact"
-msgstr ""
+msgstr "קשר E-Mail"
 
 #. Theme Options/theme
 msgid "office@company.com"
-msgstr ""
+msgstr "office@company.com"
 
 #. Theme Options/Donative
 msgid "Do you like the theme Athenea?"
-msgstr ""
+msgstr "האם אתה אוהב את הנושא Athenea?"
 
 #. Theme Options/Donative
 msgid "Buy me a coffee!"
-msgstr ""
+msgstr "לקנות לי קפה!"
 
 #. Theme Options/Donative
 msgid ""
@@ -574,131 +585,137 @@ msgid ""
 "improvement. You can make a donation to your choice or collaboration with "
 "the developer :-)"
 msgstr ""
+"עזור לנו להמשיך לעבוד בשבילך על העדכון לבעיה זו והשיפור. אתה יכול לתרום "
+"לבחירה או שיתוף הפעולה שלך עם היזם :-)"
 
 #. Theme Options/Donative
 msgid "Voluntary donation"
-msgstr ""
+msgstr "תרומה מרצון"
 
 #. Theme Options/Donative
 msgid "Collaborate"
-msgstr ""
+msgstr "לשתף פעולה"
 
 #. Theme Options/Donative
 msgid "for Coffee &#8364;0,80 EUR"
-msgstr ""
+msgstr "לEUR 0,80 קפה €"
 
 #. Theme Options/Donative
 msgid "for Coca-Cola &#8364;1,20 EUR"
-msgstr ""
+msgstr "לEUR 1,20 קוקה קולה €"
 
 #. Theme Options/Donative
 msgid "for Beer &#8364;1,45 EUR"
-msgstr ""
+msgstr "לEUR 1,45 באר €"
 
 #. Theme Options/Donative
 msgid "for a Burger &#8364;2,00 EUR"
-msgstr ""
+msgstr "לEUR 2,00 ורגר €"
 
 #. Theme Options/Donative
 msgid "All &#8364;5,45 EUR"
-msgstr ""
+msgstr "כל EUR € 5.45"
 
 #. Theme Options/Donative
 msgid "Opinion"
-msgstr ""
+msgstr "דעה (Opinion)"
 
 #. Theme Options/Donative
 msgid "Very good"
-msgstr ""
+msgstr "טוב מאוד"
 
 #. Theme Options/Donative
 msgid "Good"
-msgstr ""
+msgstr "טוב"
 
 #. Theme Options/Donative
 msgid "Not bad"
-msgstr ""
+msgstr "לא רע"
 
 #. Theme Options/Donative
 msgid "Keep working"
-msgstr ""
+msgstr "להמשיך לעבוד"
 
 #. Theme Options/Donative
 msgid "Athenea Documentation"
-msgstr ""
+msgstr "Athenea תיעוד"
 
 #. Portada
 msgid "Continue reading &raquo;&raquo;"
-msgstr ""
+msgstr "המשך קריאת »»"
 
 #. Footer
 msgid "Footer A"
-msgstr ""
+msgstr "תחתונה"
 
 #. Footer
 msgid "Footer B"
-msgstr ""
+msgstr "כותרת תחתונה B"
 
 #. Footer
 msgid "Footer C"
-msgstr ""
+msgstr "כותרת תחתונה C"
 
 #. Footer
 msgid "Footer D"
-msgstr ""
+msgstr "כותרת תחתונה D"
 
 #. Footer
 msgid "Athenea Contact"
-msgstr ""
+msgstr "Athenea לתקשר"
 
 #. Footer
 msgid "Top"
-msgstr ""
+msgstr "למעלה"
 
 #. Footer
 msgid "Theme designed by"
-msgstr ""
+msgstr "נושא תוכנן על ידי"
 
 #. Comments
 msgid "Comments"
-msgstr ""
+msgstr "תגובות"
 
 #. Comments
 msgid ""
 "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags "
 "and attributes: %s"
 msgstr ""
+"הנך רשאי להשתמש title=\"HyperText Markup Language\"> HTML <abbr אלה התגים </ "
+"abbr> %s"
 
 #. Comments
 msgid "Leave a reply"
-msgstr ""
+msgstr "השאר תשובה"
 
 #. Comments
 msgid "Leave a reply to %s"
-msgstr ""
+msgstr "השאר תשובה ל%s"
 
 #. Comments
 msgid "Reply <span>&darr;</span>"
-msgstr ""
+msgstr "תגובה <span>↓</ span>"
 
 #. Comments
 msgid "Comment"
-msgstr ""
+msgstr "הערה"
 
 #: Comments
 msgid "required"
-msgstr ""
+msgstr "דרוש"
 
 #: Comments
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
-msgstr ""
+msgstr "אתה חייב להיות <a href=\"%s\"> מחובר </a> כדי לכתוב הערה."
 
 #: Comments
 msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
 "this account\">Log out?</a>"
 msgstr ""
+"נכנס כ <a href=\"%1$s\"> %2$s </a>. <a href=\"%3$s\" title=\"התנתק מחשבון זה "
+"\" התנתק ? </a>"
 
 #: Comments
 msgid "will not be published"
-msgstr ""
+msgstr "לא יפורסם"
