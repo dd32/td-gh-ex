@@ -13,3 +13,13 @@ function flatthirteen_scripts_styles() {
 	wp_enqueue_script( 'flatthirteen-bootstrap', get_stylesheet_directory_uri() . '/js/bootstrap.js', array( 'jquery' ), '2.3.1', true );
 }
 add_action( 'wp_enqueue_scripts', 'flatthirteen_scripts_styles' );
+
+register_sidebar(array(
+  'name' => __( 'Header Banner' ),
+  'id' => 'header-banner',
+  'before_widget' => '<div id="%1$s" class="">',
+	'after_widget'  => '</div>',
+  'description' => __( 'Widgets in this area will be shown below to the menu bar.' ),
+  'before_title' => '<h2>',
+  'after_title' => '</h2>'
+));

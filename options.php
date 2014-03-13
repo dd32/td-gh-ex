@@ -102,7 +102,7 @@ function optionsframework_options() {
 
 	$options = array();
 	$options[] = array(
-		'name' => __('Logo Setting', 'options_framework_theme'),
+		'name' => __('General Settings', 'options_framework_theme'),
 		'type' => 'heading');
 		
 	$options[] = array(
@@ -118,6 +118,49 @@ function optionsframework_options() {
 		'desc' => __('Please uload max 200px width and 50px transparant logo image.', 'options_framework_theme'),
 		'id' => 'logo_uploader',
 		'type' => 'upload');
+	$options[] = array(
+		'name' => __('Upload your Fav icon here', 'options_framework_theme'),
+		'desc' => __('Please upload your fav icon here', 'options_framework_theme'),
+		'id' => 'fav_uploader',
+		'type' => 'upload');
+		
+	$options[] = array(
+		'name' => __('Choose your category name for random post', 'options_framework_theme'),
+		'desc' => __('Please select your category to show in random post.', 'options_framework_theme'),
+		'id' => 'feature_cat',
+		'type' => 'select',
+		'options' => $options_categories);
+	$options[] = array(
+		'name' => __('Social Profile Setting', 'options_framework_theme'),
+		'type' => 'heading');
+		
+		$options[] = array(
+		'name' => __('Ad your social profile links with http:// here', 'options_framework_theme'),
+		'desc' => __('Add your facebook page link here.', 'options_framework_theme'),
+		'id' => 'facebook_link',
+		'type' => 'text');
+		
+		$options[] = array(
+		'desc' => __('Add your twitter page link here.', 'options_framework_theme'),
+		'id' => 'twitter_link',
+		'type' => 'text');
+		$options[] = array(
+		'desc' => __('Add your google plus page link here.', 'options_framework_theme'),
+		'id' => 'gplus_link',
+		'type' => 'text');
+		$options[] = array(
+		'desc' => __('Add your RSS feed link here.', 'options_framework_theme'),
+		'id' => 'rss_link',
+		'type' => 'text');
+		$options[] = array(
+		'desc' => __('Add your youtube page link here.', 'options_framework_theme'),
+		'id' => 'youtube_link',
+		'type' => 'text');
+		$options[] = array(
+		'desc' => __('Add your pinterest page link here.', 'options_framework_theme'),
+		'id' => 'pinterest_link',
+		'type' => 'text');
+	
 
 	
 

@@ -4,9 +4,9 @@ Theme URI: http://crayonux.com/flatthirteen/
 Author: Basanta Moharana
 Author URI: http://crayonux.com/
 
-Description: WP FlatThirteen is a flat and minimal design TwentyThirteen child theme powered by TwitterBootstrap 3.0. It has unique designed for SEO optimization with faster page loading.  The child theme helps Bloggers to make unique and elegant look blogs. The theme can be used for any kind of blog or news websites. The child theme only works with TwentyThirteen  parent theme. Due to bootstrap power, admin can add a lot of creative works  to its content. This is fully responsive theme, works perfectly with any mobile devices or tablet.
+Description: WP FlatThirteen  is a flat and minimal design TwentyThirteen child theme powered by TwitterBootstrap 3.0. It has unique designed for SEO optimization with faster page loading.  The child theme helps Bloggers to make unique and elegant look blogs. The theme can be used for any kind of blog or news websites. The child theme only works with TwentyThirteen  parent theme. Due to bootstrap power, admin can add a lot of creative works  to its content. This is fully responsive theme, works perfectly with any mobile devices or tablet. There is a lot of new things in this vertion like Social media profile, Feature post category, Custom Fab iconetc. Watch demo here http://crayonux.com/demo/flatthirteen/
 
-Version: 1.3
+Version: 1.4
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: white, light, green,  three-columns, two-columns, right-sidebar, flexible-width, custom-menu, featured-images
@@ -14,11 +14,10 @@ Text Domain: flatthirteen
 Template: twentythirteen
 */
 
-@import url(http://fonts.googleapis.com/css?family=Sanchez:400italic,400);
-@import url(http://fonts.googleapis.com/css?family=Devonshire);
+@import url(http://fonts.googleapis.com/css?family=Domine:400,700);
 @import url(css/bootstrap.css);
 @import url(css/bootstrap-theme.css);
-
+@import url(css/font-awesome.css);
 
 * {
 	-webkit-box-sizing: border-box;
@@ -66,7 +65,7 @@ button,
 input,
 select,
 textarea {
-	font-family: "Source Sans Pro", Helvetica, sans-serif;
+	font-family: "arial", Helvetica, sans-serif;
 }
 
 body {
@@ -105,7 +104,7 @@ h4,
 h5,
 h6 {
 	clear: both;
-	font-family: Bitter, Georgia, serif;
+	font-family: 'Domine', serif;
 	line-height: 1.3;
 }
 h1 {
@@ -144,7 +143,7 @@ code,
 kbd,
 pre,
 samp {
-	font-family: monospace, serif;
+	font-family: 'Domine', serif;
 	font-size: 14px;
 	-webkit-hyphens: none;
 	-moz-hyphens:    none;
@@ -155,7 +154,7 @@ samp {
 pre {
 	background: #f5f5f5;
 	color: #666;
-	font-family: monospace;
+	font-family: 'Domine', serif;
 	font-size: 14px;
 	margin: 20px 0;
 	overflow: auto;
@@ -397,9 +396,18 @@ hr {
 	height: 1px;
 	margin: 0 0 24px;
 }
-
+#headerimage {
+	max-height: 150px;
+	overflow: hidden;
+}
+.pagecontent {
+	padding-top: 20px;
+}
 #tertiary {
 	overflow: hidden;
+	min-width: 300px;
+	max-width: 300px;
+	padding: 0px;
 }
 .format-aside {
 	box-shadow : none !important;
@@ -805,7 +813,7 @@ img.wp-smiley,
 ul.nav-menu,
 div.nav-menu > ul {
 	margin: 0;
-	padding: 0 40px 0 0;
+	padding: 0 0px 0 0;
 }
 
 .nav-menu li {
@@ -877,6 +885,10 @@ ul.nav-menu li:hover > ul,
 }
 
 /* Navbar */
+#navbar {
+	max-width: 1200px;
+	margin: auto;
+}
 .navbar {
 	background-color: #f7f5e7;
 	margin: 0 auto;
@@ -885,9 +897,8 @@ ul.nav-menu li:hover > ul,
 }
 
 .site-header .search-form {
-	position: absolute;
-	right: 20px;
-	top: 1px;
+	
+
 }
 
 .site-header .search-field {
@@ -896,7 +907,6 @@ ul.nav-menu li:hover > ul,
 	background-position: 5px center;
 	background-repeat: no-repeat;
 	background-size: 24px 24px;
-	border: none;
 	cursor: pointer;
 	height: 37px;
 	margin: 3px 0;
@@ -904,7 +914,6 @@ ul.nav-menu li:hover > ul,
 	position: relative;
 	-webkit-transition: width 400ms ease, background 400ms ease;
 	transition:         width 400ms ease, background 400ms ease;
-	width: 0;
 }
 
 .site-header .search-field:focus {
@@ -964,6 +973,7 @@ ul.nav-menu li:hover > ul,
 .entry-title {
 	font-weight: normal;
 	margin: 0 0 5px;
+	word-wrap: break-word;
 }
 
 .entry-title a {
@@ -2061,7 +2071,6 @@ footer.entry-meta {
 .sidebar .comment-respond .comment-form {
 	max-width: 1040px;
 	padding-left: 60px;
-	padding-right: 376px;
 }
 
 .comments-title {
@@ -2105,6 +2114,9 @@ footer.entry-meta {
 .comment-author .avatar {
 	display: block;
 	margin-bottom: 10px;
+	-webkit-border-radius: 200px;
+	-moz-border-radius: 200px;
+	border-radius: 200px;
 }
 
 .comment-author .fn {
@@ -2277,10 +2289,13 @@ footer.entry-meta {
 	font-size: 10px;
 	margin-left: 3px;
 	-webkit-hyphens: auto;
-	-moz-hyphens:    auto;
-	-ms-hyphens:     auto;
-	hyphens:         auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
 	word-wrap: break-word;
+	white-space: normal !important;
+	font-size: 15px;
+	clear: both;
 }
 
 .comment-list .pingback,
@@ -2528,11 +2543,13 @@ footer.entry-meta {
 
 .site-info {
 	margin: 0 auto;
-	max-width: 1040px;
-	padding: 30px 0;
+	max-width: 1200px;
+	padding: 10px 0;
 	width: 100%;
 }
-
+.site-info p {
+	margin: 0px;
+}
 #wpstats {
 	display: block;
 	margin: -10px auto 0;
@@ -3095,17 +3112,15 @@ footer.entry-meta {
 /* flatthirteen custom style starts here */
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Sanchez', serif !important;
+	font-family: 'Domine', serif !important;
 }
 
 .site-header {
-	min-height: 125px;
-	background: none !important;
+	height: auto;
+	background: #2c3e50 !important;
 	
 }
-.site-header .search-form {
-	top: 18px;
-}
+
 .site-header .search-field {
 	-webkit-border-radius: 20px;
 	-moz-border-radius: 20px;
@@ -3118,12 +3133,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 .navbar-header {
 	background: #d35400;
-	padding: 10px 30px;
+	padding: 10px 15px;
 }
 .navbar-header a {
 	color: #fff;
 	font-size: 30px;
-	font-family: 'Devonshire', cursive;
+	font-family: 'Domine', serif;
+	padding: 0px !important;
+	line-height: 60px;
 }
 .menu-top-menu-container {
 	padding-top: 10px;
@@ -3137,8 +3154,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .entrypart {
 	padding: 0px 20px;
-	border-left: 1px solid #ccc;
-	border-right: 1px solid #ccc;
+
 	float: right;
 }
 .entrypart article {
@@ -3146,24 +3162,47 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 20px 0px;
 	background: #f7f8f8;
 }
-
-#maincontainer {
-	margin: 0px;
+.post-header.homepage {
+	width: 86%;
+	padding: 10px;
+	background-color: #f7f8f8;
+	margin: -60px auto 0px auto;
+	clear: both;
+	position: relative;
 }
-
+#site-navigation ul {
+	padding-top: 15px;
+}
+#site-navigation {
+	float: right;
+}
+#maincontainer {
+	margin: 0px auto;
+	max-width: 1200px;
+	
+}
+.randomposts {
+	padding-left: 0px;
+}
 .randomposts .post-thumbnail {
 	max-height: 90px;
 	overflow: hidden;
 }
+.randomposts .post-header {
+	padding: 10px;
+}
+
 
 .randomposts h3 {
 	font-size: 18px;
 }
 .randomposts h2 {
-	margin: 0px;
+	margin: 0px 0px 20px 0px;
 }
 .randomposts article {
-	padding: 20px 0px;
+	padding: 0px 0px 20px 0px;
+	background: #f7f8f8 !important;
+	margin-bottom: 20px;
 }
 .menu-toggle {
 	color: #fff;
@@ -3210,8 +3249,10 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 15px;
 }
 .home-page-thumb {
-	float: left;
-	padding-right: 15px;
+	min-height: 50px;
+	max-height: 200px;
+	overflow: hidden;
+	text-align: center;
 }
 .site-footer {
 	margin-top: 20px !important;
@@ -3273,4 +3314,62 @@ img.alignleft {
 	font-size: 15px;
 	background: #f5f5f5;
 	max-width: 90% !important;
+}
+.searchtoggel {
+	float: right;
+	width: 60px;
+	height: 80px;
+	text-align: center;	
+	background: #1abc9c;
+	position: relative;
+	
+}
+.searchtoggel a.dropdown-toggle {
+	float: right;
+	width: 60px;
+	height: 80px;
+	line-height: 80px;
+	font-size: 50px;
+	font-weight: bold;
+	color:#fff;	
+	text-decoration: none;
+}
+.searchtoggel a.dropdown-toggle:hover {
+	text-decoration: none;
+	color:#fff;	
+}
+.searchtoggel .dropdown-menu {
+	right: 0px !important;
+	padding: 20px;
+	width: 300px;
+	left:  auto !important;
+	border-radius: 0px;
+}
+.bannercode {
+	padding: 20px 0px;
+	width: 100%;
+	clear: both;
+	background-color: rgba(247, 245, 231, 0.7);
+	text-align: center;
+}
+.banner {
+	max-width: 1000px;
+	margin: auto;
+	font-size: 30px;
+	font-family: 'Domine', serif;
+	text-align: center;
+}
+.entrypart, .randomposts, #tertiary {
+	padding-top: 20px;
+}
+#social a  {
+	display: inline-block;
+	margin-left: 0px;
+	width: 35px;
+	height: 35px;
+	font-size: 25px !important;
+	vertical-align: top;
+}
+#social a:hover  {
+	opacity: 0.5;
 }

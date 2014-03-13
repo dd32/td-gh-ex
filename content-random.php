@@ -9,8 +9,9 @@
  ?>
 
 <?php 
-if(get_query_var('cat') !='')
-	$posts = get_posts('cat='.get_query_var('cat').'&orderby=rand&numberposts=10'); 
+$cat= of_get_option('feature_cat');
+if($cat !='')
+	$posts = get_posts('cat='.$cat.'&orderby=rand&numberposts=10'); 
 else
 	$posts = get_posts('orderby=rand&numberposts=10'); 
 

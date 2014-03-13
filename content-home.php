@@ -8,31 +8,28 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="post-header">
-		
+	
+		<div class="post-thumbnail home-page-thumb">
+		<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
+			<a href="<?php the_permalink(); ?>">
+			<?php the_post_thumbnail('large'); ?>
+			</a>
+			<?php endif; ?>
+		</div>
+	
+
+	<header class="post-header homepage">		
 		<?php if ( is_single() ) : ?>
 		<h3 class="entry-title"><?php the_title(); ?></h3>
-		<?php else : ?>
-	
+		<?php else : ?>	
 		<h1 class="entry-title">
 			<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 		</h1>
 		<?php endif; // is_single() ?>
 			<div class="post-meta">
 			<?php the_category(', ') ?>
-		</div><!-- .entry-meta -->
-		
-		
-	</header><!-- .entry-header -->
-	
-    		<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
-		<div class="post-thumbnail home-page-thumb">
-			<a href="<?php the_permalink(); ?>">
-			<?php the_post_thumbnail('thumbnail'); ?>
-			</a>
-		</div>
-	<?php endif; ?>
-			
+		</div><!-- .entry-meta -->		
+	</header><!-- .entry-header -->			
 			
 	<?php if ( is_search() ) : // Only display Excerpts for Search ?>
 	<div class="post-summary">
@@ -58,6 +55,7 @@
 			<div class="comments-link">
 				<?php comments_popup_link( '<span class="leave-reply">' . __( 'Leave a comment', 'flatthirteen' ) . '</span>', __( 'One comment so far', 'flatthirteen' ), __( 'View all % comments', 'flatthirteen' ) ); ?>
 			</div><!-- .comments-link -->
+			
 		<?php endif; // comments_open() ?>
 
 		<?php if ( is_single() && get_the_author_meta( 'description' ) && is_multi_author() ) : ?>

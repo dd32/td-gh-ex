@@ -16,16 +16,14 @@ get_header(); ?>
 				<?php while ( have_posts() ) : the_post(); ?>			
 					<?php get_template_part( 'content', get_post_format() ); ?>
 			<div class="clear"></div>
+			<?php comments_template(); ?>
+			<?php twentythirteen_post_nav(); ?>		
 			</div>
 			<div  class="col-md-2 randomposts" >
 			<h2><span class="catcolor">You may also Like</span></h2>		
 			<?php get_template_part( 'content', 'random' ); ?>
-			</div>
-			
-				<?php get_sidebar(); ?>			
-				<?php twentythirteen_post_nav(); ?>				
-				<?php comments_template(); ?>
-
+			</div>			
+				<?php get_sidebar(); ?>
 			<?php endwhile; ?>
 			
 		</div><!-- #content -->
