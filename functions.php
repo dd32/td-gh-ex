@@ -113,12 +113,6 @@ function catcheverest_setup() {
 	add_image_size( 'slider', 1140, 450, true); //Featured Post Slider Image
 	add_image_size( 'featured', 690, 462, true); //Featured Image
 	add_image_size( 'small-featured', 390, 261, true); //Small Featured Image
-	
-	//Redirect to Theme Options Page on Activation
-	global $pagenow;
-	if ( is_admin() && isset($_GET['activated'] ) && $pagenow =="themes.php" ) {
-		wp_redirect( 'themes.php?page=theme_options' );
-	}		
 
 }
 endif; // catcheverest_setup

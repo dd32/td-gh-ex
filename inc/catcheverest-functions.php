@@ -490,7 +490,7 @@ function catcheverest_pass_slider_value() {
 
 if ( ! function_exists( 'catcheverest_post_sliders' ) ) :
 /**
- * Shows Featued Post Slider
+ * Shows Featured Post Slider
  *
  * @uses catcheverest_header action to add it in the header
  */
@@ -1374,7 +1374,7 @@ add_filter('wp_page_menu', 'catcheverest_pagemenu_filter');
  *
  * @uses web_clip and remove_web_clip 
  * @get the data value of image from theme options
- * @display favicon
+ * @display webclip icon
  *
  * @uses default Web Click Icon if web_clip field on theme options is empty
  *
@@ -1391,11 +1391,11 @@ function catcheverest_web_clip() {
 		
 		echo '<!-- refreshing cache -->';
 		if ( empty( $options[ 'remove_web_clip' ] ) ) :
-			// if not empty fav_icon on theme options
+			// if not empty web_clip on theme options
 			if ( !empty( $options[ 'web_clip' ] ) ) :
 				$catcheverest_web_clip = '<link rel="apple-touch-icon-precomposed" href="'.esc_url( $options[ 'web_clip' ] ).'" />'; 	
 			else:
-				// if empty fav_icon on theme options, display default fav icon
+				// if empty web_clip on theme options, display default webclip icon
 				$catcheverest_web_clip = '<link rel="apple-touch-icon-precomposed" href="'. get_template_directory_uri() .'/images/apple-touch-icon.png" />';
 			endif;
 		endif;
@@ -1405,5 +1405,5 @@ function catcheverest_web_clip() {
 	echo $catcheverest_web_clip ;	
 } // catcheverest_web_clip
 
-//Load Web Clip in Header Section
+//Load webclip icon in Header Section
 add_action( 'wp_head', 'catcheverest_web_clip' );

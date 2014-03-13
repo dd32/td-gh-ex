@@ -134,7 +134,7 @@ if ( ! function_exists( 'catcheverest_comment' ) ) :
  *
  * Used as a callback by wp_list_comments() for displaying the comments.
  *
- * @since Twenty Twelve 1.0
+ * @since Catch Everest 1.0
  */
 function catcheverest_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;

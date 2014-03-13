@@ -15,11 +15,26 @@ Added Translation for Spanish by Ruben Ramos Fernandez ( batmovil69@hotmail.com 
 Added Translation for Italian by Lorenzo Bossi (lorenzobossi83@gmail.com)
 
 == License ==
-Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 2, see file license.txt
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Catch Everest WordPress Theme, Copyright 2013 Catchthemes.com
-Catch Everest is distributed under the terms of the GNU General Public License v2 
+Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Catch Everest WordPress Theme, Copyright 2012-2014 Catchthemes.com
+Catch Everest is distributed under the terms of the GNU General Public License v3
+
+Unless otherwise specified, all Images are self shot by Catch Themes 
+Copyright: Catch Themes, catchthemes.com
+1) http://pixabay.com/en/nepal-himalayas-mount-everest-414/ - Slider Image is from PixaBay.com and is released under the CC0 license
+
+Scripts used in the site are as below:
+1. Menu script uses Tinynav script (http://tinynav.viljamis.com) licensed under MIT and Slect Box Script (http://www.bulgaria-web-developers.com/projects/javascript/selectbox/) lincensed under MIT/GPL2 license 
+2. IE8 scrpt uses HTML5 script (https://github.com/aFarkas/html5shiv) licensed under MIT/GPL2, Placeholder script (https://github.com/mathiasbynens/jquery-placeholder) licensed under MIT and CSS3 Media Queries Script (https://code.google.com/p/css3-mediaqueries-js/) licensed under MIT license
+3. Slider script uses Cycle script http://jquery.malsup.com/cycle/ lincensed under MIT/GPL license
+4. Keyboard image navigation from Underscore theme license under GPL
+
+Catch Everest is based on Underscores
+http://underscores.me/
+Copyright: Automattic, automattic.com
+Licensed under GPL
 
 == Post ID shown in the ALl Posts Table ==
 This theme shows the Post ID of the posts in the All Posts table in the WordPress Dashboard. This is added to help the users to use those ids in the featured Post Slider Options in Theme Options Panel.
@@ -31,9 +46,9 @@ Check out the theme instruction at http://catchthemes.com/theme-instructions/cat
 Access to free support forum at http://catchthemes.com/support-forum/forum/catch-everest-public/
 
 == Installation ==
-1. Primary: Login to your wp-admin area and go to Appearance -> Themes. Select Install tab and click on Upload link. Select theme .zip and ckick on Install now button. If you have any errors, use alternate method.
-2. Alternate: Unzip the template file (catch-everest.0.1.1.zip) that you have downloaded. Via FTP, upload the whole folder (catch-everest) to your server and place it in the /wp-content/themes/ folder. Do not change directory name. The template files should thus be here now: /wp-content/themes/catch-everest/index.php (for example).
-3. Log into your WP admin panel and click on the Design tab. Now click on the Catch Box theme to activate it.
+1. Primary: Login to your wp-admin area and go to Appearance -> Themes. Select Install tab and click on Upload link. Select theme .zip and click on Install now button. If you have any errors, use alternate method.
+2. Alternate: Unzip the template file (catch-everest.zip) that you have downloaded. Via FTP, upload the whole folder (catch-everest) to your server and place it in the /wp-content/themes/ folder. Do not change directory name. The template files should thus be here now: /wp-content/themes/catch-everest/index.php (for example).
+3. Log into your WP admin panel and click on the Design tab. Now click on the Catch Everest theme to activate it.
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 
 == Changelog ==
@@ -150,3 +165,13 @@ version 1.3
 
 version 1.3.1
 * Added No Sidebar Full Width Content Layout
+
+version 1.4
+* Replaced theme screenshot file to match with WordPress 3.8
+* Fixed menu white-space css issues
+* Updated theme Tag Filter in style.css
+* Updated responsive menu script
+* Updated slider script
+* Update IE script
+* Removed Redirect to Theme Options Page on Activation as per new theme review guideline
+* Removed depreciated functions add_custom_image_header()

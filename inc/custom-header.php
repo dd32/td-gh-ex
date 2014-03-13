@@ -59,23 +59,8 @@ function catcheverest_custom_header_setup() {
 
 	$args = apply_filters( 'catcheverest_custom_header_args', $args );
 
-	if ( function_exists( 'wp_get_theme' ) ) {
-		// For WordPress 3.4+
-		add_theme_support( 'custom-header', $args );
-	} else {
-		// Compat: Versions of WordPress prior to 3.4.
-		define( 'HEADER_TEXTCOLOR',    $args['default-text-color'] );
-		define( 'HEADER_IMAGE',        $args['default-image'] );
-		define( 'HEADER_IMAGE_WIDTH',  $args['width'] );
-		define( 'HEADER_IMAGE_HEIGHT', $args['height'] );
-		
-		// We'll be using post thumbnails for custom header images for logos.
-		// We want them to be the size of the header image that we just defined
-		// Larger images will be auto-cropped to fit, smaller ones will be ignored. See header.php.
-		set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );
-		
-		add_custom_image_header( $args['wp-head-callback'], $args['admin-head-callback'], $args['admin-preview-callback'] );
-	}
+	add_theme_support( 'custom-header', $args );
+
 }
 add_action( 'after_setup_theme', 'catcheverest_custom_header_setup' );
 
