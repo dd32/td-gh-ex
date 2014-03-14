@@ -45,7 +45,7 @@ class TC_resources {
 	    //enqueue skin
 	    wp_enqueue_style( 'customizr-skin' );
 
-	    //enqueue WP style sheet
+	    //enqueue WP stylesheet
 	    wp_enqueue_style( 
 	    	'customizr-style' , 
 	    	get_stylesheet_uri() , 
@@ -104,6 +104,9 @@ class TC_resources {
 		//Smooth scroll on click option : filtered to allow easy disabling if needed (conflict)
 		$smooth_scroll		= apply_filters( 'tc_smooth_scroll', esc_attr( tc__f( '__get_option' , 'tc_link_scroll') ) );
 
+		//has the post comments ? adds a boolean parameter in js
+		$has_post_comments = ( comments_open() && get_comments_number() != 0 ) ? true : false;
+
 		//adds the jquery effect library if smooth scroll is enabled => easeOutExpo effect
 		if ( $smooth_scroll ) {
 			wp_enqueue_script( 'jquery-effects-core');
@@ -111,14 +114,15 @@ class TC_resources {
 
 		wp_localize_script( 
 	        'tc-scripts', 
-	        'TCParams', 
+	        'TCParams',
 	        apply_filters('tc_js_front_end_params' , array(
 		          	'FancyBoxState' 		=> $tc_fancybox,
 		          	'FancyBoxAutoscale' 	=> $autoscale,
 		          	'SliderName' 			=> $js_slidername,
 		          	'SliderDelay' 			=> $js_sliderdelay,
 		          	'SliderHover'			=> $sliderhover,
-		          	'SmoothScroll'			=> $smooth_scroll ? 'easeOutExpo' : 'linear'
+		          	'SmoothScroll'			=> $smooth_scroll ? 'easeOutExpo' : 'linear',
+		          	'HasComments' 			=> $has_post_comments
 	        	)
 	       	)//end of filter
          );

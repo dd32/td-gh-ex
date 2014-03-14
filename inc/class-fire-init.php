@@ -67,7 +67,7 @@ class TC_init {
         
         //Default images sizes
         $this -> tc_thumb_size      = array('width' => 270 , 'height' => 250, 'crop' => true );
-        $this -> slider_full_size   = array('width' => 99999 , 'height' => 500, 'crop' => true );
+        $this -> slider_full_size   = array('width' => 9999 , 'height' => 500, 'crop' => true );
         $this -> slider_size        = array('width' => 1170 , 'height' => 500, 'crop' => true );
 
         //Default skins array
@@ -88,7 +88,7 @@ class TC_init {
         //Default social networks
         $this -> socials            = array(
                                     'tc_rss'            => array(
-                                                            'link_title'    => __( 'Suscribe to my rss feed' , 'customizr' ),
+                                                            'link_title'    => __( 'Subscribe to my rss feed' , 'customizr' ),
                                                             'option_label'  => __( 'RSS feed (default is the wordpress feed)' , 'customizr' ),
                                                             'default'       => get_bloginfo( 'rss_url' )
                                                           ),

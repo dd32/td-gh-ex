@@ -33,6 +33,22 @@ The exceptions to this license are as follows:
 
 
 # Changelog
+= 3.1.7 =
+* fixed : (css) : icons rendering for chrome
+* improved : (css) : footer white icons also for black skin
+* added : (php) utils : new filter with 2 parameters to tc_get_option
+* added : (php) featured pages : new filter tc_fp_id for the featured pages
+* added : (php) featured pages : new parameters added to the fp_img_src filter
+* improved : (php) metaboxes : no metaboxes for acf post types
+* improved : (js) responsive : dynamic content block position on resize hase been improved in tc_script.js
+* fixed : (php) Image size : slider full size sets to 9999 instead of 99999 => was no compatible with Google App engine
+* improved : (php) slider : make it easier to target individual slides with a unique class/or id
+* added : (php) footer : dynamic actions added inside the widget wrapper
+* improved : (php) footer : additional parameter for the tc_widgets_footer filter
+* improved : (php)(js) comments : Comment reply link the whole button is now clickable
+* fixed : (html) Google Structured Data : addition of the "updated" class in entry-date
+
+
 = 3.1.6 =
 * added : (php)(js) customizer controls : new filter for localized params
 * added : (php) featured pages : new filters for title, excerpt and button blocks
