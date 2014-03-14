@@ -2,7 +2,7 @@
 
 Theme Name: Unite
 Theme URI: http://colorlib.com/wp/unite/
-Version: 1.3
+Version: 1.3.1
 Tested up to: WP 3.8
 
 Author: Aigars Silkalns
@@ -60,6 +60,10 @@ If you dismiss this notice, you can install those plugins later via Appearance->
 Theme documentation is available on http://colorlib.com/wp/support/unite
 
 /*========= Changelog =========*/
+
+= 1.3.1 - 14.03.2014 =
+
+* Fixed left/right sidebar bug introduced in 1.3.
 
 = 1.3 - 05.03.2014 =
 
