@@ -9,7 +9,7 @@
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
  * @package WriterStrap
- * @since WP WriterStrap 1.1
+ * @since WP WriterStrap 1.1.2
  */
 
 get_header(); ?>
@@ -24,7 +24,7 @@ get_header(); ?>
 			?>
 
 		<?php endwhile; ?>
-		<?php wpbeginner_numeric_posts_nav(); ?>
+		<?php writterstrap_numeric_posts_nav(); ?>
 		<?php //WriterStrap_content_nav( 'nav-below' ); ?>
 		<div class="clear"></div>
 		<?php else : ?>

@@ -18,7 +18,7 @@ if ( is_admin() && isset($_GET['activated'] ) && $pagenow ==    "themes.php" )
 	add_action('admin_init', 'options_theme_activation');
 
 
-function wpbeginner_numeric_posts_nav() {
+function writterstrap_numeric_posts_nav() {
 
 	if( is_singular() )
 		return;

@@ -1,4 +1,4 @@
-------- WriterStrap 1.0.1 -------
+------- WriterStrap 1.0.2 -------
 
 -- Basanta Moharana, http://crayonux.com/
 
@@ -14,7 +14,7 @@ WriterStrap is based on Underscores http://underscores.me/, (C) 2012-2013 Automa
 * WP-Bootstrap-NavWalker licensed under the GPLv2 license (http://www.gnu.org/licenses/gpl-2.0.html)
 * Options Framework by WP Theming licensed under the GPLv2 license (http://www.gnu.org/licenses/gpl-2.0.html)
 
--------* ABOUT WriterStrap 1.0 *-------
+-------* ABOUT WriterStrap 1.0.2 *-------
 
 Requires at least:	3.6.0
 Tested up to:		3.7.1
