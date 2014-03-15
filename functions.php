@@ -11,8 +11,8 @@
  * Adds support for a theme option.
  */
 if ( !function_exists( 'optionsframework_init' ) ) {
-	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_stylesheet_directory_uri() . '/inc/' );
-	require_once dirname( __FILE__ ) . '/inc/options-framework.php';
+	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
+	require_once OPTIONS_FRAMEWORK_DIRECTORY . 'options-framework.php';
 }
 if ( is_admin() && isset($_GET['activated'] ) && $pagenow ==    "themes.php" )
 	add_action('admin_init', 'options_theme_activation');
