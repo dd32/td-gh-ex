@@ -24,11 +24,11 @@ function simplecatch_scripts_method() {
 	}	
 	
 	//Register JQuery circle all and JQuery set up as dependent on Jquery-cycle
-	wp_register_script( 'jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
+	wp_register_script( 'jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.all.min.js', array( 'jquery' ), '20140315', true );
 	
 	//Enqueue Slider Script only in Front Page
 	if ( is_front_page() || is_home() ) {
-		wp_enqueue_script( 'simplecatch_slider', get_template_directory_uri() . '/js/simplecatch_slider.js', array( 'jquery-cycle' ), '1.0', true );
+		wp_enqueue_script( 'simplecatch_slider', get_template_directory_uri() . '/js/simplecatch_slider.js', array( 'jquery-cycle' ), '20140315', true );
 	}
 	
 	/**
@@ -187,7 +187,7 @@ function simplecatch_headerdetails() {
 		echo '<!-- refreshing cache -->';
 		$simplecatch_headerdetails = '<div class="logo-wrap">';		
 		if( empty ($options[ 'remove_header_logo' ] ) ) {
-			$simplecatch_headerdetails .= '<h1 id="site-logo"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'">';
+			$simplecatch_headerdetails .= '<div id="site-logo"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'">';
 			
 				// if not empty featured_logo_footer on theme options
 				if ( !empty( $options[ 'featured_logo_header' ] ) ) :
@@ -197,7 +197,7 @@ function simplecatch_headerdetails() {
 					$simplecatch_headerdetails .='<img src="'. get_template_directory_uri().'/images/logo-head.png" alt="logo" />';
 				endif;
 			
-			$simplecatch_headerdetails .= '</a></h1>';
+			$simplecatch_headerdetails .= '</a></div>';
 		}			
 
 		if( empty( $options[ 'remove_site_title' ] ) || empty( $options[ 'remove_site_description' ] ) ) {
@@ -1020,6 +1020,7 @@ function simplecatch_rss_redirect() {
 add_action('template_redirect', 'simplecatch_rss_redirect');
 
 
+if ( ! function_exists( 'simplecatch_comment_form_fields' ) ) :
 /**
  * Altering Comment Form Fields
  * @uses comment_form_default_fields filter
@@ -1034,9 +1035,12 @@ function simplecatch_comment_form_fields( $fields ) {
 
     return $fields;
 }
+endif;  // simplecatch_comment_form_fields 
+
 add_filter( 'comment_form_default_fields', 'simplecatch_comment_form_fields' );
 
 
+if ( ! function_exists( 'simplecatch_comment_form_defaults' ) ) :
 /**
  * Altering Comment Form Defaults
  *
@@ -1049,6 +1053,8 @@ function simplecatch_comment_form_defaults( $defaults ) {
 
 	return $defaults;
 }
+endif;  // simplecatch_comment_form_defaults 
+
 add_filter( 'comment_form_defaults', 'simplecatch_comment_form_defaults' );
 
 
@@ -1120,8 +1126,8 @@ if ( !function_exists( 'simplecatch_infinite_scroll_render' ) ):
  */
 function simplecatch_infinite_scroll_render() {
    get_template_part( 'content' );
-} // simplecatch_infinite_scroll_render
-endif;
+} 
+endif; // simplecatch_infinite_scroll_render
 
 
 if ( ! function_exists( 'simplecatch_content_nav' ) ) :

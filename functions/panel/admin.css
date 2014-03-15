@@ -269,3 +269,6 @@ h3.option-toggle a:hover, h3.option-active a {
 #catchthemes .form-table.layout-options img {
 	max-width: 100%;
 }
+#catchthemes .form-table th {
+    padding-left: 20px;
+}

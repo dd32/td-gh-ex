@@ -103,19 +103,201 @@ function simplecatch_setup() {
 	register_nav_menu( 'primary', __( 'Primary Menu', 'simplecatch' ) );
 	
 	// Add support for custom backgrounds	
-	// WordPress 3.4+
-	if ( function_exists( 'get_custom_header') ) {
-		add_theme_support( 'custom-background' );
-	} else {
-		// Backward Compatibility for WordPress Version 3.3
-		add_custom_background();
-	}	
-
-	//Redirect to Theme Options Page on Activation
-	global $pagenow;
-	if ( is_admin() && isset($_GET['activated'] ) && $pagenow =="themes.php" ) {
-		wp_redirect( 'themes.php?page=theme_options' );
-	}
+	add_theme_support( 'custom-background' );
+	
+	// The default header text color
+	define( 'HEADER_TEXTCOLOR', '444' );
+	
+	// Add support for custom header	
+	add_theme_support( 'custom-header', array( 
+		// Header image random rotation default
+		'random-default'			=> false,
+		// Header image flex width
+		'flex-width'   				=> true,
+		// Recommended Header width
+		'width'                  	=> 978,
+		// Header image flex height
+		'flex-height'				=> true,
+		// Recommended Header height
+		'height'       				=> 200,
+		// Template header style callback
+		'wp-head-callback'			=> 'simplecatch_header_style',
+		// Admin header style callback
+		'admin-head-callback'		=> 'simplecatch_admin_header_style',
+		// Admin preview style callback
+		'admin-preview-callback'	=> 'simplecatch_admin_header_image'
+	) );	
 	
 } // simplecatch_setup
 endif;
+
+
+if ( ! function_exists( 'simplecatch_header_style' ) ) :
+/**
+ * Styles the header image and text displayed on the blog
+ *
+ * @since Simple Catch 2.7
+ */
+function simplecatch_header_style() {
+
+	$text_color = get_header_textcolor();
+	
+	// If no custom options for text are set, let's bail.
+	if ( $text_color == HEADER_TEXTCOLOR )
+		return;
+
+	// If we get this far, we have custom styles. Let's do this.
+	?>
+	<style type="text/css">
+	<?php
+		// Has the text been hidden?
+		if ( 'blank' == $text_color ) :
+	?>
+		#site-details {
+			position: absolute !important;
+			clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+			clip: rect(1px, 1px, 1px, 1px);
+		}
+	<?php 
+	
+		// If the user has set a custom color for the text use that
+		else :
+	?>
+		#site-title a,
+		#site-description {
+			color: #<?php echo get_header_textcolor(); ?>;
+		}
+	<?php endif; ?>
+	</style>
+	<?php
+}
+endif; // simplecatch_header_style
+
+
+if ( ! function_exists( 'simplecatch_admin_header_style' ) ) :
+/**
+ * Styles the header image displayed on the Appearance > Header admin panel.
+ *
+ * @since Simple Catch 2.7
+ */
+function simplecatch_admin_header_style() {
+	
+			$color = get_header_textcolor();
+?>
+	<style type="text/css">
+		/* Logo Tile */
+		#header .logo-wrap {
+			padding-left:20px;
+			float:left;
+			margin-top:54px;
+			min-width: 610px;
+		}
+		#site-logo {
+			display: inline-block;
+			float: left;
+			margin: 0;
+			padding-bottom: 0;
+		}
+		#site-logo a img {
+			float: left;
+			height: auto;
+			max-width: 958px;
+			padding-right: 20px;
+		}
+		#site-details {
+			display: inline-block;
+			float: left;
+			max-width: 958px;
+			padding-right: 20px;
+		}
+		#site-title {
+			font-size: 45px;
+			font-family: 'Lobster';
+			font-weight: normal;
+			line-height: 54px;
+			margin: 0;
+			padding-bottom:0px;
+		}
+		#site-title a {
+			color: #444444;
+			text-decoration: none;
+		}
+		#site-title a:hover {
+			color: #444444;
+		}
+		#site-description {
+			font:14px Arial, Helvetica, sans-serif;
+			color:#666;
+			padding:8px 0 0 0;
+		}
+		<?php
+		$text_color = get_header_textcolor();
+		// Has the text been hidden?
+		if ( 'blank' == $text_color ) : ?>
+			#site-details {
+				position: absolute !important;
+				clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+				clip: rect(1px, 1px, 1px, 1px);
+			}
+		<?php elseif ( $text_color != HEADER_TEXTCOLOR ) : ?>
+			#site-title a,
+			#site-description {
+				color: #<?php echo get_header_textcolor(); ?>;
+			}
+		<?php endif; ?>
+
+		.appearance_page_custom-header #headimg {
+			border: none;
+			clear: both;
+			overflow: hidden;
+			width: 70%;
+		}
+		#headimg img {
+			height: auto;
+			padding-top: 20px;
+			max-width: 100%;
+		}
+	</style>
+<?php
+}
+endif; // simplecatch_admin_header_style
+
+
+if ( ! function_exists( 'simplecatch_admin_header_image' ) ) :
+/**
+ * Custom header image markup displayed on the Appearance > Header admin panel.
+ *
+*
+ * @since Simple Catch 2.7
+ */
+function simplecatch_admin_header_image() { 
+
+	if ( function_exists( 'simplecatch_headerdetails' ) ):
+		simplecatch_headerdetails();
+	endif;
+
+	if ( get_header_image() ) : ?>
+    	<div id="headimg">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php header_image(); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /></a>
+       	</div><!-- #headimg -->
+	<?php endif;
+}
+endif; // simplecatch_admin_header_image
+
+
+if ( ! function_exists( 'simplecatch_custom_header_image' ) ) :
+/**
+ * Custom header image markup displayed on the Appearance > Header admin panel.
+ *
+ * @since Simple Catch 2.7
+ */
+function simplecatch_custom_header_image() { 
+
+	if ( get_header_image() ) : ?>
+    	<div id="headimg">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php header_image(); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /></a>
+       	</div><!-- #headimg -->
+	<?php endif;
+}
+endif; // simplecatch_custom_header_image
+

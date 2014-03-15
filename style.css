@@ -4,10 +4,10 @@ Theme URI: http://catchthemes.com/themes/simple-catch
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
 Description: Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Color Schemes, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework. Multilingual Ready (WPML) and also currently translated in Polish, Russian, Finnish, French, Dutch, Greek, Croatian, Chinese, German, Italian and Danish. Theme Support at http://catchthemes.com/support/
-Version: 2.6.7
+Version: 2.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: black, gray, silver, white, light, dark, brown, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, custom-menu, featured-images, full-width-template, theme-options, threaded-comments, translation-ready
+Tags: black, gray, silver, white, light, dark, brown, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, custom-menu, featured-images, full-width-template, theme-options, threaded-comments, translation-ready
 */
 
 /* =Import css
@@ -432,24 +432,34 @@ a.readmore:hover {
 	max-width: 958px;
     padding-right: 20px;
 }
-h1#site-title {
+#site-title {
 	font-size: 45px;
 	font-family: 'Lobster';
 	font-weight:normal;
 	padding-bottom:0px;
 }
-h1#site-title a {
+#site-title a {
 	line-height:54px;
 }
-h1#site-title a:hover {
+#site-title a:hover {
 	color: #444444;
 }
-h2#site-description {
+#site-description {
 	font:14px Arial, Helvetica, sans-serif;
 	color:#666;
 	padding:8px 0 0 0;
 }
-
+#headimg {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	width: 976px;
+	margin-top: 40px;
+}
+#headimg img {
+	width: 100%;
+	height: auto;
+}
 /* Social-Search */
 #header .social-search {
 	float: right;

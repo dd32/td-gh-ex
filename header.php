@@ -46,6 +46,12 @@
                 ?>      
         	</div><!-- .social-search -->
     		<div class="row-end"></div>
+            <?php 
+				// simplecatch_headersocialnetworks displays social links given from theme option in header 
+				if ( function_exists( 'simplecatch_custom_header_image' ) ) :
+					simplecatch_custom_header_image(); 
+				endif;
+			?>
             <div id="mainmenu">
             	<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
             </div><!-- #mainmenu-->  

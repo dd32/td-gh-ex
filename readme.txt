@@ -4,6 +4,23 @@
 == ABOUT Simple Catch==
 Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework. Multilingual Ready (WPML) and also currently translated in Polish, Russian, Finnish, French, Dutch, Croatian, Chinese, German, Italian and Danish. Free Support Forum at http://catchthemes.com/support-forum/forum/simple-catch-public/
 
+== License ==
+Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 2, see file license.txt
+
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+Simple Catch WordPress Theme, Copyright 2012-2014 Catchthemes.com
+Simple Catch is distributed under the terms of the GNU General Public License v2 
+
+Unless otherwise specified, all Images are self shot by Catch Themes 
+Copyright: Catch Themes, catchthemes.com
+
+Scripts used in the site are as below:
+1. Slider script uses jQuery Cycle script http://jquery.malsup.com/cycle/ licensed under MIT/GPL license
+2. jQuery Cookie script https://github.com/carhartl/jquery-cookie licensed  MIT license
+3. Pngfix script uses DD_belatedPNG script http://www.dillerdesign.com/experiment/DD_belatedPNG/ licensed  MIT license
+
 == UPGRADE to Simple Catch Pro ==
 Simple Catch Pro is an advance version of our popular theme Simple Catch. It is based on HTML5, CSS3 and Responsive Web Design to view in various devices. Some of the additional features includes: Featured Image Slider, Responsive Design, Additional Layout Options, Custom Footer Editor, and Adspace Widget for Advertisement. For more details of Simple Catch Pro theme see this http://catchthemes.com/theme-instructions/simple-catch-pro/
 
@@ -196,7 +213,7 @@ Version 1.4.3
 * Fixed textdomain in Info Bar
 * Fixed float issue of Static home page.
 * Fixed footer code
-* Fixed site title though changes in wp_title and catchbox_filter_wp_title function
+* Fixed site title though changes in wp_title and simplecatch_filter_wp_title function
 
 Version 1.4.4
 * Update the Add Image Script
@@ -365,3 +382,14 @@ Version 2.6.6
 
 Version 2.6.7
 * Added span for slider title, separator and content to give better control through CSS
+
+Version 2.7
+* Added missing function_exists condition to support child theme
+* Added Custom Header option
+* Updated theme Tag Filter in style.css
+* Updated theme screenshot file to match with WordPress 3.8
+* Updated slider script
+* Updated jQuery Cookie Script added minified version
+* Removed depreciated functions add_custom_background()
+* Removed Redirect to Theme Options Page on Activation as per new theme review guideline
+* Replaced the logo with Generic Logo as per the review guideline
