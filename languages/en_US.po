@@ -1,0 +1,2898 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Advertica v1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2014-02-20 06:45:51+0000\n"
+"Last-Translator: admin <gunjan@techinfini.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: SketchBoard/functions/sketch-breadcrumb.php:23
+#@ advertica
+msgid "Home"
+msgstr ""
+
+#: SketchBoard/functions/sketch-breadcrumb.php:153
+#: SketchBoard/functions/skt-post-metabox.php:16
+#@ advertica
+msgid "Author"
+msgstr ""
+
+#: SketchBoard/functions/sketch-breadcrumb.php:161
+#@ advertica
+msgid "Tag"
+msgstr ""
+
+#: SketchBoard/functions/sketch-breadcrumb.php:169
+#@ advertica
+msgid "Search"
+msgstr ""
+
+#: SketchBoard/functions/sketch-functions.php:73
+#@ advertica
+msgid "Author: "
+msgstr ""
+
+#: functions.php:136
+#@ advertica
+msgid "Untitled"
+msgstr ""
+
+#: SketchBoard/includes/options-framework.php:182
+#@ advertica
+msgid " Options"
+msgstr ""
+
+#: SketchBoard/includes/options-framework.php:260
+#: SketchBoard/includes/options-framework.php:265
+#@ optionsframework
+#@ advertica
+msgid "Save Options"
+msgstr ""
+
+#: SketchBoard/includes/options-framework.php:261
+#@ optionsframework
+msgid "Restore Defaults"
+msgstr ""
+
+#: SketchBoard/includes/options-framework.php:261
+#@ advertica
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
+
+#: SketchBoard/includes/options-framework.php:295
+#@ advertica
+msgid "Default options restored."
+msgstr ""
+
+#: SketchBoard/includes/options-framework.php:338
+#@ advertica
+msgid "Options saved."
+msgstr ""
+
+#: SketchBoard/includes/options-framework.php:389
+#@ advertica
+msgid "Theme Options"
+msgstr ""
+
+#: SketchBoard/includes/options-medialibrary-uploader.php:26
+#@ advertica
+msgid "Theme Options Media"
+msgstr ""
+
+#: SketchBoard/includes/options-medialibrary-uploader.php:129
+#@ advertica
+msgid "Upload"
+msgstr ""
+
+#: SketchBoard/includes/options-medialibrary-uploader.php:152
+#@ optionsframework
+msgid "View File"
+msgstr ""
+
+#: SketchBoard/includes/options-medialibrary-uploader.php:289
+#@ optionsframework
+msgid "Gallery"
+msgstr ""
+
+#: SketchBoard/includes/options-medialibrary-uploader.php:289
+#@ optionsframework
+msgid "Previously Uploaded"
+msgstr ""
+
+#: SketchBoard/includes/options-sanitize.php:232
+#@ advertica
+msgid "No Repeat"
+msgstr ""
+
+#: SketchBoard/includes/options-sanitize.php:233
+#@ advertica
+msgid "Repeat Horizontally"
+msgstr ""
+
+#: SketchBoard/includes/options-sanitize.php:234
+#@ advertica
+msgid "Repeat Vertically"
+msgstr ""
+
+#: SketchBoard/includes/options-sanitize.php:235
+#@ advertica
+msgid "Repeat All"
+msgstr ""
+
+#: SketchBoard/includes/options-sanitize.php:248
+#@ advertica
+msgid "Top Left"
+msgstr ""
+
+#: SketchBoard/includes/options-sanitize.php:249
+#@ advertica
+msgid "Top Center"
+msgstr ""
+
+#: SketchBoard/includes/options-sanitize.php:250
+#@ advertica
+msgid "Top Right"
+msgstr ""
+
+#: SketchBoard/includes/options-sanitize.php:251
+#@ advertica
+msgid "Middle Left"
+msgstr ""
+
+#: SketchBoard/includes/options-sanitize.php:252
+#@ advertica
+msgid "Middle Center"
+msgstr ""
+
+#: SketchBoard/includes/options-sanitize.php:253
+#@ advertica
+msgid "Middle Right"
+msgstr ""
+
+#: SketchBoard/includes/options-sanitize.php:254
+#@ advertica
+msgid "Bottom Left"
+msgstr ""
+
+#: SketchBoard/includes/options-sanitize.php:255
+#@ advertica
+msgid "Bottom Center"
+msgstr ""
+
+#: SketchBoard/includes/options-sanitize.php:256
+#@ advertica
+msgid "Bottom Right"
+msgstr ""
+
+#: SketchBoard/includes/options-sanitize.php:269
+#@ advertica
+msgid "Scroll Normally"
+msgstr ""
+
+#: SketchBoard/includes/options-sanitize.php:270
+#@ advertica
+msgid "Fixed in Place"
+msgstr ""
+
+#: SketchBoard/includes/options-sanitize.php:344
+#@ advertica
+msgid "Normal"
+msgstr ""
+
+#: SketchBoard/includes/options-sanitize.php:345
+#@ advertica
+msgid "Italic"
+msgstr ""
+
+#: SketchBoard/includes/options-sanitize.php:346
+#@ advertica
+msgid "Bold"
+msgstr ""
+
+#: SketchBoard/includes/options-sanitize.php:347
+#@ advertica
+msgid "Bold Italic"
+msgstr ""
+
+#: archive.php:34
+#@ advertica
+msgid "Blog Archives"
+msgstr ""
+
+#: content-audio.php:30
+#: content-gallery.php:84
+#: content-quote.php:44
+#: content-video.php:58
+#: content.php:33
+#: full-blog-formats/full-content-audio.php:31
+#: full-blog-formats/full-content-gallery.php:81
+#: full-blog-formats/full-content-quote.php:46
+#: full-blog-formats/full-content-video.php:58
+#: full-blog-formats/full-content.php:31
+#: single.php:158
+#@ advertica
+msgid "No Comments "
+msgstr ""
+
+#: content-audio.php:30
+#: content-gallery.php:84
+#: content-quote.php:44
+#: content-video.php:58
+#: content.php:33
+#: full-blog-formats/full-content-audio.php:31
+#: full-blog-formats/full-content-gallery.php:81
+#: full-blog-formats/full-content-quote.php:46
+#: full-blog-formats/full-content-video.php:58
+#: full-blog-formats/full-content.php:31
+#: single.php:158
+#@ advertica
+msgid "1 Comment "
+msgstr ""
+
+#: content-audio.php:30
+#: content-gallery.php:84
+#: content-quote.php:44
+#: content-video.php:58
+#: content.php:33
+#: full-blog-formats/full-content-audio.php:31
+#: full-blog-formats/full-content-gallery.php:81
+#: full-blog-formats/full-content-quote.php:46
+#: full-blog-formats/full-content-video.php:58
+#: full-blog-formats/full-content.php:31
+#: single.php:158
+#@ advertica
+msgid "% Comments "
+msgstr ""
+
+#: archive.php:64
+#: author.php:42
+#: category.php:45
+#: index.php:45
+#: search.php:39
+#: tag.php:45
+#: template-2col-project-page.php:120
+#: template-3col-project-page.php:116
+#: template-4col-project-page.php:119
+#: template-blog-fullwidth.php:53
+#: template-blog-left-sidebar-page.php:51
+#: template-blog-page.php:47
+#: template-project-nofilter.php:98
+#@ advertica
+msgid "&larr;Previous"
+msgstr ""
+
+#: archive.php:65
+#: author.php:43
+#: category.php:46
+#: index.php:46
+#: search.php:40
+#: tag.php:46
+#: template-2col-project-page.php:121
+#: template-3col-project-page.php:117
+#: template-4col-project-page.php:120
+#: template-blog-fullwidth.php:54
+#: template-blog-left-sidebar-page.php:52
+#: template-blog-page.php:48
+#: template-project-nofilter.php:99
+#@ advertica
+msgid "Next&rarr;"
+msgstr ""
+
+#: single.php:182
+#: template-2col-project-page.php:134
+#: template-3col-project-page.php:130
+#: template-4col-project-page.php:133
+#: template-contact-page.php:145
+#: template-fullwidth.php:46
+#: template-project-nofilter.php:112
+#@ advertica
+msgid "Not Found"
+msgstr ""
+
+#: comments.php:17
+#@ advertica
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#: comments.php:27
+#@ advertica
+msgid "No Comment"
+msgstr ""
+
+#: comments.php:27
+#@ advertica
+msgid "One Comment"
+msgstr ""
+
+#: comments.php:27
+#@ advertica
+msgid "% Comments"
+msgstr ""
+
+#: comments.php:27
+#@ advertica
+msgid " so far:"
+msgstr ""
+
+#: comments.php:44
+#@ advertica
+msgid "Comments are closed."
+msgstr ""
+
+#: page.php:45
+#: single.php:164
+#: template-about-page.php:43
+#: template-contact-page.php:132
+#: template-contact-with-sidebar.php:129
+#: template-fullwidth.php:36
+#: template-left-sidebar.php:41
+#@ advertica
+msgid "<p><strong>Pages:</strong> "
+msgstr ""
+
+#: page.php:45
+#: single.php:164
+#: template-about-page.php:43
+#: template-contact-page.php:132
+#: template-contact-with-sidebar.php:129
+#: template-fullwidth.php:36
+#: template-left-sidebar.php:41
+#@ advertica
+msgid "number"
+msgstr ""
+
+#: functions.php:111
+#@ advertica
+msgid "Main Navigation"
+msgstr ""
+
+#: content-audio.php:36
+#: content-gallery.php:90
+#: content-quote.php:50
+#: content-video.php:64
+#: content.php:39
+#: full-blog-formats/full-content-audio.php:37
+#: full-blog-formats/full-content-gallery.php:87
+#: full-blog-formats/full-content-quote.php:52
+#: full-blog-formats/full-content-video.php:64
+#: full-blog-formats/full-content.php:37
+#@ advertica
+msgid "Read More &rarr;"
+msgstr ""
+
+#: options.php:85
+#: options.php:92
+#: options.php:98
+#: options.php:105
+#@ advertica
+msgid "Yes"
+msgstr ""
+
+#: options.php:86
+#: options.php:93
+#: options.php:99
+#: options.php:106
+#@ advertica
+msgid "No"
+msgstr ""
+
+#: options.php:57
+#: options.php:63
+#@ advertica
+msgid "Show"
+msgstr ""
+
+#: options.php:58
+#: options.php:64
+#@ advertica
+msgid "Hide"
+msgstr ""
+
+#: options.php:199
+#@ advertica
+msgid "General Settings"
+msgstr ""
+
+#: options.php:211
+#@ advertica
+msgid "This creates a Custom logo that previews the image."
+msgstr ""
+
+#: options.php:233
+#@ advertica
+msgid "Logo ALT Text"
+msgstr ""
+
+#: options.php:234
+#@ advertica
+msgid "Logo ALT Text field."
+msgstr ""
+
+#: options.php:240
+#@ advertica
+msgid "Change favicon"
+msgstr ""
+
+#: options.php:241
+#@ advertica
+msgid "This creates a Custom favicon that previews the image."
+msgstr ""
+
+#: options.php:261
+#@ advertica
+msgid "Show Custom Pagination"
+msgstr ""
+
+#: options.php:278
+#@ advertica
+msgid "Custom Background"
+msgstr ""
+
+#: options.php:279
+#@ advertica
+msgid "Change the background CSS."
+msgstr ""
+
+#: options.php:1002
+#@ advertica
+msgid "Footer"
+msgstr ""
+
+#: options.php:1006
+#@ advertica
+msgid "Copyright Text"
+msgstr ""
+
+#: options.php:994
+#: options.php:1007
+#@ advertica
+msgid "You can use HTML for links etc.."
+msgstr ""
+
+#: options.php:476
+#@ advertica
+msgid "Featured Box 1 Heading:"
+msgstr ""
+
+#: options.php:477
+#@ advertica
+msgid "Enter Featured Box 1 Heading."
+msgstr ""
+
+#: options.php:315
+#: options.php:491
+#: options.php:527
+#: options.php:563
+#: options.php:720
+#: options.php:741
+#: options.php:762
+#: options.php:783
+#: options.php:804
+#@ advertica
+msgid "This creates a full size uploader that previews the image."
+msgstr ""
+
+#: options.php:497
+#@ advertica
+msgid "Featured Box 1 Content:"
+msgstr ""
+
+#: options.php:498
+#@ advertica
+msgid "Enter Featured Box 1 Content."
+msgstr ""
+
+#: options.php:504
+#@ advertica
+msgid "Featured Box 1 Link:"
+msgstr ""
+
+#: options.php:505
+#@ advertica
+msgid "Enter Box 1 Link."
+msgstr ""
+
+#: options.php:512
+#@ advertica
+msgid "Featured Box 2 Heading:"
+msgstr ""
+
+#: options.php:513
+#@ advertica
+msgid "Enter Featured Box 2 Heading."
+msgstr ""
+
+#: options.php:533
+#@ advertica
+msgid "Featured Box 2 Content:"
+msgstr ""
+
+#: options.php:534
+#@ advertica
+msgid "Enter Featured Box 2 Content."
+msgstr ""
+
+#: options.php:540
+#@ advertica
+msgid "Featured Box 2 Link:"
+msgstr ""
+
+#: options.php:541
+#@ advertica
+msgid "Enter Box 2 Link."
+msgstr ""
+
+#: options.php:548
+#@ advertica
+msgid "Featured Box 3 Heading:"
+msgstr ""
+
+#: options.php:549
+#@ advertica
+msgid "Enter Featured Box 3 Heading."
+msgstr ""
+
+#: options.php:569
+#@ advertica
+msgid "Featured Box 3 Content:"
+msgstr ""
+
+#: options.php:570
+#@ advertica
+msgid "Enter Featured Box 3 Content."
+msgstr ""
+
+#: options.php:576
+#@ advertica
+msgid "Featured Box 3 Link:"
+msgstr ""
+
+#: options.php:577
+#@ advertica
+msgid "Enter Box 3 Link."
+msgstr ""
+
+#: page.php:55
+#: template-contact-with-sidebar.php:138
+#: template-left-sidebar.php:50
+#@ advertica
+msgid "Page Does Not Exist"
+msgstr ""
+
+#: single.php:169
+#, php-format
+#@ advertica
+msgid "&larr; %link"
+msgstr ""
+
+#: single.php:170
+#, php-format
+#@ advertica
+msgid "%link &rarr;"
+msgstr ""
+
+#: SketchBoard/functions/sketch-breadcrumb.php:173
+#@ advertica
+msgid "Error 404"
+msgstr ""
+
+#: SketchBoard/functions/sketch-functions.php:241
+#@ advertica
+msgid "<i class=\"fa fa-angle-right\"></i>"
+msgstr ""
+
+#: SketchBoard/functions/sketch-functions.php:243
+#@ advertica
+msgid "<i class=\"fa fa-angle-left\"></i>"
+msgstr ""
+
+#: SketchBoard/includes/options-framework.php:241
+#@ advertica
+msgid "Theme Options "
+msgstr ""
+
+#: archive.php:30
+#@ advertica
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: archive.php:32
+#@ advertica
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: content-none.php:8
+#: full-blog-formats/full-content-none.php:8
+#@ advertica
+msgid "Nothing Found"
+msgstr ""
+
+#: content-none.php:13
+#: full-blog-formats/full-content-none.php:14
+#, php-format
+#@ advertica
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: content-none.php:15
+#: full-blog-formats/full-content-none.php:16
+#@ advertica
+msgid "Sorry, but nothing matched your search terms. Please try again with different keywords."
+msgstr ""
+
+#: content-none.php:18
+#: full-blog-formats/full-content-none.php:20
+#@ advertica
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: content-audio.php:26
+#: content-gallery.php:80
+#: content-quote.php:40
+#: content-video.php:54
+#: content.php:29
+#: full-blog-formats/full-content-audio.php:27
+#: full-blog-formats/full-content-gallery.php:77
+#: full-blog-formats/full-content-quote.php:42
+#: full-blog-formats/full-content-video.php:54
+#: full-blog-formats/full-content.php:27
+#: single.php:154
+#@ advertica
+msgid "On"
+msgstr ""
+
+#: content-audio.php:26
+#: content-audio.php:27
+#: content-audio.php:28
+#: content-gallery.php:80
+#: content-gallery.php:81
+#: content-gallery.php:82
+#: content-quote.php:40
+#: content-quote.php:41
+#: content-quote.php:42
+#: content-video.php:54
+#: content-video.php:55
+#: content-video.php:56
+#: content.php:29
+#: content.php:30
+#: content.php:31
+#: full-blog-formats/full-content-audio.php:27
+#: full-blog-formats/full-content-audio.php:28
+#: full-blog-formats/full-content-audio.php:29
+#: full-blog-formats/full-content-gallery.php:77
+#: full-blog-formats/full-content-gallery.php:78
+#: full-blog-formats/full-content-gallery.php:79
+#: full-blog-formats/full-content-quote.php:42
+#: full-blog-formats/full-content-quote.php:43
+#: full-blog-formats/full-content-quote.php:44
+#: full-blog-formats/full-content-video.php:54
+#: full-blog-formats/full-content-video.php:55
+#: full-blog-formats/full-content-video.php:56
+#: full-blog-formats/full-content.php:27
+#: full-blog-formats/full-content.php:28
+#: full-blog-formats/full-content.php:29
+#: single.php:154
+#: single.php:155
+#: single.php:156
+#@ advertica
+msgid ","
+msgstr ""
+
+#: content-audio.php:27
+#: content-gallery.php:81
+#: content-quote.php:41
+#: content-video.php:55
+#: content.php:30
+#: full-blog-formats/full-content-audio.php:28
+#: full-blog-formats/full-content-gallery.php:78
+#: full-blog-formats/full-content-quote.php:43
+#: full-blog-formats/full-content-video.php:55
+#: full-blog-formats/full-content.php:28
+#: single.php:155
+#@ advertica
+msgid "Posted by "
+msgstr ""
+
+#: content-audio.php:28
+#: content-gallery.php:82
+#: content-quote.php:42
+#: content-video.php:56
+#: content.php:31
+#: full-blog-formats/full-content-audio.php:29
+#: full-blog-formats/full-content-gallery.php:79
+#: full-blog-formats/full-content-quote.php:44
+#: full-blog-formats/full-content-video.php:56
+#: full-blog-formats/full-content.php:29
+#: single.php:156
+#@ advertica
+msgid "In "
+msgstr ""
+
+#: content-audio.php:30
+#: content-gallery.php:84
+#: content-quote.php:44
+#: content-video.php:58
+#: content.php:33
+#: full-blog-formats/full-content-audio.php:31
+#: full-blog-formats/full-content-gallery.php:81
+#: full-blog-formats/full-content-quote.php:46
+#: full-blog-formats/full-content-video.php:58
+#: full-blog-formats/full-content.php:31
+#: single.php:158
+#@ advertica
+msgid "With "
+msgstr ""
+
+#: options.php:74
+#: options.php:79
+#@ advertica
+msgid "Image"
+msgstr ""
+
+#: options.php:75
+#: options.php:80
+#@ advertica
+msgid "Color"
+msgstr ""
+
+#: options.php:210
+#@ advertica
+msgid "Change logo (full path to logo image size: 120px width and 40px height)"
+msgstr ""
+
+#: options.php:254
+#@ advertica
+msgid "Choose Navigation Font Color"
+msgstr ""
+
+#: options.php:203
+#@ advertica
+msgid "Choose Theme Color"
+msgstr ""
+
+#: options.php:299
+#@ advertica
+msgid "Default ( image )."
+msgstr ""
+
+#: options.php:307
+#: options.php:324
+#@ advertica
+msgid "No color selected by default."
+msgstr ""
+
+#: options.php:331
+#@ advertica
+msgid "Blog page Title"
+msgstr ""
+
+#: options.php:336
+#@ advertica
+msgid "Enter Blog page Title:"
+msgstr ""
+
+#: options.php:337
+#@ advertica
+msgid "Enter Blog page Title."
+msgstr ""
+
+#: options.php:490
+#@ advertica
+msgid "Featured Box 1 Image Path (size: 150px width and 150px height)"
+msgstr ""
+
+#: options.php:526
+#@ advertica
+msgid "Featured Box 2 Image Path (size: 150px width and 150px height)"
+msgstr ""
+
+#: options.php:562
+#@ advertica
+msgid "Featured Box 3 Image Path (size: 150px width and 150px height)"
+msgstr ""
+
+#: options.php:588
+#@ advertica
+msgid "Call to Action Box Heading:"
+msgstr ""
+
+#: options.php:589
+#@ advertica
+msgid "Enter Call to Action Box Heading."
+msgstr ""
+
+#: options.php:595
+#@ advertica
+msgid "Call to Action Box Content:"
+msgstr ""
+
+#: options.php:596
+#@ advertica
+msgid "Enter Call to Action Box Content."
+msgstr ""
+
+#: options.php:602
+#@ advertica
+msgid "Call to Action Button Text:"
+msgstr ""
+
+#: options.php:603
+#@ advertica
+msgid "Enter call to action button text."
+msgstr ""
+
+#: options.php:609
+#@ advertica
+msgid "Call to Action Button Link:"
+msgstr ""
+
+#: options.php:610
+#@ advertica
+msgid "Enter call to action button Link."
+msgstr ""
+
+#: options.php:650
+#@ advertica
+msgid "Upload Your Image for parallax (size: 1600px width and 800px height)"
+msgstr ""
+
+#: options.php:651
+#@ advertica
+msgid "This creates a full size uploder that previews the image."
+msgstr ""
+
+#: options.php:658
+#@ advertica
+msgid "Enter Box Content."
+msgstr ""
+
+#: options.php:705
+#@ advertica
+msgid "Client Section Title:"
+msgstr ""
+
+#: options.php:706
+#@ advertica
+msgid "Enter Client Section Title."
+msgstr ""
+
+#: options.php:712
+#@ advertica
+msgid "Image 1 Title:"
+msgstr ""
+
+#: options.php:713
+#: options.php:734
+#: options.php:755
+#: options.php:776
+#: options.php:797
+#@ advertica
+msgid "Enter Image 1 Title."
+msgstr ""
+
+#: options.php:719
+#@ advertica
+msgid "Image 1 Icon (size: 232px width and 101px height)"
+msgstr ""
+
+#: options.php:726
+#@ advertica
+msgid "Image 1 Link:"
+msgstr ""
+
+#: options.php:727
+#@ advertica
+msgid "Enter Image 1 Link."
+msgstr ""
+
+#: options.php:733
+#@ advertica
+msgid "Image 2 Title:"
+msgstr ""
+
+#: options.php:740
+#@ advertica
+msgid "Image 2 Icon (size: 232px width and 101px height)"
+msgstr ""
+
+#: options.php:747
+#@ advertica
+msgid "Image 2 Link:"
+msgstr ""
+
+#: options.php:748
+#@ advertica
+msgid "Enter Image 2 Link."
+msgstr ""
+
+#: options.php:754
+#@ advertica
+msgid "Image 3 Title:"
+msgstr ""
+
+#: options.php:761
+#@ advertica
+msgid "Image 3 Icon (size: 232px width and 101px height)"
+msgstr ""
+
+#: options.php:768
+#@ advertica
+msgid "Image 3 Link:"
+msgstr ""
+
+#: options.php:769
+#@ advertica
+msgid "Enter Image 3 Link."
+msgstr ""
+
+#: options.php:775
+#@ advertica
+msgid "Image 4 Title:"
+msgstr ""
+
+#: options.php:782
+#@ advertica
+msgid "Image 4 Icon (size: 232px width and 101px height)"
+msgstr ""
+
+#: options.php:789
+#@ advertica
+msgid "Image 4 Link:"
+msgstr ""
+
+#: options.php:790
+#@ advertica
+msgid "Enter Image 4 Link."
+msgstr ""
+
+#: options.php:796
+#@ advertica
+msgid "Image 5 Title:"
+msgstr ""
+
+#: options.php:803
+#@ advertica
+msgid "Image 5 Icon (size: 232px width and 101px height)"
+msgstr ""
+
+#: options.php:810
+#@ advertica
+msgid "Image 5 Link:"
+msgstr ""
+
+#: options.php:811
+#@ advertica
+msgid "Enter Image 5 Link."
+msgstr ""
+
+#: 404.php:16
+#@ advertica
+msgid "OOPS !!!"
+msgstr ""
+
+#: 404.php:17
+#@ advertica
+msgid "404"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-project.php:10
+#@ advertica
+msgid " Project"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-project.php:11
+#@ advertica
+msgid "project"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-project.php:12
+#@ advertica
+msgid "Add Project"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-project.php:13
+#@ advertica
+msgid "Add New Project"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-project.php:14
+#@ advertica
+msgid "Edit Project"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-project.php:15
+#@ advertica
+msgid "New Project"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-project.php:16
+#@ advertica
+msgid "All Projects"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-project.php:17
+#@ advertica
+msgid "View Project"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-project.php:42
+#@ advertica
+msgid "Project Categories"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-project.php:43
+#@ advertica
+msgid "Project Category"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-project.php:56
+#@ advertica
+msgid "Project Tags"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-project.php:57
+#@ advertica
+msgid "Project Tag"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-slider-functions.php:8
+#@ advertica
+msgid " Slides"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-slider-functions.php:9
+#: options.php:46
+#@ advertica
+msgid "Slide"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-slider-functions.php:10
+#@ advertica
+msgid "Add Slide"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-slider-functions.php:11
+#@ advertica
+msgid "Add New Slide"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-slider-functions.php:12
+#@ advertica
+msgid "Edit Slide"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-slider-functions.php:13
+#@ advertica
+msgid "New Slide"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-slider-functions.php:14
+#@ advertica
+msgid "All Slides"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-slider-functions.php:15
+#@ advertica
+msgid "View Slide"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-slider-functions.php:45
+#@ advertica
+msgid "Enter Link Text"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-slider-functions.php:51
+#@ advertica
+msgid "Enter Link"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-team-member.php:21
+#@ advertica
+msgid " Team Member"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-team-member.php:23
+#@ advertica
+msgctxt "post type singular name"
+msgid "teammember"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-team-member.php:25
+#@ advertica
+msgctxt "team member"
+msgid "Add New"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-team-member.php:27
+#@ advertica
+msgid "Add New Team Member"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-team-member.php:29
+#@ advertica
+msgid "Edit Team Member"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-team-member.php:31
+#@ advertica
+msgid "New Team Member"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-team-member.php:33
+#@ advertica
+msgid "All Team Member"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-team-member.php:35
+#@ advertica
+msgid "View Team Member"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-team-member.php:37
+#@ advertica
+msgid "Search Team Member"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-team-member.php:39
+#@ advertica
+msgid "No Team Member found"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-team-member.php:41
+#@ advertica
+msgid "No Team Member found in Trash"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-team-member.php:45
+#@ advertica
+msgid " Team"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-team-member.php:115
+#@ advertica
+msgid "Content"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-team-member.php:127
+#@ advertica
+msgid "By (Name)"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-team-member.php:139
+#@ advertica
+msgid "Avatar"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-team-member.php:151
+#@ advertica
+msgid "Recommend Width 370px and Height 208px."
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-team-member.php:163
+#@ advertica
+msgid "Job title"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-team-member.php:175
+#@ advertica
+msgid "Website"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-team-member.php:187
+#@ advertica
+msgid "Facebook Url"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-team-member.php:199
+#@ advertica
+msgid "Twitter Url"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-team-member.php:211
+#@ advertica
+msgid "Dribbble Url"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-team-member.php:223
+#@ advertica
+msgid "Mail id"
+msgstr ""
+
+#: SketchBoard/functions/post-types/skt-post-type-team-member.php:235
+#@ advertica
+msgid "Skype id"
+msgstr ""
+
+#: SketchBoard/functions/shortcodes/shortcodes.php:645
+#@ advertica
+msgid "Best"
+msgstr ""
+
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:17
+#@ advertica
+msgid "No slides found, please add some slides"
+msgstr ""
+
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:22
+#@ advertica
+msgid "Revolution Slider Settings"
+msgstr ""
+
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:28
+#@ advertica
+msgid "Revolution Slider"
+msgstr ""
+
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:29
+#@ advertica
+msgid "Choose Revolution Slider you would like to display."
+msgstr ""
+
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:75
+#@ advertica
+msgid "Slider Section"
+msgstr ""
+
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:80
+#@ advertica
+msgid "Video &nbsp;&nbsp;&nbsp;&nbsp;"
+msgstr ""
+
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:81
+#@ advertica
+msgid "Flex Slider &nbsp;&nbsp;&nbsp;&nbsp;"
+msgstr ""
+
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:82
+#@ advertica
+msgid "Revolution Slider &nbsp;&nbsp;&nbsp;&nbsp;"
+msgstr ""
+
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:83
+#@ advertica
+msgid "None of these &nbsp;&nbsp;&nbsp;&nbsp;"
+msgstr ""
+
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:132
+#@ advertica
+msgid "Put video url ( Youtube or Vimeo )"
+msgstr ""
+
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:141
+#@ advertica
+msgid "Featured Box Section"
+msgstr ""
+
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:145
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:158
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:171
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:184
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:195
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:211
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:279
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:292
+#: SketchBoard/functions/skt-pagetitle-section-metabox.php:24
+#@ advertica
+msgid "Enable &nbsp;&nbsp;&nbsp;&nbsp;"
+msgstr ""
+
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:146
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:159
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:172
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:185
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:196
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:212
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:280
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:293
+#: SketchBoard/functions/skt-pagetitle-section-metabox.php:25
+#: options.php:52
+#: options.php:112
+#@ advertica
+msgid "Disable"
+msgstr ""
+
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:153
+#@ advertica
+msgid "Call to Action Section"
+msgstr ""
+
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:166
+#@ advertica
+msgid "Latest Project Section"
+msgstr ""
+
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:179
+#@ advertica
+msgid "Content Box with Parallax Effect Section"
+msgstr ""
+
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:191
+#@ advertica
+msgid "Statics Section"
+msgstr ""
+
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:199
+#@ advertica
+msgid "Put Statics Here:"
+msgstr ""
+
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:206
+#: options.php:344
+#@ advertica
+msgid "Team Member Section"
+msgstr ""
+
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:217
+#@ advertica
+msgid "Latest Team Members &nbsp;&nbsp;&nbsp;&nbsp;"
+msgstr ""
+
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:218
+#@ advertica
+msgid "Specific Team Members &nbsp;&nbsp;&nbsp;&nbsp;"
+msgstr ""
+
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:225
+#@ advertica
+msgid "<b style=\"color:red;\">Please Add Team Members To Select.</b>"
+msgstr ""
+
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:233
+#@ advertica
+msgid "First Team Member"
+msgstr ""
+
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:245
+#@ advertica
+msgid "Second Team Member"
+msgstr ""
+
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:259
+#@ advertica
+msgid "Third Team Member"
+msgstr ""
+
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:274
+#@ advertica
+msgid "Client Logo Section"
+msgstr ""
+
+#: SketchBoard/functions/skt-frontpage-sections-metabox.php:287
+#@ advertica
+msgid "Twitter Feed Section"
+msgstr ""
+
+#: SketchBoard/functions/skt-pagetitle-section-metabox.php:20
+#@ advertica
+msgid "Page Title"
+msgstr ""
+
+#: SketchBoard/functions/skt-pagetitle-section-metabox.php:32
+#@ advertica
+msgid "Page Title Background Image"
+msgstr ""
+
+#: SketchBoard/functions/skt-pagetitle-section-metabox.php:39
+#@ advertica
+msgid "Recommend width:1600px and height:450px "
+msgstr ""
+
+#: SketchBoard/functions/skt-post-metabox.php:14
+#@ advertica
+msgid "Quote"
+msgstr ""
+
+#: SketchBoard/functions/skt-post-metabox.php:18
+#@ advertica
+msgid "Author Url"
+msgstr ""
+
+#: SketchBoard/functions/skt-post-metabox.php:35
+#@ advertica
+msgid "Put the YouTube Video Url Here."
+msgstr ""
+
+#: SketchBoard/functions/skt-post-metabox.php:37
+#@ advertica
+msgid "OR"
+msgstr ""
+
+#: SketchBoard/functions/skt-post-metabox.php:38
+#@ advertica
+msgid "Put the Vimeo Video Url Here."
+msgstr ""
+
+#: SketchBoard/functions/skt-post-metabox.php:56
+#@ advertica
+msgid "you can use image attachment or nothing..."
+msgstr ""
+
+#: SketchBoard/functions/skt-post-metabox.php:57
+#@ advertica
+msgid "Slider Auto Scroll on/off"
+msgstr ""
+
+#: SketchBoard/functions/skt-post-metabox.php:60
+#: SketchBoard/functions/skt-post-metabox.php:66
+#@ advertica
+msgid "true"
+msgstr ""
+
+#: SketchBoard/functions/skt-post-metabox.php:61
+#: SketchBoard/functions/skt-post-metabox.php:67
+#@ advertica
+msgid "false"
+msgstr ""
+
+#: SketchBoard/functions/skt-post-metabox.php:63
+#@ advertica
+msgid "Slider direction Navigation on/off"
+msgstr ""
+
+#: SketchBoard/functions/widgets/skt-follow-us-widget.php:20
+#@ advertica
+msgid "Follow Us"
+msgstr ""
+
+#: SketchBoard/functions/widgets/skt-follow-us-widget.php:122
+#: SketchBoard/functions/widgets/skt-multisocialfeed-widget.php:75
+#: SketchBoard/functions/widgets/skt-vimeo-video-widget.php:49
+#: SketchBoard/functions/widgets/skt-youtube-video-widget.php:56
+#@ advertica
+msgid "Title:"
+msgstr ""
+
+#: SketchBoard/functions/widgets/skt-follow-us-widget.php:127
+#@ advertica
+msgid "Link for Linkedin"
+msgstr ""
+
+#: SketchBoard/functions/widgets/skt-follow-us-widget.php:130
+#@ advertica
+msgid "Link for Facebook"
+msgstr ""
+
+#: SketchBoard/functions/widgets/skt-follow-us-widget.php:133
+#@ advertica
+msgid "Link for Twitter"
+msgstr ""
+
+#: SketchBoard/functions/widgets/skt-follow-us-widget.php:136
+#@ advertica
+msgid "Link for Flickr"
+msgstr ""
+
+#: SketchBoard/functions/widgets/skt-follow-us-widget.php:139
+#@ advertica
+msgid "Link for Google+"
+msgstr ""
+
+#: SketchBoard/functions/widgets/skt-follow-us-widget.php:142
+#@ advertica
+msgid "Skype UserID"
+msgstr ""
+
+#: SketchBoard/functions/widgets/skt-follow-us-widget.php:145
+#@ advertica
+msgid "Link for YouTube"
+msgstr ""
+
+#: SketchBoard/functions/widgets/skt-follow-us-widget.php:148
+#@ advertica
+msgid "Link for Dribble"
+msgstr ""
+
+#: SketchBoard/functions/widgets/skt-follow-us-widget.php:151
+#@ advertica
+msgid "Link for Pinterest"
+msgstr ""
+
+#: SketchBoard/functions/widgets/skt-follow-us-widget.php:154
+#@ advertica
+msgid "Link for Tumblr"
+msgstr ""
+
+#: SketchBoard/functions/widgets/skt-follow-us-widget.php:157
+#@ advertica
+msgid "Link for Github"
+msgstr ""
+
+#: SketchBoard/functions/widgets/skt-follow-us-widget.php:160
+#@ advertica
+msgid "Link for Foursquar"
+msgstr ""
+
+#: SketchBoard/functions/widgets/skt-multisocialfeed-widget.php:73
+#@ advertica
+msgid "pinterest"
+msgstr ""
+
+#: SketchBoard/functions/widgets/skt-multisocialfeed-widget.php:76
+#@ advertica
+msgid "Username:"
+msgstr ""
+
+#: SketchBoard/functions/widgets/skt-multisocialfeed-widget.php:77
+#@ advertica
+msgid "Number Of Post: eg:4"
+msgstr ""
+
+#: SketchBoard/functions/widgets/skt-multisocialfeed-widget.php:79
+#@ advertica
+msgid "Select Network:"
+msgstr ""
+
+#: SketchBoard/functions/widgets/skt-multisocialfeed-widget.php:81
+#@ advertica
+msgid "Pinterest"
+msgstr ""
+
+#: SketchBoard/functions/widgets/skt-multisocialfeed-widget.php:82
+#@ advertica
+msgid "Dribbble"
+msgstr ""
+
+#: SketchBoard/functions/widgets/skt-multisocialfeed-widget.php:83
+#@ advertica
+msgid "Flickr"
+msgstr ""
+
+#: SketchBoard/functions/widgets/skt-multisocialfeed-widget.php:84
+#@ advertica
+msgid "Instagram"
+msgstr ""
+
+#: SketchBoard/functions/widgets/skt-vimeo-video-widget.php:50
+#: SketchBoard/functions/widgets/skt-youtube-video-widget.php:57
+#@ advertica
+msgid "Video ID:"
+msgstr ""
+
+#: SketchBoard/functions/widgets/skt-vimeo-video-widget.php:51
+#: SketchBoard/functions/widgets/skt-youtube-video-widget.php:58
+#@ advertica
+msgid "Video Height:"
+msgstr ""
+
+#: SketchBoard/functions/widgets/skt-vimeo-video-widget.php:52
+#: SketchBoard/functions/widgets/skt-youtube-video-widget.php:59
+#@ advertica
+msgid "Video Width:"
+msgstr ""
+
+#: SketchBoard/functions/widgets/skt-vimeo-video-widget.php:53
+#: SketchBoard/functions/widgets/skt-youtube-video-widget.php:60
+#@ advertica
+msgid "AutoPlay:"
+msgstr ""
+
+#: SketchBoard/functions/widgets/skt-youtube-video-widget.php:54
+#@ advertica
+msgid "dark"
+msgstr ""
+
+#: SketchBoard/functions/widgets/skt-youtube-video-widget.php:61
+#@ advertica
+msgid "Show Player Controls:"
+msgstr ""
+
+#: SketchBoard/functions/widgets/skt-youtube-video-widget.php:62
+#@ advertica
+msgid "Select Theme:"
+msgstr ""
+
+#: SketchBoard/functions/widgets/skt-youtube-video-widget.php:62
+#@ advertica
+msgid "Light"
+msgstr ""
+
+#: SketchBoard/functions/widgets/skt-youtube-video-widget.php:62
+#@ advertica
+msgid "Dark"
+msgstr ""
+
+#: SketchBoard/includes/options-backup.php:56
+#@ advertica
+msgid "Import / Export Options"
+msgstr ""
+
+#: SketchBoard/includes/options-backup.php:56
+#@ advertica
+msgid "Advertica Options Backup"
+msgstr ""
+
+#: SketchBoard/includes/options-backup.php:93
+#@ advertica
+msgid "Advertica Import / Export Theme Options"
+msgstr ""
+
+#: SketchBoard/includes/options-backup.php:97
+#@ advertica
+msgid "Import Settings"
+msgstr ""
+
+#: SketchBoard/includes/options-backup.php:98
+#@ advertica
+msgid "If you have settings in a backup file on your computer, the Import / Export system can import those into this site. To get started, upload your backup file to import from below."
+msgstr ""
+
+#: SketchBoard/includes/options-backup.php:101
+#, php-format
+#@ advertica
+msgid "Upload File: (Maximum Size: %s)"
+msgstr ""
+
+#: SketchBoard/includes/options-backup.php:104
+#@ advertica
+msgid "Upload File and Import"
+msgstr ""
+
+#: SketchBoard/includes/options-backup.php:109
+#@ advertica
+msgid "Export Settings"
+msgstr ""
+
+#: SketchBoard/includes/options-backup.php:110
+#@ advertica
+msgid "When you click the button below, the Import / Export system will create a text file for you to save to your computer."
+msgstr ""
+
+#: SketchBoard/includes/options-backup.php:111
+#, php-format
+#@ default
+msgid "This text file can be used to restore your settings here on \"%s\", or to easily setup another website with the same settings\"."
+msgstr ""
+
+#: SketchBoard/includes/options-backup.php:116
+#@ advertica
+msgid "Download Export File"
+msgstr ""
+
+#: SketchBoard/includes/options-backup.php:140
+#@ advertica
+msgid "There was a problem importing your settings. Please Try again."
+msgstr ""
+
+#: SketchBoard/includes/options-backup.php:142
+#@ advertica
+msgid "Please make some changes in order to save them."
+msgstr ""
+
+#: SketchBoard/includes/options-backup.php:144
+#@ advertica
+msgid "There was a problem exporting your settings. Please Try again."
+msgstr ""
+
+#: SketchBoard/includes/options-backup.php:146
+#@ advertica
+msgid "The import file you've provided is invalid. Please try again."
+msgstr ""
+
+#: SketchBoard/includes/options-backup.php:148
+#, php-format
+#@ advertica
+msgid "Settings successfully imported. | Return to %sTheme Options%s"
+msgstr ""
+
+#: archive.php:28
+#, php-format
+#@ advertica
+msgid "Daily Archives : <span>%s</span>"
+msgstr ""
+
+#: archive.php:30
+#, php-format
+#@ advertica
+msgid "Monthly Archives : <span>%s</span>"
+msgstr ""
+
+#: archive.php:32
+#, php-format
+#@ advertica
+msgid "Yearly Archives : <span>%s</span>"
+msgstr ""
+
+#: author.php:16
+#@ advertica
+msgid "Author Archives : "
+msgstr ""
+
+#: category.php:17
+#, php-format
+#@ advertica
+msgid "Category Archives : %s"
+msgstr ""
+
+#: footer.php:43
+#@ advertica
+msgid "Advertica Theme by"
+msgstr ""
+
+#: footer.php:43
+#@ advertica
+msgid "SketchThemes"
+msgstr ""
+
+#: includes/class-plugin-activation.php:110
+#@ advertica
+msgid "Install Required Plugins"
+msgstr ""
+
+#: includes/class-plugin-activation.php:111
+#@ advertica
+msgid "Install Plugins"
+msgstr ""
+
+#: includes/class-plugin-activation.php:112
+#: includes/skt-required-plugins.php:63
+#, php-format
+#@ advertica
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: includes/class-plugin-activation.php:113
+#@ advertica
+msgid "Something went wrong."
+msgstr ""
+
+#: includes/class-plugin-activation.php:114
+#, php-format
+#@ advertica
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-plugin-activation.php:115
+#, php-format
+#@ advertica
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-plugin-activation.php:116
+#: includes/skt-required-plugins.php:67
+#, php-format
+#@ advertica
+msgid "Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed."
+msgid_plural "Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-plugin-activation.php:117
+#: includes/skt-required-plugins.php:68
+#, php-format
+#@ advertica
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-plugin-activation.php:118
+#: includes/skt-required-plugins.php:69
+#, php-format
+#@ advertica
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-plugin-activation.php:119
+#: includes/skt-required-plugins.php:70
+#, php-format
+#@ advertica
+msgid "Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated."
+msgid_plural "Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-plugin-activation.php:120
+#: includes/skt-required-plugins.php:71
+#, php-format
+#@ advertica
+msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
+msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-plugin-activation.php:121
+#: includes/skt-required-plugins.php:72
+#, php-format
+#@ advertica
+msgid "Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated."
+msgid_plural "Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-plugin-activation.php:122
+#: includes/skt-required-plugins.php:73
+#@ advertica
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-plugin-activation.php:123
+#: includes/skt-required-plugins.php:74
+#@ advertica
+msgid "Activate installed plugin"
+msgid_plural "Activate installed plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-plugin-activation.php:124
+#: includes/class-plugin-activation.php:423
+#: includes/skt-required-plugins.php:75
+#@ advertica
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: includes/class-plugin-activation.php:125
+#: includes/class-plugin-activation.php:1775
+#: includes/skt-required-plugins.php:76
+#@ advertica
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: includes/class-plugin-activation.php:126
+#, php-format
+#@ advertica
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: includes/class-plugin-activation.php:450
+#: includes/class-plugin-activation.php:1983
+#@ advertica
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: includes/class-plugin-activation.php:478
+#, php-format
+#@ advertica
+msgid "The following plugin was activated successfully: %s."
+msgstr ""
+
+#: includes/class-plugin-activation.php:637
+#@ advertica
+msgid "Dismiss this notice"
+msgstr ""
+
+#: includes/class-plugin-activation.php:1024
+#@ advertica
+msgid "External Link"
+msgstr ""
+
+#: includes/class-plugin-activation.php:1029
+#@ advertica
+msgid "Private Repository"
+msgstr ""
+
+#: includes/class-plugin-activation.php:1032
+#@ advertica
+msgid "Pre-Packaged"
+msgstr ""
+
+#: includes/class-plugin-activation.php:1036
+#@ advertica
+msgid "WordPress Repository"
+msgstr ""
+
+#: includes/class-plugin-activation.php:1039
+#@ advertica
+msgid "Required"
+msgstr ""
+
+#: includes/class-plugin-activation.php:1039
+#@ advertica
+msgid "Recommended"
+msgstr ""
+
+#: includes/class-plugin-activation.php:1042
+#@ advertica
+msgid "Not Installed"
+msgstr ""
+
+#: includes/class-plugin-activation.php:1044
+#@ advertica
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: includes/class-plugin-activation.php:1214
+#, php-format
+#@ advertica
+msgid "No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the Dashboard\">Return to the Dashboard</a>"
+msgstr ""
+
+#: includes/class-plugin-activation.php:1230
+#@ advertica
+msgid "Plugin"
+msgstr ""
+
+#: includes/class-plugin-activation.php:1231
+#@ advertica
+msgid "Source"
+msgstr ""
+
+#: includes/class-plugin-activation.php:1232
+#@ advertica
+msgid "Type"
+msgstr ""
+
+#: includes/class-plugin-activation.php:1233
+#@ advertica
+msgid "Status"
+msgstr ""
+
+#: includes/class-plugin-activation.php:1251
+#@ advertica
+msgid "Install"
+msgstr ""
+
+#: includes/class-plugin-activation.php:1252
+#@ advertica
+msgid "Activate"
+msgstr ""
+
+#: includes/class-plugin-activation.php:1477
+#@ advertica
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-plugin-activation.php:1758
+#@ advertica
+msgid "Install package not available."
+msgstr ""
+
+#: includes/class-plugin-activation.php:1759
+#, php-format
+#@ advertica
+msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+msgstr ""
+
+#: includes/class-plugin-activation.php:1760
+#@ advertica
+msgid "Unpacking the package&#8230;"
+msgstr ""
+
+#: includes/class-plugin-activation.php:1761
+#@ advertica
+msgid "Installing the plugin&#8230;"
+msgstr ""
+
+#: includes/class-plugin-activation.php:1762
+#@ advertica
+msgid "Plugin install failed."
+msgstr ""
+
+#: includes/class-plugin-activation.php:1763
+#@ advertica
+msgid "Plugin installed successfully."
+msgstr ""
+
+#: includes/class-plugin-activation.php:1774
+#@ advertica
+msgid "Plugin activation failed."
+msgstr ""
+
+#: includes/class-plugin-activation.php:1880
+#@ advertica
+msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#: includes/class-plugin-activation.php:1881
+#, php-format
+#@ advertica
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: includes/class-plugin-activation.php:1881
+#: includes/class-plugin-activation.php:1890
+#@ advertica
+msgid "Show Details"
+msgstr ""
+
+#: includes/class-plugin-activation.php:1881
+#: includes/class-plugin-activation.php:1890
+#@ advertica
+msgid "Hide Details"
+msgstr ""
+
+#: includes/class-plugin-activation.php:1882
+#@ advertica
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: includes/class-plugin-activation.php:1883
+#, php-format
+#@ advertica
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: includes/class-plugin-activation.php:1887
+#@ advertica
+msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#: includes/class-plugin-activation.php:1888
+#, php-format
+#@ advertica
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: includes/class-plugin-activation.php:1889
+#, php-format
+#@ advertica
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: includes/class-plugin-activation.php:1890
+#, php-format
+#@ advertica
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: includes/class-plugin-activation.php:1891
+#@ advertica
+msgid "All installations have been completed."
+msgstr ""
+
+#: includes/class-plugin-activation.php:1892
+#, php-format
+#@ advertica
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: includes/front-rev-slider.php:7
+#@ advertica
+msgid "<div class=\"rev_slider_install_err\">Please install the <b>Revolution Slider</b> from admin section</div>"
+msgstr ""
+
+#: includes/skt-required-plugins.php:61
+#@ advertica
+msgid "Install Required Plugins For Advertica PRO Theme"
+msgstr ""
+
+#: includes/skt-required-plugins.php:62
+#@ advertica
+msgid "Advertica Plugins"
+msgstr ""
+
+#: includes/skt-required-plugins.php:64
+#@ advertica
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: includes/skt-required-plugins.php:65
+#, php-format
+#@ advertica
+msgid "Advertica PRO theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/skt-required-plugins.php:66
+#, php-format
+#@ advertica
+msgid "Advertica PRO recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/skt-required-plugins.php:77
+#, php-format
+#@ advertica
+msgid "All plugins installed and activated successfully. %s"
+msgstr ""
+
+#: index.php:35
+#: template-blog-fullwidth.php:42
+#: template-blog-left-sidebar-page.php:40
+#: template-blog-page.php:37
+#@ advertica
+msgid "<div class='sticky-post'>featured</div>"
+msgstr ""
+
+#: options.php:45
+#@ advertica
+msgid "Fade"
+msgstr ""
+
+#: options.php:51
+#: options.php:111
+#@ advertica
+msgid "Enable"
+msgstr ""
+
+#: options.php:69
+#@ advertica
+msgid "Horizontal"
+msgstr ""
+
+#: options.php:70
+#@ advertica
+msgid "Vertical"
+msgstr ""
+
+#: options.php:117
+#@ advertica
+msgid "Open"
+msgstr ""
+
+#: options.php:118
+#@ advertica
+msgid "Close"
+msgstr ""
+
+#: options.php:123
+#@ advertica
+msgid "Bounce"
+msgstr ""
+
+#: options.php:124
+#@ advertica
+msgid "Drop"
+msgstr ""
+
+#: options.php:129
+#@ advertica
+msgid "1"
+msgstr ""
+
+#: options.php:130
+#@ advertica
+msgid "2"
+msgstr ""
+
+#: options.php:131
+#@ advertica
+msgid "3"
+msgstr ""
+
+#: options.php:132
+#@ advertica
+msgid "4"
+msgstr ""
+
+#: options.php:133
+#@ advertica
+msgid "5"
+msgstr ""
+
+#: options.php:134
+#@ advertica
+msgid "6"
+msgstr ""
+
+#: options.php:135
+#@ advertica
+msgid "7"
+msgstr ""
+
+#: options.php:136
+#@ advertica
+msgid "8"
+msgstr ""
+
+#: options.php:137
+#@ advertica
+msgid "9"
+msgstr ""
+
+#: options.php:138
+#@ advertica
+msgid "10"
+msgstr ""
+
+#: options.php:139
+#@ advertica
+msgid "11"
+msgstr ""
+
+#: options.php:140
+#@ advertica
+msgid "12"
+msgstr ""
+
+#: options.php:141
+#@ advertica
+msgid "13"
+msgstr ""
+
+#: options.php:142
+#@ advertica
+msgid "14"
+msgstr ""
+
+#: options.php:143
+#@ advertica
+msgid "15"
+msgstr ""
+
+#: options.php:144
+#@ advertica
+msgid "16"
+msgstr ""
+
+#: options.php:145
+#@ advertica
+msgid "17"
+msgstr ""
+
+#: options.php:146
+#@ advertica
+msgid "18"
+msgstr ""
+
+#: options.php:147
+#@ advertica
+msgid "19"
+msgstr ""
+
+#: options.php:148
+#@ advertica
+msgid "20"
+msgstr ""
+
+#: options.php:149
+#@ advertica
+msgid "21"
+msgstr ""
+
+#: options.php:154
+#@ advertica
+msgid "ROADMAP"
+msgstr ""
+
+#: options.php:155
+#@ advertica
+msgid "SATELLITE"
+msgstr ""
+
+#: options.php:156
+#@ advertica
+msgid "HYBRID"
+msgstr ""
+
+#: options.php:157
+#@ advertica
+msgid "TERRAIN"
+msgstr ""
+
+#: options.php:217
+#@ advertica
+msgid "Logo Image Width (in px)"
+msgstr ""
+
+#: options.php:218
+#@ advertica
+msgid "Enter Logo Image Width in PX."
+msgstr ""
+
+#: options.php:225
+#@ advertica
+msgid "Logo Image Height (in px)"
+msgstr ""
+
+#: options.php:226
+#@ advertica
+msgid "Enter Logo Image Height in PX."
+msgstr ""
+
+#: options.php:247
+#@ advertica
+msgid "Choose Header Background Color"
+msgstr ""
+
+#: options.php:262
+#@ advertica
+msgid "Show custom pagination on blog/project page."
+msgstr ""
+
+#: options.php:270
+#@ advertica
+msgid "Mobile Menu Activate From"
+msgstr ""
+
+#: options.php:271
+#@ advertica
+msgid "Enter value in px for mobile menu activation."
+msgstr ""
+
+#: options.php:286
+#@ advertica
+msgid "Breadcrumb Settings"
+msgstr ""
+
+#: options.php:290
+#@ advertica
+msgid "Breadcrumb Enable/Disable:"
+msgstr ""
+
+#: options.php:291
+#@ advertica
+msgid "Radio select with default options \"Enable\"."
+msgstr ""
+
+#: options.php:298
+#@ advertica
+msgid "Page Title & Breadcrumb Background Type"
+msgstr ""
+
+#: options.php:306
+#@ advertica
+msgid "Choose Page Title & Breadcrumb Background Color"
+msgstr ""
+
+#: options.php:314
+#@ advertica
+msgid "Upload Page Title & Breadcrumb Background Image (size: 1600px width and 450px height)"
+msgstr ""
+
+#: options.php:323
+#@ advertica
+msgid "Choose Page Title & Breadcrumb Color"
+msgstr ""
+
+#: options.php:348
+#@ advertica
+msgid "Choose Team Member Section Background Color"
+msgstr ""
+
+#: options.php:355
+#@ advertica
+msgid "Choose Team Member Title & Border Color"
+msgstr ""
+
+#: options.php:363
+#@ advertica
+msgid "TeamMember Title:"
+msgstr ""
+
+#: options.php:364
+#@ advertica
+msgid "Enter TeamMember title."
+msgstr ""
+
+#: options.php:371
+#@ advertica
+msgid "Team Member Sub-Title:"
+msgstr ""
+
+#: options.php:372
+#@ advertica
+msgid "Enter Team Member Sub-Title."
+msgstr ""
+
+#: options.php:378
+#@ advertica
+msgid "About Template Number of Team Member"
+msgstr ""
+
+#: options.php:379
+#@ advertica
+msgid "Enter Number of Team Member that you want to show on About Template."
+msgstr ""
+
+#: options.php:386
+#@ advertica
+msgid "Project Page Template"
+msgstr ""
+
+#: options.php:391
+#@ advertica
+msgid "Enter number of Projects that you want to show at project page:"
+msgstr ""
+
+#: options.php:392
+#@ advertica
+msgid "Enter number of Projects that you want to show at project page."
+msgstr ""
+
+#: options.php:398
+#@ advertica
+msgid "Show/Hide Projects Filter Section:"
+msgstr ""
+
+#: options.php:399
+#@ advertica
+msgid "If Show, Show Projects Filter ."
+msgstr ""
+
+#: options.php:407
+#@ advertica
+msgid "Home Template Flex Slider Configuration"
+msgstr ""
+
+#: options.php:411
+#@ advertica
+msgid "Select Mode"
+msgstr ""
+
+#: options.php:412
+#@ advertica
+msgid "Select Mode."
+msgstr ""
+
+#: options.php:420
+#@ advertica
+msgid "Direction"
+msgstr ""
+
+#: options.php:421
+#@ advertica
+msgid "Select the sliding direction, \"horizontal\" or \"vertical\"."
+msgstr ""
+
+#: options.php:429
+#@ advertica
+msgid "Slideshow Speed in milliseconds"
+msgstr ""
+
+#: options.php:430
+#@ advertica
+msgid "Set the speed of the slideshow cycling, in milliseconds."
+msgstr ""
+
+#: options.php:436
+#@ advertica
+msgid "Animation Speed in milliseconds"
+msgstr ""
+
+#: options.php:437
+#@ advertica
+msgid "Set the speed of animations, in milliseconds."
+msgstr ""
+
+#: options.php:443
+#@ advertica
+msgid "show next and prev controls"
+msgstr ""
+
+#: options.php:444
+#@ advertica
+msgid "If Show, show next and prev controls."
+msgstr ""
+
+#: options.php:452
+#@ advertica
+msgid "Show individual slide markers"
+msgstr ""
+
+#: options.php:453
+#@ advertica
+msgid "Create navigation for paging control of each slide."
+msgstr ""
+
+#: options.php:461
+#@ advertica
+msgid "PauseOnHover:"
+msgstr ""
+
+#: options.php:462
+#@ advertica
+msgid "Pause the slideshow when hovering over slider, then resume when no longer hovering."
+msgstr ""
+
+#: options.php:471
+#@ advertica
+msgid "Home Template Featured Box Section"
+msgstr ""
+
+#: options.php:483
+#@ advertica
+msgid "Featured Box 1 Icon Class:"
+msgstr ""
+
+#: options.php:484
+#@ advertica
+msgid "Enter Featured Box 1 Class."
+msgstr ""
+
+#: options.php:519
+#@ advertica
+msgid "Featured Box 2 Icon Class:"
+msgstr ""
+
+#: options.php:520
+#@ advertica
+msgid "Enter Featured Box 2 Class."
+msgstr ""
+
+#: options.php:555
+#@ advertica
+msgid "Featured Box 3 Icon Class:"
+msgstr ""
+
+#: options.php:556
+#@ advertica
+msgid "Enter Featured Box 3 Class."
+msgstr ""
+
+#: options.php:584
+#@ advertica
+msgid "Home Template Call to Action Section"
+msgstr ""
+
+#: options.php:617
+#@ advertica
+msgid "Home Template Latest Project Section"
+msgstr ""
+
+#: options.php:622
+#@ advertica
+msgid "Project Title:"
+msgstr ""
+
+#: options.php:623
+#@ advertica
+msgid "Enter Project title."
+msgstr ""
+
+#: options.php:630
+#@ advertica
+msgid "View More Projects Link Title:"
+msgstr ""
+
+#: options.php:631
+#@ advertica
+msgid "Enter View More Projects Link title."
+msgstr ""
+
+#: options.php:638
+#@ advertica
+msgid "View More Projects Link:"
+msgstr ""
+
+#: options.php:639
+#@ advertica
+msgid "Enter Link."
+msgstr ""
+
+#: options.php:646
+#@ advertica
+msgid "Home Template Parallax Section"
+msgstr ""
+
+#: options.php:657
+#@ advertica
+msgid "Content box with parallax effect section:"
+msgstr ""
+
+#: options.php:669
+#@ advertica
+msgid "Home Template Statics Section"
+msgstr ""
+
+#: options.php:673
+#@ advertica
+msgid "Statics Section Background Type"
+msgstr ""
+
+#: options.php:674
+#@ advertica
+msgid "Default ( color )."
+msgstr ""
+
+#: options.php:681
+#@ advertica
+msgid "Choose Statics Section Background Color"
+msgstr ""
+
+#: options.php:682
+#@ advertica
+msgid "Choose background color."
+msgstr ""
+
+#: options.php:689
+#@ advertica
+msgid "Upload Statics Section Background Image (size: 1600px width and 450px height)"
+msgstr ""
+
+#: options.php:690
+#@ advertica
+msgid "Upload statics section background image."
+msgstr ""
+
+#: options.php:701
+#@ advertica
+msgid "Home Template Clients Logo Section"
+msgstr ""
+
+#: options.php:819
+#@ advertica
+msgid "Home Template Twitter Configuration"
+msgstr ""
+
+#: options.php:823
+#@ advertica
+msgid "Twitter Configuration Info"
+msgstr ""
+
+#: options.php:829
+#@ advertica
+msgid "Cache Tweets in every(In minutes):"
+msgstr ""
+
+#: options.php:830
+#@ advertica
+msgid "Cache Tweets in every(In minutes)."
+msgstr ""
+
+#: options.php:838
+#@ advertica
+msgid "Number of latest tweets display:"
+msgstr ""
+
+#: options.php:839
+#@ advertica
+msgid "Number of latest tweets display."
+msgstr ""
+
+#: options.php:847
+#@ advertica
+msgid "Twitter username:"
+msgstr ""
+
+#: options.php:848
+#@ advertica
+msgid "Enter Twitter username."
+msgstr ""
+
+#: options.php:855
+#@ advertica
+msgid "Consumer key:"
+msgstr ""
+
+#: options.php:856
+#@ advertica
+msgid "Enter Consumer key."
+msgstr ""
+
+#: options.php:863
+#@ advertica
+msgid "Consumer secret:"
+msgstr ""
+
+#: options.php:864
+#@ advertica
+msgid "Enter Consumer secret."
+msgstr ""
+
+#: options.php:871
+#@ advertica
+msgid "Access token:"
+msgstr ""
+
+#: options.php:872
+#@ advertica
+msgid "Enter Access token."
+msgstr ""
+
+#: options.php:879
+#@ advertica
+msgid "Access token secret:"
+msgstr ""
+
+#: options.php:880
+#@ advertica
+msgid "Enter Access token secret."
+msgstr ""
+
+#: options.php:887
+#@ advertica
+msgid "Contact Template Settings"
+msgstr ""
+
+#: options.php:891
+#@ advertica
+msgid "Show/Hide Contact Map:"
+msgstr ""
+
+#: options.php:892
+#@ advertica
+msgid "If Show, Show Contact Map."
+msgstr ""
+
+#: options.php:899
+#@ advertica
+msgid "Contact Google Map Height in px"
+msgstr ""
+
+#: options.php:900
+#@ advertica
+msgid "Enter Height For Google Map."
+msgstr ""
+
+#: options.php:906
+#@ advertica
+msgid "Contact Google Map Latitude"
+msgstr ""
+
+#: options.php:907
+#@ advertica
+msgid "To find latitude and longitude  right click on the google map at your desired location and from context menu select Whats here & you will get the latitude and longitude  at searchbox.."
+msgstr ""
+
+#: options.php:913
+#@ advertica
+msgid "Contact Google Map Longitude"
+msgstr ""
+
+#: options.php:914
+#@ advertica
+msgid "To find latitude and longitude  right click on the google map at your desired location and from context menu select Whats here & you will get the latitude and longitude at searchbox.."
+msgstr ""
+
+#: options.php:920
+#@ advertica
+msgid "Contact Google Map Info window by default"
+msgstr ""
+
+#: options.php:921
+#@ advertica
+msgid "Default ( close )."
+msgstr ""
+
+#: options.php:928
+#@ advertica
+msgid "Contact Google Map Info Window Text. ( please donot use double quotes. )"
+msgstr ""
+
+#: options.php:929
+#@ advertica
+msgid "Enter Google Map Info Window Text."
+msgstr ""
+
+#: options.php:935
+#@ advertica
+msgid "Contact Google Map Marker Title"
+msgstr ""
+
+#: options.php:936
+#@ advertica
+msgid "Enter Contact Google Map Marker Title."
+msgstr ""
+
+#: options.php:942
+#@ advertica
+msgid "Contact Google Map Marker Image"
+msgstr ""
+
+#: options.php:943
+#@ advertica
+msgid "This creates a Marker image that previews the image."
+msgstr ""
+
+#: options.php:949
+#@ advertica
+msgid "Contact Google Map Marker Animation"
+msgstr ""
+
+#: options.php:950
+#@ advertica
+msgid "Default ( Bounce )."
+msgstr ""
+
+#: options.php:957
+#@ advertica
+msgid "Google Map Zoom Level"
+msgstr ""
+
+#: options.php:958
+#@ advertica
+msgid "Set Google Map Zoom Level"
+msgstr ""
+
+#: options.php:966
+#@ advertica
+msgid "Google Map Type"
+msgstr ""
+
+#: options.php:967
+#@ advertica
+msgid "Set Google Map Type"
+msgstr ""
+
+#: options.php:976
+#@ advertica
+msgid "Custom Style Settings"
+msgstr ""
+
+#: options.php:980
+#@ advertica
+msgid "Custom CSS"
+msgstr ""
+
+#: options.php:981
+#@ advertica
+msgid "Write Custom CSS in order to overwrite style CSS (without \"style\" tag)."
+msgstr ""
+
+#: options.php:989
+#@ advertica
+msgid "404 Page"
+msgstr ""
+
+#: options.php:993
+#@ advertica
+msgid "404 Page Text"
+msgstr ""
+
+#: options.php:1013
+#@ advertica
+msgid "Google Analytics code:"
+msgstr ""
+
+#: options.php:1014
+#@ advertica
+msgid "You can use Google Analytics code here."
+msgstr ""
+
+#: search.php:15
+#, php-format
+#@ advertica
+msgid "Search Results for : %s"
+msgstr ""
+
+#: section-twitter-panel.php:94
+#@ advertica
+msgid "ago"
+msgstr ""
+
+#: single.php:163
+#@ advertica
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: tag.php:18
+#, php-format
+#@ advertica
+msgid "Tag Archives : %s"
+msgstr ""
+
+#: template-2col-project-page.php:57
+#: template-3col-project-page.php:54
+#: template-4col-project-page.php:57
+#@ advertica
+msgid "show all"
+msgstr ""
+
+#: template-sitemap.php:45
+#@ advertica
+msgid "Pages"
+msgstr ""
+
+#: template-sitemap.php:53
+#@ advertica
+msgid "Categories"
+msgstr ""
+
+#: template-sitemap.php:61
+#@ advertica
+msgid "Blog Entries"
+msgstr ""
+
+#: template-sitemap.php:93
+#@ advertica
+msgid "Posts Per Category :-"
+msgstr ""
+
