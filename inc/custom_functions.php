@@ -13,7 +13,7 @@ function itransform_social_icons () {
 			
 			$active[$service] = esc_url( of_get_option ('itrans_social_'.$service) );
 			if ($active[$service]) { 
-				$socio_list .= '<li><a href="'.$active[$service].'" title="'.$service.'" target="_blank"><i class="socico genericon-'.$service.'"></i></a></li>';
+				$socio_list .= '<li><a href="'.$active[$service].'" title="'.$service.'" target="_blank"><i class="genericon socico genericon-'.$service.'"></i></a></li>';
 				$siciocount++;
 			}
 			
@@ -77,8 +77,8 @@ function itransform_ibanner_slider () {
 	if(count($arrslidestxt)>0){
 		echo '<div class="ibanner">';
         echo '	<div class="slidexnav">';
-		echo '		<a href="#" class="sldprev genericon-leftarrow"></a>';
-		echo '		<a href="#" class="sldnext genericon-rightarrow"></a>';
+		echo '		<a href="#" class="sldprev genericon genericon-leftarrow"></a>';
+		echo '		<a href="#" class="sldnext genericon genericon-rightarrow"></a>';
 		echo '	</div>';
 		echo '	<div id="da-slider" class="da-slider" role="banner">';
 			
@@ -100,8 +100,14 @@ function itransform_ibanner_slider () {
         echo '<div class="iheader front">';
         echo '    <div class="titlebar">';
         echo '        <h1>';
+		
+		if (of_get_option('itrans_slogan')) {
 						//bloginfo( 'name' );
-						echo of_get_option('itrans_slogan');
+			echo of_get_option('itrans_slogan');
+		} else
+		{
+			printf( __( 'Welcome To ', 'itransform' ) );  bloginfo( 'name' );
+		}
         echo '        </h1>';
 		echo ' 		  <h2>';
 			    		//bloginfo( 'description' );

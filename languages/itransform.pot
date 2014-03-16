@@ -24,6 +24,10 @@ msgstr ""
 msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr ""
 
+#: header.php:101
+msgid "Welcome To "
+msgstr ""
+
 #: archive.php:29
 msgid "Daily Archives: %s"
 msgstr ""

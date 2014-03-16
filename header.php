@@ -38,7 +38,7 @@
                 </div>
                 <?php if ( of_get_option('top_bar_phone') ) : ?>
                 <div class="topphone">
-                    <i class="topbarico genericon-phone"></i>
+                    <i class="topbarico genericon genericon-phone"></i>
                     <?php if ( of_get_option('top_bar_phone') ) : ?>
                         <?php _e('Call us : ','itransform'); ?> <?php echo of_get_option('top_bar_phone'); ?>
                     <?php endif; ?>
@@ -91,12 +91,14 @@
         <!-- #Banner -->
         <?php if ( is_home() && ! is_paged() || is_front_page() ) : ?>
 			<?php itransform_ibanner_slider(); ?>
-        <?php elseif ( ! is_front_page() ) : ?>
+        <?php else : ?>
         <div class="iheader">
         	<div class="titlebar">
             	<h1>
-					<?php if ( of_get_option('top_bar_phone') || itransform_social_icons() ) : ?>
+					<?php if ( of_get_option('itrans_slogan') ) : ?>
                     	<?php echo of_get_option('itrans_slogan'); ?>
+                    <?php //else : ?> 
+                    	<?php //printf( __( 'Welcome To ', 'itransform' ) ); ?><?php //bloginfo( 'name' ); ?>   
                     <?php endif; ?>
                 </h1>
             </div>

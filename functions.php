@@ -126,14 +126,14 @@ function itransform_fonts_url() {
 	$fonts_url = '';
 
 	/* Translators: If there are characters in your language that are not
-	 * supported by Source Sans Pro, translate this to 'off'. Do not translate
+	 * supported by Open Sans, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
 	 //fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700|Roboto:400,400italic,500italic,700italic'
 	$open_sans = _x( 'on', 'Open Sans font: on or off', 'itransform' );
 
 	/* Translators: If there are characters in your language that are not
-	 * supported by Bitter, translate this to 'off'. Do not translate into your
+	 * supported by Roboto, translate this to 'off'. Do not translate into your
 	 * own language.
 	 */
 	$roboto = _x( 'on', 'Roboto font: on or off', 'itransform' );

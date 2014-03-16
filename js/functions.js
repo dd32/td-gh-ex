@@ -63,7 +63,7 @@ jQuery(document).ready(function($) {
         jQuery(this).children('ul.children,ul.sub-menu').slideUp("fast");
     });
 	
-	jQuery('.search-form').append( '<span class="searchico genericon-search"></span>' );
+	jQuery('.search-form').append( '<span class="searchico genericon genericon-search"></span>' );
 	
 	
 	/* initiating the slider 
@@ -78,7 +78,7 @@ jQuery(document).ready(function($) {
 	$( "div.entry-nothumb" ).parent(".meta-img").addClass("no-image-meta");
 	
 	/* Go to top button */
-	jQuery('body').append('<a href="#" class="go-top animated"><span class="genericon-collapse"></span></a>');
+	jQuery('body').append('<a href="#" class="go-top animated"><span class="genericon genericon-collapse"></span></a>');
                         // Show or hide the sticky footer button
     jQuery(window).scroll(function() {
         if (jQuery(this).scrollTop() > 200) {
