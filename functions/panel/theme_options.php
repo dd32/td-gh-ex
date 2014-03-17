@@ -18,9 +18,9 @@ add_action( 'admin_menu', 'simplecatch_options_menu' );
  */
 function simplecatch_admin_scripts() {
 	//jquery-cookie registered in functions.php
-	wp_enqueue_script( 'simplecatch_admin', get_template_directory_uri().'/functions/panel/admin.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable', 'farbtastic' ), '1.0', false );
-	wp_enqueue_script( 'simplecatch_upload', get_template_directory_uri().'/functions/panel/add_image_scripts.js', array( 'jquery','media-upload','thickbox' ) );
-	wp_enqueue_script( 'simplecatch_color', get_template_directory_uri().'/functions/panel/color_picker.js', array( 'farbtastic' ) );
+	wp_enqueue_script( 'simplecatch_admin', get_template_directory_uri().'/functions/panel/admin.min.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable', 'farbtastic' ), '20140317', false );
+	wp_enqueue_script( 'simplecatch_upload', get_template_directory_uri().'/functions/panel/add_image_scripts.min.js', array( 'jquery','media-upload','thickbox' ) );
+	wp_enqueue_script( 'simplecatch_color', get_template_directory_uri().'/functions/panel/color_picker.min.js', array( 'farbtastic' ) );
 	
     wp_enqueue_style( 'simplecatch_admin_style',get_template_directory_uri().'/functions/panel/admin.css', array( 'farbtastic', 'thickbox' ), '1.0', 'screen' );
 }
@@ -1131,99 +1131,5 @@ function simplecatch_post_invalidate_caches(){
 	delete_transient( 'simplecatch_sliders' );
 }
 
-
 //Add action hook here save post
 add_action( 'save_post', 'simplecatch_post_invalidate_caches' );
-
-
-/**
- * Backward Comaptibility for simplecatch version 1.2.7 and below
- *
- * Fetch the old values of options array and merge it with new one
- * Fetch the old meta values of the page template and update the layout metabox using those metavalues
- * @used init hook
- */
-function simplecatch_backward_compatibility() {
-	$old = get_option('simplecatch_options_slider');
-	if( !empty( $old ) ) {
-		$new = get_option( 'simplecatch_options' );
-		$result = array_merge( $new, $old );
-		update_option( 'simplecatch_options', $result );
-		delete_option( 'simplecatch_options_slider');
-	}
-
-}
-add_action('init','simplecatch_backward_compatibility');
-
-
-/**
- * Backward Comaptibility for simplecatch version below 1.3.2
- *
- * Fetch the old meta values of the page template and update the layout metabox using those metavalues
- * @used init hook
- */
-function simplecatch_template_backward_compatibility() {
-	global $post;
-	$reset_template=get_option('reset_template');
-	
-	if( empty( $reset_template ) ):
-		
-		$query = new WP_Query( array( 'post_type' => 'page','posts_per_page' => -1 ) );
-		while( $query->have_posts() ): $query->the_post();
-			$flag = get_post_meta( $post->ID, '_wp_page_template', 'true' );
-			if( $flag == 'sidebar-right.php' )
-				update_post_meta( $post->ID, 'Sidebar-layout', 'right-sidebar' );
-			elseif( $flag == 'sidebar-left.php')
-				update_post_meta( $post->ID, 'Sidebar-layout', 'left-sidebar' );
-			elseif( $flag == 'default' )
-				update_post_meta( $post->ID, 'Sidebar-layout', 'no-sidebar');
-			
-			delete_post_meta( $post->ID, '_wp_page_template');
-		 endwhile;
-		// Reset Post Data
-		wp_reset_postdata();
-		update_option( 'reset_template',true );
-		
-	endif;
-}
-add_action('init','simplecatch_template_backward_compatibility', 10 );
-
-
-/**
- * Backward Comaptibility for simplecatch version 1.3.2
- * Deleting Sidebar-layout meta key from database and replacing it with simplecatch-sidebarlayout 
- *
- * Fetch the old meta values of the page and post template and update the layout metabox using those metavalues
- * @used init hook
- */
-function simplecatch_sidebar_layout_backward_compatibility() {
-    global $post;
-    $reset_sidebar_layoutkey = get_option('reset_sidebar_layoutkey');
-
-    if( empty( $reset_sidebar_layoutkey ) ):
-	    // Updating the date format
-		update_option( 'date_format', 'j F, Y' );
-        $query = new WP_Query( array( 'post_type' => array('page', 'post'),'posts_per_page' => -1 ) );
-        while( $query->have_posts() ): $query->the_post();
-            $flag = get_post_meta( $post->ID, 'Sidebar-layout', 'true' );
-			update_post_meta( $post->ID, 'simplecatch-sidebarlayout', $flag );
-            delete_post_meta( $post->ID, 'Sidebar-layout');
-         endwhile;
-        // Reset Post Data
-        wp_reset_postdata();
-        update_option( 'reset_sidebar_layoutkey',true );
-        
-    endif;
-}
-add_action('init','simplecatch_sidebar_layout_backward_compatibility', 20 );
-
-
-/**
- * Delete the database option on theme switch
- * @used switch_theme hook
- */
-function simplecatch_reset_template_cache() {
-	delete_option( 'reset_template' );
-    delete_option( 'reset_sidebar_layoutkey' );
-}
-add_action( 'switch_theme', 'simplecatch_reset_template_cache');

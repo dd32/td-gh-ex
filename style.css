@@ -3,8 +3,8 @@ Theme Name: Simple Catch
 Theme URI: http://catchthemes.com/themes/simple-catch
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
-Description: Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Color Schemes, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework. Multilingual Ready (WPML) and also currently translated in Polish, Russian, Finnish, French, Dutch, Greek, Croatian, Chinese, German, Italian and Danish. Theme Support at http://catchthemes.com/support/
-Version: 2.7
+Description: Simple Catch is a Simple and Clean WordPress Theme by Catch Themes. Easy Customize through Theme Options and Custom Widgets. Features: Custom Menu, Custom Widgets, Three Custom Layouts, Featured Slider, Theme Options (Header Logo, Footer Logo, Fav Icon, Social Icons, Color Schemes, Custom CSS Styles, Webmaster Tools)  and Support for popular plugins (Breadcrumb NavXT, Contact Form 7, WP-PageNavi, WP Page Numbers). It is based on popular 978 Grid System CSS Framework. Multilingual Ready (WPML) and also currently translated in Polish, Russian, Finnish, French, Dutch, Greek, Croatian, Chinese, Spanish, German, Italian and Danish. Theme Support at http://catchthemes.com/support/
+Version: 2.7.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, gray, silver, white, light, dark, brown, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, custom-menu, featured-images, full-width-template, theme-options, threaded-comments, translation-ready
@@ -719,6 +719,7 @@ ul.social-profile li.soundcloud a:hover {
 	line-height: 48px;
 	color: #444;
 	float: left;
+	white-space: nowrap;	
 }
 #header #mainmenu ul li a:hover, 
 #header #mainmenu ul li.current-menu-item a,
@@ -767,6 +768,7 @@ ul.social-profile li.soundcloud a:hover {
 	line-height: 18px;
 	font-size: 13px;
 	font-weight: normal;
+	white-space: normal;	
 }
 #header #mainmenu ul li ul li a:hover, #header #mainmenu ul li ul li:hover > a {
 	background-color:#333;
