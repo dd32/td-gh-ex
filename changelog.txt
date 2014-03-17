@@ -1,3 +1,12 @@
+*** Hemingway changelog ***
+
+
+Version 1.31 (2014-03-17)
+-------------------------
+- Hides blog-info div in header if both site title and site description are empty
+- Added title to changelog.txt
+
+
 Version 1.30 (2014-03-11)
 -------------------------
 - Fixed main-menu hover on tablets

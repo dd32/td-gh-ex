@@ -61,10 +61,18 @@
 </div> <!-- /post-header -->
 									                                    	    
 <div class="post-content">
+
+	<?php if (is_single()) : ?>
 	    		            			            	                                                                                            
-	<?php the_content(); ?>
-				
-	<?php wp_link_pages(); ?>
+		<?php the_content(); ?>
+					
+		<?php wp_link_pages(); ?>
+	
+	<?php else : ?>
+	
+		<?php the_excerpt(); ?>
+	
+	<?php endif; ?>
 				        
 </div> <!-- /post-content -->
             
