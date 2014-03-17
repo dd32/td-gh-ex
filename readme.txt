@@ -25,9 +25,6 @@ Licensed under GPLv2 or later
 Unless otherwise specified, all Images are self shot by Catch Themes 
 Copyright: Catch Themes, catchthemes.com
 
-Logo, Favicon and WebClip Icons are from WordPress.org
-http://wordpress.org/about/logos/
-
 JS Files
     HTML5-Shiv is Licensed under the MIT and GPL licenses
     https://code.google.com/p/html5shiv/
@@ -67,6 +64,15 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/catch
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 
 == Changelog ==
+Version 1.0
+* Change logo image to generic logo image as per WordPress.org guideline
+* Change default slider images, homepage featured images and screenshot image to all GPL selfshot images by CatchThemes
+* Fixed Menu css 
+* Updated responsive menu script
+* Updated responsive video script
+* Updated HTML5 script
+* Updated slider script
+
 Version 0.5
 * Header Image, Favicon and WebClip icon changed to Catch Kathmandu design
 * Screenshot changed to show the new header image and review button

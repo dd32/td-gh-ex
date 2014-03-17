@@ -45,9 +45,9 @@ function catchkathmandu_scripts() {
 	if ( empty ($options[ 'disable_responsive' ] ) ) {	
 		wp_enqueue_style( 'catchkathmandu-responsive', get_template_directory_uri() . '/css/responsive.css' );
 		
-		wp_enqueue_script('catchkathmandu-menu', get_template_directory_uri() . '/js/catchkathmandu-menu.min.js', array('jquery'), '1.1.0', true);
+		wp_enqueue_script('catchkathmandu-menu', get_template_directory_uri() . '/js/catchkathmandu-menu.min.js', array('jquery'), '20140317', true);
 		
-		wp_enqueue_script( 'catchkathmandu-fitvids', get_template_directory_uri() . '/js/catchkathmandu.fitvids.min.js', array( 'jquery' ), '20140130', true );	
+		wp_enqueue_script( 'catchkathmandu-fitvids', get_template_directory_uri() . '/js/catchkathmandu.fitvids.min.js', array( 'jquery' ), '20140317', true );	
 	}
 	
 	/**
@@ -65,11 +65,11 @@ function catchkathmandu_scripts() {
 	/**
 	 * Register JQuery circle all and JQuery set up as dependent on Jquery-cycle
 	 */			
-	wp_register_script( 'jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
+	wp_register_script( 'jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.all.min.js', array( 'jquery' ), '20140317', true );
 	
 	
 	if ( !empty ( $options[ 'social_custom_image' ][ 1 ] ) ) {
-		wp_enqueue_script( 'catchkathmandu-grey', get_template_directory_uri() . '/js/catchkathmandu-grey.min.js', array( 'jquery' ), '20120202' );
+		wp_enqueue_script( 'catchkathmandu-grey', get_template_directory_uri() . '/js/catchkathmandu-grey.min.js', array( 'jquery' ), '20130114' );
 	}
 	
 	/**
@@ -77,7 +77,7 @@ function catchkathmandu_scripts() {
 	 */	
 	$enableslider = $options[ 'enable_slider' ];	
 	if ( ( $enableslider == 'enable-slider-allpage' ) || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && $enableslider == 'enable-slider-homepage' ) ) {	
-		wp_enqueue_script( 'catchkathmandu-slider', get_template_directory_uri() . '/js/catchkathmandu-slider.js', array( 'jquery-cycle' ), '20130114', true );
+		wp_enqueue_script( 'catchkathmandu-slider', get_template_directory_uri() . '/js/catchkathmandu-slider.js', array( 'jquery-cycle' ), '20140317', true );
 	}	
 	
 	/**
@@ -831,14 +831,33 @@ endif;
  * Shows Default Slider Demo if there is not iteam in Featured Post Slider
  */
 function catchkathmandu_default_sliders() { 
-	delete_transient( 'catchkathmandu_default_sliders' );
+	//delete_transient( 'catchkathmandu_default_sliders' );
 	
 	if ( !$catchkathmandu_default_sliders = get_transient( 'catchkathmandu_default_sliders' ) ) {
 		echo '<!-- refreshing cache -->';	
 		$catchkathmandu_default_sliders = '
 		<div id="main-slider" class="container">
 			<section class="featured-slider">
-				<article class="post hentry slides displayblock">
+			
+				<article class="post hentry slides demo-image displayblock">
+					<figure class="slider-image">
+						<a title="Kathmandu Durbar Square" href="#">
+							<img src="'. get_template_directory_uri() . '/images/demo/kathmandu-durbar-square-1280x600.jpg" class="wp-post-image" alt="Kathmandu Durbar Square" title="Kathmandu Durbar Square">
+						</a>
+					</figure>
+					<div class="entry-container">
+						<header class="entry-header">
+							<h1 class="entry-title">
+								<a title="Kathmandu Durbar Square" href="#"><span>Kathmandu Durbar Square</span></a>
+							</h1>
+						</header>
+						<div class="entry-content">
+							<p>The Kathmandu Durbar Square holds the palaces of the Malla and Shah kings who ruled over the city. Along with these palaces, the square surrounds quadrangles revealing courtyards and temples.</p>
+						</div>   
+					</div>             
+				</article><!-- .slides --> 		
+				
+				<article class="post hentry slides demo-image displaynone">
 					<figure class="slider-image">
 						<a title="Seto Ghumba" href="#">
 							<img src="'. get_template_directory_uri() . '/images/demo/seto-ghumba-1280x600.jpg" class="wp-post-image" alt="Seto Ghumba" title="Seto Ghumba">
@@ -854,8 +873,9 @@ function catchkathmandu_default_sliders() {
 							<p>Situated western part in the outskirts of the Kathmandu valley, Seto Gumba also known as Druk Amitabh Mountain or White Monastery, is one of the most popular Buddhist monasteries of Nepal.</p>
 						</div>   
 					</div>             
-				</article><!-- .slides --> 				
-				<article class="post hentry slides displaynone">
+				</article><!-- .slides --> 		
+				
+				<article class="post hentry slides demo-image displaynone">
 					<figure class="slider-image">
 						<a title="Nagarkot Himalayan Range" href="#">
 							<img src="'. get_template_directory_uri() . '/images/demo/nagarkot-mountain-view1280x600.jpg" class="wp-post-image" alt="Nagarkot Himalayan Range" title="Nagarkot Himalayan Range">
@@ -872,6 +892,7 @@ function catchkathmandu_default_sliders() {
 						</div>   
 					</div>             
 				</article><!-- .slides --> 
+				
 			</section>
 			<div id="slider-nav">
 				<a class="slide-previous">&lt;</a>
@@ -1033,39 +1054,40 @@ function catchkathmandu_default_featured_content() {
 							</div>
 						</div><!-- .entry-container -->			
 					</article>
-					
+	
 					<article id="featured-post-2" class="post hentry post-demo">
 						<figure class="featured-homepage-image">
-							<a href="#" title="Rani Pokhari ">
-								<img title="Rani Pokhari " alt="Rani Pokhari " class="wp-post-image" src="'.get_template_directory_uri() . '/images/demo/rani-pokhari-360x240.jpg" />
+							<a href="#" title="Swayambhunath">
+								<img title="Swayambhunath" alt="Swayambhunath" class="wp-post-image" src="'.get_template_directory_uri() . '/images/demo/swayambhunath-360x240.jpg" />
 							</a>
 						</figure>
 						<div class="entry-container">
 							<header class="entry-header">
 								<h1 class="entry-title">
-									<a title="Rani Pokhari" href="#">Rani Pokhari</a>
+									<a title="Swayambhunath" href="#">Swayambhunath</a>
 								</h1>
 							</header>
 							<div class="entry-content">
-								Rani Pokhari (meaning: Queen\'s lake) is the artificial square-shaped pond with the temple of Shiva in the middle, known as Matrikeshwor Mahadev.
+								Swayambhunath is an ancient religious site up in the hill around Kathmandu Valley. It is also known as the Monkey Temple as there are holy monkeys living in the temple. 
 							</div>
 						</div><!-- .entry-container -->			
 					</article>
-	
+					
 					<article id="featured-post-3" class="post hentry post-demo">
 						<figure class="featured-homepage-image">
-							<a href="#" title="Boudhanath">
-								<img title="Boudhanath" alt="Boudhanath" class="wp-post-image" src="'.get_template_directory_uri() . '/images/demo/boudhanath-360x240.jpg" />
+							<a href="#" title="Wood Art">
+								<img title="Wood Art" alt="Wood Art" class="wp-post-image" src="'.get_template_directory_uri() . '/images/demo/wood-art-360x240.jpg" />
 							</a>
 						</figure>
 						<div class="entry-container">
 							<header class="entry-header">
 								<h1 class="entry-title">
-									<a title="Boudhanath" href="#">Boudhanath</a>
+									<a title="Wood Art" href="#">Wood Art</a>
 								</h1>
 							</header>
 							<div class="entry-content">
-								Boudhanath is a UNESCO World Heritage Site and one of the holiest Buddhist sites in Kathmandu, Nepal. It is commenly known as Bauddha by speakers of Nepali.
+								It is the traditional architecture in the Kathmandu valley in temples, palaces, monasteries and houses a perfected Neawri art form generally carved very artistically out of  Wood.
+								
 							</div>
 						</div><!-- .entry-container -->			
 					</article>
