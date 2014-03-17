@@ -2,7 +2,7 @@
 	
 	<div id="main-content" class="center <?php mp_content_class(); ?>">
 		
-		<div id="content">
+		<div id="content" class="clearfix">
 			
 		
 			

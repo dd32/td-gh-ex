@@ -767,7 +767,7 @@ function mp_customize_register( $wp_customize ) {
 	
 //pagination next text	
 	$wp_customize->add_setting( 'pag_next_text' , array(
-    'default'     => 'Next »',
+    'default'     => 'Next &raquo;',
     'transport'   => 'refresh',
 	) );
 	
@@ -781,7 +781,7 @@ function mp_customize_register( $wp_customize ) {
 	
 //pagination Prev Text	
 	$wp_customize->add_setting( 'pag_prev_text' , array(
-    'default'     => '« Previous',
+    'default'     => '&laquo; Previous',
     'transport'   => 'refresh',
 	) );
 	
@@ -973,7 +973,7 @@ function mp_customizer_live_preview()
 	
 	add_action( 'wp_head', 'mp_print_style' );
 	
-	wp_dequeue_style( 'style-css' );
+	wp_dequeue_style( 'style' );
 }
 add_action( 'customize_preview_init', 'mp_customizer_live_preview' );
 

@@ -18,10 +18,10 @@ function mp_enqueue_sripts() { //enque scripts like css
 		wp_enqueue_script( "comment-reply" );
 	} 
 	
-	$stylesheet = get_theme_mod('css');
+	$stylesheet = get_stylesheet_uri();
 	
 	if($stylesheet != '') { //if stylesheet is generated
-		wp_enqueue_style( 'style', $stylesheet['url'], array('dashicons'), '1.0' );
+		wp_enqueue_style( 'style', $stylesheet, array('dashicons'), '1.0' );
 	}
 		
 	//load google font
@@ -32,8 +32,24 @@ function mp_enqueue_sripts() { //enque scripts like css
 
 add_action( 'wp_enqueue_scripts', 'mp_enqueue_sripts' );
 
-if (get_theme_mod('css') == '') {
-	add_action('wp_head', 'mp_print_style');
+
+/**
+*Filter for stylesheet uri. Sets it to uploaded stylesheet
+*
+*/
+function mp_style_uri( $stylesheet_uri, $stylesheet_dir_uri ) {
+	$stylesheet = get_theme_mod( 'css' );
+	
+	$stylesheet_uri = $stylesheet['url'];
+	
+	return  $stylesheet_uri;
+}
+//filter stylesheet uri
+add_filter('stylesheet_uri', 'mp_style_uri', 10 ,2);
+
+
+if (get_theme_mod( 'css' ) == '' ) {
+	add_action( 'wp_head', 'mp_print_style' );
 }
 
 
@@ -41,7 +57,6 @@ function mp_register_my_menus() {
   register_nav_menus(
     array(
       'header-menu' => __( 'Header Menu', 'giga_games' ),
-      'extra-menu' => __( 'Extra Menu', 'giga_games' )
     )
   );
 }
@@ -79,7 +94,7 @@ function mp_add_my_post_types_to_query( $query ) {
 	/* Query sticky posts */
 		$query->set( 'post__not_in' , $sticky );
 		
-		$query->set( 'posts_per_page', 10 - $numberstickies );
+		$query->set( 'posts_per_page', get_option('posts_per_page') - $numberstickies );
 	}
 		
 	return $query;
@@ -216,7 +231,7 @@ function mp_numeric_posts_nav() {
 
 	$paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
 	//$max   = intval( $wp_query->max_num_pages );
-	$max = intval(($wp_query->found_posts + mp_sticky_counter()) / 10);
+	$max = intval(($wp_query->found_posts + mp_sticky_counter()) / get_option('posts_per_page '));
 	
 	
 	/**	Add current page to the array */
@@ -238,7 +253,7 @@ function mp_numeric_posts_nav() {
 
 	/**	Previous Post Link */
 	if ( get_previous_posts_link() )
-		printf( '<li>%s</li>' . "\n", get_previous_posts_link( get_theme_mod( 'pag_prev_text', '« Previous' ) ) );
+		printf( '<li>%s</li>' . "\n", get_previous_posts_link( get_theme_mod( 'pag_prev_text', '&laquo; Previous' ) ) );
 
 	/**	Link to first page, plus ellipses if necessary */
 	if ( ! in_array( 1, $links ) ) {
@@ -268,7 +283,7 @@ function mp_numeric_posts_nav() {
 
 	/**	Next Post Link */
 	if ( get_next_posts_link() )
-		printf( '<li>%s</li>' . "\n", get_next_posts_link( get_theme_mod( 'pag_next_text', 'Next »' ) ) );
+		printf( '<li>%s</li>' . "\n", get_next_posts_link( get_theme_mod( 'pag_next_text', 'Next &raquo;' ) ) );
 
 	echo '</ul></div>' . "\n";
 
@@ -349,13 +364,15 @@ function mp_content_class() {
 				$style = get_theme_mod( 'layout_posts', 'cs' );
 			}
 		
-			if( $style == 'cs' ) {
-				return false;
-			}
+			
 			
 			$class;
 			
-			if( $style == 'c' ) {
+			if( $style == 'cs' ) {
+				$class = 'right-sidebar';
+			}
+			
+			else if( $style == 'c' ) {
 				$class = 'full-width';
 			}
 			else {
@@ -370,18 +387,25 @@ function mp_content_class() {
 *
 */
 function mp_excerpt() {
-	  $content = strip_shortcodes( get_the_content() );
-	  $content = strip_tags( $content );
-	  $content = wp_trim_words( $content, get_theme_mod( 'post_excerpt_length', '30' ), '<a href="' . get_permalink() . '">' . get_theme_mod( 'readmore_text', '...Read more' ) . '</a>' );
-										  		 									  		 
-	  
+		global $post;
 		
-		if( $content != "" ) {							  		 
-		?> <p><?php  echo  $content ?></p>							  	
-		<?php
+		if( $post->post_content != "" ) {							  		 
+			the_excerpt();
 		}
 }
 
+function mp_excerpt_more( $more ) {
+	return ' <a href="'. get_permalink( get_the_ID() ) . '">' . get_theme_mod('readmore_text', '...Read more') . '</a>';
+}
+add_filter( 'excerpt_more', 'mp_excerpt_more' );
+
+
+add_filter('excerpt_length', 'mp_excerpt_length', 999);
+
+function mp_excerpt_length( $length ) {
+	return get_theme_mod( 'post_excerpt_length', '30' );
+}
+add_filter( 'excerpt_length', 'mp_excerpt_length', 999 );
 
 /**
 * Special thumbnail function
