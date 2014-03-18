@@ -84,6 +84,7 @@ if (!class_exists('ReduxFramework_kad_slides')) {
                         'description' => '',
                         'sort' => '',
                         'link' => '',
+                        'target' => '',
                         'url' => '',
                         'thumb' => '',
                         'attachment_id' => '',
@@ -131,6 +132,10 @@ if (!class_exists('ReduxFramework_kad_slides')) {
                     echo '<li><textarea name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][description]" id="' . $this->field['id'] . '-description_' . $x . '" placeholder="'.__('Description', 'redux-framework').'" class="large-text" rows="6">' . esc_attr($slide['description']) . '</textarea></li>';
                     echo '<li><input type="text" id="' . $this->field['id'] . '-link_' . $x . '" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][link]" value="' . esc_attr($slide['link']) . '" placeholder="'.__('Slide Link', 'virtue').'" class="full-text" /></li>';
                     
+                    echo '<li><label for="'. $this->field['id'] .  '-target_' . $x . '" class="icon-link-target">';
+                    echo '<input type="checkbox" class="checkbox-slide-target" id="' . $this->field['id'] . '-target_' . $x . '" value="1" ' . checked(  $slide['target'], '1', false ) . ' name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][target]" />';
+                    echo ' '.__('Open Link in New Tab/Window', 'virtue'). '</label></li>';
+
                     echo '<li><input type="hidden" class="slide-sort" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][sort]" id="' . $this->field['id'] . '-sort_' . $x . '" value="' . $slide['sort'] . '" />';
                     echo '<li><input type="hidden" class="upload-id" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][attachment_id]" id="' . $this->field['id'] . '-image_id_' . $x . '" value="' . $slide['attachment_id'] . '" />';
                     echo '<input type="hidden" class="upload-thumbnail" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][thumb]" id="' . $this->field['id'] . '-thumb_url_' . $x . '" value="' . $slide['thumb'] . '" readonly="readonly" />';
@@ -195,6 +200,11 @@ if (!class_exists('ReduxFramework_kad_slides')) {
                 echo '<li><textarea name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][description]" id="' . $this->field['id'] . '-description_' . $x . '" placeholder="'.$placeholder.'" class="large-text" rows="6"></textarea></li>';
                 $placeholder = (isset($this->field['placeholder']['link'])) ? esc_attr($this->field['placeholder']['link']) : __( 'Slide Link', 'virtue' );
                 echo '<li><input type="text" id="' . $this->field['id'] . '-link_' . $x . '" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][link]" value="" placeholder="'.$placeholder.'" class="full-text" /></li>';
+                
+                echo '<li><label for="'. $this->field['id'] .  '-target_' . $x . '">';
+                echo '<input type="checkbox" class="checkbox-slide-target" id="' . $this->field['id'] . '-target_' . $x . '" value="" ' . checked(  '', '1', false ) . ' name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][target]" />';
+                echo ' '.__('Open Link in New Tab/Window', 'virtue'). '</label></li>';
+
                 echo '<li><input type="hidden" class="slide-sort" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][sort]" id="' . $this->field['id'] . '-sort_' . $x . '" value="' . $x . '" />';
                 echo '<li><input type="hidden" class="upload-id" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][attachment_id]" id="' . $this->field['id'] . '-image_id_' . $x . '" value="" />';
                 echo '<input type="hidden" class="upload" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][url]" id="' . $this->field['id'] . '-image_url_' . $x . '" value="" readonly="readonly" />';

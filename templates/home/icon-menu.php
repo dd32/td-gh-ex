@@ -10,8 +10,9 @@
                     <div class="rowtight homepromo">
                     <?php $counter = 1;?>
                         <?php foreach ($icons as $icon) : ?>
+                        <?php if(!empty($icon['target']) && $icon['target'] == 1) {$target = '_blank';} else {$target = '_self';} ?>
                             <div class="<?php echo $itemsize;?> home-iconmenu <?php echo 'homeitemcount'.$counter;?>">
-                                <a href="<?php echo $icon['link'] ?>" title="<?php echo $icon['title'] ?>">
+                                <a href="<?php echo $icon['link'] ?>" target="<?php echo $target; ?>" title="<?php echo esc_attr($icon['title']); ?>">
                                 <?php if(!empty($icon['url'])) echo '<img src="'.$icon['url'].'"/>' ; else echo '<i class="'.$icon['icon_o'].'"></i>'; ?>
                                 <?php if ($icon['title'] != '') echo '<h4>'.$icon['title'].'</h4>'; ?>
                                 <?php if ($icon['description'] != '') echo '<p>'.$icon['description'].'</p>'; ?>

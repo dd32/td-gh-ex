@@ -24,7 +24,7 @@ jQuery(document).ready(function () {
         var slideCount = jQuery(newSlide).find('input[type="text"]').attr("name").match(/\d+/);
         var slideCount1 = slideCount*1 + 1;
 
-        jQuery(newSlide).find('input[type="text"], input[type="hidden"], textarea').each(function(){
+        jQuery(newSlide).find('input[type="text"], .redux-slides-list input[type="checkbox"], input[type="hidden"], textarea').each(function(){
 
             jQuery(this).attr("name", jQuery(this).attr("name").replace(/\d+/, slideCount1) ).attr("id", jQuery(this).attr("id").replace(/\d+/, slideCount1) );
             jQuery(this).val('');
@@ -37,6 +37,8 @@ jQuery(document).ready(function () {
         jQuery(newSlide).find('.screenshot').addClass('hide');
         jQuery(newSlide).find('.screenshot a').attr('href', '');
         jQuery(newSlide).find('.remove-image').addClass('hide');
+        jQuery(newSlide).find('.icon-link-target input[type="checkbox"]').val('');
+        jQuery(newSlide).find('.icon-link-target input[type="checkbox"]').attr("checked", false);
         jQuery(newSlide).find('.redux-slides-image').attr('src', '').removeAttr('id');
         jQuery(newSlide).find('h3').text('').append('<span class="redux-slides-header">New slide</span><span class="ui-accordion-header-icon ui-icon ui-icon-plus"></span>');
         jQuery(this).prev().append(newSlide);

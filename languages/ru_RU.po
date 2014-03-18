@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Lite Virtue\n"
-"POT-Creation-Date: 2014-02-11 00:27-0700\n"
-"PO-Revision-Date: 2014-02-11 00:27-0700\n"
+"POT-Creation-Date: 2014-03-18 14:54-0700\n"
+"PO-Revision-Date: 2014-03-18 14:54-0700\n"
 "Last-Translator: Serhio <588885@mail.ru>\n"
 "Language-Team: \n"
 "Language: English\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.7\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;esc_attr__;esc_attr_e\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SearchPath-0: ..\n"
@@ -37,12 +37,12 @@ msgstr "просроченная ссылка"
 msgid "Sorry, no results were found."
 msgstr "Приносим извинения, результаты не найдены."
 
-#: ../archive.php:36 ../front-page.php:82 ../index.php:28 ../page-blog.php:61
+#: ../archive.php:36 ../front-page.php:85 ../index.php:28 ../page-blog.php:61
 #: ../page-portfolio.php:111 ../taxonomy-portfolio-type.php:100
 msgid "&larr; Older posts"
 msgstr "&larr; Более старые посты"
 
-#: ../archive.php:37 ../front-page.php:83 ../index.php:29 ../page-blog.php:62
+#: ../archive.php:37 ../front-page.php:86 ../index.php:29 ../page-blog.php:62
 #: ../page-portfolio.php:112 ../taxonomy-portfolio-type.php:101
 msgid "Newer posts &rarr;"
 msgstr "Более свежие посты &rarr;"
@@ -74,11 +74,12 @@ msgid " Contact"
 msgstr " Контакт"
 
 #: ../page-contact.php:118
+#: ../themeoptions/inc/fields/color_gradient/field_color_gradient.php:73
 msgid "From "
 msgstr "От"
 
 #: ../page-contact.php:119 ../templates/comments.php:68
-#: ../woocommerce/single-product-reviews.php:84
+#: ../woocommerce/single-product-reviews.php:62
 msgid "Name"
 msgstr "Имя"
 
@@ -283,7 +284,6 @@ msgid "Type"
 msgstr "Тип"
 
 #: ../lib/class-tgm-plugin-activation.php:1294
-#: ../woocommerce/myaccount/my-orders.php:34
 msgid "Status"
 msgstr "Статус"
 
@@ -392,7 +392,7 @@ msgstr "Устанавливаем плагин %1$s (%2$d/%3$d)"
 msgid "Return to the Dashboard"
 msgstr "Вернуться в консоль."
 
-#: ../lib/cleanup.php:182
+#: ../lib/cleanup.php:168
 msgid "Continued"
 msgstr "Продолжено"
 
@@ -409,11 +409,11 @@ msgstr "| (Изменить)"
 msgid "Your comment is awaiting moderation."
 msgstr "Ваш комментарий ожидает модерации."
 
-#: ../lib/custom-woocommerce.php:83 ../templates/header.php:29
+#: ../lib/custom-woocommerce.php:95 ../templates/header.php:30
 msgid "View your shopping cart"
 msgstr "Посмотреть вашу корзину"
 
-#: ../lib/custom-woocommerce.php:84 ../templates/header.php:30
+#: ../lib/custom-woocommerce.php:96 ../templates/header.php:31
 msgid "Your Cart"
 msgstr "Ваша корзина"
 
@@ -516,7 +516,9 @@ msgstr "Навигация для чердака"
 msgid "Footer Navigation"
 msgstr "Навигация для подвала"
 
-#: ../lib/metaboxes.php:21 ../lib/metaboxes.php:369 ../lib/metaboxes.php:494
+#: ../lib/metaboxes.php:21 ../lib/metaboxes.php:370 ../lib/metaboxes.php:495
+#: ../themeoptions/inc/fields/border/field_border.php:112
+#: ../themeoptions/inc/fields/spacing/field_spacing.php:125
 msgid "All"
 msgstr "Все"
 
@@ -544,34 +546,34 @@ msgstr "Опции поста"
 msgid "Head Content"
 msgstr "Содержимое заголовка страницы"
 
-#: ../lib/metaboxes.php:98 ../lib/metaboxes.php:223
+#: ../lib/metaboxes.php:98 ../lib/metaboxes.php:224
 msgid "None"
 msgstr "Никакие"
 
-#: ../lib/metaboxes.php:99 ../lib/metaboxes.php:221 ../lib/metaboxes.php:436
+#: ../lib/metaboxes.php:99 ../lib/metaboxes.php:221 ../lib/metaboxes.php:437
 msgid "Image Slider"
 msgstr "Слайдер изображений"
 
-#: ../lib/metaboxes.php:100 ../lib/metaboxes.php:128 ../lib/metaboxes.php:222
-#: ../lib/metaboxes.php:437
+#: ../lib/metaboxes.php:100 ../lib/metaboxes.php:128 ../lib/metaboxes.php:223
+#: ../lib/metaboxes.php:438
 msgid "Video"
 msgstr "Видео"
 
-#: ../lib/metaboxes.php:101 ../lib/metaboxes.php:220 ../lib/metaboxes.php:438
-#: ../lib/widgets.php:784
+#: ../lib/metaboxes.php:101 ../lib/metaboxes.php:220 ../lib/metaboxes.php:439
+#: ../lib/widgets.php:786
 msgid "Image"
 msgstr "Изображение"
 
-#: ../lib/metaboxes.php:105 ../lib/metaboxes.php:227 ../lib/metaboxes.php:442
+#: ../lib/metaboxes.php:105 ../lib/metaboxes.php:228 ../lib/metaboxes.php:443
 msgid "Max Image/Slider Height"
 msgstr "Максимальная высота Изображения/Слайдера"
 
-#: ../lib/metaboxes.php:106 ../lib/metaboxes.php:443
+#: ../lib/metaboxes.php:106 ../lib/metaboxes.php:444
 msgid "Default is: 400 <b>(Note: just input number, example: 350)</b>"
 msgstr ""
 "По умолчанию: 400 <b>(Внимание, просто введите значение, например: 350)</b>"
 
-#: ../lib/metaboxes.php:111 ../lib/metaboxes.php:233 ../lib/metaboxes.php:448
+#: ../lib/metaboxes.php:111 ../lib/metaboxes.php:234 ../lib/metaboxes.php:449
 msgid "Max Image/Slider Width"
 msgstr "Максимальная ширина Изображения/Слайдера"
 
@@ -588,11 +590,11 @@ msgstr ""
 msgid "Post Summary"
 msgstr "Разместить краткое содержание"
 
-#: ../lib/metaboxes.php:122
+#: ../lib/metaboxes.php:122 ../themeoptions/framework.php:1584
 msgid "Default"
 msgstr "По умолчанию"
 
-#: ../lib/metaboxes.php:123 ../lib/widgets.php:790
+#: ../lib/metaboxes.php:123 ../lib/widgets.php:792
 msgid "Text"
 msgstr "Текст"
 
@@ -612,27 +614,27 @@ msgstr "Сладер портретных изображений"
 msgid "Landscape Image Slider"
 msgstr "Слайдер пейзажных изображений"
 
-#: ../lib/metaboxes.php:132 ../lib/metaboxes.php:523
+#: ../lib/metaboxes.php:132 ../lib/metaboxes.php:524
 msgid "Display Sidebar?"
 msgstr "Показать боковую панель?"
 
-#: ../lib/metaboxes.php:133 ../lib/metaboxes.php:524
+#: ../lib/metaboxes.php:133 ../lib/metaboxes.php:525
 msgid "Choose if layout is fullwidth or sidebar"
 msgstr "Укажите, тип страницы: во всю ширину или с боковой панелью"
 
-#: ../lib/metaboxes.php:137 ../lib/metaboxes.php:154 ../lib/metaboxes.php:413
-#: ../lib/metaboxes.php:459 ../lib/metaboxes.php:528 ../lib/metaboxes.php:556
-#: ../lib/metaboxes.php:573
+#: ../lib/metaboxes.php:137 ../lib/metaboxes.php:154 ../lib/metaboxes.php:414
+#: ../lib/metaboxes.php:460 ../lib/metaboxes.php:529 ../lib/metaboxes.php:557
+#: ../lib/metaboxes.php:574
 msgid "Yes"
 msgstr "Да"
 
 #: ../lib/metaboxes.php:138 ../lib/metaboxes.php:153 ../lib/metaboxes.php:163
-#: ../lib/metaboxes.php:310 ../lib/metaboxes.php:412 ../lib/metaboxes.php:460
-#: ../lib/metaboxes.php:529 ../lib/metaboxes.php:557 ../lib/metaboxes.php:572
+#: ../lib/metaboxes.php:311 ../lib/metaboxes.php:413 ../lib/metaboxes.php:461
+#: ../lib/metaboxes.php:530 ../lib/metaboxes.php:558 ../lib/metaboxes.php:573
 msgid "No"
 msgstr "Нет"
 
-#: ../lib/metaboxes.php:142 ../lib/metaboxes.php:533 ../lib/metaboxes.php:643
+#: ../lib/metaboxes.php:142 ../lib/metaboxes.php:534 ../lib/metaboxes.php:644
 msgid "Choose Sidebar"
 msgstr "Выберите боковую панель"
 
@@ -660,7 +662,7 @@ msgstr "Да - отображать недавние посты"
 msgid "Yes - Display Similar Posts"
 msgstr "Да - отображать похожие посты"
 
-#: ../lib/metaboxes.php:170 ../lib/metaboxes.php:315
+#: ../lib/metaboxes.php:170 ../lib/metaboxes.php:316
 msgid "Carousel Title"
 msgstr "Заголовок карусели"
 
@@ -672,11 +674,11 @@ msgstr "например, Похожие посты"
 msgid "Post Video Box"
 msgstr "Разместить видео-пост"
 
-#: ../lib/metaboxes.php:187 ../lib/metaboxes.php:464
+#: ../lib/metaboxes.php:187 ../lib/metaboxes.php:465
 msgid "If Video Post"
 msgstr "Если видео-пост"
 
-#: ../lib/metaboxes.php:188 ../lib/metaboxes.php:300 ../lib/metaboxes.php:465
+#: ../lib/metaboxes.php:188 ../lib/metaboxes.php:301 ../lib/metaboxes.php:466
 msgid "Place Embed Code Here, works with youtube, vimeo..."
 msgstr "Разместите ваш встроенный код здесь, работает для youtube, vimeo..."
 
@@ -704,12 +706,17 @@ msgstr "Три ряда"
 msgid "Project Options"
 msgstr "Опции проекта"
 
-#: ../lib/metaboxes.php:228
+#: ../lib/metaboxes.php:222
+#, fuzzy
+msgid "Carousel Slider"
+msgstr "Заголовок карусели"
+
+#: ../lib/metaboxes.php:229
 msgid "Default is: 450 <b>(Note: just input number, example: 350)</b>"
 msgstr ""
 "По умолчанию: 450 <b>(Внимание, просто введите значение, например: 350)</b>"
 
-#: ../lib/metaboxes.php:234
+#: ../lib/metaboxes.php:235
 #, fuzzy
 msgid ""
 "Default is: 670 or 1140 on <b>above</b> or <b>three row</b> layouts (Note: "
@@ -718,200 +725,202 @@ msgstr ""
 "По умолчанию: 670 или 1170 на <b> Сверху </> или <b> Три ряда </b> форматах  "
 "<b>(Внимание, просто введите значение, например: 650)</b>"
 
-#: ../lib/metaboxes.php:239
+#: ../lib/metaboxes.php:240
 msgid "Value 01 Title"
 msgstr "Название параметра 01"
 
-#: ../lib/metaboxes.php:240
+#: ../lib/metaboxes.php:241
 msgid "ex. Project Type:"
 msgstr "например: Тип проекта:"
 
-#: ../lib/metaboxes.php:245
+#: ../lib/metaboxes.php:246
 msgid "Value 01 Description"
 msgstr "Описание параметра 01"
 
-#: ../lib/metaboxes.php:246
+#: ../lib/metaboxes.php:247
 msgid "ex. Character Illustration"
 msgstr "например, Описание иллюстрации"
 
-#: ../lib/metaboxes.php:251
+#: ../lib/metaboxes.php:252
 msgid "Value 02 Title"
 msgstr "Название параметра 02"
 
-#: ../lib/metaboxes.php:252
+#: ../lib/metaboxes.php:253
 msgid "ex. Skills Needed:"
 msgstr "например, требуемые навыки:"
 
-#: ../lib/metaboxes.php:257
+#: ../lib/metaboxes.php:258
 msgid "Value 02 Description"
 msgstr "Описание параметра 02"
 
-#: ../lib/metaboxes.php:258
+#: ../lib/metaboxes.php:259
 msgid "ex. Photoshop, Illustrator"
 msgstr "например, Фотошоп, Иллюстратор"
 
-#: ../lib/metaboxes.php:263
+#: ../lib/metaboxes.php:264
 msgid "Value 03 Title"
 msgstr "Название параметра 03"
 
-#: ../lib/metaboxes.php:264
+#: ../lib/metaboxes.php:265
 msgid "ex. Customer:"
 msgstr "например, Клиент:"
 
-#: ../lib/metaboxes.php:269
+#: ../lib/metaboxes.php:270
 msgid "Value 03 Description"
 msgstr "Описание параметра 03"
 
-#: ../lib/metaboxes.php:270
+#: ../lib/metaboxes.php:271
 msgid "ex. Example Inc"
 msgstr "например, Ромашка Инкорпорейтед"
 
-#: ../lib/metaboxes.php:275
+#: ../lib/metaboxes.php:276
 msgid "Value 04 Title"
 msgstr "Название параметра 04"
 
-#: ../lib/metaboxes.php:276
+#: ../lib/metaboxes.php:277
 msgid "ex. Project Year:"
 msgstr "например, Год проекта:"
 
-#: ../lib/metaboxes.php:281
+#: ../lib/metaboxes.php:282
 msgid "Value 04 Description"
 msgstr "Описание параметра 04"
 
-#: ../lib/metaboxes.php:282
+#: ../lib/metaboxes.php:283
 msgid "ex. 2013"
 msgstr "например, 2013"
 
-#: ../lib/metaboxes.php:287
+#: ../lib/metaboxes.php:288
 msgid "External Website"
 msgstr "Внешний сайт"
 
-#: ../lib/metaboxes.php:288
+#: ../lib/metaboxes.php:289
 msgid "ex. Website:"
 msgstr "например, Сайт:"
 
-#: ../lib/metaboxes.php:293
+#: ../lib/metaboxes.php:294
 msgid "Website Address"
 msgstr "Адрес сайта"
 
-#: ../lib/metaboxes.php:294
+#: ../lib/metaboxes.php:295
 msgid "ex. http://www.example.com"
 msgstr "например, https://www.ромашка.рф"
 
-#: ../lib/metaboxes.php:299
+#: ../lib/metaboxes.php:300
 msgid "If Video Project"
 msgstr "Если видео-проект"
 
-#: ../lib/metaboxes.php:305
+#: ../lib/metaboxes.php:306
 msgid "Similar Portfolio Item Carousel"
 msgstr "Карусель похожих элементов портфолио"
 
-#: ../lib/metaboxes.php:306
+#: ../lib/metaboxes.php:307
 msgid "Display a carousel with similar portfolio items below project?"
 msgstr "Отображать карусель с подобными элементами портфолио под проектом?"
 
-#: ../lib/metaboxes.php:311
+#: ../lib/metaboxes.php:312
 msgid "Yes - Display Recent Projects"
 msgstr "Да - отображать недавние проекты"
 
-#: ../lib/metaboxes.php:316
+#: ../lib/metaboxes.php:317
 msgid "ex. Similar Projects"
 msgstr "например, Подобные проекты"
 
-#: ../lib/metaboxes.php:325
+#: ../lib/metaboxes.php:326
 msgid "Portfolio Page Options"
 msgstr "Опции страницы Портфолио"
 
-#: ../lib/metaboxes.php:334
+#: ../lib/metaboxes.php:335
 msgid "Columns"
 msgstr "Колонки"
 
-#: ../lib/metaboxes.php:339
+#: ../lib/metaboxes.php:340
 msgid "Four Column"
 msgstr "Четыре колонки"
 
-#: ../lib/metaboxes.php:340
+#: ../lib/metaboxes.php:341
 msgid "Three Column"
 msgstr "Три колонки"
 
-#: ../lib/metaboxes.php:341
+#: ../lib/metaboxes.php:342
 msgid "Two Column"
 msgstr "Две колонки"
 
-#: ../lib/metaboxes.php:345
+#: ../lib/metaboxes.php:346
 msgid "Portfolio Work Types"
 msgstr "Виды работ портфолио"
 
-#: ../lib/metaboxes.php:352
+#: ../lib/metaboxes.php:353
 msgid "Order Items By"
 msgstr "Сортировать элементы по"
 
-#: ../lib/metaboxes.php:357
+#: ../lib/metaboxes.php:358
 msgid "Menu Order"
 msgstr "Порядок меню"
 
-#: ../lib/metaboxes.php:358
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:152
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:216
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:130
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:192
+#: ../lib/metaboxes.php:359
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:153
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:221
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:131
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:197
+#: ../themeoptions/inc/fields/slides/field_slides.php:133
+#: ../themeoptions/inc/fields/slides/field_slides.php:197
 msgid "Title"
 msgstr "Заголовок"
 
-#: ../lib/metaboxes.php:359 ../woocommerce/myaccount/my-orders.php:33
+#: ../lib/metaboxes.php:360
 msgid "Date"
 msgstr "Дата"
 
-#: ../lib/metaboxes.php:360
+#: ../lib/metaboxes.php:361
 msgid "Random"
 msgstr "Случайно"
 
-#: ../lib/metaboxes.php:364
+#: ../lib/metaboxes.php:365
 msgid "Items per Page"
 msgstr "Элементов на страницу"
 
-#: ../lib/metaboxes.php:365
+#: ../lib/metaboxes.php:366
 msgid "How many portfolio items per page"
 msgstr "Количество элементов портфолио на одной странице"
 
-#: ../lib/metaboxes.php:387
+#: ../lib/metaboxes.php:388
 msgid "Set image height"
 msgstr "Установить высоту изображения"
 
-#: ../lib/metaboxes.php:388
+#: ../lib/metaboxes.php:389
 msgid "Default is 1:1 ratio <b>(Note: just input number, example: 350)</b>"
 msgstr ""
 "По умолчанию соотношение 1:1  <b>(Внимание, просто введите значение, "
 "например: 350)</b>"
 
-#: ../lib/metaboxes.php:393
+#: ../lib/metaboxes.php:394
 msgid "Display Item Work Types"
 msgstr "Отображать виды работ элемента"
 
-#: ../lib/metaboxes.php:400
+#: ../lib/metaboxes.php:401
 msgid "Display Item Excerpt"
 msgstr "Отображать выдержки описания элемента"
 
-#: ../lib/metaboxes.php:407
+#: ../lib/metaboxes.php:408
 msgid "Add Lightbox link in the top right of each item"
 msgstr ""
 
-#: ../lib/metaboxes.php:422
+#: ../lib/metaboxes.php:423
 msgid "Feature Page Options"
 msgstr "Опции страницы свойств"
 
-#: ../lib/metaboxes.php:431
+#: ../lib/metaboxes.php:432
 msgid "Feature Options"
 msgstr "Опции свойства"
 
-#: ../lib/metaboxes.php:432
+#: ../lib/metaboxes.php:433
 #, fuzzy
 msgid "If image slider make sure images uploaded are at least 1140px wide."
 msgstr ""
 "Если собираетесь загрузить изображения для слайдера, убедитесь, что их "
 "ширина как минимум 1170 пикселей."
 
-#: ../lib/metaboxes.php:449
+#: ../lib/metaboxes.php:450
 #, fuzzy
 msgid ""
 "Default is: 1140 <b>(Note: just input number, example: 650, does not apply "
@@ -920,120 +929,131 @@ msgstr ""
 "По умолчанию: 1170  <b>(Внимание, просто введите значение, например: 350, не "
 "применяется для карусельного слайдера)</b>"
 
-#: ../lib/metaboxes.php:454
+#: ../lib/metaboxes.php:455
 msgid "Use Lightbox for Feature Image"
 msgstr "Использовать лайтбокс для изображений особенностей"
 
-#: ../lib/metaboxes.php:455
+#: ../lib/metaboxes.php:456
 msgid ""
 "If feature option is set to image, choose to use lightbox link with image."
 msgstr ""
 "Если опция фичи установлена в изображение, выберите использовать лайтбокс с "
 "изображением."
 
-#: ../lib/metaboxes.php:473
+#: ../lib/metaboxes.php:474
 msgid "Blog List Options"
 msgstr "Опции списка блогов"
 
-#: ../lib/metaboxes.php:482
+#: ../lib/metaboxes.php:483
 msgid "Blog Category"
 msgstr "Категория блога"
 
-#: ../lib/metaboxes.php:483
+#: ../lib/metaboxes.php:484
 msgid "Select all blog posts or a specific category to show"
 msgstr "Выберите все посты или категорию постов для отображения"
 
-#: ../lib/metaboxes.php:489
+#: ../lib/metaboxes.php:490
 msgid "How Many Posts Per Page"
 msgstr "Количество постов на странице"
 
-#: ../lib/metaboxes.php:513
+#: ../lib/metaboxes.php:514
 msgid "Display Post Content as:"
 msgstr "Отобразить содержимое поста как:"
 
-#: ../lib/metaboxes.php:518
+#: ../lib/metaboxes.php:519
 msgid "Summary"
 msgstr "Краткое содержание:"
 
-#: ../lib/metaboxes.php:519
+#: ../lib/metaboxes.php:520
 msgid "Full"
 msgstr "Полностью:"
 
-#: ../lib/metaboxes.php:542
+#: ../lib/metaboxes.php:543
 msgid "Contact Page Options"
 msgstr "Страница опций контактов"
 
-#: ../lib/metaboxes.php:551
+#: ../lib/metaboxes.php:552
 msgid "Use Contact Form"
 msgstr "Использовать контактную форму"
 
-#: ../lib/metaboxes.php:561
+#: ../lib/metaboxes.php:562
 msgid "Contact Form Title"
 msgstr "Заголовок контактной формы"
 
-#: ../lib/metaboxes.php:562
+#: ../lib/metaboxes.php:563
 msgid "ex. Send us an Email"
 msgstr "например, Отправьте нам сообщение по электронной почте"
 
-#: ../lib/metaboxes.php:567
+#: ../lib/metaboxes.php:568
 msgid "Use Map"
 msgstr "Использовать карту"
 
-#: ../lib/metaboxes.php:577
+#: ../lib/metaboxes.php:578
 msgid "Address"
 msgstr "Адрес"
 
-#: ../lib/metaboxes.php:578
+#: ../lib/metaboxes.php:579
 msgid "Enter your Location"
 msgstr "Введите ваше местоположение"
 
-#: ../lib/metaboxes.php:583
+#: ../lib/metaboxes.php:584
 msgid "Map Type"
 msgstr "Тип карты"
 
-#: ../lib/metaboxes.php:588
+#: ../lib/metaboxes.php:589
 msgid "ROADMAP"
 msgstr "ДОРОГИ"
 
-#: ../lib/metaboxes.php:589
+#: ../lib/metaboxes.php:590
 msgid "HYBRID"
 msgstr "ГИБРИД"
 
-#: ../lib/metaboxes.php:590
+#: ../lib/metaboxes.php:591
 msgid "TERRAIN"
 msgstr "МЕСТНОСТЬ"
 
-#: ../lib/metaboxes.php:591
+#: ../lib/metaboxes.php:592
 msgid "SATELLITE"
 msgstr "СПУТНИК"
 
-#: ../lib/metaboxes.php:595
+#: ../lib/metaboxes.php:596
 msgid "Map Zoom Level"
 msgstr "Vfcinf,"
 
-#: ../lib/metaboxes.php:596
+#: ../lib/metaboxes.php:597
 msgid "A good place to start is 15"
 msgstr "Наболее подходящий начальный масштаб 15"
 
-#: ../lib/metaboxes.php:601
+#: ../lib/metaboxes.php:602
 msgid "1 (World View)"
 msgstr "1 (Вид карты мира)"
 
-#: ../lib/metaboxes.php:621
+#: ../lib/metaboxes.php:622
 msgid "21 (Street View)"
 msgstr "21 (Вид улиц)"
 
-#: ../lib/metaboxes.php:625
+#: ../lib/metaboxes.php:626
 msgid "Map Height"
 msgstr "Высота карты"
 
-#: ../lib/metaboxes.php:626
+#: ../lib/metaboxes.php:627
 msgid "Default is 300"
 msgstr "По умолчанию 300"
 
-#: ../lib/metaboxes.php:634
+#: ../lib/metaboxes.php:635
 msgid "Sidebar Options"
 msgstr "Опции боковой панели"
+
+#: ../lib/scripts.php:43
+msgid ""
+"Sorry, no products matched your selection. Please choose a different "
+"combination."
+msgstr ""
+
+#: ../lib/scripts.php:44
+msgid ""
+"Sorry, this product is unavailable. Please choose a different combination."
+msgstr ""
 
 #: ../lib/utils.php:69
 #, php-format
@@ -1077,7 +1097,7 @@ msgstr "Все плагины установлены и активированы
 msgid "Primary Sidebar"
 msgstr "Основная боковая панель"
 
-#: ../lib/widgets.php:49 ../templates/header.php:39
+#: ../lib/widgets.php:49 ../templates/header.php:40
 msgid "Topbar Widget"
 msgstr "Виджеты чердака"
 
@@ -1134,11 +1154,11 @@ msgstr "Область/Регион:"
 msgid "Zipcode/Postal Code:"
 msgstr "Почтовый индекс:"
 
-#: ../lib/widgets.php:305 ../woocommerce/order/order-details.php:102
+#: ../lib/widgets.php:305 ../woocommerce/order/order-details.php:110
 msgid "Telephone:"
 msgstr "Телефон:"
 
-#: ../lib/widgets.php:309 ../woocommerce/order/order-details.php:101
+#: ../lib/widgets.php:309 ../woocommerce/order/order-details.php:109
 msgid "Email:"
 msgstr "Адрес эл.почты:"
 
@@ -1256,17 +1276,21 @@ msgstr "Если портфолио - выберите тип (опция):"
 msgid "Number of images to show:"
 msgstr "Количество отображаемых изображений:"
 
-#: ../lib/widgets.php:758
+#: ../lib/widgets.php:760
 msgid "This allows for an image and a simple about text."
 msgstr "Позволяет разместить изображение и краткое текстовое описание."
 
-#: ../lib/widgets.php:759
+#: ../lib/widgets.php:761
 msgid "Virtue: About with Image"
 msgstr "Virtue: О себе с изображением"
 
-#: ../lib/widgets.php:787
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:118
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:183
+#: ../lib/widgets.php:789
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:119
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:188
+#: ../themeoptions/inc/fields/background/field_background.php:307
+#: ../themeoptions/inc/fields/media/field_media.php:150
+#: ../themeoptions/inc/fields/slides/field_slides.php:121
+#: ../themeoptions/inc/fields/slides/field_slides.php:190
 msgid "Upload"
 msgstr "Загрузить"
 
@@ -1310,7 +1334,7 @@ msgstr "Добавление комментариев закрыто."
 msgid "Leave a Reply"
 msgstr "Оставить ответ"
 
-#: ../templates/comments.php:54
+#: ../templates/comments.php:54 ../woocommerce/single-product-reviews.php:58
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr "Оставить ответ на %s"
@@ -1356,7 +1380,7 @@ msgstr "Добавить комментарий"
 
 #: ../templates/content-fullpost.php:78
 #: ../templates/content-fullpostfull.php:78 ../templates/content-single.php:87
-#: ../templates/content-singleportfolio.php:151
+#: ../templates/content-singleportfolio.php:258
 msgid "Pages:"
 msgstr "Страницы:"
 
@@ -1372,7 +1396,7 @@ msgstr "размещено в:"
 msgid "By"
 msgstr "Кем"
 
-#: ../templates/header.php:76
+#: ../templates/header.php:77
 msgid "Menu"
 msgstr "Меню"
 
@@ -1395,6 +1419,179 @@ msgstr "Читать далее"
 #: ../templates/home/portfolio-carousel.php:2
 msgid "Featured Projects"
 msgstr "Избранные проекты"
+
+#: ../themeoptions/framework.php:126 ../themeoptions/framework.php:132
+#: ../themeoptions/framework.php:305 ../themeoptions/framework.php:308
+msgid "Options"
+msgstr "Опции"
+
+#: ../themeoptions/framework.php:302
+#, fuzzy, php-format
+msgid "Options panel created using %1$s"
+msgstr "Панель опций создана с использованием"
+
+#: ../themeoptions/framework.php:302
+msgid "Redux Framework"
+msgstr "Redux Framework"
+
+#: ../themeoptions/framework.php:1293
+msgid "You have changes that are not saved. Would you like to save them now?"
+msgstr "У вас есть несохраненные изменения. Хотите сохранить их сейчас?"
+
+#: ../themeoptions/framework.php:1294
+#, fuzzy
+msgid "Are you sure? Resetting will lose all custom values."
+msgstr ""
+"Вы уверены? Установление значений по умолчанию приведет к потере измененных "
+"значений."
+
+#: ../themeoptions/framework.php:1295
+#, fuzzy
+msgid "Are you sure? Resetting will lose all custom values in this section."
+msgstr ""
+"Вы уверены? Установление значений по умолчанию приведет к потере измененных "
+"значений."
+
+#: ../themeoptions/framework.php:1296
+msgid ""
+"Your current options will be replaced with the values of this preset. Would "
+"you like to proceed?"
+msgstr ""
+"Ваши текущие настройки будут заменены значениями по умолчанию. Продолжить?"
+
+#: ../themeoptions/framework.php:2156
+msgid "Warning- This options panel will not work properly without javascript!"
+msgstr ""
+"Внимание! Эта панель настроек не будет работать корректно без подключенного "
+"JavaScript!"
+
+#: ../themeoptions/framework.php:2218
+msgid "Expand"
+msgstr "Увеличить"
+
+#: ../themeoptions/framework.php:2220 ../themeoptions/framework.php:2492
+msgid "Save Changes"
+msgstr "Сохранить изменения"
+
+#: ../themeoptions/framework.php:2222 ../themeoptions/framework.php:2494
+#, fuzzy
+msgid "Reset Section"
+msgstr "Очистить выбор"
+
+#: ../themeoptions/framework.php:2224 ../themeoptions/framework.php:2496
+msgid "Reset All"
+msgstr ""
+
+#: ../themeoptions/framework.php:2227 ../themeoptions/framework.php:2499
+msgid "Working..."
+msgstr "Выполняется..."
+
+#: ../themeoptions/framework.php:2238
+msgid "Settings Imported!"
+msgstr "Настройки импортированы!"
+
+#: ../themeoptions/framework.php:2244
+msgid "Settings Saved!"
+msgstr "Настройки сохранены!"
+
+#: ../themeoptions/framework.php:2251
+msgid "Settings have changed, you should save them!"
+msgstr "Настройки изменились, не забудьте их сохранить!"
+
+#: ../themeoptions/framework.php:2252
+msgid "error(s) were found!"
+msgstr "ошибка(и)!"
+
+#: ../themeoptions/framework.php:2253
+msgid "warning(s) were found!"
+msgstr "предупреждение(ия)!"
+
+#: ../themeoptions/framework.php:2289
+msgid "Import / Export"
+msgstr "Импорт / Экспорт"
+
+#: ../themeoptions/framework.php:2305 ../themeoptions/framework.php:2424
+msgid "Options Object"
+msgstr "Объект опций"
+
+#: ../themeoptions/framework.php:2319 ../themeoptions/framework.php:2442
+msgid "System Info"
+msgstr "Системная информация"
+
+#: ../themeoptions/framework.php:2356
+msgid "Import / Export Options"
+msgstr "Настройки Импорта / Экспорта"
+
+#: ../themeoptions/framework.php:2357
+msgid "Import Options"
+msgstr "Настройки Импорта"
+
+#: ../themeoptions/framework.php:2358
+msgid "Import from file"
+msgstr "Импортировать из файла"
+
+#: ../themeoptions/framework.php:2358
+msgid "Import from URL"
+msgstr "Импортировать из URL"
+
+#: ../themeoptions/framework.php:2367
+msgid ""
+"Input your backup file below and hit Import to restore your sites options "
+"from a backup."
+msgstr ""
+"Укажите файл бэкапа в поле ниже и нажмите Импорт для восстановления настроек "
+"сайта из бэкапа."
+
+#: ../themeoptions/framework.php:2381
+msgid ""
+"Input the URL to another sites options set and hit Import to load the "
+"options from that site."
+msgstr ""
+"Введите URL на настройки другого сайта и нажмите Импорт для загрузки "
+"настроек из того сайта."
+
+#: ../themeoptions/framework.php:2392
+msgid "Import"
+msgstr "Импорт"
+
+#: ../themeoptions/framework.php:2392
+msgid ""
+"WARNING! This will overwrite all existing option values, please proceed with "
+"caution!"
+msgstr ""
+"ВНИМАНИЕ! Это приведет к замене всех текущих настроек, действуйте с "
+"осторожностю!"
+
+#: ../themeoptions/framework.php:2395
+msgid "Export Options"
+msgstr "Настройки экспорта:"
+
+#: ../themeoptions/framework.php:2401
+msgid ""
+"Here you can copy/download your current option settings. Keep this safe as "
+"you can use it as a backup should anything go wrong, or you can use it to "
+"restore your settings on this site (or any other site)."
+msgstr ""
+"Здесь вы можете сделать копию / выгрузить выш набор настроек. Храните их в "
+"надежном месте, поскольку вы в дальнейшем сможете использовать их в качестве "
+"бэкапа если что-то пойдет не по плану, или вы сможете использовать их для "
+"восстановления настроек на этом или другом сайте."
+
+#: ../themeoptions/framework.php:2406
+msgid "Copy"
+msgstr "Копировать"
+
+#: ../themeoptions/framework.php:2406
+msgid "Download"
+msgstr "Выгрузить"
+
+#: ../themeoptions/framework.php:2406
+msgid "Copy Link"
+msgstr "Копировать ссылку"
+
+#: ../themeoptions/framework.php:2431
+msgid "Show Object in Javascript Console Object"
+msgstr "Показать объект в консоли объектов JavaScript"
 
 #: ../themeoptions/options.php:38
 msgid "Copy and Paste this code into the theme options import feature"
@@ -2279,7 +2476,8 @@ msgstr ""
 "следующие макросы для вашего текста: [copyright] [site-name] [the-year]"
 
 #: ../themeoptions/options.php:1745
-msgid "Blog Post Defualts"
+#, fuzzy
+msgid "Blog Post Defaults"
 msgstr "Настройки записей блога по умолчанию"
 
 #: ../themeoptions/options.php:1750
@@ -2366,170 +2564,431 @@ msgstr ""
 "Благодарим вас за использование  Virtue Theme by <a href=\"http://"
 "kadencethemes.com/\" target=\"_blank\">Kadence Themes</a>."
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:120
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:188
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:121
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:193
 msgid "Upload Icon"
 msgstr "Загрузитб иконку"
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:126
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:190
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:124
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:185
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:127
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:195
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:125
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:190
+#: ../themeoptions/inc/fields/background/field_background.php:313
+#: ../themeoptions/inc/fields/media/field_media.php:156
+#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:75
+#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:79
+#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:82
+#: ../themeoptions/inc/fields/slides/field_slides.php:128
+#: ../themeoptions/inc/fields/slides/field_slides.php:192
 msgid "Remove"
 msgstr "Удалить"
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:131
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:195
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:132
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:200
 #, fuzzy
 msgid "Select an Icon"
 msgstr "Удалить иконку"
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:151
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:214
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:129
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:190
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:152
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:219
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:130
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:195
+#: ../themeoptions/inc/fields/slides/field_slides.php:137
+#: ../themeoptions/inc/fields/slides/field_slides.php:201
 msgid "URL"
 msgstr "URL"
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:153
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:218
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:131
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:194
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:154
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:223
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:132
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:199
+#: ../themeoptions/inc/fields/slides/field_slides.php:135
+#: ../themeoptions/inc/fields/slides/field_slides.php:199
 msgid "Description"
 msgstr "Описание"
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:154
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:220
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:155
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:225
 msgid "Icon Link"
 msgstr "Ссылка на иконку"
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:166
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:229
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:159
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:230
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:137
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:206
+msgid "Open Link in New Tab/Window"
+msgstr ""
+
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:171
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:239
 msgid "Delete Icon"
 msgstr "Удалить иконку"
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:232
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:242
 msgid "Add Icon"
 msgstr "Добавить иконку"
 
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:132
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:196
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:133
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:201
 msgid "Slide Link"
 msgstr "Ссылка на слайд"
 
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:141
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:205
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:146
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:215
 #, fuzzy
 msgid "Select an Option"
 msgstr "Выбрать варианты"
 
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:161
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:225
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:166
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:235
+#: ../themeoptions/inc/fields/slides/field_slides.php:168
+#: ../themeoptions/inc/fields/slides/field_slides.php:231
 msgid "Delete Slide"
 msgstr "Удалить слайд"
 
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:228
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:238
+#: ../themeoptions/inc/fields/slides/field_slides.php:234
 msgid "Add Slide"
 msgstr "Добавить слайд"
 
-#: ../woocommerce/single-product-reviews.php:28
-#: ../woocommerce/single-product/rating.php:23
-#, php-format
-msgid "Rated %s out of 5"
-msgstr "Рейтинг %s из 5."
+#: ../themeoptions/inc/class.redux_helpers.php:59
+msgid "Help improve Our Panel"
+msgstr ""
 
-#: ../woocommerce/single-product-reviews.php:28
-#: ../woocommerce/single-product/rating.php:25
-#: ../woocommerce/single-product/review.php:27
-msgid "out of 5"
-msgstr "из 5"
+#: ../themeoptions/inc/class.redux_helpers.php:60
+msgid ""
+"Please helps us improve our panel by allowing us to gather anonymous usage "
+"stats so we know which configurations, plugins and themes to test with."
+msgstr ""
 
-#: ../woocommerce/single-product-reviews.php:30
+#: ../themeoptions/inc/class.redux_helpers.php:65
+msgid "Allow tracking"
+msgstr ""
+
+#: ../themeoptions/inc/class.redux_helpers.php:70
+msgid "Do not allow tracking"
+msgstr ""
+
+#: ../themeoptions/inc/fields/background/field_background.php:119
+#: ../themeoptions/inc/fields/color/field_color.php:72
+#: ../themeoptions/inc/fields/color_gradient/field_color_gradient.php:81
+#: ../themeoptions/inc/fields/color_gradient/field_color_gradient.php:91
+#: ../themeoptions/inc/fields/color_rgba/field_color_rgba.php:84
+msgid "Transparent"
+msgstr "Прозрачный"
+
+#: ../themeoptions/inc/fields/background/field_background.php:136
+#, fuzzy
+msgid "Background Repeat"
+msgstr "Цвет фона"
+
+#: ../themeoptions/inc/fields/background/field_background.php:152
+#, fuzzy
+msgid "Background Clip"
+msgstr "Цвет фона"
+
+#: ../themeoptions/inc/fields/background/field_background.php:168
+#, fuzzy
+msgid "Background Origin"
+msgstr "Цвет фона"
+
+#: ../themeoptions/inc/fields/background/field_background.php:183
+#, fuzzy
+msgid "Background Size"
+msgstr "Цвет фона"
+
+#: ../themeoptions/inc/fields/background/field_background.php:198
+#, fuzzy
+msgid "Background Attachment"
+msgstr "Цвет фона"
+
+#: ../themeoptions/inc/fields/background/field_background.php:218
+#, fuzzy
+msgid "Background Position"
+msgstr "Цвет фона"
+
+#: ../themeoptions/inc/fields/background/field_background.php:273
+#: ../themeoptions/inc/fields/media/field_media.php:116
+#, fuzzy
+msgid "No media selected"
+msgstr "Объекты медиа не выбраны"
+
+#: ../themeoptions/inc/fields/border/field_border.php:125
+#: ../themeoptions/inc/fields/spacing/field_spacing.php:149
+msgid "Top"
+msgstr "Верх"
+
+#: ../themeoptions/inc/fields/border/field_border.php:132
+#: ../themeoptions/inc/fields/spacing/field_spacing.php:156
+msgid "Right"
+msgstr "Право"
+
+#: ../themeoptions/inc/fields/border/field_border.php:139
+#: ../themeoptions/inc/fields/spacing/field_spacing.php:163
+msgid "Bottom"
+msgstr "Низ"
+
+#: ../themeoptions/inc/fields/border/field_border.php:146
+#: ../themeoptions/inc/fields/spacing/field_spacing.php:170
+msgid "Left"
+msgstr "Лево"
+
+#: ../themeoptions/inc/fields/border/field_border.php:162
+msgid "Border style"
+msgstr "Стиль рамки"
+
+#: ../themeoptions/inc/fields/color_gradient/field_color_gradient.php:84
+msgid "To "
+msgstr "Кому"
+
+#: ../themeoptions/inc/fields/dimensions/field_dimensions.php:139
+msgid "Width"
+msgstr "Ширина"
+
+#: ../themeoptions/inc/fields/dimensions/field_dimensions.php:155
+msgid "height"
+msgstr "высота"
+
+#: ../themeoptions/inc/fields/dimensions/field_dimensions.php:168
+#: ../themeoptions/inc/fields/dimensions/field_dimensions.php:169
+#: ../themeoptions/inc/fields/spacing/field_spacing.php:181
+#: ../themeoptions/inc/fields/spacing/field_spacing.php:182
+msgid "Units"
+msgstr "Единицы"
+
+#: ../themeoptions/inc/fields/gallery/field_gallery.php:77
+msgid "Add/Edit Gallery"
+msgstr "Добавить/Редактировать галерею"
+
+#: ../themeoptions/inc/fields/gallery/field_gallery.php:78
+msgid "Clear Gallery"
+msgstr "Очистить галерею"
+
+#: ../themeoptions/inc/fields/group/field_group.php:76
+msgid "New"
+msgstr "Новый"
+
+#: ../themeoptions/inc/fields/group/field_group.php:89
+#, fuzzy
+msgid "New "
+msgstr "Новая иконка"
+
+#: ../themeoptions/inc/fields/group/field_group.php:138
+#: ../themeoptions/inc/fields/group/field_group.php:203
+msgid "Delete"
+msgstr "Удалить"
+
+#: ../themeoptions/inc/fields/group/field_group.php:208
+msgid "Add"
+msgstr "Добавить"
+
+#: ../themeoptions/inc/fields/link_color/field_link_color.php:86
+msgid "Regular"
+msgstr "Стандартный (обычный)"
+
+#: ../themeoptions/inc/fields/link_color/field_link_color.php:90
+msgid "Hover"
+msgstr "Наведение"
+
+#: ../themeoptions/inc/fields/link_color/field_link_color.php:94
+msgid "Visited"
+msgstr ""
+
+#: ../themeoptions/inc/fields/link_color/field_link_color.php:98
+msgid "Active"
+msgstr "Активный"
+
+#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:65
+msgid "Add More"
+msgstr "Добавить еще"
+
+#: ../themeoptions/inc/fields/password/field_password.php:55
+#: ../woocommerce/shop/form-login.php:24
+msgid "Password"
+msgstr "Пароль"
+
+#: ../themeoptions/inc/fields/password/field_password.php:56
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: ../themeoptions/inc/fields/select/field_select.php:79
+#: ../themeoptions/inc/fields/select_image/field_select_image.php:59
+msgid "Select an item"
+msgstr "Выберите элемент"
+
+#: ../themeoptions/inc/fields/select/field_select.php:120
+#: ../themeoptions/inc/fields/select_image/field_select_image.php:134
+msgid "No items of this type were found."
+msgstr "Элементы данного типа не найдены"
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:141
+msgid "Font family"
+msgstr "Семейство шрифтов"
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:151
+msgid "Standard Fonts"
+msgstr "Стандартные шрифты"
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:183
+#: ../themeoptions/inc/fields/typography/field_typography.php:187
+msgid "Font style"
+msgstr "Стиль шрифта"
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:187
+msgid "Style"
+msgstr "Стиль"
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:213
+msgid "Font subsets"
+msgstr "Подмножества шрифтов"
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:214
+msgid "Subsets"
+msgstr "Подмножества"
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:214
+msgid "Font script"
+msgstr "Начертание шрифта"
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:232
+msgid "Size"
+msgstr "Размер"
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:241
+msgid "Height"
+msgstr "Высота"
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:249
+msgid "Word Spacing"
+msgstr "Интервал между словами"
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:257
+msgid "Letter Spacing"
+msgstr "Интервал между буквами"
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:271
+msgid "Backup Font Family"
+msgstr "Запасное семейство шрифтов"
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:291
+msgid "Font color"
+msgstr "Цвет шрифта"
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:618
+msgid "Google Webfonts"
+msgstr "Веб-шрифты Google"
+
+#: ../themeoptions/inc/validation/color/validation_color.php:15
+#: ../themeoptions/inc/validation/color_rgba/validation_color_rgba.php:15
+#: ../themeoptions/inc/validation/colorrgba/validation_colorrgba.php:15
+msgid "This field must be a valid color value."
+msgstr "Это поле должно содержать корректный код цвета."
+
+#: ../themeoptions/inc/validation/comma_numeric/validation_comma_numeric.php:15
+msgid ""
+"You must provide a comma separated list of numerical values for this option."
+msgstr ""
+"Вы должны указать список через запятую числовых значений для данного поля."
+
+#: ../themeoptions/inc/validation/date/validation_date.php:15
+msgid "This field must be a valid date."
+msgstr "Это поле должно содержать корректную дату."
+
+#: ../themeoptions/inc/validation/email/validation_email.php:15
+msgid "You must provide a valid email for this option."
+msgstr "Вы должны указать в этом поле корректный адрес электронной почты."
+
+#: ../themeoptions/inc/validation/no_html/validation_no_html.php:15
+msgid ""
+"You must not enter any HTML in this field, all HTML tags have been removed."
+msgstr "Вы не должны вводить код HTML в этом поле, все тэги HTML были удалены."
+
+#: ../themeoptions/inc/validation/no_special_chars/validation_no_special_chars.php:15
+msgid ""
+"You must not enter any special characters in this field, all special "
+"characters have been removed."
+msgstr ""
+"Вы не должны вводить специальные символы в этом поле, все специальные "
+"символы были удалены."
+
+#: ../themeoptions/inc/validation/numeric/validation_numeric.php:15
+msgid "You must provide a numerical value for this option."
+msgstr "Вы должны указать числовое значение в этом поле."
+
+#: ../themeoptions/inc/validation/url/validation_url.php:15
+msgid "You must provide a valid URL for this option."
+msgstr "Вы должны указать корректный URL в этом поле."
+
+#: ../woocommerce/single-product-reviews.php:21
 #, php-format
 msgid "%s review for %s"
 msgid_plural "%s reviews for %s"
 msgstr[0] "%s обзор для %s"
 msgstr[1] "%s обзоров для %s"
 
-#: ../woocommerce/single-product-reviews.php:36
-#: ../woocommerce/single-product-reviews.php:42
+#: ../woocommerce/single-product-reviews.php:23
 msgid "Reviews"
 msgstr "Отзывы"
 
-#: ../woocommerce/single-product-reviews.php:58
-msgid "<span class=\"meta-nav\">&larr;</span> Previous"
-msgstr "<span class=\"meta-nav\">&larr;</span> Предыдущий"
+#: ../woocommerce/single-product-reviews.php:44
+#, fuzzy
+msgid "There are no reviews yet."
+msgstr "Нет ранее сохраненных настроект"
 
-#: ../woocommerce/single-product-reviews.php:59
-msgid "Next <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Следующий <span class=\"meta-nav\">&rarr;</span>"
-
-#: ../woocommerce/single-product-reviews.php:63
-msgid "Add Your Review"
-msgstr "Добавить ваш отзыв"
-
-#: ../woocommerce/single-product-reviews.php:63
-msgid "Add Review"
-msgstr "Добавить отзыв"
-
-#: ../woocommerce/single-product-reviews.php:65
+#: ../woocommerce/single-product-reviews.php:57
 msgid "Add a review"
 msgstr "Добавить отзыв"
 
-#: ../woocommerce/single-product-reviews.php:69
+#: ../woocommerce/single-product-reviews.php:57
 msgid "Be the first to review"
 msgstr "Оставьте свой отзыв первым"
 
-#: ../woocommerce/single-product-reviews.php:71
-msgid ""
-"There are no reviews yet, would you like to <a data-toggle=\"collapse\" data-"
-"parent=\"#review_form\" href=\"#review_form\" class=\"inline show_review_form"
-"\">submit yours</a>?"
-msgstr ""
-"На настоящий момнет нет ни одного отзыва, не хотите <a data-toggle=\"collapse"
-"\" data-parent=\"#review_form\" href=\"#review_form\" class=\"inline "
-"show_review_form\">оставить свой</a>?"
-
-#: ../woocommerce/single-product-reviews.php:86
-#: ../woocommerce/myaccount/form-login.php:78
+#: ../woocommerce/single-product-reviews.php:64
 msgid "Email"
 msgstr "Электронная почта"
 
-#: ../woocommerce/single-product-reviews.php:89
-msgid "Submit Review"
+#: ../woocommerce/single-product-reviews.php:67
+#, fuzzy
+msgid "Submit"
 msgstr "Разместить отзыв"
 
-#: ../woocommerce/single-product-reviews.php:96
-msgid "Rating"
+#: ../woocommerce/single-product-reviews.php:73
+#, fuzzy
+msgid "Your Rating"
 msgstr "Рейтинг"
 
-#: ../woocommerce/single-product-reviews.php:97
+#: ../woocommerce/single-product-reviews.php:74
 msgid "Rate&hellip;"
 msgstr "Рейтинг&hellip;"
 
-#: ../woocommerce/single-product-reviews.php:98
+#: ../woocommerce/single-product-reviews.php:75
 msgid "Perfect"
 msgstr "Замечательный"
 
-#: ../woocommerce/single-product-reviews.php:99
+#: ../woocommerce/single-product-reviews.php:76
 msgid "Good"
 msgstr "Хороший"
 
-#: ../woocommerce/single-product-reviews.php:100
+#: ../woocommerce/single-product-reviews.php:77
 msgid "Average"
 msgstr "Средний"
 
-#: ../woocommerce/single-product-reviews.php:101
+#: ../woocommerce/single-product-reviews.php:78
 msgid "Not that bad"
 msgstr "Неплохой"
 
-#: ../woocommerce/single-product-reviews.php:102
+#: ../woocommerce/single-product-reviews.php:79
 msgid "Very Poor"
 msgstr "Очень плохой"
 
-#: ../woocommerce/single-product-reviews.php:107
+#: ../woocommerce/single-product-reviews.php:83
 msgid "Your Review"
 msgstr "Ваш отзыв"
+
+#: ../woocommerce/single-product-reviews.php:92
+msgid ""
+"Only logged in customers who have purchased this product may leave a review."
+msgstr ""
 
 #: ../woocommerce/single-product.php:24 ../woocommerce/single-product.php:28
 msgid "Back to"
@@ -2539,24 +2998,24 @@ msgstr "Назад к"
 msgid "Shop"
 msgstr "Магазин"
 
-#: ../woocommerce/cart/cart-totals.php:16 ../woocommerce/cart/totals.php:22
+#: ../woocommerce/cart/cart-totals.php:16
 msgid "Cart Totals"
 msgstr "Итого в корзине"
 
-#: ../woocommerce/cart/cart-totals.php:21 ../woocommerce/cart/totals.php:28
+#: ../woocommerce/cart/cart-totals.php:21
 msgid "Cart Subtotal"
 msgstr "Промежуточный итог в корзине"
 
-#: ../woocommerce/cart/cart-totals.php:75 ../woocommerce/cart/totals.php:92
+#: ../woocommerce/cart/cart-totals.php:75
 msgid "Order Total"
 msgstr "Итого заказа"
 
-#: ../woocommerce/cart/cart-totals.php:87 ../woocommerce/cart/totals.php:121
+#: ../woocommerce/cart/cart-totals.php:87
 #, php-format
 msgid " (taxes estimated for %s)"
 msgstr "(налог оценен в %s)"
 
-#: ../woocommerce/cart/cart-totals.php:90 ../woocommerce/cart/totals.php:123
+#: ../woocommerce/cart/cart-totals.php:90
 #, php-format
 msgid ""
 "Note: Shipping and taxes are estimated%s and will be updated during checkout "
@@ -2564,6 +3023,51 @@ msgid ""
 msgstr ""
 "Внимание: Доставка и налоги оцениваются в %s и будут обновлены во время "
 "оформления заказа на основании ваших данных для выставления счета и доставки."
+
+#: ../woocommerce/cart/cart.php:27 ../woocommerce/order/order-details.php:20
+msgid "Product"
+msgstr "Продукт"
+
+#: ../woocommerce/cart/cart.php:28
+msgid "Price"
+msgstr "Цена"
+
+#: ../woocommerce/cart/cart.php:29
+msgid "Quantity"
+msgstr "Количество"
+
+#: ../woocommerce/cart/cart.php:30 ../woocommerce/order/order-details.php:21
+msgid "Total"
+msgstr "Итого"
+
+#: ../woocommerce/cart/cart.php:47
+msgid "Remove this item"
+msgstr "Удалить этот элемент"
+
+#: ../woocommerce/cart/cart.php:74
+msgid "Available on backorder"
+msgstr "Доступно позднее"
+
+#: ../woocommerce/cart/cart.php:118
+msgid "Coupon"
+msgstr "Купон"
+
+#: ../woocommerce/cart/cart.php:118
+msgid "Coupon code"
+msgstr "Код купона"
+
+#: ../woocommerce/cart/cart.php:118
+msgid "Apply Coupon"
+msgstr "Применить купон"
+
+#: ../woocommerce/cart/cart.php:125
+msgid "Update Cart"
+msgstr "Обновить корзину"
+
+#: ../woocommerce/cart/cart.php:125
+#, fuzzy
+msgid "Proceed to Checkout"
+msgstr "К оформлению заказа &rarr;"
 
 #: ../woocommerce/cart/cross-sells.php:38
 msgid "You may be interested in&hellip;"
@@ -2595,77 +3099,9 @@ msgstr "Город"
 msgid "Postcode / Zip"
 msgstr "Индекс"
 
-#: ../woocommerce/cart/shipping-calculator.php:85
+#: ../woocommerce/cart/shipping-calculator.php:86
 msgid "Update Totals"
 msgstr "Пересчитать итог"
-
-#: ../woocommerce/cart/totals.php:35
-msgid "Cart Discount"
-msgstr "Скидка на товары в корзине"
-
-#: ../woocommerce/cart/totals.php:35 ../woocommerce/cart/totals.php:83
-msgid "[Remove]"
-msgstr "[Удалить]"
-
-#: ../woocommerce/cart/totals.php:46
-msgid "Shipping"
-msgstr "Доставка"
-
-#: ../woocommerce/cart/totals.php:83
-msgid "Order Discount"
-msgstr "Скидка на заказ"
-
-#: ../woocommerce/cart/totals.php:105
-#, php-format
-msgid "(Includes %s)"
-msgstr "(Включает %s)"
-
-#: ../woocommerce/cart/totals.php:135
-msgid ""
-"No shipping methods were found; please recalculate your shipping and enter "
-"your state/county and zip/postcode to ensure there are no other available "
-"methods for your location."
-msgstr ""
-"Методы доставки не найдены; пожалуйста, пересчитайте вашу доставку и укажите "
-"ваше местоположение и почтовый индекс, чтобы убедиться, что других методов "
-"доставки нет."
-
-#: ../woocommerce/cart/totals.php:147
-#, php-format
-msgid ""
-"Sorry, it seems that there are no available shipping methods for your "
-"location (%s)."
-msgstr "Извините, доставка по указанному адресу (%s) невозможна."
-
-#: ../woocommerce/cart/totals.php:147
-msgid ""
-"If you require assistance or wish to make alternate arrangements please "
-"contact us."
-msgstr "Если вам нужна помощь или требуются особые условия свяжитесь с нами."
-
-#: ../woocommerce/checkout/form-checkout.php:20
-msgid "You must be logged in to checkout."
-msgstr "Вы долдны войти в учетную запись для оформления покупки."
-
-#: ../woocommerce/checkout/form-checkout.php:51
-msgid "Your order"
-msgstr "Ваш заказ"
-
-#: ../woocommerce/checkout/form-coupon.php:17
-msgid "Have a coupon?"
-msgstr "Есть купон?"
-
-#: ../woocommerce/checkout/form-coupon.php:20
-msgid "Click here to enter your code"
-msgstr "Кликните здесь для ввода кода"
-
-#: ../woocommerce/checkout/form-coupon.php:25
-msgid "Coupon code"
-msgstr "Код купона"
-
-#: ../woocommerce/checkout/form-coupon.php:29
-msgid "Apply Coupon"
-msgstr "Применить купон"
 
 #: ../woocommerce/checkout/thankyou.php:18
 msgid ""
@@ -2686,7 +3122,6 @@ msgid "Please attempt your purchase again."
 msgstr "Пожалуйста, повторите попытку еще раз."
 
 #: ../woocommerce/checkout/thankyou.php:28
-#: ../woocommerce/myaccount/my-orders.php:71
 msgid "Pay"
 msgstr "Оплатить"
 
@@ -2714,27 +3149,6 @@ msgstr "Итого:"
 #: ../woocommerce/checkout/thankyou.php:53
 msgid "Payment method:"
 msgstr "Метод оплаты:"
-
-#: ../woocommerce/loop/add-to-cart.php:17
-#: ../woocommerce/loop/add-to-cart.php:41
-#: ../woocommerce/loop/add-to-cart.php:50
-msgid "Read More"
-msgstr "Читать далее"
-
-#: ../woocommerce/loop/add-to-cart.php:33
-msgid "Select options"
-msgstr "Выбрать варианты"
-
-#: ../woocommerce/loop/add-to-cart.php:37
-msgid "View options"
-msgstr "Просмотреть варианты"
-
-#: ../woocommerce/loop/add-to-cart.php:46
-#: ../woocommerce/single-product/add-to-cart/grouped.php:45
-#: ../woocommerce/single-product/add-to-cart/grouped.php:77
-#: ../woocommerce/single-product/add-to-cart/simple.php:42
-msgid "Add to cart"
-msgstr "Добавить в корзину"
 
 #: ../woocommerce/loop/no-products-found.php:14
 msgid "No products found which match your selection."
@@ -2778,162 +3192,6 @@ msgstr "Все %d результаты"
 msgid "Sale!"
 msgstr "Распродажа!"
 
-#: ../woocommerce/myaccount/form-change-password.php:20
-#: ../woocommerce/myaccount/form-lost-password.php:31
-msgid "New password"
-msgstr "Новый пароль"
-
-#: ../woocommerce/myaccount/form-change-password.php:24
-#: ../woocommerce/myaccount/form-lost-password.php:35
-msgid "Re-enter new password"
-msgstr "Повторите новый пароль"
-
-#: ../woocommerce/myaccount/form-change-password.php:29
-#: ../woocommerce/myaccount/form-lost-password.php:45
-msgid "Save"
-msgstr "Сохранить"
-
-#: ../woocommerce/myaccount/form-edit-address.php:27
-#: ../woocommerce/myaccount/my-address.php:19
-#: ../woocommerce/myaccount/my-address.php:25
-#: ../woocommerce/order/order-details.php:115
-msgid "Billing Address"
-msgstr "Адрес для выставления счета"
-
-#: ../woocommerce/myaccount/form-edit-address.php:27
-#: ../woocommerce/myaccount/my-address.php:20
-#: ../woocommerce/order/order-details.php:130
-msgid "Shipping Address"
-msgstr "Адрес доставки"
-
-#: ../woocommerce/myaccount/form-edit-address.php:43
-msgid "Save Address"
-msgstr "Сохранить адрес"
-
-#: ../woocommerce/myaccount/form-login.php:26
-#: ../woocommerce/myaccount/form-login.php:40
-#: ../woocommerce/shop/form-login.php:31
-msgid "Login"
-msgstr "Войти"
-
-#: ../woocommerce/myaccount/form-login.php:29
-#: ../woocommerce/myaccount/form-lost-password.php:24
-#: ../woocommerce/shop/form-login.php:20
-msgid "Username or email"
-msgstr "Имя пользователя или адрес электронной почты"
-
-#: ../woocommerce/myaccount/form-login.php:33
-#: ../woocommerce/myaccount/form-login.php:85
-#: ../woocommerce/shop/form-login.php:24
-msgid "Password"
-msgstr "Пароль"
-
-#: ../woocommerce/myaccount/form-login.php:50
-#: ../woocommerce/shop/form-login.php:33
-msgid "Lost Password?"
-msgstr "Забыли пароль?"
-
-#: ../woocommerce/myaccount/form-login.php:60
-#: ../woocommerce/myaccount/form-login.php:101
-msgid "Register"
-msgstr "Регистрация"
-
-#: ../woocommerce/myaccount/form-login.php:66
-msgid "Username"
-msgstr "Имя пользователя"
-
-#: ../woocommerce/myaccount/form-login.php:89
-msgid "Re-enter password"
-msgstr "Повторите пароль"
-
-#: ../woocommerce/myaccount/form-lost-password.php:22
-msgid ""
-"Lost your password? Please enter your username or email address. You will "
-"receive a link to create a new password via email."
-msgstr ""
-"Забыли пароль? Пожалуйста, укажите ваше имя пользователя или адрес "
-"электронной почты. Мы отправим вам на ваш электронный адрес ссылку на "
-"страницу для восстановления пароля."
-
-#: ../woocommerce/myaccount/form-lost-password.php:28
-msgid "Enter a new password below."
-msgstr "Введите новый пароль ниже"
-
-#: ../woocommerce/myaccount/form-lost-password.php:45
-msgid "Reset Password"
-msgstr "Сбросить пароль"
-
-#: ../woocommerce/myaccount/my-account.php:19
-#, php-format
-msgid ""
-"Hello, <strong>%s</strong>. From your account dashboard you can view your "
-"recent orders, manage your shipping and billing addresses and <a href=\"%s"
-"\">change your password</a>."
-msgstr ""
-"Здравствуйте, <strong>%s</strong>. Из вашего личного кабинета вы можете "
-"просматривать сделанные заказы, редактировать данные для оплаты и доставки и "
-"<a href=\"%s\">изменить ваш пароль</a>."
-
-#: ../woocommerce/myaccount/my-address.php:17
-msgid "My Addresses"
-msgstr "Мои адреса"
-
-#: ../woocommerce/myaccount/my-address.php:23
-msgid "My Address"
-msgstr "Мой адрес"
-
-#: ../woocommerce/myaccount/my-address.php:35
-msgid "The following addresses will be used on the checkout page by default."
-msgstr ""
-"Данный адрес будет использоваться на странице оформления заказа по умолчанию."
-
-#: ../woocommerce/myaccount/my-address.php:45
-msgid "Edit"
-msgstr "Редактировать"
-
-#: ../woocommerce/myaccount/my-address.php:64
-msgid "You have not set up this type of address yet."
-msgstr "Вы еще не указали адрес этого типа."
-
-#: ../woocommerce/myaccount/my-downloads.php:18
-msgid "Available downloads"
-msgstr "Доступно для скачивания"
-
-#: ../woocommerce/myaccount/my-downloads.php:27
-#, php-format
-msgid "%s download remaining"
-msgid_plural "%s downloads remaining"
-msgstr[0] "%s осталось для скачивания"
-msgstr[1] "%s осталось для скачивания"
-
-#: ../woocommerce/myaccount/my-orders.php:26
-msgid "Recent Orders"
-msgstr "Недавние заказы"
-
-#: ../woocommerce/myaccount/my-orders.php:32
-msgid "Order"
-msgstr "Заказать"
-
-#: ../woocommerce/myaccount/my-orders.php:35
-#: ../woocommerce/order/order-details.php:21
-msgid "Total"
-msgstr "Итого"
-
-#: ../woocommerce/myaccount/my-orders.php:62
-#, php-format
-msgid "%s for %s item"
-msgid_plural "%s for %s items"
-msgstr[0] "%s для %s элемента"
-msgstr[1] "%s для %s элементов"
-
-#: ../woocommerce/myaccount/my-orders.php:77
-msgid "Cancel"
-msgstr "Отменить"
-
-#: ../woocommerce/myaccount/my-orders.php:82
-msgid "View"
-msgstr "Просмотреть"
-
 #: ../woocommerce/order/form-tracking.php:17
 msgid ""
 "To track your order please enter your Order ID in the box below and press "
@@ -2968,48 +3226,31 @@ msgstr "Отследить"
 msgid "Order Details"
 msgstr "Реквизиты заказа"
 
-#: ../woocommerce/order/order-details.php:20
-msgid "Product"
-msgstr "Продукт"
-
-#: ../woocommerce/order/order-details.php:64
+#: ../woocommerce/order/order-details.php:66
 #, php-format
 msgid "Download file%s"
 msgstr "Скачать файл %s"
 
-#: ../woocommerce/order/order-details.php:90
+#: ../woocommerce/order/order-details.php:98
 msgid "Order Again"
 msgstr "Повторный заказ"
 
-#: ../woocommerce/order/order-details.php:97
+#: ../woocommerce/order/order-details.php:105
 msgid "Customer details"
 msgstr "Реквизиты клиента"
 
-#: ../woocommerce/order/order-details.php:119
-#: ../woocommerce/order/order-details.php:134
+#: ../woocommerce/order/order-details.php:126
+msgid "Billing Address"
+msgstr "Адрес для выставления счета"
+
+#: ../woocommerce/order/order-details.php:130
+#: ../woocommerce/order/order-details.php:145
 msgid "N/A"
 msgstr "Н/Д"
 
-#: ../woocommerce/order/tracking.php:18
-#, php-format
-msgid "Order %s which was made %s has the status &ldquo;%s&rdquo;"
-msgstr "Заказ %s сделанный %s имеет статус &ldquo;%s&rdquo;"
-
-#: ../woocommerce/order/tracking.php:18
-msgid "ago"
-msgstr "назад"
-
-#: ../woocommerce/order/tracking.php:20
-msgid "and was completed"
-msgstr "и был выполнен"
-
-#: ../woocommerce/order/tracking.php:20
-msgid " ago"
-msgstr "назад"
-
-#: ../woocommerce/order/tracking.php:31
-msgid "Order Updates"
-msgstr "Обновления заказа"
+#: ../woocommerce/order/order-details.php:141
+msgid "Shipping Address"
+msgstr "Адрес доставки"
 
 #: ../woocommerce/shop/breadcrumb.php:63
 msgid "Products tagged &ldquo;"
@@ -3036,6 +3277,18 @@ msgstr "Автор:"
 msgid "Page"
 msgstr "Страница"
 
+#: ../woocommerce/shop/form-login.php:20
+msgid "Username or email"
+msgstr "Имя пользователя или адрес электронной почты"
+
+#: ../woocommerce/shop/form-login.php:31
+msgid "Login"
+msgstr "Войти"
+
+#: ../woocommerce/shop/form-login.php:33
+msgid "Lost Password?"
+msgstr "Забыли пароль?"
+
 #: ../woocommerce/single-product/meta.php:19
 msgid "SKU:"
 msgstr "Артикул:"
@@ -3052,13 +3305,15 @@ msgid_plural "Tags:"
 msgstr[0] "Тэг:"
 msgstr[1] "Тэги:"
 
-#: ../woocommerce/single-product/product-attributes.php:28
-msgid "Weight"
-msgstr "Вес"
+#: ../woocommerce/single-product/rating.php:23
+#, php-format
+msgid "Rated %s out of 5"
+msgstr "Рейтинг %s из 5."
 
-#: ../woocommerce/single-product/product-attributes.php:37
-msgid "Dimensions"
-msgstr "Размеры"
+#: ../woocommerce/single-product/rating.php:25
+#: ../woocommerce/single-product/review.php:27
+msgid "out of 5"
+msgstr "из 5"
 
 #: ../woocommerce/single-product/rating.php:28
 #, php-format
@@ -3067,36 +3322,28 @@ msgid_plural "%s customer reviews"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../woocommerce/single-product/related.php:36
-msgid "Related Products"
-msgstr "Связанные продукты"
-
 #: ../woocommerce/single-product/review.php:26
 #, php-format
 msgid "Rated %d out of 5"
 msgstr "Ретинг %d из 5"
 
-#: ../woocommerce/single-product/review.php:33
+#: ../woocommerce/single-product/review.php:34
 msgid "Your comment is awaiting approval"
 msgstr "Ваш комментарий ожидает одобрения"
 
-#: ../woocommerce/single-product/review.php:40
+#: ../woocommerce/single-product/review.php:43
 msgid "verified owner"
 msgstr "подтвержденный владелец"
 
-#: ../woocommerce/single-product/up-sells.php:39
-msgid "You may also like&hellip;"
-msgstr "Вам также может понравиться &hellip;"
-
-#: ../woocommerce/single-product/add-to-cart/variable.php:25
+#: ../woocommerce/single-product/add-to-cart/variable.php:80
 msgid "Choose an option"
 msgstr "Выберите вариант"
 
-#: ../woocommerce/single-product/add-to-cart/variable.php:73
+#: ../woocommerce/single-product/add-to-cart/variable.php:128
 msgid "Clear selection"
 msgstr "Очистить выбор"
 
-#: ../woocommerce/single-product/add-to-cart/variable.php:100
+#: ../woocommerce/single-product/add-to-cart/variable.php:161
 msgid "This product is currently out of stock and unavailable."
 msgstr ""
 
@@ -3108,308 +3355,196 @@ msgstr "Дополнительная информация"
 msgid "Product Description"
 msgstr "Описание продукта"
 
-#~ msgid "Options"
-#~ msgstr "Опции"
+#~ msgid "<span class=\"meta-nav\">&larr;</span> Previous"
+#~ msgstr "<span class=\"meta-nav\">&larr;</span> Предыдущий"
 
-#, fuzzy
-#~ msgid "Options panel created using %1$s"
-#~ msgstr "Панель опций создана с использованием"
+#~ msgid "Next <span class=\"meta-nav\">&rarr;</span>"
+#~ msgstr "Следующий <span class=\"meta-nav\">&rarr;</span>"
 
-#~ msgid "Redux Framework"
-#~ msgstr "Redux Framework"
+#~ msgid "Add Your Review"
+#~ msgstr "Добавить ваш отзыв"
 
-#~ msgid ""
-#~ "You have changes that are not saved. Would you like to save them now?"
-#~ msgstr "У вас есть несохраненные изменения. Хотите сохранить их сейчас?"
-
-#, fuzzy
-#~ msgid "Are you sure? Resetting will lose all custom values."
-#~ msgstr ""
-#~ "Вы уверены? Установление значений по умолчанию приведет к потере "
-#~ "измененных значений."
-
-#, fuzzy
-#~ msgid "Are you sure? Resetting will lose all custom values in this section."
-#~ msgstr ""
-#~ "Вы уверены? Установление значений по умолчанию приведет к потере "
-#~ "измененных значений."
+#~ msgid "Add Review"
+#~ msgstr "Добавить отзыв"
 
 #~ msgid ""
-#~ "Your current options will be replaced with the values of this preset. "
-#~ "Would you like to proceed?"
+#~ "There are no reviews yet, would you like to <a data-toggle=\"collapse\" "
+#~ "data-parent=\"#review_form\" href=\"#review_form\" class=\"inline "
+#~ "show_review_form\">submit yours</a>?"
 #~ msgstr ""
-#~ "Ваши текущие настройки будут заменены значениями по умолчанию. Продолжить?"
+#~ "На настоящий момнет нет ни одного отзыва, не хотите <a data-toggle="
+#~ "\"collapse\" data-parent=\"#review_form\" href=\"#review_form\" class="
+#~ "\"inline show_review_form\">оставить свой</a>?"
+
+#~ msgid "Cart Discount"
+#~ msgstr "Скидка на товары в корзине"
+
+#~ msgid "[Remove]"
+#~ msgstr "[Удалить]"
+
+#~ msgid "Shipping"
+#~ msgstr "Доставка"
+
+#~ msgid "Order Discount"
+#~ msgstr "Скидка на заказ"
+
+#~ msgid "(Includes %s)"
+#~ msgstr "(Включает %s)"
 
 #~ msgid ""
-#~ "Warning- This options panel will not work properly without javascript!"
+#~ "No shipping methods were found; please recalculate your shipping and "
+#~ "enter your state/county and zip/postcode to ensure there are no other "
+#~ "available methods for your location."
 #~ msgstr ""
-#~ "Внимание! Эта панель настроек не будет работать корректно без "
-#~ "подключенного JavaScript!"
-
-#~ msgid "Expand"
-#~ msgstr "Увеличить"
-
-#~ msgid "Save Changes"
-#~ msgstr "Сохранить изменения"
-
-#, fuzzy
-#~ msgid "Reset Section"
-#~ msgstr "Очистить выбор"
-
-#~ msgid "Working..."
-#~ msgstr "Выполняется..."
-
-#~ msgid "Settings Imported!"
-#~ msgstr "Настройки импортированы!"
-
-#~ msgid "Settings Saved!"
-#~ msgstr "Настройки сохранены!"
-
-#~ msgid "Settings have changed, you should save them!"
-#~ msgstr "Настройки изменились, не забудьте их сохранить!"
-
-#~ msgid "error(s) were found!"
-#~ msgstr "ошибка(и)!"
-
-#~ msgid "warning(s) were found!"
-#~ msgstr "предупреждение(ия)!"
-
-#~ msgid "Import / Export"
-#~ msgstr "Импорт / Экспорт"
-
-#~ msgid "Options Object"
-#~ msgstr "Объект опций"
-
-#~ msgid "System Info"
-#~ msgstr "Системная информация"
-
-#~ msgid "Import / Export Options"
-#~ msgstr "Настройки Импорта / Экспорта"
-
-#~ msgid "Import Options"
-#~ msgstr "Настройки Импорта"
-
-#~ msgid "Import from file"
-#~ msgstr "Импортировать из файла"
-
-#~ msgid "Import from URL"
-#~ msgstr "Импортировать из URL"
+#~ "Методы доставки не найдены; пожалуйста, пересчитайте вашу доставку и "
+#~ "укажите ваше местоположение и почтовый индекс, чтобы убедиться, что "
+#~ "других методов доставки нет."
 
 #~ msgid ""
-#~ "Input your backup file below and hit Import to restore your sites options "
-#~ "from a backup."
-#~ msgstr ""
-#~ "Укажите файл бэкапа в поле ниже и нажмите Импорт для восстановления "
-#~ "настроек сайта из бэкапа."
+#~ "Sorry, it seems that there are no available shipping methods for your "
+#~ "location (%s)."
+#~ msgstr "Извините, доставка по указанному адресу (%s) невозможна."
 
 #~ msgid ""
-#~ "Input the URL to another sites options set and hit Import to load the "
-#~ "options from that site."
+#~ "If you require assistance or wish to make alternate arrangements please "
+#~ "contact us."
 #~ msgstr ""
-#~ "Введите URL на настройки другого сайта и нажмите Импорт для загрузки "
-#~ "настроек из того сайта."
+#~ "Если вам нужна помощь или требуются особые условия свяжитесь с нами."
 
-#~ msgid "Import"
-#~ msgstr "Импорт"
+#~ msgid "You must be logged in to checkout."
+#~ msgstr "Вы долдны войти в учетную запись для оформления покупки."
+
+#~ msgid "Your order"
+#~ msgstr "Ваш заказ"
+
+#~ msgid "Have a coupon?"
+#~ msgstr "Есть купон?"
+
+#~ msgid "Click here to enter your code"
+#~ msgstr "Кликните здесь для ввода кода"
+
+#~ msgid "Read More"
+#~ msgstr "Читать далее"
+
+#~ msgid "Select options"
+#~ msgstr "Выбрать варианты"
+
+#~ msgid "View options"
+#~ msgstr "Просмотреть варианты"
+
+#~ msgid "Add to cart"
+#~ msgstr "Добавить в корзину"
+
+#~ msgid "New password"
+#~ msgstr "Новый пароль"
+
+#~ msgid "Re-enter new password"
+#~ msgstr "Повторите новый пароль"
+
+#~ msgid "Save"
+#~ msgstr "Сохранить"
+
+#~ msgid "Save Address"
+#~ msgstr "Сохранить адрес"
+
+#~ msgid "Register"
+#~ msgstr "Регистрация"
+
+#~ msgid "Re-enter password"
+#~ msgstr "Повторите пароль"
 
 #~ msgid ""
-#~ "WARNING! This will overwrite all existing option values, please proceed "
-#~ "with caution!"
+#~ "Lost your password? Please enter your username or email address. You will "
+#~ "receive a link to create a new password via email."
 #~ msgstr ""
-#~ "ВНИМАНИЕ! Это приведет к замене всех текущих настроек, действуйте с "
-#~ "осторожностю!"
+#~ "Забыли пароль? Пожалуйста, укажите ваше имя пользователя или адрес "
+#~ "электронной почты. Мы отправим вам на ваш электронный адрес ссылку на "
+#~ "страницу для восстановления пароля."
 
-#~ msgid "Export Options"
-#~ msgstr "Настройки экспорта:"
+#~ msgid "Enter a new password below."
+#~ msgstr "Введите новый пароль ниже"
+
+#~ msgid "Reset Password"
+#~ msgstr "Сбросить пароль"
 
 #~ msgid ""
-#~ "Here you can copy/download your current option settings. Keep this safe "
-#~ "as you can use it as a backup should anything go wrong, or you can use it "
-#~ "to restore your settings on this site (or any other site)."
+#~ "Hello, <strong>%s</strong>. From your account dashboard you can view your "
+#~ "recent orders, manage your shipping and billing addresses and <a href=\"%s"
+#~ "\">change your password</a>."
 #~ msgstr ""
-#~ "Здесь вы можете сделать копию / выгрузить выш набор настроек. Храните их "
-#~ "в надежном месте, поскольку вы в дальнейшем сможете использовать их в "
-#~ "качестве бэкапа если что-то пойдет не по плану, или вы сможете "
-#~ "использовать их для восстановления настроек на этом или другом сайте."
+#~ "Здравствуйте, <strong>%s</strong>. Из вашего личного кабинета вы можете "
+#~ "просматривать сделанные заказы, редактировать данные для оплаты и "
+#~ "доставки и <a href=\"%s\">изменить ваш пароль</a>."
 
-#~ msgid "Copy"
-#~ msgstr "Копировать"
+#~ msgid "My Addresses"
+#~ msgstr "Мои адреса"
 
-#~ msgid "Download"
-#~ msgstr "Выгрузить"
-
-#~ msgid "Copy Link"
-#~ msgstr "Копировать ссылку"
-
-#~ msgid "Show Object in Javascript Console Object"
-#~ msgstr "Показать объект в консоли объектов JavaScript"
-
-#~ msgid "Transparent"
-#~ msgstr "Прозрачный"
-
-#, fuzzy
-#~ msgid "Background Repeat"
-#~ msgstr "Цвет фона"
-
-#, fuzzy
-#~ msgid "Background Clip"
-#~ msgstr "Цвет фона"
-
-#, fuzzy
-#~ msgid "Background Origin"
-#~ msgstr "Цвет фона"
-
-#, fuzzy
-#~ msgid "Background Size"
-#~ msgstr "Цвет фона"
-
-#, fuzzy
-#~ msgid "Background Position"
-#~ msgstr "Цвет фона"
-
-#, fuzzy
-#~ msgid "No media selected"
-#~ msgstr "Объекты медиа не выбраны"
-
-#~ msgid "Top"
-#~ msgstr "Верх"
-
-#~ msgid "Right"
-#~ msgstr "Право"
-
-#~ msgid "Bottom"
-#~ msgstr "Низ"
-
-#~ msgid "Left"
-#~ msgstr "Лево"
-
-#~ msgid "Border style"
-#~ msgstr "Стиль рамки"
-
-#~ msgid "To "
-#~ msgstr "Кому"
-
-#~ msgid "Width"
-#~ msgstr "Ширина"
-
-#~ msgid "height"
-#~ msgstr "высота"
-
-#~ msgid "Units"
-#~ msgstr "Единицы"
-
-#~ msgid "Add/Edit Gallery"
-#~ msgstr "Добавить/Редактировать галерею"
-
-#~ msgid "Clear Gallery"
-#~ msgstr "Очистить галерею"
-
-#~ msgid "New"
-#~ msgstr "Новый"
-
-#, fuzzy
-#~ msgid "New "
-#~ msgstr "Новая иконка"
-
-#~ msgid "Delete"
-#~ msgstr "Удалить"
-
-#~ msgid "Add"
-#~ msgstr "Добавить"
-
-#~ msgid "Regular"
-#~ msgstr "Стандартный (обычный)"
-
-#~ msgid "Hover"
-#~ msgstr "Наведение"
-
-#~ msgid "Active"
-#~ msgstr "Активный"
-
-#~ msgid "Add More"
-#~ msgstr "Добавить еще"
-
-#~ msgid "Select an item"
-#~ msgstr "Выберите элемент"
-
-#~ msgid "No items of this type were found."
-#~ msgstr "Элементы данного типа не найдены"
-
-#~ msgid "Font family"
-#~ msgstr "Семейство шрифтов"
-
-#~ msgid "Standard Fonts"
-#~ msgstr "Стандартные шрифты"
-
-#~ msgid "Font style"
-#~ msgstr "Стиль шрифта"
-
-#~ msgid "Style"
-#~ msgstr "Стиль"
-
-#~ msgid "Font subsets"
-#~ msgstr "Подмножества шрифтов"
-
-#~ msgid "Subsets"
-#~ msgstr "Подмножества"
-
-#~ msgid "Font script"
-#~ msgstr "Начертание шрифта"
-
-#~ msgid "Size"
-#~ msgstr "Размер"
-
-#~ msgid "Height"
-#~ msgstr "Высота"
-
-#~ msgid "Word Spacing"
-#~ msgstr "Интервал между словами"
-
-#~ msgid "Letter Spacing"
-#~ msgstr "Интервал между буквами"
-
-#~ msgid "Backup Font Family"
-#~ msgstr "Запасное семейство шрифтов"
-
-#~ msgid "Font color"
-#~ msgstr "Цвет шрифта"
-
-#~ msgid "Google Webfonts"
-#~ msgstr "Веб-шрифты Google"
-
-#~ msgid "This field must be a valid color value."
-#~ msgstr "Это поле должно содержать корректный код цвета."
+#~ msgid "My Address"
+#~ msgstr "Мой адрес"
 
 #~ msgid ""
-#~ "You must provide a comma separated list of numerical values for this "
-#~ "option."
+#~ "The following addresses will be used on the checkout page by default."
 #~ msgstr ""
-#~ "Вы должны указать список через запятую числовых значений для данного поля."
+#~ "Данный адрес будет использоваться на странице оформления заказа по "
+#~ "умолчанию."
 
-#~ msgid "This field must be a valid date."
-#~ msgstr "Это поле должно содержать корректную дату."
+#~ msgid "Edit"
+#~ msgstr "Редактировать"
 
-#~ msgid "You must provide a valid email for this option."
-#~ msgstr "Вы должны указать в этом поле корректный адрес электронной почты."
+#~ msgid "You have not set up this type of address yet."
+#~ msgstr "Вы еще не указали адрес этого типа."
 
-#~ msgid ""
-#~ "You must not enter any HTML in this field, all HTML tags have been "
-#~ "removed."
-#~ msgstr ""
-#~ "Вы не должны вводить код HTML в этом поле, все тэги HTML были удалены."
+#~ msgid "Available downloads"
+#~ msgstr "Доступно для скачивания"
 
-#~ msgid ""
-#~ "You must not enter any special characters in this field, all special "
-#~ "characters have been removed."
-#~ msgstr ""
-#~ "Вы не должны вводить специальные символы в этом поле, все специальные "
-#~ "символы были удалены."
+#~ msgid "%s download remaining"
+#~ msgid_plural "%s downloads remaining"
+#~ msgstr[0] "%s осталось для скачивания"
+#~ msgstr[1] "%s осталось для скачивания"
 
-#~ msgid "You must provide a numerical value for this option."
-#~ msgstr "Вы должны указать числовое значение в этом поле."
+#~ msgid "Recent Orders"
+#~ msgstr "Недавние заказы"
 
-#~ msgid "You must provide a valid URL for this option."
-#~ msgstr "Вы должны указать корректный URL в этом поле."
+#~ msgid "Order"
+#~ msgstr "Заказать"
+
+#~ msgid "%s for %s item"
+#~ msgid_plural "%s for %s items"
+#~ msgstr[0] "%s для %s элемента"
+#~ msgstr[1] "%s для %s элементов"
+
+#~ msgid "Cancel"
+#~ msgstr "Отменить"
+
+#~ msgid "View"
+#~ msgstr "Просмотреть"
+
+#~ msgid "Order %s which was made %s has the status &ldquo;%s&rdquo;"
+#~ msgstr "Заказ %s сделанный %s имеет статус &ldquo;%s&rdquo;"
+
+#~ msgid "ago"
+#~ msgstr "назад"
+
+#~ msgid "and was completed"
+#~ msgstr "и был выполнен"
+
+#~ msgid " ago"
+#~ msgstr "назад"
+
+#~ msgid "Order Updates"
+#~ msgstr "Обновления заказа"
+
+#~ msgid "Weight"
+#~ msgstr "Вес"
+
+#~ msgid "Dimensions"
+#~ msgstr "Размеры"
+
+#~ msgid "Related Products"
+#~ msgstr "Связанные продукты"
+
+#~ msgid "You may also like&hellip;"
+#~ msgstr "Вам также может понравиться &hellip;"
 
 #~ msgid "Reset to Defaults"
 #~ msgstr "Восстановить по умолчанию"
@@ -3473,27 +3608,6 @@ msgstr "Описание продукта"
 
 #~ msgid "&larr; Return To Shop"
 #~ msgstr "&larr; Назад в магазин"
-
-#~ msgid "Price"
-#~ msgstr "Цена"
-
-#~ msgid "Quantity"
-#~ msgstr "Количество"
-
-#~ msgid "Remove this item"
-#~ msgstr "Удалить этот элемент"
-
-#~ msgid "Available on backorder"
-#~ msgstr "Доступно позднее"
-
-#~ msgid "Coupon"
-#~ msgstr "Купон"
-
-#~ msgid "Update Cart"
-#~ msgstr "Обновить корзину"
-
-#~ msgid "Proceed to Checkout &rarr;"
-#~ msgstr "К оформлению заказа &rarr;"
 
 #~ msgid "No products in the cart."
 #~ msgstr "В корзине нет продуктов."

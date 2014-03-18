@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Lite Virtue\n"
-"POT-Creation-Date: 2014-03-01 14:24-0700\n"
-"PO-Revision-Date: 2014-03-01 14:24-0700\n"
+"POT-Creation-Date: 2014-03-18 14:50-0700\n"
+"PO-Revision-Date: 2014-03-18 14:54-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: English\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.7\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;esc_attr__;esc_attr_e\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SearchPath-0: ..\n"
@@ -384,7 +384,7 @@ msgstr ""
 msgid "Return to the Dashboard"
 msgstr ""
 
-#: ../lib/cleanup.php:182
+#: ../lib/cleanup.php:168
 msgid "Continued"
 msgstr ""
 
@@ -401,11 +401,11 @@ msgstr ""
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../lib/custom-woocommerce.php:95 ../templates/header.php:29
+#: ../lib/custom-woocommerce.php:95 ../templates/header.php:30
 msgid "View your shopping cart"
 msgstr ""
 
-#: ../lib/custom-woocommerce.php:96 ../templates/header.php:30
+#: ../lib/custom-woocommerce.php:96 ../templates/header.php:31
 msgid "Your Cart"
 msgstr ""
 
@@ -549,7 +549,7 @@ msgid "Video"
 msgstr ""
 
 #: ../lib/metaboxes.php:101 ../lib/metaboxes.php:220 ../lib/metaboxes.php:439
-#: ../lib/widgets.php:784
+#: ../lib/widgets.php:786
 msgid "Image"
 msgstr ""
 
@@ -575,11 +575,11 @@ msgstr ""
 msgid "Post Summary"
 msgstr ""
 
-#: ../lib/metaboxes.php:122 ../themeoptions/framework.php:1571
+#: ../lib/metaboxes.php:122 ../themeoptions/framework.php:1584
 msgid "Default"
 msgstr ""
 
-#: ../lib/metaboxes.php:123 ../lib/widgets.php:790
+#: ../lib/metaboxes.php:123 ../lib/widgets.php:792
 msgid "Text"
 msgstr ""
 
@@ -838,10 +838,10 @@ msgid "Menu Order"
 msgstr ""
 
 #: ../lib/metaboxes.php:359
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:152
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:216
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:130
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:192
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:153
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:221
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:131
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:197
 #: ../themeoptions/inc/fields/slides/field_slides.php:133
 #: ../themeoptions/inc/fields/slides/field_slides.php:197
 msgid "Title"
@@ -1014,6 +1014,17 @@ msgstr ""
 msgid "Sidebar Options"
 msgstr ""
 
+#: ../lib/scripts.php:43
+msgid ""
+"Sorry, no products matched your selection. Please choose a different "
+"combination."
+msgstr ""
+
+#: ../lib/scripts.php:44
+msgid ""
+"Sorry, this product is unavailable. Please choose a different combination."
+msgstr ""
+
 #: ../lib/utils.php:69
 #, php-format
 msgid "Daily Archives: %s"
@@ -1056,7 +1067,7 @@ msgstr ""
 msgid "Primary Sidebar"
 msgstr ""
 
-#: ../lib/widgets.php:49 ../templates/header.php:39
+#: ../lib/widgets.php:49 ../templates/header.php:40
 msgid "Topbar Widget"
 msgstr ""
 
@@ -1234,17 +1245,17 @@ msgstr ""
 msgid "Number of images to show:"
 msgstr ""
 
-#: ../lib/widgets.php:758
+#: ../lib/widgets.php:760
 msgid "This allows for an image and a simple about text."
 msgstr ""
 
-#: ../lib/widgets.php:759
+#: ../lib/widgets.php:761
 msgid "Virtue: About with Image"
 msgstr ""
 
-#: ../lib/widgets.php:787
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:118
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:183
+#: ../lib/widgets.php:789
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:119
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:188
 #: ../themeoptions/inc/fields/background/field_background.php:307
 #: ../themeoptions/inc/fields/media/field_media.php:150
 #: ../themeoptions/inc/fields/slides/field_slides.php:121
@@ -1353,7 +1364,7 @@ msgstr ""
 msgid "By"
 msgstr ""
 
-#: ../templates/header.php:76
+#: ../templates/header.php:77
 msgid "Menu"
 msgstr ""
 
@@ -1409,124 +1420,124 @@ msgid ""
 "you like to proceed?"
 msgstr ""
 
-#: ../themeoptions/framework.php:2137
+#: ../themeoptions/framework.php:2156
 msgid "Warning- This options panel will not work properly without javascript!"
 msgstr ""
 
-#: ../themeoptions/framework.php:2199
+#: ../themeoptions/framework.php:2218
 msgid "Expand"
 msgstr ""
 
-#: ../themeoptions/framework.php:2201 ../themeoptions/framework.php:2469
+#: ../themeoptions/framework.php:2220 ../themeoptions/framework.php:2492
 msgid "Save Changes"
 msgstr ""
 
-#: ../themeoptions/framework.php:2203 ../themeoptions/framework.php:2471
+#: ../themeoptions/framework.php:2222 ../themeoptions/framework.php:2494
 msgid "Reset Section"
 msgstr ""
 
-#: ../themeoptions/framework.php:2205 ../themeoptions/framework.php:2473
+#: ../themeoptions/framework.php:2224 ../themeoptions/framework.php:2496
 msgid "Reset All"
 msgstr ""
 
-#: ../themeoptions/framework.php:2208 ../themeoptions/framework.php:2476
+#: ../themeoptions/framework.php:2227 ../themeoptions/framework.php:2499
 msgid "Working..."
 msgstr ""
 
-#: ../themeoptions/framework.php:2219
+#: ../themeoptions/framework.php:2238
 msgid "Settings Imported!"
 msgstr ""
 
-#: ../themeoptions/framework.php:2225
+#: ../themeoptions/framework.php:2244
 msgid "Settings Saved!"
 msgstr ""
 
-#: ../themeoptions/framework.php:2232
+#: ../themeoptions/framework.php:2251
 msgid "Settings have changed, you should save them!"
 msgstr ""
 
-#: ../themeoptions/framework.php:2233
+#: ../themeoptions/framework.php:2252
 msgid "error(s) were found!"
 msgstr ""
 
-#: ../themeoptions/framework.php:2234
+#: ../themeoptions/framework.php:2253
 msgid "warning(s) were found!"
 msgstr ""
 
-#: ../themeoptions/framework.php:2270
+#: ../themeoptions/framework.php:2289
 msgid "Import / Export"
 msgstr ""
 
-#: ../themeoptions/framework.php:2286 ../themeoptions/framework.php:2401
+#: ../themeoptions/framework.php:2305 ../themeoptions/framework.php:2424
 msgid "Options Object"
 msgstr ""
 
-#: ../themeoptions/framework.php:2300 ../themeoptions/framework.php:2419
+#: ../themeoptions/framework.php:2319 ../themeoptions/framework.php:2442
 msgid "System Info"
 msgstr ""
 
-#: ../themeoptions/framework.php:2337
+#: ../themeoptions/framework.php:2356
 msgid "Import / Export Options"
 msgstr ""
 
-#: ../themeoptions/framework.php:2338
+#: ../themeoptions/framework.php:2357
 msgid "Import Options"
 msgstr ""
 
-#: ../themeoptions/framework.php:2339
+#: ../themeoptions/framework.php:2358
 msgid "Import from file"
 msgstr ""
 
-#: ../themeoptions/framework.php:2339
+#: ../themeoptions/framework.php:2358
 msgid "Import from URL"
 msgstr ""
 
-#: ../themeoptions/framework.php:2348
+#: ../themeoptions/framework.php:2367
 msgid ""
 "Input your backup file below and hit Import to restore your sites options "
 "from a backup."
 msgstr ""
 
-#: ../themeoptions/framework.php:2362
+#: ../themeoptions/framework.php:2381
 msgid ""
 "Input the URL to another sites options set and hit Import to load the "
 "options from that site."
 msgstr ""
 
-#: ../themeoptions/framework.php:2373
+#: ../themeoptions/framework.php:2392
 msgid "Import"
 msgstr ""
 
-#: ../themeoptions/framework.php:2373
+#: ../themeoptions/framework.php:2392
 msgid ""
 "WARNING! This will overwrite all existing option values, please proceed with "
 "caution!"
 msgstr ""
 
-#: ../themeoptions/framework.php:2376
+#: ../themeoptions/framework.php:2395
 msgid "Export Options"
 msgstr ""
 
-#: ../themeoptions/framework.php:2382
+#: ../themeoptions/framework.php:2401
 msgid ""
 "Here you can copy/download your current option settings. Keep this safe as "
 "you can use it as a backup should anything go wrong, or you can use it to "
 "restore your settings on this site (or any other site)."
 msgstr ""
 
-#: ../themeoptions/framework.php:2387
+#: ../themeoptions/framework.php:2406
 msgid "Copy"
 msgstr ""
 
-#: ../themeoptions/framework.php:2387
+#: ../themeoptions/framework.php:2406
 msgid "Download"
 msgstr ""
 
-#: ../themeoptions/framework.php:2387
+#: ../themeoptions/framework.php:2406
 msgid "Copy Link"
 msgstr ""
 
-#: ../themeoptions/framework.php:2408
+#: ../themeoptions/framework.php:2431
 msgid "Show Object in Javascript Console Object"
 msgstr ""
 
@@ -2439,15 +2450,15 @@ msgid ""
 "\" target=\"_blank\">Kadence Themes</a>."
 msgstr ""
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:120
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:188
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:121
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:193
 msgid "Upload Icon"
 msgstr ""
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:126
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:190
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:124
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:185
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:127
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:195
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:125
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:190
 #: ../themeoptions/inc/fields/background/field_background.php:313
 #: ../themeoptions/inc/fields/media/field_media.php:156
 #: ../themeoptions/inc/fields/multi_text/field_multi_text.php:75
@@ -2458,61 +2469,68 @@ msgstr ""
 msgid "Remove"
 msgstr ""
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:131
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:195
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:132
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:200
 msgid "Select an Icon"
 msgstr ""
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:151
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:214
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:129
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:190
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:152
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:219
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:130
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:195
 #: ../themeoptions/inc/fields/slides/field_slides.php:137
 #: ../themeoptions/inc/fields/slides/field_slides.php:201
 msgid "URL"
 msgstr ""
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:153
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:218
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:131
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:194
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:154
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:223
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:132
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:199
 #: ../themeoptions/inc/fields/slides/field_slides.php:135
 #: ../themeoptions/inc/fields/slides/field_slides.php:199
 msgid "Description"
 msgstr ""
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:154
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:220
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:155
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:225
 msgid "Icon Link"
 msgstr ""
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:166
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:229
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:159
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:230
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:137
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:206
+msgid "Open Link in New Tab/Window"
+msgstr ""
+
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:171
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:239
 msgid "Delete Icon"
 msgstr ""
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:232
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:242
 msgid "Add Icon"
 msgstr ""
 
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:132
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:196
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:133
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:201
 msgid "Slide Link"
 msgstr ""
 
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:141
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:205
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:146
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:215
 msgid "Select an Option"
 msgstr ""
 
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:161
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:225
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:166
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:235
 #: ../themeoptions/inc/fields/slides/field_slides.php:168
 #: ../themeoptions/inc/fields/slides/field_slides.php:231
 msgid "Delete Slide"
 msgstr ""
 
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:228
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:238
 #: ../themeoptions/inc/fields/slides/field_slides.php:234
 msgid "Add Slide"
 msgstr ""
@@ -3164,10 +3182,6 @@ msgid_plural "%s customer reviews"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../woocommerce/single-product/related.php:36
-msgid "Related Products"
-msgstr ""
-
 #: ../woocommerce/single-product/review.php:26
 #, php-format
 msgid "Rated %d out of 5"
@@ -3179,10 +3193,6 @@ msgstr ""
 
 #: ../woocommerce/single-product/review.php:43
 msgid "verified owner"
-msgstr ""
-
-#: ../woocommerce/single-product/up-sells.php:39
-msgid "You may also like&hellip;"
 msgstr ""
 
 #: ../woocommerce/single-product/add-to-cart/variable.php:80

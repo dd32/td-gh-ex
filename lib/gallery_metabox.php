@@ -23,7 +23,7 @@ function kad_image_gallery_metabox() {
             foreach ( $attachments as $attachment_id ) {
                 echo '<li class="image attachment details" data-attachment_id="' . $attachment_id . '"><div class="attachment-preview"><div class="thumbnail">
                             ' . wp_get_attachment_image( $attachment_id, 'thumbnail' ) . '</div>
-                            <a href="#" class="delete check" title="' . __( 'Remove image', 'virtue' ) . '"><div class="media-modal-icon"></div></a>
+                            <a href="#" class="delete check" title="' . esc_attr__( 'Remove image', 'virtue' ) . '"><div class="media-modal-icon"></div></a>
                         </div></li>';
         }
 ?>
@@ -34,7 +34,7 @@ function kad_image_gallery_metabox() {
     </div>
 
     <p class="add_gallery_images hide-if-no-js">
-        <input type="button" class="kad_gallery_btn button" value="<?php _e( 'Add images', 'virtue' ); ?>">
+        <input type="button" class="kad_gallery_btn button" value="<?php esc_attr_e( 'Add images', 'virtue' ); ?>">
     </p>
     
   <?php /* Props to WooCommerce for the following JS code */ ?>
@@ -63,9 +63,9 @@ function kad_image_gallery_metabox() {
                 // Create the media frame.
                 image_gallery_frame = wp.media.frames.downloadable_file = wp.media({
                     // Set the title of the modal.
-                    title: '<?php _e( 'Add Images to Gallery', 'virtue' ); ?>',
+                    title: '<?php esc_attr_e( 'Add Images to Gallery', 'virtue' ); ?>',
                     button: {
-                        text: '<?php _e( 'Add to gallery', 'virtue' ); ?>',
+                        text: '<?php esc_attr_e( 'Add to gallery', 'virtue' ); ?>',
                     },
                     multiple: true
                 });
@@ -88,7 +88,7 @@ function kad_image_gallery_metabox() {
                                         <div class="thumbnail">\
                                             <img src="' + attachment.url + '" />\
                                         </div>\
-                                       <a href="#" class="delete check" title="<?php _e( 'Remove image', 'virtue' ); ?>"><div class="media-modal-icon"></div></a>\
+                                       <a href="#" class="delete check" title="<?php esc_attr_e( 'Remove image', 'virtue' ); ?>"><div class="media-modal-icon"></div></a>\
                                     </div>\
                                 </li>');
 

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: deLite Virtue\n"
-"POT-Creation-Date: 2014-02-11 00:26-0700\n"
-"PO-Revision-Date: 2014-02-11 00:27-0700\n"
+"POT-Creation-Date: 2014-03-18 14:51-0700\n"
+"PO-Revision-Date: 2014-03-18 14:52-0700\n"
 "Last-Translator: María <web.esdemay@gmail.com>\n"
 "Language-Team: Maria <web.esdemay@gmail.com>\n"
 "Language: Spanish - Spain\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.7\n"
-"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr__;esc_attr_e;_n:1,2\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -37,12 +37,12 @@ msgstr "enlace obsoleto"
 msgid "Sorry, no results were found."
 msgstr "Lo sentimos, no se encontraron resultados"
 
-#: ../archive.php:36 ../front-page.php:82 ../index.php:28 ../page-blog.php:61
+#: ../archive.php:36 ../front-page.php:85 ../index.php:28 ../page-blog.php:61
 #: ../page-portfolio.php:111 ../taxonomy-portfolio-type.php:100
 msgid "&larr; Older posts"
 msgstr "&larr; Publicaciones antiguas"
 
-#: ../archive.php:37 ../front-page.php:83 ../index.php:29 ../page-blog.php:62
+#: ../archive.php:37 ../front-page.php:86 ../index.php:29 ../page-blog.php:62
 #: ../page-portfolio.php:112 ../taxonomy-portfolio-type.php:101
 msgid "Newer posts &rarr;"
 msgstr "Nuevas publicaciones &rarr;"
@@ -75,11 +75,12 @@ msgid " Contact"
 msgstr "Usar formulario de contacto"
 
 #: ../page-contact.php:118
+#: ../themeoptions/inc/fields/color_gradient/field_color_gradient.php:73
 msgid "From "
 msgstr ""
 
 #: ../page-contact.php:119 ../templates/comments.php:68
-#: ../woocommerce/single-product-reviews.php:84
+#: ../woocommerce/single-product-reviews.php:62
 msgid "Name"
 msgstr "Nombre"
 
@@ -215,8 +216,12 @@ msgid "Plugin activated successfully."
 msgstr "Plugin activado correctamente."
 
 #: ../lib/class-tgm-plugin-activation.php:172
+#: ../lib/class-tgm-plugin-activation.php:1538
+#, fuzzy
 msgid "The following plugin was activated successfully:"
-msgstr "El siguiente Plugin se activó con éxito:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] "El siguiente Plugin se activó con éxito:"
+msgstr[1] "El siguiente Plugin se activó con éxito:"
 
 #: ../lib/class-tgm-plugin-activation.php:173
 #, php-format
@@ -281,7 +286,6 @@ msgid "Type"
 msgstr "Tipo"
 
 #: ../lib/class-tgm-plugin-activation.php:1294
-#: ../woocommerce/myaccount/my-orders.php:34
 msgid "Status"
 msgstr "Estado"
 
@@ -392,7 +396,7 @@ msgstr "Instalar Plugin %1$s (%2$d/%3$d)"
 msgid "Return to the Dashboard"
 msgstr "Regresar al Escritorio"
 
-#: ../lib/cleanup.php:182
+#: ../lib/cleanup.php:168
 msgid "Continued"
 msgstr "Continuar"
 
@@ -409,11 +413,11 @@ msgstr "| (Editar)"
 msgid "Your comment is awaiting moderation."
 msgstr "Comentario pendiente de moderación."
 
-#: ../lib/custom-woocommerce.php:83 ../templates/header.php:29
+#: ../lib/custom-woocommerce.php:95 ../templates/header.php:30
 msgid "View your shopping cart"
 msgstr "Ver carrito compra"
 
-#: ../lib/custom-woocommerce.php:84 ../templates/header.php:30
+#: ../lib/custom-woocommerce.php:96 ../templates/header.php:31
 msgid "Your Cart"
 msgstr "Su carrito"
 
@@ -514,7 +518,9 @@ msgstr "Menú Navegación Barra superior"
 msgid "Footer Navigation"
 msgstr "Menú Navegación Pie de Página"
 
-#: ../lib/metaboxes.php:21 ../lib/metaboxes.php:369 ../lib/metaboxes.php:494
+#: ../lib/metaboxes.php:21 ../lib/metaboxes.php:370 ../lib/metaboxes.php:495
+#: ../themeoptions/inc/fields/border/field_border.php:112
+#: ../themeoptions/inc/fields/spacing/field_spacing.php:125
 msgid "All"
 msgstr "Todos"
 
@@ -542,34 +548,34 @@ msgstr "Opciones Publicación"
 msgid "Head Content"
 msgstr "Contenido Cabecera"
 
-#: ../lib/metaboxes.php:98 ../lib/metaboxes.php:223
+#: ../lib/metaboxes.php:98 ../lib/metaboxes.php:224
 msgid "None"
 msgstr "Ninguno"
 
-#: ../lib/metaboxes.php:99 ../lib/metaboxes.php:221 ../lib/metaboxes.php:436
+#: ../lib/metaboxes.php:99 ../lib/metaboxes.php:221 ../lib/metaboxes.php:437
 msgid "Image Slider"
 msgstr "Imagen Slider"
 
-#: ../lib/metaboxes.php:100 ../lib/metaboxes.php:128 ../lib/metaboxes.php:222
-#: ../lib/metaboxes.php:437
+#: ../lib/metaboxes.php:100 ../lib/metaboxes.php:128 ../lib/metaboxes.php:223
+#: ../lib/metaboxes.php:438
 msgid "Video"
 msgstr "Video"
 
-#: ../lib/metaboxes.php:101 ../lib/metaboxes.php:220 ../lib/metaboxes.php:438
-#: ../lib/widgets.php:784
+#: ../lib/metaboxes.php:101 ../lib/metaboxes.php:220 ../lib/metaboxes.php:439
+#: ../lib/widgets.php:786
 msgid "Image"
 msgstr "Imagen"
 
-#: ../lib/metaboxes.php:105 ../lib/metaboxes.php:227 ../lib/metaboxes.php:442
+#: ../lib/metaboxes.php:105 ../lib/metaboxes.php:228 ../lib/metaboxes.php:443
 msgid "Max Image/Slider Height"
 msgstr "Altura Maxima  / Imagen Slider"
 
-#: ../lib/metaboxes.php:106 ../lib/metaboxes.php:443
+#: ../lib/metaboxes.php:106 ../lib/metaboxes.php:444
 msgid "Default is: 400 <b>(Note: just input number, example: 350)</b>"
 msgstr ""
 "Por defecto es: 400 <b>(Nota: introducir sólo número, ejemplo: 350)</b>"
 
-#: ../lib/metaboxes.php:111 ../lib/metaboxes.php:233 ../lib/metaboxes.php:448
+#: ../lib/metaboxes.php:111 ../lib/metaboxes.php:234 ../lib/metaboxes.php:449
 msgid "Max Image/Slider Width"
 msgstr "Ancho Máximo / Imagen Slider"
 
@@ -587,12 +593,12 @@ msgstr ""
 msgid "Post Summary"
 msgstr "Vista de imagen en resumen publicaciones Blog"
 
-#: ../lib/metaboxes.php:122
+#: ../lib/metaboxes.php:122 ../themeoptions/framework.php:1584
 #, fuzzy
 msgid "Default"
 msgstr "Por defecto es 300"
 
-#: ../lib/metaboxes.php:123 ../lib/widgets.php:790
+#: ../lib/metaboxes.php:123 ../lib/widgets.php:792
 msgid "Text"
 msgstr "Texto"
 
@@ -612,27 +618,27 @@ msgstr "Slider a izquierda texto"
 msgid "Landscape Image Slider"
 msgstr "Slider ancho encima texto"
 
-#: ../lib/metaboxes.php:132 ../lib/metaboxes.php:523
+#: ../lib/metaboxes.php:132 ../lib/metaboxes.php:524
 msgid "Display Sidebar?"
 msgstr "¿Mostrar barra lateral?"
 
-#: ../lib/metaboxes.php:133 ../lib/metaboxes.php:524
+#: ../lib/metaboxes.php:133 ../lib/metaboxes.php:525
 msgid "Choose if layout is fullwidth or sidebar"
 msgstr "Seleccionar diseño - barra lateral o ancho total"
 
-#: ../lib/metaboxes.php:137 ../lib/metaboxes.php:154 ../lib/metaboxes.php:413
-#: ../lib/metaboxes.php:459 ../lib/metaboxes.php:528 ../lib/metaboxes.php:556
-#: ../lib/metaboxes.php:573
+#: ../lib/metaboxes.php:137 ../lib/metaboxes.php:154 ../lib/metaboxes.php:414
+#: ../lib/metaboxes.php:460 ../lib/metaboxes.php:529 ../lib/metaboxes.php:557
+#: ../lib/metaboxes.php:574
 msgid "Yes"
 msgstr "Sí"
 
 #: ../lib/metaboxes.php:138 ../lib/metaboxes.php:153 ../lib/metaboxes.php:163
-#: ../lib/metaboxes.php:310 ../lib/metaboxes.php:412 ../lib/metaboxes.php:460
-#: ../lib/metaboxes.php:529 ../lib/metaboxes.php:557 ../lib/metaboxes.php:572
+#: ../lib/metaboxes.php:311 ../lib/metaboxes.php:413 ../lib/metaboxes.php:461
+#: ../lib/metaboxes.php:530 ../lib/metaboxes.php:558 ../lib/metaboxes.php:573
 msgid "No"
 msgstr "No"
 
-#: ../lib/metaboxes.php:142 ../lib/metaboxes.php:533 ../lib/metaboxes.php:643
+#: ../lib/metaboxes.php:142 ../lib/metaboxes.php:534 ../lib/metaboxes.php:644
 msgid "Choose Sidebar"
 msgstr "Elegir Barra lateral"
 
@@ -662,7 +668,7 @@ msgstr "Sí - Mostrar publicaciones recientes"
 msgid "Yes - Display Similar Posts"
 msgstr "Sí - Mostrar publicaciones similares"
 
-#: ../lib/metaboxes.php:170 ../lib/metaboxes.php:315
+#: ../lib/metaboxes.php:170 ../lib/metaboxes.php:316
 msgid "Carousel Title"
 msgstr "Título Carrusel"
 
@@ -674,11 +680,11 @@ msgstr "ej.: Publicaciones Similares"
 msgid "Post Video Box"
 msgstr "Caja Publicación Video"
 
-#: ../lib/metaboxes.php:187 ../lib/metaboxes.php:464
+#: ../lib/metaboxes.php:187 ../lib/metaboxes.php:465
 msgid "If Video Post"
 msgstr "Si video de publicación "
 
-#: ../lib/metaboxes.php:188 ../lib/metaboxes.php:300 ../lib/metaboxes.php:465
+#: ../lib/metaboxes.php:188 ../lib/metaboxes.php:301 ../lib/metaboxes.php:466
 msgid "Place Embed Code Here, works with youtube, vimeo..."
 msgstr "Espacio para incrustar código, funciona con youtube, vimeo..."
 
@@ -706,13 +712,18 @@ msgstr "Tres filas"
 msgid "Project Options"
 msgstr "Opciones presentación"
 
-#: ../lib/metaboxes.php:228
+#: ../lib/metaboxes.php:222
+#, fuzzy
+msgid "Carousel Slider"
+msgstr "Título Carrusel"
+
+#: ../lib/metaboxes.php:229
 msgid "Default is: 450 <b>(Note: just input number, example: 350)</b>"
 msgstr ""
 "El valor predeterminado es: 450 <b>(Nota: sólo el número, por ejemplo: 350)</"
 "b>"
 
-#: ../lib/metaboxes.php:234
+#: ../lib/metaboxes.php:235
 #, fuzzy
 msgid ""
 "Default is: 670 or 1140 on <b>above</b> or <b>three row</b> layouts (Note: "
@@ -721,202 +732,204 @@ msgstr ""
 "El valor predeterminado es: 670 o 1170 en <b> diseños </ b> arriba <b> o </ "
 "b> tres filas (Nota: sólo el número, por ejemplo: 650) </ b>"
 
-#: ../lib/metaboxes.php:239
+#: ../lib/metaboxes.php:240
 msgid "Value 01 Title"
 msgstr "Textor Título 01"
 
-#: ../lib/metaboxes.php:240
+#: ../lib/metaboxes.php:241
 msgid "ex. Project Type:"
 msgstr "ej: Tipo Proyecto:"
 
-#: ../lib/metaboxes.php:245
+#: ../lib/metaboxes.php:246
 msgid "Value 01 Description"
 msgstr "Texto Descripción 01"
 
-#: ../lib/metaboxes.php:246
+#: ../lib/metaboxes.php:247
 msgid "ex. Character Illustration"
 msgstr "ej.: Características de la Ilustración "
 
-#: ../lib/metaboxes.php:251
+#: ../lib/metaboxes.php:252
 msgid "Value 02 Title"
 msgstr "Texto Título 02"
 
-#: ../lib/metaboxes.php:252
+#: ../lib/metaboxes.php:253
 msgid "ex. Skills Needed:"
 msgstr "ej.: habilidades necesarias:"
 
-#: ../lib/metaboxes.php:257
+#: ../lib/metaboxes.php:258
 msgid "Value 02 Description"
 msgstr "Texto Descripción 02"
 
-#: ../lib/metaboxes.php:258
+#: ../lib/metaboxes.php:259
 msgid "ex. Photoshop, Illustrator"
 msgstr "ej.; Photoshop, Illustrator"
 
-#: ../lib/metaboxes.php:263
+#: ../lib/metaboxes.php:264
 msgid "Value 03 Title"
 msgstr "Texto Títilo 03"
 
-#: ../lib/metaboxes.php:264
+#: ../lib/metaboxes.php:265
 msgid "ex. Customer:"
 msgstr "ej.: Cliente:"
 
-#: ../lib/metaboxes.php:269
+#: ../lib/metaboxes.php:270
 msgid "Value 03 Description"
 msgstr "Texto Descripción 03"
 
-#: ../lib/metaboxes.php:270
+#: ../lib/metaboxes.php:271
 msgid "ex. Example Inc"
 msgstr "ej.: Compañia"
 
-#: ../lib/metaboxes.php:275
+#: ../lib/metaboxes.php:276
 msgid "Value 04 Title"
 msgstr "Texto Título 04"
 
-#: ../lib/metaboxes.php:276
+#: ../lib/metaboxes.php:277
 msgid "ex. Project Year:"
 msgstr "ej.: Año del proyecto:"
 
-#: ../lib/metaboxes.php:281
+#: ../lib/metaboxes.php:282
 msgid "Value 04 Description"
 msgstr "Texto Descripción 04"
 
-#: ../lib/metaboxes.php:282
+#: ../lib/metaboxes.php:283
 msgid "ex. 2013"
 msgstr "ej.: 2013"
 
-#: ../lib/metaboxes.php:287
+#: ../lib/metaboxes.php:288
 msgid "External Website"
 msgstr "Web"
 
-#: ../lib/metaboxes.php:288
+#: ../lib/metaboxes.php:289
 msgid "ex. Website:"
 msgstr "ej.: url:"
 
-#: ../lib/metaboxes.php:293
+#: ../lib/metaboxes.php:294
 msgid "Website Address"
 msgstr "Dirección página web"
 
-#: ../lib/metaboxes.php:294
+#: ../lib/metaboxes.php:295
 msgid "ex. http://www.example.com"
 msgstr "ej.: http:www.ejemplo.com"
 
-#: ../lib/metaboxes.php:299
+#: ../lib/metaboxes.php:300
 msgid "If Video Project"
 msgstr "Video del proyecto"
 
-#: ../lib/metaboxes.php:305
+#: ../lib/metaboxes.php:306
 msgid "Similar Portfolio Item Carousel"
 msgstr "Carrusel de articulos similares del Portfolio"
 
-#: ../lib/metaboxes.php:306
+#: ../lib/metaboxes.php:307
 msgid "Display a carousel with similar portfolio items below project?"
 msgstr ""
 "¿Mostrar un carrusel con artículos similares debajo de datos del proyecto?"
 
-#: ../lib/metaboxes.php:311
+#: ../lib/metaboxes.php:312
 msgid "Yes - Display Recent Projects"
 msgstr "Sí - Mostrar Proyectos Recientes"
 
-#: ../lib/metaboxes.php:316
+#: ../lib/metaboxes.php:317
 msgid "ex. Similar Projects"
 msgstr "ej.: Proyectos similares"
 
-#: ../lib/metaboxes.php:325
+#: ../lib/metaboxes.php:326
 msgid "Portfolio Page Options"
 msgstr "Opciones Página Portfolio"
 
-#: ../lib/metaboxes.php:334
+#: ../lib/metaboxes.php:335
 msgid "Columns"
 msgstr "Columnas"
 
-#: ../lib/metaboxes.php:339
+#: ../lib/metaboxes.php:340
 msgid "Four Column"
 msgstr "Cuatro columnas"
 
-#: ../lib/metaboxes.php:340
+#: ../lib/metaboxes.php:341
 msgid "Three Column"
 msgstr "Tres columnas"
 
-#: ../lib/metaboxes.php:341
+#: ../lib/metaboxes.php:342
 msgid "Two Column"
 msgstr "Dos columnas"
 
-#: ../lib/metaboxes.php:345
+#: ../lib/metaboxes.php:346
 msgid "Portfolio Work Types"
 msgstr "Tipos de trabajo Porfolio"
 
-#: ../lib/metaboxes.php:352
+#: ../lib/metaboxes.php:353
 #, fuzzy
 msgid "Order Items By"
 msgstr "Actualizaciones Pedido"
 
-#: ../lib/metaboxes.php:357
+#: ../lib/metaboxes.php:358
 #, fuzzy
 msgid "Menu Order"
 msgstr "Pedidos recientes"
 
-#: ../lib/metaboxes.php:358
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:152
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:216
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:130
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:192
+#: ../lib/metaboxes.php:359
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:153
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:221
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:131
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:197
+#: ../themeoptions/inc/fields/slides/field_slides.php:133
+#: ../themeoptions/inc/fields/slides/field_slides.php:197
 #, fuzzy
 msgid "Title"
 msgstr "Título:"
 
-#: ../lib/metaboxes.php:359 ../woocommerce/myaccount/my-orders.php:33
+#: ../lib/metaboxes.php:360
 msgid "Date"
 msgstr "Fecha"
 
-#: ../lib/metaboxes.php:360
+#: ../lib/metaboxes.php:361
 msgid "Random"
 msgstr ""
 
-#: ../lib/metaboxes.php:364
+#: ../lib/metaboxes.php:365
 msgid "Items per Page"
 msgstr "Artículos por página"
 
-#: ../lib/metaboxes.php:365
+#: ../lib/metaboxes.php:366
 msgid "How many portfolio items per page"
 msgstr "Cuantos artículos portfolio por página"
 
-#: ../lib/metaboxes.php:387
+#: ../lib/metaboxes.php:388
 msgid "Set image height"
 msgstr "Ajustar altura imagen"
 
-#: ../lib/metaboxes.php:388
+#: ../lib/metaboxes.php:389
 msgid "Default is 1:1 ratio <b>(Note: just input number, example: 350)</b>"
 msgstr ""
 "Valor por defecto proporción 1:1  <b>(Nota: sólo un número, ejemplo: 350)</b>"
 
-#: ../lib/metaboxes.php:393
+#: ../lib/metaboxes.php:394
 msgid "Display Item Work Types"
 msgstr "Mostrar Categorías | Tipo -  Portfolio"
 
-#: ../lib/metaboxes.php:400
+#: ../lib/metaboxes.php:401
 msgid "Display Item Excerpt"
 msgstr "Mostrar Extracto Texto "
 
-#: ../lib/metaboxes.php:407
+#: ../lib/metaboxes.php:408
 msgid "Add Lightbox link in the top right of each item"
 msgstr ""
 
-#: ../lib/metaboxes.php:422
+#: ../lib/metaboxes.php:423
 msgid "Feature Page Options"
 msgstr "Características Páginas Opciones"
 
-#: ../lib/metaboxes.php:431
+#: ../lib/metaboxes.php:432
 msgid "Feature Options"
 msgstr "Características Opciones"
 
-#: ../lib/metaboxes.php:432
+#: ../lib/metaboxes.php:433
 #, fuzzy
 msgid "If image slider make sure images uploaded are at least 1140px wide."
 msgstr ""
 "Si usa imagen para slider, asegúrese de subir imágenes de al menos 1170 px"
 
-#: ../lib/metaboxes.php:449
+#: ../lib/metaboxes.php:450
 #, fuzzy
 msgid ""
 "Default is: 1140 <b>(Note: just input number, example: 650, does not apply "
@@ -925,121 +938,132 @@ msgstr ""
 "Valor por defecto: 1170 <b>(Nota: sólo número, ejemplo: 650, no funciona "
 "para slider carrusel)</b>"
 
-#: ../lib/metaboxes.php:454
+#: ../lib/metaboxes.php:455
 msgid "Use Lightbox for Feature Image"
 msgstr ""
 
-#: ../lib/metaboxes.php:455
+#: ../lib/metaboxes.php:456
 msgid ""
 "If feature option is set to image, choose to use lightbox link with image."
 msgstr ""
 
-#: ../lib/metaboxes.php:473
+#: ../lib/metaboxes.php:474
 msgid "Blog List Options"
 msgstr "Opciones Listado de Blog"
 
-#: ../lib/metaboxes.php:482
+#: ../lib/metaboxes.php:483
 msgid "Blog Category"
 msgstr "Categorías Blog"
 
-#: ../lib/metaboxes.php:483
+#: ../lib/metaboxes.php:484
 msgid "Select all blog posts or a specific category to show"
 msgstr ""
 "Seleccionar todas las publicaciones de blog o de una categoría específica "
 "para mostrar"
 
-#: ../lib/metaboxes.php:489
+#: ../lib/metaboxes.php:490
 msgid "How Many Posts Per Page"
 msgstr "Número de publicaciones por página"
 
-#: ../lib/metaboxes.php:513
+#: ../lib/metaboxes.php:514
 msgid "Display Post Content as:"
 msgstr "Mostrar publicar contenido como:"
 
-#: ../lib/metaboxes.php:518
+#: ../lib/metaboxes.php:519
 #, fuzzy
 msgid "Summary"
 msgstr "Resumen"
 
-#: ../lib/metaboxes.php:519
+#: ../lib/metaboxes.php:520
 msgid "Full"
 msgstr "Completo"
 
-#: ../lib/metaboxes.php:542
+#: ../lib/metaboxes.php:543
 msgid "Contact Page Options"
 msgstr "Opciones página de contacto"
 
-#: ../lib/metaboxes.php:551
+#: ../lib/metaboxes.php:552
 msgid "Use Contact Form"
 msgstr "Usar formulario de contacto"
 
-#: ../lib/metaboxes.php:561
+#: ../lib/metaboxes.php:562
 msgid "Contact Form Title"
 msgstr "Título Formulario de Contacto"
 
-#: ../lib/metaboxes.php:562
+#: ../lib/metaboxes.php:563
 msgid "ex. Send us an Email"
 msgstr "ej.: Envíenos un correo electrónico"
 
-#: ../lib/metaboxes.php:567
+#: ../lib/metaboxes.php:568
 msgid "Use Map"
 msgstr "Usar Mapa"
 
-#: ../lib/metaboxes.php:577
+#: ../lib/metaboxes.php:578
 msgid "Address"
 msgstr "Dirección"
 
-#: ../lib/metaboxes.php:578
+#: ../lib/metaboxes.php:579
 msgid "Enter your Location"
 msgstr "Ingrese su localidad"
 
-#: ../lib/metaboxes.php:583
+#: ../lib/metaboxes.php:584
 msgid "Map Type"
 msgstr "Tipo de Mapa"
 
-#: ../lib/metaboxes.php:588
+#: ../lib/metaboxes.php:589
 msgid "ROADMAP"
 msgstr "Callejero"
 
-#: ../lib/metaboxes.php:589
+#: ../lib/metaboxes.php:590
 msgid "HYBRID"
 msgstr "Híbrido"
 
-#: ../lib/metaboxes.php:590
+#: ../lib/metaboxes.php:591
 msgid "TERRAIN"
 msgstr "Terreno"
 
-#: ../lib/metaboxes.php:591
+#: ../lib/metaboxes.php:592
 msgid "SATELLITE"
 msgstr "Satélite"
 
-#: ../lib/metaboxes.php:595
+#: ../lib/metaboxes.php:596
 msgid "Map Zoom Level"
 msgstr "Nivel Zoom del Mapa"
 
-#: ../lib/metaboxes.php:596
+#: ../lib/metaboxes.php:597
 msgid "A good place to start is 15"
 msgstr "Punto para comenzar aconsejado es de 15"
 
-#: ../lib/metaboxes.php:601
+#: ../lib/metaboxes.php:602
 msgid "1 (World View)"
 msgstr "1(Vista Mundo)"
 
-#: ../lib/metaboxes.php:621
+#: ../lib/metaboxes.php:622
 msgid "21 (Street View)"
 msgstr "21 (Vista calle)"
 
-#: ../lib/metaboxes.php:625
+#: ../lib/metaboxes.php:626
 msgid "Map Height"
 msgstr "Altura Mapa"
 
-#: ../lib/metaboxes.php:626
+#: ../lib/metaboxes.php:627
 msgid "Default is 300"
 msgstr "Por defecto es 300"
 
-#: ../lib/metaboxes.php:634
+#: ../lib/metaboxes.php:635
 msgid "Sidebar Options"
 msgstr "Opciones Barra lateral"
+
+#: ../lib/scripts.php:43
+msgid ""
+"Sorry, no products matched your selection. Please choose a different "
+"combination."
+msgstr ""
+
+#: ../lib/scripts.php:44
+msgid ""
+"Sorry, this product is unavailable. Please choose a different combination."
+msgstr ""
 
 #: ../lib/utils.php:69
 #, php-format
@@ -1083,7 +1107,7 @@ msgstr "Todos los plugins instalados y activados correctamente. %s"
 msgid "Primary Sidebar"
 msgstr "Barra lateral Principal (Primary)"
 
-#: ../lib/widgets.php:49 ../templates/header.php:39
+#: ../lib/widgets.php:49 ../templates/header.php:40
 msgid "Topbar Widget"
 msgstr "Widget barra superior"
 
@@ -1140,11 +1164,11 @@ msgstr "Pais:"
 msgid "Zipcode/Postal Code:"
 msgstr "Código Postal:"
 
-#: ../lib/widgets.php:305 ../woocommerce/order/order-details.php:102
+#: ../lib/widgets.php:305 ../woocommerce/order/order-details.php:110
 msgid "Telephone:"
 msgstr "Teléfono:"
 
-#: ../lib/widgets.php:309 ../woocommerce/order/order-details.php:101
+#: ../lib/widgets.php:309 ../woocommerce/order/order-details.php:109
 msgid "Email:"
 msgstr "Email:"
 
@@ -1265,17 +1289,21 @@ msgstr "Si Portfolio - Elegir Tipo (opcional):"
 msgid "Number of images to show:"
 msgstr "Número de imágenes a mostrar:"
 
-#: ../lib/widgets.php:758
+#: ../lib/widgets.php:760
 msgid "This allows for an image and a simple about text."
 msgstr "Mostrar una imagen sobre un texto simple."
 
-#: ../lib/widgets.php:759
+#: ../lib/widgets.php:761
 msgid "Virtue: About with Image"
 msgstr "Virtue: Acerca de...con Imagen"
 
-#: ../lib/widgets.php:787
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:118
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:183
+#: ../lib/widgets.php:789
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:119
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:188
+#: ../themeoptions/inc/fields/background/field_background.php:307
+#: ../themeoptions/inc/fields/media/field_media.php:150
+#: ../themeoptions/inc/fields/slides/field_slides.php:121
+#: ../themeoptions/inc/fields/slides/field_slides.php:190
 msgid "Upload"
 msgstr "Subir"
 
@@ -1297,6 +1325,13 @@ msgstr ""
 msgid "(Edit)"
 msgstr "(Editar)"
 
+#: ../templates/comments.php:8
+#, php-format
+msgid "One Response "
+msgid_plural "%1$s Responses "
+msgstr[0] ""
+msgstr[1] ""
+
 #: ../templates/comments.php:18
 msgid "&larr; Older comments"
 msgstr "&larr; Comentarios antiguos"
@@ -1313,7 +1348,7 @@ msgstr "Comentarios Cerrados."
 msgid "Leave a Reply"
 msgstr "Dejar una opinión"
 
-#: ../templates/comments.php:54
+#: ../templates/comments.php:54 ../woocommerce/single-product-reviews.php:58
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr "Leave a Reply to %s"
@@ -1358,7 +1393,7 @@ msgstr "Enviar"
 
 #: ../templates/content-fullpost.php:78
 #: ../templates/content-fullpostfull.php:78 ../templates/content-single.php:87
-#: ../templates/content-singleportfolio.php:151
+#: ../templates/content-singleportfolio.php:258
 msgid "Pages:"
 msgstr "Páginas:"
 
@@ -1375,7 +1410,7 @@ msgstr "publicado en:"
 msgid "By"
 msgstr "por"
 
-#: ../templates/header.php:76
+#: ../templates/header.php:77
 #, fuzzy
 msgid "Menu"
 msgstr "Iconos P&aacute;gina Inicio"
@@ -1399,6 +1434,173 @@ msgstr "LEER MÁS"
 #: ../templates/home/portfolio-carousel.php:2
 msgid "Featured Projects"
 msgstr "Proyectos destacados"
+
+#: ../themeoptions/framework.php:126 ../themeoptions/framework.php:132
+#: ../themeoptions/framework.php:305 ../themeoptions/framework.php:308
+msgid "Options"
+msgstr "Opciones"
+
+#: ../themeoptions/framework.php:302
+#, php-format
+msgid "Options panel created using %1$s"
+msgstr ""
+
+#: ../themeoptions/framework.php:302
+msgid "Redux Framework"
+msgstr ""
+
+#: ../themeoptions/framework.php:1293
+msgid "You have changes that are not saved. Would you like to save them now?"
+msgstr ""
+
+#: ../themeoptions/framework.php:1294
+msgid "Are you sure? Resetting will lose all custom values."
+msgstr ""
+
+#: ../themeoptions/framework.php:1295
+msgid "Are you sure? Resetting will lose all custom values in this section."
+msgstr ""
+
+#: ../themeoptions/framework.php:1296
+msgid ""
+"Your current options will be replaced with the values of this preset. Would "
+"you like to proceed?"
+msgstr ""
+
+#: ../themeoptions/framework.php:2156
+msgid "Warning- This options panel will not work properly without javascript!"
+msgstr ""
+"Advertencia: este panel de opciones no funcionar&aacute; correctamente sin "
+"JavaScript."
+
+#: ../themeoptions/framework.php:2218
+msgid "Expand"
+msgstr ""
+
+#: ../themeoptions/framework.php:2220 ../themeoptions/framework.php:2492
+#, fuzzy
+msgid "Save Changes"
+msgstr "Guardar todos los cambios"
+
+#: ../themeoptions/framework.php:2222 ../themeoptions/framework.php:2494
+#, fuzzy
+msgid "Reset Section"
+msgstr "Borrar seleción"
+
+#: ../themeoptions/framework.php:2224 ../themeoptions/framework.php:2496
+msgid "Reset All"
+msgstr ""
+
+#: ../themeoptions/framework.php:2227 ../themeoptions/framework.php:2499
+msgid "Working..."
+msgstr ""
+
+#: ../themeoptions/framework.php:2238
+msgid "Settings Imported!"
+msgstr ""
+
+#: ../themeoptions/framework.php:2244
+msgid "Settings Saved!"
+msgstr ""
+
+#: ../themeoptions/framework.php:2251
+msgid "Settings have changed, you should save them!"
+msgstr ""
+
+#: ../themeoptions/framework.php:2252
+#, fuzzy
+msgid "error(s) were found!"
+msgstr "Lo sentimos, no se encontraron resultados"
+
+#: ../themeoptions/framework.php:2253
+#, fuzzy
+msgid "warning(s) were found!"
+msgstr "Lo sentimos, no se encontraron resultados"
+
+#: ../themeoptions/framework.php:2289
+#, fuzzy
+msgid "Import / Export"
+msgstr "Opciones publicación del  Portfolio"
+
+#: ../themeoptions/framework.php:2305 ../themeoptions/framework.php:2424
+#, fuzzy
+msgid "Options Object"
+msgstr "Restablecer Opciones"
+
+#: ../themeoptions/framework.php:2319 ../themeoptions/framework.php:2442
+msgid "System Info"
+msgstr ""
+
+#: ../themeoptions/framework.php:2356
+#, fuzzy
+msgid "Import / Export Options"
+msgstr "Opciones publicación del  Portfolio"
+
+#: ../themeoptions/framework.php:2357
+#, fuzzy
+msgid "Import Options"
+msgstr "Opciones Publicación"
+
+#: ../themeoptions/framework.php:2358
+msgid "Import from file"
+msgstr ""
+
+#: ../themeoptions/framework.php:2358
+msgid "Import from URL"
+msgstr ""
+
+#: ../themeoptions/framework.php:2367
+msgid ""
+"Input your backup file below and hit Import to restore your sites options "
+"from a backup."
+msgstr ""
+
+#: ../themeoptions/framework.php:2381
+msgid ""
+"Input the URL to another sites options set and hit Import to load the "
+"options from that site."
+msgstr ""
+
+#: ../themeoptions/framework.php:2392
+#, fuzzy
+msgid "Import"
+msgstr "Opciones Publicación"
+
+#: ../themeoptions/framework.php:2392
+msgid ""
+"WARNING! This will overwrite all existing option values, please proceed with "
+"caution!"
+msgstr ""
+
+#: ../themeoptions/framework.php:2395
+#, fuzzy
+msgid "Export Options"
+msgstr "Opciones Publicación"
+
+#: ../themeoptions/framework.php:2401
+msgid ""
+"Here you can copy/download your current option settings. Keep this safe as "
+"you can use it as a backup should anything go wrong, or you can use it to "
+"restore your settings on this site (or any other site)."
+msgstr ""
+
+#: ../themeoptions/framework.php:2406
+msgid "Copy"
+msgstr ""
+
+#: ../themeoptions/framework.php:2406
+#, fuzzy
+msgid "Download"
+msgstr "Descargar:"
+
+#: ../themeoptions/framework.php:2406
+#, fuzzy
+msgid "Copy Link"
+msgstr "Iconos P&aacute;gina Inicio"
+
+#: ../themeoptions/framework.php:2431
+msgid "Show Object in Javascript Console Object"
+msgstr ""
 
 #: ../themeoptions/options.php:38
 msgid "Copy and Paste this code into the theme options import feature"
@@ -2312,7 +2514,7 @@ msgstr ""
 
 #: ../themeoptions/options.php:1745
 #, fuzzy
-msgid "Blog Post Defualts"
+msgid "Blog Post Defaults"
 msgstr "Publicaciones Blog"
 
 #: ../themeoptions/options.php:1750
@@ -2396,172 +2598,453 @@ msgid ""
 "\" target=\"_blank\">Kadence Themes</a>."
 msgstr ""
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:120
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:188
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:121
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:193
 #, fuzzy
 msgid "Upload Icon"
 msgstr "Subir"
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:126
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:190
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:124
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:185
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:127
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:195
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:125
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:190
+#: ../themeoptions/inc/fields/background/field_background.php:313
+#: ../themeoptions/inc/fields/media/field_media.php:156
+#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:75
+#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:79
+#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:82
+#: ../themeoptions/inc/fields/slides/field_slides.php:128
+#: ../themeoptions/inc/fields/slides/field_slides.php:192
 #, fuzzy
 msgid "Remove"
 msgstr "[Eliminar]"
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:131
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:195
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:132
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:200
 #, fuzzy
 msgid "Select an Icon"
 msgstr "Seleccionar tipo de letra"
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:151
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:214
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:129
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:190
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:152
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:219
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:130
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:195
+#: ../themeoptions/inc/fields/slides/field_slides.php:137
+#: ../themeoptions/inc/fields/slides/field_slides.php:201
 msgid "URL"
 msgstr ""
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:153
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:218
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:131
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:194
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:154
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:223
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:132
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:199
+#: ../themeoptions/inc/fields/slides/field_slides.php:135
+#: ../themeoptions/inc/fields/slides/field_slides.php:199
 #, fuzzy
 msgid "Description"
 msgstr "Descripción artículo"
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:154
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:220
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:155
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:225
 #, fuzzy
 msgid "Icon Link"
 msgstr "Iconos P&aacute;gina Inicio"
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:166
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:229
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:159
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:230
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:137
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:206
+msgid "Open Link in New Tab/Window"
+msgstr ""
+
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:171
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:239
 #, fuzzy
 msgid "Delete Icon"
 msgstr "Seleccionar tipo de letra"
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:232
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:242
 #, fuzzy
 msgid "Add Icon"
 msgstr "Subir"
 
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:132
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:196
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:133
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:201
 #, fuzzy
 msgid "Slide Link"
 msgstr "Ajustes de slider"
 
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:141
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:205
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:146
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:215
 #, fuzzy
 msgid "Select an Option"
 msgstr "Selecionar Opciones"
 
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:161
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:225
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:166
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:235
+#: ../themeoptions/inc/fields/slides/field_slides.php:168
+#: ../themeoptions/inc/fields/slides/field_slides.php:231
 #, fuzzy
 msgid "Delete Slide"
 msgstr "Móvil - slider"
 
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:228
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:238
+#: ../themeoptions/inc/fields/slides/field_slides.php:234
 #, fuzzy
 msgid "Add Slide"
 msgstr "Añadir Imágenes"
 
-#: ../woocommerce/single-product-reviews.php:28
-#: ../woocommerce/single-product/rating.php:23
+#: ../themeoptions/inc/class.redux_helpers.php:59
+msgid "Help improve Our Panel"
+msgstr ""
+
+#: ../themeoptions/inc/class.redux_helpers.php:60
+msgid ""
+"Please helps us improve our panel by allowing us to gather anonymous usage "
+"stats so we know which configurations, plugins and themes to test with."
+msgstr ""
+
+#: ../themeoptions/inc/class.redux_helpers.php:65
+msgid "Allow tracking"
+msgstr ""
+
+#: ../themeoptions/inc/class.redux_helpers.php:70
+msgid "Do not allow tracking"
+msgstr ""
+
+#: ../themeoptions/inc/fields/background/field_background.php:119
+#: ../themeoptions/inc/fields/color/field_color.php:72
+#: ../themeoptions/inc/fields/color_gradient/field_color_gradient.php:81
+#: ../themeoptions/inc/fields/color_gradient/field_color_gradient.php:91
+#: ../themeoptions/inc/fields/color_rgba/field_color_rgba.php:84
+msgid "Transparent"
+msgstr ""
+
+#: ../themeoptions/inc/fields/background/field_background.php:136
+#, fuzzy
+msgid "Background Repeat"
+msgstr "Color Fondo"
+
+#: ../themeoptions/inc/fields/background/field_background.php:152
+#, fuzzy
+msgid "Background Clip"
+msgstr "Color Fondo"
+
+#: ../themeoptions/inc/fields/background/field_background.php:168
+#, fuzzy
+msgid "Background Origin"
+msgstr "Color Fondo"
+
+#: ../themeoptions/inc/fields/background/field_background.php:183
+#, fuzzy
+msgid "Background Size"
+msgstr "Color Fondo"
+
+#: ../themeoptions/inc/fields/background/field_background.php:198
+#, fuzzy
+msgid "Background Attachment"
+msgstr "Color Fondo"
+
+#: ../themeoptions/inc/fields/background/field_background.php:218
+#, fuzzy
+msgid "Background Position"
+msgstr "Color Fondo"
+
+#: ../themeoptions/inc/fields/background/field_background.php:273
+#: ../themeoptions/inc/fields/media/field_media.php:116
+msgid "No media selected"
+msgstr ""
+
+#: ../themeoptions/inc/fields/border/field_border.php:125
+#: ../themeoptions/inc/fields/spacing/field_spacing.php:149
+msgid "Top"
+msgstr ""
+
+#: ../themeoptions/inc/fields/border/field_border.php:132
+#: ../themeoptions/inc/fields/spacing/field_spacing.php:156
+#, fuzzy
+msgid "Right"
+msgstr "Peso"
+
+#: ../themeoptions/inc/fields/border/field_border.php:139
+#: ../themeoptions/inc/fields/spacing/field_spacing.php:163
+#, fuzzy
+msgid "Bottom"
+msgstr "Margen inferior"
+
+#: ../themeoptions/inc/fields/border/field_border.php:146
+#: ../themeoptions/inc/fields/spacing/field_spacing.php:170
+msgid "Left"
+msgstr ""
+
+#: ../themeoptions/inc/fields/border/field_border.php:162
+#, fuzzy
+msgid "Border style"
+msgstr "Total Pedido"
+
+#: ../themeoptions/inc/fields/color_gradient/field_color_gradient.php:84
+msgid "To "
+msgstr ""
+
+#: ../themeoptions/inc/fields/dimensions/field_dimensions.php:139
+msgid "Width"
+msgstr ""
+
+#: ../themeoptions/inc/fields/dimensions/field_dimensions.php:155
+#, fuzzy
+msgid "height"
+msgstr "Peso"
+
+#: ../themeoptions/inc/fields/dimensions/field_dimensions.php:168
+#: ../themeoptions/inc/fields/dimensions/field_dimensions.php:169
+#: ../themeoptions/inc/fields/spacing/field_spacing.php:181
+#: ../themeoptions/inc/fields/spacing/field_spacing.php:182
+msgid "Units"
+msgstr ""
+
+#: ../themeoptions/inc/fields/gallery/field_gallery.php:77
+#, fuzzy
+msgid "Add/Edit Gallery"
+msgstr "Añadir a Galería"
+
+#: ../themeoptions/inc/fields/gallery/field_gallery.php:78
+#, fuzzy
+msgid "Clear Gallery"
+msgstr "Galería"
+
+#: ../themeoptions/inc/fields/group/field_group.php:76
+msgid "New"
+msgstr ""
+
+#: ../themeoptions/inc/fields/group/field_group.php:89
+msgid "New "
+msgstr ""
+
+#: ../themeoptions/inc/fields/group/field_group.php:138
+#: ../themeoptions/inc/fields/group/field_group.php:203
+#, fuzzy
+msgid "Delete"
+msgstr "Seleccionar tipo de letra"
+
+#: ../themeoptions/inc/fields/group/field_group.php:208
+#, fuzzy
+msgid "Add"
+msgstr "Dirección"
+
+#: ../themeoptions/inc/fields/link_color/field_link_color.php:86
+msgid "Regular"
+msgstr ""
+
+#: ../themeoptions/inc/fields/link_color/field_link_color.php:90
+msgid "Hover"
+msgstr ""
+
+#: ../themeoptions/inc/fields/link_color/field_link_color.php:94
+msgid "Visited"
+msgstr ""
+
+#: ../themeoptions/inc/fields/link_color/field_link_color.php:98
+#, fuzzy
+msgid "Active"
+msgstr "Activar"
+
+#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:65
+#, fuzzy
+msgid "Add More"
+msgstr "Leer más"
+
+#: ../themeoptions/inc/fields/password/field_password.php:55
+#: ../woocommerce/shop/form-login.php:24
+msgid "Password"
+msgstr "Contraseña"
+
+#: ../themeoptions/inc/fields/password/field_password.php:56
+msgid "Username"
+msgstr "Nombre Usuario"
+
+#: ../themeoptions/inc/fields/select/field_select.php:79
+#: ../themeoptions/inc/fields/select_image/field_select_image.php:59
+#, fuzzy
+msgid "Select an item"
+msgstr "Seleccionar tipo de letra"
+
+#: ../themeoptions/inc/fields/select/field_select.php:120
+#: ../themeoptions/inc/fields/select_image/field_select_image.php:134
+msgid "No items of this type were found."
+msgstr ""
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:141
+msgid "Font family"
+msgstr ""
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:151
+#, fuzzy
+msgid "Standard Fonts"
+msgstr "Fuente de  cabecera"
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:183
+#: ../themeoptions/inc/fields/typography/field_typography.php:187
+#, fuzzy
+msgid "Font style"
+msgstr "Descripción artículo"
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:187
+msgid "Style"
+msgstr ""
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:213
+#, fuzzy
+msgid "Font subsets"
+msgstr "Descripción artículo"
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:214
+msgid "Subsets"
+msgstr ""
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:214
+#, fuzzy
+msgid "Font script"
+msgstr "Descripción artículo"
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:232
+msgid "Size"
+msgstr ""
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:241
+#, fuzzy
+msgid "Height"
+msgstr "Peso"
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:249
+#, fuzzy
+msgid "Word Spacing"
+msgstr "Margen superior"
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:257
+#, fuzzy
+msgid "Letter Spacing"
+msgstr "Margen izquierdo"
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:271
+msgid "Backup Font Family"
+msgstr ""
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:291
+#, fuzzy
+msgid "Font color"
+msgstr "Color fuentes pie de página"
+
+#: ../themeoptions/inc/fields/typography/field_typography.php:618
+msgid "Google Webfonts"
+msgstr ""
+
+#: ../themeoptions/inc/validation/color/validation_color.php:15
+#: ../themeoptions/inc/validation/color_rgba/validation_color_rgba.php:15
+#: ../themeoptions/inc/validation/colorrgba/validation_colorrgba.php:15
+msgid "This field must be a valid color value."
+msgstr ""
+
+#: ../themeoptions/inc/validation/comma_numeric/validation_comma_numeric.php:15
+msgid ""
+"You must provide a comma separated list of numerical values for this option."
+msgstr ""
+
+#: ../themeoptions/inc/validation/date/validation_date.php:15
+msgid "This field must be a valid date."
+msgstr ""
+
+#: ../themeoptions/inc/validation/email/validation_email.php:15
+msgid "You must provide a valid email for this option."
+msgstr ""
+
+#: ../themeoptions/inc/validation/no_html/validation_no_html.php:15
+msgid ""
+"You must not enter any HTML in this field, all HTML tags have been removed."
+msgstr ""
+
+#: ../themeoptions/inc/validation/no_special_chars/validation_no_special_chars.php:15
+msgid ""
+"You must not enter any special characters in this field, all special "
+"characters have been removed."
+msgstr ""
+
+#: ../themeoptions/inc/validation/numeric/validation_numeric.php:15
+msgid "You must provide a numerical value for this option."
+msgstr ""
+
+#: ../themeoptions/inc/validation/url/validation_url.php:15
+msgid "You must provide a valid URL for this option."
+msgstr ""
+
+#: ../woocommerce/single-product-reviews.php:21
 #, php-format
-msgid "Rated %s out of 5"
-msgstr "Calificación %s sobre 5"
+msgid "%s review for %s"
+msgid_plural "%s reviews for %s"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../woocommerce/single-product-reviews.php:28
-#: ../woocommerce/single-product/rating.php:25
-#: ../woocommerce/single-product/review.php:27
-msgid "out of 5"
-msgstr "sobre 5"
-
-#: ../woocommerce/single-product-reviews.php:36
-#: ../woocommerce/single-product-reviews.php:42
+#: ../woocommerce/single-product-reviews.php:23
 msgid "Reviews"
 msgstr "Opiniones"
 
-#: ../woocommerce/single-product-reviews.php:58
-msgid "<span class=\"meta-nav\">&larr;</span> Previous"
-msgstr "<span class=\"meta-nav\">&larr;</span> Anteriores"
+#: ../woocommerce/single-product-reviews.php:44
+msgid "There are no reviews yet."
+msgstr ""
 
-#: ../woocommerce/single-product-reviews.php:59
-msgid "Next <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Siguientes <span class=\"meta-nav\">&rarr;</span>"
-
-#: ../woocommerce/single-product-reviews.php:63
-msgid "Add Your Review"
-msgstr "Añada su opinion"
-
-#: ../woocommerce/single-product-reviews.php:63
-msgid "Add Review"
-msgstr "Añadir comentario"
-
-#: ../woocommerce/single-product-reviews.php:65
+#: ../woocommerce/single-product-reviews.php:57
 msgid "Add a review"
 msgstr "Añadir un comentario"
 
-#: ../woocommerce/single-product-reviews.php:69
+#: ../woocommerce/single-product-reviews.php:57
 msgid "Be the first to review"
 msgstr "Sea el primero en opinar"
 
-#: ../woocommerce/single-product-reviews.php:71
-msgid ""
-"There are no reviews yet, would you like to <a data-toggle=\"collapse\" data-"
-"parent=\"#review_form\" href=\"#review_form\" class=\"inline show_review_form"
-"\">submit yours</a>?"
-msgstr ""
-"No hay comentarios aún, ¿le gustaría <a data-toggle=\"collapse\" data-parent="
-"\"#review_form\" href=\"#review_form\" class=\"inline show_review_form"
-"\">enviar el suyo</a>?"
-
-#: ../woocommerce/single-product-reviews.php:86
-#: ../woocommerce/myaccount/form-login.php:78
+#: ../woocommerce/single-product-reviews.php:64
 msgid "Email"
 msgstr "Email"
 
-#: ../woocommerce/single-product-reviews.php:89
-msgid "Submit Review"
+#: ../woocommerce/single-product-reviews.php:67
+#, fuzzy
+msgid "Submit"
 msgstr "Enviar comentario"
 
-#: ../woocommerce/single-product-reviews.php:96
-msgid "Rating"
+#: ../woocommerce/single-product-reviews.php:73
+#, fuzzy
+msgid "Your Rating"
 msgstr "Clasificación"
 
-#: ../woocommerce/single-product-reviews.php:97
+#: ../woocommerce/single-product-reviews.php:74
 msgid "Rate&hellip;"
 msgstr "Cambio&hellip;"
 
-#: ../woocommerce/single-product-reviews.php:98
+#: ../woocommerce/single-product-reviews.php:75
 msgid "Perfect"
 msgstr "Perfecto"
 
-#: ../woocommerce/single-product-reviews.php:99
+#: ../woocommerce/single-product-reviews.php:76
 msgid "Good"
 msgstr "Bueno"
 
-#: ../woocommerce/single-product-reviews.php:100
+#: ../woocommerce/single-product-reviews.php:77
 msgid "Average"
 msgstr "Medio"
 
-#: ../woocommerce/single-product-reviews.php:101
+#: ../woocommerce/single-product-reviews.php:78
 msgid "Not that bad"
 msgstr "Regular"
 
-#: ../woocommerce/single-product-reviews.php:102
+#: ../woocommerce/single-product-reviews.php:79
 msgid "Very Poor"
 msgstr "Malo"
 
-#: ../woocommerce/single-product-reviews.php:107
+#: ../woocommerce/single-product-reviews.php:83
 msgid "Your Review"
 msgstr "Su opinión"
+
+#: ../woocommerce/single-product-reviews.php:92
+msgid ""
+"Only logged in customers who have purchased this product may leave a review."
+msgstr ""
 
 #: ../woocommerce/single-product.php:24 ../woocommerce/single-product.php:28
 msgid "Back to"
@@ -2571,24 +3054,24 @@ msgstr "Volver a"
 msgid "Shop"
 msgstr "Tienda"
 
-#: ../woocommerce/cart/cart-totals.php:16 ../woocommerce/cart/totals.php:22
+#: ../woocommerce/cart/cart-totals.php:16
 msgid "Cart Totals"
 msgstr "Total Carro"
 
-#: ../woocommerce/cart/cart-totals.php:21 ../woocommerce/cart/totals.php:28
+#: ../woocommerce/cart/cart-totals.php:21
 msgid "Cart Subtotal"
 msgstr "Subtotal Carro"
 
-#: ../woocommerce/cart/cart-totals.php:75 ../woocommerce/cart/totals.php:92
+#: ../woocommerce/cart/cart-totals.php:75
 msgid "Order Total"
 msgstr "Total Pedido"
 
-#: ../woocommerce/cart/cart-totals.php:87 ../woocommerce/cart/totals.php:121
+#: ../woocommerce/cart/cart-totals.php:87
 #, php-format
 msgid " (taxes estimated for %s)"
 msgstr " (impuestos para %s)"
 
-#: ../woocommerce/cart/cart-totals.php:90 ../woocommerce/cart/totals.php:123
+#: ../woocommerce/cart/cart-totals.php:90
 #, php-format
 msgid ""
 "Note: Shipping and taxes are estimated%s and will be updated during checkout "
@@ -2596,6 +3079,52 @@ msgid ""
 msgstr ""
 " Nota: Envío e impuestos son estimados %s y se actualizará durante la "
 "comprobación de compra basada en la información de facturación y envío."
+
+#: ../woocommerce/cart/cart.php:27 ../woocommerce/order/order-details.php:20
+msgid "Product"
+msgstr "Producto"
+
+#: ../woocommerce/cart/cart.php:28
+msgid "Price"
+msgstr "Precio"
+
+#: ../woocommerce/cart/cart.php:29
+msgid "Quantity"
+msgstr "Cantidad"
+
+#: ../woocommerce/cart/cart.php:30 ../woocommerce/order/order-details.php:21
+msgid "Total"
+msgstr "Total"
+
+#: ../woocommerce/cart/cart.php:47
+msgid "Remove this item"
+msgstr "Quitar artículo"
+
+#: ../woocommerce/cart/cart.php:74
+msgid "Available on backorder"
+msgstr "Disponible bajo pedido"
+
+#: ../woocommerce/cart/cart.php:118
+msgid "Coupon"
+msgstr "Cupón"
+
+#: ../woocommerce/cart/cart.php:118
+msgid "Coupon code"
+msgstr "Código del Cupón"
+
+#: ../woocommerce/cart/cart.php:118
+msgid "Apply Coupon"
+msgstr "Utilizar Cupón"
+
+#: ../woocommerce/cart/cart.php:125
+#, fuzzy
+msgid "Update Cart"
+msgstr "Actualizar totales"
+
+#: ../woocommerce/cart/cart.php:125
+#, fuzzy
+msgid "Proceed to Checkout"
+msgstr "Pasar por caja &rarr;"
 
 #: ../woocommerce/cart/cross-sells.php:38
 msgid "You may be interested in&hellip;"
@@ -2627,80 +3156,9 @@ msgstr "Ciudad"
 msgid "Postcode / Zip"
 msgstr "Código Postal"
 
-#: ../woocommerce/cart/shipping-calculator.php:85
+#: ../woocommerce/cart/shipping-calculator.php:86
 msgid "Update Totals"
 msgstr "Actualizar totales"
-
-#: ../woocommerce/cart/totals.php:35
-msgid "Cart Discount"
-msgstr "Descuento "
-
-#: ../woocommerce/cart/totals.php:35 ../woocommerce/cart/totals.php:83
-msgid "[Remove]"
-msgstr "[Eliminar]"
-
-#: ../woocommerce/cart/totals.php:46
-msgid "Shipping"
-msgstr "Envío"
-
-#: ../woocommerce/cart/totals.php:83
-msgid "Order Discount"
-msgstr "Descuento Pedido"
-
-#: ../woocommerce/cart/totals.php:105
-#, php-format
-msgid "(Includes %s)"
-msgstr "(Incluye %s)"
-
-#: ../woocommerce/cart/totals.php:135
-msgid ""
-"No shipping methods were found; please recalculate your shipping and enter "
-"your state/county and zip/postcode to ensure there are no other available "
-"methods for your location."
-msgstr ""
-"No se encontraron métodos de envío; por favor para recalcular su envío  "
-"introduzca su pais/localidad y código postal para asegurar que no existen "
-"otros métodos envío para su ubicación."
-
-#: ../woocommerce/cart/totals.php:147
-#, php-format
-msgid ""
-"Sorry, it seems that there are no available shipping methods for your "
-"location (%s)."
-msgstr ""
-"Lo sentimos, parece que hay no hay métodos de envío disponibles para su "
-"ubicación (%s)."
-
-#: ../woocommerce/cart/totals.php:147
-msgid ""
-"If you require assistance or wish to make alternate arrangements please "
-"contact us."
-msgstr ""
-"Si necesita ayuda o desea otro tipo envío,  póngase en contacto con nosotros."
-
-#: ../woocommerce/checkout/form-checkout.php:20
-msgid "You must be logged in to checkout."
-msgstr "Debe estar conectado a Caja"
-
-#: ../woocommerce/checkout/form-checkout.php:51
-msgid "Your order"
-msgstr "Su Pedido"
-
-#: ../woocommerce/checkout/form-coupon.php:17
-msgid "Have a coupon?"
-msgstr "¿Tiene un cupón?"
-
-#: ../woocommerce/checkout/form-coupon.php:20
-msgid "Click here to enter your code"
-msgstr "Pulse aquí para introducir su código"
-
-#: ../woocommerce/checkout/form-coupon.php:25
-msgid "Coupon code"
-msgstr "Código del Cupón"
-
-#: ../woocommerce/checkout/form-coupon.php:29
-msgid "Apply Coupon"
-msgstr "Utilizar Cupón"
 
 #: ../woocommerce/checkout/thankyou.php:18
 msgid ""
@@ -2719,7 +3177,6 @@ msgid "Please attempt your purchase again."
 msgstr "Por favor, intente su compra otra vez."
 
 #: ../woocommerce/checkout/thankyou.php:28
-#: ../woocommerce/myaccount/my-orders.php:71
 msgid "Pay"
 msgstr "Pago"
 
@@ -2747,27 +3204,6 @@ msgstr "Total:"
 #: ../woocommerce/checkout/thankyou.php:53
 msgid "Payment method:"
 msgstr "Método de Pago:"
-
-#: ../woocommerce/loop/add-to-cart.php:17
-#: ../woocommerce/loop/add-to-cart.php:41
-#: ../woocommerce/loop/add-to-cart.php:50
-msgid "Read More"
-msgstr "Leer más"
-
-#: ../woocommerce/loop/add-to-cart.php:33
-msgid "Select options"
-msgstr "Selecionar Opciones"
-
-#: ../woocommerce/loop/add-to-cart.php:37
-msgid "View options"
-msgstr "Ver Opciones"
-
-#: ../woocommerce/loop/add-to-cart.php:46
-#: ../woocommerce/single-product/add-to-cart/grouped.php:45
-#: ../woocommerce/single-product/add-to-cart/grouped.php:77
-#: ../woocommerce/single-product/add-to-cart/simple.php:42
-msgid "Add to cart"
-msgstr "Añadir a carrito"
 
 #: ../woocommerce/loop/no-products-found.php:14
 msgid "No products found which match your selection."
@@ -2811,147 +3247,6 @@ msgstr "Mostrar todos los resultados de %d"
 msgid "Sale!"
 msgstr "¡Oferta!"
 
-#: ../woocommerce/myaccount/form-change-password.php:20
-#: ../woocommerce/myaccount/form-lost-password.php:31
-msgid "New password"
-msgstr "Nueva contraseña"
-
-#: ../woocommerce/myaccount/form-change-password.php:24
-#: ../woocommerce/myaccount/form-lost-password.php:35
-msgid "Re-enter new password"
-msgstr "Confirmar nueva contraseña"
-
-#: ../woocommerce/myaccount/form-change-password.php:29
-#: ../woocommerce/myaccount/form-lost-password.php:45
-msgid "Save"
-msgstr "Guardar"
-
-#: ../woocommerce/myaccount/form-edit-address.php:27
-#: ../woocommerce/myaccount/my-address.php:19
-#: ../woocommerce/myaccount/my-address.php:25
-#: ../woocommerce/order/order-details.php:115
-msgid "Billing Address"
-msgstr "Dirección de Facturación"
-
-#: ../woocommerce/myaccount/form-edit-address.php:27
-#: ../woocommerce/myaccount/my-address.php:20
-#: ../woocommerce/order/order-details.php:130
-msgid "Shipping Address"
-msgstr "Dirección de Envío"
-
-#: ../woocommerce/myaccount/form-edit-address.php:43
-msgid "Save Address"
-msgstr "Guardar dirección"
-
-#: ../woocommerce/myaccount/form-login.php:26
-#: ../woocommerce/myaccount/form-login.php:40
-#: ../woocommerce/shop/form-login.php:31
-msgid "Login"
-msgstr "Iniciar sesión"
-
-#: ../woocommerce/myaccount/form-login.php:29
-#: ../woocommerce/myaccount/form-lost-password.php:24
-#: ../woocommerce/shop/form-login.php:20
-msgid "Username or email"
-msgstr "Nombre usuario o dirección de correo"
-
-#: ../woocommerce/myaccount/form-login.php:33
-#: ../woocommerce/myaccount/form-login.php:85
-#: ../woocommerce/shop/form-login.php:24
-msgid "Password"
-msgstr "Contraseña"
-
-#: ../woocommerce/myaccount/form-login.php:50
-#: ../woocommerce/shop/form-login.php:33
-msgid "Lost Password?"
-msgstr "¿Contraseña perdida?"
-
-#: ../woocommerce/myaccount/form-login.php:60
-#: ../woocommerce/myaccount/form-login.php:101
-msgid "Register"
-msgstr "Registro"
-
-#: ../woocommerce/myaccount/form-login.php:66
-msgid "Username"
-msgstr "Nombre Usuario"
-
-#: ../woocommerce/myaccount/form-login.php:89
-msgid "Re-enter password"
-msgstr "Confirmar contraseña"
-
-#: ../woocommerce/myaccount/form-lost-password.php:22
-msgid ""
-"Lost your password? Please enter your username or email address. You will "
-"receive a link to create a new password via email."
-msgstr ""
-"¿Perdió su contraseña? Introduzca su nombre de usuario o dirección de email. "
-"Recibirá por correo electrónico un enlace para crear una nueva contraseña."
-
-#: ../woocommerce/myaccount/form-lost-password.php:28
-msgid "Enter a new password below."
-msgstr "Introduzca abajo una nueva contraseña. "
-
-#: ../woocommerce/myaccount/form-lost-password.php:45
-msgid "Reset Password"
-msgstr "Restablecer contraseña"
-
-#: ../woocommerce/myaccount/my-account.php:19
-#, php-format
-msgid ""
-"Hello, <strong>%s</strong>. From your account dashboard you can view your "
-"recent orders, manage your shipping and billing addresses and <a href=\"%s"
-"\">change your password</a>."
-msgstr ""
-"Hola, <strong>%s</strong>. Desde el panel de control de su cuenta, puede ver "
-"sus pedidos recientes, gestionar su envío,  las direcciones de facturación y "
-"<a href=\"%s\">cambiar su contraseña</a>."
-
-#: ../woocommerce/myaccount/my-address.php:17
-msgid "My Addresses"
-msgstr "Mis Direcciones"
-
-#: ../woocommerce/myaccount/my-address.php:23
-msgid "My Address"
-msgstr "Mi Dirección"
-
-#: ../woocommerce/myaccount/my-address.php:35
-msgid "The following addresses will be used on the checkout page by default."
-msgstr ""
-"Por defecto, se utilizarán las siguientes direcciones en la página de pago."
-
-#: ../woocommerce/myaccount/my-address.php:45
-msgid "Edit"
-msgstr "Editar"
-
-#: ../woocommerce/myaccount/my-address.php:64
-msgid "You have not set up this type of address yet."
-msgstr "Aún no ha configurado esta dirección"
-
-#: ../woocommerce/myaccount/my-downloads.php:18
-msgid "Available downloads"
-msgstr "Descargas disponibles"
-
-#: ../woocommerce/myaccount/my-orders.php:26
-msgid "Recent Orders"
-msgstr "Pedidos recientes"
-
-#: ../woocommerce/myaccount/my-orders.php:32
-msgid "Order"
-msgstr "Pedido"
-
-#: ../woocommerce/myaccount/my-orders.php:35
-#: ../woocommerce/order/order-details.php:21
-msgid "Total"
-msgstr "Total"
-
-#: ../woocommerce/myaccount/my-orders.php:77
-msgid "Cancel"
-msgstr "Cancelar"
-
-#: ../woocommerce/myaccount/my-orders.php:82
-msgid "View"
-msgstr "Ver"
-
 #: ../woocommerce/order/form-tracking.php:17
 msgid ""
 "To track your order please enter your Order ID in the box below and press "
@@ -2986,48 +3281,31 @@ msgstr "Rastrear"
 msgid "Order Details"
 msgstr "Detalles Pedido"
 
-#: ../woocommerce/order/order-details.php:20
-msgid "Product"
-msgstr "Producto"
-
-#: ../woocommerce/order/order-details.php:64
+#: ../woocommerce/order/order-details.php:66
 #, php-format
 msgid "Download file%s"
 msgstr "Descargas archivo%s"
 
-#: ../woocommerce/order/order-details.php:90
+#: ../woocommerce/order/order-details.php:98
 msgid "Order Again"
 msgstr "Pedir de nuevo"
 
-#: ../woocommerce/order/order-details.php:97
+#: ../woocommerce/order/order-details.php:105
 msgid "Customer details"
 msgstr "Datos de cliente"
 
-#: ../woocommerce/order/order-details.php:119
-#: ../woocommerce/order/order-details.php:134
+#: ../woocommerce/order/order-details.php:126
+msgid "Billing Address"
+msgstr "Dirección de Facturación"
+
+#: ../woocommerce/order/order-details.php:130
+#: ../woocommerce/order/order-details.php:145
 msgid "N/A"
 msgstr "N/A"
 
-#: ../woocommerce/order/tracking.php:18
-#, php-format
-msgid "Order %s which was made %s has the status &ldquo;%s&rdquo;"
-msgstr "Pedido %s realizado el %s  su estado es &ldquo;%s&rdquo;"
-
-#: ../woocommerce/order/tracking.php:18
-msgid "ago"
-msgstr "hace"
-
-#: ../woocommerce/order/tracking.php:20
-msgid "and was completed"
-msgstr "y se completó"
-
-#: ../woocommerce/order/tracking.php:20
-msgid " ago"
-msgstr "hace"
-
-#: ../woocommerce/order/tracking.php:31
-msgid "Order Updates"
-msgstr "Actualizaciones Pedido"
+#: ../woocommerce/order/order-details.php:141
+msgid "Shipping Address"
+msgstr "Dirección de Envío"
 
 #: ../woocommerce/shop/breadcrumb.php:63
 msgid "Products tagged &ldquo;"
@@ -3054,48 +3332,74 @@ msgstr "Autor:"
 msgid "Page"
 msgstr "Página"
 
+#: ../woocommerce/shop/form-login.php:20
+msgid "Username or email"
+msgstr "Nombre usuario o dirección de correo"
+
+#: ../woocommerce/shop/form-login.php:31
+msgid "Login"
+msgstr "Iniciar sesión"
+
+#: ../woocommerce/shop/form-login.php:33
+msgid "Lost Password?"
+msgstr "¿Contraseña perdida?"
+
 #: ../woocommerce/single-product/meta.php:19
 msgid "SKU:"
 msgstr "SKU:"
 
-#: ../woocommerce/single-product/product-attributes.php:28
-msgid "Weight"
-msgstr "Peso"
+#: ../woocommerce/single-product/meta.php:24
+#, fuzzy
+msgid "Category:"
+msgid_plural "Categories:"
+msgstr[0] "Categorías Blog"
+msgstr[1] "Categorías Blog"
 
-#: ../woocommerce/single-product/product-attributes.php:37
-msgid "Dimensions"
-msgstr "Dimensiones"
+#: ../woocommerce/single-product/meta.php:29
+msgid "Tag:"
+msgid_plural "Tags:"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../woocommerce/single-product/related.php:36
-msgid "Related Products"
-msgstr "Articulos relacionados"
+#: ../woocommerce/single-product/rating.php:23
+#, php-format
+msgid "Rated %s out of 5"
+msgstr "Calificación %s sobre 5"
+
+#: ../woocommerce/single-product/rating.php:25
+#: ../woocommerce/single-product/review.php:27
+msgid "out of 5"
+msgstr "sobre 5"
+
+#: ../woocommerce/single-product/rating.php:28
+#, php-format
+msgid "%s customer review"
+msgid_plural "%s customer reviews"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../woocommerce/single-product/review.php:26
 #, php-format
 msgid "Rated %d out of 5"
 msgstr "Calificado %d sobre 5"
 
-#: ../woocommerce/single-product/review.php:33
+#: ../woocommerce/single-product/review.php:34
 msgid "Your comment is awaiting approval"
 msgstr "Comentario en espera de aprobación"
 
-#: ../woocommerce/single-product/review.php:40
+#: ../woocommerce/single-product/review.php:43
 msgid "verified owner"
 msgstr "Propietario verificado"
 
-#: ../woocommerce/single-product/up-sells.php:39
-msgid "You may also like&hellip;"
-msgstr "Quizás también le guste&hellip;"
-
-#: ../woocommerce/single-product/add-to-cart/variable.php:25
+#: ../woocommerce/single-product/add-to-cart/variable.php:80
 msgid "Choose an option"
 msgstr "Elegir una opción"
 
-#: ../woocommerce/single-product/add-to-cart/variable.php:73
+#: ../woocommerce/single-product/add-to-cart/variable.php:128
 msgid "Clear selection"
 msgstr "Borrar seleción"
 
-#: ../woocommerce/single-product/add-to-cart/variable.php:100
+#: ../woocommerce/single-product/add-to-cart/variable.php:161
 msgid "This product is currently out of stock and unavailable."
 msgstr ""
 
@@ -3107,130 +3411,189 @@ msgstr "Información Adicional"
 msgid "Product Description"
 msgstr "Descripción artículo"
 
-#~ msgid "Options"
-#~ msgstr "Opciones"
+#~ msgid "<span class=\"meta-nav\">&larr;</span> Previous"
+#~ msgstr "<span class=\"meta-nav\">&larr;</span> Anteriores"
+
+#~ msgid "Next <span class=\"meta-nav\">&rarr;</span>"
+#~ msgstr "Siguientes <span class=\"meta-nav\">&rarr;</span>"
+
+#~ msgid "Add Your Review"
+#~ msgstr "Añada su opinion"
+
+#~ msgid "Add Review"
+#~ msgstr "Añadir comentario"
 
 #~ msgid ""
-#~ "Warning- This options panel will not work properly without javascript!"
+#~ "There are no reviews yet, would you like to <a data-toggle=\"collapse\" "
+#~ "data-parent=\"#review_form\" href=\"#review_form\" class=\"inline "
+#~ "show_review_form\">submit yours</a>?"
 #~ msgstr ""
-#~ "Advertencia: este panel de opciones no funcionar&aacute; correctamente "
-#~ "sin JavaScript."
+#~ "No hay comentarios aún, ¿le gustaría <a data-toggle=\"collapse\" data-"
+#~ "parent=\"#review_form\" href=\"#review_form\" class=\"inline "
+#~ "show_review_form\">enviar el suyo</a>?"
 
-#, fuzzy
-#~ msgid "Save Changes"
-#~ msgstr "Guardar todos los cambios"
+#~ msgid "Cart Discount"
+#~ msgstr "Descuento "
 
-#, fuzzy
-#~ msgid "Reset Section"
-#~ msgstr "Borrar seleción"
+#~ msgid "[Remove]"
+#~ msgstr "[Eliminar]"
 
-#, fuzzy
-#~ msgid "error(s) were found!"
-#~ msgstr "Lo sentimos, no se encontraron resultados"
+#~ msgid "Shipping"
+#~ msgstr "Envío"
 
-#, fuzzy
-#~ msgid "Options Object"
-#~ msgstr "Restablecer Opciones"
+#~ msgid "Order Discount"
+#~ msgstr "Descuento Pedido"
 
-#, fuzzy
-#~ msgid "Import / Export Options"
-#~ msgstr "Opciones publicación del  Portfolio"
+#~ msgid "(Includes %s)"
+#~ msgstr "(Incluye %s)"
 
-#, fuzzy
-#~ msgid "Import Options"
-#~ msgstr "Opciones Publicación"
+#~ msgid ""
+#~ "No shipping methods were found; please recalculate your shipping and "
+#~ "enter your state/county and zip/postcode to ensure there are no other "
+#~ "available methods for your location."
+#~ msgstr ""
+#~ "No se encontraron métodos de envío; por favor para recalcular su envío  "
+#~ "introduzca su pais/localidad y código postal para asegurar que no existen "
+#~ "otros métodos envío para su ubicación."
 
-#, fuzzy
-#~ msgid "Export Options"
-#~ msgstr "Opciones Publicación"
+#~ msgid ""
+#~ "Sorry, it seems that there are no available shipping methods for your "
+#~ "location (%s)."
+#~ msgstr ""
+#~ "Lo sentimos, parece que hay no hay métodos de envío disponibles para su "
+#~ "ubicación (%s)."
 
-#, fuzzy
-#~ msgid "Download"
-#~ msgstr "Descargar:"
+#~ msgid ""
+#~ "If you require assistance or wish to make alternate arrangements please "
+#~ "contact us."
+#~ msgstr ""
+#~ "Si necesita ayuda o desea otro tipo envío,  póngase en contacto con "
+#~ "nosotros."
 
-#, fuzzy
-#~ msgid "Background Repeat"
-#~ msgstr "Color Fondo"
+#~ msgid "You must be logged in to checkout."
+#~ msgstr "Debe estar conectado a Caja"
 
-#, fuzzy
-#~ msgid "Background Clip"
-#~ msgstr "Color Fondo"
+#~ msgid "Your order"
+#~ msgstr "Su Pedido"
 
-#, fuzzy
-#~ msgid "Background Origin"
-#~ msgstr "Color Fondo"
+#~ msgid "Have a coupon?"
+#~ msgstr "¿Tiene un cupón?"
 
-#, fuzzy
-#~ msgid "Background Size"
-#~ msgstr "Color Fondo"
+#~ msgid "Click here to enter your code"
+#~ msgstr "Pulse aquí para introducir su código"
 
-#, fuzzy
-#~ msgid "Background Position"
-#~ msgstr "Color Fondo"
-
-#, fuzzy
-#~ msgid "Right"
-#~ msgstr "Peso"
-
-#, fuzzy
-#~ msgid "Bottom"
-#~ msgstr "Margen inferior"
-
-#, fuzzy
-#~ msgid "Border style"
-#~ msgstr "Total Pedido"
-
-#, fuzzy
-#~ msgid "height"
-#~ msgstr "Peso"
-
-#, fuzzy
-#~ msgid "Add/Edit Gallery"
-#~ msgstr "Añadir a Galería"
-
-#, fuzzy
-#~ msgid "Clear Gallery"
-#~ msgstr "Galería"
-
-#, fuzzy
-#~ msgid "Add"
-#~ msgstr "Dirección"
-
-#, fuzzy
-#~ msgid "Active"
-#~ msgstr "Activar"
-
-#, fuzzy
-#~ msgid "Add More"
+#~ msgid "Read More"
 #~ msgstr "Leer más"
 
-#, fuzzy
-#~ msgid "Select an item"
-#~ msgstr "Seleccionar tipo de letra"
+#~ msgid "Select options"
+#~ msgstr "Selecionar Opciones"
 
-#, fuzzy
-#~ msgid "Standard Fonts"
-#~ msgstr "Fuente de  cabecera"
+#~ msgid "View options"
+#~ msgstr "Ver Opciones"
 
-#, fuzzy
-#~ msgid "Font script"
-#~ msgstr "Descripción artículo"
+#~ msgid "Add to cart"
+#~ msgstr "Añadir a carrito"
 
-#, fuzzy
-#~ msgid "Height"
+#~ msgid "New password"
+#~ msgstr "Nueva contraseña"
+
+#~ msgid "Re-enter new password"
+#~ msgstr "Confirmar nueva contraseña"
+
+#~ msgid "Save"
+#~ msgstr "Guardar"
+
+#~ msgid "Save Address"
+#~ msgstr "Guardar dirección"
+
+#~ msgid "Register"
+#~ msgstr "Registro"
+
+#~ msgid "Re-enter password"
+#~ msgstr "Confirmar contraseña"
+
+#~ msgid ""
+#~ "Lost your password? Please enter your username or email address. You will "
+#~ "receive a link to create a new password via email."
+#~ msgstr ""
+#~ "¿Perdió su contraseña? Introduzca su nombre de usuario o dirección de "
+#~ "email. Recibirá por correo electrónico un enlace para crear una nueva "
+#~ "contraseña."
+
+#~ msgid "Enter a new password below."
+#~ msgstr "Introduzca abajo una nueva contraseña. "
+
+#~ msgid "Reset Password"
+#~ msgstr "Restablecer contraseña"
+
+#~ msgid ""
+#~ "Hello, <strong>%s</strong>. From your account dashboard you can view your "
+#~ "recent orders, manage your shipping and billing addresses and <a href=\"%s"
+#~ "\">change your password</a>."
+#~ msgstr ""
+#~ "Hola, <strong>%s</strong>. Desde el panel de control de su cuenta, puede "
+#~ "ver sus pedidos recientes, gestionar su envío,  las direcciones de "
+#~ "facturación y <a href=\"%s\">cambiar su contraseña</a>."
+
+#~ msgid "My Addresses"
+#~ msgstr "Mis Direcciones"
+
+#~ msgid "My Address"
+#~ msgstr "Mi Dirección"
+
+#~ msgid ""
+#~ "The following addresses will be used on the checkout page by default."
+#~ msgstr ""
+#~ "Por defecto, se utilizarán las siguientes direcciones en la página de "
+#~ "pago."
+
+#~ msgid "Edit"
+#~ msgstr "Editar"
+
+#~ msgid "You have not set up this type of address yet."
+#~ msgstr "Aún no ha configurado esta dirección"
+
+#~ msgid "Available downloads"
+#~ msgstr "Descargas disponibles"
+
+#~ msgid "Recent Orders"
+#~ msgstr "Pedidos recientes"
+
+#~ msgid "Order"
+#~ msgstr "Pedido"
+
+#~ msgid "Cancel"
+#~ msgstr "Cancelar"
+
+#~ msgid "View"
+#~ msgstr "Ver"
+
+#~ msgid "Order %s which was made %s has the status &ldquo;%s&rdquo;"
+#~ msgstr "Pedido %s realizado el %s  su estado es &ldquo;%s&rdquo;"
+
+#~ msgid "ago"
+#~ msgstr "hace"
+
+#~ msgid "and was completed"
+#~ msgstr "y se completó"
+
+#~ msgid " ago"
+#~ msgstr "hace"
+
+#~ msgid "Order Updates"
+#~ msgstr "Actualizaciones Pedido"
+
+#~ msgid "Weight"
 #~ msgstr "Peso"
 
-#, fuzzy
-#~ msgid "Word Spacing"
-#~ msgstr "Margen superior"
+#~ msgid "Dimensions"
+#~ msgstr "Dimensiones"
 
-#, fuzzy
-#~ msgid "Letter Spacing"
-#~ msgstr "Margen izquierdo"
+#~ msgid "Related Products"
+#~ msgstr "Articulos relacionados"
 
-#, fuzzy
-#~ msgid "Font color"
-#~ msgstr "Color fuentes pie de página"
+#~ msgid "You may also like&hellip;"
+#~ msgstr "Quizás también le guste&hellip;"
 
 #~ msgid "Last Backup : "
 #~ msgstr "Última copia de seguridad: &nbsp;"
@@ -3318,24 +3681,6 @@ msgstr "Descripción artículo"
 
 #~ msgid "&larr; Return To Shop"
 #~ msgstr "&larr; Volver a laTienda"
-
-#~ msgid "Price"
-#~ msgstr "Precio"
-
-#~ msgid "Quantity"
-#~ msgstr "Cantidad"
-
-#~ msgid "Remove this item"
-#~ msgstr "Quitar artículo"
-
-#~ msgid "Available on backorder"
-#~ msgstr "Disponible bajo pedido"
-
-#~ msgid "Coupon"
-#~ msgstr "Cupón"
-
-#~ msgid "Proceed to Checkout &rarr;"
-#~ msgstr "Pasar por caja &rarr;"
 
 #~ msgid "No products in the cart."
 #~ msgstr "No hay articulos en el carrito."

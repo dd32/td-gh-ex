@@ -48,6 +48,18 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 2.1.0 =
+* Add target option for topbar icons and home page icons.
+* Add target option for slides.
+* Bug Fix Firefox search text.
+* Bug fix for product filter issue in dashboard. 
+
+= Version: 2.0.9 =
+* Chrome Bug fix for icons
+* Fix in archive.php
+* Fix for french language.
+* Add German language file
+
 = Version: 2.0.8 =
 * Update Google fonts
 * Fix for php 5.2

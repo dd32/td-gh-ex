@@ -10,10 +10,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-
  ?>
-
-				
 		<div id="content" class="container">
    		<div class="row">
       <div class="main <?php echo kadence_main_class(); ?>" role="main">
@@ -28,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 				</div>
 		
 		<?php endif; ?>
-		
+
 		<?php do_action( 'woocommerce_archive_description' ); ?>
 
 		<?php if ( have_posts() ) : ?>

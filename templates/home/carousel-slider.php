@@ -9,11 +9,12 @@
     <div class="carousel_slider_outer fredcarousel fadein-carousel" style="overflow:hidden; max-width:<?php echo $slidewidth;?>px; height: <?php echo $slideheight;?>px; margin-left: auto; margin-right:auto;">
         <div class="carousel_slider">
             <?php foreach ($slides as $slide) : 
+                    if(!empty($slide['target']) && $slide['target'] == 1) {$target = '_blank';} else {$target = '_self';}
                     $image = aq_resize($slide['url'], null, $slideheight, false, false);
                     if(empty($image)) {$image = array($slide['url'],$slidewidth,$slideheight);} 
                         echo '<div class="carousel_gallery_item" style="float:left; display: table; position: relative; text-align: center; margin: 0; width:auto; height:'.$image[2].'px;">';
                         echo '<div class="carousel_gallery_item_inner" style="vertical-align: middle; display: table-cell;">';
-                        if($slide['link'] != '') echo '<a href="'.$slide['link'].'">';
+                        if($slide['link'] != '') echo '<a href="'.$slide['link'].'" target="'.$target.'">';
                         echo '<img src="'.$image[0].'" width="'.$image[1].'" height="'.$image[2].'" />';
                         if ($captions == '1') { ?> 
                                 <div class="flex-caption">

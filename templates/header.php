@@ -13,7 +13,8 @@
               <ul>
                 <?php global $virtue; $top_icons = $virtue['topbar_icon_menu'];
                 foreach ($top_icons as $top_icon) {
-                  echo '<li><a href="'.$top_icon['link'].'" title="'.$top_icon['title'].'" data-toggle="tooltip" data-placement="bottom" data-original-title="'.$top_icon['title'].'">';
+                  if(!empty($top_icon['target']) && $top_icon['target'] == 1) {$target = '_blank';} else {$target = '_self';}
+                  echo '<li><a href="'.$top_icon['link'].'" target="'.$target.'" title="'.esc_attr($top_icon['title']).'" data-toggle="tooltip" data-placement="bottom" data-original-title="'.esc_attr($top_icon['title']).'">';
                   if($top_icon['url'] != '') echo '<img src="'.$top_icon['url'].'"/>' ; else echo '<i class="'.$top_icon['icon_o'].'"></i>';
                   echo '</a></li>';
                 } ?>
@@ -26,7 +27,7 @@
                   global $woocommerce; ?>
                     <ul class="kad-cart-total">
                       <li>
-                      <a class="cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping cart', 'woocommerce'); ?>">
+                      <a class="cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php esc_attr_e('View your shopping cart', 'woocommerce'); ?>">
                           <i class="icon-shopping-cart" style="padding-right:5px;"></i> <?php _e('Your Cart', 'virtue');?> - <?php echo $woocommerce->cart->get_cart_total(); ?>
                       </a>
                     </li>

@@ -157,20 +157,6 @@ function kadence_caption($output, $attr, $content) {
 }
 add_filter('img_caption_shortcode', 'kadence_caption', 10, 3);
 
-
-/**
- * Remove unnecessary dashboard widgets
- *
- * @link http://www.deluxeblogtips.com/2011/01/remove-dashboard-widgets-in-wordpress.html
- */
-function kadence_remove_dashboard_widgets() {
-  remove_meta_box('dashboard_incoming_links', 'dashboard', 'normal');
-  remove_meta_box('dashboard_plugins', 'dashboard', 'normal');
-  remove_meta_box('dashboard_primary', 'dashboard', 'normal');
-  remove_meta_box('dashboard_secondary', 'dashboard', 'normal');
-}
-add_action('admin_init', 'kadence_remove_dashboard_widgets');
-
 /**
  * Clean up the_excerpt()
  */
@@ -203,21 +189,6 @@ function kadence_remove_default_description($bloginfo) {
 }
 add_filter('get_bloginfo_rss', 'kadence_remove_default_description');
 
-/**
- * Allow more tags in TinyMCE including <iframe> and <script>
- */
-function kadence_change_mce_options($options) {
-  $ext = 'pre[id|name|class|style],iframe[align|longdesc|name|width|height|frameborder|scrolling|marginheight|marginwidth|src],script[charset|defer|language|src|type]';
-
-  if (isset($initArray['extended_valid_elements'])) {
-    $options['extended_valid_elements'] .= ',' . $ext;
-  } else {
-    $options['extended_valid_elements'] = $ext;
-  }
-
-  return $options;
-}
-add_filter('tiny_mce_before_init', 'kadence_change_mce_options');
 
 /**
  * Add additional classes onto widgets
@@ -257,18 +228,3 @@ function kadence_widget_first_last_classes($params) {
   return $params;
 }
 add_filter('dynamic_sidebar_params', 'kadence_widget_first_last_classes');
-
-/**
- * Fix for empty search queries redirecting to home page
- *
- * @link http://wordpress.org/support/topic/blank-search-sends-you-to-the-homepage#post-1772565
- * @link http://core.trac.wordpress.org/ticket/11330
- */
-function kadence_request_filter($query_vars) {
-  if (isset($_GET['s']) && empty($_GET['s'])) {
-    $query_vars['s'] = ' ';
-  }
-
-  return $query_vars;
-}
-add_filter('request', 'kadence_request_filter');
