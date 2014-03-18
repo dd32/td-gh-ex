@@ -56,5 +56,8 @@ This theme is bundled with Modernizr
 =================================
 CHANGELOG
 =================================
+Version 1.0.1
+ * New function that adds Facebook opengraph metadata
+
 Version 1.0
  * First public release
