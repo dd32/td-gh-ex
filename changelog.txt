@@ -1,6 +1,11 @@
 *** Hemingway changelog ***
 
 
+Version 1.32 (2014-03-18)
+-------------------------
+- Fixed a bug displaying content.php as excerpts on archives
+
+
 Version 1.31 (2014-03-17)
 -------------------------
 - Hides blog-info div in header if both site title and site description are empty
