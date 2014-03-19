@@ -1,6 +1,11 @@
 *** Hemingway changelog ***
 
 
+Version 1.33 (2014-03-20)
+-------------------------
+- Fixed a bug where the site title in the header would be hidden if site description is empty
+
+
 Version 1.32 (2014-03-18)
 -------------------------
 - Fixed a bug displaying content.php as excerpts on archives

@@ -25,7 +25,7 @@
 							
 					<div class="header-inner section-inner">
 					
-						<?php if ( get_bloginfo( 'description' ) && get_bloginfo( 'title' ) ) { ?>
+						<?php if ( get_bloginfo( 'description' ) || get_bloginfo( 'title' ) ) { ?>
 					
 							<div class="blog-info">
 							
