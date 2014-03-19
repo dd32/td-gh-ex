@@ -32,7 +32,7 @@
 							
 			<?php	} // end while
 			
-				wp_list_comments();
+				comments_template();
 			
 				} // end if
 			?>
