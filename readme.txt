@@ -5,7 +5,7 @@ Description: complete blog theme with bootstrap
 Author: Faster Themes
 Author URI: http://fasterthemes.com/
 Tags: Blue, two-columns, responsive-layout, custom-background, custom-colors, custom-menu, full-width-template, theme-options, translation-ready,left-sidebar,right-sidebar
-version: 1.01
+version: 1.01.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 This theme, like WordPress, is licensed under the Faster Themes.

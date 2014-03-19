@@ -7,3 +7,7 @@ Version 1.01
     i)   License and copyrights terms added in readme.txt.
 	ii)  Changes in header.php, footer.php, functions.php, comments.php and style.css for fixing the feedback points.
 	
+Version 1.01.1
+
+    i)   Removed unused images.
+	
