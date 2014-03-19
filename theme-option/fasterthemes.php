@@ -73,11 +73,11 @@ function fastertheme_framework_page(){
             <h4 class="heading">Favicon</h4>
             <div class="option">
               <div class="controls">
-                <input id="logo" class="upload" type="text" name="faster_theme_options[fevicon]" 
-                            value="<?php echo $options['fevicon']; ?>" placeholder="No file chosen" />
+                <input id="logo" class="upload" type="text" name="faster_theme_options[favicon]" 
+                            value="<?php echo $options['favicon']; ?>" placeholder="No file chosen" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
                 <div class="screenshot" id="logo-image">
-                  <?php if($options['fevicon'] != '') echo "<img src='".$options['fevicon']."' /><a class='remove-image'>Remove</a>" ?>
+                  <?php if($options['favicon'] != '') echo "<img src='".$options['favicon']."' /><a class='remove-image'>Remove</a>" ?>
                 </div>
               </div>
               <div class="explain">Size of fevicon should be exactly 32x32px for best results.</div>

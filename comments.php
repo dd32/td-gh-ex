@@ -12,6 +12,7 @@ if ( post_password_required() )
 	return;
 ?>
 <div class="clearfix"></div>
+<?php if ( comments_open() || get_comments_number() ) {?>
 <div id="comments" class="comments-area">
 	<?php if ( have_comments() ) : 	?>
     <h2 class="comments-title">
@@ -47,3 +48,4 @@ if ( post_password_required() )
 	?>
 	<?php comment_form($args); ?>
 </div><!-- #comments .comments-area -->
+<?php } ?>

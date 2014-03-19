@@ -4,9 +4,10 @@ function mywiki_theme_setup(){
 wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '3.0.1', 'all' );
 wp_enqueue_style('style', get_template_directory_uri() . '/style.css');
 wp_enqueue_script( 'bootstrap',  get_template_directory_uri() . '/js/bootstrap.min.js', array('jQuery'), '3.0.1');
-wp_enqueue_script( 'genaral',  get_template_directory_uri() . '/js/general.js', array('jQuery'), '1.0.0');
 wp_enqueue_script( 'nicescroll',  get_template_directory_uri() . '/js/jquery.nicescroll.min.js', array('jQuery'), '1.0.0');
 wp_enqueue_script( 'jQuery',  get_template_directory_uri() . '/js/ajaxsearch.js', array(), '1.0.0');
+wp_enqueue_script( 'general',  get_template_directory_uri() . '/js/general.js');
+wp_localize_script( 'general', 'my_ajax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 }
 /* content width */
@@ -44,37 +45,7 @@ endif; // redpro_setup
 // Implement Custom Header features.
 require get_template_directory() . '/function/custom-header.php';
 add_action( 'after_setup_theme', 'mywiki_setup' );
-/* Get Browser code */
-function get_user_browser()
-{
-    $u_agent = $_SERVER['HTTP_USER_AGENT'];
-    $ub = '';
-    if(preg_match('/MSIE/i',$u_agent))
-    {
-        $ub = "ie";
-    }
-    elseif(preg_match('/Firefox/i',$u_agent))
-    {
-        $ub = "firefox";
-    }
-    elseif(preg_match('/Safari/i',$u_agent))
-    {
-        $ub = "safari";
-    }
-    elseif(preg_match('/Chrome/i',$u_agent))
-    {
-        $ub = "chrome";
-    }
-    elseif(preg_match('/Flock/i',$u_agent))
-    {
-        $ub = "flock";
-   }
-    elseif(preg_match('/Opera/i',$u_agent))
-    {
-        $ub = "opera";
-    }
-  return $ub;
-}
+
 if ( ! function_exists( 'mywiki_entry_meta' ) ) :
 /**
  * Set up post entry meta.
@@ -114,21 +85,21 @@ endif;
 /**
  * Add default menu style if menu is not set from the backend.
  */
-function wpwiki_add_menuclass ($page_markup) {
+function mywiki_add_menuclass ($page_markup) {
 preg_match('/^<div class=\"([a-z0-9-_]+)\">/i', $page_markup, $matches);
 $toreplace = array('<div class="navbar-collapse collapse top-gutter">', '</div>');
 $replace = array('<div class="navbar-collapse collapse top-gutter">', '</div>');
 $new_markup = str_replace($toreplace,$replace, $page_markup);
 $new_markup= preg_replace('/<ul/', '<ul class="nav navbar-nav navbar-right mywiki-header-menu"', $new_markup);
 return $new_markup; } //}
-add_filter('wp_page_menu', 'wpwiki_add_menuclass');
+add_filter('wp_page_menu', 'mywiki_add_menuclass');
 register_nav_menus(
 		array(
 			'primary' => __( 'The Main Menu', 'MyWiki' ),   // main nav in header
 			'footer-links' => __( 'Footer Links', 'MyWiki' ) // secondary nav in footer
 		)
 	);
-function category_widget_function($args) {
+function mywiki_category_widget_function($args) {
    extract($args);
    echo $before_widget;
    echo $before_title . '<p class="wid-category"><span>Categories</span></p>' . $after_title;
@@ -160,13 +131,13 @@ echo "</ul></div>";
 wp_register_sidebar_widget(
     'Category Widget',        // your unique widget id
     'Category Widget',          // widget name
-    'category_widget_function',  // callback function
+    'mywiki_category_widget_function',  // callback function
     array(                  // options
         'description' => 'Category Widget Shows Category'
     )
 );
-add_action( 'widgets_init', 'be_popular_load_widgets' );
-function be_popular_load_widgets() {
+add_action( 'widgets_init', 'mywiki_popular_load_widgets' );
+function mywiki_popular_load_widgets() {
 register_widget( 'mywiki_popular_widget' );
 register_widget( 'mywiki_recentpost_widget' );
 }
@@ -355,7 +326,7 @@ function mywiki_custom_breadcrumbs() {
   $after = '</span>'; // tag after the current crumb
   
   global $post;
-  $homeLink = home_url();
+  $homeLink = esc_url( home_url( '/' ) );
   
   if (is_home() || is_front_page()) {
   
@@ -506,7 +477,8 @@ function mywiki_search() {
 }
 add_action('wp_ajax_mywiki_search', 'mywiki_search');
 add_action('wp_ajax_nopriv_mywiki_search', 'mywiki_search' );
-if ( ! function_exists( 'wpwiki_comment' ) ) :
+
+if ( ! function_exists( 'mywiki_comment' ) ) :
 /**
  * Template for comments and pingbacks.
  *
@@ -549,22 +521,13 @@ function mywiki_comment( $comment, $args, $depth ) {
 	<?php
 }
 endif;
-/*===== ajax admin Path ========*/
-add_action('wp_head','wp_wiki_ajax_globle_path');
-function wp_wiki_ajax_globle_path(){
-echo '<script>
-	 var ajax_url="'.admin_url( 'admin-ajax.php', 'http' ).'";
-	 var browser = "'.get_user_browser().'";
-</script>';
-/*===== custom css ========*/
-if ( get_header_image() ) {
-	echo "<style>";
-	echo".navbar{
-			background-image:url(".get_header_image().");
-			background-size:cover;
-			background-repeat:no-repeat;
-			}";
-	echo "</style>";
-	}
+
+
+add_action('wp_ajax_mywiki_header', 'mywiki_header_image_function');
+add_action('wp_ajax_nopriv_mywiki_header', 'mywiki_header_image_function' );
+function mywiki_header_image_function(){
+	$return['header'] = get_header_image();
+	echo json_encode($return);
+	die;
 }
 ?>

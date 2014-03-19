@@ -1,3 +1,16 @@
+
+    $.ajax({
+				type: "GET",
+				url: my_ajax.ajaxurl+'?action=mywiki_header',
+				cache: false,
+				dataType:"json",
+				success: function(response) {
+					if(response.header){
+					$('.navbar').css({'background-image':'url('+response.header+')','background-size':'cover','background-repeat':'no-repeat'});}
+				}
+			});
+
+
 function suggest(inputString){
 
 		if(inputString.length == 0) {
@@ -8,7 +21,7 @@ function suggest(inputString){
 
 		$('#s').addClass('load');
 
-			$.post(ajax_url, {action:'mywiki_search',queryString: ""+inputString+""}, function(data){
+			$.post(my_ajax.ajaxurl, {action:'mywiki_search',queryString: ""+inputString+""}, function(data){
 
 				if(data.length >0) {
 
@@ -96,7 +109,7 @@ $(document).ready(function() {
 
 				type: "POST",
 
-				url: ajax_url,
+				url: my_ajax.ajaxurl,
 
 				data: { 
 

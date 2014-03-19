@@ -5,9 +5,9 @@ Description: complete blog theme with bootstrap
 Author: Faster Themes
 Author URI: http://fasterthemes.com/
 Tags: Blue, two-columns, responsive-layout, custom-background, custom-colors, custom-menu, full-width-template, theme-options, translation-ready,left-sidebar,right-sidebar
-version: 1.0
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+version: 1.01
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 This theme, like WordPress, is licensed under the Faster Themes.
 Use it to make something cool, have fun, and share what you've learned with others.
 
@@ -45,3 +45,18 @@ Social link and ajax search functionality theme.
  = Login to your wp-admin area and go to Appearance -> Theme Options.
  = Select "Social Settings" tab
  = Here you can add your Facebook and Twitter URLs which appear in the footer.
+ 
+---------------------------------------------------------
+License and Copyrights for Resources used in this theme
+---------------------------------------------------------
+ 
+
+	i)   Social icons and other graphics used in this theme are under GPL v2 License have been created by our team.
+	ii)  For the Administration Panel, we have used our own custom options panel, which is under GPL v2 license. 
+	iii) We have used 3 External font from Google Webfonts: Electrolize, Open+Sans and Lato which are under SIL Open Font License v1.1.
+	iv)  License details of JS files used by us are in the header of corresponding JS files.
+	v)   general.js has been created by me and under GPL v2.
+	vi) The bootstrap files which we used are licensed under the Apache License v2.0
+	
+	
+	For any help you can mail us at support[at]fasterthemes.com
