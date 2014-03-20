@@ -13,7 +13,7 @@ External resources linked to the theme.
 Resources packed within the theme. 
 * Genericons by Joen Asmussen http://genericons.com/
   Licensed under the GPL, version 2 or later http://www.gnu.org/licenses/old-licenses/gpl-2.0.html).
-* Image in the screenshot is from public domain http://unsplash.com/
+* Image in the screenshot is from public domain http://unsplash.com/ link: unsplash.com/post/53469911317/download-by-aleks-dorohovich
 * HTML5 Shiv @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
 * The script jquery.cycle.all.js is dual licensed under GPL & MIT
 * Options Framework by WP Theming licensed under the GPLv2 license (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -49,3 +49,6 @@ and we will include it within the theme from next version update.
 
 = Version 1.0 =
 * All brand new.
+
+= Version 1.0.1 =
+* Added the link for the free image used in the screenshot from where it was taken.
