@@ -45,6 +45,6 @@
 			
 			<div id="menu-wrapper">
 					<nav class="menu-bar">
-						<div class="center header-menu"><?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?></div>
+						<div class="center header-menu"><?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?> <div class="clearfix"></div></div>
 					</nav>
 			</div>

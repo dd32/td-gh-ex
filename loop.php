@@ -5,7 +5,7 @@
 						
 						
 						//Two posts per line
-						if(get_theme_mod('posts_per_line') == 2) {?>
+						if(get_theme_mod('posts_per_line', '2') == 2) {?>
 						
 						
 							<article  <?php post_class('post-prev clearfix');?>>
