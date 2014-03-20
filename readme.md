@@ -33,6 +33,10 @@ The exceptions to this license are as follows:
 
 
 # Changelog
+= 3.1.8 =
+* fixed : (js) responsive : dynamic content block position bug fixed in tc_script.js
+
+
 = 3.1.7 =
 * fixed : (css) : icons rendering for chrome
 * improved : (css) : footer white icons also for black skin

@@ -82,50 +82,8 @@ jQuery(document).ready(function () {
         
         //Adds version if browser = ie
         $("body").hasClass("ie") && $("body").addClass($.browser.version);
+    
         
-
-
-        //Detect layout and reorder content divs
-        var wrapper = $('#main-wrapper .container[role=main] .row'),
-            content = $("#main-wrapper .container .article-container"),
-            left    = $("#main-wrapper .container .span3.left.tc-sidebar"),
-            right   = $("#main-wrapper .container .span3.right.tc-sidebar"),
-            g = !1,
-            h = !1;
-
-        function BlockPositions() {
-            var b = $(window),
-                c = b.width();
-            //15 pixels adjustement to avoid replacement before real responsive width
-            if ( c > (767 - 15) ) {
-
-                if ( 0 != left.length ) {
-                    left.detach();
-                    content.detach();
-                    $(wrapper).append(left).append(content);
-                }
-                if ( 0 != right.length ) {
-                    right.detach();
-                    $(wrapper).append(right);
-                }
-            } else {
-                if ( 0 != left.length ) {
-                    left.detach();
-                    content.detach();
-                    $(wrapper).append(content).append(left);
-                }
-                if ( 0 != right.length ) {
-                    right.detach();
-                    $(wrapper).append(right);
-                }
-            }
-        }//end function
-
-        $(window).resize(function () {
-            setTimeout(BlockPositions, 200);
-        });
-
-        BlockPositions();
 
         $(".widget-front, article").hover(function () {
             $(this).addClass("hover")
@@ -161,6 +119,48 @@ jQuery(document).ready(function () {
                 $(this).addClass('btn btn-small');
            });
         }
+
+
+        $(window).on( 'load' , function () {
+            //Detect layout and reorder content divs
+            var wrapper = $('#main-wrapper .container[role=main] .row'),
+                content = $("#main-wrapper .container .article-container"),
+                left    = $("#main-wrapper .container .span3.left.tc-sidebar"),
+                right   = $("#main-wrapper .container .span3.right.tc-sidebar");
+
+            function BlockPositions() {
+                //15 pixels adjustement to avoid replacement before real responsive width
+                WindowWidth = $(window).width();
+                if ( WindowWidth > 767 - 15 ) {
+                    //$(window).width();
+                    if ( $(left).length ) {
+                        $(left).detach();
+                        $(content).detach();
+                        $(wrapper).append($(left)).append($(content));
+                    }
+                    if ( $(right).length ) {
+                        $(right).detach();
+                        $(wrapper).append($(right));
+                    }
+                } else {
+                    if ( $(left).length ) {
+                         $(left).detach();
+                        $(content).detach();
+                        $(wrapper).append($(content)).append( $(left) );
+                    }
+                    if ( $(right).length ) {
+                        $(right).detach();
+                        $(wrapper).append($(right));
+                    }
+                }
+            }//end function*/
+
+            BlockPositions();
+
+            $(window).resize(function () {
+                setTimeout(BlockPositions, 200);
+            });
+        });
 
     }(window.jQuery)
 });
