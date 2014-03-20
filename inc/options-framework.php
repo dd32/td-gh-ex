@@ -262,7 +262,8 @@ function optionsframework_page() {
 
 	<div id="optionsframework-wrap" class="wrap">
 	<div Class="themedoc">
-			WriterStrap by  <a href="http://crayonux.com">Crayonux.com</a>
+			WriterStrap by  <a href="http://crayonux.com">Crayonux.com</a>  &nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="http://crayonux.com/questions/">Help</a>
 	</div>
     <?php screen_icon( 'themes' ); ?>
     <h2 class="nav-tab-wrapper">
