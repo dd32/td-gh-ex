@@ -1,9 +1,14 @@
 *** Hemingway changelog ***
 
 
+Version 1.35 (2014-03-20)
+-------------------------
+- Added a theme option for accent color
+
+
 Version 1.34 (2014-03-20)
 -------------------------
-- Fixed video-widget bug
+- Fixed a video-widget bug
 
 
 Version 1.33 (2014-03-20)
