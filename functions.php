@@ -121,11 +121,8 @@ function catchbox_setup() {
         'footer'         => 'page',
     ) );
 	
-	// Add support for custom backgrounds	
-	// WordPress 3.4+
-	if ( function_exists( 'get_custom_header') ) {
-		add_theme_support( 'custom-background' );
-	} 
+	// Add support for custom backgrounds
+	add_theme_support( 'custom-background' ); 
 
 	/**
      * This feature enables post-thumbnail support for a theme.
@@ -157,25 +154,21 @@ function catchbox_setup() {
 	//disable old image size for featued posts add_image_size( 'featured-slider', 560, 270, true );
 	add_image_size( 'featured-slider', 644, 320, true ); // Used for featured posts if a large-feature doesn't exist
 
-
-	// Add support for custom backgrounds	
-	// WordPress 3.4+
-	if ( function_exists( 'get_custom_header') ) {
-		add_theme_support( 'custom-header', array( 
-			// Header image random rotation default
-			'random-default'			=> false,
-			// Header image flex width
-		 	'flex-width'             	=> true,
-			// Header image flex height
-			'flex-height'            => true,
-			// Template header style callback
-			'wp-head-callback'			=> 'catchbox_header_style',
-			// Admin header style callback
-			'admin-head-callback'		=> 'catchbox_admin_header_style',
-			// Admin preview style callback
-			'admin-preview-callback'	=> 'catchbox_admin_header_image'
-		) );
-	} 
+	// Add support for custom header	
+	add_theme_support( 'custom-header', array( 
+		// Header image random rotation default
+		'random-default'			=> false,
+		// Header image flex width
+		'flex-width'      			=> true,
+		// Header image flex height
+		'flex-height'				=> true,
+		// Template header style callback
+		'wp-head-callback'			=> 'catchbox_header_style',
+		// Admin header style callback
+		'admin-head-callback'		=> 'catchbox_admin_header_style',
+		// Admin preview style callback
+		'admin-preview-callback'	=> 'catchbox_admin_header_image'
+	) );
 
 	// Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI.
 	register_default_headers( array(

@@ -18,8 +18,8 @@
  */
 function catchbox_admin_enqueue_scripts( $hook_suffix ) {
 	wp_register_script( 'jquery-cookie', get_template_directory_uri() . '/js/jquery.cookie.min.js', array( 'jquery' ), '1.0', true );
-	wp_enqueue_style( 'catchbox-theme-options', get_template_directory_uri() . '/inc/theme-options.css', false, '2011-04-28' );
-	wp_enqueue_script( 'catchbox-theme-options', get_template_directory_uri() . '/inc/theme-options.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable', 'farbtastic' ), '2011-06-10' );
+	wp_enqueue_style( 'catchbox-theme-options', get_template_directory_uri() . '/inc/theme-options.min.css', false, '2011-04-28' );
+	wp_enqueue_script( 'catchbox-theme-options', get_template_directory_uri() . '/inc/theme-options.min.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable', 'farbtastic' ), '2011-06-10' );
 	wp_enqueue_style( 'farbtastic' );
 	wp_enqueue_script( 'catchbox_upload', get_template_directory_uri().'/inc/add_image_scripts.js', array( 'jquery','media-upload','thickbox' ) );
 	wp_enqueue_style( 'thickbox' );
@@ -320,7 +320,13 @@ function catchbox_color_schemes() {
 			'label'					=> __( 'Brown', 'catchbox' ),
 			'thumbnail'				=> get_template_directory_uri() . '/inc/images/brown.png',
 			'default_link_color'	=> '#5e3929',
-		)		
+		),
+		'orange' 					=> array(
+			'value'					=> 'orange',
+			'label'					=> __( 'Orange', 'catchbox' ),
+			'thumbnail'				=> get_template_directory_uri() . '/inc/images/orange.png',
+			'default_link_color'	=> '#802602',   
+		)			
 	);
 
 	return apply_filters( 'catchbox_color_schemes', $color_scheme_options );
@@ -1197,7 +1203,9 @@ function catchbox_enqueue_color_scheme() {
 	elseif ( 'red' == $color_scheme )
 		wp_enqueue_style( 'red', get_template_directory_uri() . '/colors/red.css', array(), null );
 	elseif ( 'brown' == $color_scheme )
-		wp_enqueue_style( 'brown', get_template_directory_uri() . '/colors/brown.css', array(), null );		
+		wp_enqueue_style( 'brown', get_template_directory_uri() . '/colors/brown.css', array(), null );	
+	elseif ( 'orange' == $color_scheme )
+		wp_enqueue_style( 'orange', get_template_directory_uri() . '/colors/orange.css', array(), null );			
 
 	do_action( 'catchbox_enqueue_color_scheme', $color_scheme );
 }
