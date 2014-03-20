@@ -1,6 +1,11 @@
 *** Hemingway changelog ***
 
 
+Version 1.36 (2014-03-20)
+-------------------------
+- Updated theme description and tags
+
+
 Version 1.35 (2014-03-20)
 -------------------------
 - Added a theme option for accent color
