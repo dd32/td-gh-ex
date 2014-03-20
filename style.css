@@ -3,7 +3,7 @@ Theme Name: Adaptive Flat
 Theme URI: http://www.mickdegraaf.nl/adaptiveflat
 Author URI: http://www.mickdegraaf.nl/
 Description: Create a professional and personal WordPress website. Adaptive Flat allows you to style your site with over 50 styling options making your site both beautiful and seo optimized.
-Version: 1.0.3
+Version: 1.0.4
 Author: Mick de Graaf
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -143,6 +143,7 @@ a {
 	margin-left: 10px;
 	display: none;
 	width: 200px;
+	z-index: 100;
 }
 
 .header-menu ul ul li {
@@ -250,7 +251,6 @@ a {
 
 
  #sidebar .searchform .searchsubmit {
-	float: left;
 	border-radius: 0px;
 }
 	
@@ -267,6 +267,7 @@ a {
 	float: none;
 	width: 90%;
 	clear: both;
+	border-radius: 0px;
 }
 
 /* 
@@ -729,6 +730,7 @@ p {
 		width: 95%;
 		max-width: 1110px;
 		margin: 10px auto;
+		overflow: auto;
 	}
 	
 	#content {

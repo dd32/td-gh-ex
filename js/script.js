@@ -3,8 +3,7 @@ var $ = jQuery;
 $(document).ready(function($) {
 	
 	
-	//resizeGame();
-	//resizePostPrev();
+
 
 	$( window ).resize(function() {
 		switchMobile();		
@@ -19,15 +18,15 @@ $(document).ready(function($) {
 	
 		 if(top < $(document).scrollTop() ){
 		 	$('.menu-bar').addClass('scrolling-menu');
+		 	$('header').css('margin-top', $('.menu-bar').height());
 		 }
 		 else
 		 {
 			 $('.menu-bar').removeClass('scrolling-menu');
+			 $('header').css('margin-top', 0);
 		 }
 	
-	});
-				
-	//setInterval(function(){resizePostPrev()()},500);			
+	});			
 	
 							
 });
@@ -44,7 +43,6 @@ $(window).load(function() {
 		
 function resizePostPrev() {
 	
-	//$('.post-prev').height('auto');
 	$('.img-placeholder').height($('.img-placeholder').width() / 1.6); //set image placeholder size			
 	$('.img-placeholder .icon').css("margin-top", $('.img-placeholder').height() / 2 - $('.img-placeholder .icon').height() / 2);//set icon margin
 	
