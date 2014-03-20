@@ -333,6 +333,16 @@ function BaseBreadcrumb() {
 }
 
 /*
+ * Add favicon.
+ */
+ 
+function base_favicon() { ?>
+    <link rel="shortcut icon" href="<?php echo of_get_option( 'favicon_uploader', 'no entry' ); ?>" />
+<?php }
+add_action('wp_head', 'base_favicon');
+
+
+/*
  * Woocommerce support.
  */
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
