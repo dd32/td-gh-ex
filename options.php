@@ -23,17 +23,86 @@ function optionsframework_option_name() {
  */
 
 function optionsframework_options() {
-
-	// Logo upload
 	
-	$options[] = array( "name" => "Logo",
+	$options[] = array( "name" => "Basic Settings",
 		"type" => "heading" );
+		
+	$options['favicon_uploader'] = array(
+		"name" => "Add favicon",
+		"desc" => "Upload your favicon.",
+		"id" => "favicon_uploader",
+		"type" => "upload" );	
 	
 	$options['logo_uploader'] = array(
 		"name" => "Logo Upload",
 		"desc" => "Upload your logo.",
 		"id" => "logo_uploader",
-		"type" => "upload" );
+		"type" => "upload" );	
+	
+	$options[] = array(
+		'name' => __('Link color', 'base'),
+		'desc' => __('Only available in premium version', 'base'),
+		'type' => 'info');
+
+	
+	$options[] = array(
+		'name' => __('Link color hover', 'base'),
+		'desc' => __('Only available in premium version', 'base'),
+		'type' => 'info');
+		
+	$options[] = array(
+		'name' => __('Footer text', 'base'),
+		'desc' => __('Only available in premium version', 'base'),
+		'type' => 'info');
+	
+	$options[] = array(
+		'name' => __('Display credits link', 'base'),
+		'desc' => __('Only available in premium version', 'base'),
+		'type' => 'info');
+
+	
+	$options[] = array(
+		'name' => __('Meta Slider', 'base'),
+		'desc' => __('Only available in premium version', 'base'),
+		'type' => 'info');
+		
+	$options[] = array( "name" => "Advanced Settings",
+		"type" => "heading" );	
+	
+	$options[] = array(
+		'name' => __('Custom css', 'base'),
+		'desc' => __('Only available in premium version', 'base'),
+		'type' => 'info');
+
+	$options[] = array(
+		'name' => __('Footer code', 'base'),
+		'desc' => __('Only available in premium version', 'base'),
+		'type' => 'info');
+	
+	$options[] = array( "name" => "Blog and post settings",
+		"type" => "heading" );	
+	
+	$options[] = array(
+		'name' => __('Show featured image in blog and archive page', 'base'),
+		'desc' => __('Only available in premium version', 'base'),
+		'type' => 'info');
+	
+	$options[] = array(
+		'name' => __('Show featured image in single post', 'base'),
+		'desc' => __('Only available in premium version', 'base'),
+		'type' => 'info');
+	
+	$options[] = array(
+		'name' => __('Display meta inforamtion', 'base'),
+		'desc' => __('Only available in premium version', 'base'),
+		'type' => 'info');
+		
+	$options[] = array(
+		'name' => "Display sidebar in blog and archive page",
+		'desc' => __('Only available in premium version', 'base'),
+		'type' => 'info');
+	
+	
 return $options;
 }
 
@@ -71,27 +140,45 @@ function options_theme_customizer_register($wp_customize) {
 		'section' => 'options_theme_customizer_logo',
 		'settings' => 'options_theme_customizer[logo_uploader]'
 	) ) );	
+	
+	
+	/* Add favicon */
+
+	$wp_customize->add_section( 'options_theme_customizer_favicon', array(
+		'title' => __( 'Favicon', 'base' ),
+		'priority' => 110
+	) );
+	
+	$wp_customize->add_setting( 'options_theme_customizer[favicon_uploader]', array(
+		'type' => 'option'
+	) );
+	
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'favicon_uploader', array(
+		'label' => $options['favicon_uploader']['name'],
+		'section' => 'options_theme_customizer_favicon',
+		'settings' => 'options_theme_customizer[favicon_uploader]'
+	) ) );	
 }
 
-/**
- * Donation option
- */
 
-add_action('optionsframework_after','base_options_after', 100);
-function base_options_after() { ?>
-	<div id="optionsframework-metabox" class="metabox-holder">
-	<div id="optionsframework" class="postbox">
-    <h3>Make a donation</h3>
-    <div class="inside">
-    <p>If you like the theme and wish to support the future development make a small donation.
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-	<input type="hidden" name="cmd" value="_s-xclick">
-	<input type="hidden" name="hosted_button_id" value="L3J7LWDAYRUH6">
-	<input type="image" src="https://www.paypalobjects.com/it_IT/IT/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - Il metodo rapido, affidabile e innovativo per pagare e farsi pagare.">
+add_action('optionsframework_after','optionscheck_display_sidebar', 100);
+
+function optionscheck_display_sidebar() { ?>
+    <div class="metabox-holder upgrade">
+        <div class="postbox">
+            <h3>Upgrade to premium version</h3>
+                <div class="inside">
+                    <p>Upgrade to the premium version to get access to advanced options.</p>
+                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="TBQRFHBL5SZ8Y">
+<input type="image" src="http://www.iografica.it/wp/wp-content/uploads/2014/03/base-wp-premium-buynowbutton.jpg" border="0" name="submit" alt="PayPal - Il metodo rapido, affidabile e innovativo per pagare e farsi pagare.">
 <img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1">
-</form>    
-    </p>
-	</div>
+</form>
+<p>With premium version you have access to priority support and lifetime upgrade.</br>
+We offer a 7 day full refund if you're not happy with your purchase.</p>
+                </div>
+        </div>
     </div>
-	</div>
 <?php }
+

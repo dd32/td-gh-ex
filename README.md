@@ -1,4 +1,4 @@
-Base Theme
+Base WP
 ---------------
 Base WP is a basic blog or business WordPress theme, based on _s with integration of skeleton 960 grid. 
 
@@ -24,3 +24,7 @@ Changelog
 
 #### 1.06
 * Minor bug fix.
+
+#### 1.07
+* Fix css bug on serch page.
+* Add upload favicon option.
