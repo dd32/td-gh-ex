@@ -18,24 +18,23 @@ class hemingway_video_widget extends WP_Widget {
 		
 		echo $before_widget;
 		
-		
 		if (!empty($widget_title)) {
 		
 			echo $before_title . $widget_title . $after_title;
 			
 		} ?>
 			
-			<?php if (strpos($videourl,'.mp4') !== false) : ?>
+			<?php if (strpos($video_url,'.mp4') !== false) : ?>
 				
 				<video controls>
-				  <source src="<?php echo $videourl; ?>" type="video/mp4">
+				  <source src="<?php echo $video_url; ?>" type="video/mp4">
 				</video>
 																		
 			<?php else : ?>
 				
 				<?php 
 				
-					$embed_code = wp_oembed_get($videourl); 
+					$embed_code = wp_oembed_get($video_url); 
 					
 					echo $embed_code;
 					
