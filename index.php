@@ -1,11 +1,11 @@
 <?php get_header();?>
 
-<div id="content">
+<div id="content" class="cf">
 	<?php do_action('ast_hook_before_content'); ?>
 
 	<!-- Widgets: Before Content -->
 	<?php if ( is_active_sidebar('widgets_before_content') )  : ?>
-		<div id="widgets-wrap-before-content"><?php dynamic_sidebar('widgets_before_content'); ?></div>
+		<div id="widgets-wrap-before-content" class="cf"><?php dynamic_sidebar('widgets_before_content'); ?></div>
 	<?php endif ; ?>
 
 	<?php if ( is_category() || is_tag() || is_date() || is_search() ) : ?>
@@ -35,14 +35,14 @@
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 			<?php if ( !is_singular() ) : ?>
-					<?php get_template_part( 'loop' ); ?>
+					<?php get_template_part( 'loop', 'blog' ); ?>
 			<?php else : ?>
 					<?php get_template_part( 'loop', 'single' ); ?>
 			<?php endif; ?>
 
 	<?php endwhile; else: ?>
 
-		<div class="wrap-404-box">
+		<div class="wrap-404-box cf">
 			<h2><?php _e('Search Results: Nothing Found', 'asteroid'); ?></h2>
 			<p><?php _e('Try a new keyword.', 'asteroid'); ?></p>
 			<?php get_search_form(); ?>
@@ -56,12 +56,12 @@
 	<!-- Bottom Post Navigation -->
 	<?php if ( !is_singular() ) : ?>
 
-		<div id="bottom-navi">
+		<div id="bottom-navi" class="cf">
 			<?php if ( function_exists('wp_pagenavi') ):?>
 				<?php wp_pagenavi(); ?>
 			<?php else : ?>
-				<div class="previous-link"><?php next_posts_link( __( '&laquo; Older posts', 'asteroid' ) ); ?></div>
-				<div class="next-link"><?php previous_posts_link( __( 'Newer posts &raquo;', 'asteroid' ) ); ?></div>
+				<div class="link-prev"><?php next_posts_link( __( '&laquo; Older posts', 'asteroid' ) ); ?></div>
+				<div class="link-next"><?php previous_posts_link( __( 'Newer posts &raquo;', 'asteroid' ) ); ?></div>
 			<?php endif; ?>
 		</div>
 

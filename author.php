@@ -1,8 +1,6 @@
 <?php get_header(); ?>
 
-<div id="content">
-
-<?php if ( have_posts() ) { the_post(); } ?>
+<div id="content" class="cf">
 
 	<div id="author-<?php the_author_meta( 'ID' ); ?>">
 
@@ -21,36 +19,29 @@
 		</div>
 
 		<div class="author-latest-posts">
-		<h4 class="author-latest-posts-title"><?php _e('Latest Posts by the Author', 'asteroid'); ?></h4>
-			<?php $args = array(
-				'posts_per_page' 	=> 20,
-				'author' 			=> get_the_author_meta( 'ID' ),
-				'orderby'			=> 'date',
-				'suppress_filters'	=> 0 );
+			<h4 class="author-latest-posts-title"><?php _e('Latest Posts by the Author', 'asteroid'); ?></h4>
+			<?php
+				$postsQuery = new WP_Query( array(
+					'posts_per_page' 	=> 20,
+					'author' 			=> get_the_author_meta( 'ID' ),
+					'orderby'			=> 'date',
+					'suppress_filters'	=> 0 )
+				);
 
-				$postsQuery = new WP_Query( $args );
 				if ( $postsQuery->have_posts() ) :
 			?>
 
 			<ol class="author-latest-posts-list">
 				<?php while ( $postsQuery->have_posts() ) : $postsQuery->the_post(); ?>
-					<li><a href="<?php the_permalink(); ?>">
-						<?php
-							if ( the_title( '', '', false ) != '' ){
-								echo the_title();
-							}
-							else {
-								echo __('Untitled', 'asteroid');
-							}
-						?>
-					</a></li>
+					<li><a href="<?php the_permalink(); ?>"><?php echo get_the_title() != '' ? get_the_title() : __('Untitled', 'asteroid'); ?></a></li>
 				<?php endwhile; ?>
 			</ol>
 
 			<?php endif; wp_reset_postdata(); ?>
-
 		</div>
+
 	</div>
+
 </div>
 
 <?php get_sidebar(); ?>

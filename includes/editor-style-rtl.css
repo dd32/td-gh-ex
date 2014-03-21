@@ -2,10 +2,9 @@ blockquote {
 	border-left: none;
 	border-right: 6px solid #666;
 }
+
 blockquote cite {
-    float: left;
+    text-align: left;
 }
 
-caption, th, td {
-	text-align: right;
-}
+.wp-caption-dd {text-align: right;}

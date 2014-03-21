@@ -4,40 +4,36 @@ html {background: #EEE;}
     background: #fff;
 	padding: 10px;
 	margin: 10px auto;
-	font-family: arial, sans-serif;
+	font-family: Arial, sans-serif;
 	font-size: 14px;
-	font-weight: normal;
-	line-height: 21px;
+	line-height: 1.55;
 	box-shadow: 0px 0px 3px black;
 }
 
-h1 {font-size:28px;}
-h2 {font-size:24px;}
-h3 {font-size:20px;}
-h4 {font-size:18px;}
-h5 {font-size:14px;}
-h6 {font-size:12px;}
+h1 {font-size: 28px;}
+h2 {font-size: 24px;}
+h3 {font-size: 20px;}
+h4 {font-size: 18px;}
+h5 {font-size: 14px;}
+h6 {font-size: 12px;}
 
 h1, h2, h3, h4, h5, h6 {
+	clear: none;
+	margin: 14px 0 4px 0;
 	font-weight: bold;
 	line-height: 1.2; 
 	text-shadow: 0 1px 1px #999;
-	margin: 14px 0 4px 0;
-	clear: none;
-}
-
-.mceContentBody h1:first-child, .mceContentBody h2:first-child,
-.mceContentBody h3:first-child, .mceContentBody h4:first-child,
-.mceContentBody h5:first-child, .mceContentBody h6:first-child {
-    margin-top: 0;
 }
 
 p { 
 	margin-top: 4px; 
-	margin-bottom: 14px; 
+	margin-bottom: 12px; 
 }
 
-ul li {margin-top: 4px; margin-bottom: 6px;}
+li {
+	margin-top: 4px;
+	margin-bottom: 6px;
+}
 
 blockquote {
 	background: #E0E0E0;
@@ -45,13 +41,16 @@ blockquote {
 	clear: both;
     margin: 10px;
     padding: 8px 12px;
-	overflow: hidden;
-}
-blockquote p {
 	font-style: italic;
-	margin: 0;
 }
-blockquote cite {float: right; margin: 6px auto 2px;}
+
+blockquote cite {
+	display: block;
+	margin-top: 8px;
+	text-align: right;
+	font-style: normal;
+	font-size: small;
+}
 
 pre {
     background: #EEE;
@@ -62,12 +61,59 @@ pre {
 	word-wrap: normal;
 }
 
+pre, code {
+	font-size: 13px;
+	line-height: 1.55;
+}
+
+dt {font-weight: bold;}
+
+table {
+	border-collapse: collapse;
+	width: 98%;
+	margin: 10px auto;
+}
+th {
+	background-color: #DDD;
+	font-weight: normal;
+}
+th, td {
+	border: 1px solid #AAA !important;
+	padding: 8px 10px;
+	font-family: Arimo, Sans-serif;
+	font-size: 14px;
+}
+
 .mceContentBody .wp-caption, .mceContentBody img {
 	max-width: 100%;
 	height: auto;
 }
 
-.alignnone {margin: 8px 0;}
-.alignleft {margin: 8px 8px 8px 0;}
-.alignright {margin: 8px 0 8px 8px;}
-.aligncenter {margin: 8px auto;}
+.alignnone {
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+.alignleft {
+	float: left;
+	margin: 4px 8px 4px 0;
+}
+.alignright {
+	float: right;
+	margin: 4px 0 4px 8px;
+}
+.aligncenter {
+	display: block;
+	margin: 4px auto;
+}
+
+.wp-caption-text {
+	margin: 0;
+	padding: 0 5px;
+	color: #555;
+	font-size: 12px;
+	line-height: 1.6;
+}
+
+.wp-caption-dd {text-align: left;}
+
+.mce-wp-more {height: 12px !important;}

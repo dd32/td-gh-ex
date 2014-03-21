@@ -4,7 +4,7 @@
  * @package Asteroid
  *
  */
-$ast_version = "1.1.5";
+$ast_version = "1.1.6";
 /*-------------------------------------
 	Setup Theme Options
 --------------------------------------*/
@@ -18,6 +18,11 @@ function asteroid_enqueue_styles() {
 	global $ast_version;
 	wp_enqueue_style( 'asteroid-main', get_stylesheet_uri(), array(), $ast_version );
 
+	if ( asteroid_option('ast_responsive_disable', 0) != 1 ) {
+		wp_enqueue_style( 'asteroid-responsive', get_template_directory_uri() . '/responsive.css', array(), $ast_version );
+		wp_enqueue_script( 'asteroid-nav', get_template_directory_uri() . '/includes/nav-toggle.js', array( 'jquery' ), $ast_version, true );
+	}
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
 }
@@ -28,6 +33,7 @@ add_action( 'wp_enqueue_scripts', 'asteroid_enqueue_styles' );
 	Asteroid Theme Setup
 --------------------------------------*/
 function asteroid_theme_setup() {
+	global $content_width;
 
 	load_theme_textdomain( 'asteroid', get_template_directory() . '/languages' );
 
@@ -57,10 +63,14 @@ function asteroid_theme_setup() {
 		'admin-preview-callback' => ''
 	) );
 
+	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
+
 	add_filter( 'widget_text', 'do_shortcode' );
 
+	if ( asteroid_option('ast_responsive_disable', 0) != 1 ) add_action( 'wp_head', 'asteroid_responsive_meta', 1 );
+
 	if ( !isset( $content_width ) ) $content_width = asteroid_option('ast_content_width') - 20;
-	
+
 	add_action( 'wp_head', 'asteroid_print_head_codes' );
 	add_action( 'wp_head', 'asteroid_print_layout' );
 
@@ -70,6 +80,7 @@ function asteroid_theme_setup() {
 	if ( asteroid_option('ast_custom_css') ) add_action( 'wp_head', 'asteroid_print_custom_css', 990 );
 	if ( asteroid_option('ast_post_editor_style') == 0 ) asteroid_wp_editor_style();
 
+	if ( asteroid_option('ast_menu_search') == 1 ) add_filter( 'wp_nav_menu_items', 'asteroid_menu_search_form', 10, 2 );
 }
 add_action( 'after_setup_theme', 'asteroid_theme_setup' );
 
@@ -219,28 +230,11 @@ function asteroid_wp_title( $title, $sep ) {
 add_filter( 'wp_title', 'asteroid_wp_title', 10, 2 );
 
 
-/*----------------------------------------
-	Add Parent Menu Class
------------------------------------------*/
-function asteroid_add_parent_menu_class( $items ) {
-	$parents = array();
-	foreach ( $items as $item ) {
-		if ( $item->menu_item_parent && $item->menu_item_parent > 0 ) $parents[] = $item->menu_item_parent;
-	}
-	foreach ( $items as $item ) {
-		if ( in_array( $item->ID, $parents ) ) $item->classes[] = 'parent-menu-item';
-	}
-	return $items;
+function asteroid_responsive_meta() {
+?>
+<meta name="viewport" content="width=device-width" />
+<?php
 }
-add_filter( 'wp_nav_menu_objects', 'asteroid_add_parent_menu_class' );
-
-function asteroid_add_parent_menu_class_default( $css_class, $page, $depth, $args ) {
-    if (!empty($args['has_children']))
-        $css_class[] = 'parent-menu-item';
-    return $css_class;
-}
-add_filter( 'page_css_class', 'asteroid_add_parent_menu_class_default', 10, 4 );
-
 
 /*-------------------------------------
 	Print Head Codes - Theme Setup
@@ -326,23 +320,38 @@ echo '
 	Add Custom CSS to Post Editor
 -----------------------------------------*/
 function asteroid_wp_editor_style() {
-	add_filter( 'mce_css', 'asteroid_wp_editor_width' );
-	add_editor_style( array( 'includes/editor-style.css', 'includes/content-width.php' ) );
+	add_editor_style( 'includes/editor-style.css' );
+	add_action( 'before_wp_tiny_mce', 'asteroid_tinymce_width' );
 }
 
-function asteroid_wp_editor_width( $mce_css ) {
+function asteroid_tinymce_width() {
 	global $content_width;
-	$mce_css = str_replace( 'includes/content-width.php', add_query_arg( 'content_width', $content_width, 'includes/content-width.php' ), $mce_css );
-	return $mce_css;
+?>
+<script type="text/javascript">
+jQuery( document ).ready( function() {
+	var editor_width = '.mceContentBody {width: <?php echo ( $content_width > 800 ) ? 800 : $content_width; ?>px;}';
+	var checkInterval = setInterval(
+		function() {
+			if ( 'undefined' !== typeof( tinyMCE ) ) {
+				if ( tinyMCE.activeEditor && ! tinyMCE.activeEditor.isHidden() ) {
+					jQuery( '#content_ifr' ).contents().find( 'head' ).append( '<style>' + editor_width + '</style>' );
+					clearInterval( checkInterval );
+				}
+			}
+	}, 500 );
+} );
+</script>
+<?php
 }
 
-/*-------------------------------------
-	Remove rel from Categories
-	HTML5 Validation
---------------------------------------*/
-function asteroid_remove_category_rel($output) {
-	$output = str_replace(' rel="category tag"', '', $output);
-	return $output;
+function asteroid_menu_search_form( $items, $args ) {
+	if( $args->theme_location == 'ast-menu-primary' ) {
+		$sf = '<li class="menu-item menu-item-search">';
+		$sf .= '<form id="nav-search-form" role="search" method="get" action="' . home_url( '/' ) . '">';
+		$sf .= '<label><span class="screen-reader-text">Search for:</span><input type="search" value="Search" onfocus="if (this.value == \'Search\') {this.value = \'\';}" onblur="if (this.value == \'\') {this.value = \'Search\';}" name="s" /></label>';
+		$sf .= '<input type="submit" value="" />';
+		$sf .= '</form>';
+		$sf .= '</li>';
+		return $items . $sf;
+	}
 }
-add_filter('wp_list_categories', 'asteroid_remove_category_rel');
-add_filter('the_category', 'asteroid_remove_category_rel');

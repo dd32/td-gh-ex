@@ -355,7 +355,7 @@ class Asteroid_Theme_Options {
 
 		$this->settings['ast_head_codes'] = array(
 			'title'   => __( 'Custom &lt;Head&gt; Codes', 'asteroid' ),
-			'desc'    => __( 'Insert &lt;Head&gt; codes here. &nbsp;&nbsp; e.g. Google Analytics, Metas, Fonts, Scripts and what not.', 'asteroid' ),
+			'desc'    => __( 'Insert &lt;Head&gt; codes here. &nbsp; e.g. Google Analytics, Metas, Fonts, Scripts and what not.', 'asteroid' ),
 			'std'     => '',
 			'type'    => 'textarea',
 			'section' => 'general'
@@ -363,7 +363,7 @@ class Asteroid_Theme_Options {
 
 		$this->settings['ast_hook_footer_links'] = array(
 			'title'   => __( 'Footer Links', 'asteroid' ),
-			'desc'    => __( 'Insert your footer links here. &nbsp;&nbsp; Accepts html codes.', 'asteroid' ),
+			'desc'    => __( 'Insert your footer links here. &nbsp; Accepts html codes.', 'asteroid' ),
 			'std'     => '',
 			'type'    => 'textarea',
 			'section' => 'general'
@@ -464,7 +464,7 @@ class Asteroid_Theme_Options {
 		$this->settings['ast_blog_comment_links'] = array(
 			'section' => 'post-page',
 			'title'   => __( 'Blog View Comments', 'asteroid' ),
-			'desc'    => __( 'Show comment count and comment link below excerpts.', 'asteroid' ),
+			'desc'    => __( 'Show comment count below excerpts.', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 0
 		);
@@ -621,7 +621,15 @@ class Asteroid_Theme_Options {
 		);
 
 		/* Miscellaneous
-		===========================================*/		
+		===========================================*/
+		$this->settings['ast_responsive_disable'] = array(
+			'section' => 'misc',
+			'title'   => __( 'Disable Responsive Layout', 'asteroid' ),
+			'desc'    => __( 'Check if you do not want the layout to resize and adapt to the screen size.', 'asteroid' ),
+			'type'    => 'checkbox',
+			'std'     => 0
+		);
+
 		$this->settings['ast_post_editor_style'] = array(
 			'section' => 'misc',
 			'title'   => __( 'Disable Post Editor Style', 'asteroid' ),

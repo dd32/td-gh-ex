@@ -1,15 +1,33 @@
 <?php if ( post_password_required() ) return; ?>
 
-<?php if ( $comments ) : ?>
-	<div id="comments-wrap">
-		<h3><?php _e('Comments', 'asteroid'); ?></h3>
-		<ul><?php wp_list_comments( 'avatar_size=48' ); ?></ul>
-		<div class="pagination"><?php paginate_comments_links(); ?></div>
-	</div>
-<?php endif; ?>
+<div id="comments" class="cf">
+	<?php if ( have_comments() ) : ?>
 
-<?php if ( comments_open() || pings_open() ) : ?>
+		<div id="comment-title" class="cf">
+			<h3><?php _e('Comments', 'asteroid'); ?></h3>
+		</div>
+
+		<ol class="comment-list">
+			<?php
+				wp_list_comments( array(
+					'style'       => 'ol',
+					'short_ping'  => true,
+					'avatar_size' => 50,
+				) );
+			?>
+		</ol>
+
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
+			<nav class="comment-navigation">
+				<div class="comment-nav"><?php paginate_comments_links(); ?></div>
+			</nav>
+		<?php endif; ?>
+
+	<?php endif; ?>
+
+	<?php if ( !comments_open() && get_comments_number() ) : ?>
+		<div id="respond"><p id="closed"><?php _e('Comments are closed', 'asteroid'); ?></p></div>
+	<?php endif; ?>
+
 	<?php comment_form(); ?>
-<?php elseif ( $comments ) : ?>
-	<div id="respond"><p id="closed"><?php _e('Comments Closed', 'asteroid'); ?></p></div>
-<?php endif; ?>
+</div>

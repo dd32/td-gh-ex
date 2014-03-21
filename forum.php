@@ -6,9 +6,9 @@ if (
 	( ( get_post_type() != 'topic' ) && ( asteroid_option('ast_bbpress_forum_full_width') == 1 ) ) 
 ) :
 ?>
-	<div id="content-nosidebar">
+	<div id="content-nosidebar" class="cf">
 <?php else : ?>
-	<div id="content">
+	<div id="content" class="cf">
 <?php endif; ?>
 	<?php do_action('ast_hook_before_content'); ?>
 
