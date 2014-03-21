@@ -52,3 +52,8 @@ and we will include it within the theme from next version update.
 
 = Version 1.0.1 =
 * Added the link for the free image used in the screenshot from where it was taken.
+
+= Version 1.0.2 =
+* Used different featured image size for the recent work widget.
+* Small fix in footer text.
+* Fixed a bug which was showing excerpt in the single post view.

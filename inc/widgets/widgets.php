@@ -636,7 +636,7 @@ class spacious_testimonial_widget extends WP_Widget {
 					<div class="<?php echo $class; ?>">
 						<?php 
 						if ( has_post_thumbnail( ) ) {
-							echo '<div class="service-image"><a title="'.get_the_title().'"href="'.get_permalink().'">'.get_the_post_thumbnail( $post->ID,'featured').'</a></div>';				
+							echo '<div class="service-image"><a title="'.get_the_title().'"href="'.get_permalink().'">'.get_the_post_thumbnail( $post->ID,'featured-blog-medium').'</a></div>';				
 						}
 						?>
 					</div>			

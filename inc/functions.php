@@ -460,7 +460,7 @@ add_action( 'spacious_footer_copyright', 'spacious_footer_copyright', 10 );
  */
 if ( ! function_exists( 'spacious_footer_copyright' ) ) :
 function spacious_footer_copyright() {
-	$spacious_footer_copyright = '<div class="copyright">'.__( 'Copyright &copy; ', 'spacious' ).'[the-year] [site-link] '.__( 'Theme by: '.'spacious' ).'[tg-link] '.__( 'Powered by: ', 'spacious' ).'[wp-link]'.'</div>';
+	$spacious_footer_copyright = '<div class="copyright">'.__( 'Copyright &copy; ', 'spacious' ).'[the-year] [site-link] '.__( 'Theme by: ', 'spacious' ).'[tg-link] '.__( 'Powered by: ', 'spacious' ).'[wp-link]'.'</div>';
 	echo do_shortcode( $spacious_footer_copyright );
 }
 endif;

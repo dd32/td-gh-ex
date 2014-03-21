@@ -16,7 +16,7 @@
 		<div id="content" class="clearfix">
 			<?php while ( have_posts() ) : the_post(); ?>
 			
-				<?php get_template_part( 'content', get_post_format() ); ?>
+				<?php get_template_part( 'content', 'single' ); ?>
 
 				<?php get_template_part( 'navigation', 'archive' ); ?>
 
