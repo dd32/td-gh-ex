@@ -261,6 +261,11 @@ function optionsframework_page() {
 	settings_errors(); ?>
 
 	<div id="optionsframework-wrap" class="wrap">
+	<div style="background: #333; color: #fff; padding: 20px; font-size: 18px;">
+			WP FlatThirteen by  <a href="http://crayonux.com" stye="color: #fff">Crayonux.com</a>  &nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="http://crayonux.com/questions/" stye="color: #fff">Help</a>
+	</div>
+	
     <?php screen_icon( 'themes' ); ?>
     <h2 class="nav-tab-wrapper">
         <?php echo optionsframework_tabs(); ?>
