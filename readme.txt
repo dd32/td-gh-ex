@@ -9,6 +9,7 @@ Catch Evolution theme is translation ready.
 Added Translation for Spanish by Ruben Ramos Fernandez (batmovil69@hotmail.com)
 Added Translation for French by Sebastian Chamusard (admin78@orange.fr)
 Added Translation for Swedish by Andre Fahlstrom (admin@andrefahlstrom.se)
+Added Translation for Germany by Knut Pfefferkorn (knut.pfefferkorn@gmail.com) 
 
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
@@ -26,9 +27,10 @@ The screenshot's visible images are as follow:
 Scripts used in the site are as below:
 1. Menu script is licensed under MIT license. URI: http://tinynav.viljamis.com
 2. Responsive Video script is licensed under WTFPL license. URI: https://github.com/davatron5000/FitVids.js/ 
-3. IE8 scrpt uses HTML5 script licensed under MIT/GPL2 and Placeholder script (https://github.com/mathiasbynens/jquery-placeholder) licensed under MIT
+3. IE8 scrpt uses HTML5 script (https://github.com/aFarkas/html5shiv) licensed under MIT/GPL2 and Placeholder script (https://github.com/mathiasbynens/jquery-placeholder) licensed under MIT
 4. jQuery Cookie script is licensed under MIT license. URI: https://github.com/carhartl/jquery-cookie
 5. Pngfix script is licensed under MIT license. URI: http://www.dillerdesign.com/experiment/DD_belatedPNG/
+6. Slider script uses Cycle script http://jquery.malsup.com/cycle/ lincensed under MIT/GPL license
 
 
 == Post ID shown in the All Posts Table ==
@@ -47,13 +49,16 @@ dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-si
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 
 == Changelog ==
+Version 1.6
+* Added Germany translation de_DE.po and de_DE.mo
+
 Version 1.5
 * Fixed responsive css which hides default search widget in header sidebar
-* Fixed menu white-spaces css issues
-* Update responsive menu script
-* Update responsive video script
-* Update slider script
-* Update IE script
+* Fixed menu white-space css issues
+* Updated responsive menu script
+* Updated responsive video script
+* Updated slider script
+* Updated IE script
 
 Version 1.4.1
 * Remove backward compatibility check function_exists( 'get_custom_header') and function_exists( 'wp_get_theme' )
