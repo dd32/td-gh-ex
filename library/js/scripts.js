@@ -124,13 +124,5 @@ jQuery(document).ready(function($){
         .trigger('sidebarSizer');
 		
 	sidebarSizer();
-	
-	
-	/* Opens popup for social share buttons */
-	
-	$('.virality-social-wrap a').click(function(event) {
-   		event.preventDefault();
-    	window.open($(this).attr("href"), "popupWindow", "width=700,height=450,scrollbars=yes");
-	});
 
 });

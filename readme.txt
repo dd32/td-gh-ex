@@ -53,9 +53,24 @@ This theme is bundled with Modernizr
  * Available under the BSD and MIT licenses: www.modernizr.com/license/
  
  
+================================================
+This theme is bundled with TGM-Plugin-Activation
+================================================
+ * TGM-Plugin-Activation v2.4.0 (https://github.com/thomasgriffin/TGM-Plugin-Activation)
+ * Plugin installation and activation for WordPress themes.
+ * Copyright (c) 2014, Thomas Griffin (thomas@thomasgriffinmedia.com)
+ * http://opensource.org/licenses/gpl-2.0.php GPL v2 or later
+ 
+ 
 =================================
 CHANGELOG
 =================================
+Version 1.0.2
+ * Removed the social sharing and opengraph functions
+ * Added the TGM Plugin Activation that recommends users to download and install the 'Social Share by WP Dev Shed' plugin (http://wordpress.org/plugins/social-share-by-wp-dev-shed/)
+ * Minor tweaks on the Customizer options
+ * Minor css fixes
+
 Version 1.0.1
  * New function that adds Facebook opengraph metadata
 

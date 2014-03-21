@@ -35,7 +35,7 @@
 
       </div> 
       
-      <?php if (  get_theme_mod( 'virality_enable_nav' ) ) : ?>
+      <?php if ( ! get_theme_mod( 'virality_disable_nav' ) ) : ?>
       <nav id="access" role="navigation">
         <div class="inner-nav">
         <h1 class="assistive-text section-heading"><?php _e( 'Main menu', 'virality' ); ?></h1>
@@ -44,7 +44,6 @@
         </div>
       </nav><!-- #access -->
       <?php endif; ?>
-      
       
 	</header><!-- #branding -->
 

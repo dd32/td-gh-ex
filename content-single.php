@@ -9,25 +9,11 @@
 		</div><!-- .entry-meta -->
         <?php endif; ?>
 	</header><!-- .entry-header -->
-    
-    <?php if ( ! get_theme_mod('virality_social_share') ) : ?>
-      <div class="virality-social-wrap">
-    	<a href="<?php echo esc_url('http://www.facebook.com/share.php?u='); the_permalink(); ?>" class="virality-social-fb" target="_blank"><?php _e('Share on Facebook', 'virality'); ?></a>
-        <a href="<?php echo esc_url('http://twitter.com/home?status='); the_title(); echo esc_attr('%0D%0A'); the_permalink(); ?>" class="virality-social-tw" target="_blank"><?php _e('Share on Twitter', 'virality'); ?></a>
-      </div>
-    <?php endif; ?>
 
 	<div class="entry-content post-content">
 		<?php the_content(); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'virality' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
-    
-    <?php if ( ! get_theme_mod('virality_social_share') ) : ?>
-      <div class="virality-social-wrap">
-    	<a href="<?php echo esc_url('http://www.facebook.com/share.php?u='); the_permalink(); ?>" class="virality-social-fb" target="_blank"><?php _e('Share on Facebook', 'virality'); ?></a>
-        <a href="<?php echo esc_url('http://twitter.com/home?status='); the_title(); echo esc_attr('%0D%0A'); the_permalink(); ?>" class="virality-social-tw" target="_blank"><?php _e('Share on Twitter', 'virality'); ?></a>
-      </div>
-    <?php endif; ?>
 
 	<?php if ( get_theme_mod('virality_enable_meta') ) : ?>
     <footer class="entry-meta">
