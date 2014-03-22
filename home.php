@@ -12,6 +12,9 @@
  */
 global $urvr;
 get_header(); ?>
+<?php if( is_front_page() ) : ?>
+	<div id="content" class="site-content container">
+<?php endif; ?>
 	<div class="row">
 
 	<?php if( isset( $urvr['layout'] ) && $urvr['layout'] == 2 ) : ?>
@@ -66,5 +69,5 @@ get_header(); ?>
 	<?php if( ! isset( $urvr['layout'] ) ) : ?>
 		<?php get_sidebar(); ?>
 	<?php endif; ?>
-	
+		
 <?php get_footer(); ?>

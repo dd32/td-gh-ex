@@ -47,11 +47,8 @@ function urvr_register_required_plugins() {
             'name'               => 'Redux Framework', // The plugin name.
             'slug'               => 'redux-framework', // The plugin slug (typically the folder name).
             'source'             => URVR_INCLUDES_DIR . '/plugins/redux-framework.3.1.8.zip', // The plugin source.
-            'required'           => true, // If false, the plugin is only 'recommended' instead of required.
+            'required'           => false, // If false, the plugin is only 'recommended' instead of required.
             'version'            => '3.1.8', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
-            'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-            'force_deactivation' => true, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
-            'external_url'       => '', // If set, overrides default API URL and points to an external URL.
         ),
 
 

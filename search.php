@@ -7,6 +7,11 @@
 
 get_header(); ?>
 <div class="row">
+
+	<?php if( isset( $urvr['layout'] ) && $urvr['layout'] == 2 ) : ?>
+		<?php get_sidebar(); ?>
+	<?php endif; ?>
+
 	<section id="primary" class="content-area two-thirds column span9">
 		<main id="main" class="site-main" role="main">
 
@@ -23,7 +28,13 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php urvr_posts_nav(); ?>
+			<?php 
+				if( $urvr['pagenavi'] && function_exists( 'urvr_pagination' ) ) : 
+					urvr_pagination();
+				else :
+					urvr_posts_nav();
+				endif; 
+			?>
 
 		<?php else : ?>
 
@@ -36,5 +47,12 @@ get_header(); ?>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
-<?php get_sidebar(); ?>
+	<?php if( isset( $urvr['layout'] ) && $urvr['layout'] == 3 ) : ?>
+		<?php get_sidebar(); ?>
+	<?php endif; ?>
+
+	<?php if( ! isset( $urvr['layout'] ) ) : ?>
+		<?php get_sidebar(); ?>
+	<?php endif; ?>
+	
 <?php get_footer(); ?>

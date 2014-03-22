@@ -276,8 +276,8 @@ if (!class_exists("Redux_Framework_sample_config")) {
                         'title' => __('Main Layout', TEXTDOMAIN ), 
                         'subtitle' => __('Select main content and sidebar alignment.', TEXTDOMAIN ),
                         'options' => array(
-                                '2' => array('alt' => '2 Column Left', 'img' => ReduxFramework::$_url.'assets/img/2cl.png'),
-                                '3' => array('alt' => '2 Column Right', 'img' => ReduxFramework::$_url.'assets/img/2cr.png'),
+                                '2' => array('alt' => 'Right Sidebar', 'img' => ReduxFramework::$_url.'assets/img/2cl.png'),
+                                '3' => array('alt' => 'Left Sidebar', 'img' => ReduxFramework::$_url.'assets/img/2cr.png'),
                             ),
                         'default' => '3'
                         ),
@@ -298,7 +298,6 @@ if (!class_exists("Redux_Framework_sample_config")) {
                         'mode' => 'css',
                   'theme' => 'monokai',
                         'desc' => 'Possible modes can be found at <a href="http://ace.c9.io" target="_blank">http://ace.c9.io/</a>.',
-                        'default' => "#header{\nmargin: 0 auto;\n}"
                         )
                 )
             );
@@ -338,7 +337,7 @@ if (!class_exists("Redux_Framework_sample_config")) {
                         'type' => 'switch', 
                         'title' => __('Site Description', TEXTDOMAIN),
                         'subtitle'=> __('Enable to show site description in header.', TEXTDOMAIN),
-                        "default"       => 0,
+                        "default"       => 1,
                         'on' => 'Enable',
                         'off' => 'Disable',
                         ),
@@ -388,8 +387,7 @@ if (!class_exists("Redux_Framework_sample_config")) {
                         'type' => 'textarea',
                         'title' => __('Tracking Code', TEXTDOMAIN), 
                         'subtitle' => __('Paste your Google Analytics (or other) tracking code here. This will be added into the footer template of your theme.', TEXTDOMAIN),
-                        'validate' => 'js',
-                        'desc' => 'Validate that it\'s javascript!',
+                        'desc' => 'Enter code without "script" tags',
                         ),
 
                     array(

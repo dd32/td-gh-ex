@@ -23,14 +23,9 @@ if ( ! function_exists( 'urvr_setup' ) ) :
  */
 function urvr_setup() {
 
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on URVR, use a find and replace
-	 * to change TEXTDOMAIN to the name of your theme in all the template files
-	 */
-	load_theme_textdomain( URVR_INCLUDES_DIR . '/languages' );
-
+	// Makes theme translation ready
+	load_theme_textdomain( TEXTDOMAIN, URVR_LANGUAGES_DIR );
+	
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
@@ -159,8 +154,6 @@ require URVR_INCLUDES_DIR . '/extras.php';
  * Load Theme Options Page
  * This uses Redux Framework Plugin
  */
-
-
 require_once( URVR_INCLUDES_DIR . '/load-plugins.php' );
 if( class_exists('ReduxFrameworkPlugin')) {
 	require_once( URVR_INCLUDES_DIR . '/theme-options-config.php' );

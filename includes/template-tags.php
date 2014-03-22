@@ -257,7 +257,7 @@ if( ! function_exists( 'urvr_pagination' )) {
 		if($start_page <= 0) {
 			$start_page = 1;
 		}
-		echo $before.'<nav class="page-navigation"><ol class="urvr_pagination clearfix">'."";
+		echo $before.'<nav class="page-navigation"><ol class="urvr_page_navi clearfix">'."";
 		if ($start_page >= 2 && $pages_to_show < $max_page) {
 			$first_page_text = __( "First", TEXTDOMAIN );
 			echo '<li class="bpn-first-page-link"><a href="'.get_pagenum_link().'" title="'.$first_page_text.'">'.$first_page_text.'</a></li>';

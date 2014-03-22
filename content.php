@@ -16,7 +16,7 @@ global $urvr;
 	</div><!-- .entry-summary -->
 	<?php else : ?>
 	<div class="entry-content">
-		<?php if( $urvr['featured-image'] ) : ?>
+		<?php if( isset($urvr['featured-image'] ) && $urvr['featured-image'] ) : ?>
 			<div class="thumb">
 				<?php 
 					if( has_post_thumbnail() && ! post_password_required() ) : 

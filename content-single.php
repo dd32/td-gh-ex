@@ -2,6 +2,7 @@
 /**
  * @package URVR
  */
+global $urvr;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -14,10 +15,12 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php if( has_post_thumbnail() ) : ?>
-			<div class="post-thumb">
-				<?php the_post_thumbnail(); ?>
-			</div>
+		<?php if( isset( $urvr['single-featured-image'] ) && $urvr['single-featured-image'] ) : ?>
+			<?php if( has_post_thumbnail() ) : ?>
+				<div class="post-thumb">
+					<?php the_post_thumbnail(); ?>
+				</div>
+			<?php endif; ?>
 		<?php endif; ?>
 		<?php the_content(); ?>
 		<?php
