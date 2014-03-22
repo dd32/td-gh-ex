@@ -5,7 +5,7 @@ Author: Webriti
 Author URI: http://webriti.com/
 Tags: white,blue, full-width-template, threaded-comments,custom-menu,two-columns,translation-ready, theme-options, sticky-post,responsive-layout
 Description:A Business theme which is ideal for creating a corporate / business website. It boasts of 2 beautifully designed page templates , Home and Blog Page.
-Version: 1.0.8
+Version: 1.0.9
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: 'rambo'
@@ -2382,16 +2382,15 @@ table {border: 1px solid #dddddd;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
-	width: 100%;
-	
+	width: 100%;	
 	}
 table td {
 border-left: 1px solid #dddddd;
 padding: 8px;
 line-height: 20px;
-text-align: left;
+text-align: center;
 vertical-align: top;
-border-top: 1px solid #dddddd;
+border: 1px solid #dddddd;
 }
 table th {
 border-left: 1px solid #dddddd;
