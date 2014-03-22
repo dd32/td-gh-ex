@@ -57,6 +57,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
+@Version : 1.4
+1.Added More Styling for tables .
 @ Version: 1.3.9
 1. Added Pink strip in 404.php
 @ Version: 1.3.8
