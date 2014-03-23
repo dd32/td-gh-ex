@@ -58,13 +58,10 @@ function blue_planet_validate_options($input){
     $input['social_tumblr']      = esc_url_raw($input['social_tumblr']);
     $input['social_dribbble']    = esc_url_raw($input['social_dribbble']);
     $input['social_deviantart']  = esc_url_raw($input['social_deviantart']);
-    $input['social_wordpress']   = esc_url_raw($input['social_wordpress']);
     $input['social_rss']         = esc_url_raw($input['social_rss']);
-    $input['social_slideshare']  = esc_url_raw($input['social_slideshare']);
     $input['social_instagram']   = esc_url_raw($input['social_instagram']);
-    $input['social_skype']       = esc_url_raw($input['social_skype']);
+    $input['social_skype']       = esc_attr($input['social_skype']);
     $input['social_500px']       = esc_url_raw($input['social_500px']);
-    $input['social_weibo']       = esc_url_raw($input['social_weibo']);
     $input['social_email']       = sanitize_email($input['social_email']);
     $input['social_forrst']      = esc_url_raw($input['social_forrst']);
     $input['social_stumbleupon'] = esc_url_raw($input['social_stumbleupon']);

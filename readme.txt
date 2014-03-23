@@ -59,6 +59,12 @@ dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-si
 - blue_planet_filter_social_sites()
 
 == Changelog ==
+Version 1.0.8
+* Bug fix: front page issue of Main slider
+* Bug fix: Secondary slider invisible in front page when static page is set as front page
+* Bug fix: Skype button link  
+* Other minor bug fixes
+
 Version 1.0.7.3
 * Bug of header image fixed
 

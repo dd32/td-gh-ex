@@ -12,7 +12,17 @@
 
 get_header(); ?>
 	<div id="primary" class="content-area col-md-8 col-sm-12 col-xs-12 <?php echo blue_planet_layout_setup_class(); ?>">
+	<?php
+	//
+	do_action( 'blue_planet_after_primary_open' );
+	//
+	?>
 		<main id="main" class="site-main" role="main">
+		<?php
+		//
+		do_action( 'blue_planet_after_main_open' );
+		//
+		?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
@@ -27,7 +37,17 @@ get_header(); ?>
 
 			<?php endwhile; // end of the loop. ?>
 
+			<?php
+			//
+			do_action( 'blue_planet_before_main_close' );
+			//
+			?>
 		</main><!-- #main -->
+		<?php
+		//
+		do_action( 'blue_planet_before_primary_close' );
+		//
+		?>
 	</div><!-- #primary -->
 
 <?php get_sidebar(); ?>

@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: blue-planet\n"
-"POT-Creation-Date: 2014-02-06 18:07+0545\n"
-"PO-Revision-Date: 2014-02-06 18:07+0545\n"
+"POT-Creation-Date: 2014-03-22 22:21+0545\n"
+"PO-Revision-Date: 2014-03-22 22:24+0545\n"
 "Last-Translator: Nilambar Sharma <nilambar@outlook.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6\n"
+"X-Generator: Poedit 1.5.4\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -23,51 +23,6 @@ msgstr ""
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
-msgstr ""
-
-#: ../../blue-planet/header.php:85
-msgid "Skip to content"
-msgstr ""
-
-#: ../../blue-planet/content-page.php:21
-#: ../../blue-planet/content-single.php:26 ../../blue-planet/content.php:69
-msgid "Pages:"
-msgstr ""
-
-#: ../../blue-planet/content-page.php:26
-#: ../../blue-planet/content-single.php:49 ../../blue-planet/content.php:121
-#: ../../blue-planet/inc/template-tags.php:81
-#: ../../blue-planet/inc/template-tags.php:100
-#: ../../blue-planet/inc/template-tags.php:161
-msgid "Edit"
-msgstr ""
-
-#: ../../blue-planet/functions.php:56
-msgid "Primary Menu"
-msgstr ""
-
-#: ../../blue-planet/functions.php:57
-msgid "Footer Menu"
-msgstr ""
-
-#: ../../blue-planet/functions.php:103
-msgid "Sidebar"
-msgstr ""
-
-#: ../../blue-planet/functions.php:105
-msgid "Default Sidebar"
-msgstr ""
-
-#: ../../blue-planet/functions.php:112
-msgid "Menu Widget Area"
-msgstr ""
-
-#: ../../blue-planet/functions.php:114
-msgid "Widget area in the header. Specially for menu widget"
-msgstr ""
-
-#: ../../blue-planet/functions.php:129
-msgid "Footer Column"
 msgstr ""
 
 #: ../../blue-planet/archive.php:31
@@ -114,6 +69,22 @@ msgstr ""
 msgid "Archives"
 msgstr ""
 
+#: ../../blue-planet/comments.php:37 ../../blue-planet/comments.php:57
+msgid "Comment navigation"
+msgstr ""
+
+#: ../../blue-planet/comments.php:38 ../../blue-planet/comments.php:58
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: ../../blue-planet/comments.php:39 ../../blue-planet/comments.php:59
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: ../../blue-planet/comments.php:69
+msgid "Comments are closed."
+msgstr ""
+
 #: ../../blue-planet/content-none.php:13
 msgid "Nothing Found"
 msgstr ""
@@ -136,31 +107,23 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: ../../blue-planet/search.php:16
-#, php-format
-msgid "Search Results for: %s"
+#: ../../blue-planet/content-page.php:21
+#: ../../blue-planet/content-single.php:26 ../../blue-planet/content.php:69
+msgid "Pages:"
+msgstr ""
+
+#: ../../blue-planet/content-page.php:26
+#: ../../blue-planet/content-single.php:49 ../../blue-planet/content.php:121
+#: ../../blue-planet/inc/template-tags.php:81
+#: ../../blue-planet/inc/template-tags.php:100
+#: ../../blue-planet/inc/template-tags.php:161
+msgid "Edit"
 msgstr ""
 
 #: ../../blue-planet/content-single.php:35
 #: ../../blue-planet/content-single.php:38 ../../blue-planet/content.php:85
 #: ../../blue-planet/content.php:98
 msgid ", "
-msgstr ""
-
-#: ../../blue-planet/comments.php:37 ../../blue-planet/comments.php:57
-msgid "Comment navigation"
-msgstr ""
-
-#: ../../blue-planet/comments.php:38 ../../blue-planet/comments.php:58
-msgid "&larr; Older Comments"
-msgstr ""
-
-#: ../../blue-planet/comments.php:39 ../../blue-planet/comments.php:59
-msgid "Newer Comments &rarr;"
-msgstr ""
-
-#: ../../blue-planet/comments.php:69
-msgid "Comments are closed."
 msgstr ""
 
 #: ../../blue-planet/content.php:66
@@ -183,109 +146,44 @@ msgstr ""
 msgid "% comments"
 msgstr ""
 
-#: ../../blue-planet/inc/template-tags.php:23
-msgid "Posts navigation"
+#: ../../blue-planet/functions.php:52
+msgid "Primary Menu"
 msgstr ""
 
-#: ../../blue-planet/inc/template-tags.php:27
-msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+#: ../../blue-planet/functions.php:53
+msgid "Footer Menu"
 msgstr ""
 
-#: ../../blue-planet/inc/template-tags.php:31
-msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+#: ../../blue-planet/functions.php:102
+msgid "Sidebar"
 msgstr ""
 
-#: ../../blue-planet/inc/template-tags.php:56
-msgid "Post navigation"
+#: ../../blue-planet/functions.php:104
+msgid "Default Sidebar"
 msgstr ""
 
-#: ../../blue-planet/inc/template-tags.php:81
-msgid "Pingback:"
+#: ../../blue-planet/functions.php:111
+msgid "Menu Widget Area"
 msgstr ""
 
-#: ../../blue-planet/inc/template-tags.php:91
+#: ../../blue-planet/functions.php:113
+msgid "Widget area in the header. Specially for menu widget"
+msgstr ""
+
+#: ../../blue-planet/functions.php:128
+msgid "Footer Column"
+msgstr ""
+
+#: ../../blue-planet/header.php:85
+msgid "Skip to content"
+msgstr ""
+
+#: ../../blue-planet/search.php:16
 #, php-format
-msgid "%s <span class=\"says\">says:</span>"
+msgid "Search Results for: %s"
 msgstr ""
 
-#: ../../blue-planet/inc/template-tags.php:104
-msgid "Your comment is awaiting moderation."
-msgstr ""
-
-#: ../../blue-planet/inc/template-tags.php:145
-#, php-format
-msgid "<span class=\"posted-on\">%1$s</span><span class=\"byline\">%2$s</span>"
-msgstr ""
-
-#: ../../blue-planet/inc/theme-custom.php:259
-#, php-format
-msgid "Proudly powered by %s"
-msgstr ""
-
-#: ../../blue-planet/inc/theme-custom.php:261
-#, php-format
-msgid "Theme: %1$s by %2$s."
-msgstr ""
-
-#: ../../blue-planet/inc/extras.php:63
-#, php-format
-msgid "Page %s"
-msgstr ""
-
-#: ../../blue-planet/inc/widgets/advertisement.php:11
-msgid "Widget for displaying ads"
-msgstr ""
-
-#: ../../blue-planet/inc/widgets/advertisement.php:14
-msgid "Advertisement Widget"
-msgstr ""
-
-#: ../../blue-planet/inc/widgets/advertisement.php:75
-#: ../../blue-planet/inc/widgets/social.php:60
-msgid "Title:"
-msgstr ""
-
-#: ../../blue-planet/inc/widgets/advertisement.php:81
-msgid "Adv Code:"
-msgstr ""
-
-#: ../../blue-planet/inc/widgets/advertisement.php:82
-msgid "eg, Google Adsense code"
-msgstr ""
-
-#: ../../blue-planet/inc/widgets/advertisement.php:89
-msgid "Image URL:"
-msgstr ""
-
-#: ../../blue-planet/inc/widgets/advertisement.php:93
-msgid "Link URL:"
-msgstr ""
-
-#: ../../blue-planet/inc/widgets/advertisement.php:97
-msgid "Open Link in New Window"
-msgstr ""
-
-#: ../../blue-planet/inc/widgets/advertisement.php:103
-msgid "Alt text:"
-msgstr ""
-
-#: ../../blue-planet/inc/widgets/social.php:11
-msgid "Display Social links in your sidebar"
-msgstr ""
-
-#: ../../blue-planet/inc/widgets/social.php:14
-msgid "Social Widget"
-msgstr ""
-
-#: ../../blue-planet/inc/widgets/social.php:64
-msgid "This widget will display social links from BS Theme Options."
-msgstr ""
-
-#: ../../blue-planet/inc/widgets/social.php:67
-msgid "Click here to update links."
-msgstr ""
-
-#: ../../blue-planet/admin/view.php:6 ../../blue-planet/admin/setup.php:10
+#: ../../blue-planet/admin/setup.php:10 ../../blue-planet/admin/view.php:6
 msgid "Blue Planet Theme Options"
 msgstr ""
 
@@ -329,104 +227,104 @@ msgstr ""
 msgid "Administration"
 msgstr ""
 
-#: ../../blue-planet/admin/view.php:68
+#: ../../blue-planet/admin/view.php:67
 msgid "General settings"
 msgstr ""
 
-#: ../../blue-planet/admin/view.php:76
+#: ../../blue-planet/admin/view.php:75
 msgid "Custom Favicon"
 msgstr ""
 
-#: ../../blue-planet/admin/view.php:77
+#: ../../blue-planet/admin/view.php:76
 msgid "Upload your favicon. Recommended size 16px X 16px"
 msgstr ""
 
-#: ../../blue-planet/admin/view.php:96
+#: ../../blue-planet/admin/view.php:95
 msgid "Custom CSS"
 msgstr ""
 
-#: ../../blue-planet/admin/view.php:97
+#: ../../blue-planet/admin/view.php:96
 msgid "Enter your Custom CSS here."
 msgstr ""
 
-#: ../../blue-planet/admin/view.php:108
+#: ../../blue-planet/admin/view.php:107
 msgid "Feedburner URL"
 msgstr ""
 
-#: ../../blue-planet/admin/view.php:109
+#: ../../blue-planet/admin/view.php:108
 msgid "Enter FeedbBurner URL."
 msgstr ""
 
-#: ../../blue-planet/admin/view.php:121
+#: ../../blue-planet/admin/view.php:120
 msgid "Default text in Search box"
 msgstr ""
 
-#: ../../blue-planet/admin/view.php:122
+#: ../../blue-planet/admin/view.php:121
 msgid "Enter default text in Search box"
 msgstr ""
 
-#: ../../blue-planet/admin/view.php:134
+#: ../../blue-planet/admin/view.php:133
 msgid "Enable Goto Top"
 msgstr ""
 
-#: ../../blue-planet/admin/view.php:138 ../../blue-planet/admin/view.php:197
+#: ../../blue-planet/admin/view.php:137 ../../blue-planet/admin/view.php:196
 msgid "Check to enable"
 msgstr ""
 
-#: ../../blue-planet/admin/view.php:152
+#: ../../blue-planet/admin/view.php:151
 msgid "Header settings"
 msgstr ""
 
-#: ../../blue-planet/admin/view.php:159
+#: ../../blue-planet/admin/view.php:158
 msgid "Banner background color"
 msgstr ""
 
-#: ../../blue-planet/admin/view.php:171
+#: ../../blue-planet/admin/view.php:170
 msgid "Hide Social icons"
 msgstr ""
 
-#: ../../blue-planet/admin/view.php:175 ../../blue-planet/admin/view.php:242
+#: ../../blue-planet/admin/view.php:174 ../../blue-planet/admin/view.php:242
 #: ../../blue-planet/admin/view.php:252
 msgid "Check to hide"
 msgstr ""
 
-#: ../../blue-planet/admin/view.php:186
+#: ../../blue-planet/admin/view.php:185
 msgid "Footer settings"
 msgstr ""
 
-#: ../../blue-planet/admin/view.php:193
+#: ../../blue-planet/admin/view.php:192
 msgid "Enable Footer Widgets"
 msgstr ""
 
-#: ../../blue-planet/admin/view.php:203
+#: ../../blue-planet/admin/view.php:202
 msgid "Number of Footer widgets"
 msgstr ""
 
-#: ../../blue-planet/admin/view.php:209
+#: ../../blue-planet/admin/view.php:208
 msgid "1"
 msgstr ""
 
-#: ../../blue-planet/admin/view.php:211
+#: ../../blue-planet/admin/view.php:210
 msgid "2"
 msgstr ""
 
-#: ../../blue-planet/admin/view.php:213
+#: ../../blue-planet/admin/view.php:212
 msgid "3"
 msgstr ""
 
-#: ../../blue-planet/admin/view.php:215
+#: ../../blue-planet/admin/view.php:214
 msgid "4"
 msgstr ""
 
-#: ../../blue-planet/admin/view.php:217
+#: ../../blue-planet/admin/view.php:216
 msgid "6"
 msgstr ""
 
-#: ../../blue-planet/admin/view.php:227
+#: ../../blue-planet/admin/view.php:226
 msgid "Copyright text"
 msgstr ""
 
-#: ../../blue-planet/admin/view.php:228
+#: ../../blue-planet/admin/view.php:227
 msgid "Enter copyright text."
 msgstr ""
 
@@ -803,26 +701,140 @@ msgstr ""
 msgid "Skype"
 msgstr ""
 
-#: ../../blue-planet/admin/view.php:998
+#: ../../blue-planet/admin/view.php:993
+msgid "Please enter Skype ID"
+msgstr ""
+
+#: ../../blue-planet/admin/view.php:999
 msgid "Digg"
 msgstr ""
 
-#: ../../blue-planet/admin/view.php:1009
+#: ../../blue-planet/admin/view.php:1010
 msgid "Stumbleupon"
 msgstr ""
 
-#: ../../blue-planet/admin/view.php:1020
+#: ../../blue-planet/admin/view.php:1021
 msgid "Forrst"
 msgstr ""
 
-#: ../../blue-planet/admin/view.php:1031
+#: ../../blue-planet/admin/view.php:1032
 msgid "500px"
 msgstr ""
 
-#: ../../blue-planet/admin/view.php:1042
+#: ../../blue-planet/admin/view.php:1043
 msgid "Email"
 msgstr ""
 
-#: ../../blue-planet/admin/view.php:1059
+#: ../../blue-planet/admin/view.php:1049
+msgid "Please enter email address"
+msgstr ""
+
+#: ../../blue-planet/admin/view.php:1061
 msgid "Save Changes"
+msgstr ""
+
+#: ../../blue-planet/inc/extras.php:63
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: ../../blue-planet/inc/template-tags.php:23
+msgid "Posts navigation"
+msgstr ""
+
+#: ../../blue-planet/inc/template-tags.php:27
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr ""
+
+#: ../../blue-planet/inc/template-tags.php:31
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: ../../blue-planet/inc/template-tags.php:56
+msgid "Post navigation"
+msgstr ""
+
+#: ../../blue-planet/inc/template-tags.php:81
+msgid "Pingback:"
+msgstr ""
+
+#: ../../blue-planet/inc/template-tags.php:91
+#, php-format
+msgid "%s <span class=\"says\">says:</span>"
+msgstr ""
+
+#: ../../blue-planet/inc/template-tags.php:104
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: ../../blue-planet/inc/template-tags.php:145
+#, php-format
+msgid "<span class=\"posted-on\">%1$s</span><span class=\"byline\">%2$s</span>"
+msgstr ""
+
+#: ../../blue-planet/inc/theme-custom.php:265
+#, php-format
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: ../../blue-planet/inc/theme-custom.php:267
+#, php-format
+msgid "Theme: %1$s by %2$s."
+msgstr ""
+
+#: ../../blue-planet/inc/theme-custom.php:453
+msgid "Scroll"
+msgstr ""
+
+#: ../../blue-planet/inc/widgets/advertisement.php:11
+msgid "Widget for displaying ads"
+msgstr ""
+
+#: ../../blue-planet/inc/widgets/advertisement.php:14
+msgid "Advertisement Widget"
+msgstr ""
+
+#: ../../blue-planet/inc/widgets/advertisement.php:75
+#: ../../blue-planet/inc/widgets/social.php:60
+msgid "Title:"
+msgstr ""
+
+#: ../../blue-planet/inc/widgets/advertisement.php:81
+msgid "Adv Code:"
+msgstr ""
+
+#: ../../blue-planet/inc/widgets/advertisement.php:82
+msgid "eg, Google Adsense code"
+msgstr ""
+
+#: ../../blue-planet/inc/widgets/advertisement.php:89
+msgid "Image URL:"
+msgstr ""
+
+#: ../../blue-planet/inc/widgets/advertisement.php:93
+msgid "Link URL:"
+msgstr ""
+
+#: ../../blue-planet/inc/widgets/advertisement.php:97
+msgid "Open Link in New Window"
+msgstr ""
+
+#: ../../blue-planet/inc/widgets/advertisement.php:103
+msgid "Alt text:"
+msgstr ""
+
+#: ../../blue-planet/inc/widgets/social.php:11
+msgid "Display Social links in your sidebar"
+msgstr ""
+
+#: ../../blue-planet/inc/widgets/social.php:14
+msgid "Social Widget"
+msgstr ""
+
+#: ../../blue-planet/inc/widgets/social.php:64
+msgid "This widget will display social links from BS Theme Options."
+msgstr ""
+
+#: ../../blue-planet/inc/widgets/social.php:67
+msgid "Click here to update links."
 msgstr ""

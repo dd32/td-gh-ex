@@ -43,7 +43,6 @@ function blue_planet_setup() {
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
-	 *
 	 */
 	add_theme_support( 'post-thumbnails' );
     add_image_size( 'homepage-thumb', 285, 215, true ); //(cropped)
@@ -66,10 +65,18 @@ function blue_planet_setup() {
     // Load up theme options defaults
 	require( get_template_directory() . '/inc/blueplanet-themeoptions-defaults.php' );
 
-    //Redirect to Theme Options Page on Activation
-	global $pagenow;
+}
+endif; // blue_planet_setup
+add_action( 'after_setup_theme', 'blue_planet_setup' );
 
-        if ( is_admin() && $pagenow =="themes.php" &&  isset($_REQUEST['page']) &&  'theme_options' == $_REQUEST['page']  ){
+/**
+ * Load scripts and styles required for admin side
+ */
+if (!function_exists('blue_planet_register_admin_scripts_styles')) :
+    function blue_planet_register_admin_scripts_styles() {
+        global $pagenow;
+
+        if ( $pagenow =="themes.php" &&  isset($_REQUEST['page']) &&  'theme_options' == $_REQUEST['page']  ){
             wp_enqueue_style( 'wp-color-picker' );
             wp_enqueue_style('thickbox');
 
@@ -82,11 +89,10 @@ function blue_planet_setup() {
                     array('jquery', 'jquery-ui-tabs','media-upload','thickbox'));
             wp_enqueue_script('blue-planet-admin-script', get_template_directory_uri().'/js/admin.js',
                     array('jquery', 'jquery-ui-tabs','media-upload','thickbox','blue-planet-cookies-script','wp-color-picker'));
-	}
-
-}
-endif; // blue_planet_setup
-add_action( 'after_setup_theme', 'blue_planet_setup' );
+        }
+    }
+endif;
+add_action( 'admin_enqueue_scripts', 'blue_planet_register_admin_scripts_styles' );
 
 /**
  * Register widgetized area and update sidebar with default widgets.

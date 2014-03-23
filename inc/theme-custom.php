@@ -135,7 +135,7 @@ if ( ! function_exists( 'blue_planet_add_secondary_slider_function' ) ) :
         global $blueplanet_options_settings;
         $bp_options = $blueplanet_options_settings;
 
-        if('none' != $bp_options['slider_status_2'] &&  is_home() ) {
+        if('none' != $bp_options['slider_status_2'] &&  ( is_home() || is_front_page() ) ) {
             $slider_category_2 = esc_attr( $bp_options['slider_category_2'] );
             $number_of_slides_2 = esc_attr( $bp_options['number_of_slides_2'] );
             $args = array(
@@ -279,7 +279,7 @@ if ( ! function_exists( 'blue_planet_add_main_slider' ) ) :
         global $blueplanet_options_settings;
         $bp_options = $blueplanet_options_settings;
 
-        if( ('all' == $bp_options['slider_status']) || 'home' == $bp_options['slider_status']  && is_home() ) {
+        if( ('all' == $bp_options['slider_status']) ||  ( 'home' == $bp_options['slider_status']  && is_front_page() ) ) {
 
             $main_slider_image = $bp_options['main_slider_image'];
             if ( !empty($main_slider_image) ){ ?>
@@ -427,7 +427,12 @@ if ( ! function_exists( 'blue_planet_generate_social_links' ) ) :
 
         foreach ($social_sites as $key => $site) {
             if('' != $bp_options["social_$site"]){
-                echo '<a class="social-'.$site.'" href="'.esc_url($bp_options["social_$site"]).'"></a>';
+                if ('skype' == $site ) {
+                    echo '<a class="social-'.$site.'" href="skype:'.esc_attr($bp_options["social_$site"]).'?call"></a>';
+                }
+                else{
+                    echo '<a class="social-'.$site.'" href="'.esc_url($bp_options["social_$site"]).'"></a>';
+                }
             }
         }
         echo '</div>';

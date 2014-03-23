@@ -8,7 +8,17 @@
 get_header(); ?>
 <div id="tertiary" class="col-md-2">&nbsp;</div>
 	<div id="primary" class="content-area col-md-8 col-sm-12 col-xs-12 pull-left">
+	<?php
+	//
+	do_action( 'blue_planet_after_primary_open' );
+	//
+	?>
 		<main id="main" class="site-main" role="main">
+		<?php
+		//
+		do_action( 'blue_planet_after_main_open' );
+		//
+		?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
@@ -23,7 +33,17 @@ get_header(); ?>
 
 			<?php endwhile; // end of the loop. ?>
 
+			<?php
+			//
+			do_action( 'blue_planet_before_main_close' );
+			//
+			?>
 		</main><!-- #main -->
+		<?php
+		//
+		do_action( 'blue_planet_before_primary_close' );
+		//
+		?>
 	</div><!-- #primary -->
 
 <div id="tertiary1" class="col-md-2">&nbsp;</div>

@@ -59,7 +59,6 @@ $blueplanet_options = $blueplanet_options_settings;
                </a>
            </li>
        </ul>
-
             <div class='panel-container'>
                 <!-- General Starts -->
 
@@ -78,7 +77,7 @@ $blueplanet_options = $blueplanet_options_settings;
                                     </label>
                                 </th>
                                 <td>
-                                    <input class="upload-url" type="text" name="blueplanet_options[custom_favicon]"
+                                    <input class="upload-url regular-text" type="text" name="blueplanet_options[custom_favicon]"
                                            value="<?php echo esc_url($blueplanet_options['custom_favicon']); ?>" class="upload" />
                                     <input id="bp_upload_button" class="bp_upload_button button" type="button"
                                            value="<?php esc_attr_e('Upload', 'blue-planet'); ?>" />
@@ -98,7 +97,7 @@ $blueplanet_options = $blueplanet_options_settings;
                                     </label>
                                 </th>
                                 <td>
-                                    <textarea name="blueplanet_options[custom_css]" id="custom_css" cols="90" rows="8"><?php echo $blueplanet_options['custom_css'] ; ?></textarea>
+                                    <textarea name="blueplanet_options[custom_css]" id="custom_css" cols="90" rows="8" class="large-text"><?php echo $blueplanet_options['custom_css'] ; ?></textarea>
 
                                 </td>
                             </tr>
@@ -111,7 +110,7 @@ $blueplanet_options = $blueplanet_options_settings;
                                 </th>
                                 <td>
                                     <input  type="text" name="blueplanet_options[feedburner_url]"
-                                            value="<?php echo esc_url($blueplanet_options ['feedburner_url']); ?>"  />
+                                            value="<?php echo esc_url($blueplanet_options ['feedburner_url']); ?>" class="regular-text"  />
 
                                 </td>
                             </tr>
@@ -124,7 +123,7 @@ $blueplanet_options = $blueplanet_options_settings;
                                 </th>
                                 <td>
                                     <input  type="text" name="blueplanet_options[search_placeholder]"
-                                            value="<?php echo esc_attr($blueplanet_options ['search_placeholder']); ?>"  />
+                                            value="<?php echo esc_attr($blueplanet_options ['search_placeholder']); ?>"  class="regular-text"  />
 
                                 </td>
                             </tr>
@@ -804,7 +803,7 @@ $blueplanet_options = $blueplanet_options_settings;
                                     </label>
                                 </th>
                                 <td>
-                                    <textarea name="blueplanet_options[javascript_header]" cols="90" rows="8"><?php echo esc_attr($blueplanet_options['javascript_header']); ?></textarea>
+                                    <textarea name="blueplanet_options[javascript_header]" cols="90" rows="8" class="large-text"><?php echo esc_attr($blueplanet_options['javascript_header']); ?></textarea>
 
                                 </td>
                             </tr>
@@ -816,7 +815,7 @@ $blueplanet_options = $blueplanet_options_settings;
                                     </label>
                                 </th>
                                 <td>
-                                    <textarea name="blueplanet_options[javascript_footer]" id="javascript_footer" cols="90" rows="8"><?php echo esc_attr($blueplanet_options['javascript_footer']); ?></textarea>
+                                    <textarea name="blueplanet_options[javascript_footer]" id="javascript_footer" cols="90" rows="8" class="large-text"><?php echo esc_attr($blueplanet_options['javascript_footer']); ?></textarea>
 
                                 </td>
                             </tr>
@@ -990,7 +989,8 @@ $blueplanet_options = $blueplanet_options_settings;
                                 </th>
                                 <td>
                                     <input type="text" name="blueplanet_options[social_skype]"
-                                            value="<?php echo esc_url($blueplanet_options['social_skype']); ?>" class="regular-text" />
+                                            value="<?php echo esc_attr($blueplanet_options['social_skype']); ?>" class="regular-text" />
+                                            <p class="description"><?php _e("Please enter Skype ID", 'blue-planet'); ?></p>
                                 </td>
                             </tr>
                             <tr valign="top">
@@ -1046,6 +1046,7 @@ $blueplanet_options = $blueplanet_options_settings;
                                 <td>
                                     <input type="text" name="blueplanet_options[social_email]"
                                             value="<?php echo esc_attr($blueplanet_options['social_email']); ?>" class="regular-text" />
+                                            <p class="description"><?php _e("Please enter email address", 'blue-planet'); ?></p>
                                 </td>
                             </tr>
 
