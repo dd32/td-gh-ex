@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 	
-	<div id="main-content" class="center <?php mp_content_class(); ?>">
+	<div id="main-content" class="center <?php adaptive_flat_content_class(); ?>">
 		
 		<div id="content" class="clearfix">
 			
@@ -59,7 +59,7 @@
 				
 					
 			?>
-			<?php mp_numeric_posts_nav();?>
+			<?php adaptive_flat_numeric_posts_nav();?>
 	
 		</div>
 		

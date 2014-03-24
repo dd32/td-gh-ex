@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<div class="center <?php mp_content_class(); ?>">
+	<div class="center <?php adaptive_flat_content_class(); ?>">
 		
 		<div id="content">
 			
@@ -11,28 +11,11 @@
 						the_post();?> 
 						
 						<article id="single-page">
-							
-							
-									
-		
-									<div id="title-container"> <h1><?php the_title() ?></h1> </div>
-									 
-									  
-									  									
-									  		 
-									  		<?php the_content();
-										  		
-										  		
-										  		
-									  		?>								  
-									  
-						
-									  		
-									  	
-						
+							<div id="title-container"> <h1><?php the_title() ?></h1> </div>
+							<?php the_content(); ?>								  		 	
 						</article>
 						
-						<?php	do_action('mp_post_meta');
+						<?php	do_action( 'adaptive_flat_post_meta' );
 								wp_link_pages();?>	
 							
 						<?php	} // end while

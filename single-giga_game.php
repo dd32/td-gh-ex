@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<div class="center <?php mp_content_class(); ?>">
+	<div class="center <?php adaptive_flat_content_class(); ?>">
 		
 		<div id="content">
 			
@@ -11,30 +11,15 @@
 						the_post();?> 
 						
 						<article id="single-game">
-							
-							
-									
-		
+								
 									<div id="title-container"> <h1><?php the_title() ?></h1> </div>
-									 
-									  
-									  
-									
 											  <div id="game">
 											  
-											   
+											   <?php do_action("giga_embed") ?>
 											   	
-											   	<?php do_action("giga_embed") ?>
-											   	
-											 </div>
-											
-									  	
-									
-									  		 
-									  		<p><?php the_content()?></p>									  
-									  
+									</div>
+									<?php the_content()?>		
 						
-							
 						</article>	
 						
 							

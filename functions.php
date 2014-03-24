@@ -9,7 +9,7 @@ if ( ! isset( $content_width ) ) { //set content width
 add_theme_support( 'automatic-feed-links' );
 	
 
-function mp_enqueue_sripts() { //enque scripts like css
+function adaptive_flat_enqueue_sripts() { //enque scripts like css
 	wp_enqueue_script( 'script-js', get_template_directory_uri() . '/js/script.js', array('jquery'), '1.0.1', true );
 
 	if ( is_singular() ) { //if on single page load comment script
@@ -28,14 +28,14 @@ function mp_enqueue_sripts() { //enque scripts like css
 	
 }
 
-add_action( 'wp_enqueue_scripts', 'mp_enqueue_sripts' );
+add_action( 'wp_enqueue_scripts', 'adaptive_flat_enqueue_sripts' );
 
 
 /**
 *Filter for stylesheet uri. Sets it to uploaded stylesheet
 *
 */
-function mp_style_uri( $stylesheet_uri, $stylesheet_dir_uri ) {
+function adaptive_flat_style_uri( $stylesheet_uri, $stylesheet_dir_uri ) {
 	$stylesheet = get_theme_mod( 'css' );
 	
 	$stylesheet_uri = $stylesheet['url'];
@@ -43,38 +43,39 @@ function mp_style_uri( $stylesheet_uri, $stylesheet_dir_uri ) {
 	return  $stylesheet_uri;
 }
 //filter stylesheet uri
-add_filter('stylesheet_uri', 'mp_style_uri', 10 ,2);
+add_filter('stylesheet_uri', 'adaptive_flat_style_uri', 10 ,2);
 
 
 if (get_theme_mod( 'css' ) == '' ) {
-	add_action( 'wp_head', 'mp_print_style' );
+	add_action( 'wp_head', 'adaptive_flat_print_style' );
 }
 
 
-function mp_register_my_menus() {
+function adaptive_flat_register_my_menus() {
   register_nav_menus(
     array(
       'header-menu' => __( 'Header Menu', 'giga_games' ),
     )
   );
 }
-add_action( 'init', 'mp_register_my_menus' );
+add_action( 'init', 'adaptive_flat_register_my_menus' );
 
 
 
 // Show posts of 'game' and 'post' post type
-add_action( 'pre_get_posts', 'mp_add_my_post_types_to_query' );
+add_action( 'pre_get_posts', 'adaptive_flat_add_my_post_types_to_query' );
 
-function mp_add_my_post_types_to_query( $query ) {
-	if ( is_home() && $query->is_main_query() )
+function adaptive_flat_add_my_post_types_to_query( $query ) {
+	if ($query->is_home() && $query->is_main_query() )
 	{
-		$query->set( 'post_type', array( 'giga_game', 'post' ) ); //Add post type giga_game to main query for game plugin support
-		
-		
+	
+		if( post_type_exists( 'giga_game' ) ) {
+			$query->set( 'post_type', array( 'giga_game', 'post' ) ); //Add post type giga_game to main query for game plugin support
+		}
 		/* Get all sticky posts */
 		$sticky = get_option( 'sticky_posts' );
 
-		$numberstickies = mp_sticky_counter();	//get number of stickies (max 4)
+		$numberstickies = adaptive_flat_sticky_counter();	//get number of stickies (max 4)
 			
 		$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1; 
 			
@@ -103,7 +104,7 @@ function mp_add_my_post_types_to_query( $query ) {
  *
  */
 
-function mp_sticky_counter() {
+function adaptive_flat_sticky_counter() {
 	$sticky = get_option( 'sticky_posts' );
 
 		$numberstickies = count( $sticky );
@@ -131,9 +132,9 @@ if ( function_exists( 'add_image_size' ) ) {
 
 //add link to post thumbnail
 
-add_filter( 'post_thumbnail_html', 'mp_post_image_html', 10, 3 );
+add_filter( 'post_thumbnail_html', 'adaptive_flat_post_image_html', 10, 3 );
 
-function mp_post_image_html( $html, $post_id, $post_image_id ) {
+function adaptive_flat_post_image_html( $html, $post_id, $post_image_id ) {
 
   $html = '<a href="' . get_permalink( $post_id ) . '" title="' . esc_attr( get_the_title( $post_id ) ) . '">' . $html . '</a>';
   return $html;
@@ -145,7 +146,7 @@ function mp_post_image_html( $html, $post_id, $post_image_id ) {
  * Register our sidebars and widgetized areas.
  *
  */
-function mp_register_sidebars() {
+function adaptive_flat_register_sidebars() {
 
 	register_sidebar( array( //sidebar on home page
 		'name' => 'Home Sidebar',
@@ -213,10 +214,10 @@ function mp_register_sidebars() {
 
 	
 }
-add_action( 'widgets_init', 'mp_register_sidebars' );
+add_action( 'widgets_init', 'adaptive_flat_register_sidebars' );
 
 
-function mp_numeric_posts_nav() {
+function adaptive_flat_numeric_posts_nav() {
 
 	if( is_singular() )
 		return;
@@ -229,7 +230,7 @@ function mp_numeric_posts_nav() {
 
 	$paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
 	//$max   = intval( $wp_query->max_num_pages );
-	$max = intval(($wp_query->found_posts + mp_sticky_counter()) / get_option('posts_per_page '));
+	$max = intval(($wp_query->found_posts + adaptive_flat_sticky_counter()) / get_option('posts_per_page '));
 	
 	
 	/**	Add current page to the array */
@@ -291,9 +292,9 @@ function mp_numeric_posts_nav() {
 * Code for displaying post meta
 *
 */
-add_action('mp_post_meta', 'mp_display_post_meta');
+add_action('adaptive_flat_post_meta', 'adaptive_flat_display_post_meta');
 
-function mp_display_post_meta() {
+function adaptive_flat_display_post_meta() {
 	the_tags('<div class="tag-icon"></div>');?>
 	<div class="category-icon"></div><?php
 	the_category(', ');
@@ -308,9 +309,9 @@ function mp_display_post_meta() {
 * Filter the default title to be seo friendly but also compatible with seo plugins
 *
 */
-add_filter( 'wp_title', 'mp_title_filter', 10, 2 );
+add_filter( 'wp_title', 'adaptive_flat_title_filter', 10, 2 );
 
-function mp_title_filter($title, $seperator)
+function adaptive_flat_title_filter($title, $seperator)
 {
 	if(is_front_page())
 	{
@@ -334,9 +335,9 @@ function mp_title_filter($title, $seperator)
 */
 
 remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
-add_action ( 'wp_head', 'mp_rel_next_prev' );
+add_action ( 'wp_head', 'adaptive_flat_rel_next_prev' );
 
-function mp_rel_next_prev() { 
+function adaptive_flat_rel_next_prev() { 
   global $paged;
   if ( get_previous_posts_link() ) { ?>
   <link rel="prev" href="<?php echo get_pagenum_link( $paged - 1 ); ?>">
@@ -353,7 +354,7 @@ function mp_rel_next_prev() {
 *
 */
 
-function mp_content_class() {
+function adaptive_flat_content_class() {
 	
 			if( is_archive() || is_front_page() || is_search() ) {	
 				$style = get_theme_mod( 'layout_archive', 'cs' );
@@ -384,7 +385,7 @@ function mp_content_class() {
 * Special excerpt function
 *
 */
-function mp_excerpt() {
+function adaptive_flat_excerpt() {
 		global $post;
 		
 		if( $post->post_content != "" ) {							  		 
@@ -392,25 +393,25 @@ function mp_excerpt() {
 		}
 }
 
-function mp_excerpt_more( $more ) {
+function adaptive_flat_excerpt_more( $more ) {
 	return ' <a href="'. get_permalink( get_the_ID() ) . '">' . get_theme_mod('readmore_text', '...Read more') . '</a>';
 }
-add_filter( 'excerpt_more', 'mp_excerpt_more' );
+add_filter( 'excerpt_more', 'adaptive_flat_excerpt_more' );
 
 
-add_filter('excerpt_length', 'mp_excerpt_length', 999);
+add_filter('excerpt_length', 'adaptive_flat_excerpt_length', 999);
 
-function mp_excerpt_length( $length ) {
+function adaptive_flat_excerpt_length( $length ) {
 	return get_theme_mod( 'post_excerpt_length', '30' );
 }
-add_filter( 'excerpt_length', 'mp_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'adaptive_flat_excerpt_length', 999 );
 
 /**
 * Special thumbnail function
 *
 */
 
-function mp_thumbnail( $width, $height ) {
+function adaptive_flat_thumbnail( $width, $height ) {
 	
 	global $post;
 

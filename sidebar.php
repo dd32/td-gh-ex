@@ -1,17 +1,15 @@
 <div id="sidebar">
 		
 		<?php
-			 
-					if (is_front_page() && function_exists('dynamic_sidebar') )   {
-								dynamic_sidebar('Home Sidebar')	;		   			
+					if (is_front_page())   { //If page is the front-page show home sidebar
+							dynamic_sidebar( 'Home Sidebar' )	;		   			
 					}
-					else if(get_post_type() == "giga_game" && !is_search())
-					{
-							dynamic_sidebar('Single Game')	;
+					else if( get_post_type() == "giga_game" && !is_search() ) {//if it is a giga games plugin
+							dynamic_sidebar( 'Single Game' )	;
 					}
 					else
 					{
-							dynamic_sidebar('General Sidebar');
+							dynamic_sidebar( 'General Sidebar' );
 					}
-					?>
+		?>
 </div>

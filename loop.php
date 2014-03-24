@@ -10,14 +10,14 @@
 						
 							<article  <?php post_class('post-prev clearfix');?>>
 								
-								<?php mp_thumbnail(480, 300); 
+								<?php adaptive_flat_thumbnail(480, 300); 
 									
 									the_post_thumbnail();
 								?>											
 								
 								<h2 class="prev-title"><a href="<?php the_permalink() ?>"><?php the_title();?></a></h2>
 										  
-								<?php mp_excerpt() ?>
+								<?php adaptive_flat_excerpt() ?>
 								
 							</article>	
 			<?php		}//end two posts per line
@@ -28,11 +28,11 @@
 							<article <?php post_class('post-prev2 clearfix'); ?> >
 								<h2 class="prev-title"><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
 								
-								<?php mp_thumbnail(200, 125); 
+								<?php adaptive_flat_thumbnail(200, 125); 
 									the_post_thumbnail('prev-2');
 								?>
 								
-								<?php mp_excerpt(); ?>
+								<?php adaptive_flat_excerpt(); ?>
 								
 							</article>		
 							

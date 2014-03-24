@@ -43,7 +43,7 @@ $(window).load(function() {
 		
 function resizePostPrev() {
 	
-	$('.img-placeholder').height($('.img-placeholder').width() / 1.6); //set image placeholder size			
+	$('.img-placeholder').height($('.img-placeholder').width() / 1.497); //set image placeholder size			
 	$('.img-placeholder .icon').css("margin-top", $('.img-placeholder').height() / 2 - $('.img-placeholder .icon').height() / 2);//set icon margin
 	
 	

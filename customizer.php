@@ -7,9 +7,9 @@ require_once(ABSPATH . 'wp-admin/includes/file.php');
 *
 */
 
-add_action( 'customize_register', 'mp_customize_register' );
+add_action( 'customize_register', 'adaptive_flat_customize_register' );
 
-function mp_customize_register( $wp_customize ) {
+function adaptive_flat_customize_register( $wp_customize ) {
 
 //text color
 
@@ -823,7 +823,7 @@ function mp_customize_register( $wp_customize ) {
     'transport'   => 'refresh',
 	) );
 	
-	$wp_customize->add_control( new MP_Customize_Textarea_Control( $wp_customize, 'custom_css', array(
+	$wp_customize->add_control( new adaptive_flat_Customize_Textarea_Control( $wp_customize, 'custom_css', array(
 	'label'        => __( 'Custom CSS', 'giga_flat' ),
 	'section'    => 'css',
 	'settings'   => 'custom_css',
@@ -844,11 +844,11 @@ function mp_customize_register( $wp_customize ) {
 
 }
 
-add_action('customize_save_after' , 'mp_write_style', 100);
+add_action('customize_save_after' , 'adaptive_flat_write_style', 100);
 
 
 if ( class_exists( 'WP_Customize_Control' ) ) {
-     class MP_Customize_Textarea_Control extends WP_Customize_Control {
+     class adaptive_flat_Customize_Textarea_Control extends WP_Customize_Control {
          
          
     public function __construct( $manager, $id, $args = array() ) {
@@ -870,7 +870,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
      }
 }
 
-function mp_generate_style() {
+function adaptive_flat_generate_style() {
 
 	global $wp_filesystem;
 
@@ -931,7 +931,7 @@ function mp_generate_style() {
 	
 }
 
-function mp_write_style() {
+function adaptive_flat_write_style() {
 	
 	global $wp_filesystem;
 	
@@ -949,19 +949,19 @@ function mp_write_style() {
 	
 	WP_Filesystem();
 	
-	$wp_filesystem->put_contents( $directory['path'], mp_generate_style(), 0644 );	
+	$wp_filesystem->put_contents( $directory['path'], adaptive_flat_generate_style(), 0644 );	
 	
 	
 }
 
-function mp_print_style(){
-	echo( '<style>' .  mp_generate_style() . '</style>' );
+function adaptive_flat_print_style(){
+	echo( '<style>' .  adaptive_flat_generate_style() . '</style>' );
 }
 /**
 * Add customizer js to live preview
 *
 */
-function mp_customizer_live_preview()
+function adaptive_flat_customizer_live_preview()
 {
 	wp_enqueue_script( 
 		  'mp-themecustomizer',			
@@ -971,11 +971,11 @@ function mp_customizer_live_preview()
 		  true						//Put script in footer?
 	);
 	
-	add_action( 'wp_head', 'mp_print_style' );
+	add_action( 'wp_head', 'adaptive_flat_print_style' );
 	
 	wp_dequeue_style( 'style' );
 }
-add_action( 'customize_preview_init', 'mp_customizer_live_preview' );
+add_action( 'customize_preview_init', 'adaptive_flat_customizer_live_preview' );
 
 
 
