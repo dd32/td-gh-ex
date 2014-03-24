@@ -1,3 +1,16 @@
+Changelog 3.7.15:
+
+- made default favicon_url value blank ("") as per new WP.org theme requirements
+- Replaced old tag 'fixed-width' with 'fixed-layout' 
+- Replaced old tag 'flexible-width' with 'fluid-layout'
+- replaced file '_3.7.14.changelog' with 'changelog.txt'
+- unclosed <div class="widget widget_text">... in header.php causing W3C error if default widgets were displayed (if no custom widgets in sidebar). 
+
+Changelog 3.7.14:
+
+- removed some debugging code causing a 'ladybug' favicon to show when in the backend
+- added 'more' processing to 'multi column/custom query' template
+
 Changelog 3.7.13:
 
 - added new 'Full width Header' option

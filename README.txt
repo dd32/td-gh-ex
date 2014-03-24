@@ -1,4 +1,4 @@
-Wordpress Theme "Atahualpa" version 3.7.12
+Wordpress Theme "Atahualpa" 
 
 VISIT THE SUPPORT FORUMS AT http://forum.bytesforall.com/
 

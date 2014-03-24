@@ -1,8 +1,10 @@
 <?php
 /*
 Template Name: JUGGLEDAD's multi column/custom query
-Version: 1.5
+Version: 1.6
 
+= 1.6 = 
+* added code for for 'more' processing
 = 1.5 = 
 * added code for center widget area from Atahualpa 3.7.12
 = 1.4 = 
@@ -39,7 +41,7 @@ LICENSE:
  <?php 
 
 list($bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2, $bfa_ata['h_blogtitle'], $bfa_ata['h_posttitle']) = bfa_get_options();
-global $bfa_pagetemplate_name, $bfa_pagetemplate_full_post_count, $bfa_ata_postcount;
+global $bfa_pagetemplate_name, $bfa_pagetemplate_full_post_count, $bfa_ata_postcount, $more;
 
 get_header(); 
 extract($bfa_ata); 
@@ -179,9 +181,11 @@ extract($bfa_ata);
    =================================== */
 ?>
 
-<?php	query_posts($mccq_args); ?>
+<?php
+$more = 0;
+query_posts($mccq_args); 
 
-<?php /* If there are any posts: */
+ /* If there are any posts: */
 if (have_posts()) : $bfa_ata_postcount = 0; /* Postcount needed for option "XX first posts full posts, rest excerpts" */ ?>
 
     <?php  if ($bfa_ata['widget_center_top'] <> '') { 
