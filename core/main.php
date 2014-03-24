@@ -1,0 +1,510 @@
+<?php
+
+/**
+ * Wp in Progress
+ * 
+ * This source file is subject to the GNU GENERAL PUBLIC LICENSE (GPL 3.0)
+ * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
+ */
+ 
+/*-----------------------------------------------------------------------------------*/
+/* CONTENT WIDTH */
+/*-----------------------------------------------------------------------------------*/ 
+
+if ( ! isset( $content_width ) )
+	$content_width = 1170;
+
+/*-----------------------------------------------------------------------------------*/
+/* ADMIN CLASS */
+/*-----------------------------------------------------------------------------------*/   
+
+function lookilite_admin_body_class( $classes ) {
+	
+	global $wp_version;
+	
+	if ( ( $wp_version >= 3.8 ) && ( is_admin()) ) {
+		$classes .= 'wp-8';
+	}
+		return $classes;
+}
+	
+add_filter( 'admin_body_class', 'lookilite_admin_body_class' );
+
+/*-----------------------------------------------------------------------------------*/
+/* TAG TITLE */
+/*-----------------------------------------------------------------------------------*/  
+ 
+function lookilite_title( $title, $sep ) {
+	global $paged, $page;
+
+	if ( is_feed() )
+		return $title;
+
+	$title .= get_bloginfo( 'name' );
+
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) )
+		$title = "$title $sep $site_description";
+
+	if ( $paged >= 2 || $page >= 2 )
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'twentytwelve' ), max( $paged, $page ) );
+
+	return $title;
+}
+
+add_filter( 'wp_title', 'lookilite_title', 10, 2 );
+
+/*-----------------------------------------------------------------------------------*/
+/* LOCALIZE THEME */
+/*-----------------------------------------------------------------------------------*/   
+
+load_theme_textdomain('wip', get_template_directory() . '/languages');
+
+/*-----------------------------------------------------------------------------------*/
+/* SHORTCODES */
+/*-----------------------------------------------------------------------------------*/   
+
+add_filter('widget_text', 'do_shortcode');
+
+remove_filter( 'the_content', 'wpautop' );
+add_filter( 'the_content', 'wpautop' , 12);
+
+/*-----------------------------------------------------------------------------------*/
+/* REQUIRE FUNCTION */
+/*-----------------------------------------------------------------------------------*/ 
+
+function lookilite_require($folder) {
+
+	if (isset($folder)) : 
+
+		if ( ( !lookilite_setting('wip_loadsystem') ) || ( lookilite_setting('wip_loadsystem') == "mode_a" ) ) {
+	
+			$folder = dirname(dirname(__FILE__)) . $folder ;  
+			
+			$files = scandir($folder);  
+			  
+			foreach ($files as $key => $name) {  
+				if (!is_dir($name)) { 
+					require_once $folder . $name;
+				} 
+			}  
+		
+		} else if ( lookilite_setting('wip_loadsystem') == "mode_b" ) {
+
+
+			$dh  = opendir(get_template_directory().$folder);
+			
+			while (false !== ($filename = readdir($dh))) {
+			   
+				if ( strlen($filename) > 2 ) {
+				require_once get_template_directory()."/".$folder.$filename;
+				}
+			}
+		}
+	
+	endif;
+	
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* SCRIPTS FUNCTION */
+/*-----------------------------------------------------------------------------------*/ 
+
+function lookilite_enqueue_script($folder) {
+
+	if (isset($folder)) : 
+
+		if ( ( !lookilite_setting('wip_loadsystem') ) || ( lookilite_setting('wip_loadsystem') == "mode_a" ) ) {
+	
+		
+			$dir = dirname(dirname(__FILE__)) . $folder ;  
+			
+			$files = scandir($dir);  
+			  
+			foreach ($files as $key => $name) {  
+				if (!is_dir($name)) { 
+					
+					wp_enqueue_script( str_replace('.js','',$name), get_template_directory_uri() . $folder . "/" . $name , array('jquery'), FALSE, TRUE ); 
+					
+				} 
+			}  
+		
+		} else if ( lookilite_setting('wip_loadsystem') == "mode_b" ) {
+
+			$dh  = opendir(get_template_directory().$folder);
+			
+			while (false !== ($filename = readdir($dh))) {
+			   
+				if ( strlen($filename) > 2 ) {
+						wp_enqueue_script( str_replace('.js','',$filename), get_template_directory_uri() . $folder . "/" . $filename , array('jquery'), FALSE, TRUE ); 
+				}
+			}
+	
+		}
+		
+	endif;
+
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* STYLES FUNCTION */
+/*-----------------------------------------------------------------------------------*/ 
+
+function lookilite_enqueue_style($folder) {
+
+	if (isset($folder)) : 
+
+		if ( ( !lookilite_setting('wip_loadsystem') ) || ( lookilite_setting('wip_loadsystem') == "mode_a" ) ) {
+	
+		
+			$dir = dirname(dirname(__FILE__)) . $folder ;  
+			
+			$files = scandir($dir);  
+			  
+			foreach ($files as $key => $name) {  
+				
+				if (!is_dir($name)) { 
+					
+					wp_enqueue_style( str_replace('.css','',$name), get_template_directory_uri() . $folder . "/" . $name ); 
+					
+				} 
+			}  
+		
+		
+		} else if ( lookilite_setting('wip_loadsystem') == "mode_b" ) {
+
+		
+			$dh  = opendir(get_template_directory().$folder);
+			
+			while (false !== ($filename = readdir($dh))) {
+			   
+				if ( strlen($filename) > 2 ) {
+						wp_enqueue_style( str_replace('.css','',$filename), get_template_directory_uri() . $folder . "/" . $filename ); 
+				}
+			}
+		
+
+		}
+	
+	endif;
+
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* REQUEST FUNCTION */
+/*-----------------------------------------------------------------------------------*/ 
+
+function lookilite_request($id) {
+	
+	if ( isset ( $_REQUEST[$id])) 
+	return $_REQUEST[$id];	
+	
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* THEME PATH */
+/*-----------------------------------------------------------------------------------*/ 
+
+function lookilite_theme_data($id) {
+	
+	 global $wp_version;	
+	 if ( $wp_version <= 3.4 ) :
+	 	$themedata = get_theme_data(TEMPLATEPATH. '/style.css');
+		return $themedata[$id];
+	 else:
+		$themedata = wp_get_theme();
+		return $themedata->get($id);
+	 endif;
+	
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* THEME NAME */
+/*-----------------------------------------------------------------------------------*/ 
+
+function lookilite_themename() {
+	
+	$themename = "looki_theme_settings";
+	return $themename;	
+	
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* THEME SETTINGS */
+/*-----------------------------------------------------------------------------------*/ 
+
+function lookilite_setting($id) {
+
+	$wip_setting = get_option(lookilite_themename());
+	if(isset($wip_setting[$id]))
+		return $wip_setting[$id];
+
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* POST META */
+/*-----------------------------------------------------------------------------------*/ 
+
+function lookilite_postmeta($id) {
+
+	global $post;
+	
+	if (!is_404()) {
+		$val = get_post_meta( $post->ID , $id, TRUE);
+		if(isset($val))
+		return $val;
+	} else {
+		return null;
+	}
+	
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/* CONTENT TEMPLATE */
+/*-----------------------------------------------------------------------------------*/ 
+
+function lookilite_template($id) {
+
+	$template = "col-md-12";
+
+	if (lookilite_setting($id)) { $template = lookilite_setting($id); }
+
+	return $template;
+	
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* THEME SETUP */
+/*-----------------------------------------------------------------------------------*/   
+
+function lookilite_setup() {
+
+	add_theme_support( 'post-formats', array( 'aside','gallery','quote','video','audio','link' ) );
+	add_theme_support( 'automatic-feed-links' );
+	add_theme_support( 'post-thumbnails' );
+	
+	add_image_size( 'blog', 1170,429, TRUE ); 
+	add_image_size( 'portfolio', 1170,429, TRUE ); 
+	add_image_size( 'slide', 1170,429, TRUE ); 
+	
+	add_image_size( 'large', 449,304, TRUE ); 
+	add_image_size( 'medium', 290,220, TRUE ); 
+	add_image_size( 'small', 211,150, TRUE ); 
+
+	register_nav_menu( 'main-menu', 'Main menu' );
+
+	if (lookilite_setting('wip_body_background')):
+		$background = lookilite_setting('wip_body_background');
+	else:
+		$background = "/images/background/patterns/pattern12.jpg";
+	endif;
+	
+	add_theme_support( 'custom-background', array(
+		'default-color' => 'f3f3f3',
+		'default-image' => get_template_directory_uri() . $background,
+	) );
+
+}
+
+add_action( 'after_setup_theme', 'lookilite_setup' );
+
+/*-----------------------------------------------------------------------------------*/
+/* DEFAULT STYLE, AFTER THEME ACTIVATION */
+/*-----------------------------------------------------------------------------------*/         
+
+if ( is_admin() && isset($_GET['activated'] ) && $pagenow == 'themes.php' ) {
+	
+	$wip_setting = get_option(lookilite_themename());
+
+	if (!$wip_setting) {	
+		
+		$settings = array( 
+
+		"wip_loadsystem" => "mode_a",
+		"wip_skins" => "light_turquoise", 
+		
+		"wip_menu_font" => "Roboto Slab", 
+		"wip_menu_font_size" => "14px", 
+
+		"wip_content_font" => "Roboto Slab", 
+		"wip_content_font_size" => "14px", 
+
+		"wip_titles_font" => "Fjalla One", 
+		
+		"wip_link_color" => "#48c9b0", 
+		"wip_link_color_hover" => "#1abc9c",
+
+		"wip_bars_background_color" => "#2D3032", 
+		"wip_bars_text_color" => "#ffffff",
+		"wip_bars_borders_color" => "#444649",
+	
+		"wip_body_background" => "/images/background/patterns/pattern12.jpg",
+		"wip_body_background_repeat" => "repeat",
+		"wip_body_background_color" => "#f3f3f3",
+		
+		"wip_view_comments" => "on",
+
+		);
+	
+		update_option( lookilite_themename(), $settings ); 
+		
+	}
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* GET PAGED */
+/*-----------------------------------------------------------------------------------*/ 
+
+function lookilite_paged() {
+	
+	if ( get_query_var('paged') ) {
+		$paged = get_query_var('paged');
+	} elseif ( get_query_var('page') ) {
+		$paged = get_query_var('page');
+	} else {
+		$paged = 1;
+	}
+	
+	return $paged;
+	
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* OEMBED */
+/*-----------------------------------------------------------------------------------*/   
+
+function lookilite_oembed_soundcloud(){
+	wp_oembed_add_provider( 'http://soundcloud.com/*', 'http://soundcloud.com/oembed' );
+	wp_oembed_add_provider( 'https://soundcloud.com/*', 'http://soundcloud.com/oembed' );
+	wp_oembed_add_provider('#https?://(?:api\.)?soundcloud\.com/.*#i', 'http://soundcloud.com/oembed');
+}
+
+add_action('init','lookilite_oembed_soundcloud');
+
+/*-----------------------------------------------------------------------------------*/
+/* ADMIN MENU */
+/*-----------------------------------------------------------------------------------*/   
+
+function lookilite_option_panel() {
+        global $wp_admin_bar, $wpdb;
+    	$wp_admin_bar->add_menu( array( 'id' => 'lookioptions', 'title' => '<span> Looki Options </span>', 'href' => get_admin_url() . 'themes.php?page=lookioption' ) );
+		$wp_admin_bar->add_menu( array( 'id' => 'get_premium', 'title' => '<span> Get Premium </span>', 'href' => get_admin_url() . 'themes.php?page=getpremium' ) );
+
+}
+
+add_action( 'admin_bar_menu', 'lookilite_option_panel', 1000 );
+
+/*-----------------------------------------------------------------------------------*/
+/* PRETTYPHOTO */
+/*-----------------------------------------------------------------------------------*/   
+
+function lookilite_prettyPhoto( $html, $id, $size, $permalink, $icon, $text ) {
+	
+    if ( ! $permalink )
+        return str_replace( '<a', '<a data-rel="prettyPhoto" ', $html );
+    else
+        return $html;
+}
+
+add_filter( 'wp_get_attachment_link', 'lookilite_prettyPhoto', 10, 6);
+
+/*-----------------------------------------------------------------------------------*/
+/* Excerpt more */
+/*-----------------------------------------------------------------------------------*/   
+
+function lookilite_hide_excerpt_more() {
+	return '';
+}
+
+add_filter('the_content_more_link', 'lookilite_hide_excerpt_more');
+add_filter('excerpt_more', 'lookilite_hide_excerpt_more');
+
+function lookilite_excerpt() {
+	
+	global $post,$more;
+	$more = 0;
+	
+	if ($pos=strpos($post->post_content, '<!--more-->')): 
+		$output = '<p>'.strip_tags(get_the_content()).'<a class="more" href="'.get_permalink($post->ID).'" title="More"> [...] </a></p>';
+	else:
+		$output = '<p>'.get_the_excerpt().'<a class="more" href="'.get_permalink($post->ID).'" title="More"> [...] </a></p>';
+	endif;
+	
+	echo $output;
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/* REMOVE CATEGORY LIST REL */
+/*-----------------------------------------------------------------------------------*/   
+
+function lookilite_remove_category_list_rel($output) {
+	$output = str_replace('rel="category"', '', $output);
+	return $output;
+}
+
+add_filter('wp_list_categories', 'lookilite_remove_category_list_rel');
+add_filter('the_category', 'lookilite_remove_category_list_rel');
+
+/*-----------------------------------------------------------------------------------*/
+/* REMOVE THUMBNAIL DIMENSION */
+/*-----------------------------------------------------------------------------------*/ 
+
+function lookilite_remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
+    $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
+    return $html;
+}
+
+add_filter( 'post_thumbnail_html', 'lookilite_remove_thumbnail_dimensions', 10, 3 );
+  
+/*-----------------------------------------------------------------------------------*/
+/* REMOVE CSS GALLERY */
+/*-----------------------------------------------------------------------------------*/ 
+
+function lookilite_my_gallery_style() {
+    return "<div class='gallery'>";
+}
+
+add_filter( 'gallery_style', 'lookilite_my_gallery_style', 99 );
+
+/*-----------------------------------------------------------------------------------*/
+/* THEMATIC DROPDOWN OPTIONS */
+/*-----------------------------------------------------------------------------------*/ 
+
+function lookilite_childtheme_dropdown_options($dropdown_options) {
+	$dropdown_options = '<script type="text/javascript" src="'. get_stylesheet_directory_uri() .'/scripts/thematic-dropdowns.js"></script>';
+	return $dropdown_options;
+}
+
+add_filter('thematic_dropdown_options','lookilite_childtheme_dropdown_options');
+
+/*-----------------------------------------------------------------------------------*/
+/* STYLES AND SCRIPTS */
+/*-----------------------------------------------------------------------------------*/ 
+
+function lookilite_scripts_styles() {
+
+	lookilite_enqueue_style('/css');
+
+	if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
+
+	wp_enqueue_script( "jquery-ui-core", array('jquery'));
+	wp_enqueue_script( "jquery-ui-tabs", array('jquery'));
+	
+	lookilite_enqueue_script('/js');
+
+}
+
+add_action( 'wp_enqueue_scripts', 'lookilite_scripts_styles' );
+
+/*-----------------------------------------------------------------------------------*/
+/* FUNCTIONS */
+/*-----------------------------------------------------------------------------------*/ 
+
+lookilite_require('/core/templates/');
+lookilite_require('/core/functions/');
+lookilite_require('/core/classes/');
+lookilite_require('/core/metaboxes/');
+
+?>
