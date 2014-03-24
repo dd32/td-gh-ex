@@ -77,7 +77,7 @@
             <?php endif; ?>
             
             <?php if ( get_theme_mod( 'attorney_email' ) ) : ?>
-            <a href="<?php echo esc_url( get_theme_mod( 'attorney_email' ) ); ?>" class="social-em" title="<?php echo esc_url( get_theme_mod( 'attorney_email' ) ); ?>"><?php _e('Email', 'attorney') ?></a>
+            <a href="<?php _e('mailto:', 'attorney'); echo sanitize_email( get_theme_mod( 'attorney_email' ) ); ?>" class="social-em" title="<?php _e('mailto:', 'attorney'); echo sanitize_email( get_theme_mod( 'attorney_email' ) ); ?>"><?php _e('Email', 'attorney') ?></a>
             <?php endif; ?>
             
             

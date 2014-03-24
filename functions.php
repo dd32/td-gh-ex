@@ -138,6 +138,7 @@ if ( ! function_exists( 'attorney_theme_customizer' ) ) :
 		/* color scheme option */
 		$wp_customize->add_setting( 'attorney_color_settings', array (
 			'default'	=> '#c7930d',
+			'sanitize_callback' => 'sanitize_hex_color',
 		) );
 		
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'attorney_color_settings', array(
@@ -154,7 +155,9 @@ if ( ! function_exists( 'attorney_theme_customizer' ) ) :
 			'description' => __( 'Upload a logo to replace the default site name in the header', 'attorney' ),
 		) );
 		
-		$wp_customize->add_setting( 'attorney_logo' );
+		$wp_customize->add_setting( 'attorney_logo', array (
+			'sanitize_callback' => 'esc_url_raw',
+		) );
 		
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'attorney_logo', array(
 			'label'    => __( 'Choose your logo (ideal width is 100-300px and ideal height is 40-100px)', 'attorney' ),
@@ -170,7 +173,9 @@ if ( ! function_exists( 'attorney_theme_customizer' ) ) :
 			'description' => __( 'Optional social media buttons in the header', 'attorney' ),
 		) );
 		
-		$wp_customize->add_setting( 'attorney_facebook' );
+		$wp_customize->add_setting( 'attorney_facebook', array (
+			'sanitize_callback' => 'esc_url_raw',
+		) );
 		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'attorney_facebook', array(
 			'label'    => __( 'Enter your Facebook url', 'attorney' ),
@@ -179,7 +184,9 @@ if ( ! function_exists( 'attorney_theme_customizer' ) ) :
 			'priority'    => 101,
 		) ) );
 	
-		$wp_customize->add_setting( 'attorney_twitter' );
+		$wp_customize->add_setting( 'attorney_twitter', array (
+			'sanitize_callback' => 'esc_url_raw',
+		) );
 		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'attorney_twitter', array(
 			'label'    => __( 'Enter your Twitter url', 'attorney' ),
@@ -188,7 +195,9 @@ if ( ! function_exists( 'attorney_theme_customizer' ) ) :
 			'priority'    => 102,
 		) ) );
 		
-		$wp_customize->add_setting( 'attorney_google' );
+		$wp_customize->add_setting( 'attorney_google', array (
+			'sanitize_callback' => 'esc_url_raw',
+		) );
 		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'attorney_google', array(
 			'label'    => __( 'Enter your Google+ url', 'attorney' ),
@@ -197,7 +206,9 @@ if ( ! function_exists( 'attorney_theme_customizer' ) ) :
 			'priority'    => 103,
 		) ) );
 		
-		$wp_customize->add_setting( 'attorney_pinterest' );
+		$wp_customize->add_setting( 'attorney_pinterest', array (
+			'sanitize_callback' => 'esc_url_raw',
+		) );
 		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'attorney_pinterest', array(
 			'label'    => __( 'Enter your Pinterest url', 'attorney' ),
@@ -206,7 +217,9 @@ if ( ! function_exists( 'attorney_theme_customizer' ) ) :
 			'priority'    => 104,
 		) ) );
 		
-		$wp_customize->add_setting( 'attorney_linkedin' );
+		$wp_customize->add_setting( 'attorney_linkedin', array (
+			'sanitize_callback' => 'esc_url_raw',
+		) );
 		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'attorney_linkedin', array(
 			'label'    => __( 'Enter your Linkedin url', 'attorney' ),
@@ -215,7 +228,9 @@ if ( ! function_exists( 'attorney_theme_customizer' ) ) :
 			'priority'    => 105,
 		) ) );
 		
-		$wp_customize->add_setting( 'attorney_youtube' );
+		$wp_customize->add_setting( 'attorney_youtube', array (
+			'sanitize_callback' => 'esc_url_raw',
+		) );
 		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'attorney_youtube', array(
 			'label'    => __( 'Enter your Youtube url', 'attorney' ),
@@ -224,7 +239,9 @@ if ( ! function_exists( 'attorney_theme_customizer' ) ) :
 			'priority'    => 106,
 		) ) );
 		
-		$wp_customize->add_setting( 'attorney_tumblr' );
+		$wp_customize->add_setting( 'attorney_tumblr', array (
+			'sanitize_callback' => 'esc_url_raw',
+		) );
 		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'attorney_tumblr', array(
 			'label'    => __( 'Enter your Tumblr url', 'attorney' ),
@@ -233,7 +250,9 @@ if ( ! function_exists( 'attorney_theme_customizer' ) ) :
 			'priority'    => 107,
 		) ) );
 		
-		$wp_customize->add_setting( 'attorney_instagram' );
+		$wp_customize->add_setting( 'attorney_instagram', array (
+			'sanitize_callback' => 'esc_url_raw',
+		) );
 		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'attorney_instagram', array(
 			'label'    => __( 'Enter your Instagram url', 'attorney' ),
@@ -242,7 +261,9 @@ if ( ! function_exists( 'attorney_theme_customizer' ) ) :
 			'priority'    => 108,
 		) ) );
 		
-		$wp_customize->add_setting( 'attorney_flickr' );
+		$wp_customize->add_setting( 'attorney_flickr', array (
+			'sanitize_callback' => 'esc_url_raw',
+		) );
 		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'attorney_flickr', array(
 			'label'    => __( 'Enter your Flickr url', 'attorney' ),
@@ -251,7 +272,9 @@ if ( ! function_exists( 'attorney_theme_customizer' ) ) :
 			'priority'    => 109,
 		) ) );
 		
-		$wp_customize->add_setting( 'attorney_vimeo' );
+		$wp_customize->add_setting( 'attorney_vimeo', array (
+			'sanitize_callback' => 'esc_url_raw',
+		) );
 		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'attorney_vimeo', array(
 			'label'    => __( 'Enter your Vimeo url', 'attorney' ),
@@ -260,7 +283,9 @@ if ( ! function_exists( 'attorney_theme_customizer' ) ) :
 			'priority'    => 110,
 		) ) );
 		
-		$wp_customize->add_setting( 'attorney_yelp' );
+		$wp_customize->add_setting( 'attorney_yelp', array (
+			'sanitize_callback' => 'esc_url_raw',
+		) );
 		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'attorney_yelp', array(
 			'label'    => __( 'Enter your Yelp url', 'attorney' ),
@@ -269,7 +294,9 @@ if ( ! function_exists( 'attorney_theme_customizer' ) ) :
 			'priority'    => 111,
 		) ) );
 		
-		$wp_customize->add_setting( 'attorney_rss' );
+		$wp_customize->add_setting( 'attorney_rss', array (
+			'sanitize_callback' => 'esc_url_raw',
+		) );
 		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'attorney_rss', array(
 			'label'    => __( 'Enter your RSS url', 'attorney' ),
@@ -278,10 +305,12 @@ if ( ! function_exists( 'attorney_theme_customizer' ) ) :
 			'priority'    => 112,
 		) ) );
 		
-		$wp_customize->add_setting( 'attorney_email' );
+		$wp_customize->add_setting( 'attorney_email', array (
+			'sanitize_callback' => 'sanitize_email',
+		) );
 		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'attorney_email', array(
-			'label'    => __( 'Enter your Mailto url', 'attorney' ),
+			'label'    => __( 'Enter your email address', 'attorney' ),
 			'section'  => 'attorney_social_section',
 			'settings' => 'attorney_email',
 			'priority'    => 113,
@@ -298,6 +327,7 @@ if ( ! function_exists( 'attorney_theme_customizer' ) ) :
 		$wp_customize->add_setting( 'attorney_slider_effect', array(
 			'default' => 'scrollHorz',
 			'capability' => 'edit_theme_options',
+			'sanitize_callback' => 'sanitize_text_field',
 		));
 		
 		 $wp_customize->add_control( 'effect_select_box', array(
@@ -311,20 +341,32 @@ if ( ! function_exists( 'attorney_theme_customizer' ) ) :
 				'tileSlide' => 'Tile Slide',
 				'tileBlind' => 'Blinds',
 			),
-		));
+		) );
 		
-		$wp_customize->add_setting( 'attorney_slider_timeout' );
+		$wp_customize->add_setting( 'attorney_slider_timeout', array (
+			'sanitize_callback' => 'attorney_sanitize_integer',
+		) );
 		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'attorney_slider_timeout', array(
 			'label'    => __( 'Autoplay Speed in Seconds', 'attorney' ),
 			'section'  => 'attorney_slider_section',
 			'settings' => 'attorney_slider_timeout',
 		) ) );
-		
 
 	}
 endif;
 add_action('customize_register', 'attorney_theme_customizer');
+
+
+/**
+ * Sanitize integer input
+ */
+if ( ! function_exists( 'attorney_sanitize_integer' ) ) :
+	function attorney_sanitize_integer( $input ) {
+		return absint($input);
+	}
+endif;
+
 
 /**
 * Apply Color Scheme

@@ -55,6 +55,11 @@ This theme is bundled with Cycle2
 =================================
 CHANGELOG
 =================================
+Version 1.0.7
+ * added sanitize callbacks to Customizer options
+ * modified the email social icon to use the correct mailto protocol instead of http
+ * updated screenshot.png
+ 
 Version 1.0.6
  * added an optional, top-level custom nav menu in the footer 
  * updated the content-gallery.php template
