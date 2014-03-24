@@ -1,6 +1,10 @@
   Theme : Hueman (wordpress.org release)
-Version : 1.3.7
+Version : 1.3.8
  Author : Alexander "Alx" Agnarson - http://alxmedia.se
+
+Mars 24 2014 - 1.3.8
+===========================================================
+- Updated to OptionTree 2.3.4
 
 February 10 2014 - 1.3.7
 ===========================================================
