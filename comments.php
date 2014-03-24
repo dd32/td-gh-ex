@@ -14,7 +14,7 @@
 	if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
 		die ('Please do not load this page directly. Thanks!');
 	if ( post_password_required() ) { ?>
-   <p class="nocomments"><?php _e('This post is password protected. Enter the password to view comments.','advertica'); ?></p>
+   <p class="nocomments"><?php _e('This post is password protected. Enter the password to view comments.','advertica-lite'); ?></p>
 <?php
 		return;
 	}
@@ -24,7 +24,7 @@
 
 <div id="commentsbox">
 <?php if ( have_comments() ) : ?>
-	<h3 id="comments"><?php comments_number(__('No Comment','advertica'), __('One Comment','advertica'), __('% Comments','advertica') );?><?php _e(' so far:','advertica'); ?></h3>
+	<h3 id="comments"><?php comments_number(__('No Comment','advertica-lite'), __('One Comment','advertica-lite'), __('% Comments','advertica-lite') );?><?php _e(' so far:','advertica-lite'); ?></h3>
 	<ol class="commentlist">
 		<?php wp_list_comments(array('avatar_size' => 77)); ?>
 	</ol>
@@ -41,7 +41,7 @@
 
 <?php else : // this is displayed if there are no comments so far ?>
 	<?php if ( ! comments_open() && ! is_page() ) : ?>
-		<?php _e('Comments are closed.','advertica'); ?>
+		<?php _e('Comments are closed.','advertica-lite'); ?>
 	<?php endif; ?>
 <?php endif; ?>
 <?php if ( comments_open() ) : ?>

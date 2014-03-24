@@ -28,7 +28,7 @@ Template Name: Full Width Template
 				<div class="post" id="post-<?php the_ID(); ?>">
 					<div class="skepost">
 						<?php the_content(); ?>
-						<?php wp_link_pages(__('<p><strong>Pages:</strong> ','advertica'), '</p>', __('number','advertica')); ?>
+						<?php wp_link_pages(__('<p><strong>Pages:</strong> ','advertica-lite'), '</p>', __('number','advertica-lite')); ?>
 						<?php edit_post_link('Edit', '', ''); ?>	
 					</div>
 					<!-- skepost -->
@@ -38,7 +38,7 @@ Template Name: Full Width Template
 				<?php endwhile; ?>
 				<?php else :  ?>
 					<div class="post">
-						<h2><?php _e('Not Found','advertica'); ?></h2>
+						<h2><?php _e('Not Found','advertica-lite'); ?></h2>
 					</div>
 				<?php endif; ?>
 			</div>

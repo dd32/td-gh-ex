@@ -33,7 +33,7 @@ function advertica_title($title)
 	if ( is_author() ) { 
 		global $wp_query;
 		$curauth = $wp_query->get_queried_object();	
-		$advertica_title .= __('Author: ','advertica');
+		$advertica_title .= __('Author: ','advertica-lite');
 		$advertica_title .= $curauth->display_name;
 		$advertica_title .= ' | ';
 		$advertica_title .= get_bloginfo('name');

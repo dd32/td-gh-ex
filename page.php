@@ -30,20 +30,22 @@ get_header(); ?>
 		<div class="container post-wrap">
 			<div class="row-fluid">
 				<div id="content" class="span8">
-					<div class="post" id="post-<?php the_ID(); ?>">
+					<div class="post clearfix" id="post-<?php the_ID(); ?>">
 						<div class="skepost">
 							<?php the_content(); ?>
-							<?php wp_link_pages(__('<p><strong>Pages:</strong> ','advertica'), '</p>', __('number','advertica')); ?>
-							<?php edit_post_link('Edit', '', ''); ?>	
+							<?php wp_link_pages(__('<p><strong>Pages:</strong> ','advertica-lite'), '</p>', __('number','advertica-lite')); ?>
 						</div>
 					<!-- skepost --> 
 					</div>
 					<!-- post -->
-
+					<?php edit_post_link('Edit', '', ''); ?>	
+					<?php if ( comments_open() || get_comments_number() ) {
+						comments_template();
+					} ?>
 					<?php endwhile; ?>
 					<?php else :  ?>
 						<div class="post">
-							<h2><?php _e('Page Does Not Exist','advertica'); ?></h2>
+							<h2><?php _e('Page Does Not Exist','advertica-lite'); ?></h2>
 						</div>
 					<?php endif; ?>
 						<div class="clearfix"></div>

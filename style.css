@@ -1,8 +1,8 @@
 ﻿/*
 Theme Name: Advertica Lite
-Theme URI:http://www.sketchthemes.com/themes/advertica-the-uber-clean-multipurpose-wordpress-theme/
+Theme URI: http://www.sketchthemes.com/themes/advertica-the-uber-clean-multipurpose-wordpress-theme/
 Description: Behold the glory of the most beautiful Business theme, ADVERTICA. Advertica is a clean, elegant, beautiful, responsive, and SEO optimized WordPress Theme from SketchThemes. Adverica features a bag full of features that would give you a massive edge when you're creating a website for yourself or for your clients. Some key features worth noticing are: 1-It has a responsive bootstrap framework allowing your site to be seen flawlessly even on mobile devices. 2-Featured Boxes allows you to highlight your key service sectors. 3-You can showcase your work through the 'Latest Projects section'. 4-A Parallax Section is there to give your side a creative edge. 5-Easy to use and customizable Admin Panel which is as easy as pie. 6-Beautifully carved Footer which can be ornate with cool widgets. Apart from the above mentioned super-cool features, Advertica dawns Fluid Layout, Fixed Layout, Persistant Header, Custom Menu, Full-Width Template, Client Logo Section, Translation Ready, Easy to Use Theme Options Panel, Sticky Posts, Right & Left Sidebars, SEO Optimized, Supports Threaded Comments.
-Version: 1.0.0
+Version: 1.0.1
 Author: SketchThemes
 Author URI: http://www.sketchthemes.com
 License: GNU General Public License v2.0
@@ -89,7 +89,7 @@ table {border-collapse: collapse;  border-spacing: 0;  }
 th{color:#000; text-align: center;font-weight: 400;  }
 th,td{padding:3px 5px;  border: 1px solid #CCCCCC; }
 a img {border: none;}
-a {text-decoration: none;}
+a {text-decoration: none;color: #FFA500;}
 a, img, a img, input[type="text"], input[type="password"], input, textarea {outline:none;}
 a:hover{ color: #555; }
 
@@ -97,7 +97,7 @@ a:hover{ color: #555; }
 /* =Header
 -------------------------------------------------------------- */
 body.page-template-template-front-page-php #main{margin-top:0 !important;}
-#header { padding: 0;  position: relative;   z-index: 9999; box-shadow: 3px 0 2px rgba(0, 0, 0, 0.5); max-height: 85px;background: #fff;}
+#header { padding: 0;  position: relative;   z-index: 9999; box-shadow: 3px 0 2px rgba(0, 0, 0, 0.5);background: #fff;}
 .skehead-headernav{ left: 0;top: 0;width: 100%;z-index: 200;}
 #header.skehead-headernav.skehead-headernav-shrink{position:fixed;-moz-box-sizing: border-box;box-sizing: border-box;}
 #logo {transition: height 0.3s ease 0s, line-height 0.3s ease 0s; margin-top: 5px;  margin-bottom: 5px;position: relative;max-height: 62px;}
@@ -412,7 +412,8 @@ tfoot td {padding: 9px 5px;}
 .ske_widget .widget_tag_cloud a,.ske_widget .tagcloud a {    background: none repeat scroll 0 0 #EEEEEE;    color: #333333;    display: inline-block;    font-size: 12px !important;    margin-bottom: 5px;    padding: 6px 10px;    transition: all 1s ease 0s;}
 .ske_widget .widget_tag_cloud a:hover,.ske_widget .tagcloud a:hover {color:#333333;}
 .ske_widget .widget_tag_cloud a,.ske-container .tagcloud a {    border-radius: 2px;    color: #333333;    font-weight: 400;    line-height: 20px;    margin-right: 2px;    text-transform: capitalize;}
-
+.ske-footer-container ul.sub-menu li {border: medium none;margin:0 0 0 10px;}
+.ske-footer-container ul.sub-menu {margin-bottom: 0;}
 /* =Search
 -------------------------------------------------------------- */
 #search {  float:right;  height:55px;  }
@@ -554,6 +555,11 @@ ul.childpages {  list-style-type: disc;  margin-left: 20px;  }
 .alignleft {float: left;margin: 5px 20px 20px 0;}
 .aligncenter {display: block;  margin: 5px auto;}
 .alignnone.size-full {max-width: 100%;}
+#content .alignright {float: right;margin: 5px 0px 20px 20px;}
+#content .alignleft {float: left;margin: 5px 20px 20px 0;}
+#content .aligncenter {display: block;  margin: 5px auto;}
+#content .alignnone.size-full {max-width: 100%;}
+
 #content img, #sider-bar img { height: auto;margin: 0;max-width: 100%;}
 #content table {border: 1px solid #E7E7E7;margin: 0;text-align: left;width: 99%;margin: 0 0 10px;  }
 #content tr td {border: 1px solid #CCCCCC;padding: 6px 24px;text-align: center;  }

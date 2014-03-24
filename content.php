@@ -26,17 +26,17 @@
 		</h1>
 
 		<div class="skepost-meta clearfix">
-		    <span class="date"><?php _e('On','advertica');?> <?php the_time('F j, Y') ?></span><?php _e(',','advertica');?>
-            <span class="author-name"><?php _e('Posted by ','advertica'); the_author_posts_link(); ?> </span><?php _e(',','advertica');?>
-			<?php if (has_category()) { ?><span class="category"><?php _e('In ','advertica');?><?php the_category(','); ?></span><?php _e(',','advertica');?><?php } ?>
+		    <span class="date"><?php _e('On','advertica-lite');?> <?php the_time('F j, Y') ?></span><?php _e(',','advertica-lite');?>
+            <span class="author-name"><?php _e('Posted by ','advertica-lite'); the_author_posts_link(); ?> </span><?php _e(',','advertica-lite');?>
+			<?php if (has_category()) { ?><span class="category"><?php _e('In ','advertica-lite');?><?php the_category(','); ?></span><?php _e(',','advertica-lite');?><?php } ?>
             <?php the_tags('<span class="tags">By ',',','</span> ,'); ?>
-            <span class="comments"><?php _e('With ','advertica');?><?php comments_popup_link(__('No Comments ','advertica'), __('1 Comment ','advertica'), __('% Comments ','advertica')) ; ?></span>
+            <span class="comments"><?php _e('With ','advertica-lite');?><?php comments_popup_link(__('No Comments ','advertica-lite'), __('1 Comment ','advertica-lite'), __('% Comments ','advertica-lite')) ; ?></span>
         </div>
 
 		<!-- skepost-meta -->
-        <div class="skepost">
+        <div class="skepost clearfix">
 			<?php the_excerpt(); ?> 
-			<div class="continue"><a href="<?php the_permalink(); ?>"><?php _e('Read More','advertica');?></a></div>		  
+			<div class="continue"><a href="<?php the_permalink(); ?>"><?php _e('Read More','advertica-lite');?></a></div>		  
         </div>
         <!-- skepost -->
 </div>

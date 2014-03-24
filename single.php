@@ -41,23 +41,23 @@ get_header(); ?>
 						</div>
 
 						<div class="skepost-meta clearfix">
-							<span class="date"><?php _e('On','advertica');?> <?php the_time('F j, Y') ?></span><?php _e(',','advertica');?>
-							<span class="author-name"><?php _e('Posted by ','advertica'); the_author_posts_link(); ?> </span><?php _e(',','advertica');?>
-							<?php if (has_category()) { ?><span class="category"><?php _e('In ','advertica');?><?php the_category(','); ?></span><?php _e(',','advertica');?><?php } ?>
+							<span class="date"><?php _e('On','advertica-lite');?> <?php the_time('F j, Y') ?></span><?php _e(',','advertica-lite');?>
+							<span class="author-name"><?php _e('Posted by ','advertica-lite'); the_author_posts_link(); ?> </span><?php _e(',','advertica-lite');?>
+							<?php if (has_category()) { ?><span class="category"><?php _e('In ','advertica-lite');?><?php the_category(','); ?></span><?php _e(',','advertica-lite');?><?php } ?>
 							<?php the_tags('<span class="tags">By ',',','</span> ,'); ?>
-							<span class="comments"><?php _e('With ','advertica');?><?php comments_popup_link(__('No Comments ','advertica'), __('1 Comment ','advertica'), __('% Comments ','advertica')) ; ?></span>
+							<span class="comments"><?php _e('With ','advertica-lite');?><?php comments_popup_link(__('No Comments ','advertica-lite'), __('1 Comment ','advertica-lite'), __('% Comments ','advertica-lite')) ; ?></span>
 						</div>
 						<!-- skepost-meta -->
 
-						<div class="skepost">
-							<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'advertica' ) ); ?>
-							<?php wp_link_pages(__('<p><strong>Pages:</strong> ','advertica'), '</p>', __('number','advertica')); ?>
+						<div class="skepost clearfix">
+							<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'advertica-lite' ) ); ?>
+							<?php wp_link_pages(__('<p><strong>Pages:</strong> ','advertica-lite'), '</p>', __('number','advertica-lite')); ?>
 						</div>
 						<!-- skepost -->
 
 						<div class="navigation"> 
-							<span class="nav-previous"><?php previous_post_link( __('&larr; %link','advertica')); ?></span>
-							<span class="nav-next"><?php next_post_link( __('%link &rarr;','advertica')); ?></span> 
+							<span class="nav-previous"><?php previous_post_link( __('&larr; %link','advertica-lite')); ?></span>
+							<span class="nav-next"><?php next_post_link( __('%link &rarr;','advertica-lite')); ?></span> 
 						</div>
 						<div class="clearfix"></div>
 						<div class="comments-template">
@@ -69,7 +69,7 @@ get_header(); ?>
 				<?php else :  ?>
 
 				<div class="post">
-					<h2><?php _e('Post Does Not Exist','advertica'); ?></h2>
+					<h2><?php _e('Post Does Not Exist','advertica-lite'); ?></h2>
 				</div>
 				<?php endif; ?>
 			</div><!-- content --> 

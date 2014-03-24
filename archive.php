@@ -25,13 +25,13 @@ get_header(); ?>
 					<h1 class="title">
 						<?php
 						if ( is_day() ) :
-							printf( __( 'Daily Archives : <span>%s</span>', 'advertica' ), get_the_date() );
+							printf( __( 'Daily Archives : <span>%s</span>', 'advertica-lite' ), get_the_date() );
 						elseif ( is_month() ) :
-							printf( __( 'Monthly Archives : <span>%s</span>', 'advertica' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'advertica' ) ) );
+							printf( __( 'Monthly Archives : <span>%s</span>', 'advertica-lite' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'advertica-lite' ) ) );
 						elseif ( is_year() ) :
-							printf( __( 'Yearly Archives : <span>%s</span>', 'advertica' ), get_the_date( _x( 'Y', 'yearly archives date format', 'advertica' ) ) );
+							printf( __( 'Yearly Archives : <span>%s</span>', 'advertica-lite' ), get_the_date( _x( 'Y', 'yearly archives date format', 'advertica-lite' ) ) );
 						else :
-							_e( 'Blog Archives', 'advertica' );
+							_e( 'Blog Archives', 'advertica-lite' );
 						endif;
 						?>
 					</h1><?php if ((class_exists('advertica_breadcrumb_class'))) {$advertica_breadcumb->custom_breadcrumb();} ?>
@@ -56,8 +56,8 @@ get_header(); ?>
 						?>
 
 						<div class="navigation blog-navigation">			
-							<div class="alignleft"><?php previous_posts_link(__('&larr;Previous','advertica')) ?></div>		
-							<div class="alignright"><?php next_posts_link(__('Next&rarr;','advertica'),'') ?></div>    				
+							<div class="alignleft"><?php previous_posts_link(__('&larr;Previous','advertica-lite')) ?></div>		
+							<div class="alignright"><?php next_posts_link(__('Next&rarr;','advertica-lite'),'') ?></div>    				
 						</div>  
 						<?php
 						}

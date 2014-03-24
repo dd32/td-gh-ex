@@ -67,10 +67,10 @@ function advertica_theme_setup() {
 	 *
 	 * Translations can be added to the /languages/ directory.
 	 * If you're building a theme based on Twenty Thirteen, use a find and
-	 * replace to change 'advertica' to the name of your theme in all
+	 * replace to change 'advertica-lite' to the name of your theme in all
 	 * template files.
 	 */
-	 load_theme_textdomain( 'advertica', get_template_directory() . '/languages' );
+	 load_theme_textdomain( 'advertica-lite', get_template_directory() . '/languages' );
 	 
 	// This theme styles the visual editor with editor-style.css to match the theme style.
 	 add_editor_style();
@@ -94,7 +94,7 @@ function advertica_theme_setup() {
 	
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'Header' => __( 'Main Navigation', 'advertica' ),
+		'Header' => __( 'Main Navigation', 'advertica-lite' ),
 	));
 }
 add_action( 'after_setup_theme', 'advertica_theme_setup' ); 
@@ -103,6 +103,7 @@ add_action( 'after_setup_theme', 'advertica_theme_setup' );
 * Funtion to add CSS class to body
 */
 function advertica_add_class( $classes ) {
+
 	if ( 'page' == get_option( 'show_on_front' ) && ( '' != get_option( 'page_for_posts' ) ) && is_front_page() ) {
 		$classes[] = 'front-page';
 	}
@@ -119,7 +120,7 @@ add_filter( 'body_class','advertica_add_class' );
 add_filter('the_title', 'advertica_untitled');
 function advertica_untitled($title) {
 	if ($title == '') {
-		return __('Untitled','advertica');
+		return __('Untitled','advertica-lite');
 	} else {
 		return $title;
 	}

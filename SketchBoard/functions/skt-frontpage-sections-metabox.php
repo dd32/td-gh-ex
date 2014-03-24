@@ -39,37 +39,37 @@ function skt_frontpagesection_metabox_callback() {
   <tr>
 
     <td>
-		<h4><?php _e('Featured Box Section','advertica');?></h4>
+		<h4><?php _e('Featured Box Section','advertica-lite');?></h4>
 	</td>
 	<td>
 		<div class="inputbox">
-			 <label for="skt_freaturedboxsection_metabox1"><input type="radio" name="_skt_freaturedboxsection_metabox" id="skt_freaturedboxsection_metabox1" value="1" checked="checked"  <?php checked(1, $fraturedbox); ?> /><?php _e('Enable &nbsp;&nbsp;&nbsp;&nbsp;','advertica') ?></label>
-			 <label for="skt_freaturedboxsection_metabox2"><input type="radio" name="_skt_freaturedboxsection_metabox" id="skt_freaturedboxsection_metabox2" value="0" <?php checked(0, $fraturedbox); ?> /><?php _e('Disable','advertica') ?></label>
+			 <label for="skt_freaturedboxsection_metabox1"><input type="radio" name="_skt_freaturedboxsection_metabox" id="skt_freaturedboxsection_metabox1" value="1" checked="checked"  <?php checked(1, $fraturedbox); ?> /><?php _e('Enable &nbsp;&nbsp;&nbsp;&nbsp;','advertica-lite') ?></label>
+			 <label for="skt_freaturedboxsection_metabox2"><input type="radio" name="_skt_freaturedboxsection_metabox" id="skt_freaturedboxsection_metabox2" value="0" <?php checked(0, $fraturedbox); ?> /><?php _e('Disable','advertica-lite') ?></label>
 		</div>
 	</td>
    </tr>
   <tr>
     <td>
-		<h4><?php _e('Content Box with Parallax Effect Section','advertica');?></h4>
+		<h4><?php _e('Content Box with Parallax Effect Section','advertica-lite');?></h4>
 	</td>
 
 	<td>
 		<div class="inputbox">
-			<label for="skt_parallaxeffect_metabox1"><input type="radio" name="_skt_parallaxeffect_metabox" id="skt_parallaxeffect_metabox1" value="1" checked="checked"  <?php checked(1, $parallaxeffectmeta);?> /><?php _e('Enable &nbsp;&nbsp;&nbsp;&nbsp;','advertica') ?></label>
-			<label for="skt_parallaxeffect_metabox2"><input type="radio" name="_skt_parallaxeffect_metabox" id="skt_parallaxeffect_metabox2" value="0" <?php checked(0, $parallaxeffectmeta);?> /><?php _e('Disable','advertica') ?></label>
+			<label for="skt_parallaxeffect_metabox1"><input type="radio" name="_skt_parallaxeffect_metabox" id="skt_parallaxeffect_metabox1" value="1" checked="checked"  <?php checked(1, $parallaxeffectmeta);?> /><?php _e('Enable &nbsp;&nbsp;&nbsp;&nbsp;','advertica-lite') ?></label>
+			<label for="skt_parallaxeffect_metabox2"><input type="radio" name="_skt_parallaxeffect_metabox" id="skt_parallaxeffect_metabox2" value="0" <?php checked(0, $parallaxeffectmeta);?> /><?php _e('Disable','advertica-lite') ?></label>
 		</div>
 	</td>
    </tr>
 
    <tr>
     <td>
-		<h4><?php _e('Client Logo Section','advertica');?></h4>
+		<h4><?php _e('Client Logo Section','advertica-lite');?></h4>
 	</td>
 
 	<td>
 		<div class="inputbox">
-			<label for="skt_clientlogo_metabox1"><input type="radio" name="_skt_clientlogo_metabox" id="skt_clientlogo_metabox1" value="1" checked="checked"  <?php checked(1, $clientlogometa);?> /><?php _e('Enable &nbsp;&nbsp;&nbsp;&nbsp;','advertica') ?></label>
-			<label for="skt_clientlogo_metabox2"><input type="radio" name="_skt_clientlogo_metabox" id="skt_clientlogo_metabox2" value="0" <?php checked(0, $clientlogometa);?> /><?php _e('Disable','advertica') ?></label>
+			<label for="skt_clientlogo_metabox1"><input type="radio" name="_skt_clientlogo_metabox" id="skt_clientlogo_metabox1" value="1" checked="checked"  <?php checked(1, $clientlogometa);?> /><?php _e('Enable &nbsp;&nbsp;&nbsp;&nbsp;','advertica-lite') ?></label>
+			<label for="skt_clientlogo_metabox2"><input type="radio" name="_skt_clientlogo_metabox" id="skt_clientlogo_metabox2" value="0" <?php checked(0, $clientlogometa);?> /><?php _e('Disable','advertica-lite') ?></label>
 		</div>
 	</td>
    </tr>

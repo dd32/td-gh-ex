@@ -172,7 +172,7 @@ if ( !function_exists( 'optionsframework_add_page' ) ) {
 
 	function optionsframework_add_page() {
 		global $advertica_shortname;
-		$of_page = add_theme_page( ucwords($advertica_shortname).__(' Lite Options', 'advertica'), ucwords($advertica_shortname).__(' Lite Options', 'advertica'), 'edit_theme_options', 'options-framework','optionsframework_page');
+		$of_page = add_theme_page( ucwords($advertica_shortname).__(' Lite Options', 'advertica-lite'), ucwords($advertica_shortname).__(' Lite Options', 'advertica-lite'), 'edit_theme_options', 'options-framework','optionsframework_page');
 		
 		// Load the required CSS and javscript
 		add_action('admin_enqueue_scripts', 'optionsframework_load_scripts');
@@ -228,12 +228,12 @@ if ( !function_exists( 'optionsframework_page' ) ) {
 ?>
 
 	<div class="donate-info">
-		<strong><?php _e( 'To Activate All Features, Please Upgrade to Pro version!', 'advertica' ); ?></strong><br/>
+		<strong><?php _e( 'To Activate All Features, Please Upgrade to Pro version!', 'advertica-lite' ); ?></strong><br/>
 		<?php $sktlink = "http://www.sketchthemes.com/themes/advertica-the-uber-clean-multipurpose-wordpress-theme/"; ?>
-		<a title="<?php esc_attr_e( 'Upgrade to Pro', 'advertica' ); ?>" href="<?php echo esc_url($sktlink); ?>" target="_blank" class="upgrade"><?php _e( 'Upgrade to Pro', 'advertica' ); ?></a>
-		<a title="<?php esc_attr_e( 'Setup Instructions', 'advertica' ); ?>" href="<?php echo get_template_directory_uri().'/Installation_Instructions.txt'; ?>" target="_blank" class="donate"><?php _e( 'Setup Instructions', 'advertica' ); ?></a>
+		<a title="<?php esc_attr_e( 'Upgrade to Pro', 'advertica-lite' ); ?>" href="<?php echo esc_url($sktlink); ?>" target="_blank" class="upgrade"><?php _e( 'Upgrade to Pro', 'advertica-lite' ); ?></a>
+		<a title="<?php esc_attr_e( 'Setup Instructions', 'advertica-lite' ); ?>" href="<?php echo get_template_directory_uri().'/Installation_Instructions.txt'; ?>" target="_blank" class="donate"><?php _e( 'Setup Instructions', 'advertica-lite' ); ?></a>
 		<?php $sktratelink = "http://wordpress.org/support/view/theme-reviews/advertica-lite"; ?>
-		<a title="<?php esc_attr_e( 'Rate Advertica Lite', 'advertica' ); ?>" href="<?php echo esc_url($sktratelink); ?>" target="_blank" class="review"><?php _e( 'Rate Advertica Lite', 'advertica' ); ?></a>
+		<a title="<?php esc_attr_e( 'Rate Advertica Lite', 'advertica-lite' ); ?>" href="<?php echo esc_url($sktratelink); ?>" target="_blank" class="review"><?php _e( 'Rate Advertica Lite', 'advertica-lite' ); ?></a>
 		<div id="social-share">
 		<div class="fb-like">
 			<iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FSketchThemes&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=true&amp;share=false&amp;height=21&amp;appId=333709623346310" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowTransparency="true"></iframe>
@@ -257,7 +257,7 @@ if ( !function_exists( 'optionsframework_page' ) ) {
 	
 	<?php if(isset($advertica_themename)){?>
 	
-    <?php screen_icon( 'themes' ); ?><h2><?php _e('Theme Options ','advertica');?><?php echo $advertica_themename;?></h2>  
+    <?php screen_icon( 'themes' ); ?><h2><?php _e('Theme Options ','advertica-lite');?><?php echo $advertica_themename;?></h2>  
 	
 	<?php } ?>
 	
@@ -277,11 +277,11 @@ if ( !function_exists( 'optionsframework_page' ) ) {
 				</div> <!-- / #skt-of-content -->
 				<div id="optionsframework-submit">
 					<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'optionsframework' ); ?>" />
-					<input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'optionsframework' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'advertica' ) ); ?>' );" />
+					<input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'optionsframework' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'advertica-lite' ) ); ?>' );" />
 					<div class="clear"></div>
 				</div> <!-- / #optionsframework-submit -->
 				</div> <!-- / #skt-of-body -->
-				<input type="submit" id="advertica_submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'advertica' ); ?>" />
+				<input type="submit" id="advertica_submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'advertica-lite' ); ?>" />
 			</form>
 		</div> <!-- / #container -->
 	</div>
@@ -311,7 +311,7 @@ function optionsframework_validate( $input ) {
 	 */
 
 	if ( isset( $_POST['reset'] ) ) {
-		add_settings_error( 'options-framework', 'restore_defaults', __( 'Default options restored.', 'advertica' ), 'updated fade' );
+		add_settings_error( 'options-framework', 'restore_defaults', __( 'Default options restored.', 'advertica-lite' ), 'updated fade' );
 		return of_get_default_values();
 	} else {
 	
@@ -354,7 +354,7 @@ function optionsframework_validate( $input ) {
 			}
 		}
 
-		add_settings_error( 'options-framework', 'save_options', __( 'Options saved.', 'advertica' ), 'updated fade' );
+		add_settings_error( 'options-framework', 'save_options', __( 'Options saved.', 'advertica-lite' ), 'updated fade' );
 		return $clean;
 	}
 
@@ -405,7 +405,7 @@ function optionsframework_adminbar() {
 	$wp_admin_bar->add_menu( array(
 			'parent' => 'appearance',
 			'id' => 'of_theme_options',
-			'title' => __( 'Theme Options', 'advertica' ),
+			'title' => __( 'Theme Options', 'advertica-lite' ),
 			'href' => admin_url( 'themes.php?page=options-framework' )
 	));
 }

@@ -1,6 +1,4 @@
 <?php global $advertica_shortname; ?>
-<?php  $fraturedbox = get_post_meta( $post->ID,'_skt_freaturedboxsection_metabox',true );
-if($fraturedbox == '1'){?>
 <div id="featured-box" class="skt-section">
 	<div class="container">
 		<div class="mid-box-mid row-fluid"> 
@@ -11,7 +9,7 @@ if($fraturedbox == '1'){?>
 						<?php if(sketch_get_option($advertica_shortname.'_fb1_first_part_image')) { ?>
 							<a class="skt-featured-images" href="<?php if(sketch_get_option($advertica_shortname."_fb1_first_part_link")) { echo sketch_get_option($advertica_shortname."_fb1_first_part_link"); } ?>" title="<?php if(sketch_get_option($advertica_shortname."_fb1_first_part_heading")) { echo sketch_get_option($advertica_shortname."_fb1_first_part_heading"); } ?>">
 									<span class="skt-featured-image-mask"></span>
-									<img class="skin-bg" src="<?php  echo sketch_get_option($advertica_shortname.'_fb1_first_part_image','advertica'); ?>" alt="boximg"/>	  
+									<img class="skin-bg" src="<?php  echo sketch_get_option($advertica_shortname.'_fb1_first_part_image','advertica-lite'); ?>" alt="boximg"/>	  
 							</a>
 						<?php } else { ?>
 						<a class="skt-featured-icons" href="<?php if(sketch_get_option($advertica_shortname."_fb1_first_part_link")) { echo sketch_get_option($advertica_shortname."_fb1_first_part_link"); } ?>" title="<?php if(sketch_get_option($advertica_shortname."_fb1_first_part_heading")) { echo sketch_get_option($advertica_shortname."_fb1_first_part_heading"); } ?>">
@@ -33,7 +31,7 @@ if($fraturedbox == '1'){?>
 					  <?php if(sketch_get_option($advertica_shortname.'_fb2_second_part_image')) { ?>
 						<a class="skt-featured-images" href="<?php if(sketch_get_option($advertica_shortname."_fb2_second_part_link")) { echo sketch_get_option($advertica_shortname."_fb2_second_part_link"); } ?>" title="<?php if(sketch_get_option($advertica_shortname."_fb2_second_part_heading")) { echo sketch_get_option($advertica_shortname."_fb2_second_part_heading"); } ?>">
 								<span class="skt-featured-image-mask"></span>
-								<img class="skin-bg" src="<?php  echo sketch_get_option($advertica_shortname.'_fb2_second_part_image','advertica'); ?>" alt="boximg"/>
+								<img class="skin-bg" src="<?php  echo sketch_get_option($advertica_shortname.'_fb2_second_part_image','advertica-lite'); ?>" alt="boximg"/>
 						</a>
 					  <?php } else { ?>
 						<a class="skt-featured-icons" href="<?php if(sketch_get_option($advertica_shortname."_fb2_second_part_link")) { echo sketch_get_option($advertica_shortname."_fb2_second_part_link"); } ?>" title="<?php if(sketch_get_option($advertica_shortname."_fb2_second_part_heading")) { echo sketch_get_option($advertica_shortname."_fb2_second_part_heading"); } ?>">
@@ -55,7 +53,7 @@ if($fraturedbox == '1'){?>
 					  <?php if(sketch_get_option($advertica_shortname.'_fb3_third_part_image')) { ?>			
 						<a class="skt-featured-images" href="<?php if(sketch_get_option($advertica_shortname."_fb3_third_part_link")) { echo sketch_get_option($advertica_shortname."_fb3_third_part_link"); } ?>" title="<?php if(sketch_get_option($advertica_shortname."_fb3_third_part_heading")) { echo sketch_get_option($advertica_shortname."_fb3_third_part_heading"); } ?>">				
 								<span class="skt-featured-image-mask"></span>
-								<img class="skin-bg" src="<?php  echo sketch_get_option($advertica_shortname.'_fb3_third_part_image','advertica'); ?>" alt="boximg"/>
+								<img class="skin-bg" src="<?php  echo sketch_get_option($advertica_shortname.'_fb3_third_part_image','advertica-lite'); ?>" alt="boximg"/>
 						</a>
 					  <?php } else { ?>
 						<a class="skt-featured-icons" href="<?php if(sketch_get_option($advertica_shortname."_fb3_third_part_link")) { echo sketch_get_option($advertica_shortname."_fb3_third_part_link"); } ?>" title="<?php if(sketch_get_option($advertica_shortname."_fb3_third_part_heading")) { echo sketch_get_option($advertica_shortname."_fb3_third_part_heading"); } ?>">				
@@ -74,4 +72,3 @@ if($fraturedbox == '1'){?>
 		</div>
 	</div>
 </div>
-<?php }?>

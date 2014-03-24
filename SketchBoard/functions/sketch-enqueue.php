@@ -39,7 +39,7 @@ function advertica_theme_stylesheet()
 	if ( !is_admin() ) 
 	{
 		$theme = wp_get_theme();
-		wp_enqueue_script('advertica_hoverIntent', get_template_directory_uri().'/js/hoverIntent.js',array('jquery'),true,'1.0');
+		wp_enqueue_script('hoverIntent');
 		wp_enqueue_script('advertica_superfish', get_template_directory_uri().'/js/superfish.js',array('jquery'),true,'1.0');
 		wp_enqueue_script('advertica_AnimatedHeader', get_template_directory_uri().'/js/cbpAnimatedHeader.js',array('jquery'),true,'1.0');
 		wp_enqueue_script('advertica_easing_slide',get_template_directory_uri().'/js/jquery.easing.1.3.js',array('jquery'),'1.0',true);

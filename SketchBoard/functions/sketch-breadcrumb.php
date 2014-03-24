@@ -20,7 +20,7 @@ class advertica_breadcrumb_class {
 
         global $post, $options;
 
-        echo '<section class="cont_nav"><div class="cont_nav_inner"><p><a href="' . home_url() . '/">' . __('Home', 'advertica') . '</a>';
+        echo '<section class="cont_nav"><div class="cont_nav_inner"><p><a href="' . home_url() . '/">' . __('Home', 'advertica-lite') . '</a>';
 
        
 
@@ -150,7 +150,7 @@ class advertica_breadcrumb_class {
 
             $curauth = $wp_query->get_queried_object();	
 
-            return __('Author', 'advertica') . ' : ' . $curauth->display_name;
+            return __('Author', 'advertica-lite') . ' : ' . $curauth->display_name;
 
         }
 
@@ -158,7 +158,7 @@ class advertica_breadcrumb_class {
 
         if (is_tag()) {
 
-            return __('Tag', 'advertica') . ' : ' . single_tag_title('', false);
+            return __('Tag', 'advertica-lite') . ' : ' . single_tag_title('', false);
 
         }
 
@@ -166,11 +166,11 @@ class advertica_breadcrumb_class {
 
         if (is_search()) {
 
-            return __('Search', 'advertica');
+            return __('Search', 'advertica-lite');
 
         }
 
-		if (is_404()) {            return __('Error 404', 'advertica');        }
+		if (is_404()) {            return __('Error 404', 'advertica-lite');        }
 
 
 

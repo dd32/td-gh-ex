@@ -12,7 +12,7 @@ get_header(); ?>
 			<div class="row-fluid">
 				<div class="container_inner clearfix">
 					<h1 class="title">
-						<?php printf( __( 'Search Results for : %s', 'advertica' ), '<span>' . get_search_query() . '</span>' ); ?> 	
+						<?php printf( __( 'Search Results for : %s', 'advertica-lite' ), '<span>' . get_search_query() . '</span>' ); ?> 	
 					</h1>
 					<?php if ((class_exists('advertica_breadcrumb_class'))) {$advertica_breadcumb->custom_breadcrumb();} ?>
 				</div>
@@ -33,8 +33,8 @@ get_header(); ?>
 							if($prev_link || $next_link){
 							?>
 							<div class="navigation blog-navigation">				
-								<div class="alignleft"><?php previous_posts_link(__('&larr;Previous','advertica')) ?></div>		
-								<div class="alignright"><?php next_posts_link(__('Next&rarr;','advertica'),'') ?></div>    			
+								<div class="alignleft"><?php previous_posts_link(__('&larr;Previous','advertica-lite')) ?></div>		
+								<div class="alignright"><?php next_posts_link(__('Next&rarr;','advertica-lite'),'') ?></div>    			
 							</div>  
 							<?php
 							}

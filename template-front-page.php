@@ -1,8 +1,3 @@
-<?php
-/*
-Template Name: Home page Template
-*/
-?>
 <?php get_header(); ?>
 
 <?php global $advertica_shortname; ?>

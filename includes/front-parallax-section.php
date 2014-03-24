@@ -1,5 +1,3 @@
-<?php  $parallaxeffectmeta = get_post_meta( $post->ID,'_skt_parallaxeffect_metabox',true );
-if($parallaxeffectmeta == '1'){ ?>
 <div id="full-division-box" class="skt-section">
 	<div class="container full-content-box" >
 		<div class="row-fluid">
@@ -9,4 +7,3 @@ if($parallaxeffectmeta == '1'){ ?>
 		</div>
 	</div>
 </div>
-<?php } ?>

@@ -229,10 +229,10 @@ add_filter( 'of_font_face', 'of_sanitize_font_face' );
  */
 function of_recognized_background_repeat() {
 	$default = array(
-		'no-repeat' => __('No Repeat', 'advertica'),
-		'repeat-x'  => __('Repeat Horizontally', 'advertica'),
-		'repeat-y'  => __('Repeat Vertically', 'advertica'),
-		'repeat'    => __('Repeat All', 'advertica'),
+		'no-repeat' => __('No Repeat', 'advertica-lite'),
+		'repeat-x'  => __('Repeat Horizontally', 'advertica-lite'),
+		'repeat-y'  => __('Repeat Vertically', 'advertica-lite'),
+		'repeat'    => __('Repeat All', 'advertica-lite'),
 		);
 	return apply_filters( 'of_recognized_background_repeat', $default );
 }
@@ -245,15 +245,15 @@ function of_recognized_background_repeat() {
  */
 function of_recognized_background_position() {
 	$default = array(
-		'top left'      => __('Top Left', 'advertica'),
-		'top center'    => __('Top Center', 'advertica'),
-		'top right'     => __('Top Right', 'advertica'),
-		'center left'   => __('Middle Left', 'advertica'),
-		'center center' => __('Middle Center', 'advertica'),
-		'center right'  => __('Middle Right', 'advertica'),
-		'bottom left'   => __('Bottom Left', 'advertica'),
-		'bottom center' => __('Bottom Center', 'advertica'),
-		'bottom right'  => __('Bottom Right', 'advertica')
+		'top left'      => __('Top Left', 'advertica-lite'),
+		'top center'    => __('Top Center', 'advertica-lite'),
+		'top right'     => __('Top Right', 'advertica-lite'),
+		'center left'   => __('Middle Left', 'advertica-lite'),
+		'center center' => __('Middle Center', 'advertica-lite'),
+		'center right'  => __('Middle Right', 'advertica-lite'),
+		'bottom left'   => __('Bottom Left', 'advertica-lite'),
+		'bottom center' => __('Bottom Center', 'advertica-lite'),
+		'bottom right'  => __('Bottom Right', 'advertica-lite')
 		);
 	return apply_filters( 'of_recognized_background_position', $default );
 }
@@ -266,8 +266,8 @@ function of_recognized_background_position() {
  */
 function of_recognized_background_attachment() {
 	$default = array(
-		'scroll' => __('Scroll Normally', 'advertica'),
-		'fixed'  => __('Fixed in Place', 'advertica')
+		'scroll' => __('Scroll Normally', 'advertica-lite'),
+		'fixed'  => __('Fixed in Place', 'advertica-lite')
 		);
 	return apply_filters( 'of_recognized_background_attachment', $default );
 }
@@ -341,10 +341,10 @@ function of_recognized_font_faces() {
  */
 function of_recognized_font_styles() {
 	$default = array(
-		'normal'      => __('Normal', 'advertica'),
-		'italic'      => __('Italic', 'advertica'),
-		'bold'        => __('Bold', 'advertica'),
-		'bold italic' => __('Bold Italic', 'advertica')
+		'normal'      => __('Normal', 'advertica-lite'),
+		'italic'      => __('Italic', 'advertica-lite'),
+		'bold'        => __('Bold', 'advertica-lite'),
+		'bold italic' => __('Bold Italic', 'advertica-lite')
 		);
 	return apply_filters( 'of_recognized_font_styles', $default );
 }

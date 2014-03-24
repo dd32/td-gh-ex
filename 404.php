@@ -13,8 +13,8 @@ get_header(); ?>
 			<div id="content" class="span12">
 				<div class="post">
 					<div class="skepost _404-page">
-						<div class="error-txt-first"><?php _e( '404', 'advertica' ); ?></div>
-						<p><?php _e( 'Sorry, but the requested resource was not found on this site. Please try again or contact the administrator for assistance.', 'advertica' ); ?></p>
+						<div class="error-txt-first"><?php _e( '404', 'advertica-lite' ); ?></div>
+						<p><?php _e( 'Sorry, but the requested resource was not found on this site. Please try again or contact the administrator for assistance.', 'advertica-lite' ); ?></p>
 					</div>
 					<!-- post --> 
 				</div>
