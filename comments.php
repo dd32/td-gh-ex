@@ -5,6 +5,8 @@
 	<?php if ( have_comments() ) : ?>
 	
 		<div class="comments">
+		
+			<a name="comments"></a>
 				
 			<h2 class="comments-title">
 			

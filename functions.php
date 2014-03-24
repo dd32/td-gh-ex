@@ -23,7 +23,9 @@ function hemingway_setup() {
 		'width'         => 1280,
 		'height'        => 416,
 		'default-image' => get_template_directory_uri() . '/images/header.jpg',
-		'uploads'       => true
+		'uploads'       => true,
+		'header-text'  	=> false
+		
 	);
 	add_theme_support( 'custom-header', $args );
 
@@ -46,7 +48,6 @@ function hemingway_load_javascript_files() {
 	if ( !is_admin() )
 		wp_register_script( 'hemingway_global', get_template_directory_uri().'/js/global.js', array('jquery'), '', true );
 		
-		wp_enqueue_script( 'jquery' );	
 		wp_enqueue_script( 'hemingway_global' );
 }
 
@@ -56,7 +57,7 @@ add_action( 'wp_enqueue_scripts', 'hemingway_load_javascript_files' );
 // Enqueue styles
 function hemingway_load_style() {
 	if ( !is_admin() )
-	    wp_register_style('hemingway_googleFonts', 'http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Raleway:700,400' );
+	    wp_register_style('hemingway_googleFonts',  '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Raleway:700,400' );
 		wp_register_style('hemingway_style', get_stylesheet_uri() );
 		
 	    wp_enqueue_style( 'hemingway_googleFonts' );
@@ -170,10 +171,11 @@ class hemingway_nav_walker extends Walker_Nav_Menu {
 add_action('body_class', 'hemingway_if_featured_image_class' );
 
 function hemingway_if_featured_image_class($classes) {
-	if ( has_post_thumbnail() ) { 
-		array_push($classes, 'has-featured-image');
-	}
-	return $classes;
+     global $post;
+     if ( isset( $post ) && has_post_thumbnail() ) {
+             $classes[] = 'has-featured-image';
+     }
+     return $classes;
 }
 
 
@@ -381,8 +383,6 @@ class Hemingway_Customize {
       //4. We can also change built-in settings by modifying properties. For instance, let's make some stuff use live preview JS...
       $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
       $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
-      $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-      $wp_customize->get_setting( 'background_color' )->transport = 'postMessage';
    }
 
    public static function header_output() {
