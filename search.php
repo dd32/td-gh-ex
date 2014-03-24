@@ -24,6 +24,10 @@
 		} ?>
 
 	<?php the_excerpt(); ?>
+	<div class="more">
+		<a class="readmore" href="<?php the_permalink() ?>" rel="bookmark"><?php _e( 'Read More &raquo;', 'bluegray' ); ?></a>
+	</div>
+
 		<?php endwhile; else: ?>
 					
 	<h3 class="page-title"><?php _e( 'Nothing Found', 'bluegray' ); ?></h3>

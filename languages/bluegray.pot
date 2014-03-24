@@ -203,7 +203,9 @@ msgstr ""
 msgid "Footer Sidebar Left"
 msgstr ""
 
-#: functions.php:180
+#: archive.php:40
+#: index.php:31
+#: search.php:28
 #@ bluegray
 msgid "Read More &raquo;"
 msgstr ""

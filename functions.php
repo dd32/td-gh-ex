@@ -31,6 +31,15 @@
 		);	
 		add_theme_support( 'custom-header', $args );
 
+	// Default header
+		register_default_headers( array(
+		'boats' => array(
+			'url' => '%s/images/boats.jpg',
+			'thumbnail_url' => '%s/images/boats-thumbnail.jpg',
+			'description' => __( 'Boats', 'bluegray' )
+		)
+		));
+
 	// Post thumbnails
 		add_theme_support( 'post-thumbnails' ); 
 
@@ -90,8 +99,8 @@
 // Register Google Fonts
 	function bluegray_fonts() { 
 		if (! is_admin() ) { 
-			wp_register_style('googleFonts', '//fonts.googleapis.com/css?family=Open+Sans' ); 		
-				wp_enqueue_style( 'googleFonts'); 	
+			wp_register_style('bluegray_googlefonts', '//fonts.googleapis.com/css?family=Open+Sans' ); 		
+				wp_enqueue_style( 'bluegray_googlefonts'); 	
 		}
 	}  	
 	add_action('wp_enqueue_scripts', 'bluegray_fonts');
@@ -174,29 +183,11 @@
 	add_action( 'widgets_init', 'bluegray_widgets_init' );
 
 
-// Replaces the excerpt "more" text by a link 
-	function bluegray_excerpt_more($more) { 
-		global $post; 
-		return '<a class="moretag" href="'. get_permalink($post->ID) . '">' . __( 'Read More &raquo;', 'bluegray' ) . '</a>'; 
-		} 
-	add_filter('excerpt_more', 'bluegray_excerpt_more'); 
-
-
 // Add class to the excerpt 
 	function bluegray_excerpt( $excerpt ) {
     		return str_replace('<p', '<p class="excerpt"', $excerpt);
 		}
 	add_filter( "the_excerpt", "bluegray_excerpt" );
-
-
-// Default header
-	register_default_headers( array(
-	'boats' => array(
-		'url' => '%s/images/boats.jpg',
-		'thumbnail_url' => '%s/images/boats-thumbnail.jpg',
-		'description' => __( 'Boats', 'bluegray' )
-		)
-	) );
 
 
 // Theme Customizer (option to add logo)

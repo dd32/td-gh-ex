@@ -55,7 +55,8 @@ Script: nav.js
 Source: http://maxfoundry.com/blog/responsive-mobile-navigation-in-wordpress/
 Copyright author: John Hartley
 Author URI: http://maxfoundry.com/blog/author/johnbhartley 
-License: none (public domain) 
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 
 THEME IMAGES
@@ -63,7 +64,8 @@ THEME IMAGES
 Item: boats.jpg
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
-License: none (public domain) 
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 
 CREDITS

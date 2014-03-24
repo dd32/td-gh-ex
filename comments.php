@@ -34,13 +34,14 @@ if ( post_password_required() )
 			// Are there comments to navigate through?
 			if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :
 		?>
+		<div class="post-nav">
 			<div class="nav-prev"><?php previous_comments_link( __( '&laquo; Older Comments', 'bluegray' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &raquo;', 'bluegray' ) ); ?></div>
-
+		</div>
 		<?php endif; // Check for comment navigation ?>
 
 		<?php if ( ! comments_open() && get_comments_number() ) : ?>
-		<p class="no-comments"><?php _e( 'Comments are closed' , 'bluegray' ); ?></p>
+		<h4 class="no-comments"><?php _e( 'Comments are closed' , 'bluegray' ); ?></h4>
 		<?php endif; ?>
 
 	<?php endif; // have_comments() ?>
