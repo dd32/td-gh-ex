@@ -4,8 +4,8 @@ Theme URI: http://themeinprogress.com/sueva/
 Description: Sueva is a free responsive clean and corporate Tumblelog  WordPress Theme. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10 and uses the most modern technologies like HTML5 and CSS3.
 Author: ThemeinProgress.
 Author URI: http://themeinprogress.com
-Version: 1.2.6.5
-Tags: gray, light, black, orange, blue, white, two-columns, right-sidebar, left-sidebar, custom-background, custom-menu, threaded-comments, full-width-template, theme-options 
+Version: 1.2.6.6
+Tags: gray, light, black, orange, blue, white, two-columns, right-sidebar, left-sidebar, custom-background, custom-menu, threaded-comments, full-width-template, theme-options,responsive-layout, translation-ready, one-column 
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 */
@@ -186,7 +186,7 @@ span.error {
 	border-bottom:none;
 }
 .btn {
-	font-family:'Oxygen',Verdana, Geneva, sans-serif; 
+	font-family:'Abel',Verdana, Geneva, sans-serif; 
 }
 .btn.right a {
 	color:#616161;
@@ -663,7 +663,7 @@ nav#mainmenu ul ul li ul:before {
 }
 
 .article-header {
-	font-family: 'Oxygen', sans-serif;
+	font-family: 'Abel', sans-serif;
 	margin:0 0 20px 0; 
 	color:#000; 
 	font-size:13px; 
@@ -687,7 +687,7 @@ nav#mainmenu ul ul li ul:before {
 .comment-container { 
 	margin:0 0 45px 0; 
 	padding:25px 15px; 
-	font-family:'Maven Pro',Verdana, Geneva, sans-serif; 
+	font-family:'Abel',Verdana, Geneva, sans-serif; 
 	font-size:12px; 
 	position: relative; 
 	background:#fff;
@@ -1298,7 +1298,7 @@ ul#twitter_update_list li {
 .tipsy { 
 	padding: 5px; 
 	font-size: 10px; 
-	font-family:Verdana, Geneva, sans-serif; 
+	font-family: 'Abel',Verdana, Geneva, sans-serif;
 	opacity: 0.8; 
 	filter: alpha(opacity=80); 
 	background-repeat: no-repeat;  
@@ -1394,7 +1394,7 @@ a.email  {
 	-webkit-border-radius:4px;
 	-moz-border-radius:4px;
 	border-radius:4px;
-	font-family:'Maven Pro',Verdana, Geneva, sans-serif;
+	font-family: 'Abel',Verdana, Geneva, sans-serif;
 	box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
 	-moz-box-shadow: 0 1px 2px rgba(34,25,25,0.4);
 	-webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
