@@ -1,6 +1,11 @@
 *** Hemingway changelog ***
 
 
+Version 1.38 (2014-03-25)
+-------------------------
+- Fixed centering of .aligncenter images
+
+
 Version 1.37 (2014-03-24)
 -------------------------
 - Added anchor link "#comments" to comments.php
