@@ -29,7 +29,7 @@
 
                 <h2> <?php _e( 'What can i do?',"wip" ) ?> </h2>           
 
-                <p> <a href="<?php echo home_url(); ?>" title="<?php bloginfo('name') ?>"> <?php _e( 'Back to the homepage','wip'); ?> </a> </p>
+                <p> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name') ?>"> <?php _e( 'Back to the homepage','wip'); ?> </a> </p>
               
                 <p> <?php _e( 'Check the typed URL','wip'); ?> </p>
 

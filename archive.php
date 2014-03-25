@@ -36,7 +36,7 @@
                 
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
            
-			<article <?php post_class(array('post-container','col-md-12')); ?>>
+			<article id="post-<?php the_ID(); ?>" <?php post_class(array('post-container','col-md-12')); ?>>
 				
 				<?php do_action('lookilite_postformat'); ?>
                 
@@ -54,7 +54,7 @@
     
                     <h3> <?php _e( 'What can i do?',"wip" ) ?> </h3>           
     
-                    <p> <a href="<?php echo home_url(); ?>" title="<?php bloginfo('name') ?>"> <?php _e( 'Back to the homepage','wip'); ?> </a> </p>
+                    <p> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name') ?>"> <?php _e( 'Back to the homepage','wip'); ?> </a> </p>
     
                     <p> <?php _e( 'Make a search, from the below form:','wip'); ?> </p>
                     

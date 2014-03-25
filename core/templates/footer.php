@@ -35,14 +35,14 @@ function lookilite_socials() {
 	
 	foreach ( $socials as $social_icon => $social_name) { 
 	
-		if (lookilite_setting('wip_footer_'.$social_name.'_button')): 
+		if (lookilite_setting('lookilite_footer_'.$social_name.'_button')): 
 			$i++;	
-            $html.= '<a href="'.lookilite_setting('wip_footer_'.$social_name.'_button').'" target="_blank" class="social"> <i class="'.$social_icon.'" ></i> </a> ';
+            $html.= '<a href="'.lookilite_setting('lookilite_footer_'.$social_name.'_button').'" target="_blank" class="social"> <i class="'.$social_icon.'" ></i> </a> ';
 		endif;
 		
 	}
 	
-	if (lookilite_setting('wip_footer_rss_button') == "on"): 
+	if (lookilite_setting('lookilite_footer_rss_button') == "on"): 
 		$i++;	
 		$html.= '<a href="'. get_bloginfo('rss2_url'). '" title="Rss" class="social rss"> <i class="fa fa-rss" ></i>  </a> ';
 	endif; 

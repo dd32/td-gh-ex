@@ -11,16 +11,16 @@
 
 function lookilite_add_menu() {
 	global $themename, $adminmenuname, $optionfile;
-	add_theme_page("Looki Options", "Looki Options", 'administrator',  'lookioption', 'lookioption');
+	add_theme_page("Looki Options", "Looki Options", 'administrator',  'lookilite_option', 'lookilite_option');
 	add_theme_page(__('Get Premium', 'wip' ), __('Get Premium', 'wip' ), 'administrator',  'getpremium', 'lookilite_getpremium');
 
 }
 
 add_action('admin_menu', 'lookilite_add_menu'); 
 
-function lookioption() {
+function lookilite_option() {
 		
-		$shortname = "wip";
+		$shortname = "lookilite";
 		require_once dirname(__FILE__) . '/option/options.php';   
 
 }
@@ -33,11 +33,11 @@ function lookilite_add_script() {
 
 	 $file_dir = get_template_directory_uri()."/core/admin/include";
 
-	 wp_enqueue_style ( 'wip_panel', $file_dir.'/css/wip_panel.css' ); 
-	 wp_enqueue_style ( 'wip_on_off', $file_dir.'/css/wip_on_off.css' );
+	 wp_enqueue_style ( 'lookilite_panel', $file_dir.'/css/wip_panel.css' ); 
+	 wp_enqueue_style ( 'lookilite_on_off', $file_dir.'/css/wip_on_off.css' );
 	
-	 wp_enqueue_script( 'wip_panel', $file_dir.'/js/wip_panel.js',array('jquery','media-upload','thickbox'),'1.0',TRUE ); 
-	 wp_enqueue_script( 'wip_on_off', $file_dir.'/js/wip_on_off.js','3.5', '', TRUE); 
+	 wp_enqueue_script( 'lookilite_panel', $file_dir.'/js/wip_panel.js',array('jquery','media-upload','thickbox'),'1.0',TRUE ); 
+	 wp_enqueue_script( 'lookilite_on_off', $file_dir.'/js/wip_on_off.js','3.5', '', TRUE); 
 	
 	 wp_enqueue_script( "jquery-ui-core", array('jquery'));
 	 wp_enqueue_script( "jquery-ui-tabs", array('jquery'));
@@ -51,14 +51,14 @@ function lookilite_save_option ( $panel ) {
 	
 	global $message_action;
 	
-	$wip_setting = get_option( lookilite_themename() );
+	$lookilite_setting = get_option( lookilite_themename() );
 	
-	if ( $wip_setting != false ) {
-			$wip_setting = maybe_unserialize( $wip_setting );
+	if ( $lookilite_setting != false ) {
+			$lookilite_setting = maybe_unserialize( $lookilite_setting );
 		} 
 						
 	else {
-			$wip_setting = array();
+			$lookilite_setting = array();
 	} 
 	
 	if ( "Save" == lookilite_request('action') ) {
@@ -75,14 +75,14 @@ function lookilite_save_option ( $panel ) {
 						if ( $_REQUEST['element-opened'] == "Skins" ) {
 								
 								require_once dirname(__FILE__) . '/option/skins.php';
-								update_option( lookilite_themename(), array_merge( $wip_setting  ,$current) );
+								update_option( lookilite_themename(), array_merge( $lookilite_setting  ,$current) );
 								break;
 							} 
 						
 						else if ( ( isset( $value['id']) ) && ( isset( $_POST[$value["id"]] ) ) ) {	
 								
 								$current[$value["id"]] = $_POST[$value["id"]]; 
-								update_option( lookilite_themename(), array_merge( $wip_setting  ,$current) );
+								update_option( lookilite_themename(), array_merge( $lookilite_setting  ,$current) );
 							}
 							
 						$message_action = 'Options saved successfully.';

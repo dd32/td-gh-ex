@@ -47,7 +47,7 @@ function lookilite_title( $title, $sep ) {
 		$title = "$title $sep $site_description";
 
 	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'twentytwelve' ), max( $paged, $page ) );
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'wip' ), max( $paged, $page ) );
 
 	return $title;
 }
@@ -77,7 +77,7 @@ function lookilite_require($folder) {
 
 	if (isset($folder)) : 
 
-		if ( ( !lookilite_setting('wip_loadsystem') ) || ( lookilite_setting('wip_loadsystem') == "mode_a" ) ) {
+		if ( ( !lookilite_setting('lookilite_loadsystem') ) || ( lookilite_setting('lookilite_loadsystem') == "mode_a" ) ) {
 	
 			$folder = dirname(dirname(__FILE__)) . $folder ;  
 			
@@ -89,7 +89,7 @@ function lookilite_require($folder) {
 				} 
 			}  
 		
-		} else if ( lookilite_setting('wip_loadsystem') == "mode_b" ) {
+		} else if ( lookilite_setting('lookilite_loadsystem') == "mode_b" ) {
 
 
 			$dh  = opendir(get_template_directory().$folder);
@@ -114,7 +114,7 @@ function lookilite_enqueue_script($folder) {
 
 	if (isset($folder)) : 
 
-		if ( ( !lookilite_setting('wip_loadsystem') ) || ( lookilite_setting('wip_loadsystem') == "mode_a" ) ) {
+		if ( ( !lookilite_setting('lookilite_loadsystem') ) || ( lookilite_setting('lookilite_loadsystem') == "mode_a" ) ) {
 	
 		
 			$dir = dirname(dirname(__FILE__)) . $folder ;  
@@ -129,7 +129,7 @@ function lookilite_enqueue_script($folder) {
 				} 
 			}  
 		
-		} else if ( lookilite_setting('wip_loadsystem') == "mode_b" ) {
+		} else if ( lookilite_setting('lookilite_loadsystem') == "mode_b" ) {
 
 			$dh  = opendir(get_template_directory().$folder);
 			
@@ -154,7 +154,7 @@ function lookilite_enqueue_style($folder) {
 
 	if (isset($folder)) : 
 
-		if ( ( !lookilite_setting('wip_loadsystem') ) || ( lookilite_setting('wip_loadsystem') == "mode_a" ) ) {
+		if ( ( !lookilite_setting('lookilite_loadsystem') ) || ( lookilite_setting('lookilite_loadsystem') == "mode_a" ) ) {
 	
 		
 			$dir = dirname(dirname(__FILE__)) . $folder ;  
@@ -171,7 +171,7 @@ function lookilite_enqueue_style($folder) {
 			}  
 		
 		
-		} else if ( lookilite_setting('wip_loadsystem') == "mode_b" ) {
+		} else if ( lookilite_setting('lookilite_loadsystem') == "mode_b" ) {
 
 		
 			$dh  = opendir(get_template_directory().$folder);
@@ -207,14 +207,8 @@ function lookilite_request($id) {
 
 function lookilite_theme_data($id) {
 	
-	 global $wp_version;	
-	 if ( $wp_version <= 3.4 ) :
-	 	$themedata = get_theme_data(TEMPLATEPATH. '/style.css');
-		return $themedata[$id];
-	 else:
-		$themedata = wp_get_theme();
-		return $themedata->get($id);
-	 endif;
+	$themedata = wp_get_theme();
+	return $themedata->get($id);
 	
 }
 
@@ -235,9 +229,9 @@ function lookilite_themename() {
 
 function lookilite_setting($id) {
 
-	$wip_setting = get_option(lookilite_themename());
-	if(isset($wip_setting[$id]))
-		return $wip_setting[$id];
+	$lookilite_setting = get_option(lookilite_themename());
+	if(isset($lookilite_setting[$id]))
+		return $lookilite_setting[$id];
 
 }
 
@@ -294,8 +288,8 @@ function lookilite_setup() {
 
 	register_nav_menu( 'main-menu', 'Main menu' );
 
-	if (lookilite_setting('wip_body_background')):
-		$background = lookilite_setting('wip_body_background');
+	if (lookilite_setting('lookilite_body_background')):
+		$background = lookilite_setting('lookilite_body_background');
 	else:
 		$background = "/images/background/patterns/pattern12.jpg";
 	endif;
@@ -315,35 +309,35 @@ add_action( 'after_setup_theme', 'lookilite_setup' );
 
 if ( is_admin() && isset($_GET['activated'] ) && $pagenow == 'themes.php' ) {
 	
-	$wip_setting = get_option(lookilite_themename());
+	$lookilite_setting = get_option(lookilite_themename());
 
-	if (!$wip_setting) {	
+	if (!$lookilite_setting) {	
 		
 		$settings = array( 
 
-		"wip_loadsystem" => "mode_a",
-		"wip_skins" => "light_turquoise", 
+		"lookilite_loadsystem" => "mode_a",
+		"lookilite_skins" => "light_turquoise", 
 		
-		"wip_menu_font" => "Roboto Slab", 
-		"wip_menu_font_size" => "14px", 
+		"lookilite_menu_font" => "Roboto Slab", 
+		"lookilite_menu_font_size" => "14px", 
 
-		"wip_content_font" => "Roboto Slab", 
-		"wip_content_font_size" => "14px", 
+		"lookilite_content_font" => "Roboto Slab", 
+		"lookilite_content_font_size" => "14px", 
 
-		"wip_titles_font" => "Fjalla One", 
+		"lookilite_titles_font" => "Fjalla One", 
 		
-		"wip_link_color" => "#48c9b0", 
-		"wip_link_color_hover" => "#1abc9c",
+		"lookilite_link_color" => "#48c9b0", 
+		"lookilite_link_color_hover" => "#1abc9c",
 
-		"wip_bars_background_color" => "#2D3032", 
-		"wip_bars_text_color" => "#ffffff",
-		"wip_bars_borders_color" => "#444649",
+		"lookilite_bars_background_color" => "#2D3032", 
+		"lookilite_bars_text_color" => "#ffffff",
+		"lookilite_bars_borders_color" => "#444649",
 	
-		"wip_body_background" => "/images/background/patterns/pattern12.jpg",
-		"wip_body_background_repeat" => "repeat",
-		"wip_body_background_color" => "#f3f3f3",
+		"lookilite_body_background" => "/images/background/patterns/pattern12.jpg",
+		"lookilite_body_background_repeat" => "repeat",
+		"lookilite_body_background_color" => "#f3f3f3",
 		
-		"wip_view_comments" => "on",
+		"lookilite_view_comments" => "on",
 
 		);
 	
@@ -388,7 +382,7 @@ add_action('init','lookilite_oembed_soundcloud');
 
 function lookilite_option_panel() {
         global $wp_admin_bar, $wpdb;
-    	$wp_admin_bar->add_menu( array( 'id' => 'lookioptions', 'title' => '<span> Looki Options </span>', 'href' => get_admin_url() . 'themes.php?page=lookioption' ) );
+    	$wp_admin_bar->add_menu( array( 'id' => 'lookilite_option', 'title' => '<span> Looki Options </span>', 'href' => get_admin_url() . 'themes.php?page=lookilite_option' ) );
 		$wp_admin_bar->add_menu( array( 'id' => 'get_premium', 'title' => '<span> Get Premium </span>', 'href' => get_admin_url() . 'themes.php?page=getpremium' ) );
 
 }
@@ -467,17 +461,6 @@ function lookilite_my_gallery_style() {
 }
 
 add_filter( 'gallery_style', 'lookilite_my_gallery_style', 99 );
-
-/*-----------------------------------------------------------------------------------*/
-/* THEMATIC DROPDOWN OPTIONS */
-/*-----------------------------------------------------------------------------------*/ 
-
-function lookilite_childtheme_dropdown_options($dropdown_options) {
-	$dropdown_options = '<script type="text/javascript" src="'. get_stylesheet_directory_uri() .'/scripts/thematic-dropdowns.js"></script>';
-	return $dropdown_options;
-}
-
-add_filter('thematic_dropdown_options','lookilite_childtheme_dropdown_options');
 
 /*-----------------------------------------------------------------------------------*/
 /* STYLES AND SCRIPTS */

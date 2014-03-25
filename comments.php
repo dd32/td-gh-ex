@@ -20,7 +20,7 @@ function lookilite_comment ($comment, $args, $depth) {
     
 	$GLOBALS['comment'] = $comment; ?>
  
-    <section id="comment-<?php comment_ID(); ?>" class="post-article" >
+    <section id="comment-<?php comment_ID(); ?>" <?php comment_class('post-article'); ?>>
     
         <div class="comment-avatar">
             <?php echo get_avatar( $comment->comment_author_email, 80 ); ?>

@@ -39,7 +39,7 @@
 				
    				foreach ($element['item'] as $option => $name ) {
 					if (str_replace(" ", "", $option) == $_GET['tab'] ) $class = "class='ui-state-active'"; else $class = ""; 
-					echo "<li ".$class."><a href='themes.php?page=lookioption&tab=".str_replace(" ", "", $option)."'>".$name."</a></li>";
+					echo "<li ".$class."><a href='themes.php?page=lookilite_option&tab=".str_replace(" ", "", $option)."'>".$name."</a></li>";
 				}
 				?>
                
@@ -52,7 +52,8 @@
 			case 'endpanel':  ?>
 				
 				</div>
-				<div style="margin:10px 0; font-size:11px">Icons by: <a href="http://www.woothemes.com/2009/09/woofunction/" target="_blank">WooFunction</a> </div>
+				
+                <div style="margin:10px 0; font-size:11px">Icons by: <a href="<?php echo esc_url('http://www.woothemes.com/2009/09/woofunction/'); ?>" target="_blank">WooFunction</a> </div>
 			
 			<?php break;
 			
@@ -73,7 +74,7 @@
 						case 'form':  ?>
 							
 							<div id="<?php echo str_replace(" ", "", $value['name']); ?>">
-							<form method="post" action="?page=lookioption&tab=<?php echo $_GET['tab']; ?>">
+							<form method="post" action="?page=lookilite_option&tab=<?php echo $_GET['tab']; ?>">
 						
 						<?php break;
 						

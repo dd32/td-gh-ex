@@ -1,7 +1,8 @@
 html { 
 	min-height:101%;
 }
-body { 
+
+body.custombody { 
 	background:#f1f1f1;
 	font-family:'Roboto Condensed',Verdana, Geneva, sans-serif ; 
 }
@@ -941,6 +942,7 @@ footer.line {
    IMAGE STYLE
    =============================================== */
 
+img.alignnone,
 img.size-auto, 
 img.size-full, 
 img.size-large, 
@@ -963,6 +965,8 @@ img.alignright {
 	margin-left:24px;
 	margin-top:4px;
 }
+
+.aligncenter, 
 div.aligncenter, 
 img.aligncenter {
 	display: block; 
@@ -970,6 +974,7 @@ img.aligncenter {
 	margin-right: auto ; 
 	float:none;
 }
+
 img.alignleft, 
 img.alignright, 
 img.aligncenter {

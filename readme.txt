@@ -1,7 +1,7 @@
-Looki WordPress Theme
+Looki lite WordPress Theme
 ---------------------
 
-Looki is a great and clean free WordPress blog theme, with a awesome scrollable sidebar, optimized for the mobile devices and based on Bootstrap framework. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10 and uses the most modern technologies like Html5 and Css3.
+Looki lite is a great and clean free WordPress blog theme, with a awesome scrollable sidebar, optimized for the mobile devices and based on Bootstrap framework. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10 and uses the most modern technologies like Html5 and Css3.
 
 
 Created by ThemeinProgress, http://www.themeinprogress.com 
@@ -10,13 +10,21 @@ Demo: http://www.wpinprogress.com/demo/looki
 
 License
 -------
-Looki is licensed under GNU General Public License v3.
+Looki lite is licensed under GNU General Public License v3.
 
 
 Credits
 -------
 
 /** IMAGES **/
+
+- Photos in the demo
+
+-- Background image by Pixabay: http://pixabay.com/it/sfocatura-sfocato-luci-notte-bokeh-205379/
+
+-- Featured image in the post by Gratisography: http://www.gratisography.com/pictures/63.jpg
+
+--- Both images licensed under CC0 License (Compatible with GNU General Public License v3)
 
 - Patters
 

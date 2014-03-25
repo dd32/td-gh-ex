@@ -4,7 +4,7 @@
 	
     <div class="row">
        
-        <article <?php post_class(array('post-container','col-md-12')); ?> >
+        <article id="post-<?php the_ID(); ?>" <?php post_class(array('post-container','col-md-12')); ?> >
             
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post();
             
@@ -16,7 +16,7 @@
             
         </article>
     
-		<?php if (lookilite_setting('wip_view_comments') == "on" ) : comments_template(); endif; ?>
+		<?php if (lookilite_setting('lookilite_view_comments') == "on" ) : comments_template(); endif; ?>
         
         <?php endwhile; get_template_part('pagination'); endif;?>
            

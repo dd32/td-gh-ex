@@ -11,13 +11,13 @@
 
 function lookilite_header_content() {
 	
-	if ( ( is_page()) && (lookilite_postmeta('wip_slogan')) ) : ?>
+	if ( ( is_page()) && (lookilite_postmeta('lookilite_slogan')) ) : ?>
 	
 	<section id="subheader">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<p> <?php echo lookilite_postmeta('wip_slogan'); ?> </p>
+					<p> <?php echo lookilite_postmeta('lookilite_slogan'); ?> </p>
 				</div>
 			</div>
 		</div>

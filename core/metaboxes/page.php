@@ -9,7 +9,7 @@
  * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-$wip_new_metaboxes = new lookilite_metaboxes ('page', array (
+$lookilite_new_metaboxes = new lookilite_metaboxes ('page', array (
 
 array( "name" => "Navigation",  
        "type" => "navigation",  
@@ -27,7 +27,7 @@ array( "type" => "begintab",
 
 		array( "name" => __( "Slogan","wip"),
 			   "desc" => __( "Insert your slogan","wip"),
-			   "id" => "wip_slogan",
+			   "id" => "lookilite_slogan",
 			   "type" => "text",
 			),
 			

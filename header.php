@@ -5,13 +5,13 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 
-<?php if (lookilite_setting('wip_custom_favicon')) : ?>
-	<link rel="shortcut icon" href="<?php echo lookilite_setting('wip_custom_favicon'); ?>"/>
+<?php if (lookilite_setting('lookilite_custom_favicon')) : ?>
+	<link rel="shortcut icon" href="<?php echo lookilite_setting('lookilite_custom_favicon'); ?>"/>
 <?php endif; ?>
 
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" media="screen" />
+<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" media="screen" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.2, user-scalable=yes" />
 
@@ -24,7 +24,7 @@
 
 </head>
 
-<body <?php body_class(); ?> >
+<body <?php body_class('custombody'); ?>>
 
 <header id="header">
     <div class="container">
@@ -34,12 +34,12 @@
             
             	<div id="logo">
                 
-            	<a href="<?php echo home_url(); ?>" title="<?php bloginfo('name') ?>">
+            	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name') ?>">
                         
                 	<?php 
 					   				
-                    	if ( (lookilite_setting('wip_custom_logo')) && (lookilite_setting('wip_view_custom_logo') == "on")):
-                        	echo "<img src='".lookilite_setting('wip_custom_logo')."' alt='logo'>"; 
+                    	if ( (lookilite_setting('lookilite_custom_logo')) && (lookilite_setting('lookilite_view_custom_logo') == "on")):
+                        	echo "<img src='".lookilite_setting('lookilite_custom_logo')."' alt='logo'>"; 
                         else: 
                         	echo "<img src='".get_template_directory_uri()."/images/logo/logo.png' alt='logo'>"; 
                         endif; 
