@@ -19,8 +19,16 @@ For free themes support, please contact us http://wpdevshed.com/contact/
 ============================================
 Images and Graphics Copyright/License Info
 ============================================
- * All the image graphics and icons bundled with this theme are created by the theme author and licensed under the GNU GPL.
+ * All the graphic icons bundled with this theme are created by the theme author and licensed under the GNU GPL.
+ * The images used in the screenshot.png are downloaded from pixabay.com and are bound to Creative Commons Deed CC0 as stated in their Terms of Service and Privacy Policy (http://pixabay.com/en/service/terms/)
+   -> http://pixabay.com/en/bauhinia-galpinii-flower-293336/
+   -> http://pixabay.com/en/stave-church-sweden-wooden-church-293480/
+   -> http://pixabay.com/en/cat-animal-pet-mieze-adidas-293424/
+   -> http://pixabay.com/en/colorado-river-grand-canyon-293621/
+   -> http://pixabay.com/en/the-fisherman-twilight-sea-west-295007/
+   -> http://pixabay.com/en/vehicle-chrome-automobile-motor-293380/
  
+   License URI: http://creativecommons.org/publicdomain/zero/1.0/deed.en
  
 ============================================
 Scripts.js Copyright/License Info
@@ -65,6 +73,10 @@ This theme is bundled with TGM-Plugin-Activation
 =================================
 CHANGELOG
 =================================
+Version 1.0.3
+ * Modified the way the theme include google fonts - used wp_enqueue_style() instead of importing it from style.css
+ * Updated screenshot.png and added license info for the images used in it
+ 
 Version 1.0.2
  * Removed the social sharing and opengraph functions
  * Added the TGM Plugin Activation that recommends users to download and install the 'Social Share by WP Dev Shed' plugin (http://wordpress.org/plugins/social-share-by-wp-dev-shed/)

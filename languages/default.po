@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WP Dev Shed - Virality\n"
-"POT-Creation-Date: 2014-03-21 13:53+0800\n"
-"PO-Revision-Date: 2014-03-21 13:54+0800\n"
+"POT-Creation-Date: 2014-03-25 19:18+0800\n"
+"PO-Revision-Date: 2014-03-25 19:18+0800\n"
 "Last-Translator: ed cardinal <lizardking67@gmail.com>\n"
 "Language-Team: \n"
 "Language: en\n"
@@ -397,37 +397,37 @@ msgstr ""
 msgid "Next &rsaquo;"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\virality/functions.php:923
+#: C:\xampp\htdocs\wordpress\wp-content\themes\virality/functions.php:924
 msgid "Install Recommended Plugins"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\virality/functions.php:924
+#: C:\xampp\htdocs\wordpress\wp-content\themes\virality/functions.php:925
 #: C:\xampp\htdocs\wordpress\wp-content\themes\virality/library/class/class-tgm-plugin-activation.php:162
 msgid "Install Plugins"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\virality/functions.php:925
+#: C:\xampp\htdocs\wordpress\wp-content\themes\virality/functions.php:926
 #: C:\xampp\htdocs\wordpress\wp-content\themes\virality/library/class/class-tgm-plugin-activation.php:163
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\virality/functions.php:926
+#: C:\xampp\htdocs\wordpress\wp-content\themes\virality/functions.php:927
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\virality/functions.php:937
+#: C:\xampp\htdocs\wordpress\wp-content\themes\virality/functions.php:938
 #: C:\xampp\htdocs\wordpress\wp-content\themes\virality/library/class/class-tgm-plugin-activation.php:175
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\virality/functions.php:938
+#: C:\xampp\htdocs\wordpress\wp-content\themes\virality/functions.php:939
 #: C:\xampp\htdocs\wordpress\wp-content\themes\virality/library/class/class-tgm-plugin-activation.php:177
 #: C:\xampp\htdocs\wordpress\wp-content\themes\virality/library/class/class-tgm-plugin-activation.php:1945
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\virality/functions.php:939
+#: C:\xampp\htdocs\wordpress\wp-content\themes\virality/functions.php:940
 #, php-format
 msgid "All plugins installed and activated successfully. %s"
 msgstr ""
