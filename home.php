@@ -8,23 +8,23 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package ABARIS
+ * @package URVR
  */
-global $abaris;
+global $urvr;
 get_header(); ?>
 <?php if( is_front_page() ) : ?>
 	<div id="content" class="site-content container">
 <?php endif; ?>
 	<div class="row">
 
-	<?php if( isset( $abaris['layout'] ) && $abaris['layout'] == 2 ) : ?>
+	<?php if( isset( $urvr['layout'] ) && $urvr['layout'] == 2 ) : ?>
 		<?php get_sidebar(); ?>
 	<?php endif; ?>
 
 	<div id="primary" class="content-area two-thirds column span9">
 		<main id="main" class="site-main" role="main">
 
-		<?php if ( $abaris['breadcrumb'] && function_exists( 'abaris_breadcrumbs' ) ) : ?>			
+		<?php if ( $urvr['breadcrumb'] && function_exists( 'abaris_breadcrumbs' ) ) : ?>			
 			<div id="breadcrumb" role="navigation">
 				<?php abaris_breadcrumbs(); ?>
 			</div>
@@ -46,7 +46,7 @@ get_header(); ?>
 			<?php endwhile; ?>
 
 			<?php 
-				if( $abaris['pagenavi'] && function_exists( 'abaris_pagination' ) ) : 
+				if( $urvr['pagenavi'] && function_exists( 'abaris_pagination' ) ) : 
 					abaris_pagination();
 				else :
 					abaris_posts_nav();
@@ -62,12 +62,12 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-	<?php if( isset( $abaris['layout'] ) && $abaris['layout'] == 3 ) : ?>
+	<?php if( isset( $urvr['layout'] ) && $urvr['layout'] == 3 ) : ?>
 		<?php get_sidebar(); ?>
 	<?php endif; ?>
 
-	<?php if( ! isset( $abaris['layout'] ) ) : ?>
+	<?php if( ! isset( $urvr['layout'] ) ) : ?>
 		<?php get_sidebar(); ?>
 	<?php endif; ?>
-
+		
 <?php get_footer(); ?>

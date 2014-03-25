@@ -4,7 +4,7 @@
  *
  * Contains the closing of the #content div and all content after
  *
- * @package ABARIS
+ * @package URVR
  */
 ?>
 
@@ -17,8 +17,8 @@
 				<div class="row">
 					<div class="span12">
 						<?php
-							global $abaris;
-							if( $abaris['footer-widgets'] ) {
+							global $urvr;
+							if( $urvr['footer-widgets'] ) {
 								get_template_part('footer','widgets');
 							} 
 						?>
@@ -30,14 +30,14 @@
 			<div class="container">
 				<div class="row">
 					<div class="span12">
-						<?php if( $abaris['footer-text'] ) : ?>
-							<p><?php echo $abaris['footer-text']; ?></p>
+						<?php if( $urvr['footer-text'] ) : ?>
+							<p><?php echo $urvr['footer-text']; ?></p>
 						<?php else : ?>
 							<p>
 							<?php do_action( 'abaris_credits' ); ?>
-							Powered by <a href="http://wordpress.org/"><?php printf( __( '%s', 'abaris' ), 'WordPress' ); ?></a>
+							Powered by <a href="http://wordpress.org/"><?php printf( __( '%s', TEXTDOMAIN ), 'WordPress' ); ?></a>
 							<span class="sep"> | </span>
-							<?php printf( __( 'Theme: %1$s by %2$s.', 'abaris' ), 'Abaris', '<a href="http://www.webulous.in" rel="author">Webulous</a>' ); ?>
+							<?php printf( __( 'Theme: %1$s by %2$s.', TEXTDOMAIN ), 'Abaris', '<a href="http://www.webulous.in" rel="author">Webulous</a>' ); ?>
 							</p>
 						<?php endif; ?>
 					</div>
@@ -48,5 +48,6 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
+
 </body>
 </html>

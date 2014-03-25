@@ -1,8 +1,8 @@
 <?php
 /**
- * ABARIS functions and definitions
+ * URVR functions and definitions
  *
- * @package ABARIS
+ * @package URVR
  * @subpackage abaris
  */
 
@@ -24,7 +24,7 @@ if ( ! function_exists( 'abaris_setup' ) ) :
 function abaris_setup() {
 
 	// Makes theme translation ready
-	load_theme_textdomain( 'abaris', ABARIS_LANGUAGES_DIR );
+	load_theme_textdomain( TEXTDOMAIN, URVR_LANGUAGES_DIR );
 	
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -39,7 +39,7 @@ function abaris_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'abaris' ),
+		'primary' => __( 'Primary Menu', TEXTDOMAIN ),
 	) );
 
 	// Setup the WordPress core custom background feature.
@@ -62,7 +62,7 @@ add_action( 'after_setup_theme', 'abaris_setup' );
  */
 function abaris_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'abaris' ),
+		'name'          => __( 'Sidebar', TEXTDOMAIN ),
 		'id'            => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -70,7 +70,7 @@ function abaris_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'abaris' ),
+		'name'          => __( 'Sidebar', TEXTDOMAIN ),
 		'id'            => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -79,7 +79,7 @@ function abaris_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Footer 1', 'abaris' ),
+		'name'          => __( 'Footer 1', TEXTDOMAIN ),
 		'id'            => 'footer-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -88,7 +88,7 @@ function abaris_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Footer 2', 'abaris' ),
+		'name'          => __( 'Footer 2', TEXTDOMAIN ),
 		'id'            => 'footer-2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -97,7 +97,7 @@ function abaris_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Footer 3', 'abaris' ),
+		'name'          => __( 'Footer 3', TEXTDOMAIN ),
 		'id'            => 'footer-3',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -106,7 +106,7 @@ function abaris_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Footer 4', 'abaris' ),
+		'name'          => __( 'Footer 4', TEXTDOMAIN ),
 		'id'            => 'footer-4',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -124,12 +124,12 @@ add_action( 'widgets_init', 'abaris_widgets_init' );
 /**
  * Enqueue Scripts and Styles
  */
-	require_once ABARIS_INCLUDES_DIR . '/enqueue.php';
+	require_once URVR_INCLUDES_DIR . '/enqueue.php';
 
 /**
  * Implement the Custom Header feature.
  */
-require ABARIS_INCLUDES_DIR . '/custom-header.php';
+require URVR_INCLUDES_DIR . '/custom-header.php';
 
 
 // Enable support for Post Formats.
@@ -138,28 +138,24 @@ add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'l
 /**
  * Custom functions for this theme.
  */
-require ABARIS_INCLUDES_DIR . '/theme-functions.php';
+require URVR_INCLUDES_DIR . '/theme-functions.php';
 
 /**
  * Custom template tags for this theme.
  */
-require ABARIS_INCLUDES_DIR . '/template-tags.php';
+require URVR_INCLUDES_DIR . '/template-tags.php';
 
 /**
  * Custom functions that act independently of the theme templates.
  */
-require ABARIS_INCLUDES_DIR . '/extras.php';
+require URVR_INCLUDES_DIR . '/extras.php';
 
 /**
  * Load Theme Options Page
  * This uses Redux Framework Plugin
  */
-require_once( ABARIS_INCLUDES_DIR . '/load-plugins.php' );
-require_once( ABARIS_INCLUDES_DIR . '/home-info.php' );
-
+require_once( URVR_INCLUDES_DIR . '/load-plugins.php' );
 if( class_exists('ReduxFrameworkPlugin')) {
-	require_once( ABARIS_INCLUDES_DIR . '/theme-options-config.php' );
+	require_once( URVR_INCLUDES_DIR . '/theme-options-config.php' );
 }
 
-/* JigoShop Support */
-require_once( ABARIS_INCLUDES_DIR . '/jigoshop.php' );

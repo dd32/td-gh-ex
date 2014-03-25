@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package ABARIS
+ * @package URVR
  */
 
 /*
@@ -20,7 +20,7 @@
  if( ! function_exists( 'abaris_breadcrumbs' )) {
  
 	function abaris_breadcrumbs() {
-		global $abaris;
+		global $urvr;
 		/* === OPTIONS === */
 		$text['home']     = '<i class="el-icon-home"></i>'; // text for the 'Home' link
 		$text['category'] = 'Archive by Category "%s"'; // text for a category page
@@ -31,9 +31,9 @@
 
 		$showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
 		$showOnHome  = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
-		//$delimiter   = ( isset( $abaris['breadcrumb-char'] ) && $abaris['breadcrumb-char'] != '' ) ? $abaris['breadcrumb-char'] : ' &raquo; '; // delimiter between crumbs
-		if ( isset( $abaris['breadcrumb-char'] ) && $abaris['breadcrumb-char'] != '' ) {
-		 switch ( $abaris['breadcrumb-char']) {
+		//$delimiter   = ( isset( $urvr['breadcrumb-char'] ) && $urvr['breadcrumb-char'] != '' ) ? $urvr['breadcrumb-char'] : ' &raquo; '; // delimiter between crumbs
+		if ( isset( $urvr['breadcrumb-char'] ) && $urvr['breadcrumb-char'] != '' ) {
+		 switch ( $urvr['breadcrumb-char']) {
 		 	case '2' :
 		 		$delimiter = ' / ';
 		 		break;
@@ -153,7 +153,7 @@
 
 			if ( get_query_var('paged') ) {
 				if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
-				echo __('Page', 'abaris' ) . ' ' . get_query_var('paged');
+				echo __('Page', TEXTDOMAIN ) . ' ' . get_query_var('paged');
 				if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
 			}
 
@@ -177,15 +177,15 @@ function abaris_posts_nav() {
 	}
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'abaris' ); ?></h1>
+		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', TEXTDOMAIN ); ?></h1>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'abaris' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', TEXTDOMAIN ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'abaris' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', TEXTDOMAIN ) ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
@@ -210,11 +210,11 @@ function abaris_post_nav() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'abaris' ); ?></h1>
+		<h1 class="screen-reader-text"><?php _e( 'Post navigation', TEXTDOMAIN ); ?></h1>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', 'abaris' ) );
-				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link',     'abaris' ) );
+				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', TEXTDOMAIN ) );
+				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link',     TEXTDOMAIN ) );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -259,7 +259,7 @@ if( ! function_exists( 'abaris_pagination' )) {
 		}
 		echo $before.'<nav class="page-navigation"><ol class="abaris_page_navi clearfix">'."";
 		if ($start_page >= 2 && $pages_to_show < $max_page) {
-			$first_page_text = __( "First", 'abaris' );
+			$first_page_text = __( "First", TEXTDOMAIN );
 			echo '<li class="bpn-first-page-link"><a href="'.get_pagenum_link().'" title="'.$first_page_text.'">'.$first_page_text.'</a></li>';
 		}
 		echo '<li class="bpn-prev-link">';
@@ -276,7 +276,7 @@ if( ! function_exists( 'abaris_pagination' )) {
 		next_posts_link('>>');
 		echo '</li>';
 		if ($end_page < $max_page) {
-			$last_page_text = __( "Last", 'abaris' );
+			$last_page_text = __( "Last", TEXTDOMAIN );
 			echo '<li class="bpn-last-page-link"><a href="'.get_pagenum_link($max_page).'" title="'.$last_page_text.'">'.$last_page_text.'</a></li>';
 		}
 		echo '</ol></nav>'.$after."";
@@ -296,7 +296,7 @@ function abaris_comment( $comment, $args, $depth ) {
 
 	<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
 		<div class="comment-body">
-			<?php _e( 'Pingback:', 'abaris' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'abaris' ), '<span class="edit-link">', '</span>' ); ?>
+			<?php _e( 'Pingback:', TEXTDOMAIN ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', TEXTDOMAIN ), '<span class="edit-link">', '</span>' ); ?>
 		</div>
 
 	<?php else : ?>
@@ -306,20 +306,20 @@ function abaris_comment( $comment, $args, $depth ) {
 			<footer class="comment-meta">
 				<span class="comment-author vcard">
 					<?php if ( 0 != $args['avatar_size'] ) { echo get_avatar( $comment, $args['avatar_size'] ); } ?>
-					<?php printf( __( '%s', 'abaris' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+					<?php printf( __( '%s', TEXTDOMAIN ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
 				</span><!-- .comment-author -->
 
 				<span class="comment-metadata">
 					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 						<time datetime="<?php comment_time( 'c' ); ?>">
-							<?php printf( _x( '- %1$s at %2$s', '1: date, 2: time', 'abaris' ), get_comment_date(), get_comment_time() ); ?>
+							<?php printf( _x( '- %1$s at %2$s', '1: date, 2: time', TEXTDOMAIN ), get_comment_date(), get_comment_time() ); ?>
 						</time>
 					</a>
-					<?php edit_comment_link( __( 'Edit', 'abaris' ), '<span class="edit-link">', '</span>' ); ?>
+					<?php edit_comment_link( __( 'Edit', TEXTDOMAIN ), '<span class="edit-link">', '</span>' ); ?>
 				</span><!-- .comment-metadata -->
 
 				<?php if ( '0' == $comment->comment_approved ) : ?>
-				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'abaris' ); ?></p>
+				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', TEXTDOMAIN ); ?></p>
 				<?php endif; ?>
 			</footer><!-- .comment-meta -->
 
@@ -360,7 +360,7 @@ function abaris_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	printf( __( '<span class="posted-on"><i class="el-icon-time"></i> %1$s</span><span class="byline"> %2$s</span>', 'abaris' ),
+	printf( __( '<span class="posted-on"><i class="el-icon-time"></i> %1$s</span><span class="byline"> %2$s</span>', TEXTDOMAIN ),
 		sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
 			esc_url( get_permalink() ),
 			$time_string
@@ -371,18 +371,18 @@ function abaris_posted_on() {
 		)
 	);
 	if ( ! post_password_required() && ( comments_open() ) ) : ?>
-		<span class="comments-link"><i class="el-icon-comment-alt"></i> <?php comments_popup_link( __( 'Leave a comment', 'abaris' ), __( '1 Comment', 'abaris' ), __( '% Comments', 'abaris' ) ); ?></span>
+		<span class="comments-link"><i class="el-icon-comment-alt"></i> <?php comments_popup_link( __( 'Leave a comment', TEXTDOMAIN ), __( '1 Comment', TEXTDOMAIN ), __( '% Comments', TEXTDOMAIN ) ); ?></span>
 	<?php
 	endif;
 	?>
 	
-	<?php edit_post_link( __( '<span class="edit-link"><i class="el-icon-file-edit"></i> Edit</span>', 'abaris' ), '', '' ); ?>
+	<?php edit_post_link( __( '<span class="edit-link"><i class="el-icon-file-edit"></i> Edit</span>', TEXTDOMAIN ), '', '' ); ?>
 	<?php
 		if (! is_single() ) { 
-			printf( __('<span class="read-more-link"><i class="el-icon-link"></i> %1$s</span>', 'abaris' ),
+			printf( __('<span class="read-more-link"><i class="el-icon-link"></i> %1$s</span>', TEXTDOMAIN ),
 				sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>', 
 					esc_url( get_permalink() ), 
-					__( 'More', 'abaris' ) 
+					__( 'More', TEXTDOMAIN ) 
 				) 
 			);
 		}
@@ -408,7 +408,7 @@ function abaris_post_date() {
 		esc_html( get_the_modified_date() )
 	);
 
-	printf( __( '<span class="posted-on"><i class="el-icon-time"></i> %1$s</span>', 'abaris' ),
+	printf( __( '<span class="posted-on"><i class="el-icon-time"></i> %1$s</span>', TEXTDOMAIN ),
 		sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
 			esc_url( get_permalink() ),
 			$time_string
@@ -443,52 +443,50 @@ function abaris_categorized_blog() {
 }
 
 // Recent Posts with featured Images to be displayed on home page
-if( ! function_exists( 'abaris_recent_posts' )) {
-	function abaris_recent_posts() {
-		$output = '';
-		$output .= '<div class="flex-recent-posts">';
-	  $output .= '<ul class="slides">';
-		// WP_Query arguments
-		$args = array (
-			'post_type'              => 'post',
-			'post_status'            => 'publish',
-			'posts_per_page'         => get_option('posts_per_page'),
-			'ignore_sticky_posts'    => true,
-			'order'                  => 'DESC',
-		);
+function abaris_recent_posts() {
+	$output = '';
+	$output .= '<div class="flex-recent-posts">';
+  $output .= '<ul class="slides">';
+	// WP_Query arguments
+	$args = array (
+		'post_type'              => 'post',
+		'post_status'            => 'publish',
+		'posts_per_page'         => '10',
+		'ignore_sticky_posts'    => true,
+		'order'                  => 'DESC',
+	);
 
-		// The Query
-		$query = new WP_Query( $args );
+	// The Query
+	$query = new WP_Query( $args );
 
-		// The Loop
-		if ( $query->have_posts() ) {
-			while ( $query->have_posts() ) {
-				$query->the_post();
-				$output .= '<li>';
-				$output .= '<div class="recent-post">';
-				$output .= '<div class="rp-thumb">';
-				if ( has_post_thumbnail() ) {
-					$output .= get_the_post_thumbnail();
-				}
-				else {
-					$output .= '<img src="' . get_stylesheet_directory_uri() . '/images/thumbnail-default.png" alt="" >';
-				}
-				$output .= '</div><!-- .rp-thumb -->';
-				$output .= '<div class="rp-content">';
-				$output .= '<h3>'. get_the_title() . '</h3>';
-				$output .= get_the_excerpt();
-				$output .= '</div><!-- .rp-content -->';
-				$output .= '</div>';
-				$output .= '</li>';
+	// The Loop
+	if ( $query->have_posts() ) {
+		while ( $query->have_posts() ) {
+			$query->the_post();
+			$output .= '<li>';
+			$output .= '<div class="recent-post">';
+			$output .= '<div class="rp-thumb">';
+			if ( has_post_thumbnail() ) {
+				$output .= get_the_post_thumbnail();
 			}
-		} 
+			else {
+				$output .= '<img src="' . get_stylesheet_directory_uri() . '/images/thumbnail-default.png" alt="" >';
+			}
+			$output .= '</div><!-- .rp-thumb -->';
+			$output .= '<div class="rp-content">';
+			$output .= '<h3>'. get_the_title() . '</h3>';
+			$output .= get_the_excerpt();
+			$output .= '</div><!-- .rp-content -->';
+			$output .= '</div>';
+			$output .= '</li>';
+		}
+	} 
 
-		// Restore original Post Data
-		wp_reset_postdata();
-	  $output .= '</ul>';
-		$output .= '</div>';
-		echo $output;
-	}
+	// Restore original Post Data
+	wp_reset_postdata();
+  $output .= '</ul>';
+	$output .= '</div>';
+	echo $output;
 }
 
 /**

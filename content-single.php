@@ -1,8 +1,8 @@
 <?php
 /**
- * @package ABARIS
+ * @package URVR
  */
-global $abaris;
+global $urvr;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -15,7 +15,7 @@ global $abaris;
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php if( isset( $abaris['single-featured-image'] ) && $abaris['single-featured-image'] ) : ?>
+		<?php if( isset( $urvr['single-featured-image'] ) && $urvr['single-featured-image'] ) : ?>
 			<?php if( has_post_thumbnail() ) : ?>
 				<div class="post-thumb">
 					<?php the_post_thumbnail(); ?>
@@ -25,7 +25,7 @@ global $abaris;
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'abaris' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', TEXTDOMAIN ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -35,23 +35,23 @@ global $abaris;
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 			<?php
 				/* translators: used between list items, there is a space after the comma */
-				$categories_list = get_the_category_list( __( ', ', 'abaris' ) );
+				$categories_list = get_the_category_list( __( ', ', TEXTDOMAIN ) );
 				if ( $categories_list && abaris_categorized_blog() ) :
 			?>
 			<span class="cat-links">
 				<i class="el-icon-list-alt"></i>
-				<?php printf( __( ' %1$s', 'abaris' ), $categories_list ); ?>
+				<?php printf( __( ' %1$s', TEXTDOMAIN ), $categories_list ); ?>
 			</span>
 			<?php endif; // End if categories ?>
 
 			<?php
 				/* translators: used between list items, there is a space after the comma */
-				$tags_list = get_the_tag_list( '', __( ', ', 'abaris' ) );
+				$tags_list = get_the_tag_list( '', __( ', ', TEXTDOMAIN ) );
 				if ( $tags_list ) :
 			?>
 			<span class="tags-links">
 				<i class="el-icon-tags"></i>
-				<?php printf( __( ' %1$s', 'abaris' ), $tags_list ); ?>
+				<?php printf( __( ' %1$s', TEXTDOMAIN ), $tags_list ); ?>
 			</span>
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>

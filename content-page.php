@@ -2,7 +2,7 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package ABARIS
+ * @package URVR
  */
 ?>
 
@@ -15,10 +15,10 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'abaris' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', TEXTDOMAIN ),
 				'after'  => '</div>',
 			) );
 		?>
 	</div><!-- .entry-content -->
-	<?php edit_post_link( __( 'Edit', 'abaris' ), '<footer class="entry-meta"><span class="edit-link"><i class="el-icon-file-edit"></i> ', '</span></footer>' ); ?>
+	<?php edit_post_link( __( 'Edit', TEXTDOMAIN ), '<footer class="entry-meta"><span class="edit-link"><i class="el-icon-file-edit"></i> ', '</span></footer>' ); ?>
 </article><!-- #post-## -->

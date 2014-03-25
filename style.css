@@ -3,18 +3,18 @@ Theme Name: Abaris
 Theme URI: http://demo.webulous.in/abaris/
 Author: N. Venkat Raj
 Author URI: http://www.webulous.in/
-Description: Abaris is a multi purpose, responsive theme with beautiful design and cool CSS3 animations. It supports "Jigoshop" to turn your WordPress website into a dynamic eCommerce store. It uses HTML5, CSS3, Bootstrap Grid system and coded with love and care. It's best suited for corporate/portfolio/blog sites. It has advanced theme options panel support to customize various parts of site, footer widget area to accommodate 4 widgets. Check the demo at http://demo.webulous.in/abaris/
-Version: 1.0.15
+Description: A Multi purpose, responsive theme
+Version: 1.0.2
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: abaris
+Text Domain: urvr
 Domain Path: /languages/
-Tags:  black, orange, custom-background, custom-header, custom-menu, dark, featured-images, fixed-layout, left-sidebar, post-formats, responsive-layout, right-sidebar, sticky-post, threaded-comments, translation-ready, two-columns
+Tags: fixed-layout, responsive-layout, custom-background, custom-header
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-Abaris is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
+ URVR is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
 
 Resetting and rebuilding styles have been helped along thanks to the fine work of
 Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
@@ -408,23 +408,19 @@ a:active {
 
 
 /* Small menu */
-.slicknav_menu {
-	display:none;
+.menu-toggle {
+	display: none;	
+	cursor: pointer;
 }
 
 @media screen and (max-width: 600px) {
-	.main-navigation > div {
-		display: none;
+	.menu-toggle,
+	.main-navigation.toggled .nav-menu {
+		display: block;
 	}
 
-	.slicknav_menu {
-		display: block;
-		position: fixed;
-		width: 100%;
-		top: 0;
-		right: 0;
-		margin: 0 !important;
-		z-index: 100;
+	.main-navigation ul {
+		display: none;
 	}
 }
 
@@ -743,7 +739,7 @@ h1.entry-title a:hover {
 	position: relative;
 }
 
-.main-navigation ul li:hover {
+ul.main-navigation li:hover {
 	z-index: 1;
 }
 
@@ -777,7 +773,7 @@ h1.entry-title a:hover {
 	margin-top: 18px;
 }
 
-.main-navigation ul li a {
+ul.nav-menu li a {
 	color: #fff;
 	display: block;
 	padding: 5px 20px;	
@@ -785,41 +781,37 @@ h1.entry-title a:hover {
 	vertical-align: middle;
 }
 
-.main-navigation div > ul > li > a {
+ul.nav-menu > li > a {
 	-webkit-border-radius:	3px;
 	-moz-border-radius:		3px;
 	border-radius:			3px;
 }
 
-.main-navigation div > ul > li > a:hover,
-.main-navigation div > ul > li.current_page_item > a,
-.main-navigation div > ul > li.current_page_ancestor > a,
-.slicknav_nav div > ul > li.current_page_item a,
-.slicknav_nav div > ul > li.current_page_ancestor > a,
-.slicknav_nav ul.children li.current_page_item > a,
-.main-navigation ul.children li.current_page_item > a {
+ul.nav-menu > li > a:hover,
+ul.nav-menu > li.current_page_item > a,
+ul.nav-menu > li.current_page_ancestor > a {
 	background: #ff4200;	
 	-webkit-border-radius:	3px;
 	-moz-border-radius:		3px;
 	border-radius:			3px;
 }
 
-.main-navigation div > ul > li.current_page_ancestor li.current_page_item > a {
+ul.nav-menu > li.current_page_ancestor li.current_page_item > a {
 	background: #ff4200;
 }
 
-.main-navigation div > ul > li {
+ul.nav-menu > li {
 	float: left;
 	margin: 0 2px;	
 	padding-bottom: 26px;
 }
 
-.main-navigation ul ul li {
+ul.nav-menu ul li {
 	margin: 0;
 	float: none;	
 }
 
-.main-navigation ul ul li a {
+ul.nav-menu ul li a {
 	color:#fff;
 	width: 150%;	
 	padding: 12px;	
@@ -828,35 +820,30 @@ h1.entry-title a:hover {
 	border-bottom: 1px solid #181c20;
 }
 
-.main-navigation div > ul > li:hover > a {
+ul.nav-menu li:hover > a {
 	color: #fff;
 	text-decoration: none;
 }
 
-.main-navigation ul ul li:hover > a {
+ul.nav-menu ul li:hover > a {
 	color: #fff;
 	background-color: #ff4200;	
 }
 
-.main-navigation ul ul li:first-child > a {
+ul.nav-menu ul li:first-child > a {
 	border-top: 1px solid #585858;
 }
 
-.main-navigation ul ul ul li {
+ul.nav-menu ul ul li {
 	margin: 0;
 }
 
-.main-navigation div > ul > li > a {
+ul.nav-menu > li > a {
 	padding: 5px 15px;
 }
 
-.main-navigation ul ul.children li.current_page_item > a {
+ul.nav-menu ul.children li.current_page_item > a {
 	background-color: #ff4200;
-}
-
-.main-navigation a:focus,
-.slicknav_nav a:focus {
-	color: #fff;
 }
 
 /* Navigation Styles Ends
@@ -865,8 +852,7 @@ h1.entry-title a:hover {
 .btn-submit input, 
 .form-submit input#submit,
 .wpcf7-submit,
-.post-password-form input[type="submit"],
-.mc4wp-form input[type="submit"] {
+.post-password-form input[type="submit"] {
 	border: 0;
 	color: #1f2329;	
 	padding: 5px 12px;	
@@ -883,8 +869,7 @@ h1.entry-title a:hover {
 a.btn-more:hover, 
 .form-submit input#submit:hover,
 .wpcf7-submit:hover,
-.post-password-form input[type="submit"]:hover,
-.mc4wp-form input[type="submit"]:hover {
+.post-password-form input[type="submit"]:hover {
 	color: #fff;	
 	background: #ff4200;
 	border-color: #9b2901;
@@ -1325,31 +1310,6 @@ img, object {
 @-webkit-keyframes percent95  { 0%  { width:0px;} 100%{ width:95%;}  }
 @-webkit-keyframes percent100 { 0%  { width:0px;} 100%{ width:100%;} }
 
-	
-
-@-ms-keyframes percent5  { 0%  { width:0px;} 100%{ width:5%;}  }
-@-ms-keyframes percent10  { 0%  { width:0px;} 100%{ width:10%;}  }
-@-ms-keyframes percent15  { 0%  { width:0px;} 100%{ width:15%;}  }
-@-ms-keyframes percent20  { 0%  { width:0px;} 100%{ width:20%;}  }
-@-ms-keyframes percent25  { 0%  { width:0px;} 100%{ width:25%;}  }
-@-ms-keyframes percent30  { 0%  { width:0px;} 100%{ width:30%;}  }
-@-ms-keyframes percent35  { 0%  { width:0px;} 100%{ width:35%;}  }
-@-ms-keyframes percent40  { 0%  { width:0px;} 100%{ width:40%;}  }
-@-ms-keyframes percent45  { 0%  { width:0px;} 100%{ width:45%;}  }
-@-ms-keyframes percent50  { 0%  { width:0px;} 100%{ width:50%;}  }
-@-ms-keyframes percent55  { 0%  { width:0px;} 100%{ width:55%;}  }
-@-ms-keyframes percent60  { 0%  { width:0px;} 100%{ width:60%;}  }
-@-ms-keyframes percent65  { 0%  { width:0px;} 100%{ width:65%;}  }
-@-ms-keyframes percent70  { 0%  { width:0px;} 100%{ width:70%;}  }
-@-ms-keyframes percent75  { 0%  { width:0px;} 100%{ width:75%;}  }
-@-ms-keyframes percent80  { 0%  { width:0px;} 100%{ width:80%;}  }
-@-ms-keyframes percent85  { 0%  { width:0px;} 100%{ width:85%;}  }
-@-ms-keyframes percent90  { 0%  { width:0px;} 100%{ width:90%;}  }
-@-ms-keyframes percent95  { 0%  { width:0px;} 100%{ width:95%;}  }
-@-ms-keyframes percent100 { 0%  { width:0px;} 100%{ width:100%;} }
-
-
-
 /* Skill Styls Ends 
 -------------------------------------- */
 
@@ -1767,7 +1727,7 @@ ol.comment-list article {
 }
 
 ol.comment-list li.bypostauthor {
-	background-color: #FF7654 !important;
+	background-color: #FF7654;
 }
 
 ol.comment-list li.bypostauthor p,
@@ -2301,7 +2261,7 @@ h2 i {
 	background: url('images/bg-bottomshadow.png') no-repeat center top;
 	position: absolute;
 	top: 0;
-	z-index: 1;
+	z-index: 100;
 	width: 100%;
 }
 
@@ -2610,8 +2570,6 @@ h2 i {
 	clear: both;
 }
 
-.stuck { position: fixed; top:0; left: 0; width: 100%; z-index: 100;}
-
 @media (max-width: 768px) {
   .main-navigation ul {
     display: inline !important;
@@ -2722,15 +2680,6 @@ h2 i {
 		width: 100%;
 		text-align: left;
 		padding: 10px 0;
-	}
-
-	.entry-meta span.read-more-link span, 
-	.entry-meta span.edit-link span,
-	.entry-meta span.byline span, 
-	.entry-meta span.comments-link span,
-	.entry-meta span.posted-on span {
-		border-bottom: 0;
-		padding-bottom: 0;
 	}
 
 	.widget-area .search-form input.search-field {
