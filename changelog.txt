@@ -1,5 +1,10 @@
 === Changelog ===
 
+== 1.2.8 ==
+
+* Typos in image.php removed.
+
+
 == 1.2.7 ==
 
 * Theme tags list update (fluid-layout, responsive-layout);

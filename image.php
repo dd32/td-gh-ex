@@ -55,8 +55,7 @@ get_header(); ?>
 					</div><!-- .entry-attachment -->
 
 					<?php the_content(); ?>
-					<?php wp_link_pages; ?>
-					?>
+					<?php wp_link_pages(); ?>
 				</div><!-- .entry-content -->
 
 				<?php edit_post_link( '<span class="glyphicon glyphicon-pencil"></span> ' . __('Edit', 'b3theme'), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>'); ?>
