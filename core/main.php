@@ -31,6 +31,35 @@ function lookilite_admin_body_class( $classes ) {
 add_filter( 'admin_body_class', 'lookilite_admin_body_class' );
 
 /*-----------------------------------------------------------------------------------*/
+/* POST CLASS */
+/*-----------------------------------------------------------------------------------*/   
+
+function lookilite_post_class($classes) {
+
+	$classes[] = 'post-container col-md-12';
+		
+	return $classes;
+	
+}
+
+add_filter('post_class', 'lookilite_post_class');
+
+/*-----------------------------------------------------------------------------------*/
+/* BODY CLASS */
+/*-----------------------------------------------------------------------------------*/   
+
+function lookilite_body_class($classes) {
+
+	$classes[] = 'custombody';
+		
+	return $classes;
+	
+}
+
+add_filter('body_class', 'lookilite_body_class');
+
+
+/*-----------------------------------------------------------------------------------*/
 /* TAG TITLE */
 /*-----------------------------------------------------------------------------------*/  
  

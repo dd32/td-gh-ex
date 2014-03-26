@@ -6,7 +6,7 @@
                 
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
            
-			<article id="post-<?php the_ID(); ?>" <?php post_class(array('post-container','col-md-12')); ?>>
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				
 				<?php do_action('lookilite_postformat'); ?>
 

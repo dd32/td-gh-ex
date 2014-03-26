@@ -18,7 +18,7 @@
 
     <div class="row" >
     
-        <article id="post-<?php the_ID(); ?>" <?php post_class(array('post-container','col-md-12')); ?> >
+        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
 		
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
        

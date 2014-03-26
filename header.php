@@ -24,7 +24,7 @@
 
 </head>
 
-<body <?php body_class('custombody'); ?>>
+<body <?php body_class(); ?>>
 
 <header id="header">
     <div class="container">
