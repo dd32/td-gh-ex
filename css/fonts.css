@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'Fjalla One';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/FjallaOne.eot');
+  src: url('../fonts/FjallaOne.eot?#iefix') format('embedded-opentype');
+  src: local('FjallaOne'), local('FjallaOne'), url(../fonts/FjallaOne.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/RobotoSlab.eot');
+  src: url('../fonts/RobotoSlab.eot?#iefix') format('embedded-opentype');
+  src: local('RobotoSlab'), local('RobotoSlab'), url(../fonts/RobotoSlab.woff) format('woff');
+}
