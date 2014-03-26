@@ -1,23 +1,23 @@
 ﻿== Sampression Lite ==
 
 Theme Name: Sampression Lite
-Theme URI: http://www.sampression.com/sampression-lite/
+Theme URI: http://sampression.com/themes/sampression-lite/
 Author: Sampression
 Author URI: http://www.sampression.com
 
-Version: 1.4.1.2
-License: The MIT License (MIT)
-License URI: http://mit-license.org
+Version: 1.5
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 == Theme Description ==
-Sampression Lite is a minimal, fully responsive, retina ready, translation ready, clean theme, perfect for blogging. It's lightweight responsive design allows this theme to adapt across a range of screen sizes. Besides an elegant design, Sampression Lite features customizable menus and widgets, supports custom header color and image, custom background color and image, along with a threaded comments section. It supports sticky notes with special effects and allows for the best placement of feature images on posts. It is a full fledged theme with easily customizable theme option page.
+Sampression Lite is a minimal, fully responsive, retina ready, clean theme, perfect for blogging. It's lightweight responsive design allows this theme to adapt across a range of screen sizes. Besides an elegant design, Sampression Lite features customizable menus and widgets, supports custom header color and image, custom background color and image, along with a threaded comments section. It supports sticky notes with special effects and allows for the best placement of feature images on posts. It is a full fledged theme with easily customizable theme option page.
 
 == Features ==
 Responsive design, Theme Options, Custom Logo/Fav Icons/Apple Touch Icons, Custom Widgets, Custom Menu, iSotope jQuery, Sticky Post, W3C validated, supports social media, supports webmaster tools.
 
 == Tags ==
-Tags: white, orange, green, one-column, two-columns, flexible-width, custom-menu, featured-image-header, featured-images, post-formats, sticky-post, theme-options, threaded-comments, right-sidebar
+Tags: white, orange, green, one-column, two-columns, responsive-layout, custom-menu, featured-image-header, featured-images, post-formats, sticky-post, theme-options, threaded-comments, right-sidebar
 
 == Installation ==
 
@@ -135,8 +135,15 @@ Version 1.4.1.1
 
 = Improved: Code optimizations
 
-Version 1.4.1.2
-= Changed: Theme is now distributed under MIT license.
+Version 1.5
+= Added: Responsive video feature added.
+
+= Changed: Isotope jquery plugin replaced by shuffle.js jquery plugin
+= Changed: Multiple category filtering changed to single category filtering in home page
+= Changed: Sticky post's position changed from right to left.
+
+= Fixed: CSS Fixings
+
 
  == Child Theme Support ===
  Sampresson Lite supports child themes. Please use child themes for customization of "Sampression Lite". For further reading: http://codex.wordpress.org/Child_Themes.

@@ -32,8 +32,6 @@
 		
 		wp_head();
 	?>
-
-	
 </head>
 
 <body <?php body_class('top'); ?>>
@@ -127,7 +125,6 @@
   </div>
 </header>
 <!-- #header -->
-<!-- Filter the Post by Category: We are using Isotop (http://isotope.metafizzy.co/) for Filtering: An exquisite jQuery plugin for magical layouts -->
 <?php if(is_home()): ?>
 <span id="primary-nav-scroll"></span>
 <nav id="primary-nav">
@@ -136,11 +133,11 @@
   <div class="columns sixteen">
     <div class="nav-label"><?php _e('Filter By:','sampression'); ?></div>
 	
-    <ul class="nav-listing clearfix">
-        <li><a href="#" data-filter="*" class="selected"><span></span><?php _e('Show All','sampression'); ?></a></li>
+    <ul class="nav-listing clearfix" id="filter">
+        <li><a href="#" class="active selected" data-filter="*" data-group="all"><span></span><?php _e('Show All','sampression'); ?></a></li>
         <?php
 		/*to exclude some categories */ 
-		$args = array();
+		$args = array( 'hide_empty' => 1);
 		/* $args = array(
 		'exclude'=>  array( get_cat_ID('aciform'), get_cat_ID('alignment'), get_cat_ID('antiquarianism'))  // exclude by category slug
 		'exclude'=>  array( 1, 2, 3) //exclude by category id
@@ -148,24 +145,42 @@
 		$categories = get_categories($args);
         foreach($categories as $category):
         ?>
-        <li><a href="javascript:void(0);" data-filter=".<?php echo $category->slug; ?>" id="<?php echo $category->slug; ?>" class="filter-data"><span></span><?php echo $category->name; ?></a></li>
+        <li><a href="#" data-filter=".<?php echo $category->slug; ?>" data-group="<?php echo $category->slug; ?>" id="<?php echo $category->slug; ?>"><span></span><?php echo $category->name; ?></a></li>
         <?php
         endforeach;
         ?>
     </ul>
-    
+       
     <!-- Check Viewport: If the normal design couldn't fit with viewport, the Categories will appear via CSS with Select Menu form -->
-    <select name="get-cats" id="get-cats">
-        <option value="*">Show all</option>
-        <?php
-        foreach($categories as $category):
-        ?>
-        <option value=".<?php echo $category->slug; ?>"><?php echo $category->name; ?></option>
-        <?php
-        endforeach;
-        ?>
-    </select>
-    
+	 
+                <?php
+        $iPod = stripos($_SERVER['HTTP_USER_AGENT'], "iPod");
+        $iPhone = stripos($_SERVER['HTTP_USER_AGENT'], "iPhone");
+        $iPad = stripos($_SERVER['HTTP_USER_AGENT'], "iPad");
+        if ($iPod || $iPhone || $iPad) {
+            ?>
+
+            <select id="get-cat-ios">
+                <option value="<?php echo esc_url(home_url('/')); ?>">Show All</option>
+                <?php
+                foreach ($categories as $category):
+                    ?>
+                    <option value="<?php echo get_term_link($category->slug, 'category'); ?>"><?php echo $category->name; ?></option>
+                    <?php
+                endforeach;
+                ?>
+            </select>
+            <?php
+        } else{
+            
+            ?>
+        <select name="get-cats" id="get-cats" >         
+            <option value="all">Show all</option>
+                    <?php foreach ($categories as $category): ?>
+                <option value="<?php echo $category->slug;
+                        ?>"><?php echo $category->name; ?></option>         <?php endforeach;
+                    ?>     </select> 
+        <?php } ?>
     </div>
   </div>
 </nav>

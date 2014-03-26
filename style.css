@@ -1,17 +1,18 @@
 /*
 Theme Name: Sampression Lite
-Theme URI: http://www.sampression.com/sampression-lite/
+Theme URI: http://sampression.com/themes/sampression-lite/
 Author: Sampression
 Author URI: http://www.sampression.com 
-Description: Sampression Lite is a minimalist, fully responsive, retina ready, translation ready, clean theme, perfect for blogging. It's lightweight responsive design allows this theme to adapt across a range of screen sizes. Besides an elegant design, Sampression Lite features customizable menus and widgets, supports custom header color and image, custom background color and image, along with a threaded comments section. It supports sticky notes with special effects and allows for the best placement of feature images on posts. It is a full fledged theme with easily customizable theme option page.
+Description: Sampression Lite is a minimalist, fully responsive, retina ready, clean theme, perfect for blogging. It's lightweight responsive design allows this theme to adapt across a range of screen sizes. Besides an elegant design, Sampression Lite features customizable menus and widgets, supports custom header color and image, custom background color and image, along with a threaded comments section. It supports sticky notes with special effects and allows for the best placement of feature images on posts. It is a full fledged theme with easily customizable theme option page.
 
-Version: 1.4.1.2
-License: The MIT License (MIT)
-License URI: http://mit-license.org
-Tags: white, orange, green, one-column, two-columns, flexible-width, custom-menu, featured-image-header, featured-images, post-formats, sticky-post, theme-options, threaded-comments, right-sidebar
+Version: 1.5
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: white, orange, green, one-column, two-columns, responsive-layout, custom-menu, featured-image-header, featured-images, post-formats, sticky-post, theme-options, threaded-comments, right-sidebar
 Text Domain: sampression
 
-This theme is licensed under the MIT.
+This theme is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
 */
 
 /* Table of Content
@@ -156,7 +157,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 		margin:0 0 10px 20px;
 		margin:0 0 1.0rem 2.0rem;
 		}
-
+	form ul {
+	    list-style-type: none;
+	}
 /* #Images/videos
 ================================================== */
 	img {
@@ -181,7 +184,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 /* #Basic WordPress Classes
 ================================================== */
 /* Aligns, prev next links */
-	.alignnone{ padding-right:10px; padding-right:1.0rem; padding-top:5px; padding-top:0.5rem; padding-bottom:5px; padding-bottom:0.5rem;}
+	.alignnone{ padding-right:10px; padding-right:1.0rem; padding-top:5px; padding-top:0.5rem; padding-bottom:5px; padding-bottom:0.5rem; padding-left:10px; padding-left:1.0rem; }
 	.alignleft {float:left;}
 	.alignright {float:right;}
 	.aligncenter, div.aligncenter {	display: block;	margin-left: auto;	margin-right: auto;}
@@ -203,7 +206,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	.alignleft { float: left; }
 
 /* Captions */
-	.wp-caption {	border: 1px solid #ddd; border: 0.1rem solid #ddd;	text-align: center;	background-color: #fafafa;	padding-top: 5px; padding-top: 0.5rem;	margin:10px; margin:1.0rem;	-moz-border-radius: 3px;	-khtml-border-radius: 3px;	-webkit-border-radius: 3px;	border-radius: 3px; border-radius: 0.3rem;}
+	.wp-caption {	max-width:100%; border: 1px solid #ddd; border: 0.1rem solid #ddd;	text-align: center;	background-color: #fafafa;	padding-top: 5px; padding-top: 0.5rem;	margin:10px; margin:1.0rem;	-moz-border-radius: 3px;	-khtml-border-radius: 3px;	-webkit-border-radius: 3px;	border-radius: 3px; border-radius: 0.3rem;}
 	.wp-caption img {	margin: 0;	padding: 0;	border: 0 none;}
 	.wp-caption p.wp-caption-text {	font-size: 12px; font-size: 1.2rem; line-height: 16px; line-height: 1.6rem;	padding: 4px 4px 5px 0;	padding: 0.4rem 0.4rem 0.5rem 0; margin: 0; color:#666; }
 	.wp-caption.alignleft { margin:0 20px 5px 0;  margin:0 2.0rem 0.5rem 0; }
@@ -355,6 +358,7 @@ table {
 table td, table th {
 	border:1px solid #eee; border:0.1rem solid #eee;
 	padding:5px; padding:0.5rem;
+	text-align: center;
 	} 
 table th {
 	font-weight:bold;
@@ -509,7 +513,7 @@ img.logo-img{
 	text-align:right;
 	}
 #top-nav ul li {
-	display:inline;
+	display:inline-block;
 	position:relative;
 	background: none;
 	padding: 2px 0; padding:0.2rem 0;
@@ -536,7 +540,7 @@ img.logo-img{
 	border-bottom:none;
 	position:absolute;
 	left: -75px; left:-7.5rem;
-	top:17px; top:1.7rem;
+	top:23px; top:2.3rem;
 	z-index:5;
 	display:none;
 	width:120px; width:12.0rem;
@@ -624,7 +628,7 @@ img.logo-img{
 #top-nav ul ul ul {
 	top:0;
 	left:inherit;
-	 right: 123px; right: 12.3rem;
+	 right: 127px; right: 12.7rem;
 	
 	}
 #top-nav ul ul ul:before {
@@ -667,7 +671,7 @@ img.logo-img{
 	width:235px; width:23.5rem;
 }
 
-#searchform input, .sm-top a, #get-cats, select {
+#searchform input, .sm-top a, #get-cats, select,#get-cat-ios {
  	display:block;
 	float:left;
 	position:relative;
@@ -788,7 +792,7 @@ select {
 	background-position:200px -181px; background-position:20.0rem -18.1rem;
 	padding:5px; padding:0.5rem;
 	}
-#get-cats {
+#get-cats,#get-cat-ios {
 	display:none;
 	margin-left:90px; margin-left:9.0rem;
 	}
@@ -932,7 +936,11 @@ body.single #content, body.page #content {
 	width:100%;
 	float:left;
 	padding-bottom:20px; padding-bottom:2.0rem;
+	
 	}
+body.home{
+	overflow: hidden;
+}	
 
 article.post {
 	background-color:#fff;
@@ -1069,7 +1077,7 @@ body.single .entry.clearfix form input[type="submit"]{
 	margin-top:4px; margin-top:0.4rem;
 	}
 .cats .ico {
-	background-position:0 -139px; background-position:0 -13.9rem;
+	background-position:0 -139.3px; background-position:0 -13.93rem;
 	margin-top:3px; margin-top:0.3rem;
 	margin-right:5px; margin-right:0.5rem;
 	}
@@ -1182,7 +1190,7 @@ body.page .meta .overflow-hidden {
 .sidebar-right {
 	padding-top:50px; padding-top:5.0rem;
 	}
-.sidebar-right .widget {
+.widget {
 	margin-bottom:20px; margin-bottom:2.0rem;
 	}
 .sidebar-right .widget .widget-title {
@@ -1237,12 +1245,19 @@ body.page .meta .overflow-hidden {
 	}
 
 /* interior widget search */
-.sidebar-right .widget.widget_search .widget-entry {
+.sidebar-right .widget.widget_search .widget-entry
+{
 	margin-left:0;
 	}
 .sidebar-right #searchform input#s {
 	width:166px; width:16.6rem;
 	}
+.sidebar-right .widget.widget_categories .widget-entry select, .sidebar-right .widget.widget_archive .widget-entry select {
+    background-image: none;
+    margin-left: -2rem;
+    max-width: none;
+    width: 21rem;
+}
 
 /* Single */
 body.single .featured-img img {
@@ -1305,6 +1320,10 @@ ol.commentlist ul.children {
 	margin-left:120px; margin-left:12.0rem;
 	list-style:none;
 	}
+
+ol.commentlist ul.children ul ul {
+    margin-left: 0;
+}	
 ol.commentlist article.comment {
 	margin-bottom:20px; margin-bottom:2.0rem;
 	}
@@ -1570,9 +1589,23 @@ body.error404 #content {
 	text-decoration:none;
 	}
 
+        /* grid */
+		#grid {clear: both; position: relative}
 /* #Media Queries
 ================================================== */
-				
+        @media only screen and (max-width: 1025px) {
+            ul#filter{display:none;}
+            #primary-nav .sixteen{
+                height:34px; height:3.4rem;
+            }
+            #primary-nav .nav-label {
+			margin-top:3px;
+			top:25px; top:2.5rem;
+			}
+        }
+        @media only screen and (min-width: 1025px) {
+	#get-cats, #get-cat-ios{display:none!important}	
+        }
 	/* Smaller than standard 960 (devices and browsers) */
 	@media only screen and (min-width: 959px) {
 				}
@@ -1599,6 +1632,7 @@ body.error404 #content {
 
 	/* All Mobile Sizes (devices and browser) */
 	@media only screen and (max-width: 767px) {
+           
 		#logo-wrapper .logo-img, #logo-wrapper .logo-txt {
 			display:block;
 			float:none;
@@ -1686,23 +1720,27 @@ article.post .featured-img {
 		#primary-nav .sixteen {
 			border-bottom-width:10px; border-bottom-width:1.0rem;
 			border-top-width:10px; border-top-width:1.0rem;
-			height:auto;
+			/*height:auto !important;*/
 			}
+		
 		#primary-nav .nav-listing {
 			display:none;
 			}
-		#get-cats {
-			display:inline;
+		#primary-nav ul.nav-listing {
+			margin: 1rem 0 0 9rem;
+		}
+		#get-cats,#get-cat-ios {
+                        /*display:none;*/
 			float: none;
 			margin-left: 0;
 			}
 		#primary-nav .nav-label {
-			margin-top:0;
+			margin-top:3px;
 			top:15px; top:1.5rem;
 			}
 		#btn-nav-opt {
-			display:none;
-			visibility:hidden;
+			display:none !important;
+			visibility:visible;
 			}
 		
 		/* Sidebar */
@@ -1779,12 +1817,12 @@ article.post .featured-img {
 		.socialtwo #searchform #s{ width:296px; width:29.6rem;}
 		.socialthree #searchform #s{ width:264px; width:26.4rem;}
 		.socialfour #searchform #s{ width:232px;  width:23.2rem;}
-		#page_id,.top-menu-nav, #get-cats{ width:335px; width:33.5rem;}
+		#page_id,.top-menu-nav, #get-cats,#get-cat-ios{ width:335px; width:33.5rem;}
 		#page_id,.top-menu-nav, .menu-primary-menu-container select{ 
 			width:365px; width:36.5rem; 
 			background-position: 345px -181px; background-position: 34.5rem -18.1rem;
 		}
-		#get-cats{ background-position: 315px -181px; background-position: 31.5rem -18.1rem;}
+		#get-cats,#get-cat-ios{ background-position: 315px -181px; background-position: 31.5rem -18.1rem;}
 		}
 		
 
@@ -1804,6 +1842,10 @@ article.post .featured-img {
 			width: 66px; width: 6.6rem;
 			}
 		
+		#primary-nav ul.nav-listing li {
+			margin: 0 0 1rem 0;
+			width:100%; 
+		}
 		/* Comments */
 		#comment-header h3 {
 			display:block;
@@ -1887,7 +1929,7 @@ article.post .featured-img {
 			background-position: 105% -95px; background-position: 105% -9.5rem;
 			background-size: 33px 284px;  background-size: 3.3rem 28.4rem; 
 		}
-		#get-cats{
+		#get-cats,#get-cat-ios{
 			background-position: 105% -95px; background-position: 105% -9.5rem;
 			background-size: 33px 284px; background-size: 3.3rem 28.4rem;
 		}
@@ -1968,52 +2010,3 @@ article.post .featured-img {
 	}
 	
 
-/**** Isotope Filtering ****/
-
-.isotope-item {
-  z-index: 2;
-}
-
-.isotope-hidden.isotope-item {
-  pointer-events: none;
-  z-index: 1;
-  display:none;
-}
-
-/**** Isotope CSS3 transitions ****/
-.isotope,
-.isotope .isotope-item {
-  -webkit-transition-duration: 0.8s;
-     -moz-transition-duration: 0.8s;
-      -ms-transition-duration: 0.8s;
-       -o-transition-duration: 0.8s;
-          transition-duration: 0.8s;
-}
-
-.isotope {
-  -webkit-transition-property: height, width;
-     -moz-transition-property: height, width;
-      -ms-transition-property: height, width;
-       -o-transition-property: height, width;
-          transition-property: height, width;
-}
-
-.isotope .isotope-item {
-  -webkit-transition-property: -webkit-transform, opacity;
-     -moz-transition-property:    -moz-transform, opacity;
-      -ms-transition-property:     -ms-transform, opacity;
-       -o-transition-property:         top, left, opacity;
-          transition-property:         transform, opacity;
-}
-
-/**** disabling Isotope CSS3 transitions ****/
-
-.isotope.no-transition,
-.isotope.no-transition .isotope-item,
-.isotope .isotope-item.no-transition {
-  -webkit-transition-duration: 0s;
-     -moz-transition-duration: 0s;
-      -ms-transition-duration: 0s;
-       -o-transition-duration: 0s;
-          transition-duration: 0s;
-}

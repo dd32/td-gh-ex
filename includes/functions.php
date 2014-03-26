@@ -133,8 +133,10 @@ if (!function_exists('sampression_js')) {
 		wp_enqueue_script("jquery");
 		// JS at the bottom for fast page loading. 
 		wp_enqueue_script('sampression-modernizer', get_template_directory_uri() . '/lib/js/modernizr.js', array('jquery'), '2.6.1', false);
-		wp_enqueue_script('sampression-jquery-isotope', get_template_directory_uri() . '/lib/js/jquery.isotope.min.js', array('jquery'), '1.5.19', true);
+		//wp_enqueue_script('sampression-jquery-isotope', get_template_directory_uri() . '/lib/js/jquery.isotope.min.js', array('jquery'), '1.5.19', true);
+                wp_enqueue_script('sampression-shuffle', get_template_directory_uri() . '/lib/js/jquery.shuffle.min.js', array('jquery'), '', false);                
 		wp_enqueue_script('sampression-custom-script', get_template_directory_uri() . '/lib/js/scripts.js', array('jquery'), '1.1', true);
+                 wp_enqueue_script('shuffle', get_template_directory_uri() . '/lib/js/shuffle.js', array('jquery'), '', false);
 	}
 
 }
@@ -269,6 +271,25 @@ function sampression_cat_slug() {
 	return $slug;
 }
 
+function sampression_cat_slugs() {
+    $cats = array();
+	foreach((get_the_category()) as $category) { 
+		$cats[] = $category->slug;
+	} 
+	$slug = implode(', ', $cats);
+	return $slug;
+}
+
+function sampression_cat_count(){
+    $cats = array();
+    $count = 0;
+	foreach((get_the_category()) as $category) { 
+		$count = $count + 1;
+	} 
+	return $count;
+}
+
+
 /*=======================================================================
  * Run function during a themes initialization. It clear all widgets
  *=======================================================================*/
@@ -324,9 +345,9 @@ function sampression_widget_reset() {
 		'description' => __('Appears on right of the Interior Pages - Can use as much widgets as you wish.', 'sampression'),
 		'id' => 'right-sidebar',
 		'before_title' => '<header class="widget-title">',
-		'after_title' => '</header><div class="widget-entry">',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div></section>'
+		'after_title' => '</header>',
+		'before_widget' => '<section id="%1$s" class="widget clearfix %2$s">',
+		'after_widget' => '</section>'
 	));
 }
 add_action('widgets_init', 'sampression_widgets_init'); 
