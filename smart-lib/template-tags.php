@@ -436,6 +436,7 @@ function maxflat_get_related_post_box( $category, $post_ID, $display_post_limit,
 						$j ++;
 
 					}// end while
+                    wp_reset_postdata();
 					?>
 				</ul>
 			</div>
