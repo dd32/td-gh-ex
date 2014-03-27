@@ -195,7 +195,7 @@ function rootstrap_options() {
 							'std' => '',
 							'type' => 'color');	
 
-		$options[] = array( 'name' => __('Font and color setting', 'rootstrap'),
+		$options[] = array( 'name' => __('Font link color setting', 'rootstrap'),
 							'type' => 'heading');
 		$options[] = array( 'name' => __('Heading Color', 'rootstrap'),
 							'desc' => __('Color for all headings (h1-h6)', 'rootstrap'),

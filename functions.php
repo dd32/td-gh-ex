@@ -9,7 +9,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 730; /* pixels */
+	$content_width = 1170; /* pixels */
 }
 
 if ( ! function_exists( 'rootstrap_setup' ) ) :
@@ -40,9 +40,7 @@ function rootstrap_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-  //add_image_size( 'rootstrap-featured', 730, 410, true );
-  //add_image_size( 'tab-small', 60, 60 , true); // Small Thumbnail
-  //add_image_size( 'tab-medium', 300, 200 , true); // Small Thumbnail
+
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -167,8 +165,8 @@ function rootstrap_scripts() {
 	wp_enqueue_script('rootstrap-bootstrapjs', get_template_directory_uri().'/inc/js/bootstrap.min.js', array('jquery') );
 	wp_enqueue_script( 'stickymenu', get_template_directory_uri() . '/inc/js/jquery.sticky.js', array('jquery') );
 	wp_enqueue_script( 'rootstrap-bootstrapwp', get_template_directory_uri() . '/inc/js/functions.min.js', array('jquery') );
-	if( ( is_home() || is_front_page() ) && rootstrap_get_option('rootstrap_slider_checkbox') == 1 ) {
-		wp_enqueue_script( 'layerslider', get_template_directory_uri() . '/inc/js/jquery.cslider.js', array('jquery'), true );
+	wp_enqueue_script( 'layerslider', get_template_directory_uri() . '/inc/js/jquery.cslider.js', array('jquery'), true );	
+	if( ( is_home() || is_front_page() ) && rootstrap_get_option('rootstrap_slider_checkbox') == 1 ) {		
 		wp_enqueue_script( 'mordernizer', get_template_directory_uri() . '/inc/js/modernizr.custom.28468.js', array('jquery'), true );
 	}	
 	
@@ -194,10 +192,7 @@ define('rootstrap_framework_URL', get_template_directory() . '/inc/admin/');
 define('rootstrap_framework_DIRECTORY', get_template_directory_uri() . '/inc/admin/');
 require_once (rootstrap_framework_URL . 'rootstrap-options.php');
 
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
+
 
 /**
  * Custom template tags for this theme.

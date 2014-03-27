@@ -22,12 +22,11 @@ Description: WP RootStrap is a flat and minimal design theme powered by TwitterB
 * Social icons
 * Call For Action
 
-Version: 1.2.1
+Version: 1.2.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: white, light, green,  three-columns, two-columns, right-sidebar, flexible-width, custom-menu, featured-images
+Tags: white, light, green,  two-columns, right-sidebar, left-sidebar, responsive-layout, custom-menu, featured-images
 Text Domain: rootstrap
-Theme Demo: http://demo.crayonux.com/rootstrap/
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -294,6 +293,9 @@ textarea {
 .entry-meta a {
   font-size: 13px;
 }
+footer.entry-meta {
+	clear: both;
+}
 #main .page-header {
   margin-top: 0;
 }
@@ -370,7 +372,17 @@ hr.section-divider {
 .archive .format-aside .entry-title {
   display: none;
 }
-
+.comments-area {
+	padding: 20px;
+	background: rgba(255,255,255,0.8);
+}
+.home-widget {
+	padding: 20px 10px;
+}
+.content-404, .searchresult {
+	background: #fff;
+	padding-bottom: 30px;
+}
 /* =Media
 ----------------------------------------------- */
 
@@ -648,6 +660,11 @@ li.recentcomments {
 .navbar > .container .navbar-brand {
   color: #1FA67A; 
   height: auto !important;
+}
+.navbar > .container .navbar-brand span {
+ font-size: 14px;
+ padding-left: 10px;
+ margin-top: -5px;
 }
 .navbar-default .navbar-nav > .open > a, 
 .navbar-default .navbar-nav > .open > a:hover,

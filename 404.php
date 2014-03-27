@@ -6,8 +6,8 @@
  */
 
 get_header(); ?>
-	<div id="content" class="site-content container">
-		<div id="primary" class="content-area col-sm-12 col-md-8">
+	<div id="content" class="site-content container content-404">
+		<div id="primary" class="">
 			<main id="main" class="site-main" role="main">
 
 				<section class="error-404 not-found">

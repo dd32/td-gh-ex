@@ -66,6 +66,26 @@
 				'echo'              => 1 
        		) );
     	?>
+		
+		<footer class="entry-meta">
+		<i class="fa fa-tags"></i>
+		<?php
+			
+			/* translators: used between list items, there is a space after the comma */
+			$tag_list = get_the_tag_list( '', __( ', ', 'rootstrap' ) );
+
+			
+			printf(
+				$tag_list,
+				get_permalink()
+			);
+		?>
+
+		
+		
+		
+	</footer><!-- .entry-meta -->
+		
 	</div><!-- .entry-content -->
 	<?php endif; ?>
 

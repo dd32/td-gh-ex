@@ -7,7 +7,7 @@
 
 get_header(); ?>
 	<div id="content" class="site-content container">
-		<section id="primary" class="content-area col-sm-12 col-md-8 <?php echo rootstrap_get_option( 'site_layout' ); ?>">
+		<section id="primary" class="content-area searchresult col-sm-12 col-md-8 <?php echo rootstrap_get_option( 'site_layout' ); ?>">
 			<main id="main" class="site-main" role="main">
 
 			<?php if ( have_posts() ) : ?>

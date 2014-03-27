@@ -159,9 +159,9 @@ function rootstrap_wpsearch($form) {
 
 /****************** password protected post form *****/
 
-add_filter( 'the_password_form', 'custom_password_form' );
+add_filter( 'the_password_form', 'rootstrap_custom_password_form' );
 
-function custom_password_form() {
+function rootstrap_custom_password_form() {
 	global $post;
 	$label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
 	$o = '<form class="protected-post-form" action="' . get_option('siteurl') . '/wp-login.php?action=postpass" method="post">
@@ -264,7 +264,7 @@ function theme_topmenu_social() {
 		</div>
 	</div>
 <?php };
-add_action('nav-before', 'theme_topmenu_social');
+add_action('before', 'theme_topmenu_social');
 // header images
 function theme_headerimage() {
 	 if( get_header_image() != '' ) : ?>
@@ -403,7 +403,7 @@ if (!function_exists('get_rootstrap_theme_options'))  {
         echo '.dropdown-menu, .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {background-color: '.rootstrap_get_option('top_nav_dropdown_bg', '#000').';}';
       }
       if ( rootstrap_get_option('top_nav_dropdown_item')) {
-        echo '.navbar-default .navbar-nav .open .dropdown-menu > li > a { color: '.rootstrap_get_option('top_nav_dropdown_item', '#000').';}';
+        echo '.navbar-default .navbar-nav .dropdown-menu > li > a { color: '.rootstrap_get_option('top_nav_dropdown_item', '#000').'!important;}';
       }
       if ( rootstrap_get_option('footer_bg_color')) {
         echo '#colophon {background-color: '.rootstrap_get_option('footer_bg_color', '#000').';}';
