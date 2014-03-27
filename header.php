@@ -74,21 +74,12 @@
 			</ul>
 			<?php
 		} ?>
-      </nav>
+      </nav><!-- #top-nav-->
 	  <div id="top-nav-mobile">
-		
-			<?php	/* $args = array(
-							'depth'            => 0,
-							'child_of'         => 0,
-							'selected'         => 0,
-							'echo'             => 1,
-							'name'             => 'page_id'); 
-							
-						 wp_dropdown_pages( $args ); */ 
-			?>
+				
 				
 	  </div> 
-      <!-- #top-nav -->
+      <!-- #top-nav-mobile-->
       <div id="interaction-sec" class="clearfix <?php echo getnoofclass(); ?>">
         <?php get_search_form(); ?>
      
@@ -138,10 +129,6 @@
         <?php
 		/*to exclude some categories */ 
 		$args = array( 'hide_empty' => 1);
-		/* $args = array(
-		'exclude'=>  array( get_cat_ID('aciform'), get_cat_ID('alignment'), get_cat_ID('antiquarianism'))  // exclude by category slug
-		'exclude'=>  array( 1, 2, 3) //exclude by category id
-		); */
 		$categories = get_categories($args);
         foreach($categories as $category):
         ?>

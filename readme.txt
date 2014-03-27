@@ -5,7 +5,7 @@ Theme URI: http://sampression.com/themes/sampression-lite/
 Author: Sampression
 Author URI: http://www.sampression.com
 
-Version: 1.5
+Version: 1.5.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -143,6 +143,12 @@ Version 1.5
 = Changed: Sticky post's position changed from right to left.
 
 = Fixed: CSS Fixings
+
+Version 1.5.1
+= Fixed: Repeating id changed to class
+= Fixed: Category Filtering menu fixed in ios devices
+= Fixed: Removed extra closing tags on sidebar.php file
+
 
 
  == Child Theme Support ===

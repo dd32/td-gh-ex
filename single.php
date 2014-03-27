@@ -80,11 +80,11 @@ get_header(); ?>
                 <?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'sampression' ) . '</span>', 'after' => '</div>' ) ); ?>
             </div>
             
-		</article>
+		</article><!-- .post -->
         
 				<?php comments_template( '', true ); ?>
         
-        </section><!-- end content -->
+        </section><!-- #content -->
 		
 		<?php endwhile; endif; ?>
 	
