@@ -1,0 +1,239 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: privatebusiness\n"
+"POT-Creation-Date: 2014-03-06 19:24+0100\n"
+"PO-Revision-Date: 2014-03-06 19:26+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: 404.php:9
+#: search.php:33
+#@ privatebusiness
+msgid "Nothing Found"
+msgstr ""
+
+#: 404.php:10
+#: archive.php:44
+#: index.php:35
+#: search.php:34
+#@ privatebusiness
+msgid "Sorry, no posts matched your criteria."
+msgstr ""
+
+#: archive.php:12
+#@ privatebusiness
+msgid "Archive"
+msgstr ""
+
+#: archive.php:14
+#@ privatebusiness
+msgid "Daily Archives"
+msgstr ""
+
+#: archive.php:16
+#@ privatebusiness
+msgid "Monthly Archives"
+msgstr ""
+
+#: archive.php:18
+#@ privatebusiness
+msgid "Yearly Archives"
+msgstr ""
+
+#: archive.php:20
+#@ privatebusiness
+msgid "Author Archives"
+msgstr ""
+
+#: archive.php:22
+#@ privatebusiness
+msgid "Tag Archives"
+msgstr ""
+
+#: archive.php:27
+#: index.php:18
+#: search.php:15
+#@ privatebusiness
+msgid "Permalink to "
+msgstr ""
+
+#: archive.php:30
+#: index.php:21
+#: search.php:18
+#: single.php:16
+#@ privatebusiness
+msgid "Posted on "
+msgstr ""
+
+#: archive.php:30
+#: index.php:21
+#: search.php:18
+#: single.php:16
+#@ privatebusiness
+msgid "By "
+msgstr ""
+
+#: archive.php:32
+#: index.php:23
+#: search.php:20
+#: single.php:18
+#@ privatebusiness
+msgid "Leave a response"
+msgstr ""
+
+#: archive.php:32
+#: index.php:23
+#: search.php:20
+#: single.php:18
+#@ privatebusiness
+msgid "1 response"
+msgstr ""
+
+#: archive.php:32
+#: index.php:23
+#: search.php:20
+#: single.php:18
+#@ privatebusiness
+msgid "% responses"
+msgstr ""
+
+#: archive.php:40
+#: index.php:31
+#: search.php:28
+#@ privatebusiness
+msgid "Read More &raquo;"
+msgstr ""
+
+#: archive.php:48
+#: index.php:39
+#: search.php:40
+#@ privatebusiness
+msgid "&laquo; Older posts"
+msgstr ""
+
+#: archive.php:49
+#: index.php:40
+#: search.php:41
+#@ privatebusiness
+msgid "Newer posts &raquo;"
+msgstr ""
+
+#: comments.php:18
+#, php-format
+#@ privatebusiness
+msgid "1 response on %2$s"
+msgid_plural "%1$s responses on %2$s"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:38
+#@ privatebusiness
+msgid "&laquo; Older Comments"
+msgstr ""
+
+#: comments.php:39
+#@ privatebusiness
+msgid "Newer Comments &raquo;"
+msgstr ""
+
+#: comments.php:45
+#@ privatebusiness
+msgid "Comments are closed"
+msgstr ""
+
+#: footer.php:37
+#@ privatebusiness
+msgid "Copyright"
+msgstr ""
+
+#: footer.php:38
+#@ privatebusiness
+msgid "WordPress Blog Platform"
+msgstr ""
+
+#: footer.php:38
+#@ privatebusiness
+msgid "Proudly powered by WordPress"
+msgstr ""
+
+#: functions.php:18
+#@ privatebusiness
+msgid "Primary Navigation"
+msgstr ""
+
+#: functions.php:39
+#@ privatebusiness
+msgid "Boats"
+msgstr ""
+
+#: functions.php:112
+#@ privatebusiness
+msgid "Primary Sidebar"
+msgstr ""
+
+#: functions.php:114
+#: functions.php:124
+#: functions.php:134
+#: functions.php:144
+#: functions.php:154
+#@ privatebusiness
+msgid "Select widgets from the right-hand side."
+msgstr ""
+
+#: functions.php:122
+#@ privatebusiness
+msgid "Homepage Sidebar Right"
+msgstr ""
+
+#: functions.php:132
+#@ privatebusiness
+msgid "Homepage Sidebar Left"
+msgstr ""
+
+#: functions.php:142
+#@ privatebusiness
+msgid "Footer Sidebar Right"
+msgstr ""
+
+#: functions.php:152
+#@ privatebusiness
+msgid "Footer Sidebar Left"
+msgstr ""
+
+#: functions.php:176
+#: functions.php:182
+#@ privatebusiness
+msgid "Logo"
+msgstr ""
+
+#: functions.php:178
+#@ privatebusiness
+msgid "Upload a logo to replace blogname and description in header"
+msgstr ""
+
+#: index.php:14
+#@ privatebusiness
+msgid "Featured post"
+msgstr ""
+
+#: page-full.php:21
+#: page.php:19
+#: single.php:31
+#@ privatebusiness
+msgid "Edit"
+msgstr ""
+
+#: search.php:11
+#, php-format
+#@ privatebusiness
+msgid "Search Results for: %s"
+msgstr ""
+
+#: single.php:23
+#@ privatebusiness
+msgid "Posted in "
+msgstr ""
+

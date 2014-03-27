@@ -6,32 +6,27 @@
 
 <div id="footer">
 
-	<?php if ( is_active_sidebar( 'footer-right' ) || is_active_sidebar( 'footer-left' ) ) : ?>
-		<div class="widgetarea-border"></div>
-	<?php endif;?>
+<?php if ( is_active_sidebar( 'footer-right' ) || is_active_sidebar( 'footer-left' ) ) { ?>
+	<div id="footer-widgets">
 
+		<div class="footer-right"> 
+			<?php if ( is_active_sidebar( 'footer-right' ) ) : ?>
+			<?php dynamic_sidebar( 'footer-right' ); ?>
 
-	
-	<div class="footer-right"> 
+			<?php else : ?> 
+			<?php endif; ?> 
+		</div>
+		
+		<div class="footer-left"> 
+			<?php if ( is_active_sidebar( 'footer-left' ) ) : ?>
+			<?php dynamic_sidebar( 'footer-left' ); ?>
 
-		<?php if ( is_active_sidebar( 'footer-right' ) ) : ?>
-	
-		<?php dynamic_sidebar( 'footer-right' ); ?>
+			<?php else : ?> 
+			<?php endif; ?> 
+		</div>
 
-		<?php else : ?> 
-		<?php endif; ?> 
 	</div>
-
-	<div class="footer-left"> 
-
-		<?php if ( is_active_sidebar( 'footer-left' ) ) : ?>
-	
-		<?php dynamic_sidebar( 'footer-left' ); ?>
-
-		<?php else : ?> 
-		<?php endif; ?> 
-	</div>
-
+<?php } ?> 
 
 	<div class="site-info">
 		<?php _e('Copyright', 'privatebusiness'); ?> <?php echo date('Y'); ?>  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> - 

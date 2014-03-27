@@ -31,6 +31,15 @@
 		);	
 		add_theme_support( 'custom-header', $args );
 
+	// Default header
+		register_default_headers( array(
+		'boats' => array(
+			'url' => '%s/images/boats.jpg',
+			'thumbnail_url' => '%s/images/boats-thumbnail.jpg',
+			'description' => __( 'Boats', 'privatebusiness' )
+			)
+		) );
+
 	// Post thumbnails
 		add_theme_support( 'post-thumbnails' ); 
 
@@ -59,9 +68,9 @@
 		echo '<!--[if lt IE 9]>'. "\n"; 
 		echo '<script src="' . esc_url( get_template_directory_uri() . '/js/ie.js' ) . '"></script>'. "\n"; 
 		echo '<![endif]-->'. "\n"; 
-		} 
-	add_action( 'wp_head', 'privatebusiness_html5' ); 
-
+		}
+	add_action('wp_enqueue_scripts', 'privatebusiness_html5'); 
+ 
 
 // Add blogname to wp_title
 	function privatebusiness_wp_title( $title ) { 
@@ -90,8 +99,8 @@
 // Register Google Fonts
 	function privatebusiness_fonts() { 
 		if (! is_admin() ) { 
-			wp_register_style('googleFonts', '//fonts.googleapis.com/css?family=Open+Sans' ); 		
-				wp_enqueue_style( 'googleFonts'); 	
+			wp_register_style('privatebusiness_googlefonts', '//fonts.googleapis.com/css?family=Open+Sans' ); 		
+				wp_enqueue_style( 'privatebusiness_googlefonts'); 	
 		}
 	}  	
 	add_action('wp_enqueue_scripts', 'privatebusiness_fonts');
@@ -153,29 +162,11 @@
 	add_action( 'widgets_init', 'privatebusiness_widgets_init' );
 
 
-// Replaces the excerpt "more" text by a link 
-	function privatebusiness_excerpt_more($more) { 
-		global $post; 
-		return '<a class="moretag" href="'. get_permalink($post->ID) . '">' . __( 'Read More &raquo;', 'privatebusiness' ) . '</a>'; 
-		} 
-	add_filter('excerpt_more', 'privatebusiness_excerpt_more'); 
-
-
 // Add class to the excerpt 
 	function privatebusiness_excerpt( $excerpt ) {
     		return str_replace('<p', '<p class="excerpt"', $excerpt);
 		}
 	add_filter( "the_excerpt", "privatebusiness_excerpt" );
-
-
-// Default header
-	register_default_headers( array(
-	'boats' => array(
-		'url' => '%s/images/boats.jpg',
-		'thumbnail_url' => '%s/images/boats-thumbnail.jpg',
-		'description' => __( 'Boats', 'privatebusiness' )
-		)
-	) );
 
 
 // Theme Customizer (option to add logo)

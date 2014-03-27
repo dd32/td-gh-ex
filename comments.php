@@ -34,13 +34,15 @@ if ( post_password_required() )
 			// Are there comments to navigate through?
 			if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :
 		?>
+		<div class="post-nav">
 			<div class="nav-prev"><?php previous_comments_link( __( '&laquo; Older Comments', 'privatebusiness' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &raquo;', 'privatebusiness' ) ); ?></div>
+		</div>	
 
 		<?php endif; // Check for comment navigation ?>
 
 		<?php if ( ! comments_open() && get_comments_number() ) : ?>
-		<p class="no-comments"><?php _e( 'Comments are closed' , 'privatebusiness' ); ?></p>
+		<h4 class="no-comments"><?php _e( 'Comments are closed' , 'privatebusiness' ); ?></h4>
 		<?php endif; ?>
 
 	<?php endif; // have_comments() ?>

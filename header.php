@@ -50,34 +50,26 @@
 	<?php } ?> 
 </div>
 
-<div id="header-widgets">
-	<?php if( is_home() || is_front_page() ) :?>
+<?php if( is_home() || is_front_page() ) { ?>
+<?php if ( is_active_sidebar( 'homepage-right' ) || is_active_sidebar( 'homepage-left' ) ) { ?>
+	<div id="header-widgets">
+	
 		<div class="home-right"> 
-
 			<?php if ( is_active_sidebar( 'homepage-right' ) ) : ?>
-		
 			<?php dynamic_sidebar( 'homepage-right' ); ?>
 
 			<?php else : ?> 
 			<?php endif; ?> 
 		</div>
-	<?php endif;?>
-
-	<?php if( is_home() || is_front_page() ) :?>
+		
 		<div class="home-left"> 
-
 			<?php if ( is_active_sidebar( 'homepage-left' ) ) : ?>
-	
 			<?php dynamic_sidebar( 'homepage-left' ); ?>
 
 			<?php else : ?> 
 			<?php endif; ?> 
 		</div>
-	<?php endif;?>
-
-
-	<?php if ( is_active_sidebar( 'homepage-right' ) || is_active_sidebar( 'homepage-left' ) ) : ?>
-		<div class="widgetarea-border"></div>
-	<?php endif;?>
-
-</div>
+	
+	</div>
+<?php } ?> 
+<?php } ?> 

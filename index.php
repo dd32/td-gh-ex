@@ -15,7 +15,7 @@
 		</div>
 	<?php endif; ?>
 
-		<h3 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to ', 'privatebusiness'); ?>
+		<h3 class="post-title"><a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to ', 'privatebusiness'); ?>
 		<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
 
 		<h5 class="postmetadata"><?php _e('Posted on ', 'privatebusiness'); ?><a href="<?php the_permalink(); ?>"><?php echo get_the_date(); ?></a> | <?php _e('By ', 'privatebusiness'); ?> 
@@ -27,6 +27,10 @@
 	} ?>
 
 	<?php the_excerpt(); ?>
+	<div class="more">
+		<a class="readmore" href="<?php the_permalink() ?>" rel="bookmark"><?php _e( 'Read More &raquo;', 'privatebusiness' ); ?></a>
+	</div>
+
 		<?php endwhile; else: ?>
 		<p><?php _e('Sorry, no posts matched your criteria.', 'privatebusiness'); ?></p>
 		<?php endif; ?>
