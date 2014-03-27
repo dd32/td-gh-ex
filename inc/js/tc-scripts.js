@@ -122,11 +122,14 @@ jQuery(document).ready(function () {
 
 
         $(window).on( 'load' , function () {
+
             //Detect layout and reorder content divs
-            var wrapper = $('#main-wrapper .container[role=main] .row'),
-                content = $("#main-wrapper .container .article-container"),
-                left    = $("#main-wrapper .container .span3.left.tc-sidebar"),
-                right   = $("#main-wrapper .container .span3.right.tc-sidebar");
+            var LeftSidebarClass    = TCParams.LeftSidebarClass || '.span3.left.tc-sidebar',
+                RightSidebarClass   = TCParams.RightSidebarClass || '.span3.right.tc-sidebar',
+                wrapper             = $('#main-wrapper .container[role=main] > .column-content-wrapper'),
+                content             = $("#main-wrapper .container .article-container"),
+                left                = $("#main-wrapper .container " + LeftSidebarClass),
+                right               = $("#main-wrapper .container " + RightSidebarClass);
 
             function BlockPositions() {
                 //15 pixels adjustement to avoid replacement before real responsive width

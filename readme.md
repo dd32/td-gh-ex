@@ -33,6 +33,12 @@ The exceptions to this license are as follows:
 
 
 # Changelog
+= 3.1.9 =
+* fixed : (js  : tc_scripts.js , php : index.php ) responsive : dynamic content block position bug fixed in tc_script.js, the wrapper had to be more specific to avoid block duplication when inserting other .row inside main content
+* fixed : (php : TC_resources::tc_enqueue_customizr_scripts() ) comment : notice on empty archives due to the function comments_open(). A test on  0 != $wp_query -> post_count has been added in TC_resources::tc_enqueue_customizr_scripts()
+* improved : (js  : tc_scripts.js) responsive : the sidebar classes are set dynamically with a js localized var using the tc_{$position}_sidebar_class filter
+
+
 = 3.1.8 =
 * fixed : (js) responsive : dynamic content block position bug fixed in tc_script.js
 

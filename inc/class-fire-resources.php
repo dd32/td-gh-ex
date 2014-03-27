@@ -104,13 +104,22 @@ class TC_resources {
 		//Smooth scroll on click option : filtered to allow easy disabling if needed (conflict)
 		$smooth_scroll		= apply_filters( 'tc_smooth_scroll', esc_attr( tc__f( '__get_option' , 'tc_link_scroll') ) );
 
+		global $wp_query;
 		//has the post comments ? adds a boolean parameter in js
-		$has_post_comments = ( comments_open() && get_comments_number() != 0 ) ? true : false;
+		$has_post_comments = ( 0 != $wp_query -> post_count && comments_open() && get_comments_number() != 0 ) ? true : false;
 
 		//adds the jquery effect library if smooth scroll is enabled => easeOutExpo effect
 		if ( $smooth_scroll ) {
 			wp_enqueue_script( 'jquery-effects-core');
 		}
+
+		//Gets the left and right sidebars class for js actions
+		$left_sb_class      = sprintf('.%1$s.left.tc-sidebar',
+                            	apply_filters('tc_left_sidebar_class' , 'span3' )
+      	);
+      	$right_sb_class      = sprintf('.%1$s.right.tc-sidebar',
+                            	apply_filters('tc_right_sidebar_class' , 'span3' )
+      	);
 
 		wp_localize_script( 
 	        'tc-scripts', 
@@ -122,7 +131,9 @@ class TC_resources {
 		          	'SliderDelay' 			=> $js_sliderdelay,
 		          	'SliderHover'			=> $sliderhover,
 		          	'SmoothScroll'			=> $smooth_scroll ? 'easeOutExpo' : 'linear',
-		          	'HasComments' 			=> $has_post_comments
+		          	'HasComments' 			=> $has_post_comments,
+		          	'LeftSidebarClass' 		=> $left_sb_class,
+		          	'RightSidebarClass' 	=> $right_sb_class,
 	        	)
 	       	)//end of filter
          );
