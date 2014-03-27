@@ -33,7 +33,7 @@
 <p>
 &copy; Copyright <?php echo date('Y'); ?> - <?php bloginfo('name'); ?>.
 <br /> 
-<a href="http://www.quickonlinethemes.com/wordpress/quickpic/" title="QuickPic Theme">QuickPic Theme</a> powered by <a href="http://wordpress.org/">WordPress</a>
+<a href="http://www.quickonlinethemes.com/wordpress/quickpic/" rel="nofollow" title="QuickPic Theme">QuickPic Theme</a> powered by <a href="http://wordpress.org/">WordPress</a>
  </p>
 </div>
 </div>
