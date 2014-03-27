@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: iFeature 5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-20 09:19:47 UTC\n"
-"PO-Revision-Date: 2014-02-28 14:52+0530\n"
+"PO-Revision-Date: 2014-03-26 16:44+0530\n"
 "Last-Translator: Surya <surya@cyberchimps.com>\n"
 "Language-Team: French, France\n"
 "MIME-Version: 1.0\n"
@@ -16,12 +16,11 @@ msgstr ""
 msgid "Oops! That page cannot be found."
 msgstr "Oops! Cette page ne peut pas être trouvé."
 
-#: ../../404.php
 msgid ""
 "It looks like nothing was found at this location. Maybe try searching for it?"
 msgstr ""
 "On dirait que rien n'a été trouvé à cet endroit. Peut-être essayer de "
-"chercher pour elle?"
+"chercher ailleurs?"
 
 #: ../../archive.php
 msgid "Category Archives: %s"
@@ -102,10 +101,8 @@ msgstr "Pages&nbsp;:"
 msgid "Pages"
 msgstr "Pages"
 
-#: ../../footer.php ../../sidebar-left.php ../../sidebar-right.php
-#: ../../sidebar.php
 msgid "Categories"
-msgstr "Cat馮ories"
+msgstr "Catégories"
 
 #: ../../footer.php ../../sidebar-left.php ../../sidebar-right.php
 #: ../../sidebar.php
@@ -199,9 +196,8 @@ msgstr "Poster un commentaire"
 msgid "Both comments and trackbacks are currently closed."
 msgstr "Les commentaires et les trackbacks sont fermés."
 
-#: ../../no-results.php
 msgid "Nothing Found"
-msgstr "Rien trouvé"
+msgstr "Aucun résultat"
 
 #: ../../no-results.php
 msgid "Ready to publish your first post?"
@@ -219,20 +215,18 @@ msgstr ""
 "Désolé, mais rien ne correspond à vos critères de recherche. S'il vous plaît "
 "essayez de nouveau avec quelques mots-clés différents."
 
-#: ../../no-results.php
 msgid ""
 "It seems we cannot find what you are looking for. Perhaps searching can help."
 msgstr ""
-"Il semble que nous ne pouvez pas trouver ce que vous recherchez. Peut-être "
-"cherchez peut vous aider."
+"Il semble que nous ne pouvons pas trouver ce que vous recherchez. Essayez de "
+"reformuler."
 
 #: ../../search.php
 msgid "Search Results for: %s"
 msgstr "Résultats de recherche pour %s"
 
-#: ../../searchform.php
 msgid "Search"
-msgstr "chr"
+msgstr "Recherche"
 
 #: ../../sidebar-right.php ../../sidebar.php ../../sidebar-left.php
 msgid "Subscribe"
