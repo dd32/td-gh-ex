@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Everest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-21 21:52+0545\n"
-"PO-Revision-Date: 2014-03-13 23:28+0545\n"
+"POT-Creation-Date: 2014-03-27 16:11+0545\n"
+"PO-Revision-Date: 2014-03-27 16:11+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Ruben Ramos Fernandez <support@catchthemes.com>\n"
 "Language: es_ES\n"
@@ -70,7 +70,7 @@ msgstr "Archivos por mes: %s"
 msgid "Yearly Archives: %s"
 msgstr "Archivos anuales: %s"
 
-#: ../archive.php:49 ../sidebar.php:48
+#: ../archive.php:49 ../sidebar.php:53
 msgid "Archives"
 msgstr "Archivos"
 
@@ -286,54 +286,18 @@ msgstr ""
 msgid "Both comments and trackbacks are currently closed."
 msgstr "Ambos comentarios y trackbacks están cerrados."
 
-#: ../no-results.php:14
-msgid "Nothing Found"
-msgstr "Nada encontrado"
-
-#: ../no-results.php:20
-#, php-format
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-"Preparado para publicar su primer post? <a href=\"%1$s\">Comience aqui</a>."
-
-#: ../no-results.php:24
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
-msgstr ""
-"Lo sentimos, pero no corresponde a sus términos de búsqueda. Por favor, "
-"inténtelo de nuevo con algunas palabras clave diferentes."
-
-#: ../no-results.php:29
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
-msgstr ""
-"Parece que no podemos encontrar lo que estás buscando. Puede que la búsqueda "
-"le puede ayudar."
-
-#: ../search.php:17
-#, php-format
-msgid "Search Results for: %s"
-msgstr "Resultados de la busqueda para: %s"
-
-#: ../searchform.php:16 ../searchform.php:18
-msgid "Search"
-msgstr "Buscar"
-
-#: ../searchform.php:17 ../inc/catcheverest-functions.php:208
-#: ../inc/catcheverest-functions.php:692 ../inc/catcheverest-functions.php:695
-#: ../inc/catcheverest-functions.php:812 ../inc/catcheverest-functions.php:843
-#: ../inc/catcheverest-functions.php:875
-#, php-format
-msgid "%s"
-msgstr "%s"
-
 #: ../inc/catcheverest-functions.php:175
 #, php-format
 msgid "Page %s"
 msgstr "Pagina %s"
+
+#: ../inc/catcheverest-functions.php:208 ../inc/catcheverest-functions.php:692
+#: ../inc/catcheverest-functions.php:695 ../inc/catcheverest-functions.php:812
+#: ../inc/catcheverest-functions.php:843 ../inc/catcheverest-functions.php:875
+#: ../searchform.php:17
+#, php-format
+msgid "%s"
+msgstr "%s"
 
 #: ../inc/catcheverest-functions.php:446
 msgid "Skip to content"
@@ -521,188 +485,6 @@ msgstr "Sin Sidebar"
 #: ../inc/catcheverest-metabox.php:57
 msgid "No sidebar, Full Width"
 msgstr "No sidebar, Full Width"
-
-#: ../inc/template-tags.php:50 ../inc/template-tags.php:103
-msgid "Post navigation"
-msgstr "Post navigation"
-
-#: ../inc/template-tags.php:54 ../inc/template-tags.php:107
-msgctxt "Previous post link"
-msgid "&larr;"
-msgstr "&larr;"
-
-#: ../inc/template-tags.php:55 ../inc/template-tags.php:108
-msgctxt "Next post link"
-msgid "&rarr;"
-msgstr "&rarr;"
-
-#: ../inc/template-tags.php:60 ../inc/template-tags.php:113
-msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr "<span class=\"meta-nav\">&larr;</span> Posts antiguos"
-
-#: ../inc/template-tags.php:64 ../inc/template-tags.php:117
-msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Posts mas recientes <span class=\"meta-nav\">&rarr;</span>"
-
-#: ../inc/template-tags.php:147
-msgid "Pingback:"
-msgstr "Pingback:"
-
-#: ../inc/template-tags.php:147
-msgid "(Edit)"
-msgstr "(Editar)"
-
-#: ../inc/template-tags.php:162
-msgid "Post author"
-msgstr "Autor del Post"
-
-#: ../inc/template-tags.php:168
-#, php-format
-msgid "%1$s at %2$s"
-msgstr "%1$s en %2$s"
-
-#: ../inc/template-tags.php:174
-msgid "Your comment is awaiting moderation."
-msgstr "Su comentario está pendiente de moderación."
-
-#: ../inc/template-tags.php:183
-msgid "Reply"
-msgstr "Responder"
-
-#: ../inc/template-tags.php:212 ../inc/template-tags.php:285
-#, php-format
-msgid "View all posts by %s"
-msgstr "Ver todos los mensajes de %s"
-
-#: ../inc/template-tags.php:217
-#, php-format
-msgid ""
-"<span class=\"on-date\">Posted on %1$s</span><span class=\"by-author\"> by "
-"%2$s</span>"
-msgstr ""
-"<span class=\"on-date\">Enviado el %1$s</span><span class=\"by-author\"> por "
-"%2$s</span>"
-
-#: ../inc/template-tags.php:239 ../inc/template-tags.php:242
-#: ../inc/template-tags.php:271 ../inc/template-tags.php:274
-msgid ", "
-msgstr ", "
-
-#: ../inc/template-tags.php:247
-#, php-format
-msgid ""
-"<span class=\"in-category\">Posted in %1$s</span><span class=\"sep\"> | </"
-"span><span class=\"in-tag\">Tagged %2$s</span>"
-msgstr ""
-"<span class=\"in-category\">Publicado en %1$s</span><span class=\"sep\"> | </"
-"span><span class=\"in-tag\">Etiquetado %2$s</span>"
-
-#: ../inc/template-tags.php:249
-#, php-format
-msgid "<span class=\"in-category\">Posted in %1$s</span>"
-msgstr "<span class=\"in-category\">Publicado en %1$s<span>"
-
-#: ../inc/template-tags.php:291
-#, php-format
-msgid ""
-"<span class=\"on-date\">Posted on %3$s</span><span class=\"in-category\"> "
-"under %1$s</span><span class=\"sep\"> | </span><span class=\"in-tag\">Tagged "
-"%2$s</span><span class=\"sep\"> | </span><span class=\"by-author\"> By %4$s</"
-"span>"
-msgstr ""
-"<span class=\"on-date\">Enviado el %3$s</span><span class=\"in-category\"> "
-"bajo%1$s</span><span class=\"sep\"> | </span><span class=\"in-tag"
-"\">Etiquetado %2$s</span><span class=\"sep\"> | </span><span class=\"by-"
-"author\"> por%4$s</span>"
-
-#: ../inc/template-tags.php:293
-#, php-format
-msgid ""
-"<span class=\"on-date\">Posted on %3$s</span><span class=\"in-category\"> "
-"under in %1$s<span><span class=\"sep\"> | </span><span class=\"by-author\"> "
-"By %4$s</span>."
-msgstr ""
-"<span class=\"on-date\">Enviado el %3$s</span><span class=\"in-category\"> "
-"bajo en %1$s<span><span class=\"sep\"> | </span><span class=\"by-author\"> "
-"por %4$s</span>."
-
-#: ../inc/template-tags.php:295
-#, php-format
-msgid ""
-"<span class=\"on-date\">Posted on %3$s</span><span class=\"sep\"> | </"
-"span><span class=\"by-author\"> By %4$s</span>."
-msgstr ""
-"<span class=\"on-date\">Enviado el %3$s</span><span class=\"sep\"> | </"
-"span><span class=\"by-author\"> por %4$s</span>."
-
-#: ../inc/widgets.php:14
-msgid "Main Sidebar"
-msgstr "Sidebar principal"
-
-#: ../inc/widgets.php:16
-msgid "Shows the Widgets at the side of Content"
-msgstr "Muestra los widgets en la parte de contenido"
-
-#: ../inc/widgets.php:25
-msgid "Footer Area One"
-msgstr "Zona de Footer 1"
-
-#: ../inc/widgets.php:27 ../inc/widgets.php:38 ../inc/widgets.php:49
-msgid "An optional widget area for your site footer"
-msgstr "Un área de widget opcional para el Footer del sitio"
-
-#: ../inc/widgets.php:36
-msgid "Footer Area Two"
-msgstr "Zona de Footer 2"
-
-#: ../inc/widgets.php:47
-msgid "Footer Area Three"
-msgstr "Zona de Footer 3"
-
-#: ../inc/widgets.php:76
-msgid ""
-"Use this widget to add Social Icons from Social Icons Settings as a widget. "
-msgstr "Utilice este Widget para agregar Iconos Sociales como un widget."
-
-#: ../inc/widgets.php:77
-msgid "1. Catch Everest Social Widget"
-msgstr "1. Catch Everest Social Widget"
-
-#: ../inc/widgets.php:90 ../inc/widgets.php:174
-msgid "Title (optional):"
-msgstr "Titulo (opcional):"
-
-#: ../inc/widgets.php:155
-msgid "Use this widget to add any type of Advertisement as a widget."
-msgstr "Use this widget to add any type of Advertisement as a widget."
-
-#: ../inc/widgets.php:156
-msgid "2. Catch Everest: Advertisement"
-msgstr "2. Catch Everest: Advertisement"
-
-#: ../inc/widgets.php:179
-msgid "Advertisement Code:"
-msgstr "Advertisement Code:"
-
-#: ../inc/widgets.php:185
-msgid "Image Url:"
-msgstr "Image Url:"
-
-#: ../inc/widgets.php:189
-msgid "Link URL:"
-msgstr "Link URL:"
-
-#: ../inc/widgets.php:193
-msgid "Open Link in New Window"
-msgstr "Open Link in New Window"
-
-#: ../inc/widgets.php:196
-msgid "Alt text:"
-msgstr "Alt text:"
-
-#: ../inc/widgets.php:259
-msgid "Add Advertisement Code or Image URL"
-msgstr "Add Advertisement Code or Image URL"
 
 #: ../inc/panel/theme-options.php:40 ../inc/panel/theme-options.php:41
 #: ../inc/panel/theme-options.php:145
@@ -1399,6 +1181,224 @@ msgstr "Y"
 #: ../inc/panel/theme-options.php:1251
 msgid "Catch Everest"
 msgstr "Catch Everest"
+
+#: ../inc/template-tags.php:50 ../inc/template-tags.php:103
+msgid "Post navigation"
+msgstr "Post navigation"
+
+#: ../inc/template-tags.php:54 ../inc/template-tags.php:107
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr "&larr;"
+
+#: ../inc/template-tags.php:55 ../inc/template-tags.php:108
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr "&rarr;"
+
+#: ../inc/template-tags.php:60 ../inc/template-tags.php:113
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Posts antiguos"
+
+#: ../inc/template-tags.php:64 ../inc/template-tags.php:117
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Posts mas recientes <span class=\"meta-nav\">&rarr;</span>"
+
+#: ../inc/template-tags.php:147
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: ../inc/template-tags.php:147
+msgid "(Edit)"
+msgstr "(Editar)"
+
+#: ../inc/template-tags.php:162
+msgid "Post author"
+msgstr "Autor del Post"
+
+#: ../inc/template-tags.php:168
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s en %2$s"
+
+#: ../inc/template-tags.php:174
+msgid "Your comment is awaiting moderation."
+msgstr "Su comentario está pendiente de moderación."
+
+#: ../inc/template-tags.php:183
+msgid "Reply"
+msgstr "Responder"
+
+#: ../inc/template-tags.php:212 ../inc/template-tags.php:285
+#, php-format
+msgid "View all posts by %s"
+msgstr "Ver todos los mensajes de %s"
+
+#: ../inc/template-tags.php:217
+#, php-format
+msgid ""
+"<span class=\"on-date\">Posted on %1$s</span><span class=\"by-author\"> by "
+"%2$s</span>"
+msgstr ""
+"<span class=\"on-date\">Enviado el %1$s</span><span class=\"by-author\"> por "
+"%2$s</span>"
+
+#: ../inc/template-tags.php:239 ../inc/template-tags.php:242
+#: ../inc/template-tags.php:271 ../inc/template-tags.php:274
+msgid ", "
+msgstr ", "
+
+#: ../inc/template-tags.php:247
+#, php-format
+msgid ""
+"<span class=\"in-category\">Posted in %1$s</span><span class=\"sep\"> | </"
+"span><span class=\"in-tag\">Tagged %2$s</span>"
+msgstr ""
+"<span class=\"in-category\">Publicado en %1$s</span><span class=\"sep\"> | </"
+"span><span class=\"in-tag\">Etiquetado %2$s</span>"
+
+#: ../inc/template-tags.php:249
+#, php-format
+msgid "<span class=\"in-category\">Posted in %1$s</span>"
+msgstr "<span class=\"in-category\">Publicado en %1$s<span>"
+
+#: ../inc/template-tags.php:291
+#, php-format
+msgid ""
+"<span class=\"on-date\">Posted on %3$s</span><span class=\"in-category\"> "
+"under %1$s</span><span class=\"sep\"> | </span><span class=\"in-tag\">Tagged "
+"%2$s</span><span class=\"sep\"> | </span><span class=\"by-author\"> By %4$s</"
+"span>"
+msgstr ""
+"<span class=\"on-date\">Enviado el %3$s</span><span class=\"in-category\"> "
+"bajo%1$s</span><span class=\"sep\"> | </span><span class=\"in-tag"
+"\">Etiquetado %2$s</span><span class=\"sep\"> | </span><span class=\"by-"
+"author\"> por%4$s</span>"
+
+#: ../inc/template-tags.php:293
+#, php-format
+msgid ""
+"<span class=\"on-date\">Posted on %3$s</span><span class=\"in-category\"> "
+"under in %1$s<span><span class=\"sep\"> | </span><span class=\"by-author\"> "
+"By %4$s</span>."
+msgstr ""
+"<span class=\"on-date\">Enviado el %3$s</span><span class=\"in-category\"> "
+"bajo en %1$s<span><span class=\"sep\"> | </span><span class=\"by-author\"> "
+"por %4$s</span>."
+
+#: ../inc/template-tags.php:295
+#, php-format
+msgid ""
+"<span class=\"on-date\">Posted on %3$s</span><span class=\"sep\"> | </"
+"span><span class=\"by-author\"> By %4$s</span>."
+msgstr ""
+"<span class=\"on-date\">Enviado el %3$s</span><span class=\"sep\"> | </"
+"span><span class=\"by-author\"> por %4$s</span>."
+
+#: ../inc/widgets.php:14
+msgid "Main Sidebar"
+msgstr "Sidebar principal"
+
+#: ../inc/widgets.php:16
+msgid "Shows the Widgets at the side of Content"
+msgstr "Muestra los widgets en la parte de contenido"
+
+#: ../inc/widgets.php:25
+msgid "Footer Area One"
+msgstr "Zona de Footer 1"
+
+#: ../inc/widgets.php:27 ../inc/widgets.php:38 ../inc/widgets.php:49
+msgid "An optional widget area for your site footer"
+msgstr "Un área de widget opcional para el Footer del sitio"
+
+#: ../inc/widgets.php:36
+msgid "Footer Area Two"
+msgstr "Zona de Footer 2"
+
+#: ../inc/widgets.php:47
+msgid "Footer Area Three"
+msgstr "Zona de Footer 3"
+
+#: ../inc/widgets.php:76
+msgid ""
+"Use this widget to add Social Icons from Social Icons Settings as a widget. "
+msgstr "Utilice este Widget para agregar Iconos Sociales como un widget."
+
+#: ../inc/widgets.php:77
+msgid "1. Catch Everest Social Widget"
+msgstr "1. Catch Everest Social Widget"
+
+#: ../inc/widgets.php:90 ../inc/widgets.php:174
+msgid "Title (optional):"
+msgstr "Titulo (opcional):"
+
+#: ../inc/widgets.php:155
+msgid "Use this widget to add any type of Advertisement as a widget."
+msgstr "Use this widget to add any type of Advertisement as a widget."
+
+#: ../inc/widgets.php:156
+msgid "2. Catch Everest: Advertisement"
+msgstr "2. Catch Everest: Advertisement"
+
+#: ../inc/widgets.php:179
+msgid "Advertisement Code:"
+msgstr "Advertisement Code:"
+
+#: ../inc/widgets.php:185
+msgid "Image Url:"
+msgstr "Image Url:"
+
+#: ../inc/widgets.php:189
+msgid "Link URL:"
+msgstr "Link URL:"
+
+#: ../inc/widgets.php:193
+msgid "Open Link in New Window"
+msgstr "Open Link in New Window"
+
+#: ../inc/widgets.php:196
+msgid "Alt text:"
+msgstr "Alt text:"
+
+#: ../inc/widgets.php:259
+msgid "Add Advertisement Code or Image URL"
+msgstr "Add Advertisement Code or Image URL"
+
+#: ../no-results.php:14
+msgid "Nothing Found"
+msgstr "Nada encontrado"
+
+#: ../no-results.php:20
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"Preparado para publicar su primer post? <a href=\"%1$s\">Comience aqui</a>."
+
+#: ../no-results.php:24
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Lo sentimos, pero no corresponde a sus términos de búsqueda. Por favor, "
+"inténtelo de nuevo con algunas palabras clave diferentes."
+
+#: ../no-results.php:29
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Parece que no podemos encontrar lo que estás buscando. Puede que la búsqueda "
+"le puede ayudar."
+
+#: ../search.php:17
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Resultados de la busqueda para: %s"
+
+#: ../searchform.php:16 ../searchform.php:18
+msgid "Search"
+msgstr "Buscar"
 
 #~ msgid "http://catchthemes.com/support-forum/forum/catch-everest-public/"
 #~ msgstr "http://catchthemes.com/support-forum/forum/catch-everest-public/"

@@ -12,20 +12,25 @@
 /** 
  * catcheverest_above_secondary hook
  */
-do_action( 'catcheverest_before_secondary' ); ?>
+do_action( 'catcheverest_before_secondary' ); 
 
-<?php 
-	global $post;
-	if( $post )
-		$layout = get_post_meta( $post->ID,'catcheverest-sidebarlayout', true ); 
+	//Getting Ready to load data from Theme Options Panel
+	global $post, $catcheverest_options_settings;
+	$options = $catcheverest_options_settings;
+	$themeoption_layout = $options['sidebar_layout'];
+
+	if( $post) {
+ 		if ( is_attachment() ) { 
+			$parent = $post->post_parent;
+			$layout = get_post_meta( $parent,'catcheverest-sidebarlayout', true );
+		} else {
+			$layout = get_post_meta( $post->ID,'catcheverest-sidebarlayout', true ); 
+		}
+	}	
 		
 	if( empty( $layout ) || ( !is_page() && !is_single() ) )
 		$layout='default';
 		
-	// Getting data from Theme Options
-	global $catcheverest_options_settings;
-	$options = $catcheverest_options_settings;
-	$themeoption_layout = $options['sidebar_layout'];
 	
 	if ( ( $layout == 'left-sidebar' || $layout == 'right-sidebar' || ( $layout=='default' && $themeoption_layout == 'left-sidebar') || ( $layout=='default' && $themeoption_layout == 'right-sidebar') ) ) { ?>
 
@@ -62,7 +67,7 @@ do_action( 'catcheverest_before_secondary' ); ?>
 		</div><!-- #secondary .widget-area -->
         
 		<?php
-	}
+	} 
 	
 /** 
  * catcheverest_after_secondary hook

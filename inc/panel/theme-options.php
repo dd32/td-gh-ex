@@ -20,7 +20,7 @@ function catcheverest_admin_scripts() {
 	//jQuery Cookie
 	wp_register_script( 'jquery-cookie', get_template_directory_uri() . '/inc/panel/js/jquery.cookie.min.js', array( 'jquery' ), '1.0', true );
 	
-	wp_enqueue_script( 'catcheverest_admin', get_template_directory_uri().'/inc/panel/js/admin.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable' ) );
+	wp_enqueue_script( 'catcheverest_admin', get_template_directory_uri().'/inc/panel/js/admin.min.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable' ) );
 	wp_enqueue_script( 'catcheverest_upload', get_template_directory_uri().'/inc/panel/js/add_image_scripts.js', array( 'jquery','media-upload','thickbox' ) );
 	
 	wp_enqueue_style( 'catcheverest_admin_style',get_template_directory_uri().'/inc/panel/admin.css', array( 'thickbox'), '1.0', 'screen' );

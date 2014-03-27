@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Everest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-21 21:53+0545\n"
-"PO-Revision-Date: 2014-03-13 23:28+0545\n"
+"POT-Creation-Date: 2014-03-27 16:11+0545\n"
+"PO-Revision-Date: 2014-03-27 16:11+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -67,7 +67,7 @@ msgstr "每月： %s"
 msgid "Yearly Archives: %s"
 msgstr "每年： %s"
 
-#: ../archive.php:49 ../sidebar.php:48
+#: ../archive.php:49 ../sidebar.php:53
 msgid "Archives"
 msgstr "文章存档"
 
@@ -282,49 +282,18 @@ msgstr ""
 msgid "Both comments and trackbacks are currently closed."
 msgstr "评论和传百[trackback]都已关闭。"
 
-#: ../no-results.php:14
-msgid "Nothing Found"
-msgstr "啥都没找到"
-
-#: ../no-results.php:20
-#, php-format
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr "准备好写你的第一篇文章了？<a href=\"%1$s\">那就点这里</a>."
-
-#: ../no-results.php:24
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
-msgstr "抱歉，你的关键词没找到东西，试试别的关键词。"
-
-#: ../no-results.php:29
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
-msgstr "你想要的系统没找到，试试搜索吧。"
-
-#: ../search.php:17
-#, php-format
-msgid "Search Results for: %s"
-msgstr "%s 的搜索结果："
-
-#: ../searchform.php:16 ../searchform.php:18
-msgid "Search"
-msgstr "搜索"
-
-#: ../searchform.php:17 ../inc/catcheverest-functions.php:208
-#: ../inc/catcheverest-functions.php:692 ../inc/catcheverest-functions.php:695
-#: ../inc/catcheverest-functions.php:812 ../inc/catcheverest-functions.php:843
-#: ../inc/catcheverest-functions.php:875
-#, php-format
-msgid "%s"
-msgstr "%s"
-
 #: ../inc/catcheverest-functions.php:175
 #, php-format
 msgid "Page %s"
 msgstr "第 %s 页"
+
+#: ../inc/catcheverest-functions.php:208 ../inc/catcheverest-functions.php:692
+#: ../inc/catcheverest-functions.php:695 ../inc/catcheverest-functions.php:812
+#: ../inc/catcheverest-functions.php:843 ../inc/catcheverest-functions.php:875
+#: ../searchform.php:17
+#, php-format
+msgid "%s"
+msgstr "%s"
 
 #: ../inc/catcheverest-functions.php:446
 msgid "Skip to content"
@@ -512,189 +481,6 @@ msgstr "无边栏"
 #: ../inc/catcheverest-metabox.php:57
 msgid "No sidebar, Full Width"
 msgstr "No sidebar, Full Width"
-
-#: ../inc/template-tags.php:50 ../inc/template-tags.php:103
-msgid "Post navigation"
-msgstr "文章导航"
-
-#: ../inc/template-tags.php:54 ../inc/template-tags.php:107
-msgctxt "Previous post link"
-msgid "&larr;"
-msgstr "&larr;"
-
-#: ../inc/template-tags.php:55 ../inc/template-tags.php:108
-msgctxt "Next post link"
-msgid "&rarr;"
-msgstr "&rarr;"
-
-#: ../inc/template-tags.php:60 ../inc/template-tags.php:113
-msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr "<span class=\"meta-nav\">&larr;</span> 早些的文章"
-
-#: ../inc/template-tags.php:64 ../inc/template-tags.php:117
-msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr "较新的文章 <span class=\"meta-nav\">&rarr;</span>"
-
-#: ../inc/template-tags.php:147
-msgid "Pingback:"
-msgstr "引用通告："
-
-#: ../inc/template-tags.php:147
-msgid "(Edit)"
-msgstr "(编辑)"
-
-#: ../inc/template-tags.php:162
-msgid "Post author"
-msgstr "文章作者"
-
-#: ../inc/template-tags.php:168
-#, php-format
-msgid "%1$s at %2$s"
-msgstr "%1$s 在 %2$s"
-
-#: ../inc/template-tags.php:174
-msgid "Your comment is awaiting moderation."
-msgstr "您的评论正在等待审核。"
-
-#: ../inc/template-tags.php:183
-msgid "Reply"
-msgstr "评论"
-
-#: ../inc/template-tags.php:212 ../inc/template-tags.php:285
-#, php-format
-msgid "View all posts by %s"
-msgstr "看 %s 发的所有文章"
-
-#: ../inc/template-tags.php:217
-#, php-format
-msgid ""
-"<span class=\"on-date\">Posted on %1$s</span><span class=\"by-author\"> by "
-"%2$s</span>"
-msgstr ""
-"<span class=\"on-date\">%1$s</span><span class=\"by-author\"> 由 %2$s 发表</"
-"span>"
-
-#: ../inc/template-tags.php:239 ../inc/template-tags.php:242
-#: ../inc/template-tags.php:271 ../inc/template-tags.php:274
-msgid ", "
-msgstr ","
-
-#: ../inc/template-tags.php:247
-#, php-format
-msgid ""
-"<span class=\"in-category\">Posted in %1$s</span><span class=\"sep\"> | </"
-"span><span class=\"in-tag\">Tagged %2$s</span>"
-msgstr ""
-"<span class=\"in-category\">发表在 %1$s</span><span class=\"sep\"> | </"
-"span><span class=\"in-tag\">标签： %2$s</span>"
-
-#: ../inc/template-tags.php:249
-#, php-format
-msgid "<span class=\"in-category\">Posted in %1$s</span>"
-msgstr "<span class=\"in-category\">发表在 %1$s<span>"
-
-#: ../inc/template-tags.php:291
-#, php-format
-msgid ""
-"<span class=\"on-date\">Posted on %3$s</span><span class=\"in-category\"> "
-"under %1$s</span><span class=\"sep\"> | </span><span class=\"in-tag\">Tagged "
-"%2$s</span><span class=\"sep\"> | </span><span class=\"by-author\"> By %4$s</"
-"span>"
-msgstr ""
-"<span class=\"on-date\">发表在 %3$s</span><span class=\"in-category\">  %1$s "
-"下面</span><span class=\"sep\"> | </span><span class=\"in-tag\">标签： %2$s</"
-"span><span class=\"sep\"> | </span><span class=\"by-author\"> 作者： %4$s</"
-"span>"
-
-#: ../inc/template-tags.php:293
-#, php-format
-msgid ""
-"<span class=\"on-date\">Posted on %3$s</span><span class=\"in-category\"> "
-"under in %1$s<span><span class=\"sep\"> | </span><span class=\"by-author\"> "
-"By %4$s</span>."
-msgstr ""
-"<span class=\"on-date\">发表在： %3$s</span><span class=\"in-category\"> "
-"%1$s 下面<span><span class=\"sep\"> | </span><span class=\"by-author\"> 作"
-"者： %4$s</span>."
-
-#: ../inc/template-tags.php:295
-#, php-format
-msgid ""
-"<span class=\"on-date\">Posted on %3$s</span><span class=\"sep\"> | </"
-"span><span class=\"by-author\"> By %4$s</span>."
-msgstr ""
-"<span class=\"on-date\">发表在 %3$s</span><span class=\"sep\"> | </"
-"span><span class=\"by-author\"> 作者： %4$s</span>."
-
-#: ../inc/widgets.php:14
-msgid "Main Sidebar"
-msgstr "主侧边栏"
-
-#: ../inc/widgets.php:16
-msgid "Shows the Widgets at the side of Content"
-msgstr "把小工具显示在文章边上"
-
-#: ../inc/widgets.php:25
-msgid "Footer Area One"
-msgstr "页面底部1"
-
-#: ../inc/widgets.php:27 ../inc/widgets.php:38 ../inc/widgets.php:49
-msgid "An optional widget area for your site footer"
-msgstr "页面底部可选的小工具区域"
-
-#: ../inc/widgets.php:36
-msgid "Footer Area Two"
-msgstr "页面底部2"
-
-#: ../inc/widgets.php:47
-msgid "Footer Area Three"
-msgstr "页面底部3"
-
-#: ../inc/widgets.php:76
-msgid ""
-"Use this widget to add Social Icons from Social Icons Settings as a widget. "
-msgstr ""
-"Use this widget to add Social Icons from Social Icons Settings as a widget. "
-
-#: ../inc/widgets.php:77
-msgid "1. Catch Everest Social Widget"
-msgstr "1. Catch Everest Social Widget"
-
-#: ../inc/widgets.php:90 ../inc/widgets.php:174
-msgid "Title (optional):"
-msgstr "标题（可选）："
-
-#: ../inc/widgets.php:155
-msgid "Use this widget to add any type of Advertisement as a widget."
-msgstr "Use this widget to add any type of Advertisement as a widget."
-
-#: ../inc/widgets.php:156
-msgid "2. Catch Everest: Advertisement"
-msgstr "2. Catch Everest: Advertisement"
-
-#: ../inc/widgets.php:179
-msgid "Advertisement Code:"
-msgstr "Advertisement Code:"
-
-#: ../inc/widgets.php:185
-msgid "Image Url:"
-msgstr "Image Url:"
-
-#: ../inc/widgets.php:189
-msgid "Link URL:"
-msgstr "Link URL:"
-
-#: ../inc/widgets.php:193
-msgid "Open Link in New Window"
-msgstr "Open Link in New Window"
-
-#: ../inc/widgets.php:196
-msgid "Alt text:"
-msgstr "Alt text:"
-
-#: ../inc/widgets.php:259
-msgid "Add Advertisement Code or Image URL"
-msgstr "Add Advertisement Code or Image URL"
 
 #: ../inc/panel/theme-options.php:40 ../inc/panel/theme-options.php:41
 #: ../inc/panel/theme-options.php:145
@@ -1385,6 +1171,220 @@ msgstr "Y"
 #: ../inc/panel/theme-options.php:1251
 msgid "Catch Everest"
 msgstr "Catch Everest"
+
+#: ../inc/template-tags.php:50 ../inc/template-tags.php:103
+msgid "Post navigation"
+msgstr "文章导航"
+
+#: ../inc/template-tags.php:54 ../inc/template-tags.php:107
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr "&larr;"
+
+#: ../inc/template-tags.php:55 ../inc/template-tags.php:108
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr "&rarr;"
+
+#: ../inc/template-tags.php:60 ../inc/template-tags.php:113
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> 早些的文章"
+
+#: ../inc/template-tags.php:64 ../inc/template-tags.php:117
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "较新的文章 <span class=\"meta-nav\">&rarr;</span>"
+
+#: ../inc/template-tags.php:147
+msgid "Pingback:"
+msgstr "引用通告："
+
+#: ../inc/template-tags.php:147
+msgid "(Edit)"
+msgstr "(编辑)"
+
+#: ../inc/template-tags.php:162
+msgid "Post author"
+msgstr "文章作者"
+
+#: ../inc/template-tags.php:168
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s 在 %2$s"
+
+#: ../inc/template-tags.php:174
+msgid "Your comment is awaiting moderation."
+msgstr "您的评论正在等待审核。"
+
+#: ../inc/template-tags.php:183
+msgid "Reply"
+msgstr "评论"
+
+#: ../inc/template-tags.php:212 ../inc/template-tags.php:285
+#, php-format
+msgid "View all posts by %s"
+msgstr "看 %s 发的所有文章"
+
+#: ../inc/template-tags.php:217
+#, php-format
+msgid ""
+"<span class=\"on-date\">Posted on %1$s</span><span class=\"by-author\"> by "
+"%2$s</span>"
+msgstr ""
+"<span class=\"on-date\">%1$s</span><span class=\"by-author\"> 由 %2$s 发表</"
+"span>"
+
+#: ../inc/template-tags.php:239 ../inc/template-tags.php:242
+#: ../inc/template-tags.php:271 ../inc/template-tags.php:274
+msgid ", "
+msgstr ","
+
+#: ../inc/template-tags.php:247
+#, php-format
+msgid ""
+"<span class=\"in-category\">Posted in %1$s</span><span class=\"sep\"> | </"
+"span><span class=\"in-tag\">Tagged %2$s</span>"
+msgstr ""
+"<span class=\"in-category\">发表在 %1$s</span><span class=\"sep\"> | </"
+"span><span class=\"in-tag\">标签： %2$s</span>"
+
+#: ../inc/template-tags.php:249
+#, php-format
+msgid "<span class=\"in-category\">Posted in %1$s</span>"
+msgstr "<span class=\"in-category\">发表在 %1$s<span>"
+
+#: ../inc/template-tags.php:291
+#, php-format
+msgid ""
+"<span class=\"on-date\">Posted on %3$s</span><span class=\"in-category\"> "
+"under %1$s</span><span class=\"sep\"> | </span><span class=\"in-tag\">Tagged "
+"%2$s</span><span class=\"sep\"> | </span><span class=\"by-author\"> By %4$s</"
+"span>"
+msgstr ""
+"<span class=\"on-date\">发表在 %3$s</span><span class=\"in-category\">  %1$s "
+"下面</span><span class=\"sep\"> | </span><span class=\"in-tag\">标签： %2$s</"
+"span><span class=\"sep\"> | </span><span class=\"by-author\"> 作者： %4$s</"
+"span>"
+
+#: ../inc/template-tags.php:293
+#, php-format
+msgid ""
+"<span class=\"on-date\">Posted on %3$s</span><span class=\"in-category\"> "
+"under in %1$s<span><span class=\"sep\"> | </span><span class=\"by-author\"> "
+"By %4$s</span>."
+msgstr ""
+"<span class=\"on-date\">发表在： %3$s</span><span class=\"in-category\"> "
+"%1$s 下面<span><span class=\"sep\"> | </span><span class=\"by-author\"> 作"
+"者： %4$s</span>."
+
+#: ../inc/template-tags.php:295
+#, php-format
+msgid ""
+"<span class=\"on-date\">Posted on %3$s</span><span class=\"sep\"> | </"
+"span><span class=\"by-author\"> By %4$s</span>."
+msgstr ""
+"<span class=\"on-date\">发表在 %3$s</span><span class=\"sep\"> | </"
+"span><span class=\"by-author\"> 作者： %4$s</span>."
+
+#: ../inc/widgets.php:14
+msgid "Main Sidebar"
+msgstr "主侧边栏"
+
+#: ../inc/widgets.php:16
+msgid "Shows the Widgets at the side of Content"
+msgstr "把小工具显示在文章边上"
+
+#: ../inc/widgets.php:25
+msgid "Footer Area One"
+msgstr "页面底部1"
+
+#: ../inc/widgets.php:27 ../inc/widgets.php:38 ../inc/widgets.php:49
+msgid "An optional widget area for your site footer"
+msgstr "页面底部可选的小工具区域"
+
+#: ../inc/widgets.php:36
+msgid "Footer Area Two"
+msgstr "页面底部2"
+
+#: ../inc/widgets.php:47
+msgid "Footer Area Three"
+msgstr "页面底部3"
+
+#: ../inc/widgets.php:76
+msgid ""
+"Use this widget to add Social Icons from Social Icons Settings as a widget. "
+msgstr ""
+"Use this widget to add Social Icons from Social Icons Settings as a widget. "
+
+#: ../inc/widgets.php:77
+msgid "1. Catch Everest Social Widget"
+msgstr "1. Catch Everest Social Widget"
+
+#: ../inc/widgets.php:90 ../inc/widgets.php:174
+msgid "Title (optional):"
+msgstr "标题（可选）："
+
+#: ../inc/widgets.php:155
+msgid "Use this widget to add any type of Advertisement as a widget."
+msgstr "Use this widget to add any type of Advertisement as a widget."
+
+#: ../inc/widgets.php:156
+msgid "2. Catch Everest: Advertisement"
+msgstr "2. Catch Everest: Advertisement"
+
+#: ../inc/widgets.php:179
+msgid "Advertisement Code:"
+msgstr "Advertisement Code:"
+
+#: ../inc/widgets.php:185
+msgid "Image Url:"
+msgstr "Image Url:"
+
+#: ../inc/widgets.php:189
+msgid "Link URL:"
+msgstr "Link URL:"
+
+#: ../inc/widgets.php:193
+msgid "Open Link in New Window"
+msgstr "Open Link in New Window"
+
+#: ../inc/widgets.php:196
+msgid "Alt text:"
+msgstr "Alt text:"
+
+#: ../inc/widgets.php:259
+msgid "Add Advertisement Code or Image URL"
+msgstr "Add Advertisement Code or Image URL"
+
+#: ../no-results.php:14
+msgid "Nothing Found"
+msgstr "啥都没找到"
+
+#: ../no-results.php:20
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "准备好写你的第一篇文章了？<a href=\"%1$s\">那就点这里</a>."
+
+#: ../no-results.php:24
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr "抱歉，你的关键词没找到东西，试试别的关键词。"
+
+#: ../no-results.php:29
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr "你想要的系统没找到，试试搜索吧。"
+
+#: ../search.php:17
+#, php-format
+msgid "Search Results for: %s"
+msgstr "%s 的搜索结果："
+
+#: ../searchform.php:16 ../searchform.php:18
+msgid "Search"
+msgstr "搜索"
 
 #~ msgid "http://catchthemes.com/support-forum/forum/catch-everest-public/"
 #~ msgstr "http://catchthemes.com/support-forum/forum/catch-everest-public/"
