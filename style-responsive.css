@@ -82,7 +82,7 @@
 	.pagetitle { margin:10px 0 0; }
 	.breadcrumb { float:none; margin:0 0 10px; }
 	
-	.content { margin:0; float:none; width:auto; }
+	.content { overflow:hidden; clear:both; margin:0; float:none; width:auto; }
     .content-right { float:none; margin:0; }
 	.content-wide { width:auto; margin:0; }
 

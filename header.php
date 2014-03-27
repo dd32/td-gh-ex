@@ -79,18 +79,18 @@
 				
 			<?php if(is_home() || is_front_page()){ ?>
 			
-			<div class="container">					
-				<?php $feature_args = array(
-				'post_type' => array('post', 'page'),
-				'meta_key' => 'page_featured',
-				'meta_value' => 'features',
-				'posts_per_page' => -1,
-				'orderby' => 'menu_order',
-				'ignore_sticky_posts' => 1,
-				'order' => 'ASC'); ?>
-				<?php $feature_posts = new WP_Query($feature_args); ?>
-				<?php if($feature_posts->post_count > 0): $feature_count = 0; ?>
-				<div id="minifeatures" class="minifeatures">
+			<?php $feature_args = array(
+			'post_type' => array('post', 'page'),
+			'meta_key' => 'page_featured',
+			'meta_value' => 'features',
+			'posts_per_page' => -1,
+			'orderby' => 'menu_order',
+			'ignore_sticky_posts' => 1,
+			'order' => 'ASC'); ?>
+			<?php $feature_posts = new WP_Query($feature_args); ?>
+			<?php if($feature_posts->post_count > 0): $feature_count = 0; ?>
+			<div id="minifeatures" class="minifeatures">
+				<div class="container">					
 					<?php while($feature_posts->have_posts()): $feature_posts->the_post(); ?>
 					<?php if($feature_count % 3 == 0 && $feature_count != 0) echo '<div class="col-divide"></div>'; $feature_count++; ?>
 					<div class="column col3 <?php if($feature_count % 3 == 0) echo ' feature_right col-last'; ?>">
@@ -111,7 +111,7 @@
 					<?php endwhile; ?>
 					<div class='clear'></div>
 				</div>
-				<?php endif; ?>
 			</div>
+			<?php endif; ?>
 			
 			<?php } ?>

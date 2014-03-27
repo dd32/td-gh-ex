@@ -386,7 +386,7 @@ function cpotheme_mobile_menu(){
 				$last_id = $current_item->ID;
 				$output .= '<option value="'.$item_url.'">'.$item_title.'</option>';
 			}
-			$output .= '<select>';
+			$output .= '</select>';
 			echo $output;
 		}
 	}else{
