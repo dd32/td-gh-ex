@@ -3,11 +3,8 @@
 <head profile="http://gmpg.org/xfn/11">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
-<title><?php wp_title(); ?></title> 
-<?php load_theme_textdomain( 'quickpress', get_template_directory() . '/languages' ); ?>  
-<link rel="stylesheet" href="<?php echo get_stylesheet_uri() ?>" type="text/css" media="screen" />
+<title><?php wp_title(); ?></title>  
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?> 
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -19,7 +16,7 @@
 </div>
 <div class="blog-top">
 <?php if (is_home()) { ?><h1><?php } ?>
-<a class="blogtitle" href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a><?php if (is_home()) { ?></h1><?php } ?><div class="description"><?php bloginfo('description'); ?></div>
+<a class="blogtitle" href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo('name'); ?></a><?php if (is_home()) { ?></h1><?php } ?><div class="description"><?php bloginfo('description'); ?></div>
 </div>	
 </div>
 <div id="menu-header">

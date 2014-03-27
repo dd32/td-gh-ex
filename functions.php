@@ -37,6 +37,19 @@ register_sidebar(array(
 add_action( 'init', 'quickpress_widgets_init' );
 /* Add feeds */
 add_theme_support('automatic-feed-links');
+// Comment Reply Script
+add_action( 'wp_enqueue_scripts', '_enqueue_scripts' );
+function _enqueue_scripts(){
+    // If single, threaded and open
+    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ){
+        wp_enqueue_script( 'comment-reply' );
+    }
+} 
+/* Load Stylesheet */
+function quickstyle() {
+    wp_enqueue_style( 'style-name', get_stylesheet_uri() );
+}
+add_action( 'wp_enqueue_scripts', 'quickstyle' );
 /* Custom Background */
 $args = array(
 	'default-color' => 'EDE8E2',
