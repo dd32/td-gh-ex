@@ -1,7 +1,7 @@
 /*---------------------------------------------------------------------------------
 
 	Theme Name: Hemingway
-	Version: 1.38
+	Version: 1.39
 	Description: Hemingway is a clean, beautiful and responsive two-column theme for bloggers. Features responsive design, retina-ready assets, full-width header image with parallax scrolling effect, custom accent color, custom widgets (video, Flickr and Dribbble), page templates and translation-ready code. Included translations: Swedish/svenska.
 	Tags: black, dark, white, green, two-columns, fluid-layout, responsive-layout, custom-header, custom-menu, custom-colors, featured-images, flexible-header, post-formats, sticky-post, threaded-comments, translation-ready
 	Author: Anders Norén
@@ -63,8 +63,6 @@ blockquote:before,
 blockquote:after { content:""; }
 
 a { outline:none; }
-
-input { -webkit-appearance: none; }
 
 input[type=search] {
    -moz-appearance:none;
@@ -1439,6 +1437,7 @@ li > div.comment {
 .post-content .searchform input { height: 60px; }
 
 .post-content .searchform input#s {
+	-webkit-appearance: none;
 	width: 99%;
 	padding: 18px 95px 18px 18px;
 	background: #FFF;
@@ -1458,6 +1457,7 @@ li > div.comment {
 }
 
 .post-content .searchform #searchsubmit {
+	-webkit-appearance: none;
 	position: absolute;
 	right: 0;
 	top: 0;
@@ -1586,6 +1586,7 @@ li > div.comment {
 .widget_search input { height: 52px; }
 
 .widget_search input#s {
+	-webkit-appearance: none;
 	width: 99%;
 	padding: 18px 95px 18px 18px;
 	background: #FFF;
@@ -1605,6 +1606,7 @@ li > div.comment {
 }
 
 .widget_search #searchsubmit {
+	-webkit-appearance: none;
 	position: absolute;
 	right: 0;
 	top: 0;
@@ -2034,6 +2036,7 @@ img#wpstats { display: none; }
 	.blog-search #s:focus { outline: none; }
 	
 	.blog-search #searchsubmit {
+		-webkit-appearance: none;
 		position: absolute;
 		right: 0;
 		top: 0;

@@ -1,6 +1,11 @@
 *** Hemingway changelog ***
 
 
+Version 1.39 (2014-03-28)
+-------------------------
+- Fixed the styling of form elements
+
+
 Version 1.38 (2014-03-25)
 -------------------------
 - Fixed centering of .aligncenter images
