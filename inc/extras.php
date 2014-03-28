@@ -252,7 +252,7 @@ function rootstrap_footer_links() {
         ));
 } /* end rootstrap footer link */
 //* adding top menu and top solcialbar
-function theme_topmenu_social() {
+function rootstrap_theme_topmenu_social() {
 	 echo '<div class="top-link">' ?>
 		<div  class="container">
 			<div class="col-md-6">
@@ -264,9 +264,9 @@ function theme_topmenu_social() {
 		</div>
 	</div>
 <?php };
-add_action('before', 'theme_topmenu_social');
+add_action('before', 'rootstrap_theme_topmenu_social');
 // header images
-function theme_headerimage() {
+function rootstrap_theme_headerimage() {
 	 if( get_header_image() != '' ) : ?>
 		<div id="headerimage">
 		<img src="<?php header_image(); ?>"   alt="<?php bloginfo( 'name' ); ?>"/>
@@ -275,7 +275,7 @@ function theme_headerimage() {
 				<?php endif; // header image was removed ?>
 
 <?php };
-add_action('before', 'theme_headerimage');
+add_action('before', 'rootstrap_theme_headerimage');
 // Get Post Views - for Popular Posts widget
 function rootstrap_getPostViews($postID){
     $count_key = 'post_views_count';

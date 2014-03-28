@@ -139,13 +139,13 @@ function rootstrap_options() {
 							'options' => $site_layout);
 
 		$options[] = array( 'name' => __('Element color', 'rootstrap'),
-							'desc' => __('Default used if no color is selected', 'rootstrap'),
+							'desc' => __('Default used if no color is selected, select a  color for content icons and content link', 'rootstrap'),
 							'id' => 'element_color',
 							'std' => '',
 							'type' => 'color');
 
 		$options[] = array( 'name' => __('Element color on hover', 'rootstrap'),
-							'desc' => __('Default used if no color is selected', 'rootstrap'),
+							'desc' => __('Default used if no color is selected, select a hover color for content icons and content link', 'rootstrap'),
 							'id' => 'element_color_hover',
 							'std' => '',
 							'type' => 'color');
@@ -204,19 +204,19 @@ function rootstrap_options() {
 							'type' => 'color');
 							
 		$options[] = array( 'name' => __('Link Color', 'rootstrap'),
-							'desc' => __('Default used if no color is selected', 'rootstrap'),
+							'desc' => __('Default used if no color is selected, Select color for side bar alnd other links', 'rootstrap'),
 							'id' => 'link_color',
 							'std' => '',
 							'type' => 'color');
 						
 		$options[] = array( 'name' => __('Link:hover Color', 'rootstrap'),
-							'desc' => __('Default used if no color is selected', 'rootstrap'),
+							'desc' => __('Default used if no color is selected, Select Hover color for side bar and other links.', 'rootstrap'),
 							'id' => 'link_hover_color',
 							'std' => '',
 							'type' => 'color');
 							
 		$options[] = array( 'name' => __('Link:active Color', 'rootstrap'),
-							'desc' => __('Default used if no color is selected', 'rootstrap'),
+							'desc' => __('Default used if no color is selected, Select active color for side bar links', 'rootstrap'),
 							'id' => 'link_active_color',
 							'std' => '',
 							'type' => 'color');

@@ -15,6 +15,7 @@
 	?>
 	
 	<div class="home-widget-area row">
+	<div class="container">
 		<?php if ( is_active_sidebar( 'home-widget-1' ) ) : ?>
 		<div class="col-sm-6 col-md-4 home-widget" role="complementary">
 			<?php dynamic_sidebar( 'home-widget-1' ); ?>
@@ -32,5 +33,6 @@
 			<?php dynamic_sidebar( 'home-widget-3' ); ?>
 		</div><!-- .widget-area .third -->
 		<?php endif; ?>
+		</div>
 	</div>
 

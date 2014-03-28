@@ -1,6 +1,6 @@
 <?php
 /**
- * _s Theme Customizer
+ * Theme Customizer
  *
  * @package rootstrap
  */
