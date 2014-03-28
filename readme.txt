@@ -111,6 +111,7 @@ Everything else used in this theme has been created by me, especially for "Anarc
                                 fixed : many more minor fixes and changes.
         2.7     (2014.2.23)  -  Minor additions and fixes
         2.8     (2014.3.23)  -  fixed : rtl styles.
+        2.9     (2014.3.29)  -  added : afrikaans language.
 
 == Contact & Issues for Anarcho Notepad ==
 
