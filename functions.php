@@ -1,6 +1,6 @@
 <?php
 /**
- * _s functions and definitions
+ * functions and definitions
  *
  * @package rootstrap
  */

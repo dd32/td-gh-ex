@@ -22,7 +22,7 @@ Description: WP RootStrap is a flat and minimal design theme powered by TwitterB
 * Social icons
 * Call For Action
 
-Version: 1.2.3
+Version: 1.2.4
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: white, light, green,  two-columns, right-sidebar, left-sidebar, responsive-layout, custom-menu, featured-images
@@ -258,7 +258,7 @@ textarea {
 
 /* =Content
 ----------------------------------------------- */
-.navbar-default .navbar-nav > li > a { color: yellow !important }
+
 .sticky {
 	
 }

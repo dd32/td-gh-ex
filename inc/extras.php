@@ -423,7 +423,6 @@ if (!function_exists('get_rootstrap_theme_options'))  {
       if ( rootstrap_get_option('social_hover_color')) {
         echo '.social-profile:hover {color: '.rootstrap_get_option('social_hover_color', '#000').'!important ;}';
       }  
-      $typography = rootstrap_get_option('main_body_typography'); 
       if ( rootstrap_get_option('custom_css')) {
         echo rootstrap_get_option( 'custom_css', 'no entry' );
       }    
