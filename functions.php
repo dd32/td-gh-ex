@@ -98,28 +98,7 @@ function adaptive_flat_add_my_post_types_to_query( $query ) {
 
 	/* Query sticky posts */
 		$query->set( 'post__not_in' , $sticky );
-			
-		$first_page_total= get_option('posts_per_page') - $numberstickies; // total number of posts on first page
-		$paginated_total = get_option('posts_per_page'); // total number of posts on paginated pages
-		$posts_to_skip = $paginated_total - $first_page_total;
-				
-		// pagination for custom page(s)
-		if ( get_query_var('paged') ) { $paged = get_query_var('paged'); }
-		elseif ( get_query_var('page') ) { $paged = get_query_var('page'); }
-		else { $paged = 1; }
-				
-		// first page query args
-				
-		$query->set('posts_per_page', $first_page_total);
-				
-				
-		if(is_paged()) {
-			// add paginated query args
-			$offset = (($paged - 1) * $paginated_total)- $posts_to_skip;
-			$query->set('offset', $offset);
-			$query->set('posts_per_page',  $paginated_total);
-		}		
-		
+					
 		
 	}
 		
