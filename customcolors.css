@@ -17,12 +17,12 @@ Tags: two-columns, left-sidebar, right-sidebar, responsive-layout, custom-backgr
 }
 
 body {
-	background: [body_color];
-	color: [text_color];
+	background: #ffffff;
+	color: #323a46;
 }
 
 article a{
-	color: [content_link_color];
+	color: #f37934;
 	transition: color 0.5s;
 }
 
@@ -33,7 +33,7 @@ article img{
 }
 
 article a:hover{
-	color: [content_link_hover_color];
+	color: #d65a2c;
 }
 
 a {
@@ -44,7 +44,7 @@ a {
 #top-bar {
 	width: 100%;
 	height: 20px;
-	background: [top_bar_color];
+	background: #1fbca7;
 }
 
 #main-content {
@@ -60,7 +60,7 @@ a {
 #header {
 	margin: 0px auto;
 	overflow: auto;
-	background-color: [header_color];
+	background-color: #ffffff;
 }
 
 
@@ -77,13 +77,13 @@ a {
 #header .site-title {
 	font-size: 30px;
 	font-weight: bold;
-	color: [site_title_color];
+	color: #f37934;
 }
 
 #header p {
 	font-size: 15px;
 	font-weight: normal;
-	color: [site_description_color];
+	color: #323a46;
 }
 
 #menu-wrapper {
@@ -92,8 +92,8 @@ a {
 
 .menu-bar {
 	width: 100%;
-	background: [menu_background];
-	color: [menu_text_color];
+	background: #323a46;
+	color: #ffffff;
 }
 
 
@@ -116,7 +116,7 @@ a {
 
 .header-menu ul{
 	list-style: none;
-	background: [menu_background];
+	background: #323a46;
 }
 
 .header-menu li a {
@@ -132,13 +132,13 @@ a {
 }
 
 .header-menu li:hover {
-	background: [menu_hover_color];
-	color: [menu_text_hover_color];
+	background: #1fbca7;
+	color: #ffffff;
 }
 
 .header-menu ul ul {
 	height: auto;
-	background: [menu_background];
+	background: #323a46;
 	position: absolute;
 	margin-left: 10px;
 	display: none;
@@ -176,38 +176,38 @@ a {
 	position: relative;
 	margin: 10px 0px;
 	border-radius: 10px;
-	border: 1px solid [search_border_color];
+	border: 1px solid #eeeeee;
 }
 
 
 .searchform .s {	
 	border: none;
 	float: left;
-	color: [search_text_color];
+	color: #000000;
 	padding-left: 10px;
 	width: 100px;
 	height: 100%;
 	transition: width 1s ease;
-	background: [search_input_color];
+	background: #ffffff;
 	border-radius: 10px 0px 0px 10px;
 }
 
 
 
 .searchform .s::-webkit-input-placeholder {
-    color: [search_placeholder_color];
+    color: #c6c6c6;
 }    
 .searchform .s:-moz-placeholder {
     /* FF 4-18 */
-    color: [search_placeholder_color];
+    color: #c6c6c6;
 }
 .searchform .s::-moz-placeholder {
     /* FF 19+ */
-    color: [search_placeholder_color];
+    color: #c6c6c6;
 }    
 .searchform .s:-ms-input-placeholder {
     /* IE 10+ */
-    color: [search_placeholder_color];
+    color: #c6c6c6;
 }
 
 
@@ -226,12 +226,12 @@ a {
 .searchform .searchsubmit {
 	width: 30px;
 	height: 100%;
-	background: [search_button_color];
+	background: #f37934;
 	border: 0;
 	border-radius: 0px 10px 10px 0px;
 	cursor: pointer;
 	font: normal 18px/1 'dashicons';
-	color: [search_button_logo_color];
+	color: #ffffff;
 	-webkit-appearance: none;
 	float: right;
 }
@@ -277,7 +277,7 @@ a {
 */
 
 h1, h2, h3, h4, h5, h6 {
-	color: [headings_color];
+	color: #707070;
 }
 
 h1 {
@@ -312,7 +312,7 @@ h6 {
 */
 
 #title-container {
-	border-bottom: 2px solid [page_title_underline_color];
+	border-bottom: 2px solid #f37934;
 	margin-bottom: 10px;
 }
 
@@ -322,7 +322,7 @@ h6 {
 
 #title-container h1 {
 	display: inline-block;
-	color: [page_title_color];
+	color: #707070;
 	font-size: 30px;
 }
 
@@ -362,20 +362,20 @@ p {
 * Styles the post previews on archive pages
 */
 .post-prev {
-	border-bottom: 1px solid [post_prev_bottom_border_color];
+	border-bottom: 1px solid #EEEEEE;
 	padding: 10px 0px;
 	word-wrap: break-word;
 }
 
 .prev-title a{
-	color: [post_prev_title_color];
+	color: #6b6b6b;
 	transition: color 0.5s;
 	font-weight: 600;
 	font-size: 20px;
 }
 
 .prev-title:hover a {
-	color: [post_prev_title_hover_color];
+	color: #f37934;
 }
 
 .post-prev p {
@@ -393,7 +393,7 @@ p {
 }
 
 .img-placeholder {
-	background: [thumb_placeholder_color]
+	background: #1fbca7
 }
 
 .img-placeholder .icon {
@@ -406,12 +406,12 @@ p {
 .img-placeholder .icon:before {
 	content: "\f155";
 	font: normal 150px/1 'dashicons';
-	color: [thumb_placeholder_logo_color];
+	color: #ffffff;
 	transition: color 0.5s;
 }
 
 .img-placeholder:hover .icon:before {
-	color: [thumb_placeholder_logo_hover_color];
+	color: #f4f4f4;
 }
 
 /**
@@ -423,7 +423,7 @@ p {
 .post-prev2{
 	width: 90%;
 	height: auto;
-	border-bottom: 1px solid [post_prev_bottom_border_color];
+	border-bottom: 1px solid #EEEEEE;
 	padding: 10px 0px;
 }
 
@@ -502,8 +502,8 @@ p {
 	min-height: 100px;
 	height: auto;
 	width: 100%;
-	background: [footer_top_color];
-	color: [footer_top_text_color];
+	background: #1fbca7;
+	color: #ffffff;
 }
 
 
@@ -522,12 +522,12 @@ p {
 }
 
 #footer-top .widget-head h4{
-	background: [footer_widget_head_color];
-	color: [footer_widget_head_text_color];
+	background: #1aad99;
+	color: #ffffff;
 }
 
 #footer-top .widget-head{
-	border-color: [footer_widget_head_color];
+	border-color: #1aad99;
 }
 
 #footer-top .center {
@@ -537,18 +537,18 @@ p {
 }
 
 #footer-top .widget li {
-	border-color: [footer_list_seperator_color];
+	border-color: #ececec;
 }
 
 #footer-bottom {
 	min-height: 20px;
 	width: 100%;
-	background: [footer_bottom_color];
-	color: [footer_bottom_text_color];
+	background: #323a46;
+	color: #ffffff;
 }
 
 #footer-bottom a {
-	color: [footer_bottom_link_color];
+	color: #ffffff;
 }
 
 #footer-bottom .center
@@ -566,7 +566,7 @@ p {
 	width: 95%;
 	margin-bottom: 10px;
 	padding-bottom: 10px;
-	border-bottom: 1px solid [post_prev_bottom_border_color];
+	border-bottom: 1px solid #EEEEEE;
 }
 
 
@@ -577,15 +577,15 @@ p {
 */ 
 
 .widget-head {
-	border-bottom: 2px solid [widget_head_background_color];
+	border-bottom: 2px solid #f37934;
 	margin-bottom: 10px;
 }
 
 .widget-head h4 {
 	display:inline-block; 
 	padding: 5px 10px;
-	background: [widget_head_background_color];
-	color: [widget_head_text_color];
+	background: #f37934;
+	color: #ffffff;
 	width: auto; 
 }
 .widget ul {
@@ -595,14 +595,14 @@ p {
 #sidebar li:before
 {
  content:" • ";  
- color: [widget_list_marker_color];
+ color: #323a46;
  margin: 0px 10px;
 }
 
 
 .widget li {	
 	padding: 5px 0px;
-	border-bottom: 1px solid [widget_list_seperator_color];
+	border-bottom: 1px solid #ECECEC;
 	font-size: 13px;
 }
 
@@ -639,15 +639,15 @@ p {
 .navigation ul li {
 	display: inline-block;
 	margin: 2px 0px;
-	background: [pagination_color];
+	background: #1fbca7;
 	transition: all 0.5s;
 	font-size: 30px;
-	color: [pagination_text_color];
+	color: #fff;
 }
 
 .navigation ul li.active, .navigation ul li:hover {
-	background: [pagination_active_color];
-	color: [pagination_active_text_color];
+	background: #f37934;
+	color: #ffffff;
 }
 
 .navigation ul li a {
@@ -785,6 +785,6 @@ p {
 }
 
 
-[custom_css]
+
 
 	

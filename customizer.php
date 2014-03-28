@@ -823,7 +823,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
     'transport'   => 'refresh',
 	) );
 	
-	$wp_customize->add_control( new adaptive_flat_Customize_Textarea_Control( $wp_customize, 'custom_css', array(
+	$wp_customize->add_control( new Adaptive_flat_Customize_Textarea_Control( $wp_customize, 'custom_css', array(
 	'label'        => __( 'Custom CSS', 'giga_flat' ),
 	'section'    => 'css',
 	'settings'   => 'custom_css',
@@ -848,7 +848,7 @@ add_action('customize_save_after' , 'adaptive_flat_write_style', 100);
 
 
 if ( class_exists( 'WP_Customize_Control' ) ) {
-     class adaptive_flat_Customize_Textarea_Control extends WP_Customize_Control {
+     class Adaptive_flat_Customize_Textarea_Control extends WP_Customize_Control {
          
          
     public function __construct( $manager, $id, $args = array() ) {
@@ -874,7 +874,7 @@ function adaptive_flat_generate_style() {
 
 	global $wp_filesystem;
 
-	WP_Filesystem();
+	adaptive_flat_connect_file_system();
 	
 	$mpstyle = $wp_filesystem->get_contents(get_stylesheet_directory() . '/style.css');
 	
@@ -929,11 +929,31 @@ function adaptive_flat_generate_style() {
 	return $mpstyle;
 	
 	
+} 
+
+
+function adaptive_flat_connect_file_system() {
+	        
+	        $in = true;
+            $url = 'customize.php';
+            if (false === ($creds = request_filesystem_credentials($url, '', false, false,null) ) ) {
+                $in = false;
+                exit;
+            }
+
+            if ($in && ! WP_Filesystem($creds) ) {
+                // our credentials were no good, ask the user for them again
+                request_filesystem_credentials($url, '', true, false,null);
+                $in = false;
+                exit;
+            }
 }
 
 function adaptive_flat_write_style() {
 	
 	global $wp_filesystem;
+	
+	adaptive_flat_connect_file_system();
 	
 	if(get_theme_mod( 'css') == "" || true ) {
 		$upload_file = wp_upload_dir();
@@ -947,7 +967,7 @@ function adaptive_flat_write_style() {
 	$directory = get_theme_mod( 'css' );
 	
 	
-	WP_Filesystem();
+	//WP_Filesystem();
 	
 	$wp_filesystem->put_contents( $directory['path'], adaptive_flat_generate_style(), 0644 );	
 	

@@ -21,6 +21,10 @@ function adaptive_flat_enqueue_sripts() { //enque scripts like css
 	if($stylesheet != '') { //if stylesheet is generated
 		wp_enqueue_style( 'style', $stylesheet, array('dashicons'), '1.0' );
 	}
+	else if (get_theme_mod( 'css' ) == '' ) { //if stylesheet is not generated
+	wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/customcolors.css', array( 'dashicons' ), '1.0' );
+	}
+
 		
 	//load google font
 	wp_register_style( 'googleFonts', '//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,300,600' );
@@ -37,8 +41,13 @@ add_action( 'wp_enqueue_scripts', 'adaptive_flat_enqueue_sripts' );
 */
 function adaptive_flat_style_uri( $stylesheet_uri, $stylesheet_dir_uri ) {
 	$stylesheet = get_theme_mod( 'css' );
-	
-	$stylesheet_uri = $stylesheet['url'];
+	if(isset($stylesheet['url'])) {
+		$stylesheet_uri = $stylesheet['url'];
+	}
+	else {
+		$stylesheet_uri = "";
+	}
+		
 	
 	return  $stylesheet_uri;
 }
@@ -46,9 +55,6 @@ function adaptive_flat_style_uri( $stylesheet_uri, $stylesheet_dir_uri ) {
 add_filter('stylesheet_uri', 'adaptive_flat_style_uri', 10 ,2);
 
 
-if (get_theme_mod( 'css' ) == '' ) {
-	add_action( 'wp_head', 'adaptive_flat_print_style' );
-}
 
 
 function adaptive_flat_register_my_menus() {
@@ -92,8 +98,29 @@ function adaptive_flat_add_my_post_types_to_query( $query ) {
 
 	/* Query sticky posts */
 		$query->set( 'post__not_in' , $sticky );
+			
+		$first_page_total= get_option('posts_per_page') - $numberstickies; // total number of posts on first page
+		$paginated_total = get_option('posts_per_page'); // total number of posts on paginated pages
+		$posts_to_skip = $paginated_total - $first_page_total;
+				
+		// pagination for custom page(s)
+		if ( get_query_var('paged') ) { $paged = get_query_var('paged'); }
+		elseif ( get_query_var('page') ) { $paged = get_query_var('page'); }
+		else { $paged = 1; }
+				
+		// first page query args
+				
+		$query->set('posts_per_page', $first_page_total);
+				
+				
+		if(is_paged()) {
+			// add paginated query args
+			$offset = (($paged - 1) * $paginated_total)- $posts_to_skip;
+			$query->set('offset', $offset);
+			$query->set('posts_per_page',  $paginated_total);
+		}		
 		
-		$query->set( 'posts_per_page', get_option('posts_per_page') - $numberstickies );
+		
 	}
 		
 	return $query;
@@ -229,8 +256,8 @@ function adaptive_flat_numeric_posts_nav() {
 		return;
 
 	$paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
-	//$max   = intval( $wp_query->max_num_pages );
-	$max = intval(($wp_query->found_posts + adaptive_flat_sticky_counter()) / get_option('posts_per_page '));
+	$max   = intval( $wp_query->max_num_pages );
+	//$max = intval(($wp_query->found_posts + adaptive_flat_sticky_counter()) / get_option('posts_per_page '));
 	
 	
 	/**	Add current page to the array */
