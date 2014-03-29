@@ -14,4 +14,7 @@ Version 1.01.1
 Version 1.02
 
     i)   Modified functions.php, header.php and footer.php.
-	
+
+Version 1.03
+
+    i)   Fix in functions.php	

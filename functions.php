@@ -3,8 +3,8 @@ add_action( 'wp_enqueue_scripts', 'mywiki_theme_setup' );
 function mywiki_theme_setup(){
 wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '3.0.1', 'all' );
 wp_enqueue_style('style', get_template_directory_uri() . '/style.css');
-wp_enqueue_script( 'bootstrap',  get_template_directory_uri() . '/js/bootstrap.min.js', array('ajaxsearch'), '3.0.1');
-wp_enqueue_script( 'nicescroll',  get_template_directory_uri() . '/js/jquery.nicescroll.min.js', array('ajaxsearch'), '1.0.0');
+wp_enqueue_script( 'bootstrap',  get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '3.0.1');
+wp_enqueue_script( 'nicescroll',  get_template_directory_uri() . '/js/jquery.nicescroll.min.js', array('jquery'), '1.0.0');
 wp_enqueue_script( 'ajaxsearch',  get_template_directory_uri() . '/js/ajaxsearch.js', array(), '1.0.0');
 wp_enqueue_script( 'general',  get_template_directory_uri() . '/js/general.js');
 wp_localize_script( 'general', 'my_ajax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
