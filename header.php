@@ -41,18 +41,6 @@
 				<nav id="site-navigation" class="main-navigation" role="navigation">
 					<?php wp_nav_menu(array('theme_location' => 'main_navigation', 'container' => false,'menu_id'=>'menu-main-navigation','menu_class' => 'sf-menu sf-js-enabled sf-shadow', 'fallback_cb'=> 'apprise_selectmenu', )); ?>
 				</nav><!--site-navigation-->
-				<script type="text/javascript">
-					var sf=jQuery.noConflict();
-    				sf(window).load(function(){
-    					// superFish
-      					sf('ul.sf-menu').supersubs({
-		       			minWidth:    16, // minimum width of sub-menus in em units
-    		 			maxWidth:    40, // maximum width of sub-menus in em units
-       					extraWidth:  1 // extra width can ensure lines don't sometimes turn over
-     				})
-	    			.superfish(); // call supersubs first, then superfish
-	    	 		});
-				</script>
 			</div><!--header-->
 		</div><!--header-layout-->
 		<div class="clear"></div>

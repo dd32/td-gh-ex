@@ -563,6 +563,7 @@ function apprise_add_script_function() {
 	wp_enqueue_script('imgLiquid-min', get_stylesheet_directory_uri() . '/js/imgLiquid-min.js');
 	wp_enqueue_script('sharrre', get_stylesheet_directory_uri() . '/js/jquery.sharrre.min.js');
 	wp_enqueue_script('scrollUp', get_stylesheet_directory_uri() . '/js/jquery.scrollUp.min.js');
+	if ( of_get_option('enable_scrollup') == 1) { wp_enqueue_script('scroll-on', get_stylesheet_directory_uri() . '/js/scrollup.js'); }
 }
 
 add_action('wp_enqueue_scripts','apprise_add_script_function');
