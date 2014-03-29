@@ -46,24 +46,3 @@
 	 		echo $custom_js;
 		}
 	}
-
-	global $urvr;
-	if( isset( $urvr['analytics-place'] ) && $urvr['analytics-place'] == 1 ) {
-		add_action( 'wp_footer', 'abaris_add_analytics' );
-	} else {
-		add_action( 'wp_head', 'abaris_add_analytics' );
-	}
-
-	function abaris_add_analytics() {
-		global $urvr;
-
-		if( isset( $urvr['google-analytics'] ) ) {
-
-			$ga = "<script type='text/javascript'><!--\r\n";
-			$ga .= $urvr['google-analytics'];
-			$ga .= "\r\n//--><!]]></script>";
-			echo $ga;
-
-		}
-
-	}

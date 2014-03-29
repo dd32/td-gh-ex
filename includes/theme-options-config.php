@@ -381,24 +381,6 @@ if (!class_exists("Redux_Framework_sample_config")) {
                         'title' => __('Apple iPhone Icon Upload (57px X 57px)', TEXTDOMAIN),
                         'desc'=> __('For non-Retina iPhone, iPod Touch, and Android 2.1+ devices', TEXTDOMAIN),
                         ),          
-
-                    array(
-                        'id'=>'google-analytics',
-                        'type' => 'textarea',
-                        'title' => __('Tracking Code', TEXTDOMAIN), 
-                        'subtitle' => __('Paste your Google Analytics (or other) tracking code here. This will be added into the footer template of your theme.', TEXTDOMAIN),
-                        'desc' => 'Enter code without "script" tags',
-                        ),
-
-                    array(
-                        'id'=>'analytics-place',
-                        'type' => 'switch', 
-                        'title' => __('Load Tracking Code in Footer', TEXTDOMAIN),
-                        'subtitle'=> __('Check to load analytics in footer. Uncheck to load in header.', TEXTDOMAIN),
-                        'default' => 0,
-                        'on' => 'In Footer',
-                        'off' => 'In Header',
-                        ),
                     )
             );
 

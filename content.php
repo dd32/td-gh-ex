@@ -22,7 +22,7 @@ global $urvr;
 					if( has_post_thumbnail() && ! post_password_required() ) : 
 						the_post_thumbnail(); 
 					else :
-						echo '<img src="http://placehold.it/240x195" />';
+						echo '<img src="' . URVR_CHILD_URL . '/images/no-image.png" />';
 					endif;
 				?>
 			</div>
