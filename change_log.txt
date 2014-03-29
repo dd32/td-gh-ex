@@ -10,4 +10,8 @@ Version 1.01
 Version 1.01.1
 
     i)   Removed unused images.
+
+Version 1.02
+
+    i)   Modified functions.php, header.php and footer.php.
 	

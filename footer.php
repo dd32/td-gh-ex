@@ -42,9 +42,6 @@
 </footer>
 <!-- end footer -->
 <!-- end #maincont .container --> 
-<!--[if lt IE 7 ]>
-        <script src="<?php echo get_template_directory_uri(); ?>/js/cfinstall.min.js"></script>
-<![endif]-->
 <?php wp_footer(); // js scripts are inserted using this function ?>
 </body>
 </html>

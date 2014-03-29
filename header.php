@@ -11,15 +11,13 @@ $options = get_option( 'faster_theme_options' );
 <?php if($options['favicon'] != '') { ?>
 <link rel="shortcut icon" href="<?php echo $options['favicon'];?>">
 <?php } ?>
-<!-- media-queries.js (fallback) -->
 <!--[if lt IE 9]>
-			<script src="<?php echo get_template_directory_uri(); ?>/js/respond.min.js"></script>
+			<script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.js"></script>
 <![endif]-->
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 <?php $blogname = get_option('blogname'); ?>
 <?php wp_head(); ?>
 </head>
-<!-- end of wordpress head -->
 <body <?php body_class(); ?>>
 <div id="wrap">
 <header role="banner">
