@@ -18,3 +18,7 @@ Version 1.02
 Version 1.03
 
     i)   Fix in functions.php	
+
+Version 1.04
+
+    i)   inconsistent textdomain fixed.	

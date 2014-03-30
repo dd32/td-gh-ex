@@ -14,7 +14,7 @@ get_header(); ?>
       </header>
       <!-- end article header -->
       <footer>
-        <?php the_tags('<p class="tags"><span class="tags-title">' . __("Tags", "bonestheme") . ':</span> ', ', ', '</p>'); ?>
+        <?php the_tags('<p class="tags"><span class="tags-title">' . __("Tags", "mywiki") . ':</span> ', ', ', '</p>'); ?>
       </footer>
       <!-- end article footer -->
       <section class="post_content clearfix" itemprop="articleBody">
@@ -29,12 +29,12 @@ get_header(); ?>
     <article id="post-not-found">
       <header>
         <h1>
-          <?php _e("Not Found", "bonestheme"); ?>
+          <?php _e("Not Found", "mywiki"); ?>
         </h1>
       </header>
       <section class="post_content">
         <p>
-          <?php _e("Sorry, but the requested resource was not found on this site.", "bonestheme"); ?>
+          <?php _e("Sorry, but the requested resource was not found on this site.", "mywiki"); ?>
         </p>
       </section>
       <footer> </footer>

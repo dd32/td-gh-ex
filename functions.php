@@ -95,8 +95,8 @@ return $new_markup; } //}
 add_filter('wp_page_menu', 'mywiki_add_menuclass');
 register_nav_menus(
 		array(
-			'primary' => __( 'The Main Menu', 'MyWiki' ),   // main nav in header
-			'footer-links' => __( 'Footer Links', 'MyWiki' ) // secondary nav in footer
+			'primary' => __( 'The Main Menu', 'mywiki' ),   // main nav in header
+			'footer-links' => __( 'Footer Links', 'mywiki' ) // secondary nav in footer
 		)
 	);
 function mywiki_category_widget_function($args) {
