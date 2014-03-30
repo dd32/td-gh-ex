@@ -2,19 +2,22 @@
 /**
  * The template for displaying posts in the Link post format
  * @package Arunachala
- * @since Arunachala 1.0
  */
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php if ( has_post_thumbnail()) : ?>
-		<?php if ( is_singular () ) : // Display large thumbnail on single posts/pages without permalink?>
-		<?php the_post_thumbnail('large'); ?></a>
+<?php if ( has_post_thumbnail()) : ?>
+		<?php if ( is_singular () ) : // Display large thumbnail on single posts/pages without permalink ?>
+		<?php the_post_thumbnail('large'); ?>
+		<?php else : ?>
+		<?php if ( is_home () ) : // Display featured thumbnail on homepage with permalink ?>
+		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+		<?php the_post_thumbnail('featured-thumb'); ?>
 		<?php else : ?>
 		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-		<?php the_post_thumbnail('medium'); ?></a>
+		<?php the_post_thumbnail('featured-thumb'); ?></a>
 		<?php endif; ?>
-		
+		<?php endif; ?>
 	 <?php endif; ?>
 	<header class="entry-header">
 		<?php

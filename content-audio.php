@@ -2,11 +2,14 @@
 /**
  * The template for displaying posts in the Audio post format
  * @package Arunachala
- * @since Arunachala 1.0
  */
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php if ( is_home () || has_post_thumbnail()) : ?>
+		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+		<?php the_post_thumbnail('featured-thumb'); ?>
+	<?php endif; ?>
 	
 	<header class="entry-header">
 		<?php
