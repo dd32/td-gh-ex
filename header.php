@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 
 <?php if (lookilite_setting('lookilite_custom_favicon')) : ?>
-	<link rel="shortcut icon" href="<?php echo lookilite_setting('lookilite_custom_favicon'); ?>"/>
+	<link rel="shortcut icon" href="<?php echo esc_url(lookilite_setting('lookilite_custom_favicon')); ?>"/>
 <?php endif; ?>
 
 <title><?php wp_title( '|', true, 'right' ); ?></title>
@@ -35,13 +35,13 @@
             	<div id="logo">
                 
             	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name') ?>">
-                        
+
                 	<?php 
 					   				
-                    	if ( (lookilite_setting('lookilite_custom_logo')) && (lookilite_setting('lookilite_view_custom_logo') == "on")):
-                        	echo "<img src='".lookilite_setting('lookilite_custom_logo')."' alt='logo'>"; 
+                    	if ( lookilite_setting('lookilite_custom_logo') ):
+                        	echo "<img src='".esc_url(lookilite_setting('lookilite_custom_logo'))."' alt='logo'>"; 
                         else: 
-                        	echo "<img src='".get_template_directory_uri()."/images/logo/logo.png' alt='logo'>"; 
+                        	echo "<img src='".esc_url(get_template_directory_uri()."/images/logo/logo.png")."' alt='logo'>"; 
                         endif; 
 						
 					?>

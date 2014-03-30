@@ -37,14 +37,14 @@ function lookilite_socials() {
 	
 		if (lookilite_setting('lookilite_footer_'.$social_name.'_button')): 
 			$i++;	
-            $html.= '<a href="'.lookilite_setting('lookilite_footer_'.$social_name.'_button').'" target="_blank" class="social"> <i class="'.$social_icon.'" ></i> </a> ';
+            $html.= '<a href="'.esc_url(lookilite_setting('lookilite_footer_'.$social_name.'_button')).'" target="_blank" class="social"> <i class="'.$social_icon.'" ></i> </a> ';
 		endif;
 		
 	}
 	
 	if (lookilite_setting('lookilite_footer_rss_button') == "on"): 
 		$i++;	
-		$html.= '<a href="'. get_bloginfo('rss2_url'). '" title="Rss" class="social rss"> <i class="fa fa-rss" ></i>  </a> ';
+		$html.= '<a href="'. esc_url(get_bloginfo('rss2_url')). '" title="Rss" class="social rss"> <i class="fa fa-rss" ></i>  </a> ';
 	endif; 
 		
 	if ( $i > 0 ) {
