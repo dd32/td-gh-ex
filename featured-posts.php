@@ -3,20 +3,32 @@
  * @package Apprise
  */
 
+// Query featured entries
+
+$slider_cat = of_get_option('slider_cat');
+
+if ($slider_cat == '' ) {
+	$slider_cat = get_the_category();
+	$slider_cat = $slider_cat[0]->term_id;
+} else {
+	$slider_cat = of_get_option('slider_cat');
+}
+
+$num_of_slides = 5;
+$count = 0;
+		
+$featured_posts = new WP_Query(
+	array(
+		'posts_per_page' => $num_of_slides,
+		'cat' 	=> $slider_cat
+	)
+);
+
 if ( of_get_option('featured_posts_on') == '1') {
 	if (is_home() && !is_paged()) {
-		$slider_cat = of_get_option('slider_cat');
-		if ($slider_cat == '' ) {
-			$slider_cat = get_the_category();
-			$slider_cat = $slider_cat[0]->term_id;
-		} else {
-			$slider_cat = of_get_option('slider_cat');
-		}
-		$num_of_slides = 5;
-		$count = 0;
-		query_posts("showposts=$num_of_slides"."&cat=$slider_cat"); ?>
+		?>
 		<div class="featured-posts-wrapper">
-		<?php while (have_posts()) : the_post(); 
+		<?php while ( $featured_posts->have_posts() ): $featured_posts->the_post(); 
 			$count++ ?>
 			<div class="featured-post-<?php echo $count ?>">
 				<?php 

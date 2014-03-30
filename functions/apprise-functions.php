@@ -553,17 +553,15 @@ function apprise_add_script_function() {
 	/** 
 	 * Enqueue javascripts
 	 */
-	wp_enqueue_script('jquery');
-	wp_enqueue_script('superfish', get_stylesheet_directory_uri() . '/js/superfish.js');
-	wp_enqueue_script('supersubs', get_stylesheet_directory_uri() . '/js/supersubs.js');
-	wp_enqueue_script('flexslider', get_stylesheet_directory_uri() . '/js/jquery.flexslider.js');
-	wp_enqueue_script('custom', get_stylesheet_directory_uri() . '/js/custom.js');
-	wp_enqueue_script('tinynav', get_stylesheet_directory_uri() . '/js/tinynav.min.js');
-	wp_enqueue_script('refineslide', get_stylesheet_directory_uri() . '/js/jquery.refineslide.js');
-	wp_enqueue_script('imgLiquid-min', get_stylesheet_directory_uri() . '/js/imgLiquid-min.js');
-	wp_enqueue_script('sharrre', get_stylesheet_directory_uri() . '/js/jquery.sharrre.min.js');
-	wp_enqueue_script('scrollUp', get_stylesheet_directory_uri() . '/js/jquery.scrollUp.min.js');
-	if ( of_get_option('enable_scrollup') == 1) { wp_enqueue_script('scroll-on', get_stylesheet_directory_uri() . '/js/scrollup.js'); }
+	wp_enqueue_script('superfish', get_stylesheet_directory_uri() . '/js/superfish.js', array( 'jquery' ),'', false);
+	wp_enqueue_script('supersubs', get_stylesheet_directory_uri() . '/js/supersubs.js', array( 'jquery' ),'', false);
+	wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/js/jquery.flexslider.js', array( 'jquery' ),'', false );
+	wp_enqueue_script('custom', get_stylesheet_directory_uri() . '/js/custom.js', array( 'jquery' ),'', true);
+	wp_enqueue_script('tinynav', get_stylesheet_directory_uri() . '/js/tinynav.min.js', array( 'jquery' ),'', false);
+	wp_enqueue_script('refineslide', get_stylesheet_directory_uri() . '/js/jquery.refineslide.js', array( 'jquery' ),'', false);
+	wp_enqueue_script('imgLiquid-min', get_stylesheet_directory_uri() . '/js/imgLiquid-min.js', array( 'jquery' ),'', false);
+	wp_enqueue_script('scrollUp', get_stylesheet_directory_uri() . '/js/jquery.scrollUp.min.js', array( 'jquery' ),'', false);
+	if ( of_get_option('enable_scrollup') == 1) { wp_enqueue_script('scroll-on', get_stylesheet_directory_uri() . '/js/scrollup.js', array( 'jquery' ),'', true); }
 }
 
 add_action('wp_enqueue_scripts','apprise_add_script_function');
