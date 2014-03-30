@@ -148,3 +148,19 @@ function excerpt_read_more_link($output) {
  return $output . '<a class="more-link" href="'. get_permalink($post->ID) . '"> '.__("Read more", "arunachala").'</a>';
 }
 add_filter('the_excerpt', 'excerpt_read_more_link');
+
+/**
+* Modifying default query for homepage
+*/
+function arunachala_filter_pre_get_posts( $query ) {
+    if ( $query->is_home() && $query->is_main_query() ) {
+        $sticky = get_option( 'sticky_posts' );
+        $cat = get_theme_mod( 'category_dropdown_setting');
+        //  Exclude sticky posts
+        $query->set( 'ignore_sticky_posts', 1 );
+        $query->set( 'post__not_in', $sticky );
+		//  Display selected category posts from customizer
+        $query->set( 'category__in', $cat );
+    }
+}
+add_action( 'pre_get_posts', 'arunachala_filter_pre_get_posts' );

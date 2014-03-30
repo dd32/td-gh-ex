@@ -55,7 +55,7 @@
 	<?php endif; ?>
 
 	<footer class="entry-meta">
-		<?php if ( 'post' == get_post_type() && !is_home() ) : // Hide category and tag text for pages on Search ?>
+		<?php if ( 'post' == get_post_type() && !is_home() ) : // Hide category and tag text for pages on Search and Homepage ?>
 			<?php
 				/* translators: used between list items, there is a space after the comma */
 				$categories_list = get_the_category_list( __( ', ', 'arunachala' ) );

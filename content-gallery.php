@@ -17,7 +17,7 @@
 			endif;
 		?>
 
-		<?php if ( 'post' == get_post_type() ) : ?>
+		<?php if ( 'post' == get_post_type() && !is_home() ) : ?>
 		<div class="entry-meta">
 			<span class="post-format">
 				<a class="entry-format" href="<?php echo esc_url( get_post_format_link( 'gallery' ) ); ?>"><?php echo get_post_format_string( 'gallery' ); ?></a>
@@ -31,7 +31,7 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php if ( is_search() ) : // Only display Excerpts for Search ?>
+	<?php if ( is_search() || is_home() ) : // Display Excerpts for Search and Homepage. ?>
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
@@ -48,7 +48,7 @@
 	<?php endif; ?>
 
 	<footer class="entry-meta">
-		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
+		<?php if ( 'post' == get_post_type() && !is_home() ) : // Hide category and tag text for pages on Search and Homepage ?>
 			<?php
 				/* translators: used between list items, there is a space after the comma */
 				$categories_list = get_the_category_list( __( ', ', 'arunachala' ) );

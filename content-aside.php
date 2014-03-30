@@ -25,7 +25,7 @@
 		
 	</header><!-- .entry-header -->
  
-    <?php if ( is_search() ) : // Only display Excerpts for Search ?>
+    <?php if ( is_search() || is_home() ) : // Display Excerpts for Search and Homepage. ?>
     <div class="entry-summary">
         <?php the_excerpt(); ?>
     </div><!-- .entry-summary -->

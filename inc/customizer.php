@@ -25,6 +25,7 @@ function arunachala_customize_register( $wp_customize ) {
 	// Add the featured content category setting and control.
 	$wp_customize->add_setting( 'category_dropdown_setting', array(
 		'default'        => '-1',
+		'sanitize_callback' => 'arunachala_sanitize_category',
 	) );
 
 	$wp_customize->add_control( new Category_Dropdown_Custom_control( $wp_customize, 'category_dropdown_setting', array(
@@ -33,6 +34,19 @@ function arunachala_customize_register( $wp_customize ) {
 
 }
 add_action( 'customize_register', 'arunachala_customize_register' );
+
+/**
+ * Sanitize the Featured Content Category input. 
+ */
+function arunachala_sanitize_category( $input ) {
+	$cat_list = get_all_category_ids();
+	if ( ! in_array( $input, $cat_list )) {
+		$input = '-1';
+		}
+
+	return $input;
+}
+
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
