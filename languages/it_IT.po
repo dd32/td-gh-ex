@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-03-23 16:47+0100\n"
-"PO-Revision-Date: 2014-03-23 16:49+0100\n"
+"PO-Revision-Date: 2014-03-26 14:00+0100\n"
 "Last-Translator: Alessandro <info@wpinprogress.com>\n"
 "Language-Team: \n"
 "Language: it_IT\n"
@@ -17,9 +17,8 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:10 archive.php:51 index.php:21 search.php:39
-#, fuzzy
 msgid "Content not found"
-msgstr "Font per il contenuto"
+msgstr "Contenuto non trovato"
 
 #: 404.php:26
 msgid "Oops, it is a little bit embarassing..."
@@ -97,16 +96,14 @@ msgid "&raquo;"
 msgstr "&raquo;"
 
 #: comments.php:76
-#, fuzzy
 msgid "Leave a reply"
-msgstr "asd"
+msgstr "Lascia un commento"
 
 #: index.php:23
 msgid "No article found in this blog."
 msgstr "Nessun articolo trovato in questo blog"
 
 #: search.php:11
-#, fuzzy
 msgid "<span>Search </span> results for: "
 msgstr "<span>Risultati </span> della ricerca per"
 
@@ -256,19 +253,16 @@ msgid "Custom Logo"
 msgstr "Logo personalizzato"
 
 #: core/admin/option/options.php:129
-#, fuzzy
 msgid "Insert the url of your custom logo"
-msgstr "Inserisci l'url del tuo brano."
+msgstr "Inserisci l'url del tuo logo"
 
 #: core/admin/option/options.php:134
-#, fuzzy
 msgid "Custom Favicon"
-msgstr "Carica una favicon personalizzata."
+msgstr "Favicon personalizzata."
 
 #: core/admin/option/options.php:135
-#, fuzzy
 msgid "Insert the url of your custom favicon"
-msgstr "Inserisci l'url del tuo brano."
+msgstr "Inserisci l'url della tua favicon personalizzata"
 
 #: core/admin/option/options.php:153
 msgid "Footer"
@@ -522,48 +516,40 @@ msgid "Select a color for link hover"
 msgstr "Seleziona un colore per i link al passaggio del mouse"
 
 #: core/admin/option/options.php:416
-#, fuzzy
 msgid "Header, Sidebar and Footer"
-msgstr "Layout della Sidebar per la testata"
+msgstr "Testata, Sidebar e Footer"
 
 #: core/admin/option/options.php:418
-#, fuzzy
 msgid "Background color"
-msgstr "Posizione dell'immagine di background"
+msgstr "Colore di sfondo"
 
 #: core/admin/option/options.php:419
-#, fuzzy
 msgid "Select a color for the background"
-msgstr "Seleziona un colore di sfondo per la testata"
+msgstr "Seleziona un colore di sfondo principale"
 
 #: core/admin/option/options.php:425
-#, fuzzy
 msgid "Select a color for the text"
-msgstr "Seleziona un colore per il colore del testo generale."
+msgstr "Seleziona un colore per il testo."
 
 #: core/admin/option/options.php:430
-#, fuzzy
 msgid "Borders color"
 msgstr "Colore dei bordi"
 
 #: core/admin/option/options.php:431
-#, fuzzy
 msgid "Select a color for the borders"
-msgstr "Seleziona un colore per i bordi della testata"
+msgstr "Seleziona un colore per i bordi"
 
 #: core/admin/option/options.php:463
 msgid "Body Background"
 msgstr "Sfondo principale"
 
 #: core/admin/option/options.php:465
-#, fuzzy
 msgid "Default pattern background"
-msgstr "Immagine di default per lo sfondo"
+msgstr "Pattern di default per lo sfondo"
 
 #: core/admin/option/options.php:466
-#, fuzzy
 msgid "Select a pattern for body background."
-msgstr "Carica un'immagine come sfondo principale."
+msgstr "Seleziona un pattern come sfondo principale."
 
 #: core/metaboxes/page.php:16 core/metaboxes/page.php:24
 msgid "Setting"
@@ -574,7 +560,6 @@ msgid "Slogan"
 msgstr "Slogan"
 
 #: core/metaboxes/page.php:29
-#, fuzzy
 msgid "Insert your slogan"
 msgstr "Inserisci lo slogan della pagina"
 

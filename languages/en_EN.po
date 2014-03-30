@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-23 16:49+0100\n"
-"PO-Revision-Date: 2014-03-23 16:49+0100\n"
+"POT-Creation-Date: 2014-03-26 14:00+0100\n"
+"PO-Revision-Date: 2014-03-26 14:00+0100\n"
 "Last-Translator: Alessandro <info@wpinprogress.com>\n"
 "Language-Team: \n"
 "Language: en\n"
@@ -99,6 +99,23 @@ msgstr ""
 msgid "Leave a reply"
 msgstr ""
 
+#: footer.php:13
+msgid "Copyright"
+msgstr ""
+
+#: footer.php:15
+msgid "Theme by"
+msgstr ""
+
+#: footer.php:16
+msgid "http://wordpress.org/"
+msgstr ""
+
+#: footer.php:16
+#, php-format
+msgid "Proudly powered by %s"
+msgstr ""
+
 #: index.php:23
 msgid "No article found in this blog."
 msgstr ""
@@ -115,9 +132,13 @@ msgstr ""
 msgid "Make a new search, from the below form:"
 msgstr ""
 
-#: core/main.php:43
+#: core/main.php:50
 #, php-format
 msgid "Page %s"
+msgstr ""
+
+#: core/admin/function_panel.php:15
+msgid "Get Premium"
 msgstr ""
 
 #: core/admin/panel.php:25

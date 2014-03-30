@@ -58,7 +58,6 @@ function lookilite_body_class($classes) {
 
 add_filter('body_class', 'lookilite_body_class');
 
-
 /*-----------------------------------------------------------------------------------*/
 /* TAG TITLE */
 /*-----------------------------------------------------------------------------------*/  
@@ -76,7 +75,7 @@ function lookilite_title( $title, $sep ) {
 		$title = "$title $sep $site_description";
 
 	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'wip' ), max( $paged, $page ) );
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'lookilite' ), max( $paged, $page ) );
 
 	return $title;
 }
@@ -87,7 +86,7 @@ add_filter( 'wp_title', 'lookilite_title', 10, 2 );
 /* LOCALIZE THEME */
 /*-----------------------------------------------------------------------------------*/   
 
-load_theme_textdomain('wip', get_template_directory() . '/languages');
+load_theme_textdomain('lookilite', get_template_directory() . '/languages');
 
 /*-----------------------------------------------------------------------------------*/
 /* SHORTCODES */

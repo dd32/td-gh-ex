@@ -13,7 +13,7 @@ $lookilite_new_metaboxes = new lookilite_metaboxes ('page', array (
 
 array( "name" => "Navigation",  
        "type" => "navigation",  
-       "item" => array( "setting" => __( "Setting","wip") ),   
+       "item" => array( "setting" => __( "Setting","lookilite") ),   
        "start" => "<ul>", 
        "end" => "</ul>"),  
 
@@ -21,12 +21,12 @@ array( "type" => "begintab",
 	   "tab" => "setting",
 	   "element" =>
 
-		array( "name" => __( "Setting","wip"),
+		array( "name" => __( "Setting","lookilite"),
 			   "type" => "title",
 			  ),
 
-		array( "name" => __( "Slogan","wip"),
-			   "desc" => __( "Insert your slogan","wip"),
+		array( "name" => __( "Slogan","lookilite"),
+			   "desc" => __( "Insert your slogan","lookilite"),
 			   "id" => "lookilite_slogan",
 			   "type" => "text",
 			),

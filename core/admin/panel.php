@@ -22,7 +22,7 @@
 			case 'navigation': ?>
 				
 				<div class="header">
-                    <h2 class="maintitle settings"> <?php _e( 'General Settings','wip'); ?> </h2> 
+                    <h2 class="maintitle settings"> <?php _e( 'General Settings','lookilite'); ?> </h2> 
                     <div class="right">
                         <h2 class="maintitle"> <?php echo lookilite_theme_data('Name') . " " . lookilite_theme_data('Version');  ?> </h2>
                     </div>

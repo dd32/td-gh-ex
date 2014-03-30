@@ -8,7 +8,7 @@
             
             <div class="col-md-12">
             
-            	<h1><?php _e( '<span>Search </span> results for: ', 'wip' ); echo $s; ?></h1>
+            	<h1><?php _e( '<span>Search </span> results for: ', 'lookilite' ); echo $s; ?></h1>
                 
             </div>   
                  
@@ -36,23 +36,23 @@
 
                 <div class="post-article">
     
-                    <h2> <?php _e( 'Content not found',"wip" ) ?> </h2>           
+                    <h2> <?php _e( 'Content not found',"lookilite" ) ?> </h2>           
                     
-                    <p> <?php _e( 'The page that you requested, was not found.','wip'); ?> </p>
+                    <p> <?php _e( 'The page that you requested, was not found.','lookilite'); ?> </p>
     
-                    <h3> <?php _e( 'What can i do?',"wip" ) ?> </h3>           
+                    <h3> <?php _e( 'What can i do?',"lookilite" ) ?> </h3>           
     
-                    <p> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name') ?>"> <?php _e( 'Back to the homepage','wip'); ?> </a> </p>
+                    <p> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name') ?>"> <?php _e( 'Back to the homepage','lookilite'); ?> </a> </p>
                   
-                    <p> <?php _e( 'Check the typed term','wip'); ?> </p>
+                    <p> <?php _e( 'Check the typed term','lookilite'); ?> </p>
 
-                    <p> <?php _e( 'Make a new search, from the below form:','wip'); ?> </p>
+                    <p> <?php _e( 'Make a new search, from the below form:','lookilite'); ?> </p>
                     
                     <section class="contact-form">
                     
                         <form method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
-                             <input type="text" value="<?php _e( 'Search', 'wip' ) ?>" name="s" id="s" onblur="if (this.value == '') {this.value = '<?php _e( 'Search', 'wip' ) ?>';}" onfocus="if (this.value == '<?php _e( 'Search', 'wip' ) ?>') {this.value = '';}" class="input-search"/>
-                             <input type="submit" id="searchsubmit" class="button-search" value="<?php _e( 'Search', 'wip' ) ?>" />
+                             <input type="text" value="<?php _e( 'Search', 'lookilite' ) ?>" name="s" id="s" onblur="if (this.value == '') {this.value = '<?php _e( 'Search', 'lookilite' ) ?>';}" onfocus="if (this.value == '<?php _e( 'Search', 'lookilite' ) ?>') {this.value = '';}" class="input-search"/>
+                             <input type="submit" id="searchsubmit" class="button-search" value="<?php _e( 'Search', 'lookilite' ) ?>" />
                         </form>
                         
                         <div class="clear"></div>
