@@ -500,6 +500,9 @@ function apprise_custom_styling() {
 	}
 }
 
+add_action('wp_enqueue_scripts','apprise_custom_styling');
+
+
 /**
  * Creates a nicely formatted and more specific title element text
  * for output in head of document, based on current view.
@@ -535,11 +538,11 @@ function apprise_add_script_function() {
 	/** 
 	* Enqueue css
 	*/
-	wp_enqueue_style('apprise', get_stylesheet_uri());
+	wp_enqueue_style('apprise',  get_stylesheet_uri());
 	if (of_get_option('responsive_design') == '1'):
-		wp_enqueue_style ('responsive', get_stylesheet_directory_uri() . '/css/responsive.css');
+		wp_enqueue_style ('responsive', get_template_directory_uri() . '/css/responsive.css');
 	endif;
-	wp_enqueue_style ('font-awesome', get_stylesheet_directory_uri() . '/css/font-awesome.min.css');
+	wp_enqueue_style ('font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css');
 	if( of_get_option('google_font_body') !=""):
 		wp_enqueue_style ('body-font', '//fonts.googleapis.com/css?family='. urlencode(of_get_option('google_font_body')) .':400,400italic,700,700italic&subset=latin,greek-ext,cyrillic,latin-ext,greek,cyrillic-ext,vietnamese');
 	endif;
@@ -553,15 +556,15 @@ function apprise_add_script_function() {
 	/** 
 	 * Enqueue javascripts
 	 */
-	wp_enqueue_script('superfish', get_stylesheet_directory_uri() . '/js/superfish.js', array( 'jquery' ),'', false);
-	wp_enqueue_script('supersubs', get_stylesheet_directory_uri() . '/js/supersubs.js', array( 'jquery' ),'', false);
+	wp_enqueue_script('superfish', get_template_directory_uri() . '/js/superfish.js', array( 'jquery' ),'', false);
+	wp_enqueue_script('supersubs', get_template_directory_uri() . '/js/supersubs.js', array( 'jquery' ),'', false);
 	wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/js/jquery.flexslider.js', array( 'jquery' ),'', false );
-	wp_enqueue_script('custom', get_stylesheet_directory_uri() . '/js/custom.js', array( 'jquery' ),'', true);
-	wp_enqueue_script('tinynav', get_stylesheet_directory_uri() . '/js/tinynav.min.js', array( 'jquery' ),'', false);
-	wp_enqueue_script('refineslide', get_stylesheet_directory_uri() . '/js/jquery.refineslide.js', array( 'jquery' ),'', false);
-	wp_enqueue_script('imgLiquid-min', get_stylesheet_directory_uri() . '/js/imgLiquid-min.js', array( 'jquery' ),'', false);
-	wp_enqueue_script('scrollUp', get_stylesheet_directory_uri() . '/js/jquery.scrollUp.min.js', array( 'jquery' ),'', false);
-	if ( of_get_option('enable_scrollup') == 1) { wp_enqueue_script('scroll-on', get_stylesheet_directory_uri() . '/js/scrollup.js', array( 'jquery' ),'', true); }
+	wp_enqueue_script('custom', get_template_directory_uri() . '/js/custom.js', array( 'jquery' ),'', true);
+	wp_enqueue_script('tinynav', get_template_directory_uri() . '/js/tinynav.min.js', array( 'jquery' ),'', false);
+	wp_enqueue_script('refineslide', get_template_directory_uri() . '/js/jquery.refineslide.js', array( 'jquery' ),'', false);
+	wp_enqueue_script('imgLiquid-min', get_template_directory_uri() . '/js/imgLiquid-min.js', array( 'jquery' ),'', false);
+	wp_enqueue_script('scrollUp', get_template_directory_uri() . '/js/jquery.scrollUp.min.js', array( 'jquery' ),'', false);
+	if ( of_get_option('enable_scrollup') == 1) { wp_enqueue_script('scroll-on', get_template_directory_uri() . '/js/scrollup.js', array( 'jquery' ),'', true); }
 }
 
 add_action('wp_enqueue_scripts','apprise_add_script_function');
@@ -569,59 +572,64 @@ add_action('wp_enqueue_scripts','apprise_add_script_function');
 /** 
  * Register widgetized locations
  */
-register_sidebar(array(
-	'name' => __( 'Main Sidebar', 'apprise' ),
-	'before_widget' => '<div id="%1$s" class="widget %2$s">',
-	'after_widget' => '</div>',
-	'before_title' => '<div class="widget-title clearfix"><h4><span>',
-	'after_title' => '</span></h4></div>',
-));
+function apprise_widgets_init() {
+	register_sidebar(array(
+		'name' => __( 'Main Sidebar', 'apprise' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<div class="widget-title clearfix"><h4><span>',
+		'after_title' => '</span></h4></div>',
+	));
 
-register_sidebar(array(
-	'name' => __( 'Secondary Sidebar', 'apprise' ),
-	'id' => 'secondary-sidebar',
-	'description'   => '',
-	'before_widget' => '<div id="%1$s" class="widget %2$s">',
-	'after_widget' => '</div>',
-	'before_title' => '<div class="widget-title clearfix"><h4><span>',
-	'after_title' => '</span></h4></div>',
-));
+	register_sidebar(array(
+		'name' => __( 'Secondary Sidebar', 'apprise' ),
+		'id' => 'secondary-sidebar',
+		'description'   => '',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<div class="widget-title clearfix"><h4><span>',
+		'after_title' => '</span></h4></div>',
+	));
 
-register_sidebar(array(
-	'name' =>  __( 'Footer Widget 1', 'apprise' ),
-	'id' => 'footer-widget-1',
-	'before_widget' => '<div id="%1$s" class="footer-widget-col %2$s">',
-	'after_widget' => '</div>',
-	'before_title' => '<h4>',
-	'after_title' => '</h4>',
-));
+	register_sidebar(array(
+		'name' =>  __( 'Footer Widget 1', 'apprise' ),
+		'id' => 'footer-widget-1',
+		'before_widget' => '<div id="%1$s" class="footer-widget-col %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4>',
+		'after_title' => '</h4>',
+	));
 
-register_sidebar(array(
-	'name' => __( 'Footer Widget 2', 'apprise' ),
-	'id' => 'footer-widget-2',
-	'before_widget' => '<div id="%1$s" class="footer-widget-col %2$s">',
-	'after_widget' => '</div>',
-	'before_title' => '<h4>',
-	'after_title' => '</h4>',
-));
+	register_sidebar(array(
+		'name' => __( 'Footer Widget 2', 'apprise' ),
+		'id' => 'footer-widget-2',
+		'before_widget' => '<div id="%1$s" class="footer-widget-col %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4>',
+		'after_title' => '</h4>',
+	));
 
-register_sidebar(array(
-	'name' => __( 'Footer Widget 3', 'apprise' ),
-	'id' => 'footer-widget-3',
-	'before_widget' => '<div id="%1$s" class="footer-widget-col %2$s">',
-	'after_widget' => '</div>',
-	'before_title' => '<h4>',
-	'after_title' => '</h4>',
-));
+	register_sidebar(array(
+		'name' => __( 'Footer Widget 3', 'apprise' ),
+		'id' => 'footer-widget-3',
+		'before_widget' => '<div id="%1$s" class="footer-widget-col %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4>',
+		'after_title' => '</h4>',
+	));
 
-register_sidebar(array(
-	'name' => __( 'Footer Widget 4', 'apprise' ),
-	'id' => 'footer-widget-4',
-	'before_widget' => '<div id="%1$s" class="footer-widget-col %2$s">',
-	'after_widget' => '</div>',
-	'before_title' => '<h4>',
-	'after_title' => '</h4>',
-));
+	register_sidebar(array(
+		'name' => __( 'Footer Widget 4', 'apprise' ),
+		'id' => 'footer-widget-4',
+		'before_widget' => '<div id="%1$s" class="footer-widget-col %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4>',
+		'after_title' => '</h4>',
+	));
+}
+
+add_action( 'widgets_init', 'apprise_widgets_init' );
+
 
 /** 
  * Load function to check if primary menu is set.

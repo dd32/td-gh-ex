@@ -4,7 +4,7 @@
  *
  */
 global $post; 
-if (!is_home()) {
+if (!is_front_page()) {
 	echo '<ul>';
     echo '<li><a href="';
     echo home_url();

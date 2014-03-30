@@ -25,7 +25,7 @@ $featured_posts = new WP_Query(
 );
 
 if ( of_get_option('featured_posts_on') == '1') {
-	if (is_home() && !is_paged()) {
+	if (is_front_page() && !is_paged()) {
 		?>
 		<div class="featured-posts-wrapper">
 		<?php while ( $featured_posts->have_posts() ): $featured_posts->the_post(); 

@@ -13,7 +13,7 @@
 get_header(); ?>
 	<div id="main" class="<?php echo of_get_option('layout_settings'); ?>">
 	<?php 
-		if (is_home() && ! is_paged()) {
+		if (is_front_page() && ! is_paged()) {
 			if (of_get_option('image_slider_on') == '1') {
 				if ( of_get_option('featured_posts_on') == '1') {
 					apprise_refine_slide();
