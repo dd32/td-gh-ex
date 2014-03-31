@@ -3,7 +3,7 @@ Theme Name: Adaptive Flat
 Theme URI: http://www.mickdegraaf.nl/adaptiveflat
 Author URI: http://www.mickdegraaf.nl/
 Description: Create a professional and personal WordPress website. Adaptive Flat allows you to style your site with over 50 styling options making your site both beautiful and seo optimized. Theme also has support for an arcade plugin wich is under development and not ready for public release yet.
-Version: 1.0.7
+Version: 1.1.0
 Author: Mick de Graaf
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -16,13 +16,7 @@ Tags: two-columns, left-sidebar, right-sidebar, responsive-layout, custom-backgr
 	font-family: 'Open Sans', sans-serif;
 }
 
-body {
-	background: [body_color];
-	color: [text_color];
-}
-
 article a{
-	color: [content_link_color];
 	transition: color 0.5s;
 }
 
@@ -32,9 +26,6 @@ article img{
 	height: auto;
 }
 
-article a:hover{
-	color: [content_link_hover_color];
-}
 
 a {
 	color: inherit;
@@ -44,7 +35,6 @@ a {
 #top-bar {
 	width: 100%;
 	height: 20px;
-	background: [top_bar_color];
 }
 
 #main-content {
@@ -60,10 +50,7 @@ a {
 #header {
 	margin: 0px auto;
 	overflow: auto;
-	background-color: [header_color];
 }
-
-
 
 #header-left {
 	display: inline-block;
@@ -77,13 +64,11 @@ a {
 #header .site-title {
 	font-size: 30px;
 	font-weight: bold;
-	color: [site_title_color];
 }
 
 #header p {
 	font-size: 15px;
 	font-weight: normal;
-	color: [site_description_color];
 }
 
 #menu-wrapper {
@@ -92,8 +77,6 @@ a {
 
 .menu-bar {
 	width: 100%;
-	background: [menu_background];
-	color: [menu_text_color];
 }
 
 
@@ -116,7 +99,7 @@ a {
 
 .header-menu ul{
 	list-style: none;
-	background: [menu_background];
+
 }
 
 .header-menu li a {
@@ -131,14 +114,8 @@ a {
 	height: 50px;
 }
 
-.header-menu li:hover {
-	background: [menu_hover_color];
-	color: [menu_text_hover_color];
-}
-
 .header-menu ul ul {
 	height: auto;
-	background: [menu_background];
 	position: absolute;
 	margin-left: 10px;
 	display: none;
@@ -176,62 +153,37 @@ a {
 	position: relative;
 	margin: 10px 0px;
 	border-radius: 10px;
-	border: 1px solid [search_border_color];
+	border: 1px solid;
 }
 
 
 .searchform .s {	
 	border: none;
 	float: left;
-	color: [search_text_color];
 	padding-left: 10px;
 	width: 100px;
 	height: 100%;
 	transition: width 1s ease;
-	background: [search_input_color];
 	border-radius: 10px 0px 0px 10px;
 }
 
 
-
-.searchform .s::-webkit-input-placeholder {
-    color: [search_placeholder_color];
-}    
-.searchform .s:-moz-placeholder {
-    /* FF 4-18 */
-    color: [search_placeholder_color];
-}
-.searchform .s::-moz-placeholder {
-    /* FF 19+ */
-    color: [search_placeholder_color];
-}    
-.searchform .s:-ms-input-placeholder {
-    /* IE 10+ */
-    color: [search_placeholder_color];
-}
-
-
-
 .searchform .s:focus,
-
 .searchform .searchsubmit:focus {
 	outline: none;
 }
 
 .searchform .s:focus{
 	width: 170px;
-	
 }
 
 .searchform .searchsubmit {
 	width: 30px;
 	height: 100%;
-	background: [search_button_color];
 	border: 0;
 	border-radius: 0px 10px 10px 0px;
 	cursor: pointer;
 	font: normal 18px/1 'dashicons';
-	color: [search_button_logo_color];
 	-webkit-appearance: none;
 	float: right;
 }
@@ -276,10 +228,6 @@ a {
 *All headings rough styling (mainly font size) takes place here
 */
 
-h1, h2, h3, h4, h5, h6 {
-	color: [headings_color];
-}
-
 h1 {
 	font-size: 30px;
 }
@@ -312,7 +260,7 @@ h6 {
 */
 
 #title-container {
-	border-bottom: 2px solid [page_title_underline_color];
+	border-bottom: 2px solid;
 	margin-bottom: 10px;
 }
 
@@ -322,7 +270,6 @@ h6 {
 
 #title-container h1 {
 	display: inline-block;
-	color: [page_title_color];
 	font-size: 30px;
 }
 
@@ -362,26 +309,19 @@ p {
 * Styles the post previews on archive pages
 */
 .post-prev {
-	border-bottom: 1px solid [post_prev_bottom_border_color];
+	border-bottom: 1px solid;
 	padding: 10px 0px;
 	word-wrap: break-word;
 }
 
 .prev-title a{
-	color: [post_prev_title_color];
 	transition: color 0.5s;
 	font-weight: 600;
 	font-size: 20px;
 }
 
-.prev-title:hover a {
-	color: [post_prev_title_hover_color];
-}
-
 .post-prev p {
-
 	word-wrap:break-word;
-
 }
 
 
@@ -390,10 +330,6 @@ p {
 	width: 100%;
 	height: auto;
 	display: block;
-}
-
-.img-placeholder {
-	background: [thumb_placeholder_color]
 }
 
 .img-placeholder .icon {
@@ -406,13 +342,9 @@ p {
 .img-placeholder .icon:before {
 	content: "\f155";
 	font: normal 150px/1 'dashicons';
-	color: [thumb_placeholder_logo_color];
 	transition: color 0.5s;
 }
 
-.img-placeholder:hover .icon:before {
-	color: [thumb_placeholder_logo_hover_color];
-}
 
 /**
 * #.# Post preview one per line
@@ -423,7 +355,7 @@ p {
 .post-prev2{
 	width: 90%;
 	height: auto;
-	border-bottom: 1px solid [post_prev_bottom_border_color];
+	border-bottom: 1px solid;
 	padding: 10px 0px;
 }
 
@@ -502,8 +434,6 @@ p {
 	min-height: 100px;
 	height: auto;
 	width: 100%;
-	background: [footer_top_color];
-	color: [footer_top_text_color];
 }
 
 
@@ -521,14 +451,6 @@ p {
 	margin-bottom: 5px;
 }
 
-#footer-top .widget-head h4{
-	background: [footer_widget_head_color];
-	color: [footer_widget_head_text_color];
-}
-
-#footer-top .widget-head{
-	border-color: [footer_widget_head_color];
-}
 
 #footer-top .center {
 	margin: 0px auto;
@@ -536,19 +458,9 @@ p {
 	max-width: 1110px;
 }
 
-#footer-top .widget li {
-	border-color: [footer_list_seperator_color];
-}
-
 #footer-bottom {
 	min-height: 20px;
 	width: 100%;
-	background: [footer_bottom_color];
-	color: [footer_bottom_text_color];
-}
-
-#footer-bottom a {
-	color: [footer_bottom_link_color];
 }
 
 #footer-bottom .center
@@ -566,7 +478,7 @@ p {
 	width: 95%;
 	margin-bottom: 10px;
 	padding-bottom: 10px;
-	border-bottom: 1px solid [post_prev_bottom_border_color];
+	border-bottom: 1px solid;
 }
 
 
@@ -577,32 +489,28 @@ p {
 */ 
 
 .widget-head {
-	border-bottom: 2px solid [widget_head_background_color];
+	border-bottom: 2px solid;
 	margin-bottom: 10px;
 }
 
 .widget-head h4 {
 	display:inline-block; 
 	padding: 5px 10px;
-	background: [widget_head_background_color];
-	color: [widget_head_text_color];
 	width: auto; 
 }
 .widget ul {
 	list-style: none;
 }
 
-#sidebar li:before
-{
- content:" • ";  
- color: [widget_list_marker_color];
- margin: 0px 10px;
+#sidebar li:before	{
+	content:" • ";  
+	margin: 0px 10px;
 }
 
 
 .widget li {	
 	padding: 5px 0px;
-	border-bottom: 1px solid [widget_list_seperator_color];
+	border-bottom: 1px solid;
 	font-size: 13px;
 }
 
@@ -639,15 +547,8 @@ p {
 .navigation ul li {
 	display: inline-block;
 	margin: 2px 0px;
-	background: [pagination_color];
 	transition: all 0.5s;
-	font-size: 30px;
-	color: [pagination_text_color];
-}
-
-.navigation ul li.active, .navigation ul li:hover {
-	background: [pagination_active_color];
-	color: [pagination_active_text_color];
+	font-size: 30px;	
 }
 
 .navigation ul li a {
@@ -660,9 +561,9 @@ p {
 }
 
 .tag-icon, .category-icon {
-		display: inline;
-		font-size: 17px;
-		font: normal 17px/1 'dashicons';
+	display: inline;
+	font-size: 17px;
+	font: normal 17px/1 'dashicons';
 }
 
 .category-icon:before {
@@ -784,7 +685,5 @@ p {
 	
 }
 
-
-[custom_css]
 
 	

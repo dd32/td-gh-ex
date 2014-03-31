@@ -1,6 +1,12 @@
 <?php
 
-include('customizer.php');//Include code for customizer
+//conditional to only include customizer code when needed
+if (is_admin()) {
+	include('customizer.php');//Include code for customizer
+}
+
+include('stylecolors.php');
+
 
 if ( ! isset( $content_width ) ) { //set content width
 	$content_width = 600;
@@ -15,17 +21,11 @@ function adaptive_flat_enqueue_sripts() { //enque scripts like css
 	if ( is_singular() ) { //if on single page load comment script
 		wp_enqueue_script( "comment-reply" );
 	} 
-	
-	$stylesheet = get_stylesheet_uri();
-	
-	if($stylesheet != '') { //if stylesheet is generated
-		wp_enqueue_style( 'style', $stylesheet, array('dashicons'), '1.0' );
-	}
-	else if (get_theme_mod( 'css' ) == '' ) { //if stylesheet is not generated
-	wp_enqueue_style( 'style', get_stylesheet_directory_uri() . '/customcolors.css', array( 'dashicons' ), '1.0' );
-	}
-
 		
+	
+	wp_enqueue_style( 'style', get_stylesheet_uri(), array('dashicons'), '1.0' );
+	
+	
 	//load google font
 	wp_register_style( 'googleFonts', '//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,300,600' );
     wp_enqueue_style( 'googleFonts' );
@@ -39,24 +39,6 @@ add_action( 'wp_enqueue_scripts', 'adaptive_flat_enqueue_sripts' );
 *Filter for stylesheet uri. Sets it to uploaded stylesheet
 *
 */
-function adaptive_flat_style_uri( $stylesheet_uri, $stylesheet_dir_uri ) {
-	$stylesheet = get_theme_mod( 'css' );
-	if(isset($stylesheet['url'])) {
-		$stylesheet_uri = $stylesheet['url'];
-	}
-	else {
-		$stylesheet_uri = "";
-	}
-		
-	
-	return  $stylesheet_uri;
-}
-//filter stylesheet uri
-add_filter('stylesheet_uri', 'adaptive_flat_style_uri', 10 ,2);
-
-
-
-
 function adaptive_flat_register_my_menus() {
   register_nav_menus(
     array(

@@ -4,7 +4,8 @@
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="initial-scale=1">
 		<title><?php wp_title( '|', true, 'right' ); ?></title>
-		<?php wp_head(); ?>		
+		<?php wp_head(); ?>	
+		<?php adaptive_flat_style(); ?>
 	</head>
 	<body <?php body_class(); ?> >
 	

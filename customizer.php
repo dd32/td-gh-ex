@@ -1,7 +1,4 @@
 <?php
-
-require_once(ABSPATH . 'wp-admin/includes/file.php');
-
 /**
 * Code for theme customizer
 *
@@ -844,8 +841,6 @@ function adaptive_flat_customize_register( $wp_customize ) {
 
 }
 
-add_action('customize_save_after' , 'adaptive_flat_write_style', 100);
-
 
 if ( class_exists( 'WP_Customize_Control' ) ) {
      class Adaptive_flat_Customize_Textarea_Control extends WP_Customize_Control {
@@ -869,137 +864,6 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		}
      }
 }
-
-function adaptive_flat_generate_style() {
-
-	global $wp_filesystem;
-
-	adaptive_flat_connect_file_system();
-	
-	$mpstyle = $wp_filesystem->get_contents(get_stylesheet_directory() . '/style.css');
-	
-	
-	$mpstyle = str_replace( '[body_color]', get_theme_mod( 'body_color', '#ffffff' ), $mpstyle );
-	$mpstyle = str_replace( '[text_color]', get_theme_mod( 'text_color', '#323a46' ), $mpstyle );
-	$mpstyle = str_replace( '[top_bar_color]', get_theme_mod( 'top_bar_color', '#1fbca7' ), $mpstyle );
-	$mpstyle = str_replace( '[header_color]', get_theme_mod( 'header_color', '#ffffff' ), $mpstyle );
-	$mpstyle = str_replace( '[site_title_color]', get_theme_mod( 'site_title_color', '#f37934' ), $mpstyle );
-	$mpstyle = str_replace( '[site_description_color]', get_theme_mod( 'site_description_color', '#323a46' ), $mpstyle );
-	$mpstyle = str_replace( '[menu_background]', get_theme_mod( 'menu_background', '#323a46' ), $mpstyle );
-	$mpstyle = str_replace( '[menu_text_color]', get_theme_mod( 'menu_text_color', '#ffffff' ), $mpstyle );
-	$mpstyle = str_replace( '[menu_text_hover_color]', get_theme_mod( 'menu_text_hover_color', '#ffffff' ), $mpstyle );
-	$mpstyle = str_replace( '[menu_hover_color]', get_theme_mod( 'menu_hover_color', '#1fbca7' ), $mpstyle );
-	$mpstyle = str_replace( '[search_button_color]', get_theme_mod( 'search_button_color', '#f37934' ), $mpstyle );
-	$mpstyle = str_replace( '[search_border_color]', get_theme_mod( 'search_border_color', '#EEEEEE' ), $mpstyle );
-	$mpstyle = str_replace( '[search_input_color]', get_theme_mod( 'search_input_color', '#ffffff' ), $mpstyle );
-	$mpstyle = str_replace( '[search_text_color]', get_theme_mod( 'search_text_color', '#000000' ), $mpstyle );
-	$mpstyle = str_replace( '[search_placeholder_color]', get_theme_mod( 'search_placeholder_color', '#c6c6c6' ), $mpstyle );
-	$mpstyle = str_replace( '[search_button_logo_color]', get_theme_mod( 'search_button_logo_color', '#ffffff' ), $mpstyle );
-	$mpstyle = str_replace( '[widget_head_background_color]', get_theme_mod( 'widget_head_background_color', '#f37934' ), $mpstyle );
-	$mpstyle = str_replace( '[widget_head_text_color]', get_theme_mod( 'widget_head_text_color', '#ffffff' ), $mpstyle );
-	$mpstyle = str_replace( '[widget_list_seperator_color]', get_theme_mod( 'widget_list_seperator_color', '#ECECEC' ), $mpstyle );
-	$mpstyle = str_replace( '[widget_list_marker_color]', get_theme_mod( 'widget_list_marker_color', '#323a46' ), $mpstyle );
-	$mpstyle = str_replace( '[thumb_placeholder_color]', get_theme_mod( 'thumb_placeholder_color', '#1fbca7' ), $mpstyle );
-	$mpstyle = str_replace( '[thumb_placeholder_logo_color]', get_theme_mod( 'thumb_placeholder_logo_color', '#ffffff' ), $mpstyle );
-	$mpstyle = str_replace( '[thumb_placeholder_logo_hover_color]', get_theme_mod( 'thumb_placeholder_logo_hover_color', '#f4f4f4' ), $mpstyle );
-	$mpstyle = str_replace( '[post_prev_title_color]', get_theme_mod( 'post_prev_title_color', '#6b6b6b' ), $mpstyle );
-	$mpstyle = str_replace( '[post_prev_title_hover_color]', get_theme_mod( 'post_prev_title_hover_color', '#f37934' ), $mpstyle );
-	$mpstyle = str_replace( '[post_prev_bottom_border_color]', get_theme_mod( 'post_prev_bottom_border_color', '#eeeeee' ), $mpstyle );
-	$mpstyle = str_replace( '[pagination_color]', get_theme_mod( 'pagination_color', '#1fbca7' ), $mpstyle );
-	$mpstyle = str_replace( '[pagination_text_color]', get_theme_mod( 'pagination_text_color', '#ffffff' ), $mpstyle );
-	$mpstyle = str_replace( '[pagination_active_color]', get_theme_mod( 'pagination_active_color', '#f37934' ), $mpstyle );
-	$mpstyle = str_replace( '[pagination_active_text_color]', get_theme_mod( 'pagination_active_text_color', '#ffffff' ), $mpstyle );
-	$mpstyle = str_replace( '[content_link_color]', get_theme_mod( 'content_link_color', '#f37934' ), $mpstyle );
-	$mpstyle = str_replace( '[content_link_hover_color]', get_theme_mod( 'content_link_hover_color', '#d65a2c' ), $mpstyle );
-	$mpstyle = str_replace( '[page_title_color]', get_theme_mod( 'page_title_color', '#707070' ), $mpstyle );
-	$mpstyle = str_replace( '[page_title_underline_color]', get_theme_mod( 'page_title_underline_color', '#f37934' ), $mpstyle );
-	$mpstyle = str_replace( '[headings_color]', get_theme_mod( 'headings_color', '#707070' ), $mpstyle );
-	$mpstyle = str_replace( '[footer_top_color]', get_theme_mod( 'footer_top_color', '#1fbca7' ), $mpstyle );
-	$mpstyle = str_replace( '[footer_top_text_color]', get_theme_mod( 'footer_top_text_color', '#ffffff' ), $mpstyle );
-	$mpstyle = str_replace( '[footer_widget_head_color]', get_theme_mod( 'footer_widget_head_color', '#1aad99' ), $mpstyle );
-	$mpstyle = str_replace( '[footer_widget_head_text_color]', get_theme_mod( 'footer_widget_head_text_color', '#ffffff' ), $mpstyle );
-	$mpstyle = str_replace( '[footer_list_seperator_color]', get_theme_mod( 'footer_list_seperator_color', '#ececec' ), $mpstyle );
-	$mpstyle = str_replace( '[footer_bottom_color]', get_theme_mod( 'footer_bottom_color', '#323a46' ), $mpstyle );
-	$mpstyle = str_replace( '[footer_bottom_text_color]', get_theme_mod( 'footer_bottom_text_color', '#ffffff' ), $mpstyle );
-	$mpstyle = str_replace( '[footer_bottom_link_color]', get_theme_mod( 'footer_bottom_link_color', '#ffffff' ), $mpstyle );
-	
-	$mpstyle = str_replace('[custom_css]', get_theme_mod( 'custom_css' ), $mpstyle ); //display custom css in same file
-
-	
-	return $mpstyle;
-	
-	
-} 
-
-
-function adaptive_flat_connect_file_system() {
-	        
-	        $in = true;
-            $url = 'customize.php';
-            if (false === ($creds = request_filesystem_credentials($url, '', false, false,null) ) ) {
-                $in = false;
-                exit;
-            }
-
-            if ($in && ! WP_Filesystem($creds) ) {
-                // our credentials were no good, ask the user for them again
-                request_filesystem_credentials($url, '', true, false,null);
-                $in = false;
-                exit;
-            }
-}
-
-function adaptive_flat_write_style() {
-	
-	global $wp_filesystem;
-	
-	adaptive_flat_connect_file_system();
-	
-	if(get_theme_mod( 'css') == "" || true ) {
-		$upload_file = wp_upload_dir();
-		$upload_file['path'] .= '/customcolors.css';
-		$upload_file['url'] .= '/customcolors.css';
-		
-		set_theme_mod( 'css' , $upload_file );
-	}
-	
-	
-	$directory = get_theme_mod( 'css' );
-	
-	
-	//WP_Filesystem();
-	
-	$wp_filesystem->put_contents( $directory['path'], adaptive_flat_generate_style(), 0644 );	
-	
-	
-}
-
-function adaptive_flat_print_style(){
-	echo( '<style>' .  adaptive_flat_generate_style() . '</style>' );
-}
-/**
-* Add customizer js to live preview
-*
-*/
-function adaptive_flat_customizer_live_preview()
-{
-	wp_enqueue_script( 
-		  'mp-themecustomizer',			
-		  get_template_directory_uri().'/js/theme-customizer.js',//Point to file
-		  array( 'jquery','customize-preview' ),	//Define dependencies
-		  '1.0.4',						//Define a version (optional) 
-		  true						//Put script in footer?
-	);
-	
-	add_action( 'wp_head', 'adaptive_flat_print_style' );
-	
-	wp_dequeue_style( 'style' );
-}
-add_action( 'customize_preview_init', 'adaptive_flat_customizer_live_preview' );
-
-
-
-
 
 
 ?>

@@ -142,7 +142,7 @@
 
 	wp.customize( 'search_button_color', function( value ) {
 		value.bind( function( newval ) {
-			$('#searchsubmit').css('background', newval );
+			$('.searchsubmit').css('background', newval );
 		} );
 	} );
 	
@@ -150,7 +150,7 @@
 
 	wp.customize( 'search_button_logo_color', function( value ) {
 		value.bind( function( newval ) {
-			$('#searchsubmit').css('color', newval );
+			$('.searchsubmit').css('color', newval );
 		} );
 	} );	
 	
@@ -158,7 +158,7 @@
 
 	wp.customize( 'search_border_color', function( value ) {
 		value.bind( function( newval ) {
-			$('#searchform').css('border-color', newval );
+			$('.searchform').css('border-color', newval );
 		} );
 	} );
 	
@@ -166,7 +166,7 @@
 	
 	wp.customize( 'search_input_color', function( value ) {
 		value.bind( function( newval ) {
-			$('#s').css('background', newval );
+			$('.s').css('background', newval );
 		} );
 	} );
 	
@@ -174,7 +174,7 @@
 
 	wp.customize( 'search_text_color', function( value ) {
 		value.bind( function( newval ) {
-			$('#s').css('color', newval );
+			$('.s').css('color', newval );
 		} );
 	} );
 	
@@ -182,7 +182,7 @@
 
 	wp.customize( 'search_placeholder_color', function( value ) {
 		value.bind( function( newval ) {
-			$('body').append("<style>#searchform #s::-webkit-input-placeholder { color: " + newval + ";}    #searchform #s:-moz-placeholder { color: " + newval + ";} #searchform #s::-moz-placeholder { ncolor: " + newval + "; }   #searchform #s:-ms-input-placeholder { color: " + newval + "; }</style>");
+			$('body').append("<style>.searchform .s::-webkit-input-placeholder { color: " + newval + ";}    .searchform .s:-moz-placeholder { color: " + newval + ";} .searchform .s::-moz-placeholder { color: " + newval + "; }   .searchform .s:-ms-input-placeholder { color: " + newval + "; }</style>");
 			
 		} );
 	} );
