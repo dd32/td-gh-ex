@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Customizr 1.1.5\n"
-"POT-Creation-Date: 2013-12-14 14:22+0100\n"
-"PO-Revision-Date: 2013-12-14 14:22+0100\n"
-"Last-Translator: Nico <contact@themesandco.com>\n"
+"Project-Id-Version: * Customizr v3.1.10\n"
+"POT-Creation-Date: 2014-03-14 16:21+0100\n"
+"PO-Revision-Date: 2014-03-14 16:21+0100\n"
+"Last-Translator: Nicolas <contact@themesandco.com>\n"
 "Language-Team: Nicolas G. <contact@themesandco.com>\n"
 "Language: Dutch\n"
 "MIME-Version: 1.0\n"
@@ -20,189 +20,189 @@ msgstr ""
 msgid "Leave a Comment"
 msgstr "Laat bericht achter"
 
-#: ../inc/class-fire-init.php:47 ../inc/class-fire-init.php:48
+#: ../inc/class-fire-init.php:45 ../inc/class-fire-init.php:46
 msgid "Right sidebar"
 msgstr "Rechter zijbalk"
 
-#: ../inc/class-fire-init.php:53 ../inc/class-fire-init.php:54
+#: ../inc/class-fire-init.php:51 ../inc/class-fire-init.php:52
 msgid "Left sidebar"
 msgstr "Linker zijbalk"
 
-#: ../inc/class-fire-init.php:59 ../inc/class-fire-init.php:60
+#: ../inc/class-fire-init.php:57 ../inc/class-fire-init.php:58
 msgid "2 sidebars : Right and Left"
 msgstr "2 zijbalken : Rechts en Links"
 
-#: ../inc/class-fire-init.php:65 ../inc/class-fire-init.php:66
+#: ../inc/class-fire-init.php:63 ../inc/class-fire-init.php:64
 msgid "No sidebars : full width layout"
 msgstr "Geen zijbalken : volle breedte layout"
 
-#: ../inc/class-fire-init.php:78
+#: ../inc/class-fire-init.php:75
 msgid "Blue"
 msgstr "Blauw"
 
-#: ../inc/class-fire-init.php:79
+#: ../inc/class-fire-init.php:76
 msgid "Green"
 msgstr "Groen"
 
-#: ../inc/class-fire-init.php:80
+#: ../inc/class-fire-init.php:77
 msgid "Yellow"
 msgstr "Geel"
 
-#: ../inc/class-fire-init.php:81
+#: ../inc/class-fire-init.php:78
 msgid "Orange"
 msgstr "Oranje"
 
-#: ../inc/class-fire-init.php:82
+#: ../inc/class-fire-init.php:79
 msgid "Red"
 msgstr "Rood"
 
-#: ../inc/class-fire-init.php:83
+#: ../inc/class-fire-init.php:80
 msgid "Purple"
 msgstr "Paars"
 
-#: ../inc/class-fire-init.php:84
+#: ../inc/class-fire-init.php:81
 msgid "Grey"
 msgstr "Grijs"
 
-#: ../inc/class-fire-init.php:85
+#: ../inc/class-fire-init.php:82
 msgid "Black"
 msgstr "Zwart"
 
-#: ../inc/class-fire-init.php:95
-msgid "Suscribe to my rss feed"
+#: ../inc/class-fire-init.php:91
+msgid "Subscribe to my rss feed"
 msgstr "Abonneer op onze RSS feed"
 
-#: ../inc/class-fire-init.php:96
+#: ../inc/class-fire-init.php:92
 msgid "RSS feed (default is the wordpress feed)"
 msgstr "RSS feed (standaard is de WordPress feed)"
 
-#: ../inc/class-fire-init.php:100
+#: ../inc/class-fire-init.php:96
 msgid "Follow me on Twitter"
 msgstr "Volg ons op Twitter"
 
-#: ../inc/class-fire-init.php:101
+#: ../inc/class-fire-init.php:97
 msgid "Twitter profile url"
 msgstr "Twitter profiel URL"
 
-#: ../inc/class-fire-init.php:105
+#: ../inc/class-fire-init.php:101
 msgid "Follow me on Facebook"
 msgstr "Volg ons op Facebook"
 
-#: ../inc/class-fire-init.php:106
+#: ../inc/class-fire-init.php:102
 msgid "Facebook profile url"
 msgstr "Facebook profiel URL"
 
-#: ../inc/class-fire-init.php:110
+#: ../inc/class-fire-init.php:106
 msgid "Follow me on Google+"
 msgstr "Volg ons op Google+"
 
-#: ../inc/class-fire-init.php:111
+#: ../inc/class-fire-init.php:107
 msgid "Google+ profile url"
 msgstr "Google+ profiel URL"
 
-#: ../inc/class-fire-init.php:115
+#: ../inc/class-fire-init.php:111
 msgid "Follow me on Instagram"
 msgstr "Volg ons op Instagram"
 
-#: ../inc/class-fire-init.php:116
+#: ../inc/class-fire-init.php:112
 msgid "Instagram profile url"
 msgstr "Instagram profiel URL"
 
-#: ../inc/class-fire-init.php:120
+#: ../inc/class-fire-init.php:116
 msgid "Follow me on WordPress"
 msgstr "Volg ons op WordPress"
 
-#: ../inc/class-fire-init.php:121
+#: ../inc/class-fire-init.php:117
 msgid "WordPress profile url"
 msgstr "WordPress profiel URL"
 
-#: ../inc/class-fire-init.php:125
+#: ../inc/class-fire-init.php:121
 msgid "Follow me on Youtube"
 msgstr "Volg ons op Youtube"
 
-#: ../inc/class-fire-init.php:126
+#: ../inc/class-fire-init.php:122
 msgid "Youtube profile url"
 msgstr "Youtube profiel URL"
 
-#: ../inc/class-fire-init.php:130
+#: ../inc/class-fire-init.php:126
 msgid "Pin me on Pinterest"
 msgstr "Pin ons op Pinterest"
 
-#: ../inc/class-fire-init.php:131
+#: ../inc/class-fire-init.php:127
 msgid "Pinterest profile url"
 msgstr "Pinterest profiel URL"
 
-#: ../inc/class-fire-init.php:135
+#: ../inc/class-fire-init.php:131
 msgid "Follow me on Github"
 msgstr "Volg ons op Github"
 
-#: ../inc/class-fire-init.php:136
+#: ../inc/class-fire-init.php:132
 msgid "Github profile url"
 msgstr "Github profiel URL"
 
-#: ../inc/class-fire-init.php:140
+#: ../inc/class-fire-init.php:136
 msgid "Follow me on Dribbble"
 msgstr "Volg ons op Dribble"
 
-#: ../inc/class-fire-init.php:141
+#: ../inc/class-fire-init.php:137
 msgid "Dribbble profile url"
 msgstr "Dribble profiel URL"
 
-#: ../inc/class-fire-init.php:145
+#: ../inc/class-fire-init.php:141
 msgid "Follow me on LinkedIn"
 msgstr "Volg ons op inkedIn"
 
-#: ../inc/class-fire-init.php:146
+#: ../inc/class-fire-init.php:142
 msgid "LinkedIn profile url"
 msgstr "LinkedIn profiel URL"
 
-#: ../inc/class-fire-init.php:159
+#: ../inc/class-fire-init.php:151
 msgid "Right Sidebar"
 msgstr "Rechter zijbalk"
 
-#: ../inc/class-fire-init.php:160 ../inc/class-fire-init.php:164
+#: ../inc/class-fire-init.php:152 ../inc/class-fire-init.php:156
 msgid "Appears on posts, static pages, archives and search pages"
 msgstr "Verschijnt op posts, statische pagina's, archieven en zoekpagina's"
 
-#: ../inc/class-fire-init.php:163
+#: ../inc/class-fire-init.php:155
 msgid "Left Sidebar"
 msgstr "Linker zijbalk"
 
-#: ../inc/class-fire-init.php:173
+#: ../inc/class-fire-init.php:163
 msgid "Footer Widget Area One"
 msgstr "Footer Widget gebied één"
 
-#: ../inc/class-fire-init.php:174 ../inc/class-fire-init.php:178
-#: ../inc/class-fire-init.php:182
+#: ../inc/class-fire-init.php:164 ../inc/class-fire-init.php:168
+#: ../inc/class-fire-init.php:172
 msgid "Just use it as you want !"
 msgstr "Gebruik het zoals je wilt!"
 
-#: ../inc/class-fire-init.php:177
+#: ../inc/class-fire-init.php:167
 msgid "Footer Widget Area Two"
 msgstr "Footer Widget gebied twee"
 
-#: ../inc/class-fire-init.php:181
+#: ../inc/class-fire-init.php:171
 msgid "Footer Widget Area Three"
 msgstr "Footer Widget gebied drie"
 
-#: ../inc/class-fire-init.php:206
+#: ../inc/class-fire-init.php:189
 msgid "Speaking the Truth in times of universal deceit is a revolutionary act."
 msgstr ""
 "De waarheid spreken in tijden van universeel bedrog is een revolutionaire "
 "daad."
 
-#: ../inc/class-fire-init.php:207
+#: ../inc/class-fire-init.php:190
 msgid "George Orwell"
 msgstr "George Orwell"
 
-#: ../inc/class-fire-init.php:208
+#: ../inc/class-fire-init.php:191
 msgid ""
 "Sorry, but the requested page is not found. You might try a search below."
 msgstr ""
 "Sorry, de gevraagde pagina is niet gevonden. U kunt een zoekopdracht "
 "proberen hieronder."
 
-#: ../inc/class-fire-init.php:215
+#: ../inc/class-fire-init.php:196
 msgid ""
 "Success is the ability to go from one failure to another with no loss of "
 "enthusiasm..."
@@ -210,11 +210,11 @@ msgstr ""
 "Succes is de mogelijkheid om van de ene storing naar de andere te gaan "
 "zonder verlies van enthousiasme..."
 
-#: ../inc/class-fire-init.php:216
+#: ../inc/class-fire-init.php:197
 msgid "Sir Winston Churchill"
 msgstr "Sir Winston Churchill"
 
-#: ../inc/class-fire-init.php:217
+#: ../inc/class-fire-init.php:198
 msgid ""
 "Sorry, but nothing matched your search criteria. Please try again with some "
 "different keywords."
@@ -222,23 +222,23 @@ msgstr ""
 "Sorry, er voldoet niets aan uw zoek criteria. Probeer het nog eens met "
 "andere woorden."
 
-#: ../inc/class-fire-init.php:225 ../inc/class-fire-init.php:234
+#: ../inc/class-fire-init.php:204 ../inc/class-fire-init.php:213
 msgid "Customizr is a clean responsive theme"
 msgstr "Customizr is een schoon en snel thema"
 
-#: ../inc/class-fire-init.php:226
+#: ../inc/class-fire-init.php:205
 msgid "Let your creativity speak and easily customiz'it the way you want!"
 msgstr "Laat uw creativiteit spreken en customiz'it op jouw manier!"
 
-#: ../inc/class-fire-init.php:227
+#: ../inc/class-fire-init.php:206
 msgid "Learn more"
 msgstr "Leer meer"
 
-#: ../inc/class-fire-init.php:239 ../inc/class-fire-init.php:248
+#: ../inc/class-fire-init.php:218 ../inc/class-fire-init.php:227
 msgid "Style your WordPress site live!"
 msgstr "Stijl uw WordPress site live!"
 
-#: ../inc/class-fire-init.php:240
+#: ../inc/class-fire-init.php:219
 msgid ""
 "Many layout and design options are available from the WordPress customizer "
 "screen : see your changes live !"
@@ -246,15 +246,15 @@ msgstr ""
 "Vele lay-out en ontwerp opties zijn beschikbaar vanuit het WordPress "
 "systeemaanpasser scherm: uw wijzigingen live zien!"
 
-#: ../inc/class-fire-init.php:241
+#: ../inc/class-fire-init.php:220
 msgid "Just try it!"
 msgstr "Probeer het!"
 
-#: ../inc/class-fire-init.php:253 ../inc/class-fire-init.php:262
+#: ../inc/class-fire-init.php:232 ../inc/class-fire-init.php:241
 msgid "Create beautiful sliders"
 msgstr "Maak prachtige sliders"
 
-#: ../inc/class-fire-init.php:254
+#: ../inc/class-fire-init.php:233
 msgid ""
 "Customizr comes with a cool slider generator : add a slider to any post or "
 "page!"
@@ -262,11 +262,11 @@ msgstr ""
 "Customizr komt met een mooie slider generator : voeg een slider toe aan elke "
 "post of pagina!"
 
-#: ../inc/class-fire-init.php:255
+#: ../inc/class-fire-init.php:234
 msgid "Discover the features"
 msgstr "Ontdek de mogelijkheden"
 
-#: ../inc/class-fire-init.php:320
+#: ../inc/class-fire-init.php:295
 msgid "Main Menu"
 msgstr "Hoofdmenu"
 
@@ -314,6 +314,16 @@ msgstr "Uitgelichte tekst twee (max 200 kar.)"
 #: ../inc/admin/class-admin-customize.php:195
 msgid "Featured text three (200 car. max)"
 msgstr "Uitgelichte tekst drie (max 200 kar.)"
+
+#: ../inc/admin/class-admin-customize.php:211
+#, php-format
+msgid "Custom featured page %1$s"
+msgstr ""
+
+#: ../inc/admin/class-admin-customize.php:227
+#, php-format
+msgid "Featured text %1$s (200 car. max)"
+msgstr ""
 
 #: ../inc/admin/class-admin-customize.php:230
 msgid ""
@@ -396,127 +406,119 @@ msgstr "Eigen CSS"
 msgid "Add your own CSS"
 msgstr "Voeg eigen CSS toe"
 
-#: ../inc/admin/class-admin-customize.php:346
-msgid "Dev Tools (advanced users)"
-msgstr "Dev Tools (gevorderde gebruikers)"
-
-#: ../inc/admin/class-admin-customize.php:348
-msgid "Enable/disable the Dev Tools"
-msgstr "Zet Dev Tools aan/uit"
-
-#: ../inc/admin/class-admin-customize.php:380
+#: ../inc/admin/class-admin-customize.php:374
 msgid "Manage menus"
 msgstr "Beheer menus"
 
-#: ../inc/admin/class-admin-customize.php:386
+#: ../inc/admin/class-admin-customize.php:380
 msgid "Select a submenu expansion option"
 msgstr "Selecteer een optie voor de uitbreiding van het submenu"
 
-#: ../inc/admin/class-admin-customize.php:390
+#: ../inc/admin/class-admin-customize.php:384
 msgid "Expand submenus on click"
 msgstr "Uitvouwen van submenu's bij klikken"
 
-#: ../inc/admin/class-admin-customize.php:391
+#: ../inc/admin/class-admin-customize.php:385
 msgid "Expand submenus on hover"
 msgstr "Uitvouwen van submenu's bij aanwijzen"
 
-#: ../inc/admin/class-admin-customize.php:406
+#: ../inc/admin/class-admin-customize.php:400
 msgid "Choose a predefined skin"
 msgstr "Kies een vooraf gedefinieerde skin"
 
-#: ../inc/admin/class-admin-customize.php:415
+#: ../inc/admin/class-admin-customize.php:409
 msgid "Display top border"
 msgstr "Toon top rand"
 
-#: ../inc/admin/class-admin-customize.php:419
+#: ../inc/admin/class-admin-customize.php:413
 msgid "Uncheck this option to remove the colored top border."
 msgstr "Deselecteer deze optie om de gekleurde top rand te verwijderen."
 
-#: ../inc/admin/class-admin-customize.php:432
+#: ../inc/admin/class-admin-customize.php:426
 msgid "Logo Upload (supported formats : .jpg, .png, .gif)"
 msgstr "Logo Upload (ondersteunde indelingen : .jpg, .png, .gif)"
 
-#: ../inc/admin/class-admin-customize.php:439
+#: ../inc/admin/class-admin-customize.php:433
 msgid "Force logo dimensions to max-width:250px and max-height:100px"
 msgstr "Forceer logo grootte naar maximaal 250px breed en 100px hoog"
 
-#: ../inc/admin/class-admin-customize.php:455
+#: ../inc/admin/class-admin-customize.php:449
 msgid "Favicon Upload (supported formats : .ico, .png, .gif)"
 msgstr "Favicon Upload (Ondersteunde indelingen : .ico, .png, .gif)"
 
-#: ../inc/admin/class-admin-customize.php:471
+#: ../inc/admin/class-admin-customize.php:465
 msgid "Choose content and layout"
 msgstr "Kies inhoud en layout"
 
-#: ../inc/admin/class-admin-customize.php:479
+#: ../inc/admin/class-admin-customize.php:473
 msgid "Front page displays"
 msgstr "Front pagina toont"
 
-#: ../inc/admin/class-admin-customize.php:484
+#: ../inc/admin/class-admin-customize.php:478
 msgid "Don't show any posts or page"
 msgstr "Laat geen enkele post of pagina zien"
 
-#: ../inc/admin/class-admin-customize.php:485
+#: ../inc/admin/class-admin-customize.php:479
 msgid "Your latest posts"
 msgstr "Uw laatste posts"
 
-#: ../inc/admin/class-admin-customize.php:486
+#: ../inc/admin/class-admin-customize.php:480
 msgid "A static page"
 msgstr "Een statische pagina"
 
-#: ../inc/admin/class-admin-customize.php:492
+#: ../inc/admin/class-admin-customize.php:486
 msgid "Front page"
 msgstr "Front pagina"
 
-#: ../inc/admin/class-admin-customize.php:500
+#: ../inc/admin/class-admin-customize.php:494
 msgid "Posts page"
 msgstr "Posts pagina"
 
-#: ../inc/admin/class-admin-customize.php:509
+#: ../inc/admin/class-admin-customize.php:503
 msgid "Set up the front page layout"
 msgstr "Pas de Front pagina layout aan"
 
-#: ../inc/admin/class-admin-customize.php:520
+#: ../inc/admin/class-admin-customize.php:514
 msgid "Slider options"
 msgstr "Slider opties"
 
-#: ../inc/admin/class-admin-customize.php:521
+#: ../inc/admin/class-admin-customize.php:515
 msgid "Select front page slider"
 msgstr "Selecteer Front pagina slider"
 
-#: ../inc/admin/class-admin-customize.php:533
+#: ../inc/admin/class-admin-customize.php:527
 msgid "Full width slider"
 msgstr "Volle breedte slider"
 
-#: ../inc/admin/class-admin-customize.php:552
+#: ../inc/admin/class-admin-customize.php:546
 msgid "Delay between each slides"
 msgstr "Pauze tussen elke slide"
 
-#: ../inc/admin/class-admin-customize.php:557
+#: ../inc/admin/class-admin-customize.php:551
 msgid "in ms : 1000ms = 1s"
 msgstr "in ms : 1000ms = 1s"
 
-#: ../inc/admin/class-admin-customize.php:565
+#: ../inc/admin/class-admin-customize.php:559
 msgid "Featured pages options"
 msgstr "Uitgelichte pagina's opties"
 
-#: ../inc/admin/class-admin-customize.php:566
+#: ../inc/admin/class-admin-customize.php:560
 msgid "Display home featured pages area"
 msgstr "Toon uitgelichte pagina's"
 
-#: ../inc/admin/class-admin-customize.php:570
+#: ../inc/admin/class-admin-customize.php:564
 msgid "Enable"
 msgstr "Aan"
 
-#: ../inc/admin/class-admin-customize.php:571
+#: ../inc/admin/class-admin-customize.php:565
 msgid "Disable"
 msgstr "Uit"
 
-#: ../inc/admin/class-admin-customize.php:580
+#: ../inc/admin/class-admin-customize.php:574
 msgid "Show images"
 msgstr "Toon afbeeldingen"
 
-#: ../inc/admin/class-admin-customize.php:583
+#: ../inc/admin/class-admin-customize.php:577
 msgid ""
 "The images are set with the \"featured image\" of each pages (in the page "
 "edit screen). Uncheck the option above to disable the featured page images."
@@ -525,27 +527,27 @@ msgstr ""
 "(in het pagina bewerken scherm). Haal het vinkje hierboven weg om deze "
 "afbeelding niet te tonen."
 
-#: ../inc/admin/class-admin-customize.php:589
+#: ../inc/admin/class-admin-customize.php:583
 msgid "Read more &raquo;"
 msgstr "Lees verder &raquo;"
 
-#: ../inc/admin/class-admin-customize.php:591
+#: ../inc/admin/class-admin-customize.php:585
 msgid "Button text"
 msgstr "Knop tekst"
 
-#: ../inc/admin/class-admin-customize.php:612
+#: ../inc/admin/class-admin-customize.php:606
 msgid "Display Breadcrumb"
 msgstr "Toon Breadcrumb"
 
-#: ../inc/admin/class-admin-customize.php:622
+#: ../inc/admin/class-admin-customize.php:616
 msgid "Choose the global default layout"
 msgstr "Kies het globale standaard layout"
 
-#: ../inc/admin/class-admin-customize.php:633
+#: ../inc/admin/class-admin-customize.php:627
 msgid "Force default layout everywhere"
 msgstr "Forceer standaard layout overal"
 
-#: ../inc/admin/class-admin-customize.php:636
+#: ../inc/admin/class-admin-customize.php:630
 msgid ""
 "This option will override the specific layouts on all posts/pages, including "
 "the front page."
@@ -553,36 +555,36 @@ msgstr ""
 "Deze optie overschrijft de specifieke layouts op alle posts/pagina's, "
 "inclusief de Front pagina."
 
-#: ../inc/admin/class-admin-customize.php:643
+#: ../inc/admin/class-admin-customize.php:637
 msgid "Choose the posts default layout"
 msgstr "Kies de standaard layout voor Posts"
 
-#: ../inc/admin/class-admin-customize.php:655
+#: ../inc/admin/class-admin-customize.php:649
 msgid "Maximum number of posts per page"
 msgstr "Maximum aantal posts per pagina"
 
-#: ../inc/admin/class-admin-customize.php:666
+#: ../inc/admin/class-admin-customize.php:660
 msgid "Select the length of posts in lists (home, search, archives, ...)"
 msgstr ""
 "Selecteer de lengte van berichten in lijsten (home, zoeken, archieven,...)"
 
-#: ../inc/admin/class-admin-customize.php:670
+#: ../inc/admin/class-admin-customize.php:664
 msgid "Display the excerpt"
 msgstr "Fragment weergeven"
 
-#: ../inc/admin/class-admin-customize.php:671
+#: ../inc/admin/class-admin-customize.php:665
 msgid "Display the full content"
 msgstr "Volledige inhoud weergeven"
 
-#: ../inc/admin/class-admin-customize.php:679
+#: ../inc/admin/class-admin-customize.php:673
 msgid "Choose the pages default layout"
 msgstr "Kies de default layout voor pagina's"
 
-#: ../inc/admin/class-admin-customize.php:699
+#: ../inc/admin/class-admin-customize.php:693
 msgid "Enable comments on pages"
 msgstr "Sta commentaren toe op pagina's"
 
-#: ../inc/admin/class-admin-customize.php:702
+#: ../inc/admin/class-admin-customize.php:696
 msgid ""
 "This option will enable comments on pages. You can disable comments for a "
 "single page in the quick edit mode of the page list screen."
@@ -590,27 +592,27 @@ msgstr ""
 "Deze optie activeert commentaren op pagina's. U kunt commentaren deactiveren "
 "voor een enkele pagina in de snel bewerken modus het pagina lijst scherm."
 
-#: ../inc/admin/class-admin-customize.php:716
+#: ../inc/admin/class-admin-customize.php:710
 msgid "Social links in header"
 msgstr "Sociale links in de header"
 
-#: ../inc/admin/class-admin-customize.php:725
+#: ../inc/admin/class-admin-customize.php:719
 msgid "Social links in left sidebar"
 msgstr "Sociale links in de linker zijbalk"
 
-#: ../inc/admin/class-admin-customize.php:734
+#: ../inc/admin/class-admin-customize.php:728
 msgid "Social links in right sidebar"
 msgstr "Sociale links in de rechter zijbalk"
 
-#: ../inc/admin/class-admin-customize.php:743
+#: ../inc/admin/class-admin-customize.php:737
 msgid "Social links in footer"
 msgstr "Sociale links in de footer"
 
-#: ../inc/admin/class-admin-customize.php:764
+#: ../inc/admin/class-admin-customize.php:758
 msgid "Enable/disable lightbox effect on images"
 msgstr "Zet lightbox effect op plaatjes aan/uit"
 
-#: ../inc/admin/class-admin-customize.php:767
+#: ../inc/admin/class-admin-customize.php:761
 msgid ""
 "If enabled, this option activate a popin window whith a zoom effect when an "
 "image is clicked. This will not apply to image gallery."
@@ -619,31 +621,31 @@ msgstr ""
 "als een afbeelding wordt aangeklikt. Dit gebeurd niet bij de afbeelding "
 "gallerij."
 
-#: ../inc/admin/class-admin-customize.php:773
+#: ../inc/admin/class-admin-customize.php:767
 msgid "Autoscale images on zoom"
 msgstr "Automatische schaling van afbeeldingen bij zoomen"
 
-#: ../inc/admin/class-admin-customize.php:776
+#: ../inc/admin/class-admin-customize.php:770
 msgid ""
 "If enabled, this option will force images to fit the screen on lightbox zoom."
 msgstr ""
 "Wanneer aangezet forceert deze optie de afbeelding grootte zodat deze ast in "
 "het scherm bij lightbox zoom."
 
-#: ../inc/admin/class-admin-customize.php:782
+#: ../inc/admin/class-admin-customize.php:776
 msgid "Enable/disable retina support"
 msgstr "Zet retina support aan/uit"
 
-#: ../inc/admin/class-admin-customize.php:785
+#: ../inc/admin/class-admin-customize.php:779
 msgid ""
 "If enabled, your website will include support for high resolution devices."
 msgstr "Hiermee ondersteund uw website hoge resolutie apparaten."
 
-#: ../inc/admin/class-admin-customize.php:798
+#: ../inc/admin/class-admin-customize.php:792
 msgid "Enable/disable smooth scroll on click"
 msgstr "Zet vloeiend schuiven aan/uit"
 
-#: ../inc/admin/class-admin-customize.php:801
+#: ../inc/admin/class-admin-customize.php:795
 msgid ""
 "If enabled, this option activates a smooth page scroll when clicking on a "
 "link to an anchor of the same page."
@@ -651,12 +653,12 @@ msgstr ""
 "deze optie activeert een vloeiende pagina verschuiving wanneer er wordt "
 "geklikt op een link naar een anker van dezelfde pagina."
 
-#: ../inc/admin/class-admin-customize.php:814
+#: ../inc/admin/class-admin-customize.php:808
 msgid "Add your custom css here and design live! (for advanced users)"
 msgstr ""
 "Voeg je eigen CSS hier toe en ontwerp live (voor gevorderde gebruikers)"
 
-#: ../inc/admin/class-admin-customize.php:817
+#: ../inc/admin/class-admin-customize.php:811
 msgid ""
 "Always use this field to add your custom css instead of editing directly the "
 "style.css file : it will not be deleted during theme updates. You can also "
@@ -667,29 +669,29 @@ msgstr ""
 "ook eigen CSS toevoegen in het style.css bestand van een subthema (child "
 "theme)."
 
-#: ../inc/admin/class-admin-meta_boxes.php:89
+#: ../inc/admin/class-admin-meta_boxes.php:92
 msgid "Layout Options"
 msgstr "Layout opties"
 
-#: ../inc/admin/class-admin-meta_boxes.php:97
-#: ../inc/admin/class-admin-meta_boxes.php:469
+#: ../inc/admin/class-admin-meta_boxes.php:100
+#: ../inc/admin/class-admin-meta_boxes.php:471
 msgid "Slider Options"
 msgstr "Slider opties"
 
-#: ../inc/admin/class-admin-meta_boxes.php:165
+#: ../inc/admin/class-admin-meta_boxes.php:169
 #, php-format
 msgid "Default %1$s layout is set to : %2$s"
 msgstr "Standaard %1$s layout staat op : %2$s"
 
-#: ../inc/admin/class-admin-meta_boxes.php:165
+#: ../inc/admin/class-admin-meta_boxes.php:169
 msgid "pages"
 msgstr "pagina's"
 
-#: ../inc/admin/class-admin-meta_boxes.php:165
+#: ../inc/admin/class-admin-meta_boxes.php:169
 msgid "posts"
 msgstr "posts"
 
-#: ../inc/admin/class-admin-meta_boxes.php:170
+#: ../inc/admin/class-admin-meta_boxes.php:174
 msgid ""
 "You have checked the <i>\"Force global default layout for all posts and pages"
 "\"</i>, you must unchecked this option to enable a specific layout for this "
@@ -699,11 +701,11 @@ msgstr ""
 "\"</i> geselecteerd. Deze moet u deselecteren om een specifieke layout voor "
 "deze post te kunnen gebruiken."
 
-#: ../inc/admin/class-admin-meta_boxes.php:171
+#: ../inc/admin/class-admin-meta_boxes.php:175
 msgid "Change layout options"
 msgstr "Pas layout opties aan"
 
-#: ../inc/admin/class-admin-meta_boxes.php:175
+#: ../inc/admin/class-admin-meta_boxes.php:179
 #, php-format
 msgid ""
 "You can define a specific layout for %1$s by using the pre-defined left and "
@@ -714,45 +716,45 @@ msgstr ""
 "linker en rechter zijbalken te gebruiken. De standaard layouts kunnen "
 "gedefinieerd worden in het WordPress aanpas scherm %2$s.<br />"
 
-#: ../inc/admin/class-admin-meta_boxes.php:176
-#: ../inc/admin/class-admin-meta_boxes.php:181
+#: ../inc/admin/class-admin-meta_boxes.php:180
+#: ../inc/admin/class-admin-meta_boxes.php:185
 msgid "this page"
 msgstr "deze pagina"
 
-#: ../inc/admin/class-admin-meta_boxes.php:176
-#: ../inc/admin/class-admin-meta_boxes.php:181
+#: ../inc/admin/class-admin-meta_boxes.php:180
+#: ../inc/admin/class-admin-meta_boxes.php:185
 msgid "this post"
 msgstr "deze post"
 
-#: ../inc/admin/class-admin-meta_boxes.php:177
+#: ../inc/admin/class-admin-meta_boxes.php:181
 msgid "here"
 msgstr "hier"
 
-#: ../inc/admin/class-admin-meta_boxes.php:180
+#: ../inc/admin/class-admin-meta_boxes.php:184
 #, php-format
 msgid "Select a specific layout for %1$s"
 msgstr "Selecteer een specifieke layout voor %1$s"
 
-#: ../inc/admin/class-admin-meta_boxes.php:184
+#: ../inc/admin/class-admin-meta_boxes.php:188
 #, php-format
 msgid "Default layout %1s"
 msgstr "Standaard layout %1s"
 
-#: ../inc/admin/class-admin-meta_boxes.php:226
+#: ../inc/admin/class-admin-meta_boxes.php:230
 msgid "Add a slider to this post/page"
 msgstr "Voeg een slider toe aan deze post/pagina"
 
-#: ../inc/admin/class-admin-meta_boxes.php:290
-#: ../inc/admin/class-admin-meta_boxes.php:676
+#: ../inc/admin/class-admin-meta_boxes.php:294
+#: ../inc/admin/class-admin-meta_boxes.php:678
 msgid "Choose a slider"
 msgstr "Kies een slider"
 
-#: ../inc/admin/class-admin-meta_boxes.php:297
-#: ../inc/admin/class-admin-meta_boxes.php:691
+#: ../inc/admin/class-admin-meta_boxes.php:301
+#: ../inc/admin/class-admin-meta_boxes.php:693
 msgid "&mdash; Select a slider &mdash; "
 msgstr "&mdash; Selecteer eent slider &mdash; "
 
-#: ../inc/admin/class-admin-meta_boxes.php:302
+#: ../inc/admin/class-admin-meta_boxes.php:306
 msgid ""
 "To create a new slider : open the media library, edit your images and add "
 "them to your new slider."
@@ -760,21 +762,21 @@ msgstr ""
 "Om een nieuwe slider te maken : open de media library en pas uw afbeeldingen "
 "aan. Voeg ze daarna toe aan de nieuwe slider."
 
-#: ../inc/admin/class-admin-meta_boxes.php:306
+#: ../inc/admin/class-admin-meta_boxes.php:310
 msgid "Delay between each slides in milliseconds (default : 5000 ms)"
 msgstr "Pauze tussen elke slide in milliseconden (standaard : 5000 ms)"
 
-#: ../inc/admin/class-admin-meta_boxes.php:313
+#: ../inc/admin/class-admin-meta_boxes.php:317
 msgid "Slider Layout : set the slider in full width"
 msgstr "Slider layout : zet de slider op volledige breedte"
 
-#: ../inc/admin/class-admin-meta_boxes.php:330
-#: ../inc/admin/class-admin-meta_boxes.php:700
+#: ../inc/admin/class-admin-meta_boxes.php:334
+#: ../inc/admin/class-admin-meta_boxes.php:702
 msgid "Delete this slider"
 msgstr "Verwijder deze slider"
 
-#: ../inc/admin/class-admin-meta_boxes.php:335
-#: ../inc/admin/class-admin-meta_boxes.php:704
+#: ../inc/admin/class-admin-meta_boxes.php:339
+#: ../inc/admin/class-admin-meta_boxes.php:706
 msgid ""
 "The slider will be deleted permanently (images, call to actions and link "
 "will be kept)."
@@ -782,12 +784,12 @@ msgstr ""
 "De slider zal permanent verwijderd worden (afbeeldingen, acties en link "
 "blijven bewaard)."
 
-#: ../inc/admin/class-admin-meta_boxes.php:338
-#: ../inc/admin/class-admin-meta_boxes.php:707
+#: ../inc/admin/class-admin-meta_boxes.php:342
+#: ../inc/admin/class-admin-meta_boxes.php:709
 msgid "Delete slider"
 msgstr "Verwijder slider"
 
-#: ../inc/admin/class-admin-meta_boxes.php:346
+#: ../inc/admin/class-admin-meta_boxes.php:350
 #: ../inc/admin/class-controls.php:137
 msgid ""
 "You haven't create any slider yet. Go to the media library, edit your images "
@@ -796,44 +798,44 @@ msgstr ""
 "U heeft nog geen slider aangemaakt. Ga naar de media bibliotheek en pas uw "
 "afbeeldingen aan. Voeg ze daarna toe aan de sliders."
 
-#: ../inc/admin/class-admin-meta_boxes.php:498
+#: ../inc/admin/class-admin-meta_boxes.php:500
 msgid "Add to a slider"
 msgstr "Voeg aan een slider toe"
 
-#: ../inc/admin/class-admin-meta_boxes.php:500
+#: ../inc/admin/class-admin-meta_boxes.php:502
 msgid "Add to a slider (create one if needed)"
 msgstr "Voeg aan een slider toe (maak een slider indien nodig)"
 
-#: ../inc/admin/class-admin-meta_boxes.php:633
+#: ../inc/admin/class-admin-meta_boxes.php:635
 msgid "Title text (80 car. max length)"
 msgstr "Titel tekst (max. 80 kar.)"
 
-#: ../inc/admin/class-admin-meta_boxes.php:640
+#: ../inc/admin/class-admin-meta_boxes.php:642
 msgid "Description text (below the title, 250 car. max length)"
 msgstr "Omschrijving tekst (onder de titel, max. 250 kar.)"
 
-#: ../inc/admin/class-admin-meta_boxes.php:647
+#: ../inc/admin/class-admin-meta_boxes.php:649
 msgid "Title and text color"
 msgstr "Titel en tekst kleur"
 
-#: ../inc/admin/class-admin-meta_boxes.php:655
+#: ../inc/admin/class-admin-meta_boxes.php:657
 msgid "Button text (80 car. max length)"
 msgstr "Knop tekst (max. 80 kar.)"
 
-#: ../inc/admin/class-admin-meta_boxes.php:662
+#: ../inc/admin/class-admin-meta_boxes.php:664
 msgid "Choose a linked page or post (among the last 100)."
 msgstr "Kies een pagina of post (van de laaste 100)."
 
-#: ../inc/admin/class-admin-meta_boxes.php:667
+#: ../inc/admin/class-admin-meta_boxes.php:669
 msgid "No link"
 msgstr "Geen link"
 
-#: ../inc/admin/class-admin-meta_boxes.php:697
-#: ../inc/admin/class-admin-meta_boxes.php:728
+#: ../inc/admin/class-admin-meta_boxes.php:699
+#: ../inc/admin/class-admin-meta_boxes.php:730
 msgid "Add a slider"
 msgstr "Voeg een slider toe"
 
-#: ../inc/admin/class-admin-meta_boxes.php:726
+#: ../inc/admin/class-admin-meta_boxes.php:728
 msgid ""
 "You haven't create any slider yet. Write a slider name and click on the "
 "button to add you first slider."
@@ -841,7 +843,7 @@ msgstr ""
 "U heeft nog geen slider gemaakt. Type een naam voor de slider en klik op de "
 "knop om uw eerste slider aan te maken."
 
-#: ../inc/admin/class-admin-meta_boxes.php:843
+#: ../inc/admin/class-admin-meta_boxes.php:845
 msgid ""
 "This slider has not slides to show. Go to the media library and start adding "
 "images to it."
@@ -849,46 +851,46 @@ msgstr ""
 "Deze slider bevat nog geen slides. Ga naar de media bibliotheek en voeg "
 "afbeeldingen aan de slider toe."
 
-#: ../inc/admin/class-admin-meta_boxes.php:853
+#: ../inc/admin/class-admin-meta_boxes.php:855
 msgid "Slide Image"
 msgstr "Slide afbeelding"
 
-#: ../inc/admin/class-admin-meta_boxes.php:854
+#: ../inc/admin/class-admin-meta_boxes.php:856
 msgid "Title"
 msgstr "Titel"
 
-#: ../inc/admin/class-admin-meta_boxes.php:855
+#: ../inc/admin/class-admin-meta_boxes.php:857
 msgid "Slide Text"
 msgstr "Slide tekst"
 
-#: ../inc/admin/class-admin-meta_boxes.php:856
+#: ../inc/admin/class-admin-meta_boxes.php:858
 msgid "Button Text"
 msgstr "Knop tekst"
 
-#: ../inc/admin/class-admin-meta_boxes.php:857
+#: ../inc/admin/class-admin-meta_boxes.php:859
 msgid "Button Link"
 msgstr "Knop link"
 
-#: ../inc/admin/class-admin-meta_boxes.php:858
+#: ../inc/admin/class-admin-meta_boxes.php:860
 #: ../parts/class-content-breadcrumb.php:595
 #: ../parts/class-content-breadcrumb.php:628
 #: ../parts/class-content-breadcrumb.php:643
 #: ../parts/class-content-breadcrumb.php:671
 #: ../parts/class-content-comments.php:157
-#: ../parts/class-content-headings.php:240
-#: ../parts/class-content-slider.php:239
+#: ../parts/class-content-headings.php:247
+#: ../parts/class-content-slider.php:243
 msgid "Edit"
 msgstr "Wijzigen"
 
-#: ../inc/admin/class-admin-meta_boxes.php:899
+#: ../inc/admin/class-admin-meta_boxes.php:901
 msgid "No Image Selected"
 msgstr "Geen afbeelding geselecteerd"
 
-#: ../inc/admin/class-admin-meta_boxes.php:925
+#: ../inc/admin/class-admin-meta_boxes.php:927
 msgid "Edit this slide"
 msgstr "Wijzig deze slide"
 
-#: ../inc/admin/class-admin-meta_boxes.php:927
+#: ../inc/admin/class-admin-meta_boxes.php:929
 msgid "Current slide"
 msgstr "Huidige slide"
 
@@ -1021,19 +1023,54 @@ msgid "Follow us"
 msgstr "Volg ons"
 
 #: ../inc/admin/class-fire-admin_init.php:251
+msgid "Customizr's extensions"
+msgstr ""
+
+#: ../inc/admin/class-fire-admin_init.php:254
+#: ../inc/admin/class-fire-admin_init.php:263
+msgid "Visit the extension's page"
+msgstr ""
+
+#: ../inc/admin/class-fire-admin_init.php:255
+msgid "Easily take your web design one step further"
+msgstr ""
+
+#: ../inc/admin/class-fire-admin_init.php:256
+msgid ""
+"The Customizr's extensions are plugins developed to extend the Customizr "
+"theme with great features. Nicely integrated with the theme's built-in "
+"options, they can be enabled/disabled safely with no side effects on your "
+"existing settings or customizations."
+msgstr ""
+
+#: ../inc/admin/class-fire-admin_init.php:258
+msgid ""
+"These modules are designed to be simple to use for everyone. They are a good "
+"solution to add some creative customizations whitout needing to dive into "
+"the code."
+msgstr ""
+
+#: ../inc/admin/class-fire-admin_init.php:260
+msgid ""
+"Customizr's extensions are installed and upgraded from your WordPress admin, "
+"like any other WordPress plugins. Well documented and easily extendable with "
+"hooks, they come with a dedicated support forum on themesandco.com."
+msgstr ""
+
+#: ../inc/admin/class-fire-admin_init.php:269
 msgid "Customizr Showcase"
 msgstr "Customizr showcase"
 
-#: ../inc/admin/class-fire-admin_init.php:254
-#: ../inc/admin/class-fire-admin_init.php:261
+#: ../inc/admin/class-fire-admin_init.php:272
+#: ../inc/admin/class-fire-admin_init.php:279
 msgid "Visit the showcase"
 msgstr "Bezoek de showcase"
 
-#: ../inc/admin/class-fire-admin_init.php:255
+#: ../inc/admin/class-fire-admin_init.php:273
 msgid "Find inspiration for your next Customizr based website!"
 msgstr "Vind inspiratie voor uw volgende Customizr gebaseerde website!"
 
-#: ../inc/admin/class-fire-admin_init.php:256
+#: ../inc/admin/class-fire-admin_init.php:274
 msgid ""
 "This showcase aims to show what can be done with Customizr and helping other "
 "users to find inspiration for their web design."
@@ -1041,7 +1078,7 @@ msgstr ""
 "Deze showcase laat zien wat er met Customizer gedaan kan worden en helpt "
 "andere gebruikers om inspiratie re vinden voor hun webdesign."
 
-#: ../inc/admin/class-fire-admin_init.php:258
+#: ../inc/admin/class-fire-admin_init.php:276
 msgid ""
 "Do you think you made an awesome website that can inspire people? Submitting "
 "a site for review is quick and easy to do."
@@ -1050,16 +1087,16 @@ msgstr ""
 "zijn voor anderen? Een website inzenden voor een review is snel en makkelijk "
 "te doen."
 
-#: ../inc/admin/class-fire-admin_init.php:268
+#: ../inc/admin/class-fire-admin_init.php:286
 #, php-format
 msgid "Changelog in version %1$s"
 msgstr "Changelog in versie %1$s"
 
-#: ../inc/admin/class-fire-admin_init.php:277
+#: ../inc/admin/class-fire-admin_init.php:295
 msgid "Go to Dashboard &rarr; Home"
 msgstr "Ga naar het Dashboard &rarr; Home"
 
-#: ../inc/admin/class-fire-admin_init.php:277
+#: ../inc/admin/class-fire-admin_init.php:295
 msgid "Go to Dashboard"
 msgstr "Ga naar Dashboard"
 
@@ -1149,16 +1186,16 @@ msgstr "Split"
 msgid "Merge"
 msgstr "Samenvoegen"
 
-#: ../parts/class-content-comments.php:65
+#: ../parts/class-content-comments.php:63
 #, php-format
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgstr "Een gedachte op &ldquo;%2$s&rdquo;"
 
-#: ../parts/class-content-comments.php:124
+#: ../parts/class-content-comments.php:121
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: ../parts/class-content-comments.php:124
+#: ../parts/class-content-comments.php:121
 msgid "(Edit)"
 msgstr "(Wijzig)"
 
@@ -1179,19 +1216,19 @@ msgstr "%1$s op %2$s"
 msgid "Your comment is awaiting moderation."
 msgstr "Uw commentaar is in afwachting van goedkeuring"
 
-#: ../parts/class-content-comments.php:198
+#: ../parts/class-content-comments.php:202
 msgid "Comment navigation"
 msgstr "Commentaar navigatie"
 
-#: ../parts/class-content-comments.php:204
+#: ../parts/class-content-comments.php:208
 msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
 msgstr "<span class=\"meta-nav\">&larr;</span> Oudere commentaren"
 
-#: ../parts/class-content-comments.php:212
+#: ../parts/class-content-comments.php:216
 msgid "Newer Comments <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Nieuwere commentaren <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../parts/class-content-comments.php:244
+#: ../parts/class-content-comments.php:248
 msgid "Comments are closed."
 msgstr "Commentaren gesloten."
 
@@ -1224,61 +1261,61 @@ msgstr "Ontbrekende bijlage"
 msgid "Ooops, page not found"
 msgstr "Oeps, pagina niet gevonden"
 
-#: ../parts/class-content-headings.php:55
+#: ../parts/class-content-headings.php:57
 msgid "No"
 msgstr "Geen"
 
-#: ../parts/class-content-headings.php:56
+#: ../parts/class-content-headings.php:58
 msgid "Search Results for :"
 msgstr "Zoek resultaten voor :"
 
-#: ../parts/class-content-headings.php:68
+#: ../parts/class-content-headings.php:73
 msgid "Author Archives :"
 msgstr "Auteur archieven :"
 
-#: ../parts/class-content-headings.php:82 ../parts/class-content-post.php:98
+#: ../parts/class-content-headings.php:87 ../parts/class-content-post.php:98
 #, php-format
 msgid "About %s"
 msgstr "Over %s"
 
-#: ../parts/class-content-headings.php:94
+#: ../parts/class-content-headings.php:100
 msgid "Category Archives :"
 msgstr "Categorie archieven :"
 
-#: ../parts/class-content-headings.php:110
+#: ../parts/class-content-headings.php:116
 msgid "Tag Archives :"
 msgstr "Tag archieven :"
 
-#: ../parts/class-content-headings.php:122
+#: ../parts/class-content-headings.php:129
 #, php-format
 msgid "Daily Archives: %s"
 msgstr "Dagelijkse archieven: %s"
 
-#: ../parts/class-content-headings.php:122
+#: ../parts/class-content-headings.php:129
 msgid "Archives"
 msgstr "Archieven"
 
-#: ../parts/class-content-headings.php:123
+#: ../parts/class-content-headings.php:130
 #, php-format
 msgid "Monthly Archives: %s"
 msgstr "Maandelijkse archieven: %s"
 
-#: ../parts/class-content-headings.php:124
+#: ../parts/class-content-headings.php:131
 #, php-format
 msgid "Yearly Archives: %s"
 msgstr "Jaarlijkse archieven: %s"
 
-#: ../parts/class-content-headings.php:210
-#: ../parts/class-content-headings.php:216
+#: ../parts/class-content-headings.php:217
+#: ../parts/class-content-headings.php:223
 msgid "{no title} Read the post &raquo;"
 msgstr "{geen titel} Lees post &raquo;"
 
-#: ../parts/class-content-headings.php:215
+#: ../parts/class-content-headings.php:222
 #, php-format
 msgid "Permalink to %s"
 msgstr "Permalink naar %s"
 
-#: ../parts/class-content-headings.php:233
+#: ../parts/class-content-headings.php:240
 msgid "Comment(s) on"
 msgstr "Commentaar op"
 
@@ -1345,30 +1382,30 @@ msgstr ""
 msgid "This entry was posted on %3$s<span class=\"by-author\"> by %4$s</span>."
 msgstr "Dit item is gepost op %3$s<span class=\"by-author\"> door %4$s</span>."
 
-#: ../parts/class-content-post_metas.php:136
-#: ../parts/class-content-post_metas.php:168
+#: ../parts/class-content-post_metas.php:134
+#: ../parts/class-content-post_metas.php:166
 #, php-format
 msgid "View all posts in %s"
 msgstr "Bekijk alle posts in %s"
 
-#: ../parts/class-content-post_navigation.php:61
-#: ../parts/class-content-post_navigation.php:94
+#: ../parts/class-content-post_navigation.php:59
+#: ../parts/class-content-post_navigation.php:92
 msgid "Post navigation"
 msgstr "Post navigatie"
 
-#: ../parts/class-content-post_navigation.php:104
+#: ../parts/class-content-post_navigation.php:102
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> Oudere posts"
 
-#: ../parts/class-content-post_navigation.php:117
+#: ../parts/class-content-post_navigation.php:115
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Nieuwere posts <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../parts/class-footer-footer_main.php:176
+#: ../parts/class-footer-footer_main.php:179
 msgid "Back to top"
 msgstr "Terug naar boven"
 
-#: ../parts/class-header-header_main.php:151
+#: ../parts/class-header-header_main.php:149
 msgid "Back Home"
 msgstr "Terug naar Home"
 
@@ -1376,14 +1413,17 @@ msgstr "Terug naar Home"
 msgid "Add a menu"
 msgstr "Voeg menu toe"
 
+#~ msgid "Dev Tools (advanced users)"
+#~ msgstr "Dev Tools (gevorderde gebruikers)"
+
+#~ msgid "Enable/disable the Dev Tools"
+#~ msgstr "Zet Dev Tools aan/uit"
+
 #~ msgid "Two sidebars"
 #~ msgstr "Twee zijbalken"
 
 #~ msgid "Full Width"
 #~ msgstr "Volledige breedte"
-
-#~ msgid "Custom featured page "
-#~ msgstr "Aangepaste uitgelichte pagina "
 
 #~ msgid "Featured text two "
 #~ msgstr "Uitgelichte tekst twee "

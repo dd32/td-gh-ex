@@ -141,12 +141,10 @@ class TC_header_main {
 	        	<?php 
 	        	do_action( '__before_logo' );
 
-	          	
-
 	          	printf( '<a class="site-logo" href="%1$s" title="%2$s | %3$s"><img src="%4$s" alt="%5$s" width="%6$s" height="%7$s" %8$s /></a>',
 	          		apply_filters( 'tc_logo_link_url', esc_url( home_url( '/' ) ) ) ,
-	          		apply_filters( 'tc_site_name_text ', __( esc_attr( get_bloginfo( 'name' ) ) ) ),
-	          		apply_filters( 'tc_tagline_text ', __( esc_attr( get_bloginfo( 'description' ) ) ) ),
+	          		apply_filters( 'tc_site_name_text', __( esc_attr( get_bloginfo( 'name' ) ) ) ),
+	          		apply_filters( 'tc_tagline_text', __( esc_attr( get_bloginfo( 'description' ) ) ) ),
 	          		$logo_src,	
 	          		__( 'Back Home' , 'customizr' ),
 					$width,
@@ -164,7 +162,7 @@ class TC_header_main {
 
 	        <?php 
 		   	$html = ob_get_contents();
-	       	ob_end_clean();
+	       	if ($html) ob_end_clean();
 	       	echo apply_filters( 'tc_logo_img_display', $html, $filter_args );
 	       	?>
 
@@ -178,8 +176,6 @@ class TC_header_main {
 	        	<?php
 	        	do_action( '__before_logo' );
 
-	          	
-	            
 		          	printf('<%1$s><a class="site-title" href="%2$s" title="%3$s | %4$s">%3$s</a></%1$s>',
 		          		apply_filters( 'tc_site_title_tag', 'h1' ) ,
 		          		apply_filters( 'tc_logo_link_url', esc_url( home_url( '/' ) ) ) ,
@@ -194,7 +190,7 @@ class TC_header_main {
 
 	        <?php 
 		   	$html = ob_get_contents();
-	       	ob_end_clean();
+	       	if ($html) ob_end_clean();
 	       	echo apply_filters( 'tc_logo_text_display', $html, $logo_class);
 	       	?>
 
@@ -245,7 +241,7 @@ class TC_header_main {
         do_action( '__after_navbar' );
 		
 		$html = ob_get_contents();
-       	ob_end_clean();
+       	if ($html) ob_end_clean();
        	echo apply_filters( 'tc_navbar_display', $html );
 	}
 

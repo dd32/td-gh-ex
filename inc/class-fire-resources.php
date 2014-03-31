@@ -12,7 +12,7 @@
 * @license      http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 
-class TC_ressources {
+class TC_resources {
 
     //Access any method or var of the class with classname::$instance -> var or method():
     static $instance;
@@ -34,9 +34,6 @@ class TC_ressources {
 	 * @since Customizr 1.1
 	 */
 	  function tc_enqueue_customizr_styles() {
-	  	 //record for debug
-      	
-      	
 	    wp_register_style( 
 	      'customizr-skin' ,
 	      TC_init::$instance -> tc_active_skin(),
@@ -48,7 +45,7 @@ class TC_ressources {
 	    //enqueue skin
 	    wp_enqueue_style( 'customizr-skin' );
 
-	    //enqueue WP style sheet
+	    //enqueue WP stylesheet
 	    wp_enqueue_style( 
 	    	'customizr-style' , 
 	    	get_stylesheet_uri() , 
@@ -72,9 +69,6 @@ class TC_ressources {
 	 * @since Customizr 1.0
 	 */
 	 function tc_enqueue_customizr_scripts() {
-	  	//record for debug
-	  	
-
 	    //wp scripts
 	  	if ( is_singular() && get_option( 'thread_comments' ) ) {
 		    wp_enqueue_script( 'comment-reply' );
@@ -110,23 +104,39 @@ class TC_ressources {
 		//Smooth scroll on click option : filtered to allow easy disabling if needed (conflict)
 		$smooth_scroll		= apply_filters( 'tc_smooth_scroll', esc_attr( tc__f( '__get_option' , 'tc_link_scroll') ) );
 
+		global $wp_query;
+		//has the post comments ? adds a boolean parameter in js
+		$has_post_comments = ( 0 != $wp_query -> post_count && comments_open() && get_comments_number() != 0 ) ? true : false;
+
 		//adds the jquery effect library if smooth scroll is enabled => easeOutExpo effect
 		if ( $smooth_scroll ) {
 			wp_enqueue_script( 'jquery-effects-core');
 		}
 
+		//Gets the left and right sidebars class for js actions
+		$left_sb_class      = sprintf('.%1$s.left.tc-sidebar',
+                            	apply_filters('tc_left_sidebar_class' , 'span3' )
+      	);
+      	$right_sb_class      = sprintf('.%1$s.right.tc-sidebar',
+                            	apply_filters('tc_right_sidebar_class' , 'span3' )
+      	);
+
 		wp_localize_script( 
 	        'tc-scripts', 
-	        'TCParams', 
-		        apply_filters('tc_js_params' , array(
-			          	'FancyBoxState' 		=> $tc_fancybox,
-			          	'FancyBoxAutoscale' 	=> $autoscale,
-			          	'SliderName' 			=> $js_slidername,
-			          	'SliderDelay' 			=> $js_sliderdelay,
-			          	'SliderHover'			=> $sliderhover,
-			          	'SmoothScroll'			=> $smooth_scroll ? 'easeOutExpo' : 'linear'
-		        	)
-		       	)//end of filter
+	        'TCParams',
+	        apply_filters('tc_js_front_end_params' , array(
+		          	'FancyBoxState' 		=> $tc_fancybox,
+		          	'FancyBoxAutoscale' 	=> $autoscale,
+		          	'SliderName' 			=> $js_slidername,
+		          	'SliderDelay' 			=> $js_sliderdelay,
+		          	'SliderHover'			=> $sliderhover,
+		          	'SmoothScroll'			=> $smooth_scroll ? 'easeOutExpo' : 'linear',
+		          	'ReorderBlocks' 		=> esc_attr( tc__f( '__get_option' , 'tc_block_reorder') ),
+		          	'HasComments' 			=> $has_post_comments,
+		          	'LeftSidebarClass' 		=> $left_sb_class,
+		          	'RightSidebarClass' 	=> $right_sb_class,
+	        	)
+	       	)//end of filter
          );
 
 
@@ -159,8 +169,6 @@ class TC_ressources {
      * @since Customizr 2.0.7
      */
     function tc_write_custom_css() {
-    	//record for debug
-    	
         $tc_custom_css      	= esc_html( tc__f( '__get_option' , 'tc_custom_css') );
         $tc_top_border      	= esc_attr( tc__f( '__get_option' , 'tc_top_border') );
         ?>

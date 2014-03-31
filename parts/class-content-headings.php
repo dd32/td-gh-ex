@@ -41,21 +41,26 @@ class TC_headings {
       //404
       if ( is_404() ) {
         $header_class   = 'entry-header';
-        $content    = sprintf('<h1 class="entry-title %1$s">%2$s</h1>',
+        $content        = sprintf('<h1 class="entry-title %1$s">%2$s</h1>',
               apply_filters( 'tc_archive_icon', '' ),
               apply_filters( 'tc_404_title' , __( 'Ooops, page not found' , 'customizr' ) )
          );
+        $content        = apply_filters( 'tc_404_header_content', $content );
       }
 
       //search results
       if ( is_search() && !is_singular() ) {
         $header_class   = 'search-header';
-        $content    = sprintf( '<h1 class="%1$s">%2$s%3$s %4$s </h1>',
+        $content        = sprintf( '<div class="row-fluid"><div class="%1$s"><h1 class="%2$s">%3$s%4$s %5$s </h1></div><div class="%6$s">%7$s</div></div>',
+              apply_filters( 'tc_search_result_header_title_class', 'span8' ),
               apply_filters( 'tc_archive_icon', 'format-icon' ),
               have_posts() ? '' :  __( 'No' , 'customizr' ).'&nbsp;' ,
               apply_filters( 'tc_search_results_title' , __( 'Search Results for :' , 'customizr' ) ),
-              '<span>' . get_search_query() . '</span>'
+              '<span>' . get_search_query() . '</span>',
+              apply_filters( 'tc_search_result_header_form_class', 'span4' ),
+              have_posts() ? get_search_form(false) : ''
         );
+        $content       = apply_filters( 'tc_search_results_header_content', $content );
       }
       
       //author's posts page
@@ -84,6 +89,7 @@ class TC_headings {
             )
           );
         }
+        $content       = apply_filters( 'tc_author_header_content', $content );
       }
 
       //category archives
@@ -99,7 +105,7 @@ class TC_headings {
             category_description()
           );
         }
-
+        $content       = apply_filters( 'tc_category_archive_header_content', $content );
       }
 
       //tag archives
@@ -115,6 +121,7 @@ class TC_headings {
             tag_description()
           );
         }
+        $content       = apply_filters( 'tc_tag_archive_header_content', $content );
       }
 
       //time archives
@@ -123,10 +130,11 @@ class TC_headings {
         $archive_type   = is_month() ? sprintf( __( 'Monthly Archives: %s' , 'customizr' ), '<span>' . get_the_date( _x( 'F Y' , 'monthly archives date format' , 'customizr' ) ) . '</span>' ) : $archive_type;
         $archive_type   = is_year() ? sprintf( __( 'Yearly Archives: %s' , 'customizr' ), '<span>' . get_the_date( _x( 'Y' , 'yearly archives date format' , 'customizr' ) ) . '</span>' ) : $archive_type;
         $header_class   = 'archive-header';
-        $content    = sprintf('<h1 class="%1$s">%2$s</h1>',
+        $content        = sprintf('<h1 class="%1$s">%2$s</h1>',
           apply_filters( 'tc_archive_icon', 'format-icon' ),
           $archive_type
         );
+        $content        = apply_filters( 'tc_time_archive_header_content', $content );
       }
 
       //renders the heading
@@ -165,24 +173,19 @@ class TC_headings {
      */
     function tc_content_headings() {
       //we don't display titles for some post formats
-      if( in_array( get_post_format(), TC_init::$instance -> post_formats_with_no_header ) )
+      $post_formats_with_no_header = apply_filters( 'tc_post_formats_with_no_header', TC_init::$instance -> post_formats_with_no_header );
+      if( in_array( get_post_format(), $post_formats_with_no_header ) )
         return;
 
       //by default we don't display the title of the front page
       if( apply_filters('tc_show_page_title', is_front_page() && 'page' == get_option( 'show_on_front' ) ) )
         return
-
-      
-
-      ob_start();
       ?>
 
         <header class="<?php echo apply_filters( 'tc_content_header_class', 'entry-header' ); ?>">
           
           <?php 
           do_action('__before_content_title');
-
-          
 
           //adds filters for comment bubble style and icon
           $bubble_style                      = ( 0 == get_comments_number() ) ? 'style="color:#ECECEC" ':'';
@@ -203,6 +206,10 @@ class TC_headings {
           $edit_enabled                      = ( (is_user_logged_in()) && current_user_can('edit_posts') && !is_page() ) ? true : $edit_enabled;
           $edit_enabled                      = apply_filters( 'tc_edit_in_title', $edit_enabled );
 
+          //declares vars
+          $html = '';
+          $filter_args = array();
+
           if ( (get_the_title() != null) ) {
             
             //gets the post/page title
@@ -217,10 +224,10 @@ class TC_headings {
                             );//end sprintf
             }
 
-            //echoes the full title
-            echo apply_filters(
-                    'tc_content_header_content',
-                    sprintf('<%1$s class="entry-title %2$s">%3$s %4$s %5$s</%1$s>',
+            $filter_args        =  array( $bubble_comment, $comments_enabled, $edit_enabled , $tc_heading_title );
+
+            //renders the full title
+            $html = sprintf('<%1$s class="entry-title %2$s">%3$s %4$s %5$s</%1$s>',
                             is_singular() ? apply_filters( 'tc_content_title_tag' , 'h1' ) : apply_filters( 'tc_content_title_tag' , 'h2' ),
 
                             apply_filters( 'tc_content_title_icon', 'format-icon' ),
@@ -239,9 +246,10 @@ class TC_headings {
                                               get_edit_post_link(),
                                               __( 'Edit' , 'customizr' )
                                               ) : ''
-                    )//end sprintf
-            );//end of filter
+            );//end sprintf
+
           }//end if title exists
+          echo apply_filters( 'tc_content_headings' , $html, $filter_args );
 
           do_action('__after_content_title');
 
@@ -251,10 +259,6 @@ class TC_headings {
         </header><!-- .entry-header -->
 
       <?php
-      $html = ob_get_contents();
-      ob_end_clean();
-      echo apply_filters( 'tc_content_headings', $html );
-
-    }
+    }//end of function
 
 }//end of class

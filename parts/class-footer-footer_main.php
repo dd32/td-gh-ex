@@ -43,26 +43,29 @@ class TC_footer_main {
     	
     	//checks if there's at least one active widget area in footer.php.php
     	$status 					= false;
-    	foreach ( TC_init::$instance -> footer_widgets as $key => $area ) {
+    	$footer_widgets 			= apply_filters( 'tc_footer_widgets', TC_init::$instance -> footer_widgets );
+    	foreach ( $footer_widgets as $key => $area ) {
     		$status = is_active_sidebar( $key ) ? true : $status;
     	}
 		if ( !$status )
 			return;
 		
-		//hack to render white color icons if skin is grey
-		$skin_class 	= ( 'grey.css' == tc__f('__get_option' , 'tc_skin') ) ? 'white-icons' : '';
+		//hack to render white color icons if skin is grey or black
+		$skin_class 	= ( in_array( tc__f('__get_option' , 'tc_skin') , array('grey.css' , 'black.css')) ) ? 'white-icons' : '';
 
 		ob_start();
 		?>
 			<div class="container footer-widgets <?php echo $skin_class ?>">
 				<div class="row widget-area" role="complementary">
 					
-					<?php foreach ( TC_init::$instance -> footer_widgets as $key => $area )  : ?>
+					<?php foreach ( $footer_widgets as $key => $area )  : ?>
 
 						<?php if ( is_active_sidebar( $key ) ) : ?>
 							
-							<div id="<?php echo $key; ?>" class="<?php echo apply_filters( $key . '_widget_class', 'span4' ) ?>">
-								<?php dynamic_sidebar( $key ); ?>
+							<div id="<?php echo $key; ?>" class="<?php echo apply_filters( "{$key}_widget_class", "span4" ) ?>">
+								<?php do_action("__before_{$key}_widgets"); ?>
+									<?php dynamic_sidebar( $key ); ?>
+								<?php do_action("__after_{$key}_widgets"); ?>
 							</div>
 
 						<?php endif; ?>
@@ -72,8 +75,8 @@ class TC_footer_main {
 			</div><!--.footer-widgets -->
 		<?php
 		$html = ob_get_contents();
-        ob_end_clean();
-        echo apply_filters( 'tc_widgets_footer', $html );
+        if ($html) ob_end_clean();
+        echo apply_filters( 'tc_widgets_footer', $html , $footer_widgets );
 	}//end of function
 
 
@@ -105,7 +108,7 @@ class TC_footer_main {
       	</div><!-- .colophon -->
     	<?php
     	$html = ob_get_contents();
-        ob_end_clean();
+        if ($html) ob_end_clean();
         echo apply_filters( 'tc_colophon_display', $html );
     }
 

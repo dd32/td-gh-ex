@@ -38,40 +38,37 @@ class TC_init {
 
         self::$instance =& $this;
         //Default layout settings
-        $this -> global_layout      = apply_filters( 
-                                      'tc_global_layout',
-                                      array(
-                                          'r' => array(
-                                              'content'       => 'span9',
-                                              'sidebar'       => 'span3',
-                                              'customizer'    => __( 'Right sidebar' , 'customizr' ),
-                                              'metabox'       => __( 'Right sidebar' , 'customizr' ),
-                                          ),
-                                          'l' => array(
-                                              'content'       => 'span9',
-                                              'sidebar'       => 'span3',
-                                              'customizer'    => __( 'Left sidebar' , 'customizr' ),
-                                              'metabox'       => __( 'Left sidebar' , 'customizr' ),
-                                          ),
-                                          'b' => array(
-                                              'content'       => 'span6',
-                                              'sidebar'       => 'span3',
-                                              'customizer'    => __( '2 sidebars : Right and Left' , 'customizr' ),
-                                              'metabox'       => __( '2 sidebars : Right and Left' , 'customizr' ),
-                                          ),
-                                          'f' => array(
-                                              'content'       => 'span12',
-                                              'sidebar'       => false,
-                                              'customizer'    => __( 'No sidebars : full width layout', 'customizr' ),
-                                              'metabox'       => __( 'No sidebars : full width layout' , 'customizr' ),
-                                          ),
-                                      )
+        $this -> global_layout      = array(
+                                      'r' => array(
+                                          'content'       => 'span9',
+                                          'sidebar'       => 'span3',
+                                          'customizer'    => __( 'Right sidebar' , 'customizr' ),
+                                          'metabox'       => __( 'Right sidebar' , 'customizr' ),
+                                      ),
+                                      'l' => array(
+                                          'content'       => 'span9',
+                                          'sidebar'       => 'span3',
+                                          'customizer'    => __( 'Left sidebar' , 'customizr' ),
+                                          'metabox'       => __( 'Left sidebar' , 'customizr' ),
+                                      ),
+                                      'b' => array(
+                                          'content'       => 'span6',
+                                          'sidebar'       => 'span3',
+                                          'customizer'    => __( '2 sidebars : Right and Left' , 'customizr' ),
+                                          'metabox'       => __( '2 sidebars : Right and Left' , 'customizr' ),
+                                      ),
+                                      'f' => array(
+                                          'content'       => 'span12',
+                                          'sidebar'       => false,
+                                          'customizer'    => __( 'No sidebars : full width layout', 'customizr' ),
+                                          'metabox'       => __( 'No sidebars : full width layout' , 'customizr' ),
+                                      ),
         );
         
         //Default images sizes
-        $this -> tc_thumb_size      = apply_filters( 'tc_thumb_size'       , array('width' => 270 , 'height' => 250, 'crop' => true ) );
-        $this -> slider_full_size   = apply_filters( 'tc_slider_full_size' , array('width' => 99999 , 'height' => 500, 'crop' => true ) );
-        $this -> slider_size        = apply_filters( 'tc_slider_size'      , array('width' => 1170 , 'height' => 500, 'crop' => true ) );
+        $this -> tc_thumb_size      = array('width' => 270 , 'height' => 250, 'crop' => true );
+        $this -> slider_full_size   = array('width' => 9999 , 'height' => 500, 'crop' => true );
+        $this -> slider_size        = array('width' => 1170 , 'height' => 500, 'crop' => true );
 
         //Default skins array
         $this -> skins              =  array( 
@@ -86,13 +83,12 @@ class TC_init {
         );
 
         //Default featured pages ids
-        $this -> fp_ids             = apply_filters( 'tc_featured_pages_ids' , array( 'one' , 'two' , 'three' ) );
+        $this -> fp_ids             = array( 'one' , 'two' , 'three' );
 
         //Default social networks
-        $default_socials            = apply_filters( 'tc_default_socials',
-                          array(
+        $this -> socials            = array(
                                     'tc_rss'            => array(
-                                                            'link_title'    => __( 'Suscribe to my rss feed' , 'customizr' ),
+                                                            'link_title'    => __( 'Subscribe to my rss feed' , 'customizr' ),
                                                             'option_label'  => __( 'RSS feed (default is the wordpress feed)' , 'customizr' ),
                                                             'default'       => get_bloginfo( 'rss_url' )
                                                           ),
@@ -146,15 +142,11 @@ class TC_init {
                                                             'option_label'  => __( 'LinkedIn profile url' , 'customizr' ),
                                                             'default'       => null
                                                           )
-                                )//end of social array
-        );//end of filter
+        );//end of social array
 
-        //declares an empty filtered array to allow custom socials addition
-        $this -> socials            = array_merge( $default_socials , apply_filters('tc_custom_socials', array()) );
 
         //Default sidebar widgets
-        $this -> sidebar_widgets    = apply_filters( 'tc_sidebar_widgets', 
-                                       array(   
+        $this -> sidebar_widgets    = array(   
                                           'right'         => array(
                                                           'name'                 => __( 'Right Sidebar' , 'customizr' ),
                                                           'description'          => __( 'Appears on posts, static pages, archives and search pages' , 'customizr' )
@@ -163,12 +155,10 @@ class TC_init {
                                                           'name'                 => __( 'Left Sidebar' , 'customizr' ),
                                                           'description'          => __( 'Appears on posts, static pages, archives and search pages' , 'customizr' )
                                           )
-                                      )//end of array
-        );//end of filter
+        );//end of array
 
         //Default footer widgets
-        $this -> footer_widgets     = apply_filters( 'tc_footer_widgets', 
-                                      array(
+        $this -> footer_widgets     = array(
                                           'footer_one'    => array(
                                                           'name'                 => __( 'Footer Widget Area One' , 'customizr' ),
                                                           'description'          => __( 'Just use it as you want !' , 'customizr' )
@@ -181,46 +171,35 @@ class TC_init {
                                                           'name'                 => __( 'Footer Widget Area Three' , 'customizr' ),
                                                           'description'          => __( 'Just use it as you want !' , 'customizr' )
                                           )
-                                      )//end of array
-        );//end of filter
-
-        //declares an empty filtered array to allow custom widgets addition
-        $this -> widgets            = array_merge( $this -> sidebar_widgets , $this -> footer_widgets , apply_filters( 'tc_custom_widgets', array() ) );
+        );//end of array
 
         //Default post list layout
-        $this -> post_list_layout   = apply_filters( 'tc_post_list_layout',
-                                      array(
+        $this -> post_list_layout   = array(
                                         'content'           => 'span8',
                                         'thumb'             => 'span4',
                                         'show_thumb_first'  => false,
                                         'alternate'         => true
-                                      )
         );
 
         //Defines post formats with no headers
-        $this -> post_formats_with_no_header   = apply_filters( 'tc_post_formats_with_no_header', array( 'aside' , 'status' , 'link' , 'quote' ) );
+        $this -> post_formats_with_no_header   = array( 'aside' , 'status' , 'link' , 'quote' );
 
         //Default 404 content
-        $this -> content_404        = apply_filters( 'tc_404',
-                                      array(
+        $this -> content_404        = array(
                                         'quote'             => __( 'Speaking the Truth in times of universal deceit is a revolutionary act.' , 'customizr' ),
                                         'author'            => __( 'George Orwell' , 'customizr' ),
                                         'text'              => __( 'Sorry, but the requested page is not found. You might try a search below.' , 'customizr' )
-                                    )
-        );//end filter
+        );
 
         //Default no search result content
-        $this -> content_no_results = apply_filters( 'tc_no_results',
-                                      array(
+        $this -> content_no_results = array(
                                         'quote'             => __( 'Success is the ability to go from one failure to another with no loss of enthusiasm...' , 'customizr' ),
                                         'author'            => __( 'Sir Winston Churchill' , 'customizr' ),
                                         'text'              => __( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.' , 'customizr' )
-                                    )
-        );//end filter
+        );
 
         //Default slides content
-        $this -> default_slides     = apply_filters( 'tc_default_slides',
-                                      array(
+        $this -> default_slides     = array(
                                           1 => array(
                                             'title'         =>  __( 'Customizr is a clean responsive theme' , 'customizr' ),
                                             'text'          =>  __( 'Let your creativity speak and easily customiz\'it the way you want!' , 'customizr' ),
@@ -261,9 +240,8 @@ class TC_init {
                                                                         TC_BASE_URL.'inc/img/ampoules.jpg',
                                                                         __( 'Create beautiful sliders' , 'customizr' )
                                                                 )
-                                          ),
-                                      )//end of slides array
-        );//end of filter
+                                          )
+        );///end of slides array
 
 
         //adds the text domain, various theme supports : editor style, automatic-feed-links, post formats, navigation menu, post-thumbnails
@@ -287,12 +265,9 @@ class TC_init {
      */
 
     function tc_customizr_setup() {
-      //record for debug
-      
-
       /* Set default content width for post images and media. */
       global $content_width;
-      if( ! isset( $content_width ) )   { $content_width = 1170; }
+      if( ! isset( $content_width ) )   { $content_width = apply_filters( 'tc_content_width' , 1170 ); }
 
       /*
        * Makes Customizr available for translation.
@@ -328,15 +303,15 @@ class TC_init {
         remove_theme_support( 'custom-header' );*/
 
       //post thumbnails for featured pages and post lists (archive, search, ...)
-      $tc_thumb_size    = $this -> tc_thumb_size;
+      $tc_thumb_size    = apply_filters( 'tc_thumb_size' , $this -> tc_thumb_size );
       add_image_size( 'tc-thumb' , $tc_thumb_size['width'] , $tc_thumb_size['height'], $tc_thumb_size['crop'] );
 
       //slider full width
-      $slider_full_size = $this -> slider_full_size;
+      $slider_full_size = apply_filters( 'tc_slider_full_size' , $this -> slider_full_size );
       add_image_size( 'slider-full' , $slider_full_size['width'] , $slider_full_size['height'], $slider_full_size['crop'] );
 
       //slider boxed
-      $slider_size      = $this -> slider_size;
+      $slider_size      = apply_filters( 'tc_slider_size' , $this -> slider_size );
       add_image_size( 'slider' , $slider_size['width'] , $slider_size['height'], $slider_size['crop'] );
 
       //add support for plugins (added in v3.1.0)
@@ -503,7 +478,7 @@ class TC_init {
               <?php do_action( '__before_main_container' ); ##hook of the featured page (priority 10) and breadcrumb (priority 20)...and whatever you need! ?>
               
               <div class="container" role="main">
-                  <div class="row">
+                  <div class="<?php echo tc__f( 'tc_column_content_wrapper_classes' , 'row column-content-wrapper' ) ?>">
 
                       <?php do_action( '__before_article_container'); ##hook of left sidebar?>
                           
@@ -640,7 +615,11 @@ class TC_init {
       //checks if retina is enabled in options
       if ( 0 == tc__f( '__get_option' , 'tc_retina_support' ) )
         return;
+
       $meta = wp_get_attachment_metadata( $attachment_id );
+      if ( !isset( $meta['file']) )
+        return;
+      
       $upload_dir = wp_upload_dir();
       $path = pathinfo( $meta['file'] );
       foreach ( $meta as $key => $value ) {

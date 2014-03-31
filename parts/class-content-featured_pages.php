@@ -43,7 +43,7 @@ class TC_featured_pages {
           return;
 
     		//gets the featured pages array and sets the fp layout
-    		$fp_ids                         = TC_init::$instance -> fp_ids;
+    		$fp_ids                         = apply_filters( 'tc_featured_pages_ids' , TC_init::$instance -> fp_ids);
         $fp_nb                          = count($fp_ids);
         $fp_per_row                     = apply_filters( 'tc_fp_per_line', 3 );
         
@@ -96,7 +96,7 @@ class TC_featured_pages {
 
        <?php
         $html = ob_get_contents();
-        ob_end_clean();
+        if ($html) ob_end_clean();
         echo apply_filters( 'tc_fp_block_display' , $html, $args );
 	   }
 
@@ -138,7 +138,7 @@ class TC_featured_pages {
         }
           
         else {
-            $featured_page_id               = esc_attr( tc__f( '__get_option' , 'tc_featured_page_'.$fp_single_id) );
+            $featured_page_id               = apply_filters( 'tc_fp_id', esc_attr( tc__f( '__get_option' , 'tc_featured_page_'.$fp_single_id) ), $fp_single_id );
             $featured_page_link             = apply_filters( 'tc_fp_link_url', get_permalink( $featured_page_id ), $fp_single_id );
             $featured_page_title            = apply_filters( 'tc_fp_title', get_the_title( $featured_page_id ), $fp_single_id, $featured_page_id );
             $featured_text                  = apply_filters( 'tc_fp_text', tc__f( '__get_option' , 'tc_featured_text_'.$fp_single_id ), $fp_single_id, $featured_page_id );
@@ -157,12 +157,13 @@ class TC_featured_pages {
               
             //set the image : uses thumbnail if any then >> the first attached image then >> a holder script
             $fp_img_size                    = apply_filters( 'tc_fp_img_size' , 'tc-thumb' );
+            $fp_img_id                      = apply_filters( 'fp_img_id', false , $fp_single_id , $featured_page_id );
 
-            if ( has_post_thumbnail( $featured_page_id) ) {
-                  $fp_img_id                = get_post_thumbnail_id( $featured_page_id);
+            if ( has_post_thumbnail( $featured_page_id ) && ! $fp_img_id ) {
+                  $fp_img_id                = get_post_thumbnail_id( $featured_page_id );
 
                   //check if tc-thumb size exists for attachment and return large if not
-                  $image                    = wp_get_attachment_image_src( $fp_img_id, $fp_img_size);
+                  $image                    = wp_get_attachment_image_src( $fp_img_id , $fp_img_size );
                   $fp_img_size              = ( null == $image[3] ) ? 'medium' : $fp_img_size ;
 
                   $fp_img                   = get_the_post_thumbnail( $featured_page_id , $fp_img_size);
@@ -182,7 +183,7 @@ class TC_featured_pages {
                     'post_mime_type'        =>  array( 'image/jpeg' , 'image/gif' , 'image/jpg' , 'image/png' )
                     ); 
 
-                    $attachments            = get_posts( $tc_args);
+                    $attachments            =  ! $fp_img_id ? get_posts( $tc_args) : get_post( $fp_img_id );
 
                     if ( $attachments) {
 
@@ -198,12 +199,10 @@ class TC_featured_pages {
 
                     }//end if
 
-              }//end else
+              }
 
               //finally we define a default holder if no thumbnail found or page is protected
-              $fp_img                 = apply_filters ('fp_img_src' ,
-                                      ( !isset( $fp_img) || post_password_required($featured_page_id) ) ? $fp_holder_img : $fp_img
-                                      );
+              $fp_img                 = apply_filters ('fp_img_src' , ( ! isset( $fp_img) || post_password_required($featured_page_id) ) ? $fp_holder_img : $fp_img , $fp_single_id , $featured_page_id );
           }//end if
 
           //Let's render this
@@ -223,30 +222,38 @@ class TC_featured_pages {
                    $fp_img
                 );
               }//end if image enabled check
-          
-              printf('<%1$s>%2$s</%1$s>',
-                apply_filters( 'tc_fp_title_tag' , 'h2' ),
-                $featured_page_title
-                );
+              
 
-              printf('<p class="fp-text-%1$s">%2$s</p>',
-                $fp_single_id,
-                $text
+              //title block
+              $tc_fp_title_block  = sprintf('<%1$s>%2$s</%1$s>',
+                                  apply_filters( 'tc_fp_title_tag' , 'h2' ),
+                                  $featured_page_title
               );
+              echo apply_filters( 'tc_fp_title_block' , $tc_fp_title_block , $featured_page_title );
 
-              printf('<a class="%1$s" href="%2$s" title="%3$s">%4$s</a>',
-                apply_filters( 'tc_fp_button_class' , 'btn btn-primary fp-button', $fp_single_id ),
-                $featured_page_link,
-                $featured_page_title,
-                apply_filters( 'tc_fp_button_text' , esc_attr( tc__f( '__get_option' , 'tc_featured_page_button_text') ) , $fp_single_id )
+              //text block
+              $tc_fp_text_block   = sprintf('<p class="fp-text-%1$s">%2$s</p>',
+                                  $fp_single_id,
+                                  $text
               );
+              echo apply_filters( 'tc_fp_text_block' , $tc_fp_text_block , $fp_single_id , $text);
+
+              //button block
+              $tc_fp_button_block = sprintf('<a class="%1$s" href="%2$s" title="%3$s">%4$s</a>',
+                                  apply_filters( 'tc_fp_button_class' , 'btn btn-primary fp-button', $fp_single_id ),
+                                  $featured_page_link,
+                                  $featured_page_title,
+                                  apply_filters( 'tc_fp_button_text' , esc_attr( tc__f( '__get_option' , 'tc_featured_page_button_text') ) , $fp_single_id )
+              );
+              echo apply_filters( 'tc_fp_button_block' , $tc_fp_button_block , $featured_page_link , $featured_page_title , $fp_single_id );
+
             ?>
 
           </div><!-- /.widget-front -->
           
           <?php
           $html = ob_get_contents();
-          ob_end_clean();
+          if ($html) ob_end_clean();
           return apply_filters( 'tc_fp_single_display' , $html, $fp_single_id, $show_img, $fp_img, $featured_page_link, $featured_page_title, $text );
       }//end of function
 

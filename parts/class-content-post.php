@@ -58,7 +58,7 @@ class TC_post {
       do_action( '__after_content' );
                   
       $html = ob_get_contents();
-      ob_end_clean();
+      if ($html) ob_end_clean();
 
       echo apply_filters( 'tc_post_content', $html );
     }

@@ -33,6 +33,59 @@ The exceptions to this license are as follows:
 
 
 #######################  Changelog ######################
+= 3.1.10 =
+* fixed : (php : TC_init::tc_plugins_compatibility() , custom-page.php) WooCommerce compatibility issue fixed.
+* added : (TC_customize::tc_customize_register() , TC_resources::tc_enqueue_customizr_scripts() , tc_script.js ) New option in customizer : Enable/Disable block reordering for smartphone viewport.
+
+
+= 3.1.9 =
+* fixed : (js  : tc_scripts.js , php : index.php ) responsive : dynamic content block position bug fixed in tc_script.js, the wrapper had to be more specific to avoid block duplication when inserting other .row inside main content. Thanks to <a href="http://www.themesandco.com/author/eri_trabiccolo/" target="_blank">Rocco Aliberti</a>.
+* fixed : (php : TC_resources::tc_enqueue_customizr_scripts() ) comment : notice on empty archives due to the function comments_open(). A test on  0 != $wp_query -> post_count has been added in TC_resources::tc_enqueue_customizr_scripts(). Thanks to <a href="http://www.themesandco.com/author/eri_trabiccolo/" target="_blank">Rocco Aliberti</a>.
+* improved : (js  : tc_scripts.js) responsive : the sidebar classes are set dynamically with a js localized var using the tc_{$position}_sidebar_class filter
+
+= 3.1.8 =
+* fixed : (js) responsive : dynamic content block position bug fixed in tc_script.js
+
+
+= 3.1.7 =
+* fixed : (css) : icons rendering for chrome
+* improved : (css) : footer white icons also for black skin
+* added : (php) utils : new filter with 2 parameters to tc_get_option
+* added : (php) featured pages : new filter tc_fp_id for the featured pages
+* added : (php) featured pages : new parameters added to the fp_img_src filter
+* improved : (php) metaboxes : no metaboxes for acf post types
+* improved : (js) responsive : dynamic content block position on resize hase been improved in tc_script.js
+* fixed : (php) Image size : slider full size sets to 9999 instead of 99999 => was no compatible with Google App engine
+* improved : (php) slider : make it easier to target individual slides with a unique class/or id
+* added : (php) footer : dynamic actions added inside the widget wrapper
+* improved : (php) footer : additional parameter for the tc_widgets_footer filter
+* improved : (php)(js) comments : Comment reply link the whole button is now clickable
+* fixed : (html) Google Structured Data : addition of the "updated" class in entry-date
+
+
+= 3.1.6 =
+* added : (php)(js) customizer controls : new filter for localized params
+* added : (php) featured pages : new filters for title, excerpt and button blocks
+* added : (php) search : form in the header if any results are found
+* improved : (php) body tag : "itemscope itemtype="http://schema.org/WebPage" included in the 'tc_body_attributes' filter hook
+* improved : (php) overall code : check added on ob_end_clean()
+* improved : (php) headings : new filters by conditional tags
+* improved : (php) comments : 'comment_text' WP built-in filter has been added in the comment callback function
+* fixed : (js) submenu opening on click problem : [data-toggle="dropdown"] links are excluded from smoothscroll function
+* fixed : (php) compatibility with NEXTGEN plugin : fixed ob_start() in class-content-headings::tc_content_headings()
+
+= 3.1.5 =
+* fixed : (php) child themes bug : child theme users can now override the Customizr files with same path/name.php.
+
+= 3.1.4 =
+* fixed : (css) featured pages : another responsive thumbnails alignment for max-width: 979px
+
+= 3.1.3 =
+* fixed : (css) featured pages : responsive thumbnails alignment
+
+= 3.1.2 =
+* improved : (php) minor file change : the class__.php content has been moved in functions.php
+
 = 3.1.1 =
 * added : (language) Turkish : thanks to <a href="http://www.ahmethakanergun.com/">Ahmet Hakan Ergün</a>
 * added : (css) customizer : some styling

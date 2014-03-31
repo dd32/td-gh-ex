@@ -41,8 +41,6 @@ class TC_post_navigation {
 
       if( !apply_filters('tc_show_post_navigation', $post_navigation_bool ) )
         return;
-
-      
       
       global $wp_query;
 
@@ -130,7 +128,7 @@ class TC_post_navigation {
 
       <?php
       $html = ob_get_contents();
-      ob_end_clean();
+      if ($html) ob_end_clean();
       echo apply_filters( 'tc_post_nav' , $html );
     }
 
