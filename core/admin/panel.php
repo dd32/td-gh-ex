@@ -11,10 +11,14 @@
 
 	function lookilite_mainpanel( $panel ) { 
 	
+	global $wp_version;
+
 	lookilite_save_option ( $panel );
 	
 	if (!isset($_GET['tab']))  { $_GET['tab'] = "General"; }
-	
+
+	if ( ( $wp_version >= 3.8 ) && ( is_admin()) ) { $lookiliteclasses = 'class="wp-8"'; } else { $lookiliteclasses = "";}
+
 	foreach ($panel as $element) {
 
 		switch ( $element['type'] ) { 
@@ -31,7 +35,7 @@
                 
 				<?php lookilite_message($panel); ?>
                 
-                <div id="tabs">
+                <div id="tabs" <?php echo $lookiliteclasses; ?>>
 
                 <ul>
     

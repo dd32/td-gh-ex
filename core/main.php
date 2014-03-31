@@ -15,22 +15,6 @@ if ( ! isset( $content_width ) )
 	$content_width = 1170;
 
 /*-----------------------------------------------------------------------------------*/
-/* ADMIN CLASS */
-/*-----------------------------------------------------------------------------------*/   
-
-function lookilite_admin_body_class( $classes ) {
-	
-	global $wp_version;
-	
-	if ( ( $wp_version >= 3.8 ) && ( is_admin()) ) {
-		$classes .= 'wp-8';
-	}
-		return $classes;
-}
-	
-add_filter( 'admin_body_class', 'lookilite_admin_body_class' );
-
-/*-----------------------------------------------------------------------------------*/
 /* POST CLASS */
 /*-----------------------------------------------------------------------------------*/   
 
@@ -87,15 +71,6 @@ add_filter( 'wp_title', 'lookilite_title', 10, 2 );
 /*-----------------------------------------------------------------------------------*/   
 
 load_theme_textdomain('lookilite', get_template_directory() . '/languages');
-
-/*-----------------------------------------------------------------------------------*/
-/* SHORTCODES */
-/*-----------------------------------------------------------------------------------*/   
-
-add_filter('widget_text', 'do_shortcode');
-
-remove_filter( 'the_content', 'wpautop' );
-add_filter( 'the_content', 'wpautop' , 12);
 
 /*-----------------------------------------------------------------------------------*/
 /* REQUIRE FUNCTION */
@@ -391,18 +366,6 @@ function lookilite_paged() {
 	return $paged;
 	
 }
-
-/*-----------------------------------------------------------------------------------*/
-/* OEMBED */
-/*-----------------------------------------------------------------------------------*/   
-
-function lookilite_oembed_soundcloud(){
-	wp_oembed_add_provider( 'http://soundcloud.com/*', 'http://soundcloud.com/oembed' );
-	wp_oembed_add_provider( 'https://soundcloud.com/*', 'http://soundcloud.com/oembed' );
-	wp_oembed_add_provider('#https?://(?:api\.)?soundcloud\.com/.*#i', 'http://soundcloud.com/oembed');
-}
-
-add_action('init','lookilite_oembed_soundcloud');
 
 /*-----------------------------------------------------------------------------------*/
 /* PRETTYPHOTO */

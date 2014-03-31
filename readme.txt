@@ -49,7 +49,7 @@ Credits
 
 /** FONTS **/
 
-- Google Web Fonts
+- Google Web Fonts (Fjalla One and Roboto Slab)
 
 -- By Google - http://google.com
 

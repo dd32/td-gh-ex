@@ -16,7 +16,7 @@
             
         </article>
     
-		<?php if (lookilite_setting('lookilite_view_comments') == "on" ) : comments_template(); endif; ?>
+		<?php comments_template(); ?>
         
         <?php endwhile; get_template_part('pagination'); endif;?>
            

@@ -181,7 +181,7 @@ a.btn {
 }
 
 #wrapper.open-sidebar {
-	margin-right:-1px;
+	margin-right:-17px;
 }
 
 /* ===============================================
@@ -360,7 +360,7 @@ nav#mainmenu li li.current-menu-ancestor > a {
 	-webkit-transform: translateX(17px);
 	-ms-transform: translateX(17px);
 	transform: translateX(17px);
-
+	
 }
 
 .scroll-sidebar .post-article {
@@ -1387,7 +1387,11 @@ tr:nth-child(2n+2) {
 		max-width:100%;
 		max-height:40px;
 	}
-	
+
+	#wrapper.open-sidebar {
+		margin-right:0;
+	}
+
 	.scroll-sidebar {
 		right:-100%;
 		width:100%;

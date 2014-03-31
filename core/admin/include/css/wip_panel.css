@@ -98,7 +98,7 @@ h2.title, #poststuff h2 {
 	border-bottom:solid 1px #ccc;
 }
 
-body.wp-8 #tabs ul {
+#tabs.wp-8 ul {
 	height:39px; 
 }
 
@@ -141,10 +141,6 @@ body.wp-8 #tabs ul {
 	font-size:14px
 }
 
-body.wp-8 #tabs.metaboxes li a {
-	padding:10px; 
-}
-
 #tabs.metaboxes li a.delete { 
 	margin:0 0 0 165px; 
 	float:none; 
@@ -153,16 +149,10 @@ body.wp-8 #tabs.metaboxes li a {
 	font-size:14px;
 }
 
-body.wp-8 #tabs li a:hover, 
-body.wp-8 #tabs li.ui-tabs-active a, 
-body.wp-8 #tabs li.ui-state-active a {
+#tabs.wp-8 li a:hover, 
+#tabs.wp-8 li.ui-tabs-active a, 
+#tabs.wp-8 li.ui-state-active a {
 	border-bottom: solid 1px #f1f1f1;
-}
-
-body.wp-8 #tabs.metaboxes li a:hover, 
-body.wp-8 #tabs.metaboxes li.ui-tabs-active a, 
-body.wp-8 #tabs.metaboxes li.ui-state-active a {
-	border-bottom: solid 1px #fff;
 }
 
 #tabs li a:hover, 

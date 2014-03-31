@@ -98,13 +98,6 @@ array( "type" => "begintab",
 	       "val" => "General",
 	       "name" => __( "General","lookilite")),
 	
-	array( "name" => __( "Comments","lookilite"),
-	       "desc" => __( "You want to view the comments after articles?","lookilite"),
-	       "class" => "hidden",
-	       "id" => $shortname."_view_comments",
-	       "type" => "on-off",
-	       "std" => "off"),
-	
 	array( "name" => __( "Custom css","lookilite"),
 	       "desc" => __( "Insert your custom css code","lookilite"),
 	       "id" => $shortname."_custom_css_code",
