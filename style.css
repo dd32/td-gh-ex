@@ -1,8 +1,8 @@
 /*---------------------------------------------------------------------------------
 
 	Theme Name: Hemingway
-	Version: 1.39
-	Description: Hemingway is a clean, beautiful and responsive two-column theme for bloggers. Features responsive design, retina-ready assets, full-width header image with parallax scrolling effect, custom accent color, custom widgets (video, Flickr and Dribbble), page templates and translation-ready code. Included translations: Swedish/svenska.
+	Version: 1.40
+	Description: Hemingway is a clean, beautiful and responsive two-column theme for bloggers. Features responsive design, retina-ready assets, full-width header image with parallax scrolling effect, custom accent color, custom logo upload, custom widgets (video, Flickr and Dribbble), page templates and translation-ready code. Included translations: Swedish/svenska.
 	Tags: black, dark, white, green, two-columns, fluid-layout, responsive-layout, custom-header, custom-menu, custom-colors, featured-images, flexible-header, post-formats, sticky-post, threaded-comments, translation-ready
 	Author: Anders Norén
 	Author URI: http://www.andersnoren.se
@@ -236,6 +236,18 @@ a.more-link,
 
 .header-inner { position: relative; z-index: 2; text-align: center; }
 
+.blog-logo { display: inline-block; }
+
+.blog-logo a,
+.blog-logo img { display: block; }
+
+.blog-logo img {
+	max-height: 250px;
+	width: auto;
+	max-width: 100%;
+	height: auto;
+}
+
 .blog-info {
 	display: inline-block;
 	padding: 30px;
@@ -310,7 +322,7 @@ a.more-link,
 }
 
 .blog-menu a:hover,
-.blog-menu .current_menu_item a { color: #FFF; }
+.blog-menu .current-menu-item a { color: #FFF; }
 
 .blog-menu > .has-children a,
 .blog-menu > .page_item_has_children a { padding-right: 35px; }
@@ -2002,7 +2014,7 @@ img#wpstats { display: none; }
 	}
 	
 	.mobile-menu a:hover,
-	.mobile-menu .current_menu_item a { color: #FFF; }
+	.mobile-menu .current-menu-item a { color: #FFF; }
 	
 	.mobile-menu ul a { width: 100%; }
 	

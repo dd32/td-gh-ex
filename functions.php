@@ -358,6 +358,12 @@ class Hemingway_Customize {
          ) 
       );
       
+      $wp_customize->add_section( 'hemingway_logo_section' , array(
+		    'title'       => __( 'Logo', 'hemingway' ),
+		    'priority'    => 40,
+		    'description' => 'Upload a logo to replace the default site name and description in the header',
+		) );
+      
       //2. Register new settings to the WP database...
       $wp_customize->add_setting( 'accent_color', //No need to use a SERIALIZED name, as `theme_mod` settings already live under one db record
          array(
@@ -367,6 +373,8 @@ class Hemingway_Customize {
             'transport' => 'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
          ) 
       );
+      
+      $wp_customize->add_setting( 'hemingway_logo' );
                   
       //3. Finally, we define the control itself (which links a setting to a section and renders the HTML controls)...
       $wp_customize->add_control( new WP_Customize_Color_Control( //Instantiate the color control class
@@ -379,6 +387,12 @@ class Hemingway_Customize {
             'priority' => 10, //Determines the order this control appears in for the specified section
          ) 
       ) );
+      
+      $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'hemingway_logo', array(
+		    'label'    => __( 'Logo', 'hemingway' ),
+		    'section'  => 'hemingway_logo_section',
+		    'settings' => 'hemingway_logo',
+		) ) );
       
       //4. We can also change built-in settings by modifying properties. For instance, let's make some stuff use live preview JS...
       $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';

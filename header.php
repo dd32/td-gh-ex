@@ -25,7 +25,17 @@
 							
 					<div class="header-inner section-inner">
 					
-						<?php if ( get_bloginfo( 'description' ) || get_bloginfo( 'title' ) ) { ?>
+						<?php if ( get_theme_mod( 'hemingway_logo' ) ) : ?>
+						
+							<div class='blog-logo'>
+							
+						        <a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'title' ) ); ?> &mdash; <?php echo esc_attr( get_bloginfo( 'description' ) ); ?>' rel='home'>
+						        	<img src='<?php echo esc_url( get_theme_mod( 'hemingway_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>'>
+						        </a>
+						        
+						    </div> <!-- /blog-logo -->
+					
+						<?php elseif ( get_bloginfo( 'description' ) || get_bloginfo( 'title' ) ) : ?>
 					
 							<div class="blog-info">
 							
@@ -41,7 +51,7 @@
 							
 							</div> <!-- /blog-info -->
 							
-						<?php } ?>
+						<?php endif; ?>
 									
 					</div> <!-- /header-inner -->
 								

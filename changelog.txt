@@ -1,6 +1,12 @@
 *** Hemingway changelog ***
 
 
+Version 1.40 (2014-03-31)
+-------------------------
+- Added a function for uploading a custom logo in place of the site title and description in the header
+- Fixed the styling of current-menu-item in the navigation
+
+
 Version 1.39 (2014-03-28)
 -------------------------
 - Fixed the styling of form elements
