@@ -405,19 +405,6 @@ function lookilite_oembed_soundcloud(){
 add_action('init','lookilite_oembed_soundcloud');
 
 /*-----------------------------------------------------------------------------------*/
-/* ADMIN MENU */
-/*-----------------------------------------------------------------------------------*/   
-
-function lookilite_option_panel() {
-        global $wp_admin_bar, $wpdb;
-    	$wp_admin_bar->add_menu( array( 'id' => 'lookilite_option', 'title' => '<span> Looki Options </span>', 'href' => get_admin_url() . 'themes.php?page=lookilite_option' ) );
-		$wp_admin_bar->add_menu( array( 'id' => 'get_premium', 'title' => '<span> Get Premium </span>', 'href' => get_admin_url() . 'themes.php?page=getpremium' ) );
-
-}
-
-add_action( 'admin_bar_menu', 'lookilite_option_panel', 1000 );
-
-/*-----------------------------------------------------------------------------------*/
 /* PRETTYPHOTO */
 /*-----------------------------------------------------------------------------------*/   
 

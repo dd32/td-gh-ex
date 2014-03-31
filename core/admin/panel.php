@@ -42,7 +42,7 @@
 					echo "<li ".$class."><a href='themes.php?page=lookilite_option&tab=".str_replace(" ", "", $option)."'>".$name."</a></li>";
 				}
 				?>
-               
+               		<li> <a href="<?php echo esc_url('themes.php?page=getpremium'); ?>"> <?php _e('Get premium version','lookilite'); ?> </a> </li>
                 </ul>
                
                 <?php	

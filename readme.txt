@@ -7,6 +7,11 @@ Looki lite is a great and clean free WordPress blog theme, with a awesome scroll
 Created by ThemeinProgress, http://www.themeinprogress.com 
 Demo: http://www.wpinprogress.com/demo/looki
 
+Instruction
+-------
+
+The sidebar of Looki Lite is into the scrollable sidebar and any widget will be loaded into this area. For view the widgets is necessary open the scrollable sidebar, from the button in the upper right.
+
 
 License
 -------

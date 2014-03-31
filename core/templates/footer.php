@@ -13,7 +13,7 @@
 /* Socials */
 /*-----------------------------------------------------------------------------------*/ 
 
-function lookilite_socials() {
+function lookilite_socials_function() {
 	
 	$socials = array ( 
 		"fa fa-facebook" => "facebook" , 
@@ -67,6 +67,6 @@ function lookilite_socials() {
 	
 }
 
-add_action( 'lookilite_socials_function', 'lookilite_socials', 10, 2 );
+add_action( 'lookilite_socials', 'lookilite_socials_function', 10, 2 );
 
 ?>

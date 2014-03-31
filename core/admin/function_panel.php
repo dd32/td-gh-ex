@@ -11,7 +11,7 @@
 
 function lookilite_add_menu() {
 	global $themename, $adminmenuname, $optionfile;
-	add_theme_page("Looki Options", "Looki Options", 'administrator',  'lookilite_option', 'lookilite_option');
+	add_theme_page("Looki Options", "Theme Options", 'administrator',  'lookilite_option', 'lookilite_option');
 	add_theme_page(__('Get Premium', 'lookilite' ), __('Get Premium', 'lookilite' ), 'administrator',  'getpremium', 'lookilite_getpremium');
 
 }

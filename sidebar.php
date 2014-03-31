@@ -27,6 +27,6 @@
 	
 	?>
     
-    <?php lookilite_socials(); ?>
+    <?php do_action('lookilite_socials'); ?>
     
 </div>
