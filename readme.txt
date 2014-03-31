@@ -57,3 +57,10 @@ and we will include it within the theme from next version update.
 * Used different featured image size for the recent work widget.
 * Small fix in footer text.
 * Fixed a bug which was showing excerpt in the single post view.
+
+= Version 1.0.3 = 
+* Load textdomain function added for the translation. 
+* Some css adjustment for dark skin and primary color option. 
+* Unwanted text removed from text widget.
+* Adjustment for slider part.
+* Some images renamed.

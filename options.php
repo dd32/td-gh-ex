@@ -107,8 +107,8 @@ function optionsframework_options() {
 		'options' 	=> array(
 								'right_sidebar' 	=> SPACIOUS_ADMIN_IMAGES_URL . '/right-sidebar.png',
 								'left_sidebar' 		=> SPACIOUS_ADMIN_IMAGES_URL . '/left-sidebar.png',
-								'no_sidebar_full_width'				=> SPACIOUS_ADMIN_IMAGES_URL . '/no-sidebar-full-width.png',
-								'no_sidebar_content_centered'		=> SPACIOUS_ADMIN_IMAGES_URL . '/no-sidebar-content-centered.png',
+								'no_sidebar_full_width'				=> SPACIOUS_ADMIN_IMAGES_URL . '/no-sidebar-full-width-layout.png',
+								'no_sidebar_content_centered'		=> SPACIOUS_ADMIN_IMAGES_URL . '/no-sidebar-content-centered-layout.png',
 							)
 	);
 
@@ -121,8 +121,8 @@ function optionsframework_options() {
 		'options' 	=> array(
 								'right_sidebar' 	=> SPACIOUS_ADMIN_IMAGES_URL . '/right-sidebar.png',
 								'left_sidebar' 		=> SPACIOUS_ADMIN_IMAGES_URL . '/left-sidebar.png',
-								'no_sidebar_full_width'				=> SPACIOUS_ADMIN_IMAGES_URL . '/no-sidebar-full-width.png',
-								'no_sidebar_content_centered'		=> SPACIOUS_ADMIN_IMAGES_URL . '/no-sidebar-content-centered.png',
+								'no_sidebar_full_width'				=> SPACIOUS_ADMIN_IMAGES_URL . '/no-sidebar-full-width-layout.png',
+								'no_sidebar_content_centered'		=> SPACIOUS_ADMIN_IMAGES_URL . '/no-sidebar-content-centered-layout.png',
 							)
 	);
 
@@ -135,8 +135,8 @@ function optionsframework_options() {
 		'options' 	=> array(
 								'right_sidebar' 	=> SPACIOUS_ADMIN_IMAGES_URL . '/right-sidebar.png',
 								'left_sidebar' 		=> SPACIOUS_ADMIN_IMAGES_URL . '/left-sidebar.png',
-								'no_sidebar_full_width'				=> SPACIOUS_ADMIN_IMAGES_URL . '/no-sidebar-full-width.png',
-								'no_sidebar_content_centered'		=> SPACIOUS_ADMIN_IMAGES_URL . '/no-sidebar-content-centered.png',
+								'no_sidebar_full_width'				=> SPACIOUS_ADMIN_IMAGES_URL . '/no-sidebar-full-width-layout.png',
+								'no_sidebar_content_centered'		=> SPACIOUS_ADMIN_IMAGES_URL . '/no-sidebar-content-centered-layout.png',
 							)
 	);
 
@@ -157,8 +157,8 @@ function optionsframework_options() {
 		'std' 		=> 'light',
 		'type' 		=> 'images',
 		'options' 	=> array(
-							'light' 	=> SPACIOUS_ADMIN_IMAGES_URL . '/light.jpg',
-							'dark' 	=> SPACIOUS_ADMIN_IMAGES_URL . '/dark.jpg'
+							'light' 	=> SPACIOUS_ADMIN_IMAGES_URL . '/light-color.jpg',
+							'dark' 	=> SPACIOUS_ADMIN_IMAGES_URL . '/dark-color.jpg'
 						)
 	);	
 

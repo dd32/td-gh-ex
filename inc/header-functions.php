@@ -93,10 +93,20 @@ function spacious_featured_image_slider() {
 								<img alt="<?php echo esc_attr( $spacious_slider_title ); ?>" src="<?php echo esc_url( $spacious_slider_image ); ?>">
 							</figure>
 							<div class="entry-container">
+								<?php if( !empty( $spacious_slider_title ) || !empty( $spacious_slider_text ) ) { ?>
 								<div class="entry-description-container">
+									<?php if( !empty( $spacious_slider_title ) ) { ?>
 									<div class="slider-title-head"><h3 class="entry-title"><a href="<?php echo esc_url( $spacious_slider_link ); ?>" title="<?php echo esc_attr( $spacious_slider_title ); ?>"><span><?php echo $spacious_slider_title; ?></span></a></h3></div>
+									<?php
+									}
+									if( !empty( $spacious_slider_text ) ) {
+										?>
 									<div class="entry-content"><p><?php echo $spacious_slider_text; ?></p></div>
+									<?php 
+									}
+									?>
 								</div>
+								<?php } ?>
 								<div class="clearfix"></div>
 								<a class="slider-read-more-button" href="<?php echo esc_url( $spacious_slider_link ); ?>" title="<?php echo esc_attr( $spacious_slider_title ); ?>"><?php _e( 'Read more', 'spacious' ); ?></a>
 							</div>

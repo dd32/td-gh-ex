@@ -173,6 +173,11 @@ pre {
 	color: #AAAAAA;
 }
 
+/* COMMENTS */
+#comments {
+   background-color: #292929;
+}
+
 /* SIDEBAR/WIDGET */
 .widget-title a {
 	color: #AAAAAA;

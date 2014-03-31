@@ -38,7 +38,7 @@ function spacious_scripts_styles_method() {
 	 */
 	wp_register_script( 'jquery_cycle', SPACIOUS_JS_URL . '/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
 
-   	wp_register_style( 'google_fonts', 'http://fonts.googleapis.com/css?family=Lato' ); 
+   wp_register_style( 'google_fonts', 'http://fonts.googleapis.com/css?family=Lato' ); 
 	
 	/**
 	 * Enqueue Slider setup js file.	 
@@ -46,10 +46,15 @@ function spacious_scripts_styles_method() {
 	if ( is_home() || is_front_page() && of_get_option( 'spacious_activate_slider', '0' ) == '1' ) {
 		wp_enqueue_script( 'spacious_slider', SPACIOUS_JS_URL . '/spacious-slider-setting.js', array( 'jquery_cycle' ), false, true );
 	}
-   	wp_enqueue_script( 'spacious-navigation', SPACIOUS_JS_URL . '/navigation.js', array( 'jquery' ), false, true );
-   	wp_enqueue_script( 'spacious-custom', SPACIOUS_JS_URL. '/spacious-custom.js', array( 'jquery' ) );
+	wp_enqueue_script( 'spacious-navigation', SPACIOUS_JS_URL . '/navigation.js', array( 'jquery' ), false, true );
+	wp_enqueue_script( 'spacious-custom', SPACIOUS_JS_URL. '/spacious-custom.js', array( 'jquery' ) );
 
-   	wp_enqueue_style( 'google_fonts' );
+	wp_enqueue_style( 'google_fonts' );
+
+   $spacious_user_agent = strtolower($_SERVER['HTTP_USER_AGENT']);
+	if(preg_match('/(?i)msie [1-8]/',$spacious_user_agent)) {
+		wp_enqueue_script( 'html5', SPACIOUS_JS_URL . '/html5.js', true ); 
+	}
 
 }
 
@@ -236,7 +241,7 @@ function spacious_custom_css() {
 	$spacious_internal_css = '';
 	if( $primary_color != '#0FBE7C' ) {
 		$spacious_internal_css = ' blockquote { border-left: 3px solid '.$primary_color.'; }
-			.spacious-button, input[type="reset"], input[type="button"], input[type="submit"], button { backgroun-color: '.$primary_color.'; }
+			.spacious-button, input[type="reset"], input[type="button"], input[type="submit"], button { background-color: '.$primary_color.'; }
 			.previous a:hover, .next a:hover { 	color: '.$primary_color.'; }
 			a { color: '.$primary_color.'; }
 			#site-title a:hover { color: '.$primary_color.'; }
