@@ -19,8 +19,7 @@ jQuery.noConflict()(function($){
 		});
 
 		$('.scroll-sidebar').css({
-			'top' : header_height + adminbar_height,
-			'padding-bottom' : header_height + adminbar_height,
+			'padding-top' : header_height,
 		});
 
 		$(".navigation").click(function() {
@@ -54,10 +53,9 @@ jQuery.noConflict()(function($){
 		$('#header').css({
 			'top' : adminbar_height,
 		});
-
+		
 		$('.scroll-sidebar').css({
-			'top' : header_height + adminbar_height,
-			'padding-bottom' : header_height + adminbar_height,
+			'padding-top' : header_height,
 		});
 
 		if($('.scroll-sidebar').css('right') < '0px' ) {	

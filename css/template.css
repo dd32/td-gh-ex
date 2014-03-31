@@ -102,14 +102,6 @@ ul {
    ELEMENTS
    =============================================== */
 
-.scroll-sidebar::-webkit-scrollbar { 
-    display: none; 
-}
-
-.scroll-sidebar::-moz-scrollbar { 
-    display: none; 
-}
-
 input, button, select, textarea {
 	max-width: 100%;
 }
@@ -362,8 +354,13 @@ nav#mainmenu li li.current-menu-ancestor > a {
 	height:100%;  
 	padding:0; 
 	z-index:1; 
-	overflow:auto;	z-index:1;
+	overflow-y:scroll;
 	border-top:solid 1px #444649;
+	
+	-webkit-transform: translateX(17px);
+	-ms-transform: translateX(17px);
+	transform: translateX(17px);
+
 }
 
 .scroll-sidebar .post-article {
@@ -377,6 +374,7 @@ nav#mainmenu li li.current-menu-ancestor > a {
 
 .scroll-sidebar .post-article:last-of-type {
 	margin-bottom:0px;
+	border-bottom:none;
 }
 
 .scroll-sidebar h3.title {
