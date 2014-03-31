@@ -89,7 +89,7 @@
 					<div class="post-content">
 					<?php if ( get_post_format() || post_password_required() || "Full content" == boldr_get_option('blog_index_shows') ) the_content();
 						else the_excerpt();
-					if (has_tag()) { the_tags('<br class="clear" /><div class="tags"><span class="the-tags">Tags:</span>', '', '</div>'); } ?>
+					if (has_tag()) { the_tags('<br class="clear" /><div class="tags"><span class="the-tags">'.__('Tags', 'boldr').':</span>', '', '</div>'); } ?>
 
 					</div>
 				</div>

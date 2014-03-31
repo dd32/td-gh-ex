@@ -73,7 +73,7 @@
 					);
 					wp_link_pages( $args ); ?>
 
-					<?php if (has_tag()) { the_tags('<div class="tags"><span class="the-tags">Tags:</span>', '', '</div>'); } ?>
+					<?php if (has_tag()) { the_tags('<div class="tags"><span class="the-tags">'.__('Tags', 'boldr').':</span>', '', '</div>'); } ?>
 
 
 				</div>

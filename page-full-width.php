@@ -23,8 +23,20 @@
 
 		<div id="page-container" <?php post_class(); ?>>
 
-				<?php the_content(); ?>
-				<br class="clear" />
+				<?php the_content();
+					$boldr_link_pages_args = array(
+						'before'           => '<br class="clear" /><div class="paged_nav">' . __('Pages:', 'boldr'),
+						'after'            => '</div>',
+						'link_before'      => '<span>',
+						'link_after'       => '</span>',
+						'next_or_number'   => 'number',
+						'nextpagelink'     => __('Next page', 'boldr'),
+						'previouspagelink' => __('Previous page', 'boldr'),
+						'pagelink'         => '%',
+						'echo'             => 1
+					);
+					wp_link_pages( $boldr_link_pages_args );
+				?><br class="clear" />
 				<?php edit_post_link(__('Edit', 'boldr'), '<span class="editlink">', '</span><br class="clear" />'); ?>
 				<br class="clear" />
 			<?php	// Display comments section only if comments are open or if there are comments already.
