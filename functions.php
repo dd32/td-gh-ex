@@ -4,7 +4,7 @@
  * @package Asteroid
  *
  */
-$ast_version = "1.1.6";
+$ast_version = "1.1.7";
 /*-------------------------------------
 	Setup Theme Options
 --------------------------------------*/
@@ -352,6 +352,7 @@ function asteroid_menu_search_form( $items, $args ) {
 		$sf .= '<input type="submit" value="" />';
 		$sf .= '</form>';
 		$sf .= '</li>';
-		return $items . $sf;
+		$items = $items . $sf;
 	}
+	return $items;
 }

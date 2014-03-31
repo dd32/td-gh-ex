@@ -4,7 +4,7 @@ Theme URI: http://ronangelo.com/asteroid/
 Description: Asteroid is a simple, clean and responsive theme. It incorporates various widget areas that make management of banners and ads a lot easier, especially for ad-supported sites. The theme is ideal for use on a blog, a static website or both. The theme’s development focuses on user customization and minimizing HTTP requests to help conserve server resource. Asteroid supports RTL Language, custom headers, backgrounds, menus, full-width page templates and more.
 Author: ronangelo
 Author URI: http://ronangelo.com/
-Version: 1.1.6
+Version: 1.1.7
 Tags: black, white, gray, two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, custom-background, featured-images, custom-menu, custom-colors, theme-options, threaded-comments, sticky-post, editor-style, full-width-template, threaded-comments, microformats, translation-ready, rtl-language-support
 
 License: GNU General Public License, Version 3 or later
@@ -108,7 +108,6 @@ th {
 }
 th, td {
 	border: 1px solid #AAA;
-	padding: 8px 10px;
 	font-size: 14px;
 	font-size: 0.875rem;
 }
@@ -121,16 +120,11 @@ ul, ol {
 ul ul, ol ol {padding-left: 15px;}
 
 li {
-	list-style-position: outside;
-	list-style-type: disc;
 	margin-top: 4px;
 	margin-bottom: 4px;
 	margin-left: 15px;
 	margin-right: 0;
 }
-ol > li {list-style-type: decimal;}
-ol > li > ol > li {list-style-type: lower-alpha;}
-ol > li > ol > li > ol > li {list-style-type: lower-roman;}
 
 address {margin-bottom: 10px;}
 
@@ -643,6 +637,24 @@ article.sticky {
 	line-height: 1.5;
 }
 
+.entry-content li, .comment-content li {
+	list-style-position: outside;
+	list-style-type: disc;
+}
+
+.entry-content ol > li,
+.comment-content ol > li {list-style-type: decimal;}
+
+.entry-content ol > li > ol > li,
+.comment-content ol > li > ol > li {list-style-type: lower-alpha;}
+
+.entry-content ol > li > ol > li > ol > li,
+.comment-content ol > li > ol > li > ol > li {list-style-type: lower-roman;}
+
+.entry-content th, .entry-content td, .comment-content th, .comment-content td {
+	padding: 8px 10px;
+}
+
 img[class*="align"],
 img[class*="wp-image-"],
 img[class*="attachment-"],
@@ -1023,7 +1035,7 @@ img[class*="attachment-"],
 .widget-sidebar a:hover {color: #F00;}
 .widget-sidebar ul {padding: 0 4px;}
 .widget-sidebar ul li ul {padding-left: 10px;}
-.widget-sidebar li {border-bottom: 1px solid #CFCFCF ;padding: 4px 0 2px;}
+.widget-sidebar li {border-bottom: 1px solid #CFCFCF;}
 .widget-sidebar input, .widget-sidebar select {margin: 3px;}
 .widget-sidebar .children li {border-bottom: none;}
 
@@ -1059,7 +1071,7 @@ img[class*="attachment-"],
 #wp-calendar {
     border-collapse: collapse;
 	text-align: center;
-	width: 90%;
+	width: 95%;
 	margin: 0 auto;
 }
 #wp-calendar caption {padding: 6px;}
@@ -1070,9 +1082,9 @@ img[class*="attachment-"],
     padding: 4px;
 }
 #wp-calendar tr {background: #FFF;}
-#wp-calendar td {
-	border: 1px solid #666;
-    padding: 4px;
+#wp-calendar td {border: 1px solid #666;}
+.widget_calendar th, .widget_calendar td {
+    padding: 8px;
 }
 #footer #wp-calendar th {background: rgba(255,255,255,0.2);}
 #footer #wp-calendar tr {background: transparent;}

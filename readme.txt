@@ -18,12 +18,16 @@ custom header images, backgrounds, menus, full-width page templates and more.
 JSColor - A lightweight Javascript color-picker maintained by Jan Odvárko.
 
 == CHANGELOG ==
+Version 1.1.7
+	* Fixed missing menu widget.
+	* Fixed table layout issue.
+
 Version 1.1.6
 	* Added option to disable responsive layout.
 	* Added author microformat info.
 	* Changed clearfix method.
 	* Obsolete functions deleted.
-	* CSS changes
+	* CSS changes.
 
 Version 1.1.5
 	* WordPress 3.8 theme adjustments.

@@ -52,6 +52,15 @@ blockquote cite {
 	font-size: small;
 }
 
+.rtl blockquote {
+	border-left: none;
+	border-right: 6px solid #666;
+}
+
+.rtl blockquote cite {
+	text-align: left;
+}
+
 pre {
     background: #EEE;
     border: 1px solid #CCC;
@@ -116,4 +125,6 @@ th, td {
 
 .wp-caption-dd {text-align: left;}
 
-.mce-wp-more {height: 12px !important;}
+.rtl .wp-caption-dd {text-align: right;}
+
+.mce-wp-nextpage, .mce-wp-more {height: 12px !important;}
