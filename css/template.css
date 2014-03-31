@@ -1391,6 +1391,9 @@ tr:nth-child(2n+2) {
 	.scroll-sidebar {
 		right:-100%;
 		width:100%;
+		-webkit-transform: none;
+		-ms-transform: none;
+		transform: none;
 	}
 	
 	.children li {
