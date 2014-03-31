@@ -3,8 +3,8 @@
 Contributors: Iceable
 Tags: gray, silver, white, light, two-columns, right-sidebar, flexible-width, custom-header, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.5
-Tested up to: 3.5.1
-Stable tag: 1.1.1
+Tested up to: 3.8.1
+Stable tag: 1.1.10
 
 == ABOUT SILVERCLEAN LITE ==
 
@@ -38,13 +38,73 @@ This theme bundles some third party javascript and jQuery plugins, released unde
 
 All other files are copyright 2013 Iceable Media.
 
+== TRANSLATIONS ==
+
+Translating this theme into you own language is quick and easy, you will find a .POT file in the /languages folder to get you started. It contains about 40 strings only.
+If you don't have a .po file editor yet, you can download Poedit from http://www.poedit.net/download.php - Poedit is free and available for Windows, Mac OS and Linux.
+
+If you have translated this theme into your own language and are willing to share your translation with the community, please feel free to do so on the forums at http://www.iceablethemes.com
+Your translation files will be added to the next update. Don't forget to leave your name, email address and/or website link so credits can be given to you!
+
 == CHANGELOG ==
+
+= 1.1.10 =
+March 31th, 2014
+* Added paginated pages support
+
+= 1.1.9 =
+February 4th, 2014
+* Added "Support and Feedback" in theme options
+* Tested with WordPress 3.8.1
+
+= 1.1.8 =
+January 2nd, 2014
+* Updated tags for WordPress 3.8: fixed-layout and responsive-layout
+* Updated screenshot to 880x660px for WordPress 3.8
+
+= 1.1.7 =
+November 18th, 2013
+* Bugfix: Appropriately use 'wp_enqueue_scripts' to enqueue CSS stylesheet
+* Changed comment about removing credit link in footer.php (compliance)
+
+= 1.1.6 =
+November 6th, 2013
+* Changed title attribute in footer credit link (WPTRT compliance)
+
+= 1.1.5 =
+November 5th, 2013
+* Tested with WordPress 3.7.1
+* Improved child-theme support
+* Fixed: multi-level sub-menu display and positionning
+
+= 1.1.4 =
+October 21st, 2013
+* Translation information in readme.txt
+* Added: Option to use a text-based site title instead of a logo
+* Fixed: inconsistent logo padding
+
+= 1.1.3 =
+October 14th, 2013
+* Updated: sticky posts styling
+* Updated: minor enhancements to some HTML tags formattings
+* Updated: now enqueuing style.css, allowing users to easily add their own CSS rules
+* Fixed: default sidebar display (when no widgets are set) in page.php
+* Fixed: only display category icon in postmeta when a category is set (fix for attachment pages)
+* Added: image navigation links on attachment pages
+* Updated POT file
+* Added: esc_url() used with home_url() in header.php
+* Added: tracking tag on link to Silverclean Pro for statistics
+* Tested with WP 3.6.1
+
+= 1.1.2 =
+July 1st, 2013
+* Fixed: issues with image alignments.
+* Tested with WP 3.5.2
 
 = 1.1.1 =
 May 31, 2013
 * Patched a little glitch in option framework (causing minor issues on new installations)
 * Patched an issue with custom header display setting on new installations and homepage
-* Updated POT file
 
 = 1.1 =
 May 24th, 2013

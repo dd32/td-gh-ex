@@ -114,11 +114,26 @@ function silverclean_settings_machine($options) {
 						<li>(Pro Only)&nbsp;One click setup <strong>AJAX contact form</strong></li>
 						<li>(Pro Only)&nbsp;<strong>Google Maps</strong> API v3 integration</li>
 						<li>(Pro Only)&nbsp;<strong>Pro dedicated support forum</strong> access</li>
-						<li>GPL License:&nbsp;Buy once, use as many time as you wish!</li>
+						<li>GPL License:&nbsp;Buy once, use as many times as you wish!</li>
 						<li><strong>Cross-browsers support</strong>, optimized for IE8+, Firefox, Chrome, Safari and Opera</li>
 						<li>Lifetime&nbsp;<strong>free updates</strong>&nbsp;and continued support for the <strong>latest WordPress versions</strong></li>
 						</ul>';
-			$output .= '<a href="http://www.iceablethemes.com/shop/silverclean-pro/" class="button-primary" target="_blank">Learn More and Upgrade Now!</a>';
+			$output .= '<a href="http://www.iceablethemes.com/shop/silverclean-pro/?utm_source=lite_theme&utm_medium=go_pro&utm_campaign=silverclean_lite" class="button-primary" target="_blank">Learn More and Upgrade Now!</a>';
+		}
+		elseif ( $arg['type'] == "support_feedback" )
+		{
+			$output .= '<h3>Get Support</h3>'."\n";
+			$output .= '<p>Have a question? Need help?</p>';
+			$output .= '<p><a href="http://www.iceablethemes.com/forums/forum/free-support-forum/silverclean-lite/?utm_source=lite_theme&utm_medium=support_forums&utm_campaign=silverclean_lite" target="_blank" class="button-primary">Visit the free Silverclean Lite support forums</a></p>';		
+
+			$output .= '<h3>Give Feedback</h3>'."\n";
+			$output .= '<p>Like this theme? We\'d love to hear your feedback!</p>';
+			$output .= '<p><a href="http://wordpress.org/support/view/theme-reviews/silverclean-lite" target="_blank" class="button-primary">Rate and review Silverclean Lite at WordPress.org</a></p>';		
+
+			$output .= '<h3>Get social!</h3>'."\n";
+			$output .= '<p>Follow and like IceableThemes!</p>';
+			$output .= '<p id="social"></p>';
+ 
 		}
 		elseif ( $arg['type'] == "end_menu" )
 		{

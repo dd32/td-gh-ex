@@ -127,12 +127,33 @@ add_action( 'widgets_init', 'silverclean_widgets_init' );
  * Enqueue CSS styles
  */
 function silverclean_styles() {
-	wp_register_style( 'icefit', get_template_directory_uri() . '/css/icefit.css');
-	wp_register_style( 'theme-style', get_template_directory_uri() . '/css/theme-style.css');
+
+	$template_directory_uri = get_template_directory_uri(); // Parent theme URI
+	$stylesheet_directory = get_stylesheet_directory(); // Current theme directory
+	$stylesheet_directory_uri = get_stylesheet_directory_uri(); // Current theme URI
+
+	/* Child theme support:
+	 * Enqueue child-theme's versions of stylesheets in /css if they exist,
+	 * or the parent theme's version otherwise
+	 */
+	if ( @file_exists( $stylesheet_directory . '/css/icefit.css' ) )
+		wp_register_style( 'icefit', $stylesheet_directory_uri . '/css/icefit.css' );
+	else
+		wp_register_style( 'icefit', $template_directory_uri . '/css/icefit.css' );	
+
+	if ( @file_exists( $stylesheet_directory . '/css/theme-style.css' ) )
+		wp_register_style( 'theme-style', $stylesheet_directory_uri . '/css/theme-style.css' );
+	else
+		wp_register_style( 'theme-style', $template_directory_uri . '/css/theme-style.css' );
+
+	// Always enqueue style.css from the current theme
+	wp_register_style( 'style', $stylesheet_directory_uri . '/style.css');
+
 	wp_enqueue_style( 'icefit' );
 	wp_enqueue_style( 'theme-style' );
+	wp_enqueue_style( 'style' );
 }
-add_action('wp_print_styles', 'silverclean_styles');
+add_action('wp_enqueue_scripts', 'silverclean_styles');
 
 /*
  * Enqueue Javascripts
@@ -261,6 +282,27 @@ function silverclean_page_has_comments_nav() {
 	global $wp_query;
 	return ($wp_query->max_num_comment_pages > 1);
 }
+
+/*
+ * Find whether attachement page needs navigation links (used in single.php)
+ */
+function silverclean_adjacent_image_link($prev = true) {
+    global $post;
+    $post = get_post($post);
+    $attachments = array_values(get_children("post_parent=$post->post_parent&post_type=attachment&post_mime_type=image&orderby=\"menu_order ASC, ID ASC\""));
+
+    foreach ( $attachments as $k => $attachment )
+        if ( $attachment->ID == $post->ID )
+            break;
+
+    $k = $prev ? $k - 1 : $k + 1;
+
+    if ( isset($attachments[$k]) )
+        return true;
+	else
+		return false;
+}
+
 
 /*
  * Framework Elements

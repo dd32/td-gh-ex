@@ -11,96 +11,47 @@
 /* =WordPress Core
 -------------------------------------------------------------- */
 .alignnone {
-	margin: 5px 20px 20px 0;
-}
-
-.aligncenter,
-div.aligncenter {
-	display: block;
-	margin: 5px auto 5px auto;
-}
-
-.alignright {
-	float: right;
-	margin: 5px 0 20px 20px;
-}
-
-.alignleft {
-	float: left;
-	margin: 5px 20px 20px 0;
+    
 }
 
 .aligncenter {
 	display: block;
-	margin: 5px auto 5px auto;
+	margin: 0 auto 20px auto!important;
 }
 
-a img.alignright {
+#page-container *.aligncenter {
+	margin: 0 auto 20px auto!important;    
+}
+
+.alignright {
 	float: right;
-	margin: 5px 0 20px 20px;
+	margin: 0 0 20px 20px;
 }
 
-a img.alignnone {
-	margin: 5px 20px 20px 0;
-}
-
-a img.alignleft {
+.alignleft {
 	float: left;
-	margin: 5px 20px 20px 0;
-}
-
-a img.aligncenter {
-	display: block;
-	margin-left: auto;
-	margin-right: auto
+	margin: 0 20px 20px 0;
 }
 
 .wp-caption {
 	background: #fff;
 	border-color: #f0f0f0;
-	max-width: 96%; /* Image does not overflow the content area */
-	padding: 5px 3px 10px;
+	max-width: 100%; /* Image does not overflow the content area */
 	text-align: center;
+	margin-bottom: 20px;
 }
 
-.wp-caption.alignnone {
-	margin: 5px 20px 20px 0;
+#page-container > .wp-caption {
+    max-width: 95%;
 }
 
-.wp-caption.alignleft {
-	margin: 5px 20px 20px 0;
-}
+.sticky {}
 
-.wp-caption.alignright {
-	margin: 5px 0 20px 20px;
-}
-
-.wp-caption img {
-	border: 0 none;
-	height: auto;
-	margin: 0;
-	max-width: 98.5%;
-	padding: 0;
-	width: auto;
-}
-
-.wp-caption p.wp-caption-text {
-	font-size: 11px;
-	line-height: 17px;
-	margin: 0;
-	padding: 0 4px 5px;
-}
-
-.sticky {
-    overflow: auto;
-    border: 2px dashed #eee;
-    padding-top: 15px;
-    background: #F9F9F9
-}
-
-.sticky .post-contents {
-    margin-left: 10px;
-    margin-right: -10px;
+.sticky .entry-title {
+	padding-left: 20px;
+	background-image: url('../img/pin-icon.png');
+	background-repeat: no-repeat;
+	background-position: left center;
 }
 
 .gallery-caption {
@@ -112,8 +63,18 @@ a img.aligncenter {
 
 /* Logo */
 #logo {
-	padding: 25px 0 25px 10px;
+	padding: 25px 0;
 }
+
+#logo .site-title {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+	color: #444;
+	font-size: 23px;
+	text-transform: uppercase;
+	line-height: 130%;
+}
+
+#logo a:hover { text-decoration: none; }
 
 /* Main Wrapper */
 #main-wrap {
@@ -150,7 +111,7 @@ a img.aligncenter {
 
 #navbar ul {
 	margin-bottom: 0;
-	min-height: 40px;
+	min-height: 30px;
 }
 
 #navbar ul li {
@@ -274,8 +235,9 @@ a img.aligncenter {
 }
 
 #navbar ul li ul li ul {
-	left: 100%;
-	top: -1px;
+	left: 20px;
+	top: 30px;
+	border-top: 1px solid #CCC;
 }
 
 /* Navbar search */
@@ -440,10 +402,6 @@ a img.aligncenter {
 
 .single-post .post-content .thumbnail {
 	margin-bottom: 10px;
-}
-
-.single-post p {
-	overflow: hidden;
 }
 
 .paged_nav {
@@ -1104,7 +1062,10 @@ pre {
 	display: block;
 	font-family: 'Courier New', Courier, Monospace;
 	padding: 15px;
-	word-wrap: break-word;
+	overflow: scroll;
+	border: 1px solid #EEE;
+	background: #F9F9F9;
+	margin-bottom: 20px;
 }
 
 ol {
