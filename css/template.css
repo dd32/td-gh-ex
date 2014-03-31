@@ -278,12 +278,18 @@ nav#mainmenu li:last-of-type a:hover{
 	border-bottom:1px solid #444649;
 }
 
-nav#mainmenu ul.sub-menu { 
+nav#mainmenu .sub-menu, 
+nav#mainmenu .children { 
 	display:none; 
 	margin:0; 
 	z-index:9999;
 	border:none;
 }
+
+nav#mainmenu .children li {
+	margin-left:0;
+}
+
 nav#mainmenu li li a{ 
 	text-decoration:none; 
 	text-align:left; 
