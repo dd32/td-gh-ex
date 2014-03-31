@@ -1,6 +1,24 @@
 <?php
 
 /*-----------------------------------------------------------------------------------*/
+/* POST CLASS */
+/*-----------------------------------------------------------------------------------*/   
+
+function sneaklite_post_class($classes) {
+
+	if ( (is_category()) || (is_tax()) || (is_month()) || (is_tax()) || (is_home()) ) {
+
+		$classes[] = 'pin-article ' . sneaklite_template('span');
+	
+	}
+
+	return $classes;
+
+}
+
+add_filter('post_class', 'sneaklite_post_class');
+
+/*-----------------------------------------------------------------------------------*/
 /* Add default style, at theme activation */
 /*-----------------------------------------------------------------------------------*/         
 

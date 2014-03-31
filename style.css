@@ -4,7 +4,7 @@ Theme Name: Sneak Lite
 Description: Sneak Lite is a clean, minimal and responsive Sueva child theme, based on Bootstrap framework, with a new menu and buttons style and a different layout for the elements like sidebar and with a new fonts.
 Author: ThemeinProgress.
 Author URI: http://themeinprogress.com
-Version: 1.0.0
+Version: 1.0.1
 Template: suevafree
 Tags: gray, light, black, orange, blue, white, two-columns, right-sidebar, left-sidebar, custom-background, custom-menu, threaded-comments, full-width-template, theme-options 
 License: GNU General Public License v3 or later
@@ -61,7 +61,7 @@ a.button:hover,
 }
 
 /* ===============================================
-   TIPOGRAPHY
+   TYPOGRAPHY
    =============================================== */
 
 p, 
@@ -148,8 +148,11 @@ h3#reply-title, h3.comments {
    =============================================== */
 
 nav#mainmenu {
-	margin: 0 0 30px 0;
-	padding-bottom:10px;
+	margin:0;
+}
+
+nav#mainmenu ul li {
+	padding-bottom:15px;
 }
 
 nav#mainmenu ul li a {
@@ -158,6 +161,8 @@ nav#mainmenu ul li a {
 	text-transform:none;
 	background:#fff;
 	font-size:14px;
+	line-height:1.4em;
+	height: inherit !important;
 }
 
 nav#mainmenu ul li a:hover,
@@ -176,7 +181,7 @@ nav#mainmenu ul li.current-menu-ancestor > a {
 
 nav#mainmenu ul ul {
 	left:5px;
-	top:54px;
+	top:53px;
 	box-shadow: none;
 	-moz-box-shadow: none;
 	-webkit-box-shadow: none;
@@ -184,6 +189,7 @@ nav#mainmenu ul ul {
 	-moz-border-radius: 0;
 	-webkit-border-radius: 0;
 	border:none !important;
+	outline:solid 1px #ddd;
 }
 
 nav#mainmenu ul ul li {
@@ -315,6 +321,10 @@ h3#reply-title, h3.comments {
 
 .categories a {
 	color:#333;
+}
+
+.wp-caption {
+	max-width: 100% !important;
 }
 
 /* ===============================================

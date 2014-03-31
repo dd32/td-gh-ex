@@ -10,7 +10,7 @@
             
                 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
             
-                    <div <?php post_class(array('pin-article', sneaklite_template('span') )); ?> >
+                    <div <?php post_class(); ?> >
                 
                         <?php do_action('suevafree_postformat'); ?>
                     
@@ -20,7 +20,7 @@
                     
                 <?php endwhile; else:  ?>
             
-                    <div <?php post_class(array('pin-article', sneaklite_template('span') )); ?> >
+                    <div <?php post_class(); ?> >
                         
                         <article class="article">
         
