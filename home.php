@@ -1,85 +1,41 @@
-<?php 
-get_header();
-?>
+<?php get_header(); ?>
 <div id="content" class="clearfix">
-  <div id="main" class="col-sm-8 clearfix nopadding-left" role="main">
+  <div id="main" class="col-sm-8 clearfix" role="main">
     <div id="home-main" class="home-main home">
-      <header>
-        <div class="page-catheader">
-          <h2 class="page-title">Article Categories</h2>          
-        </div>
-      </header>
-        <?php
-	$cat = array(
-			'child_of'                 => 0,
-			'parent'                   => '',
-			'orderby'                  => 'name',
-			'order'                    => 'ASC',
-			'hide_empty'               => 0,
-			'hierarchical'             => 1,
-			'include'                  => '',
-			'exclude'                  => '',
-			'number'                   => '',
-			'taxonomy'                 => 'category',
-			'pad_counts'               => false
-			 );
-	 
-	 $cat = get_categories( $cat ); 
-		$i=0;
-		foreach ($cat as $categories) {
-			$i++;
-			if($i<5)$cat_id="cat-id"; else $cat_id='';
-			if($i % 2 == 1)
-			{				
-				echo"<div class='border-bottom' style='float:left;'>";
-			}
-			
-			?>
+      <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+      <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
+        <header>
+            <div class="cat-hadding">
+                 <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title();?></a>
+            </div>
+            
+            <p class="meta post-meta-entry"><?php mywiki_entry_meta(); ?></p>
+            <p class="meta post-meta-entry"><?php the_tags(); ?></p>
+            
+        </header>
+        <!-- end article header -->
         
-        <div class="cat-main-section <?php echo $cat_id?>">
-          <header>
-           <a href="<?php echo get_category_link( $categories->term_id );?>"> <h4> <?php echo $categories->name ;?> <span>(<?php echo $categories->count?>)</span></h4> </a>
-          </header>
-          <?php
-								$args = array(
-'posts_per_page' => 5,
-	'tax_query' => array(
-		'relation' => 'AND',
-		array(
-		'taxonomy' => 'category',
-			'field' => 'id',
-			'terms' => array($categories->term_id),
-			
-		),
-	)
-); $cat_post = new WP_Query( $args );
-if ( $cat_post->have_posts() ) :?>
-          <div class="content-according">
-          	<ul>
-            <?php while ( $cat_post->have_posts() ):$cat_post->the_post(); ?>
-            <li><a href="<?php echo get_permalink($post->ID)?>">
-              <?php the_title();?>
-            </a></li>
-            <?php endwhile;?>
-            </ul>
-          </div>
-          <?php endif;?>
-        </div>
-        <?php 	
-		if($i % 2 ==0)
-			{
-				echo"</div>";
-			}
-		}
-		if($i % 2 ==1)
-			{
-				echo"</div>";
-			}
-		?> 
-    </div>    
-    <!-- end #main --> 
-  </div>  
-  <?php get_sidebar(); // sidebar 1 ?>
-</div></div>
+        <section class="post_content">
+          <?php the_post_thumbnail( 'wpbs-featured' ); ?>
+          <?php the_excerpt(); ?>
+        </section>
+        <!-- end article section -->
+    
+      </article>
+      <!-- end article -->
+      
+      <?php endwhile; ?>
+	  <?php endif; ?>
+      <nav class="mywiki-nav">
+                <span class="mywiki-nav-previous"><?php previous_posts_link(); ?></span>
+                <span class="mywiki-nav-next"><?php next_posts_link(); ?></span>
+			</nav>
+      
+    </div>
+  </div>
+  <!-- end #main -->
+  
+  <?php get_sidebar(); ?>
+</div>
 <!-- end #content -->
-<?php get_footer();?>
+<?php get_footer(); ?>

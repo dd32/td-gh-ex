@@ -21,4 +21,8 @@ Version 1.03
 
 Version 1.04
 
-    i)   inconsistent textdomain fixed.	
+    i)   inconsistent textdomain fixed.
+
+Version 1.05
+
+    i)   Added a template for the front page.		

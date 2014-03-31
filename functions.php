@@ -67,9 +67,9 @@ function mywiki_entry_meta() {
 		get_the_author()
 	);
 	if ( $tag_list ) {
-		$utility_text = __( 'Posted %3$s by %4$s & filed under %1$s Comments: <a href="#">'.get_comments_number().'</a>.', 'mywiki' );
+		$utility_text = __( 'Posted %3$s by %4$s & filed under %1$s Comments: '.get_comments_number().'.', 'mywiki' );
 	} elseif ( $category_list ) {
-		$utility_text = __( 'Posted %3$s by %4$s & filed under %1$s Comments: <a href="#">'.get_comments_number().'</a>.', 'mywiki' );
+		$utility_text = __( 'Posted %3$s by %4$s & filed under %1$s Comments: '.get_comments_number().'.', 'mywiki' );
 	} else {
 		$utility_text = __( 'Posted %3$s by %4$s Comments: <a href="#">'.get_comments_number().'</a>.', 'mywiki' );
 	}
@@ -95,8 +95,8 @@ return $new_markup; } //}
 add_filter('wp_page_menu', 'mywiki_add_menuclass');
 register_nav_menus(
 		array(
-			'primary' => __( 'The Main Menu', 'mywiki' ),   // main nav in header
-			'footer-links' => __( 'Footer Links', 'mywiki' ) // secondary nav in footer
+			'primary' => __( 'The Main Menu', 'MyWiki' ),   // main nav in header
+			'footer-links' => __( 'Footer Links', 'MyWiki' ) // secondary nav in footer
 		)
 	);
 function mywiki_category_widget_function($args) {
@@ -530,4 +530,14 @@ function mywiki_header_image_function(){
 	echo json_encode($return);
 	die;
 }
+
+/* 
+Adding Read More
+*/
+function mywiki_trim_excerpt($text) {
+ $text = substr($text,0,-10); 
+ return $text.'..<div class="clear-fix"></div><a href="'.get_permalink().'" title="read more....">Read more</a>';
+}
+add_filter('get_the_excerpt', 'mywiki_trim_excerpt');
+
 ?>
