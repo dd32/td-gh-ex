@@ -24,10 +24,9 @@
  * Registers widget areas.
  *
  */
-function advertica_lite_widgets_init() {
+function advertica_widgets_init() {
 	register_sidebar(array(
 		'name' => 'Page Sidebar',
-		'id' => 'page-sidebar',
 		'before_widget' => '<li id="%1$s" class="ske-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="ske-title">',
@@ -35,7 +34,6 @@ function advertica_lite_widgets_init() {
 	));
 	register_sidebar(array(
 		'name' => 'Blog Sidebar',
-		'id' => 'blog-sidebar',
 		'before_widget' => '<li id="%1$s" class="ske-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="ske-title">',
@@ -43,14 +41,13 @@ function advertica_lite_widgets_init() {
 	));
 	register_sidebar(array(
 		'name' => 'Footer Sidebar',
-		'id' => 'footer-sidebar',
 		'before_widget' => '<div id="%1$s" class="ske-footer-container span3 ske-container %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3 class="ske-title ske-footer-title">',
 		'after_title' => '</h3>',
 	));
 }
-add_action( 'widgets_init', 'advertica_lite_widgets_init' );
+add_action( 'widgets_init', 'advertica_widgets_init' );
 
 /**
  * Sets up theme defaults and registers the various WordPress features that
@@ -64,7 +61,7 @@ add_action( 'widgets_init', 'advertica_lite_widgets_init' );
  * @uses set_post_thumbnail_size() To set a custom post thumbnail size.
  *
 */
-function advertica_lite_theme_setup() {
+function advertica_theme_setup() {
 	/*
 	 * Makes Advertica available for translation.
 	 *
@@ -73,25 +70,12 @@ function advertica_lite_theme_setup() {
 	 * replace to change 'advertica-lite' to the name of your theme in all
 	 * template files.
 	 */
-	load_theme_textdomain( 'advertica-lite', get_template_directory() . '/languages' );
+	 load_theme_textdomain( 'advertica-lite', get_template_directory() . '/languages' );
 	 
 	// This theme styles the visual editor with editor-style.css to match the theme style.
-	add_editor_style();
+	 add_editor_style();
 
-	add_theme_support( 'title-tag' );
-
-	if ( get_option('advertica_lite') != '' ) {
-		$advertica_lite_pre_options = get_option('advertica_lite');
-		$header_image =	$advertica_lite_pre_options['advertica_frontslider_stype'];
-	} else {
-		$header_image = get_template_directory_uri() . '/images/advertica-header.jpg';
-	}
-	add_theme_support( 'custom-header', array( 'flex-width' => true, 'width' => 1600, 'flex-height' => true, 'height' => 500, 'default-image' => $header_image ) );
-
-	// This theme allows users to set a custom background.
-	add_theme_support( 'custom-background', apply_filters( 'advertica_lite_custom_background_args', array('default-color' => 'ffffff') ) );
-
-	// Adds RSS feed links to <head> for posts and comments.
+	 // Adds RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
 
 	/*
@@ -104,29 +88,21 @@ function advertica_lite_theme_setup() {
 	 * Enable support for Post Formats
 	 */
 	set_post_thumbnail_size( 600, 220, true );
+	add_image_size( 'homepage-slider',1024,520); //remove if slider is not needed
+	add_image_size( 'advertica_featuredbox_image',250,114); //remove if slider is not needed
 	add_image_size( 'advertica_standard_img',770,365,true); //standard size
 	
-
-	/**
-	* SETS UP THE CONTENT WIDTH VALUE BASED ON THE THEME'S DESIGN.
-	*/
-	global $content_width;
-	if ( ! isset( $content_width ) ){
-	      $content_width = 900;
-	}
-
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'Header' => __( 'Main Navigation', 'advertica-lite' ),
 	));
-	require get_template_directory() . '/includes/admin/welcome-screen/welcome-screen.php';
 }
-add_action( 'after_setup_theme', 'advertica_lite_theme_setup' ); 
+add_action( 'after_setup_theme', 'advertica_theme_setup' ); 
 
 /**
 * Funtion to add CSS class to body
 */
-function advertica_lite_add_class( $classes ) {
+function advertica_add_class( $classes ) {
 
 	if ( 'page' == get_option( 'show_on_front' ) && ( '' != get_option( 'page_for_posts' ) ) && is_front_page() ) {
 		$classes[] = 'front-page';
@@ -134,15 +110,15 @@ function advertica_lite_add_class( $classes ) {
 	
 	return $classes;
 }
-add_filter( 'body_class','advertica_lite_add_class' );
+add_filter( 'body_class','advertica_add_class' );
 
 /**
  * Filter content with empty post title
  *
  */
 
-add_filter('the_title', 'advertica_lite_untitled');
-function advertica_lite_untitled($title) {
+add_filter('the_title', 'advertica_untitled');
+function advertica_untitled($title) {
 	if ($title == '') {
 		return __('Untitled','advertica-lite');
 	} else {
@@ -150,22 +126,33 @@ function advertica_lite_untitled($title) {
 	}
 }
 
-/**
- * Add Customizer 
- */
-require get_template_directory() . '/includes/customizer.php';
-/**
- * Add Required Files
- */
-require_once(get_template_directory() . '/SketchBoard/functions/admin-init.php');
-
-//---------------------------------------------------------------------
-//---------------------------------------------------------------------
-/* Theme Required Plugins
 /*---------------------------------------------------------------------------*/
-// if ( !defined( 'ADVERTICA_REQUIRED_PLUGINS' ) ) {
-// 	define( 'ADVERTICA_REQUIRED_PLUGINS', trailingslashit(get_theme_root()) . 'advertica-lite/includes/plugins' );
-// }
-// include_once('includes/skt-required-plugins.php');
+/* ADMIN SCRIPT: Enqueue scripts in back-end
+/*---------------------------------------------------------------------------*/
+if( !function_exists('skt_page_admin_enqueue_scripts') ){
+    add_action('admin_enqueue_scripts','skt_page_admin_enqueue_scripts');
+    /**
+     * Register scripts for admin panel
+     * @return void
+     */
+    function skt_page_admin_enqueue_scripts(){	
+		wp_enqueue_script('media-upload');
+		wp_enqueue_script('thickbox');
+		wp_register_script('my-upload', get_template_directory_uri() .'/SketchBoard/js/admin-jqery.js', array('jquery','media-upload','thickbox'));
+		wp_enqueue_script('my-upload');
+		wp_enqueue_style('thickbox');
+		wp_register_style( 'skt-admin-stylesheet', get_template_directory_uri().'/SketchBoard/css/sketch-admin.css', false);
+		wp_enqueue_style( 'skt-admin-stylesheet' );
+    }
+}
 
-?>
+/* Loads the Options Panel * * If you're loading from a child theme use stylesheet_directory * instead of template_directory */ 
+if ( !function_exists( 'optionsframework_init' ) ) {	
+	//Theme Shortname
+	$advertica_shortname = 'advertica';	
+	$advertica_themename='Advertica Theme';	
+	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/SketchBoard/includes/' );
+	require_once get_template_directory() . '/SketchBoard/includes/options-framework.php';
+	require_once get_template_directory() . '/SketchBoard/includes/sketchtheme-upsell.php';
+	require_once get_template_directory() . '/SketchBoard/functions/admin-init.php';
+}

@@ -54,25 +54,21 @@ jQuery.fn.parallax = function(xpos, speedFactor) {
 //-----------------------------------------------------
 jQuery(document).ready(function(){
 'use strict';
-vc_waypoints();
 jQuery('#menu-main').superfish();
-// add submenu dropdown
 jQuery('#menu-main li:has(ul)').each(function(){
-jQuery(this).addClass('').append('<span class="this_child"></span>');
+jQuery(this).addClass('has_child').prepend('<span class="this_child"></span>');
 });
-// toggle submenu
-jQuery('#menu-main.skt-mob-menu li.menu-item-has-children .this_child').live('click', function(){
+jQuery('#menu-main.skt-mob-menu li.has_child > a').click(function(){
 if(jQuery(this).hasClass('active')){
 jQuery(this).removeClass('active');
-jQuery(this).prev('ul').stop(true,true).slideUp();
+jQuery(this).next('ul:first').stop(true,true).slideUp();
 }
 else{
 jQuery(this).addClass('active');
-jQuery(this).prev('ul').stop(true,true).slideDown();
+jQuery(this).next('ul:first').stop(true,true).slideDown();
 }
 });
 });
-// *****************************
 (function( $ ) {
 'use strict';
 $.fn.sktmobilemenu = function( options ) { 
@@ -161,7 +157,8 @@ if ( typeof window['vc_waypoints'] !== 'function' ) {
 function vc_waypoints() {
 if (typeof jQuery.fn.waypoint !== 'undefined') {
 $j('.fade_in_hide').waypoint(function() {
-$j(this).addClass('skt_start_animation');}, { offset: '90%' });
+$j(this).addClass('skt_start_animation');
+}, { offset: '90%' });
 $j('.skt_animate_when_almost_visible').waypoint(function() {
 $j(this).addClass('skt_start_animation');
 }, { offset: '90%' });

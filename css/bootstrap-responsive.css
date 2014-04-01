@@ -1425,10 +1425,8 @@
 
 @media screen and (min-device-width: 320px) and (max-device-width: 1024px) {
 	input, textarea {
+		-webkit-appearance: none;
 		border-radius: 0;
-	}
-	input[type="radio"]{
-		border-radius: 50%;
 	}
 	#searchform input[type="submit"] {
 		height:33px;
@@ -1441,47 +1439,4 @@
 		padding-right:0px; 
 	}
 
-}
-@media screen and (max-device-width: 1024px) and (min-device-width: 320px){
-.this_child {
-    display: block;
-}
-}
-.skt-mob-menu ul .this_child {
-    color: #fff;
-}
-.this_child:before {
-    content: "\f0d7";
-}
-.skt-mob-menu li {
-    border-top: 1px solid rgba(0,0,0,.15);
-}
-
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-	.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
-	    width: 30%;
-	    margin: 0 0 2.992em 5% !important;
-	}
-	.woocommerce ul.products li.first{
-	    clear: none;
-	}
-	.woocommerce ul.products li.product:nth-child(3n+1){
-	    clear: left;
-	    margin-left: 0 !important;
-	}
-}
-@media (min-width: 300px) and (max-width: 767px) {
-    .woocommerce ul.products li.product, .woocommerce-page ul.products li.product{
-        width: 100%;
-        max-width: 290px;
-        float: none !important;
-        clear: both;
-    }
-}
-
-@media (min-width: 767px) and (max-width: 1024px) and (orientation:landscape) {
-.woocommerce .cart-collaterals .cart_totals, .woocommerce-page .cart-collaterals .cart_totals {
-    float: right;
-    width: 52%;
-}
 }

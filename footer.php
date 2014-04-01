@@ -6,7 +6,20 @@
 * #main and #page div elements.
 *
 */
+global $tweetfeedmeta,$advertica_shortname;
 ?>
+
+<?php  
+if($tweetfeedmeta == '1'){ ?>
+<!-- full-twitter-box -->
+<div id="full-twitter-box">
+	<div class="container">
+		<div class="row-fluid">
+			<?php  get_template_part('section','twitter-panel'); ?>
+		</div>
+	</div>
+</div>
+<?php } ?>
 	<div class="clearfix"></div>
 </div>
 <!-- #main --> 
@@ -25,13 +38,9 @@
 	<div class="third_wrapper">
 		<div class="container">
 			<div class="row-fluid">
-				<div id="copyright" class="copyright span6">
-				<?php echo wp_kses_post(get_theme_mod('copyright', __('Proudly powered by WordPress', 'advertica-lite'))); ?>
-				</div>
-				<div class="owner span6">
-				<?php printf( __( 'Advertica Lite By %s', 'advertica-lite' ), '<a href="'.esc_url('https://sketchthemes.com').'"><strong>SketchThemes</strong></a>'
-					); ?>
-				</div>
+				<?php $sktURL = 'http://www.sketchthemes.com/'; ?>
+				<div class="copyright span6 alpha omega"> <?php echo stripslashes(sketch_get_option($advertica_shortname."_copyright")); ?> </div>
+				<div class="owner span6 alpha omega"><?php _e('Advertica Theme by','advertica-lite'); ?> <a href="<?php echo $sktURL; ?>" ><?php _e('SketchThemes','advertica-lite'); ?></a></div>
 				<div class="clearfix"></div>
 			</div>
 		</div>
@@ -41,7 +50,7 @@
 
 </div>
 <!-- #wrapper -->
-	<a href="JavaScript:void(0);" title="<?php _e('Back To Top', 'advertica-lite'); ?>" id="backtop"></a>
+	<a href="JavaScript:void(0);" title="Back To Top" id="backtop"></a>
 	<?php wp_footer(); ?>
 </body>
 </html>

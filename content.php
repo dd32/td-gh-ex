@@ -1,7 +1,11 @@
 <?php
+
 /**
+
  * The default template for displaying content. Used for both single and index/archive/search.
+
  */
+
 ?>
 <div <?php post_class('post'); ?> id="post-<?php the_ID(); ?>">
 		<?php if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it. ?>

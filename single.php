@@ -5,6 +5,7 @@
 
 get_header(); ?>
 
+<?php global $advertica_shortname; ?>
 <div class="main-wrapper-item">
 <?php if(have_posts()) : ?>
 <?php while(have_posts()) : the_post(); ?>
@@ -14,10 +15,7 @@ get_header(); ?>
 			<div class="row-fluid">
 				<div class="container_inner clearfix">
 					<h1 class="title"><?php the_title(); ?></h1>
-					<?php  if( get_theme_mod('breadcrumb_sec', 'on') == 'on' ) {
-						if ((class_exists('advertica_lite_breadcrumb_class'))) {$advertica_breadcumb->advertica_lite_custom_breadcrumb();}
-					}
-					?>
+					<?php if ((class_exists('advertica_breadcrumb_class'))) {$advertica_breadcumb->custom_breadcrumb();} ?>
 				</div>
 			</div>
 		</div>
@@ -36,9 +34,9 @@ get_header(); ?>
 						<?php } ?>
 
 						<div class="bread-title">
-							<h2 class="title">
+							<h1 class="title">
 								<?php the_title(); ?>
-							</h2>
+							</h1>
 							<div class="clearfix"></div>
 						</div>
 
@@ -53,7 +51,7 @@ get_header(); ?>
 
 						<div class="skepost clearfix">
 							<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'advertica-lite' ) ); ?>
-							<?php wp_link_pages(array('before' => '<p><strong>'.__('Pages :','advertica-lite').'</strong>','after' => '</p>', __('number','advertica-lite'),));	?>
+							<?php wp_link_pages(__('<p><strong>Pages:</strong> ','advertica-lite'), '</p>', __('number','advertica-lite')); ?>
 						</div>
 						<!-- skepost -->
 
