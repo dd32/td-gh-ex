@@ -14,7 +14,8 @@ function adaptive_flat_style() {
 			background: <?php echo( get_theme_mod( 'body_color', '#ffffff' ) )?>;
 			color: <?php echo( get_theme_mod( 'text_color', '#323a46' ) ) ?>;
 		}
-		article a{
+		article a,
+		#comments a{
 			color: <?php echo( get_theme_mod( 'content_link_color', '#f37934'  ) );?>;
 		}
 		article a:hover{
@@ -41,8 +42,8 @@ function adaptive_flat_style() {
 		}
 		
 		.header-menu li:hover {
-			background: <?php echo( get_theme_mod( 'menu_text_hover_color', '#ffffff' ) );?>;
-			color: <?php echo( get_theme_mod( 'menu_hover_color', '#1fbca7' ) );?>;
+			background: <?php echo( get_theme_mod( 'menu_hover_color', '#1fbca7' ) );?>;
+			color: <?php echo( get_theme_mod( 'menu_text_hover_color', '#ffffff' ) );?>;
 		}
 		.header-menu ul ul {
 			background: <?php echo( get_theme_mod( 'menu_background', '#323a46' ) );?>;
@@ -85,7 +86,10 @@ function adaptive_flat_style() {
 		.post-prev,
 		.post-prev2,
 		#single-game, 
-		#single-page { 
+		#single-page,
+		#content legend,
+		#content fieldset,
+		#comments .comment { 
 			border-color: <?php echo (get_theme_mod( 'post_prev_bottom_border_color', '#eeeeee' ) );?>;
 		}
 		.prev-title a{

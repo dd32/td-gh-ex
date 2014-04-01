@@ -3,7 +3,7 @@ Theme Name: Adaptive Flat
 Theme URI: http://www.mickdegraaf.nl/adaptiveflat
 Author URI: http://www.mickdegraaf.nl/
 Description: Create a professional and personal WordPress website. Adaptive Flat allows you to style your site with over 50 styling options making your site both beautiful and seo optimized. Theme also has support for an arcade plugin wich is under development and not ready for public release yet.
-Version: 1.1.0
+Version: 1.1.1
 Author: Mick de Graaf
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -13,6 +13,9 @@ Tags: two-columns, left-sidebar, right-sidebar, responsive-layout, custom-backgr
 * {
 	padding: 0;
 	margin: 0;
+}
+
+body {
 	font-family: 'Open Sans', sans-serif;
 }
 
@@ -576,6 +579,66 @@ p {
 	content: "\f323";
 	margin-right: 10px;
 	line-height: 17px;
+}
+
+
+/*
+*#.# lists, forms, tables, legend etc css
+*
+*/
+
+/* Tables css */
+
+#content th,
+#content td{
+	padding: 5px 10px 5px 0px;
+}
+
+
+/* Lists css */
+#content ul,
+#content ol{
+	list-style-position:inside;
+}
+/* form css */
+#content fieldset {
+	padding: 20px;
+	margin: 10px;
+}
+
+#content legend {
+	padding: 10px;
+	border: 2px solid;
+}
+/* comments css */
+
+#comments {
+	height: auto;
+}
+
+#comments li {
+	list-style: none;
+}
+
+.avatar {
+	margin: 10px;
+}
+
+#comments ul {
+	width: 95%;
+	float: right;
+	display: block;
+}
+
+#comments .comment {
+	border-bottom: 1px solid;
+	margin: 10px 0;
+}
+
+
+
+#content {
+	overflow: hidden;
 }
 
 

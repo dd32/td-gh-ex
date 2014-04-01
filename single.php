@@ -32,7 +32,7 @@
 		</div>
 		
 		
-		<?php if(get_theme_mod('layout_posts') != 'c') {
+		<?php if(get_theme_mod('layout_posts', 'cs') != 'c') {
 					get_sidebar();
 			  }   ?>
 		

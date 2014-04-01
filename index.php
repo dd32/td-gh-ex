@@ -64,7 +64,7 @@
 		</div>
 		
 		
-		<?php if(get_theme_mod('layout_archive') != 'c')
+		<?php if(get_theme_mod('layout_archive', 'cs') != 'c')
 				{
 					get_sidebar();
 					
