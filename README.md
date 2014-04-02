@@ -27,7 +27,17 @@ Bundled Resources
 Change Log
 ---------------
 
-#### 1.1.10 (under development)
+#### 1.1.11
+* Fixed multi level hover issue in menus on mobile devices.
+* Fixed logo image HTML by adding spaces between attributes.
+* Shorten title in next and previous post links if they're too long.
+* Fixed conflict with HQ WP Photo Seller plugin.
+* Improved bundled translation file.
+* Premium: Fixed issue with Skype URLs in social widget.
+* Premium: Added responsive code for social sharing icons.
+* Premium: Fixed bug in mobile navigation search.
+
+#### 1.1.10
 * Added support for a custom menu widget in the header widget area.
 * Added support for advanced row styles in Page Builder 1.4.4.
 * Premium: Added customization for the menu widget in the header widget area.

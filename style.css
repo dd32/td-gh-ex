@@ -3,8 +3,8 @@ Theme Name: Vantage
 Author: SiteOrigin
 Author URI: http://siteorigin.com/
 Theme URI: http://siteorigin.com/theme/vantage/
-Description: Vantage is a flexible multipurpose theme. It's strength lies in its tight integration with some powerful plugins like Page Builder for responsive page layouts, MetaSlider for big beautiful sliders and WooCommerce to help you sell online. Vantage is fully responsive and retina ready. Use it to start a business site, portfolio or online store.
-Version: 1.1.10
+Description: Vantage is a flexible multipurpose theme. It's strength lies in its tight integration with some powerful plugins like Page Builder for responsive page layouts, MetaSlider for big beautiful sliders and WooCommerce to help you sell online. Vantage is fully responsive and retina ready. Use it to start a business site, portfolio or online store. We offer free and premium support on our support <a href="http://siteorigin.com/thread/">forums</a> (http://siteorigin.com/thread/).
+Version: 1.1.11
 License: GNU General Public License 2.0
 License URI: license.txt
 Tags: responsive-layout, fluid-layout, custom-background, custom-menu, featured-images, theme-options, threaded-comments, translation-ready, black, white, light, one-column, two-columns, full-width-template
@@ -888,7 +888,6 @@ body.responsive.layout-full #page-wrapper .full-container {
 	background: #343538;
 	font-size: 13px;
 	margin: 0 -35px;
-	min-height: 35px; /* For when the menu becomes a sticky menu */ 
 }
 
 .main-navigation [class^="icon-"] {
@@ -1012,7 +1011,7 @@ body.mobile-device .main-navigation ul ul {
 	display: none;
 }
 
-body.mobile-device .main-navigation li:hover ul {
+body.mobile-device .main-navigation li:hover > ul {
 	display: block;
 }
 
@@ -1070,7 +1069,7 @@ body.mobile-device .main-navigation li:hover ul {
 	width: 17px;
 	height: 17px;
 	
-	background: url('images/sprites-1-1-10.png') no-repeat -102px 0;
+	background: url('images/sprites-1-1-11.png') no-repeat -99px 0;
 	display: block;
 	margin-left: -8.5px;
 	margin-top: -8px;
@@ -1081,7 +1080,7 @@ body.mobile-device .main-navigation li:hover ul {
 }
 
 #search-icon #search-icon-icon:hover .icon {
-	background: url('images/sprites-1-1-10.png') no-repeat -84px 0;
+	background: url('images/sprites-1-1-11.png') no-repeat 0 0;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
@@ -1333,6 +1332,21 @@ article.page .share-buttons li {
 	
 	display: block;
 	float: left;
+}
+
+@media (max-width: 480px) {
+	
+	article.post .share-buttons li,
+	article.page .share-buttons li {
+		float: none;
+		margin-bottom: 10px;
+	}
+
+	article.post .share-buttons li:last-child,
+	article.page .share-buttons li:last-child {
+		margin-bottom: 0;
+	}
+
 }
 
 article.post .entry-summary p:last-child,
@@ -2089,7 +2103,7 @@ body.layout-full {
 	width: 48px;
 	height: 48px;
 	
-	background: url('images/sprites-1-1-10.png') no-repeat -48px -18px;
+	background: url('images/sprites-1-1-11.png') no-repeat -99px -18px;
 	opacity: 0;
 	-ms-transform: scale(0, 0);
 	-webkit-transform: scale(0, 0);
@@ -2243,17 +2257,17 @@ body.layout-full {
 	width: 14px;
 	height: 14px;
 	
-	background: url('images/sprites-1-1-10.png') no-repeat 0 0;
+	background: url('images/sprites-1-1-11.png') no-repeat -18px -15px;
 	cursor: pointer;
 	display: block;
 }
 
 .flexslider .flex-control-paging li a.flex-active {
-	background: url('images/sprites-1-1-10.png') no-repeat 0 -15px;
+	background: url('images/sprites-1-1-11.png') no-repeat -18px 0;
 }
 
 .flexslider .flex-control-paging li a:hover {
-	background: url('images/sprites-1-1-10.png') no-repeat 0 0;
+	background: url('images/sprites-1-1-11.png') no-repeat -18px -15px;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
@@ -2269,7 +2283,7 @@ body.layout-full {
 	}
 
 	.flexslider .flex-control-paging li a:hover {
-		background: url('images/sprites-1-1-10.png') no-repeat 0 0;
+		background: url('images/sprites-1-1-11.png') no-repeat -18px -15px;
 		background-size: 14px 14px;
 	}
 
@@ -2303,13 +2317,13 @@ body.layout-full {
 .flexslider .flex-direction-nav li a.flex-prev {
 	left: 0;
 	
-	background: url('images/sprites-1-1-10.png') no-repeat -15px 0;
+	background: url('images/sprites-1-1-11.png') no-repeat -33px 0;
 }
 
 .flexslider .flex-direction-nav li a.flex-next {
 	right: 0;
 	
-	background: url('images/sprites-1-1-10.png') no-repeat -15px -86px;
+	background: url('images/sprites-1-1-11.png') no-repeat -66px 0;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
@@ -2698,7 +2712,7 @@ body.layout-full {
 	width: 5px;
 	height: 8px;
 	
-	background: url('images/sprites-1-1-10.png') no-repeat 0 -30px;
+	background: url('images/sprites-1-1-11.png') no-repeat 0 -18px;
 	display: inline-block;
 	margin-left: 3px;
 }
@@ -3234,11 +3248,11 @@ body.layout-full {
 }
 
 .vantage-carousel-title a.next {
-	background: url('images/sprites-1-1-10.png') no-repeat -66px 0;
+	background: url('images/sprites-1-1-11.png') no-repeat -117px 0;
 }
 
 .vantage-carousel-title a.previous {
-	background: url('images/sprites-1-1-10.png') no-repeat -48px 0;
+	background: url('images/sprites-1-1-11.png') no-repeat -135px 0;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
