@@ -177,7 +177,7 @@ function sparkling_scripts() {
   wp_enqueue_style( 'sparkling-icons', get_template_directory_uri().'/inc/css/font-awesome.min.css' );
 
   // Add Google Fonts
-  wp_register_style( 'sparkling-fonts', 'http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700|Roboto+Slab:400,300,700');
+  wp_register_style( 'sparkling-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700|Roboto+Slab:400,300,700');
 
   wp_enqueue_style( 'sparkling-fonts' );
 
@@ -198,7 +198,7 @@ function sparkling_scripts() {
 	}
 
   // Main theme related functions
-	wp_enqueue_script( 'sparkling-bootstrapwp', get_template_directory_uri() . '/inc/js/functions.js', array('jquery') );
+	wp_enqueue_script( 'sparkling-bootstrapwp', get_template_directory_uri() . '/inc/js/functions.min.js', array('jquery') );
 
 	// This one is for accessibility
   wp_enqueue_script( 'sparkling-skip-link-focus-fix', get_template_directory_uri() . '/inc/js/skip-link-focus-fix.js', array(), '20140222', true );

@@ -2,7 +2,7 @@
 
 Theme Name: Sparkling
 Theme URI: http://colorlib.com/wp/sparkling/
-Version: 1.0
+Version: 1.0.1
 Tested up to: WP 3.9
 
 Author: Aigars Silkalns
@@ -16,14 +16,15 @@ Sparkling is based on Underscores http://underscores.me/, (C) 2012-2014 Automatt
 -------------------------------------------------------
 
 /*========= Credits =========*/
+Unless otherwise specified, all the theme files, scripts and images are licensed under GPLv2 license
 
 Sparkling theme uses:
-
 * FontAwesome (http://fontawesome.io) licensed under the SIL OFL 1.1 (http://scripts.sil.org/OFL)
 * Bootstrap (http://getbootstrap.com/) licensed under MIT license (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 * WP-Bootstrap-NavWalker licensed under the GPLv2 license (http://www.gnu.org/licenses/gpl-2.0.html)
 * Options Framework by WP Theming licensed under the GPLv2 license (http://www.gnu.org/licenses/gpl-2.0.html)
 * FlexSlider by WooThemes licensed under the GPLv2 license (http://www.gnu.org/licenses/gpl-2.0.html)
+* Unless otherwise specified, all images are created by Colorlib
 
 /*========= Description =========*/
 
@@ -60,6 +61,14 @@ Afterwards you can continue theme setup and customization via WordPress Dashboar
 Theme documentation is available on http://colorlib.com/wp/support/sparkling
 
 /*========= Changelog =========*/
+
+= 1.0.1 - 02.04.2014 =
+* Social network urls are now properly escaped using "esc_url"
+* Added licensing information for images in theme screenshot
+* Updated screenshot
+* Improved wp_register_style for Google fonts to be compatible with SSL
+* Removed do_shortcodes from extras.php which falls under plugin territory
+* Fixed missing .js error.
 
 = 1.0 - 01.04.2014 =
 Initial release

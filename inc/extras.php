@@ -79,10 +79,6 @@ function sparkling_title( $title ) {
   }
 }
 
-// Add Filters
-
-add_filter('widget_text', 'do_shortcode'); // Allow shortcodes in Dynamic Sidebar
-
 /**
  * Sets the authordata global when viewing an author archive.
  *
@@ -161,7 +157,7 @@ function sparkling_social(){
     foreach ( $services as $service ) :
 
         $active[$service] = of_get_option ('social_'.$service);
-        if ($active[$service]) { echo '<a href="'.$active[$service].'" title="'. __('Follow us on ','sparkling').$service.'" class="'. $service .'"><i class="social_icon fa fa-'.$service.'"></i></a>';}
+        if ($active[$service]) { echo '<a href="'. esc_url($active[$service]) .'" title="'. __('Follow us on ','sparkling').$service.'" class="'. $service .'"><i class="social_icon fa fa-'.$service.'"></i></a>';}
 
     endforeach;
     echo '</div>';
