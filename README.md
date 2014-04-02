@@ -32,3 +32,7 @@ Changelog
 #### 1.08
 * Fix search page display issue.
 * Add better order process for premium version.
+
+#### 1.09
+* Fix display error in breadcrumb.
+* Fix submenu display error.
