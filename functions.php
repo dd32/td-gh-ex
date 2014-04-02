@@ -6,7 +6,8 @@
 // Sets up theme defaults and registers various WordPress features that privatebusiness supports
 	function privatebusiness_setup() { 
 
-	// Set width without the padding
+	// Set max content width for img, video, and more
+		global $content_width; 
 		if ( ! isset( $content_width ) )
 		$content_width = 700;
 
