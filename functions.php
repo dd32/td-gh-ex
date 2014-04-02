@@ -86,24 +86,15 @@
 
 // Enqueues scripts and styles for front-end
 	function bluegray_scripts() {
-		if (!is_admin()) { 
-			wp_enqueue_style( 'style', get_stylesheet_uri() );
-			wp_enqueue_script( 'nav', get_template_directory_uri() . '/js/nav.js', array( 'jquery' ) );
-		}
-		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
-			wp_enqueue_script( 'comment-reply' );
+			wp_enqueue_style( 'bluegray-style', get_stylesheet_uri() );
+			wp_enqueue_script( 'bluegray-nav', get_template_directory_uri() . '/js/nav.js', array( 'jquery' ) );
+			wp_enqueue_style( 'bluegray-googlefonts', '//fonts.googleapis.com/css?family=Open+Sans' ); 
+
+			if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+				wp_enqueue_script( 'comment-reply' );
+			}
 	}
 	add_action( 'wp_enqueue_scripts', 'bluegray_scripts' );
-
-
-// Register Google Fonts
-	function bluegray_fonts() { 
-		if (! is_admin() ) { 
-			wp_register_style('bluegray_googlefonts', '//fonts.googleapis.com/css?family=Open+Sans' ); 		
-				wp_enqueue_style( 'bluegray_googlefonts'); 	
-		}
-	}  	
-	add_action('wp_enqueue_scripts', 'bluegray_fonts');
 
 
 // Sidebars
@@ -206,6 +197,5 @@
 		) ) );
 
 	} 
-	add_action('customize_register', 'bluegray_theme_customizer');
 
 ?>
