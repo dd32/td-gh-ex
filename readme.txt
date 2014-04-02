@@ -9,7 +9,8 @@ Catch Evolution theme is translation ready.
 Added Translation for Spanish by Ruben Ramos Fernandez (batmovil69@hotmail.com)
 Added Translation for French by Sebastian Chamusard (admin78@orange.fr)
 Added Translation for Swedish by Andre Fahlstrom (admin@andrefahlstrom.se)
-Added Translation for Germany by Knut Pfefferkorn (knut.pfefferkorn@gmail.com) 
+Added Translation for German by Knut Pfefferkorn (knut.pfefferkorn@gmail.com) 
+Added Translation for Danish by Med venlig hilsen (medvind@medvind.dk)
 
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
@@ -49,8 +50,11 @@ dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-si
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 
 == Changelog ==
+Version 1.6.1
+* Added Danish translation da_DK.po and da_DK.mo
+
 Version 1.6
-* Added Germany translation de_DE.po and de_DE.mo
+* Added German translation de_DE.po and de_DE.mo
 
 Version 1.5
 * Fixed responsive css which hides default search widget in header sidebar
