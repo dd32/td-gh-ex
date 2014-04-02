@@ -73,6 +73,9 @@ This theme is bundled with TGM-Plugin-Activation
 =================================
 CHANGELOG
 =================================
+Version 1.0.4
+ * Fixed the the theme URI and author URI errors
+
 Version 1.0.3
  * Modified the way the theme include google fonts - used wp_enqueue_style() instead of importing it from style.css
  * Updated screenshot.png and added license info for the images used in it
