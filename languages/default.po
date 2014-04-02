@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Lite Virtue\n"
-"POT-Creation-Date: 2014-03-18 14:50-0700\n"
-"PO-Revision-Date: 2014-03-18 14:54-0700\n"
+"POT-Creation-Date: 2014-04-02 16:55-0700\n"
+"PO-Revision-Date: 2014-04-02 16:55-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: English\n"
@@ -31,17 +31,17 @@ msgstr ""
 msgid "an out-of-date link"
 msgstr ""
 
-#: ../archive.php:15 ../index.php:13 ../taxonomy-portfolio-type.php:12
+#: ../archive.php:16 ../index.php:13 ../taxonomy-portfolio-type.php:13
 msgid "Sorry, no results were found."
 msgstr ""
 
-#: ../archive.php:36 ../front-page.php:85 ../index.php:28 ../page-blog.php:61
-#: ../page-portfolio.php:111 ../taxonomy-portfolio-type.php:100
+#: ../archive.php:37 ../front-page.php:85 ../index.php:28 ../page-blog.php:61
+#: ../page-portfolio.php:111 ../taxonomy-portfolio-type.php:101
 msgid "&larr; Older posts"
 msgstr ""
 
-#: ../archive.php:37 ../front-page.php:86 ../index.php:29 ../page-blog.php:62
-#: ../page-portfolio.php:112 ../taxonomy-portfolio-type.php:101
+#: ../archive.php:38 ../front-page.php:86 ../index.php:29 ../page-blog.php:62
+#: ../page-portfolio.php:112 ../taxonomy-portfolio-type.php:102
 msgid "Newer posts &rarr;"
 msgstr ""
 
@@ -575,7 +575,8 @@ msgstr ""
 msgid "Post Summary"
 msgstr ""
 
-#: ../lib/metaboxes.php:122 ../themeoptions/framework.php:1584
+#: ../lib/metaboxes.php:122 ../lib/cmb/init.php:244
+#: ../themeoptions/framework.php:1584
 msgid "Default"
 msgstr ""
 
@@ -1263,17 +1264,75 @@ msgstr ""
 msgid "Upload"
 msgstr ""
 
-#: ../lib/cmb/init.php:633
+#: ../lib/cmb/init.php:243
+msgid "Clear"
+msgstr ""
+
+#: ../lib/cmb/init.php:245
+msgid "Select Color"
+msgstr ""
+
+#: ../lib/cmb/init.php:246
+msgid "Current Color"
+msgstr ""
+
+#: ../lib/cmb/init.php:1185
+msgid "Save"
+msgstr ""
+
+#: ../lib/cmb/helpers/cmb_Meta_Box_ajax.php:47
 msgid "Please Try Again"
 msgstr ""
 
-#: ../lib/cmb/init.php:650
+#: ../lib/cmb/helpers/cmb_Meta_Box_ajax.php:131
 msgid "Remove Embed"
 msgstr ""
 
-#: ../lib/cmb/init.php:656
+#: ../lib/cmb/helpers/cmb_Meta_Box_ajax.php:134
 #, php-format
 msgid "No oEmbed Results Found for %s. View more info at"
+msgstr ""
+
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:150
+msgid "Add Row"
+msgstr ""
+
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:178
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:547
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:590
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:127
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:195
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:125
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:190
+#: ../themeoptions/inc/fields/background/field_background.php:313
+#: ../themeoptions/inc/fields/media/field_media.php:156
+#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:75
+#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:79
+#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:82
+#: ../themeoptions/inc/fields/slides/field_slides.php:128
+#: ../themeoptions/inc/fields/slides/field_slides.php:192
+msgid "Remove"
+msgstr ""
+
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:523
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:563
+msgid "Add or Upload File"
+msgstr ""
+
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:536
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:582
+msgid "Remove Image"
+msgstr ""
+
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:547
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:590
+msgid "File:"
+msgstr ""
+
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:547
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:590
+#: ../themeoptions/framework.php:2406
+msgid "Download"
 msgstr ""
 
 #: ../templates/comment.php:7
@@ -1527,10 +1586,6 @@ msgstr ""
 
 #: ../themeoptions/framework.php:2406
 msgid "Copy"
-msgstr ""
-
-#: ../themeoptions/framework.php:2406
-msgid "Download"
 msgstr ""
 
 #: ../themeoptions/framework.php:2406
@@ -2455,20 +2510,6 @@ msgstr ""
 msgid "Upload Icon"
 msgstr ""
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:127
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:195
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:125
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:190
-#: ../themeoptions/inc/fields/background/field_background.php:313
-#: ../themeoptions/inc/fields/media/field_media.php:156
-#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:75
-#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:79
-#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:82
-#: ../themeoptions/inc/fields/slides/field_slides.php:128
-#: ../themeoptions/inc/fields/slides/field_slides.php:192
-msgid "Remove"
-msgstr ""
-
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:132
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:200
 msgid "Select an Icon"
@@ -3148,22 +3189,6 @@ msgstr ""
 #: ../woocommerce/shop/form-login.php:33
 msgid "Lost Password?"
 msgstr ""
-
-#: ../woocommerce/single-product/meta.php:19
-msgid "SKU:"
-msgstr ""
-
-#: ../woocommerce/single-product/meta.php:24
-msgid "Category:"
-msgid_plural "Categories:"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../woocommerce/single-product/meta.php:29
-msgid "Tag:"
-msgid_plural "Tags:"
-msgstr[0] ""
-msgstr[1] ""
 
 #: ../woocommerce/single-product/rating.php:23
 #, php-format

@@ -48,6 +48,13 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 2.1.1 =
+* Added Support for wp-retina plugin.
+* Enable Category Descriptions.
+* Fix issue with sku.
+* hfeed issue
+* Fixed bug with Metaboxes and wordpress 3.9
+
 = Version: 2.1.0 =
 * Add target option for topbar icons and home page icons.
 * Add target option for slides.

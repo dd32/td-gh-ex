@@ -65,13 +65,13 @@
 			                          			} ?>"><i class="icon-folder-open"></i></span>
 			                          		 <?php }?>
 			                          		 |
-			                        	<span class="postcommentscount" data-toggle="tooltip" data-placement="top" data-original-title="<?php comments_number( '0', '1', '%' ); ?>">
+			                        	<span class="postcommentscount" data-toggle="tooltip" data-placement="top" data-original-title="<?php esc_attr(comments_number( '0', '1', '%' )); ?>">
 			                        		<i class="icon-comments-alt"></i>
 			                        	</span>
 			                        </div>
 			                        </header>
 		                        	<div class="entry-content">
-		                          		<p><?php echo virtue_excerpt(34); ?> <a href="<?php the_permalink() ?>"><?php _e('READ MORE', 'virtue');?></a></p>
+		                          		<p><?php echo esc_html(virtue_excerpt(34)); ?> <a href="<?php the_permalink() ?>"><?php _e('READ MORE', 'virtue');?></a></p>
 		                        	</div>
 		                      		<footer>
                        				</footer>

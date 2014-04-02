@@ -1,5 +1,5 @@
 <div class="subhead">
-    <span class="postauthortop">
+    <span class="postauthortop author vcard">
     <i class="icon-user"></i> <?php echo __('by', 'virtue');?> <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author"><?php echo get_the_author() ?></a> |
     </span>
     <?php $post_category = get_the_category($post->ID); if ( $post_category==true ) { ?>  

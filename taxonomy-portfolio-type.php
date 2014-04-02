@@ -7,6 +7,7 @@
     <div id="content" class="container">
    		<div class="row">
       <div class="main <?php echo kadence_main_class(); ?>" role="main">
+      	<?php echo category_description(); ?> 
       	<?php if (!have_posts()) : ?>
 		  <div class="alert">
 		    <?php _e('Sorry, no results were found.', 'virtue'); ?>

@@ -152,6 +152,36 @@ if(!class_exists('Aq_Resize')) {
                     2 => $dst_h
                 );
             }
+            // RETINA Support --------------------------------------------------------------->  
+            $retina_w = $dst_w*2;
+            $retina_h = $dst_h*2;
+            
+            //get image size after cropping
+            $dims_x2 = image_resize_dimensions($orig_w, $orig_h, $retina_w, $retina_h, $crop);
+            $dst_x2_w = $dims_x2[4];
+            $dst_x2_h = $dims_x2[5];
+            
+            // If possible lets make the @2x image
+            if($dst_x2_h) {
+            
+                //@2x image url
+                $destfilename = "{$upload_dir}{$dst_rel_path}-{$suffix}@2x.{$ext}";
+                
+                //check if retina image exists
+                if(file_exists($destfilename) && getimagesize($destfilename)) { 
+                    // already exists, do nothing
+                } else {
+                    // doesnt exist, lets create it
+                    $editor = wp_get_image_editor($img_path);
+                    if ( ! is_wp_error( $editor ) ) {
+                        $editor->resize( $retina_w, $retina_h, $crop );
+                        $editor->set_quality( 100 );
+                        $filename = $editor->generate_filename( $dst_w . 'x' . $dst_h . '@2x'  );
+                        $editor = $editor->save($filename); 
+                    }
+                }
+            
+            }
 
             return $image;
         }

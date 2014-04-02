@@ -80,7 +80,7 @@
     </div>
     <footer class="single-footer">
       <?php $tags = get_the_tags(); if ($tags) { ?> <span class="posttags"><i class="icon-tag"></i> <?php the_tags('', ', ', ''); ?> </span><?php } ?>
-      
+
       <?php global $post; if(get_post_meta( $post->ID, '_kad_blog_author', true ) == 'yes') { virtue_author_box(); } ?>
       <?php global $post; $blog_carousel_recent = get_post_meta( $post->ID, '_kad_blog_carousel_similar', true ); if ($blog_carousel_recent == 'similar') { get_template_part('templates/similarblog', 'carousel'); } else if($blog_carousel_recent == 'recent') {get_template_part('templates/recentblog', 'carousel');} ?>
 
