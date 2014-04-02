@@ -197,5 +197,6 @@
 		) ) );
 
 	} 
+	add_action('customize_register', 'bluegray_theme_customizer');
 
 ?>
