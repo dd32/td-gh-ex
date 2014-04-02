@@ -346,6 +346,7 @@ nav#mainmenu li li.current-menu-ancestor > a {
 /* ================= SIDE SIDEBAR ================= */
 
 .scroll-sidebar {
+	
 	right:-25%; 
 	width:25%; 
 	background:#2D3032; 
@@ -356,7 +357,6 @@ nav#mainmenu li li.current-menu-ancestor > a {
 	z-index:1; 
 	overflow-y:scroll;
 	border-top:solid 1px #444649;
-	
 	-webkit-transform: translateX(17px);
 	-ms-transform: translateX(17px);
 	transform: translateX(17px);
@@ -375,6 +375,7 @@ nav#mainmenu li li.current-menu-ancestor > a {
 .scroll-sidebar .post-article:last-of-type {
 	margin-bottom:0px;
 	border-bottom:none;
+	padding-bottom:124px;
 }
 
 .scroll-sidebar h3.title {

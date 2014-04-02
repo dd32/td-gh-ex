@@ -19,8 +19,13 @@ jQuery.noConflict()(function($){
 		});
 
 		$('.scroll-sidebar').css({
-			'padding-top' : header_height,
+			'top' : header_height + adminbar_height,
 		});
+		
+		$('.scroll-sidebar .post-article:last-of-type').css({
+			'padding-bottom' : header_height + adminbar_height + 40,
+		});
+
 
 		$(".navigation").click(function() {
 		
@@ -53,9 +58,13 @@ jQuery.noConflict()(function($){
 		$('#header').css({
 			'top' : adminbar_height,
 		});
-		
+
 		$('.scroll-sidebar').css({
-			'padding-top' : header_height,
+			'top' : header_height + adminbar_height,
+		});
+		
+		$('.scroll-sidebar .post-article:last-of-type').css({
+			'padding-bottom' : header_height + adminbar_height + 40,
 		});
 
 		if($('.scroll-sidebar').css('right') < '0px' ) {	
