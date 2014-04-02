@@ -53,7 +53,11 @@ Credits
 
 -- By Google - http://google.com
 
---- License - https://developers.google.com/fonts/faq?hl=it-IT#Any_Page_OK
+--- Fjalla One Font by Sorkin Type Co, Licensed under SIL Open Font License (OFL)
+http://www.google.com/fonts/specimen/Fjalla+One
+
+--- Roboto Slab Font by Christian Robertson, Licensed under Apache License, Version 2.0 
+https://www.google.com/fonts/specimen/Roboto+Slab
 
 /** FRAMEWORK **/
 

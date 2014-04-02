@@ -17,7 +17,7 @@ $panel = array (
 
 array( "name" => "Navigation",  
        "type" => "navigation",  
-       "item" => array( "General" => __( "General","lookilite") , "Fonts" => __( "Fonts","lookilite") , "Colors" => __( "Colors","lookilite") , "Backgrounds" => __( "Backgrounds","lookilite")),   
+       "item" => array( "General" => __( "General","lookilite") , "Fonts" => __( "Fonts","lookilite") , "Colors" => __( "Colors","lookilite") ),   
        "start" => "<ul>", 
        "end" => "</ul>"),  
 	   
@@ -439,42 +439,6 @@ array( "type" => "begintab",
 array( "type" => "endtab"),
 	   
 /* =================== END COLORS OPTION TAB =================== */
-
-/* =================== BEGIN BACKGROUNDS TAB =================== */
-
-array( "type" => "begintab",
-	   "tab" => "Backgrounds",
-	   "element" =>
-	   
-/* START BACKGROUNDS */ 
-
-	array( "type" => "form",
-	       "name" => "Backgrounds"),
-	   
-	array( "type" => "start",
-	       "val" => "Body Background",
-	       "name" => __( "Body Background","lookilite")),
-
-	array( "name" => __( "Default pattern background","lookilite"),
-	       "desc" => __( "Select a pattern for body background.","lookilite"),
-	       "id" => $shortname."_body_background",
-	       "type" => "background",
-	       "options" => $bodybackgrounds,
-	       "std" => "/images/background/patterns/pattern10.jpg"),
-
-	array( "type" => "save-button",
-	       "class" => "Body Background",
-	       "value" => "Save"),
-
-	array( "type" => "end"),
-
-/* END BACKGROUNDS */ 
-
-),
-
-array( "type" => "endtab"),
-	   
-/* =================== END BACKGROUNDS TAB =================== */
 
 array( "type" => "endpanel"),  
 

@@ -109,7 +109,7 @@ function lookilite_message () {
 function lookilite_getpremium() {	?>
 
 	<a href="<?php echo esc_url('http://www.themeinprogress.com/looki/?ref=panel'); ?>" target="_blank" >
-    	<img src="http://www.themeinprogress.com/images/lookipremium.jpg" alt="Get Premium" style="margin:15px auto" />
+    	<img src="<?php echo get_template_directory_uri()."/core/admin/include/images/"; ?>lookipremium.jpg" alt="Get Premium" style="margin:15px auto" />
     </a>
 
 <?php } ?>

@@ -291,11 +291,7 @@ function lookilite_setup() {
 
 	register_nav_menu( 'main-menu', 'Main menu' );
 
-	if (lookilite_setting('lookilite_body_background')):
-		$background = lookilite_setting('lookilite_body_background');
-	else:
-		$background = "/images/background/patterns/pattern12.jpg";
-	endif;
+	$background = "/images/background/patterns/pattern12.jpg";
 	
 	add_theme_support( 'custom-background', array(
 		'default-color' => 'f3f3f3',
@@ -452,6 +448,8 @@ function lookilite_scripts_styles() {
 
 	wp_enqueue_script( "jquery-ui-core", array('jquery'));
 	wp_enqueue_script( "jquery-ui-tabs", array('jquery'));
+	
+	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Fjalla+One|Roboto+Slab:400,300,100,700' );
 	
 	lookilite_enqueue_script('/js');
 

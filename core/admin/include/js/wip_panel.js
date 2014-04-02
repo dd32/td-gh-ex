@@ -75,22 +75,6 @@ jQuery(document).ready(function($){
 	
 	}); 
 	
-	var url = jQuery(".template_directory").val();
-
-	jQuery('.select-background').each(function() {
-		
-		var sel = jQuery(this).val();
-		jQuery(this).next(".preview").css({'background-image': 'url(" ' + url + sel +'")'});
-		
-	}); 
-
-	jQuery('.select-background').live("click",function() { 
-		
-		var sel = jQuery(this).val();
-		jQuery(this).next(".preview").css({'background-image': 'url(" ' + url + sel +'")'});
-		
-	}); 
-
 	jQuery('.wip_mainbox').css({'display':'none'});
 	jQuery('.inactive').next('.wip_mainbox').css({'display':'block'});
 
