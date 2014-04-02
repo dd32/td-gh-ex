@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-PrivateBusiness version 1.8 - april 2014 
+PrivateBusiness version 1.9 - april 2014 
 - several adjustments in functions file
 - added pot translation file
 - better position of read more button

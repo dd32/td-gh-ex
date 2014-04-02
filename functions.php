@@ -84,26 +84,18 @@
 	add_filter( 'wp_title', 'privatebusiness_wp_title' ); 
 
 
+
 // Enqueues scripts and styles for front-end
 	function privatebusiness_scripts() {
-		if (!is_admin()) { 
-			wp_enqueue_style( 'style', get_stylesheet_uri() );
-			wp_enqueue_script( 'nav', get_template_directory_uri() . '/js/nav.js', array( 'jquery' ) );
-		}
-		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
-			wp_enqueue_script( 'comment-reply' );
+			wp_enqueue_style( 'privatebusiness-style', get_stylesheet_uri() );
+			wp_enqueue_script( 'privatebusiness-nav', get_template_directory_uri() . '/js/nav.js', array( 'jquery' ) );
+			wp_enqueue_style( 'privatebusiness-googlefonts', '//fonts.googleapis.com/css?family=Open+Sans' ); 
+
+			if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+				wp_enqueue_script( 'comment-reply' );
+			}
 	}
 	add_action( 'wp_enqueue_scripts', 'privatebusiness_scripts' );
-
-
-// Register Google Fonts
-	function privatebusiness_fonts() { 
-		if (! is_admin() ) { 
-			wp_register_style('privatebusiness_googlefonts', '//fonts.googleapis.com/css?family=Open+Sans' ); 		
-				wp_enqueue_style( 'privatebusiness_googlefonts'); 	
-		}
-	}  	
-	add_action('wp_enqueue_scripts', 'privatebusiness_fonts');
 
 
 // Sidebars
