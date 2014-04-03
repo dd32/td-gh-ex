@@ -114,21 +114,3 @@ add_action('wp_head', 'azabujuban_customize_css');
 
 
 
-include( STYLESHEETPATH . '/extras/adminbar/adminbar.php' );
-
-//Dashboard
-function example_dashboard_widget_function() {
-?>
-<a href="http://www.conoha.jp/lp/20131201wp/?banner_id=vn_wp_20150116wps_azabu" target="_blank"><img src="<?php echo get_stylesheet_directory_uri() .'/images/conoha.gif' ?>" style="width:100%"></a>
-<?php
-}
-function example_add_dashboard_widgets() {
-wp_add_dashboard_widget('example_dashboard_widget', 'ConoHa VPS hosting', 'example_dashboard_widget_function');
-global $wp_meta_boxes;
-$normal_dashboard = $wp_meta_boxes['dashboard']['normal']['core'];
-$example_widget_backup = array('example_dashboard_widget' => $normal_dashboard['example_dashboard_widget']);
-unset($normal_dashboard['example_dashboard_widget']);
-$sorted_dashboard = array_merge($example_widget_backup, $normal_dashboard);
-$wp_meta_boxes['dashboard']['normal']['core'] = $sorted_dashboard;
-}
-add_action('wp_dashboard_setup', 'example_add_dashboard_widgets' );

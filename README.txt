@@ -5,7 +5,7 @@ Theme URI: http://wpshop.com/theme/BJyn1BC5Zg41
 Author: WP Shop byGMO
 Author URI: http://www.wpshop.com/
 Description: Azabu-Juban is a simple, easy-to-use, and highly customizable WordPress theme. Beautiful Japanese design inspiration comes from Edo komon pattern.
-Version: 1.0.2
+Version: 1.0.3
 Template: twentythirteen
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -37,8 +37,6 @@ You can drop your queries in our contact form in the following link.
 http://support.wpshop.com/?page_id=15
 
 == Instructions ==
-
-
 -To Customize Header 
 Go to Dashboard > Appearance > Header.  You can choose from 5 unique header background design from "Default Images" menu, or select random to randomly show other header images everytime browser reloads.  This theme allow you to upload your own header background wallpaper image as well. 
 
