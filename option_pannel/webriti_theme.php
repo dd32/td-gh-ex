@@ -65,6 +65,24 @@
 						
 					</div>				
 			</div>
+			<div class="row-fluid webriti-container" >				
+					<div class="theme-image span3">
+						<a target="_blank" href="http://webriti.com/busipro/">
+							<img src="<?php echo get_template_directory_uri(); ?>/option_pannel/images/hc_img.png">
+						</a>
+					</div>	
+					<div class="theme-info span9">
+						<a target="_blank" href="http://webriti.com/rambo/" class="theme-name"><h4><?php _e('Health Centre Pro','sis_spa'); ?></h4></a>								
+						<div class="theme-description">
+							<p><?php _e('Health Centre is a Responsive WordPress Theme. It is ideal for Gym/Health Healing Centre Owner.Very Cleaned Design.','sis_spa'); ?></p>
+							<p><?php _e('Health Centre is designed with Readability Flexibility in mind. It is suitable for Dentists, Doctors , Surgeons, hospitals and other type of Medical Websites.','sis_spa'); ?></p>
+							<p><?php _e('Build an effective online presence with HealthCentre','sis_spa'); ?></p>
+						</div>						
+						<a target="_blank" href="http://webriti.com/healthcentre/" class="buy btn btn-primary webrit_button"><?php _e('Buy Health Centre Pro','sis_spa'); ?></a>
+						<a target="_blank" href="http://webriti.com/healthcentre/" class="free btn btn-success webrit_button"><?php _e('View Demo','sis_spa'); ?></a>
+						
+					</div>				
+			</div>
 		</div>	
 	</div>
 	<!-- container-fluid -->

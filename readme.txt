@@ -57,6 +57,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
+@Version : 1.4.1
+1.Added New Theme Health Centre in Options panel Page.
 @Version : 1.4
 1.Added More Styling for tables .
 @ Version: 1.3.9
