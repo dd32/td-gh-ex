@@ -3,10 +3,10 @@
  * The Header for our theme.
  *
  * @package	Anarcho Notepad
- * @since	2.1.8
+ * @since	2.5
  * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
- * @copyright 	Copyright (c) 2013, Arthur Gareginyan
- * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
+ * @copyright 	Copyright (c) 2013-2014, Arthur Gareginyan
+ * @link      	http://mycyberuniverse.com/anarcho-notepad.html
  * @license   	http://www.gnu.org/licenses/gpl-3.0.html
  */
 ?>
@@ -25,14 +25,14 @@
 <head>
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
+	<title><?php wp_title('|', true, 'right'); ?></title>
 
 	<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" media="screen" />
 
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-	<?php echo get_theme_mod('script_header'); ?>
+	<?php echo get_theme_mod('scripts_header'); ?>
 
 	<?php wp_head(); ?>
 
@@ -42,7 +42,9 @@
 
 <header id="masthead" class="site-header" role="banner">
 
-	<div class="top-search-form"><?php get_search_form(); ?></div>
+	<?php if ( get_theme_mod('disable_paper_search') == '0') { ?>
+		<div class="top-search-form"><?php get_search_form(); ?></div>
+	<?php } ?>
 
 	<div id="title">
 	  <a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">

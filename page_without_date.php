@@ -1,6 +1,8 @@
 <?php
 /**
- * The template for displaying all pages.
+ * The template for displaying pages without date.
+ *
+ * Template Name: Page without date
  *
  * @package	Anarcho Notepad
  * @since	2.5
@@ -20,8 +22,6 @@
   <?php while (have_posts()) : the_post(); ?>
 
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-      <?php anarcho_ribbons(); ?>
 
       <h1><?php the_title(); ?></h1>
       <div class="post-inner">
