@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-SimplyBlack Version 1.7 - april 2014
+SimplyBlack Version 1.8 - april 2014
 - several adjustments in functions file
 - added pot translation file
 - improved translation of meta
