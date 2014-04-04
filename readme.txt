@@ -2,7 +2,7 @@
 
 Theme Name: Athenea
 Theme URI: http://www.ibermega.com/themes/athenea
-Version: 1.0.9
+Version: 1.1.0
 Requires at least: 3.0.1
 Tested up to: 3.8.1
 Author: Miguel Angel Rico
@@ -52,13 +52,19 @@ Alternatively you can download the file, unzip it and move the unzipped contents
 * Gravatar ready
 * Homepage Front-page
 * Theme Options
+* Templates
 
 /*========= Documentation =========*/
 
 For documentation go to http://www.ibermega.com/themes/athenea
+To view the tutorials for use http://www.ibermega.com/tutoriales/plantilla-athenea/
 
 
 == Changelog ==
+
+= 1.1.0 - 04.04.2014 =
+* Page templates are added to multiply the design of Athenea.
+* The url is added to readme.txt for usage tutorials.
 
 = 1.0.9 - 13.03.2014 =
 * Se agregan 18 nuevos idiomas. The theme now has 25 languages: English, French, German, Spanish, Italian, Portuguese, Russian, Chinese, Estonian, Czech, Danish, Irish, Basque, Catalan, Galician, Dutch, Vietnamese, Hebrew, Greek, Turkish, Romanian, Korean, Polish, Arabic and Japanese.
