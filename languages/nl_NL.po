@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: GridBulletin v1.2\n"
+"Project-Id-Version: GridBulletin v1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-03-02 11:21:32+0000\n"
+"PO-Revision-Date: 2014-04-04 15:36:22+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,15 +21,15 @@ msgstr ""
 "X-Textdomain-Support: yes"
 
 #: 404.php:11
-#: search.php:42
+#: search.php:45
 #@ gridbulletin
 msgid "Nothing Found"
 msgstr "Niets gevonden"
 
 #: 404.php:12
-#: archive.php:54
-#: index.php:37
-#: search.php:43
+#: archive.php:57
+#: index.php:42
+#: search.php:46
 #@ gridbulletin
 msgid "Sorry, no posts matched your criteria."
 msgstr "Sorry, er zijn helaas geen berichten gevonden."
@@ -64,66 +64,51 @@ msgstr "Auteur Archieven"
 msgid "Tag Archives"
 msgstr "Tag Archieven"
 
-#: archive.php:39
-#: index.php:22
-#: search.php:26
-#@ gridbulletin
-msgid "Permalink to "
-msgstr "Permalink naar "
-
-#: archive.php:47
-#: index.php:30
-#: search.php:34
-#: single.php:26
-#@ gridbulletin
-msgid "Posted on "
-msgstr "Geplaatst op "
-
-#: archive.php:58
-#: index.php:41
-#: search.php:49
+#: archive.php:61
+#: index.php:46
+#: search.php:52
 #@ gridbulletin
 msgid "&laquo; Older posts"
 msgstr "&laquo; Oudere berichten"
 
-#: archive.php:59
-#: index.php:42
-#: search.php:50
+#: archive.php:62
+#: index.php:47
+#: search.php:53
 #@ gridbulletin
 msgid "Newer posts &raquo;"
 msgstr "Nieuwere berichten &raquo;"
 
-#: functions.php:105
+#: functions.php:106
 #@ gridbulletin
 msgid "Primary Sidebar"
 msgstr "Hoofd Sidebar"
 
-#: functions.php:107
-#: functions.php:117
-#: functions.php:127
-#: functions.php:137
-#: functions.php:147
-#: functions.php:157
-#: functions.php:167
+#: functions.php:108
+#: functions.php:118
+#: functions.php:128
+#: functions.php:138
+#: functions.php:148
+#: functions.php:158
+#: functions.php:168
 #@ gridbulletin
 msgid "Select widgets from the right-hand side."
 msgstr "Selecteer widgets van de rechterkant."
 
-#: functions.php:196
+#: functions.php:40
 #@ gridbulletin
 msgid "Boats"
 msgstr "Boten"
 
-#: archive.php:35
+#: archive.php:33
 #: index.php:18
-#: search.php:22
+#: search.php:20
 #@ gridbulletin
 msgid "Featured post"
 msgstr "Aanbevolen bericht"
 
 #: page-full.php:21
 #: page.php:20
-#: single.php:43
+#: single.php:47
 #@ gridbulletin
 msgid "Edit"
 msgstr "Bewerk"
@@ -134,27 +119,22 @@ msgstr "Bewerk"
 msgid "Search Results for: %s"
 msgstr "Zoekresultaat voor: %s"
 
-#: single.php:29
-#@ gridbulletin
-msgid "Posted in "
-msgstr "Geplaatst in "
-
-#: comments.php:37
+#: comments.php:39
 #@ gridbulletin
 msgid "&laquo; Older Comments"
 msgstr "&laquo; Oudere Reacties"
 
-#: comments.php:38
+#: comments.php:40
 #@ gridbulletin
 msgid "Newer Comments &raquo;"
 msgstr "Nieuwere Reacties &raquo;"
 
-#: comments.php:43
+#: comments.php:46
 #@ gridbulletin
 msgid "Comments are closed"
 msgstr "Reageren is niet mogelijk"
 
-#: functions.php:18
+#: functions.php:19
 #@ gridbulletin
 msgid "Primary Navigation"
 msgstr "Hoofdmenu"
@@ -167,75 +147,67 @@ msgid_plural "%1$s responses on %2$s"
 msgstr[0] "1 reactie op %2$s"
 msgstr[1] "%1$s reacties op %2$s"
 
-#: functions.php:205
-#: functions.php:211
+#: functions.php:196
+#: functions.php:202
 #@ gridbulletin
 msgid "Logo"
 msgstr "Logo"
 
-#: functions.php:207
+#: functions.php:198
 #@ gridbulletin
 msgid "Upload a logo to replace blogname and description in header"
 msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
 
-#: archive.php:47
-#: index.php:30
-#: search.php:34
-#: single.php:26
-#@ gridbulletin
-msgid "By "
-msgstr "Door "
-
-#: archive.php:49
-#: index.php:32
-#: search.php:36
-#: single.php:28
+#: archive.php:51
+#: index.php:36
+#: search.php:38
+#: single.php:30
 #@ gridbulletin
 msgid "Leave a response"
 msgstr "Plaats reactie"
 
-#: archive.php:49
-#: index.php:32
-#: search.php:36
-#: single.php:28
+#: archive.php:51
+#: index.php:36
+#: search.php:38
+#: single.php:30
 #@ gridbulletin
 msgid "% responses"
 msgstr "% reacties"
 
-#: functions.php:115
+#: functions.php:116
 #@ gridbulletin
 msgid "Footer Right"
 msgstr "Footer Rechts"
 
-#: functions.php:125
+#: functions.php:126
 #@ gridbulletin
 msgid "Footer Middle"
 msgstr "Footer Midden"
 
-#: functions.php:135
+#: functions.php:136
 #@ gridbulletin
 msgid "Footer Left"
 msgstr "Footer Links"
 
-#: functions.php:145
+#: functions.php:146
 #@ gridbulletin
 msgid "Footer Home Right"
 msgstr "Footer Home Rechts"
 
-#: functions.php:155
+#: functions.php:156
 #@ gridbulletin
 msgid "Footer Home Middle"
 msgstr "Footer Home Midden"
 
-#: functions.php:165
+#: functions.php:166
 #@ gridbulletin
 msgid "Footer Home Left"
 msgstr "Footer Home Links"
 
-#: archive.php:49
-#: index.php:32
-#: search.php:36
-#: single.php:28
+#: archive.php:51
+#: index.php:36
+#: search.php:38
+#: single.php:30
 #@ gridbulletin
 msgid "1 response"
 msgstr "1 reactie"
@@ -257,4 +229,48 @@ msgstr "WordPress Blog Platform"
 #@ gridbulletin
 msgid "Proudly powered by WordPress"
 msgstr "Proudly powered by WordPress"
+
+#: archive.php:38
+#: index.php:23
+#: search.php:25
+#, php-format
+#@ gridbulletin
+msgid "Permalink to %s"
+msgstr "Permalink naar %s"
+
+#: archive.php:48
+#: index.php:33
+#: search.php:35
+#: single.php:27
+#, php-format
+#@ gridbulletin
+msgid "Posted on %s"
+msgstr "Geplaatst op %s"
+
+#: archive.php:49
+#: index.php:34
+#: search.php:36
+#: single.php:28
+#, php-format
+#@ gridbulletin
+msgid "By %s"
+msgstr "Door %s"
+
+#: single.php:31
+#, php-format
+#@ gridbulletin
+msgid "Posted in %s"
+msgstr "Geplaatst in %s"
+
+#: single.php:31
+#: single.php:32
+#@ gridbulletin
+msgid ", "
+msgstr ", "
+
+#: single.php:32
+#, php-format
+#@ gridbulletin
+msgid "Tags: %s"
+msgstr "Tags: %s"
 

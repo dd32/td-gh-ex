@@ -6,7 +6,8 @@
 // Sets up theme defaults and registers various WordPress features that GridBulletin supports
 	function gridbulletin_setup() { 
 
-	// Set width without the padding
+	// Set max content width for img, video, and more
+		global $content_width; 
 		if ( ! isset( $content_width ) )
 		$content_width = 650;
 
@@ -30,6 +31,15 @@
 		'uploads' => true,
 		);	
 		add_theme_support( 'custom-header', $args );
+
+	// Default header
+		register_default_headers( array(
+		'boats' => array(
+			'url' => '%s/images/boats.jpg',
+			'thumbnail_url' => '%s/images/boats-thumbnail.jpg',
+			'description' => __( 'Boats', 'gridbulletin' )
+		)
+		) );
 
 	// Post thumbnails
 		add_theme_support( 'post-thumbnails' ); 
@@ -56,6 +66,18 @@
 	add_action( 'after_setup_theme', 'gridbulletin_setup' ); 
 
 
+// Add blogname to wp_title
+	function gridbulletin_wp_title( $title ) { 
+		global $page, $paged; 
+		if ( is_feed() ) 
+		return $title; 
+	
+		$filtered_title = $title . get_bloginfo( 'name' ); 
+			return $filtered_title; 
+	}
+	add_filter( 'wp_title', 'gridbulletin_wp_title' ); 
+
+
 // Add html5 support for older IE version 
 	function gridbulletin_html5() { 
 		echo '<!--[if lt IE 9]>'. "\n"; 
@@ -67,36 +89,15 @@
 
 // Enqueues scripts and styles for front-end
 	function gridbulletin_scripts() {
-		if (!is_admin()) { 
-			wp_enqueue_style( 'style', get_stylesheet_uri() );
-			wp_enqueue_script( 'nav', get_template_directory_uri() . '/js/nav.js', array( 'jquery' ) );
-		}
-		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
-			wp_enqueue_script( 'comment-reply' );
+			wp_enqueue_style( 'gridbulletin-style', get_stylesheet_uri() );
+			wp_enqueue_script( 'gridbulletin-nav', get_template_directory_uri() . '/js/nav.js', array( 'jquery' ) );
+			wp_enqueue_style( 'gridbulletin-googlefonts', '//fonts.googleapis.com/css?family=Open+Sans' ); 
+
+			if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+				wp_enqueue_script( 'comment-reply' );
+			}
 	}
 	add_action( 'wp_enqueue_scripts', 'gridbulletin_scripts' );
-
-
-// Register Google Fonts
-	function gridbulletin_fonts() { 
-		if (! is_admin() ) { 
-			wp_register_style('googleFonts', '//fonts.googleapis.com/css?family=Open+Sans' ); 		
-				wp_enqueue_style( 'googleFonts'); 	
-		}
-	}  	
-	add_action('wp_enqueue_scripts', 'gridbulletin_fonts');
-
-
-// Add blogname to wp_title
-	function gridbulletin_wp_title( $title ) { 
-		global $page, $paged; 
-		if ( is_feed() ) 
-		return $title; 
-	
-		$filtered_title = $title . get_bloginfo( 'name' ); 
-			return $filtered_title; 
-	}
-	add_filter( 'wp_title', 'gridbulletin_wp_title' ); 
 
 
 // Sidebars
@@ -186,16 +187,6 @@
     		return str_replace('<p', '<p class="excerpt"', $excerpt);
 		}
 	add_filter( "the_excerpt", "gridbulletin_excerpt" );
-
-
-// Default header
-	register_default_headers( array(
-	'boats' => array(
-		'url' => '%s/images/boats.jpg',
-		'thumbnail_url' => '%s/images/boats-thumbnail.jpg',
-		'description' => __( 'Boats', 'gridbulletin' )
-		)
-	) );
 
 
 // Theme Customizer (option to add logo)

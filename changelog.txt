@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+GridBulletin version 1.3 - april 2014
+- several adjustments in functions file
+- added pot translation file
+- improved translation of meta
+- better layout of commentsform
+- added several adjustments for better responsive layout
+- a bunch of other minor adjustments in stylesheet
+
 GridBulletin version 1.2 - march 2014 
 - added several adjustments for better responsive layout
 - added translation to footer site info
