@@ -54,7 +54,7 @@ function iconic_one_options_display() {
 <br .../>
 </div>
 <h2>Iconic One Quick Start Guide</h2> 
-<h3><a style="text-decoration:none;" href="http://demo.themonic.com/io/">Official Demo</a> for reference.</h3>
+<h3><a style="text-decoration:none;" href="http://demo.themonic.com/io/">Official Demo</a> for reference. | Read <a style="text-decoration:none;" href="http://themonic.com/iconic-one/">FAQs</a> for common issues. </h3>
 <h4>Responsive Menu - Important! - Update: Dec 14 2013.</h4> 
 This is the first step: Configure the Main Navigation menu for mobile view by
 going to Appearance -> Menus. Create your WordPress menu as per your requirement and select it as <b>primary menu</b>, Navigation Menu responsiveness won't work otherwise.

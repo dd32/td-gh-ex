@@ -18,9 +18,9 @@
 			<?php if ( is_single() ) : ?>
 			<h1 class="entry-title"><?php the_title(); ?></h1>
 			<?php else : ?>
-			<h1 class="entry-title">
+			<h2 class="entry-title">
 				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'themonic' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
-			</h1>
+			</h2>
 			<?php endif; // is_single() ?>
 					<?php if ( is_single() ) : //for date on single page ?>	
 	<div class="below-title-meta">
@@ -33,7 +33,7 @@
          <?php echo get_the_date(); ?> 
          </div>
 		 <div class="adt-comment">
-		 <a class="link-comments" href="<?php  comments_link(); ?>"><?php comments_number(__('0 Comment','themonic'),__('1 Comment'),__('% Comments')); ?></a></span> 
+		 <a class="link-comments" href="<?php  comments_link(); ?>"><?php comments_number(__('0 Comment','themonic'),__('1 Comment'),__('% Comments')); ?></a> 
          </div>       
      </div><!-- below title meta end -->
 			
@@ -62,7 +62,7 @@
 		<?php endif; ?>
 
 		<footer class="entry-meta">
-		<span>Category: <?php the_category(' '); ?></span> <span><?php the_tags(); ?></span> 
+		<span><?php _e('Category:','themonic'); ?> <?php the_category(' '); ?></span> <span><?php the_tags(); ?></span> 
            	<?php edit_post_link( __( 'Edit', 'themonic' ), '<span class="edit-link">', '</span>' ); ?>
 			<?php if ( is_singular() && get_the_author_meta( 'description' ) && is_multi_author() ) : // If a user has filled out their description and this is a multi-author blog, show a bio on their entries. ?>
 				<div class="author-info">
