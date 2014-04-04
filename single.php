@@ -24,8 +24,8 @@
 			<div class="pagelink"><?php wp_link_pages(); ?></div>
 			
 			<h5 class="postmetadata">
-			<?php _e('Posted in ', 'privatebusiness'); ?><?php the_category(__(', ', 'privatebusiness') ); ?><?php if(has_tag() ) : echo '|'; ?>
-			<?php the_tags(__('Tags: ', 'privatebusiness'), __(', ', 'privatebusiness') ); ?> <?php endif; ?>
+			<?php printf( __( 'Posted in %s', 'privatebusiness' ), get_the_category_list( __( ', ', 'privatebusiness' ) ) ); ?>
+			<?php if(has_tag() ) : echo ' | '; ?><?php printf(__( 'Tags: %s', 'privatebusiness' ), get_the_tag_list('', __( ', ', 'privatebusiness' ) ) ); ?> <?php endif; ?>
 			</h5>
 
 		</div>
@@ -35,7 +35,7 @@
 	<?php endwhile; ?>
 	<?php endif; ?>
 	
-		<h5><?php edit_post_link( __( 'Edit', 'privatebusiness' ), '<span class="edit-link">', '</span>' ) ?></h5>
+	<h5><?php edit_post_link( __( 'Edit', 'privatebusiness' ), '<span class="edit-link">', '</span>' ) ?></h5>
 
 </div>
 <?php get_sidebar(); ?>

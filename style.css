@@ -1,7 +1,7 @@
 /*
 Theme Name: PrivateBusiness
 Theme URI: http://www.guidovanderleest.nl/privatebusiness
-Version: 2.0
+Version: 2.1
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: PrivateBusiness is a free, basic, clean, minimalistic, responsive, mobile friendly, WordPress theme for Private or Business website. Primary sidebar, 2 widget-areas underneath header-image, 2 widget-area's in footer, custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
@@ -138,7 +138,7 @@ select {max-width:100%;}
 /* HEADER SUBMENU */
 .nav-head ul ul {display:none; position: absolute; top: 100%; padding: 0;}
 .nav-head ul ul ul {display:none; position: absolute; top: 30%; left: 100%;}
-.nav-head ul ul a {width:12em; padding: 5px 10px; background: #333; color: #fff; z-index:999;}
+.nav-head ul ul a {width:12em; padding: 5px 10px; background: #333; color: #fff;}
 .nav-head ul li:hover > ul {display:block;}
 .nav-head ul li ul li {margin:0;}
 

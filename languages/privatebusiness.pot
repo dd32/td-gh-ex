@@ -10,15 +10,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: 404.php:9
-#: search.php:36
+#: search.php:37
 #@ privatebusiness
 msgid "Nothing Found"
 msgstr ""
 
 #: 404.php:10
-#: archive.php:47
-#: index.php:38
-#: search.php:37
+#: archive.php:48
+#: index.php:39
+#: search.php:38
 #@ privatebusiness
 msgid "Sorry, no posts matched your criteria."
 msgstr ""
@@ -53,72 +53,73 @@ msgstr ""
 msgid "Tag Archives"
 msgstr ""
 
-#: archive.php:27
-#: index.php:18
-#: search.php:15
+#: archive.php:28
+#: index.php:19
+#: search.php:16
+#, php-format
 #@ privatebusiness
-msgid "Permalink to "
+msgid "Permalink to %s"
 msgstr ""
 
-#: archive.php:31
-#: index.php:22
-#: search.php:19
+#: archive.php:32
+#: index.php:23
+#: search.php:20
 #: single.php:17
 #, php-format
 #@ privatebusiness
 msgid "Posted on %s"
 msgstr ""
 
-#: archive.php:32
-#: index.php:23
-#: search.php:20
+#: archive.php:33
+#: index.php:24
+#: search.php:21
 #: single.php:18
 #, php-format
 #@ privatebusiness
 msgid "By %s"
 msgstr ""
 
-#: archive.php:34
-#: index.php:25
-#: search.php:22
+#: archive.php:35
+#: index.php:26
+#: search.php:23
 #: single.php:20
 #@ privatebusiness
 msgid "Leave a response"
 msgstr ""
 
-#: archive.php:34
-#: index.php:25
-#: search.php:22
+#: archive.php:35
+#: index.php:26
+#: search.php:23
 #: single.php:20
 #@ privatebusiness
 msgid "1 response"
 msgstr ""
 
-#: archive.php:34
-#: index.php:25
-#: search.php:22
+#: archive.php:35
+#: index.php:26
+#: search.php:23
 #: single.php:20
 #@ privatebusiness
 msgid "% responses"
 msgstr ""
 
-#: archive.php:43
-#: index.php:34
-#: search.php:31
+#: archive.php:44
+#: index.php:35
+#: search.php:32
 #@ privatebusiness
 msgid "Read More &raquo;"
-msgstr ""
-
-#: archive.php:51
-#: index.php:42
-#: search.php:43
-#@ privatebusiness
-msgid "&laquo; Older posts"
 msgstr ""
 
 #: archive.php:52
 #: index.php:43
 #: search.php:44
+#@ privatebusiness
+msgid "&laquo; Older posts"
+msgstr ""
+
+#: archive.php:53
+#: index.php:44
+#: search.php:45
 #@ privatebusiness
 msgid "Newer posts &raquo;"
 msgstr ""
@@ -161,57 +162,57 @@ msgstr ""
 msgid "Proudly powered by WordPress"
 msgstr ""
 
-#: functions.php:18
+#: functions.php:19
 #@ privatebusiness
 msgid "Primary Navigation"
 msgstr ""
 
-#: functions.php:39
+#: functions.php:40
 #@ privatebusiness
 msgid "Boats"
 msgstr ""
 
-#: functions.php:104
+#: functions.php:105
 #@ privatebusiness
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:106
-#: functions.php:116
-#: functions.php:126
-#: functions.php:136
-#: functions.php:146
+#: functions.php:107
+#: functions.php:117
+#: functions.php:127
+#: functions.php:137
+#: functions.php:147
 #@ privatebusiness
 msgid "Select widgets from the right-hand side."
 msgstr ""
 
-#: functions.php:114
+#: functions.php:115
 #@ privatebusiness
 msgid "Homepage Sidebar Right"
 msgstr ""
 
-#: functions.php:124
+#: functions.php:125
 #@ privatebusiness
 msgid "Homepage Sidebar Left"
 msgstr ""
 
-#: functions.php:134
+#: functions.php:135
 #@ privatebusiness
 msgid "Footer Sidebar Right"
 msgstr ""
 
-#: functions.php:144
+#: functions.php:145
 #@ privatebusiness
 msgid "Footer Sidebar Left"
 msgstr ""
 
-#: functions.php:168
-#: functions.php:174
+#: functions.php:169
+#: functions.php:175
 #@ privatebusiness
 msgid "Logo"
 msgstr ""
 
-#: functions.php:170
+#: functions.php:171
 #@ privatebusiness
 msgid "Upload a logo to replace blogname and description in header"
 msgstr ""
@@ -235,8 +236,9 @@ msgid "Search Results for: %s"
 msgstr ""
 
 #: single.php:27
+#, php-format
 #@ privatebusiness
-msgid "Posted in "
+msgid "Posted in %s"
 msgstr ""
 
 #: single.php:27
@@ -246,8 +248,9 @@ msgid ", "
 msgstr ""
 
 #: single.php:28
+#, php-format
 #@ privatebusiness
-msgid "Tags: "
+msgid "Tags: %s"
 msgstr ""
 
 

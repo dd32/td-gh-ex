@@ -1,9 +1,10 @@
 CHANGELOG
 =========
 
-PrivateBusiness version 2.0 - april 2014 
+PrivateBusiness version 2.1 - april 2014 
 - several adjustments in functions file
 - added pot translation file
+- improved translation of meta
 - better position of read more button
 - better layout of commentsform
 - added several adjustments for better responsive layout

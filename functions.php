@@ -70,8 +70,8 @@
 		echo '<script src="' . esc_url( get_template_directory_uri() . '/js/ie.js' ) . '"></script>'. "\n"; 
 		echo '<![endif]-->'. "\n"; 
 		}
-	add_action('wp_enqueue_scripts', 'privatebusiness_html5'); 
- 
+	add_action( 'wp_head', 'privatebusiness_html5' ); 
+
 
 // Add blogname to wp_title
 	function privatebusiness_wp_title( $title ) { 
