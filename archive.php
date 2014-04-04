@@ -51,7 +51,7 @@
 	<div class="post" id="post-<?php the_ID(); ?>">
 
 
-		<div id="postmetadata"> 
+		<div class="postmetadata"> 
 		<?php the_category(', '); ?>
 		<?php the_tags(', '); ?>
 		</div>
@@ -60,12 +60,12 @@
 	<h1><?php the_title(); ?></h1>
 	</a>
 
-		<div id="postmetadata"> 
+		<div class="postmetadata"> 
 		<?php the_author_posts_link(); ?>, <a href="<?php the_permalink(', '); ?>"><?php the_time( get_option('date_format') ); ?></a>
 		<?php edit_post_link(' - EDIT '); ?>
 		</div>
 
-		<div id="postmetadata2"> 
+		<div class="postmetadata2"> 
 		<?php comments_popup_link('Comment &raquo; ', '1 comment &raquo;', '% comments &raquo;'); ?>
 		</div>
       

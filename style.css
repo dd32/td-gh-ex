@@ -3,7 +3,7 @@ Theme Name: Redesign
 
 Theme URI: http://redesign.toth-illustration.com
 
-Description: Redesign is a simple, clean and highly visible theme. It has transparent graphic elements and colorful post formats. Responsive, liquid layout makes it easy to read in handheld units. Max width is 1366 px, adapted for modern desktop computers. The theme is suitable for blogging, news or businesses. Not based on any other WP theme. It's made from scratch.
+Description: Redesign is a simple, clean and highly visible theme. It has transparent graphic elements and colored post formats. Responsive, liquid layout makes it easy to read in handheld units. Max width is 1366 px, adapted for modern desktop computers. The theme is suitable for blogging, news or business. Not based on any other WP theme. It's made from scratch.
 
 - Transparent graphics.
 - Choose from several transparent color post formats.
@@ -19,11 +19,11 @@ Resource All graphic objects, example: img/background.png, img/favicon.ico
 
 Author: Robert Toth
 Author URI: http://toth-illustration.com
-Version: 1.2.6
+Version: 1.2.7
 Copyright: Robert Toth, http://toth-illustration.com
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: gray, white, black, right-sidebar, two-columns, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, sticky-post, threaded-comments, post-formats, featured-images
+Tags: gray, white, black, right-sidebar, two-columns, fixed-width, custom-background, custom-colors, custom-header, custom-menu, sticky-post, threaded-comments, post-formats, featured-images
 */
 
 /*-----REDESIGN, WORD PRESS STYLESHEET------*/
@@ -215,7 +215,6 @@ iframe,
 object,
 video {
 	max-width: 100%;
-	height: auto;
 }
 .entry-content .twitter-tweet-rendered {
 	max-width: 100% !important; /* Override the Twitter embed fixed width */
@@ -337,8 +336,11 @@ a:hover{
 
 /*HEADINGS*/
 
+h1{
+	line-height:120%;
+	margin:0px 0px 5px 0px;
+}
 
-h1,
 h2,
 h3,
 h4,
@@ -449,12 +451,12 @@ h6{
 	color:#0077AA;
 }
 
-#postmetadata{
+.postmetadata{
 	font-size:90%;
 	display:inline;
 }
 
-#postmetadata2{
+.postmetadata2{
 	font-size:90%;
 	display:inline;
 	float:right;
@@ -646,24 +648,27 @@ textarea{
 }
 
 
-input[type="submit"] {
-        font-size:100%;
-	background-image:url('img/btbg70.png');
-	margin:5px 0px;
-	padding:7px 14px;
-	border:none;
-	color:#FFF;
+input[type="submit"],
+input[type="file"] {
+        font-size:100% !important;
+	background-image:url('img/btbg70.png') !important;
+	margin:5px 0px !important;
+	padding:7px 14px !important;
+	border:none !important;
+	color:#FFF !important;
 }
 
-input[type="submit"]:hover {
-        font-size:100%;
-	background-image:url('img/btbg50.png');
-	color:#FFF;
+input[type="submit"]:hover,
+input[type="file"]:hover {
+        font-size:100% !important;
+	background-image:url('img/btbg50.png') !important;
+	color:#FFF !important;
 }
 
-input[type="submit"]:active {
-        font-size:100%;
-	background-image:url('img/tbg70.png');
+input[type="submit"]:active,
+input[type="file"]:active {
+        font-size:100% !important;
+	background-image:url('img/tbg70.png') !important;
 }
 
 table{
@@ -688,6 +693,24 @@ table td{
 	background-image:url('img/tbg30.png');
 	text-align: center;
 }
+
+hr{
+	height:5px;
+	background-image:url('img/btbg10.png');
+	border:0;
+}
+
+fieldset {
+	border:none;
+	background-image:url('img/btbg10.png');
+	margin:10px 0px;
+}
+
+legend {
+	font-weight:bold;
+}
+
+
 
 /*CALENDAR WIDGET*/
 
