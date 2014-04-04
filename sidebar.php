@@ -4,11 +4,8 @@
  */
 ?>
 
+<?php if ( is_active_sidebar( 'footer-right' ) || is_active_sidebar( 'footer-left' ) ) { ?>
 <div id="sidebar">
-
-	<?php if ( is_active_sidebar( 'footer-right' ) || is_active_sidebar( 'footer-left' ) ) : ?>
-		<div class="widgetarea-border"></div>
-	<?php endif;?>
 
 	<div class="footer-right"> 
 
@@ -31,4 +28,6 @@
 			
 		<?php endif; ?> 
 	</div>
+
 </div>
+<?php } ?>

@@ -49,9 +49,10 @@
 
 </div>
 
+<?php if ( is_home() || is_front_page() ) {?> 
+<?php if ( is_active_sidebar( 'homepage-right' ) || is_active_sidebar( 'homepage-left' ) ) { ?>
 <div id="header-widgets">
 
-	<?php if( is_home() || is_front_page() ) :?>
 		<div class="home-right"> 
 
 			<?php if ( is_active_sidebar( 'homepage-right' ) ) : ?>
@@ -61,10 +62,7 @@
 			<?php else : ?> 
 			<?php endif; ?> 
 		</div>
-	<?php endif;?>
-
-
-	<?php if( is_home() || is_front_page() ) :?>
+	
 		<div class="home-left"> 
 
 			<?php if ( is_active_sidebar( 'homepage-left' ) ) : ?>
@@ -74,12 +72,7 @@
 			<?php else : ?> 
 			<?php endif; ?> 
 		</div>
-	<?php endif;?>
-
-	<?php if ( is_home() || is_front_page() ) {?> 
-		<?php if ( is_active_sidebar( 'homepage-right' ) || is_active_sidebar( 'homepage-left' ) ) { ?>
-			<div class="widgetarea-border"></div>
-		<?php } ?>
- 	<?php } ?> 
-
+	
 </div>
+<?php } ?>
+<?php } ?>
