@@ -30,14 +30,33 @@ You can add your own background(image) via  WordPress Dashboard > Appearance > B
 
 HOW TO SET MENU
 ===============
-GridBulletin offers a menu that can contain subpages (2 levels deep).
+DarkOrange offers a menu that can contain subpages (2 levels deep).
 You can create and set menu via WordPress Dashboard > Appearance > Menu's.
+
+
+FONTS
+=====
+Font: Open Sans
+Source: http://www.google.com/fonts/specimen/Open+Sans
+Copyright author: Steve Matteson
+Licence: Apache License, version 2.0
+License URI: http://www.apache.org/licenses/LICENSE-2.0.html
+
+
+Scripts
+=======
+Script: nav.js
+Source: http://maxfoundry.com/blog/responsive-mobile-navigation-in-wordpress/
+Copyright author: John Hartley
+Author URI: http://maxfoundry.com/blog/author/johnbhartley 
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 
 THEME IMAGES
 ============
 Item: boats.jpg
-Copyright author: Guido van der Leest
+Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html

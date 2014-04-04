@@ -1,0 +1,250 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: darkorange\n"
+"POT-Creation-Date: 2014-03-06 19:24+0100\n"
+"PO-Revision-Date: 2014-03-06 19:26+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: 404.php:9
+#: search.php:37
+#@ darkorange
+msgid "Nothing Found"
+msgstr ""
+
+#: 404.php:10
+#: archive.php:49
+#: index.php:45
+#: search.php:38
+#@ darkorange
+msgid "Sorry, no posts matched your criteria."
+msgstr ""
+
+#: archive.php:12
+#@ darkorange
+msgid "Archive"
+msgstr ""
+
+#: archive.php:14
+#@ darkorange
+msgid "Daily Archives"
+msgstr ""
+
+#: archive.php:16
+#@ darkorange
+msgid "Monthly Archives"
+msgstr ""
+
+#: archive.php:18
+#@ darkorange
+msgid "Yearly Archives"
+msgstr ""
+
+#: archive.php:20
+#@ darkorange
+msgid "Author Archives"
+msgstr ""
+
+#: archive.php:22
+#@ darkorange
+msgid "Tag Archives"
+msgstr ""
+
+#: archive.php:29
+#: index.php:23
+#: search.php:16
+#, php-format
+#@ darkorange
+msgid "Permalink to %s"
+msgstr ""
+
+#: archive.php:33
+#: index.php:27
+#: search.php:20
+#: single.php:17
+#, php-format
+#@ darkorange
+msgid "Posted on %s"
+msgstr ""
+
+#: archive.php:34
+#: index.php:28
+#: search.php:21
+#: single.php:18
+#, php-format
+#@ darkorange
+msgid "By %s"
+msgstr ""
+
+#: archive.php:36
+#: index.php:30
+#: search.php:23
+#: single.php:20
+#@ darkorange
+msgid "Leave a response"
+msgstr ""
+
+#: archive.php:36
+#: index.php:30
+#: search.php:23
+#: single.php:20
+#@ darkorange
+msgid "1 response"
+msgstr ""
+
+#: archive.php:36
+#: index.php:30
+#: search.php:23
+#: single.php:20
+#@ darkorange
+msgid "% responses"
+msgstr ""
+
+#: archive.php:45
+#: index.php:39
+#: search.php:32
+#@ darkorange
+msgid "Read More &raquo;"
+msgstr ""
+
+#: archive.php:53
+#: index.php:49
+#: search.php:44
+#@ darkorange
+msgid "&laquo; Older posts"
+msgstr ""
+
+#: archive.php:54
+#: index.php:50
+#: search.php:45
+#@ darkorange
+msgid "Newer posts &raquo;"
+msgstr ""
+
+#: comments.php:18
+#, php-format
+#@ darkorange
+msgid "1 response on %2$s"
+msgid_plural "%1$s responses on %2$s"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:39
+#@ darkorange
+msgid "&laquo; Older Comments"
+msgstr ""
+
+#: comments.php:40
+#@ darkorange
+msgid "Newer Comments &raquo;"
+msgstr ""
+
+#: comments.php:46
+#@ darkorange
+msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:30
+#@ darkorange
+msgid "Copyright"
+msgstr ""
+
+#: footer.php:31
+#@ darkorange
+msgid "WordPress Blog Platform"
+msgstr ""
+
+#: footer.php:31
+#@ darkorange
+msgid "Proudly powered by WordPress"
+msgstr ""
+
+#: functions.php:19
+#@ darkorange
+msgid "Primary Navigation"
+msgstr ""
+
+#: functions.php:40
+#@ darkorange
+msgid "Boats"
+msgstr ""
+
+#: functions.php:105
+#@ darkorange
+msgid "Primary Sidebar"
+msgstr ""
+
+#: functions.php:107
+#: functions.php:117
+#: functions.php:127
+#: functions.php:137
+#@ darkorange
+msgid "Select widgets from the right-hand side."
+msgstr ""
+
+#: functions.php:115
+#@ darkorange
+msgid "Homepage Sidebar"
+msgstr ""
+
+#: functions.php:125
+#@ darkorange
+msgid "Footer Sidebar Right"
+msgstr ""
+
+#: functions.php:135
+#@ darkorange
+msgid "Footer Sidebar Left"
+msgstr ""
+
+#: functions.php:159
+#: functions.php:165
+#@ darkorange
+msgid "Logo"
+msgstr ""
+
+#: functions.php:161
+#@ darkorange
+msgid "Upload a logo to replace blogname and description in header"
+msgstr ""
+
+#: index.php:18
+#@ darkorange
+msgid "Featured post"
+msgstr ""
+
+#: page-full.php:22
+#: page.php:19
+#: single.php:38
+#@ darkorange
+msgid "Edit"
+msgstr ""
+
+#: search.php:11
+#, php-format
+#@ darkorange
+msgid "Search Results for: %s"
+msgstr ""
+
+#: single.php:27
+#, php-format
+#@ darkorange
+msgid "Posted in %s"
+msgstr ""
+
+#: single.php:27
+#: single.php:28
+#@ darkorange
+msgid ", "
+msgstr ""
+
+#: single.php:28
+#, php-format
+#@ darkorange
+msgid "Tags: %s"
+msgstr ""
+
+
