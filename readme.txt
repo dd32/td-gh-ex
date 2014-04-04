@@ -1,7 +1,7 @@
 ----------------------------------
 SunRain
 ----------------------------------
-Version: 	1.3.5
+Version: 	1.3.7
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
@@ -29,6 +29,11 @@ All other files and images are Licensed under GPL and @copyright to D5 Creation
 Special Instruction:
 ====================
 This Theme is using Options Framework Theme bundled with the Theme Pack. So, you should not use Options Framework Plugin seperately. If you have Options Framework Plugin installed Please deactivate that plugin.
+
+
+Changelog 1.3.7
+--------------------
+Minor change of the The Options Page. Removed two options which have no usage.
 
 
 

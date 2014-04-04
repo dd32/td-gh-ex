@@ -35,13 +35,6 @@ function optionsframework_options() {
 		'std' => '0',
 		'type' => 'checkbox');
 	
-	$options[] = array(
-		'name' => 'Front Page Posts Title Heading', 
-		'desc' => 'Input the Front Page Post Title Heading here.', 
-		'id' => 'latest-blog-text',
-		'std' => 'Latest <em>Blog</em> Post',
-		'type' => 'text' );
-		
 	$fposttype = array( '1' => 'Do not Show any Post or Page in the Front Page.', '2' => 'Show Posts or Page and Left/Right Sidebar.');
 	
 	$options[] = array(
@@ -122,14 +115,6 @@ function optionsframework_options() {
 		'std' => 'It is Amazing!  <em>Over 60 million people</em> have chosen WordPress to power the place on the web.',
 		'type' => 'text' );
 		
-	$options[] = array(
-		'name' => 'Front Page Heading 03 Background Image', 
-		'desc' => 'Upload an image for the Front Page Heading 03 Background Image.', 
-		'id' => 'heading3back',
-		'std' => get_template_directory_uri() . '/images/heading3back.png',
-		'type' => 'upload');
-
-
 	$options[] = array(
 		'desc' => '<span class="featured-area-title">Front Page Featured Boxes</span>', 
 		'type' => 'info');
