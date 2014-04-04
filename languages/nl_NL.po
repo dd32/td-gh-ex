@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: SimplyBlack v1.6\n"
+"Project-Id-Version: SimplyBlack v1.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-02-02 12:28:37+0000\n"
+"PO-Revision-Date: 2014-04-04 13:40:27+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,15 +21,15 @@ msgstr ""
 "X-Textdomain-Support: yes"
 
 #: 404.php:9
-#: search.php:28
+#: search.php:38
 #@ simplyblack
 msgid "Nothing Found"
 msgstr "Niets gevonden"
 
 #: 404.php:10
-#: archive.php:39
-#: index.php:30
-#: search.php:29
+#: archive.php:49
+#: index.php:39
+#: search.php:39
 #@ simplyblack
 msgid "Sorry, no posts matched your criteria."
 msgstr "Sorry, er zijn helaas geen berichten gevonden."
@@ -64,54 +64,41 @@ msgstr "Auteur Archieven"
 msgid "Tag Archives"
 msgstr "Tag Archieven"
 
-#: archive.php:27
-#: index.php:18
-#: search.php:15
-#@ simplyblack
-msgid "Permalink to "
-msgstr "Permalink naar "
-
-#: archive.php:29
-#: index.php:20
-#: search.php:17
-#: single.php:16
-#@ simplyblack
-msgid "Posted on "
-msgstr "Geplaatst op "
-
-#: archive.php:43
-#: index.php:34
-#: search.php:35
+#: archive.php:53
+#: index.php:43
+#: search.php:45
 #@ simplyblack
 msgid "&laquo; Older posts"
 msgstr "&laquo; Oudere berichten"
 
-#: archive.php:44
-#: index.php:35
-#: search.php:36
+#: archive.php:54
+#: index.php:44
+#: search.php:46
 #@ simplyblack
 msgid "Newer posts &raquo;"
 msgstr "Nieuwere berichten &raquo;"
 
-#: functions.php:103
+#: functions.php:104
 #@ simplyblack
 msgid "Primary Sidebar"
 msgstr "Hoofd Sidebar"
 
-#: functions.php:105
-#: functions.php:115
-#: functions.php:125
-#: functions.php:135
+#: functions.php:106
+#: functions.php:116
+#: functions.php:126
+#: functions.php:136
 #@ simplyblack
 msgid "Select widgets from the right-hand side."
 msgstr "Selecteer widgets van de rechterkant."
 
-#: functions.php:149
+#: archive.php:45
+#: index.php:35
+#: search.php:33
 #@ simplyblack
 msgid "Read More &raquo;"
 msgstr "Lees Meer &raquo;"
 
-#: functions.php:166
+#: functions.php:40
 #@ simplyblack
 msgid "Boats"
 msgstr "Boten"
@@ -123,7 +110,7 @@ msgstr "Aanbevolen bericht"
 
 #: page-full.php:20
 #: page.php:19
-#: single.php:31
+#: single.php:38
 #@ simplyblack
 msgid "Edit"
 msgstr "Bewerk"
@@ -134,32 +121,27 @@ msgstr "Bewerk"
 msgid "Search Results for: %s"
 msgstr "Zoekresultaat voor: %s"
 
-#: single.php:23
-#@ simplyblack
-msgid "Posted in "
-msgstr "Geplaatst in "
-
-#: comments.php:37
+#: comments.php:39
 #@ simplyblack
 msgid "&laquo; Older Comments"
 msgstr "&laquo; Oudere Reacties"
 
-#: comments.php:38
+#: comments.php:40
 #@ simplyblack
 msgid "Newer Comments &raquo;"
 msgstr "Nieuwere Reacties &raquo;"
 
-#: functions.php:113
+#: functions.php:114
 #@ simplyblack
 msgid "Footer Sidebar Right"
 msgstr "Footer Sidebar Rechts"
 
-#: functions.php:133
+#: functions.php:134
 #@ simplyblack
 msgid "Footer Sidebar Left"
 msgstr "Footer Sidebar Links"
 
-#: functions.php:18
+#: functions.php:19
 #@ simplyblack
 msgid "Primary Navigation"
 msgstr "Hoofdmenu"
@@ -172,55 +154,47 @@ msgid_plural "%1$s responses on %2$s"
 msgstr[0] "1 reactie op %2$s"
 msgstr[1] "%1$s reacties op %2$s"
 
-#: functions.php:175
-#: functions.php:181
+#: functions.php:158
+#: functions.php:164
 #@ simplyblack
 msgid "Logo"
 msgstr "Logo"
 
-#: archive.php:29
-#: index.php:20
-#: search.php:17
-#: single.php:16
-#@ simplyblack
-msgid "By "
-msgstr "Door "
-
-#: functions.php:123
+#: functions.php:124
 #@ simplyblack
 msgid "Footer Sidebar Middle"
 msgstr "Footer Sidebar Midden"
 
-#: functions.php:177
+#: functions.php:160
 #@ simplyblack
 msgid "Upload a logo to replace blogname and description in header"
 msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
 
-#: comments.php:43
+#: comments.php:46
 #@ simplyblack
 msgid "Comments are closed"
 msgstr "Reageren is niet mogelijk"
 
-#: archive.php:31
-#: index.php:22
-#: search.php:19
-#: single.php:18
+#: archive.php:36
+#: index.php:26
+#: search.php:24
+#: single.php:20
 #@ simplyblack
 msgid "Leave a response"
 msgstr "Plaats een reactie"
 
-#: archive.php:31
-#: index.php:22
-#: search.php:19
-#: single.php:18
+#: archive.php:36
+#: index.php:26
+#: search.php:24
+#: single.php:20
 #@ simplyblack
 msgid "1 response"
 msgstr "1 reactie"
 
-#: archive.php:31
-#: index.php:22
-#: search.php:19
-#: single.php:18
+#: archive.php:36
+#: index.php:26
+#: search.php:24
+#: single.php:20
 #@ simplyblack
 msgid "% responses"
 msgstr "% reacties"
@@ -239,4 +213,48 @@ msgstr "WordPress Blog Platform"
 #@ simplyblack
 msgid "Proudly powered by WordPress"
 msgstr "Proudly powered by WordPress"
+
+#: archive.php:29
+#: index.php:19
+#: search.php:17
+#, php-format
+#@ simplyblack
+msgid "Permalink to %s"
+msgstr "Permalink naar %s"
+
+#: archive.php:33
+#: index.php:23
+#: search.php:21
+#: single.php:17
+#, php-format
+#@ simplyblack
+msgid "Posted on %s"
+msgstr "Geplaatst op %s"
+
+#: archive.php:34
+#: index.php:24
+#: search.php:22
+#: single.php:18
+#, php-format
+#@ simplyblack
+msgid "By %s"
+msgstr "Door %s"
+
+#: single.php:27
+#, php-format
+#@ simplyblack
+msgid "Posted in %s"
+msgstr "Geplaatst in %s"
+
+#: single.php:27
+#: single.php:28
+#@ simplyblack
+msgid ", "
+msgstr ", "
+
+#: single.php:28
+#, php-format
+#@ simplyblack
+msgid "Tags: %s"
+msgstr "Tags: %s"
 

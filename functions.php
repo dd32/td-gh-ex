@@ -6,9 +6,10 @@
 // Sets up theme defaults and registers various WordPress features that simplyblack supports
 	function simplyblack_setup() { 
 
-	// Set width without the padding
+	// Set max content width for img, video, and more
+		global $content_width; 
 		if ( ! isset( $content_width ) )
-		$content_width = 570;
+		$content_width = 580;
 
 	// Make theme available for translation
 		load_theme_textdomain('simplyblack', get_template_directory() . '/languages');  
@@ -31,11 +32,20 @@
 		);	
 		add_theme_support( 'custom-header', $args );
 
+	// Default header
+		register_default_headers( array(
+		'boats' => array(
+			'url' => '%s/images/boats.jpg',
+			'thumbnail_url' => '%s/images/boats-thumbnail.jpg',
+			'description' => __( 'Boats', 'simplyblack' )
+		)
+		) );
+
 	// Post thumbnails
 		add_theme_support( 'post-thumbnails' ); 
 
 	// Resize mode thumbnails
-		set_post_thumbnail_size( 570, 450 ); 
+		set_post_thumbnail_size( 580, 450 ); 
 
 
 	// This feature adds RSS feed links to html head 
@@ -54,15 +64,6 @@
 	add_action( 'after_setup_theme', 'simplyblack_setup' ); 
 
 
-// Add html5 support for older IE version 
-	function simplyblack_html5() { 
-		echo '<!--[if lt IE 9]>'. "\n"; 
-		echo '<script src="' . esc_url( get_template_directory_uri() . '/js/ie.js' ) . '"></script>'. "\n"; 
-		echo '<![endif]-->'. "\n"; 
-		} 
-	add_action( 'wp_head', 'simplyblack_html5' ); 
-
-
 // Add blogname to wp_title
 	function simplyblack_wp_title( $title ) { 
 		global $page, $paged; 
@@ -75,26 +76,26 @@
 	add_filter( 'wp_title', 'simplyblack_wp_title' ); 
 
 
+// Add html5 support for older IE version 
+	function simplyblack_html5() { 
+		echo '<!--[if lt IE 9]>'. "\n"; 
+		echo '<script src="' . esc_url( get_template_directory_uri() . '/js/ie.js' ) . '"></script>'. "\n"; 
+		echo '<![endif]-->'. "\n"; 
+		}
+	add_action( 'wp_head', 'simplyblack_html5' ); 
+
+
 // Enqueues scripts and styles for front-end
 	function simplyblack_scripts() {
-		if (!is_admin()) { 
-			wp_enqueue_style( 'style', get_stylesheet_uri() );
-			wp_enqueue_script( 'nav', get_template_directory_uri() . '/js/nav.js', array( 'jquery' ) );
-		}
-		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
-			wp_enqueue_script( 'comment-reply' );
+			wp_enqueue_style( 'simplyblack-style', get_stylesheet_uri() );
+			wp_enqueue_script( 'simplyblack-nav', get_template_directory_uri() . '/js/nav.js', array( 'jquery' ) );
+			wp_enqueue_style( 'simplyblack-googlefonts', '//fonts.googleapis.com/css?family=Open+Sans' ); 
+
+			if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+				wp_enqueue_script( 'comment-reply' );
+			}
 	}
 	add_action( 'wp_enqueue_scripts', 'simplyblack_scripts' );
-
-
-// Register Google Fonts
-	function simplyblack_fonts() { 
-		if (! is_admin() ) { 
-			wp_register_style('googleFonts', '//fonts.googleapis.com/css?family=Open+Sans' ); 		
-				wp_enqueue_style( 'googleFonts'); 	
-		}
-	}  	
-	add_action('wp_enqueue_scripts', 'simplyblack_fonts');
 
 
 // Sidebars
@@ -143,29 +144,11 @@
 	add_action( 'widgets_init', 'simplyblack_widgets_init' );
 
 
-// Replaces the excerpt "more" text by a link 
-	function simplyblack_excerpt_more($more) { 
-		global $post; 
-		return '<a class="moretag" href="'. get_permalink($post->ID) . '">' . __( 'Read More &raquo;', 'simplyblack' ) . '</a>'; 
-		} 
-	add_filter('excerpt_more', 'simplyblack_excerpt_more'); 
-
-
 // Add class to the excerpt 
 	function simplyblack_excerpt( $excerpt ) {
     		return str_replace('<p', '<p class="excerpt"', $excerpt);
 		}
 	add_filter( "the_excerpt", "simplyblack_excerpt" );
-
-
-// Default header
-	register_default_headers( array(
-	'boats' => array(
-		'url' => '%s/images/boats.jpg',
-		'thumbnail_url' => '%s/images/boats-thumbnail.jpg',
-		'description' => __( 'Boats', 'simplyblack' )
-		)
-	) );
 
 
 // Theme Customizer (option to add logo)

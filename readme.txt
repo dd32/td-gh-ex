@@ -40,10 +40,29 @@ This theme is translation-ready (Dutch translation included).
 You can translate this into your own language using for example plugin Codestyling Localization: http://wordpress.org/plugins/codestyling-localization/
 
 
+FONTS
+=====
+Font: Open Sans
+Source: http://www.google.com/fonts/specimen/Open+Sans
+Copyright author: Steve Matteson
+Licence: Apache License, version 2.0
+License URI: http://www.apache.org/licenses/LICENSE-2.0.html
+
+
+Scripts
+=======
+Script: nav.js
+Source: http://maxfoundry.com/blog/responsive-mobile-navigation-in-wordpress/
+Copyright author: John Hartley
+Author URI: http://maxfoundry.com/blog/author/johnbhartley 
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+
+
 THEME IMAGES
 ============
 Item: boats.jpg
-Copyright author: Guido van der Leest
+Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html

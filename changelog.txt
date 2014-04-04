@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+SimplyBlack Version 1.7 - april 2014
+- several adjustments in functions file
+- added pot translation file
+- improved translation of meta
+- better position of read more button
+- better layout of commentsform
+- added several adjustments for better responsive layout
+- a bunch of other minor adjustments in stylesheet
+
 SimplyBlack version 1.6 - february 2014
 - added html5 support for IE8 and older
 - added editor styles for page and post
