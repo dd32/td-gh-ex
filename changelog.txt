@@ -1,0 +1,7 @@
+CHANGELOG
+=========
+
+Medical version 1.0 - april 2014 
+- first stable release
+
+
