@@ -45,8 +45,7 @@
 		add_theme_support( 'post-thumbnails' ); 
 
 	// Resize mode thumbnails
-		set_post_thumbnail_size( 520, 450 ); 
-
+		set_post_thumbnail_size( 150, 150 ); 
 
 	// This feature adds RSS feed links to html head 
 		add_theme_support( 'automatic-feed-links' );
@@ -152,6 +151,12 @@
 
 	}
 	add_action( 'widgets_init', 'medical_widgets_init' );
+
+
+// Custom excerpt lenght 
+	function medical_excerpt_length( $length ) { 
+		return 80; } 
+	add_filter( 'excerpt_length', 'medical_excerpt_length', 999 ); 
 
 
 // Add class to the excerpt 
