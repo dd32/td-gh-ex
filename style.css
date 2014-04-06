@@ -1,7 +1,7 @@
 /*
 Theme Name: Medical
 Theme URI: http://www.guidovanderleest.nl/medical
-Version: 1.1
+Version: 1.2
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: Medical is a free, basic, clean, minimalistic, responsive, mobile friendly, WordPress theme for Medical/Business website. Primary sidebar, homepage sidebar, 3 widget-area's in footer, custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
@@ -117,12 +117,13 @@ select {max-width:100%;}
 
 
 /* HEADER */
-#header-first {margin: 0; padding:5px 0 0;}
+#header-first {margin: 0; padding:10px 0 0;}
 #header-first:after {content:''; display:block; clear:both;}
 #header-first .logo {width:35%; float:right; text-align:right;}
 #header-first .logo h1 a {font-size:0.6em;}
 #header-first .logo h1 a:hover {text-decoration:none; color:#333;}
-#header-first .logo h5 {padding: 0 0 10px; font-style:italic;}
+#header-first .logo h5 {padding:0 0 10px; font-style:italic;}
+#header-first .logo img {padding:0 0 10px;}
 
 #header-second {margin:0; padding:20px 0 10px; border-bottom:10px solid #08a0ff;border-radius:15px;-moz-border-radius:15px;}
 #header-second:after {content:''; display:block; clear:both;}
@@ -132,7 +133,7 @@ select {max-width:100%;}
 
 /* HOMEPAGE SIDEBAR */
 #header-second .sidebar-homepage {width: 46%; float: right; margin:0; padding:0; word-wrap: break-word; background:#08a0ff;border-top-right-radius:15px;moz-border-radius-topright:15px;}
-#header-second .widget {margin:10px 0 10px; padding: 0 15px; background:none; color:#fff; border:0;}
+#header-second .widget {margin:15px 0; padding: 0 15px; background:none; color:#fff; border:0;}
 #header-second .widget a {color:#fff;}
 
 
@@ -164,7 +165,7 @@ select {max-width:100%;}
 /* POST */
 .post-title {margin: 0; padding: 0;}
 .post-title a:hover {color:#333; text-decoration:none;}
-.excerpt {padding:5px 0 0; text-align:left;}
+.excerpt {padding:5px 0 0;}
 .sticky {text-align:center; clear:both; color:#fff; background: #08a0ff; margin: 0 0 10px; padding:2px 5px; border:0;}
 .postmetadata {margin:10px 0 15px; padding:5px; background: #f8f8f8; border:1px solid #ddd;}
 .more {margin:0 0 20px; padding:0 0 20px; border-bottom:1px solid #ddd;}
@@ -248,6 +249,7 @@ img.theme-list:hover, img.theme-single:hover {border:2px solid #333;}
 	#header-first .logo {width:100%; text-align:center;}
 	#header-first .logo h1 a{font-size:1em; text-align:center;}
 	#header-first .logo h5 {padding:0; font-size:1em; text-align:center;}
+	#header-first .logo img {padding:0;}
 	#header-second {margin:0; padding:10px 0; border:0;}
 	#header-second .image-homepage {width: 100%; margin:0 0 10px; padding:0;}
 	#header-second .header-img {width: 100%; height: auto; border-radius:15px;-moz-border-radius:15px;}
