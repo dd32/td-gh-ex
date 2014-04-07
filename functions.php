@@ -34,7 +34,7 @@ function athenea_setup() {
 		'primary' => __( 'Primary Menu', 'athenea' ),
 	) );
 	// Enable support for Post Formats.
-	//add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
+	//add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'audio', 'quote', 'link' ) );
 
 	// Setup the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'athenea_custom_background_args', array(
@@ -44,7 +44,6 @@ function athenea_setup() {
 }
 endif; // athenea_setup
 add_action( 'after_setup_theme', 'athenea_setup' );
-
 
 // Register widgetized area and update sidebar with default widgets.
 function athenea_widgets_init() {
@@ -325,6 +324,20 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 // Estilo del menu con bootstrap
 require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
+// Video responsive
+if(!function_exists('video_content_filter')) {
+  function video_content_filter($content) {
+	$pattern = '/<iframe.*?src=".*?(vimeo|youtu|justin|ustream\.?be).*?".*?<\/iframe>/';
+	preg_match_all($pattern, $content, $matches);
+	foreach ($matches[0] as $match) {
+	  $wrappedframe = '<div class="flex-video">' . $match . '</div>';
+	  $content = str_replace($match, $wrappedframe, $content);
+	}
+	return $content;
+  }
+  add_filter( 'the_content', 'video_content_filter' );
+  add_filter( 'widget_text', 'video_content_filter' );
+}
 // Add optionsframework
 if ( !function_exists( 'optionsframework_init' ) ) {
     define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );

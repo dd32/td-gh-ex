@@ -2,7 +2,7 @@
 
 Theme Name: Athenea
 Theme URI: http://www.ibermega.com/themes/athenea
-Version: 1.1.0
+Version: 1.1.1
 Requires at least: 3.0.1
 Tested up to: 3.8.1
 Author: Miguel Angel Rico
@@ -31,7 +31,7 @@ Theme Athenea uses:
 
 Athenea is a theme for business or personal desktop and mobile fully configurable devices multitude of designs. It features front-page editable from theme options. Athenea is a completely free theme with premium features in future releases.
 
-For questions, comments or bug reports, please go to WordPress forums (http://wordpress.org/support/). 
+For questions, comments or bug reports, please go to WordPress forums (http://wordpress.org/support/) and Athenea Doc (http://www.ibermega.com/themes/athenea/). 
 
 /*========= Installation =========*/
 
@@ -61,6 +61,10 @@ To view the tutorials for use http://www.ibermega.com/tutoriales/plantilla-athen
 
 
 == Changelog ==
+
+= 1.1.1 - 07.04.2014 =
+* Function is added to convert videos from youtube, vimeo, justin stream and in responsive.
+* Style reviews in issue is adjusted to red theme.
 
 = 1.1.0 - 04.04.2014 =
 * Page templates are added to multiply the design of Athenea.
