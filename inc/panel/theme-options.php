@@ -258,7 +258,7 @@ function catchevolution_theme_options_do_page() {
                                             <?php  if ( !empty ( $options[ 'featured_logo_header' ] ) ) { ?>
                                              	<input  class="upload-url" size="65" type="text" name="catchevolution_options[featured_logo_header]" value="<?php echo esc_url ( $options [ 'featured_logo_header' ]); ?>" class="upload" />
                                                  <?php } else { ?>
-                                                 <input size="65" type="text" name="catchevolution_options[featured_logo_header]" value="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="logo" />
+                                                 <input class="upload-url" size="65" type="text" name="catchevolution_options[featured_logo_header]" value="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="logo" />
                                                  <?php }  ?>
                                                 
                                                 <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Header Logo','catchevolution' ); ?>" />

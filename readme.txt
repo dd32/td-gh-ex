@@ -2,7 +2,7 @@
 * by the Catch Themes team, http://catchthemes.com/
 
 == ABOUT Catch Evolution==
-Catch Evolution is a beautifully sleek creation of Catch Themes. It exudes a clean and super sharp look. It comes with a whole set of interesting, rich features and flexible theme options. Built on HTML5, CSS3, it has a responsive design which lets the content automatically adapt to the screen's size on different devices. Catch Evolution looks striking in a bigger screen. The layout is wider, bigger and luxuriously spacious. This theme is easily customizable with an advanced theme options panel. It supports popular plugins such as Jetpack, WordPress SEO by Yoast, WP-PageNavi, Contact Form 7, WooCommerce and many more. It is also translation ready and currently translated in Spanish, French and Swedish. If you need support with this theme, please go to http://catchthemes.com/support/
+Catch Evolution is a beautifully sleek creation of Catch Themes. It exudes a clean and super sharp look. It comes with a whole set of interesting, rich features and flexible theme options. Built on HTML5, CSS3, it has a responsive design which lets the content automatically adapt to the screen's size on different devices. Catch Evolution looks striking in a bigger screen. The layout is wider, bigger and luxuriously spacious. This theme is easily customizable with an advanced theme options panel. It supports popular plugins such as Jetpack, WordPress SEO by Yoast, WP-PageNavi, Contact Form 7, WooCommerce and many more. It is also translation ready and currently translated in Spanish, French, Swedish, German and Danish. If you need support with this theme, please go to http://catchthemes.com/support/
 
 == Translation ==
 Catch Evolution theme is translation ready.
@@ -50,6 +50,10 @@ dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-si
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 
 == Changelog ==
+Version 1.6.1.1
+* Fixed Logo uploader issue
+* Fixed the admin css
+
 Version 1.6.1
 * Added Danish translation da_DK.po and da_DK.mo
 
