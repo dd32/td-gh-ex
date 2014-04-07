@@ -4,7 +4,7 @@ Contributors: Iceable
 Tags: black, blue, white, light, two-columns, right-sidebar, flexible-width, custom-header, custom-background, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.5
 Tested up to: 3.8.1
-Stable tag: 1.1.27
+Stable tag: 1.1.28
 
 == ABOUT BOLDR LITE ==
 
@@ -40,7 +40,7 @@ This theme bundles some third party javascript and jQuery plugins, released unde
 * superfish: Copyright 2013 Joel Birch. Dual licensed under the MIT and GPL licenses. http://users.tpg.com.au/j_birch/plugins/superfish/
 * ru_RU, de_DE, es_ES and pt_BR translation files: see below.
 
-All other files are copyright 2013 Iceable Media.
+All other files are copyright 2013-2014 Iceable Media.
 
 == TRANSLATIONS ==
 
@@ -59,6 +59,13 @@ If you have translated this theme into your own language and are willing to shar
 Your translation files will be added to the next update. Don't forget to leave your name, email address and/or website link so credits can be given to you!
 
 == CHANGELOG ==
+
+= 1.1.28 =
+April 7th, 2014
+* Fixed german translation: "Kein Kommentar" instead of "Nein Kommentar" based on user feedback
+* Fixed typo in french translation "Votre recherche" instead of "Votre recherché"
+* Updated .pot file
+* Updated copyright note in all files (2013-2014)
 
 = 1.1.27 =
 March 31th, 2014

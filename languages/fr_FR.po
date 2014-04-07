@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BoldR Lite 1.1\n"
-"POT-Creation-Date: 2014-02-26 16:27+0100\n"
-"PO-Revision-Date: 2014-02-26 16:27+0100\n"
+"POT-Creation-Date: 2014-04-07 10:03+0100\n"
+"PO-Revision-Date: 2014-04-07 10:04+0100\n"
 "Last-Translator: \n"
 "Language-Team: Iceable Themes <contact@iceablethemes.com>\n"
 "Language: fr_FR\n"
@@ -23,7 +23,7 @@ msgstr "404"
 msgid "Page Not Found"
 msgstr "Page Introuvable"
 
-#: ../404.php:22 ../index.php:115 ../page-full-width.php:43 ../page.php:56
+#: ../404.php:22 ../index.php:115 ../page-full-width.php:55 ../page.php:56
 #: ../single.php:136
 msgid "What you are looking for isn't here..."
 msgstr "Ce que vous cherchez n'est pas ici..."
@@ -81,7 +81,7 @@ msgstr "Sidebar par défaut"
 msgid "Footer"
 msgstr "Pied de page"
 
-#: ../functions.php:291
+#: ../functions.php:290
 msgid "Read More"
 msgstr "Lire la suite"
 
@@ -137,7 +137,7 @@ msgstr "Commentaires Off"
 msgid "by "
 msgstr "par"
 
-#: ../index.php:72 ../page-full-width.php:28 ../page.php:41 ../single.php:40
+#: ../index.php:72 ../page-full-width.php:40 ../page.php:41 ../single.php:40
 msgid "Edit"
 msgstr "Éditer"
 
@@ -145,7 +145,11 @@ msgstr "Éditer"
 msgid "Posted in"
 msgstr "Publié dans"
 
-#: ../index.php:107 ../index.php:114 ../page-full-width.php:42 ../page.php:55
+#: ../index.php:92 ../single.php:76
+msgid "Tags"
+msgstr "Tags"
+
+#: ../index.php:107 ../index.php:114 ../page-full-width.php:54 ../page.php:55
 #: ../single.php:135
 msgid "Not Found"
 msgstr "Introuvable"
@@ -153,7 +157,7 @@ msgstr "Introuvable"
 #: ../index.php:108
 #, php-format
 msgid "Your search for \"%s\" did not return any result."
-msgstr "Votre recherché de \"%s\" n'a retourné aucun résultat."
+msgstr "Votre recherche de \"%s\" n'a retourné aucun résultat."
 
 #: ../index.php:109
 msgid "Would you like to try another search ?"
@@ -167,15 +171,15 @@ msgstr "Articles précédents"
 msgid "Next Posts"
 msgstr "Articles suivants"
 
-#: ../page.php:29 ../single.php:64
+#: ../page-full-width.php:28 ../page.php:29 ../single.php:64
 msgid "Pages:"
 msgstr "Pages :"
 
-#: ../page.php:34 ../single.php:69
+#: ../page-full-width.php:33 ../page.php:34 ../single.php:69
 msgid "Next page"
 msgstr "Page suivante"
 
-#: ../page.php:35 ../single.php:70
+#: ../page-full-width.php:34 ../page.php:35 ../single.php:70
 msgid "Previous page"
 msgstr "Page précédente"
 

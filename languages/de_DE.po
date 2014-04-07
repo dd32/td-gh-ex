@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BoldR Pro 1.2.0\n"
 "POT-Creation-Date: 2013-08-23 11:17+0100\n"
-"PO-Revision-Date: 2013-08-23 11:17+0100\n"
-"Last-Translator: br34ker <patrick@frombeyond.de>\n"
+"PO-Revision-Date: 2014-04-07 10:03+0100\n"
+"Last-Translator: \n"
 "Language-Team: FromBeyond <info@frombeyond.de>\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
@@ -106,7 +106,7 @@ msgstr "Jährliches Archiv:"
 
 #: ../index.php:78 ../single.php:44
 msgid "No"
-msgstr "Nein"
+msgstr "Kein"
 
 #: ../index.php:78 ../single.php:44
 msgid "1"

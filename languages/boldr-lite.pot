@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BoldR Lite 1.1\n"
-"POT-Creation-Date: 2013-10-02 10:28+0100\n"
-"PO-Revision-Date: 2013-10-02 10:28+0100\n"
+"POT-Creation-Date: 2014-04-07 10:06+0100\n"
+"PO-Revision-Date: 2014-04-07 10:06+0100\n"
 "Last-Translator: \n"
 "Language-Team: Iceable Themes <contact@iceablethemes.com>\n"
 "Language: en_US\n"
@@ -23,7 +23,7 @@ msgstr ""
 msgid "Page Not Found"
 msgstr ""
 
-#: ../404.php:22 ../index.php:115 ../page-full-width.php:43 ../page.php:43
+#: ../404.php:22 ../index.php:115 ../page-full-width.php:55 ../page.php:56
 #: ../single.php:136
 msgid "What you are looking for isn't here..."
 msgstr ""
@@ -57,7 +57,7 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: ../footer.php:27
+#: ../footer.php:25
 msgid "Proudly powered by"
 msgstr ""
 
@@ -79,7 +79,7 @@ msgstr ""
 msgid "Footer"
 msgstr ""
 
-#: ../functions.php:295
+#: ../functions.php:290
 msgid "Read More"
 msgstr ""
 
@@ -135,7 +135,7 @@ msgstr ""
 msgid "by "
 msgstr ""
 
-#: ../index.php:72 ../page-full-width.php:28 ../page.php:28 ../single.php:40
+#: ../index.php:72 ../page-full-width.php:40 ../page.php:41 ../single.php:40
 msgid "Edit"
 msgstr ""
 
@@ -143,7 +143,11 @@ msgstr ""
 msgid "Posted in"
 msgstr ""
 
-#: ../index.php:107 ../index.php:114 ../page-full-width.php:42 ../page.php:42
+#: ../index.php:92 ../single.php:76
+msgid "Tags"
+msgstr ""
+
+#: ../index.php:107 ../index.php:114 ../page-full-width.php:54 ../page.php:55
 #: ../single.php:135
 msgid "Not Found"
 msgstr ""
@@ -165,6 +169,18 @@ msgstr ""
 msgid "Next Posts"
 msgstr ""
 
+#: ../page-full-width.php:28 ../page.php:29 ../single.php:64
+msgid "Pages:"
+msgstr ""
+
+#: ../page-full-width.php:33 ../page.php:34 ../single.php:69
+msgid "Next page"
+msgstr ""
+
+#: ../page-full-width.php:34 ../page.php:35 ../single.php:70
+msgid "Previous page"
+msgstr ""
+
 #: ../sidebar.php:16
 msgid "Recent Posts"
 msgstr ""
@@ -175,18 +191,6 @@ msgstr ""
 
 #: ../sidebar.php:28
 msgid "Meta"
-msgstr ""
-
-#: ../single.php:64
-msgid "Pages:"
-msgstr ""
-
-#: ../single.php:69
-msgid "Next page"
-msgstr ""
-
-#: ../single.php:70
-msgid "Previous page"
 msgstr ""
 
 #: ../single.php:89
