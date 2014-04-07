@@ -6,8 +6,7 @@
 <!--SMARTPHONES-->
 <meta name="viewport" content="width=device-width" />
 
-<!--SEO FRIENDLY TITLE-->
-<title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ', '; } ?><?php bloginfo('name'); if(is_home()) { echo ', '; bloginfo('description'); } ?></title>
+<title><?php wp_title( ' – ', true, 'right' ); ?></title>
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />

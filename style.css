@@ -19,7 +19,7 @@ Resource All graphic objects, example: img/background.png, img/favicon.ico
 
 Author: Robert Toth
 Author URI: http://toth-illustration.com
-Version: 1.2.8
+Version: 1.2.9
 Copyright: Robert Toth, http://toth-illustration.com
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -586,6 +586,7 @@ pre{
 }
 
 #banner{
+	width:100%;
 	float: left;
     	background-image:url('img/btbg10.png');
 	padding:0px;
