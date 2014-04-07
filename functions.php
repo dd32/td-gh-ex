@@ -177,7 +177,7 @@ function prfx_meta_callback( $post ) {
 
 	<p>
 	<label for="featured-background" class="prfx-row-title" style="text-align:justify;">The ideal image size is smaller than 400kb and a resolution around 1920 by 1080 pixels.<br><br></label>
-	<?php if (!empty($featured_background)): ?><img alt="Featured Background Image" src="<?php echo $featured_background; ?>" style="box-shadow:0 0 .05em rgba(19,19,19,.5); height:auto; width:100%;"><?php endif; ?>
+	<img id="theimage" src='<?php if (empty($featured_background)) { echo get_template_directory_uri() . '/images/nothing_found.jpg';} else {echo $featured_background;} ?>' style="box-shadow:0 0 .05em rgba(19,19,19,.5); height:auto; width:100%;"/>
 		<input type="text" name="featured-background" id="featured-background" value="<?php if ( isset ( $featured_background ) ) echo $featured_background; ?>" style="margin:0 0 .5em; width:100%;" />
 		<input type="button" id="featured-background-button" class="button" value="<?php _e( 'Choose or Upload an Image', 'localize_semperfi' )?>" style="margin:0 0 .25em; width:100%;" />
 	</p> <?php }
@@ -194,13 +194,12 @@ function enqueue_featured_background() {
         wp_enqueue_media();
 
         // Register, localize and enqueue our custom JS.
-        wp_register_script( 'enqueue-featured-background', get_template_directory_uri() . '/js/featured-background.js', array( 'jquery' ), '1', true );
-        wp_localize_script( 'enqueue-featured-background', 'js_array_featured_background',
+        wp_register_script( 'featured-background', get_template_directory_uri() . '/js/featured-background.js', array( 'jquery' ), '1', true );
+        wp_localize_script( 'featured-background', 'featured_background',
             array(
-                'title' => 'Upload or choose an image for the Featured Background',
-                'button' =>'Use as Featured Background') );
-        wp_enqueue_script( 'enqueue-featured-background' ); } }
-
+                'title'     => 'Upload or choose an image for the Featured Background',
+                'button'    => 'Use as Featured Background') );
+        wp_enqueue_script( 'featured-background' ); } }
 
 // Saves the custom meta input
 add_action( 'save_post', 'prfx_meta_save' );
@@ -571,6 +570,7 @@ function semperfi_customize($wp_customize) {
         'taglinefontstyle_setting'      => 'Default',
         'tagline_rotation_setting'      => '0.00',
         'titlecolor_setting'            => '#e0dbce',
+        'title_size_setting'            => '4.0',
         'titlefontstyle_setting'        => 'Default',
         'twitter_setting'               => __('The url link goes in here.', 'localize_semperfi'),
         'vimeo_setting'                 => __('The url link goes in here.', 'localize_semperfi'),
@@ -626,6 +626,32 @@ function semperfi_customize($wp_customize) {
 		'label'				=> __('Site Title Color - #e0dbce', 'localize_semperfi'),
 		'section'			=> 'title_tagline',
 		'settings'			=> 'titlecolor_setting', )));
+    
+    // Rotation of The Tagline
+    $wp_customize->add_control('title_size_control', array(
+		'label'				=> __('Title Font Size', 'localize_semperfi'),
+		'priority'			=> 1,
+		'section'			=> 'header_section',
+		'settings'			=> 'title_size_setting',
+		'type'				=> 'select',
+		'choices'			=> array(
+			'6.0'			=> '6.0em',
+			'5.8'			=> '5.8em',
+			'5.6'			=> '5.6em',
+			'5.4'			=> '5.4em',
+			'5.2'			=> '5.2em',
+			'5.0'			=> '5.0em',
+			'4.8'			=> '4.8em',
+			'4.6'			=> '4.6em',
+			'4.4'			=> '4.4em',
+			'4.2'			=> '4.2em',
+			'4.0'			=> '4.0em',
+			'3.8'			=> '3.8em',
+			'3.6'			=> '3.6em',
+			'3.4'			=> '3.4em',
+			'3.2'			=> '3.2em',
+			'3.0'			=> '3.0em',
+			'2.8'			=> '2.8em', ), ));
 
 	// Change Tagline Color
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'taglinecolor_control', array(
@@ -636,7 +662,7 @@ function semperfi_customize($wp_customize) {
     // Rotation of The Tagline
     $wp_customize->add_control('tagline_rotation_control', array(
 		'label'				=> __('Tagline Rotation', 'localize_semperfi'),
-		'priority'			=> 1,
+		'priority'			=> 2,
 		'section'			=> 'header_section',
 		'settings'			=> 'tagline_rotation_setting',
 		'type'				=> 'select',
@@ -844,6 +870,10 @@ function semperfi_inline_css() {
 		if ( (get_theme_mod('backgroundpaper_setting') != 'auto') && (get_theme_mod('backgroundpaper_setting') != '') )echo '	.content {background-image:url(' . get_template_directory_uri() . '/images/' . get_theme_mod('backgroundpaper_setting') . '.png);}' . "\n";
 		if ( get_theme_mod('titlecolor_setting') != '#e0dbce' ) echo '	.header h1 a {color:' . get_theme_mod('titlecolor_setting') . ';}' . "\n";
 		if ( get_theme_mod('taglinecolor_setting') != '#3e5a21' ) echo '	.header h1 i {color:' . get_theme_mod('taglinecolor_setting') . ';}' . "\n";
+		if ( get_theme_mod('title_size_setting') != '4.0' ) echo '	.header h1 {font-size:' . get_theme_mod('title_size_setting') . 'em;}' . "\n";   
+    
+    
+    
 		if ( get_theme_mod('tagline_rotation_setting') != '-1.00' ) echo '	.header h1 i {-moz-transform:rotate(' . get_theme_mod('tagline_rotation_setting') . 'deg); transform:rotate(' . get_theme_mod('tagline_rotation_setting') . 'deg);}' . "\n";
 		if ( get_theme_mod('bannerimage_setting') != 'marble.png' ) echo '	.header {background: bottom url(' . get_template_directory_uri() . '/images/' . get_theme_mod('bannerimage_setting') .  ');}'. "\n";
 		if ( get_theme_mod('headerspacing_setting') != '20' ) echo '	.spacing {height:' . get_theme_mod('headerspacing_setting') . 'em;}'. "\n";
@@ -874,11 +904,9 @@ if (!function_exists('semperfi_js')) {
         // JS at the bottom for fast page loading
         wp_enqueue_script('semperfi-menu-scrolling', get_template_directory_uri() . '/js/jquery.menu.scrolling.js', array('jquery'), '1.1', true);
         wp_enqueue_script('semperfi-main', get_template_directory_uri() . '/js/main.js', array('jquery'), '1.0', true);
-        wp_enqueue_script('semperfi-jquery-easing', get_template_directory_uri() . '/js/jquery.easing.js', array('jquery'), '1.3', true);
-        wp_enqueue_script('semperfi-scripts', get_template_directory_uri() . '/js/jquery.fittext.js', array('jquery'), '1.1', true);
         wp_enqueue_script('semperfi-doubletaptogo', get_template_directory_uri() . '/js/doubletaptogo.min.js', array('jquery'), '1.0', true); } }
 
-if (!is_admin()) add_action('wp_enqueue_scripts', 'semperfi_js');
+if (!is_admin()) add_action('wp_enqueue_scripts', 'semperfi_js', 21);
 
 //Initialize the update checker.
 require 'theme-update-checker.php';
@@ -990,6 +1018,10 @@ function semperfi_theme_options_do_page() { ?>
                             <th></th>
                         </tr>
                         <tr>
+                            <th>11</th>
+                            <td><?php _e('Changed site Title and Slogan to scale using CSS instead of jQuery code. Added an option to control the size of the Title and Slogan under in the "Theme Customizer" under "Header." Fixed the issues with featured backgrounds, and also added some jQuery to auto load the background image after making your choice.', 'localize_semperfi'); ?></td>
+                        </tr>
+                        <tr>
                             <th>10</th>
                             <td><?php _e('Brought back missing features. Fixed scaling error. Added in the ablitiy to tilt the Slogan of the website. Cleaned up the customizer code. Organized the fonts alphabetically. Drop down menus should work great on touch screen devices. Some other odds and ends too.', 'localize_semperfi'); ?></td>
                         </tr>
@@ -1005,6 +1037,10 @@ function semperfi_theme_options_do_page() { ?>
                         <tr>
                             <th><?php _e('Version', 'localize_semperfi'); ?></th>
                             <th></th>
+                        </tr>
+                        <tr>
+                            <th>2.5</th>
+                            <td><?php _e('Same thing as Version 11 Of Semper Fi.', 'localize_semperfi'); ?></td>
                         </tr>
                         <tr>
                             <th>2.4</th>

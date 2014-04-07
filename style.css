@@ -10,13 +10,13 @@ Author URI: http://schwarttzy.com/about-2/
 
 Description: Dedicate to my Grandfather's Bravery in WWII, Semper Fi has a high quality newspaper feeling to it. From hidden luxurious floral patterns, to images that create the nostalgia of finely crafted paper, incredibly detailed shadowing, but most importantly, Semper Fi has the ability to respond to any width screen. From 300 pixels wide, all the way to 1920 and beyond, images, galleries, quotes, text, and titles all move like fluid to respond to any thing you throw at it.
 
-Version: 2.4
+Version: 2.5
 
 License: GNU General Public License
 
 License URI: license.txt
 
-Tags:  black, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, flexible-width, full-width-template, green, one-column, photoblogging, responsive-layout, tan, theme-options, sticky-post, theme-options, threaded-comments, white
+Tags:  black, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, fluid-layout, full-width-template, green, one-column, photoblogging, responsive-layout, tan, theme-options, sticky-post, theme-options, threaded-comments, white
 
 */
 
@@ -367,10 +367,10 @@ img#wpstats {display:none;}
 	background-image: url(images/marble.png);
 	border-top:solid 1px #1c1c1c;
 	border-bottom:solid 1px #1c1c1c;
-	box-shadow:0 0 20px #111;
+	box-shadow:0 0 1.2em #111;
 	left:0;
-	margin:25px 0 0;
-	padding:10px auto 0;
+	margin:1.2em 0 0;
+	padding:.6em auto 0;
 	position:absolute;
 	text-align:center;
 	top:0;
@@ -382,9 +382,9 @@ img#wpstats {display:none;}
 .header h1 {
     display:block;
 	font-family:Impact, Charcoal, sans-serif;
-	font-size:100px;
+	font-size:4em;
 	line-height:1.1em;
-    margin:25px 0 -15px;
+    margin:.3em 0 -.25em;
 	padding:0;
 	overflow:hidden;
 	text-shadow:3px 3px 0 rgba(0, 0, 0, 0.5);
@@ -398,7 +398,7 @@ img#wpstats {display:none;}
 	font-style:normal;
 	font-size:.28em;
 	line-height:1.3em;
-	padding:.45em 0 .25em;
+	padding:.43em 0 .23em;
 	position:relative;
 	text-shadow:-1px -1px 0 #111;
     text-transform:capitalize;}
@@ -936,6 +936,18 @@ footer p {
     
     main {width:48.26em;} }
 
+@media all and (min-width:025em) {.header {font:normal 038.75% adobe-text-pro, Cambria, Georgia, "Times New Roman", Times, serif;}}
+@media all and (min-width:030em) {.header {font:normal 045.00% adobe-text-pro, Cambria, Georgia, "Times New Roman", Times, serif;}}
+@media all and (min-width:035em) {.header {font:normal 051.25% adobe-text-pro, Cambria, Georgia, "Times New Roman", Times, serif;}}
+@media all and (min-width:040em) {.header {font:normal 057.50% adobe-text-pro, Cambria, Georgia, "Times New Roman", Times, serif;}}
+@media all and (min-width:045em) {.header {font:normal 063.75% adobe-text-pro, Cambria, Georgia, "Times New Roman", Times, serif;}}
+@media all and (min-width:050em) {.header {font:normal 070.00% adobe-text-pro, Cambria, Georgia, "Times New Roman", Times, serif;}}
+@media all and (min-width:055em) {.header {font:normal 076.25% adobe-text-pro, Cambria, Georgia, "Times New Roman", Times, serif;}}
+@media all and (min-width:060em) {.header {font:normal 082.50% adobe-text-pro, Cambria, Georgia, "Times New Roman", Times, serif;}}
+@media all and (min-width:065em) {.header {font:normal 088.75% adobe-text-pro, Cambria, Georgia, "Times New Roman", Times, serif;}}
+@media all and (min-width:070em) {.header {font:normal 095.00% adobe-text-pro, Cambria, Georgia, "Times New Roman", Times, serif;}}
+@media all and (min-width:075em) {.header {font:normal 101.25% adobe-text-pro, Cambria, Georgia, "Times New Roman", Times, serif;}}
+@media all and (min-width:080em) {.header {font:normal 107.50% adobe-text-pro, Cambria, Georgia, "Times New Roman", Times, serif;}}
 @media all and (min-width:085em) {body {font:normal 113.75% adobe-text-pro, Cambria, Georgia, "Times New Roman", Times, serif;}}
 @media all and (min-width:090em) {body {font:normal 120.00% adobe-text-pro, Cambria, Georgia, "Times New Roman", Times, serif;}}
 @media all and (min-width:095em) {body {font:normal 126.25% adobe-text-pro, Cambria, Georgia, "Times New Roman", Times, serif;}}
