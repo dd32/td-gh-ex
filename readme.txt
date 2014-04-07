@@ -12,7 +12,8 @@ please open a thread on the Ignite forum on wordpress.org
     Licenses:
 -------------------------------------------------------
 
-For this Theme:
+Ignite WordPress Theme, Copyright 2014 Compete Themes
+Ignite is distributed under the terms of the GNU GPL
 
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -27,3 +28,4 @@ Ignite also uses:
 * Tappy! by Filament Group, https://github.com/filamentgroup/tappy, licensed under the MIT license.
 * Google Fonts, http://google.com/fonts, licensed under open source licenses, see: https://developers.google.com/fonts/faq#Any_Page_OK.
 * Font Awesome by Dave Gandy, licensed under open source licenses, see: http://fortawesome.github.io/Font-Awesome/license/.
+* Camera photo in screenshot.png by Nicola Perantoni, http://unsplash.com/post/76690037112/download-by-nicola-perantoni, public domain (http://creativecommons.org/publicdomain/zero/1.0/).
