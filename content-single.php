@@ -18,7 +18,11 @@
 					<h1 class="entry-title"><?php the_title(); ?></h1>
 					<?php maxflat_display_meta_post('date'); ?>
 				</header>
-				<?php get_template_part('views/snippets/image_area') ?>
+				<div class="smartlib-single-image-container">
+
+						<?php the_post_thumbnail( 'wide-image' ); ?>
+
+				</div>
 
 				<div class="entry-content">
 					<?php the_content(); ?>
