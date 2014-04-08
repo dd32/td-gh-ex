@@ -856,6 +856,7 @@ function hardpressed_custom_scripts() {
 	}
 	wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/library/js/modernizr-2.6.2.min.js', false, '2.6.2');
 	wp_enqueue_script( 'hardpressed_custom_js', get_template_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '1.0.0' );
+	wp_enqueue_style( 'hardpressed_google_fonts', '//fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700,700italic|Lato:900' );
 	wp_enqueue_style( 'hardpressed_style', get_stylesheet_uri() );
 }
 

@@ -21,8 +21,11 @@ For free themes support, please contact us http://hostmarks.com/contact/
 ============================================
 Images and Graphics Copyright/License Info
 ============================================
- * All the image graphics and icons bundled with this theme are created by the theme author and licensed under the GNU GPL.
+ * All the graphics and icons bundled with this theme are created by the theme author and licensed under the GNU GPL.
+ * The photo used in the screenshot.png was downloaded from pixabay.com and is bound to Creative Commons Deed CC0 as stated in their Terms of Service and Privacy Policy (http://pixabay.com/en/service/terms/)
+   -> http://pixabay.com/en/sunset-sundown-da-nang-bay-165077/
  
+   License URI: http://creativecommons.org/publicdomain/zero/1.0/deed.en
  
 ============================================
 Scripts.js Copyright/License Info
@@ -58,6 +61,11 @@ This theme is bundled with Modernizr
 =================================
 CHANGELOG
 =================================
+Version 1.0.2
+ * Fixed css display issues on the archives/search title and comments section
+ * Modified the way the theme include google fonts - used wp_enqueue_style() instead of importing it from style.css
+ * Updated screenshot.png and added license info for the image used in it
+
 Version 1.0.1
  * Updated screenshot
  * Minor css tweaks

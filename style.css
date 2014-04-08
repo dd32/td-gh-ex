@@ -4,16 +4,13 @@ Theme URI: http://hostmarks.com/hardpressed-theme/
 Author: Hostmarks
 Author URI: http://hostmarks.com/
 Description: Hardpressed is an extremely versatile blogging style theme that uses featured images to highlite content and also gives you lots of control over the theme’s color scheme with no coding required. We’ve paid attention to content styles and it also has the usual support for custom menus and widgets as well as some handy features for linking to your social media profiles and optionally displaying author bios for each post.
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-menu, sticky-post, microformats, rtl-language-support, translation-ready, full-width-template, post-formats
 
 */
 
-/******************************************************************/
-@import url(http://fonts.googleapis.com/css?family=Lato:900);
-@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700,700italic);
 /******************************************************************
 RESET STYLES
 ******************************************************************/
@@ -828,7 +825,7 @@ header[role=banner] {
 	}
 	
 .page-header {
-	background-color: #fff;
+	background-color: #f1f3f4;
 	margin: 0 0 60px;
 	-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
@@ -837,13 +834,13 @@ header[role=banner] {
 }
 
 .page-title {
-	background-color: #f1f3f4;
+	display: table;
+	
 	font-size: 30px; /* for ie8 & below */ 
 	font-size: 3.0rem;
 	font-weight: 400;
 	line-height: 1.2;
 	margin: 0;
-	padding: 20px 30px;
 	color: #fff;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -852,13 +849,17 @@ header[role=banner] {
 }
 
 .arc-title {
+	display: table-cell;
 	background-color: #67c8e2;
 	padding: 15px 30px 17px 30px;
 	margin-left: -30px;
 }
 
 .arc-item {
+	display: table-cell;
+	
 	margin-left: 15px;
+	padding: 15px 30px 17px 30px;
 	font-weight: 700;
 	color: #73878f;
 }
@@ -1175,6 +1176,7 @@ POSTS & CONTENT STYLES
 			.category-archive-meta,
 			.tag-archive-meta {
 				padding: 2.5% 3.5%;
+				background-color: #fff;
 			}
 			
 			.entry-meta a {
@@ -2090,7 +2092,8 @@ body.page-template-full-width-php .commentlist {}
 	}
 	
 		.commentlist footer.comment-head {
-		  
+		 	margin-left: 105px; /* for ie8 & below */
+			margin-left: 10.5rem; 
 	  	}
 	
 	.commentlist li.pingback {
@@ -2169,8 +2172,7 @@ body.page-template-full-width-php .commentlist {}
 			.commentlist .thread-odd {}
 			.commentlist .thread-even {}	
 			.commentlist .vcard {
-				margin-left: 105px; /* for ie8 & below */
-				margin-left: 10.5rem; 
+				margin-right: 24px;
 				float: left; 
 			}
 				.commentlist .vcard cite.fn { 
@@ -2186,10 +2188,10 @@ body.page-template-full-width-php .commentlist {}
 					
 				.commentlist .vcard time, 
 				.comment-meta { 
-					vertical-align: bottom;
+					vertical-align: baseline;
 					float: left;
-					line-height: 1.2;
-					margin-left: 24px;
+					line-height: 2.2;
+					
 				}
 					.commentlist .vcard time a,
 					.comment-meta a {
@@ -3050,9 +3052,8 @@ URL: http://stuffandnonsense.co.uk/projects/320andup/
 		max-width: 640px;
 	}
 	
-	.commentlist .vcard time, 
-	.comment-meta {
-		margin-left: 0;
+	.commentlist footer.comment-head {
+		margin-left: 0; 
 	}
 	
 	#respond label,
