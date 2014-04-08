@@ -452,6 +452,8 @@ class Hemingway_Customize {
 	           <?php self::generate_css('.widget_recent_comments a:hover', 'color', 'accent_color'); ?>
 	           <?php self::generate_css('.widget_pages a', 'color', 'accent_color'); ?>
 	           <?php self::generate_css('.widget_pages a:hover', 'color', 'accent_color'); ?>
+	           <?php self::generate_css('.widget_links a', 'color', 'accent_color'); ?>
+	           <?php self::generate_css('.widget_links a:hover', 'color', 'accent_color'); ?>
 	           <?php self::generate_css('.widget_recent_entries a', 'color', 'accent_color'); ?>
 	           <?php self::generate_css('.widget_recent_entries a:hover', 'color', 'accent_color'); ?>
 	           <?php self::generate_css('.widget_categories a', 'color', 'accent_color'); ?>

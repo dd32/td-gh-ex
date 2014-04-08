@@ -1,6 +1,11 @@
 *** Hemingway changelog ***
 
 
+Version 1.41 (2014-04-08)
+-------------------------
+- Fixed so that .widget_links is included in the custom accent color settings
+
+
 Version 1.40 (2014-03-31)
 -------------------------
 - Added a function for uploading a custom logo in place of the site title and description in the header
