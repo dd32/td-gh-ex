@@ -10,7 +10,7 @@ Author URI: http://schwarttzy.com/about-2/
 
 Description: Inspired by a certain GPS Manufacture, I designed this theme to feel like you're looking through a window out into the wilderness and hopefully inspire you to explore. I'm constantly adding new features to this theme to allow you to personalize it to your own needs. If you want a new feature or just want to be able to change something just ask me and I would be happy to add it for you. I would like to thank you for your support, visit the Theme URI for the update history, and Enjoy!
 
-Version: 3.1
+Version: 3.2
 
 License: GNU General Public License, version 3 (AGPLv3)
 
@@ -345,10 +345,10 @@ img#wpstats {display:none;}/* The Menu
 	background:bottom url(images/purple.png);
 	border-top:solid 1px #1c1c1c;
 	border-bottom:solid 1px #1c1c1c;
-	box-shadow:0 0 20px #111;
+	box-shadow:0 0 1.2em #111;
 	left:0;
-	margin:25px 0 0;
-	padding:10px auto 0;
+	margin:1.2em 0 0;
+	padding:.6em auto 0;
 	position:absolute;
 	text-align:center;
 	top:0;
@@ -361,9 +361,9 @@ img#wpstats {display:none;}/* The Menu
 	color:#eee2d6;
     display:block;
 	font-family:Impact, Charcoal, sans-serif;
-	font-size:90px;
-	line-height:.9em;
-    margin:25px 0 -15px;
+	font-size:4em;
+	line-height:1.1em;
+    margin:.3em 0 -.25em;
 	padding:0;
 	overflow:hidden;
 	font-variant:small-caps;}
@@ -375,9 +375,9 @@ img#wpstats {display:none;}/* The Menu
 	font-style:normal;
     font-variant:small-caps;
 	font-weight:bolder;
-	font-size:.3em;
+	font-size:.28em;
 	line-height:1.3em;
-	padding:0 0 0 25%;
+	padding:.43em 0 .23em;
 	position:relative;
 	-moz-transform:rotate(-1deg);
 	transform:rotate(-1deg);
@@ -500,7 +500,7 @@ main {
 	float:none;
 	margin:0 auto 2.25em;}
 
-.contents {
+.contents, #disqus_thread {
 	background:rgba(180,176, 157, .80);
 	border:3px solid #4a4646;
 	border-radius:6px;
@@ -619,6 +619,7 @@ footer {
     visibility:visible;}
 
 footer p {
+    color:#ffffff;
     margin:.5em 0;
     padding:0;
     text-shadow:none;}
@@ -784,6 +785,50 @@ blockquote:after, .contents:after {clear:both; content:"."; display:block; heigh
 
     .comment-meta {display:none;} }
 
+@media all and (min-width:025em) {.header {font:normal 038.75% sans-serif;}}
+@media all and (min-width:030em) {.header {font:normal 045.00% sans-serif;}}
+@media all and (min-width:035em) {.header {font:normal 051.25% sans-serif;}}
+@media all and (min-width:040em) {.header {font:normal 057.50% sans-serif;}}
+@media all and (min-width:045em) {.header {font:normal 063.75% sans-serif;}}
+@media all and (min-width:050em) {.header {font:normal 070.00% sans-serif;}}
+@media all and (min-width:055em) {.header {font:normal 076.25% sans-serif;}}
+@media all and (min-width:060em) {.header {font:normal 082.50% sans-serif;}}
+@media all and (min-width:065em) {.header {font:normal 088.75% sans-serif;}}
+@media all and (min-width:070em) {.header {font:normal 095.00% sans-serif;}}
+@media all and (min-width:075em) {.header {font:normal 101.25% sans-serif;}}
+@media all and (min-width:080em) {.header {font:normal 107.50% sans-serif;}}
+@media all and (min-width:085em) {body {font:normal 113.75% sans-serif;}}
+@media all and (min-width:090em) {body {font:normal 120.00% sans-serif;}}
+@media all and (min-width:095em) {body {font:normal 126.25% sans-serif;}}
+@media all and (min-width:100em) {body {font:normal 132.50% sans-serif;}}
+@media all and (min-width:105em) {body {font:normal 138.75% sans-serif;}}
+@media all and (min-width:110em) {body {font:normal 145.00% sans-serif;}}
+@media all and (min-width:115em) {body {font:normal 151.25% sans-serif;}}
+@media all and (min-width:120em) {body {font:normal 157.50% sans-serif;}}
+@media all and (min-width:125em) {body {font:normal 163.75% sans-serif;}}
+@media all and (min-width:130em) {body {font:normal 170.00% sans-serif;}}
+@media all and (min-width:135em) {body {font:normal 176.25% sans-serif;}}
+@media all and (min-width:140em) {body {font:normal 182.50% sans-serif;}}
+@media all and (min-width:145em) {body {font:normal 188.75% sans-serif;}}
+@media all and (min-width:150em) {body {font:normal 195.00% sans-serif;}}
+@media all and (min-width:155em) {body {font:normal 201.25% sans-serif;}}
+@media all and (min-width:160em) {body {font:normal 207.50% sans-serif;}}
+@media all and (min-width:165em) {body {font:normal 213.75% sans-serif;}}
+@media all and (min-width:170em) {body {font:normal 220.00% sans-serif;}}
+@media all and (min-width:175em) {body {font:normal 226.25% sans-serif;}}
+@media all and (min-width:180em) {body {font:normal 232.50% sans-serif;}}
+@media all and (min-width:195em) {body {font:normal 238.75% sans-serif;}}
+@media all and (min-width:200em) {body {font:normal 245.00% sans-serif;}}
+@media all and (min-width:210em) {body {font:normal 257.50% sans-serif;}}
+@media all and (min-width:220em) {body {font:normal 270.00% sans-serif;}}
+@media all and (min-width:230em) {body {font:normal 282.50% sans-serif;}}
+@media all and (min-width:240em) {body {font:normal 295.00% sans-serif;}}
+@media all and (min-width:250em) {body {font:normal 307.50% sans-serif;}}
+@media all and (min-width:260em) {body {font:normal 320.00% sans-serif;}}
+@media all and (min-width:270em) {body {font:normal 332.50% sans-serif;}}
+@media all and (min-width:280em) {body {font:normal 345.00% sans-serif;}}
+@media all and (min-width:290em) {body {font:normal 357.50% sans-serif;}}
+@media all and (min-width:300em) {body {font:normal 370.00% sans-serif;}}
 
 /* Social Icons
 -------------------------------------------------------------- */	

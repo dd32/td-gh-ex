@@ -181,71 +181,62 @@ add_action('after_setup_theme', 'my_theme_setup');
 function my_theme_setup(){
     load_theme_textdomain('adventure_localizer', get_template_directory() . '/languages');}
 
-// The follow code adds a box to posts and pages to upload images for custom backgrounds
-add_action( 'add_meta_boxes', 'featured_background_add_meta_box' );
-function featured_background_add_meta_box() {
-	add_meta_box( 'featured_background1', __('Featured Background Image', 'localize_adventure'), 'featured_background_met_box', 'post', 'side', 'high' ); }
+// Adds a meta box to the post editing screen
+add_action( 'add_meta_boxes', 'prfx_custom_meta' );
+function prfx_custom_meta() {
+    add_meta_box( 'prfx_meta', __( 'Featured Background', 'localize_semperfi' ), 'prfx_meta_callback', 'post', 'side' );
+    add_meta_box( 'prfx_meta', __( 'Featured Background', 'localize_semperfi' ), 'prfx_meta_callback', 'page', 'side' ); }
 
-add_action( 'add_meta_boxes', 'featured_background_box' );
-function featured_background_box() {
-	add_meta_box( 'featured_background1', __('Featured Background Image', 'localize_adventure'), 'featured_background_met_box', 'page', 'side', 'high' ); }
 
-// Create the meta box and populate it with the options
-function featured_background_met_box( $post ) {
-	$values = get_post_custom( $post->ID );
-	$featured_background = isset( $values['meta-image'] ) ? esc_attr( $values['meta-image'][0] ) : '';
-	wp_nonce_field( 'featured_background_meta_box_nonce', 'meta_box_nonce' );
-	?>
+// Outputs the content of the meta box
+function prfx_meta_callback( $post ) {
+    wp_nonce_field( basename( __FILE__ ), 'prfx_nonce' );
+    $prfx_stored_meta = get_post_meta( $post->ID );
+	if (!empty($prfx_stored_meta['featured-background'][0]) ) $featured_background = $prfx_stored_meta['featured-background'][0];
+    ?>
 
 	<p>
-	<label for="meta-image" class="example-row-title" style="text-align:justify;"><?php _e('Try to keep this image size smaller than 400kb and a resolution around 1920 by 1080.', 'localize_adventure'); ?><br><br></label>
-    <?php if (empty($featured_background)): else: ?><img alt="<?php _e('Featured Background Image', 'localize_adventure'); ?>" src="<?php echo $featured_background; ?>" style="box-shadow:0 0 .05em rgba(19,19,19,.5); height:auto; width:100%;"><?php endif; ?>
-	<input type="text" name="meta-image" id="meta-image" value="<?php echo $featured_background; ?>" style="width:100%;" />  
-	<input type="button" id="meta-image-button" class="button" value="Select Image" style="float:right; margin:.5em 0 0;" />
-	</p>
-	<div style="clear:both"></div><?php }
+	<label for="featured-background" class="prfx-row-title" style="text-align:justify;">The ideal image size is smaller than 400kb and a resolution around 1920 by 1080 pixels.<br><br></label>
+	<img id="theimage" src='<?php if (empty($featured_background)) { echo get_template_directory_uri() . '/images/nothing_found.jpg';} else {echo $featured_background;} ?>' style="box-shadow:0 0 .05em rgba(19,19,19,.5); height:auto; width:100%;"/>
+		<input type="text" name="featured-background" id="featured-background" value="<?php if ( isset ( $featured_background ) ) echo $featured_background; ?>" style="margin:0 0 .5em; width:100%;" />
+		<input type="button" id="featured-background-button" class="button" value="<?php _e( 'Choose or Upload an Image', 'localize_semperfi' )?>" style="margin:0 0 .25em; width:100%;" />
+	</p> <?php }
 
-// Save the data that is entered into the fields
-function featured_background_meta_box_save( $post_id ) {
-
-	// Bail if we're doing an auto save
-	if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
-
-	// if our nonce isn't there, or we can't verify it, bail
-	if( !isset( $_POST['meta_box_nonce'] ) || !wp_verify_nonce( $_POST['meta_box_nonce'], 'featured_background_meta_box_nonce' ) ) return;
-
-	// if our current user can't edit this post, bail
-	if( !current_user_can( 'edit_post' ) ) return;
-
-	// now we can actually save the data
-	$allowed = array( 
-		'a' => array( // on allow a tags
-			'href' => array()));// and those anchords can only have href attribute
-	
-	// Probably a good idea to make sure your data is set
-	if( isset( $_POST['meta-image'] ) )
-		update_post_meta( $post_id, 'meta-image', wp_kses( $_POST['meta-image'], $allowed ) ); }
-
-add_action( 'save_post', 'featured_background_meta_box_save' );
 
 // Loads the image management javascript
-function example_image_enqueue2() {
-    global $typenow;
-    if( ($typenow == 'post') || ($typenow == 'page') ) {
+add_action( 'admin_enqueue_scripts', 'enqueue_featured_background' );
+
+function enqueue_featured_background() {
+	global $typenow;
+    if(($typenow == 'post' ) || ($typenow == 'page' )) {
+
+        // This function loads in the required files for the media manager.
         wp_enqueue_media();
- 
-        // Registers and enqueues the required javascript.
-        wp_register_script( 'meta-image', get_template_directory_uri() . '/js/meta-image.js', array( 'jquery' ) );
-        wp_localize_script( 'meta-image', 'meta_image',
+
+        // Register, localize and enqueue our custom JS.
+        wp_register_script( 'featured-background', get_template_directory_uri() . '/js/featured-background.js', array( 'jquery' ), '1', true );
+        wp_localize_script( 'featured-background', 'featured_background',
             array(
-                'title' => __('Choose or Upload a File', 'localize_adventure'),
-                'button' => __('Use this file', 'localize_adventure'),
-            )
-        );
-        wp_enqueue_script( 'meta-image' );
-    } // End if
-} // End example_image_enqueue2()
-add_action( 'admin_enqueue_scripts', 'example_image_enqueue2' );
+                'title'     => 'Upload or choose an image for the Featured Background',
+                'button'    => 'Use as Featured Background') );
+        wp_enqueue_script( 'featured-background' ); } }
+
+// Saves the custom meta input
+add_action( 'save_post', 'prfx_meta_save' );
+function prfx_meta_save( $post_id ) {
+ 
+    // Checks save status
+    $is_autosave = wp_is_post_autosave( $post_id );
+    $is_revision = wp_is_post_revision( $post_id );
+    $is_valid_nonce = ( isset( $_POST[ 'prfx_nonce' ] ) && wp_verify_nonce( $_POST[ 'prfx_nonce' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
+ 
+    // Exits script depending on save status
+    if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
+        return; }
+	
+	// Checks for input and saves if needed
+	if( isset( $_POST[ 'featured-background' ] ) ) {
+    	update_post_meta( $post_id, 'featured-background', $_POST[ 'featured-background' ] ); } }
 
 // Checks for input and saves if needed
 if( isset( $_POST[ 'meta-image' ] ) ) {
@@ -600,6 +591,7 @@ function adventure_customize($wp_customize) {
         'taglinecolor_setting'		    => '#066ba0',
         'taglinefontstyle_setting'      => 'Default',
         'tagline_rotation_setting'      => '-1.00',
+        'title_size_setting'            => '4.0',
         'titlecolor_setting'            => '#eee2d6',
         'titlefontstyle_setting'        => 'Default',
         'twitter_setting'               => __('The url link goes in here.', 'localize_adventure'),
@@ -656,6 +648,32 @@ function adventure_customize($wp_customize) {
 		'label'				=> __('Site Title Color', 'localize_adventure'),
 		'section'			=> 'title_tagline',
 		'settings'			=> 'titlecolor_setting', )));
+    
+    // Control the Size of the site Title and Slogan size
+    $wp_customize->add_control('title_size_control', array(
+		'label'				=> __('Title Font Size', 'localize_semperfi'),
+		'priority'			=> 1,
+		'section'			=> 'header_section',
+		'settings'			=> 'title_size_setting',
+		'type'				=> 'select',
+		'choices'			=> array(
+			'6.0'			=> '6.0em',
+			'5.8'			=> '5.8em',
+			'5.6'			=> '5.6em',
+			'5.4'			=> '5.4em',
+			'5.2'			=> '5.2em',
+			'5.0'			=> '5.0em',
+			'4.8'			=> '4.8em',
+			'4.6'			=> '4.6em',
+			'4.4'			=> '4.4em',
+			'4.2'			=> '4.2em',
+			'4.0'			=> '4.0em',
+			'3.8'			=> '3.8em',
+			'3.6'			=> '3.6em',
+			'3.4'			=> '3.4em',
+			'3.2'			=> '3.2em',
+			'3.0'			=> '3.0em',
+			'2.8'			=> '2.8em', ), ));
 
 	// Change Tagline Color
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'taglinecolor_control', array(
@@ -666,7 +684,7 @@ function adventure_customize($wp_customize) {
     // Rotation of The Tagline
     $wp_customize->add_control('tagline_rotation_control', array(
 		'label'				=> __('Tagline Rotation', 'localize_adventure'),
-		'priority'			=> 1,
+		'priority'			=> 2,
 		'section'			=> 'header_section',
 		'settings'			=> 'tagline_rotation_setting',
 		'type'				=> 'select',
@@ -1033,6 +1051,7 @@ function adventure_inline_css() {
 		if ( ( get_theme_mod('sidebarcolor_setting') != '#000000'  ) || ( get_theme_mod('sidebarbackground_setting') != '.50' ) ) echo '	aside {background: rgba(' . $rs . ',' . $gs . ', ' . $bs . ', ' .  get_theme_mod('sidebarbackground_setting') .  ');}' . "\n";
 		if ( get_theme_mod('titlecolor_setting') != '#eee2d6' ) echo '	.header h1 a {color:' . get_theme_mod('titlecolor_setting') . ';}' . "\n";
 		if ( get_theme_mod('taglinecolor_setting') != '#066ba0' ) echo '	.header h1 i {color:' . get_theme_mod('taglinecolor_setting') . ';}' . "\n";
+		if ( get_theme_mod('title_size_setting') != '4.0' ) echo '	.header h1 {font-size:' . get_theme_mod('title_size_setting') . 'em;}' . "\n";  
 		if ( get_theme_mod('tagline_rotation_setting') != '-1.00' ) echo '	.header h1 i {-moz-transform:rotate(' . get_theme_mod('tagline_rotation_setting') . 'deg); transform:rotate(' . get_theme_mod('tagline_rotation_setting') . 'deg);}' . "\n";
 		if ( get_theme_mod('bannerimage_setting') != 'purple.png' ) echo '	.header {background: bottom url(' . get_template_directory_uri() . '/images/' . get_theme_mod('bannerimage_setting') .  ');}'. "\n";
 		if ( get_theme_mod('headerspacing_setting') != '18' ) echo '	.spacing {height:' . get_theme_mod('headerspacing_setting') . 'em;}'. "\n";
@@ -1092,8 +1111,6 @@ if (!function_exists('adventure_js')) {
         // JS at the bottom for fast page loading
         wp_enqueue_script('adventure-menu-scrolling', get_template_directory_uri() . '/js/jquery.menu.scrolling.js', array('jquery'), '1.1', true);
         wp_enqueue_script('adventure-main', get_template_directory_uri() . '/js/main.js', array('jquery'), '1.0', true);
-        wp_enqueue_script('adventure-jquery-easing', get_template_directory_uri() . '/js/jquery.easing.js', array('jquery'), '1.3', true);
-        wp_enqueue_script('adventure-scripts', get_template_directory_uri() . '/js/jquery.fittext.js', array('jquery'), '1.1', true);
         wp_enqueue_script('adventure-doubletaptogo', get_template_directory_uri() . '/js/doubletaptogo.min.js', array('jquery'), '1.0', true); } }
 
 if (!is_admin()) add_action('wp_enqueue_scripts', 'adventure_js');
@@ -1193,9 +1210,17 @@ function adventure_theme_options_do_page() { ?>
             </div> -->
             
             <div id="changelog" class="information">
-                <h3><?php _e('The Changelog Adventure Plus', 'localize_adventure'); ?></h3>
+                <h3><?php _e('The Changelog Adventure+', 'localize_adventure'); ?></h3>
                 <table>
                     <tbody>
+                        <tr>
+                            <th>20</th>
+                            <td><?php _e('Fixed issues with the Feature Background Image. Change the site Title and Slogan to use CSS. Options to control the size of the font for the Title and Slogan in the Theme Customizer. The website font scale depending on the size of the screen viewing the website.'); ?></td>
+                        <tr>
+                        <tr>
+                            <th>19</th>
+                            <td><?php _e('Added an option to control the rotation of the tagline in the header. Also added coded to make drop down menus to work with touch screens devices. Single tag drops the menu, select and of the drop down option or an additional tap activates that link.'); ?></td>
+                        <tr>
                         <tr>
                             <th>16</th>
                             <td><?php _e('Fixed some activation errors that people were having.'); ?></td>
@@ -1221,13 +1246,21 @@ function adventure_theme_options_do_page() { ?>
                         </tr>
                     </tbody>
                 </table>
-                <h3>The Changelog Adventure', 'localize_adventure'); ?></h3>
+                <h3><?php _e('The Changelog Adventure', 'localize_adventure'); ?></h3>
                 <table>
                     <tbody>
                         <tr>
                             <th><?php _e('Version', 'localize_adventure'); ?></th>
                             <th></th>
                         </tr>
+                        <tr>
+                            <th>3.2</th>
+                            <td><?php _e('Fixed issues with the Feature Background Image. Change the site Title and Slogan to use CSS. Options to control the size of the font for the Title and Slogan in the Theme Customizer. The website font scale depending on the size of the screen viewing the website.'); ?></td>
+                        <tr>
+                        <tr>
+                            <th>3.1</th>
+                            <td><?php _e('Added an option to control the rotation of the tagline in the header. Also added coded to make drop down menus to work with touch screens devices. Single tag drops the menu, select and of the drop down option or an additional tap activates that link.'); ?></td>
+                        <tr>
                         <tr>
                             <th>3.0</th>
                             <td><?php _e('Updated Adventure to use the same new code that Adventure Plus has been running. The code is much cleaner and does away with a bunch of poor coding designs the theme had. The chances does away with complex loops that became to difficult do to all the customization options. Added code to fix the issue with the sidebar going to the top on mobile device.', 'localize_adventure'); ?></td>
