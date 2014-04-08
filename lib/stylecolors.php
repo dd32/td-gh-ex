@@ -102,7 +102,7 @@ function adaptive_flat_style() {
 			background: <?php echo( get_theme_mod( 'thumb_placeholder_color', '#1fbca7' ) );?>;
 		}
 		.img-placeholder .icon:before {
-			color: <?php echo( get_theme_mod( 'thumb_placeholder_logo_color', '' ) );?>;
+			color: <?php echo( get_theme_mod( 'thumb_placeholder_logo_color', '#ffffff' ) );?>;
 		}
 		.img-placeholder:hover .icon:before {
 			color: <?php echo( get_theme_mod( 'thumb_placeholder_logo_hover_color', '#f4f4f4' ) );?>;

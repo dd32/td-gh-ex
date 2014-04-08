@@ -2,10 +2,10 @@
 
 //conditional to only include customizer code when needed
 if (is_admin()) {
-	include('customizer.php');//Include code for customizer
+	include('lib/customizer.php');//Include code for customizer
 }
 
-include('stylecolors.php');
+include('lib/stylecolors.php');
 
 
 if ( ! isset( $content_width ) ) { //set content width

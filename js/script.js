@@ -1,27 +1,23 @@
 var $ = jQuery;
 		
 $(document).ready(function($) {
-	
-	
-
 
 	$( window ).resize(function() {
 		switchMobile();		
-		resizeGame();
 		resizePostPrev();
 	});
-	$(".header-menu .menu-item-home a").html('<div class="dashicons-admin-home"></div>');
+	
+	$(".header-menu .menu-item-home a").html('<div class="dashicons-admin-home"></div>'); //replace home link with home icon
 
-	var top = $('.menu-bar').offset().top;
+	var top = $('.menu-bar').offset().top; //calculate offset top of menu bar
 	
-	$(window).scroll(function() {
+	$(window).scroll(function() { //on scroll handle menu bar
 	
-		 if(top < $(document).scrollTop() ){
+		 if(top < $(document).scrollTop() ) {
 		 	$('.menu-bar').addClass('scrolling-menu');
 		 	$('header').css('margin-top', $('.menu-bar').height());
 		 }
-		 else
-		 {
+		 else {
 			 $('.menu-bar').removeClass('scrolling-menu');
 			 $('header').css('margin-top', 0);
 		 }
@@ -31,11 +27,9 @@ $(document).ready(function($) {
 							
 });
 
-$(window).load(function() {
-    // page is fully loaded, including all frames, objects and images
+$(window).load(function() { //when images are loaded
 	$('.post-prev').height('auto');
 	switchMobile();
-    resizeGame();
 	resizePostPrev();
 });
 			
@@ -58,17 +52,14 @@ function resizePostPrev() {
 	var prev;
 	
 	
-	if($('.center').css('margin-top') == '0px')
-		{
+	if($('.center').css('margin-top') == '0px')	{
 			$('.post-prev').height('auto');
 			return 0;
 		}
 		
 	
 	$('.post-prev').each(function(){
-		
-		
-		
+			
 		counter ++;
 		
 		$(this).height('auto')
@@ -81,44 +72,25 @@ function resizePostPrev() {
 			
 		} 
 		else {
-		
 			prev = $(this);
-		}
-		
-		
+		}	
 		
 	});
 	
 				
 }
 			
-function resizeGame() {
-	var ratio = $('iframe, object').height() /  $('iframe, object').width();
-			
-	$('iframe, object').attr('width',$("#single-game").width());
-	$('iframe, object').attr('height',($('iframe, object').attr('width') * (ratio)));
-			
-			
-	if($('iframe, object').height() > $( window ).height()  *  0.75) {
-		ratio = $('iframe, object').width() / $('iframe, object').height() ;
-		$('iframe, object').attr('height', $( window ).height() * 0.75);
-		$('iframe, object').attr('width',($('iframe, object').attr('height') * (ratio)));
-	}
-}
-
 var switched = false;
 
-function switchMobile(){
+function switchMobile(){ //Transform from desktop to mobile view vice versa
 	
 	$('post-prev2').height('auto');
 	$('post-prev').height('auto');
 	
 	
-	if($('.center').css('margin-top') == '0px') {
+	if($('.center').css('margin-top') == '0px') { //checks if we are in mobile view
 		
-		
-		
-		$('.post-prev2').each(function(){
+		$('.post-prev2').each(function(){ //loops over posts in the index to switch them to mobile compatible
 		
 			switched = true;
 			
@@ -142,7 +114,7 @@ function switchMobile(){
 		resizePostPrev();
 
 	}
-	else if(switched)
+	else if(switched) //go from mobile to desktop
 	{
 		switched = false;
 		$('.post-prev').addClass('post-prev2');
