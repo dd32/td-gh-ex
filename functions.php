@@ -165,4 +165,3 @@ require get_template_directory() . '/inc/custom-header.php';
  */
 if ( file_exists( get_template_directory() . '/inc/jetpack.php' ) )
 	require get_template_directory() . '/inc/jetpack.php';
-
