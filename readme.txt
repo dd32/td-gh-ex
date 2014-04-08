@@ -1,4 +1,4 @@
-== Arunachala 1.1 ==
+== Arunachala 1.4 ==
 
 Designed and developed by http://cvani.in 
 Demo: http://cvani.in/arunachala
@@ -10,24 +10,29 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
 == Description ==
-Arunachala is a simple, light weight, responsive WordPress theme designed to look great on any screen size from mobile devices to large desktops.  It's main features include - 1 & 2 column flexible layout, custom background, custom header image, custom site title color, custom menu, sticky posts slider, custom grid layout for posts on homepage,  widgets ready sidebar, full width image gallery with navigation and zoom, post format support, microformat support, translation ready and RTL language support.
+Description: The Arunachala theme is a simple, light, responsive WordPress theme designed to look great on any screen size from mobile devices to large desktops. It's main features are (1) Responsive Slider on homepage to highlight featured contents (2) The three-column grid view on homepage can be customized to show posts from a selected category (3) Full width image & gallery post formats. Other features include - widgets ready sidebar, custom background, custom header image, custom site title color, custom menu, post format support, translation ready and RTL (Right to left) language support.
 
 == Theme Setup ==
 
 == Setting up slider on Front Page or Homepage ==
-All posts marked as 'sticky' automatically goes to slider on front page or homepage. 
-Simply mark posts as 'sticky' to show them on the slider.
+All posts marked as 'sticky' go to the homepage slider automatically. 
+To make a post sticky follow these steps:
+
+    - In the Post editor find the “Publish” section.
+    - Next to“Visibility” click on Edit and then check the “Stick this post to the front page” option there.
+    - Click OK and update your post.
+
 
 == Setting up Homepage Content Category ==
 By default latest posts from all categories are displayed in a grid format on homepage. To show posts from a specific category follow instruction below :
 
-    From Dashboard, go to Appearance > Customize > Homepage Content Category
-    Select a category for homepage.
+    - From Dashboard, go to Appearance > Customize > Homepage Content Category
+    - Select a category for homepage.
 
 For more details, visit http://cvani.in/blog/arunachala/
 
 == Theme Support ==
-For support, please visit: http://cvani.in/support/
+For support, please visit: http://wordpress.org/support/theme/arunachala
 
 == Licenses ==
 

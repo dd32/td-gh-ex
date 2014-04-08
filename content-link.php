@@ -12,7 +12,7 @@
 		<?php else : ?>
 		<?php if ( is_home () ) : // Display featured thumbnail on homepage with permalink ?>
 		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-		<?php the_post_thumbnail('featured-thumb'); ?>
+		<?php the_post_thumbnail('featured-thumb'); ?></a>
 		<?php else : ?>
 		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
 		<?php the_post_thumbnail('featured-thumb'); ?></a>
