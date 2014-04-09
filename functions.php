@@ -166,15 +166,7 @@ function adventure_sidebar_side($classes) {
 		
 // Load up links in admin bar so theme is edit
 function adventure_theme_options_add_page() {
-	add_theme_page(__('Theme Customizer', 'localize_adventure'), __('Theme Customizer', 'localize_adventure'), 'edit_theme_options', 'customize.php' );
     add_theme_page(__('Theme Information', 'localize_adventure'), __('Theme Information', 'localize_adventure'), 'edit_theme_options', 'theme_options', 'adventure_theme_options_do_page');}
-	
-// Add link to theme options in Admin bar
-add_action( 'admin_bar_menu', 'adventure_admin_link', 113 );
-function adventure_admin_link() {
-	global $wp_admin_bar;
-	$wp_admin_bar->add_menu( array( 'id' => 'Adventure_Customizer', 'title' => __('Theme Customizer', 'localize_adventure'), 'href' => admin_url( 'customize.php' ) ));
-	$wp_admin_bar->add_menu( array( 'id' => 'Adventure_Information', 'title' => __('Theme Information', 'localize_adventure'), 'href' => admin_url( 'themes.php?page=theme_options' ) )); }
 
 // Load up the Localizer so that the theme can be translated
 add_action('after_setup_theme', 'my_theme_setup');
@@ -196,7 +188,7 @@ function prfx_meta_callback( $post ) {
     ?>
 
 	<p>
-	<label for="featured-background" class="prfx-row-title" style="text-align:justify;">The ideal image size is smaller than 400kb and a resolution around 1920 by 1080 pixels.<br><br></label>
+	<label for="featured-background" class="prfx-row-title" style="text-align:justify;"><?php _e( 'The ideal image size is smaller than 400kb and a resolution around 1920 by 1080 pixels.', 'localize_semperfi' )?><br><br></label>
 	<img id="theimage" src='<?php if (empty($featured_background)) { echo get_template_directory_uri() . '/images/nothing_found.jpg';} else {echo $featured_background;} ?>' style="box-shadow:0 0 .05em rgba(19,19,19,.5); height:auto; width:100%;"/>
 		<input type="text" name="featured-background" id="featured-background" value="<?php if ( isset ( $featured_background ) ) echo $featured_background; ?>" style="margin:0 0 .5em; width:100%;" />
 		<input type="button" id="featured-background-button" class="button" value="<?php _e( 'Choose or Upload an Image', 'localize_semperfi' )?>" style="margin:0 0 .25em; width:100%;" />
@@ -1215,15 +1207,15 @@ function adventure_theme_options_do_page() { ?>
                     <tbody>
                         <tr>
                             <th>20</th>
-                            <td><?php _e('Fixed issues with the Feature Background Image. Change the site Title and Slogan to use CSS. Options to control the size of the font for the Title and Slogan in the Theme Customizer. The website font scale depending on the size of the screen viewing the website.'); ?></td>
+                            <td><?php _e('Fixed issues with the Feature Background Image. Change the site Title and Slogan to use CSS. Options to control the size of the font for the Title and Slogan in the Theme Customizer. The website font scale depending on the size of the screen viewing the website.', 'localize_adventure'); ?></td>
                         <tr>
                         <tr>
                             <th>19</th>
-                            <td><?php _e('Added an option to control the rotation of the tagline in the header. Also added coded to make drop down menus to work with touch screens devices. Single tag drops the menu, select and of the drop down option or an additional tap activates that link.'); ?></td>
+                            <td><?php _e('Added an option to control the rotation of the tagline in the header. Also added coded to make drop down menus to work with touch screens devices. Single tag drops the menu, select and of the drop down option or an additional tap activates that link.', 'localize_adventure'); ?></td>
                         <tr>
                         <tr>
                             <th>16</th>
-                            <td><?php _e('Fixed some activation errors that people were having.'); ?></td>
+                            <td><?php _e('Fixed some activation errors that people were having.', 'localize_adventure'); ?></td>
                         <tr>
                             <th>14</th>
                             <td><?php _e('Changed up the code for Menu Image Header thing so that it would look better and be easier to use. Added text-shadow options so you can choose from more colors. Added options for the border for width, color, and to just remove it. You can upload your own image for the content background now. Added a Font Size adjustment that works in the content and sidebar.', 'localize_adventure'); ?></td>
@@ -1255,11 +1247,11 @@ function adventure_theme_options_do_page() { ?>
                         </tr>
                         <tr>
                             <th>3.2</th>
-                            <td><?php _e('Fixed issues with the Feature Background Image. Change the site Title and Slogan to use CSS. Options to control the size of the font for the Title and Slogan in the Theme Customizer. The website font scale depending on the size of the screen viewing the website.'); ?></td>
+                            <td><?php _e('Fixed issues with the Feature Background Image. Change the site Title and Slogan to use CSS. Options to control the size of the font for the Title and Slogan in the Theme Customizer. The website font scale depending on the size of the screen viewing the website.', 'localize_adventure'); ?></td>
                         <tr>
                         <tr>
                             <th>3.1</th>
-                            <td><?php _e('Added an option to control the rotation of the tagline in the header. Also added coded to make drop down menus to work with touch screens devices. Single tag drops the menu, select and of the drop down option or an additional tap activates that link.'); ?></td>
+                            <td><?php _e('Added an option to control the rotation of the tagline in the header. Also added coded to make drop down menus to work with touch screens devices. Single tag drops the menu, select and of the drop down option or an additional tap activates that link.', 'localize_adventure'); ?></td>
                         <tr>
                         <tr>
                             <th>3.0</th>
