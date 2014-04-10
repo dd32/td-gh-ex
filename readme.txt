@@ -47,6 +47,8 @@ Virtue Theme Uses:
 -------------------------------------------------------
 
 = Theme Name: Virtue =
+= Version: 2.1.2 =
+* Update woocommerce file.
 
 = Version: 2.1.1 =
 * Added Support for wp-retina plugin.
