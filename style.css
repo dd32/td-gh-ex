@@ -3,7 +3,7 @@ Theme Name: Redesign
 
 Theme URI: http://redesign.toth-illustration.com
 
-Description: Redesign is a simple, clean and highly visible theme. It has transparent graphic elements and colored post formats. Responsive, liquid layout makes it easy to read in handheld units. Max width is 1366 px, adapted for modern desktop computers. The theme is suitable for blogging, news or business. Not based on any other WP theme. It's made from scratch.
+Description: Redesign is a simple, clean and highly visible theme. It has transparent graphic elements and colored post formats. Responsive, liquid layout makes it equally easy to read in handheld units or modern desktop computers (max width 1366 px). It's an allround theme suitable for blogging/news, business, culture or organisations. Not based on any other WP theme. It's made from scratch.
 
 - Transparent graphics.
 - Choose from several transparent color post formats.
@@ -19,7 +19,7 @@ Resource All graphic objects, example: img/background.png, img/favicon.ico
 
 Author: Robert Toth
 Author URI: http://toth-illustration.com
-Version: 1.2.9
+Version: 1.3
 Copyright: Robert Toth, http://toth-illustration.com
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -273,11 +273,10 @@ img.alignright {
 /*BASIC*/
 
 body{
-	font-family: Lucida grande, Lucida sans unicode, sans-serif;
+	font-family: Helvetica, sans-serif;
 	font-size: 16px;
-        line-height:150%;
+        line-height: 150%;
 	color: #444;
-	letter-spacing:-1px;
 }
 
 #header{
@@ -305,18 +304,19 @@ body{
 }
 
 #header-text{
-	text-align:left;
-	padding:10px;
-	height:100px;
+	padding:1% 2%;
+	margin-bottom:30px;
 }
 
 .site-title{
 	font-size:260%;
+	line-height:120%;
 
 }
 
 .site-description{
 	font-size:120%;
+	line-height:120%;
 }
  
 
@@ -324,7 +324,6 @@ body{
  
 a:link, 
 a:visited{
-	font-weight:bold;
 	color:#444;
 	text-decoration: none; 
 }
@@ -336,21 +335,19 @@ a:hover{
 
 /*HEADINGS*/
 
-h1{
-	line-height:120%;
-	margin:0px 0px 5px 0px;
-}
 
+h1,
 h2,
 h3,
 h4,
 h5,
 h6{
 	line-height:120%;
-	margin:0px 0px 10px 0px;
 }
 
-
+.post h1{
+	margin: 0%;
+}
 
 /*NAVIGATION MENUS*/
 
@@ -387,7 +384,7 @@ h6{
 	display:block;
 	padding:5px 20px;
 	text-decoration:none;
-    	font-weight:bold;
+	font-weight:bold;
 }
 
 .nav ul{
@@ -428,6 +425,7 @@ h6{
 .post{
 	overflow: auto;
 	padding:2%;
+	margin-bottom: 2%;
 }
 
 .entry ul li{
@@ -441,10 +439,10 @@ h6{
 }
 
 .entry{
-	margin-top:10px;
-	text-align:justify;
-	text-justify:distribute;
-	clear:both;
+	margin-top: 30px;
+	text-align: justify;
+	text-justify: distribute;
+	clear: both;
 }
 
 .entry a{
@@ -611,7 +609,8 @@ pre{
 /*BUTTONS & FORMS*/
 
 input,
-textarea{
+textarea,
+input[type="file"] {
 	display:block;
 	font-size: 100%;
 	font-family: inherit;
@@ -641,16 +640,14 @@ textarea{
 #searchtextarea{
         font-size: 100%;
 	max-width: 200px;
-	color: #444;
+	color: #999;
 }
 
 #searchsubmit {
     	display: none;
 }
 
-
-input[type="submit"],
-input[type="file"] {
+input[type="submit"] {
         font-size:100% !important;
 	background-image:url('img/btbg70.png') !important;
 	margin:5px 0px !important;
@@ -659,15 +656,13 @@ input[type="file"] {
 	color:#FFF !important;
 }
 
-input[type="submit"]:hover,
-input[type="file"]:hover {
+input[type="submit"]:hover {
         font-size:100% !important;
 	background-image:url('img/btbg50.png') !important;
 	color:#FFF !important;
 }
 
-input[type="submit"]:active,
-input[type="file"]:active {
+input[type="submit"]:active {
         font-size:100% !important;
 	background-image:url('img/tbg70.png') !important;
 }
@@ -709,6 +704,7 @@ fieldset {
 
 legend {
 	font-weight:bold;
+	margin-bottom:15px;
 }
 
 

@@ -8,7 +8,7 @@ Copyright: none
 ---
 Author: Robert Toth
 Author URL: http://toth-illustration.com
-Version: 1.2.9
+Version: 1.3
 Theme URL: http://redesign.toth-illustration.com
 Requires: WordPress 3.x
 License: GNU General Public License

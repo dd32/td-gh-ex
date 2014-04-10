@@ -30,10 +30,14 @@
 <?php if(get_header_textcolor()!='blank') { ?>
 <div id="header-text" style="color:#<?php echo get_header_textcolor();?>!important;">
 <a href="<?php echo home_url( '/' );?>" style="color:#<?php echo get_header_textcolor();?>!important;">
-<h1 class="site-title"><?php bloginfo('name');?></h1></a>
-<h2 class="site-description"><?php bloginfo('description'); ?></h2>
+<div class="site-title"><?php bloginfo('name');?></div></a>
+<div class="site-description"><?php bloginfo('description'); ?></div>
 </div>
 <?php } ?>
+
+<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
+</a>
 
 </div>
 
