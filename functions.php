@@ -224,38 +224,4 @@ function promax_wp_title( $title, $sep ) {
 }
 add_filter( 'wp_title', 'promax_wp_title', 10, 2 );
 
-add_action('admin_bar_menu', 'my_custom_menu', 1000);
-function my_custom_menu()
-{
-    global $wp_admin_bar;
-    if(!is_super_admin() || !is_admin_bar_showing()) return;
-
-    $argsParent=array(
-        'id' => 'myCustomMenu',
-        'title' => 'ProMax Menu',
-        'href' => false
-    );
-    $wp_admin_bar->add_menu($argsParent);
-    $argsSub1=array(
-        'parent' => 'myCustomMenu',
-        'title' => 'Option Panel',
-        'href' => admin_url( 'themes.php?page=options-framework' ),
-         'meta' => array('target' => '_blank')
-    );
-    $wp_admin_bar->add_menu($argsSub1);
-    $argsSub2=array(
-        'parent' => 'myCustomMenu',
-        'title' => 'Support Forum',
-        'href' => 'http://forum.baztro.com/',
-        'meta' => array('target' => '_blank')
-    );
-    $wp_admin_bar->add_menu($argsSub2);
-    $argsSub3=array(
-        'parent' => 'myCustomMenu',
-        'title' => 'Upgrade to Pro',
-        'href' => 'http://www.wrock.org/product/promax-premium-theme/',
-        'meta' => array('target' => '_blank')
-    );
-    $wp_admin_bar->add_menu($argsSub3);
-}
 ?>

@@ -17,7 +17,7 @@
     <div id="header-inner" class="clearfix">
 		<div id="logo">
 <?php if (of_get_option( 'promax_logo' )): ?>
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo of_get_option( 'promax_logo' ); ?>" height="400px" width="100px" alt="<?php bloginfo( 'name' ); ?>"/></a>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo of_get_option( 'promax_logo' ); ?>" height="100px" width="400px" alt="<?php bloginfo( 'name' ); ?>"/></a>
       			<?php else : ?>        
             <h1 class="site-title">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
