@@ -54,29 +54,28 @@ function resizePostPrev() {
 	
 	if($('.center').css('margin-top') == '0px')	{
 			$('.post-prev').height('auto');
-			return 0;
 		}
-		
+	else {	
 	
-	$('.post-prev').each(function(){
+		$('.post-prev').each(function(){
+				
+			counter ++;
 			
-		counter ++;
-		
-		$(this).height('auto')
-		
-		if(counter % 2 == 0) {
+			$(this).height('auto')
 			
-			var height = Math.max($(this).height(), prev.height());
-			$(this).height(height);
-			prev.height(height);
+			if(counter % 2 == 0) {
+				
+				var height = Math.max($(this).height(), prev.height());
+				$(this).height(height);
+				prev.height(height);
+				
+			} 
+			else {
+				prev = $(this);
+			}	
 			
-		} 
-		else {
-			prev = $(this);
-		}	
-		
-	});
-	
+		});
+	}
 				
 }
 			

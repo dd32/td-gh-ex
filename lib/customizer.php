@@ -13,6 +13,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
    $wp_customize->add_setting( 'text_color' , array(
     'default'     => '#323a46',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'text_color', array(
@@ -28,6 +29,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
    $wp_customize->add_setting( 'content_link_color' , array(
     'default'     => '#f37934',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'content_link_color', array(
@@ -43,6 +45,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
    $wp_customize->add_setting( 'content_link_hover_color' , array(
     'default'     => '#d65a2c',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'content_link_hover_color', array(
@@ -57,6 +60,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
    $wp_customize->add_setting( 'body_color' , array(
     'default'     => '#ffffff',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'body_color', array(
@@ -71,6 +75,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'top_bar_color' , array(
     'default'     => '#1fbca7',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'top_bar_color', array(
@@ -85,6 +90,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'header_color' , array(
     'default'     => '#ffffff',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'header_color', array(
@@ -101,6 +107,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'site_title_color' , array(
     'default'     => '#f37934',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_title_color', array(
@@ -115,6 +122,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'site_description_color' , array(
     'default'     => '#323a46',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_description_color', array(
@@ -129,6 +137,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'menu_background' , array(
     'default'     => '#323a46',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'menu_background', array(
@@ -142,6 +151,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'menu_text_color' , array(
     'default'     => '#ffffff',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'menu_text_color', array(
@@ -155,6 +165,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'menu_text_hover_color' , array(
     'default'     => '#ffffff',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'menu_text_hover_color', array(
@@ -168,6 +179,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'menu_hover_color' , array(
     'default'     => '#1fbca7',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'menu_hover_color', array(
@@ -181,6 +193,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'search_button_color' , array(
     'default'     => '#f37934',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'search_button_color', array(
@@ -194,6 +207,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'search_button_logo_color' , array(
     'default'     => '#ffffff',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'search_button_logo_color', array(
@@ -208,6 +222,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'search_border_color' , array(
     'default'     => '#EEEEEE',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'search_border_color', array(
@@ -222,6 +237,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'search_input_color' , array(
     'default'     => '#ffffff',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'search_input_color', array(
@@ -235,6 +251,8 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'search_text_color' , array(
     'default'     => '#000000',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
+    
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'search_text_color', array(
@@ -249,6 +267,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'search_placeholder_color' , array(
     'default'     => '#c6c6c6',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'search_placeholder_color', array(
@@ -263,6 +282,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'widget_head_background_color' , array(
     'default'     => '#f37934',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'widget_head_background_color', array(
@@ -276,6 +296,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'widget_head_text_color' , array(
     'default'     => '#ffffff',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'widget_head_text_color', array(
@@ -289,6 +310,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'widget_list_seperator_color' , array(
     'default'     => '#ECECEC',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'widget_list_seperator_color', array(
@@ -302,6 +324,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'widget_list_marker_color' , array(
     'default'     => '#323a46',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'widget_list_marker_color', array(
@@ -317,6 +340,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'thumb_placeholder_color' , array(
     'default'     => '#1fbca7',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'thumb_placeholder_color', array(
@@ -330,6 +354,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'thumb_placeholder_logo_color' , array(
     'default'     => '#ffffff',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'thumb_placeholder_logo_color', array(
@@ -343,6 +368,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'thumb_placeholder_logo_hover_color' , array(
     'default'     => '#f4f4f4',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'thumb_placeholder_logo_hover_color', array(
@@ -357,6 +383,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'post_prev_title_color' , array(
     'default'     => '#6b6b6b',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'post_prev_title_color', array(
@@ -370,6 +397,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'post_prev_title_hover_color' , array(
     'default'     => '#f37934',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'post_prev_title_hover_color', array(
@@ -383,6 +411,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'post_prev_bottom_border_color' , array(
     'default'     => '#EEEEEE',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'post_prev_bottom_border_color', array(
@@ -396,6 +425,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'pagination_color' , array(
     'default'     => '#1fbca7',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'pagination_color', array(
@@ -409,6 +439,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'pagination_text_color' , array(
     'default'     => '#fff',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'pagination_text_color', array(
@@ -423,6 +454,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'pagination_active_color' , array(
     'default'     => '#f37934',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'pagination_active_color', array(
@@ -436,6 +468,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'pagination_active_text_color' , array(
     'default'     => '#ffffff',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'pagination_active_text_color', array(
@@ -450,6 +483,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'page_title_color' , array(
     'default'     => '#707070',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'page_title_color', array(
@@ -463,6 +497,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'page_title_underline_color' , array(
     'default'     => '#f37934',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'page_title_underline_color', array(
@@ -476,6 +511,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'headings_color' , array(
     'default'     => '#707070',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'headings_color', array(
@@ -489,6 +525,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'footer_top_color' , array(
     'default'     => '#1fbca7',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_top_color', array(
@@ -502,6 +539,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'footer_top_text_color' , array(
     'default'     => '#ffffff',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_top_text_color', array(
@@ -516,6 +554,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'footer_widget_head_color' , array(
     'default'     => '#1aad99',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_widget_head_color', array(
@@ -528,6 +567,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 //footer widget head text
 	$wp_customize->add_setting( 'footer_widget_head_text_color' , array(
     'default'     => '#ffffff',
+    'sanitize_callback' => 'sanitize_hex_color',
     'transport'   => 'postMessage',
 	) );
 	
@@ -543,6 +583,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'footer_list_seperator_color' , array(
     'default'     => '#ececec',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_list_seperator_color', array(
@@ -557,6 +598,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'footer_bottom_color' , array(
     'default'     => '#323a46',
     'transport'   => 'postMessage',
+    'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_bottom_color', array(
@@ -569,6 +611,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 //footer bottom text
 	$wp_customize->add_setting( 'footer_bottom_text_color' , array(
     'default'     => '#ffffff',
+    'sanitize_callback' => 'sanitize_hex_color',
     'transport'   => 'postMessage',
 	) );
 	
@@ -582,6 +625,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 //footer bottom link
 	$wp_customize->add_setting( 'footer_bottom_link_color' , array(
     'default'     => '#ffffff',
+    'sanitize_callback' => 'sanitize_hex_color',
     'transport'   => 'postMessage',
 	) );
 	
@@ -626,6 +670,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'readmore_text' , array(
     'default'     => '...Read more',
     'transport'   => 'refresh',
+    'sanitize_callback' => 'esc_html',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'readmore_text', array(
@@ -635,10 +680,10 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	'priority' => 2, 
 	) ) );	
 	
-	
-	
+//posts per line
 	$wp_customize->add_setting( 'posts_per_line' , array(
     'default'     => '2',
+    'sanitize_callback' => 'absint',
     'transport'   => 'refresh',
 	) );
 
@@ -663,6 +708,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'show_placeholder' , array(
     'default'     => '1',
     'transport'   => 'refresh',
+    'sanitize_callback' => 'absint',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'show_placeholder', array(
@@ -677,6 +723,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'layout_archive' , array(
     'default'     => 'cs',
     'transport'   => 'refresh',
+	'sanitize_callback' => 'adaptive_flat_sanitize_layout',
 	) );
 	
 	$wp_customize->add_control(
@@ -701,6 +748,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'layout_posts' , array(
     'default'     => 'cs',
     'transport'   => 'refresh',
+    'sanitize_callback' => 'adaptive_flat_sanitize_layout',
 	) );
 	
 	$wp_customize->add_control(
@@ -725,6 +773,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'post_excerpt_length' , array(
     'default'     => '30',
     'transport'   => 'refresh',
+    'sanitize_callback' => 'absint',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'post_excerpt_length', array(
@@ -739,6 +788,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'search_text' , array(
     'default'     => 'Search results for:',
     'transport'   => 'refresh',
+    'sanitize_callback' => 'esc_html',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'search_text', array(
@@ -753,6 +803,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'search_placeholder_text' , array(
     'default'     => 'Search',
     'transport'   => 'refresh',
+    'sanitize_callback' => 'esc_html',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'search_placeholder_text', array(
@@ -766,6 +817,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'pag_next_text' , array(
     'default'     => 'Next &raquo;',
     'transport'   => 'refresh',
+    'sanitize_callback' => 'esc_html',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'pag_next_text', array(
@@ -780,6 +832,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'pag_prev_text' , array(
     'default'     => '&laquo; Previous',
     'transport'   => 'refresh',
+    'sanitize_callback' => 'esc_html',
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'pag_prev_text', array(
@@ -793,6 +846,7 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'footer_text' , array(
     'default'     => '<p>Theme created by <a href="http://mickdegraaf.nl" rel="nofollow">Mick de Graaf</a></p>',
     'transport'   => 'refresh',
+    'sanitize_callback' => 'wp_kses_data', //filter footer text just like a footer
 	) );
 	
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'footer_text', array(
@@ -814,10 +868,11 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	) );
 	
 	
-	//readmore text	
+	//custom css	
 	$wp_customize->add_setting( 'custom_css' , array(
     'default'     => '',
     'transport'   => 'refresh',
+    'capability' => 'edit_themes',//requires same level acces as editing theme files
 	) );
 	
 	$wp_customize->add_control( new Adaptive_flat_Customize_Textarea_Control( $wp_customize, 'custom_css', array(
@@ -827,18 +882,20 @@ function adaptive_flat_customize_register( $wp_customize ) {
 	'priority' => 2, 
 	) ) );	
 
+
+}
+
 /*
-*CSS location
+* Sanitize layout
 *
-*
+* Make sure the layout is set to a valid value
 */
 
-	//readmore text	
-	$wp_customize->add_setting( 'css' , array(
-    'default'     => '',
-    'transport'   => 'refresh',
-	) );
-
+function adaptive_flat_sanitize_layout($layout) {
+	if($layout == 'cs' || $layout == 'sc' || $layout == 'c') {
+		return $layout;
+	}
+	return "cs";
 }
 
 
