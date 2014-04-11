@@ -120,10 +120,10 @@ $options[] = array(
 		
 	$options[] = array(
 		'name' => __('Custom Favicon URL', 'promax'),
-		'desc' => __('Enter Favicon Image URL Specify a 16px by 16px image in .ico format .', 'promax'),
+		'desc' => __('Enter Favicon Image.', 'promax'),
 		'id' => 'promax_favicon',
 		'std' => '',
-		'type' => 'text');
+		'type' => 'upload');
 	$options[] = array(
 		'name' => __('Upload Site Logo', 'promax'),
 		'desc' => __('Upload Website Logo to fit here. Note you can upload any size it will automatic resize .', 'promax'),
@@ -489,7 +489,7 @@ $options[] = array(
 						));
 		$options[] = array(
 		'name' => __('Show or Hide Copy Right Text', 'promax'),
-		'desc' => __('Show or Hode Copyright Text and Link.', 'promax'),
+		'desc' => __('Show or Hide Copyright Text and Link.', 'promax'),
 		'id' => 'promax_copyright',
 		'std' => 'on',
 		'type' => 'radio',

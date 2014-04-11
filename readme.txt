@@ -37,6 +37,11 @@ Custom Css:
 == Change log ==
 
 = 1.3.9 =
+*Favicon upload Option added
+*Fix Header logo image in IE8 Issue
+*Added link to Option page and Support forum in admin bar
+
+= 1.3.9 =
 *bug fixed 
 *menu code updated
 *option panel url info fixed

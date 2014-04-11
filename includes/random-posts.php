@@ -1,8 +1,14 @@
-	<ul>
-		<?php
-		$rand_posts = get_posts('numberposts=5&orderby=rand');
-		foreach( $rand_posts as $post ) :
-		?>
-		<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-		<?php endforeach; ?>
-	</ul>
+<ul>
+<?php 
+$args = array( 
+ 'ignore_sticky_posts' => true,
+ 'showposts' => 5,
+ 'orderby' => 'rand',  );
+$the_query = new WP_Query( $args );
+ if ( $the_query->have_posts() ) :
+while ( $the_query->have_posts() ) : $the_query->the_post();
+?>
+<li> <a title="<?php the_title(); ?>" href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></li>									
+							<?php endwhile; ?>
+							<?php endif; ?>			 <?php wp_reset_postdata(); ?>
+</ul>
