@@ -1,0 +1,477 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: bunny\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-12 16:08+0100\n"
+"PO-Revision-Date: 2014-04-12 16:08+0100\n"
+"Last-Translator: Carolina Nymark <myazalea@hotmail.com>\n"
+"Language-Team: Layout.nu <carro@layout.nu>\n"
+"Language: sv_SE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;__;_x\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.6.4\n"
+"X-Poedit-SearchPath-0: C:\\xampp\\htdocs\\wordpress\\wp-content\\themes"
+"\\bunny\n"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/404.php:3
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:125
+msgid "Page not found"
+msgstr "Sidan kunde inte hittas"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/archive.php:4
+#, php-format
+msgid "Daily Archives: %s"
+msgstr "Arkiv: %s"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/archive.php:5
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr "Arkiv: %s"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/archive.php:6
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr "Arkiv: %s"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/archive.php:7
+#, php-format
+msgid "Tag Archives: %s"
+msgstr "Arkiv: %s"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/archive.php:8
+#, php-format
+msgid "Category Archives: %s"
+msgstr "Arkiv: %s"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/archive.php:9
+msgid "Archive:"
+msgstr "Arkiv:"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/archive.php:26
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/author.php:33
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/comments.php:13
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/comments.php:19
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/content.php:19
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/page.php:8
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/search.php:18
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/single.php:16
+msgid "Pages: "
+msgstr "Sidor: "
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/archive.php:32
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/author.php:39
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/index.php:9
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/search.php:24
+msgid "Next page &rarr;"
+msgstr "Nästa sida &rarr;"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/archive.php:33
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/author.php:40
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/index.php:14
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/search.php:25
+msgid "&larr; Previous page"
+msgstr "&larr; Föregående sida"
+
+# this is refering to the author. Authors name will be inserted at %
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/author.php:4
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:219
+#, php-format
+msgid "About %s"
+msgstr "Om %s"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/author.php:19
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:226
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:243
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:251
+#, php-format
+msgid "View all posts by %s"
+msgstr "Visa alla inägg av %s"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/comments.php:4
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+"Det här inlägget är lösenordsskyddat. Skriv in lösenordet för att läsa "
+"kommentarerna."
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:13
+msgid "Header Navigation"
+msgstr "Navigering för sidhuvud"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:64
+msgid "Read more: "
+msgstr "Läs mer: "
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:89
+msgid "Untitled"
+msgstr "Titel saknas"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:99
+msgid "Footer Sidebar"
+msgstr "Sidfotspanel"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:100
+msgid "Widgets in this area will be shown in the footer."
+msgstr "Widgets i denna panel visas i sidfoten."
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:122
+#, php-format
+msgid "Page %s"
+msgstr "Sida %s"
+
+# translators: 1: date, 2: time
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:163
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s kl %2$s"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:163
+msgid "(Edit)"
+msgstr "(Redigera)"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:169
+msgid "Your comment is awaiting moderation."
+msgstr "Din kommentar måste godkännas innan publicering."
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:176
+msgid "Reply"
+msgstr "Svara"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:189
+msgid "Home"
+msgstr "Hem"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:262
+msgid "Category"
+msgstr "Kategori"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/functions.php:269
+msgid "Tags"
+msgstr "Etiketter"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/inc/customizer.php:5
+msgid "Easter eggs"
+msgstr "Påskägg"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/inc/customizer.php:17
+msgid ""
+"Adjust the value of the arc to match the length of your site title. Set a "
+"small number for a high arc, and high number for a low arc."
+msgstr ""
+"Justera värdet på kurvan så att det matchar längden på din webbplatstitel. "
+"Sätt ett lågt nummer för en hög kurva, och ett högt nummer för en låg kurva."
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/inc/customizer.php:29
+msgid "Adjust the value of the arc to match the length of your tagline"
+msgstr "Justera värdet för kurvan så att det matchar längden på din slogan"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/inc/customizer.php:40
+msgid "Check this box to turn Bunny into the Easter bunny!"
+msgstr "Klicka i rutan för att visa påskäggen!"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\bunny/bunny/search.php:3
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Sökresultat för: %s"
+
+#~ msgid "Header"
+#~ msgstr "Bild i sidhuvud"
+
+#~ msgid "Right Hand Sidebar"
+#~ msgstr "Höger Sidopanel"
+
+#~ msgid "Widgets in this area will be shown on the right-hand side."
+#~ msgstr "Widgets i denna panel visas på höger sida"
+
+#~ msgid "Logo image"
+#~ msgstr "Logo"
+
+#~ msgid "Author and meta"
+#~ msgstr "Författare och meta"
+
+#~ msgid "Sidebar position"
+#~ msgstr "Sidpanels position"
+
+#~ msgid "Check this box to hide the breadcrumb navigation."
+#~ msgstr "Klicka i rutan för att gömma brödsmulorna (navigeringen)."
+
+#~ msgid "Display the text in the footer."
+#~ msgstr "Visa texten i sidfoten."
+
+#~ msgid "Choose a logo: "
+#~ msgstr "Välj en logo: "
+
+#~ msgid "Check this box to display the logo in the header."
+#~ msgstr "Klicka i rutan för att visa logon i sidhuvudet."
+
+#~ msgid ""
+#~ "Check this box to display the logo on top of the sidebar. This requires "
+#~ "an active sidebar"
+#~ msgstr "Klicka i rutan för att visa logon ovanför sidopanelen."
+
+#~ msgid "Check this box to display the logo in the footer."
+#~ msgstr "Klicka i rutan för att visa logon i sidfoten."
+
+#~ msgid "Add this link to the logo:"
+#~ msgstr "Lägg till denna länk till logon:"
+
+#~ msgid ""
+#~ "Check this box to hide the author information and avatar that are "
+#~ "displayed in single post view."
+#~ msgstr ""
+#~ "Klicka i rutan för att gömma den extra informationen om författaren (och "
+#~ "avataren) som visas under enskilda inlägg."
+
+#~ msgid "Check this box to hide all the meta information."
+#~ msgstr "Klicka i rutan för att gömma all meta information."
+
+#~ msgid "Add this link to the header image:"
+#~ msgstr "Lägg till denna länk till headerbilden:"
+
+#~ msgid ""
+#~ "Check this box to move the sidebar to the left hand side. (Default is the "
+#~ "right hand side. This requires an active sidebar)"
+#~ msgstr ""
+#~ "Klicka i rutan för att visa sidopanelen på vänster sida. (Visas vanligen "
+#~ "på höger sida)"
+
+#~ msgid ""
+#~ "Check this box to hide the sidebar on the frontpage. (This setting is "
+#~ "overwritten depending on template)"
+#~ msgstr ""
+#~ "Klicka i rutan för att gömma sidopanelen på framsidan (Beroende på "
+#~ "template). "
+
+#~ msgid "Category: %1s"
+#~ msgstr "Kategori: %1s"
+
+#~ msgid "Tagged: %1$s. "
+#~ msgstr "Etiketter: %1$s. "
+
+#~ msgid "Sunset"
+#~ msgstr "Solnedgång"
+
+#~ msgid "Design details"
+#~ msgstr "Designdetaljer"
+
+#~ msgid "Stones"
+#~ msgstr "Stenar"
+
+#~ msgid "Flower"
+#~ msgstr "Blomma"
+
+#~ msgid "A cloudy day"
+#~ msgstr "En molnig dag"
+
+#~ msgid "Seagull"
+#~ msgstr "Fiskmås"
+
+#~ msgid "Birds On Rock"
+#~ msgstr "Fåglar på klippa"
+
+#~ msgid "Advanced Color Settings"
+#~ msgstr "Avancerade färginställningar."
+
+#~ msgid ""
+#~ "Check this box to remove the curly brackets from the meny and to replace "
+#~ "them with a | divider in the breadcrumb navigation."
+#~ msgstr ""
+#~ "Klicka i rutan för att ta bort de sk. måsvingarna från menyn och ersätta "
+#~ "dem med en avdelare |  i navigationen."
+
+#~ msgid "Link Color"
+#~ msgstr "Länkfärg"
+
+#~ msgid "Content text color"
+#~ msgstr "Brödtexts färg"
+
+#~ msgid "Single post and page title color"
+#~ msgstr "Färg på titlen i inlägg och sidor."
+
+#~ msgid "Widget title color"
+#~ msgstr "Färg för widgettitlar"
+
+#~ msgid "Comment area backgroundcolor"
+#~ msgstr "Bakgrundsfärg för kommentering"
+
+#~ msgid "Color of the top and full page border of the site"
+#~ msgstr "Färg för kanten längst upp på sidan"
+
+#~ msgid ""
+#~ "Color of the border of the sticky posts, meta, navigation, widgets and "
+#~ "header image."
+#~ msgstr ""
+#~ "Färg för kanten runt stickys, meta, navigationsknappar, widgets och "
+#~ "bilden i sidhuvudet."
+
+#~ msgid "Background color for sticky posts, navigation and widgets."
+#~ msgstr "Bakgrundsfärg för stickys, navigationsknapparna och widgets."
+
+#~ msgid "Background hover color for sticky posts, navigation and widgets."
+#~ msgstr ""
+#~ "Bakgrundsfärg när musen förs över stickys, navigationsknappar och widgets."
+
+#~ msgid "Background color for posts and pages."
+#~ msgstr "Bakgrundsfärg för inlägg och sidor."
+
+#~ msgid "Background color for the meta."
+#~ msgstr "Bakgrundsfärg för meta."
+
+#~ msgid "Background color for the menu"
+#~ msgstr "Bakgrundsfärg för menyn"
+
+#~ msgid "Check this box to place the header image above the menu."
+#~ msgstr ""
+#~ "Klicka i rutan för att placera bilden i sidhuvudet ovanför menyn istället "
+#~ "för under."
+
+#~ msgid "Check this box to hide all shadows."
+#~ msgstr "Klicka i rutan för att  ta bort skuggorna."
+
+#~ msgid ""
+#~ "Check this box to remove the rounded corners on posts, widgets, "
+#~ "navigation."
+#~ msgstr ""
+#~ "Klicka i rutan för att ta bort de rundade hörnen runt inläggen, widgets "
+#~ "och navigationsknapparna."
+
+#~ msgid ""
+#~ "Check this box to remove the borders around posts, widgets, navigation."
+#~ msgstr ""
+#~ "Klicka i rutan för att ta bort kanten runt inläggen, widgets, och "
+#~ "navigationsknapparna."
+
+#~ msgid "Check this box to remove the border on the very top of the page."
+#~ msgstr "Klicka i rutan för att ta bort kanten längst upp på sidan."
+
+#~ msgid ""
+#~ "Check this box to add a border to the entire page. (This requires the top "
+#~ "border to be active)"
+#~ msgstr "Klicka i rutan för att visa kanten runt hela sidan. "
+
+#~ msgid "Or, choose a border size in the box below:"
+#~ msgstr "Eller, välj storlek på kanten nedan:"
+
+#~ msgid ""
+#~ "<a href=\"%1$s\">Written by</a> <a href=\"%3$s\" title=\"%4$s\" rel="
+#~ "\"author\">%5$s</a> <a href=\"%1$s\" rel=\"bookmark\">%2$s</a>. "
+#~ msgstr ""
+#~ "<a href=\"%1$s\">Skrivet av</a> <a href=\"%3$s\" title=\"%4$s\" rel="
+#~ "\"author\">%5$s</a> <a href=\"%1$s\" rel=\"bookmark\">%2$s</a>. "
+
+#~ msgid "Breadcrumbs"
+#~ msgstr "Brödsmulor"
+
+#~ msgid "Header image placement"
+#~ msgstr "Välj placering av bild i sidhuvud"
+
+#~ msgid "Hide shadows"
+#~ msgstr "Göm skuggor"
+
+#~ msgid "View all posts by %s &rarr;"
+#~ msgstr "Visa alla inlägg av %s &rarr;"
+
+#~ msgid ""
+#~ "<a href=\"%5$s\">Written by</a> <a href=\"%2$s\" title=\"%3$s\" rel="
+#~ "\"author\">%4$s</a> %1$s. "
+#~ msgstr ""
+#~ "<a href=\"%5$s\">Skrivet av</a> <a href=\"%2$s\" title=\"%3$s\" rel="
+#~ "\"author\">%4$s</a> %1$s. "
+
+#~ msgid ""
+#~ "Written by <a href=\"%2$s\" title=\"%3$s\" rel=\"author\">%4$s</a> %1$s. "
+#~ msgstr ""
+#~ "Skrivet av <a href=\"%2$s\" title=\"%3$s\" rel=\"author\">%4$s</a> %1$s. "
+
+#~ msgid "<span class=\"edit-links\">Edit</span>"
+#~ msgstr "<span class=\"edit-links\">Redigera</span>"
+
+#~ msgid "Leave a comment"
+#~ msgstr "Lämna en kommentar"
+
+#~ msgid "1 comment"
+#~ msgstr "1 kommentar"
+
+#~ msgid "% comments"
+#~ msgstr "% comments"
+
+#~ msgid " comments"
+#~ msgstr " kommentarer"
+
+#~ msgid "%v comments"
+#~ msgstr "% kommentarer"
+
+#~ msgid "&#37 comments"
+#~ msgstr "% kommentarer"
+
+#~ msgid "%s comments"
+#~ msgstr "%s kommentarer"
+
+#~ msgid "%1$s comments"
+#~ msgstr "%1$s kommentarer"
+
+#~ msgid "1 comment on "
+#~ msgstr "1 kommentar till "
+
+#~ msgid "% comments on "
+#~ msgstr "% kommentrarer om "
+
+#~ msgid "Blog Archives"
+#~ msgstr "Bloggarkiv"
+
+#~ msgid "Full size is %s pixels"
+#~ msgstr "Full storlek är %s pixlar"
+
+#~ msgid "Link to full-size image"
+#~ msgstr "Länk till bild i full storlek"
+
+#~ msgid "Website: "
+#~ msgstr "Hemsida: "
+
+#~ msgid "Back to top"
+#~ msgstr "Tillbaka till toppen"
+
+#~ msgid "Footer Navigation"
+#~ msgstr "Navigering (meny) i sidfot"
+
+#~ msgid ""
+#~ "<a href=\"%1$s\">Written by</a> <a href=\"%3$s\" title=\"%4$s\" rel="
+#~ "\"author\">%5$s</a> <a href=\"%1$s\" rel=\"bookmark\"> %2$s</a>"
+#~ msgstr ""
+#~ "<a href=\"%1$s\">Skrivet av</a> <a href=\"%3$s\" title=\"%4$s\" rel="
+#~ "\"author\">%5$s</a> <a href=\"%1$s\" rel=\"bookmark\"> %2$s</a>"
+
+#~ msgid ""
+#~ "Posted by <a href=\"%2$s\" title=\"%3$s\" rel=\"author\">%4$s</a>  %1$s"
+#~ msgstr ""
+#~ "Inlagd av <a href=\"%2$s\" title=\"%3$s\" rel=\"author\">%4$s</a> %1$s"
+
+#~ msgid "Continue reading."
+#~ msgstr "Läs mer."
+
+#~ msgid " in reply to %1$s on %2$s at %3$s:"
+#~ msgstr " som svar till %1$s den %2$s kl %3$s:"
+
+#~ msgid ""
+#~ "Posted by <a href=\"%2$s\" title=\"%3$s\" rel=\"author\">%4$s</a> on %1$s"
+#~ msgstr ""
+#~ "Inlagd av <a href=\"%2$s\" title=\"%3$s\" rel=\"author\">%4$s</a> den %1$s"
+
+#~ msgid "No Responses to "
+#~ msgstr "Inga Svar till  "
+
+#~ msgid "1 Response to "
+#~ msgstr "1 Svar till"
+
+#~ msgid "% Responses to "
+#~ msgstr "% Svar till "
+
+#~ msgid "1 Comment"
+#~ msgstr "1 Kommentar"
+
+#~ msgid "% Comments"
+#~ msgstr "% Kommentarer"
