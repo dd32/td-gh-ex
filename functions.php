@@ -3,7 +3,6 @@
 if ( ! function_exists( 'bunny_setup' ) ) :
 	function bunny_setup() {
 		add_theme_support( 'post-thumbnails' );
-		set_post_thumbnail_size( 190, 190 );
 		add_theme_support( 'automatic-feed-links' );
 		/* translate */
 		load_theme_textdomain( 'bunny', get_template_directory() . '/languages' );

@@ -34,6 +34,9 @@ Set a small number for a high arc, and high number for a low arc.
 
 == Changelog ==
 
+= 1.2 =
+Removed set_post_thumbnail_size from functions.php
+
 = 1.1 =
 Moved the arc javascript output to the footer.
 
