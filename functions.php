@@ -67,6 +67,15 @@ function hemingway_load_style() {
 add_action('wp_print_styles', 'hemingway_load_style');
 
 
+// Add editor styles
+function hemingway_add_editor_styles() {
+    add_editor_style( 'hemingway-editor-style.css' );
+    $font_url = '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Raleway:700,400';
+    add_editor_style( str_replace( ',', '%2C', $font_url ) );
+}
+add_action( 'init', 'hemingway_add_editor_styles' );
+
+
 // Add footer widget areas
 add_action( 'widgets_init', 'hemingway_sidebar_reg' ); 
 

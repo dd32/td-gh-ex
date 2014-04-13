@@ -1,6 +1,11 @@
 *** Hemingway changelog ***
 
 
+Version 1.42 (2014-04-13)
+-------------------------
+- Added support for editor styles
+
+
 Version 1.41 (2014-04-08)
 -------------------------
 - Fixed so that .widget_links is included in the custom accent color settings
