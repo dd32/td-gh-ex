@@ -15,25 +15,6 @@
 	<div class="logo"><img src="<?php echo get_template_directory_uri()?>/images/cloud-large.png" height="146px" width="316px" alt="<?php wp_title( '|', true, 'right' ); ?>" /></div>
 	<h1 class="site-title" id="headline"><?php bloginfo( 'name' ); ?></h1>
 	<h2 class="site-description" id="tagline"><?php bloginfo( 'description' ); ?></h2>
-
-<?php
-if( get_theme_mod( 'bunny_title_arc_size' ) ) {
-	$bunnyarc1=get_theme_mod('bunny_title_arc_size' );
-}else {
-	$bunnyarc1='400';
-}
-
-if( get_theme_mod( 'bunny_tagline_arc_size' ) ) {
-	$bunnyarc2=get_theme_mod('bunny_tagline_arc_size' );
-}else {
-	$bunnyarc2='400';
-}
-?>
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-arc('<?php echo $bunnyarc1; ?>', '<?php echo $bunnyarc2; ?>');
-//--><!]]>
- </script>
 </div>
 
 <div id="sol" class="sol"></div>

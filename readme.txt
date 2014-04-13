@@ -12,7 +12,6 @@ Fluffy friendly and cute! 'Bunny' is an animated one column theme suitable for p
 The theme is responsive and translation ready with one custom menu, a widget area in the footer, sticky posts and threaded comments. 
 Swedish language files are included.
 
-
 The code is sometimes commented in both English and Swedish. -In those cases, the Swedish comment is to the right.
 Sub menu's will not show on smaller screens such as on some smart phones.
 Featured images are not shown on pages or single posts.
@@ -20,22 +19,23 @@ Featured images are not shown on pages or single posts.
 == Installation ==
 1. Unzip `bunny.zip` to the `/wp-content/themes/` directory
 1. Activate the theme through the 'Appearance' menu in WordPress
-2. For help on adjusting the site title and tagline, see the FAQ
+2. For help on adjusting the site title and tagline, see the FAQ.
 
 
 == Frequently Asked Questions ==
 
 = Where can I get support for this theme? =
-
 If you have any questions or suggestions for this theme please contact me on the theme support page, http://wordpress.org/support/theme/bunny.
 
 = My title and tagline looks funny, how do I fix this? =
-
 Please open the theme customizer. Under the headline 'Site Title and Tagline' you will find the settings for the arced(curved) text.
 Set a small number for a high arc, and high number for a low arc.
 
 
 == Changelog ==
+
+= 1.1 =
+Moved the arc javascript output to the footer.
 
 = 1.0 =
 * Release
@@ -74,8 +74,14 @@ Licensed under the Apache License, Version 2.0
 
 
 Images
-All images are in the public domain.
+All images are in the public domain. http://creativecommons.org/publicdomain/zero/1.0/
 All images except the sun and the easter eggs where made by and released into the public domain by the theme author.
-The sun and the easter eggs are originally from Openclipart.org.
-http://creativecommons.org/publicdomain/zero/1.0/
+
+Sun: http://openclipart.org/detail/170678/weather-icon---thunder-by-gnokii-170678
+Eggs: 
+http://openclipart.org/detail/191742/blue-lace-easter-egg-by-scout-191742
+http://openclipart.org/detail/77473/easter-egg-green-by-shokunin
+http://openclipart.org/detail/192498/happy-easter-sign-by-chad78-192498
+
+
 

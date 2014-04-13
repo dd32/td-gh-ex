@@ -3,10 +3,8 @@ Theme Name: Bunny
 Theme URI: http://wordpress.org/themes/bunny
 Author: Carolina Nymark
 Author URI: http://layout.nu/about/
-Description: Fluffy friendly and cute! 'Bunny' is an animated one column theme suitable for pet lovers and kids.
--Just one click in the theme customizer turns Bunny into the Easter bunny! The theme is responsive and translation ready with one custom menu, a widget area in the footer, sticky posts and threaded comments. 
-Swedish language files are included.
-Version: 1.0
+Description: Fluffy friendly and cute! 'Bunny' is an animated one column theme suitable for pet lovers and kids. -Just one click in the theme customizer turns Bunny into the Easter bunny! The theme is responsive and translation ready with one custom menu, a widget area in the footer, sticky posts and threaded comments. Swedish language files are included.
+Version: 1.1
 Tags: white, blue, threaded-comments, custom-menu, sticky-post, translation-ready, one-column, editor-style, featured-images, theme-options
 Text Domain: bunny
 License: MIT
@@ -422,7 +420,6 @@ th{background:#f5f5f5;}
 .post-date{color:#666; margin-top:-17px; margin-bottom:9px; font-size:0.8em}
 .post-date:hover{color:#6699ff;}
 
-.whitetop{}
 .sticky .crumbs, 
 .sticky .meta{display:none;}
 
@@ -448,7 +445,6 @@ th{background:#f5f5f5;}
 	padding-top:3px;
 	padding-bottom:12px;
 }
-.page-link a{}
 
 .page-link a:hover,
 .more-link a:hover{
@@ -638,8 +634,6 @@ h2#comments-title{
 .bypostauthor .comment-author {}
 .bypostauthor .comment-body {}
 */
-.comment-reply-link{}
-
 .comment-form-comment label {margin-right:6px;}
 
 .reply {
@@ -649,8 +643,6 @@ h2#comments-title{
 .children li.depth-5 .reply{
 	visibility:hidden;
 }
-
-.commentlist .even {}
 
 .nopassword, .nocomments {
 	display: none;
@@ -830,7 +822,6 @@ table#wp-calendar,
 	font-size:18px;
 	margin-bottom:8px;
 }
-.tagcloud{}
 
 .widget ul li a,
 .tagcloud a {

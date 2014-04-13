@@ -1,6 +1,4 @@
 <?php
-/* width     bredd */
-if ( ! isset( $content_width ) ) $content_width = 560;
 
 if ( ! function_exists( 'bunny_setup' ) ) :
 	function bunny_setup() {
@@ -10,7 +8,10 @@ if ( ! function_exists( 'bunny_setup' ) ) :
 		/* translate */
 		load_theme_textdomain( 'bunny', get_template_directory() . '/languages' );
 		/* add menu */
-		register_nav_menus( array('header' => __( 'Header Navigation', 'bunny' ) ) );	
+		register_nav_menus( array('header' => __( 'Header Navigation', 'bunny' ) ) );
+		add_editor_style();
+		/* width     bredd */
+		if ( ! isset( $content_width ) ) $content_width = 560;
 	}
 endif;
 add_action( 'after_setup_theme', 'bunny_setup' );
@@ -21,13 +22,6 @@ function bunny_menu( $args ) {
 	return $args;
 }
 add_filter( 'wp_page_menu_args', 'bunny_menu' );
-
-
-function bunny_editor_styles() {
-    add_editor_style();
-}
-add_action( 'init', 'bunny_editor_styles' );
-
 
 /* Enqueue fonts */
  function bunny_fonts_styles() {
@@ -281,6 +275,28 @@ function bunny_meta(){
 	</div>
 <?php
 }
+
+function bunny_curve(){
+	if( get_theme_mod( 'bunny_title_arc_size' ) ) {
+		$bunnyarc1=get_theme_mod('bunny_title_arc_size' );
+	}else {
+		$bunnyarc1='400';
+	}
+
+	if( get_theme_mod( 'bunny_tagline_arc_size' ) ) {
+		$bunnyarc2=get_theme_mod('bunny_tagline_arc_size' );
+	}else {
+		$bunnyarc2='400';
+	}
+	?>
+	<script type="text/javascript">
+	<!--//--><![CDATA[//><!--
+	arc('<?php echo $bunnyarc1; ?>', '<?php echo $bunnyarc2; ?>');
+	//--><!]]>
+	 </script>
+<?php
+}
+add_action('wp_footer', 'bunny_curve');
 
 //Customizer
 require get_template_directory() . '/inc/customizer.php';
