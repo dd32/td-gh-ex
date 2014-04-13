@@ -55,6 +55,9 @@ if (has_post_format('aside')) {
 
 <div class="tags"><?php the_tags('<span class="tags">Tags </span> ',' &bullet; ','</br>'); ?>
    </div>
+   
+   <div class="tags">#<?php the_category(' #'); ?>
+   </div>
 
 <div id="wp-link-pages">
  <?php wp_link_pages('before=<div class="tags"><span class="tags">Pages</span><span class="link-pages">&after=</span></div>'); ?></div>
