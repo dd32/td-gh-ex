@@ -2,7 +2,7 @@
 
 Theme Name: Sparkling
 Theme URI: http://colorlib.com/wp/sparkling/
-Version: 1.0.1
+Version: 1.0.2
 Tested up to: WP 3.9
 
 Author: Aigars Silkalns
@@ -61,6 +61,9 @@ Afterwards you can continue theme setup and customization via WordPress Dashboar
 Theme documentation is available on http://colorlib.com/wp/support/sparkling
 
 /*========= Changelog =========*/
+
+= 1.0.2 - 14.04.2014 =
+* Changed Author URI.
 
 = 1.0.1 - 02.04.2014 =
 * Social network urls are now properly escaped using "esc_url"

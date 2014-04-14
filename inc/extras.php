@@ -258,7 +258,7 @@ function sparkling_featured_slider() {
  */
 function sparkling_footer_info() {
 global $sparkling_footer_info;
-  printf( __( 'Theme by %1$s Powered by %2$s', 'sparkling' ) , '<a href="http://colorlib.com/wp/" target="_blank">Colorlib</a>', '<a href="http://wordpress.org/" target="_blank">WordPress</a>');
+  printf( __( 'Theme by %1$s Powered by %2$s', 'sparkling' ) , '<a href="http://colorlib.com/wp/themes/sparkling/" target="_blank">Colorlib</a>', '<a href="http://wordpress.org/" target="_blank">WordPress</a>');
 }
 
 // Get theme options
