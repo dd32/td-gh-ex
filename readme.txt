@@ -57,6 +57,8 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version: 1.4
+Small Styling added for Options Panel.
 @Version: 1.3.9
 1.Added New Theme Health Centre in Options panel Page.
 @Version: 1.3.8

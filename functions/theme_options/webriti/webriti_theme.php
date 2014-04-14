@@ -15,7 +15,7 @@ function webriti_themes_function() {
 	<div class="container-fluid">	
 		<div class="row-fluid">
 			<div class="span12" id="webriti_header">
-				<h2><a href="http://www.webriti.com/" target="_blank">	
+				<h2 class="head_h2"><a href="http://www.webriti.com/" target="_blank">	
 						<div style="font-size:35px;color:#fff; font-weight:bold; margin-top:10px; margin-bottom:10px;">Browse Premium Webriti Themes </div>
 					</a>
 				</h2>
