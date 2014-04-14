@@ -3,8 +3,8 @@
 Contributors: Iceable
 Tags: black, blue, white, light, two-columns, right-sidebar, flexible-width, custom-header, custom-background, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.5
-Tested up to: 3.8.1
-Stable tag: 1.1.28
+Tested up to: 3.9-RC1
+Stable tag: 1.1.29
 
 == ABOUT BOLDR LITE ==
 
@@ -59,6 +59,12 @@ If you have translated this theme into your own language and are willing to shar
 Your translation files will be added to the next update. Don't forget to leave your name, email address and/or website link so credits can be given to you!
 
 == CHANGELOG ==
+
+= 1.1.29 =
+April 14th, 2014
+* Fixed: Using sane defaults (No setting is saved in the database without explicit user action)
+* Removed unused function boldr_get_settings()
+* Tested with WordPress 3.9-RC1: no issue found
 
 = 1.1.28 =
 April 7th, 2014

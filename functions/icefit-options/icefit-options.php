@@ -20,13 +20,6 @@ function boldr_get_option($option) {
 	return $value;
 }
 
-// Custom function to get all settings (returns an array of all settings)
-function boldr_get_settings() {
-	global $boldr_settings_slug;
-	$boldr_settings = get_option($boldr_settings_slug);
-	return $boldr_settings;
-}
-
 // Adds "Theme option" link under "Appearance" in WP admin panel
 function boldr_settings_add_admin() {
 	global $menu;
@@ -143,7 +136,6 @@ function boldr_settings_machine($options) {
 			$output .= '</div>';
 		} 
 	}
-	update_option($boldr_settings_slug,$boldr_settings);	
 	return $output;
 }
 
