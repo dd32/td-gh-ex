@@ -48,7 +48,7 @@ function theme_data_setup()
 			
 			// footer customization
 			'footer_widgets_enabled'=>'on',
-			'rambo_copy_rights_text'=>__('&copy;2013&nbsp;ALL Rights Reserved','rambo'),			
+			'rambo_copy_rights_text'=>__('&copy;2014&nbsp;ALL Rights Reserved','rambo'),			
 			'rambo_designed_by_head'=>__('Designed By','rambo'),
 			'rambo_designed_by_text'=>__('Webriti','rambo'),
 			'rambo_designed_by_link'=>'http://www.webriti.com',			

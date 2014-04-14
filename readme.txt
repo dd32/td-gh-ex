@@ -85,6 +85,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
+@Version: 1.1.1
+Small Value Change in Default Data
 @Version: 1.1.0
 1.Added New Theme Health Centre in Admin Page.
 @Version: 1.0.9
