@@ -33,7 +33,7 @@
 
   			echo $image;
   		}
-			?>
+	?>
 
 	<div class="entry-content clearfix">
 		<?php

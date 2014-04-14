@@ -154,6 +154,9 @@ pre {
 .post .entry-meta a, .type-page .entry-meta a {
    color: #AAAAAA;
 }
+.entry-meta a.read-more {
+   color: #FFFFFF;
+}
 .post .entry-meta {
 	border: 1px solid #444444;
 }
@@ -176,6 +179,16 @@ pre {
 /* COMMENTS */
 #comments {
    background-color: #292929;
+}
+#respond form p.form-allowed-tags {
+   color: #AAAAAA;
+}
+.comment-content {
+   background-color: #3E3E3E;
+   border: 1px solid #444444;
+}
+.nav-previous a, .nav-next a {
+ 	border: 1px solid #444444;
 }
 
 /* SIDEBAR/WIDGET */

@@ -47,16 +47,15 @@ and we will include it within the theme from next version update.
 
 == CHANGE LOG == 
 
-= Version 1.0 =
-* All brand new.
-
-= Version 1.0.1 =
-* Added the link for the free image used in the screenshot from where it was taken.
-
-= Version 1.0.2 =
-* Used different featured image size for the recent work widget.
-* Small fix in footer text.
-* Fixed a bug which was showing excerpt in the single post view.
+= Version 1.0.4 = 
+* Featured image size issue fixed for featured-blog-medium-small image.
+* Some css adjustment for dark skin.
+* Primray color css fix for the footer menu. 
+* CSS adjustment for comment form text size.
+* CSS adjustment for call to action widget button.
+* Featured image now to appear for posts in archive view along with excerpt.
+* Fixed the layout issue for no-sidebar-full-width layout.
+* CSS adjustment for ordered, unordered lists in page content part.
 
 = Version 1.0.3 = 
 * Load textdomain function added for the translation. 
@@ -64,3 +63,14 @@ and we will include it within the theme from next version update.
 * Unwanted text removed from text widget.
 * Adjustment for slider part.
 * Some images renamed.
+
+= Version 1.0.2 =
+* Used different featured image size for the recent work widget.
+* Small fix in footer text.
+* Fixed a bug which was showing excerpt in the single post view.
+
+= Version 1.0.1 =
+* Added the link for the free image used in the screenshot from where it was taken.
+
+= Version 1.0 =
+* All brand new.

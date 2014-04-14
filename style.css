@@ -4,7 +4,7 @@ Theme URI: http://themegrill.com/themes/spacious
 Author: ThemeGrill
 Author URI: http://themegrill.com
 Description: Spacious is an incredibly spacious multipurpose responsive theme coded & designed with a lot of care and love. You can use it for your business, portfolio, blogging or any type of site. It has 4 page layouts, 6 page templates, 13 widgets areas, 5 custom widgets focusing on business template, awesome slider, primary color option to match your logo & website, boxed & wide layout, light & dark color skin, translation ready and many more. You can get free support in http://themegrill.com/support-forum/ and check the demo at http://demo.themegrill.com/spacious/.
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: light, white, dark, two-columns, right-sidebar, left-sidebar, fluid-layout, responsive-layout, custom-header, custom-background, custom-menu, custom-colors, sticky-post, threaded-comments, translation-ready, featured-images, theme-options
@@ -652,7 +652,6 @@ li.default-menu {
 	float: none;
 	border-bottom: 1px solid #EAEAEA;
 	padding: 0;
-	font-family: 'Lato', sans-serif;
 }
 .main-navigation ul li ul li a, 
 .main-navigation ul li.current-menu-item ul li a, 
@@ -1068,26 +1067,6 @@ li.default-menu {
 	text-align: center;
 }
 
-
-/* =LEFT SIDEBAR CONTENT LAYOUT
--------------------------------------------------------------- */
-.left-sidebar #primary {
-	float: right;
-}
-.left-sidebar #secondary {
-	float: left;
-}
-
-/* =NO SIDEBAR CONTENT LAYOUT
--------------------------------------------------------------- */
-.no-sidebar #primary {
-	float: none;
-	margin: 0 auto;
-}
-.no-sidebar-full-width #primary {
-	width: 100%;
-}
-
 /* =NAVIGATION 
 ----------------------------------------------- */
 .default-wp-page .previous {
@@ -1203,7 +1182,7 @@ li.default-menu {
 	text-align: center;
 	font-family: 'Lato',sans-serif;
 	padding: 0 3.28407225%;
-	margin-top: 5px;
+	margin-top: 8px;
 }
 .call-to-action-button:hover {
 	-webkit-box-shadow:0 0 2px rgba(0, 0, 0, 0.6);
@@ -1436,10 +1415,8 @@ li.default-menu {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	font-size: 16px;
-	font-size: 1.6rem;
 	line-height: 1.5;
 	padding: 10px;
-	padding: 1rem;
 	width: 100%;
 }
 #respond form p.form-allowed-tags {
@@ -1650,6 +1627,25 @@ a#scroll-up:hover {
 	width: 30.4827586%;
 }
 
+/* =LEFT SIDEBAR CONTENT LAYOUT
+-------------------------------------------------------------- */
+.left-sidebar #primary {
+	float: right;
+}
+.left-sidebar #secondary {
+	float: left;
+}
+
+/* =NO SIDEBAR CONTENT LAYOUT
+-------------------------------------------------------------- */
+.no-sidebar #primary {
+	float: none;
+	margin: 0 auto;
+}
+.no-sidebar-full-width #primary {
+	width: 100%;
+}
+
 /* =POST CONTENT 
 ----------------------------------------------- */
 #content .post, #content .page {
@@ -1671,16 +1667,17 @@ a#scroll-up:hover {
 .post .entry-content {
 	margin-bottom: 10px;
 }
-.post .entry-content ul {
+.entry-content ul {
 	list-style: square;
 }
-.post .entry-content ul,
-.post .entry-content ol {	
-	margin: 0 0 20px 20px;
+.entry-content ul,
+.entry-content ol {	
+	padding: 0 0 0 35px; 
+   margin-bottom: 30px;
 }
-.post .entry-content li > ul,
-.post .entry-content li > ol {
-	margin: 0 0 5px 20px;
+.entry-content li > ul,
+.entry-content li > ol {
+	margin-bottom: 0;
 }
 .post .entry-content a:hover {
 	text-decoration: underline;

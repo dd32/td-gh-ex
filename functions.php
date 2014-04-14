@@ -49,7 +49,7 @@ function spacious_setup() {
 	add_image_size( 'featured-blog-large', 750, 350, true );
 	add_image_size( 'featured-blog-medium', 270, 270, true );
 	add_image_size( 'featured', 642, 300, true );
-	add_image_size( 'featured-blog-medium-small', 2230, 230, true );	
+	add_image_size( 'featured-blog-medium-small', 230, 230, true );	
 
 	// Setup the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'spacious_custom_background_args', array(
