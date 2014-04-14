@@ -39,17 +39,6 @@ font-family:<?php echo $spa_current_options['spa_sidebar_widget_titles']['font_f
 font-style:<?php echo $spa_current_options['spa_sidebar_widget_titles']['font_style_sidebar_widget_titles']; ?>;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 .blog-icons li a {
    color:<?php echo $spa_current_options['spa_post_meta_typography']['color_post_meta']; ?>;
 font-size:<?php echo $spa_current_options['spa_post_meta_typography']['post_meta_px'].'px'; ?>;
@@ -61,12 +50,6 @@ font-size:<?php echo $spa_current_options['spa_post_meta_typography']['post_meta
  color:<?php echo $spa_current_options['spa_post_meta_typography']['color_post_meta']; ?>;
  font-family:<?php echo $spa_current_options['spa_post_meta_typography']['font_family_post_meta']; ?>;
 }
-
-
-
-
-
-
 .jumbotron h1{
 
 font-size:<?php echo $spa_current_options['spa_home_Title']['home_title_px'].'px'; ?>;
@@ -75,9 +58,3 @@ font-style:<?php echo $spa_current_options['spa_home_Title']['home_font_style'];
 }
 
 </style>
-
-
-
-
-
-

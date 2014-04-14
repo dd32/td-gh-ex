@@ -14,7 +14,8 @@ function spa_admin_menu_pannel() {
 	{
 		require_once ( get_template_directory() . '/option_pannel/css/tooltip_css.php' );
 		wp_enqueue_script('spa-optionpanal-jquery',get_template_directory_uri('template_directory').'/option_pannel/js/spa-optionpanal-jquery.js',array('farbtastic'));
-		require_once('spa_options_pannel.php');
+		require_once('spa_options_pannel.php');		
+		
 	}
 	
 	function webriti_themes_function ()
