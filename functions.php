@@ -230,10 +230,6 @@ function prfx_meta_save( $post_id ) {
 	if( isset( $_POST[ 'featured-background' ] ) ) {
     	update_post_meta( $post_id, 'featured-background', $_POST[ 'featured-background' ] ); } }
 
-// Checks for input and saves if needed
-if( isset( $_POST[ 'meta-image' ] ) ) {
-    update_post_meta( $post_id, 'meta-image', $_POST[ 'meta-image' ] ); }
-
 // Sets up the Customize.php for Adventure
 function adventure_customize($wp_customize) {
 
@@ -1036,8 +1032,8 @@ function adventure_inline_css() {
 
 		echo '<!-- Custom CSS Styles -->' . "\n";
         echo '<style type="text/css" media="screen">' . "\n";
-        $featured_background = get_post_meta( get_the_ID(), 'meta-image', true ); if (!empty($featured_background)) echo 'body {background-image:url(' . $featured_background . ');}' . "\n";
-		if ( get_theme_mod('backgroundsize_setting') != 'auto' ) echo '	body.custom-background {background-size:' . get_theme_mod('backgroundsize_setting') . ';}' . "\n";
+        if (is_page() || is_single()) $featured_background = get_post_meta( get_queried_object_ID(), 'featured-background', true ); if (!empty($featured_background)) echo '   body, body.custom-background {background-image:url(' . $featured_background . '); background-size:cover;}' . "\n";
+		if ( get_theme_mod('backgroundsize_setting') != 'auto' ) echo '	body, body.custom-background {background-size:' . get_theme_mod('backgroundsize_setting') . ';}' . "\n";
 		if ( get_theme_mod('backgroundcolor_setting') != '#b4b09d' ) echo '	.contents {background: rgba(' . $r . ',' . $g . ', ' . $b . ', ' .  get_theme_mod('contentbackground_setting') .  ');}' . "\n";
         if ( get_theme_mod('backgroundcolor_setting') != '#b4b09d' ) echo ' @media only screen and (max-width:55em) { .contents {background: rgba(' . $r . ',' . $g . ', ' . $b . ', .95 );} }' . "\n";
 		if ( ( get_theme_mod('sidebarcolor_setting') != '#000000'  ) || ( get_theme_mod('sidebarbackground_setting') != '.50' ) ) echo '	aside {background: rgba(' . $rs . ',' . $gs . ', ' . $bs . ', ' .  get_theme_mod('sidebarbackground_setting') .  ');}' . "\n";
@@ -1045,7 +1041,7 @@ function adventure_inline_css() {
 		if ( get_theme_mod('taglinecolor_setting') != '#066ba0' ) echo '	.header h1 i {color:' . get_theme_mod('taglinecolor_setting') . ';}' . "\n";
 		if ( get_theme_mod('title_size_setting') != '4.0' ) echo '	.header h1 {font-size:' . get_theme_mod('title_size_setting') . 'em;}' . "\n";  
 		if ( get_theme_mod('tagline_rotation_setting') != '-1.00' ) echo '	.header h1 i {-moz-transform:rotate(' . get_theme_mod('tagline_rotation_setting') . 'deg); transform:rotate(' . get_theme_mod('tagline_rotation_setting') . 'deg);}' . "\n";
-		if ( get_theme_mod('bannerimage_setting') != 'purple.png' ) echo '	.header {background: bottom url(' . get_template_directory_uri() . '/images/' . get_theme_mod('bannerimage_setting') .  ');}'. "\n";
+		if ( (get_theme_mod('bannerimage_setting') != 'purple.png') && (get_theme_mod('bannerimage_setting') != '') ) echo '	.header {background: bottom url(' . get_template_directory_uri() . '/images/' . get_theme_mod('bannerimage_setting') .  ');}'. "\n";
 		if ( get_theme_mod('headerspacing_setting') != '18' ) echo '	.spacing {height:' . get_theme_mod('headerspacing_setting') . 'em;}'. "\n";
 		if ( get_theme_mod('menu_setting') == 'notitle' ) { echo '	.header {position: fixed;margin-top:0px;}' . "\n" . '	.admin-bar .header {margin-top:28px;}' . "\n" . '.header h1:first-child, .header h1:first-child i,  .header img:first-child {display: none;}' . "\n"; }
 		if ( get_theme_mod('menu_setting') == 'bottom' ) { echo '	.header {position: fixed; bottom:0; top:auto;}' . "\n" . '	.header h1:first-child, .header h1:first-child i,  .header img:first-child {display: none;}' . "\n" . '.header li ul {bottom:2.78em; top:auto;}' . "\n";}
@@ -1095,7 +1091,7 @@ function adventure_inline_css() {
 		echo '<!-- End Custom CSS -->' . "\n";
 		echo "\n"; }
 
-add_action('wp_head', 'adventure_inline_css');
+add_action('wp_head', 'adventure_inline_css', 50);
 
 //	A safe way of adding javascripts to a WordPress generated page
 if (!function_exists('adventure_js')) {
@@ -1206,6 +1202,10 @@ function adventure_theme_options_do_page() { ?>
                 <table>
                     <tbody>
                         <tr>
+                            <th>21</th>
+                            <td><?php _e('Quick update to help out mobile devices with the CSS3 class background-size not working on them.', 'localize_adventure'); ?></td>
+                        <tr>
+                        <tr>
                             <th>20</th>
                             <td><?php _e('Fixed issues with the Feature Background Image. Change the site Title and Slogan to use CSS. Options to control the size of the font for the Title and Slogan in the Theme Customizer. The website font scale depending on the size of the screen viewing the website.', 'localize_adventure'); ?></td>
                         <tr>
@@ -1246,7 +1246,11 @@ function adventure_theme_options_do_page() { ?>
                             <th></th>
                         </tr>
                         <tr>
-                            <th>3.2</th>
+                            <th>3.4</th>
+                            <td><?php _e('Quick update to help out mobile devices with the CSS3 class background-size not working on them.', 'localize_adventure'); ?></td>
+                        <tr>
+                        <tr>
+                            <th>3.3</th>
                             <td><?php _e('Fixed issues with the Feature Background Image. Change the site Title and Slogan to use CSS. Options to control the size of the font for the Title and Slogan in the Theme Customizer. The website font scale depending on the size of the screen viewing the website.', 'localize_adventure'); ?></td>
                         <tr>
                         <tr>

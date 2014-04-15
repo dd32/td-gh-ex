@@ -10,7 +10,7 @@ Author URI: http://schwarttzy.com/about-2/
 
 Description: Inspired by a certain GPS Manufacture, I designed this theme to feel like you're looking through a window out into the wilderness and hopefully inspire you to explore. I'm constantly adding new features to this theme to allow you to personalize it to your own needs. If you want a new feature or just want to be able to change something just ask me and I would be happy to add it for you. I would like to thank you for your support and Enjoy!
 
-Version: 3.3
+Version: 3.4
 
 License: GNU General Public License, version 3 (AGPLv3)
 
@@ -501,7 +501,7 @@ main {
 	margin:0 auto 2.25em;}
 
 .contents, #disqus_thread {
-	background:rgba(180,176, 157, .80);
+	background:rgba(180,176,157,.80);
 	border:3px solid #4a4646;
 	border-radius:6px;
 	box-shadow:1px 1px 3px #111;
@@ -740,7 +740,9 @@ blockquote:after, .contents:after {clear:both; content:"."; display:block; heigh
 
 @media only screen and (min-width:55em) {
     
-    body {font:normal 99%}}
+    body {
+        background-size:auto!important;
+        font:normal 99%;}}
 
 @media only screen and (min-width:60em) {
     
