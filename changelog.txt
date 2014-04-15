@@ -3,6 +3,13 @@ Changelog for Iconic One WordPress Responsive Theme | Visit http://themonic.com/
 
 -------------- April 2014 ----------------
 
+
+04/15/14  - Iconic One Version 1.4.1
+
+* Added support for Jetpack popular post widget
+* Minor CSS style changes
+* Search widget improvement
+
 04/04/14  - Iconic One Version 1.4
 
 * Removed stray span tag from content.php
