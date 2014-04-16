@@ -1,21 +1,41 @@
 /* #Tablet (Portrait)
 ================================================== */
 
+/* CSS for high-resolution devices */
+/*@media only screen and (-Webkit-min-device-pixel-ratio: 1.5),
+only screen and (-moz-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min-device-pixel-ratio: 1.5) {
+
+    .sub-menu-toggle {
+       background-image: url(../../images/bg-sprite@2x.png);
+       background-size: 30px 9px;
+       background-repeat: no-repeat;
+    }
+}*/
+@media only screen and (min-width: 959px) {
+
+
+    .mejs-controls div.mejs-time-rail{
+        max-width: 200px;
+    }
+}
 /* Note: Design for a width of 768px */
 @media only screen and (min-width: 768px) and (max-width: 959px) {
+    #sidebar th,#sidebar td{padding:4px;}
+    .mejs-controls div.mejs-time-rail{
+        max-width: 145px;
+    }
 
-    #sidebar th,#sidebar td{ padding:4px; }
 
 }
+
 
 /* Smaller than standard 960 (devices and browsers) */
 @media only screen and (max-width: 959px) {
 
-    input[type="text"], input[type="password"], input[type="email"], .search-form .submit, textarea{
+    input[type="text"], input[type="password"], input[type="email"], select, .search-form .submit, textarea{
         width: 90%;
-    }
-    select{
-        width:96%;
     }
     input#s{
         width:53%;
@@ -110,6 +130,7 @@
         width: 70%;
         z-index: 99;
         margin:0!important;
+        border-left: 1px solid #DBDBDB;
     }
 
     .nav-close {
@@ -277,12 +298,7 @@
         color:#666666;
     }
     .format-icon .entry-meta [class*="icon-"]{
-        float: left;
-        margin-right: 12px;
-        font-size: 30px;
-        margin-top: -3px;
-        padding-bottom: 0;
-        padding-top: 0;
+        display: #666666;
     }
     .format-icon .entry-header,
     .format-icon .entry-meta,
@@ -305,5 +321,6 @@
         margin-bottom: 0;
     }
 	
-
 }
+
+

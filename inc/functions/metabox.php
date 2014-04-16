@@ -8,15 +8,15 @@ function sam_meta_box_add() {
 
 function sampression_options_metabox($post) {
     $values = get_post_custom($post->ID);
-    $sidebar_options = sampression_sidebar_options();
-    global $sampression_options_settings;
-    $options = $sampression_options_settings;
+    $style = sampression_styling();
     ?>
     <section class="row" id="sidebar-section">
         <h3 class="sec-title"><?php _e('Sidebar', 'sampression') ?></h3>
         <div class="box">
             <ul id="sidebar-selector" class="style-selector-list clearfix">
                 <?php
+                $sidebar = $style['sidebar'];
+                $sidebar_name = $sidebar['name'];
                 $sidebar_active = isset($values['sam_sidebar_by_post']) ? esc_attr($values['sam_sidebar_by_post'][0]) : 'default';
                 ?>
                 <li class="first style-selector<?php if ($sidebar_active == 'default') {
@@ -28,16 +28,16 @@ function sampression_options_metabox($post) {
                     </a>
                 </li>
                 <?php
-                for ($i = 0; $i < count($sidebar_options); $i++) {
+                for ($i = 0; $i < count($sidebar_name); $i++) {
                     ?>
                     <li class="<?php
-                    if ($sidebar_active == $sidebar_options[$i]) {
+                    if ($sidebar_active == $sidebar_name[$i]) {
                         echo 'active ';
                     }
                     ?>style-selector">
-                        <a href="javascript:void(0);" data-sidebar="<?php echo $sidebar_options[$i]; ?>" class="sam-style">
-                            <img src="<?php echo SAM_FW_ADMIN_IMAGES_URL; ?>/<?php echo $sidebar_options[$i]; ?>-layout.jpg" alt=""/>
-                            <?php echo ucwords($sidebar_options[$i]); ?>
+                        <a href="javascript:void(0);" data-sidebar="<?php echo $sidebar_name[$i]; ?>" class="sam-style">
+                            <img src="<?php echo SAM_FW_ADMIN_IMAGES_URL; ?>/<?php echo $sidebar_name[$i]; ?>-layout.jpg" alt=""/>
+                            <?php echo ucwords($sidebar_name[$i]); ?>
                         </a>
                     </li>
                     <?php
@@ -63,7 +63,7 @@ function sam_meta_box_save($post_id) {
         return;
 
     // if our current user can't edit this post, bail
-    if (!current_user_can('edit_posts'))
+    if (!current_user_can('edit_post'))
         return;
 
     // now we can actually save the data

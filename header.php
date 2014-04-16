@@ -12,32 +12,26 @@ if ( ! defined( 'ABSPATH' ) ) exit( 'restricted access' );
 <!--[if IE 8]>         <html <?php language_attributes(); ?> class="no-js lt-ie9 ie8"> <![endif]-->
 <!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="no-js"> <!--<![endif]-->
 <head>
-    <meta charset="<?php bloginfo('charset'); ?>" />
-    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<meta charset="<?php echo esc_attr( get_bloginfo( 'charset' ) ); ?>" />
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
-    <title> <?php wp_title( '|', true, 'right' ); ?></title>
-    <link rel="pingback" href="<?php echo esc_url( get_bloginfo( 'pingback_url' ) ); ?>" />
-    <?php sampression_favicons(); ?>
-    <!--[if lt IE 9]>
-    <script src="<?php echo SAM_FW_JS_URL; ?>/modernizr.js"></script>
-    <![endif]-->
-    <?php wp_head(); ?>
+<title><?php bloginfo( 'name' ); ?> <?php wp_title( '|', true ); ?></title>
+<link rel="stylesheet" type="text/css" href="<?php echo esc_url( get_bloginfo( 'stylesheet_url' ) ); ?>" media="all" />
+<link rel="pingback" href="<?php echo esc_url( get_bloginfo( 'pingback_url' ) ); ?>" />
+<?php sampression_favicons(); ?>
+<!--[if lt IE 9]>
+<script src="<?php echo SAM_FW_JS_URL; ?>/modernizr.js"></script>
+<![endif]-->
+<?php do_action( 'sampression_before_head_close' ); ?>
+<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<?php
-/** 
- * sampression_after_body hook
- */
-do_action('sampression_after_body'); 
-?>
+<?php do_action( 'sampression_after_body' ); ?>
+<?php do_action( 'sampression_before_header' ); ?>
 <div id="wrapper">
-    <div id="inner-wrapper">        
-        <?php 
-        /** 
-        * sampression_before_header hook
-        */
-        do_action('sampression_before_header'); 
-        ?>
+    <div id="inner-wrapper">
         <header id="header" class="block">
             <div class="container">
                 <div class="six columns">
@@ -47,7 +41,7 @@ do_action('sampression_after_body');
                     </div>
                 </div>
                 <div class="social-connect">
-                    <?php sampression_social_media_icons() ?>
+                    <?php echo sampression_social_media_icons( $location = 'header', $separater = '' ) ?>
                 </div>
                 <?php $header_image = get_header_image();
         		if ( ! empty( $header_image ) ) : ?>
@@ -66,9 +60,4 @@ do_action('sampression_after_body');
             </div>
         </header>
         <!--/#header-->
-        <?php 
-        /** 
-        * sampression_after_header hook
-        */
-        do_action('sampression_after_header'); 
-        ?>
+        <?php do_action( 'sampression_after_header' ); ?>

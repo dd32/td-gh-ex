@@ -420,12 +420,12 @@ or wrap each row of columns in a <div class="row"> */
 ================================================== */
 #sam-main-content #content {
     border: 1px solid #E5E5E5;
+    min-height: 1100px;
     float: left;
     margin-left: -1px;
     background:#F7F7F7;
     padding: 30px 40px;
-    width: 674px;    
-    min-height: 520px;
+    width: 674px;
 }
 #sam-main-content #content ul,
 #sam-main-content h1,
@@ -1541,13 +1541,8 @@ or wrap each row of columns in a <div class="row"> */
 #sam-wrapper .sam-useable-shortcode .icon-scissors{
     margin-right: 5px;
 }
-#sam-wrapper .sec-label.large-label{
-    width: 180px;    
-}
-#sam-wrapper .sec-label.medium-label{
-    width: 120px;    
-}
-#sam-wrapper .sec-label.large-label, #sam-wrapper .sec-label.medium-label{
+#sam-wrapper  .sec-label.large-label{
+    width: 180px;
     margin-right: 10px;
     float: left;
     margin-top: 10px;
@@ -1560,10 +1555,6 @@ or wrap each row of columns in a <div class="row"> */
     width: 100px;
     margin-right: 30px;
     vertical-align: middle;
-}
-#sam-wrapper  textarea.large-textarea{
-    width: 100%;
-    min-height: 420px;
 }
 #sam-wrapper .sam-blogmeta-option .select-wrapper {
     display: inline-block;
@@ -1699,7 +1690,8 @@ clear: both;
     text-transform: uppercase;
     text-decoration: underline;
 }
-.custom-social-media-sizes li{
+.custom-social-media-sizes .example{
+    padding-left: 190px;
     padding-top: 5px;
 }
 

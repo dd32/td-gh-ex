@@ -1,13 +1,13 @@
 /*
-Theme Name: Naya Lite
+Theme Name: naya lite
 Theme URI: http://sampression.com/themes/naya-lite
 Author: Sampression
 Author URI: http://sampression.com
-Description: Naya Lite is a minimal responsive blogging theme. While its design is basic and it manages to strictly stick to the idea of a good old fashioned blog, its features emphasize on being more modern and state-of-the-art. Naya Lite’s design will take your web presence back to the early days of blogging while its functionality will make sure you reach out to your current audiences and their multiple internet devices. Being both responsive and retina-ready while still maintaining the look of a classic blog, Naya Lite perfectly manages to combine the past and future of blog design.
-Version: 1.0.11
+Description: For developers and website owners, Naya Lite is a responsive framework which can perfectly serve as a parent theme if they want to create their own child themes. For bloggers, Naya is a minimal blogging theme that takes their web presence back to the early days of blogging. While Naya Lite’s design justifies the idea of a good old fashioned blog, its features emphasize on being more modern and state-of-the-art. Being both responsive and retina-ready while still maintaining the look of a classic blog, Naya Lite perfectly manages to combine the past and future of blog design.
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: black, brown, orange, tan, white, yellow, light, one-column, two-columns, right-sidebar, responsive-layout, custom-header, custom-background, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options
+Tags: black, brown, orange, tan, white, yellow, light, one-column, two-columns, right-sidebar, responsive-layout, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, sticky-post
 Text Domain: sampression
 */
 
@@ -121,6 +121,7 @@ table {
 .entry-content table, 
 .comment-content table {
     margin-bottom: 24px;
+    font-size: 14px;
     line-height: 1.28571;
 }
 
@@ -133,8 +134,6 @@ th {
     padding: 8px;
     border-width: 0 1px 1px 0;
     text-transform: uppercase;
-    color: #666;
-    font-weight: bold;
 }
 
 html,
@@ -693,17 +692,14 @@ textarea {
     font-family: 'Droid Serif', serif;
     font-size: 18px;
     outline: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    width: 57%;
+    -webkit-appearance: inherit;
+    -moz-appearance: inherit;
 }
 
 input[type="file"] {
     color: #333;
     font-family: 'kreon', serif;
-    font-size: 16px;
-    padding: 18px 0;
-    outline: none;
+    font-size: 14px;
 }
 
 form {
@@ -731,13 +727,11 @@ input[type="password"] {
 }
 
 select {
-    width: 62%;
-    -webkit-appearance: menulist;
+    width: 60%; 
 }
 
 input[type="checkbox"] {
-    display: inline;
-    margin-right: 10px;
+    display: inline; 
 }
 
 label span,
@@ -748,7 +742,7 @@ legend span {
 }
 
 input[type="radio"] {
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
 .search-form .submit {
@@ -839,7 +833,6 @@ p.lead {
 a.home-link {
     color: #000;
     text-decoration: none;
-    word-wrap: break-word;
 }
 
 .site-description {
@@ -863,39 +856,36 @@ a.home-link {
     text-decoration: none;
 }
 
-#header .social-connect a.social-facebook:hover,
-#footer .social-connect a.social-facebook:hover {
+#header .social-connect a.social-facebook:hover {
     color: #3C599F;
 }
 
-#header .social-connect a.social-twitter:hover,
-#footer .social-connect a.social-twitter:hover {
+#header .social-connect a.social-twitter:hover {
     color: #3CD0FE;
 }
 
-#header .social-connect a.social-youtube:hover,
-#footer .social-connect a.social-youtube:hover {
+#header .social-connect a.social-youtube:hover {
     color: #E02927;
 }
 
-#header .social-connect a.social-linkedin:hover,
-#footer .social-connect a.social-linkedin:hover {
+#header .social-connect a.social-linkedin:hover {
     color: #0274B3;
 }
 
-#header .social-connect a.social-googleplus:hover,
-#footer .social-connect a.social-googleplus:hover {
-    color: #D64532;
+#footer .social-connect a.social-facebook:hover {
+color: #3C599F;
 }
 
-#header .social-connect a.social-flickr:hover,
-#footer .social-connect a.social-flickr:hover {
-    color: #0061DC;
+#footer .social-connect a.social-twitter:hover {
+color: #3CD0FE;
 }
 
-#header .social-connect a.social-vimeo:hover,
-#footer .social-connect a.social-vimeo:hover {
-    color: #BB161E;
+#footer .social-connect a.social-youtube:hover {
+color: #E02927;
+}
+
+#footer .social-connect a.social-linkedin:hover {
+color: #0274B3;
 }
 
 .social-connect [class*="icon-social-"] {
@@ -933,10 +923,6 @@ a.home-link {
 .social-withtext a:first-child:before {
     content: "";
     padding: 0;
-}
-
-.social-footer{
-    margin-top:0;
 }
 
 .jumbotron{
@@ -980,6 +966,7 @@ a.home-link {
 
 .post.sticky {
     padding: 30px 40px;
+	background: #FBF9E2;
 }
 
 .entry-title {
@@ -1231,7 +1218,7 @@ dl.gallery-item dt.gallery-icon {
 
 .paging-navigation, .single .post-navigation {
     border-top: 1px solid #E2E2E2;
-    padding: 20px 0 50px;
+    padding: 20px 0;
 }
 
 .single .post-navigation.clearfix a, 
@@ -1399,7 +1386,6 @@ dl.gallery-item dt.gallery-icon {
 
 #wp-calendar td {
     border: 0 none;
-    padding:4px 8px;
 }
 
 #wp-calendar th {
@@ -1628,9 +1614,7 @@ input#s:focus {
 .comment-list ol {
     margin-left: 60px;
 }
-.comment-subscription-form{
-    margin-bottom: 7px;
-}
+
 /* no result */
 
 .search-form .submit {
@@ -1642,8 +1626,9 @@ input#s:focus {
 /* archive */
 
 .archive-header {
-    margin-bottom: 60px;
-    padding: 0 0 1px;
+	padding: 30px 40px 16px;
+	margin-bottom: 60px;
+    background: #f9f9f9;
 }
 
 .archive-title {

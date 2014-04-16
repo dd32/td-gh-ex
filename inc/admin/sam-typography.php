@@ -1,10 +1,16 @@
 <?php
 if ( !defined( 'ABSPATH' ) )
     exit( 'restricted access' );
-    $default_fonts = sampression_fonts_style();
-    global $sampression_options_settings;
-    $options = $sampression_options_settings;
+
+$typo = sampression_typography();
+$general = $typo['typography']['general'];
+$pp = $typo['typography']['post_pages'];
+//sam_p($style);
+$default_fonts = sampression_fonts_style();
 ?>
+<div id="content">
+    <form id="sampression-metadata" onsubmit="javascript:return false;">
+        <input type="hidden" name="meta_data" value="typography" />
         <section class="row">
             <div class="box titled-box">
                 <div class="box-title">
@@ -28,12 +34,12 @@ if ( !defined( 'ABSPATH' ) )
                     <div class="section row">
                         <div class="sec-label"><?php _e( 'Body Text', 'sampression' ) ?></div>
                         <div class="entry">
-                            <p id="paragraphtext" class="font-demo" style="font: <?php echo absint( $options['body_font_size'] ); ?>px <?php echo esc_attr( $options['body_font_family'] ); ?>;"><?php _e( 'The quick brown fox jumps over the lazy dog.', 'sampression' ) ?></p>
+                            <p id="paragraphtext" class="font-demo" style="font: <?php echo $general['p']['active']['size']; ?>px <?php echo $general['p']['active']['font']; ?>;"><?php _e( 'The quick brown fox jumps over the lazy dog.', 'sampression' ) ?></p>
                             <div class="select-wrapper font-face large-select alignleft" >
-                                <?php sampression_font_select( 'sampression_theme_options[body_font_family]', 'sam-select change-fontface', esc_attr( $options['body_font_family'] ) ) ?>
+                                <?php sampression_font_select( 'p_font_face', 'sam-select change-fontface', $general['p']['active']['font'] ) ?>
                             </div>
                             <div class="select-wrapper font-size alignleft">
-                                <?php sampression_font_size_select( 'sampression_theme_options[body_font_size]', 'sam-select change-fontsize', absint( $options['body_font_size'] ) ) ?>
+                                <?php sampression_font_size_select( 'p_font_size', 'sam-select change-fontsize', $general['p']['active']['size'] ) ?>
                             </div>
                         </div>
                     </div>
@@ -49,12 +55,12 @@ if ( !defined( 'ABSPATH' ) )
                                 <div class="section row">
                                     <div class="sec-label"><?php _e( 'Title', 'sampression' ) ?></div>
                                     <div class="entry">
-                                        <h1 id="sam-post-title" class="font-demo" style="font: <?php echo absint( $options['post_title_font_size'] ); ?>px <?php echo esc_attr( $options['post_title_font_family'] ); ?>;"><?php _e( 'The quick brown fox jumps over the lazy dog.', 'sampression' ) ?></h1>
+                                        <h1 id="sam-post-title" class="font-demo" style="font: <?php echo $pp['title']['text']['active']['size']; ?>px <?php echo $pp['title']['text']['active']['font']; ?>;"><?php _e( 'The quick brown fox jumps over the lazy dog.', 'sampression' ) ?></h1>
                                         <div class="select-wrapper font-face large-select alignleft" >
-                                            <?php sampression_font_select( 'sampression_theme_options[post_title_font_family]', 'sam-select change-fontface', esc_attr( $options['post_title_font_family'] ) ) ?>
+                                            <?php sampression_font_select( 'pp_title_font_face', 'sam-select change-fontface', $pp['title']['text']['active']['font'] ) ?>
                                         </div>
                                         <div class="select-wrapper font-size small-select alignleft">
-                                            <?php sampression_font_size_select( 'sampression_theme_options[post_title_font_size]', 'sam-select change-fontsize', absint( $options['post_title_font_size'] ) ) ?>
+                                            <?php sampression_font_size_select( 'pp_title_font_size', 'sam-select change-fontsize', $pp['title']['text']['active']['size'] ) ?>
                                         </div>
                                     </div>
                                 </div>
@@ -71,12 +77,12 @@ if ( !defined( 'ABSPATH' ) )
                                 <div class="section row">
                                     <div class="sec-label"><?php _e( 'Text', 'sampression' ) ?></div>
                                     <div class="entry">
-                                        <div id="sam-meta-text" class="font-demo" style="font: <?php echo absint( $options['meta_font_size'] ); ?>px <?php echo esc_attr( $options['meta_font_family'] ); ?>; "><?php _e( 'The quick brown fox jumps over the lazy dog.', 'sampression' ) ?></div>
+                                        <div id="sam-meta-text" class="font-demo" style="font: <?php echo $pp['meta']['text']['active']['size']; ?>px <?php echo $pp['meta']['text']['active']['font']; ?>; "><?php _e( 'The quick brown fox jumps over the lazy dog.', 'sampression' ) ?></div>
                                         <div class="select-wrapper font-face large-select alignleft" >
-                                            <?php sampression_font_select( 'sampression_theme_options[meta_font_family]', 'sam-select change-fontface', esc_attr( $options['meta_font_family'] ) ) ?>
+                                            <?php sampression_font_select( 'pp_meta_font_face', 'sam-select change-fontface', $pp['meta']['text']['active']['font'] ) ?>
                                         </div>
                                         <div class="select-wrapper font-size small-select alignleft">
-                                            <?php sampression_font_size_select( 'sampression_theme_options[meta_font_size]', 'sam-select change-fontsize', absint( $options['meta_font_size'] ) ) ?>
+                                            <?php sampression_font_size_select( 'pp_meta_font_size', 'sam-select change-fontsize', $pp['meta']['text']['active']['size'] ) ?>
                                         </div>
                                     </div>
                                 </div>
@@ -88,6 +94,6 @@ if ( !defined( 'ABSPATH' ) )
             </div>
         </section><a name="response"></a>
         <div id="response"></div>
-        <p class="submit">
-                    <input type="submit" name="sampression-theme-settings" id="submit" class="button1 alignright save-data" value="Save" />
-                </p>
+        <a id="save" href="javascript:void(0);" class="button1 alignright save-data"><?php _e( 'Save', 'sampression' ) ?></a>
+    </form>
+</div>

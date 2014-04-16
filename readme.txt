@@ -5,11 +5,9 @@ Theme URI: http://sampression.com/themes/naya-lite
 Author: Sampression
 Author URI: http://www.sampression.com
 
-Version: 1.0.11
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-
-All files, unless otherwise stated, are released under the GNU General Public License version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
 
 == Bundled Files ==
 
@@ -25,26 +23,12 @@ All files, unless otherwise stated, are released under the GNU General Public Li
  
 3. Fonts
  = Item URL: http://icomoon.io
- = Licence: GPL
+ = Licence: GPL & CC BY 3.0
  = Licence GPL: http://www.gnu.org/licenses/gpl.html
-
-4. mousewheel jquery file
- = Item URL: https://github.com/brandonaaron/jquery-mousewheel
- = Licence: MIT
- = Licence URI: http://opensource.org/licenses/mit-license.html
-
-5. codemirror jquery file
- = Item URL: http://codemirror.net/
- = Licence: MIT
- = Licence URI: http://opensource.org/licenses/mit-license.html
-
-5. jScrollPane jquery file
- = Item URL: http://jscrollpane.kelvinluck.com/
- = Licence: GPL
- = Licence GPL: http://www.gnu.org/licenses/gpl.html
+ = Licence CC BY 3.0: http://creativecommons.org/licenses/by/3.0
  
 == Theme Description ==
-Naya Lite is a minimal responsive blogging theme. While its design is basic and it manages to strictly stick to the idea of a good old fashioned blog, its features emphasize on being more modern and state-of-the-art. Naya Lite’s design will take your web presence back to the early days of blogging while its functionality will make sure you reach out to your current audiences and their multiple internet devices. Being both responsive and retina-ready while still maintaining the look of a classic blog, Naya Lite perfectly manages to combine the past and future of blog design.
+For developers and website owners, Naya Lite is a responsive framework which can perfectly serve as a parent theme if they want to create their own child themes. For bloggers, Naya is a minimal blogging theme that takes their web presence back to the early days of blogging. While Naya Lite’s design justifies the idea of a good old fashioned blog, its features emphasize on being more modern and state-of-the-art. Being both responsive and retina-ready while still maintaining the look of a classic blog, Naya Lite perfectly manages to combine the past and future of blog design.
 
 == Features ==
 Responsive design, Theme Options, Custom Logo/Fav Icons/Apple Touch Icons, Custom Menu, Sticky Post, W3C validated, supports social media, supports webmaster tools, post formats
@@ -107,75 +91,17 @@ Tags: white, black, green, one-column, two-columns, responsive-layout, custom-me
  = Here you select the meta values to show on the blog page and also hide the posts from any specific category from the blog page.
  = You can also write your own text as "read more" text that links to the single post.
 
+12. Hooks:
+ = Login to your wp-admin area and go to Appearance -> Sampression.
+ = Select "Hooks" tab.
+ = Here you can add different codes to the header and footer of theme. Please be careful to add codes because it might crop the functionality and appearance of theme.
+ = You can also add the Webmaster verification codes for Google, Bing and Yahoo.
+
 9. Copyright & License
  = Naya Lite, Copyright 2014 Sampression.com
  = Naya Lite is distributed under the terms of the GNU GPL.
 
 == Changelog ==
-Version 1.0.11
- = Fixed: Some CSS issues
-
-Version 1.0.10
- = Fixed: Audio player responsive css
- = Fixed: Some CSS issues
-
- = Removed: Sticky Post background color
- = Removed: SAM_FW_TIMTHUMB_DIR - Directory Location Constant
- = Removed: SAM_FW_WIDGETS_DIR - Directory Location Constant
- = Removed: SAM_FW_WIDGET_TPL_PART_DIR -  Template Part Constants
- = Removed: SAM_FW_TIMTHUMB_URL - URL Location Constant
- = Removed: SAM_FW_WIDGETS_URL - URL Location Constant
-
- = Added: Script for do not submit search form if empty
- = Added: Open social media link on new tab
- = Added: SAM_NAYA_LITE_VERSION - Constant in init
-
- = Changed: Link of community forum on theme option page
- = Changed: screenshot.png
-
-Version 1.0.9
- = Added some action hooks on header and footer.
- = Removed unwanted PHP funtions
- = Replaced deprecated live jQuery function by on function
-
-Version 1.0.8
- = style.css enqueued from function instead of header
- = Added more options to add social medias : Google Plus, Vimeo and Flickr
-
-Version 1.0.7
- = Error occured while editing post fixed 
-
-Version 1.0.6
- = Theme option datas are now saved in a single array.
-  
-Version 1.0.5
- = home_url() escaped with esc_url() 
- = data sanitazation, validation and escape fuctions used
- = PHP fixes for sidebar
- = CSS fixes for table font size
-
-Version 1.0.4
- = get_stylesheet_uri() used instead of bloginfo() function for main stylesheet url.
- = google font path fixed
- = added prefix on userdefined functions
- = Escape functions added
- = home_url function added to output home page url
- = fonts with gpl license used
- = hooks sections removed that provided theme options for arbitrary header/footer scripts.
-
-Version 1.0.3
- = Removed: <meta> description and author removed from header.php 
- = Removed: Dashboard widgets removed 
- = Fixed: wp_title filter used for title tag
- = Fixed: Google fonts enqueued without the protocol (http:). 
- = Fixed: Favicon icons disable by default
- = Fixed: admin_print_scripts and admin_print_styles changed to admin_enqueue_scripts 
- = Fixed: scripts and styles files enqueued directly without registering
- = Fixed: output of data by using escape function
- = Fixed: used ‘theme_location’ parameter instead of ‘menu’ in wp_nav_menu
- = Fixed: register_nav_menu(), add_theme_support, add_image_size, add_nav_menu, register_nav_menus and load_theme_textdomain hooked into after_setup_theme action. 
-
-
 Version 1.0.2
  = Added: License information added on readme.txt file of bundled js files and icons.
 
