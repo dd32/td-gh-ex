@@ -73,6 +73,9 @@ This theme is bundled with TGM-Plugin-Activation
 =================================
 CHANGELOG
 =================================
+Version 1.0.5
+ * Fixed the archives and search templates not displaying the content
+ 
 Version 1.0.4
  * Fixed the the theme URI and author URI errors
 
