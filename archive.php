@@ -8,7 +8,27 @@
 
             <div class="row">
             
-                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+				<?php if ( have_posts() ) :  ?>
+                
+                <div <?php post_class(array('pin-article', suevafree_template('span') )); ?> >
+        
+                    <article class="article category">
+                    
+                        <?php if (is_tag()) : ?>
+        
+                            <p><?php _e( 'Tag','wip'); ?> : <strong> <?php echo get_query_var('tag');  ?> </strong> </p>
+                        
+                        <?php else : ?>
+
+                            <p><?php _e( 'Category','wip'); ?> : <strong> <?php single_cat_title(); ?> </strong> </p>
+        
+                        <?php endif; ?>
+                        
+                    </article>
+        
+                </div>
+                
+                <?php while ( have_posts() ) : the_post(); ?>
             
                     <div <?php post_class(); ?> >
                 

@@ -4,7 +4,7 @@ Theme Name: Sneak Lite
 Description: Sneak Lite is a clean, minimal and responsive Sueva child theme, based on Bootstrap framework, with a new menu and buttons style and a different layout for the elements like sidebar and with a new fonts.
 Author: ThemeinProgress.
 Author URI: http://themeinprogress.com
-Version: 1.0.1
+Version: 1.0.2
 Template: suevafree
 Tags: gray, light, black, orange, blue, white, two-columns, right-sidebar, left-sidebar, custom-background, custom-menu, threaded-comments, full-width-template, theme-options 
 License: GNU General Public License v3 or later
@@ -148,7 +148,7 @@ h3#reply-title, h3.comments {
    =============================================== */
 
 nav#mainmenu {
-	margin:0;
+	margin:0 0 25px 0;
 }
 
 nav#mainmenu ul li {
