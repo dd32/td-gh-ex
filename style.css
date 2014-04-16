@@ -4,7 +4,7 @@ Theme URI: http://vpthemes.com/apprise/
 Author: Vitaly Pinchev	
 Author URI: http://vpthemes.com
 Description: Apprise is modern WordPress theme that is packaged with a lot of nice features such as: advanced admin panel, responsive design, unique featured posts layout for the home page or featured image slider, customizable home page About Us and Content Boxes sections, custom logo and favicon, Google Fonts, unlimited colors for the menu, widgets, header and footer, localization support, from full screen layout to 1 or 2 sidebars to the left or right, 4 footer widget columns, scroll to top feature, social links, support for Contact Form 7, 8 post formats and more.
-Version: 1.0.4
+Version: 1.0.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags:  white, light, one-column, two-columns, three-columns, right-sidebar, left-sidebar, fluid-layout, responsive-layout, custom-background, custom-menu, custom-colors, featured-images, post-formats, theme-options, threaded-comments, translation-ready 
@@ -342,7 +342,6 @@ img.alignright {
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
-
 
 .sticky {
 
@@ -2844,134 +2843,130 @@ html[xmlns] .slides {
  *  8. Menu Styles
 /* ------------------------------------------------------------------------- */
 
-#site-navigation ul li {
-    display: inline;
-    float: left;
-    list-style: none outside none;
-    position: relative;
-	border-left: 1px solid #494B50;
-	padding: 0;
-	margin-bottom: 0;
-}
-
-#site-navigation ul li:last-child {
-	border-right: 1px solid #494B50;	
-}
-
-#menu-main-navigation ul.sub-menu li:last-child {
-    border-right: 0 none;
-}
-
-#site-navigation ul li a {
-	text-decoration: none;
-	display: block;
-    line-height: 20px;
-    padding: 12px 20px;
-    text-transform: uppercase;
-}
-
-/* level 1 */
-
-#menu-main-navigation { 
-	font-weight: normal; 
-	margin: 0;
-	border-left: 1px solid #494B50;
-}
-
-#menu-main-navigation li a:hover, 
-#menu-main-navigation li:hover a { 
-	/* background: #f4f4f4 repeat-x center 0; 
-	color: #111; */
-}
-
-#menu-main-navigation li a:hover, 
-#menu-main-navigation li:hover a, 
-#menu-main-navigation li.current_page_item a, 
-#menu-main-navigation li.current-menu-ancestor a, 
-#menu-main-navigation li.current-menu-item a { 
-	/* color: #1e73be; */
-}
-
-/* level 2 */
-
-#menu-main-navigation li:hover > ul { 
-	display: block; 
-}
-
-#menu-main-navigation ul { 
-	display: none;  
-	padding: 10px 20px; 
-	width: 140px; 
-	font-weight: normal; 
-	position: absolute; 
-	top: 44px; 
-	left: 0; 
-	z-index: 99999; 
-}
-
-#menu-main-navigation ul li { 
-	background: none; 
-	border: none; 
-	position: relative; 
-	padding-bottom: 0; 
-	float: left; 
-	margin: 0; 
-}
-
-#menu-main-navigation ul li a,
-#menu-main-navigation li:hover ul li a { 
-	background: transparent; 
-	border-bottom: 1px solid #e5e5e5;  
-	text-shadow: none!important;  
-	line-height: 16px; 
-	font-weight: normal; 
-	float: none; 
-	padding: 10px 0; 
-	width: 140px; 
-	display: block; 
-}
-
-#menu-main-navigation ul li a:hover,
-#menu-main-navigation li:hover ul li a:hover { 
-	/* color: #111; */
-}
-
-#menu-main-navigation ul.sub-menu li:last-child a { 
-	border-bottom: 0; 
-}
-
-#menu-main-navigation li.current-menu-parent ul li.current_page_item a,
-#menu-main-navigation li.current-menu-parent ul li.current-menu-item a { 
-	/* color: #111; */
-}
-
-/* level 3 */
-#menu-main-navigation ul ul { 
-	display: none; 
-	width: 140px; 
-	position: absolute; 
-	top: -10px; 
-	left: 140px; 
-}
-
-#menu-main-navigation ul li:last-child ul a { 
-	border-bottom: 1px solid #e5e5e5!important; 
-}
-
-#menu-main-navigation ul li ul li:last-child a { 
-	border-bottom: 0!important; 
-}
-
 .tinynav {
     display: none;
 }
-
-#menu-main-navigation ul {
-	margin-left: 0;
+#site-navigation { 
+	position: relative; 
+	display: block; 
+	clear: both;
+	width: 100%; 
+	height: auto;
+	margin: 0; 
+	z-index: 15; 
 }
 
-#site-navigation.main-navigation {
-	display: block;
+#site-navigation ul { 
+	list-style: none; 
+	padding: 0; 
+	margin: 0;
+	display: table;
+}
+
+#site-navigation ul li { 
+	display: block; 
+	float: left; 
+	width: auto; 
+	position: relative; 
+	z-index: 15; 
+}
+
+#site-navigation ul li a { 
+	display: block; 
+	float: left; 
+	width: auto; 
+	height: 37px; 
+	padding: 15px 37px 0 37px;   
+	text-decoration: none;  
+	font-weight: 400; 
+}
+
+#site-navigation ul li a:hover, 
+#site-navigation ul li a:focus, 
+#site-navigation ul li a.active, 
+#site-navigation ul li a.active-parent,
+#site-navigation ul li.current_page_item a {  
+	-webkit-transition: background-color .2s ease; 
+	-moz-transition: background-color .2s ease; 
+	-ms-transition: background-color .2s ease; 
+	-o-transition: background-color .2s ease; 
+	transition: background-color .2s ease; 
+}
+
+#site-navigation ul li ul.sub-menu { 
+	display: none; 
+	position: absolute; 
+	left: 0; 
+	top: 46px;  
+	padding: 0; 
+}
+
+#site-navigation ul li ul.sub-menu ul.sub-menu { 
+	left: 225px; 
+	top: 0;  
+}
+
+#site-navigation ul li ul.sub-menu li { 
+	padding: 0; 
+	width: 100%; 
+}
+
+#site-navigation ul li ul.sub-menu li a { 
+	display: table-cell; 
+	height: auto; 
+	padding: 11px 37px; 
+	margin: 0; 
+	width: 155px !important; 
+	border-bottom: 1px solid rgba(255,255,255,0.15); 
+}
+
+#site-navigation ul li ul.sub-menu li:first-child a { 
+	border-top: 0; 
+}
+
+#site-navigation ul li ul.sub-menu li a:hover, 
+#site-navigation ul li ul.sub-menu li a.active { 
+	background: rgba(255,255,255,0.2); 
+}
+
+#site-navigation ul li ul.sub-menu li a:before { 
+	font-family: 'FontAwesome'; 
+	content:"\f054"; 
+	font-size: 0.7em; 
+	position: absolute; 
+	left: 0; 
+	visibility: hidden; 
+	line-height: 2; 
+}
+
+#site-navigation ul li ul.sub-menu li a:hover:before { 
+	left: 20px; 
+	visibility: visible;  
+	-webkit-transition: all .2s ease; 
+	-moz-transition: all .2s ease; 
+	-ms-transition: all .2s ease; 
+	-o-transition: all .2s ease; 
+	transition: all .2s ease;  
+}
+
+#site-navigation > ul > li > a:after { 
+	content:"|"; 
+	color: white; 
+	opacity: 0.15; 
+	width: 1px; 
+	font-size: 1.1em; 
+	position: absolute; 
+	top: 10px; right: 3px; 
+}
+
+#site-navigation > ul > li > a.active:after, 
+#site-navigation > ul > li:last-child > a:after { 
+	opacity: 0; 
+}
+
+#site-navigation li > ul, 
+#site-navigation li > ol {
+	margin: 0;
 }
 
 /* ------------------------------------------------------------------------- *

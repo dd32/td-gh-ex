@@ -605,6 +605,12 @@ function optionsframework_options() {
 		"type" => "radio",
 		"options" => $post_info_array);
 		
+	$options[] = array( "name" 	=> __("Display Featured Image Inside the Post","apprise"),
+		"desc" => "Enable/Disable featured image inside the post",
+		"id" => "featured_img_post",
+		"std" => "1",
+		"type" => "checkbox");
+		
 	$options[] = array(
 		'name' => __('Post Info Widget Settings:', 'apprise'),
 		'desc' => __('', 'apprise'),
@@ -1082,6 +1088,12 @@ function optionsframework_options() {
 	$options[] = array( "name" => "LinkedIn",
 		"desc" => "Enter your profile URL. To remove it, just leave it blank",
 		"id" => "linkedin_link",
+		"std" => "#",
+		"type" => "text");
+		
+	$options[] = array( "name" => "Instagram",
+		"desc" => "Enter your profile URL. To remove it, just leave it blank",
+		"id" => "instagram_link",
 		"std" => "#",
 		"type" => "text");
 		

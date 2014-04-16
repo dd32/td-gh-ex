@@ -36,7 +36,7 @@ $flex_query = new WP_Query(
 			<?php if (of_get_option('captions') == '1') { ?>
 				<div class="posts-featured-details-wrapper">
 					<div>
-						<h3><?php the_title(); ?></h3>
+						<a class="post-title" href="<?php the_permalink() ?>"><h3><?php the_title(); ?></h3>></a>
 						<?php the_excerpt(); ?>
 					</div>
 				</div>
@@ -91,7 +91,7 @@ $refine_query = new WP_Query(
 			<?php if (of_get_option('captions') == '1') { ?>
 				<div class="posts-featured-details-wrapper">
 					<div>
-						<h3><?php the_title(); ?></h3>
+						<a class="post-title" href="<?php the_permalink() ?>"><h3><?php the_title(); ?></h3></a>
 						<?php the_excerpt(); ?>
 					</div>
 				</div>

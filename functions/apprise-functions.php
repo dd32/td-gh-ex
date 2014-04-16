@@ -792,8 +792,14 @@ function apprise_options_support() { ?>
 		<div class="metabox-holder">
 			<div class="postbox">
 					<div class="inside">
-                        <p><b><?php _e(' For theme support and general questions please fill the contact form in the following link: ','apprise') ?> <a target="_blank" href="http://www.vpthemes.com/support/"><?php _e('Contact Form','apprise') ?></a></p>
-                        <p><?php  _e('Want to add additional features? ','apprise') ?><a target="_blank" href="http://www.vpthemes.com/apprise/#theme-pricing"><?php  _e(' Upgrade to Pro version.','apprise') ?></a></p>
+                        <p class="btn"><a class="button green" target="_blank" href="http://www.vpthemes.com/support/"><?php _e('Theme Support','apprise') ?></a> <a class="button orange" target="_blank" href="http://vpthemes.com/preview/Apprise/"><?php _e('View Demo','apprise') ?></a> <a class="button blue" target="_blank" href="http://www.vpthemes.com/apprise/#theme-pricing"><?php  _e('Upgrade to Pro','apprise') ?></a><strong> If you like my work. Buy me a beer.</strong></p>
+                        <div class="donate">
+							<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+								<input type="hidden" name="cmd" value="_s-xclick">
+								<input type="hidden" name="hosted_button_id" value="T4GV5NZQH8PDA">
+								<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+								<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+							</form>
 					</div>
 			</div>
 		</div>

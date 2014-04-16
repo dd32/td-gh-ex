@@ -537,8 +537,140 @@ h2.nav-tab-wrapper, h3.nav-tab-wrapper {
 .postbox, 
 .stuffbox {
 	margin-bottom: 0 !important;
+	overflow: hidden;
 }
 
 #optionsframework-wrap .section-info h4.heading {
 	color: #D45E21;
+}
+
+#optionsframework-wrap p.btn {
+	float: left;
+	width: 85%
+}
+
+#optionsframework-wrap .donate {
+	float: right;
+	width: 15%;
+	margin-top: 1em;
+}
+
+#optionsframework-wrap .button {
+	margin-right: 12px;
+}
+
+#optionsframework-wrap .button.blue{
+	color:#000000 !important;
+	background-image: linear-gradient(#b5e0f7 0%, #76c7f1 100%);
+	background-image: -o-linear-gradient(top, #b5e0f7 0%, #76c7f1 100%);
+	background-image: -moz-linear-gradient(top, #b5e0f7 0%, #76c7f1 100%);
+	background-image: -webkit-linear-gradient(top, #b5e0f7 0%, #76c7f1 100%);
+	background-image: -ms-linear-gradient(top, #b5e0f7 0%, #76c7f1 100%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0, #b5e0f7),
+		color-stop(1, #76c7f1)
+	);
+	border:1px solid #1172c1;
+	background-color: #b5e0f7;
+}
+
+#optionsframework-wrap .button.blue:hover{
+	color:#000000 !important;
+	background-image: linear-gradient(#76c7f1 0%, #b5e0f7 100%);
+	background-image: -o-linear-gradient(top, #76c7f1 0%, #b5e0f7 100%);
+	background-image: -moz-linear-gradient(top, #76c7f1 0%, #b5e0f7 100%);
+	background-image: -webkit-linear-gradient(top, #76c7f1 0%, #b5e0f7 100%);
+	background-image: -ms-linear-gradient(top, #76c7f1 0%, #b5e0f7 100%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0, #76c7f1),
+		color-stop(1, #b5e0f7)
+	);
+	border:1px solid #1172c1;
+	background-color: #76c7f1;
+}
+
+#optionsframework-wrap .button.orange{
+	color:#000000 !important;
+	background-image: linear-gradient(#fbdc86 0%, #f8bf56 100%);
+	background-image: -o-linear-gradient(top, #fbdc86 0%, #f8bf56 100%);
+	background-image: -moz-linear-gradient(top, #fbdc86 0%, #f8bf56 100%);
+	background-image: -webkit-linear-gradient(top, #fbdc86 0%, #f8bf56 100%);
+	background-image: -ms-linear-gradient(top, #fbdc86 0%, #f8bf56 100%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0, #fbdc86),
+		color-stop(1, #f8bf56)
+	);
+	border:1px solid #c0830b;
+	background-color: #fbdc86;
+}
+#optionsframework-wrap .button.orange:hover{
+	color:#000000 !important;
+	background-image: linear-gradient(#f8bf56 0%, #fbdc86 100%);
+	background-image: -o-linear-gradient(top, #f8bf56 0%, #fbdc86 100%);
+	background-image: -moz-linear-gradient(top, #f8bf56 0%, #fbdc86 100%);
+	background-image: -webkit-linear-gradient(top, #f8bf56 0%, #fbdc86 100%);
+	background-image: -ms-linear-gradient(top, #f8bf56 0%, #fbdc86 100%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0, #f8bf56),
+		color-stop(1, #fbdc86)
+	);
+	border:1px solid #c0830b;
+	background-color: #f8bf56;
+}
+
+#optionsframework-wrap .button.green{
+	color:#000000 !important;
+	background-image: linear-gradient(#D1E990 0%, #AAD75D 100%);
+	background-image: -o-linear-gradient(top, #D1E990 0%, #AAD75D 100%);
+	background-image: -moz-linear-gradient(top, #D1E990 0%, #AAD75D 100%);
+	background-image: -webkit-linear-gradient(top, #D1E990 0%, #AAD75D 100%);
+	background-image: -ms-linear-gradient(top, #D1E990 0%, #AAD75D 100%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0, #D1E990),
+		color-stop(1, #AAD75D)
+	);
+	border:1px solid #9dba60;
+	background-color: #E9F2D2;
+}
+#optionsframework-wrap .button.green:hover{
+	color:#000000 !important;
+	background-image: linear-gradient(#AAD75D 0%, #D1E990 100%);
+	background-image: -o-linear-gradient(top, #AAD75D 0%, #D1E990 100%);
+	background-image: -moz-linear-gradient(top, #AAD75D 0%, #D1E990 100%);
+	background-image: -webkit-linear-gradient(top, #AAD75D 0%, #D1E990 100%);
+	background-image: -ms-linear-gradient(top, #AAD75D 0%, #D1E990 100%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0, #AAD75D),
+		color-stop(1, #D1E990)
+	);
+	border:1px solid #9dba60;
+	background-color: #AAD75D;
+}
+
+#optionsframework-wrap p.btn strong {
+	margin-left: 4em;
 }

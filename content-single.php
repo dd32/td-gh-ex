@@ -21,11 +21,13 @@
 			} else { 
 				if ( has_post_thumbnail() ) { 
 					if (has_post_format( 'video' )) {
-					} else { ?>
-						<div class="thumb-wrapper">
-							<?php the_post_thumbnail('full'); ?>
-						</div><!--thumb-wrapper-->
-					<?php 
+					} else { 
+						if (of_get_option('featured_img_post') == '1') {?>
+							<div class="thumb-wrapper">
+								<?php the_post_thumbnail('full'); ?>
+							</div><!--thumb-wrapper-->
+						<?php
+						} 
 					}
 				} 			
 			} ?>
