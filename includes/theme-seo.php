@@ -12,18 +12,18 @@ function mantra_filter_wp_title( $title ) {
     // Get the Site Name
     $site_name = get_bloginfo( 'name' );
     // Prepend name
-    $filtered_title = $title.' - '.$site_name;
+    $filtered_title = (((strlen($site_name)>0)&&(strlen($title)>0))?$title.' - '.$site_name:$title.$site_name);
 	// Get the Site Description
  	$site_description = get_bloginfo( 'description' );
     // If site front page, append description
-    if ( (is_home() || is_front_page()) && $site_description ) {       
+    if ( (is_home() || is_front_page()) && $site_description ) {
         // Append Site Description to title
-        $filtered_title =$site_name. " | ".$site_description;
+        $filtered_title = ((strlen($site_name)>0)&&(strlen($site_description)>0))?$site_name. " | ".$site_description:$site_name.$site_description;
     }
 	// Add pagination if that's the case
 	global $page, $paged;
 	if ( $paged >= 2 || $page >= 2 )
-	$filtered_title .=	 ' | ' . sprintf( __( 'Page %s', 'mantra' ), max( $paged, $page ) );
+	$filtered_title .=	 ' | ' . sprintf( __( 'Page %s', 'parabola' ), max( $paged, $page ) );
 
     // Return the modified title
     return $filtered_title;

@@ -257,13 +257,13 @@ endswitch;
 ?><?php if ($mantra_postdate == "Hide") { ?>.entry-meta span.entry-date,.entry-meta span.onDate {display:none;} <?php }
 ?><?php if ($mantra_postcomlink == "Hide") { ?>.entry-meta .comments-link,.entry-meta2 .comments-link{display:none;} <?php }
 ?><?php if ($mantra_postauthor == "Hide") { ?>.entry-meta .author {display:none;} <?php }
-?><?php if ($mantra_postcateg == "Hide") { ?>.entry-meta span.bl_categ {display:none;} <?php }
+?><?php if ($mantra_postcateg == "Hide") { ?>.entry-meta span.bl_categ, .entry-meta2 span.bl_categ {display:none;} <?php }
 ?><?php if ($mantra_posttag == "Hide") { ?> .entry-utility span.bl_posted, .entry-meta2 span.bl_tagg,.entry-meta3 span.bl_tagg {display:none;} <?php }
 ?><?php if ($mantra_postbook == "Hide") { ?> .entry-utility span.bl_bookmark {display:none;} <?php }
 ?><?php if ($mantra_parmargin) { ?> #content p, .entry-content ul, .entry-summary ul , .entry-content ol, .entry-summary ol { margin-bottom:<?php echo $mantra_parmargin; ?>;} <?php } 
 ?><?php if ($mantra_parindent != "0px") { ?>  p {text-indent:<?php echo $mantra_parindent;?> ;} <?php }
 ?><?php if ($mantra_posttime == "Hide") { ?> .entry-meta .entry-time {display:none;} <?php }
-?><?php if ($mantra_postmetas == "Hide") { ?> #content .entry-meta {display:none;} <?php }
+?><?php if ($mantra_postmetas == "Hide") { ?> #content .entry-meta, #content .entry-header div.entry-meta2 > * {display:none;} <?php }
 ?><?php if (($mantra_mobile == "Enable") &&  $mantra_hcontain) { ?> #branding{ -webkit-background-size:contain !important;-moz-background-size:contain !important;background-size:contain !important; } <?php } ?>
 #branding { height:<?php echo HEADER_IMAGE_HEIGHT; ?>px ;}
 <?php if ($mantra_hratio) { ?> @media (max-width: 800px) {#branding, #bg_image { min-height:inherit !important; } }	<?php } ?>

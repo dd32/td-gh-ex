@@ -113,6 +113,7 @@ get_header(); ?>
 <?php endwhile; ?>
 
 			</div><!-- #content -->
+<?php // get_sidebar(); // sidebars disabled on attachment page; alt css used ?>
 		</section><!-- #container -->
 
 <?php get_footer(); ?>

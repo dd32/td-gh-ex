@@ -4,9 +4,7 @@ Theme Name: Mantra
 /*
 Used to style the TinyMCE editor.
 */
-html .mceContentBody {
-	max-width:640px;
-}
+
 * {
 	font-family: Georgia, "Bitstream Charter", serif;
 	color: #444;
@@ -236,7 +234,7 @@ tr td {
 
 img {
 	margin: 0;
-	max-width: 640px;
+	height:auto;
 }
 .alignleft,
 img.alignleft {

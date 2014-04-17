@@ -189,4 +189,18 @@ function mantra_truncate_words($string,$words=20, $ellipsis=' ...') {
  $new = preg_replace('/((\w+\W+\'*){'.($words-1).'}(\w+))(.*)/', '${1}', $string);
  return $new.$ellipsis;
 }
+
+// Synchronizing the tinymce width with the content width
+add_filter('tiny_mce_before_init', 'mantra_dynamic_editor_styles', 10);
+function mantra_dynamic_editor_styles($settings){
+    $settings['content_css'] .= ",".admin_url('admin-ajax.php') ."/?action=dynamic_styles";
+    return $settings;
+}
+
+// add wp_ajax callback
+add_action('wp_ajax_dynamic_styles', 'mantra_dynamic_styles_callback');
+function mantra_dynamic_styles_callback(){
+	global $mantra_options;
+    echo "html .mceContentBody , .mceContentBody img {max-width:".$mantra_options['mantra_sidewidth']."px;}";
+}
 ?>

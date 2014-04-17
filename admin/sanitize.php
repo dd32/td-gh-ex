@@ -113,7 +113,6 @@ global $mantra_defaults;
 	$cryout_special_keys = array('Mail', 'Skype');
 	for ($i=1;$i<10;$i+=2) {
 		$j=$i+1;
-
 		if (in_array($input['mantra_social'.$i],$cryout_special_keys)) :
 			$input['mantra_social'.$j]	= wp_kses_data(str_replace($cryout_special_terms,'',$input['mantra_social'.$j]));
 			if ($input['mantra_social'.$i]=='Mail') {$input['mantra_social'.$j]='mailto:'.$input['mantra_social'.$j];};
@@ -121,8 +120,10 @@ global $mantra_defaults;
 		else :
 			$input['mantra_social'.$j] = esc_url_raw($input['mantra_social'.$j]);
 		endif;
-
 	}
+	for ($i=0;$i<=5;$i++) {
+		if (!isset($input['mantra_socialsdisplay'.$i])) {$input['mantra_socialsdisplay'.$i] = "0";}
+		}
 
 	$input['mantra_favicon'] =  esc_url_raw($input['mantra_favicon']);
 	$input['mantra_logoupload'] =  esc_url_raw($input['mantra_logoupload']);
