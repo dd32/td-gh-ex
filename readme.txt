@@ -64,6 +64,12 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/catch
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 
 == Changelog ==
+Version 1.1
+* Added secondary menu option in mobile devices
+* Changed secondary menu id for HTML validation (Reported By bschell)
+* Minified admin scripts
+* Removed unnecessary css
+
 Version 1.0
 * Change logo image to generic logo image as per WordPress.org guideline
 * Change default slider images, homepage featured images and screenshot image to all GPL selfshot images by CatchThemes

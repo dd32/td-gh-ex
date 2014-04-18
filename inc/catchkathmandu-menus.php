@@ -40,7 +40,7 @@ if ( ! function_exists( 'catchkathmandu_secondary_menu' ) ) :
  */
 function catchkathmandu_secondary_menu() { ?>
 	<div id="secondary-menu">
-        <nav id="access" role="navigation">
+        <nav id="access-secondary" role="navigation">
             <h2 class="assistive-text"><?php _e( 'Secondary Menu', 'catchkathmandu' ); ?></h2>
             <?php
                 if ( has_nav_menu( 'secondary', 'catchkathmandu' ) ) { 
@@ -68,7 +68,7 @@ if ( ! function_exists( 'catchkathmandu_footer_menu' ) ) :
  */
 function catchkathmandu_footer_menu() { ?>
 	<div id="footer-menu">
-        <nav id="access" role="navigation">
+        <nav id="access-footer" role="navigation">
             <h2 class="assistive-text"><?php _e( 'Footer Menu', 'catchkathmandu' ); ?></h2>
             <?php
                 if ( has_nav_menu( 'footer', 'catchkathmandu' ) ) { 

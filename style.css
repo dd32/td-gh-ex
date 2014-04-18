@@ -4,7 +4,7 @@ Theme URI: http://catchthemes.com/themes/catch-kathmandu
 Author: Catch Themes Team
 Author URI: http://catchthemes.com
 Description: Catch Themes has come up with a full-fledged Corporate/Blog premium WordPress theme, Catch Kathmandu! The design is highly customizable and you can tailor the display to your taste with a few easy clicks. Based on HTML5 and CSS3, it is a responsive theme which automatically adapts to the screen's size, regardless of the devices the visitors use.  It has a large screen layout which elegantly extends to 1280 pixels! If you are looking for a clean professional space which accommodates your visuals and yet provides you with ample amount of textual area, Catch Kathmandu is your perfect find. Active community at http://catchthemes.com/support-forum/
-Version: 1.0
+Version: 1.1
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Tags: black, blue, gray, white, dark,light, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, front-page-post-form, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
@@ -617,28 +617,25 @@ img#wpstats {
 	background-color: #1b5F7d;
 }
 #secondary-menu #access,
-#footer-menu #access {
+#access-secondary {
     clear: both;
     display: block;
     float: left;
     margin: 0 auto;
     width: 100%;
 }
-#secondary-menu ul.menu,
-#footer-menu ul.menu {
+#secondary-menu ul.menu {
     list-style: none;
     text-align: center;
 }
 .header-sidebar .widget ul.menu li,
-#secondary-menu ul.menu li,
-#footer-menu ul.menu li {
+#secondary-menu ul.menu li {
 	display: inline-block;
 	position: relative;
 	text-align: left;
 }
 .header-sidebar .widget ul.menu a,
-#secondary-menu ul.menu a,
-#footer-menu ul.menu a {
+#secondary-menu ul.menu a {
 	color: #333;
 	display: block;
 	line-height: 45px;
@@ -648,8 +645,7 @@ img#wpstats {
 	text-decoration: none;
 	white-space: nowrap;	
 }
-#secondary-menu ul.menu a,
-#footer-menu ul.menu a {
+#secondary-menu ul.menu a {
 	color: #fff;
 	padding: 5px 25px;
 	padding: 0.5rem 2.5rem;	
@@ -658,8 +654,7 @@ img#wpstats {
 	color: #ccc;	
 }
 .header-sidebar .widget ul.menu ul a,
-#secondary-menu ul.menu  ul a,
-#footer-menu ul.menu  ul a {
+#secondary-menu ul.menu  ul a {
 	background-color: #2581aa;
 	border-bottom: 1px dotted #ccc;
 	color: #fff;
@@ -675,8 +670,7 @@ img#wpstats {
 	white-space: normal;	
 }
 .header-sidebar .widget ul.menu ul,
-#secondary-menu ul.menu ul,
-#footer-menu ul.menu ul {
+#secondary-menu ul.menu ul {
 	-moz-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
 	-webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
 	box-shadow: 0 3px 3px rgba(0,0,0,0.2);
@@ -691,28 +685,23 @@ img#wpstats {
 	width: 205px;
 	z-index: 99999;
 }
-#secondary-menu ul.menu ul,
-#footer-menu ul.menu ul {
+#secondary-menu ul.menu ul {
 	top: 55px;
 	top: 5.5rem;	
 }
 .header-sidebar .widget ul.menu ul ul,
-#secondary-menu ul.menu ul ul,
-#footer-menu ul.menu ul ul {
+#secondary-menu ul.menu ul ul {
 	left: 100%;
 	top: 0;
 }
 .header-sidebar .widget ul.menu li:last-child, 
 .header-sidebar .widget ul.menu ul li,
 #secondary-menu ul.menu li:last-child, 
-#secondary-menu ul.menu ul li,
-#footer-menu ul.menu li:last-child, 
-#footer-menu ul.menu ul li {
+#secondary-menu ul.menu ul li {
 	border: none;
 } 
 .header-sidebar .widget ul.menu li:hover > ul,
-#secondary-menu ul.menu li:hover > ul,
-#footer-menu ul.menu li:hover > ul {
+#secondary-menu ul.menu li:hover > ul {
 	display: block;
 }
 .header-sidebar .widget ul.menu li:hover > a,
@@ -733,16 +722,6 @@ img#wpstats {
 	background-color: #1b5F7d;
 	color: #fff;
 }
-#footer-menu ul.menu li:hover > a,
-#footer-menu ul.menu a:focus,
-#footer-menu .menu .current-menu-item > a,
-#footer-menu .menu .current-menu-ancestor > a,
-#footer-menu .menu .current_page_item > a,
-#footer-menu .menu .current_page_ancestor > a {
-	background-color: #1b5F7d;
-	color: #fff;
-}
-
 
 
 /* =Responsive Menu (Tinynav.js)

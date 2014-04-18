@@ -12,6 +12,7 @@
 global $catchkathmandu_options_defaults;
 $catchkathmandu_options_defaults = array(
 	'disable_responsive'					=> '0',
+	'enable_menus'							=> '1',
 	'fav_icon'								=> get_template_directory_uri().'/images/favicon.ico',
  	'remove_favicon'						=> '1',
 	'web_clip'								=> get_template_directory_uri().'/images/apple-touch-icon.png',

@@ -39,13 +39,21 @@ function catchkathmandu_scripts() {
 		wp_enqueue_style( 'dark', get_template_directory_uri() . '/css/dark.css', array(), null );	
 	}
 	
+	//Responsive Menu
+	wp_register_script('catchkathmandu-menu', get_template_directory_uri() . '/js/catchkathmandu-menu.min.js', array('jquery'), '20140317', true);
+	wp_register_script('catchkathmandu-allmenu', get_template_directory_uri() . '/js/catchkathmandu-allmenu.min.js', array('jquery'), '20140317', true);	
+	
 	/**
 	 * Loads up Responsive stylesheet and Menu JS
 	 */
 	if ( empty ($options[ 'disable_responsive' ] ) ) {	
 		wp_enqueue_style( 'catchkathmandu-responsive', get_template_directory_uri() . '/css/responsive.css' );
 		
-		wp_enqueue_script('catchkathmandu-menu', get_template_directory_uri() . '/js/catchkathmandu-menu.min.js', array('jquery'), '20140317', true);
+		if ( !empty ($options ['enable_menus'] ) ) :
+			wp_enqueue_script( 'catchkathmandu-allmenu' );
+		else :
+			wp_enqueue_script( 'catchkathmandu-menu' );
+		endif;
 		
 		wp_enqueue_script( 'catchkathmandu-fitvids', get_template_directory_uri() . '/js/catchkathmandu.fitvids.min.js', array( 'jquery' ), '20140317', true );	
 	}

@@ -20,12 +20,12 @@ function catchkathmandu_admin_scripts() {
 	//jQuery Cookie
 	wp_register_script( 'jquery-cookie', get_template_directory_uri() . '/inc/panel/js/jquery.cookie.min.js', array( 'jquery' ), '1.0', true );
 	
-	wp_enqueue_script( 'catchkathmandu_admin', get_template_directory_uri().'/inc/panel/js/admin.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable' ) );
+	wp_enqueue_script( 'catchkathmandu_admin', get_template_directory_uri().'/inc/panel/js/admin.min.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable' ) );
 	wp_enqueue_script( 'catchkathmandu_upload', get_template_directory_uri().'/inc/panel/js/add_image_scripts.js', array( 'jquery','media-upload','thickbox' ) );
 	
-	wp_enqueue_script( 'catchkathmandu_color', get_template_directory_uri().'/inc/panel/js/color_picker.js', array( 'farbtastic' ) );
+	wp_enqueue_script( 'catchkathmandu_color', get_template_directory_uri().'/inc/panel/js/color_picker.min.js', array( 'farbtastic' ) );
 	
-	wp_enqueue_style( 'catchkathmandu_admin_style',get_template_directory_uri().'/inc/panel/admin.css', array( 'farbtastic', 'thickbox'), '1.0', 'screen' );
+	wp_enqueue_style( 'catchkathmandu_admin_style', get_template_directory_uri().'/inc/panel/admin.css', array( 'farbtastic', 'thickbox'), '1.0', 'screen' );
 
 }
 add_action('admin_print_styles-appearance_page_theme_options', 'catchkathmandu_admin_scripts');
@@ -170,6 +170,15 @@ function catchkathmandu_theme_options_do_page() {
                                     <input type="checkbox" id="headerlogo" name="catchkathmandu_options[disable_responsive]" value="1" <?php checked( '1', $options['disable_responsive'] ); ?> /> <?php _e('Check to disable', 'catchkathmandu'); ?>
                                 </div>
                           	</div><!-- .row -->
+                            <div class="row">
+                            	<div class="col col-1">
+                        			<?php _e( 'Enable Secondary Menu in Mobile Devices?', 'catchkathmandu' ); ?>
+                              	</div>
+                                <div class="col col-2">
+                                	<input type='hidden' value='0' name='catchkathmandu_options[enable_menus]'>
+                                    <input type="checkbox" id="headerlogo" name="catchkathmandu_options[enable_menus]" value="1" <?php checked( '1', $options['enable_menus'] ); ?> /> <?php _e('Check to enable', 'catchkathmandu'); ?>
+                              	</div>
+                           	</div><!-- .row -->                            
                             <div class="row">
                       			<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchkathmandu' ); ?>" />
                           	</div><!-- .row -->
@@ -1386,6 +1395,11 @@ function catchkathmandu_theme_options_validate( $options ) {
 		// Our checkbox value is either 0 or 1 
 		$input_validated[ 'disable_responsive' ] = $input[ 'disable_responsive' ];
 	}
+
+	if ( isset( $input['enable_menus'] ) ) { 
+		// Our checkbox value is either 0 or 1 
+		$input_validated[ 'enable_menus' ] = $input[ 'enable_menus' ];
+	}	
 	
 	// Data Validation for Favicon		
 	if ( isset( $input[ 'fav_icon' ] ) ) {
