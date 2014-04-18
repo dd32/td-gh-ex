@@ -13,11 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) exit( 'restricted access' );
 <!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="no-js"> <!--<![endif]-->
 <head>
 <meta charset="<?php echo esc_attr( get_bloginfo( 'charset' ) ); ?>" />
-<meta name="description" content="">
-<meta name="author" content="">
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
-<title><?php bloginfo( 'name' ); ?> <?php wp_title( '|', true ); ?></title>
+<title> <?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="stylesheet" type="text/css" href="<?php echo esc_url( get_bloginfo( 'stylesheet_url' ) ); ?>" media="all" />
 <link rel="pingback" href="<?php echo esc_url( get_bloginfo( 'pingback_url' ) ); ?>" />
 <?php sampression_favicons(); ?>

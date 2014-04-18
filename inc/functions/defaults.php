@@ -81,7 +81,7 @@ function sampression_logos_icons($defaults = false) {
         'fav_icon' => array(
             'favicon_16' => array(
                 'image' => SAM_FW_ADMIN_IMAGES_URL . '/16x16.png',
-                'donot_use_favicon' => 'no'
+                'donot_use_favicon' => 'yes'
             )
         ),
         'apple_icon' => array(
@@ -101,7 +101,7 @@ function sampression_logos_icons($defaults = false) {
                 'image' => SAM_FW_ADMIN_IMAGES_URL . '/apple-touch-icon-144x144.png',
                 'donot_use_favicon' => 'no'
             ),
-            'donot_use_apple_icon' => 'no'
+            'donot_use_apple_icon' => 'yes'
         )
     );
     $logo_icon = serialize($logo_icon);

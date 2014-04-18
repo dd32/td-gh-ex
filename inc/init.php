@@ -1,33 +1,5 @@
 <?php
 
-add_action( 'sampression_init', 'sampression_theme_support' );
-
-/**
- * sampression theme support
- */
-function sampression_theme_support() {
-    add_theme_support( 'menus' );
-    add_theme_support( 'post-thumbnails' );
-    add_theme_support( 'automatic-feed-links' );
-    add_theme_support( 'post-formats', array( 'image', 'gallery', 'video', 'quote', 'link', 'status', 'audio', 'chat' ) );
-    //array( 'aside', 'image', 'gallery', 'video', 'quote', 'link', 'status', 'audio', 'chat' )
-    if ( ! current_theme_supports( 'sampression-menus' ) )
-        add_theme_support( 'sampression-menus', array(
-            'primary'   => __('Primary Navigation', 'sampression')
-        ) );
-
-    if ( ! current_theme_supports( 'sampression-sidebars' ) )
-        add_theme_support( 'sampression-sidebars', array(
-            'primary-sidebar'   => array(
-                'column' => '1 Column',
-                'name' => __('Primary Sidebar', 'sampression'),
-                'slug' => 'primary-sidebar',
-                'desc' => __('The Primary Widget.', 'sampression')
-            )
-        ) );
-
-}
-
 add_action( 'sampression_init', 'sampression_constants' );
 
 /**
@@ -111,7 +83,6 @@ function sampression_load_framework() {
         get_template_part( SAM_FW_FUNC_TPL_PART_DIR . 'metabox' );
 
 	/** Load Widgets */
-        get_template_part( SAM_FW_WIDGET_TPL_PART_DIR . 'sam-dashboard-widget' );
 	get_template_part( SAM_FW_WIDGET_TPL_PART_DIR . 'adminbar-menu' );
 
 	/** Load Admin */
@@ -123,15 +94,6 @@ function sampression_load_framework() {
 
 	/** Load CSS */
 
-}
-
-add_action( 'sampression_init', 'sampression_i18n' );
-
-/**
- * Internationalization
- */
-function sampression_i18n() {
-	load_theme_textdomain( 'sampression', SAM_FW_LANGUAGES_DIR );
 }
 
 do_action( 'sampression_init' );

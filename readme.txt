@@ -5,7 +5,7 @@ Theme URI: http://sampression.com/themes/naya-lite
 Author: Sampression
 Author URI: http://www.sampression.com
 
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -102,6 +102,19 @@ Tags: white, black, green, one-column, two-columns, responsive-layout, custom-me
  = Naya Lite is distributed under the terms of the GNU GPL.
 
 == Changelog ==
+Version 1.03
+ = Removed: <meta> description and author removed from header.php 
+ = Removed: Dashboard widgets removed 
+ = Fixed: wp_title filter used for title tag
+ = Fixed: Google fonts enqueued without the protocol (http:). 
+ = Fixed: Favicon icons disable by default
+ = Fixed: admin_print_scripts and admin_print_styles changed to admin_enqueue_scripts 
+ = Fixed: scripts and styles files enqueued directly without registering
+ = Fixed: output of data by using escape function
+ = Fixed: used ‘theme_location’ parameter instead of ‘menu’ in wp_nav_menu
+ = Fixed: register_nav_menu(), add_theme_support, add_image_size, add_nav_menu, register_nav_menus and load_theme_textdomain hooked into after_setup_theme action. 
+
+
 Version 1.0.2
  = Added: License information added on readme.txt file of bundled js files and icons.
 
