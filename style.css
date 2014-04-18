@@ -10,7 +10,7 @@ Author URI: http://schwarttzy.com/about-2/
 
 Description: Inspired by a certain GPS Manufacture, I designed this theme to feel like you're looking through a window out into the wilderness and hopefully inspire you to explore. I'm constantly adding new features to this theme to allow you to personalize it to your own needs. If you want a new feature or just want to be able to change something just ask me and I would be happy to add it for you. I would like to thank you for your support and Enjoy!
 
-Version: 3.4
+Version: 3.5
 
 License: GNU General Public License, version 3 (AGPLv3)
 
@@ -738,11 +738,13 @@ blockquote:after, .contents:after {clear:both; content:"."; display:block; heigh
 /* Resizing
 ------------------------------------------------------------------*/
 
+@media only screen and (max-width:55em) {
+    
+    body {background-size:auto!important;}}
+
 @media only screen and (min-width:55em) {
     
-    body {
-        background-size:auto!important;
-        font:normal 99%;}}
+    body {font:normal 99%;}}
 
 @media only screen and (min-width:60em) {
     
@@ -836,17 +838,20 @@ blockquote:after, .contents:after {clear:both; content:"."; display:block; heigh
 -------------------------------------------------------------- */	
 @font-face {
   font-family:'fontello';
-  src: url('fonts/fontello.eot?44704590');
-  src: url('fonts/fontello.eot?44704590#iefix') format('embedded-opentype'),
-       url('fonts/fontello.woff?44704590') format('woff'),
-       url('fonts/fontello.ttf?44704590') format('truetype'),
-       url('fonts/fontello.svg?44704590#fontello') format('svg');
+  src: url('fonts/fontello.eot?32659345');
+  src: url('fonts/fontello.eot?32659345#iefix') format('embedded-opentype'),
+       url('fonts/fontello.woff?32659345') format('woff'),
+       url('fonts/fontello.ttf?32659345') format('truetype'),
+       url('fonts/fontello.svg?32659345#fontello') format('svg');
   font-weight:normal;
   font-style:normal;}
+
+.fontello {
+    font-family:'fontello';}
  
 [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family:"fontello" !important;
-  font-size:.85em;
+  font-size:1.1em;
   font-style:normal;
   font-weight:normal;
   speak:none;
@@ -860,16 +865,17 @@ blockquote:after, .contents:after {clear:both; content:"."; display:block; heigh
   line-height:1em;
   margin-left:.2em;}
  
-.icon-flickr:before {content:'\46';}                /* 'F' */
-.icon-linkedin:before {content:'\4c';}              /* 'L' */
+.icon-gplus-squared:before {content:'\67';}         /* 'g' */
+.icon-youtube:before {content:'\59';}               /* 'Y' */
 .icon-twitter:before {content:'\54';}               /* 'T' */
-.icon-youtube:before {content:'\55';}               /* 'U' */
+.icon-facebook-squared:before {content:'\46';}      /* 'F' */
+.icon-pinterest:before {content:'\50';}             /* 'P' */
 .icon-vimeo:before {content:'\56';}                 /* 'V' */
-.icon-soundcloud:before {content:'\73';}            /* 's' */
-.icon-facebook-rect:before {content:'\f301';}       /* 'ïŒ' */
-.icon-github:before {content:'\f308';}              /* 'ïŒˆ' */
-.icon-googleplus-rect:before {content: '\f309';}    /* 'ïŒ‰' */
-.icon-instagram-filled:before {content:'\f31f';}    /* 'ïŒŸ' */
+.icon-linkedin-circled:before {content:'\69';}      /* 'i' */
+.icon-soundcloud:before {content:'\53';}            /* 'S' */
+.icon-flickr:before {content:'\66';}                /* 'f' */
+.icon-instagram:before {content:'\49';}             /* 'I' */
+.icon-tumblr:before {content:'\74';}                /* 't' */
 
 rect:before {content:"Email address: ";}
 

@@ -33,12 +33,12 @@
 	<?php if ( has_nav_menu( 'bar' ) ) :  wp_nav_menu( array( 'theme_location' => 'bar', 'depth' => 2 ) ); else : ?>
 	<?php wp_list_pages( 'title_li=&depth=2' ); ?>
 	<?php endif; ?>
-	<?php if ( get_theme_mod('facebook_setting') != 'The url link goes in here.' ) : ?><li><a href="<?php echo get_theme_mod('facebook_setting') ;?>" class="icon-facebook-rect" target="_blank"></a></li><?php endif; ?>
-    <?php if ( ( get_theme_mod('twitter_setting') != 'The url link goes in here.' ) && ( get_theme_mod('twitter_setting') != '' ) ) : ?><li><a href="<?php echo get_theme_mod('twitter_setting') ;?>" class="icon-twitter" target="_blank"></a></li><?php endif; ?>
-    <?php if ( ( get_theme_mod('google_plus_setting') != 'The url link goes in here.' ) && ( get_theme_mod('google_plus_setting') != '' ) ) : ?><li><a href="<?php echo get_theme_mod('google_plus_setting') ;?>" class="icon-googleplus-rect" target="_blank"></a></li><?php endif; ?>
-    <?php if ( ( get_theme_mod('youtube_setting') != 'The url link goes in here.' ) && ( get_theme_mod('youtube_setting') != '' ) ) : ?><li><a href="<?php echo get_theme_mod('youtube_setting') ;?>" class="icon-youtube" target="_blank"></a></li><?php endif; ?>
-    <?php if ( ( get_theme_mod('vimeo_setting') != 'The url link goes in here.' ) && ( get_theme_mod('vimeo_setting') != '' ) ) : ?><li><a href="<?php echo get_theme_mod('vimeo_setting') ;?>" class="icon-vimeo" target="_blank"></a></li><?php endif; ?>
-    <?php if ( ( get_theme_mod('soundcloud_setting') != 'The url link goes in here.' ) && ( get_theme_mod('soundcloud_setting') != '' ) ) : ?><li><a href="<?php echo get_theme_mod('soundcloud_setting') ;?>" class="icon-soundcloud" target="_blank"></a></li><?php endif; ?>
+	<?php if ( get_theme_mod('facebook_setting') != 'The url link goes in here.' ) : ?><li><a href="<?php echo get_theme_mod('facebook_setting') ;?>" class="fontello" target="_blank">F</a></li><?php endif; ?>
+    <?php if ( ( get_theme_mod('twitter_setting') != 'The url link goes in here.' ) && ( get_theme_mod('twitter_setting') != '' ) ) : ?><li><a href="<?php echo get_theme_mod('twitter_setting') ;?>" class="fontello" target="_blank">T</a></li><?php endif; ?>
+    <?php if ( ( get_theme_mod('google_plus_setting') != 'The url link goes in here.' ) && ( get_theme_mod('google_plus_setting') != '' ) ) : ?><li><a href="<?php echo get_theme_mod('google_plus_setting') ;?>" class="fontello" target="_blank">g</a></li><?php endif; ?>
+    <?php if ( ( get_theme_mod('youtube_setting') != 'The url link goes in here.' ) && ( get_theme_mod('youtube_setting') != '' ) ) : ?><li><a href="<?php echo get_theme_mod('youtube_setting') ;?>" class="fontello" target="_blank">Y</a></li><?php endif; ?>
+    <?php if ( ( get_theme_mod('vimeo_setting') != 'The url link goes in here.' ) && ( get_theme_mod('vimeo_setting') != '' ) ) : ?><li><a href="<?php echo get_theme_mod('vimeo_setting') ;?>" class="fontello" target="_blank">V</a></li><?php endif; ?>
+    <?php if ( ( get_theme_mod('soundcloud_setting') != 'The url link goes in here.' ) && ( get_theme_mod('soundcloud_setting') != '' ) ) : ?><li><a href="<?php echo get_theme_mod('soundcloud_setting') ;?>" class="fontello target="_blank">S</a></li><?php endif; ?>
     <?php if ( get_theme_mod('navi_search_setting') == 'on' ) : ?><li><form role="search" method="get" id="navi_search" action="<?php echo home_url(); ?>/" ><input type="text" value="Search" onFocus="if(this.value == 'Search') { this.value = ''; }" onBlur="if(this.value == '') { this.value = 'Search'; }"  name="s" id="s" /></form></li><?php endif; ?>
 </ul>
 

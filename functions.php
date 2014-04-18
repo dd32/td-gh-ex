@@ -601,6 +601,7 @@ function adventure_customize($wp_customize) {
 
 	$wp_customize->add_section( 'header_section', array(
         'title'				=> __('Header', 'localize_adventure'),
+        'description'       => 'does this work? <a href="http://youtube.com/">YouTube</a>',
 		'priority'			=> 26, ));
 
 	$wp_customize->add_section( 'nav', array(
@@ -1202,6 +1203,10 @@ function adventure_theme_options_do_page() { ?>
                 <table>
                     <tbody>
                         <tr>
+                            <th>22</th>
+                            <td><?php _e('Quick update to help out mobile devices with social icons in the menu. Pintrest and few other social icons coming soon too.', 'localize_adventure'); ?></td>
+                        <tr>
+                        <tr>
                             <th>21</th>
                             <td><?php _e('Quick update to help out mobile devices with the CSS3 class background-size not working on them.', 'localize_adventure'); ?></td>
                         <tr>
@@ -1245,6 +1250,10 @@ function adventure_theme_options_do_page() { ?>
                             <th><?php _e('Version', 'localize_adventure'); ?></th>
                             <th></th>
                         </tr>
+                        <tr>
+                            <th>3.5</th>
+                            <td><?php _e('Quick update to help out mobile devices with social icons in the menu. Pintrest and few other social icons coming soon too.', 'localize_adventure'); ?></td>
+                        <tr>
                         <tr>
                             <th>3.4</th>
                             <td><?php _e('Quick update to help out mobile devices with the CSS3 class background-size not working on them.', 'localize_adventure'); ?></td>
