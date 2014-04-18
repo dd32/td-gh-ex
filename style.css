@@ -1,0 +1,373 @@
+/*
+Theme Name: Silver Quantum
+Theme URI: 
+Author: Benjamin Lu
+Author URI: http://benjlu.com
+Description: This Silver Quantum has an easy fixed top navigation so that when users scrolls down, the navigation stays in its place. 
+Version: 0.0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: silver, two-columns, right-sidebar
+Text Domain: silverquantum
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/* micro-clearfix by Niclas Gallagher */
+.cf:before, .cf:after {
+  content: "";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+/* Basic Structure
+-----------------------------------------------------------*/
+body {
+  background: #cccccc;	
+  font-family: calibri;
+  font-size: 12pt;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #0195c5;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #999999;
+}
+
+#height {
+  height: 60px;
+}
+
+#container {
+  background: #ffffff;
+  border: 2px solid #999999;
+  margin: 0 auto;
+  width: 960px
+}
+
+.site-header {
+  background: url(images/header.jpg);
+  height: 200px;
+}
+
+.site-title {
+  background: #fff;
+  font-size: 24pt;
+  height: auto;
+  margin: 20px 0 0 20px;
+  padding: 10px 10px 20px 10px;
+  position: absolute;
+  text-align: center;
+  width: auto;
+  z-index: 0;
+}
+
+.site-description {
+  background: #fff;
+  font-size: 12pt;
+  height: auto;
+  margin: 65px 0 0 20px;
+  padding: 0 10px 5px 10px;
+  position: absolute;
+  text-align: center;
+  width: auto;
+  z-index: 0;
+}
+
+.header-image {
+  max-width: 100%;
+  height: auto;
+}
+
+#main-content {
+  float: left;
+  margin: 10px 0 20px 10px;
+  width: 680px;
+}
+
+.entry-title {
+  border-bottom: 1px solid #cccccc;
+  font-size: 14pt;
+  margin-bottom: 0;
+}
+
+.entry-title a {
+  color: #0195c5;
+  text-decoration: none;
+}
+
+.entry-metadata {
+  margin: 0 0 0 0;
+}
+
+.entry-meta {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+#widget-area {
+  float: right;
+  margin: 10px 10px 20px 0;
+  width: 220px;
+}
+
+#widget-area ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.widget-title {
+  border-bottom: 1px solid #cccccc;
+  font-size: 14pt;
+}
+
+#wp-calendar {
+  width: 100%;
+}
+
+.alignleft {
+
+}
+
+.aligncenter {
+
+}
+
+.alignright {
+
+}
+
+.wp-caption {
+
+}
+
+.wp-caption-text {
+
+}
+
+.sticky {
+
+}
+
+.gallery-caption {
+
+}
+
+.bypostauthor {
+
+}
+
+.site-footer {
+  font-size: 11pt;
+  margin: 0 auto;
+  padding: 5px 0 30px 0;
+  text-align: center;
+  width: 960px;
+}
+
+/* Top Navigation Structure
+-----------------------------------------------------------*/
+#top-navigation {
+  background: #666666;
+  border-bottom: 1px solid #ffffff;
+  height: 31px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.top-menu {
+  color: #ffffff;
+  font-size: 12pt;
+  display: block;
+  height: 31px;
+  margin: 0 auto;
+  width: 960px;
+}
+
+.top-menu ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+.top-menu li {
+  float: left;
+  position: relative;
+}
+
+.top-menu a {
+  color: #ffffff;
+  display: block;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
+.top-menu ul ul {
+  display: none;
+  float: left;
+  left: -40px;
+  position: absolute;
+  top: 30px;
+  width: 100px;
+}
+
+.top-menu ul ul a {
+  background: #999999;
+  display: block;
+  height: auto;
+  line-height: 1em;
+  padding: 10px;
+  width: 250px;
+}
+
+.top-menu ul ul li {
+  width: auto;
+}
+
+.top-menu ul ul ul {
+  left: 230px;
+  top: 0;
+  width: 250px;
+}
+
+.top-menu li:hover > a, .top-menu ul ul :hover > a {
+  background: #000;	
+  color: #fff;
+  display: block;
+
+}
+
+.top-menu ul li:hover > ul {
+  display: block;	
+}
+
+.top-menu ul li.current_page_item > a,
+.top-menu ul li.current-menu-ancestor > a,
+.top-menu ul li.current-menu-item > a,
+.top-menu ul li.current-menu-parent > a {
+  background: #333;
+  color: #fff;	
+  cursor: default;
+}
+
+/* =Comments
+-------------------------------------------------------------- */
+.comment-list {
+  background: #cccccc;
+  list-style-type: none;
+  margin: 0 0 0 0;
+  padding: 20px 0 10px 20px;
+}
+
+.comment-list li {
+  list-style-type: none;
+}
+
+.comments-title {
+	margin-bottom: 40px;
+	font-size: 14pt;
+	line-height: 1;
+	font-weight: normal;
+}
+
+.comments-area article header {
+	margin: 0 0 10px;
+}
+.comments-area article header img {
+	float: left;
+	padding: 0;
+	line-height: 0;
+}
+.comments-area article header cite,
+.comments-area article header time {
+	margin-left: 55px;
+}
+.comments-area article header cite {
+	font-size: 50pt;
+}
+
+.comments-area article header time {
+	text-decoration: none;
+	font-size: 9pt;
+	color: #5e5e5e;
+}
+.comments-area article header a {
+	text-decoration: none;
+	color: #0195c5;
+}
+.comments-area article header a:hover {
+	color: #21759b;
+}
+.comments-area article header cite a {
+	color: #0195c5;
+}
+.comments-area article header cite a:hover {
+	text-decoration: none;
+}
+
+.avatar {
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+.reply {
+  margin-bottom: 20px;
+}
+
+
+/* Pagination
+---------------------------------------------------------*/
+.paginationBox {
+	clear: both;
+	display: block;
+	float: left;
+	margin: 1em 0 2em 0;
+}
+ul.pagination {
+	margin: 0px auto 0px auto;
+	padding: 0px 0px 10px 0px;
+	position: relative;
+	font-size: 10pt;
+	line-height: 1em;
+	list-style-type: none;
+	text-align: center;
+}
+.pagination li {
+	float: left;
+	vertical-align: middle;
+	background-color: #fff;
+	margin-right: 1px;
+}
+
+
+.pagination span,
+.pagination a {
+	float: left;
+	border: 1px #ededed solid;
+	padding: 3px 9px 4px 9px;
+	text-decoration: none;
+	width: auto;
+	color: #999;
+}
+.pagination a:hover,
+.pagination a:focus {
+	color: #fff;
+	background-color: #777;
+	border-color: #777;
+}
+.pagination .current{
+	padding: 3px 9px 4px 9px;
+	color: #fff;
+	background-color: #777;
+	border: 1px #777 solid;
+}
