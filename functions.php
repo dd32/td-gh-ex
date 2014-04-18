@@ -47,61 +47,32 @@ function silverquantum_widgets_init() {
 	));
 }
 add_action( 'widgets_init', 'silverquantum_widgets_init' );
-?>
 
-<?php 
+//Header Menu Section
 function register_my_menu() {
-	register_nav_menu('header-menu', __('Header Menu'));
+	register_nav_menu('header-menu', __('Header Menu', 'silverquantum'));
 }
 add_action('init','register_my_menu');
-?>
 
-<?php 
+
+// Scripts
+function silverquantum_scripts_styles() {
+	if (is_singular() && comments_open() && get_option( 'thread_comments' ))
+		wp_enqueue_script( 'comment-reply' );
+}
+add_action('wp_enqueue_scripts', 'silverquantum_scripts_styles');
+
 function silverquantum_content_nav() {  
-	// Sets how many pages to show (leave it alone)
-	$pages = '';
-	// Sets how many buttons you want to show in the pagination area
-	$range = 3;
-	$showitems = ($range * 2)+1;  
+global $wp_query;
 
-	global $paged;
-	if(empty($paged)) $paged = 1;
+$big = 999999999; // need an unlikely integer
 
-	if($pages == '')
-	{
-		global $wp_query;
-		$pages = $wp_query->max_num_pages;
-		if(!$pages)
-		{
-			$pages = 1;
-		}
-	}   
-
-	if(1 != $pages)
-	{
-		echo '<ul class="pagination">';
-		if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo '<li><a href="'.get_pagenum_link(1).'">&laquo;</a></li>';
-		if($paged > 1 && $showitems < $pages) echo '<li>' . previous_posts_link('&laquo; Previous Entries') . '</li>';
-
-		for ($i=1; $i <= $pages; $i++)
-		{
-			if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))
-			{
-				echo ($paged == $i)? '<li class="current">'.$i.'</li>':'<li><a href="'.get_pagenum_link($i).'" class="inactive" >'.$i.'</a></li>';
-			}
-		}
-
-		if ($paged < $pages && $showitems < $pages) echo '<li>' . next_posts_link('Next &raquo;','') . '</li>';  
-		if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo '<li><a href="'.get_pagenum_link($pages).'">&raquo;</a></li>';
-		echo '</ul>';
-	}
+echo paginate_links( array(
+	'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+	'format' => '?paged=%#%',
+	'current' => max( 1, get_query_var('paged') ),
+	'total' => $wp_query->max_num_pages
+) );
 }
 // END pagination
-?>
-
-<?php
-  function silverquantum_scripts_styles() {
-    if (is_singular() && comments_open() && get_option( 'thread_comments' ))
-		wp_enqueue_script( 'comment-reply' );
-  }
 ?>

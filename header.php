@@ -8,7 +8,7 @@
         <link href = "<?php bloginfo( 'pingback_url' ); ?>" rel = "pingback" />
         <?php wp_head(); ?>
     </head>
-<body <?php body_class($class); ?>>
+<body <?php body_class(); ?>>
 	<nav id = "top-navigation">
 		<div class = "top-menu">
 			<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
