@@ -4,6 +4,13 @@ function silverquantum_setup() {
 // Setup Content Width value based on the theme's design and stylesheet.
 if (!isset($content_width))
 	$content_width = 650;
+	
+//Header Menu Section
+function register_my_menu() {
+	register_nav_menu('header-menu', __('Header Menu', 'silverquantum'));
+}
+add_action('init','register_my_menu');
+
 
 load_theme_textdomain( 'silverquantum', get_template_directory() . '/languages' );
 
@@ -47,13 +54,6 @@ function silverquantum_widgets_init() {
 	));
 }
 add_action( 'widgets_init', 'silverquantum_widgets_init' );
-
-//Header Menu Section
-function register_my_menu() {
-	register_nav_menu('header-menu', __('Header Menu', 'silverquantum'));
-}
-add_action('init','register_my_menu');
-
 
 // Scripts
 function silverquantum_scripts_styles() {

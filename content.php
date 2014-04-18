@@ -30,7 +30,7 @@
 					<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'silverquantum' ), 'after' => '</div>' ) ); ?>
 				</div>
 			<?php endif; ?>
-			<small><?php the_tags(); ?></small>
+			<small>Posted under <?php the_category(','); ?> <?php the_tags(); ?></small>
 		<footer class = "entry-meta">
 			<?php if ( is_singular() && get_the_author_meta( 'description' ) && is_multi_author() ) : // If a user has filled out their description and this is a multi-author blog, show a bio on their entries. ?>
 				<div class="author-info">
