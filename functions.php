@@ -1,11 +1,9 @@
-<?php
+<?php 
+function silverquantum_setup() {
+
 // Setup Content Width value based on the theme's design and stylesheet.
 if (!isset($content_width))
 	$content_width = 650;
-?>
-
-<?php 
-function silverquantum_setup() {
 
 load_theme_textdomain( 'silverquantum', get_template_directory() . '/languages' );
 
@@ -14,9 +12,6 @@ add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'quote', 'st
 	
 // This theme styles the visual editor with editor-styles.css to mach the theme style.
 add_editor_style();
-
-// This theme uses wp_nav_menu() in one location.
-register_nav_menu( 'primary', __( 'Primary Menu', 'twentytwelve' ) );
 
 // Adds RSS feed links to <head> for post and comments.
 add_theme_support('automatic-feed-links');
@@ -52,6 +47,13 @@ function silverquantum_widgets_init() {
 	));
 }
 add_action( 'widgets_init', 'silverquantum_widgets_init' );
+?>
+
+<?php 
+function register_my_menu() {
+	register_nav_menu('header-menu', __('Header Menu'));
+}
+add_action('init','register_my_menu');
 ?>
 
 <?php 
@@ -97,3 +99,9 @@ function silverquantum_content_nav() {
 // END pagination
 ?>
 
+<?php
+  function silverquantum_scripts_styles() {
+    if (is_singular() && comments_open() && get_option( 'thread_comments' ))
+		wp_enqueue_script( 'comment-reply' );
+  }
+?>

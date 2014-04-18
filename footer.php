@@ -2,5 +2,6 @@
 		Theme By: <a href = "">Benjamin Lu</a><br />
 		<a href = "http://wordpress.org" target = "_blank">Proudly Powered By WordPess</a>
 	</footer>
+<?php wp_footer(); ?>
 </body>
 </html>	

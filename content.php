@@ -22,7 +22,7 @@
 			</small>
 			<?php if ( is_search()) : ?>
 				<div class = "entry-summary">
-					<?php the_exerpt(); ?>
+					<?php the_excerpt(); ?> 
 				</div>
 			<?php else : ?>
 				<div class = "entry-content">
