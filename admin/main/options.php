@@ -392,7 +392,6 @@ function setup_framework_options(){
 			array(
 				'title' => __('Select a Sidebar', 'redux-framework'), 
 				'subtitle' => __('Choose a sidebar to use with the page layout.', 'redux-framework'),
-				'desc' => __('span class="redux-title">Choose a sidebar to use with the page layout.', 'redux-framework'),
 				'id'=>'thinkup_general_sidebars',
 				'type' => 'select',
 				'data' => 'sidebars',
@@ -400,7 +399,7 @@ function setup_framework_options(){
 
 			array(
 				'title' => __('Enable Responsive Layout', 'redux-framework'), 
-				'desc' => __('Check to enable responsive layout.', 'redux-framework'),
+				'subtitle' => __('Check to enable responsive layout.', 'redux-framework'),
 				'id'=>'thinkup_general_responsiveswitch',
 				'type' => 'switch',
 				'default' => '0',// 1 = on | 0 = off
@@ -509,52 +508,52 @@ function setup_framework_options(){
 				'desc' => __( '<span class="redux-title">Homepage Slider</span>', 'redux-framework')
 				),
 
-                        array(
-                                'title' => __('Enable Homepage Slider', 'redux-framework'), 
+			array(
+				'title' => __('Enable Homepage Slider', 'redux-framework'), 
 				'subtitle' => __('Switch on to enable home page slider.', 'redux-framework'),
-                                'id'=>'thinkup_homepage_sliderswitch',
-                                'type' => 'button_set',
-                                'options' => array(
+				'id'=>'thinkup_homepage_sliderswitch',
+				'type' => 'button_set',
+				'options' => array(
 					'option1' => 'ThinkUpSlider',
 					'option2' => 'Custom Slider',
 					'option3' => 'Disable'
-					),//Must provide key => value pairs for radio options
-                                'default' => 'option1'
-                                ),
+				),//Must provide key => value pairs for radio options
+				'default' => 'option1'
+				),
 
 			array(
+				'id'=>'thinkup_homepage_slidername',
 				'title' => __('Homepage Slider Shortcode', 'redux-framework'), 
 				'subtitle' => __('Input the shortcode of the slider you want to display. I.e. [shortcode_name].', 'redux-framework'),
-				'id'=>'thinkup_homepage_slidername',
 				'type' => 'text',
 				'validate' => 'html', //see http://codex.wordpress.org/Function_Reference/wp_kses_post
 				),
 
-                        array(
-                                'title' => __('Built-In Slider', 'redux-framework'),
-                                'subtitle'=> __('Unlimited slides with drag and drop sortings.', 'redux-framework'),
-                                'id'=>'thinkup_homepage_sliderpreset',
-                                'type' => 'slides',
-                        ),
+			array(
+				'id'=>'thinkup_homepage_sliderpreset',
+				'title' => __('Built-In Slider', 'redux-framework'),
+				'subtitle'=> __('Unlimited slides with drag and drop sortings.', 'redux-framework'),
+				'type' => 'slides',
+				),
 
 			array(
-                                'title' => __('Enable Full-Width Slider', 'redux-framework'),
-				'subtitle' => __('Switch on to enable full-width slider.', 'redux-framework'),
 				'id'=>'thinkup_homepage_sliderpresetwidth',
+				'title' => __('Enable Full-Width Slider', 'redux-framework'),
+				'subtitle' => __('Switch on to enable full-width slider.', 'redux-framework'),
 				'type' => 'switch',
 				'default' => '1'// 1 = on | 0 = off
 				),
 
-                        array(
-                                'id'=>'thinkup_homepage_sliderpresetheight',
-                                'type' => 'slider', 
-                                'title' => __('Slider Height (Max)', 'redux-framework'),
-                                'subtitle'=> __('Specify the maximum slider height (px).', 'redux-framework'),
-                                "default"             => "350",
-                                "min"                 => "200",
-                                "step"                => "5",
-                                "max"                 => "500",
-                                ),
+			array(
+				'id'=>'thinkup_homepage_sliderpresetheight',
+				'type' => 'slider', 
+				'title' => __('Slider Height (Max)', 'redux-framework'),
+				'subtitle'=> __('Specify the maximum slider height (px).', 'redux-framework'),
+				"default" => "350",
+				"min"     => "200",
+				"step"    => "5",
+				"max"     => "800",
+				),
 
 			array(
 				'id'=>'info_page_structure',

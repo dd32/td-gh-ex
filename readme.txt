@@ -95,6 +95,10 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.5.2
+- Fixed:   Icons now display on tabs in theme options panelOffer updated to 10% off with value $31.
+- Updated: Changes to "Enable Responsive Layout" description on theme options panel.
+
 Version 1.5.1
 - Updated: Offer updated to 10% off with value $31.
 
