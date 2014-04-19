@@ -1,7 +1,7 @@
 /*
 Theme Name: Asteria Lite
 Description: Asteria Lite is a clean responsive theme with a beautiful slider, Narrow and Wide Layout Option, 10 Social Icons and 3 page templates - Full width page, Left sidebar page and a Blog page Template. The theme also allows you to design your site logo with 600+ fonts. The Theme also has a Maintenance Mode feature, Beautiful Gallery feature, Custom CSS feature, Import/Export feature and is fully compatible with Woocommerce and Contact Form 7 Plugin. It also comes with Ajax pagination feature which means you can navigate through posts without page refresh. The theme is SEO Friendly and has plenty of user-friendly options. The theme is translation ready and fully translated into French, Italian, German, Spanish, and Chinese. Asteria Lite is suitable for any types of website - corporate, portfolio, business, blog. Get Free Support without registration on http://www.towfiqi.com/forums/forum/asteria-lite
-Version: 0.7
+Version: 0.8
 Theme URI: http://www.towfiqi.com/asteria-lite-free-wordpress-theme.html
 Author: Towfiq I.
 Author URI: http://www.towfiqi.com/
@@ -71,7 +71,14 @@ body .header4 .bigmenu ul li:hover{ background:none!important;}
 
 
 /*Top Menu*/
+
+/*Mobile Menu*/
+#simple-menu{display: block;float: right;background:rgba(0, 0, 0, 0.5);padding: 15px 20px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;margin-top: 1.5%;}
 #simple-menu{ display:none;}
+.pad_menutitle{padding: 5%;width: 90%;background: #2dcb73;}
+.pad_menutitle span{display: inline-block;float: right; cursor:pointer;}
+
+
 #topmenu{ float:right; margin-top:40px;}
 #topmenu ul{ margin:0; padding:0;}
 #topmenu ul li{ list-style-type:none; display:inline-block; margin-left:25px;padding-bottom: 28px;position: relative;}
@@ -120,7 +127,7 @@ body .header4 .bigmenu ul li:hover{ background:none!important;}
 .nivo-box img { display:block; }
 
 /* Caption styles */
-.nivo-caption {position:absolute;bottom:30px ;color:#fff;opacity:1;width:412px;z-index:8;text-shadow: 0 0 1px rgba(0,0,0,.05), 0 1px 2px rgba(0,0,0,.5);}
+.nivo-caption {position:absolute;bottom:30px; right:11%;color:#fff;opacity:1;width:412px;z-index:8;text-shadow: 0 0 1px rgba(0,0,0,.05), 0 1px 2px rgba(0,0,0,.5);}
 .nivo-caption h3{ margin:0px; width:100%; float:left;}
 .nivo-caption h3 a{margin-bottom:5px; display:block; float:left; color:#fff!important;}
 
@@ -550,9 +557,35 @@ h3#comments_ping{color:#333333; font-size:20px;}
 .under-construction-inner #countdown_mntnc li{ color:#333;}
 .under-construction-inner #countdown_mntnc li:last-child{ margin-right:0!important; width:21%;}
 
-/*For Asteria Gallery*/
+/*Gallery*/
 .ast_full{ display:block; position:absolute; width:27px; height:26px; opacity:0.4; background:url(images/full_mode.png) no-repeat; right:15px; top:15px; border:none;-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;transition:all 0.2s ease-out;}
 .ast_full:hover{opacity:1;}
+.gallery{ margin:20px auto!important; width:100%;}
+body .gallery-item{text-align: center;width: 50px!important; height:45px;display: inline-block;margin: 10px 5px; float:none!important;}
+.ast_gall{ position:relative;width:100%; text-align:center; max-width:1000px; margin:0 auto; overflow:hidden;}
+.ast_cap{position: absolute;background-color: rgba(0, 0, 0, 0.6);color:#fff;padding: 10px 5%;bottom: 0;width:90%; left:0;}
+
+.gall_dash{width: 100%;text-align: center; background:rgba(0, 0, 0, 0.04); max-width:1000px; margin:0 auto;}
+.gall_dash img{opacity:0.6; border:none!important;}
+.gall_dash img:hover, .gall_dash .gall_active{opacity:1;}
+
+.ast_full{ position:absolute; width:27px; height:26px; opacity:0.4; background:url(images/full_mode.png) no-repeat; right:15px; top:15px; border:none;-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;transition:all 0.2s ease-out;}
+.ast_full:hover{opacity:1;}
+
+.gallery_full{ vertical-align: bottom;}
+#mainImage0, .fancygall0{display:block;}
+body .gallery_full{margin: 0 auto;border: none!important;}
+.gall_loader{top: 20%; border:none!important; position:absolute;}
+
+a.ast_gall_next:first-child{ display:block;}
+body .ast_gall_prev, body .ast_gall_next{ position:absolute; z-index:9999999; margin:10px; top:40%; color:#fff; font-size:30px; opacity:0.4; cursor:pointer;}
+.ast_gall_prev{left:10px;}
+.ast_gall_next{ right:10px;}
+a.ast_gall_next:first-child{ display:block;}
+.ast_gall_prev:hover, .ast_gall_next:hover{ opacity:0.8;}
+
+div.gib {position: absolute;width: 100%;float: none;}
+p.capcap {position: absolute;bottom: 0px;background: rgba(0, 0, 0, 0.8);color: #fff;width: 100%;margin: 0;padding: 10px 0;}
 
 @media screen and (max-width: 1200px){
 body .header5 .center{width:100%!important;}
@@ -572,9 +605,7 @@ body #content .center{ width:100%; margin: 0 auto;}
 .header3 .head_soc{width: 100%;text-align: center;}
 .header4{ height:auto!important;}
 #topmenu{display: none;}
-#simple-menu{display: block;float: right;background:rgba(0, 0, 0, 0.5);padding: 15px 20px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;margin-top: 1.5%;}
-.pad_menutitle{padding: 5%;width: 90%;background: #2dcb73;}
-.pad_menutitle span{display: inline-block;float: right; cursor:pointer;}
+#simple-menu{display: block;}
 
 body .slide_wrap, body #zn_nivo{ max-height:350px!important; overflow:hidden;}
 body .slide_wrap h3, body #zn_nivo h3{ font-size:30px!important;}
@@ -587,7 +618,7 @@ body .slide_wrap h3, body #zn_nivo h3{ font-size:30px!important;}
 .sidr.left{left:-260px;right:auto}
 .sidr ul{display:block;margin:0 0 15px;padding:0;border-top:1px solid #1a1a1a;border-bottom:1px solid #4d4d4d}
 .sidr ul li{display:block;margin:0;line-height:48px;border-top:1px solid #4d4d4d;border-bottom:1px solid #1a1a1a}
-.sidr ul li a,.sidr ul li span{padding:0 15px;display:block;text-decoration:none;color:#fff}
+.sidr ul li a,.sidr ul li span{padding:0 15px;text-decoration:none;color:#fff}
 .sidr ul li ul{border-bottom:none;margin:0}.sidr ul li ul li{line-height:40px;font-size:13px}
 .sidr ul li ul li:last-child{border-bottom:none}
 .sidr ul li ul li a,.sidr ul li ul li span{color:rgba(255,255,255,0.8);padding-left:30px}
@@ -611,7 +642,7 @@ body .slide_wrap, body #zn_nivo, body .slider-wrapper{ height:auto!important;}
 .midrow_block:hover h3{ color:#333;}
 .midrow_block:hover .icon_wrap i{ color:#f0f0f0;}
 .midrow_block:hover .block_img{ background:none; border:5px solid #f0f0f0;}
-.midrow_block{width:96%;}
+.midrow_block{width:96%!important;}
 
 /*Call to Action*/
 .home_action_right{height:auto!important; float:none;width:60%; margin:0 auto;}

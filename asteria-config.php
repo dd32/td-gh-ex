@@ -433,12 +433,6 @@ function setup_framework_options(){
 				'default' => 'Lorem ipsum dolor sit amet, consectetur  dol adipiscing elit. Nam nec rhoncus risus. In ultrices lacinia ipsum, posuere faucibus velit bibe.',
 				),
 
-				
-			array(
-				'id'=>'block1_dvd',
-				'type' => 'divide'
-				),
-				
 			array(
 				'id'=>'block2_text_id',
 				'type' => 'text',
@@ -463,11 +457,10 @@ function setup_framework_options(){
 			array(
 				'id'=>'block2_textarea_id',
 				'type' => 'editor',
-				'title' => __('Block 1 Content', 'asteria'), 
+				'title' => __('Block 2 Content', 'asteria'), 
 				'default' => 'Lorem ipsum dolor sit amet, consectetur  dol adipiscing elit. Nam nec rhoncus risus. In ultrices lacinia ipsum, posuere faucibus velit bibe.',
 				),
 
-				
 			array(
 				'id'=>'block3_text_id',
 				'type' => 'text',
@@ -497,6 +490,7 @@ function setup_framework_options(){
 				),
 
 
+				
 			array(
 				'id'=>'block4_text_id',
 				'type' => 'text',
@@ -560,7 +554,7 @@ function setup_framework_options(){
 			array(
 				'id'=>'enable_cat',
 				'type' => 'switch', 
-				'title' => __('Display posts from a Category', 'asteria'),
+				'title' => __('Display posts from selected Categories', 'asteria'),
 				"default" 		=> 0,
 				),
 				
@@ -569,7 +563,7 @@ function setup_framework_options(){
 				'type' => 'select',
 				'data' => 'categories',
 				'multi' => true,
-				'title' => __('Category Name', 'asteria'), 
+				'title' => __('Category Names', 'asteria'), 
 				),	
 			
 			array(
@@ -646,25 +640,13 @@ function setup_framework_options(){
 				'title' => __('Slider Height ', 'asteria'),
 				'default' => '500px',
 				),
+
+				
 			array(
 				'id'=>'slidefont_size_id',
-				'type' => 'typography',
-				'title' => __('Slide Font Style', 'asteria'),
-				'google'=>false,
-				'subsets' => false,
-				'font-weight' => false,
-				'font-style' => false,
-				'font-backup' => false,
-				'color' => false,
-				'preview' => false,
-				'line-height' => false,
-				'word-spacing' => false,
-				'letter-spacing' => false,
-				'font-size'=>true,
-				'font-family'=>false,
-				'default' => array(
-					'font-size'=>'60px',
-					),
+				'type' => 'text',
+				'title' => __('Slide Font Size', 'asteria'),
+				'default' => '60px'
 				),
 		
 			array(

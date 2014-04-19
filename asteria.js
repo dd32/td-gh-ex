@@ -53,10 +53,10 @@ jQuery(window).ready(function() {
 	if (jQuery(window).width() > 768) {
 	jQuery('#topmenu ul > li').hoverIntent(function(){
 	jQuery(this).find('.sub-menu:first, ul.children:first').slideDown({ duration: 200});
-		jQuery(this).find('a').not('.sub-menu a').stop().animate({"color":primarycolor}, 200);
+		jQuery(this).find('a').not('.sub-menu a, ul.children a').stop().animate({"color":primarycolor}, 200);
 	}, function(){
 	jQuery(this).find('.sub-menu:first, ul.children:first').slideUp({ duration: 200});	
-		jQuery(this).find('a').not('.sub-menu a').stop().animate({"color":menutext}, 200);
+		jQuery(this).find('a').not('.sub-menu a, ul.children a').stop().animate({"color":menutext}, 200);
 	
 	});
 
@@ -203,6 +203,15 @@ if (jQuery(window).width() < 480) {
 	jQuery(".nivo-control").text('')
 }
 
+//FIX HEADER4 MENU DISAPPREAING ISSUE(version 1.8)
+var breakpoint = jQuery('#topmenu').position();
+if (jQuery(window).width() < 900) {
+	if(breakpoint.top >10){
+		jQuery('#topmenu').css({"display":"none"});
+		jQuery('#simple-menu').css({"display":"block"});
+	}
+}
+
 //slider porgressbar loader
 jQuery(function () {
     var n = 0,
@@ -221,7 +230,7 @@ jQuery(function () {
     
 });
 jQuery('.slider-wrapper').waitForImages(function() {
-	jQuery("#zn_nivo, #slide_acord, .nivoinner").fadeIn('slow');
+	jQuery("#zn_nivo, .nivo-controlNav, #slide_acord, .nivoinner").css({"display":"block"});
     jQuery(".pbar_wrap").fadeOut();
 });
 jQuery(window).load(function(){

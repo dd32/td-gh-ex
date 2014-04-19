@@ -1,7 +1,8 @@
 <?php global $asteria;?>
 <?php if(($asteria['slider_type_id'] == "nivo") || !get_option( 'asteria' ) ){ ?>
 <script type="text/javascript">
-    jQuery(window).load(function() {
+    jQuery(window).ready(function() {
+
 		// nivoslider init
 		jQuery('#zn_nivo').nivoSlider({
 				effect: 'random',
@@ -14,6 +15,7 @@
 				controlNav:true,
 				controlNavThumbs:false,
 				keyboardNav:true,
+				manualAdvance: false,
 				pauseOnHover:true,
 				captionOpacity:0.8,
 				afterLoad: function(){
@@ -41,6 +43,7 @@
 							}
 				}
 			});
+
 	});
 </script>
 <?php } ?>
@@ -51,15 +54,15 @@
 <?php if(($asteria['site_width_id'] == "1") || (!get_option( 'asteria' )) ) {?>
 jQuery('#sidebar .widgets .widget li').prepend('<i class="fa-angle-double-right"></i> ');
 <?php } ?>
+
 //Header4 Fix
 jQuery(window).bind("load", function() {
-	
 var headheight = (jQuery(".logo").outerHeight());
 var logowidth = (jQuery(".logo").outerWidth());
 var menuwidth = (jQuery("#topmenu").outerWidth());
 if (logowidth + menuwidth <1100 ){
 //var headheight = (jQuery(".header4").outerHeight());
-jQuery(".header4").height(headheight)
+
 jQuery(".header4 #topmenu").css({"minHeight":headheight});
 jQuery(".header4 #topmenu ul li ul, .header4 .head_soc").css({"top": headheight + 'px'});
 jQuery(".header4 #topmenu ul li").css({"paddingTop": "0px", "paddingBottom": "0px","height":headheight - 3 + 'px', "line-height" :headheight - 3 + 'px'});

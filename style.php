@@ -77,7 +77,7 @@ body .fixed_site .header3 .center{width:100%!important;}
 .logo h1 a, .logo h2 a, .ast_maintanace .logo h1 a{font-family:'<?php echo $logofont['font-family']; ?>'!important;color:<?php echo $logofont['color']; ?>; font-weight:<?php echo $logofont['font-weight']; ?>!important;}
 
 .nivo-caption h3, #accordion h3, .banner .sld_layout2 h3, .banner .sld_layout3 h3{font-family:'<?php echo $logofont['font-family']; ?>'!important;}
-.sld_layout2 h3, .sld_layout3 h3, .acc-sld_layout2 h3, .acc-sld_layout3 h3, .wrap-sld_layout2 h3, .wrap-sld_layout3 h3{font-size:<?php $slidefont = $asteria['slidefont_size_id']; echo $slidefont['font-size']; ?>!important;}
+.sld_layout2 h3, .sld_layout3 h3, .acc-sld_layout2 h3, .acc-sld_layout3 h3, .wrap-sld_layout2 h3, .wrap-sld_layout3 h3{font-size:<?php echo $asteria['slidefont_size_id']; ?>!important; line-height:1.3em;}
 
 
 
@@ -183,17 +183,8 @@ body .fixed_site{ width:95%!important; margin: 0 auto;}
 .text_block{ background-color:<?php echo $asteria['welcome_color_id']; ?>!important;}
 <?php if(($asteria['post_gallery_id'] == "1")) {?>
 /*Gallery*/
-.gallery-caption{ display:none;}
 .gallery{ float:left; margin:20px auto!important; width:100%;}
 body .gallery-item{text-align: center;width: 50px!important; height:45px;display: inline-block;margin: 10px 5px; float:none!important;}
-.ast_gall{ position:relative;width:100%; min-height:300px; text-align:left; overflow:hidden; max-width:1000px; margin:0 auto;}
-.ast_cap{position: absolute;background-color: rgba(0, 0, 0, 0.6);color:#fff;padding: 15px;bottom: 0;width:100%;}
-body #mainImage{margin: 0 auto;display: block;border: none!important;}
-.gall_dash{width: 100%;text-align: center; background:#f1f2f3; max-width:1000px; margin:0 auto;}
-.gall_dash img{opacity:0.6; border:none!important;}
-.gall_dash img:hover, .gall_dash .gall_active{opacity:1;}
 
-.ast_full{ display:block; position:absolute; width:27px; height:26px; opacity:0.4; background:url(images/full_mode.png) no-repeat; right:15px; top:15px; border:none;-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;transition:all 0.2s ease-out;}
-.ast_full:hover{opacity:1;}
 <?php } ?>
 </style>

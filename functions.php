@@ -44,7 +44,7 @@ add_filter( 'wp_title', 'asteria_wp_title', 10, 2 );
 //Load Other CSS files
 function asteria_other_css() { 
 if ( !is_admin() ) {
-wp_enqueue_style( 'asteria-style', get_template_directory_uri().'/style.css');
+wp_enqueue_style( 'asteria-style', get_stylesheet_uri());
 global $asteria; if ( ! empty ( $asteria['post_lightbox_id'] ) ) {wp_enqueue_style('fancybox',get_template_directory_uri().'/css/fancybox.css'); }
 wp_enqueue_style('customfont',get_template_directory_uri().'/fonts/yanone_kaffeesatz.css', 'yanone_kaffeesatz' ); 
 wp_enqueue_style('customfont2',get_template_directory_uri().'/fonts/opensans-light.css', 'open_sans' );
