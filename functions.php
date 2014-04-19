@@ -1,4 +1,4 @@
-<?php 
+<?php
 function silverquantum_setup() {
 
 // Setup Content Width value based on the theme's design and stylesheet.
@@ -30,14 +30,10 @@ add_theme_support('custom-background', array(
 
 }
 add_action('after_setup_theme', 'silverquantum_setup');
-?>
 
-<?php 
 // Add Support for Custom Header Image.
 require(get_template_directory() . '/include/custom-header.php');
-?>
 
-<?php 
 function silverquantum_widgets_init() {
 	register_sidebar( array (
 		'name' 				=> __('Main Sidebar', 'silverquantum'),
