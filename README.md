@@ -8,3 +8,4 @@ are licensed under GPLv2
 4. This theme uses { Flexslider } which is licensed under GPLv2
 5. This theme uses { Elusive Icons Webfont } which is licensed under GPL-compatible SIL Open Font License
 6. All images used in this theme is licensed under GPLv2 or later
+7. This theme uses { SlickNav } which is licensed under GPL compatible MIT License

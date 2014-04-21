@@ -70,7 +70,6 @@ global $urvr;
 
 				<div class="span9">
 					<nav id="site-navigation" class="main-navigation" role="navigation">
-						<h1 class="menu-toggle"><?php _e( 'Menu', TEXTDOMAIN ); ?></h1>
 						<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', TEXTDOMAIN ); ?></a>
 						<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 					</nav><!-- #site-navigation -->

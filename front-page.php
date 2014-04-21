@@ -96,6 +96,7 @@
 									<div class="feature-wrap">
 
 									<div class="span6" id="whyus">
+
 										<div class="feature2">
 											<?php echo isset( $urvr['features'] ) ? $urvr['features'] : '' ?>
 										</div>

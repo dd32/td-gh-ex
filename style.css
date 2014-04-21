@@ -3,18 +3,18 @@ Theme Name: Abaris
 Theme URI: http://demo.webulous.in/abaris/
 Author: N. Venkat Raj
 Author URI: http://www.webulous.in/
-Description: A Multi purpose, responsive theme
-Version: 1.0.4
+Description: Abaris is a multi purpose, responsive theme with beautiful design and cool CSS3 animations. It uses HTML5, CSS3, Bootstrap Grid system and coded with love and care. It's best suited for corporate/portfolio/blog sites. It has advanced theme options panel support to customize various parts of site, footer widget area to accommodate 4 widgets. Check the demo at http://demo.webulous.in/abaris/
+Version: 1.0.5
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: urvr
 Domain Path: /languages/
-Tags: fixed-layout, responsive-layout, custom-background, custom-header
+Tags:  black, orange, custom-background, custom-header, custom-menu, dark, featured-images, fixed-layout, fluid-layout, left-sidebar, post-formats, responsive-layout, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, two-columns
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
- URVR is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
+Abaris is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
 
 Resetting and rebuilding styles have been helped along thanks to the fine work of
 Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
@@ -408,19 +408,17 @@ a:active {
 
 
 /* Small menu */
-.menu-toggle {
-	display: none;	
-	cursor: pointer;
+.slicknav_menu {
+	display:none;
 }
 
 @media screen and (max-width: 600px) {
-	.menu-toggle,
-	.main-navigation.toggled .nav-menu {
-		display: block;
+	.main-navigation > div {
+		display: none;
 	}
 
-	.main-navigation ul {
-		display: none;
+	.slicknav_menu {
+		display: block;
 	}
 }
 
@@ -739,7 +737,7 @@ h1.entry-title a:hover {
 	position: relative;
 }
 
-ul.main-navigation li:hover {
+.main-navigation ul li:hover {
 	z-index: 1;
 }
 
@@ -773,7 +771,7 @@ ul.main-navigation li:hover {
 	margin-top: 18px;
 }
 
-ul.nav-menu li a {
+.main-navigation ul li a {
 	color: #fff;
 	display: block;
 	padding: 5px 20px;	
@@ -781,37 +779,41 @@ ul.nav-menu li a {
 	vertical-align: middle;
 }
 
-ul.nav-menu > li > a {
+.main-navigation div > ul > li > a {
 	-webkit-border-radius:	3px;
 	-moz-border-radius:		3px;
 	border-radius:			3px;
 }
 
-ul.nav-menu > li > a:hover,
-ul.nav-menu > li.current_page_item > a,
-ul.nav-menu > li.current_page_ancestor > a {
+.main-navigation div > ul > li > a:hover,
+.main-navigation div > ul > li.current_page_item > a,
+.main-navigation div > ul > li.current_page_ancestor > a,
+.slicknav_nav div > ul > li.current_page_item a,
+.slicknav_nav div > ul > li.current_page_ancestor > a,
+.slicknav_nav ul.children li.current_page_item > a,
+.main-navigation ul.children li.current_page_item > a {
 	background: #ff4200;	
 	-webkit-border-radius:	3px;
 	-moz-border-radius:		3px;
 	border-radius:			3px;
 }
 
-ul.nav-menu > li.current_page_ancestor li.current_page_item > a {
+.main-navigation div > ul > li.current_page_ancestor li.current_page_item > a {
 	background: #ff4200;
 }
 
-ul.nav-menu > li {
+.main-navigation div > ul > li {
 	float: left;
 	margin: 0 2px;	
 	padding-bottom: 26px;
 }
 
-ul.nav-menu ul li {
+.main-navigation ul ul li {
 	margin: 0;
 	float: none;	
 }
 
-ul.nav-menu ul li a {
+.main-navigation ul ul li a {
 	color:#fff;
 	width: 150%;	
 	padding: 12px;	
@@ -820,30 +822,35 @@ ul.nav-menu ul li a {
 	border-bottom: 1px solid #181c20;
 }
 
-ul.nav-menu li:hover > a {
+.main-navigation div > ul > li:hover > a {
 	color: #fff;
 	text-decoration: none;
 }
 
-ul.nav-menu ul li:hover > a {
+.main-navigation ul ul li:hover > a {
 	color: #fff;
 	background-color: #ff4200;	
 }
 
-ul.nav-menu ul li:first-child > a {
+.main-navigation ul ul li:first-child > a {
 	border-top: 1px solid #585858;
 }
 
-ul.nav-menu ul ul li {
+.main-navigation ul ul ul li {
 	margin: 0;
 }
 
-ul.nav-menu > li > a {
+.main-navigation div > ul > li > a {
 	padding: 5px 15px;
 }
 
-ul.nav-menu ul.children li.current_page_item > a {
+.main-navigation ul ul.children li.current_page_item > a {
 	background-color: #ff4200;
+}
+
+.main-navigation a:focus,
+.slicknav_nav a:focus {
+	color: #fff;
 }
 
 /* Navigation Styles Ends
@@ -852,7 +859,8 @@ ul.nav-menu ul.children li.current_page_item > a {
 .btn-submit input, 
 .form-submit input#submit,
 .wpcf7-submit,
-.post-password-form input[type="submit"] {
+.post-password-form input[type="submit"],
+.mc4wp-form input[type="submit"] {
 	border: 0;
 	color: #1f2329;	
 	padding: 5px 12px;	
@@ -869,7 +877,8 @@ ul.nav-menu ul.children li.current_page_item > a {
 a.btn-more:hover, 
 .form-submit input#submit:hover,
 .wpcf7-submit:hover,
-.post-password-form input[type="submit"]:hover {
+.post-password-form input[type="submit"]:hover,
+.mc4wp-form input[type="submit"]:hover {
 	color: #fff;	
 	background: #ff4200;
 	border-color: #9b2901;
@@ -2184,6 +2193,18 @@ blockquote p {
 
 /* Home Page Features Styles Starts 
 --------------------------------------- */
+#service1, 
+#service2, 
+#service3,
+.feature2 li,
+.skill-container,
+.flex-recent-posts .slides li:nth-of-type(1),
+.flex-recent-posts .slides li:nth-of-type(2),
+.flex-recent-posts .slides li:nth-of-type(3),
+.flex-recent-posts .slides li:nth-of-type(4) {
+	visibility: hidden;
+}
+
 .services {
 	padding: 40px 0;
 	text-align: center;	
@@ -2680,6 +2701,15 @@ h2 i {
 		width: 100%;
 		text-align: left;
 		padding: 10px 0;
+	}
+
+	.entry-meta span.read-more-link span, 
+	.entry-meta span.edit-link span,
+	.entry-meta span.byline span, 
+	.entry-meta span.comments-link span,
+	.entry-meta span.posted-on span {
+		border-bottom: 0;
+		padding-bottom: 0;
 	}
 
 	.widget-area .search-form input.search-field {
