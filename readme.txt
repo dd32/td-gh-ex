@@ -1,7 +1,7 @@
 ----------------------------------
 NewsPress Lite
 ----------------------------------
-Version: 	1.0
+Version: 	1.1
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
@@ -21,6 +21,10 @@ This Product is provided "as is" with no waranty or liabilities of D5 Creation. 
 3. jQuery Fraction Slider, License: MIT, Author: Mario Jäckle, Source: http://fractionslider.jacksbox.de
 
 4. Genericons Fonts, License: GPL, Author: AUTOMATTIC, Source: http://genericons.com/
+
+
+
+NB: No Sub Menus will be shown in the Top Menu
 
 
 

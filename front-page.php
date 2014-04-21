@@ -19,7 +19,7 @@
     'orderby'         => 'post_date',
     'order'           => 'DESC',
     'post_status'     => 'publish',
-	'caller_get_posts'=> 1,
+	'ignore_sticky_posts'=> 1,
 	'posts_per_page'  => 9,
 	'suppress_filters' => true );
  
@@ -37,8 +37,8 @@
  <?php endif; ?>
 			<div class="slide" >
             
-				<?php if ( has_post_thumbnail() ): $newspress_thumburl = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'single-page'); endif; ?>
-				<img class="slide-full" src="<?php echo $newspress_thumburl['0']; ?>" data-position="0,0" data-in="fade" data-step="0" data-out="fade"/>
+				<?php if ( has_post_thumbnail() ):  $newspress_thumburl = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'single-page'); endif; ?>
+				<img class="slide-full" src="<?php if (!empty($newspress_thumburl)): echo $newspress_thumburl['0']; endif; ?>" data-position="0,0" data-in="fade" data-step="0" data-out="fade"/>
  				<div class="slide-des" data-position="200,20" data-in="right" data-step="1" data-out="fade" >
 					<?php $newspress_excerptlength='20'; the_excerpt(); ?>
                 </div>
