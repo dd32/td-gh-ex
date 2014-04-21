@@ -1,5 +1,5 @@
-/*
- * Customizr v3.1.10
+/*!
+ * Customizr v3.1.11
  *
  * Licensed under the GNU General Public License v2 or later
  * http://www.gnu.org/licenses/gpl-2.0.html
@@ -6677,6 +6677,12 @@ footer#footer .colophon .social-block a {
   bottom: 40px;
   right: 50px;
 }
+/* If automatic centering is enabled */
+
+.carousel > .center-slides-enabled > .item > .carousel-image img {
+  display: block;
+  position: relative;
+}
 /* FEATURED PAGES
     -------------------------------------------------- */
 
@@ -6833,7 +6839,7 @@ article.hover .round-div {
 }
 h1.entry-title,
 h2.entry-title {
-  max-width: 100%;
+  width: 100%;
 }
 h1 a:hover,
 h2 a:hover {

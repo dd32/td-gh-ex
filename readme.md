@@ -33,6 +33,19 @@ The exceptions to this license are as follows:
 
 
 # Changelog
+= 3.1.11 =
+* added : (php , css) customizer : new option in the Skin Settings, enable/disable the minified version of skin
+* added : (php) customizer : new option in the Responsive Settings, enable/disable the automatic centering of slides
+* added : (js, php) automatic centering of the slider's slides on any devices. Thanks to <a href="http://www.themesandco.com/author/eri_trabiccolo/">Rocco</a>.
+* improved : (css) skins have been minified to speed up load time (~ saved 80Ko)
+* improved : (php) logo and favicon are now saved as relative path => avoid server change issues.
+* improved : (php) better class loading. Check the context and loads only the necessary classes.
+* improved : (php) customizer map has been moved into the class-fire-utils.php
+* improved : (php) performance improvement for options. Default options are now generated once from the customizer map and saved into database as default_options
+* improved : (js) block repositioning is only triggered on load for responsive devices
+* updated : (translation) Slovak translation has been updated. Thanks to <a href="www.pcipservis.eu">Michal Hranicky</a>.
+
+
 = 3.1.10 =
 * fixed : (php : TC_init::tc_plugins_compatibility() , custom-page.php) WooCommerce compatibility issue fixed.
 * added : (TC_customize::tc_customize_register() , TC_resources::tc_enqueue_customizr_scripts() , tc_script.js ) New option in customizer : Enable/Disable block reordering for smartphone viewport.

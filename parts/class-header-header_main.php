@@ -80,9 +80,20 @@ class TC_header_main {
       * @since Customizr 3.0 
      */
       function tc_favicon_display() {
-      	
+       	$saved_path 			= esc_url ( tc__f( '__get_option' , 'tc_fav_upload') );
+       	if ( !$saved_path || is_null($saved_path) )
+       		return;
 
-        $url = esc_url( tc__f( '__get_option' , 'tc_fav_upload' ) );
+       	//rebuild the path : check if the full path is already saved in DB. If not, then rebuild it.
+       	$upload_dir 			= wp_upload_dir();
+       	
+       	if ( false !== strpos( $saved_path , '/wp-content/' ) ) {
+       		$url    			= $saved_path ;
+       	} else {
+       		$url 				= $upload_dir['baseurl'] . $saved_path;
+       	}
+       	$url    				= apply_filters( 'tc_fav_src' , $url );
+
         if( $url != null)   {
           $type = "image/x-icon";
           if(strpos( $url, '.png' )) $type = "image/png";
@@ -106,9 +117,16 @@ class TC_header_main {
 	 * @since Customizr 3.0
 	 */
 	function tc_logo_title_display() {
-		
-		//declare useful vars
-       	$logo_src    			= apply_filters( 'tc_logo_src' , esc_url ( tc__f( '__get_option' , 'tc_logo_upload') ) ) ;
+       	//rebuild the logo path : check if the full path is already saved in DB. If not, then rebuild it.
+       	$upload_dir 			= wp_upload_dir();
+       	$saved_path 			= esc_url ( tc__f( '__get_option' , 'tc_logo_upload') );
+       	if ( false !== strpos( $saved_path , '/wp-content/' ) ) {
+       		$logo_src    		= $saved_path ;
+       	} else {
+       		$logo_src 			= $upload_dir['baseurl'] . $saved_path;
+       	}
+       	$logo_src    			= apply_filters( 'tc_logo_src' , $logo_src ) ;
+       	
        	$logo_resize 			= esc_attr( tc__f( '__get_option' , 'tc_logo_resize') );
       	$accepted_formats		= array('jpg', 'jpeg', 'png' ,'gif');
        	$filetype 				= wp_check_filetype ($logo_src);

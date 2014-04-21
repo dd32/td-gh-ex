@@ -160,14 +160,95 @@ jQuery(document).ready(function () {
 
             //Enable reordering if option is checked in the customizer.
             if ( 1 == TCParams.ReorderBlocks ) {
-                BlockPositions();
+                //trigger the block positioning only when responsive
+                WindowWidth = $(window).width();
+                if ( WindowWidth <= 767 - 15 ) {
+                    BlockPositions();
+                }
 
                 $(window).resize(function () {
                     setTimeout(BlockPositions, 200);
                 });
             }
             
-        });
+
+            function CenterSlides(){
+                var container_width = $('.carousel .carousel-inner').width(),
+                    container_height = $('.carousel .carousel-inner').height();
+                
+                // do something only if the new container's width differs of 50px from our last adjustment
+                if ( Math.abs( last_adj_container_width - container_width ) < 50 )
+                    return;
+                
+                last_adj_container_width = container_width;
+                
+                $images.each(function () {
+                    
+                    // this will let us know the real img height
+                    var ratio = container_width / $(this).attr("width");
+                    var real_img_height = ratio * $(this).attr("height");
+                    
+                    // if our image has an height smaller than the container
+                    // stretch it (h & w) proportionally to reach the container height
+                    // and center it horizontally
+                    if ( real_img_height < container_height ){
+                        // set the image height as the container height
+                        $(this).css("height", container_height);
+                        // this will let us know the new image width
+                        var img_ratio = container_height / real_img_height;
+                        var new_img_width = img_ratio * container_width;
+                        // set it
+                        $(this).css("width", new_img_width);
+                        $(this).css("max-width", new_img_width);
+
+                        // center it horizontally
+                        var pos_left = ( (container_width - new_img_width ) / 2 );
+                        $(this).css("left", pos_left);
+                        
+                        // reset v-center flag and margin-top
+                        if ( $(this).hasClass("v-center") ){
+                            $(this).removeClass("v-center")
+                            .css("top", "0px");
+                        }
+
+                        // add h-center class flag
+                        $(this).addClass("h-center");
+
+                    } else { // center it vertically
+                            // this covers also the case real_img_height == container_height
+                            // a differentiation here looks like pratically useless
+
+                        // reset margin-left, width, height and h-center flag
+                        if ( $(this).hasClass("h-center") ){
+                            $(this).css("width", "100%")
+                            .css("max-width", "100%")
+                            .css("left", "0px")
+                            .css("height", "auto")
+                            .removeClass("h-center")
+                        }
+                        // center it vertically
+                        var pos_top = ( container_height - real_img_height ) / 2 ;
+                        $(this).css("top", pos_top);
+                        // add v-center class flag
+                        $(this).addClass("v-center");
+                    }// end if-else                                      
+                });// end imgs each function
+            }// end CenterSlides
+        
+             //Enable slides centering if option is checked in the customizer.
+            if ( 1 == TCParams.CenterSlides ) {
+                //adds a specific class to the carousel when automatic centering is enabled
+                $('#customizr-slider .carousel-inner').addClass('center-slides-enabled');
+                var $images = $('.carousel .item .carousel-image > img'),
+                    last_adj_container_width = 0;
+
+                CenterSlides();
+    
+                $(window).resize(function(){
+                     setTimeout(CenterSlides, 200);
+                });
+            }
+        });//end on load
 
     }(window.jQuery)
 });

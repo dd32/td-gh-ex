@@ -26,13 +26,13 @@ class TC_featured_pages {
 
 
 
-      /**
-  	 * The template displaying the front page featured page block.
-  	 *
-  	 *
-  	 * @package Customizr
-  	 * @since Customizr 3.0
-  	 */
+    /**
+  	* The template displaying the front page featured page block.
+  	*
+  	*
+  	* @package Customizr
+  	* @since Customizr 3.0
+  	*/
     function tc_fp_block_display() {
 
     		//gets display options

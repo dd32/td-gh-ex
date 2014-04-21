@@ -319,6 +319,12 @@ class TC_init {
       add_theme_support( 'bbpress' );
       add_theme_support( 'qtranslate' );
       add_theme_support( 'woocommerce' );
+
+      //add help button to admin bar
+      add_action ( 'wp_before_admin_bar_render'          , array( $this , 'tc_add_help_button' ));
+      
+      //add options link to admin bar
+      add_action ( 'wp_before_admin_bar_render'   , array( $this , 'tc_add_admin_bar_options_menu' ));
     }
 
 
@@ -331,6 +337,7 @@ class TC_init {
     */
     function tc_active_skin() {
       $skin           = esc_attr( tc__f( '__get_option' , 'tc_skin' ) );
+      $skin           = esc_attr( tc__f( '__get_option' , 'tc_minified_skin' ) ) ? str_replace('.css', '.min.css', $skin) : $skin;
 
       //Finds the good path : are we in a child theme and is there a skin to override?
       $remote_path    = false;
@@ -633,6 +640,51 @@ class TC_init {
           }
       }
     }//end of function
+
+
+
+
+    /**
+    * Add WordPress customizer page to the admin bar menu.
+    * @package Customizr
+    * @since Customizr 1.0 
+    */
+    function tc_add_admin_bar_options_menu() {
+       if ( current_user_can( 'edit_theme_options' ) ) {
+         global $wp_admin_bar;
+         $wp_admin_bar->add_menu( array(
+             'parent'   => false,
+             'id'     => 'tc-customizr' ,
+             'title'    =>  __( 'Customiz\'it!' , 'customizr' ),
+             'href'     => admin_url( 'customize.php' ),
+             'meta'     => array(
+               'title'    => __( 'Customize your website at any time!', 'customizr' ),
+              ),
+         ));
+       }
+    }
+
+
+
+    /**
+    * Add help button
+    * @package Customizr
+    * @since Customizr 1.0 
+    */
+    function tc_add_help_button() {
+       if ( current_user_can( 'edit_theme_options' ) ) {
+         global $wp_admin_bar;
+         $wp_admin_bar->add_menu( array(
+           'parent' => 'top-secondary', // Off on the right side
+           'id' => 'tc-customizr-help' ,
+           'title' =>  __( 'Help' , 'customizr' ),
+           'href' => admin_url( 'themes.php?page=welcome.php&help=true' ),
+           'meta'   => array(
+              'title'  => __( 'Need help with Customizr? Click here!', 'customizr' ),
+            ),
+         ));
+       }
+    }
 
 
 }//end of class
