@@ -266,7 +266,7 @@
 					}
 					if (!that.is(":disabled") && !disabled) {
 						child = $("<a>", {
-							"href": "#" + that.val(),
+							"href": /*Removed so menu links not broken.*//*"#" + */that.val(),
 							"rel": that.val()
 						}).text(that.text()).bind("click.sb", function (e) {
 							if (e && e.preventDefault) {

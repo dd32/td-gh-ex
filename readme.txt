@@ -64,6 +64,10 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/catch
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 
 == Changelog ==
+
+Version 1.1.1
+* Fixed mobile menu link issue
+
 Version 1.1
 * Added secondary menu option in mobile devices
 * Changed secondary menu id for HTML validation (Reported By bschell)
