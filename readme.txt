@@ -54,6 +54,9 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/catch
 
 == Changelog ==
 
+version 1.4.2.1
+* Fixed mobile menu link issue
+
 version 1.4.2
 * Added German - SWITZERLAND translation de_CH.po and de_CH.mo
 
