@@ -48,7 +48,7 @@ function accesspresslite_setup() {
 
 	add_image_size( 'event-thumbnail', 135, 100, true); //Latest News Events Small Image
 	add_image_size( 'featured-thumbnail', 350, 245, true); //Featured Image
-	//add_image_size( 'small-featured', 360, 240, true); //Small Featured Image		
+	add_image_size( 'portfolio-thumbnail', 400, 450, true); //Small Featured Image		
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -97,7 +97,3 @@ require get_template_directory() . '/inc/jetpack.php';
  * Implement the custom metabox feature
  */
 require get_template_directory() . '/inc/custom-metabox.php';
-
-//add_filter('show_admin_bar', '__return_false');
-
-

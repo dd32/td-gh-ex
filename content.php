@@ -12,7 +12,7 @@ $cat_portfolio = $ak_settings['portfolio_cat'];
 ?>
 
 
-<?php if(is_category() && is_category($cat_event)): ?>
+<?php if(!empty($cat_event) && is_category() && is_category($cat_event)): ?>
 <article id="post-<?php the_ID(); ?>" class="cat-event-list">
 	<header class="entry-header">
 		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
@@ -34,7 +34,7 @@ $cat_portfolio = $ak_settings['portfolio_cat'];
 	</div><!-- .entry-content -->
 </article>
 
-<?php elseif(is_category() && is_category($cat_testimonail)): ?>
+<?php elseif(!empty($cat_testimonail) && is_category() && is_category($cat_testimonail)): ?>
 
 <article id="post-<?php the_ID(); ?>" class="cat-testimonial-list clear">
 	<header class="entry-header">
@@ -59,27 +59,24 @@ $cat_portfolio = $ak_settings['portfolio_cat'];
 	</div>
 </article>
 
-<?php elseif(is_category() && is_category($cat_portfolio)): ?>
+<?php elseif(!empty($cat_portfolio) &&is_category() && is_category($cat_portfolio)): ?>
 
 <article id="post-<?php the_ID(); ?>" class="cat-portfolio-list">
-<a href="<?php the_permalink(); ?>">
-	<div class="cat-portfolio-image">
-		<?php 
-		if( has_post_thumbnail() ){
-			$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumbnail', false ); 
-		?>
+<?php 
+$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'portfolio-thumbnail', false ); 
+$full_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large', false ); 
+?>
+	<a class="fancybox-gallery" href="<?php echo $full_image[0]; ?>" data-lightbox-gallery="gallery">
+    <div class="cat-portfolio-image">
 		<img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>">
-	<?php }else{ ?>
-		<img src="<?php echo get_template_directory_uri(); ?>/images/portfolio-fallback.jpg" alt="<?php the_title(); ?>">
-	<?php	} ?>
-	</div>
+    </div>
 	<div class="portofolio-layout">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 		<div class="cat-portfolio-excerpt">
-		    <?php echo ak_excerpt(get_the_content() , 100 ); ?>
+		    <?php the_content(); ?>
 		</div>
 	</div>
-</a>
+    </a>
 </article>
 
 <?php else: ?>

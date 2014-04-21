@@ -23,9 +23,9 @@ if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
 				if(!empty($event_category)){
 				$loop = new WP_Query( array(
 	                'cat' => $event_category,
-	                'post_per_page' => 3,
+	                'posts_per_page' => 3,
 	                'orderby' => 'date',
-	                'order' => 'ASC'
+	                'order' => 'DSC'
 	            )); ?>
 	        <aside id="latest-events" class="clear">
 	        <h1 class="widget-title">Latest <?php echo get_cat_name($event_category); ?></h1>

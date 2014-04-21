@@ -18,12 +18,27 @@ JS Files
     HTML5-Shiv: MIT and GPL licenses
     https://code.google.com/p/html5shiv/
     
-    bxSlider: MIT license
+    bxSlider: WTFPL and MIT license
     https://github.com/stevenwanderski/bxslider-4
     
-    fancyBox: Creative Commons Attribution-NonCommercial 3.0 license
-    https://github.com/fancyapps/fancyBox
+    Nivo Lightbox: MIT licenses
+    http://dev7studios.com/plugins/nivo-lightbox/
+
+    jQuery Actual: MIT licenses
+    https://github.com/dreamerslab/jquery.actual/
 
 
 -------------------------------------------
+Fonts
+    Font Awesome: MIT and GPL licenses
+    http://fontawesome.io/license/
+    
+    Open sans
+    http://www.fontsquirrel.com/license/open-sans
+    
+    Lato
+    http://www.fontsquirrel.com/license/lato
 
+---------------------------------------------
+Images
+    All the images used are either self taken or free image and are fully GPL compatible.

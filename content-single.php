@@ -11,12 +11,13 @@ $cat_blog = $ak_settings['blog_cat'];
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
-
-		<?php if(has_category( $cat_blog, $post )){?>
+            
+		<?php 
+        if(has_category( $cat_blog) && !empty($cat_blog)){?>
 			<div class="entry-meta">
 				<?php accesspresslite_posted_on(); ?>
 			</div><!-- .entry-meta -->
-		<?php } ?>
+		<?php }?>
 	</header><!-- .entry-header -->
 
 
@@ -37,7 +38,7 @@ $cat_blog = $ak_settings['blog_cat'];
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-	<?php if(has_category( $cat_blog, $post )){
+	<?php if(has_category( $cat_blog) && !empty($cat_blog)){
 
 			/* translators: used between list items, there is a space after the comma */
 			$category_list = get_the_category_list( __( ', ', 'accesspresslite' ) );

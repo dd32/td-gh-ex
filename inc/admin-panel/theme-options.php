@@ -42,7 +42,7 @@ $ak_options = array(
 	'show_slider' => 'yes',
 	'slider_show_pager' => 'yes1',
 	'slider_show_controls' => 'yes2',
-	'slider_mode' => 'fade',
+	'slider_mode' => 'slide',
 	'slider_auto' => 'yes3',
 	'slider_speed' => '500',
 	'slider_caption'=>'yes4',
@@ -52,10 +52,10 @@ $ak_options = array(
 	'slider3'=>'',
 	'slider4'=>'',
 
-	'leftsidebar_show_latest_events'=>false,
-	'leftsidebar_show_testimonials'=>false,
-	'rightsidebar_show_latest_events'=>false,
-	'rightsidebar_show_testimonials'=>false,
+	'leftsidebar_show_latest_events'=>true,
+	'leftsidebar_show_testimonials'=>true,
+	'rightsidebar_show_latest_events'=>true,
+	'rightsidebar_show_testimonials'=>true,
 
 
 	'ak_facebook' => '',
@@ -220,11 +220,9 @@ function ak_theme_options_page() {
 
 		<div class="ak-socials">
 		<p>Follow us for new updates</p>
-		<a href="" title="Facebook" class="ak_facebook">Facebook</a>
-		<a href="" title="Twitter" class="ak_twitter">Twitter</a>
-		<a href="" title="Youtube" class="ak_youtube">Youtube</a>
-		<a href="" title="Google Plus" class="ak_gplus">Google Plus</a>
-		<a href="" title="Wordpress" class="ak_wordpress">Wordpress</a>
+		<a href="https://www.facebook.com/pages/AccessPress-lite/1396595907277967" title="Facebook" class="ak_facebook" target="_blank">Facebook</a>
+		<a href="https://twitter.com/AccessPress1" title="Twitter" class="ak_twitter" target="_blank">Twitter</a>
+		<a href="http://wordpress.org/support/profile/access-keys" title="Wordpress" class="ak_wordpress" target="_blank">Wordpress</a>
 		</div>
 
 		<div class="ak_title"><?php echo wp_get_theme() . _e( ' Theme Options', 'accesspresslite' )?></div>

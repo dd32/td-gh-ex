@@ -101,7 +101,5 @@
 
 <?php wp_footer(); ?>
 
-<?php  do_action('show_array'); ?>
-
 </body>
 </html>

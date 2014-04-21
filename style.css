@@ -2,14 +2,14 @@
 Theme Name: Accesspress Lite
 Theme URI: http://wordpresssuperexpress.com/accesspresslite/demo/
 Author: Access Keys Team
-Author URI: http://wordpresssuperexpress.com
+Author URI: http://access-keys.com/
 Description: Accesspress Lite is a HTML5 & CSS3 Responsive WordPress Business theme with clean, minimal yet highly professional design. It is easily customizable as per requirement with all the options avaliable at the dashboard theme option.
-Version: 1.0
+Version: 1.1
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Tags: blue, white, light, custom-menu, one-column, two-columns, three-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, custom-background, featured-image-header, sticky-post, theme-options, threaded-comments, featured-images, full-width-template, custom-header, flexible-header, responsive-layout
 
-Accesspress Lite WordPress Theme, Copyright 2014 http://wordpresssuperexpress.com
+Accesspress Lite WordPress Theme, Copyright 2014 http://access-keys.com/
 Accesspress Lite is distributed under the terms of the GNU GPL
 */
 
@@ -17,7 +17,6 @@ Accesspress Lite is distributed under the terms of the GNU GPL
 Reset
 --------------------------------------------------------------*/
 @import url('css/fonts.css');
-@import url('css/styles.css');
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -102,18 +101,20 @@ button,
 input,
 select,
 textarea {
-	color: #777777;
+	color: #444;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 15px;
 	line-height: 1.8;
-	font-weight: normal;
+	font-weight: 300;
 }
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
 	font-weight: normal;
-	font-family: 'segoe_ui';
+	font-family: 'Lato', sans-serif;
 	line-height: 1.3;
 	margin-bottom: 15px;
+    color: #555;
+    font-weight: 300;
 }
 p {
 	margin-bottom:20px;
@@ -128,8 +129,8 @@ blockquote {
 	margin: 0 15px;
 	font-size: 20px;
 	font-style: italic;
-    font-family: 'segoe_uilight';
-	font-weight: normal;
+    font-family: 'Lato', sans-serif;
+	font-weight: 300;
 }
 address {
 	margin: 0 0 15px;
@@ -177,9 +178,9 @@ big {
 	font-size: 125%;
 }
 
-h1{ font-size:34px;}
-h2{ font-size:28px;}
-h3{ font-size:24px;}
+h1{ font-size:30px;}
+h2{ font-size:26px;}
+h3{ font-size:22px;}
 h4{ font-size:20px;}
 h5{ font-size:18px;}
 h6{ font-size:16px;}
@@ -196,7 +197,7 @@ ul, ol {
 	margin: 0 0 15px 20px;
 }
 ul {
-	list-style: disc;
+	list-style: circle;
 }
 ol {
 	list-style: decimal;
@@ -254,7 +255,6 @@ input[type="submit"] {
 	background: #353f47;
 	color: #FFF;
 	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
-	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
 	font-size: 13px;
 	font-size: 1.2rem;
 	line-height: 1;
@@ -264,7 +264,30 @@ input[type="submit"] {
 	font-weight: normal;
 	border-bottom: 3px solid #111;
 	display: inline-block;
+    position:relative;
 }
+
+.bttn:after{
+    content: "";
+    background: #00ABFF;
+    height: 3px;
+    width: 0%;
+    transition:all 0.3s ease-in-out;
+    -moz-transition:all 0.3s ease;
+    -webkit-transition:all 0.3s ease;
+    position: absolute;
+    left:0;
+    bottom:-3px;
+}
+
+.bttn:hover:after{
+    width:100%;
+}
+
+.bttn:hover{
+    color:#FFF;
+}
+
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
@@ -336,6 +359,7 @@ textarea {
 	border: 1px solid #ccc;
 	border-radius: 3px;
 	height: 160px;
+    max-width: 100%;
 }
 
 /*--------------------------------------------------------------
@@ -412,6 +436,8 @@ a:active {
 --------------------------------------------------------------*/
 .clear:before,
 .clear:after,
+.row:before,
+.row:after,
 .entry-content:before,
 .entry-content:after,
 .comment-content:before,
@@ -429,6 +455,7 @@ a:active {
 }
 
 .clear:after,
+.row:after,
 .entry-content:after,
 .comment-content:after,
 .site-header:after,
@@ -478,9 +505,10 @@ h1.entry-title a{
 .group-blog .byline,
 .posted-on {
 	display: inline;
-	font-family: 'segoe_uilight';
+	font-family: 'Lato', sans-serif;
 	font-size: 14px;
 	font-style: italic;
+    font-weight: 300;
 }
 .page-content,
 .entry-content,
@@ -609,9 +637,10 @@ Asides
 .bypostauthor {
 }
 #comments h2.comments-title{
-	font-family: 'segoe_uilight';
+	font-family: 'Lato', sans-serif;
 	font-style: italic;
 	margin: 15px 0;
+    font-weight: 300;
 }
 #comments h3{
 	margin:0 0 10px;
@@ -685,10 +714,11 @@ textarea#comment{
 
 .commentmetadata{ 
 	float: right;
-	font-family: 'segoe_uilight';
+	font-family: 'Lato', sans-serif;
 	font-weight: normal;
 	font-size: 12px;
 	font-style: italic;
+    font-weight: 300;
 }
 
 .commentmetadata a{
@@ -821,6 +851,10 @@ object {
 /*--------------------------------------------------------------
 Header
 --------------------------------------------------------------*/
+#masthead #top-header{
+    background: url(images/bgheader.jpg) repeat-x scroll left bottom;
+}
+
 body.boxed-layout{
     background: #F2F3F4;    
 }
@@ -847,18 +881,28 @@ body.boxed-layout{
 	padding: 15px 0;
 }
 
+#masthead .site-branding img{
+    height: auto !important;
+    width: auto !important;
+    display: block;
+}
+
 #masthead .right-header{
 	float: right;
-	padding-top: 30px;
+	padding-top: 10px;
+}
+
+#masthead .right-header .clear:first-child{
+    margin-top: 25px;
 }
 
 .header-text{
-	float: left;
-	margin-right: 20px;
-	font-family: 'segoe_uilight';
+	font-family: 'Lato', sans-serif;
 	text-transform: capitalize;
 	color: #01AEFD;
-	font-size: 20px;
+	font-size: 14px;
+    text-align: right;
+    margin-bottom: 10px;
 }
 
 /*--------------------------------------------------------------
@@ -866,12 +910,12 @@ Social Icons
 --------------------------------------------------------------*/
 .socials{
 	float: left;
-	margin-right: 30px;
+    margin-left: 20px;
 }
 .socials a{
 	height:38px;
 	width: 38px;
-	margin-left: 5px;
+	margin-left: 1px;
 	color: #01aefd;
 	border: 1px solid #01aefd;
 	text-align: center;
@@ -899,16 +943,17 @@ search form
 	height: 38px;
 	width: 200px; 
 	border: 1px solid #01aefd;
+    margin-left: 20px;
 }
 
 .searchform .s{ 
 	border: none;
 	background: none;
-	line-height: 36px; 
 	height: 36px;
 	float: left;
 	padding: 5px 10px;
 	width: 160px;
+    vertical-align: middle;
 }
 
 .searchform .searchsubmit{
@@ -929,8 +974,8 @@ Menus
 .main-navigation {
 	clear: both;
 	display: block;
-	font-weight: normal;
-	font-family: 'segoe_ui';
+	font-weight: 300;
+	font-family: 'Lato', sans-serif;
 	position: relative;
 	border-bottom: 3px solid #04A3ED;
 	background: #00ABFF;
@@ -953,7 +998,6 @@ Menus
 	font-size:18px;
 	text-transform: uppercase;
 	color:#ababab;
-	margin-right: 5px;
 	white-space: nowrap;
 }
 
@@ -979,7 +1023,7 @@ Menus
 	display: block;
 	text-decoration: none;
 	color: #FFF;
-	padding: 0 20px
+	padding: 0 18px
 }
 
 .main-navigation ul ul {
@@ -997,7 +1041,7 @@ Menus
 	-webkit-transition:all 0.3s ease-in-out;
 }
 
-.main-navigation ul li.more-menu-item ul{
+.main-navigation ul li.more-menu-item > ul{
     right:0;
     left:auto;
 }
@@ -1031,11 +1075,14 @@ Menus
 	background: #04A3ED;
 }
 
-.main-navigation ul ul li:hover > a {
+.main-navigation ul ul li:hover > a ,
+.main-navigation ul ul li.current-menu-item > a {
+    color:#01AEFD;
 }
 
 .main-navigation ul ul a{
-	color: #adadad;
+	color: #666;
+	background: none !important;
 }
 
 .main-navigation ul ul a:hover {
@@ -1045,9 +1092,10 @@ Menus
 	display: block;
 }
 
-.main-navigation .menu > .current-menu-parent > a,
-.main-navigation .menu > .current-menu-item > a,
-.main-navigation .menu > .current_page_item > a {
+.main-navigation .menu .current-menu-parent > a,
+.main-navigation .menu .current-menu-item > a,
+.main-navigation .menu .current_page_item > a,
+.main-navigation .menu .current_page_parent > a {
 	background: #04A3ED;
 }
 
@@ -1098,9 +1146,9 @@ Slider
 Top Section
 --------------------------------------------------------------*/
 #top-section{ 
-	margin-top: 40px; 
-	margin-bottom: 50px;
-	padding-bottom: 50px;
+	margin-top: 30px; 
+	margin-bottom: 40px;
+	padding-bottom: 40px;
 	border-bottom:1px solid #f2f2f2;
 }
 
@@ -1190,11 +1238,11 @@ Top Section
 .event-detail h4{
 	line-height: 1.2;
 	font-family: 'Open Sans', sans-serif; 
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 }
 
 .event-detail h4 a{
-	color: #000;
+	color: #666;
 }
 
 .event-detail h4 a:hover{
@@ -1239,7 +1287,7 @@ Top Section
 Mid Section
 --------------------------------------------------------------*/
 #mid-section{
-	margin-bottom: 60px;
+	margin-bottom:50px;
 }
 
 .featured-post{ 
@@ -1338,6 +1386,7 @@ Bottom Section
 	text-transform: uppercase; 
 	line-height: 1; 
 	margin-bottom: 25px;
+    color:#FFF;
 }
 
 #bottom-section .testimonail-slider,
@@ -1354,10 +1403,10 @@ Bottom Section
 
 #bottom-section .thumbnail-gallery .gallery-item{
 	float: left;
-	margin:0 1% 1% 0;
+	margin:0 2% 2% 0;
 	padding: 4px;
 	background: rgba(0,0,0,0.1);
-    width: 32%;
+    width: 31%;
 }
 
 #bottom-section .thumbnail-gallery .gallery-item a{
@@ -1393,10 +1442,20 @@ Bottom Section
     margin: 0;
 }
 
+#bottom-section .text-box ul li{
+    padding-left:25px;
+    position: relative;
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
 #bottom-section .text-box ul li:before{
    content: "\f00c"; 
    font-family: FontAwesome;
    margin-right: 10px; 
+   position: absolute;
+   left: 0;
+   top:2px;
 }
 
 /*--------------------------------------------------------------
@@ -1448,9 +1507,10 @@ Testimonail
 .testimonail-slider .all-testimonial{
 	float: right;
 	margin-top: 40px;
-	font-family: 'segoe_uibold';
+	font-family: 'Lato', sans-serif;
 	font-weight: normal;
-	color: #FFF
+	color: #FFF;
+    font-weight: 700;
 }
 
 .testimonail-sidebar .testimonail-wrap{
@@ -1484,10 +1544,10 @@ Testimonail
 	right: 50px;
 	left: auto;
 	bottom: -35px;
-	font-family: 'segoe_uilight';
+	font-family: 'Lato', sans-serif;
 	font-size: 16px;
 	font-style: italic;
-	font-weight: normal;
+	font-weight: 300;
 }
 
 .testimonail-sidebar .testimonail-thumbnail{
@@ -1495,7 +1555,7 @@ Testimonail
 }
 
 .testimonail-sidebar .testimonail-thumbnail img{
-	display: block;
+
 }
 
 .testimonail-sidebar .testimonail-excerpt{
@@ -1535,7 +1595,8 @@ Footer
 
 #top-footer ul li{
 	border-bottom: 1px solid #454d54;
-	padding: 5px 0;
+	padding: 10px 0;
+    line-height: 1.3;
 }
 
 #top-footer ul li:last-child{
@@ -1590,7 +1651,7 @@ Footer
 }
 
 #top-footer .footer .socials a{
-	border:1px solid #FFF;
+	border:1px solid #CCC;
 }
 
 #top-footer .footer .socials a:hover{
@@ -1601,8 +1662,9 @@ Footer
 	background: #293037;
 	padding: 15px 0;
 	text-transform: uppercase;
-	font-family: 'segoe_uilight';
+	font-family: 'Lato', sans-serif;
 	color: #CCC;
+    font-weight: 300;
 }
 
 #bottom-footer .site-info{
@@ -1815,11 +1877,12 @@ Archives
 .cat-testimonial-list .entry-header h1.entry-title{
 	font-size: 20px;
 	text-align: center;
-	font-family: 'segoe_uilight';
+	font-family: 'Lato', sans-serif;
 	margin:0;
 	padding: 10px 5px;
 	line-height: 1.2;
 	font-size: 18px;
+    font-weight: 300;
 }
 
 .cat-testimonial-list .cat-testimonial-excerpt {
@@ -1863,19 +1926,18 @@ Archives
 
 .cat-portfolio-list{
 	float: left;
-	width: 48%;
-	margin-bottom: 35px;
-	margin-right: 4%;
+	width: 49%;
+	margin-bottom: 2%;
+	margin-right: 2%;
 	background:#F2F3F4;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    padding: 12px;
 }
 
 .cat-portfolio-list:nth-child(odd){
 	margin-right: 0;
 }
 
-.cat-portfolio-list a{
+.cat-portfolio-list{
 	display: block;
 	position:relative;
 	overflow: hidden;
@@ -1901,7 +1963,8 @@ Archives
 }
 
 .portofolio-layout .entry-title {
-	font-family: 'segoe_uilight';
+	font-family: 'Lato', sans-serif;
+    font-weight: 300;
 	position: absolute;
 	left: 0;
 	top: 60px;
@@ -1928,7 +1991,8 @@ Archives
 }
 
 .portofolio-layout .cat-portfolio-excerpt {
-	font-family: 'segoe_uilight';
+	font-family: 'Lato', sans-serif;
+    font-weight: 300;
 	position: absolute;
 	left: 0;
 	top:130px;
@@ -1948,26 +2012,151 @@ Archives
 	-webkit-transform:translateY(100px); /* Opera, Chrome, and Safari */
 }
 
-.cat-portfolio-list a:hover .portofolio-layout{
+.cat-portfolio-list:hover .portofolio-layout{
 	background: rgba(0,151,214,0.6);
 }
 
-.cat-portfolio-list a:hover .portofolio-layout .entry-title{
+.cat-portfolio-list:hover .portofolio-layout .entry-title{
 	opacity: 1;
 	transform:translateY(0);
 	-ms-transform:translateY(0); /* IE 9 */
 	-webkit-transform:translateY(0); /* Opera, Chrome, and Safari */
 }
 
-.cat-portfolio-list a:hover .portofolio-layout .cat-portfolio-excerpt{
+.cat-portfolio-list:hover .portofolio-layout .cat-portfolio-excerpt{
 	opacity: 1;
 	transform:translateY(0);
 	-ms-transform:translateY(0); /* IE 9 */
 	-webkit-transform:translateY(0); /* Opera, Chrome, and Safari */
 }
 
-.cat-portfolio-list a:hover .cat-portfolio-image img{
+.cat-portfolio-list:hover .cat-portfolio-image img{
 	transform:scale(1.2);
 	-ms-transform:scale(1.2); /* IE 9 */
 	-webkit-transform:scale(1.2); /* Opera, Chrome, and Safari */
+}
+
+.error-404{
+    text-align: center;
+    min-height: 400px;
+}
+
+.error-404 .page-header{
+    border-left: 0;
+}
+
+.number404{
+    font-size:50px;
+    background: #353F47;
+    color:#FFF;
+    height: 150px;
+    width:150px;
+    border-radius:150px;
+    line-height: 150px;
+    text-align:center;
+    color: #FFF;
+    position: relative;
+    display: inline-block;
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+    text-shadow:1px 1px 1px #999;
+    -webkit-animation:rotate linear 4s infinite;
+    animation:rotate linear 4s infinite;
+    -webkit-perspective:500px; /* Chrome, Safari, Opera  */
+    perspective:500px;
+    margin-top: 40px;
+}
+
+.number404 span{
+    font-size:14px;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom:30px;
+    line-height: 16px;
+    left: 0;
+    backface-visibility:visible;
+    -webkit-backface-visibility:visible; /* Chrome, Safari, Opera */
+    backface-visibility:visible;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes rotate
+{
+0%   {transform:rotateY(0deg);
+	-ms-transform:rotateY(0deg);
+	-webkit-transform:rotateY(0deg);
+    }
+100% {transform:rotateY(360deg);
+	-ms-transform:rotateY(360deg);
+	-webkit-transform:rotateY(360deg);
+    }
+}
+
+/* Standard syntax */
+@keyframes rotate
+{
+0%   {transform:rotateY(0deg);
+	-ms-transform:rotateY(0deg);
+	-webkit-transform:rotateY(0deg);
+    }
+100% {transform:rotateY(360deg);
+	-ms-transform:rotateY(360deg);
+	-webkit-transform:rotateY(360deg);
+    }
+}
+/*--------------------------------------------------------------
+Responsive grid for pages
+--------------------------------------------------------------*/
+.row{
+    margin-bottom: 25px;
+}
+
+.span1, .span2, .span3, .span4, .span5, .span6{
+    float:left;
+}
+
+.col{
+  margin-left: 3%;
+}
+
+.col:first-child {
+  margin-left:0;
+}
+
+
+.span1{
+  width: 14.1666666667%;
+  
+}
+.span2{
+  width: 31.3333333333%;
+  
+}
+.span3{
+  width: 48.5%;
+  
+}
+.span4{
+  width: 65.6666666667%;
+  
+}
+.span5{
+  width: 82.8333333333%;
+  
+}
+.span6{
+  width: 100%;
+  margin-left: 0;
+}
+
+
+
+@media screen and (max-width: 768px){
+
+  .span1, .span2, .span3, .span4, .span5, .span6{
+    width: 100%;
+    float: none;
+    margin-left: 0;
+  }
+
 }

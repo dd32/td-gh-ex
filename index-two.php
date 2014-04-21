@@ -28,7 +28,7 @@ $ak_settings = get_option( 'ak_options', $ak_options );
 					
 					<div  class="welcome-detail<?php if( !has_post_thumbnail() ){ echo " welcome-detail-full-width"; } ?>">
 					<p><?php echo ak_excerpt( get_the_content() , 650 ) ?></p>
-					<a href="<?php the_permalink(); ?>" class="readmore">Read More</a>
+					<a href="<?php the_permalink(); ?>" class="readmore bttn">Read More</a>
 					</div>
 					
 				<?php endwhile;	
@@ -44,8 +44,8 @@ $ak_settings = get_option( 'ak_options', $ak_options );
 				</figure>
 
 				<div  class="welcome-detail">
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more Letraset sheets containing Lorem Ipsum passages, and moreLetraset sheets containing Lorem Ipsum passages</p>
-				<a href="#" class="readmore">Read More</a>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+				<a href="#" class="readmore bttn">Read More</a>
 				</div>
 
 			<?php } ?>
@@ -60,9 +60,9 @@ $ak_settings = get_option( 'ak_options', $ak_options );
 
 	            $loop = new WP_Query( array(
 	                'cat' => $event_category,
-	                'post_per_page' => 3,
+	                'posts_per_page' => 3,
 	                'orderby' => 'date',
-	                'order' => 'ASC'
+	                'order' => 'DSC'
 	            )); ?>
 
 	        <h1><a href="<?php echo get_category_link($event_category); ?>">Latest <?php echo get_cat_name($event_category); ?></a></h1>
@@ -121,7 +121,7 @@ $ak_settings = get_option( 'ak_options', $ak_options );
 			        		</h4>
 
 			        		<div class="event-excerpt">
-			        			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has..
+			        			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor...
 			        		</div>
 		        		</div>
 		        	</div>
@@ -181,7 +181,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 
 					<div class="featured-content">
 						<p><?php echo ak_excerpt( get_the_content() , 260 ) ?></p>
-						<a href="<?php the_permalink(); ?>" class="read-more">Read More</a>
+						<a href="<?php the_permalink(); ?>" class="read-more bttn">Read More</a>
 					</div>
 				<?php endwhile;
 				wp_reset_postdata(); ?>
@@ -231,7 +231,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 
 					<div class="featured-content">
 						<p><?php echo ak_excerpt( get_the_content() , 260 ) ?></p>
-						<a href="<?php the_permalink(); ?>" class="read-more">Read More</a>
+						<a href="<?php the_permalink(); ?>" class="read-more bttn">Read More</a>
 					</div>
 				<?php endwhile;
 				wp_reset_postdata(); ?>
@@ -280,7 +280,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 
 					<div class="featured-content">
 						<p><?php echo ak_excerpt( get_the_content() , 260 ) ?></p>
-						<a href="<?php the_permalink(); ?>" class="read-more">Read More</a>
+						<a href="<?php the_permalink(); ?>" class="read-more bttn">Read More</a>
 					</div>
 				<?php endwhile;
 				wp_reset_postdata(); ?>
@@ -306,15 +306,14 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 		<h2><a href="#">Featured Post <?php echo $featured_post; ?></a></h2>
 
 		<div class="featured-content">
-			<p>Apple pie icing sweet. Brownie jelly-o applicake applicake sweet roll liquorice bear claw. Jujubes carrot cake cotton candy sweet tart brownie. Tiramisu applicake jujubes.</p>
-			<a href="#" class="read-more">Read More</a>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate...</p>
+			<a href="#" class="read-more bttn">Read More</a>
 		</div>
 	</div>
 
 	<?php }
 	} ?>
 </section>
-
 <?php wp_reset_query(); ?>
 
 <section id="ak-blog">
@@ -366,13 +365,11 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
             <h1 class="widget-title">Why Us</h1>
             <div class="textwidget">
                 <ul>
-                <li>Product Development</li>
-                <li>Prototyping</li>
-                <li>Engineering Design</li>
-                <li>Supply Chain Management</li>
-                <li>Program Management</li>
-                <li>Electronic Manufacturing</li>
-                <li>Post Manufacturing Support</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                <li>Donec id lacus tempor, bibendum nunc vitae, egestas nisl</li>
+                <li>Sed a dui sit amet lacus congue mattis</li>
+                <li>Nam sed dui cursus, accumsan diam sed, sodales metus.</li>
+                <li>Nulla scelerisque urna sit amet tortor tincidunt, sed bibendum lacus vestibulum.</li>
                 </ul>
             </div>
         </aside>
@@ -393,44 +390,44 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
         <div class="gallery">
             <dl class="gallery-item">
             <dt class="gallery-icon landscape">
-            <a class="fancybox-gallery" href="<?php echo get_template_directory_uri();?>/images/demo/Angkor-Wat-Cambodia-Siem-Reap-Hrtfried-Schmid-best-picture-gallery.jpg" data-fancybox-group="group">
-            <img class="attachment-thumbnail" width="150" height="150" alt="Angkor-Wat-Cambodia-Siem-Reap-Hrtfried-Schmid-best-picture-gallery" src="<?php echo get_template_directory_uri();?>/images/demo/Angkor-Wat-Cambodia-Siem-Reap-Hrtfried-Schmid-best-picture-gallery-150x150.jpg">
+            <a class="fancybox-gallery" href="<?php echo get_template_directory_uri();?>/images/demo/img1.jpg">
+            <img class="attachment-thumbnail" width="150" height="150" alt="img1" src="<?php echo get_template_directory_uri();?>/images/demo/img1-thumb.jpg">
             </a>
             </dt>
             </dl>
             <dl class="gallery-item">
             <dt class="gallery-icon landscape">
-            <a class="fancybox-gallery" href="<?php echo get_template_directory_uri();?>/images/demo/best-picture-gallery-angel-oak-south-carolina-MarkRegs-photo.jpg" data-fancybox-group="group">
-            <img class="attachment-thumbnail" width="150" height="150" alt="best-picture-gallery-angel-oak-south-carolina-MarkRegs-photo" src="<?php echo get_template_directory_uri();?>/images/demo/best-picture-gallery-angel-oak-south-carolina-MarkRegs-photo-150x150.jpg">
-            </a>
-            </dt>
-            </dl>
-            <dl class="gallery-item">
-            <dt class="gallery-icon landscape">
-            <a class="fancybox-gallery" href="<?php echo get_template_directory_uri();?>/images/demo/best-picture-gallery-Arizona-Antelope-Canyon-Farols-Fotos-photo.jpg" data-fancybox-group="group">
-            <img class="attachment-thumbnail" width="150" height="150" alt="best-picture-gallery-Arizona-Antelope-Canyon-Farols-Fotos-photo" src="<?php echo get_template_directory_uri();?>/images/demo/best-picture-gallery-Arizona-Antelope-Canyon-Farols-Fotos-photo-150x150.jpg">
+            <a class="fancybox-gallery" href="<?php echo get_template_directory_uri();?>/images/demo/img2.jpg">
+            <img class="attachment-thumbnail" width="150" height="150" alt="img2" src="<?php echo get_template_directory_uri();?>/images/demo/img2-thumb.jpg">
             </a>
             </dt>
             </dl>
             <br style="clear: both">
             <dl class="gallery-item">
             <dt class="gallery-icon landscape">
-            <a class="fancybox-gallery" href="<?php echo get_template_directory_uri();?>/images/demo/best-picture-gallery-Brazil-Rio-de-Janeiro-Jesus-iko-photo.jpg" data-fancybox-group="group">
-            <img class="attachment-thumbnail" width="150" height="150" alt="best-picture-gallery-Brazil-Rio-de-Janeiro-Jesus-iko-photo" src="<?php echo get_template_directory_uri();?>/images/demo/best-picture-gallery-Brazil-Rio-de-Janeiro-Jesus-iko-photo-150x150.jpg">
+            <a class="fancybox-gallery" href="<?php echo get_template_directory_uri();?>/images/demo/img3.jpg">
+            <img class="attachment-thumbnail" width="150" height="150" alt="img3" src="<?php echo get_template_directory_uri();?>/images/demo/img3-thumb.jpg">
             </a>
             </dt>
             </dl>
             <dl class="gallery-item">
             <dt class="gallery-icon landscape">
-            <a class="fancybox-gallery" href="<?php echo get_template_directory_uri();?>/images/demo/best-picture-gallery-India-Maldives-Vilu-Reef-resort-deckchair-pic.jpg" data-fancybox-group="group">
-            <img class="attachment-thumbnail" width="150" height="150" alt="best-picture-gallery-India-Maldives-Vilu-Reef-resort-deckchair-pic" src="<?php echo get_template_directory_uri();?>/images/demo/best-picture-gallery-India-Maldives-Vilu-Reef-resort-deckchair-pic-150x150.jpg">
+            <a class="fancybox-gallery" href="<?php echo get_template_directory_uri();?>/images/demo/img4.jpg">
+            <img class="attachment-thumbnail" width="150" height="150" alt="img4" src="<?php echo get_template_directory_uri();?>/images/demo/img4-thumb.jpg">
             </a>
             </dt>
             </dl>
             <dl class="gallery-item">
             <dt class="gallery-icon landscape">
-            <a class="fancybox-gallery" href="<?php echo get_template_directory_uri();?>/images/demo/best-picture-gallery-landscape-mountain-house-Chris-archi3d-photo.jpg" data-fancybox-group="group">
-            <img class="attachment-thumbnail" width="150" height="150" alt="best-picture-gallery-landscape-mountain-house-Chris-archi3d-photo" src="<?php echo get_template_directory_uri();?>/images/demo/best-picture-gallery-landscape-mountain-house-Chris-archi3d-photo-150x150.jpg">
+            <a class="fancybox-gallery" href="<?php echo get_template_directory_uri();?>/images/demo/img5.jpg">
+            <img class="attachment-thumbnail" width="150" height="150" alt="img5" src="<?php echo get_template_directory_uri();?>/images/demo/img5-thumb.jpg">
+            </a>
+            </dt>
+            </dl>
+            <dl class="gallery-item">
+            <dt class="gallery-icon landscape">
+            <a class="fancybox-gallery" href="<?php echo get_template_directory_uri();?>/images/demo/img6.jpg">
+            <img class="attachment-thumbnail" width="150" height="150" alt="img6" src="<?php echo get_template_directory_uri();?>/images/demo/img6-thumb.jpg">
             </a>
             </dt>
             </dl>
@@ -491,7 +488,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 			        		</div>
 
 			        		<div class="testimonail-excerpt">
-			        			Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled...
+			        			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...
 			        		</div>
 			        	</div>
 						<div class="testimoinal-client-name"><?php echo $client_name[$testimonial_count]; ?></div>
@@ -504,5 +501,3 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 		</div>
 	</div>
 </section>
-
-<?php get_footer(); ?>

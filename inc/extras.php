@@ -187,13 +187,14 @@ function accesspresslite_scripts() {
 	
 	
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
-	wp_enqueue_style( 'fancybox-css', get_template_directory_uri() . '/css/jquery.fancybox.css' );
+	wp_enqueue_style( 'fancybox-css', get_template_directory_uri() . '/css/nivo-lightbox.css' );
 	wp_enqueue_style( 'bx-slider-style', get_template_directory_uri() . '/css/jquery.bxslider.css' );
 	wp_enqueue_style( 'accesspresslite-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'jquery');
+	wp_enqueue_script( 'jquery'); 
 	wp_enqueue_script( 'bx-slider', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array('jquery'), '4.1', true );
-	wp_enqueue_script( 'fancybox', get_template_directory_uri() . '/js/jquery.fancybox.js', array('jquery'), '2.1', true );
+	wp_enqueue_script( 'fancybox', get_template_directory_uri() . '/js/nivo-lightbox.min.js', array('jquery'), '2.1', true );
+	wp_enqueue_script( 'jquery-actual', get_template_directory_uri() . '/js/jquery.actual.min.js', array('jquery'), '1.0.16', true );
 	wp_enqueue_script( 'accesspresslite-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 	wp_enqueue_script( 'custom', get_template_directory_uri() . '/js/custom.js', array('jquery'), '1.1', true );
 
@@ -263,47 +264,47 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 		?>
 		<div class="socials">
 		<?php if(!empty($ak_settings['ak_facebook'])){ ?>
-		<a href="<?php echo $ak_settings['ak_facebook']; ?>" class="facebook" title="Facebook"><span class="font-icon-social-facebook"></span></a>
+		<a href="<?php echo $ak_settings['ak_facebook']; ?>" class="facebook" title="Facebook" target="_blank"><span class="font-icon-social-facebook"></span></a>
 		<?php } ?>
 
 		<?php if(!empty($ak_settings['ak_twitter'])){ ?>
-		<a href="<?php echo $ak_settings['ak_twitter']; ?>" class="twitter" title="Twitter"><span class="font-icon-social-twitter"></span></a>
+		<a href="<?php echo $ak_settings['ak_twitter']; ?>" class="twitter" title="Twitter" target="_blank"><span class="font-icon-social-twitter"></span></a>
 		<?php } ?>
 
 		<?php if(!empty($ak_settings['ak_gplus'])){ ?>
-		<a href="<?php echo $ak_settings['ak_gplus']; ?>" class="gplus" title="Google Plus"><span class="font-icon-social-google-plus"></span></a>
+		<a href="<?php echo $ak_settings['ak_gplus']; ?>" class="gplus" title="Google Plus" target="_blank"><span class="font-icon-social-google-plus"></span></a>
 		<?php } ?>
 
 		<?php if(!empty($ak_settings['ak_youtube'])){ ?>
-		<a href="<?php echo $ak_settings['ak_youtube']; ?>" class="youtube" title="Youtube"><span class="font-icon-social-youtube"></span></a>
+		<a href="<?php echo $ak_settings['ak_youtube']; ?>" class="youtube" title="Youtube" target="_blank"><span class="font-icon-social-youtube"></span></a>
 		<?php } ?>
 
 		<?php if(!empty($ak_settings['ak_pinterest'])){ ?>
-		<a href="<?php echo $ak_settings['ak_pinterest']; ?>" class="pinterest" title="Pinterest"><span class="font-icon-social-pinterest"></span></a>
+		<a href="<?php echo $ak_settings['ak_pinterest']; ?>" class="pinterest" title="Pinterest" target="_blank"><span class="font-icon-social-pinterest"></span></a>
 		<?php } ?>
 
 		<?php if(!empty($ak_settings['ak_linkedin'])){ ?>
-		<a href="<?php echo $ak_settings['ak_linkedin']; ?>" class="linkedin" title="Linkedin"><span class="font-icon-social-linkedin"></span></a>
+		<a href="<?php echo $ak_settings['ak_linkedin']; ?>" class="linkedin" title="Linkedin" target="_blank"><span class="font-icon-social-linkedin"></span></a>
 		<?php } ?>
 
 		<?php if(!empty($ak_settings['ak_flickr'])){ ?>
-		<a href="<?php echo $ak_settings['ak_flickr']; ?>" class="flickr" title="Flickr"><span class="font-icon-social-flickr"></span></a>
+		<a href="<?php echo $ak_settings['ak_flickr']; ?>" class="flickr" title="Flickr" target="_blank"><span class="font-icon-social-flickr"></span></a>
 		<?php } ?>
 
 		<?php if(!empty($ak_settings['ak_vimeo'])){ ?>
-		<a href="<?php echo $ak_settings['ak_vimeo']; ?>" class="vimeo" title="Vimeo"><span class="font-icon-social-vimeo"></span></a>
+		<a href="<?php echo $ak_settings['ak_vimeo']; ?>" class="vimeo" title="Vimeo" target="_blank"><span class="font-icon-social-vimeo"></span></a>
 		<?php } ?>
 
 		<?php if(!empty($ak_settings['ak_stumbleupon'])){ ?>
-		<a href="<?php echo $ak_settings['ak_stumbleupon']; ?>" class="stumbleupon" title="Stumbleupon"><span class="font-icon-social-stumbleupon"></span></a>
+		<a href="<?php echo $ak_settings['ak_stumbleupon']; ?>" class="stumbleupon" title="Stumbleupon" target="_blank"><span class="font-icon-social-stumbleupon"></span></a>
 		<?php } ?>
 
 		<?php if(!empty($ak_settings['ak_skype'])){ ?>
-		<a href="<?php echo $ak_settings['ak_skype']; ?>" class="skype" title="Skype"><span class="font-icon-social-skype"></span></a>
+		<a href="<?php echo $ak_settings['ak_skype']; ?>" class="skype" title="Skype" target="_blank"><span class="font-icon-social-skype"></span></a>
 		<?php } ?>
 
 		<?php if(!empty($ak_settings['ak_rss'])){ ?>
-		<a href="<?php echo $ak_settings['ak_rss']; ?>" class="rss" title="RSS"><span class="font-icon-rss"></span></a>
+		<a href="<?php echo $ak_settings['ak_rss']; ?>" class="rss" title="RSS" target="_blank"><span class="font-icon-rss"></span></a>
 		<?php } ?>
 		</div>
 	<?php } 
@@ -491,7 +492,7 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 
 		$post_class = get_post_meta( $post -> ID, 'ak_sidebar_layout', true );
 		
-		if(!empty($post_class)){
+		if(!empty($post_class) && is_singular()){
 		$classes[] = $post_class;
 		}else{
 		$classes[] = 'right-sidebar';	
@@ -513,32 +514,3 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
    }
    
    add_filter( 'body_class', 'ak_web_layout' );
-   
-   
-/**
- *    add_filter('wp_nav_menu_items','add_home_menu', 10, 2);
-
- *     function add_home_menu($items, $args) 
- *     {
- *     
- *         if( $args->theme_location == 'primary' )
- *     
- *             return '<li><a href="'.home_url().'">Home</a></li>'.$items;
- *     
- *     }
- */
-
-
-/**
- * 	function show_array_cb(){
- * 		global $ak_options;
- * 	$ak_settings = get_option( 'ak_options', $ak_options );
- * 		var_dump($ak_settings);
- * 	}
- * 	 add_action('show_array','show_array_cb', 10);
- */
-	
-
-
-
-
