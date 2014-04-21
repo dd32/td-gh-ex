@@ -113,7 +113,7 @@
 	// 	Post Meta Design
 	function newspress_post_meta() { ?>
 	<div class="post-meta"><span class="post-edit"> <?php edit_post_link(''); ?></span></span>
-	<span class="post-tag"> <?php the_tags('<span class="post-tag-icon"></span>', ', '); ?> </span><span class="post-category"> <?php the_category(', '); ?> </span> <span class="post-comments"> <?php comments_popup_link('No Comments' . ' &#187;', 'One Comment' . ' &#187;', '% ' . 'Comments' . ' &#187;'); ?></span>
+	<span class="post-tag"> <?php the_tags('<span class="post-tag-icon"></span>', ', '); ?> </span><span class="post-category"> <?php the_category(', '); ?> </span> <span class="post-comments"> <?php comments_popup_link('No Comments' . ' &#187;', 'One Comment' . ' &#187;', '% ' . 'Comments' . ' &#187;', ' &#187;' . 'commentsbox',  'Comments are Off'); ?></span>
 	</div> 
 	
 	<?php

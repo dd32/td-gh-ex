@@ -9,6 +9,7 @@
 ?>
 
 <div id="commentsbox">
+<div id="comments">
 <?php if ( have_comments() ) : ?>
 	<h2 class="comments"><?php comments_number('No Comments' . '', 'One Comment', '% ' . 'Comments' . '' );  echo ' ' . ' to'; ?> <a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
 	<ol class="commentlist">
@@ -28,6 +29,7 @@
 	<?php endif; ?>
 <?php endif; ?>
 <?php if ( comments_open() ) : ?>
+	
 	<div id="comment-form">
 		<?php 
 		$commenter = wp_get_current_commenter();
@@ -69,4 +71,5 @@
 		comment_form($newspress_comment_args); ?>
 	</div>
 <?php endif; ?>
+</div>
 </div>
