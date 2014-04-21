@@ -79,10 +79,10 @@
         </ul>
         <?php endif; //social provider ?>
         <div class="copyright"> <span>
-          <?php 
-									if($options['footertext'] != '')
+          <?php $footertext_options = filter_var($options['footertext'], FILTER_SANITIZE_STRING);
+									if($footertext_options != '')
 									{
-										echo $options['footertext'];
+										echo $footertext_options;
 									}else{
 										echo "Powered by <a href='http://wordpress.org' target='_blank'>WordPress</a>.";
 										echo "<br />";

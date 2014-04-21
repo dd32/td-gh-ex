@@ -67,4 +67,6 @@ Version 3.03
 Version 3.04
     i)  License details added
 
+Version 3.05
+    i)  Added sanitized PHP code for ThemeOptions for security reasons.	
 	
