@@ -10,13 +10,13 @@
 
 	</div><!-- #content -->
 </div><!-- #page -->
-<div <?php footer_class(); ?>>
+<div <?php generate_footer_class(); ?>>
 	<?php 
 	global $post, $generate_defaults;
 	$generate_settings = get_option( 'generate_settings', $generate_defaults );
 	$stored_meta = '';
 	if ( isset( $post ) ) :
-		$stored_meta = get_post_meta( $post->ID, '_meta-generate-footer-widget', true );
+		$stored_meta = get_post_meta( $post->ID, '_generate-footer-widget-meta', true );
 	endif;
 	
 	if ( '' !== $stored_meta ) :

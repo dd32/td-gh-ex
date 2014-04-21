@@ -5,9 +5,9 @@
  * @since 0.1
  * @param string|array $class One or more classes to add to the class list.
  */
-function right_sidebar_class( $class = '' ) {
+function generate_right_sidebar_class( $class = '' ) {
 	// Separates classes with a single space, collates classes for post DIV
-	echo 'class="' . join( ' ', get_right_sidebar_class( $class ) ) . '"';
+	echo 'class="' . join( ' ', generate_get_right_sidebar_class( $class ) ) . '"';
 }
 
 /**
@@ -17,7 +17,7 @@ function right_sidebar_class( $class = '' ) {
  * @param string|array $class One or more classes to add to the class list.
  * @return array Array of classes.
  */
-function get_right_sidebar_class( $class = '' ) {
+function generate_get_right_sidebar_class( $class = '' ) {
 
 	$classes = array();
 
@@ -29,7 +29,7 @@ function get_right_sidebar_class( $class = '' ) {
 
 	$classes = array_map('esc_attr', $classes);
 
-	return apply_filters('right_sidebar_class', $classes, $class);
+	return apply_filters('generate_right_sidebar_class', $classes, $class);
 }
 
 /**
@@ -38,9 +38,9 @@ function get_right_sidebar_class( $class = '' ) {
  * @since 0.1
  * @param string|array $class One or more classes to add to the class list.
  */
-function left_sidebar_class( $class = '' ) {
+function generate_left_sidebar_class( $class = '' ) {
 	// Separates classes with a single space, collates classes for post DIV
-	echo 'class="' . join( ' ', get_left_sidebar_class( $class ) ) . '"';
+	echo 'class="' . join( ' ', generate_get_left_sidebar_class( $class ) ) . '"';
 }
 
 /**
@@ -50,7 +50,7 @@ function left_sidebar_class( $class = '' ) {
  * @param string|array $class One or more classes to add to the class list.
  * @return array Array of classes.
  */
-function get_left_sidebar_class( $class = '' ) {
+function generate_get_left_sidebar_class( $class = '' ) {
 
 	$classes = array();
 
@@ -62,7 +62,7 @@ function get_left_sidebar_class( $class = '' ) {
 
 	$classes = array_map('esc_attr', $classes);
 
-	return apply_filters('left_sidebar_class', $classes, $class);
+	return apply_filters('generate_left_sidebar_class', $classes, $class);
 }
 
 /**
@@ -71,9 +71,9 @@ function get_left_sidebar_class( $class = '' ) {
  * @since 0.1
  * @param string|array $class One or more classes to add to the class list.
  */
-function content_class( $class = '' ) {
+function generate_content_class( $class = '' ) {
 	// Separates classes with a single space, collates classes for post DIV
-	echo 'class="' . join( ' ', get_content_class( $class ) ) . '"';
+	echo 'class="' . join( ' ', generate_get_content_class( $class ) ) . '"';
 }
 
 /**
@@ -83,7 +83,7 @@ function content_class( $class = '' ) {
  * @param string|array $class One or more classes to add to the class list.
  * @return array Array of classes.
  */
-function get_content_class( $class = '' ) {
+function generate_get_content_class( $class = '' ) {
 
 	$classes = array();
 
@@ -95,7 +95,7 @@ function get_content_class( $class = '' ) {
 
 	$classes = array_map('esc_attr', $classes);
 
-	return apply_filters('content_class', $classes, $class);
+	return apply_filters('generate_content_class', $classes, $class);
 }
 
 /**
@@ -104,9 +104,9 @@ function get_content_class( $class = '' ) {
  * @since 0.1
  * @param string|array $class One or more classes to add to the class list.
  */
-function header_class( $class = '' ) {
+function generate_header_class( $class = '' ) {
 	// Separates classes with a single space, collates classes for post DIV
-	echo 'class="' . join( ' ', get_header_class( $class ) ) . '"';
+	echo 'class="' . join( ' ', generate_get_header_class( $class ) ) . '"';
 }
 
 /**
@@ -116,7 +116,7 @@ function header_class( $class = '' ) {
  * @param string|array $class One or more classes to add to the class list.
  * @return array Array of classes.
  */
-function get_header_class( $class = '' ) {
+function generate_get_header_class( $class = '' ) {
 
 	$classes = array();
 
@@ -128,7 +128,7 @@ function get_header_class( $class = '' ) {
 
 	$classes = array_map('esc_attr', $classes);
 
-	return apply_filters('header_class', $classes, $class);
+	return apply_filters('generate_header_class', $classes, $class);
 }
 
 /**
@@ -137,9 +137,9 @@ function get_header_class( $class = '' ) {
  * @since 0.1
  * @param string|array $class One or more classes to add to the class list.
  */
-function inside_header_class( $class = '' ) {
+function generate_inside_header_class( $class = '' ) {
 	// Separates classes with a single space, collates classes for post DIV
-	echo 'class="' . join( ' ', get_inside_header_class( $class ) ) . '"';
+	echo 'class="' . join( ' ', generate_get_inside_header_class( $class ) ) . '"';
 }
 
 /**
@@ -149,7 +149,7 @@ function inside_header_class( $class = '' ) {
  * @param string|array $class One or more classes to add to the class list.
  * @return array Array of classes.
  */
-function get_inside_header_class( $class = '' ) {
+function generate_get_inside_header_class( $class = '' ) {
 
 	$classes = array();
 
@@ -161,7 +161,7 @@ function get_inside_header_class( $class = '' ) {
 
 	$classes = array_map('esc_attr', $classes);
 
-	return apply_filters('inside_header_class', $classes, $class);
+	return apply_filters('generate_inside_header_class', $classes, $class);
 }
 
 /**
@@ -170,9 +170,9 @@ function get_inside_header_class( $class = '' ) {
  * @since 0.1
  * @param string|array $class One or more classes to add to the class list.
  */
-function container_class( $class = '' ) {
+function generate_container_class( $class = '' ) {
 	// Separates classes with a single space, collates classes for post DIV
-	echo 'class="' . join( ' ', get_container_class( $class ) ) . '"';
+	echo 'class="' . join( ' ', generate_get_container_class( $class ) ) . '"';
 }
 
 /**
@@ -182,7 +182,7 @@ function container_class( $class = '' ) {
  * @param string|array $class One or more classes to add to the class list.
  * @return array Array of classes.
  */
-function get_container_class( $class = '' ) {
+function generate_get_container_class( $class = '' ) {
 
 	$classes = array();
 
@@ -194,7 +194,7 @@ function get_container_class( $class = '' ) {
 
 	$classes = array_map('esc_attr', $classes);
 
-	return apply_filters('container_class', $classes, $class);
+	return apply_filters('generate_container_class', $classes, $class);
 }
 
 /**
@@ -203,9 +203,9 @@ function get_container_class( $class = '' ) {
  * @since 0.1
  * @param string|array $class One or more classes to add to the class list.
  */
-function navigation_class( $class = '' ) {
+function generate_navigation_class( $class = '' ) {
 	// Separates classes with a single space, collates classes for post DIV
-	echo 'class="' . join( ' ', get_navigation_class( $class ) ) . '"';
+	echo 'class="' . join( ' ', generate_get_navigation_class( $class ) ) . '"';
 }
 
 /**
@@ -215,7 +215,7 @@ function navigation_class( $class = '' ) {
  * @param string|array $class One or more classes to add to the class list.
  * @return array Array of classes.
  */
-function get_navigation_class( $class = '' ) {
+function generate_get_navigation_class( $class = '' ) {
 
 	$classes = array();
 
@@ -227,7 +227,7 @@ function get_navigation_class( $class = '' ) {
 
 	$classes = array_map('esc_attr', $classes);
 
-	return apply_filters('navigation_class', $classes, $class);
+	return apply_filters('generate_navigation_class', $classes, $class);
 }
 
 /**
@@ -236,9 +236,9 @@ function get_navigation_class( $class = '' ) {
  * @since 0.1
  * @param string|array $class One or more classes to add to the class list.
  */
-function menu_class( $class = '' ) {
+function generate_menu_class( $class = '' ) {
 	// Separates classes with a single space, collates classes for post DIV
-	echo 'class="' . join( ' ', get_menu_class( $class ) ) . '"';
+	echo 'class="' . join( ' ', generate_get_menu_class( $class ) ) . '"';
 }
 
 /**
@@ -248,7 +248,7 @@ function menu_class( $class = '' ) {
  * @param string|array $class One or more classes to add to the class list.
  * @return array Array of classes.
  */
-function get_menu_class( $class = '' ) {
+function generate_get_menu_class( $class = '' ) {
 
 	$classes = array();
 
@@ -260,7 +260,7 @@ function get_menu_class( $class = '' ) {
 
 	$classes = array_map('esc_attr', $classes);
 
-	return apply_filters('menu_class', $classes, $class);
+	return apply_filters('generate_menu_class', $classes, $class);
 }
 
 /**
@@ -269,9 +269,9 @@ function get_menu_class( $class = '' ) {
  * @since 0.1
  * @param string|array $class One or more classes to add to the class list.
  */
-function footer_class( $class = '' ) {
+function generate_footer_class( $class = '' ) {
 	// Separates classes with a single space, collates classes for post DIV
-	echo 'class="' . join( ' ', get_footer_class( $class ) ) . '"';
+	echo 'class="' . join( ' ', generate_get_footer_class( $class ) ) . '"';
 }
 
 /**
@@ -281,7 +281,7 @@ function footer_class( $class = '' ) {
  * @param string|array $class One or more classes to add to the class list.
  * @return array Array of classes.
  */
-function get_footer_class( $class = '' ) {
+function generate_get_footer_class( $class = '' ) {
 
 	$classes = array();
 
@@ -293,5 +293,5 @@ function get_footer_class( $class = '' ) {
 
 	$classes = array_map('esc_attr', $classes);
 
-	return apply_filters('footer_class', $classes, $class);
+	return apply_filters('generate_footer_class', $classes, $class);
 }

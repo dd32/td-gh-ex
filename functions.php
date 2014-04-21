@@ -11,9 +11,9 @@
 if ( ! isset( $content_width ) )
 	$content_width = 1000; /* pixels */
 	
-define( 'GEN_VERSION', '0.1');
-define( 'GEN_URI', get_template_directory_uri() );
-define( 'GEN_DIR', get_template_directory() );
+define( 'GENERATE_VERSION', '0.2');
+define( 'GENERATE_URI', get_template_directory_uri() );
+define( 'GENERATE_DIR', get_template_directory() );
 
 add_action( 'after_setup_theme', 'generate_setup' );
 if ( ! function_exists( 'generate_setup' ) ) :
@@ -158,10 +158,10 @@ add_action( 'wp_enqueue_scripts', 'generate_scripts' );
 function generate_scripts() {
 
 	// Generate stylesheets
-	wp_enqueue_style( 'generate-style-grid', get_template_directory_uri() . '/css/structure.css' );
-	wp_enqueue_style( 'generate-style', get_template_directory_uri() . '/css/style.css', false, GEN_VERSION, 'all' );
-	wp_enqueue_style( 'generate-child', get_stylesheet_uri(), false, GEN_VERSION, 'all' );
-	wp_enqueue_style( 'superfish', get_template_directory_uri() . '/css/superfish.css' );
+	wp_enqueue_style( 'generate-style-grid', get_template_directory_uri() . '/css/structure.css', false, GENERATE_VERSION, 'all' );
+	wp_enqueue_style( 'generate-style', get_template_directory_uri() . '/css/style.css', false, GENERATE_VERSION, 'all' );
+	wp_enqueue_style( 'generate-child', get_stylesheet_uri(), false, GENERATE_VERSION, 'all' );
+	wp_enqueue_style( 'superfish', get_template_directory_uri() . '/css/superfish.css', false, GENERATE_VERSION, 'all' );
 	wp_enqueue_style( 'fontawesome', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' );
 	
 	// If the Typography plugin isn't activated, set up the default fonts
@@ -170,11 +170,11 @@ function generate_scripts() {
 	endif;
 
 	// Generate scripts
-	wp_enqueue_script( 'generate-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
-	wp_enqueue_script( 'generate-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-	wp_enqueue_script( 'superfish', get_template_directory_uri() . '/js/superfish.js', array('jquery'), GEN_VERSION, true );
-	wp_enqueue_script( 'hoverIntent', get_template_directory_uri() . '/js/hoverIntent.js', array('superfish'), GEN_VERSION, true );
-	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), GEN_VERSION, true );
+	wp_enqueue_script( 'generate-navigation', get_template_directory_uri() . '/js/navigation.js', array(), GENERATE_VERSION, true );
+	wp_enqueue_script( 'generate-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), GENERATE_VERSION, true );
+	wp_enqueue_script( 'superfish', get_template_directory_uri() . '/js/superfish.js', array('jquery'), GENERATE_VERSION, true );
+	wp_enqueue_script( 'hoverIntent', get_template_directory_uri() . '/js/hoverIntent.js', array('superfish'), GENERATE_VERSION, true );
+	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), GENERATE_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -236,8 +236,8 @@ require get_template_directory() . '/inc/helper.php';
  * Construct the sidebars
  * @since 0.1
  */
-add_action('generate_sidebars','construct_generate_sidebars');
-function construct_generate_sidebars()
+add_action('generate_sidebars','generate_contruct_sidebars');
+function generate_contruct_sidebars()
 {
 	global $post, $generate_defaults;
 	$generate_settings = get_option( 'generate_settings', $generate_defaults );
@@ -245,7 +245,7 @@ function construct_generate_sidebars()
 	
 	// Prevent PHP notices
 	if ( isset( $post ) ) :
-		$stored_meta = get_post_meta( $post->ID, '_meta-generate-layout', true );
+		$stored_meta = get_post_meta( $post->ID, '_generate-sidebar-layout-meta', true );
 	endif;
 	
 	// If the metabox is set, use it instead of the global settings
@@ -367,12 +367,12 @@ function generate_add_navigation_before_left_sidebar()
 function generate_navigation_position()
 {
 	?>
-	<nav itemtype="http://schema.org/SiteNavigationElement" itemscope="itemscope" id="site-navigation" role="navigation" <?php navigation_class(); ?>>
+	<nav itemtype="http://schema.org/SiteNavigationElement" itemscope="itemscope" id="site-navigation" role="navigation" <?php generate_navigation_class(); ?>>
 		<div class="inside-navigation grid-container grid-parent">
 			<h3 class="menu-toggle"><?php _e( 'Menu', 'generate' ); ?></h3>
 			<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'generate' ); ?>"><?php _e( 'Skip to content', 'generate' ); ?></a></div>
 				<div class="main-nav">
-					<ul <?php menu_class(); ?>>
+					<ul <?php generate_menu_class(); ?>>
 						<?php 
 						if ( has_nav_menu( 'primary' ) ) :
 							wp_nav_menu( array( 
@@ -425,9 +425,10 @@ function generate_disable_all_page_comments()
 /**
  * Turn comments off by default when adding new pages.
  * @since 0.1
+ * Off by default - might turn into an option
  */
-add_filter( 'wp_insert_post_data', 'default_comments_off' );
-function default_comments_off( $data ) {
+//add_filter( 'wp_insert_post_data', 'generate_default_comments_off' );
+function generate_default_comments_off( $data ) {
 
     if( $data['post_type'] == 'page' && $data['post_status'] == 'auto-draft' ) {
         $data['comment_status'] = 0;
@@ -544,7 +545,7 @@ echo $output; ?>
 add_action('wp_head','generate_add_head_scripts');
 function generate_add_head_scripts()
 {
-	echo get_option('gen_header_scripts');
+	echo get_option('generate_header_scripts');
 }
 
 /**
@@ -554,7 +555,7 @@ function generate_add_head_scripts()
 add_action('wp_footer','generate_add_footer_scripts');
 function generate_add_footer_scripts()
 {
-	echo get_option('gen_footer_scripts');
+	echo get_option('generate_footer_scripts');
 }
 
 /**
@@ -582,5 +583,5 @@ function generate_default_colors()
 	if ( function_exists('generate_colors_setup') )
 		return;
 		
-	echo 'body{background-color: #efefef; color: #3a3a3a; }a, a:visited {color: #1e73be; text-decoration: none; }a:hover {color: #000000; }body .grid-container {max-width: 1100px; }.site-header {background: #FFFFFF; color: #3a3a3a; }.site-header a, .site-header a:visited {color: #3a3a3a; }.main-title a, .main-title a:hover, .main-title a:visited {color: #222222; }.site-description {color: #999999; }.main-navigation,   .main-navigation ul ul {background: #222222; }.main-navigation ul ul {background: #3f3f3f; }.main-navigation .main-nav ul li a, .menu-toggle {color: #FFFFFF; }.main-navigation .main-nav ul ul li a {color: #FFFFFF; }.main-navigation .main-nav ul li > a:hover,  .main-navigation .main-nav ul li.sfHover > a {color: #FFFFFF; background: #1e72bd; }.main-navigation .main-nav ul ul li > a:hover,  .main-navigation .main-nav ul ul li.sfHover > a {color: #FFFFFF; background: #4f4f4f; }.main-navigation .main-nav ul .current-menu-item > a,  .main-navigation .main-nav ul .current-menu-parent > a,  .main-navigation .main-nav ul .current-menu-ancestor > a,  .main-navigation .main-nav ul .current_page_item > a,  .main-navigation .main-nav ul .current_page_parent > a,  .main-navigation .main-nav ul .current_page_ancestor > a {color: #FFFFFF; background: #1e72bd; }.main-navigation .main-nav ul .current-menu-item > a:hover,  .main-navigation .main-nav ul .current-menu-parent > a:hover,  .main-navigation .main-nav ul .current-menu-ancestor > a:hover,  .main-navigation .main-nav ul .current_page_item > a:hover,  .main-navigation .main-nav ul .current_page_parent > a:hover,  .main-navigation .main-nav ul .current_page_ancestor > a:hover,  .main-navigation .main-nav ul .current-menu-item.sfHover > a,  .main-navigation .main-nav ul .current-menu-parent.sfHover > a,  .main-navigation .main-nav ul .current-menu-ancestor.sfHover > a,  .main-navigation .main-nav ul .current_page_item.sfHover > a,  .main-navigation .main-nav ul .current_page_parent.sfHover > a,  .main-navigation .main-nav ul .current_page_ancestor.sfHover > a {color: #FFFFFF; background: #1e72bd; }.main-navigation .main-nav ul ul .current-menu-item > a,  .main-navigation .main-nav ul ul .current-menu-parent > a,  .main-navigation .main-nav ul ul .current-menu-ancestor > a,  .main-navigation .main-nav ul ul .current_page_item > a,  .main-navigation .main-nav ul ul .current_page_parent > a,  .main-navigation .main-nav ul ul .current_page_ancestor > a {color: #FFFFFF; background: #4f4f4f; }.main-navigation .main-nav ul ul .current-menu-item > a:hover,  .main-navigation .main-nav ul ul .current-menu-parent > a:hover,  .main-navigation .main-nav ul ul .current-menu-ancestor > a:hover,  .main-navigation .main-nav ul ul .current_page_item > a:hover,  .main-navigation .main-nav ul ul .current_page_parent > a:hover,  .main-navigation .main-nav ul ul .current_page_ancestor > a:hover, .main-navigation .main-nav ul ul .current-menu-item.sfHover > a,  .main-navigation .main-nav ul ul .current-menu-parent.sfHover > a,  .main-navigation .main-nav ul ul .current-menu-ancestor.sfHover > a,  .main-navigation .main-nav ul ul .current_page_item.sfHover > a,  .main-navigation .main-nav ul ul .current_page_parent.sfHover > a,  .main-navigation .main-nav ul ul .current_page_ancestor.sfHover > a {color: #FFFFFF; background: #4f4f4f; }.inside-article,  .comments-area,  .page-header, .one-container .container, .paging-navigation, .inside-page-header {background: #FFFFFF; color: #3a3a3a; }.entry-meta {color: #888888; }.entry-meta a,  .entry-meta a:visited {color: #666666; }.entry-meta a:hover {color: #1E73BE; }.sidebar .widget {background: #FFFFFF; color: #3a3a3a; }.sidebar .widget .widget-title {color: #000000; }.footer-widgets {background: #FFFFFF; color: #3a3a3a; }.footer-widgets a,  .footer-widgets a:visited {color: #1e73be; }.footer-widgets a:hover {color: #000000; }.footer-widgets .widget-title {color: #000000; }.site-info {background: #222222; color: #ffffff; }.site-info a,  .site-info a:visited {color: #ffffff; }.site-info a:hover {color: #4295DD; }';
+	echo '.site-header {background: #FFFFFF; }.site-header a, .site-header a:visited {color: #3a3a3a; }.main-title a, .main-title a:hover, .main-title a:visited {color: #222222; }.site-description {color: #999999; }.main-navigation,   .main-navigation ul ul {background: #222222; }.main-navigation ul ul {background: #3f3f3f; }.main-navigation .main-nav ul li a, .menu-toggle {color: #FFFFFF; }.main-navigation .main-nav ul ul li a {color: #FFFFFF; }.main-navigation .main-nav ul li > a:hover,  .main-navigation .main-nav ul li.sfHover > a {color: #FFFFFF; background: #1e72bd; }.main-navigation .main-nav ul ul li > a:hover,  .main-navigation .main-nav ul ul li.sfHover > a {color: #FFFFFF; background: #4f4f4f; }.main-navigation .main-nav ul .current-menu-item > a,  .main-navigation .main-nav ul .current-menu-parent > a,  .main-navigation .main-nav ul .current-menu-ancestor > a,  .main-navigation .main-nav ul .current_page_item > a,  .main-navigation .main-nav ul .current_page_parent > a,  .main-navigation .main-nav ul .current_page_ancestor > a {color: #FFFFFF; background: #1e72bd; }.main-navigation .main-nav ul .current-menu-item > a:hover,  .main-navigation .main-nav ul .current-menu-parent > a:hover,  .main-navigation .main-nav ul .current-menu-ancestor > a:hover,  .main-navigation .main-nav ul .current_page_item > a:hover,  .main-navigation .main-nav ul .current_page_parent > a:hover,  .main-navigation .main-nav ul .current_page_ancestor > a:hover,  .main-navigation .main-nav ul .current-menu-item.sfHover > a,  .main-navigation .main-nav ul .current-menu-parent.sfHover > a,  .main-navigation .main-nav ul .current-menu-ancestor.sfHover > a,  .main-navigation .main-nav ul .current_page_item.sfHover > a,  .main-navigation .main-nav ul .current_page_parent.sfHover > a,  .main-navigation .main-nav ul .current_page_ancestor.sfHover > a {color: #FFFFFF; background: #1e72bd; }.main-navigation .main-nav ul ul .current-menu-item > a,  .main-navigation .main-nav ul ul .current-menu-parent > a,  .main-navigation .main-nav ul ul .current-menu-ancestor > a,  .main-navigation .main-nav ul ul .current_page_item > a,  .main-navigation .main-nav ul ul .current_page_parent > a,  .main-navigation .main-nav ul ul .current_page_ancestor > a {color: #FFFFFF; background: #4f4f4f; }.main-navigation .main-nav ul ul .current-menu-item > a:hover,  .main-navigation .main-nav ul ul .current-menu-parent > a:hover,  .main-navigation .main-nav ul ul .current-menu-ancestor > a:hover,  .main-navigation .main-nav ul ul .current_page_item > a:hover,  .main-navigation .main-nav ul ul .current_page_parent > a:hover,  .main-navigation .main-nav ul ul .current_page_ancestor > a:hover, .main-navigation .main-nav ul ul .current-menu-item.sfHover > a,  .main-navigation .main-nav ul ul .current-menu-parent.sfHover > a,  .main-navigation .main-nav ul ul .current-menu-ancestor.sfHover > a,  .main-navigation .main-nav ul ul .current_page_item.sfHover > a,  .main-navigation .main-nav ul ul .current_page_parent.sfHover > a,  .main-navigation .main-nav ul ul .current_page_ancestor.sfHover > a {color: #FFFFFF; background: #4f4f4f; }.inside-article,  .comments-area,  .page-header, .one-container .container, .paging-navigation, .inside-page-header {background: #FFFFFF; }.sidebar .widget {background: #FFFFFF; }.sidebar .widget .widget-title {color: #000000; }.footer-widgets {background: #FFFFFF; color: #3a3a3a; }.footer-widgets .widget-title {color: #000000; }.site-info {background: #222222; color: #ffffff; }.site-info a,  .site-info a:visited {color: #ffffff; }.site-info a:hover {color: #4295DD; }';
 }

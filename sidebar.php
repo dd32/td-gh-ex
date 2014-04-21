@@ -5,7 +5,7 @@
  * @package Generate
  */
 ?>
-	<div id="right-sidebar" itemtype="http://schema.org/WPSideBar" itemscope="itemscope" role="complementary" <?php right_sidebar_class(); ?>>
+	<div id="right-sidebar" itemtype="http://schema.org/WPSideBar" itemscope="itemscope" role="complementary" <?php generate_right_sidebar_class(); ?>>
 		<div class="inside-right-sidebar">
 			<?php do_action( 'generate_before_right_sidebar' ); ?>
 			<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>

@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-	<section id="primary" <?php content_class(); ?>>
+	<section id="primary" <?php generate_content_class(); ?>>
 		<main id="main" class="site-main" itemtype="http://schema.org/SearchResultsPage" itemscope="itemscope" itemprop="mainContentOfPage" role="main">
 
 		<?php if ( have_posts() ) : ?>

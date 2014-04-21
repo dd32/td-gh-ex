@@ -14,7 +14,7 @@ add_action( 'customize_register', 'generate_customize_register' );
 function generate_customize_register( $wp_customize ) {
 
 	// Load custom controls
-	require_once GEN_DIR . '/inc/controls.php';
+	require_once GENERATE_DIR . '/inc/controls.php';
 	
 	// $wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	// $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';

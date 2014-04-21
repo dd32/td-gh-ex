@@ -14,14 +14,13 @@
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
 <?php wp_head(); ?>
 </head>
 
 <body itemtype="http://schema.org/WebPage" itemscope="itemscope" <?php body_class(); ?>>
 	<?php do_action( 'generate_before_header' ); ?>
-	<header itemtype="http://schema.org/WPHeader" itemscope="itemscope" id="masthead" role="banner" <?php header_class(); ?>>
-		<div <?php inside_header_class(); ?>>
+	<header itemtype="http://schema.org/WPHeader" itemscope="itemscope" id="masthead" role="banner" <?php generate_header_class(); ?>>
+		<div <?php generate_inside_header_class(); ?>>
 			<?php do_action( 'generate_inside_header'); ?>
 			
 			<?php if ( is_active_sidebar('header') ) : ?>

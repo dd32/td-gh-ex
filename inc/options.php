@@ -17,14 +17,14 @@
  */
 
 // create custom plugin settings menu
-add_action('admin_menu', 'gen_create_menu');
-function gen_create_menu() 
+add_action('admin_menu', 'generate_create_menu');
+function generate_create_menu() 
 {
 	$addons = array(
-		'generate_fonts_setup' => 'gen_fonts_license_key_status',
-		'generate_colors_setup' => 'gen_colors_license_key_status',
-		'generate_page_header' => 'gen_page_header_license_key_status',
-		'generate_insert_import_export' => 'gen_ie_license_key_status'
+		'generate_fonts_setup' => 'generate_fonts_license_key_status',
+		'generate_colors_setup' => 'generate_colors_license_key_status',
+		'generate_page_header' => 'generate_page_header_license_key_status',
+		'generate_insert_import_export' => 'generate_ie_license_key_status'
 	);
 	$activate_counter = 1;
 	$show_count = '';
@@ -35,42 +35,38 @@ function gen_create_menu()
 		endif;
 	}
 	
-	//add_menu_page( __('Generate','generate'), __('Generate','generate') . $show_count, 'edit_themes', 'generate-options', 'gen_settings_page', 'dashicons-plus', 3 );
-	//add_submenu_page('generate-options', __('Options','generate'), __('Options','generate'), 'edit_themes', 'generate-options', 'gen_settings_page');
+	//add_menu_page( __('Generate','generate'), __('Generate','generate') . $show_count, 'edit_themes', 'generate-options', 'generate_settings_page', 'dashicons-plus', 3 );
+	//add_submenu_page('generate-options', __('Options','generate'), __('Options','generate'), 'edit_themes', 'generate-options', 'generate_settings_page');
 	//add_submenu_page('generate-options', 'Customizer', 'Customizer', 'edit_theme_options', 'customize.php', '', '');
-	$gen_page = add_theme_page( __('GeneratePress','generate'), __('GeneratePress','generate') . $show_count, 'edit_themes', 'generate-options', 'gen_settings_page' );
+	$generate_page = add_theme_page( __('GeneratePress','generate'), __('GeneratePress','generate') . $show_count, 'edit_themes', 'generate-options', 'generate_settings_page' );
 	
 	//call register settings function
-	add_action( 'admin_init', 'register_gen_settings' );
-	add_action( "admin_print_scripts-$gen_page", 'generate_options_scripts' );
-	add_action( "admin_print_styles-$gen_page", 'generate_options_styles' );
+	add_action( 'admin_init', 'register_generate_settings' );
+	add_action( "admin_print_scripts-$generate_page", 'generate_options_scripts' );
+	add_action( "admin_print_styles-$generate_page", 'generate_options_styles' );
 }
 
 function generate_options_scripts() 
 {
-    // wp_enqueue_script( 
-    //    'move-it', 
-    //    GEN_URI . '/inc/admin/js/move-it.js',
-    //    array( 'jquery-ui-sortable', 'jquery' )
-    //);
+
 }
 
 function generate_options_styles() 
 {
      wp_enqueue_style( 
         'generate-options', 
-        GEN_URI . '/inc/css/style.css'
+        GENERATE_URI . '/inc/css/style.css'
     );
 }
 
 
-function register_gen_settings() {
+function register_generate_settings() {
 	//register our settings
-	register_setting( 'gen-settings-group', 'gen_header_scripts' );
-	register_setting( 'gen-settings-group', 'gen_footer_scripts' );
+	register_setting( 'generate-settings-group', 'generate_header_scripts' );
+	register_setting( 'generate-settings-group', 'generate_footer_scripts' );
 }
 
-function gen_settings_page() 
+function generate_settings_page() 
 {
 	?>
 	<div class="wrap">
@@ -79,8 +75,8 @@ function gen_settings_page()
 			<div class="postbox-container" style="float: none;max-width: 700px;">
 				<div class="meta-box-sortables">
 					<form method="post" action="options.php">
-						<?php settings_fields( 'gen-settings-group' ); ?>
-						<?php do_settings_sections( 'gen-settings-group' ); ?>
+						<?php settings_fields( 'generate-settings-group' ); ?>
+						<?php do_settings_sections( 'generate-settings-group' ); ?>
 						
 						<?php
 						if ( !empty($_GET['status']) && $_GET['status'] == 'imported' ) {
@@ -100,7 +96,7 @@ function gen_settings_page()
 							<h3 class="hndle"><?php _e('Information','generate');?></h3>
 							<div class="inside">
 								<p>
-									<strong style="display:inline-block;width:60px;"><?php _e('Version','generate');?>:</strong> <?php echo GEN_VERSION; ?><br />
+									<strong style="display:inline-block;width:60px;"><?php _e('Version','generate');?>:</strong> <?php echo GENERATE_VERSION; ?><br />
 									<strong style="display:inline-block;width:60px;"><?php _e('Author','generate');?>:</strong> <a href="<?php echo esc_url('http://edge22.com');?>" target="_blank">Thomas Usborne</a><br />
 									<strong style="display:inline-block;width:60px;"><?php _e('Website','generate');?>:</strong> <a href="<?php echo esc_url('http://generatepress.com');?>" target="_blank">GeneratePress</a>
 								</p>
@@ -111,31 +107,31 @@ function gen_settings_page()
 									$addons = array(
 										'1' => array(
 												'name' => __('Colors','generate'),
-												'version' => ( function_exists('generate_colors_setup') ) ? GEN_COLORS_VERSION : '',
+												'version' => ( function_exists('generate_colors_setup') ) ? GENERATE_COLORS_VERSION : '',
 												'id' => 'generate_colors_setup',
-												'license' => 'gen_colors_license_key_status',
-												'url' => esc_url('http://generatepress.com')
+												'license' => 'generate_colors_license_key_status',
+												'url' => esc_url('http://www.generatepress.com/downloads/generate-colors/')
 										),
 										'2' => array(
 												'name' => __('Typography','generate'),
-												'version' => ( function_exists('generate_fonts_setup') ) ? GEN_FONT_VERSION : '',
+												'version' => ( function_exists('generate_fonts_setup') ) ? GENERATE_FONT_VERSION : '',
 												'id' => 'generate_fonts_setup',
-												'license' => 'gen_fonts_license_key_status',
-												'url' => esc_url('http://generatepress.com')
+												'license' => 'generate_fonts_license_key_status',
+												'url' => esc_url('http://www.generatepress.com/downloads/generate-typography/')
 										 ),
 										'3' => array(
 												'name' => __('Page Header','generate'),
-												'version' => ( function_exists('generate_page_header') ) ? GEN_PAGE_HEADER_VERSION : '',
+												'version' => ( function_exists('generate_page_header') ) ? GENERATE_PAGE_HEADER_VERSION : '',
 												'id' => 'generate_page_header',
-												'license' => 'gen_page_header_license_key_status',
-												'url' => esc_url('http://generatepress.com')
+												'license' => 'generate_page_header_license_key_status',
+												'url' => esc_url('http://www.generatepress.com/downloads/generate-page-header/')
 										),
 										'4' => array(
 												'name' => __('Import / Export','generate'),
-												'version' => ( function_exists('generate_insert_import_export') ) ? GEN_IE_VERSION : '',
+												'version' => ( function_exists('generate_insert_import_export') ) ? GENERATE_IE_VERSION : '',
 												'id' => 'generate_insert_import_export',
-												'license' => 'gen_ie_license_key_status',
-												'url' => esc_url('http://generatepress.com')
+												'license' => 'generate_ie_license_key_status',
+												'url' => esc_url('http://www.generatepress.com/downloads/generate-import-export/')
 										)
 									);
 									
@@ -159,8 +155,8 @@ function gen_settings_page()
 								<div class="clear" style="margin-bottom:20px;"></div>
 										
 								<p>
-									<a id="gen_customize_button" class="button button-primary" href="<?php echo admin_url('customize.php'); ?>"><?php _e('Customize','generate');?></a>  
-									<a id="gen_addon_button" class="button button-primary" href="<?php echo esc_url('http://generatepress.com');?>" target="_blank"><?php _e('Addons','generate');?></a> 
+									<a id="generate_customize_button" class="button button-primary" href="<?php echo admin_url('customize.php'); ?>"><?php _e('Customize','generate');?></a>  
+									<a id="generate_addon_button" class="button button-primary" href="<?php echo esc_url('http://generatepress.com/addons');?>" target="_blank"><?php _e('Addons','generate');?></a> 
 									<a title="<?php _e('Please help support development of the GeneratePress by donating.','generate');?>" class="button button-primary" target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UVPTY2ZJA68S6"><?php _e('Donate','generate');?></a>
 								</p>
 							</div>
@@ -170,16 +166,16 @@ function gen_settings_page()
 							<h3 class="hndle"><?php _e('Scripts','generate');?></h3>
 							<div class="inside">
 								<p>
-									<label for="gen_header_scripts"><?php _e('Insert into <code>&lt;head&gt;</code>','generate');?></label>
-									<textarea id="gen_header_scripts" name="gen_header_scripts"><?php echo esc_html(get_option('gen_header_scripts')); ?></textarea>
+									<label for="generate_header_scripts"><?php _e('Insert into <code>&lt;head&gt;</code>','generate');?></label>
+									<textarea id="generate_header_scripts" name="generate_header_scripts"><?php echo esc_html(get_option('generate_header_scripts')); ?></textarea>
 									<span class="description"><?php _e('Custom meta tags, styles..','generate');?></span>
 								</p>
 											
 								<div class="clear" style="margin-bottom:20px;"></div>
 										 
 								<p>
-									<label for="gen_footer_scripts"><?php _e('Insert before closing <code>&lt;/body&gt;</code>','generate');?></label>
-									<textarea id="gen_footer_scripts" name="gen_footer_scripts"><?php echo esc_html(get_option('gen_footer_scripts')); ?></textarea>
+									<label for="generate_footer_scripts"><?php _e('Insert before closing <code>&lt;/body&gt;</code>','generate');?></label>
+									<textarea id="generate_footer_scripts" name="generate_footer_scripts"><?php echo esc_html(get_option('generate_footer_scripts')); ?></textarea>
 									<span class="description"><?php _e('Analytics tracking codes, other javascript..','generate');?></span>
 								</p>
 							</div>
@@ -197,7 +193,7 @@ function gen_settings_page()
 									!function_exists('generate_colors_setup') &&
 									!function_exists('generate_page_header') &&
 									!function_exists('generate_insert_import_export') ) :
-										echo __('Looks like you don\'t have any Addons! <a href="' . esc_url('http://generatepress.com') . '" target="_blank">Take a look at what\'s available here</a>.','generate');
+										echo __('Looks like you don\'t have any Addons! <a href="' . esc_url('http://generatepress.com/addons') . '" target="_blank">Take a look at what\'s available here</a>.','generate');
 									endif;
 
 								?>
@@ -221,9 +217,9 @@ function gen_settings_page()
 							<p><?php _e( '<strong>Warning:</strong> Clicking this button will delete your settings set in the <a href="' . admin_url('customize.php') . '">Customize</a> area.','generate' ); ?></p>
 							<p><?php _e( 'You may want to export your settings before deleting them forever.','generate');?></p>
 							<form method="post">
-								<p><input type="hidden" name="gen_reset_customizer" value="gen_reset_customizer_settings" /></p>
+								<p><input type="hidden" name="generate_reset_customizer" value="generate_reset_customizer_settings" /></p>
 								<p>
-									<?php wp_nonce_field( 'gen_reset_customizer_nonce', 'gen_reset_customizer_nonce' ); ?>
+									<?php wp_nonce_field( 'generate_reset_customizer_nonce', 'generate_reset_customizer_nonce' ); ?>
 									<?php submit_button( __( 'Delete Visual Settings', 'generate' ), 'button', 'submit', false ); ?>
 								</p>
 							</form>
@@ -239,13 +235,13 @@ function gen_settings_page()
 /**
  * Reset customizer settings
  */
-add_action( 'admin_init', 'gen_reset_customizer_settings' );
-function gen_reset_customizer_settings() {
+add_action( 'admin_init', 'generate_reset_customizer_settings' );
+function generate_reset_customizer_settings() {
 
-	if( empty( $_POST['gen_reset_customizer'] ) || 'gen_reset_customizer_settings' != $_POST['gen_reset_customizer'] )
+	if( empty( $_POST['generate_reset_customizer'] ) || 'generate_reset_customizer_settings' != $_POST['generate_reset_customizer'] )
 		return;
 
-	if( ! wp_verify_nonce( $_POST['gen_reset_customizer_nonce'], 'gen_reset_customizer_nonce' ) )
+	if( ! wp_verify_nonce( $_POST['generate_reset_customizer_nonce'], 'generate_reset_customizer_nonce' ) )
 		return;
 
 	if( ! current_user_can( 'manage_options' ) )

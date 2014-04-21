@@ -8,7 +8,7 @@
 get_header(); ?>
 
 
-	<div id="primary" <?php content_class(); ?>>
+	<div id="primary" <?php generate_content_class(); ?>>
 		<main id="main" class="site-main" itemprop="mainContentOfPage" role="main">
 
 			<section class="error-404 not-found">

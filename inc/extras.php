@@ -17,16 +17,17 @@ function generate_page_menu_args( $args ) {
 add_filter( 'wp_page_menu_args', 'generate_page_menu_args' );
 
 // Remove navigation container
-function my_wp_nav_menu_args( $args = '' ) {
+function generate_wp_nav_menu_args( $args = '' ) {
 	$args['container'] = false;
 	return $args;
 }
-add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );
+add_filter( 'wp_nav_menu_args', 'generate_wp_nav_menu_args' );
 
 /**
  * Adds custom classes to the array of body classes.
  * @since 0.1
  */
+add_filter( 'body_class', 'generate_body_classes' );
 function generate_body_classes( $classes ) {
 	
 	// Get theme options
@@ -37,7 +38,7 @@ function generate_body_classes( $classes ) {
 	$page_header_slideshow = '';
 	
 	if ( isset( $post ) ) :
-		$stored_meta = get_post_meta( $post->ID, '_meta-generate-layout', true );
+		$stored_meta = get_post_meta( $post->ID, '_generate-sidebar-layout-meta', true );
 		$page_header_image = get_post_meta( get_the_ID(), '_meta-generate-page-header-image', true );
 		$page_header_slideshow = get_post_meta( get_the_ID(), '_meta-generate-page-header-slideshow', true );
 	endif;
@@ -80,12 +81,12 @@ function generate_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'generate_body_classes' );
 
 /**
  * Adds custom classes to the right sidebar
  * @since 0.1
  */
+add_filter( 'generate_right_sidebar_class', 'generate_right_sidebar_classes');
 function generate_right_sidebar_classes( $classes )
 {
 
@@ -101,7 +102,7 @@ function generate_right_sidebar_classes( $classes )
 	$stored_meta = '';
 	
 	if ( isset( $post ) ) :
-		$stored_meta = get_post_meta( $post->ID, '_meta-generate-layout', true );
+		$stored_meta = get_post_meta( $post->ID, '_generate-sidebar-layout-meta', true );
 	endif;
 	
 	if ( '' !== $stored_meta ) :
@@ -142,12 +143,12 @@ function generate_right_sidebar_classes( $classes )
 	return $classes;
 	
 }
-add_filter( 'right_sidebar_class', 'generate_right_sidebar_classes');
 
 /**
  * Adds custom classes to the left sidebar
  * @since 0.1
  */
+add_filter( 'generate_left_sidebar_class', 'generate_left_sidebar_classes');
 function generate_left_sidebar_classes( $classes )
 {
 
@@ -159,7 +160,7 @@ function generate_left_sidebar_classes( $classes )
 	// Get theme options
 	global $post, $generate_defaults;
 	$generate_settings = get_option( 'generate_settings', $generate_defaults );	
-	$stored_meta = get_post_meta( $post->ID, '_meta-generate-layout', true );
+	$stored_meta = get_post_meta( $post->ID, '_generate-sidebar-layout-meta', true );
 	
 	if ( '' !== $stored_meta ) :
 		$generate_settings['layout_setting'] = $stored_meta;
@@ -195,12 +196,12 @@ function generate_left_sidebar_classes( $classes )
 	return $classes;
 	
 }
-add_filter( 'left_sidebar_class', 'generate_left_sidebar_classes');
 
 /**
  * Adds custom classes to the content container
  * @since 0.1
  */
+add_filter( 'generate_content_class', 'generate_content_classes');
 function generate_content_classes( $classes )
 {
 
@@ -213,7 +214,7 @@ function generate_content_classes( $classes )
 	$stored_meta = '';
 	
 	if ( isset( $post ) ) :
-		$stored_meta = get_post_meta( $post->ID, '_meta-generate-layout', true );
+		$stored_meta = get_post_meta( $post->ID, '_generate-sidebar-layout-meta', true );
 	endif;
 	
 	if ( '' !== $stored_meta ) :
@@ -271,11 +272,11 @@ function generate_content_classes( $classes )
 	return $classes;
 	
 }
-add_filter( 'content_class', 'generate_content_classes');
   
 /**
  * Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
  */
+add_filter( 'attachment_link', 'generate_enhanced_image_navigation', 10, 2 );
 function generate_enhanced_image_navigation( $url, $id ) {
 	if ( ! is_attachment() && ! wp_attachment_is_image( $id ) )
 		return $url;
@@ -286,7 +287,6 @@ function generate_enhanced_image_navigation( $url, $id ) {
 
 	return $url;
 }
-add_filter( 'attachment_link', 'generate_enhanced_image_navigation', 10, 2 );
 
 /**
  * Filters wp_title to print a neat <title> tag based on what is being viewed.
@@ -317,7 +317,7 @@ add_filter( 'wp_title', 'generate_wp_title', 10, 2 );
  * Adds custom classes to the header
  * @since 0.1
  */
-add_filter( 'header_class', 'generate_header_classes');
+add_filter( 'generate_header_class', 'generate_header_classes');
 function generate_header_classes( $classes )
 {
 	global $generate_defaults;
@@ -341,7 +341,7 @@ function generate_header_classes( $classes )
  * Adds custom classes to inside the header
  * @since 0.1
  */
-add_filter( 'inside_header_class', 'generate_inside_header_classes');
+add_filter( 'generate_inside_header_class', 'generate_inside_header_classes');
 function generate_inside_header_classes( $classes )
 {
 	global $generate_defaults;
@@ -365,7 +365,7 @@ function generate_inside_header_classes( $classes )
  * Adds custom classes to the navigation
  * @since 0.1
  */
-add_filter( 'navigation_class', 'generate_navigation_classes');
+add_filter( 'generate_navigation_class', 'generate_navigation_classes');
 function generate_navigation_classes( $classes )
 {
 	global $generate_defaults;
@@ -389,7 +389,7 @@ function generate_navigation_classes( $classes )
  * Adds custom classes to the menu
  * @since 0.1
  */
-add_filter( 'menu_class', 'generate_menu_classes');
+add_filter( 'generate_menu_class', 'generate_menu_classes');
 function generate_menu_classes( $classes )
 {
 	global $generate_defaults;
@@ -408,7 +408,7 @@ function generate_menu_classes( $classes )
  * Adds custom classes to the footer
  * @since 0.1
  */
-add_filter( 'footer_class', 'generate_footer_classes');
+add_filter( 'generate_footer_class', 'generate_footer_classes');
 function generate_footer_classes( $classes )
 {
 	global $generate_defaults;
