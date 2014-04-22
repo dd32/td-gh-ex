@@ -25,8 +25,12 @@ Version 1.04
 
 Version 1.05
 
-    i)   Added a template for the front page.
+    i)   Added a template for the front page.	
 
 Version 1.06
 
-    i)   Added sanitized PHP code for ThemeOptions for security reasons.		
+    i)   Added sanitized PHP code for ThemeOptions for security reasons.
+
+Version 1.06.1
+
+    i)   Modified sanitized PHP code for ThemeOptions for security reasons.	

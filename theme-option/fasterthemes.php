@@ -87,8 +87,17 @@ function fastertheme_framework_page(){
             <h4 class="heading">Copyright Text</h4>
             <div class="option">
               <div class="controls">
-              <?php $footertext_options = filter_var($options['footertext'], FILTER_SANITIZE_STRING); ?>
-                <input type="text" id="footertext2" class="of-input" name="faster_theme_options[footertext]" size="32"  value="<?php echo $footertext_options; ?>">
+              <?php $footertext_options = filter_var($options['footertext'], FILTER_SANITIZE_STRING); 
+				foreach($options as $key => $value)
+				{
+					if($key == "footertext"){
+						$value=$footertext_options;
+					}
+					$options[$key] = $value;
+				}
+				update_option('faster_theme_options',$options);				
+				?>
+                <input type="text" id="footertext2" class="of-input" name="faster_theme_options[footertext]" size="32"  value="<?php echo $options['footertext']; ?>">
               </div>
               <div class="explain">Some text regarding copyright of your site, you would like to display in the footer.</div>
             </div>

@@ -27,10 +27,9 @@
     </nav>
     <p class="attribution">
 	<?php 
-		$footertext_options = filter_var($options['footertext'], FILTER_SANITIZE_STRING);		
-		if($footertext_options != '')
+		if($options['footertext'] != '')
 		{
-			echo $footertext_options;
+			echo $options['footertext'];
 		}else{
 			echo "Powered by <a href='http://wordpress.org' target='_blank'>WordPress</a>.";
 			echo "Theme by <a href='http://fasterthemes.com' target='_blank'>FasterThemes</a>.";				
