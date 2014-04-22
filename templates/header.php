@@ -3,7 +3,7 @@
   <section id="topbar" class="topclass">
     <div class="container">
       <div class="row">
-        <div class="col-md-6 kad-topbar-left">
+        <div class="col-md-6 col-sm-6 kad-topbar-left">
           <div class="topbarmenu clearfix">
           <?php if (has_nav_menu('topbar_navigation')) :
               wp_nav_menu(array('theme_location' => 'topbar_navigation', 'menu_class' => 'sf-menu'));
@@ -35,7 +35,7 @@
                 <?php } } }?>
           </div>
         </div><!-- close col-md-6 --> 
-        <div class="col-md-6 kad-topbar-right">
+        <div class="col-md-6 col-sm-6 kad-topbar-right">
           <div id="topbar-search" class="topbar-widget">
             <?php if(kadence_display_topbar_widget()) { if(is_active_sidebar('topbarright')) { dynamic_sidebar(__('Topbar Widget', 'virtue')); } 
               } else { if(kadence_display_top_search()) {get_search_form();} 
@@ -72,7 +72,7 @@
     </div> <!-- Close Row -->
     <?php if (has_nav_menu('mobile_navigation')) : ?>
            <div id="mobile-nav-trigger" class="nav-trigger">
-              <a class="nav-trigger-case mobileclass collapsed" data-toggle="collapse" data-target=".kad-nav-collapse">
+              <a class="nav-trigger-case mobileclass collapsed" rel="nofollow" data-toggle="collapse" data-target=".kad-nav-collapse">
                 <div class="kad-navbtn"><i class="icon-reorder"></i></div>
                 <div class="kad-menu-name"><?php echo __('Menu', 'virtue'); ?></div>
               </a>

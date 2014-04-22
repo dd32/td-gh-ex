@@ -1715,7 +1715,14 @@ $this->sections[] = array(
             'title' => __('Show Author Icon with posts?', 'virtue'),
             'subtitle' => __('Choose to show or hide author icon under post title.', 'virtue'),
             "default" => 1,
-            ),  
+            ),
+        array(
+            'id'=>'show_postlinks',
+            'type' => 'switch', 
+            'title' => __('Show Previous and Next posts links?', 'virtue'),
+            'subtitle' => __('Choose to show or hide previous and next post links in the footer of a single post.', 'virtue'),
+            "default" => 0,
+            ),
         array(
             'id'=>'virtue_custom_favicon',
             'type' => 'media', 
@@ -1728,8 +1735,6 @@ $this->sections[] = array(
             'type' => 'text',
             'title' => __('Contact Form Email', 'virtue'),
             'subtitle' => __('Sets the email for the contact page email form.', 'virtue'),
-            'validate' => 'email',
-            'msg' => __('Enter a valid email address.', 'virtue'),
             'default' => 'test@test.com'
             ),
         array(

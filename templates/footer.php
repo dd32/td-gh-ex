@@ -4,22 +4,22 @@
   		<?php global $virtue; if(isset($virtue['footer_layout'])) { $footer_layout = $virtue['footer_layout']; } else { $footer_layout = 'fourc'; }
   			if ($footer_layout == "fourc") {
   				if (is_active_sidebar('footer_1') ) { ?> 
-					<div class="col-md-3 footercol1">
+					<div class="col-md-3 col-sm-6 footercol1">
 					<?php dynamic_sidebar('footer_1'); ?>
 					</div> 
             	<?php }; ?>
 				<?php if (is_active_sidebar('footer_2') ) { ?> 
-					<div class="col-md-3 footercol2">
+					<div class="col-md-3  col-sm-6footercol2">
 					<?php dynamic_sidebar('footer_2'); ?>
 					</div> 
 		        <?php }; ?>
 		        <?php if (is_active_sidebar('footer_3') ) { ?> 
-					<div class="col-md-3 footercol3">
+					<div class="col-md-3 col-sm-6 footercol3">
 					<?php dynamic_sidebar('footer_3'); ?>
 					</div> 
 	            <?php }; ?>
 				<?php if (is_active_sidebar('footer_4') ) { ?> 
-					<div class="col-md-3 footercol4">
+					<div class="col-md-3 col-sm-6 footercol4">
 					<?php dynamic_sidebar('footer_4'); ?>
 					</div> 
 		        <?php }; ?>

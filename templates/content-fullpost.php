@@ -72,7 +72,7 @@
     <div class="entry-content">
       <?php the_content(); ?>
     </div>
-    <footer class="single-footer">
+    <footer class="single-footer clearfix">
       <?php $tags = get_the_tags(); if ($tags) { ?> <span class="posttags"><i class="icon-tag"></i> <?php the_tags('', ', ', ''); ?> </span><?php } ?>
       
       <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'virtue'), 'after' => '</p></nav>')); ?>

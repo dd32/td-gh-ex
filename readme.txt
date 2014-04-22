@@ -47,6 +47,17 @@ Virtue Theme Uses:
 -------------------------------------------------------
 
 = Theme Name: Virtue =
+= Version: 2.1.3 =
+* Use Masonry from wordpress core.
+* Use wordpress paginate_links
+* Add KV to virtue widget
+* Added option for single post navigation.
+* Fix Firefox Caroufedsel Issue.
+* Fix Z-index added Cart issue.
+* Fix various other css issues.
+* Fix widget id issue in primary sidebar.
+* Switch Pull-quote icon to retina icon.
+
 = Version: 2.1.2 =
 * Update woocommerce file.
 

@@ -1,264 +1,262 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: deLite Virtue\n"
+"Project-Id-Version: Lite Virtue\n"
 "POT-Creation-Date: 2014-04-21 22:55-0700\n"
-"PO-Revision-Date: 2014-04-21 23:32-0700\n"
-"Last-Translator: María Digo <web.esdemay@gmail.com>\n"
-"Language-Team: Maria <web.esdemay@gmail.com>\n"
-"Language: es_ES\n"
+"PO-Revision-Date: 2014-04-21 22:55-0700\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: English\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.7\n"
-"X-Poedit-KeywordsList: __;_e;esc_attr__;esc_attr_e;_n:1,2\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;esc_attr__;esc_attr_e\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:11
 msgid "Sorry, but the page you were trying to view does not exist."
 msgstr ""
-"Lo sentimos, pero la p&aacute;gina que est&aacute; intentando ver no existe."
 
 #: ../404.php:14
 msgid "It looks like this was the result of either:"
-msgstr "Parece que este es el resultado para todos:"
+msgstr ""
 
 #: ../404.php:16
 msgid "a mistyped address"
-msgstr "dirección mal escrita"
+msgstr ""
 
 #: ../404.php:17
 msgid "an out-of-date link"
-msgstr "enlace obsoleto"
+msgstr ""
 
 #: ../archive.php:16 ../index.php:13 ../taxonomy-portfolio-type.php:13
 msgid "Sorry, no results were found."
-msgstr "Lo sentimos, no se encontraron resultados"
+msgstr ""
 
 #: ../page-blog.php:53 ../templates/recentblog-carousel.php:48
 #: ../templates/similarblog-carousel.php:52 ../templates/home/blog-home.php:84
 #: ../templates/home/latest-slider.php:32
 msgid "Sorry, no blog entries found."
-msgstr "Lo sentimos, no hay publicaciones del blog"
+msgstr ""
 
 #: ../page-contact.php:84
 msgid "Please enter your name."
-msgstr "Por favor, escriba su nombre."
+msgstr ""
 
 #: ../page-contact.php:91
 msgid "Please enter your email address."
-msgstr "Por favor,escriba su dirección de correo electrónico."
+msgstr ""
 
 #: ../page-contact.php:94
 msgid "You entered an invalid email address."
-msgstr "La dirección de email no es v&aacute;lida."
+msgstr ""
 
 #: ../page-contact.php:101
 msgid "Please enter a message."
-msgstr "Por favor,escriba un mensaje."
+msgstr ""
 
 #: ../page-contact.php:118
 msgid " Contact"
-msgstr "Contacto"
+msgstr ""
 
 #: ../page-contact.php:118
 #: ../themeoptions/inc/fields/color_gradient/field_color_gradient.php:73
 msgid "From "
-msgstr "Desde"
+msgstr ""
 
 #: ../page-contact.php:119 ../templates/comments.php:68
 #: ../woocommerce/single-product-reviews.php:62
 msgid "Name"
-msgstr "Nombre"
+msgstr ""
 
 #: ../page-contact.php:120
 msgid "From"
-msgstr "Desde"
+msgstr ""
 
 #: ../page-contact.php:158
 msgid "Thanks, your email was sent successfully."
-msgstr "Gracias. Su mensaje ha sido enviado. En breve contactaremos con usted."
+msgstr ""
 
 #: ../page-contact.php:162
 msgid "Sorry, an error occured."
-msgstr "Lo sentimos,se ha producido un error."
+msgstr ""
 
 #: ../page-contact.php:168 ../lib/widgets.php:285
 msgid "Name:"
-msgstr "Nombre:"
+msgstr ""
 
 #: ../page-contact.php:177
 msgid "Email: "
-msgstr "Email:"
+msgstr ""
 
 #: ../page-contact.php:183
 msgid "Message: "
-msgstr "Mensaje:"
+msgstr ""
 
 #: ../page-contact.php:190
 msgid "Send Email"
-msgstr "Enviar"
+msgstr ""
 
 #: ../page-portfolio.php:102 ../templates/recentportfolio-carousel.php:42
 #: ../templates/home/portfolio-carousel.php:60
 msgid "Sorry, no portfolio entries found."
-msgstr "Lo sentimos,no se encontraron mensajes del portfolio"
+msgstr ""
 
 #: ../searchform.php:2
 msgid "Search for:"
-msgstr "Búsqueda para:"
+msgstr ""
 
 #: ../searchform.php:3
 msgid "Search"
-msgstr "Buscar"
+msgstr ""
 
 #: ../taxonomy-portfolio-type.php:101
 msgid "&larr; Older posts"
-msgstr "&larr; Publicaciones antiguas"
+msgstr ""
 
 #: ../taxonomy-portfolio-type.php:102
 msgid "Newer posts &rarr;"
-msgstr "Nuevas publicaciones &rarr;"
+msgstr ""
 
 #: ../lib/authorbox.php:5
 msgid "About Author"
-msgstr "Sobre el Autor"
+msgstr ""
 
 #: ../lib/authorbox.php:6 ../lib/utils.php:60
 msgid "Latest Posts"
-msgstr "Últimos mensajes"
+msgstr ""
 
 #: ../lib/authorbox.php:13 ../lib/authorbox.php:16 ../lib/authorbox.php:20
 #: ../lib/authorbox.php:24 ../lib/authorbox.php:28 ../lib/authorbox.php:32
 #: ../lib/authorbox.php:36 ../lib/authorbox.php:40 ../lib/authorbox.php:44
 #: ../lib/authorbox.php:48
 msgid "Follow"
-msgstr "Seguir"
+msgstr ""
 
 #: ../lib/authorbox.php:16
 msgid "on Facebook"
-msgstr "en Facebook"
+msgstr ""
 
 #: ../lib/authorbox.php:20
 msgid "on Twitter"
-msgstr "en Twitter"
+msgstr ""
 
 #: ../lib/authorbox.php:24
 msgid "on Google Plus"
-msgstr "en Google Plus"
+msgstr ""
 
 #: ../lib/authorbox.php:28
 msgid "on Flickr"
-msgstr "en Flickr"
+msgstr ""
 
 #: ../lib/authorbox.php:32
 msgid "on Vimeo"
-msgstr "en Vimeo"
+msgstr ""
 
 #: ../lib/authorbox.php:36
 msgid "on linkedin"
-msgstr "en linkedin"
+msgstr ""
 
 #: ../lib/authorbox.php:40
 msgid "on Dribbble"
-msgstr "en Dribbble"
+msgstr ""
 
 #: ../lib/authorbox.php:44
 msgid "on Pinterest"
-msgstr "en Pinterest"
+msgstr ""
 
 #: ../lib/authorbox.php:48
 msgid "on Instagram"
-msgstr "en Instagram"
+msgstr ""
 
 #: ../lib/authorbox.php:65
 msgid "Latest posts from"
-msgstr "Últimas publicaciones de"
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:155
 #: ../lib/virtuetoolkit-activate.php:34
 msgid "Install Required Plugins"
-msgstr "Requiere instalación de plugins"
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:156
 #: ../lib/virtuetoolkit-activate.php:35
 msgid "Install Plugins"
-msgstr "Instalar Plugins"
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:157
 #: ../lib/virtuetoolkit-activate.php:36
 #, php-format
 msgid "Installing Plugin: %s"
-msgstr "Instalar Plugin: %s"
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:158
 msgid "Something went wrong."
-msgstr "Algo salió mal"
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:169
 #: ../lib/virtuetoolkit-activate.php:48
 msgid "Return to Required Plugins Installer"
-msgstr "Volver a instalador de Plugins"
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:170
 msgid "Return to the dashboard"
-msgstr "Volver al Escritorio"
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:171
 #: ../lib/class-tgm-plugin-activation.php:1840
 #: ../lib/virtuetoolkit-activate.php:49
 msgid "Plugin activated successfully."
-msgstr "Plugin activado correctamente."
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:172
 #: ../lib/class-tgm-plugin-activation.php:1538
 msgid "The following plugin was activated successfully:"
 msgid_plural "The following plugins were activated successfully:"
-msgstr[0] "El siguiente Plugin se activó con éxito:"
-msgstr[1] "Los siguiente plugins se activaron  con éxito:"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../lib/class-tgm-plugin-activation.php:173
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
-msgstr "Todos los plugins instalados y activados correctamente. %1$s"
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:174
 msgid "Dismiss this notice"
-msgstr "Ignorar este aviso"
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:1085
 msgid "External Link"
-msgstr "Enlace Externo"
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:1090
 msgid "Private Repository"
-msgstr "Ámbito Privado"
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:1093
 msgid "Pre-Packaged"
-msgstr "Pre-Empaquetados"
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:1097
 msgid "WordPress Repository"
-msgstr "Repositorio de Wordpress"
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:1100
 msgid "Required"
-msgstr "Requerido"
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:1100
 msgid "Recommended"
-msgstr "Recomendado"
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:1103
 msgid "Not Installed"
-msgstr "No se ha instalado"
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:1105
 msgid "Installed But Not Activated"
-msgstr "Instalado pero sin activar"
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:1275
 #, php-format
@@ -266,596 +264,577 @@ msgid ""
 "No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
 "Dashboard\">Return to the Dashboard</a>"
 msgstr ""
-"No hay plugins para instalar o activar. <a href=\"%1$s\" title=\"Return to "
-"the Dashboard\">Volver a Escritorio</a>"
 
 #: ../lib/class-tgm-plugin-activation.php:1291
 msgid "Plugin"
-msgstr "Plugin"
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:1292
 msgid "Source"
-msgstr "Fuente"
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:1293
 msgid "Type"
-msgstr "Tipo"
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:1294
 msgid "Status"
-msgstr "Estado"
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:1312
 msgid "Install"
-msgstr "Instalar"
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:1313
 msgid "Activate"
-msgstr "Activar"
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:1823
 msgid "Install package not available."
-msgstr "Instale el paquete no está disponible."
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:1824
 #, php-format
 msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
 msgstr ""
-"Descargar paquete de instalación de <span class=\"code\">%s</span>&#8230;"
 
 #: ../lib/class-tgm-plugin-activation.php:1825
 msgid "Unpacking the package&#8230;"
-msgstr "Desembalar el paquete&#8230;"
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:1826
 msgid "Installing the plugin&#8230;"
-msgstr "Instalación del plugin de&#8230;"
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:1827
 msgid "Plugin install failed."
-msgstr "La instalación del plugin ha fallado"
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:1828
 msgid "Plugin installed successfully."
-msgstr "Plugin instalado correctamente."
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:1839
 msgid "Plugin activation failed."
-msgstr "Activación del plugin fallida."
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:1949
 msgid ""
 "The installation and activation process is starting. This process may take a "
 "while on some hosts, so please be patient."
 msgstr ""
-"Comienza el proceso de instalación y activación. Este proceso puede tardar "
-"un poco en algunos alojamientos, por favor sea paciente."
 
 #: ../lib/class-tgm-plugin-activation.php:1950
 #, php-format
 msgid "%1$s installed and activated successfully."
-msgstr "%1$s instalado y activado correctamente."
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:1950
 #: ../lib/class-tgm-plugin-activation.php:1959
 msgid "Show Details"
-msgstr "Mostrar detalles"
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:1950
 #: ../lib/class-tgm-plugin-activation.php:1959
 msgid "Hide Details"
-msgstr "Ocultar detalles"
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:1951
 msgid "All installations and activations have been completed."
-msgstr "Todas las instalaciones y activaciones se han completado."
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:1952
 #, php-format
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-msgstr "Instalación y Activación de Plugin  %1$s (%2$d/%3$d)"
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:1956
 msgid ""
 "The installation process is starting. This process may take a while on some "
 "hosts, so please be patient."
 msgstr ""
-"El proceso de instalación está iniciando. Este proceso puede tardar un poco "
-"en algunos alojamientos, por favor sea paciente."
 
 #: ../lib/class-tgm-plugin-activation.php:1957
 #, php-format
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr ""
-"Ha ocurrido un error durante la instalación %1$s: <strong>%2$s</strong>."
 
 #: ../lib/class-tgm-plugin-activation.php:1958
 #, php-format
 msgid "The installation of %1$s failed."
-msgstr "La instalación de %1$s ha fallado."
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:1959
 #, php-format
 msgid "%1$s installed successfully."
-msgstr "%1$s instalado correctamente."
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:1960
 msgid "All installations have been completed."
-msgstr "Todas las instalaciones se han completado."
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:1961
 #, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr "Instalar Plugin %1$s (%2$d/%3$d)"
+msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:2052
 msgid "Return to the Dashboard"
-msgstr "Regresar al Escritorio"
+msgstr ""
 
 #: ../lib/cleanup.php:164
 msgid "Continued"
-msgstr "Continuar"
+msgstr ""
 
 #: ../lib/comments.php:38 ../templates/comment.php:5
 #, php-format
 msgid "%1$s"
-msgstr "%1$s"
+msgstr ""
 
 #: ../lib/comments.php:43
 msgid "| (Edit)"
-msgstr "| (Editar)"
+msgstr ""
 
 #: ../lib/comments.php:49 ../templates/comment.php:11
 msgid "Your comment is awaiting moderation."
-msgstr "Comentario pendiente de moderación."
+msgstr ""
 
 #: ../lib/custom-woocommerce.php:95 ../templates/header.php:30
 msgid "View your shopping cart"
-msgstr "Ver carrito compra"
+msgstr ""
 
 #: ../lib/custom-woocommerce.php:96 ../templates/header.php:31
 msgid "Your Cart"
-msgstr "Su carrito"
+msgstr ""
 
 #: ../lib/custom.php:356 ../templates/entry-post-links.php:3
 msgid "Previous Post"
-msgstr "Anterior publicación"
+msgstr ""
 
 #: ../lib/custom.php:356 ../templates/entry-post-links.php:6
 msgid "Next Post"
-msgstr "Siguiente publicación"
+msgstr ""
 
 #: ../lib/custom.php:448
 msgid "Occupation"
-msgstr "Ocupación/Profesión"
+msgstr ""
 
 #: ../lib/custom.php:451
 msgid "Please enter your Occupation."
-msgstr "Por favor, escriba su ocupación"
+msgstr ""
 
 #: ../lib/custom.php:458
 msgid "Please enter your Twitter username."
-msgstr "Por favor,escriba su nombre usuario de Twitter"
+msgstr ""
 
 #: ../lib/custom.php:465
 msgid "Please enter your Facebook url. (be sure to include http://)"
-msgstr "Por favor, escriba su url de Facebook. (asegúrese de incluir http://)"
+msgstr ""
 
 #: ../lib/custom.php:472
 msgid "Please enter your Google Plus url. (be sure to include http://)"
 msgstr ""
-"Por favor, escriba su url de Google Plus (asegúrese de incluis http://)"
 
 #: ../lib/custom.php:479
 msgid "Please enter your Flickr url. (be sure to include http://)"
-msgstr "Por favor introduzca su url Flick (asegúrese de incluir http://)"
+msgstr ""
 
 #: ../lib/custom.php:486
 msgid "Please enter your Linkedin url. (be sure to include http://)"
-msgstr "Por favor introduzca su url Linkedin (asegúrese de incluir http://)"
+msgstr ""
 
 #: ../lib/custom.php:493
 msgid "Please enter your Dribbble url. (be sure to include http://)"
-msgstr "Por favor introduzca su url Dribbble (asegúrese de incluir http://)"
+msgstr ""
 
 #: ../lib/custom.php:500
 msgid "Please enter your Pinterest url. (be sure to include http://)"
-msgstr "Por favor introduzca su url Pinterest (asegúrese de incluir http://)"
+msgstr ""
 
 #: ../lib/custom.php:507
 msgid "Please enter your Instagram url. (be sure to include http://)"
-msgstr "Por favor introduzca su url Instagram (asegúrese de incluir http://)"
+msgstr ""
 
 #: ../lib/gallery_metabox.php:8
 msgid "Post Slider Images"
-msgstr "Imágenes Slider Publicaciones"
+msgstr ""
 
 #: ../lib/gallery_metabox.php:9
 msgid "Portfolio Slider Images"
-msgstr "Imágenes Slider Portfolio"
+msgstr ""
 
 #: ../lib/gallery_metabox.php:10
 msgid "Feature Page Slider Images"
-msgstr "Propiedades Imágenes Slider Página"
+msgstr ""
 
 #: ../lib/gallery_metabox.php:26 ../lib/gallery_metabox.php:91
 msgid "Remove image"
-msgstr "Quitar Imagen"
+msgstr ""
 
 #: ../lib/gallery_metabox.php:37
 msgid "Add images"
-msgstr "Añadir Imágenes"
+msgstr ""
 
 #: ../lib/gallery_metabox.php:66
 msgid "Add Images to Gallery"
-msgstr "Añadir imágenes a Galería"
+msgstr ""
 
 #: ../lib/gallery_metabox.php:68
 msgid "Add to gallery"
-msgstr "Añadir a Galería"
+msgstr ""
 
 #: ../lib/init.php:9
 msgid "Primary Navigation"
-msgstr "Menú Navegación Principal"
+msgstr ""
 
 #: ../lib/init.php:10
 msgid "Secondary Navigation"
-msgstr "Menú Navegación Secundario"
+msgstr ""
 
 #: ../lib/init.php:11
 msgid "Mobile Navigation"
-msgstr "Menú Navegacion Móviles"
+msgstr ""
 
 #: ../lib/init.php:12
 msgid "Topbar Navigation"
-msgstr "Menú Navegación Barra superior"
+msgstr ""
 
 #: ../lib/init.php:13
 msgid "Footer Navigation"
-msgstr "Menú Navegación Pie de Página"
+msgstr ""
 
 #: ../lib/metaboxes.php:21 ../lib/metaboxes.php:370 ../lib/metaboxes.php:495
 #: ../themeoptions/inc/fields/border/field_border.php:112
 #: ../themeoptions/inc/fields/spacing/field_spacing.php:125
 msgid "All"
-msgstr "Todos"
+msgstr ""
 
 #: ../lib/metaboxes.php:36
 msgid "All Blog Posts"
-msgstr "Todas las publicaciones del Blog"
+msgstr ""
 
 #: ../lib/metaboxes.php:68
 msgid "Page Title and Subtitle"
-msgstr "Título y Subtítulo de Página"
+msgstr ""
 
 #: ../lib/metaboxes.php:75
 msgid "Subtitle"
-msgstr "Subtítulo"
+msgstr ""
 
 #: ../lib/metaboxes.php:76
 msgid "Subtitle will go below page title"
-msgstr "Subtítulo aparece debajo del título de la página"
+msgstr ""
 
 #: ../lib/metaboxes.php:85
 msgid "Post Options"
-msgstr "Opciones Publicación"
+msgstr ""
 
 #: ../lib/metaboxes.php:93
 msgid "Head Content"
-msgstr "Contenido Cabecera"
+msgstr ""
 
 #: ../lib/metaboxes.php:98 ../lib/metaboxes.php:224
 msgid "None"
-msgstr "Ninguno"
+msgstr ""
 
 #: ../lib/metaboxes.php:99 ../lib/metaboxes.php:221 ../lib/metaboxes.php:437
 msgid "Image Slider"
-msgstr "Imagen Slider"
+msgstr ""
 
 #: ../lib/metaboxes.php:100 ../lib/metaboxes.php:128 ../lib/metaboxes.php:223
 #: ../lib/metaboxes.php:438
 msgid "Video"
-msgstr "Video"
+msgstr ""
 
 #: ../lib/metaboxes.php:101 ../lib/metaboxes.php:220 ../lib/metaboxes.php:439
 #: ../lib/widgets.php:794
 msgid "Image"
-msgstr "Imagen"
+msgstr ""
 
 #: ../lib/metaboxes.php:105 ../lib/metaboxes.php:228 ../lib/metaboxes.php:443
 msgid "Max Image/Slider Height"
-msgstr "Altura Maxima  / Imagen Slider"
+msgstr ""
 
 #: ../lib/metaboxes.php:106 ../lib/metaboxes.php:444
 msgid "Default is: 400 <b>(Note: just input number, example: 350)</b>"
 msgstr ""
-"Por defecto es: 400 <b>(Nota: introducir sólo número, ejemplo: 350)</b>"
 
 #: ../lib/metaboxes.php:111 ../lib/metaboxes.php:234 ../lib/metaboxes.php:449
 msgid "Max Image/Slider Width"
-msgstr "Ancho Máximo / Imagen Slider"
+msgstr ""
 
 #: ../lib/metaboxes.php:112
 msgid ""
 "Default is: 770 or 1140 on fullwidth posts <b>(Note: just input number, "
 "example: 650, does not apply to carousel slider)</b>"
 msgstr ""
-"Valor por defecto: 770 ó 1140 en diseño ancho completo <b>(Nota: introducir "
-"sólo número, ejemplo: 650, no se aplica en carrusel-slider)</b>"
 
 #: ../lib/metaboxes.php:117
 msgid "Post Summary"
-msgstr "Resumen publicaciones"
+msgstr ""
 
 #: ../lib/metaboxes.php:122 ../lib/cmb/init.php:244
 #: ../themeoptions/framework.php:1584
 msgid "Default"
-msgstr "Por defecto "
+msgstr ""
 
 #: ../lib/metaboxes.php:123 ../lib/widgets.php:800
 msgid "Text"
-msgstr "Texto"
+msgstr ""
 
 #: ../lib/metaboxes.php:124
 msgid "Portrait Image"
-msgstr "Imagen lateral izquierda texto"
+msgstr ""
 
 #: ../lib/metaboxes.php:125
 msgid "Landscape Image"
-msgstr "Imagen ancho cabecera texto"
+msgstr ""
 
 #: ../lib/metaboxes.php:126
 msgid "Portrait Image Slider"
-msgstr "Slider a izquierda texto"
+msgstr ""
 
 #: ../lib/metaboxes.php:127
 msgid "Landscape Image Slider"
-msgstr "Slider ancho encima texto"
+msgstr ""
 
 #: ../lib/metaboxes.php:132 ../lib/metaboxes.php:524
 msgid "Display Sidebar?"
-msgstr "¿Mostrar barra lateral?"
+msgstr ""
 
 #: ../lib/metaboxes.php:133 ../lib/metaboxes.php:525
 msgid "Choose if layout is fullwidth or sidebar"
-msgstr "Seleccionar diseño - barra lateral o ancho total"
+msgstr ""
 
 #: ../lib/metaboxes.php:137 ../lib/metaboxes.php:154 ../lib/metaboxes.php:414
 #: ../lib/metaboxes.php:460 ../lib/metaboxes.php:529 ../lib/metaboxes.php:557
 #: ../lib/metaboxes.php:574
 msgid "Yes"
-msgstr "Sí"
+msgstr ""
 
 #: ../lib/metaboxes.php:138 ../lib/metaboxes.php:153 ../lib/metaboxes.php:163
 #: ../lib/metaboxes.php:311 ../lib/metaboxes.php:413 ../lib/metaboxes.php:461
 #: ../lib/metaboxes.php:530 ../lib/metaboxes.php:558 ../lib/metaboxes.php:573
 msgid "No"
-msgstr "No"
+msgstr ""
 
 #: ../lib/metaboxes.php:142 ../lib/metaboxes.php:534 ../lib/metaboxes.php:644
 msgid "Choose Sidebar"
-msgstr "Elegir Barra lateral"
+msgstr ""
 
 #: ../lib/metaboxes.php:148
 msgid "Author Info"
-msgstr "Información del  Autor"
+msgstr ""
 
 #: ../lib/metaboxes.php:149
 msgid "Display an author info box?"
 msgstr ""
-"Muestra un cuadro al final de la publicación con datos del autor y "
-"publicaciones realizadas"
 
 #: ../lib/metaboxes.php:158
 msgid "Posts Carousel"
-msgstr "Carrusel de Publicaciones"
+msgstr ""
 
 #: ../lib/metaboxes.php:159
 msgid "Display a carousel with similar or recent posts?"
-msgstr "¿Mostrar un carrusel con publicaciones recientes o similares?"
+msgstr ""
 
 #: ../lib/metaboxes.php:164
 msgid "Yes - Display Recent Posts"
-msgstr "Sí - Mostrar publicaciones recientes"
+msgstr ""
 
 #: ../lib/metaboxes.php:165
 msgid "Yes - Display Similar Posts"
-msgstr "Sí - Mostrar publicaciones similares"
+msgstr ""
 
 #: ../lib/metaboxes.php:170 ../lib/metaboxes.php:316
 msgid "Carousel Title"
-msgstr "Título Carrusel"
+msgstr ""
 
 #: ../lib/metaboxes.php:171
 msgid "ex. Similar Posts"
-msgstr "ej.: Publicaciones Similares"
+msgstr ""
 
 #: ../lib/metaboxes.php:179
 msgid "Post Video Box"
-msgstr "Caja Publicación Video"
+msgstr ""
 
 #: ../lib/metaboxes.php:187 ../lib/metaboxes.php:465
 msgid "If Video Post"
-msgstr "Si video de publicación "
+msgstr ""
 
 #: ../lib/metaboxes.php:188 ../lib/metaboxes.php:301 ../lib/metaboxes.php:466
 msgid "Place Embed Code Here, works with youtube, vimeo..."
-msgstr "Espacio para incrustar código, funciona con youtube, vimeo..."
+msgstr ""
 
 #: ../lib/metaboxes.php:196
 msgid "Portfolio Post Options"
-msgstr "Opciones publicación del  Portfolio"
+msgstr ""
 
 #: ../lib/metaboxes.php:204
 msgid "Project Layout"
-msgstr "Mostrar Ilustración respecto al texto:"
+msgstr ""
 
 #: ../lib/metaboxes.php:209
 msgid "Beside"
-msgstr "Junto a"
+msgstr ""
 
 #: ../lib/metaboxes.php:210
 msgid "Above"
-msgstr "Arriba"
+msgstr ""
 
 #: ../lib/metaboxes.php:211
 msgid "Three Rows"
-msgstr "Tres filas"
+msgstr ""
 
 #: ../lib/metaboxes.php:215
 msgid "Project Options"
-msgstr "Opciones presentación"
+msgstr ""
 
 #: ../lib/metaboxes.php:222
 msgid "Carousel Slider"
-msgstr "Slider Carrusel"
+msgstr ""
 
 #: ../lib/metaboxes.php:229
 msgid "Default is: 450 <b>(Note: just input number, example: 350)</b>"
 msgstr ""
-"El valor predeterminado es: 450 <b>(Nota: sólo el número, por ejemplo: 350)</"
-"b>"
 
 #: ../lib/metaboxes.php:235
 msgid ""
 "Default is: 670 or 1140 on <b>above</b> or <b>three row</b> layouts (Note: "
 "just input number, example: 650)</b>"
 msgstr ""
-"El valor predeterminado es: 670 ó 1140 en <b> diseños </ b> arriba <b> o </ "
-"b> tres filas (Nota: sólo el número, por ejemplo: 650) </ b>"
 
 #: ../lib/metaboxes.php:240
 msgid "Value 01 Title"
-msgstr "Textor Título 01"
+msgstr ""
 
 #: ../lib/metaboxes.php:241
 msgid "ex. Project Type:"
-msgstr "ej: Tipo Proyecto:"
+msgstr ""
 
 #: ../lib/metaboxes.php:246
 msgid "Value 01 Description"
-msgstr "Texto Descripción 01"
+msgstr ""
 
 #: ../lib/metaboxes.php:247
 msgid "ex. Character Illustration"
-msgstr "ej.: Características de la Ilustración "
+msgstr ""
 
 #: ../lib/metaboxes.php:252
 msgid "Value 02 Title"
-msgstr "Texto Título 02"
+msgstr ""
 
 #: ../lib/metaboxes.php:253
 msgid "ex. Skills Needed:"
-msgstr "ej.: habilidades necesarias:"
+msgstr ""
 
 #: ../lib/metaboxes.php:258
 msgid "Value 02 Description"
-msgstr "Texto Descripción 02"
+msgstr ""
 
 #: ../lib/metaboxes.php:259
 msgid "ex. Photoshop, Illustrator"
-msgstr "ej.; Photoshop, Illustrator"
+msgstr ""
 
 #: ../lib/metaboxes.php:264
 msgid "Value 03 Title"
-msgstr "Texto Títilo 03"
+msgstr ""
 
 #: ../lib/metaboxes.php:265
 msgid "ex. Customer:"
-msgstr "ej.: Cliente:"
+msgstr ""
 
 #: ../lib/metaboxes.php:270
 msgid "Value 03 Description"
-msgstr "Texto Descripción 03"
+msgstr ""
 
 #: ../lib/metaboxes.php:271
 msgid "ex. Example Inc"
-msgstr "ej.: Compañia"
+msgstr ""
 
 #: ../lib/metaboxes.php:276
 msgid "Value 04 Title"
-msgstr "Texto Título 04"
+msgstr ""
 
 #: ../lib/metaboxes.php:277
 msgid "ex. Project Year:"
-msgstr "ej.: Año del proyecto:"
+msgstr ""
 
 #: ../lib/metaboxes.php:282
 msgid "Value 04 Description"
-msgstr "Texto Descripción 04"
+msgstr ""
 
 #: ../lib/metaboxes.php:283
 msgid "ex. 2013"
-msgstr "ej.: 2013"
+msgstr ""
 
 #: ../lib/metaboxes.php:288
 msgid "External Website"
-msgstr "Web"
+msgstr ""
 
 #: ../lib/metaboxes.php:289
 msgid "ex. Website:"
-msgstr "ej.: url:"
+msgstr ""
 
 #: ../lib/metaboxes.php:294
 msgid "Website Address"
-msgstr "Dirección página web"
+msgstr ""
 
 #: ../lib/metaboxes.php:295
 msgid "ex. http://www.example.com"
-msgstr "ej.: http:www.ejemplo.com"
+msgstr ""
 
 #: ../lib/metaboxes.php:300
 msgid "If Video Project"
-msgstr "Video del proyecto"
+msgstr ""
 
 #: ../lib/metaboxes.php:306
 msgid "Similar Portfolio Item Carousel"
-msgstr "Carrusel de articulos similares del Portfolio"
+msgstr ""
 
 #: ../lib/metaboxes.php:307
 msgid "Display a carousel with similar portfolio items below project?"
 msgstr ""
-"¿Mostrar un carrusel con artículos similares debajo de datos del proyecto?"
 
 #: ../lib/metaboxes.php:312
 msgid "Yes - Display Recent Projects"
-msgstr "Sí - Mostrar Proyectos Recientes"
+msgstr ""
 
 #: ../lib/metaboxes.php:317
 msgid "ex. Similar Projects"
-msgstr "ej.: Proyectos similares"
+msgstr ""
 
 #: ../lib/metaboxes.php:326
 msgid "Portfolio Page Options"
-msgstr "Opciones Página Portfolio"
+msgstr ""
 
 #: ../lib/metaboxes.php:335
 msgid "Columns"
-msgstr "Columnas"
+msgstr ""
 
 #: ../lib/metaboxes.php:340
 msgid "Four Column"
-msgstr "Cuatro columnas"
+msgstr ""
 
 #: ../lib/metaboxes.php:341
 msgid "Three Column"
-msgstr "Tres columnas"
+msgstr ""
 
 #: ../lib/metaboxes.php:342
 msgid "Two Column"
-msgstr "Dos columnas"
+msgstr ""
 
 #: ../lib/metaboxes.php:346
 msgid "Portfolio Work Types"
-msgstr "Tipos de trabajo Porfolio"
+msgstr ""
 
 #: ../lib/metaboxes.php:353
 msgid "Order Items By"
-msgstr "Ordenar los Elementos por"
+msgstr ""
 
 #: ../lib/metaboxes.php:358
 msgid "Menu Order"
-msgstr "Orden Men&uacute;"
+msgstr ""
 
 #: ../lib/metaboxes.php:359
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:153
@@ -865,357 +844,344 @@ msgstr "Orden Men&uacute;"
 #: ../themeoptions/inc/fields/slides/field_slides.php:133
 #: ../themeoptions/inc/fields/slides/field_slides.php:197
 msgid "Title"
-msgstr "Título:"
+msgstr ""
 
 #: ../lib/metaboxes.php:360
 msgid "Date"
-msgstr "Fecha"
+msgstr ""
 
 #: ../lib/metaboxes.php:361
 msgid "Random"
-msgstr "Aleatorio"
+msgstr ""
 
 #: ../lib/metaboxes.php:365
 msgid "Items per Page"
-msgstr "Artículos por página"
+msgstr ""
 
 #: ../lib/metaboxes.php:366
 msgid "How many portfolio items per page"
-msgstr "Cuantos artículos portfolio por página"
+msgstr ""
 
 #: ../lib/metaboxes.php:388
 msgid "Set image height"
-msgstr "Ajustar altura imagen"
+msgstr ""
 
 #: ../lib/metaboxes.php:389
 msgid "Default is 1:1 ratio <b>(Note: just input number, example: 350)</b>"
 msgstr ""
-"Valor por defecto proporción 1:1  <b>(Nota: sólo un número, ejemplo: 350)</b>"
 
 #: ../lib/metaboxes.php:394
 msgid "Display Item Work Types"
-msgstr "Mostrar Categorías | Tipo -  Portfolio"
+msgstr ""
 
 #: ../lib/metaboxes.php:401
 msgid "Display Item Excerpt"
-msgstr "Mostrar Extracto Texto "
+msgstr ""
 
 #: ../lib/metaboxes.php:408
 msgid "Add Lightbox link in the top right of each item"
 msgstr ""
-"A&ntilde;adir enlace Lightbox en la parte superior derecha de cada elemento"
 
 #: ../lib/metaboxes.php:423
 msgid "Feature Page Options"
-msgstr "Características Páginas Opciones"
+msgstr ""
 
 #: ../lib/metaboxes.php:432
 msgid "Feature Options"
-msgstr "Características Opciones"
+msgstr ""
 
 #: ../lib/metaboxes.php:433
 msgid "If image slider make sure images uploaded are at least 1140px wide."
 msgstr ""
-"Si usa imagen para slider, asegúrese de subir imágenes de al menos 1140 px"
 
 #: ../lib/metaboxes.php:450
 msgid ""
 "Default is: 1140 <b>(Note: just input number, example: 650, does not apply "
 "to Carousel slider)</b>"
 msgstr ""
-"Valor por defecto: 1140 <b>(Nota: sólo número, ejemplo: 650, no funciona "
-"para slider carrusel)</b>"
 
 #: ../lib/metaboxes.php:455
 msgid "Use Lightbox for Feature Image"
-msgstr "Usar lightbox para imagen destacadas"
+msgstr ""
 
 #: ../lib/metaboxes.php:456
 msgid ""
 "If feature option is set to image, choose to use lightbox link with image."
 msgstr ""
-"Si la opci&oacute;n se establece en  imagen, elija usar enlace a lightbox "
-"con la imagen."
 
 #: ../lib/metaboxes.php:474
 msgid "Blog List Options"
-msgstr "Opciones Listado de Blog"
+msgstr ""
 
 #: ../lib/metaboxes.php:483
 msgid "Blog Category"
-msgstr "Categorías Blog"
+msgstr ""
 
 #: ../lib/metaboxes.php:484
 msgid "Select all blog posts or a specific category to show"
 msgstr ""
-"Seleccionar todas las publicaciones de blog o de una categoría específica "
-"para mostrar"
 
 #: ../lib/metaboxes.php:490
 msgid "How Many Posts Per Page"
-msgstr "Número de publicaciones por página"
+msgstr ""
 
 #: ../lib/metaboxes.php:514
 msgid "Display Post Content as:"
-msgstr "Mostrar publicar contenido como:"
+msgstr ""
 
 #: ../lib/metaboxes.php:519
 msgid "Summary"
-msgstr "Resumen"
+msgstr ""
 
 #: ../lib/metaboxes.php:520
 msgid "Full"
-msgstr "Completo"
+msgstr ""
 
 #: ../lib/metaboxes.php:543
 msgid "Contact Page Options"
-msgstr "Opciones página de contacto"
+msgstr ""
 
 #: ../lib/metaboxes.php:552
 msgid "Use Contact Form"
-msgstr "Usar formulario de contacto"
+msgstr ""
 
 #: ../lib/metaboxes.php:562
 msgid "Contact Form Title"
-msgstr "Título Formulario de Contacto"
+msgstr ""
 
 #: ../lib/metaboxes.php:563
 msgid "ex. Send us an Email"
-msgstr "ej.: Envíenos un correo electrónico"
+msgstr ""
 
 #: ../lib/metaboxes.php:568
 msgid "Use Map"
-msgstr "Usar Mapa"
+msgstr ""
 
 #: ../lib/metaboxes.php:578
 msgid "Address"
-msgstr "Dirección"
+msgstr ""
 
 #: ../lib/metaboxes.php:579
 msgid "Enter your Location"
-msgstr "Ingrese su localidad"
+msgstr ""
 
 #: ../lib/metaboxes.php:584
 msgid "Map Type"
-msgstr "Tipo de Mapa"
+msgstr ""
 
 #: ../lib/metaboxes.php:589
 msgid "ROADMAP"
-msgstr "Callejero"
+msgstr ""
 
 #: ../lib/metaboxes.php:590
 msgid "HYBRID"
-msgstr "Híbrido"
+msgstr ""
 
 #: ../lib/metaboxes.php:591
 msgid "TERRAIN"
-msgstr "Terreno"
+msgstr ""
 
 #: ../lib/metaboxes.php:592
 msgid "SATELLITE"
-msgstr "Satélite"
+msgstr ""
 
 #: ../lib/metaboxes.php:596
 msgid "Map Zoom Level"
-msgstr "Nivel Zoom del Mapa"
+msgstr ""
 
 #: ../lib/metaboxes.php:597
 msgid "A good place to start is 15"
-msgstr "Punto para comenzar aconsejado es de 15"
+msgstr ""
 
 #: ../lib/metaboxes.php:602
 msgid "1 (World View)"
-msgstr "1(Vista Mundo)"
+msgstr ""
 
 #: ../lib/metaboxes.php:622
 msgid "21 (Street View)"
-msgstr "21 (Vista calle)"
+msgstr ""
 
 #: ../lib/metaboxes.php:626
 msgid "Map Height"
-msgstr "Altura Mapa"
+msgstr ""
 
 #: ../lib/metaboxes.php:627
 msgid "Default is 300"
-msgstr "Por defecto es 300"
+msgstr ""
 
 #: ../lib/metaboxes.php:635
 msgid "Sidebar Options"
-msgstr "Opciones Barra lateral"
+msgstr ""
 
 #: ../lib/scripts.php:33
 msgid ""
 "Sorry, no products matched your selection. Please choose a different "
 "combination."
 msgstr ""
-"Lo sentimos, no hay productos marcados con su selcci&oacute:n. Por favor "
-"elija una combinaci&oacute:n diferente."
 
 #: ../lib/scripts.php:34
 msgid ""
 "Sorry, this product is unavailable. Please choose a different combination."
 msgstr ""
-"Lo sentimos, producto no disponible. Por favor seleccione otra "
-"combinaci&oacute;n."
 
 #: ../lib/utils.php:69
 #, php-format
 msgid "Daily Archives: %s"
-msgstr "Archivo Diario: %s"
+msgstr ""
 
 #: ../lib/utils.php:71
 #, php-format
 msgid "Monthly Archives: %s"
-msgstr "Archivo Mensual: %s"
+msgstr ""
 
 #: ../lib/utils.php:73
 #, php-format
 msgid "Yearly Archives: %s"
-msgstr "Archivo Anual: %s"
+msgstr ""
 
 #: ../lib/utils.php:75
 #, php-format
 msgid "Author Archives: %s"
-msgstr "Archivos Autor: %s"
+msgstr ""
 
 #: ../lib/utils.php:81
 #, php-format
 msgid "Search Results for %s"
-msgstr "Resultados búsqueda para %s"
+msgstr ""
 
 #: ../lib/utils.php:84
 msgid "Not Found"
-msgstr "No se encuentra"
+msgstr ""
 
 #: ../lib/virtuetoolkit-activate.php:37
 msgid "Something went wrong with the plugin API."
-msgstr "Algo falló con la API de plugin."
+msgstr ""
 
 #: ../lib/virtuetoolkit-activate.php:50
 #, php-format
 msgid "All plugins installed and activated successfully. %s"
-msgstr "Todos los plugins instalados y activados correctamente. %s"
+msgstr ""
 
 #: ../lib/widgets.php:6 ../lib/widgets.php:59
 msgid "Primary Sidebar"
-msgstr "Barra lateral Principal (Primary)"
+msgstr ""
 
 #: ../lib/widgets.php:49 ../templates/header.php:40
 msgid "Topbar Widget"
-msgstr "Widget barra superior"
+msgstr ""
 
 #: ../lib/widgets.php:71 ../lib/widgets.php:112 ../lib/widgets.php:143
 msgid "Footer Column 1"
-msgstr "Footer Column 1"
+msgstr ""
 
 #: ../lib/widgets.php:81 ../lib/widgets.php:122 ../lib/widgets.php:153
 msgid "Footer Column 2"
-msgstr "Footer Column 2"
+msgstr ""
 
 #: ../lib/widgets.php:91 ../lib/widgets.php:132
 msgid "Footer Column 3"
-msgstr "Footer Column 3"
+msgstr ""
 
 #: ../lib/widgets.php:101
 msgid "Footer Column 4"
-msgstr "Footer Column 4"
+msgstr ""
 
 #: ../lib/widgets.php:177
 msgid "Use this widget to add a Vcard to your site"
-msgstr "Use este widget para añadir datos Vcard del sitio web"
+msgstr ""
 
 #: ../lib/widgets.php:178
 msgid "Virtue: Contact/Vcard"
-msgstr "Virtue: Contacto/Vcard"
+msgstr ""
 
 #: ../lib/widgets.php:205
 msgid "vCard"
-msgstr "vCard"
+msgstr ""
 
 #: ../lib/widgets.php:277 ../lib/widgets.php:440 ../lib/widgets.php:597
 #: ../lib/widgets.php:735
 msgid "Title:"
-msgstr "Título:"
+msgstr ""
 
 #: ../lib/widgets.php:281
 msgid "Company Name:"
-msgstr "Nombre Empresa:"
+msgstr ""
 
 #: ../lib/widgets.php:289
 msgid "Street Address:"
-msgstr "Dirección:"
+msgstr ""
 
 #: ../lib/widgets.php:293
 msgid "City/Locality:"
-msgstr "Localidad:"
+msgstr ""
 
 #: ../lib/widgets.php:297
 msgid "State/Region:"
-msgstr "Pais:"
+msgstr ""
 
 #: ../lib/widgets.php:301
 msgid "Zipcode/Postal Code:"
-msgstr "Código Postal:"
+msgstr ""
 
 #: ../lib/widgets.php:305 ../woocommerce/order/order-details.php:110
 msgid "Telephone:"
-msgstr "Teléfono:"
+msgstr ""
 
 #: ../lib/widgets.php:309 ../woocommerce/order/order-details.php:109
 msgid "Email:"
-msgstr "Email:"
+msgstr ""
 
 #: ../lib/widgets.php:320
 msgid "Simple way to add Social Icons"
-msgstr "Añadir facilmente iconos redes sociales"
+msgstr ""
 
 #: ../lib/widgets.php:321
 msgid "Virtue: Social Links"
-msgstr "Virtue: Redes Sociales"
+msgstr ""
 
 #: ../lib/widgets.php:444
 msgid "Facebook:"
-msgstr "Facebook:"
+msgstr ""
 
 #: ../lib/widgets.php:448
 msgid "Twitter:"
-msgstr "Twitter:"
+msgstr ""
 
 #: ../lib/widgets.php:452
 msgid "Instagram:"
-msgstr "Instagram:"
+msgstr ""
 
 #: ../lib/widgets.php:456
 msgid "GooglePlus:"
-msgstr "Google Plus:"
+msgstr ""
 
 #: ../lib/widgets.php:460
 msgid "Flickr:"
-msgstr "Flickr:"
+msgstr ""
 
 #: ../lib/widgets.php:464
 msgid "Vimeo:"
-msgstr "Vimeo:"
+msgstr ""
 
 #: ../lib/widgets.php:468
 msgid "Youtube:"
-msgstr "Youtube:"
+msgstr ""
 
 #: ../lib/widgets.php:472
 msgid "Pinterest:"
-msgstr "Pinterest:"
+msgstr ""
 
 #: ../lib/widgets.php:476
 msgid "Dribbble:"
-msgstr "Dribbble:"
+msgstr ""
 
 #: ../lib/widgets.php:480
 msgid "Linkedin:"
-msgstr "Linkedin:"
+msgstr ""
 
 #: ../lib/widgets.php:484
 msgid "Tumblr:"
-msgstr "Tumblr:"
+msgstr ""
 
 #: ../lib/widgets.php:488
 msgid "VK:"
@@ -1223,74 +1189,72 @@ msgstr ""
 
 #: ../lib/widgets.php:492
 msgid "RSS:"
-msgstr "RSS:"
+msgstr ""
 
 #: ../lib/widgets.php:506
 msgid "This shows the most recent posts on your site with a thumbnail"
-msgstr "Mostrar las publicaciones más recientes con una miniatura"
+msgstr ""
 
 #: ../lib/widgets.php:507
 msgid "Virtue: Recent Posts"
-msgstr "Virtue: Publicaciones Recientes"
+msgstr ""
 
 #: ../lib/widgets.php:532
 msgid "Recent Posts"
-msgstr "Publicaciones Recientes"
+msgstr ""
 
 #: ../lib/widgets.php:600
 msgid "Number of posts to show:"
-msgstr "Número publicaciones a mostrar:"
+msgstr ""
 
 #: ../lib/widgets.php:603
 msgid "Limit to Catagory (Optional):"
-msgstr "Limitar a categoría (opcional):"
+msgstr ""
 
 #: ../lib/widgets.php:614
 msgid ""
 "This shows a grid of featured images from recent posts or portfolio items"
 msgstr ""
-"Se muestran la imágenes usadas como destacadas de las publicaciones o "
-"artículos más recientes en una rejilla (grid)"
 
 #: ../lib/widgets.php:615
 msgid "Virtue: Image Grid"
-msgstr "Virtue: Imagen Rejilla | Grid"
+msgstr ""
 
 #: ../lib/widgets.php:640
 msgid "Post Gallery"
-msgstr "Galería Publicaciones"
+msgstr ""
 
 #: ../lib/widgets.php:738
 msgid "Grid Choice:"
-msgstr "Elegir rejilla:"
+msgstr ""
 
 #: ../lib/widgets.php:740
 msgid "Blog Posts"
-msgstr "Publicaciones Blog"
+msgstr ""
 
 #: ../lib/widgets.php:741
 msgid "Portfolio"
-msgstr "Portfolio"
+msgstr ""
 
 #: ../lib/widgets.php:744
 msgid "If Post - Choose Category (Optional):"
-msgstr "Si publicaciones - Elegir Categoría (opcional):"
+msgstr ""
 
 #: ../lib/widgets.php:747
 msgid "If Portfolio - Choose Type (Optional):"
-msgstr "Si Portfolio - Elegir Tipo (opcional):"
+msgstr ""
 
 #: ../lib/widgets.php:750
 msgid "Number of images to show:"
-msgstr "Número de imágenes a mostrar:"
+msgstr ""
 
 #: ../lib/widgets.php:768
 msgid "This allows for an image and a simple about text."
-msgstr "Mostrar una imagen sobre un texto simple."
+msgstr ""
 
 #: ../lib/widgets.php:769
 msgid "Virtue: About with Image"
-msgstr "Virtue: Acerca de...con Imagen"
+msgstr ""
 
 #: ../lib/widgets.php:797
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:119
@@ -1300,44 +1264,40 @@ msgstr "Virtue: Acerca de...con Imagen"
 #: ../themeoptions/inc/fields/slides/field_slides.php:121
 #: ../themeoptions/inc/fields/slides/field_slides.php:190
 msgid "Upload"
-msgstr "Subir"
+msgstr ""
 
 #: ../lib/cmb/init.php:243
 msgid "Clear"
 msgstr ""
 
 #: ../lib/cmb/init.php:245
-#, fuzzy
 msgid "Select Color"
-msgstr "Selecionar Opciones"
+msgstr ""
 
 #: ../lib/cmb/init.php:246
-#, fuzzy
 msgid "Current Color"
-msgstr "Color Primario"
+msgstr ""
 
 #: ../lib/cmb/init.php:1185
 msgid "Save"
-msgstr "Guardar"
+msgstr ""
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_ajax.php:47
 msgid "Please Try Again"
-msgstr "Por favor, inténtelo de nuevo"
+msgstr ""
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_ajax.php:131
 msgid "Remove Embed"
-msgstr "Quitar inscrustar"
+msgstr ""
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_ajax.php:134
 #, php-format
 msgid "No oEmbed Results Found for %s. View more info at"
 msgstr ""
-"No se encuentrar resultados para incrustador %s. Ampliar información en"
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:150
-#, fuzzy
 msgid "Add Row"
-msgstr "Añadir comentario"
+msgstr ""
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:178
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:547
@@ -1354,7 +1314,7 @@ msgstr "Añadir comentario"
 #: ../themeoptions/inc/fields/slides/field_slides.php:128
 #: ../themeoptions/inc/fields/slides/field_slides.php:192
 msgid "Remove"
-msgstr "Eliminar"
+msgstr ""
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:523
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:563
@@ -1363,9 +1323,8 @@ msgstr ""
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:536
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:582
-#, fuzzy
 msgid "Remove Image"
-msgstr "Quitar Imagen"
+msgstr ""
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:547
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:590
@@ -1376,1097 +1335,1044 @@ msgstr ""
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:590
 #: ../themeoptions/framework.php:2406
 msgid "Download"
-msgstr "Descargar:"
+msgstr ""
 
 #: ../templates/comment.php:7
 msgid "(Edit)"
-msgstr "(Editar)"
+msgstr ""
 
 #: ../templates/comments.php:8
 #, php-format
 msgid "One Response "
 msgid_plural "%1$s Responses "
-msgstr[0] "Una respuesta"
-msgstr[1] "%1$s Respuestas"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../templates/comments.php:18
 msgid "&larr; Older comments"
-msgstr "&larr; Comentarios antiguos"
+msgstr ""
 
 #: ../templates/comments.php:21
 msgid "Newer comments &rarr;"
-msgstr "Nuevo comentarios  &rarr;"
+msgstr ""
 
 #: ../templates/comments.php:31 ../templates/comments.php:43
 msgid "Comments are closed."
-msgstr "Comentarios Cerrados."
+msgstr ""
 
 #: ../templates/comments.php:54
 msgid "Leave a Reply"
-msgstr "Dejar una opinión"
+msgstr ""
 
 #: ../templates/comments.php:54 ../woocommerce/single-product-reviews.php:58
 #, php-format
 msgid "Leave a Reply to %s"
-msgstr "Leave a Reply to %s"
+msgstr ""
 
 #: ../templates/comments.php:57
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
-msgstr "Debe estar <a href=\"%s\">conectado</a> para escribir un comentario."
+msgstr ""
 
 #: ../templates/comments.php:62
 #, php-format
 msgid "Logged in as <a href=\"%s/wp-admin/profile.php\">%s</a>."
-msgstr "Conectado como&nbsp;<a href=\"%s/wp-admin/profile.php\">%s</a>."
+msgstr ""
 
 #: ../templates/comments.php:63
 msgid "Log out of this account"
-msgstr "Desconectarse de la cuenta"
+msgstr ""
 
 #: ../templates/comments.php:63
 msgid "Log out &raquo;"
-msgstr "Desconectar &raquo;"
+msgstr ""
 
 #: ../templates/comments.php:68 ../templates/comments.php:72
 msgid " <span>*</span>"
-msgstr " <span>*</span>"
+msgstr ""
 
 #: ../templates/comments.php:72
 msgid "Email (will not be published)"
-msgstr "Email (no será publicado)"
+msgstr ""
 
 #: ../templates/comments.php:76
 msgid "Website"
-msgstr "Sitio Web"
+msgstr ""
 
 #: ../templates/comments.php:81
 msgid "Comment"
-msgstr "Comentarios"
+msgstr ""
 
 #: ../templates/comments.php:83
 msgid "Submit Comment"
-msgstr "Enviar"
+msgstr ""
 
 #: ../templates/content-fullpost.php:78
 #: ../templates/content-fullpostfull.php:78 ../templates/content-single.php:87
 #: ../templates/content-singleportfolio.php:258
 msgid "Pages:"
-msgstr "Páginas:"
+msgstr ""
 
 #: ../templates/entry-meta-subhead.php:3
 msgid "by"
-msgstr "por"
+msgstr ""
 
 #: ../templates/entry-meta-subhead.php:6
 msgid "posted in:"
-msgstr "publicado en:"
+msgstr ""
 
 #: ../templates/entry-meta.php:2
 msgid "By"
-msgstr "por"
+msgstr ""
 
 #: ../templates/header.php:77
 msgid "Menu"
-msgstr "Men&uacute;"
+msgstr ""
 
 #: ../templates/recentportfolio-carousel.php:2
 msgid "Recent Projects"
-msgstr "Proyectos Recientes"
+msgstr ""
 
 #: ../templates/similarblog-carousel.php:2
 msgid "Similar Posts"
-msgstr "Publicaciones Similares"
+msgstr ""
 
 #: ../templates/home/blog-home.php:3
 msgid "Latest from the Blog"
-msgstr "Lo último del Blog"
+msgstr ""
 
 #: ../templates/home/blog-home.php:74
 msgid "READ MORE"
-msgstr "LEER MÁS"
+msgstr ""
 
 #: ../templates/home/portfolio-carousel.php:2
 msgid "Featured Projects"
-msgstr "Proyectos destacados"
+msgstr ""
 
 #: ../themeoptions/options.php:38
 msgid "Copy and Paste this code into the theme options import feature"
 msgstr ""
-"Copiar y pegar este c&oacute;digo en el tema de las opciones de "
-"importaci&oacute;n de funci&oacute;n"
 
 #: ../themeoptions/options.php:311
 msgid "There are no previous options"
-msgstr "No hay opciones anteriores"
+msgstr ""
 
 #: ../themeoptions/options.php:323
 msgid "Main Settings"
-msgstr "Ajustes"
+msgstr ""
 
 #: ../themeoptions/options.php:325
 msgid "Welcome to Virtue Theme Options"
-msgstr "Bienvenido a las opciones del tema Virtue"
+msgstr ""
 
 #: ../themeoptions/options.php:326
 msgid "This theme was developed by"
-msgstr "Tema desarrollado por"
+msgstr ""
 
 #: ../themeoptions/options.php:327
 msgid "For theme documentation visit"
-msgstr "Para ver la documentaci&oacute;n del tema"
+msgstr ""
 
 #: ../themeoptions/options.php:329
 msgid "For support please visit"
-msgstr "Para recibir soporte, por favor visite"
+msgstr ""
 
 #: ../themeoptions/options.php:337
 msgid "Site Layout Style"
-msgstr "Estilo diseño ancho pantalla del sitio web"
+msgstr ""
 
 #: ../themeoptions/options.php:338
 msgid "Select Boxed or Wide Site Layout Style"
-msgstr "Seleccione disposici&oacute;n: Caja o Ancho completo"
+msgstr ""
 
 #: ../themeoptions/options.php:349
 msgid "Footer Widget Layout"
-msgstr "Dise&ntilde;o columnas-widgets pie de p&aacute;gina"
+msgstr ""
 
 #: ../themeoptions/options.php:350
 msgid "Select how many columns for footer widgets"
-msgstr "Seleccionar el n&uacute;mero de columnas  pie de p&aacute;gina"
+msgstr ""
 
 #: ../themeoptions/options.php:361
 msgid "Logo Options"
-msgstr "Opciones del logotipo"
+msgstr ""
 
 #: ../themeoptions/options.php:367
 msgid "Logo Layout"
-msgstr "Disposici&oacute;n Logo"
+msgstr ""
 
 #: ../themeoptions/options.php:368
 msgid "Choose how you want your logo to be laid out"
-msgstr "Elija c&oacute;mo desea mostrar su logotipo"
+msgstr ""
 
 #: ../themeoptions/options.php:380
 msgid "Logo"
-msgstr "Logotipo"
+msgstr ""
 
 #: ../themeoptions/options.php:382
 msgid "Upload your Logo. If left blank theme will use site name."
 msgstr ""
-"Suba su logotipo. Si se deja en blanco, se mostrar&aacute; el nombre del "
-"sitio."
 
 #: ../themeoptions/options.php:388
 msgid "Upload Your @2x Logo for Retina Screens"
-msgstr "Subir logo x2 para pantallas Retina"
+msgstr ""
 
 #: ../themeoptions/options.php:390
 msgid "Should be twice the pixel size of your normal logo."
-msgstr "Debe ser dos veces el tama&ntilde;o de píxel de su logo normal"
+msgstr ""
 
 #: ../themeoptions/options.php:395
 msgid "Sitename Logo Font"
-msgstr "Fuente para el nombre del sitio"
+msgstr ""
 
 #: ../themeoptions/options.php:409
 msgid "Choose size and style your sitename, if you don't use an image logo."
 msgstr ""
-"Elija el tama&ntilde;o y estilo de su nombre de sitio, si no se utiliza un "
-"logotipo de imagen"
 
 #: ../themeoptions/options.php:420
 msgid "Site Tagline - Below Logo\""
-msgstr "Lema del sitio - Debajo del logotipo"
+msgstr ""
 
 #: ../themeoptions/options.php:421
 msgid "An optional line of text below your logo"
-msgstr "L&iacute;nea de texto debajo de su logotipo -opcional-"
+msgstr ""
 
 #: ../themeoptions/options.php:429
 msgid "Site Tagline Font"
-msgstr "Fuente para lema del sitio"
+msgstr ""
 
 #: ../themeoptions/options.php:441
 msgid "Choose size and style your site tagline"
-msgstr "Elija un tamaño y estilo para su lema"
+msgstr ""
 
 #: ../themeoptions/options.php:452 ../themeoptions/options.php:462
 #: ../themeoptions/options.php:472 ../themeoptions/options.php:482
 msgid "Logo Spacing"
-msgstr "Espaciado del Logo"
+msgstr ""
 
 #: ../themeoptions/options.php:453 ../themeoptions/options.php:493
 msgid "Top Spacing"
-msgstr "Margen superior"
+msgstr ""
 
 #: ../themeoptions/options.php:463 ../themeoptions/options.php:503
 msgid "Bottom Spacing"
-msgstr "Margen inferior"
+msgstr ""
 
 #: ../themeoptions/options.php:473
 msgid "Left Spacing"
-msgstr "Margen izquierdo"
+msgstr ""
 
 #: ../themeoptions/options.php:483
 msgid "Right Spacing"
-msgstr "Margen derecho"
+msgstr ""
 
 #: ../themeoptions/options.php:492 ../themeoptions/options.php:502
 msgid "Primary Menu Spacing"
-msgstr "Margen Menú primario"
+msgstr ""
 
 #: ../themeoptions/options.php:513
 msgid "Sitewide Banner"
-msgstr "Banner en todo el sitio"
+msgstr ""
 
 #: ../themeoptions/options.php:515
 msgid "Upload a banner for bottom of header."
 msgstr ""
-"Subir un banner de cabecera. Ser&aacute; visible en todas las p&aacute;ginas."
 
 #: ../themeoptions/options.php:522
 msgid "Topbar Settings"
-msgstr "Ajustes barra superior (topbar)"
+msgstr ""
 
 #: ../themeoptions/options.php:527
 msgid "Use Topbar?"
-msgstr "¿Usar barra superior? (topbar)"
+msgstr ""
 
 #: ../themeoptions/options.php:528
 msgid "Choose to show or hide topbar"
-msgstr "Elija mostrar u ocultar barra superior"
+msgstr ""
 
 #: ../themeoptions/options.php:534
 msgid "Use Topbar Icon Menu?"
-msgstr "¿Usar iconos en menú barra superior?"
+msgstr ""
 
 #: ../themeoptions/options.php:535
 msgid "Choose to show or hide topbar icon Menu"
-msgstr "Elija mostrar u ocultar icono men&uacute; barra superior"
+msgstr ""
 
 #: ../themeoptions/options.php:541
 msgid "Topbar Icon Menu"
-msgstr "Iconos Menú barra superior"
+msgstr ""
 
 #: ../themeoptions/options.php:542
 msgid "Choose your icons for the topbar icon menu."
-msgstr "Elija los iconos para el menú de la barra superior"
+msgstr ""
 
 #: ../themeoptions/options.php:548
 msgid "Show Cart total in topbar?"
-msgstr "Mostrar total cesta en barra superior"
+msgstr ""
 
 #: ../themeoptions/options.php:549
 msgid "This only works if using woocommerce"
-msgstr "Sólo funciona si se utiliza woocommerce"
+msgstr ""
 
 #: ../themeoptions/options.php:555
 msgid "Display Search in Topbar?"
-msgstr "¿Mostrar búsqueda en barra superior?"
+msgstr ""
 
 #: ../themeoptions/options.php:556
 msgid "Choose to show or hide search in topbar"
-msgstr "Elija mostrar u ocultar búsqueda en barra superior"
+msgstr ""
 
 #: ../themeoptions/options.php:562
 msgid "Enable widget area in right of Topbar?"
-msgstr "¿Habilitar &aacute;rea de widgets a la derecha barra superior?"
+msgstr ""
 
 #: ../themeoptions/options.php:563
 msgid ""
 "Note this will hide remove search (you can re-enable it my adding it to the "
 "widget area)"
 msgstr ""
-"Esto ocultar&aacute; la b&uacute;squeda (puede rehabilitarlo en la &aacute;"
-"rea de widgets)"
 
 #: ../themeoptions/options.php:569
 msgid "Topbar Layout Switch"
-msgstr "Activar dise&ntilde;o Topbar"
+msgstr ""
 
 #: ../themeoptions/options.php:570
 msgid "This moves the left items to the right and right items to the left."
-msgstr "Esto mueve los elementos de la izquierda a la derecha y viceversa."
+msgstr ""
 
 #: ../themeoptions/options.php:578
 msgid "Slider Settings"
-msgstr "Ajustes de slider"
+msgstr ""
 
 #: ../themeoptions/options.php:579
 msgid "Home Page Slider Options"
-msgstr "Opciones Slider Portada (deslizador imagen-diapositivas)"
+msgstr ""
 
 #: ../themeoptions/options.php:584
 msgid "Choose a Home Image Slider"
-msgstr "Elegir un slider de im&aacute;genes en Portada"
+msgstr ""
 
 #: ../themeoptions/options.php:585
 msgid "If you don't want an image slider on your home page choose none."
 msgstr ""
-"Si usted No quiere un slider en su página de inicio, seleccione ninguno."
 
 #: ../themeoptions/options.php:594 ../themeoptions/options.php:697
 msgid "Slider Images"
-msgstr "Imágenes de slider"
+msgstr ""
 
 #: ../themeoptions/options.php:595 ../themeoptions/options.php:698
 msgid "Use large images for best results."
-msgstr "Usar  im&aacute;genes  grandes para obtener mejores resultados"
+msgstr ""
 
 #: ../themeoptions/options.php:601 ../themeoptions/options.php:705
 msgid "Slider Max Height"
-msgstr "Altura máxima del slider"
+msgstr ""
 
 #: ../themeoptions/options.php:602 ../themeoptions/options.php:612
 #: ../themeoptions/options.php:706 ../themeoptions/options.php:717
 msgid "Note: does not work if images are smaller than max."
-msgstr "Nota: no funciona si las imágenes son más pequeñas que el máximo."
+msgstr ""
 
 #: ../themeoptions/options.php:611 ../themeoptions/options.php:716
 msgid "Slider Max Width"
-msgstr "Anchura máxima del slider"
+msgstr ""
 
 #: ../themeoptions/options.php:621 ../themeoptions/options.php:727
 msgid "Auto Play?"
-msgstr "¿Reproducción automática?"
+msgstr ""
 
 #: ../themeoptions/options.php:622 ../themeoptions/options.php:728
 msgid "This determines if a slider automatically scrolls"
-msgstr "Esto determina si el slider se desplaza automáticamente"
+msgstr ""
 
 #: ../themeoptions/options.php:628 ../themeoptions/options.php:735
 msgid "Slider Pause Time"
-msgstr "Duración de la imagen en pausa"
+msgstr ""
 
 #: ../themeoptions/options.php:629 ../themeoptions/options.php:736
 msgid "How long to pause on each slide, in milliseconds."
-msgstr "Duración de pausa de la imágenes del slider,en milisegundos"
+msgstr ""
 
 #: ../themeoptions/options.php:638 ../themeoptions/options.php:746
 msgid "Transition Type"
-msgstr "Tipo de transición"
+msgstr ""
 
 #: ../themeoptions/options.php:639 ../themeoptions/options.php:747
 msgid "Choose a transition type"
-msgstr "Elegir tipo de transición"
+msgstr ""
 
 #: ../themeoptions/options.php:646 ../themeoptions/options.php:755
 msgid "Slider Transition Time"
-msgstr "Duración transición del slider"
+msgstr ""
 
 #: ../themeoptions/options.php:647 ../themeoptions/options.php:756
 msgid "How long for slide transitions, in milliseconds."
-msgstr "Duración transición del slider, en milisegundos"
+msgstr ""
 
 #: ../themeoptions/options.php:656 ../themeoptions/options.php:766
 msgid "Show Captions?"
-msgstr "¿Mostrar leyenda? "
+msgstr ""
 
 #: ../themeoptions/options.php:657 ../themeoptions/options.php:767
 msgid "Choose to show or hide captions"
-msgstr "Elegir si mostrar u ocultar leyendas"
+msgstr ""
 
 #: ../themeoptions/options.php:663 ../themeoptions/options.php:774
 msgid "Video Embed Code"
-msgstr "Incrustrar código de video"
+msgstr ""
 
 #: ../themeoptions/options.php:664 ../themeoptions/options.php:775
 msgid "If your using a video on the home page place video embed code here."
 msgstr ""
-"Si utiliza un video en la página de inicio, inserte el código del video aquí."
 
 #: ../themeoptions/options.php:673
 msgid "Mobile Slider"
-msgstr "Móvil - slider"
+msgstr ""
 
 #: ../themeoptions/options.php:674
 msgid "Create a more lightweight home slider for your mobile visitors."
-msgstr "Crear un slider más ligero para visitantes que usen móvil."
+msgstr ""
 
 #: ../themeoptions/options.php:679
 msgid "Would you like to use this feature?"
-msgstr "¿Quiere usar ésta característica?"
+msgstr ""
 
 #: ../themeoptions/options.php:680
 msgid ""
 "Choose if you would like to show a different slider on your home page for "
 "your mobile visitors."
 msgstr ""
-"Elija si desea mostrar un slider diferente en página de inicio para los "
-"visitantes de móviles. Si elige que no, aplicará por defecto el slider de "
-"inicio."
 
 #: ../themeoptions/options.php:686
 msgid "Choose a Slider for Mobile"
-msgstr "Elija un slider para móviles"
+msgstr ""
 
 #: ../themeoptions/options.php:687
 msgid "Choose which slider you would like to show for mobile viewers."
 msgstr ""
-"Elija que slider le gustaría mostrar para los visitantes que usan móvil."
 
 #: ../themeoptions/options.php:784
 msgid "Home Layout"
-msgstr "Diseño Portada"
+msgstr ""
 
 #: ../themeoptions/options.php:791
 msgid "Display a sidebar on the Home Page?"
-msgstr "&iquest;Mostrar una barra lateral en la página de inicio?"
+msgstr ""
 
 #: ../themeoptions/options.php:792
 msgid "This determines if there is a sidebar on the home page."
-msgstr "Esto determina si hay una barra lateral en p&aacute;gina protada"
+msgstr ""
 
 #: ../themeoptions/options.php:802
 msgid "Choose a Sidebar for your Home Page"
-msgstr "Elija una barra lateral para p&aacute;gina de inicio"
+msgstr ""
 
 #: ../themeoptions/options.php:818
 msgid "Latest Blog Posts"
-msgstr "Últimas entradas Blog"
+msgstr ""
 
 #: ../themeoptions/options.php:819
 msgid "Portfolio Carousel"
-msgstr "Carrusel Portafolio"
+msgstr ""
 
 #: ../themeoptions/options.php:820 ../themeoptions/options.php:913
 msgid "Icon Menu"
-msgstr "Men&uacute; icono"
+msgstr ""
 
 #: ../themeoptions/options.php:824
 msgid "Page Title"
-msgstr "Título P&aacute;gina"
+msgstr ""
 
 #: ../themeoptions/options.php:825
 msgid "Page Content"
-msgstr "Contenido P&aacute;gina"
+msgstr ""
 
 #: ../themeoptions/options.php:833
 msgid "Home Blog Settings"
-msgstr "Portada: Ajustes Blog"
+msgstr ""
 
 #: ../themeoptions/options.php:838
 msgid "Home Blog Title"
-msgstr "T&iacute;tulo blog en p&aacute;gina portada"
+msgstr ""
 
 #: ../themeoptions/options.php:839
 msgid "ex: Latest from the blog"
-msgstr "ej.: Lo último del blog "
+msgstr ""
 
 #: ../themeoptions/options.php:844
 msgid "Choose How many posts on Homepage"
-msgstr "Elija cuantas publicaciones de blog apareceran  en página de inicio"
+msgstr ""
 
 #: ../themeoptions/options.php:855
 msgid "Limit posts to a Category"
-msgstr "Limitar publicaciones a una Categoría"
+msgstr ""
 
 #: ../themeoptions/options.php:856
 msgid "Leave blank to select all"
-msgstr "Dejar en blanco para seleccionar todo"
+msgstr ""
 
 #: ../themeoptions/options.php:863
 msgid "Home Portfolio Carousel Settings"
-msgstr "Portada: Ajustes Carrusel Portafolio "
+msgstr ""
 
 #: ../themeoptions/options.php:868
 msgid "Home Portfolio Carousel title"
-msgstr "Título Carrusel Portafolio en P&acute;gina Inicio"
+msgstr ""
 
 #: ../themeoptions/options.php:869
 msgid "ex: Portfolio Carousel title"
-msgstr "ej.: Título Carrousel Portafolio"
+msgstr ""
 
 #: ../themeoptions/options.php:876
 msgid "Portfolio Carousel Category Type"
-msgstr "Tipo Categoría Carrusel Portafolio"
+msgstr ""
 
 #: ../themeoptions/options.php:877
 msgid "Leave blank to select all types"
-msgstr "Dejar en blanco para seleccionar todos los tipos"
+msgstr ""
 
 #: ../themeoptions/options.php:884
 msgid "Choose how many portfolio items are in carousel"
-msgstr "Elija el número de elementos de portafolio para mostrar en carrusel"
+msgstr ""
 
 #: ../themeoptions/options.php:893
 msgid "Portfolio Carousel Order by"
-msgstr "Ordenar por:"
+msgstr ""
 
 #: ../themeoptions/options.php:894
 msgid "Choose how the portfolio items should be ordered in the carousel."
-msgstr "Elige cómo ordenar los elementos de portafolio en carrusel"
+msgstr ""
 
 #: ../themeoptions/options.php:902
 msgid "Display Portfolio Types under Title"
-msgstr "Mostrar Categoria Portfolio debajo del título"
+msgstr ""
 
 #: ../themeoptions/options.php:908
 msgid "Home Icon Menu"
-msgstr "Portada: Men&uacute; Icono"
+msgstr ""
 
 #: ../themeoptions/options.php:914
 msgid "Choose your icons for the icon menu."
-msgstr "Elija los iconos que desea usar en men&uacute;"
+msgstr ""
 
 #: ../themeoptions/options.php:920
 msgid "Choose how many columns in each row"
-msgstr "Elija el número de columnas en cada fila"
+msgstr ""
 
 #: ../themeoptions/options.php:929
 msgid "Page Content Options"
-msgstr "Opciones contenido p&aacute;gina"
+msgstr ""
 
 #: ../themeoptions/options.php:934
 msgid "Latest Post Display"
-msgstr "Mostrar &uacute;ltimas entradas"
+msgstr ""
 
 #: ../themeoptions/options.php:935
 msgid ""
 "If Latest Post page is font page. Choose to show full post or post excerpt."
 msgstr ""
-"Si &uacute;ltimas entradas estan en p&aacute;gina portada. Elija mostrar "
-"completo o extracto."
 
 #: ../themeoptions/options.php:947
 msgid "Shop Settings"
-msgstr "Ajustes de la Tienda"
+msgstr ""
 
 #: ../themeoptions/options.php:948
 msgid "Shop Archive Page Settings"
-msgstr "Ajustes Tienda - Archivo / P&aacute;gina"
+msgstr ""
 
 #: ../themeoptions/options.php:954
 msgid "Display the sidebar on shop archives?"
-msgstr " ¿Mostrar barra lateral en archivos de tienda?"
+msgstr ""
 
 #: ../themeoptions/options.php:955
 msgid "This determines if there is a sidebar on the shop and category pages."
 msgstr ""
-"Esto determina si hay una barra lateral en las páginas de la tienda y "
-"categoría"
 
 #: ../themeoptions/options.php:965
 msgid "Choose a Sidebar for your shop page"
-msgstr "Elija una de barra lateral para la página de la tienda"
+msgstr ""
 
 #: ../themeoptions/options.php:973
 msgid "How many products per page"
-msgstr "Número de Productos por página"
+msgstr ""
 
 #: ../themeoptions/options.php:983
 msgid "Show Ratings in Shop and Category Pages"
-msgstr "Mostrar calificaciones en páginas de categoría y tienda"
+msgstr ""
 
 #: ../themeoptions/options.php:984
 msgid "This determines if the rating is displayed in the product archive pages"
 msgstr ""
-"Esto determina si la clasificación se muestra en las páginas de archivo de "
-"producto"
 
 #: ../themeoptions/options.php:990
 msgid "Shop Product Title Settings"
-msgstr "Ajustes t&iacute;tulo producto tienda"
+msgstr ""
 
 #: ../themeoptions/options.php:995
 msgid "Shop & archive Product title Font"
-msgstr "Fuente t&iacute;tulo  producto"
+msgstr ""
 
 #: ../themeoptions/options.php:1009
 msgid "Choose Size and Style for product titles on category and archive pages."
 msgstr ""
-"Elija un tama&ntilde;o y estilo para los t&iacute;tulos de productos en las "
-"p&aacute;ginas decategor&iacute;a y archivo."
 
 #: ../themeoptions/options.php:1020
 msgid "Set Product Title to Uppercase?"
-msgstr "&iquest; Ajustar título producto en mayúsculas?"
+msgstr ""
 
 #: ../themeoptions/options.php:1021
 msgid "This makes your product titles uppercase on Category pages"
 msgstr ""
-"Esto hace que el nombre de los productos est&eacute;n en mayúsculas en las "
-"p&aacute;ginas Categor&iacute;a"
 
 #: ../themeoptions/options.php:1027
 msgid "Product title Min Height"
-msgstr "Altura m&iacute;nima t&iacute;tulo producto"
+msgstr ""
 
 #: ../themeoptions/options.php:1028
 msgid ""
 "If your titles are long increase this to help align your products height."
 msgstr ""
-"Ay&uacute;dese aqu&iacute; para alinear la altura del t&iacute;tulo de los "
-"productos."
 
 #: ../themeoptions/options.php:1037
 msgid "Product Image Sizes"
-msgstr "Tama&ntilde;o imagen producto"
+msgstr ""
 
 #: ../themeoptions/options.php:1042
 msgid "Enable Product Image Crop on Catalog pages"
-msgstr "Activar recortar imagen producto en p&aacute;ginas del catálogo"
+msgstr ""
 
 #: ../themeoptions/options.php:1043
 msgid ""
 "If turned off image dimensions are set by woocommerce settings - recommended "
 "width: 270px for Catalog Images"
 msgstr ""
-"Si desactiva dimensiones de imagen, se fijan los ajuste de woocommerce "
-"recomendados: 270 px para im&aacute;genes de cat&aacute;logo"
 
 #: ../themeoptions/options.php:1049
 msgid "Enable Product Image Crop on product Page"
-msgstr "Activar recortar imagen producto en p&aacute;ginas del producto"
+msgstr ""
 
 #: ../themeoptions/options.php:1050
 msgid ""
 "If turned off image dimensions are set by woocommerce settings - recommended "
 "width: 468px for Single Product Image"
 msgstr ""
-"Si desactiva dimensiones de imagen, se fijan los ajuste de woocommerce "
-"recomendados: 468 px para imagen un solo producto"
 
 #: ../themeoptions/options.php:1056
 msgid "Product Page Settings"
-msgstr "Ajustar página productos"
+msgstr ""
 
 #: ../themeoptions/options.php:1061
 msgid "Display product tabs?"
-msgstr "¿Mostrar fichas información en detalle producto?"
+msgstr ""
 
 #: ../themeoptions/options.php:1062
 msgid "This determines if product tabs are displayed"
-msgstr "Esto determina si se muestra una ficha del producto"
+msgstr ""
 
 #: ../themeoptions/options.php:1068
 msgid "Display related products?"
-msgstr "¿Mostrar Productos relacionados?"
+msgstr ""
 
 #: ../themeoptions/options.php:1069
 msgid "This determines related products are displayed"
-msgstr "Esto determina que se muestran productos relacionados"
+msgstr ""
 
 #: ../themeoptions/options.php:1077
 msgid "Basic Styling"
-msgstr "Estilo Básico"
+msgstr ""
 
 #: ../themeoptions/options.php:1078
 msgid "Basic Stylng"
-msgstr "Estilo Básico"
+msgstr ""
 
 #: ../themeoptions/options.php:1083
 msgid "Theme Skin Stylesheet"
-msgstr "Estilo CSS del tema"
+msgstr ""
 
 #: ../themeoptions/options.php:1084
 msgid ""
 "Note* changes made in options panel will override this stylesheet. Example: "
 "Colors set in typography."
 msgstr ""
-" Nota * los cambios realizados en el panel de opciones anulará esta hoja de "
-"estilo. Ejemplo: colores establecidos en la tipografía."
 
 #: ../themeoptions/options.php:1093
 msgid "Primary Color"
-msgstr "Color Primario"
+msgstr ""
 
 #: ../themeoptions/options.php:1094
 msgid "Choose the default Highlight color for your site."
-msgstr "Elija el color de \"resaltado\" predeterminado para su sitio."
+msgstr ""
 
 #: ../themeoptions/options.php:1102
 msgid "20% lighter than Primary Color"
-msgstr "20% más ligero que el color primario"
+msgstr ""
 
 #: ../themeoptions/options.php:1103
 msgid "This is used for hover effects"
-msgstr "Esto se utiliza para efectos \"sobre\" (hover)"
+msgstr ""
 
 #: ../themeoptions/options.php:1111
 msgid "Sitewide Gray Fonts"
-msgstr "El color en todo el sitio para la tipografía es el Gris."
+msgstr ""
 
 #: ../themeoptions/options.php:1120
 msgid "Footer Font Color"
-msgstr "Color fuentes pie de página"
+msgstr ""
 
 #: ../themeoptions/options.php:1131
 msgid "Advanced Styling"
-msgstr "Estilo - Avanzado"
+msgstr ""
 
 #: ../themeoptions/options.php:1132
 msgid "Main Content Background"
-msgstr "Fondo contenido principal"
+msgstr ""
 
 #: ../themeoptions/options.php:1137 ../themeoptions/options.php:1176
 #: ../themeoptions/options.php:1215 ../themeoptions/options.php:1254
 #: ../themeoptions/options.php:1293 ../themeoptions/options.php:1332
 #: ../themeoptions/options.php:1371
 msgid "Background Color"
-msgstr "Color Fondo"
+msgstr ""
 
 #: ../themeoptions/options.php:1145 ../themeoptions/options.php:1184
 #: ../themeoptions/options.php:1223 ../themeoptions/options.php:1262
 #: ../themeoptions/options.php:1301 ../themeoptions/options.php:1340
 #: ../themeoptions/options.php:1379
 msgid "Upload background image or texture"
-msgstr "Subir una imagen o textura de fondo"
+msgstr ""
 
 #: ../themeoptions/options.php:1150 ../themeoptions/options.php:1189
 #: ../themeoptions/options.php:1228 ../themeoptions/options.php:1267
 #: ../themeoptions/options.php:1306 ../themeoptions/options.php:1345
 #: ../themeoptions/options.php:1384
 msgid "Image repeat options"
-msgstr "Opciones repetición imagen"
+msgstr ""
 
 #: ../themeoptions/options.php:1157 ../themeoptions/options.php:1196
 #: ../themeoptions/options.php:1235 ../themeoptions/options.php:1274
 #: ../themeoptions/options.php:1313 ../themeoptions/options.php:1352
 #: ../themeoptions/options.php:1391
 msgid "X image placement options"
-msgstr "X opciones desplazamiento horizontal"
+msgstr ""
 
 #: ../themeoptions/options.php:1164 ../themeoptions/options.php:1203
 #: ../themeoptions/options.php:1242 ../themeoptions/options.php:1281
 #: ../themeoptions/options.php:1320 ../themeoptions/options.php:1359
 #: ../themeoptions/options.php:1398
 msgid "Y image placement options"
-msgstr "Y opciones desplazamiento vertical"
+msgstr ""
 
 #: ../themeoptions/options.php:1171
 msgid "Topbar Background"
-msgstr "Fondo barra superior"
+msgstr ""
 
 #: ../themeoptions/options.php:1210
 msgid "Header Background"
-msgstr "Fondo Cabecera"
+msgstr ""
 
 #: ../themeoptions/options.php:1249
 msgid "Secondary Menu Background"
-msgstr "Fondo Menú secundario"
+msgstr ""
 
 #: ../themeoptions/options.php:1288
 msgid "Mobile Menu Background"
-msgstr "Fondo men&uacute; m&oacute;vil"
+msgstr ""
 
 #: ../themeoptions/options.php:1327
 msgid "Footer Background"
-msgstr "Fondo pie de página"
+msgstr ""
 
 #: ../themeoptions/options.php:1366
 msgid "Body Background"
-msgstr "Fondo cuerpo - body"
+msgstr ""
 
 #: ../themeoptions/options.php:1405
 msgid "Fixed or Scroll"
-msgstr "Fijo o deslizante"
+msgstr ""
 
 #: ../themeoptions/options.php:1414
 msgid "Typography"
-msgstr "Tipografía"
+msgstr ""
 
 #: ../themeoptions/options.php:1415
 msgid "Header Font Options"
-msgstr "Opciones tipografía cabecera"
+msgstr ""
 
 #: ../themeoptions/options.php:1420
 msgid "H1 Headings"
-msgstr "Encabezado h1"
+msgstr ""
 
 #: ../themeoptions/options.php:1434
 msgid "Choose Size and Style for h1 (This Styles Your Page Titles)"
-msgstr "Elija el estilo y tamaño para h1 (Estilo para título de página)"
+msgstr ""
 
 #: ../themeoptions/options.php:1445
 msgid "H2 Headings"
-msgstr "Encabezado h2"
+msgstr ""
 
 #: ../themeoptions/options.php:1459
 msgid "Choose Size and Style for h2"
-msgstr "Elija estilo y tamaño para h2"
+msgstr ""
 
 #: ../themeoptions/options.php:1470
 msgid "H3 Headings"
-msgstr "Encabezado h3"
+msgstr ""
 
 #: ../themeoptions/options.php:1484
 msgid "Choose Size and Style for h3"
-msgstr "Elija estilo y tamaño para h3"
+msgstr ""
 
 #: ../themeoptions/options.php:1495
 msgid "H4 Headings"
-msgstr "Encabezado h4"
+msgstr ""
 
 #: ../themeoptions/options.php:1509
 msgid "Choose Size and Style for h4"
-msgstr "Elija estilo y tamaño h4"
+msgstr ""
 
 #: ../themeoptions/options.php:1520
 msgid "H5 Headings"
-msgstr "Encabezado h5"
+msgstr ""
 
 #: ../themeoptions/options.php:1534
 msgid "Choose Size and Style for h5"
-msgstr "Elija estiloy tamaño para h5"
+msgstr ""
 
 #: ../themeoptions/options.php:1545
 msgid "Body Font Options"
-msgstr "Opciones fuente del cuerpo | Body"
+msgstr ""
 
 #: ../themeoptions/options.php:1550
 msgid "Body Font"
-msgstr "Fuente del cuerpo | Body"
+msgstr ""
 
 #: ../themeoptions/options.php:1564
 msgid "Choose Size and Style for paragraphs"
-msgstr "Elija estilo y tamaño para los párrafos."
+msgstr ""
 
 #: ../themeoptions/options.php:1577
 msgid "Menu Settings"
-msgstr "Ajustes men&uacute;"
+msgstr ""
 
 #: ../themeoptions/options.php:1578
 msgid "Primary Menu Options"
-msgstr "Opciones men&iuacute; primario"
+msgstr ""
 
 #: ../themeoptions/options.php:1583
 msgid "Primary Menu Font"
-msgstr "Fuente men&uacute; primario"
+msgstr ""
 
 #: ../themeoptions/options.php:1597
 msgid "Choose Size and Style for primary menu"
-msgstr "Elija estilo y tamaño para menú primario"
+msgstr ""
 
 #: ../themeoptions/options.php:1608
 msgid "Secondary Menu Options"
-msgstr "Opciones men&uacute; secundario"
+msgstr ""
 
 #: ../themeoptions/options.php:1613
 msgid "Secondary Menu Font"
-msgstr "Fuente men&uacute; secundario"
+msgstr ""
 
 #: ../themeoptions/options.php:1627
 msgid "Choose Size and Style for secondary menu"
-msgstr "Elija estilo y tamaño para menú secundario"
+msgstr ""
 
 #: ../themeoptions/options.php:1638
 msgid "Mobile Menu Options"
-msgstr "Opciones men&uacute; m&oacute;viles"
+msgstr ""
 
 #: ../themeoptions/options.php:1643
 msgid "Mobile Menu Font"
-msgstr "Fuente men&uacute; m&oacute;viles"
+msgstr ""
 
 #: ../themeoptions/options.php:1657
 msgid "Choose Size and Style for Mobile Menu"
-msgstr "Elija un tama&ntilde;o y estilo para men&uacute; m&oacute;viles"
+msgstr ""
 
 #: ../themeoptions/options.php:1671 ../themeoptions/options.php:1672
 msgid "Misc Settings"
-msgstr "Ajustes Varios"
+msgstr ""
 
 #: ../themeoptions/options.php:1679
 msgid "All Projects Portfolio Page"
-msgstr "Página donde se mostraran todos los proyectos de portfolio."
+msgstr ""
 
 #: ../themeoptions/options.php:1680
 msgid ""
 "This sets the link in every single portfolio page. *note: You still have to "
 "set the page template to portfolio."
 msgstr ""
-"Este valor define el enlace a la página elegida como principal del portfolio "
-"para acceder desde cada página del portfolio individual. * Nota: tiene que "
-"configurar la plantilla de página como Portfolio"
 
 #: ../themeoptions/options.php:1685
 msgid "Allow Comments on Portfolio Posts"
-msgstr "Permitir comentarios en publicaciones de portafolio"
+msgstr ""
 
 #: ../themeoptions/options.php:1686
 msgid "Turn on to allow Comments on Portfolio posts"
-msgstr "Activar para permitir comentarios en publicaciones de portafolio"
+msgstr ""
 
 #: ../themeoptions/options.php:1692
 msgid "Hide Image Border"
-msgstr "Ocultar borde imagen"
+msgstr ""
 
 #: ../themeoptions/options.php:1693
 msgid "Choose to show or hide image border"
-msgstr "Elija mostrar u ocultar borde imagen"
+msgstr ""
 
 #: ../themeoptions/options.php:1699
 msgid "Blog Archive"
-msgstr "Archivo Blog"
+msgstr ""
 
 #: ../themeoptions/options.php:1700
 msgid "Choose to show full post or post excerpt."
-msgstr "Elija para mostrar completo o extracto de la publicaci&oacute;n"
+msgstr ""
 
 #: ../themeoptions/options.php:1708
 msgid "Show Comments Closed Text?"
-msgstr "¿Mostrar texto \"Comentarios cerrados\"?"
+msgstr ""
 
 #: ../themeoptions/options.php:1709
 msgid "Choose to show or hide comments closed alert below posts."
 msgstr ""
-"Mostrar  u ocultar aviso comentarios cerrados, debajo de las publicaciones."
 
 #: ../themeoptions/options.php:1715
 msgid "Show Author Icon with posts?"
-msgstr "&iquest;Mostrar icono autor en publicaciones?"
+msgstr ""
 
 #: ../themeoptions/options.php:1716
 msgid "Choose to show or hide author icon under post title."
 msgstr ""
-"Elija para mostrar u ocultar icono de autor debajo del t&iacute;tulo de la "
-"publicaci&oacute;n"
 
 #: ../themeoptions/options.php:1722
 msgid "Show Previous and Next posts links?"
 msgstr ""
 
 #: ../themeoptions/options.php:1723
-#, fuzzy
 msgid ""
 "Choose to show or hide previous and next post links in the footer of a "
 "single post."
 msgstr ""
-"Elija para mostrar u ocultar icono de autor debajo del t&iacute;tulo de la "
-"publicaci&oacute;n"
 
 #: ../themeoptions/options.php:1730
 msgid "Custom Favicon"
-msgstr "Personalizar Favicon"
+msgstr ""
 
 #: ../themeoptions/options.php:1731
 msgid ""
 "Upload a 16px x 16px png/gif/ico image that will represent your website "
 "favicon."
 msgstr ""
-"Subir una imagen png/gif/ico de 16p x 16 px, para mostrar favicon del sitio "
-"web"
 
 #: ../themeoptions/options.php:1736
 msgid "Contact Form Email"
-msgstr "Formulario correo electrónico de contacto"
+msgstr ""
 
 #: ../themeoptions/options.php:1737
 msgid "Sets the email for the contact page email form."
 msgstr ""
-"Establecer cuenta email para utilizar en formulario de la página de contacto"
 
 #: ../themeoptions/options.php:1743
 msgid "Footer Copyright Text"
-msgstr "Texto copyright pie de página"
+msgstr ""
 
 #: ../themeoptions/options.php:1744
 msgid ""
 "Write your own copyright text here. You can use the following shortcodes in "
 "your footer text: [copyright] [site-name] [the-year]"
 msgstr ""
-"Escriba aquí su propio texto como autor que aparecerá al pie de página. "
-"Puede utilizar los shortcodes: [copyright] [site-name] [the-year]"
 
 #: ../themeoptions/options.php:1750
 msgid "Blog Post Defaults"
-msgstr "Entradas de blog predeterminada"
+msgstr ""
 
 #: ../themeoptions/options.php:1755
 msgid "Blog Post Summary Default"
-msgstr "Resumen de entradas de blog por defecto"
+msgstr ""
 
 #: ../themeoptions/options.php:1763
 msgid "Create Sidebars"
-msgstr "Crear Barras Laterales"
+msgstr ""
 
 #: ../themeoptions/options.php:1768
 msgid "Create Custom Sidebars"
-msgstr "Crear barras laterales personalizadas"
+msgstr ""
 
 #: ../themeoptions/options.php:1769
 msgid "Type new sidebar name into textbox"
-msgstr "Escribar el nombre para la nueva barra lateral"
+msgstr ""
 
 #: ../themeoptions/options.php:1770
 msgid "Extra Sidebar"
-msgstr "Barra lateral extra"
+msgstr ""
 
 #: ../themeoptions/options.php:1775
 msgid "Wordpress Galleries"
-msgstr "Galer&iacute;as WordPress"
+msgstr ""
 
 #: ../themeoptions/options.php:1780
 msgid "Enable Virtue Galleries to override Wordpress"
-msgstr "Habilitar Galerías Virtue para anular las de Wordpress"
+msgstr ""
 
 #: ../themeoptions/options.php:1781
 msgid ""
 "Disable this if using a plugin to customize galleries, for example jetpack "
 "tiled gallery."
 msgstr ""
-"Desactivar esto si se utiliza un plugin para personalizar galer6iacute;as, "
-"por ejemplo jetpack Galer&iacute;a."
 
 #: ../themeoptions/options.php:1789
 msgid "Advanced Settings"
-msgstr "Ajustes Avanzados"
+msgstr ""
 
 #: ../themeoptions/options.php:1790
 msgid "Custom CSS Box"
-msgstr "Cuadro CSS personalizado"
+msgstr ""
 
 #: ../themeoptions/options.php:1795
 msgid "Custom CSS"
-msgstr "Personalizar CSS"
+msgstr ""
 
 #: ../themeoptions/options.php:1796
 msgid "Quickly add some CSS to your theme by adding it to this block."
-msgstr "Añadir algún CSS rápidamente a su tema agregándolo en este cuadro."
+msgstr ""
 
 #: ../themeoptions/options.php:1804
 msgid "Theme Update Import"
-msgstr "Actualizar Importaci&oacute;n Tema"
+msgstr ""
 
 #: ../themeoptions/options.php:1805
 msgid ""
 "If updating from version 1.5.6 or earlier use this script to update your "
 "theme options."
 msgstr ""
-"Si la actualizaci&oacute;n es desde versi&oacute;n 1.5.6 o anterior utilizar "
-"este comando para actualizar tus opciones de tema."
 
 #: ../themeoptions/options.php:1810
 msgid "Turn on and save to start script"
-msgstr "Activar y guardar para iniciar la escritura"
+msgstr ""
 
 #: ../themeoptions/options.php:1817
 msgid "If using a child theme enter child theme folder"
-msgstr "Si se utiliza un tema hijo ingrese carpeta del tema hijo"
+msgstr ""
 
 #: ../themeoptions/options.php:1841 ../themeoptions/options.php:1842
 msgid "Theme Options"
-msgstr "Opciones del tema"
+msgstr ""
 
 #: ../themeoptions/options.php:1848
 msgid ""
 "Thank you for using the Virtue Theme by <a href=\"http://kadencethemes.com/"
 "\" target=\"_blank\">Kadence Themes</a>."
 msgstr ""
-"Gracias por utilizar el tema Virtue de <a href=\"http://kadencethemes.com/\" "
-"target=\"_blank\">Kadence Themes</a>."
 
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:121
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:193
 msgid "Upload Icon"
-msgstr "Subir icono"
+msgstr ""
 
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:132
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:200
 msgid "Select an Icon"
-msgstr "Seleccionar un icono"
+msgstr ""
 
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:152
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:219
@@ -2475,7 +2381,7 @@ msgstr "Seleccionar un icono"
 #: ../themeoptions/inc/fields/slides/field_slides.php:137
 #: ../themeoptions/inc/fields/slides/field_slides.php:201
 msgid "URL"
-msgstr "URL"
+msgstr ""
 
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:154
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:223
@@ -2484,145 +2390,143 @@ msgstr "URL"
 #: ../themeoptions/inc/fields/slides/field_slides.php:135
 #: ../themeoptions/inc/fields/slides/field_slides.php:199
 msgid "Description"
-msgstr "Descripci&oacute;n"
+msgstr ""
 
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:155
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:225
 msgid "Icon Link"
-msgstr "Enlace icono"
+msgstr ""
 
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:159
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:230
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:137
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:206
 msgid "Open Link in New Tab/Window"
-msgstr "Abrir enlace en nueva pesta&ntilde;a/ventana"
+msgstr ""
 
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:171
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:239
 msgid "Delete Icon"
-msgstr "Borrar icono"
+msgstr ""
 
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:242
 msgid "Add Icon"
-msgstr "A&ntilde;adir icono"
+msgstr ""
 
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:133
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:201
 msgid "Slide Link"
-msgstr "Enlace Slider"
+msgstr ""
 
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:146
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:215
 msgid "Select an Option"
-msgstr "Selecionar una  Opci&oacute;n"
+msgstr ""
 
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:166
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:235
 #: ../themeoptions/inc/fields/slides/field_slides.php:168
 #: ../themeoptions/inc/fields/slides/field_slides.php:231
 msgid "Delete Slide"
-msgstr "Borra slide"
+msgstr ""
 
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:238
 #: ../themeoptions/inc/fields/slides/field_slides.php:234
 msgid "Add Slide"
-msgstr "Añadir Slide"
+msgstr ""
 
 #: ../woocommerce/single-product-reviews.php:21
 #, php-format
 msgid "%s review for %s"
 msgid_plural "%s reviews for %s"
-msgstr[0] "Opini&oacute;n para %s"
-msgstr[1] "%s Opiniones para %s"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../woocommerce/single-product-reviews.php:23
 msgid "Reviews"
-msgstr "Opiniones"
+msgstr ""
 
 #: ../woocommerce/single-product-reviews.php:44
 msgid "There are no reviews yet."
-msgstr "A&uacute;n no hay opiniones"
+msgstr ""
 
 #: ../woocommerce/single-product-reviews.php:57
 msgid "Add a review"
-msgstr "Añadir una opini&oacute;n"
+msgstr ""
 
 #: ../woocommerce/single-product-reviews.php:57
 msgid "Be the first to review"
-msgstr "Sea el primero en opinar"
+msgstr ""
 
 #: ../woocommerce/single-product-reviews.php:64
 msgid "Email"
-msgstr "Email"
+msgstr ""
 
 #: ../woocommerce/single-product-reviews.php:67
 msgid "Submit"
-msgstr "Enviar "
+msgstr ""
 
 #: ../woocommerce/single-product-reviews.php:73
 msgid "Your Rating"
-msgstr "Su calificaci&oacute;n"
+msgstr ""
 
 #: ../woocommerce/single-product-reviews.php:74
 msgid "Rate&hellip;"
-msgstr "Cambio&hellip;"
+msgstr ""
 
 #: ../woocommerce/single-product-reviews.php:75
 msgid "Perfect"
-msgstr "Perfecto"
+msgstr ""
 
 #: ../woocommerce/single-product-reviews.php:76
 msgid "Good"
-msgstr "Bueno"
+msgstr ""
 
 #: ../woocommerce/single-product-reviews.php:77
 msgid "Average"
-msgstr "Medio"
+msgstr ""
 
 #: ../woocommerce/single-product-reviews.php:78
 msgid "Not that bad"
-msgstr "Regular"
+msgstr ""
 
 #: ../woocommerce/single-product-reviews.php:79
 msgid "Very Poor"
-msgstr "Malo"
+msgstr ""
 
 #: ../woocommerce/single-product-reviews.php:83
 msgid "Your Review"
-msgstr "Su opinión"
+msgstr ""
 
 #: ../woocommerce/single-product-reviews.php:92
 msgid ""
 "Only logged in customers who have purchased this product may leave a review."
 msgstr ""
-"S&oacute;lo los clientes que han comprado este producto, pueden dejar una "
-"rese&ntilde;a."
 
 #: ../woocommerce/single-product.php:24 ../woocommerce/single-product.php:28
 msgid "Back to"
-msgstr "Volver a"
+msgstr ""
 
 #: ../woocommerce/single-product.php:28
 msgid "Shop"
-msgstr "Tienda"
+msgstr ""
 
 #: ../woocommerce/cart/cart-totals.php:16
 msgid "Cart Totals"
-msgstr "Total Carro"
+msgstr ""
 
 #: ../woocommerce/cart/cart-totals.php:21
 msgid "Cart Subtotal"
-msgstr "Subtotal Carro"
+msgstr ""
 
 #: ../woocommerce/cart/cart-totals.php:75
 msgid "Order Total"
-msgstr "Total Pedido"
+msgstr ""
 
 #: ../woocommerce/cart/cart-totals.php:87
 #, php-format
 msgid " (taxes estimated for %s)"
-msgstr " (impuestos para %s)"
+msgstr ""
 
 #: ../woocommerce/cart/cart-totals.php:90
 #, php-format
@@ -2630,173 +2534,169 @@ msgid ""
 "Note: Shipping and taxes are estimated%s and will be updated during checkout "
 "based on your billing and shipping information."
 msgstr ""
-" Nota: Envío e impuestos son estimados %s y se actualizará durante la "
-"comprobación de compra basada en la información de facturación y envío."
 
 #: ../woocommerce/cart/cart.php:27 ../woocommerce/order/order-details.php:20
 msgid "Product"
-msgstr "Producto"
+msgstr ""
 
 #: ../woocommerce/cart/cart.php:28
 msgid "Price"
-msgstr "Precio"
+msgstr ""
 
 #: ../woocommerce/cart/cart.php:29
 msgid "Quantity"
-msgstr "Cantidad"
+msgstr ""
 
 #: ../woocommerce/cart/cart.php:30 ../woocommerce/order/order-details.php:21
 msgid "Total"
-msgstr "Total"
+msgstr ""
 
 #: ../woocommerce/cart/cart.php:47
 msgid "Remove this item"
-msgstr "Quitar artículo"
+msgstr ""
 
 #: ../woocommerce/cart/cart.php:74
 msgid "Available on backorder"
-msgstr "Disponible bajo pedido"
+msgstr ""
 
 #: ../woocommerce/cart/cart.php:118
 msgid "Coupon"
-msgstr "Cupón"
+msgstr ""
 
 #: ../woocommerce/cart/cart.php:118
 msgid "Coupon code"
-msgstr "Código del Cupón"
+msgstr ""
 
 #: ../woocommerce/cart/cart.php:118
 msgid "Apply Coupon"
-msgstr "Utilizar Cupón"
+msgstr ""
 
 #: ../woocommerce/cart/cart.php:125
 msgid "Update Cart"
-msgstr "Actualizar carrito"
+msgstr ""
 
 #: ../woocommerce/cart/cart.php:125
 msgid "Proceed to Checkout"
-msgstr "Pasar por caja &rarr;"
+msgstr ""
 
 #: ../woocommerce/cart/cross-sells.php:38
 msgid "You may be interested in&hellip;"
-msgstr "Puede que le interese in&hellip;"
+msgstr ""
 
 #: ../woocommerce/cart/shipping-calculator.php:22
 msgid "Calculate Shipping"
-msgstr "Calcular Envío"
+msgstr ""
 
 #: ../woocommerce/cart/shipping-calculator.php:28
 msgid "Select a country&hellip;"
-msgstr "Localidad &hellip;"
+msgstr ""
 
 #: ../woocommerce/cart/shipping-calculator.php:45
 #: ../woocommerce/cart/shipping-calculator.php:51
 #: ../woocommerce/cart/shipping-calculator.php:63
 msgid "State / county"
-msgstr "Pais / Localidad"
+msgstr ""
 
 #: ../woocommerce/cart/shipping-calculator.php:52
 msgid "Select a state&hellip;"
-msgstr "Pais&hellip;"
+msgstr ""
 
 #: ../woocommerce/cart/shipping-calculator.php:72
 msgid "City"
-msgstr "Ciudad"
+msgstr ""
 
 #: ../woocommerce/cart/shipping-calculator.php:80
 msgid "Postcode / Zip"
-msgstr "Código Postal"
+msgstr ""
 
 #: ../woocommerce/cart/shipping-calculator.php:86
 msgid "Update Totals"
-msgstr "Actualizar totales"
+msgstr ""
 
 #: ../woocommerce/checkout/thankyou.php:18
 msgid ""
 "Unfortunately your order cannot be processed as the originating bank/"
 "merchant has declined your transaction."
 msgstr ""
-"Desafortunadamente su orden no puede ser procesada el  banco origen ha "
-"denegado su transacción."
 
 #: ../woocommerce/checkout/thankyou.php:22
 msgid "Please attempt your purchase again or go to your account page."
-msgstr "Por favor, intente otra vez su compra o vaya a página de su cuenta."
+msgstr ""
 
 #: ../woocommerce/checkout/thankyou.php:24
 msgid "Please attempt your purchase again."
-msgstr "Por favor, intente su compra otra vez."
+msgstr ""
 
 #: ../woocommerce/checkout/thankyou.php:28
 msgid "Pay"
-msgstr "Pago"
+msgstr ""
 
 #: ../woocommerce/checkout/thankyou.php:30
 msgid "My Account"
-msgstr "Mi Cuenta"
+msgstr ""
 
 #: ../woocommerce/checkout/thankyou.php:36
 #: ../woocommerce/checkout/thankyou.php:67
 msgid "Thank you. Your order has been received."
-msgstr "Gracias. Su pedido ha sido recibido."
+msgstr ""
 
 #: ../woocommerce/checkout/thankyou.php:40
 msgid "Order:"
-msgstr "Pedido:"
+msgstr ""
 
 #: ../woocommerce/checkout/thankyou.php:44
 msgid "Date:"
-msgstr "Fecha:"
+msgstr ""
 
 #: ../woocommerce/checkout/thankyou.php:48
 msgid "Total:"
-msgstr "Total:"
+msgstr ""
 
 #: ../woocommerce/checkout/thankyou.php:53
 msgid "Payment method:"
-msgstr "Método de Pago:"
+msgstr ""
 
 #: ../woocommerce/loop/no-products-found.php:14
 msgid "No products found which match your selection."
-msgstr "No se han encontrado productos que se ajusten a su selección."
+msgstr ""
 
 #: ../woocommerce/loop/orderby.php:21
 msgid "Default sorting"
-msgstr "Orden por defecto"
+msgstr ""
 
 #: ../woocommerce/loop/orderby.php:22
 msgid "Sort by popularity"
-msgstr "Ordenar por popularidad"
+msgstr ""
 
 #: ../woocommerce/loop/orderby.php:23
 msgid "Sort by average rating"
-msgstr "Ordenar por calificación"
+msgstr ""
 
 #: ../woocommerce/loop/orderby.php:24
 msgid "Sort by newness"
-msgstr "Ordenar por novedad"
+msgstr ""
 
 #: ../woocommerce/loop/orderby.php:25
 msgid "Sort by price: low to high"
-msgstr "Ordenar por precio: ascendente"
+msgstr ""
 
 #: ../woocommerce/loop/orderby.php:26
 msgid "Sort by price: high to low"
-msgstr "Ordenar por precio: descendente"
+msgstr ""
 
 #: ../woocommerce/loop/result-count.php:28
 msgid "Showing the single result"
-msgstr "Mostrar resultado individual"
+msgstr ""
 
 #: ../woocommerce/loop/result-count.php:30
 #, php-format
 msgid "Showing all %d results"
-msgstr "Mostrar todos los resultados de %d"
+msgstr ""
 
 #: ../woocommerce/loop/sale-flash.php:16
 #: ../woocommerce/single-product/sale-flash.php:16
 msgid "Sale!"
-msgstr "¡Oferta!"
+msgstr ""
 
 #: ../woocommerce/order/form-tracking.php:17
 msgid ""
@@ -2804,959 +2704,140 @@ msgid ""
 "return. This was given to you on your receipt and in the confirmation email "
 "you should have received."
 msgstr ""
-"Para rastrear su pedido, introduzca su ID de pedido en el cuadro de abajo y "
-"presione retorno. Estos datos aparecen en el recibo y en el email de "
-"confirmación que debe haber recibido."
 
 #: ../woocommerce/order/form-tracking.php:19
 msgid "Order ID"
-msgstr "ID Pedido"
+msgstr ""
 
 #: ../woocommerce/order/form-tracking.php:19
 msgid "Found in your order confirmation email."
-msgstr "Se encuentra en el correo electrónico de confirmación de pedido."
+msgstr ""
 
 #: ../woocommerce/order/form-tracking.php:20
 msgid "Billing Email"
-msgstr "Correo electrónico de facturación"
+msgstr ""
 
 #: ../woocommerce/order/form-tracking.php:20
 msgid "Email you used during checkout."
-msgstr "Correo electrónico que utiliza durante la comprobación."
+msgstr ""
 
 #: ../woocommerce/order/form-tracking.php:23
 msgid "Track"
-msgstr "Rastrear"
+msgstr ""
 
 #: ../woocommerce/order/order-details.php:16
 msgid "Order Details"
-msgstr "Detalles Pedido"
+msgstr ""
 
 #: ../woocommerce/order/order-details.php:66
 #, php-format
 msgid "Download file%s"
-msgstr "Descargas archivo%s"
+msgstr ""
 
 #: ../woocommerce/order/order-details.php:98
 msgid "Order Again"
-msgstr "Pedir de nuevo"
+msgstr ""
 
 #: ../woocommerce/order/order-details.php:105
 msgid "Customer details"
-msgstr "Datos de cliente"
+msgstr ""
 
 #: ../woocommerce/order/order-details.php:126
 msgid "Billing Address"
-msgstr "Dirección de Facturación"
+msgstr ""
 
 #: ../woocommerce/order/order-details.php:130
 #: ../woocommerce/order/order-details.php:145
 msgid "N/A"
-msgstr "N/A"
+msgstr ""
 
 #: ../woocommerce/order/order-details.php:141
 msgid "Shipping Address"
-msgstr "Dirección de Envío"
+msgstr ""
 
 #: ../woocommerce/shop/breadcrumb.php:63
 msgid "Products tagged &ldquo;"
-msgstr "Productos etiquetados como &ldquo;"
+msgstr ""
 
 #: ../woocommerce/shop/breadcrumb.php:91
 #: ../woocommerce/shop/breadcrumb.php:188
 msgid "Search results for &ldquo;"
-msgstr "Resultados búsqueda de &ldquo;"
+msgstr ""
 
 #: ../woocommerce/shop/breadcrumb.php:146
 msgid "Error 404"
-msgstr "Error 404"
+msgstr ""
 
 #: ../woocommerce/shop/breadcrumb.php:192
 msgid "Posts tagged &ldquo;"
-msgstr "Publicaciones con etiqueta &ldquo;"
+msgstr ""
 
 #: ../woocommerce/shop/breadcrumb.php:197
 msgid "Author:"
-msgstr "Autor:"
+msgstr ""
 
 #: ../woocommerce/shop/breadcrumb.php:202
 msgid "Page"
-msgstr "Página"
+msgstr ""
 
 #: ../woocommerce/shop/form-login.php:20
 msgid "Username or email"
-msgstr "Nombre usuario o dirección de correo"
+msgstr ""
 
 #: ../woocommerce/shop/form-login.php:31
 msgid "Login"
-msgstr "Iniciar sesión"
+msgstr ""
 
 #: ../woocommerce/shop/form-login.php:33
 msgid "Lost Password?"
-msgstr "¿Contraseña perdida?"
+msgstr ""
 
 #: ../woocommerce/single-product/rating.php:23
 #, php-format
 msgid "Rated %s out of 5"
-msgstr "Calificación %s sobre 5"
+msgstr ""
 
 #: ../woocommerce/single-product/rating.php:25
 #: ../woocommerce/single-product/review.php:27
 msgid "out of 5"
-msgstr "sobre 5"
+msgstr ""
 
 #: ../woocommerce/single-product/rating.php:28
 #, php-format
 msgid "%s customer review"
 msgid_plural "%s customer reviews"
-msgstr[0] "%s evaluac&oacute;n del cliente"
-msgstr[1] "%s evaluaciones de clientes"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../woocommerce/single-product/review.php:26
 #, php-format
 msgid "Rated %d out of 5"
-msgstr "Calificado %d sobre 5"
+msgstr ""
 
 #: ../woocommerce/single-product/review.php:34
 msgid "Your comment is awaiting approval"
-msgstr "Comentario en espera de aprobación"
+msgstr ""
 
 #: ../woocommerce/single-product/review.php:43
 msgid "verified owner"
-msgstr "Propietario verificado"
+msgstr ""
 
 #: ../woocommerce/single-product/add-to-cart/variable.php:80
 msgid "Choose an option"
-msgstr "Elegir una opción"
+msgstr ""
 
 #: ../woocommerce/single-product/add-to-cart/variable.php:128
 msgid "Clear selection"
-msgstr "Borrar seleción"
+msgstr ""
 
 #: ../woocommerce/single-product/add-to-cart/variable.php:161
 msgid "This product is currently out of stock and unavailable."
-msgstr "Producto actualmente agotado y no est&aacute; disponible"
+msgstr ""
 
 #: ../woocommerce/single-product/tabs/additional-information.php:14
 msgid "Additional Information"
-msgstr "Información Adicional"
+msgstr ""
 
 #: ../woocommerce/single-product/tabs/description.php:14
 msgid "Product Description"
-msgstr "Descripción artículo"
-
-#~ msgid "Options"
-#~ msgstr "Opciones"
-
-#~ msgid "Options panel created using %1$s"
-#~ msgstr "Panel Opciones creado usando %1$s"
-
-#~ msgid "Redux Framework"
-#~ msgstr "Redux Framework"
-
-#~ msgid ""
-#~ "You have changes that are not saved. Would you like to save them now?"
-#~ msgstr ""
-#~ "Usted tiene cambios sin guardar. ¿Le gustar&iacute;a salvarlos ahora?"
-
-#~ msgid "Are you sure? Resetting will lose all custom values."
-#~ msgstr ""
-#~ "¿Est&aacute; seguro? Restablecimiento perder&aacute; todos los valores "
-#~ "personalizados."
-
-#~ msgid "Are you sure? Resetting will lose all custom values in this section."
-#~ msgstr ""
-#~ "¿Est&aacute; seguro? Restablecimiento perder&aacute; todos los valores "
-#~ "personalizados en esta secci&oacute;n."
-
-#~ msgid ""
-#~ "Your current options will be replaced with the values of this preset. "
-#~ "Would you like to proceed?"
-#~ msgstr ""
-#~ "Las opciones actuales ser&aacute;n reemplazadas por los valores de esta "
-#~ "preselecci&oacute;n. ¿Quiere continuar?"
-
-#~ msgid ""
-#~ "Warning- This options panel will not work properly without javascript!"
-#~ msgstr ""
-#~ "Advertencia: este panel de opciones no funcionar&aacute; correctamente "
-#~ "sin JavaScript."
-
-#~ msgid "Expand"
-#~ msgstr "Expandir"
-
-#~ msgid "Save Changes"
-#~ msgstr "Guardar cambios"
-
-#~ msgid "Reset Section"
-#~ msgstr "Resetear seleción"
-
-#~ msgid "Reset All"
-#~ msgstr "Resetar todo"
-
-#~ msgid "Working..."
-#~ msgstr "Trabajando..."
-
-#~ msgid "Settings Imported!"
-#~ msgstr "Configuraci&oacute;n importada!"
-
-#~ msgid "Settings Saved!"
-#~ msgstr "Configuraci&oacute;n guardada."
-
-#~ msgid "Settings have changed, you should save them!"
-#~ msgstr "La configuraci&oacute;n ha cambiado, debe guardala"
-
-#~ msgid "error(s) were found!"
-#~ msgstr "error(es) encontrado (s)"
-
-#~ msgid "warning(s) were found!"
-#~ msgstr "se encontraro advertencia (s)"
-
-#~ msgid "Import / Export"
-#~ msgstr "Importar / Exportar"
-
-#~ msgid "Options Object"
-#~ msgstr "Opciones Objeto"
-
-#~ msgid "System Info"
-#~ msgstr "Informaci&oacute;n del sistema"
-
-#~ msgid "Import / Export Options"
-#~ msgstr "Importar / Exportar opciones"
-
-#~ msgid "Import Options"
-#~ msgstr "Importar opciones"
-
-#~ msgid "Import from file"
-#~ msgstr "Importar desde archivo"
-
-#~ msgid "Import from URL"
-#~ msgstr "Importar desde URL"
-
-#~ msgid ""
-#~ "Input your backup file below and hit Import to restore your sites options "
-#~ "from a backup."
-#~ msgstr ""
-#~ "Introduzca su archivo de copia de seguridad debajo y pulse Importar para "
-#~ "restaurar las opciones del sitio desde una copia de seguridad."
-
-#~ msgid ""
-#~ "Input the URL to another sites options set and hit Import to load the "
-#~ "options from that site."
-#~ msgstr ""
-#~ "Introduzca la URL del conjunto de opciones de otro sitio y pulse Importar "
-#~ "para cargar las opciones de dicho sitio."
-
-#~ msgid "Import"
-#~ msgstr "Importar"
-
-#~ msgid ""
-#~ "WARNING! This will overwrite all existing option values, please proceed "
-#~ "with caution!"
-#~ msgstr ""
-#~ "¡ ADVERTENCIA! Esto sobrescribir%aacute; las opciones existentes valores, "
-#~ "proceda con precauci&oacute;n."
-
-#~ msgid "Export Options"
-#~ msgstr "Exportar opciones"
-
-#~ msgid ""
-#~ "Here you can copy/download your current option settings. Keep this safe "
-#~ "as you can use it as a backup should anything go wrong, or you can use it "
-#~ "to restore your settings on this site (or any other site)."
-#~ msgstr ""
-#~ "Aqu&iacute; puede copiar / descargar sus ajustes de opciones. Mantenga "
-#~ "esto seguro, ya que se puede utilizar como una copia de seguridad si algo "
-#~ "va mal, o puede utilizarlo para restaurar la configuraci&oacute;n en este "
-#~ "sitio (o cualquier otro sitio)."
-
-#~ msgid "Copy"
-#~ msgstr "Copiar"
-
-#~ msgid "Copy Link"
-#~ msgstr "Copiar enlace"
-
-#~ msgid "Show Object in Javascript Console Object"
-#~ msgstr "Mostrar objeto en consola Javascript "
-
-#~ msgid "Enter a valid email address."
-#~ msgstr "Introduzca una direcci&oacute;n email v&aacute;lida"
-
-#~ msgid "Help improve Our Panel"
-#~ msgstr "Ayude a mejorar Nuestro Panel"
-
-#~ msgid ""
-#~ "Please helps us improve our panel by allowing us to gather anonymous "
-#~ "usage stats so we know which configurations, plugins and themes to test "
-#~ "with."
-#~ msgstr ""
-#~ "Por favor, nos ay&uacute;denos  a mejorar nuestro panel al permitirnos "
-#~ "recopilar estad&iacute;sticas de uso  de forma an&oacute;nima, as&iacute; "
-#~ "sabremos que configuraciones, plugins y temas a probar."
-
-#~ msgid "Allow tracking"
-#~ msgstr "Permitir el seguimiento"
-
-#~ msgid "Do not allow tracking"
-#~ msgstr "No permitir seguimiento"
-
-#~ msgid "Transparent"
-#~ msgstr "Transparente"
-
-#~ msgid "Background Repeat"
-#~ msgstr "Repetir fondo"
-
-#~ msgid "Background Clip"
-#~ msgstr "Clip Fondo"
-
-#~ msgid "Background Origin"
-#~ msgstr "Origen del fondo"
-
-#~ msgid "Background Size"
-#~ msgstr "Tama&ntilde;o fondo"
-
-#~ msgid "Background Attachment"
-#~ msgstr "Fijaci&oacute;n Fondo"
-
-#~ msgid "Background Position"
-#~ msgstr "Posici&oacute:n fondo"
-
-#~ msgid "No media selected"
-#~ msgstr "No hay medios seleccionados"
-
-#~ msgid "Top"
-#~ msgstr "Superior"
-
-#~ msgid "Right"
-#~ msgstr "Derecha"
-
-#~ msgid "Bottom"
-#~ msgstr "Inferior"
-
-#~ msgid "Left"
-#~ msgstr "Izquierda"
-
-#~ msgid "Border style"
-#~ msgstr "Estilo del borde"
-
-#~ msgid "To "
-#~ msgstr "A"
-
-#~ msgid "Width"
-#~ msgstr "Ancho"
-
-#~ msgid "height"
-#~ msgstr "Altura"
-
-#~ msgid "Units"
-#~ msgstr "Unidades"
-
-#~ msgid "Add/Edit Gallery"
-#~ msgstr "A&ntilde;adir/Editar galer&iacute;a"
-
-#~ msgid "Clear Gallery"
-#~ msgstr "Limpiar Galerí¡&iacute;a"
-
-#~ msgid "New"
-#~ msgstr "Nuevo"
-
-#~ msgid "New "
-#~ msgstr "Nuevo"
-
-#~ msgid "Delete"
-#~ msgstr "Borrar"
-
-#~ msgid "Add"
-#~ msgstr "A&ntilde;adir"
-
-#~ msgid "Regular"
-#~ msgstr "Regular"
-
-#~ msgid "Hover"
-#~ msgstr "Sobre (hover)"
-
-#~ msgid "Visited"
-#~ msgstr "Visitado"
-
-#~ msgid "Active"
-#~ msgstr "Activo"
-
-#~ msgid "Add More"
-#~ msgstr "A&ntilde;adir m&aacute;s"
-
-#~ msgid "Password"
-#~ msgstr "Contraseña"
-
-#~ msgid "Username"
-#~ msgstr "Nombre Usuario"
-
-#~ msgid "Select an item"
-#~ msgstr "Seleccionar un elemento"
-
-#~ msgid "No items of this type were found."
-#~ msgstr "No se encontraron elementos de este tipo."
-
-#~ msgid "Font family"
-#~ msgstr "Familia fuente"
-
-#~ msgid "Standard Fonts"
-#~ msgstr "Fuente Est&aacute;ndar"
-
-#~ msgid "Font style"
-#~ msgstr "Estilo fuente"
-
-#~ msgid "Style"
-#~ msgstr "Estilo"
-
-#~ msgid "Font subsets"
-#~ msgstr "Subconjuntos de fuentes"
-
-#~ msgid "Subsets"
-#~ msgstr "Subgrupo"
-
-#~ msgid "Font script"
-#~ msgstr "Script Fuentes"
-
-#~ msgid "Size"
-#~ msgstr "Tama&ntilde;o"
-
-#~ msgid "Height"
-#~ msgstr "Altura"
-
-#~ msgid "Word Spacing"
-#~ msgstr "Espacio entre palabras"
-
-#~ msgid "Letter Spacing"
-#~ msgstr "Espacio entre l&iacute;neas"
-
-#~ msgid "Backup Font Family"
-#~ msgstr "Copia seguridad familia fuente"
-
-#~ msgid "Font color"
-#~ msgstr "Color fuente"
-
-#~ msgid "Google Webfonts"
-#~ msgstr "Google Webfonts"
-
-#~ msgid "This field must be a valid color value."
-#~ msgstr "Este campo debe tener un valor de color v&aacute;lido."
-
-#~ msgid ""
-#~ "You must provide a comma separated list of numerical values for this "
-#~ "option."
-#~ msgstr ""
-#~ "Debe proporcionar una lista separada por comas de los valores num&eacute;"
-#~ "ricos para esta opci&oacute;n."
-
-#~ msgid "This field must be a valid date."
-#~ msgstr "Este campo debe ser una fecha v&aaute;lida."
-
-#~ msgid "You must provide a valid email for this option."
-#~ msgstr ""
-#~ "Usted debe proporcionar una direcci&oacute;n de correo electrónico válida "
-#~ "para esta opci&oacute;n"
-
-#~ msgid ""
-#~ "You must not enter any HTML in this field, all HTML tags have been "
-#~ "removed."
-#~ msgstr ""
-#~ "No debe introducir  HTML en este campo, se han eliminado todas las "
-#~ "etiquetas HTML"
-
-#~ msgid ""
-#~ "You must not enter any special characters in this field, all special "
-#~ "characters have been removed."
-#~ msgstr ""
-#~ "No debe introducir caracteres especiales en este campo, se han quitado "
-#~ "todos los caracteres especiales."
-
-#~ msgid "You must provide a numerical value for this option."
-#~ msgstr "Debe proporcionar un valor num&eacute;rico de esta opci&oacute;n."
-
-#~ msgid "You must provide a valid URL for this option."
-#~ msgstr "Debe proporcionar una dirección URL válida para esta opci&oacute;n"
-
-#~ msgid "SKU:"
-#~ msgstr "Ref.:"
-
-#~ msgid "Category:"
-#~ msgid_plural "Categories:"
-#~ msgstr[0] "Categor&iacute;a"
-#~ msgstr[1] "Categor&iacute:as"
-
-#~ msgid "Tag:"
-#~ msgid_plural "Tags:"
-#~ msgstr[0] "Etiqueta:"
-#~ msgstr[1] "Etiquetas:"
-
-#~ msgid "<span class=\"meta-nav\">&larr;</span> Previous"
-#~ msgstr "<span class=\"meta-nav\">&larr;</span> Anteriores"
-
-#~ msgid "Next <span class=\"meta-nav\">&rarr;</span>"
-#~ msgstr "Siguientes <span class=\"meta-nav\">&rarr;</span>"
-
-#~ msgid "Add Your Review"
-#~ msgstr "Añada su opinion"
-
-#~ msgid ""
-#~ "There are no reviews yet, would you like to <a data-toggle=\"collapse\" "
-#~ "data-parent=\"#review_form\" href=\"#review_form\" class=\"inline "
-#~ "show_review_form\">submit yours</a>?"
-#~ msgstr ""
-#~ "No hay comentarios aún, ¿le gustaría <a data-toggle=\"collapse\" data-"
-#~ "parent=\"#review_form\" href=\"#review_form\" class=\"inline "
-#~ "show_review_form\">enviar el suyo</a>?"
-
-#~ msgid "Cart Discount"
-#~ msgstr "Descuento "
-
-#~ msgid "[Remove]"
-#~ msgstr "[Eliminar]"
-
-#~ msgid "Shipping"
-#~ msgstr "Envío"
-
-#~ msgid "Order Discount"
-#~ msgstr "Descuento Pedido"
-
-#~ msgid "(Includes %s)"
-#~ msgstr "(Incluye %s)"
-
-#~ msgid ""
-#~ "No shipping methods were found; please recalculate your shipping and "
-#~ "enter your state/county and zip/postcode to ensure there are no other "
-#~ "available methods for your location."
-#~ msgstr ""
-#~ "No se encontraron métodos de envío; por favor para recalcular su envío  "
-#~ "introduzca su pais/localidad y código postal para asegurar que no existen "
-#~ "otros métodos envío para su ubicación."
-
-#~ msgid ""
-#~ "Sorry, it seems that there are no available shipping methods for your "
-#~ "location (%s)."
-#~ msgstr ""
-#~ "Lo sentimos, parece que hay no hay métodos de envío disponibles para su "
-#~ "ubicación (%s)."
-
-#~ msgid ""
-#~ "If you require assistance or wish to make alternate arrangements please "
-#~ "contact us."
-#~ msgstr ""
-#~ "Si necesita ayuda o desea otro tipo envío,  póngase en contacto con "
-#~ "nosotros."
-
-#~ msgid "You must be logged in to checkout."
-#~ msgstr "Debe estar conectado a Caja"
-
-#~ msgid "Your order"
-#~ msgstr "Su Pedido"
-
-#~ msgid "Have a coupon?"
-#~ msgstr "¿Tiene un cupón?"
-
-#~ msgid "Click here to enter your code"
-#~ msgstr "Pulse aquí para introducir su código"
-
-#~ msgid "Read More"
-#~ msgstr "Leer más"
-
-#~ msgid "View options"
-#~ msgstr "Ver Opciones"
-
-#~ msgid "Add to cart"
-#~ msgstr "Añadir a carrito"
-
-#~ msgid "New password"
-#~ msgstr "Nueva contraseña"
-
-#~ msgid "Re-enter new password"
-#~ msgstr "Confirmar nueva contraseña"
-
-#~ msgid "Save Address"
-#~ msgstr "Guardar dirección"
-
-#~ msgid "Register"
-#~ msgstr "Registro"
-
-#~ msgid "Re-enter password"
-#~ msgstr "Confirmar contraseña"
-
-#~ msgid ""
-#~ "Lost your password? Please enter your username or email address. You will "
-#~ "receive a link to create a new password via email."
-#~ msgstr ""
-#~ "¿Perdió su contraseña? Introduzca su nombre de usuario o dirección de "
-#~ "email. Recibirá por correo electrónico un enlace para crear una nueva "
-#~ "contraseña."
-
-#~ msgid "Enter a new password below."
-#~ msgstr "Introduzca abajo una nueva contraseña. "
-
-#~ msgid "Reset Password"
-#~ msgstr "Restablecer contraseña"
-
-#~ msgid ""
-#~ "Hello, <strong>%s</strong>. From your account dashboard you can view your "
-#~ "recent orders, manage your shipping and billing addresses and <a href=\"%s"
-#~ "\">change your password</a>."
-#~ msgstr ""
-#~ "Hola, <strong>%s</strong>. Desde el panel de control de su cuenta, puede "
-#~ "ver sus pedidos recientes, gestionar su envío,  las direcciones de "
-#~ "facturación y <a href=\"%s\">cambiar su contraseña</a>."
-
-#~ msgid "My Addresses"
-#~ msgstr "Mis Direcciones"
-
-#~ msgid "My Address"
-#~ msgstr "Mi Dirección"
-
-#~ msgid ""
-#~ "The following addresses will be used on the checkout page by default."
-#~ msgstr ""
-#~ "Por defecto, se utilizarán las siguientes direcciones en la página de "
-#~ "pago."
-
-#~ msgid "Edit"
-#~ msgstr "Editar"
-
-#~ msgid "You have not set up this type of address yet."
-#~ msgstr "Aún no ha configurado esta dirección"
-
-#~ msgid "Available downloads"
-#~ msgstr "Descargas disponibles"
-
-#~ msgid "Recent Orders"
-#~ msgstr "Pedidos recientes"
-
-#~ msgid "Order"
-#~ msgstr "Pedido"
-
-#~ msgid "Cancel"
-#~ msgstr "Cancelar"
-
-#~ msgid "View"
-#~ msgstr "Ver"
-
-#~ msgid "Order %s which was made %s has the status &ldquo;%s&rdquo;"
-#~ msgstr "Pedido %s realizado el %s  su estado es &ldquo;%s&rdquo;"
-
-#~ msgid "ago"
-#~ msgstr "hace"
-
-#~ msgid "and was completed"
-#~ msgstr "y se completó"
-
-#~ msgid " ago"
-#~ msgstr "hace"
-
-#~ msgid "Order Updates"
-#~ msgstr "Actualizaciones Pedido"
-
-#~ msgid "Weight"
-#~ msgstr "Peso"
-
-#~ msgid "Dimensions"
-#~ msgstr "Dimensiones"
-
-#~ msgid "Related Products"
-#~ msgstr "Articulos relacionados"
-
-#~ msgid "You may also like&hellip;"
-#~ msgstr "Quizás también le guste&hellip;"
-
-#~ msgid "Last Backup : "
-#~ msgstr "Última copia de seguridad: &nbsp;"
-
-#~ msgid "Options Updated"
-#~ msgstr "Opciones de actualización"
-
-#~ msgid "Error!"
-#~ msgstr "¡Error!"
-
-#~ msgid "Previously Uploaded"
-#~ msgstr "Subida anteriormente"
-
-#~ msgid "Select a page:"
-#~ msgstr "Seleccione una p&aacute;gina:"
-
-#~ msgid "This font will apply to your sitename if you don't upload a logo."
-#~ msgstr ""
-#~ "Tipo de letra que se usar&aacute; si no sube ninguna imagen de logotipo"
-
-#~ msgid "Sitename Style"
-#~ msgstr "Estilo para nombre del sitio"
-
-#~ msgid "This font will apply to your site tagline"
-#~ msgstr "Este tipo de letra se aplicar&aacute; en el lema"
-
-#~ msgid "Site Tagline Style"
-#~ msgstr "Estilo para lema del sitio"
-
-#~ msgid "Mobile Slider Images"
-#~ msgstr "Imágenes para slider para móvil"
-
-#~ msgid "Slider Height"
-#~ msgstr "Altura de slider"
-
-#~ msgid "Mobile Video Embed Code"
-#~ msgstr "Incrustrar código de video para móviles"
-
-#~ msgid "Homepage Layout Manager"
-#~ msgstr "Gestor Diseño Página Inicio"
-
-#~ msgid "Organize how you want the layout to appear on the homepage"
-#~ msgstr "Organizar el diseño a mostrar en página de inicio"
-
-#~ msgid "Home Porfolio Settings"
-#~ msgstr "Ajustes de Portfolio en Página Inicio"
-
-#~ msgid "Featured Content Background"
-#~ msgstr "Fondo contenido destacado"
-
-#~ msgid "Feature Background"
-#~ msgstr "Características fondo"
-
-#~ msgid "This font will apply to all header tags"
-#~ msgstr "Esta fuente se aplicará a todas las etiquetas de cabecera"
-
-#~ msgid "This font will apply to all body text"
-#~ msgstr "Fuente que se aplicará a todo el texto de body"
-
-#~ msgid "This font will apply to all page menus"
-#~ msgstr "Fuente que se aplicará a todos los menús de página"
-
-#~ msgid "Backup Options"
-#~ msgstr "Opciones Backup"
-
-#~ msgid "Backup and Restore Options"
-#~ msgstr "Opciones Copia Seguridad y Restauración"
-
-#~ msgid ""
-#~ "You can use the two buttons below to backup your current options, and "
-#~ "then restore it back at a later time. This is useful if you want to "
-#~ "experiment on the options but would like to keep the old settings in case "
-#~ "you need it back."
-#~ msgstr ""
-#~ "Puede realizar una copia de seguridad y luego restaurarla en un momento "
-#~ "posterior utilizando los botones de abajo. Esto es útil si quiere "
-#~ "experimentar con las opciones pero desea mantener la configuración "
-#~ "antigua en caso de que necesite volver."
-
-#~ msgid "menu"
-#~ msgstr "menú"
-
-#~ msgid "Your cart is currently empty."
-#~ msgstr "Su carrito está vacío."
-
-#~ msgid "&larr; Return To Shop"
-#~ msgstr "&larr; Volver a laTienda"
-
-#~ msgid "No products in the cart."
-#~ msgstr "No hay articulos en el carrito."
-
-#~ msgid "Subtotal"
-#~ msgstr "Subtotal"
-
-#~ msgid "View Cart &rarr;"
-#~ msgstr "Ver Carrito &rarr;"
-
-#~ msgid "Checkout &rarr;"
-#~ msgstr "Caja &rarr;"
-
-#~ msgid "Free"
-#~ msgstr "Gratis"
-
-#~ msgid "Please fill in your details to see available shipping methods."
-#~ msgstr ""
-#~ "Por favor, rellene sus datos para ver los métodos de envío disponibles."
-
-#~ msgid ""
-#~ "There are some issues with the items in your cart (shown above). Please "
-#~ "go back to the cart page and resolve these issues before checking out."
-#~ msgstr ""
-#~ "Hay algunos problemas con los artículos en su carrito (mostrado arriba). "
-#~ "Por favor, vuelva a la página del carrito y resuelva estos problemas "
-#~ "antes de salir."
-
-#~ msgid "&larr; Return To Cart"
-#~ msgstr "&larr; Volver a Carro"
-
-#~ msgid "Billing &amp; Shipping"
-#~ msgstr "Factura &amp; Envío"
-
-#~ msgid "Create an account?"
-#~ msgstr "¿Crear una cuenta?"
-
-#~ msgid ""
-#~ "Create an account by entering the information below. If you are a "
-#~ "returning customer please login at the top of the page."
-#~ msgstr ""
-#~ "Cree una cuenta introduciendo la siguiente información. Si usted ya es "
-#~ "cliente, por favor ingrese en la parte superior de la página."
-
-#~ msgid "Returning customer?"
-#~ msgstr "¿Cliente Registrado?"
-
-#~ msgid "Click here to login"
-#~ msgstr "Iniciar Sesión"
-
-#~ msgid ""
-#~ "If you have shopped with us before, please enter your details in the "
-#~ "boxes below. If you are a new customer please proceed to the Billing "
-#~ "&amp; Shipping section."
-#~ msgstr ""
-#~ "Si usted ha comprado con nosotros, por favor, introduzca sus datos  "
-#~ "abajo. Si usted es un cliente nuevo por favor proceda a la facturación "
-
-#~ msgid "Qty"
-#~ msgstr "Cantidad"
-
-#~ msgid "Totals"
-#~ msgstr "Totales"
-
-#~ msgid ""
-#~ "Sorry, it seems that there are no available payment methods for your "
-#~ "location. Please contact us if you require assistance or wish to make "
-#~ "alternate arrangements."
-#~ msgstr ""
-#~ "Lo sentimos, parece que no hay ningún método de pago disponibles para su "
-#~ "ubicación. Póngase en contacto con nosotros si necesita ayuda o desea un "
-#~ "método de pago alternativo."
-
-#~ msgid "Pay for order"
-#~ msgstr "Pagar por pedido"
-
-#~ msgid "Ship to billing address?"
-#~ msgstr "¿Enviar a la dirección de facturación?"
-
-#~ msgid "Please fill in your details above to see available payment methods."
-#~ msgstr ""
-#~ "Por favor, rellene sus datos de arriba para ver métodos de pago "
-#~ "disponibles."
-
-#~ msgid ""
-#~ "Sorry, it seems that there are no available payment methods for your "
-#~ "state. Please contact us if you require assistance or wish to make "
-#~ "alternate arrangements."
-#~ msgstr ""
-#~ "    Lo sentimos, parece que no hay ningún método de pago disponibles para "
-#~ "su ubicación. Póngase en contacto con nosotros si necesita ayuda o desea "
-#~ "hacer un pago alternativo."
-
-#~ msgid ""
-#~ "Since your browser does not support JavaScript, or it is disabled, please "
-#~ "ensure you click the <em>Update Totals</em> button before placing your "
-#~ "order. You may be charged more than the amount stated above if you fail "
-#~ "to do so."
-#~ msgstr ""
-#~ "Su navegador no soporta JavaScript o está desactivado, por favor "
-#~ "asegúrese de pulsar el botón de Actualización Totales antes de realizar "
-#~ "su pedido. Se puede cobrar más que el monto indicado arriba, si no lo "
-#~ "hace así."
-
-#~ msgid "Update totals"
-#~ msgstr "Actualizar totales"
-
-#~ msgid "Place order"
-#~ msgstr "Lugar pedido"
-
-#~ msgid "I have read and accept the"
-#~ msgstr "He leído y acepto la"
-
-#~ msgid "terms &amp; conditions"
-#~ msgstr "Términos &amp; Condiciones"
-
-#~ msgid "You have received an order from %s. Their order is as follows:"
-#~ msgstr " Usted ha recibido una orden de %s. Su pedido es como sigue:"
-
-#~ msgid "Order: %s"
-#~ msgstr "Pedido: %s"
-
-#~ msgid "Tel:"
-#~ msgstr "Tel:"
-
-#~ msgid ""
-#~ "Hi there. Your recent order on %s has been completed. Your order details "
-#~ "are shown below for your reference:"
-#~ msgstr ""
-#~ "Hola. Su pedido de %s se ha completado. A continuación se muestran los "
-#~ "detalles de la orden para su referencia:"
-
-#~ msgid ""
-#~ "An order has been created for you on %s. To pay for this order please use "
-#~ "the following link: %s"
-#~ msgstr ""
-#~ "Ha realizado un pedido en %s. Para pagar por esta orden, por favor "
-#~ "utilice el siguiente enlace: %s"
-
-#~ msgid "pay"
-#~ msgstr "pago"
-
-#~ msgid ""
-#~ "Thanks for creating an account on %s. Your username is <strong>%s</"
-#~ "strong>."
-#~ msgstr "Gracias por crear una cuenta en %s. Su nombre de usuario es %s."
-
-#~ msgid "You can access your account area here: %s."
-#~ msgstr "Acceda a su cuenta aquí: %s."
-
-#~ msgid "Hello, a note has just been added to your order:"
-#~ msgstr "Hola, se ha añadido una nota a su pedido:"
-
-#~ msgid "For your reference, your order details are shown below."
-#~ msgstr " Para su control, abajo se muestran los detalles del pedido."
-
-#~ msgid ""
-#~ "Your order has been received and is now being processed. Your order "
-#~ "details are shown below for your reference:"
-#~ msgstr ""
-#~ "Su solicitud ha sido recibida y ahora está siendo procesada. A "
-#~ "continuación se muestran los detalles del pedido  para su referencia:"
-
-#~ msgid ""
-#~ "Someone requested that the password be reset for the following account:"
-#~ msgstr ""
-#~ "Alguien pidió que restablecer la contraseña para la cuenta siguiente:"
-
-#~ msgid "Username: %s"
-#~ msgstr "Usuario: %s"
-
-#~ msgid ""
-#~ "If this was a mistake, just ignore this email and nothing will happen."
-#~ msgstr "Si se trataba de un error, simplemente ignorar este mensaje."
-
-#~ msgid "To reset your password, visit the following address:"
-#~ msgstr "Para restablecer lacontraseña, visite la siguente dirección:"
-
-#~ msgid "Click here to reset your password"
-#~ msgstr "Pulse aquí para restablece su contraseña"
-
-#~ msgid "Billing address"
-#~ msgstr "Dirección de facturación"
-
-#~ msgid "Shipping address"
-#~ msgstr "Dirección de Envío:"
-
-#~ msgid "Download %d:"
-#~ msgstr "Descargar %d:"
-
-#~ msgid "Order number: %s"
-#~ msgstr "Pedido Nº: %s"
-
-#~ msgid "Order date: %s"
-#~ msgstr "Fecha Pedido: %s"
-
-#~ msgid "jS F Y"
-#~ msgstr "jS F Y"
-
-#~ msgid "Your details"
-#~ msgstr "Sus datos"
-
-#~ msgid "Quantity: %s"
-#~ msgstr "Cantidad: %s"
-
-#~ msgid "Cost: %s"
-#~ msgstr "Coste: %s"
-
-#~ msgid "This sets your background for your sites topbar."
-#~ msgstr "Esto establece el fondo para la barra superior."
+msgstr ""

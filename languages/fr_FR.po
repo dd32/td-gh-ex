@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Lite Virtue\n"
-"POT-Creation-Date: 2014-03-18 14:52-0700\n"
-"PO-Revision-Date: 2014-03-18 14:52-0700\n"
+"POT-Creation-Date: 2014-04-21 22:55-0700\n"
+"PO-Revision-Date: 2014-04-21 23:34-0700\n"
 "Last-Translator: Matthieu Durocher <matthieu@technocyclope.com>\n"
 "Language-Team: Matthieu Durocher <matthieu@technocyclope.com>\n"
 "Language: fr_FR\n"
@@ -31,21 +31,11 @@ msgstr "une adresse web mal écrite ou incorrecte"
 msgid "an out-of-date link"
 msgstr "un lien périmé"
 
-#: ../archive.php:15 ../index.php:13 ../taxonomy-portfolio-type.php:12
+#: ../archive.php:16 ../index.php:13 ../taxonomy-portfolio-type.php:13
 msgid "Sorry, no results were found."
 msgstr "Désolé, aucun résultat n'a été trouvé."
 
-#: ../archive.php:36 ../front-page.php:85 ../index.php:28 ../page-blog.php:61
-#: ../page-portfolio.php:111 ../taxonomy-portfolio-type.php:100
-msgid "&larr; Older posts"
-msgstr "&larr; Billets plus anciens"
-
-#: ../archive.php:37 ../front-page.php:86 ../index.php:29 ../page-blog.php:62
-#: ../page-portfolio.php:112 ../taxonomy-portfolio-type.php:101
-msgid "Newer posts &rarr;"
-msgstr "Billets plus récents &rarr;"
-
-#: ../page-blog.php:52 ../templates/recentblog-carousel.php:48
+#: ../page-blog.php:53 ../templates/recentblog-carousel.php:48
 #: ../templates/similarblog-carousel.php:52 ../templates/home/blog-home.php:84
 #: ../templates/home/latest-slider.php:32
 msgid "Sorry, no blog entries found."
@@ -109,7 +99,7 @@ msgstr "Message :"
 msgid "Send Email"
 msgstr "Envoyez"
 
-#: ../page-portfolio.php:101 ../templates/recentportfolio-carousel.php:42
+#: ../page-portfolio.php:102 ../templates/recentportfolio-carousel.php:42
 #: ../templates/home/portfolio-carousel.php:60
 msgid "Sorry, no portfolio entries found."
 msgstr "Désolé, aucun portfolio n'a été trouvé."
@@ -121,6 +111,14 @@ msgstr "Rechercher :"
 #: ../searchform.php:3
 msgid "Search"
 msgstr "Recherche"
+
+#: ../taxonomy-portfolio-type.php:101
+msgid "&larr; Older posts"
+msgstr "&larr; Billets plus anciens"
+
+#: ../taxonomy-portfolio-type.php:102
+msgid "Newer posts &rarr;"
+msgstr "Billets plus récents &rarr;"
 
 #: ../lib/authorbox.php:5
 msgid "About Author"
@@ -394,7 +392,7 @@ msgstr "Installation de l'extension %1$s (%2$d/%3$d)"
 msgid "Return to the Dashboard"
 msgstr "Retourner au tableau de bord"
 
-#: ../lib/cleanup.php:168
+#: ../lib/cleanup.php:164
 msgid "Continued"
 msgstr "Lire la suite­­"
 
@@ -419,51 +417,51 @@ msgstr "Afficher votre panier d'achats"
 msgid "Your Cart"
 msgstr "Votre panier d'achats"
 
-#: ../lib/custom.php:376
+#: ../lib/custom.php:356 ../templates/entry-post-links.php:3
 msgid "Previous Post"
 msgstr "Billet précédant"
 
-#: ../lib/custom.php:376
+#: ../lib/custom.php:356 ../templates/entry-post-links.php:6
 msgid "Next Post"
 msgstr "Billet suivant"
 
-#: ../lib/custom.php:468
+#: ../lib/custom.php:448
 msgid "Occupation"
 msgstr "Profession"
 
-#: ../lib/custom.php:471
+#: ../lib/custom.php:451
 msgid "Please enter your Occupation."
 msgstr "Entrez votre occupation"
 
-#: ../lib/custom.php:478
+#: ../lib/custom.php:458
 msgid "Please enter your Twitter username."
 msgstr "Entrez votre identifiant Twitter (incluant http://)"
 
-#: ../lib/custom.php:485
+#: ../lib/custom.php:465
 msgid "Please enter your Facebook url. (be sure to include http://)"
 msgstr "Entrez votre url Facebook (incluant http://)"
 
-#: ../lib/custom.php:492
+#: ../lib/custom.php:472
 msgid "Please enter your Google Plus url. (be sure to include http://)"
 msgstr "Entrez votre url Google+ (incluant http://)"
 
-#: ../lib/custom.php:499
+#: ../lib/custom.php:479
 msgid "Please enter your Flickr url. (be sure to include http://)"
 msgstr "Entrez votre url Flickr (incluant http://)"
 
-#: ../lib/custom.php:506
+#: ../lib/custom.php:486
 msgid "Please enter your Linkedin url. (be sure to include http://)"
 msgstr "Entrez votre url LinkedIn (incluant http://)"
 
-#: ../lib/custom.php:513
+#: ../lib/custom.php:493
 msgid "Please enter your Dribbble url. (be sure to include http://)"
 msgstr "Entrez votre url Dribble (incluant http://)"
 
-#: ../lib/custom.php:520
+#: ../lib/custom.php:500
 msgid "Please enter your Pinterest url. (be sure to include http://)"
 msgstr "Entrez votre url Pinterest (incluant http://)"
 
-#: ../lib/custom.php:527
+#: ../lib/custom.php:507
 msgid "Please enter your Instagram url. (be sure to include http://)"
 msgstr "Entrez votre url Instagram (incluant http://)"
 
@@ -559,7 +557,7 @@ msgid "Video"
 msgstr "Vidéo"
 
 #: ../lib/metaboxes.php:101 ../lib/metaboxes.php:220 ../lib/metaboxes.php:439
-#: ../lib/widgets.php:786
+#: ../lib/widgets.php:794
 msgid "Image"
 msgstr "Image"
 
@@ -590,11 +588,12 @@ msgstr ""
 msgid "Post Summary"
 msgstr "Sommaire du billet"
 
-#: ../lib/metaboxes.php:122 ../themeoptions/framework.php:1584
+#: ../lib/metaboxes.php:122 ../lib/cmb/init.php:244
+#: ../themeoptions/framework.php:1584
 msgid "Default"
 msgstr "Défaut"
 
-#: ../lib/metaboxes.php:123 ../lib/widgets.php:792
+#: ../lib/metaboxes.php:123 ../lib/widgets.php:800
 msgid "Text"
 msgstr "Texte"
 
@@ -1045,13 +1044,13 @@ msgstr "La valeur par défaut est 300"
 msgid "Sidebar Options"
 msgstr "Options de la barre latérale"
 
-#: ../lib/scripts.php:43
+#: ../lib/scripts.php:33
 msgid ""
 "Sorry, no products matched your selection. Please choose a different "
 "combination."
 msgstr ""
 
-#: ../lib/scripts.php:44
+#: ../lib/scripts.php:34
 msgid ""
 "Sorry, this product is unavailable. Please choose a different combination."
 msgstr ""
@@ -1130,8 +1129,8 @@ msgstr "Virtue : Contact / vCard"
 msgid "vCard"
 msgstr "vCard"
 
-#: ../lib/widgets.php:277 ../lib/widgets.php:436 ../lib/widgets.php:589
-#: ../lib/widgets.php:727
+#: ../lib/widgets.php:277 ../lib/widgets.php:440 ../lib/widgets.php:597
+#: ../lib/widgets.php:735
 msgid "Title:"
 msgstr "Titre :"
 
@@ -1171,124 +1170,128 @@ msgstr "Un moyen simple d'ajouter des icônes de réseaux sociaux"
 msgid "Virtue: Social Links"
 msgstr "Virtue : liens vers les réseaux sociaux"
 
-#: ../lib/widgets.php:440
+#: ../lib/widgets.php:444
 msgid "Facebook:"
 msgstr "Facebook :"
 
-#: ../lib/widgets.php:444
+#: ../lib/widgets.php:448
 msgid "Twitter:"
 msgstr "Twitter :"
 
-#: ../lib/widgets.php:448
+#: ../lib/widgets.php:452
 msgid "Instagram:"
 msgstr "Instagram :"
 
-#: ../lib/widgets.php:452
+#: ../lib/widgets.php:456
 msgid "GooglePlus:"
 msgstr "Google+ :"
 
-#: ../lib/widgets.php:456
+#: ../lib/widgets.php:460
 msgid "Flickr:"
 msgstr "Flickr :"
 
-#: ../lib/widgets.php:460
+#: ../lib/widgets.php:464
 msgid "Vimeo:"
 msgstr "Vimeo :"
 
-#: ../lib/widgets.php:464
+#: ../lib/widgets.php:468
 msgid "Youtube:"
 msgstr "Youtube :"
 
-#: ../lib/widgets.php:468
+#: ../lib/widgets.php:472
 msgid "Pinterest:"
 msgstr "Pinterest :"
 
-#: ../lib/widgets.php:472
+#: ../lib/widgets.php:476
 msgid "Dribbble:"
 msgstr "Dribbble :"
 
-#: ../lib/widgets.php:476
+#: ../lib/widgets.php:480
 msgid "Linkedin:"
 msgstr "Linkedin :"
 
-#: ../lib/widgets.php:480
+#: ../lib/widgets.php:484
 msgid "Tumblr:"
 msgstr "Tumblr :"
 
-#: ../lib/widgets.php:484
+#: ../lib/widgets.php:488
+msgid "VK:"
+msgstr ""
+
+#: ../lib/widgets.php:492
 msgid "RSS:"
 msgstr "RSS :"
 
-#: ../lib/widgets.php:498
+#: ../lib/widgets.php:506
 msgid "This shows the most recent posts on your site with a thumbnail"
 msgstr ""
 "Cela affiche à l'aide de miniatures les billets les plus récents de votre "
 "site"
 
-#: ../lib/widgets.php:499
+#: ../lib/widgets.php:507
 msgid "Virtue: Recent Posts"
 msgstr "Virtue: Billets récents"
 
-#: ../lib/widgets.php:524
+#: ../lib/widgets.php:532
 msgid "Recent Posts"
 msgstr "Billets récents"
 
-#: ../lib/widgets.php:592
+#: ../lib/widgets.php:600
 msgid "Number of posts to show:"
 msgstr "Nombre de billets à afficher :"
 
-#: ../lib/widgets.php:595
+#: ../lib/widgets.php:603
 msgid "Limit to Catagory (Optional):"
 msgstr "Limiter à la catégorie (optionnel)"
 
-#: ../lib/widgets.php:606
+#: ../lib/widgets.php:614
 msgid ""
 "This shows a grid of featured images from recent posts or portfolio items"
 msgstr ""
 "Cela affiche une grille d'images en vedette provenant de nouveaux billets ou "
 "d'items du portefolio"
 
-#: ../lib/widgets.php:607
+#: ../lib/widgets.php:615
 msgid "Virtue: Image Grid"
 msgstr "Virtue : Grille d'images"
 
-#: ../lib/widgets.php:632
+#: ../lib/widgets.php:640
 msgid "Post Gallery"
 msgstr "Galerie du billet"
 
-#: ../lib/widgets.php:730
+#: ../lib/widgets.php:738
 msgid "Grid Choice:"
 msgstr "Choix de grille :"
 
-#: ../lib/widgets.php:732
+#: ../lib/widgets.php:740
 msgid "Blog Posts"
 msgstr "Billets du blogue"
 
-#: ../lib/widgets.php:733
+#: ../lib/widgets.php:741
 msgid "Portfolio"
 msgstr "Portefolio"
 
-#: ../lib/widgets.php:736
+#: ../lib/widgets.php:744
 msgid "If Post - Choose Category (Optional):"
 msgstr "Si c'est un billet, choisir la catégorie (optionnel) :"
 
-#: ../lib/widgets.php:739
+#: ../lib/widgets.php:747
 msgid "If Portfolio - Choose Type (Optional):"
 msgstr "Si c'est un portefolio, choisir le type (optionnel) :"
 
-#: ../lib/widgets.php:742
+#: ../lib/widgets.php:750
 msgid "Number of images to show:"
 msgstr "Nombre d'images à afficher :"
 
-#: ../lib/widgets.php:760
+#: ../lib/widgets.php:768
 msgid "This allows for an image and a simple about text."
 msgstr "Cela permet une image et un simple texte à propos"
 
-#: ../lib/widgets.php:761
+#: ../lib/widgets.php:769
 msgid "Virtue: About with Image"
 msgstr "Virtue : À propos avec image"
 
-#: ../lib/widgets.php:789
+#: ../lib/widgets.php:797
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:119
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:188
 #: ../themeoptions/inc/fields/background/field_background.php:307
@@ -1298,18 +1301,80 @@ msgstr "Virtue : À propos avec image"
 msgid "Upload"
 msgstr "Téléverser"
 
-#: ../lib/cmb/init.php:633
+#: ../lib/cmb/init.php:243
+msgid "Clear"
+msgstr ""
+
+#: ../lib/cmb/init.php:245
+#, fuzzy
+msgid "Select Color"
+msgstr "Choisir une icône"
+
+#: ../lib/cmb/init.php:246
+#, fuzzy
+msgid "Current Color"
+msgstr "Couleur principale"
+
+#: ../lib/cmb/init.php:1185
+msgid "Save"
+msgstr ""
+
+#: ../lib/cmb/helpers/cmb_Meta_Box_ajax.php:47
 msgid "Please Try Again"
 msgstr "Veuillez réessayer"
 
-#: ../lib/cmb/init.php:650
+#: ../lib/cmb/helpers/cmb_Meta_Box_ajax.php:131
 msgid "Remove Embed"
 msgstr "Retirer l'inclusion"
 
-#: ../lib/cmb/init.php:656
+#: ../lib/cmb/helpers/cmb_Meta_Box_ajax.php:134
 #, php-format
 msgid "No oEmbed Results Found for %s. View more info at"
 msgstr "Pas de résultat oEmbed trouvé pour %s. Plus d'information à"
+
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:150
+#, fuzzy
+msgid "Add Row"
+msgstr "Ajouter une icône"
+
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:178
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:547
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:590
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:127
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:195
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:125
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:190
+#: ../themeoptions/inc/fields/background/field_background.php:313
+#: ../themeoptions/inc/fields/media/field_media.php:156
+#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:75
+#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:79
+#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:82
+#: ../themeoptions/inc/fields/slides/field_slides.php:128
+#: ../themeoptions/inc/fields/slides/field_slides.php:192
+msgid "Remove"
+msgstr "Enlever"
+
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:523
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:563
+msgid "Add or Upload File"
+msgstr ""
+
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:536
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:582
+#, fuzzy
+msgid "Remove Image"
+msgstr "Retirer l image"
+
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:547
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:590
+msgid "File:"
+msgstr ""
+
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:547
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:590
+#: ../themeoptions/framework.php:2406
+msgid "Download"
+msgstr "Télécharger"
 
 #: ../templates/comment.php:7
 msgid "(Edit)"
@@ -1423,179 +1488,6 @@ msgstr "Pour en savoir plus"
 #: ../templates/home/portfolio-carousel.php:2
 msgid "Featured Projects"
 msgstr "Projets en vedette"
-
-#: ../themeoptions/framework.php:126 ../themeoptions/framework.php:132
-#: ../themeoptions/framework.php:305 ../themeoptions/framework.php:308
-msgid "Options"
-msgstr "Options"
-
-#: ../themeoptions/framework.php:302
-#, php-format
-msgid "Options panel created using %1$s"
-msgstr "Panneau d'options créé avec %1$s"
-
-#: ../themeoptions/framework.php:302
-msgid "Redux Framework"
-msgstr "Infrastructure d'application Redux"
-
-#: ../themeoptions/framework.php:1293
-msgid "You have changes that are not saved. Would you like to save them now?"
-msgstr ""
-"Vous avez des modifications qui ne sont pas enregistrés. Souhaitez-vous les "
-"enregistrer maintenant ?"
-
-#: ../themeoptions/framework.php:1294
-msgid "Are you sure? Resetting will lose all custom values."
-msgstr ""
-"Etes-vous sûr ? La réinitialisation fera perdre toutes les valeurs "
-"personnalisées."
-
-#: ../themeoptions/framework.php:1295
-msgid "Are you sure? Resetting will lose all custom values in this section."
-msgstr ""
-"Etes-vous sûr ? La réinitialisation fera perdre toutes les valeurs "
-"personnalisées dans cette section."
-
-#: ../themeoptions/framework.php:1296
-msgid ""
-"Your current options will be replaced with the values of this preset. Would "
-"you like to proceed?"
-msgstr ""
-"Vos options actuelles seront remplacées par les valeurs de ce préréglage. "
-"Voulez-vous continuer ?"
-
-#: ../themeoptions/framework.php:2156
-msgid "Warning- This options panel will not work properly without javascript!"
-msgstr ""
-"Avertissement - Ce panneau d'options ne fonctionnera pas correctement sans "
-"javascript !"
-
-#: ../themeoptions/framework.php:2218
-msgid "Expand"
-msgstr "Afficher"
-
-#: ../themeoptions/framework.php:2220 ../themeoptions/framework.php:2492
-msgid "Save Changes"
-msgstr "Enregistrer les modifications"
-
-#: ../themeoptions/framework.php:2222 ../themeoptions/framework.php:2494
-msgid "Reset Section"
-msgstr "Réinitialiser la section"
-
-#: ../themeoptions/framework.php:2224 ../themeoptions/framework.php:2496
-msgid "Reset All"
-msgstr "Réinitialiser tout"
-
-#: ../themeoptions/framework.php:2227 ../themeoptions/framework.php:2499
-msgid "Working..."
-msgstr "En cours..."
-
-#: ../themeoptions/framework.php:2238
-msgid "Settings Imported!"
-msgstr "Réglages importés !"
-
-#: ../themeoptions/framework.php:2244
-msgid "Settings Saved!"
-msgstr "Réglages enregistrés !"
-
-#: ../themeoptions/framework.php:2251
-msgid "Settings have changed, you should save them!"
-msgstr "Les réglages ont changé, vous devriez les enregistrer !"
-
-#: ../themeoptions/framework.php:2252
-msgid "error(s) were found!"
-msgstr "des erreurs ont été trouvées !"
-
-#: ../themeoptions/framework.php:2253
-msgid "warning(s) were found!"
-msgstr "Avertissement(s) ont été trouvé !"
-
-#: ../themeoptions/framework.php:2289
-msgid "Import / Export"
-msgstr "Importation et Exportation"
-
-#: ../themeoptions/framework.php:2305 ../themeoptions/framework.php:2424
-msgid "Options Object"
-msgstr "Objet d'options"
-
-#: ../themeoptions/framework.php:2319 ../themeoptions/framework.php:2442
-msgid "System Info"
-msgstr "Informations du système"
-
-#: ../themeoptions/framework.php:2356
-msgid "Import / Export Options"
-msgstr "Options d'importation et d'exportation"
-
-#: ../themeoptions/framework.php:2357
-msgid "Import Options"
-msgstr "Options d'importation"
-
-#: ../themeoptions/framework.php:2358
-msgid "Import from file"
-msgstr "Importation depuis un fichier"
-
-#: ../themeoptions/framework.php:2358
-msgid "Import from URL"
-msgstr "Importation depuis une URL"
-
-#: ../themeoptions/framework.php:2367
-msgid ""
-"Input your backup file below and hit Import to restore your sites options "
-"from a backup."
-msgstr ""
-"Choisissez votre fichier de sauvegarde ci-dessous et cliquez Importation "
-"pour restaurer vos options de site à partir d'une sauvegarde."
-
-#: ../themeoptions/framework.php:2381
-msgid ""
-"Input the URL to another sites options set and hit Import to load the "
-"options from that site."
-msgstr ""
-"Indiquez l'URL vers un ensemble d'options de site et cliquez Importation "
-"pour charger les options à partir de ce site."
-
-#: ../themeoptions/framework.php:2392
-msgid "Import"
-msgstr "Importation"
-
-#: ../themeoptions/framework.php:2392
-msgid ""
-"WARNING! This will overwrite all existing option values, please proceed with "
-"caution!"
-msgstr ""
-"ATTENTION ! Cela écrasera toutes les valeurs d'options existantes, s'il vous "
-"plaît procéder avec prudence !"
-
-#: ../themeoptions/framework.php:2395
-msgid "Export Options"
-msgstr "Options d'exportation"
-
-#: ../themeoptions/framework.php:2401
-msgid ""
-"Here you can copy/download your current option settings. Keep this safe as "
-"you can use it as a backup should anything go wrong, or you can use it to "
-"restore your settings on this site (or any other site)."
-msgstr ""
-"Ici vous pouvez copier / télécharger vos paramètres d'options actuels. "
-"Conservez en lieu sûr car vous pourrez l'utiliser comme une sauvegarde en "
-"cas de problème, ou vous pouvez l'utiliser pour restaurer vos paramètres sur "
-"ce site (ou tout autre site)."
-
-#: ../themeoptions/framework.php:2406
-msgid "Copy"
-msgstr "Copier"
-
-#: ../themeoptions/framework.php:2406
-msgid "Download"
-msgstr "Télécharger"
-
-#: ../themeoptions/framework.php:2406
-msgid "Copy Link"
-msgstr "Copier le lien"
-
-#: ../themeoptions/framework.php:2431
-msgid "Show Object in Javascript Console Object"
-msgstr "Afficher l'objet dans l'objet Javascript Console"
 
 #: ../themeoptions/options.php:38
 msgid "Copy and Paste this code into the theme options import feature"
@@ -2442,11 +2334,24 @@ msgstr ""
 "Choisissez d'afficher ou de cacher l'avatar de la personne auteure sous le "
 "titre du billet."
 
+#: ../themeoptions/options.php:1722
+msgid "Show Previous and Next posts links?"
+msgstr ""
+
 #: ../themeoptions/options.php:1723
+#, fuzzy
+msgid ""
+"Choose to show or hide previous and next post links in the footer of a "
+"single post."
+msgstr ""
+"Choisissez d'afficher ou de cacher l'avatar de la personne auteure sous le "
+"titre du billet."
+
+#: ../themeoptions/options.php:1730
 msgid "Custom Favicon"
 msgstr "Favicône personnalisée"
 
-#: ../themeoptions/options.php:1724
+#: ../themeoptions/options.php:1731
 msgid ""
 "Upload a 16px x 16px png/gif/ico image that will represent your website "
 "favicon."
@@ -2454,23 +2359,19 @@ msgstr ""
 "Téléversez une image de 16px par 16px de format png, gif ou ico qui "
 "représentera votre site."
 
-#: ../themeoptions/options.php:1729
+#: ../themeoptions/options.php:1736
 msgid "Contact Form Email"
 msgstr "Adresse de courriel du formulaire de contact"
 
-#: ../themeoptions/options.php:1730
+#: ../themeoptions/options.php:1737
 msgid "Sets the email for the contact page email form."
 msgstr "Défini l'adresse de courriel pour le formulaire de la page de contact."
 
-#: ../themeoptions/options.php:1732
-msgid "Enter a valid email address."
-msgstr "Entrez une adresse de courriel valide."
-
-#: ../themeoptions/options.php:1738
+#: ../themeoptions/options.php:1743
 msgid "Footer Copyright Text"
 msgstr "Avis de protection du droit d'auteur du pied de page"
 
-#: ../themeoptions/options.php:1739
+#: ../themeoptions/options.php:1744
 msgid ""
 "Write your own copyright text here. You can use the following shortcodes in "
 "your footer text: [copyright] [site-name] [the-year]"
@@ -2479,40 +2380,40 @@ msgstr ""
 "utiliser les balises-macro («shortcodes») suivantes dans votre texte de bas "
 "de page : [copyright] [site-name] [the-year]"
 
-#: ../themeoptions/options.php:1745
+#: ../themeoptions/options.php:1750
 #, fuzzy
 msgid "Blog Post Defaults"
 msgstr "Valeurs par défaut des billets"
 
-#: ../themeoptions/options.php:1750
+#: ../themeoptions/options.php:1755
 msgid "Blog Post Summary Default"
 msgstr "Valeur par défaut du sommaire de billet"
 
-#: ../themeoptions/options.php:1758
+#: ../themeoptions/options.php:1763
 msgid "Create Sidebars"
 msgstr "Creation de barres latérales"
 
-#: ../themeoptions/options.php:1763
+#: ../themeoptions/options.php:1768
 msgid "Create Custom Sidebars"
 msgstr "Créer des barres latérales personnalisées"
 
-#: ../themeoptions/options.php:1764
+#: ../themeoptions/options.php:1769
 msgid "Type new sidebar name into textbox"
 msgstr "Entrez le nouveau nom de la barre latérale dans la zone de texte"
 
-#: ../themeoptions/options.php:1765
+#: ../themeoptions/options.php:1770
 msgid "Extra Sidebar"
 msgstr "Barre latérale extra"
 
-#: ../themeoptions/options.php:1770
+#: ../themeoptions/options.php:1775
 msgid "Wordpress Galleries"
 msgstr "Galeries WordPress"
 
-#: ../themeoptions/options.php:1775
+#: ../themeoptions/options.php:1780
 msgid "Enable Virtue Galleries to override Wordpress"
 msgstr "Permettre aux galeries Virtue de remplacer celles de WordPress"
 
-#: ../themeoptions/options.php:1776
+#: ../themeoptions/options.php:1781
 msgid ""
 "Disable this if using a plugin to customize galleries, for example jetpack "
 "tiled gallery."
@@ -2520,28 +2421,28 @@ msgstr ""
 "Désactivez cette option si vous utilisez une extensions pour personnaliser "
 "des galeries, par exemple jetpack."
 
-#: ../themeoptions/options.php:1784
+#: ../themeoptions/options.php:1789
 msgid "Advanced Settings"
 msgstr "Réglages avancés"
 
-#: ../themeoptions/options.php:1785
+#: ../themeoptions/options.php:1790
 msgid "Custom CSS Box"
 msgstr "Encadré de CSS personnalisé"
 
-#: ../themeoptions/options.php:1790
+#: ../themeoptions/options.php:1795
 msgid "Custom CSS"
 msgstr "CSS personnalisé"
 
-#: ../themeoptions/options.php:1791
+#: ../themeoptions/options.php:1796
 msgid "Quickly add some CSS to your theme by adding it to this block."
 msgstr ""
 "Ajouter rapidement un peu de CSS à votre thème en l'ajoutant à cette zone."
 
-#: ../themeoptions/options.php:1799
+#: ../themeoptions/options.php:1804
 msgid "Theme Update Import"
 msgstr "Mise à jour des options du thème"
 
-#: ../themeoptions/options.php:1800
+#: ../themeoptions/options.php:1805
 msgid ""
 "If updating from version 1.5.6 or earlier use this script to update your "
 "theme options."
@@ -2549,21 +2450,21 @@ msgstr ""
 "Si vous faite la mise à jour depuis la version 1.5.6 ou antérieure, utilisez "
 "ce script pour mettre à jour les options du thème."
 
-#: ../themeoptions/options.php:1805
+#: ../themeoptions/options.php:1810
 msgid "Turn on and save to start script"
 msgstr "Activez et enregistrez les modification pour démarrer le script"
 
-#: ../themeoptions/options.php:1812
+#: ../themeoptions/options.php:1817
 msgid "If using a child theme enter child theme folder"
 msgstr ""
 "Si vous utilisez un thème dérivé (child theme), entrez le dossier du thème "
 "dérivé"
 
-#: ../themeoptions/options.php:1836 ../themeoptions/options.php:1837
+#: ../themeoptions/options.php:1841 ../themeoptions/options.php:1842
 msgid "Theme Options"
 msgstr "Options du thème"
 
-#: ../themeoptions/options.php:1843
+#: ../themeoptions/options.php:1848
 msgid ""
 "Thank you for using the Virtue Theme by <a href=\"http://kadencethemes.com/"
 "\" target=\"_blank\">Kadence Themes</a>."
@@ -2575,20 +2476,6 @@ msgstr ""
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:193
 msgid "Upload Icon"
 msgstr "Téléversez l'icône"
-
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:127
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:195
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:125
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:190
-#: ../themeoptions/inc/fields/background/field_background.php:313
-#: ../themeoptions/inc/fields/media/field_media.php:156
-#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:75
-#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:79
-#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:82
-#: ../themeoptions/inc/fields/slides/field_slides.php:128
-#: ../themeoptions/inc/fields/slides/field_slides.php:192
-msgid "Remove"
-msgstr "Enlever"
 
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:132
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:200
@@ -2655,272 +2542,6 @@ msgstr "Effacer le carrousel"
 #: ../themeoptions/inc/fields/slides/field_slides.php:234
 msgid "Add Slide"
 msgstr "Ajouter une image"
-
-#: ../themeoptions/inc/class.redux_helpers.php:59
-msgid "Help improve Our Panel"
-msgstr "Aider à améliorer notre panneau"
-
-#: ../themeoptions/inc/class.redux_helpers.php:60
-msgid ""
-"Please helps us improve our panel by allowing us to gather anonymous usage "
-"stats so we know which configurations, plugins and themes to test with."
-msgstr ""
-"S'il vous plaît, aisez-nous à améliorer notre panneau en nous permettant de "
-"recueillir des statistiques d'utilisation anonymes afin que nous sachions "
-"avec quelles configurations, extensions et thèmes nous devons tester."
-
-#: ../themeoptions/inc/class.redux_helpers.php:65
-msgid "Allow tracking"
-msgstr "Permettre le suivi"
-
-#: ../themeoptions/inc/class.redux_helpers.php:70
-msgid "Do not allow tracking"
-msgstr "Interdire le suivi"
-
-#: ../themeoptions/inc/fields/background/field_background.php:119
-#: ../themeoptions/inc/fields/color/field_color.php:72
-#: ../themeoptions/inc/fields/color_gradient/field_color_gradient.php:81
-#: ../themeoptions/inc/fields/color_gradient/field_color_gradient.php:91
-#: ../themeoptions/inc/fields/color_rgba/field_color_rgba.php:84
-msgid "Transparent"
-msgstr "Transparent"
-
-#: ../themeoptions/inc/fields/background/field_background.php:136
-msgid "Background Repeat"
-msgstr "Répétition du fond"
-
-#: ../themeoptions/inc/fields/background/field_background.php:152
-msgid "Background Clip"
-msgstr "Recadrage du fond"
-
-#: ../themeoptions/inc/fields/background/field_background.php:168
-msgid "Background Origin"
-msgstr "Origine du fond"
-
-#: ../themeoptions/inc/fields/background/field_background.php:183
-msgid "Background Size"
-msgstr "Taille du fond"
-
-#: ../themeoptions/inc/fields/background/field_background.php:198
-msgid "Background Attachment"
-msgstr "Fixation du fond"
-
-#: ../themeoptions/inc/fields/background/field_background.php:218
-msgid "Background Position"
-msgstr "Position du fond"
-
-#: ../themeoptions/inc/fields/background/field_background.php:273
-#: ../themeoptions/inc/fields/media/field_media.php:116
-msgid "No media selected"
-msgstr "Aucun média sélectioné"
-
-#: ../themeoptions/inc/fields/border/field_border.php:125
-#: ../themeoptions/inc/fields/spacing/field_spacing.php:149
-msgid "Top"
-msgstr "Au-dessus"
-
-#: ../themeoptions/inc/fields/border/field_border.php:132
-#: ../themeoptions/inc/fields/spacing/field_spacing.php:156
-msgid "Right"
-msgstr "Droite"
-
-#: ../themeoptions/inc/fields/border/field_border.php:139
-#: ../themeoptions/inc/fields/spacing/field_spacing.php:163
-msgid "Bottom"
-msgstr "En-dessous"
-
-#: ../themeoptions/inc/fields/border/field_border.php:146
-#: ../themeoptions/inc/fields/spacing/field_spacing.php:170
-msgid "Left"
-msgstr "Gauche"
-
-#: ../themeoptions/inc/fields/border/field_border.php:162
-msgid "Border style"
-msgstr "Style de bordure"
-
-#: ../themeoptions/inc/fields/color_gradient/field_color_gradient.php:84
-msgid "To "
-msgstr "À"
-
-#: ../themeoptions/inc/fields/dimensions/field_dimensions.php:139
-msgid "Width"
-msgstr "Largeur"
-
-#: ../themeoptions/inc/fields/dimensions/field_dimensions.php:155
-msgid "height"
-msgstr "heuteur"
-
-#: ../themeoptions/inc/fields/dimensions/field_dimensions.php:168
-#: ../themeoptions/inc/fields/dimensions/field_dimensions.php:169
-#: ../themeoptions/inc/fields/spacing/field_spacing.php:181
-#: ../themeoptions/inc/fields/spacing/field_spacing.php:182
-msgid "Units"
-msgstr "Unités"
-
-#: ../themeoptions/inc/fields/gallery/field_gallery.php:77
-msgid "Add/Edit Gallery"
-msgstr "Ajouter / modifer une galerie"
-
-#: ../themeoptions/inc/fields/gallery/field_gallery.php:78
-msgid "Clear Gallery"
-msgstr "Effacer la galerie"
-
-#: ../themeoptions/inc/fields/group/field_group.php:76
-msgid "New"
-msgstr "Nouveau"
-
-#: ../themeoptions/inc/fields/group/field_group.php:89
-msgid "New "
-msgstr "Nouveau "
-
-#: ../themeoptions/inc/fields/group/field_group.php:138
-#: ../themeoptions/inc/fields/group/field_group.php:203
-msgid "Delete"
-msgstr "Effacer"
-
-#: ../themeoptions/inc/fields/group/field_group.php:208
-msgid "Add"
-msgstr "Ajouter"
-
-#: ../themeoptions/inc/fields/link_color/field_link_color.php:86
-msgid "Regular"
-msgstr "Normal"
-
-#: ../themeoptions/inc/fields/link_color/field_link_color.php:90
-msgid "Hover"
-msgstr "Survolé"
-
-#: ../themeoptions/inc/fields/link_color/field_link_color.php:94
-msgid "Visited"
-msgstr "Visité"
-
-#: ../themeoptions/inc/fields/link_color/field_link_color.php:98
-msgid "Active"
-msgstr "Actif"
-
-#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:65
-msgid "Add More"
-msgstr "Ajouter plus"
-
-#: ../themeoptions/inc/fields/password/field_password.php:55
-#: ../woocommerce/shop/form-login.php:24
-msgid "Password"
-msgstr "Mot de passe"
-
-#: ../themeoptions/inc/fields/password/field_password.php:56
-msgid "Username"
-msgstr "Identifiant"
-
-#: ../themeoptions/inc/fields/select/field_select.php:79
-#: ../themeoptions/inc/fields/select_image/field_select_image.php:59
-msgid "Select an item"
-msgstr "Choisir un item"
-
-#: ../themeoptions/inc/fields/select/field_select.php:120
-#: ../themeoptions/inc/fields/select_image/field_select_image.php:134
-msgid "No items of this type were found."
-msgstr "Aucun item de ce type disponible."
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:141
-msgid "Font family"
-msgstr "Famille de polices"
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:151
-msgid "Standard Fonts"
-msgstr "Polices standards"
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:183
-#: ../themeoptions/inc/fields/typography/field_typography.php:187
-msgid "Font style"
-msgstr "Style de la police"
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:187
-msgid "Style"
-msgstr "Style"
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:213
-msgid "Font subsets"
-msgstr "Sous-ensembles de police"
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:214
-msgid "Subsets"
-msgstr "Sous-ensembles"
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:214
-msgid "Font script"
-msgstr "Système d'écriture de la police"
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:232
-msgid "Size"
-msgstr "Taille"
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:241
-msgid "Height"
-msgstr "Hauteur"
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:249
-msgid "Word Spacing"
-msgstr "Espacement des mots"
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:257
-msgid "Letter Spacing"
-msgstr "Espacement des lettres"
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:271
-msgid "Backup Font Family"
-msgstr "Famille de police de remplacement"
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:291
-msgid "Font color"
-msgstr "Couleur de police"
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:618
-msgid "Google Webfonts"
-msgstr "Polices web de Google"
-
-#: ../themeoptions/inc/validation/color/validation_color.php:15
-#: ../themeoptions/inc/validation/color_rgba/validation_color_rgba.php:15
-#: ../themeoptions/inc/validation/colorrgba/validation_colorrgba.php:15
-msgid "This field must be a valid color value."
-msgstr "Ce champ doit contenir une valeur de couleur valide."
-
-#: ../themeoptions/inc/validation/comma_numeric/validation_comma_numeric.php:15
-msgid ""
-"You must provide a comma separated list of numerical values for this option."
-msgstr ""
-"Vous devez fournir une liste séparée par des virgules de valeurs numériques "
-"pour cette option."
-
-#: ../themeoptions/inc/validation/date/validation_date.php:15
-msgid "This field must be a valid date."
-msgstr "Ce champ doit contenir une date valide."
-
-#: ../themeoptions/inc/validation/email/validation_email.php:15
-msgid "You must provide a valid email for this option."
-msgstr "Vous devez fournir une adresse de courriel valide pour cette option."
-
-#: ../themeoptions/inc/validation/no_html/validation_no_html.php:15
-msgid ""
-"You must not enter any HTML in this field, all HTML tags have been removed."
-msgstr ""
-"Vous ne devez pas entrer de code HTML dans ce champ, toutes les balises HTML "
-"ont été supprimées."
-
-#: ../themeoptions/inc/validation/no_special_chars/validation_no_special_chars.php:15
-msgid ""
-"You must not enter any special characters in this field, all special "
-"characters have been removed."
-msgstr ""
-"Vous ne devez pas entrer des caractères spéciaux dans ce champ, tous les "
-"caractères spéciaux ont été supprimés."
-
-#: ../themeoptions/inc/validation/numeric/validation_numeric.php:15
-msgid "You must provide a numerical value for this option."
-msgstr "Vous devez fournir une valeur numérique pour cette option."
-
-#: ../themeoptions/inc/validation/url/validation_url.php:15
-msgid "You must provide a valid URL for this option."
-msgstr "Vous devez fournir une URL valide pour cette option."
 
 #: ../woocommerce/single-product-reviews.php:21
 #, php-format
@@ -3290,22 +2911,6 @@ msgstr "Connexion"
 msgid "Lost Password?"
 msgstr "Mot de passe perdu ?"
 
-#: ../woocommerce/single-product/meta.php:19
-msgid "SKU:"
-msgstr "UGS (SKU) : "
-
-#: ../woocommerce/single-product/meta.php:24
-msgid "Category:"
-msgid_plural "Categories:"
-msgstr[0] "Catégorie :"
-msgstr[1] "Catégories :"
-
-#: ../woocommerce/single-product/meta.php:29
-msgid "Tag:"
-msgid_plural "Tags:"
-msgstr[0] "Mot-clé : "
-msgstr[1] "Mots-clé : "
-
 #: ../woocommerce/single-product/rating.php:23
 #, php-format
 msgid "Rated %s out of 5"
@@ -3355,6 +2960,351 @@ msgstr "Informations complémentaires"
 #: ../woocommerce/single-product/tabs/description.php:14
 msgid "Product Description"
 msgstr "Description de produit"
+
+#~ msgid "Options"
+#~ msgstr "Options"
+
+#~ msgid "Options panel created using %1$s"
+#~ msgstr "Panneau d'options créé avec %1$s"
+
+#~ msgid "Redux Framework"
+#~ msgstr "Infrastructure d'application Redux"
+
+#~ msgid ""
+#~ "You have changes that are not saved. Would you like to save them now?"
+#~ msgstr ""
+#~ "Vous avez des modifications qui ne sont pas enregistrés. Souhaitez-vous "
+#~ "les enregistrer maintenant ?"
+
+#~ msgid "Are you sure? Resetting will lose all custom values."
+#~ msgstr ""
+#~ "Etes-vous sûr ? La réinitialisation fera perdre toutes les valeurs "
+#~ "personnalisées."
+
+#~ msgid "Are you sure? Resetting will lose all custom values in this section."
+#~ msgstr ""
+#~ "Etes-vous sûr ? La réinitialisation fera perdre toutes les valeurs "
+#~ "personnalisées dans cette section."
+
+#~ msgid ""
+#~ "Your current options will be replaced with the values of this preset. "
+#~ "Would you like to proceed?"
+#~ msgstr ""
+#~ "Vos options actuelles seront remplacées par les valeurs de ce préréglage. "
+#~ "Voulez-vous continuer ?"
+
+#~ msgid ""
+#~ "Warning- This options panel will not work properly without javascript!"
+#~ msgstr ""
+#~ "Avertissement - Ce panneau d'options ne fonctionnera pas correctement "
+#~ "sans javascript !"
+
+#~ msgid "Expand"
+#~ msgstr "Afficher"
+
+#~ msgid "Save Changes"
+#~ msgstr "Enregistrer les modifications"
+
+#~ msgid "Reset Section"
+#~ msgstr "Réinitialiser la section"
+
+#~ msgid "Reset All"
+#~ msgstr "Réinitialiser tout"
+
+#~ msgid "Working..."
+#~ msgstr "En cours..."
+
+#~ msgid "Settings Imported!"
+#~ msgstr "Réglages importés !"
+
+#~ msgid "Settings Saved!"
+#~ msgstr "Réglages enregistrés !"
+
+#~ msgid "Settings have changed, you should save them!"
+#~ msgstr "Les réglages ont changé, vous devriez les enregistrer !"
+
+#~ msgid "error(s) were found!"
+#~ msgstr "des erreurs ont été trouvées !"
+
+#~ msgid "warning(s) were found!"
+#~ msgstr "Avertissement(s) ont été trouvé !"
+
+#~ msgid "Import / Export"
+#~ msgstr "Importation et Exportation"
+
+#~ msgid "Options Object"
+#~ msgstr "Objet d'options"
+
+#~ msgid "System Info"
+#~ msgstr "Informations du système"
+
+#~ msgid "Import / Export Options"
+#~ msgstr "Options d'importation et d'exportation"
+
+#~ msgid "Import Options"
+#~ msgstr "Options d'importation"
+
+#~ msgid "Import from file"
+#~ msgstr "Importation depuis un fichier"
+
+#~ msgid "Import from URL"
+#~ msgstr "Importation depuis une URL"
+
+#~ msgid ""
+#~ "Input your backup file below and hit Import to restore your sites options "
+#~ "from a backup."
+#~ msgstr ""
+#~ "Choisissez votre fichier de sauvegarde ci-dessous et cliquez Importation "
+#~ "pour restaurer vos options de site à partir d'une sauvegarde."
+
+#~ msgid ""
+#~ "Input the URL to another sites options set and hit Import to load the "
+#~ "options from that site."
+#~ msgstr ""
+#~ "Indiquez l'URL vers un ensemble d'options de site et cliquez Importation "
+#~ "pour charger les options à partir de ce site."
+
+#~ msgid "Import"
+#~ msgstr "Importation"
+
+#~ msgid ""
+#~ "WARNING! This will overwrite all existing option values, please proceed "
+#~ "with caution!"
+#~ msgstr ""
+#~ "ATTENTION ! Cela écrasera toutes les valeurs d'options existantes, s'il "
+#~ "vous plaît procéder avec prudence !"
+
+#~ msgid "Export Options"
+#~ msgstr "Options d'exportation"
+
+#~ msgid ""
+#~ "Here you can copy/download your current option settings. Keep this safe "
+#~ "as you can use it as a backup should anything go wrong, or you can use it "
+#~ "to restore your settings on this site (or any other site)."
+#~ msgstr ""
+#~ "Ici vous pouvez copier / télécharger vos paramètres d'options actuels. "
+#~ "Conservez en lieu sûr car vous pourrez l'utiliser comme une sauvegarde en "
+#~ "cas de problème, ou vous pouvez l'utiliser pour restaurer vos paramètres "
+#~ "sur ce site (ou tout autre site)."
+
+#~ msgid "Copy"
+#~ msgstr "Copier"
+
+#~ msgid "Copy Link"
+#~ msgstr "Copier le lien"
+
+#~ msgid "Show Object in Javascript Console Object"
+#~ msgstr "Afficher l'objet dans l'objet Javascript Console"
+
+#~ msgid "Enter a valid email address."
+#~ msgstr "Entrez une adresse de courriel valide."
+
+#~ msgid "Help improve Our Panel"
+#~ msgstr "Aider à améliorer notre panneau"
+
+#~ msgid ""
+#~ "Please helps us improve our panel by allowing us to gather anonymous "
+#~ "usage stats so we know which configurations, plugins and themes to test "
+#~ "with."
+#~ msgstr ""
+#~ "S'il vous plaît, aisez-nous à améliorer notre panneau en nous permettant "
+#~ "de recueillir des statistiques d'utilisation anonymes afin que nous "
+#~ "sachions avec quelles configurations, extensions et thèmes nous devons "
+#~ "tester."
+
+#~ msgid "Allow tracking"
+#~ msgstr "Permettre le suivi"
+
+#~ msgid "Do not allow tracking"
+#~ msgstr "Interdire le suivi"
+
+#~ msgid "Transparent"
+#~ msgstr "Transparent"
+
+#~ msgid "Background Repeat"
+#~ msgstr "Répétition du fond"
+
+#~ msgid "Background Clip"
+#~ msgstr "Recadrage du fond"
+
+#~ msgid "Background Origin"
+#~ msgstr "Origine du fond"
+
+#~ msgid "Background Size"
+#~ msgstr "Taille du fond"
+
+#~ msgid "Background Attachment"
+#~ msgstr "Fixation du fond"
+
+#~ msgid "Background Position"
+#~ msgstr "Position du fond"
+
+#~ msgid "No media selected"
+#~ msgstr "Aucun média sélectioné"
+
+#~ msgid "Top"
+#~ msgstr "Au-dessus"
+
+#~ msgid "Right"
+#~ msgstr "Droite"
+
+#~ msgid "Bottom"
+#~ msgstr "En-dessous"
+
+#~ msgid "Left"
+#~ msgstr "Gauche"
+
+#~ msgid "Border style"
+#~ msgstr "Style de bordure"
+
+#~ msgid "To "
+#~ msgstr "À"
+
+#~ msgid "Width"
+#~ msgstr "Largeur"
+
+#~ msgid "height"
+#~ msgstr "heuteur"
+
+#~ msgid "Units"
+#~ msgstr "Unités"
+
+#~ msgid "Add/Edit Gallery"
+#~ msgstr "Ajouter / modifer une galerie"
+
+#~ msgid "Clear Gallery"
+#~ msgstr "Effacer la galerie"
+
+#~ msgid "New"
+#~ msgstr "Nouveau"
+
+#~ msgid "New "
+#~ msgstr "Nouveau "
+
+#~ msgid "Delete"
+#~ msgstr "Effacer"
+
+#~ msgid "Add"
+#~ msgstr "Ajouter"
+
+#~ msgid "Regular"
+#~ msgstr "Normal"
+
+#~ msgid "Hover"
+#~ msgstr "Survolé"
+
+#~ msgid "Visited"
+#~ msgstr "Visité"
+
+#~ msgid "Active"
+#~ msgstr "Actif"
+
+#~ msgid "Add More"
+#~ msgstr "Ajouter plus"
+
+#~ msgid "Password"
+#~ msgstr "Mot de passe"
+
+#~ msgid "Username"
+#~ msgstr "Identifiant"
+
+#~ msgid "Select an item"
+#~ msgstr "Choisir un item"
+
+#~ msgid "No items of this type were found."
+#~ msgstr "Aucun item de ce type disponible."
+
+#~ msgid "Font family"
+#~ msgstr "Famille de polices"
+
+#~ msgid "Standard Fonts"
+#~ msgstr "Polices standards"
+
+#~ msgid "Font style"
+#~ msgstr "Style de la police"
+
+#~ msgid "Style"
+#~ msgstr "Style"
+
+#~ msgid "Font subsets"
+#~ msgstr "Sous-ensembles de police"
+
+#~ msgid "Subsets"
+#~ msgstr "Sous-ensembles"
+
+#~ msgid "Font script"
+#~ msgstr "Système d'écriture de la police"
+
+#~ msgid "Size"
+#~ msgstr "Taille"
+
+#~ msgid "Height"
+#~ msgstr "Hauteur"
+
+#~ msgid "Word Spacing"
+#~ msgstr "Espacement des mots"
+
+#~ msgid "Letter Spacing"
+#~ msgstr "Espacement des lettres"
+
+#~ msgid "Backup Font Family"
+#~ msgstr "Famille de police de remplacement"
+
+#~ msgid "Font color"
+#~ msgstr "Couleur de police"
+
+#~ msgid "Google Webfonts"
+#~ msgstr "Polices web de Google"
+
+#~ msgid "This field must be a valid color value."
+#~ msgstr "Ce champ doit contenir une valeur de couleur valide."
+
+#~ msgid ""
+#~ "You must provide a comma separated list of numerical values for this "
+#~ "option."
+#~ msgstr ""
+#~ "Vous devez fournir une liste séparée par des virgules de valeurs "
+#~ "numériques pour cette option."
+
+#~ msgid "This field must be a valid date."
+#~ msgstr "Ce champ doit contenir une date valide."
+
+#~ msgid "You must provide a valid email for this option."
+#~ msgstr ""
+#~ "Vous devez fournir une adresse de courriel valide pour cette option."
+
+#~ msgid ""
+#~ "You must not enter any HTML in this field, all HTML tags have been "
+#~ "removed."
+#~ msgstr ""
+#~ "Vous ne devez pas entrer de code HTML dans ce champ, toutes les balises "
+#~ "HTML ont été supprimées."
+
+#~ msgid ""
+#~ "You must not enter any special characters in this field, all special "
+#~ "characters have been removed."
+#~ msgstr ""
+#~ "Vous ne devez pas entrer des caractères spéciaux dans ce champ, tous les "
+#~ "caractères spéciaux ont été supprimés."
+
+#~ msgid "You must provide a numerical value for this option."
+#~ msgstr "Vous devez fournir une valeur numérique pour cette option."
+
+#~ msgid "You must provide a valid URL for this option."
+#~ msgstr "Vous devez fournir une URL valide pour cette option."
+
+#~ msgid "SKU:"
+#~ msgstr "UGS (SKU) : "
+
+#~ msgid "Category:"
+#~ msgid_plural "Categories:"
+#~ msgstr[0] "Catégorie :"
+#~ msgstr[1] "Catégories :"
+
+#~ msgid "Tag:"
+#~ msgid_plural "Tags:"
+#~ msgstr[0] "Mot-clé : "
+#~ msgstr[1] "Mots-clé : "
 
 #~ msgid "Related Products"
 #~ msgstr "produits similaires"

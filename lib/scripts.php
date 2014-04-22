@@ -2,22 +2,11 @@
 /**
  * Enqueue scripts and stylesheets
  *
- * Enqueue stylesheets in the following order:
- * 1. /theme/assets/css/bootstrap.css
- * 2. /theme/assets/css/bootstrap-responsive.css
- * 3. /theme/assets/css/virtue.css
- * 4. /theme/assets/css/skin.css
- *
- * Enqueue scripts in the following order:
- * 1. jquery-1.9.1.min.js via Google CDN
- * 2. /theme/assets/js/vendor/modernizr-2.6.2.min.js
- * 3. /theme/assets/js/plugins.js (in footer)
- * 4. /theme/assets/js/main.js    (in footer)
  */
 function kadence_scripts() {
   wp_enqueue_style('kadence_bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.css', false, "204");
   wp_enqueue_style('kadence_theme', get_template_directory_uri() . '/assets/css/virtue.css', false, "204");
-global $virtue; if(isset($virtue['skin_stylesheet'])) {$skin = $virtue['skin_stylesheet'];} else { $skin = 'default.css';} 
+global $virtue; if(isset($virtue['skin_stylesheet']) || !empty($virtue['skin_stylesheet'])) {$skin = $virtue['skin_stylesheet'];} else { $skin = 'default.css';} 
  wp_enqueue_style('virtue_skin', get_template_directory_uri() . '/assets/css/skins/'.$skin.'', false, null);
 
   if (is_child_theme()) {
@@ -33,6 +22,7 @@ global $virtue; if(isset($virtue['skin_stylesheet'])) {$skin = $virtue['skin_sty
   wp_register_script('kadence_main', get_template_directory_uri() . '/assets/js/main.js', false, null, true);
   wp_enqueue_script('jquery');
   wp_enqueue_script('modernizr');
+  wp_enqueue_script('masonry');
   wp_enqueue_script('kadence_plugins');
   wp_enqueue_script('kadence_main');
   

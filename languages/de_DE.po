@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Virtue v2.0.7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-18 14:54-0700\n"
-"PO-Revision-Date: 2014-03-18 14:54-0700\n"
+"POT-Creation-Date: 2014-04-21 22:55-0700\n"
+"PO-Revision-Date: 2014-04-21 23:33-0700\n"
 "Last-Translator: Georg Trixl <schick_post@gmx.net>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -40,24 +40,12 @@ msgid "an out-of-date link"
 msgstr "ein veralteter Link"
 
 # @ virtue
-#: ../archive.php:15 ../index.php:13 ../taxonomy-portfolio-type.php:12
+#: ../archive.php:16 ../index.php:13 ../taxonomy-portfolio-type.php:13
 msgid "Sorry, no results were found."
 msgstr "Leider wurden keine Ergebnisse gefunden."
 
 # @ virtue
-#: ../archive.php:36 ../front-page.php:85 ../index.php:28 ../page-blog.php:61
-#: ../page-portfolio.php:111 ../taxonomy-portfolio-type.php:100
-msgid "&larr; Older posts"
-msgstr "&larr; ältere Einträge"
-
-# @ virtue
-#: ../archive.php:37 ../front-page.php:86 ../index.php:29 ../page-blog.php:62
-#: ../page-portfolio.php:112 ../taxonomy-portfolio-type.php:101
-msgid "Newer posts &rarr;"
-msgstr "neuere Einträge &rarr;"
-
-# @ virtue
-#: ../page-blog.php:52 ../templates/recentblog-carousel.php:48
+#: ../page-blog.php:53 ../templates/recentblog-carousel.php:48
 #: ../templates/similarblog-carousel.php:52 ../templates/home/blog-home.php:84
 #: ../templates/home/latest-slider.php:32
 msgid "Sorry, no blog entries found."
@@ -138,7 +126,7 @@ msgid "Send Email"
 msgstr "Sende E-Mail"
 
 # @ virtue
-#: ../page-portfolio.php:101 ../templates/recentportfolio-carousel.php:42
+#: ../page-portfolio.php:102 ../templates/recentportfolio-carousel.php:42
 #: ../templates/home/portfolio-carousel.php:60
 msgid "Sorry, no portfolio entries found."
 msgstr "Leider keine Portfolio Einträge gefunden."
@@ -152,6 +140,16 @@ msgstr "Suche nach:"
 #: ../searchform.php:3
 msgid "Search"
 msgstr "Suche"
+
+# @ virtue
+#: ../taxonomy-portfolio-type.php:101
+msgid "&larr; Older posts"
+msgstr "&larr; ältere Einträge"
+
+# @ virtue
+#: ../taxonomy-portfolio-type.php:102
+msgid "Newer posts &rarr;"
+msgstr "neuere Einträge &rarr;"
 
 # @ virtue
 #: ../lib/authorbox.php:5
@@ -247,137 +245,6 @@ msgstr "Installiere Plugin: %s"
 #: ../lib/class-tgm-plugin-activation.php:158
 msgid "Something went wrong."
 msgstr "Etwas ist schief gegangen."
-
-# @ virtue
-#: ../lib/class-tgm-plugin-activation.php:159
-#: ../lib/virtuetoolkit-activate.php:38
-#, php-format
-msgid "This theme requires the following plugin: %1$s."
-msgid_plural "This theme requires the following plugins: %1$s."
-msgstr[0] "Dieses Thema benötigt folgendes Plugin: %1$s."
-msgstr[1] "Dieses Thema benötigt folgende Plugins: %1$s."
-
-# @ virtue
-#: ../lib/class-tgm-plugin-activation.php:160
-#, php-format
-msgid "This theme recommends the following plugin: %1$s."
-msgid_plural "This theme recommends the following plugins: %1$s."
-msgstr[0] "Dieses Thema empfielt folgendes Plugin: %1$s."
-msgstr[1] "Dieses Thema empfielt folgende Plugins: %1$s."
-
-# @ virtue
-#: ../lib/class-tgm-plugin-activation.php:161
-#: ../lib/virtuetoolkit-activate.php:40
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to install the %s plugin. "
-"Contact the administrator of this site for help on getting the plugin "
-"installed."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to install the %s "
-"plugins. Contact the administrator of this site for help on getting the "
-"plugins installed."
-msgstr[0] ""
-"Entschuldigung, aber Sie haben nicht die richtige Berechtigung zum "
-"installieren des %s Plugin. Kontaktieren Sie den Administrator dieser Seite "
-"um Hilfe für die Plugininstallation zu bekommen."
-msgstr[1] ""
-"Entschuldigung, aber Sie haben nicht die richtige Berechtigung zum "
-"installieren von den Plugins: %s. Kontaktieren Sie den Administrator dieser "
-"Seite um Hilfe für die Installation der Plugins zu bekommen."
-
-# @ virtue
-#: ../lib/class-tgm-plugin-activation.php:162
-#: ../lib/virtuetoolkit-activate.php:41
-#, php-format
-msgid "The following required plugin is currently inactive: %1$s."
-msgid_plural "The following required plugins are currently inactive: %1$s."
-msgstr[0] "Das folgende Plugin wird benötigt und ist inaktiv: %1$s."
-msgstr[1] "Die folgenden Plugins werden benötigt und sind inaktiv: %1$s."
-
-# @ virtue
-#: ../lib/class-tgm-plugin-activation.php:163
-#: ../lib/virtuetoolkit-activate.php:42
-#, php-format
-msgid "The following recommended plugin is currently inactive: %1$s."
-msgid_plural "The following recommended plugins are currently inactive: %1$s."
-msgstr[0] "Das folgende Plugin ist empfohlen aber momentan inaktiv: %1$s."
-msgstr[1] "Die folgenden Plugins sind empfohlen aber momentan inaktiv: %1$s."
-
-# @ virtue
-#: ../lib/class-tgm-plugin-activation.php:164
-#: ../lib/virtuetoolkit-activate.php:43
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to activate the %s "
-"plugin. Contact the administrator of this site for help on getting the "
-"plugin activated."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to activate the %s "
-"plugins. Contact the administrator of this site for help on getting the "
-"plugins activated."
-msgstr[0] ""
-"Entschuldigung, aber Sie besitzen nicht die Berechtigung um das Plugin %s zu "
-"aktiveren. Bitte kontaktieren Sie ihren Seitenadministator um Hilfe für die "
-"Aktivierung zu bekommen."
-msgstr[1] ""
-"Entschuldigung, aber Sie besitzen nicht die Berechtigung um die Plugins %s "
-"zu aktiveren. Bitte kontaktieren Sie ihren Seitenadministator um Hilfe für "
-"deren Aktivierung zu bekommen."
-
-# @ virtue
-#: ../lib/class-tgm-plugin-activation.php:165
-#: ../lib/virtuetoolkit-activate.php:44
-#, php-format
-msgid ""
-"The following plugin needs to be updated to its latest version to ensure "
-"maximum compatibility with this theme: %1$s."
-msgid_plural ""
-"The following plugins need to be updated to their latest version to ensure "
-"maximum compatibility with this theme: %1$s."
-msgstr[0] ""
-"Das folgende Plugin sollte auf die letzte Version aktuallisiert werden um "
-"höchste Kompatibilität zu diesem Thema zu gewährleisten: %1$s."
-msgstr[1] ""
-"Die folgenden Plugins sollten auf die letzte Version aktuallisiert werden um "
-"höchste Kompatibilität zu diesem Thema zu gewährleisten: %1$s."
-
-# @ virtue
-#: ../lib/class-tgm-plugin-activation.php:166
-#: ../lib/virtuetoolkit-activate.php:45
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to update the %s plugin. "
-"Contact the administrator of this site for help on getting the plugin "
-"updated."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to update the %s plugins. "
-"Contact the administrator of this site for help on getting the plugins "
-"updated."
-msgstr[0] ""
-"Tut mir leid, aber Sie haben nicht die richtigen Berechtigungen um das "
-"Plugin %s zu aktualisieren. Kontaktieren Sie den Administrator dieser Seite "
-"um Hilfe für die Pluginaktualisierung zu bekommen."
-msgstr[1] ""
-"Tut mir leid, aber Sie haben nicht die richtigen Berechtigungen um die "
-"Plugins %s zu aktualisieren. Kontaktieren Sie den Administrator dieser Seite "
-"um Hilfe für die Pluginaktualisierung zu bekommen."
-
-# @ virtue
-#: ../lib/class-tgm-plugin-activation.php:167
-#: ../lib/virtuetoolkit-activate.php:46
-msgid "Begin installing plugin"
-msgid_plural "Begin installing plugins"
-msgstr[0] "Starte Plugininstallation"
-msgstr[1] "Starte Instllation der Plugins"
-
-# @ virtue
-#: ../lib/class-tgm-plugin-activation.php:168
-#: ../lib/virtuetoolkit-activate.php:47
-msgid "Activate installed plugin"
-msgid_plural "Activate installed plugins"
-msgstr[0] "Aktiviere installiertes Plugin"
-msgstr[1] "Aktiviere installierte Plugins"
 
 # @ tgmpa
 # @ virtue
@@ -619,7 +486,7 @@ msgid "Return to the Dashboard"
 msgstr "Zurück zur Übersicht"
 
 # @ virtue
-#: ../lib/cleanup.php:168
+#: ../lib/cleanup.php:164
 msgid "Continued"
 msgstr "Weiter"
 
@@ -651,67 +518,67 @@ msgid "Your Cart"
 msgstr "Ihr Warenkorb"
 
 # @ virtue
-#: ../lib/custom.php:376
+#: ../lib/custom.php:356 ../templates/entry-post-links.php:3
 msgid "Previous Post"
 msgstr "Vorheriger Eintrag"
 
 # @ virtue
-#: ../lib/custom.php:376
+#: ../lib/custom.php:356 ../templates/entry-post-links.php:6
 msgid "Next Post"
 msgstr "Nächster Eintrag"
 
 # @ virtue
-#: ../lib/custom.php:468
+#: ../lib/custom.php:448
 msgid "Occupation"
 msgstr "Beruf"
 
 # @ virtue
-#: ../lib/custom.php:471
+#: ../lib/custom.php:451
 msgid "Please enter your Occupation."
 msgstr "Bitte geben Sie ihren Beruf ein."
 
 # @ virtue
-#: ../lib/custom.php:478
+#: ../lib/custom.php:458
 msgid "Please enter your Twitter username."
 msgstr "Bitte geben Sie ihren Twitter Benutzernamen ein."
 
 # @ virtue
-#: ../lib/custom.php:485
+#: ../lib/custom.php:465
 msgid "Please enter your Facebook url. (be sure to include http://)"
 msgstr ""
 "Bitte geben Sie ihre Facebook URL ein. (Unbedingt mit http:// beginnen)"
 
 # @ virtue
-#: ../lib/custom.php:492
+#: ../lib/custom.php:472
 msgid "Please enter your Google Plus url. (be sure to include http://)"
 msgstr ""
 "Bitte geben Sie ihre Google Plus URL ein. (Unbedingt mit http:// beginnen)"
 
 # @ virtue
-#: ../lib/custom.php:499
+#: ../lib/custom.php:479
 msgid "Please enter your Flickr url. (be sure to include http://)"
 msgstr "Bitte geben Sie ihre Flickr URL ein. (Unbedingt mit http:// beginnen)"
 
 # @ virtue
-#: ../lib/custom.php:506
+#: ../lib/custom.php:486
 msgid "Please enter your Linkedin url. (be sure to include http://)"
 msgstr ""
 "Bitte geben Sie ihre Linkedin URL ein. (Unbedingt mit http:// beginnen)"
 
 # @ virtue
-#: ../lib/custom.php:513
+#: ../lib/custom.php:493
 msgid "Please enter your Dribbble url. (be sure to include http://)"
 msgstr ""
 "Bitte geben Sie ihre Dribbble URL ein. (Unbedingt mit http:// beginnen)"
 
 # @ virtue
-#: ../lib/custom.php:520
+#: ../lib/custom.php:500
 msgid "Please enter your Pinterest url. (be sure to include http://)"
 msgstr ""
 "Bitte geben Sie ihre Pinterest URL ein. (Unbedingt mit http:// beginnen)"
 
 # @ virtue
-#: ../lib/custom.php:527
+#: ../lib/custom.php:507
 msgid "Please enter your Instagram url. (be sure to include http://)"
 msgstr ""
 "Bitte geben Sie ihre Instagram URL ein. (Unbedingt mit http:// beginnen)"
@@ -832,7 +699,7 @@ msgstr "Video"
 
 # @ virtue
 #: ../lib/metaboxes.php:101 ../lib/metaboxes.php:220 ../lib/metaboxes.php:439
-#: ../lib/widgets.php:786
+#: ../lib/widgets.php:794
 msgid "Image"
 msgstr "Bild"
 
@@ -867,12 +734,13 @@ msgstr "Eintragszusammenfassung"
 
 # @ virtue
 # @ redux-framework
-#: ../lib/metaboxes.php:122 ../themeoptions/framework.php:1584
+#: ../lib/metaboxes.php:122 ../lib/cmb/init.php:244
+#: ../themeoptions/framework.php:1584
 msgid "Default"
 msgstr "Standard"
 
 # @ virtue
-#: ../lib/metaboxes.php:123 ../lib/widgets.php:792
+#: ../lib/metaboxes.php:123 ../lib/widgets.php:800
 msgid "Text"
 msgstr "Text"
 
@@ -1420,13 +1288,13 @@ msgstr "Standard ist 300"
 msgid "Sidebar Options"
 msgstr "Sidebaroptionen"
 
-#: ../lib/scripts.php:43
+#: ../lib/scripts.php:33
 msgid ""
 "Sorry, no products matched your selection. Please choose a different "
 "combination."
 msgstr ""
 
-#: ../lib/scripts.php:44
+#: ../lib/scripts.php:34
 msgid ""
 "Sorry, this product is unavailable. Please choose a different combination."
 msgstr ""
@@ -1470,17 +1338,6 @@ msgstr "Nicht gefunden"
 #: ../lib/virtuetoolkit-activate.php:37
 msgid "Something went wrong with the plugin API."
 msgstr "Etwas ist mit der Plugin-API schief gegangen."
-
-# @ virtue
-#: ../lib/virtuetoolkit-activate.php:39
-#, php-format
-msgid ""
-"This theme comes packaged with the following premium plugin: %1$s. enjoy:)"
-msgid_plural ""
-"This theme comes packaged with the following premium plugin: %1$s. enjoy:)"
-msgstr[0] "Dieses Thema kommt verpackt mit folgenden Premium-Plugin: %1$s. :)"
-msgstr[1] ""
-"Dieses Thema kommt verpackt mit den folgenden Premium-Plugins: %1$s. :)"
 
 # @ virtue
 #: ../lib/virtuetoolkit-activate.php:50
@@ -1534,8 +1391,8 @@ msgid "vCard"
 msgstr "vCard"
 
 # @ virtue
-#: ../lib/widgets.php:277 ../lib/widgets.php:436 ../lib/widgets.php:589
-#: ../lib/widgets.php:727
+#: ../lib/widgets.php:277 ../lib/widgets.php:440 ../lib/widgets.php:597
+#: ../lib/widgets.php:735
 msgid "Title:"
 msgstr "Titel:"
 
@@ -1587,93 +1444,97 @@ msgid "Virtue: Social Links"
 msgstr "Virtue: Social Links"
 
 # @ virtue
-#: ../lib/widgets.php:440
+#: ../lib/widgets.php:444
 msgid "Facebook:"
 msgstr "Facebook:"
 
 # @ virtue
-#: ../lib/widgets.php:444
+#: ../lib/widgets.php:448
 msgid "Twitter:"
 msgstr "Twitter:"
 
 # @ virtue
-#: ../lib/widgets.php:448
+#: ../lib/widgets.php:452
 msgid "Instagram:"
 msgstr "Instagram:"
 
 # @ virtue
-#: ../lib/widgets.php:452
+#: ../lib/widgets.php:456
 msgid "GooglePlus:"
 msgstr "GooglePlus:"
 
 # @ virtue
-#: ../lib/widgets.php:456
+#: ../lib/widgets.php:460
 msgid "Flickr:"
 msgstr "Flickr:"
 
 # @ virtue
-#: ../lib/widgets.php:460
+#: ../lib/widgets.php:464
 msgid "Vimeo:"
 msgstr "Vimeo:"
 
 # @ virtue
-#: ../lib/widgets.php:464
+#: ../lib/widgets.php:468
 msgid "Youtube:"
 msgstr "Youtube:"
 
 # @ virtue
-#: ../lib/widgets.php:468
+#: ../lib/widgets.php:472
 msgid "Pinterest:"
 msgstr "Pinterest:"
 
 # @ virtue
-#: ../lib/widgets.php:472
+#: ../lib/widgets.php:476
 msgid "Dribbble:"
 msgstr "Dribbble:"
 
 # @ virtue
-#: ../lib/widgets.php:476
+#: ../lib/widgets.php:480
 msgid "Linkedin:"
 msgstr "Linkedin:"
 
 # @ virtue
-#: ../lib/widgets.php:480
+#: ../lib/widgets.php:484
 msgid "Tumblr:"
 msgstr "Tumblr:"
 
+#: ../lib/widgets.php:488
+msgid "VK:"
+msgstr ""
+
 # @ virtue
-#: ../lib/widgets.php:484
+#: ../lib/widgets.php:492
 msgid "RSS:"
 msgstr "RSS:"
 
 # @ virtue
-#: ../lib/widgets.php:498
+#: ../lib/widgets.php:506
 msgid "This shows the most recent posts on your site with a thumbnail"
 msgstr ""
 "Dies zeigt den allerletzten Beitrag auf ihrer Seite mit einem Thumbnail"
 
 # @ virtue
-#: ../lib/widgets.php:499
+#: ../lib/widgets.php:507
 msgid "Virtue: Recent Posts"
 msgstr "Virtue: letzte Beiträge"
 
 # @ virtue
-#: ../lib/widgets.php:524
+#: ../lib/widgets.php:532
 msgid "Recent Posts"
 msgstr "Letzte Beträge"
 
 # @ virtue
-#: ../lib/widgets.php:592
+#: ../lib/widgets.php:600
 msgid "Number of posts to show:"
 msgstr "Anzahl der zu zeigenden Beiträge:"
 
 # @ virtue
-#: ../lib/widgets.php:595
+#: ../lib/widgets.php:603
 msgid "Limit to Catagory (Optional):"
 msgstr "Limitiere auf Kategorie (Optional):"
 
 # @ virtue
-#: ../lib/widgets.php:606
+#: ../lib/widgets.php:614
 msgid ""
 "This shows a grid of featured images from recent posts or portfolio items"
 msgstr ""
@@ -1681,58 +1542,58 @@ msgstr ""
 "Portfolioeinträge"
 
 # @ virtue
-#: ../lib/widgets.php:607
+#: ../lib/widgets.php:615
 msgid "Virtue: Image Grid"
 msgstr "Virtue: Bild Raster"
 
 # @ virtue
-#: ../lib/widgets.php:632
+#: ../lib/widgets.php:640
 msgid "Post Gallery"
 msgstr "Beitrags Gallerie"
 
 # @ virtue
-#: ../lib/widgets.php:730
+#: ../lib/widgets.php:738
 msgid "Grid Choice:"
 msgstr "Rasterauswahl:"
 
 # @ virtue
-#: ../lib/widgets.php:732
+#: ../lib/widgets.php:740
 msgid "Blog Posts"
 msgstr "Blog Beiträge"
 
 # @ virtue
-#: ../lib/widgets.php:733
+#: ../lib/widgets.php:741
 msgid "Portfolio"
 msgstr "Portfolio"
 
 # @ virtue
-#: ../lib/widgets.php:736
+#: ../lib/widgets.php:744
 msgid "If Post - Choose Category (Optional):"
 msgstr "Wenn Betrag - wähle Kategorie (optional):"
 
 # @ virtue
-#: ../lib/widgets.php:739
+#: ../lib/widgets.php:747
 msgid "If Portfolio - Choose Type (Optional):"
 msgstr "Wenn Portfolio -wähle Typ (optional):"
 
 # @ virtue
-#: ../lib/widgets.php:742
+#: ../lib/widgets.php:750
 msgid "Number of images to show:"
 msgstr "Anzahl der anzuzeigenden Bilder:"
 
 # @ virtue
-#: ../lib/widgets.php:760
+#: ../lib/widgets.php:768
 msgid "This allows for an image and a simple about text."
 msgstr "Dies ermöglicht einen einfachen 'Übertext' mit Bild."
 
 # @ virtue
-#: ../lib/widgets.php:761
+#: ../lib/widgets.php:769
 msgid "Virtue: About with Image"
 msgstr "Virtue: 'Über' mit Bild"
 
 # @ virtue
 # @ redux-framework
-#: ../lib/widgets.php:789
+#: ../lib/widgets.php:797
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:119
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:188
 #: ../themeoptions/inc/fields/background/field_background.php:307
@@ -1742,21 +1603,90 @@ msgstr "Virtue: 'Über' mit Bild"
 msgid "Upload"
 msgstr "Upload"
 
+#: ../lib/cmb/init.php:243
+msgid "Clear"
+msgstr ""
+
+# @ virtue
+#: ../lib/cmb/init.php:245
+#, fuzzy
+msgid "Select Color"
+msgstr "Wähle ein Symbol"
+
+# @ virtue
+#: ../lib/cmb/init.php:246
+#, fuzzy
+msgid "Current Color"
+msgstr "Hauptfarbe"
+
+#: ../lib/cmb/init.php:1185
+msgid "Save"
+msgstr ""
+
 # @ cmb
-#: ../lib/cmb/init.php:633
+#: ../lib/cmb/helpers/cmb_Meta_Box_ajax.php:47
 msgid "Please Try Again"
 msgstr "Bitte nochmals versuchen"
 
 # @ cmb
-#: ../lib/cmb/init.php:650
+#: ../lib/cmb/helpers/cmb_Meta_Box_ajax.php:131
 msgid "Remove Embed"
 msgstr "Entferne Einbettung"
 
 # @ cmb
-#: ../lib/cmb/init.php:656
+#: ../lib/cmb/helpers/cmb_Meta_Box_ajax.php:134
 #, php-format
 msgid "No oEmbed Results Found for %s. View more info at"
 msgstr "Keine Eingebetten Ergebnisse gefunden für %s. Mehr Infos unter"
+
+# @ virtue
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:150
+#, fuzzy
+msgid "Add Row"
+msgstr "Symbol hinzufügen"
+
+# @ virtue
+# @ redux-framework
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:178
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:547
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:590
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:127
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:195
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:125
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:190
+#: ../themeoptions/inc/fields/background/field_background.php:313
+#: ../themeoptions/inc/fields/media/field_media.php:156
+#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:75
+#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:79
+#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:82
+#: ../themeoptions/inc/fields/slides/field_slides.php:128
+#: ../themeoptions/inc/fields/slides/field_slides.php:192
+msgid "Remove"
+msgstr "Entfernen"
+
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:523
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:563
+msgid "Add or Upload File"
+msgstr ""
+
+# @ virtue
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:536
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:582
+#, fuzzy
+msgid "Remove Image"
+msgstr "Entferne Bild"
+
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:547
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:590
+msgid "File:"
+msgstr ""
+
+# @ redux-framework
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:547
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:590
+#: ../themeoptions/framework.php:2406
+msgid "Download"
+msgstr "Herunterladen"
 
 # @ virtue
 #: ../templates/comment.php:7
@@ -1898,211 +1828,6 @@ msgstr "WEITER LESEN"
 #: ../templates/home/portfolio-carousel.php:2
 msgid "Featured Projects"
 msgstr "Gefeaturetes Projekt"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:126 ../themeoptions/framework.php:132
-#: ../themeoptions/framework.php:305 ../themeoptions/framework.php:308
-msgid "Options"
-msgstr "Optionen"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:302
-#, php-format
-msgid "Options panel created using %1$s"
-msgstr "Optionpanel erstellt mit %1$s"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:302
-msgid "Redux Framework"
-msgstr "Redux Framework"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:1293
-msgid "You have changes that are not saved. Would you like to save them now?"
-msgstr "Sie haben ungespeicherte Änderungen. Wollen Sie diese speichern?"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:1294
-msgid "Are you sure? Resetting will lose all custom values."
-msgstr ""
-"Sind Sie  sicher? Zurücksetzen wird alle benutzerdefinierte Werte entfernen."
-
-# @ redux-framework
-#: ../themeoptions/framework.php:1295
-msgid "Are you sure? Resetting will lose all custom values in this section."
-msgstr ""
-"Sind Sie  sicher? Zurücksetzen wird alle benutzerdefinierte Werte dieser "
-"Sektion entfernen."
-
-# @ redux-framework
-#: ../themeoptions/framework.php:1296
-msgid ""
-"Your current options will be replaced with the values of this preset. Would "
-"you like to proceed?"
-msgstr ""
-"Ihre aktuellen Einstellungen werden durch die Standardwerte ersetzt. Wollen "
-"Sie fortsetzen?"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2156
-msgid "Warning- This options panel will not work properly without javascript!"
-msgstr ""
-"Warnung - Dieses Optionpanel wird nicht richtig funktionieren ohne "
-"Javascript!"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2218
-msgid "Expand"
-msgstr "Erweitern"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2220 ../themeoptions/framework.php:2492
-msgid "Save Changes"
-msgstr "Änderungen speichern"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2222 ../themeoptions/framework.php:2494
-msgid "Reset Section"
-msgstr "Auswahl zurücksetzen"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2224 ../themeoptions/framework.php:2496
-msgid "Reset All"
-msgstr "Alles zurücksetzen"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2227 ../themeoptions/framework.php:2499
-msgid "Working..."
-msgstr "Arbeite..."
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2238
-msgid "Settings Imported!"
-msgstr "Einstellung importiert!"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2244
-msgid "Settings Saved!"
-msgstr "Einstellung gespeichert!"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2251
-msgid "Settings have changed, you should save them!"
-msgstr "Einstellungen wurden geändert, Sie sollten diese speichern!"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2252
-msgid "error(s) were found!"
-msgstr "Fehler wurde(n) gefunden!"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2253
-msgid "warning(s) were found!"
-msgstr "Warnung(en) wurde(n) gefunden!"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2289
-msgid "Import / Export"
-msgstr "Import / Export"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2305 ../themeoptions/framework.php:2424
-msgid "Options Object"
-msgstr "Options Objekt"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2319 ../themeoptions/framework.php:2442
-msgid "System Info"
-msgstr "System Info"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2356
-msgid "Import / Export Options"
-msgstr "Import / Export Optionen"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2357
-msgid "Import Options"
-msgstr "Import Optionen"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2358
-msgid "Import from file"
-msgstr "Import von Datei"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2358
-msgid "Import from URL"
-msgstr "Import von URL"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2367
-msgid ""
-"Input your backup file below and hit Import to restore your sites options "
-"from a backup."
-msgstr ""
-"Geben Sie unten Ihrer Sicherung Datei ein und drücken Sie importieren, um "
-"Ihre Webseiten-Optionen aus einer Sicherung wiederherzustellen."
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2381
-msgid ""
-"Input the URL to another sites options set and hit Import to load the "
-"options from that site."
-msgstr ""
-"Geben Sie die URL zu einer anderen Webseiten-Option ein und klicke "
-"importieren um die Optionen von dieser Seite zu laden."
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2392
-msgid "Import"
-msgstr "Import"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2392
-msgid ""
-"WARNING! This will overwrite all existing option values, please proceed with "
-"caution!"
-msgstr ""
-"WARNUNG! Dies überschreibt alle existierenden Einstellungen, bitte mit "
-"Vorsicht fortfahren!"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2395
-msgid "Export Options"
-msgstr "Optionen exportieren"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2401
-msgid ""
-"Here you can copy/download your current option settings. Keep this safe as "
-"you can use it as a backup should anything go wrong, or you can use it to "
-"restore your settings on this site (or any other site)."
-msgstr ""
-"Hier können Sie Ihre aktuellen Optionseinstellungen kopieren/herunterladen. "
-"Verwahren Sie dies Sicher, da Sie dies als Backup verwenden können, wenn "
-"etwas schief geht. Sie können dies zum Wiederherstellen benutzen (oder auch "
-"bei einer anderen Seite verwenden)."
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2406
-msgid "Copy"
-msgstr "Kopieren"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2406
-msgid "Download"
-msgstr "Herunterladen"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2406
-msgid "Copy Link"
-msgstr "Link kopieren"
-
-# @ redux-framework
-#: ../themeoptions/framework.php:2431
-msgid "Show Object in Javascript Console Object"
-msgstr "Objekt in Javascript-Konsole-Objekt anzeigen"
 
 # @ virtue
 #: ../themeoptions/options.php:38
@@ -3116,13 +2841,25 @@ msgstr "Zeige Author Symbol mit Beiträgen?"
 msgid "Choose to show or hide author icon under post title."
 msgstr "Wähle zum zeigen oder verstecken des Authorsymbol unter Beitragstitel."
 
+#: ../themeoptions/options.php:1722
+msgid "Show Previous and Next posts links?"
+msgstr ""
+
 # @ virtue
 #: ../themeoptions/options.php:1723
+#, fuzzy
+msgid ""
+"Choose to show or hide previous and next post links in the footer of a "
+"single post."
+msgstr "Wähle zum zeigen oder verstecken des Authorsymbol unter Beitragstitel."
+
+# @ virtue
+#: ../themeoptions/options.php:1730
 msgid "Custom Favicon"
 msgstr "Benutzer definiertes Favicon"
 
 # @ virtue
-#: ../themeoptions/options.php:1724
+#: ../themeoptions/options.php:1731
 msgid ""
 "Upload a 16px x 16px png/gif/ico image that will represent your website "
 "favicon."
@@ -3131,27 +2868,22 @@ msgstr ""
 "verwendet wird."
 
 # @ virtue
-#: ../themeoptions/options.php:1729
+#: ../themeoptions/options.php:1736
 msgid "Contact Form Email"
 msgstr "Kontakformular E-Mail"
 
 # @ virtue
-#: ../themeoptions/options.php:1730
+#: ../themeoptions/options.php:1737
 msgid "Sets the email for the contact page email form."
 msgstr "Stellt die E-Mailadresse für das Kontaktseiten E-mail Formular ein."
 
 # @ virtue
-#: ../themeoptions/options.php:1732
-msgid "Enter a valid email address."
-msgstr "Gültige E-Mail Adresse eingeben."
-
-# @ virtue
-#: ../themeoptions/options.php:1738
+#: ../themeoptions/options.php:1743
 msgid "Footer Copyright Text"
 msgstr "Fußzeilen Urhebertext"
 
 # @ virtue
-#: ../themeoptions/options.php:1739
+#: ../themeoptions/options.php:1744
 msgid ""
 "Write your own copyright text here. You can use the following shortcodes in "
 "your footer text: [copyright] [site-name] [the-year]"
@@ -3160,47 +2892,47 @@ msgstr ""
 "Fußzeile verweden: [copyright] [site-name] [the-year]"
 
 # @ virtue
-#: ../themeoptions/options.php:1745
+#: ../themeoptions/options.php:1750
 msgid "Blog Post Defaults"
 msgstr "Blog Beitrag Standards"
 
 # @ virtue
-#: ../themeoptions/options.php:1750
+#: ../themeoptions/options.php:1755
 msgid "Blog Post Summary Default"
 msgstr "Bloge Beitragübersicht Standardansicht"
 
 # @ virtue
-#: ../themeoptions/options.php:1758
+#: ../themeoptions/options.php:1763
 msgid "Create Sidebars"
 msgstr "Erstelle Sidebars"
 
 # @ virtue
-#: ../themeoptions/options.php:1763
+#: ../themeoptions/options.php:1768
 msgid "Create Custom Sidebars"
 msgstr "Erstelle benutzerdefinierte Sidebar"
 
 # @ virtue
-#: ../themeoptions/options.php:1764
+#: ../themeoptions/options.php:1769
 msgid "Type new sidebar name into textbox"
 msgstr "Schreibe den neuen Sidebarnamen in die Textbox"
 
 # @ virtue
-#: ../themeoptions/options.php:1765
+#: ../themeoptions/options.php:1770
 msgid "Extra Sidebar"
 msgstr "Extra Sidebar"
 
 # @ virtue
-#: ../themeoptions/options.php:1770
+#: ../themeoptions/options.php:1775
 msgid "Wordpress Galleries"
 msgstr "Wordpress Gallerien"
 
 # @ virtue
-#: ../themeoptions/options.php:1775
+#: ../themeoptions/options.php:1780
 msgid "Enable Virtue Galleries to override Wordpress"
 msgstr "Ermöglicht das Virtue die Wordpressgallerien ersetzt"
 
 # @ virtue
-#: ../themeoptions/options.php:1776
+#: ../themeoptions/options.php:1781
 msgid ""
 "Disable this if using a plugin to customize galleries, for example jetpack "
 "tiled gallery."
@@ -3209,33 +2941,33 @@ msgstr ""
 "anpassen, z. B. Jetpack gekachelt Galerie."
 
 # @ virtue
-#: ../themeoptions/options.php:1784
+#: ../themeoptions/options.php:1789
 msgid "Advanced Settings"
 msgstr "Erweiterte Optionen"
 
 # @ virtue
-#: ../themeoptions/options.php:1785
+#: ../themeoptions/options.php:1790
 msgid "Custom CSS Box"
 msgstr "Benutzerdefinierte CSS Box"
 
 # @ virtue
-#: ../themeoptions/options.php:1790
+#: ../themeoptions/options.php:1795
 msgid "Custom CSS"
 msgstr "Benutzerdefinierter CSS"
 
 # @ virtue
-#: ../themeoptions/options.php:1791
+#: ../themeoptions/options.php:1796
 msgid "Quickly add some CSS to your theme by adding it to this block."
 msgstr ""
 "Addiert am schnellsten CSS zu ihren Thema durch Eintragung in diese Box."
 
 # @ virtue
-#: ../themeoptions/options.php:1799
+#: ../themeoptions/options.php:1804
 msgid "Theme Update Import"
 msgstr "Thema Update Import"
 
 # @ virtue
-#: ../themeoptions/options.php:1800
+#: ../themeoptions/options.php:1805
 msgid ""
 "If updating from version 1.5.6 or earlier use this script to update your "
 "theme options."
@@ -3244,22 +2976,22 @@ msgstr ""
 "dieses Skript zum aktullisieren Ihrer Themeneinstellungen."
 
 # @ virtue
-#: ../themeoptions/options.php:1805
+#: ../themeoptions/options.php:1810
 msgid "Turn on and save to start script"
 msgstr "Einschalten und speichere um das Skript zu starten"
 
 # @ virtue
-#: ../themeoptions/options.php:1812
+#: ../themeoptions/options.php:1817
 msgid "If using a child theme enter child theme folder"
 msgstr "Wenn Child-Thema verwendet, den Child-Thema Pfad angeben"
 
 # @ virtue
-#: ../themeoptions/options.php:1836 ../themeoptions/options.php:1837
+#: ../themeoptions/options.php:1841 ../themeoptions/options.php:1842
 msgid "Theme Options"
 msgstr "Thema Einstellungen"
 
 # @ virtue
-#: ../themeoptions/options.php:1843
+#: ../themeoptions/options.php:1848
 msgid ""
 "Thank you for using the Virtue Theme by <a href=\"http://kadencethemes.com/"
 "\" target=\"_blank\">Kadence Themes</a>."
@@ -3272,22 +3004,6 @@ msgstr ""
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:193
 msgid "Upload Icon"
 msgstr "Symbol hochladen"
-
-# @ virtue
-# @ redux-framework
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:127
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:195
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:125
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:190
-#: ../themeoptions/inc/fields/background/field_background.php:313
-#: ../themeoptions/inc/fields/media/field_media.php:156
-#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:75
-#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:79
-#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:82
-#: ../themeoptions/inc/fields/slides/field_slides.php:128
-#: ../themeoptions/inc/fields/slides/field_slides.php:192
-msgid "Remove"
-msgstr "Entfernen"
 
 # @ virtue
 #: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:132
@@ -3365,331 +3081,6 @@ msgstr "Entferne Slide"
 #: ../themeoptions/inc/fields/slides/field_slides.php:234
 msgid "Add Slide"
 msgstr "Slide hinzufügen"
-
-# @ redux-framework
-#: ../themeoptions/inc/class.redux_helpers.php:59
-msgid "Help improve Our Panel"
-msgstr "Helfe unser Panel zu verbessern"
-
-# @ redux-framework
-#: ../themeoptions/inc/class.redux_helpers.php:60
-msgid ""
-"Please helps us improve our panel by allowing us to gather anonymous usage "
-"stats so we know which configurations, plugins and themes to test with."
-msgstr ""
-"Bitte hilf uns unser Panele zu verbessern mit der Erlaubniss Anonyme "
-"Benutzungstatistiken zu samm, wir wissen welche Konfiguration, Plugins und "
-"Themen zum testen sind."
-
-# @ redux-framework
-#: ../themeoptions/inc/class.redux_helpers.php:65
-msgid "Allow tracking"
-msgstr "Datensammlung erlauben"
-
-# @ redux-framework
-#: ../themeoptions/inc/class.redux_helpers.php:70
-msgid "Do not allow tracking"
-msgstr "Datensammlung nicht erlauben"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/background/field_background.php:119
-#: ../themeoptions/inc/fields/color/field_color.php:72
-#: ../themeoptions/inc/fields/color_gradient/field_color_gradient.php:81
-#: ../themeoptions/inc/fields/color_gradient/field_color_gradient.php:91
-#: ../themeoptions/inc/fields/color_rgba/field_color_rgba.php:84
-msgid "Transparent"
-msgstr "Transparent"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/background/field_background.php:136
-msgid "Background Repeat"
-msgstr "Hintergrund wiederholen"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/background/field_background.php:152
-msgid "Background Clip"
-msgstr "Hintergrund bescheiden"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/background/field_background.php:168
-msgid "Background Origin"
-msgstr "Hintergrund Ursprung"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/background/field_background.php:183
-msgid "Background Size"
-msgstr "Hintergrund Größe"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/background/field_background.php:198
-msgid "Background Attachment"
-msgstr "Hintergrund Attachment"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/background/field_background.php:218
-msgid "Background Position"
-msgstr "Hintergrund Position"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/background/field_background.php:273
-#: ../themeoptions/inc/fields/media/field_media.php:116
-msgid "No media selected"
-msgstr "Keine Datei gewählt"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/border/field_border.php:125
-#: ../themeoptions/inc/fields/spacing/field_spacing.php:149
-msgid "Top"
-msgstr "Oben"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/border/field_border.php:132
-#: ../themeoptions/inc/fields/spacing/field_spacing.php:156
-msgid "Right"
-msgstr "Rechts"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/border/field_border.php:139
-#: ../themeoptions/inc/fields/spacing/field_spacing.php:163
-msgid "Bottom"
-msgstr "Unten"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/border/field_border.php:146
-#: ../themeoptions/inc/fields/spacing/field_spacing.php:170
-msgid "Left"
-msgstr "Links"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/border/field_border.php:162
-msgid "Border style"
-msgstr "Randstill"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/color_gradient/field_color_gradient.php:84
-msgid "To "
-msgstr "Zu "
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/dimensions/field_dimensions.php:139
-msgid "Width"
-msgstr "Breite"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/dimensions/field_dimensions.php:155
-msgid "height"
-msgstr "Höhe"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/dimensions/field_dimensions.php:168
-#: ../themeoptions/inc/fields/dimensions/field_dimensions.php:169
-#: ../themeoptions/inc/fields/spacing/field_spacing.php:181
-#: ../themeoptions/inc/fields/spacing/field_spacing.php:182
-msgid "Units"
-msgstr "Einheiten"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/gallery/field_gallery.php:77
-msgid "Add/Edit Gallery"
-msgstr "Hizufügen/Editieren Gallerie"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/gallery/field_gallery.php:78
-msgid "Clear Gallery"
-msgstr "Gallerie leeren"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/group/field_group.php:76
-msgid "New"
-msgstr "Neu"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/group/field_group.php:89
-msgid "New "
-msgstr "Neu "
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/group/field_group.php:138
-#: ../themeoptions/inc/fields/group/field_group.php:203
-msgid "Delete"
-msgstr "Löschen"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/group/field_group.php:208
-msgid "Add"
-msgstr "Hinzufügen"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/link_color/field_link_color.php:86
-msgid "Regular"
-msgstr "Regulär"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/link_color/field_link_color.php:90
-msgid "Hover"
-msgstr "Hover"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/link_color/field_link_color.php:94
-msgid "Visited"
-msgstr "Besucht"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/link_color/field_link_color.php:98
-msgid "Active"
-msgstr "Aktiv"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:65
-msgid "Add More"
-msgstr "Mehr hinzufügen"
-
-# @ redux-framework
-# @ woocommerce
-#: ../themeoptions/inc/fields/password/field_password.php:55
-#: ../woocommerce/shop/form-login.php:24
-msgid "Password"
-msgstr "Passwort"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/password/field_password.php:56
-msgid "Username"
-msgstr "Benutzername"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/select/field_select.php:79
-#: ../themeoptions/inc/fields/select_image/field_select_image.php:59
-msgid "Select an item"
-msgstr "Wähle ein Element"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/select/field_select.php:120
-#: ../themeoptions/inc/fields/select_image/field_select_image.php:134
-msgid "No items of this type were found."
-msgstr "Keine Einträge dieser Art wurden gefunden."
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/typography/field_typography.php:141
-msgid "Font family"
-msgstr "Schriftfamilie"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/typography/field_typography.php:151
-msgid "Standard Fonts"
-msgstr "Standardschriften"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/typography/field_typography.php:183
-#: ../themeoptions/inc/fields/typography/field_typography.php:187
-msgid "Font style"
-msgstr "Schriftstill"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/typography/field_typography.php:187
-msgid "Style"
-msgstr "Still"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/typography/field_typography.php:213
-msgid "Font subsets"
-msgstr "Schrift subsets"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/typography/field_typography.php:214
-msgid "Subsets"
-msgstr "Subsets"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/typography/field_typography.php:214
-msgid "Font script"
-msgstr "Schrfit Skript"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/typography/field_typography.php:232
-msgid "Size"
-msgstr "Größe"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/typography/field_typography.php:241
-msgid "Height"
-msgstr "Höhe"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/typography/field_typography.php:249
-msgid "Word Spacing"
-msgstr "Wort Abstand"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/typography/field_typography.php:257
-msgid "Letter Spacing"
-msgstr "Zeichen Abstand"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/typography/field_typography.php:271
-msgid "Backup Font Family"
-msgstr "Backup Schriftfamilie"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/typography/field_typography.php:291
-msgid "Font color"
-msgstr "Schriftfarbe"
-
-# @ redux-framework
-#: ../themeoptions/inc/fields/typography/field_typography.php:618
-msgid "Google Webfonts"
-msgstr "Google Webfonts"
-
-# @ redux-framework
-#: ../themeoptions/inc/validation/color/validation_color.php:15
-#: ../themeoptions/inc/validation/color_rgba/validation_color_rgba.php:15
-#: ../themeoptions/inc/validation/colorrgba/validation_colorrgba.php:15
-msgid "This field must be a valid color value."
-msgstr "Dieses Feld muß einen gültigen Farbwert haben."
-
-# @ redux-framework
-#: ../themeoptions/inc/validation/comma_numeric/validation_comma_numeric.php:15
-msgid ""
-"You must provide a comma separated list of numerical values for this option."
-msgstr ""
-"Bei dieser Einstellung müssen eine Komma getrennte Liste von numerischen "
-"Werten haben."
-
-# @ redux-framework
-#: ../themeoptions/inc/validation/date/validation_date.php:15
-msgid "This field must be a valid date."
-msgstr "Dieses Feld muß ein gültiges Datum haben."
-
-# @ redux-framework
-#: ../themeoptions/inc/validation/email/validation_email.php:15
-msgid "You must provide a valid email for this option."
-msgstr "Sie müssen eine gültige E-Mail Adresse für diese Einstellung haben."
-
-# @ redux-framework
-#: ../themeoptions/inc/validation/no_html/validation_no_html.php:15
-msgid ""
-"You must not enter any HTML in this field, all HTML tags have been removed."
-msgstr ""
-"Sie dürfen keinerlei HTML in dieses Feld eingeben, alle HTML-Tags werden "
-"entfernt."
-
-# @ redux-framework
-#: ../themeoptions/inc/validation/no_special_chars/validation_no_special_chars.php:15
-msgid ""
-"You must not enter any special characters in this field, all special "
-"characters have been removed."
-msgstr ""
-"Sie dürfen keinerlei Sonderzeichen in dieses Feld eingeben, alle "
-"Sonderzeichen werden  entfernt."
-
-# @ redux-framework
-#: ../themeoptions/inc/validation/numeric/validation_numeric.php:15
-msgid "You must provide a numerical value for this option."
-msgstr "Für diese Einstellungen müssen Sie nummerische Werte verwenden."
-
-# @ redux-framework
-#: ../themeoptions/inc/validation/url/validation_url.php:15
-msgid "You must provide a valid URL for this option."
-msgstr "Sie müssen eine gültige URL für dies Einstellung verwenden."
 
 # @ woocommerce
 #: ../woocommerce/single-product-reviews.php:21
@@ -4019,13 +3410,6 @@ msgid "Showing all %d results"
 msgstr "Zeige alle %d Ergebnisse"
 
 # @ woocommerce
-#: ../woocommerce/loop/result-count.php:32
-#, php-format
-msgctxt "%1$d = first, %2$d = last, %3$d = total"
-msgid "Showing %1$d–%2$d of %3$d results"
-msgstr "Ergebnis %1$d–%2$d von %3$d Ergebnisse"
-
-# @ woocommerce
 #: ../woocommerce/loop/sale-flash.php:16
 #: ../woocommerce/single-product/sale-flash.php:16
 msgid "Sale!"
@@ -4151,25 +3535,6 @@ msgid "Lost Password?"
 msgstr "Passwort verloren?"
 
 # @ woocommerce
-#: ../woocommerce/single-product/meta.php:19
-msgid "SKU:"
-msgstr "Bestandseinheit:"
-
-# @ woocommerce
-#: ../woocommerce/single-product/meta.php:24
-msgid "Category:"
-msgid_plural "Categories:"
-msgstr[0] "Kategorie:"
-msgstr[1] "Kategorien:"
-
-# @ woocommerce
-#: ../woocommerce/single-product/meta.php:29
-msgid "Tag:"
-msgid_plural "Tags:"
-msgstr[0] "Markierung:"
-msgstr[1] "Markierungen:"
-
-# @ woocommerce
 #: ../woocommerce/single-product/rating.php:23
 #, php-format
 msgid "Rated %s out of 5"
@@ -4204,12 +3569,6 @@ msgstr "Ihr Kommentar wird geprüft."
 #: ../woocommerce/single-product/review.php:43
 msgid "verified owner"
 msgstr "Verifizierter Inhaber"
-
-# @ woocommerce
-#: ../woocommerce/single-product/add-to-cart/quantity.php:12
-msgctxt "Product quantity input tooltip"
-msgid "Qty"
-msgstr "Anzahl"
 
 # @ woocommerce
 #: ../woocommerce/single-product/add-to-cart/variable.php:80

@@ -1,5 +1,5 @@
   <?php if(kadence_display_sidebar()) {$slide_sidebar = 848;} else {$slide_sidebar = 1140;}
-  global $post; $headcontent = get_post_meta( $post->ID, '_kad_blog_head', true );
+  global $post, $virtue; $headcontent = get_post_meta( $post->ID, '_kad_blog_head', true );
    $height = get_post_meta( $post->ID, '_kad_posthead_height', true ); if (!empty($height)) $slideheight = $height; else $slideheight = 400; 
     $swidth = get_post_meta( $post->ID, '_kad_posthead_width', true ); if (!empty($swidth)) $slidewidth = $swidth; else $slidewidth = $slide_sidebar; 
 ?>
@@ -12,7 +12,7 @@
               <section class="postfeat">
                 <div class="flexslider" style="max-width:<?php echo $slidewidth;?>px;">
                 <ul class="slides">
-                  <?php global $post;
+                  <?php
                       $image_gallery = get_post_meta( $post->ID, '_kad_image_gallery', true );
                           if(!empty($image_gallery)) {
                             $attachments = array_filter( explode( ',', $image_gallery ) );
@@ -56,11 +56,11 @@
         <?php } else if ($headcontent == 'video') { ?>
         <section class="postfeat">
           <div class="videofit">
-              <?php global $post; $video = get_post_meta( $post->ID, '_kad_post_video', true ); echo $video; ?>
+              <?php $video = get_post_meta( $post->ID, '_kad_post_video', true ); echo $video; ?>
           </div>
         </section>
         <?php } else if ($headcontent == 'image') { ?>
-                <?php global $post; $height = get_post_meta( $post->ID, '_kad_posthead_height', true ); if ($height != '') $slideheight = $height; else $slideheight = 350;             
+                <?php $height = get_post_meta( $post->ID, '_kad_posthead_height', true ); if ($height != '') $slideheight = $height; else $slideheight = 350;             
                     $thumb = get_post_thumbnail_id();
                     $img_url = wp_get_attachment_url( $thumb,'full' ); //get full URL to image (use "large" or "medium" if the images too big)
                     $image = aq_resize( $img_url, $slidewidth, $slideheight, true ); //resize & crop the image
@@ -81,10 +81,11 @@
     <footer class="single-footer">
       <?php $tags = get_the_tags(); if ($tags) { ?> <span class="posttags"><i class="icon-tag"></i> <?php the_tags('', ', ', ''); ?> </span><?php } ?>
 
-      <?php global $post; if(get_post_meta( $post->ID, '_kad_blog_author', true ) == 'yes') { virtue_author_box(); } ?>
-      <?php global $post; $blog_carousel_recent = get_post_meta( $post->ID, '_kad_blog_carousel_similar', true ); if ($blog_carousel_recent == 'similar') { get_template_part('templates/similarblog', 'carousel'); } else if($blog_carousel_recent == 'recent') {get_template_part('templates/recentblog', 'carousel');} ?>
+      <?php if(get_post_meta( $post->ID, '_kad_blog_author', true ) == 'yes') { virtue_author_box(); } ?>
+      <?php $blog_carousel_recent = get_post_meta( $post->ID, '_kad_blog_carousel_similar', true ); if ($blog_carousel_recent == 'similar') { get_template_part('templates/similarblog', 'carousel'); } else if($blog_carousel_recent == 'recent') {get_template_part('templates/recentblog', 'carousel');} ?>
 
       <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'virtue'), 'after' => '</p></nav>')); ?>
+      <?php if(isset($virtue['show_postlinks']) &&  $virtue['show_postlinks'] == 1) {get_template_part('templates/entry', 'post-links'); }?>
     </footer>
     <?php comments_template('/templates/comments.php'); ?>
   </article>

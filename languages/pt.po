@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Lite Virtue\n"
-"POT-Creation-Date: 2014-02-20 19:42-0700\n"
-"PO-Revision-Date: 2014-02-20 19:43-0700\n"
+"POT-Creation-Date: 2014-04-21 22:55-0700\n"
+"PO-Revision-Date: 2014-04-21 23:33-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: English\n"
@@ -31,21 +31,11 @@ msgstr ""
 msgid "an out-of-date link"
 msgstr ""
 
-#: ../archive.php:15 ../index.php:13 ../taxonomy-portfolio-type.php:12
+#: ../archive.php:16 ../index.php:13 ../taxonomy-portfolio-type.php:13
 msgid "Sorry, no results were found."
 msgstr ""
 
-#: ../archive.php:36 ../front-page.php:85 ../index.php:28 ../page-blog.php:61
-#: ../page-portfolio.php:111 ../taxonomy-portfolio-type.php:100
-msgid "&larr; Older posts"
-msgstr ""
-
-#: ../archive.php:37 ../front-page.php:86 ../index.php:29 ../page-blog.php:62
-#: ../page-portfolio.php:112 ../taxonomy-portfolio-type.php:101
-msgid "Newer posts &rarr;"
-msgstr ""
-
-#: ../page-blog.php:52 ../templates/recentblog-carousel.php:48
+#: ../page-blog.php:53 ../templates/recentblog-carousel.php:48
 #: ../templates/similarblog-carousel.php:52 ../templates/home/blog-home.php:84
 #: ../templates/home/latest-slider.php:32
 msgid "Sorry, no blog entries found."
@@ -109,7 +99,7 @@ msgstr ""
 msgid "Send Email"
 msgstr ""
 
-#: ../page-portfolio.php:101 ../templates/recentportfolio-carousel.php:42
+#: ../page-portfolio.php:102 ../templates/recentportfolio-carousel.php:42
 #: ../templates/home/portfolio-carousel.php:60
 msgid "Sorry, no portfolio entries found."
 msgstr ""
@@ -120,6 +110,14 @@ msgstr ""
 
 #: ../searchform.php:3
 msgid "Search"
+msgstr ""
+
+#: ../taxonomy-portfolio-type.php:101
+msgid "&larr; Older posts"
+msgstr ""
+
+#: ../taxonomy-portfolio-type.php:102
+msgid "Newer posts &rarr;"
 msgstr ""
 
 #: ../lib/authorbox.php:5
@@ -384,7 +382,7 @@ msgstr ""
 msgid "Return to the Dashboard"
 msgstr ""
 
-#: ../lib/cleanup.php:182
+#: ../lib/cleanup.php:164
 msgid "Continued"
 msgstr "leia mais"
 
@@ -401,59 +399,59 @@ msgstr ""
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../lib/custom-woocommerce.php:83 ../templates/header.php:29
+#: ../lib/custom-woocommerce.php:95 ../templates/header.php:30
 msgid "View your shopping cart"
 msgstr ""
 
-#: ../lib/custom-woocommerce.php:84 ../templates/header.php:30
+#: ../lib/custom-woocommerce.php:96 ../templates/header.php:31
 msgid "Your Cart"
 msgstr ""
 
-#: ../lib/custom.php:376
+#: ../lib/custom.php:356 ../templates/entry-post-links.php:3
 msgid "Previous Post"
 msgstr ""
 
-#: ../lib/custom.php:376
+#: ../lib/custom.php:356 ../templates/entry-post-links.php:6
 msgid "Next Post"
 msgstr ""
 
-#: ../lib/custom.php:468
+#: ../lib/custom.php:448
 msgid "Occupation"
 msgstr ""
 
-#: ../lib/custom.php:471
+#: ../lib/custom.php:451
 msgid "Please enter your Occupation."
 msgstr ""
 
-#: ../lib/custom.php:478
+#: ../lib/custom.php:458
 msgid "Please enter your Twitter username."
 msgstr ""
 
-#: ../lib/custom.php:485
+#: ../lib/custom.php:465
 msgid "Please enter your Facebook url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:492
+#: ../lib/custom.php:472
 msgid "Please enter your Google Plus url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:499
+#: ../lib/custom.php:479
 msgid "Please enter your Flickr url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:506
+#: ../lib/custom.php:486
 msgid "Please enter your Linkedin url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:513
+#: ../lib/custom.php:493
 msgid "Please enter your Dribbble url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:520
+#: ../lib/custom.php:500
 msgid "Please enter your Pinterest url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:527
+#: ../lib/custom.php:507
 msgid "Please enter your Instagram url. (be sure to include http://)"
 msgstr ""
 
@@ -549,7 +547,7 @@ msgid "Video"
 msgstr ""
 
 #: ../lib/metaboxes.php:101 ../lib/metaboxes.php:220 ../lib/metaboxes.php:439
-#: ../lib/widgets.php:784
+#: ../lib/widgets.php:794
 msgid "Image"
 msgstr ""
 
@@ -575,11 +573,12 @@ msgstr ""
 msgid "Post Summary"
 msgstr ""
 
-#: ../lib/metaboxes.php:122 ../themeoptions/framework.php:1571
+#: ../lib/metaboxes.php:122 ../lib/cmb/init.php:244
+#: ../themeoptions/framework.php:1584
 msgid "Default"
 msgstr ""
 
-#: ../lib/metaboxes.php:123 ../lib/widgets.php:790
+#: ../lib/metaboxes.php:123 ../lib/widgets.php:800
 msgid "Text"
 msgstr ""
 
@@ -838,10 +837,10 @@ msgid "Menu Order"
 msgstr ""
 
 #: ../lib/metaboxes.php:359
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:152
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:216
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:130
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:192
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:153
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:221
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:131
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:197
 #: ../themeoptions/inc/fields/slides/field_slides.php:133
 #: ../themeoptions/inc/fields/slides/field_slides.php:197
 msgid "Title"
@@ -1014,6 +1013,17 @@ msgstr ""
 msgid "Sidebar Options"
 msgstr ""
 
+#: ../lib/scripts.php:33
+msgid ""
+"Sorry, no products matched your selection. Please choose a different "
+"combination."
+msgstr ""
+
+#: ../lib/scripts.php:34
+msgid ""
+"Sorry, this product is unavailable. Please choose a different combination."
+msgstr ""
+
 #: ../lib/utils.php:69
 #, php-format
 msgid "Daily Archives: %s"
@@ -1056,7 +1066,7 @@ msgstr ""
 msgid "Primary Sidebar"
 msgstr ""
 
-#: ../lib/widgets.php:49 ../templates/header.php:39
+#: ../lib/widgets.php:49 ../templates/header.php:40
 msgid "Topbar Widget"
 msgstr ""
 
@@ -1088,8 +1098,8 @@ msgstr ""
 msgid "vCard"
 msgstr ""
 
-#: ../lib/widgets.php:277 ../lib/widgets.php:436 ../lib/widgets.php:589
-#: ../lib/widgets.php:727
+#: ../lib/widgets.php:277 ../lib/widgets.php:440 ../lib/widgets.php:597
+#: ../lib/widgets.php:735
 msgid "Title:"
 msgstr ""
 
@@ -1129,122 +1139,126 @@ msgstr ""
 msgid "Virtue: Social Links"
 msgstr ""
 
-#: ../lib/widgets.php:440
+#: ../lib/widgets.php:444
 msgid "Facebook:"
 msgstr ""
 
-#: ../lib/widgets.php:444
+#: ../lib/widgets.php:448
 msgid "Twitter:"
 msgstr ""
 
-#: ../lib/widgets.php:448
+#: ../lib/widgets.php:452
 msgid "Instagram:"
 msgstr ""
 
-#: ../lib/widgets.php:452
+#: ../lib/widgets.php:456
 msgid "GooglePlus:"
 msgstr ""
 
-#: ../lib/widgets.php:456
+#: ../lib/widgets.php:460
 msgid "Flickr:"
 msgstr ""
 
-#: ../lib/widgets.php:460
+#: ../lib/widgets.php:464
 msgid "Vimeo:"
 msgstr ""
 
-#: ../lib/widgets.php:464
+#: ../lib/widgets.php:468
 msgid "Youtube:"
 msgstr ""
 
-#: ../lib/widgets.php:468
+#: ../lib/widgets.php:472
 msgid "Pinterest:"
 msgstr ""
 
-#: ../lib/widgets.php:472
+#: ../lib/widgets.php:476
 msgid "Dribbble:"
 msgstr ""
 
-#: ../lib/widgets.php:476
+#: ../lib/widgets.php:480
 msgid "Linkedin:"
 msgstr ""
 
-#: ../lib/widgets.php:480
+#: ../lib/widgets.php:484
 msgid "Tumblr:"
 msgstr ""
 
-#: ../lib/widgets.php:484
+#: ../lib/widgets.php:488
+msgid "VK:"
+msgstr ""
+
+#: ../lib/widgets.php:492
 msgid "RSS:"
 msgstr ""
 
-#: ../lib/widgets.php:498
+#: ../lib/widgets.php:506
 msgid "This shows the most recent posts on your site with a thumbnail"
 msgstr ""
 
-#: ../lib/widgets.php:499
+#: ../lib/widgets.php:507
 msgid "Virtue: Recent Posts"
 msgstr ""
 
-#: ../lib/widgets.php:524
+#: ../lib/widgets.php:532
 msgid "Recent Posts"
 msgstr ""
 
-#: ../lib/widgets.php:592
+#: ../lib/widgets.php:600
 msgid "Number of posts to show:"
 msgstr ""
 
-#: ../lib/widgets.php:595
+#: ../lib/widgets.php:603
 msgid "Limit to Catagory (Optional):"
 msgstr ""
 
-#: ../lib/widgets.php:606
+#: ../lib/widgets.php:614
 msgid ""
 "This shows a grid of featured images from recent posts or portfolio items"
 msgstr ""
 
-#: ../lib/widgets.php:607
+#: ../lib/widgets.php:615
 msgid "Virtue: Image Grid"
 msgstr ""
 
-#: ../lib/widgets.php:632
+#: ../lib/widgets.php:640
 msgid "Post Gallery"
 msgstr ""
 
-#: ../lib/widgets.php:730
+#: ../lib/widgets.php:738
 msgid "Grid Choice:"
 msgstr ""
 
-#: ../lib/widgets.php:732
+#: ../lib/widgets.php:740
 msgid "Blog Posts"
 msgstr ""
 
-#: ../lib/widgets.php:733
+#: ../lib/widgets.php:741
 msgid "Portfolio"
 msgstr ""
 
-#: ../lib/widgets.php:736
+#: ../lib/widgets.php:744
 msgid "If Post - Choose Category (Optional):"
 msgstr ""
 
-#: ../lib/widgets.php:739
+#: ../lib/widgets.php:747
 msgid "If Portfolio - Choose Type (Optional):"
 msgstr ""
 
-#: ../lib/widgets.php:742
+#: ../lib/widgets.php:750
 msgid "Number of images to show:"
 msgstr ""
 
-#: ../lib/widgets.php:758
+#: ../lib/widgets.php:768
 msgid "This allows for an image and a simple about text."
 msgstr ""
 
-#: ../lib/widgets.php:759
+#: ../lib/widgets.php:769
 msgid "Virtue: About with Image"
 msgstr ""
 
-#: ../lib/widgets.php:787
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:118
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:183
+#: ../lib/widgets.php:797
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:119
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:188
 #: ../themeoptions/inc/fields/background/field_background.php:307
 #: ../themeoptions/inc/fields/media/field_media.php:150
 #: ../themeoptions/inc/fields/slides/field_slides.php:121
@@ -1252,17 +1266,75 @@ msgstr ""
 msgid "Upload"
 msgstr ""
 
-#: ../lib/cmb/init.php:633
+#: ../lib/cmb/init.php:243
+msgid "Clear"
+msgstr ""
+
+#: ../lib/cmb/init.php:245
+msgid "Select Color"
+msgstr ""
+
+#: ../lib/cmb/init.php:246
+msgid "Current Color"
+msgstr ""
+
+#: ../lib/cmb/init.php:1185
+msgid "Save"
+msgstr ""
+
+#: ../lib/cmb/helpers/cmb_Meta_Box_ajax.php:47
 msgid "Please Try Again"
 msgstr ""
 
-#: ../lib/cmb/init.php:650
+#: ../lib/cmb/helpers/cmb_Meta_Box_ajax.php:131
 msgid "Remove Embed"
 msgstr ""
 
-#: ../lib/cmb/init.php:656
+#: ../lib/cmb/helpers/cmb_Meta_Box_ajax.php:134
 #, php-format
 msgid "No oEmbed Results Found for %s. View more info at"
+msgstr ""
+
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:150
+msgid "Add Row"
+msgstr ""
+
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:178
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:547
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:590
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:127
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:195
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:125
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:190
+#: ../themeoptions/inc/fields/background/field_background.php:313
+#: ../themeoptions/inc/fields/media/field_media.php:156
+#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:75
+#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:79
+#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:82
+#: ../themeoptions/inc/fields/slides/field_slides.php:128
+#: ../themeoptions/inc/fields/slides/field_slides.php:192
+msgid "Remove"
+msgstr ""
+
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:523
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:563
+msgid "Add or Upload File"
+msgstr ""
+
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:536
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:582
+msgid "Remove Image"
+msgstr ""
+
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:547
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:590
+msgid "File:"
+msgstr ""
+
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:547
+#: ../lib/cmb/helpers/cmb_Meta_Box_types.php:590
+#: ../themeoptions/framework.php:2406
+msgid "Download"
 msgstr ""
 
 #: ../templates/comment.php:7
@@ -1353,7 +1425,7 @@ msgstr ""
 msgid "By"
 msgstr ""
 
-#: ../templates/header.php:76
+#: ../templates/header.php:77
 msgid "Menu"
 msgstr ""
 
@@ -1375,159 +1447,6 @@ msgstr "leia mais"
 
 #: ../templates/home/portfolio-carousel.php:2
 msgid "Featured Projects"
-msgstr ""
-
-#: ../themeoptions/framework.php:126 ../themeoptions/framework.php:132
-#: ../themeoptions/framework.php:305 ../themeoptions/framework.php:308
-msgid "Options"
-msgstr ""
-
-#: ../themeoptions/framework.php:302
-#, php-format
-msgid "Options panel created using %1$s"
-msgstr ""
-
-#: ../themeoptions/framework.php:302
-msgid "Redux Framework"
-msgstr ""
-
-#: ../themeoptions/framework.php:1293
-msgid "You have changes that are not saved. Would you like to save them now?"
-msgstr ""
-
-#: ../themeoptions/framework.php:1294
-msgid "Are you sure? Resetting will lose all custom values."
-msgstr ""
-
-#: ../themeoptions/framework.php:1295
-msgid "Are you sure? Resetting will lose all custom values in this section."
-msgstr ""
-
-#: ../themeoptions/framework.php:1296
-msgid ""
-"Your current options will be replaced with the values of this preset. Would "
-"you like to proceed?"
-msgstr ""
-
-#: ../themeoptions/framework.php:2137
-msgid "Warning- This options panel will not work properly without javascript!"
-msgstr ""
-
-#: ../themeoptions/framework.php:2199
-msgid "Expand"
-msgstr ""
-
-#: ../themeoptions/framework.php:2201 ../themeoptions/framework.php:2469
-msgid "Save Changes"
-msgstr ""
-
-#: ../themeoptions/framework.php:2203 ../themeoptions/framework.php:2471
-msgid "Reset Section"
-msgstr ""
-
-#: ../themeoptions/framework.php:2205 ../themeoptions/framework.php:2473
-msgid "Reset All"
-msgstr ""
-
-#: ../themeoptions/framework.php:2208 ../themeoptions/framework.php:2476
-msgid "Working..."
-msgstr ""
-
-#: ../themeoptions/framework.php:2219
-msgid "Settings Imported!"
-msgstr ""
-
-#: ../themeoptions/framework.php:2225
-msgid "Settings Saved!"
-msgstr ""
-
-#: ../themeoptions/framework.php:2232
-msgid "Settings have changed, you should save them!"
-msgstr ""
-
-#: ../themeoptions/framework.php:2233
-msgid "error(s) were found!"
-msgstr ""
-
-#: ../themeoptions/framework.php:2234
-msgid "warning(s) were found!"
-msgstr ""
-
-#: ../themeoptions/framework.php:2270
-msgid "Import / Export"
-msgstr ""
-
-#: ../themeoptions/framework.php:2286 ../themeoptions/framework.php:2401
-msgid "Options Object"
-msgstr ""
-
-#: ../themeoptions/framework.php:2300 ../themeoptions/framework.php:2419
-msgid "System Info"
-msgstr ""
-
-#: ../themeoptions/framework.php:2337
-msgid "Import / Export Options"
-msgstr ""
-
-#: ../themeoptions/framework.php:2338
-msgid "Import Options"
-msgstr ""
-
-#: ../themeoptions/framework.php:2339
-msgid "Import from file"
-msgstr ""
-
-#: ../themeoptions/framework.php:2339
-msgid "Import from URL"
-msgstr ""
-
-#: ../themeoptions/framework.php:2348
-msgid ""
-"Input your backup file below and hit Import to restore your sites options "
-"from a backup."
-msgstr ""
-
-#: ../themeoptions/framework.php:2362
-msgid ""
-"Input the URL to another sites options set and hit Import to load the "
-"options from that site."
-msgstr ""
-
-#: ../themeoptions/framework.php:2373
-msgid "Import"
-msgstr ""
-
-#: ../themeoptions/framework.php:2373
-msgid ""
-"WARNING! This will overwrite all existing option values, please proceed with "
-"caution!"
-msgstr ""
-
-#: ../themeoptions/framework.php:2376
-msgid "Export Options"
-msgstr ""
-
-#: ../themeoptions/framework.php:2382
-msgid ""
-"Here you can copy/download your current option settings. Keep this safe as "
-"you can use it as a backup should anything go wrong, or you can use it to "
-"restore your settings on this site (or any other site)."
-msgstr ""
-
-#: ../themeoptions/framework.php:2387
-msgid "Copy"
-msgstr ""
-
-#: ../themeoptions/framework.php:2387
-msgid "Download"
-msgstr ""
-
-#: ../themeoptions/framework.php:2387
-msgid "Copy Link"
-msgstr ""
-
-#: ../themeoptions/framework.php:2408
-msgid "Show Object in Javascript Console Object"
 msgstr ""
 
 #: ../themeoptions/options.php:38
@@ -2325,453 +2244,195 @@ msgstr ""
 msgid "Choose to show or hide author icon under post title."
 msgstr ""
 
+#: ../themeoptions/options.php:1722
+msgid "Show Previous and Next posts links?"
+msgstr ""
+
 #: ../themeoptions/options.php:1723
+msgid ""
+"Choose to show or hide previous and next post links in the footer of a "
+"single post."
+msgstr ""
+
+#: ../themeoptions/options.php:1730
 msgid "Custom Favicon"
 msgstr ""
 
-#: ../themeoptions/options.php:1724
+#: ../themeoptions/options.php:1731
 msgid ""
 "Upload a 16px x 16px png/gif/ico image that will represent your website "
 "favicon."
 msgstr ""
 
-#: ../themeoptions/options.php:1729
+#: ../themeoptions/options.php:1736
 msgid "Contact Form Email"
 msgstr ""
 
-#: ../themeoptions/options.php:1730
+#: ../themeoptions/options.php:1737
 msgid "Sets the email for the contact page email form."
 msgstr ""
 
-#: ../themeoptions/options.php:1732
-msgid "Enter a valid email address."
-msgstr ""
-
-#: ../themeoptions/options.php:1738
+#: ../themeoptions/options.php:1743
 msgid "Footer Copyright Text"
 msgstr ""
 
-#: ../themeoptions/options.php:1739
+#: ../themeoptions/options.php:1744
 msgid ""
 "Write your own copyright text here. You can use the following shortcodes in "
 "your footer text: [copyright] [site-name] [the-year]"
 msgstr ""
 
-#: ../themeoptions/options.php:1745
-msgid "Blog Post Defualts"
+#: ../themeoptions/options.php:1750
+msgid "Blog Post Defaults"
 msgstr ""
 
-#: ../themeoptions/options.php:1750
+#: ../themeoptions/options.php:1755
 msgid "Blog Post Summary Default"
 msgstr ""
 
-#: ../themeoptions/options.php:1758
+#: ../themeoptions/options.php:1763
 msgid "Create Sidebars"
 msgstr ""
 
-#: ../themeoptions/options.php:1763
+#: ../themeoptions/options.php:1768
 msgid "Create Custom Sidebars"
 msgstr ""
 
-#: ../themeoptions/options.php:1764
+#: ../themeoptions/options.php:1769
 msgid "Type new sidebar name into textbox"
 msgstr ""
 
-#: ../themeoptions/options.php:1765
+#: ../themeoptions/options.php:1770
 msgid "Extra Sidebar"
 msgstr ""
 
-#: ../themeoptions/options.php:1770
+#: ../themeoptions/options.php:1775
 msgid "Wordpress Galleries"
 msgstr ""
 
-#: ../themeoptions/options.php:1775
+#: ../themeoptions/options.php:1780
 msgid "Enable Virtue Galleries to override Wordpress"
 msgstr ""
 
-#: ../themeoptions/options.php:1776
+#: ../themeoptions/options.php:1781
 msgid ""
 "Disable this if using a plugin to customize galleries, for example jetpack "
 "tiled gallery."
 msgstr ""
 
-#: ../themeoptions/options.php:1784
+#: ../themeoptions/options.php:1789
 msgid "Advanced Settings"
 msgstr ""
 
-#: ../themeoptions/options.php:1785
+#: ../themeoptions/options.php:1790
 msgid "Custom CSS Box"
 msgstr ""
 
-#: ../themeoptions/options.php:1790
+#: ../themeoptions/options.php:1795
 msgid "Custom CSS"
 msgstr ""
 
-#: ../themeoptions/options.php:1791
+#: ../themeoptions/options.php:1796
 msgid "Quickly add some CSS to your theme by adding it to this block."
 msgstr ""
 
-#: ../themeoptions/options.php:1799
+#: ../themeoptions/options.php:1804
 msgid "Theme Update Import"
 msgstr ""
 
-#: ../themeoptions/options.php:1800
+#: ../themeoptions/options.php:1805
 msgid ""
 "If updating from version 1.5.6 or earlier use this script to update your "
 "theme options."
 msgstr ""
 
-#: ../themeoptions/options.php:1805
+#: ../themeoptions/options.php:1810
 msgid "Turn on and save to start script"
 msgstr ""
 
-#: ../themeoptions/options.php:1812
+#: ../themeoptions/options.php:1817
 msgid "If using a child theme enter child theme folder"
 msgstr ""
 
-#: ../themeoptions/options.php:1836 ../themeoptions/options.php:1837
+#: ../themeoptions/options.php:1841 ../themeoptions/options.php:1842
 msgid "Theme Options"
 msgstr ""
 
-#: ../themeoptions/options.php:1843
+#: ../themeoptions/options.php:1848
 msgid ""
 "Thank you for using the Virtue Theme by <a href=\"http://kadencethemes.com/"
 "\" target=\"_blank\">Kadence Themes</a>."
 msgstr ""
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:120
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:188
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:121
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:193
 msgid "Upload Icon"
 msgstr ""
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:126
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:190
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:124
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:185
-#: ../themeoptions/inc/fields/background/field_background.php:313
-#: ../themeoptions/inc/fields/media/field_media.php:156
-#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:75
-#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:79
-#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:82
-#: ../themeoptions/inc/fields/slides/field_slides.php:128
-#: ../themeoptions/inc/fields/slides/field_slides.php:192
-msgid "Remove"
-msgstr ""
-
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:131
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:195
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:132
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:200
 msgid "Select an Icon"
 msgstr ""
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:151
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:214
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:129
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:190
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:152
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:219
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:130
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:195
 #: ../themeoptions/inc/fields/slides/field_slides.php:137
 #: ../themeoptions/inc/fields/slides/field_slides.php:201
 msgid "URL"
 msgstr ""
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:153
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:218
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:131
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:194
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:154
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:223
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:132
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:199
 #: ../themeoptions/inc/fields/slides/field_slides.php:135
 #: ../themeoptions/inc/fields/slides/field_slides.php:199
 msgid "Description"
 msgstr ""
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:154
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:220
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:155
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:225
 msgid "Icon Link"
 msgstr ""
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:166
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:229
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:159
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:230
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:137
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:206
+msgid "Open Link in New Tab/Window"
+msgstr ""
+
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:171
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:239
 msgid "Delete Icon"
 msgstr ""
 
-#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:232
+#: ../themeoptions/extensions/edd/kad_icons/field_kad_icons.php:242
 msgid "Add Icon"
 msgstr ""
 
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:132
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:196
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:133
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:201
 msgid "Slide Link"
 msgstr ""
 
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:141
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:205
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:146
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:215
 msgid "Select an Option"
 msgstr ""
 
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:161
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:225
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:166
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:235
 #: ../themeoptions/inc/fields/slides/field_slides.php:168
 #: ../themeoptions/inc/fields/slides/field_slides.php:231
 msgid "Delete Slide"
 msgstr ""
 
-#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:228
+#: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:238
 #: ../themeoptions/inc/fields/slides/field_slides.php:234
 msgid "Add Slide"
-msgstr ""
-
-#: ../themeoptions/inc/class.redux_helpers.php:59
-msgid "Help improve Our Panel"
-msgstr ""
-
-#: ../themeoptions/inc/class.redux_helpers.php:60
-msgid ""
-"Please helps us improve our panel by allowing us to gather anonymous usage "
-"stats so we know which configurations, plugins and themes to test with."
-msgstr ""
-
-#: ../themeoptions/inc/class.redux_helpers.php:65
-msgid "Allow tracking"
-msgstr ""
-
-#: ../themeoptions/inc/class.redux_helpers.php:70
-msgid "Do not allow tracking"
-msgstr ""
-
-#: ../themeoptions/inc/fields/background/field_background.php:119
-#: ../themeoptions/inc/fields/color/field_color.php:72
-#: ../themeoptions/inc/fields/color_gradient/field_color_gradient.php:81
-#: ../themeoptions/inc/fields/color_gradient/field_color_gradient.php:91
-#: ../themeoptions/inc/fields/color_rgba/field_color_rgba.php:84
-msgid "Transparent"
-msgstr ""
-
-#: ../themeoptions/inc/fields/background/field_background.php:136
-msgid "Background Repeat"
-msgstr ""
-
-#: ../themeoptions/inc/fields/background/field_background.php:152
-msgid "Background Clip"
-msgstr ""
-
-#: ../themeoptions/inc/fields/background/field_background.php:168
-msgid "Background Origin"
-msgstr ""
-
-#: ../themeoptions/inc/fields/background/field_background.php:183
-msgid "Background Size"
-msgstr ""
-
-#: ../themeoptions/inc/fields/background/field_background.php:198
-msgid "Background Attachment"
-msgstr ""
-
-#: ../themeoptions/inc/fields/background/field_background.php:218
-msgid "Background Position"
-msgstr ""
-
-#: ../themeoptions/inc/fields/background/field_background.php:273
-#: ../themeoptions/inc/fields/media/field_media.php:116
-msgid "No media selected"
-msgstr ""
-
-#: ../themeoptions/inc/fields/border/field_border.php:125
-#: ../themeoptions/inc/fields/spacing/field_spacing.php:149
-msgid "Top"
-msgstr ""
-
-#: ../themeoptions/inc/fields/border/field_border.php:132
-#: ../themeoptions/inc/fields/spacing/field_spacing.php:156
-msgid "Right"
-msgstr ""
-
-#: ../themeoptions/inc/fields/border/field_border.php:139
-#: ../themeoptions/inc/fields/spacing/field_spacing.php:163
-msgid "Bottom"
-msgstr ""
-
-#: ../themeoptions/inc/fields/border/field_border.php:146
-#: ../themeoptions/inc/fields/spacing/field_spacing.php:170
-msgid "Left"
-msgstr ""
-
-#: ../themeoptions/inc/fields/border/field_border.php:162
-msgid "Border style"
-msgstr ""
-
-#: ../themeoptions/inc/fields/color_gradient/field_color_gradient.php:84
-msgid "To "
-msgstr ""
-
-#: ../themeoptions/inc/fields/dimensions/field_dimensions.php:139
-msgid "Width"
-msgstr ""
-
-#: ../themeoptions/inc/fields/dimensions/field_dimensions.php:155
-msgid "height"
-msgstr ""
-
-#: ../themeoptions/inc/fields/dimensions/field_dimensions.php:168
-#: ../themeoptions/inc/fields/dimensions/field_dimensions.php:169
-#: ../themeoptions/inc/fields/spacing/field_spacing.php:181
-#: ../themeoptions/inc/fields/spacing/field_spacing.php:182
-msgid "Units"
-msgstr ""
-
-#: ../themeoptions/inc/fields/gallery/field_gallery.php:77
-msgid "Add/Edit Gallery"
-msgstr ""
-
-#: ../themeoptions/inc/fields/gallery/field_gallery.php:78
-msgid "Clear Gallery"
-msgstr ""
-
-#: ../themeoptions/inc/fields/group/field_group.php:76
-msgid "New"
-msgstr ""
-
-#: ../themeoptions/inc/fields/group/field_group.php:89
-msgid "New "
-msgstr ""
-
-#: ../themeoptions/inc/fields/group/field_group.php:138
-#: ../themeoptions/inc/fields/group/field_group.php:203
-msgid "Delete"
-msgstr ""
-
-#: ../themeoptions/inc/fields/group/field_group.php:208
-msgid "Add"
-msgstr ""
-
-#: ../themeoptions/inc/fields/link_color/field_link_color.php:86
-msgid "Regular"
-msgstr ""
-
-#: ../themeoptions/inc/fields/link_color/field_link_color.php:90
-msgid "Hover"
-msgstr ""
-
-#: ../themeoptions/inc/fields/link_color/field_link_color.php:94
-msgid "Visited"
-msgstr ""
-
-#: ../themeoptions/inc/fields/link_color/field_link_color.php:98
-msgid "Active"
-msgstr ""
-
-#: ../themeoptions/inc/fields/multi_text/field_multi_text.php:65
-msgid "Add More"
-msgstr ""
-
-#: ../themeoptions/inc/fields/password/field_password.php:55
-#: ../woocommerce/shop/form-login.php:24
-msgid "Password"
-msgstr ""
-
-#: ../themeoptions/inc/fields/password/field_password.php:56
-msgid "Username"
-msgstr ""
-
-#: ../themeoptions/inc/fields/select/field_select.php:79
-#: ../themeoptions/inc/fields/select_image/field_select_image.php:59
-msgid "Select an item"
-msgstr ""
-
-#: ../themeoptions/inc/fields/select/field_select.php:120
-#: ../themeoptions/inc/fields/select_image/field_select_image.php:134
-msgid "No items of this type were found."
-msgstr ""
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:141
-msgid "Font family"
-msgstr ""
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:151
-msgid "Standard Fonts"
-msgstr ""
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:187
-#: ../themeoptions/inc/fields/typography/field_typography.php:191
-msgid "Font style"
-msgstr ""
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:191
-msgid "Style"
-msgstr ""
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:217
-msgid "Font subsets"
-msgstr ""
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:218
-msgid "Subsets"
-msgstr ""
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:218
-msgid "Font script"
-msgstr ""
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:236
-msgid "Size"
-msgstr ""
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:245
-msgid "Height"
-msgstr ""
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:253
-msgid "Word Spacing"
-msgstr ""
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:261
-msgid "Letter Spacing"
-msgstr ""
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:275
-msgid "Backup Font Family"
-msgstr ""
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:295
-msgid "Font color"
-msgstr ""
-
-#: ../themeoptions/inc/fields/typography/field_typography.php:622
-msgid "Google Webfonts"
-msgstr ""
-
-#: ../themeoptions/inc/validation/color/validation_color.php:15
-#: ../themeoptions/inc/validation/color_rgba/validation_color_rgba.php:15
-#: ../themeoptions/inc/validation/colorrgba/validation_colorrgba.php:15
-msgid "This field must be a valid color value."
-msgstr ""
-
-#: ../themeoptions/inc/validation/comma_numeric/validation_comma_numeric.php:15
-msgid ""
-"You must provide a comma separated list of numerical values for this option."
-msgstr ""
-
-#: ../themeoptions/inc/validation/date/validation_date.php:15
-msgid "This field must be a valid date."
-msgstr ""
-
-#: ../themeoptions/inc/validation/email/validation_email.php:15
-msgid "You must provide a valid email for this option."
-msgstr ""
-
-#: ../themeoptions/inc/validation/no_html/validation_no_html.php:15
-msgid ""
-"You must not enter any HTML in this field, all HTML tags have been removed."
-msgstr ""
-
-#: ../themeoptions/inc/validation/no_special_chars/validation_no_special_chars.php:15
-msgid ""
-"You must not enter any special characters in this field, all special "
-"characters have been removed."
-msgstr ""
-
-#: ../themeoptions/inc/validation/numeric/validation_numeric.php:15
-msgid "You must provide a numerical value for this option."
-msgstr ""
-
-#: ../themeoptions/inc/validation/url/validation_url.php:15
-msgid "You must provide a valid URL for this option."
 msgstr ""
 
 #: ../woocommerce/single-product-reviews.php:21
@@ -3131,30 +2792,6 @@ msgstr ""
 msgid "Lost Password?"
 msgstr ""
 
-#: ../woocommerce/single-product/meta.php:19
-msgid "SKU:"
-msgstr ""
-
-#: ../woocommerce/single-product/meta.php:24
-msgid "Category:"
-msgid_plural "Categories:"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../woocommerce/single-product/meta.php:29
-msgid "Tag:"
-msgid_plural "Tags:"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../woocommerce/single-product/product-attributes.php:28
-msgid "Weight"
-msgstr ""
-
-#: ../woocommerce/single-product/product-attributes.php:37
-msgid "Dimensions"
-msgstr ""
-
 #: ../woocommerce/single-product/rating.php:23
 #, php-format
 msgid "Rated %s out of 5"
@@ -3172,10 +2809,6 @@ msgid_plural "%s customer reviews"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../woocommerce/single-product/related.php:36
-msgid "Related Products"
-msgstr ""
-
 #: ../woocommerce/single-product/review.php:26
 #, php-format
 msgid "Rated %d out of 5"
@@ -3187,10 +2820,6 @@ msgstr ""
 
 #: ../woocommerce/single-product/review.php:43
 msgid "verified owner"
-msgstr ""
-
-#: ../woocommerce/single-product/up-sells.php:39
-msgid "You may also like&hellip;"
 msgstr ""
 
 #: ../woocommerce/single-product/add-to-cart/variable.php:80

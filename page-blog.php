@@ -25,7 +25,7 @@ Template Name: Blog
 
 					$blog_items = get_post_meta( $post->ID, '_kad_blog_items', true ); 
 					if($blog_items == 'all') {$blog_items = '-1';} 
-
+					$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 					$temp = $wp_query; 
 					$wp_query = null; 
 					$wp_query = new WP_Query();
@@ -34,6 +34,7 @@ Template Name: Blog
 						'category_name'=>$blog_cat_slug,
 						'posts_per_page' => $blog_items));
 					$count =0;
+
 					if ( $wp_query ) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
 					<?php if($summery == 'full') {
 							if($display_sidebar){
@@ -53,16 +54,21 @@ Template Name: Blog
 					<?php endif; ?>
                 
 				<?php if ($wp_query->max_num_pages > 1) : ?>
-				<?php if(function_exists('kad_wp_pagenavi')) { ?>
-        			<?php kad_wp_pagenavi(); ?>   
-        		<?php } else { ?>      
-			        <nav class="post-nav">
-		                <ul class="pager">
-		                  <li class="previous"><?php next_posts_link(__('&larr; Older posts', 'virtue')); ?></li>
-		                  <li class="next"><?php previous_posts_link(__('Newer posts &rarr;', 'virtue')); ?></li>
-		                </ul>
-		              </nav>
-        		<?php } ?> 
+				<?php $bignumber = 999999999;
+				$pagargs = array(
+					'base' => str_replace( $bignumber, '%#%', esc_url( get_pagenum_link( $bignumber ) ) ),
+					'format'       => '?page=%#%',
+					'total' => $wp_query->max_num_pages,
+					'current' => max( 1, get_query_var('paged') ),
+					'prev_next'    => True,
+					'prev_text'    => '«',
+					'next_text'    => '»',
+					'type'         => 'plain',
+				); ?>
+				<div class="wp-pagenavi">
+				<?php echo paginate_links( $pagargs ); ?>
+				</div>
+				
 				<?php endif; ?>
 				<?php $wp_query = null; $wp_query = $temp;  // Reset ?>
 				<?php wp_reset_query(); ?>

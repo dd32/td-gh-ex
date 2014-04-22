@@ -43,6 +43,7 @@ Template Name: Portfolio Grid
                    <?php $portfolio_lightbox = get_post_meta( $post->ID, '_kad_portfolio_lightbox', true ); if ($portfolio_lightbox == 'yes'){$plb = true;} else {$plb = false;}?>
                <div id="portfoliowrapper" class="rowtight">    
             <?php 
+            $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 				$temp = $wp_query; 
 				  $wp_query = null; 
 				  $wp_query = new WP_Query();
@@ -103,16 +104,23 @@ Template Name: Portfolio Grid
 				<?php endif; ?>
                 </div> <!--portfoliowrapper-->
                                     
-                    <?php if ($wp_query->max_num_pages > 1) : ?>
-                            <?php if(function_exists('kad_wp_pagenavi')) { ?>
-                            <?php kad_wp_pagenavi(); ?>   
-                            <?php } else { ?>      
-                            <nav id="post-nav" class="pager">
-                                <div class="previous"><?php next_posts_link(__('&larr; Older posts', 'virtue')); ?></div>
-                                <div class="next"><?php previous_posts_link(__('Newer posts &rarr;', 'virtue')); ?></div>
-                              </nav>
-                            <?php } ?> 
-                    <?php endif; ?>
+                   <?php if ($wp_query->max_num_pages > 1) : ?>
+				<?php $bignumber = 999999999;
+				$pagargs = array(
+					'base' => str_replace( $bignumber, '%#%', esc_url( get_pagenum_link( $bignumber ) ) ),
+					'format'       => '?page=%#%',
+					'total' => $wp_query->max_num_pages,
+					'current' => max( 1, get_query_var('paged') ),
+					'prev_next'    => True,
+					'prev_text'    => '«',
+					'next_text'    => '»',
+					'type'         => 'plain',
+				); ?>
+				<div class="wp-pagenavi">
+				<?php echo paginate_links( $pagargs ); ?>
+				</div>
+				
+				<?php endif; ?>
                     <?php 
                       $wp_query = null; 
                       $wp_query = $temp;  // Reset

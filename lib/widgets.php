@@ -34,7 +34,7 @@ function virtue_register_sidebars(){
 function virtue_register_sidebar($name, $id){
   register_sidebar(array('name'=>$name,
     'id' => $id,
-         'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-inner">',
+    'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-inner">',
     'after_widget' => '</div></section>',
     'before_title' => '<h3>',
     'after_title' => '</h3>',
@@ -58,7 +58,7 @@ function kadence_widgets_init() {
   register_sidebar(array(
     'name'          => __('Primary Sidebar', 'virtue'),
     'id'            => 'sidebar-primary',
-    'before_widget' => '<section class="widget %1$s %2$s"><div class="widget-inner">',
+    'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-inner">',
     'after_widget'  => '</div></section>',
     'before_title'  => '<h3>',
     'after_title'   => '</h3>',
@@ -357,6 +357,7 @@ class Kadence_Social_Widget extends WP_Widget {
     if (!isset($instance['dribbble'])) { $instance['dribbble'] = ''; }
     if (!isset($instance['linkedin'])) { $instance['linkedin'] = ''; }
     if (!isset($instance['tumblr'])) { $instance['tumblr'] = ''; }
+    if (!isset($instance['vk'])) { $instance['vk'] = ''; }
     if (!isset($instance['rss'])) { $instance['rss'] = ''; }
 
     echo $before_widget;
@@ -379,6 +380,7 @@ class Kadence_Social_Widget extends WP_Widget {
 <?php if(!empty($instance['dribbble'])):?><a href="<?php echo esc_url($instance['dribbble']); ?>" class="dribbble_link" title="Dribbble" target="_blank" data-toggle="tooltip" data-placement="top" data-original-title="Dribbble"><i class="icon-dribbble"></i></a><?php endif;?>
 <?php if(!empty($instance['linkedin'])):?><a href="<?php echo esc_url($instance['linkedin']); ?>" class="linkedin_link" title="LinkedIn" target="_blank" data-toggle="tooltip" data-placement="top" data-original-title="LinkedIn"><i class="icon-linkedin"></i></a><?php endif;?>
 <?php if(!empty($instance['tumblr'])):?><a href="<?php echo esc_url($instance['tumblr']); ?>" class="tumblr_link" title="Tumblr" target="_blank" data-toggle="tooltip" data-placement="top" data-original-title="Tumblr"><i class="icon-tumblr"></i></a><?php endif;?>
+<?php if(!empty($instance['vk'])):?><a href="<?php echo esc_url($instance['vk']); ?>" class="vk_link" title="VK" target="_blank" data-toggle="tooltip" data-placement="top" data-original-title="VK"><i class="icon-vk"></i></a><?php endif;?>
 <?php if(!empty($instance['rss'])):?><a href="<?php echo esc_url($instance['rss']); ?>" class="rss_link" title="RSS" target="_blank" data-toggle="tooltip" data-placement="top" data-original-title="RSS"><i class="icon-rss-sign"></i></a><?php endif;?>
     </div>
   <?php
@@ -402,6 +404,7 @@ class Kadence_Social_Widget extends WP_Widget {
     $instance['dribbble'] = strip_tags($new_instance['dribbble']);
     $instance['linkedin'] = strip_tags($new_instance['linkedin']);
     $instance['tumblr'] = strip_tags($new_instance['tumblr']);
+    $instance['vk'] = strip_tags($new_instance['vk']);
     $instance['rss'] = strip_tags($new_instance['rss']);
     $this->flush_widget_cache();
 
@@ -430,6 +433,7 @@ class Kadence_Social_Widget extends WP_Widget {
     $dribbble = isset($instance['dribbble']) ? esc_attr($instance['dribbble']) : '';
     $linkedin = isset($instance['linkedin']) ? esc_attr($instance['linkedin']) : '';
     $tumblr = isset($instance['tumblr']) ? esc_attr($instance['tumblr']) : '';
+    $vk = isset($instance['vk']) ? esc_attr($instance['vk']) : '';
     $rss = isset($instance['rss']) ? esc_attr($instance['rss']) : '';
   ?>
   <p>
@@ -479,6 +483,10 @@ class Kadence_Social_Widget extends WP_Widget {
     <p>
       <label for="<?php echo esc_attr($this->get_field_id('tumblr')); ?>"><?php _e('Tumblr:', 'virtue'); ?></label>
       <input class="widefat" id="<?php echo esc_attr($this->get_field_id('tumblr')); ?>" name="<?php echo esc_attr($this->get_field_name('tumblr')); ?>" type="text" value="<?php echo esc_attr($tumblr); ?>" />
+    </p>
+    <p>
+      <label for="<?php echo esc_attr($this->get_field_id('vk')); ?>"><?php _e('VK:', 'virtue'); ?></label>
+      <input class="widefat" id="<?php echo esc_attr($this->get_field_id('vk')); ?>" name="<?php echo esc_attr($this->get_field_name('vk')); ?>" type="text" value="<?php echo esc_attr($vk); ?>" />
     </p>
     <p>
       <label for="<?php echo esc_attr($this->get_field_id('rss')); ?>"><?php _e('RSS:', 'virtue'); ?></label>

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Lite Virtue\n"
-"POT-Creation-Date: 2014-04-02 16:55-0700\n"
-"PO-Revision-Date: 2014-04-02 16:55-0700\n"
+"POT-Creation-Date: 2014-04-21 22:55-0700\n"
+"PO-Revision-Date: 2014-04-21 22:55-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: English\n"
@@ -35,17 +35,7 @@ msgstr ""
 msgid "Sorry, no results were found."
 msgstr ""
 
-#: ../archive.php:37 ../front-page.php:85 ../index.php:28 ../page-blog.php:61
-#: ../page-portfolio.php:111 ../taxonomy-portfolio-type.php:101
-msgid "&larr; Older posts"
-msgstr ""
-
-#: ../archive.php:38 ../front-page.php:86 ../index.php:29 ../page-blog.php:62
-#: ../page-portfolio.php:112 ../taxonomy-portfolio-type.php:102
-msgid "Newer posts &rarr;"
-msgstr ""
-
-#: ../page-blog.php:52 ../templates/recentblog-carousel.php:48
+#: ../page-blog.php:53 ../templates/recentblog-carousel.php:48
 #: ../templates/similarblog-carousel.php:52 ../templates/home/blog-home.php:84
 #: ../templates/home/latest-slider.php:32
 msgid "Sorry, no blog entries found."
@@ -109,7 +99,7 @@ msgstr ""
 msgid "Send Email"
 msgstr ""
 
-#: ../page-portfolio.php:101 ../templates/recentportfolio-carousel.php:42
+#: ../page-portfolio.php:102 ../templates/recentportfolio-carousel.php:42
 #: ../templates/home/portfolio-carousel.php:60
 msgid "Sorry, no portfolio entries found."
 msgstr ""
@@ -120,6 +110,14 @@ msgstr ""
 
 #: ../searchform.php:3
 msgid "Search"
+msgstr ""
+
+#: ../taxonomy-portfolio-type.php:101
+msgid "&larr; Older posts"
+msgstr ""
+
+#: ../taxonomy-portfolio-type.php:102
+msgid "Newer posts &rarr;"
 msgstr ""
 
 #: ../lib/authorbox.php:5
@@ -384,7 +382,7 @@ msgstr ""
 msgid "Return to the Dashboard"
 msgstr ""
 
-#: ../lib/cleanup.php:168
+#: ../lib/cleanup.php:164
 msgid "Continued"
 msgstr ""
 
@@ -409,51 +407,51 @@ msgstr ""
 msgid "Your Cart"
 msgstr ""
 
-#: ../lib/custom.php:376
+#: ../lib/custom.php:356 ../templates/entry-post-links.php:3
 msgid "Previous Post"
 msgstr ""
 
-#: ../lib/custom.php:376
+#: ../lib/custom.php:356 ../templates/entry-post-links.php:6
 msgid "Next Post"
 msgstr ""
 
-#: ../lib/custom.php:468
+#: ../lib/custom.php:448
 msgid "Occupation"
 msgstr ""
 
-#: ../lib/custom.php:471
+#: ../lib/custom.php:451
 msgid "Please enter your Occupation."
 msgstr ""
 
-#: ../lib/custom.php:478
+#: ../lib/custom.php:458
 msgid "Please enter your Twitter username."
 msgstr ""
 
-#: ../lib/custom.php:485
+#: ../lib/custom.php:465
 msgid "Please enter your Facebook url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:492
+#: ../lib/custom.php:472
 msgid "Please enter your Google Plus url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:499
+#: ../lib/custom.php:479
 msgid "Please enter your Flickr url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:506
+#: ../lib/custom.php:486
 msgid "Please enter your Linkedin url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:513
+#: ../lib/custom.php:493
 msgid "Please enter your Dribbble url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:520
+#: ../lib/custom.php:500
 msgid "Please enter your Pinterest url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:527
+#: ../lib/custom.php:507
 msgid "Please enter your Instagram url. (be sure to include http://)"
 msgstr ""
 
@@ -549,7 +547,7 @@ msgid "Video"
 msgstr ""
 
 #: ../lib/metaboxes.php:101 ../lib/metaboxes.php:220 ../lib/metaboxes.php:439
-#: ../lib/widgets.php:786
+#: ../lib/widgets.php:794
 msgid "Image"
 msgstr ""
 
@@ -580,7 +578,7 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: ../lib/metaboxes.php:123 ../lib/widgets.php:792
+#: ../lib/metaboxes.php:123 ../lib/widgets.php:800
 msgid "Text"
 msgstr ""
 
@@ -1015,13 +1013,13 @@ msgstr ""
 msgid "Sidebar Options"
 msgstr ""
 
-#: ../lib/scripts.php:43
+#: ../lib/scripts.php:33
 msgid ""
 "Sorry, no products matched your selection. Please choose a different "
 "combination."
 msgstr ""
 
-#: ../lib/scripts.php:44
+#: ../lib/scripts.php:34
 msgid ""
 "Sorry, this product is unavailable. Please choose a different combination."
 msgstr ""
@@ -1100,8 +1098,8 @@ msgstr ""
 msgid "vCard"
 msgstr ""
 
-#: ../lib/widgets.php:277 ../lib/widgets.php:436 ../lib/widgets.php:589
-#: ../lib/widgets.php:727
+#: ../lib/widgets.php:277 ../lib/widgets.php:440 ../lib/widgets.php:597
+#: ../lib/widgets.php:735
 msgid "Title:"
 msgstr ""
 
@@ -1141,120 +1139,124 @@ msgstr ""
 msgid "Virtue: Social Links"
 msgstr ""
 
-#: ../lib/widgets.php:440
+#: ../lib/widgets.php:444
 msgid "Facebook:"
 msgstr ""
 
-#: ../lib/widgets.php:444
+#: ../lib/widgets.php:448
 msgid "Twitter:"
 msgstr ""
 
-#: ../lib/widgets.php:448
+#: ../lib/widgets.php:452
 msgid "Instagram:"
 msgstr ""
 
-#: ../lib/widgets.php:452
+#: ../lib/widgets.php:456
 msgid "GooglePlus:"
 msgstr ""
 
-#: ../lib/widgets.php:456
+#: ../lib/widgets.php:460
 msgid "Flickr:"
 msgstr ""
 
-#: ../lib/widgets.php:460
+#: ../lib/widgets.php:464
 msgid "Vimeo:"
 msgstr ""
 
-#: ../lib/widgets.php:464
+#: ../lib/widgets.php:468
 msgid "Youtube:"
 msgstr ""
 
-#: ../lib/widgets.php:468
+#: ../lib/widgets.php:472
 msgid "Pinterest:"
 msgstr ""
 
-#: ../lib/widgets.php:472
+#: ../lib/widgets.php:476
 msgid "Dribbble:"
 msgstr ""
 
-#: ../lib/widgets.php:476
+#: ../lib/widgets.php:480
 msgid "Linkedin:"
 msgstr ""
 
-#: ../lib/widgets.php:480
+#: ../lib/widgets.php:484
 msgid "Tumblr:"
 msgstr ""
 
-#: ../lib/widgets.php:484
+#: ../lib/widgets.php:488
+msgid "VK:"
+msgstr ""
+
+#: ../lib/widgets.php:492
 msgid "RSS:"
 msgstr ""
 
-#: ../lib/widgets.php:498
+#: ../lib/widgets.php:506
 msgid "This shows the most recent posts on your site with a thumbnail"
 msgstr ""
 
-#: ../lib/widgets.php:499
+#: ../lib/widgets.php:507
 msgid "Virtue: Recent Posts"
 msgstr ""
 
-#: ../lib/widgets.php:524
+#: ../lib/widgets.php:532
 msgid "Recent Posts"
 msgstr ""
 
-#: ../lib/widgets.php:592
+#: ../lib/widgets.php:600
 msgid "Number of posts to show:"
 msgstr ""
 
-#: ../lib/widgets.php:595
+#: ../lib/widgets.php:603
 msgid "Limit to Catagory (Optional):"
 msgstr ""
 
-#: ../lib/widgets.php:606
+#: ../lib/widgets.php:614
 msgid ""
 "This shows a grid of featured images from recent posts or portfolio items"
 msgstr ""
 
-#: ../lib/widgets.php:607
+#: ../lib/widgets.php:615
 msgid "Virtue: Image Grid"
 msgstr ""
 
-#: ../lib/widgets.php:632
+#: ../lib/widgets.php:640
 msgid "Post Gallery"
 msgstr ""
 
-#: ../lib/widgets.php:730
+#: ../lib/widgets.php:738
 msgid "Grid Choice:"
 msgstr ""
 
-#: ../lib/widgets.php:732
+#: ../lib/widgets.php:740
 msgid "Blog Posts"
 msgstr ""
 
-#: ../lib/widgets.php:733
+#: ../lib/widgets.php:741
 msgid "Portfolio"
 msgstr ""
 
-#: ../lib/widgets.php:736
+#: ../lib/widgets.php:744
 msgid "If Post - Choose Category (Optional):"
 msgstr ""
 
-#: ../lib/widgets.php:739
+#: ../lib/widgets.php:747
 msgid "If Portfolio - Choose Type (Optional):"
 msgstr ""
 
-#: ../lib/widgets.php:742
+#: ../lib/widgets.php:750
 msgid "Number of images to show:"
 msgstr ""
 
-#: ../lib/widgets.php:760
+#: ../lib/widgets.php:768
 msgid "This allows for an image and a simple about text."
 msgstr ""
 
-#: ../lib/widgets.php:761
+#: ../lib/widgets.php:769
 msgid "Virtue: About with Image"
 msgstr ""
 
-#: ../lib/widgets.php:789
+#: ../lib/widgets.php:797
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:119
 #: ../themeoptions/extensions/edd/kad_slides/field_kad_slides.php:188
 #: ../themeoptions/inc/fields/background/field_background.php:307
@@ -2391,115 +2393,121 @@ msgstr ""
 msgid "Choose to show or hide author icon under post title."
 msgstr ""
 
+#: ../themeoptions/options.php:1722
+msgid "Show Previous and Next posts links?"
+msgstr ""
+
 #: ../themeoptions/options.php:1723
+msgid ""
+"Choose to show or hide previous and next post links in the footer of a "
+"single post."
+msgstr ""
+
+#: ../themeoptions/options.php:1730
 msgid "Custom Favicon"
 msgstr ""
 
-#: ../themeoptions/options.php:1724
+#: ../themeoptions/options.php:1731
 msgid ""
 "Upload a 16px x 16px png/gif/ico image that will represent your website "
 "favicon."
 msgstr ""
 
-#: ../themeoptions/options.php:1729
+#: ../themeoptions/options.php:1736
 msgid "Contact Form Email"
 msgstr ""
 
-#: ../themeoptions/options.php:1730
+#: ../themeoptions/options.php:1737
 msgid "Sets the email for the contact page email form."
 msgstr ""
 
-#: ../themeoptions/options.php:1732
-msgid "Enter a valid email address."
-msgstr ""
-
-#: ../themeoptions/options.php:1738
+#: ../themeoptions/options.php:1743
 msgid "Footer Copyright Text"
 msgstr ""
 
-#: ../themeoptions/options.php:1739
+#: ../themeoptions/options.php:1744
 msgid ""
 "Write your own copyright text here. You can use the following shortcodes in "
 "your footer text: [copyright] [site-name] [the-year]"
 msgstr ""
 
-#: ../themeoptions/options.php:1745
+#: ../themeoptions/options.php:1750
 msgid "Blog Post Defaults"
 msgstr ""
 
-#: ../themeoptions/options.php:1750
+#: ../themeoptions/options.php:1755
 msgid "Blog Post Summary Default"
 msgstr ""
 
-#: ../themeoptions/options.php:1758
+#: ../themeoptions/options.php:1763
 msgid "Create Sidebars"
 msgstr ""
 
-#: ../themeoptions/options.php:1763
+#: ../themeoptions/options.php:1768
 msgid "Create Custom Sidebars"
 msgstr ""
 
-#: ../themeoptions/options.php:1764
+#: ../themeoptions/options.php:1769
 msgid "Type new sidebar name into textbox"
 msgstr ""
 
-#: ../themeoptions/options.php:1765
+#: ../themeoptions/options.php:1770
 msgid "Extra Sidebar"
 msgstr ""
 
-#: ../themeoptions/options.php:1770
+#: ../themeoptions/options.php:1775
 msgid "Wordpress Galleries"
 msgstr ""
 
-#: ../themeoptions/options.php:1775
+#: ../themeoptions/options.php:1780
 msgid "Enable Virtue Galleries to override Wordpress"
 msgstr ""
 
-#: ../themeoptions/options.php:1776
+#: ../themeoptions/options.php:1781
 msgid ""
 "Disable this if using a plugin to customize galleries, for example jetpack "
 "tiled gallery."
 msgstr ""
 
-#: ../themeoptions/options.php:1784
+#: ../themeoptions/options.php:1789
 msgid "Advanced Settings"
 msgstr ""
 
-#: ../themeoptions/options.php:1785
+#: ../themeoptions/options.php:1790
 msgid "Custom CSS Box"
 msgstr ""
 
-#: ../themeoptions/options.php:1790
+#: ../themeoptions/options.php:1795
 msgid "Custom CSS"
 msgstr ""
 
-#: ../themeoptions/options.php:1791
+#: ../themeoptions/options.php:1796
 msgid "Quickly add some CSS to your theme by adding it to this block."
 msgstr ""
 
-#: ../themeoptions/options.php:1799
+#: ../themeoptions/options.php:1804
 msgid "Theme Update Import"
 msgstr ""
 
-#: ../themeoptions/options.php:1800
+#: ../themeoptions/options.php:1805
 msgid ""
 "If updating from version 1.5.6 or earlier use this script to update your "
 "theme options."
 msgstr ""
 
-#: ../themeoptions/options.php:1805
+#: ../themeoptions/options.php:1810
 msgid "Turn on and save to start script"
 msgstr ""
 
-#: ../themeoptions/options.php:1812
+#: ../themeoptions/options.php:1817
 msgid "If using a child theme enter child theme folder"
 msgstr ""
 
-#: ../themeoptions/options.php:1836 ../themeoptions/options.php:1837
+#: ../themeoptions/options.php:1841 ../themeoptions/options.php:1842
 msgid "Theme Options"
 msgstr ""
 
-#: ../themeoptions/options.php:1843
+#: ../themeoptions/options.php:1848
 msgid ""
 "Thank you for using the Virtue Theme by <a href=\"http://kadencethemes.com/"
 "\" target=\"_blank\">Kadence Themes</a>."
