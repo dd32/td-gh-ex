@@ -12,13 +12,19 @@ $ak_settings = get_option( 'ak_options', $ak_options );
 $event_category = $ak_settings['event_cat'];
 $show_events = $ak_settings['rightsidebar_show_latest_events'];
 $testimonail_category = $ak_settings['testimonial_cat'];
+$blog_category = $ak_settings['blog_cat'];
 $show_testimonials = $ak_settings['rightsidebar_show_testimonials'];
 $post_class = get_post_meta( $post -> ID, 'ak_sidebar_layout', true );
 
 if($post_class=='right-sidebar' || $post_class=='both-sidebar' || empty($post_class)){
 ?>
 	<div id="secondary-right" class="widget-area right-sidebar sidebar">
-			<?php
+		<?php
+        if(!empty($blog_category) && is_category($blog_category)){
+          if ( is_active_sidebar( 'blog-sidebar' ) ) :
+			 dynamic_sidebar( 'blog-sidebar' );
+		  endif; 
+        }else{
 			if($show_events==1) {
 				if(!empty($event_category)){
 				$loop = new WP_Query( array(
@@ -163,5 +169,6 @@ if($post_class=='right-sidebar' || $post_class=='both-sidebar' || empty($post_cl
 		<?php if ( is_active_sidebar( 'right-sidebar' ) ) : ?>
 			<?php dynamic_sidebar( 'right-sidebar' ); ?>
 		<?php endif; ?>
+        <?php } ?>
 	</div><!-- #secondary -->
 <?php } ?>

@@ -5,6 +5,8 @@
  * @package AccesspressLite
  */
 
+
+if ( ! function_exists( 'accesspresslite_setup' ) ) :
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
@@ -12,7 +14,6 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 640; /* pixels */
 }
 
-if ( ! function_exists( 'accesspresslite_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -48,7 +49,7 @@ function accesspresslite_setup() {
 
 	add_image_size( 'event-thumbnail', 135, 100, true); //Latest News Events Small Image
 	add_image_size( 'featured-thumbnail', 350, 245, true); //Featured Image
-	add_image_size( 'portfolio-thumbnail', 400, 450, true); //Small Featured Image		
+	add_image_size( 'portfolio-thumbnail', 400, 450, true); //Portfolio Image		
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(

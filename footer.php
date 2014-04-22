@@ -42,12 +42,14 @@
 				<?php if ( is_active_sidebar( 'footer-4' ) ) : ?>
 					<?php dynamic_sidebar( 'footer-4' ); ?>
 				<?php else:
-				if(!empty($ak_settings['google_map'])) { ?>
+                if(!empty($ak_settings['google_map']) || !empty($ak_settings['contact_address'])){ ?>
+                    
+                    <h1 class="widget-title">Find Us</h1>
+				    <?php if(!empty($ak_settings['google_map'])) { ?>
 
-					<h1 class="widget-title">Contact Us</h1>
-						<div class="ak-google-map"><?php echo $ak_settings['google_map']; ?></div>
+                        <div class="ak-google-map"><?php echo $ak_settings['google_map']; ?></div>
 						
-						<?php
+						<?php }
 						if(!empty($ak_settings['contact_address'])) { ?>
 						
 						<div class="ak-contact-address"><?php echo $ak_settings['contact_address']; ?></div>

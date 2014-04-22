@@ -27,6 +27,7 @@ $ak_options = array(
 	'menu_alignment'=>'Left',
 	'welcome_post' => '',
 	'show_fontawesome' => false,
+    'big_icons' => false,
 	'featured_post1' => '',
 	'featured_post2' => '',
 	'featured_post3' => '',
@@ -310,8 +311,9 @@ function ak_theme_options_page() {
 					<tr>
 					<th scope="row"><label for="header_text">Header Text</label></th>
 					<td>
-					<textarea id="header_text" name="ak_options[header_text]" rows="5" cols="30" placeholder="Example.. Call Us : 985XXX9856XX"><?php echo $settings['header_text']; ?></textarea>					</td>
-					</tr>
+					<textarea id="header_text" name="ak_options[header_text]" rows="5" cols="30" placeholder="Example.. Call Us : 985XXX9856XX"><?php echo $settings['header_text']; ?></textarea><br />
+                    <em class="f13">Html content allowed</em> </td>
+                    </tr>
 
 					<tr><th scope="row"><label for="menu_alignment">Menu Alignment</label></th>
 					<td>
@@ -402,7 +404,15 @@ function ak_theme_options_page() {
                             <em class="f13">(If enabled the featured image will be replaced by Font Awesome Icon. For lists of icons click <a href="http://fontawesome.io/icons/" target="_blank">here</a>)</em>
 						</td>
 					</tr>
-
+                    
+                    <tr>
+						<th><label for="big_icons">Show Big Font Awesome icon with center aligned</th>
+						<td>
+							<input type="checkbox" id="big_icons" name="ak_options[big_icons]" value="1" <?php checked( true, $settings['big_icons'] ); ?> />
+							<label for="big_icons">Check to enable </label><br />
+						</td>
+					</tr>
+                    
 					<tr><th scope="row"><label for="featured_post1">Featured Post 1</label></th>
 					<td>
 					<select id="featured_post1" name="ak_options[featured_post1]">
@@ -909,7 +919,10 @@ function ak_validate_options( $input ) {
     $input['featured_post1_icon'] = sanitize_text_field( $input['featured_post1_icon'] );
     $input['featured_post2_icon'] = sanitize_text_field( $input['featured_post2_icon'] );
     $input['featured_post3_icon'] = sanitize_text_field( $input['featured_post3_icon'] );
-    $input['event_cat'] = sanitize_text_field( $input['event_cat'] );
+    $input['event_cat'] = wp_filter_nohtml_kses( $input['event_cat'] );
+    $input['blog_cat'] = wp_filter_nohtml_kses( $input['blog_cat'] );
+    $input['testimonial_cat'] = wp_filter_nohtml_kses( $input['testimonial_cat'] );
+    $input['portfolio_cat'] = wp_filter_nohtml_kses( $input['portfolio_cat'] );
     $input['menu_alignment'] = wp_filter_nohtml_kses( $input['menu_alignment'] );
     $input['slider_speed'] = sanitize_text_field( $input['slider_speed'] );
     $input['footer_copyright'] = sanitize_text_field( $input['footer_copyright'] );
@@ -917,7 +930,7 @@ function ak_validate_options( $input ) {
     // We select the previous value of the field, to restore it in case an invalid entry has been given
 	$prev = $settings['featured_post1'];
 	// We verify if the given value exists in the layouts array
-	if ( !array_key_exists( $input['featured_post2'], $ak_postlist ) )
+	if ( !array_key_exists( $input['featured_post1'], $ak_postlist ) )
 		$input['featured_post1'] = $prev;
 
 	$prev = $settings['featured_post2'];
@@ -952,6 +965,12 @@ function ak_validate_options( $input ) {
 	$prev = $settings['slider_caption'];
 	if ( !array_key_exists( $input['slider_caption'], $ak_slider_caption ) )
 		$input['slider_caption'] = $prev;
+        
+    if (isset( $input['slider_speed'] ) ){
+        if(intval($input['slider_speed'])){
+            $input['slider_speed'] = absint($input['slider_speed']);
+        }
+    }
 
 	// If the checkbox has not been checked, we void it
 	if ( ! isset( $input['responsive_design'] ) )
@@ -966,6 +985,10 @@ function ak_validate_options( $input ) {
 	if ( ! isset( $input['show_fontawesome'] ) )
 		$input['show_fontawesome'] = null;
 	$input['show_fontawesome'] = ( $input['show_fontawesome'] == 1 ? 1 : 0 );
+    
+    if ( ! isset( $input['big_icons'] ) )
+		$input['big_icons'] = null;
+	$input['big_icons'] = ( $input['big_icons'] == 1 ? 1 : 0 );
 
 	if ( ! isset( $input['leftsidebar_show_latest_events'] ) )
 		$input['leftsidebar_show_latest_events'] = null;
@@ -1032,14 +1055,34 @@ function ak_validate_options( $input ) {
 		$input[ 'ak_skype' ] = esc_url_raw( $input[ 'ak_skype' ] );
 	};
 	if( isset( $input[ 'ak_rss' ] ) ) {
-		$input_validated[ 'ak_rss' ] = esc_url_raw( $input[ 'ak_rss' ] );
+		$input[ 'ak_rss' ] = esc_url_raw( $input[ 'ak_rss' ] );
 	};
 
-	//$input[ 'google_map' ] = wp_filter_post_kses( $input[ 'google_map' ] );
-	//$input[ 'contact_address' ] = wp_filter_post_kses( $input[ 'contact_address' ] );
-	//$input[ 'header_code' ] = wp_filter_post_kses( $input[ 'header_code' ] );
-	//$input[ 'footer_code' ] = wp_filter_post_kses( $input[ 'footer_code' ] );
-	
+    if( isset( $input[ 'header_text' ] ) ) {
+	   $input[ 'header_text' ] = wp_kses_post( $input[ 'header_text' ] );
+    }
+    
+    if( isset( $input[ 'google_map' ] ) ) {
+    	$allowed_tags=array(
+    		'iframe' => array(
+    			'src' => array()
+    			)
+    		);
+	   $input[ 'google_map' ] = wp_kses( $input[ 'google_map' ],$allowed_tags );
+    }
+    if( isset( $input[ 'contact_address' ] ) ) {
+	   $input[ 'contact_address' ] = wp_kses_post( $input[ 'contact_address' ] );
+    }
+    if( isset( $input[ 'header_code' ] ) ) {
+	   $input[ 'header_code' ] = wp_kses_stripslashes( $input[ 'header_code' ] );
+    }
+    if( isset( $input[ 'footer_code' ] ) ) {
+	   $input[ 'footer_code' ] = wp_kses_stripslashes( $input[ 'footer_code' ] );
+	}
+    
+    if( isset( $input[ 'gallery_code' ] ) ) {
+	   $input[ 'gallery_code' ] = wp_kses_post( $input[ 'gallery_code' ] );
+	}
 	return $input;
 }
 

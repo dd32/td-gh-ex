@@ -116,6 +116,16 @@ function accesspresslite_widgets_init() {
 	) );
 
 	register_sidebar( array(
+		'name'          => __( 'Blog Right Sidebar', 'accesspresslite' ),
+		'id'            => 'blog-sidebar',
+		'description'   => 'Display items for the blog category in the Right Sidebar of the inner pages',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
+
+	register_sidebar( array(
 		'name'          => __( 'Footer Area One', 'accesspresslite' ),
 		'id'            => 'footer-1',
 		'description'   => 'Display items in First Footer Area',
@@ -168,7 +178,7 @@ function accesspresslite_widgets_init() {
     register_sidebar( array(
 		'name'          => __( 'Middle Block above footer', 'accesspresslite' ),
 		'id'            => 'textblock-2',
-		'description'   => 'Display items in the middle just above the footer',
+		'description'   => 'Display items in the middle just above the footer and replaces defaul gallery',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
@@ -211,6 +221,16 @@ function accesspresslite_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
+
+/**
+* Loads up google font in the header
+*/
+  function load_fonts() {
+            wp_register_style('googleFonts', 'http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,600,600italic|Lato:400,100,300,700');
+            wp_enqueue_style( 'googleFonts');
+        }
+    
+    add_action('wp_print_styles', 'load_fonts');
 
 /**
 * Loads up script in the header if it is no empty
