@@ -66,7 +66,12 @@ Version 3.03
 	
 Version 3.04
     i)  License details added
+	
+Version 3.05 
+ 	i)  Added sanitized PHP code for ThemeOptions for security reasons. 
+	
+Version 3.05.1 
+ 	i)  Modified sanitized PHP code for Theme Options for security reasons.
+    ii)	Added Licensing terms of respond.min js file.
 
-Version 3.05
-    i)  Added sanitized PHP code for ThemeOptions for security reasons.	
 	

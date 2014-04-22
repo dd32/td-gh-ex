@@ -7,7 +7,7 @@ Theme URI: http://fasterthemes.com/themes/redpro
 Author: Faster Themes
 Author URI: http://fasterthemes.com/
 Description: RedPro is a Twitter bootstrap based responsive WordPress theme which can be used for personal or corporate websites.
-Version: 3.05
+Version: 3.05.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: Red,left-sidebar,right-sidebar,one-column, two-columns, fluid-layout, responsive-layout,full-width-template,theme-options
@@ -94,11 +94,10 @@ License and Copyrights for Resources used in this theme
 ---------------------------------------------------------
  
 
-	i)   Social icons and other graphics used in this theme are under GPL v2 License have been created by our team.
-	ii)  For the Administration Panel, we have used our own custom options panel, which is under GPL v2 license. 
-	iii) We have used 1 External font from Google Webfonts: Lato which is under SIL Open Font License v1.1.
-	iv)  License details of JS files used by us are in the header of corresponding JS files.
-	v)   The bootstrap files which we used are licensed under the Apache License v2.0
-	
+	 i)   Social icons and other graphics used in this theme are under GPL v2 License have been created by our team.
+	ii)   For the Administration Panel, we have used our own custom options panel, which is under GPL v2 license. 
+   iii)   We have used 1 External font from Google Webfonts: Lato which is under SIL Open Font License v1.1.
+	iv)   The bootstrap files which we used are licensed under the Apache License v2.0
+	 v)   respond.min js file is licensed under MIT/GPL2.
 	
 	For any help you can mail us at support[at]fasterthemes.com
