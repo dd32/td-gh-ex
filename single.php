@@ -12,7 +12,7 @@ get_header(); ?>
 <div id="content">
 
  		  <?php if ( have_posts() ):  while ( have_posts() ) : the_post();  ?>
-            <h1 class="page-title <?php if (get_post_meta( $post->ID, 'np_vih', true ) == 'on' ): echo 'vi-heading'; endif; ?>"><?php the_title(); ?></h1>
+            <h1 class="page-title"><?php the_title(); ?></h1>
             <?php newspress_author_meta(); ?>
             <div class="content-ver-sep"> </div>
             <div class="entrytext"><?php  the_post_thumbnail('single-page' , array('class' => 'attachment-single-page')); ?>

@@ -64,6 +64,16 @@ function optionsframework_options() {
 		'id' => 'adv04',
 		'std' =>  get_template_directory_uri() . '/images/ad3.png',
 		'type' => 'upload' );
+		
+	$fposttype = array( '1' => 'Do not Show any Post or Page in the Front Page.', '2' => 'Show Posts or Page as per the Reading Settings.');
+	
+	$options[] = array(
+		'name' => 'Front Page Post/Page Visibility', 
+		'desc' => 'Select Option how you want to show or do not want to show Posts/Pages in the Front Page as per WordPress Reading Settings', 
+		'id' => 'fpostex',
+		'std' => '2',
+		'type' => 'radio',
+		'options' => $fposttype);
 
 	
 	return $options;

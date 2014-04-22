@@ -163,8 +163,9 @@ echo '</div> <!--end of fpage-cat-->';
 endforeach; wp_reset_postdata(); ?>
 </div>
 
-
-
 <div class="clear"></div>
+
+<?php if (esc_html(of_get_option('fpostex', '2')) != '1'): get_template_part( 'front-page-content' ); endif;?>
+
 <?php get_footer(); ?>
 

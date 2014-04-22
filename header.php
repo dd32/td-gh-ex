@@ -31,7 +31,7 @@ wp_head(); ?>
     <div id="site-container">
         
       <div id="top-menu-container">
-      <nav id="newspress-top-menu"><?php if ( has_nav_menu( 'top-menu' ) ) {  wp_nav_menu( array('menu' => 'Top Menu' )); } ?></nav>
+      <nav id="newspress-top-menu"><?php if ( has_nav_menu( 'top-menu' ) ) :  wp_nav_menu( array( 'theme_location' => 'top-menu' )); endif; ?></nav>
       <?php get_search_form(); ?>  
       
 	  <div id="social">
@@ -58,10 +58,8 @@ wp_head(); ?>
         </div><!-- header -->    
         <!-- Site Main Menu Goes Here -->
         <nav id="newspress-main-menu">
-		<?php if ( has_nav_menu( 'main-menu' ) ) : wp_nav_menu( array('menu' => 'Main Menu' )); else : ?>
-          <?php wp_page_menu(); ?>
-        <?php endif; ?>
-        </nav>
+		<?php if ( has_nav_menu( 'main-menu' ) ) :  wp_nav_menu( array( 'theme_location' => 'main-menu' )); else: wp_page_menu(); endif; ?>
+       </nav>
       <div class="clear"> </div>
       <div id="container"> 
       

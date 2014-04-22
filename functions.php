@@ -5,9 +5,6 @@
 	Since NewsPress 1.0
 */
    
-//	Set the content width based on the theme's design and stylesheet.
-	if ( ! isset( $content_width ) ) $content_width = 684;
-
 // Load the D5 Framework Optios Page
 	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
 	require_once dirname( __FILE__ ) . '/inc/options-framework.php';
@@ -21,6 +18,10 @@
 	add_filter( 'wp_title', 'newspress_filter_wp_title' );
 	
 	function newspress_setup() {
+		
+//	Set the content width based on the theme's design and stylesheet.
+	if ( ! isset( $content_width ) ) $content_width = 684;
+	
 	register_nav_menus( array( 'main-menu' => "Main Menu", 'top-menu' => "Top Menu" ) );
 
 // 	Tell WordPress for the Feed Link
