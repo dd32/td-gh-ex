@@ -20,6 +20,7 @@
 	function newspress_setup() {
 		
 //	Set the content width based on the theme's design and stylesheet.
+	global $content_width;
 	if ( ! isset( $content_width ) ) $content_width = 684;
 	
 	register_nav_menus( array( 'main-menu' => "Main Menu", 'top-menu' => "Top Menu" ) );

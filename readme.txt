@@ -1,7 +1,7 @@
 ----------------------------------
 NewsPress Lite
 ----------------------------------
-Version: 	1.3
+Version: 	1.3.1
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
