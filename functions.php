@@ -11,7 +11,7 @@
 if ( ! isset( $content_width ) )
 	$content_width = 1000; /* pixels */
 	
-define( 'GENERATE_VERSION', '0.2');
+define( 'GENERATE_VERSION', '0.3');
 define( 'GENERATE_URI', get_template_directory_uri() );
 define( 'GENERATE_DIR', get_template_directory() );
 
@@ -390,52 +390,6 @@ function generate_navigation_position()
 		</div><!-- .inside-navigation -->
 	</nav><!-- #site-navigation -->
 	<?php
-}
-
-/**
- * If the user has pages with comments set, we can choose to disable them once.
- * Turned off by default - may turn this into an option
- * @since 0.1
- */
-//add_action('init','generate_disable_all_page_comments');
-function generate_disable_all_page_comments()
-{
-	// Make sure this function only runs once.
-	if (get_option('generate_run_comment_disable') != "yes") {
-	
-		global $wpdb;
-		
-		 $wpdb->update( 
-			'wp_posts', 
-			array(
-				'comment_status' => 'closed'
-			), 
-			array(
-				'post_type' => 'page'
-			), 
-			null, 
-			null 
-		);
-
-		//now that function has been run, set option so it wont run again
-		update_option( 'generate_run_comment_disable', 'yes' );
-
-	}
-}
-/**
- * Turn comments off by default when adding new pages.
- * @since 0.1
- * Off by default - might turn into an option
- */
-//add_filter( 'wp_insert_post_data', 'generate_default_comments_off' );
-function generate_default_comments_off( $data ) {
-
-    if( $data['post_type'] == 'page' && $data['post_status'] == 'auto-draft' ) {
-        $data['comment_status'] = 0;
-		$data['ping_status'] = 0;
-    }
-
-    return $data;
 }
 
 /**

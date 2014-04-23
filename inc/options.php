@@ -41,7 +41,7 @@ function generate_create_menu()
 	$generate_page = add_theme_page( __('GeneratePress','generate'), __('GeneratePress','generate') . $show_count, 'edit_themes', 'generate-options', 'generate_settings_page' );
 	
 	//call register settings function
-	add_action( 'admin_init', 'register_generate_settings' );
+	add_action( 'admin_init', 'generate_register_settings' );
 	add_action( "admin_print_scripts-$generate_page", 'generate_options_scripts' );
 	add_action( "admin_print_styles-$generate_page", 'generate_options_styles' );
 }
@@ -60,7 +60,7 @@ function generate_options_styles()
 }
 
 
-function register_generate_settings() {
+function generate_register_settings() {
 	//register our settings
 	register_setting( 'generate-settings-group', 'generate_header_scripts' );
 	register_setting( 'generate-settings-group', 'generate_footer_scripts' );

@@ -1,25 +1,25 @@
 <?php
-add_action( 'admin_enqueue_scripts', 'gen_admin_pointers_header' );
+add_action( 'admin_enqueue_scripts', 'generate_admin_pointers_header' );
 
-function gen_admin_pointers_header() {
-   if ( gen_admin_pointers_check() ) {
-      add_action( 'admin_print_footer_scripts', 'gen_admin_pointers_footer' );
+function generate_admin_pointers_header() {
+   if ( generate_admin_pointers_check() ) {
+      add_action( 'admin_print_footer_scripts', 'generate_admin_pointers_footer' );
 
       wp_enqueue_script( 'wp-pointer' );
       wp_enqueue_style( 'wp-pointer' );
    }
 }
 
-function gen_admin_pointers_check() {
-   $admin_pointers = gen_admin_pointers();
+function generate_admin_pointers_check() {
+   $admin_pointers = generate_admin_pointers();
    foreach ( $admin_pointers as $pointer => $array ) {
       if ( $array['active'] )
          return true;
    }
 }
 
-function gen_admin_pointers_footer() {
-   $admin_pointers = gen_admin_pointers();
+function generate_admin_pointers_footer() {
+   $admin_pointers = generate_admin_pointers();
    ?>
 <script type="text/javascript">
 /* <![CDATA[ */
@@ -51,10 +51,10 @@ function gen_admin_pointers_footer() {
    <?php
 }
 
-function gen_admin_pointers() {
+function generate_admin_pointers() {
    $dismissed = explode( ',', (string) get_user_meta( get_current_user_id(), 'dismissed_wp_pointers', true ) );
    $version = '1_0'; // replace all periods in 1.0 with an underscore
-   $prefix = 'gen_admin_pointers' . $version . '_';
+   $prefix = 'generate_admin_pointers' . $version . '_';
 
    $welcome_content = '<h3>' . __( 'Welcome to GeneratePress','generate' ) . '</h3>';
    $welcome_content .= '<p>' . __( 'You can find your GeneratePress options panel in here.','generate' ) . '</p>';
