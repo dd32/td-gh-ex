@@ -1,8 +1,12 @@
 <?php
 function fasterthemes_options_init(){
- register_setting( 'ft_options', 'faster_theme_options');
+ register_setting( 'ft_options', 'faster_theme_options', 'ft_options_validate');
 } 
 add_action( 'admin_init', 'fasterthemes_options_init' );
+function ft_options_validate( $input ) {
+	$input['footertext'] = wp_filter_nohtml_kses( $input['footertext'] );
+    return $input;
+}
 function fasterthemes_framework_load_scripts(){
 	wp_enqueue_media();
 	wp_enqueue_style( 'fasterthemes_framework', get_template_directory_uri(). '/theme-option/css/fasterthemes_framework.css' ,false, '1.0.0');
@@ -87,16 +91,6 @@ function fastertheme_framework_page(){
             <h4 class="heading">Copyright Text</h4>
             <div class="option">
               <div class="controls">
-              <?php $footertext_options = filter_var($options['footertext'], FILTER_SANITIZE_STRING); 
-				foreach($options as $key => $value)
-				{
-					if($key == "footertext"){
-						$value=$footertext_options;
-					}
-					$options[$key] = $value;
-				}
-				update_option('faster_theme_options',$options);				
-				?>
                 <input type="text" id="footertext2" class="of-input" name="faster_theme_options[footertext]" size="32"  value="<?php echo $options['footertext']; ?>">
               </div>
               <div class="explain">Some text regarding copyright of your site, you would like to display in the footer.</div>

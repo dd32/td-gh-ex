@@ -33,4 +33,8 @@ Version 1.06
 
 Version 1.06.1
 
-    i)   Modified sanitized PHP code for ThemeOptions for security reasons.	
+    i)   Modified sanitized PHP code for ThemeOptions for security reasons.
+
+Version 1.06.2
+
+    i)   Fixed Sanitization code.
