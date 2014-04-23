@@ -31,13 +31,19 @@ Icon Fonts: Genericons - http://genericons.com
 Copyright: Automattic, automattic.com
 Licensed: GNU General Public License v2 or later
 
-Background image in screenshot: http://pixabay.com/en/new-york-city-skyline-city-usa-324574
-Copyright: http://pixabay.com
-Licensed: Public Domain Images
-
 Scripts.js: https://wordpress.org/themes/twentyfourteen
 Copyright: Automattic, automattic.com
 Licensed: GNU General Public License v2 or later
+
+- Screenshot Images -
+
+Background Image: http://pixabay.com/en/new-york-city-skyline-city-usa-324574
+Copyright: http://pixabay.com
+Licensed: Public Domain Images
+
+Image: http://unsplash.com/post/56830680122/download-by-alexander-shustov
+Copyright: http://unsplash.com
+Licensed: Public Domain Images
 
 The script html5.js is licensed under MIT
 The script jquery.cycle.all.js is dual licensed under GPL & MIT
@@ -54,6 +60,9 @@ https://wordpress.org/themes/simple-catch
 =================================================================================
 
 == CHANGE LOG ==
+
+= 1.0.1 =
+ - Screenshot image changed and added license
 
 = 1.0 =
  - Initial Release
