@@ -607,3 +607,8 @@ jQuery("#hgroup-wrap .menu").tinyNav({
 jQuery(function () {
     jQuery(".tinynav").selectbox();
 });
+
+// Aria Haspopup for Touch Devices
+jQuery(document).ready(function () {
+	jQuery(".menu-item").has("ul").children("a").attr("aria-haspopup", "true");
+});

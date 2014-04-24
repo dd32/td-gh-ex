@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Kathmandu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-21 22:44+0545\n"
-"PO-Revision-Date: 2014-04-21 22:44+0545\n"
+"POT-Creation-Date: 2014-04-24 13:11+0545\n"
+"PO-Revision-Date: 2014-04-24 13:11+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: en_US\n"
@@ -225,7 +225,7 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: ../functions.php:94 ../inc/catchkathmandu-menus.php:44
+#: ../functions.php:94 ../inc/catchkathmandu-menus.php:45
 msgid "Secondary Menu"
 msgstr ""
 
@@ -428,10 +428,6 @@ msgstr ""
 
 #: ../inc/catchkathmandu-menus.php:12
 msgid "Skip to content"
-msgstr ""
-
-#: ../inc/catchkathmandu-menus.php:72
-msgid "Footer Menu"
 msgstr ""
 
 #: ../inc/catchkathmandu-metabox.php:14 ../inc/catchkathmandu-metabox.php:20
@@ -771,7 +767,7 @@ msgid "Header Options"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:285
-msgid "Custom Header: Logo & Site Detais"
+msgid "Custom Header: Logo & Site Details"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:288

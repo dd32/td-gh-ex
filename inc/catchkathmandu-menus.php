@@ -38,55 +38,25 @@ if ( ! function_exists( 'catchkathmandu_secondary_menu' ) ) :
  *
  * Hooked to catchkathmandu_after_hgroup_wrap
  */
-function catchkathmandu_secondary_menu() { ?>
+function catchkathmandu_secondary_menu() { 
+	if ( has_nav_menu( 'secondary', 'catchkathmandu' ) ) { ?>
 	<div id="secondary-menu">
         <nav id="access-secondary" role="navigation">
             <h2 class="assistive-text"><?php _e( 'Secondary Menu', 'catchkathmandu' ); ?></h2>
-            <?php
-                if ( has_nav_menu( 'secondary', 'catchkathmandu' ) ) { 
-                    $args = array(
-                        'theme_location'    => 'secondary',
-                        'container_class' 	=> 'menu-secondary-container', 
-                        'items_wrap'        => '<ul class="menu">%3$s</ul>' 
-                    );
-                    wp_nav_menu( $args );
-                }
+            <?php     
+				$args = array(
+					'theme_location'    => 'secondary',
+					'container_class' 	=> 'menu-secondary-container', 
+					'items_wrap'        => '<ul class="menu">%3$s</ul>' 
+				);
+				wp_nav_menu( $args );
             ?> 	         
         </nav><!-- .site-navigation .main-navigation -->  
 	</div>
-<?php
+	<?php
+	}
 }
 endif; // catchkathmandu_secondary_menu
 
 // Load  breadcrumb in catchkathmandu_after_hgroup_wrap hook
 add_action( 'catchkathmandu_after_hgroup_wrap', 'catchkathmandu_secondary_menu', 20 );
-
-
-if ( ! function_exists( 'catchkathmandu_footer_menu' ) ) :
-/**
- * Display breadcrumb on header
- */
-function catchkathmandu_footer_menu() { ?>
-	<div id="footer-menu">
-        <nav id="access-footer" role="navigation">
-            <h2 class="assistive-text"><?php _e( 'Footer Menu', 'catchkathmandu' ); ?></h2>
-            <?php
-                if ( has_nav_menu( 'footer', 'catchkathmandu' ) ) { 
-                    $args = array(
-                        'theme_location'    => 'footer',
-                        'container_class' 	=> 'menu-footer-container', 
-                        'items_wrap'        => '<ul class="menu">%3$s</ul>' 
-                    );
-                    wp_nav_menu( $args );
-                }
-            ?> 	         
-        </nav><!-- .site-navigation .main-navigation -->  
-	</div>
-    <?php 
-} // catchkathmandu_footer_menu
-endif;
-
-// Load  breadcrumb in catchkathmandu_after_hgroup_wrap hook
-add_action( 'catchkathmandu_before_footer_sidebar', 'catchkathmandu_footer_menu', 10 );
-
-

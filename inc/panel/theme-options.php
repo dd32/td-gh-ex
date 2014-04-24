@@ -282,7 +282,7 @@ function catchkathmandu_theme_options_do_page() {
                         <div class="option-content inside">
                         	<div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'Custom Header: Logo & Site Detais', 'catchkathmandu' ); ?>
+                                	<?php _e( 'Custom Header: Logo & Site Details', 'catchkathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
                                 	<a class="button" href="<?php echo admin_url('themes.php?page=custom-header'); ?>"><?php _e('Click Here to Add/Replace Header Logo & Site Details', 'catchkathmandu'); ?></a>
