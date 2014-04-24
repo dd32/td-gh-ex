@@ -8,13 +8,6 @@
 
 if ( ! function_exists( 'accesspresslite_setup' ) ) :
 /**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) ) {
-	$content_width = 640; /* pixels */
-}
-
-/**
  * Sets up theme defaults and registers support for various WordPress features.
  *
  * Note that this function is hooked into the after_setup_theme hook, which
@@ -22,6 +15,15 @@ if ( ! isset( $content_width ) ) {
  * as indicating support for post thumbnails.
  */
 function accesspresslite_setup() {
+	/**
+	 * Set the content width based on the theme's design and stylesheet.
+	 */
+	global $content_width;
+	/**
+	 * Global content width.
+	 */
+	 if (!isset($content_width))
+     	$content_width = 750; /* pixels */
 
 	/*
 	 * Make theme available for translation.

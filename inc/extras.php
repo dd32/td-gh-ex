@@ -233,35 +233,6 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
     add_action('wp_print_styles', 'load_fonts');
 
 /**
-* Loads up script in the header if it is no empty
-*/
-	function ak_add_header_code(){
-		global $ak_options;
-		$ak_settings = get_option( 'ak_options', $ak_options );
-		
-		echo $ak_settings[ 'header_code' ];
-	
-	}
-
-	if( !empty($ak_settings[ 'header_code' ])){
-		add_action('wp_head', 'ak_add_header_code');
-	}
-
-/**
-* Loads up script in the footer if it is no empty
-*/
-	function ak_add_footer_code(){
-		global $ak_options;
-		$ak_settings = get_option( 'ak_options', $ak_options );
-		
-		echo $ak_settings[ 'footer_code' ];
-	
-	}
-
-	if( !empty($ak_settings[ 'footer_code' ])){
-		add_action('wp_footer', 'ak_add_footer_code');
-	}
-/**
 * Loads up favicon
 */
 	function ak_add_favicon(){

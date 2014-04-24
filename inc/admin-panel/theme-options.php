@@ -75,8 +75,6 @@ $ak_options = array(
 
 	'google_map' => '',
 	'contact_address' => '',
-	'header_code' => '',
-	'footer_code' => '',
 	'ak_home_page_layout' => 'Default',
     'ak_webpage_layout' => 'Fullwidth',
     'gallery_code' => '',
@@ -856,21 +854,6 @@ function ak_theme_options_page() {
 						<p class="f13"><em>Enter the Contact Address<br />Leave Blank if you don't want to show<em></p>
 						</td>
 					</tr>
-
-
-					<tr><th scope="row"><label for="header_code">Insert Code in Header</label></th>
-						<td>
-						<textarea id="header_code" name="ak_options[header_code]" rows="5" cols="40"><?php echo $settings['header_code']; ?></textarea>
-						<p class="f13"><em>Here you can put scripts like Facebook Like Box, Google Analytics, and other custom scripts which will load on Header</em></p>
-						</td>
-					</tr>
-
-					<tr><th scope="row"><label for="footer_code">Insert Code in Footer</label></th>
-						<td>
-						<textarea id="footer_code" name="ak_options[footer_code]" rows="5" cols="40"><?php echo $settings['footer_code']; ?></textarea>
-						<p class="f13"><em>Here you can put scripts like Facebook Like Box, Google Analytics, and other custom scripts which will load on Footer</em></p>
-						</td>
-					</tr>
 				</table>
 			</div>
 
@@ -1073,12 +1056,6 @@ function ak_validate_options( $input ) {
     if( isset( $input[ 'contact_address' ] ) ) {
 	   $input[ 'contact_address' ] = wp_kses_post( $input[ 'contact_address' ] );
     }
-    if( isset( $input[ 'header_code' ] ) ) {
-	   $input[ 'header_code' ] = wp_kses_stripslashes( $input[ 'header_code' ] );
-    }
-    if( isset( $input[ 'footer_code' ] ) ) {
-	   $input[ 'footer_code' ] = wp_kses_stripslashes( $input[ 'footer_code' ] );
-	}
     
     if( isset( $input[ 'gallery_code' ] ) ) {
 	   $input[ 'gallery_code' ] = wp_kses_post( $input[ 'gallery_code' ] );
