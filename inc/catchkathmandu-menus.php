@@ -11,13 +11,13 @@ function catchkathmandu_primary_menu() { ?>
             <h2 class="assistive-text"><?php _e( 'Primary Menu', 'catchkathmandu' ); ?></h2>
             <div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'catchkathmandu' ); ?>"><?php _e( 'Skip to content', 'catchkathmandu' ); ?></a></div>
             <?php
-                if ( has_nav_menu( 'primary', 'catchkathmandu' ) ) { 
-                    $args = array(
+                if ( has_nav_menu( 'primary' ) ) { 
+                    $catchkathamdu_primary_menu_args = array(
                         'theme_location'    => 'primary',
                         'container_class' 	=> 'menu-header-container', 
                         'items_wrap'        => '<ul class="menu">%3$s</ul>' 
                     );
-                    wp_nav_menu( $args );
+                    wp_nav_menu( $catchkathamdu_primary_menu_args );
                 }
                 else {
                     echo '<div class="menu-header-container">';
@@ -39,17 +39,17 @@ if ( ! function_exists( 'catchkathmandu_secondary_menu' ) ) :
  * Hooked to catchkathmandu_after_hgroup_wrap
  */
 function catchkathmandu_secondary_menu() { 
-	if ( has_nav_menu( 'secondary', 'catchkathmandu' ) ) { ?>
+	if ( has_nav_menu( 'secondary' ) ) { ?>
 	<div id="secondary-menu">
         <nav id="access-secondary" role="navigation">
             <h2 class="assistive-text"><?php _e( 'Secondary Menu', 'catchkathmandu' ); ?></h2>
             <?php     
-				$args = array(
+				$catchkathamdu_secondary_menu_args = array(
 					'theme_location'    => 'secondary',
 					'container_class' 	=> 'menu-secondary-container', 
 					'items_wrap'        => '<ul class="menu">%3$s</ul>' 
 				);
-				wp_nav_menu( $args );
+				wp_nav_menu( $catchkathamdu_secondary_menu_args );
             ?> 	         
         </nav><!-- .site-navigation .main-navigation -->  
 	</div>

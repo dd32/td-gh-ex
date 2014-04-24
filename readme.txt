@@ -64,7 +64,7 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/catch
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 
 == Changelog ==
-Version 1.2
+Version 1.2.1 (Merged with 1.2)
 * Added Aria Haspopup for menu in Touch Devices
 * Fixed slider text issue
 * Fixed secondary menu issue
