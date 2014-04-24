@@ -36,3 +36,9 @@ Changelog
 #### 1.09
 * Fix display error in breadcrumb.
 * Fix submenu display error.
+
+#### 1.10
+* Now use core paginate_links() function
+* Remove fixed navigation bar for mobile device to prevent display issue
+
+

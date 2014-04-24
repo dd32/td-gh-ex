@@ -18,12 +18,12 @@ jQuery(document).ready(function($) {
 	{
 		$(window).scroll(function ()
 		{
-			if (!$filter.hasClass('fix') && $(window).scrollTop() > $filter.offset().top)
+			if (!$filter.hasClass('fix') && $(window).width() > 767  && $(window).scrollTop() > $filter.offset().top)
 			{
 				$filter.before($filterSpacer);
 				$filter.addClass("fix");
 			}
-			else if ($filter.hasClass('fix')  && $(window).scrollTop() < $filterSpacer.offset().top)
+			else if ($filter.hasClass('fix') && $(window).scrollTop() < $filterSpacer.offset().top)
 			{
 				$filter.removeClass("fix");
 				$filterSpacer.remove();
