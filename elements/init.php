@@ -91,6 +91,11 @@ function cyberchimps_install_plugins() {
 			'name'     => 'Responsive Add Ons', // The plugin name
 			'slug'     => 'responsive-add-ons', // The plugin slug (typically the folder name)
 			'required' => false
+		),
+		array(
+			'name'     => 'Clef', // The plugin name
+			'slug'     => 'wpclef', // The plugin slug (typically the folder name)
+			'required' => false
 		)
 	);
 
