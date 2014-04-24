@@ -4,7 +4,7 @@ Theme URI: http://www.iografica.it/prodotto/base-wp/
 Author: Iografica.it
 Author URI: http://iografica.it/
 Description: A basic blog or business WordPress theme, based on _s with integration of skeleton 960 grid.
-Version: 1.09
+Version: 1.10
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: base
@@ -468,30 +468,6 @@ a:active {
 	display: none;
 	
 }
-@media screen and (max-width: 600px) {
-	.menu-toggle,
-	.main-navigation.toggled .nav-menu {
-		display: block;
-		text-align:center;
-	}	
-	.main-navigation ul {
-		display: none;
-	}
-	.main-navigation li {
-	display:block;
-	}
-	.main-navigation ul ul, .main-navigation.fix ul ul {
-	box-shadow: none !important;
-	display: block !important;
-	position:inherit !important;
-	background:#f9f9f9 !important;
-	}
-	.main-navigation ul ul a, .main-navigation.fix ul ul a {
-	width: 100%;
-	text-align:center;
-	}
-	
-}
 .site-main [class*="navigation"] {
 	margin: 0 0 1.5em;
 	overflow: hidden;
@@ -717,6 +693,9 @@ nav#site-navigation.main-navigation.fix{
 	padding-top:2em !important;
 	padding-bottom:2em !important;	
 }
+#primary {
+	padding-bottom:1em !important;	
+}
 .wide.contenitor{
 		background: url(images/shadow.png) top center no-repeat;
 }
@@ -808,41 +787,24 @@ b.fn{
 /*--------------------------------------------------------------
 10.4 Pagination
 ----------------------------------------------- */
-.navigation li a,
-.navigation li a:hover,
-.navigation li.active a,
-.navigation li.disabled {
-	color: #888;
-	text-decoration:none;
-}
-
-.navigation ul {
-	margin-left:0px;
-}
-
-.navigation li {
-	display: inline-block;
-	margin-top:10px;
-}
-
-.navigation li a,
-.navigation li a:hover,
-.navigation li.active a,
-.navigation li.disabled {
-	background-color: #fff;
-	cursor: pointer;
-	padding: 5px;
+.page-numbers {
+	font-size:0.9em;
+	font-weight:400 !important;
+	background:#fff;
 	border:1px solid #e5e5e5;
 	-moz-box-shadow: 0px 2px 0px #eee;
 	-webkit-box-shadow: 0px 2px 0px #eee;
 	box-shadow: 0px 2px 0px #eee;
+	padding:5px 10px;
+	text-decoration:none;
 }
-
-.navigation li a:hover,
-.navigation li.active a {
-	background-color: #f5f5f5;
+.page-numbers:hover, .page-numbers:focus, .page-numbers.current {
+	background:#f5f5f5 !important;
+	font-weight:400 !important;
+	border:1px solid #ededed;
+	padding:5px 10px;
+	text-decoration:none;
 }
-
 .basebreadcrumb {
 	font-size: 0.8em;
 	padding: 0.5em 1em;

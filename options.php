@@ -166,12 +166,12 @@ add_action('optionsframework_after','optionscheck_display_sidebar', 100);
 function optionscheck_display_sidebar() { ?>
     <div class="metabox-holder upgrade">
         <div class="postbox">
-            <h3>Upgrade to premium version</h3>
+            <h3><?php echo __('Upgrade to premium version', "base"); ?></h3>
                 <div class="inside">
-                    <p>Upgrade to the premium version to get access to advanced options.</p>
-                    <a href="http://iografica.fetchapp.com/sell/peimeyoh" target="_blank"><img src="http://www.iografica.it/wp/wp-content/uploads/2014/03/base-wp-premium-buynowbutton.jpg" alt="Pay with PayPal" /></a>
-<p>With premium version you have access to priority support and lifetime upgrade.</br>
-We offer a 7 day full refund if you're not happy with your purchase.</p>
+                    <p><?php echo __('Upgrade to the premium version to get access to advanced options.', "base"); ?></p>
+                    <a href="http://themes.iografica.it/downloads/base-wp-premium/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/premium-upgradebutton.jpg" alt="Upgrade to premium version" /></a>
+					<p><?php echo __('With premium version you have access to priority support and lifetime upgrade.',  "base"); ?></p>
+					<p><?php echo __('We offer a 7 day full refund if you are not happy with your purchase.',  "base"); ?></p>
                 </div>
         </div>
     </div>

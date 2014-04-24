@@ -30,8 +30,16 @@ get_header(); ?>
 				?>
 
 			<?php endwhile; ?>
+	
+	<?php global $wp_query; // pagination
+			$big = 999999999; // need an unlikely integer
 
-			<?php base_numeric_posts_nav(''); ?>
+		echo paginate_links( array(
+			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+			'format' => '?paged=%#%',
+			'current' => max( 1, get_query_var('paged') ),
+			'total' => $wp_query->max_num_pages
+		) ); ?>
 
 		<?php else : ?>
 
