@@ -5,7 +5,7 @@ Theme URI: http://sampression.com/themes/naya-lite
 Author: Sampression
 Author URI: http://www.sampression.com
 
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,9 +23,23 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
  
 3. Fonts
  = Item URL: http://icomoon.io
- = Licence: GPL & CC BY 3.0
+ = Licence: GPL
  = Licence GPL: http://www.gnu.org/licenses/gpl.html
- = Licence CC BY 3.0: http://creativecommons.org/licenses/by/3.0
+
+4. mousewheel jquery file
+ = Item URL: https://github.com/brandonaaron/jquery-mousewheel
+ = Licence: MIT
+ = Licence URI: http://opensource.org/licenses/mit-license.html
+
+5. codemirror jquery file
+ = Item URL: http://codemirror.net/
+ = Licence: MIT
+ = Licence URI: http://opensource.org/licenses/mit-license.html
+
+5. jScrollPane jquery file
+ = Item URL: http://jscrollpane.kelvinluck.com/
+ = Licence: GPL
+ = Licence GPL: http://www.gnu.org/licenses/gpl.html
  
 == Theme Description ==
 For developers and website owners, Naya Lite is a responsive framework which can perfectly serve as a parent theme if they want to create their own child themes. For bloggers, Naya is a minimal blogging theme that takes their web presence back to the early days of blogging. While Naya Lite’s design justifies the idea of a good old fashioned blog, its features emphasize on being more modern and state-of-the-art. Being both responsive and retina-ready while still maintaining the look of a classic blog, Naya Lite perfectly manages to combine the past and future of blog design.
@@ -91,18 +105,21 @@ Tags: white, black, green, one-column, two-columns, responsive-layout, custom-me
  = Here you select the meta values to show on the blog page and also hide the posts from any specific category from the blog page.
  = You can also write your own text as "read more" text that links to the single post.
 
-12. Hooks:
- = Login to your wp-admin area and go to Appearance -> Sampression.
- = Select "Hooks" tab.
- = Here you can add different codes to the header and footer of theme. Please be careful to add codes because it might crop the functionality and appearance of theme.
- = You can also add the Webmaster verification codes for Google, Bing and Yahoo.
-
 9. Copyright & License
  = Naya Lite, Copyright 2014 Sampression.com
  = Naya Lite is distributed under the terms of the GNU GPL.
 
 == Changelog ==
-Version 1.03
+Version 1.0.4
+ = get_stylesheet_uri() used instead of bloginfo() function for main stylesheet url.
+ = google font path fixed
+ = added prefix on userdefined functions
+ = Escape functions added
+ = home_url function added to output home page url
+ = fonts with gpl license used
+ = hooks sections removed that provided theme options for arbitrary header/footer scripts.
+
+Version 1.0.3
  = Removed: <meta> description and author removed from header.php 
  = Removed: Dashboard widgets removed 
  = Fixed: wp_title filter used for title tag

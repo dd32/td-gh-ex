@@ -8,8 +8,8 @@ class Sampression_Admin {
      */
     public function __construct() {
         add_action( 'admin_menu', array( $this, 'add_admin_menu' ), 5 );
-        add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ) );
-        add_action( 'admin_enqueue_scripts', array( $this, 'admin_styles' ) );
+        add_action( 'admin_enqueue_scripts', array( $this, 'sampression_admin_scripts' ) );
+        add_action( 'admin_enqueue_scripts', array( $this, 'sampression_admin_styles' ) );
         add_action( 'admin_head', array( $this, 'admin_ie_js_css' ) );
         add_action( 'wp_enqueue_scripts', array( $this, 'sampression_stylesheets_scripts' ) );
     }
@@ -27,7 +27,7 @@ class Sampression_Admin {
     }
     
     function sampression_load_page() {
-        $pages = array( 'styling', 'typography', 'social-media', 'custom-css', 'blog', 'hooks' );
+        $pages = array( 'styling', 'typography', 'social-media', 'custom-css', 'blog' );
         if( isset( $_GET['sam-page'] ) && in_array( $_GET['sam-page'], $pages ) ) {
             $page_slug = str_replace( '-', '_', $_GET['sam-page'] );
             $this->layout( $page_slug );
@@ -74,7 +74,7 @@ class Sampression_Admin {
     /**
      * load admin scripts
      */
-    public function admin_scripts() {
+    public function sampression_admin_scripts() {
         wp_enqueue_media();
         wp_enqueue_script( 'jquery-ui-tooltip' );
         wp_enqueue_script( 'modernizr', SAM_FW_ADMIN_JS_URL . '/modernizr.js', array(), '2.6.2', false );
@@ -90,10 +90,11 @@ class Sampression_Admin {
     /**
      * load admin styles
      */
-    public function admin_styles() {
+    public function sampression_admin_styles() {
         wp_enqueue_style( 'wp-color-picker' );
         wp_enqueue_style( 'admin-style', SAM_FW_ADMIN_CSS_URL . '/admin-style.css', false, false, 'screen' );
-        wp_enqueue_style( 'font-style', 'http://fonts.googleapis.com/css?family=Kreon', false, false, 'screen' );
+        wp_enqueue_style( 'font-style', '//fonts.googleapis.com/css?family=Kreon', false, false, 'screen' );
+        wp_enqueue_style( 'font-style', '//fonts.googleapis.com/css?family=Droid+Serif:400,400italic', false, false, 'screen' );
     }
 
     /**
@@ -147,12 +148,4 @@ class Sampression_Admin {
     public function blog() {
         $this->layout( 'blog' );
     }
-
-    /**
-     * Load hooks layout
-     */
-    public function hooks() {
-        $this->layout( 'hooks' );
-    }
-
 }

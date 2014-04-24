@@ -26,10 +26,10 @@ $default_fonts = (object) sampression_fonts_style();
                     </div>
                     <div class="box-entry clearfix">
                         <figure class="image-holder image-preview">
-                            <img src="<?php echo $logo_icon_image ? $logo_icon_image : SAM_FW_ADMIN_IMAGES_URL . '/logo.jpg'; ?>" alt="Sampression" id="website-image-preview" />
+                            <img src="<?php echo $logo_icon_image ? esc_url($logo_icon_image) : SAM_FW_ADMIN_IMAGES_URL . '/logo.jpg'; ?>" alt="Sampression" id="website-image-preview" />
                         </figure>
                         <div class="backgroundimage-option alignleft">
-                            <div class="image-title" id="website-image-title"><?php echo truncate_text( basename( $logo_icon_image ) ); ?></div>
+                            <div class="image-title" id="website-image-title"><?php echo sampression_truncate_text( basename( $logo_icon_image ) ); ?></div>
                             <div class="fileUpload button1 button2">
                                 <span><?php _e( 'Change', 'sampression' );?></span>
                                 <input type="hidden" id="website_image" class="upload_image" name="website_image" value="<?php echo $logo_icon_image; ?>" />
@@ -98,10 +98,10 @@ $default_fonts = (object) sampression_fonts_style();
                     <ul id="bgimage-selector" class="style-selector-list clearfix add-image-section">
                         <li class="clearfix sam-no-spacing sam-no-border">
                             <figure class="image-holder alignleft image-preview">
-                                <img src="<?php echo $favicon['favicon_16']['image'] ? $favicon['favicon_16']['image'] : SAM_FW_ADMIN_IMAGES_URL . '/favicon.jpg'; ?>" alt="<?php get_bloginfo( 'name' ); ?> favicon" id="website-image-preview" />
+                                <img src="<?php echo $favicon['favicon_16']['image'] ? esc_url($favicon['favicon_16']['image']) : SAM_FW_ADMIN_IMAGES_URL . '/favicon.jpg'; ?>" alt="<?php get_bloginfo( 'name' ); ?> favicon" id="website-image-preview" />
                             </figure>
                             <div class="backgroundimage-option alignleft">
-                                <div class="image-title" id="website-image-title"><?php echo truncate_text( basename( $favicon['favicon_16']['image'] ) ); ?></div>
+                                <div class="image-title" id="website-image-title"><?php echo sampression_truncate_text( basename( $favicon['favicon_16']['image'] ) ); ?></div>
                                 <div class="fileUpload button1 button2">
                                     <span><?php _e( 'Change', 'sampression' ); ?></span>
                                     <input type="hidden" id="favicon_image" class="upload_image" name="favicon_image" value="<?php echo $favicon['favicon_16']['image']; ?>" />
@@ -137,10 +137,10 @@ $default_fonts = (object) sampression_fonts_style();
                     <ul id="bgimage-selector" class="style-selector-list clearfix add-image-section">
                         <li class="clearfix">
                             <figure class="image-holder image-preview">
-                                <img src="<?php echo $apple_favicon['favicon_57']['image'] ? $apple_favicon['favicon_57']['image'] : SAM_FW_ADMIN_IMAGES_URL . '/favicon.jpg'; ?>" alt="<?php get_bloginfo('name'); ?> apple favicon" id="favicon_57-image-preview" />
+                                <img src="<?php echo $apple_favicon['favicon_57']['image'] ? esc_url($apple_favicon['favicon_57']['image']) : SAM_FW_ADMIN_IMAGES_URL . '/favicon.jpg'; ?>" alt="<?php get_bloginfo('name'); ?> apple favicon" id="favicon_57-image-preview" />
                             </figure>
                             <div class="backgroundimage-option alignleft">
-                                <div class="image-title" id="website-image-title"><?php echo truncate_text( basename( $apple_favicon['favicon_57']['image'] ) ); ?></div>
+                                <div class="image-title" id="website-image-title"><?php echo sampression_truncate_text( basename( $apple_favicon['favicon_57']['image'] ) ); ?></div>
                                 <div class="fileUpload button1 button2">
                                     <span><?php _e( 'Change', 'sampression' ); ?></span>
                                     <input type="hidden" id="favicon_image" class="upload_image" name="favicon_57_image" value="<?php echo $apple_favicon['favicon_57']['image']; ?>" />
@@ -157,10 +157,10 @@ $default_fonts = (object) sampression_fonts_style();
                         </li>
                         <li class="clearfix">
                             <figure class="image-holder alignleft image-preview">
-                                <img src="<?php echo $apple_favicon['favicon_72']['image'] ? $apple_favicon['favicon_72']['image'] : SAM_FW_ADMIN_IMAGES_URL . '/favicon.jpg'; ?>" alt="<?php get_bloginfo( 'name' ); ?> apple favicon" id="favicon_72-image-preview" />
+                                <img src="<?php echo $apple_favicon['favicon_72']['image'] ? esc_url($apple_favicon['favicon_72']['image']) : SAM_FW_ADMIN_IMAGES_URL . '/favicon.jpg'; ?>" alt="<?php get_bloginfo( 'name' ); ?> apple favicon" id="favicon_72-image-preview" />
                             </figure>
                             <div class="backgroundimage-option alignleft">
-                                <div class="image-title" id="website-image-title"><?php echo truncate_text( basename( $apple_favicon['favicon_72']['image'] ) ); ?> </div>
+                                <div class="image-title" id="website-image-title"><?php echo sampression_truncate_text( basename( $apple_favicon['favicon_72']['image'] ) ); ?> </div>
                                 <div class="fileUpload button1 button2">
                                     <span><?php _e( 'Change', 'sampression' ); ?></span>
                                     <input type="hidden" id="favicon_image" class="upload_image" name="favicon_72_image" value="<?php echo $apple_favicon['favicon_72']['image']; ?>" />
@@ -177,10 +177,10 @@ $default_fonts = (object) sampression_fonts_style();
                         </li>
                         <li class="clearfix">
                             <figure class="image-holder alignleft image-preview">
-                                <img src="<?php echo $apple_favicon['favicon_114']['image'] ? $apple_favicon['favicon_114']['image'] : SAM_FW_ADMIN_IMAGES_URL . '/favicon.jpg'; ?>" alt="<?php get_bloginfo( 'name' ); ?> apple favicon" id="favicon_114-image-preview" />
+                                <img src="<?php echo $apple_favicon['favicon_114']['image'] ? esc_url($apple_favicon['favicon_114']['image']) : SAM_FW_ADMIN_IMAGES_URL . '/favicon.jpg'; ?>" alt="<?php get_bloginfo( 'name' ); ?> apple favicon" id="favicon_114-image-preview" />
                             </figure>
                             <div class="backgroundimage-option alignleft">
-                                <div class="image-title" id="website-image-title"><?php echo truncate_text( basename( $apple_favicon['favicon_114']['image'] ) ); ?></div>
+                                <div class="image-title" id="website-image-title"><?php echo sampression_truncate_text( basename( $apple_favicon['favicon_114']['image'] ) ); ?></div>
                                 <div class="fileUpload button1 button2">
                                     <span><?php _e( 'Change', 'sampression' ); ?></span>
                                     <input type="hidden" id="favicon_image" class="upload_image" name="favicon_114_image" value="<?php echo $apple_favicon['favicon_114']['image']; ?>" />
@@ -197,10 +197,10 @@ $default_fonts = (object) sampression_fonts_style();
                         </li>
                         <li class="clearfix sam-no-spacing sam-no-border">
                             <figure class="image-holder alignleft image-preview">
-                                <img src="<?php echo $apple_favicon['favicon_144']['image'] ? $apple_favicon['favicon_144']['image'] : SAM_FW_ADMIN_IMAGES_URL . '/favicon.jpg'; ?>" alt="<?php get_bloginfo('name'); ?> apple favicon" id="favicon_144-image-preview" />
+                                <img src="<?php echo $apple_favicon['favicon_144']['image'] ? esc_url($apple_favicon['favicon_144']['image']) : SAM_FW_ADMIN_IMAGES_URL . '/favicon.jpg'; ?>" alt="<?php get_bloginfo('name'); ?> apple favicon" id="favicon_144-image-preview" />
                             </figure>
                             <div class="backgroundimage-option alignleft">
-                                <div class="image-title" id="website-image-title"><?php echo truncate_text( basename( $apple_favicon['favicon_144']['image'] ) ); ?></div>
+                                <div class="image-title" id="website-image-title"><?php echo sampression_truncate_text( basename( $apple_favicon['favicon_144']['image'] ) ); ?></div>
                                 <div class="fileUpload button1 button2">
                                     <span><?php _e( 'Change', 'sampression' ); ?></span>
                                     <input type="hidden" id="favicon_image" class="upload_image" name="favicon_144_image" value="<?php echo $apple_favicon['favicon_144']['image']; ?>" />

@@ -1,7 +1,7 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit( 'restricted access' ); ?>
 <div id="sidebar-nav">
     <ul class="clearfix">
-    	<?php _option_menu() ?>
+    	<?php sampression_option_menu() ?>
 
     </ul>
 </div>

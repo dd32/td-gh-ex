@@ -28,10 +28,6 @@ $post_meta = $blog_settings['post_meta'];
                             }
                             ?>
                         </li>
-                        <li class="row">
-                            <label class="sec-label small"><?php _e( 'Read more text', 'sampression' ) ?></label>
-                            <input class="medium-input sanitize_text" name="read_more_text" type="text" value="<?php echo $post_meta['others']['more_text']; ?>" placeholder="Read More">
-                        </li>
                     </ul>
                 </div>
             </div>

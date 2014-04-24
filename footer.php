@@ -6,8 +6,6 @@
  */
 if ( ! defined( 'ABSPATH' ) ) exit( 'restricted access' );
 ?>
-        <?php do_action( 'sampression_footer_widget' ); ?>
-        <?php do_action( 'sampression_before_footer' ); ?>
         <footer id="footer" class="block">
             <div class="container">
                 <div class="eleven columns">
@@ -35,7 +33,6 @@ if ( ! defined( 'ABSPATH' ) ) exit( 'restricted access' );
 	<script src="<?php echo get_template_directory_uri(); ?>/lib/js/dd_belatedpng.js"></script>
 	<script> DD_belatedPNG.fix('img, .png-bg'); </script>
 <![endif]-->
-<?php do_action( 'sampression_before_body_close' ); ?>
 <?php wp_footer();  ?>
 </body>
 </html>

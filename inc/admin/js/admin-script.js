@@ -748,30 +748,5 @@ jQuery(document).ready(function($) {
         }
     });
 
-    $('.sam-hooks-cb input.samp-style').live('click', function() {
-        var i = $(this);
-        var ta = i.parent('div.right-cnt').parent('div.box-title').siblings('div.sam-hooks-option');
-        var hook = $.trim(ta.children('textarea').val());
-        if(ta.children('pre.select-me').siblings('div.message').length > 0) {
-            ta.children('pre.select-me').siblings('div.message').remove();
-        }
-        if(hook == '') {
-            ta.children('textarea').focus();
-            ta.children('pre.select-me').after('<div class="message error">Enter something to execute the hook.</div>');
-            setTimeout(function() {
-                ta.children('pre.select-me').siblings('div.message').remove();
-            }, 5000);
-            return false;
-        }        
-    });
-    
-    $('div.sam-hooks-option textarea').live('blur', function() {
-        var i = $(this);
-        if(i.val() == '') {
-            i.parent('div.sam-hooks-option').siblings('div.sam-hooks-cb').children('div.right-cnt').children('input.samp-style').prop('checked', false);
-            i.parent('div.sam-hooks-option').siblings('div.sam-hooks-cb').children('div.right-cnt').children('input.sam-use-excute-sam_after_sidebar').val('no');
-        }
-    });
-
 });
 // end ready function here.

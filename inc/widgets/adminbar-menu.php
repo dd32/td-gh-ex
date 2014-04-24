@@ -44,7 +44,6 @@ class SampressionAdminbarMenu {
             $this->add_sub_menu( __( 'Social Media', 'sampression' ), SAM_FW_SITE_WPADMIN_URL . "themes.php?page=sampression-options&sam-page=social-media", "sam-style", "social-media" );
             $this->add_sub_menu( __( 'Custom CSS', 'sampression' ), SAM_FW_SITE_WPADMIN_URL . "themes.php?page=sampression-options&sam-page=custom-css", "sam-style", "custom-css" );
             $this->add_sub_menu( __( 'Blog', 'sampression' ), SAM_FW_SITE_WPADMIN_URL . "themes.php?page=sampression-options&sam-page=blog", "sam-style", "blog" );
-            $this->add_sub_menu( __( 'Hooks', 'sampression' ), SAM_FW_SITE_WPADMIN_URL . "themes.php?page=sampression-options&sam-page=hooks", "sam-style", "hooks" );
     }
 }
 

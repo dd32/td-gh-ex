@@ -78,8 +78,6 @@ function sampression_load_framework() {
 	get_template_part( SAM_FW_FUNC_TPL_PART_DIR . 'menu' );
 	get_template_part( SAM_FW_FUNC_TPL_PART_DIR . 'sidebar' );
 	get_template_part( SAM_FW_FUNC_TPL_PART_DIR . 'admin-ajax' );
-	get_template_part( SAM_FW_FUNC_TPL_PART_DIR . 'view-counter' );
-	get_template_part( SAM_FW_FUNC_TPL_PART_DIR . 'hooks' );
         get_template_part( SAM_FW_FUNC_TPL_PART_DIR . 'metabox' );
 
 	/** Load Widgets */
