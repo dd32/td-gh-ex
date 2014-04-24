@@ -41,4 +41,5 @@ Changelog
 * Now use core paginate_links() function
 * Remove fixed navigation bar for mobile device to prevent display issue
 
-
+#### 1.11
+* Change link to footer credits
