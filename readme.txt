@@ -54,6 +54,10 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/catch
 
 == Changelog ==
 
+version 1.4.3
+* Added Aria Haspopup for menu in Touch Devices
+* Removed unnecessary css
+
 version 1.4.2.1
 * Fixed mobile menu link issue
 

@@ -445,13 +445,13 @@ function catcheverest_header_menu() { ?>
             <h2 class="assistive-text"><?php _e( 'Primary Menu', 'catcheverest' ); ?></h2>
             <div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'catcheverest' ); ?>"><?php _e( 'Skip to content', 'catcheverest' ); ?></a></div>
             <?php
-                if ( has_nav_menu( 'primary', 'catcheverest' ) ) { 
-                    $args = array(
+                if ( has_nav_menu( 'primary' ) ) { 
+                    $catcheverest_primary_menu = array(
                         'theme_location'    => 'primary',
                         'container_class' 	=> 'menu-header-container', 
                         'items_wrap'        => '<ul class="menu">%3$s</ul>' 
                     );
-                    wp_nav_menu( $args );
+                    wp_nav_menu( $catcheverest_primary_menu );
                 }
                 else {
                     echo '<div class="menu-header-container">';
