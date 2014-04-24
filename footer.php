@@ -19,7 +19,7 @@
 		<?php bloginfo( 'name' ); ?>
         </a>        
         <span class="sep"> | </span>		 
-		<?php printf( __( 'Theme: %1$s by %2$s ', 'base' ), 'Base WP', '<a href="http://iografica.it/" rel="designer">iografica.it</a>' ); ?>
+		<?php printf( __( 'Theme: %1$s by %2$s ', 'base' ), 'Base WP', '<a href="http://themes.iografica.it" rel="designer">iografica.it</a>' ); ?>
         <span class="sep"> | </span>
 		<?php printf( __( 'Powered by ', 'base' )); ?><a href="http://wordpress.org/" rel="generator">
 		<?php printf( __( '%s', 'base' ), 'WordPress' ); ?></a>             
