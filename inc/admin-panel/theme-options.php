@@ -19,7 +19,7 @@ add_action('admin_print_styles-appearance_page_theme_options', 'accesspress_lite
 
 
 
-$ak_options = array(
+$ak_accesspress_options = array(
 	'responsive_design'=>'',
 	'ak_favicon'=> '',
 	'header_text'=>'Call us : 984187523XX',
@@ -82,15 +82,15 @@ $ak_options = array(
 
 
 add_action( 'admin_init', 'ak_register_settings' );
-add_action( 'admin_menu', 'ak_theme_options' );
+add_action( 'admin_menu', 'ak_accesspress_theme_options' );
 
 function ak_register_settings() {
-	register_setting( 'ak_theme_options', 'ak_options', 'ak_validate_options' );
+	register_setting( 'ak_accesspress_theme_options', 'ak_accesspress_options', 'ak_accesspress_validate_options' );
 }
 
-function ak_theme_options() {
+function ak_accesspress_theme_options() {
 	// Add theme options page to the addmin menu
-	add_theme_page( 'Theme Options', 'Theme Options', 'edit_theme_options', 'theme_options', 'ak_theme_options_page' );
+	add_theme_page( 'Theme Options', 'Theme Options', 'edit_theme_options', 'theme_options', 'ak_accesspress_theme_options_page' );
 }
 
 
@@ -204,8 +204,8 @@ $ak_slider_caption = array(
 
 
 // Function to generate options page
-function ak_theme_options_page() {
-	global $ak_options, $ak_postlist, $ak_slider, $ak_slider_show_pager, $ak_slider_show_controls, $ak_slider_mode, $ak_slider_auto, $ak_slider_caption, $ak_catlist;
+function ak_accesspress_theme_options_page() {
+	global $ak_accesspress_options, $ak_postlist, $ak_slider, $ak_slider_show_pager, $ak_slider_show_controls, $ak_slider_mode, $ak_slider_auto, $ak_slider_caption, $ak_catlist;
 
 	if ( ! isset( $_REQUEST['settings-updated'] ) )
 		$_REQUEST['settings-updated'] = false; // This checks whether the form has just been submitted. ?>
@@ -248,10 +248,10 @@ function ak_theme_options_page() {
 		<div id="optionsframework" class="postbox">
 			<form method="post" action="options.php">
 
-			<?php $settings = get_option( 'ak_options', $ak_options ); ?>
+			<?php $settings = get_option( 'ak_accesspress_options', $ak_accesspress_options ); ?>
 			
 			
-			<?php settings_fields( 'ak_theme_options' );
+			<?php settings_fields( 'ak_accesspress_theme_options' );
 			/* This function outputs some hidden fields required by the form,
 			including a nonce, a unique number used to ensure the form has been submitted from the admin page
 			and not somewhere else, very important for security */ ?>
@@ -263,7 +263,7 @@ function ak_theme_options_page() {
 					<tr>
 						<th><label for="footer_copyright">Disable Responsive Design?</th>
 						<td>
-							<input type="checkbox" id="responsive_design" name="ak_options[responsive_design]" value="1" <?php checked( true, $settings['responsive_design'] ); ?> />
+							<input type="checkbox" id="responsive_design" name="ak_accesspress_options[responsive_design]" value="1" <?php checked( true, $settings['responsive_design'] ); ?> />
 							<label for="responsive_design">Check to disable</label>
 						</td>
 					</tr>
@@ -271,7 +271,7 @@ function ak_theme_options_page() {
                     <tr>
 						<th><label for="show_search">Show Search in Header?</th>
 						<td>
-							<input type="checkbox" id="show_search" name="ak_options[show_search]" value="1" <?php checked( true, $settings['show_search'] ); ?> />
+							<input type="checkbox" id="show_search" name="ak_accesspress_options[show_search]" value="1" <?php checked( true, $settings['show_search'] ); ?> />
 							<label for="show_search">Check to enable</label>
 						</td>
 					</tr>
@@ -280,7 +280,7 @@ function ak_theme_options_page() {
 						<th><label for="ak_favicon">Upload Favicon</th>
 						<td>
 							<div class="ak_fav_icon">
-							  <input type="text" name="ak_options[media_upload]" id="ak_media_upload" value="<?php if(!empty($settings['media_upload'])){ echo $settings['media_upload']; }?>" />
+							  <input type="text" name="ak_accesspress_options[media_upload]" id="ak_media_upload" value="<?php if(!empty($settings['media_upload'])){ echo $settings['media_upload']; }?>" />
 							  <input class="button" name="media_upload_button" id="ak_media_upload_button" value="Upload" type="button" />
 							  <em class="f13">&nbsp;&nbsp;Upload favicon(.png) with size of 16px X 16px</em>
 
@@ -309,20 +309,17 @@ function ak_theme_options_page() {
 					<tr>
 					<th scope="row"><label for="header_text">Header Text</label></th>
 					<td>
-					<textarea id="header_text" name="ak_options[header_text]" rows="5" cols="30" placeholder="Example.. Call Us : 985XXX9856XX"><?php echo $settings['header_text']; ?></textarea><br />
+					<textarea id="header_text" name="ak_accesspress_options[header_text]" rows="5" cols="30" placeholder="Example.. Call Us : 985XXX9856XX"><?php echo $settings['header_text']; ?></textarea><br />
                     <em class="f13">Html content allowed</em> </td>
                     </tr>
 
 					<tr><th scope="row"><label for="menu_alignment">Menu Alignment</label></th>
 					<td>
 					<?php $ak_menu_alignments = array('Left','Right','Center'); ?>
-					<select id="menu_alignment" name="ak_options[menu_alignment]">
+					<select id="menu_alignment" name="ak_accesspress_options[menu_alignment]">
 					<?php
 					foreach ( $ak_menu_alignments as $ak_menu_alignment ) :
-						$selected = '';
-						if ( $ak_menu_alignment == $settings['menu_alignment'] )
-							$selected = 'selected="selected"';
-						echo '<option style="padding-right: 10px;" value="' .  $ak_menu_alignment . '" ' . $selected . '>' . $ak_menu_alignment  . '</option>';
+						echo '<option style="padding-right: 10px;" value="' .  $ak_menu_alignment . '" ' . selected( $ak_menu_alignment , $settings['menu_alignment'] ) . '>' . $ak_menu_alignment  . '</option>';
 					endforeach;
 					?>
 					</select>
@@ -334,7 +331,7 @@ function ak_theme_options_page() {
 					<tr>
 					<th scope="row"><label for="footer_copyright">Footer Copyright Text</label></th>
 					<td>
-					<input id="footer_copyright" name="ak_options[footer_copyright]" type="text" value="<?php echo $settings['footer_copyright']; ?>" />
+					<input id="footer_copyright" name="ak_accesspress_options[footer_copyright]" type="text" value="<?php echo $settings['footer_copyright']; ?>" />
 					</td>
 					</tr>
 				</table>
@@ -349,7 +346,7 @@ function ak_theme_options_page() {
 					<?php $ak_webpage_layouts = array('Fullwidth','Boxed'); ?>
 					<?php
 					foreach ( $ak_webpage_layouts as $ak_webpage_layout ) : ?>
-						<input type="radio" id="<?php echo $ak_webpage_layout; ?>" name="ak_options[ak_webpage_layout]" value="<?php echo $ak_webpage_layout; ?>" <?php checked( $settings['ak_webpage_layout'], $ak_webpage_layout ); ?> />
+						<input type="radio" id="<?php echo $ak_webpage_layout; ?>" name="ak_accesspress_options[ak_webpage_layout]" value="<?php echo $ak_webpage_layout; ?>" <?php checked( $settings['ak_webpage_layout'], $ak_webpage_layout ); ?> />
 						<label for="<?php echo $ak_webpage_layout; ?>"><?php echo $ak_webpage_layout; ?></label><br />
 					<?php endforeach;
 					?>
@@ -366,7 +363,7 @@ function ak_theme_options_page() {
 						<label for="<?php echo $ak_home_page_layout; ?>">
                         <img src="<?php echo get_template_directory_uri().'/images/demo/'.$ak_home_page_layout.'.jpg'; ?>"/>
                         <div class="">
-                        <input type="radio" id="<?php echo $ak_home_page_layout; ?>" name="ak_options[ak_home_page_layout]" value="<?php echo $ak_home_page_layout; ?>" <?php checked( $settings['ak_home_page_layout'], $ak_home_page_layout ); ?> />
+                        <input type="radio" id="<?php echo $ak_home_page_layout; ?>" name="ak_accesspress_options[ak_home_page_layout]" value="<?php echo $ak_home_page_layout; ?>" <?php checked( $settings['ak_home_page_layout'], $ak_home_page_layout ); ?> />
                         <?php echo $ak_home_page_layout ;?></div>
                         </label>
                     </div>
@@ -378,14 +375,11 @@ function ak_theme_options_page() {
 
 					<tr><th scope="row"><label for="welcome_post">Welcome Post</label></th>
 					<td>
-					<select id="welcome_post" name="ak_options[welcome_post]">
+					<select id="welcome_post" name="ak_accesspress_options[welcome_post]">
 					<?php
 					foreach ( $ak_postlist as $single_post ) :
 						$label = $single_post['label'];
-						$selected = '';
-						if ( $single_post['value'] == $settings['welcome_post'] )
-							$selected = 'selected="selected"';
-						echo '<option style="padding-right: 10px;" value="' . $single_post['value'] . '" ' . $selected . '>' . $label . '</option>';
+						echo '<option style="padding-right: 10px;" value="' . $single_post['value'] . '" ' . selected( $single_post['value'], $settings['welcome_post'] ). '>' . $label . '</option>';
 					endforeach;
 					?>
 					</select>
@@ -397,7 +391,7 @@ function ak_theme_options_page() {
 					<tr>
 						<th><label for="show_fontawesome">Show Font Awesome icon for Featured Post?</th>
 						<td>
-							<input type="checkbox" id="show_fontawesome" name="ak_options[show_fontawesome]" value="1" <?php checked( true, $settings['show_fontawesome'] ); ?> />
+							<input type="checkbox" id="show_fontawesome" name="ak_accesspress_options[show_fontawesome]" value="1" <?php checked( true, $settings['show_fontawesome'] ); ?> />
 							<label for="show_fontawesome">Check to enable </label><br />
                             <em class="f13">(If enabled the featured image will be replaced by Font Awesome Icon. For lists of icons click <a href="http://fontawesome.io/icons/" target="_blank">here</a>)</em>
 						</td>
@@ -406,59 +400,50 @@ function ak_theme_options_page() {
                     <tr>
 						<th><label for="big_icons">Show Big Font Awesome icon with center aligned</th>
 						<td>
-							<input type="checkbox" id="big_icons" name="ak_options[big_icons]" value="1" <?php checked( true, $settings['big_icons'] ); ?> />
+							<input type="checkbox" id="big_icons" name="ak_accesspress_options[big_icons]" value="1" <?php checked( true, $settings['big_icons'] ); ?> />
 							<label for="big_icons">Check to enable </label><br />
 						</td>
 					</tr>
                     
 					<tr><th scope="row"><label for="featured_post1">Featured Post 1</label></th>
 					<td>
-					<select id="featured_post1" name="ak_options[featured_post1]">
+					<select id="featured_post1" name="ak_accesspress_options[featured_post1]">
 					<?php
 					foreach ( $ak_postlist as $single_post ) :
 						$label = $single_post['label'];
-						$selected = '';
-						if ( $single_post['value'] == $settings['featured_post1'] )
-							$selected = 'selected="selected"';
-						echo '<option style="padding-right: 10px;" value="' . $single_post['value'] . '" ' . $selected . '>' . $label . '</option>';
+						echo '<option style="padding-right: 10px;" value="' . $single_post['value'] . '" ' . selected( $single_post['value'] , $settings['featured_post1'] ). '>' . $label . '</option>';
 					endforeach;
 					?>
 					</select>
-					<input id="featured_post1_icon" name="ak_options[featured_post1_icon]" type="text" value="<?php echo $settings['featured_post1_icon']; ?>" placeholder="Font Awesome icon name" /><em class="f13">&nbsp;&nbsp;Example: fa-bell</em>
+					<input id="featured_post1_icon" name="ak_accesspress_options[featured_post1_icon]" type="text" value="<?php echo $settings['featured_post1_icon']; ?>" placeholder="Font Awesome icon name" /><em class="f13">&nbsp;&nbsp;Example: fa-bell</em>
 					</td>
 					</tr>
 
 					<tr><th scope="row"><label for="featured_post2">Featured Post 2</label></th>
 					<td>
-					<select id="featured_post2" name="ak_options[featured_post2]">
+					<select id="featured_post2" name="ak_accesspress_options[featured_post2]">
 					<?php
 					foreach ( $ak_postlist as $single_post ) :
 						$label = $single_post['label'];
-						$selected = '';
-						if ( $single_post['value'] == $settings['featured_post2'] )
-							$selected = 'selected="selected"';
-						echo '<option style="padding-right: 10px;" value="' . $single_post['value']  . '" ' . $selected . '>' . $label . '</option>';
+						echo '<option style="padding-right: 10px;" value="' . $single_post['value']  . '" ' . selected( $single_post['value'] , $settings['featured_post2'] ) . '>' . $label . '</option>';
 					endforeach;
 					?>
 					</select>
-					<input id="featured_post2_icon" name="ak_options[featured_post2_icon]" type="text" value="<?php echo $settings['featured_post2_icon']; ?>" placeholder="Font Awesome icon name" /><em class="f13">&nbsp;&nbsp;Example: fa-bell</em>
+					<input id="featured_post2_icon" name="ak_accesspress_options[featured_post2_icon]" type="text" value="<?php echo $settings['featured_post2_icon']; ?>" placeholder="Font Awesome icon name" /><em class="f13">&nbsp;&nbsp;Example: fa-bell</em>
 					</td>
 					</tr>
 
 					<tr><th scope="row"><label for="featured_post3">Featured Post 3</label></th>
 					<td>
-					<select id="featured_post3" name="ak_options[featured_post3]">
+					<select id="featured_post3" name="ak_accesspress_options[featured_post3]">
 					<?php
 					foreach ( $ak_postlist as $single_post ) :
 						$label = $single_post['label'];
-						$selected = '';
-						if ( $single_post['value'] == $settings['featured_post3'] )
-							$selected = 'selected="selected"';
-						echo '<option style="padding-right: 10px;" value="' . $single_post['value']  . '" ' . $selected . '>' . $label . '</option>';
+						echo '<option style="padding-right: 10px;" value="' . $single_post['value']  . '" ' . selected( $single_post['value'] , $settings['featured_post3'] ) . '>' . $label . '</option>';
 					endforeach;
 					?>
 					</select>
-					<input id="featured_post3_icon" name="ak_options[featured_post3_icon]" type="text" value="<?php  echo $settings['featured_post3_icon']; ?>" placeholder="Font Awesome icon name" /><em class="f13">&nbsp;&nbsp;Example: fa-bell</em>
+					<input id="featured_post3_icon" name="ak_accesspress_options[featured_post3_icon]" type="text" value="<?php  echo $settings['featured_post3_icon']; ?>" placeholder="Font Awesome icon name" /><em class="f13">&nbsp;&nbsp;Example: fa-bell</em>
 					</td>
 					</tr>
 
@@ -466,14 +451,11 @@ function ak_theme_options_page() {
 
 					<tr><th scope="row"><label for="event_cat">Select the category to display as Events</label></th>
 					<td>
-					<select id="event_cat" name="ak_options[event_cat]">
+					<select id="event_cat" name="ak_accesspress_options[event_cat]">
 					<?php
 					foreach ( $ak_catlist as $single_cat ) :
 						$label = $single_cat['label'];
-						$selected = '';
-						if ( $single_cat['value'] == $settings['event_cat'] )
-							$selected = 'selected="selected"';
-						echo '<option style="padding-right: 10px;" value="' . $single_cat['value']  . '" ' . $selected . '>' . $label . '</option>';
+						echo '<option style="padding-right: 10px;" value="' . $single_cat['value']  . '" ' . selected( $single_cat['value'] , $settings['event_cat'] ). '>' . $label . '</option>';
 					endforeach;
 					?>
 					</select>
@@ -482,14 +464,11 @@ function ak_theme_options_page() {
 
 					<tr><th scope="row"><label for="testimonial_cat">Select the category to display as Testimonails</label></th>
 					<td>
-					<select id="testimonial_cat" name="ak_options[testimonial_cat]">
+					<select id="testimonial_cat" name="ak_accesspress_options[testimonial_cat]">
 					<?php
 					foreach ( $ak_catlist as $single_cat ) :
 						$label = $single_cat['label'];
-						$selected = '';
-						if ( $single_cat['value'] == $settings['testimonial_cat'] )
-							$selected = 'selected="selected"';
-						echo '<option style="padding-right: 10px;" value="' . $single_cat['value'] . '" ' . $selected . '>' . $label . '</option>';
+						echo '<option style="padding-right: 10px;" value="' . $single_cat['value'] . '" ' . selected( $single_cat['value'] , $settings['testimonial_cat']). '>' . $label . '</option>';
 					endforeach;
 					?>
 					</select>
@@ -498,14 +477,11 @@ function ak_theme_options_page() {
 
 					<tr><th scope="row"><label for="blog_cat">Select the category to display as Blog</label></th>
 					<td>
-					<select id="blog_cat" name="ak_options[blog_cat]">
+					<select id="blog_cat" name="ak_accesspress_options[blog_cat]">
 					<?php
 					foreach ( $ak_catlist as $single_cat ) :
 						$label = $single_cat['label'];
-						$selected = '';
-						if ( $single_cat['value'] == $settings['blog_cat'] )
-							$selected = 'selected="selected"';
-						echo '<option style="padding-right: 10px;" value="' . $single_cat['value'] . '" ' . $selected . '>' . $label . '</option>';
+						echo '<option style="padding-right: 10px;" value="' . $single_cat['value'] . '" ' . selected( $single_cat['value'] , $settings['blog_cat'] ) . '>' . $label . '</option>';
 					endforeach;
 					?>
 					</select>
@@ -514,14 +490,11 @@ function ak_theme_options_page() {
 
 					<tr><th scope="row"><label for="portfolio_cat">Select the category to display as Portfolio/Products</label></th>
 					<td>
-					<select id="portfolio_cat" name="ak_options[portfolio_cat]">
+					<select id="portfolio_cat" name="ak_accesspress_options[portfolio_cat]">
 					<?php
 					foreach ( $ak_catlist as $single_cat ) :
 						$label = $single_cat['label'];
-						$selected = '';
-						if ( $single_cat['value'] == $settings['portfolio_cat'] )
-							$selected = 'selected="selected"';
-						echo '<option style="padding-right: 10px;" value="' . $single_cat['value'] . '" ' . $selected . '>' . $label . '</option>';
+						echo '<option style="padding-right: 10px;" value="' . $single_cat['value'] . '" ' . selected( $single_cat['value'] , $settings['portfolio_cat'] ) . '>' . $label . '</option>';
 					endforeach;
 					?>
 					</select>
@@ -533,7 +506,7 @@ function ak_theme_options_page() {
                     <tr>
 					<th scope="row"><label for="gallery_code">Gallery Short Code</label></th>
 					<td>
-					<textarea id="gallery_code" name="ak_options[gallery_code]" rows="3" cols="30" placeholder='[gallery link="file" ids="203,204,205,206,207,208"]'><?php echo $settings['gallery_code']; ?></textarea>
+					<textarea id="gallery_code" name="ak_accesspress_options[gallery_code]" rows="3" cols="30" placeholder='[gallery link="file" ids="203,204,205,206,207,208"]'><?php echo $settings['gallery_code']; ?></textarea>
                     </td>
 					</tr>
                     
@@ -556,14 +529,11 @@ function ak_theme_options_page() {
 
 					<tr><th scope="row"><label for="slider1">Silder 1</label></th>
 					<td>
-					<select id="slider1" name="ak_options[slider1]">
+					<select id="slider1" name="ak_accesspress_options[slider1]">
 					<?php
 					foreach ( $ak_postlist as $single_post ) :
 						$label = $single_post['label'];
-						$selected = '';
-						if ( $single_post['value'] == $settings['slider1'] )
-							$selected = 'selected="selected"';
-						echo '<option style="padding-right: 10px;" value="' . $single_post['value'] . '" ' . $selected . '>' . $label . '</option>';
+						echo '<option style="padding-right: 10px;" value="' . $single_post['value'] . '" ' . selected($single_post['value'] , $settings['slider1'] ). '>' . $label . '</option>';
 					endforeach;
 					?>
 					</select>
@@ -572,14 +542,11 @@ function ak_theme_options_page() {
 
 					<tr><th scope="row"><label for="slider2">Silder 2</label></th>
 					<td>
-					<select id="slider2" name="ak_options[slider2]">
+					<select id="slider2" name="ak_accesspress_options[slider2]">
 					<?php
 					foreach ( $ak_postlist as $single_post ) :
 						$label = $single_post['label'];
-						$selected = '';
-						if ( $single_post['value'] == $settings['slider2'] )
-							$selected = 'selected="selected"';
-						echo '<option style="padding-right: 10px;" value="' . $single_post['value']  . '" ' . $selected . '>' . $label . '</option>';
+						echo '<option style="padding-right: 10px;" value="' . $single_post['value']  . '" ' . selected($single_post['value'] , $settings['slider2'] ) . '>' . $label . '</option>';
 					endforeach;
 					?>
 					</select>
@@ -588,14 +555,11 @@ function ak_theme_options_page() {
 
 					<tr><th scope="row"><label for="slider3">Silder 3</label></th>
 					<td>
-					<select id="slider3" name="ak_options[slider3]">
+					<select id="slider3" name="ak_accesspress_options[slider3]">
 					<?php
 					foreach ( $ak_postlist as $single_post ) :
 						$label = $single_post['label'];
-						$selected = '';
-						if ( $single_post['value'] == $settings['slider3'] )
-							$selected = 'selected="selected"';
-						echo '<option style="padding-right: 10px;" value="' . esc_attr( $single_post['value'] ) . '" ' . $selected . '>' . $label . '</option>';
+						echo '<option style="padding-right: 10px;" value="' . esc_attr( $single_post['value'] ) . '" ' . selected($single_post['value'] , $settings['slider3'] ) . '>' . $label . '</option>';
 					endforeach;
 					?>
 					</select>
@@ -604,14 +568,11 @@ function ak_theme_options_page() {
 
 					<tr><th scope="row"><label for="slider4">Silder 4</label></th>
 					<td>
-					<select id="slider4" name="ak_options[slider4]">
+					<select id="slider4" name="ak_accesspress_options[slider4]">
 					<?php
 					foreach ( $ak_postlist as $single_post ) :
 						$label = $single_post['label'];
-						$selected = '';
-						if ( $single_post['value'] == $settings['slider4'] )
-							$selected = 'selected="selected"';
-						echo '<option style="padding-right: 10px;" value="' . esc_attr( $single_post['value'] ) . '" ' . $selected . '>' . $label . '</option>';
+						echo '<option style="padding-right: 10px;" value="' . esc_attr( $single_post['value'] ) . '" ' . selected( $single_post['value'], $settings['slider4'] ) . '>' . $label . '</option>';
 					endforeach;
 					?>
 					</select>
@@ -627,7 +588,7 @@ function ak_theme_options_page() {
 					<tr><th scope="row">Show Slider</th>
 					<td>
 					<?php foreach( $ak_slider as $slider ) : ?>
-					<input type="radio" id="<?php echo $slider['value']; ?>" name="ak_options[show_slider]" value="<?php echo $slider['value']; ?>" <?php checked( $settings['show_slider'], $slider['value'] ); ?> />
+					<input type="radio" id="<?php echo $slider['value']; ?>" name="ak_accesspress_options[show_slider]" value="<?php echo $slider['value']; ?>" <?php checked( $settings['show_slider'], $slider['value'] ); ?> />
 					<label for="<?php echo $slider['value']; ?>"><?php echo $slider['label']; ?></label><br />
 					<?php endforeach; ?>
 					</td>
@@ -636,7 +597,7 @@ function ak_theme_options_page() {
 					<tr><th scope="row">Show Slider Pager (Navigation dots)</th>
 					<td>
 					<?php foreach( $ak_slider_show_pager as $slider_pager ) : ?>
-					<input type="radio" id="<?php echo $slider_pager['value']; ?>" name="ak_options[slider_show_pager]" value="<?php echo $slider_pager['value']; ?>" <?php checked( $settings['slider_show_pager'], $slider_pager['value'] ); ?> />
+					<input type="radio" id="<?php echo $slider_pager['value']; ?>" name="ak_accesspress_options[slider_show_pager]" value="<?php echo $slider_pager['value']; ?>" <?php checked( $settings['slider_show_pager'], $slider_pager['value'] ); ?> />
 					<label for="<?php echo $slider_pager['value']; ?>"><?php echo $slider_pager['label']; ?></label><br />
 					<?php endforeach; ?>
 					</td>
@@ -645,7 +606,7 @@ function ak_theme_options_page() {
 					<tr><th scope="row">Show Slider Controls (Arrows)</th>
 					<td>
 					<?php foreach( $ak_slider_show_controls as $slider_controls ) : ?>
-					<input type="radio" id="<?php echo $slider_controls['value']; ?>" name="ak_options[slider_show_controls]" value="<?php echo $slider_controls['value']; ?>" <?php checked( $settings['slider_show_controls'], $slider_controls['value'] ); ?> />
+					<input type="radio" id="<?php echo $slider_controls['value']; ?>" name="ak_accesspress_options[slider_show_controls]" value="<?php echo $slider_controls['value']; ?>" <?php checked( $settings['slider_show_controls'], $slider_controls['value'] ); ?> />
 					<label for="<?php echo $slider_controls['value']; ?>"><?php echo $slider_controls['label']; ?></label><br />
 					<?php endforeach; ?>
 					</td>
@@ -654,7 +615,7 @@ function ak_theme_options_page() {
 					<tr><th scope="row">Slider Transition - fade/slide</th>
 					<td>
 					<?php foreach( $ak_slider_mode as $slider_modes) : ?>
-					<input type="radio" id="<?php echo $slider_modes['value']; ?>" name="ak_options[slider_mode]" value="<?php echo $slider_modes['value']; ?>" <?php checked( $settings['slider_mode'], $slider_modes['value'] ); ?> />
+					<input type="radio" id="<?php echo $slider_modes['value']; ?>" name="ak_accesspress_options[slider_mode]" value="<?php echo $slider_modes['value']; ?>" <?php checked( $settings['slider_mode'], $slider_modes['value'] ); ?> />
 					<label for="<?php echo $slider_modes['value']; ?>"><?php echo $slider_modes['label']; ?></label><br />
 					<?php endforeach; ?>
 					</td>
@@ -663,7 +624,7 @@ function ak_theme_options_page() {
 					<tr><th scope="row">Slider auto Transition</th>
 					<td>
 					<?php foreach( $ak_slider_auto as $slider_autos) : ?>
-					<input type="radio" id="<?php echo $slider_autos['value']; ?>" name="ak_options[slider_auto]" value="<?php echo $slider_autos['value']; ?>" <?php checked( $settings['slider_auto'], $slider_autos['value'] ); ?> />
+					<input type="radio" id="<?php echo $slider_autos['value']; ?>" name="ak_accesspress_options[slider_auto]" value="<?php echo $slider_autos['value']; ?>" <?php checked( $settings['slider_auto'], $slider_autos['value'] ); ?> />
 					<label for="<?php echo $slider_autos['value']; ?>"><?php echo $slider_autos['label']; ?></label><br />
 					<?php endforeach; ?>
 					</td>
@@ -671,14 +632,14 @@ function ak_theme_options_page() {
 
 					<tr><th scope="row">Slider Speed</th>
 					<td>
-					<input id="slider_speed" name="ak_options[slider_speed]" type="text" value="<?php echo $settings['slider_speed']; ?>" />
+					<input id="slider_speed" name="ak_accesspress_options[slider_speed]" type="text" value="<?php echo $settings['slider_speed']; ?>" />
 					</td>
 					</tr>
 
 					<tr><th scope="row">Show Slider Captions</th>
 					<td>
 					<?php foreach( $ak_slider_caption as $slider_captions) : ?>
-					<input type="radio" id="<?php echo $slider_captions['value']; ?>" name="ak_options[slider_caption]" value="<?php echo $slider_captions['value']; ?>" <?php checked( $settings['slider_caption'], $slider_captions['value'] ); ?> />
+					<input type="radio" id="<?php echo $slider_captions['value']; ?>" name="ak_accesspress_options[slider_caption]" value="<?php echo $slider_captions['value']; ?>" <?php checked( $settings['slider_caption'], $slider_captions['value'] ); ?> />
 					<label for="<?php echo $slider_captions['value']; ?>"><?php echo $slider_captions['label']; ?></label><br />
 					<?php endforeach; ?>
 					</td>
@@ -697,7 +658,7 @@ function ak_theme_options_page() {
 						<tr>
 							<th><label for="leftsidebar_show_latest_events">Show Latest Events?</th>
 							<td>
-							<input type="checkbox" id="leftsidebar_show_latest_events" name="ak_options[leftsidebar_show_latest_events]" value="1" <?php checked( true, $settings['leftsidebar_show_latest_events'] ); ?> />
+							<input type="checkbox" id="leftsidebar_show_latest_events" name="ak_accesspress_options[leftsidebar_show_latest_events]" value="1" <?php checked( true, $settings['leftsidebar_show_latest_events'] ); ?> />
 							<label for="leftsidebar_show_latest_events">Check to enable</label>
 							</td>
 						</tr>
@@ -705,7 +666,7 @@ function ak_theme_options_page() {
 						<tr>
 							<th><label for="leftsidebar_show_testimonials">Show Testimonials?</th>
 							<td>
-							<input type="checkbox" id="leftsidebar_show_testimonials" name="ak_options[leftsidebar_show_testimonials]" value="1" <?php checked( true, $settings['leftsidebar_show_testimonials'] ); ?> />
+							<input type="checkbox" id="leftsidebar_show_testimonials" name="ak_accesspress_options[leftsidebar_show_testimonials]" value="1" <?php checked( true, $settings['leftsidebar_show_testimonials'] ); ?> />
 							<label for="leftsidebar_show_testimonials">Check to enable</label>
 							</td>
 						</tr>
@@ -722,7 +683,7 @@ function ak_theme_options_page() {
 						<tr>
 							<th><label for="rightsidebar_show_latest_events">Show Latest Events?</th>
 							<td>
-							<input type="checkbox" id="rightsidebar_show_latest_events" name="ak_options[rightsidebar_show_latest_events]" value="1" <?php checked( true, $settings['rightsidebar_show_latest_events'] ); ?> />
+							<input type="checkbox" id="rightsidebar_show_latest_events" name="ak_accesspress_options[rightsidebar_show_latest_events]" value="1" <?php checked( true, $settings['rightsidebar_show_latest_events'] ); ?> />
 							<label for="rightsidebar_show_latest_events">Check to enable</label>
 							</td>
 						</tr>
@@ -730,7 +691,7 @@ function ak_theme_options_page() {
 						<tr>
 							<th><label for="rightsidebar_show_testimonials">Show Testimonials?</th>
 							<td>
-							<input type="checkbox" id="rightsidebar_show_testimonials" name="ak_options[rightsidebar_show_testimonials]" value="1" <?php checked( true, $settings['rightsidebar_show_testimonials'] ); ?> />
+							<input type="checkbox" id="rightsidebar_show_testimonials" name="ak_accesspress_options[rightsidebar_show_testimonials]" value="1" <?php checked( true, $settings['rightsidebar_show_testimonials'] ); ?> />
 							<label for="rightsidebar_show_testimonials">Check to enable</label>
 							</td>
 						</tr>
@@ -756,7 +717,7 @@ function ak_theme_options_page() {
 					<tr>
 						<th><label for="show_social_header">Disable Social icons in header?</th>
 						<td>
-							<input type="checkbox" id="show_social_header" name="ak_options[show_social_header]" value="1" <?php checked( true, $settings['show_social_header'] ); ?> />
+							<input type="checkbox" id="show_social_header" name="ak_accesspress_options[show_social_header]" value="1" <?php checked( true, $settings['show_social_header'] ); ?> />
 							<label for="show_social_header">Check to disable</label>
 						</td>
 					</tr>
@@ -764,74 +725,74 @@ function ak_theme_options_page() {
 					<tr>
 						<th><label for="show_social_footer">Disable Social icons in Footer?</th>
 						<td>
-							<input type="checkbox" id="show_social_footer" name="ak_options[show_social_footer]" value="1" <?php checked( true, $settings['show_social_footer'] ); ?> />
+							<input type="checkbox" id="show_social_footer" name="ak_accesspress_options[show_social_footer]" value="1" <?php checked( true, $settings['show_social_footer'] ); ?> />
 							<label for="show_social_footer">Check to disable</label>
 						</td>
 					</tr>
 
 					<tr><th scope="row"><label for="ak_facebook">Facebook</label></th>
 					<td>
-					<input id="ak_facebook" name="ak_options[ak_facebook]" type="text" value="<?php echo $settings['ak_facebook']; ?>" />
+					<input id="ak_facebook" name="ak_accesspress_options[ak_facebook]" type="text" value="<?php echo $settings['ak_facebook']; ?>" />
 					</td>
 					</tr>
 
 					<tr><th scope="row"><label for="ak_twitter">Twitter</label></th>
 					<td>
-					<input id="ak_twitter" name="ak_options[ak_twitter]" type="text" value="<?php echo esc_url($settings['ak_twitter']); ?>" />
+					<input id="ak_twitter" name="ak_accesspress_options[ak_twitter]" type="text" value="<?php echo esc_url($settings['ak_twitter']); ?>" />
 					</td>
 					</tr>
 
 					<tr><th scope="row"><label for="ak_gplus">Google plus</label></th>
 					<td>
-					<input id="ak_gplus" name="ak_options[ak_gplus]" type="text" value="<?php echo esc_url($settings['ak_gplus']); ?>" />
+					<input id="ak_gplus" name="ak_accesspress_options[ak_gplus]" type="text" value="<?php echo esc_url($settings['ak_gplus']); ?>" />
 					</td>
 					</tr>
 
 					<tr><th scope="row"><label for="ak_youtube">Youtube</label></th>
 					<td>
-					<input id="ak_youtube" name="ak_options[ak_youtube]" type="text" value="<?php echo esc_url($settings['ak_youtube']); ?>" />
+					<input id="ak_youtube" name="ak_accesspress_options[ak_youtube]" type="text" value="<?php echo esc_url($settings['ak_youtube']); ?>" />
 					</td>
 					</tr>
 
 					<tr><th scope="row"><label for="ak_pinterest">Pinterest</label></th>
 					<td>
-					<input id="ak_pinterest" name="ak_options[ak_pinterest]" type="text" value="<?php echo esc_url($settings['ak_pinterest']); ?>" />
+					<input id="ak_pinterest" name="ak_accesspress_options[ak_pinterest]" type="text" value="<?php echo esc_url($settings['ak_pinterest']); ?>" />
 					</td>
 					</tr>
 
 					<tr><th scope="row"><label for="ak_linkedin">Linkedin</label></th>
 					<td>
-					<input id="ak_linkedin" name="ak_options[ak_linkedin]" type="text" value="<?php echo esc_url($settings['ak_linkedin']); ?>" />
+					<input id="ak_linkedin" name="ak_accesspress_options[ak_linkedin]" type="text" value="<?php echo esc_url($settings['ak_linkedin']); ?>" />
 					</td>
 					</tr>
 
 					<tr><th scope="row"><label for="ak_flickr">Flickr</label></th>
 					<td>
-					<input id="ak_flickr" name="ak_options[ak_flickr]" type="text" value="<?php echo esc_url($settings['ak_flickr']); ?>" />
+					<input id="ak_flickr" name="ak_accesspress_options[ak_flickr]" type="text" value="<?php echo esc_url($settings['ak_flickr']); ?>" />
 					</td>
 					</tr>
 
 					<tr><th scope="row"><label for="ak_vimeo">Vimeo</label></th>
 					<td>
-					<input id="ak_vimeo" name="ak_options[ak_vimeo]" type="text" value="<?php echo esc_url($settings['ak_vimeo']); ?>" />
+					<input id="ak_vimeo" name="ak_accesspress_options[ak_vimeo]" type="text" value="<?php echo esc_url($settings['ak_vimeo']); ?>" />
 					</td>
 					</tr>
 
 					<tr><th scope="row"><label for="ak_stumbleupon">Stumbleupon</label></th>
 					<td>
-					<input id="ak_stumbleupon" name="ak_options[ak_stumbleupon]" type="text" value="<?php echo esc_url($settings['ak_stumbleupon']); ?>" />
+					<input id="ak_stumbleupon" name="ak_accesspress_options[ak_stumbleupon]" type="text" value="<?php echo esc_url($settings['ak_stumbleupon']); ?>" />
 					</td>
 					</tr>
 
 					<tr><th scope="row"><label for="ak_skype">Skype</label></th>
 					<td>
-					<input id="ak_skype" name="ak_options[ak_skype]" type="text" value="<?php echo esc_url($settings['ak_skype']); ?>" />
+					<input id="ak_skype" name="ak_accesspress_options[ak_skype]" type="text" value="<?php echo esc_url($settings['ak_skype']); ?>" />
 					</td>
 					</tr>
 
 					<tr><th scope="row"><label for="ak_rss">RSS</label></th>
 					<td>
-					<input id="ak_rss" name="ak_options[ak_rss]" type="text" value="<?php echo esc_url($settings['ak_rss']); ?>" />
+					<input id="ak_rss" name="ak_accesspress_options[ak_rss]" type="text" value="<?php echo esc_url($settings['ak_rss']); ?>" />
 					</td>
 					</tr>
 				</table>
@@ -843,14 +804,14 @@ function ak_theme_options_page() {
 				<table class="form-table">
 					<tr><th scope="row"><label for="google_map">Google Map Iframe</label></th>
 						<td>
-						<textarea id="google_map" name="ak_options[google_map]" rows="5" cols="40"><?php echo $settings['google_map']; ?></textarea>
+						<textarea id="google_map" name="ak_accesspress_options[google_map]" rows="5" cols="40"><?php echo $settings['google_map']; ?></textarea>
 						<p class="f13"><em>Enter the Iframe of the google map to show in contact us page.<br />Leave Blank if you don't want to show<em></p>
 						</td>
 					</tr>
 
 					<tr><th scope="row"><label for="contact_address">Contact Address</label></th>
 						<td>
-						<textarea id="contact_address" name="ak_options[contact_address]" rows="5" cols="40"><?php echo $settings['contact_address']; ?></textarea>
+						<textarea id="contact_address" name="ak_accesspress_options[contact_address]" rows="5" cols="40"><?php echo $settings['contact_address']; ?></textarea>
 						<p class="f13"><em>Enter the Contact Address<br />Leave Blank if you don't want to show<em></p>
 						</td>
 					</tr>
@@ -889,10 +850,10 @@ With our experience, we are creating "AccessPress Lite", a free WordPress theme,
 }
 
 
-function ak_validate_options( $input ) {
-	global $ak_options, $ak_menu_alignments, $ak_postlist, $ak_slider, $ak_slider_show_pager, $ak_slider_show_controls, $ak_slider_mode, $ak_slider_auto, $ak_slider_caption;
+function ak_accesspress_validate_options( $input ) {
+	global $ak_accesspress_options, $ak_menu_alignments, $ak_postlist, $ak_slider, $ak_slider_show_pager, $ak_slider_show_controls, $ak_slider_mode, $ak_slider_auto, $ak_slider_caption;
 
-	$settings = get_option( 'ak_options', $ak_options );
+	$settings = get_option( 'ak_accesspress_options', $ak_accesspress_options );
 	
 	// We strip all tags from the text field, to avoid vulnerablilties.
     $input['welcome_post'] = wp_filter_nohtml_kses( $input['welcome_post'] );

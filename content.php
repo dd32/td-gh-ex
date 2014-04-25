@@ -59,7 +59,7 @@ $cat_portfolio = $ak_settings['portfolio_cat'];
 	</div>
 </article>
 
-<?php elseif(!empty($cat_portfolio) &&is_category() && is_category($cat_portfolio)): ?>
+<?php elseif(!empty($cat_portfolio) && is_category() && is_category($cat_portfolio)): ?>
 
 <article id="post-<?php the_ID(); ?>" class="cat-portfolio-list">
 <?php 

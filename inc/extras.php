@@ -255,47 +255,47 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 		?>
 		<div class="socials">
 		<?php if(!empty($ak_settings['ak_facebook'])){ ?>
-		<a href="<?php echo $ak_settings['ak_facebook']; ?>" class="facebook" title="Facebook" target="_blank"><span class="font-icon-social-facebook"></span></a>
+		<a href="<?php echo esc_url($ak_settings['ak_facebook']); ?>" class="facebook" title="Facebook" target="_blank"><span class="font-icon-social-facebook"></span></a>
 		<?php } ?>
 
 		<?php if(!empty($ak_settings['ak_twitter'])){ ?>
-		<a href="<?php echo $ak_settings['ak_twitter']; ?>" class="twitter" title="Twitter" target="_blank"><span class="font-icon-social-twitter"></span></a>
+		<a href="<?php echo esc_url($ak_settings['ak_twitter']); ?>" class="twitter" title="Twitter" target="_blank"><span class="font-icon-social-twitter"></span></a>
 		<?php } ?>
 
 		<?php if(!empty($ak_settings['ak_gplus'])){ ?>
-		<a href="<?php echo $ak_settings['ak_gplus']; ?>" class="gplus" title="Google Plus" target="_blank"><span class="font-icon-social-google-plus"></span></a>
+		<a href="<?php echo esc_url($ak_settings['ak_gplus']); ?>" class="gplus" title="Google Plus" target="_blank"><span class="font-icon-social-google-plus"></span></a>
 		<?php } ?>
 
 		<?php if(!empty($ak_settings['ak_youtube'])){ ?>
-		<a href="<?php echo $ak_settings['ak_youtube']; ?>" class="youtube" title="Youtube" target="_blank"><span class="font-icon-social-youtube"></span></a>
+		<a href="<?php echo esc_url($ak_settings['ak_youtube']); ?>" class="youtube" title="Youtube" target="_blank"><span class="font-icon-social-youtube"></span></a>
 		<?php } ?>
 
 		<?php if(!empty($ak_settings['ak_pinterest'])){ ?>
-		<a href="<?php echo $ak_settings['ak_pinterest']; ?>" class="pinterest" title="Pinterest" target="_blank"><span class="font-icon-social-pinterest"></span></a>
+		<a href="<?php echo esc_url($ak_settings['ak_pinterest']); ?>" class="pinterest" title="Pinterest" target="_blank"><span class="font-icon-social-pinterest"></span></a>
 		<?php } ?>
 
 		<?php if(!empty($ak_settings['ak_linkedin'])){ ?>
-		<a href="<?php echo $ak_settings['ak_linkedin']; ?>" class="linkedin" title="Linkedin" target="_blank"><span class="font-icon-social-linkedin"></span></a>
+		<a href="<?php echo esc_url($ak_settings['ak_linkedin']); ?>" class="linkedin" title="Linkedin" target="_blank"><span class="font-icon-social-linkedin"></span></a>
 		<?php } ?>
 
 		<?php if(!empty($ak_settings['ak_flickr'])){ ?>
-		<a href="<?php echo $ak_settings['ak_flickr']; ?>" class="flickr" title="Flickr" target="_blank"><span class="font-icon-social-flickr"></span></a>
+		<a href="<?php echo esc_url($ak_settings['ak_flickr']); ?>" class="flickr" title="Flickr" target="_blank"><span class="font-icon-social-flickr"></span></a>
 		<?php } ?>
 
 		<?php if(!empty($ak_settings['ak_vimeo'])){ ?>
-		<a href="<?php echo $ak_settings['ak_vimeo']; ?>" class="vimeo" title="Vimeo" target="_blank"><span class="font-icon-social-vimeo"></span></a>
+		<a href="<?php echo esc_url($ak_settings['ak_vimeo']); ?>" class="vimeo" title="Vimeo" target="_blank"><span class="font-icon-social-vimeo"></span></a>
 		<?php } ?>
 
 		<?php if(!empty($ak_settings['ak_stumbleupon'])){ ?>
-		<a href="<?php echo $ak_settings['ak_stumbleupon']; ?>" class="stumbleupon" title="Stumbleupon" target="_blank"><span class="font-icon-social-stumbleupon"></span></a>
+		<a href="<?php echo esc_url($ak_settings['ak_stumbleupon']); ?>" class="stumbleupon" title="Stumbleupon" target="_blank"><span class="font-icon-social-stumbleupon"></span></a>
 		<?php } ?>
 
 		<?php if(!empty($ak_settings['ak_skype'])){ ?>
-		<a href="<?php echo $ak_settings['ak_skype']; ?>" class="skype" title="Skype" target="_blank"><span class="font-icon-social-skype"></span></a>
+		<a href="<?php echo esc_url($ak_settings['ak_skype']); ?>" class="skype" title="Skype" target="_blank"><span class="font-icon-social-skype"></span></a>
 		<?php } ?>
 
 		<?php if(!empty($ak_settings['ak_rss'])){ ?>
-		<a href="<?php echo $ak_settings['ak_rss']; ?>" class="rss" title="RSS" target="_blank"><span class="font-icon-rss"></span></a>
+		<a href="<?php echo esc_url($ak_settings['ak_rss']); ?>" class="rss" title="RSS" target="_blank"><span class="font-icon-rss"></span></a>
 		<?php } ?>
 		</div>
 	<?php } 

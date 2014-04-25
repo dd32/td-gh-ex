@@ -1,23 +1,30 @@
 <?php
-add_action('add_meta_boxes', 'add_sidebar_layout');
-function add_sidebar_layout()
+/**
+ * AccessPress Lite Theme Options
+ *
+ * @package AccesspressLite
+ */
+
+function add_sidebar_layout_box()
 {
     add_meta_box(
-                 'ak_sidebar_layout', // $id
+                 'acesspress_sidebar_layout', // $id
                  'Sidebar Layout', // $title
-                 'sidebar_layour_cb', // $callback
+                 'sidebar_layout_callback', // $callback
                  'post', // $page
                  'normal', // $context
                  'high'); // $priority
 
     add_meta_box(
-                 'ak_sidebar_layout', // $id
+                 'acesspress_sidebar_layout', // $id
                  'Sidebar Layout', // $title
-                 'sidebar_layour_cb', // $callback
+                 'sidebar_layout_callback', // $callback
                  'page', // $page
                  'normal', // $context
                  'high'); // $priority
 }
+
+add_action('add_meta_boxes', 'add_sidebar_layout_box');
 
 
 $sidebar_layout = array(
@@ -45,10 +52,10 @@ $sidebar_layout = array(
 
     );
 
-function sidebar_layour_cb()
+function sidebar_layout_callback()
 { 
 global $post , $sidebar_layout;
-wp_nonce_field( basename( __FILE__ ), 'custom_meta_box_nonce' ); 
+wp_nonce_field( basename( __FILE__ ), 'sidebar_layout_nonce' ); 
 ?>
 
 <table class="form-table">
@@ -60,12 +67,12 @@ wp_nonce_field( basename( __FILE__ ), 'custom_meta_box_nonce' );
 <td>
 <?php  
    foreach ($sidebar_layout as $field) {  
-                $metalayout = get_post_meta( $post->ID, 'ak_sidebar_layout', true ); ?>
+                $sidebar_metalayout = get_post_meta( $post->ID, 'acesspress_sidebar_layout', true ); ?>
 
                 <div class="radio-image-wrapper" style="float:left; margin-right:30px;">
                 <label class="description">
                 <span><img src="<?php echo esc_url( $field['thumbnail'] ); ?>" alt="" /></span></br>
-                <input type="radio" name="ak_sidebar_layout" value="<?php echo $field['value']; ?>" <?php checked( $field['value'], $metalayout ); if(empty($metalayout) && $field['value']=='right-sidebar'){ echo "checked='checked'";} ?>/>&nbsp;<?php echo $field['label']; ?>
+                <input type="radio" name="acesspress_sidebar_layout" value="<?php echo $field['value']; ?>" <?php checked( $field['value'], $sidebar_metalayout ); if(empty($sidebar_metalayout) && $field['value']=='right-sidebar'){ echo "checked='checked'";} ?>/>&nbsp;<?php echo $field['label']; ?>
                 </label>
                 </div>
                 <?php } // end foreach 
@@ -88,9 +95,9 @@ function save_sidebar_layout( $post_id ) {
     global $sidebar_layout, $post; 
 
     // Verify the nonce before proceeding.
-    if ( !isset( $_POST[ 'custom_meta_box_nonce' ] ) || !wp_verify_nonce( $_POST[ 'custom_meta_box_nonce' ], basename( __FILE__ ) ) )
+    if ( !isset( $_POST[ 'sidebar_layout_nonce' ] ) || !wp_verify_nonce( $_POST[ 'sidebar_layout_nonce' ], basename( __FILE__ ) ) )
         return;
-        
+
     // Stop WP from clearing custom fields on autosave
     if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE)  
         return;
@@ -105,12 +112,12 @@ function save_sidebar_layout( $post_id ) {
 
     foreach ($sidebar_layout as $field) {  
         //Execute this saving function
-        $old = get_post_meta( $post_id, 'ak_sidebar_layout', true); 
-        $new = $_POST['ak_sidebar_layout'];
+        $old = get_post_meta( $post_id, 'acesspress_sidebar_layout', true); 
+        $new = sanitize_text_field($_POST['acesspress_sidebar_layout']);
         if ($new && $new != $old) {  
-            update_post_meta($post_id, 'ak_sidebar_layout', $new);  
+            update_post_meta($post_id, 'acesspress_sidebar_layout', $new);  
         } elseif ('' == $new && $old) {  
-            delete_post_meta($post_id,'ak_sidebar_layout', $old);  
+            delete_post_meta($post_id,'acesspress_sidebar_layout', $old);  
         } 
      } // end foreach   
      
