@@ -2,7 +2,7 @@
 
 Theme Name: Sparkling
 Theme URI: http://colorlib.com/wp/sparkling/
-Version: 1.0.4
+Version: 1.1.0
 Tested up to: WP 3.9
 
 Author: Aigars Silkalns
@@ -61,6 +61,10 @@ Afterwards you can continue theme setup and customization via WordPress Dashboar
 Theme documentation is available on http://colorlib.com/wp/support/sparkling
 
 /*========= Changelog =========*/
+
+= 1.1 - 25.04.2014 =
+
+* Removed all traces from Underscore template that weren't replaced already. Theme is still based on Underscore but removed some strings to avoid confusion.
 
 = 1.0.4 - 17.04.2014 =
 * Changed Author URI.

@@ -1,6 +1,6 @@
 <?php
 /**
- * _s Theme Customizer
+ * Sparkling Theme Customizer
  *
  * @package sparkling
  */

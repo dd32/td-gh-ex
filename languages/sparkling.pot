@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sparkling Theme\n"
-"POT-Creation-Date: 2014-03-30 21:34+0200\n"
-"PO-Revision-Date: 2014-03-30 21:35+0200\n"
+"POT-Creation-Date: 2014-04-25 10:04+0200\n"
+"PO-Revision-Date: 2014-04-25 10:04+0200\n"
 "Last-Translator: Aigars Silkalns <a.silkalns@gmail.com>\n"
 "Language-Team: colorlib <info@colorlib.com>\n"
 "Language: en_US\n"
@@ -166,47 +166,47 @@ msgstr ""
 msgid "Read More"
 msgstr ""
 
-#: functions.php:48
+#: functions.php:46
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:49 inc/extras.php:192
+#: functions.php:47 inc/extras.php:188
 msgid "Footer Links"
 msgstr ""
 
-#: functions.php:77
+#: functions.php:75
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:87
+#: functions.php:85
 msgid "Homepage Widget 1"
 msgstr ""
 
-#: functions.php:88 functions.php:98 functions.php:108
+#: functions.php:86 functions.php:96 functions.php:106
 msgid "Displays on the Home Page"
 msgstr ""
 
-#: functions.php:97
+#: functions.php:95
 msgid "Homepage Widget 2"
 msgstr ""
 
-#: functions.php:107
+#: functions.php:105
 msgid "Homepage Widget 3"
 msgstr ""
 
-#: functions.php:117
+#: functions.php:115
 msgid "Footer Widget 1"
 msgstr ""
 
-#: functions.php:118 functions.php:128 functions.php:138
+#: functions.php:116 functions.php:126 functions.php:136
 msgid "Used for footer widget area"
 msgstr ""
 
-#: functions.php:127
+#: functions.php:125
 msgid "Footer Widget 2"
 msgstr ""
 
-#: functions.php:137
+#: functions.php:135
 msgid "Footer Widget 3"
 msgstr ""
 
@@ -339,60 +339,60 @@ msgstr ""
 msgid "Page %s"
 msgstr ""
 
-#: inc/extras.php:136
+#: inc/extras.php:132
 msgid ""
 "<p>This post is password protected. To view it please enter your password "
 "below:</p>"
 msgstr ""
 
-#: inc/extras.php:137
+#: inc/extras.php:133
 msgid "Password:"
 msgstr ""
 
-#: inc/extras.php:140
+#: inc/extras.php:136
 msgid "Submit"
 msgstr ""
 
-#: inc/extras.php:164
+#: inc/extras.php:160
 msgid "Follow us on "
 msgstr ""
 
-#: inc/extras.php:265
+#: inc/extras.php:261
 #, php-format
 msgid "Theme by %1$s Powered by %2$s"
 msgstr ""
 
-#: inc/extras.php:367
+#: inc/extras.php:363
 msgid "Support and Documentation"
 msgstr ""
 
-#: inc/extras.php:373
+#: inc/extras.php:369
 msgid "Sparkling Documentation"
 msgstr ""
 
-#: inc/extras.php:374
+#: inc/extras.php:370
 msgid ""
 "The best way to contact us with <b>support questions</b> and <b>bug reports</"
 "b> is via"
 msgstr ""
 
-#: inc/extras.php:374
+#: inc/extras.php:370
 msgid "Colorlib support forum"
 msgstr ""
 
-#: inc/extras.php:375
+#: inc/extras.php:371
 msgid "If you like this theme, I'd appreciate any of the following:"
 msgstr ""
 
-#: inc/extras.php:377
+#: inc/extras.php:373
 msgid "Rate this Theme"
 msgstr ""
 
-#: inc/extras.php:378
+#: inc/extras.php:374
 msgid "Like on Facebook"
 msgstr ""
 
-#: inc/extras.php:379
+#: inc/extras.php:375
 msgid "Follow on Twitter"
 msgstr ""
 
