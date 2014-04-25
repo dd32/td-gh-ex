@@ -4,7 +4,15 @@ function fasterthemes_options_init(){
 } 
 add_action( 'admin_init', 'fasterthemes_options_init' );
 function ft_options_validate( $input ) {
+	$input['logo'] = esc_url_raw( $input['logo'] );
+	$input['favicon'] = esc_url_raw( $input['favicon'] );
 	$input['footertext'] = wp_filter_nohtml_kses( $input['footertext'] );
+
+	$input['fburl'] = esc_url_raw( $input['fburl'] );
+	$input['twitter'] = esc_url_raw( $input['twitter'] );
+	$input['googleplus'] = esc_url_raw( $input['googleplus'] );
+	$input['linkedin'] = esc_url_raw( $input['linkedin'] );
+
     return $input;
 }
 function fasterthemes_framework_load_scripts(){

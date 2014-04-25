@@ -37,4 +37,5 @@ Version 1.06.1
 
 Version 1.06.2
 
-    i)   Fixed Sanitization code.
+    i)   Fixed Sanitization code.Version 1.06.
+3    i)   Fixed Sanitization in all input fields.

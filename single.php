@@ -2,7 +2,7 @@
 
 <div id="content" class="clearfix">
   <div id="main" class="col-sm-8 clearfix" role="main">
-    <div id="home-main" class="home-main home">
+    <div id="home-main" class="home-main home mywiki-post">
       <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
       <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope>
         <header>
