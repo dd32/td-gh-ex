@@ -43,3 +43,6 @@ Changelog
 
 #### 1.11
 * Change link to footer credits
+
+#### 1.12
+* Fix link to footer credits
