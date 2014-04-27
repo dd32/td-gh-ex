@@ -79,8 +79,8 @@
 	</section><!-- #slider-banner -->
 	<?php
 	if(is_home() || is_front_page() ){
-	$content = "home-content";
+	$accesspresslite_content_id = "home-content";
 	}else{
-	$content ="content";
+	$accesspresslite_content_id ="content";
 	} ?>
 	<div id="<?php echo $content; ?>" class="site-content">

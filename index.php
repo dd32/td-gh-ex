@@ -27,11 +27,11 @@ get_header(); ?>
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
 					if(('page' == get_option( 'show_on_front' )) && is_front_page()){
-						$post_format = "page";
+						$accesspresslite_post_format = "page";
 					}else{
-						$post_format = get_post_format();
+						$accesspresslite_post_format = get_post_format();
 					}
-					get_template_part( 'content', $post_format );
+					get_template_part( 'content', $accesspresslite_post_format );
 				?>
 
 			<?php endwhile; ?>

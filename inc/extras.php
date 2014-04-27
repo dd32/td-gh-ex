@@ -317,23 +317,23 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 		global $accesspresslite_options;
 		$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 		if($accesspresslite_settings['menu_alignment'] =="Left"){
-			$alignment_class="menu-left";
+			$accesspresslite_alignment_class="menu-left";
 		}elseif($accesspresslite_settings['menu_alignment'] == "Center"){
-			$alignment_class="menu-center";
+			$accesspresslite_alignment_class="menu-center";
 		}elseif($accesspresslite_settings['menu_alignment'] == "Right"){
-			$alignment_class="menu-right";
+			$accesspresslite_alignment_class="menu-right";
 		}else{
-			$alignment_class="";
+			$accesspresslite_alignment_class="";
 		}
-		echo $alignment_class;
+		echo $accesspresslite_alignment_class;
 	}
 
 	add_action('accesspresslite_menu_alignment','accesspresslite_menu_alignment_cb', 10);
 
 
-	function accesspresslite_excerpt( $content , $letter_count ){
-		$striped_content = strip_tags($content);
-		$accesspresslite_excerpt = substr($striped_content, 0, $letter_count )."...";
+	function accesspresslite_excerpt( $accesspresslite_content , $accesspresslite_letter_count ){
+		$accesspresslite_striped_content = strip_tags($accesspresslite_content);
+		$accesspresslite_excerpt = substr($accesspresslite_striped_content, 0, $accesspresslite_letter_count )."...";
 		return $accesspresslite_excerpt;
 	}
 
