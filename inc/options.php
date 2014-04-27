@@ -38,6 +38,13 @@ function optionsframework_options() {
 		'desc' => '<div class="infohead"><span class="donation">If you like this FREE Theme You can consider for a small Donation to us. Your Donation will be spent for the Disadvantaged Children and Students. You can visit our <a href="'.$newspress_author_uri.'donate/" target="_blank"><strong>DONATION PAGE</strong></a> and Take your decision.</span><br /><br /><span class="donation"> We appreciate an <a href="http://wordpress.org/support/view/theme-reviews/newspress-lite" target="_blank">Honest Review</a> of this Theme if you Love our Work.</span><br /> 
 		<span class="donation">Need More Features and Options including Unlimited Advertisements, Slides, News Items, Galleries, Links and 100+ Advanced Features? Try <a href="'.$newspress_theme_uri.'" target="_blank"><strong>NewsPress Extend</strong></a>.</span><br /> <br /><span class="donation"> You can Visit the NewsPress Extend Demo <a href="http://demo.'.$newspress_author_uri_clean.'/wp/themes/newspress/" target="_blank"><strong>Here</strong></a>.</span><a href="'.$newspress_theme_uri.'" target="_blank" class="extendlink"> </a></div>',
 		'type' => 'info');
+		
+	$options[] = array(
+		'name' => 'Set News Style Front Page without considering the WP Reading Settings', 
+		'desc' => 'If you select This Options the WordPress Settings > Reading will not be considered and the News Style Front Page will be displayed. This is recommended for News Sites.', 
+		'id' => 'fpostex',
+		'std' => '0',
+		'type' => 'checkbox');
 
 	$numslinks = 5;
 	foreach (range(1, $numslinks ) as $numslinksn) {
@@ -65,17 +72,7 @@ function optionsframework_options() {
 		'std' =>  get_template_directory_uri() . '/images/ad3.png',
 		'type' => 'upload' );
 		
-	$fposttype = array( '1' => 'Do not Show any Post or Page in the Front Page.', '2' => 'Show Posts or Page as per the Reading Settings.');
-	
-	$options[] = array(
-		'name' => 'Front Page Post/Page Visibility', 
-		'desc' => 'Select Option how you want to show or do not want to show Posts/Pages in the Front Page as per WordPress Reading Settings', 
-		'id' => 'fpostex',
-		'std' => '2',
-		'type' => 'radio',
-		'options' => $fposttype);
 
-	
 	return $options;
 }
 

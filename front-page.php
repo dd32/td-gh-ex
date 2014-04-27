@@ -8,7 +8,11 @@
 */
 ?>
 
-<?php get_header(); ?>
+<?php get_header();  
+
+if (esc_html(of_get_option('fpostex', '0')) == '1' || 'posts' != get_option( 'show_on_front' ) ):
+
+?>
 
 <div id="content" class="frnt-page">
 
@@ -161,11 +165,9 @@ echo '<div class="fpage-cat" >';
 echo '</div> <!--end of fpage-cat-->';
 }
 endforeach; wp_reset_postdata(); ?>
-</div>
+</div><div class="clear"></div>
 
-<div class="clear"></div>
-
-<?php if (esc_html(of_get_option('fpostex', '2')) != '1'): get_template_part( 'front-page-content' ); endif;?>
+<?php endif; if (esc_html(of_get_option('fpostex', '0')) != '1' ): get_template_part( 'front-page-content' ); endif; ?>
 
 <?php get_footer(); ?>
 
