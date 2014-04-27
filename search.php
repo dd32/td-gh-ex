@@ -10,7 +10,6 @@
 	<?php if ( have_posts() ) : ?>
 		<h3 class="archive-title"><?php printf( __( 'Search Results for: %s', 'bluegray' ), '<span>' . get_search_query() . '</span>' ); ?></h3>
 			
-			
 	<?php while ( have_posts() ) : the_post(); ?>
 		<h3 class="post-title"><a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to ', 'bluegray'); ?>
 		<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
@@ -19,7 +18,7 @@
 			<?php printf( __( 'Posted on %s', 'bluegray' ), '<a href="' . esc_url( get_permalink() ) . '">' . esc_html( get_the_date() ). '</a>' ); ?> | 
 			<?php printf( __( 'By %s', 'bluegray' ), sprintf( '<a href="%1$s">%2$s</a>', esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ), esc_html( get_the_author() ) ) ); ?>
 			<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : echo '|'; ?>
-			<?php comments_popup_link( __( 'Leave a response', 'bluegray' ), __( '1 response', 'bluegray' ), __( '% responses', 'bluegray' ) ); ?><?php endif; ?></h5>
+			<?php comments_popup_link( __( 'Leave a response', 'bluegray' ), __( '1 response', 'bluegray' ), __( '% responses', 'bluegray' ) ); ?><?php endif; ?>
 			</h5>
 
 	<?php if ( has_post_thumbnail() ) { 

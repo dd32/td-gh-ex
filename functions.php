@@ -6,7 +6,8 @@
 // Sets up theme defaults and registers various WordPress features that BlueGray supports
 	function bluegray_setup() { 
 
-	// Set width without the padding
+	// Set max content width for img, video, and more
+		global $content_width; 
 		if ( ! isset( $content_width ) )
 		$content_width = 650;
 
@@ -69,7 +70,7 @@
 		echo '<script src="' . esc_url( get_template_directory_uri() . '/js/ie.js' ) . '"></script>'. "\n"; 
 		echo '<![endif]-->'. "\n"; 
 		} 
-	add_action('wp_enqueue_scripts', 'bluegray_html5'); 
+	add_action( 'wp_head', 'bluegray_html5' ); 
 
 
 // Add blogname to wp_title

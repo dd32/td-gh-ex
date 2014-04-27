@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: BlueGray v1.6\n"
+"Project-Id-Version: BlueGray v1.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-04-02 09:41:56+0000\n"
+"PO-Revision-Date: 2014-04-27 12:26:35+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -28,7 +28,7 @@ msgstr "Niets gevonden"
 
 #: 404.php:10
 #: archive.php:47
-#: index.php:38
+#: index.php:39
 #: search.php:37
 #@ bluegray
 msgid "Sorry, no posts matched your criteria."
@@ -65,50 +65,50 @@ msgid "Tag Archives"
 msgstr "Tag Archieven"
 
 #: archive.php:27
-#: index.php:18
+#: index.php:19
 #: search.php:15
 #@ bluegray
 msgid "Permalink to "
 msgstr "Permalink naar "
 
 #: archive.php:51
-#: index.php:42
+#: index.php:43
 #: search.php:43
 #@ bluegray
 msgid "&laquo; Older posts"
 msgstr "&laquo; Oudere berichten"
 
 #: archive.php:52
-#: index.php:43
+#: index.php:44
 #: search.php:44
 #@ bluegray
 msgid "Newer posts &raquo;"
 msgstr "Nieuwere berichten &raquo;"
 
-#: functions.php:103
+#: functions.php:104
 #@ bluegray
 msgid "Primary Sidebar"
 msgstr "Hoofd Sidebar"
 
-#: functions.php:105
-#: functions.php:115
-#: functions.php:125
-#: functions.php:136
-#: functions.php:146
-#: functions.php:156
-#: functions.php:166
+#: functions.php:106
+#: functions.php:116
+#: functions.php:126
+#: functions.php:137
+#: functions.php:147
+#: functions.php:157
+#: functions.php:167
 #@ bluegray
 msgid "Select widgets from the right-hand side."
 msgstr "Selecteer widgets van de rechterkant."
 
 #: archive.php:43
-#: index.php:34
+#: index.php:35
 #: search.php:31
 #@ bluegray
 msgid "Read More &raquo;"
 msgstr "Lees Meer &raquo;"
 
-#: functions.php:39
+#: functions.php:40
 #@ bluegray
 msgid "Boats"
 msgstr "Boten"
@@ -120,7 +120,7 @@ msgstr "Aanbevolen bericht"
 
 #: page-full.php:20
 #: page.php:19
-#: single.php:35
+#: single.php:38
 #@ bluegray
 msgid "Edit"
 msgstr "Bewerk"
@@ -130,11 +130,6 @@ msgstr "Bewerk"
 #@ bluegray
 msgid "Search Results for: %s"
 msgstr "Zoekresultaat voor: %s"
-
-#: single.php:26
-#@ bluegray
-msgid "Posted in "
-msgstr "Geplaatst in "
 
 #: comments.php:38
 #@ bluegray
@@ -151,17 +146,17 @@ msgstr "Nieuwere Reacties &raquo;"
 msgid "Comments are closed"
 msgstr "Reageren is niet mogelijk"
 
-#: functions.php:144
+#: functions.php:145
 #@ bluegray
 msgid "Footer Sidebar Right"
 msgstr "Footer Sidebar Rechts"
 
-#: functions.php:164
+#: functions.php:165
 #@ bluegray
 msgid "Footer Sidebar Left"
 msgstr "Footer Sidebar Links"
 
-#: functions.php:18
+#: functions.php:19
 #@ bluegray
 msgid "Primary Navigation"
 msgstr "Hoofdmenu"
@@ -174,29 +169,29 @@ msgid_plural "%1$s responses on %2$s"
 msgstr[0] "1 reactie op %2$s"
 msgstr[1] "%1$s reacties op %2$s"
 
-#: functions.php:188
-#: functions.php:194
+#: functions.php:189
+#: functions.php:195
 #@ bluegray
 msgid "Logo"
 msgstr "Logo"
 
-#: functions.php:190
+#: functions.php:191
 #@ bluegray
 msgid "Upload a logo to replace blogname and description in header"
 msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
 
-#: functions.php:113
+#: functions.php:114
 #@ bluegray
 msgid "Homepage Sidebar Right"
 msgstr "Homepage Sidebar Rechts"
 
-#: functions.php:134
+#: functions.php:135
 #@ bluegray
 msgid "Homepage Sidebar Left"
 msgstr "Homepage Sidebar Links"
 
 #: archive.php:34
-#: index.php:25
+#: index.php:26
 #: search.php:22
 #: single.php:20
 #@ bluegray
@@ -204,7 +199,7 @@ msgid "Leave a response"
 msgstr "Plaats een reactie"
 
 #: archive.php:34
-#: index.php:25
+#: index.php:26
 #: search.php:22
 #: single.php:20
 #@ bluegray
@@ -212,7 +207,7 @@ msgid "% responses"
 msgstr "% reacties"
 
 #: archive.php:34
-#: index.php:25
+#: index.php:26
 #: search.php:22
 #: single.php:20
 #@ bluegray
@@ -234,18 +229,18 @@ msgstr "WordPress Blog Platform"
 msgid "Proudly powered by WordPress"
 msgstr "Proudly powered by WordPress"
 
-#: functions.php:123
+#: functions.php:124
 #@ bluegray
 msgid "Homepage Sidebar Middle"
 msgstr "Homepage Sidebar Midden"
 
-#: functions.php:154
+#: functions.php:155
 #@ bluegray
 msgid "Footer Sidebar Middle"
 msgstr "Footer Sidebar Midden"
 
 #: archive.php:31
-#: index.php:22
+#: index.php:23
 #: search.php:19
 #: single.php:17
 #, php-format
@@ -254,7 +249,7 @@ msgid "Posted on %s"
 msgstr "Geplaatst op %s"
 
 #: archive.php:32
-#: index.php:23
+#: index.php:24
 #: search.php:20
 #: single.php:18
 #, php-format
@@ -262,14 +257,21 @@ msgstr "Geplaatst op %s"
 msgid "By %s"
 msgstr "Door %s"
 
-#: single.php:26
 #: single.php:27
+#: single.php:28
 #@ bluegray
 msgid ", "
 msgstr ", "
 
 #: single.php:27
+#, php-format
 #@ bluegray
-msgid "Tags: "
-msgstr "Tags: "
+msgid "Posted in %s"
+msgstr "Geplaatst in %s"
+
+#: single.php:28
+#, php-format
+#@ bluegray
+msgid "Tags: %s"
+msgstr "Tags: %s"
 

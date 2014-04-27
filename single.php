@@ -22,11 +22,12 @@
 	
 			<?php the_content(); ?>
 			<div class="pagelink"><?php wp_link_pages(); ?></div>
-			
+
 			<h5 class="postmetadata">
-			<?php _e('Posted in ', 'bluegray'); ?><?php the_category(__(', ', 'bluegray') ); ?><?php if(has_tag() ) : echo '|'; ?>
-			<?php the_tags(__('Tags: ', 'bluegray'), __(', ', 'bluegray') ); ?> <?php endif; ?>
+			<?php printf( __( 'Posted in %s', 'bluegray' ), get_the_category_list( __( ', ', 'bluegray' ) ) ); ?>
+			<?php if(has_tag() ) : echo ' | '; ?><?php printf(__( 'Tags: %s', 'bluegray' ), get_the_tag_list('', __( ', ', 'bluegray' ) ) ); ?> <?php endif; ?>
 			</h5>
+
 		</div>
 
 		<?php comments_template(); ?>

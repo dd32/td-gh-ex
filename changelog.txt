@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+BlueGray version 1.7 - may 2014
+- several minor adjustments 
+
 BlueGray version 1.6 - april 2014 
 - first stable release
 
