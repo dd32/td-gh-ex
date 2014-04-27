@@ -47,6 +47,10 @@ and we will include it within the theme from next version update.
 
 == CHANGE LOG == 
 
+= Version 1.0.5 = 
+* Fixed layout issue for wide 978px and narrow 978px layout for smaller screen size of less than 768px.
+* Added hover image effect for linked images.
+
 = Version 1.0.4 = 
 * Featured image size issue fixed for featured-blog-medium-small image.
 * Some css adjustment for dark skin.
