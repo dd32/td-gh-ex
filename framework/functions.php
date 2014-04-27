@@ -687,18 +687,6 @@ add_filter( 'pre_update_option_show_on_front', 'themingstrap_front_page_override
 /**
  * Funtion to add CSS class to body
  */
-function themingstrap_add_class( $classes ) {
-
-	// Get themingstrap theme option.
-	global $themingstrap_options;
-	if ( $themingstrap_options['front_page'] == 1 && is_front_page() ) {
-		$classes[] = 'front-page';
-	}
-
-	return $classes;
-}
-
-add_filter( 'body_class', 'themingstrap_add_class' );
 
 
 /*

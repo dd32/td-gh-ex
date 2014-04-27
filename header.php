@@ -54,7 +54,7 @@
         <span class="icon-bar"></span>
       </button>
     </div>  
-    <?php
+    <?php	
             wp_nav_menu( array(
                 'theme_location'    => 'primary',
                 'depth'             => 3,

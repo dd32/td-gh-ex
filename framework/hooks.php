@@ -57,7 +57,7 @@ function themingstrap_header_top() {
 	$activehmenu =get_theme_option('headermenu');
 		if ( $activehmenu == 1): ?>
 		<div class="headermenu">
-		<?php wp_nav_menu( array('menu' => 'Top Menu' )); ?>
+		<?php wp_nav_menu( array('theme_location' => 'top-menu' )); ?>
 		</div>
 		<?php
 	endif;
@@ -212,7 +212,7 @@ function themingstrap_footer_top() {
 	$activefmenu =get_theme_option('footermenu');
 		if ( $activefmenu == 1):?>
 		<div class="footermenu">
-		<?php wp_nav_menu( array('menu' => 'Footer Menu' )); ?>
+		<?php wp_nav_menu( array('theme_location' => 'footer-menu' )); ?>
 		</div>
 		<?php
 	endif;

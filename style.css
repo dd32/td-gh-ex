@@ -6,8 +6,8 @@ Author URI: http://themingstrap.com/
 
 Description:  Theming Strap is a free version of ThemingStrap Framework made for premium quality theme development. This theme is having a lot of theme functionality like manage custom logo, Fav Icon, Footer script, Social media profile etc. It is fully Powered by Bootstrap 3.0 and FontAwesom icon font. Visit http://themingstrap.com/ to get details about this theme and framework. This theme is built using code standards of twentytwelve theme & like WordPress it is free to use for personal & commercial purpose.
 
-Version: 1.0
-Tags: red, custom-background, custom-menu,  featured-images, flexible-header, light, post-formats, responsive-layout, rtl-language-support, sticky-post
+Version: 1.0.1
+Tags: red, custom-background, custom-menu,  featured-images, flexible-header, light, post-formats, sticky-post
 
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -645,7 +645,8 @@ html[xmlns] .slides {
 }
 .post-item h3 {
   margin: 20px 0;
-  padding: 0;;
+  padding: 0;
+  word-wrap: break-word;
 }
 .post-item h3 a:hover {
   text-decoration: none;
