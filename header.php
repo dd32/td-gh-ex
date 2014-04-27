@@ -46,16 +46,16 @@
                 ?>
                 <div class="clear"></div>
                 <?php
-				global $ak_options;
-				$ak_settings = get_option( 'ak_options', $ak_options );
+				global $ak_accesspress_options;
+				$ak_accesspress_settings = get_option( 'ak_accesspress_options', $ak_accesspress_options );
 				/** 
 				* @hooked ak_social_cb - 10
 				*/
-				if($ak_settings['show_social_header'] == 0){
+				if($ak_accesspress_settings['show_social_header'] == 0){
 				do_action( 'ak_social_links' ); 
 				}
 
-				if($ak_settings['show_search'] == 1){ ?>
+				if($ak_accesspress_settings['show_search'] == 1){ ?>
 				<div class="ak-search">
 					<?php get_search_form(); ?>
 				</div>

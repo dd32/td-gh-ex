@@ -7,12 +7,12 @@
 ?>
 
 <?php 
-global $post, $ak_options;
-$ak_settings = get_option( 'ak_options', $ak_options );
-$event_category = $ak_settings['event_cat'];
-$show_events = $ak_settings['leftsidebar_show_latest_events'];
-$testimonail_category = $ak_settings['testimonial_cat'];
-$show_testimonials = $ak_settings['leftsidebar_show_testimonials'];
+global $post, $ak_accesspress_options;
+$ak_accesspress_settings = get_option( 'ak_accesspress_options', $ak_accesspress_options );
+$event_category = $ak_accesspress_settings['event_cat'];
+$show_events = $ak_accesspress_settings['leftsidebar_show_latest_events'];
+$testimonail_category = $ak_accesspress_settings['testimonial_cat'];
+$show_testimonials = $ak_accesspress_settings['leftsidebar_show_testimonials'];
 $post_class = get_post_meta( $post -> ID, 'ak_sidebar_layout', true );
 
 if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){

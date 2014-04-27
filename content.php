@@ -4,11 +4,11 @@
  */
 ?>
 <?php
-global $ak_options;
-$ak_settings = get_option( 'ak_options', $ak_options );
-$cat_event = $ak_settings['event_cat'];
-$cat_testimonail = $ak_settings['testimonial_cat'];
-$cat_portfolio = $ak_settings['portfolio_cat'];
+global $ak_accesspress_options;
+$ak_accesspress_settings = get_option( 'ak_accesspress_options', $ak_accesspress_options );
+$cat_event = $ak_accesspress_settings['event_cat'];
+$cat_testimonail = $ak_accesspress_settings['testimonial_cat'];
+$cat_portfolio = $ak_accesspress_settings['portfolio_cat'];
 ?>
 
 

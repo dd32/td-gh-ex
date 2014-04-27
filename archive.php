@@ -8,8 +8,8 @@
  */
 
 get_header(); 
-global $ak_options;
-$ak_settings = get_option( 'ak_options', $ak_options );
+global $ak_accesspress_options;
+$ak_accesspress_settings = get_option( 'ak_accesspress_options', $ak_accesspress_options );
 ?>
 
 <div class="ak-container">

@@ -7,17 +7,17 @@
 get_header(); ?>
 
 	<?php 
-		global $ak_options;
-		$ak_settings = get_option( 'ak_options', $ak_options );
+		global $ak_accesspress_options;
+		$ak_accesspress_settings = get_option( 'ak_accesspress_options', $ak_accesspress_options );
 
 		if ( 'page' == get_option( 'show_on_front' ) ) {
 		    get_template_part( 'index');
 		} else {
-		   if( $ak_settings['ak_home_page_layout'] == 'Default' ) {
+		   if( $ak_accesspress_settings['ak_home_page_layout'] == 'Default' ) {
 			get_template_part( 'index', 'one' ); 
-			}elseif( $ak_settings['ak_home_page_layout'] == 'Layout1' ) {
+			}elseif( $ak_accesspress_settings['ak_home_page_layout'] == 'Layout1' ) {
 				get_template_part( 'index', 'two' ); 
-			}elseif( $ak_settings['ak_home_page_layout'] == 'Layout2' ) {
+			}elseif( $ak_accesspress_settings['ak_home_page_layout'] == 'Layout2' ) {
 				get_template_part( 'index'); 
 			}else{
 				get_template_part( 'index', 'one' ); 

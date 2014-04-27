@@ -6,9 +6,9 @@
  */
 
 get_header();
-global $ak_options;
-$ak_settings = get_option( 'ak_options', $ak_options );
-$cat_blog = $ak_settings['blog_cat'];
+global $ak_accesspress_options;
+$ak_accesspress_settings = get_option( 'ak_accesspress_options', $ak_accesspress_options );
+$cat_blog = $ak_accesspress_settings['blog_cat'];
 ?>
 
 <div class="ak-container">

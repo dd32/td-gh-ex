@@ -1,12 +1,12 @@
 <?php 
-global $ak_options;
-$ak_settings = get_option( 'ak_options', $ak_options );
+global $ak_accesspress_options;
+$ak_accesspress_settings = get_option( 'ak_accesspress_options', $ak_accesspress_options );
 ?>
 
 <section id="top-section" class="ak-container">
 <div id="welcome-text" class="clear">
 	<?php
-		$welcome_post_id = $ak_settings['welcome_post'];
+		$welcome_post_id = $ak_accesspress_settings['welcome_post'];
 			if(!empty($welcome_post_id)){
 			
 			query_posts( 'p='.$welcome_post_id );
@@ -54,7 +54,7 @@ $ak_settings = get_option( 'ak_options', $ak_options );
 <div id="latest-events">
 
 			<?php
-				$event_category = $ak_settings['event_cat'];
+				$event_category = $ak_accesspress_settings['event_cat'];
 
 				if(!empty($event_category)){
 
@@ -133,10 +133,10 @@ $ak_settings = get_option( 'ak_options', $ak_options );
 
 <section id="mid-section" class="ak-container">
 <?php 
-$featured_post1 = $ak_settings['featured_post1'];
-$featured_post2 = $ak_settings['featured_post2'];
-$featured_post3 = $ak_settings['featured_post3'];
-$show_fontawesome_icon = $ak_settings['show_fontawesome'];
+$featured_post1 = $ak_accesspress_settings['featured_post1'];
+$featured_post2 = $ak_accesspress_settings['featured_post2'];
+$featured_post3 = $ak_accesspress_settings['featured_post3'];
+$show_fontawesome_icon = $ak_accesspress_settings['show_fontawesome'];
 
 if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)){
     if(!empty($featured_post1)) { ?>
@@ -172,7 +172,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 					<?php 
 					if($show_fontawesome_icon == 1){ ?>
 
-					<i class="fa <?php echo $ak_settings['featured_post1_icon'] ?>"></i>
+					<i class="fa <?php echo $ak_accesspress_settings['featured_post1_icon'] ?>"></i>
 							
 					<?php }
 					the_title(); ?>
@@ -222,7 +222,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 					<?php 
 					if($show_fontawesome_icon == 1){ ?>
 
-					<i class="fa <?php echo $ak_settings['featured_post2_icon'] ?>"></i>
+					<i class="fa <?php echo $ak_accesspress_settings['featured_post2_icon'] ?>"></i>
 							
 					<?php }
 					the_title(); ?>
@@ -271,7 +271,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 					<?php 
 					if($show_fontawesome_icon == 1){ ?>
 
-					<i class="fa <?php echo $ak_settings['featured_post3_icon'] ?>"></i>
+					<i class="fa <?php echo $ak_accesspress_settings['featured_post3_icon'] ?>"></i>
 							
 					<?php }
 					the_title(); ?>
@@ -378,7 +378,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
         
         <div class="thumbnail-gallery clear">
         <?php 
-        $gallery_code = $ak_settings['gallery_code'];
+        $gallery_code = $ak_accesspress_settings['gallery_code'];
         if ( is_active_sidebar( 'textblock-2' ) ) : ?>
 		  <?php dynamic_sidebar( 'textblock-2' ); ?>
 		<?php elseif(!empty($gallery_code)): ?>	
@@ -438,7 +438,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 		<div class="testimonail-slider">
  		<h1>Testimonials</h1>
 			<?php
-			$testimonail_category = $ak_settings['testimonial_cat'];
+			$testimonail_category = $ak_accesspress_settings['testimonial_cat'];
 			if(!empty($testimonail_category)) {
 				
 	            $loop = new WP_Query( array(
