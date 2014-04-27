@@ -7,10 +7,10 @@ jQuery(document).ready(function($) {
 
 	// Loads tabbed sections if they exist
 	if ( $('.nav-tab-wrapper').length > 0 ) {
-		ak_tabs();
+		accesspresslite_tabs();
 	}
 
-	function ak_tabs() {
+	function accesspresslite_tabs() {
 
 		// Hides all the .group sections to start
 		$('.group').hide();

@@ -12,7 +12,7 @@
 
 get_header(); 
 global $post;
-$post_class = get_post_meta( $post -> ID, 'ak_sidebar_layout', true );
+$post_class = get_post_meta( $post -> ID, 'accesspresslite_sidebar_layout', true );
 ?>
 
 <div class="ak-container">

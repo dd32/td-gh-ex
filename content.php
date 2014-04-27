@@ -4,11 +4,11 @@
  */
 ?>
 <?php
-global $ak_accesspress_options;
-$ak_accesspress_settings = get_option( 'ak_accesspress_options', $ak_accesspress_options );
-$cat_event = $ak_accesspress_settings['event_cat'];
-$cat_testimonail = $ak_accesspress_settings['testimonial_cat'];
-$cat_portfolio = $ak_accesspress_settings['portfolio_cat'];
+global $accesspresslite_options;
+$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
+$cat_event = $accesspresslite_settings['event_cat'];
+$cat_testimonail = $accesspresslite_settings['testimonial_cat'];
+$cat_portfolio = $accesspresslite_settings['portfolio_cat'];
 ?>
 
 
@@ -28,7 +28,7 @@ $cat_portfolio = $ak_accesspress_settings['portfolio_cat'];
 		</div>
 		<?php } ?>
 		<div class="cat-event-excerpt <?php if(! has_post_thumbnail() ) { echo "full-width"; }?>">
-		    <?php echo ak_excerpt( get_the_content() , 400 ) ?>
+		    <?php echo accesspresslite_excerpt( get_the_content() , 400 ) ?>
 		</div>
 		<a href="<?php the_permalink(); ?>" class="cat-event-more bttn">More</a>
 	</div><!-- .entry-content -->
@@ -99,7 +99,7 @@ $full_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), '
 	<?php else : ?>
 	<div class="entry-content">
 		<div class="short-content">
-		<?php echo ak_excerpt( get_the_content() , 400 ) ?>
+		<?php echo accesspresslite_excerpt( get_the_content() , 400 ) ?>
 		</div>
 		<a href="<?php the_permalink(); ?>" class="bttn">More</a>
 		<?php

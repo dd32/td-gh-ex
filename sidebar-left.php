@@ -7,13 +7,13 @@
 ?>
 
 <?php 
-global $post, $ak_accesspress_options;
-$ak_accesspress_settings = get_option( 'ak_accesspress_options', $ak_accesspress_options );
-$event_category = $ak_accesspress_settings['event_cat'];
-$show_events = $ak_accesspress_settings['leftsidebar_show_latest_events'];
-$testimonail_category = $ak_accesspress_settings['testimonial_cat'];
-$show_testimonials = $ak_accesspress_settings['leftsidebar_show_testimonials'];
-$post_class = get_post_meta( $post -> ID, 'ak_sidebar_layout', true );
+global $post, $accesspresslite_options;
+$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
+$event_category = $accesspresslite_settings['event_cat'];
+$show_events = $accesspresslite_settings['leftsidebar_show_latest_events'];
+$testimonail_category = $accesspresslite_settings['testimonial_cat'];
+$show_testimonials = $accesspresslite_settings['leftsidebar_show_testimonials'];
+$post_class = get_post_meta( $post -> ID, 'accesspresslite_sidebar_layout', true );
 
 if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
 ?>
@@ -57,7 +57,7 @@ if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
 		        		</h4>
 
 		        		<div class="event-excerpt">
-		        			<?php echo ak_excerpt( get_the_content() , 50 ) ?>
+		        			<?php echo accesspresslite_excerpt( get_the_content() , 50 ) ?>
 		        		</div>
 	        		</div>
 	        	</div>
@@ -126,7 +126,7 @@ if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
 		        		</div>
 
 			        	<div class="testimonail-excerpt">
-			        		<?php echo ak_excerpt( get_the_content() , 90 ) ?>
+			        		<?php echo accesspresslite_excerpt( get_the_content() , 90 ) ?>
 			        	</div>
 			        	<div class="clear"></div>
 					<div class="testimoinal-client-name"><?php the_title(); ?></div>

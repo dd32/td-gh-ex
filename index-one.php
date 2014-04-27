@@ -1,12 +1,12 @@
 <?php 
-global $ak_accesspress_options;
-$ak_accesspress_settings = get_option( 'ak_accesspress_options', $ak_accesspress_options );
+global $accesspresslite_options;
+$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 ?>
 
 <section id="top-section" class="ak-container">
 <div id="welcome-text" class="clear">
 	<?php
-		$welcome_post_id = $ak_accesspress_settings['welcome_post'];
+		$welcome_post_id = $accesspresslite_settings['welcome_post'];
 			if(!empty($welcome_post_id)){
 			
 			query_posts( 'p='.$welcome_post_id );
@@ -27,7 +27,7 @@ $ak_accesspress_settings = get_option( 'ak_accesspress_options', $ak_accesspress
 					<?php } ?>
 					
 					<div  class="welcome-detail<?php if( !has_post_thumbnail() ){ echo " welcome-detail-full-width"; } ?>">
-					<p><?php echo ak_excerpt( get_the_content() , 650 ) ?></p>
+					<p><?php echo accesspresslite_excerpt( get_the_content() , 650 ) ?></p>
 					<a href="<?php the_permalink(); ?>" class="readmore bttn">Read More</a>
 					</div>
 					
@@ -54,7 +54,7 @@ $ak_accesspress_settings = get_option( 'ak_accesspress_options', $ak_accesspress
 <div id="latest-events">
 
 			<?php
-				$event_category = $ak_accesspress_settings['event_cat'];
+				$event_category = $accesspresslite_settings['event_cat'];
 
 				if(!empty($event_category)){
 
@@ -94,7 +94,7 @@ $ak_accesspress_settings = get_option( 'ak_accesspress_options', $ak_accesspress
 		        		</h4>
 
 		        		<div class="event-excerpt">
-		        			<?php echo ak_excerpt( get_the_content() , 100 ) ?>
+		        			<?php echo accesspresslite_excerpt( get_the_content() , 100 ) ?>
 		        		</div>
 	        		</div>
 	        	</div>
@@ -133,10 +133,10 @@ $ak_accesspress_settings = get_option( 'ak_accesspress_options', $ak_accesspress
 
 <section id="mid-section" class="ak-container">
 <?php 
-$featured_post1 = $ak_accesspress_settings['featured_post1'];
-$featured_post2 = $ak_accesspress_settings['featured_post2'];
-$featured_post3 = $ak_accesspress_settings['featured_post3'];
-$show_fontawesome_icon = $ak_accesspress_settings['show_fontawesome'];
+$featured_post1 = $accesspresslite_settings['featured_post1'];
+$featured_post2 = $accesspresslite_settings['featured_post2'];
+$featured_post3 = $accesspresslite_settings['featured_post3'];
+$show_fontawesome_icon = $accesspresslite_settings['show_fontawesome'];
 
 if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)){
     if(!empty($featured_post1)) { ?>
@@ -172,7 +172,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 					<?php 
 					if($show_fontawesome_icon == 1){ ?>
 
-					<i class="fa <?php echo $ak_accesspress_settings['featured_post1_icon'] ?>"></i>
+					<i class="fa <?php echo $accesspresslite_settings['featured_post1_icon'] ?>"></i>
 							
 					<?php }
 					the_title(); ?>
@@ -180,7 +180,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 					</h2>
 
 					<div class="featured-content">
-						<p><?php echo ak_excerpt( get_the_content() , 260 ) ?></p>
+						<p><?php echo accesspresslite_excerpt( get_the_content() , 260 ) ?></p>
 						<a href="<?php the_permalink(); ?>" class="read-more bttn">Read More</a>
 					</div>
 				<?php endwhile;
@@ -222,7 +222,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 					<?php 
 					if($show_fontawesome_icon == 1){ ?>
 
-					<i class="fa <?php echo $ak_accesspress_settings['featured_post2_icon'] ?>"></i>
+					<i class="fa <?php echo $accesspresslite_settings['featured_post2_icon'] ?>"></i>
 							
 					<?php }
 					the_title(); ?>
@@ -230,7 +230,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 					</h2>
 
 					<div class="featured-content">
-						<p><?php echo ak_excerpt( get_the_content() , 260 ) ?></p>
+						<p><?php echo accesspresslite_excerpt( get_the_content() , 260 ) ?></p>
 						<a href="<?php the_permalink(); ?>" class="read-more bttn">Read More</a>
 					</div>
 				<?php endwhile;
@@ -271,7 +271,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 					<?php 
 					if($show_fontawesome_icon == 1){ ?>
 
-					<i class="fa <?php echo $ak_accesspress_settings['featured_post3_icon'] ?>"></i>
+					<i class="fa <?php echo $accesspresslite_settings['featured_post3_icon'] ?>"></i>
 							
 					<?php }
 					the_title(); ?>
@@ -279,7 +279,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 					</h2>
 
 					<div class="featured-content">
-						<p><?php echo ak_excerpt( get_the_content() , 260 ) ?></p>
+						<p><?php echo accesspresslite_excerpt( get_the_content() , 260 ) ?></p>
 						<a href="<?php the_permalink(); ?>" class="read-more bttn">Read More</a>
 					</div>
 				<?php endwhile;
@@ -341,7 +341,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
         
         <div class="thumbnail-gallery clear">
         <?php 
-        $gallery_code = $ak_accesspress_settings['gallery_code'];
+        $gallery_code = $accesspresslite_settings['gallery_code'];
         if ( is_active_sidebar( 'textblock-2' ) ) : ?>
 		  <?php dynamic_sidebar( 'textblock-2' ); ?>
 		<?php elseif(!empty($gallery_code)): ?>	
@@ -401,7 +401,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 		<div class="testimonail-slider">
  		<h1>Testimonials</h1>
 			<?php
-			$testimonail_category = $ak_accesspress_settings['testimonial_cat'];
+			$testimonail_category = $accesspresslite_settings['testimonial_cat'];
 			if(!empty($testimonail_category)) {
 				
 	            $loop = new WP_Query( array(
@@ -426,7 +426,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 			        		</div>
 
 			        		<div class="testimonail-excerpt">
-			        			<?php echo ak_excerpt( get_the_content() , 140 ) ?>
+			        			<?php echo accesspresslite_excerpt( get_the_content() , 140 ) ?>
 			        		</div>
 			        	</div>
 					<div class="testimoinal-client-name"><?php the_title(); ?></div>

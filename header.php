@@ -42,20 +42,20 @@
 
 			<div class="right-header clear">
 				<?php 
-				do_action( 'ak_header_text' ); 
+				do_action( 'accesspresslite_header_text' ); 
                 ?>
                 <div class="clear"></div>
                 <?php
-				global $ak_accesspress_options;
-				$ak_accesspress_settings = get_option( 'ak_accesspress_options', $ak_accesspress_options );
+				global $accesspresslite_options;
+				$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 				/** 
-				* @hooked ak_social_cb - 10
+				* @hooked accesspresslite_social_cb - 10
 				*/
-				if($ak_accesspress_settings['show_social_header'] == 0){
-				do_action( 'ak_social_links' ); 
+				if($accesspresslite_settings['show_social_header'] == 0){
+				do_action( 'accesspresslite_social_links' ); 
 				}
 
-				if($ak_accesspress_settings['show_search'] == 1){ ?>
+				if($accesspresslite_settings['show_search'] == 1){ ?>
 				<div class="ak-search">
 					<?php get_search_form(); ?>
 				</div>
@@ -65,7 +65,7 @@
   </div><!-- #top-header -->
 
 		
-		<nav id="site-navigation" class="main-navigation <?php do_action( 'ak_menu_alignment' ); ?>">
+		<nav id="site-navigation" class="main-navigation <?php do_action( 'accesspresslite_menu_alignment' ); ?>">
 			<div class="ak-container">
 				<h1 class="menu-toggle"><?php _e( 'Menu', 'accesspresslite' ); ?></h1>
 
@@ -75,7 +75,7 @@
 	</header><!-- #masthead -->
 
 	<section id="slider-banner">
-		<?php do_action( 'ak_bxslider' ); ?>
+		<?php do_action( 'accesspresslite_bxslider' ); ?>
 	</section><!-- #slider-banner -->
 	<?php
 	if(is_home() || is_front_page() ){

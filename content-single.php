@@ -4,9 +4,9 @@
  */
 ?>
 <?php
-global $ak_accesspress_options;
-$ak_accesspress_settings = get_option( 'ak_accesspress_options', $ak_accesspress_options );
-$cat_blog = $ak_accesspress_settings['blog_cat'];
+global $accesspresslite_options;
+$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
+$cat_blog = $accesspresslite_settings['blog_cat'];
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">

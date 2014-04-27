@@ -88,8 +88,8 @@ function accesspresslite_setup_author() {
 }
 add_action( 'wp', 'accesspresslite_setup_author' );
 
-global $ak_accesspress_options;
-$ak_accesspress_settings = get_option( 'ak_accesspress_options', $ak_accesspress_options );
+global $accesspresslite_options;
+$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 
 /**
  * Register widgetized area and update sidebar with default widgets.
@@ -191,8 +191,8 @@ add_action( 'widgets_init', 'accesspresslite_widgets_init' );
  * Enqueue scripts and styles.
  */
 function accesspresslite_scripts() {
-	global $ak_accesspress_options;
-	$ak_accesspress_settings = get_option( 'ak_accesspress_options', $ak_accesspress_options );
+	global $accesspresslite_options;
+	$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 	
 	
 	
@@ -216,7 +216,7 @@ function accesspresslite_scripts() {
 /**
 * Loads up responsive css if it is not disabled
 */
-	if ( $ak_accesspress_settings[ 'responsive_design' ] == 0 ) {	
+	if ( $accesspresslite_settings[ 'responsive_design' ] == 0 ) {	
 		wp_enqueue_style( 'responsive', get_template_directory_uri() . '/css/responsive.css' );
 	}
 }
@@ -235,92 +235,92 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 /**
 * Loads up favicon
 */
-	function ak_add_favicon(){
-		global $ak_accesspress_options;
-		$ak_accesspress_settings = get_option( 'ak_accesspress_options', $ak_accesspress_options );
+	function accesspresslite_add_favicon(){
+		global $accesspresslite_options;
+		$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 		
-		if( !empty($ak_accesspress_settings[ 'media_upload' ])){
-		echo '<link rel="shortcut icon" type="image/png" href="'. $ak_accesspress_settings[ 'media_upload' ].'"/>';
+		if( !empty($accesspresslite_settings[ 'media_upload' ])){
+		echo '<link rel="shortcut icon" type="image/png" href="'. $accesspresslite_settings[ 'media_upload' ].'"/>';
 		}else{
 		echo '<link rel="shortcut icon" type="image/png" href="'.get_template_directory_uri().'/images/favicon.png"/>';	
 		}
 	
 	}
-	add_action('wp_head', 'ak_add_favicon');
+	add_action('wp_head', 'accesspresslite_add_favicon');
 
 
-	function ak_social_cb(){ 
-		global $ak_accesspress_options;
-		$ak_accesspress_settings = get_option( 'ak_accesspress_options', $ak_accesspress_options );
+	function accesspresslite_social_cb(){ 
+		global $accesspresslite_options;
+		$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 		?>
 		<div class="socials">
-		<?php if(!empty($ak_accesspress_settings['ak_facebook'])){ ?>
-		<a href="<?php echo esc_url($ak_accesspress_settings['ak_facebook']); ?>" class="facebook" title="Facebook" target="_blank"><span class="font-icon-social-facebook"></span></a>
+		<?php if(!empty($accesspresslite_settings['accesspresslite_facebook'])){ ?>
+		<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_facebook']); ?>" class="facebook" title="Facebook" target="_blank"><span class="font-icon-social-facebook"></span></a>
 		<?php } ?>
 
-		<?php if(!empty($ak_accesspress_settings['ak_twitter'])){ ?>
-		<a href="<?php echo esc_url($ak_accesspress_settings['ak_twitter']); ?>" class="twitter" title="Twitter" target="_blank"><span class="font-icon-social-twitter"></span></a>
+		<?php if(!empty($accesspresslite_settings['accesspresslite_twitter'])){ ?>
+		<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_twitter']); ?>" class="twitter" title="Twitter" target="_blank"><span class="font-icon-social-twitter"></span></a>
 		<?php } ?>
 
-		<?php if(!empty($ak_accesspress_settings['ak_gplus'])){ ?>
-		<a href="<?php echo esc_url($ak_accesspress_settings['ak_gplus']); ?>" class="gplus" title="Google Plus" target="_blank"><span class="font-icon-social-google-plus"></span></a>
+		<?php if(!empty($accesspresslite_settings['accesspresslite_gplus'])){ ?>
+		<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_gplus']); ?>" class="gplus" title="Google Plus" target="_blank"><span class="font-icon-social-google-plus"></span></a>
 		<?php } ?>
 
-		<?php if(!empty($ak_accesspress_settings['ak_youtube'])){ ?>
-		<a href="<?php echo esc_url($ak_accesspress_settings['ak_youtube']); ?>" class="youtube" title="Youtube" target="_blank"><span class="font-icon-social-youtube"></span></a>
+		<?php if(!empty($accesspresslite_settings['accesspresslite_youtube'])){ ?>
+		<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_youtube']); ?>" class="youtube" title="Youtube" target="_blank"><span class="font-icon-social-youtube"></span></a>
 		<?php } ?>
 
-		<?php if(!empty($ak_accesspress_settings['ak_pinterest'])){ ?>
-		<a href="<?php echo esc_url($ak_accesspress_settings['ak_pinterest']); ?>" class="pinterest" title="Pinterest" target="_blank"><span class="font-icon-social-pinterest"></span></a>
+		<?php if(!empty($accesspresslite_settings['accesspresslite_pinterest'])){ ?>
+		<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_pinterest']); ?>" class="pinterest" title="Pinterest" target="_blank"><span class="font-icon-social-pinterest"></span></a>
 		<?php } ?>
 
-		<?php if(!empty($ak_accesspress_settings['ak_linkedin'])){ ?>
-		<a href="<?php echo esc_url($ak_accesspress_settings['ak_linkedin']); ?>" class="linkedin" title="Linkedin" target="_blank"><span class="font-icon-social-linkedin"></span></a>
+		<?php if(!empty($accesspresslite_settings['accesspresslite_linkedin'])){ ?>
+		<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_linkedin']); ?>" class="linkedin" title="Linkedin" target="_blank"><span class="font-icon-social-linkedin"></span></a>
 		<?php } ?>
 
-		<?php if(!empty($ak_accesspress_settings['ak_flickr'])){ ?>
-		<a href="<?php echo esc_url($ak_accesspress_settings['ak_flickr']); ?>" class="flickr" title="Flickr" target="_blank"><span class="font-icon-social-flickr"></span></a>
+		<?php if(!empty($accesspresslite_settings['accesspresslite_flickr'])){ ?>
+		<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_flickr']); ?>" class="flickr" title="Flickr" target="_blank"><span class="font-icon-social-flickr"></span></a>
 		<?php } ?>
 
-		<?php if(!empty($ak_accesspress_settings['ak_vimeo'])){ ?>
-		<a href="<?php echo esc_url($ak_accesspress_settings['ak_vimeo']); ?>" class="vimeo" title="Vimeo" target="_blank"><span class="font-icon-social-vimeo"></span></a>
+		<?php if(!empty($accesspresslite_settings['accesspresslite_vimeo'])){ ?>
+		<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_vimeo']); ?>" class="vimeo" title="Vimeo" target="_blank"><span class="font-icon-social-vimeo"></span></a>
 		<?php } ?>
 
-		<?php if(!empty($ak_accesspress_settings['ak_stumbleupon'])){ ?>
-		<a href="<?php echo esc_url($ak_accesspress_settings['ak_stumbleupon']); ?>" class="stumbleupon" title="Stumbleupon" target="_blank"><span class="font-icon-social-stumbleupon"></span></a>
+		<?php if(!empty($accesspresslite_settings['accesspresslite_stumbleupon'])){ ?>
+		<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_stumbleupon']); ?>" class="stumbleupon" title="Stumbleupon" target="_blank"><span class="font-icon-social-stumbleupon"></span></a>
 		<?php } ?>
 
-		<?php if(!empty($ak_accesspress_settings['ak_skype'])){ ?>
-		<a href="<?php echo esc_url($ak_accesspress_settings['ak_skype']); ?>" class="skype" title="Skype" target="_blank"><span class="font-icon-social-skype"></span></a>
+		<?php if(!empty($accesspresslite_settings['accesspresslite_skype'])){ ?>
+		<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_skype']); ?>" class="skype" title="Skype" target="_blank"><span class="font-icon-social-skype"></span></a>
 		<?php } ?>
 
-		<?php if(!empty($ak_accesspress_settings['ak_rss'])){ ?>
-		<a href="<?php echo esc_url($ak_accesspress_settings['ak_rss']); ?>" class="rss" title="RSS" target="_blank"><span class="font-icon-rss"></span></a>
+		<?php if(!empty($accesspresslite_settings['accesspresslite_rss'])){ ?>
+		<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_rss']); ?>" class="rss" title="RSS" target="_blank"><span class="font-icon-rss"></span></a>
 		<?php } ?>
 		</div>
 	<?php } 
 
-	add_action( 'ak_social_links', 'ak_social_cb', 10 );	
+	add_action( 'accesspresslite_social_links', 'accesspresslite_social_cb', 10 );	
 
 
-	function ak_header_text_cb(){
-		global $ak_accesspress_options;
-		$ak_accesspress_settings = get_option( 'ak_accesspress_options', $ak_accesspress_options );
-		if(!empty($ak_accesspress_settings['header_text'])){
-		echo '<div class="header-text">'.$ak_accesspress_settings['header_text'].'</div>';
+	function accesspresslite_header_text_cb(){
+		global $accesspresslite_options;
+		$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
+		if(!empty($accesspresslite_settings['header_text'])){
+		echo '<div class="header-text">'.$accesspresslite_settings['header_text'].'</div>';
 		}
 	}
 
-	add_action('ak_header_text','ak_header_text_cb', 10);
+	add_action('accesspresslite_header_text','accesspresslite_header_text_cb', 10);
 
-	function ak_menu_alignment_cb(){
-		global $ak_accesspress_options;
-		$ak_accesspress_settings = get_option( 'ak_accesspress_options', $ak_accesspress_options );
-		if($ak_accesspress_settings['menu_alignment'] =="Left"){
+	function accesspresslite_menu_alignment_cb(){
+		global $accesspresslite_options;
+		$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
+		if($accesspresslite_settings['menu_alignment'] =="Left"){
 			$alignment_class="menu-left";
-		}elseif($ak_accesspress_settings['menu_alignment'] == "Center"){
+		}elseif($accesspresslite_settings['menu_alignment'] == "Center"){
 			$alignment_class="menu-center";
-		}elseif($ak_accesspress_settings['menu_alignment'] == "Right"){
+		}elseif($accesspresslite_settings['menu_alignment'] == "Right"){
 			$alignment_class="menu-right";
 		}else{
 			$alignment_class="";
@@ -328,27 +328,27 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 		echo $alignment_class;
 	}
 
-	add_action('ak_menu_alignment','ak_menu_alignment_cb', 10);
+	add_action('accesspresslite_menu_alignment','accesspresslite_menu_alignment_cb', 10);
 
 
-	function ak_excerpt( $content , $letter_count ){
+	function accesspresslite_excerpt( $content , $letter_count ){
 		$striped_content = strip_tags($content);
-		$ak_excerpt = substr($striped_content, 0, $letter_count )."...";
-		return $ak_excerpt;
+		$accesspresslite_excerpt = substr($striped_content, 0, $letter_count )."...";
+		return $accesspresslite_excerpt;
 	}
 
 
-	function ak_bxslidercb(){
+	function accesspresslite_bxslidercb(){
 		if(is_home() || is_front_page() ){
 
-			global $ak_accesspress_options, $post;
-			$ak_accesspress_settings = get_option( 'ak_accesspress_options', $ak_accesspress_options );
-            ($ak_accesspress_settings['slider_show_pager'] == 'yes1' || empty($ak_accesspress_settings['slider_show_pager'])) ? ($a='true') : ($a='false');
-            ($ak_accesspress_settings['slider_show_controls'] == 'yes2' || empty($ak_accesspress_settings['slider_show_controls'])) ? ($b='true') : ($b='false');
-            ($ak_accesspress_settings['slider_mode'] == 'slide' || empty($ak_accesspress_settings['slider_mode'])) ? ($c='horizontal') : ($c='fade');
-            ($ak_accesspress_settings['slider_auto'] == 'yes3' || empty($ak_accesspress_settings['slider_auto'])) ? ($d='true') : ($d='false');
+			global $accesspresslite_options, $post;
+			$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
+            ($accesspresslite_settings['slider_show_pager'] == 'yes1' || empty($accesspresslite_settings['slider_show_pager'])) ? ($a='true') : ($a='false');
+            ($accesspresslite_settings['slider_show_controls'] == 'yes2' || empty($accesspresslite_settings['slider_show_controls'])) ? ($b='true') : ($b='false');
+            ($accesspresslite_settings['slider_mode'] == 'slide' || empty($accesspresslite_settings['slider_mode'])) ? ($c='horizontal') : ($c='fade');
+            ($accesspresslite_settings['slider_auto'] == 'yes3' || empty($accesspresslite_settings['slider_auto'])) ? ($d='true') : ($d='false');
 			
-			if( $ak_accesspress_settings['show_slider'] =='yes' && (!empty($ak_accesspress_settings['slider1']) || !empty($ak_accesspress_settings['slider2']) || !empty($ak_accesspress_settings['slider3']) || !empty($ak_accesspress_settings['slider4']))){
+			if( $accesspresslite_settings['show_slider'] =='yes' && (!empty($accesspresslite_settings['slider1']) || !empty($accesspresslite_settings['slider2']) || !empty($accesspresslite_settings['slider3']) || !empty($accesspresslite_settings['slider4']))){
             ?>
 
             <script type="text/javascript">
@@ -358,15 +358,15 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 					controls:<?php echo $b; ?>,
 					mode:'<?php echo $c; ?>',
 					auto :<?php echo $d; ?>,
-					<?php if($ak_accesspress_settings['slider_speed']) {?>
-					speed:'<?php echo $ak_accesspress_settings['slider_speed']; ?>'
+					<?php if($accesspresslite_settings['slider_speed']) {?>
+					speed:'<?php echo $accesspresslite_settings['slider_speed']; ?>'
 					<?php } ?>
 				});
 			});
             </script>
 
 			<?php 
-			$sliders = array($ak_accesspress_settings['slider1'],$ak_accesspress_settings['slider2'],$ak_accesspress_settings['slider3'],$ak_accesspress_settings['slider4']);
+			$sliders = array($accesspresslite_settings['slider1'],$accesspresslite_settings['slider2'],$accesspresslite_settings['slider3'],$accesspresslite_settings['slider4']);
 			$remove = array(0);
 		    $sliders = array_diff($sliders, $remove);  
 			?>
@@ -388,7 +388,7 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 						
 							<img src="<?php echo $image[0]; ?>">
 							
-							<?php if($ak_accesspress_settings['slider_caption']=='yes4'):?>
+							<?php if($accesspresslite_settings['slider_caption']=='yes4'):?>
 							<div class="slider-caption">
 								<div class="ak-container">
 									<div class="caption-title"><?php the_title();?></div>
@@ -404,8 +404,8 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 			?>
 			</div>
 			<?php
-			}elseif( !$ak_accesspress_settings['slider1'] && !$ak_accesspress_settings['slider2'] && !$ak_accesspress_settings['slider3'] && !$ak_accesspress_settings['slider4']){ 
-			 if($ak_accesspress_settings['show_slider'] =='yes' || empty($ak_accesspress_settings['show_slider'])){
+			}elseif( !$accesspresslite_settings['slider1'] && !$accesspresslite_settings['slider2'] && !$accesspresslite_settings['slider3'] && !$accesspresslite_settings['slider4']){ 
+			 if($accesspresslite_settings['show_slider'] =='yes' || empty($accesspresslite_settings['show_slider'])){
              ?>
 
 			<script type="text/javascript">
@@ -415,8 +415,8 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 					controls:<?php echo $b; ?>,
 					mode:'<?php echo $c; ?>',
 					auto :<?php echo $d; ?>,
-					<?php if($ak_accesspress_settings['slider_speed']) {?>
-					speed:'<?php echo $ak_accesspress_settings['slider_speed']; ?>'
+					<?php if($accesspresslite_settings['slider_speed']) {?>
+					speed:'<?php echo $accesspresslite_settings['slider_speed']; ?>'
 					<?php } ?>
 				});
 			});
@@ -424,7 +424,7 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 					<div class="bx-slider">
 						<div class="slides">
 							<img src="<?php echo get_template_directory_uri(); ?>/images/demo/slider1.jpg" alt="slider1">
-                            <?php if($ak_accesspress_settings['slider_caption']=='yes4' || empty($ak_accesspress_settings['slider_caption'])):?>
+                            <?php if($accesspresslite_settings['slider_caption']=='yes4' || empty($accesspresslite_settings['slider_caption'])):?>
 							<div class="slider-caption">
 								<div class="ak-container">
 									<div class="caption-title">Learning from failure</div>
@@ -436,7 +436,7 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 						
 						<div class="slides">
 							<img src="<?php echo get_template_directory_uri(); ?>/images/demo/slider2.jpg" alt="slider2">
-                            <?php if($ak_accesspress_settings['slider_caption']=='yes4' || empty($ak_accesspress_settings['slider_caption'])):?>
+                            <?php if($accesspresslite_settings['slider_caption']=='yes4' || empty($accesspresslite_settings['slider_caption'])):?>
 							<div class="slider-caption">
 								<div class="ak-container">
 									<div class="caption-title">Know secret to Successful Business</div>
@@ -448,7 +448,7 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 
 						<div class="slides">
 							<img src="<?php echo get_template_directory_uri(); ?>/images/demo/slider3.jpg" alt="slider3">
-                            <?php if($ak_accesspress_settings['slider_caption']=='yes4' || empty($ak_accesspress_settings['slider_caption'])):?>
+                            <?php if($accesspresslite_settings['slider_caption']=='yes4' || empty($accesspresslite_settings['slider_caption'])):?>
 							<div class="slider-caption">
 								<div class="ak-container">
 									<div class="caption-title">So who is the boss!!</div>
@@ -460,7 +460,7 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 
 						<div class="slides">
 							<img src="<?php echo get_template_directory_uri(); ?>/images/demo/slider4.jpg" alt="slider4">
-                            <?php if($ak_accesspress_settings['slider_caption']=='yes4' || empty($ak_accesspress_settings['slider_caption'])):?>
+                            <?php if($accesspresslite_settings['slider_caption']=='yes4' || empty($accesspresslite_settings['slider_caption'])):?>
 							<div class="slider-caption">
 								<div class="ak-container">
 									<div class="caption-title">The real entrepreneurs</div>
@@ -476,12 +476,12 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 		}
 	}	
 
-   add_action('ak_bxslider','ak_bxslidercb', 10);
+   add_action('accesspresslite_bxslider','accesspresslite_bxslidercb', 10);
 
-   function ak_layout_class($classes){
+   function accesspresslite_layout_class($classes){
    	global $post;
 
-		$post_class = get_post_meta( $post -> ID, 'ak_sidebar_layout', true );
+		$post_class = get_post_meta( $post -> ID, 'accesspresslite_sidebar_layout', true );
 		
 		if(!empty($post_class) && is_singular()){
 		$classes[] = $post_class;
@@ -492,16 +492,16 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 		return $classes;
 	}
 
-   add_filter( 'body_class', 'ak_layout_class' );
+   add_filter( 'body_class', 'accesspresslite_layout_class' );
    
-   function ak_web_layout($classes){
-    global $ak_accesspress_options, $post;
-	$ak_accesspress_settings = get_option( 'ak_accesspress_options', $ak_accesspress_options );
-    $weblayout = $ak_accesspress_settings['ak_webpage_layout'];
+   function accesspresslite_web_layout($classes){
+    global $accesspresslite_options, $post;
+	$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
+    $weblayout = $accesspresslite_settings['accesspresslite_webpage_layout'];
     if($weblayout =='Boxed'){
         $classes[]= 'boxed-layout';
     }
     return $classes;
    }
    
-   add_filter( 'body_class', 'ak_web_layout' );
+   add_filter( 'body_class', 'accesspresslite_web_layout' );

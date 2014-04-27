@@ -7,14 +7,14 @@
 ?>
 
 <?php 
-global $post, $ak_accesspress_options;
-$ak_accesspress_settings = get_option( 'ak_accesspress_options', $ak_accesspress_options );
-$event_category = $ak_accesspress_settings['event_cat'];
-$show_events = $ak_accesspress_settings['rightsidebar_show_latest_events'];
-$testimonail_category = $ak_accesspress_settings['testimonial_cat'];
-$blog_category = $ak_accesspress_settings['blog_cat'];
-$show_testimonials = $ak_accesspress_settings['rightsidebar_show_testimonials'];
-$post_class = get_post_meta( $post -> ID, 'ak_sidebar_layout', true );
+global $post, $accesspresslite_options;
+$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
+$event_category = $accesspresslite_settings['event_cat'];
+$show_events = $accesspresslite_settings['rightsidebar_show_latest_events'];
+$testimonail_category = $accesspresslite_settings['testimonial_cat'];
+$blog_category = $accesspresslite_settings['blog_cat'];
+$show_testimonials = $accesspresslite_settings['rightsidebar_show_testimonials'];
+$post_class = get_post_meta( $post -> ID, 'accesspresslite_sidebar_layout', true );
 
 if($post_class=='right-sidebar' || $post_class=='both-sidebar' || empty($post_class)){
 ?>
@@ -63,7 +63,7 @@ if($post_class=='right-sidebar' || $post_class=='both-sidebar' || empty($post_cl
 		        		</h4>
 
 		        		<div class="event-excerpt">
-		        			<?php echo ak_excerpt( get_the_content() , 50 ) ?> 
+		        			<?php echo accesspresslite_excerpt( get_the_content() , 50 ) ?> 
 		        		</div>
 	        		</div>
 	        	</div>
@@ -131,7 +131,7 @@ if($post_class=='right-sidebar' || $post_class=='both-sidebar' || empty($post_cl
 		        		</div>
 
 			        	<div class="testimonail-excerpt">
-			        		<?php echo ak_excerpt( get_the_content() , 90 ) ?>
+			        		<?php echo accesspresslite_excerpt( get_the_content() , 90 ) ?>
 			        	</div>
 			        	<div class="clear"></div>
 					<div class="testimoinal-client-name"><?php the_title(); ?></div>

@@ -4,30 +4,28 @@
  *
  * @package AccesspressLite
  */
-
-function add_sidebar_layout_box()
+add_action('add_meta_boxes', 'accesspresslite_add_sidebar_layout_box');
+function accesspresslite_add_sidebar_layout_box()
 {
     add_meta_box(
-                 'acesspress_sidebar_layout', // $id
+                 'accesspresslite_sidebar_layout', // $id
                  'Sidebar Layout', // $title
-                 'sidebar_layout_callback', // $callback
+                 'accesspresslite_sidebar_layout_callback', // $callback
                  'post', // $page
                  'normal', // $context
                  'high'); // $priority
 
     add_meta_box(
-                 'acesspress_sidebar_layout', // $id
+                 'accesspresslite_sidebar_layout', // $id
                  'Sidebar Layout', // $title
-                 'sidebar_layout_callback', // $callback
+                 'accesspresslite_sidebar_layout_callback', // $callback
                  'page', // $page
                  'normal', // $context
                  'high'); // $priority
 }
 
-add_action('add_meta_boxes', 'add_sidebar_layout_box');
 
-
-$sidebar_layout = array(
+$accesspresslite_sidebar_layout = array(
         'left-sidebar' => array(
                         'value'     => 'left-sidebar',
                         'label'     => __( 'Left sidebar', 'accesspresslite' ),
@@ -52,10 +50,10 @@ $sidebar_layout = array(
 
     );
 
-function sidebar_layout_callback()
+function accesspresslite_sidebar_layout_callback()
 { 
-global $post , $sidebar_layout;
-wp_nonce_field( basename( __FILE__ ), 'sidebar_layout_nonce' ); 
+global $post , $accesspresslite_sidebar_layout;
+wp_nonce_field( basename( __FILE__ ), 'accesspresslite_sidebar_layout_nonce' ); 
 ?>
 
 <table class="form-table">
@@ -66,13 +64,13 @@ wp_nonce_field( basename( __FILE__ ), 'sidebar_layout_nonce' );
 <tr>
 <td>
 <?php  
-   foreach ($sidebar_layout as $field) {  
-                $sidebar_metalayout = get_post_meta( $post->ID, 'acesspress_sidebar_layout', true ); ?>
+   foreach ($accesspresslite_sidebar_layout as $field) {  
+                $accesspresslite_sidebar_metalayout = get_post_meta( $post->ID, 'accesspresslite_sidebar_layout', true ); ?>
 
                 <div class="radio-image-wrapper" style="float:left; margin-right:30px;">
                 <label class="description">
                 <span><img src="<?php echo esc_url( $field['thumbnail'] ); ?>" alt="" /></span></br>
-                <input type="radio" name="acesspress_sidebar_layout" value="<?php echo $field['value']; ?>" <?php checked( $field['value'], $sidebar_metalayout ); if(empty($sidebar_metalayout) && $field['value']=='right-sidebar'){ echo "checked='checked'";} ?>/>&nbsp;<?php echo $field['label']; ?>
+                <input type="radio" name="accesspresslite_sidebar_layout" value="<?php echo $field['value']; ?>" <?php checked( $field['value'], $accesspresslite_sidebar_metalayout ); if(empty($accesspresslite_sidebar_metalayout) && $field['value']=='right-sidebar'){ echo "checked='checked'";} ?>/>&nbsp;<?php echo $field['label']; ?>
                 </label>
                 </div>
                 <?php } // end foreach 
@@ -91,11 +89,11 @@ wp_nonce_field( basename( __FILE__ ), 'sidebar_layout_nonce' );
  * save the custom metabox data
  * @hooked to save_post hook
  */
-function save_sidebar_layout( $post_id ) { 
-    global $sidebar_layout, $post; 
+function accesspresslite_save_sidebar_layout( $post_id ) { 
+    global $accesspresslite_sidebar_layout, $post; 
 
     // Verify the nonce before proceeding.
-    if ( !isset( $_POST[ 'sidebar_layout_nonce' ] ) || !wp_verify_nonce( $_POST[ 'sidebar_layout_nonce' ], basename( __FILE__ ) ) )
+    if ( !isset( $_POST[ 'accesspresslite_sidebar_layout_nonce' ] ) || !wp_verify_nonce( $_POST[ 'accesspresslite_sidebar_layout_nonce' ], basename( __FILE__ ) ) )
         return;
 
     // Stop WP from clearing custom fields on autosave
@@ -110,16 +108,16 @@ function save_sidebar_layout( $post_id ) {
     }  
     
 
-    foreach ($sidebar_layout as $field) {  
+    foreach ($accesspresslite_sidebar_layout as $field) {  
         //Execute this saving function
-        $old = get_post_meta( $post_id, 'acesspress_sidebar_layout', true); 
-        $new = sanitize_text_field($_POST['acesspress_sidebar_layout']);
+        $old = get_post_meta( $post_id, 'accesspresslite_sidebar_layout', true); 
+        $new = sanitize_text_field($_POST['accesspresslite_sidebar_layout']);
         if ($new && $new != $old) {  
-            update_post_meta($post_id, 'acesspress_sidebar_layout', $new);  
+            update_post_meta($post_id, 'accesspresslite_sidebar_layout', $new);  
         } elseif ('' == $new && $old) {  
-            delete_post_meta($post_id,'acesspress_sidebar_layout', $old);  
+            delete_post_meta($post_id,'accesspresslite_sidebar_layout', $old);  
         } 
      } // end foreach   
      
 }
-add_action('save_post', 'save_sidebar_layout'); 
+add_action('save_post', 'accesspresslite_save_sidebar_layout'); 

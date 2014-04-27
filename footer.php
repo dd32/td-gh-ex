@@ -12,8 +12,8 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 	<?php 
-		global $ak_accesspress_options;
-		$ak_accesspress_settings = get_option( 'ak_accesspress_options', $ak_accesspress_options );
+		global $accesspresslite_options;
+		$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 
 		if ( is_active_sidebar( 'footer-1' ) ||  is_active_sidebar( 'footer-2' )  || is_active_sidebar( 'footer-3' )  || is_active_sidebar( 'footer-4' ) ) : ?>
 		<div id="top-footer">
@@ -42,22 +42,22 @@
 				<?php if ( is_active_sidebar( 'footer-4' ) ) : ?>
 					<?php dynamic_sidebar( 'footer-4' ); ?>
 				<?php else:
-                if(!empty($ak_accesspress_settings['google_map']) || !empty($ak_accesspress_settings['contact_address'])){ ?>
+                if(!empty($accesspresslite_settings['google_map']) || !empty($accesspresslite_settings['contact_address'])){ ?>
                     
                     <h1 class="widget-title">Find Us</h1>
-				    <?php if(!empty($ak_accesspress_settings['google_map'])) { ?>
+				    <?php if(!empty($accesspresslite_settings['google_map'])) { ?>
 
-                        <div class="ak-google-map"><?php echo $ak_accesspress_settings['google_map']; ?></div>
+                        <div class="ak-google-map"><?php echo $accesspresslite_settings['google_map']; ?></div>
 						
 						<?php }
-						if(!empty($ak_accesspress_settings['contact_address'])) { ?>
+						if(!empty($accesspresslite_settings['contact_address'])) { ?>
 						
-						<div class="ak-contact-address"><?php echo $ak_accesspress_settings['contact_address']; ?></div>
+						<div class="ak-contact-address"><?php echo $accesspresslite_settings['contact_address']; ?></div>
 
 						<?php }
 					
-						if($ak_accesspress_settings['show_social_footer'] == 0){
-						do_action( 'ak_social_links' ); 
+						if($accesspresslite_settings['show_social_footer'] == 0){
+						do_action( 'accesspresslite_social_links' ); 
 						}
 					 }else { ?>
 
@@ -89,8 +89,8 @@
 			<div class="copyright">
 				Copyright &copy; <?php echo date('Y') ?> 
 				<a href="<?php echo home_url(); ?>">
-				<?php if(!empty($ak_accesspress_settings['footer_copyright'])){
-					echo $ak_accesspress_settings['footer_copyright']; 
+				<?php if(!empty($accesspresslite_settings['footer_copyright'])){
+					echo $accesspresslite_settings['footer_copyright']; 
 					}else{
 						echo bloginfo('name');
 					} ?>
