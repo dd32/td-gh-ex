@@ -3,7 +3,7 @@
  *
  * BoldR Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
  *
- * Copyright 2013 Mathieu Sarrasin - Iceable Media
+ * Copyright 2013-2014 Mathieu Sarrasin - Iceable Media
  *
  * Admin settings template
  *
@@ -56,7 +56,7 @@ function boldr_settings_template() {
 			'desc'          => 'Upload your own logo',
 			'id'            => 'logo',
 			'type'          => 'image',
-			'default'       => get_template_directory_uri() .'/img/logo.png',
+			'default'       => '',
 		);
 
 		$settings_options[] = array(
@@ -74,6 +74,33 @@ function boldr_settings_template() {
 			'id'            => 'favicon',
 			'type'          => 'image',
 			'default'       => '',
+		);
+
+		$settings_options[] = array(
+			'name'          => 'Display Tagline',
+			'desc'          => 'Display your site description (tagline) on the right side of the header.',
+			'id'            => 'header_tagline',
+			'type'          => 'radio',
+			'default'       => 'Off',
+			'values'		=> array ('Off', 'On'),
+		);
+
+		$settings_options[] = array(
+			'name'          => 'Blog Index Shows',
+			'desc'          => 'Choose what content to display on Main Blog page and archives',
+			'id'            => 'blog_index_shows',
+			'type'          => 'radio',
+			'default'       => 'Excerpt',
+			'values'		=> array ('Excerpt', 'Full content'),
+		);
+
+		$settings_options[] = array(
+			'name'          => __('Responsive mode', 'boldr'),
+			'desc'          => __('Turn this setting off if you want your site to be unresponsive.', 'boldr'),
+			'id'            => 'responsive_mode',
+			'type'          => 'radio',
+			'default'       => 'on',
+			'values'		=> array ('on', 'off'),
 		);
 
 	$settings_options[] = array('type' => 'end_menu');
@@ -125,6 +152,25 @@ function boldr_settings_template() {
 
 	$settings_options[] = array('type' => 'end_menu');
 // END PAGE 2
+// START PAGE 3
+	$settings_options[] = array(
+		'name'          => 'Support and Feedback',
+		'type'          => 'start_menu',
+		'id'            => 'support_feedback',
+		'icon'          => 'network',
+	);
+
+		$settings_options[] = array(
+			'name'          => 'Support and Feedback',
+			'desc'          => '',
+			'id'            => 'support_feedback',
+			'type'          => 'support_feedback',
+			'default'       => '',
+		);
+
+	$settings_options[] = array('type' => 'end_menu');
+// END PAGE 3
+
 	return $settings_options;
 }
 ?>

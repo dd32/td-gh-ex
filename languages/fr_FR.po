@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BoldR Lite 1.1\n"
-"POT-Creation-Date: 2014-04-07 10:06+0100\n"
-"PO-Revision-Date: 2014-04-07 10:06+0100\n"
+"POT-Creation-Date: 2014-04-07 10:03+0100\n"
+"PO-Revision-Date: 2014-04-07 10:04+0100\n"
 "Last-Translator: \n"
 "Language-Team: Iceable Themes <contact@iceablethemes.com>\n"
-"Language: en_US\n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,202 +17,204 @@ msgstr ""
 
 #: ../404.php:17
 msgid "404"
-msgstr ""
+msgstr "404"
 
 #: ../404.php:21
 msgid "Page Not Found"
-msgstr ""
+msgstr "Page Introuvable"
 
 #: ../404.php:22 ../index.php:115 ../page-full-width.php:55 ../page.php:56
 #: ../single.php:136
 msgid "What you are looking for isn't here..."
-msgstr ""
+msgstr "Ce que vous cherchez n'est pas ici..."
 
 #: ../404.php:23
 msgid "Maybe a search will help ?"
-msgstr ""
+msgstr "Peut-être qu'une recherche pourrait vous aider ?"
 
 #: ../comments.php:17
 msgid "This post is password protected. Enter the password to view comments."
 msgstr ""
+"Cet article est protégé par un mot de passe. Veuillez entrer le mot de passe "
+"pour voir les commentaires."
 
 #: ../comments.php:24
 #, php-format
 msgid "One Response to %2$s"
-msgstr ""
+msgstr "Une réponse à %2$s"
 
 #: ../comments.php:30
 msgid "Reply"
-msgstr ""
+msgstr "Répondre"
 
 #: ../comments.php:38
 msgid "Older comments"
-msgstr ""
+msgstr "Commentaires précédents"
 
 #: ../comments.php:41
 msgid "Newer comments"
-msgstr ""
+msgstr "Commentaires suivants"
 
 #: ../comments.php:53
 msgid "Comments are closed."
-msgstr ""
+msgstr "Les commentaires sont fermés."
 
 #: ../footer.php:25
 msgid "Proudly powered by"
-msgstr ""
+msgstr "Fièrement propulsé par"
 
 #: ../functions.php:89
 #, php-format
 msgid "Page %s"
-msgstr ""
+msgstr "Page %s"
 
 #: ../functions.php:136
 #, php-format
 msgid "<a href=\"%1$s\" style=\"float:right\">Dismiss</a>"
-msgstr ""
+msgstr "<a href=\"%1$s\" style=\"float:right\">Masquer</a>"
 
 #: ../functions.php:157
 msgid "Default Sidebar"
-msgstr ""
+msgstr "Sidebar par défaut"
 
 #: ../functions.php:169
 msgid "Footer"
-msgstr ""
+msgstr "Pied de page"
 
 #: ../functions.php:290
 msgid "Read More"
-msgstr ""
+msgstr "Lire la suite"
 
 #: ../index.php:19
 msgid "Search Results for "
-msgstr ""
+msgstr "Résultat de la Recherche pour"
 
 #: ../index.php:24
 msgid "Tag: "
-msgstr ""
+msgstr "Tag:"
 
 #: ../index.php:29
 msgid "Category: "
-msgstr ""
+msgstr "Catégorie :"
 
 #: ../index.php:34
 msgid "Daily archives: "
-msgstr ""
+msgstr "Archives journalières :"
 
 #: ../index.php:37
 msgid "Monthly archives: "
-msgstr ""
+msgstr "Archives mensuelles :"
 
 #: ../index.php:40
 msgid "Yearly archives: "
-msgstr ""
+msgstr "Archives annuelles :"
 
 #: ../index.php:65 ../single.php:33
 msgid "No"
-msgstr ""
+msgstr "Pas de "
 
 #: ../index.php:65 ../single.php:33
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: ../index.php:65 ../single.php:33
 msgid "%"
-msgstr ""
+msgstr "%"
 
 #: ../index.php:66 ../single.php:34
 msgid "Comment"
-msgstr ""
+msgstr "Commentaire"
 
 #: ../index.php:66 ../single.php:34
 msgid "Comments"
-msgstr ""
+msgstr "Commentaires"
 
 #: ../index.php:66 ../single.php:34
 msgid "Comments Off"
-msgstr ""
+msgstr "Commentaires Off"
 
 #: ../index.php:70 ../single.php:38
 msgid "by "
-msgstr ""
+msgstr "par"
 
 #: ../index.php:72 ../page-full-width.php:40 ../page.php:41 ../single.php:40
 msgid "Edit"
-msgstr ""
+msgstr "Éditer"
 
 #: ../index.php:87 ../single.php:57
 msgid "Posted in"
-msgstr ""
+msgstr "Publié dans"
 
 #: ../index.php:92 ../single.php:76
 msgid "Tags"
-msgstr ""
+msgstr "Tags"
 
 #: ../index.php:107 ../index.php:114 ../page-full-width.php:54 ../page.php:55
 #: ../single.php:135
 msgid "Not Found"
-msgstr ""
+msgstr "Introuvable"
 
 #: ../index.php:108
 #, php-format
 msgid "Your search for \"%s\" did not return any result."
-msgstr ""
+msgstr "Votre recherche de \"%s\" n'a retourné aucun résultat."
 
 #: ../index.php:109
 msgid "Would you like to try another search ?"
-msgstr ""
+msgstr "Voulez-vous essayer une nouvelle recherche ?"
 
 #: ../index.php:123
 msgid "Previous Posts"
-msgstr ""
+msgstr "Articles précédents"
 
 #: ../index.php:126
 msgid "Next Posts"
-msgstr ""
+msgstr "Articles suivants"
 
 #: ../page-full-width.php:28 ../page.php:29 ../single.php:64
 msgid "Pages:"
-msgstr ""
+msgstr "Pages :"
 
 #: ../page-full-width.php:33 ../page.php:34 ../single.php:69
 msgid "Next page"
-msgstr ""
+msgstr "Page suivante"
 
 #: ../page-full-width.php:34 ../page.php:35 ../single.php:70
 msgid "Previous page"
-msgstr ""
+msgstr "Page précédente"
 
 #: ../sidebar.php:16
 msgid "Recent Posts"
-msgstr ""
+msgstr "Articles récents"
 
 #: ../sidebar.php:22
 msgid "Archives"
-msgstr ""
+msgstr "Archives"
 
 #: ../sidebar.php:28
 msgid "Meta"
-msgstr ""
+msgstr "Meta"
 
 #: ../single.php:89
 msgid "Previous Image"
-msgstr ""
+msgstr "Image précédente"
 
 #: ../single.php:92
 msgid "Next Image"
-msgstr ""
+msgstr "Image suivante"
 
 #: ../single.php:98 ../single.php:121
 msgid "Previous Post"
-msgstr ""
+msgstr "Article précédent"
 
 #: ../single.php:101 ../single.php:124
 msgid "Next Post"
-msgstr ""
+msgstr "Article suivant"
 
 #: ../functions/icefit-options/settings.php:98
 msgid "Responsive mode"
-msgstr ""
+msgstr "Mode \"responsive\""
 
 #: ../functions/icefit-options/settings.php:99
 msgid "Turn this setting off if you want your site to be unresponsive."
-msgstr ""
+msgstr "Désactivez cette option pour que le site ne soit plus \"responsive\"."

@@ -3,7 +3,7 @@
  *
  * BoldR Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
  *
- * Copyright 2013 Mathieu Sarrasin - Iceable Media
+ * Copyright 2013-2014 Mathieu Sarrasin - Iceable Media
  *
  * Admin settings Framework
  *
@@ -18,13 +18,6 @@ function boldr_get_option($option) {
 		if (array_key_exists($option, $boldr_settings)) $value = $boldr_settings[$option];
 	}
 	return $value;
-}
-
-// Custom function to get all settings (returns an array of all settings)
-function boldr_get_settings() {
-	global $boldr_settings_slug;
-	$boldr_settings = get_option($boldr_settings_slug);
-	return $boldr_settings;
 }
 
 // Adds "Theme option" link under "Appearance" in WP admin panel
@@ -117,18 +110,32 @@ function boldr_settings_machine($options) {
 							<li>(Pro Only) One click setup <strong>AJAX contact form</strong></li>
 							<li>(Pro Only) <strong>Google Maps</strong> API v3 integration</li>
 							<li>(Pro Only) <strong>Pro dedicated support forum</strong> access</li>
-							<li><a href="http://www.gnu.org/licenses/" target="_blank">GPL License</a> : Buy once, use as many time as you wish!</li>
+							<li><a href="http://www.gnu.org/licenses/" target="_blank">GPL License</a> : Buy once, use as many times as you wish!</li>
 							<li><strong>Cross-browsers support</strong>, optimized for IE8+, Firefox, Chrome, Safari and Opera (note: IE7 and older are no longer supported.)</li>
 							<li>Lifetime <strong>free updates</strong> and continued support for the <strong>latest WordPress versions</strong></li>
 							</ul>';
-			$output .= '<a href="http://www.iceablethemes.com/shop/boldr-pro/" class="button-primary" target="_blank">Learn More and Upgrade Now!</a>';
+			$output .= '<a href="http://www.iceablethemes.com/shop/boldr-pro/?utm_source=lite_theme&utm_medium=go_pro&utm_campaign=boldr_lite" class="button-primary" target="_blank">Learn More and Upgrade Now!</a>';
+		}
+		elseif ( $arg['type'] == "support_feedback" )
+		{
+			$output .= '<h3>Get Support</h3>'."\n";
+			$output .= '<p>Have a question? Need help?</p>';
+			$output .= '<p><a href="http://www.iceablethemes.com/forums/forum/free-support-forum/boldr-lite/?utm_source=lite_theme&utm_medium=support_forums&utm_campaign=boldr_lite" target="_blank" class="button-primary">Visit the free BoldR Lite support forums</a></p>';		
+
+			$output .= '<h3>Give Feedback</h3>'."\n";
+			$output .= '<p>Like this theme? We\'d love to hear your feedback!</p>';
+			$output .= '<p><a href="http://wordpress.org/support/view/theme-reviews/boldr-lite" target="_blank" class="button-primary">Rate and review BoldR Lite at WordPress.org</a></p>';		
+
+			$output .= '<h3>Get social!</h3>'."\n";
+			$output .= '<p>Follow and like IceableThemes!</p>';
+			$output .= '<p id="social"></p>';
+ 
 		}
 		elseif ( $arg['type'] == "end_menu" )
 		{
 			$output .= '</div>';
 		} 
 	}
-	update_option($boldr_settings_slug,$boldr_settings);	
 	return $output;
 }
 
