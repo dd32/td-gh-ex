@@ -1,3 +1,8 @@
+<?php
+/*
+Template Name: Custom Sidebar
+*/
+?>
 <?php get_header(); ?>
 		<div id = "main-content">
 			<?php if(have_posts()) : ?>
@@ -26,6 +31,6 @@
 				</article>
 			<?php endif; ?>
 		</div>
-		<?php get_sidebar('page'); ?>
+		<?php get_sidebar('custom'); ?>
 	</div>
 <?php get_footer(); ?>

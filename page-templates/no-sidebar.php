@@ -1,5 +1,10 @@
+<?php
+/*
+Template Name: No Sidebar (Full Width)
+*/
+?>
 <?php get_header(); ?>
-		<div id = "main-content">
+		<div id = "full-content">
 			<?php if(have_posts()) : ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 					<?php get_template_part('content', 'page'); ?>
@@ -26,6 +31,6 @@
 				</article>
 			<?php endif; ?>
 		</div>
-		<?php get_sidebar('page'); ?>
+		<?php get_sidebar('front'); ?>
 	</div>
 <?php get_footer(); ?>
