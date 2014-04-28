@@ -3,8 +3,8 @@ Theme Name: i-transform
 Theme URI: http://templatesnext.org/itrans/
 Author: templatesnext team
 Author URI: http://templatesnext.org/
-Description: The i-transform theme for WordPress is developed using a populer theme "Twenty Thirteen" giving you all the features of Twenty Thirteen plus several additional features like easy to use admin theme options, featured post section, 5 color schemes, multiple blog layouts etc.
-Version: 1.7
+Description: The i-transform theme for WordPress is developed using a populer theme "Twenty Thirteen" giving you all the features of Twenty Thirteen plus several additional features like easy to use admin theme options, featured post section, 5 color schemes, multiple blog layouts, WooCommerce ready etc.
+Version: 1.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, red, green, purple, white, yellow, light, blue, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, sticky-post, theme-options, translation-ready
@@ -909,6 +909,11 @@ img.wp-smiley,
 	margin-right: 16px;
 	color: #8b8b8b;
 	font-size: 12px;
+}
+
+.topphone .topbarico {
+	padding-top: 4px;
+	line-height: 32px;	
 }
 
 
@@ -1920,7 +1925,7 @@ footer.entry-meta {
 
 .iheader.front {
 	display: block;
-	height: 120px;
+	height: 100px;
 	background-color: #3787be;
 }
 
@@ -1946,6 +1951,36 @@ footer.entry-meta {
 	margin: 0px;
 	font-weight: 400;
 	color: #FFF;
+}
+
+.iheader .breadcrumb {
+	display: block;
+	padding: 0% 2.5%;
+	font-size: 14px;
+	line-height: 100%;
+	padding-top: 0px;
+	margin: 0px;
+	font-weight: 400;
+	color: #FFF;
+	line-height: 100px;
+	text-align: left;
+}
+
+.woocommerce-page div.site-content {
+	padding: 0% 2.5%;	
+}
+
+.woocommerce-page .product {
+	padding-top: 32px;
+}
+
+.iheader .breadcrumb a {
+	color: #FFF;
+}
+
+.iheader .breadcrumb a:hover {
+	color: #FFF;
+	text-decoration: none;
 }
 
 
@@ -3315,6 +3350,23 @@ footer.entry-meta {
 	background-color: transparent;
 }
 
+.widget ul.product-categories li ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+.widget ul.product-categories li ul.children li {
+	padding-left: 12px;
+	font-weight: 300px;
+}
+
+.widget ul.product-categories li ul.children li:first-child {
+}
+
+.widget ul.product-categories li ul.children li a {
+	font-weight: 300px;
+}
+
 
 /**
  * 7.0 Footer
@@ -3506,6 +3558,39 @@ footer.entry-meta {
 .go-top:hover span {
 	text-decoration: none;
 }
+
+/**
+*
+* woocommerce compitability
+*/
+
+.sidebar .content-area {
+}
+
+.site-content {
+	width: 100%;
+}
+
+.sidebar .site-content {
+	display: block;
+	float: left;
+	width: 75%;
+}
+
+.sidebar .nosidebar .site-content {
+	display: block;
+	width: 100%;
+}
+
+.sidebar #container-1:after {
+	content: "."; 
+	display: block; 
+	height: 0; 
+	clear: both; 
+	visibility: hidden; 
+}
+
+
 
 /**
 *

@@ -30,7 +30,7 @@
 <body <?php body_class(); ?>>
 	<div id="page" class="hfeed site">
     	
-        <?php if ( of_get_option('top_bar_phone') || itransform_social_icons() ) : ?>
+        <?php if ( of_get_option('top_bar_phone') || of_get_option('top_bar_email') || itransform_social_icons() ) : ?>
     	<div id="utilitybar" class="utilitybar">
         	<div class="ubarinnerwrap">
                 <div class="socialicons">
@@ -44,6 +44,15 @@
                     <?php endif; ?>
                 </div>
                 <?php endif; ?>
+                
+                <?php if ( of_get_option('top_bar_email') ) : ?>
+                <div class="topphone">
+                    <i class="topbarico genericon genericon-mail"></i>
+                    <?php if ( of_get_option('top_bar_email') ) : ?>
+                        <?php _e('Mail us : ','itransform'); ?> <?php echo of_get_option('top_bar_email'); ?>
+                    <?php endif; ?>
+                </div>
+                <?php endif; ?>                
             </div> 
         </div>
         <?php endif; ?>
@@ -94,6 +103,18 @@
         <?php else : ?>
         <div class="iheader">
         	<div class="titlebar">
+				<?php 
+                    if(function_exists('bcn_display'))
+                    {
+				?>
+                	<div class="breadcrumb">
+                <?php
+                        bcn_display();
+				?>
+                	</div>
+                <?php		
+                    } else {
+                ?>               
             	<h1>
 					<?php if ( of_get_option('itrans_slogan') ) : ?>
                     	<?php echo of_get_option('itrans_slogan'); ?>
@@ -101,6 +122,12 @@
                     	<?php //printf( __( 'Welcome To ', 'itransform' ) ); ?><?php //bloginfo( 'name' ); ?>   
                     <?php endif; ?>
                 </h1>
+                <?php
+					}
+                ?>
+            </div>
+            <div class="breadcrumb" style="text-align: left; max-width: 1600px; margin: 0px auto;">
+         
             </div>
         </div>
         

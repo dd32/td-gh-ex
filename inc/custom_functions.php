@@ -47,7 +47,7 @@ function itransform_ibanner_slider () {
 			if ($slide_title) {
 			$strret .= '<h2>'.$slide_title.'</h2>';
 			$strret .= '<p>'.$slide_desc.'</p>';
-			$strret .= '<a href="'.$slide_linkurl.'" class="da-link">Read more</a>';
+			$strret .= '<a href="'.$slide_linkurl.'" class="da-link">'.$slide_linktext.'</a>';
 			
 				if( $slide_image!='' ){
 					
@@ -104,10 +104,10 @@ function itransform_ibanner_slider () {
 		if (of_get_option('itrans_slogan')) {
 						//bloginfo( 'name' );
 			echo of_get_option('itrans_slogan');
-		} else
-		{
-			printf( __( 'Welcome To ', 'itransform' ) );  bloginfo( 'name' );
-		}
+		} 
+		//else {
+			//printf( __( 'Welcome To ', 'itransform' ) );  bloginfo( 'name' );
+		//}
         echo '        </h1>';
 		echo ' 		  <h2>';
 			    		//bloginfo( 'description' );

@@ -113,6 +113,15 @@ function optionsframework_options() {
 		'class' => 'mini',
 		'type' => 'text');
 		
+
+	$options[] = array(
+		'name' => __('Email Address', 'itransform'),
+		'desc' => __('Email Id that appears on top bar.', 'itransform'),
+		'id' => 'top_bar_email',
+		'std' => '',
+		'class' => 'mini',
+		'type' => 'text');		
+		
 	$options[] = array( 
 		"name" => "Site header logo",
 		"desc" => "Width 280px, height 72px max. Upload logo for header",
