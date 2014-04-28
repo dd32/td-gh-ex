@@ -1,0 +1,548 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: cherish\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-28 06:48+0100\n"
+"PO-Revision-Date: 2014-04-28 06:51+0100\n"
+"Last-Translator: Carolina Nymark <myazalea@hotmail.com>\n"
+"Language-Team: Layout.nu <carro@layout.nu>\n"
+"Language: sv_SE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;__;_x;esc_attr_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.6.4\n"
+"X-Poedit-SearchPath-0: C:\\xampp\\htdocs\\wordpress\\wp-content\\themes"
+"\\cherish\n"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/404.php:3
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:245
+msgid "Page not found"
+msgstr "Sidan kunde inte hittas"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/archive.php:6
+#, php-format
+msgid "Daily Archives: %s"
+msgstr "Arkiv: %s"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/archive.php:8
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr "Arkiv: %s"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/archive.php:10
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr "Arkiv: %s"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/archive.php:12
+#, php-format
+msgid "Tag Archives: %s"
+msgstr "Arkiv: %s"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/archive.php:14
+#, php-format
+msgid "Category Archives: %s"
+msgstr "Arkiv: %s"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/archive.php:16
+msgid "Archive:"
+msgstr "Arkiv:"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/archive.php:31
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/author.php:22
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/comments.php:13
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/comments.php:19
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/content.php:10
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/page.php:8
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/search.php:17
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/single.php:20
+msgid "Pages: "
+msgstr "Sidor: "
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/archive.php:37
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/author.php:28
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/index.php:17
+msgid "Next page &rarr;"
+msgstr "Nästa sida &rarr;"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/archive.php:38
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/author.php:29
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/index.php:22
+msgid "&larr; Previous page"
+msgstr "&larr; Föregående sida"
+
+# this is refering to the author. Authors name will be inserted at %
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/author.php:5
+#, php-format
+msgid "About %s"
+msgstr "Om %s"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/author.php:10
+#, php-format
+msgid "View all posts by %s:"
+msgstr "Visa alla inägg av %s"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/comments.php:4
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+"Det här inlägget är lösenordsskyddat. Skriv in lösenordet för att läsa "
+"kommentarerna."
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/footer.php:45
+#, php-format
+msgid "Proudly powered by %s"
+msgstr "Presenteras med %s"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/footer.php:47
+#, php-format
+msgid "Theme: %1$s"
+msgstr "Tema: %1$s"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/footer.php:50
+msgid "Back to the top"
+msgstr "Tillbaka till toppen"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:26
+msgid "Header Navigation"
+msgstr "Navigering för sidhuvud"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:41
+msgid "Cherry"
+msgstr "Körsbärsblomma"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:47
+msgid "Cherry 2"
+msgstr "Körsbärsblomma 2"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:53
+msgid "Cherry 3"
+msgstr "Körsbärsblomma 3"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:177
+msgid "Read more: "
+msgstr "Läs mer: "
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:202
+msgid "Frontpage Footer widget 1"
+msgstr "Sidfotswidget 1"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:203
+msgid "Widgets in this area will be shown on the left-hand side."
+msgstr "Widgets i denna panel visas på vänster sida av sidfoten"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:209
+msgid "Frontpage Footer widget 2"
+msgstr "Sidfotswidget 2"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:210
+msgid "Widgets in this area will be shown in the middle"
+msgstr "Widgets i denna panel visas i mitten av sidfoten"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:216
+msgid "Frontpage Footer widget 3"
+msgstr "Sidfotswidget 3"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:217
+msgid "Widgets in this area will be shown on the right-hand side."
+msgstr "Widgets i denna panel visas på höger sida av sidfoten"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:242
+#, php-format
+msgid "Page %s"
+msgstr "Sida %s"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:258
+msgid "No title"
+msgstr "Inlägget har ngen titel"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:288
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s kl %2$s"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:288
+msgid "(Edit)"
+msgstr "(Redigera)"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:296
+msgid "Your comment is awaiting moderation."
+msgstr "Din kommentar måste godkännas innan publicering."
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:301
+msgid "Reply"
+msgstr "Svara"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:314
+msgid "By "
+msgstr "Av "
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:319
+#, php-format
+msgid "View all posts by %s"
+msgstr "Visa alla inägg av %s"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/functions.php:332
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/page.php:10
+msgid "Edit"
+msgstr "Redigera"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/header.php:18
+msgid "Skip to content"
+msgstr "Hoppa till innehållet"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:5
+msgid "Logo Image"
+msgstr "Logo"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:10
+msgid "Post Meta"
+msgstr "Information om inlägg"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:16
+msgid "Call to Action"
+msgstr "Call to Action"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:22
+msgid "Reset the Customizer"
+msgstr "Återställning"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:35
+msgid "Display the text in the footer"
+msgstr "Visa texten i sidfoten"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:46
+msgid "Footer text color"
+msgstr "Textfärg för sidfoten"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:57
+msgid "Choose a logo to be displayed in the footer: "
+msgstr "Välj en logo som visas i sidfoten: "
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:68
+msgid "Add this link to the logo:"
+msgstr "Lägg till denna länk till logon:"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:82
+msgid "Check this box to hide all the meta information."
+msgstr "Klicka i rutan för att gömma all meta information."
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:100
+msgid "Add this text to the Call to Action area on the front page:"
+msgstr "Lägg till denna text:"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:112
+msgid "Change the font size of your text here: (em)"
+msgstr "Ändra textstorlek här: (em)"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:123
+msgid "Change the color of your Call to action text:"
+msgstr "Ändra textfärg:"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:134
+msgid "Change the background color of your Call to action area:"
+msgstr "Ändra bakgrundsfärg:"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:146
+msgid "Add a link to the Call to action text"
+msgstr "Lägg till denna länk:"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:157
+msgid "Check this box to disable the Call to Action area"
+msgstr "Klicka i rutan för att inaktivera"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/customizer.php:170
+msgid ""
+"Are you sure you want to reset the customizer settings? Type YES in the box "
+"then press Save and Publish."
+msgstr ""
+"Är du helt säker på att du vill återställa grundinställningarna? Skriv YES i "
+"rutan och tryck på Spara och Publicera."
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/metabox.php:10
+msgid "Choose your background color"
+msgstr "Välj din bakgrundsfärg"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/inc/metabox.php:35
+msgid "Background color:"
+msgstr "Bakgrundsfärg:"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\cherish/search.php:4
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Sökresultat för: %s"
+
+#~ msgid "Sunset"
+#~ msgstr "Solnedgång"
+
+#~ msgid "Stones"
+#~ msgstr "Stenar"
+
+#~ msgid "Flower"
+#~ msgstr "Blomma"
+
+#~ msgid "A cloudy day"
+#~ msgstr "En molnig dag"
+
+#~ msgid "Seagull"
+#~ msgstr "Fiskmås"
+
+#~ msgid "Birds On Rock"
+#~ msgstr "Fåglar på klippa"
+
+#~ msgid "Right Hand Sidebar"
+#~ msgstr "Höger Sidopanel"
+
+#~ msgid "Footer Sidebar"
+#~ msgstr "Sidfotspanel"
+
+#~ msgid "Author and meta"
+#~ msgstr "Författare och meta"
+
+#~ msgid "Sidebar position"
+#~ msgstr "Sidpanels position"
+
+#~ msgid "Design details"
+#~ msgstr "Designdetaljer"
+
+#~ msgid "Advanced Color Settings"
+#~ msgstr "Avancerade färginställningar."
+
+#~ msgid "Check this box to hide the breadcrumb navigation."
+#~ msgstr "Klicka i rutan för att gömma brödsmulorna (navigeringen)."
+
+#~ msgid "Choose a logo: "
+#~ msgstr "Välj en logo: "
+
+#~ msgid ""
+#~ "Check this box to display the logo on top of the sidebar. This requires "
+#~ "an active sidebar"
+#~ msgstr "Klicka i rutan för att visa logon ovanför sidopanelen."
+
+#~ msgid "Link Color"
+#~ msgstr "Länkfärg"
+
+#~ msgid "Single post and page title color"
+#~ msgstr "Färg på titlen i inlägg och sidor."
+
+#~ msgid "Widget title color"
+#~ msgstr "Färg för widgettitlar"
+
+#~ msgid "Color of the top and full page border of the site"
+#~ msgstr "Färg för kanten längst upp på sidan"
+
+#~ msgid ""
+#~ "Color of the border of the sticky posts, meta, navigation, widgets and "
+#~ "header image."
+#~ msgstr ""
+#~ "Färg för kanten runt stickys, meta, navigationsknappar, widgets och "
+#~ "bilden i sidhuvudet."
+
+#~ msgid "Background color for sticky posts, navigation and widgets."
+#~ msgstr "Bakgrundsfärg för stickys, navigationsknapparna och widgets."
+
+#~ msgid "Background hover color for sticky posts, navigation and widgets."
+#~ msgstr ""
+#~ "Bakgrundsfärg när musen förs över stickys, navigationsknappar och widgets."
+
+#~ msgid "Background color for posts and pages."
+#~ msgstr "Bakgrundsfärg för inlägg och sidor."
+
+#~ msgid "Background color for the meta."
+#~ msgstr "Bakgrundsfärg för meta."
+
+#~ msgid ""
+#~ "Check this box to hide the author information and avatar that are "
+#~ "displayed in single post view."
+#~ msgstr ""
+#~ "Klicka i rutan för att gömma den extra informationen om författaren (och "
+#~ "avataren) som visas under enskilda inlägg."
+
+#~ msgid "Check this box to place the header image above the menu."
+#~ msgstr ""
+#~ "Klicka i rutan för att placera bilden i sidhuvudet ovanför menyn istället "
+#~ "för under."
+
+#~ msgid "Add this link to the header image:"
+#~ msgstr "Lägg till denna länk till headerbilden:"
+
+#~ msgid ""
+#~ "Check this box to remove the curly brackets from the meny and to replace "
+#~ "them with a | divider in the breadcrumb navigation."
+#~ msgstr ""
+#~ "Klicka i rutan för att ta bort de sk. måsvingarna från menyn och ersätta "
+#~ "dem med en avdelare |  i navigationen."
+
+#~ msgid "Check this box to hide all shadows."
+#~ msgstr "Klicka i rutan för att  ta bort skuggorna."
+
+#~ msgid "Check this box to show icons in the post meta"
+#~ msgstr ""
+#~ "Klicka i rutan för att  visa ikoner i metainformationen nedanför inläggen."
+
+#~ msgid ""
+#~ "Check this box to remove the rounded corners on posts, widgets, "
+#~ "navigation."
+#~ msgstr ""
+#~ "Klicka i rutan för att ta bort de rundade hörnen runt inläggen, widgets "
+#~ "och navigationsknapparna."
+
+#~ msgid ""
+#~ "Check this box to remove the borders around posts, widgets, navigation."
+#~ msgstr ""
+#~ "Klicka i rutan för att ta bort kanten runt inläggen, widgets, och "
+#~ "navigationsknapparna."
+
+#~ msgid "Check this box to remove the border on the very top of the page."
+#~ msgstr "Klicka i rutan för att ta bort kanten längst upp på sidan."
+
+#~ msgid ""
+#~ "Check this box to add a border to the entire page. (This requires the top "
+#~ "border to be active)"
+#~ msgstr "Klicka i rutan för att visa kanten runt hela sidan. "
+
+#~ msgid "Or, choose a border size in the box below:"
+#~ msgstr "Eller, välj storlek på kanten nedan:"
+
+#~ msgid ""
+#~ "Check this box to move the sidebar to the left hand side. (Default is the "
+#~ "right hand side. This requires an active sidebar)"
+#~ msgstr ""
+#~ "Klicka i rutan för att visa sidopanelen på vänster sida. (Visas vanligen "
+#~ "på höger sida)"
+
+#~ msgid ""
+#~ "Check this box to hide the sidebar on the frontpage. (This setting is "
+#~ "overwritten depending on template)"
+#~ msgstr ""
+#~ "Klicka i rutan för att gömma sidopanelen på framsidan (Beroende på "
+#~ "template). "
+
+#~ msgid "Home"
+#~ msgstr "Hem"
+
+#~ msgid "Category: %1s"
+#~ msgstr "Kategori: %1s"
+
+#~ msgid ""
+#~ "<a href=\"%1$s\">Written by</a> <a href=\"%3$s\" title=\"%4$s\" rel="
+#~ "\"author\">%5$s</a> <a href=\"%1$s\" rel=\"bookmark\">%2$s</a>. "
+#~ msgstr ""
+#~ "<a href=\"%1$s\">Skrivet av</a> <a href=\"%3$s\" title=\"%4$s\" rel="
+#~ "\"author\">%5$s</a> <a href=\"%1$s\" rel=\"bookmark\">%2$s</a>. "
+
+#~ msgid "Breadcrumbs"
+#~ msgstr "Brödsmulor"
+
+#~ msgid "Header image placement"
+#~ msgstr "Välj placering av bild i sidhuvud"
+
+#~ msgid "Hide shadows"
+#~ msgstr "Göm skuggor"
+
+#~ msgid "View all posts by %s &rarr;"
+#~ msgstr "Visa alla inlägg av %s &rarr;"
+
+#~ msgid ""
+#~ "<a href=\"%5$s\">Written by</a> <a href=\"%2$s\" title=\"%3$s\" rel="
+#~ "\"author\">%4$s</a> %1$s. "
+#~ msgstr ""
+#~ "<a href=\"%5$s\">Skrivet av</a> <a href=\"%2$s\" title=\"%3$s\" rel="
+#~ "\"author\">%4$s</a> %1$s. "
+
+#~ msgid ""
+#~ "Written by <a href=\"%2$s\" title=\"%3$s\" rel=\"author\">%4$s</a> %1$s. "
+#~ msgstr ""
+#~ "Skrivet av <a href=\"%2$s\" title=\"%3$s\" rel=\"author\">%4$s</a> %1$s. "
+
+#~ msgid "<span class=\"edit-links\">Edit</span>"
+#~ msgstr "<span class=\"edit-links\">Redigera</span>"
+
+#~ msgid "Leave a comment"
+#~ msgstr "Lämna en kommentar"
+
+#~ msgid "1 comment"
+#~ msgstr "1 kommentar"
+
+#~ msgid "% comments"
+#~ msgstr "% comments"
+
+#~ msgid " comments"
+#~ msgstr " kommentarer"
+
+#~ msgid "%v comments"
+#~ msgstr "% kommentarer"
+
+#~ msgid "&#37 comments"
+#~ msgstr "% kommentarer"
+
+#~ msgid "%s comments"
+#~ msgstr "%s kommentarer"
+
+#~ msgid "%1$s comments"
+#~ msgstr "%1$s kommentarer"
+
+#~ msgid "1 comment on "
+#~ msgstr "1 kommentar till "
+
+#~ msgid "% comments on "
+#~ msgstr "% kommentrarer om "
+
+#~ msgid "Blog Archives"
+#~ msgstr "Bloggarkiv"
+
+#~ msgid "Full size is %s pixels"
+#~ msgstr "Full storlek är %s pixlar"
+
+#~ msgid "Link to full-size image"
+#~ msgstr "Länk till bild i full storlek"
+
+#~ msgid "Website: "
+#~ msgstr "Hemsida: "
+
+#~ msgid "Footer Navigation"
+#~ msgstr "Navigering (meny) i sidfot"
+
+#~ msgid ""
+#~ "<a href=\"%1$s\">Written by</a> <a href=\"%3$s\" title=\"%4$s\" rel="
+#~ "\"author\">%5$s</a> <a href=\"%1$s\" rel=\"bookmark\"> %2$s</a>"
+#~ msgstr ""
+#~ "<a href=\"%1$s\">Skrivet av</a> <a href=\"%3$s\" title=\"%4$s\" rel="
+#~ "\"author\">%5$s</a> <a href=\"%1$s\" rel=\"bookmark\"> %2$s</a>"
+
+#~ msgid ""
+#~ "Posted by <a href=\"%2$s\" title=\"%3$s\" rel=\"author\">%4$s</a>  %1$s"
+#~ msgstr ""
+#~ "Inlagd av <a href=\"%2$s\" title=\"%3$s\" rel=\"author\">%4$s</a> %1$s"
+
+#~ msgid "Continue reading."
+#~ msgstr "Läs mer."
+
+#~ msgid " in reply to %1$s on %2$s at %3$s:"
+#~ msgstr " som svar till %1$s den %2$s kl %3$s:"
+
+#~ msgid ""
+#~ "Posted by <a href=\"%2$s\" title=\"%3$s\" rel=\"author\">%4$s</a> on %1$s"
+#~ msgstr ""
+#~ "Inlagd av <a href=\"%2$s\" title=\"%3$s\" rel=\"author\">%4$s</a> den %1$s"
+
+#~ msgid "No Responses to "
+#~ msgstr "Inga Svar till  "
+
+#~ msgid "1 Response to "
+#~ msgstr "1 Svar till"
+
+#~ msgid "% Responses to "
+#~ msgstr "% Svar till "
+
+#~ msgid "1 Comment"
+#~ msgstr "1 Kommentar"
+
+#~ msgid "% Comments"
+#~ msgstr "% Kommentarer"
+
+#~ msgid "Category:"
+#~ msgstr "Kategori:"

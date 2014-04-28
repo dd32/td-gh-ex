@@ -1,0 +1,57 @@
+=== Cherish ===
+Contributors: Poena
+Tags: light, white, blue, pink, custom-colors, threaded-comments, custom-menu, sticky-post, translation-ready, custom-header, flexible-header, one-column, editor-style, featured-images
+License: MIT License
+License URI: http://opensource.org/licenses/MIT
+
+Copyright 2014 Carolina Nymark
+
+= Description ==
+Cherish is a full width responsive theme with a fixed top menu. 
+It has 3 widget areas in the footer of the front page and you can change the background color of your posts. 
+Edit or disable your Call to Action area in the customizer, where you can also change colors, 
+hide your post meta and upload your own logo. Includes Swedish translation.
+
+
+== Installation ==
+1. Unzip `cherish.zip` to the `/wp-content/themes/` directory
+2. Activate the theme through the 'Appearance' menu in WordPress
+
+== Known Limitations ==
+-A one or two line menu is recommended, instead of using long menus, use submenus.
+-It's recommended not to use a font-size larger than 4em for the Call to Action area.
+-Note that the footer widgets are only shown on the front page.
+
+
+== Changelog ==
+
+
+== Folders included in this theme ==
+images/ -contains images.
+languages/ -contains language files.
+inc/ -contains the javascripts and customizer file.
+fonts/ -contains Font Awesome files.
+
+== Resources Used In This Theme ==
+All included photos where taken by the theme author and are licensed as public domain.
+All images where created by the theme author and are licensed as public domain, -except the mobile menu icon that is created by Font Awesome.
+
+Fonts
+Open Sans Condensed is released under Apache License, version 2.0.
+Lily Script One is released under SIL Open Font License, 1.1
+
+Font Awesome 4.0.3 by @davegandy - http://fontawesome.io - @fontawesome
+License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+
+Javascript
+skrollr is released under the MIT license.
+Alexander Prinzhorn - https://github.com/Prinzhorn/skrollr
+
+FitVids 1.1
+Copyright 2013, Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com
+Credit to Thierry Koblentz - http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/
+Released under the WTFPL license - http://sam.zoy.org/wtfpl/
+
+
+
+If you have any questions or suggestions for this theme please contact me on the theme support page, http://wordpress.org/support/theme/cherish.
