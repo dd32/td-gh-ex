@@ -50,11 +50,16 @@ font-size:<?php echo $spa_current_options['spa_post_meta_typography']['post_meta
  color:<?php echo $spa_current_options['spa_post_meta_typography']['color_post_meta']; ?>;
  font-family:<?php echo $spa_current_options['spa_post_meta_typography']['font_family_post_meta']; ?>;
 }
-.jumbotron h1{
 
-font-size:<?php echo $spa_current_options['spa_home_Title']['home_title_px'].'px'; ?>;
-font-family:<?php echo $spa_current_options['spa_home_Title']['home_font_family']; ?>;
-font-style:<?php echo $spa_current_options['spa_home_Title']['home_font_style']; ?>;
+.jumbotron h1{
+font-size:<?php echo $spa_current_options['spa_home_Title']['home_title_px'].'px !important'; ?>;
+font-family:<?php echo $spa_current_options['spa_home_Title']['home_font_family']. '!important'; ?>;
+font-style:<?php echo $spa_current_options['spa_home_Title']['home_font_style'].'!important'; ?>;
 }
 
+.jumbotron h1.home_product_tagline{
+font-size:<?php echo $spa_current_options['spa_product_Title']['product_title_px'].'px !important'; ?>;
+font-family:<?php echo $spa_current_options['spa_product_Title']['product_font_family']. '!important'; ?>;
+font-style:<?php echo $spa_current_options['spa_product_Title']['product_font_style'].'!important'; ?>;
+}
 </style>
