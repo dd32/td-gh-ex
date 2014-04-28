@@ -1,11 +1,11 @@
 <?php 
 get_header();
 	while ( have_posts() ) : the_post(); 
-		$meta_value = get_post_meta( get_the_ID(), 'meta-color', true );
-		if ($meta_value == '' AND is_sticky()){
+		$cherish_color_meta_value = get_post_meta( get_the_ID(), 'meta-color', true );
+		if ($cherish_color_meta_value == '' AND is_sticky()){
 			echo '<div class="container" style="background:#edaeae">';
 		}else{		
-			echo '<div class="container" style="background:' . $meta_value . ';">';
+			echo '<div class="container" style="background:' . $cherish_color_meta_value . ';">';
 		}
 		get_template_part( 'content', get_post_format() ); 
 		echo '</div>';

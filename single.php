@@ -1,6 +1,6 @@
 <?php get_header(); 
-	$meta_value = get_post_meta( get_the_ID(), 'meta-color', true );
-	echo '<div class="container" style="background:' . $meta_value . ';">';
+	$cherish_color_meta_value = get_post_meta( get_the_ID(), 'meta-color', true );
+	echo '<div class="container" style="background:' . $cherish_color_meta_value . ';">';
 	if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<h1 class="post-title"><?php the_title(); ?></h1>

@@ -28,10 +28,10 @@ if ( ! function_exists( 'cherish_setup' ) ) {
 		add_editor_style();
 		
 		/* width     bredd */
+		global $content_width; 
 		if ( ! isset( $content_width ) ) {
 			$content_width = 560;
 		}
-		
 		
 		register_default_headers( array(
 			'cherry' => array(
@@ -53,7 +53,6 @@ if ( ! function_exists( 'cherish_setup' ) ) {
 				'description' => __( 'Cherry 3', 'cherish' )
 			)
 
-
 		) );
 	}
 }
@@ -61,7 +60,7 @@ add_action( 'after_setup_theme', 'cherish_setup' );
 
 /*
 Add support for changing the color of the title and description
-Add the chosen header as a background image 
+Add the chosen header as a background image
 Customizer options 
 */
 function cherish_customize_css() {
@@ -108,7 +107,6 @@ add_action( 'wp_head', 'cherish_customize_css');
 
 
 function cherish_skip(){
-
 ?>
 	<script type="text/javascript">
 	<!--//--><![CDATA[//><!--
@@ -150,7 +148,7 @@ add_filter( 'wp_page_menu', 'cherish_menu' );
 		}
 	}
 	
-	wp_enqueue_script( 'cherish_skroller', get_template_directory_uri() . '/inc/skrollr.min.js', array( 'jquery' ) );
+	wp_enqueue_script( 'cherish_skrollr', get_template_directory_uri() . '/inc/skrollr.js', array( 'jquery' ) );
 	wp_enqueue_script( 'cherish_fitvids', get_template_directory_uri() . '/inc/jquery.fitvids.js', array('jquery'), '', TRUE ); 
 	wp_enqueue_script( 'cherish_js', get_template_directory_uri() . '/inc/cherish.js', array( 'jquery' ) );
 }
@@ -174,15 +172,15 @@ add_filter( 'excerpt_more', 'cherish_excerpt_more',100 );
 add_filter( 'the_content_more_link', 'cherish_content_more', 100 );
 
  function cherish_continue_reading($id ) {
-	return '<a href="' . get_permalink( $id ) . '" class="more-link">' . __( 'Read more: ', 'cherish' ) . get_the_title($id) . '</a>';
+	return '<a href="' . get_permalink( $id ) . '" class="more-link">' . __( 'Read more: ', 'cherish' ) . get_the_title( $id) . '</a>';
 }
  
-function cherish_content_more($more) {
+function cherish_content_more( $more ) {
 	global $id;
 	return cherish_continue_reading( $id );
 }
  
-function cherish_excerpt_more($more) {
+function cherish_excerpt_more( $more ) {
 	global $id;
 	return '... ' . cherish_continue_reading( $id );
 }
@@ -274,18 +272,18 @@ function cherish_comment($comment, $args, $depth) {
 			<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
 		<div class="comment-author vcard">
 		<?php 
-		if ( get_avatar($comment) ){
+		if ( get_avatar( $comment ) ){
 				echo get_avatar( $comment, '44'); 
 		}else{
 			/*If avatars are off, show a font-awesome icon.*/
 			echo '<i class="avataroff fa-big"></i>';
 		}
-		printf('<div class="fn">%s</div>', get_comment_author_link());		
+		printf('<div class="fn">%s</div>', get_comment_author_link() );		
 		?>
 			<div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
 				<?php
 					/* translators: 1: date, 2: time */
-					printf( __('%1$s at %2$s','cherish'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)', 'cherish'),'  ','' );
+					printf( __('%1$s at %2$s','cherish'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link( __('(Edit)', 'cherish'),'  ','' );
 				?>
 			</div>
 		</div>
@@ -329,12 +327,7 @@ function cherish_meta(){
 			echo ' ' . get_the_tag_list( '', ', ' );
 		}
 		echo ' ';
-		edit_post_link(__( 'Edit', 'cherish' ));
+		edit_post_link( __( 'Edit', 'cherish' ));
 	}
 	echo '</p><hr class="alignleft"><div class="divider"></div><hr class="alignright"></div>';
 }
-
-
-
- 
-

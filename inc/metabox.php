@@ -3,7 +3,7 @@
  * Adds a box to the main column on the Post edit screens.
  */
 function cherish_add_meta_box() {
-	$screens = array( 'post');
+	$screens = array( 'post' );
 	foreach ( $screens as $screen ) {
 		add_meta_box(
 			'cherish_sectionid',
@@ -29,11 +29,11 @@ function cherish_meta_box_callback( $post ) {
 	 * Use get_post_meta() to retrieve an existing value
 	 * from the database and use the value for the form.
 	 */
-	$value = get_post_meta( $post->ID, 'meta-color', true );
+	$cherish_color_meta_value = get_post_meta( $post->ID, 'meta-color', true );
 	?>
 	<p>
     <label for="meta-color"><?php _e( 'Background color:', 'cherish' )?></label>
-    <input name="meta-color" type="text" value="<?php echo $value ?>" class="meta-color" />
+    <input name="meta-color" type="text" value="<?php echo $cherish_color_meta_value ?>" class="meta-color" />
 	</p>
 <?php
 }
@@ -61,23 +61,17 @@ function cherish_save_meta_box_data( $post_id ) {
 		return;
 	}
 	// Check the user's permissions.
-	if ( isset( $_POST['post_type'] ) && 'page' == $_POST['post_type'] ) {
-		if ( ! current_user_can( 'edit_page', $post_id ) ) {
-			return;
-		}
-	} else {
 		if ( ! current_user_can( 'edit_post', $post_id ) ) {
 			return;
 		}
-	}
 	/* OK, its safe for us to save the data now. */
 	// Make sure that it is set.
 	if ( ! isset( $_POST['meta-color'] ) ) {
 		return;
 	}
 	// Sanitize user input.
-	$my_data = sanitize_text_field( $_POST['meta-color'] );
+	$cherish_data = sanitize_text_field( $_POST['meta-color'] );
 	// Update the meta field in the database.
-	update_post_meta( $post_id, 'meta-color', $my_data );
+	update_post_meta( $post_id, 'meta-color', $cherish_data );
 }
 add_action( 'save_post', 'cherish_save_meta_box_data' );
