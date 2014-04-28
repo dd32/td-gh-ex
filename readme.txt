@@ -57,6 +57,8 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version: 1.4.1
+1.Quick Edit CSS conflict fixed.
 @Version: 1.4
 Small Styling added for Options Panel.
 @Version: 1.3.9

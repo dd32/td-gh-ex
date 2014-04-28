@@ -1,3 +1,11 @@
+table td[class*="span"],
+table th[class*="span"],
+.row-fluid table td[class*="span"],
+.row-fluid table th[class*="span"] {
+  display: table-cell;
+  float: none;
+  margin-left: 0;
+}
 .theme-info { padding-left:4%;}
 .webriti-container {
     border-bottom: 1px dashed #CCCCCC;
