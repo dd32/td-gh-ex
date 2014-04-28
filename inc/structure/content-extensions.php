@@ -477,7 +477,7 @@ function interface_theloop_for_template_blog_image_large() {
     </div>
     <!-- .entry-content -->
     <footer class="entry-meta clearfix"> <span class="tag-links">
-      <?php $tag_list = get_the_tag_list( '', __( '', 'interface' ) );
+      <?php $tag_list = get_the_tag_list( '', __( ' ', 'interface' ) );
 						if(!empty($tag_list)){
 					echo $tag_list;
 					
@@ -1035,7 +1035,7 @@ function interface_business_template_widgetized_content() { ?>
   <?php if( is_active_sidebar( 'interface_business_page_sidebar' ) ) {
 			echo '<div id="content">';
 
-			// Calling the footer sidebar if it exists.
+			// Calling the footer sidebar
 			dynamic_sidebar( 'interface_business_page_sidebar' );
 				
 		echo '</div><!-- #content -->';
@@ -1053,7 +1053,7 @@ add_action( 'interface_business_template_ourclients', 'interface_business_templa
 function interface_business_template_featured_image() { ?>
   <?php if( is_active_sidebar( 'interface_business_page_our_client_sidebar' ) ) {
 
-			// Calling the footer sidebar if it exists.
+			// Calling the footer sidebar
 			dynamic_sidebar( 'interface_business_page_our_client_sidebar' );
 			
 		}

@@ -18,8 +18,10 @@ add_action( 'interface_left_sidebar', 'interface_display_left_sidebar', 10 );
  * Shows all the widgets that are dragged and dropped on the left Sidebar.
  */
 function interface_display_left_sidebar() {
-	// Calling the left sidebar if it exists.
+	// Calling the left sidebar
+	if ( is_active_sidebar( 'interface_left_sidebar' ) ) :
 	dynamic_sidebar( 'interface_left_sidebar' );
+	endif;
 }
 
 /****************************************************************************************/
@@ -31,8 +33,10 @@ add_action( 'interface_right_sidebar', 'interface_display_right_sidebar', 10 );
  * Shows all the widgets that are dragged and dropped on the right Sidebar.
  */
 function interface_display_right_sidebar() {
-	// Calling the right sidebar if it exists.
+	// Calling the right sidebar
+	if ( is_active_sidebar( 'interface_right_sidebar' ) ) :
 	dynamic_sidebar( 'interface_right_sidebar' );
+	endif;
 
 }
 
@@ -45,8 +49,10 @@ add_action( 'interface_contact_page_sidebar', 'interface_display_contact_page_si
  * Shows all the widgets that are dragged and dropped on the Contact Page Sidebar.
  */
 function interface_display_contact_page_sidebar() {
-	// Calling the conatact page sidebar if it exists.
+	// Calling the conatact page sidebar
+	if ( is_active_sidebar( 'interface_contact_page_sidebar' ) ) :
 	dynamic_sidebar( 'interface_contact_page_sidebar' );
+	endif;
 }
 
 /****************************************************************************************/
@@ -66,8 +72,10 @@ function interface_display_footer_sidebar() {
     <div class="widget-area clearfix">
       <div class="one-third">
         <?php
-						// Calling the footer column 1 sidebar if it exists.
+						// Calling the footer column 1 sidebar
+						if ( is_active_sidebar( 'interface_footer_sidebar' ) ) :
 						dynamic_sidebar( 'interface_footer_sidebar' );
+						endif;
 						
 						?>
       </div>
@@ -75,16 +83,20 @@ function interface_display_footer_sidebar() {
       
       <div class="one-third">
         <?php
-						// Calling the footer column 2 sidebar if it exists.
+						// Calling the footer column 2 sidebar
+						if ( is_active_sidebar( 'interface_footer_column2' ) ) :
 						dynamic_sidebar( 'interface_footer_column2' );
+						endif;
 						?>
       </div>
       <!-- .one-third -->
       
       <div class="one-third">
         <?php
-						// Calling the footer column 3 sidebar if it exists.
+						// Calling the footer column 3 sidebar
+						if ( is_active_sidebar( 'interface_footer_column3' ) ) :
 						dynamic_sidebar( 'interface_footer_column3' );
+						endif;
 						?>
       </div>
       <!-- .one-third --> 

@@ -5,7 +5,7 @@
  * The area of the page that contains both current comments
  * and the comment form. The actual display of comments is
  * handled by a callback to interface_comment() which is
- * located in the content-extensions.php file under the function folder inside library folder.
+ * located in the content-extensions.php file under the function folder inside inc folder.
  *
  * @package Theme Horse
  * @subpackage Interface

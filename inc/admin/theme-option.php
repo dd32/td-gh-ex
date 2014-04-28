@@ -1019,14 +1019,7 @@ function interface_theme_options_validate( $options ) { //validate individual op
 	if ( isset( $input['custom_css'] ) ) {
 		$validated_input_values['custom_css'] = wp_kses_stripslashes($input['custom_css']);
 	}
-	   
-	if( isset( $input[ 'analytic_header' ] ) ) {
-		$validated_input_values[ 'analytic_header' ] = wp_kses_stripslashes( $input[ 'analytic_header' ] );
-	}
-	if( isset( $input[ 'analytic_footer' ] ) ) {
-		$validated_input_values[ 'analytic_footer' ] = wp_kses_stripslashes( $input[ 'analytic_footer' ] );    
-	}   
-	
+
 	if( isset( $input[ 'site_design' ] ) ) {
 		$validated_input_values[ 'site_design' ] = $input[ 'site_design' ];
 	}   

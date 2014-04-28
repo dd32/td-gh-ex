@@ -61,6 +61,14 @@ https://wordpress.org/themes/simple-catch
 
 == CHANGE LOG ==
 
+= 1.0.2 =
+ - Condition used for dynamic sidebar
+ - Testimonial name display issue fixed
+ - Pot file issue fixed and updated
+ - Content width added inside the theme setup function
+ - Unwanted comment/code removed
+ - Screenshot image edited
+
 = 1.0.1 =
  - Screenshot image changed and added license
 
