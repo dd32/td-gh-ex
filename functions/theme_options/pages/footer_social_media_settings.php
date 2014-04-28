@@ -1,5 +1,5 @@
 <div class="block ui-tabs-panel deactive" id="option-ui-id-7" >
-	<h2><?php _e('Social media Links','rambo');?></h2><hr>	
+	<h2><?php _e('Social media Links settings','rambo');?></h2><hr>	
 	<?php $current_options = get_option('rambo_theme_options');
 	if(isset($_POST['rambo_settings_save_7']))
 	{	
