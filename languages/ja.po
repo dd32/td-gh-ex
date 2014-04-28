@@ -1,89 +1,84 @@
-# Copyright (C) 2012 the Catch Themes Team
-# This file is distributed under the  GNU General Public License.
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Evolution\n"
-"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-29 00:26+0545\n"
-"PO-Revision-Date: 2014-04-29 00:26+0545\n"
+"PO-Revision-Date: \n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
-"Language-Team: Catch Themes Team <info@catchthemes.com>\n"
-"Language: es_ES\n"
+"Language-Team: Catch Themes <info@catchthemes.com>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;esc_attr_e;esc_attr__\n"
-"X-Poedit-Basepath: .\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.6.4\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_x;_ex;_n;esc_attr_e;esc_attr__\n"
+"X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:14
 msgid "Error 404 - Page Not Found."
-msgstr "Error 404 - Pagina no encontrada."
+msgstr "Error 404 - ページが見つかりませんでした。"
 
 #: ../404.php:18
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for."
-msgstr "Parece que no podemos encontrar lo que estas buscando."
+msgstr "お探しのページが見つかりませんでした。"
 
 #: ../404.php:19
 msgid "This might be because:"
-msgstr "Esto podría deberse a que:"
+msgstr "次のような理由が考えられます："
 
 #: ../404.php:20
 msgid ""
 "You have typed the web address incorrectly, or the page you were looking for "
 "may have been moved, updated or deleted."
 msgstr ""
-"Usted ha escrito la dirección web incorrecta o la página que estabas "
-"buscando puede haber sido movida, borrada o actualizada."
+"入力したURLがまちがっているか、お探しのページが移動、更新、もしくは削除されて"
+"います。"
 
 #: ../404.php:21
 msgid "Please try the following options instead:"
-msgstr "Por favor, intente las siguientes opciones en su lugar:"
+msgstr "かわりに、次のオプションをお試しください："
 
 #: ../404.php:22
 msgid ""
 "Check for a mis-typed URL error, then press the refresh button on your "
 "browser or Use the search box below."
 msgstr ""
-"Compruebe el error de  URL mal escrita, a continuación, pulse el botón "
-"actualizar de su navegador o use la casilla de búsqueda de abajo."
+"URLを正しく入力しなおしてブラウザの「更新」ボタンをクリックするか、以下の検索"
+"ボックスにキーワードを入力して検索してください。"
 
 #: ../archive.php:22
 #, php-format
 msgid "Daily Archives: %s"
-msgstr "Archivo diario: %s"
+msgstr "日別アーカイブ： %s"
 
 #: ../archive.php:24
 #, php-format
 msgid "Monthly Archives: %s"
-msgstr "Archivos mensuales: %s"
+msgstr "月別アーカイブ：%s"
 
 #: ../archive.php:24
-msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr "F Y"
 
 #: ../archive.php:26
 #, php-format
 msgid "Yearly Archives: %s"
-msgstr "Archivos anuales: %s"
+msgstr "年別アーカイブ：%s"
 
-#: ../archive.php:26
-msgctxt "yearly archives date format"
+#: ../archive.php:26 ../inc/panel/theme-options.php:1153
 msgid "Y"
 msgstr "Y"
 
 #: ../archive.php:28
 msgid "Blog Archives"
-msgstr "Archivos del Blog"
+msgstr "ブログアーカイブ："
 
 #: ../archive.php:52 ../author.php:69 ../category.php:45 ../index.php:32
 #: ../page-blog.php:65 ../search.php:39 ../tag.php:45
 msgid "Nothing Found"
-msgstr "No se encontro nada"
+msgstr "見つかりませんでした。"
 
 #: ../archive.php:56 ../author.php:73 ../category.php:49 ../index.php:36
 #: ../page-blog.php:69 ../tag.php:49
@@ -91,53 +86,49 @@ msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
 "searching will help find a related post."
 msgstr ""
-"Disculpas, pero no se han encontrado resultados para el archivo solicitado. "
-"Puede que la búsqueda le ayude a encontrar una entrada relacionada."
+"申し訳ありませんが、ご指定のアーカイブにお探しのページは見つかりませんでし"
+"た。かわりに検索機能をお試しください。"
 
 #: ../author.php:25
 #, php-format
 msgid "Author Archives: %s"
-msgstr "Archivos de autor: %s"
+msgstr "投稿者別アーカイブ：%s"
 
 #: ../author.php:44 ../content-single.php:76
 #, php-format
 msgid "About %s"
-msgstr "Acerca de %s"
+msgstr "%sについて"
 
 #: ../category.php:16
 #, php-format
 msgid "Category Archives: %s"
-msgstr "Archivos por Categoria: %s"
+msgstr "カテゴリー別アーカイブ：%s"
 
 #: ../comments.php:17
 msgid ""
 "This post is password protected. Enter the password to view any comments."
-msgstr ""
-"Este post está protegido por contraseña. Introduzca la contraseña para ver "
-"los comentarios."
+msgstr "この投稿はパスワードで保護されています。パスワードを入力してください。"
 
 #: ../comments.php:33
 #, php-format
 msgid "One thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "Un pensamiento sobre &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s pensamientos sobre &ldquo;%2$s&rdquo;"
+msgstr "&ldquo;%2$s&rdquo; に対する意見"
 
 #: ../comments.php:40 ../comments.php:60
 msgid "Comment navigation"
-msgstr "comentario de navegación"
+msgstr "コメントナビゲーション"
 
 #: ../comments.php:41 ../comments.php:61
 msgid "&larr; Older Comments"
-msgstr "&larr; Comentarios Antiguos"
+msgstr "&larr; 過去のコメント"
 
 #: ../comments.php:42 ../comments.php:62
 msgid "Newer Comments &rarr;"
-msgstr "Comentarios nuevos &rarr;"
+msgstr "最新のコメント&rarr;"
 
 #: ../comments.php:72
 msgid "Comments are closed."
-msgstr "Los comentarios estan cerrados."
+msgstr "コメント欄は閉じられています。"
 
 #: ../content-aside.php:16 ../content-featured.php:14
 #: ../content-gallery.php:16 ../content-gallery.php:48 ../content-image.php:15
@@ -146,11 +137,11 @@ msgstr "Los comentarios estan cerrados."
 #: ../content.php:63 ../inc/catchevolution-functions.php:630
 #, php-format
 msgid "Permalink to %s"
-msgstr "Enlace permanente a %s"
+msgstr "%sのパーマリンク"
 
 #: ../content-aside.php:17
 msgid "Aside"
-msgstr "Aparte"
+msgstr "アサイド"
 
 #: ../content-aside.php:22 ../content-aside.php:48 ../content-gallery.php:93
 #: ../content-image.php:69 ../content-link.php:22 ../content-link.php:48
@@ -158,7 +149,7 @@ msgstr "Aparte"
 #: ../content-status.php:21 ../content-status.php:49 ../content.php:40
 #: ../content.php:117
 msgid "Leave a reply"
-msgstr "Deja una respuesta"
+msgstr "コメントする"
 
 #: ../content-aside.php:22 ../content-aside.php:48 ../content-gallery.php:93
 #: ../content-image.php:69 ../content-link.php:22 ../content-link.php:48
@@ -166,7 +157,7 @@ msgstr "Deja una respuesta"
 #: ../content-status.php:21 ../content-status.php:49 ../content.php:40
 #: ../content.php:117
 msgid "1 Comment &darr;"
-msgstr "1 Comentario &darr;"
+msgstr "1 件のコメント &darr;"
 
 #: ../content-aside.php:22 ../content-aside.php:48 ../content-gallery.php:93
 #: ../content-image.php:69 ../content-link.php:22 ../content-link.php:48
@@ -174,19 +165,19 @@ msgstr "1 Comentario &darr;"
 #: ../content-status.php:21 ../content-status.php:49 ../content.php:40
 #: ../content.php:117
 msgid "% Comments &darr;"
-msgstr "% Comentarios &darr;"
+msgstr "% 件のコメント &darr;"
 
 #: ../content-aside.php:33 ../content-gallery.php:32 ../content-link.php:33
 #: ../content-quote.php:36 ../content-status.php:34
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Continuar Leyendo <span class=\"meta-nav\">&rarr;</span>"
+msgstr "続きを読む <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../content-aside.php:35 ../content-featured.php:24
 #: ../content-gallery.php:55 ../content-image.php:28 ../content-link.php:35
 #: ../content-page.php:19 ../content-quote.php:38 ../content-single.php:31
 #: ../content-status.php:36 ../content.php:77 ../image.php:87
 msgid "Pages:"
-msgstr "Paginas: "
+msgstr "ページ："
 
 #: ../content-aside.php:50 ../content-featured.php:51
 #: ../content-gallery.php:96 ../content-image.php:73 ../content-link.php:50
@@ -195,7 +186,7 @@ msgstr "Paginas: "
 #: ../inc/catchevolution-functions.php:390
 #: ../inc/catchevolution-functions.php:418
 msgid "Edit"
-msgstr "Editar"
+msgstr "編集する"
 
 #: ../content-featured.php:35 ../content-featured.php:44
 #: ../content-gallery.php:68 ../content-gallery.php:78 ../content-image.php:52
@@ -203,7 +194,7 @@ msgstr "Editar"
 #: ../content-single.php:42 ../content-single.php:45 ../content.php:91
 #: ../content.php:101
 msgid ", "
-msgstr ","
+msgstr ", "
 
 #: ../content-featured.php:37
 #, php-format
@@ -211,8 +202,8 @@ msgid ""
 "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
 "title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
-"Esta entrada fue publicada en %1$s y etiquetada %2$s. Guarda el <a href="
-"\"%3$s\" title=\"Permalink a %4$s\" rel=\"bookmark\">permalink</a>."
+"カテゴリー: %1$s &nbsp; タグ: %2$s &nbsp; <a href=\"%3$s\" title=\"%4$s への"
+"パーマリンク\" rel=\"bookmark\">この投稿のパーマリンク</a>."
 
 #: ../content-featured.php:39
 #, php-format
@@ -220,35 +211,33 @@ msgid ""
 "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title="
 "\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
-"Esta entrada fue publicada en %1$s. Guarda el <a href=\"%3$s\" title="
-"\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+"カテゴリー: %1$s &nbsp; <a href=\"%3$s\" title=\"%4$s へのパーマリンク\" rel="
+"\"bookmark\">パーマリンク</a>."
 
 #: ../content-gallery.php:17
 msgid "Gallery"
-msgstr "Galeria"
+msgstr "ギャラリー"
 
 #: ../content-gallery.php:47
 #, php-format
 msgid "This gallery contains <a %1$s>%2$s photo</a>."
-msgid_plural "This gallery contains <a %1$s>%2$s photos</a>."
-msgstr[0] "Esta galería contiene <a %1$s>%2$s foto</a>."
-msgstr[1] "Esta galería contiene <a %1$s>%2$s fotos</a>."
+msgstr "このギャラリーには<a %1$s>%2$sの写真</a>が含まれています。"
 
 #: ../content-gallery.php:72 ../content-image.php:56 ../content-quote.php:55
 #: ../content.php:95
 #, php-format
 msgid "<span class=\"%1$s\">Posted in</span> %2$s"
-msgstr "<span class=\"%1$s\">Publicado en</span> %2$s"
+msgstr "<span class=\"%1$s\">カテゴリー:</span> %2$s"
 
 #: ../content-gallery.php:84 ../content-image.php:64 ../content-quote.php:67
 #: ../content.php:107
 #, php-format
 msgid "<span class=\"%1$s\">Tagged</span> %2$s"
-msgstr "<span class=\"%1$s\">Etiquetado</span> %2$s"
+msgstr "<span class=\"%1$s\">タグ:</span> %2$s"
 
 #: ../content-image.php:16
 msgid "Image"
-msgstr "Imagen"
+msgstr "イメージ"
 
 #: ../content-image.php:26 ../content.php:75
 #: ../inc/catchevolution-functions.php:248
@@ -265,22 +254,22 @@ msgid ""
 "\" rel=\"author\">%6$s</a></span></span>"
 msgstr ""
 "<a href=\"%1$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%2$s"
-"\">%3$s</time></a><span class=\"by-author\"> <span class=\"sep\"> por </"
-"span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%4$s\" title="
-"\"%5$s\" rel=\"author\">%6$s</a></span></span>"
+"\">%3$s</time></a><span class=\"by-author\"> <span class=\"sep\"> by </span> "
+"<span class=\"author vcard\"><a class=\"url fn n\" href=\"%4$s\" title=\"%5$s"
+"\" rel=\"author\">%6$s</a></span></span>"
 
 #: ../content-image.php:44 ../inc/catchevolution-functions.php:456
 #, php-format
 msgid "View all posts by %s"
-msgstr "Ver todos los mensajes de %s"
+msgstr "%sの投稿をすべて読む"
 
 #: ../content-link.php:17
 msgid "Link"
-msgstr "Enlace"
+msgstr "リンク"
 
 #: ../content-quote.php:15
 msgid "Quote"
-msgstr "Citar"
+msgstr "引用"
 
 #: ../content-single.php:47
 #, php-format
@@ -289,9 +278,9 @@ msgid ""
 "Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark"
 "\">permalink</a>."
 msgstr ""
-"Esta entrada fue publicada en %1$s y etiquetada %2$s por <a href=\"%6$s\">"
-"%5$s</a>. Guarda el <a href=\"%3$s\" title=\"Permalink to %4$s\" rel="
-"\"bookmark\">permalink</a>."
+"カテゴリー: %1$s &nbsp; タグ: %2$s  &nbsp; 投稿者: <a href=\"%6$s\">%5$s</a> "
+"&nbsp; <a href=\"%3$s\" title=\"%4$s へのパーマリンク\" rel=\"bookmark\">この"
+"投稿のパーマリンク</a>."
 
 #: ../content-single.php:49
 #, php-format
@@ -299,8 +288,8 @@ msgid ""
 "This entry was posted in %1$s by <a href=\"%6$s\">%5$s</a>. Bookmark the <a "
 "href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
-"Esta entrada fue publicada en %1$s por <a href=\"%6$s\">%5$s</a>. Guarda el "
-"<a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+"カテゴリー: %1$s &nbsp; 投稿者: <a href=\"%6$s\">%5$s</a> <a href=\"%3$s\" "
+"title=\"%4$s へのパーマリンク\" rel=\"bookmark\">パーマリンク</a>."
 
 #: ../content-single.php:51
 #, php-format
@@ -308,49 +297,49 @@ msgid ""
 "This entry was posted by <a href=\"%6$s\">%5$s</a>. Bookmark the <a href="
 "\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
-"Este articulo fue publicado por <a href=\"%6$s\">%5$s</a>. Guarda el <a href="
-"\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+"投稿者: <a href=\"%6$s\">%5$s</a> <a href=\"%3$s\" title=\"%4$s へのパーマリ"
+"ンク\" rel=\"bookmark\">パーマリンク</a>."
 
 #: ../content-single.php:80
 #, php-format
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Ver todos los mensajes de %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "%sの投稿をすべて読む<span class=\"meta-nav\">&rarr;</span>"
 
 #: ../content-status.php:16
 msgid "Status"
-msgstr "Estado"
+msgstr "ステータス"
 
 #: ../content.php:28
 msgid "Featured"
-msgstr "Destacado"
+msgstr "注目"
 
 #: ../functions.php:126
 msgid "Fixed Header Top Menu"
-msgstr "Menu superior ajustado del Header"
+msgstr "ヘッダーエリアの固定トップメニュー"
 
 #: ../functions.php:127
 msgid "Primary Menu"
-msgstr "Menu Principal"
+msgstr "第1メニュー"
 
 #: ../functions.php:128
 msgid "Secondary Menu"
-msgstr "Menu Secundario"
+msgstr "第2メニュー"
 
 #: ../functions.php:129
 msgid "Footer Menu"
-msgstr "Menu del Footer"
+msgstr "フッターメニュー"
 
 #: ../image.php:15
 msgid "Image navigation"
-msgstr "Navegador de imagenes"
+msgstr "イメージナビゲーション"
 
 #: ../image.php:16
 msgid "&larr; Previous"
-msgstr "&larr; Anterior"
+msgstr "&larr; 前へ"
 
 #: ../image.php:17
 msgid "Next &rarr;"
-msgstr "Siguiente &rarr;"
+msgstr "次へ &rarr;"
 
 #: ../image.php:27
 #, php-format
@@ -360,49 +349,49 @@ msgid ""
 "at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> "
 "in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</a>"
 msgstr ""
-"<span class=\"meta-prep meta-prep-entry-date\">Publicado </span> <span class="
-"\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span> "
-"en <a href=\"%3$s\" title=\"Link a imagen de tamaño completo\">%4$s &times; "
-"%5$s</a> en <a href=\"%6$s\" title=\"Volver a %7$s\" rel=\"gallery\">%8$s</a>"
+"<span class=\"meta-prep meta-prep-entry-date\">公開日時: </span> <span class="
+"\"entry-date\"><abbr class=\"published\" title=\"%1$s\">%2$s</abbr></span> @ "
+"<a href=\"%3$s\" title=\"フルサイズ画像へのリンク\">%4$s &times; %5$s</a> カ"
+"テゴリー: <a href=\"%6$s\" title=\"%7$s へ戻る\" rel=\"gallery\">%8$s</a>"
 
 #: ../inc/catchevolution-functions.php:101
 #, php-format
 msgid "Page %s"
-msgstr "Pagina %s"
+msgstr "ページ %s"
 
 #: ../inc/catchevolution-functions.php:303 ../single.php:15
 msgid "Post navigation"
-msgstr "Navegador de artículos"
+msgstr "投稿ナビゲーション"
 
 #: ../inc/catchevolution-functions.php:311
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr "<span class=\"meta-nav\">&larr;</span> Entradas Antiguas"
+msgstr "<span class=\"meta-nav\">&larr;</span> 過去の投稿"
 
 #: ../inc/catchevolution-functions.php:312
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Nuevas entradas <span class=\"meta-nav\">&rarr;</span>"
+msgstr "最新の投稿 <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../inc/catchevolution-functions.php:390
 msgid "Pingback:"
-msgstr "Pingback:"
+msgstr "ピンバック:"
 
 #: ../inc/catchevolution-functions.php:407
 #, php-format
 msgid "%1$s on %2$s <span class=\"says\">said:</span>"
-msgstr "%1$s en %2$s <span class=\"says\">dijo:</span>"
+msgstr "%1$s %2$s <span class=\"says\">より:</span>"
 
 #: ../inc/catchevolution-functions.php:413
 #, php-format
 msgid "%1$s at %2$s"
-msgstr "%1$s en %2$s"
+msgstr "%1$s at %2$s"
 
 #: ../inc/catchevolution-functions.php:422
 msgid "Your comment is awaiting moderation."
-msgstr "Tu comentario está pendiente de moderación."
+msgstr "コメントは管理者の承認待ちです。"
 
 #: ../inc/catchevolution-functions.php:431
 msgid "Reply <span>&darr;</span>"
-msgstr "Responder <span>&darr;</span>"
+msgstr "返信する <span>&darr;</span>"
 
 #: ../inc/catchevolution-functions.php:450
 #, php-format
@@ -413,11 +402,11 @@ msgid ""
 "\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel="
 "\"author\">%7$s</a></span></span>"
 msgstr ""
-"<span class=\"sep\">Publicado el </span><a href=\"%1$s\" title=\"%2$s\" rel="
+"<span class=\"sep\">投稿日時: </span><a href=\"%1$s\" title=\"%2$s\" rel="
 "\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\">%4$s</time></"
-"a><span class=\"by-author\"> <span class=\"sep\"> por </span> <span class="
-"\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel="
-"\"author\">%7$s</a></span></span>"
+"a><span class=\"by-author\"> <span class=\"sep\"> 投稿者: </span> <span "
+"class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" "
+"rel=\"author\">%7$s</a></span></span>"
 
 #: ../inc/catchevolution-functions.php:535
 msgid "ID"
@@ -425,53 +414,53 @@ msgstr "ID"
 
 #: ../inc/catchevolution-functions.php:804
 msgid "Name"
-msgstr "Nombre"
+msgstr "名前"
 
 #: ../inc/catchevolution-functions.php:806
 msgid "Email"
-msgstr "Email"
+msgstr "メールアドレス"
 
 #: ../inc/catchevolution-functions.php:919
 #: ../inc/catchevolution-functions.php:1093
 #, php-format
 msgid "%s in Facebook"
-msgstr "%s en Facebook"
+msgstr "%s in Facebook"
 
 #: ../inc/catchevolution-functions.php:924
 #: ../inc/catchevolution-functions.php:1098
 #, php-format
 msgid "%s in Twitter"
-msgstr "%s en Twitter"
+msgstr "%s in Twitter"
 
 #: ../inc/catchevolution-functions.php:929
 #: ../inc/catchevolution-functions.php:1103
 #, php-format
 msgid "%s in Google+"
-msgstr "%s en Google+"
+msgstr "%s in Google+"
 
 #: ../inc/catchevolution-functions.php:934
 #: ../inc/catchevolution-functions.php:1108
 #, php-format
 msgid "%s in Linkedin"
-msgstr "%s en Linkedin"
+msgstr "%s in Linkedin"
 
 #: ../inc/catchevolution-functions.php:939
 #: ../inc/catchevolution-functions.php:1113
 #, php-format
 msgid "%s in Pinterest"
-msgstr "%s en Pinterest"
+msgstr "%s in Pinterest"
 
 #: ../inc/catchevolution-functions.php:944
 #: ../inc/catchevolution-functions.php:1118
 #, php-format
 msgid "%s in YouTube"
-msgstr "%s en YouTube"
+msgstr "%s in YouTube"
 
 #: ../inc/catchevolution-functions.php:949
 #: ../inc/catchevolution-functions.php:1123
 #, php-format
 msgid "%s in Vimeo"
-msgstr "%s en Vimeo"
+msgstr "%s in Vimeo"
 
 #: ../inc/catchevolution-functions.php:954
 #: ../inc/catchevolution-functions.php:994
@@ -479,209 +468,210 @@ msgstr "%s en Vimeo"
 #: ../inc/catchevolution-functions.php:1168
 #, php-format
 msgid "%s in Slideshare"
-msgstr "%s en Slideshare"
+msgstr "%s in Slideshare"
 
 #: ../inc/catchevolution-functions.php:959
 #: ../inc/catchevolution-functions.php:1133
 #, php-format
 msgid "%s in Foursquare"
-msgstr "%s en Foursquare"
+msgstr "%s in Foursquare"
 
 #: ../inc/catchevolution-functions.php:964
 #: ../inc/catchevolution-functions.php:1138
 #, php-format
 msgid "%s in Flickr"
-msgstr "%s en Flickr"
+msgstr "%s in Flickr"
 
 #: ../inc/catchevolution-functions.php:969
 #: ../inc/catchevolution-functions.php:1143
 #, php-format
 msgid "%s in Tumblr"
-msgstr "%s en Tumblr"
+msgstr "%s in Tumblr"
 
 #: ../inc/catchevolution-functions.php:974
 #: ../inc/catchevolution-functions.php:1148
 #, php-format
 msgid "%s in deviantART"
-msgstr "%s en deviantART"
+msgstr "%s in deviantART"
 
 #: ../inc/catchevolution-functions.php:979
 #: ../inc/catchevolution-functions.php:1153
 #, php-format
 msgid "%s in Dribbble"
-msgstr "%s en Dribbble"
+msgstr "%s in Dribbble"
 
 #: ../inc/catchevolution-functions.php:984
 #: ../inc/catchevolution-functions.php:1158
 #, php-format
 msgid "%s in WordPress"
-msgstr "%s en WordPress"
+msgstr "%s in WordPress"
 
 #: ../inc/catchevolution-functions.php:989
 #: ../inc/catchevolution-functions.php:1163
 #, php-format
 msgid "%s in RSS"
-msgstr "%s en RSS"
+msgstr "%s in RSS"
 
 #: ../inc/catchevolution-functions.php:999
 #: ../inc/catchevolution-functions.php:1173
 #, php-format
 msgid "%s in Instagram"
-msgstr "%s en Instagram"
+msgstr "%s in Instagram"
 
 #: ../inc/catchevolution-functions.php:1004
 #: ../inc/catchevolution-functions.php:1178
 #, php-format
 msgid "%s in Skype"
-msgstr "%s en Skype"
+msgstr "%s in Skype"
 
 #: ../inc/catchevolution-functions.php:1310
 msgid "Footer menu"
-msgstr "Menu del Footer"
+msgstr "フッターメニュー"
 
 #: ../inc/catchevolution-metabox.php:14 ../inc/catchevolution-metabox.php:20
 msgid "Catch Evolution Options"
-msgstr "Opciones de Catch Evolution"
+msgstr "Catch Evolution オプション"
 
 #: ../inc/catchevolution-metabox.php:34
 #, php-format
 msgid "Default Layout Set in <a href=\"%s\">Theme Settings</a>"
-msgstr "Diseño predeterminado situado en <a href=\"%s\">Theme Settings</a>"
+msgstr "<a href=\"%s\">テーマ設定</a>のデフォルトのレイアウトセット</a>"
 
 #: ../inc/catchevolution-metabox.php:40
 msgid "Right sidebar"
-msgstr "Sidebar derecho"
+msgstr "右サイドバー"
 
 #: ../inc/catchevolution-metabox.php:46
 msgid "Left sidebar"
-msgstr "Sidebar izquierdo"
+msgstr "左サイドバー"
 
 #: ../inc/catchevolution-metabox.php:52
 msgid "No sidebar"
-msgstr "Sin Sidebar"
+msgstr "サイドバーなし"
 
 #: ../inc/catchevolution-metabox.php:58 ../inc/panel/theme-options.php:447
 msgid "Three Columns"
-msgstr "Tres Columnas"
+msgstr "3コラム"
 
 #: ../inc/catchevolution-metabox.php:74
 msgid "Sidebar Layout Options"
-msgstr "Opciones de formato del Sidebar"
+msgstr "スライダーレイアウトオプション"
 
 #: ../inc/catchevolution-widgets.php:17
 msgid "Main Sidebar"
-msgstr "Sidebar Principal"
+msgstr "メインのサイドバー"
 
 #: ../inc/catchevolution-widgets.php:27
 msgid "Third Column Sidebar"
-msgstr "Sidebar en Tercera Columna"
+msgstr "3コラムのサイドバー"
 
 #: ../inc/catchevolution-widgets.php:37
 msgid "Header Right Sidebar"
-msgstr "Sidebar derecho del Header"
+msgstr "ヘッダー右のサイドバー"
 
 #: ../inc/catchevolution-widgets.php:48
 msgid "WooCommerce Sidebar"
-msgstr "WooCommerce Sidebar"
+msgstr "WooCommerce サイドバー"
 
 #: ../inc/catchevolution-widgets.php:59
 msgid "Footer Area One"
-msgstr "Area Uno del Footer"
+msgstr "フッターエリア1"
 
 #: ../inc/catchevolution-widgets.php:61 ../inc/catchevolution-widgets.php:72
 #: ../inc/catchevolution-widgets.php:83
 msgid "An optional widget area for your site footer"
-msgstr "Un area de widget opcional para el Footer de su pagina"
+msgstr "フッターの任意ウィジェットエリア"
 
 #: ../inc/catchevolution-widgets.php:70
 msgid "Footer Area Two"
-msgstr "Area Dos del Footer"
+msgstr "フッターエリア2"
 
 #: ../inc/catchevolution-widgets.php:81
 msgid "Footer Area Three"
-msgstr "Area Tres del Footer"
+msgstr "フッターエリア3"
 
 #: ../inc/catchevolution-widgets.php:111
 msgid "Use this widget to add any type of Advertisement as a widget."
 msgstr ""
-"Utilice este widget para añadir cualquier tipo de anuncio como un widget. "
+"各種広告をウィジェットとして追加するには、このウィジェットを使用します。"
 
 #: ../inc/catchevolution-widgets.php:112
 msgid "1. Catch Evolution Adspace Widget"
-msgstr "1. Catch Evolution - Adspace Widget"
+msgstr "1. Catch Evolutionの広告ウィジェット"
 
 #: ../inc/catchevolution-widgets.php:130 ../inc/catchevolution-widgets.php:255
 #: ../inc/catchevolution-widgets.php:334
 msgid "Title (optional):"
-msgstr "Titulo (opcional):"
+msgstr "タイトル（任意）"
 
 #: ../inc/catchevolution-widgets.php:135
 msgid "Ad Code:"
-msgstr "Código de anuncio:"
+msgstr "広告コード:"
 
 #: ../inc/catchevolution-widgets.php:141
 msgid "Image Url:"
-msgstr "Url de la imagen:"
+msgstr "画像URL:"
 
 #: ../inc/catchevolution-widgets.php:145
 msgid "Link URL:"
-msgstr "URL del Link:"
+msgstr "リンクURL:"
 
 #: ../inc/catchevolution-widgets.php:149
 msgid "Open Link in New Window"
-msgstr "Abrir enlace en una ventana nueva"
+msgstr "リンクを新しいウィンドウで開く"
 
 #: ../inc/catchevolution-widgets.php:153
 msgid "Alt text:"
-msgstr "Alt text:"
+msgstr "Altテキスト:"
 
 #: ../inc/catchevolution-widgets.php:241
 msgid ""
 "Use this widget to add Social Icons from Social Icons Settings as a widget. "
 msgstr ""
-"Utilice este widget para añadir Iconos Sociales de Configuracion de Iconos "
-"Sociales como un widget."
+"「ソーシャルアイコンの設定」からソーシャルアイコンをウィジェットとして追加す"
+"るには、このウィジェットを使用します。"
 
 #: ../inc/catchevolution-widgets.php:242
 msgid "2. Catch Evolution Social Widget"
-msgstr "2. Catch Evolution - Widget Social"
+msgstr "Catch Evolutionソーシャルウィジェット"
 
 #: ../inc/catchevolution-widgets.php:320
 msgid ""
 "Use this widget to add Social Icons from Social Icons Settings & Search  as "
 "a widget. "
 msgstr ""
-"Utilice este widget para añadir iconos sociales de Ajustes de Iconos "
-"Sociales&Busqueda como un widget."
+"ソーシャルアイコンの設定」からソーシャルアイコンをウィジェットとして追加する"
+"場合、もしくは検索ボックスをウィジェットとして追加する場合は、このウィジェッ"
+"トを使用します。"
 
 #: ../inc/catchevolution-widgets.php:321
 msgid "3. Catch Evolution Social & Seach Widget"
-msgstr "3. Catch Evolution Widget Social & Widget de Busqueda"
+msgstr "3. Catch Evolutionソーシャル & 検索ウィジェット"
 
 #: ../inc/custom-header.php:441
 msgid "Primary menu"
-msgstr "Menu Principal"
+msgstr "第1メニュー"
 
 #: ../inc/custom-header.php:443 ../inc/custom-header.php:476
 msgid "Skip to primary content"
-msgstr "Saltar al contenido principal"
+msgstr "第1コンテンツにスキップする"
 
 #: ../inc/custom-header.php:444 ../inc/custom-header.php:477
 msgid "Skip to secondary content"
-msgstr "Ir al contenido secundario"
+msgstr "第2コンテンツにスキップする"
 
 #: ../inc/custom-header.php:474
 msgid "Secondary menu"
-msgstr "Menu Secundario"
+msgstr "第2メニュー"
 
 #: ../inc/panel/theme-options.php:37 ../inc/panel/theme-options.php:38
 #: ../inc/panel/theme-options.php:143
 msgid "Theme Options"
-msgstr "Opciones del Tema"
+msgstr "テーマオプション"
 
 #: ../inc/panel/theme-options.php:100
 msgid "Options Saved"
-msgstr "Opciones Guardadas"
+msgstr "オプションが保存されました"
 
 #: ../inc/panel/theme-options.php:107
 msgid "http://facebook.com/catchthemes"
@@ -693,7 +683,7 @@ msgstr "https://twitter.com/catchthemes"
 
 #: ../inc/panel/theme-options.php:115
 msgid "Theme Options By"
-msgstr "Opciones del Tema por"
+msgstr "Theme Options By"
 
 #: ../inc/panel/theme-options.php:117
 msgid "http://catchthemes.com/"
@@ -709,7 +699,7 @@ msgstr "http://catchthemes.com/themes/catch-evolution-pro/"
 
 #: ../inc/panel/theme-options.php:124
 msgid "Upgrade to Catch Evolution Pro"
-msgstr "Upgrade to Catch Evolution Pro"
+msgstr "Catch Evolution Proにアップグレードする"
 
 #: ../inc/panel/theme-options.php:129
 msgid "http://catchthemes.com/donate/"
@@ -717,7 +707,7 @@ msgstr "http://catchthemes.com/donate/"
 
 #: ../inc/panel/theme-options.php:129
 msgid "Donate to Catch Evolution"
-msgstr "Donate to Catch Evolution"
+msgstr "Catch Evolutionに寄付する"
 
 #: ../inc/panel/theme-options.php:129
 msgid "Donate Now"
@@ -729,7 +719,7 @@ msgstr "http://catchthemes.com/theme-instructions/catch-evolution/"
 
 #: ../inc/panel/theme-options.php:130
 msgid "Theme Instruction"
-msgstr "Instrucciones del Tema"
+msgstr "テーマインストラクション"
 
 #: ../inc/panel/theme-options.php:131
 msgid "http://catchthemes.com/support/"
@@ -737,7 +727,7 @@ msgstr "http://catchthemes.com/support/"
 
 #: ../inc/panel/theme-options.php:131
 msgid "Support"
-msgstr "Foro de Soporte "
+msgstr "Support"
 
 #: ../inc/panel/theme-options.php:132
 msgid "https://www.facebook.com/catchthemes/"
@@ -745,7 +735,7 @@ msgstr "https://www.facebook.com/catchthemes/"
 
 #: ../inc/panel/theme-options.php:132
 msgid "Like Catch Themes on Facebook"
-msgstr "Like Catch Themes en Facebook"
+msgstr "FacebookでCatchテーマを「いいね!」する"
 
 #: ../inc/panel/theme-options.php:132 ../inc/panel/theme-options.php:691
 msgid "Facebook"
@@ -757,7 +747,7 @@ msgstr "https://twitter.com/catchthemes/"
 
 #: ../inc/panel/theme-options.php:133
 msgid "Follow Catch Themes on Twitter"
-msgstr "Seguir a Catch Themes en Twitter"
+msgstr "TwitterでCatchテーマをフォローする"
 
 #: ../inc/panel/theme-options.php:133 ../inc/panel/theme-options.php:696
 msgid "Twitter"
@@ -769,50 +759,50 @@ msgstr "http://wordpress.org/support/view/theme-reviews/catch-evolution/"
 
 #: ../inc/panel/theme-options.php:134
 msgid "Rate us 5 Star on WordPress"
-msgstr "Votanos con 5 Estrellas en WordPress"
+msgstr "WordPressで5つ星評価を！"
 
 #: ../inc/panel/theme-options.php:134
 msgid "5 Star Rating"
-msgstr "5 Estrellas"
+msgstr "5つ星評価"
 
 #: ../inc/panel/theme-options.php:144
 msgid "Featured Post Slider"
-msgstr "Slider de Post Destacados"
+msgstr "アイキャッチ投稿のスライダー"
 
 #: ../inc/panel/theme-options.php:145
 msgid "Social Links"
-msgstr "Enlaces Sociales"
+msgstr "ソーシャルリンク"
 
 #: ../inc/panel/theme-options.php:147
 msgid "Webmaster Tools"
-msgstr "Herramientas para Webmaster"
+msgstr "ウェブマスターツール"
 
 #: ../inc/panel/theme-options.php:155
 msgid "Favicon Options"
-msgstr "Opciones del Favicon"
+msgstr "ファビコンオプション"
 
 #: ../inc/panel/theme-options.php:160
 msgid "Disable Favicon?"
-msgstr "Deshabilitar Favicon?"
+msgstr "ファビコンを無効にする?"
 
 #: ../inc/panel/theme-options.php:162 ../inc/panel/theme-options.php:201
 #: ../inc/panel/theme-options.php:241 ../inc/panel/theme-options.php:253
 #: ../inc/panel/theme-options.php:282 ../inc/panel/theme-options.php:287
 #: ../inc/panel/theme-options.php:345
 msgid "Check to disable"
-msgstr "Marcar para deshabilitar"
+msgstr "「無効にする」にチェックする"
 
 #: ../inc/panel/theme-options.php:165
 msgid "Fav Icon URL:"
-msgstr "Fav Icon URL:"
+msgstr "ファビコンのURL:"
 
 #: ../inc/panel/theme-options.php:171
 msgid "Change Fav Icon"
-msgstr "Cambiar Fav Icon"
+msgstr "ファビコンを変更する"
 
 #: ../inc/panel/theme-options.php:176 ../inc/panel/theme-options.php:215
 msgid "Preview: "
-msgstr "Vista Previa:"
+msgstr "プレビュー:␣"
 
 #: ../inc/panel/theme-options.php:189 ../inc/panel/theme-options.php:229
 #: ../inc/panel/theme-options.php:308 ../inc/panel/theme-options.php:418
@@ -822,23 +812,23 @@ msgstr "Vista Previa:"
 #: ../inc/panel/theme-options.php:669 ../inc/panel/theme-options.php:783
 #: ../inc/panel/theme-options.php:816
 msgid "Save Changes"
-msgstr "Guardar Cambios"
+msgstr "変更を保存する"
 
 #: ../inc/panel/theme-options.php:194
 msgid "Web Clip Icon Options"
-msgstr "Opciones de Web Clip Icon"
+msgstr "ウェブクリップアイコンオプション"
 
 #: ../inc/panel/theme-options.php:199
 msgid "Disable Web Clip Icon?"
-msgstr "Deshabilitar Web Clip Icon?"
+msgstr "ウェブクリップアイコンを無効にする?"
 
 #: ../inc/panel/theme-options.php:204
 msgid "Web Clip Icon URL:"
-msgstr "Web Clip Icon URL:"
+msgstr "ウェブクリップアイコンのURL:"
 
 #: ../inc/panel/theme-options.php:210
 msgid "Change Web Clip Icon"
-msgstr "Cambiar Web Clip Icon"
+msgstr "ウェブクリップアイコンを変更する"
 
 #: ../inc/panel/theme-options.php:228
 msgid ""
@@ -846,81 +836,81 @@ msgid ""
 "Height 144px height, which will support High Resolution Devices like iPad "
 "Retina."
 msgstr ""
-"Nota: Web Clip Icon para los dispositivos de Apple. Tamaño recomendado - "
-"144px ancho y 144px de alto, que sera soportado por dispositivos de Alta "
-"Resolucion como el iPad Retina."
+"注意: アップル端末のウェブクリップで推奨されているサイズは、幅144px、高さ"
+"144pxです。このサイズであれば、iPad Retinaのようなハイレゾリューション端末に"
+"も対応できます。"
 
 #: ../inc/panel/theme-options.php:234
 msgid "Header Options"
-msgstr "Opciones del Header"
+msgstr "ヘッダーオプション"
 
 #: ../inc/panel/theme-options.php:239
 msgid "Disable Header?"
-msgstr "Deshabilitar Header?"
+msgstr "ヘッダーを無効にする?"
 
 #: ../inc/panel/theme-options.php:245
 msgid "Change Custom Header Image (Buddha)?"
-msgstr "Cambiar la imagen personalizada del Header (Buddha)?"
+msgstr "カスタムヘッダーの画像（仏陀）を変更する?"
 
 #: ../inc/panel/theme-options.php:247
 msgid "Click here to change header image"
-msgstr "Click aqui para cambiar la imagen del Header"
+msgstr "ここをクリックしてヘッダー画像を変更する"
 
 #: ../inc/panel/theme-options.php:251
 msgid "Disable Header Logo?"
-msgstr "Deshabilitar Header Logo?"
+msgstr "ヘッダーロゴを非表示にする?"
 
 #: ../inc/panel/theme-options.php:256
 msgid "Logo url:"
-msgstr "Logo url:"
+msgstr "ロゴURL:"
 
 #: ../inc/panel/theme-options.php:264
 msgid "Change Header Logo"
-msgstr "Cambiar Header Logo"
+msgstr "ヘッダーロゴを変更する"
 
 #: ../inc/panel/theme-options.php:268
 msgid "Preview:"
-msgstr "Vista previa:"
+msgstr "プレビュー:"
 
 #: ../inc/panel/theme-options.php:280
 msgid "Disable Site Title?"
-msgstr "Deshabilitar Titulo del sitio?"
+msgstr "サイトタイトルを非表示にする?"
 
 #: ../inc/panel/theme-options.php:285
 msgid "Disable Site Description (Tagline)?"
-msgstr "Deshabilitar descripcion del Sitio (Tagline)?"
+msgstr "サイトの説明（タグライン）を非表示にする?"
 
 #: ../inc/panel/theme-options.php:290
 msgid "Move Site Title and Tagline?"
-msgstr "Mover Titulo del Sitio y Tagline?"
+msgstr "サイトタイトルとタグラインを移動する?"
 
 #: ../inc/panel/theme-options.php:292
 msgid "Check to move before the Logo"
-msgstr "Marcar para mover antes del Logo"
+msgstr "チェックしてヘッダー画像をロゴの上へ移動させる"
 
 #: ../inc/panel/theme-options.php:295
 msgid "Seperate Logo and Site Details?"
-msgstr "Separar Logo y Detalles del Sitio?"
+msgstr "ロゴとタグラインを離す?"
 
 #: ../inc/panel/theme-options.php:297
 msgid "Check to move down"
-msgstr "Marcar para mover abajo"
+msgstr "チェックして下へずらす"
 
 #: ../inc/panel/theme-options.php:300
 msgid "Enable Header Right Sidebar?"
-msgstr "Habilitar Sidebar derecho del Header?"
+msgstr "ヘッダー右のサイドバーを有効にする?"
 
 #: ../inc/panel/theme-options.php:302
 msgid "Just add Widgets in Header Right Sidebar"
-msgstr "Solo tiene que añadir Widgets en el Sidebar derecho del Header"
+msgstr "ウィジェットを利用して、ヘッダー右にサイドバーを追加する"
 
 #: ../inc/panel/theme-options.php:314
 msgid "Menu Options"
-msgstr "Opciones del Menu"
+msgstr "メニューオプション"
 
 #: ../inc/panel/theme-options.php:319
 msgid "Menu Tutorial from WordPress.com"
-msgstr "Tutorial de Menu de WordPress.com"
+msgstr "WordPress.comのメニュー説明"
 
 #: ../inc/panel/theme-options.php:321
 msgid "http://en.support.wordpress.com/menus/"
@@ -928,191 +918,191 @@ msgstr "http://en.support.wordpress.com/menus/"
 
 #: ../inc/panel/theme-options.php:321
 msgid "Menu Tutorial"
-msgstr "Tutorial de Menu"
+msgstr "メニュー説明"
 
 #: ../inc/panel/theme-options.php:321
 msgid "Click Here to Read Menu Tutorial"
-msgstr "Click Aqui para leer Tutorial del Menu"
+msgstr "ここをクリックしてメニュー説明を読む"
 
 #: ../inc/panel/theme-options.php:325 ../inc/panel/theme-options.php:327
 msgid "Create Menu"
-msgstr "Crear Menu"
+msgstr "メニューを設定する"
 
 #: ../inc/panel/theme-options.php:327
 msgid "Click Here to Create Menu"
-msgstr "Click Aqui para crear Menu"
+msgstr "ここをクリックしてメニューを設定する"
 
 #: ../inc/panel/theme-options.php:331
 msgid "Assign Menu to Respective Location"
-msgstr "Asignar Menu a Respective Location"
+msgstr "レスポンシブロケーションにメニューを指定する"
 
 #: ../inc/panel/theme-options.php:333
 msgid "Assign Menu Location"
-msgstr "Asignar Menu Location"
+msgstr "メニューの位置を指定する"
 
 #: ../inc/panel/theme-options.php:333
 msgid "Click Here to Assign Menu Location"
-msgstr "Click Aqui para asignar Menu Location"
+msgstr "ここをクリックしてメニューの位置を指定する"
 
 #: ../inc/panel/theme-options.php:337
 msgid "Add Menu in Header Right Sidebar"
-msgstr "Añadir Menu en Sidebar Derecho del Header"
+msgstr "ヘッダー右のサイドバーにメニューを追加する"
 
 #: ../inc/panel/theme-options.php:339
 msgid "Add Menu Widget in Header Right Sidebar"
-msgstr "Añadir Widget Menu en Sidebar Derecho del Header"
+msgstr "ヘッダー右のサイドバーにメニューウィジェットを追加する"
 
 #: ../inc/panel/theme-options.php:343
 msgid "Disable Primary & Secondary Menu?"
-msgstr "Deshabilitar Menu Principal y Secundario?"
+msgstr "第1、第2メニューを無効にする?"
 
 #: ../inc/panel/theme-options.php:349 ../inc/panel/theme-options.php:367
 msgid "Save"
-msgstr "Guardar"
+msgstr "保存"
 
 #: ../inc/panel/theme-options.php:355
 msgid "Search Options"
-msgstr "Opciones de Busqueda"
+msgstr "検索ボックスオプション"
 
 #: ../inc/panel/theme-options.php:360
 msgid "Default Display Text in Search"
-msgstr "Texto visualizado por defecto en Buscar"
+msgstr "検索ボックス内にデフォルトで表示される文字"
 
 #: ../inc/panel/theme-options.php:373
 msgid "Color Options"
-msgstr "Opciones de Color"
+msgstr "カラーオプション"
 
 #: ../inc/panel/theme-options.php:378
 msgid "Default Color Scheme"
-msgstr "Combinacion de colores por defecto"
+msgstr "デフォルトのカラースキーム"
 
 #: ../inc/panel/theme-options.php:382
 msgid "Light"
-msgstr "Claro"
+msgstr "ライト"
 
 #: ../inc/panel/theme-options.php:386
 msgid "Dark"
-msgstr "Oscuro"
+msgstr "ダーク"
 
 #: ../inc/panel/theme-options.php:394
 msgid "Main Background Color:"
-msgstr "Color principal del Background:"
+msgstr "メインの背景色:"
 
 #: ../inc/panel/theme-options.php:399
 msgid "Click Here to change Main Background Image/Color"
-msgstr "Click Aqui para cambiar la Imagen/Color del Background"
+msgstr "ここをクリックしてメインの背景画像/カラーを変更する"
 
 #: ../inc/panel/theme-options.php:406
 msgid "Site Title Color:"
-msgstr "Color del Titulo del Sitio:"
+msgstr "サイトタイトルのカラー:"
 
 #: ../inc/panel/theme-options.php:411
 msgid "Click Here to change Site Title Color"
-msgstr "Click Aqui para cambiar el Color del Titulo del Sitio"
+msgstr "ここをクリックしてサイトタイトルのカラーを変更する"
 
 #: ../inc/panel/theme-options.php:423
 msgid "Layout Options"
-msgstr "Opciones de diseño"
+msgstr "レイアウトオプション"
 
 #: ../inc/panel/theme-options.php:428
 msgid "Default Layout"
-msgstr "Diseño predeterminado"
+msgstr "デフォルトのレイアウト"
 
 #: ../inc/panel/theme-options.php:432
 msgid "Right Sidebar"
-msgstr "Sidebar Derecho"
+msgstr "右サイドバー"
 
 #: ../inc/panel/theme-options.php:437
 msgid "Left Sidebar"
-msgstr "Sidebar Izquierdo"
+msgstr "左サイドバー"
 
 #: ../inc/panel/theme-options.php:442
 msgid "No Sidebar"
-msgstr "Sin Sidebar"
+msgstr "サイドバーなし"
 
 #: ../inc/panel/theme-options.php:453
 msgid "Content Layout"
-msgstr "Diseño de Contenido"
+msgstr "コンテンツのレイアウト"
 
 #: ../inc/panel/theme-options.php:457
 msgid "Excerpt/Blog Display"
-msgstr "Mostrar Resumen/Blog"
+msgstr "抜粋記事/ブログ表示"
 
 #: ../inc/panel/theme-options.php:461
 msgid "Full Content Display"
-msgstr "Mostrar Contenido Completo"
+msgstr "フルコンテンツ表示"
 
 #: ../inc/panel/theme-options.php:468
 msgid "Reset Layout?"
-msgstr "Resetear diseño?"
+msgstr "レイアウトをリセットする?"
 
 #: ../inc/panel/theme-options.php:470 ../inc/panel/theme-options.php:530
 msgid "Check to reset"
-msgstr "Marcar para resetear"
+msgstr "ここをクリックしてリセットする"
 
 #: ../inc/panel/theme-options.php:479
 msgid "Homepage / Frontpage Category Setting"
-msgstr "Ajustes de Categoria Homepage/Frontpage"
+msgstr "ホームページ / フロントページのカテゴリー設定"
 
 #: ../inc/panel/theme-options.php:485
 msgid "Front page posts categories:"
-msgstr "Categorias de los Post de la Frontpage"
+msgstr "フロントページの投稿カテゴリー:"
 
 #: ../inc/panel/theme-options.php:487
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on "
 "the front page."
 msgstr ""
-"Sólo los mensajes que pertenecen a las categorías seleccionadas aquí se "
-"mostrarán en la Frontpage."
+"ここで選択したカテゴリーに投稿された記事のみが、フロントページに表示されま"
+"す。"
 
 #: ../inc/panel/theme-options.php:492
 msgid "--Disabled--"
-msgstr "--Deshabilitado--"
+msgstr "--無効にする--"
 
 #: ../inc/panel/theme-options.php:503
 msgid "You may select multiple categories by holding down the CTRL key."
-msgstr "Puede seleccionar varias categorías, mantenga pulsada la tecla CTRL."
+msgstr "CTRLキーを押しながら複数のカテゴリーを選択することができます。"
 
 #: ../inc/panel/theme-options.php:513
 msgid "Excerpt / More Tag Settings"
-msgstr "Opciones de etiquetas Excerpt/More"
+msgstr "Excerpt / Moreタグの設定"
 
 #: ../inc/panel/theme-options.php:518
 msgid "More Tag Text"
-msgstr "Texto etiqueta More"
+msgstr "Moreタグに表示する文字"
 
 #: ../inc/panel/theme-options.php:523
 msgid "Excerpt length(words)"
-msgstr "Longitud Excerpt (palabras)"
+msgstr "抜粋する記事の長さ（文字数）"
 
 #: ../inc/panel/theme-options.php:528
 msgid "Reset?"
-msgstr "Resetear?"
+msgstr "リセットする?"
 
 #: ../inc/panel/theme-options.php:539
 msgid "Feed Redirect"
-msgstr "Feed Redirect"
+msgstr "フィードのリダイレクト"
 
 #: ../inc/panel/theme-options.php:544
 msgid "Feed Redirect URL"
-msgstr "Feed Redirect URL"
+msgstr "フィードリダイレクトのURL:"
 
 #: ../inc/panel/theme-options.php:545
 msgid "Add in the Feedburner URL"
-msgstr "Añadir la URL del Feedburner"
+msgstr "FeedburnerのURLを追加してください。"
 
 #: ../inc/panel/theme-options.php:555
 msgid "Custom CSS"
-msgstr "CSS Personalizado"
+msgstr "カスタムCSS"
 
 #: ../inc/panel/theme-options.php:560
 msgid "Enter your custom CSS styles."
-msgstr "Introducir Estilos CSS personalizados."
+msgstr "カスタムCSSを入力してください。"
 
 #: ../inc/panel/theme-options.php:567
 msgid "CSS Tutorial from W3Schools."
-msgstr "Tutorial CSS de W3Schools."
+msgstr "W3SchoolsのCSS説明"
 
 #: ../inc/panel/theme-options.php:569
 msgid "http://www.w3schools.com/css/default.asp"
@@ -1120,139 +1110,137 @@ msgstr "http://www.w3schools.com/css/default.asp"
 
 #: ../inc/panel/theme-options.php:569
 msgid "CSS Tutorial"
-msgstr "Tutorial CSS"
+msgstr "CSS説明"
 
 #: ../inc/panel/theme-options.php:569
 msgid "Click Here to Read"
-msgstr "Haga clic aquí para leer."
+msgstr "ここをクリックして読む"
 
 #: ../inc/panel/theme-options.php:583
 msgid "Slider Options"
-msgstr "Opciones de Slider"
+msgstr "スライダーオプション"
 
 #: ../inc/panel/theme-options.php:587
 msgid "Enable Sidebar"
-msgstr "Habilitar Sidebar"
+msgstr "スライダーを有効にする"
 
 #: ../inc/panel/theme-options.php:591
 msgid "Homepage / Frontpage"
-msgstr "Homepage / Frontpage"
+msgstr "ホームページ / フロントページ"
 
 #: ../inc/panel/theme-options.php:595
 msgid "Entire Site"
-msgstr "Todo el Sitio"
+msgstr "サイト全体"
 
 #: ../inc/panel/theme-options.php:599
 msgid "Disable"
-msgstr "Deshabilitar"
+msgstr "無効にする"
 
 #: ../inc/panel/theme-options.php:604
 msgid "Number of Slides"
-msgstr "Numero de Slides"
+msgstr "スライダーの数"
 
 #: ../inc/panel/theme-options.php:610
 msgid "Transition Effect:"
-msgstr "Efecto de transicion:"
+msgstr "画像の切り替え:"
 
 #: ../inc/panel/theme-options.php:614
 msgid "fade"
-msgstr "fade"
+msgstr "フェード"
 
 #: ../inc/panel/theme-options.php:615
 msgid "wipe"
-msgstr "wipe"
+msgstr "ワイプ"
 
 #: ../inc/panel/theme-options.php:616
 msgid "scrollUp"
-msgstr "scrollUp"
+msgstr "上へスクロール"
 
 #: ../inc/panel/theme-options.php:617
 msgid "scrollDown"
-msgstr "scrollDown"
+msgstr "下へスクロール"
 
 #: ../inc/panel/theme-options.php:618
 msgid "scrollLeft"
-msgstr "scrollLeft"
+msgstr "左へスクロール"
 
 #: ../inc/panel/theme-options.php:619
 msgid "scrollRight"
-msgstr "scrollRight"
+msgstr "右へスクロール"
 
 #: ../inc/panel/theme-options.php:620
 msgid "blindX"
-msgstr "blindX"
+msgstr "ブラインドX"
 
 #: ../inc/panel/theme-options.php:621
 msgid "blindY"
-msgstr "blindY"
+msgstr "ブラインドY"
 
 #: ../inc/panel/theme-options.php:622
 msgid "blindZ"
-msgstr "blindZ"
+msgstr "ブラインドZ"
 
 #: ../inc/panel/theme-options.php:623
 msgid "cover"
-msgstr "cover"
+msgstr "カバー"
 
 #: ../inc/panel/theme-options.php:624
 msgid "shuffle"
-msgstr "aleatorio"
+msgstr "シャッフル"
 
 #: ../inc/panel/theme-options.php:629
 msgid "Transition Delay"
-msgstr "Retraso de la Transicion"
+msgstr "トランジションの遅れ"
 
 #: ../inc/panel/theme-options.php:632 ../inc/panel/theme-options.php:639
 msgid "second(s)"
-msgstr "segundo(s)"
+msgstr "秒"
 
 #: ../inc/panel/theme-options.php:636
 msgid "Transition Length"
-msgstr "Longitud de la Transicion"
+msgstr "トランジションの長さ"
 
 #: ../inc/panel/theme-options.php:649
 msgid "Featured Post Slider Options"
-msgstr "Opciones del Slider de Posts Destacados"
+msgstr "アイキャッチ投稿のスライダーオプション"
 
 #: ../inc/panel/theme-options.php:653
 msgid "Exclude Slider post from Homepage posts?"
-msgstr "Excluir Post Slider de los Post de la Homepage?"
+msgstr "ホームページの投稿からスライダーを除外する?"
 
 #: ../inc/panel/theme-options.php:655
 msgid "Check to exclude"
-msgstr "Marcar para excluir"
+msgstr "ここをクリックして除外する"
 
 #: ../inc/panel/theme-options.php:660
 msgid "Featured Slider Post #"
-msgstr "Posts del Slider Destacados #"
+msgstr "アイキャッチ投稿の記事番号"
 
 #: ../inc/panel/theme-options.php:662
 msgid "Click Here To Edit"
-msgstr "Click Aquí para Editar"
+msgstr "ここをクリックして編集する"
 
 #: ../inc/panel/theme-options.php:668
 msgid ""
 "Note: Here You can put your Post IDs which displays on Homepage as slider."
-msgstr ""
-"Nota: Aquí puede poner los IDs de los Post que quiere que se muestren en el "
-"Slider de la Homepage."
+msgstr "注意: ここにはスライダーに表示させる投稿の記事IDを入力してください。"
 
 #: ../inc/panel/theme-options.php:680
 msgid "Enable Social Icons in Header Right Sidebar?"
-msgstr "Habilitar Iconos Sociales en Sidebar derecho del Header?"
+msgstr "ソーシャルアイコンをヘッダー右のサイドバーに表示させる?"
 
 #: ../inc/panel/theme-options.php:682
 msgid "Just add Catch Evolution Social Widget in Header Right Sidebar"
 msgstr ""
-"Añadir Catch Evolution - Social Widget en el Sidebar derecho del Header"
+"Catch Evolutionのソーシャルウィジェットをヘッダー右のサイドバーに追加する？"
 
 #: ../inc/panel/theme-options.php:686
 msgid "Enable Social Icons in Footer?"
-msgstr "Habilitar Iconos Sociales en el Footer?"
+msgstr "ソーシャルアイコンをフッターに表示させる?"
 
 #: ../inc/panel/theme-options.php:688
 msgid "Check to enable"
-msgstr "Marcar para habilitar"
+msgstr "チェックして有効にする"
 
 #: ../inc/panel/theme-options.php:701
 msgid "Google+"
@@ -1320,35 +1308,31 @@ msgstr "Skype"
 
 #: ../inc/panel/theme-options.php:790
 msgid "Header and Footer Codes"
-msgstr "Codigos del Header y Footer"
+msgstr "ヘッダー・フッターのコード"
 
 #: ../inc/panel/theme-options.php:795
 msgid "Code to display on Header"
-msgstr "Codigo para mostrar en el Header"
+msgstr "ヘッダーに表示するコード"
 
 #: ../inc/panel/theme-options.php:801
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
 msgstr ""
-"Nota: Aquí puede poner scripts de Google, Facebook, etc, que se cargará en "
-"el Header"
+"注意: ヘッダーにロードさせる、GoogleやFacebookなどのスクリプトをここに入力し"
+"ます。"
 
 #: ../inc/panel/theme-options.php:804
 msgid "Code to display on Footer"
-msgstr "Codigo para mostrar en el Footer"
+msgstr "フッターに表示させるコード"
 
 #: ../inc/panel/theme-options.php:811
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"
 msgstr ""
-"Nota: Aquí puede poner scripts de Google, Facebook, Add This etc, que se "
-"cargará en el Footer."
-
-#: ../inc/panel/theme-options.php:1153
-msgid "Y"
-msgstr "Y"
+"注意: フッターにロードさせる、GoogleやFacebook、Add Thisなどのスクリプトをこ"
+"こに入力します。"
 
 #: ../inc/panel/theme-options.php:1184
 msgid "Catch Evolution"
@@ -1357,438 +1341,29 @@ msgstr "Catch Evolution"
 #: ../search.php:15
 #, php-format
 msgid "Search Results for: %s"
-msgstr "Resultados de la busqueda para: %s"
+msgstr "「%s」の検索結果"
 
 #: ../search.php:43
 msgid ""
 "Sorry, but nothing matched your search criteria. Please try again with some "
 "different keywords."
 msgstr ""
-"Lo sentimos, pero no corresponde a sus criterios de búsqueda. Por favor, "
-"inténtelo de nuevo con algunas palabras clave diferentes."
+"申し訳ありませんが、該当する情報が見つかりませんでした。別のキーワードで再検"
+"索してください。"
 
 #: ../searchform.php:17 ../searchform.php:19
 msgid "Search"
-msgstr "Buscar"
+msgstr "検索する"
 
 #: ../single.php:16
 msgid "<span class=\"meta-nav\">&larr;</span> Previous"
-msgstr "<span class=\"meta-nav\">&larr;</span> Anterior"
+msgstr "<span class=\"meta-nav\">&larr;</span> 前へ"
 
 #: ../single.php:17
 msgid "Next <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Siguiente <span class=\"meta-nav\">&rarr;</span>"
+msgstr "次へ <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../tag.php:16
 #, php-format
 msgid "Tag Archives: %s"
-msgstr "Archivo de la etiqueta: %s"
-
-#~ msgid "Update"
-#~ msgstr "Actualizar"
-
-#~ msgid "%s Theme Updates"
-#~ msgstr "%s Actualizaciones del Tema"
-
-#~ msgid "There is a new version of the %s theme available."
-#~ msgstr "Hay una nueva version del %s tema disponible."
-
-#~ msgid "You have version %1$s installed. Update to version %2$s"
-#~ msgstr "Usted tiene la version %1$s instalada. Actualizar a la version %2$s"
-
-#~ msgid "Update Instruction"
-#~ msgstr "Instrucciones de Actualizacion"
-
-#~ msgid "Please note:"
-#~ msgstr "A tener en cuenta:"
-
-#~ msgid "make a "
-#~ msgstr "hacer un"
-
-#~ msgid "backup"
-#~ msgstr "backup"
-
-#~ msgid "of the Theme inside your WordPress installation folder"
-#~ msgstr "del tema dentro de su carpeta de instalación de WordPress"
-
-#~ msgid "/wp-content/themes/%s"
-#~ msgstr "/wp-content/themes/%s"
-
-#~ msgid "To update the Theme, login to your account at"
-#~ msgstr "Para actualizar el tema, ingrese a su cuenta en"
-
-#~ msgid "download"
-#~ msgstr "descargar"
-
-#~ msgid "the zip copy of %s Theme from your account."
-#~ msgstr "la copia ZIP de %s es el tema de su cuenta."
-
-#~ msgid "Manual Update using FTP:"
-#~ msgstr "Actualizacion manual usando FTP:"
-
-#~ msgid "Now unzip the theme file %1$s.%2$s.zip"
-#~ msgstr "Ahora descomprimir el archivo del tema %1$s.%2$s.zip"
-
-#~ msgid ""
-#~ "and use your FTP client to access your host web server. Go to /wp-content/"
-#~ "themes/ and upload the extracted folder %s "
-#~ msgstr ""
-#~ "y utilizar el cliente de FTP para acceder a su servidor de alojamiento "
-#~ "web. Vaya a / wp-content/themes / y subir la carpeta extraída %s"
-
-#~ msgid "Update using the WordPress Administration Panel"
-#~ msgstr "Actualizar utilizando el Panel de Administracion de WordPress"
-
-#~ msgid ""
-#~ "If you want to update through your WordPress Dashboard without using FTP, "
-#~ "then you have to activate any other default theme and then delete the "
-#~ "older version of %s Theme. After that you can upload the current version "
-#~ "following the new theme installation process."
-#~ msgstr ""
-#~ "Si desea actualizar a través de su panel de WordPress sin usar FTP, "
-#~ "entonces usted tiene que activar cualquier otro tema por defecto y "
-#~ "elimine la versión anterior de %s Theme. Después de que usted puede "
-#~ "cargar la versión actual, continue el nuevo proceso de instalación de "
-#~ "tema."
-
-#~ msgid "Changelog"
-#~ msgstr "Cambios"
-
-#~ msgid "No Sidebar, One Column"
-#~ msgstr "Sin Sidebar, Una Columna"
-
-#~ msgid "No sidebar, Full Width"
-#~ msgstr "Sin Sidebar, Ancho Completo"
-
-#~ msgid "Default Sidebar"
-#~ msgstr "Sidebar por defecto"
-
-#~ msgid "Optional Sidebar One"
-#~ msgstr "Sidebar Opcional Uno"
-
-#~ msgid "Optional Sidebar Two"
-#~ msgstr "Sidebar Opcional Dos"
-
-#~ msgid "Optional Sidebar three"
-#~ msgstr "Sidebar Opcional Tres"
-
-#~ msgid "Select Sidebar"
-#~ msgstr "Seleccionar Sidebar"
-
-#~ msgid "Header Top Sidebar"
-#~ msgstr "Sidebar superior del Header"
-
-#~ msgid "Archive Sidebar"
-#~ msgstr "Sidebar de Archivo"
-
-#~ msgid "Page Sidebar"
-#~ msgstr "Sidebar de Pagina"
-
-#~ msgid "Post Sidebar"
-#~ msgstr "Sidebar de Entrada"
-
-#~ msgid "Optional Sidebar Three"
-#~ msgstr "Sidebar Opcional Tres"
-
-#~ msgid ""
-#~ "http://catchthemes.com/support-forum/forum/catch-evolution-pro-premium/"
-#~ msgstr ""
-#~ "http://catchthemes.com/support-forum/forum/catch-evolution-pro-premium/"
-
-#~ msgid "Featured Slider"
-#~ msgstr "Slider de Destacados"
-
-#~ msgid "Responsive Design"
-#~ msgstr "Diseño Responsable"
-
-#~ msgid "Disable Responsive Design?"
-#~ msgstr "Deshabilitar Diseño Responsable?"
-
-#~ msgid "Enable Secondary & Footer Menu in Mobile Devices?"
-#~ msgstr "Habilitar Menú Secundario y del Footer en Dispositivos Moviles?"
-
-#~ msgid "Header Top Margin"
-#~ msgstr "Margen superior del Header"
-
-#~ msgid "Header Bottom Margin"
-#~ msgstr "Margen inferior del Header"
-
-#~ msgid "Reset Header Margin?"
-#~ msgstr "Resetear margen del Header?"
-
-#~ msgid "Logo in Fixed Header Top Menu:"
-#~ msgstr "Logo en Menu superior ajustado del Header"
-
-#~ msgid ""
-#~ "Note: This image will be displayed only after you assign Menu in Fixed "
-#~ "Header Top Menu"
-#~ msgstr ""
-#~ "Nota: La imagen se mostrará sólo después de asignar el Menu en Menu "
-#~ "superior ajustado del Header"
-
-#~ msgid "Add/Change Image"
-#~ msgstr "Agregar/Cambiar Imagen"
-
-#~ msgid "Blue"
-#~ msgstr "Azul"
-
-#~ msgid "Green"
-#~ msgstr "Verde"
-
-#~ msgid "Header Background:"
-#~ msgstr "Header Background:"
-
-#~ msgid "Slider Background Color:"
-#~ msgstr "Slider Background Color:"
-
-#~ msgid "Content Background Color:"
-#~ msgstr "Content Background Color:"
-
-#~ msgid "Article Background Color:"
-#~ msgstr "Article Background Color:"
-
-#~ msgid " Footer Background Color:"
-#~ msgstr " Footer Background Color:"
-
-#~ msgid " Footer Sidebar Background Color:"
-#~ msgstr " Footer Sidebar Background Color:"
-
-#~ msgid "Widget Background Color:"
-#~ msgstr "Widget Background Color:"
-
-#~ msgid "Footer Widget Background Color:"
-#~ msgstr "Footer Widget Background Color:"
-
-#~ msgid "Menu Background Color:"
-#~ msgstr "Menu Background Color:"
-
-#~ msgid "Menu Hover Background Color:"
-#~ msgstr "Menu Hover Background Color:"
-
-#~ msgid "Menu Active Background Color:"
-#~ msgstr "Menu Active Background Color:"
-
-#~ msgid "Sub-Menu Background Color:"
-#~ msgstr "Sub-Menu Background Color:"
-
-#~ msgid "Site Title Hover Color:"
-#~ msgstr "Site Title Hover Color:"
-
-#~ msgid "Site Tagline Color:"
-#~ msgstr "Site Tagline Color:"
-
-#~ msgid "Title Color:"
-#~ msgstr "Color del Titulo:"
-
-#~ msgid "Title Hover Color:"
-#~ msgstr "Color del Title Hover:"
-
-#~ msgid "Slider Text Color:"
-#~ msgstr "Color del Texto del Slider:"
-
-#~ msgid "Meta Description Color:"
-#~ msgstr "Meta Description Color:"
-
-#~ msgid "Text Color:"
-#~ msgstr "Color del Texto:"
-
-#~ msgid "Link Color:"
-#~ msgstr "Color del Link:"
-
-#~ msgid "Sidebar Widget Title Color:"
-#~ msgstr "Sidebar Widget Title Color:"
-
-#~ msgid "Sidebar Widget Text Color:"
-#~ msgstr "Sidebar Widget Text Color:"
-
-#~ msgid "Sidebar Widget Link Color:"
-#~ msgstr "Sidebar Widget Link Color:"
-
-#~ msgid "Menu Text Color:"
-#~ msgstr "Menu Text Color:"
-
-#~ msgid "Menu Hover Text Color:"
-#~ msgstr "Menu Hover Text Color:"
-
-#~ msgid "Menu Active Text Color:"
-#~ msgstr "Menu Active Text Color:"
-
-#~ msgid "Sub-Menu Text Color:"
-#~ msgstr "Sub-Menu Text Color:"
-
-#~ msgid "Reset Color?"
-#~ msgstr "Resetear Color?"
-
-#~ msgid "Font Family Options"
-#~ msgstr "Opciones de Familia de Fuentes"
-
-#~ msgid "Default Font Family"
-#~ msgstr "Familia de Fuentes por defecto"
-
-#~ msgid "Site Title & Description Font Family"
-#~ msgstr "Titulo del Sitio y Descripcion  Font Family"
-
-#~ msgid "Headings Font Family"
-#~ msgstr "Encabezamientos  Font Family"
-
-#~ msgid "Content Font Family"
-#~ msgstr "Contenidos  Font Family"
-
-#~ msgid "Reset Fonts?"
-#~ msgstr "Resetear Fonts?"
-
-#~ msgid "Font Size Options"
-#~ msgstr "Opciones de tamaño de Fuente"
-
-#~ msgid "Default Font Size"
-#~ msgstr "Tamaño de Fuente por defecto"
-
-#~ msgid "Default Line Height"
-#~ msgstr "Altura de Linea por defecto"
-
-#~ msgid "Site Title Font Size"
-#~ msgstr "Tamaño de Fuente del Titulo del Sitio"
-
-#~ msgid "Site Title Line Height"
-#~ msgstr "Altura de Linea del Titulo del Sitio"
-
-#~ msgid "Site Description Font Size"
-#~ msgstr "Tamaño de Fuente del Titulo del Sitio"
-
-#~ msgid "Site Description Line Height"
-#~ msgstr "Altura de Linea de la descripcion del Sitio"
-
-#~ msgid "H1 Font Size"
-#~ msgstr "H1 Tamaño de fuente"
-
-#~ msgid "H2 Font Size"
-#~ msgstr "H2 Tamaño de fuente"
-
-#~ msgid "H3 Font Size"
-#~ msgstr "H3 Tamaño de fuente"
-
-#~ msgid "H4 Font Size"
-#~ msgstr "H4 Tamaño de fuente"
-
-#~ msgid "Headings Line Height"
-#~ msgstr "Altura de Linea de los Encabezamientos"
-
-#~ msgid "Content Font Size"
-#~ msgstr "Tamaño de Fuente del Contenido"
-
-#~ msgid "Content Line Height"
-#~ msgstr "Altura de Linea del Contenido"
-
-#~ msgid "Reset Font Size?"
-#~ msgstr "Resetear Tamaño de Fuente?"
-
-#~ msgid "No Sidebar, Full Width"
-#~ msgstr "Sin Sidebar, Ancho Compreto"
-
-#~ msgid "Footer Editor Option"
-#~ msgstr "Opciones del Editor del Footer"
-
-#~ msgid "Footer Editor"
-#~ msgstr "Editor del Footer"
-
-#~ msgid ""
-#~ "You can add custom <acronym title=\"Hypertext Markup Language\">HTML</"
-#~ "acronym> and/or shortcodes, which will be automatically inserted into "
-#~ "your theme.<br />Some shorcodes: [footer-image], [the-year], [site-link], "
-#~ "[wp-link] for current year, your site link, wordpress site link "
-#~ "respectively."
-#~ msgstr ""
-#~ "Puede agregar personalizacion <acronym title=\"Hypertext Markup Language"
-#~ "\">HTML</acronym> y/o códigos cortos, que se insertará automáticamente en "
-#~ "su tema.<br />Algunos Codigos Cortos: [footer-image], [the-year], [site-"
-#~ "link], [wp-link] para el año en curso, su enlace web, enlace web "
-#~ "wordpress respectivamente."
-
-#~ msgid "Reset Footer?"
-#~ msgstr "Resetear Footer?"
-
-#~ msgid "Select Slider Type"
-#~ msgstr "Seleccionar tipo de Slider"
-
-#~ msgid "Featured Page Slider"
-#~ msgstr "Slider de Paginas Destacadas"
-
-#~ msgid "Featured Category Slider"
-#~ msgstr "Slider de Categorias Destacadas"
-
-#~ msgid "Featured Image Slider"
-#~ msgstr "Slider de Imagenes Destacadas"
-
-#~ msgid "Slider Layout"
-#~ msgstr "Diseño del Slider"
-
-#~ msgid "Normal Width Slider"
-#~ msgstr "Ancho normal del Slider"
-
-#~ msgid "Full Width Slider"
-#~ msgstr "Ancho completo del Slider"
-
-#~ msgid "Featured Image Slider Options"
-#~ msgstr "Opciones del Slider de Imagenes Destacadas"
-
-#~ msgid "Upload"
-#~ msgstr "Subir"
-
-#~ msgid "Target. Open Link in New Window?"
-#~ msgstr "Destino. Abrir enlace en una ventana nueva?"
-
-#~ msgid "Check to open in new window"
-#~ msgstr "Marcar para abrir en una ventana nueva"
-
-#~ msgid "Featured Page Slider Options"
-#~ msgstr "Opciones del Slider de Paginas Destacadas"
-
-#~ msgid "Featured Slider Page #"
-#~ msgstr "Paginas del Slider Destacadas #"
-
-#~ msgid ""
-#~ "Note: Here You can put your Page IDs which displays on Homepage as slider."
-#~ msgstr ""
-#~ "Nota: Aquí puede poner los IDs de las paginas que quiere que se muestren "
-#~ "en el Slider de la Homepage."
-
-#~ msgid "Featured Category Slider Options"
-#~ msgstr "Opciones del Slider de Categorias Destacadas"
-
-#~ msgid "Select Slider Categories"
-#~ msgstr "Seleccione Categorias del Slider"
-
-#~ msgid ""
-#~ "Use this only is you want to display posts from Specific Categories in "
-#~ "Featured Slider"
-#~ msgstr ""
-#~ "Utilice esta opción sólo si desea mostrar los mensajes de las categorías "
-#~ "específicas en el Slider de Destacados."
-
-#~ msgid ""
-#~ "Note: Here you can select the categories from which latest posts will "
-#~ "display on Featured Slider."
-#~ msgstr ""
-#~ "Nota: Aqui puede seleccionar las categorias de los ultimos Posts que se "
-#~ "mostraran en el Slider de Destacados."
-
-#~ msgid "Site Verification"
-#~ msgstr "Verificacion del Sitio"
-
-#~ msgid "Google Site Verification ID"
-#~ msgstr "Google Site Verification ID"
-
-#~ msgid "Enter your Google ID number only"
-#~ msgstr "Introduzca solamente su numero de Google ID"
-
-#~ msgid "Yahoo Site Verification ID"
-#~ msgstr "Yahoo Site Verification ID"
-
-#~ msgid "Enter your Yahoo ID number only"
-#~ msgstr "Introduzca solamente su numero de Yahoo ID"
-
-#~ msgid "Bing Site Verification ID"
-#~ msgstr "Bing Site Verification ID"
-
-#~ msgid "Enter your Bing ID number only"
-#~ msgstr "Introduzca solamente su numero de Bing ID"
+msgstr "タグ別アーカイブ: %s"

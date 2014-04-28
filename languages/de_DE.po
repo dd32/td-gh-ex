@@ -1,22 +1,20 @@
-# Copyright (C) 2012 the Catch Themes Team
-# This file is distributed under the  GNU General Public License.
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Evolution\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-08 18:34+0545\n"
-"PO-Revision-Date: 2014-04-08 18:34+0545\n"
+"POT-Creation-Date: 2014-04-29 00:26+0545\n"
+"PO-Revision-Date: \n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
-"Language-Team: Catch Themes <info@catchinternet.com>\n"
-"Language: de_DE\n"
+"Language-Team: Catch Themes <info@catchthemes.com>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.6.4\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:14
@@ -59,7 +57,7 @@ msgstr "Tagesarchiv: %s"
 #: ../archive.php:24
 #, php-format
 msgid "Monthly Archives: %s"
-msgstr "Jahresarchiv: %s"
+msgstr "Monatsarchiv: %s"
 
 #: ../archive.php:24
 msgctxt "monthly archives date format"
@@ -78,7 +76,7 @@ msgstr "Y"
 
 #: ../archive.php:28
 msgid "Blog Archives"
-msgstr "Blog Archive"
+msgstr "Blog Archiv"
 
 #: ../archive.php:52 ../author.php:69 ../category.php:45 ../index.php:32
 #: ../page-blog.php:65 ../search.php:39 ../tag.php:45
@@ -203,7 +201,7 @@ msgstr "Bearbeiten"
 #: ../content-single.php:42 ../content-single.php:45 ../content.php:91
 #: ../content.php:101
 msgid ", "
-msgstr ","
+msgstr ", "
 
 #: ../content-featured.php:37
 #, php-format
@@ -221,7 +219,7 @@ msgid ""
 "\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
 "Dieser Beitrag wurde veröffentlich in %1$s. <a href=\"%3$s\" title="
-"\"Permalink zu %4$s\" rel=\"bookmark\">permalink</a>"
+"\"Permalink zu %4$s\" rel=\"bookmark\">Permalink</a>"
 
 #: ../content-gallery.php:17
 msgid "Gallery"
@@ -322,11 +320,11 @@ msgstr "Status"
 
 #: ../content.php:28
 msgid "Featured"
-msgstr "Sonderartikel"
+msgstr "hervorgehoben"
 
 #: ../functions.php:126
 msgid "Fixed Header Top Menu"
-msgstr "Fixed Header Top Menu"
+msgstr "Oberes primäres Menü"
 
 #: ../functions.php:127
 msgid "Primary Menu"
@@ -542,24 +540,24 @@ msgstr "Seitenfuß-Menü"
 
 #: ../inc/catchevolution-metabox.php:14 ../inc/catchevolution-metabox.php:20
 msgid "Catch Evolution Options"
-msgstr "Catch Evolution Optionen"
+msgstr "Catch Evolution Einstellungen"
 
 #: ../inc/catchevolution-metabox.php:34
 #, php-format
 msgid "Default Layout Set in <a href=\"%s\">Theme Settings</a>"
-msgstr "Default Layout Set in <a href=\"%s\">Theme Settings</a>"
+msgstr "Standard-Layout aus <a href=\"%s\">Theme Einstellungen</a>"
 
 #: ../inc/catchevolution-metabox.php:40
 msgid "Right sidebar"
-msgstr "Sidebar rechts"
+msgstr "Seitenleiste rechts"
 
 #: ../inc/catchevolution-metabox.php:46
 msgid "Left sidebar"
-msgstr "Sidebar links"
+msgstr "Seitenleiste links"
 
 #: ../inc/catchevolution-metabox.php:52
 msgid "No sidebar"
-msgstr "No sidebar"
+msgstr "Keine Seitenleiste"
 
 #: ../inc/catchevolution-metabox.php:58 ../inc/panel/theme-options.php:447
 msgid "Three Columns"
@@ -575,15 +573,15 @@ msgstr "Haupt-Seitenleiste"
 
 #: ../inc/catchevolution-widgets.php:27
 msgid "Third Column Sidebar"
-msgstr "Third Column Sidebar"
+msgstr "Seitenleiste für dritte Spalte"
 
 #: ../inc/catchevolution-widgets.php:37
 msgid "Header Right Sidebar"
-msgstr "Sidebar rechts"
+msgstr "Kopfzeilen Seitenleise rechts"
 
 #: ../inc/catchevolution-widgets.php:48
 msgid "WooCommerce Sidebar"
-msgstr "WooCommerce Sidebar"
+msgstr "WooCommerce Seitenleiste"
 
 #: ../inc/catchevolution-widgets.php:59
 msgid "Footer Area One"
@@ -618,7 +616,7 @@ msgstr "Titel (optional):"
 
 #: ../inc/catchevolution-widgets.php:135
 msgid "Ad Code:"
-msgstr "Ad Code"
+msgstr "Werbemittel-Code"
 
 #: ../inc/catchevolution-widgets.php:141
 msgid "Image Url:"
@@ -639,8 +637,7 @@ msgstr "Alternativtext"
 #: ../inc/catchevolution-widgets.php:241
 msgid ""
 "Use this widget to add Social Icons from Social Icons Settings as a widget. "
-msgstr ""
-"Use this widget to add Social Icons from Social Icons Settings as a widget. "
+msgstr "Fügen Sie die Links zu Sozialen Netzwerken als Widget hinzu."
 
 #: ../inc/catchevolution-widgets.php:242
 msgid "2. Catch Evolution Social Widget"
@@ -651,8 +648,7 @@ msgid ""
 "Use this widget to add Social Icons from Social Icons Settings & Search  as "
 "a widget. "
 msgstr ""
-"Use this widget to add Social Icons from Social Icons Settings & Search  as "
-"a widget. "
+"Fügen Sie die Links zu Sozialen Netzwerken und die Suche als Widget hinzu."
 
 #: ../inc/catchevolution-widgets.php:321
 msgid "3. Catch Evolution Social & Seach Widget"
@@ -693,7 +689,7 @@ msgstr "https://twitter.com/catchthemes"
 
 #: ../inc/panel/theme-options.php:115
 msgid "Theme Options By"
-msgstr "Theme-Optionen By"
+msgstr "Theme Optionen von"
 
 #: ../inc/panel/theme-options.php:117
 msgid "http://catchthemes.com/"
@@ -729,7 +725,7 @@ msgstr "http://catchthemes.com/theme-instructions/catch-evolution/"
 
 #: ../inc/panel/theme-options.php:130
 msgid "Theme Instruction"
-msgstr "Theme Instructions"
+msgstr "Theme Anleitung"
 
 #: ../inc/panel/theme-options.php:131
 msgid "http://catchthemes.com/support/"
@@ -757,7 +753,7 @@ msgstr "https://twitter.com/catchthemes/"
 
 #: ../inc/panel/theme-options.php:133
 msgid "Follow Catch Themes on Twitter"
-msgstr "Folge Catch Themes on Twitter"
+msgstr "Folge Catch Themes auf Twitter"
 
 #: ../inc/panel/theme-options.php:133 ../inc/panel/theme-options.php:696
 msgid "Twitter"
@@ -769,7 +765,7 @@ msgstr "http://wordpress.org/support/view/theme-reviews/catch-evolution/"
 
 #: ../inc/panel/theme-options.php:134
 msgid "Rate us 5 Star on WordPress"
-msgstr "Rate us 5 Star on WordPress"
+msgstr "Mit 5 Sternen bei WordPress bewerten"
 
 #: ../inc/panel/theme-options.php:134
 msgid "5 Star Rating"
@@ -789,7 +785,7 @@ msgstr "Webmaster Tools"
 
 #: ../inc/panel/theme-options.php:155
 msgid "Favicon Options"
-msgstr "Favicon Optionen"
+msgstr "Favicon Einstellungen"
 
 #: ../inc/panel/theme-options.php:160
 msgid "Disable Favicon?"
@@ -800,7 +796,7 @@ msgstr "Favicon deaktivieren?"
 #: ../inc/panel/theme-options.php:282 ../inc/panel/theme-options.php:287
 #: ../inc/panel/theme-options.php:345
 msgid "Check to disable"
-msgstr "Deaktivieren"
+msgstr "Ankreuzen zum Deaktivieren"
 
 #: ../inc/panel/theme-options.php:165
 msgid "Fav Icon URL:"
@@ -812,7 +808,7 @@ msgstr "Favicon ändern"
 
 #: ../inc/panel/theme-options.php:176 ../inc/panel/theme-options.php:215
 msgid "Preview: "
-msgstr "Vorschau"
+msgstr "Vorschau "
 
 #: ../inc/panel/theme-options.php:189 ../inc/panel/theme-options.php:229
 #: ../inc/panel/theme-options.php:308 ../inc/panel/theme-options.php:418
@@ -826,7 +822,7 @@ msgstr "Änderungen speichern"
 
 #: ../inc/panel/theme-options.php:194
 msgid "Web Clip Icon Options"
-msgstr "Web Clip Icon Options"
+msgstr "Web Clip Icon Einstellungen"
 
 #: ../inc/panel/theme-options.php:199
 msgid "Disable Web Clip Icon?"
@@ -846,17 +842,16 @@ msgid ""
 "Height 144px height, which will support High Resolution Devices like iPad "
 "Retina."
 msgstr ""
-"Note: Web Clip Icon for Apple devices. Recommended Size - Width 144px and "
-"Height 144px height, which will support High Resolution Devices like iPad "
-"Retina."
+"Hinweis: Web Clip Icon für Apple-Geräte. Empfohlene Größe - Breite 144px und "
+"Höhe 144px, was hochaufgelöste Geräte wie das iPad Retina unterstützt."
 
 #: ../inc/panel/theme-options.php:234
 msgid "Header Options"
-msgstr "Kopfzeilen-Optionen"
+msgstr "Kopfzeilen Einstellungen"
 
 #: ../inc/panel/theme-options.php:239
 msgid "Disable Header?"
-msgstr "Header deaktivieren?"
+msgstr "Kopfzeile deaktivieren?"
 
 #: ../inc/panel/theme-options.php:245
 msgid "Change Custom Header Image (Buddha)?"
@@ -868,15 +863,15 @@ msgstr "Hier klicken, um das Kopfzeilenbild zu ändern"
 
 #: ../inc/panel/theme-options.php:251
 msgid "Disable Header Logo?"
-msgstr "Header-Logo deaktivieren?"
+msgstr "Kopfzeilen-Logo deaktivieren?"
 
 #: ../inc/panel/theme-options.php:256
 msgid "Logo url:"
-msgstr "Logo url:"
+msgstr "Logo URL:"
 
 #: ../inc/panel/theme-options.php:264
 msgid "Change Header Logo"
-msgstr "Kopzeilen-Logo ändern"
+msgstr "Kopfzeilen-Logo ändern"
 
 #: ../inc/panel/theme-options.php:268
 msgid "Preview:"
@@ -888,39 +883,39 @@ msgstr "Blogtitel deaktivieren?"
 
 #: ../inc/panel/theme-options.php:285
 msgid "Disable Site Description (Tagline)?"
-msgstr "Disable Site Description (Tagline)?"
+msgstr "Seitenbeschreibung (Tagline) deaktivieren?"
 
 #: ../inc/panel/theme-options.php:290
 msgid "Move Site Title and Tagline?"
-msgstr "Move Site Title and Tagline?"
+msgstr "Seitentitel und Tagline verschieben?"
 
 #: ../inc/panel/theme-options.php:292
 msgid "Check to move before the Logo"
-msgstr "Check to move before the Logo"
+msgstr "Hier klicken um vor das Logo zu verschieben"
 
 #: ../inc/panel/theme-options.php:295
 msgid "Seperate Logo and Site Details?"
-msgstr "Seperate Logo and Site Details?"
+msgstr "Logo und Seitenbechreibung trennen?"
 
 #: ../inc/panel/theme-options.php:297
 msgid "Check to move down"
-msgstr "Check to move down"
+msgstr "Ankreuzen zum nach unten verschieben"
 
 #: ../inc/panel/theme-options.php:300
 msgid "Enable Header Right Sidebar?"
-msgstr "Enable Header Right Sidebar?"
+msgstr "Rechte Seitenleiste im Kopfbereich aktivieren?"
 
 #: ../inc/panel/theme-options.php:302
 msgid "Just add Widgets in Header Right Sidebar"
-msgstr "Just add Widgets in Header Right Sidebar"
+msgstr "Widgets zur rechten Kopf-Seitenleiste hinzufügen"
 
 #: ../inc/panel/theme-options.php:314
 msgid "Menu Options"
-msgstr "Menü Optionen"
+msgstr "Menü Einstellungen"
 
 #: ../inc/panel/theme-options.php:319
 msgid "Menu Tutorial from WordPress.com"
-msgstr "Menu Tutorial von WordPress.com"
+msgstr "Menü-Tutorial von WordPress.com"
 
 #: ../inc/panel/theme-options.php:321
 msgid "http://en.support.wordpress.com/menus/"
@@ -928,11 +923,11 @@ msgstr "http://en.support.wordpress.com/menus/"
 
 #: ../inc/panel/theme-options.php:321
 msgid "Menu Tutorial"
-msgstr "Menu-Tutorial"
+msgstr "Menü-Tutorial"
 
 #: ../inc/panel/theme-options.php:321
 msgid "Click Here to Read Menu Tutorial"
-msgstr "Click Here to Read Menu Tutorial"
+msgstr "Hier klicken, um das Menü-Tutorial zu lesen"
 
 #: ../inc/panel/theme-options.php:325 ../inc/panel/theme-options.php:327
 msgid "Create Menu"
@@ -944,27 +939,27 @@ msgstr "Hier klicken zum Menü erstellen"
 
 #: ../inc/panel/theme-options.php:331
 msgid "Assign Menu to Respective Location"
-msgstr "Assign Menu to Respective Location"
+msgstr "Menü-Positionen verwalten"
 
 #: ../inc/panel/theme-options.php:333
 msgid "Assign Menu Location"
-msgstr "Assign Menu Location"
+msgstr "Menü-Positionen zuweisen"
 
 #: ../inc/panel/theme-options.php:333
 msgid "Click Here to Assign Menu Location"
-msgstr "Click Here to Assign Menu Location"
+msgstr "Hier klicken, um Menüpositionen zuzuweisen"
 
 #: ../inc/panel/theme-options.php:337
 msgid "Add Menu in Header Right Sidebar"
-msgstr "Add Menu in Header Right Sidebar"
+msgstr "Menü zu rechter Kopfzeilen-Seitenleiste hinzufügen?"
 
 #: ../inc/panel/theme-options.php:339
 msgid "Add Menu Widget in Header Right Sidebar"
-msgstr "Add Menu Widget in Header Right Sidebar"
+msgstr "Menu-Widget zu rechter Kopfzeilen-Seitenleiste hinzufügen?"
 
 #: ../inc/panel/theme-options.php:343
 msgid "Disable Primary & Secondary Menu?"
-msgstr "Disable Primary & Secondary Menu?"
+msgstr "Haupt- und Untermenü deaktivieren?"
 
 #: ../inc/panel/theme-options.php:349 ../inc/panel/theme-options.php:367
 msgid "Save"
@@ -972,15 +967,15 @@ msgstr "Speichern"
 
 #: ../inc/panel/theme-options.php:355
 msgid "Search Options"
-msgstr "Such-Optionen"
+msgstr "Suche Einstellungen"
 
 #: ../inc/panel/theme-options.php:360
 msgid "Default Display Text in Search"
-msgstr "Default Display Text in Search"
+msgstr "Standard-Text der im Suchfeld angezeigt wird"
 
 #: ../inc/panel/theme-options.php:373
 msgid "Color Options"
-msgstr "Color Options"
+msgstr "Farbeinstellungen"
 
 #: ../inc/panel/theme-options.php:378
 msgid "Default Color Scheme"
@@ -1000,7 +995,7 @@ msgstr "Hintergrundfarbe"
 
 #: ../inc/panel/theme-options.php:399
 msgid "Click Here to change Main Background Image/Color"
-msgstr "Click Here to change Main Background Image/Color"
+msgstr "Hier klicken um die Hintergrundfarbe zu ändern"
 
 #: ../inc/panel/theme-options.php:406
 msgid "Site Title Color:"
@@ -1008,11 +1003,11 @@ msgstr "Seitentitel-Farbe:"
 
 #: ../inc/panel/theme-options.php:411
 msgid "Click Here to change Site Title Color"
-msgstr "Click Here to change Site Title Color"
+msgstr "Hier klicken, um die Seitentitel-Farbe zu ändern"
 
 #: ../inc/panel/theme-options.php:423
 msgid "Layout Options"
-msgstr "Layout Optionen"
+msgstr "Layout Einstellungen"
 
 #: ../inc/panel/theme-options.php:428
 msgid "Default Layout"
@@ -1020,15 +1015,15 @@ msgstr "Standardlayout"
 
 #: ../inc/panel/theme-options.php:432
 msgid "Right Sidebar"
-msgstr "Sidebar rechts"
+msgstr "Seitenleiste rechts"
 
 #: ../inc/panel/theme-options.php:437
 msgid "Left Sidebar"
-msgstr "Sidebar links"
+msgstr "Seitenleiste links"
 
 #: ../inc/panel/theme-options.php:442
 msgid "No Sidebar"
-msgstr "keine Sidebar"
+msgstr "keine Seitenleiste"
 
 #: ../inc/panel/theme-options.php:453
 msgid "Content Layout"
@@ -1036,11 +1031,11 @@ msgstr "Inhaltslayout"
 
 #: ../inc/panel/theme-options.php:457
 msgid "Excerpt/Blog Display"
-msgstr "Kurzfassung: "
+msgstr "Kurzfassung:"
 
 #: ../inc/panel/theme-options.php:461
 msgid "Full Content Display"
-msgstr "Full Content Display"
+msgstr "vollständige Inhaltsansicht"
 
 #: ../inc/panel/theme-options.php:468
 msgid "Reset Layout?"
@@ -1048,7 +1043,7 @@ msgstr "Layout zurücksetzen?"
 
 #: ../inc/panel/theme-options.php:470 ../inc/panel/theme-options.php:530
 msgid "Check to reset"
-msgstr "Check to reset"
+msgstr "Ankreuzen zum Zurücksetzen"
 
 #: ../inc/panel/theme-options.php:479
 msgid "Homepage / Frontpage Category Setting"
@@ -1056,15 +1051,14 @@ msgstr "Homepage / Startseite Kategorie-Einstellungen"
 
 #: ../inc/panel/theme-options.php:485
 msgid "Front page posts categories:"
-msgstr "StartseiteFront page posts categories:"
+msgstr "Startseiten-Artikel Kategorien:"
 
 #: ../inc/panel/theme-options.php:487
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on "
 "the front page."
 msgstr ""
-"Only posts that belong to the categories selected here will be displayed on "
-"the front page."
+"Nur Beiträge zu hier ausgewählten Ketegorien erscheinen auf der Startseite."
 
 #: ../inc/panel/theme-options.php:492
 msgid "--Disabled--"
@@ -1072,19 +1066,21 @@ msgstr "--deaktiviert--"
 
 #: ../inc/panel/theme-options.php:503
 msgid "You may select multiple categories by holding down the CTRL key."
-msgstr "You may select multiple categories by holding down the CTRL key."
+msgstr ""
+"Sie können mehrere Kategorien auswählen, indem Sie die Strg-Taste gedrückt "
+"halten."
 
 #: ../inc/panel/theme-options.php:513
 msgid "Excerpt / More Tag Settings"
-msgstr "Excerpt / More Tag Settings"
+msgstr "Auszug / Weiterlesen Einstellungen"
 
 #: ../inc/panel/theme-options.php:518
 msgid "More Tag Text"
-msgstr "More Tag Text"
+msgstr "\"Weiterlesen\" Text"
 
 #: ../inc/panel/theme-options.php:523
 msgid "Excerpt length(words)"
-msgstr "Excerpt length(words)"
+msgstr "Auszuglänge (Wörter)"
 
 #: ../inc/panel/theme-options.php:528
 msgid "Reset?"
@@ -1092,7 +1088,7 @@ msgstr "Zurücksetzen?"
 
 #: ../inc/panel/theme-options.php:539
 msgid "Feed Redirect"
-msgstr "Feed-Umleitungs"
+msgstr "Feed-Umleitung"
 
 #: ../inc/panel/theme-options.php:544
 msgid "Feed Redirect URL"
@@ -1100,7 +1096,7 @@ msgstr "Feed-Umleitungs-URL"
 
 #: ../inc/panel/theme-options.php:545
 msgid "Add in the Feedburner URL"
-msgstr "Add in the Feedburner URL"
+msgstr "Feedburner URL"
 
 #: ../inc/panel/theme-options.php:555
 msgid "Custom CSS"
@@ -1128,11 +1124,11 @@ msgstr "Hier klicken zum Lesen"
 
 #: ../inc/panel/theme-options.php:583
 msgid "Slider Options"
-msgstr "Slider-Optionen"
+msgstr "Slider Einstellungen"
 
 #: ../inc/panel/theme-options.php:587
 msgid "Enable Sidebar"
-msgstr "Enable Sidebar"
+msgstr "Seitenleiste aktivieren"
 
 #: ../inc/panel/theme-options.php:591
 msgid "Homepage / Frontpage"
@@ -1140,7 +1136,7 @@ msgstr "Homepage / Startseite"
 
 #: ../inc/panel/theme-options.php:595
 msgid "Entire Site"
-msgstr "Entire Site"
+msgstr "Gesamte Seite"
 
 #: ../inc/panel/theme-options.php:599
 msgid "Disable"
@@ -1160,7 +1156,7 @@ msgstr "Verblassen"
 
 #: ../inc/panel/theme-options.php:615
 msgid "wipe"
-msgstr "wipe"
+msgstr "löschen"
 
 #: ../inc/panel/theme-options.php:616
 msgid "scrollUp"
@@ -1212,7 +1208,7 @@ msgstr "Überblendungslänge"
 
 #: ../inc/panel/theme-options.php:649
 msgid "Featured Post Slider Options"
-msgstr "Featured Post Slider Options"
+msgstr "Featured Post Slider Einstellungen"
 
 #: ../inc/panel/theme-options.php:653
 msgid "Exclude Slider post from Homepage posts?"
@@ -1220,11 +1216,11 @@ msgstr "Slider-Artikel von Blog-Artikeln trennen?"
 
 #: ../inc/panel/theme-options.php:655
 msgid "Check to exclude"
-msgstr "ankreuzen zum Ausschließen"
+msgstr "Ankreuzen zum Ausschließen"
 
 #: ../inc/panel/theme-options.php:660
 msgid "Featured Slider Post #"
-msgstr "Featured Slider Post #"
+msgstr "Featured Slider Artikel #"
 
 #: ../inc/panel/theme-options.php:662
 msgid "Click Here To Edit"
@@ -1239,15 +1235,16 @@ msgstr ""
 
 #: ../inc/panel/theme-options.php:680
 msgid "Enable Social Icons in Header Right Sidebar?"
-msgstr "Enable Social Icons in Header Right Sidebar?"
+msgstr "Soziale Netzwerke Icons in rechter Kopf-Seitenleiste aktivieren?"
 
 #: ../inc/panel/theme-options.php:682
 msgid "Just add Catch Evolution Social Widget in Header Right Sidebar"
-msgstr "Just add Catch Evolution Social Widget in Header Right Sidebar"
+msgstr ""
+"Catch Evolution Soziale Links-Widget zur rechten Kopf-Seitenleiste hinzufügen"
 
 #: ../inc/panel/theme-options.php:686
 msgid "Enable Social Icons in Footer?"
-msgstr "Social Icons in Fußzeile aktivieren?"
+msgstr "Soziale Netzwerke Icons in Fußzeile aktivieren?"
 
 #: ../inc/panel/theme-options.php:688
 msgid "Check to enable"
@@ -1372,11 +1369,11 @@ msgstr "Suche"
 
 #: ../single.php:16
 msgid "<span class=\"meta-nav\">&larr;</span> Previous"
-msgstr "<span class=\"meta-nav\">&larr;</span> vorherige"
+msgstr "<span class=\"meta-nav\">&larr;</span> vorheriger Beitrag"
 
 #: ../single.php:17
 msgid "Next <span class=\"meta-nav\">&rarr;</span>"
-msgstr "nächste <span class=\"meta-nav\">&rarr;</span>"
+msgstr "nächster Beitrag <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../tag.php:16
 #, php-format

@@ -2,7 +2,7 @@
 * by the Catch Themes team, http://catchthemes.com/
 
 == ABOUT Catch Evolution==
-Catch Evolution is a beautifully sleek creation of Catch Themes. It exudes a clean and super sharp look. It comes with a whole set of interesting, rich features and flexible theme options. Built on HTML5, CSS3, it has a responsive design which lets the content automatically adapt to the screen's size on different devices. Catch Evolution looks striking in a bigger screen. The layout is wider, bigger and luxuriously spacious. This theme is easily customizable with an advanced theme options panel. It supports popular plugins such as Jetpack, WordPress SEO by Yoast, WP-PageNavi, Contact Form 7, WooCommerce and many more. It is also translation ready and currently translated in Spanish, French, Swedish, German, Danish and Italian. If you need support with this theme, please go to http://catchthemes.com/support/
+Catch Evolution is a beautifully sleek creation of Catch Themes. It exudes a clean and super sharp look. It comes with a whole set of interesting, rich features and flexible theme options. Built on HTML5, CSS3, it has a responsive design which lets the content automatically adapt to the screen's size on different devices. Catch Evolution looks striking in a bigger screen. The layout is wider, bigger and luxuriously spacious. This theme is easily customizable with an advanced theme options panel. It supports popular plugins such as Jetpack, WordPress SEO by Yoast, WP-PageNavi, Contact Form 7, WooCommerce and many more. It is also translation ready and currently translated in Spanish, French, Swedish, German, Danish, Italian and Japanese. If you need support with this theme, please go to http://catchthemes.com/support/
 
 == Translation ==
 Catch Evolution theme is translation ready.
@@ -12,6 +12,7 @@ Added Translation for Swedish by Andre Fahlstrom (admin@andrefahlstrom.se)
 Added Translation for German by Knut Pfefferkorn (knut.pfefferkorn@gmail.com) 
 Added Translation for Danish by Med venlig hilsen (medvind@medvind.dk)
 Added Translation for Italian by Eticamente Bella (eticamentebella1@gmail.com) and Lorenzo Bossi (lorenzobossi83@gmail.com) 
+Added Translation for Japanese by Makiko Saito (saito.makiko@gmail.com)
 
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
@@ -51,6 +52,11 @@ dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-si
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 
 == Changelog ==
+
+1.8
+* Added Japanese translation ja.po and ja.mo
+* Fixed Italian translation
+
 1.7
 * Added Italian translation it_IT.po and it_IT.mo
 
