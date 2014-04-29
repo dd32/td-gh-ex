@@ -53,13 +53,13 @@ function travelify_admin_styles() {
 add_action( 'admin_print_styles-appearance_page_theme_options', 'travelify_social_script', 100);
 /**
  * Facebook, twitter script hooked at head
- * 
- * @useage for Facebook, Twitter and Print Script 
+ *
+ * @useage for Facebook, Twitter and Print Script
  * @Use add_action to display the Script on header
  */
-function travelify_social_script() 
+function travelify_social_script()
 { ?>
-	<!-- Facebook --> 
+	<!-- Facebook -->
     <div id="fb-root"></div>
 	<div id="fb-root"></div>
 	<script>(function(d, s, id) {
@@ -69,13 +69,13 @@ function travelify_social_script()
 	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=328285627269392";
 	  fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));</script>
-    
-    <!-- Twitter -->   
+
+    <!-- Twitter -->
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	
+
     <!-- Print Script -->
 	<script src="http://cdn.printfriendly.com/printfriendly.js" type="text/javascript"></script>
-<?php     
+<?php
 }
 
 /****************************************************************************************/
@@ -87,8 +87,8 @@ add_action( 'admin_menu', 'travelify_options_menu' );
  * @uses add_theme_page to add sub-menu under the Appearance top level menu.
  */
 function travelify_options_menu() {
-    
-	add_theme_page( 
+
+	add_theme_page(
 		__( 'Theme Options', 'travelify' ),           // Name of page
 		__( 'Theme Options', 'travelify' ),           // Label in menu
 		'edit_theme_options',                           // Capability required
@@ -126,32 +126,33 @@ function travelify_theme_options_do_page() {
 			<div id="social-share">
 		    	<div class="fb-like" data-href="https://www.facebook.com/colorlib" data-send="false" data-layout="button_count" data-width="90" data-show-faces="true"></div>
 		    	<div class="tw-follow" >		<a href="https://twitter.com/colorlib" class="twitter-follow-button" data-show-count="false">Follow @colorlib</a></div>
-			</div>	
+			</div>
 			    <div id="theme-support">
-                    <ul>
-                    	<li><a class="button" href="http://wordpress.org/support/view/theme-reviews/travelify?filter=5" title="<?php esc_attr_e('Rate this Theme', 'travelify'); ?>" target="_blank"><?php printf(__('Rate this Theme','travelify')); ?></a></li>
-						<li><a class="button" href="http://colorlib.com/wp/support/travelify/" title="<?php esc_attr_e('Theme Instruction', 'travelify'); ?>" target="_blank"><?php printf(__('Theme Instructions','travelify')); ?></a></li>
-                        <li><a class="button" href="http://colorlib.com/wp/forums/" title="<?php esc_attr_e('Support Forum', 'travelify'); ?>" target="_blank"><?php printf(__('Support','travelify')); ?></a></li>
-                        <li><a class="button" href="http://www.facebook.com/colorlib" title="Like Colorlib on Facebook" target="_blank"><?php printf(__('Facebook','travelify')); ?></a></li>
-                        <li><a class="button" href="http://twitter.com/colorlib/" title="Follow Colrolib on Twitter" target="_blank"><?php printf(__('Twitter','travelify')); ?></a></li>
-                    </ul>
-                </div>
+              <ul>
+              	<li><a class="button" href="http://colorlib.com/" title="<?php esc_attr_e('Other Themes', 'travelify'); ?>" target="_blank"><?php printf(__('Other Themes','travelify')); ?></a></li>
+              	<li><a class="button" href="http://wordpress.org/support/view/theme-reviews/travelify?filter=5" title="<?php esc_attr_e('Rate this Theme', 'travelify'); ?>" target="_blank"><?php printf(__('Rate this Theme','travelify')); ?></a></li>
+								<li><a class="button" href="http://colorlib.com/wp/support/travelify/" title="<?php esc_attr_e('Theme Instruction', 'travelify'); ?>" target="_blank"><?php printf(__('Theme Instructions','travelify')); ?></a></li>
+                <li><a class="button" href="http://colorlib.com/wp/forums/" title="<?php esc_attr_e('Support Forum', 'travelify'); ?>" target="_blank"><?php printf(__('Support','travelify')); ?></a></li>
+                <li><a class="button" href="http://www.facebook.com/colorlib" title="Like Colorlib on Facebook" target="_blank"><?php printf(__('Facebook','travelify')); ?></a></li>
+                <li><a class="button" href="http://twitter.com/colorlib/" title="Follow Colrolib on Twitter" target="_blank"><?php printf(__('Twitter','travelify')); ?></a></li>
+              </ul>
+          </div>
 			</div>
 		</div>
-        
+
       <form method="post" action="options.php">
 			<?php
 				settings_fields( 'travelify_theme_options' );
 				global $travelify_theme_options_settings;
-				$options = $travelify_theme_options_settings;             
-			?>        
-	            
+				$options = $travelify_theme_options_settings;
+			?>
+
 			<?php if( isset( $_GET [ 'settings-updated' ] ) && 'true' == $_GET[ 'settings-updated' ] ): ?>
 					<div class="updated fade" id="message">
 					   <p><strong><?php _e( 'Settings saved.', 'travelify' );?></strong></p>
 					</div>
-			<?php endif; ?> 
-            
+			<?php endif; ?>
+
          <div id="travelify_tabs">
 				<ul id="main-navigation" class="tab-navigation">
 					<li><a href="#designoptions"><?php _e( 'Main Options', 'travelify' );?></a></li>
@@ -159,7 +160,7 @@ function travelify_theme_options_do_page() {
 					<li><a href="#sociallinks"><?php _e( 'Social Links', 'travelify' );?></a></li>
 					<li><a href="#other"><?php _e( 'Other', 'travelify' );?></a></li>
 				</ul><!-- .tab-navigation #main-navigation -->
-                   
+
 				<!-- Option for Design Options -->
 				<div id="designoptions">
 					<div class="option-container">
@@ -167,7 +168,7 @@ function travelify_theme_options_do_page() {
 						<div class="option-content inside">
 							<table class="form-table">
 								<tbody>
-									<tr>                            
+									<tr>
 										<th scope="row"><label for="header_logo"><?php _e( 'Header Logo', 'travelify' ); ?></label></th>
 										<td>
 										   <input class="upload" size="65" type="text" id="header_logo" name="travelify_theme_options[header_logo]" value="<?php echo esc_url( $options [ 'header_logo' ] ); ?>" />
@@ -175,8 +176,8 @@ function travelify_theme_options_do_page() {
 										</td>
 									</tr>
 									<tr>
-										<th scope="row"><?php _e( 'Preview', 'travelify' ); ?></th>
-										<td> 
+										<th scope="row"><label for="header_logo"><?php _e( 'Preview', 'travelify' ); ?></label></th>
+										<td>
 										   <?php
 										       echo '<img src="'.esc_url( $options[ 'header_logo' ] ).'" alt="'.__( 'Header Logo', 'travelify' ).'" />';
 										   ?>
@@ -187,7 +188,7 @@ function travelify_theme_options_do_page() {
 										<td>
 											<input type="radio" name="travelify_theme_options[header_show]" id="header-logo" <?php checked($options['header_show'], 'header-logo') ?> value="header-logo"  />
 											<?php _e( 'Header Logo Only', 'travelify' ); ?></br>
-											
+
 											<input type="radio" name="travelify_theme_options[header_show]" id="header-text" <?php checked($options['header_show'], 'header-text') ?> value="header-text"  />
 											<?php _e( 'Header Text Only', 'travelify' ); ?></br>
 
@@ -211,7 +212,7 @@ function travelify_theme_options_do_page() {
 										<input type='hidden' value='0' name='travelify_theme_options[disable_favicon]'>
 										<td><input type="checkbox" id="disable_favicon" name="travelify_theme_options[disable_favicon]" value="1" <?php checked( '1', $options['disable_favicon'] ); ?> /> <?php _e('Check to disable', 'travelify'); ?></td>
 									</tr>
-									<tr>                            
+									<tr>
 									<th scope="row"><label for="fav_icon_url"><?php _e( 'Favicon URL', 'travelify' ); ?></label></th>
 										<td>
 										   <input class="upload" size="65" type="text" id="fav_icon_url" name="travelify_theme_options[favicon]" value="<?php echo esc_url( $options [ 'favicon' ] ); ?>" />
@@ -220,8 +221,8 @@ function travelify_theme_options_do_page() {
 										</td>
 									</tr>
 									<tr>
-										<th scope="row"><?php _e( 'Preview', 'travelify' ); ?></th>
-										<td> 
+										<th scope="row"><label><?php _e( 'Preview', 'travelify' ); ?></label></th>
+										<td>
 										   <?php
 										       echo '<img src="'.esc_url( $options[ 'favicon' ] ).'" alt="'.__( 'favicon', 'travelify' ).'" />';
 										   ?>
@@ -229,7 +230,7 @@ function travelify_theme_options_do_page() {
 									</tr>
 								</tbody>
 							</table>
-							<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'travelify' ); ?>" /></p> 
+							<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'travelify' ); ?>" /></p>
 						</div><!-- .option-content -->
 					</div><!-- .option-container -->
 
@@ -243,7 +244,7 @@ function travelify_theme_options_do_page() {
 										<input type='hidden' value='0' name='travelify_theme_options[disable_webpageicon]'>
 										<td><input type="checkbox" id="disable_webpageicon" name="travelify_theme_options[disable_webpageicon]" value="1" <?php checked( '1', $options['disable_webpageicon'] ); ?> /> <?php _e('Check to disable', 'travelify'); ?></td>
 									</tr>
-									<tr>                            
+									<tr>
 									<th scope="row"><label for="webpageicon_icon_url"><?php _e( 'Web Clip Icon URL', 'travelify' ); ?></label></th>
 										<td>
 										   <input class="upload" size="65" type="text" id="webpageicon_icon_url" name="travelify_theme_options[webpageicon]" value="<?php echo esc_url( $options [ 'webpageicon' ] ); ?>" />
@@ -252,8 +253,8 @@ function travelify_theme_options_do_page() {
 										</td>
 									</tr>
 									<tr>
-										<th scope="row"><?php _e( 'Preview', 'travelify' ); ?></th>
-										<td> 
+										<th scope="row"><label><?php _e( 'Preview', 'travelify' ); ?></label></th>
+										<td>
 										   <?php
 										       echo '<img src="'.esc_url( $options[ 'webpageicon' ] ).'" alt="'.__( 'webpage icon', 'travelify' ).'" />';
 										   ?>
@@ -261,14 +262,14 @@ function travelify_theme_options_do_page() {
 									</tr>
 								</tbody>
 							</table>
-							<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'travelify' ); ?>" /></p> 
+							<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'travelify' ); ?>" /></p>
 						</div><!-- .option-content -->
 					</div><!-- .option-container -->
 
 					<div class="option-container">
 						<h3 class="option-toggle"><a href="#"><?php _e( 'Layout Options', 'travelify' ); ?></a></h3>
 						<div class="option-content inside">
-							<table class="form-table">  
+							<table class="form-table">
 								<tbody>
 									<tr>
 										<th scope="row"><label><?php _e( 'Default Layout', 'travelify' ); ?></label></th>
@@ -288,36 +289,36 @@ function travelify_theme_options_do_page() {
 											<label title="left-Sidebar" class="box" style="margin-right: 18px"><img src="<?php echo get_template_directory_uri(); ?>/library/panel/images/left-sidebar.png" alt="Content-Sidebar" /><br />
 											<input type="radio" name="travelify_theme_options[default_layout]" id="left-sidebar" <?php checked($options['default_layout'], 'left-sidebar') ?> value="left-sidebar"  />
 											<?php _e( 'Left Sidebar', 'travelify' ); ?>
-											</label>                                            
+											</label>
 											<label title="right-sidebar" class="box" style="margin-right: 18px"><img src="<?php echo get_template_directory_uri(); ?>/library/panel/images/right-sidebar.png" alt="Content-Sidebar" /><br />
 											<input type="radio" name="travelify_theme_options[default_layout]" id="right-sidebar" <?php checked($options['default_layout'], 'right-sidebar') ?> value="right-sidebar"  />
 											<?php _e( 'Right Sidebar', 'travelify' ); ?>
-											</label>                                            
+											</label>
 										</td>
-									</tr>  
+									</tr>
 									<?php if( "1" == $options[ 'reset_layout' ] ) { $options[ 'reset_layout' ] = "0"; } ?>
-									<tr> 
-									<p><?php _e( 'This will set the default layout style. However, you can choose different layout for each page via editor', 'travelify' ); ?></p>                           
+									<tr>
+									<p><?php _e( 'This will set the default layout style. However, you can choose different layout for each page via editor', 'travelify' ); ?></p>
 									<th scope="row"><label for="reset_layout"><?php _e( 'Reset Layout', 'travelify' ); ?></th>
 									<input type='hidden' value='0' name='travelify_theme_options[reset_layout]'>
 									<td>
 									<input type="checkbox" id="reset_layout" name="travelify_theme_options[reset_layout]" value="1" <?php checked( '1', $options['reset_layout'] ); ?> /> <?php _e('Check to reset', 'travelify'); ?>
 									</td>
-									</tr>  
+									</tr>
 								</tbody>
 							</table>
-							<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'travelify' ); ?>" /></p> 
+							<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'travelify' ); ?>" /></p>
 						</div><!-- .option-content -->
-					</div><!-- .option-container -->				
+					</div><!-- .option-container -->
 
 					<div class="option-container">
 						<h3 class="option-toggle"><a href="#"><?php _e( 'Custom Background', 'travelify' ); ?></a></h3>
 						<div class="option-content inside">
 							<table class="form-table">
-								<tbody> 
+								<tbody>
 									<tr>
 										<th>
-											<?php _e( 'Change theme background', 'travelify' ); ?>
+											<label><?php _e( 'Change theme background', 'travelify' ); ?></label>
 										</th>
 										<td style="padding-bottom: 64px;">
 											<?php printf(__('<a class="button" href="%s">Click here</a>', 'travelify'), admin_url('themes.php?page=custom-background')); ?>
@@ -332,7 +333,7 @@ function travelify_theme_options_do_page() {
 					<div class="option-container">
 						<h3 class="option-toggle"><a href="#"><?php _e( 'RSS URL', 'travelify' ); ?></a></h3>
 						<div class="option-content inside">
-							<table class="form-table">  
+							<table class="form-table">
 								<tbody>
 									<tr>
 										<th scope="row">
@@ -341,10 +342,10 @@ function travelify_theme_options_do_page() {
 										<td><input type="text" id="feed-redirect" size="70" name="travelify_theme_options[feed_url]" value="<?php echo esc_attr( $options[ 'feed_url' ] ); ?>" />
 										<p><?php _e( 'Enter your preferred RSS URL. (Feedburner or other)', 'travelify' ); ?></p>
 										</td>
-									</tr>  
+									</tr>
 								</tbody>
 							</table>
-							<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'travelify' ); ?>" /></p> 
+							<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'travelify' ); ?>" /></p>
 						</div><!-- .option-content -->
 					</div><!-- .option-container -->
 
@@ -363,7 +364,7 @@ function travelify_theme_options_do_page() {
                               <td>
 	                              <select name="travelify_theme_options[front_page_category][]" id="frontpage_posts_cats" multiple="multiple" class="select-multiple">
 	                              	<option value="0" <?php if ( empty( $options['front_page_category'] ) ) { selected( true, true ); } ?>><?php _e( '--Disabled--', 'travelify' ); ?></option>
-                                 	<?php /* Get the list of categories */ 
+                                 	<?php /* Get the list of categories */
                                  	if( empty( $options[ 'front_page_category' ] ) ) {
                                     	$options[ 'front_page_category' ] = array();
                                   	}
@@ -377,10 +378,10 @@ function travelify_theme_options_do_page() {
                            </tr>
                         </tbody>
                      </table>
-                     <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'travelify' ); ?>" /></p> 
+                     <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'travelify' ); ?>" /></p>
                   </div><!-- .option-content -->
-              	</div><!-- .option-container -->                     
-				</div> <!-- #designoptions -->  
+              	</div><!-- .option-container -->
+				</div> <!-- #designoptions -->
 
 				<!-- Option for Featured Post Slider -->
 				<div id="featuredslider">
@@ -388,14 +389,14 @@ function travelify_theme_options_do_page() {
 						<h3 class="option-toggle"><a href="#"><?php _e( 'Featured Post/Page Slider Options', 'travelify' ); ?></a></h3>
 						<div class="option-content inside">
 							<table class="form-table">
-								<tr>                            
-									<th scope="row"><?php _e( 'Exclude Slider post from Homepage posts?', 'travelify' ); ?></th>
+								<tr>
+									<th scope="row"><label><?php _e( 'Exclude Slider post from Homepage posts?', 'travelify' ); ?></label></th>
 									<input type='hidden' value='0' name='travelify_theme_options[exclude_slider_post]'>
 									<td><input type="checkbox" id="headerlogo" name="travelify_theme_options[exclude_slider_post]" value="1" <?php checked( '1', $options['exclude_slider_post'] ); ?> /> <?php _e('Check to exclude', 'travelify'); ?></td>
 								</tr>
 								<tbody class="sortable">
 									<tr>
-										<th scope="row"><?php _e( 'Number of Slides', 'travelify' ); ?></th>
+										<th scope="row"><label><?php _e( 'Number of Slides', 'travelify' ); ?></label></th>
 										<td><input type="text" name="travelify_theme_options[slider_quantity]" value="<?php echo intval( $options[ 'slider_quantity' ] ); ?>" size="2" /></td>
 									</tr>
 									<?php for ( $i = 1; $i <= $options[ 'slider_quantity' ]; $i++ ): ?>
@@ -404,7 +405,7 @@ function travelify_theme_options_do_page() {
 										<td><input type="text" name="travelify_theme_options[featured_post_slider][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'featured_post_slider', $options ) && array_key_exists( $i, $options[ 'featured_post_slider' ] ) ) echo absint( $options[ 'featured_post_slider' ][ $i ] ); ?>" />
 										<a href="<?php bloginfo ( 'url' );?>/wp-admin/post.php?post=<?php if( array_key_exists ( 'featured_post_slider', $options ) && array_key_exists ( $i, $options[ 'featured_post_slider' ] ) ) echo absint( $options[ 'featured_post_slider' ][ $i ] ); ?>&action=edit" class="button" title="<?php esc_attr_e('Click Here To Edit'); ?>" target="_blank"><?php _e( 'Click Here To Edit', 'travelify' ); ?></a>
 										</td>
-									</tr>                           
+									</tr>
 									<?php endfor; ?>
 								</tbody>
 							</table>
@@ -415,7 +416,7 @@ function travelify_theme_options_do_page() {
 								<li><?php _e( 'Featured Slider will show featured images, Title and excerpt of the respected added post IDs.', 'travelify' ); ?></li>
 								<li><?php _e( 'The recommended image size is', 'travelify' ); ?><strong> 1018px x 460px.</strong></li>
 							</ul>
-							<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'travelify' ); ?>" /></p> 
+							<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'travelify' ); ?>" /></p>
 						</div><!-- .option-content -->
 					</div><!-- .option-container -->
 
@@ -424,18 +425,18 @@ function travelify_theme_options_do_page() {
 						<h3 class="option-toggle"><a href="#"><?php _e( 'Slider Options', 'travelify' ); ?></a></h3>
 						<div class="option-content inside">
 							<table class="form-table">
-								<tr>                            
-									<th scope="row"><?php _e( 'Disable Slider', 'travelify' ); ?></th>
+								<tr>
+									<th scope="row"><label><?php _e( 'Disable Slider', 'travelify' ); ?></label></th>
 									<input type='hidden' value='0' name='travelify_theme_options[disable_slider]'>
 									<td><input type="checkbox" id="headerlogo" name="travelify_theme_options[disable_slider]" value="1" <?php checked( '1', $options['disable_slider'] ); ?> /> <?php _e('Check to disable', 'travelify'); ?></td>
-								</tr>							                        
+								</tr>
 								<tr>
 									<th>
 									<label for="travelify_cycle_style"><?php _e( 'Transition Effect:', 'travelify' ); ?></label>
 									</th>
 									<td>
 										<select id="travelify_cycle_style" name="travelify_theme_options[transition_effect]">
-											<?php 
+											<?php
 												$transition_effects = array();
 												$transition_effects = array( 	'fade',
 																						'wipe',
@@ -452,28 +453,28 @@ function travelify_theme_options_do_page() {
 										foreach( $transition_effects as $effect ) {
 											?>
 											<option value="<?php echo $effect; ?>" <?php selected( $effect, $options['transition_effect']); ?>><?php printf( __( '%s', 'travelify' ), $effect ); ?></option>
-											<?php 
+											<?php
 										}
 											?>
 										</select>
 									</td>
 								</tr>
 								<tr>
-									<th scope="row"><?php _e( 'Transition Delay', 'travelify' ); ?></th>
+									<th scope="row"><label><?php _e( 'Transition Delay', 'travelify' ); ?></label></th>
 									<td>
 										<input type="text" name="travelify_theme_options[transition_delay]" value="<?php echo $options[ 'transition_delay' ]; ?>" size="2" />
 										<span class="description"><?php _e( 'second(s)', 'travelify' ); ?></span>
 									</td>
 								</tr>
 								<tr>
-									<th scope="row"><?php _e( 'Transition Length', 'travelify' ); ?></th>
+									<th scope="row"><label><?php _e( 'Transition Length', 'travelify' ); ?></label></th>
 									<td>
 										<input type="text" name="travelify_theme_options[transition_duration]" value="<?php echo $options[ 'transition_duration' ]; ?>" size="2" />
 										<span class="description"><?php _e( 'second(s)', 'travelify' ); ?></span>
 									</td>
 								</tr>
 							</table>
-							<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'travelify' ); ?>" /></p> 
+							<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'travelify' ); ?>" /></p>
 						</div><!-- .option-content -->
 					</div><!-- .option-container -->
 
@@ -481,8 +482,8 @@ function travelify_theme_options_do_page() {
 
 				<!-- Option for Design Settings -->
 				<div id="sociallinks">
-					<?php 
-						$social_links = array(); 
+					<?php
+						$social_links = array();
 						$social_links = array( 	'Facebook' 		=> 'social_facebook',
 														'Twitter' 		=> 'social_twitter',
 														'Google-Plus'	=> 'social_googleplus',
@@ -493,7 +494,7 @@ function travelify_theme_options_do_page() {
 														'Flickr'		=> 'social_flickr',
 														'Tumblr'		=> 'social_tumblr',
 														'Instagram'		=> 'social_instagram',
-														'RSS'			=> 'social_rss' 
+														'RSS'			=> 'social_rss'
 													);
 					?>
 					<table class="form-table">
@@ -511,21 +512,21 @@ function travelify_theme_options_do_page() {
 						}
 						?>
 						</tbody>
-					</table>                                    
+					</table>
 	            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'travelify' ); ?>" /></p>
 
 
-				</div> <!-- #sociallinks --> 
+				</div> <!-- #sociallinks -->
 
 				<!-- Option for Design Settings -->
 				<div id="other">
 					<div class="option-container">
 						<h3 class="option-toggle"><a href="#"><?php _e( 'Custom CSS (Advanced)', 'travelify' ); ?></a></h3>
-						<div class="option-content inside"> 
-							<table class="form-table">  
-								<tbody>       
+						<div class="option-content inside">
+							<table class="form-table">
+								<tbody>
 									<tr>
-										<th scope="row"><label for="custom-css"><?php _e( 'Enter your custom CSS styles.', 'travelify' ); ?></label>										
+										<th scope="row"><label for="custom-css"><?php _e( 'Enter your custom CSS styles.', 'travelify' ); ?></label>
 											<p><small><?php _e( 'This CSS will overwrite the CSS of style.css file.', 'travelify' ); ?></small></p>
 										</th>
 										<td>
@@ -535,15 +536,15 @@ function travelify_theme_options_do_page() {
 									</tr>
 								</tbody>
 							</table>
-							<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'travelify' ); ?>" /></p> 
+							<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'travelify' ); ?>" /></p>
 						</div><!-- .option-content -->
-					</div><!-- .option-container --> 
-				</div> <!-- #other tools -->   
-                        
+					</div><!-- .option-container -->
+				</div> <!-- #other tools -->
+
          </div><!-- #travelify_tabs -->
-            
+
       </form>
-        
+
    </div><!-- .wrap -->
 <?php
 }
@@ -552,7 +553,7 @@ function travelify_theme_options_do_page() {
 
 /**
  * Validate all theme options values
- * 
+ *
  * @uses esc_url_raw, absint, esc_textarea, sanitize_text_field, travelify_invalidate_caches
  */
 function travelify_theme_options_validate( $options ) {
@@ -568,7 +569,7 @@ function travelify_theme_options_validate( $options ) {
 	if( isset( $input[ 'header_show' ] ) ) {
 		$input_validated[ 'header_show' ] = $input[ 'header_show' ];
 	}
-    
+
 	if( isset( $options[ 'button_text' ] ) ) {
 		$input_validated[ 'button_text' ] = sanitize_text_field( $input[ 'button_text' ] );
 	}
@@ -576,7 +577,7 @@ function travelify_theme_options_validate( $options ) {
 	if( isset( $options[ 'redirect_button_link' ] ) ) {
 		$input_validated[ 'redirect_button_link' ] = esc_url_raw( $input[ 'redirect_button_link' ] );
 	}
-        
+
 	if ( isset( $input[ 'favicon' ] ) ) {
 		$input_validated[ 'favicon' ] = esc_url_raw( $input[ 'favicon' ] );
 	}
@@ -602,7 +603,7 @@ function travelify_theme_options_validate( $options ) {
 	if( isset( $input['front_page_category' ] ) ) {
 		$input_validated['front_page_category'] = $input['front_page_category'];
 	}
-    
+
 	// Data Validation for Featured Slider
 	if( isset( $input[ 'disable_slider' ] ) ) {
 		$input_validated[ 'disable_slider' ] = $input[ 'disable_slider' ];
@@ -612,19 +613,19 @@ function travelify_theme_options_validate( $options ) {
 		$input_validated[ 'slider_quantity' ] = absint( $input[ 'slider_quantity' ] ) ? $input [ 'slider_quantity' ] : 4;
 	}
 	if ( isset( $input['exclude_slider_post'] ) ) {
-		$input_validated[ 'exclude_slider_post' ] = $input[ 'exclude_slider_post' ];	
+		$input_validated[ 'exclude_slider_post' ] = $input[ 'exclude_slider_post' ];
 
 	}
 	if ( isset( $input[ 'featured_post_slider' ] ) ) {
 		$input_validated[ 'featured_post_slider' ] = array();
-	}   
-	if( isset( $input[ 'slider_quantity' ] ) )   
+	}
+	if( isset( $input[ 'slider_quantity' ] ) )
 	for ( $i = 1; $i <= $input [ 'slider_quantity' ]; $i++ ) {
 		if ( intval( $input[ 'featured_post_slider' ][ $i ] ) ) {
 			$input_validated[ 'featured_post_slider' ][ $i ] = absint($input[ 'featured_post_slider' ][ $i ] );
 		}
 	}
-    
+
    // data validation for transition effect
 	if( isset( $input[ 'transition_effect' ] ) ) {
 		$input_validated['transition_effect'] = wp_filter_nohtml_kses( $input['transition_effect'] );
@@ -639,7 +640,7 @@ function travelify_theme_options_validate( $options ) {
 	if ( isset( $input[ 'transition_duration' ] ) && is_numeric( $input[ 'transition_duration' ] ) ) {
 		$input_validated[ 'transition_duration' ] = $input[ 'transition_duration' ];
 	}
-    
+
    // data validation for Social Icons
 	if( isset( $input[ 'social_facebook' ] ) ) {
 		$input_validated[ 'social_facebook' ] = esc_url_raw( $input[ 'social_facebook' ] );
@@ -652,13 +653,13 @@ function travelify_theme_options_validate( $options ) {
 	}
 	if( isset( $input[ 'social_pinterest' ] ) ) {
 		$input_validated[ 'social_pinterest' ] = esc_url_raw( $input[ 'social_pinterest' ] );
-	}   
+	}
 	if( isset( $input[ 'social_youtube' ] ) ) {
 		$input_validated[ 'social_youtube' ] = esc_url_raw( $input[ 'social_youtube' ] );
 	}
 	if( isset( $input[ 'social_vimeo' ] ) ) {
 		$input_validated[ 'social_vimeo' ] = esc_url_raw( $input[ 'social_vimeo' ] );
-	}   
+	}
 	if( isset( $input[ 'social_linkedin' ] ) ) {
 		$input_validated[ 'social_linkedin' ] = esc_url_raw( $input[ 'social_linkedin' ] );
 	}
@@ -667,19 +668,19 @@ function travelify_theme_options_validate( $options ) {
 	}
 	if( isset( $input[ 'social_tumblr' ] ) ) {
 		$input_validated[ 'social_tumblr' ] = esc_url_raw( $input[ 'social_tumblr' ] );
-	}   
+	}
 	if( isset( $input[ 'social_instagram' ] ) ) {
 		$input_validated[ 'social_instagram' ] = esc_url_raw( $input[ 'social_instagram' ] );
-	}  
+	}
 	if( isset( $input[ 'social_rss' ] ) ) {
 		$input_validated[ 'social_rss' ] = esc_url_raw( $input[ 'social_rss' ] );
-	}   
-    
+	}
+
 	//Custom CSS Style Validation
 	if ( isset( $input['custom_css'] ) ) {
 		$input_validated['custom_css'] = wp_kses_stripslashes($input['custom_css']);
 	}
-            
+
 	// Layout settings verification
 	if( isset( $input[ 'reset_layout' ] ) ) {
 		$input_validated[ 'reset_layout' ] = $input[ 'reset_layout' ];
@@ -695,10 +696,10 @@ function travelify_theme_options_validate( $options ) {
 
 	//RSS Service
 	$input_validated['feed_url'] = esc_url_raw($input['feed_url']);
-    
+
 	//Clearing the theme option cache
 	if( function_exists( 'travelify_themeoption_invalidate_caches' ) ) travelify_themeoption_invalidate_caches();
-    
+
    return $input_validated;
 }
 
@@ -710,7 +711,7 @@ function travelify_themeoption_invalidate_caches(){
 	delete_transient( 'travelify_favicon' );
 	delete_transient( 'travelify_webpageicon' );
 	delete_transient( 'travelify_featured_post_slider' );
-	delete_transient( 'travelify_socialnetworks' );  
+	delete_transient( 'travelify_socialnetworks' );
 	delete_transient( 'travelify_footercode' );
 	delete_transient( 'travelify_internal_css' );
 	delete_transient( 'travelify_headercode' );

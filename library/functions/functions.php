@@ -4,7 +4,7 @@
  *
  * This file contains all the functions and it's defination that particularly can't be
  * in other files.
- * 
+ *
  */
 
 /****************************************************************************************/
@@ -41,12 +41,12 @@ function travelify_scripts_styles_method() {
 	wp_register_script( 'jquery_cycle', get_template_directory_uri() . '/library/js/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
 
   	wp_register_style( 'google_font_ubuntu', 'http://fonts.googleapis.com/css?family=Ubuntu' );
-    
-	
+
+
 	/**
 	 * Enqueue Slider setup js file.
-	 * Enqueue Fancy Box setup js and css file.	 
-	 */	
+	 * Enqueue Fancy Box setup js and css file.
+	 */
 	if( ( is_home() || is_front_page() ) && "0" == $options[ 'disable_slider' ] ) {
 		wp_enqueue_script( 'travelify_slider', get_template_directory_uri() . '/library/js/slider-settings.min.js', array( 'jquery_cycle' ), false, true );
 	}
@@ -59,10 +59,10 @@ function travelify_scripts_styles_method() {
     */
 	$travelify_user_agent = strtolower($_SERVER['HTTP_USER_AGENT']);
 	if(preg_match('/(?i)msie [1-8]/',$travelify_user_agent)) {
-		wp_enqueue_script( 'html5', get_template_directory_uri() . '/library/js/html5.js', true ); 
+		wp_enqueue_script( 'html5', get_template_directory_uri() . '/library/js/html5.js', true );
 	}
 
-} 
+}
 
 /****************************************************************************************/
 
@@ -77,7 +77,7 @@ function travelify_wp_page_menu ( $page_markup ) {
 	$replace = array('<div class="'.$divclass.'">', '</div>');
 	$new_markup = str_replace($replace, '', $page_markup);
 	$new_markup = preg_replace('/^<ul>/i', '<ul class="'.$divclass.'">', $new_markup);
-	return $new_markup; 
+	return $new_markup;
 }
 
 /****************************************************************************************/
@@ -87,14 +87,14 @@ if ( ! function_exists( 'travelify_pass_cycle_parameters' ) ) :
  * Function to pass the slider effectr parameters from php file to js file.
  */
 function travelify_pass_cycle_parameters() {
-    
+
     global $travelify_theme_options_settings;
     $options = $travelify_theme_options_settings;
 
     $transition_effect = $options[ 'transition_effect' ];
     $transition_delay = $options[ 'transition_delay' ] * 1000;
     $transition_duration = $options[ 'transition_duration' ] * 1000;
-    wp_localize_script( 
+    wp_localize_script(
         'travelify_slider',
         'travelify_slider_value',
         array(
@@ -103,7 +103,7 @@ function travelify_pass_cycle_parameters() {
             'transition_duration' => $transition_duration
         )
     );
-    
+
 }
 endif;
 
@@ -138,12 +138,12 @@ add_filter( 'body_class', 'travelify_body_class' );
  * Throwing different body class for the different layouts in the body tag
  */
 function travelify_body_class( $classes ) {
-	global $post;	
+	global $post;
 	global $travelify_theme_options_settings;
 	$options = $travelify_theme_options_settings;
 
 	if( $post ) {
-		$layout = get_post_meta( $post->ID,'travelify_sidebarlayout', true ); 
+		$layout = get_post_meta( $post->ID,'travelify_sidebarlayout', true );
 	}
 	if( empty( $layout ) || is_archive() || is_search() || is_home() ) {
 		$layout = 'default';
@@ -163,7 +163,7 @@ function travelify_body_class( $classes ) {
 		}
 		elseif( 'no-sidebar-one-column' == $themeoption_layout ) {
 			$classes[] = 'one-column-template';
-		}		
+		}
 		elseif( 'no-sidebar' == $themeoption_layout ) {
 			$classes[] = 'no-sidebar-template';
 		}
@@ -197,7 +197,7 @@ add_action('wp_head', 'travelify_internal_css');
 /**
  * Hooks the Custom Internal CSS to head section
  */
-function travelify_internal_css() { 
+function travelify_internal_css() {
 
 	if ( ( !$travelify_internal_css = get_transient( 'travelify_internal_css' ) ) ) {
 
@@ -267,7 +267,7 @@ function travelify_alter_home( $query ){
 add_action('wp_head', 'travelify_check_background_color');
 /**
  * Checking if background color is empty
- * If the background color is not empty background-image should be set to none 
+ * If the background color is not empty background-image should be set to none
  * else background color will be not displayed in the site.
  */
 function travelify_check_background_color() {
@@ -341,11 +341,11 @@ remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrap
 
 add_action('woocommerce_before_main_content', 'responsive_woocommerce_wrapper', 10);
 add_action('woocommerce_after_main_content', 'responsive_woocommerce_wrapper_end', 10);
- 
+
 function responsive_woocommerce_wrapper() {
   echo '<div id="content-woocommerce" class="main">';
 }
- 
+
 function responsive_woocommerce_wrapper_end() {
   echo '</div><!-- end of #content-woocommerce -->';
 }
@@ -384,12 +384,12 @@ function travelify_widgets_init() {
 		'name' 				=> __( 'Footer', 'travelify' ),
 		'id' 					=> 'travelify_footer_widget',
 		'description'   	=> __( 'Shows widgets at footer.', 'travelify' ),
-		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  	=> '</aside>',
+		'before_widget' 	=> '<div class="col-3"><aside id="%1$s" class="widget %2$s">',
+		'after_widget'  	=> '</aside></div>',
 		'before_title'  	=> '<h3 class="widget-title">',
 		'after_title'   	=> '</h3>'
-		) 
-	);	
+		)
+	);
 }
 add_action( 'widgets_init', 'travelify_widgets_init' );
 
@@ -469,8 +469,8 @@ add_action('wp_head', 'travelify_headercode');
 /**
  * Custom header scripts
  */
-function travelify_headercode() { 
-    
+function travelify_headercode() {
+
    $travelify_headercode = '';
 	if ( ( !$travelify_headercode = get_transient( 'travelify_headercode' ) )  ) {
 
@@ -478,7 +478,7 @@ function travelify_headercode() {
 		$options = $travelify_theme_options_settings;
 
 		// custom scripts header code
-		if ( !empty( $options['customscripts_header'] ) ) {  
+		if ( !empty( $options['customscripts_header'] ) ) {
 		$travelify_headercode .=  $options[ 'customscripts_header' ] ;
 		}
 

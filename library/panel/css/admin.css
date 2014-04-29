@@ -137,7 +137,7 @@ h3.option-toggle a:hover,h3.option-active a {
 	padding-left: 10px;
 }
 .theme-option-header {
-	background-color: #1d1d1d;
+	background-color: #222;
 	position: relative;
 	padding: 20px;
 	font-size: 13px;
@@ -217,7 +217,7 @@ div.updated,div.error {
 	list-style: disc;
 	margin-left: 30px;
 }
-
-.updated.travelify-rateme {
-    display: none;
+label {
+	margin-left: 10px;
+	display: block;
 }

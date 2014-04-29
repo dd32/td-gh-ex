@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Travelify\n"
-"POT-Creation-Date: 2013-12-11 22:55+0200\n"
-"PO-Revision-Date: 2013-12-13 10:41+0200\n"
+"POT-Creation-Date: 2014-04-29 21:15+0200\n"
+"PO-Revision-Date: 2014-04-29 21:15+0200\n"
 "Last-Translator: Aigars Silkalns <a.silkalns@gmail.com>\n"
 "Language-Team: Color Awesomeness <info@colorawesomeness.com>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.2\n"
+"X-Generator: Poedit 1.6.5\n"
 "X-Poedit-KeywordsList: __;esc_attr_e;_e\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -82,19 +82,111 @@ msgstr "Nuovi Commenti &rarr;"
 msgid "Comments are closed."
 msgstr "Commenti chiusi"
 
-#: functions.php:71
+#: functions.php:76
 msgid "Primary Menu"
 msgstr "Menu Principale"
 
-#: searchform.php:7 searchform.php:8
-msgid "Search"
-msgstr "Cerca"
+#: library/functions/customizer.php:7
+#, fuzzy
+msgid "Travelify Header Area"
+msgstr "Opzioni intestazione"
+
+#: library/functions/customizer.php:8
+msgid "Use the following settings change color for menu and website title"
+msgstr ""
+
+#: library/functions/customizer.php:24
+msgid "Website Title Color"
+msgstr ""
+
+#: library/functions/customizer.php:44
+msgid "Website Title Hover Color"
+msgstr ""
+
+#: library/functions/customizer.php:64
+#, fuzzy
+msgid "Menu Bar Color"
+msgstr "Menu Principale"
+
+#: library/functions/customizer.php:83
+msgid "Menu Bar Hover Color"
+msgstr ""
+
+#: library/functions/customizer.php:102
+msgid "Menu Item Text Color"
+msgstr ""
+
+#: library/functions/customizer.php:122
+#, fuzzy
+msgid "Social Icon Color"
+msgstr "Link a reti sociali"
+
+#: library/functions/customizer.php:131
+msgid "Travelify Element Color"
+msgstr ""
+
+#: library/functions/customizer.php:132
+msgid "Use the following settings change color for website elements"
+msgstr ""
+
+#: library/functions/customizer.php:148
+msgid "Element Color"
+msgstr ""
+
+#: library/functions/customizer.php:168
+msgid "Element Hover Color"
+msgstr ""
+
+#: library/functions/customizer.php:188
+msgid "Wrapper Color"
+msgstr ""
+
+#: library/functions/customizer.php:208
+#, fuzzy
+msgid "Contnet Background Color"
+msgstr "Sfondo personalizzato"
+
+#: library/functions/customizer.php:217
+msgid "Travelify Typography Color"
+msgstr ""
+
+#: library/functions/customizer.php:218
+msgid ""
+"Use the following settings change color for typography such as links, "
+"headings and content"
+msgstr ""
+
+#: library/functions/customizer.php:234
+msgid "Entry Content Color"
+msgstr ""
+
+#: library/functions/customizer.php:253
+#, fuzzy
+msgid "Header/Title Color"
+msgstr "Opzioni intestazione"
+
+#: library/functions/customizer.php:273
+msgid "Link Color"
+msgstr ""
+
+#: library/functions/customizer.php:293
+msgid "Link Hover Color"
+msgstr ""
+
+#: library/functions/customizer.php:302
+#, fuzzy
+msgid "Travelify Footer"
+msgstr "Pie di pagina"
+
+#: library/functions/customizer.php:303
+msgid "Use the following settings customize Footer"
+msgstr ""
 
 #: library/functions/functions.php:296 library/functions/functions.php:310
 msgid "Navigation"
 msgstr "Navigazione"
 
-#: library/functions/functions.php:362 library/panel/theme-options.php:290
+#: library/functions/functions.php:362 library/panel/theme-options.php:291
 msgid "Left Sidebar"
 msgstr "Barra laterale sinistra"
 
@@ -102,7 +194,7 @@ msgstr "Barra laterale sinistra"
 msgid "Shows widgets at Left side."
 msgstr "Mostra widgets a sinistra"
 
-#: library/functions/functions.php:373 library/panel/theme-options.php:294
+#: library/functions/functions.php:373 library/panel/theme-options.php:295
 msgid "Right Sidebar"
 msgstr "Barra laterale destra"
 
@@ -155,7 +247,7 @@ msgstr "Senza barra laterale"
 msgid "No sidebar, Full Width"
 msgstr "Senza barra laterale, larghezza completa"
 
-#: library/panel/metaboxes.php:53 library/panel/theme-options.php:286
+#: library/panel/metaboxes.php:53 library/panel/theme-options.php:287
 msgid "No Sidebar, One Column"
 msgstr "Senza barra laterale, una colonna"
 
@@ -176,170 +268,179 @@ msgid "Theme Options by"
 msgstr "Opzioni dei temi di"
 
 #: library/panel/theme-options.php:132
+#, fuzzy
+msgid "Other Themes"
+msgstr "Altri"
+
+#: library/panel/theme-options.php:133
 msgid "Rate this Theme"
 msgstr "Assegna un punteggio a questo tema"
 
-#: library/panel/theme-options.php:133
+#: library/panel/theme-options.php:134
+#, fuzzy
 msgid "Theme Instruction"
-msgstr ""
+msgstr "Tema di"
 
-#: library/panel/theme-options.php:133
+#: library/panel/theme-options.php:134
 msgid "Theme Instructions"
 msgstr "Istruzioni del tema"
 
-#: library/panel/theme-options.php:134
+#: library/panel/theme-options.php:135
+#, fuzzy
 msgid "Support Forum"
-msgstr ""
-
-#: library/panel/theme-options.php:134
-msgid "Support"
 msgstr "Supporto"
 
 #: library/panel/theme-options.php:135
+msgid "Support"
+msgstr "Supporto"
+
+#: library/panel/theme-options.php:136
 msgid "Facebook"
 msgstr ""
 
-#: library/panel/theme-options.php:136
+#: library/panel/theme-options.php:137
 msgid "Twitter"
 msgstr ""
 
-#: library/panel/theme-options.php:151
+#: library/panel/theme-options.php:152
 msgid "Settings saved."
 msgstr "Settaggi salvati"
 
-#: library/panel/theme-options.php:157
+#: library/panel/theme-options.php:158
 msgid "Main Options"
 msgstr "Opzioni principali"
 
-#: library/panel/theme-options.php:158
+#: library/panel/theme-options.php:159
 msgid "Featured Slider"
 msgstr "Proiettore in evidenza"
 
-#: library/panel/theme-options.php:159
+#: library/panel/theme-options.php:160
 msgid "Social Links"
 msgstr "Link a reti sociali"
 
-#: library/panel/theme-options.php:160
+#: library/panel/theme-options.php:161
 msgid "Other"
 msgstr "Altri"
 
-#: library/panel/theme-options.php:166
+#: library/panel/theme-options.php:167
 msgid "Header Options"
 msgstr "Opzioni intestazione"
 
-#: library/panel/theme-options.php:171 library/panel/theme-options.php:181
+#: library/panel/theme-options.php:172 library/panel/theme-options.php:182
 msgid "Header Logo"
 msgstr "Logo intestazione"
 
-#: library/panel/theme-options.php:174
+#: library/panel/theme-options.php:175
+#, fuzzy
 msgid "Upload Logo"
-msgstr ""
+msgstr "Logo intestazione"
 
-#: library/panel/theme-options.php:178 library/panel/theme-options.php:223
-#: library/panel/theme-options.php:255
+#: library/panel/theme-options.php:179 library/panel/theme-options.php:224
+#: library/panel/theme-options.php:256
 msgid "Preview"
 msgstr "Anteprima"
 
-#: library/panel/theme-options.php:186
+#: library/panel/theme-options.php:187
 msgid "Show"
 msgstr "Mostrare"
 
-#: library/panel/theme-options.php:189
+#: library/panel/theme-options.php:190
 msgid "Header Logo Only"
 msgstr "Solo logo nell'intestazione"
 
-#: library/panel/theme-options.php:192
+#: library/panel/theme-options.php:193
 msgid "Header Text Only"
 msgstr "Solo  testo nell'intestazione "
 
-#: library/panel/theme-options.php:195
+#: library/panel/theme-options.php:196
 msgid "Disable"
 msgstr "Disattivare"
 
-#: library/panel/theme-options.php:200 library/panel/theme-options.php:232
-#: library/panel/theme-options.php:264 library/panel/theme-options.php:309
-#: library/panel/theme-options.php:347 library/panel/theme-options.php:380
-#: library/panel/theme-options.php:418 library/panel/theme-options.php:476
-#: library/panel/theme-options.php:515 library/panel/theme-options.php:538
+#: library/panel/theme-options.php:201 library/panel/theme-options.php:233
+#: library/panel/theme-options.php:265 library/panel/theme-options.php:310
+#: library/panel/theme-options.php:348 library/panel/theme-options.php:381
+#: library/panel/theme-options.php:419 library/panel/theme-options.php:477
+#: library/panel/theme-options.php:516 library/panel/theme-options.php:539
 msgid "Save All Changes"
 msgstr "Salvare tutte le modifiche"
 
-#: library/panel/theme-options.php:205
+#: library/panel/theme-options.php:206
 msgid "Favicon Options"
 msgstr "Opzioni del Favicon"
 
-#: library/panel/theme-options.php:210
+#: library/panel/theme-options.php:211
 msgid "Disable Favicon"
 msgstr "Disattivare Favicon"
 
-#: library/panel/theme-options.php:212 library/panel/theme-options.php:244
-#: library/panel/theme-options.php:430
+#: library/panel/theme-options.php:213 library/panel/theme-options.php:245
+#: library/panel/theme-options.php:431
 msgid "Check to disable"
 msgstr "Spuntare per disattivare"
 
-#: library/panel/theme-options.php:215
+#: library/panel/theme-options.php:216
 msgid "Favicon URL"
 msgstr "URL del Favicon"
 
-#: library/panel/theme-options.php:218
+#: library/panel/theme-options.php:219
 #, fuzzy
 msgid "Upload Favicon"
 msgstr "favicon"
 
-#: library/panel/theme-options.php:219
+#: library/panel/theme-options.php:220
 msgid ""
 "Favicon is this tiny icon you see beside URL in your browser address bar"
 msgstr ""
 "Il Favicon è quell'icona piccolina che si vede a sx dell'URL nella barra di "
 "navigazione del tuo browser"
 
-#: library/panel/theme-options.php:226
+#: library/panel/theme-options.php:227
 msgid "favicon"
 msgstr "favicon"
 
-#: library/panel/theme-options.php:237
+#: library/panel/theme-options.php:238
 msgid "Web Clip Icon Options"
 msgstr "Opzioni dell'icona Web Clip"
 
-#: library/panel/theme-options.php:242
+#: library/panel/theme-options.php:243
 msgid "Disable Web Clip Icon"
 msgstr "Disattivare l'icona Web Clip"
 
-#: library/panel/theme-options.php:247
+#: library/panel/theme-options.php:248
 msgid "Web Clip Icon URL"
 msgstr "URL dell'icona Web Clip"
 
-#: library/panel/theme-options.php:250
-msgid "Upload Web Clip Icon"
-msgstr ""
-
 #: library/panel/theme-options.php:251
+#, fuzzy
+msgid "Upload Web Clip Icon"
+msgstr "Opzioni dell'icona Web Clip"
+
+#: library/panel/theme-options.php:252
 msgid "Web Clip works as shortcut to website on iOS devices home screen"
 msgstr ""
 "Il Web Clip funziona come scorciatoia verso la pagina web nello schermo Home "
 "dei dispositivi iOS"
 
-#: library/panel/theme-options.php:258
+#: library/panel/theme-options.php:259
 msgid "webpage icon"
 msgstr "icona della pagina web"
 
-#: library/panel/theme-options.php:269
+#: library/panel/theme-options.php:270
 msgid "Layout Options"
 msgstr "Opzioni di Layout"
 
-#: library/panel/theme-options.php:274
+#: library/panel/theme-options.php:275
 msgid "Default Layout"
 msgstr "Layout di Default"
 
-#: library/panel/theme-options.php:278
+#: library/panel/theme-options.php:279
 msgid "No Sidebar"
 msgstr "Senza barra laterale"
 
-#: library/panel/theme-options.php:282
+#: library/panel/theme-options.php:283
 msgid "No Sidebar, Full Width"
 msgstr "Senza barra laterale, larghezza completa"
 
-#: library/panel/theme-options.php:300
+#: library/panel/theme-options.php:301
 msgid ""
 "This will set the default layout style. However, you can choose different "
 "layout for each page via editor"
@@ -347,48 +448,48 @@ msgstr ""
 "Questo definirà lo stile del layout di default. Nonostante, puoi scelgliere "
 "diversi layout per ogni pagina via l'editor"
 
-#: library/panel/theme-options.php:301
+#: library/panel/theme-options.php:302
 msgid "Reset Layout"
 msgstr "Resettare il layout"
 
-#: library/panel/theme-options.php:304
+#: library/panel/theme-options.php:305
 msgid "Check to reset"
 msgstr "Spuntare per resettare"
 
-#: library/panel/theme-options.php:314
+#: library/panel/theme-options.php:315
 msgid "Custom Background"
 msgstr "Sfondo personalizzato"
 
-#: library/panel/theme-options.php:320
+#: library/panel/theme-options.php:321
 msgid "Change theme background"
 msgstr "Cambiare lo sfondo del tema"
 
-#: library/panel/theme-options.php:323
+#: library/panel/theme-options.php:324
 #, php-format
 msgid "<a class=\"button\" href=\"%s\">Click here</a>"
 msgstr "<a class=\"button\" href=\"%s\">Cliccare qui</a>"
 
-#: library/panel/theme-options.php:333
+#: library/panel/theme-options.php:334
 msgid "RSS URL"
 msgstr "URL RSS"
 
-#: library/panel/theme-options.php:339
+#: library/panel/theme-options.php:340
 msgid "Feed Redirect URL"
 msgstr "URL di ridirezionamento dati"
 
-#: library/panel/theme-options.php:342
+#: library/panel/theme-options.php:343
 msgid "Enter your preferred RSS URL. (Feedburner or other)"
 msgstr "Introduci il tuo URL RSS preferito (Feedburner o altro)"
 
-#: library/panel/theme-options.php:352
+#: library/panel/theme-options.php:353
 msgid "Homepage Post Options"
 msgstr "Opzioni articoli della pagina home"
 
-#: library/panel/theme-options.php:358
+#: library/panel/theme-options.php:359
 msgid "Homepage posts categories:"
 msgstr "Categorie degli articoli nella pagina home"
 
-#: library/panel/theme-options.php:360
+#: library/panel/theme-options.php:361
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on "
 "the front page."
@@ -396,11 +497,11 @@ msgstr ""
 "Solo gli articoli che appartengono alle categorie selezionate qui saranno "
 "mostrati nella pagina home"
 
-#: library/panel/theme-options.php:365
+#: library/panel/theme-options.php:366
 msgid "--Disabled--"
 msgstr "--Disattivato--"
 
-#: library/panel/theme-options.php:375
+#: library/panel/theme-options.php:376
 msgid ""
 "You may select multiple categories by holding down the CTRL (Windows) or cmd "
 "(Mac)."
@@ -408,39 +509,39 @@ msgstr ""
 "Puoi selezionare molteplici categorie tenendo premuto il tasto CTRL "
 "(Windows) o cmd (Mac)"
 
-#: library/panel/theme-options.php:388
+#: library/panel/theme-options.php:389
 msgid "Featured Post/Page Slider Options"
 msgstr "Articolo in evidenza / Opzioni proiettore pagina"
 
-#: library/panel/theme-options.php:392
+#: library/panel/theme-options.php:393
 msgid "Exclude Slider post from Homepage posts?"
 msgstr "Escludere il proiettore di articoli  dagli articoli nella pagina home?"
 
-#: library/panel/theme-options.php:394
+#: library/panel/theme-options.php:395
 msgid "Check to exclude"
 msgstr "Spuntare per escludere"
 
-#: library/panel/theme-options.php:398
+#: library/panel/theme-options.php:399
 msgid "Number of Slides"
 msgstr "Numero di diapositive"
 
-#: library/panel/theme-options.php:403
+#: library/panel/theme-options.php:404
 msgid "Featured Slide #"
 msgstr "Diapositiva in evidenza #"
 
-#: library/panel/theme-options.php:405
+#: library/panel/theme-options.php:406
 msgid "Click Here To Edit"
 msgstr "Clicca qui per editare"
 
-#: library/panel/theme-options.php:411
+#: library/panel/theme-options.php:412
 msgid "How to use the featured slider?"
 msgstr "Come utilizzare il proiettore diapositive in evidenza?"
 
-#: library/panel/theme-options.php:413
+#: library/panel/theme-options.php:414
 msgid "Create Post or Page and add featured image to it."
 msgstr "Creare articolo o pagina ed aggiungervi un'immagine."
 
-#: library/panel/theme-options.php:414
+#: library/panel/theme-options.php:415
 msgid ""
 "Add all the Post ID that you want to use in the featured slider. Post ID can "
 "be found at All Posts table in last column"
@@ -449,7 +550,7 @@ msgstr ""
 "diapositive  in evidenza. L'ID dell'articolo si trova nell'ultima colonna , "
 "sotto \"tutti gli articoli\" nel menù di WP"
 
-#: library/panel/theme-options.php:415
+#: library/panel/theme-options.php:416
 msgid ""
 "Featured Slider will show featured images, Title and excerpt of the "
 "respected added post IDs."
@@ -457,56 +558,56 @@ msgstr ""
 "Il proiettore diapositive in evidenza mostrerà le immagini in evidenza, "
 "titolo e sommario dei rispettivi articoli di cui sono stata aggiunte le ID"
 
-#: library/panel/theme-options.php:416
+#: library/panel/theme-options.php:417
 msgid "The recommended image size is"
 msgstr "Le dimensioni raccomandate per l'immagine sono"
 
-#: library/panel/theme-options.php:424
+#: library/panel/theme-options.php:425
 msgid "Slider Options"
 msgstr "Opzioni del proiettore"
 
-#: library/panel/theme-options.php:428
+#: library/panel/theme-options.php:429
 msgid "Disable Slider"
 msgstr "Disattivare proiettore"
 
-#: library/panel/theme-options.php:434
+#: library/panel/theme-options.php:435
 msgid "Transition Effect:"
 msgstr "Effetto di transizione"
 
-#: library/panel/theme-options.php:454 library/panel/theme-options.php:506
-#, php-format
+#: library/panel/theme-options.php:455 library/panel/theme-options.php:507
+#, fuzzy, php-format
 msgid "%s"
-msgstr ""
+msgstr "%1$s presso %2$s"
 
-#: library/panel/theme-options.php:462
+#: library/panel/theme-options.php:463
 msgid "Transition Delay"
 msgstr "Ritardo di transizione"
 
-#: library/panel/theme-options.php:465 library/panel/theme-options.php:472
+#: library/panel/theme-options.php:466 library/panel/theme-options.php:473
 msgid "second(s)"
 msgstr "secondo(i)"
 
-#: library/panel/theme-options.php:469
+#: library/panel/theme-options.php:470
 msgid "Transition Length"
 msgstr "Durata della transizione"
 
-#: library/panel/theme-options.php:500
+#: library/panel/theme-options.php:501
 msgid "Enter URLs for your social networks e.g."
 msgstr "Introdurre gli URL delle tue reti sociali, ad es."
 
-#: library/panel/theme-options.php:523
+#: library/panel/theme-options.php:524
 msgid "Custom CSS (Advanced)"
 msgstr "CSS personalizzato (avanzato)"
 
-#: library/panel/theme-options.php:528
+#: library/panel/theme-options.php:529
 msgid "Enter your custom CSS styles."
 msgstr "Introduci i tuoi stili CSS personalizzati"
 
-#: library/panel/theme-options.php:529
+#: library/panel/theme-options.php:530
 msgid "This CSS will overwrite the CSS of style.css file."
 msgstr "Questo CSS sovrascriverà i CSS nel file style.css"
 
-#: library/panel/theme-options.php:533
+#: library/panel/theme-options.php:534
 msgid "Make sure you know what you are doing."
 msgstr "Se sicuro di quello che stai facendo?"
 
@@ -634,6 +735,10 @@ msgstr "Pagina %s"
 #: library/structure/header-extensions.php:428
 msgid "Search Results"
 msgstr "Risultati della ricerca"
+
+#: searchform.php:7 searchform.php:8
+msgid "Search"
+msgstr "Cerca"
 
 #~ msgid "Custom Scripts"
 #~ msgstr "Script personalizzati"

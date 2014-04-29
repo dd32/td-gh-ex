@@ -7,7 +7,7 @@
 /****************************************************************************************/
 
 add_action( 'travelify_footer', 'travelify_footer_widget_area', 10 );
-/** 
+/**
  * Displays the footer widgets
  */
 function travelify_footer_widget_area() {
@@ -31,7 +31,7 @@ add_action( 'travelify_footer', 'travelify_footer_info', 30 );
 /**
  * function to show the footer info, copyright information
  */
-function travelify_footer_info() {         
+function travelify_footer_info() {
    $output = '<div class="copyright">'.__( 'Copyright &copy;', 'travelify' ).' '.'[the-year] [site-link]'.' '.__( 'Theme by', 'travelify' ).' '.'[th-link]'.' '.__( 'Powered by', 'travelify' ).' '.'[wp-link] '.'</div><!-- .copyright -->';
    echo do_shortcode( $output );
 }
@@ -39,6 +39,18 @@ function travelify_footer_info() {
 /****************************************************************************************/
 
 add_action( 'travelify_footer', 'travelify_close_sitegenerator_div', 35 );
+
+
+/**
+ * add content to the right side of footer
+ */
+function travelify_footer_rightinfo() {
+		echo '<div class="footer-right">';
+		echo get_theme_mod( 'travelify_footer_textbox', '' );
+		echo '</div>';
+}
+add_action( 'travelify_footer', 'travelify_footer_rightinfo', 30 );
+
 /**
  * Closes the site generator div.
  */

@@ -1,120 +1,234 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Travelify\n"
-"POT-Creation-Date: 2013-12-11 22:46+0200\n"
-"PO-Revision-Date: 2013-12-11 22:47+0200\n"
+"POT-Creation-Date: 2014-04-29 21:19+0200\n"
+"PO-Revision-Date: 2014-04-29 21:19+0200\n"
 "Last-Translator: Aigars Silkalns <a.silkalns@gmail.com>\n"
 "Language-Team: Color Awesomeness <info@colorawesomeness.com>\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.2\n"
+"X-Generator: Poedit 1.6.5\n"
 "X-Poedit-KeywordsList: __;esc_attr_e;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:11
+#, fuzzy
 msgid "Error 404 - Page NOT Found"
-msgstr ""
+msgstr "404 错误 - 页面未找到"
 
 #: 404.php:14
+#, fuzzy
 msgid "It seems we can't find what you're looking for."
-msgstr ""
+msgstr "好像没有发现您要找的东西"
 
 #: 404.php:15
+#, fuzzy
 msgid "This might be because:"
-msgstr ""
+msgstr "可能是因为："
 
 #: 404.php:17
+#, fuzzy
 msgid "You have typed the web address incorrectly"
-msgstr ""
+msgstr "您输入的网页地址不正确"
 
 #: 404.php:18
+#, fuzzy
 msgid "The page you were looking for may have been moved, updated or deleted."
-msgstr ""
+msgstr "你要查找的页面可能被移动，更新或者删除了！"
 
 #: 404.php:20
+#, fuzzy
 msgid "Please try the following:"
-msgstr ""
+msgstr "请尝试下列方法："
 
 #: 404.php:22
+#, fuzzy
 msgid "Check for a mis-typed URL error"
-msgstr ""
+msgstr "检查错误的 URL 输入"
 
 #: 404.php:23
+#, fuzzy
 msgid "Press the refresh button on your browser."
-msgstr ""
+msgstr "Klik op de vernieuwen knop in uw Browser"
 
 #: 404.php:24
+#, fuzzy
 msgid "Go back to"
-msgstr ""
+msgstr "返回到"
 
 #: 404.php:24
+#, fuzzy
 msgid "Homepage"
-msgstr ""
+msgstr "主页"
 
 #: comments.php:24
-#, php-format
+#, fuzzy, php-format
 msgid "One thought on &ldquo;%2$s&rdquo;"
-msgstr ""
+msgstr "1 条思考于 &ldquo;%2$s&rdquo;"
 
 #: comments.php:27
-#, php-format
+#, fuzzy, php-format
 msgid "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr ""
+msgstr "%1$s 条思考于 &ldquo;%2$s&rdquo;"
 
 #: comments.php:38
+#, fuzzy
 msgid "Comment navigation"
-msgstr ""
+msgstr "评论导航"
 
 #: comments.php:39
+#, fuzzy
 msgid "&larr; Older Comments"
-msgstr ""
+msgstr "&larr; 更旧的评论"
 
 #: comments.php:40
+#, fuzzy
 msgid "Newer Comments &rarr;"
-msgstr ""
+msgstr "更新的评论 &rarr;"
 
 #: comments.php:47
+#, fuzzy
 msgid "Comments are closed."
-msgstr ""
+msgstr "评论已关闭"
 
-#: functions.php:71
+#: functions.php:76
+#, fuzzy
 msgid "Primary Menu"
+msgstr "主菜单"
+
+#: library/functions/customizer.php:7
+#, fuzzy
+msgid "Travelify Header Area"
+msgstr "标题选项"
+
+#: library/functions/customizer.php:8
+msgid "Use the following settings change color for menu and website title"
 msgstr ""
 
-#: searchform.php:7 searchform.php:8
-msgid "Search"
+#: library/functions/customizer.php:24
+msgid "Website Title Color"
+msgstr ""
+
+#: library/functions/customizer.php:44
+msgid "Website Title Hover Color"
+msgstr ""
+
+#: library/functions/customizer.php:64
+#, fuzzy
+msgid "Menu Bar Color"
+msgstr "主菜单"
+
+#: library/functions/customizer.php:83
+msgid "Menu Bar Hover Color"
+msgstr ""
+
+#: library/functions/customizer.php:102
+msgid "Menu Item Text Color"
+msgstr ""
+
+#: library/functions/customizer.php:122
+#, fuzzy
+msgid "Social Icon Color"
+msgstr "社交链接"
+
+#: library/functions/customizer.php:131
+msgid "Travelify Element Color"
+msgstr ""
+
+#: library/functions/customizer.php:132
+msgid "Use the following settings change color for website elements"
+msgstr ""
+
+#: library/functions/customizer.php:148
+msgid "Element Color"
+msgstr ""
+
+#: library/functions/customizer.php:168
+msgid "Element Hover Color"
+msgstr ""
+
+#: library/functions/customizer.php:188
+msgid "Wrapper Color"
+msgstr ""
+
+#: library/functions/customizer.php:208
+#, fuzzy
+msgid "Contnet Background Color"
+msgstr "自定义背景"
+
+#: library/functions/customizer.php:217
+msgid "Travelify Typography Color"
+msgstr ""
+
+#: library/functions/customizer.php:218
+msgid ""
+"Use the following settings change color for typography such as links, "
+"headings and content"
+msgstr ""
+
+#: library/functions/customizer.php:234
+msgid "Entry Content Color"
+msgstr ""
+
+#: library/functions/customizer.php:253
+#, fuzzy
+msgid "Header/Title Color"
+msgstr "标题选项"
+
+#: library/functions/customizer.php:273
+msgid "Link Color"
+msgstr ""
+
+#: library/functions/customizer.php:293
+msgid "Link Hover Color"
+msgstr ""
+
+#: library/functions/customizer.php:302
+#, fuzzy
+msgid "Travelify Footer"
+msgstr "页脚"
+
+#: library/functions/customizer.php:303
+msgid "Use the following settings customize Footer"
 msgstr ""
 
 #: library/functions/functions.php:296 library/functions/functions.php:310
+#, fuzzy
 msgid "Navigation"
-msgstr ""
+msgstr "导航"
 
-#: library/functions/functions.php:362 library/panel/theme-options.php:290
+#: library/functions/functions.php:362 library/panel/theme-options.php:291
+#, fuzzy
 msgid "Left Sidebar"
-msgstr ""
+msgstr "左边栏"
 
 #: library/functions/functions.php:364
+#, fuzzy
 msgid "Shows widgets at Left side."
-msgstr ""
+msgstr "在左侧显示小工具"
 
-#: library/functions/functions.php:373 library/panel/theme-options.php:294
+#: library/functions/functions.php:373 library/panel/theme-options.php:295
+#, fuzzy
 msgid "Right Sidebar"
-msgstr ""
+msgstr "右边栏"
 
 #: library/functions/functions.php:375
+#, fuzzy
 msgid "Shows widgets at Right side."
-msgstr ""
+msgstr "在右侧显示小工具"
 
 #: library/functions/functions.php:384
+#, fuzzy
 msgid "Footer"
-msgstr ""
+msgstr "页脚"
 
 #: library/functions/functions.php:386
+#, fuzzy
 msgid "Shows widgets at footer."
-msgstr ""
+msgstr "在页脚显示小工具"
 
 #: library/functions/shortcodes.php:49
 msgid "WordPress"
@@ -125,408 +239,510 @@ msgid "Colorlib"
 msgstr ""
 
 #: library/panel/metaboxes.php:16
+#, fuzzy
 msgid ""
 "Select layout for this specific Page only ( Note: This setting only reflects "
 "if page Template is set as Default Template and Blog Type Templates.)"
 msgstr ""
+"Selecteer een layout voor deze specifieke pagina. (Let op: Deze instelling "
+"heeft alleen effect als de pagina template is gezet als standaard template "
+"en blog type templates.)"
 
 #: library/panel/metaboxes.php:22
+#, fuzzy
 msgid "Select layout for this specific Post only"
-msgstr ""
+msgstr "Selecteer een layout voor dit specifieke bericht."
 
 #: library/panel/metaboxes.php:35
+#, fuzzy
 msgid "Default Layout Set in"
-msgstr ""
+msgstr "默认布局，相关设定可查看"
 
 #: library/panel/metaboxes.php:35
+#, fuzzy
 msgid "Theme Settings"
-msgstr ""
+msgstr "主题设置"
 
 #: library/panel/metaboxes.php:41
+#, fuzzy
 msgid "No sidebar"
-msgstr ""
+msgstr "无侧边栏"
 
 #: library/panel/metaboxes.php:47
+#, fuzzy
 msgid "No sidebar, Full Width"
-msgstr ""
+msgstr "无侧边栏，全宽"
 
-#: library/panel/metaboxes.php:53 library/panel/theme-options.php:286
+#: library/panel/metaboxes.php:53 library/panel/theme-options.php:287
+#, fuzzy
 msgid "No Sidebar, One Column"
-msgstr ""
+msgstr "无侧边栏，单栏布局"
 
 #: library/panel/metaboxes.php:59
+#, fuzzy
 msgid "Left sidebar"
-msgstr ""
+msgstr "左边栏"
 
 #: library/panel/metaboxes.php:65
+#, fuzzy
 msgid "Right sidebar"
-msgstr ""
+msgstr "右边栏"
 
 #: library/panel/theme-options.php:92 library/panel/theme-options.php:93
+#, fuzzy
 msgid "Theme Options"
-msgstr ""
+msgstr "主题选项"
 
 #: library/panel/theme-options.php:125
+#, fuzzy
 msgid "Theme Options by"
-msgstr ""
+msgstr "主题选项"
 
 #: library/panel/theme-options.php:132
+#, fuzzy
+msgid "Other Themes"
+msgstr "其他"
+
+#: library/panel/theme-options.php:133
+#, fuzzy
 msgid "Rate this Theme"
-msgstr ""
+msgstr "为本主题投票"
 
-#: library/panel/theme-options.php:133
+#: library/panel/theme-options.php:134
+#, fuzzy
 msgid "Theme Instruction"
-msgstr ""
+msgstr "主题作者:"
 
-#: library/panel/theme-options.php:133
+#: library/panel/theme-options.php:134
+#, fuzzy
 msgid "Theme Instructions"
-msgstr ""
-
-#: library/panel/theme-options.php:134
-msgid "Support Forum"
-msgstr ""
-
-#: library/panel/theme-options.php:134
-msgid "Support"
-msgstr ""
+msgstr "主题说明"
 
 #: library/panel/theme-options.php:135
+#, fuzzy
+msgid "Support Forum"
+msgstr "技术支持"
+
+#: library/panel/theme-options.php:135
+#, fuzzy
+msgid "Support"
+msgstr "技术支持"
+
+#: library/panel/theme-options.php:136
 msgid "Facebook"
 msgstr ""
 
-#: library/panel/theme-options.php:136
+#: library/panel/theme-options.php:137
 msgid "Twitter"
 msgstr ""
 
-#: library/panel/theme-options.php:151
+#: library/panel/theme-options.php:152
+#, fuzzy
 msgid "Settings saved."
-msgstr ""
-
-#: library/panel/theme-options.php:157
-msgid "Main Options"
-msgstr ""
+msgstr "设置已保存"
 
 #: library/panel/theme-options.php:158
-msgid "Featured Slider"
-msgstr ""
+#, fuzzy
+msgid "Main Options"
+msgstr "主选项"
 
 #: library/panel/theme-options.php:159
-msgid "Social Links"
-msgstr ""
+#, fuzzy
+msgid "Featured Slider"
+msgstr "特色滑块"
 
 #: library/panel/theme-options.php:160
+#, fuzzy
+msgid "Social Links"
+msgstr "社交链接"
+
+#: library/panel/theme-options.php:161
+#, fuzzy
 msgid "Other"
-msgstr ""
+msgstr "其他"
 
-#: library/panel/theme-options.php:166
+#: library/panel/theme-options.php:167
+#, fuzzy
 msgid "Header Options"
-msgstr ""
+msgstr "标题选项"
 
-#: library/panel/theme-options.php:171 library/panel/theme-options.php:181
+#: library/panel/theme-options.php:172 library/panel/theme-options.php:182
+#, fuzzy
 msgid "Header Logo"
-msgstr ""
+msgstr "标题 Logo"
 
-#: library/panel/theme-options.php:174
+#: library/panel/theme-options.php:175
+#, fuzzy
 msgid "Upload Logo"
-msgstr ""
+msgstr "标题 Logo"
 
-#: library/panel/theme-options.php:178 library/panel/theme-options.php:223
-#: library/panel/theme-options.php:255
+#: library/panel/theme-options.php:179 library/panel/theme-options.php:224
+#: library/panel/theme-options.php:256
+#, fuzzy
 msgid "Preview"
-msgstr ""
+msgstr "预览"
 
-#: library/panel/theme-options.php:186
+#: library/panel/theme-options.php:187
+#, fuzzy
 msgid "Show"
-msgstr ""
+msgstr "显示"
 
-#: library/panel/theme-options.php:189
+#: library/panel/theme-options.php:190
+#, fuzzy
 msgid "Header Logo Only"
-msgstr ""
+msgstr "仅标题 Logo"
 
-#: library/panel/theme-options.php:192
+#: library/panel/theme-options.php:193
+#, fuzzy
 msgid "Header Text Only"
-msgstr ""
+msgstr "仅标题文字"
 
-#: library/panel/theme-options.php:195
+#: library/panel/theme-options.php:196
+#, fuzzy
 msgid "Disable"
-msgstr ""
+msgstr "禁用"
 
-#: library/panel/theme-options.php:200 library/panel/theme-options.php:232
-#: library/panel/theme-options.php:264 library/panel/theme-options.php:309
-#: library/panel/theme-options.php:347 library/panel/theme-options.php:380
-#: library/panel/theme-options.php:418 library/panel/theme-options.php:476
-#: library/panel/theme-options.php:515 library/panel/theme-options.php:538
+#: library/panel/theme-options.php:201 library/panel/theme-options.php:233
+#: library/panel/theme-options.php:265 library/panel/theme-options.php:310
+#: library/panel/theme-options.php:348 library/panel/theme-options.php:381
+#: library/panel/theme-options.php:419 library/panel/theme-options.php:477
+#: library/panel/theme-options.php:516 library/panel/theme-options.php:539
+#, fuzzy
 msgid "Save All Changes"
-msgstr ""
+msgstr "保存所有变更"
 
-#: library/panel/theme-options.php:205
+#: library/panel/theme-options.php:206
+#, fuzzy
 msgid "Favicon Options"
-msgstr ""
+msgstr "Favicon 选项"
 
-#: library/panel/theme-options.php:210
+#: library/panel/theme-options.php:211
+#, fuzzy
 msgid "Disable Favicon"
-msgstr ""
+msgstr "禁用 Favicon"
 
-#: library/panel/theme-options.php:212 library/panel/theme-options.php:244
-#: library/panel/theme-options.php:430
+#: library/panel/theme-options.php:213 library/panel/theme-options.php:245
+#: library/panel/theme-options.php:431
+#, fuzzy
 msgid "Check to disable"
-msgstr ""
+msgstr "勾选以禁用"
 
-#: library/panel/theme-options.php:215
+#: library/panel/theme-options.php:216
+#, fuzzy
 msgid "Favicon URL"
-msgstr ""
-
-#: library/panel/theme-options.php:218
-msgid "Upload Favicon"
-msgstr ""
+msgstr "Favicon 地址（URL)"
 
 #: library/panel/theme-options.php:219
+#, fuzzy
+msgid "Upload Favicon"
+msgstr "Favicon"
+
+#: library/panel/theme-options.php:220
+#, fuzzy
 msgid ""
 "Favicon is this tiny icon you see beside URL in your browser address bar"
 msgstr ""
+"Favicon 就是浏览器地址栏中显示在 URL 旁边的小图标（或者选项卡标题左边的小图"
+"标）"
 
-#: library/panel/theme-options.php:226
+#: library/panel/theme-options.php:227
+#, fuzzy
 msgid "favicon"
-msgstr ""
+msgstr "Favicon"
 
-#: library/panel/theme-options.php:237
+#: library/panel/theme-options.php:238
+#, fuzzy
 msgid "Web Clip Icon Options"
-msgstr ""
+msgstr "网页剪辑选项"
 
-#: library/panel/theme-options.php:242
+#: library/panel/theme-options.php:243
+#, fuzzy
 msgid "Disable Web Clip Icon"
-msgstr ""
+msgstr "禁用网页剪辑图标"
 
-#: library/panel/theme-options.php:247
+#: library/panel/theme-options.php:248
+#, fuzzy
 msgid "Web Clip Icon URL"
-msgstr ""
-
-#: library/panel/theme-options.php:250
-msgid "Upload Web Clip Icon"
-msgstr ""
+msgstr "网页剪辑地址（URL）"
 
 #: library/panel/theme-options.php:251
+#, fuzzy
+msgid "Upload Web Clip Icon"
+msgstr "网页剪辑选项"
+
+#: library/panel/theme-options.php:252
+#, fuzzy
 msgid "Web Clip works as shortcut to website on iOS devices home screen"
-msgstr ""
+msgstr "网页剪辑就是 iOS 设备主屏幕上网站的快捷方式"
 
-#: library/panel/theme-options.php:258
+#: library/panel/theme-options.php:259
+#, fuzzy
 msgid "webpage icon"
-msgstr ""
+msgstr "网页图标"
 
-#: library/panel/theme-options.php:269
+#: library/panel/theme-options.php:270
+#, fuzzy
 msgid "Layout Options"
-msgstr ""
+msgstr "布局选项"
 
-#: library/panel/theme-options.php:274
+#: library/panel/theme-options.php:275
+#, fuzzy
 msgid "Default Layout"
-msgstr ""
+msgstr "默认布局"
 
-#: library/panel/theme-options.php:278
+#: library/panel/theme-options.php:279
+#, fuzzy
 msgid "No Sidebar"
-msgstr ""
+msgstr "无侧边栏"
 
-#: library/panel/theme-options.php:282
+#: library/panel/theme-options.php:283
+#, fuzzy
 msgid "No Sidebar, Full Width"
-msgstr ""
+msgstr "无侧边栏，全宽"
 
-#: library/panel/theme-options.php:300
+#: library/panel/theme-options.php:301
+#, fuzzy
 msgid ""
 "This will set the default layout style. However, you can choose different "
 "layout for each page via editor"
 msgstr ""
+"本选项将设置默认布局风格，不过，你也可以在页面编辑器里为特定页面重新选择不同"
+"的布局"
 
-#: library/panel/theme-options.php:301
+#: library/panel/theme-options.php:302
+#, fuzzy
 msgid "Reset Layout"
-msgstr ""
+msgstr "重置布局"
 
-#: library/panel/theme-options.php:304
+#: library/panel/theme-options.php:305
+#, fuzzy
 msgid "Check to reset"
-msgstr ""
+msgstr "勾选以重置"
 
-#: library/panel/theme-options.php:314
+#: library/panel/theme-options.php:315
+#, fuzzy
 msgid "Custom Background"
-msgstr ""
+msgstr "自定义背景"
 
-#: library/panel/theme-options.php:320
+#: library/panel/theme-options.php:321
+#, fuzzy
 msgid "Change theme background"
-msgstr ""
+msgstr "修改主题背景"
 
-#: library/panel/theme-options.php:323
-#, php-format
+#: library/panel/theme-options.php:324
+#, fuzzy, php-format
 msgid "<a class=\"button\" href=\"%s\">Click here</a>"
-msgstr ""
+msgstr "<a class=\"button\" href=\"%s\">点击这里</a>"
 
-#: library/panel/theme-options.php:333
+#: library/panel/theme-options.php:334
+#, fuzzy
 msgid "RSS URL"
-msgstr ""
+msgstr "RSS 地址（URL）"
 
-#: library/panel/theme-options.php:339
+#: library/panel/theme-options.php:340
+#, fuzzy
 msgid "Feed Redirect URL"
-msgstr ""
+msgstr "订阅重定向地址（URL)"
 
-#: library/panel/theme-options.php:342
+#: library/panel/theme-options.php:343
+#, fuzzy
 msgid "Enter your preferred RSS URL. (Feedburner or other)"
-msgstr ""
+msgstr "输入您的 RSS 地址（URL）（Feedburner 或者其他）"
 
-#: library/panel/theme-options.php:352
+#: library/panel/theme-options.php:353
+#, fuzzy
 msgid "Homepage Post Options"
-msgstr ""
+msgstr "主页文章选项"
 
-#: library/panel/theme-options.php:358
+#: library/panel/theme-options.php:359
+#, fuzzy
 msgid "Homepage posts categories:"
-msgstr ""
+msgstr "主页文章分类"
 
-#: library/panel/theme-options.php:360
+#: library/panel/theme-options.php:361
+#, fuzzy
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on "
 "the front page."
-msgstr ""
+msgstr "Csak ezen kategóriák Bejegyzései jelennek meg a anyitó oldalon."
 
-#: library/panel/theme-options.php:365
+#: library/panel/theme-options.php:366
+#, fuzzy
 msgid "--Disabled--"
-msgstr ""
+msgstr "--禁用--"
 
-#: library/panel/theme-options.php:375
+#: library/panel/theme-options.php:376
+#, fuzzy
 msgid ""
 "You may select multiple categories by holding down the CTRL (Windows) or cmd "
 "(Mac)."
-msgstr ""
+msgstr "您可以通过按住 CTRL（Windows）或者 cmd（Mac）来选择多个分类"
 
-#: library/panel/theme-options.php:388
+#: library/panel/theme-options.php:389
+#, fuzzy
 msgid "Featured Post/Page Slider Options"
-msgstr ""
+msgstr "特色文章或特色页面滑块选项"
 
-#: library/panel/theme-options.php:392
+#: library/panel/theme-options.php:393
+#, fuzzy
 msgid "Exclude Slider post from Homepage posts?"
-msgstr ""
+msgstr "是否排除主页上已显示的文章？"
 
-#: library/panel/theme-options.php:394
+#: library/panel/theme-options.php:395
+#, fuzzy
 msgid "Check to exclude"
-msgstr ""
+msgstr "勾选以排除"
 
-#: library/panel/theme-options.php:398
+#: library/panel/theme-options.php:399
+#, fuzzy
 msgid "Number of Slides"
-msgstr ""
+msgstr "滑块数量"
 
-#: library/panel/theme-options.php:403
+#: library/panel/theme-options.php:404
+#, fuzzy
 msgid "Featured Slide #"
-msgstr ""
+msgstr "特色滑块 #"
 
-#: library/panel/theme-options.php:405
+#: library/panel/theme-options.php:406
+#, fuzzy
 msgid "Click Here To Edit"
-msgstr ""
+msgstr "点击这里编辑相应文章"
 
-#: library/panel/theme-options.php:411
+#: library/panel/theme-options.php:412
+#, fuzzy
 msgid "How to use the featured slider?"
-msgstr ""
-
-#: library/panel/theme-options.php:413
-msgid "Create Post or Page and add featured image to it."
-msgstr ""
+msgstr "Hoe gebruik ik de uitgelichte slider?"
 
 #: library/panel/theme-options.php:414
+#, fuzzy
+msgid "Create Post or Page and add featured image to it."
+msgstr "创建文章或页面并在其中添加特色图片"
+
+#: library/panel/theme-options.php:415
+#, fuzzy
 msgid ""
 "Add all the Post ID that you want to use in the featured slider. Post ID can "
 "be found at All Posts table in last column"
 msgstr ""
+"Voeg het bericht ID dat je wilt gebruiken in de uitgelichte Slider. Het "
+"bericht ID kan worden gevonden bij de alle berichten tabel in de laatste "
+"kolom."
 
-#: library/panel/theme-options.php:415
+#: library/panel/theme-options.php:416
+#, fuzzy
 msgid ""
 "Featured Slider will show featured images, Title and excerpt of the "
 "respected added post IDs."
-msgstr ""
+msgstr "特色滑块将显示特色图片，标题以及相应文章的摘要"
 
-#: library/panel/theme-options.php:416
+#: library/panel/theme-options.php:417
+#, fuzzy
 msgid "The recommended image size is"
-msgstr ""
+msgstr "推荐的图片尺寸是"
 
-#: library/panel/theme-options.php:424
+#: library/panel/theme-options.php:425
+#, fuzzy
 msgid "Slider Options"
-msgstr ""
+msgstr "滑块选项"
 
-#: library/panel/theme-options.php:428
+#: library/panel/theme-options.php:429
+#, fuzzy
 msgid "Disable Slider"
-msgstr ""
+msgstr "禁用滑块"
 
-#: library/panel/theme-options.php:434
+#: library/panel/theme-options.php:435
+#, fuzzy
 msgid "Transition Effect:"
-msgstr ""
+msgstr "过渡特效"
 
-#: library/panel/theme-options.php:454 library/panel/theme-options.php:506
-#, php-format
+#: library/panel/theme-options.php:455 library/panel/theme-options.php:507
+#, fuzzy, php-format
 msgid "%s"
-msgstr ""
+msgstr "%1$s 于 %2$s"
 
-#: library/panel/theme-options.php:462
+#: library/panel/theme-options.php:463
+#, fuzzy
 msgid "Transition Delay"
-msgstr ""
+msgstr "过渡延迟"
 
-#: library/panel/theme-options.php:465 library/panel/theme-options.php:472
+#: library/panel/theme-options.php:466 library/panel/theme-options.php:473
+#, fuzzy
 msgid "second(s)"
-msgstr ""
+msgstr "秒"
 
-#: library/panel/theme-options.php:469
+#: library/panel/theme-options.php:470
+#, fuzzy
 msgid "Transition Length"
-msgstr ""
+msgstr "过渡时长"
 
-#: library/panel/theme-options.php:500
+#: library/panel/theme-options.php:501
+#, fuzzy
 msgid "Enter URLs for your social networks e.g."
-msgstr ""
+msgstr "输入您的社交网络地址（URL），比如："
 
-#: library/panel/theme-options.php:523
+#: library/panel/theme-options.php:524
+#, fuzzy
 msgid "Custom CSS (Advanced)"
-msgstr ""
-
-#: library/panel/theme-options.php:528
-msgid "Enter your custom CSS styles."
-msgstr ""
+msgstr "自定义样式表（CSS）（高级）"
 
 #: library/panel/theme-options.php:529
+#, fuzzy
+msgid "Enter your custom CSS styles."
+msgstr "输入您的自定义样式（CSS）"
+
+#: library/panel/theme-options.php:530
+#, fuzzy
 msgid "This CSS will overwrite the CSS of style.css file."
-msgstr ""
+msgstr "这里的 CSS 将会覆盖 style.css 文件中的样式"
 
-#: library/panel/theme-options.php:533
+#: library/panel/theme-options.php:534
+#, fuzzy
 msgid "Make sure you know what you are doing."
-msgstr ""
+msgstr "请确认您知道您在做什么"
 
 #: library/structure/content-extensions.php:148
 #: library/structure/content-extensions.php:282
 #: library/structure/content-extensions.php:463
 #: library/structure/content-extensions.php:575
 #: library/structure/content-extensions.php:689
+#, fuzzy
 msgid "No Comments"
-msgstr ""
+msgstr "没有评论"
 
 #: library/structure/content-extensions.php:148
 #: library/structure/content-extensions.php:282
 #: library/structure/content-extensions.php:463
 #: library/structure/content-extensions.php:575
 #: library/structure/content-extensions.php:689
+#, fuzzy
 msgid "1 Comment"
-msgstr ""
+msgstr "1 条评论"
 
 #: library/structure/content-extensions.php:148
 #: library/structure/content-extensions.php:282
 #: library/structure/content-extensions.php:463
 #: library/structure/content-extensions.php:575
 #: library/structure/content-extensions.php:689
+#, fuzzy
 msgid "% Comments"
-msgstr ""
+msgstr "没有评论"
 
 #: library/structure/content-extensions.php:148
 #: library/structure/content-extensions.php:282
 #: library/structure/content-extensions.php:463
 #: library/structure/content-extensions.php:575
 #: library/structure/content-extensions.php:689
+#, fuzzy
 msgid "Comments Off"
-msgstr ""
+msgstr "评论已关闭"
 
 #: library/structure/content-extensions.php:152
 #: library/structure/content-extensions.php:467
 #: library/structure/content-extensions.php:579
 #: library/structure/content-extensions.php:664
+#, fuzzy
 msgid "Read more"
-msgstr ""
+msgstr "继续阅读"
 
 #: library/structure/content-extensions.php:167
 #: library/structure/content-extensions.php:238
@@ -535,14 +751,16 @@ msgstr ""
 #: library/structure/content-extensions.php:495
 #: library/structure/content-extensions.php:606
 #: library/structure/content-extensions.php:718
+#, fuzzy
 msgid "No Posts Found."
-msgstr ""
+msgstr "没发现任何文章"
 
 #: library/structure/content-extensions.php:207
 #: library/structure/content-extensions.php:301
 #: library/structure/content-extensions.php:667
+#, fuzzy
 msgid "Pages:"
-msgstr ""
+msgstr "页面："
 
 #: library/structure/content-extensions.php:289
 msgid ", "
@@ -553,63 +771,80 @@ msgstr ""
 #: library/structure/content-extensions.php:709
 #: library/structure/content-extensions.php:745
 #: library/structure/content-extensions.php:765
+#, fuzzy
 msgid "&laquo; Previous"
-msgstr ""
+msgstr "&laquo; 上一篇"
 
 #: library/structure/content-extensions.php:487
 #: library/structure/content-extensions.php:598
 #: library/structure/content-extensions.php:710
 #: library/structure/content-extensions.php:746
 #: library/structure/content-extensions.php:766
+#, fuzzy
 msgid "Next &raquo;"
-msgstr ""
+msgstr "下一篇 &raquo;"
 
 #: library/structure/content-extensions.php:810
+#, fuzzy
 msgid "Pingback:"
-msgstr ""
+msgstr "Spätný odkaz"
 
 #: library/structure/content-extensions.php:810
+#, fuzzy
 msgid "(Edit)"
-msgstr ""
+msgstr "（编辑）"
 
 #: library/structure/content-extensions.php:825
+#, fuzzy
 msgid "Post author"
-msgstr ""
+msgstr "文章作者"
 
 #: library/structure/content-extensions.php:831
-#, php-format
+#, fuzzy, php-format
 msgid "%1$s at %2$s"
-msgstr ""
+msgstr "%1$s 于 %2$s"
 
 #: library/structure/content-extensions.php:837
+#, fuzzy
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "您的评论需要审核，审核通过后将会自动显示"
 
 #: library/structure/content-extensions.php:842
+#, fuzzy
 msgid "Edit"
-msgstr ""
+msgstr "（编辑）"
 
 #: library/structure/content-extensions.php:846
+#, fuzzy
 msgid "Reply"
-msgstr ""
+msgstr "回复"
 
 #: library/structure/footer-extensions.php:35
+#, fuzzy
 msgid "Copyright &copy;"
-msgstr ""
+msgstr "Všetky práva vyhradené &copy;"
 
 #: library/structure/footer-extensions.php:35
+#, fuzzy
 msgid "Theme by"
-msgstr ""
+msgstr "主题作者:"
 
 #: library/structure/footer-extensions.php:35
+#, fuzzy
 msgid "Powered by"
-msgstr ""
+msgstr " 光荣地使用"
 
 #: library/structure/header-extensions.php:75
-#, php-format
+#, fuzzy, php-format
 msgid "Page %s"
-msgstr ""
+msgstr "页面 %s"
 
 #: library/structure/header-extensions.php:428
+#, fuzzy
 msgid "Search Results"
-msgstr ""
+msgstr "搜索结果"
+
+#: searchform.php:7 searchform.php:8
+#, fuzzy
+msgid "Search"
+msgstr "搜索"

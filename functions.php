@@ -13,12 +13,14 @@ if ( ! isset( $content_width ) )
 
 if ( ! function_exists( 'travelify_setup' ) ):
 
+add_filter('widget_text', 'do_shortcode');
+
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  */
 add_action( 'after_setup_theme', 'travelify_setup' );
 
- /** 
+ /**
  * Note that this function is hooked into the after_setup_theme hook, which runs
  * before the init hook. The init hook is too late for some features, such as indicating
  * support post thumbnails.
@@ -26,7 +28,7 @@ add_action( 'after_setup_theme', 'travelify_setup' );
  */
 
 function travelify_setup() {
-	/** 
+	/**
 	 * travelify_add_files hook
 	 *
 	 * Adding other addtional files if needed.
@@ -38,7 +40,7 @@ function travelify_setup() {
 
 	/** Load functions */
 	require( get_template_directory() . '/library/functions/functions.php' );
-	
+
 	/** Load WP backend related functions */
 	require( get_template_directory() . '/library/panel/themeoptions-defaults.php' );
 	require( get_template_directory() . '/library/panel/theme-options.php' );
@@ -48,13 +50,16 @@ function travelify_setup() {
 	/** Load Shortcodes */
 	require( get_template_directory() . '/library/functions/shortcodes.php' );
 
+	/** Load WP Customizer */
+	require( get_template_directory() . '/library/functions/customizer.php' );
+
 	/** Load Structure */
 	require( get_template_directory() . '/library/structure/header-extensions.php' );
 	require( get_template_directory() . '/library/structure/sidebar-extensions.php' );
 	require( get_template_directory() . '/library/structure/footer-extensions.php' );
 	require( get_template_directory() . '/library/structure/content-extensions.php' );
 
-	/** 
+	/**
 	 * travelify_add_functionality hook
 	 *
 	 * Adding other addtional functionality if needed.
@@ -65,8 +70,8 @@ function travelify_setup() {
 	add_theme_support( 'automatic-feed-links' );
 
 	// This theme uses Featured Images (also known as post thumbnails) for per-post/per-page.
-	add_theme_support( 'post-thumbnails' ); 
- 
+	add_theme_support( 'post-thumbnails' );
+
 	// This theme uses wp_nav_menu() in header menu location.
 	register_nav_menu( 'primary', __( 'Primary Menu', 'travelify' ) );
 
@@ -78,7 +83,7 @@ function travelify_setup() {
 
 	// This feature enables woocommerce support for a theme.
 	add_theme_support( 'woocommerce' );
-	
+
 	/**
 	 * This theme supports custom background color and image
 	 */
@@ -87,12 +92,12 @@ function travelify_setup() {
 		'default-image' => get_template_directory_uri() . '/images/background.png',
 	);
 	add_theme_support( 'custom-background', $args );
-	
+
 	/**
-	 * This theme supports add_editor_style 
+	 * This theme supports add_editor_style
 	 */
 	add_editor_style();
-}	
+}
 endif; // travelify_setup
 
 ?>
