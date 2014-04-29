@@ -66,7 +66,7 @@ if( !class_exists( 'ReduxFramework' ) ) {
         public static $wp_content_url;
         public static $base_wp_content_url;
         public static $_properties;
-        public static $_is_plugin = true;
+        public static $_is_plugin = false;
         public static $_as_plugin = false;
 
         static function init() {
@@ -77,7 +77,7 @@ if( !class_exists( 'ReduxFramework' ) ) {
             $wp_content_dir = trailingslashit( str_replace( '//', '/', $wp_content_dir ) );
             $relative_url   = '/themeoptions/';
             self::$wp_content_url = trailingslashit( Redux_Helpers::cleanFilePath( ( is_ssl() ? str_replace( 'http://', 'https://', WP_CONTENT_URL ) : WP_CONTENT_URL ) ) );
-            self::$_url     = trailingslashit(get_template_directory_uri()) . $relative_url;
+            self::$_url     = get_template_directory_uri() . $relative_url;
 
         }// ::init()
 

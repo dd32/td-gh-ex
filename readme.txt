@@ -47,6 +47,9 @@ Virtue Theme Uses:
 -------------------------------------------------------
 
 = Theme Name: Virtue =
+= Version: 2.1.6 =
+* Fix Theme Options Script URL
+
 = Version: 2.1.5 =
 * Fix Theme Options Script URL
 * Fix Header Layout 50%
