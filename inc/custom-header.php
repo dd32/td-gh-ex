@@ -38,7 +38,7 @@ function catchkathmandu_custom_header_setup() {
 	$args = array(
 		// Text color and image (empty to use none).
 		'default-text-color'     => '000',
-		'default-image'          => get_template_directory_uri() . '/images/logo.png',
+		'default-image'          => '',
 		
 		// Set height and width, with a maximum value for the width.
 		'height'                 => 85,

@@ -64,6 +64,13 @@ Access to free support forum at http://catchthemes.com/support-forum/forum/catch
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 
 == Changelog ==
+
+Version 1.3
+* Added French translation fr_FR.po and fr_FR.mo
+* Removed cursor pointer from slider entry-container and added only in link slider title (Reported by bwooster47)
+* Fixed homepage headline button not showing when disabling Homepage Headline and Homepage Subheadline (Reposted by Max)
+* Disable logo by Deafult as per the new theme review guideline
+
 Version 1.2.1 (Merged with 1.2)
 * Added Aria Haspopup for menu in Touch Devices
 * Fixed slider text issue

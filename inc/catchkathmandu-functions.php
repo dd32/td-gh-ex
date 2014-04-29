@@ -983,7 +983,7 @@ function catchkathmandu_homepage_headline() {
 	// Get Page ID outside Loop
 	$page_id = $wp_query->get_queried_object_id();
 
-	 if ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && ( empty( $disable_headline ) || empty( $disable_subheadline ) ) ) { 	
+	 if ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && ( empty( $disable_headline ) || empty( $disable_subheadline ) || empty( $disable_button ) ) ) { 	
 		
 		if ( !$catchkathmandu_homepage_headline = get_transient( 'catchkathmandu_homepage_headline' ) ) {
 			

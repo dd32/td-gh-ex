@@ -821,7 +821,7 @@ function catchkathmandu_theme_options_do_page() {
                         <div class="option-content inside">
                          	<div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'Enable Latest Posts or Page?', 'catchkathmandu' ); ?>
+                                	<?php _e( 'Enable Latest Posts?', 'catchkathmandu' ); ?>
                                 </div>
                                 <div class="col col-2">
                                 	<input type='hidden' value='0' name='catchkathmandu_options[enable_posts_home]'>
