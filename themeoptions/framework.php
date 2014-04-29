@@ -75,9 +75,9 @@ if( !class_exists( 'ReduxFramework' ) ) {
             self::$_dir     = trailingslashit( Redux_Helpers::cleanFilePath( dirname( __FILE__ ) ) );
             $wp_content_dir = trailingslashit( Redux_Helpers::cleanFilePath( WP_CONTENT_DIR ) );
             $wp_content_dir = trailingslashit( str_replace( '//', '/', $wp_content_dir ) );
-            $relative_url   = str_replace( $wp_content_dir, '', self::$_dir );
+            $relative_url   = '/themeoptions/';
             self::$wp_content_url = trailingslashit( Redux_Helpers::cleanFilePath( ( is_ssl() ? str_replace( 'http://', 'https://', WP_CONTENT_URL ) : WP_CONTENT_URL ) ) );
-            self::$_url     = trailingslashit(get_template_directory_uri()) . trailingslashit(basename(__DIR__));
+            self::$_url     = trailingslashit(get_template_directory_uri()) . $relative_url;
 
         }// ::init()
 

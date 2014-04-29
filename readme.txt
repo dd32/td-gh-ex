@@ -47,6 +47,10 @@ Virtue Theme Uses:
 -------------------------------------------------------
 
 = Theme Name: Virtue =
+= Version: 2.1.5 =
+* Fix Theme Options Script URL
+* Fix Header Layout 50%
+
 = Version: 2.1.4 =
 * Update Theme options
 * Fix footer column issue on Ipad
